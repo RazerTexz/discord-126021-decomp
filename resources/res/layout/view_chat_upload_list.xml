@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:background="?attr/chat_embed_bg"
+    style="@style/UiKit.ViewGroup.LinearLayout">
+    <com.discord.views.FailedUploadView
+        android:id="@+id/chat_upload_1"
+        android:visibility="gone"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+    <com.discord.views.FailedUploadView
+        android:id="@+id/chat_upload_2"
+        android:visibility="gone"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+    <com.discord.views.FailedUploadView
+        android:id="@+id/chat_upload_3"
+        android:visibility="gone"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+</LinearLayout>

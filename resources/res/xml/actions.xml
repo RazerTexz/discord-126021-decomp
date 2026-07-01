@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<actions>
+    <action
+        intentName="custom.actions.intent.JOIN_SERVER"
+        queryPatterns="@array/actions_intent_join_server">
+        <parameter
+            name="inviteCode"
+            type="https://schema.org/Text"/>
+        <fulfillment urlTemplate="https://discord.com/invite/{inviteCode}">
+            <parameter-mapping
+                intentParameter="inviteCode"
+                required="false"
+                urlParameter="inviteCode"/>
+        </fulfillment>
+    </action>
+    <action
+        intentName="custom.actions.intent.SELECT_SERVER"
+        queryPatterns="@array/actions_intent_select_server">
+        <parameter
+            name="serverName"
+            type="https://schema.org/Text"/>
+        <fulfillment urlTemplate="https://discord.com/query/?type=server{&amp;serverName}">
+            <parameter-mapping
+                intentParameter="serverName"
+                required="false"
+                urlParameter="serverName"/>
+        </fulfillment>
+    </action>
+    <action
+        intentName="custom.actions.intent.SELECT_CHANNEL"
+        queryPatterns="@array/actions_intent_select_channel">
+        <parameter
+            name="channelName"
+            type="https://schema.org/Text"/>
+        <parameter
+            name="serverName"
+            type="https://schema.org/Text"/>
+        <fulfillment urlTemplate="https://discord.com/query/?type=channel{&amp;channelName,serverName}">
+            <parameter-mapping
+                intentParameter="channelName"
+                required="false"
+                urlParameter="channelName"/>
+            <parameter-mapping
+                intentParameter="serverName"
+                required="false"
+                urlParameter="serverName"/>
+        </fulfillment>
+    </action>
+    <action
+        intentName="custom.actions.intent.SELECT_USER"
+        queryPatterns="@array/actions_intent_select_user">
+        <parameter
+            name="userName"
+            type="https://schema.org/Text"/>
+        <fulfillment urlTemplate="https://discord.com/query/?type=user{&amp;userName}">
+            <parameter-mapping
+                intentParameter="userName"
+                required="false"
+                urlParameter="userName"/>
+        </fulfillment>
+    </action>
+    <action intentName="actions.intent.CREATE_MESSAGE">
+        <fulfillment urlTemplate="https://discord.com/query/?type=user{&amp;userName,messageText}">
+            <parameter-mapping
+                intentParameter="message.recipient.name"
+                urlParameter="userName"/>
+            <parameter-mapping
+                intentParameter="message.text"
+                urlParameter="messageText"/>
+        </fulfillment>
+    </action>
+    <action intentName="actions.intent.GET_MESSAGE">
+        <fulfillment urlTemplate="https://discord.com/query/?type=user{&amp;userName,userNameAlt}">
+            <parameter-mapping
+                intentParameter="message.recipient.name"
+                urlParameter="userNameAlt"/>
+            <parameter-mapping
+                intentParameter="message.sender.name"
+                urlParameter="userName"/>
+        </fulfillment>
+    </action>
+    <action intentName="actions.intent.OPEN_APP_FEATURE">
+        <fulfillment urlTemplate="https://discord.com/feature/{feature}">
+            <parameter-mapping
+                entityMatchRequired="true"
+                intentParameter="feature"
+                required="true"
+                urlParameter="feature"/>
+        </fulfillment>
+        <parameter name="feature">
+            <entity-set-reference entitySetId="FeatureEntitySet"/>
+        </parameter>
+    </action>
+    <entity-set entitySetId="FeatureEntitySet">
+        <entity
+            identifier="settings"
+            name="@string/settings"/>
+        <entity
+            identifier="account"
+            name="@string/account"/>
+        <entity
+            identifier="nitro"
+            name="@string/premium"/>
+        <entity
+            identifier="voice"
+            name="@string/voice_settings"/>
+        <entity
+            identifier="friends"
+            name="@string/friends"/>
+        <entity
+            identifier="mentions"
+            name="@string/mentions"/>
+        <entity
+            identifier="quickSwitcher"
+            name="@string/quick_switcher"/>
+        <entity
+            identifier="createServer"
+            name="@string/create_server_button_action"/>
+    </entity-set>
+</actions>

@@ -1,0 +1,28 @@
+package com.discord.widgets.servers;
+
+import androidx.core.app.NotificationCompat;
+import com.discord.api.guild.Guild;
+import com.discord.stores.StoreStream;
+import com.discord.utilities.rx.ObservableExtensionsKt$filterNull$1;
+import com.discord.utilities.rx.ObservableExtensionsKt$filterNull$2;
+import d0.z.d.m;
+import j0.k.b;
+import rx.Observable;
+
+/* JADX INFO: compiled from: WidgetServerSettingsOverview.kt */
+/* JADX INFO: loaded from: classes2.dex */
+public final class WidgetServerSettingsOverview$configureUI$7$1<T, R> implements b<Guild, Observable<? extends com.discord.models.guild.Guild>> {
+    public static final WidgetServerSettingsOverview$configureUI$7$1 INSTANCE = new WidgetServerSettingsOverview$configureUI$7$1();
+
+    @Override // j0.k.b
+    public /* bridge */ /* synthetic */ Observable<? extends com.discord.models.guild.Guild> call(Guild guild) {
+        return call2(guild);
+    }
+
+    /* JADX INFO: renamed from: call, reason: avoid collision after fix types in other method */
+    public final Observable<? extends com.discord.models.guild.Guild> call2(Guild guild) {
+        Observable<R> observableG = StoreStream.Companion.getGuilds().observeGuild(guild.getId()).y(ObservableExtensionsKt$filterNull$1.INSTANCE).G(ObservableExtensionsKt$filterNull$2.INSTANCE);
+        m.checkNotNullExpressionValue(observableG, "filter { it != null }.map { it!! }");
+        return observableG;
+    }
+}

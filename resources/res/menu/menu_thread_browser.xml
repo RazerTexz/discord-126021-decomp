@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:icon="@drawable/ic_filter_list_white_24dp"
+        android:id="@+id/menu_thread_browser_filters"
+        android:title="@string/filter_options"
+        app:iconTint="?attr/colorInteractiveNormal"
+        app:showAsAction="always"/>
+    <item
+        android:icon="@drawable/ic_add_24dp"
+        android:id="@+id/menu_thread_browser_create_thread"
+        android:visible="true"
+        android:title="@string/create_thread"
+        app:iconTint="?attr/colorInteractiveNormal"
+        app:showAsAction="ifRoom"/>
+</menu>

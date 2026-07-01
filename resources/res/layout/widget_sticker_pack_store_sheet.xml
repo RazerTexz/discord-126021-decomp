@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/sticker_pack_store_sheet_container"
+    android:background="?attr/colorBackgroundSecondary"
+    style="@style/UiKit.ViewGroup.Page">
+    <com.facebook.drawee.view.SimpleDraweeView
+        android:id="@+id/sticker_pack_view_all_banner"
+        android:background="?attr/colorBackgroundPrimary"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:adjustViewBounds="true"
+        android:importantForAccessibility="no"
+        app:actualImageScaleType="centerCrop"
+        app:viewAspectRatio="4.4"
+        style="@style/UiKit.ImageView"/>
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/sticker_pack_store_sheet_recycler"
+        android:background="?attr/colorBackgroundPrimary"
+        android:paddingLeft="8dp"
+        android:paddingTop="4dp"
+        android:paddingRight="8dp"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/sticker_pack_store_sheet_buy_button_container"
+        android:layout_below="@+id/sticker_pack_view_all_banner"
+        style="@style/UiKit.ViewGroup.RecyclerView"/>
+    <FrameLayout
+        android:id="@+id/sticker_pack_store_sheet_buy_button_container"
+        android:background="?attr/colorBackgroundSecondary"
+        android:paddingLeft="12dp"
+        android:paddingTop="16dp"
+        android:paddingRight="12dp"
+        android:paddingBottom="16dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true">
+        <com.discord.views.LoadingButton
+            android:id="@+id/sticker_store_buy_button_premium"
+            android:visibility="gone"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:lb_background_color="@color/status_green_600"
+            app:lb_icon="@drawable/ic_nitro_badge_white"
+            app:lb_icon_gravity="textStart"
+            app:lb_progress_color="@color/white"/>
+    </FrameLayout>
+</RelativeLayout>

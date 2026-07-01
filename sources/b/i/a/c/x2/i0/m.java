@@ -1,0 +1,51 @@
+package b.i.a.c.x2.i0;
+
+import androidx.annotation.Nullable;
+import b.i.a.c.j1;
+
+/* JADX INFO: compiled from: Track.java */
+/* JADX INFO: loaded from: classes3.dex */
+public final class m {
+    public final int a;
+
+    /* JADX INFO: renamed from: b, reason: collision with root package name */
+    public final int f1230b;
+    public final long c;
+    public final long d;
+    public final long e;
+    public final j1 f;
+    public final int g;
+
+    @Nullable
+    public final long[] h;
+
+    @Nullable
+    public final long[] i;
+    public final int j;
+
+    @Nullable
+    public final n[] k;
+
+    public m(int i, int i2, long j, long j2, long j3, j1 j1Var, int i3, @Nullable n[] nVarArr, int i4, @Nullable long[] jArr, @Nullable long[] jArr2) {
+        this.a = i;
+        this.f1230b = i2;
+        this.c = j;
+        this.d = j2;
+        this.e = j3;
+        this.f = j1Var;
+        this.g = i3;
+        this.k = nVarArr;
+        this.j = i4;
+        this.h = jArr;
+        this.i = jArr2;
+    }
+
+    @Nullable
+    public n a(int i) {
+        n[] nVarArr = this.k;
+        if (nVarArr == null) {
+            return null;
+        }
+        return nVarArr[i];
+    }
+}

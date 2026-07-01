@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:gravity="center"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    style="@style/UiKit.ViewGroup">
+    <LinearLayout
+        android:gravity="center"
+        android:layout_gravity="center"
+        android:background="?attr/primary_800_circle"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        style="@style/UiKit.ViewGroup.LinearLayout">
+        <ImageView
+            android:id="@+id/progress_gem_icon"
+            android:importantForAccessibility="no"
+            style="@style/UiKit.ImageView"/>
+        <TextView
+            android:textSize="@dimen/uikit_textsize_small"
+            android:textColor="?attr/colorInteractiveActive"
+            android:id="@+id/progress_level_text"
+            android:textAllCaps="true"
+            style="@style/UiKit.TextView.Bold"/>
+    </LinearLayout>
+    <ProgressBar
+        android:layout_gravity="center"
+        android:id="@+id/progress_progress"
+        android:layout_width="82dp"
+        android:layout_height="82dp"
+        android:progressDrawable="@drawable/drawable_boost_progress_ring"
+        style="?android:attr/progressBarStyleHorizontal"/>
+</FrameLayout>

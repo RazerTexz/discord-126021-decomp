@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:gravity="center"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:baselineAligned="false"
+    style="@style/UiKit.ViewGroup.Page.LinearLayout">
+    <com.google.android.material.appbar.AppBarLayout style="@style/AppTheme.AppBarLayout.Flat">
+        <androidx.appcompat.widget.Toolbar
+            app:navigationContentDescription="@string/close"
+            app:navigationIcon="?attr/ic_action_bar_close"
+            style="@style/AppTheme.Toolbar.Transparent"/>
+    </com.google.android.material.appbar.AppBarLayout>
+    <include
+        android:id="@+id/discord_hub_email_input"
+        android:visibility="gone"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        layout="@layout/widget_discord_hub_email_input"/>
+    <include
+        android:id="@+id/discord_hub_email_confirmation"
+        android:visibility="gone"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        layout="@layout/widget_hub_email_flow_confirmation"/>
+    <include
+        android:id="@+id/discord_hub_waitlist"
+        android:visibility="gone"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        layout="@layout/widget_hub_email_flow_waitlist"/>
+    <LinearLayout
+        android:orientation="vertical"
+        android:id="@+id/discord_hub_email_button_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp">
+        <com.discord.views.LoadingButton
+            android:id="@+id/discord_hub_email_yes"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:lb_disabled_alpha="0.6"
+            app:lb_progress_color="@color/white"
+            app:lb_text="@string/next"/>
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/discord_hub_email_no"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/invite_no_thanks"
+            style="@style/UiKit.Material.Button.Transparent"/>
+    </LinearLayout>
+</LinearLayout>

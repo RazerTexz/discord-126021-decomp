@@ -1,0 +1,29 @@
+package b.f.j.c;
+
+import com.facebook.cache.common.CacheKey;
+import java.util.Objects;
+
+/* JADX INFO: compiled from: EncodedMemoryCacheFactory.java */
+/* JADX INFO: loaded from: classes.dex */
+public final class q implements x<CacheKey> {
+    public final /* synthetic */ r a;
+
+    public q(r rVar) {
+        this.a = rVar;
+    }
+
+    @Override // b.f.j.c.x
+    public void a(CacheKey cacheKey) {
+        Objects.requireNonNull((z) this.a);
+    }
+
+    @Override // b.f.j.c.x
+    public void b(CacheKey cacheKey) {
+        Objects.requireNonNull((z) this.a);
+    }
+
+    @Override // b.f.j.c.x
+    public void c(CacheKey cacheKey) {
+        Objects.requireNonNull((z) this.a);
+    }
+}

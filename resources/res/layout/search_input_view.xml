@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/search_input_edit_text"
+        android:background="@null"
+        android:layout_width="0dp"
+        android:hint="@string/instant_invite_friends"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/search_clear"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        style="@style/UiKit.SearchInput"/>
+    <ImageView
+        android:id="@+id/search_clear"
+        android:src="@drawable/ic_search_16dp"
+        android:contentDescription="@string/reset"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:tint="?attr/colorTextMuted"
+        style="@style/UiKit.SearchInputClear"/>
+</merge>

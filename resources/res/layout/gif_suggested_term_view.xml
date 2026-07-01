@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:gravity="center"
+    android:id="@+id/gif_search_suggested_terms_container"
+    android:layout_height="match_parent"
+    style="@style/UiKit.ViewGroup.LinearLayout">
+    <TextView
+        android:textAppearance="@style/UiKit.TextAppearance"
+        android:textSize="@dimen/uikit_textsize_large"
+        android:textColor="?attr/colorHeaderSecondary"
+        android:id="@+id/gif_search_suggested_terms_icon_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/no_gif_search_results"
+        android:drawablePadding="16dp"
+        android:textAlignment="center"
+        app:drawableTopCompat="?attr/theme_expression_tray_search_icon_empty"
+        style="@style/UiKit.TextView"/>
+    <com.google.android.flexbox.FlexboxLayout
+        android:id="@+id/gif_search_suggested_terms_flex_box"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        app:alignItems="center"
+        app:flexWrap="wrap"
+        app:justifyContent="center"
+        app:layout_minHeight="24dp"
+        app:layout_minWidth="48dp"/>
+</LinearLayout>

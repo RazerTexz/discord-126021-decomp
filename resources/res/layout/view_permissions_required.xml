@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:gravity="center_horizontal"
+    style="@style/UiKit.ViewGroup.LinearLayout">
+    <ImageView
+        android:src="@drawable/img_permission_prime"
+        android:contentDescription="@string/system_permission_request_files"
+        style="@style/UiKit.ImageView"/>
+    <TextView
+        android:gravity="center"
+        android:id="@+id/permissions_required_text"
+        android:padding="16dp"
+        style="@style/UiKit.TextView"/>
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/permissions_required_action_btn"
+        android:text="@string/system_permission_grant"
+        style="@style/UiKit.Material.Button.Fit"/>
+</LinearLayout>

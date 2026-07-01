@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" style="@style/UiKit.ViewGroup.Page">
+    <com.google.android.material.appbar.AppBarLayout style="@style/AppTheme.AppBarLayout.Flat">
+        <androidx.appcompat.widget.Toolbar style="@style/AppTheme.Toolbar"/>
+    </com.google.android.material.appbar.AppBarLayout>
+    <ScrollView
+        app:layout_behavior="@string/action_bar_scrolling_view_behavior"
+        style="@style/UiKit.ViewGroup.ScrollView">
+        <LinearLayout
+            android:paddingLeft="16dp"
+            android:paddingTop="8dp"
+            android:paddingRight="16dp"
+            style="@style/UiKit.ViewGroup.LinearLayout">
+            <TextView
+                android:id="@+id/edit_account_email_confirm_description"
+                android:layout_marginLeft="8dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginRight="8dp"
+                android:layout_marginBottom="8dp"
+                style="@style/UiKit.TextView.Medium"/>
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/edit_account_code_wrap"
+                android:hint="@string/user_settings_account_change_email_confirm_prompt"
+                style="@style/UiKit.TextInputLayout.Primary">
+                <com.google.android.material.textfield.TextInputEditText
+                    android:imeOptions="actionDone"
+                    style="@style/UiKit.TextInputLayout.EditText.SingleLine"/>
+            </com.google.android.material.textfield.TextInputLayout>
+            <com.discord.utilities.view.text.LinkifiedTextView
+                android:id="@+id/settings_account_confirm_resend"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginRight="8dp"
+                android:text="@string/user_settings_account_change_email_confirm_resend"
+                style="@style/UiKit.TextView.Medium"/>
+            <Button
+                android:textAppearance="@style/UiKit.TextAppearance.Button"
+                android:id="@+id/settings_account_next"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="@string/next"/>
+        </LinearLayout>
+    </ScrollView>
+    <com.discord.utilities.dimmer.DimmerView
+        android:id="@+id/dimmer_view"
+        style="@style/UiKit.DimmerView"/>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

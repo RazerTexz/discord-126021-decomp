@@ -1,0 +1,72 @@
+package org.webrtc;
+
+import android.annotation.TargetApi;
+import android.content.Context;
+import android.hardware.camera2.CameraManager;
+import androidx.annotation.Nullable;
+import com.discord.utilities.analytics.ChatInputComponentTypes;
+
+/* JADX INFO: loaded from: classes3.dex */
+@TargetApi(21)
+public class Camera2Capturer extends CameraCapturer {
+
+    @Nullable
+    private final CameraManager cameraManager;
+    private final Context context;
+
+    public Camera2Capturer(Context context, String str, CameraVideoCapturer$CameraEventsHandler cameraVideoCapturer$CameraEventsHandler) {
+        super(str, cameraVideoCapturer$CameraEventsHandler, new Camera2Enumerator(context));
+        this.context = context;
+        this.cameraManager = (CameraManager) context.getSystemService(ChatInputComponentTypes.CAMERA);
+    }
+
+    @Override // org.webrtc.CameraCapturer, org.webrtc.VideoCapturer
+    public /* bridge */ /* synthetic */ void changeCaptureFormat(int i, int i2, int i3) {
+        super.changeCaptureFormat(i, i2, i3);
+    }
+
+    @Override // org.webrtc.CameraCapturer
+    public void createCameraSession(CameraSession$CreateSessionCallback cameraSession$CreateSessionCallback, CameraSession$Events cameraSession$Events, Context context, SurfaceTextureHelper surfaceTextureHelper, String str, int i, int i2, int i3) {
+        Camera2Session.create(cameraSession$CreateSessionCallback, cameraSession$Events, context, this.cameraManager, surfaceTextureHelper, str, i, i2, i3);
+    }
+
+    @Override // org.webrtc.CameraCapturer, org.webrtc.VideoCapturer
+    public /* bridge */ /* synthetic */ void dispose() {
+        super.dispose();
+    }
+
+    @Override // org.webrtc.CameraCapturer, org.webrtc.VideoCapturer
+    public /* bridge */ /* synthetic */ void initialize(SurfaceTextureHelper surfaceTextureHelper, Context context, CapturerObserver capturerObserver) {
+        super.initialize(surfaceTextureHelper, context, capturerObserver);
+    }
+
+    @Override // org.webrtc.CameraCapturer, org.webrtc.VideoCapturer
+    public /* bridge */ /* synthetic */ boolean isScreencast() {
+        return super.isScreencast();
+    }
+
+    @Override // org.webrtc.CameraCapturer
+    public /* bridge */ /* synthetic */ void printStackTrace() {
+        super.printStackTrace();
+    }
+
+    @Override // org.webrtc.CameraCapturer, org.webrtc.VideoCapturer
+    public /* bridge */ /* synthetic */ void startCapture(int i, int i2, int i3) {
+        super.startCapture(i, i2, i3);
+    }
+
+    @Override // org.webrtc.CameraCapturer, org.webrtc.VideoCapturer
+    public /* bridge */ /* synthetic */ void stopCapture() {
+        super.stopCapture();
+    }
+
+    @Override // org.webrtc.CameraCapturer, org.webrtc.CameraVideoCapturer
+    public /* bridge */ /* synthetic */ void switchCamera(CameraVideoCapturer$CameraSwitchHandler cameraVideoCapturer$CameraSwitchHandler) {
+        super.switchCamera(cameraVideoCapturer$CameraSwitchHandler);
+    }
+
+    @Override // org.webrtc.CameraCapturer, org.webrtc.CameraVideoCapturer
+    public /* bridge */ /* synthetic */ void switchCamera(CameraVideoCapturer$CameraSwitchHandler cameraVideoCapturer$CameraSwitchHandler, String str) {
+        super.switchCamera(cameraVideoCapturer$CameraSwitchHandler, str);
+    }
+}

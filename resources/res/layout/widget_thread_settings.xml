@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" style="@style/UiKit.ViewGroup.Page">
+    <com.google.android.material.appbar.AppBarLayout style="@style/AppTheme.AppBarLayout.Flat">
+        <androidx.appcompat.widget.Toolbar style="@style/AppTheme.Toolbar"/>
+    </com.google.android.material.appbar.AppBarLayout>
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/scroll_view"
+        style="@style/UiKit.ViewGroup.NestedScrollView.AppBarScrollingViewBehavior">
+        <LinearLayout
+            android:paddingBottom="@dimen/padding_bottom_fab_screen"
+            style="@style/UiKit.ViewGroup.LinearLayout">
+            <LinearLayout
+                android:id="@+id/thread_settings_edit_wrap"
+                android:focusable="true"
+                android:focusableInTouchMode="true"
+                android:descendantFocusability="beforeDescendants"
+                style="@style/UiKit.ViewGroup.LinearLayout">
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/thread_settings_edit_name"
+                    android:layout_margin="16dp"
+                    android:hint="@string/thread_name"
+                    style="@style/UiKit.TextInputLayout.Primary">
+                    <com.google.android.material.textfield.TextInputEditText style="@style/UiKit.TextInputLayout.EditText.SingleLine"/>
+                </com.google.android.material.textfield.TextInputLayout>
+                <View style="@style/UiKit.Settings.Divider"/>
+            </LinearLayout>
+            <LinearLayout
+                android:id="@+id/thread_settings_section_slow_mode"
+                style="@style/UiKit.ViewGroup.LinearLayout">
+                <TextView
+                    android:text="@string/form_label_slowmode"
+                    style="@style/UiKit.Settings.Item.Header"/>
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    style="@style/UiKit.ViewGroup">
+                    <TextView
+                        android:id="@+id/thread_settings_slowmode_label"
+                        android:layout_marginLeft="16dp"
+                        android:layout_marginRight="16dp"
+                        android:text="@string/form_label_slowmode_cooldown"
+                        android:layout_alignParentStart="true"
+                        android:labelFor="@+id/thread_settings_slow_mode_cooldown_slider"
+                        style="@style/UiKit.TextView"/>
+                    <TextView
+                        android:layout_gravity="end"
+                        android:id="@+id/thread_settings_slow_mode_cooldown_label"
+                        android:layout_marginLeft="16dp"
+                        android:layout_marginRight="16dp"
+                        android:layout_alignBaseline="@+id/thread_settings_slowmode_label"
+                        android:layout_alignParentEnd="true"
+                        style="@style/UiKit.TextView.Subtext"/>
+                </RelativeLayout>
+                <SeekBar
+                    android:id="@+id/thread_settings_slow_mode_cooldown_slider"
+                    android:progress="0"
+                    style="@style/UiKit.SeekBar"/>
+                <TextView
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginRight="16dp"
+                    android:text="@string/form_help_slowmode"
+                    style="@style/UiKit.TextView.Subtext"/>
+                <View
+                    android:layout_marginTop="24dp"
+                    style="@style/UiKit.Settings.Divider"/>
+            </LinearLayout>
+            <LinearLayout
+                android:id="@+id/channel_settings_pinned_messages_container"
+                style="@style/UiKit.ViewGroup.LinearLayout">
+                <TextView
+                    android:text="@string/pinned_messages"
+                    style="@style/UiKit.Settings.Item.Header"/>
+                <FrameLayout style="@style/UiKit.ViewGroup">
+                    <TextView
+                        android:id="@+id/channel_settings_pinned_messages"
+                        android:text="@string/pinned_messages"
+                        app:drawableEndCompat="@drawable/icon_carrot"
+                        app:drawableStartCompat="@drawable/ic_pin_24dp"
+                        app:drawableTint="?attr/colorInteractiveNormal"
+                        style="@style/UiKit.Settings.Item.Icon"/>
+                    <View
+                        android:id="@+id/channel_settings_pinned_messages_disabled_overlay"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"/>
+                </FrameLayout>
+                <View style="@style/UiKit.Settings.Divider"/>
+            </LinearLayout>
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/thread_settings_save"
+        android:visibility="gone"
+        android:src="@drawable/icon_save"
+        android:contentDescription="@string/save_changes"
+        style="@style/Settings.FloatingActionButton"/>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

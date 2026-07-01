@@ -1,0 +1,6 @@
+package com.google.android.gms.auth;
+
+/* JADX INFO: loaded from: classes3.dex */
+public class GooglePlayServicesAvailabilityException extends UserRecoverableAuthException {
+    private final int zzu;
+}

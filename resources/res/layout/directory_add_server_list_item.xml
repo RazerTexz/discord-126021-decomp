@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TextView xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/account"
+    android:text="@string/hub_add_server_cta"
+    app:drawableStartCompat="@drawable/ic_add_circle_dark"
+    style="@style/UiKit.Settings.Item.Icon"/>

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge xmlns:android="http://schemas.android.com/apk/res/android">
+    <com.discord.utilities.view.text.SimpleDraweeSpanTextView
+        android:id="@+id/emoji_text_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="4dp"/>
+    <TextSwitcher
+        android:id="@+id/counter_text_switcher"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_marginStart="4dp">
+        <TextView
+            android:textColor="?attr/theme_chat_reaction_text_color"
+            android:gravity="center_vertical"
+            android:id="@+id/counter_text_1"
+            android:layout_height="match_parent"
+            style="@style/UiKit.TextView.Semibold"/>
+        <TextView
+            android:textColor="?attr/theme_chat_reaction_text_color"
+            android:gravity="center_vertical"
+            android:id="@+id/counter_text_2"
+            android:layout_height="match_parent"
+            style="@style/UiKit.TextView.Semibold"/>
+    </TextSwitcher>
+</merge>

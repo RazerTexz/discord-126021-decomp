@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.discord.utilities.view.rounded.RoundedRelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/member_verification_rule_root"
+    android:background="?attr/colorBackgroundSecondary"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginLeft="16dp"
+    android:layout_marginRight="16dp">
+    <LinearLayout
+        android:id="@+id/member_verification_rule_container"
+        android:padding="12dp"
+        style="@style/UiKit.ViewGroup.LinearLayout.Horizontal">
+        <TextView
+            android:textSize="@dimen/uikit_textsize_large"
+            android:id="@+id/member_verification_rule_index"
+            style="@style/GuildProfileSheet.DiscoverableGuild.Text"/>
+        <com.discord.utilities.view.text.SimpleDraweeSpanTextView
+            android:textColor="?attr/colorTextNormal"
+            android:id="@+id/member_verification_rule_description"
+            android:paddingLeft="8dp"
+            android:paddingRight="8dp"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            style="@style/UiKit.TextView.Large"/>
+    </LinearLayout>
+    <View
+        android:id="@+id/member_verification_rule_divider"
+        android:layout_marginLeft="12dp"
+        android:layout_marginRight="12dp"
+        android:layout_alignBottom="@+id/member_verification_rule_container"
+        style="@style/UiKit.Settings.Divider"/>
+</com.discord.utilities.view.rounded.RoundedRelativeLayout>

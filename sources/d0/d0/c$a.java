@@ -1,0 +1,10 @@
+package d0.d0;
+
+import kotlin.jvm.internal.DefaultConstructorMarker;
+
+/* JADX INFO: compiled from: Progressions.kt */
+/* JADX INFO: loaded from: classes3.dex */
+public final class c$a {
+    public c$a(DefaultConstructorMarker defaultConstructorMarker) {
+    }
+}

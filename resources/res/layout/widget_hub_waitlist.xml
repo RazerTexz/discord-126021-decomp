@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_height="match_parent"
+    style="@style/UiKit.ViewGroup.Page.LinearLayout">
+    <com.google.android.material.appbar.AppBarLayout style="@style/AppTheme.AppBarLayout.Flat">
+        <androidx.appcompat.widget.Toolbar
+            app:navigationContentDescription="@string/close"
+            app:navigationIcon="?attr/ic_action_bar_back"
+            style="@style/AppTheme.Toolbar.Transparent"/>
+    </com.google.android.material.appbar.AppBarLayout>
+    <com.discord.views.ScreenTitleView
+        android:id="@+id/hub_waitlist_header"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="24dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        app:stv_subtitle="@string/hub_email_connection_school_submit_description"
+        app:stv_title="@string/hub_email_connection_school_submit_header"/>
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/hub_waitlist_layout"
+        android:layout_marginBottom="8dp"
+        android:hint="@string/hub_email_connection_school_submit_input_header"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        app:endIconMode="clear_text"
+        app:expandedHintEnabled="false"
+        style="@style/UiKit.TextInputLayout">
+        <com.google.android.material.textfield.TextInputEditText
+            android:textColorHint="?attr/colorTextMuted"
+            android:gravity="start|top"
+            android:id="@+id/hub_waitlist_edit_text"
+            android:hint="@string/hub_email_connection_school_submit_input_placeholder"
+            android:minLines="2"
+            android:maxLength="500"
+            android:imeOptions="actionDone"
+            style="@style/UiKit.TextInputLayout.EditText.SingleLine"/>
+    </com.google.android.material.textfield.TextInputLayout>
+    <com.discord.views.LoadingButton
+        android:id="@+id/hub_waitlist_button"
+        app:lb_text="@string/join_waitlist"
+        style="@style/UiKit.Material.Button"/>
+</LinearLayout>

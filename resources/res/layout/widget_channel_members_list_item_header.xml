@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal"
+    android:background="?attr/colorBackgroundPrimary"
+    android:paddingLeft="16dp"
+    android:paddingTop="8dp"
+    android:paddingRight="16dp"
+    android:paddingBottom="8dp"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+    <com.discord.widgets.roles.RoleIconView
+        android:id="@+id/channel_members_list_item_header_role_icon"
+        android:visibility="gone"
+        android:layout_width="16sp"
+        android:layout_height="16sp"
+        android:layout_marginEnd="8dp"/>
+    <TextView
+        android:gravity="bottom"
+        android:id="@+id/channel_members_list_item_header_text"
+        android:focusable="true"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:singleLine="true"
+        style="@style/UiKit.TextView.H6"/>
+</LinearLayout>

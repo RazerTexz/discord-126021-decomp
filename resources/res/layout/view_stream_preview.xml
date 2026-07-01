@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@drawable/bg_stream_preview"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:backgroundTint="?attr/colorBackgroundTertiary">
+    <com.facebook.drawee.view.SimpleDraweeView
+        android:id="@+id/stream_preview_image"
+        android:layout_width="match_parent"
+        android:layout_height="152dp"
+        app:layout_constraintBottom_toTopOf="@+id/stream_preview_placeholder_caption"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:placeholderImage="?attr/drawable_stream_preview_not_available"/>
+    <TextView
+        android:textSize="@dimen/uikit_textsize_large"
+        android:textColor="@color/white"
+        android:id="@+id/stream_preview_overlay_text"
+        android:background="@drawable/bg_stream_preview_overlay_caption"
+        android:padding="8dp"
+        android:text="@string/join_stream"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        style="@style/UiKit.TextView"/>
+    <TextView
+        android:textColor="?attr/colorTextNormal"
+        android:id="@+id/stream_preview_placeholder_caption"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="16dp"
+        android:text="@string/stream_preview_loading"
+        app:layout_constrainedHeight="true"
+        app:layout_constrainedWidth="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/stream_preview_image"
+        style="@style/UiKit.TextView"/>
+</androidx.constraintlayout.widget.ConstraintLayout>

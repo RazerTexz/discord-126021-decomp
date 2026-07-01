@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="?attr/primary_600"
+    android:layout_height="match_parent"
+    style="@style/UiKit.ViewGroup.CoordinatorLayout">
+    <com.google.android.material.appbar.AppBarLayout style="@style/AppTheme.AppBarLayout.Flat">
+        <androidx.appcompat.widget.Toolbar
+            app:navigationIcon="?attr/ic_action_bar_back"
+            style="@style/AppTheme.Toolbar"/>
+    </com.google.android.material.appbar.AppBarLayout>
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/user_mutual_guilds_recycler_view"
+        style="@style/UiKit.ViewGroup.RecyclerView.AppBarScrollingViewBehavior"/>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

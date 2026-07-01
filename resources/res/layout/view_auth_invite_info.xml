@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" style="@style/UiKit.ViewGroup.RelativeLayout">
+    <com.facebook.drawee.view.SimpleDraweeView
+        android:background="?attr/colorBackgroundTertiary"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/auth_invite_info_content"
+        android:layout_alignBottom="@+id/auth_invite_info_content"
+        android:layout_alignStart="@+id/auth_invite_info_content"
+        android:layout_alignEnd="@+id/auth_invite_info_content"
+        app:roundedCornerRadius="8dp"/>
+    <LinearLayout
+        android:id="@+id/auth_invite_info_content"
+        android:padding="16dp"
+        style="@style/UiKit.ViewGroup.LinearLayout.Horizontal">
+        <com.facebook.drawee.view.SimpleDraweeView
+            android:id="@+id/auth_invite_info_guild_avatar"
+            app:roundWithOverlayColor="?attr/colorBackgroundTertiary"
+            style="@style/Avatar.Large"/>
+        <ImageView
+            android:id="@+id/auth_invite_info_template_icon"
+            android:visibility="gone"
+            android:src="@drawable/ic_template_32dp"
+            android:importantForAccessibility="no"
+            app:tint="?attr/colorHeaderSecondary"
+            style="@style/Avatar.Large"/>
+        <LinearLayout
+            android:layout_gravity="center_vertical"
+            android:layout_marginStart="16dp"
+            style="@style/UiKit.ViewGroup.LinearLayout">
+            <TextView
+                android:textSize="@dimen/uikit_textsize_medium"
+                android:textColor="?attr/colorHeaderSecondary"
+                android:id="@+id/auth_invite_info_invited_text"
+                android:layout_marginBottom="2dp"
+                style="@style/UiKit.TextView"/>
+            <TextView
+                android:textAppearance="@style/UiKit.TextAppearance.Semibold"
+                android:textSize="@dimen/uikit_textsize_large"
+                android:textColor="?attr/colorHeaderPrimary"
+                android:ellipsize="end"
+                android:id="@+id/auth_invite_info_guild_name"
+                android:maxLines="1"
+                style="@style/UiKit.TextView"/>
+        </LinearLayout>
+    </LinearLayout>
+</RelativeLayout>

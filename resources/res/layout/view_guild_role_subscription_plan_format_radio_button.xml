@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" android:padding="@dimen/guild_role_subscription_setup_default_padding">
+    <ImageView
+        android:id="@+id/guild_role_subscription_plan_format_image"
+        android:background="@drawable/bg_guild_role_subscription_plan_format_radio_button_image"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:src="@drawable/ic_key_24dp"
+        android:scaleType="center"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:tint="?attr/colorInteractiveNormal"/>
+    <TextView
+        android:textSize="@dimen/uikit_textsize_large"
+        android:textColor="?attr/colorInteractiveNormal"
+        android:id="@+id/guild_role_subscription_plan_format_button_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/guild_role_subscription_plan_format_image"
+        style="@style/UiKit.TextView.Semibold"/>
+    <TextView
+        android:textSize="@dimen/uikit_textsize_large"
+        android:textColor="?attr/colorInteractiveNormal"
+        android:id="@+id/guild_role_subscription_plan_format_button_subtitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="2dp"
+        app:layout_constraintStart_toStartOf="@+id/guild_role_subscription_plan_format_button_title"
+        app:layout_constraintTop_toBottomOf="@+id/guild_role_subscription_plan_format_button_title"
+        style="@style/UiKit.TextView.Medium"/>
+    <com.google.android.material.radiobutton.MaterialRadioButton
+        android:id="@+id/guild_role_subscription_plan_format_button"
+        android:clickable="false"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:importantForAccessibility="no"
+        android:buttonTint="?attr/colorCompoundButton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+</merge>

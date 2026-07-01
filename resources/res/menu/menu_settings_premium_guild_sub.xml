@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/menu_settings_premium_guild_sub_transfer"
+        android:title="@string/premium_guild_subscription_transfer_button"
+        app:showAsAction="never"/>
+    <item
+        android:id="@+id/menu_settings_premium_guild_sub_cancel"
+        android:title="@string/premium_guild_subscription_slot_cancel_button"
+        app:showAsAction="never"/>
+    <item
+        android:id="@+id/menu_settings_premium_guild_sub_uncancel"
+        android:title="@string/premium_guild_subscription_slot_uncancel_button_mobile"
+        app:showAsAction="never"/>
+</menu>

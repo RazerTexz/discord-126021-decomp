@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:gravity="center_vertical"
+    android:background="?attr/selectableItemBackground"
+    android:paddingTop="16dp"
+    android:paddingBottom="8dp"
+    android:paddingStart="16dp"
+    android:paddingEnd="16dp"
+    style="@style/UiKit.ViewGroup.LinearLayout.Horizontal">
+    <ImageView
+        android:id="@+id/channel_members_list_item_add_or_leave"
+        android:background="@drawable/drawable_circle_background_secondary"
+        android:padding="8dp"
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        android:src="@drawable/ic_add_person_16dp"
+        android:scaleType="fitCenter"
+        android:importantForAccessibility="no"
+        android:layout_marginEnd="16dp"
+        app:tint="?attr/colorInteractiveNormal"/>
+    <TextView
+        android:textSize="@dimen/uikit_textsize_medium"
+        android:textColor="?attr/colorHeaderPrimary"
+        android:id="@+id/channel_members_list_item_add_or_leave_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/invite_members"
+        style="@style/UiKit.TextView"/>
+</LinearLayout>

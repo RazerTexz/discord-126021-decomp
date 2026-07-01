@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="?attr/flexInputDialogBackground"
+    android:focusable="true"
+    android:clickable="true"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    style="@style/FlexInput.DialogWhenLarge">
+    <androidx.viewpager.widget.ViewPager
+        android:layout_gravity="bottom"
+        android:id="@+id/content_pager"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/default_keyboard_height"
+        style="@style/FlexInput.AddContent"/>
+    <FrameLayout
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        style="@style/FlexInput.AddContent.Container.TabLayout">
+        <com.google.android.material.tabs.TabLayout
+            android:id="@+id/content_tabs"
+            android:background="?attr/primary_800_bg"
+            style="@style/FlexInput.AddContent.TabLayout"/>
+    </FrameLayout>
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/action_btn"
+        android:visibility="gone"
+        android:contentDescription="@string/send_message"
+        app:layout_anchor="@+id/content_pager"
+        style="@style/FlexInput.AddContent.Button.Send"/>
+    <ImageView
+        android:id="@+id/launch_btn"
+        android:contentDescription="@string/select_from_application_a11y_label"
+        app:layout_anchor="@+id/content_pager"
+        style="@style/FlexInput.AddContent.Button.Launcher"/>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

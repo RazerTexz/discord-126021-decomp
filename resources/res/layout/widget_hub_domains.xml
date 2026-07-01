@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:paddingBottom="24dp"
+    android:layout_height="match_parent"
+    style="@style/UiKit.ViewGroup.Page.LinearLayout">
+    <androidx.appcompat.widget.Toolbar
+        android:background="@color/transparent"
+        app:navigationIcon="?attr/ic_action_bar_close"
+        style="@style/AppTheme.Toolbar"/>
+    <TextView
+        android:gravity="center"
+        android:layout_gravity="center"
+        android:id="@+id/hub_domains_section_title"
+        android:layout_marginBottom="24dp"
+        android:text="@string/hub_email_connection_guild_select_header"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        style="@style/UiKit.TextView.H1.Bold"/>
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recycler_view"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        style="@style/UiKit.ViewGroup.RecyclerView"/>
+    <com.google.android.material.button.MaterialButton
+        android:textColor="@color/white"
+        android:layout_gravity="center_vertical"
+        android:id="@+id/waitlist_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:text="@string/hub_email_connection_guild_select_missing_school"
+        style="@style/UiKit.Material.Button.Secondary"/>
+</LinearLayout>

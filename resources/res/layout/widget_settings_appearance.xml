@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:animateLayoutChanges="true"
+    style="@style/UiKit.ViewGroup.Page">
+    <com.google.android.material.appbar.AppBarLayout style="@style/AppTheme.AppBarLayout.Flat">
+        <androidx.appcompat.widget.Toolbar style="@style/AppTheme.Toolbar"/>
+    </com.google.android.material.appbar.AppBarLayout>
+    <ScrollView style="@style/UiKit.ViewGroup.NestedScrollView.AppBarScrollingViewBehavior">
+        <LinearLayout
+            android:paddingBottom="16dp"
+            style="@style/UiKit.ViewGroup.LinearLayout">
+            <TextView
+                android:id="@+id/settings_appearance_theme_header"
+                android:text="@string/theme"
+                style="@style/UiKit.Settings.Item.Header"/>
+            <com.discord.views.CheckedSetting
+                android:id="@+id/settings_appearance_theme_light_radio"
+                app:cs_text="@string/theme_light"
+                app:cs_view_type="radio"
+                style="@style/UiKit.CheckedSetting.Themed"/>
+            <com.discord.views.CheckedSetting
+                android:id="@+id/settings_appearance_theme_dark_radio"
+                app:cs_text="@string/theme_dark"
+                app:cs_view_type="radio"
+                style="@style/UiKit.CheckedSetting.Themed"/>
+            <com.discord.views.CheckedSetting
+                android:id="@+id/settings_appearance_theme_pure_evil_switch"
+                app:cs_text="@string/theme_pure_evil_switch_label"
+                app:cs_view_type="switchview"
+                style="@style/UiKit.CheckedSetting.Themed"/>
+            <View style="@style/UiKit.Settings.Divider"/>
+            <TextView
+                android:id="@+id/settings_appearance_sync_header"
+                android:text="@string/sync"
+                style="@style/UiKit.Settings.Item.Header"/>
+            <com.discord.views.CheckedSetting
+                android:id="@+id/settings_appearance_sync_switch"
+                app:cs_text="@string/settings_sync"
+                app:cs_view_type="switchview"
+                style="@style/UiKit.CheckedSetting.Themed"/>
+            <View style="@style/UiKit.Settings.Divider"/>
+            <LinearLayout
+                android:id="@+id/settings_appearance_font_scaling_container"
+                style="@style/UiKit.ViewGroup.LinearLayout">
+                <TextView
+                    android:id="@+id/settings_appearance_font_scale_header"
+                    android:text="@string/accessibility_font_scaling_label"
+                    style="@style/UiKit.Settings.Item.Header"/>
+                <TextView
+                    android:id="@+id/settings_appearance_font_scale_platform"
+                    style="@style/UiKit.Settings.Item.SubText"/>
+                <RelativeLayout style="@style/UiKit.Settings.Item">
+                    <TextView
+                        android:textSize="12dp"
+                        android:id="@+id/settings_appearance_font_scaling_seekbar_text_left"
+                        android:text="Aa"
+                        android:layout_centerVertical="true"
+                        android:importantForAccessibility="no"
+                        android:layout_alignParentStart="true"
+                        style="@style/UiKit.TextView"/>
+                    <SeekBar
+                        android:id="@+id/settings_appearance_font_scaling_seekbar"
+                        android:layout_marginLeft="4dp"
+                        android:layout_marginRight="4dp"
+                        android:max="70"
+                        android:layout_toLeftOf="@+id/settings_appearance_font_scaling_seekbar_text_right"
+                        android:layout_toRightOf="@+id/settings_appearance_font_scaling_seekbar_text_left"
+                        android:layout_centerVertical="true"
+                        style="@style/UiKit.SeekBar"/>
+                    <TextView
+                        android:textSize="21dp"
+                        android:id="@+id/settings_appearance_font_scaling_seekbar_text_right"
+                        android:text="Aa"
+                        android:layout_centerVertical="true"
+                        android:importantForAccessibility="no"
+                        android:layout_alignParentEnd="true"
+                        style="@style/UiKit.TextView"/>
+                </RelativeLayout>
+                <FrameLayout
+                    android:background="?attr/chat_embed_bg"
+                    android:paddingLeft="8dp"
+                    android:paddingTop="8dp"
+                    android:paddingRight="8dp"
+                    android:paddingBottom="16dp"
+                    android:layout_margin="16dp"
+                    style="@style/UiKit.ViewGroup">
+                    <include
+                        android:id="@+id/chat_item"
+                        layout="@layout/widget_chat_list_adapter_item_text"/>
+                </FrameLayout>
+                <TextView
+                    android:layout_gravity="left"
+                    android:id="@+id/settings_appearance_font_scaling_reset"
+                    android:background="?attr/selectableItemBackground"
+                    android:layout_marginLeft="16dp"
+                    android:text="@string/reset"
+                    style="@style/UiKit.TextView.Link"/>
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+    <View
+        android:id="@+id/settings_appearance_holy_light"
+        android:background="@color/white"
+        android:visibility="gone"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/system_channel_wrap"
+    style="@style/UiKit.ViewGroup.LinearLayout">
+    <TextView
+        android:text="@string/form_label_system_channel"
+        style="@style/UiKit.Settings.Item.Label"/>
+    <TextView
+        android:id="@+id/system_channel"
+        android:drawablePadding="2dp"
+        style="@style/UiKit.Settings.Item.Addition"/>
+    <TextView
+        android:text="@string/form_help_system_channel"
+        style="@style/UiKit.Settings.Item.SubText"/>
+    <com.discord.views.CheckedSetting
+        android:id="@+id/system_channel_join"
+        app:cs_text="@string/form_help_system_channel_join_messages"
+        app:cs_view_type="switchview"
+        style="@style/UiKit.CheckedSetting.Themed"/>
+    <com.discord.views.CheckedSetting
+        android:id="@+id/system_channel_join_replies"
+        app:cs_text="@string/form_help_system_channel_join_message_replies"
+        app:cs_view_type="switchview"
+        style="@style/UiKit.CheckedSetting.Themed"/>
+    <com.discord.views.CheckedSetting
+        android:id="@+id/system_channel_boost"
+        app:cs_text="@string/form_help_system_channel_premium_subscription_messages"
+        app:cs_view_type="switchview"
+        style="@style/UiKit.CheckedSetting.Themed"/>
+</LinearLayout>

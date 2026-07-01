@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <ImageView
+        android:id="@+id/empty_friends_state_image"
+        android:src="@drawable/img_wumpus_playing_with_friends"
+        android:importantForAccessibility="no"
+        android:layout_marginStart="32dp"
+        android:layout_marginEnd="32dp"
+        app:layout_constraintBottom_toTopOf="@+id/empty_friends_state_title"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_chainStyle="packed"
+        style="@style/FriendsList.EmptyState.Image"/>
+    <TextView
+        android:id="@+id/empty_friends_state_title"
+        android:text="@string/friends_empty_state_all"
+        app:layout_constraintBottom_toTopOf="@+id/subtitle"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/empty_friends_state_image"
+        style="@style/FriendsList.EmptyState.Title"/>
+    <TextView
+        android:id="@+id/subtitle"
+        android:text="@string/friends_empty_state_subtitle"
+        app:layout_constraintBottom_toTopOf="@+id/empty_friends_state_add_friend"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/empty_friends_state_title"
+        style="@style/FriendsList.EmptyState.Subtitle"/>
+    <com.google.android.material.button.MaterialButton
+        android:textSize="@dimen/uikit_textsize_medium"
+        android:id="@+id/empty_friends_state_add_friend"
+        android:text="@string/add_friend"
+        android:singleLine="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/subtitle"
+        style="@style/UiKit.Material.Button"/>
+</merge>

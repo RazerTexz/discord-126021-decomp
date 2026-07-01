@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" style="@style/UiKit.ViewGroup.Page">
+    <com.google.android.material.appbar.AppBarLayout style="@style/AppTheme.AppBarLayout.Flat">
+        <androidx.appcompat.widget.Toolbar
+            app:navigationContentDescription="@string/close"
+            app:navigationIcon="?attr/ic_action_bar_close"
+            style="@style/AppTheme.Toolbar.Transparent"/>
+    </com.google.android.material.appbar.AppBarLayout>
+    <androidx.core.widget.NestedScrollView
+        android:paddingBottom="8dp"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp"
+        style="@style/UiKit.ViewGroup.NestedScrollView.AppBarScrollingViewBehavior">
+        <LinearLayout
+            android:layout_height="match_parent"
+            style="@style/UiKit.ViewGroup.LinearLayout">
+            <com.discord.views.ScreenTitleView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="24dp"
+                app:stv_subtitle="@string/creation_intent_description"
+                app:stv_title="@string/creation_intent_title"/>
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/creation_intent_first_option"
+                android:layout_marginBottom="8dp"
+                style="@style/Nux.GuildTemplates.Card">
+                <TextView
+                    android:id="@+id/creation_intent_first_option_text"
+                    android:text="@string/guild_template_header_create"
+                    app:drawableEndCompat="@drawable/icon_carrot"
+                    app:drawableStartCompat="@drawable/drawable_guild_template_create"
+                    style="@style/Nux.GuildTemplates.Card.Action"/>
+            </com.google.android.material.card.MaterialCardView>
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/creation_intent_second_option"
+                android:layout_marginBottom="8dp"
+                style="@style/Nux.GuildTemplates.Card">
+                <TextView
+                    android:id="@+id/creation_intent_second_option_text"
+                    android:text="@string/guild_template_header_create"
+                    app:drawableEndCompat="@drawable/icon_carrot"
+                    app:drawableStartCompat="@drawable/drawable_guild_template_create"
+                    style="@style/Nux.GuildTemplates.Card.Action"/>
+            </com.google.android.material.card.MaterialCardView>
+            <com.discord.utilities.view.text.LinkifiedTextView
+                android:textColor="?attr/colorHeaderSecondary"
+                android:gravity="center"
+                android:id="@+id/creation_intent_skip_text"
+                android:layout_width="match_parent"
+                style="@style/UiKit.TextView"/>
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

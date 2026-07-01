@@ -1,0 +1,179 @@
+package androidx.constraintlayout.solver.widgets;
+
+import androidx.constraintlayout.solver.widgets.analyzer.BasicMeasure$Measure;
+import androidx.constraintlayout.solver.widgets.analyzer.BasicMeasure$Measurer;
+
+/* JADX INFO: loaded from: classes.dex */
+public class VirtualLayout extends HelperWidget {
+    private int mPaddingTop = 0;
+    private int mPaddingBottom = 0;
+    private int mPaddingLeft = 0;
+    private int mPaddingRight = 0;
+    private int mPaddingStart = 0;
+    private int mPaddingEnd = 0;
+    private int mResolvedPaddingLeft = 0;
+    private int mResolvedPaddingRight = 0;
+    private boolean mNeedsCallFromSolver = false;
+    private int mMeasuredWidth = 0;
+    private int mMeasuredHeight = 0;
+    public BasicMeasure$Measure mMeasure = new BasicMeasure$Measure();
+    public BasicMeasure$Measurer mMeasurer = null;
+
+    public void applyRtl(boolean z2) {
+        int i = this.mPaddingStart;
+        if (i > 0 || this.mPaddingEnd > 0) {
+            if (z2) {
+                this.mResolvedPaddingLeft = this.mPaddingEnd;
+                this.mResolvedPaddingRight = i;
+            } else {
+                this.mResolvedPaddingLeft = i;
+                this.mResolvedPaddingRight = this.mPaddingEnd;
+            }
+        }
+    }
+
+    public void captureWidgets() {
+        for (int i = 0; i < this.mWidgetsCount; i++) {
+            ConstraintWidget constraintWidget = this.mWidgets[i];
+            if (constraintWidget != null) {
+                constraintWidget.setInVirtualLayout(true);
+            }
+        }
+    }
+
+    public int getMeasuredHeight() {
+        return this.mMeasuredHeight;
+    }
+
+    public int getMeasuredWidth() {
+        return this.mMeasuredWidth;
+    }
+
+    public int getPaddingBottom() {
+        return this.mPaddingBottom;
+    }
+
+    public int getPaddingLeft() {
+        return this.mResolvedPaddingLeft;
+    }
+
+    public int getPaddingRight() {
+        return this.mResolvedPaddingRight;
+    }
+
+    public int getPaddingTop() {
+        return this.mPaddingTop;
+    }
+
+    public void measure(int i, int i2, int i3, int i4) {
+    }
+
+    public void measure(ConstraintWidget constraintWidget, ConstraintWidget$DimensionBehaviour constraintWidget$DimensionBehaviour, int i, ConstraintWidget$DimensionBehaviour constraintWidget$DimensionBehaviour2, int i2) {
+        while (this.mMeasurer == null && getParent() != null) {
+            this.mMeasurer = ((ConstraintWidgetContainer) getParent()).getMeasurer();
+        }
+        BasicMeasure$Measure basicMeasure$Measure = this.mMeasure;
+        basicMeasure$Measure.horizontalBehavior = constraintWidget$DimensionBehaviour;
+        basicMeasure$Measure.verticalBehavior = constraintWidget$DimensionBehaviour2;
+        basicMeasure$Measure.horizontalDimension = i;
+        basicMeasure$Measure.verticalDimension = i2;
+        this.mMeasurer.measure(constraintWidget, basicMeasure$Measure);
+        constraintWidget.setWidth(this.mMeasure.measuredWidth);
+        constraintWidget.setHeight(this.mMeasure.measuredHeight);
+        constraintWidget.setHasBaseline(this.mMeasure.measuredHasBaseline);
+        constraintWidget.setBaselineDistance(this.mMeasure.measuredBaseline);
+    }
+
+    public boolean measureChildren() {
+        ConstraintWidget constraintWidget = this.mParent;
+        BasicMeasure$Measurer measurer = constraintWidget != null ? ((ConstraintWidgetContainer) constraintWidget).getMeasurer() : null;
+        if (measurer == null) {
+            return false;
+        }
+        int i = 0;
+        while (true) {
+            if (i >= this.mWidgetsCount) {
+                return true;
+            }
+            ConstraintWidget constraintWidget2 = this.mWidgets[i];
+            if (constraintWidget2 != null && !(constraintWidget2 instanceof Guideline)) {
+                ConstraintWidget$DimensionBehaviour dimensionBehaviour = constraintWidget2.getDimensionBehaviour(0);
+                ConstraintWidget$DimensionBehaviour dimensionBehaviour2 = constraintWidget2.getDimensionBehaviour(1);
+                ConstraintWidget$DimensionBehaviour constraintWidget$DimensionBehaviour = ConstraintWidget$DimensionBehaviour.MATCH_CONSTRAINT;
+                if (!(dimensionBehaviour == constraintWidget$DimensionBehaviour && constraintWidget2.mMatchConstraintDefaultWidth != 1 && dimensionBehaviour2 == constraintWidget$DimensionBehaviour && constraintWidget2.mMatchConstraintDefaultHeight != 1)) {
+                    if (dimensionBehaviour == constraintWidget$DimensionBehaviour) {
+                        dimensionBehaviour = ConstraintWidget$DimensionBehaviour.WRAP_CONTENT;
+                    }
+                    if (dimensionBehaviour2 == constraintWidget$DimensionBehaviour) {
+                        dimensionBehaviour2 = ConstraintWidget$DimensionBehaviour.WRAP_CONTENT;
+                    }
+                    BasicMeasure$Measure basicMeasure$Measure = this.mMeasure;
+                    basicMeasure$Measure.horizontalBehavior = dimensionBehaviour;
+                    basicMeasure$Measure.verticalBehavior = dimensionBehaviour2;
+                    basicMeasure$Measure.horizontalDimension = constraintWidget2.getWidth();
+                    this.mMeasure.verticalDimension = constraintWidget2.getHeight();
+                    measurer.measure(constraintWidget2, this.mMeasure);
+                    constraintWidget2.setWidth(this.mMeasure.measuredWidth);
+                    constraintWidget2.setHeight(this.mMeasure.measuredHeight);
+                    constraintWidget2.setBaselineDistance(this.mMeasure.measuredBaseline);
+                }
+            }
+            i++;
+        }
+    }
+
+    public boolean needSolverPass() {
+        return this.mNeedsCallFromSolver;
+    }
+
+    public void needsCallbackFromSolver(boolean z2) {
+        this.mNeedsCallFromSolver = z2;
+    }
+
+    public void setMeasure(int i, int i2) {
+        this.mMeasuredWidth = i;
+        this.mMeasuredHeight = i2;
+    }
+
+    public void setPadding(int i) {
+        this.mPaddingLeft = i;
+        this.mPaddingTop = i;
+        this.mPaddingRight = i;
+        this.mPaddingBottom = i;
+        this.mPaddingStart = i;
+        this.mPaddingEnd = i;
+    }
+
+    public void setPaddingBottom(int i) {
+        this.mPaddingBottom = i;
+    }
+
+    public void setPaddingEnd(int i) {
+        this.mPaddingEnd = i;
+    }
+
+    public void setPaddingLeft(int i) {
+        this.mPaddingLeft = i;
+        this.mResolvedPaddingLeft = i;
+    }
+
+    public void setPaddingRight(int i) {
+        this.mPaddingRight = i;
+        this.mResolvedPaddingRight = i;
+    }
+
+    public void setPaddingStart(int i) {
+        this.mPaddingStart = i;
+        this.mResolvedPaddingLeft = i;
+        this.mResolvedPaddingRight = i;
+    }
+
+    public void setPaddingTop(int i) {
+        this.mPaddingTop = i;
+    }
+
+    @Override // androidx.constraintlayout.solver.widgets.HelperWidget, androidx.constraintlayout.solver.widgets.Helper
+    public void updateConstraints(ConstraintWidgetContainer constraintWidgetContainer) {
+        captureWidgets();
+    }
+}

@@ -1,0 +1,31 @@
+package androidx.dynamicanimation.animation;
+
+import android.view.View;
+import androidx.core.view.ViewCompat;
+
+/* JADX INFO: loaded from: classes.dex */
+public class DynamicAnimation$3 extends DynamicAnimation$ViewProperty {
+    public DynamicAnimation$3(String str) {
+        super(str, null);
+    }
+
+    @Override // androidx.dynamicanimation.animation.FloatPropertyCompat
+    public /* bridge */ /* synthetic */ float getValue(View view) {
+        return getValue2(view);
+    }
+
+    @Override // androidx.dynamicanimation.animation.FloatPropertyCompat
+    public /* bridge */ /* synthetic */ void setValue(View view, float f) {
+        setValue2(view, f);
+    }
+
+    /* JADX INFO: renamed from: getValue, reason: avoid collision after fix types in other method */
+    public float getValue2(View view) {
+        return ViewCompat.getTranslationZ(view);
+    }
+
+    /* JADX INFO: renamed from: setValue, reason: avoid collision after fix types in other method */
+    public void setValue2(View view, float f) {
+        ViewCompat.setTranslationZ(view, f);
+    }
+}

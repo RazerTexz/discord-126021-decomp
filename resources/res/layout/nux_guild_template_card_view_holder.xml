@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/nux_guild_template_card"
+    android:layout_marginBottom="8dp"
+    style="@style/Nux.GuildTemplates.Card">
+    <TextView
+        android:id="@+id/nux_guild_template_text"
+        android:text="@string/guild_template_header_community"
+        app:drawableEndCompat="@drawable/icon_carrot"
+        app:drawableStartCompat="@drawable/drawable_guild_template_community"
+        style="@style/Nux.GuildTemplates.Card.Action"/>
+</com.google.android.material.card.MaterialCardView>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android" style="@style/UiKit.ViewGroup.Page">
+    <com.google.android.material.appbar.AppBarLayout style="@style/AppTheme.AppBarLayout">
+        <androidx.appcompat.widget.Toolbar style="@style/AppTheme.Toolbar"/>
+    </com.google.android.material.appbar.AppBarLayout>
+    <RelativeLayout style="@style/AppTheme.AppBarScrollingViewBehavior">
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/manage_reactions_emojis_recycler"
+            android:background="?attr/primary_630"
+            android:paddingLeft="4dp"
+            android:paddingRight="4dp"
+            android:clipToPadding="false"
+            android:layout_height="50dp"
+            android:layout_alignParentTop="true"
+            android:elevation="2dp"
+            style="@style/UiKit.ViewGroup.RecyclerView.Horizontal"/>
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/manage_reactions_results_recycler"
+            android:paddingTop="8dp"
+            android:clipToPadding="false"
+            android:layout_below="@+id/manage_reactions_emojis_recycler"
+            android:layout_alignParentBottom="true"
+            style="@style/UiKit.ViewGroup.RecyclerView"/>
+    </RelativeLayout>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

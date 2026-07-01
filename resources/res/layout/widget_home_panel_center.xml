@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.discord.utilities.view.rounded.RoundedRelativeLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:background="?attr/colorBackgroundPrimary"
+    android:fitsSystemWindows="true"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:animateLayoutChanges="true"
+    app:topLeftRadius="@dimen/tab_host_corner_radius"
+    app:topRightRadius="@dimen/tab_host_corner_radius">
+    <androidx.fragment.app.FragmentContainerView
+        android:name="com.discord.widgets.directories.WidgetDirectoryChannel"
+        android:id="@+id/widget_home_panel_directory"
+        android:visibility="gone"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+    <androidx.fragment.app.FragmentContainerView
+        android:name="com.discord.widgets.forums.WidgetForumBrowser"
+        android:id="@+id/widget_forum_channel_list"
+        android:visibility="gone"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+    <include
+        android:id="@+id/widget_home_panel_center_chat"
+        android:visibility="gone"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        layout="@layout/widget_home_panel_center_chat"/>
+</com.discord.utilities.view.rounded.RoundedRelativeLayout>

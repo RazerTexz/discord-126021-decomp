@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" style="@style/UiKit.ViewGroup.Page">
+    <TextView
+        android:textSize="@dimen/uikit_textsize_xxlarge"
+        android:id="@+id/age_verify_title"
+        android:text="@string/age_gate_existing_header"
+        android:drawablePadding="16dp"
+        app:drawableTopCompat="@drawable/img_age_gate_safety"
+        app:layout_constraintBottom_toTopOf="@+id/age_verify_description"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_chainStyle="packed"
+        style="@style/UiKit.TextView.H1.Bold"/>
+    <com.discord.utilities.view.text.LinkifiedTextView
+        android:gravity="center_horizontal"
+        android:id="@+id/age_verify_description"
+        android:paddingLeft="16dp"
+        android:paddingRight="16dp"
+        android:layout_marginTop="8dp"
+        android:text="@string/age_gate_body"
+        android:lineSpacingMultiplier="1"
+        app:layout_constraintBottom_toTopOf="@+id/age_verify_input_wrapper"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/age_verify_title"
+        style="@style/UiKit.TextView.Large"/>
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/age_verify_input_wrapper"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginRight="16dp"
+        android:hint="@string/age_gate_date_of_birth"
+        app:layout_constraintBottom_toTopOf="@+id/age_verify_next_button"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/age_verify_description"
+        style="@style/UiKit.TextInputLayout">
+        <com.google.android.material.textfield.TextInputEditText style="@style/UiKit.TextInputLayout.EditText.NoFocus"/>
+    </com.google.android.material.textfield.TextInputLayout>
+    <com.discord.views.LoadingButton
+        android:id="@+id/age_verify_next_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginRight="16dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/age_verify_input_wrapper"
+        app:lb_disabled_alpha="0.6"
+        app:lb_progress_color="@color/white"
+        app:lb_text="@string/next"/>
+</androidx.constraintlayout.widget.ConstraintLayout>

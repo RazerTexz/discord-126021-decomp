@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" style="@style/UiKit.ViewGroup.Page">
+    <ScrollView
+        android:layout_gravity="top"
+        android:layout_height="match_parent"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginRight="16dp"
+        android:foregroundGravity="top"
+        style="@style/UiKit.ViewGroup.ScrollView">
+        <LinearLayout
+            android:layout_gravity="top"
+            android:orientation="vertical"
+            style="@style/UiKit.ViewGroup.LinearLayout">
+            <LinearLayout style="@style/UiKit.Copy">
+                <TextView
+                    android:id="@+id/user_phone_title"
+                    android:text="@string/enter_phone_title"
+                    style="@style/UiKit.TextView.H1"/>
+                <TextView
+                    android:gravity="center"
+                    android:id="@+id/user_phone_add_description_note"
+                    android:layout_marginTop="16dp"
+                    android:text="@string/enter_phone_description"
+                    style="@style/UiKit.TextView"/>
+            </LinearLayout>
+            <com.discord.views.phone.PhoneOrEmailInputView
+                android:id="@+id/user_phone_add_number"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:force_mode="phone"
+                app:hint="@string/phone_verification_phone_label"/>
+            <com.google.android.material.button.MaterialButton
+                android:enabled="false"
+                android:id="@+id/user_phone_add_next"
+                android:text="@string/next"
+                style="@style/UiKit.User.Phone.Manage.Confirm"/>
+            <TextView
+                android:textColor="@color/status_red_500"
+                android:gravity="center"
+                android:id="@+id/remove_phone"
+                android:text="@string/user_settings_account_remove_phone_number_button"
+                style="@style/UiKit.Settings.Item"/>
+        </LinearLayout>
+    </ScrollView>
+    <com.google.android.material.appbar.AppBarLayout style="@style/AppTheme.AppBarLayout.Flat.Transparent">
+        <androidx.appcompat.widget.Toolbar style="@style/AppTheme.Toolbar.Transparent"/>
+    </com.google.android.material.appbar.AppBarLayout>
+    <com.discord.utilities.dimmer.DimmerView
+        android:id="@+id/dimmer_view"
+        style="@style/UiKit.DimmerView"/>
+</FrameLayout>

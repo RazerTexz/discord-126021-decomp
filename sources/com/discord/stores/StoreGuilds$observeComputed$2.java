@@ -1,0 +1,27 @@
+package com.discord.stores;
+
+import androidx.core.app.NotificationCompat;
+import com.discord.models.member.GuildMember;
+import j0.k.b;
+import java.util.Map;
+
+/* JADX INFO: compiled from: StoreGuilds.kt */
+/* JADX INFO: loaded from: classes2.dex */
+public final class StoreGuilds$observeComputed$2<T, R> implements b<Map<Long, ? extends Map<Long, ? extends GuildMember>>, Map<Long, ? extends GuildMember>> {
+    public final /* synthetic */ long $guildId;
+
+    public StoreGuilds$observeComputed$2(long j) {
+        this.$guildId = j;
+    }
+
+    @Override // j0.k.b
+    public /* bridge */ /* synthetic */ Map<Long, ? extends GuildMember> call(Map<Long, ? extends Map<Long, ? extends GuildMember>> map) {
+        return call2((Map<Long, ? extends Map<Long, GuildMember>>) map);
+    }
+
+    /* JADX INFO: renamed from: call, reason: avoid collision after fix types in other method */
+    public final Map<Long, GuildMember> call2(Map<Long, ? extends Map<Long, GuildMember>> map) {
+        Map<Long, GuildMember> map2 = map.get(Long.valueOf(this.$guildId));
+        return map2 != null ? map2 : StoreGuilds.access$getEmptyComputedMap$cp();
+    }
+}

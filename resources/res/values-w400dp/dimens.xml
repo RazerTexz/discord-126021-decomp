@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="auth_splash_vertical_margin">36dp</dimen>
+    <dimen name="nav_panel_width">340dp</dimen>
+</resources>

@@ -1,0 +1,6 @@
+package b.g.a.b;
+
+/* JADX INFO: compiled from: ObjectCodec.java */
+/* JADX INFO: loaded from: classes3.dex */
+public abstract class i {
+}

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:background="?attr/colorBackgroundPrimary"
+    android:paddingBottom="24dp"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+    <TextView
+        android:text="@string/guild_role_subscription_plan_setup_cover_photo_label"
+        style="@style/UiKit.GuildSubscriptionRole.Setup.Label.NoPadding"/>
+    <com.facebook.drawee.view.SimpleDraweeView
+        android:id="@+id/guild_role_subscription_plan_review_cover_image"
+        android:background="@drawable/drawable_rect_rounded_bg_tertiary"
+        android:layout_width="match_parent"
+        android:layout_height="114dp"
+        android:layout_marginTop="8dp"
+        android:importantForAccessibility="no"
+        app:actualImageScaleType="centerCrop"
+        app:placeholderImage="@drawable/ic_image_upload"
+        app:roundedCornerRadius="8dp"/>
+    <TextView
+        android:layout_marginTop="24dp"
+        android:text="@string/guild_role_subscription_tier_detail_description_label"
+        style="@style/UiKit.GuildSubscriptionRole.Setup.Label.NoPadding"/>
+    <TextView
+        android:textColor="?attr/colorInteractiveActive"
+        android:id="@+id/guild_role_subscription_plan_review_description"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        style="@style/UiKit.TextView.Large"/>
+</LinearLayout>

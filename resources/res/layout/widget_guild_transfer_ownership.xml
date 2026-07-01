@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" style="@style/UiKit.ViewGroup.Page.LinearLayout">
+    <TextView
+        android:padding="16dp"
+        android:layout_width="match_parent"
+        android:text="@string/transfer_ownership"
+        style="@style/UiKit.TextView.H1.Bold"/>
+    <View style="@style/UiKit.Divider"/>
+    <LinearLayout
+        android:id="@+id/guild_transfer_ownership_mfa_wrap"
+        style="@style/UiKit.ViewGroup.LinearLayout">
+        <TextView
+            android:text="@string/two_fa_enter_token_label"
+            android:textAllCaps="true"
+            style="@style/UiKit.Settings.Item.Label"/>
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/guild_transfer_ownership_mfa_code"
+            android:layout_margin="16dp"
+            android:hint="@string/two_fa_auth_code"
+            style="@style/UiKit.TextInputLayout.Primary">
+            <com.google.android.material.textfield.TextInputEditText
+                android:inputType="textVisiblePassword|number"
+                style="@style/UiKit.TextInputLayout.EditText.SingleLine"/>
+        </com.google.android.material.textfield.TextInputLayout>
+    </LinearLayout>
+    <com.discord.views.CheckedSetting
+        android:id="@+id/guild_transfer_ownership_acknowledge_check"
+        app:cs_text="@string/transfer_ownership_acknowledge"
+        app:cs_text_size="@dimen/uikit_textsize_small"
+        style="@style/UiKit.CheckedSetting.Themed"/>
+    <LinearLayout style="@style/UiKit.Dialog.ButtonContainer">
+        <com.google.android.material.button.MaterialButton
+            android:layout_gravity="center_vertical"
+            android:id="@+id/guild_transfer_ownership_cancel"
+            android:text="@string/cancel"
+            style="@style/UiKit.Material.Button.Transparent.Fit"/>
+        <com.google.android.material.button.MaterialButton
+            android:enabled="true"
+            android:id="@+id/guild_transfer_ownership_confirm"
+            android:text="@string/transfer"
+            android:layout_marginStart="8dp"
+            style="@style/UiKit.Material.Button.Red.Fit"/>
+    </LinearLayout>
+</LinearLayout>

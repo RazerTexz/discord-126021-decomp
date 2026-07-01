@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" style="@style/UiKit.ViewGroup.LinearLayout">
+    <TextView
+        android:textSize="@dimen/uikit_textsize_xxlarge"
+        android:textColor="?attr/colorHeaderPrimary"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:text="@string/guild_settings_premium_upsell_heading_primary"
+        style="@style/UiKit.TextView.H1"/>
+    <TextView
+        android:textSize="@dimen/uikit_textsize_large"
+        android:textColor="?attr/colorHeaderPrimary"
+        android:gravity="center_horizontal"
+        android:layout_gravity="center_horizontal"
+        android:id="@+id/view_premium_upsell_info_subheading"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginBottom="8dp"
+        style="@style/UiKit.TextView"/>
+    <TextView
+        android:textSize="@dimen/uikit_textsize_large"
+        android:textColor="?attr/colorHeaderPrimary"
+        android:gravity="center_horizontal"
+        android:layout_gravity="center_horizontal"
+        android:id="@+id/view_premium_upsell_info_subheading_price"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginBottom="8dp"
+        style="@style/UiKit.TextView"/>
+    <TextView
+        android:textSize="@dimen/uikit_textsize_large"
+        android:textColor="?attr/colorHeaderPrimary"
+        android:gravity="center_horizontal"
+        android:layout_gravity="center_horizontal"
+        android:id="@+id/view_premium_upsell_info_subheading_blurb"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginRight="16dp"
+        android:text="@string/premium_guild_subscription_marketing_guilds_blurb"
+        style="@style/UiKit.TextView"/>
+</LinearLayout>

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:gravity="center"
+    style="@style/UiKit.ViewGroup.Page">
+    <com.google.android.material.appbar.AppBarLayout style="@style/AppTheme.AppBarLayout.Flat">
+        <androidx.appcompat.widget.Toolbar
+            app:navigationIcon="?attr/ic_action_bar_back"
+            style="@style/AppTheme.Toolbar.Transparent"/>
+    </com.google.android.material.appbar.AppBarLayout>
+    <com.discord.app.AppViewFlipper
+        android:id="@+id/contact_sync_view_flipper"
+        android:inAnimation="@anim/activity_slide_horizontal_open_in"
+        android:outAnimation="@anim/activity_slide_horizontal_open_out"
+        style="@style/UiKit.ViewGroup.AppViewFlipper.InCoordinatorLayout">
+        <include
+            android:id="@+id/contact_sync_landing"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            layout="@layout/layout_contact_sync_landing"/>
+        <include
+            android:id="@+id/contact_sync_add_phone"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            layout="@layout/layout_contact_sync_add_phone"/>
+        <include
+            android:id="@+id/contact_sync_verify_phone"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            layout="@layout/layout_contact_sync_verify_phone"/>
+        <include
+            android:id="@+id/contact_sync_name"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            layout="@layout/layout_contact_sync_name_input"/>
+        <include
+            android:id="@+id/contact_sync_friend_suggestions"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            layout="@layout/layout_contact_sync_suggestions"/>
+        <include
+            android:id="@+id/contact_sync_friend_suggestions_empty"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            layout="@layout/layout_contact_sync_suggestions_empty"/>
+    </com.discord.app.AppViewFlipper>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

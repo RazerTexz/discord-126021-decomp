@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TextView xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/item_name"
+    android:singleLine="true"
+    app:drawableStartCompat="@drawable/ic_channels_24dp"
+    app:drawableTint="?attr/colorInteractiveNormal"
+    style="@style/UiKit.Settings.Item.Icon"/>

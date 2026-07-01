@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+    <androidx.cardview.widget.CardView
+        android:id="@+id/mobile_reports_child"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:minHeight="64dp"
+        app:cardBackgroundColor="?attr/colorBackgroundSecondary"
+        app:cardElevation="0dp"
+        app:roundedCornerRadius="4dp">
+        <TextView
+            android:layout_gravity="start|center_vertical"
+            android:id="@+id/mobile_reports_child_menu_title"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="40dp"
+            style="@style/UiKit.TextView.H2"/>
+        <ImageView
+            android:layout_gravity="end|center_vertical"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:src="@drawable/ic_chevron_right_primary_300_12dp"
+            android:contentDescription="@string/pagination_next"
+            android:layout_marginEnd="8dp"
+            app:drawableTint="?attr/colorInteractiveNormal"/>
+    </androidx.cardview.widget.CardView>
+</FrameLayout>

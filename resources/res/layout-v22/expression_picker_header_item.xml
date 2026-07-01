@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TextView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:textSize="@dimen/uikit_textsize_small"
+    android:textColor="?attr/colorHeaderSecondary"
+    android:id="@+id/header_item_text"
+    android:background="?attr/colorBackgroundSecondary"
+    android:paddingLeft="4dp"
+    android:paddingTop="4dp"
+    android:paddingRight="4dp"
+    android:paddingBottom="4dp"
+    android:layout_width="match_parent"
+    android:textAllCaps="true"
+    android:paddingHorizontal="4dp"
+    style="@style/UiKit.TextView.Bold"/>

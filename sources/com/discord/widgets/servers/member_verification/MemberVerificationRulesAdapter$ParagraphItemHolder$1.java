@@ -1,0 +1,33 @@
+package com.discord.widgets.servers.member_verification;
+
+import android.text.Editable;
+import d0.z.d.m;
+import d0.z.d.o;
+import kotlin.Unit;
+import kotlin.jvm.functions.Function1;
+
+/* JADX INFO: compiled from: MemberVerificationRulesAdapter.kt */
+/* JADX INFO: loaded from: classes2.dex */
+public final class MemberVerificationRulesAdapter$ParagraphItemHolder$1 extends o implements Function1<Editable, Unit> {
+    public final /* synthetic */ MemberVerificationRulesAdapter $adapter;
+    public final /* synthetic */ MemberVerificationRulesAdapter$ParagraphItemHolder this$0;
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public MemberVerificationRulesAdapter$ParagraphItemHolder$1(MemberVerificationRulesAdapter$ParagraphItemHolder memberVerificationRulesAdapter$ParagraphItemHolder, MemberVerificationRulesAdapter memberVerificationRulesAdapter) {
+        super(1);
+        this.this$0 = memberVerificationRulesAdapter$ParagraphItemHolder;
+        this.$adapter = memberVerificationRulesAdapter;
+    }
+
+    @Override // kotlin.jvm.functions.Function1
+    public /* bridge */ /* synthetic */ Unit invoke(Editable editable) {
+        invoke2(editable);
+        return Unit.a;
+    }
+
+    /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
+    public final void invoke2(Editable editable) {
+        m.checkNotNullParameter(editable, "editable");
+        this.$adapter.getOnUserInputDataEntered().invoke(Integer.valueOf(MemberVerificationRulesAdapter$ParagraphItemHolder.access$getFieldIndex$p(this.this$0)), editable.toString());
+    }
+}

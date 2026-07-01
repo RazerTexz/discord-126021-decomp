@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ImageView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/reaction_quick_add"
+    android:paddingLeft="6dp"
+    android:paddingTop="4dp"
+    android:paddingRight="6dp"
+    android:paddingBottom="4dp"
+    android:layout_width="wrap_content"
+    android:layout_height="24dp"
+    android:src="@drawable/ic_add_reaction_grey_16dp"
+    android:scaleType="fitCenter"
+    android:contentDescription="@string/add_reaction"/>

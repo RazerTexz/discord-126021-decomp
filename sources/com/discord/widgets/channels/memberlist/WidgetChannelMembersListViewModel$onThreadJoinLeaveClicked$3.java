@@ -1,0 +1,37 @@
+package com.discord.widgets.channels.memberlist;
+
+import com.discord.utilities.error.Error;
+import com.discord.utilities.error.Error$Response;
+import d0.z.d.m;
+import d0.z.d.o;
+import kotlin.Unit;
+import kotlin.jvm.functions.Function1;
+import rx.subjects.PublishSubject;
+
+/* JADX INFO: compiled from: WidgetChannelMembersListViewModel.kt */
+/* JADX INFO: loaded from: classes2.dex */
+public final class WidgetChannelMembersListViewModel$onThreadJoinLeaveClicked$3 extends o implements Function1<Error, Unit> {
+    public final /* synthetic */ WidgetChannelMembersListViewModel this$0;
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public WidgetChannelMembersListViewModel$onThreadJoinLeaveClicked$3(WidgetChannelMembersListViewModel widgetChannelMembersListViewModel) {
+        super(1);
+        this.this$0 = widgetChannelMembersListViewModel;
+    }
+
+    @Override // kotlin.jvm.functions.Function1
+    public /* bridge */ /* synthetic */ Unit invoke(Error error) {
+        invoke2(error);
+        return Unit.a;
+    }
+
+    /* JADX WARN: Type inference incomplete: some casts might be missing */
+    /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
+    public final void invoke2(Error error) {
+        m.checkNotNullParameter(error, "error");
+        PublishSubject publishSubjectAccess$getEventSubject$p = WidgetChannelMembersListViewModel.access$getEventSubject$p(this.this$0);
+        Error$Response response = error.getResponse();
+        m.checkNotNullExpressionValue(response, "error.response");
+        publishSubjectAccess$getEventSubject$p.k.onNext((T) new WidgetChannelMembersListViewModel$Event$Error(response.getCode()));
+    }
+}

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="horizontal"
+    android:background="?attr/bg_pressed_highlight"
+    android:layout_height="24dp"
+    android:layout_marginBottom="8dp"
+    style="@style/UiKit.ViewGroup.RelativeLayout">
+    <ImageView
+        android:id="@+id/stage_channel_audience_icon"
+        android:background="@drawable/drawable_circle_black"
+        android:padding="4dp"
+        android:layout_width="@dimen/avatar_size_small"
+        android:layout_height="@dimen/avatar_size_small"
+        android:src="@drawable/ic_members_24dp"
+        android:layout_centerVertical="true"
+        android:layout_marginStart="44dp"
+        android:layout_marginEnd="8dp"
+        android:backgroundTint="?attr/primary_700"
+        app:iconTint="?attr/primary_300"
+        style="@style/Avatar.Small"/>
+    <TextView
+        android:textColor="?attr/colorChannelDefault"
+        android:id="@+id/stage_channels_audience_count"
+        android:singleLine="true"
+        android:layout_centerVertical="true"
+        android:layout_marginEnd="4dp"
+        android:layout_toEndOf="@+id/stage_channel_audience_icon"
+        style="@style/UiKit.TextView"/>
+</RelativeLayout>

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" style="@style/UiKit.ViewGroup.CoordinatorLayout.Page">
+    <com.google.android.material.appbar.AppBarLayout style="@style/AppTheme.AppBarLayout.Flat">
+        <androidx.appcompat.widget.Toolbar style="@style/AppTheme.Toolbar"/>
+    </com.google.android.material.appbar.AppBarLayout>
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="com.discord.app.AppScrollingViewBehavior">
+        <com.discord.views.segmentedcontrol.SegmentedControlContainer
+            android:id="@+id/segmented_control"
+            android:background="@drawable/drawable_segmented_control_container_bg"
+            android:layout_margin="12dp"
+            style="@style/UiKit.ViewGroup.LinearLayout.Horizontal">
+            <com.discord.views.segmentedcontrol.CardSegment
+                app:segment_text="@string/channel_permissions_moderator_title"
+                style="@style/SegmentedControlTabCard"/>
+            <com.discord.views.segmentedcontrol.CardSegment
+                app:segment_text="@string/settings_advanced"
+                style="@style/SegmentedControlTabCard"/>
+        </com.discord.views.segmentedcontrol.SegmentedControlContainer>
+        <com.discord.app.AppViewFlipper
+            android:id="@+id/flipper"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            style="@style/UiKit.ViewGroup.AppViewFlipper.InCoordinatorLayout">
+            <androidx.fragment.app.FragmentContainerView
+                android:name="com.discord.widgets.channels.permissions.WidgetStageChannelModeratorPermissions"
+                android:id="@+id/stage_moderator_permissions_fragment"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"/>
+            <androidx.fragment.app.FragmentContainerView
+                android:name="com.discord.widgets.channels.permissions.WidgetChannelSettingsPermissionsAdvanced"
+                android:id="@+id/advanced_permissions_fragment"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"/>
+        </com.discord.app.AppViewFlipper>
+    </LinearLayout>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

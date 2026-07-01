@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <com.facebook.drawee.view.SimpleDraweeView
+        android:id="@+id/user_list_item_avatar"
+        android:layout_centerVertical="true"
+        android:layout_marginEnd="24dp"
+        style="@style/Avatar.Standard"/>
+    <com.discord.views.StatusView
+        android:id="@+id/user_list_item_status"
+        android:layout_width="16dp"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/user_list_item_avatar"
+        android:translationX="2dp"
+        android:translationY="2dp"
+        android:layout_alignEnd="@+id/user_list_item_avatar"
+        app:sv_background_color="?attr/colorPrimary"
+        app:sv_border_width="2dp"
+        app:sv_corner_radius="4dp"/>
+    <TextView
+        android:textSize="15sp"
+        android:textColor="?attr/colorHeaderPrimary"
+        android:gravity="center_vertical"
+        android:id="@+id/user_list_item_name"
+        android:singleLine="true"
+        android:layout_centerVertical="true"
+        android:layout_toEndOf="@+id/user_list_item_avatar"
+        style="@style/UiKit.TextView.Semibold"/>
+    <TextView
+        android:textSize="15sp"
+        android:textColor="?attr/colorHeaderSecondary"
+        android:gravity="center_vertical"
+        android:id="@+id/user_list_item_name_secondary"
+        android:singleLine="true"
+        android:layout_centerVertical="true"
+        android:layout_marginStart="5dp"
+        android:layout_toEndOf="@+id/user_list_item_name"
+        style="@style/UiKit.TextView"/>
+</merge>

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android" style="@style/UiKit.ViewGroup.ScrollView.Page">
+    <LinearLayout style="@style/UiKit.ViewGroup.LinearLayout">
+        <TextView
+            android:id="@+id/guild_actions_overview_header_tv"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="16dp"
+            android:text="@string/form_label_input_mode"
+            android:layout_marginStart="16dp"
+            style="@style/UiKit.Sheet.Header.Title"/>
+        <View style="@style/UiKit.Settings.Divider"/>
+        <LinearLayout style="@style/UiKit.ViewGroup.LinearLayout">
+            <LinearLayout
+                android:id="@+id/settings_voice_input_mode_vad"
+                style="@style/UiKit.ViewGroup.LinearLayout">
+                <TextView
+                    android:text="@string/input_mode_vad"
+                    style="@style/UiKit.Settings.Item.Label"/>
+                <TextView
+                    android:text="@string/switch_to_voice_activity"
+                    style="@style/UiKit.Settings.Item.Addition"/>
+            </LinearLayout>
+            <LinearLayout
+                android:id="@+id/settings_voice_input_mode_ptt"
+                style="@style/UiKit.ViewGroup.LinearLayout">
+                <TextView
+                    android:text="@string/input_mode_ptt"
+                    style="@style/UiKit.Settings.Item.Label"/>
+                <TextView
+                    android:text="@string/switch_to_push_to_talk"
+                    style="@style/UiKit.Settings.Item.Addition"/>
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+</androidx.core.widget.NestedScrollView>

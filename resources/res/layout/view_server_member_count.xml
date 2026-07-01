@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:gravity="center_vertical"
+    android:layout_width="match_parent"
+    style="@style/UiKit.ViewGroup.LinearLayout.Horizontal">
+    <ImageView
+        android:id="@+id/item_invite_online_dot"
+        android:visibility="gone"
+        android:layout_width="4dp"
+        android:layout_height="4dp"
+        android:src="@drawable/drawable_circle_green"
+        android:contentDescription="@string/instant_invite_guild_members_online"
+        android:layout_marginEnd="4dp"
+        style="@style/UiKit.ImageView"/>
+    <TextView
+        android:id="@+id/item_invite_online_text"
+        android:singleLine="true"
+        android:layout_marginEnd="8dp"
+        style="@style/UiKit.Chat.Embed.Subtext"/>
+    <ImageView
+        android:id="@+id/item_invite_total_member_dot"
+        android:visibility="gone"
+        android:layout_width="4dp"
+        android:layout_height="4dp"
+        android:src="@drawable/drawable_grey_user_icon"
+        android:contentDescription="@string/instant_invite_guild_members_total"
+        android:layout_marginEnd="4dp"
+        style="@style/UiKit.ImageView"/>
+    <TextView
+        android:id="@+id/item_invite_total_member_text"
+        android:singleLine="true"
+        style="@style/UiKit.Chat.Embed.Subtext"/>
+</LinearLayout>

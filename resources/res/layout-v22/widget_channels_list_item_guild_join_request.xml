@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/channels_list_item_guild_join_request"
+    android:paddingLeft="16dp"
+    android:paddingTop="8dp"
+    android:paddingRight="16dp"
+    android:paddingBottom="8dp"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingHorizontal="16dp"
+    android:paddingVertical="8dp"
+    style="@style/UiKit.ViewGroup.ConstraintLayout">
+    <TextView
+        android:id="@+id/channels_list_item_guild_join_request_label"
+        android:text="@string/member_verification_notice_text"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        style="@style/UiKit.TextView"/>
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/channels_list_item_guild_join_request_button"
+        android:layout_height="44dp"
+        android:layout_marginTop="8dp"
+        android:text="@string/member_verification_notice_cta"
+        android:textAllCaps="false"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/channels_list_item_guild_join_request_label"
+        style="@style/UiKit.Material.Button"/>
+</androidx.constraintlayout.widget.ConstraintLayout>

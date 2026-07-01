@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" style="@style/UiKit.ViewGroup.Page.LinearLayout">
+    <TextView
+        android:id="@+id/channel_settings_cannot_delete_title"
+        android:padding="16dp"
+        android:layout_width="match_parent"
+        android:text="@string/cannot_delete_channel"
+        style="@style/UiKit.TextView.H1.Bold"/>
+    <View
+        android:layout_marginTop="0dp"
+        style="@style/UiKit.Divider"/>
+    <TextView
+        android:id="@+id/channel_settings_cannot_delete_body"
+        style="@style/UiKit.Settings.Item.SubText"/>
+    <TextView
+        android:paddingTop="0dp"
+        android:text="@string/android_designate_other_channel"
+        style="@style/UiKit.Settings.Item.SubText"/>
+    <View style="@style/UiKit.Settings.Divider"/>
+    <LinearLayout
+        android:gravity="end"
+        android:background="?attr/colorBackgroundSecondary"
+        android:padding="16dp"
+        style="@style/UiKit.ViewGroup.LinearLayout.Horizontal">
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/channel_settings_cannot_delete_confirm"
+            android:text="@string/okay"
+            style="@style/UiKit.Material.Button.Fit"/>
+    </LinearLayout>
+</LinearLayout>

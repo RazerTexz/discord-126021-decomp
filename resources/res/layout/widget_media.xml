@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/media_container"
+    android:background="?attr/primary_900"
+    style="@style/UiKit.ViewGroup.Page">
+    <com.google.android.exoplayer2.ui.PlayerView
+        android:layout_gravity="center"
+        android:id="@+id/media_player_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:resize_mode="fit"
+        app:surface_type="texture_view"
+        app:use_controller="false"/>
+    <com.google.android.exoplayer2.ui.PlayerControlView
+        android:layout_gravity="bottom"
+        android:id="@+id/media_player_control_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+    <com.facebook.samples.zoomable.ZoomableDraweeView
+        android:layout_gravity="center"
+        android:id="@+id/media_image"
+        android:background="?attr/primary_900"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:failureImage="@drawable/asset_sadbot"
+        app:failureImageScaleType="center"/>
+    <ProgressBar
+        android:layout_gravity="center"
+        android:id="@+id/media_loading_indicator"
+        android:background="@drawable/drawable_circle_primary_900_alpha_80"
+        android:padding="8dp"
+        android:visibility="gone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:indeterminate="true"
+        android:indeterminateTint="@color/white"/>
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_gravity="top"
+        android:id="@+id/action_bar_toolbar_layout"
+        style="@style/AppTheme.AppBarLayout.Flat.Transparent">
+        <androidx.appcompat.widget.Toolbar
+            android:background="?attr/primary_900_alpha_80"
+            style="@style/AppTheme.Toolbar"/>
+    </com.google.android.material.appbar.AppBarLayout>
+</FrameLayout>

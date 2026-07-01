@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:background="?attr/colorBackgroundSecondary"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+    <View
+        android:background="?attr/colorBackgroundModifierAccent"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"/>
+    <com.discord.views.channelsidebar.GuildChannelSideBarActionsView
+        android:id="@+id/widget_channel_sidebar_actions_guild_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+    <com.discord.views.channelsidebar.PrivateChannelSideBarActionsView
+        android:id="@+id/widget_channel_sidebar_actions_private_view"
+        android:visibility="gone"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+</FrameLayout>

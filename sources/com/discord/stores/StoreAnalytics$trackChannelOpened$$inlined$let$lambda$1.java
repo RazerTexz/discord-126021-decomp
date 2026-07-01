@@ -1,0 +1,43 @@
+package com.discord.stores;
+
+import com.discord.api.channel.Channel;
+import com.discord.api.channel.ChannelUtils;
+import com.discord.models.domain.ModelAuditLogEntry;
+import d0.t.g0;
+import d0.t.h0;
+import d0.z.d.o;
+import java.util.Map;
+import kotlin.jvm.functions.Function0;
+
+/* JADX INFO: compiled from: StoreAnalytics.kt */
+/* JADX INFO: loaded from: classes2.dex */
+public final class StoreAnalytics$trackChannelOpened$$inlined$let$lambda$1 extends o implements Function0<Map<String, ? extends Object>> {
+    public final /* synthetic */ SelectedChannelAnalyticsLocation $analyticsLocation$inlined;
+    public final /* synthetic */ Channel $channel;
+    public final /* synthetic */ long $channelId$inlined;
+    public final /* synthetic */ ChannelAnalyticsViewType $channelView$inlined;
+    public final /* synthetic */ StoreAnalytics this$0;
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public StoreAnalytics$trackChannelOpened$$inlined$let$lambda$1(Channel channel, StoreAnalytics storeAnalytics, long j, ChannelAnalyticsViewType channelAnalyticsViewType, SelectedChannelAnalyticsLocation selectedChannelAnalyticsLocation) {
+        super(0);
+        this.$channel = channel;
+        this.this$0 = storeAnalytics;
+        this.$channelId$inlined = j;
+        this.$channelView$inlined = channelAnalyticsViewType;
+        this.$analyticsLocation$inlined = selectedChannelAnalyticsLocation;
+    }
+
+    @Override // kotlin.jvm.functions.Function0
+    public /* bridge */ /* synthetic */ Map<String, ? extends Object> invoke() {
+        return invoke2();
+    }
+
+    @Override // kotlin.jvm.functions.Function0
+    /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
+    public final Map<String, ? extends Object> invoke2() {
+        Map<String, ? extends Object> mapPlus = h0.plus(ChannelUtils.H(this.$channel) ? StoreAnalytics.access$getThreadSnapshotAnalyticsProperties(this.this$0, this.$channel) : StoreAnalytics.access$getChannelSnapshotAnalyticsProperties(this.this$0, this.$channel, true), g0.mapOf(d0.o.to("channel_view", this.$channelView$inlined.getAnalyticsValue())));
+        SelectedChannelAnalyticsLocation selectedChannelAnalyticsLocation = this.$analyticsLocation$inlined;
+        return selectedChannelAnalyticsLocation != null ? h0.plus(mapPlus, g0.mapOf(d0.o.to(ModelAuditLogEntry.CHANGE_KEY_LOCATION, selectedChannelAnalyticsLocation.getAnalyticsValue()))) : mapPlus;
+    }
+}

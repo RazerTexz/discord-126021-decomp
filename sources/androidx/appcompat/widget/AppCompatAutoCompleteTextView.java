@@ -1,0 +1,147 @@
+package androidx.appcompat.widget;
+
+import android.R$attr;
+import android.content.Context;
+import android.content.res.ColorStateList;
+import android.graphics.PorterDuff$Mode;
+import android.graphics.drawable.Drawable;
+import android.util.AttributeSet;
+import android.view.ActionMode$Callback;
+import android.view.inputmethod.EditorInfo;
+import android.view.inputmethod.InputConnection;
+import android.widget.AutoCompleteTextView;
+import androidx.annotation.DrawableRes;
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.annotation.RestrictTo;
+import androidx.annotation.RestrictTo$Scope;
+import androidx.appcompat.content.res.AppCompatResources;
+import androidx.core.view.TintableBackgroundView;
+import androidx.core.widget.TextViewCompat;
+
+/* JADX INFO: loaded from: classes.dex */
+public class AppCompatAutoCompleteTextView extends AutoCompleteTextView implements TintableBackgroundView {
+    private static final int[] TINT_ATTRS = {R$attr.popupBackground};
+    private final AppCompatBackgroundHelper mBackgroundTintHelper;
+    private final AppCompatTextHelper mTextHelper;
+
+    public AppCompatAutoCompleteTextView(@NonNull Context context) {
+        this(context, null);
+    }
+
+    @Override // android.widget.TextView, android.view.View
+    public void drawableStateChanged() {
+        super.drawableStateChanged();
+        AppCompatBackgroundHelper appCompatBackgroundHelper = this.mBackgroundTintHelper;
+        if (appCompatBackgroundHelper != null) {
+            appCompatBackgroundHelper.applySupportBackgroundTint();
+        }
+        AppCompatTextHelper appCompatTextHelper = this.mTextHelper;
+        if (appCompatTextHelper != null) {
+            appCompatTextHelper.applyCompoundDrawablesTints();
+        }
+    }
+
+    @Override // androidx.core.view.TintableBackgroundView
+    @Nullable
+    @RestrictTo({RestrictTo$Scope.LIBRARY_GROUP_PREFIX})
+    public ColorStateList getSupportBackgroundTintList() {
+        AppCompatBackgroundHelper appCompatBackgroundHelper = this.mBackgroundTintHelper;
+        if (appCompatBackgroundHelper != null) {
+            return appCompatBackgroundHelper.getSupportBackgroundTintList();
+        }
+        return null;
+    }
+
+    @Override // androidx.core.view.TintableBackgroundView
+    @Nullable
+    @RestrictTo({RestrictTo$Scope.LIBRARY_GROUP_PREFIX})
+    public PorterDuff$Mode getSupportBackgroundTintMode() {
+        AppCompatBackgroundHelper appCompatBackgroundHelper = this.mBackgroundTintHelper;
+        if (appCompatBackgroundHelper != null) {
+            return appCompatBackgroundHelper.getSupportBackgroundTintMode();
+        }
+        return null;
+    }
+
+    @Override // android.widget.TextView, android.view.View
+    public InputConnection onCreateInputConnection(EditorInfo editorInfo) {
+        return AppCompatHintHelper.onCreateInputConnection(super.onCreateInputConnection(editorInfo), editorInfo, this);
+    }
+
+    @Override // android.view.View
+    public void setBackgroundDrawable(Drawable drawable) {
+        super.setBackgroundDrawable(drawable);
+        AppCompatBackgroundHelper appCompatBackgroundHelper = this.mBackgroundTintHelper;
+        if (appCompatBackgroundHelper != null) {
+            appCompatBackgroundHelper.onSetBackgroundDrawable(drawable);
+        }
+    }
+
+    @Override // android.view.View
+    public void setBackgroundResource(@DrawableRes int i) {
+        super.setBackgroundResource(i);
+        AppCompatBackgroundHelper appCompatBackgroundHelper = this.mBackgroundTintHelper;
+        if (appCompatBackgroundHelper != null) {
+            appCompatBackgroundHelper.onSetBackgroundResource(i);
+        }
+    }
+
+    @Override // android.widget.TextView
+    public void setCustomSelectionActionModeCallback(ActionMode$Callback actionMode$Callback) {
+        super.setCustomSelectionActionModeCallback(TextViewCompat.wrapCustomSelectionActionModeCallback(this, actionMode$Callback));
+    }
+
+    @Override // android.widget.AutoCompleteTextView
+    public void setDropDownBackgroundResource(@DrawableRes int i) {
+        setDropDownBackgroundDrawable(AppCompatResources.getDrawable(getContext(), i));
+    }
+
+    @Override // androidx.core.view.TintableBackgroundView
+    @RestrictTo({RestrictTo$Scope.LIBRARY_GROUP_PREFIX})
+    public void setSupportBackgroundTintList(@Nullable ColorStateList colorStateList) {
+        AppCompatBackgroundHelper appCompatBackgroundHelper = this.mBackgroundTintHelper;
+        if (appCompatBackgroundHelper != null) {
+            appCompatBackgroundHelper.setSupportBackgroundTintList(colorStateList);
+        }
+    }
+
+    @Override // androidx.core.view.TintableBackgroundView
+    @RestrictTo({RestrictTo$Scope.LIBRARY_GROUP_PREFIX})
+    public void setSupportBackgroundTintMode(@Nullable PorterDuff$Mode porterDuff$Mode) {
+        AppCompatBackgroundHelper appCompatBackgroundHelper = this.mBackgroundTintHelper;
+        if (appCompatBackgroundHelper != null) {
+            appCompatBackgroundHelper.setSupportBackgroundTintMode(porterDuff$Mode);
+        }
+    }
+
+    @Override // android.widget.TextView
+    public void setTextAppearance(Context context, int i) {
+        super.setTextAppearance(context, i);
+        AppCompatTextHelper appCompatTextHelper = this.mTextHelper;
+        if (appCompatTextHelper != null) {
+            appCompatTextHelper.onSetTextAppearance(context, i);
+        }
+    }
+
+    public AppCompatAutoCompleteTextView(@NonNull Context context, @Nullable AttributeSet attributeSet) {
+        this(context, attributeSet, androidx.appcompat.R$attr.autoCompleteTextViewStyle);
+    }
+
+    public AppCompatAutoCompleteTextView(@NonNull Context context, @Nullable AttributeSet attributeSet, int i) {
+        super(TintContextWrapper.wrap(context), attributeSet, i);
+        ThemeUtils.checkAppCompatTheme(this, getContext());
+        TintTypedArray tintTypedArrayObtainStyledAttributes = TintTypedArray.obtainStyledAttributes(getContext(), attributeSet, TINT_ATTRS, i, 0);
+        if (tintTypedArrayObtainStyledAttributes.hasValue(0)) {
+            setDropDownBackgroundDrawable(tintTypedArrayObtainStyledAttributes.getDrawable(0));
+        }
+        tintTypedArrayObtainStyledAttributes.recycle();
+        AppCompatBackgroundHelper appCompatBackgroundHelper = new AppCompatBackgroundHelper(this);
+        this.mBackgroundTintHelper = appCompatBackgroundHelper;
+        appCompatBackgroundHelper.loadFromAttributes(attributeSet, i);
+        AppCompatTextHelper appCompatTextHelper = new AppCompatTextHelper(this);
+        this.mTextHelper = appCompatTextHelper;
+        appCompatTextHelper.loadFromAttributes(attributeSet, i);
+        appCompatTextHelper.applyCompoundDrawablesTints();
+    }
+}

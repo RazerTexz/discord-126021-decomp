@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="?attr/colorBackgroundPrimary"
+    style="@style/UiKit.ViewGroup.LinearLayout">
+    <LinearLayout
+        android:gravity="center_horizontal"
+        android:padding="16dp"
+        style="@style/UiKit.ViewGroup.LinearLayout">
+        <com.discord.views.ScreenTitleView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="24dp"
+            app:stv_subtitle="@string/nuf_voice_channels_description"
+            app:stv_title="@string/nuf_voice_channels_title"/>
+        <ImageView
+            android:layout_width="280dp"
+            android:layout_marginBottom="24dp"
+            android:src="@drawable/img_voice_onboarding"
+            android:contentDescription="@string/nuf_channels_description"
+            style="@style/UiKit.ImageView"/>
+        <com.discord.views.JoinVoiceChannelButton
+            android:id="@+id/guild_call_onboarding_connect"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            style="@style/UiKit.Material.Button"/>
+    </LinearLayout>
+</LinearLayout>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" style="@style/ExpressionPickerCategoryItem">
+    <ImageView
+        android:layout_gravity="center"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:src="@drawable/ic_recent_24dp"
+        android:scaleType="fitCenter"
+        android:contentDescription="@string/sticker_category_recent"
+        app:tint="?attr/colorInteractiveNormal"/>
+    <include
+        android:id="@+id/overline"
+        layout="@layout/expression_picker_category_selection_overline_view"/>
+</FrameLayout>

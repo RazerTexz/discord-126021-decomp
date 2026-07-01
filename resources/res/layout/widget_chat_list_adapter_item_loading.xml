@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:background="?attr/selectableItemBackground"
+    android:paddingLeft="@dimen/chat_cell_horizontal_spacing_padding"
+    android:paddingTop="@dimen/chat_cell_vertical_spacing_padding"
+    android:paddingRight="@dimen/chat_cell_horizontal_spacing_padding"
+    android:paddingBottom="@dimen/chat_cell_vertical_spacing_padding"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginLeft="@dimen/chat_cell_horizontal_spacing_margin"
+    android:layout_marginTop="@dimen/chat_cell_horizontal_spacing_padding"
+    android:layout_marginRight="@dimen/chat_cell_horizontal_spacing_margin"
+    android:layout_marginBottom="@dimen/chat_cell_horizontal_spacing_padding">
+    <ProgressBar
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:indeterminate="true"
+        android:layout_centerInParent="true"
+        android:indeterminateTint="?attr/theme_chat_loading_spinner_color"
+        android:indeterminateTintMode="src_in"
+        style="@style/Widget.AppCompat.ProgressBar"/>
+</RelativeLayout>

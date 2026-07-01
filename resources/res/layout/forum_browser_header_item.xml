@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" style="@style/UiKit.ViewGroup.ConstraintLayout">
+    <TextView
+        android:textSize="@dimen/uikit_textsize_small"
+        android:textColor="?attr/colorInteractiveNormal"
+        android:id="@+id/header_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:singleLine="true"
+        android:textAllCaps="true"
+        app:layout_constraintTop_toTopOf="parent"
+        style="@style/UiKit.TextView.Bold"/>
+</androidx.constraintlayout.widget.ConstraintLayout>

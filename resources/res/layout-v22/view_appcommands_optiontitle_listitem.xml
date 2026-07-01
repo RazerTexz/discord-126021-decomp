@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+    <com.facebook.drawee.view.SimpleDraweeView
+        android:id="@+id/appcommands_optiontitle_avatar"
+        android:visibility="visible"
+        android:layout_marginStart="16dp"
+        app:layout_constraintBottom_toBottomOf="@+id/appcommands_optiontitle"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/appcommands_optiontitle"
+        app:placeholderImage="@drawable/ic_slash_command_24dp"
+        style="@style/Avatar.Medium"/>
+    <TextView
+        android:textAppearance="@style/UiKit.TextAppearance.Bold"
+        android:textColor="?attr/colorTextNormal"
+        android:id="@+id/appcommands_optiontitle"
+        android:paddingTop="12dp"
+        android:paddingBottom="12dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="4dp"
+        android:paddingStart="12dp"
+        android:paddingEnd="8dp"
+        android:paddingVertical="12dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/appcommands_optiontitle_avatar"
+        app:layout_constraintTop_toTopOf="parent"
+        style="@style/UiKit.TextView"/>
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:gravity="center"
+    android:padding="16dp"
+    style="@style/UiKit.ViewGroup.LinearLayout">
+    <ImageView
+        android:id="@+id/user_profile_adapter_item_empty"
+        android:layout_marginTop="32dp"
+        android:importantForAccessibility="no"
+        style="@style/UiKit.ImageView"/>
+    <TextView
+        android:id="@+id/user_profile_adapter_item_empty_text"
+        android:layout_margin="16dp"
+        style="@style/UiKit.TextView.H2"/>
+</LinearLayout>

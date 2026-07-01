@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:background="?attr/primary_630"
+    android:minWidth="328dp"
+    style="@style/UiKit.Dialog.Container">
+    <TextView
+        android:id="@+id/connected_account_actions_dialog_header"
+        android:background="?attr/primary_700"
+        style="@style/UiKit.ListItem.Icon"/>
+    <TextView
+        android:id="@+id/connected_account_actions_dialog_open_in_browser"
+        android:visibility="gone"
+        android:text="@string/open_in_browser"
+        style="@style/UiKit.ListItem"/>
+    <TextView
+        android:id="@+id/connected_account_actions_dialog_copy_username"
+        android:text="@string/copy_username"
+        style="@style/UiKit.ListItem"/>
+</LinearLayout>

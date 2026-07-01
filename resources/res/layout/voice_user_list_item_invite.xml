@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:gravity="center_vertical"
+    android:background="@color/primary_dark_800"
+    android:paddingLeft="16dp"
+    android:paddingTop="8dp"
+    android:paddingRight="16dp"
+    android:paddingBottom="8dp"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    style="@style/UiKit.ViewGroup.LinearLayout.Horizontal">
+    <ImageView
+        android:background="?attr/colorPrimaryCircle"
+        android:padding="8dp"
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        android:layout_margin="4dp"
+        android:src="@drawable/ic_header_members_add_white_24dp"
+        android:importantForAccessibility="no"
+        android:backgroundTint="?attr/colorBackgroundTertiary"
+        app:tint="?attr/colorInteractiveNormal"/>
+    <TextView
+        android:textSize="@dimen/uikit_textsize_large"
+        android:textColor="?attr/colorHeaderPrimary"
+        android:layout_width="0dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:text="@string/invite_friends"
+        android:singleLine="true"
+        android:layout_weight="1"
+        style="@style/UiKit.TextView"/>
+</LinearLayout>

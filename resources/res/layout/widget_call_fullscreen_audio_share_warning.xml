@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/call_streaming_audio_share_warning"
+    android:layout_width="0dp"
+    android:layout_height="wrap_content"
+    android:elevation="0dp"
+    app:cardBackgroundColor="@color/status_yellow_500_alpha_10"
+    app:cardCornerRadius="4dp"
+    app:layout_constraintBottom_toTopOf="@+id/call_audio_share_warning_barrier"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toTopOf="parent"
+    app:layout_constraintVertical_bias="0"
+    app:strokeColor="@color/status_yellow"
+    app:strokeWidth="1dp">
+    <TextView
+        android:textAppearance="@style/UiKit.TextAppearance"
+        android:textSize="@dimen/uikit_textsize_medium"
+        android:textColor="@color/white"
+        android:padding="8dp"
+        android:text="@string/mobile_stream_active_soundshare_warning_android"
+        android:drawablePadding="16dp"
+        app:drawableStartCompat="@drawable/ic_warning_circle_24dp"
+        style="@style/UiKit.TextView"/>
+</com.google.android.material.card.MaterialCardView>

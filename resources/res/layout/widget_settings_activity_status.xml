@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" style="@style/UiKit.ViewGroup.Page">
+    <com.google.android.material.appbar.AppBarLayout style="@style/AppTheme.AppBarLayout.Flat">
+        <androidx.appcompat.widget.Toolbar style="@style/AppTheme.Toolbar"/>
+    </com.google.android.material.appbar.AppBarLayout>
+    <ScrollView style="@style/UiKit.ViewGroup.RelativeLayout.AppBarScrollingViewBehavior">
+        <LinearLayout style="@style/UiKit.ViewGroup.LinearLayout">
+            <com.discord.views.CheckedSetting
+                android:id="@+id/show_current_activity"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cs_subtext="@string/show_current_activity_desc"
+                app:cs_text="@string/show_current_activity"
+                app:cs_view_type="switchview"
+                style="@style/UiKit.CheckedSetting.Themed"/>
+        </LinearLayout>
+    </ScrollView>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

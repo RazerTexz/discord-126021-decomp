@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:background="?attr/colorBackgroundSecondary"
+    android:minWidth="328dp"
+    style="@style/UiKit.Dialog.Container">
+    <TextView
+        android:id="@+id/audio_output_selection_dialog_header"
+        android:background="?attr/colorBackgroundTertiary"
+        android:text="@string/audio_devices_output_selection_prompt"
+        style="@style/UiKit.ListItem"/>
+    <RadioGroup
+        android:id="@+id/audio_output_selection_dialog_radio_group"
+        style="@style/UiKit.ViewGroup.LinearLayout">
+        <com.google.android.material.radiobutton.MaterialRadioButton
+            android:id="@+id/audio_output_selection_bluetooth_radio"
+            android:text="@string/audio_devices_bluetooth"
+            android:drawableEnd="@drawable/ic_bluetooth_24dp"
+            style="@style/UiKit.ListItem.Icon.Radio"/>
+        <com.google.android.material.radiobutton.MaterialRadioButton
+            android:id="@+id/audio_output_selection_speaker_radio"
+            android:text="@string/audio_devices_speaker"
+            android:drawableEnd="@drawable/ic_sound_24dp"
+            style="@style/UiKit.ListItem.Icon.Radio"/>
+        <com.google.android.material.radiobutton.MaterialRadioButton
+            android:id="@+id/audio_output_selection_wired_radio"
+            android:text="@string/audio_devices_wired"
+            android:drawableEnd="@drawable/ic_headset_24dp"
+            style="@style/UiKit.ListItem.Icon.Radio"/>
+        <com.google.android.material.radiobutton.MaterialRadioButton
+            android:id="@+id/audio_output_selection_earpiece_radio"
+            android:text="@string/audio_devices_earpiece"
+            android:drawableEnd="@drawable/ic_phone_24dp"
+            style="@style/UiKit.ListItem.Icon.Radio"/>
+    </RadioGroup>
+</LinearLayout>

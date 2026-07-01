@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:id="@+id/animated_banner_upsell_container"
+    android:background="@drawable/rounded_rectangle_4dp_radius"
+    android:paddingLeft="10dp"
+    android:paddingTop="8dp"
+    android:paddingRight="10dp"
+    android:paddingBottom="8dp"
+    android:visibility="gone"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginLeft="16dp"
+    android:layout_marginTop="10dp"
+    android:layout_marginRight="16dp"
+    android:backgroundTint="?attr/colorBackgroundTertiary">
+    <TextView
+        android:textColor="?attr/colorHeaderPrimary"
+        android:gravity="center_vertical"
+        android:id="@+id/animated_banner_upsell_text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/guild_settings_animated_banner_upsell"
+        android:drawablePadding="10dp"
+        app:drawableStartCompat="@drawable/ic_boosted_badge_24dp"/>
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/animated_banner_upsell_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="@string/premium_guild_boost_this_server"
+        style="@style/UiKit.Material.Button"/>
+</LinearLayout>

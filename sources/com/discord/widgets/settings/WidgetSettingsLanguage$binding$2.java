@@ -1,0 +1,59 @@
+package com.discord.widgets.settings;
+
+import android.view.View;
+import android.widget.ImageView;
+import android.widget.RelativeLayout;
+import android.widget.TextView;
+import androidx.coordinatorlayout.widget.CoordinatorLayout;
+import com.discord.R$id;
+import com.discord.databinding.WidgetSettingsLanguageBinding;
+import com.discord.views.CheckedSetting;
+import d0.z.d.k;
+import d0.z.d.m;
+import kotlin.jvm.functions.Function1;
+
+/* JADX INFO: compiled from: WidgetSettingsLanguage.kt */
+/* JADX INFO: loaded from: classes2.dex */
+public final /* synthetic */ class WidgetSettingsLanguage$binding$2 extends k implements Function1<View, WidgetSettingsLanguageBinding> {
+    public static final WidgetSettingsLanguage$binding$2 INSTANCE = new WidgetSettingsLanguage$binding$2();
+
+    public WidgetSettingsLanguage$binding$2() {
+        super(1, WidgetSettingsLanguageBinding.class, "bind", "bind(Landroid/view/View;)Lcom/discord/databinding/WidgetSettingsLanguageBinding;", 0);
+    }
+
+    @Override // kotlin.jvm.functions.Function1
+    public /* bridge */ /* synthetic */ WidgetSettingsLanguageBinding invoke(View view) {
+        return invoke2(view);
+    }
+
+    /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
+    public final WidgetSettingsLanguageBinding invoke2(View view) {
+        m.checkNotNullParameter(view, "p1");
+        int i = R$id.settings_language_current;
+        RelativeLayout relativeLayout = (RelativeLayout) view.findViewById(R$id.settings_language_current);
+        if (relativeLayout != null) {
+            i = R$id.settings_language_current_flag;
+            ImageView imageView = (ImageView) view.findViewById(R$id.settings_language_current_flag);
+            if (imageView != null) {
+                i = R$id.settings_language_current_text;
+                TextView textView = (TextView) view.findViewById(R$id.settings_language_current_text);
+                if (textView != null) {
+                    i = R$id.settings_language_header;
+                    TextView textView2 = (TextView) view.findViewById(R$id.settings_language_header);
+                    if (textView2 != null) {
+                        i = R$id.settings_language_sync_check;
+                        CheckedSetting checkedSetting = (CheckedSetting) view.findViewById(R$id.settings_language_sync_check);
+                        if (checkedSetting != null) {
+                            i = R$id.settings_language_sync_header;
+                            TextView textView3 = (TextView) view.findViewById(R$id.settings_language_sync_header);
+                            if (textView3 != null) {
+                                return new WidgetSettingsLanguageBinding((CoordinatorLayout) view, relativeLayout, imageView, textView, textView2, checkedSetting, textView3);
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        throw new NullPointerException("Missing required view with ID: ".concat(view.getResources().getResourceName(i)));
+    }
+}

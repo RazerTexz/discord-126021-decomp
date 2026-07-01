@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_marginTop="8dp"
+    android:layout_marginStart="16dp"
+    android:layout_marginEnd="8dp"
+    style="@style/UiKit.ViewGroup.RelativeLayout">
+    <TextView
+        android:textSize="@dimen/uikit_textsize_small"
+        android:textColor="?attr/colorChannelDefault"
+        android:id="@+id/channels_list_item_header"
+        android:singleLine="true"
+        android:layout_centerVertical="true"
+        android:textAllCaps="true"
+        android:layout_toStartOf="@+id/channels_list_new"
+        android:layout_alignParentStart="true"
+        style="@style/UiKit.TextView.Bold"/>
+    <ImageView
+        android:id="@+id/channels_list_new"
+        android:padding="6dp"
+        android:src="@drawable/ic_add_24dp"
+        android:scaleType="center"
+        android:layout_centerVertical="true"
+        android:layout_alignParentEnd="true"
+        app:tint="?attr/colorChannelDefault"
+        style="@style/UiKit.ImageView"/>
+</RelativeLayout>

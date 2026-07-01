@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/discovery_empty_state"/>
+    <TextView
+        android:textColor="?attr/colorInteractiveActive"
+        android:layout_gravity="center_vertical"
+        android:background="@drawable/rounded_rectangle_4dp_radius"
+        android:paddingLeft="16dp"
+        android:paddingTop="8dp"
+        android:paddingRight="16dp"
+        android:paddingBottom="8dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/guild_role_subscription_settings_enable_owners_only_notice"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="@dimen/guild_role_subscription_setup_default_padding"
+        android:backgroundTint="?attr/colorBackgroundFloating"
+        android:paddingHorizontal="16dp"
+        android:paddingVertical="8dp"/>
+</LinearLayout>

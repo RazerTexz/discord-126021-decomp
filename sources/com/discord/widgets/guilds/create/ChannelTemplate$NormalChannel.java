@@ -1,0 +1,14 @@
+package com.discord.widgets.guilds.create;
+
+import com.discord.models.domain.ModelAuditLogEntry;
+import d0.z.d.m;
+
+/* JADX INFO: compiled from: StockGuildTemplate.kt */
+/* JADX INFO: loaded from: classes2.dex */
+public final class ChannelTemplate$NormalChannel extends ChannelTemplate {
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public ChannelTemplate$NormalChannel(String str) {
+        super(null, str, null);
+        m.checkNotNullParameter(str, ModelAuditLogEntry.CHANGE_KEY_NAME);
+    }
+}

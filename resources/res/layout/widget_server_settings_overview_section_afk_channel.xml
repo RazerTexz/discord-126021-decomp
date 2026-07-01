@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" style="@style/UiKit.ViewGroup.LinearLayout">
+    <TextView
+        android:text="@string/afk_settings"
+        style="@style/UiKit.Settings.Item.Header"/>
+    <TextView
+        android:text="@string/form_help_afk_channel"
+        style="@style/UiKit.Settings.Item.SubText"/>
+    <LinearLayout
+        android:id="@+id/afk_channel_wrap"
+        style="@style/UiKit.ViewGroup.LinearLayout">
+        <TextView
+            android:text="@string/form_label_afk_channel"
+            style="@style/UiKit.Settings.Item.Label"/>
+        <TextView
+            android:id="@+id/afk_channel"
+            android:drawablePadding="2dp"
+            style="@style/UiKit.Settings.Item.Addition"/>
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/afk_timeout_wrap"
+        style="@style/UiKit.ViewGroup.LinearLayout">
+        <TextView
+            android:text="@string/form_label_afk_timeout"
+            style="@style/UiKit.Settings.Item.Label"/>
+        <TextView
+            android:id="@+id/afk_timeout"
+            style="@style/UiKit.Settings.Item.Addition"/>
+    </LinearLayout>
+</LinearLayout>

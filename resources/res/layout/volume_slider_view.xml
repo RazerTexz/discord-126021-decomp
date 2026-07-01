@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge xmlns:android="http://schemas.android.com/apk/res/android">
+    <ImageView
+        android:id="@+id/volume_slider_min_vol"
+        android:src="@drawable/ic_sound_quiet_24dp"
+        android:importantForAccessibility="no"
+        style="@style/UiKit.ImageView"/>
+    <SeekBar
+        android:id="@+id/volume_slider_seek_bar"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:maxHeight="8dp"
+        android:max="100"
+        android:progressDrawable="@drawable/drawable_settings_progress"
+        android:thumb="@drawable/drawable_thumb_white"
+        android:layout_weight="1"
+        android:splitTrack="false"/>
+    <ImageView
+        android:id="@+id/volume_slider_max_vol"
+        android:src="@drawable/ic_sound_24dp"
+        android:importantForAccessibility="no"
+        style="@style/UiKit.ImageView"/>
+</merge>

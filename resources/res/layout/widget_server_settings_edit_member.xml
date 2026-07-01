@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" style="@style/UiKit.ViewGroup.Page">
+    <com.google.android.material.appbar.AppBarLayout style="@style/AppTheme.AppBarLayout.Flat">
+        <androidx.appcompat.widget.Toolbar style="@style/AppTheme.Toolbar"/>
+    </com.google.android.material.appbar.AppBarLayout>
+    <androidx.core.widget.NestedScrollView style="@style/UiKit.ViewGroup.NestedScrollView.AppBarScrollingViewBehavior">
+        <LinearLayout
+            android:focusable="true"
+            android:focusableInTouchMode="true"
+            android:descendantFocusability="beforeDescendants"
+            style="@style/UiKit.ViewGroup.LinearLayout">
+            <TextView
+                android:text="@string/nickname"
+                style="@style/UiKit.Settings.Item.Header"/>
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/edit_member_nickname"
+                android:hint="@string/change_nickname"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                app:endIconDrawable="@drawable/ic_role_lock"
+                app:endIconMode="custom"
+                style="@style/UiKit.TextInputLayout.Primary">
+                <com.google.android.material.textfield.TextInputEditText
+                    android:maxLength="32"
+                    android:inputType="textNoSuggestions"
+                    style="@style/UiKit.TextInputLayout.EditText.SingleLine"/>
+            </com.google.android.material.textfield.TextInputLayout>
+            <LinearLayout
+                android:id="@+id/edit_member_roles_container"
+                style="@style/UiKit.ViewGroup.LinearLayout">
+                <View style="@style/UiKit.Settings.Divider"/>
+                <TextView
+                    android:text="@string/roles"
+                    style="@style/UiKit.Settings.Item.Header"/>
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/edit_member_roles_recycler"
+                    style="@style/UiKit.ViewGroup.RecyclerView"/>
+            </LinearLayout>
+            <LinearLayout
+                android:orientation="vertical"
+                android:id="@+id/edit_member_administrative_container"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <View style="@style/UiKit.Settings.Divider"/>
+                <TextView
+                    android:text="@string/administrative"
+                    style="@style/UiKit.Settings.Item.Header"/>
+                <TextView
+                    android:textColor="@color/status_red_500"
+                    android:id="@+id/edit_member_timeout_button"
+                    android:text="@string/disable_guild_communication_for_user"
+                    app:drawableStartCompat="@drawable/ic_disable_guild_communication_red_24dp"
+                    style="@style/UiKit.Settings.Item.Icon"/>
+                <TextView
+                    android:textColor="@color/status_red_500"
+                    android:id="@+id/edit_member_kick_button"
+                    android:text="@string/kick_user"
+                    app:drawableStartCompat="@drawable/ic_remove_friend_red_24dp"
+                    style="@style/UiKit.Settings.Item.Icon"/>
+                <TextView
+                    android:textColor="@color/status_red_500"
+                    android:id="@+id/edit_member_ban_button"
+                    android:text="@string/ban_user"
+                    app:drawableStartCompat="@drawable/ic_ban_red_24dp"
+                    style="@style/UiKit.Settings.Item.Icon"/>
+                <TextView
+                    android:textColor="@color/status_red_500"
+                    android:id="@+id/edit_member_transfer_ownership_button"
+                    android:text="@string/transfer_ownership"
+                    app:drawableStartCompat="@drawable/ic_transfer_red_24dp"
+                    style="@style/UiKit.Settings.Item.Icon"/>
+            </LinearLayout>
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="64dp"/>
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/edit_member_save"
+        android:contentDescription="@string/save"
+        style="@style/Settings.FloatingActionButton.Save"/>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

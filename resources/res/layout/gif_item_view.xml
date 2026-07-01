@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="0dp"
+    android:layout_marginBottom="8dp"
+    app:cardBackgroundColor="@color/transparent"
+    app:cardCornerRadius="4dp"
+    app:cardElevation="0dp"
+    app:strokeWidth="0dp">
+    <com.facebook.drawee.view.SimpleDraweeView
+        android:id="@+id/gif_item_image"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:placeholderImage="?attr/colorBackgroundPrimary"/>
+</androidx.cardview.widget.CardView>

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.appbar.AppBarLayout xmlns:app="http://schemas.android.com/apk/res-auto" style="@style/AppTheme.AppBarLayout.Flat.Transparent">
+    <androidx.appcompat.widget.Toolbar
+        app:navigationContentDescription="@string/back"
+        app:navigationIcon="?attr/ic_action_bar_back"
+        style="@style/AppTheme.Toolbar.Transparent"/>
+</com.google.android.material.appbar.AppBarLayout>

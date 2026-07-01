@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/feedback_sheet_container"
+    android:background="?attr/colorBackgroundSecondary"
+    style="@style/UiKit.ViewGroup.NestedScrollView">
+    <LinearLayout
+        android:layout_marginBottom="16dp"
+        style="@style/UiKit.ViewGroup.LinearLayout">
+        <FrameLayout
+            android:background="?attr/colorBackgroundTertiary"
+            style="@style/UiKit.ViewGroup.LinearLayout">
+            <TextView
+                android:id="@+id/feedback_sheet_title"
+                android:text="@string/call_feedback_sheet_title"
+                style="@style/UiKit.ListItem.Icon"/>
+            <ImageView
+                android:layout_gravity="end|center_vertical"
+                android:id="@+id/feedback_sheet_close_button"
+                android:background="?attr/bg_pressed_highlight"
+                android:padding="16dp"
+                android:src="?attr/ic_close_24dp"
+                android:contentDescription="@string/close"
+                style="@style/UiKit.ImageView"/>
+        </FrameLayout>
+        <com.discord.widgets.voice.feedback.FeedbackView
+            android:id="@+id/feedback_sheet_feedback_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+    </LinearLayout>
+</androidx.core.widget.NestedScrollView>

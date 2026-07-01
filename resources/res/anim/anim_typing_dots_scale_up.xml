@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<set xmlns:android="http://schemas.android.com/apk/res/android"
+    android:interpolator="@android:anim/accelerate_decelerate_interpolator"
+    android:fillAfter="true">
+    <scale
+        android:duration="@integer/animation_time_standard"
+        android:pivotX="50%"
+        android:pivotY="50%"
+        android:fromXScale="@integer/typing_dots_min_scale"
+        android:toXScale="@integer/typing_dots_max_scale"
+        android:fromYScale="@integer/typing_dots_min_scale"
+        android:toYScale="@integer/typing_dots_max_scale"/>
+    <alpha
+        android:duration="@integer/animation_time_standard"
+        android:fromAlpha="@integer/typing_dots_min_alpha"
+        android:toAlpha="@integer/typing_dots_max_alpha"/>
+</set>

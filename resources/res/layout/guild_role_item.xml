@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="4dp"
+    android:layout_marginBottom="4dp"
+    android:layout_marginEnd="4dp"
+    app:cardBackgroundColor="?attr/primary_700"
+    app:cardCornerRadius="4dp"
+    app:cardElevation="0dp">
+    <TextView
+        android:textAppearance="@style/UiKit.TextAppearance.Semibold"
+        android:textColor="?attr/primary_100"
+        android:ellipsize="end"
+        android:id="@+id/guild_role_item_text"
+        android:padding="8dp"
+        android:maxLines="1"
+        android:drawablePadding="8dp"
+        style="@style/UiKit.TextView.Subtext"/>
+</androidx.cardview.widget.CardView>

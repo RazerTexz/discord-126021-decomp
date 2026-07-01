@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" style="@style/UiKit.ViewGroup.LinearLayout">
+    <TextView
+        android:id="@+id/user_sheet_volume_label"
+        android:text="@string/user_profile_volume"
+        style="@style/UiKit.ListItem"/>
+    <com.discord.views.calls.VolumeSliderView
+        android:id="@+id/user_sheet_volume_slider"
+        android:paddingLeft="16dp"
+        android:paddingRight="16dp"
+        app:vsv_icon_tint="?attr/colorInteractiveNormal"
+        app:vsv_max_volume="100"
+        style="@style/UiKit.ViewGroup.LinearLayout.Horizontal"/>
+    <com.google.android.material.switchmaterial.SwitchMaterial
+        android:id="@+id/user_sheet_muted"
+        android:text="@string/mute"
+        style="@style/UiKit.ListItem.Switch"/>
+    <com.google.android.material.switchmaterial.SwitchMaterial
+        android:id="@+id/user_sheet_deafen"
+        android:text="@string/deafen"
+        style="@style/UiKit.ListItem.Switch"/>
+</LinearLayout>

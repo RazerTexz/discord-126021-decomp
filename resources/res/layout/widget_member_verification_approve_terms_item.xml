@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.discord.views.CheckedSetting xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/member_verification_rules_check"
+    app:cs_text="@string/member_verification_read_rules"
+    app:cs_text_color="?attr/colorHeaderSecondary"
+    app:cs_text_fontpath="?attr/font_primary_semibold"
+    app:cs_text_size="@dimen/uikit_textsize_medium"
+    app:cs_view_type="check"
+    style="@style/UiKit.CheckedSetting.Themed"/>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android" style="@style/UiKit.ViewGroup.CoordinatorLayout.Page">
+    <com.google.android.material.appbar.AppBarLayout style="@style/AppTheme.AppBarLayout.Flat">
+        <androidx.appcompat.widget.Toolbar style="@style/AppTheme.Toolbar"/>
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/channel_settings_permissions_add_member_name_search"
+            style="@style/UiKit.TextInputLayout.Search">
+            <com.google.android.material.textfield.TextInputEditText
+                android:hint="@string/members_search_placeholder"
+                style="@style/UiKit.TextInputLayout.EditText.SingleLine.Search"/>
+        </com.google.android.material.textfield.TextInputLayout>
+    </com.google.android.material.appbar.AppBarLayout>
+    <com.discord.app.AppViewFlipper
+        android:id="@+id/channel_settings_permissions_add_member_view_flipper"
+        android:inAnimation="@android:anim/fade_in"
+        android:outAnimation="@android:anim/fade_out"
+        style="@style/UiKit.ViewGroup.AppViewFlipper.InCoordinatorLayout">
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/channel_settings_permissions_add_member_recycler"
+            android:scrollbars="vertical"
+            style="@style/UiKit.ViewGroup.RecyclerView"/>
+        <TextView
+            android:id="@+id/no_results_text"
+            android:text="@string/guild_members_search_no_result"
+            style="@style/UiKit.TextView.NoResults"/>
+    </com.discord.app.AppViewFlipper>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

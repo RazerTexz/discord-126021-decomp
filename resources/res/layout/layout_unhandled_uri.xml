@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:background="?attr/colorBackgroundPrimary"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <TextView
+        android:padding="16dp"
+        android:layout_width="match_parent"
+        android:text="@string/unhandled_link_title"
+        style="@style/UiKit.TextView.H1.Bold"/>
+    <View style="@style/UiKit.Divider"/>
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginRight="16dp">
+        <TextView
+            android:textSize="@dimen/uikit_textsize_medium"
+            android:textColor="?attr/colorTextNormal"
+            android:text="@string/unhandled_link_body"
+            style="@style/UiKit.TextView"/>
+        <TextView
+            android:textSize="@dimen/uikit_textsize_medium"
+            android:gravity="center_vertical"
+            android:id="@+id/unhandled_uri_display"
+            android:background="?attr/selectableItemBackground"
+            android:paddingTop="10dp"
+            android:paddingBottom="10dp"
+            android:layout_width="match_parent"
+            android:drawablePadding="10dp"
+            app:drawableStartCompat="@drawable/icon_menu_copy"
+            style="@style/UiKit.TextView.Bold"/>
+    </LinearLayout>
+    <View style="@style/UiKit.Divider"/>
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/unhandled_uri_okay"
+        android:paddingLeft="32dp"
+        android:paddingRight="32dp"
+        android:layout_width="match_parent"
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginRight="15dp"
+        android:layout_marginBottom="8dp"
+        android:text="@string/okay"
+        style="@style/UiKit.Material.Button"/>
+</LinearLayout>

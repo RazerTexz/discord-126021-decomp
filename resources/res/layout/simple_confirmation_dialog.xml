@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" style="@style/UiKit.ViewGroup.Page.LinearLayout">
+    <LinearLayout
+        android:id="@+id/notice_header_container"
+        style="@style/UiKit.ViewGroup.LinearLayout">
+        <TextView
+            android:id="@+id/simple_confirmation_dialog_title"
+            android:padding="16dp"
+            style="@style/UiKit.TextView.H1.Bold"/>
+        <View style="@style/UiKit.Divider"/>
+    </LinearLayout>
+    <TextView
+        android:id="@+id/simple_confirmation_dialog_description"
+        android:paddingTop="8dp"
+        android:layout_marginBottom="8dp"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp"
+        style="@style/UiKit.TextView"/>
+    <View style="@style/UiKit.Settings.Divider"/>
+    <LinearLayout style="@style/UiKit.Dialog.ButtonContainer">
+        <com.google.android.material.button.MaterialButton
+            android:textColor="?attr/primary_200"
+            android:id="@+id/simple_confirmation_dialog_negative"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/cancel"
+            style="@style/UiKit.Material.Button.Transparent"/>
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/simple_confirmation_dialog_positive"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:text="@string/leave_server"
+            style="@style/UiKit.Material.Button"/>
+    </LinearLayout>
+</LinearLayout>

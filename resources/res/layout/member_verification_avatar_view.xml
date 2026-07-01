@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <com.facebook.drawee.view.SimpleDraweeView
+        android:id="@+id/member_verification_avatar"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:placeholderImage="@drawable/drawable_squircle_brand_500"
+        app:roundedCornerRadius="16dp"/>
+    <TextView
+        android:textColor="?attr/colorInteractiveActive"
+        android:gravity="center"
+        android:id="@+id/member_verification_text"
+        android:clickable="false"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:singleLine="true"
+        style="@style/UiKit.TextView"/>
+</merge>

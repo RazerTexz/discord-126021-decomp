@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TextView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:textSize="@dimen/uikit_textsize_small"
+    android:textColor="@color/primary_500"
+    android:id="@+id/result_count"
+    android:paddingLeft="16dp"
+    android:paddingTop="8dp"
+    android:paddingRight="16dp"
+    android:layout_width="match_parent"
+    android:textAllCaps="true"
+    android:paddingStart="16dp"
+    android:paddingEnd="16dp"
+    style="@style/UiKit.TextView.Semibold"/>

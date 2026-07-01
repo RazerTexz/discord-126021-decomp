@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" style="@style/UiKit.ViewGroup.LinearLayout">
+    <TextView
+        android:text="@string/form_label_default_notification_settings"
+        style="@style/UiKit.Settings.Item.Header"/>
+    <TextView
+        android:text="@string/form_help_default_notification_settings_mobile"
+        style="@style/UiKit.Settings.Item.SubText"/>
+    <com.discord.views.CheckedSetting
+        android:id="@+id/server_settings_overview_notification_all"
+        app:cs_text="@string/form_label_all_messages"
+        app:cs_view_type="radio"
+        style="@style/UiKit.CheckedSetting.Themed"/>
+    <com.discord.views.CheckedSetting
+        android:id="@+id/server_settings_overview_notification_only_mentions"
+        app:cs_text="@string/form_label_only_mentions"
+        app:cs_view_type="radio"
+        style="@style/UiKit.CheckedSetting.Themed"/>
+</LinearLayout>

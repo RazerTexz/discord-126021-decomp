@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/search_suggestion_item_channel_container"
+    android:background="?attr/selectableItemBackground"
+    android:padding="@dimen/settings_option_padding"
+    android:focusable="true"
+    android:clickable="true"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+    <ImageView
+        android:id="@+id/search_suggestions_item_channel_icon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_text_channel_white_24dp"
+        android:layout_centerVertical="true"
+        android:layout_marginEnd="32dp"
+        app:tint="?attr/colorInteractiveNormal"/>
+    <TextView
+        android:textSize="15sp"
+        android:textColor="?attr/colorHeaderPrimary"
+        android:gravity="center_vertical"
+        android:id="@+id/search_suggestions_item_channel_text"
+        android:singleLine="true"
+        android:layout_centerVertical="true"
+        android:layout_toEndOf="@+id/search_suggestions_item_channel_icon"
+        style="@style/UiKit.TextView.Semibold"/>
+</RelativeLayout>

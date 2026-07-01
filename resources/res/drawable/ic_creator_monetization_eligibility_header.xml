@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:drawable="@drawable/ic_guild_role_subscription_badge"
+        android:state_activated="true"/>
+    <item android:drawable="@drawable/img_member_verification_denied"/>
+</selector>
