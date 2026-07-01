@@ -1,0 +1,62 @@
+name: Decompile
+on: workflow_dispatch
+
+jobs:
+  decompile:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v7
+        with:
+          sparse-checkout: .github
+
+      - name: Set up Java
+        uses: actions/setup-java@v5
+        with:
+          java-version: 25
+          distribution: temurin
+
+      - name: Set up JADX
+        uses: dawidd6/action-download-artifact@v21
+        with:
+          repo: skylot/jadx
+          branch: master
+          workflow: build-artifacts.yml
+          name: (?<!win)$
+          name_is_regexp: true
+
+      - name: Decompile
+        run: |
+          curl -sSL -o app.apk "https://maven.aliucord.com/releases/com/discord/discord/126021/discord-126021.apk"
+          sh */bin/jadx \
+            --show-bad-code \
+            --fs-case-sensitive \
+            --respect-bytecode-access-modifiers \
+            --no-inline-anonymous \
+            --no-inline-kotlin-lambda \
+            --no-inline-methods \
+            --no-move-inner-classes \
+            --output-dir . \
+            app.apk || true
+
+      - name: Remove metadata annotations
+        run: find . -type f -name "*.java" -exec sed -i "/@Metadata(\|@kotlin.Metadata(\|import kotlin.Metadata/d" {} +
+
+      - name: Sync
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+          git add --sparse resources sources
+          git commit -m "chore: decompile"
+          git push
+
+      - name: Upload artifact
+        uses: actions/upload-artifact@v7
+        with:
+          name: output
+          path: |
+            resources
+            sources
