@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" style="@style/UiKit.ViewGroup.Page.LinearLayout">
+    <com.google.android.material.appbar.AppBarLayout style="@style/AppTheme.AppBarLayout.Flat">
+        <androidx.appcompat.widget.Toolbar style="@style/AppTheme.Toolbar"/>
+    </com.google.android.material.appbar.AppBarLayout>
+    <TextView
+        android:textSize="@dimen/uikit_textsize_medium"
+        android:textColor="?attr/colorHeaderSecondary"
+        android:paddingLeft="16dp"
+        android:paddingTop="16dp"
+        android:paddingRight="16dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/channel_permissions_moderator_description"
+        style="@style/UiKit.TextView"/>
+    <androidx.fragment.app.FragmentContainerView
+        android:id="@+id/content"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+</LinearLayout>

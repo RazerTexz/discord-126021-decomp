@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="24dp"
+    android:paddingStart="0dp"
+    android:paddingEnd="12dp">
+    <com.facebook.drawee.view.SimpleDraweeView
+        android:id="@+id/chip_image"
+        android:padding="2dp"
+        style="@style/Avatar.Medium"/>
+    <TextView
+        android:gravity="center_vertical"
+        android:id="@+id/chip_text"
+        android:singleLine="true"
+        android:layout_centerVertical="true"
+        android:layout_marginStart="5dp"
+        android:layout_toEndOf="@+id/chip_image"
+        style="@style/UiKit.TextView"/>
+</RelativeLayout>

@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" style="@style/UiKit.ViewGroup.Page.LinearLayout">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        style="@style/UiKit.ViewGroup.LinearLayout">
+        <TextView
+            android:padding="16dp"
+            android:layout_width="match_parent"
+            android:text="@string/upload_image"
+            style="@style/UiKit.TextView.H1.Bold"/>
+        <View style="@style/UiKit.Divider"/>
+    </LinearLayout>
+    <androidx.core.widget.NestedScrollView style="@style/UiKit.ViewGroup.NestedScrollView">
+        <LinearLayout
+            android:gravity="center"
+            style="@style/UiKit.ViewGroup.LinearLayout">
+            <TextView
+                android:gravity="start"
+                android:layout_gravity="start"
+                android:padding="16dp"
+                android:text="@string/upload_image_body"
+                style="@style/UiKit.TextView"/>
+            <com.facebook.drawee.view.SimpleDraweeView
+                android:id="@+id/notice_image"
+                android:layout_width="200dp"
+                android:layout_height="200dp"/>
+            <TextView
+                android:id="@+id/notice_crop"
+                android:paddingLeft="16dp"
+                android:paddingTop="16dp"
+                android:paddingRight="16dp"
+                android:paddingBottom="16dp"
+                android:text="@string/crop"
+                style="@style/UiKit.TextView.Link"/>
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+    <View style="@style/UiKit.Divider"/>
+    <LinearLayout style="@style/UiKit.Dialog.ButtonContainer">
+        <com.google.android.material.button.MaterialButton
+            android:textColor="?attr/primary_200"
+            android:id="@+id/notice_cancel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/cancel"
+            style="@style/UiKit.Material.Button.Transparent"/>
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/notice_upload"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/upload"
+            android:layout_marginStart="8dp"
+            style="@style/UiKit.Material.Button"/>
+    </LinearLayout>
+</LinearLayout>

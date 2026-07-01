@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:padding="8dp"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    style="@style/UiKit.ViewGroup.LinearLayout.Horizontal">
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/channel_sidebar_actions_search_or_threads"
+        android:text="@string/search"
+        android:drawableTop="@drawable/ic_sidebar_search_24dp"
+        app:drawableTint="?attr/colorInteractiveNormal"
+        style="@style/ChannelSideBarActions.Actions.Button"/>
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/channel_sidebar_actions_pins"
+        android:text="@string/pins"
+        android:drawableTop="@drawable/ic_sidebar_pins_on_dark_24dp"
+        style="@style/ChannelSideBarActions.Actions.Button"/>
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/channel_sidebar_actions_notifications"
+        android:text="@string/notifications"
+        android:drawableTop="@drawable/ic_sidebar_notifications_off_dark_24dp"
+        style="@style/ChannelSideBarActions.Actions.Button"/>
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/channel_sidebar_actions_settings"
+        android:text="@string/settings"
+        android:drawableTop="@drawable/ic_settings_24dp"
+        app:drawableTint="?attr/colorInteractiveNormal"
+        style="@style/ChannelSideBarActions.Actions.Button"/>
+</merge>

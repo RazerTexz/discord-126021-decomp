@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android" style="@style/UiKit.ViewGroup.CoordinatorLayout.Page">
+    <com.google.android.material.appbar.AppBarLayout style="@style/AppTheme.AppBarLayout.Flat">
+        <androidx.appcompat.widget.Toolbar style="@style/AppTheme.Toolbar"/>
+    </com.google.android.material.appbar.AppBarLayout>
+    <com.discord.app.AppViewFlipper
+        android:id="@+id/settings_boost_flipper"
+        style="@style/UiKit.ViewGroup.AppViewFlipper.InCoordinatorLayout">
+        <ProgressBar
+            android:layout_gravity="center"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+        <LinearLayout
+            android:gravity="center"
+            android:layout_height="match_parent"
+            style="@style/UiKit.ViewGroup.LinearLayout">
+            <ImageView
+                android:layout_marginBottom="8dp"
+                android:src="@drawable/img_poop_dark"
+                android:importantForAccessibility="no"
+                style="@style/UiKit.ImageView"/>
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/settings_boost_retry"
+                android:layout_width="wrap_content"
+                android:text="@string/retry"
+                style="@style/UiKit.Material.Button.Secondary"/>
+        </LinearLayout>
+        <androidx.core.widget.NestedScrollView style="@style/UiKit.ViewGroup.NestedScrollView">
+            <LinearLayout
+                android:paddingTop="24dp"
+                android:paddingBottom="16dp"
+                style="@style/UiKit.ViewGroup.LinearLayout">
+                <LinearLayout
+                    android:id="@+id/settings_boost_subtext_container"
+                    style="@style/UiKit.ViewGroup.LinearLayout">
+                    <TextView
+                        android:layout_marginLeft="16dp"
+                        android:layout_marginRight="16dp"
+                        android:text="@string/premium_guild_subscription_subtitle_mobile_1"
+                        style="@style/UiKit.TextView"/>
+                    <com.discord.utilities.view.text.LinkifiedTextView
+                        android:id="@+id/settings_boost_subtext"
+                        android:layout_marginLeft="16dp"
+                        android:layout_marginTop="16dp"
+                        android:layout_marginRight="16dp"
+                        style="@style/UiKit.TextView"/>
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/settings_boost_recycler"
+                        android:layout_marginTop="16dp"
+                        style="@style/UiKit.ViewGroup.RecyclerView"/>
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_marginTop="24dp"
+                    style="@style/UiKit.ViewGroup.LinearLayout">
+                    <include layout="@layout/view_settings_premium_guild_marketing_header"/>
+                    <include layout="@layout/view_premium_guild_features_user_old"/>
+                    <include layout="@layout/view_premium_guild_features_guild_old"/>
+                    <View
+                        android:layout_marginLeft="16dp"
+                        android:layout_marginTop="32dp"
+                        android:layout_marginRight="16dp"
+                        android:layout_marginBottom="32dp"
+                        style="@style/UiKit.Divider"/>
+                    <com.discord.views.guildboost.GuildBoostSubscriptionUpsellView
+                        android:id="@+id/settings_boost_upsell_view"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"/>
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/settings_boost_sample_guilds"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="16dp"
+                        android:layout_marginTop="32dp"
+                        android:layout_marginRight="16dp"
+                        style="@style/UiKit.ViewGroup.RecyclerView"/>
+                    <include
+                        android:id="@+id/no_guilds"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="32dp"
+                        layout="@layout/view_settings_premium_guild_no_guilds"/>
+                </LinearLayout>
+                <View
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginTop="32dp"
+                    android:layout_marginRight="16dp"
+                    android:layout_marginBottom="16dp"
+                    style="@style/UiKit.Divider"/>
+                <com.discord.views.guildboost.GuildBoostMarketingView
+                    android:id="@+id/settings_boost_marketing_view"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+            </LinearLayout>
+        </androidx.core.widget.NestedScrollView>
+    </com.discord.app.AppViewFlipper>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

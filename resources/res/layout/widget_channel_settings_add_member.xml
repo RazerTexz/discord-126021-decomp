@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_height="match_parent"
+    style="@style/UiKit.ViewGroup.CoordinatorLayout">
+    <LinearLayout
+        android:fitsSystemWindows="true"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="com.discord.app.AppScrollingNestedViewBehavior"
+        style="@style/UiKit.ViewGroup.LinearLayout">
+        <com.discord.views.SearchInputView
+            android:id="@+id/search_input"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="14dp"
+            android:layout_marginRight="16dp"
+            android:layout_marginBottom="14dp"
+            app:siv_hint="@string/private_channel_add_members_modal_search_placeholder_mobile"/>
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recycler"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+    </LinearLayout>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

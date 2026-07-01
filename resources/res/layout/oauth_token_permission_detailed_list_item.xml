@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:paddingTop="4dp"
+    android:paddingBottom="8dp"
+    style="@style/UiKit.ViewGroup.ConstraintLayout">
+    <ImageView
+        android:id="@+id/oauth_token_permission_detailed_icon"
+        android:layout_margin="4dp"
+        android:src="@drawable/ic_check_circle_green_24dp"
+        android:importantForAccessibility="no"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        style="@style/UiKit.ImageView"/>
+    <TextView
+        android:textSize="@dimen/uikit_textsize_large"
+        android:id="@+id/oauth_token_permission_detailed_name"
+        android:layout_width="0dp"
+        android:layout_marginStart="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0"
+        app:layout_constraintStart_toEndOf="@+id/oauth_token_permission_detailed_icon"
+        app:layout_constraintTop_toBottomOf="@+id/oauth_token_permission_detailed_icon"
+        app:layout_constraintTop_toTopOf="@+id/oauth_token_permission_detailed_icon"
+        style="@style/UiKit.TextView.H2"/>
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:paddingLeft="18dp"
+    android:paddingRight="18dp">
+    <ImageView
+        android:id="@+id/add_icon"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:src="@drawable/ic_add_circle"
+        android:importantForAccessibility="no"
+        android:layout_marginEnd="18dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/label"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:tint="?attr/primary_300"/>
+    <TextView
+        android:textSize="@dimen/uikit_textsize_large"
+        android:textColor="?attr/colorInteractiveActive"
+        android:id="@+id/label"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_add_24dp"
+        android:fontFamily="?attr/font_primary_semibold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/more_arrow"
+        app:layout_constraintStart_toEndOf="@+id/add_icon"
+        app:layout_constraintTop_toTopOf="parent"/>
+    <ImageView
+        android:id="@+id/more_arrow"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:src="@drawable/ic_arrow_right"
+        android:importantForAccessibility="no"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/label"
+        app:layout_constraintTop_toTopOf="parent"
+        app:tint="?attr/primary_300"/>
+</merge>

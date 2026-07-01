@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+    <com.discord.views.sticker.StickerView
+        android:id="@+id/sticker_full_size_sticker"
+        android:layout_width="@dimen/sticker_length"
+        android:layout_height="@dimen/sticker_length"/>
+</FrameLayout>

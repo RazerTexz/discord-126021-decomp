@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_height="match_parent"
+    style="@style/UiKit.ViewGroup">
+    <ProgressBar
+        android:layout_gravity="center"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:indeterminate="true"
+        android:indeterminateTint="?attr/primary_100"
+        android:indeterminateTintMode="src_in"/>
+</FrameLayout>

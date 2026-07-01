@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" style="@style/FriendsList.ItemHeader">
+    <TextView
+        android:id="@+id/friends_list_pending_item_header_text"
+        style="@style/FriendsList.ItemHeader.Title"/>
+    <TextView
+        android:id="@+id/friends_list_expandable_header_button"
+        android:text="@string/friends_pending_request_expand"
+        app:drawableEndCompat="@drawable/ic_arrow_right_24dp"
+        app:drawableTint="?attr/colorHeaderSecondary"
+        style="@style/FriendsList.ItemHeader.ExpandButton"/>
+</FrameLayout>

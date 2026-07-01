@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:gravity="center_vertical"
+    android:background="?attr/selectableItemBackground"
+    style="@style/UiKit.ViewGroup.LinearLayout.Horizontal">
+    <com.facebook.drawee.view.SimpleDraweeView
+        android:id="@+id/item_icon_iv"
+        android:importantForAccessibility="no"
+        android:layout_marginEnd="16dp"
+        app:placeholderImage="?attr/colorPrimaryCircle"
+        style="@style/Avatar.Standard"/>
+    <TextView
+        android:textAppearance="@style/UiKit.TextAppearance.Semibold"
+        android:textSize="@dimen/uikit_textsize_large"
+        android:textColor="?attr/colorHeaderPrimary"
+        android:id="@+id/item_name_tv"
+        android:layout_width="0dp"
+        android:layout_weight="1"
+        android:layout_marginEnd="8dp"
+        style="@style/UiKit.TextView.Subtext.SingleLine"/>
+    <com.google.android.material.button.MaterialButton
+        android:textColor="@color/status_green_600"
+        android:id="@+id/item_invite_btn"
+        android:paddingTop="0dp"
+        android:paddingBottom="0dp"
+        android:layout_width="wrap_content"
+        android:minWidth="64dp"
+        android:text="@string/invite_friend_modal_invite"
+        android:textAllCaps="false"
+        style="@style/UiKit.Material.Button.Green.Outline"/>
+    <com.google.android.material.button.MaterialButton
+        android:textColor="?attr/primary_300_alpha_30"
+        android:id="@+id/item_sent"
+        android:paddingTop="0dp"
+        android:paddingBottom="0dp"
+        android:visibility="gone"
+        android:minWidth="64dp"
+        android:text="@string/invite_friend_modal_sent"
+        android:textAllCaps="false"
+        style="@style/UiKit.Material.Button.Transparent.Fit"/>
+</LinearLayout>

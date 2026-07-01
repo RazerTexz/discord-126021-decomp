@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:paddingTop="16dp"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <TextView
+        android:id="@+id/label"
+        android:layout_height="wrap_content"
+        android:text="@string/title"
+        android:layout_marginEnd="16dp"
+        style="@style/UiKit.Stage.SectionHeader"/>
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:counterEnabled="true"
+        app:errorEnabled="true"
+        app:hintEnabled="false"
+        style="@style/UiKit.TextInputLayout">
+        <com.google.android.material.textfield.TextInputEditText
+            android:gravity="start"
+            android:id="@+id/edit_text"
+            android:paddingTop="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            style="@style/UiKit.TextInputLayout.EditText"/>
+    </com.google.android.material.textfield.TextInputLayout>
+</LinearLayout>

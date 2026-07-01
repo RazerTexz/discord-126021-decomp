@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ImageView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/user_sheet_badge_image"
+    android:layout_width="20dp"
+    android:layout_height="20dp"
+    android:layout_marginTop="6dp"
+    android:layout_marginBottom="0dp"
+    android:scaleType="fitCenter"
+    android:layout_marginStart="6dp"
+    android:layout_marginEnd="0dp"
+    style="@style/UiKit.ImageView"/>

@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" style="@style/UiKit.ViewGroup.Page.LinearLayout">
+    <LinearLayout
+        android:id="@+id/notice_header_container"
+        style="@style/UiKit.ViewGroup.LinearLayout">
+        <TextView
+            android:id="@+id/guild_boost_uncancel_header"
+            android:padding="16dp"
+            android:text="@string/premium_guild_subscription_inventory_uncancel_title_mobile"
+            style="@style/UiKit.TextView.H1.Bold"/>
+        <View style="@style/UiKit.Divider"/>
+    </LinearLayout>
+    <com.discord.app.AppViewFlipper
+        android:id="@+id/guild_boost_uncancel_flipper"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <ProgressBar
+            android:layout_gravity="center"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@style/UiKit.ProgressBar.White"/>
+        <androidx.core.widget.NestedScrollView style="@style/UiKit.ViewGroup.NestedScrollView">
+            <LinearLayout
+                android:paddingLeft="16dp"
+                android:paddingTop="8dp"
+                android:paddingRight="16dp"
+                style="@style/UiKit.ViewGroup.LinearLayout">
+                <LinearLayout style="@style/UiKit.ViewGroup.LinearLayout">
+                    <ImageView
+                        android:layout_gravity="center_horizontal"
+                        android:id="@+id/guild_boost_uncancel_image"
+                        android:visibility="gone"
+                        android:layout_marginTop="16dp"
+                        android:layout_marginBottom="16dp"
+                        android:src="@drawable/img_nitro_uncancel"
+                        android:importantForAccessibility="no"
+                        style="@style/UiKit.ImageView"/>
+                    <TextView
+                        android:id="@+id/guild_boost_uncancel_body"
+                        android:layout_marginBottom="8dp"
+                        android:text="@string/premium_guild_subscription_inventory_uncancel_description"
+                        style="@style/UiKit.TextView"/>
+                    <TextView
+                        android:textColor="@color/status_red_500"
+                        android:id="@+id/guild_boost_uncancel_error"
+                        android:visibility="gone"
+                        android:layout_marginTop="8dp"
+                        android:text="@string/premium_guild_subscription_inventory_uncancel_error"
+                        style="@style/UiKit.TextView"/>
+                </LinearLayout>
+            </LinearLayout>
+        </androidx.core.widget.NestedScrollView>
+    </com.discord.app.AppViewFlipper>
+    <View style="@style/UiKit.Settings.Divider"/>
+    <LinearLayout style="@style/UiKit.Dialog.ButtonContainer">
+        <com.google.android.material.button.MaterialButton
+            android:textColor="?attr/colorInteractiveActive"
+            android:id="@+id/guild_boost_uncancel_nevermind"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:maxWidth="150dp"
+            android:text="@string/nevermind"
+            style="@style/UiKit.Material.Button.Transparent"/>
+        <com.discord.views.LoadingButton
+            android:layout_gravity="center_vertical"
+            android:id="@+id/guild_boost_uncancel_confirm"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            app:lb_progress_color="@color/white"
+            app:lb_text="@string/premium_guild_subscription_inventory_uncancel_button_mobile"
+            app:lb_text_color="@drawable/button_text_color_primary_100"/>
+    </LinearLayout>
+</LinearLayout>

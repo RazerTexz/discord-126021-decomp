@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:background="?attr/selectableItemBackground"
+    android:paddingTop="4dp"
+    android:paddingBottom="4dp"
+    android:layout_marginBottom="16dp"
+    android:paddingStart="16dp"
+    android:paddingEnd="16dp"
+    style="@style/UiKit.ViewGroup.RelativeLayout">
+    <LinearLayout
+        android:layout_centerVertical="true"
+        android:layout_toStartOf="@+id/report_reason_radio"
+        style="@style/UiKit.ViewGroup.LinearLayout">
+        <TextView
+            android:id="@+id/report_reason_header"
+            style="@style/UiKit.TextView.H2"/>
+        <TextView
+            android:id="@+id/report_reason_descriptipn"
+            android:layout_marginTop="4dp"
+            style="@style/UiKit.TextView.Subtext"/>
+    </LinearLayout>
+    <com.google.android.material.radiobutton.MaterialRadioButton
+        android:id="@+id/report_reason_radio"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:paddingStart="0dp"
+        android:paddingEnd="0dp"
+        android:layout_marginStart="16dp"
+        android:layout_alignParentEnd="true"/>
+</RelativeLayout>

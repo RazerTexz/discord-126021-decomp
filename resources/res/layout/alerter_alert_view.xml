@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/flClickShield"
+    android:background="@android:color/transparent"
+    android:clickable="false"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <LinearLayout
+        android:orientation="vertical"
+        android:id="@+id/llAlertBackground"
+        android:background="@android:color/darker_gray"
+        android:paddingTop="@dimen/alerter_alert_view_padding_top"
+        android:paddingBottom="@dimen/alerter_padding_default"
+        android:focusable="true"
+        android:clickable="true"
+        android:clipToPadding="false"
+        android:foreground="?android:attr/selectableItemBackground"
+        android:paddingStart="@dimen/alerter_padding_default"
+        android:paddingEnd="@dimen/alerter_padding_default"
+        style="@style/AlertStyle">
+        <ViewStub
+            android:id="@+id/vAlertContentContainer"
+            android:inflatedId="@+id/vAlertContentContainer"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+        <LinearLayout
+            android:gravity="end"
+            android:orientation="horizontal"
+            android:id="@+id/llButtonContainer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+    </LinearLayout>
+</FrameLayout>

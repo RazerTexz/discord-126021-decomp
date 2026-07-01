@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" style="@style/UiKit.ViewGroup.LinearLayout">
+    <TextView
+        android:id="@+id/notification_mute_settings_mute_item"
+        android:text="@string/form_label_mute_server"
+        app:drawableEndCompat="?attr/ic_navigate_next"
+        style="@style/UiKit.Settings.Item"/>
+    <TextView
+        android:id="@+id/notification_mute_settings_mute_item_status"
+        style="@style/UiKit.Settings.Item.Addition"/>
+    <TextView
+        android:id="@+id/notification_mute_settings_mute_item_description"
+        style="@style/UiKit.Settings.Item.Addition"/>
+</LinearLayout>

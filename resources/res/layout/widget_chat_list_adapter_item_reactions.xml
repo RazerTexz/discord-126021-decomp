@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+    <View
+        android:id="@+id/chat_list_adapter_item_highlighted_bg"
+        android:background="?attr/theme_chat_mentioned_me"
+        android:visibility="gone"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+    <View
+        android:id="@+id/chat_list_adapter_item_gutter_bg"
+        android:background="@color/status_yellow_500"
+        android:layout_width="2dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/chat_list_adapter_item_highlighted_bg"/>
+    <com.google.android.flexbox.FlexboxLayout
+        android:id="@+id/chat_list_item_reactions"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:layout_marginBottom="4dp"
+        android:layout_marginStart="58dp"
+        android:layout_marginEnd="15dp"
+        app:dividerDrawable="@drawable/reactions_divider"
+        app:flexWrap="wrap"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_minHeight="24dp"
+        app:layout_minWidth="47dp"
+        app:showDivider="middle"/>
+</androidx.constraintlayout.widget.ConstraintLayout>

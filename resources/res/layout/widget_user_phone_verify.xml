@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android" style="@style/UiKit.ViewGroup.Page">
+    <ScrollView
+        android:layout_height="match_parent"
+        android:layout_above="@+id/phone_digit_verification_view"
+        style="@style/UiKit.ViewGroup.ScrollView.Page">
+        <LinearLayout
+            android:gravity="center"
+            android:layout_gravity="center"
+            style="@style/UiKit.ViewGroup.LinearLayout">
+            <com.airbnb.lottie.LottieAnimationView style="@style/UiKit.Anim.Verify.By.Phone"/>
+            <LinearLayout style="@style/UiKit.Copy">
+                <TextView
+                    android:text="@string/verification_phone_title"
+                    style="@style/UiKit.TextView.H1"/>
+                <TextView
+                    android:gravity="center"
+                    android:layout_marginTop="4dp"
+                    android:text="@string/verification_phone_description"
+                    style="@style/UiKit.TextView"/>
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+    <com.discord.views.CodeVerificationView
+        android:id="@+id/phone_digit_verification_view"
+        android:paddingBottom="16dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"/>
+    <com.google.android.material.appbar.AppBarLayout style="@style/AppTheme.AppBarLayout.Flat.Transparent">
+        <androidx.appcompat.widget.Toolbar style="@style/AppTheme.Toolbar.Transparent"/>
+    </com.google.android.material.appbar.AppBarLayout>
+    <ImageView
+        android:id="@+id/close_button"
+        android:padding="16dp"
+        android:foreground="?attr/selectableItemBackgroundBorderless"
+        android:src="?attr/ic_close_24dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentRight="true"
+        android:contentDescription="@string/close"
+        style="@style/UiKit.ImageView"/>
+    <com.discord.utilities.dimmer.DimmerView
+        android:id="@+id/dimmer_view"
+        style="@style/UiKit.DimmerView"/>
+</RelativeLayout>

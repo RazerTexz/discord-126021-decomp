@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android" style="@style/FriendsList.ItemHeader">
+    <TextView
+        android:id="@+id/friends_list_item_header_text"
+        style="@style/FriendsList.ItemHeader.Title"/>
+</FrameLayout>

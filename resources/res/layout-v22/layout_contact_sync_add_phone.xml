@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:paddingLeft="16dp"
+    android:paddingRight="16dp"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingHorizontal="16dp">
+    <TextView
+        android:textSize="@dimen/uikit_textsize_xxlarge"
+        android:textColor="?attr/colorHeaderPrimary"
+        android:id="@+id/contact_sync_add_phone_title"
+        android:text="@string/contact_sync_enter_phone_number_title"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        style="@style/UiKit.TextView.H1.Bold"/>
+    <TextView
+        android:textColor="?attr/colorHeaderSecondary"
+        android:id="@+id/contact_sync_add_phone_subtitle"
+        android:layout_marginTop="16dp"
+        android:text="@string/contact_sync_enter_phone_number_description"
+        android:lineSpacingMultiplier="1"
+        android:textAlignment="center"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/contact_sync_add_phone_title"
+        style="@style/UiKit.TextView"/>
+    <com.discord.views.phone.PhoneOrEmailInputView
+        android:id="@+id/contact_sync_add_phone_input"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        app:force_mode="phone"
+        app:hint="@string/phone_verification_phone_label"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/contact_sync_add_phone_subtitle"/>
+    <com.google.android.material.button.MaterialButton
+        android:enabled="false"
+        android:id="@+id/contact_sync_add_phone_next"
+        android:text="@string/next"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/contact_sync_add_phone_input"
+        style="@style/UiKit.User.Phone.Manage.Confirm"/>
+</androidx.constraintlayout.widget.ConstraintLayout>

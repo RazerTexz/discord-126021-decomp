@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" style="@style/UiKit.ViewGroup.Page">
+    <com.google.android.material.appbar.AppBarLayout style="@style/AppTheme.AppBarLayout.Flat">
+        <androidx.appcompat.widget.Toolbar
+            app:navigationContentDescription="@string/close"
+            app:navigationIcon="?attr/ic_action_bar_close"
+            style="@style/AppTheme.Toolbar.Transparent"/>
+    </com.google.android.material.appbar.AppBarLayout>
+    <androidx.core.widget.NestedScrollView style="@style/UiKit.ViewGroup.NestedScrollView.AppBarScrollingViewBehavior">
+        <LinearLayout
+            android:layout_height="match_parent"
+            android:baselineAligned="false"
+            android:paddingStart="16dp"
+            android:paddingEnd="16dp"
+            style="@style/UiKit.ViewGroup.LinearLayout">
+            <com.discord.views.ScreenTitleView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="24dp"
+                app:stv_subtitle="@string/join_server_description_mobile_refresh"
+                app:stv_title="@string/join_server_title_mobile_refresh"/>
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/guild_join_invite"
+                android:layout_marginBottom="16dp"
+                android:hint="@string/form_label_invite_link"
+                app:endIconMode="clear_text"
+                style="@style/UiKit.TextInputLayout">
+                <com.google.android.material.textfield.TextInputEditText
+                    android:inputType="textUri"
+                    android:imeOptions="actionDone"
+                    style="@style/UiKit.TextInputLayout.EditText">
+                    <requestFocus/>
+                </com.google.android.material.textfield.TextInputEditText>
+            </com.google.android.material.textfield.TextInputLayout>
+            <include layout="@layout/widget_guild_join_invite_examples"/>
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/guild_join_action_btn"
+                android:layout_marginTop="16dp"
+                android:text="@string/nuf_join_server_button"
+                style="@style/UiKit.AuthButton.Material"/>
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+    <ImageView
+        android:layout_gravity="bottom|center_horizontal"
+        android:layout_marginBottom="4dp"
+        android:src="?attr/img_wumpus_tophat"
+        android:contentDescription="@string/join_server_button_cta_mobile"
+        style="@style/UiKit.ImageView.HideInLandscape"/>
+    <com.discord.utilities.dimmer.DimmerView style="@style/UiKit.DimmerView"/>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

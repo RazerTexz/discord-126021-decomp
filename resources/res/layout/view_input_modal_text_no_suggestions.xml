@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.textfield.TextInputLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/view_input"
+    android:layout_margin="8dp"
+    style="@style/UiKit.TextInputLayout.Primary">
+    <com.google.android.material.textfield.TextInputEditText
+        android:inputType="textNoSuggestions"
+        style="@style/UiKit.TextInputLayout.EditText.SingleLine"/>
+</com.google.android.material.textfield.TextInputLayout>

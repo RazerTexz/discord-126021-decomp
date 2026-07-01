@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="?attr/colorBackgroundSecondary"
+    android:layout_height="match_parent"
+    style="@style/UiKit.ViewGroup.CoordinatorLayout.Page">
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/gif_search_app_bar"
+        android:background="@color/transparent"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        style="@style/AppTheme.AppBarLayout.Flat">
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/gif_search_toolbar"
+            android:layout_height="wrap_content"
+            android:minHeight="0dp"
+            app:contentInsetStart="0dp"
+            style="@style/AppTheme.Toolbar.Transparent">
+            <com.discord.views.SearchInputView
+                android:id="@+id/search_input"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="12dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginRight="12dp"
+                android:layout_marginBottom="16dp"
+                app:siv_hint="@string/search_tenor"
+                app:siv_search_content_description="@string/search_tenor"/>
+        </androidx.appcompat.widget.Toolbar>
+    </com.google.android.material.appbar.AppBarLayout>
+    <com.discord.app.AppViewFlipper
+        android:id="@+id/gif_search_view_flipper"
+        style="@style/UiKit.ViewGroup.AppViewFlipper.InCoordinatorLayout">
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/gif_search_gif_recycler"
+            android:paddingLeft="12dp"
+            android:paddingRight="12dp"
+            android:layout_height="match_parent"
+            style="@style/UiKit.ViewGroup.RecyclerView"/>
+        <com.discord.widgets.chat.input.gifpicker.GifLoadingView
+            android:id="@+id/gif_search_loading_view"
+            android:paddingLeft="12dp"
+            android:paddingRight="12dp"
+            android:layout_height="match_parent"
+            app:glv_is_staggered="true"
+            style="@style/UiKit.ViewGroup.RecyclerView"/>
+    </com.discord.app.AppViewFlipper>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

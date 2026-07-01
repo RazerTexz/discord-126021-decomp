@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <com.discord.app.AppViewFlipper
+        android:id="@+id/friends_list_flipper"
+        android:background="?attr/colorBackgroundPrimary"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/action_bar_toolbar_layout">
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/friends_list_recycler"
+            android:background="?attr/colorBackgroundPrimary"
+            android:scrollbars="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            style="@style/UiKit.ViewGroup.RecyclerView"/>
+        <ScrollView
+            android:layout_gravity="center"
+            style="@style/UiKit.ViewGroup.ScrollView">
+            <com.discord.widgets.friends.EmptyFriendsStateView
+                android:id="@+id/friends_list_empty_friends_state_view"
+                android:padding="16dp"
+                app:ef_title_text_size="@dimen/uikit_textsize_xlarge"
+                style="@style/UiKit.ViewGroup"/>
+        </ScrollView>
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/friends_list_loading"
+            android:background="?attr/colorBackgroundPrimary"
+            android:scrollbars="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            style="@style/UiKit.ViewGroup.RecyclerView"/>
+    </com.discord.app.AppViewFlipper>
+    <com.google.android.material.appbar.AppBarLayout style="@style/AppTheme.AppBarLayout">
+        <androidx.appcompat.widget.Toolbar
+            app:contentInsetStartWithNavigation="0dp"
+            style="@style/AppTheme.Toolbar"/>
+    </com.google.android.material.appbar.AppBarLayout>
+</RelativeLayout>

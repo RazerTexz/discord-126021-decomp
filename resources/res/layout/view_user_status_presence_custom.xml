@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:gravity="center_vertical"
+    android:background="?attr/bg_pressed_highlight"
+    android:padding="16dp"
+    android:focusable="true"
+    style="@style/UiKit.ViewGroup.LinearLayout.Horizontal">
+    <com.facebook.drawee.view.SimpleDraweeView
+        android:id="@+id/user_status_presence_custom_emoji"
+        android:layout_width="@dimen/custom_status_emoji_preview_size"
+        android:layout_height="@dimen/custom_status_emoji_preview_size"
+        android:layout_marginEnd="16dp"
+        app:placeholderImage="@drawable/ic_smiley_desaturated"/>
+    <TextView
+        android:textColor="?attr/primary_100"
+        android:id="@+id/user_status_presence_custom_text"
+        android:layout_width="0dp"
+        android:singleLine="true"
+        android:layout_weight="1"
+        style="@style/UiKit.TextView.Large"/>
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/user_status_presence_custom_clear"
+        android:src="?attr/ic_close_24dp"
+        android:contentDescription="@string/custom_status_clear_custom_status"
+        android:layout_marginStart="16dp"
+        app:tint="?attr/primary_300"
+        style="@style/UiKit.ImageView.Clickable"/>
+</LinearLayout>

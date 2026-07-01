@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:background="?attr/colorBackgroundSecondary"
+    style="@style/UiKit.ViewGroup.Page.LinearLayout">
+    <com.google.android.material.appbar.AppBarLayout
+        android:background="?attr/colorBackgroundSecondary"
+        style="@style/AppTheme.AppBarLayout">
+        <androidx.appcompat.widget.Toolbar style="@style/AppTheme.Toolbar"/>
+    </com.google.android.material.appbar.AppBarLayout>
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/audit_log_filter_input"
+        style="@style/UiKit.TextInputLayout.Search">
+        <com.google.android.material.textfield.TextInputEditText style="@style/UiKit.TextInputLayout.EditText.SingleLine.Search"/>
+    </com.google.android.material.textfield.TextInputLayout>
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/audit_log_filter_recycler"
+        android:minHeight="200dp"
+        style="@style/UiKit.ViewGroup.RecyclerView"/>
+</LinearLayout>

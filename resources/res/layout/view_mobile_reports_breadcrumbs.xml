@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge xmlns:android="http://schemas.android.com/apk/res/android"
+    android:gravity="start|top"
+    android:orientation="vertical">
+    <TextView
+        android:textSize="@dimen/uikit_textsize_small"
+        android:textColor="?attr/colorHeaderPrimary"
+        android:layout_width="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:text="@string/mobile_reports_breadcrumbs_title"
+        style="@style/UiKit.TextView.Bold"/>
+</merge>

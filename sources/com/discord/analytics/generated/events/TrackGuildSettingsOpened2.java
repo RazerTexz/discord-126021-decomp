@@ -1,0 +1,9 @@
+package com.discord.analytics.generated.events;
+
+import com.discord.api.science.AnalyticsSchema;
+
+/* JADX INFO: renamed from: com.discord.analytics.generated.events.TrackGuildSettingsOpenedReceiver, reason: use source file name */
+/* JADX INFO: compiled from: TrackGuildSettingsOpened.kt */
+/* JADX INFO: loaded from: classes.dex */
+public interface TrackGuildSettingsOpened2 extends AnalyticsSchema {
+}

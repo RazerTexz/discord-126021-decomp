@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" style="@style/UiKit.ViewGroup.LinearLayout">
+    <TextView
+        android:ellipsize="end"
+        android:id="@+id/log_message"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginRight="16dp"
+        android:maxLines="2"
+        style="@style/UiKit.TextView"/>
+    <View style="@style/UiKit.Settings.Divider"/>
+</LinearLayout>

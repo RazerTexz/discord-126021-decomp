@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" style="@style/UiKit.ViewGroup.Page">
+    <com.google.android.material.appbar.AppBarLayout style="@style/AppTheme.AppBarLayout.Flat">
+        <androidx.appcompat.widget.Toolbar style="@style/AppTheme.Toolbar"/>
+    </com.google.android.material.appbar.AppBarLayout>
+    <ScrollView
+        app:layout_behavior="@string/action_bar_scrolling_view_behavior"
+        style="@style/UiKit.ViewGroup.ScrollView">
+        <LinearLayout
+            android:paddingLeft="16dp"
+            android:paddingTop="8dp"
+            android:paddingRight="16dp"
+            style="@style/UiKit.ViewGroup.LinearLayout">
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/edit_account_name_wrap"
+                android:hint="@string/contact_sync_enter_name_input_header"
+                style="@style/UiKit.TextInputLayout.Primary">
+                <com.google.android.material.textfield.TextInputEditText
+                    android:imeOptions="actionDone"
+                    style="@style/UiKit.TextInputLayout.EditText.SingleLine"/>
+            </com.google.android.material.textfield.TextInputLayout>
+            <TextView
+                android:textColor="?attr/colorHeaderSecondary"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:layout_marginBottom="16dp"
+                android:text="@string/contact_sync_update_name_subtitle"
+                android:layout_marginVertical="16dp"
+                style="@style/UiKit.TextView"/>
+            <com.google.android.material.button.MaterialButton
+                android:textColor="@color/status_red"
+                android:id="@+id/settings_account_name_clear"
+                android:padding="0dp"
+                android:minWidth="0dp"
+                android:text="@string/contact_sync_remove_name"
+                style="@style/UiKit.Material.Button.Transparent.Fit"/>
+        </LinearLayout>
+    </ScrollView>
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/settings_account_save"
+        android:contentDescription="@string/save"
+        style="@style/Settings.FloatingActionButton.Save"/>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

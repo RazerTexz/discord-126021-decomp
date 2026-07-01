@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.facebook.drawee.view.SimpleDraweeView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:theme="@style/AppTheme.Dark"
+    android:id="@+id/overlay_bubble_iv"
+    android:background="@drawable/drawable_circle_transparent"
+    android:layout_width="@dimen/overlay_bubble_size"
+    android:layout_height="@dimen/overlay_bubble_size"
+    android:layout_margin="8dp"
+    android:elevation="4dp"
+    style="@style/Avatar.Large"/>

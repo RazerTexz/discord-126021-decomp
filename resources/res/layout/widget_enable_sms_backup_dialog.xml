@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" style="@style/UiKit.ViewGroup.Page.LinearLayout">
+    <LinearLayout
+        android:id="@+id/notice_header_container"
+        style="@style/UiKit.ViewGroup.LinearLayout">
+        <TextView
+            android:id="@+id/enable_sms_backup_header"
+            android:padding="16dp"
+            android:text="@string/mfa_sms_auth"
+            style="@style/UiKit.TextView.H1.Bold"/>
+        <View style="@style/UiKit.Divider"/>
+    </LinearLayout>
+    <androidx.core.widget.NestedScrollView style="@style/UiKit.ViewGroup.NestedScrollView">
+        <LinearLayout
+            android:paddingLeft="16dp"
+            android:paddingTop="8dp"
+            android:paddingRight="16dp"
+            style="@style/UiKit.ViewGroup.LinearLayout">
+            <TextView
+                android:id="@+id/enable_sms_backup_body"
+                android:layout_marginBottom="8dp"
+                style="@style/UiKit.TextView"/>
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/enable_sms_backup_password_wrap"
+                android:hint="@string/form_label_password"
+                style="@style/UiKit.TextInputLayout.Primary.Password">
+                <com.google.android.material.textfield.TextInputEditText
+                    android:imeOptions="actionDone"
+                    style="@style/UiKit.TextInputLayout.EditText.SingleLine.Password"/>
+            </com.google.android.material.textfield.TextInputLayout>
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+    <View style="@style/UiKit.Settings.Divider"/>
+    <LinearLayout style="@style/UiKit.Dialog.ButtonContainer">
+        <com.google.android.material.button.MaterialButton
+            android:textColor="?attr/primary_100"
+            android:id="@+id/enable_sms_backup_cancel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/cancel"
+            style="@style/UiKit.Material.Button.Transparent"/>
+        <com.discord.views.LoadingButton
+            android:layout_gravity="center_vertical"
+            android:id="@+id/enable_sms_backup_confirm"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            app:lb_background_color="@color/status_green_600"
+            app:lb_progress_color="@color/white"
+            app:lb_text="@string/enable"
+            app:lb_text_color="@drawable/button_text_color_primary_100"/>
+    </LinearLayout>
+</LinearLayout>

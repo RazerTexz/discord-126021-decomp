@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.discord.widgets.channels.threads.browser.ThreadBrowserThreadView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/thread_view"
+    android:background="?attr/theme_thread_browser_fg"
+    android:focusable="true"
+    android:clickable="true"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="1dp"/>

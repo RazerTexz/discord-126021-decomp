@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="@dimen/chat_input_sticker_size"
+    android:layout_height="@dimen/chat_input_sticker_size">
+    <com.discord.views.sticker.StickerView
+        android:id="@+id/sticker_picker_sticker"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+</FrameLayout>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <com.facebook.drawee.view.SimpleDraweeView
+        android:id="@+id/sticker_view_imageview"
+        android:background="?attr/selectableItemBackground"
+        android:padding="4dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+    <com.discord.rlottie.RLottieImageView
+        android:id="@+id/sticker_view_lottie"
+        android:background="?attr/selectableItemBackground"
+        android:padding="4dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:actualImageScaleType="fitCenter"
+        app:placeholderImage="?attr/theme_expression_picker_item_placeholder"
+        app:placeholderImageScaleType="fitCenter"/>
+    <ImageView
+        android:id="@+id/sticker_view_placeholder"
+        android:padding="8dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:src="?attr/theme_expression_picker_item_placeholder"
+        android:adjustViewBounds="true"/>
+</merge>

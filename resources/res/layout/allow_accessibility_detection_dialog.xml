@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" style="@style/UiKit.ViewGroup.Page.LinearLayout">
+    <TextView
+        android:textAppearance="@style/UiKit.TextAppearance.Bold"
+        android:id="@+id/view_dialog_confirmation_header"
+        android:padding="16dp"
+        android:text="@string/accessibility_detection_modal_header"
+        style="@style/UiKit.TextView"/>
+    <View style="@style/UiKit.Divider"/>
+    <TextView
+        android:textAppearance="@style/UiKit.TextAppearance"
+        android:id="@+id/accessibility_detection_body_text"
+        android:padding="16dp"
+        android:text="@string/accessibility_detection_modal_body"
+        style="@style/UiKit.TextView"/>
+    <View style="@style/UiKit.Settings.Divider"/>
+    <View style="@style/UiKit.Divider"/>
+    <LinearLayout style="@style/UiKit.Dialog.ButtonContainer">
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/accessibility_detection_disable"
+            android:text="@string/accessibility_detection_modal_decline_label"
+            style="@style/UiKit.Material.Button.Transparent.Fit"/>
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/accessibility_detection_enable"
+            android:text="@string/accessibility_detection_modal_accept_label"
+            style="@style/UiKit.Material.Button.Fit"/>
+    </LinearLayout>
+</LinearLayout>

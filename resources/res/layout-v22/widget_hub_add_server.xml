@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" style="@style/UiKit.ViewGroup.Page.LinearLayout">
+    <com.google.android.material.appbar.AppBarLayout style="@style/AppTheme.AppBarLayout.Flat">
+        <androidx.appcompat.widget.Toolbar
+            app:navigationContentDescription="@string/close"
+            app:navigationIcon="?attr/ic_action_bar_close"
+            style="@style/AppTheme.Toolbar.Transparent"/>
+    </com.google.android.material.appbar.AppBarLayout>
+    <com.discord.views.ScreenTitleView
+        android:id="@+id/header"
+        android:padding="16dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:stv_subtitle="@string/hub_choose_guild_subtitle"
+        app:stv_title="@string/hub_choose_guild_title"/>
+    <com.discord.views.segmentedcontrol.SegmentedControlContainer
+        android:id="@+id/segmented_control"
+        android:background="@drawable/drawable_segmented_control_container_bg"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginBottom="24dp"
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginVertical="24dp"
+        style="@style/UiKit.ViewGroup.LinearLayout.Horizontal">
+        <com.discord.views.segmentedcontrol.CardSegment
+            android:id="@+id/segmented_control_guilds_not_added"
+            style="@style/SegmentedControlTabCard"/>
+        <com.discord.views.segmentedcontrol.CardSegment
+            android:id="@+id/segmented_control_guilds_added"
+            style="@style/SegmentedControlTabCard"/>
+    </com.discord.views.segmentedcontrol.SegmentedControlContainer>
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recycler_view"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"/>
+    <LinearLayout
+        android:orientation="vertical"
+        android:padding="16dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:elevation="@dimen/app_elevation">
+        <com.discord.views.ScreenTitleView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            app:stv_title="Want to start a new group?"/>
+        <com.google.android.material.button.MaterialButton
+            android:textColor="@color/white"
+            android:layout_gravity="center_vertical"
+            android:id="@+id/discord_u_add_server_create_server"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/hub_create_guild_cta"
+            style="@style/UiKit.Material.Button.Secondary"/>
+    </LinearLayout>
+</LinearLayout>

@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    style="@style/UiKit.ViewGroup.Page">
+    <com.google.android.material.appbar.AppBarLayout style="@style/AppTheme.AppBarLayout.Flat">
+        <androidx.appcompat.widget.Toolbar style="@style/AppTheme.Toolbar"/>
+    </com.google.android.material.appbar.AppBarLayout>
+    <com.discord.app.AppViewFlipper
+        android:id="@+id/server_settings_guild_role_subscription_tier_list_view_flipper"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        style="@style/UiKit.ViewGroup.AppViewFlipper.InCoordinatorLayout">
+        <ProgressBar
+            android:layout_gravity="center"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:indeterminate="true"
+            style="@style/Widget.AppCompat.ProgressBar"/>
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <TextView
+                android:layout_marginTop="24dp"
+                android:text="@string/guild_role_susbcription_tier_management_title"
+                style="@style/UiKit.GuildSubscriptionRole.Setup.Label"/>
+            <TextView
+                android:textColor="?attr/colorHeaderSecondary"
+                android:paddingLeft="@dimen/guild_role_subscription_setup_default_padding"
+                android:paddingRight="@dimen/guild_role_subscription_setup_default_padding"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:text="@string/guild_settings_role_subscription_tiers_tab_description"
+                style="@style/UiKit.TextView.Medium"/>
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/server_settings_guild_role_subscription_tier_list"
+                android:paddingLeft="@dimen/guild_role_subscription_setup_default_padding"
+                android:paddingRight="@dimen/guild_role_subscription_setup_default_padding"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/guild_role_subscription_setup_default_padding"
+                style="@style/UiKit.ViewGroup.RecyclerView"/>
+        </LinearLayout>
+    </com.discord.app.AppViewFlipper>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

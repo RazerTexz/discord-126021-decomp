@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:animateLayoutChanges="true"
+    style="@style/UiKit.ViewGroup.Page">
+    <com.google.android.material.appbar.AppBarLayout style="@style/AppTheme.AppBarLayout.Flat">
+        <androidx.appcompat.widget.Toolbar style="@style/AppTheme.Toolbar"/>
+    </com.google.android.material.appbar.AppBarLayout>
+    <ScrollView style="@style/UiKit.ViewGroup.NestedScrollView.AppBarScrollingViewBehavior">
+        <LinearLayout
+            android:paddingBottom="16dp"
+            style="@style/UiKit.ViewGroup.LinearLayout">
+            <TextView
+                android:id="@+id/settings_accessibility_reduced_motion_header"
+                android:text="@string/accessibility_prefers_reduced_motion"
+                style="@style/UiKit.Settings.Item.Header"/>
+            <com.discord.utilities.view.text.LinkifiedTextView
+                android:id="@+id/settings_accessibility_reduced_motion_description"
+                android:text="@string/accessibility_prefers_reduced_motion_description"
+                style="@style/UiKit.Settings.Item.SubText"/>
+            <com.discord.views.CheckedSetting
+                android:id="@+id/settings_accessibility_reduced_motion_switch"
+                app:cs_text="@string/accessibility_prefers_reduced_motion_enable"
+                app:cs_view_type="switchview"
+                style="@style/UiKit.CheckedSetting.Themed"/>
+            <TextView
+                android:id="@+id/settings_accessibility_images_header"
+                android:text="@string/images"
+                style="@style/UiKit.Settings.Item.Header"/>
+            <com.discord.views.CheckedSetting
+                android:id="@+id/settings_accessibility_allow_autoplay_gif_switch"
+                app:cs_text="@string/gif_auto_play_label_mobile"
+                app:cs_view_type="switchview"
+                style="@style/UiKit.CheckedSetting.Themed"/>
+            <com.discord.views.CheckedSetting
+                android:id="@+id/settings_accessibility_allow_animate_emoji_switch"
+                app:cs_subtext="@string/animate_emoji_note"
+                app:cs_text="@string/animate_emoji"
+                app:cs_view_type="switchview"
+                style="@style/UiKit.CheckedSetting.Themed"/>
+            <LinearLayout
+                android:id="@+id/settings_accessibility_stickers_container"
+                style="@style/UiKit.ViewGroup.LinearLayout">
+                <TextView
+                    android:id="@+id/settings_accessibility_stickers_header"
+                    android:text="@string/stickers_auto_play_heading"
+                    style="@style/UiKit.Settings.Item.Header"/>
+                <com.discord.views.CheckedSetting
+                    android:id="@+id/stickers_always_animate"
+                    app:cs_text="@string/stickers_always_animate"
+                    app:cs_view_type="radio"
+                    style="@style/UiKit.CheckedSetting.Themed"/>
+                <com.discord.views.CheckedSetting
+                    android:id="@+id/stickers_animate_on_interaction"
+                    app:cs_subtext="@string/stickers_animate_on_interaction_description"
+                    app:cs_text="@string/stickers_animate_on_interaction"
+                    app:cs_view_type="radio"
+                    style="@style/UiKit.CheckedSetting.Themed"/>
+                <com.discord.views.CheckedSetting
+                    android:id="@+id/stickers_never_animate"
+                    app:cs_text="@string/stickers_never_animate"
+                    app:cs_view_type="radio"
+                    style="@style/UiKit.CheckedSetting.Themed"/>
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+    <View
+        android:id="@+id/settings_appearance_holy_light"
+        android:background="@color/white"
+        android:visibility="gone"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" style="@style/UiKit.ViewGroup.Page.LinearLayout">
+    <TextView
+        android:id="@+id/view_dialog_confirmation_header"
+        android:padding="16dp"
+        android:layout_width="match_parent"
+        style="@style/UiKit.TextView.H1.Bold"/>
+    <View style="@style/UiKit.Divider"/>
+    <TextView
+        android:id="@+id/view_dialog_confirmation_text"
+        android:text="@string/sample_confirmation"
+        style="@style/UiKit.Settings.Item.SubText"/>
+    <View style="@style/UiKit.Settings.Divider"/>
+    <View style="@style/UiKit.Divider"/>
+    <LinearLayout style="@style/UiKit.Dialog.ButtonContainer">
+        <com.discord.views.LoadingButton
+            android:id="@+id/view_dialog_confirmation_confirm"
+            android:padding="8dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            app:lb_progress_color="@color/white"
+            app:lb_text="@string/okay"
+            app:lb_text_color="@drawable/button_text_color_primary_100"/>
+    </LinearLayout>
+</LinearLayout>

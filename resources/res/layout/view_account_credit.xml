@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" style="@style/UiKit.ViewGroup">
+    <ImageView
+        android:id="@+id/credit_icon"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_margin="16dp"
+        android:src="@drawable/drawable_ic_nitro"
+        android:importantForAccessibility="no"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        style="@style/UiKit.ImageView"/>
+    <LinearLayout
+        android:id="@+id/credit_info_container"
+        android:layout_width="0dp"
+        android:layout_margin="16dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toRightOf="@+id/credit_icon"
+        app:layout_constraintRight_toLeftOf="@+id/credit_time"
+        app:layout_constraintTop_toTopOf="parent"
+        style="@style/UiKit.ViewGroup.LinearLayout">
+        <TextView
+            android:textSize="@dimen/uikit_textsize_large"
+            android:textColor="?attr/colorHeaderPrimary"
+            android:id="@+id/credit_header"
+            style="@style/UiKit.TextView.Semibold"/>
+        <TextView
+            android:textSize="@dimen/uikit_textsize_small"
+            android:textColor="?attr/colorTextMuted"
+            android:ellipsize="end"
+            android:id="@+id/credit_info"
+            android:maxLines="2"
+            style="@style/UiKit.TextView"/>
+    </LinearLayout>
+    <TextView
+        android:textSize="@dimen/uikit_textsize_large"
+        android:textColor="?attr/colorHeaderSecondary"
+        android:id="@+id/credit_time"
+        android:layout_marginEnd="16dp"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/credit_info_container"
+        style="@style/UiKit.TextView"/>
+</androidx.constraintlayout.widget.ConstraintLayout>

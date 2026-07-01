@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:gravity="center_vertical"
+    style="@style/UiKit.ViewGroup.LinearLayout.Horizontal">
+    <FrameLayout
+        android:id="@+id/audit_log_filter_image_container"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp">
+        <ImageView
+            android:id="@+id/audit_log_filter_image_target"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:importantForAccessibility="no"
+            style="@style/UiKit.ImageView"/>
+        <ImageView
+            android:id="@+id/audit_log_filter_image_action"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:importantForAccessibility="no"
+            style="@style/UiKit.ImageView"/>
+    </FrameLayout>
+    <com.discord.views.CheckedSetting
+        android:id="@+id/audit_log_filter_cs"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cs_background="@color/transparent"
+        app:cs_text_color="?attr/primary_200"
+        app:cs_text_size="@dimen/uikit_textsize_large"
+        app:cs_view_type="radio"/>
+</LinearLayout>

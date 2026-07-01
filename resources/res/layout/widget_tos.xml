@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android" style="@style/UiKit.ViewGroup.Page">
+    <ScrollView
+        android:layout_height="match_parent"
+        android:layout_above="@+id/alert_tos_ack_wrap"
+        style="@style/UiKit.ViewGroup.ScrollView">
+        <LinearLayout style="@style/UiKit.Copy.Container">
+            <ImageView
+                android:id="@+id/tos_icon"
+                android:src="@drawable/img_tos"
+                android:contentDescription="@string/new_terms_title"
+                style="@style/UiKit.ImageView"/>
+            <LinearLayout style="@style/UiKit.Copy">
+                <TextView
+                    android:id="@+id/alert_tos_text_description_top"
+                    android:layout_marginTop="16dp"
+                    style="@style/UiKit.TextView"/>
+                <TextView
+                    android:id="@+id/alert_tos_text_description_bottom"
+                    android:layout_marginTop="8dp"
+                    style="@style/UiKit.TextView"/>
+                <com.discord.utilities.view.text.LinkifiedTextView
+                    android:layout_gravity="start"
+                    android:id="@+id/alert_tos_terms_of_service"
+                    android:layout_marginTop="16dp"
+                    android:text="@string/terms_of_service"
+                    style="@style/UiKit.TextView.Link"/>
+                <com.discord.utilities.view.text.LinkifiedTextView
+                    android:layout_gravity="start"
+                    android:id="@+id/alert_tos_privacy_policy"
+                    android:layout_marginTop="12dp"
+                    android:text="@string/privacy_policy"
+                    style="@style/UiKit.TextView.Link"/>
+                <com.discord.utilities.view.text.LinkifiedTextView
+                    android:layout_gravity="start"
+                    android:id="@+id/alert_tos_community_guidelines"
+                    android:layout_marginTop="12dp"
+                    android:text="@string/community_guidelines"
+                    style="@style/UiKit.TextView.Link"/>
+                <com.discord.utilities.view.text.LinkifiedTextView
+                    android:layout_gravity="start"
+                    android:id="@+id/alert_tos_blog_post"
+                    android:layout_marginTop="12dp"
+                    android:text="@string/privacy_policy"
+                    style="@style/UiKit.TextView.Link"/>
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+    <LinearLayout
+        android:id="@+id/alert_tos_ack_wrap"
+        android:layout_marginTop="8dp"
+        android:layout_alignParentBottom="true"
+        style="@style/UiKit.Copy.Anchor">
+        <FrameLayout style="@style/UiKit.Copy.Anchor.Item.Rotatable">
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/alert_tos_ack_continue"
+                android:layout_width="match_parent"
+                android:text="@string/new_terms_continue"
+                style="@style/UiKit.Material.Button"/>
+        </FrameLayout>
+    </LinearLayout>
+    <com.google.android.material.appbar.AppBarLayout style="@style/AppTheme.AppBarLayout.Flat.Transparent">
+        <androidx.appcompat.widget.Toolbar style="@style/AppTheme.Toolbar.Transparent"/>
+    </com.google.android.material.appbar.AppBarLayout>
+</RelativeLayout>

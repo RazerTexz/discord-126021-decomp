@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/menu_private_channel_sidebar_pinned_messages"
+        android:orderInCategory="1"
+        android:title="@string/pinned_messages"
+        app:showAsAction="never"/>
+    <item
+        android:id="@+id/menu_private_channel_sidebar_copy_id"
+        android:orderInCategory="2"
+        android:title="@string/copy_id"
+        app:showAsAction="never"/>
+    <item
+        android:id="@+id/menu_private_channel_sidebar_customize_gorup"
+        android:orderInCategory="3"
+        android:title="@string/customize_group"
+        app:showAsAction="never"/>
+    <item
+        android:id="@+id/menu_private_channel_sidebar_close"
+        android:orderInCategory="4"
+        android:title="@string/close_dm"
+        app:showAsAction="never"/>
+</menu>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.facebook.drawee.view.SimpleDraweeView xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/emoji_item_draweeview"
+    android:background="?attr/selectableItemBackgroundBorderless"
+    android:padding="4dp"
+    android:layout_width="@dimen/chat_input_emoji_size"
+    android:layout_height="@dimen/chat_input_emoji_size"
+    app:actualImageScaleType="fitCenter"
+    app:placeholderImage="?attr/theme_expression_picker_item_placeholder"
+    app:placeholderImageScaleType="fitCenter"/>

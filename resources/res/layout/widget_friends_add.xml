@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" style="@style/UiKit.ViewGroup.Page">
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/action_bar_toolbar_layout"
+        style="@style/AppTheme.AppBarLayout.Flat">
+        <androidx.appcompat.widget.Toolbar style="@style/AppTheme.Toolbar"/>
+    </com.google.android.material.appbar.AppBarLayout>
+    <LinearLayout
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"
+        style="@style/UiKit.ViewGroup.LinearLayout">
+        <com.discord.utilities.simple_pager.SimplePager
+            android:id="@+id/add_friend_view_pager"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <com.google.android.material.tabs.TabLayout
+                android:id="@+id/action_bar_tabs"
+                android:background="?attr/toolbarColor"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:tabGravity="fill"
+                app:tabIndicatorHeight="0dp"
+                app:tabMaxWidth="0dp"
+                app:tabMode="fixed"
+                app:tabSelectedTextColor="?attr/tabSelectedTextColor"
+                app:tabTextAppearance="@style/App.TabLayout.Text"
+                app:tabTextColor="?attr/tabTextColor"/>
+        </com.discord.utilities.simple_pager.SimplePager>
+    </LinearLayout>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

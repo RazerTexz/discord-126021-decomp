@@ -1,0 +1,268 @@
+package com.otaliastudios.cameraview;
+
+/* JADX INFO: loaded from: classes3.dex */
+public final class R {
+
+    public static final class a {
+        public static final int aac = 0x7f0a000e;
+        public static final int aacEld = 0x7f0a000f;
+        public static final int accessibility_action_clickable_span = 0x7f0a0026;
+        public static final int accessibility_custom_action_0 = 0x7f0a0027;
+        public static final int accessibility_custom_action_1 = 0x7f0a0028;
+        public static final int accessibility_custom_action_10 = 0x7f0a0029;
+        public static final int accessibility_custom_action_11 = 0x7f0a002a;
+        public static final int accessibility_custom_action_12 = 0x7f0a002b;
+        public static final int accessibility_custom_action_13 = 0x7f0a002c;
+        public static final int accessibility_custom_action_14 = 0x7f0a002d;
+        public static final int accessibility_custom_action_15 = 0x7f0a002e;
+        public static final int accessibility_custom_action_16 = 0x7f0a002f;
+        public static final int accessibility_custom_action_17 = 0x7f0a0030;
+        public static final int accessibility_custom_action_18 = 0x7f0a0031;
+        public static final int accessibility_custom_action_19 = 0x7f0a0032;
+        public static final int accessibility_custom_action_2 = 0x7f0a0033;
+        public static final int accessibility_custom_action_20 = 0x7f0a0034;
+        public static final int accessibility_custom_action_21 = 0x7f0a0035;
+        public static final int accessibility_custom_action_22 = 0x7f0a0036;
+        public static final int accessibility_custom_action_23 = 0x7f0a0037;
+        public static final int accessibility_custom_action_24 = 0x7f0a0038;
+        public static final int accessibility_custom_action_25 = 0x7f0a0039;
+        public static final int accessibility_custom_action_26 = 0x7f0a003a;
+        public static final int accessibility_custom_action_27 = 0x7f0a003b;
+        public static final int accessibility_custom_action_28 = 0x7f0a003c;
+        public static final int accessibility_custom_action_29 = 0x7f0a003d;
+        public static final int accessibility_custom_action_3 = 0x7f0a003e;
+        public static final int accessibility_custom_action_30 = 0x7f0a003f;
+        public static final int accessibility_custom_action_31 = 0x7f0a0040;
+        public static final int accessibility_custom_action_4 = 0x7f0a0041;
+        public static final int accessibility_custom_action_5 = 0x7f0a0042;
+        public static final int accessibility_custom_action_6 = 0x7f0a0043;
+        public static final int accessibility_custom_action_7 = 0x7f0a0044;
+        public static final int accessibility_custom_action_8 = 0x7f0a0045;
+        public static final int accessibility_custom_action_9 = 0x7f0a0046;
+        public static final int action_container = 0x7f0a005d;
+        public static final int action_divider = 0x7f0a0060;
+        public static final int action_image = 0x7f0a0061;
+        public static final int action_text = 0x7f0a006a;
+        public static final int actions = 0x7f0a006b;
+        public static final int async = 0x7f0a00dd;
+        public static final int auto = 0x7f0a013a;
+        public static final int autoFocus = 0x7f0a013e;
+        public static final int back = 0x7f0a0149;
+        public static final int blocking = 0x7f0a017c;
+        public static final int bottom = 0x7f0a01a6;
+        public static final int camera1 = 0x7f0a01ec;
+        public static final int camera2 = 0x7f0a01ed;
+        public static final int chronometer = 0x7f0a03b2;
+        public static final int cloudy = 0x7f0a03c9;
+        public static final int daylight = 0x7f0a04aa;
+        public static final int deviceDefault = 0x7f0a04ca;
+        public static final int dialog_button = 0x7f0a04cb;
+        public static final int dng = 0x7f0a052a;
+        public static final int draw3x3 = 0x7f0a0538;
+        public static final int draw4x4 = 0x7f0a0539;
+        public static final int drawPhi = 0x7f0a053a;
+        public static final int end = 0x7f0a05b6;
+        public static final int exposureCorrection = 0x7f0a060b;
+        public static final int filterControl1 = 0x7f0a0654;
+        public static final int filterControl2 = 0x7f0a0655;
+        public static final int fluorescent = 0x7f0a066a;
+        public static final int focusMarkerContainer = 0x7f0a066c;
+        public static final int focusMarkerFill = 0x7f0a066d;
+        public static final int forever = 0x7f0a067a;
+        public static final int front = 0x7f0a06b1;
+        public static final int glSurface = 0x7f0a06ea;
+        public static final int gl_surface_view = 0x7f0a06eb;
+        public static final int h263 = 0x7f0a088e;
+        public static final int h264 = 0x7f0a088f;
+        public static final int heAac = 0x7f0a0892;
+        public static final int icon = 0x7f0a08b1;
+        public static final int icon_group = 0x7f0a08b4;
+        public static final int incandescent = 0x7f0a08d3;
+        public static final int info = 0x7f0a08e9;
+        public static final int italic = 0x7f0a0923;
+        public static final int jpeg = 0x7f0a0979;
+        public static final int left = 0x7f0a0996;
+        public static final int line1 = 0x7f0a099a;
+        public static final int line3 = 0x7f0a099b;
+        public static final int mono = 0x7f0a0a6b;
+        public static final int none = 0x7f0a0ac1;
+        public static final int normal = 0x7f0a0ac2;
+        public static final int notification_background = 0x7f0a0acd;
+        public static final int notification_main_column = 0x7f0a0ace;
+        public static final int notification_main_column_container = 0x7f0a0acf;
+        public static final int off = 0x7f0a0b08;
+        public static final int on = 0x7f0a0b0c;
+        public static final int picture = 0x7f0a0b8c;
+        public static final int right = 0x7f0a0c5b;
+        public static final int right_icon = 0x7f0a0c5d;
+        public static final int right_side = 0x7f0a0c5e;
+        public static final int start = 0x7f0a0ed4;
+        public static final int stereo = 0x7f0a0eee;
+        public static final int surface = 0x7f0a0f46;
+        public static final int surface_view = 0x7f0a0f47;
+        public static final int surface_view_root = 0x7f0a0f48;
+        public static final int tag_accessibility_actions = 0x7f0a0f6d;
+        public static final int tag_accessibility_clickable_spans = 0x7f0a0f6e;
+        public static final int tag_accessibility_heading = 0x7f0a0f6f;
+        public static final int tag_accessibility_pane_title = 0x7f0a0f70;
+        public static final int tag_screen_reader_focusable = 0x7f0a0f76;
+        public static final int tag_transition_group = 0x7f0a0f78;
+        public static final int tag_unhandled_key_event_manager = 0x7f0a0f79;
+        public static final int tag_unhandled_key_listeners = 0x7f0a0f7a;
+        public static final int takePicture = 0x7f0a0f7c;
+        public static final int takePictureSnapshot = 0x7f0a0f7d;
+        public static final int text = 0x7f0a0f87;
+        public static final int text2 = 0x7f0a0f89;
+        public static final int texture = 0x7f0a0fab;
+        public static final int texture_view = 0x7f0a0fac;
+        public static final int time = 0x7f0a0fe5;
+        public static final int title = 0x7f0a0fed;
+        public static final int top = 0x7f0a0fff;
+        public static final int torch = 0x7f0a1006;
+        public static final int video = 0x7f0a10d5;
+        public static final int zoom = 0x7f0a1195;
+
+        private a() {
+        }
+    }
+
+    public static final class b {
+        public static final int cameraview_gl_view = 0x7f0d0028;
+        public static final int cameraview_layout_focus_marker = 0x7f0d0029;
+        public static final int cameraview_surface_view = 0x7f0d002a;
+        public static final int cameraview_texture_view = 0x7f0d002b;
+        public static final int custom_dialog = 0x7f0d003c;
+        public static final int notification_action = 0x7f0d00e2;
+        public static final int notification_action_tombstone = 0x7f0d00e3;
+        public static final int notification_template_custom_big = 0x7f0d00ec;
+        public static final int notification_template_icon_group = 0x7f0d00ed;
+        public static final int notification_template_part_chronometer = 0x7f0d00f1;
+        public static final int notification_template_part_time = 0x7f0d00f2;
+
+        private b() {
+        }
+    }
+
+    public static final class c {
+        public static final int CameraView_Layout_layout_drawOnPictureSnapshot = 0x00000000;
+        public static final int CameraView_Layout_layout_drawOnPreview = 0x00000001;
+        public static final int CameraView_Layout_layout_drawOnVideoSnapshot = 0x00000002;
+        public static final int CameraView_cameraAudio = 0x00000000;
+        public static final int CameraView_cameraAudioBitRate = 0x00000001;
+        public static final int CameraView_cameraAudioCodec = 0x00000002;
+        public static final int CameraView_cameraAutoFocusMarker = 0x00000003;
+        public static final int CameraView_cameraAutoFocusResetDelay = 0x00000004;
+        public static final int CameraView_cameraDrawHardwareOverlays = 0x00000005;
+        public static final int CameraView_cameraEngine = 0x00000006;
+        public static final int CameraView_cameraExperimental = 0x00000007;
+        public static final int CameraView_cameraFacing = 0x00000008;
+        public static final int CameraView_cameraFilter = 0x00000009;
+        public static final int CameraView_cameraFlash = 0x0000000a;
+        public static final int CameraView_cameraFrameProcessingExecutors = 0x0000000b;
+        public static final int CameraView_cameraFrameProcessingFormat = 0x0000000c;
+        public static final int CameraView_cameraFrameProcessingMaxHeight = 0x0000000d;
+        public static final int CameraView_cameraFrameProcessingMaxWidth = 0x0000000e;
+        public static final int CameraView_cameraFrameProcessingPoolSize = 0x0000000f;
+        public static final int CameraView_cameraGestureLongTap = 0x00000010;
+        public static final int CameraView_cameraGesturePinch = 0x00000011;
+        public static final int CameraView_cameraGestureScrollHorizontal = 0x00000012;
+        public static final int CameraView_cameraGestureScrollVertical = 0x00000013;
+        public static final int CameraView_cameraGestureTap = 0x00000014;
+        public static final int CameraView_cameraGrid = 0x00000015;
+        public static final int CameraView_cameraGridColor = 0x00000016;
+        public static final int CameraView_cameraHdr = 0x00000017;
+        public static final int CameraView_cameraMode = 0x00000018;
+        public static final int CameraView_cameraPictureFormat = 0x00000019;
+        public static final int CameraView_cameraPictureMetering = 0x0000001a;
+        public static final int CameraView_cameraPictureSizeAspectRatio = 0x0000001b;
+        public static final int CameraView_cameraPictureSizeBiggest = 0x0000001c;
+        public static final int CameraView_cameraPictureSizeMaxArea = 0x0000001d;
+        public static final int CameraView_cameraPictureSizeMaxHeight = 0x0000001e;
+        public static final int CameraView_cameraPictureSizeMaxWidth = 0x0000001f;
+        public static final int CameraView_cameraPictureSizeMinArea = 0x00000020;
+        public static final int CameraView_cameraPictureSizeMinHeight = 0x00000021;
+        public static final int CameraView_cameraPictureSizeMinWidth = 0x00000022;
+        public static final int CameraView_cameraPictureSizeSmallest = 0x00000023;
+        public static final int CameraView_cameraPictureSnapshotMetering = 0x00000024;
+        public static final int CameraView_cameraPlaySounds = 0x00000025;
+        public static final int CameraView_cameraPreview = 0x00000026;
+        public static final int CameraView_cameraPreviewFrameRate = 0x00000027;
+        public static final int CameraView_cameraPreviewFrameRateExact = 0x00000028;
+        public static final int CameraView_cameraRequestPermissions = 0x00000029;
+        public static final int CameraView_cameraSnapshotMaxHeight = 0x0000002a;
+        public static final int CameraView_cameraSnapshotMaxWidth = 0x0000002b;
+        public static final int CameraView_cameraUseDeviceOrientation = 0x0000002c;
+        public static final int CameraView_cameraVideoBitRate = 0x0000002d;
+        public static final int CameraView_cameraVideoCodec = 0x0000002e;
+        public static final int CameraView_cameraVideoMaxDuration = 0x0000002f;
+        public static final int CameraView_cameraVideoMaxSize = 0x00000030;
+        public static final int CameraView_cameraVideoSizeAspectRatio = 0x00000031;
+        public static final int CameraView_cameraVideoSizeBiggest = 0x00000032;
+        public static final int CameraView_cameraVideoSizeMaxArea = 0x00000033;
+        public static final int CameraView_cameraVideoSizeMaxHeight = 0x00000034;
+        public static final int CameraView_cameraVideoSizeMaxWidth = 0x00000035;
+        public static final int CameraView_cameraVideoSizeMinArea = 0x00000036;
+        public static final int CameraView_cameraVideoSizeMinHeight = 0x00000037;
+        public static final int CameraView_cameraVideoSizeMinWidth = 0x00000038;
+        public static final int CameraView_cameraVideoSizeSmallest = 0x00000039;
+        public static final int CameraView_cameraWhiteBalance = 0x0000003a;
+        public static final int ColorStateListItem_alpha = 0x00000002;
+        public static final int ColorStateListItem_android_alpha = 0x00000001;
+        public static final int ColorStateListItem_android_color = 0x00000000;
+        public static final int CoordinatorLayout_Layout_android_layout_gravity = 0x00000000;
+        public static final int CoordinatorLayout_Layout_layout_anchor = 0x00000001;
+        public static final int CoordinatorLayout_Layout_layout_anchorGravity = 0x00000002;
+        public static final int CoordinatorLayout_Layout_layout_behavior = 0x00000003;
+        public static final int CoordinatorLayout_Layout_layout_dodgeInsetEdges = 0x00000004;
+        public static final int CoordinatorLayout_Layout_layout_insetEdge = 0x00000005;
+        public static final int CoordinatorLayout_Layout_layout_keyline = 0x00000006;
+        public static final int CoordinatorLayout_keylines = 0x00000000;
+        public static final int CoordinatorLayout_statusBarBackground = 0x00000001;
+        public static final int FontFamilyFont_android_font = 0x00000000;
+        public static final int FontFamilyFont_android_fontStyle = 0x00000002;
+        public static final int FontFamilyFont_android_fontVariationSettings = 0x00000004;
+        public static final int FontFamilyFont_android_fontWeight = 0x00000001;
+        public static final int FontFamilyFont_android_ttcIndex = 0x00000003;
+        public static final int FontFamilyFont_font = 0x00000005;
+        public static final int FontFamilyFont_fontStyle = 0x00000006;
+        public static final int FontFamilyFont_fontVariationSettings = 0x00000007;
+        public static final int FontFamilyFont_fontWeight = 0x00000008;
+        public static final int FontFamilyFont_ttcIndex = 0x00000009;
+        public static final int FontFamily_fontProviderAuthority = 0x00000000;
+        public static final int FontFamily_fontProviderCerts = 0x00000001;
+        public static final int FontFamily_fontProviderFetchStrategy = 0x00000002;
+        public static final int FontFamily_fontProviderFetchTimeout = 0x00000003;
+        public static final int FontFamily_fontProviderPackage = 0x00000004;
+        public static final int FontFamily_fontProviderQuery = 0x00000005;
+        public static final int FontFamily_fontProviderSystemFontFamily = 0x00000006;
+        public static final int GradientColorItem_android_color = 0x00000000;
+        public static final int GradientColorItem_android_offset = 0x00000001;
+        public static final int GradientColor_android_centerColor = 0x00000007;
+        public static final int GradientColor_android_centerX = 0x00000003;
+        public static final int GradientColor_android_centerY = 0x00000004;
+        public static final int GradientColor_android_endColor = 0x00000001;
+        public static final int GradientColor_android_endX = 0x0000000a;
+        public static final int GradientColor_android_endY = 0x0000000b;
+        public static final int GradientColor_android_gradientRadius = 0x00000005;
+        public static final int GradientColor_android_startColor = 0x00000000;
+        public static final int GradientColor_android_startX = 0x00000008;
+        public static final int GradientColor_android_startY = 0x00000009;
+        public static final int GradientColor_android_tileMode = 0x00000006;
+        public static final int GradientColor_android_type = 0x00000002;
+        public static final int[] CameraView = {com.discord.R.attr.cameraAudio, com.discord.R.attr.cameraAudioBitRate, com.discord.R.attr.cameraAudioCodec, com.discord.R.attr.cameraAutoFocusMarker, com.discord.R.attr.cameraAutoFocusResetDelay, com.discord.R.attr.cameraDrawHardwareOverlays, com.discord.R.attr.cameraEngine, com.discord.R.attr.cameraExperimental, com.discord.R.attr.cameraFacing, com.discord.R.attr.cameraFilter, com.discord.R.attr.cameraFlash, com.discord.R.attr.cameraFrameProcessingExecutors, com.discord.R.attr.cameraFrameProcessingFormat, com.discord.R.attr.cameraFrameProcessingMaxHeight, com.discord.R.attr.cameraFrameProcessingMaxWidth, com.discord.R.attr.cameraFrameProcessingPoolSize, com.discord.R.attr.cameraGestureLongTap, com.discord.R.attr.cameraGesturePinch, com.discord.R.attr.cameraGestureScrollHorizontal, com.discord.R.attr.cameraGestureScrollVertical, com.discord.R.attr.cameraGestureTap, com.discord.R.attr.cameraGrid, com.discord.R.attr.cameraGridColor, com.discord.R.attr.cameraHdr, com.discord.R.attr.cameraMode, com.discord.R.attr.cameraPictureFormat, com.discord.R.attr.cameraPictureMetering, com.discord.R.attr.cameraPictureSizeAspectRatio, com.discord.R.attr.cameraPictureSizeBiggest, com.discord.R.attr.cameraPictureSizeMaxArea, com.discord.R.attr.cameraPictureSizeMaxHeight, com.discord.R.attr.cameraPictureSizeMaxWidth, com.discord.R.attr.cameraPictureSizeMinArea, com.discord.R.attr.cameraPictureSizeMinHeight, com.discord.R.attr.cameraPictureSizeMinWidth, com.discord.R.attr.cameraPictureSizeSmallest, com.discord.R.attr.cameraPictureSnapshotMetering, com.discord.R.attr.cameraPlaySounds, com.discord.R.attr.cameraPreview, com.discord.R.attr.cameraPreviewFrameRate, com.discord.R.attr.cameraPreviewFrameRateExact, com.discord.R.attr.cameraRequestPermissions, com.discord.R.attr.cameraSnapshotMaxHeight, com.discord.R.attr.cameraSnapshotMaxWidth, com.discord.R.attr.cameraUseDeviceOrientation, com.discord.R.attr.cameraVideoBitRate, com.discord.R.attr.cameraVideoCodec, com.discord.R.attr.cameraVideoMaxDuration, com.discord.R.attr.cameraVideoMaxSize, com.discord.R.attr.cameraVideoSizeAspectRatio, com.discord.R.attr.cameraVideoSizeBiggest, com.discord.R.attr.cameraVideoSizeMaxArea, com.discord.R.attr.cameraVideoSizeMaxHeight, com.discord.R.attr.cameraVideoSizeMaxWidth, com.discord.R.attr.cameraVideoSizeMinArea, com.discord.R.attr.cameraVideoSizeMinHeight, com.discord.R.attr.cameraVideoSizeMinWidth, com.discord.R.attr.cameraVideoSizeSmallest, com.discord.R.attr.cameraWhiteBalance};
+        public static final int[] CameraView_Layout = {com.discord.R.attr.layout_drawOnPictureSnapshot, com.discord.R.attr.layout_drawOnPreview, com.discord.R.attr.layout_drawOnVideoSnapshot};
+        public static final int[] ColorStateListItem = {android.R.attr.color, android.R.attr.alpha, com.discord.R.attr.alpha};
+        public static final int[] CoordinatorLayout = {com.discord.R.attr.keylines, com.discord.R.attr.statusBarBackground};
+        public static final int[] CoordinatorLayout_Layout = {android.R.attr.layout_gravity, com.discord.R.attr.layout_anchor, com.discord.R.attr.layout_anchorGravity, com.discord.R.attr.layout_behavior, com.discord.R.attr.layout_dodgeInsetEdges, com.discord.R.attr.layout_insetEdge, com.discord.R.attr.layout_keyline};
+        public static final int[] FontFamily = {com.discord.R.attr.fontProviderAuthority, com.discord.R.attr.fontProviderCerts, com.discord.R.attr.fontProviderFetchStrategy, com.discord.R.attr.fontProviderFetchTimeout, com.discord.R.attr.fontProviderPackage, com.discord.R.attr.fontProviderQuery, com.discord.R.attr.fontProviderSystemFontFamily};
+        public static final int[] FontFamilyFont = {android.R.attr.font, android.R.attr.fontWeight, android.R.attr.fontStyle, android.R.attr.ttcIndex, android.R.attr.fontVariationSettings, com.discord.R.attr.font, com.discord.R.attr.fontStyle, com.discord.R.attr.fontVariationSettings, com.discord.R.attr.fontWeight, com.discord.R.attr.ttcIndex};
+        public static final int[] GradientColor = {android.R.attr.startColor, android.R.attr.endColor, android.R.attr.type, android.R.attr.centerX, android.R.attr.centerY, android.R.attr.gradientRadius, android.R.attr.tileMode, android.R.attr.centerColor, android.R.attr.startX, android.R.attr.startY, android.R.attr.endX, android.R.attr.endY};
+        public static final int[] GradientColorItem = {android.R.attr.color, android.R.attr.offset};
+
+        private c() {
+        }
+    }
+
+    private R() {
+    }
+}

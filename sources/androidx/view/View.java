@@ -1,0 +1,13 @@
+package androidx.view;
+
+import d0.z.d.Intrinsics3;
+
+/* JADX INFO: renamed from: androidx.savedstate.ViewKt, reason: from Kotlin metadata */
+/* JADX INFO: compiled from: View.kt */
+/* JADX INFO: loaded from: classes.dex */
+public final class View {
+    public static final SavedStateRegistryOwner findViewTreeSavedStateRegistryOwner(android.view.View view) {
+        Intrinsics3.checkNotNullParameter(view, "$this$findViewTreeSavedStateRegistryOwner");
+        return ViewTreeSavedStateRegistryOwner.get(view);
+    }
+}

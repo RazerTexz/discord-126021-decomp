@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" style="@style/UiKit.ViewGroup.Page.LinearLayout">
+    <LinearLayout
+        android:id="@+id/notice_header_container"
+        style="@style/UiKit.ViewGroup.LinearLayout">
+        <TextView
+            android:padding="16dp"
+            android:text="@string/video_capacity_modal_header"
+            style="@style/UiKit.TextView.H1.Bold"/>
+        <View style="@style/UiKit.Divider"/>
+    </LinearLayout>
+    <TextView
+        android:textColor="@color/primary_200"
+        android:id="@+id/camera_capacity_body"
+        android:paddingTop="8dp"
+        android:layout_marginBottom="8dp"
+        android:text="@string/video_capacity_modal_body"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp"
+        style="@style/UiKit.TextView"/>
+    <View style="@style/UiKit.Settings.Divider"/>
+    <LinearLayout style="@style/UiKit.Dialog.ButtonContainer">
+        <com.google.android.material.button.MaterialButton
+            android:textColor="@color/white"
+            android:layout_gravity="center_vertical"
+            android:id="@+id/camera_capacity_confirm"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/okay"
+            style="@style/UiKit.Material.Button"/>
+    </LinearLayout>
+</LinearLayout>

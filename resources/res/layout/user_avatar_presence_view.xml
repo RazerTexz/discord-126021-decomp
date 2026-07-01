@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/user_avatar_presence_container"
+    android:layout_width="match_parent"
+    style="@style/UiKit.ViewGroup.RelativeLayout">
+    <FrameLayout
+        android:id="@+id/avatar_container"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+        <ImageView
+            android:layout_gravity="center"
+            android:id="@+id/avatar_cutout"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:src="@drawable/drawable_circle_transparent"/>
+        <com.facebook.drawee.view.SimpleDraweeView
+            android:layout_gravity="center"
+            android:id="@+id/avatar"
+            android:background="@drawable/drawable_circle_transparent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:actualImageScaleType="fitCenter"
+            app:placeholderImage="?attr/asset_default_avatar_80dp"
+            app:roundWithOverlayColor="?attr/primary_700"/>
+    </FrameLayout>
+    <com.discord.views.StatusView
+        android:id="@+id/user_avatar_presence_status"
+        android:layout_width="27dp"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/avatar_container"
+        android:translationX="3dp"
+        android:translationY="3dp"
+        android:layout_alignEnd="@+id/avatar_container"
+        app:sv_background_color="?attr/colorBackgroundTertiary"
+        app:sv_border_width="3dp"
+        app:sv_corner_radius="4dp"/>
+    <com.facebook.drawee.view.SimpleDraweeView
+        android:id="@+id/static_avatar"
+        android:layout_width="0dp"
+        android:layout_height="0dp"/>
+</RelativeLayout>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" style="@style/ExpressionPickerCategoryItem">
+    <ImageView
+        android:layout_gravity="center"
+        android:id="@+id/emoji_category_item_standard_icon"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:src="@drawable/ic_search"
+        android:importantForAccessibility="no"
+        app:tint="?attr/colorInteractiveActive"/>
+    <include
+        android:id="@+id/overline"
+        layout="@layout/expression_picker_category_selection_overline_view"/>
+</FrameLayout>

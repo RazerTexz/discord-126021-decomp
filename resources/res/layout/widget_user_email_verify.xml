@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android" style="@style/UiKit.ViewGroup.Page">
+    <ScrollView
+        android:layout_height="match_parent"
+        android:layout_above="@+id/alert_verify_email_anchor"
+        style="@style/UiKit.ViewGroup.ScrollView">
+        <LinearLayout
+            android:layout_gravity="center_vertical"
+            style="@style/UiKit.Copy.Container">
+            <com.airbnb.lottie.LottieAnimationView style="@style/UiKit.Anim.Verify.By.Email"/>
+            <LinearLayout style="@style/UiKit.Copy">
+                <TextView
+                    android:text="@string/verify_by_email"
+                    style="@style/UiKit.TextView.H1"/>
+                <TextView
+                    android:gravity="center"
+                    android:layout_marginTop="16dp"
+                    android:text="@string/verify_email_body"
+                    style="@style/UiKit.TextView"/>
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+    <LinearLayout
+        android:id="@+id/alert_verify_email_anchor"
+        android:layout_alignParentBottom="true"
+        style="@style/UiKit.Copy.Anchor">
+        <FrameLayout style="@style/UiKit.Copy.Anchor.Item.Rotatable">
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/alert_verify_email_resend"
+                android:text="@string/resend_email"
+                style="@style/UiKit.Material.Button"/>
+        </FrameLayout>
+        <FrameLayout style="@style/UiKit.Copy.Anchor.Item.Rotatable">
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/alert_verify_email_change"
+                android:text="@string/change_email_short"
+                style="@style/UiKit.Material.Button.Transparent"/>
+        </FrameLayout>
+    </LinearLayout>
+    <com.google.android.material.appbar.AppBarLayout style="@style/AppTheme.AppBarLayout.Flat.Transparent">
+        <androidx.appcompat.widget.Toolbar style="@style/AppTheme.Toolbar.Transparent"/>
+    </com.google.android.material.appbar.AppBarLayout>
+</RelativeLayout>

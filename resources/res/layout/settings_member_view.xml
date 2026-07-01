@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+    <com.facebook.drawee.view.SimpleDraweeView
+        android:id="@+id/large_avatar"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        app:actualImageScaleType="fitCenter"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:placeholderImage="?attr/asset_default_avatar_80dp"
+        app:roundWithOverlayColor="?attr/colorBackgroundPrimary"
+        style="@style/Avatar"/>
+    <com.discord.views.UsernameView
+        android:id="@+id/member_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        app:layout_constraintBottom_toTopOf="@+id/member_subtitle"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0"
+        app:layout_constraintStart_toEndOf="@+id/large_avatar"
+        app:layout_constraintTop_toTopOf="@+id/large_avatar"
+        app:username_line_spacing_multiplier="1"
+        app:username_singleline="false"
+        app:username_text_appearance="@style/UiKit.TextAppearance.Semibold"
+        app:username_text_color="?attr/colorInteractiveActive"
+        app:username_text_size="@dimen/uikit_textsize_large"/>
+    <com.facebook.drawee.span.SimpleDraweeSpanTextView
+        android:textSize="@dimen/uikit_textsize_small"
+        android:textColor="?attr/colorInteractiveNormal"
+        android:id="@+id/member_subtitle"
+        android:layout_marginStart="16dp"
+        app:layout_constraintBottom_toBottomOf="@+id/large_avatar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0"
+        app:layout_constraintStart_toEndOf="@+id/large_avatar"
+        app:layout_constraintTop_toBottomOf="@+id/member_title"
+        style="@style/UiKit.TextView"/>
+</merge>

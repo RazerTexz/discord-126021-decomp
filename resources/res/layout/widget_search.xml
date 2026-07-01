@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" style="@style/UiKit.ViewGroup.CoordinatorLayout.Page">
+    <com.google.android.material.appbar.AppBarLayout
+        android:background="?attr/colorBackgroundSecondary"
+        style="@style/AppTheme.AppBarLayout">
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/widget_search_input"
+            style="@style/UiKit.TextInputLayout.Search.ActionBar">
+            <com.google.android.material.textfield.TextInputEditText style="@style/UiKit.TextInputLayout.EditText.SingleLine.Search"/>
+        </com.google.android.material.textfield.TextInputLayout>
+    </com.google.android.material.appbar.AppBarLayout>
+    <androidx.fragment.app.FragmentContainerView
+        android:name="com.discord.widgets.search.suggestions.WidgetSearchSuggestions"
+        android:id="@+id/widget_search_suggestions"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="com.discord.app.AppScrollingViewBehavior"/>
+    <androidx.fragment.app.FragmentContainerView
+        android:name="com.discord.widgets.search.results.WidgetSearchResults"
+        android:id="@+id/widget_search_results"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="com.discord.app.AppScrollingViewBehavior"/>
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/search_send_query_fab"
+        android:visibility="gone"
+        android:src="@drawable/ic_search_white_24dp"
+        android:contentDescription="@string/search"
+        style="@style/Settings.FloatingActionButton"/>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

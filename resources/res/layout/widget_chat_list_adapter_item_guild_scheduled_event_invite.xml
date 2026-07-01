@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.discord.widgets.guildscheduledevent.GuildScheduledEventItemView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/guild_scheduled_event_invite_container"
+    style="@style/UiKit.Chat.Embed.Container"/>

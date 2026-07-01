@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/community_first_step_scroll"
+    android:layout_width="wrap_content"
+    style="@style/UiKit.ViewGroup.NestedScrollView.AppBarScrollingViewBehavior">
+    <LinearLayout
+        android:focusableInTouchMode="true"
+        style="@style/UiKit.ViewGroup.LinearLayout">
+        <ImageView
+            android:id="@+id/community_get_started_header_image"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:src="?attr/drawable_community_setup_first_step"
+            android:importantForAccessibility="no"/>
+        <com.discord.views.ScreenTitleView
+            android:id="@+id/community_step_header"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="40dp"
+            android:layout_marginRight="16dp"
+            android:layout_marginBottom="24dp"
+            app:stv_subtitle="@string/enable_community_modal_step_1_body"
+            app:stv_title="@string/enable_community_modal_step_1_header"/>
+        <com.discord.views.CheckedSetting
+            android:id="@+id/community_settings_verified_emailed_switch"
+            app:cs_subtext="@string/enable_community_modal_verification_level_help"
+            app:cs_text="@string/enable_community_modal_verification_level_label"
+            app:cs_text_color="?attr/primary_000"
+            app:cs_text_fontpath="?attr/font_primary_semibold"
+            app:cs_view_type="switchview"
+            style="@style/UiKit.CheckedSetting.Themed"/>
+        <View
+            android:layout_marginTop="24dp"
+            style="@style/UiKit.Settings.Divider"/>
+        <com.discord.views.CheckedSetting
+            android:id="@+id/community_settings_scan_messages_switch"
+            app:cs_subtext="@string/enable_public_modal_content_filter_help"
+            app:cs_text="@string/enable_community_modal_content_filter_label"
+            app:cs_text_color="?attr/primary_000"
+            app:cs_text_fontpath="?attr/font_primary_semibold"
+            app:cs_view_type="switchview"
+            style="@style/UiKit.CheckedSetting.Themed"/>
+    </LinearLayout>
+</ScrollView>

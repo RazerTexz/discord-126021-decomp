@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" style="@style/UiKit.ViewGroup.ScrollView.Page">
+    <LinearLayout style="@style/UiKit.ViewGroup.LinearLayout">
+        <androidx.constraintlayout.widget.ConstraintLayout style="@style/UiKit.Sheet.Header">
+            <androidx.constraintlayout.widget.Guideline style="@style/UiKit.Sheet.Guideline"/>
+            <TextView
+                android:id="@+id/guild_actions_overview_header_tv"
+                android:text="@string/form_label_afk_timeout"
+                style="@style/UiKit.Sheet.Header.Title"/>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+        <View style="@style/UiKit.Settings.Divider"/>
+        <ScrollView style="@style/UiKit.ViewGroup.ScrollView">
+            <LinearLayout style="@style/UiKit.ViewGroup.LinearLayout">
+                <TextView
+                    android:id="@+id/server_settings_overview_afk_timeout_01"
+                    android:tag="60"
+                    app:drawableStartCompat="?attr/ic_timer"
+                    style="@style/UiKit.Settings.Item.Icon"/>
+                <TextView
+                    android:id="@+id/server_settings_overview_afk_timeout_05"
+                    android:tag="300"
+                    app:drawableStartCompat="?attr/ic_timer"
+                    style="@style/UiKit.Settings.Item.Icon"/>
+                <TextView
+                    android:id="@+id/server_settings_overview_afk_timeout_15"
+                    android:tag="900"
+                    app:drawableStartCompat="?attr/ic_timer"
+                    style="@style/UiKit.Settings.Item.Icon"/>
+                <TextView
+                    android:id="@+id/server_settings_overview_afk_timeout_30"
+                    android:tag="1800"
+                    app:drawableStartCompat="?attr/ic_timer"
+                    style="@style/UiKit.Settings.Item.Icon"/>
+                <TextView
+                    android:id="@+id/server_settings_overview_afk_timeout_60"
+                    android:tag="3600"
+                    app:drawableStartCompat="?attr/ic_timer"
+                    style="@style/UiKit.Settings.Item.Icon"/>
+            </LinearLayout>
+        </ScrollView>
+    </LinearLayout>
+</androidx.core.widget.NestedScrollView>

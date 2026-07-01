@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+    <com.discord.views.CheckedSetting
+        android:id="@+id/contact_sync_discovery_toggle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cs_text="@string/contact_sync_landing_toggle_label"
+        app:cs_text_fontpath="?attr/font_primary_semibold"
+        style="@style/UiKit.CheckedSetting.Themed"/>
+    <TextView
+        android:textSize="@dimen/uikit_textsize_small"
+        android:textColor="?attr/colorHeaderSecondary"
+        android:id="@+id/contact_sync_discovery_info_1"
+        android:paddingLeft="16dp"
+        android:paddingRight="16dp"
+        android:text="@string/contact_sync_landing_info_2"
+        android:lineSpacingMultiplier="1"
+        style="@style/UiKit.TextView.Medium"/>
+    <com.discord.utilities.view.text.LinkifiedTextView
+        android:textSize="@dimen/uikit_textsize_small"
+        android:textColor="?attr/colorHeaderSecondary"
+        android:id="@+id/contact_sync_discovery_info_2"
+        android:paddingLeft="16dp"
+        android:paddingRight="16dp"
+        android:layout_marginTop="8dp"
+        android:text="@string/contact_sync_permissions_description_android"
+        android:lineSpacingMultiplier="1"
+        style="@style/UiKit.TextView.Medium"/>
+</LinearLayout>

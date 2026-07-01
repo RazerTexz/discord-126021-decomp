@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:paddingLeft="16dp"
+    android:paddingTop="16dp"
+    android:paddingRight="16dp"
+    android:paddingBottom="16dp"
+    style="@style/UiKit.ViewGroup.LinearLayout">
+    <TextView
+        android:textSize="@dimen/uikit_textsize_xlarge"
+        android:textColor="?attr/primary_000"
+        android:layout_marginTop="16dp"
+        android:text="@string/premium_tier_1_perks_title"
+        style="@style/UiKit.TextView.Semibold"/>
+    <TextView
+        android:text="@string/premium_perks_tier_1_profile"
+        app:drawableStartCompat="@drawable/ic_premium_marketing_custom_profile_24dp"
+        style="@style/UiKit.TextView.Perk"/>
+    <TextView
+        android:id="@+id/tier_1_guild_subscription_perk"
+        android:text="@string/premium_perks_tier_1_guild_subscription"
+        app:drawableStartCompat="@drawable/ic_premium_marketing_guild_boost_24dp"
+        style="@style/UiKit.TextView.Perk"/>
+    <TextView
+        android:text="@string/premium_perks_tier_1_custom_emoji"
+        app:drawableStartCompat="@drawable/ic_premium_marketing_global_emojis_24dp"
+        style="@style/UiKit.TextView.Perk"/>
+    <TextView
+        android:id="@+id/tier1_upload_size_perk"
+        android:text="@string/premium_perks_upload_size"
+        app:drawableStartCompat="@drawable/ic_premium_marketing_upload_size_24dp"
+        style="@style/UiKit.TextView.Perk"/>
+    <TextView
+        android:text="@string/premium_perks_tier_1_stream_resolution"
+        app:drawableStartCompat="@drawable/ic_premium_marketing_stream_quality_24dp"
+        style="@style/UiKit.TextView.Perk"/>
+    <com.google.android.material.button.MaterialButton
+        android:textColor="@color/white"
+        android:id="@+id/premium_settings_premium_classic"
+        android:layout_marginTop="16dp"
+        app:icon="@drawable/ic_nitro_badge_white"
+        app:iconGravity="textStart"
+        app:iconSize="@dimen/uikit_textsize_large"
+        app:iconTint="@color/white"
+        style="@style/UiKit.Material.Button.Secondary"/>
+</LinearLayout>

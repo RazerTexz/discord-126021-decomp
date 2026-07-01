@@ -1,0 +1,10 @@
+package d0.e0.p.d.m0.d.b;
+
+/* JADX INFO: renamed from: d0.e0.p.d.m0.d.b.a, reason: use source file name */
+/* JADX INFO: compiled from: LookupLocation.kt */
+/* JADX INFO: loaded from: classes3.dex */
+public interface LookupLocation {
+    String getFilePath();
+
+    LookupLocation4 getPosition();
+}

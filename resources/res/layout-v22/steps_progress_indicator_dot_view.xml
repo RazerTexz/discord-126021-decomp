@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TextView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:enabled="false"
+    android:textColor="?attr/colorInteractiveActive"
+    android:gravity="center"
+    android:background="@drawable/bg_steps_progress_indicator_dot"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginLeft="4dp"
+    android:layout_marginRight="4dp"
+    android:minWidth="8dp"
+    android:minHeight="8dp"
+    android:layout_marginHorizontal="4dp"
+    style="@style/UiKit.TextView.Bold"/>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge xmlns:android="http://schemas.android.com/apk/res/android">
+    <TextView
+        android:textAppearance="@style/UiKit.TextAppearance.ListItem.Label"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:text="@string/join_server_invite_examples_header"
+        style="@style/UiKit.TextView"/>
+    <TextView
+        android:textColor="?attr/colorHeaderSecondary"
+        android:text="@string/invite_link_example_simple"
+        style="@style/UiKit.TextView"/>
+    <TextView
+        android:textColor="?attr/colorHeaderSecondary"
+        android:text="@string/invite_link_example_full"
+        style="@style/UiKit.TextView"/>
+    <TextView
+        android:textColor="?attr/colorHeaderSecondary"
+        android:text="@string/invite_link_example_verified"
+        style="@style/UiKit.TextView"/>
+</merge>

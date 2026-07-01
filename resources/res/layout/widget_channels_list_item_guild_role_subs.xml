@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:gravity="center_vertical"
+    android:background="@drawable/ic_directory_selector_background"
+    android:paddingLeft="16dp"
+    android:paddingTop="8dp"
+    android:paddingRight="16dp"
+    android:paddingBottom="8dp"
+    android:layout_marginBottom="4dp"
+    style="@style/UiKit.ViewGroup.LinearLayout.Horizontal">
+    <ImageView
+        android:id="@+id/directory_channel_icon"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:src="@drawable/ic_guild_role_subscription_badge"
+        android:importantForAccessibility="no"
+        android:layout_marginEnd="8dp"
+        style="@style/Avatar.Small"/>
+    <TextView
+        android:textColor="@color/channel_item_hub_selector"
+        android:id="@+id/directory_channel_name"
+        android:singleLine="true"
+        style="@style/UiKit.TextView.Large"/>
+</LinearLayout>

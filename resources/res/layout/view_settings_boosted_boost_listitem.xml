@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="?attr/colorBackgroundSecondary"
+    android:paddingLeft="16dp"
+    android:paddingTop="12dp"
+    android:paddingRight="16dp"
+    android:paddingBottom="12dp"
+    style="@style/UiKit.ViewGroup">
+    <ImageView
+        android:id="@+id/boosted_boost_cancelled"
+        android:src="@drawable/ic_warning_circle_24dp"
+        android:layout_centerVertical="true"
+        android:importantForAccessibility="no"
+        android:layout_marginEnd="8dp"
+        android:layout_alignParentStart="true"
+        style="@style/UiKit.ImageView"/>
+    <LinearLayout
+        android:gravity="start|center_vertical"
+        android:layout_width="match_parent"
+        android:layout_centerVertical="true"
+        android:layout_marginEnd="8dp"
+        android:layout_toStartOf="@+id/boosted_boost_action"
+        android:layout_toEndOf="@+id/boosted_boost_cancelled"
+        style="@style/UiKit.ViewGroup.LinearLayout">
+        <TextView
+            android:textSize="@dimen/uikit_textsize_large"
+            android:textColor="?attr/colorHeaderPrimary"
+            android:id="@+id/boosted_boost_date"
+            style="@style/UiKit.TextView.Semibold"/>
+        <TextView
+            android:textSize="@dimen/uikit_textsize_small"
+            android:textColor="?attr/colorTextMuted"
+            android:id="@+id/boosted_boost_cooldown"
+            style="@style/UiKit.TextView"/>
+    </LinearLayout>
+    <TextView
+        android:textSize="@dimen/uikit_textsize_large"
+        android:gravity="center_vertical"
+        android:id="@+id/boosted_boost_action"
+        android:text="@string/premium_guild_subscription_select_server_button"
+        android:drawablePadding="16dp"
+        android:layout_centerVertical="true"
+        android:contentDescription="@string/manage_premium_guild_subscription"
+        android:layout_alignParentEnd="true"
+        app:drawableEndCompat="?attr/ic_overflow"
+        style="@style/UiKit.TextView.Link"/>
+</RelativeLayout>

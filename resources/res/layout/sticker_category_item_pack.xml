@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android" style="@style/ExpressionPickerCategoryItem">
+    <com.discord.views.sticker.StickerView
+        android:layout_gravity="center"
+        android:id="@+id/sticker_category_item_pack_avatar"
+        android:layout_width="40dp"
+        android:layout_height="40dp"/>
+    <include
+        android:id="@+id/overline"
+        layout="@layout/expression_picker_category_selection_overline_view"/>
+</FrameLayout>

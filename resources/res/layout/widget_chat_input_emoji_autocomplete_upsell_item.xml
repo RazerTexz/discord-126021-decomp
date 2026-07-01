@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:gravity="center_vertical"
+    android:orientation="horizontal"
+    android:background="?attr/colorBackgroundSecondary"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    style="@style/AutocompleteItemContainer">
+    <TextView
+        android:id="@+id/chat_input_emoji_upsell_text"
+        android:padding="16dp"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        style="@style/UiKit.TextView.Semibold"/>
+    <com.discord.views.PileView
+        android:id="@+id/chat_input_emoji_upsell_pile"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        app:pile_itemBackgroundColor="?attr/colorBackgroundTertiary"
+        app:pile_itemCutoutThickness="2dp"
+        app:pile_itemOverlap="4dp"
+        app:pile_itemPadding="4dp"
+        app:pile_itemSize="24dp"/>
+</LinearLayout>

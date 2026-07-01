@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:background="?attr/primary_630_bg"
+    android:layout_width="wrap_content"
+    android:layout_margin="8dp"
+    style="@style/UiKit.ViewGroup.LinearLayout.Rotatable">
+    <ImageView
+        android:layout_width="match_parent"
+        android:src="@drawable/img_overlay_nux"
+        android:scaleType="centerCrop"
+        android:importantForAccessibility="no"
+        style="@style/UiKit.ImageView"/>
+    <LinearLayout style="@style/UiKit.ViewGroup.LinearLayout">
+        <TextView
+            android:textSize="@dimen/uikit_textsize_xxlarge"
+            android:gravity="center"
+            android:paddingBottom="0dp"
+            android:layout_marginTop="24dp"
+            android:text="@string/nux_overlay_title"
+            android:lineSpacingMultiplier="1"
+            android:textAllCaps="false"
+            style="@style/UiKit.Dialog.Title"/>
+        <TextView
+            android:paddingTop="8dp"
+            android:layout_margin="8dp"
+            android:text="@string/nux_overlay_description"
+            android:textAlignment="center"
+            style="@style/UiKit.Dialog.Body"/>
+        <LinearLayout
+            android:layout_margin="16dp"
+            style="@style/UiKit.ViewGroup.LinearLayout">
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/enable_button"
+                android:text="@string/nux_overlay_enable"
+                style="@style/UiKit.Material.Button"/>
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/cancel_button"
+                android:text="@string/no_thanks"
+                style="@style/UiKit.Material.Button.Transparent"/>
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>

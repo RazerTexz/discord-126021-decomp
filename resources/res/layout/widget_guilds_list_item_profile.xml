@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_marginTop="@dimen/guild_item_spacing"
+    android:contentDescription="@string/direct_messages"
+    style="@style/UiKit.GuildsListItem">
+    <FrameLayout
+        android:id="@+id/guilds_item_profile_avatar_wrap"
+        android:layout_width="@dimen/avatar_size_large"
+        android:layout_height="@dimen/avatar_size_large"
+        style="@style/UiKit.GuildsListIcon">
+        <ImageView
+            android:layout_gravity="center"
+            android:id="@+id/guilds_item_profile_avatar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_guild_list_dms_24dp"
+            android:importantForAccessibility="no"/>
+    </FrameLayout>
+    <ImageView
+        android:id="@+id/guilds_item_profile_selected"
+        android:importantForAccessibility="no"
+        style="@style/UiKit.GuildsListSelected"/>
+</RelativeLayout>

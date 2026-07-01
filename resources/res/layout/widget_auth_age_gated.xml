@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="?attr/auth_ptrn"
+    style="@style/UiKit.ViewGroup.Page">
+    <include layout="@layout/widget_auth_header"/>
+    <LinearLayout
+        android:orientation="vertical"
+        android:id="@+id/auth_register_container"
+        android:paddingLeft="8dp"
+        android:paddingRight="8dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="com.discord.app.AppScrollingViewBehavior">
+        <ImageView
+            android:layout_gravity="center"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="64dp"
+            android:src="@drawable/img_age_gate_failure"
+            android:contentDescription="@string/age_gate_underage_header"/>
+        <com.discord.views.ScreenTitleView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="8dp"
+            app:stv_title="@string/age_gate_underage_header"/>
+        <com.discord.utilities.view.text.LinkifiedTextView
+            android:gravity="center_horizontal"
+            android:id="@+id/auth_register_underage_description"
+            android:paddingLeft="16dp"
+            android:paddingRight="16dp"
+            android:text="@string/age_gate_underage_body_post_register_message"
+            android:lineSpacingMultiplier="1"
+            style="@style/UiKit.TextView.Large"/>
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/auth_register_underage_button"
+            android:layout_width="match_parent"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginRight="16dp"
+            android:text="@string/return_to_login"
+            style="@style/UiKit.Material.Button"/>
+    </LinearLayout>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

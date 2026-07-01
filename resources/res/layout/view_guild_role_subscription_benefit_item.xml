@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+    <com.facebook.drawee.view.SimpleDraweeView
+        android:id="@+id/guild_role_subscription_benefit_image"
+        android:background="?attr/primary_700_circle"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        app:actualImageScaleType="center"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+    <TextView
+        android:textColor="?attr/colorHeaderPrimary"
+        android:id="@+id/guild_role_subscription_benefit_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:drawablePadding="4dp"
+        android:layout_marginStart="@dimen/guild_role_subscription_setup_default_padding"
+        app:layout_constraintBottom_toTopOf="@+id/guild_role_subscription_benefit_description"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0"
+        app:layout_constraintStart_toEndOf="@+id/guild_role_subscription_benefit_image"
+        app:layout_constraintTop_toTopOf="parent"
+        style="@style/UiKit.TextView.H2"/>
+    <TextView
+        android:textColor="?attr/colorInteractiveNormal"
+        android:id="@+id/guild_role_subscription_benefit_description"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="2dp"
+        app:layout_constrainedWidth="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0"
+        app:layout_constraintStart_toStartOf="@+id/guild_role_subscription_benefit_name"
+        app:layout_constraintTop_toBottomOf="@+id/guild_role_subscription_benefit_name"
+        style="@style/UiKit.TextView.Medium"/>
+</merge>

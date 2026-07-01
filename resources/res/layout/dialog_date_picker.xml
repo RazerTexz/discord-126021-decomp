@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_height="wrap_content"
+    style="@style/UiKit.ViewGroup.Page.LinearLayout">
+    <TextView
+        android:gravity="center"
+        android:id="@+id/dialog_date_picker_title"
+        android:layout_width="match_parent"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginRight="16dp"
+        style="@style/UiKit.TextView.H1.Bold"/>
+    <DatePicker
+        android:theme="@style/DialogDatePicker"
+        android:id="@+id/dialog_date_picker_input"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:calendarViewShown="false"
+        android:datePickerMode="spinner"/>
+    <com.google.android.material.button.MaterialButton
+        android:textColor="@color/white"
+        android:id="@+id/dialog_date_picker_done"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginBottom="8dp"
+        android:text="@string/done"
+        style="@style/UiKit.Material.Button"/>
+</LinearLayout>

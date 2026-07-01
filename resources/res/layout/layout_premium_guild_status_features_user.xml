@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" style="@style/UiKit.ViewGroup.LinearLayout">
+    <TextView
+        android:textColor="?attr/colorHeaderPrimary"
+        android:gravity="center"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginBottom="16dp"
+        android:text="@string/premium_guild_perks_modal_subscriber_perks_header"
+        style="@style/UiKit.TextView.H1"/>
+    <TextView
+        android:textColor="?attr/colorTextNormal"
+        android:text="@string/premium_guild_subscriber_feature_member_badge"
+        app:drawableStartCompat="@drawable/ic_boosted_badge_24dp"
+        style="@style/UiKit.TextView.Perk"/>
+    <TextView
+        android:textColor="?attr/colorTextNormal"
+        android:text="@string/premium_guild_subscriber_feature_profile_badge"
+        app:drawableStartCompat="@drawable/ic_booster_profile_badge_24dp"
+        style="@style/UiKit.TextView.Perk"/>
+    <TextView
+        android:textColor="?attr/colorTextNormal"
+        android:text="@string/premium_guild_subscriber_feature_role"
+        app:drawableStartCompat="@drawable/ic_role_pink_24dp"
+        style="@style/UiKit.TextView.Perk"/>
+</LinearLayout>

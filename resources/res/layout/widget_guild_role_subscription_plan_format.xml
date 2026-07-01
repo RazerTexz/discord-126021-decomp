@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:paddingLeft="@dimen/guild_role_subscription_setup_default_padding"
+    android:paddingRight="@dimen/guild_role_subscription_setup_default_padding"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+    <TextView
+        android:layout_gravity="center_horizontal"
+        android:id="@+id/guild_role_subscription_format_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/guild_role_subscription_plan_setup_format_title"
+        style="@style/UiKit.GuildSubscriptionRole.Setup.Title"/>
+    <TextView
+        android:layout_gravity="center_horizontal"
+        android:id="@+id/guild_role_subscription_format_subtitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/guild_role_subscription_plan_setup_format_subtitle"
+        style="@style/UiKit.GuildSubscriptionRole.Setup.Subtitle"/>
+    <View
+        android:id="@+id/guild_role_subscription_format_divider"
+        android:layout_marginTop="24dp"
+        android:layout_marginBottom="24dp"
+        style="@style/UiKit.GuildSubscriptionRole.Setup.Divider"/>
+    <com.discord.widgets.guild_role_subscriptions.setup.GuildRoleSubscriptionPlanFormatRadioButton
+        android:id="@+id/guild_role_subscription_plan_some_channels_format"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:format_type="some_channels"/>
+    <com.discord.widgets.guild_role_subscriptions.setup.GuildRoleSubscriptionPlanFormatRadioButton
+        android:id="@+id/guild_role_subscription_plan_entire_server_format"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/guild_role_subscription_setup_default_padding"
+        app:format_type="entire_server"/>
+</LinearLayout>

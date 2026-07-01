@@ -1,0 +1,84 @@
+package co.discord.media_engine;
+
+import android.content.Context;
+import androidx.annotation.NonNull;
+import org.webrtc.CapturerObserver;
+import org.webrtc.SurfaceTextureHelper;
+import org.webrtc.VideoCapturer;
+import org.webrtc.VideoFrame;
+
+/* JADX INFO: loaded from: classes.dex */
+public final class NativeCapturerObserver implements CapturerObserver {
+    private long nativeHandle_;
+    private boolean startCaptureOnReconfigure_;
+    private SurfaceTextureHelper surfaceTextureHelper_;
+    private VideoCapturer videoCapturer_;
+
+    static {
+        System.loadLibrary("discord");
+    }
+
+    public NativeCapturerObserver(long j, @NonNull Context context, @NonNull String str) {
+        this(j, context, CameraEnumeratorProvider.createCapturer(str));
+    }
+
+    private native void nativeOnFrame(long j, @NonNull VideoFrame.Buffer buffer, int i, int i2, int i3, long j2);
+
+    public synchronized void dispose() {
+        VideoCapturer videoCapturer = this.videoCapturer_;
+        if (videoCapturer != null) {
+            try {
+                videoCapturer.stopCapture();
+                this.videoCapturer_.dispose();
+                this.videoCapturer_ = null;
+            } catch (InterruptedException e) {
+                throw new RuntimeException(e);
+            }
+        }
+        SurfaceTextureHelper surfaceTextureHelper = this.surfaceTextureHelper_;
+        if (surfaceTextureHelper != null) {
+            surfaceTextureHelper.dispose();
+            this.surfaceTextureHelper_ = null;
+        }
+    }
+
+    @Override // org.webrtc.CapturerObserver
+    public void onCapturerStarted(boolean z2) {
+    }
+
+    @Override // org.webrtc.CapturerObserver
+    public void onCapturerStopped() {
+    }
+
+    @Override // org.webrtc.CapturerObserver
+    public void onFrameCaptured(@NonNull VideoFrame videoFrame) {
+        nativeOnFrame(this.nativeHandle_, videoFrame.getBuffer(), videoFrame.getRotatedWidth(), videoFrame.getRotatedHeight(), videoFrame.getRotation(), videoFrame.getTimestampNs());
+    }
+
+    public synchronized void reconfigure(int i, int i2, int i3) {
+        VideoCapturer videoCapturer = this.videoCapturer_;
+        if (videoCapturer == null) {
+            return;
+        }
+        if (this.startCaptureOnReconfigure_) {
+            this.startCaptureOnReconfigure_ = false;
+            videoCapturer.startCapture(i, i2, i3);
+        } else {
+            videoCapturer.changeCaptureFormat(i, i2, i3);
+        }
+    }
+
+    public void repeatLastFrame() {
+        this.surfaceTextureHelper_.forceFrame();
+    }
+
+    public NativeCapturerObserver(long j, @NonNull Context context, @NonNull VideoCapturer videoCapturer) {
+        SurfaceTextureHelper surfaceTextureHelperCreate = SurfaceTextureHelper.create("DiscordTextureCapture", SharedEglBaseContext.getEglContext());
+        this.surfaceTextureHelper_ = surfaceTextureHelperCreate;
+        this.startCaptureOnReconfigure_ = false;
+        this.startCaptureOnReconfigure_ = true;
+        this.nativeHandle_ = j;
+        this.videoCapturer_ = videoCapturer;
+        videoCapturer.initialize(surfaceTextureHelperCreate, context, this);
+    }
+}

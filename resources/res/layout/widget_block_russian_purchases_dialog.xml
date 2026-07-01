@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" style="@style/UiKit.ViewGroup.Page.LinearLayout">
+    <LinearLayout
+        android:id="@+id/notice_header_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        style="@style/UiKit.ViewGroup.LinearLayout">
+        <TextView
+            android:id="@+id/notice_header"
+            android:padding="16dp"
+            android:layout_width="match_parent"
+            android:text="@string/region_blocked_payments_header"
+            style="@style/UiKit.TextView.H1.Bold"/>
+        <View style="@style/UiKit.Divider"/>
+    </LinearLayout>
+    <androidx.core.widget.NestedScrollView style="@style/UiKit.ViewGroup.NestedScrollView">
+        <LinearLayout
+            android:gravity="center"
+            android:id="@+id/notice_body_container"
+            style="@style/UiKit.ViewGroup.LinearLayout">
+            <com.discord.utilities.view.text.LinkifiedTextView
+                android:id="@+id/notice_body_text"
+                android:padding="16dp"
+                android:layout_width="match_parent"
+                android:textAlignment="center"
+                style="@style/UiKit.TextView"/>
+            <ImageView
+                android:layout_margin="8dp"
+                android:src="?attr/img_block_russian_purchases"
+                android:importantForAccessibility="no"
+                style="@style/UiKit.ImageView"/>
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+    <View style="@style/UiKit.Settings.Divider"/>
+    <LinearLayout style="@style/UiKit.Dialog.ButtonContainer">
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/notice_ok"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/okay"
+            android:layout_marginStart="8dp"
+            style="?attr/buttonBarPositiveButtonStyle"/>
+    </LinearLayout>
+</LinearLayout>

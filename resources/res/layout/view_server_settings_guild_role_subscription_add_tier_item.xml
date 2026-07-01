@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="horizontal"
+    android:background="@drawable/drawable_rect_rounded_bg_secondary"
+    android:padding="@dimen/guild_role_subscription_setup_default_padding"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+    <ImageView
+        android:layout_gravity="center"
+        android:id="@+id/guild_role_subscription_add_tier_image"
+        android:background="@drawable/drawable_circle_dashed_4dp"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:src="@drawable/ic_add_circle"
+        android:scaleType="center"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:tint="?attr/color_brand"/>
+    <TextView
+        android:textColor="?attr/colorHeaderPrimary"
+        android:id="@+id/guild_role_subscription_add_tier_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/guild_role_subscription_setup_default_padding"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/guild_role_subscription_add_tier_image"
+        app:layout_constraintTop_toTopOf="parent"
+        style="@style/UiKit.TextView.Large"/>
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <com.discord.views.typing.TypingDot
+        android:id="@+id/view_typing_dots_1"
+        android:background="?attr/primary_200_circle"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintDimensionRatio="1"
+        app:layout_constraintHorizontal_chainStyle="spread_inside"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@+id/view_typing_dots_2"
+        app:layout_constraintTop_toTopOf="parent"/>
+    <com.discord.views.typing.TypingDot
+        android:id="@+id/view_typing_dots_2"
+        android:background="?attr/primary_200_circle"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintDimensionRatio="1"
+        app:layout_constraintLeft_toRightOf="@+id/view_typing_dots_1"
+        app:layout_constraintRight_toLeftOf="@+id/view_typing_dots_3"
+        app:layout_constraintTop_toTopOf="parent"/>
+    <com.discord.views.typing.TypingDot
+        android:id="@+id/view_typing_dots_3"
+        android:background="?attr/primary_200_circle"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintDimensionRatio="1"
+        app:layout_constraintLeft_toRightOf="@+id/view_typing_dots_2"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+</merge>

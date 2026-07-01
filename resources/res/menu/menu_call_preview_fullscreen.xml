@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:icon="@drawable/ic_guild_invite_round_32dp"
+        android:id="@+id/menu_invite"
+        android:title="@string/invite_friends"
+        app:showAsAction="ifRoom"/>
+    <item
+        android:id="@+id/menu_text_in_voice"
+        android:title="@string/show_chat"
+        app:actionLayout="@layout/icon_text_in_voice_layout"
+        app:showAsAction="always"/>
+</menu>

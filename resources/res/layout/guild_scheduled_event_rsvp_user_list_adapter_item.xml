@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="?attr/selectableItemBackground"
+    android:paddingLeft="12dp"
+    android:paddingTop="8dp"
+    android:paddingRight="12dp"
+    android:paddingBottom="8dp"
+    style="@style/UiKit.ViewGroup.RelativeLayout">
+    <com.facebook.drawee.view.SimpleDraweeView
+        android:id="@+id/user_profile_adapter_item_avatar"
+        style="@style/Avatar.Standard"/>
+    <com.discord.views.StatusView
+        android:id="@+id/user_profile_adapter_item_status"
+        android:visibility="gone"
+        android:layout_width="16dp"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_status_idle_16dp"
+        android:layout_alignBottom="@+id/user_profile_adapter_item_avatar"
+        android:translationX="2dp"
+        android:translationY="2dp"
+        android:layout_alignEnd="@+id/user_profile_adapter_item_avatar"
+        app:sv_background_color="?attr/colorPrimary"
+        app:sv_border_width="2dp"
+        app:sv_corner_radius="2dp"/>
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_centerVertical="true"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="4dp"
+        android:layout_toEndOf="@+id/user_profile_adapter_item_avatar"
+        style="@style/UiKit.ViewGroup.LinearLayout">
+        <TextView
+            android:textAppearance="@style/UiKit.TextAppearance.Semibold"
+            android:textSize="@dimen/uikit_textsize_medium"
+            android:id="@+id/user_profile_adapter_item_user_name"
+            android:singleLine="true"
+            style="@style/UiKit.TextView.Large"/>
+        <TextView
+            android:textSize="@dimen/uikit_textsize_small"
+            android:id="@+id/user_profile_adapter_item_discriminator"
+            android:singleLine="true"
+            android:alpha="0.6"
+            android:paddingStart="2dp"
+            android:paddingEnd="2dp"
+            style="@style/UiKit.TextView.Medium"/>
+    </LinearLayout>
+</RelativeLayout>

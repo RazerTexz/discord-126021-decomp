@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="?attr/primary_630"
+    android:minWidth="328dp"
+    style="@style/UiKit.Dialog.Container">
+    <LinearLayout
+        android:background="?attr/primary_700"
+        android:padding="16dp"
+        style="@style/UiKit.ViewGroup.LinearLayout.Horizontal">
+        <com.facebook.drawee.view.SimpleDraweeView
+            android:id="@+id/user_actions_dialog_avatar"
+            android:layout_marginEnd="16dp"
+            app:roundWithOverlayColor="?attr/primary_700"
+            style="@style/Avatar.Medium"/>
+        <TextView
+            android:textSize="@dimen/uikit_textsize_large"
+            android:textColor="?attr/primary_100"
+            android:id="@+id/user_actions_dialog_user_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="?attr/font_primary_semibold"/>
+    </LinearLayout>
+    <TextView
+        android:id="@+id/user_actions_dialog_block_item"
+        android:text="@string/block"
+        app:drawableStartCompat="?attr/ic_user_actions_block"
+        style="@style/UiKit.ListItem.Icon"/>
+    <TextView
+        android:id="@+id/user_actions_dialog_unblock_item"
+        android:text="@string/unblock"
+        app:drawableStartCompat="?attr/ic_user_actions_unblock"
+        style="@style/UiKit.ListItem.Icon"/>
+    <TextView
+        android:id="@+id/user_actions_dialog_remove_friend_item"
+        android:text="@string/remove_friend"
+        app:drawableStartCompat="?attr/ic_user_actions_remove_friend"
+        style="@style/UiKit.ListItem.Icon"/>
+</LinearLayout>

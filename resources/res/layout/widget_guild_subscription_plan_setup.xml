@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.discord.views.steps.StepsView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/guild_subscription_plan_setup_step_views"
+    style="@style/UiKit.ViewGroup.Page"/>

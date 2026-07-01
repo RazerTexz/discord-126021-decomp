@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" style="@style/UiKit.ViewGroup.Page">
+    <com.google.android.material.appbar.AppBarLayout style="@style/AppTheme.AppBarLayout.Flat">
+        <androidx.appcompat.widget.Toolbar style="@style/AppTheme.Toolbar"/>
+    </com.google.android.material.appbar.AppBarLayout>
+    <com.discord.app.AppViewFlipper
+        android:id="@+id/view_flipper"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        style="@style/UiKit.ViewGroup.AppViewFlipper.InCoordinatorLayout">
+        <ProgressBar
+            android:layout_gravity="center"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:indeterminate="true"
+            style="@style/Widget.AppCompat.ProgressBar"/>
+        <TextView
+            android:layout_gravity="center"
+            android:id="@+id/error_notice_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginHorizontal="20dp"
+            style="@style/UiKit.Form.Notice.Error"/>
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <ViewStub
+                android:id="@+id/onboarding_create_request"
+                android:layout="@layout/widget_server_settings_creator_monetization_onboarding_create_request"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"/>
+        </FrameLayout>
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <ViewStub
+                android:id="@+id/onboarding_accept_terms"
+                android:layout="@layout/widget_server_settings_creator_monetization_onboarding_accept_terms"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"/>
+        </FrameLayout>
+    </com.discord.app.AppViewFlipper>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

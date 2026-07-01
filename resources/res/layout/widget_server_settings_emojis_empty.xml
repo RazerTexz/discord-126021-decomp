@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:gravity="center"
+    android:layout_marginTop="16dp"
+    android:layout_marginBottom="16dp"
+    style="@style/UiKit.ViewGroup.LinearLayout">
+    <TextView
+        android:text="@string/no_emoji_title"
+        app:drawableTopCompat="?attr/theme_emoji_settings_empty"
+        style="@style/UiKit.TextView.NoResults"/>
+    <TextView
+        android:gravity="center"
+        android:paddingLeft="16dp"
+        android:paddingRight="16dp"
+        android:text="@string/no_emoji"
+        style="@style/UiKit.TextView"/>
+</LinearLayout>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android" style="@style/UiKit.ViewGroup.Page">
+    <com.google.android.material.appbar.AppBarLayout
+        android:background="?attr/primary_630"
+        style="@style/AppTheme.AppBarLayout.Flat.Transparent">
+        <androidx.appcompat.widget.Toolbar style="@style/AppTheme.Toolbar.Transparent"/>
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/guild_notifications_channel_search"
+            style="@style/UiKit.TextInputLayout.Search">
+            <com.google.android.material.textfield.TextInputEditText
+                android:hint="@string/search_channels"
+                style="@style/UiKit.TextInputLayout.EditText.SingleLine.Search"/>
+        </com.google.android.material.textfield.TextInputLayout>
+    </com.google.android.material.appbar.AppBarLayout>
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/guild_notifications_channel_list"
+        android:paddingTop="8dp"
+        android:paddingBottom="@dimen/list_bottom_padding"
+        android:scrollbars="vertical"
+        android:clipToPadding="false"
+        android:layout_height="match_parent"
+        style="@style/UiKit.ViewGroup.RecyclerView.AppBarScrollingViewBehavior"/>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

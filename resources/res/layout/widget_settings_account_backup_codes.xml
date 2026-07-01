@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android" style="@style/UiKit.ViewGroup.Page">
+    <com.google.android.material.appbar.AppBarLayout style="@style/AppTheme.AppBarLayout.Flat">
+        <androidx.appcompat.widget.Toolbar style="@style/AppTheme.Toolbar"/>
+    </com.google.android.material.appbar.AppBarLayout>
+    <androidx.core.widget.NestedScrollView style="@style/UiKit.ViewGroup.NestedScrollView.AppBarScrollingViewBehavior">
+        <LinearLayout style="@style/UiKit.ViewGroup.LinearLayout">
+            <TextView
+                android:id="@+id/settings_backup_codes_info"
+                android:layout_margin="16dp"
+                android:text="@string/two_fa_backup_codes_body"
+                style="@style/UiKit.TextView"/>
+            <View style="@style/UiKit.Divider"/>
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/settings_backup_codes_rv"
+                android:layout_height="wrap_content"
+                style="@style/UiKit.ViewGroup.RecyclerView"/>
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/settings_backup_codes_generate"
+                android:layout_marginLeft="16dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginRight="16dp"
+                android:layout_marginBottom="24dp"
+                android:text="@string/two_fa_generate_codes"
+                style="@style/UiKit.Material.Button.Secondary"/>
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+    <com.discord.utilities.dimmer.DimmerView
+        android:id="@+id/dimmer_view"
+        style="@style/UiKit.DimmerView"/>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

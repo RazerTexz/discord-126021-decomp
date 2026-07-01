@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+    <com.discord.views.sticker.StickerView
+        android:id="@+id/chat_list_adapter_item_sticker_greet"
+        android:layout_width="@dimen/sticker_length"
+        android:layout_height="@dimen/sticker_length"/>
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/send_sticker_greet_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginRight="16dp"
+        style="@style/UiKit.Material.Button"/>
+</LinearLayout>

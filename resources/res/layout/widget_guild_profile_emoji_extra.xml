@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TextView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:textAppearance="@style/UiKit.TextView.Subtext"
+    android:textSize="12dp"
+    android:textColor="?attr/colorTextNormal"
+    android:gravity="center"
+    style="@style/GuildProfileSheet.Emoji.Item"/>

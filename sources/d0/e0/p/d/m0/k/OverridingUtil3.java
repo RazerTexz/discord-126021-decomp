@@ -1,0 +1,22 @@
+package d0.e0.p.d.m0.k;
+
+import d0.e0.p.d.m0.c.CallableMemberDescriptor;
+import d0.e0.p.d.m0.c.ClassDescriptor;
+import d0.e0.p.d.m0.c.DescriptorVisibilities;
+import kotlin.jvm.functions.Function1;
+
+/* JADX INFO: renamed from: d0.e0.p.d.m0.k.m, reason: use source file name */
+/* JADX INFO: compiled from: OverridingUtil.java */
+/* JADX INFO: loaded from: classes3.dex */
+public final class OverridingUtil3 implements Function1<CallableMemberDescriptor, Boolean> {
+    public final /* synthetic */ ClassDescriptor j;
+
+    public OverridingUtil3(ClassDescriptor classDescriptor) {
+        this.j = classDescriptor;
+    }
+
+    @Override // kotlin.jvm.functions.Function1
+    public Boolean invoke(CallableMemberDescriptor callableMemberDescriptor) {
+        return Boolean.valueOf(!DescriptorVisibilities.isPrivate(callableMemberDescriptor.getVisibility()) && DescriptorVisibilities.isVisibleIgnoringReceiver(callableMemberDescriptor, this.j));
+    }
+}

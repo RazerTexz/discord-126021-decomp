@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" style="@style/UiKit.ViewGroup.Page">
+    <com.google.android.material.appbar.AppBarLayout style="@style/AppTheme.AppBarLayout">
+        <androidx.appcompat.widget.Toolbar style="@style/AppTheme.Toolbar"/>
+    </com.google.android.material.appbar.AppBarLayout>
+    <androidx.core.widget.NestedScrollView style="@style/UiKit.ViewGroup.NestedScrollView.AppBarScrollingViewBehavior">
+        <LinearLayout
+            android:orientation="vertical"
+            android:focusableInTouchMode="true"
+            style="@style/UiKit.ViewGroup.LinearLayout">
+            <TextView
+                android:text="@string/guild_folder_name"
+                style="@style/UiKit.Settings.Item.Header"/>
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="64dp"
+                android:layout_marginBottom="8dp">
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/edit_guild_folder_name"
+                    android:hint="@string/guild_folder_name"
+                    style="@style/UiKit.TextInputLayout.Primary">
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:maxLength="100"
+                        android:inputType="textNoSuggestions"
+                        style="@style/UiKit.TextInputLayout.EditText.SingleLine"/>
+                </com.google.android.material.textfield.TextInputLayout>
+            </FrameLayout>
+            <View style="@style/UiKit.Settings.Divider"/>
+            <TextView
+                android:text="@string/guild_folder_color"
+                style="@style/UiKit.Settings.Item.Header"/>
+            <RelativeLayout
+                android:id="@+id/guild_folder_settings_color"
+                android:background="?attr/bg_pressed_highlight"
+                android:focusable="true"
+                android:clickable="true"
+                android:layout_width="match_parent"
+                android:layout_height="64dp">
+                <TextView
+                    android:id="@+id/guild_folder_color_name"
+                    android:layout_margin="16dp"
+                    android:text="@string/guild_folder_color"
+                    android:layout_centerVertical="true"
+                    android:layout_alignParentStart="true"
+                    style="@style/UiKit.TextView"/>
+                <View
+                    android:id="@+id/guild_folder_settings_color_display"
+                    android:background="@drawable/drawable_circle_brand"
+                    android:layout_width="32dp"
+                    android:layout_height="32dp"
+                    android:layout_margin="16dp"
+                    android:layout_alignParentEnd="true"
+                    android:elevation="2dp"/>
+            </RelativeLayout>
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/guild_folder_settings_save"
+        android:visibility="visible"
+        android:contentDescription="@string/save_changes"
+        style="@style/Settings.FloatingActionButton.Save"/>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

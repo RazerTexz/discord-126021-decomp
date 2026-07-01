@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_gravity="end"
+    android:background="?attr/colorBackgroundTertiary"
+    android:fitsSystemWindows="true"
+    android:layout_width="@dimen/right_panel_width"
+    android:layout_height="match_parent">
+    <com.discord.utilities.view.rounded.RoundedRelativeLayout
+        android:id="@+id/main_panel_right_rounded_container"
+        android:background="?attr/colorBackgroundPrimary"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:topLeftRadius="8dp"
+        app:topRightRadius="8dp">
+        <androidx.fragment.app.FragmentContainerView
+            android:name="com.discord.widgets.channels.WidgetChannelTopic"
+            android:id="@+id/widget_channel_topic"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+        <androidx.fragment.app.FragmentContainerView
+            android:name="com.discord.widgets.channels.WidgetChannelSidebarActions"
+            android:id="@+id/widget_channel_action_bar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/widget_channel_topic"/>
+        <androidx.fragment.app.FragmentContainerView
+            android:name="com.discord.widgets.channels.memberlist.WidgetChannelMembersList"
+            android:id="@+id/widget_connected_list"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/widget_channel_action_bar"/>
+    </com.discord.utilities.view.rounded.RoundedRelativeLayout>
+</FrameLayout>

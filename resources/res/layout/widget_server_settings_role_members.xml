@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    style="@style/UiKit.ViewGroup.Page.LinearLayout">
+    <com.discord.app.AppViewFlipper
+        android:id="@+id/role_members_app_view_flipper"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <ProgressBar
+            android:layout_gravity="center"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:indeterminate="true"
+            style="@style/Widget.AppCompat.ProgressBar"/>
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <com.discord.views.SearchInputView
+                android:id="@+id/server_settings_role_members_search_input"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="16dp"
+                android:layout_marginTop="14dp"
+                android:layout_marginRight="16dp"
+                android:layout_marginBottom="14dp"
+                app:siv_hint="@string/role_add_members_search"/>
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/server_settings_role_members_list"
+                android:background="@drawable/drawable_rect_rounded_bg_secondary"
+                android:paddingTop="8dp"
+                android:paddingBottom="8dp"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="@dimen/guild_role_subscription_setup_default_padding"
+                style="@style/UiKit.ViewGroup.RecyclerView"/>
+        </LinearLayout>
+    </com.discord.app.AppViewFlipper>
+</LinearLayout>

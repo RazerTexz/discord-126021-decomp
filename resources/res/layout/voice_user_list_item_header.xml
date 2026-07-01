@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TextView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:textSize="@dimen/uikit_textsize_small"
+    android:textColor="?attr/primary_400"
+    android:id="@+id/voice_user_list_item_header_label"
+    android:layout_marginLeft="16dp"
+    android:layout_marginTop="8dp"
+    android:layout_marginRight="16dp"
+    android:layout_marginBottom="8dp"
+    android:textAllCaps="true"
+    style="@style/UiKit.TextView"/>

@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" style="@style/UiKit.ViewGroup.Page">
+    <com.google.android.material.appbar.AppBarLayout style="@style/AppTheme.AppBarLayout.Flat">
+        <androidx.appcompat.widget.Toolbar style="@style/AppTheme.Toolbar"/>
+    </com.google.android.material.appbar.AppBarLayout>
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/scroll_view"
+        style="@style/UiKit.ViewGroup.NestedScrollView.AppBarScrollingViewBehavior">
+        <LinearLayout
+            android:paddingBottom="@dimen/padding_bottom_fab_screen"
+            style="@style/UiKit.ViewGroup.LinearLayout">
+            <com.discord.widgets.servers.NotificationMuteSettingsView
+                android:id="@+id/mute_settings"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+            <LinearLayout
+                android:id="@+id/forum_channel_notification_settings"
+                style="@style/UiKit.ViewGroup.LinearLayout">
+                <View style="@style/UiKit.Settings.Divider"/>
+                <TextView
+                    android:text="@string/forum_post_notifications"
+                    style="@style/UiKit.Settings.Item.Header"/>
+                <com.discord.views.CheckedSetting
+                    android:id="@+id/frequency_all_posts"
+                    app:cs_text="@string/forum_new_posts_created"
+                    app:cs_view_type="check"
+                    style="@style/UiKit.CheckedSetting.Themed"/>
+            </LinearLayout>
+            <LinearLayout
+                android:id="@+id/channel_settings_notifications_frequency_wrap"
+                style="@style/UiKit.ViewGroup.LinearLayout">
+                <View
+                    android:id="@+id/frequency_top_divider"
+                    style="@style/UiKit.Settings.Divider"/>
+                <TextView
+                    android:id="@+id/frequency_header"
+                    android:text="@string/form_label_notification_frequency"
+                    style="@style/UiKit.Settings.Item.Header"/>
+                <TextView
+                    android:id="@+id/frequency_subheader"
+                    android:text="@string/forum_message_notifications_description"
+                    style="@style/UiKit.Settings.Item.SubText"/>
+                <LinearLayout style="@style/UiKit.ViewGroup.LinearLayout">
+                    <com.discord.views.CheckedSetting
+                        android:id="@+id/frequency_radio_all"
+                        app:cs_text="@string/form_label_all_messages"
+                        app:cs_view_type="radio"
+                        style="@style/UiKit.CheckedSetting.Themed"/>
+                    <com.discord.views.CheckedSetting
+                        android:id="@+id/frequency_radio_mentions"
+                        app:cs_text="@string/form_label_only_mentions"
+                        app:cs_view_type="radio"
+                        style="@style/UiKit.CheckedSetting.Themed"/>
+                    <com.discord.views.CheckedSetting
+                        android:id="@+id/frequency_radio_nothing"
+                        app:cs_text="@string/form_label_nothing"
+                        app:cs_view_type="radio"
+                        style="@style/UiKit.CheckedSetting.Themed"/>
+                </LinearLayout>
+            </LinearLayout>
+            <View style="@style/UiKit.Settings.Divider"/>
+            <LinearLayout
+                android:gravity="center_vertical"
+                android:id="@+id/channel_notification_settings_system"
+                android:background="?attr/selectableItemBackground"
+                style="@style/UiKit.ViewGroup.LinearLayout.Horizontal">
+                <ImageView
+                    android:padding="@dimen/uikit_textsize_large"
+                    android:src="?attr/ic_notifications_a60"
+                    android:contentDescription="@string/form_label_mobile_notifications_system_label"
+                    style="@style/UiKit.ImageView"/>
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    style="@style/UiKit.ViewGroup.LinearLayout">
+                    <TextView
+                        android:text="@string/form_label_mobile_user_notifications_label"
+                        style="@style/UiKit.Settings.Item.Label"/>
+                    <TextView
+                        android:text="@string/form_label_mobile_user_notifications_hint"
+                        style="@style/UiKit.Settings.Item.Addition"/>
+                </LinearLayout>
+                <ImageView
+                    android:padding="16dp"
+                    android:src="@drawable/icon_carrot"
+                    android:importantForAccessibility="no"
+                    style="@style/UiKit.ImageView"/>
+            </LinearLayout>
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

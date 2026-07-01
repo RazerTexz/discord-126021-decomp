@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/menu_text_in_voice"
+        android:title="@string/show_chat"
+        app:actionLayout="@layout/icon_text_in_voice_layout"
+        app:showAsAction="always"/>
+    <item
+        android:icon="@drawable/ic_call_toolbar_icon_camera_swap"
+        android:id="@+id/menu_call_switch_camera"
+        android:title="@string/video_call_return_to_grid"
+        app:showAsAction="ifRoom"/>
+    <item
+        android:icon="@drawable/ic_call_toolbar_icon_group"
+        android:id="@+id/menu_call_video_list"
+        android:title="@string/video_call_return_to_list"
+        app:showAsAction="ifRoom"/>
+    <item
+        android:icon="@drawable/ic_call_toolbar_icon_grid"
+        android:id="@+id/menu_call_overlay_launcher"
+        android:visible="true"
+        android:title="@string/settings_games_toggle_overlay"
+        app:showAsAction="ifRoom"/>
+    <item
+        android:icon="@drawable/ic_more_options_with_circular_background"
+        android:id="@+id/menu_call_voice_settings"
+        android:title="@string/more_options"
+        app:showAsAction="ifRoom"/>
+</menu>

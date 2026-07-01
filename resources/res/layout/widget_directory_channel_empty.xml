@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:gravity="center"
+    android:paddingLeft="16dp"
+    android:paddingTop="16dp"
+    android:paddingRight="16dp"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:baselineAligned="false"
+    style="@style/UiKit.ViewGroup.LinearLayout">
+    <TextView
+        android:textSize="@dimen/uikit_textsize_xxlarge"
+        android:gravity="center"
+        android:id="@+id/item_directory_empty_header"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        style="@style/UiKit.TextView.H1.Bold"/>
+    <com.discord.utilities.view.text.LinkifiedTextView
+        android:textSize="@dimen/uikit_textsize_large"
+        android:textColor="?attr/colorHeaderSecondary"
+        android:gravity="center"
+        android:id="@+id/item_directory_empty_subheader"
+        android:layout_marginBottom="16dp"
+        android:text="@string/hub_directory_channel_empty_subtitle"
+        style="@style/UiKit.TextView"/>
+    <com.discord.views.ChatActionItem
+        android:id="@+id/welcome_card_add_server"
+        android:layout_marginBottom="12dp"
+        app:action_item_img_src="@drawable/ic_guild_welcome_personalize"
+        app:action_item_text="@string/hub_directory_channel_empty_add_server"
+        style="@style/UiKit.WelcomeMessageCard"/>
+    <com.discord.views.ChatActionItem
+        android:id="@+id/welcome_card_invite_friends"
+        android:layout_marginBottom="12dp"
+        app:action_item_img_src="@drawable/ic_guild_welcome_add_friend"
+        app:action_item_text="@string/hub_directory_channel_empty_invite"
+        style="@style/UiKit.WelcomeMessageCard"/>
+</LinearLayout>

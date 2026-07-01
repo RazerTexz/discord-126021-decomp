@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" style="@style/FriendsList.FriendsItem">
+    <com.facebook.drawee.view.SimpleDraweeView
+        android:id="@+id/friends_list_item_avatar"
+        android:importantForAccessibility="no"
+        style="@style/FriendsList.FriendsItem.Avatar"/>
+    <com.discord.views.StatusView
+        android:id="@+id/friends_list_item_status"
+        android:layout_alignBottom="@+id/friends_list_item_avatar"
+        android:layout_alignEnd="@+id/friends_list_item_avatar"
+        app:sv_background_color="?attr/colorPrimary"
+        app:sv_border_width="2dp"
+        app:sv_corner_radius="4dp"
+        style="@style/FriendsList.FriendsItem.Status"/>
+    <LinearLayout
+        android:id="@+id/friends_list_item_text"
+        android:layout_toStartOf="@+id/friends_list_item_buttons_wrap"
+        android:layout_toEndOf="@+id/friends_list_item_avatar"
+        style="@style/FriendsList.FriendsItem.Text">
+        <TextView
+            android:id="@+id/friends_list_item_name"
+            android:text="@string/sample_user_name"
+            style="@style/FriendsList.FriendsItem.Name"/>
+        <com.discord.utilities.view.text.SimpleDraweeSpanTextView
+            android:id="@+id/friends_list_item_activity"
+            android:text="@string/sample_user_presence"
+            style="@style/FriendsList.FriendsItem.Activity"/>
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/friends_list_item_buttons_wrap"
+        style="@style/FriendsList.FriendsItem.ButtonsWrap">
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/friends_list_item_accept_button"
+            android:layout_marginEnd="8dp"
+            app:srcCompat="@drawable/ic_check_green_24dp"
+            style="@style/FriendsList.FriendsItem.ActionButton"/>
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/friends_list_item_decline_button"
+            android:layout_marginStart="8dp"
+            app:srcCompat="@drawable/ic_close_white_24dp"
+            app:tint="@color/status_red"
+            style="@style/FriendsList.FriendsItem.ActionButton"/>
+    </LinearLayout>
+</RelativeLayout>

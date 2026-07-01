@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+    <TextView
+        android:id="@+id/appcommands_optiontitle_title"
+        android:background="?attr/colorBackgroundAccent"
+        android:paddingLeft="8dp"
+        android:paddingTop="8dp"
+        android:paddingRight="8dp"
+        android:paddingBottom="8dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="4dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginRight="4dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginHorizontal="4dp"
+        android:layout_marginVertical="8dp"
+        android:paddingHorizontal="8dp"
+        android:paddingVertical="8dp"
+        style="@style/UiKit.TextView"/>
+</FrameLayout>

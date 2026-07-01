@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+    <View
+        android:id="@+id/suggestion_item_header_history_divider"
+        android:background="?attr/colorBackgroundModifierAccent"
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="16dp"
+        android:layout_alignParentTop="true"/>
+    <TextView
+        android:textSize="@dimen/uikit_textsize_small"
+        android:textColor="?attr/colorHeaderSecondary"
+        android:gravity="center_vertical"
+        android:id="@+id/suggestion_item_header_history_text"
+        android:layout_width="match_parent"
+        android:text="@string/search_group_header_history"
+        android:layout_alignTop="@+id/suggestion_item_header_history_clear_icon"
+        android:layout_alignBottom="@+id/suggestion_item_header_history_clear_icon"
+        android:textAllCaps="true"
+        android:layout_marginStart="72dp"
+        android:layout_alignParentStart="true"
+        style="@style/UiKit.TextView.Semibold"/>
+    <ImageView
+        android:id="@+id/suggestion_item_header_history_clear_icon"
+        android:background="?attr/selectableItemBackgroundBorderless"
+        android:paddingLeft="16dp"
+        android:paddingRight="16dp"
+        android:focusable="true"
+        android:clickable="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_clear_all_white_24dp"
+        android:layout_below="@+id/suggestion_item_header_history_divider"
+        android:contentDescription="@string/search_clear_history"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp"
+        android:layout_alignParentEnd="true"
+        app:tint="?attr/colorInteractiveNormal"/>
+</RelativeLayout>

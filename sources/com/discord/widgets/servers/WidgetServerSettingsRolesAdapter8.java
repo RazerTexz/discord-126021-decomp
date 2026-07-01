@@ -1,0 +1,29 @@
+package com.discord.widgets.servers;
+
+import com.discord.api.role.GuildRole;
+import d0.z.d.Intrinsics3;
+import d0.z.d.Lambda;
+import kotlin.Unit;
+import kotlin.jvm.functions.Function1;
+
+/* JADX INFO: renamed from: com.discord.widgets.servers.WidgetServerSettingsRolesAdapter$roleSelectedListener$1, reason: use source file name */
+/* JADX INFO: compiled from: WidgetServerSettingsRolesAdapter.kt */
+/* JADX INFO: loaded from: classes2.dex */
+public final class WidgetServerSettingsRolesAdapter8 extends Lambda implements Function1<GuildRole, Unit> {
+    public static final WidgetServerSettingsRolesAdapter8 INSTANCE = new WidgetServerSettingsRolesAdapter8();
+
+    public WidgetServerSettingsRolesAdapter8() {
+        super(1);
+    }
+
+    @Override // kotlin.jvm.functions.Function1
+    public /* bridge */ /* synthetic */ Unit invoke(GuildRole guildRole) {
+        invoke2(guildRole);
+        return Unit.a;
+    }
+
+    /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
+    public final void invoke2(GuildRole guildRole) {
+        Intrinsics3.checkNotNullParameter(guildRole, "it");
+    }
+}

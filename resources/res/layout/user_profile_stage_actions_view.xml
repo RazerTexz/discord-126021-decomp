@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    style="@style/UiKit.ViewGroup.LinearLayout">
+    <TextView
+        android:id="@+id/user_profile_stage_invite_to_speak"
+        android:visibility="gone"
+        android:text="@string/stage_channel_user_invite_to_speak"
+        app:drawableStartCompat="@drawable/ic_stage_invite_speak"
+        style="@style/UiKit.ListItem.Icon"/>
+    <TextView
+        android:id="@+id/user_profile_stage_move_to_audience"
+        android:visibility="gone"
+        android:text="@string/stage_channel_user_move_to_audience"
+        app:drawableStartCompat="@drawable/ic_stage_move_to_audience"
+        app:drawableTint="@color/primary_300"
+        style="@style/UiKit.ListItem.Icon"/>
+</LinearLayout>

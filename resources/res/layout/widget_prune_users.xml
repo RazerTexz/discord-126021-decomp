@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" style="@style/UiKit.ViewGroup.Page">
+    <LinearLayout style="@style/UiKit.ViewGroup.LinearLayout">
+        <TextView
+            android:ellipsize="end"
+            android:id="@+id/prune_user_header"
+            android:padding="16dp"
+            android:layout_width="match_parent"
+            android:text="@string/prune_members"
+            android:maxLines="1"
+            style="@style/UiKit.TextView.H1.Bold"/>
+        <View style="@style/UiKit.Divider"/>
+        <TextView
+            android:text="@string/form_label_last_seen"
+            style="@style/UiKit.Settings.Item.Header"/>
+        <com.discord.views.CheckedSetting
+            android:id="@+id/prune_users_history_1_radio"
+            app:cs_view_type="radio"
+            style="@style/UiKit.CheckedSetting.Themed"/>
+        <com.discord.views.CheckedSetting
+            android:id="@+id/prune_users_history_2_radio"
+            app:cs_view_type="radio"
+            style="@style/UiKit.CheckedSetting.Themed"/>
+        <RelativeLayout
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginRight="16dp"
+            android:layout_marginBottom="8dp"
+            style="@style/UiKit.ViewGroup.RelativeLayout">
+            <ProgressBar
+                android:id="@+id/prune_users_loading_progressbar"
+                android:visibility="invisible"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:indeterminate="true"
+                android:layout_alignTop="@+id/prune_users_estimate_text"
+                android:layout_alignBottom="@+id/prune_users_estimate_text"
+                android:layout_centerInParent="true"/>
+            <TextView
+                android:textSize="@dimen/uikit_textsize_small"
+                android:id="@+id/prune_users_estimate_text"
+                android:layout_centerInParent="true"
+                style="@style/UiKit.TextView"/>
+        </RelativeLayout>
+        <LinearLayout style="@style/UiKit.Dialog.ButtonContainer">
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/prune_user_cancel"
+                android:text="@string/cancel"
+                android:layout_marginEnd="8dp"
+                style="@style/UiKit.Material.Button.Transparent.Fit"/>
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/prune_user_prune"
+                android:text="@string/prune"
+                style="@style/UiKit.Material.Button.Red.Fit"/>
+        </LinearLayout>
+    </LinearLayout>
+</ScrollView>

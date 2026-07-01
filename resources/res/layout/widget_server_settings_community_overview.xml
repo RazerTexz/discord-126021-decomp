@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" style="@style/UiKit.ViewGroup.Page.LinearLayout">
+    <com.google.android.material.appbar.AppBarLayout style="@style/AppTheme.AppBarLayout.Flat">
+        <androidx.appcompat.widget.Toolbar style="@style/AppTheme.Toolbar"/>
+    </com.google.android.material.appbar.AppBarLayout>
+    <ScrollView
+        android:id="@+id/server_settings_community_overview_scroll"
+        style="@style/UiKit.ViewGroup.NestedScrollView.AppBarScrollingViewBehavior">
+        <LinearLayout
+            android:focusableInTouchMode="true"
+            style="@style/UiKit.ViewGroup.LinearLayout">
+            <com.discord.widgets.servers.community.CommunitySelectorView
+                android:id="@+id/community_rules_channel"
+                app:csv_description_text="@string/guild_settings_community_rules_channel_help_mobile"
+                app:csv_title_text="@string/form_label_discovery_rules_channel"
+                style="@style/UiKit.ViewGroup.LinearLayout"/>
+            <View style="@style/UiKit.Settings.Divider"/>
+            <com.discord.widgets.servers.community.CommunitySelectorView
+                android:id="@+id/community_updates_channel"
+                app:csv_description_text="@string/guild_settings_community_mod_channel_help_mobile"
+                app:csv_title_text="@string/guild_settings_community_mod_channel_title"
+                style="@style/UiKit.ViewGroup.LinearLayout"/>
+            <View style="@style/UiKit.Settings.Divider"/>
+            <com.discord.widgets.servers.community.CommunitySelectorView
+                android:id="@+id/server_settings_community_locale"
+                app:csv_description_text="@string/guild_settings_community_locale_help"
+                app:csv_title_text="@string/form_label_server_language"
+                style="@style/UiKit.ViewGroup.LinearLayout"/>
+            <View style="@style/UiKit.Settings.Divider"/>
+            <com.discord.widgets.servers.community.CommunitySelectorView
+                android:id="@+id/server_settings_disable_community_message"
+                app:csv_description_text="@string/guild_settings_community_disable_community_description"
+                app:csv_is_dropdown="false"
+                app:csv_title_text="@string/guild_settings_community_disable_community"
+                style="@style/UiKit.ViewGroup.LinearLayout"/>
+            <com.discord.views.LoadingButton
+                android:layout_gravity="center_vertical"
+                android:id="@+id/server_settings_disable_community_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="18dp"
+                android:layout_marginBottom="18dp"
+                android:layout_marginStart="16dp"
+                app:lb_background_color="@color/status_red_500"
+                app:lb_progress_color="@color/white"
+                app:lb_text="@string/guild_settings_community_disable_community"
+                app:lb_text_color="@drawable/button_text_color_primary_100"/>
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

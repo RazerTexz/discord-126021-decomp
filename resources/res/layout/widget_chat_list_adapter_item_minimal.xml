@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="?attr/selectableItemBackground"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+    <View
+        android:id="@+id/chat_list_adapter_item_highlighted_bg"
+        android:background="?attr/theme_chat_mentioned_me"
+        android:visibility="gone"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+    <View
+        android:id="@+id/chat_list_adapter_item_gutter_bg"
+        android:background="@color/status_yellow_500"
+        android:layout_width="2dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+    <com.discord.utilities.view.text.LinkifiedTextView
+        android:gravity="center_vertical"
+        android:id="@+id/chat_list_adapter_item_text"
+        android:layout_width="match_parent"
+        android:layout_marginBottom="2dp"
+        android:layout_marginStart="@dimen/uikit_guideline_chat"
+        android:layout_marginEnd="@dimen/chat_cell_horizontal_spacing_total"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        style="@style/UiKit.Chat.Text"/>
+</androidx.constraintlayout.widget.ConstraintLayout>

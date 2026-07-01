@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:gravity="center"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    style="@style/UiKit.ViewGroup.LinearLayout">
+    <TextView
+        android:textSize="@dimen/uikit_textsize_xxlarge"
+        android:gravity="center"
+        android:id="@+id/screen_title_title"
+        android:lineSpacingMultiplier="1"
+        style="@style/UiKit.TextView.H1.Bold"/>
+    <TextView
+        android:textColor="?attr/colorHeaderSecondary"
+        android:gravity="center"
+        android:id="@+id/screen_title_subtitle"
+        android:layout_marginTop="8dp"
+        style="@style/UiKit.TextView"/>
+</LinearLayout>

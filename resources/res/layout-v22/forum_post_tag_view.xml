@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <com.discord.utilities.view.text.SimpleDraweeSpanTextView
+        android:id="@+id/tag_emoji"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/tag_name"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        style="@style/UiKit.TextView"/>
+    <TextView
+        android:textAppearance="@style/UiKit.TextView.Medium.SingleLine"
+        android:textColor="?attr/colorInteractiveNormal"
+        android:id="@+id/tag_name"
+        android:paddingLeft="8dp"
+        android:paddingTop="2dp"
+        android:paddingRight="8dp"
+        android:paddingBottom="2dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="?attr/font_primary_normal"
+        android:paddingHorizontal="8dp"
+        android:paddingVertical="2dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/tag_emoji"
+        app:layout_constraintTop_toTopOf="parent"/>
+</merge>

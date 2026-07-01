@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" style="@style/TooltipDefaultContainer">
+    <ImageView
+        android:src="@drawable/ic_tooltip_bottom_tail"
+        android:rotation="180"
+        app:layout_constraintBottom_toTopOf="@+id/default_tooltip_text"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:tint="?attr/color_brand"
+        style="@style/UiKit.ImageView"/>
+    <TextView
+        android:id="@+id/default_tooltip_text"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        style="@style/TooltipDefaultText"/>
+</androidx.constraintlayout.widget.ConstraintLayout>

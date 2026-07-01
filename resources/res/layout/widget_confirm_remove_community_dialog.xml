@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" style="@style/UiKit.ViewGroup.Page.LinearLayout">
+    <LinearLayout
+        android:id="@+id/confirm_deleting_community_header_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        style="@style/UiKit.ViewGroup.LinearLayout">
+        <TextView
+            android:id="@+id/confirm_deleting_community_header"
+            android:padding="16dp"
+            android:layout_width="match_parent"
+            android:text="@string/guild_settings_community_disable_community_dialog_title"
+            style="@style/UiKit.TextView.H1.Bold"/>
+        <View style="@style/UiKit.Divider"/>
+    </LinearLayout>
+    <TextView
+        android:layout_gravity="start"
+        android:id="@+id/confirm_deleting_community_body_text"
+        android:padding="16dp"
+        android:layout_width="match_parent"
+        android:text="@string/guild_settings_community_disable_community_dialog_message"
+        android:textAlignment="textStart"
+        style="@style/UiKit.TextView"/>
+    <View style="@style/UiKit.Settings.Divider"/>
+    <LinearLayout style="@style/UiKit.Dialog.ButtonContainer">
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/confirm_deleting_community_cancel"
+            android:text="@string/cancel"
+            style="@style/UiKit.Material.Button.Transparent.Fit"/>
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/confirm_deleting_community_ok"
+            android:text="@string/confirm"
+            style="@style/UiKit.Material.Button.Fit"/>
+    </LinearLayout>
+</LinearLayout>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:gravity="center_horizontal"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <ImageView
+        android:layout_gravity="end|top"
+        android:id="@+id/navigation_help_close"
+        android:padding="24dp"
+        android:src="@drawable/ic_close_24dp"
+        android:contentDescription="@string/close_window"
+        style="@style/UiKit.ImageView.Clickable"/>
+    <androidx.viewpager2.widget.ViewPager2
+        android:id="@+id/navigation_help_nux_pager"
+        android:background="@color/transparent"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginBottom="16dp"
+        android:layout_weight="1"/>
+    <com.google.android.material.tabs.TabLayout
+        android:id="@+id/navigation_help_indicators"
+        android:layout_marginBottom="32dp"
+        style="@style/UiKit.TabLayout.PagerIndicator"/>
+</LinearLayout>

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:gravity="center_vertical"
+    android:background="?attr/drawable_overlay_category"
+    android:paddingTop="12dp"
+    android:paddingBottom="12dp"
+    android:focusable="false"
+    android:layout_marginTop="8dp"
+    style="@style/UiKit.ViewGroup.LinearLayout.Horizontal">
+    <ImageView
+        android:id="@+id/channels_item_category_arrow"
+        android:layout_width="12dp"
+        android:layout_height="12dp"
+        android:src="@drawable/ic_chevron_down_grey_12dp"
+        android:importantForAccessibility="no"
+        android:layout_marginStart="2dp"
+        app:tint="?attr/colorChannelDefault"
+        style="@style/UiKit.ImageView"/>
+    <TextView
+        android:textSize="@dimen/uikit_textsize_small"
+        android:textColor="?attr/colorChannelDefault"
+        android:id="@+id/channels_item_category_name"
+        android:focusable="true"
+        android:layout_width="0dp"
+        android:singleLine="true"
+        android:layout_weight="1"
+        android:textAllCaps="true"
+        android:layout_marginStart="2dp"
+        android:layout_marginEnd="8dp"
+        style="@style/UiKit.TextView.H6"/>
+    <ImageView
+        android:id="@+id/channels_item_category_add"
+        android:src="@drawable/ic_add_24dp"
+        android:scaleType="centerCrop"
+        android:contentDescription="@string/guild_settings_action_filter_channel_create"
+        android:layout_marginEnd="8dp"
+        app:tint="?attr/colorChannelDefault"
+        style="@style/UiKit.ImageView.Clickable"/>
+</LinearLayout>

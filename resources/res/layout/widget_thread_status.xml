@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/thread_status"
+    android:background="?attr/primary_660"
+    android:paddingTop="8dp"
+    android:paddingBottom="8dp"
+    android:visibility="gone"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingStart="16dp"
+    android:paddingEnd="0dp"
+    style="@style/UiKit.ViewGroup.LinearLayout.Horizontal">
+    <com.discord.utilities.view.text.LinkifiedTextView
+        android:textSize="@dimen/uikit_textsize_medium"
+        android:textColor="?attr/primary_300"
+        android:ellipsize="end"
+        android:id="@+id/thread_status_text"
+        android:layout_width="0dp"
+        android:text="@string/thread_header_notice_join"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/thread_status_button"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        style="@style/UiKit.TextView"/>
+    <com.discord.views.LoadingButton
+        android:id="@+id/thread_status_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/thread_status_text"
+        app:layout_constraintTop_toTopOf="parent"
+        app:lb_progress_color="@color/white"
+        app:lb_text="@string/join"
+        style="@style/UiKit.Material.Button"/>
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:theme="@style/AppTheme.Dark"
+    android:orientation="horizontal"
+    android:clipChildren="false"
+    android:layout_width="300dp"
+    android:layout_height="wrap_content"
+    android:layoutDirection="ltr">
+    <androidx.cardview.widget.CardView
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_marginRight="8dp"
+        app:cardBackgroundColor="@color/primary_700"
+        app:cardCornerRadius="8dp"
+        app:cardElevation="8dp">
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent">
+            <ImageView
+                android:id="@+id/src_toggle"
+                android:padding="16dp"
+                android:src="@drawable/ic_audio_output_white_24dp"
+                android:layout_weight="1"
+                android:contentDescription="@string/use_speaker"
+                style="@style/UiKit.ImageView.Clickable"/>
+            <ImageView
+                android:id="@+id/mute_toggle"
+                android:padding="16dp"
+                android:src="@drawable/ic_mic_state_dark"
+                android:layout_weight="1"
+                android:contentDescription="@string/mute"
+                style="@style/UiKit.ImageView.Clickable"/>
+            <ImageView
+                android:id="@+id/disconnect_btn"
+                android:padding="16dp"
+                android:src="@drawable/ic_call_disconnect_24dp"
+                android:layout_weight="1"
+                android:contentDescription="@string/disconnect_from_voice"
+                app:tint="@color/status_red_500"
+                style="@style/UiKit.ImageView.Clickable"/>
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+    <include
+        android:id="@+id/content"
+        layout="@layout/view_overlay_menu_content"/>
+</merge>

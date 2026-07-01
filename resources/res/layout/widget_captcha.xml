@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" style="@style/UiKit.ViewGroup.Page">
+    <include layout="@layout/widget_auth_header"/>
+    <androidx.core.widget.NestedScrollView style="@style/UiKit.ViewGroup.NestedScrollView.AppBarScrollingViewBehavior">
+        <LinearLayout
+            android:gravity="center_horizontal"
+            android:padding="16dp"
+            android:layout_height="wrap_content"
+            style="@style/UiKit.ViewGroup.LinearLayout.Rotatable">
+            <com.airbnb.lottie.LottieAnimationView style="@style/UiKit.Anim.Verify.By.Phone"/>
+            <LinearLayout
+                android:gravity="center_horizontal"
+                android:layout_marginTop="16dp"
+                android:layout_marginBottom="16dp"
+                style="@style/UiKit.ViewGroup.LinearLayout">
+                <com.discord.views.ScreenTitleView
+                    android:id="@+id/screen_title"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:stv_subtitle="@string/verify_by_recaptcha_description"
+                    app:stv_title="@string/verify_by_recaptcha"/>
+                <TextView
+                    android:textColor="?attr/colorTextLink"
+                    android:id="@+id/captcha_help"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginBottom="16dp"
+                    android:text="@string/captcha_issues"
+                    style="@style/UiKit.TextView"/>
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/captcha_verify"
+                    android:text="@string/verify"
+                    style="@style/UiKit.AuthButton.Material"/>
+            </LinearLayout>
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

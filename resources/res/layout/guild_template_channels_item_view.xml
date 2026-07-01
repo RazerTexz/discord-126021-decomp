@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:gravity="center_vertical"
+    android:layout_height="40sp"
+    style="@style/UiKit.ViewGroup.LinearLayout.Horizontal">
+    <ImageView
+        android:id="@+id/guild_template_channels_item_image"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:src="@drawable/ic_chevron_down_grey_12dp"
+        android:importantForAccessibility="no"
+        android:layout_marginEnd="8dp"
+        app:tint="?attr/colorChannelDefault"
+        style="@style/UiKit.ImageView"/>
+    <TextView
+        android:textColor="?attr/colorChannelDefault"
+        android:gravity="center"
+        android:id="@+id/guild_template_channels_item_name"
+        style="@style/UiKit.TextView.SingleLine"/>
+</LinearLayout>

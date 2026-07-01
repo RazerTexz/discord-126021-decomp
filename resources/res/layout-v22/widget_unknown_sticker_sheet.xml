@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_height="wrap_content"
+    android:inAnimation="@android:anim/fade_in"
+    android:outAnimation="@android:anim/fade_out"
+    style="@style/UiKit.ViewGroup.Page">
+    <LinearLayout
+        android:background="?attr/colorBackgroundPrimary"
+        style="@style/UiKit.ViewGroup.LinearLayout">
+        <LinearLayout
+            android:layout_marginLeft="14dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginRight="14dp"
+            android:layout_marginBottom="16dp"
+            android:layout_marginHorizontal="14dp"
+            style="@style/UiKit.ViewGroup.LinearLayout.Horizontal">
+            <com.discord.views.sticker.StickerView
+                android:id="@+id/unknown_sticker_sheet_sticker"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:layout_marginEnd="16dp"/>
+            <LinearLayout style="@style/UiKit.ViewGroup.LinearLayout">
+                <TextView
+                    android:textSize="@dimen/uikit_textsize_large"
+                    android:textColor="?attr/colorHeaderPrimary"
+                    android:id="@+id/unknown_sticker_sheet_sticker_name"
+                    android:layout_marginBottom="4dp"
+                    style="@style/UiKit.TextView.Bold"/>
+                <TextView
+                    android:textColor="?attr/colorHeaderSecondary"
+                    android:text="@string/sticker_popout_premium_unjoined_private_guild_description"
+                    style="@style/UiKit.TextView"/>
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>

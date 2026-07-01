@@ -1,0 +1,101 @@
+package com.discord.restapi;
+
+
+/* JADX INFO: compiled from: RestAPIAbortCodes.kt */
+/* JADX INFO: loaded from: classes.dex */
+public final class RestAPIAbortCodes {
+    public static final int ACCOUNT_DISABLED = 20013;
+    public static final int ACCOUNT_SCHEDULED_FOR_DELETION = 20011;
+    public static final int BOT_DISALLOWED = 20001;
+    public static final int BOT_REQUIRED = 20002;
+    public static final int EMAIL_VERIFICATION_REQUIRED = 40002;
+    public static final int EXPLICIT_CONTENT = 20009;
+    public static final int GIFTING_ALREADY_OWNED_ERROR_CODE = 50051;
+    public static final int GIFTING_ALREADY_USED_ERROR_CODE = 50050;
+    public static final int GIFTING_CANT_REDEEM_INVOICE_OPEN = 100025;
+    public static final int GIFTING_CANT_REDEEM_OWN_GIFT = 50054;
+    public static final int GIFTING_CANT_REDEEM_SKU_MISMATCH = 100024;
+    public static final int GIFTING_CANT_REDEEM_SUBSCRIPTION_MANAGED = 100022;
+    public static final int GIFTING_CANT_REDEEM_SUBSCRIPTION_PAST_DUE = 100023;
+    public static final RestAPIAbortCodes INSTANCE = new RestAPIAbortCodes();
+    public static final int INVALID_ACCESS = 50001;
+    public static final int INVALID_ACCOUNT_TYPE = 50002;
+    public static final int INVALID_ACTION_DM = 50003;
+    public static final int INVALID_BULK_DELETE_COUNT = 50016;
+    public static final int INVALID_CHANNEL_TYPE = 50024;
+    public static final int INVALID_CLIENT_ID = 50023;
+    public static final int INVALID_EMBED_DISABLED = 50004;
+    public static final int INVALID_FORM_BODY = 50035;
+    public static final int INVALID_INVITE_CODE = 50020;
+    public static final int INVALID_MESSAGE_AUTHOR = 50005;
+    public static final int INVALID_MESSAGE_EMPTY = 50006;
+    public static final int INVALID_MESSAGE_SEND_NON_TEXT = 50008;
+    public static final int INVALID_MESSAGE_SEND_USER = 50007;
+    public static final int INVALID_MESSAGE_VERIFICATION_LEVEL = 50009;
+    public static final int INVALID_MFA_LEVEL = 50017;
+    public static final int INVALID_NOTE = 50015;
+    public static final int INVALID_OAUTH2_ACCESS_TOKEN = 50025;
+    public static final int INVALID_OAUTH2_MISSING_SCOPE = 50026;
+    public static final int INVALID_OAUTH_APP_BOT = 50010;
+    public static final int INVALID_OAUTH_APP_LIMIT = 50011;
+    public static final int INVALID_OAUTH_STATE = 50012;
+    public static final int INVALID_PASSWORD = 50018;
+    public static final int INVALID_PERMISSIONS = 50013;
+    public static final int INVALID_PHONE_NUMBER = 50022;
+    public static final int INVALID_PIN_MESSAGE_CHANNEL = 50019;
+    public static final int INVALID_TOKEN = 50014;
+    public static final int INVALID_WEBHOOK_TOKEN = 50027;
+    public static final int MFA_DISABLED = 60002;
+    public static final int MFA_ENABLED = 60001;
+    public static final int MFA_INVALID_CODE = 60008;
+    public static final int MFA_INVALID_SECRET = 60005;
+    public static final int MFA_INVALID_SESSION = 60009;
+    public static final int MFA_INVALID_TICKET = 60006;
+    public static final int MFA_REQUIRED = 60003;
+    public static final int MFA_UNVERIFIED = 60004;
+    public static final int PHONE_NUMBER_UNABLE_TO_SEND = 70003;
+    public static final int PHONE_VERIFICATION_REQUIRED = 70007;
+    public static final int RATE_LIMIT_DM_OPEN = 40003;
+    public static final int RELATIONSHIP_ALREADY_FRIENDS = 80007;
+    public static final int RELATIONSHIP_INCOMING_BLOCKED = 80001;
+    public static final int RELATIONSHIP_INCOMING_DISABLED = 80000;
+    public static final int RELATIONSHIP_INVALID_DISCORD_TAG = 80004;
+    public static final int RELATIONSHIP_INVALID_SELF = 80003;
+    public static final int RELATIONSHIP_INVALID_USER_BOT = 80002;
+    public static final int RPC_PROXY_DISALLOWED = 20003;
+    public static final int SEARCH_INDEXING = 111000;
+    public static final int SEND_MESSAGE_TEMPORARILY_DISABLED = 40004;
+    public static final int SLOWMODE_RATE_LIMITED = 20016;
+    public static final int TOO_MANY_ANNOUNCEMENT_THREADS = 160007;
+    public static final int TOO_MANY_BOT_GUILDS = 30001;
+    public static final int TOO_MANY_FRIENDS = 30002;
+    public static final int TOO_MANY_GUILD_ROLES = 30005;
+    public static final int TOO_MANY_PINS_IN_CHANNEL = 30003;
+    public static final int TOO_MANY_RECIPIENTS = 30004;
+    public static final int TOO_MANY_THREADS = 160006;
+    public static final int TOO_MANY_THREAD_MEMBERS = 30033;
+    public static final int TOO_MANY_USER_GUILDS = 30001;
+    public static final int TOO_MANY_USING_USERNAME = 30006;
+    public static final int TOO_MANY_WEBHOOKS = 30007;
+    public static final int UNAUTHORIZED = 40001;
+    public static final int UNKNOWN_ACCOUNT = 10001;
+    public static final int UNKNOWN_APPLICATION = 10002;
+    public static final int UNKNOWN_CHANNEL = 10003;
+    public static final int UNKNOWN_EMOJI = 10014;
+    public static final int UNKNOWN_GUILD = 10004;
+    public static final int UNKNOWN_INTEGRATION = 10005;
+    public static final int UNKNOWN_INVITE = 10006;
+    public static final int UNKNOWN_MEMBER = 10007;
+    public static final int UNKNOWN_MESSAGE = 10008;
+    public static final int UNKNOWN_OVERWRITE = 10009;
+    public static final int UNKNOWN_PLATFORM = 10010;
+    public static final int UNKNOWN_REMOTE_AUTH_SESSION = 10056;
+    public static final int UNKNOWN_ROLE = 10011;
+    public static final int UNKNOWN_TOKEN = 10012;
+    public static final int UNKNOWN_USER = 10013;
+    public static final int UNKNOWN_WEBHOOK = 10015;
+    public static final int USER_BANNED = 40007;
+
+    private RestAPIAbortCodes() {
+    }
+}

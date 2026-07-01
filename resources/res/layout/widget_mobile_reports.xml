@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android" style="@style/UiKit.ViewGroup.Page">
+    <com.google.android.material.appbar.AppBarLayout style="@style/AppTheme.AppBarLayout.Flat.Transparent">
+        <androidx.appcompat.widget.Toolbar style="@style/AppTheme.Toolbar.Transparent"/>
+    </com.google.android.material.appbar.AppBarLayout>
+    <FrameLayout
+        android:id="@+id/menu_reports_node_view_holder"
+        style="@style/AppTheme.AppBarScrollingViewBehavior"/>
+    <ProgressBar
+        android:layout_gravity="center"
+        android:id="@+id/mobile_reports_progress_bar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

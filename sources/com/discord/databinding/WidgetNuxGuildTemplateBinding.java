@@ -1,0 +1,47 @@
+package com.discord.databinding;
+
+import android.view.View;
+import android.widget.LinearLayout;
+import android.widget.TextView;
+import androidx.annotation.NonNull;
+import androidx.recyclerview.widget.RecyclerView;
+import androidx.viewbinding.ViewBinding;
+import com.google.android.material.button.MaterialButton;
+
+/* JADX INFO: loaded from: classes.dex */
+public final class WidgetNuxGuildTemplateBinding implements ViewBinding {
+
+    @NonNull
+    public final LinearLayout a;
+
+    /* JADX INFO: renamed from: b, reason: collision with root package name */
+    @NonNull
+    public final MaterialButton f2505b;
+
+    @NonNull
+    public final LinearLayout c;
+
+    @NonNull
+    public final TextView d;
+
+    @NonNull
+    public final TextView e;
+
+    @NonNull
+    public final RecyclerView f;
+
+    public WidgetNuxGuildTemplateBinding(@NonNull LinearLayout linearLayout, @NonNull MaterialButton materialButton, @NonNull LinearLayout linearLayout2, @NonNull TextView textView, @NonNull TextView textView2, @NonNull RecyclerView recyclerView) {
+        this.a = linearLayout;
+        this.f2505b = materialButton;
+        this.c = linearLayout2;
+        this.d = textView;
+        this.e = textView2;
+        this.f = recyclerView;
+    }
+
+    @Override // androidx.viewbinding.ViewBinding
+    @NonNull
+    public View getRoot() {
+        return this.a;
+    }
+}

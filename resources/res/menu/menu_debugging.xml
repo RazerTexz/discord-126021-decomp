@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:icon="?attr/ic_filter_list"
+        android:id="@+id/menu_debugging_filter"
+        android:checked="true"
+        android:title="@string/filter"
+        android:checkable="true"
+        app:showAsAction="withText"/>
+</menu>

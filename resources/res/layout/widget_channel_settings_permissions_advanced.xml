@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" style="@style/UiKit.ViewGroup.CoordinatorLayout.Page">
+    <androidx.core.widget.NestedScrollView
+        android:fitsSystemWindows="true"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_behavior="com.discord.app.AppScrollingNestedViewBehavior">
+        <LinearLayout
+            android:paddingBottom="64dp"
+            android:layout_marginTop="16dp"
+            style="@style/UiKit.ViewGroup.LinearLayout">
+            <TextView
+                android:textSize="@dimen/uikit_textsize_large"
+                android:textColor="?attr/primary_300"
+                android:id="@+id/add_role"
+                android:focusable="true"
+                android:clickable="true"
+                android:text="@string/add_a_role"
+                app:drawableStartCompat="?attr/ic_plus_a60"
+                style="@style/UiKit.Settings.Item.Icon"/>
+            <TextView
+                android:textSize="@dimen/uikit_textsize_large"
+                android:textColor="?attr/primary_300"
+                android:id="@+id/add_member"
+                android:focusable="true"
+                android:clickable="true"
+                android:text="@string/add_a_member"
+                app:drawableStartCompat="?attr/ic_plus_a60"
+                style="@style/UiKit.Settings.Item.Icon"/>
+            <LinearLayout
+                android:id="@+id/roles_container"
+                style="@style/UiKit.ViewGroup.LinearLayout">
+                <View style="@style/UiKit.Settings.Divider"/>
+                <TextView
+                    android:text="@string/roles"
+                    style="@style/UiKit.Settings.Item.Header"/>
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/roles_recycler"
+                    style="@style/UiKit.ViewGroup.RecyclerView"/>
+            </LinearLayout>
+            <LinearLayout
+                android:id="@+id/members_container"
+                style="@style/UiKit.ViewGroup.LinearLayout">
+                <View style="@style/UiKit.Settings.Divider"/>
+                <TextView
+                    android:text="@string/members"
+                    style="@style/UiKit.Settings.Item.Header"/>
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/members_recycler"
+                    style="@style/UiKit.ViewGroup.RecyclerView"/>
+            </LinearLayout>
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:background="?attr/selectableItemBackground"
+    android:paddingLeft="@dimen/chat_cell_horizontal_spacing_padding"
+    android:paddingTop="@dimen/chat_cell_vertical_spacing_padding"
+    android:paddingRight="@dimen/chat_cell_horizontal_spacing_padding"
+    android:paddingBottom="@dimen/chat_cell_vertical_spacing_padding"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginLeft="@dimen/chat_cell_horizontal_spacing_margin"
+    android:layout_marginRight="@dimen/chat_cell_horizontal_spacing_margin">
+    <TextView
+        android:textSize="11sp"
+        android:textColor="?attr/theme_chat_blocked_text"
+        android:gravity="center"
+        android:id="@+id/chat_list_adapter_item_blocked"
+        android:background="?attr/theme_chat_blocked_bg"
+        android:paddingTop="7.5dp"
+        android:paddingBottom="7.5dp"
+        android:layout_width="match_parent"
+        style="@style/UiKit.TextView"/>
+</RelativeLayout>
