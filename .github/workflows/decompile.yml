@@ -33,8 +33,8 @@ jobs:
           sh */bin/jadx \
             --show-bad-code \
             --fs-case-sensitive \
+            --deobf \
             --respect-bytecode-access-modifiers \
-            --use-source-name-as-class-name-alias if-better \
             --output-dir . \
             app.apk || true
 
