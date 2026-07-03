@@ -1,14 +1,14 @@
 package com.discord.analytics.generated.events;
 
-import b.d.b.a.outline;
 import com.discord.analytics.generated.traits.TrackBase;
-import com.discord.analytics.generated.traits.TrackBase2;
+import com.discord.analytics.generated.traits.TrackBaseReceiver;
 import com.discord.api.science.AnalyticsSchema;
-import d0.z.d.Intrinsics3;
+import p007b.p100d.p104b.p105a.C1643a;
+import p507d0.p592z.p594d.C12238m;
 
 /* JADX INFO: compiled from: TrackIgnorePlatformAccount.kt */
 /* JADX INFO: loaded from: classes.dex */
-public final /* data */ class TrackIgnorePlatformAccount implements AnalyticsSchema, TrackBase2 {
+public final /* data */ class TrackIgnorePlatformAccount implements AnalyticsSchema, TrackBaseReceiver {
     private TrackBase trackBase;
     private final CharSequence platformType = null;
     private final CharSequence displayType = null;
@@ -28,7 +28,7 @@ public final /* data */ class TrackIgnorePlatformAccount implements AnalyticsSch
             return false;
         }
         TrackIgnorePlatformAccount trackIgnorePlatformAccount = (TrackIgnorePlatformAccount) other;
-        return Intrinsics3.areEqual(this.platformType, trackIgnorePlatformAccount.platformType) && Intrinsics3.areEqual(this.displayType, trackIgnorePlatformAccount.displayType);
+        return C12238m.areEqual(this.platformType, trackIgnorePlatformAccount.platformType) && C12238m.areEqual(this.displayType, trackIgnorePlatformAccount.displayType);
     }
 
     public int hashCode() {
@@ -39,9 +39,9 @@ public final /* data */ class TrackIgnorePlatformAccount implements AnalyticsSch
     }
 
     public String toString() {
-        StringBuilder sbU = outline.U("TrackIgnorePlatformAccount(platformType=");
-        sbU.append(this.platformType);
-        sbU.append(", displayType=");
-        return outline.E(sbU, this.displayType, ")");
+        StringBuilder sbM833U = C1643a.m833U("TrackIgnorePlatformAccount(platformType=");
+        sbM833U.append(this.platformType);
+        sbM833U.append(", displayType=");
+        return C1643a.m817E(sbM833U, this.displayType, ")");
     }
 }

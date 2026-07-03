@@ -1,17 +1,17 @@
 package com.discord.api.report;
 
-import b.d.b.a.outline;
 import com.discord.models.domain.ModelAuditLogEntry;
-import d0.Tuples;
-import d0.t.Iterables2;
-import d0.t.Maps6;
-import d0.z.d.Intrinsics3;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
-import kotlin.Tuples2;
+import kotlin.Pair;
 import kotlin.jvm.internal.DefaultConstructorMarker;
+import p007b.p100d.p104b.p105a.C1643a;
+import p507d0.C12116o;
+import p507d0.p580t.C12136h0;
+import p507d0.p580t.C12149o;
+import p507d0.p592z.p594d.C12238m;
 
 /* JADX INFO: compiled from: InAppReportsMenu.kt */
 /* JADX INFO: loaded from: classes.dex */
@@ -37,9 +37,10 @@ public final /* data */ class ReportSubmissionBody {
         public Companion() {
         }
 
-        public final Tuples2<List<Integer>, Map<String, List<String>>> a(List<NodeResult> results) {
-            Tuples2 tuples2;
-            Intrinsics3.checkNotNullParameter(results, "results");
+        /* JADX INFO: renamed from: a */
+        public final Pair<List<Integer>, Map<String, List<String>>> m8190a(List<NodeResult> results) {
+            Pair pairM10073to;
+            C12238m.checkNotNullParameter(results, "results");
             ArrayList arrayList = new ArrayList();
             Iterator<T> it = results.iterator();
             while (true) {
@@ -58,21 +59,21 @@ public final /* data */ class ReportSubmissionBody {
                 NodeElementResult elementResult = ((NodeResult) it2.next()).getElementResult();
                 if (elementResult != null) {
                     String key = elementResult.getKey();
-                    List<ReportNodeElementData> listA = elementResult.a();
-                    ArrayList arrayList3 = new ArrayList(Iterables2.collectionSizeOrDefault(listA, 10));
-                    Iterator<T> it3 = listA.iterator();
+                    List<ReportNodeElementData> listM8166a = elementResult.m8166a();
+                    ArrayList arrayList3 = new ArrayList(C12149o.collectionSizeOrDefault(listM8166a, 10));
+                    Iterator<T> it3 = listM8166a.iterator();
                     while (it3.hasNext()) {
                         arrayList3.add(((ReportNodeElementData) it3.next()).getElementKey());
                     }
-                    tuples2 = Tuples.to(key, arrayList3);
+                    pairM10073to = C12116o.m10073to(key, arrayList3);
                 } else {
-                    tuples2 = null;
+                    pairM10073to = null;
                 }
-                if (tuples2 != null) {
-                    arrayList2.add(tuples2);
+                if (pairM10073to != null) {
+                    arrayList2.add(pairM10073to);
                 }
             }
-            return Tuples.to(arrayList, Maps6.toMap(arrayList2));
+            return C12116o.m10073to(arrayList, C12136h0.toMap(arrayList2));
         }
 
         public Companion(DefaultConstructorMarker defaultConstructorMarker) {
@@ -85,12 +86,12 @@ public final /* data */ class ReportSubmissionBody {
         Long l8 = (i & 8) != 0 ? null : l3;
         Long l9 = (i & 16) != 0 ? null : l4;
         Long l10 = (i & 32) == 0 ? l5 : null;
-        Intrinsics3.checkNotNullParameter(str, "language");
-        Intrinsics3.checkNotNullParameter(str2, "variant");
-        Intrinsics3.checkNotNullParameter(str3, ModelAuditLogEntry.CHANGE_KEY_NAME);
-        Intrinsics3.checkNotNullParameter(str4, "version");
-        Intrinsics3.checkNotNullParameter(list, "breadcrumbs");
-        Intrinsics3.checkNotNullParameter(map, "elements");
+        C12238m.checkNotNullParameter(str, "language");
+        C12238m.checkNotNullParameter(str2, "variant");
+        C12238m.checkNotNullParameter(str3, ModelAuditLogEntry.CHANGE_KEY_NAME);
+        C12238m.checkNotNullParameter(str4, "version");
+        C12238m.checkNotNullParameter(list, "breadcrumbs");
+        C12238m.checkNotNullParameter(map, "elements");
         this.id = j;
         this.messageId = l6;
         this.channelId = l7;
@@ -113,7 +114,7 @@ public final /* data */ class ReportSubmissionBody {
             return false;
         }
         ReportSubmissionBody reportSubmissionBody = (ReportSubmissionBody) other;
-        return this.id == reportSubmissionBody.id && Intrinsics3.areEqual(this.messageId, reportSubmissionBody.messageId) && Intrinsics3.areEqual(this.channelId, reportSubmissionBody.channelId) && Intrinsics3.areEqual(this.guildId, reportSubmissionBody.guildId) && Intrinsics3.areEqual(this.hubId, reportSubmissionBody.hubId) && Intrinsics3.areEqual(this.guildScheduledEventId, reportSubmissionBody.guildScheduledEventId) && Intrinsics3.areEqual(this.language, reportSubmissionBody.language) && Intrinsics3.areEqual(this.variant, reportSubmissionBody.variant) && Intrinsics3.areEqual(this.name, reportSubmissionBody.name) && Intrinsics3.areEqual(this.version, reportSubmissionBody.version) && Intrinsics3.areEqual(this.breadcrumbs, reportSubmissionBody.breadcrumbs) && Intrinsics3.areEqual(this.elements, reportSubmissionBody.elements);
+        return this.id == reportSubmissionBody.id && C12238m.areEqual(this.messageId, reportSubmissionBody.messageId) && C12238m.areEqual(this.channelId, reportSubmissionBody.channelId) && C12238m.areEqual(this.guildId, reportSubmissionBody.guildId) && C12238m.areEqual(this.hubId, reportSubmissionBody.hubId) && C12238m.areEqual(this.guildScheduledEventId, reportSubmissionBody.guildScheduledEventId) && C12238m.areEqual(this.language, reportSubmissionBody.language) && C12238m.areEqual(this.variant, reportSubmissionBody.variant) && C12238m.areEqual(this.name, reportSubmissionBody.name) && C12238m.areEqual(this.version, reportSubmissionBody.version) && C12238m.areEqual(this.breadcrumbs, reportSubmissionBody.breadcrumbs) && C12238m.areEqual(this.elements, reportSubmissionBody.elements);
     }
 
     public int hashCode() {
@@ -144,29 +145,29 @@ public final /* data */ class ReportSubmissionBody {
     }
 
     public String toString() {
-        StringBuilder sbU = outline.U("ReportSubmissionBody(id=");
-        sbU.append(this.id);
-        sbU.append(", messageId=");
-        sbU.append(this.messageId);
-        sbU.append(", channelId=");
-        sbU.append(this.channelId);
-        sbU.append(", guildId=");
-        sbU.append(this.guildId);
-        sbU.append(", hubId=");
-        sbU.append(this.hubId);
-        sbU.append(", guildScheduledEventId=");
-        sbU.append(this.guildScheduledEventId);
-        sbU.append(", language=");
-        sbU.append(this.language);
-        sbU.append(", variant=");
-        sbU.append(this.variant);
-        sbU.append(", name=");
-        sbU.append(this.name);
-        sbU.append(", version=");
-        sbU.append(this.version);
-        sbU.append(", breadcrumbs=");
-        sbU.append(this.breadcrumbs);
-        sbU.append(", elements=");
-        return outline.M(sbU, this.elements, ")");
+        StringBuilder sbM833U = C1643a.m833U("ReportSubmissionBody(id=");
+        sbM833U.append(this.id);
+        sbM833U.append(", messageId=");
+        sbM833U.append(this.messageId);
+        sbM833U.append(", channelId=");
+        sbM833U.append(this.channelId);
+        sbM833U.append(", guildId=");
+        sbM833U.append(this.guildId);
+        sbM833U.append(", hubId=");
+        sbM833U.append(this.hubId);
+        sbM833U.append(", guildScheduledEventId=");
+        sbM833U.append(this.guildScheduledEventId);
+        sbM833U.append(", language=");
+        sbM833U.append(this.language);
+        sbM833U.append(", variant=");
+        sbM833U.append(this.variant);
+        sbM833U.append(", name=");
+        sbM833U.append(this.name);
+        sbM833U.append(", version=");
+        sbM833U.append(this.version);
+        sbM833U.append(", breadcrumbs=");
+        sbM833U.append(this.breadcrumbs);
+        sbM833U.append(", elements=");
+        return C1643a.m825M(sbM833U, this.elements, ")");
     }
 }

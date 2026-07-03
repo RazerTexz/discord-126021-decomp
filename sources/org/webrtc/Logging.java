@@ -19,8 +19,8 @@ public class Logging {
     private static Severity loggableSeverity;
     private static volatile boolean loggingEnabled;
 
-    /* JADX INFO: renamed from: org.webrtc.Logging$1, reason: invalid class name */
-    public static /* synthetic */ class AnonymousClass1 {
+    /* JADX INFO: renamed from: org.webrtc.Logging$1 */
+    public static /* synthetic */ class C129711 {
         public static final /* synthetic */ int[] $SwitchMap$org$webrtc$Logging$Severity;
 
         static {
@@ -43,7 +43,8 @@ public class Logging {
     }
 
     public interface ExternalReporter {
-        void e(String str, String str2, Throwable th);
+        /* JADX INFO: renamed from: e */
+        void mo336e(String str, String str2, Throwable th);
     }
 
     public enum Severity {
@@ -85,7 +86,8 @@ public class Logging {
         return logger;
     }
 
-    public static void d(String str, String str2) {
+    /* JADX INFO: renamed from: d */
+    public static void m11027d(String str, String str2) {
         log(Severity.LS_INFO, str, str2);
     }
 
@@ -93,11 +95,12 @@ public class Logging {
         loggable = null;
     }
 
-    public static void e(String str, String str2) {
+    /* JADX INFO: renamed from: e */
+    public static void m11028e(String str, String str2) {
         log(Severity.LS_ERROR, str, str2);
         ExternalReporter externalReporter2 = externalReporter;
         if (externalReporter2 != null) {
-            externalReporter2.e(str, str2, null);
+            externalReporter2.mo336e(str, str2, null);
         }
     }
 
@@ -172,29 +175,33 @@ public class Logging {
 
     private static native void nativeLog(int i, String str, String str2);
 
-    public static void v(String str, String str2) {
+    /* JADX INFO: renamed from: v */
+    public static void m11030v(String str, String str2) {
         log(Severity.LS_VERBOSE, str, str2);
     }
 
-    public static void w(String str, String str2) {
+    /* JADX INFO: renamed from: w */
+    public static void m11031w(String str, String str2) {
         log(Severity.LS_WARNING, str, str2);
     }
 
-    public static void w(String str, String str2, Throwable th) {
+    /* JADX INFO: renamed from: w */
+    public static void m11032w(String str, String str2, Throwable th) {
         Severity severity = Severity.LS_WARNING;
         log(severity, str, str2);
         log(severity, str, th.toString());
         log(severity, str, getStackTraceString(th));
     }
 
-    public static void e(String str, String str2, Throwable th) {
+    /* JADX INFO: renamed from: e */
+    public static void m11029e(String str, String str2, Throwable th) {
         Severity severity = Severity.LS_ERROR;
         log(severity, str, str2);
         log(severity, str, th.toString());
         log(severity, str, getStackTraceString(th));
         ExternalReporter externalReporter2 = externalReporter;
         if (externalReporter2 != null) {
-            externalReporter2.e(str, str2, th);
+            externalReporter2.mo336e(str, str2, th);
         }
     }
 }

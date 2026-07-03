@@ -1,19 +1,19 @@
 package com.discord.api.botuikit;
 
-import b.d.b.a.outline;
-import d0.z.d.Intrinsics3;
+import p007b.p100d.p104b.p105a.C1643a;
+import p507d0.p592z.p594d.C12238m;
 
 /* JADX INFO: compiled from: TextComponent.kt */
 /* JADX INFO: loaded from: classes.dex */
-public final /* data */ class TextComponent extends Component5 {
+public final /* data */ class TextComponent extends ActionComponent {
     private final String customId;
     private final String label;
     private final int maxLength;
     private final int minLength;
     private final String placeholder;
     private final Boolean required;
-    private final TextComponent2 style;
-    private final Component6 type;
+    private final TextStyle style;
+    private final ComponentType type;
     private final String value;
 
     /* JADX INFO: renamed from: a, reason: from getter */
@@ -49,7 +49,7 @@ public final /* data */ class TextComponent extends Component5 {
             return false;
         }
         TextComponent textComponent = (TextComponent) other;
-        return Intrinsics3.areEqual(this.type, textComponent.type) && Intrinsics3.areEqual(this.style, textComponent.style) && Intrinsics3.areEqual(this.customId, textComponent.customId) && Intrinsics3.areEqual(this.label, textComponent.label) && Intrinsics3.areEqual(this.value, textComponent.value) && Intrinsics3.areEqual(this.placeholder, textComponent.placeholder) && this.minLength == textComponent.minLength && this.maxLength == textComponent.maxLength && Intrinsics3.areEqual(this.required, textComponent.required);
+        return C12238m.areEqual(this.type, textComponent.type) && C12238m.areEqual(this.style, textComponent.style) && C12238m.areEqual(this.customId, textComponent.customId) && C12238m.areEqual(this.label, textComponent.label) && C12238m.areEqual(this.value, textComponent.value) && C12238m.areEqual(this.placeholder, textComponent.placeholder) && this.minLength == textComponent.minLength && this.maxLength == textComponent.maxLength && C12238m.areEqual(this.required, textComponent.required);
     }
 
     /* JADX INFO: renamed from: f, reason: from getter */
@@ -58,12 +58,12 @@ public final /* data */ class TextComponent extends Component5 {
     }
 
     /* JADX INFO: renamed from: g, reason: from getter */
-    public final TextComponent2 getStyle() {
+    public final TextStyle getStyle() {
         return this.style;
     }
 
     @Override // com.discord.api.botuikit.Component
-    public Component6 getType() {
+    public ComponentType getType() {
         return this.type;
     }
 
@@ -73,10 +73,10 @@ public final /* data */ class TextComponent extends Component5 {
     }
 
     public int hashCode() {
-        Component6 component6 = this.type;
-        int iHashCode = (component6 != null ? component6.hashCode() : 0) * 31;
-        TextComponent2 textComponent2 = this.style;
-        int iHashCode2 = (iHashCode + (textComponent2 != null ? textComponent2.hashCode() : 0)) * 31;
+        ComponentType componentType = this.type;
+        int iHashCode = (componentType != null ? componentType.hashCode() : 0) * 31;
+        TextStyle textStyle = this.style;
+        int iHashCode2 = (iHashCode + (textStyle != null ? textStyle.hashCode() : 0)) * 31;
         String str = this.customId;
         int iHashCode3 = (iHashCode2 + (str != null ? str.hashCode() : 0)) * 31;
         String str2 = this.label;
@@ -90,23 +90,23 @@ public final /* data */ class TextComponent extends Component5 {
     }
 
     public String toString() {
-        StringBuilder sbU = outline.U("TextComponent(type=");
-        sbU.append(this.type);
-        sbU.append(", style=");
-        sbU.append(this.style);
-        sbU.append(", customId=");
-        sbU.append(this.customId);
-        sbU.append(", label=");
-        sbU.append(this.label);
-        sbU.append(", value=");
-        sbU.append(this.value);
-        sbU.append(", placeholder=");
-        sbU.append(this.placeholder);
-        sbU.append(", minLength=");
-        sbU.append(this.minLength);
-        sbU.append(", maxLength=");
-        sbU.append(this.maxLength);
-        sbU.append(", required=");
-        return outline.D(sbU, this.required, ")");
+        StringBuilder sbM833U = C1643a.m833U("TextComponent(type=");
+        sbM833U.append(this.type);
+        sbM833U.append(", style=");
+        sbM833U.append(this.style);
+        sbM833U.append(", customId=");
+        sbM833U.append(this.customId);
+        sbM833U.append(", label=");
+        sbM833U.append(this.label);
+        sbM833U.append(", value=");
+        sbM833U.append(this.value);
+        sbM833U.append(", placeholder=");
+        sbM833U.append(this.placeholder);
+        sbM833U.append(", minLength=");
+        sbM833U.append(this.minLength);
+        sbM833U.append(", maxLength=");
+        sbM833U.append(this.maxLength);
+        sbM833U.append(", required=");
+        return C1643a.m816D(sbM833U, this.required, ")");
     }
 }

@@ -1,14 +1,14 @@
 package com.discord.analytics.generated.events;
 
-import b.d.b.a.outline;
 import com.discord.analytics.generated.traits.TrackBase;
-import com.discord.analytics.generated.traits.TrackBase2;
+import com.discord.analytics.generated.traits.TrackBaseReceiver;
 import com.discord.api.science.AnalyticsSchema;
-import d0.z.d.Intrinsics3;
+import p007b.p100d.p104b.p105a.C1643a;
+import p507d0.p592z.p594d.C12238m;
 
 /* JADX INFO: compiled from: TrackChangeLogCtaClicked.kt */
 /* JADX INFO: loaded from: classes.dex */
-public final /* data */ class TrackChangeLogCtaClicked implements AnalyticsSchema, TrackBase2 {
+public final /* data */ class TrackChangeLogCtaClicked implements AnalyticsSchema, TrackBaseReceiver {
     private TrackBase trackBase;
     private final CharSequence changeLogId = null;
     private final Float secondsOpen = null;
@@ -31,7 +31,7 @@ public final /* data */ class TrackChangeLogCtaClicked implements AnalyticsSchem
             return false;
         }
         TrackChangeLogCtaClicked trackChangeLogCtaClicked = (TrackChangeLogCtaClicked) other;
-        return Intrinsics3.areEqual(this.changeLogId, trackChangeLogCtaClicked.changeLogId) && Intrinsics3.areEqual(this.secondsOpen, trackChangeLogCtaClicked.secondsOpen) && Intrinsics3.areEqual(this.maxScrolledPercentage, trackChangeLogCtaClicked.maxScrolledPercentage) && Intrinsics3.areEqual(this.ctaType, trackChangeLogCtaClicked.ctaType) && Intrinsics3.areEqual(this.target, trackChangeLogCtaClicked.target);
+        return C12238m.areEqual(this.changeLogId, trackChangeLogCtaClicked.changeLogId) && C12238m.areEqual(this.secondsOpen, trackChangeLogCtaClicked.secondsOpen) && C12238m.areEqual(this.maxScrolledPercentage, trackChangeLogCtaClicked.maxScrolledPercentage) && C12238m.areEqual(this.ctaType, trackChangeLogCtaClicked.ctaType) && C12238m.areEqual(this.target, trackChangeLogCtaClicked.target);
     }
 
     public int hashCode() {
@@ -48,15 +48,15 @@ public final /* data */ class TrackChangeLogCtaClicked implements AnalyticsSchem
     }
 
     public String toString() {
-        StringBuilder sbU = outline.U("TrackChangeLogCtaClicked(changeLogId=");
-        sbU.append(this.changeLogId);
-        sbU.append(", secondsOpen=");
-        sbU.append(this.secondsOpen);
-        sbU.append(", maxScrolledPercentage=");
-        sbU.append(this.maxScrolledPercentage);
-        sbU.append(", ctaType=");
-        sbU.append(this.ctaType);
-        sbU.append(", target=");
-        return outline.E(sbU, this.target, ")");
+        StringBuilder sbM833U = C1643a.m833U("TrackChangeLogCtaClicked(changeLogId=");
+        sbM833U.append(this.changeLogId);
+        sbM833U.append(", secondsOpen=");
+        sbM833U.append(this.secondsOpen);
+        sbM833U.append(", maxScrolledPercentage=");
+        sbM833U.append(this.maxScrolledPercentage);
+        sbM833U.append(", ctaType=");
+        sbM833U.append(this.ctaType);
+        sbM833U.append(", target=");
+        return C1643a.m817E(sbM833U, this.target, ")");
     }
 }

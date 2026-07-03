@@ -1,8 +1,8 @@
 package co.discord.media_engine;
 
-import a0.a.a.b;
-import b.d.b.a.outline;
-import d0.z.d.Intrinsics3;
+import p001a0.p002a.p003a.C0002b;
+import p007b.p100d.p104b.p105a.C1643a;
+import p507d0.p592z.p594d.C12238m;
 
 /* JADX INFO: compiled from: Statistics.kt */
 /* JADX INFO: loaded from: classes.dex */
@@ -24,8 +24,8 @@ public final /* data */ class OutboundRtpAudio {
     private final long voiceActivityDetectorProcessTime;
 
     public OutboundRtpAudio(String str, long j, StatsCodec statsCodec, long j2, long j3, int i, float f, float f2, boolean z2, long j4, long j5, boolean z3, long j6, boolean z4, long j7) {
-        Intrinsics3.checkNotNullParameter(str, "type");
-        Intrinsics3.checkNotNullParameter(statsCodec, "codec");
+        C12238m.checkNotNullParameter(str, "type");
+        C12238m.checkNotNullParameter(statsCodec, "codec");
         this.type = str;
         this.ssrc = j;
         this.codec = statsCodec;
@@ -119,8 +119,8 @@ public final /* data */ class OutboundRtpAudio {
     }
 
     public final OutboundRtpAudio copy(String type, long ssrc, StatsCodec codec, long bytesSent, long packetsSent, int packetsLost, float fractionLost, float audioLevel, boolean audioDetected, long framesCaptured, long framesRendered, boolean noiseCancellerIsEnabled, long noiseCancellerProcessTime, boolean voiceActivityDetectorIsEnabled, long voiceActivityDetectorProcessTime) {
-        Intrinsics3.checkNotNullParameter(type, "type");
-        Intrinsics3.checkNotNullParameter(codec, "codec");
+        C12238m.checkNotNullParameter(type, "type");
+        C12238m.checkNotNullParameter(codec, "codec");
         return new OutboundRtpAudio(type, ssrc, codec, bytesSent, packetsSent, packetsLost, fractionLost, audioLevel, audioDetected, framesCaptured, framesRendered, noiseCancellerIsEnabled, noiseCancellerProcessTime, voiceActivityDetectorIsEnabled, voiceActivityDetectorProcessTime);
     }
 
@@ -132,7 +132,7 @@ public final /* data */ class OutboundRtpAudio {
             return false;
         }
         OutboundRtpAudio outboundRtpAudio = (OutboundRtpAudio) other;
-        return Intrinsics3.areEqual(this.type, outboundRtpAudio.type) && this.ssrc == outboundRtpAudio.ssrc && Intrinsics3.areEqual(this.codec, outboundRtpAudio.codec) && this.bytesSent == outboundRtpAudio.bytesSent && this.packetsSent == outboundRtpAudio.packetsSent && this.packetsLost == outboundRtpAudio.packetsLost && Float.compare(this.fractionLost, outboundRtpAudio.fractionLost) == 0 && Float.compare(this.audioLevel, outboundRtpAudio.audioLevel) == 0 && this.audioDetected == outboundRtpAudio.audioDetected && this.framesCaptured == outboundRtpAudio.framesCaptured && this.framesRendered == outboundRtpAudio.framesRendered && this.noiseCancellerIsEnabled == outboundRtpAudio.noiseCancellerIsEnabled && this.noiseCancellerProcessTime == outboundRtpAudio.noiseCancellerProcessTime && this.voiceActivityDetectorIsEnabled == outboundRtpAudio.voiceActivityDetectorIsEnabled && this.voiceActivityDetectorProcessTime == outboundRtpAudio.voiceActivityDetectorProcessTime;
+        return C12238m.areEqual(this.type, outboundRtpAudio.type) && this.ssrc == outboundRtpAudio.ssrc && C12238m.areEqual(this.codec, outboundRtpAudio.codec) && this.bytesSent == outboundRtpAudio.bytesSent && this.packetsSent == outboundRtpAudio.packetsSent && this.packetsLost == outboundRtpAudio.packetsLost && Float.compare(this.fractionLost, outboundRtpAudio.fractionLost) == 0 && Float.compare(this.audioLevel, outboundRtpAudio.audioLevel) == 0 && this.audioDetected == outboundRtpAudio.audioDetected && this.framesCaptured == outboundRtpAudio.framesCaptured && this.framesRendered == outboundRtpAudio.framesRendered && this.noiseCancellerIsEnabled == outboundRtpAudio.noiseCancellerIsEnabled && this.noiseCancellerProcessTime == outboundRtpAudio.noiseCancellerProcessTime && this.voiceActivityDetectorIsEnabled == outboundRtpAudio.voiceActivityDetectorIsEnabled && this.voiceActivityDetectorProcessTime == outboundRtpAudio.voiceActivityDetectorProcessTime;
     }
 
     public final boolean getAudioDetected() {
@@ -210,55 +210,55 @@ public final /* data */ class OutboundRtpAudio {
     /* JADX WARN: Type inference failed for: r2v8 */
     public int hashCode() {
         String str = this.type;
-        int iA = (b.a(this.ssrc) + ((str != null ? str.hashCode() : 0) * 31)) * 31;
+        int iM3a = (C0002b.m3a(this.ssrc) + ((str != null ? str.hashCode() : 0) * 31)) * 31;
         StatsCodec statsCodec = this.codec;
-        int iFloatToIntBits = (Float.floatToIntBits(this.audioLevel) + ((Float.floatToIntBits(this.fractionLost) + ((((b.a(this.packetsSent) + ((b.a(this.bytesSent) + ((iA + (statsCodec != null ? statsCodec.hashCode() : 0)) * 31)) * 31)) * 31) + this.packetsLost) * 31)) * 31)) * 31;
+        int iFloatToIntBits = (Float.floatToIntBits(this.audioLevel) + ((Float.floatToIntBits(this.fractionLost) + ((((C0002b.m3a(this.packetsSent) + ((C0002b.m3a(this.bytesSent) + ((iM3a + (statsCodec != null ? statsCodec.hashCode() : 0)) * 31)) * 31)) * 31) + this.packetsLost) * 31)) * 31)) * 31;
         boolean z2 = this.audioDetected;
         ?? r0 = z2;
         if (z2) {
             r0 = 1;
         }
-        int iA2 = (b.a(this.framesRendered) + ((b.a(this.framesCaptured) + ((iFloatToIntBits + r0) * 31)) * 31)) * 31;
+        int iM3a2 = (C0002b.m3a(this.framesRendered) + ((C0002b.m3a(this.framesCaptured) + ((iFloatToIntBits + r0) * 31)) * 31)) * 31;
         boolean z3 = this.noiseCancellerIsEnabled;
         ?? r1 = z3;
         if (z3) {
             r1 = 1;
         }
-        int iA3 = (b.a(this.noiseCancellerProcessTime) + ((iA2 + r1) * 31)) * 31;
+        int iM3a3 = (C0002b.m3a(this.noiseCancellerProcessTime) + ((iM3a2 + r1) * 31)) * 31;
         boolean z4 = this.voiceActivityDetectorIsEnabled;
-        return b.a(this.voiceActivityDetectorProcessTime) + ((iA3 + (z4 ? 1 : z4)) * 31);
+        return C0002b.m3a(this.voiceActivityDetectorProcessTime) + ((iM3a3 + (z4 ? 1 : z4)) * 31);
     }
 
     public String toString() {
-        StringBuilder sbU = outline.U("OutboundRtpAudio(type=");
-        sbU.append(this.type);
-        sbU.append(", ssrc=");
-        sbU.append(this.ssrc);
-        sbU.append(", codec=");
-        sbU.append(this.codec);
-        sbU.append(", bytesSent=");
-        sbU.append(this.bytesSent);
-        sbU.append(", packetsSent=");
-        sbU.append(this.packetsSent);
-        sbU.append(", packetsLost=");
-        sbU.append(this.packetsLost);
-        sbU.append(", fractionLost=");
-        sbU.append(this.fractionLost);
-        sbU.append(", audioLevel=");
-        sbU.append(this.audioLevel);
-        sbU.append(", audioDetected=");
-        sbU.append(this.audioDetected);
-        sbU.append(", framesCaptured=");
-        sbU.append(this.framesCaptured);
-        sbU.append(", framesRendered=");
-        sbU.append(this.framesRendered);
-        sbU.append(", noiseCancellerIsEnabled=");
-        sbU.append(this.noiseCancellerIsEnabled);
-        sbU.append(", noiseCancellerProcessTime=");
-        sbU.append(this.noiseCancellerProcessTime);
-        sbU.append(", voiceActivityDetectorIsEnabled=");
-        sbU.append(this.voiceActivityDetectorIsEnabled);
-        sbU.append(", voiceActivityDetectorProcessTime=");
-        return outline.C(sbU, this.voiceActivityDetectorProcessTime, ")");
+        StringBuilder sbM833U = C1643a.m833U("OutboundRtpAudio(type=");
+        sbM833U.append(this.type);
+        sbM833U.append(", ssrc=");
+        sbM833U.append(this.ssrc);
+        sbM833U.append(", codec=");
+        sbM833U.append(this.codec);
+        sbM833U.append(", bytesSent=");
+        sbM833U.append(this.bytesSent);
+        sbM833U.append(", packetsSent=");
+        sbM833U.append(this.packetsSent);
+        sbM833U.append(", packetsLost=");
+        sbM833U.append(this.packetsLost);
+        sbM833U.append(", fractionLost=");
+        sbM833U.append(this.fractionLost);
+        sbM833U.append(", audioLevel=");
+        sbM833U.append(this.audioLevel);
+        sbM833U.append(", audioDetected=");
+        sbM833U.append(this.audioDetected);
+        sbM833U.append(", framesCaptured=");
+        sbM833U.append(this.framesCaptured);
+        sbM833U.append(", framesRendered=");
+        sbM833U.append(this.framesRendered);
+        sbM833U.append(", noiseCancellerIsEnabled=");
+        sbM833U.append(this.noiseCancellerIsEnabled);
+        sbM833U.append(", noiseCancellerProcessTime=");
+        sbM833U.append(this.noiseCancellerProcessTime);
+        sbM833U.append(", voiceActivityDetectorIsEnabled=");
+        sbM833U.append(this.voiceActivityDetectorIsEnabled);
+        sbM833U.append(", voiceActivityDetectorProcessTime=");
+        return C1643a.m815C(sbM833U, this.voiceActivityDetectorProcessTime, ")");
     }
 }

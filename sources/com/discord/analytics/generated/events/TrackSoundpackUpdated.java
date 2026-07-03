@@ -1,14 +1,14 @@
 package com.discord.analytics.generated.events;
 
-import b.d.b.a.outline;
 import com.discord.analytics.generated.traits.TrackBase;
-import com.discord.analytics.generated.traits.TrackBase2;
+import com.discord.analytics.generated.traits.TrackBaseReceiver;
 import com.discord.api.science.AnalyticsSchema;
-import d0.z.d.Intrinsics3;
+import p007b.p100d.p104b.p105a.C1643a;
+import p507d0.p592z.p594d.C12238m;
 
 /* JADX INFO: compiled from: TrackSoundpackUpdated.kt */
 /* JADX INFO: loaded from: classes.dex */
-public final /* data */ class TrackSoundpackUpdated implements AnalyticsSchema, TrackBase2 {
+public final /* data */ class TrackSoundpackUpdated implements AnalyticsSchema, TrackBaseReceiver {
     private TrackBase trackBase;
     private final CharSequence soundpack = null;
     private final CharSequence previousSoundpack = null;
@@ -28,7 +28,7 @@ public final /* data */ class TrackSoundpackUpdated implements AnalyticsSchema, 
             return false;
         }
         TrackSoundpackUpdated trackSoundpackUpdated = (TrackSoundpackUpdated) other;
-        return Intrinsics3.areEqual(this.soundpack, trackSoundpackUpdated.soundpack) && Intrinsics3.areEqual(this.previousSoundpack, trackSoundpackUpdated.previousSoundpack);
+        return C12238m.areEqual(this.soundpack, trackSoundpackUpdated.soundpack) && C12238m.areEqual(this.previousSoundpack, trackSoundpackUpdated.previousSoundpack);
     }
 
     public int hashCode() {
@@ -39,9 +39,9 @@ public final /* data */ class TrackSoundpackUpdated implements AnalyticsSchema, 
     }
 
     public String toString() {
-        StringBuilder sbU = outline.U("TrackSoundpackUpdated(soundpack=");
-        sbU.append(this.soundpack);
-        sbU.append(", previousSoundpack=");
-        return outline.E(sbU, this.previousSoundpack, ")");
+        StringBuilder sbM833U = C1643a.m833U("TrackSoundpackUpdated(soundpack=");
+        sbM833U.append(this.soundpack);
+        sbM833U.append(", previousSoundpack=");
+        return C1643a.m817E(sbM833U, this.previousSoundpack, ")");
     }
 }

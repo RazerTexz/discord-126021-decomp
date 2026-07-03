@@ -1,14 +1,14 @@
 package com.discord.analytics.generated.events;
 
-import b.d.b.a.outline;
 import com.discord.analytics.generated.traits.TrackBase;
-import com.discord.analytics.generated.traits.TrackBase2;
+import com.discord.analytics.generated.traits.TrackBaseReceiver;
 import com.discord.api.science.AnalyticsSchema;
-import d0.z.d.Intrinsics3;
+import p007b.p100d.p104b.p105a.C1643a;
+import p507d0.p592z.p594d.C12238m;
 
 /* JADX INFO: compiled from: TrackPhoneCarrierTypeNotMobile.kt */
 /* JADX INFO: loaded from: classes.dex */
-public final /* data */ class TrackPhoneCarrierTypeNotMobile implements AnalyticsSchema, TrackBase2 {
+public final /* data */ class TrackPhoneCarrierTypeNotMobile implements AnalyticsSchema, TrackBaseReceiver {
     private TrackBase trackBase;
     private final CharSequence carrierName = null;
     private final CharSequence carrierType = null;
@@ -28,7 +28,7 @@ public final /* data */ class TrackPhoneCarrierTypeNotMobile implements Analytic
             return false;
         }
         TrackPhoneCarrierTypeNotMobile trackPhoneCarrierTypeNotMobile = (TrackPhoneCarrierTypeNotMobile) other;
-        return Intrinsics3.areEqual(this.carrierName, trackPhoneCarrierTypeNotMobile.carrierName) && Intrinsics3.areEqual(this.carrierType, trackPhoneCarrierTypeNotMobile.carrierType);
+        return C12238m.areEqual(this.carrierName, trackPhoneCarrierTypeNotMobile.carrierName) && C12238m.areEqual(this.carrierType, trackPhoneCarrierTypeNotMobile.carrierType);
     }
 
     public int hashCode() {
@@ -39,9 +39,9 @@ public final /* data */ class TrackPhoneCarrierTypeNotMobile implements Analytic
     }
 
     public String toString() {
-        StringBuilder sbU = outline.U("TrackPhoneCarrierTypeNotMobile(carrierName=");
-        sbU.append(this.carrierName);
-        sbU.append(", carrierType=");
-        return outline.E(sbU, this.carrierType, ")");
+        StringBuilder sbM833U = C1643a.m833U("TrackPhoneCarrierTypeNotMobile(carrierName=");
+        sbM833U.append(this.carrierName);
+        sbM833U.append(", carrierType=");
+        return C1643a.m817E(sbM833U, this.carrierType, ")");
     }
 }

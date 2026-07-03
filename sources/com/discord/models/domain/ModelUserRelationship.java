@@ -1,11 +1,11 @@
 package com.discord.models.domain;
 
-import b.d.b.a.outline;
 import com.discord.api.user.User;
 import com.discord.models.deserialization.gson.InboundGatewayGsonParser;
 import com.discord.models.domain.Model;
 import java.io.IOException;
 import java.util.Map;
+import p007b.p100d.p104b.p105a.C1643a;
 
 /* JADX INFO: loaded from: classes.dex */
 public class ModelUserRelationship implements Model {
@@ -15,8 +15,8 @@ public class ModelUserRelationship implements Model {
     public static final int TYPE_INVITE_OUTGOING = 4;
     public static final int TYPE_NONE = 0;
 
-    /* JADX INFO: renamed from: id, reason: collision with root package name */
-    private long f2735id;
+    /* JADX INFO: renamed from: id */
+    private long f18584id;
     private int type;
     private User user;
     private Long userId;
@@ -37,7 +37,7 @@ public class ModelUserRelationship implements Model {
                 this.userId = jsonReader.nextLongOrNull();
                 break;
             case "id":
-                this.f2735id = jsonReader.nextLong(this.f2735id);
+                this.f18584id = jsonReader.nextLong(this.f18584id);
                 break;
             case "type":
                 this.type = jsonReader.nextInt(this.type);
@@ -77,7 +77,7 @@ public class ModelUserRelationship implements Model {
     }
 
     public long getId() {
-        return this.f2735id;
+        return this.f18584id;
     }
 
     public int getType() {
@@ -112,20 +112,20 @@ public class ModelUserRelationship implements Model {
     }
 
     public String toString() {
-        StringBuilder sbU = outline.U("ModelUserRelationship(id=");
-        sbU.append(getId());
-        sbU.append(", type=");
-        sbU.append(getType());
-        sbU.append(", user=");
-        sbU.append(getUser());
-        sbU.append(", userId=");
-        sbU.append(getUserId());
-        sbU.append(")");
-        return sbU.toString();
+        StringBuilder sbM833U = C1643a.m833U("ModelUserRelationship(id=");
+        sbM833U.append(getId());
+        sbM833U.append(", type=");
+        sbM833U.append(getType());
+        sbM833U.append(", user=");
+        sbM833U.append(getUser());
+        sbM833U.append(", userId=");
+        sbM833U.append(getUserId());
+        sbM833U.append(")");
+        return sbM833U.toString();
     }
 
     public ModelUserRelationship(long j, int i, User user, Long l) {
-        this.f2735id = j;
+        this.f18584id = j;
         this.type = i;
         this.user = user;
         this.userId = l;
@@ -139,6 +139,6 @@ public class ModelUserRelationship implements Model {
     }
 
     public ModelUserRelationship(ModelUserRelationship modelUserRelationship) {
-        this(modelUserRelationship.f2735id, modelUserRelationship.type, modelUserRelationship.user, modelUserRelationship.userId);
+        this(modelUserRelationship.f18584id, modelUserRelationship.type, modelUserRelationship.user, modelUserRelationship.userId);
     }
 }

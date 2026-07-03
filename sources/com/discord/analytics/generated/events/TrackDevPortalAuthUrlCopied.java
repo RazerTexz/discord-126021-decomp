@@ -1,14 +1,14 @@
 package com.discord.analytics.generated.events;
 
-import b.d.b.a.outline;
 import com.discord.analytics.generated.traits.TrackBase;
-import com.discord.analytics.generated.traits.TrackBase2;
+import com.discord.analytics.generated.traits.TrackBaseReceiver;
 import com.discord.api.science.AnalyticsSchema;
-import d0.z.d.Intrinsics3;
+import p007b.p100d.p104b.p105a.C1643a;
+import p507d0.p592z.p594d.C12238m;
 
 /* JADX INFO: compiled from: TrackDevPortalAuthUrlCopied.kt */
 /* JADX INFO: loaded from: classes.dex */
-public final /* data */ class TrackDevPortalAuthUrlCopied implements AnalyticsSchema, TrackBase2 {
+public final /* data */ class TrackDevPortalAuthUrlCopied implements AnalyticsSchema, TrackBaseReceiver {
     private TrackBase trackBase;
     private final Long applicationId = null;
     private final Long botId = null;
@@ -31,7 +31,7 @@ public final /* data */ class TrackDevPortalAuthUrlCopied implements AnalyticsSc
             return false;
         }
         TrackDevPortalAuthUrlCopied trackDevPortalAuthUrlCopied = (TrackDevPortalAuthUrlCopied) other;
-        return Intrinsics3.areEqual(this.applicationId, trackDevPortalAuthUrlCopied.applicationId) && Intrinsics3.areEqual(this.botId, trackDevPortalAuthUrlCopied.botId) && Intrinsics3.areEqual(this.applicationName, trackDevPortalAuthUrlCopied.applicationName) && Intrinsics3.areEqual(this.hasBot, trackDevPortalAuthUrlCopied.hasBot) && Intrinsics3.areEqual(this.hasRedirectUri, trackDevPortalAuthUrlCopied.hasRedirectUri);
+        return C12238m.areEqual(this.applicationId, trackDevPortalAuthUrlCopied.applicationId) && C12238m.areEqual(this.botId, trackDevPortalAuthUrlCopied.botId) && C12238m.areEqual(this.applicationName, trackDevPortalAuthUrlCopied.applicationName) && C12238m.areEqual(this.hasBot, trackDevPortalAuthUrlCopied.hasBot) && C12238m.areEqual(this.hasRedirectUri, trackDevPortalAuthUrlCopied.hasRedirectUri);
     }
 
     public int hashCode() {
@@ -48,15 +48,15 @@ public final /* data */ class TrackDevPortalAuthUrlCopied implements AnalyticsSc
     }
 
     public String toString() {
-        StringBuilder sbU = outline.U("TrackDevPortalAuthUrlCopied(applicationId=");
-        sbU.append(this.applicationId);
-        sbU.append(", botId=");
-        sbU.append(this.botId);
-        sbU.append(", applicationName=");
-        sbU.append(this.applicationName);
-        sbU.append(", hasBot=");
-        sbU.append(this.hasBot);
-        sbU.append(", hasRedirectUri=");
-        return outline.D(sbU, this.hasRedirectUri, ")");
+        StringBuilder sbM833U = C1643a.m833U("TrackDevPortalAuthUrlCopied(applicationId=");
+        sbM833U.append(this.applicationId);
+        sbM833U.append(", botId=");
+        sbM833U.append(this.botId);
+        sbM833U.append(", applicationName=");
+        sbM833U.append(this.applicationName);
+        sbM833U.append(", hasBot=");
+        sbM833U.append(this.hasBot);
+        sbM833U.append(", hasRedirectUri=");
+        return C1643a.m816D(sbM833U, this.hasRedirectUri, ")");
     }
 }

@@ -1,16 +1,16 @@
 package com.esotericsoftware.kryo.serializers;
 
-import b.d.b.a.outline;
-import b.e.a.Log;
 import com.esotericsoftware.kryo.Kryo;
 import com.esotericsoftware.kryo.KryoException;
-import com.esotericsoftware.kryo.io.Input;
-import com.esotericsoftware.kryo.io.Output;
+import com.esotericsoftware.kryo.p502io.Input;
+import com.esotericsoftware.kryo.p502io.Output;
 import com.esotericsoftware.kryo.serializers.FieldSerializer;
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
+import p007b.p100d.p104b.p105a.C1643a;
+import p007b.p106e.p107a.C1644a;
 
 /* JADX INFO: loaded from: classes.dex */
 public class VersionFieldSerializer<T> extends FieldSerializer<T> {
@@ -46,7 +46,7 @@ public class VersionFieldSerializer<T> extends FieldSerializer<T> {
             }
         }
         this.removedFields.clear();
-        Log.a aVar = Log.a;
+        C1644a.a aVar = C1644a.f3007a;
     }
 
     @Override // com.esotericsoftware.kryo.serializers.FieldSerializer, com.esotericsoftware.kryo.Serializer
@@ -55,15 +55,15 @@ public class VersionFieldSerializer<T> extends FieldSerializer<T> {
         kryo.reference(tCreate);
         int varInt = input.readVarInt(true);
         if (!this.compatible && varInt != this.typeVersion) {
-            StringBuilder sbV = outline.V("Version not compatible: ", varInt, " <-> ");
-            sbV.append(this.typeVersion);
-            throw new KryoException(sbV.toString());
+            StringBuilder sbM834V = C1643a.m834V("Version not compatible: ", varInt, " <-> ");
+            sbM834V.append(this.typeVersion);
+            throw new KryoException(sbM834V.toString());
         }
         FieldSerializer.CachedField[] fields = getFields();
         int length = fields.length;
         for (int i = 0; i < length; i++) {
             if (this.fieldVersion[i] > varInt) {
-                Log.a aVar = Log.a;
+                C1644a.a aVar = C1644a.f3007a;
             } else {
                 fields[i].read(input, tCreate);
             }

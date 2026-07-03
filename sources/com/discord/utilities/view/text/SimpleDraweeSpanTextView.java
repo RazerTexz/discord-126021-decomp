@@ -20,7 +20,7 @@ public class SimpleDraweeSpanTextView extends AppCompatTextView {
     public void detachCurrentDraweeSpanStringBuilder() {
         DraweeSpanStringBuilder draweeSpanStringBuilder = this.mDraweeStringBuilder;
         if (draweeSpanStringBuilder != null) {
-            draweeSpanStringBuilder.b(this);
+            draweeSpanStringBuilder.m8685b(this);
         }
         this.mDraweeStringBuilder = null;
     }
@@ -31,7 +31,7 @@ public class SimpleDraweeSpanTextView extends AppCompatTextView {
         this.mIsAttached = true;
         DraweeSpanStringBuilder draweeSpanStringBuilder = this.mDraweeStringBuilder;
         if (draweeSpanStringBuilder != null) {
-            draweeSpanStringBuilder.a(this);
+            draweeSpanStringBuilder.m8684a(this);
         }
     }
 
@@ -40,7 +40,7 @@ public class SimpleDraweeSpanTextView extends AppCompatTextView {
         this.mIsAttached = false;
         DraweeSpanStringBuilder draweeSpanStringBuilder = this.mDraweeStringBuilder;
         if (draweeSpanStringBuilder != null) {
-            draweeSpanStringBuilder.b(this);
+            draweeSpanStringBuilder.m8685b(this);
         }
         super.onDetachedFromWindow();
     }
@@ -51,7 +51,7 @@ public class SimpleDraweeSpanTextView extends AppCompatTextView {
         this.mIsAttached = true;
         DraweeSpanStringBuilder draweeSpanStringBuilder = this.mDraweeStringBuilder;
         if (draweeSpanStringBuilder != null) {
-            draweeSpanStringBuilder.a(this);
+            draweeSpanStringBuilder.m8684a(this);
         }
     }
 
@@ -60,7 +60,7 @@ public class SimpleDraweeSpanTextView extends AppCompatTextView {
         this.mIsAttached = false;
         DraweeSpanStringBuilder draweeSpanStringBuilder = this.mDraweeStringBuilder;
         if (draweeSpanStringBuilder != null) {
-            draweeSpanStringBuilder.b(this);
+            draweeSpanStringBuilder.m8685b(this);
         }
         super.onStartTemporaryDetach();
     }
@@ -77,7 +77,7 @@ public class SimpleDraweeSpanTextView extends AppCompatTextView {
         if (draweeSpanStringBuilder == null || !this.mIsAttached) {
             return;
         }
-        draweeSpanStringBuilder.a(this);
+        draweeSpanStringBuilder.m8684a(this);
     }
 
     public SimpleDraweeSpanTextView(Context context, @Nullable AttributeSet attributeSet) {

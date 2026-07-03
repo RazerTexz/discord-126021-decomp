@@ -17,45 +17,52 @@ import com.google.android.material.textfield.TextInputLayout;
 /* JADX INFO: loaded from: classes.dex */
 public final class WidgetChangeGuildIdentityBinding implements ViewBinding {
 
+    /* JADX INFO: renamed from: a */
     @NonNull
-    public final CoordinatorLayout a;
+    public final CoordinatorLayout f15803a;
 
-    /* JADX INFO: renamed from: b, reason: collision with root package name */
+    /* JADX INFO: renamed from: b */
     @NonNull
-    public final DimmerView f2252b;
+    public final DimmerView f15804b;
 
+    /* JADX INFO: renamed from: c */
     @NonNull
-    public final ShinyButton c;
+    public final ShinyButton f15805c;
 
+    /* JADX INFO: renamed from: d */
     @NonNull
-    public final SimpleDraweeView d;
+    public final SimpleDraweeView f15806d;
 
+    /* JADX INFO: renamed from: e */
     @NonNull
-    public final RelativeLayout e;
+    public final RelativeLayout f15807e;
 
+    /* JADX INFO: renamed from: f */
     @NonNull
-    public final FloatingActionButton f;
+    public final FloatingActionButton f15808f;
 
+    /* JADX INFO: renamed from: g */
     @NonNull
-    public final TextInputLayout g;
+    public final TextInputLayout f15809g;
 
+    /* JADX INFO: renamed from: h */
     @NonNull
-    public final LinearLayout h;
+    public final LinearLayout f15810h;
 
     public WidgetChangeGuildIdentityBinding(@NonNull CoordinatorLayout coordinatorLayout, @NonNull TextView textView, @NonNull CardView cardView, @NonNull DimmerView dimmerView, @NonNull ShinyButton shinyButton, @NonNull SimpleDraweeView simpleDraweeView, @NonNull CardView cardView2, @NonNull RelativeLayout relativeLayout, @NonNull CardView cardView3, @NonNull FloatingActionButton floatingActionButton, @NonNull TextInputLayout textInputLayout, @NonNull LinearLayout linearLayout) {
-        this.a = coordinatorLayout;
-        this.f2252b = dimmerView;
-        this.c = shinyButton;
-        this.d = simpleDraweeView;
-        this.e = relativeLayout;
-        this.f = floatingActionButton;
-        this.g = textInputLayout;
-        this.h = linearLayout;
+        this.f15803a = coordinatorLayout;
+        this.f15804b = dimmerView;
+        this.f15805c = shinyButton;
+        this.f15806d = simpleDraweeView;
+        this.f15807e = relativeLayout;
+        this.f15808f = floatingActionButton;
+        this.f15809g = textInputLayout;
+        this.f15810h = linearLayout;
     }
 
     @Override // androidx.viewbinding.ViewBinding
     @NonNull
     public View getRoot() {
-        return this.a;
+        return this.f15803a;
     }
 }

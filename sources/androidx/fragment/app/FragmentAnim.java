@@ -15,7 +15,7 @@ import androidx.annotation.AnimRes;
 import androidx.annotation.NonNull;
 import androidx.core.os.CancellationSignal;
 import androidx.core.view.OneShotPreDrawListener;
-import androidx.fragment.R;
+import androidx.fragment.C0344R;
 import androidx.fragment.app.FragmentTransition;
 
 /* JADX INFO: loaded from: classes.dex */
@@ -51,7 +51,7 @@ public class FragmentAnim {
                         public void run() {
                             if (fragment.getAnimatingAway() != null) {
                                 fragment.setAnimatingAway(null);
-                                AnonymousClass2 anonymousClass2 = AnonymousClass2.this;
+                                AnimationAnimationListenerC03742 animationAnimationListenerC03742 = AnimationAnimationListenerC03742.this;
                                 callback.onComplete(fragment, cancellationSignal);
                             }
                         }
@@ -94,7 +94,7 @@ public class FragmentAnim {
         fragment.setNextAnim(0);
         ViewGroup viewGroup = fragment.mContainer;
         if (viewGroup != null) {
-            int i = R.id.visible_removing_fragment_view_tag;
+            int i = C0344R.id.visible_removing_fragment_view_tag;
             if (viewGroup.getTag(i) != null) {
                 fragment.mContainer.setTag(i, null);
             }
@@ -151,15 +151,15 @@ public class FragmentAnim {
     @AnimRes
     private static int transitToAnimResourceId(int i, boolean z2) {
         if (i == 4097) {
-            return z2 ? R.animator.fragment_open_enter : R.animator.fragment_open_exit;
+            return z2 ? C0344R.animator.fragment_open_enter : C0344R.animator.fragment_open_exit;
         }
         if (i == 4099) {
-            return z2 ? R.animator.fragment_fade_enter : R.animator.fragment_fade_exit;
+            return z2 ? C0344R.animator.fragment_fade_enter : C0344R.animator.fragment_fade_exit;
         }
         if (i != 8194) {
             return -1;
         }
-        return z2 ? R.animator.fragment_close_enter : R.animator.fragment_close_exit;
+        return z2 ? C0344R.animator.fragment_close_enter : C0344R.animator.fragment_close_exit;
     }
 
     public static class AnimationOrAnimator {

@@ -11,33 +11,37 @@ import com.google.android.material.button.MaterialButton;
 /* JADX INFO: loaded from: classes.dex */
 public final class ViewMobileReportsBottomButtonBinding implements ViewBinding {
 
+    /* JADX INFO: renamed from: a */
     @NonNull
-    public final View a;
+    public final View f15512a;
 
-    /* JADX INFO: renamed from: b, reason: collision with root package name */
+    /* JADX INFO: renamed from: b */
     @NonNull
-    public final LoadingButton f2202b;
+    public final LoadingButton f15513b;
 
+    /* JADX INFO: renamed from: c */
     @NonNull
-    public final MaterialButton c;
+    public final MaterialButton f15514c;
 
+    /* JADX INFO: renamed from: d */
     @NonNull
-    public final LinkifiedTextView d;
+    public final LinkifiedTextView f15515d;
 
+    /* JADX INFO: renamed from: e */
     @NonNull
-    public final TextView e;
+    public final TextView f15516e;
 
     public ViewMobileReportsBottomButtonBinding(@NonNull View view, @NonNull LoadingButton loadingButton, @NonNull MaterialButton materialButton, @NonNull LinkifiedTextView linkifiedTextView, @NonNull TextView textView) {
-        this.a = view;
-        this.f2202b = loadingButton;
-        this.c = materialButton;
-        this.d = linkifiedTextView;
-        this.e = textView;
+        this.f15512a = view;
+        this.f15513b = loadingButton;
+        this.f15514c = materialButton;
+        this.f15515d = linkifiedTextView;
+        this.f15516e = textView;
     }
 
     @Override // androidx.viewbinding.ViewBinding
     @NonNull
     public View getRoot() {
-        return this.a;
+        return this.f15512a;
     }
 }

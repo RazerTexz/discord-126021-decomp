@@ -34,12 +34,12 @@ public class SwitchPreferenceCompat extends TwoStatePreference {
     public SwitchPreferenceCompat(Context context, AttributeSet attributeSet, int i, int i2) {
         super(context, attributeSet, i, i2);
         this.mListener = new Listener();
-        TypedArray typedArrayObtainStyledAttributes = context.obtainStyledAttributes(attributeSet, R.styleable.SwitchPreferenceCompat, i, i2);
-        setSummaryOn(TypedArrayUtils.getString(typedArrayObtainStyledAttributes, R.styleable.SwitchPreferenceCompat_summaryOn, R.styleable.SwitchPreferenceCompat_android_summaryOn));
-        setSummaryOff(TypedArrayUtils.getString(typedArrayObtainStyledAttributes, R.styleable.SwitchPreferenceCompat_summaryOff, R.styleable.SwitchPreferenceCompat_android_summaryOff));
-        setSwitchTextOn(TypedArrayUtils.getString(typedArrayObtainStyledAttributes, R.styleable.SwitchPreferenceCompat_switchTextOn, R.styleable.SwitchPreferenceCompat_android_switchTextOn));
-        setSwitchTextOff(TypedArrayUtils.getString(typedArrayObtainStyledAttributes, R.styleable.SwitchPreferenceCompat_switchTextOff, R.styleable.SwitchPreferenceCompat_android_switchTextOff));
-        setDisableDependentsState(TypedArrayUtils.getBoolean(typedArrayObtainStyledAttributes, R.styleable.SwitchPreferenceCompat_disableDependentsState, R.styleable.SwitchPreferenceCompat_android_disableDependentsState, false));
+        TypedArray typedArrayObtainStyledAttributes = context.obtainStyledAttributes(attributeSet, C0525R.styleable.SwitchPreferenceCompat, i, i2);
+        setSummaryOn(TypedArrayUtils.getString(typedArrayObtainStyledAttributes, C0525R.styleable.SwitchPreferenceCompat_summaryOn, C0525R.styleable.SwitchPreferenceCompat_android_summaryOn));
+        setSummaryOff(TypedArrayUtils.getString(typedArrayObtainStyledAttributes, C0525R.styleable.SwitchPreferenceCompat_summaryOff, C0525R.styleable.SwitchPreferenceCompat_android_summaryOff));
+        setSwitchTextOn(TypedArrayUtils.getString(typedArrayObtainStyledAttributes, C0525R.styleable.SwitchPreferenceCompat_switchTextOn, C0525R.styleable.SwitchPreferenceCompat_android_switchTextOn));
+        setSwitchTextOff(TypedArrayUtils.getString(typedArrayObtainStyledAttributes, C0525R.styleable.SwitchPreferenceCompat_switchTextOff, C0525R.styleable.SwitchPreferenceCompat_android_switchTextOff));
+        setDisableDependentsState(TypedArrayUtils.getBoolean(typedArrayObtainStyledAttributes, C0525R.styleable.SwitchPreferenceCompat_disableDependentsState, C0525R.styleable.SwitchPreferenceCompat_android_disableDependentsState, false));
         typedArrayObtainStyledAttributes.recycle();
     }
 
@@ -62,7 +62,7 @@ public class SwitchPreferenceCompat extends TwoStatePreference {
 
     private void syncViewIfAccessibilityEnabled(View view) {
         if (((AccessibilityManager) getContext().getSystemService("accessibility")).isEnabled()) {
-            syncSwitchView(view.findViewById(R.id.switchWidget));
+            syncSwitchView(view.findViewById(C0525R.id.switchWidget));
             syncSummaryView(view.findViewById(android.R.id.summary));
         }
     }
@@ -78,7 +78,7 @@ public class SwitchPreferenceCompat extends TwoStatePreference {
     @Override // androidx.preference.Preference
     public void onBindViewHolder(PreferenceViewHolder preferenceViewHolder) {
         super.onBindViewHolder(preferenceViewHolder);
-        syncSwitchView(preferenceViewHolder.findViewById(R.id.switchWidget));
+        syncSwitchView(preferenceViewHolder.findViewById(C0525R.id.switchWidget));
         syncSummaryView(preferenceViewHolder);
     }
 
@@ -112,7 +112,7 @@ public class SwitchPreferenceCompat extends TwoStatePreference {
     }
 
     public SwitchPreferenceCompat(Context context, AttributeSet attributeSet) {
-        this(context, attributeSet, R.attr.switchPreferenceCompatStyle);
+        this(context, attributeSet, C0525R.attr.switchPreferenceCompatStyle);
     }
 
     public SwitchPreferenceCompat(Context context) {

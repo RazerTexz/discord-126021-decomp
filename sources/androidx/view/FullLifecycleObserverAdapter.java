@@ -8,8 +8,8 @@ public class FullLifecycleObserverAdapter implements LifecycleEventObserver {
     private final FullLifecycleObserver mFullLifecycleObserver;
     private final LifecycleEventObserver mLifecycleEventObserver;
 
-    /* JADX INFO: renamed from: androidx.lifecycle.FullLifecycleObserverAdapter$1, reason: invalid class name */
-    public static /* synthetic */ class AnonymousClass1 {
+    /* JADX INFO: renamed from: androidx.lifecycle.FullLifecycleObserverAdapter$1 */
+    public static /* synthetic */ class C04361 {
         public static final /* synthetic */ int[] $SwitchMap$androidx$lifecycle$Lifecycle$Event;
 
         static {

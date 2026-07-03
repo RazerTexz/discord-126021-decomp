@@ -1,18 +1,18 @@
 package com.discord.analytics.generated.events.network_action;
 
-import b.d.b.a.outline;
 import com.discord.analytics.generated.traits.TrackBase;
-import com.discord.analytics.generated.traits.TrackBase2;
+import com.discord.analytics.generated.traits.TrackBaseReceiver;
 import com.discord.analytics.generated.traits.TrackLocationMetadata;
-import com.discord.analytics.generated.traits.TrackLocationMetadata2;
+import com.discord.analytics.generated.traits.TrackLocationMetadataReceiver;
 import com.discord.analytics.generated.traits.TrackNetworkMetadata;
-import com.discord.analytics.generated.traits.TrackNetworkMetadata2;
+import com.discord.analytics.generated.traits.TrackNetworkMetadataReceiver;
 import com.discord.api.science.AnalyticsSchema;
-import d0.z.d.Intrinsics3;
+import p007b.p100d.p104b.p105a.C1643a;
+import p507d0.p592z.p594d.C12238m;
 
 /* JADX INFO: compiled from: TrackNetworkActionUserRegister.kt */
 /* JADX INFO: loaded from: classes.dex */
-public final /* data */ class TrackNetworkActionUserRegister implements AnalyticsSchema, TrackBase2, TrackLocationMetadata2, TrackNetworkMetadata2 {
+public final /* data */ class TrackNetworkActionUserRegister implements AnalyticsSchema, TrackBaseReceiver, TrackLocationMetadataReceiver, TrackNetworkMetadataReceiver {
     private final transient String analyticsSchemaTypeName;
     private final CharSequence inviteCode;
     private final Boolean promotionalEmailOptIn;
@@ -28,8 +28,9 @@ public final /* data */ class TrackNetworkActionUserRegister implements Analytic
         this.analyticsSchemaTypeName = "network_action_user_register";
     }
 
-    @Override // com.discord.analytics.generated.traits.TrackNetworkMetadata2
-    public void b(TrackNetworkMetadata trackNetworkMetadata) {
+    @Override // com.discord.analytics.generated.traits.TrackNetworkMetadataReceiver
+    /* JADX INFO: renamed from: b */
+    public void mo7529b(TrackNetworkMetadata trackNetworkMetadata) {
         this.trackNetworkMetadata = trackNetworkMetadata;
     }
 
@@ -47,7 +48,7 @@ public final /* data */ class TrackNetworkActionUserRegister implements Analytic
             return false;
         }
         TrackNetworkActionUserRegister trackNetworkActionUserRegister = (TrackNetworkActionUserRegister) other;
-        return Intrinsics3.areEqual(this.inviteCode, trackNetworkActionUserRegister.inviteCode) && Intrinsics3.areEqual(this.promotionalEmailOptIn, trackNetworkActionUserRegister.promotionalEmailOptIn) && Intrinsics3.areEqual(this.promotionalEmailPreChecked, trackNetworkActionUserRegister.promotionalEmailPreChecked);
+        return C12238m.areEqual(this.inviteCode, trackNetworkActionUserRegister.inviteCode) && C12238m.areEqual(this.promotionalEmailOptIn, trackNetworkActionUserRegister.promotionalEmailOptIn) && C12238m.areEqual(this.promotionalEmailPreChecked, trackNetworkActionUserRegister.promotionalEmailPreChecked);
     }
 
     public int hashCode() {
@@ -60,12 +61,12 @@ public final /* data */ class TrackNetworkActionUserRegister implements Analytic
     }
 
     public String toString() {
-        StringBuilder sbU = outline.U("TrackNetworkActionUserRegister(inviteCode=");
-        sbU.append(this.inviteCode);
-        sbU.append(", promotionalEmailOptIn=");
-        sbU.append(this.promotionalEmailOptIn);
-        sbU.append(", promotionalEmailPreChecked=");
-        return outline.D(sbU, this.promotionalEmailPreChecked, ")");
+        StringBuilder sbM833U = C1643a.m833U("TrackNetworkActionUserRegister(inviteCode=");
+        sbM833U.append(this.inviteCode);
+        sbM833U.append(", promotionalEmailOptIn=");
+        sbM833U.append(this.promotionalEmailOptIn);
+        sbM833U.append(", promotionalEmailPreChecked=");
+        return C1643a.m816D(sbM833U, this.promotionalEmailPreChecked, ")");
     }
 
     public TrackNetworkActionUserRegister(CharSequence charSequence, Boolean bool, Boolean bool2) {

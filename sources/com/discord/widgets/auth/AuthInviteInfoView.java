@@ -9,9 +9,7 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
-import b.a.k.FormatUtils;
-import b.d.b.a.outline;
-import com.discord.R;
+import com.discord.C5419R;
 import com.discord.api.channel.Channel;
 import com.discord.api.channel.ChannelUtils;
 import com.discord.api.guild.Guild;
@@ -24,10 +22,12 @@ import com.discord.nullserializable.NullSerializable;
 import com.discord.utilities.icon.IconUtils;
 import com.discord.utilities.images.MGImages;
 import com.facebook.drawee.view.SimpleDraweeView;
-import d0.g0.StringsJVM;
-import d0.z.d.Intrinsics3;
 import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.DefaultConstructorMarker;
+import p007b.p008a.p027k.C1107b;
+import p007b.p100d.p104b.p105a.C1643a;
+import p507d0.p579g0.C12103t;
+import p507d0.p592z.p594d.C12238m;
 
 /* JADX INFO: compiled from: AuthInviteInfoView.kt */
 /* JADX INFO: loaded from: classes2.dex */
@@ -55,29 +55,29 @@ public final class AuthInviteInfoView extends RelativeLayout {
         String username;
         User inviter2 = modelInvite.getInviter();
         String username2 = inviter2 != null ? inviter2.getUsername() : null;
-        boolean z2 = username2 != null && (StringsJVM.isBlank(username2) ^ true);
+        boolean z2 = username2 != null && (C12103t.isBlank(username2) ^ true);
         if (modelInvite.getChannel() == null && modelInvite.guild == null && z2) {
             Context context = getContext();
-            Intrinsics3.checkNotNullExpressionValue(context, "context");
-            return FormatUtils.b(context, R.string.instant_invite_you_have_been_invited_to_chat_with, new Object[0], (4 & 4) != 0 ? FormatUtils.b.j : null);
+            C12238m.checkNotNullExpressionValue(context, "context");
+            return C1107b.m210b(context, C5419R.string.instant_invite_you_have_been_invited_to_chat_with, new Object[0], (4 & 4) != 0 ? C1107b.b.f1491j : null);
         }
         Channel channel = modelInvite.getChannel();
-        if (channel == null || !ChannelUtils.z(channel)) {
+        if (channel == null || !ChannelUtils.m7702z(channel)) {
             if (modelInvite.getApproximateMemberCount() >= 200 || !z2) {
                 Context context2 = getContext();
-                Intrinsics3.checkNotNullExpressionValue(context2, "context");
-                return FormatUtils.b(context2, R.string.instant_invite_you_have_been_invited_to_join, new Object[0], (4 & 4) != 0 ? FormatUtils.b.j : null);
+                C12238m.checkNotNullExpressionValue(context2, "context");
+                return C1107b.m210b(context2, C5419R.string.instant_invite_you_have_been_invited_to_join, new Object[0], (4 & 4) != 0 ? C1107b.b.f1491j : null);
             }
             Context context3 = getContext();
-            Intrinsics3.checkNotNullExpressionValue(context3, "context");
-            return FormatUtils.b(context3, R.string.auth_message_invited_by, new Object[]{username2}, (4 & 4) != 0 ? FormatUtils.b.j : null);
+            C12238m.checkNotNullExpressionValue(context3, "context");
+            return C1107b.m210b(context3, C5419R.string.auth_message_invited_by, new Object[]{username2}, (4 & 4) != 0 ? C1107b.b.f1491j : null);
         }
         Channel channel2 = modelInvite.getChannel();
         if (channel2 != null) {
-            if (!(ChannelUtils.c(channel2).length() == 0)) {
+            if (!(ChannelUtils.m7679c(channel2).length() == 0)) {
                 if (z2) {
                     Context context4 = getContext();
-                    Intrinsics3.checkNotNullExpressionValue(context4, "context");
+                    C12238m.checkNotNullExpressionValue(context4, "context");
                     Object[] objArr = new Object[1];
                     inviter = modelInvite.getInviter();
                     if (inviter != null) {
@@ -86,12 +86,12 @@ public final class AuthInviteInfoView extends RelativeLayout {
                         username = null;
                     }
                     objArr[0] = username;
-                    return FormatUtils.b(context4, R.string.auth_message_invited_by, objArr, (4 & 4) != 0 ? FormatUtils.b.j : null);
+                    return C1107b.m210b(context4, C5419R.string.auth_message_invited_by, objArr, (4 & 4) != 0 ? C1107b.b.f1491j : null);
                 }
             }
         } else if (z2) {
             Context context5 = getContext();
-            Intrinsics3.checkNotNullExpressionValue(context5, "context");
+            C12238m.checkNotNullExpressionValue(context5, "context");
             Object[] objArr2 = new Object[1];
             inviter = modelInvite.getInviter();
             if (inviter != null) {
@@ -100,83 +100,83 @@ public final class AuthInviteInfoView extends RelativeLayout {
                 username = null;
             }
             objArr2[0] = username;
-            return FormatUtils.b(context5, R.string.auth_message_invited_by, objArr2, (4 & 4) != 0 ? FormatUtils.b.j : null);
+            return C1107b.m210b(context5, C5419R.string.auth_message_invited_by, objArr2, (4 & 4) != 0 ? C1107b.b.f1491j : null);
         }
         Context context6 = getContext();
-        Intrinsics3.checkNotNullExpressionValue(context6, "context");
-        return FormatUtils.b(context6, R.string.instant_invite_you_have_been_invited_to_join_group_dm, new Object[0], (4 & 4) != 0 ? FormatUtils.b.j : null);
+        C12238m.checkNotNullExpressionValue(context6, "context");
+        return C1107b.m210b(context6, C5419R.string.instant_invite_you_have_been_invited_to_join_group_dm, new Object[0], (4 & 4) != 0 ? C1107b.b.f1491j : null);
     }
 
     public final void configureGuildTemplate(ModelGuildTemplate guildTemplate) {
-        Intrinsics3.checkNotNullParameter(guildTemplate, "guildTemplate");
-        SimpleDraweeView simpleDraweeView = this.binding.f2174b;
-        Intrinsics3.checkNotNullExpressionValue(simpleDraweeView, "binding.authInviteInfoGuildAvatar");
+        C12238m.checkNotNullParameter(guildTemplate, "guildTemplate");
+        SimpleDraweeView simpleDraweeView = this.binding.f15375b;
+        C12238m.checkNotNullExpressionValue(simpleDraweeView, "binding.authInviteInfoGuildAvatar");
         simpleDraweeView.setVisibility(8);
-        ImageView imageView = this.binding.e;
-        Intrinsics3.checkNotNullExpressionValue(imageView, "binding.authInviteInfoTemplateIcon");
+        ImageView imageView = this.binding.f15378e;
+        C12238m.checkNotNullExpressionValue(imageView, "binding.authInviteInfoTemplateIcon");
         imageView.setVisibility(0);
-        TextView textView = this.binding.d;
-        Intrinsics3.checkNotNullExpressionValue(textView, "binding.authInviteInfoInvitedText");
-        FormatUtils.m(textView, R.string.guild_template_modal_title, new Object[0], (4 & 4) != 0 ? FormatUtils.g.j : null);
-        TextView textView2 = this.binding.c;
-        Intrinsics3.checkNotNullExpressionValue(textView2, "binding.authInviteInfoGuildName");
+        TextView textView = this.binding.f15377d;
+        C12238m.checkNotNullExpressionValue(textView, "binding.authInviteInfoInvitedText");
+        C1107b.m221m(textView, C5419R.string.guild_template_modal_title, new Object[0], (4 & 4) != 0 ? C1107b.g.f1495j : null);
+        TextView textView2 = this.binding.f15376c;
+        C12238m.checkNotNullExpressionValue(textView2, "binding.authInviteInfoGuildName");
         textView2.setText(guildTemplate.getName());
     }
 
     public final void configureInvite(ModelInvite invite) {
         String username;
         String discriminator;
-        NullSerializable<String> nullSerializableA;
+        NullSerializable<String> nullSerializableM8288a;
         String username2;
-        Intrinsics3.checkNotNullParameter(invite, "invite");
-        SimpleDraweeView simpleDraweeView = this.binding.f2174b;
-        Intrinsics3.checkNotNullExpressionValue(simpleDraweeView, "binding.authInviteInfoGuildAvatar");
+        C12238m.checkNotNullParameter(invite, "invite");
+        SimpleDraweeView simpleDraweeView = this.binding.f15375b;
+        C12238m.checkNotNullExpressionValue(simpleDraweeView, "binding.authInviteInfoGuildAvatar");
         simpleDraweeView.setVisibility(0);
-        ImageView imageView = this.binding.e;
-        Intrinsics3.checkNotNullExpressionValue(imageView, "binding.authInviteInfoTemplateIcon");
+        ImageView imageView = this.binding.f15378e;
+        C12238m.checkNotNullExpressionValue(imageView, "binding.authInviteInfoTemplateIcon");
         imageView.setVisibility(8);
         Channel channel = invite.getChannel();
         Integer numValueOf = channel != null ? Integer.valueOf(channel.getType()) : null;
         if ((numValueOf != null && numValueOf.intValue() == 5) || ((numValueOf != null && numValueOf.intValue() == 0) || ((numValueOf != null && numValueOf.intValue() == 2) || (numValueOf != null && numValueOf.intValue() == 13)))) {
             Guild guild = invite.guild;
             if (guild != null) {
-                SimpleDraweeView simpleDraweeView2 = this.binding.f2174b;
-                Intrinsics3.checkNotNullExpressionValue(simpleDraweeView2, "binding.authInviteInfoGuildAvatar");
-                Intrinsics3.checkNotNullExpressionValue(guild, "inviteGuild");
-                IconUtils.setIcon$default(simpleDraweeView2, IconUtils.getForGuild$default(new com.discord.models.guild.Guild(guild), IconUtils.DEFAULT_ICON_BLURPLE, true, null, 8, null), R.dimen.avatar_size_large, (Function1) null, (MGImages.ChangeDetector) null, 24, (Object) null);
-                TextView textView = this.binding.d;
-                Intrinsics3.checkNotNullExpressionValue(textView, "binding.authInviteInfoInvitedText");
-                textView.setText(FormatUtils.g(getIntroText(invite), new Object[0], (2 & 2) != 0 ? FormatUtils.e.j : null));
-                TextView textView2 = this.binding.c;
-                Intrinsics3.checkNotNullExpressionValue(textView2, "binding.authInviteInfoGuildName");
+                SimpleDraweeView simpleDraweeView2 = this.binding.f15375b;
+                C12238m.checkNotNullExpressionValue(simpleDraweeView2, "binding.authInviteInfoGuildAvatar");
+                C12238m.checkNotNullExpressionValue(guild, "inviteGuild");
+                IconUtils.setIcon$default(simpleDraweeView2, IconUtils.getForGuild$default(new com.discord.models.guild.Guild(guild), IconUtils.DEFAULT_ICON_BLURPLE, true, null, 8, null), C5419R.dimen.avatar_size_large, (Function1) null, (MGImages.ChangeDetector) null, 24, (Object) null);
+                TextView textView = this.binding.f15377d;
+                C12238m.checkNotNullExpressionValue(textView, "binding.authInviteInfoInvitedText");
+                textView.setText(C1107b.m215g(getIntroText(invite), new Object[0], (2 & 2) != 0 ? C1107b.e.f1494j : null));
+                TextView textView2 = this.binding.f15376c;
+                C12238m.checkNotNullExpressionValue(textView2, "binding.authInviteInfoGuildName");
                 textView2.setText(guild.getName());
                 return;
             }
             return;
         }
-        String strC = "";
+        String strM7679c = "";
         if (numValueOf != null && numValueOf.intValue() == 3) {
             User inviter = invite.getInviter();
             if (inviter != null && (username2 = inviter.getUsername()) != null) {
-                strC = username2;
+                strM7679c = username2;
             }
-            SimpleDraweeView simpleDraweeView3 = this.binding.f2174b;
-            Intrinsics3.checkNotNullExpressionValue(simpleDraweeView3, "binding.authInviteInfoGuildAvatar");
+            SimpleDraweeView simpleDraweeView3 = this.binding.f15375b;
+            C12238m.checkNotNullExpressionValue(simpleDraweeView3, "binding.authInviteInfoGuildAvatar");
             User inviter2 = invite.getInviter();
-            IconUtils.setIcon$default(simpleDraweeView3, (inviter2 == null || (nullSerializableA = inviter2.a()) == null) ? null : nullSerializableA.a(), R.dimen.avatar_size_large, (Function1) null, (MGImages.ChangeDetector) null, 24, (Object) null);
-            TextView textView3 = this.binding.d;
-            Intrinsics3.checkNotNullExpressionValue(textView3, "binding.authInviteInfoInvitedText");
-            textView3.setText(FormatUtils.g(getIntroText(invite), new Object[0], (2 & 2) != 0 ? FormatUtils.e.j : null));
-            TextView textView4 = this.binding.c;
-            Intrinsics3.checkNotNullExpressionValue(textView4, "binding.authInviteInfoGuildName");
+            IconUtils.setIcon$default(simpleDraweeView3, (inviter2 == null || (nullSerializableM8288a = inviter2.m8288a()) == null) ? null : nullSerializableM8288a.mo8429a(), C5419R.dimen.avatar_size_large, (Function1) null, (MGImages.ChangeDetector) null, 24, (Object) null);
+            TextView textView3 = this.binding.f15377d;
+            C12238m.checkNotNullExpressionValue(textView3, "binding.authInviteInfoInvitedText");
+            textView3.setText(C1107b.m215g(getIntroText(invite), new Object[0], (2 & 2) != 0 ? C1107b.e.f1494j : null));
+            TextView textView4 = this.binding.f15376c;
+            C12238m.checkNotNullExpressionValue(textView4, "binding.authInviteInfoGuildName");
             Channel channel2 = invite.getChannel();
             if (channel2 != null) {
-                if (ChannelUtils.c(channel2).length() > 0) {
+                if (ChannelUtils.m7679c(channel2).length() > 0) {
                     Channel channel3 = invite.getChannel();
-                    strC = channel3 != null ? ChannelUtils.c(channel3) : null;
+                    strM7679c = channel3 != null ? ChannelUtils.m7679c(channel3) : null;
                 }
             }
-            textView4.setText(strC);
+            textView4.setText(strM7679c);
             return;
         }
         if (numValueOf == null) {
@@ -184,22 +184,22 @@ public final class AuthInviteInfoView extends RelativeLayout {
             if (inviter3 == null || (username = inviter3.getUsername()) == null) {
                 username = "";
             }
-            StringBuilder sbX = outline.X(username, "#");
+            StringBuilder sbM836X = C1643a.m836X(username, "#");
             User inviter4 = invite.getInviter();
             if (inviter4 != null && (discriminator = inviter4.getDiscriminator()) != null) {
-                strC = discriminator;
+                strM7679c = discriminator;
             }
-            sbX.append(strC);
-            String string = sbX.toString();
-            SimpleDraweeView simpleDraweeView4 = this.binding.f2174b;
-            Intrinsics3.checkNotNullExpressionValue(simpleDraweeView4, "binding.authInviteInfoGuildAvatar");
+            sbM836X.append(strM7679c);
+            String string = sbM836X.toString();
+            SimpleDraweeView simpleDraweeView4 = this.binding.f15375b;
+            C12238m.checkNotNullExpressionValue(simpleDraweeView4, "binding.authInviteInfoGuildAvatar");
             User inviter5 = invite.getInviter();
-            IconUtils.setIcon$default(simpleDraweeView4, inviter5 != null ? new CoreUser(inviter5) : null, R.dimen.avatar_size_large, null, null, null, 56, null);
-            TextView textView5 = this.binding.d;
-            Intrinsics3.checkNotNullExpressionValue(textView5, "binding.authInviteInfoInvitedText");
-            textView5.setText(FormatUtils.g(getIntroText(invite), new Object[0], (2 & 2) != 0 ? FormatUtils.e.j : null));
-            TextView textView6 = this.binding.c;
-            Intrinsics3.checkNotNullExpressionValue(textView6, "binding.authInviteInfoGuildName");
+            IconUtils.setIcon$default(simpleDraweeView4, inviter5 != null ? new CoreUser(inviter5) : null, C5419R.dimen.avatar_size_large, null, null, null, 56, null);
+            TextView textView5 = this.binding.f15377d;
+            C12238m.checkNotNullExpressionValue(textView5, "binding.authInviteInfoInvitedText");
+            textView5.setText(C1107b.m215g(getIntroText(invite), new Object[0], (2 & 2) != 0 ? C1107b.e.f1494j : null));
+            TextView textView6 = this.binding.f15376c;
+            C12238m.checkNotNullExpressionValue(textView6, "binding.authInviteInfoGuildName");
             textView6.setText(string);
         }
     }
@@ -207,26 +207,26 @@ public final class AuthInviteInfoView extends RelativeLayout {
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public AuthInviteInfoView(Context context, AttributeSet attributeSet, int i) {
         super(context, attributeSet, i);
-        Intrinsics3.checkNotNullParameter(context, "context");
-        View viewInflate = LayoutInflater.from(context).inflate(R.layout.view_auth_invite_info, (ViewGroup) this, false);
+        C12238m.checkNotNullParameter(context, "context");
+        View viewInflate = LayoutInflater.from(context).inflate(C5419R.layout.view_auth_invite_info, (ViewGroup) this, false);
         addView(viewInflate);
-        int i2 = R.id.auth_invite_info_content;
-        LinearLayout linearLayout = (LinearLayout) viewInflate.findViewById(R.id.auth_invite_info_content);
+        int i2 = C5419R.id.auth_invite_info_content;
+        LinearLayout linearLayout = (LinearLayout) viewInflate.findViewById(C5419R.id.auth_invite_info_content);
         if (linearLayout != null) {
-            i2 = R.id.auth_invite_info_guild_avatar;
-            SimpleDraweeView simpleDraweeView = (SimpleDraweeView) viewInflate.findViewById(R.id.auth_invite_info_guild_avatar);
+            i2 = C5419R.id.auth_invite_info_guild_avatar;
+            SimpleDraweeView simpleDraweeView = (SimpleDraweeView) viewInflate.findViewById(C5419R.id.auth_invite_info_guild_avatar);
             if (simpleDraweeView != null) {
-                i2 = R.id.auth_invite_info_guild_name;
-                TextView textView = (TextView) viewInflate.findViewById(R.id.auth_invite_info_guild_name);
+                i2 = C5419R.id.auth_invite_info_guild_name;
+                TextView textView = (TextView) viewInflate.findViewById(C5419R.id.auth_invite_info_guild_name);
                 if (textView != null) {
-                    i2 = R.id.auth_invite_info_invited_text;
-                    TextView textView2 = (TextView) viewInflate.findViewById(R.id.auth_invite_info_invited_text);
+                    i2 = C5419R.id.auth_invite_info_invited_text;
+                    TextView textView2 = (TextView) viewInflate.findViewById(C5419R.id.auth_invite_info_invited_text);
                     if (textView2 != null) {
-                        i2 = R.id.auth_invite_info_template_icon;
-                        ImageView imageView = (ImageView) viewInflate.findViewById(R.id.auth_invite_info_template_icon);
+                        i2 = C5419R.id.auth_invite_info_template_icon;
+                        ImageView imageView = (ImageView) viewInflate.findViewById(C5419R.id.auth_invite_info_template_icon);
                         if (imageView != null) {
                             ViewAuthInviteInfoBinding viewAuthInviteInfoBinding = new ViewAuthInviteInfoBinding((RelativeLayout) viewInflate, linearLayout, simpleDraweeView, textView, textView2, imageView);
-                            Intrinsics3.checkNotNullExpressionValue(viewAuthInviteInfoBinding, "ViewAuthInviteInfoBindin…rom(context), this, true)");
+                            C12238m.checkNotNullExpressionValue(viewAuthInviteInfoBinding, "ViewAuthInviteInfoBindin…rom(context), this, true)");
                             this.binding = viewAuthInviteInfoBinding;
                             return;
                         }

@@ -1,13 +1,13 @@
 package com.discord.widgets.chat.input.models;
 
-import b.d.b.a.outline;
 import com.discord.models.commands.Application;
 import com.discord.models.commands.ApplicationCommand;
 import com.discord.widgets.chat.input.WidgetChatInputDiscoveryCommandsModel;
-import d0.t.Collections2;
-import d0.z.d.Intrinsics3;
 import java.util.List;
 import kotlin.jvm.internal.DefaultConstructorMarker;
+import p007b.p100d.p104b.p105a.C1643a;
+import p507d0.p580t.C12147n;
+import p507d0.p592z.p594d.C12238m;
 
 /* JADX INFO: compiled from: AutocompleteApplicationCommands.kt */
 /* JADX INFO: loaded from: classes2.dex */
@@ -22,8 +22,8 @@ public final /* data */ class AutocompleteApplicationCommands {
 
     /* JADX WARN: Multi-variable type inference failed */
     public AutocompleteApplicationCommands(List<Application> list, List<? extends ApplicationCommand> list2, WidgetChatInputDiscoveryCommandsModel widgetChatInputDiscoveryCommandsModel) {
-        Intrinsics3.checkNotNullParameter(list, "applications");
-        Intrinsics3.checkNotNullParameter(list2, "queryCommands");
+        C12238m.checkNotNullParameter(list, "applications");
+        C12238m.checkNotNullParameter(list2, "queryCommands");
         this.applications = list;
         this.queryCommands = list2;
         this.discoveryCommands = widgetChatInputDiscoveryCommandsModel;
@@ -57,8 +57,8 @@ public final /* data */ class AutocompleteApplicationCommands {
     }
 
     public final AutocompleteApplicationCommands copy(List<Application> applications, List<? extends ApplicationCommand> queryCommands, WidgetChatInputDiscoveryCommandsModel discoveryCommands) {
-        Intrinsics3.checkNotNullParameter(applications, "applications");
-        Intrinsics3.checkNotNullParameter(queryCommands, "queryCommands");
+        C12238m.checkNotNullParameter(applications, "applications");
+        C12238m.checkNotNullParameter(queryCommands, "queryCommands");
         return new AutocompleteApplicationCommands(applications, queryCommands, discoveryCommands);
     }
 
@@ -70,7 +70,7 @@ public final /* data */ class AutocompleteApplicationCommands {
             return false;
         }
         AutocompleteApplicationCommands autocompleteApplicationCommands = (AutocompleteApplicationCommands) other;
-        return Intrinsics3.areEqual(this.applications, autocompleteApplicationCommands.applications) && Intrinsics3.areEqual(this.queryCommands, autocompleteApplicationCommands.queryCommands) && Intrinsics3.areEqual(this.discoveryCommands, autocompleteApplicationCommands.discoveryCommands);
+        return C12238m.areEqual(this.applications, autocompleteApplicationCommands.applications) && C12238m.areEqual(this.queryCommands, autocompleteApplicationCommands.queryCommands) && C12238m.areEqual(this.discoveryCommands, autocompleteApplicationCommands.discoveryCommands);
     }
 
     public final List<Application> getApplications() {
@@ -95,17 +95,17 @@ public final /* data */ class AutocompleteApplicationCommands {
     }
 
     public String toString() {
-        StringBuilder sbU = outline.U("AutocompleteApplicationCommands(applications=");
-        sbU.append(this.applications);
-        sbU.append(", queryCommands=");
-        sbU.append(this.queryCommands);
-        sbU.append(", discoveryCommands=");
-        sbU.append(this.discoveryCommands);
-        sbU.append(")");
-        return sbU.toString();
+        StringBuilder sbM833U = C1643a.m833U("AutocompleteApplicationCommands(applications=");
+        sbM833U.append(this.applications);
+        sbM833U.append(", queryCommands=");
+        sbM833U.append(this.queryCommands);
+        sbM833U.append(", discoveryCommands=");
+        sbM833U.append(this.discoveryCommands);
+        sbM833U.append(")");
+        return sbM833U.toString();
     }
 
     public /* synthetic */ AutocompleteApplicationCommands(List list, List list2, WidgetChatInputDiscoveryCommandsModel widgetChatInputDiscoveryCommandsModel, int i, DefaultConstructorMarker defaultConstructorMarker) {
-        this((i & 1) != 0 ? Collections2.emptyList() : list, (i & 2) != 0 ? Collections2.emptyList() : list2, (i & 4) != 0 ? null : widgetChatInputDiscoveryCommandsModel);
+        this((i & 1) != 0 ? C12147n.emptyList() : list, (i & 2) != 0 ? C12147n.emptyList() : list2, (i & 4) != 0 ? null : widgetChatInputDiscoveryCommandsModel);
     }
 }

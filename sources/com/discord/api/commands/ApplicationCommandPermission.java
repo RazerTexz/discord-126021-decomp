@@ -1,15 +1,15 @@
 package com.discord.api.commands;
 
-import b.d.b.a.outline;
 import com.discord.models.domain.ModelAuditLogEntry;
-import d0.z.d.Intrinsics3;
+import p007b.p100d.p104b.p105a.C1643a;
+import p507d0.p592z.p594d.C12238m;
 
 /* JADX INFO: compiled from: ApplicationCommandPermission.kt */
 /* JADX INFO: loaded from: classes.dex */
 public final /* data */ class ApplicationCommandPermission {
     private final long id;
     private final boolean permission;
-    private final ApplicationCommandPermission2 type;
+    private final ApplicationCommandPermissionType type;
 
     /* JADX INFO: renamed from: a, reason: from getter */
     public final long getId() {
@@ -29,7 +29,7 @@ public final /* data */ class ApplicationCommandPermission {
             return false;
         }
         ApplicationCommandPermission applicationCommandPermission = (ApplicationCommandPermission) other;
-        return this.id == applicationCommandPermission.id && Intrinsics3.areEqual(this.type, applicationCommandPermission.type) && this.permission == applicationCommandPermission.permission;
+        return this.id == applicationCommandPermission.id && C12238m.areEqual(this.type, applicationCommandPermission.type) && this.permission == applicationCommandPermission.permission;
     }
 
     /* JADX WARN: Multi-variable type inference failed */
@@ -40,8 +40,8 @@ public final /* data */ class ApplicationCommandPermission {
     public int hashCode() {
         long j = this.id;
         int i = ((int) (j ^ (j >>> 32))) * 31;
-        ApplicationCommandPermission2 applicationCommandPermission2 = this.type;
-        int iHashCode = (i + (applicationCommandPermission2 != null ? applicationCommandPermission2.hashCode() : 0)) * 31;
+        ApplicationCommandPermissionType applicationCommandPermissionType = this.type;
+        int iHashCode = (i + (applicationCommandPermissionType != null ? applicationCommandPermissionType.hashCode() : 0)) * 31;
         boolean z2 = this.permission;
         ?? r0 = z2;
         if (z2) {
@@ -51,11 +51,11 @@ public final /* data */ class ApplicationCommandPermission {
     }
 
     public String toString() {
-        StringBuilder sbU = outline.U("ApplicationCommandPermission(id=");
-        sbU.append(this.id);
-        sbU.append(", type=");
-        sbU.append(this.type);
-        sbU.append(", permission=");
-        return outline.O(sbU, this.permission, ")");
+        StringBuilder sbM833U = C1643a.m833U("ApplicationCommandPermission(id=");
+        sbM833U.append(this.id);
+        sbM833U.append(", type=");
+        sbM833U.append(this.type);
+        sbM833U.append(", permission=");
+        return C1643a.m827O(sbM833U, this.permission, ")");
     }
 }

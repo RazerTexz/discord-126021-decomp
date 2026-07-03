@@ -67,7 +67,8 @@ public class RtpReceiver {
         return nativeGetParameters(this.nativeRtpReceiver);
     }
 
-    public String id() {
+    /* JADX INFO: renamed from: id */
+    public String m11038id() {
         checkRtpReceiverExists();
         return nativeGetId(this.nativeRtpReceiver);
     }

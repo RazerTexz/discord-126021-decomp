@@ -10,28 +10,28 @@ import android.os.IInterface;
 import android.util.Log;
 import androidx.activity.result.ActivityResultLauncher;
 import androidx.appcompat.app.AppCompatActivity;
-import b.a.r.SamsungConnectActivity3;
-import b.d.b.a.outline;
-import b.n.a.a.ISACallback;
-import b.n.a.a.ISAService;
 import com.discord.BuildConfig;
-import d0.g0.StringsJVM;
-import d0.z.d.Intrinsics3;
 import java.util.Objects;
 import kotlin.jvm.internal.DefaultConstructorMarker;
+import p007b.p008a.p048r.BinderC1272d;
+import p007b.p100d.p104b.p105a.C1643a;
+import p007b.p449n.p450a.p451a.InterfaceC5100a;
+import p007b.p449n.p450a.p451a.InterfaceC5101b;
+import p507d0.p579g0.C12103t;
+import p507d0.p592z.p594d.C12238m;
 
 /* JADX INFO: compiled from: SamsungConnectActivity.kt */
 /* JADX INFO: loaded from: classes.dex */
 public final class SamsungConnectActivity extends AppCompatActivity {
 
     /* JADX INFO: renamed from: j, reason: from kotlin metadata */
-    public ISACallback samsungAccountServiceCallback;
+    public InterfaceC5100a samsungAccountServiceCallback;
 
     /* JADX INFO: renamed from: k, reason: from kotlin metadata */
     public boolean serviceBound;
 
     /* JADX INFO: renamed from: l, reason: from kotlin metadata */
-    public final a serviceConnection = new a();
+    public final ServiceConnectionC5650a serviceConnection = new ServiceConnectionC5650a();
 
     /* JADX INFO: compiled from: SamsungConnectActivity.kt */
     public static abstract class Result {
@@ -42,7 +42,7 @@ public final class SamsungConnectActivity extends AppCompatActivity {
             /* JADX INFO: renamed from: a, reason: from kotlin metadata */
             public final boolean isRetryAllowed;
 
-            /* JADX INFO: renamed from: b, reason: collision with root package name and from kotlin metadata */
+            /* JADX INFO: renamed from: b, reason: from kotlin metadata */
             public final int attemptCount;
 
             public Failure(boolean z2, int i) {
@@ -76,10 +76,10 @@ public final class SamsungConnectActivity extends AppCompatActivity {
             }
 
             public String toString() {
-                StringBuilder sbU = outline.U("Failure(isRetryAllowed=");
-                sbU.append(this.isRetryAllowed);
-                sbU.append(", attemptCount=");
-                return outline.B(sbU, this.attemptCount, ")");
+                StringBuilder sbM833U = C1643a.m833U("Failure(isRetryAllowed=");
+                sbM833U.append(this.isRetryAllowed);
+                sbM833U.append(", attemptCount=");
+                return C1643a.m814B(sbM833U, this.attemptCount, ")");
             }
 
             /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -97,14 +97,14 @@ public final class SamsungConnectActivity extends AppCompatActivity {
             /* JADX INFO: renamed from: a, reason: from kotlin metadata */
             public final String authCode;
 
-            /* JADX INFO: renamed from: b, reason: collision with root package name and from kotlin metadata */
+            /* JADX INFO: renamed from: b, reason: from kotlin metadata */
             public final String serverUrl;
 
             /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
             public Success(String str, String str2) {
                 super(null);
-                Intrinsics3.checkNotNullParameter(str, "authCode");
-                Intrinsics3.checkNotNullParameter(str2, "serverUrl");
+                C12238m.checkNotNullParameter(str, "authCode");
+                C12238m.checkNotNullParameter(str2, "serverUrl");
                 this.authCode = str;
                 this.serverUrl = str2;
             }
@@ -117,7 +117,7 @@ public final class SamsungConnectActivity extends AppCompatActivity {
                     return false;
                 }
                 Success success = (Success) other;
-                return Intrinsics3.areEqual(this.authCode, success.authCode) && Intrinsics3.areEqual(this.serverUrl, success.serverUrl);
+                return C12238m.areEqual(this.authCode, success.authCode) && C12238m.areEqual(this.serverUrl, success.serverUrl);
             }
 
             public int hashCode() {
@@ -128,10 +128,10 @@ public final class SamsungConnectActivity extends AppCompatActivity {
             }
 
             public String toString() {
-                StringBuilder sbU = outline.U("Success(authCode=");
-                sbU.append(this.authCode);
-                sbU.append(", serverUrl=");
-                return outline.J(sbU, this.serverUrl, ")");
+                StringBuilder sbM833U = C1643a.m833U("Success(authCode=");
+                sbM833U.append(this.authCode);
+                sbM833U.append(", serverUrl=");
+                return C1643a.m822J(sbM833U, this.serverUrl, ")");
             }
         }
 
@@ -142,31 +142,32 @@ public final class SamsungConnectActivity extends AppCompatActivity {
         }
     }
 
+    /* JADX INFO: renamed from: com.discord.samsung.SamsungConnectActivity$a */
     /* JADX INFO: compiled from: SamsungConnectActivity.kt */
-    public static final class a implements ServiceConnection {
-        public a() {
+    public static final class ServiceConnectionC5650a implements ServiceConnection {
+        public ServiceConnectionC5650a() {
         }
 
         @Override // android.content.ServiceConnection
         public void onServiceConnected(ComponentName componentName, IBinder iBinder) {
-            ISAService c0058a;
+            InterfaceC5101b c13241a;
             SamsungConnectActivity.this.serviceBound = true;
-            int i = ISAService.a.a;
+            int i = InterfaceC5101b.a.f13676a;
             if (iBinder == null) {
-                c0058a = null;
+                c13241a = null;
             } else {
                 IInterface iInterfaceQueryLocalInterface = iBinder.queryLocalInterface("com.msc.sa.aidl.ISAService");
-                c0058a = (iInterfaceQueryLocalInterface == null || !(iInterfaceQueryLocalInterface instanceof ISAService)) ? new ISAService.a.C0058a(iBinder) : (ISAService) iInterfaceQueryLocalInterface;
+                c13241a = (iInterfaceQueryLocalInterface == null || !(iInterfaceQueryLocalInterface instanceof InterfaceC5101b)) ? new InterfaceC5101b.a.C13241a(iBinder) : (InterfaceC5101b) iInterfaceQueryLocalInterface;
             }
             Log.i("Discord", "Samsung Account service connection established");
             try {
-                ISACallback iSACallback = SamsungConnectActivity.this.samsungAccountServiceCallback;
-                if (iSACallback == null) {
-                    Intrinsics3.throwUninitializedPropertyAccessException("samsungAccountServiceCallback");
+                InterfaceC5100a interfaceC5100a = SamsungConnectActivity.this.samsungAccountServiceCallback;
+                if (interfaceC5100a == null) {
+                    C12238m.throwUninitializedPropertyAccessException("samsungAccountServiceCallback");
                 }
-                String strQ = c0058a.Q("97t47j218f", "dummy", BuildConfig.APPLICATION_ID, iSACallback);
-                Log.i("Discord", "Samsung Account service connection established: " + strQ);
-                if (strQ == null) {
+                String strMo7153Q = c13241a.mo7153Q("97t47j218f", "dummy", BuildConfig.APPLICATION_ID, interfaceC5100a);
+                Log.i("Discord", "Samsung Account service connection established: " + strMo7153Q);
+                if (strMo7153Q == null) {
                     SamsungConnectActivity samsungConnectActivity = SamsungConnectActivity.this;
                     samsungConnectActivity.setResult(500, new Intent().putExtra("com.discord.samsung.intent.extra.ATTEMPT_COUNT", samsungConnectActivity.getIntent().getIntExtra("com.discord.samsung.intent.extra.ATTEMPT_COUNT", 0) + 1));
                     samsungConnectActivity.finish();
@@ -174,14 +175,14 @@ public final class SamsungConnectActivity extends AppCompatActivity {
                 }
                 Bundle bundle = new Bundle();
                 bundle.putStringArray("additional", new String[]{"api_server_url", "auth_server_url"});
-                boolean zH0 = c0058a.h0(1221, strQ, bundle);
-                Log.i("Discord", "Samsung Account service connection established: isReqSucc? " + zH0);
-                if (!zH0) {
+                boolean zMo7154h0 = c13241a.mo7154h0(1221, strMo7153Q, bundle);
+                Log.i("Discord", "Samsung Account service connection established: isReqSucc? " + zMo7154h0);
+                if (!zMo7154h0) {
                     throw new Exception("Call Samsung.requestAuthCode failed");
                 }
             } catch (Throwable th) {
                 Log.e("Discord", "Unable to connect to Samsung", th);
-                SamsungConnectActivity.a(SamsungConnectActivity.this, null, null);
+                SamsungConnectActivity.m8503a(SamsungConnectActivity.this, null, null);
             }
         }
 
@@ -195,13 +196,14 @@ public final class SamsungConnectActivity extends AppCompatActivity {
     }
 
     /* JADX WARN: Code duplicated, block: B:18:0x0034  */
-    public static final void a(SamsungConnectActivity samsungConnectActivity, String str, String str2) {
+    /* JADX INFO: renamed from: a */
+    public static final void m8503a(SamsungConnectActivity samsungConnectActivity, String str, String str2) {
         Objects.requireNonNull(samsungConnectActivity);
         boolean z2 = true;
-        if (str == null || StringsJVM.isBlank(str)) {
+        if (str == null || C12103t.isBlank(str)) {
             samsungConnectActivity.setResult(0);
         } else {
-            if (str2 != null && !StringsJVM.isBlank(str2)) {
+            if (str2 != null && !C12103t.isBlank(str2)) {
                 z2 = false;
             }
             if (z2) {
@@ -216,20 +218,21 @@ public final class SamsungConnectActivity extends AppCompatActivity {
         samsungConnectActivity.finish();
     }
 
-    public static final void b(Context context, ActivityResultLauncher<Intent> activityResultLauncher, int i) {
-        Intrinsics3.checkNotNullParameter(context, "context");
-        Intrinsics3.checkNotNullParameter(activityResultLauncher, "launcher");
+    /* JADX INFO: renamed from: b */
+    public static final void m8504b(Context context, ActivityResultLauncher<Intent> activityResultLauncher, int i) {
+        C12238m.checkNotNullParameter(context, "context");
+        C12238m.checkNotNullParameter(activityResultLauncher, "launcher");
         Intent intentAddFlags = new Intent(context, (Class<?>) SamsungConnectActivity.class).putExtra("com.discord.samsung.intent.extra.ATTEMPT_COUNT", i).addFlags(65536);
-        Intrinsics3.checkNotNullExpressionValue(intentAddFlags, "Intent(context, SamsungC…AG_ACTIVITY_NO_ANIMATION)");
+        C12238m.checkNotNullExpressionValue(intentAddFlags, "Intent(context, SamsungC…AG_ACTIVITY_NO_ANIMATION)");
         activityResultLauncher.launch(intentAddFlags);
     }
 
     @Override // androidx.appcompat.app.AppCompatActivity, androidx.fragment.app.FragmentActivity, androidx.activity.ComponentActivity, androidx.core.app.ComponentActivity, android.app.Activity
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        this.samsungAccountServiceCallback = new SamsungConnectActivity3(this);
+        this.samsungAccountServiceCallback = new BinderC1272d(this);
         Intent intent = new Intent("com.msc.action.samsungaccount.REQUEST_SERVICE").setPackage("com.osp.app.signin");
-        Intrinsics3.checkNotNullExpressionValue(intent, "Intent(SA_ACCOUNT_ACTION…ckage(SA_ACCOUNT_SERVICE)");
+        C12238m.checkNotNullExpressionValue(intent, "Intent(SA_ACCOUNT_ACTION…ckage(SA_ACCOUNT_SERVICE)");
         Log.i("Discord", "Samsung starting SA Service");
         if (startService(intent) == null) {
             Log.e("Discord", "Samsung Account service could not be started");

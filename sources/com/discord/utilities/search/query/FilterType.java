@@ -1,6 +1,6 @@
 package com.discord.utilities.search.query;
 
-import com.discord.widgets.chat.AutocompleteUtils2;
+import com.discord.widgets.chat.AutocompleteTypes;
 
 /* JADX INFO: compiled from: FilterType.kt */
 /* JADX INFO: loaded from: classes2.dex */

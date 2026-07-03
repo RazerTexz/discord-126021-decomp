@@ -9,21 +9,22 @@ import androidx.viewbinding.ViewBinding;
 /* JADX INFO: loaded from: classes.dex */
 public final class ThreadBrowserItemWarningBinding implements ViewBinding {
 
+    /* JADX INFO: renamed from: a */
     @NonNull
-    public final ConstraintLayout a;
+    public final ConstraintLayout f15312a;
 
-    /* JADX INFO: renamed from: b, reason: collision with root package name */
+    /* JADX INFO: renamed from: b */
     @NonNull
-    public final TextView f2160b;
+    public final TextView f15313b;
 
     public ThreadBrowserItemWarningBinding(@NonNull ConstraintLayout constraintLayout, @NonNull TextView textView) {
-        this.a = constraintLayout;
-        this.f2160b = textView;
+        this.f15312a = constraintLayout;
+        this.f15313b = textView;
     }
 
     @Override // androidx.viewbinding.ViewBinding
     @NonNull
     public View getRoot() {
-        return this.a;
+        return this.f15312a;
     }
 }

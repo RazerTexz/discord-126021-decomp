@@ -9,28 +9,37 @@ import android.os.Bundle;
 import androidx.annotation.DoNotInline;
 import androidx.annotation.Nullable;
 import androidx.annotation.RequiresApi;
-import b.i.a.c.e3.BaseDataSource;
-import b.i.a.c.e3.DataSpec;
-import b.i.a.c.f3.Util2;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.nio.channels.FileChannel;
+import p007b.p225i.p226a.p242c.p257e3.AbstractC2705g;
+import p007b.p225i.p226a.p242c.p257e3.C2712n;
+import p007b.p225i.p226a.p242c.p259f3.C2738e0;
 
 /* JADX INFO: loaded from: classes3.dex */
-public final class ContentDataSource extends BaseDataSource {
-    public final ContentResolver e;
+public final class ContentDataSource extends AbstractC2705g {
 
-    @Nullable
-    public Uri f;
+    /* JADX INFO: renamed from: e */
+    public final ContentResolver f20218e;
 
+    /* JADX INFO: renamed from: f */
     @Nullable
-    public AssetFileDescriptor g;
+    public Uri f20219f;
 
+    /* JADX INFO: renamed from: g */
     @Nullable
-    public FileInputStream h;
-    public long i;
-    public boolean j;
+    public AssetFileDescriptor f20220g;
+
+    /* JADX INFO: renamed from: h */
+    @Nullable
+    public FileInputStream f20221h;
+
+    /* JADX INFO: renamed from: i */
+    public long f20222i;
+
+    /* JADX INFO: renamed from: j */
+    public boolean f20223j;
 
     public static class ContentDataSourceException extends DataSourceException {
         public ContentDataSourceException(@Nullable IOException iOException, int i) {
@@ -38,36 +47,39 @@ public final class ContentDataSource extends BaseDataSource {
         }
     }
 
+    /* JADX INFO: renamed from: com.google.android.exoplayer2.upstream.ContentDataSource$a */
     @RequiresApi(31)
-    public static final class a {
+    public static final class C10764a {
         @DoNotInline
-        public static void a(Bundle bundle) {
+        /* JADX INFO: renamed from: a */
+        public static void m8934a(Bundle bundle) {
             bundle.putParcelable("android.provider.extra.MEDIA_CAPABILITIES", new ApplicationMediaCapabilities.Builder().addSupportedVideoMimeType("video/hevc").addSupportedHdrType("android.media.feature.hdr.dolby_vision").addSupportedHdrType("android.media.feature.hdr.hdr10").addSupportedHdrType("android.media.feature.hdr.hdr10_plus").addSupportedHdrType("android.media.feature.hdr.hlg").build());
         }
     }
 
     public ContentDataSource(Context context) {
         super(false);
-        this.e = context.getContentResolver();
+        this.f20218e = context.getContentResolver();
     }
 
-    @Override // b.i.a.c.e3.DataSource3
-    public long a(DataSpec dataSpec) throws ContentDataSourceException {
+    @Override // p007b.p225i.p226a.p242c.p257e3.InterfaceC2710l
+    /* JADX INFO: renamed from: a */
+    public long mo2586a(C2712n c2712n) throws ContentDataSourceException {
         AssetFileDescriptor assetFileDescriptorOpenAssetFileDescriptor;
         try {
-            Uri uri = dataSpec.a;
-            this.f = uri;
-            r(dataSpec);
-            if ("content".equals(dataSpec.a.getScheme())) {
+            Uri uri = c2712n.f6542a;
+            this.f20219f = uri;
+            m2850r(c2712n);
+            if ("content".equals(c2712n.f6542a.getScheme())) {
                 Bundle bundle = new Bundle();
-                if (Util2.a >= 31) {
-                    a.a(bundle);
+                if (C2738e0.f6708a >= 31) {
+                    C10764a.m8934a(bundle);
                 }
-                assetFileDescriptorOpenAssetFileDescriptor = this.e.openTypedAssetFileDescriptor(uri, "*/*", bundle);
+                assetFileDescriptorOpenAssetFileDescriptor = this.f20218e.openTypedAssetFileDescriptor(uri, "*/*", bundle);
             } else {
-                assetFileDescriptorOpenAssetFileDescriptor = this.e.openAssetFileDescriptor(uri, "r");
+                assetFileDescriptorOpenAssetFileDescriptor = this.f20218e.openAssetFileDescriptor(uri, "r");
             }
-            this.g = assetFileDescriptorOpenAssetFileDescriptor;
+            this.f20220g = assetFileDescriptorOpenAssetFileDescriptor;
             if (assetFileDescriptorOpenAssetFileDescriptor == null) {
                 String strValueOf = String.valueOf(uri);
                 StringBuilder sb = new StringBuilder(strValueOf.length() + 36);
@@ -77,46 +89,46 @@ public final class ContentDataSource extends BaseDataSource {
             }
             long length = assetFileDescriptorOpenAssetFileDescriptor.getLength();
             FileInputStream fileInputStream = new FileInputStream(assetFileDescriptorOpenAssetFileDescriptor.getFileDescriptor());
-            this.h = fileInputStream;
-            if (length != -1 && dataSpec.f > length) {
+            this.f20221h = fileInputStream;
+            if (length != -1 && c2712n.f6547f > length) {
                 throw new ContentDataSourceException(null, 2008);
             }
             long startOffset = assetFileDescriptorOpenAssetFileDescriptor.getStartOffset();
-            long jSkip = fileInputStream.skip(dataSpec.f + startOffset) - startOffset;
-            if (jSkip != dataSpec.f) {
+            long jSkip = fileInputStream.skip(c2712n.f6547f + startOffset) - startOffset;
+            if (jSkip != c2712n.f6547f) {
                 throw new ContentDataSourceException(null, 2008);
             }
             if (length == -1) {
                 FileChannel channel = fileInputStream.getChannel();
                 long size = channel.size();
                 if (size == 0) {
-                    this.i = -1L;
+                    this.f20222i = -1L;
                 } else {
                     long jPosition = size - channel.position();
-                    this.i = jPosition;
+                    this.f20222i = jPosition;
                     if (jPosition < 0) {
                         throw new ContentDataSourceException(null, 2008);
                     }
                 }
             } else {
                 long j = length - jSkip;
-                this.i = j;
+                this.f20222i = j;
                 if (j < 0) {
                     throw new ContentDataSourceException(null, 2008);
                 }
             }
-            long jMin = dataSpec.g;
+            long jMin = c2712n.f6548g;
             if (jMin != -1) {
-                long j2 = this.i;
+                long j2 = this.f20222i;
                 if (j2 != -1) {
                     jMin = Math.min(j2, jMin);
                 }
-                this.i = jMin;
+                this.f20222i = jMin;
             }
-            this.j = true;
-            s(dataSpec);
-            long j3 = dataSpec.g;
-            return j3 != -1 ? j3 : this.i;
+            this.f20223j = true;
+            m2851s(c2712n);
+            long j3 = c2712n.f6548g;
+            return j3 != -1 ? j3 : this.f20222i;
         } catch (ContentDataSourceException e) {
             throw e;
         } catch (IOException e2) {
@@ -126,37 +138,37 @@ public final class ContentDataSource extends BaseDataSource {
 
     /* JADX WARN: Bottom block not found for handler: all -> 0x0037 */
     /* JADX WARN: Bottom block not found for handler: all -> 0x0055 */
-    @Override // b.i.a.c.e3.DataSource3
+    @Override // p007b.p225i.p226a.p242c.p257e3.InterfaceC2710l
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public void close() throws ContentDataSourceException {
-        this.f = null;
+        this.f20219f = null;
         try {
-            FileInputStream fileInputStream = this.h;
+            FileInputStream fileInputStream = this.f20221h;
             if (fileInputStream != null) {
                 fileInputStream.close();
             }
-            this.h = null;
+            this.f20221h = null;
             try {
                 try {
-                    AssetFileDescriptor assetFileDescriptor = this.g;
+                    AssetFileDescriptor assetFileDescriptor = this.f20220g;
                     if (assetFileDescriptor != null) {
                         assetFileDescriptor.close();
                     }
-                    this.g = null;
-                    if (this.j) {
-                        this.j = false;
-                        q();
+                    this.f20220g = null;
+                    if (this.f20223j) {
+                        this.f20223j = false;
+                        m2849q();
                     }
                 } catch (IOException e) {
                     throw new ContentDataSourceException(e, 2000);
                 }
             } catch (Throwable th) {
-                this.g = null;
-                if (this.j) {
-                    this.j = false;
-                    q();
+                this.f20220g = null;
+                if (this.f20223j) {
+                    this.f20223j = false;
+                    m2849q();
                 }
                 throw th;
             }
@@ -165,18 +177,19 @@ public final class ContentDataSource extends BaseDataSource {
         }
     }
 
-    @Override // b.i.a.c.e3.DataSource3
+    @Override // p007b.p225i.p226a.p242c.p257e3.InterfaceC2710l
     @Nullable
-    public Uri n() {
-        return this.f;
+    /* JADX INFO: renamed from: n */
+    public Uri mo2589n() {
+        return this.f20219f;
     }
 
-    @Override // b.i.a.c.e3.DataReader
+    @Override // p007b.p225i.p226a.p242c.p257e3.InterfaceC2706h
     public int read(byte[] bArr, int i, int i2) throws ContentDataSourceException {
         if (i2 == 0) {
             return 0;
         }
-        long j = this.i;
+        long j = this.f20222i;
         if (j == 0) {
             return -1;
         }
@@ -187,17 +200,17 @@ public final class ContentDataSource extends BaseDataSource {
                 throw new ContentDataSourceException(e, 2000);
             }
         }
-        FileInputStream fileInputStream = this.h;
-        int i3 = Util2.a;
+        FileInputStream fileInputStream = this.f20221h;
+        int i3 = C2738e0.f6708a;
         int i4 = fileInputStream.read(bArr, i, i2);
         if (i4 == -1) {
             return -1;
         }
-        long j2 = this.i;
+        long j2 = this.f20222i;
         if (j2 != -1) {
-            this.i = j2 - ((long) i4);
+            this.f20222i = j2 - ((long) i4);
         }
-        p(i4);
+        m2848p(i4);
         return i4;
     }
 }

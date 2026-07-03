@@ -10,26 +10,27 @@ import androidx.dynamicanimation.animation.FloatPropertyCompat;
 import androidx.dynamicanimation.animation.SpringAnimation;
 import androidx.dynamicanimation.animation.SpringForce;
 import androidx.vectordrawable.graphics.drawable.Animatable2Compat;
-import b.i.a.g.g.CircularDrawingDelegate;
-import b.i.a.g.g.DrawableWithAnimatedVisibilityChange;
-import b.i.a.g.g.DrawingDelegate;
-import b.i.a.g.g.LinearDrawingDelegate;
 import com.google.android.material.color.MaterialColors;
 import com.google.android.material.progressindicator.BaseProgressIndicatorSpec;
+import p007b.p225i.p226a.p341g.p348g.AbstractC4419e;
+import p007b.p225i.p226a.p341g.p348g.AbstractC4420f;
+import p007b.p225i.p226a.p341g.p348g.C4415a;
+import p007b.p225i.p226a.p341g.p348g.C4422h;
 
 /* JADX INFO: loaded from: classes3.dex */
-public final class DeterminateDrawable<S extends BaseProgressIndicatorSpec> extends DrawableWithAnimatedVisibilityChange {
-    private static final FloatPropertyCompat<DeterminateDrawable> INDICATOR_LENGTH_IN_LEVEL = new a("indicatorLevel");
+public final class DeterminateDrawable<S extends BaseProgressIndicatorSpec> extends AbstractC4419e {
+    private static final FloatPropertyCompat<DeterminateDrawable> INDICATOR_LENGTH_IN_LEVEL = new C10959a("indicatorLevel");
     private static final int MAX_DRAWABLE_LEVEL = 10000;
     private static final float SPRING_FORCE_STIFFNESS = 50.0f;
-    private DrawingDelegate<S> drawingDelegate;
+    private AbstractC4420f<S> drawingDelegate;
     private float indicatorFraction;
     private boolean skipAnimationOnLevelChange;
     private final SpringAnimation springAnimator;
     private final SpringForce springForce;
 
-    public static class a extends FloatPropertyCompat<DeterminateDrawable> {
-        public a(String str) {
+    /* JADX INFO: renamed from: com.google.android.material.progressindicator.DeterminateDrawable$a */
+    public static class C10959a extends FloatPropertyCompat<DeterminateDrawable> {
+        public C10959a(String str) {
             super(str);
         }
 
@@ -44,10 +45,10 @@ public final class DeterminateDrawable<S extends BaseProgressIndicatorSpec> exte
         }
     }
 
-    public DeterminateDrawable(@NonNull Context context, @NonNull BaseProgressIndicatorSpec baseProgressIndicatorSpec, @NonNull DrawingDelegate<S> drawingDelegate) {
+    public DeterminateDrawable(@NonNull Context context, @NonNull BaseProgressIndicatorSpec baseProgressIndicatorSpec, @NonNull AbstractC4420f<S> abstractC4420f) {
         super(context, baseProgressIndicatorSpec);
         this.skipAnimationOnLevelChange = false;
-        setDrawingDelegate(drawingDelegate);
+        setDrawingDelegate(abstractC4420f);
         SpringForce springForce = new SpringForce();
         this.springForce = springForce;
         springForce.setDampingRatio(1.0f);
@@ -60,12 +61,12 @@ public final class DeterminateDrawable<S extends BaseProgressIndicatorSpec> exte
 
     @NonNull
     public static DeterminateDrawable<CircularProgressIndicatorSpec> createCircularDrawable(@NonNull Context context, @NonNull CircularProgressIndicatorSpec circularProgressIndicatorSpec) {
-        return new DeterminateDrawable<>(context, circularProgressIndicatorSpec, new CircularDrawingDelegate(circularProgressIndicatorSpec));
+        return new DeterminateDrawable<>(context, circularProgressIndicatorSpec, new C4415a(circularProgressIndicatorSpec));
     }
 
     @NonNull
     public static DeterminateDrawable<LinearProgressIndicatorSpec> createLinearDrawable(@NonNull Context context, @NonNull LinearProgressIndicatorSpec linearProgressIndicatorSpec) {
-        return new DeterminateDrawable<>(context, linearProgressIndicatorSpec, new LinearDrawingDelegate(linearProgressIndicatorSpec));
+        return new DeterminateDrawable<>(context, linearProgressIndicatorSpec, new C4422h(linearProgressIndicatorSpec));
     }
 
     private float getIndicatorFraction() {
@@ -77,7 +78,7 @@ public final class DeterminateDrawable<S extends BaseProgressIndicatorSpec> exte
         invalidateSelf();
     }
 
-    @Override // b.i.a.g.g.DrawableWithAnimatedVisibilityChange, androidx.vectordrawable.graphics.drawable.Animatable2Compat
+    @Override // p007b.p225i.p226a.p341g.p348g.AbstractC4419e, androidx.vectordrawable.graphics.drawable.Animatable2Compat
     public /* bridge */ /* synthetic */ void clearAnimationCallbacks() {
         super.clearAnimationCallbacks();
     }
@@ -87,57 +88,57 @@ public final class DeterminateDrawable<S extends BaseProgressIndicatorSpec> exte
         Rect rect = new Rect();
         if (!getBounds().isEmpty() && isVisible() && canvas.getClipBounds(rect)) {
             canvas.save();
-            DrawingDelegate<S> drawingDelegate = this.drawingDelegate;
+            AbstractC4420f<S> abstractC4420f = this.drawingDelegate;
             float growFraction = getGrowFraction();
-            drawingDelegate.a.validateSpec();
-            drawingDelegate.a(canvas, growFraction);
-            this.drawingDelegate.c(canvas, this.paint);
-            this.drawingDelegate.b(canvas, this.paint, 0.0f, getIndicatorFraction(), MaterialColors.compositeARGBWithAlpha(this.baseSpec.indicatorColors[0], getAlpha()));
+            abstractC4420f.f11734a.validateSpec();
+            abstractC4420f.mo6117a(canvas, growFraction);
+            this.drawingDelegate.mo6119c(canvas, this.paint);
+            this.drawingDelegate.mo6118b(canvas, this.paint, 0.0f, getIndicatorFraction(), MaterialColors.compositeARGBWithAlpha(this.baseSpec.indicatorColors[0], getAlpha()));
             canvas.restore();
         }
     }
 
-    @Override // b.i.a.g.g.DrawableWithAnimatedVisibilityChange, android.graphics.drawable.Drawable
+    @Override // p007b.p225i.p226a.p341g.p348g.AbstractC4419e, android.graphics.drawable.Drawable
     public /* bridge */ /* synthetic */ int getAlpha() {
         return super.getAlpha();
     }
 
     @NonNull
-    public DrawingDelegate<S> getDrawingDelegate() {
+    public AbstractC4420f<S> getDrawingDelegate() {
         return this.drawingDelegate;
     }
 
     @Override // android.graphics.drawable.Drawable
     public int getIntrinsicHeight() {
-        return this.drawingDelegate.d();
+        return this.drawingDelegate.mo6120d();
     }
 
     @Override // android.graphics.drawable.Drawable
     public int getIntrinsicWidth() {
-        return this.drawingDelegate.e();
+        return this.drawingDelegate.mo6121e();
     }
 
-    @Override // b.i.a.g.g.DrawableWithAnimatedVisibilityChange, android.graphics.drawable.Drawable
+    @Override // p007b.p225i.p226a.p341g.p348g.AbstractC4419e, android.graphics.drawable.Drawable
     public /* bridge */ /* synthetic */ int getOpacity() {
         return super.getOpacity();
     }
 
-    @Override // b.i.a.g.g.DrawableWithAnimatedVisibilityChange
+    @Override // p007b.p225i.p226a.p341g.p348g.AbstractC4419e
     public /* bridge */ /* synthetic */ boolean hideNow() {
         return super.hideNow();
     }
 
-    @Override // b.i.a.g.g.DrawableWithAnimatedVisibilityChange
+    @Override // p007b.p225i.p226a.p341g.p348g.AbstractC4419e
     public /* bridge */ /* synthetic */ boolean isHiding() {
         return super.isHiding();
     }
 
-    @Override // b.i.a.g.g.DrawableWithAnimatedVisibilityChange, android.graphics.drawable.Animatable
+    @Override // p007b.p225i.p226a.p341g.p348g.AbstractC4419e, android.graphics.drawable.Animatable
     public /* bridge */ /* synthetic */ boolean isRunning() {
         return super.isRunning();
     }
 
-    @Override // b.i.a.g.g.DrawableWithAnimatedVisibilityChange
+    @Override // p007b.p225i.p226a.p341g.p348g.AbstractC4419e
     public /* bridge */ /* synthetic */ boolean isShowing() {
         return super.isShowing();
     }
@@ -160,36 +161,36 @@ public final class DeterminateDrawable<S extends BaseProgressIndicatorSpec> exte
         return true;
     }
 
-    @Override // b.i.a.g.g.DrawableWithAnimatedVisibilityChange, androidx.vectordrawable.graphics.drawable.Animatable2Compat
+    @Override // p007b.p225i.p226a.p341g.p348g.AbstractC4419e, androidx.vectordrawable.graphics.drawable.Animatable2Compat
     public /* bridge */ /* synthetic */ void registerAnimationCallback(@NonNull Animatable2Compat.AnimationCallback animationCallback) {
         super.registerAnimationCallback(animationCallback);
     }
 
-    @Override // b.i.a.g.g.DrawableWithAnimatedVisibilityChange, android.graphics.drawable.Drawable
+    @Override // p007b.p225i.p226a.p341g.p348g.AbstractC4419e, android.graphics.drawable.Drawable
     public /* bridge */ /* synthetic */ void setAlpha(int i) {
         super.setAlpha(i);
     }
 
-    @Override // b.i.a.g.g.DrawableWithAnimatedVisibilityChange, android.graphics.drawable.Drawable
+    @Override // p007b.p225i.p226a.p341g.p348g.AbstractC4419e, android.graphics.drawable.Drawable
     public /* bridge */ /* synthetic */ void setColorFilter(@Nullable ColorFilter colorFilter) {
         super.setColorFilter(colorFilter);
     }
 
-    public void setDrawingDelegate(@NonNull DrawingDelegate<S> drawingDelegate) {
-        this.drawingDelegate = drawingDelegate;
-        drawingDelegate.f1622b = this;
+    public void setDrawingDelegate(@NonNull AbstractC4420f<S> abstractC4420f) {
+        this.drawingDelegate = abstractC4420f;
+        abstractC4420f.f11735b = this;
     }
 
     public void setLevelByFraction(float f) {
         setLevel((int) (f * 10000.0f));
     }
 
-    @Override // b.i.a.g.g.DrawableWithAnimatedVisibilityChange, android.graphics.drawable.Drawable
+    @Override // p007b.p225i.p226a.p341g.p348g.AbstractC4419e, android.graphics.drawable.Drawable
     public /* bridge */ /* synthetic */ boolean setVisible(boolean z2, boolean z3) {
         return super.setVisible(z2, z3);
     }
 
-    @Override // b.i.a.g.g.DrawableWithAnimatedVisibilityChange
+    @Override // p007b.p225i.p226a.p341g.p348g.AbstractC4419e
     public boolean setVisibleInternal(boolean z2, boolean z3, boolean z4) {
         boolean visibleInternal = super.setVisibleInternal(z2, z3, z4);
         float systemAnimatorDurationScale = this.animatorDurationScaleProvider.getSystemAnimatorDurationScale(this.context.getContentResolver());
@@ -202,22 +203,22 @@ public final class DeterminateDrawable<S extends BaseProgressIndicatorSpec> exte
         return visibleInternal;
     }
 
-    @Override // b.i.a.g.g.DrawableWithAnimatedVisibilityChange, android.graphics.drawable.Animatable
+    @Override // p007b.p225i.p226a.p341g.p348g.AbstractC4419e, android.graphics.drawable.Animatable
     public /* bridge */ /* synthetic */ void start() {
         super.start();
     }
 
-    @Override // b.i.a.g.g.DrawableWithAnimatedVisibilityChange, android.graphics.drawable.Animatable
+    @Override // p007b.p225i.p226a.p341g.p348g.AbstractC4419e, android.graphics.drawable.Animatable
     public /* bridge */ /* synthetic */ void stop() {
         super.stop();
     }
 
-    @Override // b.i.a.g.g.DrawableWithAnimatedVisibilityChange, androidx.vectordrawable.graphics.drawable.Animatable2Compat
+    @Override // p007b.p225i.p226a.p341g.p348g.AbstractC4419e, androidx.vectordrawable.graphics.drawable.Animatable2Compat
     public /* bridge */ /* synthetic */ boolean unregisterAnimationCallback(@NonNull Animatable2Compat.AnimationCallback animationCallback) {
         return super.unregisterAnimationCallback(animationCallback);
     }
 
-    @Override // b.i.a.g.g.DrawableWithAnimatedVisibilityChange
+    @Override // p007b.p225i.p226a.p341g.p348g.AbstractC4419e
     public /* bridge */ /* synthetic */ boolean setVisible(boolean z2, boolean z3, boolean z4) {
         return super.setVisible(z2, z3, z4);
     }

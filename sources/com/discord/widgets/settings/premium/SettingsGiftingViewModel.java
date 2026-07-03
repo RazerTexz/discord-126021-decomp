@@ -1,12 +1,9 @@
 package com.discord.widgets.settings.premium;
 
-import a0.a.a.b;
 import androidx.annotation.MainThread;
 import androidx.annotation.StringRes;
-import b.a.d.AppViewModel;
-import b.d.b.a.outline;
 import com.discord.BuildConfig;
-import com.discord.R;
+import com.discord.C5419R;
 import com.discord.api.premium.ClaimedOutboundPromotion;
 import com.discord.api.premium.OutboundPromotion;
 import com.discord.app.AppComponent;
@@ -24,19 +21,10 @@ import com.discord.stores.StoreUser;
 import com.discord.stores.StoreUserSettingsSystem;
 import com.discord.utilities.billing.GooglePlayBillingManager;
 import com.discord.utilities.error.Error;
-import com.discord.utilities.rx.ObservableExtensionsKt;
+import com.discord.utilities.p501rx.ObservableExtensionsKt;
 import com.discord.utilities.user.UserUtils;
-import com.discord.widgets.chat.input.MentionUtils;
+import com.discord.widgets.chat.input.MentionUtilsKt;
 import com.discord.widgets.settings.premium.ClaimStatus;
-import d0.t.Collections2;
-import d0.t.Iterables2;
-import d0.t.Maps6;
-import d0.t.Sets5;
-import d0.t._Collections;
-import d0.z.d.FunctionReferenceImpl;
-import d0.z.d.Intrinsics3;
-import d0.z.d.Lambda;
-import j0.k.Func1;
 import java.util.ArrayList;
 import java.util.LinkedHashMap;
 import java.util.List;
@@ -50,18 +38,30 @@ import kotlin.jvm.functions.Function1;
 import kotlin.jvm.functions.Function2;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import org.objectweb.asm.Opcodes;
-import rx.Observable;
-import rx.Subscription;
-import rx.functions.Action1;
-import rx.functions.Func2;
-import rx.functions.Func4;
-import rx.subjects.BehaviorSubject;
-import rx.subjects.PublishSubject;
-import rx.subscriptions.CompositeSubscription;
+import p001a0.p002a.p003a.C0002b;
+import p007b.p008a.p018d.AbstractC0859d0;
+import p007b.p100d.p104b.p105a.C1643a;
+import p507d0.p580t.C12136h0;
+import p507d0.p580t.C12147n;
+import p507d0.p580t.C12148n0;
+import p507d0.p580t.C12149o;
+import p507d0.p580t.C12163u;
+import p507d0.p592z.p594d.AbstractC12240o;
+import p507d0.p592z.p594d.C12236k;
+import p507d0.p592z.p594d.C12238m;
+import p637j0.p641k.InterfaceC12589b;
+import p658rx.Observable;
+import p658rx.Subscription;
+import p658rx.functions.Action1;
+import p658rx.functions.Func2;
+import p658rx.functions.Func4;
+import p658rx.subjects.BehaviorSubject;
+import p658rx.subjects.PublishSubject;
+import p658rx.subscriptions.CompositeSubscription;
 
 /* JADX INFO: compiled from: SettingsGiftingViewModel.kt */
 /* JADX INFO: loaded from: classes2.dex */
-public final class SettingsGiftingViewModel extends AppViewModel<ViewState> {
+public final class SettingsGiftingViewModel extends AbstractC0859d0<ViewState> {
 
     /* JADX INFO: renamed from: Companion, reason: from kotlin metadata */
     public static final Companion INSTANCE = new Companion(null);
@@ -77,57 +77,57 @@ public final class SettingsGiftingViewModel extends AppViewModel<ViewState> {
     private final StoreUserSettingsSystem storeUserSettingsSystem;
     private final CompositeSubscription subscriptions;
 
-    /* JADX INFO: renamed from: com.discord.widgets.settings.premium.SettingsGiftingViewModel$1, reason: invalid class name */
+    /* JADX INFO: renamed from: com.discord.widgets.settings.premium.SettingsGiftingViewModel$1 */
     /* JADX INFO: compiled from: SettingsGiftingViewModel.kt */
-    public static final /* synthetic */ class AnonymousClass1 extends FunctionReferenceImpl implements Function1<StoreGooglePlayPurchases.Event, Unit> {
-        public AnonymousClass1(SettingsGiftingViewModel settingsGiftingViewModel) {
+    public static final /* synthetic */ class C98731 extends C12236k implements Function1<StoreGooglePlayPurchases.Event, Unit> {
+        public C98731(SettingsGiftingViewModel settingsGiftingViewModel) {
             super(1, settingsGiftingViewModel, SettingsGiftingViewModel.class, "handleGooglePlayPurchaseEvent", "handleGooglePlayPurchaseEvent(Lcom/discord/stores/StoreGooglePlayPurchases$Event;)V", 0);
         }
 
         @Override // kotlin.jvm.functions.Function1
         public /* bridge */ /* synthetic */ Unit invoke(StoreGooglePlayPurchases.Event event) {
             invoke2(event);
-            return Unit.a;
+            return Unit.f27425a;
         }
 
         /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
         public final void invoke2(StoreGooglePlayPurchases.Event event) {
-            Intrinsics3.checkNotNullParameter(event, "p1");
+            C12238m.checkNotNullParameter(event, "p1");
             ((SettingsGiftingViewModel) this.receiver).handleGooglePlayPurchaseEvent(event);
         }
     }
 
-    /* JADX INFO: renamed from: com.discord.widgets.settings.premium.SettingsGiftingViewModel$2, reason: invalid class name */
+    /* JADX INFO: renamed from: com.discord.widgets.settings.premium.SettingsGiftingViewModel$2 */
     /* JADX INFO: compiled from: SettingsGiftingViewModel.kt */
-    public static final /* synthetic */ class AnonymousClass2 extends FunctionReferenceImpl implements Function1<StoreGooglePlayPurchases.QueryState, Unit> {
-        public AnonymousClass2(SettingsGiftingViewModel settingsGiftingViewModel) {
+    public static final /* synthetic */ class C98742 extends C12236k implements Function1<StoreGooglePlayPurchases.QueryState, Unit> {
+        public C98742(SettingsGiftingViewModel settingsGiftingViewModel) {
             super(1, settingsGiftingViewModel, SettingsGiftingViewModel.class, "handleGooglePlayQueryStateUpdate", "handleGooglePlayQueryStateUpdate(Lcom/discord/stores/StoreGooglePlayPurchases$QueryState;)V", 0);
         }
 
         @Override // kotlin.jvm.functions.Function1
         public /* bridge */ /* synthetic */ Unit invoke(StoreGooglePlayPurchases.QueryState queryState) {
             invoke2(queryState);
-            return Unit.a;
+            return Unit.f27425a;
         }
 
         /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
         public final void invoke2(StoreGooglePlayPurchases.QueryState queryState) {
-            Intrinsics3.checkNotNullParameter(queryState, "p1");
+            C12238m.checkNotNullParameter(queryState, "p1");
             ((SettingsGiftingViewModel) this.receiver).handleGooglePlayQueryStateUpdate(queryState);
         }
     }
 
-    /* JADX INFO: renamed from: com.discord.widgets.settings.premium.SettingsGiftingViewModel$4, reason: invalid class name */
+    /* JADX INFO: renamed from: com.discord.widgets.settings.premium.SettingsGiftingViewModel$4 */
     /* JADX INFO: compiled from: SettingsGiftingViewModel.kt */
-    public static final /* synthetic */ class AnonymousClass4 extends FunctionReferenceImpl implements Function1<StoreState, Unit> {
-        public AnonymousClass4(BehaviorSubject behaviorSubject) {
+    public static final /* synthetic */ class C98764 extends C12236k implements Function1<StoreState, Unit> {
+        public C98764(BehaviorSubject behaviorSubject) {
             super(1, behaviorSubject, BehaviorSubject.class, "onNext", "onNext(Ljava/lang/Object;)V", 0);
         }
 
         @Override // kotlin.jvm.functions.Function1
         public /* bridge */ /* synthetic */ Unit invoke(StoreState storeState) {
             invoke2(storeState);
-            return Unit.a;
+            return Unit.f27425a;
         }
 
         /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
@@ -136,10 +136,10 @@ public final class SettingsGiftingViewModel extends AppViewModel<ViewState> {
         }
     }
 
-    /* JADX INFO: renamed from: com.discord.widgets.settings.premium.SettingsGiftingViewModel$5, reason: invalid class name */
+    /* JADX INFO: renamed from: com.discord.widgets.settings.premium.SettingsGiftingViewModel$5 */
     /* JADX INFO: compiled from: SettingsGiftingViewModel.kt */
-    public static final /* synthetic */ class AnonymousClass5 extends FunctionReferenceImpl implements Function2<StoreState, List<? extends ClaimedOutboundPromotion>, GiftAndPromoData> {
-        public AnonymousClass5(SettingsGiftingViewModel settingsGiftingViewModel) {
+    public static final /* synthetic */ class C98775 extends C12236k implements Function2<StoreState, List<? extends ClaimedOutboundPromotion>, GiftAndPromoData> {
+        public C98775(SettingsGiftingViewModel settingsGiftingViewModel) {
             super(2, settingsGiftingViewModel, SettingsGiftingViewModel.class, "combineData", "combineData(Lcom/discord/widgets/settings/premium/SettingsGiftingViewModel$StoreState;Ljava/util/List;)Lcom/discord/widgets/settings/premium/SettingsGiftingViewModel$GiftAndPromoData;", 0);
         }
 
@@ -150,28 +150,28 @@ public final class SettingsGiftingViewModel extends AppViewModel<ViewState> {
 
         /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
         public final GiftAndPromoData invoke2(StoreState storeState, List<ClaimedOutboundPromotion> list) {
-            Intrinsics3.checkNotNullParameter(storeState, "p1");
-            Intrinsics3.checkNotNullParameter(list, "p2");
+            C12238m.checkNotNullParameter(storeState, "p1");
+            C12238m.checkNotNullParameter(list, "p2");
             return ((SettingsGiftingViewModel) this.receiver).combineData(storeState, list);
         }
     }
 
-    /* JADX INFO: renamed from: com.discord.widgets.settings.premium.SettingsGiftingViewModel$6, reason: invalid class name */
+    /* JADX INFO: renamed from: com.discord.widgets.settings.premium.SettingsGiftingViewModel$6 */
     /* JADX INFO: compiled from: SettingsGiftingViewModel.kt */
-    public static final /* synthetic */ class AnonymousClass6 extends FunctionReferenceImpl implements Function1<GiftAndPromoData, Unit> {
-        public AnonymousClass6(SettingsGiftingViewModel settingsGiftingViewModel) {
+    public static final /* synthetic */ class C98786 extends C12236k implements Function1<GiftAndPromoData, Unit> {
+        public C98786(SettingsGiftingViewModel settingsGiftingViewModel) {
             super(1, settingsGiftingViewModel, SettingsGiftingViewModel.class, "handleAsyncData", "handleAsyncData(Lcom/discord/widgets/settings/premium/SettingsGiftingViewModel$GiftAndPromoData;)V", 0);
         }
 
         @Override // kotlin.jvm.functions.Function1
         public /* bridge */ /* synthetic */ Unit invoke(GiftAndPromoData giftAndPromoData) {
             invoke2(giftAndPromoData);
-            return Unit.a;
+            return Unit.f27425a;
         }
 
         /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
         public final void invoke2(GiftAndPromoData giftAndPromoData) {
-            Intrinsics3.checkNotNullParameter(giftAndPromoData, "p1");
+            C12238m.checkNotNullParameter(giftAndPromoData, "p1");
             ((SettingsGiftingViewModel) this.receiver).handleAsyncData(giftAndPromoData);
         }
     }
@@ -184,36 +184,36 @@ public final class SettingsGiftingViewModel extends AppViewModel<ViewState> {
         private final Observable<StoreState> observeStores() {
             StoreStream.Companion companion = StoreStream.INSTANCE;
             Observable<StoreEntitlements.State> observableObserveEntitlementState = companion.getEntitlements().observeEntitlementState();
-            Observable<R> observableY = companion.getUsers().observeMeId().Y(new Func1<Long, Observable<? extends List<? extends ModelGift>>>() { // from class: com.discord.widgets.settings.premium.SettingsGiftingViewModel$Companion$observeStores$1
-                @Override // j0.k.Func1
+            Observable<R> observableM11099Y = companion.getUsers().observeMeId().m11099Y(new InterfaceC12589b<Long, Observable<? extends List<? extends ModelGift>>>() { // from class: com.discord.widgets.settings.premium.SettingsGiftingViewModel$Companion$observeStores$1
+                @Override // p637j0.p641k.InterfaceC12589b
                 public final Observable<? extends List<ModelGift>> call(Long l) {
                     StoreGifting gifting = StoreStream.INSTANCE.getGifting();
-                    Intrinsics3.checkNotNullExpressionValue(l, "meId");
+                    C12238m.checkNotNullExpressionValue(l, "meId");
                     return gifting.getMyResolvedGifts(l.longValue());
                 }
             });
             Observable<StoreOutboundPromotions.State> observableObserveState = companion.getOutboundPromotions().observeState();
-            Observable observableG = StoreUser.observeMe$default(companion.getUsers(), false, 1, null).G(new Func1<MeUser, Boolean>() { // from class: com.discord.widgets.settings.premium.SettingsGiftingViewModel$Companion$observeStores$2
-                @Override // j0.k.Func1
+            Observable observableM11083G = StoreUser.observeMe$default(companion.getUsers(), false, 1, null).m11083G(new InterfaceC12589b<MeUser, Boolean>() { // from class: com.discord.widgets.settings.premium.SettingsGiftingViewModel$Companion$observeStores$2
+                @Override // p637j0.p641k.InterfaceC12589b
                 public final Boolean call(MeUser meUser) {
                     UserUtils userUtils = UserUtils.INSTANCE;
-                    Intrinsics3.checkNotNullExpressionValue(meUser, "it");
+                    C12238m.checkNotNullExpressionValue(meUser, "it");
                     return Boolean.valueOf(userUtils.isPremium(meUser));
                 }
             });
-            final SettingsGiftingViewModel4 settingsGiftingViewModel4 = SettingsGiftingViewModel4.INSTANCE;
-            Object obj = settingsGiftingViewModel4;
-            if (settingsGiftingViewModel4 != null) {
+            final SettingsGiftingViewModel$Companion$observeStores$3 settingsGiftingViewModel$Companion$observeStores$3 = SettingsGiftingViewModel$Companion$observeStores$3.INSTANCE;
+            Object obj = settingsGiftingViewModel$Companion$observeStores$3;
+            if (settingsGiftingViewModel$Companion$observeStores$3 != null) {
                 obj = new Func4() { // from class: com.discord.widgets.settings.premium.SettingsGiftingViewModel$sam$rx_functions_Func4$0
-                    @Override // rx.functions.Func4
+                    @Override // p658rx.functions.Func4
                     public final /* synthetic */ Object call(Object obj2, Object obj3, Object obj4, Object obj5) {
-                        return settingsGiftingViewModel4.invoke(obj2, obj3, obj4, obj5);
+                        return settingsGiftingViewModel$Companion$observeStores$3.invoke(obj2, obj3, obj4, obj5);
                     }
                 };
             }
-            Observable<StoreState> observableR = Observable.h(observableObserveEntitlementState, observableY, observableObserveState, observableG, (Func4) obj).r();
-            Intrinsics3.checkNotNullExpressionValue(observableR, "Observable\n          .co…  .distinctUntilChanged()");
-            return observableR;
+            Observable<StoreState> observableM11112r = Observable.m11073h(observableObserveEntitlementState, observableM11099Y, observableObserveState, observableM11083G, (Func4) obj).m11112r();
+            C12238m.checkNotNullExpressionValue(observableM11112r, "Observable\n          .co…  .distinctUntilChanged()");
+            return observableM11112r;
         }
 
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
@@ -231,7 +231,7 @@ public final class SettingsGiftingViewModel extends AppViewModel<ViewState> {
             /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
             public ShowPromoBottomSheet(String str) {
                 super(null);
-                Intrinsics3.checkNotNullParameter(str, "content");
+                C12238m.checkNotNullParameter(str, "content");
                 this.content = str;
             }
 
@@ -248,13 +248,13 @@ public final class SettingsGiftingViewModel extends AppViewModel<ViewState> {
             }
 
             public final ShowPromoBottomSheet copy(String content) {
-                Intrinsics3.checkNotNullParameter(content, "content");
+                C12238m.checkNotNullParameter(content, "content");
                 return new ShowPromoBottomSheet(content);
             }
 
             public boolean equals(Object other) {
                 if (this != other) {
-                    return (other instanceof ShowPromoBottomSheet) && Intrinsics3.areEqual(this.content, ((ShowPromoBottomSheet) other).content);
+                    return (other instanceof ShowPromoBottomSheet) && C12238m.areEqual(this.content, ((ShowPromoBottomSheet) other).content);
                 }
                 return true;
             }
@@ -272,7 +272,7 @@ public final class SettingsGiftingViewModel extends AppViewModel<ViewState> {
             }
 
             public String toString() {
-                return outline.J(outline.U("ShowPromoBottomSheet(content="), this.content, ")");
+                return C1643a.m822J(C1643a.m833U("ShowPromoBottomSheet(content="), this.content, ")");
             }
         }
 
@@ -283,7 +283,7 @@ public final class SettingsGiftingViewModel extends AppViewModel<ViewState> {
             /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
             public ShowPromoDialog(ClaimStatus claimStatus) {
                 super(null);
-                Intrinsics3.checkNotNullParameter(claimStatus, "claimStatus");
+                C12238m.checkNotNullParameter(claimStatus, "claimStatus");
                 this.claimStatus = claimStatus;
             }
 
@@ -300,13 +300,13 @@ public final class SettingsGiftingViewModel extends AppViewModel<ViewState> {
             }
 
             public final ShowPromoDialog copy(ClaimStatus claimStatus) {
-                Intrinsics3.checkNotNullParameter(claimStatus, "claimStatus");
+                C12238m.checkNotNullParameter(claimStatus, "claimStatus");
                 return new ShowPromoDialog(claimStatus);
             }
 
             public boolean equals(Object other) {
                 if (this != other) {
-                    return (other instanceof ShowPromoDialog) && Intrinsics3.areEqual(this.claimStatus, ((ShowPromoDialog) other).claimStatus);
+                    return (other instanceof ShowPromoDialog) && C12238m.areEqual(this.claimStatus, ((ShowPromoDialog) other).claimStatus);
                 }
                 return true;
             }
@@ -324,10 +324,10 @@ public final class SettingsGiftingViewModel extends AppViewModel<ViewState> {
             }
 
             public String toString() {
-                StringBuilder sbU = outline.U("ShowPromoDialog(claimStatus=");
-                sbU.append(this.claimStatus);
-                sbU.append(")");
-                return sbU.toString();
+                StringBuilder sbM833U = C1643a.m833U("ShowPromoDialog(claimStatus=");
+                sbM833U.append(this.claimStatus);
+                sbM833U.append(")");
+                return sbM833U.toString();
             }
         }
 
@@ -349,11 +349,11 @@ public final class SettingsGiftingViewModel extends AppViewModel<ViewState> {
 
         /* JADX WARN: Multi-variable type inference failed */
         public GiftAndPromoData(StoreEntitlements.State state, ResolvingGiftState resolvingGiftState, Map<Long, ? extends List<ModelGift>> map, StoreOutboundPromotions.State state2, List<ClaimedOutboundPromotion> list) {
-            Intrinsics3.checkNotNullParameter(state, "entitlementState");
-            Intrinsics3.checkNotNullParameter(resolvingGiftState, "resolvingGiftState");
-            Intrinsics3.checkNotNullParameter(map, "myPurchasedGifts");
-            Intrinsics3.checkNotNullParameter(state2, "outboundPromoState");
-            Intrinsics3.checkNotNullParameter(list, "claimedOutboundPromotions");
+            C12238m.checkNotNullParameter(state, "entitlementState");
+            C12238m.checkNotNullParameter(resolvingGiftState, "resolvingGiftState");
+            C12238m.checkNotNullParameter(map, "myPurchasedGifts");
+            C12238m.checkNotNullParameter(state2, "outboundPromoState");
+            C12238m.checkNotNullParameter(list, "claimedOutboundPromotions");
             this.entitlementState = state;
             this.resolvingGiftState = resolvingGiftState;
             this.myPurchasedGifts = map;
@@ -408,11 +408,11 @@ public final class SettingsGiftingViewModel extends AppViewModel<ViewState> {
         }
 
         public final GiftAndPromoData copy(StoreEntitlements.State entitlementState, ResolvingGiftState resolvingGiftState, Map<Long, ? extends List<ModelGift>> myPurchasedGifts, StoreOutboundPromotions.State outboundPromoState, List<ClaimedOutboundPromotion> claimedOutboundPromotions) {
-            Intrinsics3.checkNotNullParameter(entitlementState, "entitlementState");
-            Intrinsics3.checkNotNullParameter(resolvingGiftState, "resolvingGiftState");
-            Intrinsics3.checkNotNullParameter(myPurchasedGifts, "myPurchasedGifts");
-            Intrinsics3.checkNotNullParameter(outboundPromoState, "outboundPromoState");
-            Intrinsics3.checkNotNullParameter(claimedOutboundPromotions, "claimedOutboundPromotions");
+            C12238m.checkNotNullParameter(entitlementState, "entitlementState");
+            C12238m.checkNotNullParameter(resolvingGiftState, "resolvingGiftState");
+            C12238m.checkNotNullParameter(myPurchasedGifts, "myPurchasedGifts");
+            C12238m.checkNotNullParameter(outboundPromoState, "outboundPromoState");
+            C12238m.checkNotNullParameter(claimedOutboundPromotions, "claimedOutboundPromotions");
             return new GiftAndPromoData(entitlementState, resolvingGiftState, myPurchasedGifts, outboundPromoState, claimedOutboundPromotions);
         }
 
@@ -424,7 +424,7 @@ public final class SettingsGiftingViewModel extends AppViewModel<ViewState> {
                 return false;
             }
             GiftAndPromoData giftAndPromoData = (GiftAndPromoData) other;
-            return Intrinsics3.areEqual(this.entitlementState, giftAndPromoData.entitlementState) && Intrinsics3.areEqual(this.resolvingGiftState, giftAndPromoData.resolvingGiftState) && Intrinsics3.areEqual(this.myPurchasedGifts, giftAndPromoData.myPurchasedGifts) && Intrinsics3.areEqual(this.outboundPromoState, giftAndPromoData.outboundPromoState) && Intrinsics3.areEqual(this.claimedOutboundPromotions, giftAndPromoData.claimedOutboundPromotions);
+            return C12238m.areEqual(this.entitlementState, giftAndPromoData.entitlementState) && C12238m.areEqual(this.resolvingGiftState, giftAndPromoData.resolvingGiftState) && C12238m.areEqual(this.myPurchasedGifts, giftAndPromoData.myPurchasedGifts) && C12238m.areEqual(this.outboundPromoState, giftAndPromoData.outboundPromoState) && C12238m.areEqual(this.claimedOutboundPromotions, giftAndPromoData.claimedOutboundPromotions);
         }
 
         public final List<ClaimedOutboundPromotion> getClaimedOutboundPromotions() {
@@ -461,16 +461,16 @@ public final class SettingsGiftingViewModel extends AppViewModel<ViewState> {
         }
 
         public String toString() {
-            StringBuilder sbU = outline.U("GiftAndPromoData(entitlementState=");
-            sbU.append(this.entitlementState);
-            sbU.append(", resolvingGiftState=");
-            sbU.append(this.resolvingGiftState);
-            sbU.append(", myPurchasedGifts=");
-            sbU.append(this.myPurchasedGifts);
-            sbU.append(", outboundPromoState=");
-            sbU.append(this.outboundPromoState);
-            sbU.append(", claimedOutboundPromotions=");
-            return outline.L(sbU, this.claimedOutboundPromotions, ")");
+            StringBuilder sbM833U = C1643a.m833U("GiftAndPromoData(entitlementState=");
+            sbM833U.append(this.entitlementState);
+            sbM833U.append(", resolvingGiftState=");
+            sbM833U.append(this.resolvingGiftState);
+            sbM833U.append(", myPurchasedGifts=");
+            sbM833U.append(this.myPurchasedGifts);
+            sbM833U.append(", outboundPromoState=");
+            sbM833U.append(this.outboundPromoState);
+            sbM833U.append(", claimedOutboundPromotions=");
+            return C1643a.m824L(sbM833U, this.claimedOutboundPromotions, ")");
         }
     }
 
@@ -485,8 +485,8 @@ public final class SettingsGiftingViewModel extends AppViewModel<ViewState> {
             /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
             public CompleteGiftPurchase(String str, String str2) {
                 super(null);
-                Intrinsics3.checkNotNullParameter(str, "skuName");
-                Intrinsics3.checkNotNullParameter(str2, "newGiftCode");
+                C12238m.checkNotNullParameter(str, "skuName");
+                C12238m.checkNotNullParameter(str2, "newGiftCode");
                 this.skuName = str;
                 this.newGiftCode = str2;
             }
@@ -512,8 +512,8 @@ public final class SettingsGiftingViewModel extends AppViewModel<ViewState> {
             }
 
             public final CompleteGiftPurchase copy(String skuName, String newGiftCode) {
-                Intrinsics3.checkNotNullParameter(skuName, "skuName");
-                Intrinsics3.checkNotNullParameter(newGiftCode, "newGiftCode");
+                C12238m.checkNotNullParameter(skuName, "skuName");
+                C12238m.checkNotNullParameter(newGiftCode, "newGiftCode");
                 return new CompleteGiftPurchase(skuName, newGiftCode);
             }
 
@@ -525,7 +525,7 @@ public final class SettingsGiftingViewModel extends AppViewModel<ViewState> {
                     return false;
                 }
                 CompleteGiftPurchase completeGiftPurchase = (CompleteGiftPurchase) other;
-                return Intrinsics3.areEqual(this.skuName, completeGiftPurchase.skuName) && Intrinsics3.areEqual(this.newGiftCode, completeGiftPurchase.newGiftCode);
+                return C12238m.areEqual(this.skuName, completeGiftPurchase.skuName) && C12238m.areEqual(this.newGiftCode, completeGiftPurchase.newGiftCode);
             }
 
             public final String getNewGiftCode() {
@@ -544,10 +544,10 @@ public final class SettingsGiftingViewModel extends AppViewModel<ViewState> {
             }
 
             public String toString() {
-                StringBuilder sbU = outline.U("CompleteGiftPurchase(skuName=");
-                sbU.append(this.skuName);
-                sbU.append(", newGiftCode=");
-                return outline.J(sbU, this.newGiftCode, ")");
+                StringBuilder sbM833U = C1643a.m833U("CompleteGiftPurchase(skuName=");
+                sbM833U.append(this.skuName);
+                sbM833U.append(", newGiftCode=");
+                return C1643a.m822J(sbM833U, this.newGiftCode, ")");
             }
         }
 
@@ -592,7 +592,7 @@ public final class SettingsGiftingViewModel extends AppViewModel<ViewState> {
             }
 
             public String toString() {
-                return outline.B(outline.U("ErrorGiftPurchase(message="), this.message, ")");
+                return C1643a.m814B(C1643a.m833U("ErrorGiftPurchase(message="), this.message, ")");
             }
         }
 
@@ -632,7 +632,7 @@ public final class SettingsGiftingViewModel extends AppViewModel<ViewState> {
             /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
             public Loaded(List<OutboundPromoItem> list) {
                 super(null);
-                Intrinsics3.checkNotNullParameter(list, "outboundPromos");
+                C12238m.checkNotNullParameter(list, "outboundPromos");
                 this.outboundPromos = list;
             }
 
@@ -649,13 +649,13 @@ public final class SettingsGiftingViewModel extends AppViewModel<ViewState> {
             }
 
             public final Loaded copy(List<OutboundPromoItem> outboundPromos) {
-                Intrinsics3.checkNotNullParameter(outboundPromos, "outboundPromos");
+                C12238m.checkNotNullParameter(outboundPromos, "outboundPromos");
                 return new Loaded(outboundPromos);
             }
 
             public boolean equals(Object other) {
                 if (this != other) {
-                    return (other instanceof Loaded) && Intrinsics3.areEqual(this.outboundPromos, ((Loaded) other).outboundPromos);
+                    return (other instanceof Loaded) && C12238m.areEqual(this.outboundPromos, ((Loaded) other).outboundPromos);
                 }
                 return true;
             }
@@ -673,7 +673,7 @@ public final class SettingsGiftingViewModel extends AppViewModel<ViewState> {
             }
 
             public String toString() {
-                return outline.L(outline.U("Loaded(outboundPromos="), this.outboundPromos, ")");
+                return C1643a.m824L(C1643a.m833U("Loaded(outboundPromos="), this.outboundPromos, ")");
             }
         }
 
@@ -703,10 +703,10 @@ public final class SettingsGiftingViewModel extends AppViewModel<ViewState> {
         private final String title;
 
         public OutboundPromoItem(ClaimStatus claimStatus, long j, String str, String str2, String str3) {
-            Intrinsics3.checkNotNullParameter(claimStatus, "claimStatus");
-            Intrinsics3.checkNotNullParameter(str, "title");
-            Intrinsics3.checkNotNullParameter(str2, "terms");
-            Intrinsics3.checkNotNullParameter(str3, "imageUrl");
+            C12238m.checkNotNullParameter(claimStatus, "claimStatus");
+            C12238m.checkNotNullParameter(str, "title");
+            C12238m.checkNotNullParameter(str2, "terms");
+            C12238m.checkNotNullParameter(str3, "imageUrl");
             this.claimStatus = claimStatus;
             this.id = j;
             this.title = str;
@@ -762,10 +762,10 @@ public final class SettingsGiftingViewModel extends AppViewModel<ViewState> {
         }
 
         public final OutboundPromoItem copy(ClaimStatus claimStatus, long id2, String title, String terms, String imageUrl) {
-            Intrinsics3.checkNotNullParameter(claimStatus, "claimStatus");
-            Intrinsics3.checkNotNullParameter(title, "title");
-            Intrinsics3.checkNotNullParameter(terms, "terms");
-            Intrinsics3.checkNotNullParameter(imageUrl, "imageUrl");
+            C12238m.checkNotNullParameter(claimStatus, "claimStatus");
+            C12238m.checkNotNullParameter(title, "title");
+            C12238m.checkNotNullParameter(terms, "terms");
+            C12238m.checkNotNullParameter(imageUrl, "imageUrl");
             return new OutboundPromoItem(claimStatus, id2, title, terms, imageUrl);
         }
 
@@ -777,7 +777,7 @@ public final class SettingsGiftingViewModel extends AppViewModel<ViewState> {
                 return false;
             }
             OutboundPromoItem outboundPromoItem = (OutboundPromoItem) other;
-            return Intrinsics3.areEqual(this.claimStatus, outboundPromoItem.claimStatus) && this.id == outboundPromoItem.id && Intrinsics3.areEqual(this.title, outboundPromoItem.title) && Intrinsics3.areEqual(this.terms, outboundPromoItem.terms) && Intrinsics3.areEqual(this.imageUrl, outboundPromoItem.imageUrl);
+            return C12238m.areEqual(this.claimStatus, outboundPromoItem.claimStatus) && this.id == outboundPromoItem.id && C12238m.areEqual(this.title, outboundPromoItem.title) && C12238m.areEqual(this.terms, outboundPromoItem.terms) && C12238m.areEqual(this.imageUrl, outboundPromoItem.imageUrl);
         }
 
         public final ClaimStatus getClaimStatus() {
@@ -802,9 +802,9 @@ public final class SettingsGiftingViewModel extends AppViewModel<ViewState> {
 
         public int hashCode() {
             ClaimStatus claimStatus = this.claimStatus;
-            int iA = (b.a(this.id) + ((claimStatus != null ? claimStatus.hashCode() : 0) * 31)) * 31;
+            int iM3a = (C0002b.m3a(this.id) + ((claimStatus != null ? claimStatus.hashCode() : 0) * 31)) * 31;
             String str = this.title;
-            int iHashCode = (iA + (str != null ? str.hashCode() : 0)) * 31;
+            int iHashCode = (iM3a + (str != null ? str.hashCode() : 0)) * 31;
             String str2 = this.terms;
             int iHashCode2 = (iHashCode + (str2 != null ? str2.hashCode() : 0)) * 31;
             String str3 = this.imageUrl;
@@ -812,16 +812,16 @@ public final class SettingsGiftingViewModel extends AppViewModel<ViewState> {
         }
 
         public String toString() {
-            StringBuilder sbU = outline.U("OutboundPromoItem(claimStatus=");
-            sbU.append(this.claimStatus);
-            sbU.append(", id=");
-            sbU.append(this.id);
-            sbU.append(", title=");
-            sbU.append(this.title);
-            sbU.append(", terms=");
-            sbU.append(this.terms);
-            sbU.append(", imageUrl=");
-            return outline.J(sbU, this.imageUrl, ")");
+            StringBuilder sbM833U = C1643a.m833U("OutboundPromoItem(claimStatus=");
+            sbM833U.append(this.claimStatus);
+            sbM833U.append(", id=");
+            sbM833U.append(this.id);
+            sbM833U.append(", title=");
+            sbM833U.append(this.title);
+            sbM833U.append(", terms=");
+            sbM833U.append(this.terms);
+            sbM833U.append(", imageUrl=");
+            return C1643a.m822J(sbM833U, this.imageUrl, ")");
         }
     }
 
@@ -871,9 +871,9 @@ public final class SettingsGiftingViewModel extends AppViewModel<ViewState> {
         private final StoreOutboundPromotions.State outboundPromoState;
 
         public StoreState(StoreEntitlements.State state, List<ModelGift> list, StoreOutboundPromotions.State state2, boolean z2) {
-            Intrinsics3.checkNotNullParameter(state, "entitlementState");
-            Intrinsics3.checkNotNullParameter(list, "myResolvedGifts");
-            Intrinsics3.checkNotNullParameter(state2, "outboundPromoState");
+            C12238m.checkNotNullParameter(state, "entitlementState");
+            C12238m.checkNotNullParameter(list, "myResolvedGifts");
+            C12238m.checkNotNullParameter(state2, "outboundPromoState");
             this.entitlementState = state;
             this.myResolvedGifts = list;
             this.outboundPromoState = state2;
@@ -917,9 +917,9 @@ public final class SettingsGiftingViewModel extends AppViewModel<ViewState> {
         }
 
         public final StoreState copy(StoreEntitlements.State entitlementState, List<ModelGift> myResolvedGifts, StoreOutboundPromotions.State outboundPromoState, boolean isUserPremium) {
-            Intrinsics3.checkNotNullParameter(entitlementState, "entitlementState");
-            Intrinsics3.checkNotNullParameter(myResolvedGifts, "myResolvedGifts");
-            Intrinsics3.checkNotNullParameter(outboundPromoState, "outboundPromoState");
+            C12238m.checkNotNullParameter(entitlementState, "entitlementState");
+            C12238m.checkNotNullParameter(myResolvedGifts, "myResolvedGifts");
+            C12238m.checkNotNullParameter(outboundPromoState, "outboundPromoState");
             return new StoreState(entitlementState, myResolvedGifts, outboundPromoState, isUserPremium);
         }
 
@@ -931,7 +931,7 @@ public final class SettingsGiftingViewModel extends AppViewModel<ViewState> {
                 return false;
             }
             StoreState storeState = (StoreState) other;
-            return Intrinsics3.areEqual(this.entitlementState, storeState.entitlementState) && Intrinsics3.areEqual(this.myResolvedGifts, storeState.myResolvedGifts) && Intrinsics3.areEqual(this.outboundPromoState, storeState.outboundPromoState) && this.isUserPremium == storeState.isUserPremium;
+            return C12238m.areEqual(this.entitlementState, storeState.entitlementState) && C12238m.areEqual(this.myResolvedGifts, storeState.myResolvedGifts) && C12238m.areEqual(this.outboundPromoState, storeState.outboundPromoState) && this.isUserPremium == storeState.isUserPremium;
         }
 
         public final StoreEntitlements.State getEntitlementState() {
@@ -971,14 +971,14 @@ public final class SettingsGiftingViewModel extends AppViewModel<ViewState> {
         }
 
         public String toString() {
-            StringBuilder sbU = outline.U("StoreState(entitlementState=");
-            sbU.append(this.entitlementState);
-            sbU.append(", myResolvedGifts=");
-            sbU.append(this.myResolvedGifts);
-            sbU.append(", outboundPromoState=");
-            sbU.append(this.outboundPromoState);
-            sbU.append(", isUserPremium=");
-            return outline.O(sbU, this.isUserPremium, ")");
+            StringBuilder sbM833U = C1643a.m833U("StoreState(entitlementState=");
+            sbM833U.append(this.entitlementState);
+            sbM833U.append(", myResolvedGifts=");
+            sbM833U.append(this.myResolvedGifts);
+            sbM833U.append(", outboundPromoState=");
+            sbM833U.append(this.outboundPromoState);
+            sbM833U.append(", isUserPremium=");
+            return C1643a.m827O(sbM833U, this.isUserPremium, ")");
         }
     }
 
@@ -1007,11 +1007,11 @@ public final class SettingsGiftingViewModel extends AppViewModel<ViewState> {
             /* JADX WARN: Multi-variable type inference failed */
             public Loaded(Map<Long, ? extends List<ModelEntitlement>> map, ResolvingGiftState resolvingGiftState, Set<Long> set, List<OutboundPromoItem> list, Map<Long, ? extends List<ModelGift>> map2, String str) {
                 super(null);
-                Intrinsics3.checkNotNullParameter(map, "myEntitlements");
-                Intrinsics3.checkNotNullParameter(resolvingGiftState, "resolvingGiftState");
-                Intrinsics3.checkNotNullParameter(set, "expandedSkuOrPlanIds");
-                Intrinsics3.checkNotNullParameter(list, "outboundPromos");
-                Intrinsics3.checkNotNullParameter(map2, "myPurchasedGifts");
+                C12238m.checkNotNullParameter(map, "myEntitlements");
+                C12238m.checkNotNullParameter(resolvingGiftState, "resolvingGiftState");
+                C12238m.checkNotNullParameter(set, "expandedSkuOrPlanIds");
+                C12238m.checkNotNullParameter(list, "outboundPromos");
+                C12238m.checkNotNullParameter(map2, "myPurchasedGifts");
                 this.myEntitlements = map;
                 this.resolvingGiftState = resolvingGiftState;
                 this.expandedSkuOrPlanIds = set;
@@ -1074,11 +1074,11 @@ public final class SettingsGiftingViewModel extends AppViewModel<ViewState> {
             }
 
             public final Loaded copy(Map<Long, ? extends List<ModelEntitlement>> myEntitlements, ResolvingGiftState resolvingGiftState, Set<Long> expandedSkuOrPlanIds, List<OutboundPromoItem> outboundPromos, Map<Long, ? extends List<ModelGift>> myPurchasedGifts, String lastCopiedCode) {
-                Intrinsics3.checkNotNullParameter(myEntitlements, "myEntitlements");
-                Intrinsics3.checkNotNullParameter(resolvingGiftState, "resolvingGiftState");
-                Intrinsics3.checkNotNullParameter(expandedSkuOrPlanIds, "expandedSkuOrPlanIds");
-                Intrinsics3.checkNotNullParameter(outboundPromos, "outboundPromos");
-                Intrinsics3.checkNotNullParameter(myPurchasedGifts, "myPurchasedGifts");
+                C12238m.checkNotNullParameter(myEntitlements, "myEntitlements");
+                C12238m.checkNotNullParameter(resolvingGiftState, "resolvingGiftState");
+                C12238m.checkNotNullParameter(expandedSkuOrPlanIds, "expandedSkuOrPlanIds");
+                C12238m.checkNotNullParameter(outboundPromos, "outboundPromos");
+                C12238m.checkNotNullParameter(myPurchasedGifts, "myPurchasedGifts");
                 return new Loaded(myEntitlements, resolvingGiftState, expandedSkuOrPlanIds, outboundPromos, myPurchasedGifts, lastCopiedCode);
             }
 
@@ -1090,7 +1090,7 @@ public final class SettingsGiftingViewModel extends AppViewModel<ViewState> {
                     return false;
                 }
                 Loaded loaded = (Loaded) other;
-                return Intrinsics3.areEqual(this.myEntitlements, loaded.myEntitlements) && Intrinsics3.areEqual(this.resolvingGiftState, loaded.resolvingGiftState) && Intrinsics3.areEqual(this.expandedSkuOrPlanIds, loaded.expandedSkuOrPlanIds) && Intrinsics3.areEqual(this.outboundPromos, loaded.outboundPromos) && Intrinsics3.areEqual(this.myPurchasedGifts, loaded.myPurchasedGifts) && Intrinsics3.areEqual(this.lastCopiedCode, loaded.lastCopiedCode);
+                return C12238m.areEqual(this.myEntitlements, loaded.myEntitlements) && C12238m.areEqual(this.resolvingGiftState, loaded.resolvingGiftState) && C12238m.areEqual(this.expandedSkuOrPlanIds, loaded.expandedSkuOrPlanIds) && C12238m.areEqual(this.outboundPromos, loaded.outboundPromos) && C12238m.areEqual(this.myPurchasedGifts, loaded.myPurchasedGifts) && C12238m.areEqual(this.lastCopiedCode, loaded.lastCopiedCode);
             }
 
             public final Set<Long> getExpandedSkuOrPlanIds() {
@@ -1133,18 +1133,18 @@ public final class SettingsGiftingViewModel extends AppViewModel<ViewState> {
             }
 
             public String toString() {
-                StringBuilder sbU = outline.U("Loaded(myEntitlements=");
-                sbU.append(this.myEntitlements);
-                sbU.append(", resolvingGiftState=");
-                sbU.append(this.resolvingGiftState);
-                sbU.append(", expandedSkuOrPlanIds=");
-                sbU.append(this.expandedSkuOrPlanIds);
-                sbU.append(", outboundPromos=");
-                sbU.append(this.outboundPromos);
-                sbU.append(", myPurchasedGifts=");
-                sbU.append(this.myPurchasedGifts);
-                sbU.append(", lastCopiedCode=");
-                return outline.J(sbU, this.lastCopiedCode, ")");
+                StringBuilder sbM833U = C1643a.m833U("Loaded(myEntitlements=");
+                sbM833U.append(this.myEntitlements);
+                sbM833U.append(", resolvingGiftState=");
+                sbM833U.append(this.resolvingGiftState);
+                sbM833U.append(", expandedSkuOrPlanIds=");
+                sbM833U.append(this.expandedSkuOrPlanIds);
+                sbM833U.append(", outboundPromos=");
+                sbM833U.append(this.outboundPromos);
+                sbM833U.append(", myPurchasedGifts=");
+                sbM833U.append(this.myPurchasedGifts);
+                sbM833U.append(", lastCopiedCode=");
+                return C1643a.m822J(sbM833U, this.lastCopiedCode, ")");
             }
         }
 
@@ -1165,35 +1165,35 @@ public final class SettingsGiftingViewModel extends AppViewModel<ViewState> {
         }
     }
 
-    /* JADX INFO: renamed from: com.discord.widgets.settings.premium.SettingsGiftingViewModel$handleGooglePlayPurchaseEvent$1, reason: invalid class name */
+    /* JADX INFO: renamed from: com.discord.widgets.settings.premium.SettingsGiftingViewModel$handleGooglePlayPurchaseEvent$1 */
     /* JADX INFO: compiled from: SettingsGiftingViewModel.kt */
-    public static final class AnonymousClass1 extends Lambda implements Function1<Error, Unit> {
-        public AnonymousClass1() {
+    public static final class C98791 extends AbstractC12240o implements Function1<Error, Unit> {
+        public C98791() {
             super(1);
         }
 
         @Override // kotlin.jvm.functions.Function1
         public /* bridge */ /* synthetic */ Unit invoke(Error error) {
             invoke2(error);
-            return Unit.a;
+            return Unit.f27425a;
         }
 
         /* JADX WARN: Type inference incomplete: some casts might be missing */
         /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
         public final void invoke2(Error error) {
-            Intrinsics3.checkNotNullParameter(error, "it");
+            C12238m.checkNotNullParameter(error, "it");
             SettingsGiftingViewModel.this.storeEntitlements.fetchMyGiftEntitlements();
-            SettingsGiftingViewModel.this.giftPurchaseEventSubject.k.onNext((T) new GiftPurchaseEvent.ErrorGiftPurchase(R.string.billing_error_purchase));
+            SettingsGiftingViewModel.this.giftPurchaseEventSubject.f27650k.onNext((T) new GiftPurchaseEvent.ErrorGiftPurchase(C5419R.string.billing_error_purchase));
         }
     }
 
-    /* JADX INFO: renamed from: com.discord.widgets.settings.premium.SettingsGiftingViewModel$handleGooglePlayPurchaseEvent$2, reason: invalid class name */
+    /* JADX INFO: renamed from: com.discord.widgets.settings.premium.SettingsGiftingViewModel$handleGooglePlayPurchaseEvent$2 */
     /* JADX INFO: compiled from: SettingsGiftingViewModel.kt */
-    public static final class AnonymousClass2 extends Lambda implements Function1<ModelGift, Unit> {
+    public static final class C98802 extends AbstractC12240o implements Function1<ModelGift, Unit> {
         public final /* synthetic */ StoreGooglePlayPurchases.Event $event;
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-        public AnonymousClass2(StoreGooglePlayPurchases.Event event) {
+        public C98802(StoreGooglePlayPurchases.Event event) {
             super(1);
             this.$event = event;
         }
@@ -1201,29 +1201,29 @@ public final class SettingsGiftingViewModel extends AppViewModel<ViewState> {
         @Override // kotlin.jvm.functions.Function1
         public /* bridge */ /* synthetic */ Unit invoke(ModelGift modelGift) {
             invoke2(modelGift);
-            return Unit.a;
+            return Unit.f27425a;
         }
 
         /* JADX WARN: Type inference incomplete: some casts might be missing */
         /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
         public final void invoke2(ModelGift modelGift) {
-            Intrinsics3.checkNotNullParameter(modelGift, "it");
+            C12238m.checkNotNullParameter(modelGift, "it");
             SettingsGiftingViewModel.this.storeEntitlements.fetchMyGiftEntitlements();
-            SettingsGiftingViewModel.this.giftPurchaseEventSubject.k.onNext((T) new GiftPurchaseEvent.CompleteGiftPurchase(((StoreGooglePlayPurchases.Event.PurchaseQuerySuccess) this.$event).getNewSkuName(), modelGift.getCode()));
+            SettingsGiftingViewModel.this.giftPurchaseEventSubject.f27650k.onNext((T) new GiftPurchaseEvent.CompleteGiftPurchase(((StoreGooglePlayPurchases.Event.PurchaseQuerySuccess) this.$event).getNewSkuName(), modelGift.getCode()));
         }
     }
 
-    /* JADX INFO: renamed from: com.discord.widgets.settings.premium.SettingsGiftingViewModel$maybeCheckClaimedPromos$3, reason: invalid class name */
+    /* JADX INFO: renamed from: com.discord.widgets.settings.premium.SettingsGiftingViewModel$maybeCheckClaimedPromos$3 */
     /* JADX INFO: compiled from: SettingsGiftingViewModel.kt */
-    public static final /* synthetic */ class AnonymousClass3 extends FunctionReferenceImpl implements Function1<List<? extends ClaimedOutboundPromotion>, Unit> {
-        public AnonymousClass3(BehaviorSubject behaviorSubject) {
+    public static final /* synthetic */ class C98833 extends C12236k implements Function1<List<? extends ClaimedOutboundPromotion>, Unit> {
+        public C98833(BehaviorSubject behaviorSubject) {
             super(1, behaviorSubject, BehaviorSubject.class, "onNext", "onNext(Ljava/lang/Object;)V", 0);
         }
 
         @Override // kotlin.jvm.functions.Function1
         public /* bridge */ /* synthetic */ Unit invoke(List<? extends ClaimedOutboundPromotion> list) {
             invoke2((List<ClaimedOutboundPromotion>) list);
-            return Unit.a;
+            return Unit.f27425a;
         }
 
         /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
@@ -1232,42 +1232,42 @@ public final class SettingsGiftingViewModel extends AppViewModel<ViewState> {
         }
     }
 
-    /* JADX INFO: renamed from: com.discord.widgets.settings.premium.SettingsGiftingViewModel$redeemGiftCode$1, reason: invalid class name */
+    /* JADX INFO: renamed from: com.discord.widgets.settings.premium.SettingsGiftingViewModel$redeemGiftCode$1 */
     /* JADX INFO: compiled from: SettingsGiftingViewModel.kt */
-    public static final class AnonymousClass1 extends Lambda implements Function1<Subscription, Unit> {
-        public AnonymousClass1() {
+    public static final class C98841 extends AbstractC12240o implements Function1<Subscription, Unit> {
+        public C98841() {
             super(1);
         }
 
         @Override // kotlin.jvm.functions.Function1
         public /* bridge */ /* synthetic */ Unit invoke(Subscription subscription) {
             invoke2(subscription);
-            return Unit.a;
+            return Unit.f27425a;
         }
 
         /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
         public final void invoke2(Subscription subscription) {
-            Intrinsics3.checkNotNullParameter(subscription, "it");
-            SettingsGiftingViewModel.this.subscriptions.a(subscription);
+            C12238m.checkNotNullParameter(subscription, "it");
+            SettingsGiftingViewModel.this.subscriptions.m11136a(subscription);
         }
     }
 
-    /* JADX INFO: renamed from: com.discord.widgets.settings.premium.SettingsGiftingViewModel$redeemGiftCode$2, reason: invalid class name */
+    /* JADX INFO: renamed from: com.discord.widgets.settings.premium.SettingsGiftingViewModel$redeemGiftCode$2 */
     /* JADX INFO: compiled from: SettingsGiftingViewModel.kt */
-    public static final /* synthetic */ class AnonymousClass2 extends FunctionReferenceImpl implements Function1<StoreGifting.GiftState, Unit> {
-        public AnonymousClass2(SettingsGiftingViewModel settingsGiftingViewModel) {
+    public static final /* synthetic */ class C98852 extends C12236k implements Function1<StoreGifting.GiftState, Unit> {
+        public C98852(SettingsGiftingViewModel settingsGiftingViewModel) {
             super(1, settingsGiftingViewModel, SettingsGiftingViewModel.class, "onHandleGiftCode", "onHandleGiftCode(Lcom/discord/stores/StoreGifting$GiftState;)V", 0);
         }
 
         @Override // kotlin.jvm.functions.Function1
         public /* bridge */ /* synthetic */ Unit invoke(StoreGifting.GiftState giftState) {
             invoke2(giftState);
-            return Unit.a;
+            return Unit.f27425a;
         }
 
         /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
         public final void invoke2(StoreGifting.GiftState giftState) {
-            Intrinsics3.checkNotNullParameter(giftState, "p1");
+            C12238m.checkNotNullParameter(giftState, "p1");
             ((SettingsGiftingViewModel) this.receiver).onHandleGiftCode(giftState);
         }
     }
@@ -1292,7 +1292,7 @@ public final class SettingsGiftingViewModel extends AppViewModel<ViewState> {
         }
         ViewState.Loaded loaded = (ViewState.Loaded) viewState;
         if (loaded == null || (setEmptySet = loaded.getExpandedSkuOrPlanIds()) == null) {
-            setEmptySet = Sets5.emptySet();
+            setEmptySet = C12148n0.emptySet();
         }
         Set<Long> set = setEmptySet;
         ViewState viewState2 = getViewState();
@@ -1334,7 +1334,7 @@ public final class SettingsGiftingViewModel extends AppViewModel<ViewState> {
     }
 
     private final String getPromoImageUrl(long promoId) {
-        String str = Intrinsics3.areEqual(this.storeUserSettingsSystem.getTheme(), ModelUserSettings.THEME_LIGHT) ? "logo-light" : "logo-dark";
+        String str = C12238m.areEqual(this.storeUserSettingsSystem.getTheme(), ModelUserSettings.THEME_LIGHT) ? "logo-light" : "logo-dark";
         String str2 = BuildConfig.HOST_CDN;
         if (!(BuildConfig.HOST_CDN.length() > 0)) {
             str2 = null;
@@ -1346,8 +1346,8 @@ public final class SettingsGiftingViewModel extends AppViewModel<ViewState> {
         sb.append(str2);
         sb.append("/promotions/");
         sb.append(promoId);
-        sb.append(MentionUtils.SLASH_CHAR);
-        return outline.J(sb, str, "?size=256");
+        sb.append(MentionUtilsKt.SLASH_CHAR);
+        return C1643a.m822J(sb, str, "?size=256");
     }
 
     private final List<OutboundPromoItem> getPromos(List<OutboundPromotion> validActivePromos, List<ClaimedOutboundPromotion> claimedPromos) {
@@ -1357,10 +1357,10 @@ public final class SettingsGiftingViewModel extends AppViewModel<ViewState> {
             linkedHashMap.put(Long.valueOf(outboundPromoItem.getId()), outboundPromoItem);
         }
         for (ClaimedOutboundPromotion claimedOutboundPromotion : claimedPromos) {
-            OutboundPromoItem outboundPromoItem2 = new OutboundPromoItem(new ClaimStatus.Claimed(claimedOutboundPromotion.getPromotion().getId(), claimedOutboundPromotion.getCode(), claimedOutboundPromotion.getPromotion().getOutboundRedemptionModalBody(), claimedOutboundPromotion.d(), claimedOutboundPromotion.c()), claimedOutboundPromotion.getPromotion().getId(), claimedOutboundPromotion.getPromotion().getOutboundTitle(), claimedOutboundPromotion.getPromotion().getOutboundTermsAndConditions(), getPromoImageUrl(claimedOutboundPromotion.getPromotion().getId()));
+            OutboundPromoItem outboundPromoItem2 = new OutboundPromoItem(new ClaimStatus.Claimed(claimedOutboundPromotion.getPromotion().getId(), claimedOutboundPromotion.getCode(), claimedOutboundPromotion.getPromotion().getOutboundRedemptionModalBody(), claimedOutboundPromotion.m8136d(), claimedOutboundPromotion.m8135c()), claimedOutboundPromotion.getPromotion().getId(), claimedOutboundPromotion.getPromotion().getOutboundTitle(), claimedOutboundPromotion.getPromotion().getOutboundTermsAndConditions(), getPromoImageUrl(claimedOutboundPromotion.getPromotion().getId()));
             linkedHashMap.put(Long.valueOf(outboundPromoItem2.getId()), outboundPromoItem2);
         }
-        return _Collections.toList(linkedHashMap.values());
+        return C12163u.toList(linkedHashMap.values());
     }
 
     @MainThread
@@ -1370,7 +1370,7 @@ public final class SettingsGiftingViewModel extends AppViewModel<ViewState> {
         if (outboundPromoState instanceof StoreOutboundPromotions.State.Loaded) {
             loaded = new OutboundPromoData.Loaded(getPromos(((StoreOutboundPromotions.State.Loaded) outboundPromoState).getValidActivePromotions(), data.getClaimedOutboundPromotions()));
         } else if (outboundPromoState instanceof StoreOutboundPromotions.State.Failed) {
-            loaded = new OutboundPromoData.Loaded(Collections2.emptyList());
+            loaded = new OutboundPromoData.Loaded(C12147n.emptyList());
         } else {
             if (!(outboundPromoState instanceof StoreOutboundPromotions.State.Loading)) {
                 throw new NoWhenBranchMatchedException();
@@ -1388,7 +1388,7 @@ public final class SettingsGiftingViewModel extends AppViewModel<ViewState> {
         if (!(event instanceof StoreGooglePlayPurchases.Event.PurchaseQuerySuccess)) {
             if (event instanceof StoreGooglePlayPurchases.Event.PurchaseQueryFailure) {
                 PublishSubject<GiftPurchaseEvent> publishSubject = this.giftPurchaseEventSubject;
-                publishSubject.k.onNext(new GiftPurchaseEvent.ErrorGiftPurchase(R.string.billing_error_purchase));
+                publishSubject.f27650k.onNext(new GiftPurchaseEvent.ErrorGiftPurchase(C5419R.string.billing_error_purchase));
                 return;
             }
             return;
@@ -1397,44 +1397,44 @@ public final class SettingsGiftingViewModel extends AppViewModel<ViewState> {
         if (purchaseQuerySuccess.getGiftCode() != null) {
             this.storeEntitlements.fetchMyGiftEntitlements();
             PublishSubject<GiftPurchaseEvent> publishSubject2 = this.giftPurchaseEventSubject;
-            publishSubject2.k.onNext(new GiftPurchaseEvent.CompleteGiftPurchase(purchaseQuerySuccess.getNewSkuName(), purchaseQuerySuccess.getGiftCode()));
+            publishSubject2.f27650k.onNext(new GiftPurchaseEvent.CompleteGiftPurchase(purchaseQuerySuccess.getNewSkuName(), purchaseQuerySuccess.getGiftCode()));
             return;
         }
         StoreGifting storeGifting = this.storeGifting;
         Long skuId = purchaseQuerySuccess.getSkuId();
-        Intrinsics3.checkNotNull(skuId);
-        storeGifting.generateGiftCode(skuId.longValue(), purchaseQuerySuccess.getSubscriptionPlanId(), new AnonymousClass2(event), new AnonymousClass1());
+        C12238m.checkNotNull(skuId);
+        storeGifting.generateGiftCode(skuId.longValue(), purchaseQuerySuccess.getSubscriptionPlanId(), new C98802(event), new C98791());
     }
 
     private final void handleGooglePlayQueryStateUpdate(StoreGooglePlayPurchases.QueryState queryState) {
-        if (Intrinsics3.areEqual(queryState, StoreGooglePlayPurchases.QueryState.InProgress.INSTANCE)) {
+        if (C12238m.areEqual(queryState, StoreGooglePlayPurchases.QueryState.InProgress.INSTANCE)) {
             PublishSubject<GiftPurchaseEvent> publishSubject = this.giftPurchaseEventSubject;
-            publishSubject.k.onNext(GiftPurchaseEvent.StartGiftPurchase.INSTANCE);
-        } else if (Intrinsics3.areEqual(queryState, StoreGooglePlayPurchases.QueryState.NotInProgress.INSTANCE)) {
+            publishSubject.f27650k.onNext(GiftPurchaseEvent.StartGiftPurchase.INSTANCE);
+        } else if (C12238m.areEqual(queryState, StoreGooglePlayPurchases.QueryState.NotInProgress.INSTANCE)) {
             PublishSubject<GiftPurchaseEvent> publishSubject2 = this.giftPurchaseEventSubject;
-            publishSubject2.k.onNext(GiftPurchaseEvent.NotInProgress.INSTANCE);
+            publishSubject2.f27650k.onNext(GiftPurchaseEvent.NotInProgress.INSTANCE);
         }
     }
 
     private final void maybeCheckClaimedPromos(boolean isUserPremium) {
         if (this.shouldCheckClaimedPromos.compareAndSet(true, false)) {
             if (!isUserPremium) {
-                this.claimedPromotionsSubject.onNext(Collections2.emptyList());
+                this.claimedPromotionsSubject.onNext(C12147n.emptyList());
                 return;
             }
-            Observable observableM = ObservableExtensionsKt.restSubscribeOn$default(this.storeOutboundPromotions.fetchClaimedOutboundPromotions(), false, 1, null).t(new Action1<Throwable>() { // from class: com.discord.widgets.settings.premium.SettingsGiftingViewModel.maybeCheckClaimedPromos.1
-                @Override // rx.functions.Action1
+            Observable observableM11087M = ObservableExtensionsKt.restSubscribeOn$default(this.storeOutboundPromotions.fetchClaimedOutboundPromotions(), false, 1, null).m11114t(new Action1<Throwable>() { // from class: com.discord.widgets.settings.premium.SettingsGiftingViewModel.maybeCheckClaimedPromos.1
+                @Override // p658rx.functions.Action1
                 public final void call(Throwable th) {
                     SettingsGiftingViewModel.this.shouldCheckClaimedPromos.set(true);
                 }
-            }).M(new Func1<Throwable, List<? extends ClaimedOutboundPromotion>>() { // from class: com.discord.widgets.settings.premium.SettingsGiftingViewModel.maybeCheckClaimedPromos.2
-                @Override // j0.k.Func1
+            }).m11087M(new InterfaceC12589b<Throwable, List<? extends ClaimedOutboundPromotion>>() { // from class: com.discord.widgets.settings.premium.SettingsGiftingViewModel.maybeCheckClaimedPromos.2
+                @Override // p637j0.p641k.InterfaceC12589b
                 public final List<ClaimedOutboundPromotion> call(Throwable th) {
-                    return Collections2.emptyList();
+                    return C12147n.emptyList();
                 }
             });
-            Intrinsics3.checkNotNullExpressionValue(observableM, "storeOutboundPromotions.…rorReturn { emptyList() }");
-            ObservableExtensionsKt.appSubscribe(observableM, (Class<?>) SettingsGiftingViewModel.class, (58 & 2) != 0 ? null : null, (Function1<? super Subscription, Unit>) ((58 & 4) != 0 ? null : null), (Function1<? super Error, Unit>) ((58 & 8) != 0 ? null : null), (Function0<Unit>) ((58 & 16) != 0 ? ObservableExtensionsKt.AnonymousClass1.INSTANCE : null), (Function0<Unit>) ((58 & 32) != 0 ? ObservableExtensionsKt.AnonymousClass2.INSTANCE : null), new AnonymousClass3(this.claimedPromotionsSubject));
+            C12238m.checkNotNullExpressionValue(observableM11087M, "storeOutboundPromotions.…rorReturn { emptyList() }");
+            ObservableExtensionsKt.appSubscribe(observableM11087M, (Class<?>) SettingsGiftingViewModel.class, (58 & 2) != 0 ? null : null, (Function1<? super Subscription, Unit>) ((58 & 4) != 0 ? null : null), (Function1<? super Error, Unit>) ((58 & 8) != 0 ? null : null), (Function0<Unit>) ((58 & 16) != 0 ? ObservableExtensionsKt.C68791.INSTANCE : null), (Function0<Unit>) ((58 & 32) != 0 ? ObservableExtensionsKt.C68802.INSTANCE : null), new C98833(this.claimedPromotionsSubject));
         }
     }
 
@@ -1449,7 +1449,7 @@ public final class SettingsGiftingViewModel extends AppViewModel<ViewState> {
         }
         ViewState.Loaded loaded = (ViewState.Loaded) viewState;
         if (loaded != null) {
-            StoreEntitlements.State.Loaded loaded2 = new StoreEntitlements.State.Loaded(loaded.getMyEntitlements(), Maps6.emptyMap());
+            StoreEntitlements.State.Loaded loaded2 = new StoreEntitlements.State.Loaded(loaded.getMyEntitlements(), C12136h0.emptyMap());
             OutboundPromoData.Loaded loaded3 = new OutboundPromoData.Loaded(loaded.getOutboundPromos());
             if ((giftState instanceof StoreGifting.GiftState.Loading) || (giftState instanceof StoreGifting.GiftState.Redeeming)) {
                 viewStateBuildViewState = buildViewState(loaded2, ResolvingGiftState.Resolving.INSTANCE, loaded.getMyPurchasedGifts(), loaded3);
@@ -1486,7 +1486,7 @@ public final class SettingsGiftingViewModel extends AppViewModel<ViewState> {
 
     @MainThread
     public final void handleClaimedPromo(ClaimStatus.Claimed claimedStatus) {
-        Intrinsics3.checkNotNullParameter(claimedStatus, "claimedStatus");
+        C12238m.checkNotNullParameter(claimedStatus, "claimedStatus");
         ViewState viewState = getViewState();
         if (!(viewState instanceof ViewState.Loaded)) {
             viewState = null;
@@ -1494,7 +1494,7 @@ public final class SettingsGiftingViewModel extends AppViewModel<ViewState> {
         ViewState.Loaded loaded = (ViewState.Loaded) viewState;
         if (loaded != null) {
             List<OutboundPromoItem> outboundPromos = loaded.getOutboundPromos();
-            ArrayList arrayList = new ArrayList(Iterables2.collectionSizeOrDefault(outboundPromos, 10));
+            ArrayList arrayList = new ArrayList(C12149o.collectionSizeOrDefault(outboundPromos, 10));
             for (OutboundPromoItem outboundPromoItemCopy$default : outboundPromos) {
                 if (outboundPromoItemCopy$default.getId() == claimedStatus.getPromoId()) {
                     outboundPromoItemCopy$default = OutboundPromoItem.copy$default(outboundPromoItemCopy$default, claimedStatus, 0L, null, null, null, 30, null);
@@ -1507,7 +1507,7 @@ public final class SettingsGiftingViewModel extends AppViewModel<ViewState> {
 
     @MainThread
     public final void handleCopyClicked(String giftCode) {
-        Intrinsics3.checkNotNullParameter(giftCode, "giftCode");
+        C12238m.checkNotNullParameter(giftCode, "giftCode");
         ViewState viewState = getViewState();
         if (!(viewState instanceof ViewState.Loaded)) {
             viewState = null;
@@ -1519,15 +1519,15 @@ public final class SettingsGiftingViewModel extends AppViewModel<ViewState> {
     }
 
     public final void handlePromoButtonClicked(OutboundPromoItem promoItem) {
-        Intrinsics3.checkNotNullParameter(promoItem, "promoItem");
+        C12238m.checkNotNullParameter(promoItem, "promoItem");
         PublishSubject<Event> publishSubject = this.eventSubject;
-        publishSubject.k.onNext(new Event.ShowPromoDialog(promoItem.getClaimStatus()));
+        publishSubject.f27650k.onNext(new Event.ShowPromoDialog(promoItem.getClaimStatus()));
     }
 
     public final void handlePromoMoreDetailsClicked(OutboundPromoItem promoItem) {
-        Intrinsics3.checkNotNullParameter(promoItem, "promoItem");
+        C12238m.checkNotNullParameter(promoItem, "promoItem");
         PublishSubject<Event> publishSubject = this.eventSubject;
-        publishSubject.k.onNext(new Event.ShowPromoBottomSheet(promoItem.getTerms()));
+        publishSubject.f27650k.onNext(new Event.ShowPromoBottomSheet(promoItem.getTerms()));
     }
 
     @MainThread
@@ -1538,7 +1538,7 @@ public final class SettingsGiftingViewModel extends AppViewModel<ViewState> {
         }
         ViewState.Loaded loaded = (ViewState.Loaded) viewState;
         if (loaded != null) {
-            Set mutableSet = _Collections.toMutableSet(loaded.getExpandedSkuOrPlanIds());
+            Set mutableSet = C12163u.toMutableSet(loaded.getExpandedSkuOrPlanIds());
             long jLongValue = planId != null ? planId.longValue() : skuId;
             if (mutableSet.contains(Long.valueOf(jLongValue))) {
                 mutableSet.remove(Long.valueOf(jLongValue));
@@ -1552,83 +1552,83 @@ public final class SettingsGiftingViewModel extends AppViewModel<ViewState> {
 
     public final Observable<Event> observeEvents() {
         PublishSubject<Event> publishSubject = this.eventSubject;
-        Intrinsics3.checkNotNullExpressionValue(publishSubject, "eventSubject");
+        C12238m.checkNotNullExpressionValue(publishSubject, "eventSubject");
         return publishSubject;
     }
 
     public final PublishSubject<GiftPurchaseEvent> observeGiftPurchaseEvents() {
         PublishSubject<GiftPurchaseEvent> publishSubject = this.giftPurchaseEventSubject;
-        Intrinsics3.checkNotNullExpressionValue(publishSubject, "giftPurchaseEventSubject");
+        C12238m.checkNotNullExpressionValue(publishSubject, "giftPurchaseEventSubject");
         return publishSubject;
     }
 
-    @Override // b.a.d.AppViewModel, androidx.view.ViewModel
+    @Override // p007b.p008a.p018d.AbstractC0859d0, androidx.view.ViewModel
     public void onCleared() {
         super.onCleared();
-        this.subscriptions.b();
+        this.subscriptions.m11137b();
     }
 
     @MainThread
     public final void redeemGiftCode(String giftCode, AppComponent appComponent) {
-        Intrinsics3.checkNotNullParameter(giftCode, "giftCode");
-        Intrinsics3.checkNotNullParameter(appComponent, "appComponent");
+        C12238m.checkNotNullParameter(giftCode, "giftCode");
+        C12238m.checkNotNullParameter(appComponent, "appComponent");
         if (getViewState() instanceof ViewState.Loaded) {
-            ObservableExtensionsKt.appSubscribe(ObservableExtensionsKt.ui$default(this.storeGifting.requestGift(giftCode), appComponent, null, 2, null), (Class<?>) SettingsGiftingViewModel.class, (58 & 2) != 0 ? null : null, (Function1<? super Subscription, Unit>) ((58 & 4) != 0 ? null : new AnonymousClass1()), (Function1<? super Error, Unit>) ((58 & 8) != 0 ? null : null), (Function0<Unit>) ((58 & 16) != 0 ? ObservableExtensionsKt.AnonymousClass1.INSTANCE : null), (Function0<Unit>) ((58 & 32) != 0 ? ObservableExtensionsKt.AnonymousClass2.INSTANCE : null), new AnonymousClass2(this));
+            ObservableExtensionsKt.appSubscribe(ObservableExtensionsKt.ui$default(this.storeGifting.requestGift(giftCode), appComponent, null, 2, null), (Class<?>) SettingsGiftingViewModel.class, (58 & 2) != 0 ? null : null, (Function1<? super Subscription, Unit>) ((58 & 4) != 0 ? null : new C98841()), (Function1<? super Error, Unit>) ((58 & 8) != 0 ? null : null), (Function0<Unit>) ((58 & 16) != 0 ? ObservableExtensionsKt.C68791.INSTANCE : null), (Function0<Unit>) ((58 & 32) != 0 ? ObservableExtensionsKt.C68802.INSTANCE : null), new C98852(this));
         }
     }
 
     public final void setOnGiftCodeResolved(Function1<? super String, Unit> onGiftCodeResolved) {
-        Intrinsics3.checkNotNullParameter(onGiftCodeResolved, "onGiftCodeResolved");
+        C12238m.checkNotNullParameter(onGiftCodeResolved, "onGiftCodeResolved");
         this.onGiftCodeResolved = onGiftCodeResolved;
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public SettingsGiftingViewModel(StoreEntitlements storeEntitlements, StoreGifting storeGifting, StoreUserSettingsSystem storeUserSettingsSystem, StoreOutboundPromotions storeOutboundPromotions, StoreGooglePlayPurchases storeGooglePlayPurchases, GooglePlayBillingManager googlePlayBillingManager, Observable<StoreState> observable) {
         super(ViewState.Loading.INSTANCE);
-        Intrinsics3.checkNotNullParameter(storeEntitlements, "storeEntitlements");
-        Intrinsics3.checkNotNullParameter(storeGifting, "storeGifting");
-        Intrinsics3.checkNotNullParameter(storeUserSettingsSystem, "storeUserSettingsSystem");
-        Intrinsics3.checkNotNullParameter(storeOutboundPromotions, "storeOutboundPromotions");
-        Intrinsics3.checkNotNullParameter(storeGooglePlayPurchases, "storeGooglePlayPurchases");
-        Intrinsics3.checkNotNullParameter(googlePlayBillingManager, "gPlayBillingManager");
-        Intrinsics3.checkNotNullParameter(observable, "storeObservable");
+        C12238m.checkNotNullParameter(storeEntitlements, "storeEntitlements");
+        C12238m.checkNotNullParameter(storeGifting, "storeGifting");
+        C12238m.checkNotNullParameter(storeUserSettingsSystem, "storeUserSettingsSystem");
+        C12238m.checkNotNullParameter(storeOutboundPromotions, "storeOutboundPromotions");
+        C12238m.checkNotNullParameter(storeGooglePlayPurchases, "storeGooglePlayPurchases");
+        C12238m.checkNotNullParameter(googlePlayBillingManager, "gPlayBillingManager");
+        C12238m.checkNotNullParameter(observable, "storeObservable");
         this.storeEntitlements = storeEntitlements;
         this.storeGifting = storeGifting;
         this.storeUserSettingsSystem = storeUserSettingsSystem;
         this.storeOutboundPromotions = storeOutboundPromotions;
-        BehaviorSubject<StoreState> behaviorSubjectK0 = BehaviorSubject.k0();
-        this.storeStateSubject = behaviorSubjectK0;
-        BehaviorSubject<List<ClaimedOutboundPromotion>> behaviorSubjectK1 = BehaviorSubject.k0();
-        this.claimedPromotionsSubject = behaviorSubjectK1;
+        BehaviorSubject<StoreState> behaviorSubjectM11129k0 = BehaviorSubject.m11129k0();
+        this.storeStateSubject = behaviorSubjectM11129k0;
+        BehaviorSubject<List<ClaimedOutboundPromotion>> behaviorSubjectM11129k1 = BehaviorSubject.m11129k0();
+        this.claimedPromotionsSubject = behaviorSubjectM11129k1;
         this.shouldCheckClaimedPromos = new AtomicBoolean(true);
-        this.giftPurchaseEventSubject = PublishSubject.k0();
-        this.eventSubject = PublishSubject.k0();
-        this.onGiftCodeResolved = SettingsGiftingViewModel5.INSTANCE;
+        this.giftPurchaseEventSubject = PublishSubject.m11133k0();
+        this.eventSubject = PublishSubject.m11133k0();
+        this.onGiftCodeResolved = SettingsGiftingViewModel$onGiftCodeResolved$1.INSTANCE;
         this.subscriptions = new CompositeSubscription();
         storeEntitlements.fetchMyGiftEntitlements();
         googlePlayBillingManager.queryPurchases();
-        ObservableExtensionsKt.appSubscribe(ObservableExtensionsKt.ui$default(storeGooglePlayPurchases.observeEvents(), this, null, 2, null), (Class<?>) SettingsGiftingViewModel.class, (58 & 2) != 0 ? null : null, (Function1<? super Subscription, Unit>) ((58 & 4) != 0 ? null : null), (Function1<? super Error, Unit>) ((58 & 8) != 0 ? null : null), (Function0<Unit>) ((58 & 16) != 0 ? ObservableExtensionsKt.AnonymousClass1.INSTANCE : null), (Function0<Unit>) ((58 & 32) != 0 ? ObservableExtensionsKt.AnonymousClass2.INSTANCE : null), new AnonymousClass1(this));
-        ObservableExtensionsKt.appSubscribe(ObservableExtensionsKt.ui$default(storeGooglePlayPurchases.observeQueryState(), this, null, 2, null), (Class<?>) SettingsGiftingViewModel.class, (58 & 2) != 0 ? null : null, (Function1<? super Subscription, Unit>) ((58 & 4) != 0 ? null : null), (Function1<? super Error, Unit>) ((58 & 8) != 0 ? null : null), (Function0<Unit>) ((58 & 16) != 0 ? ObservableExtensionsKt.AnonymousClass1.INSTANCE : null), (Function0<Unit>) ((58 & 32) != 0 ? ObservableExtensionsKt.AnonymousClass2.INSTANCE : null), new AnonymousClass2(this));
-        Observable observableU = ObservableExtensionsKt.computationLatest(observable).u(new Action1<StoreState>() { // from class: com.discord.widgets.settings.premium.SettingsGiftingViewModel.3
-            @Override // rx.functions.Action1
+        ObservableExtensionsKt.appSubscribe(ObservableExtensionsKt.ui$default(storeGooglePlayPurchases.observeEvents(), this, null, 2, null), (Class<?>) SettingsGiftingViewModel.class, (58 & 2) != 0 ? null : null, (Function1<? super Subscription, Unit>) ((58 & 4) != 0 ? null : null), (Function1<? super Error, Unit>) ((58 & 8) != 0 ? null : null), (Function0<Unit>) ((58 & 16) != 0 ? ObservableExtensionsKt.C68791.INSTANCE : null), (Function0<Unit>) ((58 & 32) != 0 ? ObservableExtensionsKt.C68802.INSTANCE : null), new C98731(this));
+        ObservableExtensionsKt.appSubscribe(ObservableExtensionsKt.ui$default(storeGooglePlayPurchases.observeQueryState(), this, null, 2, null), (Class<?>) SettingsGiftingViewModel.class, (58 & 2) != 0 ? null : null, (Function1<? super Subscription, Unit>) ((58 & 4) != 0 ? null : null), (Function1<? super Error, Unit>) ((58 & 8) != 0 ? null : null), (Function0<Unit>) ((58 & 16) != 0 ? ObservableExtensionsKt.C68791.INSTANCE : null), (Function0<Unit>) ((58 & 32) != 0 ? ObservableExtensionsKt.C68802.INSTANCE : null), new C98742(this));
+        Observable observableM11115u = ObservableExtensionsKt.computationLatest(observable).m11115u(new Action1<StoreState>() { // from class: com.discord.widgets.settings.premium.SettingsGiftingViewModel.3
+            @Override // p658rx.functions.Action1
             public final void call(StoreState storeState) {
                 SettingsGiftingViewModel.this.maybeCheckClaimedPromos(storeState.isUserPremium());
             }
         });
-        Intrinsics3.checkNotNullExpressionValue(observableU, "storeObservable\n        …oreState.isUserPremium) }");
-        ObservableExtensionsKt.appSubscribe(observableU, (Class<?>) SettingsGiftingViewModel.class, (58 & 2) != 0 ? null : null, (Function1<? super Subscription, Unit>) ((58 & 4) != 0 ? null : null), (Function1<? super Error, Unit>) ((58 & 8) != 0 ? null : null), (Function0<Unit>) ((58 & 16) != 0 ? ObservableExtensionsKt.AnonymousClass1.INSTANCE : null), (Function0<Unit>) ((58 & 32) != 0 ? ObservableExtensionsKt.AnonymousClass2.INSTANCE : null), new AnonymousClass4(behaviorSubjectK0));
-        Intrinsics3.checkNotNullExpressionValue(behaviorSubjectK0, "storeStateSubject");
-        Observable observableComputationLatest = ObservableExtensionsKt.computationLatest(behaviorSubjectK0);
-        Intrinsics3.checkNotNullExpressionValue(behaviorSubjectK1, "claimedPromotionsSubject");
-        Observable observableComputationLatest2 = ObservableExtensionsKt.computationLatest(behaviorSubjectK1);
-        final AnonymousClass5 anonymousClass5 = new AnonymousClass5(this);
-        Observable observableR = Observable.j(observableComputationLatest, observableComputationLatest2, new Func2() { // from class: com.discord.widgets.settings.premium.SettingsGiftingViewModel$sam$rx_functions_Func2$0
-            @Override // rx.functions.Func2
+        C12238m.checkNotNullExpressionValue(observableM11115u, "storeObservable\n        …oreState.isUserPremium) }");
+        ObservableExtensionsKt.appSubscribe(observableM11115u, (Class<?>) SettingsGiftingViewModel.class, (58 & 2) != 0 ? null : null, (Function1<? super Subscription, Unit>) ((58 & 4) != 0 ? null : null), (Function1<? super Error, Unit>) ((58 & 8) != 0 ? null : null), (Function0<Unit>) ((58 & 16) != 0 ? ObservableExtensionsKt.C68791.INSTANCE : null), (Function0<Unit>) ((58 & 32) != 0 ? ObservableExtensionsKt.C68802.INSTANCE : null), new C98764(behaviorSubjectM11129k0));
+        C12238m.checkNotNullExpressionValue(behaviorSubjectM11129k0, "storeStateSubject");
+        Observable observableComputationLatest = ObservableExtensionsKt.computationLatest(behaviorSubjectM11129k0);
+        C12238m.checkNotNullExpressionValue(behaviorSubjectM11129k1, "claimedPromotionsSubject");
+        Observable observableComputationLatest2 = ObservableExtensionsKt.computationLatest(behaviorSubjectM11129k1);
+        final C98775 c98775 = new C98775(this);
+        Observable observableM11112r = Observable.m11076j(observableComputationLatest, observableComputationLatest2, new Func2() { // from class: com.discord.widgets.settings.premium.SettingsGiftingViewModel$sam$rx_functions_Func2$0
+            @Override // p658rx.functions.Func2
             public final /* synthetic */ Object call(Object obj, Object obj2) {
-                return anonymousClass5.invoke(obj, obj2);
+                return c98775.invoke(obj, obj2);
             }
-        }).r();
-        Intrinsics3.checkNotNullExpressionValue(observableR, "Observable.combineLatest…  .distinctUntilChanged()");
-        ObservableExtensionsKt.appSubscribe(ObservableExtensionsKt.ui$default(observableR, this, null, 2, null), (Class<?>) SettingsGiftingViewModel.class, (58 & 2) != 0 ? null : null, (Function1<? super Subscription, Unit>) ((58 & 4) != 0 ? null : null), (Function1<? super Error, Unit>) ((58 & 8) != 0 ? null : null), (Function0<Unit>) ((58 & 16) != 0 ? ObservableExtensionsKt.AnonymousClass1.INSTANCE : null), (Function0<Unit>) ((58 & 32) != 0 ? ObservableExtensionsKt.AnonymousClass2.INSTANCE : null), new AnonymousClass6(this));
+        }).m11112r();
+        C12238m.checkNotNullExpressionValue(observableM11112r, "Observable.combineLatest…  .distinctUntilChanged()");
+        ObservableExtensionsKt.appSubscribe(ObservableExtensionsKt.ui$default(observableM11112r, this, null, 2, null), (Class<?>) SettingsGiftingViewModel.class, (58 & 2) != 0 ? null : null, (Function1<? super Subscription, Unit>) ((58 & 4) != 0 ? null : null), (Function1<? super Error, Unit>) ((58 & 8) != 0 ? null : null), (Function0<Unit>) ((58 & 16) != 0 ? ObservableExtensionsKt.C68791.INSTANCE : null), (Function0<Unit>) ((58 & 32) != 0 ? ObservableExtensionsKt.C68802.INSTANCE : null), new C98786(this));
     }
 }

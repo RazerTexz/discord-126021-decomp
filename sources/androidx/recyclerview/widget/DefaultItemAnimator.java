@@ -9,10 +9,10 @@ import android.view.ViewPropertyAnimator;
 import androidx.annotation.NonNull;
 import androidx.core.view.ViewCompat;
 import androidx.recyclerview.widget.RecyclerView;
-import b.d.b.a.outline;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
+import p007b.p100d.p104b.p105a.C1643a;
 
 /* JADX INFO: loaded from: classes.dex */
 public class DefaultItemAnimator extends SimpleItemAnimator {
@@ -531,18 +531,18 @@ public class DefaultItemAnimator extends SimpleItemAnimator {
         }
 
         public String toString() {
-            StringBuilder sbU = outline.U("ChangeInfo{oldHolder=");
-            sbU.append(this.oldHolder);
-            sbU.append(", newHolder=");
-            sbU.append(this.newHolder);
-            sbU.append(", fromX=");
-            sbU.append(this.fromX);
-            sbU.append(", fromY=");
-            sbU.append(this.fromY);
-            sbU.append(", toX=");
-            sbU.append(this.toX);
-            sbU.append(", toY=");
-            return outline.A(sbU, this.toY, '}');
+            StringBuilder sbM833U = C1643a.m833U("ChangeInfo{oldHolder=");
+            sbM833U.append(this.oldHolder);
+            sbM833U.append(", newHolder=");
+            sbM833U.append(this.newHolder);
+            sbM833U.append(", fromX=");
+            sbM833U.append(this.fromX);
+            sbM833U.append(", fromY=");
+            sbM833U.append(this.fromY);
+            sbM833U.append(", toX=");
+            sbM833U.append(this.toX);
+            sbM833U.append(", toY=");
+            return C1643a.m813A(sbM833U, this.toY, '}');
         }
 
         public ChangeInfo(RecyclerView.ViewHolder viewHolder, RecyclerView.ViewHolder viewHolder2, int i, int i2, int i3, int i4) {

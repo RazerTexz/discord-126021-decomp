@@ -3,14 +3,14 @@ package com.hammerandchisel.libdiscord;
 import android.content.Context;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import co.discord.media_engine.AudioInputDeviceDescription;
+import co.discord.media_engine.AudioOutputDeviceDescription;
 import co.discord.media_engine.CameraEnumeratorProvider;
 import co.discord.media_engine.Connection;
-import co.discord.media_engine.DeviceDescription;
-import co.discord.media_engine.DeviceDescription2;
-import co.discord.media_engine.DeviceDescription4;
 import co.discord.media_engine.RtcRegion;
 import co.discord.media_engine.SharedEglBaseContext;
 import co.discord.media_engine.StreamParameters;
+import co.discord.media_engine.VideoInputDeviceDescription;
 import org.webrtc.EglBase;
 import org.webrtc.VideoFrame;
 
@@ -60,11 +60,11 @@ public class Discord {
     }
 
     public interface GetAudioInputDevicesCallback {
-        void onDevices(@NonNull DeviceDescription[] deviceDescriptionArr);
+        void onDevices(@NonNull AudioInputDeviceDescription[] audioInputDeviceDescriptionArr);
     }
 
     public interface GetAudioOutputDevicesCallback {
-        void onDevices(@NonNull DeviceDescription2[] deviceDescription2Arr);
+        void onDevices(@NonNull AudioOutputDeviceDescription[] audioOutputDeviceDescriptionArr);
     }
 
     public interface GetAudioSubsystemCallback {
@@ -80,7 +80,7 @@ public class Discord {
     }
 
     public interface GetVideoInputDevicesCallback {
-        void onDevices(@NonNull DeviceDescription4[] deviceDescription4Arr);
+        void onDevices(@NonNull VideoInputDeviceDescription[] videoInputDeviceDescriptionArr);
     }
 
     public interface LocalVoiceLevelChangedCallback {
@@ -105,7 +105,7 @@ public class Discord {
 
     public Discord(@NonNull Context context, int i) {
         this.context = context;
-        krispVersion = context.getString(R.string.krisp_model_version);
+        krispVersion = context.getString(C11150R.string.krisp_model_version);
         CameraEnumeratorProvider.maybeInit(this.context);
         this.nativeInstance = nativeConstructor(context, SharedEglBaseContext.getEglContext(), i);
     }

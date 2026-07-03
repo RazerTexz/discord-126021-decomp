@@ -35,7 +35,7 @@ public class JavacJavaUtilSetSingularizer extends JavacJavaUtilListSetSingulariz
 
     @Override // lombok.javac.handlers.JavacSingularsRecipes.JavacSingularizer
     public LombokImmutableList<String> getSupportedTypes() {
-        return LombokImmutableList.of("java.util.Set", "java.util.SortedSet", "java.util.NavigableSet");
+        return LombokImmutableList.m10921of("java.util.Set", "java.util.SortedSet", "java.util.NavigableSet");
     }
 
     @Override // lombok.javac.handlers.JavacSingularsRecipes.JavacSingularizer

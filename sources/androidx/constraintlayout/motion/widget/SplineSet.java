@@ -5,12 +5,12 @@ import android.util.SparseArray;
 import android.view.View;
 import androidx.constraintlayout.motion.utils.CurveFit;
 import androidx.constraintlayout.widget.ConstraintAttribute;
-import b.d.b.a.outline;
 import java.lang.reflect.Array;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import java.text.DecimalFormat;
 import java.util.Arrays;
+import p007b.p100d.p104b.p105a.C1643a;
 
 /* JADX INFO: loaded from: classes.dex */
 public abstract class SplineSet {
@@ -361,12 +361,12 @@ public abstract class SplineSet {
         String string = this.mType;
         DecimalFormat decimalFormat = new DecimalFormat("##.##");
         for (int i = 0; i < this.count; i++) {
-            StringBuilder sbX = outline.X(string, "[");
-            sbX.append(this.mTimePoints[i]);
-            sbX.append(" , ");
-            sbX.append(decimalFormat.format(this.mValues[i]));
-            sbX.append("] ");
-            string = sbX.toString();
+            StringBuilder sbM836X = C1643a.m836X(string, "[");
+            sbM836X.append(this.mTimePoints[i]);
+            sbM836X.append(" , ");
+            sbM836X.append(decimalFormat.format(this.mValues[i]));
+            sbM836X.append("] ");
+            string = sbM836X.toString();
         }
         return string;
     }

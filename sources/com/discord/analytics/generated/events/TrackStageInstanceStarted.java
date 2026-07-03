@@ -1,19 +1,19 @@
 package com.discord.analytics.generated.events;
 
-import b.d.b.a.outline;
 import com.discord.analytics.generated.traits.TrackBase;
-import com.discord.analytics.generated.traits.TrackBase2;
+import com.discord.analytics.generated.traits.TrackBaseReceiver;
 import com.discord.analytics.generated.traits.TrackChannel;
-import com.discord.analytics.generated.traits.TrackChannel2;
+import com.discord.analytics.generated.traits.TrackChannelReceiver;
 import com.discord.analytics.generated.traits.TrackGuild;
-import com.discord.analytics.generated.traits.TrackGuild2;
+import com.discord.analytics.generated.traits.TrackGuildReceiver;
 import com.discord.api.science.AnalyticsSchema;
 import com.discord.models.domain.ModelAuditLogEntry;
-import d0.z.d.Intrinsics3;
+import p007b.p100d.p104b.p105a.C1643a;
+import p507d0.p592z.p594d.C12238m;
 
 /* JADX INFO: compiled from: TrackStageInstanceStarted.kt */
 /* JADX INFO: loaded from: classes.dex */
-public final /* data */ class TrackStageInstanceStarted implements AnalyticsSchema, TrackBase2, TrackGuild2, TrackChannel2 {
+public final /* data */ class TrackStageInstanceStarted implements AnalyticsSchema, TrackBaseReceiver, TrackGuildReceiver, TrackChannelReceiver {
     private TrackBase trackBase;
     private TrackChannel trackChannel;
     private TrackGuild trackGuild;
@@ -30,14 +30,15 @@ public final /* data */ class TrackStageInstanceStarted implements AnalyticsSche
     private final Boolean sendStartNotification = null;
     private final transient String analyticsSchemaTypeName = "stage_instance_started";
 
-    @Override // com.discord.analytics.generated.traits.TrackGuild2
+    @Override // com.discord.analytics.generated.traits.TrackGuildReceiver
     /* JADX INFO: renamed from: a, reason: from getter */
     public TrackGuild getTrackGuild() {
         return this.trackGuild;
     }
 
-    @Override // com.discord.analytics.generated.traits.TrackGuild2
-    public void c(TrackGuild trackGuild) {
+    @Override // com.discord.analytics.generated.traits.TrackGuildReceiver
+    /* JADX INFO: renamed from: c */
+    public void mo7508c(TrackGuild trackGuild) {
         this.trackGuild = trackGuild;
     }
 
@@ -55,7 +56,7 @@ public final /* data */ class TrackStageInstanceStarted implements AnalyticsSche
             return false;
         }
         TrackStageInstanceStarted trackStageInstanceStarted = (TrackStageInstanceStarted) other;
-        return Intrinsics3.areEqual(this.stageInstanceId, trackStageInstanceStarted.stageInstanceId) && Intrinsics3.areEqual(this.topic, trackStageInstanceStarted.topic) && Intrinsics3.areEqual(this.privacyLevel, trackStageInstanceStarted.privacyLevel) && Intrinsics3.areEqual(this.numParticipants, trackStageInstanceStarted.numParticipants) && Intrinsics3.areEqual(this.updaterId, trackStageInstanceStarted.updaterId) && Intrinsics3.areEqual(this.guildScheduledEventId, trackStageInstanceStarted.guildScheduledEventId) && Intrinsics3.areEqual(this.totalUniqueListeners, trackStageInstanceStarted.totalUniqueListeners) && Intrinsics3.areEqual(this.maxConcurrentListeners, trackStageInstanceStarted.maxConcurrentListeners) && Intrinsics3.areEqual(this.totalUniqueSpeakers, trackStageInstanceStarted.totalUniqueSpeakers) && Intrinsics3.areEqual(this.maxConcurrentSpeakers, trackStageInstanceStarted.maxConcurrentSpeakers) && Intrinsics3.areEqual(this.sendStartNotification, trackStageInstanceStarted.sendStartNotification);
+        return C12238m.areEqual(this.stageInstanceId, trackStageInstanceStarted.stageInstanceId) && C12238m.areEqual(this.topic, trackStageInstanceStarted.topic) && C12238m.areEqual(this.privacyLevel, trackStageInstanceStarted.privacyLevel) && C12238m.areEqual(this.numParticipants, trackStageInstanceStarted.numParticipants) && C12238m.areEqual(this.updaterId, trackStageInstanceStarted.updaterId) && C12238m.areEqual(this.guildScheduledEventId, trackStageInstanceStarted.guildScheduledEventId) && C12238m.areEqual(this.totalUniqueListeners, trackStageInstanceStarted.totalUniqueListeners) && C12238m.areEqual(this.maxConcurrentListeners, trackStageInstanceStarted.maxConcurrentListeners) && C12238m.areEqual(this.totalUniqueSpeakers, trackStageInstanceStarted.totalUniqueSpeakers) && C12238m.areEqual(this.maxConcurrentSpeakers, trackStageInstanceStarted.maxConcurrentSpeakers) && C12238m.areEqual(this.sendStartNotification, trackStageInstanceStarted.sendStartNotification);
     }
 
     public int hashCode() {
@@ -84,27 +85,27 @@ public final /* data */ class TrackStageInstanceStarted implements AnalyticsSche
     }
 
     public String toString() {
-        StringBuilder sbU = outline.U("TrackStageInstanceStarted(stageInstanceId=");
-        sbU.append(this.stageInstanceId);
-        sbU.append(", topic=");
-        sbU.append(this.topic);
-        sbU.append(", privacyLevel=");
-        sbU.append(this.privacyLevel);
-        sbU.append(", numParticipants=");
-        sbU.append(this.numParticipants);
-        sbU.append(", updaterId=");
-        sbU.append(this.updaterId);
-        sbU.append(", guildScheduledEventId=");
-        sbU.append(this.guildScheduledEventId);
-        sbU.append(", totalUniqueListeners=");
-        sbU.append(this.totalUniqueListeners);
-        sbU.append(", maxConcurrentListeners=");
-        sbU.append(this.maxConcurrentListeners);
-        sbU.append(", totalUniqueSpeakers=");
-        sbU.append(this.totalUniqueSpeakers);
-        sbU.append(", maxConcurrentSpeakers=");
-        sbU.append(this.maxConcurrentSpeakers);
-        sbU.append(", sendStartNotification=");
-        return outline.D(sbU, this.sendStartNotification, ")");
+        StringBuilder sbM833U = C1643a.m833U("TrackStageInstanceStarted(stageInstanceId=");
+        sbM833U.append(this.stageInstanceId);
+        sbM833U.append(", topic=");
+        sbM833U.append(this.topic);
+        sbM833U.append(", privacyLevel=");
+        sbM833U.append(this.privacyLevel);
+        sbM833U.append(", numParticipants=");
+        sbM833U.append(this.numParticipants);
+        sbM833U.append(", updaterId=");
+        sbM833U.append(this.updaterId);
+        sbM833U.append(", guildScheduledEventId=");
+        sbM833U.append(this.guildScheduledEventId);
+        sbM833U.append(", totalUniqueListeners=");
+        sbM833U.append(this.totalUniqueListeners);
+        sbM833U.append(", maxConcurrentListeners=");
+        sbM833U.append(this.maxConcurrentListeners);
+        sbM833U.append(", totalUniqueSpeakers=");
+        sbM833U.append(this.totalUniqueSpeakers);
+        sbM833U.append(", maxConcurrentSpeakers=");
+        sbM833U.append(this.maxConcurrentSpeakers);
+        sbM833U.append(", sendStartNotification=");
+        return C1643a.m816D(sbM833U, this.sendStartNotification, ")");
     }
 }

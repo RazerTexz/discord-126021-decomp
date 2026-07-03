@@ -9,7 +9,7 @@ import androidx.annotation.UiThread;
 import androidx.annotation.WorkerThread;
 import androidx.recyclerview.widget.ThreadUtil;
 import androidx.recyclerview.widget.TileList;
-import b.d.b.a.outline;
+import p007b.p100d.p104b.p105a.C1643a;
 
 /* JADX INFO: loaded from: classes.dex */
 public class AsyncListUtil<T> {
@@ -100,9 +100,9 @@ public class AsyncListUtil<T> {
                 }
                 TileList.Tile<T> tileAddOrReplace = AsyncListUtil.this.mTileList.addOrReplace(tile);
                 if (tileAddOrReplace != null) {
-                    StringBuilder sbU = outline.U("duplicate tile @");
-                    sbU.append(tileAddOrReplace.mStartPosition);
-                    Log.e(AsyncListUtil.TAG, sbU.toString());
+                    StringBuilder sbM833U = C1643a.m833U("duplicate tile @");
+                    sbM833U.append(tileAddOrReplace.mStartPosition);
+                    Log.e(AsyncListUtil.TAG, sbM833U.toString());
                     AsyncListUtil.this.mBackgroundProxy.recycleTile(tileAddOrReplace);
                 }
                 int i3 = tile.mStartPosition + tile.mItemCount;
@@ -201,9 +201,9 @@ public class AsyncListUtil<T> {
             }
 
             private void log(String str, Object... objArr) {
-                StringBuilder sbU = outline.U("[BKGR] ");
-                sbU.append(String.format(str, objArr));
-                Log.d(AsyncListUtil.TAG, sbU.toString());
+                StringBuilder sbM833U = C1643a.m833U("[BKGR] ");
+                sbM833U.append(String.format(str, objArr));
+                Log.d(AsyncListUtil.TAG, sbM833U.toString());
             }
 
             private void removeTile(int i2) {
@@ -301,9 +301,9 @@ public class AsyncListUtil<T> {
     }
 
     public void log(String str, Object... objArr) {
-        StringBuilder sbU = outline.U("[MAIN] ");
-        sbU.append(String.format(str, objArr));
-        Log.d(TAG, sbU.toString());
+        StringBuilder sbM833U = C1643a.m833U("[MAIN] ");
+        sbM833U.append(String.format(str, objArr));
+        Log.d(TAG, sbM833U.toString());
     }
 
     public void onRangeChanged() {

@@ -39,17 +39,7 @@ import androidx.annotation.StyleRes;
 import androidx.core.util.Preconditions;
 import androidx.core.view.InputDeviceCompat;
 import androidx.core.view.ViewCompat;
-import b.d.b.a.outline;
-import b.i.a.g.l.l.FadeModeEvaluator2;
-import b.i.a.g.l.l.FadeModeEvaluators2;
-import b.i.a.g.l.l.FadeModeResult2;
-import b.i.a.g.l.l.FitModeEvaluator2;
-import b.i.a.g.l.l.FitModeEvaluators2;
-import b.i.a.g.l.l.FitModeResult2;
-import b.i.a.g.l.l.MaskEvaluator2;
-import b.i.a.g.l.l.TransitionListenerAdapter3;
-import b.i.a.g.l.l.TransitionUtils4;
-import b.i.a.g.l.l.TransitionUtils5;
+import com.google.android.material.C10817R;
 import com.google.android.material.animation.AnimationUtils;
 import com.google.android.material.internal.ViewUtils;
 import com.google.android.material.shape.AbsoluteCornerSize;
@@ -59,6 +49,17 @@ import com.google.android.material.shape.Shapeable;
 import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
 import java.util.Objects;
+import p007b.p100d.p104b.p105a.C1643a;
+import p007b.p225i.p226a.p341g.p353l.p354l.AbstractC4478i;
+import p007b.p225i.p226a.p341g.p353l.p354l.C4471b;
+import p007b.p225i.p226a.p341g.p353l.p354l.C4472c;
+import p007b.p225i.p226a.p341g.p353l.p354l.C4474e;
+import p007b.p225i.p226a.p341g.p353l.p354l.C4475f;
+import p007b.p225i.p226a.p341g.p353l.p354l.C4476g;
+import p007b.p225i.p226a.p341g.p353l.p354l.C4479j;
+import p007b.p225i.p226a.p341g.p353l.p354l.C4480k;
+import p007b.p225i.p226a.p341g.p353l.p354l.InterfaceC4470a;
+import p007b.p225i.p226a.p341g.p353l.p354l.InterfaceC4473d;
 
 /* JADX INFO: loaded from: classes3.dex */
 @RequiresApi(21)
@@ -105,10 +106,10 @@ public final class MaterialContainerTransform extends Transition {
     private static final String PROP_BOUNDS = "materialContainerTransition:bounds";
     private static final String PROP_SHAPE_APPEARANCE = "materialContainerTransition:shapeAppearance";
     private static final String[] TRANSITION_PROPS = {PROP_BOUNDS, PROP_SHAPE_APPEARANCE};
-    private static final c DEFAULT_ENTER_THRESHOLDS = new c(new ProgressThresholds(0.0f, 0.25f), new ProgressThresholds(0.0f, 1.0f), new ProgressThresholds(0.0f, 1.0f), new ProgressThresholds(0.0f, 0.75f), null);
-    private static final c DEFAULT_RETURN_THRESHOLDS = new c(new ProgressThresholds(0.6f, 0.9f), new ProgressThresholds(0.0f, 1.0f), new ProgressThresholds(0.0f, 0.9f), new ProgressThresholds(0.3f, 0.9f), null);
-    private static final c DEFAULT_ENTER_THRESHOLDS_ARC = new c(new ProgressThresholds(0.1f, 0.4f), new ProgressThresholds(0.1f, 1.0f), new ProgressThresholds(0.1f, 1.0f), new ProgressThresholds(0.1f, 0.9f), null);
-    private static final c DEFAULT_RETURN_THRESHOLDS_ARC = new c(new ProgressThresholds(0.6f, 0.9f), new ProgressThresholds(0.0f, 0.9f), new ProgressThresholds(0.0f, 0.9f), new ProgressThresholds(0.2f, 0.9f), null);
+    private static final C11057c DEFAULT_ENTER_THRESHOLDS = new C11057c(new ProgressThresholds(0.0f, 0.25f), new ProgressThresholds(0.0f, 1.0f), new ProgressThresholds(0.0f, 1.0f), new ProgressThresholds(0.0f, 0.75f), null);
+    private static final C11057c DEFAULT_RETURN_THRESHOLDS = new C11057c(new ProgressThresholds(0.6f, 0.9f), new ProgressThresholds(0.0f, 1.0f), new ProgressThresholds(0.0f, 0.9f), new ProgressThresholds(0.3f, 0.9f), null);
+    private static final C11057c DEFAULT_ENTER_THRESHOLDS_ARC = new C11057c(new ProgressThresholds(0.1f, 0.4f), new ProgressThresholds(0.1f, 1.0f), new ProgressThresholds(0.1f, 1.0f), new ProgressThresholds(0.1f, 0.9f), null);
+    private static final C11057c DEFAULT_RETURN_THRESHOLDS_ARC = new C11057c(new ProgressThresholds(0.6f, 0.9f), new ProgressThresholds(0.0f, 0.9f), new ProgressThresholds(0.0f, 0.9f), new ProgressThresholds(0.2f, 0.9f), null);
     private boolean drawDebugEnabled = false;
     private boolean holdAtEndEnabled = false;
 
@@ -148,23 +149,23 @@ public final class MaterialContainerTransform extends Transition {
 
     public static class ProgressThresholds {
 
-        @FloatRange(from = 0.0d, to = 1.0d)
+        @FloatRange(from = 0.0d, m75to = 1.0d)
         private final float end;
 
-        @FloatRange(from = 0.0d, to = 1.0d)
+        @FloatRange(from = 0.0d, m75to = 1.0d)
         private final float start;
 
-        public ProgressThresholds(@FloatRange(from = 0.0d, to = 1.0d) float f, @FloatRange(from = 0.0d, to = 1.0d) float f2) {
+        public ProgressThresholds(@FloatRange(from = 0.0d, m75to = 1.0d) float f, @FloatRange(from = 0.0d, m75to = 1.0d) float f2) {
             this.start = f;
             this.end = f2;
         }
 
-        @FloatRange(from = 0.0d, to = 1.0d)
+        @FloatRange(from = 0.0d, m75to = 1.0d)
         public float getEnd() {
             return this.end;
         }
 
-        @FloatRange(from = 0.0d, to = 1.0d)
+        @FloatRange(from = 0.0d, m75to = 1.0d)
         public float getStart() {
             return this.start;
         }
@@ -175,186 +176,271 @@ public final class MaterialContainerTransform extends Transition {
     public @interface TransitionDirection {
     }
 
-    public class a implements ValueAnimator.AnimatorUpdateListener {
-        public final /* synthetic */ d a;
+    /* JADX INFO: renamed from: com.google.android.material.transition.platform.MaterialContainerTransform$a */
+    public class C11055a implements ValueAnimator.AnimatorUpdateListener {
 
-        public a(MaterialContainerTransform materialContainerTransform, d dVar) {
-            this.a = dVar;
+        /* JADX INFO: renamed from: a */
+        public final /* synthetic */ C11058d f21340a;
+
+        public C11055a(MaterialContainerTransform materialContainerTransform, C11058d c11058d) {
+            this.f21340a = c11058d;
         }
 
         @Override // android.animation.ValueAnimator.AnimatorUpdateListener
         public void onAnimationUpdate(ValueAnimator valueAnimator) {
-            d dVar = this.a;
+            C11058d c11058d = this.f21340a;
             float animatedFraction = valueAnimator.getAnimatedFraction();
-            if (dVar.L != animatedFraction) {
-                dVar.e(animatedFraction);
+            if (c11058d.f21361L != animatedFraction) {
+                c11058d.m9174e(animatedFraction);
             }
         }
     }
 
-    public class b extends TransitionListenerAdapter3 {
-        public final /* synthetic */ View a;
+    /* JADX INFO: renamed from: com.google.android.material.transition.platform.MaterialContainerTransform$b */
+    public class C11056b extends AbstractC4478i {
 
-        /* JADX INFO: renamed from: b, reason: collision with root package name */
-        public final /* synthetic */ d f3099b;
-        public final /* synthetic */ View c;
-        public final /* synthetic */ View d;
+        /* JADX INFO: renamed from: a */
+        public final /* synthetic */ View f21341a;
 
-        public b(View view, d dVar, View view2, View view3) {
-            this.a = view;
-            this.f3099b = dVar;
-            this.c = view2;
-            this.d = view3;
+        /* JADX INFO: renamed from: b */
+        public final /* synthetic */ C11058d f21342b;
+
+        /* JADX INFO: renamed from: c */
+        public final /* synthetic */ View f21343c;
+
+        /* JADX INFO: renamed from: d */
+        public final /* synthetic */ View f21344d;
+
+        public C11056b(View view, C11058d c11058d, View view2, View view3) {
+            this.f21341a = view;
+            this.f21342b = c11058d;
+            this.f21343c = view2;
+            this.f21344d = view3;
         }
 
-        @Override // b.i.a.g.l.l.TransitionListenerAdapter3, android.transition.Transition.TransitionListener
+        @Override // p007b.p225i.p226a.p341g.p353l.p354l.AbstractC4478i, android.transition.Transition.TransitionListener
         public void onTransitionEnd(@NonNull Transition transition) {
             MaterialContainerTransform.this.removeListener(this);
             if (MaterialContainerTransform.this.holdAtEndEnabled) {
                 return;
             }
-            this.c.setAlpha(1.0f);
-            this.d.setAlpha(1.0f);
-            ViewUtils.getOverlay(this.a).remove(this.f3099b);
+            this.f21343c.setAlpha(1.0f);
+            this.f21344d.setAlpha(1.0f);
+            ViewUtils.getOverlay(this.f21341a).remove(this.f21342b);
         }
 
-        @Override // b.i.a.g.l.l.TransitionListenerAdapter3, android.transition.Transition.TransitionListener
+        @Override // p007b.p225i.p226a.p341g.p353l.p354l.AbstractC4478i, android.transition.Transition.TransitionListener
         public void onTransitionStart(@NonNull Transition transition) {
-            ViewUtils.getOverlay(this.a).add(this.f3099b);
-            this.c.setAlpha(0.0f);
-            this.d.setAlpha(0.0f);
+            ViewUtils.getOverlay(this.f21341a).add(this.f21342b);
+            this.f21343c.setAlpha(0.0f);
+            this.f21344d.setAlpha(0.0f);
         }
     }
 
-    public static class c {
+    /* JADX INFO: renamed from: com.google.android.material.transition.platform.MaterialContainerTransform$c */
+    public static class C11057c {
 
+        /* JADX INFO: renamed from: a */
         @NonNull
-        public final ProgressThresholds a;
+        public final ProgressThresholds f21346a;
 
-        /* JADX INFO: renamed from: b, reason: collision with root package name */
+        /* JADX INFO: renamed from: b */
         @NonNull
-        public final ProgressThresholds f3100b;
+        public final ProgressThresholds f21347b;
 
+        /* JADX INFO: renamed from: c */
         @NonNull
-        public final ProgressThresholds c;
+        public final ProgressThresholds f21348c;
 
+        /* JADX INFO: renamed from: d */
         @NonNull
-        public final ProgressThresholds d;
+        public final ProgressThresholds f21349d;
 
-        public c(ProgressThresholds progressThresholds, ProgressThresholds progressThresholds2, ProgressThresholds progressThresholds3, ProgressThresholds progressThresholds4, a aVar) {
-            this.a = progressThresholds;
-            this.f3100b = progressThresholds2;
-            this.c = progressThresholds3;
-            this.d = progressThresholds4;
+        public C11057c(ProgressThresholds progressThresholds, ProgressThresholds progressThresholds2, ProgressThresholds progressThresholds3, ProgressThresholds progressThresholds4, C11055a c11055a) {
+            this.f21346a = progressThresholds;
+            this.f21347b = progressThresholds2;
+            this.f21348c = progressThresholds3;
+            this.f21349d = progressThresholds4;
         }
     }
 
-    public static final class d extends Drawable {
-        public final c A;
-        public final FadeModeEvaluator2 B;
-        public final FitModeEvaluator2 C;
-        public final boolean D;
-        public final Paint E;
-        public final Path F;
-        public FadeModeResult2 G;
-        public FitModeResult2 H;
-        public RectF I;
-        public float J;
-        public float K;
-        public float L;
-        public final View a;
+    /* JADX INFO: renamed from: com.google.android.material.transition.platform.MaterialContainerTransform$d */
+    public static final class C11058d extends Drawable {
 
-        /* JADX INFO: renamed from: b, reason: collision with root package name */
-        public final RectF f3101b;
-        public final ShapeAppearanceModel c;
-        public final float d;
-        public final View e;
-        public final RectF f;
-        public final ShapeAppearanceModel g;
-        public final float h;
-        public final Paint i;
-        public final Paint j;
-        public final Paint k;
-        public final Paint l;
-        public final Paint m;
-        public final MaskEvaluator2 n;
-        public final PathMeasure o;
-        public final float p;
-        public final float[] q;
-        public final boolean r;
+        /* JADX INFO: renamed from: A */
+        public final C11057c f21350A;
 
-        /* JADX INFO: renamed from: s, reason: collision with root package name */
-        public final float f3102s;
-        public final float t;
-        public final boolean u;
-        public final MaterialShapeDrawable v;
-        public final RectF w;
+        /* JADX INFO: renamed from: B */
+        public final InterfaceC4470a f21351B;
 
-        /* JADX INFO: renamed from: x, reason: collision with root package name */
-        public final RectF f3103x;
+        /* JADX INFO: renamed from: C */
+        public final InterfaceC4473d f21352C;
 
-        /* JADX INFO: renamed from: y, reason: collision with root package name */
-        public final RectF f3104y;
+        /* JADX INFO: renamed from: D */
+        public final boolean f21353D;
 
-        /* JADX INFO: renamed from: z, reason: collision with root package name */
-        public final RectF f3105z;
+        /* JADX INFO: renamed from: E */
+        public final Paint f21354E;
 
-        public class a implements TransitionUtils5.a {
+        /* JADX INFO: renamed from: F */
+        public final Path f21355F;
+
+        /* JADX INFO: renamed from: G */
+        public C4472c f21356G;
+
+        /* JADX INFO: renamed from: H */
+        public C4475f f21357H;
+
+        /* JADX INFO: renamed from: I */
+        public RectF f21358I;
+
+        /* JADX INFO: renamed from: J */
+        public float f21359J;
+
+        /* JADX INFO: renamed from: K */
+        public float f21360K;
+
+        /* JADX INFO: renamed from: L */
+        public float f21361L;
+
+        /* JADX INFO: renamed from: a */
+        public final View f21362a;
+
+        /* JADX INFO: renamed from: b */
+        public final RectF f21363b;
+
+        /* JADX INFO: renamed from: c */
+        public final ShapeAppearanceModel f21364c;
+
+        /* JADX INFO: renamed from: d */
+        public final float f21365d;
+
+        /* JADX INFO: renamed from: e */
+        public final View f21366e;
+
+        /* JADX INFO: renamed from: f */
+        public final RectF f21367f;
+
+        /* JADX INFO: renamed from: g */
+        public final ShapeAppearanceModel f21368g;
+
+        /* JADX INFO: renamed from: h */
+        public final float f21369h;
+
+        /* JADX INFO: renamed from: i */
+        public final Paint f21370i;
+
+        /* JADX INFO: renamed from: j */
+        public final Paint f21371j;
+
+        /* JADX INFO: renamed from: k */
+        public final Paint f21372k;
+
+        /* JADX INFO: renamed from: l */
+        public final Paint f21373l;
+
+        /* JADX INFO: renamed from: m */
+        public final Paint f21374m;
+
+        /* JADX INFO: renamed from: n */
+        public final C4476g f21375n;
+
+        /* JADX INFO: renamed from: o */
+        public final PathMeasure f21376o;
+
+        /* JADX INFO: renamed from: p */
+        public final float f21377p;
+
+        /* JADX INFO: renamed from: q */
+        public final float[] f21378q;
+
+        /* JADX INFO: renamed from: r */
+        public final boolean f21379r;
+
+        /* JADX INFO: renamed from: s */
+        public final float f21380s;
+
+        /* JADX INFO: renamed from: t */
+        public final float f21381t;
+
+        /* JADX INFO: renamed from: u */
+        public final boolean f21382u;
+
+        /* JADX INFO: renamed from: v */
+        public final MaterialShapeDrawable f21383v;
+
+        /* JADX INFO: renamed from: w */
+        public final RectF f21384w;
+
+        /* JADX INFO: renamed from: x */
+        public final RectF f21385x;
+
+        /* JADX INFO: renamed from: y */
+        public final RectF f21386y;
+
+        /* JADX INFO: renamed from: z */
+        public final RectF f21387z;
+
+        /* JADX INFO: renamed from: com.google.android.material.transition.platform.MaterialContainerTransform$d$a */
+        public class a implements C4480k.a {
             public a() {
             }
 
-            @Override // b.i.a.g.l.l.TransitionUtils5.a
-            public void a(Canvas canvas) {
-                d.this.a.draw(canvas);
+            @Override // p007b.p225i.p226a.p341g.p353l.p354l.C4480k.a
+            /* JADX INFO: renamed from: a */
+            public void mo6208a(Canvas canvas) {
+                C11058d.this.f21362a.draw(canvas);
             }
         }
 
-        public class b implements TransitionUtils5.a {
+        /* JADX INFO: renamed from: com.google.android.material.transition.platform.MaterialContainerTransform$d$b */
+        public class b implements C4480k.a {
             public b() {
             }
 
-            @Override // b.i.a.g.l.l.TransitionUtils5.a
-            public void a(Canvas canvas) {
-                d.this.e.draw(canvas);
+            @Override // p007b.p225i.p226a.p341g.p353l.p354l.C4480k.a
+            /* JADX INFO: renamed from: a */
+            public void mo6208a(Canvas canvas) {
+                C11058d.this.f21366e.draw(canvas);
             }
         }
 
-        public d(PathMotion pathMotion, View view, RectF rectF, ShapeAppearanceModel shapeAppearanceModel, float f, View view2, RectF rectF2, ShapeAppearanceModel shapeAppearanceModel2, float f2, int i, int i2, int i3, int i4, boolean z2, boolean z3, FadeModeEvaluator2 fadeModeEvaluator2, FitModeEvaluator2 fitModeEvaluator2, c cVar, boolean z4, a aVar) {
+        public C11058d(PathMotion pathMotion, View view, RectF rectF, ShapeAppearanceModel shapeAppearanceModel, float f, View view2, RectF rectF2, ShapeAppearanceModel shapeAppearanceModel2, float f2, int i, int i2, int i3, int i4, boolean z2, boolean z3, InterfaceC4470a interfaceC4470a, InterfaceC4473d interfaceC4473d, C11057c c11057c, boolean z4, C11055a c11055a) {
             Paint paint = new Paint();
-            this.i = paint;
+            this.f21370i = paint;
             Paint paint2 = new Paint();
-            this.j = paint2;
+            this.f21371j = paint2;
             Paint paint3 = new Paint();
-            this.k = paint3;
-            this.l = new Paint();
+            this.f21372k = paint3;
+            this.f21373l = new Paint();
             Paint paint4 = new Paint();
-            this.m = paint4;
-            this.n = new MaskEvaluator2();
-            this.q = new float[]{rectF.centerX(), rectF.top};
+            this.f21374m = paint4;
+            this.f21375n = new C4476g();
+            this.f21378q = new float[]{rectF.centerX(), rectF.top};
             MaterialShapeDrawable materialShapeDrawable = new MaterialShapeDrawable();
-            this.v = materialShapeDrawable;
+            this.f21383v = materialShapeDrawable;
             Paint paint5 = new Paint();
-            this.E = paint5;
-            this.F = new Path();
-            this.a = view;
-            this.f3101b = rectF;
-            this.c = shapeAppearanceModel;
-            this.d = f;
-            this.e = view2;
-            this.f = rectF2;
-            this.g = shapeAppearanceModel2;
-            this.h = f2;
-            this.r = z2;
-            this.u = z3;
-            this.B = fadeModeEvaluator2;
-            this.C = fitModeEvaluator2;
-            this.A = cVar;
-            this.D = z4;
+            this.f21354E = paint5;
+            this.f21355F = new Path();
+            this.f21362a = view;
+            this.f21363b = rectF;
+            this.f21364c = shapeAppearanceModel;
+            this.f21365d = f;
+            this.f21366e = view2;
+            this.f21367f = rectF2;
+            this.f21368g = shapeAppearanceModel2;
+            this.f21369h = f2;
+            this.f21379r = z2;
+            this.f21382u = z3;
+            this.f21351B = interfaceC4470a;
+            this.f21352C = interfaceC4473d;
+            this.f21350A = c11057c;
+            this.f21353D = z4;
             WindowManager windowManager = (WindowManager) view.getContext().getSystemService("window");
             DisplayMetrics displayMetrics = new DisplayMetrics();
             windowManager.getDefaultDisplay().getMetrics(displayMetrics);
-            this.f3102s = displayMetrics.widthPixels;
-            this.t = displayMetrics.heightPixels;
+            this.f21380s = displayMetrics.widthPixels;
+            this.f21381t = displayMetrics.heightPixels;
             paint.setColor(i);
             paint2.setColor(i2);
             paint3.setColor(i3);
@@ -363,43 +449,47 @@ public final class MaterialContainerTransform extends Transition {
             materialShapeDrawable.setShadowBitmapDrawingEnable(false);
             materialShapeDrawable.setShadowColor(-7829368);
             RectF rectF3 = new RectF(rectF);
-            this.w = rectF3;
-            this.f3103x = new RectF(rectF3);
+            this.f21384w = rectF3;
+            this.f21385x = new RectF(rectF3);
             RectF rectF4 = new RectF(rectF3);
-            this.f3104y = rectF4;
-            this.f3105z = new RectF(rectF4);
-            PointF pointFC = c(rectF);
-            PointF pointFC2 = c(rectF2);
-            PathMeasure pathMeasure = new PathMeasure(pathMotion.getPath(pointFC.x, pointFC.y, pointFC2.x, pointFC2.y), false);
-            this.o = pathMeasure;
-            this.p = pathMeasure.getLength();
+            this.f21386y = rectF4;
+            this.f21387z = new RectF(rectF4);
+            PointF pointFM9170c = m9170c(rectF);
+            PointF pointFM9170c2 = m9170c(rectF2);
+            PathMeasure pathMeasure = new PathMeasure(pathMotion.getPath(pointFM9170c.x, pointFM9170c.y, pointFM9170c2.x, pointFM9170c2.y), false);
+            this.f21376o = pathMeasure;
+            this.f21377p = pathMeasure.getLength();
             paint4.setStyle(Paint.Style.FILL);
-            RectF rectF5 = TransitionUtils5.a;
+            RectF rectF5 = C4480k.f11937a;
             paint4.setShader(new LinearGradient(0.0f, 0.0f, 0.0f, 0.0f, i4, i4, Shader.TileMode.CLAMP));
             paint5.setStyle(Paint.Style.STROKE);
             paint5.setStrokeWidth(10.0f);
-            e(0.0f);
+            m9174e(0.0f);
         }
 
-        public static PointF c(RectF rectF) {
+        /* JADX INFO: renamed from: c */
+        public static PointF m9170c(RectF rectF) {
             return new PointF(rectF.centerX(), rectF.top);
         }
 
-        public final void a(Canvas canvas) {
-            d(canvas, this.k);
+        /* JADX INFO: renamed from: a */
+        public final void m9171a(Canvas canvas) {
+            m9173d(canvas, this.f21372k);
             Rect bounds = getBounds();
-            RectF rectF = this.f3104y;
-            TransitionUtils5.h(canvas, bounds, rectF.left, rectF.top, this.H.f1639b, this.G.f1637b, new b());
+            RectF rectF = this.f21386y;
+            C4480k.m6207h(canvas, bounds, rectF.left, rectF.top, this.f21357H.f11926b, this.f21356G.f11921b, new b());
         }
 
-        public final void b(Canvas canvas) {
-            d(canvas, this.j);
+        /* JADX INFO: renamed from: b */
+        public final void m9172b(Canvas canvas) {
+            m9173d(canvas, this.f21371j);
             Rect bounds = getBounds();
-            RectF rectF = this.w;
-            TransitionUtils5.h(canvas, bounds, rectF.left, rectF.top, this.H.a, this.G.a, new a());
+            RectF rectF = this.f21384w;
+            C4480k.m6207h(canvas, bounds, rectF.left, rectF.top, this.f21357H.f11925a, this.f21356G.f11920a, new a());
         }
 
-        public final void d(Canvas canvas, Paint paint) {
+        /* JADX INFO: renamed from: d */
+        public final void m9173d(Canvas canvas, Paint paint) {
             if (paint.getColor() == 0 || paint.getAlpha() <= 0) {
                 return;
             }
@@ -408,84 +498,85 @@ public final class MaterialContainerTransform extends Transition {
 
         @Override // android.graphics.drawable.Drawable
         public void draw(@NonNull Canvas canvas) {
-            if (this.m.getAlpha() > 0) {
-                canvas.drawRect(getBounds(), this.m);
+            if (this.f21374m.getAlpha() > 0) {
+                canvas.drawRect(getBounds(), this.f21374m);
             }
-            int iSave = this.D ? canvas.save() : -1;
-            if (this.u && this.J > 0.0f) {
+            int iSave = this.f21353D ? canvas.save() : -1;
+            if (this.f21382u && this.f21359J > 0.0f) {
                 canvas.save();
-                canvas.clipPath(this.n.a, Region.Op.DIFFERENCE);
+                canvas.clipPath(this.f21375n.f11931a, Region.Op.DIFFERENCE);
                 if (Build.VERSION.SDK_INT > 28) {
-                    ShapeAppearanceModel shapeAppearanceModel = this.n.e;
-                    if (shapeAppearanceModel.isRoundRect(this.I)) {
-                        float cornerSize = shapeAppearanceModel.getTopLeftCornerSize().getCornerSize(this.I);
-                        canvas.drawRoundRect(this.I, cornerSize, cornerSize, this.l);
+                    ShapeAppearanceModel shapeAppearanceModel = this.f21375n.f11935e;
+                    if (shapeAppearanceModel.isRoundRect(this.f21358I)) {
+                        float cornerSize = shapeAppearanceModel.getTopLeftCornerSize().getCornerSize(this.f21358I);
+                        canvas.drawRoundRect(this.f21358I, cornerSize, cornerSize, this.f21373l);
                     } else {
-                        canvas.drawPath(this.n.a, this.l);
+                        canvas.drawPath(this.f21375n.f11931a, this.f21373l);
                     }
                 } else {
-                    MaterialShapeDrawable materialShapeDrawable = this.v;
-                    RectF rectF = this.I;
+                    MaterialShapeDrawable materialShapeDrawable = this.f21383v;
+                    RectF rectF = this.f21358I;
                     materialShapeDrawable.setBounds((int) rectF.left, (int) rectF.top, (int) rectF.right, (int) rectF.bottom);
-                    this.v.setElevation(this.J);
-                    this.v.setShadowVerticalOffset((int) this.K);
-                    this.v.setShapeAppearanceModel(this.n.e);
-                    this.v.draw(canvas);
+                    this.f21383v.setElevation(this.f21359J);
+                    this.f21383v.setShadowVerticalOffset((int) this.f21360K);
+                    this.f21383v.setShapeAppearanceModel(this.f21375n.f11935e);
+                    this.f21383v.draw(canvas);
                 }
                 canvas.restore();
             }
-            MaskEvaluator2 maskEvaluator2 = this.n;
+            C4476g c4476g = this.f21375n;
             if (Build.VERSION.SDK_INT >= 23) {
-                canvas.clipPath(maskEvaluator2.a);
+                canvas.clipPath(c4476g.f11931a);
             } else {
-                canvas.clipPath(maskEvaluator2.f1640b);
-                canvas.clipPath(maskEvaluator2.c, Region.Op.UNION);
+                canvas.clipPath(c4476g.f11932b);
+                canvas.clipPath(c4476g.f11933c, Region.Op.UNION);
             }
-            d(canvas, this.i);
-            if (this.G.c) {
-                b(canvas);
-                a(canvas);
+            m9173d(canvas, this.f21370i);
+            if (this.f21356G.f11922c) {
+                m9172b(canvas);
+                m9171a(canvas);
             } else {
-                a(canvas);
-                b(canvas);
+                m9171a(canvas);
+                m9172b(canvas);
             }
-            if (this.D) {
+            if (this.f21353D) {
                 canvas.restoreToCount(iSave);
-                RectF rectF2 = this.w;
-                Path path = this.F;
-                PointF pointFC = c(rectF2);
-                if (this.L == 0.0f) {
+                RectF rectF2 = this.f21384w;
+                Path path = this.f21355F;
+                PointF pointFM9170c = m9170c(rectF2);
+                if (this.f21361L == 0.0f) {
                     path.reset();
-                    path.moveTo(pointFC.x, pointFC.y);
+                    path.moveTo(pointFM9170c.x, pointFM9170c.y);
                 } else {
-                    path.lineTo(pointFC.x, pointFC.y);
-                    this.E.setColor(-65281);
-                    canvas.drawPath(path, this.E);
+                    path.lineTo(pointFM9170c.x, pointFM9170c.y);
+                    this.f21354E.setColor(-65281);
+                    canvas.drawPath(path, this.f21354E);
                 }
-                RectF rectF3 = this.f3103x;
-                this.E.setColor(InputDeviceCompat.SOURCE_ANY);
-                canvas.drawRect(rectF3, this.E);
-                RectF rectF4 = this.w;
-                this.E.setColor(-16711936);
-                canvas.drawRect(rectF4, this.E);
-                RectF rectF5 = this.f3105z;
-                this.E.setColor(-16711681);
-                canvas.drawRect(rectF5, this.E);
-                RectF rectF6 = this.f3104y;
-                this.E.setColor(-16776961);
-                canvas.drawRect(rectF6, this.E);
+                RectF rectF3 = this.f21385x;
+                this.f21354E.setColor(InputDeviceCompat.SOURCE_ANY);
+                canvas.drawRect(rectF3, this.f21354E);
+                RectF rectF4 = this.f21384w;
+                this.f21354E.setColor(-16711936);
+                canvas.drawRect(rectF4, this.f21354E);
+                RectF rectF5 = this.f21387z;
+                this.f21354E.setColor(-16711681);
+                canvas.drawRect(rectF5, this.f21354E);
+                RectF rectF6 = this.f21386y;
+                this.f21354E.setColor(-16776961);
+                canvas.drawRect(rectF6, this.f21354E);
             }
         }
 
-        public final void e(float f) {
+        /* JADX INFO: renamed from: e */
+        public final void m9174e(float f) {
             float f2;
             float f3;
-            this.L = f;
-            this.m.setAlpha((int) (this.r ? TransitionUtils5.d(0.0f, 255.0f, f) : TransitionUtils5.d(255.0f, 0.0f, f)));
-            this.o.getPosTan(this.p * f, this.q, null);
-            float[] fArr = this.q;
-            float fA = fArr[0];
-            float fA2 = fArr[1];
+            this.f21361L = f;
+            this.f21374m.setAlpha((int) (this.f21379r ? C4480k.m6203d(0.0f, 255.0f, f) : C4480k.m6203d(255.0f, 0.0f, f)));
+            this.f21376o.getPosTan(this.f21377p * f, this.f21378q, null);
+            float[] fArr = this.f21378q;
+            float fM839a = fArr[0];
+            float fM839a2 = fArr[1];
             if (f > 1.0f || f < 0.0f) {
                 if (f > 1.0f) {
                     f2 = 0.99f;
@@ -494,73 +585,73 @@ public final class MaterialContainerTransform extends Transition {
                     f2 = 0.01f;
                     f3 = (f / 0.01f) * (-1.0f);
                 }
-                this.o.getPosTan(this.p * f2, fArr, null);
-                float[] fArr2 = this.q;
+                this.f21376o.getPosTan(this.f21377p * f2, fArr, null);
+                float[] fArr2 = this.f21378q;
                 float f4 = fArr2[0];
                 float f5 = fArr2[1];
-                fA = outline.a(fA, f4, f3, fA);
-                fA2 = outline.a(fA2, f5, f3, fA2);
+                fM839a = C1643a.m839a(fM839a, f4, f3, fM839a);
+                fM839a2 = C1643a.m839a(fM839a2, f5, f3, fM839a2);
             }
-            float f6 = fA;
-            float f7 = fA2;
-            FitModeResult2 fitModeResult2A = this.C.a(f, ((Float) Preconditions.checkNotNull(Float.valueOf(this.A.f3100b.start))).floatValue(), ((Float) Preconditions.checkNotNull(Float.valueOf(this.A.f3100b.end))).floatValue(), this.f3101b.width(), this.f3101b.height(), this.f.width(), this.f.height());
-            this.H = fitModeResult2A;
-            RectF rectF = this.w;
-            float f8 = fitModeResult2A.c / 2.0f;
-            rectF.set(f6 - f8, f7, f8 + f6, fitModeResult2A.d + f7);
-            RectF rectF2 = this.f3104y;
-            FitModeResult2 fitModeResult2 = this.H;
-            float f9 = fitModeResult2.e / 2.0f;
-            rectF2.set(f6 - f9, f7, f9 + f6, fitModeResult2.f + f7);
-            this.f3103x.set(this.w);
-            this.f3105z.set(this.f3104y);
-            float fFloatValue = ((Float) Preconditions.checkNotNull(Float.valueOf(this.A.c.start))).floatValue();
-            float fFloatValue2 = ((Float) Preconditions.checkNotNull(Float.valueOf(this.A.c.end))).floatValue();
-            boolean zB = this.C.b(this.H);
-            RectF rectF3 = zB ? this.f3103x : this.f3105z;
-            float fE = TransitionUtils5.e(0.0f, 1.0f, fFloatValue, fFloatValue2, f);
-            if (!zB) {
-                fE = 1.0f - fE;
+            float f6 = fM839a;
+            float f7 = fM839a2;
+            C4475f c4475fMo6197a = this.f21352C.mo6197a(f, ((Float) Preconditions.checkNotNull(Float.valueOf(this.f21350A.f21347b.start))).floatValue(), ((Float) Preconditions.checkNotNull(Float.valueOf(this.f21350A.f21347b.end))).floatValue(), this.f21363b.width(), this.f21363b.height(), this.f21367f.width(), this.f21367f.height());
+            this.f21357H = c4475fMo6197a;
+            RectF rectF = this.f21384w;
+            float f8 = c4475fMo6197a.f11927c / 2.0f;
+            rectF.set(f6 - f8, f7, f8 + f6, c4475fMo6197a.f11928d + f7);
+            RectF rectF2 = this.f21386y;
+            C4475f c4475f = this.f21357H;
+            float f9 = c4475f.f11929e / 2.0f;
+            rectF2.set(f6 - f9, f7, f9 + f6, c4475f.f11930f + f7);
+            this.f21385x.set(this.f21384w);
+            this.f21387z.set(this.f21386y);
+            float fFloatValue = ((Float) Preconditions.checkNotNull(Float.valueOf(this.f21350A.f21348c.start))).floatValue();
+            float fFloatValue2 = ((Float) Preconditions.checkNotNull(Float.valueOf(this.f21350A.f21348c.end))).floatValue();
+            boolean zMo6198b = this.f21352C.mo6198b(this.f21357H);
+            RectF rectF3 = zMo6198b ? this.f21385x : this.f21387z;
+            float fM6204e = C4480k.m6204e(0.0f, 1.0f, fFloatValue, fFloatValue2, f);
+            if (!zMo6198b) {
+                fM6204e = 1.0f - fM6204e;
             }
-            this.C.c(rectF3, fE, this.H);
-            this.I = new RectF(Math.min(this.f3103x.left, this.f3105z.left), Math.min(this.f3103x.top, this.f3105z.top), Math.max(this.f3103x.right, this.f3105z.right), Math.max(this.f3103x.bottom, this.f3105z.bottom));
-            MaskEvaluator2 maskEvaluator2 = this.n;
-            ShapeAppearanceModel shapeAppearanceModelBuild = this.c;
-            ShapeAppearanceModel shapeAppearanceModel = this.g;
-            RectF rectF4 = this.w;
-            RectF rectF5 = this.f3103x;
-            RectF rectF6 = this.f3105z;
-            ProgressThresholds progressThresholds = this.A.d;
-            Objects.requireNonNull(maskEvaluator2);
+            this.f21352C.mo6199c(rectF3, fM6204e, this.f21357H);
+            this.f21358I = new RectF(Math.min(this.f21385x.left, this.f21387z.left), Math.min(this.f21385x.top, this.f21387z.top), Math.max(this.f21385x.right, this.f21387z.right), Math.max(this.f21385x.bottom, this.f21387z.bottom));
+            C4476g c4476g = this.f21375n;
+            ShapeAppearanceModel shapeAppearanceModelBuild = this.f21364c;
+            ShapeAppearanceModel shapeAppearanceModel = this.f21368g;
+            RectF rectF4 = this.f21384w;
+            RectF rectF5 = this.f21385x;
+            RectF rectF6 = this.f21387z;
+            ProgressThresholds progressThresholds = this.f21350A.f21349d;
+            Objects.requireNonNull(c4476g);
             float start = progressThresholds.getStart();
             float end = progressThresholds.getEnd();
-            RectF rectF7 = TransitionUtils5.a;
+            RectF rectF7 = C4480k.f11937a;
             if (f >= start) {
                 if (f > end) {
                     shapeAppearanceModelBuild = shapeAppearanceModel;
                 } else {
-                    shapeAppearanceModelBuild = ((shapeAppearanceModelBuild.getTopLeftCornerSize().getCornerSize(rectF4) == 0.0f && shapeAppearanceModelBuild.getTopRightCornerSize().getCornerSize(rectF4) == 0.0f && shapeAppearanceModelBuild.getBottomRightCornerSize().getCornerSize(rectF4) == 0.0f && shapeAppearanceModelBuild.getBottomLeftCornerSize().getCornerSize(rectF4) == 0.0f) ? false : true ? shapeAppearanceModelBuild : shapeAppearanceModel).toBuilder().setTopLeftCornerSize(new AbsoluteCornerSize(TransitionUtils5.e(shapeAppearanceModelBuild.getTopLeftCornerSize().getCornerSize(rectF4), shapeAppearanceModel.getTopLeftCornerSize().getCornerSize(rectF6), start, end, f))).setTopRightCornerSize(new AbsoluteCornerSize(TransitionUtils5.e(shapeAppearanceModelBuild.getTopRightCornerSize().getCornerSize(rectF4), shapeAppearanceModel.getTopRightCornerSize().getCornerSize(rectF6), start, end, f))).setBottomLeftCornerSize(new AbsoluteCornerSize(TransitionUtils5.e(shapeAppearanceModelBuild.getBottomLeftCornerSize().getCornerSize(rectF4), shapeAppearanceModel.getBottomLeftCornerSize().getCornerSize(rectF6), start, end, f))).setBottomRightCornerSize(new AbsoluteCornerSize(TransitionUtils5.e(shapeAppearanceModelBuild.getBottomRightCornerSize().getCornerSize(rectF4), shapeAppearanceModel.getBottomRightCornerSize().getCornerSize(rectF6), start, end, f))).build();
+                    shapeAppearanceModelBuild = ((shapeAppearanceModelBuild.getTopLeftCornerSize().getCornerSize(rectF4) == 0.0f && shapeAppearanceModelBuild.getTopRightCornerSize().getCornerSize(rectF4) == 0.0f && shapeAppearanceModelBuild.getBottomRightCornerSize().getCornerSize(rectF4) == 0.0f && shapeAppearanceModelBuild.getBottomLeftCornerSize().getCornerSize(rectF4) == 0.0f) ? false : true ? shapeAppearanceModelBuild : shapeAppearanceModel).toBuilder().setTopLeftCornerSize(new AbsoluteCornerSize(C4480k.m6204e(shapeAppearanceModelBuild.getTopLeftCornerSize().getCornerSize(rectF4), shapeAppearanceModel.getTopLeftCornerSize().getCornerSize(rectF6), start, end, f))).setTopRightCornerSize(new AbsoluteCornerSize(C4480k.m6204e(shapeAppearanceModelBuild.getTopRightCornerSize().getCornerSize(rectF4), shapeAppearanceModel.getTopRightCornerSize().getCornerSize(rectF6), start, end, f))).setBottomLeftCornerSize(new AbsoluteCornerSize(C4480k.m6204e(shapeAppearanceModelBuild.getBottomLeftCornerSize().getCornerSize(rectF4), shapeAppearanceModel.getBottomLeftCornerSize().getCornerSize(rectF6), start, end, f))).setBottomRightCornerSize(new AbsoluteCornerSize(C4480k.m6204e(shapeAppearanceModelBuild.getBottomRightCornerSize().getCornerSize(rectF4), shapeAppearanceModel.getBottomRightCornerSize().getCornerSize(rectF6), start, end, f))).build();
                 }
             }
-            maskEvaluator2.e = shapeAppearanceModelBuild;
-            maskEvaluator2.d.calculatePath(shapeAppearanceModelBuild, 1.0f, rectF5, maskEvaluator2.f1640b);
-            maskEvaluator2.d.calculatePath(maskEvaluator2.e, 1.0f, rectF6, maskEvaluator2.c);
+            c4476g.f11935e = shapeAppearanceModelBuild;
+            c4476g.f11934d.calculatePath(shapeAppearanceModelBuild, 1.0f, rectF5, c4476g.f11932b);
+            c4476g.f11934d.calculatePath(c4476g.f11935e, 1.0f, rectF6, c4476g.f11933c);
             if (Build.VERSION.SDK_INT >= 23) {
-                maskEvaluator2.a.op(maskEvaluator2.f1640b, maskEvaluator2.c, Path.Op.UNION);
+                c4476g.f11931a.op(c4476g.f11932b, c4476g.f11933c, Path.Op.UNION);
             }
-            this.J = TransitionUtils5.d(this.d, this.h, f);
-            float fCenterX = ((this.I.centerX() / (this.f3102s / 2.0f)) - 1.0f) * 0.3f;
-            float fCenterY = (this.I.centerY() / this.t) * 1.5f;
-            float f10 = this.J;
+            this.f21359J = C4480k.m6203d(this.f21365d, this.f21369h, f);
+            float fCenterX = ((this.f21358I.centerX() / (this.f21380s / 2.0f)) - 1.0f) * 0.3f;
+            float fCenterY = (this.f21358I.centerY() / this.f21381t) * 1.5f;
+            float f10 = this.f21359J;
             float f11 = (int) (fCenterY * f10);
-            this.K = f11;
-            this.l.setShadowLayer(f10, (int) (fCenterX * f10), f11, 754974720);
-            this.G = this.B.a(f, ((Float) Preconditions.checkNotNull(Float.valueOf(this.A.a.start))).floatValue(), ((Float) Preconditions.checkNotNull(Float.valueOf(this.A.a.end))).floatValue());
-            if (this.j.getColor() != 0) {
-                this.j.setAlpha(this.G.a);
+            this.f21360K = f11;
+            this.f21373l.setShadowLayer(f10, (int) (fCenterX * f10), f11, 754974720);
+            this.f21356G = this.f21351B.mo6195a(f, ((Float) Preconditions.checkNotNull(Float.valueOf(this.f21350A.f21346a.start))).floatValue(), ((Float) Preconditions.checkNotNull(Float.valueOf(this.f21350A.f21346a.end))).floatValue());
+            if (this.f21371j.getColor() != 0) {
+                this.f21371j.setAlpha(this.f21356G.f11920a);
             }
-            if (this.k.getColor() != 0) {
-                this.k.setAlpha(this.G.f1637b);
+            if (this.f21372k.getColor() != 0) {
+                this.f21372k.setAlpha(this.f21356G.f11921b);
             }
             invalidateSelf();
         }
@@ -588,7 +679,7 @@ public final class MaterialContainerTransform extends Transition {
         setInterpolator(AnimationUtils.FAST_OUT_SLOW_IN_INTERPOLATOR);
     }
 
-    private c buildThresholdsGroup(boolean z2) {
+    private C11057c buildThresholdsGroup(boolean z2) {
         PathMotion pathMotion = getPathMotion();
         return ((pathMotion instanceof ArcMotion) || (pathMotion instanceof MaterialArcMotion)) ? getThresholdsOrDefault(z2, DEFAULT_ENTER_THRESHOLDS_ARC, DEFAULT_RETURN_THRESHOLDS_ARC) : getThresholdsOrDefault(z2, DEFAULT_ENTER_THRESHOLDS, DEFAULT_RETURN_THRESHOLDS);
     }
@@ -597,32 +688,32 @@ public final class MaterialContainerTransform extends Transition {
         if (view2 == null) {
             return new RectF(0.0f, 0.0f, view.getWidth(), view.getHeight());
         }
-        RectF rectFC = TransitionUtils5.c(view2);
-        rectFC.offset(f, f2);
-        return rectFC;
+        RectF rectFM6202c = C4480k.m6202c(view2);
+        rectFM6202c.offset(f, f2);
+        return rectFM6202c;
     }
 
     private static ShapeAppearanceModel captureShapeAppearance(@NonNull View view, @NonNull RectF rectF, @Nullable ShapeAppearanceModel shapeAppearanceModel) {
         ShapeAppearanceModel shapeAppearance = getShapeAppearance(view, shapeAppearanceModel);
-        RectF rectF2 = TransitionUtils5.a;
-        return shapeAppearance.withTransformedCornerSizes(new TransitionUtils4(rectF));
+        RectF rectF2 = C4480k.f11937a;
+        return shapeAppearance.withTransformedCornerSizes(new C4479j(rectF));
     }
 
     private static void captureValues(@NonNull TransitionValues transitionValues, @Nullable View view, @IdRes int i, @Nullable ShapeAppearanceModel shapeAppearanceModel) {
-        RectF rectFC;
+        RectF rectFM6202c;
         if (i != -1) {
             View view2 = transitionValues.view;
-            RectF rectF = TransitionUtils5.a;
+            RectF rectF = C4480k.f11937a;
             View viewFindViewById = view2.findViewById(i);
             if (viewFindViewById == null) {
-                viewFindViewById = TransitionUtils5.b(view2, i);
+                viewFindViewById = C4480k.m6201b(view2, i);
             }
             transitionValues.view = viewFindViewById;
         } else if (view != null) {
             transitionValues.view = view;
         } else {
             View view3 = transitionValues.view;
-            int i2 = com.google.android.material.R.id.mtrl_motion_snapshot_view;
+            int i2 = C10817R.id.mtrl_motion_snapshot_view;
             if (view3.getTag(i2) instanceof View) {
                 View view4 = (View) transitionValues.view.getTag(i2);
                 transitionValues.view.setTag(i2, null);
@@ -634,13 +725,13 @@ public final class MaterialContainerTransform extends Transition {
             return;
         }
         if (view5.getParent() == null) {
-            RectF rectF2 = TransitionUtils5.a;
-            rectFC = new RectF(view5.getLeft(), view5.getTop(), view5.getRight(), view5.getBottom());
+            RectF rectF2 = C4480k.f11937a;
+            rectFM6202c = new RectF(view5.getLeft(), view5.getTop(), view5.getRight(), view5.getBottom());
         } else {
-            rectFC = TransitionUtils5.c(view5);
+            rectFM6202c = C4480k.m6202c(view5);
         }
-        transitionValues.values.put(PROP_BOUNDS, rectFC);
-        transitionValues.values.put(PROP_SHAPE_APPEARANCE, captureShapeAppearance(view5, rectFC, shapeAppearanceModel));
+        transitionValues.values.put(PROP_BOUNDS, rectFM6202c);
+        transitionValues.values.put(PROP_SHAPE_APPEARANCE, captureShapeAppearance(view5, rectFM6202c, shapeAppearanceModel));
     }
 
     private static float getElevationOrDefault(float f, View view) {
@@ -652,7 +743,7 @@ public final class MaterialContainerTransform extends Transition {
         if (shapeAppearanceModel != null) {
             return shapeAppearanceModel;
         }
-        int i = com.google.android.material.R.id.mtrl_motion_snapshot_view;
+        int i = C10817R.id.mtrl_motion_snapshot_view;
         if (view.getTag(i) instanceof ShapeAppearanceModel) {
             return (ShapeAppearanceModel) view.getTag(i);
         }
@@ -664,16 +755,16 @@ public final class MaterialContainerTransform extends Transition {
         return view instanceof Shapeable ? ((Shapeable) view).getShapeAppearanceModel() : ShapeAppearanceModel.builder().build();
     }
 
-    private c getThresholdsOrDefault(boolean z2, c cVar, c cVar2) {
+    private C11057c getThresholdsOrDefault(boolean z2, C11057c c11057c, C11057c c11057c2) {
         if (!z2) {
-            cVar = cVar2;
+            c11057c = c11057c2;
         }
-        return new c((ProgressThresholds) TransitionUtils5.a(this.fadeProgressThresholds, cVar.a), (ProgressThresholds) TransitionUtils5.a(this.scaleProgressThresholds, cVar.f3100b), (ProgressThresholds) TransitionUtils5.a(this.scaleMaskProgressThresholds, cVar.c), (ProgressThresholds) TransitionUtils5.a(this.shapeMaskProgressThresholds, cVar.d), null);
+        return new C11057c((ProgressThresholds) C4480k.m6200a(this.fadeProgressThresholds, c11057c.f21346a), (ProgressThresholds) C4480k.m6200a(this.scaleProgressThresholds, c11057c.f21347b), (ProgressThresholds) C4480k.m6200a(this.scaleMaskProgressThresholds, c11057c.f21348c), (ProgressThresholds) C4480k.m6200a(this.shapeMaskProgressThresholds, c11057c.f21349d), null);
     }
 
     @StyleRes
     private static int getTransitionShapeAppearanceResId(Context context) {
-        TypedArray typedArrayObtainStyledAttributes = context.obtainStyledAttributes(new int[]{com.google.android.material.R.attr.transitionShapeAppearance});
+        TypedArray typedArrayObtainStyledAttributes = context.obtainStyledAttributes(new int[]{C10817R.attr.transitionShapeAppearance});
         int resourceId = typedArrayObtainStyledAttributes.getResourceId(0, -1);
         typedArrayObtainStyledAttributes.recycle();
         return resourceId;
@@ -682,7 +773,7 @@ public final class MaterialContainerTransform extends Transition {
     private boolean isEntering(@NonNull RectF rectF, @NonNull RectF rectF2) {
         int i = this.transitionDirection;
         if (i == 0) {
-            RectF rectF3 = TransitionUtils5.a;
+            RectF rectF3 = C4480k.f11937a;
             return rectF2.height() * rectF2.width() > rectF.height() * rectF.width();
         }
         if (i == 1) {
@@ -691,9 +782,9 @@ public final class MaterialContainerTransform extends Transition {
         if (i == 2) {
             return false;
         }
-        StringBuilder sbU = outline.U("Invalid transition direction: ");
-        sbU.append(this.transitionDirection);
-        throw new IllegalArgumentException(sbU.toString());
+        StringBuilder sbM833U = C1643a.m833U("Invalid transition direction: ");
+        sbM833U.append(this.transitionDirection);
+        throw new IllegalArgumentException(sbM833U.toString());
     }
 
     @Override // android.transition.Transition
@@ -709,9 +800,9 @@ public final class MaterialContainerTransform extends Transition {
     @Override // android.transition.Transition
     @Nullable
     public Animator createAnimator(@NonNull ViewGroup viewGroup, @Nullable TransitionValues transitionValues, @Nullable TransitionValues transitionValues2) {
-        View viewB;
-        FadeModeEvaluator2 fadeModeEvaluator2;
-        FitModeEvaluator2 fitModeEvaluator2;
+        View viewM6201b;
+        InterfaceC4470a interfaceC4470a;
+        InterfaceC4473d interfaceC4473d;
         if (transitionValues != null && transitionValues2 != null) {
             RectF rectF = (RectF) transitionValues.values.get(PROP_BOUNDS);
             ShapeAppearanceModel shapeAppearanceModel = (ShapeAppearanceModel) transitionValues.values.get(PROP_SHAPE_APPEARANCE);
@@ -726,15 +817,15 @@ public final class MaterialContainerTransform extends Transition {
                 View view2 = transitionValues2.view;
                 View view3 = view2.getParent() != null ? view2 : view;
                 if (this.drawingViewId == view3.getId()) {
-                    viewB = (View) view3.getParent();
+                    viewM6201b = (View) view3.getParent();
                 } else {
-                    viewB = TransitionUtils5.b(view3, this.drawingViewId);
+                    viewM6201b = C4480k.m6201b(view3, this.drawingViewId);
                     view3 = null;
                 }
-                RectF rectFC = TransitionUtils5.c(viewB);
-                float f = -rectFC.left;
-                float f2 = -rectFC.top;
-                RectF rectFCalculateDrawableBounds = calculateDrawableBounds(viewB, view3, f, f2);
+                RectF rectFM6202c = C4480k.m6202c(viewM6201b);
+                float f = -rectFM6202c.left;
+                float f2 = -rectFM6202c.top;
+                RectF rectFCalculateDrawableBounds = calculateDrawableBounds(viewM6201b, view3, f, f2);
                 rectF.offset(f, f2);
                 rectF2.offset(f, f2);
                 boolean zIsEntering = isEntering(rectF, rectF2);
@@ -744,24 +835,24 @@ public final class MaterialContainerTransform extends Transition {
                 int i = this.containerColor;
                 int i2 = this.startContainerColor;
                 int i3 = this.endContainerColor;
-                View view4 = viewB;
+                View view4 = viewM6201b;
                 int i4 = this.scrimColor;
                 boolean z2 = this.elevationShadowEnabled;
                 int i5 = this.fadeMode;
                 boolean z3 = true;
                 if (i5 == 0) {
-                    fadeModeEvaluator2 = zIsEntering ? FadeModeEvaluators2.a : FadeModeEvaluators2.f1636b;
+                    interfaceC4470a = zIsEntering ? C4471b.f11916a : C4471b.f11917b;
                 } else if (i5 == 1) {
-                    fadeModeEvaluator2 = zIsEntering ? FadeModeEvaluators2.f1636b : FadeModeEvaluators2.a;
+                    interfaceC4470a = zIsEntering ? C4471b.f11917b : C4471b.f11916a;
                 } else if (i5 == 2) {
-                    fadeModeEvaluator2 = FadeModeEvaluators2.c;
+                    interfaceC4470a = C4471b.f11918c;
                 } else {
                     if (i5 != 3) {
-                        throw new IllegalArgumentException(outline.q("Invalid fade mode: ", i5));
+                        throw new IllegalArgumentException(C1643a.m871q("Invalid fade mode: ", i5));
                     }
-                    fadeModeEvaluator2 = FadeModeEvaluators2.d;
+                    interfaceC4470a = C4471b.f11919d;
                 }
-                FadeModeEvaluator2 fadeModeEvaluator3 = fadeModeEvaluator2;
+                InterfaceC4470a interfaceC4470a2 = interfaceC4470a;
                 int i6 = this.fitMode;
                 if (i6 == 0) {
                     float fWidth = rectF.width();
@@ -773,20 +864,20 @@ public final class MaterialContainerTransform extends Transition {
                     if (!zIsEntering ? f4 < fHeight2 : f3 < fHeight) {
                         z3 = false;
                     }
-                    fitModeEvaluator2 = z3 ? FitModeEvaluators2.a : FitModeEvaluators2.f1638b;
+                    interfaceC4473d = z3 ? C4474e.f11923a : C4474e.f11924b;
                 } else if (i6 == 1) {
-                    fitModeEvaluator2 = FitModeEvaluators2.a;
+                    interfaceC4473d = C4474e.f11923a;
                 } else {
                     if (i6 != 2) {
-                        throw new IllegalArgumentException(outline.q("Invalid fit mode: ", i6));
+                        throw new IllegalArgumentException(C1643a.m871q("Invalid fit mode: ", i6));
                     }
-                    fitModeEvaluator2 = FitModeEvaluators2.f1638b;
+                    interfaceC4473d = C4474e.f11924b;
                 }
-                d dVar = new d(pathMotion, view, rectF, shapeAppearanceModel, elevationOrDefault, view2, rectF2, shapeAppearanceModel2, elevationOrDefault2, i, i2, i3, i4, zIsEntering, z2, fadeModeEvaluator3, fitModeEvaluator2, buildThresholdsGroup(zIsEntering), this.drawDebugEnabled, null);
-                dVar.setBounds(Math.round(rectFCalculateDrawableBounds.left), Math.round(rectFCalculateDrawableBounds.top), Math.round(rectFCalculateDrawableBounds.right), Math.round(rectFCalculateDrawableBounds.bottom));
+                C11058d c11058d = new C11058d(pathMotion, view, rectF, shapeAppearanceModel, elevationOrDefault, view2, rectF2, shapeAppearanceModel2, elevationOrDefault2, i, i2, i3, i4, zIsEntering, z2, interfaceC4470a2, interfaceC4473d, buildThresholdsGroup(zIsEntering), this.drawDebugEnabled, null);
+                c11058d.setBounds(Math.round(rectFCalculateDrawableBounds.left), Math.round(rectFCalculateDrawableBounds.top), Math.round(rectFCalculateDrawableBounds.right), Math.round(rectFCalculateDrawableBounds.bottom));
                 ValueAnimator valueAnimatorOfFloat = ValueAnimator.ofFloat(0.0f, 1.0f);
-                valueAnimatorOfFloat.addUpdateListener(new a(this, dVar));
-                addListener(new b(view4, dVar, view, view2));
+                valueAnimatorOfFloat.addUpdateListener(new C11055a(this, c11058d));
+                addListener(new C11056b(view4, c11058d, view, view2));
                 return valueAnimatorOfFloat;
             }
             Log.w(TAG, "Skipping due to null start bounds. Ensure start view is laid out and measured.");

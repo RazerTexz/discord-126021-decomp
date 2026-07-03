@@ -8,21 +8,22 @@ import com.discord.views.CheckedSetting;
 /* JADX INFO: loaded from: classes.dex */
 public final class WidgetMemberVerificationApproveTermsItemBinding implements ViewBinding {
 
+    /* JADX INFO: renamed from: a */
     @NonNull
-    public final CheckedSetting a;
+    public final CheckedSetting f17235a;
 
-    /* JADX INFO: renamed from: b, reason: collision with root package name */
+    /* JADX INFO: renamed from: b */
     @NonNull
-    public final CheckedSetting f2487b;
+    public final CheckedSetting f17236b;
 
     public WidgetMemberVerificationApproveTermsItemBinding(@NonNull CheckedSetting checkedSetting, @NonNull CheckedSetting checkedSetting2) {
-        this.a = checkedSetting;
-        this.f2487b = checkedSetting2;
+        this.f17235a = checkedSetting;
+        this.f17236b = checkedSetting2;
     }
 
     @Override // androidx.viewbinding.ViewBinding
     @NonNull
     public View getRoot() {
-        return this.a;
+        return this.f17235a;
     }
 }

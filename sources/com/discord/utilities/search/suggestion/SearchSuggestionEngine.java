@@ -1,6 +1,5 @@
 package com.discord.utilities.search.suggestion;
 
-import b.d.b.a.outline;
 import com.discord.api.channel.Channel;
 import com.discord.api.channel.ChannelUtils;
 import com.discord.api.permission.Permission;
@@ -10,11 +9,11 @@ import com.discord.models.user.User;
 import com.discord.stores.StoreGatewayConnection;
 import com.discord.stores.StoreStream;
 import com.discord.utilities.error.Error;
+import com.discord.utilities.p501rx.ObservableExtensionsKt;
 import com.discord.utilities.permissions.PermissionUtils;
-import com.discord.utilities.rx.ObservableExtensionsKt;
 import com.discord.utilities.search.query.FilterType;
 import com.discord.utilities.search.query.node.QueryNode;
-import com.discord.utilities.search.query.node.answer.HasNode2;
+import com.discord.utilities.search.query.node.answer.HasAnswerOption;
 import com.discord.utilities.search.query.node.content.ContentNode;
 import com.discord.utilities.search.query.node.filter.FilterNode;
 import com.discord.utilities.search.strings.SearchStringProvider;
@@ -25,15 +24,6 @@ import com.discord.utilities.search.suggestion.entries.RecentQuerySuggestion;
 import com.discord.utilities.search.suggestion.entries.SearchSuggestion;
 import com.discord.utilities.search.suggestion.entries.UserSuggestion;
 import com.discord.utilities.search.validation.SearchData;
-import d0.g0.Strings4;
-import d0.g0.k;
-import d0.t.Collections2;
-import d0.t.Iterables2;
-import d0.t._Collections;
-import d0.z.d.FunctionReferenceImpl;
-import d0.z.d.Intrinsics3;
-import d0.z.d.Lambda;
-import j0.k.Func1;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Iterator;
@@ -45,10 +35,20 @@ import java.util.concurrent.TimeUnit;
 import kotlin.Unit;
 import kotlin.jvm.functions.Function0;
 import kotlin.jvm.functions.Function1;
-import rx.Observable;
-import rx.Subscription;
-import rx.subjects.PublishSubject;
-import rx.subjects.SerializedSubject;
+import p007b.p100d.p104b.p105a.C1643a;
+import p507d0.p579g0.C12094k;
+import p507d0.p579g0.C12106w;
+import p507d0.p580t.C12147n;
+import p507d0.p580t.C12149o;
+import p507d0.p580t.C12163u;
+import p507d0.p592z.p594d.AbstractC12240o;
+import p507d0.p592z.p594d.C12236k;
+import p507d0.p592z.p594d.C12238m;
+import p637j0.p641k.InterfaceC12589b;
+import p658rx.Observable;
+import p658rx.Subscription;
+import p658rx.subjects.PublishSubject;
+import p658rx.subjects.SerializedSubject;
 
 /* JADX INFO: compiled from: SearchSuggestionEngine.kt */
 /* JADX INFO: loaded from: classes2.dex */
@@ -71,13 +71,13 @@ public final class SearchSuggestionEngine {
         }
     }
 
-    /* JADX INFO: renamed from: com.discord.utilities.search.suggestion.SearchSuggestionEngine$setupMemberRequestSubscription$2, reason: invalid class name */
+    /* JADX INFO: renamed from: com.discord.utilities.search.suggestion.SearchSuggestionEngine$setupMemberRequestSubscription$2 */
     /* JADX INFO: compiled from: SearchSuggestionEngine.kt */
-    public static final /* synthetic */ class AnonymousClass2 extends FunctionReferenceImpl implements Function1<CharSequence, Boolean> {
-        public static final AnonymousClass2 INSTANCE = new AnonymousClass2();
+    public static final /* synthetic */ class C69112 extends C12236k implements Function1<CharSequence, Boolean> {
+        public static final C69112 INSTANCE = new C69112();
 
-        public AnonymousClass2() {
-            super(1, k.class, "isNotEmpty", "isNotEmpty(Ljava/lang/CharSequence;)Z", 1);
+        public C69112() {
+            super(1, C12094k.class, "isNotEmpty", "isNotEmpty(Ljava/lang/CharSequence;)Z", 1);
         }
 
         @Override // kotlin.jvm.functions.Function1
@@ -86,24 +86,24 @@ public final class SearchSuggestionEngine {
         }
 
         public final boolean invoke(String str) {
-            Intrinsics3.checkNotNullParameter(str, "p1");
+            C12238m.checkNotNullParameter(str, "p1");
             return str.length() > 0;
         }
     }
 
-    /* JADX INFO: renamed from: com.discord.utilities.search.suggestion.SearchSuggestionEngine$setupMemberRequestSubscription$3, reason: invalid class name */
+    /* JADX INFO: renamed from: com.discord.utilities.search.suggestion.SearchSuggestionEngine$setupMemberRequestSubscription$3 */
     /* JADX INFO: compiled from: SearchSuggestionEngine.kt */
-    public static final class AnonymousClass3 extends Lambda implements Function1<String, Unit> {
-        public static final AnonymousClass3 INSTANCE = new AnonymousClass3();
+    public static final class C69123 extends AbstractC12240o implements Function1<String, Unit> {
+        public static final C69123 INSTANCE = new C69123();
 
-        public AnonymousClass3() {
+        public C69123() {
             super(1);
         }
 
         @Override // kotlin.jvm.functions.Function1
         public /* bridge */ /* synthetic */ Unit invoke(String str) {
             invoke2(str);
-            return Unit.a;
+            return Unit.f27425a;
         }
 
         /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
@@ -121,7 +121,7 @@ public final class SearchSuggestionEngine {
         INSTANCE = searchSuggestionEngine;
         MAX_ENTRY_TYPE_COUNT = 10;
         MAX_USER_SORTING_THRESHOLD = 100;
-        membersRequestSubject = new SerializedSubject<>(PublishSubject.k0());
+        membersRequestSubject = new SerializedSubject<>(PublishSubject.m11133k0());
         searchSuggestionEngine.setupMemberRequestSubscription();
     }
 
@@ -130,41 +130,41 @@ public final class SearchSuggestionEngine {
 
     private final List<ChannelSuggestion> getChannelSuggestions(CharSequence rawContent, FilterType currentFilter, Map<Long, Channel> channels, Map<Long, Long> channelPermissions) {
         if (currentFilter != FilterType.IN) {
-            return Collections2.emptyList();
+            return C12147n.emptyList();
         }
         Collection<Channel> collectionValues = channels.values();
         ArrayList arrayList = new ArrayList();
         for (Object obj : collectionValues) {
-            if (PermissionUtils.can(Permission.VIEW_CHANNEL, (Long) outline.d((Channel) obj, channelPermissions))) {
+            if (PermissionUtils.can(Permission.VIEW_CHANNEL, (Long) C1643a.m845d((Channel) obj, channelPermissions))) {
                 arrayList.add(obj);
             }
         }
         ArrayList arrayList2 = new ArrayList();
         for (Object obj2 : arrayList) {
-            if (ChannelSuggestion.INSTANCE.canComplete(ChannelUtils.c((Channel) obj2), rawContent)) {
+            if (ChannelSuggestion.INSTANCE.canComplete(ChannelUtils.m7679c((Channel) obj2), rawContent)) {
                 arrayList2.add(obj2);
             }
         }
-        List<Channel> listSortedWith = _Collections.sortedWith(arrayList2, ChannelUtils.h(Channel.INSTANCE));
-        ArrayList arrayList3 = new ArrayList(Iterables2.collectionSizeOrDefault(listSortedWith, 10));
+        List<Channel> listSortedWith = C12163u.sortedWith(arrayList2, ChannelUtils.m7684h(Channel.INSTANCE));
+        ArrayList arrayList3 = new ArrayList(C12149o.collectionSizeOrDefault(listSortedWith, 10));
         for (Channel channel : listSortedWith) {
-            arrayList3.add(new ChannelSuggestion(ChannelUtils.c(channel), channel.getId()));
+            arrayList3.add(new ChannelSuggestion(ChannelUtils.m7679c(channel), channel.getId()));
         }
-        return _Collections.take(arrayList3, MAX_ENTRY_TYPE_COUNT);
+        return C12163u.take(arrayList3, MAX_ENTRY_TYPE_COUNT);
     }
 
     private final FilterType getCurrentFilterType(List<? extends QueryNode> input) {
         if (input.isEmpty()) {
             return null;
         }
-        QueryNode queryNode = (QueryNode) _Collections.last((List) input);
+        QueryNode queryNode = (QueryNode) C12163u.last((List) input);
         if (queryNode instanceof FilterNode) {
             return ((FilterNode) queryNode).getFilterType();
         }
         if (input.size() == 1) {
             return null;
         }
-        QueryNode queryNode2 = input.get(Collections2.getLastIndex(input) - 1);
+        QueryNode queryNode2 = input.get(C12147n.getLastIndex(input) - 1);
         if ((queryNode instanceof ContentNode) && (queryNode2 instanceof FilterNode)) {
             return ((FilterNode) queryNode2).getFilterType();
         }
@@ -186,7 +186,7 @@ public final class SearchSuggestionEngine {
                 arrayList2.add(obj);
             }
         }
-        ArrayList arrayList3 = new ArrayList(Iterables2.collectionSizeOrDefault(arrayList2, 10));
+        ArrayList arrayList3 = new ArrayList(C12149o.collectionSizeOrDefault(arrayList2, 10));
         Iterator it = arrayList2.iterator();
         while (it.hasNext()) {
             arrayList3.add(new FilterSuggestion((FilterType) it.next()));
@@ -196,26 +196,26 @@ public final class SearchSuggestionEngine {
 
     private final List<SearchSuggestion> getHasSuggestions(CharSequence rawContent, FilterType currentFilterType, SearchStringProvider searchStringProvider) {
         if (currentFilterType != FilterType.HAS) {
-            return Collections2.emptyList();
+            return C12147n.emptyList();
         }
-        HasNode2[] hasNode2ArrValues = HasNode2.values();
+        HasAnswerOption[] hasAnswerOptionArrValues = HasAnswerOption.values();
         ArrayList arrayList = new ArrayList();
         for (int i = 0; i < 7; i++) {
-            HasNode2 hasNode2 = hasNode2ArrValues[i];
-            if (HasSuggestion.INSTANCE.canComplete(rawContent, hasNode2, searchStringProvider)) {
-                arrayList.add(hasNode2);
+            HasAnswerOption hasAnswerOption = hasAnswerOptionArrValues[i];
+            if (HasSuggestion.INSTANCE.canComplete(rawContent, hasAnswerOption, searchStringProvider)) {
+                arrayList.add(hasAnswerOption);
             }
         }
         ArrayList arrayList2 = new ArrayList();
         Iterator it = arrayList.iterator();
         while (it.hasNext()) {
-            arrayList2.add(new HasSuggestion((HasNode2) it.next()));
+            arrayList2.add(new HasSuggestion((HasAnswerOption) it.next()));
         }
         return arrayList2;
     }
 
     private final Collection<SearchSuggestion> getHistorySuggestions(Collection<? extends List<? extends QueryNode>> recentQueries) {
-        ArrayList arrayList = new ArrayList(Iterables2.collectionSizeOrDefault(recentQueries, 10));
+        ArrayList arrayList = new ArrayList(C12149o.collectionSizeOrDefault(recentQueries, 10));
         Iterator<T> it = recentQueries.iterator();
         while (it.hasNext()) {
             arrayList.add(new RecentQuerySuggestion((List) it.next()));
@@ -227,20 +227,20 @@ public final class SearchSuggestionEngine {
         if (input.isEmpty()) {
             return "";
         }
-        QueryNode queryNode = (QueryNode) _Collections.last((List) input);
+        QueryNode queryNode = (QueryNode) C12163u.last((List) input);
         if (!(queryNode instanceof ContentNode)) {
             return "";
         }
         String string = ((ContentNode) queryNode).getContent().toString();
         Objects.requireNonNull(string, "null cannot be cast to non-null type kotlin.CharSequence");
-        return Strings4.trim(string).toString();
+        return C12106w.trim(string).toString();
     }
 
     public static final List<SearchSuggestion> getSuggestions(List<? extends QueryNode> input, SearchData searchData, SearchStringProvider searchStringProvider, Collection<? extends List<? extends QueryNode>> recentQueries) {
-        Intrinsics3.checkNotNullParameter(input, "input");
-        Intrinsics3.checkNotNullParameter(searchData, "searchData");
-        Intrinsics3.checkNotNullParameter(searchStringProvider, "searchStringProvider");
-        Intrinsics3.checkNotNullParameter(recentQueries, "recentQueries");
+        C12238m.checkNotNullParameter(input, "input");
+        C12238m.checkNotNullParameter(searchData, "searchData");
+        C12238m.checkNotNullParameter(searchStringProvider, "searchStringProvider");
+        C12238m.checkNotNullParameter(recentQueries, "recentQueries");
         ArrayList arrayList = new ArrayList();
         SearchSuggestionEngine searchSuggestionEngine = INSTANCE;
         FilterType currentFilterType = searchSuggestionEngine.getCurrentFilterType(input);
@@ -265,11 +265,11 @@ public final class SearchSuggestionEngine {
             targetType = UserSuggestion.TargetType.FROM;
         } else {
             if (iOrdinal != 1) {
-                return Collections2.emptyList();
+                return C12147n.emptyList();
             }
             targetType = UserSuggestion.TargetType.MENTIONS;
         }
-        membersRequestSubject.k.onNext(rawContent);
+        membersRequestSubject.f27653k.onNext(rawContent);
         TreeSet treeSet = new TreeSet();
         boolean z2 = users.size() < MAX_USER_SORTING_THRESHOLD;
         Iterator<Map.Entry<Long, UserGuildMember>> it = users.entrySet().iterator();
@@ -284,29 +284,29 @@ public final class SearchSuggestionEngine {
                 }
             }
         }
-        return _Collections.take(treeSet, MAX_ENTRY_TYPE_COUNT);
+        return C12163u.take(treeSet, MAX_ENTRY_TYPE_COUNT);
     }
 
     private final void setupMemberRequestSubscription() {
-        Observable<R> observableG = membersRequestSubject.P(750L, TimeUnit.MILLISECONDS).G(new Func1<CharSequence, String>() { // from class: com.discord.utilities.search.suggestion.SearchSuggestionEngine.setupMemberRequestSubscription.1
-            @Override // j0.k.Func1
+        Observable<R> observableM11083G = membersRequestSubject.m11090P(750L, TimeUnit.MILLISECONDS).m11083G(new InterfaceC12589b<CharSequence, String>() { // from class: com.discord.utilities.search.suggestion.SearchSuggestionEngine.setupMemberRequestSubscription.1
+            @Override // p637j0.p641k.InterfaceC12589b
             public final String call(CharSequence charSequence) {
                 return charSequence.toString();
             }
         });
-        final AnonymousClass2 anonymousClass2 = AnonymousClass2.INSTANCE;
-        Object obj = anonymousClass2;
-        if (anonymousClass2 != null) {
-            obj = new Func1() { // from class: com.discord.utilities.search.suggestion.SearchSuggestionEngine$sam$rx_functions_Func1$0
-                @Override // j0.k.Func1
+        final C69112 c69112 = C69112.INSTANCE;
+        Object obj = c69112;
+        if (c69112 != null) {
+            obj = new InterfaceC12589b() { // from class: com.discord.utilities.search.suggestion.SearchSuggestionEngine$sam$rx_functions_Func1$0
+                @Override // p637j0.p641k.InterfaceC12589b
                 public final /* synthetic */ Object call(Object obj2) {
-                    return anonymousClass2.invoke(obj2);
+                    return c69112.invoke(obj2);
                 }
             };
         }
-        Observable observableR = observableG.y((Func1) obj).r();
-        Intrinsics3.checkNotNullExpressionValue(observableR, "membersRequestSubject\n  …  .distinctUntilChanged()");
-        ObservableExtensionsKt.appSubscribe(observableR, (Class<?>) SearchSuggestionEngine.class, (58 & 2) != 0 ? null : null, (Function1<? super Subscription, Unit>) ((58 & 4) != 0 ? null : null), (Function1<? super Error, Unit>) ((58 & 8) != 0 ? null : null), (Function0<Unit>) ((58 & 16) != 0 ? ObservableExtensionsKt.AnonymousClass1.INSTANCE : null), (Function0<Unit>) ((58 & 32) != 0 ? ObservableExtensionsKt.AnonymousClass2.INSTANCE : null), AnonymousClass3.INSTANCE);
+        Observable observableM11112r = observableM11083G.m11118y((InterfaceC12589b) obj).m11112r();
+        C12238m.checkNotNullExpressionValue(observableM11112r, "membersRequestSubject\n  …  .distinctUntilChanged()");
+        ObservableExtensionsKt.appSubscribe(observableM11112r, (Class<?>) SearchSuggestionEngine.class, (58 & 2) != 0 ? null : null, (Function1<? super Subscription, Unit>) ((58 & 4) != 0 ? null : null), (Function1<? super Error, Unit>) ((58 & 8) != 0 ? null : null), (Function0<Unit>) ((58 & 16) != 0 ? ObservableExtensionsKt.C68791.INSTANCE : null), (Function0<Unit>) ((58 & 32) != 0 ? ObservableExtensionsKt.C68802.INSTANCE : null), C69123.INSTANCE);
     }
 
     public final Long getTargetGuildId() {

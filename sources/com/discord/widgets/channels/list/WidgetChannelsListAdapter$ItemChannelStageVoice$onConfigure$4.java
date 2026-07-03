@@ -3,14 +3,14 @@ package com.discord.widgets.channels.list;
 import android.view.View;
 import com.discord.api.channel.Channel;
 import com.discord.widgets.channels.list.WidgetChannelsListAdapter;
-import d0.z.d.Intrinsics3;
-import d0.z.d.Lambda;
 import kotlin.Unit;
 import kotlin.jvm.functions.Function1;
+import p507d0.p592z.p594d.AbstractC12240o;
+import p507d0.p592z.p594d.C12238m;
 
 /* JADX INFO: compiled from: WidgetChannelsListAdapter.kt */
 /* JADX INFO: loaded from: classes2.dex */
-public final class WidgetChannelsListAdapter$ItemChannelStageVoice$onConfigure$4 extends Lambda implements Function1<View, Unit> {
+public final class WidgetChannelsListAdapter$ItemChannelStageVoice$onConfigure$4 extends AbstractC12240o implements Function1<View, Unit> {
     public final /* synthetic */ Channel $channel;
     public final /* synthetic */ WidgetChannelsListAdapter.ItemChannelStageVoice this$0;
 
@@ -24,12 +24,12 @@ public final class WidgetChannelsListAdapter$ItemChannelStageVoice$onConfigure$4
     @Override // kotlin.jvm.functions.Function1
     public /* bridge */ /* synthetic */ Unit invoke(View view) {
         invoke2(view);
-        return Unit.a;
+        return Unit.f27425a;
     }
 
     /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
     public final void invoke2(View view) {
-        Intrinsics3.checkNotNullParameter(view, "it");
+        C12238m.checkNotNullParameter(view, "it");
         WidgetChannelsListAdapter.ItemChannelStageVoice.access$getAdapter$p(this.this$0).getOnSelectChannelOptions().invoke(this.$channel);
     }
 }

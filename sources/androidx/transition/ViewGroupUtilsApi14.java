@@ -67,7 +67,7 @@ public class ViewGroupUtilsApi14 {
                     cancelLayoutTransition(layoutTransition2);
                 }
                 if (layoutTransition2 != sEmptyLayoutTransition) {
-                    viewGroup.setTag(R.id.transition_layout_save, layoutTransition2);
+                    viewGroup.setTag(C0658R.id.transition_layout_save, layoutTransition2);
                 }
             }
             viewGroup.setLayoutTransition(sEmptyLayoutTransition);
@@ -103,7 +103,7 @@ public class ViewGroupUtilsApi14 {
         if (z3) {
             viewGroup.requestLayout();
         }
-        int i = R.id.transition_layout_save;
+        int i = C0658R.id.transition_layout_save;
         LayoutTransition layoutTransition3 = (LayoutTransition) viewGroup.getTag(i);
         if (layoutTransition3 != null) {
             viewGroup.setTag(i, null);

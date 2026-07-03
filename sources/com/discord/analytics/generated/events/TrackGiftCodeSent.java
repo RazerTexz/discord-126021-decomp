@@ -1,24 +1,24 @@
 package com.discord.analytics.generated.events;
 
-import b.d.b.a.outline;
 import com.discord.analytics.generated.traits.TrackBase;
-import com.discord.analytics.generated.traits.TrackBase2;
+import com.discord.analytics.generated.traits.TrackBaseReceiver;
 import com.discord.analytics.generated.traits.TrackChannel;
-import com.discord.analytics.generated.traits.TrackChannel2;
+import com.discord.analytics.generated.traits.TrackChannelReceiver;
 import com.discord.analytics.generated.traits.TrackGiftCodeMetadata;
-import com.discord.analytics.generated.traits.TrackGiftCodeMetadata2;
+import com.discord.analytics.generated.traits.TrackGiftCodeMetadataReceiver;
 import com.discord.analytics.generated.traits.TrackGuild;
-import com.discord.analytics.generated.traits.TrackGuild2;
+import com.discord.analytics.generated.traits.TrackGuildReceiver;
 import com.discord.analytics.generated.traits.TrackLocationMetadata;
-import com.discord.analytics.generated.traits.TrackLocationMetadata2;
+import com.discord.analytics.generated.traits.TrackLocationMetadataReceiver;
 import com.discord.analytics.generated.traits.TrackStoreSkuMetadata;
-import com.discord.analytics.generated.traits.TrackStoreSkuMetadata2;
+import com.discord.analytics.generated.traits.TrackStoreSkuMetadataReceiver;
 import com.discord.api.science.AnalyticsSchema;
-import d0.z.d.Intrinsics3;
+import p007b.p100d.p104b.p105a.C1643a;
+import p507d0.p592z.p594d.C12238m;
 
 /* JADX INFO: compiled from: TrackGiftCodeSent.kt */
 /* JADX INFO: loaded from: classes.dex */
-public final /* data */ class TrackGiftCodeSent implements AnalyticsSchema, TrackBase2, TrackStoreSkuMetadata2, TrackGiftCodeMetadata2, TrackLocationMetadata2, TrackGuild2, TrackChannel2 {
+public final /* data */ class TrackGiftCodeSent implements AnalyticsSchema, TrackBaseReceiver, TrackStoreSkuMetadataReceiver, TrackGiftCodeMetadataReceiver, TrackLocationMetadataReceiver, TrackGuildReceiver, TrackChannelReceiver {
     private TrackBase trackBase;
     private TrackChannel trackChannel;
     private TrackGiftCodeMetadata trackGiftCodeMetadata;
@@ -29,14 +29,15 @@ public final /* data */ class TrackGiftCodeSent implements AnalyticsSchema, Trac
     private final Boolean automaticSend = null;
     private final transient String analyticsSchemaTypeName = "gift_code_sent";
 
-    @Override // com.discord.analytics.generated.traits.TrackGuild2
+    @Override // com.discord.analytics.generated.traits.TrackGuildReceiver
     /* JADX INFO: renamed from: a, reason: from getter */
     public TrackGuild getTrackGuild() {
         return this.trackGuild;
     }
 
-    @Override // com.discord.analytics.generated.traits.TrackGuild2
-    public void c(TrackGuild trackGuild) {
+    @Override // com.discord.analytics.generated.traits.TrackGuildReceiver
+    /* JADX INFO: renamed from: c */
+    public void mo7508c(TrackGuild trackGuild) {
         this.trackGuild = trackGuild;
     }
 
@@ -54,7 +55,7 @@ public final /* data */ class TrackGiftCodeSent implements AnalyticsSchema, Trac
             return false;
         }
         TrackGiftCodeSent trackGiftCodeSent = (TrackGiftCodeSent) other;
-        return Intrinsics3.areEqual(this.messageId, trackGiftCodeSent.messageId) && Intrinsics3.areEqual(this.automaticSend, trackGiftCodeSent.automaticSend);
+        return C12238m.areEqual(this.messageId, trackGiftCodeSent.messageId) && C12238m.areEqual(this.automaticSend, trackGiftCodeSent.automaticSend);
     }
 
     public int hashCode() {
@@ -65,9 +66,9 @@ public final /* data */ class TrackGiftCodeSent implements AnalyticsSchema, Trac
     }
 
     public String toString() {
-        StringBuilder sbU = outline.U("TrackGiftCodeSent(messageId=");
-        sbU.append(this.messageId);
-        sbU.append(", automaticSend=");
-        return outline.D(sbU, this.automaticSend, ")");
+        StringBuilder sbM833U = C1643a.m833U("TrackGiftCodeSent(messageId=");
+        sbM833U.append(this.messageId);
+        sbM833U.append(", automaticSend=");
+        return C1643a.m816D(sbM833U, this.automaticSend, ")");
     }
 }

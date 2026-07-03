@@ -1,7 +1,7 @@
 package com.discord.api.guildscheduledevent;
 
-import b.d.b.a.outline;
-import d0.z.d.Intrinsics3;
+import p007b.p100d.p104b.p105a.C1643a;
+import p507d0.p592z.p594d.C12238m;
 
 /* JADX INFO: compiled from: GuildScheduledEventBroadcast.kt */
 /* JADX INFO: loaded from: classes.dex */
@@ -27,7 +27,7 @@ public final /* data */ class GuildScheduledEventBroadcast {
             return false;
         }
         GuildScheduledEventBroadcast guildScheduledEventBroadcast = (GuildScheduledEventBroadcast) other;
-        return this.canBroadcast == guildScheduledEventBroadcast.canBroadcast && Intrinsics3.areEqual(this.hasBroadcast, guildScheduledEventBroadcast.hasBroadcast);
+        return this.canBroadcast == guildScheduledEventBroadcast.canBroadcast && C12238m.areEqual(this.hasBroadcast, guildScheduledEventBroadcast.hasBroadcast);
     }
 
     /* JADX WARN: Multi-variable type inference failed */
@@ -46,9 +46,9 @@ public final /* data */ class GuildScheduledEventBroadcast {
     }
 
     public String toString() {
-        StringBuilder sbU = outline.U("GuildScheduledEventBroadcast(canBroadcast=");
-        sbU.append(this.canBroadcast);
-        sbU.append(", hasBroadcast=");
-        return outline.D(sbU, this.hasBroadcast, ")");
+        StringBuilder sbM833U = C1643a.m833U("GuildScheduledEventBroadcast(canBroadcast=");
+        sbM833U.append(this.canBroadcast);
+        sbM833U.append(", hasBroadcast=");
+        return C1643a.m816D(sbM833U, this.hasBroadcast, ")");
     }
 }

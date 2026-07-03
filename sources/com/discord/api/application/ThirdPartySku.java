@@ -1,8 +1,8 @@
 package com.discord.api.application;
 
-import b.d.b.a.outline;
 import com.discord.models.domain.ModelAuditLogEntry;
-import d0.z.d.Intrinsics3;
+import p007b.p100d.p104b.p105a.C1643a;
+import p507d0.p592z.p594d.C12238m;
 
 /* JADX INFO: compiled from: ThirdPartySku.kt */
 /* JADX INFO: loaded from: classes.dex */
@@ -29,7 +29,7 @@ public final /* data */ class ThirdPartySku {
             return false;
         }
         ThirdPartySku thirdPartySku = (ThirdPartySku) other;
-        return Intrinsics3.areEqual(this.id, thirdPartySku.id) && Intrinsics3.areEqual(this.sku, thirdPartySku.sku) && Intrinsics3.areEqual(this.distributor, thirdPartySku.distributor);
+        return C12238m.areEqual(this.id, thirdPartySku.id) && C12238m.areEqual(this.sku, thirdPartySku.sku) && C12238m.areEqual(this.distributor, thirdPartySku.distributor);
     }
 
     public int hashCode() {
@@ -42,11 +42,11 @@ public final /* data */ class ThirdPartySku {
     }
 
     public String toString() {
-        StringBuilder sbU = outline.U("ThirdPartySku(id=");
-        sbU.append(this.id);
-        sbU.append(", sku=");
-        sbU.append(this.sku);
-        sbU.append(", distributor=");
-        return outline.J(sbU, this.distributor, ")");
+        StringBuilder sbM833U = C1643a.m833U("ThirdPartySku(id=");
+        sbM833U.append(this.id);
+        sbM833U.append(", sku=");
+        sbM833U.append(this.sku);
+        sbM833U.append(", distributor=");
+        return C1643a.m822J(sbM833U, this.distributor, ")");
     }
 }

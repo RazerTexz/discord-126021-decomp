@@ -27,11 +27,15 @@ import lombok.javac.handlers.JavacHandlerUtil;
 
 /* JADX INFO: loaded from: app.apk:lombok/javac/handlers/HandleGetter.SCL.lombok */
 public class HandleGetter extends JavacAnnotationHandler<Getter> {
-    private static final String AR = "java.util.concurrent.atomic.AtomicReference";
+
+    /* JADX INFO: renamed from: AR */
+    private static final String f27484AR = "java.util.concurrent.atomic.AtomicReference";
     private static final List<JCTree.JCExpression> NIL_EXPRESSION = List.nil();
     public static final Map<JavacTreeMaker.TypeTag, String> TYPE_MAP;
     private static /* synthetic */ int[] $SWITCH_TABLE$lombok$core$AST$Kind;
-    private static /* synthetic */ int[] $SWITCH_TABLE$lombok$javac$handlers$JavacHandlerUtil$MemberExistsResult;
+
+    /* JADX INFO: renamed from: $SWITCH_TABLE$lombok$javac$handlers$JavacHandlerUtil$MemberExistsResult */
+    private static /* synthetic */ int[] f27485x2486df07;
 
     static /* synthetic */ int[] $SWITCH_TABLE$lombok$core$AST$Kind() {
         int[] iArr = $SWITCH_TABLE$lombok$core$AST$Kind;
@@ -83,8 +87,9 @@ public class HandleGetter extends JavacAnnotationHandler<Getter> {
         return iArr2;
     }
 
-    static /* synthetic */ int[] $SWITCH_TABLE$lombok$javac$handlers$JavacHandlerUtil$MemberExistsResult() {
-        int[] iArr = $SWITCH_TABLE$lombok$javac$handlers$JavacHandlerUtil$MemberExistsResult;
+    /* JADX INFO: renamed from: $SWITCH_TABLE$lombok$javac$handlers$JavacHandlerUtil$MemberExistsResult */
+    static /* synthetic */ int[] m10943x2486df07() {
+        int[] iArr = f27485x2486df07;
         if (iArr != null) {
             return iArr;
         }
@@ -101,7 +106,7 @@ public class HandleGetter extends JavacAnnotationHandler<Getter> {
             iArr2[JavacHandlerUtil.MemberExistsResult.NOT_EXISTS.ordinal()] = 1;
         } catch (NoSuchFieldError unused3) {
         }
-        $SWITCH_TABLE$lombok$javac$handlers$JavacHandlerUtil$MemberExistsResult = iArr2;
+        f27485x2486df07 = iArr2;
         return iArr2;
     }
 
@@ -144,7 +149,7 @@ public class HandleGetter extends JavacAnnotationHandler<Getter> {
         Collection<JavacNode> fields = annotationNode.upFromAnnotationToFields();
         JavacHandlerUtil.deleteAnnotationIfNeccessary(annotationNode, (Class<? extends Annotation>) Getter.class);
         JavacHandlerUtil.deleteImportFromCompilationUnit(annotationNode, "lombok.AccessLevel");
-        JavacNode node = annotationNode.up();
+        JavacNode node = annotationNode.m10925up();
         Getter annotationInstance = annotation.getInstance();
         AccessLevel level = annotationInstance.value();
         boolean lazy = annotationInstance.lazy();
@@ -204,7 +209,7 @@ public class HandleGetter extends JavacAnnotationHandler<Getter> {
             return;
         }
         for (String altName : JavacHandlerUtil.toAllGetterNames(fieldNode)) {
-            switch ($SWITCH_TABLE$lombok$javac$handlers$JavacHandlerUtil$MemberExistsResult()[JavacHandlerUtil.methodExists(altName, fieldNode, false, 0).ordinal()]) {
+            switch (m10943x2486df07()[JavacHandlerUtil.methodExists(altName, fieldNode, false, 0).ordinal()]) {
                 case 1:
                 default:
                     break;
@@ -220,7 +225,7 @@ public class HandleGetter extends JavacAnnotationHandler<Getter> {
             }
         }
         long access = ((long) JavacHandlerUtil.toJavacModifier(level)) | (fieldDecl.mods.flags & 8);
-        JavacHandlerUtil.injectMethod(fieldNode.up(), createGetter(access, fieldNode, fieldNode.getTreeMaker(), source.get(), lazy, onMethod), List.nil(), JavacHandlerUtil.getMirrorForFieldType(fieldNode));
+        JavacHandlerUtil.injectMethod(fieldNode.m10925up(), createGetter(access, fieldNode, fieldNode.getTreeMaker(), source.get(), lazy, onMethod), List.nil(), JavacHandlerUtil.getMirrorForFieldType(fieldNode));
     }
 
     public JCTree.JCMethodDecl createGetter(long access, JavacNode field, JavacTreeMaker treeMaker, JCTree source, boolean lazy, List<JCTree.JCAnnotation> onMethod) {
@@ -358,11 +363,11 @@ public class HandleGetter extends JavacAnnotationHandler<Getter> {
         JCTree.JCStatement statement = callSet(fieldNode, JavacHandlerUtil.createFieldAccessor(maker, fieldNode, HandlerUtil.FieldAccess.ALWAYS_FIELD), maker.Ident(valueName));
         innerIfStatements.append(statement);
         JCTree.JCBinary isNull = maker.Binary(Javac.CTC_EQUAL, maker.Ident(valueName), maker.Literal(Javac.CTC_BOT, null));
-        JCTree.JCIf ifStatement = maker.If(isNull, maker.Block(0L, innerIfStatements.toList()), null);
+        JCTree.JCIf ifStatement = maker.m10940If(isNull, maker.Block(0L, innerIfStatements.toList()), null);
         synchronizedStatements.append(ifStatement);
         JCTree.JCSynchronized synchronizedStatement = maker.Synchronized(JavacHandlerUtil.createFieldAccessor(maker, fieldNode, HandlerUtil.FieldAccess.ALWAYS_FIELD), maker.Block(0L, synchronizedStatements.toList()));
         JCTree.JCBinary isNull2 = maker.Binary(Javac.CTC_EQUAL, maker.Ident(valueName), maker.Literal(Javac.CTC_BOT, null));
-        JCTree.JCIf ifStatement2 = maker.If(isNull2, maker.Block(0L, List.of(synchronizedStatement)), null);
+        JCTree.JCIf ifStatement2 = maker.m10940If(isNull2, maker.Block(0L, List.of(synchronizedStatement)), null);
         statements.append(ifStatement2);
         if (isPrimitive) {
             statements.append(maker.Return(maker.TypeCast(copyOfBoxedFieldType, maker.Ident(valueName))));
@@ -370,7 +375,7 @@ public class HandleGetter extends JavacAnnotationHandler<Getter> {
         if (!isPrimitive) {
             statements.append(maker.Return(maker.TypeCast(copyOfBoxedFieldType, maker.Parens(maker.Conditional(maker.Binary(Javac.CTC_EQUAL, maker.Ident(valueName), JavacHandlerUtil.createFieldAccessor(maker, fieldNode, HandlerUtil.FieldAccess.ALWAYS_FIELD)), maker.Literal(Javac.CTC_BOT, null), maker.Ident(valueName))))));
         }
-        field.vartype = JavacHandlerUtil.recursiveSetGeneratedBy(maker.TypeApply(JavacHandlerUtil.chainDotsString(fieldNode, AR), List.of(JavacHandlerUtil.genJavaLangTypeRef(fieldNode, "Object"))), source, fieldNode.getContext());
+        field.vartype = JavacHandlerUtil.recursiveSetGeneratedBy(maker.TypeApply(JavacHandlerUtil.chainDotsString(fieldNode, f27484AR), List.of(JavacHandlerUtil.genJavaLangTypeRef(fieldNode, "Object"))), source, fieldNode.getContext());
         field.init = JavacHandlerUtil.recursiveSetGeneratedBy(maker.NewClass(null, NIL_EXPRESSION, copyType(maker, field), NIL_EXPRESSION, null), source, fieldNode.getContext());
         return statements.toList();
     }

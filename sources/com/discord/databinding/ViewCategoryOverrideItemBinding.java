@@ -11,25 +11,27 @@ import androidx.viewbinding.ViewBinding;
 /* JADX INFO: loaded from: classes.dex */
 public final class ViewCategoryOverrideItemBinding implements ViewBinding {
 
+    /* JADX INFO: renamed from: a */
     @NonNull
-    public final ConstraintLayout a;
+    public final ConstraintLayout f15379a;
 
-    /* JADX INFO: renamed from: b, reason: collision with root package name */
+    /* JADX INFO: renamed from: b */
     @NonNull
-    public final TextView f2175b;
+    public final TextView f15380b;
 
+    /* JADX INFO: renamed from: c */
     @NonNull
-    public final TextView c;
+    public final TextView f15381c;
 
     public ViewCategoryOverrideItemBinding(@NonNull ConstraintLayout constraintLayout, @NonNull TextView textView, @NonNull TextView textView2, @NonNull Guideline guideline, @NonNull ImageView imageView) {
-        this.a = constraintLayout;
-        this.f2175b = textView;
-        this.c = textView2;
+        this.f15379a = constraintLayout;
+        this.f15380b = textView;
+        this.f15381c = textView2;
     }
 
     @Override // androidx.viewbinding.ViewBinding
     @NonNull
     public View getRoot() {
-        return this.a;
+        return this.f15379a;
     }
 }

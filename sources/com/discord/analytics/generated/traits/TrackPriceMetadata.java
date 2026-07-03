@@ -1,7 +1,7 @@
 package com.discord.analytics.generated.traits;
 
-import b.d.b.a.outline;
-import d0.z.d.Intrinsics3;
+import p007b.p100d.p104b.p105a.C1643a;
+import p507d0.p592z.p594d.C12238m;
 
 /* JADX INFO: compiled from: TrackPriceMetadata.kt */
 /* JADX INFO: loaded from: classes.dex */
@@ -18,7 +18,7 @@ public final /* data */ class TrackPriceMetadata {
             return false;
         }
         TrackPriceMetadata trackPriceMetadata = (TrackPriceMetadata) other;
-        return Intrinsics3.areEqual(this.price, trackPriceMetadata.price) && Intrinsics3.areEqual(this.regularPrice, trackPriceMetadata.regularPrice) && Intrinsics3.areEqual(this.currency, trackPriceMetadata.currency);
+        return C12238m.areEqual(this.price, trackPriceMetadata.price) && C12238m.areEqual(this.regularPrice, trackPriceMetadata.regularPrice) && C12238m.areEqual(this.currency, trackPriceMetadata.currency);
     }
 
     public int hashCode() {
@@ -31,11 +31,11 @@ public final /* data */ class TrackPriceMetadata {
     }
 
     public String toString() {
-        StringBuilder sbU = outline.U("TrackPriceMetadata(price=");
-        sbU.append(this.price);
-        sbU.append(", regularPrice=");
-        sbU.append(this.regularPrice);
-        sbU.append(", currency=");
-        return outline.E(sbU, this.currency, ")");
+        StringBuilder sbM833U = C1643a.m833U("TrackPriceMetadata(price=");
+        sbM833U.append(this.price);
+        sbM833U.append(", regularPrice=");
+        sbM833U.append(this.regularPrice);
+        sbM833U.append(", currency=");
+        return C1643a.m817E(sbM833U, this.currency, ")");
     }
 }

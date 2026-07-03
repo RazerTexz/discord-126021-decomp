@@ -1,18 +1,18 @@
 package com.discord.analytics.generated.events.network_action;
 
-import b.d.b.a.outline;
 import com.discord.analytics.generated.traits.TrackBase;
-import com.discord.analytics.generated.traits.TrackBase2;
+import com.discord.analytics.generated.traits.TrackBaseReceiver;
 import com.discord.analytics.generated.traits.TrackLocationMetadata;
-import com.discord.analytics.generated.traits.TrackLocationMetadata2;
+import com.discord.analytics.generated.traits.TrackLocationMetadataReceiver;
 import com.discord.analytics.generated.traits.TrackNetworkMetadata;
-import com.discord.analytics.generated.traits.TrackNetworkMetadata2;
+import com.discord.analytics.generated.traits.TrackNetworkMetadataReceiver;
 import com.discord.api.science.AnalyticsSchema;
-import d0.z.d.Intrinsics3;
+import p007b.p100d.p104b.p105a.C1643a;
+import p507d0.p592z.p594d.C12238m;
 
 /* JADX INFO: compiled from: TrackNetworkActionUserLogin.kt */
 /* JADX INFO: loaded from: classes.dex */
-public final /* data */ class TrackNetworkActionUserLogin implements AnalyticsSchema, TrackBase2, TrackLocationMetadata2, TrackNetworkMetadata2 {
+public final /* data */ class TrackNetworkActionUserLogin implements AnalyticsSchema, TrackBaseReceiver, TrackLocationMetadataReceiver, TrackNetworkMetadataReceiver {
     private final transient String analyticsSchemaTypeName;
     private final CharSequence inviteCode;
     private final Boolean isMultiAccount;
@@ -31,8 +31,9 @@ public final /* data */ class TrackNetworkActionUserLogin implements AnalyticsSc
         this.analyticsSchemaTypeName = "network_action_user_login";
     }
 
-    @Override // com.discord.analytics.generated.traits.TrackNetworkMetadata2
-    public void b(TrackNetworkMetadata trackNetworkMetadata) {
+    @Override // com.discord.analytics.generated.traits.TrackNetworkMetadataReceiver
+    /* JADX INFO: renamed from: b */
+    public void mo7529b(TrackNetworkMetadata trackNetworkMetadata) {
         this.trackNetworkMetadata = trackNetworkMetadata;
     }
 
@@ -50,7 +51,7 @@ public final /* data */ class TrackNetworkActionUserLogin implements AnalyticsSc
             return false;
         }
         TrackNetworkActionUserLogin trackNetworkActionUserLogin = (TrackNetworkActionUserLogin) other;
-        return Intrinsics3.areEqual(this.inviteCode, trackNetworkActionUserLogin.inviteCode) && Intrinsics3.areEqual(this.isMultiAccount, trackNetworkActionUserLogin.isMultiAccount);
+        return C12238m.areEqual(this.inviteCode, trackNetworkActionUserLogin.inviteCode) && C12238m.areEqual(this.isMultiAccount, trackNetworkActionUserLogin.isMultiAccount);
     }
 
     public int hashCode() {
@@ -61,9 +62,9 @@ public final /* data */ class TrackNetworkActionUserLogin implements AnalyticsSc
     }
 
     public String toString() {
-        StringBuilder sbU = outline.U("TrackNetworkActionUserLogin(inviteCode=");
-        sbU.append(this.inviteCode);
-        sbU.append(", isMultiAccount=");
-        return outline.D(sbU, this.isMultiAccount, ")");
+        StringBuilder sbM833U = C1643a.m833U("TrackNetworkActionUserLogin(inviteCode=");
+        sbM833U.append(this.inviteCode);
+        sbM833U.append(", isMultiAccount=");
+        return C1643a.m816D(sbM833U, this.isMultiAccount, ")");
     }
 }

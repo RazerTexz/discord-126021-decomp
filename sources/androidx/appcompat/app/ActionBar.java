@@ -14,7 +14,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.annotation.RestrictTo;
 import androidx.annotation.StringRes;
-import androidx.appcompat.R;
+import androidx.appcompat.C0051R;
 import androidx.appcompat.view.ActionMode;
 import androidx.fragment.app.FragmentTransaction;
 import java.lang.annotation.Retention;
@@ -348,8 +348,8 @@ public abstract class ActionBar {
         public LayoutParams(@NonNull Context context, AttributeSet attributeSet) {
             super(context, attributeSet);
             this.gravity = 0;
-            TypedArray typedArrayObtainStyledAttributes = context.obtainStyledAttributes(attributeSet, R.styleable.ActionBarLayout);
-            this.gravity = typedArrayObtainStyledAttributes.getInt(R.styleable.ActionBarLayout_android_layout_gravity, 0);
+            TypedArray typedArrayObtainStyledAttributes = context.obtainStyledAttributes(attributeSet, C0051R.styleable.ActionBarLayout);
+            this.gravity = typedArrayObtainStyledAttributes.getInt(C0051R.styleable.ActionBarLayout_android_layout_gravity, 0);
             typedArrayObtainStyledAttributes.recycle();
         }
 

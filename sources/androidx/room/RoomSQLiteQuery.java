@@ -2,8 +2,8 @@ package androidx.room;
 
 import androidx.annotation.RestrictTo;
 import androidx.annotation.VisibleForTesting;
-import androidx.sqlite.db.SupportSQLiteProgram;
-import androidx.sqlite.db.SupportSQLiteQuery;
+import androidx.sqlite.p006db.SupportSQLiteProgram;
+import androidx.sqlite.p006db.SupportSQLiteQuery;
 import java.util.Arrays;
 import java.util.Iterator;
 import java.util.Map;
@@ -76,32 +76,32 @@ public class RoomSQLiteQuery implements SupportSQLiteQuery, SupportSQLiteProgram
     public static RoomSQLiteQuery copyFrom(SupportSQLiteQuery supportSQLiteQuery) {
         RoomSQLiteQuery roomSQLiteQueryAcquire = acquire(supportSQLiteQuery.getSql(), supportSQLiteQuery.getArgCount());
         supportSQLiteQuery.bindTo(new SupportSQLiteProgram() { // from class: androidx.room.RoomSQLiteQuery.1
-            @Override // androidx.sqlite.db.SupportSQLiteProgram
+            @Override // androidx.sqlite.p006db.SupportSQLiteProgram
             public void bindBlob(int i, byte[] bArr) {
                 RoomSQLiteQuery.this.bindBlob(i, bArr);
             }
 
-            @Override // androidx.sqlite.db.SupportSQLiteProgram
+            @Override // androidx.sqlite.p006db.SupportSQLiteProgram
             public void bindDouble(int i, double d) {
                 RoomSQLiteQuery.this.bindDouble(i, d);
             }
 
-            @Override // androidx.sqlite.db.SupportSQLiteProgram
+            @Override // androidx.sqlite.p006db.SupportSQLiteProgram
             public void bindLong(int i, long j) {
                 RoomSQLiteQuery.this.bindLong(i, j);
             }
 
-            @Override // androidx.sqlite.db.SupportSQLiteProgram
+            @Override // androidx.sqlite.p006db.SupportSQLiteProgram
             public void bindNull(int i) {
                 RoomSQLiteQuery.this.bindNull(i);
             }
 
-            @Override // androidx.sqlite.db.SupportSQLiteProgram
+            @Override // androidx.sqlite.p006db.SupportSQLiteProgram
             public void bindString(int i, String str) {
                 RoomSQLiteQuery.this.bindString(i, str);
             }
 
-            @Override // androidx.sqlite.db.SupportSQLiteProgram
+            @Override // androidx.sqlite.p006db.SupportSQLiteProgram
             public void clearBindings() {
                 RoomSQLiteQuery.this.clearBindings();
             }
@@ -131,36 +131,36 @@ public class RoomSQLiteQuery implements SupportSQLiteQuery, SupportSQLiteProgram
         }
     }
 
-    @Override // androidx.sqlite.db.SupportSQLiteProgram
+    @Override // androidx.sqlite.p006db.SupportSQLiteProgram
     public void bindBlob(int i, byte[] bArr) {
         this.mBindingTypes[i] = 5;
         this.mBlobBindings[i] = bArr;
     }
 
-    @Override // androidx.sqlite.db.SupportSQLiteProgram
+    @Override // androidx.sqlite.p006db.SupportSQLiteProgram
     public void bindDouble(int i, double d) {
         this.mBindingTypes[i] = 3;
         this.mDoubleBindings[i] = d;
     }
 
-    @Override // androidx.sqlite.db.SupportSQLiteProgram
+    @Override // androidx.sqlite.p006db.SupportSQLiteProgram
     public void bindLong(int i, long j) {
         this.mBindingTypes[i] = 2;
         this.mLongBindings[i] = j;
     }
 
-    @Override // androidx.sqlite.db.SupportSQLiteProgram
+    @Override // androidx.sqlite.p006db.SupportSQLiteProgram
     public void bindNull(int i) {
         this.mBindingTypes[i] = 1;
     }
 
-    @Override // androidx.sqlite.db.SupportSQLiteProgram
+    @Override // androidx.sqlite.p006db.SupportSQLiteProgram
     public void bindString(int i, String str) {
         this.mBindingTypes[i] = 4;
         this.mStringBindings[i] = str;
     }
 
-    @Override // androidx.sqlite.db.SupportSQLiteQuery
+    @Override // androidx.sqlite.p006db.SupportSQLiteQuery
     public void bindTo(SupportSQLiteProgram supportSQLiteProgram) {
         for (int i = 1; i <= this.mArgCount; i++) {
             int i2 = this.mBindingTypes[i];
@@ -178,7 +178,7 @@ public class RoomSQLiteQuery implements SupportSQLiteQuery, SupportSQLiteProgram
         }
     }
 
-    @Override // androidx.sqlite.db.SupportSQLiteProgram
+    @Override // androidx.sqlite.p006db.SupportSQLiteProgram
     public void clearBindings() {
         Arrays.fill(this.mBindingTypes, 1);
         Arrays.fill(this.mStringBindings, (Object) null);
@@ -199,12 +199,12 @@ public class RoomSQLiteQuery implements SupportSQLiteQuery, SupportSQLiteProgram
         System.arraycopy(roomSQLiteQuery.mDoubleBindings, 0, this.mDoubleBindings, 0, argCount);
     }
 
-    @Override // androidx.sqlite.db.SupportSQLiteQuery
+    @Override // androidx.sqlite.p006db.SupportSQLiteQuery
     public int getArgCount() {
         return this.mArgCount;
     }
 
-    @Override // androidx.sqlite.db.SupportSQLiteQuery
+    @Override // androidx.sqlite.p006db.SupportSQLiteQuery
     public String getSql() {
         return this.mQuery;
     }

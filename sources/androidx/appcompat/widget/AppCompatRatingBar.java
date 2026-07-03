@@ -7,7 +7,7 @@ import android.view.View;
 import android.widget.RatingBar;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import androidx.appcompat.R;
+import androidx.appcompat.C0051R;
 
 /* JADX INFO: loaded from: classes.dex */
 public class AppCompatRatingBar extends RatingBar {
@@ -27,7 +27,7 @@ public class AppCompatRatingBar extends RatingBar {
     }
 
     public AppCompatRatingBar(@NonNull Context context, @Nullable AttributeSet attributeSet) {
-        this(context, attributeSet, R.attr.ratingBarStyle);
+        this(context, attributeSet, C0051R.attr.ratingBarStyle);
     }
 
     public AppCompatRatingBar(@NonNull Context context, @Nullable AttributeSet attributeSet, int i) {

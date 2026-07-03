@@ -5,16 +5,16 @@ import android.os.Bundle;
 import android.view.View;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
-import b.d.b.a.outline;
-import com.discord.R;
+import com.discord.C5419R;
 import com.discord.app.AppBottomSheet;
 import com.discord.databinding.WidgetStartCallSheetBinding;
 import com.discord.utilities.viewbinding.FragmentViewBindingDelegate;
-import com.discord.utilities.viewbinding.FragmentViewBindingDelegate3;
+import com.discord.utilities.viewbinding.FragmentViewBindingDelegateKt;
 import com.discord.widgets.user.calls.PrivateCallLauncher;
-import d0.z.d.Intrinsics3;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.reflect.KProperty;
+import p007b.p100d.p104b.p105a.C1643a;
+import p507d0.p592z.p594d.C12238m;
 
 /* JADX INFO: compiled from: WidgetStartCallSheet.kt */
 /* JADX INFO: loaded from: classes.dex */
@@ -24,7 +24,7 @@ public final class WidgetStartCallSheet extends AppBottomSheet {
     /* JADX INFO: renamed from: binding$delegate, reason: from kotlin metadata */
     private final FragmentViewBindingDelegate binding;
     private PrivateCallLauncher privateCallLauncher;
-    public static final /* synthetic */ KProperty[] $$delegatedProperties = {outline.d0(WidgetStartCallSheet.class, "binding", "getBinding()Lcom/discord/databinding/WidgetStartCallSheetBinding;", 0)};
+    public static final /* synthetic */ KProperty[] $$delegatedProperties = {C1643a.m846d0(WidgetStartCallSheet.class, "binding", "getBinding()Lcom/discord/databinding/WidgetStartCallSheetBinding;", 0)};
 
     /* JADX INFO: renamed from: Companion, reason: from kotlin metadata */
     public static final Companion INSTANCE = new Companion(null);
@@ -35,7 +35,7 @@ public final class WidgetStartCallSheet extends AppBottomSheet {
         }
 
         public final void show(long voiceChannelId, FragmentManager fragmentManager) {
-            Intrinsics3.checkNotNullParameter(fragmentManager, "fragmentManager");
+            C12238m.checkNotNullParameter(fragmentManager, "fragmentManager");
             WidgetStartCallSheet widgetStartCallSheet = new WidgetStartCallSheet();
             Bundle bundle = new Bundle();
             bundle.putLong(WidgetStartCallSheet.ARG_VOICE_CHANNEL_ID, voiceChannelId);
@@ -50,13 +50,13 @@ public final class WidgetStartCallSheet extends AppBottomSheet {
 
     public WidgetStartCallSheet() {
         super(false, 1, null);
-        this.binding = FragmentViewBindingDelegate3.viewBinding$default(this, WidgetStartCallSheet2.INSTANCE, null, 2, null);
+        this.binding = FragmentViewBindingDelegateKt.viewBinding$default(this, WidgetStartCallSheet$binding$2.INSTANCE, null, 2, null);
     }
 
     public static final /* synthetic */ PrivateCallLauncher access$getPrivateCallLauncher$p(WidgetStartCallSheet widgetStartCallSheet) {
         PrivateCallLauncher privateCallLauncher = widgetStartCallSheet.privateCallLauncher;
         if (privateCallLauncher == null) {
-            Intrinsics3.throwUninitializedPropertyAccessException("privateCallLauncher");
+            C12238m.throwUninitializedPropertyAccessException("privateCallLauncher");
         }
         return privateCallLauncher;
     }
@@ -71,32 +71,32 @@ public final class WidgetStartCallSheet extends AppBottomSheet {
 
     @Override // com.discord.app.AppBottomSheet
     public int getContentViewResId() {
-        return R.layout.widget_start_call_sheet;
+        return C5419R.layout.widget_start_call_sheet;
     }
 
     @Override // com.discord.app.AppBottomSheet, androidx.fragment.app.DialogFragment, androidx.fragment.app.Fragment
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         Context contextRequireContext = requireContext();
-        Intrinsics3.checkNotNullExpressionValue(contextRequireContext, "requireContext()");
+        C12238m.checkNotNullExpressionValue(contextRequireContext, "requireContext()");
         FragmentManager parentFragmentManager = getParentFragmentManager();
-        Intrinsics3.checkNotNullExpressionValue(parentFragmentManager, "parentFragmentManager");
+        C12238m.checkNotNullExpressionValue(parentFragmentManager, "parentFragmentManager");
         this.privateCallLauncher = new PrivateCallLauncher(this, this, contextRequireContext, parentFragmentManager);
     }
 
     @Override // com.discord.app.AppBottomSheet, androidx.fragment.app.Fragment
     public void onViewCreated(View view, Bundle savedInstanceState) {
-        Intrinsics3.checkNotNullParameter(view, "view");
+        C12238m.checkNotNullParameter(view, "view");
         super.onViewCreated(view, savedInstanceState);
         final long j = getArgumentsOrDefault().getLong(ARG_VOICE_CHANNEL_ID);
-        getBinding().c.setOnClickListener(new View.OnClickListener() { // from class: com.discord.widgets.voice.fullscreen.WidgetStartCallSheet.onViewCreated.1
+        getBinding().f18182c.setOnClickListener(new View.OnClickListener() { // from class: com.discord.widgets.voice.fullscreen.WidgetStartCallSheet.onViewCreated.1
             @Override // android.view.View.OnClickListener
             public final void onClick(View view2) {
                 WidgetStartCallSheet.access$getPrivateCallLauncher$p(WidgetStartCallSheet.this).launchVoiceCall(j);
                 WidgetStartCallSheet.this.dismiss();
             }
         });
-        getBinding().f2659b.setOnClickListener(new View.OnClickListener() { // from class: com.discord.widgets.voice.fullscreen.WidgetStartCallSheet.onViewCreated.2
+        getBinding().f18181b.setOnClickListener(new View.OnClickListener() { // from class: com.discord.widgets.voice.fullscreen.WidgetStartCallSheet.onViewCreated.2
             @Override // android.view.View.OnClickListener
             public final void onClick(View view2) {
                 WidgetStartCallSheet.access$getPrivateCallLauncher$p(WidgetStartCallSheet.this).launchVideoCall(j);

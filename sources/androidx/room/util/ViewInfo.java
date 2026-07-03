@@ -2,8 +2,8 @@ package androidx.room.util;
 
 import android.database.Cursor;
 import androidx.annotation.RestrictTo;
-import androidx.sqlite.db.SupportSQLiteDatabase;
-import b.d.b.a.outline;
+import androidx.sqlite.p006db.SupportSQLiteDatabase;
+import p007b.p100d.p104b.p105a.C1643a;
 
 /* JADX INFO: loaded from: classes.dex */
 @RestrictTo({RestrictTo.Scope.LIBRARY_GROUP_PREFIX})
@@ -55,13 +55,13 @@ public class ViewInfo {
     }
 
     public String toString() {
-        StringBuilder sbU = outline.U("ViewInfo{name='");
-        sbU.append(this.name);
-        sbU.append('\'');
-        sbU.append(", sql='");
-        sbU.append(this.sql);
-        sbU.append('\'');
-        sbU.append('}');
-        return sbU.toString();
+        StringBuilder sbM833U = C1643a.m833U("ViewInfo{name='");
+        sbM833U.append(this.name);
+        sbM833U.append('\'');
+        sbM833U.append(", sql='");
+        sbM833U.append(this.sql);
+        sbM833U.append('\'');
+        sbM833U.append('}');
+        return sbM833U.toString();
     }
 }

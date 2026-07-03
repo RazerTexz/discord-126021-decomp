@@ -16,10 +16,9 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.annotation.RequiresApi;
 import androidx.annotation.RestrictTo;
-import androidx.core.R;
+import androidx.core.C0205R;
 import androidx.core.graphics.Insets;
 import androidx.core.view.WindowInsetsCompat;
-import b.d.b.a.outline;
 import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
 import java.util.ArrayList;
@@ -27,6 +26,7 @@ import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Objects;
+import p007b.p100d.p104b.p105a.C1643a;
 
 /* JADX INFO: loaded from: classes.dex */
 public final class WindowInsetsAnimationCompat {
@@ -206,7 +206,7 @@ public final class WindowInsetsAnimationCompat {
         public static BoundsCompat computeAnimationBounds(@NonNull WindowInsetsCompat windowInsetsCompat, @NonNull WindowInsetsCompat windowInsetsCompat2, int i) {
             Insets insets = windowInsetsCompat.getInsets(i);
             Insets insets2 = windowInsetsCompat2.getInsets(i);
-            return new BoundsCompat(Insets.of(Math.min(insets.left, insets2.left), Math.min(insets.top, insets2.top), Math.min(insets.right, insets2.right), Math.min(insets.bottom, insets2.bottom)), Insets.of(Math.max(insets.left, insets2.left), Math.max(insets.top, insets2.top), Math.max(insets.right, insets2.right), Math.max(insets.bottom, insets2.bottom)));
+            return new BoundsCompat(Insets.m82of(Math.min(insets.left, insets2.left), Math.min(insets.top, insets2.top), Math.min(insets.right, insets2.right), Math.min(insets.bottom, insets2.bottom)), Insets.m82of(Math.max(insets.left, insets2.left), Math.max(insets.top, insets2.top), Math.max(insets.right, insets2.right), Math.max(insets.bottom, insets2.bottom)));
         }
 
         @NonNull
@@ -281,12 +281,12 @@ public final class WindowInsetsAnimationCompat {
 
         @NonNull
         public static WindowInsets forwardToViewIfNeeded(@NonNull View view, @NonNull WindowInsets windowInsets) {
-            return view.getTag(R.id.tag_on_apply_window_listener) != null ? windowInsets : view.onApplyWindowInsets(windowInsets);
+            return view.getTag(C0205R.id.tag_on_apply_window_listener) != null ? windowInsets : view.onApplyWindowInsets(windowInsets);
         }
 
         @Nullable
         public static Callback getCallback(View view) {
-            Object tag = view.getTag(R.id.tag_window_insets_animation_callback);
+            Object tag = view.getTag(C0205R.id.tag_window_insets_animation_callback);
             if (tag instanceof Impl21OnApplyWindowInsetsListener) {
                 return ((Impl21OnApplyWindowInsetsListener) tag).mCallback;
             }
@@ -310,9 +310,9 @@ public final class WindowInsetsAnimationCompat {
         }
 
         public static void setCallback(@NonNull View view, @Nullable Callback callback) {
-            Object tag = view.getTag(R.id.tag_on_apply_window_listener);
+            Object tag = view.getTag(C0205R.id.tag_on_apply_window_listener);
             if (callback == null) {
-                view.setTag(R.id.tag_window_insets_animation_callback, null);
+                view.setTag(C0205R.id.tag_window_insets_animation_callback, null);
                 if (tag == null) {
                     view.setOnApplyWindowInsetsListener(null);
                     return;
@@ -320,7 +320,7 @@ public final class WindowInsetsAnimationCompat {
                 return;
             }
             View.OnApplyWindowInsetsListener onApplyWindowInsetsListenerCreateProxyListener = createProxyListener(view, callback);
-            view.setTag(R.id.tag_window_insets_animation_callback, onApplyWindowInsetsListenerCreateProxyListener);
+            view.setTag(C0205R.id.tag_window_insets_animation_callback, onApplyWindowInsetsListenerCreateProxyListener);
             if (tag == null) {
                 view.setOnApplyWindowInsetsListener(onApplyWindowInsetsListenerCreateProxyListener);
             }
@@ -348,7 +348,7 @@ public final class WindowInsetsAnimationCompat {
         return new WindowInsetsAnimationCompat(windowInsetsAnimation);
     }
 
-    @FloatRange(from = 0.0d, to = 1.0d)
+    @FloatRange(from = 0.0d, m75to = 1.0d)
     public float getAlpha() {
         return this.mImpl.getAlpha();
     }
@@ -357,7 +357,7 @@ public final class WindowInsetsAnimationCompat {
         return this.mImpl.getDurationMillis();
     }
 
-    @FloatRange(from = 0.0d, to = 1.0d)
+    @FloatRange(from = 0.0d, m75to = 1.0d)
     public float getFraction() {
         return this.mImpl.getFraction();
     }
@@ -375,11 +375,11 @@ public final class WindowInsetsAnimationCompat {
         return this.mImpl.getTypeMask();
     }
 
-    public void setAlpha(@FloatRange(from = 0.0d, to = 1.0d) float f) {
+    public void setAlpha(@FloatRange(from = 0.0d, m75to = 1.0d) float f) {
         this.mImpl.setAlpha(f);
     }
 
-    public void setFraction(@FloatRange(from = 0.0d, to = 1.0d) float f) {
+    public void setFraction(@FloatRange(from = 0.0d, m75to = 1.0d) float f) {
         this.mImpl.setFraction(f);
     }
 
@@ -548,12 +548,12 @@ public final class WindowInsetsAnimationCompat {
         }
 
         public String toString() {
-            StringBuilder sbU = outline.U("Bounds{lower=");
-            sbU.append(this.mLowerBound);
-            sbU.append(" upper=");
-            sbU.append(this.mUpperBound);
-            sbU.append("}");
-            return sbU.toString();
+            StringBuilder sbM833U = C1643a.m833U("Bounds{lower=");
+            sbM833U.append(this.mLowerBound);
+            sbM833U.append(" upper=");
+            sbM833U.append(this.mUpperBound);
+            sbM833U.append("}");
+            return sbM833U.toString();
         }
 
         @RequiresApi(30)

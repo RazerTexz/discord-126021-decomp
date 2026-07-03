@@ -12,29 +12,32 @@ import com.google.android.material.button.MaterialButton;
 /* JADX INFO: loaded from: classes.dex */
 public final class WidgetStageAudienceNoticeBottomSheetBinding implements ViewBinding {
 
+    /* JADX INFO: renamed from: a */
     @NonNull
-    public final CoordinatorLayout a;
+    public final CoordinatorLayout f18128a;
 
-    /* JADX INFO: renamed from: b, reason: collision with root package name */
+    /* JADX INFO: renamed from: b */
     @NonNull
-    public final ImageView f2648b;
+    public final ImageView f18129b;
 
+    /* JADX INFO: renamed from: c */
     @NonNull
-    public final TextView c;
+    public final TextView f18130c;
 
+    /* JADX INFO: renamed from: d */
     @NonNull
-    public final MaterialButton d;
+    public final MaterialButton f18131d;
 
     public WidgetStageAudienceNoticeBottomSheetBinding(@NonNull CoordinatorLayout coordinatorLayout, @NonNull Barrier barrier, @NonNull ImageView imageView, @NonNull TextView textView, @NonNull ImageView imageView2, @NonNull TextView textView2, @NonNull ImageView imageView3, @NonNull TextView textView3, @NonNull ImageView imageView4, @NonNull TextView textView4, @NonNull MaterialButton materialButton, @NonNull ImageView imageView5, @NonNull TextView textView5) {
-        this.a = coordinatorLayout;
-        this.f2648b = imageView4;
-        this.c = textView4;
-        this.d = materialButton;
+        this.f18128a = coordinatorLayout;
+        this.f18129b = imageView4;
+        this.f18130c = textView4;
+        this.f18131d = materialButton;
     }
 
     @Override // androidx.viewbinding.ViewBinding
     @NonNull
     public View getRoot() {
-        return this.a;
+        return this.f18128a;
     }
 }

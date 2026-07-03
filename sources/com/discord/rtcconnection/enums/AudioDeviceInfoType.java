@@ -1,10 +1,10 @@
 package com.discord.rtcconnection.enums;
 
 import android.annotation.SuppressLint;
-import d0.t.Sets5;
 import java.util.Objects;
 import java.util.Set;
 import kotlin.jvm.internal.DefaultConstructorMarker;
+import p507d0.p580t.C12148n0;
 
 /* JADX INFO: compiled from: AudioDeviceInfoType.kt */
 /* JADX INFO: loaded from: classes.dex */
@@ -58,7 +58,7 @@ public enum AudioDeviceInfoType {
         AudioDeviceInfoType audioDeviceInfoType7 = UsbDevice;
         AudioDeviceInfoType audioDeviceInfoType8 = UsbHeadset;
         INSTANCE = new Companion(null);
-        supportedOutputTypes = Sets5.setOf((Object[]) new AudioDeviceInfoType[]{audioDeviceInfoType, audioDeviceInfoType2, audioDeviceInfoType5, audioDeviceInfoType3, audioDeviceInfoType4, audioDeviceInfoType6, audioDeviceInfoType7, audioDeviceInfoType8});
+        supportedOutputTypes = C12148n0.setOf((Object[]) new AudioDeviceInfoType[]{audioDeviceInfoType, audioDeviceInfoType2, audioDeviceInfoType5, audioDeviceInfoType3, audioDeviceInfoType4, audioDeviceInfoType6, audioDeviceInfoType7, audioDeviceInfoType8});
     }
 
     AudioDeviceInfoType(int i) {

@@ -29,10 +29,10 @@ import androidx.core.content.res.TypedArrayUtils;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.accessibility.AccessibilityNodeInfoCompat;
 import androidx.preference.PreferenceManager;
-import b.d.b.a.outline;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Set;
+import p007b.p100d.p104b.p105a.C1643a;
 
 /* JADX INFO: loaded from: classes.dex */
 public class Preference implements Comparable<Preference> {
@@ -140,7 +140,7 @@ public class Preference implements Comparable<Preference> {
                 return;
             }
             contextMenu.setHeaderTitle(summary);
-            contextMenu.add(0, 0, 0, R.string.copy).setOnMenuItemClickListener(this);
+            contextMenu.add(0, 0, 0, C0525R.string.copy).setOnMenuItemClickListener(this);
         }
 
         @Override // android.view.MenuItem.OnMenuItemClickListener
@@ -148,7 +148,7 @@ public class Preference implements Comparable<Preference> {
             ClipboardManager clipboardManager = (ClipboardManager) this.mPreference.getContext().getSystemService("clipboard");
             CharSequence summary = this.mPreference.getSummary();
             clipboardManager.setPrimaryClip(ClipData.newPlainText(Preference.CLIPBOARD_ID, summary));
-            Toast.makeText(this.mPreference.getContext(), this.mPreference.getContext().getString(R.string.preference_copied, summary), 0).show();
+            Toast.makeText(this.mPreference.getContext(), this.mPreference.getContext().getString(C0525R.string.preference_copied, summary), 0).show();
             return true;
         }
     }
@@ -170,7 +170,7 @@ public class Preference implements Comparable<Preference> {
         this.mAllowDividerBelow = true;
         this.mSingleLineTitle = true;
         this.mShouldDisableView = true;
-        int i3 = R.layout.preference;
+        int i3 = C0525R.layout.preference;
         this.mLayoutResId = i3;
         this.mClickListener = new View.OnClickListener() { // from class: androidx.preference.Preference.1
             @Override // android.view.View.OnClickListener
@@ -179,43 +179,43 @@ public class Preference implements Comparable<Preference> {
             }
         };
         this.mContext = context;
-        TypedArray typedArrayObtainStyledAttributes = context.obtainStyledAttributes(attributeSet, R.styleable.Preference, i, i2);
-        this.mIconResId = TypedArrayUtils.getResourceId(typedArrayObtainStyledAttributes, R.styleable.Preference_icon, R.styleable.Preference_android_icon, 0);
-        this.mKey = TypedArrayUtils.getString(typedArrayObtainStyledAttributes, R.styleable.Preference_key, R.styleable.Preference_android_key);
-        this.mTitle = TypedArrayUtils.getText(typedArrayObtainStyledAttributes, R.styleable.Preference_title, R.styleable.Preference_android_title);
-        this.mSummary = TypedArrayUtils.getText(typedArrayObtainStyledAttributes, R.styleable.Preference_summary, R.styleable.Preference_android_summary);
-        this.mOrder = TypedArrayUtils.getInt(typedArrayObtainStyledAttributes, R.styleable.Preference_order, R.styleable.Preference_android_order, Integer.MAX_VALUE);
-        this.mFragment = TypedArrayUtils.getString(typedArrayObtainStyledAttributes, R.styleable.Preference_fragment, R.styleable.Preference_android_fragment);
-        this.mLayoutResId = TypedArrayUtils.getResourceId(typedArrayObtainStyledAttributes, R.styleable.Preference_layout, R.styleable.Preference_android_layout, i3);
-        this.mWidgetLayoutResId = TypedArrayUtils.getResourceId(typedArrayObtainStyledAttributes, R.styleable.Preference_widgetLayout, R.styleable.Preference_android_widgetLayout, 0);
-        this.mEnabled = TypedArrayUtils.getBoolean(typedArrayObtainStyledAttributes, R.styleable.Preference_enabled, R.styleable.Preference_android_enabled, true);
-        this.mSelectable = TypedArrayUtils.getBoolean(typedArrayObtainStyledAttributes, R.styleable.Preference_selectable, R.styleable.Preference_android_selectable, true);
-        this.mPersistent = TypedArrayUtils.getBoolean(typedArrayObtainStyledAttributes, R.styleable.Preference_persistent, R.styleable.Preference_android_persistent, true);
-        this.mDependencyKey = TypedArrayUtils.getString(typedArrayObtainStyledAttributes, R.styleable.Preference_dependency, R.styleable.Preference_android_dependency);
-        int i4 = R.styleable.Preference_allowDividerAbove;
+        TypedArray typedArrayObtainStyledAttributes = context.obtainStyledAttributes(attributeSet, C0525R.styleable.Preference, i, i2);
+        this.mIconResId = TypedArrayUtils.getResourceId(typedArrayObtainStyledAttributes, C0525R.styleable.Preference_icon, C0525R.styleable.Preference_android_icon, 0);
+        this.mKey = TypedArrayUtils.getString(typedArrayObtainStyledAttributes, C0525R.styleable.Preference_key, C0525R.styleable.Preference_android_key);
+        this.mTitle = TypedArrayUtils.getText(typedArrayObtainStyledAttributes, C0525R.styleable.Preference_title, C0525R.styleable.Preference_android_title);
+        this.mSummary = TypedArrayUtils.getText(typedArrayObtainStyledAttributes, C0525R.styleable.Preference_summary, C0525R.styleable.Preference_android_summary);
+        this.mOrder = TypedArrayUtils.getInt(typedArrayObtainStyledAttributes, C0525R.styleable.Preference_order, C0525R.styleable.Preference_android_order, Integer.MAX_VALUE);
+        this.mFragment = TypedArrayUtils.getString(typedArrayObtainStyledAttributes, C0525R.styleable.Preference_fragment, C0525R.styleable.Preference_android_fragment);
+        this.mLayoutResId = TypedArrayUtils.getResourceId(typedArrayObtainStyledAttributes, C0525R.styleable.Preference_layout, C0525R.styleable.Preference_android_layout, i3);
+        this.mWidgetLayoutResId = TypedArrayUtils.getResourceId(typedArrayObtainStyledAttributes, C0525R.styleable.Preference_widgetLayout, C0525R.styleable.Preference_android_widgetLayout, 0);
+        this.mEnabled = TypedArrayUtils.getBoolean(typedArrayObtainStyledAttributes, C0525R.styleable.Preference_enabled, C0525R.styleable.Preference_android_enabled, true);
+        this.mSelectable = TypedArrayUtils.getBoolean(typedArrayObtainStyledAttributes, C0525R.styleable.Preference_selectable, C0525R.styleable.Preference_android_selectable, true);
+        this.mPersistent = TypedArrayUtils.getBoolean(typedArrayObtainStyledAttributes, C0525R.styleable.Preference_persistent, C0525R.styleable.Preference_android_persistent, true);
+        this.mDependencyKey = TypedArrayUtils.getString(typedArrayObtainStyledAttributes, C0525R.styleable.Preference_dependency, C0525R.styleable.Preference_android_dependency);
+        int i4 = C0525R.styleable.Preference_allowDividerAbove;
         this.mAllowDividerAbove = TypedArrayUtils.getBoolean(typedArrayObtainStyledAttributes, i4, i4, this.mSelectable);
-        int i5 = R.styleable.Preference_allowDividerBelow;
+        int i5 = C0525R.styleable.Preference_allowDividerBelow;
         this.mAllowDividerBelow = TypedArrayUtils.getBoolean(typedArrayObtainStyledAttributes, i5, i5, this.mSelectable);
-        int i6 = R.styleable.Preference_defaultValue;
+        int i6 = C0525R.styleable.Preference_defaultValue;
         if (typedArrayObtainStyledAttributes.hasValue(i6)) {
             this.mDefaultValue = onGetDefaultValue(typedArrayObtainStyledAttributes, i6);
         } else {
-            int i7 = R.styleable.Preference_android_defaultValue;
+            int i7 = C0525R.styleable.Preference_android_defaultValue;
             if (typedArrayObtainStyledAttributes.hasValue(i7)) {
                 this.mDefaultValue = onGetDefaultValue(typedArrayObtainStyledAttributes, i7);
             }
         }
-        this.mShouldDisableView = TypedArrayUtils.getBoolean(typedArrayObtainStyledAttributes, R.styleable.Preference_shouldDisableView, R.styleable.Preference_android_shouldDisableView, true);
-        int i8 = R.styleable.Preference_singleLineTitle;
+        this.mShouldDisableView = TypedArrayUtils.getBoolean(typedArrayObtainStyledAttributes, C0525R.styleable.Preference_shouldDisableView, C0525R.styleable.Preference_android_shouldDisableView, true);
+        int i8 = C0525R.styleable.Preference_singleLineTitle;
         boolean zHasValue = typedArrayObtainStyledAttributes.hasValue(i8);
         this.mHasSingleLineTitleAttr = zHasValue;
         if (zHasValue) {
-            this.mSingleLineTitle = TypedArrayUtils.getBoolean(typedArrayObtainStyledAttributes, i8, R.styleable.Preference_android_singleLineTitle, true);
+            this.mSingleLineTitle = TypedArrayUtils.getBoolean(typedArrayObtainStyledAttributes, i8, C0525R.styleable.Preference_android_singleLineTitle, true);
         }
-        this.mIconSpaceReserved = TypedArrayUtils.getBoolean(typedArrayObtainStyledAttributes, R.styleable.Preference_iconSpaceReserved, R.styleable.Preference_android_iconSpaceReserved, false);
-        int i9 = R.styleable.Preference_isPreferenceVisible;
+        this.mIconSpaceReserved = TypedArrayUtils.getBoolean(typedArrayObtainStyledAttributes, C0525R.styleable.Preference_iconSpaceReserved, C0525R.styleable.Preference_android_iconSpaceReserved, false);
+        int i9 = C0525R.styleable.Preference_isPreferenceVisible;
         this.mVisible = TypedArrayUtils.getBoolean(typedArrayObtainStyledAttributes, i9, i9, true);
-        int i10 = R.styleable.Preference_enableCopying;
+        int i10 = C0525R.styleable.Preference_enableCopying;
         this.mCopyingEnabled = TypedArrayUtils.getBoolean(typedArrayObtainStyledAttributes, i10, i10, false);
         typedArrayObtainStyledAttributes.recycle();
     }
@@ -244,14 +244,14 @@ public class Preference implements Comparable<Preference> {
             preferenceFindPreferenceInHierarchy.registerDependent(this);
             return;
         }
-        StringBuilder sbU = outline.U("Dependency \"");
-        sbU.append(this.mDependencyKey);
-        sbU.append("\" not found for preference \"");
-        sbU.append(this.mKey);
-        sbU.append("\" (title: \"");
-        sbU.append((Object) this.mTitle);
-        sbU.append("\"");
-        throw new IllegalStateException(sbU.toString());
+        StringBuilder sbM833U = C1643a.m833U("Dependency \"");
+        sbM833U.append(this.mDependencyKey);
+        sbM833U.append("\" not found for preference \"");
+        sbM833U.append(this.mKey);
+        sbM833U.append("\" (title: \"");
+        sbM833U.append((Object) this.mTitle);
+        sbM833U.append("\"");
+        throw new IllegalStateException(sbM833U.toString());
     }
 
     private void registerDependent(Preference preference) {
@@ -651,7 +651,7 @@ public class Preference implements Comparable<Preference> {
                 imageView.setVisibility(this.mIconSpaceReserved ? 4 : 8);
             }
         }
-        View viewFindViewById = preferenceViewHolder.findViewById(R.id.icon_frame);
+        View viewFindViewById = preferenceViewHolder.findViewById(C0525R.id.icon_frame);
         if (viewFindViewById == null) {
             viewFindViewById = preferenceViewHolder.findViewById(16908350);
         }
@@ -1102,7 +1102,7 @@ public class Preference implements Comparable<Preference> {
     }
 
     public Preference(Context context, AttributeSet attributeSet) {
-        this(context, attributeSet, TypedArrayUtils.getAttr(context, R.attr.preferenceStyle, android.R.attr.preferenceStyle));
+        this(context, attributeSet, TypedArrayUtils.getAttr(context, C0525R.attr.preferenceStyle, android.R.attr.preferenceStyle));
     }
 
     public Preference(Context context) {

@@ -7,13 +7,13 @@ import androidx.exifinterface.media.ExifInterface;
 import com.discord.simpleast.core.node.Node;
 import com.discord.utilities.color.ColorCompat;
 import com.discord.utilities.spans.ClickableSpan;
-import com.discord.utilities.string.StringUtils2;
+import com.discord.utilities.string.StringUtilsKt;
 import com.discord.utilities.textprocessing.node.UrlNode.RenderContext;
-import d0.z.d.Intrinsics3;
 import kotlin.Unit;
 import kotlin.jvm.functions.Function1;
 import kotlin.jvm.functions.Function3;
 import kotlin.jvm.internal.DefaultConstructorMarker;
+import p507d0.p592z.p594d.C12238m;
 
 /* JADX INFO: compiled from: UrlNode.kt */
 /* JADX INFO: loaded from: classes2.dex */
@@ -42,18 +42,18 @@ public final class UrlNode<T extends RenderContext> extends Node<T> {
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public UrlNode(String str, String str2) {
         super(null, 1, null);
-        Intrinsics3.checkNotNullParameter(str, "url");
+        C12238m.checkNotNullParameter(str, "url");
         this.url = str;
         this.mask = str2;
     }
 
     @Override // com.discord.simpleast.core.node.Node
     public void render(SpannableStringBuilder builder, T renderContext) {
-        Intrinsics3.checkNotNullParameter(builder, "builder");
-        Intrinsics3.checkNotNullParameter(renderContext, "renderContext");
+        C12238m.checkNotNullParameter(builder, "builder");
+        C12238m.checkNotNullParameter(renderContext, "renderContext");
         try {
-            String punyCodeASCIIUrl = StringUtils2.toPunyCodeASCIIUrl(this.url);
-            Object clickableSpan = new ClickableSpan(Integer.valueOf(ColorCompat.getThemedColor(renderContext.getContext(), renderContext.getLinkColorAttrResId())), false, new UrlNode2(renderContext, punyCodeASCIIUrl), new UrlNode3(this, renderContext, punyCodeASCIIUrl));
+            String punyCodeASCIIUrl = StringUtilsKt.toPunyCodeASCIIUrl(this.url);
+            Object clickableSpan = new ClickableSpan(Integer.valueOf(ColorCompat.getThemedColor(renderContext.getContext(), renderContext.getLinkColorAttrResId())), false, new UrlNode$render$style$1(renderContext, punyCodeASCIIUrl), new UrlNode$render$style$2(this, renderContext, punyCodeASCIIUrl));
             int length = builder.length();
             String str = this.mask;
             if (str != null) {

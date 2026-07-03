@@ -1,11 +1,11 @@
 package com.discord.stores;
 
-import b.d.b.a.outline;
 import com.discord.utilities.rest.SendUtils;
-import d0.z.d.Intrinsics3;
 import java.util.HashMap;
 import java.util.List;
 import kotlin.jvm.internal.DefaultConstructorMarker;
+import p007b.p100d.p104b.p105a.C1643a;
+import p507d0.p592z.p594d.C12238m;
 
 /* JADX INFO: compiled from: StoreMessageUploads.kt */
 /* JADX INFO: loaded from: classes2.dex */
@@ -77,7 +77,7 @@ public final class StoreMessageUploads extends StoreV2 {
                     return false;
                 }
                 Preprocessing preprocessing = (Preprocessing) other;
-                return this.numFiles == preprocessing.numFiles && Intrinsics3.areEqual(this.displayName, preprocessing.displayName) && Intrinsics3.areEqual(this.mimeType, preprocessing.mimeType);
+                return this.numFiles == preprocessing.numFiles && C12238m.areEqual(this.displayName, preprocessing.displayName) && C12238m.areEqual(this.mimeType, preprocessing.mimeType);
             }
 
             public final String getDisplayName() {
@@ -101,12 +101,12 @@ public final class StoreMessageUploads extends StoreV2 {
             }
 
             public String toString() {
-                StringBuilder sbU = outline.U("Preprocessing(numFiles=");
-                sbU.append(this.numFiles);
-                sbU.append(", displayName=");
-                sbU.append(this.displayName);
-                sbU.append(", mimeType=");
-                return outline.J(sbU, this.mimeType, ")");
+                StringBuilder sbM833U = C1643a.m833U("Preprocessing(numFiles=");
+                sbM833U.append(this.numFiles);
+                sbM833U.append(", displayName=");
+                sbM833U.append(this.displayName);
+                sbM833U.append(", mimeType=");
+                return C1643a.m822J(sbM833U, this.mimeType, ")");
             }
         }
 
@@ -117,7 +117,7 @@ public final class StoreMessageUploads extends StoreV2 {
             /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
             public Uploading(List<SendUtils.FileUpload> list) {
                 super(null);
-                Intrinsics3.checkNotNullParameter(list, "uploads");
+                C12238m.checkNotNullParameter(list, "uploads");
                 this.uploads = list;
             }
 
@@ -134,13 +134,13 @@ public final class StoreMessageUploads extends StoreV2 {
             }
 
             public final Uploading copy(List<SendUtils.FileUpload> uploads) {
-                Intrinsics3.checkNotNullParameter(uploads, "uploads");
+                C12238m.checkNotNullParameter(uploads, "uploads");
                 return new Uploading(uploads);
             }
 
             public boolean equals(Object other) {
                 if (this != other) {
-                    return (other instanceof Uploading) && Intrinsics3.areEqual(this.uploads, ((Uploading) other).uploads);
+                    return (other instanceof Uploading) && C12238m.areEqual(this.uploads, ((Uploading) other).uploads);
                 }
                 return true;
             }
@@ -158,7 +158,7 @@ public final class StoreMessageUploads extends StoreV2 {
             }
 
             public String toString() {
-                return outline.L(outline.U("Uploading(uploads="), this.uploads, ")");
+                return C1643a.m824L(C1643a.m833U("Uploading(uploads="), this.uploads, ")");
             }
         }
 
@@ -170,28 +170,28 @@ public final class StoreMessageUploads extends StoreV2 {
         }
     }
 
-    @Store3
+    @StoreThread
     private final void updateState(String nonce, MessageUploadState uploadState) {
         this.uploads.put(nonce, uploadState);
         markChanged();
     }
 
-    @Store3
+    @StoreThread
     public final void bindUpload(String nonce, List<SendUtils.FileUpload> uploads) {
-        Intrinsics3.checkNotNullParameter(nonce, "nonce");
-        Intrinsics3.checkNotNullParameter(uploads, "uploads");
+        C12238m.checkNotNullParameter(nonce, "nonce");
+        C12238m.checkNotNullParameter(uploads, "uploads");
         updateState(nonce, new MessageUploadState.Uploading(uploads));
     }
 
     public final MessageUploadState getUploadProgress(String nonce) {
-        Intrinsics3.checkNotNullParameter(nonce, "nonce");
+        C12238m.checkNotNullParameter(nonce, "nonce");
         MessageUploadState messageUploadState = this.uploads.get(nonce);
         return messageUploadState != null ? messageUploadState : MessageUploadState.None.INSTANCE;
     }
 
-    @Store3
+    @StoreThread
     public final void onPreprocessing(String nonce, int numFiles, String displayName, String mimeType) {
-        Intrinsics3.checkNotNullParameter(nonce, "nonce");
+        C12238m.checkNotNullParameter(nonce, "nonce");
         updateState(nonce, new MessageUploadState.Preprocessing(numFiles, displayName, mimeType));
     }
 }

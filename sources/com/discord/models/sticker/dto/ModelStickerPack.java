@@ -1,13 +1,13 @@
 package com.discord.models.sticker.dto;
 
-import b.d.b.a.outline;
 import com.discord.api.sticker.Sticker;
 import com.discord.models.domain.ModelAuditLogEntry;
 import com.discord.models.domain.ModelSku;
-import d0.z.d.Intrinsics3;
 import java.util.Collection;
 import java.util.Iterator;
 import java.util.List;
+import p007b.p100d.p104b.p105a.C1643a;
+import p507d0.p592z.p594d.C12238m;
 
 /* JADX INFO: compiled from: ModelStickerPack.kt */
 /* JADX INFO: loaded from: classes.dex */
@@ -22,8 +22,8 @@ public final /* data */ class ModelStickerPack {
     private final ModelStickerPackStoreListing storeListing;
 
     public ModelStickerPack(long j, List<Sticker> list, String str, ModelStickerPackStoreListing modelStickerPackStoreListing, long j2, Long l, String str2, Long l2) {
-        Intrinsics3.checkNotNullParameter(list, "stickers");
-        Intrinsics3.checkNotNullParameter(str, ModelAuditLogEntry.CHANGE_KEY_NAME);
+        C12238m.checkNotNullParameter(list, "stickers");
+        C12238m.checkNotNullParameter(str, ModelAuditLogEntry.CHANGE_KEY_NAME);
         this.id = j;
         this.stickers = list;
         this.name = str;
@@ -79,8 +79,8 @@ public final /* data */ class ModelStickerPack {
     }
 
     public final ModelStickerPack copy(long id2, List<Sticker> stickers, String name, ModelStickerPackStoreListing storeListing, long skuId, Long coverStickerId, String description, Long bannerAssetId) {
-        Intrinsics3.checkNotNullParameter(stickers, "stickers");
-        Intrinsics3.checkNotNullParameter(name, ModelAuditLogEntry.CHANGE_KEY_NAME);
+        C12238m.checkNotNullParameter(stickers, "stickers");
+        C12238m.checkNotNullParameter(name, ModelAuditLogEntry.CHANGE_KEY_NAME);
         return new ModelStickerPack(id2, stickers, name, storeListing, skuId, coverStickerId, description, bannerAssetId);
     }
 
@@ -92,7 +92,7 @@ public final /* data */ class ModelStickerPack {
             return false;
         }
         ModelStickerPack modelStickerPack = (ModelStickerPack) other;
-        return this.id == modelStickerPack.id && Intrinsics3.areEqual(this.stickers, modelStickerPack.stickers) && Intrinsics3.areEqual(this.name, modelStickerPack.name) && Intrinsics3.areEqual(this.storeListing, modelStickerPack.storeListing) && this.skuId == modelStickerPack.skuId && Intrinsics3.areEqual(this.coverStickerId, modelStickerPack.coverStickerId) && Intrinsics3.areEqual(this.description, modelStickerPack.description) && Intrinsics3.areEqual(this.bannerAssetId, modelStickerPack.bannerAssetId);
+        return this.id == modelStickerPack.id && C12238m.areEqual(this.stickers, modelStickerPack.stickers) && C12238m.areEqual(this.name, modelStickerPack.name) && C12238m.areEqual(this.storeListing, modelStickerPack.storeListing) && this.skuId == modelStickerPack.skuId && C12238m.areEqual(this.coverStickerId, modelStickerPack.coverStickerId) && C12238m.areEqual(this.description, modelStickerPack.description) && C12238m.areEqual(this.bannerAssetId, modelStickerPack.bannerAssetId);
     }
 
     public final Long getBannerAssetId() {
@@ -171,7 +171,7 @@ public final /* data */ class ModelStickerPack {
         }
         Iterator<T> it = list.iterator();
         while (it.hasNext()) {
-            if (((Sticker) it.next()).l()) {
+            if (((Sticker) it.next()).m8241l()) {
                 return true;
             }
         }
@@ -193,21 +193,21 @@ public final /* data */ class ModelStickerPack {
     }
 
     public String toString() {
-        StringBuilder sbU = outline.U("ModelStickerPack(id=");
-        sbU.append(this.id);
-        sbU.append(", stickers=");
-        sbU.append(this.stickers);
-        sbU.append(", name=");
-        sbU.append(this.name);
-        sbU.append(", storeListing=");
-        sbU.append(this.storeListing);
-        sbU.append(", skuId=");
-        sbU.append(this.skuId);
-        sbU.append(", coverStickerId=");
-        sbU.append(this.coverStickerId);
-        sbU.append(", description=");
-        sbU.append(this.description);
-        sbU.append(", bannerAssetId=");
-        return outline.G(sbU, this.bannerAssetId, ")");
+        StringBuilder sbM833U = C1643a.m833U("ModelStickerPack(id=");
+        sbM833U.append(this.id);
+        sbM833U.append(", stickers=");
+        sbM833U.append(this.stickers);
+        sbM833U.append(", name=");
+        sbM833U.append(this.name);
+        sbM833U.append(", storeListing=");
+        sbM833U.append(this.storeListing);
+        sbM833U.append(", skuId=");
+        sbM833U.append(this.skuId);
+        sbM833U.append(", coverStickerId=");
+        sbM833U.append(this.coverStickerId);
+        sbM833U.append(", description=");
+        sbM833U.append(this.description);
+        sbM833U.append(", bannerAssetId=");
+        return C1643a.m819G(sbM833U, this.bannerAssetId, ")");
     }
 }

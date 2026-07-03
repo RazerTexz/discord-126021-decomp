@@ -1,14 +1,14 @@
 package com.esotericsoftware.kryo.serializers;
 
-import b.d.b.a.outline;
 import com.esotericsoftware.kryo.KryoException;
-import com.esotericsoftware.kryo.io.Input;
-import com.esotericsoftware.kryo.io.Output;
-import com.esotericsoftware.kryo.io.UnsafeMemoryOutput;
-import com.esotericsoftware.kryo.io.UnsafeOutput;
+import com.esotericsoftware.kryo.p502io.Input;
+import com.esotericsoftware.kryo.p502io.Output;
+import com.esotericsoftware.kryo.p502io.UnsafeMemoryOutput;
+import com.esotericsoftware.kryo.p502io.UnsafeOutput;
 import com.esotericsoftware.kryo.serializers.FieldSerializer;
 import com.esotericsoftware.kryo.util.UnsafeUtil;
 import java.lang.reflect.Field;
+import p007b.p100d.p104b.p105a.C1643a;
 import sun.misc.Unsafe;
 
 /* JADX INFO: loaded from: classes.dex */
@@ -199,14 +199,14 @@ public class UnsafeCacheFields {
                 StringBuilder sb = new StringBuilder();
                 sb.append(this);
                 sb.append(" (");
-                outline.m0(this.type, sb, ")", e);
+                C1643a.m864m0(this.type, sb, ")", e);
                 throw e;
             } catch (RuntimeException e2) {
                 KryoException kryoException = new KryoException(e2);
                 StringBuilder sb2 = new StringBuilder();
                 sb2.append(this);
                 sb2.append(" (");
-                outline.m0(this.type, sb2, ")", kryoException);
+                C1643a.m864m0(this.type, sb2, ")", kryoException);
                 throw kryoException;
             }
         }

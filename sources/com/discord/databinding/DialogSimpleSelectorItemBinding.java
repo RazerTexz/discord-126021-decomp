@@ -7,22 +7,24 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.viewbinding.ViewBinding;
-import com.discord.R;
+import com.discord.C5419R;
 import java.util.Objects;
 
 /* JADX INFO: loaded from: classes.dex */
 public final class DialogSimpleSelectorItemBinding implements ViewBinding {
 
+    /* JADX INFO: renamed from: a */
     @NonNull
-    public final TextView a;
+    public final TextView f15039a;
 
     public DialogSimpleSelectorItemBinding(@NonNull TextView textView) {
-        this.a = textView;
+        this.f15039a = textView;
     }
 
     @NonNull
-    public static DialogSimpleSelectorItemBinding a(@NonNull LayoutInflater layoutInflater, @Nullable ViewGroup viewGroup, boolean z2) {
-        View viewInflate = layoutInflater.inflate(R.layout.dialog_simple_selector_item, viewGroup, false);
+    /* JADX INFO: renamed from: a */
+    public static DialogSimpleSelectorItemBinding m8381a(@NonNull LayoutInflater layoutInflater, @Nullable ViewGroup viewGroup, boolean z2) {
+        View viewInflate = layoutInflater.inflate(C5419R.layout.dialog_simple_selector_item, viewGroup, false);
         if (z2) {
             viewGroup.addView(viewInflate);
         }
@@ -33,6 +35,6 @@ public final class DialogSimpleSelectorItemBinding implements ViewBinding {
     @Override // androidx.viewbinding.ViewBinding
     @NonNull
     public View getRoot() {
-        return this.a;
+        return this.f15039a;
     }
 }

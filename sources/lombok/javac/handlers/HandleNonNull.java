@@ -80,9 +80,9 @@ public class HandleNonNull extends JavacAnnotationHandler<NonNull> {
         List<JCTree.JCStatement> newList;
         Iterator it;
         HandlerUtil.handleFlagUsage(annotationNode, ConfigurationKeys.NON_NULL_FLAG_USAGE, "@NonNull");
-        if (annotationNode.up().getKind() == AST.Kind.FIELD) {
+        if (annotationNode.m10925up().getKind() == AST.Kind.FIELD) {
             try {
-                if (Javac.isPrimitive(annotationNode.up().get().vartype)) {
+                if (Javac.isPrimitive(annotationNode.m10925up().get().vartype)) {
                     annotationNode.addWarning("@NonNull is meaningless on a primitive.");
                     return;
                 }
@@ -91,9 +91,9 @@ public class HandleNonNull extends JavacAnnotationHandler<NonNull> {
                 return;
             }
         }
-        switch ($SWITCH_TABLE$lombok$core$AST$Kind()[annotationNode.up().getKind().ordinal()]) {
+        switch ($SWITCH_TABLE$lombok$core$AST$Kind()[annotationNode.m10925up().getKind().ordinal()]) {
             case 7:
-                paramNode = annotationNode.up();
+                paramNode = annotationNode.m10925up();
                 break;
             case 8:
             case 9:
@@ -108,7 +108,7 @@ public class HandleNonNull extends JavacAnnotationHandler<NonNull> {
             return;
         }
         try {
-            JCTree.JCMethodDecl declaration = paramNode.up().get();
+            JCTree.JCMethodDecl declaration = paramNode.m10925up().get();
             if (declaration.body == null) {
                 return;
             }

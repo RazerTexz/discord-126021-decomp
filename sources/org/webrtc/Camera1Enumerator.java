@@ -3,11 +3,11 @@ package org.webrtc;
 import android.hardware.Camera;
 import android.os.SystemClock;
 import androidx.annotation.Nullable;
-import b.d.b.a.outline;
 import java.util.ArrayList;
 import java.util.List;
 import org.webrtc.CameraEnumerationAndroid;
 import org.webrtc.CameraVideoCapturer;
+import p007b.p100d.p104b.p105a.C1643a;
 
 /* JADX INFO: loaded from: classes3.dex */
 public class Camera1Enumerator implements CameraEnumerator {
@@ -37,12 +37,12 @@ public class Camera1Enumerator implements CameraEnumerator {
 
     private static List<CameraEnumerationAndroid.CaptureFormat> enumerateFormats(int i) {
         int i2;
-        Logging.d(TAG, "Get supported formats for camera index " + i + ".");
+        Logging.m11027d(TAG, "Get supported formats for camera index " + i + ".");
         long jElapsedRealtime = SystemClock.elapsedRealtime();
         Camera cameraOpen = null;
         try {
             try {
-                Logging.d(TAG, "Opening camera with index " + i);
+                Logging.m11027d(TAG, "Opening camera with index " + i);
                 cameraOpen = Camera.open(i);
                 Camera.Parameters parameters = cameraOpen.getParameters();
                 cameraOpen.release();
@@ -61,16 +61,16 @@ public class Camera1Enumerator implements CameraEnumerator {
                         arrayList.add(new CameraEnumerationAndroid.CaptureFormat(size.width, size.height, i3, i2));
                     }
                 } catch (Exception e) {
-                    Logging.e(TAG, "getSupportedFormats() failed on camera index " + i, e);
+                    Logging.m11029e(TAG, "getSupportedFormats() failed on camera index " + i, e);
                 }
                 long jElapsedRealtime2 = SystemClock.elapsedRealtime();
-                StringBuilder sbV = outline.V("Get supported formats for camera index ", i, " done. Time spent: ");
-                sbV.append(jElapsedRealtime2 - jElapsedRealtime);
-                sbV.append(" ms.");
-                Logging.d(TAG, sbV.toString());
+                StringBuilder sbM834V = C1643a.m834V("Get supported formats for camera index ", i, " done. Time spent: ");
+                sbM834V.append(jElapsedRealtime2 - jElapsedRealtime);
+                sbM834V.append(" ms.");
+                Logging.m11027d(TAG, sbM834V.toString());
                 return arrayList;
             } catch (RuntimeException e2) {
-                Logging.e(TAG, "Open camera failed on camera index " + i, e2);
+                Logging.m11029e(TAG, "Open camera failed on camera index " + i, e2);
                 ArrayList arrayList2 = new ArrayList();
                 if (cameraOpen != null) {
                     cameraOpen.release();
@@ -86,13 +86,13 @@ public class Camera1Enumerator implements CameraEnumerator {
     }
 
     public static int getCameraIndex(String str) {
-        Logging.d(TAG, "getCameraIndex: " + str);
+        Logging.m11027d(TAG, "getCameraIndex: " + str);
         for (int i = 0; i < Camera.getNumberOfCameras(); i++) {
             if (str.equals(getDeviceName(i))) {
                 return i;
             }
         }
-        throw new IllegalArgumentException(outline.w("No such camera: ", str));
+        throw new IllegalArgumentException(C1643a.m883w("No such camera: ", str));
     }
 
     @Nullable
@@ -102,7 +102,7 @@ public class Camera1Enumerator implements CameraEnumerator {
             Camera.getCameraInfo(i, cameraInfo);
             return cameraInfo;
         } catch (Exception e) {
-            Logging.e(TAG, "getCameraInfo failed on index " + i, e);
+            Logging.m11029e(TAG, "getCameraInfo failed on index " + i, e);
             return null;
         }
     }
@@ -128,9 +128,9 @@ public class Camera1Enumerator implements CameraEnumerator {
             String deviceName = getDeviceName(i);
             if (deviceName != null) {
                 arrayList.add(deviceName);
-                Logging.d(TAG, "Index: " + i + ". " + deviceName);
+                Logging.m11027d(TAG, "Index: " + i + ". " + deviceName);
             } else {
-                Logging.e(TAG, "Index: " + i + ". Failed to query camera name.");
+                Logging.m11028e(TAG, "Index: " + i + ". Failed to query camera name.");
             }
         }
         return (String[]) arrayList.toArray(new String[arrayList.size()]);

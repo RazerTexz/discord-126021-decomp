@@ -38,14 +38,14 @@ public class EditTextPreference extends DialogPreference {
 
         @Override // androidx.preference.Preference.SummaryProvider
         public CharSequence provideSummary(EditTextPreference editTextPreference) {
-            return TextUtils.isEmpty(editTextPreference.getText()) ? editTextPreference.getContext().getString(R.string.not_set) : editTextPreference.getText();
+            return TextUtils.isEmpty(editTextPreference.getText()) ? editTextPreference.getContext().getString(C0525R.string.not_set) : editTextPreference.getText();
         }
     }
 
     public EditTextPreference(Context context, AttributeSet attributeSet, int i, int i2) {
         super(context, attributeSet, i, i2);
-        TypedArray typedArrayObtainStyledAttributes = context.obtainStyledAttributes(attributeSet, R.styleable.EditTextPreference, i, i2);
-        int i3 = R.styleable.EditTextPreference_useSimpleSummaryProvider;
+        TypedArray typedArrayObtainStyledAttributes = context.obtainStyledAttributes(attributeSet, C0525R.styleable.EditTextPreference, i, i2);
+        int i3 = C0525R.styleable.EditTextPreference_useSimpleSummaryProvider;
         if (TypedArrayUtils.getBoolean(typedArrayObtainStyledAttributes, i3, i3, false)) {
             setSummaryProvider(SimpleSummaryProvider.getInstance());
         }
@@ -150,7 +150,7 @@ public class EditTextPreference extends DialogPreference {
     }
 
     public EditTextPreference(Context context, AttributeSet attributeSet) {
-        this(context, attributeSet, TypedArrayUtils.getAttr(context, R.attr.editTextPreferenceStyle, android.R.attr.editTextPreferenceStyle));
+        this(context, attributeSet, TypedArrayUtils.getAttr(context, C0525R.attr.editTextPreferenceStyle, android.R.attr.editTextPreferenceStyle));
     }
 
     public EditTextPreference(Context context) {

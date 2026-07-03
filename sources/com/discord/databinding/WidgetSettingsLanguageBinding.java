@@ -12,41 +12,47 @@ import com.discord.views.CheckedSetting;
 /* JADX INFO: loaded from: classes.dex */
 public final class WidgetSettingsLanguageBinding implements ViewBinding {
 
+    /* JADX INFO: renamed from: a */
     @NonNull
-    public final CoordinatorLayout a;
+    public final CoordinatorLayout f17992a;
 
-    /* JADX INFO: renamed from: b, reason: collision with root package name */
+    /* JADX INFO: renamed from: b */
     @NonNull
-    public final RelativeLayout f2627b;
+    public final RelativeLayout f17993b;
 
+    /* JADX INFO: renamed from: c */
     @NonNull
-    public final ImageView c;
+    public final ImageView f17994c;
 
+    /* JADX INFO: renamed from: d */
     @NonNull
-    public final TextView d;
+    public final TextView f17995d;
 
+    /* JADX INFO: renamed from: e */
     @NonNull
-    public final TextView e;
+    public final TextView f17996e;
 
+    /* JADX INFO: renamed from: f */
     @NonNull
-    public final CheckedSetting f;
+    public final CheckedSetting f17997f;
 
+    /* JADX INFO: renamed from: g */
     @NonNull
-    public final TextView g;
+    public final TextView f17998g;
 
     public WidgetSettingsLanguageBinding(@NonNull CoordinatorLayout coordinatorLayout, @NonNull RelativeLayout relativeLayout, @NonNull ImageView imageView, @NonNull TextView textView, @NonNull TextView textView2, @NonNull CheckedSetting checkedSetting, @NonNull TextView textView3) {
-        this.a = coordinatorLayout;
-        this.f2627b = relativeLayout;
-        this.c = imageView;
-        this.d = textView;
-        this.e = textView2;
-        this.f = checkedSetting;
-        this.g = textView3;
+        this.f17992a = coordinatorLayout;
+        this.f17993b = relativeLayout;
+        this.f17994c = imageView;
+        this.f17995d = textView;
+        this.f17996e = textView2;
+        this.f17997f = checkedSetting;
+        this.f17998g = textView3;
     }
 
     @Override // androidx.viewbinding.ViewBinding
     @NonNull
     public View getRoot() {
-        return this.a;
+        return this.f17992a;
     }
 }

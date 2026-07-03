@@ -1,7 +1,7 @@
 package com.discord.embed;
 
-import b.d.b.a.outline;
-import d0.z.d.Intrinsics3;
+import p007b.p100d.p104b.p105a.C1643a;
+import p507d0.p592z.p594d.C12238m;
 
 /* JADX INFO: compiled from: RenderableEmbedMedia.kt */
 /* JADX INFO: loaded from: classes.dex */
@@ -10,7 +10,7 @@ public final /* data */ class RenderableEmbedMedia {
     /* JADX INFO: renamed from: a, reason: from kotlin metadata */
     public final String url;
 
-    /* JADX INFO: renamed from: b, reason: collision with root package name and from kotlin metadata */
+    /* JADX INFO: renamed from: b, reason: from kotlin metadata */
     public final Integer width;
 
     /* JADX INFO: renamed from: c, reason: from kotlin metadata */
@@ -30,7 +30,7 @@ public final /* data */ class RenderableEmbedMedia {
             return false;
         }
         RenderableEmbedMedia renderableEmbedMedia = (RenderableEmbedMedia) other;
-        return Intrinsics3.areEqual(this.url, renderableEmbedMedia.url) && Intrinsics3.areEqual(this.width, renderableEmbedMedia.width) && Intrinsics3.areEqual(this.height, renderableEmbedMedia.height);
+        return C12238m.areEqual(this.url, renderableEmbedMedia.url) && C12238m.areEqual(this.width, renderableEmbedMedia.width) && C12238m.areEqual(this.height, renderableEmbedMedia.height);
     }
 
     public int hashCode() {
@@ -43,11 +43,11 @@ public final /* data */ class RenderableEmbedMedia {
     }
 
     public String toString() {
-        StringBuilder sbU = outline.U("RenderableEmbedMedia(url=");
-        sbU.append(this.url);
-        sbU.append(", width=");
-        sbU.append(this.width);
-        sbU.append(", height=");
-        return outline.F(sbU, this.height, ")");
+        StringBuilder sbM833U = C1643a.m833U("RenderableEmbedMedia(url=");
+        sbM833U.append(this.url);
+        sbM833U.append(", width=");
+        sbM833U.append(this.width);
+        sbM833U.append(", height=");
+        return C1643a.m818F(sbM833U, this.height, ")");
     }
 }

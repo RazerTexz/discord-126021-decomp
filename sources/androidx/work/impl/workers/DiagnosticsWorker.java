@@ -32,7 +32,7 @@ public class DiagnosticsWorker extends Worker {
 
     @NonNull
     private static String workSpecRow(@NonNull WorkSpec workSpec, @Nullable String str, @Nullable Integer num, @NonNull String str2) {
-        return String.format("\n%s\t %s\t %s\t %s\t %s\t %s\t", workSpec.f38id, workSpec.workerClassName, num, workSpec.state.name(), str, str2);
+        return String.format("\n%s\t %s\t %s\t %s\t %s\t %s\t", workSpec.f163id, workSpec.workerClassName, num, workSpec.state.name(), str, str2);
     }
 
     @NonNull
@@ -41,11 +41,11 @@ public class DiagnosticsWorker extends Worker {
         sb.append(String.format("\n Id \t Class Name\t %s\t State\t Unique Name\t Tags\t", Build.VERSION.SDK_INT >= 23 ? "Job Id" : "Alarm Id"));
         for (WorkSpec workSpec : list) {
             Integer numValueOf = null;
-            SystemIdInfo systemIdInfo = systemIdInfoDao.getSystemIdInfo(workSpec.f38id);
+            SystemIdInfo systemIdInfo = systemIdInfoDao.getSystemIdInfo(workSpec.f163id);
             if (systemIdInfo != null) {
                 numValueOf = Integer.valueOf(systemIdInfo.systemId);
             }
-            sb.append(workSpecRow(workSpec, TextUtils.join(",", workNameDao.getNamesForWorkSpecId(workSpec.f38id)), numValueOf, TextUtils.join(",", workTagDao.getTagsForWorkSpecId(workSpec.f38id))));
+            sb.append(workSpecRow(workSpec, TextUtils.join(",", workNameDao.getNamesForWorkSpecId(workSpec.f163id)), numValueOf, TextUtils.join(",", workTagDao.getTagsForWorkSpecId(workSpec.f163id))));
         }
         return sb.toString();
     }

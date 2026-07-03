@@ -10,33 +10,37 @@ import com.google.android.material.button.MaterialButton;
 /* JADX INFO: loaded from: classes.dex */
 public final class ViewMemberVerificationBinding implements ViewBinding {
 
+    /* JADX INFO: renamed from: a */
     @NonNull
-    public final View a;
+    public final View f15507a;
 
-    /* JADX INFO: renamed from: b, reason: collision with root package name */
+    /* JADX INFO: renamed from: b */
     @NonNull
-    public final TextView f2201b;
+    public final TextView f15508b;
 
+    /* JADX INFO: renamed from: c */
     @NonNull
-    public final MaterialButton c;
+    public final MaterialButton f15509c;
 
+    /* JADX INFO: renamed from: d */
     @NonNull
-    public final ImageView d;
+    public final ImageView f15510d;
 
+    /* JADX INFO: renamed from: e */
     @NonNull
-    public final TextView e;
+    public final TextView f15511e;
 
     public ViewMemberVerificationBinding(@NonNull View view, @NonNull TextView textView, @NonNull MaterialButton materialButton, @NonNull ImageView imageView, @NonNull TextView textView2) {
-        this.a = view;
-        this.f2201b = textView;
-        this.c = materialButton;
-        this.d = imageView;
-        this.e = textView2;
+        this.f15507a = view;
+        this.f15508b = textView;
+        this.f15509c = materialButton;
+        this.f15510d = imageView;
+        this.f15511e = textView2;
     }
 
     @Override // androidx.viewbinding.ViewBinding
     @NonNull
     public View getRoot() {
-        return this.a;
+        return this.f15507a;
     }
 }

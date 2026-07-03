@@ -64,7 +64,7 @@ public class ContentLoadingProgressBar extends ProgressBar {
         post(new Runnable() { // from class: y.b.b.b
             @Override // java.lang.Runnable
             public final void run() {
-                this.j.hideOnUiThread();
+                this.f27957j.hideOnUiThread();
             }
         });
     }
@@ -85,7 +85,7 @@ public class ContentLoadingProgressBar extends ProgressBar {
         post(new Runnable() { // from class: y.b.b.d
             @Override // java.lang.Runnable
             public final void run() {
-                this.j.showOnUiThread();
+                this.f27959j.showOnUiThread();
             }
         });
     }
@@ -99,7 +99,7 @@ public class ContentLoadingProgressBar extends ProgressBar {
         this.mDelayedHide = new Runnable() { // from class: y.b.b.a
             @Override // java.lang.Runnable
             public final void run() {
-                ContentLoadingProgressBar contentLoadingProgressBar = this.j;
+                ContentLoadingProgressBar contentLoadingProgressBar = this.f27956j;
                 contentLoadingProgressBar.mPostedHide = false;
                 contentLoadingProgressBar.mStartTime = -1L;
                 contentLoadingProgressBar.setVisibility(8);
@@ -108,7 +108,7 @@ public class ContentLoadingProgressBar extends ProgressBar {
         this.mDelayedShow = new Runnable() { // from class: y.b.b.c
             @Override // java.lang.Runnable
             public final void run() {
-                ContentLoadingProgressBar contentLoadingProgressBar = this.j;
+                ContentLoadingProgressBar contentLoadingProgressBar = this.f27958j;
                 contentLoadingProgressBar.mPostedShow = false;
                 if (contentLoadingProgressBar.mDismissed) {
                     return;

@@ -2,14 +2,14 @@ package com.discord.widgets.hubs;
 
 import android.os.Bundle;
 import android.os.Parcelable;
-import b.d.b.a.outline;
 import com.discord.app.AppFragment;
-import d0.z.d.Lambda;
 import kotlin.jvm.functions.Function0;
+import p007b.p100d.p104b.p105a.C1643a;
+import p507d0.p592z.p594d.AbstractC12240o;
 
 /* JADX INFO: compiled from: ArgUtils.kt */
 /* JADX INFO: loaded from: classes2.dex */
-public final class WidgetHubAddName$$special$$inlined$args$1 extends Lambda implements Function0<WidgetHubAddNameViewModel3> {
+public final class WidgetHubAddName$$special$$inlined$args$1 extends AbstractC12240o implements Function0<HubAddNameArgs> {
     public final /* synthetic */ String $argsKey;
     public final /* synthetic */ AppFragment $this_args;
 
@@ -23,22 +23,22 @@ public final class WidgetHubAddName$$special$$inlined$args$1 extends Lambda impl
     /* JADX WARN: Can't rename method to resolve collision */
     /* JADX WARN: Multi-variable type inference failed */
     @Override // kotlin.jvm.functions.Function0
-    public final WidgetHubAddNameViewModel3 invoke() {
+    public final HubAddNameArgs invoke() {
         Parcelable parcelableExtra;
         Bundle arguments = this.$this_args.getArguments();
         Object obj = arguments != null ? arguments.get(this.$argsKey) : null;
-        WidgetHubAddNameViewModel3 widgetHubAddNameViewModel3 = (WidgetHubAddNameViewModel3) (obj instanceof WidgetHubAddNameViewModel3 ? obj : null);
-        WidgetHubAddNameViewModel3 widgetHubAddNameViewModel4 = widgetHubAddNameViewModel3;
-        if (widgetHubAddNameViewModel3 == null) {
+        HubAddNameArgs hubAddNameArgs = (HubAddNameArgs) (obj instanceof HubAddNameArgs ? obj : null);
+        HubAddNameArgs hubAddNameArgs2 = hubAddNameArgs;
+        if (hubAddNameArgs == null) {
             parcelableExtra = this.$this_args.getMostRecentIntent().getParcelableExtra(this.$argsKey);
         }
-        if (widgetHubAddNameViewModel4 != 0) {
-            widgetHubAddNameViewModel4 = parcelableExtra;
-            return widgetHubAddNameViewModel4;
+        if (hubAddNameArgs2 != 0) {
+            hubAddNameArgs2 = parcelableExtra;
+            return hubAddNameArgs2;
         }
-        widgetHubAddNameViewModel4 = parcelableExtra;
-        StringBuilder sbU = outline.U("Missing args for class type ");
-        outline.l0(WidgetHubAddNameViewModel3.class, sbU, " + key ");
-        throw new IllegalStateException(outline.H(sbU, this.$argsKey, '!'));
+        hubAddNameArgs2 = parcelableExtra;
+        StringBuilder sbM833U = C1643a.m833U("Missing args for class type ");
+        C1643a.m862l0(HubAddNameArgs.class, sbM833U, " + key ");
+        throw new IllegalStateException(C1643a.m820H(sbM833U, this.$argsKey, '!'));
     }
 }

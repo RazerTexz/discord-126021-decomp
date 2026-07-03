@@ -3,55 +3,55 @@ package com.discord.stores;
 import android.content.SharedPreferences;
 import com.discord.rtcconnection.mediaengine.MediaEngineConnection;
 import com.discord.stores.StoreMediaSettings;
-import com.discord.utilities.cache.SharedPreferenceExtensions;
-import d0.Tuples;
-import d0.z.d.Intrinsics3;
-import d0.z.d.Lambda;
+import com.discord.utilities.cache.SharedPreferenceExtensionsKt;
 import java.util.Objects;
-import kotlin.Tuples2;
+import kotlin.Pair;
 import kotlin.jvm.functions.Function2;
+import p507d0.C12116o;
+import p507d0.p592z.p594d.AbstractC12240o;
+import p507d0.p592z.p594d.C12238m;
 
 /* JADX INFO: compiled from: VoiceConfigurationCache.kt */
 /* JADX INFO: loaded from: classes2.dex */
 public final class VoiceConfigurationCache {
     private final SharedPreferences sharedPreferences;
 
-    /* JADX INFO: renamed from: com.discord.stores.VoiceConfigurationCache$read$1, reason: invalid class name */
+    /* JADX INFO: renamed from: com.discord.stores.VoiceConfigurationCache$read$1 */
     /* JADX INFO: compiled from: VoiceConfigurationCache.kt */
-    public static final class AnonymousClass1 extends Lambda implements Function2<String, String, Tuples2<? extends Long, ? extends Boolean>> {
-        public static final AnonymousClass1 INSTANCE = new AnonymousClass1();
+    public static final class C66301 extends AbstractC12240o implements Function2<String, String, Pair<? extends Long, ? extends Boolean>> {
+        public static final C66301 INSTANCE = new C66301();
 
-        public AnonymousClass1() {
+        public C66301() {
             super(2);
         }
 
         @Override // kotlin.jvm.functions.Function2
-        public final Tuples2<Long, Boolean> invoke(String str, String str2) {
-            Intrinsics3.checkNotNullParameter(str, "key");
-            Intrinsics3.checkNotNullParameter(str2, "value");
-            return Tuples.to(Long.valueOf(Long.parseLong(str)), Boolean.valueOf(Boolean.parseBoolean(str2)));
+        public final Pair<Long, Boolean> invoke(String str, String str2) {
+            C12238m.checkNotNullParameter(str, "key");
+            C12238m.checkNotNullParameter(str2, "value");
+            return C12116o.m10073to(Long.valueOf(Long.parseLong(str)), Boolean.valueOf(Boolean.parseBoolean(str2)));
         }
     }
 
-    /* JADX INFO: renamed from: com.discord.stores.VoiceConfigurationCache$read$2, reason: invalid class name */
+    /* JADX INFO: renamed from: com.discord.stores.VoiceConfigurationCache$read$2 */
     /* JADX INFO: compiled from: VoiceConfigurationCache.kt */
-    public static final class AnonymousClass2 extends Lambda implements Function2<String, String, Tuples2<? extends Long, ? extends Float>> {
-        public static final AnonymousClass2 INSTANCE = new AnonymousClass2();
+    public static final class C66312 extends AbstractC12240o implements Function2<String, String, Pair<? extends Long, ? extends Float>> {
+        public static final C66312 INSTANCE = new C66312();
 
-        public AnonymousClass2() {
+        public C66312() {
             super(2);
         }
 
         @Override // kotlin.jvm.functions.Function2
-        public final Tuples2<Long, Float> invoke(String str, String str2) {
-            Intrinsics3.checkNotNullParameter(str, "key");
-            Intrinsics3.checkNotNullParameter(str2, "value");
-            return Tuples.to(Long.valueOf(Long.parseLong(str)), Float.valueOf(Float.parseFloat(str2)));
+        public final Pair<Long, Float> invoke(String str, String str2) {
+            C12238m.checkNotNullParameter(str, "key");
+            C12238m.checkNotNullParameter(str2, "value");
+            return C12116o.m10073to(Long.valueOf(Long.parseLong(str)), Float.valueOf(Float.parseFloat(str2)));
         }
     }
 
     public VoiceConfigurationCache(SharedPreferences sharedPreferences) {
-        Intrinsics3.checkNotNullParameter(sharedPreferences, "sharedPreferences");
+        C12238m.checkNotNullParameter(sharedPreferences, "sharedPreferences");
         this.sharedPreferences = sharedPreferences;
     }
 
@@ -94,13 +94,13 @@ public final class VoiceConfigurationCache {
         MediaEngineConnection.InputMode inputMode = MediaEngineConnection.InputMode.VOICE_ACTIVITY;
         int i = sharedPreferences2.getInt("CACHE_KEY_VOICE_SETTINGS_INPUT_MODE", inputMode.getNumeral());
         Objects.requireNonNull(companion2);
-        return new StoreMediaSettings.VoiceConfiguration(z2, z3, z4, vadUseKrisp, z5, z6, noiseProcessing, f, (i == 1 || i != 2) ? inputMode : MediaEngineConnection.InputMode.PUSH_TO_TALK, this.sharedPreferences.getFloat("CACHE_KEY_VOICE_SETTINGS_OUTPUT_VOLUME", companion.getDEFAULT_VOICE_CONFIG().getOutputVolume()), SharedPreferenceExtensions.getStringEntrySetAsMap$default(this.sharedPreferences, "MUTED_USERS_V2", null, AnonymousClass1.INSTANCE, 2, null), SharedPreferenceExtensions.getStringEntrySetAsMap$default(this.sharedPreferences, "USER_OUTPUT_VOLUMES_V2", null, AnonymousClass2.INSTANCE, 2, null), null, this.sharedPreferences.getBoolean("VIDEO_ENABLE_HARDWARE_SCALING", companion.getDEFAULT_VOICE_CONFIG().getEnableVideoHardwareScaling()), this.sharedPreferences.getBoolean("CACHE_KEY_HIDE_VOICE_PARTICIPANTS", companion.getDEFAULT_VOICE_CONFIG().getVoiceParticipantsHidden()), 4096, null);
+        return new StoreMediaSettings.VoiceConfiguration(z2, z3, z4, vadUseKrisp, z5, z6, noiseProcessing, f, (i == 1 || i != 2) ? inputMode : MediaEngineConnection.InputMode.PUSH_TO_TALK, this.sharedPreferences.getFloat("CACHE_KEY_VOICE_SETTINGS_OUTPUT_VOLUME", companion.getDEFAULT_VOICE_CONFIG().getOutputVolume()), SharedPreferenceExtensionsKt.getStringEntrySetAsMap$default(this.sharedPreferences, "MUTED_USERS_V2", null, C66301.INSTANCE, 2, null), SharedPreferenceExtensionsKt.getStringEntrySetAsMap$default(this.sharedPreferences, "USER_OUTPUT_VOLUMES_V2", null, C66312.INSTANCE, 2, null), null, this.sharedPreferences.getBoolean("VIDEO_ENABLE_HARDWARE_SCALING", companion.getDEFAULT_VOICE_CONFIG().getEnableVideoHardwareScaling()), this.sharedPreferences.getBoolean("CACHE_KEY_HIDE_VOICE_PARTICIPANTS", companion.getDEFAULT_VOICE_CONFIG().getVoiceParticipantsHidden()), 4096, null);
     }
 
     public final void write(StoreMediaSettings.VoiceConfiguration voiceConfiguration) {
-        Intrinsics3.checkNotNullParameter(voiceConfiguration, "voiceConfiguration");
+        C12238m.checkNotNullParameter(voiceConfiguration, "voiceConfiguration");
         SharedPreferences.Editor editorEdit = this.sharedPreferences.edit();
-        Intrinsics3.checkNotNullExpressionValue(editorEdit, "editor");
+        C12238m.checkNotNullExpressionValue(editorEdit, "editor");
         editorEdit.putBoolean("CACHE_KEY_VOICE_SETTINGS_IS_MUTED", voiceConfiguration.isSelfMuted());
         editorEdit.putBoolean("CACHE_KEY_VOICE_SETTINGS_IS_DEAFENED", voiceConfiguration.isSelfDeafened());
         editorEdit.putBoolean("CACHE_KEY_VOICE_SETTINGS_AUTOMATIC_VAD", voiceConfiguration.getAutomaticVad());
@@ -111,8 +111,8 @@ public final class VoiceConfigurationCache {
         editorEdit.putFloat("CACHE_KEY_VOICE_SETTINGS_SENSITIVITY", voiceConfiguration.getSensitivity());
         editorEdit.putInt("CACHE_KEY_VOICE_SETTINGS_INPUT_MODE", voiceConfiguration.getInputMode().getNumeral());
         editorEdit.putFloat("CACHE_KEY_VOICE_SETTINGS_OUTPUT_VOLUME", voiceConfiguration.getOutputVolume());
-        SharedPreferenceExtensions.putStringEntrySetAsMap$default(editorEdit, "MUTED_USERS_V2", voiceConfiguration.getMutedUsers(), null, null, 12, null);
-        SharedPreferenceExtensions.putStringEntrySetAsMap$default(editorEdit, "USER_OUTPUT_VOLUMES_V2", voiceConfiguration.getUserOutputVolumes(), null, null, 12, null);
+        SharedPreferenceExtensionsKt.putStringEntrySetAsMap$default(editorEdit, "MUTED_USERS_V2", voiceConfiguration.getMutedUsers(), null, null, 12, null);
+        SharedPreferenceExtensionsKt.putStringEntrySetAsMap$default(editorEdit, "USER_OUTPUT_VOLUMES_V2", voiceConfiguration.getUserOutputVolumes(), null, null, 12, null);
         editorEdit.putBoolean("VIDEO_ENABLE_HARDWARE_SCALING", voiceConfiguration.getEnableVideoHardwareScaling());
         editorEdit.putBoolean("CACHE_KEY_HIDE_VOICE_PARTICIPANTS", voiceConfiguration.getVoiceParticipantsHidden());
         editorEdit.apply();

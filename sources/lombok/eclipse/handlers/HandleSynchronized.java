@@ -35,7 +35,7 @@ public class HandleSynchronized extends EclipseAnnotationHandler<Synchronized> {
 
     @Override // lombok.eclipse.EclipseAnnotationHandler
     public void preHandle(AnnotationValues<Synchronized> annotation, Annotation source, EclipseNode annotationNode) {
-        EclipseNode methodNode = annotationNode.up();
+        EclipseNode methodNode = annotationNode.m10925up();
         if (methodNode != null && methodNode.getKind() == AST.Kind.METHOD && (methodNode.get() instanceof MethodDeclaration)) {
             MethodDeclaration method = methodNode.get();
             if (method.isAbstract()) {
@@ -96,7 +96,7 @@ public class HandleSynchronized extends EclipseAnnotationHandler<Synchronized> {
             fieldDecl.type = new QualifiedTypeReference(TypeConstants.JAVA_LANG_OBJECT, new long[3]);
             EclipseHandlerUtil.setGeneratedBy(fieldDecl.type, source);
             fieldDecl.initialization = arrayAlloc;
-            EclipseHandlerUtil.injectField(annotationNode.up().up(), fieldDecl);
+            EclipseHandlerUtil.injectField(annotationNode.m10925up().m10925up(), fieldDecl);
         }
         return lockName;
     }
@@ -108,7 +108,7 @@ public class HandleSynchronized extends EclipseAnnotationHandler<Synchronized> {
         int p1 = source.sourceStart - 1;
         int p2 = source.sourceStart - 2;
         long pos = (((long) p1) << 32) | ((long) p2);
-        EclipseNode methodNode = annotationNode.up();
+        EclipseNode methodNode = annotationNode.m10925up();
         if (methodNode == null || methodNode.getKind() != AST.Kind.METHOD || !(methodNode.get() instanceof MethodDeclaration)) {
             annotationNode.addError("@Synchronized is legal only on methods.");
             return;

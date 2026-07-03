@@ -25,14 +25,14 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.annotation.RestrictTo;
 import androidx.annotation.StyleRes;
-import androidx.appcompat.R;
+import androidx.appcompat.C0051R;
 import androidx.appcompat.view.menu.ShowableListMenu;
 import androidx.constraintlayout.solver.widgets.analyzer.BasicMeasure;
 import androidx.core.view.PointerIconCompat;
 import androidx.core.view.ViewCompat;
 import androidx.core.widget.PopupWindowCompat;
-import b.d.b.a.outline;
 import java.lang.reflect.Method;
+import p007b.p100d.p104b.p105a.C1643a;
 
 /* JADX INFO: loaded from: classes.dex */
 public class ListPopupWindow implements ShowableListMenu {
@@ -194,7 +194,7 @@ public class ListPopupWindow implements ShowableListMenu {
     }
 
     public ListPopupWindow(@NonNull Context context) {
-        this(context, null, R.attr.listPopupWindowStyle);
+        this(context, null, C0051R.attr.listPopupWindowStyle);
     }
 
     private int buildDropDown() {
@@ -255,9 +255,9 @@ public class ListPopupWindow implements ShowableListMenu {
                     linearLayout.addView(view2);
                     linearLayout.addView(dropDownListView, layoutParams);
                 } else if (i3 != 1) {
-                    StringBuilder sbU = outline.U("Invalid hint position ");
-                    sbU.append(this.mPromptPosition);
-                    Log.e(TAG, sbU.toString());
+                    StringBuilder sbM833U = C1643a.m833U("Invalid hint position ");
+                    sbM833U.append(this.mPromptPosition);
+                    Log.e(TAG, sbM833U.toString());
                 } else {
                     linearLayout.addView(dropDownListView, layoutParams);
                     linearLayout.addView(view2);
@@ -827,7 +827,7 @@ public class ListPopupWindow implements ShowableListMenu {
     }
 
     public ListPopupWindow(@NonNull Context context, @Nullable AttributeSet attributeSet) {
-        this(context, attributeSet, R.attr.listPopupWindowStyle);
+        this(context, attributeSet, C0051R.attr.listPopupWindowStyle);
     }
 
     public ListPopupWindow(@NonNull Context context, @Nullable AttributeSet attributeSet, @AttrRes int i) {
@@ -850,9 +850,9 @@ public class ListPopupWindow implements ShowableListMenu {
         this.mTempRect = new Rect();
         this.mContext = context;
         this.mHandler = new Handler(context.getMainLooper());
-        TypedArray typedArrayObtainStyledAttributes = context.obtainStyledAttributes(attributeSet, R.styleable.ListPopupWindow, i, i2);
-        this.mDropDownHorizontalOffset = typedArrayObtainStyledAttributes.getDimensionPixelOffset(R.styleable.ListPopupWindow_android_dropDownHorizontalOffset, 0);
-        int dimensionPixelOffset = typedArrayObtainStyledAttributes.getDimensionPixelOffset(R.styleable.ListPopupWindow_android_dropDownVerticalOffset, 0);
+        TypedArray typedArrayObtainStyledAttributes = context.obtainStyledAttributes(attributeSet, C0051R.styleable.ListPopupWindow, i, i2);
+        this.mDropDownHorizontalOffset = typedArrayObtainStyledAttributes.getDimensionPixelOffset(C0051R.styleable.ListPopupWindow_android_dropDownHorizontalOffset, 0);
+        int dimensionPixelOffset = typedArrayObtainStyledAttributes.getDimensionPixelOffset(C0051R.styleable.ListPopupWindow_android_dropDownVerticalOffset, 0);
         this.mDropDownVerticalOffset = dimensionPixelOffset;
         if (dimensionPixelOffset != 0) {
             this.mDropDownVerticalOffsetSet = true;

@@ -1,22 +1,16 @@
 package com.discord.stores;
 
-import b.d.b.a.outline;
 import com.discord.api.guild.Guild;
 import com.discord.api.voice.state.VoiceState;
 import com.discord.app.AppLog;
 import com.discord.models.domain.ModelApplicationStream;
-import com.discord.models.domain.ModelApplicationStream3;
-import com.discord.models.domain.ModelApplicationStream5;
 import com.discord.models.domain.ModelPayload;
+import com.discord.models.domain.StreamCreateOrUpdate;
+import com.discord.models.domain.StreamDelete;
 import com.discord.rtcconnection.RtcConnection;
 import com.discord.stores.updates.ObservationDeck;
-import com.discord.stores.updates.ObservationDeck4;
+import com.discord.stores.updates.ObservationDeckProvider;
 import com.discord.utilities.logging.Logger;
-import d0.g0.Indent;
-import d0.t.Collections2;
-import d0.t.Maps6;
-import d0.z.d.Intrinsics3;
-import d0.z.d.Lambda;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.LinkedHashMap;
@@ -26,7 +20,13 @@ import kotlin.Unit;
 import kotlin.collections.ArrayDeque;
 import kotlin.jvm.functions.Function0;
 import kotlin.jvm.internal.DefaultConstructorMarker;
-import rx.Observable;
+import p007b.p100d.p104b.p105a.C1643a;
+import p507d0.p579g0.C12096m;
+import p507d0.p580t.C12136h0;
+import p507d0.p580t.C12147n;
+import p507d0.p592z.p594d.AbstractC12240o;
+import p507d0.p592z.p594d.C12238m;
+import p658rx.Observable;
 
 /* JADX INFO: compiled from: StoreApplicationStreaming.kt */
 /* JADX INFO: loaded from: classes2.dex */
@@ -85,7 +85,7 @@ public final class StoreApplicationStreaming extends StoreV2 {
                 State state3 = RECONNECTING;
                 State state4 = PAUSED;
                 Companion = new Companion(null);
-                ACTIVE_STATES = Collections2.listOf((Object[]) new State[]{state, state2, state3, state4});
+                ACTIVE_STATES = C12147n.listOf((Object[]) new State[]{state, state2, state3, state4});
             }
 
             public final boolean isStreamActive() {
@@ -94,8 +94,8 @@ public final class StoreApplicationStreaming extends StoreV2 {
         }
 
         public ActiveApplicationStream(State state, ModelApplicationStream modelApplicationStream) {
-            Intrinsics3.checkNotNullParameter(state, "state");
-            Intrinsics3.checkNotNullParameter(modelApplicationStream, "stream");
+            C12238m.checkNotNullParameter(state, "state");
+            C12238m.checkNotNullParameter(modelApplicationStream, "stream");
             this.state = state;
             this.stream = modelApplicationStream;
         }
@@ -121,8 +121,8 @@ public final class StoreApplicationStreaming extends StoreV2 {
         }
 
         public final ActiveApplicationStream copy(State state, ModelApplicationStream stream) {
-            Intrinsics3.checkNotNullParameter(state, "state");
-            Intrinsics3.checkNotNullParameter(stream, "stream");
+            C12238m.checkNotNullParameter(state, "state");
+            C12238m.checkNotNullParameter(stream, "stream");
             return new ActiveApplicationStream(state, stream);
         }
 
@@ -134,7 +134,7 @@ public final class StoreApplicationStreaming extends StoreV2 {
                 return false;
             }
             ActiveApplicationStream activeApplicationStream = (ActiveApplicationStream) other;
-            return Intrinsics3.areEqual(this.state, activeApplicationStream.state) && Intrinsics3.areEqual(this.stream, activeApplicationStream.stream);
+            return C12238m.areEqual(this.state, activeApplicationStream.state) && C12238m.areEqual(this.stream, activeApplicationStream.stream);
         }
 
         public final State getState() {
@@ -153,12 +153,12 @@ public final class StoreApplicationStreaming extends StoreV2 {
         }
 
         public String toString() {
-            StringBuilder sbU = outline.U("ActiveApplicationStream(state=");
-            sbU.append(this.state);
-            sbU.append(", stream=");
-            sbU.append(this.stream);
-            sbU.append(")");
-            return sbU.toString();
+            StringBuilder sbM833U = C1643a.m833U("ActiveApplicationStream(state=");
+            sbM833U.append(this.state);
+            sbM833U.append(", stream=");
+            sbM833U.append(this.stream);
+            sbM833U.append(")");
+            return sbM833U.toString();
         }
     }
 
@@ -171,31 +171,31 @@ public final class StoreApplicationStreaming extends StoreV2 {
         }
 
         public final Integer getMaxViewers(String streamKey) {
-            Intrinsics3.checkNotNullParameter(streamKey, "streamKey");
+            C12238m.checkNotNullParameter(streamKey, "streamKey");
             return this.maxViewersByStream.get(streamKey);
         }
 
         public final void onStreamUpdated(String streamKey, int viewerCount) {
-            Intrinsics3.checkNotNullParameter(streamKey, "streamKey");
+            C12238m.checkNotNullParameter(streamKey, "streamKey");
             Integer num = this.maxViewersByStream.get(streamKey);
             this.maxViewersByStream.put(streamKey, Integer.valueOf(Math.max(num != null ? num.intValue() : 0, viewerCount)));
         }
 
         public final void remove(String streamKey) {
-            Intrinsics3.checkNotNullParameter(streamKey, "streamKey");
+            C12238m.checkNotNullParameter(streamKey, "streamKey");
             this.maxViewersByStream.remove(streamKey);
         }
     }
 
-    /* JADX INFO: renamed from: com.discord.stores.StoreApplicationStreaming$createStream$1, reason: invalid class name */
+    /* JADX INFO: renamed from: com.discord.stores.StoreApplicationStreaming$createStream$1 */
     /* JADX INFO: compiled from: StoreApplicationStreaming.kt */
-    public static final class AnonymousClass1 extends Lambda implements Function0<Unit> {
+    public static final class C57441 extends AbstractC12240o implements Function0<Unit> {
         public final /* synthetic */ long $channelId;
         public final /* synthetic */ Long $guildId;
         public final /* synthetic */ String $preferredRegion;
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-        public AnonymousClass1(long j, Long l, String str) {
+        public C57441(long j, Long l, String str) {
             super(0);
             this.$channelId = j;
             this.$guildId = l;
@@ -205,7 +205,7 @@ public final class StoreApplicationStreaming extends StoreV2 {
         @Override // kotlin.jvm.functions.Function0
         public /* bridge */ /* synthetic */ Unit invoke() {
             invoke2();
-            return Unit.a;
+            return Unit.f27425a;
         }
 
         /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
@@ -216,16 +216,16 @@ public final class StoreApplicationStreaming extends StoreV2 {
             RtcConnection rtcConnection$app_productionGoogleRelease = StoreApplicationStreaming.this.rtcConnectionStore.getRtcConnection();
             Object encodedStreamKey = null;
             boolean z2 = false;
-            if (rtcConnection$app_productionGoogleRelease == null || rtcConnection$app_productionGoogleRelease.channelId != this.$channelId || (!Intrinsics3.areEqual(rtcConnection$app_productionGoogleRelease.guildId, this.$guildId))) {
-                AppLog appLog = AppLog.g;
-                StringBuilder sbU = outline.U("\n                Failed to start stream.\n                rtcConnection == null: ");
-                sbU.append(rtcConnection$app_productionGoogleRelease == null);
-                sbU.append("\n                rtcConnection.channelId != channelId: ");
-                sbU.append(rtcConnection$app_productionGoogleRelease == null || rtcConnection$app_productionGoogleRelease.channelId != this.$channelId);
-                sbU.append("\n                rtcConnection.guildId != guildId: ");
-                sbU.append(!Intrinsics3.areEqual(rtcConnection$app_productionGoogleRelease != null ? rtcConnection$app_productionGoogleRelease.guildId : null, this.$guildId));
-                sbU.append("\n              ");
-                Logger.e$default(appLog, "Failed to start stream.", new IllegalStateException(Indent.trimIndent(sbU.toString())), null, 4, null);
+            if (rtcConnection$app_productionGoogleRelease == null || rtcConnection$app_productionGoogleRelease.channelId != this.$channelId || (!C12238m.areEqual(rtcConnection$app_productionGoogleRelease.guildId, this.$guildId))) {
+                AppLog appLog = AppLog.f14950g;
+                StringBuilder sbM833U = C1643a.m833U("\n                Failed to start stream.\n                rtcConnection == null: ");
+                sbM833U.append(rtcConnection$app_productionGoogleRelease == null);
+                sbM833U.append("\n                rtcConnection.channelId != channelId: ");
+                sbM833U.append(rtcConnection$app_productionGoogleRelease == null || rtcConnection$app_productionGoogleRelease.channelId != this.$channelId);
+                sbM833U.append("\n                rtcConnection.guildId != guildId: ");
+                sbM833U.append(!C12238m.areEqual(rtcConnection$app_productionGoogleRelease != null ? rtcConnection$app_productionGoogleRelease.guildId : null, this.$guildId));
+                sbM833U.append("\n              ");
+                Logger.e$default(appLog, "Failed to start stream.", new IllegalStateException(C12096m.trimIndent(sbM833U.toString())), null, 4, null);
                 return;
             }
             long id2 = StoreApplicationStreaming.this.userStore.getMeSnapshot().getId();
@@ -247,10 +247,10 @@ public final class StoreApplicationStreaming extends StoreV2 {
         }
     }
 
-    /* JADX INFO: renamed from: com.discord.stores.StoreApplicationStreaming$observeActiveStream$1, reason: invalid class name */
+    /* JADX INFO: renamed from: com.discord.stores.StoreApplicationStreaming$observeActiveStream$1 */
     /* JADX INFO: compiled from: StoreApplicationStreaming.kt */
-    public static final class AnonymousClass1 extends Lambda implements Function0<ActiveApplicationStream> {
-        public AnonymousClass1() {
+    public static final class C57451 extends AbstractC12240o implements Function0<ActiveApplicationStream> {
+        public C57451() {
             super(0);
         }
 
@@ -261,10 +261,10 @@ public final class StoreApplicationStreaming extends StoreV2 {
         }
     }
 
-    /* JADX INFO: renamed from: com.discord.stores.StoreApplicationStreaming$observeStreamSpectators$1, reason: invalid class name */
+    /* JADX INFO: renamed from: com.discord.stores.StoreApplicationStreaming$observeStreamSpectators$1 */
     /* JADX INFO: compiled from: StoreApplicationStreaming.kt */
-    public static final class AnonymousClass1 extends Lambda implements Function0<Map<String, ? extends List<? extends Long>>> {
-        public AnonymousClass1() {
+    public static final class C57461 extends AbstractC12240o implements Function0<Map<String, ? extends List<? extends Long>>> {
+        public C57461() {
             super(0);
         }
 
@@ -274,10 +274,10 @@ public final class StoreApplicationStreaming extends StoreV2 {
         }
     }
 
-    /* JADX INFO: renamed from: com.discord.stores.StoreApplicationStreaming$observeStreamsByUser$1, reason: invalid class name */
+    /* JADX INFO: renamed from: com.discord.stores.StoreApplicationStreaming$observeStreamsByUser$1 */
     /* JADX INFO: compiled from: StoreApplicationStreaming.kt */
-    public static final class AnonymousClass1 extends Lambda implements Function0<Map<Long, ? extends ModelApplicationStream>> {
-        public AnonymousClass1() {
+    public static final class C57471 extends AbstractC12240o implements Function0<Map<Long, ? extends ModelApplicationStream>> {
+        public C57471() {
             super(0);
         }
 
@@ -287,13 +287,13 @@ public final class StoreApplicationStreaming extends StoreV2 {
         }
     }
 
-    /* JADX INFO: renamed from: com.discord.stores.StoreApplicationStreaming$observeStreamsForGuild$1, reason: invalid class name */
+    /* JADX INFO: renamed from: com.discord.stores.StoreApplicationStreaming$observeStreamsForGuild$1 */
     /* JADX INFO: compiled from: StoreApplicationStreaming.kt */
-    public static final class AnonymousClass1 extends Lambda implements Function0<Map<Long, ? extends ModelApplicationStream>> {
+    public static final class C57481 extends AbstractC12240o implements Function0<Map<Long, ? extends ModelApplicationStream>> {
         public final /* synthetic */ long $guildId;
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-        public AnonymousClass1(long j) {
+        public C57481(long j) {
             super(0);
             this.$guildId = j;
         }
@@ -312,13 +312,13 @@ public final class StoreApplicationStreaming extends StoreV2 {
         }
     }
 
-    /* JADX INFO: renamed from: com.discord.stores.StoreApplicationStreaming$observeStreamsForUser$1, reason: invalid class name */
+    /* JADX INFO: renamed from: com.discord.stores.StoreApplicationStreaming$observeStreamsForUser$1 */
     /* JADX INFO: compiled from: StoreApplicationStreaming.kt */
-    public static final class AnonymousClass1 extends Lambda implements Function0<ModelApplicationStream> {
+    public static final class C57491 extends AbstractC12240o implements Function0<ModelApplicationStream> {
         public final /* synthetic */ long $userId;
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-        public AnonymousClass1(long j) {
+        public C57491(long j) {
             super(0);
             this.$userId = j;
         }
@@ -330,13 +330,13 @@ public final class StoreApplicationStreaming extends StoreV2 {
         }
     }
 
-    /* JADX INFO: renamed from: com.discord.stores.StoreApplicationStreaming$stopStream$1, reason: invalid class name */
+    /* JADX INFO: renamed from: com.discord.stores.StoreApplicationStreaming$stopStream$1 */
     /* JADX INFO: compiled from: StoreApplicationStreaming.kt */
-    public static final class AnonymousClass1 extends Lambda implements Function0<Unit> {
+    public static final class C57501 extends AbstractC12240o implements Function0<Unit> {
         public final /* synthetic */ String $streamKey;
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-        public AnonymousClass1(String str) {
+        public C57501(String str) {
             super(0);
             this.$streamKey = str;
         }
@@ -344,7 +344,7 @@ public final class StoreApplicationStreaming extends StoreV2 {
         @Override // kotlin.jvm.functions.Function0
         public /* bridge */ /* synthetic */ Unit invoke() {
             invoke2();
-            return Unit.a;
+            return Unit.f27425a;
         }
 
         /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
@@ -353,14 +353,14 @@ public final class StoreApplicationStreaming extends StoreV2 {
         }
     }
 
-    /* JADX INFO: renamed from: com.discord.stores.StoreApplicationStreaming$targetStream$1, reason: invalid class name */
+    /* JADX INFO: renamed from: com.discord.stores.StoreApplicationStreaming$targetStream$1 */
     /* JADX INFO: compiled from: StoreApplicationStreaming.kt */
-    public static final class AnonymousClass1 extends Lambda implements Function0<Unit> {
+    public static final class C57511 extends AbstractC12240o implements Function0<Unit> {
         public final /* synthetic */ boolean $force;
         public final /* synthetic */ String $streamKey;
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-        public AnonymousClass1(String str, boolean z2) {
+        public C57511(String str, boolean z2) {
             super(0);
             this.$streamKey = str;
             this.$force = z2;
@@ -369,7 +369,7 @@ public final class StoreApplicationStreaming extends StoreV2 {
         @Override // kotlin.jvm.functions.Function0
         public /* bridge */ /* synthetic */ Unit invoke() {
             invoke2();
-            return Unit.a;
+            return Unit.f27425a;
         }
 
         /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
@@ -377,7 +377,7 @@ public final class StoreApplicationStreaming extends StoreV2 {
             ActiveApplicationStream.State state;
             ModelApplicationStream stream;
             ActiveApplicationStream activeApplicationStream = StoreApplicationStreaming.this.activeApplicationStream;
-            boolean z2 = Intrinsics3.areEqual((activeApplicationStream == null || (stream = activeApplicationStream.getStream()) == null) ? null : stream.getEncodedStreamKey(), this.$streamKey) && activeApplicationStream.getState().isStreamActive();
+            boolean z2 = C12238m.areEqual((activeApplicationStream == null || (stream = activeApplicationStream.getStream()) == null) ? null : stream.getEncodedStreamKey(), this.$streamKey) && activeApplicationStream.getState().isStreamActive();
             if (this.$force || !z2) {
                 if (activeApplicationStream != null && (state = activeApplicationStream.getState()) != null && state.isStreamActive()) {
                     StoreApplicationStreaming.this.stopStreamInternal(activeApplicationStream.getStream().getEncodedStreamKey());
@@ -388,7 +388,7 @@ public final class StoreApplicationStreaming extends StoreV2 {
     }
 
     public /* synthetic */ StoreApplicationStreaming(StoreStream storeStream, Dispatcher dispatcher, StoreUser storeUser, StoreVoiceChannelSelected storeVoiceChannelSelected, StoreRtcConnection storeRtcConnection, ObservationDeck observationDeck, int i, DefaultConstructorMarker defaultConstructorMarker) {
-        this(storeStream, dispatcher, storeUser, storeVoiceChannelSelected, storeRtcConnection, (i & 32) != 0 ? ObservationDeck4.get() : observationDeck);
+        this(storeStream, dispatcher, storeUser, storeVoiceChannelSelected, storeRtcConnection, (i & 32) != 0 ? ObservationDeckProvider.get() : observationDeck);
     }
 
     private final synchronized void addBreadCrumb(String message) {
@@ -409,11 +409,11 @@ public final class StoreApplicationStreaming extends StoreV2 {
     private final synchronized void dumpBreadcrumbs() {
         Iterator<String> it = this.breadCrumbs.iterator();
         while (it.hasNext()) {
-            AppLog.g.recordBreadcrumb(it.next(), "StoreApplicationStreaming");
+            AppLog.f14950g.recordBreadcrumb(it.next(), "StoreApplicationStreaming");
         }
     }
 
-    @Store3
+    @StoreThread
     private final void handleStreamCreateOrUpdate(String streamKey, boolean paused, List<Long> viewerIds) {
         updateActiveApplicationStream(new ActiveApplicationStream(paused ? ActiveApplicationStream.State.PAUSED : ActiveApplicationStream.State.ACTIVE, ModelApplicationStream.INSTANCE.decodeStreamKey(streamKey)));
         this.streamSpectators.put(streamKey, viewerIds);
@@ -429,7 +429,7 @@ public final class StoreApplicationStreaming extends StoreV2 {
     }
 
     private final void stopStreamInternal(String streamKey) {
-        this.storeStream.handleStreamDelete(new ModelApplicationStream5(streamKey, ModelApplicationStream5.Reason.USER_REQUESTED, false), true);
+        this.storeStream.handleStreamDelete(new StreamDelete(streamKey, StreamDelete.Reason.USER_REQUESTED, false), true);
     }
 
     public static /* synthetic */ void targetStream$default(StoreApplicationStreaming storeApplicationStreaming, String str, boolean z2, int i, Object obj) {
@@ -439,7 +439,7 @@ public final class StoreApplicationStreaming extends StoreV2 {
         storeApplicationStreaming.targetStream(str, z2);
     }
 
-    @Store3
+    @StoreThread
     private final void updateActiveApplicationStream(ActiveApplicationStream activeApplicationStream) {
         boolean zIsScreenSharing = isScreenSharing(this.activeApplicationStream);
         boolean zIsScreenSharing2 = isScreenSharing(activeApplicationStream);
@@ -450,11 +450,12 @@ public final class StoreApplicationStreaming extends StoreV2 {
     }
 
     public final void createStream(long channelId, Long guildId, String preferredRegion) {
-        this.dispatcher.schedule(new AnonymousClass1(channelId, guildId, preferredRegion));
+        this.dispatcher.schedule(new C57441(channelId, guildId, preferredRegion));
     }
 
-    @Store3
-    public final String getActiveApplicationStreamKeyInternal$app_productionGoogleRelease() {
+    @StoreThread
+    /* JADX INFO: renamed from: getActiveApplicationStreamKeyInternal$app_productionGoogleRelease */
+    public final String m8507xb25617db() {
         ModelApplicationStream stream;
         ActiveApplicationStream activeApplicationStream = this.activeApplicationStream;
         if (activeApplicationStream == null || (stream = activeApplicationStream.getStream()) == null) {
@@ -463,7 +464,7 @@ public final class StoreApplicationStreaming extends StoreV2 {
         return stream.getEncodedStreamKey();
     }
 
-    @Store3
+    @StoreThread
     public final Integer getMaxViewersForStream(long userId, long channelId, Long guildId) {
         return this.streamViewerTracker.getMaxViewers((guildId != null ? new ModelApplicationStream.GuildStream(guildId.longValue(), channelId, userId) : new ModelApplicationStream.CallStream(channelId, userId)).getEncodedStreamKey());
     }
@@ -472,9 +473,9 @@ public final class StoreApplicationStreaming extends StoreV2 {
         return this.streamsByUserSnapshot;
     }
 
-    @Store3
+    @StoreThread
     public final void handleConnectionOpen(ModelPayload payload) {
-        Intrinsics3.checkNotNullParameter(payload, "payload");
+        C12238m.checkNotNullParameter(payload, "payload");
         addBreadCrumb("Connection open, clearing streams by user.");
         this.streamsByUser.clear();
         this.streamViewerTracker.clear();
@@ -483,11 +484,11 @@ public final class StoreApplicationStreaming extends StoreV2 {
             targetStream(activeApplicationStream.getStream().getEncodedStreamKey(), true);
         }
         List<Guild> guilds = payload.getGuilds();
-        Intrinsics3.checkNotNullExpressionValue(guilds, "payload.guilds");
+        C12238m.checkNotNullExpressionValue(guilds, "payload.guilds");
         for (Guild guild : guilds) {
-            List<VoiceState> listR = guild.R();
-            if (listR != null) {
-                Iterator<T> it = listR.iterator();
+            List<VoiceState> listM7853R = guild.m7853R();
+            if (listM7853R != null) {
+                Iterator<T> it = listM7853R.iterator();
                 while (it.hasNext()) {
                     handleVoiceStateUpdate((VoiceState) it.next(), guild.getId());
                 }
@@ -496,27 +497,27 @@ public final class StoreApplicationStreaming extends StoreV2 {
         markChanged();
     }
 
-    @Store3
-    public final void handleStreamCreate(ModelApplicationStream3 streamCreate) {
-        Intrinsics3.checkNotNullParameter(streamCreate, "streamCreate");
+    @StoreThread
+    public final void handleStreamCreate(StreamCreateOrUpdate streamCreate) {
+        C12238m.checkNotNullParameter(streamCreate, "streamCreate");
         this.streamViewerTracker.remove(streamCreate.getStreamKey());
         handleStreamCreateOrUpdate(streamCreate.getStreamKey(), streamCreate.getPaused(), streamCreate.getViewerIds());
     }
 
-    @Store3
+    @StoreThread
     public final void handleStreamCreateRequest(String streamKey) {
-        Intrinsics3.checkNotNullParameter(streamKey, "streamKey");
+        C12238m.checkNotNullParameter(streamKey, "streamKey");
         updateActiveApplicationStream(new ActiveApplicationStream(ActiveApplicationStream.State.CONNECTING, ModelApplicationStream.INSTANCE.decodeStreamKey(streamKey)));
         markChanged();
     }
 
-    @Store3
-    public final void handleStreamDelete(ModelApplicationStream5 streamDelete) {
+    @StoreThread
+    public final void handleStreamDelete(StreamDelete streamDelete) {
         ModelApplicationStream stream;
         ActiveApplicationStream activeApplicationStream;
-        Intrinsics3.checkNotNullParameter(streamDelete, "streamDelete");
+        C12238m.checkNotNullParameter(streamDelete, "streamDelete");
         this.streamSpectators.remove(streamDelete.getStreamKey());
-        if (streamDelete.getReason() == ModelApplicationStream5.Reason.STREAM_FULL) {
+        if (streamDelete.getReason() == StreamDelete.Reason.STREAM_FULL) {
             updateActiveApplicationStream(new ActiveApplicationStream(ActiveApplicationStream.State.DENIED_FULL, ModelApplicationStream.INSTANCE.decodeStreamKey(streamDelete.getStreamKey())));
             markChanged();
             return;
@@ -526,13 +527,13 @@ public final class StoreApplicationStreaming extends StoreV2 {
             stream = this.targetStream;
         }
         ActiveApplicationStream activeApplicationStreamCopy$default = null;
-        if (Intrinsics3.areEqual(stream != null ? stream.getEncodedStreamKey() : null, streamDelete.getStreamKey())) {
+        if (C12238m.areEqual(stream != null ? stream.getEncodedStreamKey() : null, streamDelete.getStreamKey())) {
             if (streamDelete.getUnavailable()) {
                 ActiveApplicationStream activeApplicationStream3 = this.activeApplicationStream;
                 if (activeApplicationStream3 != null) {
                     activeApplicationStreamCopy$default = ActiveApplicationStream.copy$default(activeApplicationStream3, ActiveApplicationStream.State.RECONNECTING, null, 2, null);
                 }
-            } else if (streamDelete.getReason() != ModelApplicationStream5.Reason.USER_REQUESTED && (activeApplicationStream = this.activeApplicationStream) != null) {
+            } else if (streamDelete.getReason() != StreamDelete.Reason.USER_REQUESTED && (activeApplicationStream = this.activeApplicationStream) != null) {
                 activeApplicationStreamCopy$default = ActiveApplicationStream.copy$default(activeApplicationStream, ActiveApplicationStream.State.ENDED, null, 2, null);
             }
             updateActiveApplicationStream(activeApplicationStreamCopy$default);
@@ -540,12 +541,12 @@ public final class StoreApplicationStreaming extends StoreV2 {
         }
     }
 
-    @Store3
+    @StoreThread
     public final void handleStreamTargeted(String streamKey) {
-        Intrinsics3.checkNotNullParameter(streamKey, "streamKey");
+        C12238m.checkNotNullParameter(streamKey, "streamKey");
         ModelApplicationStream modelApplicationStreamDecodeStreamKey = ModelApplicationStream.INSTANCE.decodeStreamKey(streamKey);
         ActiveApplicationStream activeApplicationStream = this.activeApplicationStream;
-        if (Intrinsics3.areEqual(modelApplicationStreamDecodeStreamKey, activeApplicationStream != null ? activeApplicationStream.getStream() : null) && activeApplicationStream.getState().isStreamActive()) {
+        if (C12238m.areEqual(modelApplicationStreamDecodeStreamKey, activeApplicationStream != null ? activeApplicationStream.getStream() : null) && activeApplicationStream.getState().isStreamActive()) {
             return;
         }
         if (this.voiceChannelSelectedStore.getSelectedVoiceChannelId() != modelApplicationStreamDecodeStreamKey.getChannelId()) {
@@ -556,27 +557,27 @@ public final class StoreApplicationStreaming extends StoreV2 {
         }
     }
 
-    @Store3
-    public final void handleStreamUpdate(ModelApplicationStream3 streamUpdate) {
-        Intrinsics3.checkNotNullParameter(streamUpdate, "streamUpdate");
+    @StoreThread
+    public final void handleStreamUpdate(StreamCreateOrUpdate streamUpdate) {
+        C12238m.checkNotNullParameter(streamUpdate, "streamUpdate");
         handleStreamCreateOrUpdate(streamUpdate.getStreamKey(), streamUpdate.getPaused(), streamUpdate.getViewerIds());
     }
 
-    @Store3
+    @StoreThread
     public final void handleStreamWatch(String streamKey) {
-        Intrinsics3.checkNotNullParameter(streamKey, "streamKey");
+        C12238m.checkNotNullParameter(streamKey, "streamKey");
         updateActiveApplicationStream(new ActiveApplicationStream(ActiveApplicationStream.State.CONNECTING, ModelApplicationStream.INSTANCE.decodeStreamKey(streamKey)));
         markChanged();
     }
 
-    @Store3
+    @StoreThread
     public final void handleVoiceChannelSelected(long channelId) {
         ModelApplicationStream stream;
         ModelApplicationStream modelApplicationStream = this.targetStream;
         if (modelApplicationStream != null && channelId == modelApplicationStream.getChannelId()) {
             StoreStream storeStream = this.storeStream;
             ModelApplicationStream modelApplicationStream2 = this.targetStream;
-            Intrinsics3.checkNotNull(modelApplicationStream2);
+            C12238m.checkNotNull(modelApplicationStream2);
             storeStream.streamWatch(modelApplicationStream2.getEncodedStreamKey());
             this.targetStream = null;
             return;
@@ -589,92 +590,92 @@ public final class StoreApplicationStreaming extends StoreV2 {
         }
     }
 
-    @Store3
+    @StoreThread
     public final void handleVoiceStateUpdate(VoiceState voiceState, long guildId) {
-        Intrinsics3.checkNotNullParameter(voiceState, "voiceState");
+        C12238m.checkNotNullParameter(voiceState, "voiceState");
         addBreadCrumb("Handling a voice state update for " + voiceState.getUserId());
-        Long lA = voiceState.getChannelId();
-        long jM = voiceState.getUserId();
-        boolean zI = voiceState.getSelfStream();
+        Long lM8328a = voiceState.getChannelId();
+        long jM8340m = voiceState.getUserId();
+        boolean zM8336i = voiceState.getSelfStream();
         boolean z2 = guildId != 0;
-        boolean z3 = (lA == null || lA.longValue() == 0) ? false : true;
-        if (zI && z2 && z3) {
+        boolean z3 = (lM8328a == null || lM8328a.longValue() == 0) ? false : true;
+        if (zM8336i && z2 && z3) {
             HashMap<Long, ModelApplicationStream> map = this.streamsByUser;
-            Long lValueOf = Long.valueOf(jM);
-            Intrinsics3.checkNotNull(lA);
-            map.put(lValueOf, new ModelApplicationStream.GuildStream(guildId, lA.longValue(), jM));
+            Long lValueOf = Long.valueOf(jM8340m);
+            C12238m.checkNotNull(lM8328a);
+            map.put(lValueOf, new ModelApplicationStream.GuildStream(guildId, lM8328a.longValue(), jM8340m));
             markChanged();
-        } else if (zI && z3) {
+        } else if (zM8336i && z3) {
             HashMap<Long, ModelApplicationStream> map2 = this.streamsByUser;
-            Long lValueOf2 = Long.valueOf(jM);
-            Intrinsics3.checkNotNull(lA);
-            map2.put(lValueOf2, new ModelApplicationStream.CallStream(lA.longValue(), jM));
+            Long lValueOf2 = Long.valueOf(jM8340m);
+            C12238m.checkNotNull(lM8328a);
+            map2.put(lValueOf2, new ModelApplicationStream.CallStream(lM8328a.longValue(), jM8340m));
             markChanged();
-        } else if (this.streamsByUser.containsKey(Long.valueOf(jM))) {
-            this.streamsByUser.remove(Long.valueOf(jM));
+        } else if (this.streamsByUser.containsKey(Long.valueOf(jM8340m))) {
+            this.streamsByUser.remove(Long.valueOf(jM8340m));
             markChanged();
         }
         ActiveApplicationStream activeApplicationStream = this.activeApplicationStream;
-        if (activeApplicationStream != null && jM == this.userStore.getMe().getId()) {
+        if (activeApplicationStream != null && jM8340m == this.userStore.getMe().getId()) {
             long channelId = activeApplicationStream.getStream().getChannelId();
-            Long lA2 = voiceState.getChannelId();
-            if (lA2 == null || channelId != lA2.longValue()) {
+            Long lM8328a2 = voiceState.getChannelId();
+            if (lM8328a2 == null || channelId != lM8328a2.longValue()) {
                 updateActiveApplicationStream(null);
                 markChanged();
             }
         }
-        ModelApplicationStream modelApplicationStream = this.streamsByUser.get(Long.valueOf(jM));
-        if (zI && modelApplicationStream != null && activeApplicationStream != null && Intrinsics3.areEqual(modelApplicationStream.getEncodedStreamKey(), activeApplicationStream.getStream().getEncodedStreamKey()) && activeApplicationStream.getState() == ActiveApplicationStream.State.ENDED) {
+        ModelApplicationStream modelApplicationStream = this.streamsByUser.get(Long.valueOf(jM8340m));
+        if (zM8336i && modelApplicationStream != null && activeApplicationStream != null && C12238m.areEqual(modelApplicationStream.getEncodedStreamKey(), activeApplicationStream.getStream().getEncodedStreamKey()) && activeApplicationStream.getState() == ActiveApplicationStream.State.ENDED) {
             handleStreamTargeted(modelApplicationStream.getEncodedStreamKey());
         }
     }
 
-    @Store3
+    @StoreThread
     public final boolean isScreenSharing() {
         return isScreenSharing(this.activeApplicationStream);
     }
 
-    @Store3
+    @StoreThread
     public final boolean isUserStreaming(long userId) {
         addBreadCrumb("Asking if " + userId + " is streaming");
         return this.streamsByUser.containsKey(Long.valueOf(userId));
     }
 
     public final Observable<ActiveApplicationStream> observeActiveStream() {
-        return ObservationDeck.connectRx$default(this.observationDeck, new ObservationDeck.UpdateSource[]{this}, false, null, null, new AnonymousClass1(), 14, null);
+        return ObservationDeck.connectRx$default(this.observationDeck, new ObservationDeck.UpdateSource[]{this}, false, null, null, new C57451(), 14, null);
     }
 
     public final Observable<Map<String, List<Long>>> observeStreamSpectators() {
-        Observable<Map<String, List<Long>>> observableR = ObservationDeck.connectRx$default(this.observationDeck, new ObservationDeck.UpdateSource[]{this}, false, null, null, new AnonymousClass1(), 14, null).r();
-        Intrinsics3.checkNotNullExpressionValue(observableR, "observationDeck\n        …  .distinctUntilChanged()");
-        return observableR;
+        Observable<Map<String, List<Long>>> observableM11112r = ObservationDeck.connectRx$default(this.observationDeck, new ObservationDeck.UpdateSource[]{this}, false, null, null, new C57461(), 14, null).m11112r();
+        C12238m.checkNotNullExpressionValue(observableM11112r, "observationDeck\n        …  .distinctUntilChanged()");
+        return observableM11112r;
     }
 
     public final Observable<Map<Long, ModelApplicationStream>> observeStreamsByUser() {
-        Observable<Map<Long, ModelApplicationStream>> observableR = ObservationDeck.connectRx$default(this.observationDeck, new ObservationDeck.UpdateSource[]{this}, false, null, null, new AnonymousClass1(), 14, null).r();
-        Intrinsics3.checkNotNullExpressionValue(observableR, "observationDeck\n        …  .distinctUntilChanged()");
-        return observableR;
+        Observable<Map<Long, ModelApplicationStream>> observableM11112r = ObservationDeck.connectRx$default(this.observationDeck, new ObservationDeck.UpdateSource[]{this}, false, null, null, new C57471(), 14, null).m11112r();
+        C12238m.checkNotNullExpressionValue(observableM11112r, "observationDeck\n        …  .distinctUntilChanged()");
+        return observableM11112r;
     }
 
     public final Observable<Map<Long, ModelApplicationStream>> observeStreamsForGuild(long guildId) {
-        Observable<Map<Long, ModelApplicationStream>> observableR = ObservationDeck.connectRx$default(this.observationDeck, new ObservationDeck.UpdateSource[]{this}, false, null, null, new AnonymousClass1(guildId), 14, null).r();
-        Intrinsics3.checkNotNullExpressionValue(observableR, "observationDeck\n        …  .distinctUntilChanged()");
-        return observableR;
+        Observable<Map<Long, ModelApplicationStream>> observableM11112r = ObservationDeck.connectRx$default(this.observationDeck, new ObservationDeck.UpdateSource[]{this}, false, null, null, new C57481(guildId), 14, null).m11112r();
+        C12238m.checkNotNullExpressionValue(observableM11112r, "observationDeck\n        …  .distinctUntilChanged()");
+        return observableM11112r;
     }
 
     public final Observable<ModelApplicationStream> observeStreamsForUser(long userId) {
-        Observable<ModelApplicationStream> observableR = ObservationDeck.connectRx$default(this.observationDeck, new ObservationDeck.UpdateSource[]{this}, false, null, null, new AnonymousClass1(userId), 14, null).r();
-        Intrinsics3.checkNotNullExpressionValue(observableR, "observationDeck\n        …  .distinctUntilChanged()");
-        return observableR;
+        Observable<ModelApplicationStream> observableM11112r = ObservationDeck.connectRx$default(this.observationDeck, new ObservationDeck.UpdateSource[]{this}, false, null, null, new C57491(userId), 14, null).m11112r();
+        C12238m.checkNotNullExpressionValue(observableM11112r, "observationDeck\n        …  .distinctUntilChanged()");
+        return observableM11112r;
     }
 
     @Override // com.discord.stores.StoreV2
-    @Store3
+    @StoreThread
     public void snapshotData() throws Exception {
         super.snapshotData();
-        StringBuilder sbU = outline.U("Snapshotting 'streamsByUser' of size, ");
-        sbU.append(this.streamsByUser.size());
-        addBreadCrumb(sbU.toString());
+        StringBuilder sbM833U = C1643a.m833U("Snapshotting 'streamsByUser' of size, ");
+        sbM833U.append(this.streamsByUser.size());
+        addBreadCrumb(sbM833U.toString());
         try {
             this.streamsByUserSnapshot = new HashMap(this.streamsByUser);
             this.streamSpectatorsSnapshot = new HashMap(this.streamSpectators);
@@ -685,22 +686,22 @@ public final class StoreApplicationStreaming extends StoreV2 {
     }
 
     public final void stopStream(String streamKey) {
-        Intrinsics3.checkNotNullParameter(streamKey, "streamKey");
-        this.dispatcher.schedule(new AnonymousClass1(streamKey));
+        C12238m.checkNotNullParameter(streamKey, "streamKey");
+        this.dispatcher.schedule(new C57501(streamKey));
     }
 
     public final void targetStream(String streamKey, boolean force) {
-        Intrinsics3.checkNotNullParameter(streamKey, "streamKey");
-        this.dispatcher.schedule(new AnonymousClass1(streamKey, force));
+        C12238m.checkNotNullParameter(streamKey, "streamKey");
+        this.dispatcher.schedule(new C57511(streamKey, force));
     }
 
     public StoreApplicationStreaming(StoreStream storeStream, Dispatcher dispatcher, StoreUser storeUser, StoreVoiceChannelSelected storeVoiceChannelSelected, StoreRtcConnection storeRtcConnection, ObservationDeck observationDeck) {
-        Intrinsics3.checkNotNullParameter(storeStream, "storeStream");
-        Intrinsics3.checkNotNullParameter(dispatcher, "dispatcher");
-        Intrinsics3.checkNotNullParameter(storeUser, "userStore");
-        Intrinsics3.checkNotNullParameter(storeVoiceChannelSelected, "voiceChannelSelectedStore");
-        Intrinsics3.checkNotNullParameter(storeRtcConnection, "rtcConnectionStore");
-        Intrinsics3.checkNotNullParameter(observationDeck, "observationDeck");
+        C12238m.checkNotNullParameter(storeStream, "storeStream");
+        C12238m.checkNotNullParameter(dispatcher, "dispatcher");
+        C12238m.checkNotNullParameter(storeUser, "userStore");
+        C12238m.checkNotNullParameter(storeVoiceChannelSelected, "voiceChannelSelectedStore");
+        C12238m.checkNotNullParameter(storeRtcConnection, "rtcConnectionStore");
+        C12238m.checkNotNullParameter(observationDeck, "observationDeck");
         this.storeStream = storeStream;
         this.dispatcher = dispatcher;
         this.userStore = storeUser;
@@ -709,9 +710,9 @@ public final class StoreApplicationStreaming extends StoreV2 {
         this.observationDeck = observationDeck;
         this.breadCrumbs = new ArrayDeque<>();
         this.streamsByUser = new HashMap<>();
-        this.streamsByUserSnapshot = Maps6.emptyMap();
+        this.streamsByUserSnapshot = C12136h0.emptyMap();
         this.streamSpectators = new HashMap<>();
-        this.streamSpectatorsSnapshot = Maps6.emptyMap();
+        this.streamSpectatorsSnapshot = C12136h0.emptyMap();
         this.streamViewerTracker = new StreamViewerTracker();
         addBreadCrumb("Initializing the store.");
     }

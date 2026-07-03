@@ -11,7 +11,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import androidx.appcompat.R;
+import androidx.appcompat.C0051R;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.ViewPropertyAnimatorCompat;
 import androidx.core.view.ViewPropertyAnimatorListener;
@@ -131,8 +131,8 @@ public abstract class AbsActionBarView extends ViewGroup {
     @Override // android.view.View
     public void onConfigurationChanged(Configuration configuration) {
         super.onConfigurationChanged(configuration);
-        TypedArray typedArrayObtainStyledAttributes = getContext().obtainStyledAttributes(null, R.styleable.ActionBar, R.attr.actionBarStyle, 0);
-        setContentHeight(typedArrayObtainStyledAttributes.getLayoutDimension(R.styleable.ActionBar_height, 0));
+        TypedArray typedArrayObtainStyledAttributes = getContext().obtainStyledAttributes(null, C0051R.styleable.ActionBar, C0051R.attr.actionBarStyle, 0);
+        setContentHeight(typedArrayObtainStyledAttributes.getLayoutDimension(C0051R.styleable.ActionBar_height, 0));
         typedArrayObtainStyledAttributes.recycle();
         ActionMenuPresenter actionMenuPresenter = this.mActionMenuPresenter;
         if (actionMenuPresenter != null) {
@@ -249,7 +249,7 @@ public abstract class AbsActionBarView extends ViewGroup {
         super(context, attributeSet, i);
         this.mVisAnimListener = new VisibilityAnimListener();
         TypedValue typedValue = new TypedValue();
-        if (context.getTheme().resolveAttribute(R.attr.actionBarPopupTheme, typedValue, true) && typedValue.resourceId != 0) {
+        if (context.getTheme().resolveAttribute(C0051R.attr.actionBarPopupTheme, typedValue, true) && typedValue.resourceId != 0) {
             this.mPopupContext = new ContextThemeWrapper(context, typedValue.resourceId);
         } else {
             this.mPopupContext = context;

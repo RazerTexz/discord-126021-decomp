@@ -5,13 +5,13 @@ import com.google.gson.TypeAdapter;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonToken;
 import com.google.gson.stream.JsonWriter;
-import d0.e0.KClass;
-import d0.z.d.Intrinsics3;
-import d0.z.d.Reflection2;
 import java.io.IOException;
 import java.util.HashMap;
 import java.util.Objects;
 import kotlin.jvm.internal.DefaultConstructorMarker;
+import p507d0.p513e0.InterfaceC11230c;
+import p507d0.p592z.p594d.C12216a0;
+import p507d0.p592z.p594d.C12238m;
 
 /* JADX INFO: compiled from: OAuthScopeTypeAdapter.kt */
 /* JADX INFO: loaded from: classes.dex */
@@ -32,9 +32,9 @@ public final class OAuthScopeTypeAdapter extends TypeAdapter<OAuthScope> {
 
     static {
         HashMap<String, OAuthScope> map = new HashMap<>();
-        for (KClass kClass : Reflection2.getOrCreateKotlinClass(OAuthScope.class).getSealedSubclasses()) {
-            if (kClass.getObjectInstance() != null) {
-                Object objectInstance = kClass.getObjectInstance();
+        for (InterfaceC11230c interfaceC11230c : C12216a0.getOrCreateKotlinClass(OAuthScope.class).getSealedSubclasses()) {
+            if (interfaceC11230c.getObjectInstance() != null) {
+                Object objectInstance = interfaceC11230c.getObjectInstance();
                 Objects.requireNonNull(objectInstance, "null cannot be cast to non-null type com.discord.api.auth.OAuthScope");
                 OAuthScope oAuthScope = (OAuthScope) objectInstance;
                 map.put(oAuthScope.getScopeName(), oAuthScope);
@@ -45,16 +45,16 @@ public final class OAuthScopeTypeAdapter extends TypeAdapter<OAuthScope> {
 
     @Override // com.google.gson.TypeAdapter
     public OAuthScope read(JsonReader jsonReader) throws IOException {
-        Intrinsics3.checkNotNullParameter(jsonReader, "in");
-        if (jsonReader.N() == JsonToken.NULL) {
-            jsonReader.H();
+        C12238m.checkNotNullParameter(jsonReader, "in");
+        if (jsonReader.mo6878N() == JsonToken.NULL) {
+            jsonReader.mo6876H();
             return null;
         }
-        String strJ = jsonReader.J();
-        OAuthScope invalid = nameToScopeMap.get(strJ);
+        String strMo6877J = jsonReader.mo6877J();
+        OAuthScope invalid = nameToScopeMap.get(strMo6877J);
         if (invalid == null) {
-            Intrinsics3.checkNotNullExpressionValue(strJ, "scopeName");
-            invalid = new OAuthScope.Invalid(strJ);
+            C12238m.checkNotNullExpressionValue(strMo6877J, "scopeName");
+            invalid = new OAuthScope.Invalid(strMo6877J);
         }
         return invalid;
     }
@@ -62,11 +62,11 @@ public final class OAuthScopeTypeAdapter extends TypeAdapter<OAuthScope> {
     @Override // com.google.gson.TypeAdapter
     public void write(JsonWriter jsonWriter, OAuthScope oAuthScope) throws IOException {
         OAuthScope oAuthScope2 = oAuthScope;
-        Intrinsics3.checkNotNullParameter(jsonWriter, "out");
+        C12238m.checkNotNullParameter(jsonWriter, "out");
         if (oAuthScope2 != null) {
-            jsonWriter.H(oAuthScope2.getScopeName());
+            jsonWriter.mo6895H(oAuthScope2.getScopeName());
         } else {
-            jsonWriter.s();
+            jsonWriter.mo6905s();
         }
     }
 }

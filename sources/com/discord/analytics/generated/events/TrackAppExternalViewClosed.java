@@ -1,14 +1,14 @@
 package com.discord.analytics.generated.events;
 
-import b.d.b.a.outline;
 import com.discord.analytics.generated.traits.TrackBase;
-import com.discord.analytics.generated.traits.TrackBase2;
+import com.discord.analytics.generated.traits.TrackBaseReceiver;
 import com.discord.api.science.AnalyticsSchema;
-import d0.z.d.Intrinsics3;
+import p007b.p100d.p104b.p105a.C1643a;
+import p507d0.p592z.p594d.C12238m;
 
 /* JADX INFO: compiled from: TrackAppExternalViewClosed.kt */
 /* JADX INFO: loaded from: classes.dex */
-public final /* data */ class TrackAppExternalViewClosed implements AnalyticsSchema, TrackBase2 {
+public final /* data */ class TrackAppExternalViewClosed implements AnalyticsSchema, TrackBaseReceiver {
     private TrackBase trackBase;
     private final CharSequence type = null;
     private final Long durationOpenMs = null;
@@ -28,7 +28,7 @@ public final /* data */ class TrackAppExternalViewClosed implements AnalyticsSch
             return false;
         }
         TrackAppExternalViewClosed trackAppExternalViewClosed = (TrackAppExternalViewClosed) other;
-        return Intrinsics3.areEqual(this.type, trackAppExternalViewClosed.type) && Intrinsics3.areEqual(this.durationOpenMs, trackAppExternalViewClosed.durationOpenMs);
+        return C12238m.areEqual(this.type, trackAppExternalViewClosed.type) && C12238m.areEqual(this.durationOpenMs, trackAppExternalViewClosed.durationOpenMs);
     }
 
     public int hashCode() {
@@ -39,9 +39,9 @@ public final /* data */ class TrackAppExternalViewClosed implements AnalyticsSch
     }
 
     public String toString() {
-        StringBuilder sbU = outline.U("TrackAppExternalViewClosed(type=");
-        sbU.append(this.type);
-        sbU.append(", durationOpenMs=");
-        return outline.G(sbU, this.durationOpenMs, ")");
+        StringBuilder sbM833U = C1643a.m833U("TrackAppExternalViewClosed(type=");
+        sbM833U.append(this.type);
+        sbM833U.append(", durationOpenMs=");
+        return C1643a.m819G(sbM833U, this.durationOpenMs, ")");
     }
 }

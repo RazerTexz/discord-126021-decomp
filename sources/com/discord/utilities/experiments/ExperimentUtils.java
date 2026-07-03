@@ -9,14 +9,14 @@ import com.discord.models.experiments.dto.GuildExperimentFilter;
 import com.discord.models.experiments.dto.GuildExperimentOverridesDto;
 import com.discord.models.experiments.dto.GuildExperimentPopulationDto;
 import com.discord.models.guild.Guild;
-import com.discord.widgets.chat.input.MentionUtils;
-import d0.d0._Ranges;
-import d0.z.d.Intrinsics3;
+import com.discord.widgets.chat.input.MentionUtilsKt;
 import java.util.Collection;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Set;
-import kotlin.ranges.Ranges2;
+import kotlin.ranges.IntRange;
+import p507d0.p512d0.C11226f;
+import p507d0.p592z.p594d.C12238m;
 
 /* JADX INFO: compiled from: ExperimentUtils.kt */
 /* JADX INFO: loaded from: classes2.dex */
@@ -33,8 +33,8 @@ public final class ExperimentUtils {
         boolean z3;
         boolean z4;
         String str = experimentName;
-        Intrinsics3.checkNotNullParameter(str, "experimentName");
-        Intrinsics3.checkNotNullParameter(experiment, "experiment");
+        C12238m.checkNotNullParameter(str, "experimentName");
+        C12238m.checkNotNullParameter(experiment, "experiment");
         for (GuildExperimentOverridesDto guildExperimentOverridesDto : experiment.getOverrides()) {
             if (guildExperimentOverridesDto.getGuilds().contains(Long.valueOf(guildId))) {
                 return guildExperimentOverridesDto.getBucket();
@@ -46,7 +46,7 @@ public final class ExperimentUtils {
             str = hashKey;
         }
         sb.append(str);
-        sb.append(MentionUtils.EMOJIS_AND_STICKERS_CHAR);
+        sb.append(MentionUtilsKt.EMOJIS_AND_STICKERS_CHAR);
         sb.append(guildId);
         long jFrom = ExperimentHash.INSTANCE.from(sb.toString()) % ((long) 10000);
         for (GuildExperimentPopulationDto guildExperimentPopulationDto : experiment.getPopulations()) {
@@ -67,7 +67,7 @@ public final class ExperimentUtils {
                         z5 = false;
                     }
                 } else if (next instanceof GuildExperimentFilter.GuildMemberCountRangeFilter) {
-                    if (!_Ranges.longRangeContains(((GuildExperimentFilter.GuildMemberCountRangeFilter) next).getRange(), guildMemberCount)) {
+                    if (!C11226f.longRangeContains(((GuildExperimentFilter.GuildMemberCountRangeFilter) next).getRange(), guildMemberCount)) {
                         z5 = false;
                     }
                 } else if (next instanceof GuildExperimentFilter.GuildHasFeatureFilter) {
@@ -116,7 +116,7 @@ public final class ExperimentUtils {
             }
             if (z5) {
                 for (Object obj2 : guildExperimentPopulationDto.getBuckets()) {
-                    List<Ranges2> positions = ((GuildExperimentBucketDto) obj2).getPositions();
+                    List<IntRange> positions = ((GuildExperimentBucketDto) obj2).getPositions();
                     if (!(positions instanceof Collection) || !positions.isEmpty()) {
                         Iterator<T> it4 = positions.iterator();
                         while (true) {
@@ -124,8 +124,8 @@ public final class ExperimentUtils {
                                 z2 = false;
                                 break;
                             }
-                            Ranges2 ranges2 = (Ranges2) it4.next();
-                            if (jFrom >= ((long) ranges2.getFirst()) && jFrom < ((long) ranges2.getLast())) {
+                            IntRange intRange = (IntRange) it4.next();
+                            if (jFrom >= ((long) intRange.getFirst()) && jFrom < ((long) intRange.getLast())) {
                                 z2 = true;
                                 break;
                             }

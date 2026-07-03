@@ -3,24 +3,24 @@ package com.discord.widgets.user.calls;
 import android.content.Context;
 import androidx.fragment.app.FragmentManager;
 import com.discord.app.AppComponent;
-import com.discord.app.AppPermissions2;
-import com.discord.widgets.voice.call.PrivateCallLaunchUtils;
-import d0.z.d.Intrinsics3;
+import com.discord.app.AppPermissionsRequests;
+import com.discord.widgets.voice.call.PrivateCallLaunchUtilsKt;
+import p507d0.p592z.p594d.C12238m;
 
 /* JADX INFO: compiled from: PrivateCallLauncher.kt */
 /* JADX INFO: loaded from: classes.dex */
 public final class PrivateCallLauncher {
     private final AppComponent appComponent;
-    private final AppPermissions2 appPermissionsRequests;
+    private final AppPermissionsRequests appPermissionsRequests;
     private final Context context;
     private final FragmentManager fragmentManager;
 
-    public PrivateCallLauncher(AppPermissions2 appPermissions2, AppComponent appComponent, Context context, FragmentManager fragmentManager) {
-        Intrinsics3.checkNotNullParameter(appPermissions2, "appPermissionsRequests");
-        Intrinsics3.checkNotNullParameter(appComponent, "appComponent");
-        Intrinsics3.checkNotNullParameter(context, "context");
-        Intrinsics3.checkNotNullParameter(fragmentManager, "fragmentManager");
-        this.appPermissionsRequests = appPermissions2;
+    public PrivateCallLauncher(AppPermissionsRequests appPermissionsRequests, AppComponent appComponent, Context context, FragmentManager fragmentManager) {
+        C12238m.checkNotNullParameter(appPermissionsRequests, "appPermissionsRequests");
+        C12238m.checkNotNullParameter(appComponent, "appComponent");
+        C12238m.checkNotNullParameter(context, "context");
+        C12238m.checkNotNullParameter(fragmentManager, "fragmentManager");
+        this.appPermissionsRequests = appPermissionsRequests;
         this.appComponent = appComponent;
         this.context = context;
         this.fragmentManager = fragmentManager;
@@ -30,7 +30,7 @@ public final class PrivateCallLauncher {
         return this.appComponent;
     }
 
-    public final AppPermissions2 getAppPermissionsRequests() {
+    public final AppPermissionsRequests getAppPermissionsRequests() {
         return this.appPermissionsRequests;
     }
 
@@ -43,10 +43,10 @@ public final class PrivateCallLauncher {
     }
 
     public final void launchVideoCall(long channelId) {
-        PrivateCallLaunchUtils.callAndLaunch(channelId, true, this.appPermissionsRequests, this.context, this.appComponent, this.fragmentManager);
+        PrivateCallLaunchUtilsKt.callAndLaunch(channelId, true, this.appPermissionsRequests, this.context, this.appComponent, this.fragmentManager);
     }
 
     public final void launchVoiceCall(long channelId) {
-        PrivateCallLaunchUtils.callAndLaunch(channelId, false, this.appPermissionsRequests, this.context, this.appComponent, this.fragmentManager);
+        PrivateCallLaunchUtilsKt.callAndLaunch(channelId, false, this.appPermissionsRequests, this.context, this.appComponent, this.fragmentManager);
     }
 }

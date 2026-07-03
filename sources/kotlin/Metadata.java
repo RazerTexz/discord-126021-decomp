@@ -10,19 +10,27 @@ import java.lang.annotation.Target;
 @Target({ElementType.TYPE})
 @Retention(RetentionPolicy.RUNTIME)
 public @interface Metadata {
-    int[] bv() default {1, 0, 3};
+    /* JADX INFO: renamed from: bv */
+    int[] m10882bv() default {1, 0, 3};
 
-    String[] d1() default {};
+    /* JADX INFO: renamed from: d1 */
+    String[] m10883d1() default {};
 
-    String[] d2() default {};
+    /* JADX INFO: renamed from: d2 */
+    String[] m10884d2() default {};
 
-    int k() default 1;
+    /* JADX INFO: renamed from: k */
+    int m10885k() default 1;
 
-    int[] mv() default {};
+    /* JADX INFO: renamed from: mv */
+    int[] m10886mv() default {};
 
-    String pn() default "";
+    /* JADX INFO: renamed from: pn */
+    String m10887pn() default "";
 
-    int xi() default 0;
+    /* JADX INFO: renamed from: xi */
+    int m10888xi() default 0;
 
-    String xs() default "";
+    /* JADX INFO: renamed from: xs */
+    String m10889xs() default "";
 }

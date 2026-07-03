@@ -1,8 +1,8 @@
 package com.discord.models.domain;
 
-import b.d.b.a.outline;
-import d0.z.d.Intrinsics3;
 import java.util.List;
+import p007b.p100d.p104b.p105a.C1643a;
+import p507d0.p592z.p594d.C12238m;
 
 /* JADX INFO: compiled from: ModelUserAffinities.kt */
 /* JADX INFO: loaded from: classes.dex */
@@ -11,8 +11,8 @@ public final /* data */ class ModelUserAffinities {
     private final List<ModelUserAffinity> userAffinities;
 
     public ModelUserAffinities(List<ModelUserAffinity> list, List<ModelUserAffinity> list2) {
-        Intrinsics3.checkNotNullParameter(list, "userAffinities");
-        Intrinsics3.checkNotNullParameter(list2, "inverseUserAffinities");
+        C12238m.checkNotNullParameter(list, "userAffinities");
+        C12238m.checkNotNullParameter(list2, "inverseUserAffinities");
         this.userAffinities = list;
         this.inverseUserAffinities = list2;
     }
@@ -37,8 +37,8 @@ public final /* data */ class ModelUserAffinities {
     }
 
     public final ModelUserAffinities copy(List<ModelUserAffinity> userAffinities, List<ModelUserAffinity> inverseUserAffinities) {
-        Intrinsics3.checkNotNullParameter(userAffinities, "userAffinities");
-        Intrinsics3.checkNotNullParameter(inverseUserAffinities, "inverseUserAffinities");
+        C12238m.checkNotNullParameter(userAffinities, "userAffinities");
+        C12238m.checkNotNullParameter(inverseUserAffinities, "inverseUserAffinities");
         return new ModelUserAffinities(userAffinities, inverseUserAffinities);
     }
 
@@ -50,7 +50,7 @@ public final /* data */ class ModelUserAffinities {
             return false;
         }
         ModelUserAffinities modelUserAffinities = (ModelUserAffinities) other;
-        return Intrinsics3.areEqual(this.userAffinities, modelUserAffinities.userAffinities) && Intrinsics3.areEqual(this.inverseUserAffinities, modelUserAffinities.inverseUserAffinities);
+        return C12238m.areEqual(this.userAffinities, modelUserAffinities.userAffinities) && C12238m.areEqual(this.inverseUserAffinities, modelUserAffinities.inverseUserAffinities);
     }
 
     public final List<ModelUserAffinity> getInverseUserAffinities() {
@@ -69,9 +69,9 @@ public final /* data */ class ModelUserAffinities {
     }
 
     public String toString() {
-        StringBuilder sbU = outline.U("ModelUserAffinities(userAffinities=");
-        sbU.append(this.userAffinities);
-        sbU.append(", inverseUserAffinities=");
-        return outline.L(sbU, this.inverseUserAffinities, ")");
+        StringBuilder sbM833U = C1643a.m833U("ModelUserAffinities(userAffinities=");
+        sbM833U.append(this.userAffinities);
+        sbM833U.append(", inverseUserAffinities=");
+        return C1643a.m824L(sbM833U, this.inverseUserAffinities, ")");
     }
 }

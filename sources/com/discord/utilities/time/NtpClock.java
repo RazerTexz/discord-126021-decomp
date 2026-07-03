@@ -1,24 +1,24 @@
 package com.discord.utilities.time;
 
-import com.lyft.kronos.Clock8;
-import d0.z.d.Intrinsics3;
+import com.lyft.kronos.KronosClock;
+import p507d0.p592z.p594d.C12238m;
 
 /* JADX INFO: compiled from: NtpClock.kt */
 /* JADX INFO: loaded from: classes2.dex */
 public final class NtpClock implements Clock {
-    private final Clock8 kronosClock;
+    private final KronosClock kronosClock;
 
-    public NtpClock(Clock8 clock8) {
-        Intrinsics3.checkNotNullParameter(clock8, "kronosClock");
-        this.kronosClock = clock8;
+    public NtpClock(KronosClock kronosClock) {
+        C12238m.checkNotNullParameter(kronosClock, "kronosClock");
+        this.kronosClock = kronosClock;
     }
 
     @Override // com.discord.utilities.time.Clock
     public long currentTimeMillis() {
-        return this.kronosClock.a();
+        return this.kronosClock.mo7128a();
     }
 
-    public final Clock8 getKronosClock() {
+    public final KronosClock getKronosClock() {
         return this.kronosClock;
     }
 }

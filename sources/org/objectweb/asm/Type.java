@@ -1,6 +1,6 @@
 package org.objectweb.asm;
 
-import com.discord.widgets.chat.input.MentionUtils;
+import com.discord.widgets.chat.input.MentionUtilsKt;
 import java.lang.reflect.Constructor;
 import java.lang.reflect.Method;
 
@@ -240,7 +240,7 @@ public final class Type {
                 return stringBuilder.toString();
             case 10:
             case 12:
-                return this.valueBuffer.substring(this.valueBegin, this.valueEnd).replace(MentionUtils.SLASH_CHAR, '.');
+                return this.valueBuffer.substring(this.valueBegin, this.valueEnd).replace(MentionUtilsKt.SLASH_CHAR, '.');
             case 11:
             default:
                 throw new AssertionError();
@@ -252,7 +252,7 @@ public final class Type {
     }
 
     public static String getInternalName(Class<?> clazz) {
-        return clazz.getName().replace('.', MentionUtils.SLASH_CHAR);
+        return clazz.getName().replace('.', MentionUtilsKt.SLASH_CHAR);
     }
 
     public String getDescriptor() {

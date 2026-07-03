@@ -14,8 +14,8 @@ public class ResponseData {
     public TrackingState trackingState;
     public boolean willRetry;
 
-    /* JADX INFO: renamed from: com.adjust.sdk.ResponseData$1, reason: invalid class name */
-    public static /* synthetic */ class AnonymousClass1 {
+    /* JADX INFO: renamed from: com.adjust.sdk.ResponseData$1 */
+    public static /* synthetic */ class C53881 {
         public static final /* synthetic */ int[] $SwitchMap$com$adjust$sdk$ActivityKind;
 
         static {

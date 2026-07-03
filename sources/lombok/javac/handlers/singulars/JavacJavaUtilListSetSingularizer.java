@@ -50,7 +50,7 @@ abstract class JavacJavaUtilListSetSingularizer extends JavacJavaUtilSingularize
     protected JCTree.JCStatement generateClearStatements(JavacTreeMaker maker, JavacSingularsRecipes.SingularData data, JavacNode builderType) {
         com.sun.tools.javac.util.List<JCTree.JCExpression> jceBlank = com.sun.tools.javac.util.List.nil();
         JCTree.JCFieldAccess jCFieldAccessSelect = maker.Select(maker.Ident(builderType.toName("this")), data.getPluralName());
-        return maker.If(maker.Binary(Javac.CTC_NOT_EQUAL, jCFieldAccessSelect, maker.Literal(Javac.CTC_BOT, null)), maker.Exec(maker.Apply(jceBlank, maker.Select(maker.Select(maker.Ident(builderType.toName("this")), data.getPluralName()), builderType.toName("clear")), jceBlank)), null);
+        return maker.m10940If(maker.Binary(Javac.CTC_NOT_EQUAL, jCFieldAccessSelect, maker.Literal(Javac.CTC_BOT, null)), maker.Exec(maker.Apply(jceBlank, maker.Select(maker.Select(maker.Ident(builderType.toName("this")), data.getPluralName()), builderType.toName("clear")), jceBlank)), null);
     }
 
     @Override // lombok.javac.handlers.JavacSingularsRecipes.JavacSingularizer

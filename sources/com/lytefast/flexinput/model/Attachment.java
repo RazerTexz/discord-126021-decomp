@@ -10,16 +10,16 @@ import androidx.annotation.CallSuper;
 import androidx.core.app.NotificationCompat;
 import androidx.core.view.inputmethod.InputContentInfoCompat;
 import androidx.exifinterface.media.ExifInterface;
-import b.c.a.a0.AnimatableValueParser;
-import b.d.b.a.outline;
 import com.discord.models.domain.ModelAuditLogEntry;
-import com.discord.widgets.chat.input.MentionUtils;
-import d0.g0.Strings4;
-import d0.y.Closeable;
-import d0.z.d.Intrinsics3;
+import com.discord.widgets.chat.input.MentionUtilsKt;
 import java.io.File;
 import java.io.IOException;
 import kotlin.jvm.internal.DefaultConstructorMarker;
+import p007b.p085c.p086a.p087a0.C1460d;
+import p007b.p100d.p104b.p105a.C1643a;
+import p507d0.p579g0.C12106w;
+import p507d0.p591y.C12201b;
+import p507d0.p592z.p594d.C12238m;
 
 /* JADX INFO: compiled from: Attachment.kt */
 /* JADX INFO: loaded from: classes3.dex */
@@ -33,31 +33,33 @@ public class Attachment<T> implements Parcelable {
 
     /* JADX INFO: renamed from: Companion, reason: from kotlin metadata */
     public static final Companion INSTANCE = new Companion(null);
-    public static final Parcelable.Creator<Attachment<?>> CREATOR = new a();
+    public static final Parcelable.Creator<Attachment<?>> CREATOR = new C11189a();
 
     /* JADX INFO: compiled from: Attachment.kt */
     public static final class Companion {
         public Companion() {
         }
 
-        public final String a(Attachment<?> attachment) {
-            Intrinsics3.checkNotNullParameter(attachment, "$this$getSendName");
+        /* JADX INFO: renamed from: a */
+        public final String m9295a(Attachment<?> attachment) {
+            C12238m.checkNotNullParameter(attachment, "$this$getSendName");
             if (!attachment.getSpoiler()) {
                 return attachment.getDisplayName();
             }
-            StringBuilder sbU = outline.U("SPOILER_");
-            sbU.append(attachment.getDisplayName());
-            return sbU.toString();
+            StringBuilder sbM833U = C1643a.m833U("SPOILER_");
+            sbM833U.append(attachment.getDisplayName());
+            return sbM833U.toString();
         }
 
         /* JADX WARN: Code duplicated, block: B:39:0x00a3  */
-        public final Attachment<Uri> b(Uri uri, ContentResolver contentResolver) throws IOException {
+        /* JADX INFO: renamed from: b */
+        public final Attachment<Uri> m9296b(Uri uri, ContentResolver contentResolver) throws IOException {
             String lastPathSegment;
             int columnIndex;
-            Intrinsics3.checkNotNullParameter(uri, "$this$toAttachment");
-            Intrinsics3.checkNotNullParameter(contentResolver, "resolver");
-            Intrinsics3.checkNotNullParameter(uri, "$this$getFileName");
-            Intrinsics3.checkNotNullParameter(contentResolver, "contentResolver");
+            C12238m.checkNotNullParameter(uri, "$this$toAttachment");
+            C12238m.checkNotNullParameter(contentResolver, "resolver");
+            C12238m.checkNotNullParameter(uri, "$this$getFileName");
+            C12238m.checkNotNullParameter(contentResolver, "contentResolver");
             String scheme = uri.getScheme();
             if (scheme == null) {
                 lastPathSegment = uri.getLastPathSegment();
@@ -71,21 +73,21 @@ public class Attachment<T> implements Parcelable {
                             if (cursorQuery != null) {
                                 try {
                                     if (!cursorQuery.moveToFirst() || (columnIndex = cursorQuery.getColumnIndex("_display_name")) < 0) {
-                                        Closeable.closeFinally(cursorQuery, null);
+                                        C12201b.closeFinally(cursorQuery, null);
                                         lastPathSegment = uri.getLastPathSegment();
                                     } else {
                                         String string = cursorQuery.getString(columnIndex);
                                         if (string == null) {
                                             string = uri.getLastPathSegment();
                                         }
-                                        Closeable.closeFinally(cursorQuery, null);
+                                        C12201b.closeFinally(cursorQuery, null);
                                         lastPathSegment = string;
                                     }
                                 } catch (Throwable th) {
                                     try {
                                         throw th;
                                     } catch (Throwable th2) {
-                                        Closeable.closeFinally(cursorQuery, th);
+                                        C12201b.closeFinally(cursorQuery, th);
                                         throw th2;
                                     }
                                 }
@@ -93,9 +95,9 @@ public class Attachment<T> implements Parcelable {
                                 lastPathSegment = uri.getLastPathSegment();
                             }
                         } catch (NullPointerException e) {
-                            StringBuilder sbU = outline.U("Error getting file name for: ");
-                            sbU.append(uri.getPath());
-                            Log.e("FileUtils", sbU.toString(), e);
+                            StringBuilder sbM833U = C1643a.m833U("Error getting file name for: ");
+                            sbM833U.append(uri.getPath());
+                            Log.e("FileUtils", sbM833U.toString(), e);
                             lastPathSegment = uri.getLastPathSegment();
                         }
                     } else {
@@ -117,17 +119,18 @@ public class Attachment<T> implements Parcelable {
         }
 
         /* JADX WARN: Code duplicated, block: B:18:0x006c  */
-        public final Attachment<InputContentInfoCompat> c(InputContentInfoCompat inputContentInfoCompat, ContentResolver contentResolver, boolean z2, String str) {
+        /* JADX INFO: renamed from: c */
+        public final Attachment<InputContentInfoCompat> m9297c(InputContentInfoCompat inputContentInfoCompat, ContentResolver contentResolver, boolean z2, String str) {
             String str2;
-            Intrinsics3.checkNotNullParameter(inputContentInfoCompat, "$this$toAttachment");
-            Intrinsics3.checkNotNullParameter(contentResolver, "resolver");
-            Intrinsics3.checkNotNullParameter(str, "defaultName");
+            C12238m.checkNotNullParameter(inputContentInfoCompat, "$this$toAttachment");
+            C12238m.checkNotNullParameter(contentResolver, "resolver");
+            C12238m.checkNotNullParameter(str, "defaultName");
             String queryParameter = inputContentInfoCompat.getContentUri().getQueryParameter("fileName");
             if (queryParameter != null) {
                 str = queryParameter;
             }
-            Intrinsics3.checkNotNullExpressionValue(str, "contentUri.getQueryParam…fileName\") ?: defaultName");
-            String strSubstringAfterLast$default = Strings4.substringAfterLast$default(str, File.separatorChar, null, 2, null);
+            C12238m.checkNotNullExpressionValue(str, "contentUri.getQueryParam…fileName\") ?: defaultName");
+            String strSubstringAfterLast$default = C12106w.substringAfterLast$default(str, File.separatorChar, null, 2, null);
             if (z2) {
                 String mimeType = inputContentInfoCompat.getDescription().getMimeType(0);
                 if (mimeType == null) {
@@ -137,7 +140,7 @@ public class Attachment<T> implements Parcelable {
                     mimeType = contentResolver.getType(inputContentInfoCompat.getContentUri());
                 }
                 if (mimeType != null) {
-                    String str3 = strSubstringAfterLast$default + '.' + Strings4.substringAfterLast$default(mimeType, MentionUtils.SLASH_CHAR, null, 2, null);
+                    String str3 = strSubstringAfterLast$default + '.' + C12106w.substringAfterLast$default(mimeType, MentionUtilsKt.SLASH_CHAR, null, 2, null);
                     if (str3 != null) {
                         str2 = str3;
                     } else {
@@ -151,7 +154,7 @@ public class Attachment<T> implements Parcelable {
             }
             long jHashCode = inputContentInfoCompat.getContentUri().hashCode();
             Uri contentUri = inputContentInfoCompat.getContentUri();
-            Intrinsics3.checkNotNullExpressionValue(contentUri, "contentUri");
+            C12238m.checkNotNullExpressionValue(contentUri, "contentUri");
             return new Attachment<>(jHashCode, contentUri, str2, inputContentInfoCompat, false, 16, null);
         }
 
@@ -159,11 +162,12 @@ public class Attachment<T> implements Parcelable {
         }
     }
 
+    /* JADX INFO: renamed from: com.lytefast.flexinput.model.Attachment$a */
     /* JADX INFO: compiled from: Attachment.kt */
-    public static final class a implements Parcelable.Creator<Attachment<?>> {
+    public static final class C11189a implements Parcelable.Creator<Attachment<?>> {
         @Override // android.os.Parcelable.Creator
         public Attachment<?> createFromParcel(Parcel parcel) {
-            Intrinsics3.checkNotNullParameter(parcel, "parcelIn");
+            C12238m.checkNotNullParameter(parcel, "parcelIn");
             return new Attachment<>(parcel);
         }
 
@@ -174,8 +178,8 @@ public class Attachment<T> implements Parcelable {
     }
 
     public Attachment(long j, Uri uri, String str, T t, boolean z2) {
-        Intrinsics3.checkNotNullParameter(uri, NotificationCompat.MessagingStyle.Message.KEY_DATA_URI);
-        Intrinsics3.checkNotNullParameter(str, "displayName");
+        C12238m.checkNotNullParameter(uri, NotificationCompat.MessagingStyle.Message.KEY_DATA_URI);
+        C12238m.checkNotNullParameter(str, "displayName");
         this.id = j;
         this.uri = uri;
         this.displayName = str;
@@ -184,11 +188,11 @@ public class Attachment<T> implements Parcelable {
     }
 
     public static final Attachment<Uri> toAttachment(Uri uri, ContentResolver contentResolver) {
-        return INSTANCE.b(uri, contentResolver);
+        return INSTANCE.m9296b(uri, contentResolver);
     }
 
     public static final Attachment<InputContentInfoCompat> toAttachment(InputContentInfoCompat inputContentInfoCompat, ContentResolver contentResolver, boolean z2, String str) {
-        return INSTANCE.c(inputContentInfoCompat, contentResolver, z2, str);
+        return INSTANCE.m9297c(inputContentInfoCompat, contentResolver, z2, str);
     }
 
     @Override // android.os.Parcelable
@@ -201,7 +205,7 @@ public class Attachment<T> implements Parcelable {
             return false;
         }
         Attachment attachment = (Attachment) other;
-        return this.id == attachment.id && Intrinsics3.areEqual(this.uri, attachment.uri) && this.spoiler == attachment.spoiler;
+        return this.id == attachment.id && C12238m.areEqual(this.uri, attachment.uri) && this.spoiler == attachment.spoiler;
     }
 
     public final T getData() {
@@ -225,7 +229,7 @@ public class Attachment<T> implements Parcelable {
     }
 
     public int hashCode() {
-        return AnimatableValueParser.K0(Long.valueOf(this.id), this.uri);
+        return C1460d.m448K0(Long.valueOf(this.id), this.uri);
     }
 
     public final void setSpoiler(boolean z2) {
@@ -235,7 +239,7 @@ public class Attachment<T> implements Parcelable {
     @Override // android.os.Parcelable
     @CallSuper
     public void writeToParcel(Parcel dest, int flags) {
-        Intrinsics3.checkNotNullParameter(dest, "dest");
+        C12238m.checkNotNullParameter(dest, "dest");
         dest.writeLong(this.id);
         dest.writeParcelable(this.uri, flags);
         dest.writeString(this.displayName);
@@ -248,17 +252,17 @@ public class Attachment<T> implements Parcelable {
 
     /* JADX WARN: Illegal instructions before constructor call */
     public Attachment(Parcel parcel) {
-        Intrinsics3.checkNotNullParameter(parcel, "parcelIn");
+        C12238m.checkNotNullParameter(parcel, "parcelIn");
         long j = parcel.readLong();
         Uri uri = (Uri) parcel.readParcelable(Uri.class.getClassLoader());
         if (uri == null) {
             uri = Uri.EMPTY;
-            Intrinsics3.checkNotNullExpressionValue(uri, "Uri.EMPTY");
+            C12238m.checkNotNullExpressionValue(uri, "Uri.EMPTY");
         }
         Uri uri2 = uri;
         String string = parcel.readString();
         String str = string == null ? "" : string;
-        Intrinsics3.checkNotNullExpressionValue(str, "parcelIn.readString() ?: \"\"");
+        C12238m.checkNotNullExpressionValue(str, "parcelIn.readString() ?: \"\"");
         this(j, uri2, str, null, parcel.readInt() == 1);
     }
 }

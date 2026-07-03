@@ -11,41 +11,47 @@ import com.google.android.material.checkbox.MaterialCheckBox;
 /* JADX INFO: loaded from: classes.dex */
 public final class ViewSelectableFriendSuggestionBinding implements ViewBinding {
 
+    /* JADX INFO: renamed from: a */
     @NonNull
-    public final ConstraintLayout a;
+    public final ConstraintLayout f15546a;
 
-    /* JADX INFO: renamed from: b, reason: collision with root package name */
+    /* JADX INFO: renamed from: b */
     @NonNull
-    public final SimpleDraweeView f2207b;
+    public final SimpleDraweeView f15547b;
 
+    /* JADX INFO: renamed from: c */
     @NonNull
-    public final ConstraintLayout c;
+    public final ConstraintLayout f15548c;
 
+    /* JADX INFO: renamed from: d */
     @NonNull
-    public final TextView d;
+    public final TextView f15549d;
 
+    /* JADX INFO: renamed from: e */
     @NonNull
-    public final TextView e;
+    public final TextView f15550e;
 
+    /* JADX INFO: renamed from: f */
     @NonNull
-    public final TextView f;
+    public final TextView f15551f;
 
+    /* JADX INFO: renamed from: g */
     @NonNull
-    public final MaterialCheckBox g;
+    public final MaterialCheckBox f15552g;
 
     public ViewSelectableFriendSuggestionBinding(@NonNull ConstraintLayout constraintLayout, @NonNull SimpleDraweeView simpleDraweeView, @NonNull ConstraintLayout constraintLayout2, @NonNull TextView textView, @NonNull TextView textView2, @NonNull TextView textView3, @NonNull MaterialCheckBox materialCheckBox) {
-        this.a = constraintLayout;
-        this.f2207b = simpleDraweeView;
-        this.c = constraintLayout2;
-        this.d = textView;
-        this.e = textView2;
-        this.f = textView3;
-        this.g = materialCheckBox;
+        this.f15546a = constraintLayout;
+        this.f15547b = simpleDraweeView;
+        this.f15548c = constraintLayout2;
+        this.f15549d = textView;
+        this.f15550e = textView2;
+        this.f15551f = textView3;
+        this.f15552g = materialCheckBox;
     }
 
     @Override // androidx.viewbinding.ViewBinding
     @NonNull
     public View getRoot() {
-        return this.a;
+        return this.f15546a;
     }
 }

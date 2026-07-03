@@ -1,14 +1,14 @@
 package com.discord.models.domain;
 
-import b.d.b.a.outline;
 import com.discord.api.thread.MuteConfig;
 import com.discord.models.domain.Model;
 import com.discord.utilities.time.TimeUtils;
-import d0.z.d.Intrinsics3;
 import java.io.IOException;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Ref$ObjectRef;
-import rx.functions.Action1;
+import p007b.p100d.p104b.p105a.C1643a;
+import p507d0.p592z.p594d.C12238m;
+import p658rx.functions.Action1;
 
 /* JADX INFO: compiled from: ModelMuteConfig.kt */
 /* JADX INFO: loaded from: classes.dex */
@@ -33,19 +33,19 @@ public final /* data */ class ModelMuteConfig {
         /* JADX WARN: Multi-variable type inference failed */
         @Override // com.discord.models.domain.Model.Parser
         public ModelMuteConfig parse(final Model.JsonReader reader) throws IOException {
-            final Ref$ObjectRef ref$ObjectRefC0 = outline.c0(reader, "reader");
-            ref$ObjectRefC0.element = null;
+            final Ref$ObjectRef ref$ObjectRefM844c0 = C1643a.m844c0(reader, "reader");
+            ref$ObjectRefM844c0.element = null;
             reader.nextObject(new Action1<String>() { // from class: com.discord.models.domain.ModelMuteConfig$Parser$parse$1
-                @Override // rx.functions.Action1
+                @Override // p658rx.functions.Action1
                 public final void call(String str) throws IOException {
                     if (str == null || str.hashCode() != 1725551537 || !str.equals("end_time")) {
                         reader.skipValue();
                     } else {
-                        ref$ObjectRefC0.element = (T) reader.nextStringOrNull();
+                        ref$ObjectRefM844c0.element = (T) reader.nextStringOrNull();
                     }
                 }
             });
-            return new ModelMuteConfig((String) ref$ObjectRefC0.element);
+            return new ModelMuteConfig((String) ref$ObjectRefM844c0.element);
         }
     }
 
@@ -90,7 +90,7 @@ public final /* data */ class ModelMuteConfig {
             return false;
         }
         ModelMuteConfig modelMuteConfig = (ModelMuteConfig) other;
-        return Intrinsics3.areEqual(this.endTimeMs, modelMuteConfig.endTimeMs) && Intrinsics3.areEqual(this.endTime, modelMuteConfig.endTime);
+        return C12238m.areEqual(this.endTimeMs, modelMuteConfig.endTimeMs) && C12238m.areEqual(this.endTime, modelMuteConfig.endTime);
     }
 
     public final String getEndTime() {
@@ -109,10 +109,10 @@ public final /* data */ class ModelMuteConfig {
     }
 
     public String toString() {
-        StringBuilder sbU = outline.U("ModelMuteConfig(endTimeMs=");
-        sbU.append(this.endTimeMs);
-        sbU.append(", endTime=");
-        return outline.J(sbU, this.endTime, ")");
+        StringBuilder sbM833U = C1643a.m833U("ModelMuteConfig(endTimeMs=");
+        sbM833U.append(this.endTimeMs);
+        sbM833U.append(", endTime=");
+        return C1643a.m822J(sbM833U, this.endTime, ")");
     }
 
     public ModelMuteConfig(Long l) {

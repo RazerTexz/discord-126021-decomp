@@ -1,9 +1,9 @@
 package com.facebook.imagepipeline.image;
 
-import b.f.j.j.HasImageMetadata;
+import p007b.p109f.p161j.p175j.InterfaceC1921g;
 
 /* JADX INFO: loaded from: classes.dex */
-public interface ImageInfo extends HasImageMetadata {
+public interface ImageInfo extends InterfaceC1921g {
     int getHeight();
 
     int getWidth();

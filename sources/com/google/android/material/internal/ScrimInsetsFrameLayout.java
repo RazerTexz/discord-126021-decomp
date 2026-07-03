@@ -14,7 +14,7 @@ import androidx.annotation.RestrictTo;
 import androidx.core.view.OnApplyWindowInsetsListener;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
-import com.google.android.material.R;
+import com.google.android.material.C10817R;
 
 /* JADX INFO: loaded from: classes3.dex */
 @RestrictTo({RestrictTo.Scope.LIBRARY_GROUP})
@@ -27,8 +27,9 @@ public class ScrimInsetsFrameLayout extends FrameLayout {
     public Rect insets;
     private Rect tempRect;
 
-    public class a implements OnApplyWindowInsetsListener {
-        public a() {
+    /* JADX INFO: renamed from: com.google.android.material.internal.ScrimInsetsFrameLayout$a */
+    public class C10943a implements OnApplyWindowInsetsListener {
+        public C10943a() {
         }
 
         @Override // androidx.core.view.OnApplyWindowInsetsListener
@@ -124,10 +125,10 @@ public class ScrimInsetsFrameLayout extends FrameLayout {
         this.tempRect = new Rect();
         this.drawTopInsetForeground = true;
         this.drawBottomInsetForeground = true;
-        TypedArray typedArrayObtainStyledAttributes = ThemeEnforcement.obtainStyledAttributes(context, attributeSet, R.styleable.ScrimInsetsFrameLayout, i, R.style.Widget_Design_ScrimInsetsFrameLayout, new int[0]);
-        this.insetForeground = typedArrayObtainStyledAttributes.getDrawable(R.styleable.ScrimInsetsFrameLayout_insetForeground);
+        TypedArray typedArrayObtainStyledAttributes = ThemeEnforcement.obtainStyledAttributes(context, attributeSet, C10817R.styleable.ScrimInsetsFrameLayout, i, C10817R.style.Widget_Design_ScrimInsetsFrameLayout, new int[0]);
+        this.insetForeground = typedArrayObtainStyledAttributes.getDrawable(C10817R.styleable.ScrimInsetsFrameLayout_insetForeground);
         typedArrayObtainStyledAttributes.recycle();
         setWillNotDraw(true);
-        ViewCompat.setOnApplyWindowInsetsListener(this, new a());
+        ViewCompat.setOnApplyWindowInsetsListener(this, new C10943a());
     }
 }

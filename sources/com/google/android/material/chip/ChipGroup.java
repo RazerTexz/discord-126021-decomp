@@ -16,7 +16,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.accessibility.AccessibilityNodeInfoCompat;
-import com.google.android.material.R;
+import com.google.android.material.C10817R;
 import com.google.android.material.internal.FlowLayout;
 import com.google.android.material.internal.ThemeEnforcement;
 import com.google.android.material.theme.overlay.MaterialThemeOverlay;
@@ -25,7 +25,7 @@ import java.util.List;
 
 /* JADX INFO: loaded from: classes3.dex */
 public class ChipGroup extends FlowLayout {
-    private static final int DEF_STYLE_RES = R.style.Widget_MaterialComponents_ChipGroup;
+    private static final int DEF_STYLE_RES = C10817R.style.Widget_MaterialComponents_ChipGroup;
 
     @IdRes
     private int checkedId;
@@ -47,7 +47,7 @@ public class ChipGroup extends FlowLayout {
     private boolean singleSelection;
 
     public class CheckedStateTracker implements CompoundButton.OnCheckedChangeListener {
-        public CheckedStateTracker(a aVar) {
+        public CheckedStateTracker(C10875a c10875a) {
         }
 
         @Override // android.widget.CompoundButton.OnCheckedChangeListener
@@ -98,9 +98,11 @@ public class ChipGroup extends FlowLayout {
     }
 
     public class PassThroughHierarchyChangeListener implements ViewGroup.OnHierarchyChangeListener {
-        public ViewGroup.OnHierarchyChangeListener j;
 
-        public PassThroughHierarchyChangeListener(a aVar) {
+        /* JADX INFO: renamed from: j */
+        public ViewGroup.OnHierarchyChangeListener f20954j;
+
+        public PassThroughHierarchyChangeListener(C10875a c10875a) {
         }
 
         @Override // android.view.ViewGroup.OnHierarchyChangeListener
@@ -115,7 +117,7 @@ public class ChipGroup extends FlowLayout {
                 }
                 chip.setOnCheckedChangeListenerInternal(ChipGroup.this.checkedStateTracker);
             }
-            ViewGroup.OnHierarchyChangeListener onHierarchyChangeListener = this.j;
+            ViewGroup.OnHierarchyChangeListener onHierarchyChangeListener = this.f20954j;
             if (onHierarchyChangeListener != null) {
                 onHierarchyChangeListener.onChildViewAdded(view, view2);
             }
@@ -126,7 +128,7 @@ public class ChipGroup extends FlowLayout {
             if (view == ChipGroup.this && (view2 instanceof Chip)) {
                 ((Chip) view2).setOnCheckedChangeListenerInternal(null);
             }
-            ViewGroup.OnHierarchyChangeListener onHierarchyChangeListener = this.j;
+            ViewGroup.OnHierarchyChangeListener onHierarchyChangeListener = this.f20954j;
             if (onHierarchyChangeListener != null) {
                 onHierarchyChangeListener.onChildViewRemoved(view, view2);
             }
@@ -350,7 +352,7 @@ public class ChipGroup extends FlowLayout {
 
     @Override // android.view.ViewGroup
     public void setOnHierarchyChangeListener(ViewGroup.OnHierarchyChangeListener onHierarchyChangeListener) {
-        this.passThroughListener.j = onHierarchyChangeListener;
+        this.passThroughListener.f20954j = onHierarchyChangeListener;
     }
 
     public void setSelectionRequired(boolean z2) {
@@ -380,7 +382,7 @@ public class ChipGroup extends FlowLayout {
     }
 
     public ChipGroup(Context context, AttributeSet attributeSet) {
-        this(context, attributeSet, R.attr.chipGroupStyle);
+        this(context, attributeSet, C10817R.attr.chipGroupStyle);
     }
 
     private void setCheckedId(int i, boolean z2) {
@@ -409,14 +411,14 @@ public class ChipGroup extends FlowLayout {
         this.passThroughListener = new PassThroughHierarchyChangeListener(null);
         this.checkedId = -1;
         this.protectFromCheckedChange = false;
-        TypedArray typedArrayObtainStyledAttributes = ThemeEnforcement.obtainStyledAttributes(getContext(), attributeSet, R.styleable.ChipGroup, i, i2, new int[0]);
-        int dimensionPixelOffset = typedArrayObtainStyledAttributes.getDimensionPixelOffset(R.styleable.ChipGroup_chipSpacing, 0);
-        setChipSpacingHorizontal(typedArrayObtainStyledAttributes.getDimensionPixelOffset(R.styleable.ChipGroup_chipSpacingHorizontal, dimensionPixelOffset));
-        setChipSpacingVertical(typedArrayObtainStyledAttributes.getDimensionPixelOffset(R.styleable.ChipGroup_chipSpacingVertical, dimensionPixelOffset));
-        setSingleLine(typedArrayObtainStyledAttributes.getBoolean(R.styleable.ChipGroup_singleLine, false));
-        setSingleSelection(typedArrayObtainStyledAttributes.getBoolean(R.styleable.ChipGroup_singleSelection, false));
-        setSelectionRequired(typedArrayObtainStyledAttributes.getBoolean(R.styleable.ChipGroup_selectionRequired, false));
-        int resourceId = typedArrayObtainStyledAttributes.getResourceId(R.styleable.ChipGroup_checkedChip, -1);
+        TypedArray typedArrayObtainStyledAttributes = ThemeEnforcement.obtainStyledAttributes(getContext(), attributeSet, C10817R.styleable.ChipGroup, i, i2, new int[0]);
+        int dimensionPixelOffset = typedArrayObtainStyledAttributes.getDimensionPixelOffset(C10817R.styleable.ChipGroup_chipSpacing, 0);
+        setChipSpacingHorizontal(typedArrayObtainStyledAttributes.getDimensionPixelOffset(C10817R.styleable.ChipGroup_chipSpacingHorizontal, dimensionPixelOffset));
+        setChipSpacingVertical(typedArrayObtainStyledAttributes.getDimensionPixelOffset(C10817R.styleable.ChipGroup_chipSpacingVertical, dimensionPixelOffset));
+        setSingleLine(typedArrayObtainStyledAttributes.getBoolean(C10817R.styleable.ChipGroup_singleLine, false));
+        setSingleSelection(typedArrayObtainStyledAttributes.getBoolean(C10817R.styleable.ChipGroup_singleSelection, false));
+        setSelectionRequired(typedArrayObtainStyledAttributes.getBoolean(C10817R.styleable.ChipGroup_selectionRequired, false));
+        int resourceId = typedArrayObtainStyledAttributes.getResourceId(C10817R.styleable.ChipGroup_checkedChip, -1);
         if (resourceId != -1) {
             this.checkedId = resourceId;
         }

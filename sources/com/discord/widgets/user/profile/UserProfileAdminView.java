@@ -9,14 +9,14 @@ import android.view.ViewGroup;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import androidx.core.content.ContextCompat;
-import b.d.b.a.outline;
-import com.discord.R;
+import com.discord.C5419R;
 import com.discord.databinding.UserProfileAdminViewBinding;
 import com.discord.utilities.drawable.DrawableCompat;
 import com.discord.utilities.view.extensions.ViewExtensions;
-import d0.z.d.Intrinsics3;
 import kotlin.Unit;
 import kotlin.jvm.functions.Function0;
+import p007b.p100d.p104b.p105a.C1643a;
+import p507d0.p592z.p594d.C12238m;
 
 /* JADX INFO: compiled from: UserProfileAdminView.kt */
 /* JADX INFO: loaded from: classes.dex */
@@ -317,68 +317,68 @@ public final class UserProfileAdminView extends LinearLayout {
         }
 
         public String toString() {
-            StringBuilder sbU = outline.U("ViewState(showEditMemberButton=");
-            sbU.append(this.showEditMemberButton);
-            sbU.append(", showKickButton=");
-            sbU.append(this.showKickButton);
-            sbU.append(", showDisableCommunicationButton=");
-            sbU.append(this.showDisableCommunicationButton);
-            sbU.append(", isMultiUserDM=");
-            sbU.append(this.isMultiUserDM);
-            sbU.append(", showBanButton=");
-            sbU.append(this.showBanButton);
-            sbU.append(", showServerMuteButton=");
-            sbU.append(this.showServerMuteButton);
-            sbU.append(", isServerMuted=");
-            sbU.append(this.isServerMuted);
-            sbU.append(", showServerDeafenButton=");
-            sbU.append(this.showServerDeafenButton);
-            sbU.append(", isServerDeafened=");
-            sbU.append(this.isServerDeafened);
-            sbU.append(", showServerMoveAndDisconnectButtons=");
-            sbU.append(this.showServerMoveAndDisconnectButtons);
-            sbU.append(", isAdminSectionEnabled=");
-            sbU.append(this.isAdminSectionEnabled);
-            sbU.append(", isMe=");
-            sbU.append(this.isMe);
-            sbU.append(", isCommunicationDisabled=");
-            return outline.O(sbU, this.isCommunicationDisabled, ")");
+            StringBuilder sbM833U = C1643a.m833U("ViewState(showEditMemberButton=");
+            sbM833U.append(this.showEditMemberButton);
+            sbM833U.append(", showKickButton=");
+            sbM833U.append(this.showKickButton);
+            sbM833U.append(", showDisableCommunicationButton=");
+            sbM833U.append(this.showDisableCommunicationButton);
+            sbM833U.append(", isMultiUserDM=");
+            sbM833U.append(this.isMultiUserDM);
+            sbM833U.append(", showBanButton=");
+            sbM833U.append(this.showBanButton);
+            sbM833U.append(", showServerMuteButton=");
+            sbM833U.append(this.showServerMuteButton);
+            sbM833U.append(", isServerMuted=");
+            sbM833U.append(this.isServerMuted);
+            sbM833U.append(", showServerDeafenButton=");
+            sbM833U.append(this.showServerDeafenButton);
+            sbM833U.append(", isServerDeafened=");
+            sbM833U.append(this.isServerDeafened);
+            sbM833U.append(", showServerMoveAndDisconnectButtons=");
+            sbM833U.append(this.showServerMoveAndDisconnectButtons);
+            sbM833U.append(", isAdminSectionEnabled=");
+            sbM833U.append(this.isAdminSectionEnabled);
+            sbM833U.append(", isMe=");
+            sbM833U.append(this.isMe);
+            sbM833U.append(", isCommunicationDisabled=");
+            return C1643a.m827O(sbM833U, this.isCommunicationDisabled, ")");
         }
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public UserProfileAdminView(Context context, AttributeSet attributeSet) {
         super(context, attributeSet);
-        Intrinsics3.checkNotNullParameter(context, "context");
-        Intrinsics3.checkNotNullParameter(attributeSet, "attrs");
-        View viewInflate = LayoutInflater.from(context).inflate(R.layout.user_profile_admin_view, (ViewGroup) this, false);
+        C12238m.checkNotNullParameter(context, "context");
+        C12238m.checkNotNullParameter(attributeSet, "attrs");
+        View viewInflate = LayoutInflater.from(context).inflate(C5419R.layout.user_profile_admin_view, (ViewGroup) this, false);
         addView(viewInflate);
-        int i = R.id.user_profile_admin_ban;
-        TextView textView = (TextView) viewInflate.findViewById(R.id.user_profile_admin_ban);
+        int i = C5419R.id.user_profile_admin_ban;
+        TextView textView = (TextView) viewInflate.findViewById(C5419R.id.user_profile_admin_ban);
         if (textView != null) {
-            i = R.id.user_profile_admin_disable_communication;
-            TextView textView2 = (TextView) viewInflate.findViewById(R.id.user_profile_admin_disable_communication);
+            i = C5419R.id.user_profile_admin_disable_communication;
+            TextView textView2 = (TextView) viewInflate.findViewById(C5419R.id.user_profile_admin_disable_communication);
             if (textView2 != null) {
-                i = R.id.user_profile_admin_edit_member;
-                TextView textView3 = (TextView) viewInflate.findViewById(R.id.user_profile_admin_edit_member);
+                i = C5419R.id.user_profile_admin_edit_member;
+                TextView textView3 = (TextView) viewInflate.findViewById(C5419R.id.user_profile_admin_edit_member);
                 if (textView3 != null) {
-                    i = R.id.user_profile_admin_kick;
-                    TextView textView4 = (TextView) viewInflate.findViewById(R.id.user_profile_admin_kick);
+                    i = C5419R.id.user_profile_admin_kick;
+                    TextView textView4 = (TextView) viewInflate.findViewById(C5419R.id.user_profile_admin_kick);
                     if (textView4 != null) {
-                        i = R.id.user_profile_admin_server_deafen;
-                        TextView textView5 = (TextView) viewInflate.findViewById(R.id.user_profile_admin_server_deafen);
+                        i = C5419R.id.user_profile_admin_server_deafen;
+                        TextView textView5 = (TextView) viewInflate.findViewById(C5419R.id.user_profile_admin_server_deafen);
                         if (textView5 != null) {
-                            i = R.id.user_profile_admin_server_disconnect;
-                            TextView textView6 = (TextView) viewInflate.findViewById(R.id.user_profile_admin_server_disconnect);
+                            i = C5419R.id.user_profile_admin_server_disconnect;
+                            TextView textView6 = (TextView) viewInflate.findViewById(C5419R.id.user_profile_admin_server_disconnect);
                             if (textView6 != null) {
-                                i = R.id.user_profile_admin_server_move;
-                                TextView textView7 = (TextView) viewInflate.findViewById(R.id.user_profile_admin_server_move);
+                                i = C5419R.id.user_profile_admin_server_move;
+                                TextView textView7 = (TextView) viewInflate.findViewById(C5419R.id.user_profile_admin_server_move);
                                 if (textView7 != null) {
-                                    i = R.id.user_profile_admin_server_mute;
-                                    TextView textView8 = (TextView) viewInflate.findViewById(R.id.user_profile_admin_server_mute);
+                                    i = C5419R.id.user_profile_admin_server_mute;
+                                    TextView textView8 = (TextView) viewInflate.findViewById(C5419R.id.user_profile_admin_server_mute);
                                     if (textView8 != null) {
                                         UserProfileAdminViewBinding userProfileAdminViewBinding = new UserProfileAdminViewBinding((LinearLayout) viewInflate, textView, textView2, textView3, textView4, textView5, textView6, textView7, textView8);
-                                        Intrinsics3.checkNotNullExpressionValue(userProfileAdminViewBinding, "UserProfileAdminViewBind…rom(context), this, true)");
+                                        C12238m.checkNotNullExpressionValue(userProfileAdminViewBinding, "UserProfileAdminViewBind…rom(context), this, true)");
                                         this.binding = userProfileAdminViewBinding;
                                         return;
                                     }
@@ -393,8 +393,8 @@ public final class UserProfileAdminView extends LinearLayout {
     }
 
     public final void setOnBan(final Function0<Unit> onBan) {
-        Intrinsics3.checkNotNullParameter(onBan, "onBan");
-        this.binding.f2163b.setOnClickListener(new View.OnClickListener() { // from class: com.discord.widgets.user.profile.UserProfileAdminView.setOnBan.1
+        C12238m.checkNotNullParameter(onBan, "onBan");
+        this.binding.f15327b.setOnClickListener(new View.OnClickListener() { // from class: com.discord.widgets.user.profile.UserProfileAdminView.setOnBan.1
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
                 onBan.invoke();
@@ -403,8 +403,8 @@ public final class UserProfileAdminView extends LinearLayout {
     }
 
     public final void setOnDisableCommunication(final Function0<Unit> onDisableCommunication) {
-        Intrinsics3.checkNotNullParameter(onDisableCommunication, "onDisableCommunication");
-        this.binding.c.setOnClickListener(new View.OnClickListener() { // from class: com.discord.widgets.user.profile.UserProfileAdminView.setOnDisableCommunication.1
+        C12238m.checkNotNullParameter(onDisableCommunication, "onDisableCommunication");
+        this.binding.f15328c.setOnClickListener(new View.OnClickListener() { // from class: com.discord.widgets.user.profile.UserProfileAdminView.setOnDisableCommunication.1
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
                 onDisableCommunication.invoke();
@@ -413,8 +413,8 @@ public final class UserProfileAdminView extends LinearLayout {
     }
 
     public final void setOnDisconnect(final Function0<Unit> onDisconnect) {
-        Intrinsics3.checkNotNullParameter(onDisconnect, "onDisconnect");
-        this.binding.g.setOnClickListener(new View.OnClickListener() { // from class: com.discord.widgets.user.profile.UserProfileAdminView.setOnDisconnect.1
+        C12238m.checkNotNullParameter(onDisconnect, "onDisconnect");
+        this.binding.f15332g.setOnClickListener(new View.OnClickListener() { // from class: com.discord.widgets.user.profile.UserProfileAdminView.setOnDisconnect.1
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
                 onDisconnect.invoke();
@@ -423,8 +423,8 @@ public final class UserProfileAdminView extends LinearLayout {
     }
 
     public final void setOnEditMember(final Function0<Unit> onEditMember) {
-        Intrinsics3.checkNotNullParameter(onEditMember, "onEditMember");
-        this.binding.d.setOnClickListener(new View.OnClickListener() { // from class: com.discord.widgets.user.profile.UserProfileAdminView.setOnEditMember.1
+        C12238m.checkNotNullParameter(onEditMember, "onEditMember");
+        this.binding.f15329d.setOnClickListener(new View.OnClickListener() { // from class: com.discord.widgets.user.profile.UserProfileAdminView.setOnEditMember.1
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
                 onEditMember.invoke();
@@ -433,8 +433,8 @@ public final class UserProfileAdminView extends LinearLayout {
     }
 
     public final void setOnKick(final Function0<Unit> onKick) {
-        Intrinsics3.checkNotNullParameter(onKick, "onKick");
-        this.binding.e.setOnClickListener(new View.OnClickListener() { // from class: com.discord.widgets.user.profile.UserProfileAdminView.setOnKick.1
+        C12238m.checkNotNullParameter(onKick, "onKick");
+        this.binding.f15330e.setOnClickListener(new View.OnClickListener() { // from class: com.discord.widgets.user.profile.UserProfileAdminView.setOnKick.1
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
                 onKick.invoke();
@@ -443,8 +443,8 @@ public final class UserProfileAdminView extends LinearLayout {
     }
 
     public final void setOnServerDeafen(final Function0<Unit> onServerDeafen) {
-        Intrinsics3.checkNotNullParameter(onServerDeafen, "onServerDeafen");
-        this.binding.f.setOnClickListener(new View.OnClickListener() { // from class: com.discord.widgets.user.profile.UserProfileAdminView.setOnServerDeafen.1
+        C12238m.checkNotNullParameter(onServerDeafen, "onServerDeafen");
+        this.binding.f15331f.setOnClickListener(new View.OnClickListener() { // from class: com.discord.widgets.user.profile.UserProfileAdminView.setOnServerDeafen.1
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
                 onServerDeafen.invoke();
@@ -453,8 +453,8 @@ public final class UserProfileAdminView extends LinearLayout {
     }
 
     public final void setOnServerMove(final Function0<Unit> onServerMove) {
-        Intrinsics3.checkNotNullParameter(onServerMove, "onServerMove");
-        this.binding.h.setOnClickListener(new View.OnClickListener() { // from class: com.discord.widgets.user.profile.UserProfileAdminView.setOnServerMove.1
+        C12238m.checkNotNullParameter(onServerMove, "onServerMove");
+        this.binding.f15333h.setOnClickListener(new View.OnClickListener() { // from class: com.discord.widgets.user.profile.UserProfileAdminView.setOnServerMove.1
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
                 onServerMove.invoke();
@@ -463,8 +463,8 @@ public final class UserProfileAdminView extends LinearLayout {
     }
 
     public final void setOnServerMute(final Function0<Unit> onServerMute) {
-        Intrinsics3.checkNotNullParameter(onServerMute, "onServerMute");
-        this.binding.i.setOnClickListener(new View.OnClickListener() { // from class: com.discord.widgets.user.profile.UserProfileAdminView.setOnServerMute.1
+        C12238m.checkNotNullParameter(onServerMute, "onServerMute");
+        this.binding.f15334i.setOnClickListener(new View.OnClickListener() { // from class: com.discord.widgets.user.profile.UserProfileAdminView.setOnServerMute.1
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
                 onServerMute.invoke();
@@ -473,55 +473,55 @@ public final class UserProfileAdminView extends LinearLayout {
     }
 
     public final void updateView(ViewState viewState) {
-        Intrinsics3.checkNotNullParameter(viewState, "viewState");
-        TextView textView = this.binding.d;
-        Intrinsics3.checkNotNullExpressionValue(textView, "binding.userProfileAdminEditMember");
+        C12238m.checkNotNullParameter(viewState, "viewState");
+        TextView textView = this.binding.f15329d;
+        C12238m.checkNotNullExpressionValue(textView, "binding.userProfileAdminEditMember");
         textView.setVisibility(viewState.getShowEditMemberButton() ? 0 : 8);
-        TextView textView2 = this.binding.e;
-        Intrinsics3.checkNotNullExpressionValue(textView2, "binding.userProfileAdminKick");
+        TextView textView2 = this.binding.f15330e;
+        C12238m.checkNotNullExpressionValue(textView2, "binding.userProfileAdminKick");
         textView2.setVisibility(viewState.getShowKickButton() ? 0 : 8);
-        TextView textView3 = this.binding.c;
-        Intrinsics3.checkNotNullExpressionValue(textView3, "binding.userProfileAdminDisableCommunication");
+        TextView textView3 = this.binding.f15328c;
+        C12238m.checkNotNullExpressionValue(textView3, "binding.userProfileAdminDisableCommunication");
         textView3.setVisibility(viewState.getShowDisableCommunicationButton() ? 0 : 8);
-        this.binding.e.setText(viewState.isMultiUserDM() ? R.string.remove_from_group : R.string.kick);
-        TextView textView4 = this.binding.f2163b;
-        Intrinsics3.checkNotNullExpressionValue(textView4, "binding.userProfileAdminBan");
+        this.binding.f15330e.setText(viewState.isMultiUserDM() ? C5419R.string.remove_from_group : C5419R.string.kick);
+        TextView textView4 = this.binding.f15327b;
+        C12238m.checkNotNullExpressionValue(textView4, "binding.userProfileAdminBan");
         textView4.setVisibility(viewState.getShowBanButton() ? 0 : 8);
         boolean zIsCommunicationDisabled = viewState.isCommunicationDisabled();
-        int i = zIsCommunicationDisabled ? R.string.remove_time_out : R.string.time_out;
-        Drawable drawable = zIsCommunicationDisabled ? ContextCompat.getDrawable(getContext(), R.drawable.ic_enable_guild_communication_24dp) : ContextCompat.getDrawable(getContext(), R.drawable.ic_disable_guild_communication_red_24dp);
-        this.binding.c.setText(i);
-        TextView textView5 = this.binding.c;
-        Intrinsics3.checkNotNullExpressionValue(textView5, "binding.userProfileAdminDisableCommunication");
+        int i = zIsCommunicationDisabled ? C5419R.string.remove_time_out : C5419R.string.time_out;
+        Drawable drawable = zIsCommunicationDisabled ? ContextCompat.getDrawable(getContext(), C5419R.drawable.ic_enable_guild_communication_24dp) : ContextCompat.getDrawable(getContext(), C5419R.drawable.ic_disable_guild_communication_red_24dp);
+        this.binding.f15328c.setText(i);
+        TextView textView5 = this.binding.f15328c;
+        C12238m.checkNotNullExpressionValue(textView5, "binding.userProfileAdminDisableCommunication");
         DrawableCompat.setCompoundDrawablesCompat$default(textView5, drawable, (Drawable) null, (Drawable) null, (Drawable) null, 14, (Object) null);
-        TextView textView6 = this.binding.i;
-        Intrinsics3.checkNotNullExpressionValue(textView6, "binding.userProfileAdminServerMute");
+        TextView textView6 = this.binding.f15334i;
+        C12238m.checkNotNullExpressionValue(textView6, "binding.userProfileAdminServerMute");
         textView6.setVisibility(viewState.getShowServerMuteButton() ? 0 : 8);
         boolean zIsServerMuted = viewState.isServerMuted();
         boolean zIsMe = viewState.isMe();
-        int themedDrawableRes$default = zIsServerMuted ? DrawableCompat.getThemedDrawableRes$default(this, R.attr.ic_mic_muted_grey, 0, 2, (Object) null) : DrawableCompat.getThemedDrawableRes$default(this, R.attr.ic_mic_grey, 0, 2, (Object) null);
-        int i2 = zIsServerMuted ? R.string.server_unmute : R.string.server_mute;
-        TextView textView7 = this.binding.i;
-        Intrinsics3.checkNotNullExpressionValue(textView7, "binding.userProfileAdminServerMute");
+        int themedDrawableRes$default = zIsServerMuted ? DrawableCompat.getThemedDrawableRes$default(this, C5419R.attr.ic_mic_muted_grey, 0, 2, (Object) null) : DrawableCompat.getThemedDrawableRes$default(this, C5419R.attr.ic_mic_grey, 0, 2, (Object) null);
+        int i2 = zIsServerMuted ? C5419R.string.server_unmute : C5419R.string.server_mute;
+        TextView textView7 = this.binding.f15334i;
+        C12238m.checkNotNullExpressionValue(textView7, "binding.userProfileAdminServerMute");
         ViewExtensions.setCompoundDrawableWithIntrinsicBounds$default(textView7, themedDrawableRes$default, 0, 0, 0, 14, null);
-        this.binding.i.setText(i2);
-        TextView textView8 = this.binding.f;
-        Intrinsics3.checkNotNullExpressionValue(textView8, "binding.userProfileAdminServerDeafen");
+        this.binding.f15334i.setText(i2);
+        TextView textView8 = this.binding.f15331f;
+        C12238m.checkNotNullExpressionValue(textView8, "binding.userProfileAdminServerDeafen");
         textView8.setVisibility(viewState.getShowServerDeafenButton() ? 0 : 8);
         boolean zIsServerDeafened = viewState.isServerDeafened();
-        int themedDrawableRes$default2 = zIsServerDeafened ? DrawableCompat.getThemedDrawableRes$default(this, R.attr.ic_headset_deafened_grey, 0, 2, (Object) null) : DrawableCompat.getThemedDrawableRes$default(this, R.attr.ic_headset_deafened_grey, 0, 2, (Object) null);
-        int i3 = zIsServerDeafened ? R.string.server_undeafen : R.string.server_deafen;
-        int i4 = zIsMe ? R.string.disconnect_self : R.string.disconnect_other;
-        TextView textView9 = this.binding.f;
-        Intrinsics3.checkNotNullExpressionValue(textView9, "binding.userProfileAdminServerDeafen");
+        int themedDrawableRes$default2 = zIsServerDeafened ? DrawableCompat.getThemedDrawableRes$default(this, C5419R.attr.ic_headset_deafened_grey, 0, 2, (Object) null) : DrawableCompat.getThemedDrawableRes$default(this, C5419R.attr.ic_headset_deafened_grey, 0, 2, (Object) null);
+        int i3 = zIsServerDeafened ? C5419R.string.server_undeafen : C5419R.string.server_deafen;
+        int i4 = zIsMe ? C5419R.string.disconnect_self : C5419R.string.disconnect_other;
+        TextView textView9 = this.binding.f15331f;
+        C12238m.checkNotNullExpressionValue(textView9, "binding.userProfileAdminServerDeafen");
         ViewExtensions.setCompoundDrawableWithIntrinsicBounds$default(textView9, themedDrawableRes$default2, 0, 0, 0, 14, null);
-        this.binding.f.setText(i3);
-        TextView textView10 = this.binding.h;
-        Intrinsics3.checkNotNullExpressionValue(textView10, "binding.userProfileAdminServerMove");
+        this.binding.f15331f.setText(i3);
+        TextView textView10 = this.binding.f15333h;
+        C12238m.checkNotNullExpressionValue(textView10, "binding.userProfileAdminServerMove");
         textView10.setVisibility(viewState.getShowServerMoveAndDisconnectButtons() ? 0 : 8);
-        this.binding.g.setText(i4);
-        TextView textView11 = this.binding.g;
-        Intrinsics3.checkNotNullExpressionValue(textView11, "binding.userProfileAdminServerDisconnect");
+        this.binding.f15332g.setText(i4);
+        TextView textView11 = this.binding.f15332g;
+        C12238m.checkNotNullExpressionValue(textView11, "binding.userProfileAdminServerDisconnect");
         textView11.setVisibility(viewState.getShowServerMoveAndDisconnectButtons() ? 0 : 8);
     }
 }

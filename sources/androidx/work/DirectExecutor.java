@@ -1,8 +1,8 @@
 package androidx.work;
 
 import androidx.annotation.RestrictTo;
-import d0.z.d.Intrinsics3;
 import java.util.concurrent.Executor;
+import p507d0.p592z.p594d.C12238m;
 
 /* JADX INFO: compiled from: DirectExecutor.kt */
 /* JADX INFO: loaded from: classes.dex */
@@ -12,7 +12,7 @@ public enum DirectExecutor implements Executor {
 
     @Override // java.util.concurrent.Executor
     public void execute(Runnable command) {
-        Intrinsics3.checkParameterIsNotNull(command, "command");
+        C12238m.checkParameterIsNotNull(command, "command");
         command.run();
     }
 

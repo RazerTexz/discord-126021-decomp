@@ -49,9 +49,9 @@ import androidx.view.ViewModelStoreOwner;
 import androidx.view.ViewTreeLifecycleOwner;
 import androidx.view.ViewTreeSavedStateRegistryOwner;
 import androidx.view.ViewTreeViewModelStoreOwner;
-import b.d.b.a.outline;
 import java.util.ArrayList;
 import java.util.concurrent.atomic.AtomicInteger;
+import p007b.p100d.p104b.p105a.C1643a;
 
 /* JADX INFO: loaded from: classes.dex */
 public class ComponentActivity extends androidx.core.app.ComponentActivity implements ContextAware, LifecycleOwner, ViewModelStoreOwner, HasDefaultViewModelProviderFactory, SavedStateRegistryOwner, OnBackPressedDispatcherOwner, ActivityResultRegistryOwner, ActivityResultCaller {
@@ -356,9 +356,9 @@ public class ComponentActivity extends androidx.core.app.ComponentActivity imple
     @Override // androidx.activity.result.ActivityResultCaller
     @NonNull
     public final <I, O> ActivityResultLauncher<I> registerForActivityResult(@NonNull ActivityResultContract<I, O> activityResultContract, @NonNull ActivityResultRegistry activityResultRegistry, @NonNull ActivityResultCallback<O> activityResultCallback) {
-        StringBuilder sbU = outline.U("activity_rq#");
-        sbU.append(this.mNextLocalRequestCode.getAndIncrement());
-        return activityResultRegistry.register(sbU.toString(), this, activityResultContract, activityResultCallback);
+        StringBuilder sbM833U = C1643a.m833U("activity_rq#");
+        sbM833U.append(this.mNextLocalRequestCode.getAndIncrement());
+        return activityResultRegistry.register(sbM833U.toString(), this, activityResultContract, activityResultCallback);
     }
 
     @Override // androidx.activity.contextaware.ContextAware

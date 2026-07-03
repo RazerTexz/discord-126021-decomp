@@ -1,17 +1,17 @@
 package com.discord.analytics.generated.events;
 
-import b.d.b.a.outline;
 import com.discord.analytics.generated.traits.TrackBase;
-import com.discord.analytics.generated.traits.TrackBase2;
+import com.discord.analytics.generated.traits.TrackBaseReceiver;
 import com.discord.analytics.generated.traits.TrackChannel;
-import com.discord.analytics.generated.traits.TrackChannel2;
+import com.discord.analytics.generated.traits.TrackChannelReceiver;
 import com.discord.api.science.AnalyticsSchema;
 import com.discord.models.domain.ModelAuditLogEntry;
-import d0.z.d.Intrinsics3;
+import p007b.p100d.p104b.p105a.C1643a;
+import p507d0.p592z.p594d.C12238m;
 
 /* JADX INFO: compiled from: TrackExperimentDmTriggered.kt */
 /* JADX INFO: loaded from: classes.dex */
-public final /* data */ class TrackExperimentDmTriggered implements AnalyticsSchema, TrackBase2, TrackChannel2 {
+public final /* data */ class TrackExperimentDmTriggered implements AnalyticsSchema, TrackBaseReceiver, TrackChannelReceiver {
     private TrackBase trackBase;
     private TrackChannel trackChannel;
     private final CharSequence name = null;
@@ -34,7 +34,7 @@ public final /* data */ class TrackExperimentDmTriggered implements AnalyticsSch
             return false;
         }
         TrackExperimentDmTriggered trackExperimentDmTriggered = (TrackExperimentDmTriggered) other;
-        return Intrinsics3.areEqual(this.name, trackExperimentDmTriggered.name) && Intrinsics3.areEqual(this.bucket, trackExperimentDmTriggered.bucket) && Intrinsics3.areEqual(this.revision, trackExperimentDmTriggered.revision) && Intrinsics3.areEqual(this.otherUserId, trackExperimentDmTriggered.otherUserId);
+        return C12238m.areEqual(this.name, trackExperimentDmTriggered.name) && C12238m.areEqual(this.bucket, trackExperimentDmTriggered.bucket) && C12238m.areEqual(this.revision, trackExperimentDmTriggered.revision) && C12238m.areEqual(this.otherUserId, trackExperimentDmTriggered.otherUserId);
     }
 
     public int hashCode() {
@@ -49,13 +49,13 @@ public final /* data */ class TrackExperimentDmTriggered implements AnalyticsSch
     }
 
     public String toString() {
-        StringBuilder sbU = outline.U("TrackExperimentDmTriggered(name=");
-        sbU.append(this.name);
-        sbU.append(", bucket=");
-        sbU.append(this.bucket);
-        sbU.append(", revision=");
-        sbU.append(this.revision);
-        sbU.append(", otherUserId=");
-        return outline.G(sbU, this.otherUserId, ")");
+        StringBuilder sbM833U = C1643a.m833U("TrackExperimentDmTriggered(name=");
+        sbM833U.append(this.name);
+        sbM833U.append(", bucket=");
+        sbM833U.append(this.bucket);
+        sbM833U.append(", revision=");
+        sbM833U.append(this.revision);
+        sbM833U.append(", otherUserId=");
+        return C1643a.m819G(sbM833U, this.otherUserId, ")");
     }
 }

@@ -1,27 +1,21 @@
 package com.discord.stores;
 
 import android.content.Context;
-import b.d.b.a.outline;
 import com.discord.analytics.generated.events.network_action.TrackNetworkActionUserConnectionsUpdate;
-import com.discord.analytics.generated.traits.TrackNetworkMetadata2;
+import com.discord.analytics.generated.traits.TrackNetworkMetadataReceiver;
 import com.discord.api.connectedaccounts.ConnectedAccount;
 import com.discord.models.domain.ModelAuditLogEntry;
 import com.discord.models.domain.ModelPayload;
 import com.discord.models.domain.ModelUrl;
 import com.discord.restapi.RestAPIParams;
 import com.discord.stores.updates.ObservationDeck;
-import com.discord.stores.updates.ObservationDeck4;
-import com.discord.stores.utilities.RestCallState5;
+import com.discord.stores.updates.ObservationDeckProvider;
+import com.discord.stores.utilities.RestCallStateKt;
 import com.discord.utilities.analytics.AnalyticsTracker;
 import com.discord.utilities.error.Error;
+import com.discord.utilities.p501rx.ObservableExtensionsKt;
 import com.discord.utilities.rest.RestAPI;
-import com.discord.utilities.rx.ObservableExtensionsKt;
 import com.discord.utilities.uri.UriHandler;
-import d0.t.Collections2;
-import d0.z.d.CollectionToArray;
-import d0.z.d.Intrinsics3;
-import d0.z.d.Lambda;
-import d0.z.d.g0.KMarkers;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Comparator;
@@ -34,8 +28,14 @@ import kotlin.Unit;
 import kotlin.jvm.functions.Function0;
 import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.DefaultConstructorMarker;
-import rx.Observable;
-import rx.Subscription;
+import p007b.p100d.p104b.p105a.C1643a;
+import p507d0.p580t.C12147n;
+import p507d0.p592z.p594d.AbstractC12240o;
+import p507d0.p592z.p594d.C12227g;
+import p507d0.p592z.p594d.C12238m;
+import p507d0.p592z.p594d.p595g0.InterfaceC12228a;
+import p658rx.Observable;
+import p658rx.Subscription;
 
 /* JADX INFO: compiled from: StoreUserConnections.kt */
 /* JADX INFO: loaded from: classes2.dex */
@@ -47,7 +47,7 @@ public final class StoreUserConnections extends StoreV2 {
     private final StoreStream stream;
 
     /* JADX INFO: compiled from: StoreUserConnections.kt */
-    public static abstract class State implements List<ConnectedAccount>, KMarkers {
+    public static abstract class State implements List<ConnectedAccount>, InterfaceC12228a {
         private final List<ConnectedAccount> connectedAccounts;
 
         /* JADX INFO: compiled from: StoreUserConnections.kt */
@@ -57,7 +57,7 @@ public final class StoreUserConnections extends StoreV2 {
             /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
             public ConnectedAccounts(List<ConnectedAccount> list) {
                 super(list, null);
-                Intrinsics3.checkNotNullParameter(list, "connectedAccounts");
+                C12238m.checkNotNullParameter(list, "connectedAccounts");
                 this.connectedAccounts = list;
             }
 
@@ -74,14 +74,14 @@ public final class StoreUserConnections extends StoreV2 {
             }
 
             public final ConnectedAccounts copy(List<ConnectedAccount> connectedAccounts) {
-                Intrinsics3.checkNotNullParameter(connectedAccounts, "connectedAccounts");
+                C12238m.checkNotNullParameter(connectedAccounts, "connectedAccounts");
                 return new ConnectedAccounts(connectedAccounts);
             }
 
             @Override // java.util.List, java.util.Collection
             public boolean equals(Object other) {
                 if (this != other) {
-                    return (other instanceof ConnectedAccounts) && Intrinsics3.areEqual(getConnectedAccounts(), ((ConnectedAccounts) other).getConnectedAccounts());
+                    return (other instanceof ConnectedAccounts) && C12238m.areEqual(getConnectedAccounts(), ((ConnectedAccounts) other).getConnectedAccounts());
                 }
                 return true;
             }
@@ -101,10 +101,10 @@ public final class StoreUserConnections extends StoreV2 {
             }
 
             public String toString() {
-                StringBuilder sbU = outline.U("ConnectedAccounts(connectedAccounts=");
-                sbU.append(getConnectedAccounts());
-                sbU.append(")");
-                return sbU.toString();
+                StringBuilder sbM833U = C1643a.m833U("ConnectedAccounts(connectedAccounts=");
+                sbM833U.append(getConnectedAccounts());
+                sbM833U.append(")");
+                return sbM833U.toString();
             }
         }
 
@@ -113,7 +113,7 @@ public final class StoreUserConnections extends StoreV2 {
             public static final Loading INSTANCE = new Loading();
 
             private Loading() {
-                super(Collections2.emptyList(), null);
+                super(C12147n.emptyList(), null);
             }
         }
 
@@ -156,7 +156,7 @@ public final class StoreUserConnections extends StoreV2 {
         }
 
         public boolean contains(ConnectedAccount element) {
-            Intrinsics3.checkNotNullParameter(element, "element");
+            C12238m.checkNotNullParameter(element, "element");
             return this.connectedAccounts.contains(element);
         }
 
@@ -170,7 +170,7 @@ public final class StoreUserConnections extends StoreV2 {
 
         @Override // java.util.List, java.util.Collection
         public boolean containsAll(Collection<? extends Object> elements) {
-            Intrinsics3.checkNotNullParameter(elements, "elements");
+            C12238m.checkNotNullParameter(elements, "elements");
             return this.connectedAccounts.containsAll(elements);
         }
 
@@ -178,7 +178,7 @@ public final class StoreUserConnections extends StoreV2 {
         @Override // java.util.List
         public ConnectedAccount get(int index) {
             ConnectedAccount connectedAccount = this.connectedAccounts.get(index);
-            Intrinsics3.checkNotNullExpressionValue(connectedAccount, "get(...)");
+            C12238m.checkNotNullExpressionValue(connectedAccount, "get(...)");
             return connectedAccount;
         }
 
@@ -191,7 +191,7 @@ public final class StoreUserConnections extends StoreV2 {
         }
 
         public int indexOf(ConnectedAccount element) {
-            Intrinsics3.checkNotNullParameter(element, "element");
+            C12238m.checkNotNullParameter(element, "element");
             return this.connectedAccounts.indexOf(element);
         }
 
@@ -214,7 +214,7 @@ public final class StoreUserConnections extends StoreV2 {
         }
 
         public int lastIndexOf(ConnectedAccount element) {
-            Intrinsics3.checkNotNullParameter(element, "element");
+            C12238m.checkNotNullParameter(element, "element");
             return this.connectedAccounts.lastIndexOf(element);
         }
 
@@ -294,12 +294,12 @@ public final class StoreUserConnections extends StoreV2 {
 
         @Override // java.util.List, java.util.Collection
         public Object[] toArray() {
-            return CollectionToArray.toArray(this);
+            return C12227g.toArray(this);
         }
 
         @Override // java.util.List, java.util.Collection
         public <T> T[] toArray(T[] tArr) {
-            return (T[]) CollectionToArray.toArray(this, tArr);
+            return (T[]) C12227g.toArray(this, tArr);
         }
 
         public /* synthetic */ State(List list, DefaultConstructorMarker defaultConstructorMarker) {
@@ -307,13 +307,13 @@ public final class StoreUserConnections extends StoreV2 {
         }
     }
 
-    /* JADX INFO: renamed from: com.discord.stores.StoreUserConnections$authorizeConnection$1, reason: invalid class name */
+    /* JADX INFO: renamed from: com.discord.stores.StoreUserConnections$authorizeConnection$1 */
     /* JADX INFO: compiled from: StoreUserConnections.kt */
-    public static final class AnonymousClass1 extends Lambda implements Function1<ModelUrl, Unit> {
+    public static final class C65611 extends AbstractC12240o implements Function1<ModelUrl, Unit> {
         public final /* synthetic */ Context $context;
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-        public AnonymousClass1(Context context) {
+        public C65611(Context context) {
             super(1);
             this.$context = context;
         }
@@ -321,42 +321,42 @@ public final class StoreUserConnections extends StoreV2 {
         @Override // kotlin.jvm.functions.Function1
         public /* bridge */ /* synthetic */ Unit invoke(ModelUrl modelUrl) {
             invoke2(modelUrl);
-            return Unit.a;
+            return Unit.f27425a;
         }
 
         /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
         public final void invoke2(ModelUrl modelUrl) {
-            Intrinsics3.checkNotNullParameter(modelUrl, "response");
+            C12238m.checkNotNullParameter(modelUrl, "response");
             UriHandler.handle$default(UriHandler.INSTANCE, this.$context, modelUrl.getUrl(), false, false, null, 28, null);
         }
     }
 
-    /* JADX INFO: renamed from: com.discord.stores.StoreUserConnections$deleteUserConnection$1, reason: invalid class name */
+    /* JADX INFO: renamed from: com.discord.stores.StoreUserConnections$deleteUserConnection$1 */
     /* JADX INFO: compiled from: StoreUserConnections.kt */
-    public static final class AnonymousClass1 extends Lambda implements Function1<Void, TrackNetworkMetadata2> {
-        public static final AnonymousClass1 INSTANCE = new AnonymousClass1();
+    public static final class C65621 extends AbstractC12240o implements Function1<Void, TrackNetworkMetadataReceiver> {
+        public static final C65621 INSTANCE = new C65621();
 
-        public AnonymousClass1() {
+        public C65621() {
             super(1);
         }
 
         @Override // kotlin.jvm.functions.Function1
-        public final TrackNetworkMetadata2 invoke(Void r7) {
+        public final TrackNetworkMetadataReceiver invoke(Void r7) {
             return new TrackNetworkActionUserConnectionsUpdate(null, null, null, null, 15);
         }
     }
 
-    /* JADX INFO: renamed from: com.discord.stores.StoreUserConnections$deleteUserConnection$2, reason: invalid class name */
+    /* JADX INFO: renamed from: com.discord.stores.StoreUserConnections$deleteUserConnection$2 */
     /* JADX INFO: compiled from: StoreUserConnections.kt */
-    public static final class AnonymousClass2 extends Lambda implements Function1<Void, Unit> {
-        public AnonymousClass2() {
+    public static final class C65632 extends AbstractC12240o implements Function1<Void, Unit> {
+        public C65632() {
             super(1);
         }
 
         @Override // kotlin.jvm.functions.Function1
         public /* bridge */ /* synthetic */ Unit invoke(Void r1) {
             invoke2(r1);
-            return Unit.a;
+            return Unit.f27425a;
         }
 
         /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
@@ -365,17 +365,17 @@ public final class StoreUserConnections extends StoreV2 {
         }
     }
 
-    /* JADX INFO: renamed from: com.discord.stores.StoreUserConnections$fetchConnectedAccounts$1, reason: invalid class name */
+    /* JADX INFO: renamed from: com.discord.stores.StoreUserConnections$fetchConnectedAccounts$1 */
     /* JADX INFO: compiled from: StoreUserConnections.kt */
-    public static final class AnonymousClass1 extends Lambda implements Function1<List<? extends ConnectedAccount>, Unit> {
+    public static final class C65641 extends AbstractC12240o implements Function1<List<? extends ConnectedAccount>, Unit> {
 
-        /* JADX INFO: renamed from: com.discord.stores.StoreUserConnections$fetchConnectedAccounts$1$1, reason: invalid class name and collision with other inner class name */
+        /* JADX INFO: renamed from: com.discord.stores.StoreUserConnections$fetchConnectedAccounts$1$1, reason: invalid class name */
         /* JADX INFO: compiled from: StoreUserConnections.kt */
-        public static final class C01841 extends Lambda implements Function0<Unit> {
+        public static final class AnonymousClass1 extends AbstractC12240o implements Function0<Unit> {
             public final /* synthetic */ List $connectedAccounts;
 
             /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-            public C01841(List list) {
+            public AnonymousClass1(List list) {
                 super(0);
                 this.$connectedAccounts = list;
             }
@@ -383,7 +383,7 @@ public final class StoreUserConnections extends StoreV2 {
             @Override // kotlin.jvm.functions.Function0
             public /* bridge */ /* synthetic */ Unit invoke() {
                 invoke2();
-                return Unit.a;
+                return Unit.f27425a;
             }
 
             /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
@@ -392,34 +392,34 @@ public final class StoreUserConnections extends StoreV2 {
             }
         }
 
-        public AnonymousClass1() {
+        public C65641() {
             super(1);
         }
 
         @Override // kotlin.jvm.functions.Function1
         public /* bridge */ /* synthetic */ Unit invoke(List<? extends ConnectedAccount> list) {
             invoke2((List<ConnectedAccount>) list);
-            return Unit.a;
+            return Unit.f27425a;
         }
 
         /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
         public final void invoke2(List<ConnectedAccount> list) {
-            Intrinsics3.checkNotNullParameter(list, "connectedAccounts");
-            StoreUserConnections.this.getDispatcher().schedule(new C01841(list));
+            C12238m.checkNotNullParameter(list, "connectedAccounts");
+            StoreUserConnections.this.getDispatcher().schedule(new AnonymousClass1(list));
         }
     }
 
-    /* JADX INFO: renamed from: com.discord.stores.StoreUserConnections$init$1, reason: invalid class name */
+    /* JADX INFO: renamed from: com.discord.stores.StoreUserConnections$init$1 */
     /* JADX INFO: compiled from: StoreUserConnections.kt */
-    public static final class AnonymousClass1 extends Lambda implements Function1<Unit, Unit> {
-        public AnonymousClass1() {
+    public static final class C65651 extends AbstractC12240o implements Function1<Unit, Unit> {
+        public C65651() {
             super(1);
         }
 
         @Override // kotlin.jvm.functions.Function1
         public /* bridge */ /* synthetic */ Unit invoke(Unit unit) {
             invoke2(unit);
-            return Unit.a;
+            return Unit.f27425a;
         }
 
         /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
@@ -428,10 +428,10 @@ public final class StoreUserConnections extends StoreV2 {
         }
     }
 
-    /* JADX INFO: renamed from: com.discord.stores.StoreUserConnections$observeConnectedAccounts$1, reason: invalid class name */
+    /* JADX INFO: renamed from: com.discord.stores.StoreUserConnections$observeConnectedAccounts$1 */
     /* JADX INFO: compiled from: StoreUserConnections.kt */
-    public static final class AnonymousClass1 extends Lambda implements Function0<State> {
-        public AnonymousClass1() {
+    public static final class C65661 extends AbstractC12240o implements Function0<State> {
+        public C65661() {
             super(0);
         }
 
@@ -442,65 +442,65 @@ public final class StoreUserConnections extends StoreV2 {
         }
     }
 
-    /* JADX INFO: renamed from: com.discord.stores.StoreUserConnections$updateUserConnection$1, reason: invalid class name */
+    /* JADX INFO: renamed from: com.discord.stores.StoreUserConnections$updateUserConnection$1 */
     /* JADX INFO: compiled from: StoreUserConnections.kt */
-    public static final class AnonymousClass1 extends Lambda implements Function1<ConnectedAccount, TrackNetworkMetadata2> {
+    public static final class C65671 extends AbstractC12240o implements Function1<ConnectedAccount, TrackNetworkMetadataReceiver> {
         public final /* synthetic */ ConnectedAccount $connectedAccount;
         public final /* synthetic */ boolean $syncFriends;
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-        public AnonymousClass1(ConnectedAccount connectedAccount, boolean z2) {
+        public C65671(ConnectedAccount connectedAccount, boolean z2) {
             super(1);
             this.$connectedAccount = connectedAccount;
             this.$syncFriends = z2;
         }
 
         @Override // kotlin.jvm.functions.Function1
-        public final TrackNetworkMetadata2 invoke(ConnectedAccount connectedAccount) {
+        public final TrackNetworkMetadataReceiver invoke(ConnectedAccount connectedAccount) {
             return new TrackNetworkActionUserConnectionsUpdate(this.$connectedAccount.getName(), Boolean.valueOf(this.$syncFriends), null, null, 12);
         }
     }
 
-    /* JADX INFO: renamed from: com.discord.stores.StoreUserConnections$updateUserConnection$2, reason: invalid class name */
+    /* JADX INFO: renamed from: com.discord.stores.StoreUserConnections$updateUserConnection$2 */
     /* JADX INFO: compiled from: StoreUserConnections.kt */
-    public static final class AnonymousClass2 extends Lambda implements Function1<ConnectedAccount, Unit> {
-        public AnonymousClass2() {
+    public static final class C65682 extends AbstractC12240o implements Function1<ConnectedAccount, Unit> {
+        public C65682() {
             super(1);
         }
 
         @Override // kotlin.jvm.functions.Function1
         public /* bridge */ /* synthetic */ Unit invoke(ConnectedAccount connectedAccount) {
             invoke2(connectedAccount);
-            return Unit.a;
+            return Unit.f27425a;
         }
 
         /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
         public final void invoke2(ConnectedAccount connectedAccount) {
-            Intrinsics3.checkNotNullParameter(connectedAccount, "it");
+            C12238m.checkNotNullParameter(connectedAccount, "it");
             StoreUserConnections.this.fetchConnectedAccounts();
         }
     }
 
     public /* synthetic */ StoreUserConnections(StoreStream storeStream, Dispatcher dispatcher, ObservationDeck observationDeck, int i, DefaultConstructorMarker defaultConstructorMarker) {
-        this(storeStream, dispatcher, (i & 4) != 0 ? ObservationDeck4.get() : observationDeck);
+        this(storeStream, dispatcher, (i & 4) != 0 ? ObservationDeckProvider.get() : observationDeck);
     }
 
     public final void authorizeConnection(String platformName, Context context, String location) {
-        Intrinsics3.checkNotNullParameter(platformName, "platformName");
-        Intrinsics3.checkNotNullParameter(context, "context");
-        Intrinsics3.checkNotNullParameter(location, ModelAuditLogEntry.CHANGE_KEY_LOCATION);
+        C12238m.checkNotNullParameter(platformName, "platformName");
+        C12238m.checkNotNullParameter(context, "context");
+        C12238m.checkNotNullParameter(location, ModelAuditLogEntry.CHANGE_KEY_LOCATION);
         AnalyticsTracker.INSTANCE.trackConnectedAccountInitiated(platformName, location);
-        ObservableExtensionsKt.appSubscribe(ObservableExtensionsKt.restSubscribeOn$default(RestAPI.INSTANCE.getApi().authorizeConnection(platformName), false, 1, null), (Class<?>) StoreUserConnections.class, (58 & 2) != 0 ? null : null, (Function1<? super Subscription, Unit>) ((58 & 4) != 0 ? null : null), (Function1<? super Error, Unit>) ((58 & 8) != 0 ? null : null), (Function0<Unit>) ((58 & 16) != 0 ? ObservableExtensionsKt.AnonymousClass1.INSTANCE : null), (Function0<Unit>) ((58 & 32) != 0 ? ObservableExtensionsKt.AnonymousClass2.INSTANCE : null), new AnonymousClass1(context));
+        ObservableExtensionsKt.appSubscribe(ObservableExtensionsKt.restSubscribeOn$default(RestAPI.INSTANCE.getApi().authorizeConnection(platformName), false, 1, null), (Class<?>) StoreUserConnections.class, (58 & 2) != 0 ? null : null, (Function1<? super Subscription, Unit>) ((58 & 4) != 0 ? null : null), (Function1<? super Error, Unit>) ((58 & 8) != 0 ? null : null), (Function0<Unit>) ((58 & 16) != 0 ? ObservableExtensionsKt.C68791.INSTANCE : null), (Function0<Unit>) ((58 & 32) != 0 ? ObservableExtensionsKt.C68802.INSTANCE : null), new C65611(context));
     }
 
     public final void deleteUserConnection(String platformName, String connectionId) {
-        Intrinsics3.checkNotNullParameter(platformName, "platformName");
-        Intrinsics3.checkNotNullParameter(connectionId, "connectionId");
-        ObservableExtensionsKt.appSubscribe(RestCallState5.logNetworkAction(ObservableExtensionsKt.restSubscribeOn$default(RestAPI.INSTANCE.getApi().deleteConnection(platformName, connectionId), false, 1, null), AnonymousClass1.INSTANCE), (Class<?>) StoreUserConnections.class, (58 & 2) != 0 ? null : null, (Function1<? super Subscription, Unit>) ((58 & 4) != 0 ? null : null), (Function1<? super Error, Unit>) ((58 & 8) != 0 ? null : null), (Function0<Unit>) ((58 & 16) != 0 ? ObservableExtensionsKt.AnonymousClass1.INSTANCE : null), (Function0<Unit>) ((58 & 32) != 0 ? ObservableExtensionsKt.AnonymousClass2.INSTANCE : null), new AnonymousClass2());
+        C12238m.checkNotNullParameter(platformName, "platformName");
+        C12238m.checkNotNullParameter(connectionId, "connectionId");
+        ObservableExtensionsKt.appSubscribe(RestCallStateKt.logNetworkAction(ObservableExtensionsKt.restSubscribeOn$default(RestAPI.INSTANCE.getApi().deleteConnection(platformName, connectionId), false, 1, null), C65621.INSTANCE), (Class<?>) StoreUserConnections.class, (58 & 2) != 0 ? null : null, (Function1<? super Subscription, Unit>) ((58 & 4) != 0 ? null : null), (Function1<? super Error, Unit>) ((58 & 8) != 0 ? null : null), (Function0<Unit>) ((58 & 16) != 0 ? ObservableExtensionsKt.C68791.INSTANCE : null), (Function0<Unit>) ((58 & 32) != 0 ? ObservableExtensionsKt.C68802.INSTANCE : null), new C65632());
     }
 
     public final void fetchConnectedAccounts() {
-        ObservableExtensionsKt.appSubscribe(ObservableExtensionsKt.restSubscribeOn$default(RestAPI.INSTANCE.getApi().getConnections(), false, 1, null), (Class<?>) StoreUserConnections.class, (58 & 2) != 0 ? null : null, (Function1<? super Subscription, Unit>) ((58 & 4) != 0 ? null : null), (Function1<? super Error, Unit>) ((58 & 8) != 0 ? null : null), (Function0<Unit>) ((58 & 16) != 0 ? ObservableExtensionsKt.AnonymousClass1.INSTANCE : null), (Function0<Unit>) ((58 & 32) != 0 ? ObservableExtensionsKt.AnonymousClass2.INSTANCE : null), new AnonymousClass1());
+        ObservableExtensionsKt.appSubscribe(ObservableExtensionsKt.restSubscribeOn$default(RestAPI.INSTANCE.getApi().getConnections(), false, 1, null), (Class<?>) StoreUserConnections.class, (58 & 2) != 0 ? null : null, (Function1<? super Subscription, Unit>) ((58 & 4) != 0 ? null : null), (Function1<? super Error, Unit>) ((58 & 8) != 0 ? null : null), (Function0<Unit>) ((58 & 16) != 0 ? ObservableExtensionsKt.C68791.INSTANCE : null), (Function0<Unit>) ((58 & 32) != 0 ? ObservableExtensionsKt.C68802.INSTANCE : null), new C65641());
     }
 
     /* JADX INFO: renamed from: getConnectedAccounts, reason: from getter */
@@ -516,39 +516,39 @@ public final class StoreUserConnections extends StoreV2 {
         return this.stream;
     }
 
-    @Store3
+    @StoreThread
     public final void handleConnectionOpen(ModelPayload payload) {
-        Intrinsics3.checkNotNullParameter(payload, "payload");
+        C12238m.checkNotNullParameter(payload, "payload");
         List<ConnectedAccount> connectedAccounts = payload.getConnectedAccounts();
-        Intrinsics3.checkNotNullExpressionValue(connectedAccounts, "payload.connectedAccounts");
+        C12238m.checkNotNullExpressionValue(connectedAccounts, "payload.connectedAccounts");
         handleUserConnections(connectedAccounts);
     }
 
-    @Store3
+    @StoreThread
     public final void handleUserConnections(List<ConnectedAccount> accounts) {
-        Intrinsics3.checkNotNullParameter(accounts, "accounts");
+        C12238m.checkNotNullParameter(accounts, "accounts");
         this.state = new State.ConnectedAccounts(accounts);
         markChanged();
     }
 
     @Override // com.discord.stores.Store
     public void init(Context context) {
-        Intrinsics3.checkNotNullParameter(context, "context");
+        C12238m.checkNotNullParameter(context, "context");
         super.init(context);
-        ObservableExtensionsKt.appSubscribe(this.stream.getGatewaySocket().getUserConnectionUpdate(), (Class<?>) StoreUserConnections.class, (58 & 2) != 0 ? null : null, (Function1<? super Subscription, Unit>) ((58 & 4) != 0 ? null : null), (Function1<? super Error, Unit>) ((58 & 8) != 0 ? null : null), (Function0<Unit>) ((58 & 16) != 0 ? ObservableExtensionsKt.AnonymousClass1.INSTANCE : null), (Function0<Unit>) ((58 & 32) != 0 ? ObservableExtensionsKt.AnonymousClass2.INSTANCE : null), new AnonymousClass1());
+        ObservableExtensionsKt.appSubscribe(this.stream.getGatewaySocket().getUserConnectionUpdate(), (Class<?>) StoreUserConnections.class, (58 & 2) != 0 ? null : null, (Function1<? super Subscription, Unit>) ((58 & 4) != 0 ? null : null), (Function1<? super Error, Unit>) ((58 & 8) != 0 ? null : null), (Function0<Unit>) ((58 & 16) != 0 ? ObservableExtensionsKt.C68791.INSTANCE : null), (Function0<Unit>) ((58 & 32) != 0 ? ObservableExtensionsKt.C68802.INSTANCE : null), new C65651());
     }
 
     public final Observable<State> observeConnectedAccounts() {
-        return ObservationDeck.connectRx$default(this.observationDeck, new ObservationDeck.UpdateSource[]{this}, false, null, null, new AnonymousClass1(), 14, null);
+        return ObservationDeck.connectRx$default(this.observationDeck, new ObservationDeck.UpdateSource[]{this}, false, null, null, new C65661(), 14, null);
     }
 
     @Override // com.discord.stores.StoreV2
-    @Store3
+    @StoreThread
     public void snapshotData() {
         super.snapshotData();
         State state = this.state;
         State connectedAccounts = State.Loading.INSTANCE;
-        if (!Intrinsics3.areEqual(state, connectedAccounts)) {
+        if (!C12238m.areEqual(state, connectedAccounts)) {
             if (!(state instanceof State.ConnectedAccounts)) {
                 throw new NoWhenBranchMatchedException();
             }
@@ -558,14 +558,14 @@ public final class StoreUserConnections extends StoreV2 {
     }
 
     public final void updateUserConnection(ConnectedAccount connectedAccount, boolean syncFriends, boolean showActivity, boolean isVisible) {
-        Intrinsics3.checkNotNullParameter(connectedAccount, "connectedAccount");
-        ObservableExtensionsKt.appSubscribe(RestCallState5.logNetworkAction(ObservableExtensionsKt.restSubscribeOn$default(RestAPI.INSTANCE.getApi().updateConnection(connectedAccount.getType(), connectedAccount.getId(), RestAPIParams.ConnectedAccount.INSTANCE.create(connectedAccount, syncFriends, showActivity, isVisible ? 1 : 0)), false, 1, null), new AnonymousClass1(connectedAccount, syncFriends)), (Class<?>) StoreUserConnections.class, (58 & 2) != 0 ? null : null, (Function1<? super Subscription, Unit>) ((58 & 4) != 0 ? null : null), (Function1<? super Error, Unit>) ((58 & 8) != 0 ? null : null), (Function0<Unit>) ((58 & 16) != 0 ? ObservableExtensionsKt.AnonymousClass1.INSTANCE : null), (Function0<Unit>) ((58 & 32) != 0 ? ObservableExtensionsKt.AnonymousClass2.INSTANCE : null), new AnonymousClass2());
+        C12238m.checkNotNullParameter(connectedAccount, "connectedAccount");
+        ObservableExtensionsKt.appSubscribe(RestCallStateKt.logNetworkAction(ObservableExtensionsKt.restSubscribeOn$default(RestAPI.INSTANCE.getApi().updateConnection(connectedAccount.getType(), connectedAccount.getId(), RestAPIParams.ConnectedAccount.INSTANCE.create(connectedAccount, syncFriends, showActivity, isVisible ? 1 : 0)), false, 1, null), new C65671(connectedAccount, syncFriends)), (Class<?>) StoreUserConnections.class, (58 & 2) != 0 ? null : null, (Function1<? super Subscription, Unit>) ((58 & 4) != 0 ? null : null), (Function1<? super Error, Unit>) ((58 & 8) != 0 ? null : null), (Function0<Unit>) ((58 & 16) != 0 ? ObservableExtensionsKt.C68791.INSTANCE : null), (Function0<Unit>) ((58 & 32) != 0 ? ObservableExtensionsKt.C68802.INSTANCE : null), new C65682());
     }
 
     public StoreUserConnections(StoreStream storeStream, Dispatcher dispatcher, ObservationDeck observationDeck) {
-        Intrinsics3.checkNotNullParameter(storeStream, "stream");
-        Intrinsics3.checkNotNullParameter(dispatcher, "dispatcher");
-        Intrinsics3.checkNotNullParameter(observationDeck, "observationDeck");
+        C12238m.checkNotNullParameter(storeStream, "stream");
+        C12238m.checkNotNullParameter(dispatcher, "dispatcher");
+        C12238m.checkNotNullParameter(observationDeck, "observationDeck");
         this.stream = storeStream;
         this.dispatcher = dispatcher;
         this.observationDeck = observationDeck;

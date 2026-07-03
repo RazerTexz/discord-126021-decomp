@@ -1,7 +1,7 @@
 package com.discord.api.message.embed;
 
-import b.d.b.a.outline;
-import d0.z.d.Intrinsics3;
+import p007b.p100d.p104b.p105a.C1643a;
+import p507d0.p592z.p594d.C12238m;
 
 /* JADX INFO: compiled from: EmbedVideo.kt */
 /* JADX INFO: loaded from: classes.dex */
@@ -39,7 +39,7 @@ public final /* data */ class EmbedVideo {
             return false;
         }
         EmbedVideo embedVideo = (EmbedVideo) other;
-        return Intrinsics3.areEqual(this.url, embedVideo.url) && Intrinsics3.areEqual(this.proxyUrl, embedVideo.proxyUrl) && Intrinsics3.areEqual(this.height, embedVideo.height) && Intrinsics3.areEqual(this.width, embedVideo.width);
+        return C12238m.areEqual(this.url, embedVideo.url) && C12238m.areEqual(this.proxyUrl, embedVideo.proxyUrl) && C12238m.areEqual(this.height, embedVideo.height) && C12238m.areEqual(this.width, embedVideo.width);
     }
 
     public int hashCode() {
@@ -54,13 +54,13 @@ public final /* data */ class EmbedVideo {
     }
 
     public String toString() {
-        StringBuilder sbU = outline.U("EmbedVideo(url=");
-        sbU.append(this.url);
-        sbU.append(", proxyUrl=");
-        sbU.append(this.proxyUrl);
-        sbU.append(", height=");
-        sbU.append(this.height);
-        sbU.append(", width=");
-        return outline.F(sbU, this.width, ")");
+        StringBuilder sbM833U = C1643a.m833U("EmbedVideo(url=");
+        sbM833U.append(this.url);
+        sbM833U.append(", proxyUrl=");
+        sbM833U.append(this.proxyUrl);
+        sbM833U.append(", height=");
+        sbM833U.append(this.height);
+        sbM833U.append(", width=");
+        return C1643a.m818F(sbM833U, this.width, ")");
     }
 }

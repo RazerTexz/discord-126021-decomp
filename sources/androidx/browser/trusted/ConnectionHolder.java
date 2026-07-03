@@ -7,12 +7,12 @@ import androidx.annotation.MainThread;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.concurrent.futures.CallbackToFutureAdapter;
-import b.d.b.a.outline;
-import b.i.b.d.a.ListenableFuture8;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
-import x.a.a.d.ITrustedWebActivityService;
+import p007b.p100d.p104b.p105a.C1643a;
+import p007b.p225i.p355b.p359d.p360a.InterfaceFutureC4539a;
+import p668x.p669a.p670a.p671d.InterfaceC13180b;
 
 /* JADX INFO: loaded from: classes.dex */
 public class ConnectionHolder implements ServiceConnection {
@@ -40,7 +40,7 @@ public class ConnectionHolder implements ServiceConnection {
     public static class WrapperFactory {
         @NonNull
         public TrustedWebActivityServiceConnection create(ComponentName componentName, IBinder iBinder) {
-            return new TrustedWebActivityServiceConnection(ITrustedWebActivityService.a.asInterface(iBinder), componentName);
+            return new TrustedWebActivityServiceConnection(InterfaceC13180b.a.asInterface(iBinder), componentName);
         }
     }
 
@@ -49,7 +49,8 @@ public class ConnectionHolder implements ServiceConnection {
         this(runnable, new WrapperFactory());
     }
 
-    public /* synthetic */ Object a(CallbackToFutureAdapter.Completer completer) throws Exception {
+    /* JADX INFO: renamed from: a */
+    public /* synthetic */ Object m77a(CallbackToFutureAdapter.Completer completer) throws Exception {
         int i = this.mState;
         if (i == 0) {
             this.mCompleters.add(completer);
@@ -69,9 +70,9 @@ public class ConnectionHolder implements ServiceConnection {
             }
             completer.set(trustedWebActivityServiceConnection);
         }
-        StringBuilder sbU = outline.U("ConnectionHolder, state = ");
-        sbU.append(this.mState);
-        return sbU.toString();
+        StringBuilder sbM833U = C1643a.m833U("ConnectionHolder, state = ");
+        sbM833U.append(this.mState);
+        return sbM833U.toString();
     }
 
     @MainThread
@@ -88,11 +89,11 @@ public class ConnectionHolder implements ServiceConnection {
 
     @NonNull
     @MainThread
-    public ListenableFuture8<TrustedWebActivityServiceConnection> getServiceWrapper() {
+    public InterfaceFutureC4539a<TrustedWebActivityServiceConnection> getServiceWrapper() {
         return CallbackToFutureAdapter.getFuture(new CallbackToFutureAdapter.Resolver() { // from class: y.a.b.a
             @Override // androidx.concurrent.futures.CallbackToFutureAdapter.Resolver
             public final Object attachCompleter(CallbackToFutureAdapter.Completer completer) {
-                return this.a.a(completer);
+                return this.f27952a.m77a(completer);
             }
         });
     }

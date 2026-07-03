@@ -7,7 +7,7 @@ import androidx.room.RoomSQLiteQuery;
 import androidx.room.util.CursorUtil;
 import androidx.room.util.DBUtil;
 import androidx.room.util.StringUtil;
-import androidx.sqlite.db.SupportSQLiteQuery;
+import androidx.sqlite.p006db.SupportSQLiteQuery;
 import androidx.view.LiveData;
 import androidx.work.Data;
 import androidx.work.impl.model.WorkSpec;
@@ -193,7 +193,7 @@ public final class RawWorkInfoDao_Impl implements RawWorkInfoDao {
                 }
                 WorkSpec.WorkInfoPojo workInfoPojo = new WorkSpec.WorkInfoPojo();
                 if (columnIndex != -1) {
-                    workInfoPojo.f40id = cursorQuery.getString(columnIndex);
+                    workInfoPojo.f165id = cursorQuery.getString(columnIndex);
                 }
                 if (columnIndex2 != -1) {
                     workInfoPojo.state = WorkTypeConverters.intToState(cursorQuery.getInt(columnIndex2));
@@ -257,7 +257,7 @@ public final class RawWorkInfoDao_Impl implements RawWorkInfoDao {
                         }
                         WorkSpec.WorkInfoPojo workInfoPojo = new WorkSpec.WorkInfoPojo();
                         if (columnIndex != -1) {
-                            workInfoPojo.f40id = cursorQuery.getString(columnIndex);
+                            workInfoPojo.f165id = cursorQuery.getString(columnIndex);
                         }
                         if (columnIndex2 != -1) {
                             workInfoPojo.state = WorkTypeConverters.intToState(cursorQuery.getInt(columnIndex2));

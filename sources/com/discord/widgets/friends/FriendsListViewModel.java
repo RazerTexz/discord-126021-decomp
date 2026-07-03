@@ -1,12 +1,9 @@
 package com.discord.widgets.friends;
 
-import a0.a.a.b;
 import androidx.annotation.MainThread;
 import androidx.annotation.StringRes;
 import androidx.exifinterface.media.ExifInterface;
-import b.a.d.AppViewModel;
-import b.d.b.a.outline;
-import com.discord.R;
+import com.discord.C5419R;
 import com.discord.api.channel.Channel;
 import com.discord.api.connectedaccounts.ConnectedAccount;
 import com.discord.api.presence.ClientStatus;
@@ -28,29 +25,18 @@ import com.discord.stores.StoreUserConnections;
 import com.discord.stores.StoreUserPresence;
 import com.discord.stores.StoreUserRelationships;
 import com.discord.stores.updates.ObservationDeck;
-import com.discord.stores.updates.ObservationDeck4;
+import com.discord.stores.updates.ObservationDeckProvider;
 import com.discord.utilities.analytics.Traits;
 import com.discord.utilities.captcha.CaptchaHelper;
 import com.discord.utilities.collections.SnowflakePartitionMap;
 import com.discord.utilities.error.Error;
 import com.discord.utilities.mg_recycler.MGRecyclerDataPayload;
+import com.discord.utilities.p501rx.ObservableExtensionsKt;
 import com.discord.utilities.rest.RestAPI;
 import com.discord.utilities.rest.RestAPIAbortMessages;
-import com.discord.utilities.rx.ObservableExtensionsKt;
 import com.discord.utilities.user.UserUtils;
-import com.discord.widgets.captcha.WidgetCaptcha4;
+import com.discord.widgets.captcha.WidgetCaptchaKt;
 import com.discord.widgets.friends.FriendsListViewModel;
-import d0.t.Collections2;
-import d0.t.Maps6;
-import d0.t.MutableCollectionsJVM;
-import d0.t.Sets5;
-import d0.t._Collections;
-import d0.t._Maps;
-import d0.u.a;
-import d0.z.d.Intrinsics3;
-import d0.z.d.Lambda;
-import j0.k.Func1;
-import j0.p.Schedulers2;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Comparator;
@@ -63,16 +49,30 @@ import kotlin.jvm.functions.Function0;
 import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Ref$ObjectRef;
-import rx.Emitter;
-import rx.Observable;
-import rx.Subscription;
-import rx.functions.Action1;
-import rx.functions.Cancellable;
-import rx.subjects.PublishSubject;
+import p001a0.p002a.p003a.C0002b;
+import p007b.p008a.p018d.AbstractC0859d0;
+import p007b.p100d.p104b.p105a.C1643a;
+import p507d0.p580t.C12136h0;
+import p507d0.p580t.C12138i0;
+import p507d0.p580t.C12147n;
+import p507d0.p580t.C12148n0;
+import p507d0.p580t.C12153q;
+import p507d0.p580t.C12163u;
+import p507d0.p582u.C12169a;
+import p507d0.p592z.p594d.AbstractC12240o;
+import p507d0.p592z.p594d.C12238m;
+import p637j0.p641k.InterfaceC12589b;
+import p637j0.p653p.C12781a;
+import p658rx.Emitter;
+import p658rx.Observable;
+import p658rx.Subscription;
+import p658rx.functions.Action1;
+import p658rx.functions.Cancellable;
+import p658rx.subjects.PublishSubject;
 
 /* JADX INFO: compiled from: FriendsListViewModel.kt */
 /* JADX INFO: loaded from: classes2.dex */
-public final class FriendsListViewModel extends AppViewModel<ViewState> {
+public final class FriendsListViewModel extends AbstractC0859d0<ViewState> {
     private static final int COLLAPSED_ITEM_COUNT = 2;
 
     /* JADX INFO: renamed from: Companion, reason: from kotlin metadata */
@@ -87,22 +87,22 @@ public final class FriendsListViewModel extends AppViewModel<ViewState> {
     private final StoreChannels storeChannels;
     private final Observable<StoreState> storeObservable;
 
-    /* JADX INFO: renamed from: com.discord.widgets.friends.FriendsListViewModel$1, reason: invalid class name */
+    /* JADX INFO: renamed from: com.discord.widgets.friends.FriendsListViewModel$1 */
     /* JADX INFO: compiled from: FriendsListViewModel.kt */
-    public static final class AnonymousClass1 extends Lambda implements Function1<StoreState, Unit> {
-        public AnonymousClass1() {
+    public static final class C83561 extends AbstractC12240o implements Function1<StoreState, Unit> {
+        public C83561() {
             super(1);
         }
 
         @Override // kotlin.jvm.functions.Function1
         public /* bridge */ /* synthetic */ Unit invoke(StoreState storeState) throws Exception {
             invoke2(storeState);
-            return Unit.a;
+            return Unit.f27425a;
         }
 
         /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
         public final void invoke2(StoreState storeState) throws Exception {
-            Intrinsics3.checkNotNullParameter(storeState, "storeState");
+            C12238m.checkNotNullParameter(storeState, "storeState");
             FriendsListViewModel.this.handleStoreState(storeState);
         }
     }
@@ -123,8 +123,8 @@ public final class FriendsListViewModel extends AppViewModel<ViewState> {
             final StoreExperiments experiments = companion.getExperiments();
             final StoreContactSync contactSync = companion.getContactSync();
             final StoreFriendSuggestions friendSuggestions = companion.getFriendSuggestions();
-            Observable<StoreState> observableG = ObservableExtensionsKt.leadingEdgeThrottle(ObservationDeck.connectRx$default(ObservationDeck4.get(), new ObservationDeck.UpdateSource[]{companion.getChannelsSelected(), companion.getPresences(), companion.getUsers(), companion.getUserRelationships(), companion.getApplicationStreaming(), companion.getUserConnections(), companion.getExperiments(), companion.getContactSync()}, false, null, null, 14, null), 1L, TimeUnit.SECONDS).G(new Func1<Unit, StoreState>() { // from class: com.discord.widgets.friends.FriendsListViewModel$Companion$observeStores$1
-                @Override // j0.k.Func1
+            Observable<StoreState> observableM11083G = ObservableExtensionsKt.leadingEdgeThrottle(ObservationDeck.connectRx$default(ObservationDeckProvider.get(), new ObservationDeck.UpdateSource[]{companion.getChannelsSelected(), companion.getPresences(), companion.getUsers(), companion.getUserRelationships(), companion.getApplicationStreaming(), companion.getUserConnections(), companion.getExperiments(), companion.getContactSync()}, false, null, null, 14, null), 1L, TimeUnit.SECONDS).m11083G(new InterfaceC12589b<Unit, StoreState>() { // from class: com.discord.widgets.friends.FriendsListViewModel$Companion$observeStores$1
+                @Override // p637j0.p641k.InterfaceC12589b
                 public final FriendsListViewModel.StoreState call(Unit unit) {
                     boolean z2;
                     boolean z3;
@@ -142,7 +142,7 @@ public final class FriendsListViewModel extends AppViewModel<ViewState> {
                                 z2 = false;
                                 break;
                             }
-                            if (Intrinsics3.areEqual(it.next().getType(), "contacts")) {
+                            if (C12238m.areEqual(it.next().getType(), "contacts")) {
                                 z2 = true;
                                 break;
                             }
@@ -159,7 +159,7 @@ public final class FriendsListViewModel extends AppViewModel<ViewState> {
                                 break;
                             }
                             ConnectedAccount next = it2.next();
-                            if (Intrinsics3.areEqual(next.getType(), "contacts") && next.getFriendSync()) {
+                            if (C12238m.areEqual(next.getType(), "contacts") && next.getFriendSync()) {
                                 z3 = true;
                                 break;
                             }
@@ -171,11 +171,11 @@ public final class FriendsListViewModel extends AppViewModel<ViewState> {
                     Experiment userExperiment = experiments.getUserExperiment("2021-04_contact_sync_android_main", !z2);
                     boolean z5 = (userExperiment == null || userExperiment.getBucket() != 1 || z2) ? false : true;
                     boolean z6 = !contactSync.getFriendsListUpsellDismissed() && (userExperiment != null && userExperiment.getBucket() == 1 && !z3);
-                    return new FriendsListViewModel.StoreState(z5 && !z6, z6, id2, relationshipsStateSnapshot, users2, presences2, streamsByUser, (userExperiment == null || userExperiment.getBucket() != 1) ? Maps6.emptyMap() : friendSuggestions.getFriendSuggestions());
+                    return new FriendsListViewModel.StoreState(z5 && !z6, z6, id2, relationshipsStateSnapshot, users2, presences2, streamsByUser, (userExperiment == null || userExperiment.getBucket() != 1) ? C12136h0.emptyMap() : friendSuggestions.getFriendSuggestions());
                 }
             });
-            Intrinsics3.checkNotNullExpressionValue(observableG, "ObservationDeckProvider\n…            )\n          }");
-            return observableG;
+            C12238m.checkNotNullExpressionValue(observableM11083G, "ObservationDeckProvider\n…            )\n          }");
+            return observableM11083G;
         }
 
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
@@ -195,8 +195,8 @@ public final class FriendsListViewModel extends AppViewModel<ViewState> {
             /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
             public CaptchaError(Error error, String str, int i) {
                 super(null);
-                Intrinsics3.checkNotNullParameter(error, "error");
-                Intrinsics3.checkNotNullParameter(str, "username");
+                C12238m.checkNotNullParameter(error, "error");
+                C12238m.checkNotNullParameter(str, "username");
                 this.error = error;
                 this.username = str;
                 this.discriminator = i;
@@ -231,8 +231,8 @@ public final class FriendsListViewModel extends AppViewModel<ViewState> {
             }
 
             public final CaptchaError copy(Error error, String username, int discriminator) {
-                Intrinsics3.checkNotNullParameter(error, "error");
-                Intrinsics3.checkNotNullParameter(username, "username");
+                C12238m.checkNotNullParameter(error, "error");
+                C12238m.checkNotNullParameter(username, "username");
                 return new CaptchaError(error, username, discriminator);
             }
 
@@ -244,7 +244,7 @@ public final class FriendsListViewModel extends AppViewModel<ViewState> {
                     return false;
                 }
                 CaptchaError captchaError = (CaptchaError) other;
-                return Intrinsics3.areEqual(this.error, captchaError.error) && Intrinsics3.areEqual(this.username, captchaError.username) && this.discriminator == captchaError.discriminator;
+                return C12238m.areEqual(this.error, captchaError.error) && C12238m.areEqual(this.username, captchaError.username) && this.discriminator == captchaError.discriminator;
             }
 
             public final int getDiscriminator() {
@@ -267,12 +267,12 @@ public final class FriendsListViewModel extends AppViewModel<ViewState> {
             }
 
             public String toString() {
-                StringBuilder sbU = outline.U("CaptchaError(error=");
-                sbU.append(this.error);
-                sbU.append(", username=");
-                sbU.append(this.username);
-                sbU.append(", discriminator=");
-                return outline.B(sbU, this.discriminator, ")");
+                StringBuilder sbM833U = C1643a.m833U("CaptchaError(error=");
+                sbM833U.append(this.error);
+                sbM833U.append(", username=");
+                sbM833U.append(this.username);
+                sbM833U.append(", discriminator=");
+                return C1643a.m814B(sbM833U, this.discriminator, ")");
             }
         }
 
@@ -313,11 +313,11 @@ public final class FriendsListViewModel extends AppViewModel<ViewState> {
             }
 
             public int hashCode() {
-                return b.a(this.channelId);
+                return C0002b.m3a(this.channelId);
             }
 
             public String toString() {
-                return outline.C(outline.U("LaunchVoiceCall(channelId="), this.channelId, ")");
+                return C1643a.m815C(C1643a.m833U("LaunchVoiceCall(channelId="), this.channelId, ")");
             }
         }
 
@@ -329,7 +329,7 @@ public final class FriendsListViewModel extends AppViewModel<ViewState> {
             /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
             public ShowFriendRequestErrorToast(int i, String str) {
                 super(null);
-                Intrinsics3.checkNotNullParameter(str, "username");
+                C12238m.checkNotNullParameter(str, "username");
                 this.abortCode = i;
                 this.username = str;
             }
@@ -355,7 +355,7 @@ public final class FriendsListViewModel extends AppViewModel<ViewState> {
             }
 
             public final ShowFriendRequestErrorToast copy(int abortCode, String username) {
-                Intrinsics3.checkNotNullParameter(username, "username");
+                C12238m.checkNotNullParameter(username, "username");
                 return new ShowFriendRequestErrorToast(abortCode, username);
             }
 
@@ -367,7 +367,7 @@ public final class FriendsListViewModel extends AppViewModel<ViewState> {
                     return false;
                 }
                 ShowFriendRequestErrorToast showFriendRequestErrorToast = (ShowFriendRequestErrorToast) other;
-                return this.abortCode == showFriendRequestErrorToast.abortCode && Intrinsics3.areEqual(this.username, showFriendRequestErrorToast.username);
+                return this.abortCode == showFriendRequestErrorToast.abortCode && C12238m.areEqual(this.username, showFriendRequestErrorToast.username);
             }
 
             public final int getAbortCode() {
@@ -385,10 +385,10 @@ public final class FriendsListViewModel extends AppViewModel<ViewState> {
             }
 
             public String toString() {
-                StringBuilder sbU = outline.U("ShowFriendRequestErrorToast(abortCode=");
-                sbU.append(this.abortCode);
-                sbU.append(", username=");
-                return outline.J(sbU, this.username, ")");
+                StringBuilder sbM833U = C1643a.m833U("ShowFriendRequestErrorToast(abortCode=");
+                sbM833U.append(this.abortCode);
+                sbM833U.append(", username=");
+                return C1643a.m822J(sbM833U, this.username, ")");
             }
         }
 
@@ -433,7 +433,7 @@ public final class FriendsListViewModel extends AppViewModel<ViewState> {
             }
 
             public String toString() {
-                return outline.B(outline.U("ShowToast(stringRes="), this.stringRes, ")");
+                return C1643a.m814B(C1643a.m833U("ShowToast(stringRes="), this.stringRes, ")");
             }
         }
 
@@ -508,7 +508,7 @@ public final class FriendsListViewModel extends AppViewModel<ViewState> {
             }
 
             public String toString() {
-                return outline.O(outline.U("ContactSyncUpsell(dismissed="), this.dismissed, ")");
+                return C1643a.m827O(C1643a.m833U("ContactSyncUpsell(dismissed="), this.dismissed, ")");
             }
         }
 
@@ -522,7 +522,7 @@ public final class FriendsListViewModel extends AppViewModel<ViewState> {
             /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
             public Friend(User user, Presence presence, boolean z2) {
                 super(0, null);
-                Intrinsics3.checkNotNullParameter(user, "user");
+                C12238m.checkNotNullParameter(user, "user");
                 this.user = user;
                 this.presence = presence;
                 this.isApplicationStreaming = z2;
@@ -561,7 +561,7 @@ public final class FriendsListViewModel extends AppViewModel<ViewState> {
             }
 
             public final Friend copy(User user, Presence presence, boolean isApplicationStreaming) {
-                Intrinsics3.checkNotNullParameter(user, "user");
+                C12238m.checkNotNullParameter(user, "user");
                 return new Friend(user, presence, isApplicationStreaming);
             }
 
@@ -573,7 +573,7 @@ public final class FriendsListViewModel extends AppViewModel<ViewState> {
                     return false;
                 }
                 Friend friend = (Friend) other;
-                return Intrinsics3.areEqual(this.user, friend.user) && Intrinsics3.areEqual(this.presence, friend.presence) && this.isApplicationStreaming == friend.isApplicationStreaming;
+                return C12238m.areEqual(this.user, friend.user) && C12238m.areEqual(this.presence, friend.presence) && this.isApplicationStreaming == friend.isApplicationStreaming;
             }
 
             @Override // com.discord.utilities.mg_recycler.MGRecyclerDataPayload, com.discord.utilities.recycler.DiffKeyProvider
@@ -612,16 +612,16 @@ public final class FriendsListViewModel extends AppViewModel<ViewState> {
             }
 
             public final boolean isOnline() {
-                return this.presence != null && Sets5.setOf((Object[]) new ClientStatus[]{ClientStatus.ONLINE, ClientStatus.IDLE, ClientStatus.DND}).contains(this.presence.getStatus());
+                return this.presence != null && C12148n0.setOf((Object[]) new ClientStatus[]{ClientStatus.ONLINE, ClientStatus.IDLE, ClientStatus.DND}).contains(this.presence.getStatus());
             }
 
             public String toString() {
-                StringBuilder sbU = outline.U("Friend(user=");
-                sbU.append(this.user);
-                sbU.append(", presence=");
-                sbU.append(this.presence);
-                sbU.append(", isApplicationStreaming=");
-                return outline.O(sbU, this.isApplicationStreaming, ")");
+                StringBuilder sbM833U = C1643a.m833U("Friend(user=");
+                sbM833U.append(this.user);
+                sbM833U.append(", presence=");
+                sbM833U.append(this.presence);
+                sbM833U.append(", isApplicationStreaming=");
+                return C1643a.m827O(sbM833U, this.isApplicationStreaming, ")");
             }
         }
 
@@ -694,10 +694,10 @@ public final class FriendsListViewModel extends AppViewModel<ViewState> {
             }
 
             public String toString() {
-                StringBuilder sbU = outline.U("Header(titleStringResId=");
-                sbU.append(this.titleStringResId);
-                sbU.append(", count=");
-                return outline.B(sbU, this.count, ")");
+                StringBuilder sbM833U = C1643a.m833U("Header(titleStringResId=");
+                sbM833U.append(this.titleStringResId);
+                sbM833U.append(", count=");
+                return C1643a.m814B(sbM833U, this.count, ")");
             }
         }
 
@@ -711,7 +711,7 @@ public final class FriendsListViewModel extends AppViewModel<ViewState> {
             /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
             public PendingFriendRequest(User user, Presence presence, int i) {
                 super(1, null);
-                Intrinsics3.checkNotNullParameter(user, "user");
+                C12238m.checkNotNullParameter(user, "user");
                 this.user = user;
                 this.presence = presence;
                 this.relationshipType = i;
@@ -750,7 +750,7 @@ public final class FriendsListViewModel extends AppViewModel<ViewState> {
             }
 
             public final PendingFriendRequest copy(User user, Presence presence, int relationshipType) {
-                Intrinsics3.checkNotNullParameter(user, "user");
+                C12238m.checkNotNullParameter(user, "user");
                 return new PendingFriendRequest(user, presence, relationshipType);
             }
 
@@ -762,7 +762,7 @@ public final class FriendsListViewModel extends AppViewModel<ViewState> {
                     return false;
                 }
                 PendingFriendRequest pendingFriendRequest = (PendingFriendRequest) other;
-                return Intrinsics3.areEqual(this.user, pendingFriendRequest.user) && Intrinsics3.areEqual(this.presence, pendingFriendRequest.presence) && this.relationshipType == pendingFriendRequest.relationshipType;
+                return C12238m.areEqual(this.user, pendingFriendRequest.user) && C12238m.areEqual(this.presence, pendingFriendRequest.presence) && this.relationshipType == pendingFriendRequest.relationshipType;
             }
 
             @Override // com.discord.utilities.mg_recycler.MGRecyclerDataPayload, com.discord.utilities.recycler.DiffKeyProvider
@@ -790,12 +790,12 @@ public final class FriendsListViewModel extends AppViewModel<ViewState> {
             }
 
             public String toString() {
-                StringBuilder sbU = outline.U("PendingFriendRequest(user=");
-                sbU.append(this.user);
-                sbU.append(", presence=");
-                sbU.append(this.presence);
-                sbU.append(", relationshipType=");
-                return outline.B(sbU, this.relationshipType, ")");
+                StringBuilder sbM833U = C1643a.m833U("PendingFriendRequest(user=");
+                sbM833U.append(this.user);
+                sbM833U.append(", presence=");
+                sbM833U.append(this.presence);
+                sbM833U.append(", relationshipType=");
+                return C1643a.m814B(sbM833U, this.relationshipType, ")");
             }
         }
 
@@ -910,14 +910,14 @@ public final class FriendsListViewModel extends AppViewModel<ViewState> {
             }
 
             public String toString() {
-                StringBuilder sbU = outline.U("PendingHeader(titleStringResId=");
-                sbU.append(this.titleStringResId);
-                sbU.append(", count=");
-                sbU.append(this.count);
-                sbU.append(", isPendingSectionExpanded=");
-                sbU.append(this.isPendingSectionExpanded);
-                sbU.append(", showExpandButton=");
-                return outline.O(sbU, this.showExpandButton, ")");
+                StringBuilder sbM833U = C1643a.m833U("PendingHeader(titleStringResId=");
+                sbM833U.append(this.titleStringResId);
+                sbM833U.append(", count=");
+                sbM833U.append(this.count);
+                sbM833U.append(", isPendingSectionExpanded=");
+                sbM833U.append(this.isPendingSectionExpanded);
+                sbM833U.append(", showExpandButton=");
+                return C1643a.m827O(sbM833U, this.showExpandButton, ")");
             }
         }
 
@@ -929,7 +929,7 @@ public final class FriendsListViewModel extends AppViewModel<ViewState> {
             /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
             public SuggestedFriend(FriendSuggestion friendSuggestion) {
                 super(5, null);
-                Intrinsics3.checkNotNullParameter(friendSuggestion, "suggestion");
+                C12238m.checkNotNullParameter(friendSuggestion, "suggestion");
                 this.suggestion = friendSuggestion;
                 this.key = getType() + " -- " + friendSuggestion.getUser().getId();
             }
@@ -947,13 +947,13 @@ public final class FriendsListViewModel extends AppViewModel<ViewState> {
             }
 
             public final SuggestedFriend copy(FriendSuggestion suggestion) {
-                Intrinsics3.checkNotNullParameter(suggestion, "suggestion");
+                C12238m.checkNotNullParameter(suggestion, "suggestion");
                 return new SuggestedFriend(suggestion);
             }
 
             public boolean equals(Object other) {
                 if (this != other) {
-                    return (other instanceof SuggestedFriend) && Intrinsics3.areEqual(this.suggestion, ((SuggestedFriend) other).suggestion);
+                    return (other instanceof SuggestedFriend) && C12238m.areEqual(this.suggestion, ((SuggestedFriend) other).suggestion);
                 }
                 return true;
             }
@@ -976,10 +976,10 @@ public final class FriendsListViewModel extends AppViewModel<ViewState> {
             }
 
             public String toString() {
-                StringBuilder sbU = outline.U("SuggestedFriend(suggestion=");
-                sbU.append(this.suggestion);
-                sbU.append(")");
-                return sbU.toString();
+                StringBuilder sbM833U = C1643a.m833U("SuggestedFriend(suggestion=");
+                sbM833U.append(this.suggestion);
+                sbM833U.append(")");
+                return sbM833U.toString();
             }
         }
 
@@ -1080,12 +1080,12 @@ public final class FriendsListViewModel extends AppViewModel<ViewState> {
             }
 
             public String toString() {
-                StringBuilder sbU = outline.U("SuggestedFriendsHeader(count=");
-                sbU.append(this.count);
-                sbU.append(", isExpanded=");
-                sbU.append(this.isExpanded);
-                sbU.append(", showExpandButton=");
-                return outline.O(sbU, this.showExpandButton, ")");
+                StringBuilder sbM833U = C1643a.m833U("SuggestedFriendsHeader(count=");
+                sbM833U.append(this.count);
+                sbM833U.append(", isExpanded=");
+                sbM833U.append(this.isExpanded);
+                sbM833U.append(", showExpandButton=");
+                return C1643a.m827O(sbM833U, this.showExpandButton, ")");
             }
         }
 
@@ -1114,9 +1114,9 @@ public final class FriendsListViewModel extends AppViewModel<ViewState> {
 
         /* JADX WARN: Multi-variable type inference failed */
         public ListSections(Item.SuggestedFriendsHeader suggestedFriendsHeader, List<Item.SuggestedFriend> list, Item.PendingHeader pendingHeader, List<? extends Item> list2, List<? extends Item> list3, Item.ContactSyncUpsell contactSyncUpsell) {
-            Intrinsics3.checkNotNullParameter(list, "suggestedFriendItems");
-            Intrinsics3.checkNotNullParameter(list2, "pendingItems");
-            Intrinsics3.checkNotNullParameter(list3, "friendsItemsWithHeaders");
+            C12238m.checkNotNullParameter(list, "suggestedFriendItems");
+            C12238m.checkNotNullParameter(list2, "pendingItems");
+            C12238m.checkNotNullParameter(list3, "friendsItemsWithHeaders");
             this.suggestionsHeaderItem = suggestedFriendsHeader;
             this.suggestedFriendItems = list;
             this.pendingHeaderItem = pendingHeader;
@@ -1180,9 +1180,9 @@ public final class FriendsListViewModel extends AppViewModel<ViewState> {
         }
 
         public final ListSections copy(Item.SuggestedFriendsHeader suggestionsHeaderItem, List<Item.SuggestedFriend> suggestedFriendItems, Item.PendingHeader pendingHeaderItem, List<? extends Item> pendingItems, List<? extends Item> friendsItemsWithHeaders, Item.ContactSyncUpsell contactSyncUpsell) {
-            Intrinsics3.checkNotNullParameter(suggestedFriendItems, "suggestedFriendItems");
-            Intrinsics3.checkNotNullParameter(pendingItems, "pendingItems");
-            Intrinsics3.checkNotNullParameter(friendsItemsWithHeaders, "friendsItemsWithHeaders");
+            C12238m.checkNotNullParameter(suggestedFriendItems, "suggestedFriendItems");
+            C12238m.checkNotNullParameter(pendingItems, "pendingItems");
+            C12238m.checkNotNullParameter(friendsItemsWithHeaders, "friendsItemsWithHeaders");
             return new ListSections(suggestionsHeaderItem, suggestedFriendItems, pendingHeaderItem, pendingItems, friendsItemsWithHeaders, contactSyncUpsell);
         }
 
@@ -1194,7 +1194,7 @@ public final class FriendsListViewModel extends AppViewModel<ViewState> {
                 return false;
             }
             ListSections listSections = (ListSections) other;
-            return Intrinsics3.areEqual(this.suggestionsHeaderItem, listSections.suggestionsHeaderItem) && Intrinsics3.areEqual(this.suggestedFriendItems, listSections.suggestedFriendItems) && Intrinsics3.areEqual(this.pendingHeaderItem, listSections.pendingHeaderItem) && Intrinsics3.areEqual(this.pendingItems, listSections.pendingItems) && Intrinsics3.areEqual(this.friendsItemsWithHeaders, listSections.friendsItemsWithHeaders) && Intrinsics3.areEqual(this.contactSyncUpsell, listSections.contactSyncUpsell);
+            return C12238m.areEqual(this.suggestionsHeaderItem, listSections.suggestionsHeaderItem) && C12238m.areEqual(this.suggestedFriendItems, listSections.suggestedFriendItems) && C12238m.areEqual(this.pendingHeaderItem, listSections.pendingHeaderItem) && C12238m.areEqual(this.pendingItems, listSections.pendingItems) && C12238m.areEqual(this.friendsItemsWithHeaders, listSections.friendsItemsWithHeaders) && C12238m.areEqual(this.contactSyncUpsell, listSections.contactSyncUpsell);
         }
 
         public final Item.ContactSyncUpsell getContactSyncUpsell() {
@@ -1237,20 +1237,20 @@ public final class FriendsListViewModel extends AppViewModel<ViewState> {
         }
 
         public String toString() {
-            StringBuilder sbU = outline.U("ListSections(suggestionsHeaderItem=");
-            sbU.append(this.suggestionsHeaderItem);
-            sbU.append(", suggestedFriendItems=");
-            sbU.append(this.suggestedFriendItems);
-            sbU.append(", pendingHeaderItem=");
-            sbU.append(this.pendingHeaderItem);
-            sbU.append(", pendingItems=");
-            sbU.append(this.pendingItems);
-            sbU.append(", friendsItemsWithHeaders=");
-            sbU.append(this.friendsItemsWithHeaders);
-            sbU.append(", contactSyncUpsell=");
-            sbU.append(this.contactSyncUpsell);
-            sbU.append(")");
-            return sbU.toString();
+            StringBuilder sbM833U = C1643a.m833U("ListSections(suggestionsHeaderItem=");
+            sbM833U.append(this.suggestionsHeaderItem);
+            sbM833U.append(", suggestedFriendItems=");
+            sbM833U.append(this.suggestedFriendItems);
+            sbM833U.append(", pendingHeaderItem=");
+            sbM833U.append(this.pendingHeaderItem);
+            sbM833U.append(", pendingItems=");
+            sbM833U.append(this.pendingItems);
+            sbM833U.append(", friendsItemsWithHeaders=");
+            sbM833U.append(this.friendsItemsWithHeaders);
+            sbM833U.append(", contactSyncUpsell=");
+            sbM833U.append(this.contactSyncUpsell);
+            sbM833U.append(")");
+            return sbM833U.toString();
         }
     }
 
@@ -1267,11 +1267,11 @@ public final class FriendsListViewModel extends AppViewModel<ViewState> {
 
         /* JADX WARN: Multi-variable type inference failed */
         public StoreState(boolean z2, boolean z3, long j, StoreUserRelationships.UserRelationshipsState userRelationshipsState, Map<Long, ? extends User> map, Map<Long, Presence> map2, Map<Long, ? extends ModelApplicationStream> map3, Map<Long, FriendSuggestion> map4) {
-            Intrinsics3.checkNotNullParameter(userRelationshipsState, "relationshipsState");
-            Intrinsics3.checkNotNullParameter(map, "users");
-            Intrinsics3.checkNotNullParameter(map2, "presences");
-            Intrinsics3.checkNotNullParameter(map3, "applicationStreams");
-            Intrinsics3.checkNotNullParameter(map4, "friendSuggestions");
+            C12238m.checkNotNullParameter(userRelationshipsState, "relationshipsState");
+            C12238m.checkNotNullParameter(map, "users");
+            C12238m.checkNotNullParameter(map2, "presences");
+            C12238m.checkNotNullParameter(map3, "applicationStreams");
+            C12238m.checkNotNullParameter(map4, "friendSuggestions");
             this.showContactSyncIcon = z2;
             this.showContactSyncUpsell = z3;
             this.channelId = j;
@@ -1319,11 +1319,11 @@ public final class FriendsListViewModel extends AppViewModel<ViewState> {
         }
 
         public final StoreState copy(boolean showContactSyncIcon, boolean showContactSyncUpsell, long channelId, StoreUserRelationships.UserRelationshipsState relationshipsState, Map<Long, ? extends User> users, Map<Long, Presence> presences, Map<Long, ? extends ModelApplicationStream> applicationStreams, Map<Long, FriendSuggestion> friendSuggestions) {
-            Intrinsics3.checkNotNullParameter(relationshipsState, "relationshipsState");
-            Intrinsics3.checkNotNullParameter(users, "users");
-            Intrinsics3.checkNotNullParameter(presences, "presences");
-            Intrinsics3.checkNotNullParameter(applicationStreams, "applicationStreams");
-            Intrinsics3.checkNotNullParameter(friendSuggestions, "friendSuggestions");
+            C12238m.checkNotNullParameter(relationshipsState, "relationshipsState");
+            C12238m.checkNotNullParameter(users, "users");
+            C12238m.checkNotNullParameter(presences, "presences");
+            C12238m.checkNotNullParameter(applicationStreams, "applicationStreams");
+            C12238m.checkNotNullParameter(friendSuggestions, "friendSuggestions");
             return new StoreState(showContactSyncIcon, showContactSyncUpsell, channelId, relationshipsState, users, presences, applicationStreams, friendSuggestions);
         }
 
@@ -1335,7 +1335,7 @@ public final class FriendsListViewModel extends AppViewModel<ViewState> {
                 return false;
             }
             StoreState storeState = (StoreState) other;
-            return this.showContactSyncIcon == storeState.showContactSyncIcon && this.showContactSyncUpsell == storeState.showContactSyncUpsell && this.channelId == storeState.channelId && Intrinsics3.areEqual(this.relationshipsState, storeState.relationshipsState) && Intrinsics3.areEqual(this.users, storeState.users) && Intrinsics3.areEqual(this.presences, storeState.presences) && Intrinsics3.areEqual(this.applicationStreams, storeState.applicationStreams) && Intrinsics3.areEqual(this.friendSuggestions, storeState.friendSuggestions);
+            return this.showContactSyncIcon == storeState.showContactSyncIcon && this.showContactSyncUpsell == storeState.showContactSyncUpsell && this.channelId == storeState.channelId && C12238m.areEqual(this.relationshipsState, storeState.relationshipsState) && C12238m.areEqual(this.users, storeState.users) && C12238m.areEqual(this.presences, storeState.presences) && C12238m.areEqual(this.applicationStreams, storeState.applicationStreams) && C12238m.areEqual(this.friendSuggestions, storeState.friendSuggestions);
         }
 
         public final Map<Long, ModelApplicationStream> getApplicationStreams() {
@@ -1386,9 +1386,9 @@ public final class FriendsListViewModel extends AppViewModel<ViewState> {
             }
             int i = r0 * 31;
             boolean z3 = this.showContactSyncUpsell;
-            int iA = (b.a(this.channelId) + ((i + (z3 ? 1 : z3)) * 31)) * 31;
+            int iM3a = (C0002b.m3a(this.channelId) + ((i + (z3 ? 1 : z3)) * 31)) * 31;
             StoreUserRelationships.UserRelationshipsState userRelationshipsState = this.relationshipsState;
-            int iHashCode = (iA + (userRelationshipsState != null ? userRelationshipsState.hashCode() : 0)) * 31;
+            int iHashCode = (iM3a + (userRelationshipsState != null ? userRelationshipsState.hashCode() : 0)) * 31;
             Map<Long, User> map = this.users;
             int iHashCode2 = (iHashCode + (map != null ? map.hashCode() : 0)) * 31;
             Map<Long, Presence> map2 = this.presences;
@@ -1400,22 +1400,22 @@ public final class FriendsListViewModel extends AppViewModel<ViewState> {
         }
 
         public String toString() {
-            StringBuilder sbU = outline.U("StoreState(showContactSyncIcon=");
-            sbU.append(this.showContactSyncIcon);
-            sbU.append(", showContactSyncUpsell=");
-            sbU.append(this.showContactSyncUpsell);
-            sbU.append(", channelId=");
-            sbU.append(this.channelId);
-            sbU.append(", relationshipsState=");
-            sbU.append(this.relationshipsState);
-            sbU.append(", users=");
-            sbU.append(this.users);
-            sbU.append(", presences=");
-            sbU.append(this.presences);
-            sbU.append(", applicationStreams=");
-            sbU.append(this.applicationStreams);
-            sbU.append(", friendSuggestions=");
-            return outline.M(sbU, this.friendSuggestions, ")");
+            StringBuilder sbM833U = C1643a.m833U("StoreState(showContactSyncIcon=");
+            sbM833U.append(this.showContactSyncIcon);
+            sbM833U.append(", showContactSyncUpsell=");
+            sbM833U.append(this.showContactSyncUpsell);
+            sbM833U.append(", channelId=");
+            sbM833U.append(this.channelId);
+            sbM833U.append(", relationshipsState=");
+            sbM833U.append(this.relationshipsState);
+            sbM833U.append(", users=");
+            sbM833U.append(this.users);
+            sbM833U.append(", presences=");
+            sbM833U.append(this.presences);
+            sbM833U.append(", applicationStreams=");
+            sbM833U.append(this.applicationStreams);
+            sbM833U.append(", friendSuggestions=");
+            return C1643a.m825M(sbM833U, this.friendSuggestions, ")");
         }
     }
 
@@ -1467,7 +1467,7 @@ public final class FriendsListViewModel extends AppViewModel<ViewState> {
             }
 
             public String toString() {
-                return outline.O(outline.U("Empty(showContactSyncIcon="), this.showContactSyncIcon, ")");
+                return C1643a.m827O(C1643a.m833U("Empty(showContactSyncIcon="), this.showContactSyncIcon, ")");
             }
         }
 
@@ -1480,7 +1480,7 @@ public final class FriendsListViewModel extends AppViewModel<ViewState> {
             /* JADX WARN: Multi-variable type inference failed */
             public Loaded(boolean z2, List<? extends Item> list) {
                 super(null);
-                Intrinsics3.checkNotNullParameter(list, "items");
+                C12238m.checkNotNullParameter(list, "items");
                 this.showContactSyncIcon = z2;
                 this.items = list;
             }
@@ -1506,7 +1506,7 @@ public final class FriendsListViewModel extends AppViewModel<ViewState> {
             }
 
             public final Loaded copy(boolean showContactSyncIcon, List<? extends Item> items) {
-                Intrinsics3.checkNotNullParameter(items, "items");
+                C12238m.checkNotNullParameter(items, "items");
                 return new Loaded(showContactSyncIcon, items);
             }
 
@@ -1518,7 +1518,7 @@ public final class FriendsListViewModel extends AppViewModel<ViewState> {
                     return false;
                 }
                 Loaded loaded = (Loaded) other;
-                return this.showContactSyncIcon == loaded.showContactSyncIcon && Intrinsics3.areEqual(this.items, loaded.items);
+                return this.showContactSyncIcon == loaded.showContactSyncIcon && C12238m.areEqual(this.items, loaded.items);
             }
 
             public final List<Item> getItems() {
@@ -1545,10 +1545,10 @@ public final class FriendsListViewModel extends AppViewModel<ViewState> {
             }
 
             public String toString() {
-                StringBuilder sbU = outline.U("Loaded(showContactSyncIcon=");
-                sbU.append(this.showContactSyncIcon);
-                sbU.append(", items=");
-                return outline.L(sbU, this.items, ")");
+                StringBuilder sbM833U = C1643a.m833U("Loaded(showContactSyncIcon=");
+                sbM833U.append(this.showContactSyncIcon);
+                sbM833U.append(", items=");
+                return C1643a.m824L(sbM833U, this.items, ")");
             }
         }
 
@@ -1569,33 +1569,33 @@ public final class FriendsListViewModel extends AppViewModel<ViewState> {
         }
     }
 
-    /* JADX INFO: renamed from: com.discord.widgets.friends.FriendsListViewModel$acceptFriendRequest$1, reason: invalid class name */
+    /* JADX INFO: renamed from: com.discord.widgets.friends.FriendsListViewModel$acceptFriendRequest$1 */
     /* JADX INFO: compiled from: FriendsListViewModel.kt */
-    public static final class AnonymousClass1 extends Lambda implements Function1<Void, Unit> {
-        public AnonymousClass1() {
+    public static final class C83571 extends AbstractC12240o implements Function1<Void, Unit> {
+        public C83571() {
             super(1);
         }
 
         @Override // kotlin.jvm.functions.Function1
         public /* bridge */ /* synthetic */ Unit invoke(Void r1) {
             invoke2(r1);
-            return Unit.a;
+            return Unit.f27425a;
         }
 
         /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
         public final void invoke2(Void r2) {
-            FriendsListViewModel.this.emitShowToastEvent(R.string.accept_request_button_after);
+            FriendsListViewModel.this.emitShowToastEvent(C5419R.string.accept_request_button_after);
         }
     }
 
-    /* JADX INFO: renamed from: com.discord.widgets.friends.FriendsListViewModel$acceptFriendRequest$2, reason: invalid class name */
+    /* JADX INFO: renamed from: com.discord.widgets.friends.FriendsListViewModel$acceptFriendRequest$2 */
     /* JADX INFO: compiled from: FriendsListViewModel.kt */
-    public static final class AnonymousClass2 extends Lambda implements Function1<Error, Unit> {
+    public static final class C83582 extends AbstractC12240o implements Function1<Error, Unit> {
         public final /* synthetic */ String $username;
 
         /* JADX INFO: renamed from: com.discord.widgets.friends.FriendsListViewModel$acceptFriendRequest$2$1, reason: invalid class name */
         /* JADX INFO: compiled from: FriendsListViewModel.kt */
-        public static final class AnonymousClass1 extends Lambda implements Function0<Unit> {
+        public static final class AnonymousClass1 extends AbstractC12240o implements Function0<Unit> {
             public final /* synthetic */ Error $error;
 
             /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -1607,22 +1607,22 @@ public final class FriendsListViewModel extends AppViewModel<ViewState> {
             @Override // kotlin.jvm.functions.Function0
             public /* bridge */ /* synthetic */ Unit invoke() {
                 invoke2();
-                return Unit.a;
+                return Unit.f27425a;
             }
 
             /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
             public final void invoke2() {
                 FriendsListViewModel friendsListViewModel = FriendsListViewModel.this;
                 Error.Response response = this.$error.getResponse();
-                Intrinsics3.checkNotNullExpressionValue(response, "error.response");
-                friendsListViewModel.emitShowFriendRequestAbortToast(response.getCode(), AnonymousClass2.this.$username);
+                C12238m.checkNotNullExpressionValue(response, "error.response");
+                friendsListViewModel.emitShowFriendRequestAbortToast(response.getCode(), C83582.this.$username);
             }
         }
 
-        /* JADX INFO: renamed from: com.discord.widgets.friends.FriendsListViewModel$acceptFriendRequest$2$2, reason: invalid class name and collision with other inner class name */
+        /* JADX INFO: renamed from: com.discord.widgets.friends.FriendsListViewModel$acceptFriendRequest$2$2, reason: invalid class name */
         /* JADX INFO: compiled from: FriendsListViewModel.kt */
-        public static final class C02892 extends Lambda implements Function0<Boolean> {
-            public C02892() {
+        public static final class AnonymousClass2 extends AbstractC12240o implements Function0<Boolean> {
+            public AnonymousClass2() {
                 super(0);
             }
 
@@ -1633,13 +1633,13 @@ public final class FriendsListViewModel extends AppViewModel<ViewState> {
 
             /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
             public final boolean invoke2() {
-                FriendsListViewModel.this.emitShowToastEvent(R.string.default_failure_to_perform_action_message);
+                FriendsListViewModel.this.emitShowToastEvent(C5419R.string.default_failure_to_perform_action_message);
                 return false;
             }
         }
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-        public AnonymousClass2(String str) {
+        public C83582(String str) {
             super(1);
             this.$username = str;
         }
@@ -1647,29 +1647,29 @@ public final class FriendsListViewModel extends AppViewModel<ViewState> {
         @Override // kotlin.jvm.functions.Function1
         public /* bridge */ /* synthetic */ Unit invoke(Error error) {
             invoke2(error);
-            return Unit.a;
+            return Unit.f27425a;
         }
 
         /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
         public final void invoke2(Error error) {
-            Intrinsics3.checkNotNullParameter(error, "error");
-            RestAPIAbortMessages.INSTANCE.handleAbortCodeOrDefault(error, new AnonymousClass1(error), new C02892());
+            C12238m.checkNotNullParameter(error, "error");
+            RestAPIAbortMessages.INSTANCE.handleAbortCodeOrDefault(error, new AnonymousClass1(error), new AnonymousClass2());
         }
     }
 
-    /* JADX INFO: renamed from: com.discord.widgets.friends.FriendsListViewModel$acceptFriendSuggestion$1, reason: invalid class name */
+    /* JADX INFO: renamed from: com.discord.widgets.friends.FriendsListViewModel$acceptFriendSuggestion$1 */
     /* JADX INFO: compiled from: FriendsListViewModel.kt */
-    public static final class AnonymousClass1 extends Lambda implements Function1<Void, Unit> {
-        public static final AnonymousClass1 INSTANCE = new AnonymousClass1();
+    public static final class C83591 extends AbstractC12240o implements Function1<Void, Unit> {
+        public static final C83591 INSTANCE = new C83591();
 
-        public AnonymousClass1() {
+        public C83591() {
             super(1);
         }
 
         @Override // kotlin.jvm.functions.Function1
         public /* bridge */ /* synthetic */ Unit invoke(Void r1) {
             invoke2(r1);
-            return Unit.a;
+            return Unit.f27425a;
         }
 
         /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
@@ -1677,15 +1677,15 @@ public final class FriendsListViewModel extends AppViewModel<ViewState> {
         }
     }
 
-    /* JADX INFO: renamed from: com.discord.widgets.friends.FriendsListViewModel$acceptFriendSuggestion$2, reason: invalid class name */
+    /* JADX INFO: renamed from: com.discord.widgets.friends.FriendsListViewModel$acceptFriendSuggestion$2 */
     /* JADX INFO: compiled from: FriendsListViewModel.kt */
-    public static final class AnonymousClass2 extends Lambda implements Function1<Error, Unit> {
+    public static final class C83602 extends AbstractC12240o implements Function1<Error, Unit> {
         public final /* synthetic */ int $discriminator;
         public final /* synthetic */ String $username;
 
         /* JADX INFO: renamed from: com.discord.widgets.friends.FriendsListViewModel$acceptFriendSuggestion$2$1, reason: invalid class name */
         /* JADX INFO: compiled from: FriendsListViewModel.kt */
-        public static final class AnonymousClass1 extends Lambda implements Function0<Unit> {
+        public static final class AnonymousClass1 extends AbstractC12240o implements Function0<Unit> {
             public final /* synthetic */ Error $error;
 
             /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -1697,20 +1697,20 @@ public final class FriendsListViewModel extends AppViewModel<ViewState> {
             @Override // kotlin.jvm.functions.Function0
             public /* bridge */ /* synthetic */ Unit invoke() {
                 invoke2();
-                return Unit.a;
+                return Unit.f27425a;
             }
 
             /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
             public final void invoke2() {
-                if (WidgetCaptcha4.isCaptchaError(this.$error)) {
-                    AnonymousClass2 anonymousClass2 = AnonymousClass2.this;
-                    FriendsListViewModel.this.emitCaptchaErrorEvent(this.$error, anonymousClass2.$username, anonymousClass2.$discriminator);
+                if (WidgetCaptchaKt.isCaptchaError(this.$error)) {
+                    C83602 c83602 = C83602.this;
+                    FriendsListViewModel.this.emitCaptchaErrorEvent(this.$error, c83602.$username, c83602.$discriminator);
                 }
             }
         }
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-        public AnonymousClass2(String str, int i) {
+        public C83602(String str, int i) {
             super(1);
             this.$username = str;
             this.$discriminator = i;
@@ -1719,24 +1719,24 @@ public final class FriendsListViewModel extends AppViewModel<ViewState> {
         @Override // kotlin.jvm.functions.Function1
         public /* bridge */ /* synthetic */ Unit invoke(Error error) {
             invoke2(error);
-            return Unit.a;
+            return Unit.f27425a;
         }
 
         /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
         public final void invoke2(Error error) {
-            Intrinsics3.checkNotNullParameter(error, "error");
+            C12238m.checkNotNullParameter(error, "error");
             RestAPIAbortMessages.handleAbortCodeOrDefault$default(RestAPIAbortMessages.INSTANCE, error, new AnonymousClass1(error), null, 4, null);
         }
     }
 
     /* JADX INFO: Add missing generic type declarations: [T] */
-    /* JADX INFO: renamed from: com.discord.widgets.friends.FriendsListViewModel$asyncComputeAndHandleOnUiThread$2, reason: invalid class name */
+    /* JADX INFO: renamed from: com.discord.widgets.friends.FriendsListViewModel$asyncComputeAndHandleOnUiThread$2 */
     /* JADX INFO: compiled from: FriendsListViewModel.kt */
-    public static final class AnonymousClass2<T> extends Lambda implements Function1<T, Unit> {
+    public static final class C83622<T> extends AbstractC12240o implements Function1<T, Unit> {
         public final /* synthetic */ Function1 $onSuccess;
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-        public AnonymousClass2(Function1 function1) {
+        public C83622(Function1 function1) {
             super(1);
             this.$onSuccess = function1;
         }
@@ -1745,7 +1745,7 @@ public final class FriendsListViewModel extends AppViewModel<ViewState> {
         @Override // kotlin.jvm.functions.Function1
         public /* bridge */ /* synthetic */ Unit invoke(Object obj) {
             invoke2(obj);
-            return Unit.a;
+            return Unit.f27425a;
         }
 
         /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
@@ -1754,13 +1754,13 @@ public final class FriendsListViewModel extends AppViewModel<ViewState> {
         }
     }
 
-    /* JADX INFO: renamed from: com.discord.widgets.friends.FriendsListViewModel$asyncComputeAndHandleOnUiThread$3, reason: invalid class name */
+    /* JADX INFO: renamed from: com.discord.widgets.friends.FriendsListViewModel$asyncComputeAndHandleOnUiThread$3 */
     /* JADX INFO: compiled from: FriendsListViewModel.kt */
-    public static final class AnonymousClass3 extends Lambda implements Function1<Error, Unit> {
+    public static final class C83633 extends AbstractC12240o implements Function1<Error, Unit> {
         public final /* synthetic */ Function1 $onError;
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-        public AnonymousClass3(Function1 function1) {
+        public C83633(Function1 function1) {
             super(1);
             this.$onError = function1;
         }
@@ -1768,25 +1768,25 @@ public final class FriendsListViewModel extends AppViewModel<ViewState> {
         @Override // kotlin.jvm.functions.Function1
         public /* bridge */ /* synthetic */ Unit invoke(Error error) {
             invoke2(error);
-            return Unit.a;
+            return Unit.f27425a;
         }
 
         /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
         public final void invoke2(Error error) {
-            Intrinsics3.checkNotNullParameter(error, "it");
+            C12238m.checkNotNullParameter(error, "it");
             Function1 function1 = this.$onError;
             if (function1 != null) {
             }
         }
     }
 
-    /* JADX INFO: renamed from: com.discord.widgets.friends.FriendsListViewModel$asyncComputeAndHandleOnUiThread$4, reason: invalid class name */
+    /* JADX INFO: renamed from: com.discord.widgets.friends.FriendsListViewModel$asyncComputeAndHandleOnUiThread$4 */
     /* JADX INFO: compiled from: FriendsListViewModel.kt */
-    public static final class AnonymousClass4 extends Lambda implements Function1<Subscription, Unit> {
+    public static final class C83644 extends AbstractC12240o implements Function1<Subscription, Unit> {
         public final /* synthetic */ Ref$ObjectRef $subscription;
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-        public AnonymousClass4(Ref$ObjectRef ref$ObjectRef) {
+        public C83644(Ref$ObjectRef ref$ObjectRef) {
             super(1);
             this.$subscription = ref$ObjectRef;
         }
@@ -1794,23 +1794,23 @@ public final class FriendsListViewModel extends AppViewModel<ViewState> {
         @Override // kotlin.jvm.functions.Function1
         public /* bridge */ /* synthetic */ Unit invoke(Subscription subscription) {
             invoke2(subscription);
-            return Unit.a;
+            return Unit.f27425a;
         }
 
         /* JADX WARN: Multi-variable type inference failed */
         /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
         public final void invoke2(Subscription subscription) {
-            Intrinsics3.checkNotNullParameter(subscription, "it");
+            C12238m.checkNotNullParameter(subscription, "it");
             this.$subscription.element = subscription;
         }
     }
 
-    /* JADX INFO: renamed from: com.discord.widgets.friends.FriendsListViewModel$getItems$3, reason: invalid class name */
+    /* JADX INFO: renamed from: com.discord.widgets.friends.FriendsListViewModel$getItems$3 */
     /* JADX INFO: compiled from: FriendsListViewModel.kt */
-    public static final class AnonymousClass3 extends Lambda implements Function1<Integer, Boolean> {
-        public static final AnonymousClass3 INSTANCE = new AnonymousClass3();
+    public static final class C83663 extends AbstractC12240o implements Function1<Integer, Boolean> {
+        public static final C83663 INSTANCE = new C83663();
 
-        public AnonymousClass3() {
+        public C83663() {
             super(1);
         }
 
@@ -1820,18 +1820,18 @@ public final class FriendsListViewModel extends AppViewModel<ViewState> {
         }
 
         public final boolean invoke(int i) {
-            return Sets5.setOf((Object[]) new Integer[]{3, 4}).contains(Integer.valueOf(i));
+            return C12148n0.setOf((Object[]) new Integer[]{3, 4}).contains(Integer.valueOf(i));
         }
     }
 
-    /* JADX INFO: renamed from: com.discord.widgets.friends.FriendsListViewModel$handleStoreState$1, reason: invalid class name */
+    /* JADX INFO: renamed from: com.discord.widgets.friends.FriendsListViewModel$handleStoreState$1 */
     /* JADX INFO: compiled from: FriendsListViewModel.kt */
-    public static final class AnonymousClass1 extends Lambda implements Function0<ListSections> {
+    public static final class C83671 extends AbstractC12240o implements Function0<ListSections> {
         public final /* synthetic */ Map $relationships;
         public final /* synthetic */ StoreState $storeState;
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-        public AnonymousClass1(Map map, StoreState storeState) {
+        public C83671(Map map, StoreState storeState) {
             super(0);
             this.$relationships = map;
             this.$storeState = storeState;
@@ -1844,13 +1844,13 @@ public final class FriendsListViewModel extends AppViewModel<ViewState> {
         }
     }
 
-    /* JADX INFO: renamed from: com.discord.widgets.friends.FriendsListViewModel$handleStoreState$2, reason: invalid class name */
+    /* JADX INFO: renamed from: com.discord.widgets.friends.FriendsListViewModel$handleStoreState$2 */
     /* JADX INFO: compiled from: FriendsListViewModel.kt */
-    public static final class AnonymousClass2 extends Lambda implements Function1<ListSections, Unit> {
+    public static final class C83682 extends AbstractC12240o implements Function1<ListSections, Unit> {
         public final /* synthetic */ StoreState $storeState;
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-        public AnonymousClass2(StoreState storeState) {
+        public C83682(StoreState storeState) {
             super(1);
             this.$storeState = storeState;
         }
@@ -1858,29 +1858,29 @@ public final class FriendsListViewModel extends AppViewModel<ViewState> {
         @Override // kotlin.jvm.functions.Function1
         public /* bridge */ /* synthetic */ Unit invoke(ListSections listSections) {
             invoke2(listSections);
-            return Unit.a;
+            return Unit.f27425a;
         }
 
         /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
         public final void invoke2(ListSections listSections) {
-            Intrinsics3.checkNotNullParameter(listSections, "it");
+            C12238m.checkNotNullParameter(listSections, "it");
             FriendsListViewModel.this.handleComputedItems(listSections, this.$storeState.getShowContactSyncIcon());
         }
     }
 
-    /* JADX INFO: renamed from: com.discord.widgets.friends.FriendsListViewModel$ignoreSuggestion$1, reason: invalid class name */
+    /* JADX INFO: renamed from: com.discord.widgets.friends.FriendsListViewModel$ignoreSuggestion$1 */
     /* JADX INFO: compiled from: FriendsListViewModel.kt */
-    public static final class AnonymousClass1 extends Lambda implements Function1<Void, Unit> {
-        public static final AnonymousClass1 INSTANCE = new AnonymousClass1();
+    public static final class C83691 extends AbstractC12240o implements Function1<Void, Unit> {
+        public static final C83691 INSTANCE = new C83691();
 
-        public AnonymousClass1() {
+        public C83691() {
             super(1);
         }
 
         @Override // kotlin.jvm.functions.Function1
         public /* bridge */ /* synthetic */ Unit invoke(Void r1) {
             invoke2(r1);
-            return Unit.a;
+            return Unit.f27425a;
         }
 
         /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
@@ -1888,53 +1888,53 @@ public final class FriendsListViewModel extends AppViewModel<ViewState> {
         }
     }
 
-    /* JADX INFO: renamed from: com.discord.widgets.friends.FriendsListViewModel$launchVoiceCall$1, reason: invalid class name */
+    /* JADX INFO: renamed from: com.discord.widgets.friends.FriendsListViewModel$launchVoiceCall$1 */
     /* JADX INFO: compiled from: FriendsListViewModel.kt */
-    public static final class AnonymousClass1 extends Lambda implements Function1<Channel, Unit> {
-        public AnonymousClass1() {
+    public static final class C83701 extends AbstractC12240o implements Function1<Channel, Unit> {
+        public C83701() {
             super(1);
         }
 
         @Override // kotlin.jvm.functions.Function1
         public /* bridge */ /* synthetic */ Unit invoke(Channel channel) {
             invoke2(channel);
-            return Unit.a;
+            return Unit.f27425a;
         }
 
         /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
         public final void invoke2(Channel channel) {
-            Intrinsics3.checkNotNullParameter(channel, "channel");
+            C12238m.checkNotNullParameter(channel, "channel");
             FriendsListViewModel.this.emitLaunchVoiceCallEvent(channel.getId());
         }
     }
 
-    /* JADX INFO: renamed from: com.discord.widgets.friends.FriendsListViewModel$launchVoiceCall$2, reason: invalid class name */
+    /* JADX INFO: renamed from: com.discord.widgets.friends.FriendsListViewModel$launchVoiceCall$2 */
     /* JADX INFO: compiled from: FriendsListViewModel.kt */
-    public static final class AnonymousClass2 extends Lambda implements Function1<Error, Unit> {
-        public AnonymousClass2() {
+    public static final class C83712 extends AbstractC12240o implements Function1<Error, Unit> {
+        public C83712() {
             super(1);
         }
 
         @Override // kotlin.jvm.functions.Function1
         public /* bridge */ /* synthetic */ Unit invoke(Error error) {
             invoke2(error);
-            return Unit.a;
+            return Unit.f27425a;
         }
 
         /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
         public final void invoke2(Error error) {
-            Intrinsics3.checkNotNullParameter(error, "it");
-            FriendsListViewModel.this.emitShowToastEvent(R.string.default_failure_to_perform_action_message);
+            C12238m.checkNotNullParameter(error, "it");
+            FriendsListViewModel.this.emitShowToastEvent(C5419R.string.default_failure_to_perform_action_message);
         }
     }
 
-    /* JADX INFO: renamed from: com.discord.widgets.friends.FriendsListViewModel$removeFriendRequest$1, reason: invalid class name */
+    /* JADX INFO: renamed from: com.discord.widgets.friends.FriendsListViewModel$removeFriendRequest$1 */
     /* JADX INFO: compiled from: FriendsListViewModel.kt */
-    public static final class AnonymousClass1 extends Lambda implements Function1<Void, Unit> {
+    public static final class C83721 extends AbstractC12240o implements Function1<Void, Unit> {
         public final /* synthetic */ int $successMessageStringRes;
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-        public AnonymousClass1(int i) {
+        public C83721(int i) {
             super(1);
             this.$successMessageStringRes = i;
         }
@@ -1942,7 +1942,7 @@ public final class FriendsListViewModel extends AppViewModel<ViewState> {
         @Override // kotlin.jvm.functions.Function1
         public /* bridge */ /* synthetic */ Unit invoke(Void r1) {
             invoke2(r1);
-            return Unit.a;
+            return Unit.f27425a;
         }
 
         /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
@@ -1951,23 +1951,23 @@ public final class FriendsListViewModel extends AppViewModel<ViewState> {
         }
     }
 
-    /* JADX INFO: renamed from: com.discord.widgets.friends.FriendsListViewModel$removeFriendRequest$2, reason: invalid class name */
+    /* JADX INFO: renamed from: com.discord.widgets.friends.FriendsListViewModel$removeFriendRequest$2 */
     /* JADX INFO: compiled from: FriendsListViewModel.kt */
-    public static final class AnonymousClass2 extends Lambda implements Function1<Error, Unit> {
-        public AnonymousClass2() {
+    public static final class C83732 extends AbstractC12240o implements Function1<Error, Unit> {
+        public C83732() {
             super(1);
         }
 
         @Override // kotlin.jvm.functions.Function1
         public /* bridge */ /* synthetic */ Unit invoke(Error error) {
             invoke2(error);
-            return Unit.a;
+            return Unit.f27425a;
         }
 
         /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
         public final void invoke2(Error error) {
-            Intrinsics3.checkNotNullParameter(error, "it");
-            FriendsListViewModel.this.emitShowToastEvent(R.string.default_failure_to_perform_action_message);
+            C12238m.checkNotNullParameter(error, "it");
+            FriendsListViewModel.this.emitShowToastEvent(C5419R.string.default_failure_to_perform_action_message);
         }
     }
 
@@ -1989,17 +1989,17 @@ public final class FriendsListViewModel extends AppViewModel<ViewState> {
     private final <T> Cancellable asyncComputeAndHandleOnUiThread(final Function0<? extends T> compute, Function1<? super Error, Unit> onError, Function1<? super T, Unit> onSuccess) {
         final Ref$ObjectRef ref$ObjectRef = new Ref$ObjectRef();
         ref$ObjectRef.element = null;
-        Observable<T> observableX = Observable.o(new Action1<Emitter<T>>() { // from class: com.discord.widgets.friends.FriendsListViewModel.asyncComputeAndHandleOnUiThread.1
+        Observable<T> observableM11098X = Observable.m11080o(new Action1<Emitter<T>>() { // from class: com.discord.widgets.friends.FriendsListViewModel.asyncComputeAndHandleOnUiThread.1
             /* JADX WARN: Multi-variable type inference failed */
-            @Override // rx.functions.Action1
+            @Override // p658rx.functions.Action1
             public final void call(Emitter<T> emitter) {
                 emitter.onNext(compute.invoke());
             }
-        }, Emitter.BackpressureMode.NONE).X(Schedulers2.a());
-        Intrinsics3.checkNotNullExpressionValue(observableX, "Observable\n        .crea…Schedulers.computation())");
-        ObservableExtensionsKt.appSubscribe(ObservableExtensionsKt.ui$default(observableX, this, null, 2, null), (Class<?>) FriendsListViewModel.class, (58 & 2) != 0 ? null : null, (Function1<? super Subscription, Unit>) ((58 & 4) != 0 ? null : new AnonymousClass4(ref$ObjectRef)), (Function1<? super Error, Unit>) ((58 & 8) != 0 ? null : new AnonymousClass3(onError)), (Function0<Unit>) ((58 & 16) != 0 ? ObservableExtensionsKt.AnonymousClass1.INSTANCE : null), (Function0<Unit>) ((58 & 32) != 0 ? ObservableExtensionsKt.AnonymousClass2.INSTANCE : null), new AnonymousClass2(onSuccess));
+        }, Emitter.BackpressureMode.NONE).m11098X(C12781a.m10873a());
+        C12238m.checkNotNullExpressionValue(observableM11098X, "Observable\n        .crea…Schedulers.computation())");
+        ObservableExtensionsKt.appSubscribe(ObservableExtensionsKt.ui$default(observableM11098X, this, null, 2, null), (Class<?>) FriendsListViewModel.class, (58 & 2) != 0 ? null : null, (Function1<? super Subscription, Unit>) ((58 & 4) != 0 ? null : new C83644(ref$ObjectRef)), (Function1<? super Error, Unit>) ((58 & 8) != 0 ? null : new C83633(onError)), (Function0<Unit>) ((58 & 16) != 0 ? ObservableExtensionsKt.C68791.INSTANCE : null), (Function0<Unit>) ((58 & 32) != 0 ? ObservableExtensionsKt.C68802.INSTANCE : null), new C83622(onSuccess));
         return new Cancellable() { // from class: com.discord.widgets.friends.FriendsListViewModel.asyncComputeAndHandleOnUiThread.5
-            @Override // rx.functions.Cancellable
+            @Override // p658rx.functions.Cancellable
             public final void cancel() {
                 Subscription subscription = (Subscription) ref$ObjectRef.element;
                 if (subscription != null) {
@@ -2019,22 +2019,22 @@ public final class FriendsListViewModel extends AppViewModel<ViewState> {
 
     private final void emitCaptchaErrorEvent(Error error, String username, int discriminator) {
         PublishSubject<Event> publishSubject = this.eventSubject;
-        publishSubject.k.onNext(new Event.CaptchaError(error, username, discriminator));
+        publishSubject.f27650k.onNext(new Event.CaptchaError(error, username, discriminator));
     }
 
     private final void emitLaunchVoiceCallEvent(long channelId) {
         PublishSubject<Event> publishSubject = this.eventSubject;
-        publishSubject.k.onNext(new Event.LaunchVoiceCall(channelId));
+        publishSubject.f27650k.onNext(new Event.LaunchVoiceCall(channelId));
     }
 
     private final void emitShowFriendRequestAbortToast(int abortCode, String username) {
         PublishSubject<Event> publishSubject = this.eventSubject;
-        publishSubject.k.onNext(new Event.ShowFriendRequestErrorToast(abortCode, username));
+        publishSubject.f27650k.onNext(new Event.ShowFriendRequestErrorToast(abortCode, username));
     }
 
     private final void emitShowToastEvent(@StringRes int stringRes) {
         PublishSubject<Event> publishSubject = this.eventSubject;
-        publishSubject.k.onNext(new Event.ShowToast(stringRes));
+        publishSubject.f27650k.onNext(new Event.ShowToast(stringRes));
     }
 
     @MainThread
@@ -2063,20 +2063,20 @@ public final class FriendsListViewModel extends AppViewModel<ViewState> {
                 arrayList.add(new Item.SuggestedFriend((FriendSuggestion) it.next()));
             }
             if (arrayList.size() > 1) {
-                MutableCollectionsJVM.sortWith(arrayList, new Comparator() { // from class: com.discord.widgets.friends.FriendsListViewModel$getItems$$inlined$sortBy$1
+                C12153q.sortWith(arrayList, new Comparator() { // from class: com.discord.widgets.friends.FriendsListViewModel$getItems$$inlined$sortBy$1
                     /* JADX WARN: Multi-variable type inference failed */
                     @Override // java.util.Comparator
                     public final int compare(T t, T t2) {
-                        return a.compareValues(Long.valueOf(((FriendsListViewModel.Item.SuggestedFriend) t).getSuggestion().getUser().getId()), Long.valueOf(((FriendsListViewModel.Item.SuggestedFriend) t2).getSuggestion().getUser().getId()));
+                        return C12169a.compareValues(Long.valueOf(((FriendsListViewModel.Item.SuggestedFriend) t).getSuggestion().getUser().getId()), Long.valueOf(((FriendsListViewModel.Item.SuggestedFriend) t2).getSuggestion().getUser().getId()));
                     }
                 });
             }
         }
         Item.SuggestedFriendsHeader suggestedFriendsHeader = !arrayList.isEmpty() ? new Item.SuggestedFriendsHeader(arrayList.size(), false, arrayList.size() > 2) : null;
-        AnonymousClass3 anonymousClass3 = AnonymousClass3.INSTANCE;
+        C83663 c83663 = C83663.INSTANCE;
         ArrayList arrayList2 = new ArrayList();
         ArrayList arrayList3 = new ArrayList();
-        for (Map.Entry entry : _Maps.asSequence(relationships)) {
+        for (Map.Entry entry : C12138i0.asSequence(relationships)) {
             long jLongValue = ((Number) entry.getKey()).longValue();
             int iIntValue = ((Number) entry.getValue()).intValue();
             User user = users.get(Long.valueOf(jLongValue));
@@ -2084,14 +2084,14 @@ public final class FriendsListViewModel extends AppViewModel<ViewState> {
             Presence presence = presences.get(Long.valueOf(jLongValue));
             boolean zContainsKey = applicationStreams.containsKey(Long.valueOf(jLongValue));
             if (user != null && type != 2) {
-                if (AnonymousClass3.INSTANCE.invoke(type)) {
+                if (C83663.INSTANCE.invoke(type)) {
                     arrayList2.add(new Item.PendingFriendRequest(user, presence, type));
                 } else {
                     arrayList3.add(new Item.Friend(user, presence, zContainsKey));
                 }
             }
         }
-        List list = _Collections.toList(_Collections.sortedWith(arrayList2, new Comparator<Item.PendingFriendRequest>() { // from class: com.discord.widgets.friends.FriendsListViewModel$getItems$sortedPendingItems$1
+        List list = C12163u.toList(C12163u.sortedWith(arrayList2, new Comparator<Item.PendingFriendRequest>() { // from class: com.discord.widgets.friends.FriendsListViewModel$getItems$sortedPendingItems$1
             @Override // java.util.Comparator
             public final int compare(FriendsListViewModel.Item.PendingFriendRequest pendingFriendRequest, FriendsListViewModel.Item.PendingFriendRequest pendingFriendRequest2) {
                 if (pendingFriendRequest.getRelationshipType() == 3 && pendingFriendRequest2.getRelationshipType() == 4) {
@@ -2103,7 +2103,7 @@ public final class FriendsListViewModel extends AppViewModel<ViewState> {
                 return UserUtils.INSTANCE.compareUserNames(pendingFriendRequest.getUser(), pendingFriendRequest2.getUser());
             }
         }));
-        Item.PendingHeader pendingHeader = !list.isEmpty() ? new Item.PendingHeader(R.string.friends_pending_request_header, list.size(), false, list.size() > 2) : null;
+        Item.PendingHeader pendingHeader = !list.isEmpty() ? new Item.PendingHeader(C5419R.string.friends_pending_request_header, list.size(), false, list.size() > 2) : null;
         ArrayList arrayList4 = new ArrayList();
         ArrayList arrayList5 = new ArrayList();
         for (Object obj : arrayList3) {
@@ -2111,14 +2111,14 @@ public final class FriendsListViewModel extends AppViewModel<ViewState> {
                 arrayList5.add(obj);
             }
         }
-        List list2 = _Collections.toList(_Collections.sortedWith(arrayList5, new Comparator<Item.Friend>() { // from class: com.discord.widgets.friends.FriendsListViewModel$getItems$onlineFriendItems$2
+        List list2 = C12163u.toList(C12163u.sortedWith(arrayList5, new Comparator<Item.Friend>() { // from class: com.discord.widgets.friends.FriendsListViewModel$getItems$onlineFriendItems$2
             @Override // java.util.Comparator
             public final int compare(FriendsListViewModel.Item.Friend friend, FriendsListViewModel.Item.Friend friend2) {
                 return UserUtils.INSTANCE.compareUserNames(friend.getUser(), friend2.getUser());
             }
         }));
         if (!list2.isEmpty()) {
-            arrayList4.add(new Item.Header(R.string.friends_online_header, list2.size()));
+            arrayList4.add(new Item.Header(C5419R.string.friends_online_header, list2.size()));
             arrayList4.addAll(list2);
         }
         ArrayList arrayList6 = new ArrayList();
@@ -2127,14 +2127,14 @@ public final class FriendsListViewModel extends AppViewModel<ViewState> {
                 arrayList6.add(obj2);
             }
         }
-        List list3 = _Collections.toList(_Collections.sortedWith(arrayList6, new Comparator<Item.Friend>() { // from class: com.discord.widgets.friends.FriendsListViewModel$getItems$offlineFriendItems$2
+        List list3 = C12163u.toList(C12163u.sortedWith(arrayList6, new Comparator<Item.Friend>() { // from class: com.discord.widgets.friends.FriendsListViewModel$getItems$offlineFriendItems$2
             @Override // java.util.Comparator
             public final int compare(FriendsListViewModel.Item.Friend friend, FriendsListViewModel.Item.Friend friend2) {
                 return UserUtils.INSTANCE.compareUserNames(friend.getUser(), friend2.getUser());
             }
         }));
         if (true ^ list3.isEmpty()) {
-            arrayList4.add(new Item.Header(R.string.friends_offline_header, list3.size()));
+            arrayList4.add(new Item.Header(C5419R.string.friends_offline_header, list3.size()));
             arrayList4.addAll(list3);
         }
         return new ListSections(suggestedFriendsHeader, arrayList, pendingHeader, list, arrayList4, showContactSyncUpsell ? new Item.ContactSyncUpsell(false) : null);
@@ -2151,14 +2151,14 @@ public final class FriendsListViewModel extends AppViewModel<ViewState> {
             arrayList.add(listSections.getContactSyncUpsell());
         }
         if (!this.isSuggestedSectionExpanded) {
-            suggestedFriendItems = _Collections.take(suggestedFriendItems, 2);
+            suggestedFriendItems = C12163u.take(suggestedFriendItems, 2);
         }
         if (suggestionsHeaderItem != null && (!suggestedFriendItems.isEmpty())) {
             arrayList.add(suggestionsHeaderItem);
             arrayList.addAll(suggestedFriendItems);
         }
         if (!this.isPendingSectionExpanded) {
-            pendingItems = _Collections.take(pendingItems, 2);
+            pendingItems = C12163u.take(pendingItems, 2);
         }
         if (pendingHeaderItem != null && (!pendingItems.isEmpty())) {
             arrayList.add(pendingHeaderItem);
@@ -2187,18 +2187,18 @@ public final class FriendsListViewModel extends AppViewModel<ViewState> {
         if (relationships.isEmpty()) {
             updateViewState(new ViewState.Empty(storeState.getShowContactSyncIcon() || storeState.getShowContactSyncUpsell()));
         } else {
-            this.computeItemJob = asyncComputeAndHandleOnUiThread$default(this, new AnonymousClass1(relationships, storeState), null, new AnonymousClass2(storeState), 2, null);
+            this.computeItemJob = asyncComputeAndHandleOnUiThread$default(this, new C83671(relationships, storeState), null, new C83682(storeState), 2, null);
         }
     }
 
     public final void acceptFriendRequest(long userId, String username) {
-        Intrinsics3.checkNotNullParameter(username, "username");
-        ObservableExtensionsKt.appSubscribe(ObservableExtensionsKt.ui$default(ObservableExtensionsKt.restSubscribeOn$default(this.restAPI.addRelationship(LOCATION, userId, (28 & 4) != 0 ? null : null, (28 & 8) != 0 ? null : null, (28 & 16) != 0 ? null : null), false, 1, null), this, null, 2, null), (Class<?>) FriendsListViewModel.class, (58 & 2) != 0 ? null : null, (Function1<? super Subscription, Unit>) ((58 & 4) != 0 ? null : null), (Function1<? super Error, Unit>) ((58 & 8) != 0 ? null : new AnonymousClass2(username)), (Function0<Unit>) ((58 & 16) != 0 ? ObservableExtensionsKt.AnonymousClass1.INSTANCE : null), (Function0<Unit>) ((58 & 32) != 0 ? ObservableExtensionsKt.AnonymousClass2.INSTANCE : null), new AnonymousClass1());
+        C12238m.checkNotNullParameter(username, "username");
+        ObservableExtensionsKt.appSubscribe(ObservableExtensionsKt.ui$default(ObservableExtensionsKt.restSubscribeOn$default(this.restAPI.addRelationship(LOCATION, userId, (28 & 4) != 0 ? null : null, (28 & 8) != 0 ? null : null, (28 & 16) != 0 ? null : null), false, 1, null), this, null, 2, null), (Class<?>) FriendsListViewModel.class, (58 & 2) != 0 ? null : null, (Function1<? super Subscription, Unit>) ((58 & 4) != 0 ? null : null), (Function1<? super Error, Unit>) ((58 & 8) != 0 ? null : new C83582(username)), (Function0<Unit>) ((58 & 16) != 0 ? ObservableExtensionsKt.C68791.INSTANCE : null), (Function0<Unit>) ((58 & 32) != 0 ? ObservableExtensionsKt.C68802.INSTANCE : null), new C83571());
     }
 
     public final void acceptFriendSuggestion(String username, int discriminator, CaptchaHelper.CaptchaPayload captchaPayload) {
-        Intrinsics3.checkNotNullParameter(username, "username");
-        ObservableExtensionsKt.appSubscribe(ObservableExtensionsKt.ui$default(ObservableExtensionsKt.restSubscribeOn$default(RestAPI.INSTANCE.getApi().sendRelationshipRequest("Friends List - Friend Suggestion", username, discriminator, captchaPayload), false, 1, null), this, null, 2, null), (Class<?>) FriendsListViewModel.class, (58 & 2) != 0 ? null : null, (Function1<? super Subscription, Unit>) ((58 & 4) != 0 ? null : null), (Function1<? super Error, Unit>) ((58 & 8) != 0 ? null : new AnonymousClass2(username, discriminator)), (Function0<Unit>) ((58 & 16) != 0 ? ObservableExtensionsKt.AnonymousClass1.INSTANCE : null), (Function0<Unit>) ((58 & 32) != 0 ? ObservableExtensionsKt.AnonymousClass2.INSTANCE : null), AnonymousClass1.INSTANCE);
+        C12238m.checkNotNullParameter(username, "username");
+        ObservableExtensionsKt.appSubscribe(ObservableExtensionsKt.ui$default(ObservableExtensionsKt.restSubscribeOn$default(RestAPI.INSTANCE.getApi().sendRelationshipRequest("Friends List - Friend Suggestion", username, discriminator, captchaPayload), false, 1, null), this, null, 2, null), (Class<?>) FriendsListViewModel.class, (58 & 2) != 0 ? null : null, (Function1<? super Subscription, Unit>) ((58 & 4) != 0 ? null : null), (Function1<? super Error, Unit>) ((58 & 8) != 0 ? null : new C83602(username, discriminator)), (Function0<Unit>) ((58 & 16) != 0 ? ObservableExtensionsKt.C68791.INSTANCE : null), (Function0<Unit>) ((58 & 32) != 0 ? ObservableExtensionsKt.C68802.INSTANCE : null), C83591.INSTANCE);
     }
 
     @MainThread
@@ -2245,35 +2245,35 @@ public final class FriendsListViewModel extends AppViewModel<ViewState> {
     }
 
     public final void ignoreSuggestion(long userId) {
-        ObservableExtensionsKt.appSubscribe(ObservableExtensionsKt.ui$default(ObservableExtensionsKt.restSubscribeOn$default(this.restAPI.ignoreFriendSuggestion(userId), false, 1, null), this, null, 2, null), (Class<?>) FriendsListViewModel.class, (58 & 2) != 0 ? null : null, (Function1<? super Subscription, Unit>) ((58 & 4) != 0 ? null : null), (Function1<? super Error, Unit>) ((58 & 8) != 0 ? null : null), (Function0<Unit>) ((58 & 16) != 0 ? ObservableExtensionsKt.AnonymousClass1.INSTANCE : null), (Function0<Unit>) ((58 & 32) != 0 ? ObservableExtensionsKt.AnonymousClass2.INSTANCE : null), AnonymousClass1.INSTANCE);
+        ObservableExtensionsKt.appSubscribe(ObservableExtensionsKt.ui$default(ObservableExtensionsKt.restSubscribeOn$default(this.restAPI.ignoreFriendSuggestion(userId), false, 1, null), this, null, 2, null), (Class<?>) FriendsListViewModel.class, (58 & 2) != 0 ? null : null, (Function1<? super Subscription, Unit>) ((58 & 4) != 0 ? null : null), (Function1<? super Error, Unit>) ((58 & 8) != 0 ? null : null), (Function0<Unit>) ((58 & 16) != 0 ? ObservableExtensionsKt.C68791.INSTANCE : null), (Function0<Unit>) ((58 & 32) != 0 ? ObservableExtensionsKt.C68802.INSTANCE : null), C83691.INSTANCE);
     }
 
     public final void launchVoiceCall(long userId) {
-        ObservableExtensionsKt.appSubscribe(ObservableExtensionsKt.ui$default(ObservableExtensionsKt.restSubscribeOn$default(this.restAPI.createOrFetchDM(userId), false, 1, null), this, null, 2, null), (Class<?>) FriendsListViewModel.class, (58 & 2) != 0 ? null : null, (Function1<? super Subscription, Unit>) ((58 & 4) != 0 ? null : null), (Function1<? super Error, Unit>) ((58 & 8) != 0 ? null : new AnonymousClass2()), (Function0<Unit>) ((58 & 16) != 0 ? ObservableExtensionsKt.AnonymousClass1.INSTANCE : null), (Function0<Unit>) ((58 & 32) != 0 ? ObservableExtensionsKt.AnonymousClass2.INSTANCE : null), new AnonymousClass1());
+        ObservableExtensionsKt.appSubscribe(ObservableExtensionsKt.ui$default(ObservableExtensionsKt.restSubscribeOn$default(this.restAPI.createOrFetchDM(userId), false, 1, null), this, null, 2, null), (Class<?>) FriendsListViewModel.class, (58 & 2) != 0 ? null : null, (Function1<? super Subscription, Unit>) ((58 & 4) != 0 ? null : null), (Function1<? super Error, Unit>) ((58 & 8) != 0 ? null : new C83712()), (Function0<Unit>) ((58 & 16) != 0 ? ObservableExtensionsKt.C68791.INSTANCE : null), (Function0<Unit>) ((58 & 32) != 0 ? ObservableExtensionsKt.C68802.INSTANCE : null), new C83701());
     }
 
     @MainThread
     public final Observable<Event> observeEvents() {
         PublishSubject<Event> publishSubject = this.eventSubject;
-        Intrinsics3.checkNotNullExpressionValue(publishSubject, "eventSubject");
+        C12238m.checkNotNullExpressionValue(publishSubject, "eventSubject");
         return publishSubject;
     }
 
     public final void removeFriendRequest(long userId, int relationshipType) {
-        ObservableExtensionsKt.appSubscribe(ObservableExtensionsKt.ui$default(ObservableExtensionsKt.restSubscribeOn$default(this.restAPI.removeRelationship(LOCATION, userId), false, 1, null), this, null, 2, null), (Class<?>) FriendsListViewModel.class, (58 & 2) != 0 ? null : null, (Function1<? super Subscription, Unit>) ((58 & 4) != 0 ? null : null), (Function1<? super Error, Unit>) ((58 & 8) != 0 ? null : new AnonymousClass2()), (Function0<Unit>) ((58 & 16) != 0 ? ObservableExtensionsKt.AnonymousClass1.INSTANCE : null), (Function0<Unit>) ((58 & 32) != 0 ? ObservableExtensionsKt.AnonymousClass2.INSTANCE : null), new AnonymousClass1(relationshipType == 3 ? R.string.friend_request_ignored : R.string.friend_request_cancelled));
+        ObservableExtensionsKt.appSubscribe(ObservableExtensionsKt.ui$default(ObservableExtensionsKt.restSubscribeOn$default(this.restAPI.removeRelationship(LOCATION, userId), false, 1, null), this, null, 2, null), (Class<?>) FriendsListViewModel.class, (58 & 2) != 0 ? null : null, (Function1<? super Subscription, Unit>) ((58 & 4) != 0 ? null : null), (Function1<? super Error, Unit>) ((58 & 8) != 0 ? null : new C83732()), (Function0<Unit>) ((58 & 16) != 0 ? ObservableExtensionsKt.C68791.INSTANCE : null), (Function0<Unit>) ((58 & 32) != 0 ? ObservableExtensionsKt.C68802.INSTANCE : null), new C83721(relationshipType == 3 ? C5419R.string.friend_request_ignored : C5419R.string.friend_request_cancelled));
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public FriendsListViewModel(Observable<StoreState> observable, StoreChannels storeChannels, RestAPI restAPI) {
         super(ViewState.Uninitialized.INSTANCE);
-        Intrinsics3.checkNotNullParameter(observable, "storeObservable");
-        Intrinsics3.checkNotNullParameter(storeChannels, "storeChannels");
-        Intrinsics3.checkNotNullParameter(restAPI, "restAPI");
+        C12238m.checkNotNullParameter(observable, "storeObservable");
+        C12238m.checkNotNullParameter(storeChannels, "storeChannels");
+        C12238m.checkNotNullParameter(restAPI, "restAPI");
         this.storeObservable = observable;
         this.storeChannels = storeChannels;
         this.restAPI = restAPI;
-        this.listSections = new ListSections(null, Collections2.emptyList(), null, Collections2.emptyList(), Collections2.emptyList(), null);
-        this.eventSubject = PublishSubject.k0();
-        ObservableExtensionsKt.appSubscribe(ObservableExtensionsKt.ui$default(observable, this, null, 2, null), (Class<?>) FriendsListViewModel.class, (58 & 2) != 0 ? null : null, (Function1<? super Subscription, Unit>) ((58 & 4) != 0 ? null : null), (Function1<? super Error, Unit>) ((58 & 8) != 0 ? null : null), (Function0<Unit>) ((58 & 16) != 0 ? ObservableExtensionsKt.AnonymousClass1.INSTANCE : null), (Function0<Unit>) ((58 & 32) != 0 ? ObservableExtensionsKt.AnonymousClass2.INSTANCE : null), new AnonymousClass1());
+        this.listSections = new ListSections(null, C12147n.emptyList(), null, C12147n.emptyList(), C12147n.emptyList(), null);
+        this.eventSubject = PublishSubject.m11133k0();
+        ObservableExtensionsKt.appSubscribe(ObservableExtensionsKt.ui$default(observable, this, null, 2, null), (Class<?>) FriendsListViewModel.class, (58 & 2) != 0 ? null : null, (Function1<? super Subscription, Unit>) ((58 & 4) != 0 ? null : null), (Function1<? super Error, Unit>) ((58 & 8) != 0 ? null : null), (Function0<Unit>) ((58 & 16) != 0 ? ObservableExtensionsKt.C68791.INSTANCE : null), (Function0<Unit>) ((58 & 32) != 0 ? ObservableExtensionsKt.C68802.INSTANCE : null), new C83561());
     }
 }

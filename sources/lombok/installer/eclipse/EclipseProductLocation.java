@@ -36,17 +36,17 @@ public final class EclipseProductLocation extends IdeLocation {
         if (iArr != null) {
             return iArr;
         }
-        int[] iArr2 = new int[OsUtils.OS.valuesCustom().length];
+        int[] iArr2 = new int[OsUtils.EnumC12884OS.valuesCustom().length];
         try {
-            iArr2[OsUtils.OS.MAC_OS_X.ordinal()] = 1;
+            iArr2[OsUtils.EnumC12884OS.MAC_OS_X.ordinal()] = 1;
         } catch (NoSuchFieldError unused) {
         }
         try {
-            iArr2[OsUtils.OS.UNIX.ordinal()] = 3;
+            iArr2[OsUtils.EnumC12884OS.UNIX.ordinal()] = 3;
         } catch (NoSuchFieldError unused2) {
         }
         try {
-            iArr2[OsUtils.OS.WINDOWS.ordinal()] = 2;
+            iArr2[OsUtils.EnumC12884OS.WINDOWS.ordinal()] = 2;
         } catch (NoSuchFieldError unused3) {
         }
         $SWITCH_TABLE$lombok$installer$OsUtils$OS = iArr2;
@@ -190,7 +190,7 @@ public final class EclipseProductLocation extends IdeLocation {
         for (File dir : getUninstallDirs()) {
             File lombokJar = new File(dir, "lombok.jar");
             if (lombokJar.exists() && !lombokJar.delete()) {
-                if (OsUtils.getOS() == OsUtils.OS.WINDOWS && Installer.isSelf(lombokJar.getAbsolutePath())) {
+                if (OsUtils.getOS() == OsUtils.EnumC12884OS.WINDOWS && Installer.isSelf(lombokJar.getAbsolutePath())) {
                     lombokJarsForWhichCantDeleteSelf.add(lombokJar);
                 } else {
                     throw new UninstallException("Can't delete " + lombokJar.getAbsolutePath() + generateWriteErrorMessage(), null);

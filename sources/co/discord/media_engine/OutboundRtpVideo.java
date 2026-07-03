@@ -1,9 +1,9 @@
 package co.discord.media_engine;
 
-import a0.a.a.b;
-import b.d.b.a.outline;
 import com.discord.models.domain.ModelAuditLogEntry;
-import d0.z.d.Intrinsics3;
+import p001a0.p002a.p003a.C0002b;
+import p007b.p100d.p104b.p105a.C1643a;
+import p507d0.p592z.p594d.C12238m;
 
 /* JADX INFO: compiled from: Statistics.kt */
 /* JADX INFO: loaded from: classes.dex */
@@ -33,10 +33,10 @@ public final /* data */ class OutboundRtpVideo {
     private final String type;
 
     public OutboundRtpVideo(String str, long j, StatsCodec statsCodec, long j2, long j3, int i, float f, int i2, int i3, int i4, String str2, int i5, Resolution resolution, long j4, long j5, int i6, int i7, long j6, long j7, long j8, long j9, boolean z2, boolean z3) {
-        Intrinsics3.checkNotNullParameter(str, "type");
-        Intrinsics3.checkNotNullParameter(statsCodec, "codec");
-        Intrinsics3.checkNotNullParameter(str2, "encoderImplementationName");
-        Intrinsics3.checkNotNullParameter(resolution, "resolution");
+        C12238m.checkNotNullParameter(str, "type");
+        C12238m.checkNotNullParameter(statsCodec, "codec");
+        C12238m.checkNotNullParameter(str2, "encoderImplementationName");
+        C12238m.checkNotNullParameter(resolution, "resolution");
         this.type = str;
         this.ssrc = j;
         this.codec = statsCodec;
@@ -192,10 +192,10 @@ public final /* data */ class OutboundRtpVideo {
     }
 
     public final OutboundRtpVideo copy(String type, long ssrc, StatsCodec codec, long bytesSent, long packetsSent, int packetsLost, float fractionLost, int bitrate, int bitrateTarget, int encodeUsage, String encoderImplementationName, int averageEncodeTime, Resolution resolution, long framesSent, long framesEncoded, int frameRateInput, int frameRateEncode, long firCount, long nackCount, long pliCount, long qpSum, boolean bandwidthLimitedResolution, boolean cpuLimitedResolution) {
-        Intrinsics3.checkNotNullParameter(type, "type");
-        Intrinsics3.checkNotNullParameter(codec, "codec");
-        Intrinsics3.checkNotNullParameter(encoderImplementationName, "encoderImplementationName");
-        Intrinsics3.checkNotNullParameter(resolution, "resolution");
+        C12238m.checkNotNullParameter(type, "type");
+        C12238m.checkNotNullParameter(codec, "codec");
+        C12238m.checkNotNullParameter(encoderImplementationName, "encoderImplementationName");
+        C12238m.checkNotNullParameter(resolution, "resolution");
         return new OutboundRtpVideo(type, ssrc, codec, bytesSent, packetsSent, packetsLost, fractionLost, bitrate, bitrateTarget, encodeUsage, encoderImplementationName, averageEncodeTime, resolution, framesSent, framesEncoded, frameRateInput, frameRateEncode, firCount, nackCount, pliCount, qpSum, bandwidthLimitedResolution, cpuLimitedResolution);
     }
 
@@ -207,7 +207,7 @@ public final /* data */ class OutboundRtpVideo {
             return false;
         }
         OutboundRtpVideo outboundRtpVideo = (OutboundRtpVideo) other;
-        return Intrinsics3.areEqual(this.type, outboundRtpVideo.type) && this.ssrc == outboundRtpVideo.ssrc && Intrinsics3.areEqual(this.codec, outboundRtpVideo.codec) && this.bytesSent == outboundRtpVideo.bytesSent && this.packetsSent == outboundRtpVideo.packetsSent && this.packetsLost == outboundRtpVideo.packetsLost && Float.compare(this.fractionLost, outboundRtpVideo.fractionLost) == 0 && this.bitrate == outboundRtpVideo.bitrate && this.bitrateTarget == outboundRtpVideo.bitrateTarget && this.encodeUsage == outboundRtpVideo.encodeUsage && Intrinsics3.areEqual(this.encoderImplementationName, outboundRtpVideo.encoderImplementationName) && this.averageEncodeTime == outboundRtpVideo.averageEncodeTime && Intrinsics3.areEqual(this.resolution, outboundRtpVideo.resolution) && this.framesSent == outboundRtpVideo.framesSent && this.framesEncoded == outboundRtpVideo.framesEncoded && this.frameRateInput == outboundRtpVideo.frameRateInput && this.frameRateEncode == outboundRtpVideo.frameRateEncode && this.firCount == outboundRtpVideo.firCount && this.nackCount == outboundRtpVideo.nackCount && this.pliCount == outboundRtpVideo.pliCount && this.qpSum == outboundRtpVideo.qpSum && this.bandwidthLimitedResolution == outboundRtpVideo.bandwidthLimitedResolution && this.cpuLimitedResolution == outboundRtpVideo.cpuLimitedResolution;
+        return C12238m.areEqual(this.type, outboundRtpVideo.type) && this.ssrc == outboundRtpVideo.ssrc && C12238m.areEqual(this.codec, outboundRtpVideo.codec) && this.bytesSent == outboundRtpVideo.bytesSent && this.packetsSent == outboundRtpVideo.packetsSent && this.packetsLost == outboundRtpVideo.packetsLost && Float.compare(this.fractionLost, outboundRtpVideo.fractionLost) == 0 && this.bitrate == outboundRtpVideo.bitrate && this.bitrateTarget == outboundRtpVideo.bitrateTarget && this.encodeUsage == outboundRtpVideo.encodeUsage && C12238m.areEqual(this.encoderImplementationName, outboundRtpVideo.encoderImplementationName) && this.averageEncodeTime == outboundRtpVideo.averageEncodeTime && C12238m.areEqual(this.resolution, outboundRtpVideo.resolution) && this.framesSent == outboundRtpVideo.framesSent && this.framesEncoded == outboundRtpVideo.framesEncoded && this.frameRateInput == outboundRtpVideo.frameRateInput && this.frameRateEncode == outboundRtpVideo.frameRateEncode && this.firCount == outboundRtpVideo.firCount && this.nackCount == outboundRtpVideo.nackCount && this.pliCount == outboundRtpVideo.pliCount && this.qpSum == outboundRtpVideo.qpSum && this.bandwidthLimitedResolution == outboundRtpVideo.bandwidthLimitedResolution && this.cpuLimitedResolution == outboundRtpVideo.cpuLimitedResolution;
     }
 
     public final int getAverageEncodeTime() {
@@ -313,69 +313,69 @@ public final /* data */ class OutboundRtpVideo {
     /* JADX WARN: Type inference failed for: r2v25 */
     public int hashCode() {
         String str = this.type;
-        int iA = (b.a(this.ssrc) + ((str != null ? str.hashCode() : 0) * 31)) * 31;
+        int iM3a = (C0002b.m3a(this.ssrc) + ((str != null ? str.hashCode() : 0) * 31)) * 31;
         StatsCodec statsCodec = this.codec;
-        int iFloatToIntBits = (((((((Float.floatToIntBits(this.fractionLost) + ((((b.a(this.packetsSent) + ((b.a(this.bytesSent) + ((iA + (statsCodec != null ? statsCodec.hashCode() : 0)) * 31)) * 31)) * 31) + this.packetsLost) * 31)) * 31) + this.bitrate) * 31) + this.bitrateTarget) * 31) + this.encodeUsage) * 31;
+        int iFloatToIntBits = (((((((Float.floatToIntBits(this.fractionLost) + ((((C0002b.m3a(this.packetsSent) + ((C0002b.m3a(this.bytesSent) + ((iM3a + (statsCodec != null ? statsCodec.hashCode() : 0)) * 31)) * 31)) * 31) + this.packetsLost) * 31)) * 31) + this.bitrate) * 31) + this.bitrateTarget) * 31) + this.encodeUsage) * 31;
         String str2 = this.encoderImplementationName;
         int iHashCode = (((iFloatToIntBits + (str2 != null ? str2.hashCode() : 0)) * 31) + this.averageEncodeTime) * 31;
         Resolution resolution = this.resolution;
-        int iA2 = (b.a(this.qpSum) + ((b.a(this.pliCount) + ((b.a(this.nackCount) + ((b.a(this.firCount) + ((((((b.a(this.framesEncoded) + ((b.a(this.framesSent) + ((iHashCode + (resolution != null ? resolution.hashCode() : 0)) * 31)) * 31)) * 31) + this.frameRateInput) * 31) + this.frameRateEncode) * 31)) * 31)) * 31)) * 31)) * 31;
+        int iM3a2 = (C0002b.m3a(this.qpSum) + ((C0002b.m3a(this.pliCount) + ((C0002b.m3a(this.nackCount) + ((C0002b.m3a(this.firCount) + ((((((C0002b.m3a(this.framesEncoded) + ((C0002b.m3a(this.framesSent) + ((iHashCode + (resolution != null ? resolution.hashCode() : 0)) * 31)) * 31)) * 31) + this.frameRateInput) * 31) + this.frameRateEncode) * 31)) * 31)) * 31)) * 31)) * 31;
         boolean z2 = this.bandwidthLimitedResolution;
         ?? r1 = z2;
         if (z2) {
             r1 = 1;
         }
-        int i = (iA2 + r1) * 31;
+        int i = (iM3a2 + r1) * 31;
         boolean z3 = this.cpuLimitedResolution;
         return i + (z3 ? 1 : z3);
     }
 
     public String toString() {
-        StringBuilder sbU = outline.U("OutboundRtpVideo(type=");
-        sbU.append(this.type);
-        sbU.append(", ssrc=");
-        sbU.append(this.ssrc);
-        sbU.append(", codec=");
-        sbU.append(this.codec);
-        sbU.append(", bytesSent=");
-        sbU.append(this.bytesSent);
-        sbU.append(", packetsSent=");
-        sbU.append(this.packetsSent);
-        sbU.append(", packetsLost=");
-        sbU.append(this.packetsLost);
-        sbU.append(", fractionLost=");
-        sbU.append(this.fractionLost);
-        sbU.append(", bitrate=");
-        sbU.append(this.bitrate);
-        sbU.append(", bitrateTarget=");
-        sbU.append(this.bitrateTarget);
-        sbU.append(", encodeUsage=");
-        sbU.append(this.encodeUsage);
-        sbU.append(", encoderImplementationName=");
-        sbU.append(this.encoderImplementationName);
-        sbU.append(", averageEncodeTime=");
-        sbU.append(this.averageEncodeTime);
-        sbU.append(", resolution=");
-        sbU.append(this.resolution);
-        sbU.append(", framesSent=");
-        sbU.append(this.framesSent);
-        sbU.append(", framesEncoded=");
-        sbU.append(this.framesEncoded);
-        sbU.append(", frameRateInput=");
-        sbU.append(this.frameRateInput);
-        sbU.append(", frameRateEncode=");
-        sbU.append(this.frameRateEncode);
-        sbU.append(", firCount=");
-        sbU.append(this.firCount);
-        sbU.append(", nackCount=");
-        sbU.append(this.nackCount);
-        sbU.append(", pliCount=");
-        sbU.append(this.pliCount);
-        sbU.append(", qpSum=");
-        sbU.append(this.qpSum);
-        sbU.append(", bandwidthLimitedResolution=");
-        sbU.append(this.bandwidthLimitedResolution);
-        sbU.append(", cpuLimitedResolution=");
-        return outline.O(sbU, this.cpuLimitedResolution, ")");
+        StringBuilder sbM833U = C1643a.m833U("OutboundRtpVideo(type=");
+        sbM833U.append(this.type);
+        sbM833U.append(", ssrc=");
+        sbM833U.append(this.ssrc);
+        sbM833U.append(", codec=");
+        sbM833U.append(this.codec);
+        sbM833U.append(", bytesSent=");
+        sbM833U.append(this.bytesSent);
+        sbM833U.append(", packetsSent=");
+        sbM833U.append(this.packetsSent);
+        sbM833U.append(", packetsLost=");
+        sbM833U.append(this.packetsLost);
+        sbM833U.append(", fractionLost=");
+        sbM833U.append(this.fractionLost);
+        sbM833U.append(", bitrate=");
+        sbM833U.append(this.bitrate);
+        sbM833U.append(", bitrateTarget=");
+        sbM833U.append(this.bitrateTarget);
+        sbM833U.append(", encodeUsage=");
+        sbM833U.append(this.encodeUsage);
+        sbM833U.append(", encoderImplementationName=");
+        sbM833U.append(this.encoderImplementationName);
+        sbM833U.append(", averageEncodeTime=");
+        sbM833U.append(this.averageEncodeTime);
+        sbM833U.append(", resolution=");
+        sbM833U.append(this.resolution);
+        sbM833U.append(", framesSent=");
+        sbM833U.append(this.framesSent);
+        sbM833U.append(", framesEncoded=");
+        sbM833U.append(this.framesEncoded);
+        sbM833U.append(", frameRateInput=");
+        sbM833U.append(this.frameRateInput);
+        sbM833U.append(", frameRateEncode=");
+        sbM833U.append(this.frameRateEncode);
+        sbM833U.append(", firCount=");
+        sbM833U.append(this.firCount);
+        sbM833U.append(", nackCount=");
+        sbM833U.append(this.nackCount);
+        sbM833U.append(", pliCount=");
+        sbM833U.append(this.pliCount);
+        sbM833U.append(", qpSum=");
+        sbM833U.append(this.qpSum);
+        sbM833U.append(", bandwidthLimitedResolution=");
+        sbM833U.append(this.bandwidthLimitedResolution);
+        sbM833U.append(", cpuLimitedResolution=");
+        return C1643a.m827O(sbM833U, this.cpuLimitedResolution, ")");
     }
 }

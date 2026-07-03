@@ -4,19 +4,21 @@ import android.content.Context;
 import android.util.AttributeSet;
 import android.view.LayoutInflater;
 import androidx.constraintlayout.widget.ConstraintLayout;
-import b.a.i.TypingDotsViewBinding;
-import b.a.y.r0.TypingDots2;
-import com.discord.R;
-import d0.t.Collections2;
-import d0.z.d.Intrinsics3;
+import com.discord.C5419R;
+import p007b.p008a.p025i.C1053t1;
+import p007b.p008a.p062y.p071r0.C1380a;
+import p507d0.p580t.C12147n;
+import p507d0.p592z.p594d.C12238m;
 
 /* JADX INFO: compiled from: TypingDots.kt */
 /* JADX INFO: loaded from: classes2.dex */
 public final class TypingDots extends ConstraintLayout {
-    public static final /* synthetic */ int j = 0;
+
+    /* JADX INFO: renamed from: j */
+    public static final /* synthetic */ int f19342j = 0;
 
     /* JADX INFO: renamed from: k, reason: from kotlin metadata */
-    public final TypingDotsViewBinding binding;
+    public final C1053t1 binding;
 
     /* JADX INFO: renamed from: l, reason: from kotlin metadata */
     public final int dotsAnimationTimeMs;
@@ -30,24 +32,24 @@ public final class TypingDots extends ConstraintLayout {
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public TypingDots(Context context, AttributeSet attributeSet) {
         super(context, attributeSet, 0);
-        Intrinsics3.checkNotNullParameter(context, "context");
-        LayoutInflater.from(context).inflate(R.layout.typing_dots_view, this);
-        int i = R.id.view_typing_dots_1;
-        TypingDot typingDot = (TypingDot) findViewById(R.id.view_typing_dots_1);
+        C12238m.checkNotNullParameter(context, "context");
+        LayoutInflater.from(context).inflate(C5419R.layout.typing_dots_view, this);
+        int i = C5419R.id.view_typing_dots_1;
+        TypingDot typingDot = (TypingDot) findViewById(C5419R.id.view_typing_dots_1);
         if (typingDot != null) {
-            i = R.id.view_typing_dots_2;
-            TypingDot typingDot2 = (TypingDot) findViewById(R.id.view_typing_dots_2);
+            i = C5419R.id.view_typing_dots_2;
+            TypingDot typingDot2 = (TypingDot) findViewById(C5419R.id.view_typing_dots_2);
             if (typingDot2 != null) {
-                i = R.id.view_typing_dots_3;
-                TypingDot typingDot3 = (TypingDot) findViewById(R.id.view_typing_dots_3);
+                i = C5419R.id.view_typing_dots_3;
+                TypingDot typingDot3 = (TypingDot) findViewById(C5419R.id.view_typing_dots_3);
                 if (typingDot3 != null) {
-                    TypingDotsViewBinding typingDotsViewBinding = new TypingDotsViewBinding(this, typingDot, typingDot2, typingDot3);
-                    Intrinsics3.checkNotNullExpressionValue(typingDotsViewBinding, "TypingDotsViewBinding.in…ater.from(context), this)");
-                    this.binding = typingDotsViewBinding;
-                    int integer = getResources().getInteger(R.integer.animation_time_standard);
+                    C1053t1 c1053t1 = new C1053t1(this, typingDot, typingDot2, typingDot3);
+                    C12238m.checkNotNullExpressionValue(c1053t1, "TypingDotsViewBinding.in…ater.from(context), this)");
+                    this.binding = c1053t1;
+                    int integer = getResources().getInteger(C5419R.integer.animation_time_standard);
                     this.dotsAnimationTimeMs = integer;
                     this.dotsAnimationStaggerTimeMs = (long) (((double) integer) / 1.5d);
-                    typingDot3.setOnScaleDownCompleteListener(new TypingDots2(this));
+                    typingDot3.setOnScaleDownCompleteListener(new C1380a(this));
                     return;
                 }
             }
@@ -55,29 +57,32 @@ public final class TypingDots extends ConstraintLayout {
         throw new NullPointerException("Missing required view with ID: ".concat(getResources().getResourceName(i)));
     }
 
-    public static /* synthetic */ void b(TypingDots typingDots, boolean z2, int i) {
+    /* JADX INFO: renamed from: b */
+    public static /* synthetic */ void m8618b(TypingDots typingDots, boolean z2, int i) {
         if ((i & 1) != 0) {
             z2 = false;
         }
-        typingDots.a(z2);
+        typingDots.m8619a(z2);
     }
 
-    public final void a(boolean isReplay) {
+    /* JADX INFO: renamed from: a */
+    public final void m8619a(boolean isReplay) {
         if (this.isRunning && !isReplay) {
             return;
         }
-        long j2 = isReplay ? this.dotsAnimationStaggerTimeMs : 0L;
-        this.binding.f202b.a(j2);
-        this.binding.c.a(this.dotsAnimationStaggerTimeMs + j2);
-        TypingDot typingDot = this.binding.d;
-        long j3 = this.dotsAnimationStaggerTimeMs;
-        typingDot.a(j2 + j3 + j3);
+        long j = isReplay ? this.dotsAnimationStaggerTimeMs : 0L;
+        this.binding.f1240b.m8617a(j);
+        this.binding.f1241c.m8617a(this.dotsAnimationStaggerTimeMs + j);
+        TypingDot typingDot = this.binding.f1242d;
+        long j2 = this.dotsAnimationStaggerTimeMs;
+        typingDot.m8617a(j + j2 + j2);
         this.isRunning = true;
     }
 
-    public final void c() {
-        TypingDotsViewBinding typingDotsViewBinding = this.binding;
-        for (TypingDot typingDot : Collections2.listOf((Object[]) new TypingDot[]{typingDotsViewBinding.f202b, typingDotsViewBinding.c, typingDotsViewBinding.d})) {
+    /* JADX INFO: renamed from: c */
+    public final void m8620c() {
+        C1053t1 c1053t1 = this.binding;
+        for (TypingDot typingDot : C12147n.listOf((Object[]) new TypingDot[]{c1053t1.f1240b, c1053t1.f1241c, c1053t1.f1242d})) {
             typingDot.scaleAndFadeUpAnimation.cancel();
             typingDot.scaleAndFadeDownAnimation.cancel();
         }
@@ -87,6 +92,6 @@ public final class TypingDots extends ConstraintLayout {
     @Override // android.view.ViewGroup, android.view.View
     public void onDetachedFromWindow() {
         super.onDetachedFromWindow();
-        c();
+        m8620c();
     }
 }

@@ -29,9 +29,7 @@ import androidx.core.util.Pair;
 import androidx.core.view.ViewCompat;
 import androidx.fragment.app.DialogFragment;
 import androidx.fragment.app.FragmentTransaction;
-import b.i.a.g.d.MonthAdapter;
-import b.i.a.g.d.PickerFragment;
-import b.i.a.g.d.UtcDates;
+import com.google.android.material.C10817R;
 import com.google.android.material.datepicker.CalendarConstraints;
 import com.google.android.material.dialog.InsetDialogOnTouchListener;
 import com.google.android.material.internal.CheckableImageButton;
@@ -41,6 +39,9 @@ import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
 import java.util.Iterator;
 import java.util.LinkedHashSet;
+import p007b.p225i.p226a.p341g.p345d.AbstractC4398i;
+import p007b.p225i.p226a.p341g.p345d.C4396g;
+import p007b.p225i.p226a.p341g.p345d.C4401l;
 
 /* JADX INFO: loaded from: classes3.dex */
 public final class MaterialDatePicker<S> extends DialogFragment {
@@ -70,7 +71,7 @@ public final class MaterialDatePicker<S> extends DialogFragment {
 
     @StyleRes
     private int overrideThemeResId;
-    private PickerFragment<S> pickerFragment;
+    private AbstractC4398i<S> pickerFragment;
     private CharSequence titleText;
 
     @StringRes
@@ -88,8 +89,9 @@ public final class MaterialDatePicker<S> extends DialogFragment {
     public @interface InputMode {
     }
 
-    public class a implements View.OnClickListener {
-        public a() {
+    /* JADX INFO: renamed from: com.google.android.material.datepicker.MaterialDatePicker$a */
+    public class ViewOnClickListenerC10897a implements View.OnClickListener {
+        public ViewOnClickListenerC10897a() {
         }
 
         /* JADX WARN: Multi-variable type inference failed */
@@ -103,8 +105,9 @@ public final class MaterialDatePicker<S> extends DialogFragment {
         }
     }
 
-    public class b implements View.OnClickListener {
-        public b() {
+    /* JADX INFO: renamed from: com.google.android.material.datepicker.MaterialDatePicker$b */
+    public class ViewOnClickListenerC10898b implements View.OnClickListener {
+        public ViewOnClickListenerC10898b() {
         }
 
         @Override // android.view.View.OnClickListener
@@ -117,8 +120,9 @@ public final class MaterialDatePicker<S> extends DialogFragment {
         }
     }
 
-    public class c extends OnSelectionChangedListener<S> {
-        public c() {
+    /* JADX INFO: renamed from: com.google.android.material.datepicker.MaterialDatePicker$c */
+    public class C10899c extends OnSelectionChangedListener<S> {
+        public C10899c() {
         }
 
         @Override // com.google.android.material.datepicker.OnSelectionChangedListener
@@ -133,8 +137,9 @@ public final class MaterialDatePicker<S> extends DialogFragment {
         }
     }
 
-    public class d implements View.OnClickListener {
-        public d() {
+    /* JADX INFO: renamed from: com.google.android.material.datepicker.MaterialDatePicker$d */
+    public class ViewOnClickListenerC10900d implements View.OnClickListener {
+        public ViewOnClickListenerC10900d() {
         }
 
         @Override // android.view.View.OnClickListener
@@ -150,24 +155,24 @@ public final class MaterialDatePicker<S> extends DialogFragment {
     @NonNull
     private static Drawable createHeaderToggleDrawable(Context context) {
         StateListDrawable stateListDrawable = new StateListDrawable();
-        stateListDrawable.addState(new int[]{R.attr.state_checked}, AppCompatResources.getDrawable(context, com.google.android.material.R.drawable.material_ic_calendar_black_24dp));
-        stateListDrawable.addState(new int[0], AppCompatResources.getDrawable(context, com.google.android.material.R.drawable.material_ic_edit_black_24dp));
+        stateListDrawable.addState(new int[]{R.attr.state_checked}, AppCompatResources.getDrawable(context, C10817R.drawable.material_ic_calendar_black_24dp));
+        stateListDrawable.addState(new int[0], AppCompatResources.getDrawable(context, C10817R.drawable.material_ic_edit_black_24dp));
         return stateListDrawable;
     }
 
     private static int getDialogPickerHeight(@NonNull Context context) {
         Resources resources = context.getResources();
-        int dimensionPixelOffset = resources.getDimensionPixelOffset(com.google.android.material.R.dimen.mtrl_calendar_navigation_bottom_padding) + resources.getDimensionPixelOffset(com.google.android.material.R.dimen.mtrl_calendar_navigation_top_padding) + resources.getDimensionPixelSize(com.google.android.material.R.dimen.mtrl_calendar_navigation_height);
-        int dimensionPixelSize = resources.getDimensionPixelSize(com.google.android.material.R.dimen.mtrl_calendar_days_of_week_height);
-        int i = MonthAdapter.j;
-        return dimensionPixelOffset + dimensionPixelSize + (resources.getDimensionPixelOffset(com.google.android.material.R.dimen.mtrl_calendar_month_vertical_padding) * (i - 1)) + (resources.getDimensionPixelSize(com.google.android.material.R.dimen.mtrl_calendar_day_height) * i) + resources.getDimensionPixelOffset(com.google.android.material.R.dimen.mtrl_calendar_bottom_padding);
+        int dimensionPixelOffset = resources.getDimensionPixelOffset(C10817R.dimen.mtrl_calendar_navigation_bottom_padding) + resources.getDimensionPixelOffset(C10817R.dimen.mtrl_calendar_navigation_top_padding) + resources.getDimensionPixelSize(C10817R.dimen.mtrl_calendar_navigation_height);
+        int dimensionPixelSize = resources.getDimensionPixelSize(C10817R.dimen.mtrl_calendar_days_of_week_height);
+        int i = C4396g.f11606j;
+        return dimensionPixelOffset + dimensionPixelSize + (resources.getDimensionPixelOffset(C10817R.dimen.mtrl_calendar_month_vertical_padding) * (i - 1)) + (resources.getDimensionPixelSize(C10817R.dimen.mtrl_calendar_day_height) * i) + resources.getDimensionPixelOffset(C10817R.dimen.mtrl_calendar_bottom_padding);
     }
 
     private static int getPaddedPickerWidth(@NonNull Context context) {
         Resources resources = context.getResources();
-        int dimensionPixelOffset = resources.getDimensionPixelOffset(com.google.android.material.R.dimen.mtrl_calendar_content_padding);
-        int i = Month.i().m;
-        return ((i - 1) * resources.getDimensionPixelOffset(com.google.android.material.R.dimen.mtrl_calendar_month_horizontal_padding)) + (resources.getDimensionPixelSize(com.google.android.material.R.dimen.mtrl_calendar_day_width) * i) + (dimensionPixelOffset * 2);
+        int dimensionPixelOffset = resources.getDimensionPixelOffset(C10817R.dimen.mtrl_calendar_content_padding);
+        int i = Month.m9133i().f20987m;
+        return ((i - 1) * resources.getDimensionPixelOffset(C10817R.dimen.mtrl_calendar_month_horizontal_padding)) + (resources.getDimensionPixelSize(C10817R.dimen.mtrl_calendar_day_width) * i) + (dimensionPixelOffset * 2);
     }
 
     private int getThemeResId(Context context) {
@@ -181,7 +186,7 @@ public final class MaterialDatePicker<S> extends DialogFragment {
         this.headerToggleButton.setChecked(this.inputMode != 0);
         ViewCompat.setAccessibilityDelegate(this.headerToggleButton, null);
         updateToggleContentDescription(this.headerToggleButton);
-        this.headerToggleButton.setOnClickListener(new d());
+        this.headerToggleButton.setOnClickListener(new ViewOnClickListenerC10900d());
     }
 
     public static boolean isFullscreen(@NonNull Context context) {
@@ -189,7 +194,7 @@ public final class MaterialDatePicker<S> extends DialogFragment {
     }
 
     public static boolean isNestedScrollable(@NonNull Context context) {
-        return readMaterialCalendarStyleBoolean(context, com.google.android.material.R.attr.nestedScrollable);
+        return readMaterialCalendarStyleBoolean(context, C10817R.attr.nestedScrollable);
     }
 
     @NonNull
@@ -207,7 +212,7 @@ public final class MaterialDatePicker<S> extends DialogFragment {
     }
 
     public static boolean readMaterialCalendarStyleBoolean(@NonNull Context context, int i) {
-        TypedArray typedArrayObtainStyledAttributes = context.obtainStyledAttributes(MaterialAttributes.resolveOrThrow(context, com.google.android.material.R.attr.materialCalendarStyle, MaterialCalendar.class.getCanonicalName()), new int[]{i});
+        TypedArray typedArrayObtainStyledAttributes = context.obtainStyledAttributes(MaterialAttributes.resolveOrThrow(context, C10817R.attr.materialCalendarStyle, MaterialCalendar.class.getCanonicalName()), new int[]{i});
         boolean z2 = typedArrayObtainStyledAttributes.getBoolean(0, false);
         typedArrayObtainStyledAttributes.recycle();
         return z2;
@@ -219,27 +224,27 @@ public final class MaterialDatePicker<S> extends DialogFragment {
         this.pickerFragment = this.headerToggleButton.isChecked() ? MaterialTextInputPicker.newInstance(this.dateSelector, themeResId, this.calendarConstraints) : this.calendar;
         updateHeader();
         FragmentTransaction fragmentTransactionBeginTransaction = getChildFragmentManager().beginTransaction();
-        fragmentTransactionBeginTransaction.replace(com.google.android.material.R.id.mtrl_calendar_frame, this.pickerFragment);
+        fragmentTransactionBeginTransaction.replace(C10817R.id.mtrl_calendar_frame, this.pickerFragment);
         fragmentTransactionBeginTransaction.commitNow();
-        this.pickerFragment.addOnSelectionChangedListener(new c());
+        this.pickerFragment.addOnSelectionChangedListener(new C10899c());
     }
 
     public static long thisMonthInUtcMilliseconds() {
-        return Month.i().o;
+        return Month.m9133i().f20989o;
     }
 
     public static long todayInUtcMilliseconds() {
-        return UtcDates.h().getTimeInMillis();
+        return C4401l.m6075h().getTimeInMillis();
     }
 
     private void updateHeader() {
         String headerText = getHeaderText();
-        this.headerSelectionText.setContentDescription(String.format(getString(com.google.android.material.R.string.mtrl_picker_announce_current_selection), headerText));
+        this.headerSelectionText.setContentDescription(String.format(getString(C10817R.string.mtrl_picker_announce_current_selection), headerText));
         this.headerSelectionText.setText(headerText);
     }
 
     private void updateToggleContentDescription(@NonNull CheckableImageButton checkableImageButton) {
-        this.headerToggleButton.setContentDescription(this.headerToggleButton.isChecked() ? checkableImageButton.getContext().getString(com.google.android.material.R.string.mtrl_picker_toggle_to_calendar_input_mode) : checkableImageButton.getContext().getString(com.google.android.material.R.string.mtrl_picker_toggle_to_text_input_mode));
+        this.headerToggleButton.setContentDescription(this.headerToggleButton.isChecked() ? checkableImageButton.getContext().getString(C10817R.string.mtrl_picker_toggle_to_calendar_input_mode) : checkableImageButton.getContext().getString(C10817R.string.mtrl_picker_toggle_to_text_input_mode));
     }
 
     public boolean addOnCancelListener(DialogInterface.OnCancelListener onCancelListener) {
@@ -312,8 +317,8 @@ public final class MaterialDatePicker<S> extends DialogFragment {
         Dialog dialog = new Dialog(requireContext(), getThemeResId(requireContext()));
         Context context = dialog.getContext();
         this.fullscreen = isFullscreen(context);
-        int iResolveOrThrow = MaterialAttributes.resolveOrThrow(context, com.google.android.material.R.attr.colorSurface, MaterialDatePicker.class.getCanonicalName());
-        MaterialShapeDrawable materialShapeDrawable = new MaterialShapeDrawable(context, null, com.google.android.material.R.attr.materialCalendarStyle, com.google.android.material.R.style.Widget_MaterialComponents_MaterialCalendar);
+        int iResolveOrThrow = MaterialAttributes.resolveOrThrow(context, C10817R.attr.colorSurface, MaterialDatePicker.class.getCanonicalName());
+        MaterialShapeDrawable materialShapeDrawable = new MaterialShapeDrawable(context, null, C10817R.attr.materialCalendarStyle, C10817R.style.Widget_MaterialComponents_MaterialCalendar);
         this.background = materialShapeDrawable;
         materialShapeDrawable.initializeElevationOverlay(context);
         this.background.setFillColor(ColorStateList.valueOf(iResolveOrThrow));
@@ -324,21 +329,21 @@ public final class MaterialDatePicker<S> extends DialogFragment {
     @Override // androidx.fragment.app.Fragment
     @NonNull
     public final View onCreateView(@NonNull LayoutInflater layoutInflater, @Nullable ViewGroup viewGroup, @Nullable Bundle bundle) {
-        View viewInflate = layoutInflater.inflate(this.fullscreen ? com.google.android.material.R.layout.mtrl_picker_fullscreen : com.google.android.material.R.layout.mtrl_picker_dialog, viewGroup);
+        View viewInflate = layoutInflater.inflate(this.fullscreen ? C10817R.layout.mtrl_picker_fullscreen : C10817R.layout.mtrl_picker_dialog, viewGroup);
         Context context = viewInflate.getContext();
         if (this.fullscreen) {
-            viewInflate.findViewById(com.google.android.material.R.id.mtrl_calendar_frame).setLayoutParams(new LinearLayout.LayoutParams(getPaddedPickerWidth(context), -2));
+            viewInflate.findViewById(C10817R.id.mtrl_calendar_frame).setLayoutParams(new LinearLayout.LayoutParams(getPaddedPickerWidth(context), -2));
         } else {
-            View viewFindViewById = viewInflate.findViewById(com.google.android.material.R.id.mtrl_calendar_main_pane);
-            View viewFindViewById2 = viewInflate.findViewById(com.google.android.material.R.id.mtrl_calendar_frame);
+            View viewFindViewById = viewInflate.findViewById(C10817R.id.mtrl_calendar_main_pane);
+            View viewFindViewById2 = viewInflate.findViewById(C10817R.id.mtrl_calendar_frame);
             viewFindViewById.setLayoutParams(new LinearLayout.LayoutParams(getPaddedPickerWidth(context), -1));
             viewFindViewById2.setMinimumHeight(getDialogPickerHeight(requireContext()));
         }
-        TextView textView = (TextView) viewInflate.findViewById(com.google.android.material.R.id.mtrl_picker_header_selection_text);
+        TextView textView = (TextView) viewInflate.findViewById(C10817R.id.mtrl_picker_header_selection_text);
         this.headerSelectionText = textView;
         ViewCompat.setAccessibilityLiveRegion(textView, 1);
-        this.headerToggleButton = (CheckableImageButton) viewInflate.findViewById(com.google.android.material.R.id.mtrl_picker_header_toggle);
-        TextView textView2 = (TextView) viewInflate.findViewById(com.google.android.material.R.id.mtrl_picker_title_text);
+        this.headerToggleButton = (CheckableImageButton) viewInflate.findViewById(C10817R.id.mtrl_picker_header_toggle);
+        TextView textView2 = (TextView) viewInflate.findViewById(C10817R.id.mtrl_picker_title_text);
         CharSequence charSequence = this.titleText;
         if (charSequence != null) {
             textView2.setText(charSequence);
@@ -346,17 +351,17 @@ public final class MaterialDatePicker<S> extends DialogFragment {
             textView2.setText(this.titleTextResId);
         }
         initHeaderToggle(context);
-        this.confirmButton = (Button) viewInflate.findViewById(com.google.android.material.R.id.confirm_button);
+        this.confirmButton = (Button) viewInflate.findViewById(C10817R.id.confirm_button);
         if (this.dateSelector.isSelectionComplete()) {
             this.confirmButton.setEnabled(true);
         } else {
             this.confirmButton.setEnabled(false);
         }
         this.confirmButton.setTag(CONFIRM_BUTTON_TAG);
-        this.confirmButton.setOnClickListener(new a());
-        Button button = (Button) viewInflate.findViewById(com.google.android.material.R.id.cancel_button);
+        this.confirmButton.setOnClickListener(new ViewOnClickListenerC10897a());
+        Button button = (Button) viewInflate.findViewById(C10817R.id.cancel_button);
         button.setTag(CANCEL_BUTTON_TAG);
-        button.setOnClickListener(new b());
+        button.setOnClickListener(new ViewOnClickListenerC10898b());
         return viewInflate;
     }
 
@@ -380,7 +385,7 @@ public final class MaterialDatePicker<S> extends DialogFragment {
         bundle.putParcelable(DATE_SELECTOR_KEY, this.dateSelector);
         CalendarConstraints.Builder builder = new CalendarConstraints.Builder(this.calendarConstraints);
         if (this.calendar.getCurrentMonth() != null) {
-            builder.setOpenAt(this.calendar.getCurrentMonth().o);
+            builder.setOpenAt(this.calendar.getCurrentMonth().f20989o);
         }
         bundle.putParcelable(CALENDAR_CONSTRAINTS_KEY, builder.build());
         bundle.putInt(TITLE_TEXT_RES_ID_KEY, this.titleTextResId);
@@ -396,7 +401,7 @@ public final class MaterialDatePicker<S> extends DialogFragment {
             window.setBackgroundDrawable(this.background);
         } else {
             window.setLayout(-2, -2);
-            int dimensionPixelOffset = getResources().getDimensionPixelOffset(com.google.android.material.R.dimen.mtrl_calendar_dialog_background_inset);
+            int dimensionPixelOffset = getResources().getDimensionPixelOffset(C10817R.dimen.mtrl_calendar_dialog_background_inset);
             Rect rect = new Rect(dimensionPixelOffset, dimensionPixelOffset, dimensionPixelOffset, dimensionPixelOffset);
             window.setBackgroundDrawable(new InsetDrawable((Drawable) this.background, dimensionPixelOffset, dimensionPixelOffset, dimensionPixelOffset, dimensionPixelOffset));
             window.getDecorView().setOnTouchListener(new InsetDialogOnTouchListener(requireDialog(), rect));
@@ -442,19 +447,19 @@ public final class MaterialDatePicker<S> extends DialogFragment {
         }
 
         private Month createDefaultOpenAt() {
-            long j = this.calendarConstraints.getStart().o;
-            long j2 = this.calendarConstraints.getEnd().o;
+            long j = this.calendarConstraints.getStart().f20989o;
+            long j2 = this.calendarConstraints.getEnd().f20989o;
             if (!this.dateSelector.getSelectedDays().isEmpty()) {
                 long jLongValue = this.dateSelector.getSelectedDays().iterator().next().longValue();
                 if (jLongValue >= j && jLongValue <= j2) {
-                    return Month.h(jLongValue);
+                    return Month.m9132h(jLongValue);
                 }
             }
             long jThisMonthInUtcMilliseconds = MaterialDatePicker.thisMonthInUtcMilliseconds();
             if (j <= jThisMonthInUtcMilliseconds && jThisMonthInUtcMilliseconds <= j2) {
                 j = jThisMonthInUtcMilliseconds;
             }
-            return Month.h(j);
+            return Month.m9132h(j);
         }
 
         @NonNull

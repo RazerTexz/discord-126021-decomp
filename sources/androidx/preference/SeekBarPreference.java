@@ -77,13 +77,13 @@ public class SeekBarPreference extends Preference {
                 return false;
             }
         };
-        TypedArray typedArrayObtainStyledAttributes = context.obtainStyledAttributes(attributeSet, R.styleable.SeekBarPreference, i, i2);
-        this.mMin = typedArrayObtainStyledAttributes.getInt(R.styleable.SeekBarPreference_min, 0);
-        setMax(typedArrayObtainStyledAttributes.getInt(R.styleable.SeekBarPreference_android_max, 100));
-        setSeekBarIncrement(typedArrayObtainStyledAttributes.getInt(R.styleable.SeekBarPreference_seekBarIncrement, 0));
-        this.mAdjustable = typedArrayObtainStyledAttributes.getBoolean(R.styleable.SeekBarPreference_adjustable, true);
-        this.mShowSeekBarValue = typedArrayObtainStyledAttributes.getBoolean(R.styleable.SeekBarPreference_showSeekBarValue, false);
-        this.mUpdatesContinuously = typedArrayObtainStyledAttributes.getBoolean(R.styleable.SeekBarPreference_updatesContinuously, false);
+        TypedArray typedArrayObtainStyledAttributes = context.obtainStyledAttributes(attributeSet, C0525R.styleable.SeekBarPreference, i, i2);
+        this.mMin = typedArrayObtainStyledAttributes.getInt(C0525R.styleable.SeekBarPreference_min, 0);
+        setMax(typedArrayObtainStyledAttributes.getInt(C0525R.styleable.SeekBarPreference_android_max, 100));
+        setSeekBarIncrement(typedArrayObtainStyledAttributes.getInt(C0525R.styleable.SeekBarPreference_seekBarIncrement, 0));
+        this.mAdjustable = typedArrayObtainStyledAttributes.getBoolean(C0525R.styleable.SeekBarPreference_adjustable, true);
+        this.mShowSeekBarValue = typedArrayObtainStyledAttributes.getBoolean(C0525R.styleable.SeekBarPreference_showSeekBarValue, false);
+        this.mUpdatesContinuously = typedArrayObtainStyledAttributes.getBoolean(C0525R.styleable.SeekBarPreference_updatesContinuously, false);
         typedArrayObtainStyledAttributes.recycle();
     }
 
@@ -138,8 +138,8 @@ public class SeekBarPreference extends Preference {
     public void onBindViewHolder(PreferenceViewHolder preferenceViewHolder) {
         super.onBindViewHolder(preferenceViewHolder);
         preferenceViewHolder.itemView.setOnKeyListener(this.mSeekBarKeyListener);
-        this.mSeekBar = (SeekBar) preferenceViewHolder.findViewById(R.id.seekbar);
-        TextView textView = (TextView) preferenceViewHolder.findViewById(R.id.seekbar_value);
+        this.mSeekBar = (SeekBar) preferenceViewHolder.findViewById(C0525R.id.seekbar);
+        TextView textView = (TextView) preferenceViewHolder.findViewById(C0525R.id.seekbar_value);
         this.mSeekBarValueTextView = textView;
         if (this.mShowSeekBarValue) {
             textView.setVisibility(0);
@@ -313,7 +313,7 @@ public class SeekBarPreference extends Preference {
     }
 
     public SeekBarPreference(Context context, AttributeSet attributeSet) {
-        this(context, attributeSet, R.attr.seekBarPreferenceStyle);
+        this(context, attributeSet, C0525R.attr.seekBarPreferenceStyle);
     }
 
     public SeekBarPreference(Context context) {

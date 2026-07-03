@@ -1,5 +1,6 @@
 package com.google.android.material.chip;
 
+import android.R;
 import android.annotation.SuppressLint;
 import android.annotation.TargetApi;
 import android.content.Context;
@@ -46,7 +47,7 @@ import androidx.core.view.PointerIconCompat;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.accessibility.AccessibilityNodeInfoCompat;
 import androidx.customview.widget.ExploreByTouchHelper;
-import com.google.android.material.R;
+import com.google.android.material.C10817R;
 import com.google.android.material.animation.MotionSpec;
 import com.google.android.material.chip.ChipDrawable;
 import com.google.android.material.internal.ThemeEnforcement;
@@ -103,14 +104,15 @@ public class Chip extends AppCompatCheckBox implements ChipDrawable.Delegate, Sh
     private RippleDrawable ripple;
 
     @NonNull
-    private final c touchHelper;
-    private static final int DEF_STYLE_RES = R.style.Widget_MaterialComponents_Chip_Action;
+    private final C10874c touchHelper;
+    private static final int DEF_STYLE_RES = C10817R.style.Widget_MaterialComponents_Chip_Action;
     private static final Rect EMPTY_BOUNDS = new Rect();
-    private static final int[] SELECTED_STATE = {android.R.attr.state_selected};
-    private static final int[] CHECKABLE_STATE_SET = {android.R.attr.state_checkable};
+    private static final int[] SELECTED_STATE = {R.attr.state_selected};
+    private static final int[] CHECKABLE_STATE_SET = {R.attr.state_checkable};
 
-    public class a extends TextAppearanceFontCallback {
-        public a() {
+    /* JADX INFO: renamed from: com.google.android.material.chip.Chip$a */
+    public class C10872a extends TextAppearanceFontCallback {
+        public C10872a() {
         }
 
         @Override // com.google.android.material.resources.TextAppearanceFontCallback
@@ -126,8 +128,9 @@ public class Chip extends AppCompatCheckBox implements ChipDrawable.Delegate, Sh
         }
     }
 
-    public class b extends ViewOutlineProvider {
-        public b() {
+    /* JADX INFO: renamed from: com.google.android.material.chip.Chip$b */
+    public class C10873b extends ViewOutlineProvider {
+        public C10873b() {
         }
 
         @Override // android.view.ViewOutlineProvider
@@ -141,8 +144,9 @@ public class Chip extends AppCompatCheckBox implements ChipDrawable.Delegate, Sh
         }
     }
 
-    public class c extends ExploreByTouchHelper {
-        public c(Chip chip) {
+    /* JADX INFO: renamed from: com.google.android.material.chip.Chip$c */
+    public class C10874c extends ExploreByTouchHelper {
+        public C10874c(Chip chip) {
             super(chip);
         }
 
@@ -203,7 +207,7 @@ public class Chip extends AppCompatCheckBox implements ChipDrawable.Delegate, Sh
             } else {
                 CharSequence text = Chip.this.getText();
                 Context context = Chip.this.getContext();
-                int i2 = R.string.mtrl_chip_close_icon_content_description;
+                int i2 = C10817R.string.mtrl_chip_close_icon_content_description;
                 Object[] objArr = new Object[1];
                 objArr[0] = TextUtils.isEmpty(text) ? "" : text;
                 accessibilityNodeInfoCompat.setContentDescription(context.getString(i2, objArr).trim());
@@ -331,14 +335,14 @@ public class Chip extends AppCompatCheckBox implements ChipDrawable.Delegate, Sh
     }
 
     private void initMinTouchTarget(Context context, @Nullable AttributeSet attributeSet, int i) {
-        TypedArray typedArrayObtainStyledAttributes = ThemeEnforcement.obtainStyledAttributes(context, attributeSet, R.styleable.Chip, i, DEF_STYLE_RES, new int[0]);
-        this.ensureMinTouchTargetSize = typedArrayObtainStyledAttributes.getBoolean(R.styleable.Chip_ensureMinTouchTargetSize, false);
-        this.minTouchTargetSize = (int) Math.ceil(typedArrayObtainStyledAttributes.getDimension(R.styleable.Chip_chipMinTouchTargetSize, (float) Math.ceil(ViewUtils.dpToPx(getContext(), 48))));
+        TypedArray typedArrayObtainStyledAttributes = ThemeEnforcement.obtainStyledAttributes(context, attributeSet, C10817R.styleable.Chip, i, DEF_STYLE_RES, new int[0]);
+        this.ensureMinTouchTargetSize = typedArrayObtainStyledAttributes.getBoolean(C10817R.styleable.Chip_ensureMinTouchTargetSize, false);
+        this.minTouchTargetSize = (int) Math.ceil(typedArrayObtainStyledAttributes.getDimension(C10817R.styleable.Chip_chipMinTouchTargetSize, (float) Math.ceil(ViewUtils.dpToPx(getContext(), 48))));
         typedArrayObtainStyledAttributes.recycle();
     }
 
     private void initOutlineProvider() {
-        setOutlineProvider(new b());
+        setOutlineProvider(new C10873b());
     }
 
     private void insetChipBackgroundDrawable(int i, int i2, int i3, int i4) {
@@ -1605,7 +1609,7 @@ public class Chip extends AppCompatCheckBox implements ChipDrawable.Delegate, Sh
     }
 
     public Chip(Context context, AttributeSet attributeSet) {
-        this(context, attributeSet, R.attr.chipStyle);
+        this(context, attributeSet, C10817R.attr.chipStyle);
     }
 
     public void setCloseIconVisible(boolean z2) {
@@ -1622,20 +1626,20 @@ public class Chip extends AppCompatCheckBox implements ChipDrawable.Delegate, Sh
         super(MaterialThemeOverlay.wrap(context, attributeSet, i, i2), attributeSet, i);
         this.rect = new Rect();
         this.rectF = new RectF();
-        this.fontCallback = new a();
+        this.fontCallback = new C10872a();
         Context context2 = getContext();
         validateAttributes(attributeSet);
         ChipDrawable chipDrawableCreateFromAttributes = ChipDrawable.createFromAttributes(context2, attributeSet, i, i2);
         initMinTouchTarget(context2, attributeSet, i);
         setChipDrawable(chipDrawableCreateFromAttributes);
         chipDrawableCreateFromAttributes.setElevation(ViewCompat.getElevation(this));
-        TypedArray typedArrayObtainStyledAttributes = ThemeEnforcement.obtainStyledAttributes(context2, attributeSet, R.styleable.Chip, i, i2, new int[0]);
+        TypedArray typedArrayObtainStyledAttributes = ThemeEnforcement.obtainStyledAttributes(context2, attributeSet, C10817R.styleable.Chip, i, i2, new int[0]);
         if (Build.VERSION.SDK_INT < 23) {
-            setTextColor(MaterialResources.getColorStateList(context2, typedArrayObtainStyledAttributes, R.styleable.Chip_android_textColor));
+            setTextColor(MaterialResources.getColorStateList(context2, typedArrayObtainStyledAttributes, C10817R.styleable.Chip_android_textColor));
         }
-        boolean zHasValue = typedArrayObtainStyledAttributes.hasValue(R.styleable.Chip_shapeAppearance);
+        boolean zHasValue = typedArrayObtainStyledAttributes.hasValue(C10817R.styleable.Chip_shapeAppearance);
         typedArrayObtainStyledAttributes.recycle();
-        this.touchHelper = new c(this);
+        this.touchHelper = new C10874c(this);
         updateAccessibilityDelegate();
         if (!zHasValue) {
             initOutlineProvider();

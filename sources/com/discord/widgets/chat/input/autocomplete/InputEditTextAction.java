@@ -1,13 +1,13 @@
 package com.discord.widgets.chat.input.autocomplete;
 
 import android.text.style.CharacterStyle;
-import b.d.b.a.outline;
-import d0.t.Maps6;
-import d0.z.d.Intrinsics3;
 import java.util.List;
 import java.util.Map;
 import kotlin.jvm.internal.DefaultConstructorMarker;
-import kotlin.ranges.Ranges2;
+import kotlin.ranges.IntRange;
+import p007b.p100d.p104b.p105a.C1643a;
+import p507d0.p580t.C12136h0;
+import p507d0.p592z.p594d.C12238m;
 
 /* JADX INFO: compiled from: InputEditTextAction.kt */
 /* JADX INFO: loaded from: classes2.dex */
@@ -21,7 +21,7 @@ public abstract class InputEditTextAction {
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
         public ClearSpans(CharSequence charSequence) {
             super(charSequence, null);
-            Intrinsics3.checkNotNullParameter(charSequence, "assumedInput");
+            C12238m.checkNotNullParameter(charSequence, "assumedInput");
             this.assumedInput = charSequence;
         }
 
@@ -37,13 +37,13 @@ public abstract class InputEditTextAction {
         }
 
         public final ClearSpans copy(CharSequence assumedInput) {
-            Intrinsics3.checkNotNullParameter(assumedInput, "assumedInput");
+            C12238m.checkNotNullParameter(assumedInput, "assumedInput");
             return new ClearSpans(assumedInput);
         }
 
         public boolean equals(Object other) {
             if (this != other) {
-                return (other instanceof ClearSpans) && Intrinsics3.areEqual(getAssumedInput(), ((ClearSpans) other).getAssumedInput());
+                return (other instanceof ClearSpans) && C12238m.areEqual(getAssumedInput(), ((ClearSpans) other).getAssumedInput());
             }
             return true;
         }
@@ -62,33 +62,33 @@ public abstract class InputEditTextAction {
         }
 
         public String toString() {
-            StringBuilder sbU = outline.U("ClearSpans(assumedInput=");
-            sbU.append(getAssumedInput());
-            sbU.append(")");
-            return sbU.toString();
+            StringBuilder sbM833U = C1643a.m833U("ClearSpans(assumedInput=");
+            sbM833U.append(getAssumedInput());
+            sbM833U.append(")");
+            return sbM833U.toString();
         }
     }
 
     /* JADX INFO: compiled from: InputEditTextAction.kt */
     public static final /* data */ class InsertText extends InputEditTextAction {
         private final CharSequence assumedInput;
-        private final Ranges2 insertRange;
+        private final IntRange insertRange;
         private final int selectionIndex;
         private final CharSequence toAppend;
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-        public InsertText(CharSequence charSequence, CharSequence charSequence2, Ranges2 ranges2, int i) {
+        public InsertText(CharSequence charSequence, CharSequence charSequence2, IntRange intRange, int i) {
             super(charSequence, null);
-            Intrinsics3.checkNotNullParameter(charSequence, "assumedInput");
-            Intrinsics3.checkNotNullParameter(charSequence2, "toAppend");
-            Intrinsics3.checkNotNullParameter(ranges2, "insertRange");
+            C12238m.checkNotNullParameter(charSequence, "assumedInput");
+            C12238m.checkNotNullParameter(charSequence2, "toAppend");
+            C12238m.checkNotNullParameter(intRange, "insertRange");
             this.assumedInput = charSequence;
             this.toAppend = charSequence2;
-            this.insertRange = ranges2;
+            this.insertRange = intRange;
             this.selectionIndex = i;
         }
 
-        public static /* synthetic */ InsertText copy$default(InsertText insertText, CharSequence charSequence, CharSequence charSequence2, Ranges2 ranges2, int i, int i2, Object obj) {
+        public static /* synthetic */ InsertText copy$default(InsertText insertText, CharSequence charSequence, CharSequence charSequence2, IntRange intRange, int i, int i2, Object obj) {
             if ((i2 & 1) != 0) {
                 charSequence = insertText.getAssumedInput();
             }
@@ -96,12 +96,12 @@ public abstract class InputEditTextAction {
                 charSequence2 = insertText.toAppend;
             }
             if ((i2 & 4) != 0) {
-                ranges2 = insertText.insertRange;
+                intRange = insertText.insertRange;
             }
             if ((i2 & 8) != 0) {
                 i = insertText.selectionIndex;
             }
-            return insertText.copy(charSequence, charSequence2, ranges2, i);
+            return insertText.copy(charSequence, charSequence2, intRange, i);
         }
 
         public final CharSequence component1() {
@@ -114,7 +114,7 @@ public abstract class InputEditTextAction {
         }
 
         /* JADX INFO: renamed from: component3, reason: from getter */
-        public final Ranges2 getInsertRange() {
+        public final IntRange getInsertRange() {
             return this.insertRange;
         }
 
@@ -123,10 +123,10 @@ public abstract class InputEditTextAction {
             return this.selectionIndex;
         }
 
-        public final InsertText copy(CharSequence assumedInput, CharSequence toAppend, Ranges2 insertRange, int selectionIndex) {
-            Intrinsics3.checkNotNullParameter(assumedInput, "assumedInput");
-            Intrinsics3.checkNotNullParameter(toAppend, "toAppend");
-            Intrinsics3.checkNotNullParameter(insertRange, "insertRange");
+        public final InsertText copy(CharSequence assumedInput, CharSequence toAppend, IntRange insertRange, int selectionIndex) {
+            C12238m.checkNotNullParameter(assumedInput, "assumedInput");
+            C12238m.checkNotNullParameter(toAppend, "toAppend");
+            C12238m.checkNotNullParameter(insertRange, "insertRange");
             return new InsertText(assumedInput, toAppend, insertRange, selectionIndex);
         }
 
@@ -138,7 +138,7 @@ public abstract class InputEditTextAction {
                 return false;
             }
             InsertText insertText = (InsertText) other;
-            return Intrinsics3.areEqual(getAssumedInput(), insertText.getAssumedInput()) && Intrinsics3.areEqual(this.toAppend, insertText.toAppend) && Intrinsics3.areEqual(this.insertRange, insertText.insertRange) && this.selectionIndex == insertText.selectionIndex;
+            return C12238m.areEqual(getAssumedInput(), insertText.getAssumedInput()) && C12238m.areEqual(this.toAppend, insertText.toAppend) && C12238m.areEqual(this.insertRange, insertText.insertRange) && this.selectionIndex == insertText.selectionIndex;
         }
 
         @Override // com.discord.widgets.chat.input.autocomplete.InputEditTextAction
@@ -146,7 +146,7 @@ public abstract class InputEditTextAction {
             return this.assumedInput;
         }
 
-        public final Ranges2 getInsertRange() {
+        public final IntRange getInsertRange() {
             return this.insertRange;
         }
 
@@ -163,19 +163,19 @@ public abstract class InputEditTextAction {
             int iHashCode = (assumedInput != null ? assumedInput.hashCode() : 0) * 31;
             CharSequence charSequence = this.toAppend;
             int iHashCode2 = (iHashCode + (charSequence != null ? charSequence.hashCode() : 0)) * 31;
-            Ranges2 ranges2 = this.insertRange;
-            return ((iHashCode2 + (ranges2 != null ? ranges2.hashCode() : 0)) * 31) + this.selectionIndex;
+            IntRange intRange = this.insertRange;
+            return ((iHashCode2 + (intRange != null ? intRange.hashCode() : 0)) * 31) + this.selectionIndex;
         }
 
         public String toString() {
-            StringBuilder sbU = outline.U("InsertText(assumedInput=");
-            sbU.append(getAssumedInput());
-            sbU.append(", toAppend=");
-            sbU.append(this.toAppend);
-            sbU.append(", insertRange=");
-            sbU.append(this.insertRange);
-            sbU.append(", selectionIndex=");
-            return outline.B(sbU, this.selectionIndex, ")");
+            StringBuilder sbM833U = C1643a.m833U("InsertText(assumedInput=");
+            sbM833U.append(getAssumedInput());
+            sbM833U.append(", toAppend=");
+            sbM833U.append(this.toAppend);
+            sbM833U.append(", insertRange=");
+            sbM833U.append(this.insertRange);
+            sbM833U.append(", selectionIndex=");
+            return C1643a.m814B(sbM833U, this.selectionIndex, ")");
         }
     }
 
@@ -186,7 +186,7 @@ public abstract class InputEditTextAction {
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
         public None(CharSequence charSequence) {
             super(charSequence, null);
-            Intrinsics3.checkNotNullParameter(charSequence, "assumedInput");
+            C12238m.checkNotNullParameter(charSequence, "assumedInput");
             this.assumedInput = charSequence;
         }
 
@@ -202,13 +202,13 @@ public abstract class InputEditTextAction {
         }
 
         public final None copy(CharSequence assumedInput) {
-            Intrinsics3.checkNotNullParameter(assumedInput, "assumedInput");
+            C12238m.checkNotNullParameter(assumedInput, "assumedInput");
             return new None(assumedInput);
         }
 
         public boolean equals(Object other) {
             if (this != other) {
-                return (other instanceof None) && Intrinsics3.areEqual(getAssumedInput(), ((None) other).getAssumedInput());
+                return (other instanceof None) && C12238m.areEqual(getAssumedInput(), ((None) other).getAssumedInput());
             }
             return true;
         }
@@ -227,40 +227,40 @@ public abstract class InputEditTextAction {
         }
 
         public String toString() {
-            StringBuilder sbU = outline.U("None(assumedInput=");
-            sbU.append(getAssumedInput());
-            sbU.append(")");
-            return sbU.toString();
+            StringBuilder sbM833U = C1643a.m833U("None(assumedInput=");
+            sbM833U.append(getAssumedInput());
+            sbM833U.append(")");
+            return sbM833U.toString();
         }
     }
 
     /* JADX INFO: compiled from: InputEditTextAction.kt */
     public static final /* data */ class RemoveText extends InputEditTextAction {
         private final CharSequence assumedInput;
-        private final Ranges2 range;
+        private final IntRange range;
         private final int selectionIndex;
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-        public RemoveText(CharSequence charSequence, Ranges2 ranges2, int i) {
+        public RemoveText(CharSequence charSequence, IntRange intRange, int i) {
             super(charSequence, null);
-            Intrinsics3.checkNotNullParameter(charSequence, "assumedInput");
-            Intrinsics3.checkNotNullParameter(ranges2, "range");
+            C12238m.checkNotNullParameter(charSequence, "assumedInput");
+            C12238m.checkNotNullParameter(intRange, "range");
             this.assumedInput = charSequence;
-            this.range = ranges2;
+            this.range = intRange;
             this.selectionIndex = i;
         }
 
-        public static /* synthetic */ RemoveText copy$default(RemoveText removeText, CharSequence charSequence, Ranges2 ranges2, int i, int i2, Object obj) {
+        public static /* synthetic */ RemoveText copy$default(RemoveText removeText, CharSequence charSequence, IntRange intRange, int i, int i2, Object obj) {
             if ((i2 & 1) != 0) {
                 charSequence = removeText.getAssumedInput();
             }
             if ((i2 & 2) != 0) {
-                ranges2 = removeText.range;
+                intRange = removeText.range;
             }
             if ((i2 & 4) != 0) {
                 i = removeText.selectionIndex;
             }
-            return removeText.copy(charSequence, ranges2, i);
+            return removeText.copy(charSequence, intRange, i);
         }
 
         public final CharSequence component1() {
@@ -268,7 +268,7 @@ public abstract class InputEditTextAction {
         }
 
         /* JADX INFO: renamed from: component2, reason: from getter */
-        public final Ranges2 getRange() {
+        public final IntRange getRange() {
             return this.range;
         }
 
@@ -277,9 +277,9 @@ public abstract class InputEditTextAction {
             return this.selectionIndex;
         }
 
-        public final RemoveText copy(CharSequence assumedInput, Ranges2 range, int selectionIndex) {
-            Intrinsics3.checkNotNullParameter(assumedInput, "assumedInput");
-            Intrinsics3.checkNotNullParameter(range, "range");
+        public final RemoveText copy(CharSequence assumedInput, IntRange range, int selectionIndex) {
+            C12238m.checkNotNullParameter(assumedInput, "assumedInput");
+            C12238m.checkNotNullParameter(range, "range");
             return new RemoveText(assumedInput, range, selectionIndex);
         }
 
@@ -291,7 +291,7 @@ public abstract class InputEditTextAction {
                 return false;
             }
             RemoveText removeText = (RemoveText) other;
-            return Intrinsics3.areEqual(getAssumedInput(), removeText.getAssumedInput()) && Intrinsics3.areEqual(this.range, removeText.range) && this.selectionIndex == removeText.selectionIndex;
+            return C12238m.areEqual(getAssumedInput(), removeText.getAssumedInput()) && C12238m.areEqual(this.range, removeText.range) && this.selectionIndex == removeText.selectionIndex;
         }
 
         @Override // com.discord.widgets.chat.input.autocomplete.InputEditTextAction
@@ -299,7 +299,7 @@ public abstract class InputEditTextAction {
             return this.assumedInput;
         }
 
-        public final Ranges2 getRange() {
+        public final IntRange getRange() {
             return this.range;
         }
 
@@ -310,27 +310,27 @@ public abstract class InputEditTextAction {
         public int hashCode() {
             CharSequence assumedInput = getAssumedInput();
             int iHashCode = (assumedInput != null ? assumedInput.hashCode() : 0) * 31;
-            Ranges2 ranges2 = this.range;
-            return ((iHashCode + (ranges2 != null ? ranges2.hashCode() : 0)) * 31) + this.selectionIndex;
+            IntRange intRange = this.range;
+            return ((iHashCode + (intRange != null ? intRange.hashCode() : 0)) * 31) + this.selectionIndex;
         }
 
         public String toString() {
-            StringBuilder sbU = outline.U("RemoveText(assumedInput=");
-            sbU.append(getAssumedInput());
-            sbU.append(", range=");
-            sbU.append(this.range);
-            sbU.append(", selectionIndex=");
-            return outline.B(sbU, this.selectionIndex, ")");
+            StringBuilder sbM833U = C1643a.m833U("RemoveText(assumedInput=");
+            sbM833U.append(getAssumedInput());
+            sbM833U.append(", range=");
+            sbM833U.append(this.range);
+            sbM833U.append(", selectionIndex=");
+            return C1643a.m814B(sbM833U, this.selectionIndex, ")");
         }
     }
 
     /* JADX INFO: compiled from: InputEditTextAction.kt */
     public static final /* data */ class ReplaceCharacterStyleSpans extends InputEditTextAction {
         private final CharSequence assumedInput;
-        private final Map<Ranges2, List<CharacterStyle>> spans;
+        private final Map<IntRange, List<CharacterStyle>> spans;
 
         public /* synthetic */ ReplaceCharacterStyleSpans(CharSequence charSequence, Map map, int i, DefaultConstructorMarker defaultConstructorMarker) {
-            this(charSequence, (i & 2) != 0 ? Maps6.emptyMap() : map);
+            this(charSequence, (i & 2) != 0 ? C12136h0.emptyMap() : map);
         }
 
         /* JADX WARN: Multi-variable type inference failed */
@@ -348,13 +348,13 @@ public abstract class InputEditTextAction {
             return getAssumedInput();
         }
 
-        public final Map<Ranges2, List<CharacterStyle>> component2() {
+        public final Map<IntRange, List<CharacterStyle>> component2() {
             return this.spans;
         }
 
-        public final ReplaceCharacterStyleSpans copy(CharSequence assumedInput, Map<Ranges2, ? extends List<? extends CharacterStyle>> spans) {
-            Intrinsics3.checkNotNullParameter(assumedInput, "assumedInput");
-            Intrinsics3.checkNotNullParameter(spans, "spans");
+        public final ReplaceCharacterStyleSpans copy(CharSequence assumedInput, Map<IntRange, ? extends List<? extends CharacterStyle>> spans) {
+            C12238m.checkNotNullParameter(assumedInput, "assumedInput");
+            C12238m.checkNotNullParameter(spans, "spans");
             return new ReplaceCharacterStyleSpans(assumedInput, spans);
         }
 
@@ -366,7 +366,7 @@ public abstract class InputEditTextAction {
                 return false;
             }
             ReplaceCharacterStyleSpans replaceCharacterStyleSpans = (ReplaceCharacterStyleSpans) other;
-            return Intrinsics3.areEqual(getAssumedInput(), replaceCharacterStyleSpans.getAssumedInput()) && Intrinsics3.areEqual(this.spans, replaceCharacterStyleSpans.spans);
+            return C12238m.areEqual(getAssumedInput(), replaceCharacterStyleSpans.getAssumedInput()) && C12238m.areEqual(this.spans, replaceCharacterStyleSpans.spans);
         }
 
         @Override // com.discord.widgets.chat.input.autocomplete.InputEditTextAction
@@ -374,30 +374,30 @@ public abstract class InputEditTextAction {
             return this.assumedInput;
         }
 
-        public final Map<Ranges2, List<CharacterStyle>> getSpans() {
+        public final Map<IntRange, List<CharacterStyle>> getSpans() {
             return this.spans;
         }
 
         public int hashCode() {
             CharSequence assumedInput = getAssumedInput();
             int iHashCode = (assumedInput != null ? assumedInput.hashCode() : 0) * 31;
-            Map<Ranges2, List<CharacterStyle>> map = this.spans;
+            Map<IntRange, List<CharacterStyle>> map = this.spans;
             return iHashCode + (map != null ? map.hashCode() : 0);
         }
 
         public String toString() {
-            StringBuilder sbU = outline.U("ReplaceCharacterStyleSpans(assumedInput=");
-            sbU.append(getAssumedInput());
-            sbU.append(", spans=");
-            return outline.M(sbU, this.spans, ")");
+            StringBuilder sbM833U = C1643a.m833U("ReplaceCharacterStyleSpans(assumedInput=");
+            sbM833U.append(getAssumedInput());
+            sbM833U.append(", spans=");
+            return C1643a.m825M(sbM833U, this.spans, ")");
         }
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
         /* JADX WARN: Multi-variable type inference failed */
-        public ReplaceCharacterStyleSpans(CharSequence charSequence, Map<Ranges2, ? extends List<? extends CharacterStyle>> map) {
+        public ReplaceCharacterStyleSpans(CharSequence charSequence, Map<IntRange, ? extends List<? extends CharacterStyle>> map) {
             super(charSequence, null);
-            Intrinsics3.checkNotNullParameter(charSequence, "assumedInput");
-            Intrinsics3.checkNotNullParameter(map, "spans");
+            C12238m.checkNotNullParameter(charSequence, "assumedInput");
+            C12238m.checkNotNullParameter(map, "spans");
             this.assumedInput = charSequence;
             this.spans = map;
         }
@@ -406,10 +406,10 @@ public abstract class InputEditTextAction {
     /* JADX INFO: compiled from: InputEditTextAction.kt */
     public static final /* data */ class ReplacePillSpans extends InputEditTextAction {
         private final CharSequence assumedInput;
-        private final Map<Ranges2, List<CharacterStyle>> spans;
+        private final Map<IntRange, List<CharacterStyle>> spans;
 
         public /* synthetic */ ReplacePillSpans(CharSequence charSequence, Map map, int i, DefaultConstructorMarker defaultConstructorMarker) {
-            this(charSequence, (i & 2) != 0 ? Maps6.emptyMap() : map);
+            this(charSequence, (i & 2) != 0 ? C12136h0.emptyMap() : map);
         }
 
         /* JADX WARN: Multi-variable type inference failed */
@@ -427,13 +427,13 @@ public abstract class InputEditTextAction {
             return getAssumedInput();
         }
 
-        public final Map<Ranges2, List<CharacterStyle>> component2() {
+        public final Map<IntRange, List<CharacterStyle>> component2() {
             return this.spans;
         }
 
-        public final ReplacePillSpans copy(CharSequence assumedInput, Map<Ranges2, ? extends List<? extends CharacterStyle>> spans) {
-            Intrinsics3.checkNotNullParameter(assumedInput, "assumedInput");
-            Intrinsics3.checkNotNullParameter(spans, "spans");
+        public final ReplacePillSpans copy(CharSequence assumedInput, Map<IntRange, ? extends List<? extends CharacterStyle>> spans) {
+            C12238m.checkNotNullParameter(assumedInput, "assumedInput");
+            C12238m.checkNotNullParameter(spans, "spans");
             return new ReplacePillSpans(assumedInput, spans);
         }
 
@@ -445,7 +445,7 @@ public abstract class InputEditTextAction {
                 return false;
             }
             ReplacePillSpans replacePillSpans = (ReplacePillSpans) other;
-            return Intrinsics3.areEqual(getAssumedInput(), replacePillSpans.getAssumedInput()) && Intrinsics3.areEqual(this.spans, replacePillSpans.spans);
+            return C12238m.areEqual(getAssumedInput(), replacePillSpans.getAssumedInput()) && C12238m.areEqual(this.spans, replacePillSpans.spans);
         }
 
         @Override // com.discord.widgets.chat.input.autocomplete.InputEditTextAction
@@ -453,30 +453,30 @@ public abstract class InputEditTextAction {
             return this.assumedInput;
         }
 
-        public final Map<Ranges2, List<CharacterStyle>> getSpans() {
+        public final Map<IntRange, List<CharacterStyle>> getSpans() {
             return this.spans;
         }
 
         public int hashCode() {
             CharSequence assumedInput = getAssumedInput();
             int iHashCode = (assumedInput != null ? assumedInput.hashCode() : 0) * 31;
-            Map<Ranges2, List<CharacterStyle>> map = this.spans;
+            Map<IntRange, List<CharacterStyle>> map = this.spans;
             return iHashCode + (map != null ? map.hashCode() : 0);
         }
 
         public String toString() {
-            StringBuilder sbU = outline.U("ReplacePillSpans(assumedInput=");
-            sbU.append(getAssumedInput());
-            sbU.append(", spans=");
-            return outline.M(sbU, this.spans, ")");
+            StringBuilder sbM833U = C1643a.m833U("ReplacePillSpans(assumedInput=");
+            sbM833U.append(getAssumedInput());
+            sbM833U.append(", spans=");
+            return C1643a.m825M(sbM833U, this.spans, ")");
         }
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
         /* JADX WARN: Multi-variable type inference failed */
-        public ReplacePillSpans(CharSequence charSequence, Map<Ranges2, ? extends List<? extends CharacterStyle>> map) {
+        public ReplacePillSpans(CharSequence charSequence, Map<IntRange, ? extends List<? extends CharacterStyle>> map) {
             super(charSequence, null);
-            Intrinsics3.checkNotNullParameter(charSequence, "assumedInput");
-            Intrinsics3.checkNotNullParameter(map, "spans");
+            C12238m.checkNotNullParameter(charSequence, "assumedInput");
+            C12238m.checkNotNullParameter(map, "spans");
             this.assumedInput = charSequence;
             this.spans = map;
         }
@@ -520,8 +520,8 @@ public abstract class InputEditTextAction {
         }
 
         public final ReplaceText copy(CharSequence assumedInput, CharSequence newText, int selectionIndex) {
-            Intrinsics3.checkNotNullParameter(assumedInput, "assumedInput");
-            Intrinsics3.checkNotNullParameter(newText, "newText");
+            C12238m.checkNotNullParameter(assumedInput, "assumedInput");
+            C12238m.checkNotNullParameter(newText, "newText");
             return new ReplaceText(assumedInput, newText, selectionIndex);
         }
 
@@ -533,7 +533,7 @@ public abstract class InputEditTextAction {
                 return false;
             }
             ReplaceText replaceText = (ReplaceText) other;
-            return Intrinsics3.areEqual(getAssumedInput(), replaceText.getAssumedInput()) && Intrinsics3.areEqual(this.newText, replaceText.newText) && this.selectionIndex == replaceText.selectionIndex;
+            return C12238m.areEqual(getAssumedInput(), replaceText.getAssumedInput()) && C12238m.areEqual(this.newText, replaceText.newText) && this.selectionIndex == replaceText.selectionIndex;
         }
 
         @Override // com.discord.widgets.chat.input.autocomplete.InputEditTextAction
@@ -557,19 +557,19 @@ public abstract class InputEditTextAction {
         }
 
         public String toString() {
-            StringBuilder sbU = outline.U("ReplaceText(assumedInput=");
-            sbU.append(getAssumedInput());
-            sbU.append(", newText=");
-            sbU.append(this.newText);
-            sbU.append(", selectionIndex=");
-            return outline.B(sbU, this.selectionIndex, ")");
+            StringBuilder sbM833U = C1643a.m833U("ReplaceText(assumedInput=");
+            sbM833U.append(getAssumedInput());
+            sbM833U.append(", newText=");
+            sbM833U.append(this.newText);
+            sbM833U.append(", selectionIndex=");
+            return C1643a.m814B(sbM833U, this.selectionIndex, ")");
         }
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
         public ReplaceText(CharSequence charSequence, CharSequence charSequence2, int i) {
             super(charSequence, null);
-            Intrinsics3.checkNotNullParameter(charSequence, "assumedInput");
-            Intrinsics3.checkNotNullParameter(charSequence2, "newText");
+            C12238m.checkNotNullParameter(charSequence, "assumedInput");
+            C12238m.checkNotNullParameter(charSequence2, "newText");
             this.assumedInput = charSequence;
             this.newText = charSequence2;
             this.selectionIndex = i;
@@ -579,25 +579,25 @@ public abstract class InputEditTextAction {
     /* JADX INFO: compiled from: InputEditTextAction.kt */
     public static final /* data */ class SelectText extends InputEditTextAction {
         private final CharSequence assumedInput;
-        private final Ranges2 selection;
+        private final IntRange selection;
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-        public SelectText(CharSequence charSequence, Ranges2 ranges2) {
+        public SelectText(CharSequence charSequence, IntRange intRange) {
             super(charSequence, null);
-            Intrinsics3.checkNotNullParameter(charSequence, "assumedInput");
-            Intrinsics3.checkNotNullParameter(ranges2, "selection");
+            C12238m.checkNotNullParameter(charSequence, "assumedInput");
+            C12238m.checkNotNullParameter(intRange, "selection");
             this.assumedInput = charSequence;
-            this.selection = ranges2;
+            this.selection = intRange;
         }
 
-        public static /* synthetic */ SelectText copy$default(SelectText selectText, CharSequence charSequence, Ranges2 ranges2, int i, Object obj) {
+        public static /* synthetic */ SelectText copy$default(SelectText selectText, CharSequence charSequence, IntRange intRange, int i, Object obj) {
             if ((i & 1) != 0) {
                 charSequence = selectText.getAssumedInput();
             }
             if ((i & 2) != 0) {
-                ranges2 = selectText.selection;
+                intRange = selectText.selection;
             }
-            return selectText.copy(charSequence, ranges2);
+            return selectText.copy(charSequence, intRange);
         }
 
         public final CharSequence component1() {
@@ -605,13 +605,13 @@ public abstract class InputEditTextAction {
         }
 
         /* JADX INFO: renamed from: component2, reason: from getter */
-        public final Ranges2 getSelection() {
+        public final IntRange getSelection() {
             return this.selection;
         }
 
-        public final SelectText copy(CharSequence assumedInput, Ranges2 selection) {
-            Intrinsics3.checkNotNullParameter(assumedInput, "assumedInput");
-            Intrinsics3.checkNotNullParameter(selection, "selection");
+        public final SelectText copy(CharSequence assumedInput, IntRange selection) {
+            C12238m.checkNotNullParameter(assumedInput, "assumedInput");
+            C12238m.checkNotNullParameter(selection, "selection");
             return new SelectText(assumedInput, selection);
         }
 
@@ -623,7 +623,7 @@ public abstract class InputEditTextAction {
                 return false;
             }
             SelectText selectText = (SelectText) other;
-            return Intrinsics3.areEqual(getAssumedInput(), selectText.getAssumedInput()) && Intrinsics3.areEqual(this.selection, selectText.selection);
+            return C12238m.areEqual(getAssumedInput(), selectText.getAssumedInput()) && C12238m.areEqual(this.selection, selectText.selection);
         }
 
         @Override // com.discord.widgets.chat.input.autocomplete.InputEditTextAction
@@ -631,24 +631,24 @@ public abstract class InputEditTextAction {
             return this.assumedInput;
         }
 
-        public final Ranges2 getSelection() {
+        public final IntRange getSelection() {
             return this.selection;
         }
 
         public int hashCode() {
             CharSequence assumedInput = getAssumedInput();
             int iHashCode = (assumedInput != null ? assumedInput.hashCode() : 0) * 31;
-            Ranges2 ranges2 = this.selection;
-            return iHashCode + (ranges2 != null ? ranges2.hashCode() : 0);
+            IntRange intRange = this.selection;
+            return iHashCode + (intRange != null ? intRange.hashCode() : 0);
         }
 
         public String toString() {
-            StringBuilder sbU = outline.U("SelectText(assumedInput=");
-            sbU.append(getAssumedInput());
-            sbU.append(", selection=");
-            sbU.append(this.selection);
-            sbU.append(")");
-            return sbU.toString();
+            StringBuilder sbM833U = C1643a.m833U("SelectText(assumedInput=");
+            sbM833U.append(getAssumedInput());
+            sbM833U.append(", selection=");
+            sbM833U.append(this.selection);
+            sbM833U.append(")");
+            return sbM833U.toString();
         }
     }
 

@@ -1,14 +1,14 @@
 package com.discord.analytics.generated.events;
 
-import b.d.b.a.outline;
 import com.discord.analytics.generated.traits.TrackBase;
-import com.discord.analytics.generated.traits.TrackBase2;
+import com.discord.analytics.generated.traits.TrackBaseReceiver;
 import com.discord.api.science.AnalyticsSchema;
-import d0.z.d.Intrinsics3;
+import p007b.p100d.p104b.p105a.C1643a;
+import p507d0.p592z.p594d.C12238m;
 
 /* JADX INFO: compiled from: TrackAppNoticeClosed.kt */
 /* JADX INFO: loaded from: classes.dex */
-public final /* data */ class TrackAppNoticeClosed implements AnalyticsSchema, TrackBase2 {
+public final /* data */ class TrackAppNoticeClosed implements AnalyticsSchema, TrackBaseReceiver {
     private TrackBase trackBase;
     private final CharSequence noticeType = null;
     private final CharSequence action = null;
@@ -30,7 +30,7 @@ public final /* data */ class TrackAppNoticeClosed implements AnalyticsSchema, T
             return false;
         }
         TrackAppNoticeClosed trackAppNoticeClosed = (TrackAppNoticeClosed) other;
-        return Intrinsics3.areEqual(this.noticeType, trackAppNoticeClosed.noticeType) && Intrinsics3.areEqual(this.action, trackAppNoticeClosed.action) && Intrinsics3.areEqual(this.surveyId, trackAppNoticeClosed.surveyId) && Intrinsics3.areEqual(this.dismissed, trackAppNoticeClosed.dismissed);
+        return C12238m.areEqual(this.noticeType, trackAppNoticeClosed.noticeType) && C12238m.areEqual(this.action, trackAppNoticeClosed.action) && C12238m.areEqual(this.surveyId, trackAppNoticeClosed.surveyId) && C12238m.areEqual(this.dismissed, trackAppNoticeClosed.dismissed);
     }
 
     public int hashCode() {
@@ -45,13 +45,13 @@ public final /* data */ class TrackAppNoticeClosed implements AnalyticsSchema, T
     }
 
     public String toString() {
-        StringBuilder sbU = outline.U("TrackAppNoticeClosed(noticeType=");
-        sbU.append(this.noticeType);
-        sbU.append(", action=");
-        sbU.append(this.action);
-        sbU.append(", surveyId=");
-        sbU.append(this.surveyId);
-        sbU.append(", dismissed=");
-        return outline.D(sbU, this.dismissed, ")");
+        StringBuilder sbM833U = C1643a.m833U("TrackAppNoticeClosed(noticeType=");
+        sbM833U.append(this.noticeType);
+        sbM833U.append(", action=");
+        sbM833U.append(this.action);
+        sbM833U.append(", surveyId=");
+        sbM833U.append(this.surveyId);
+        sbM833U.append(", dismissed=");
+        return C1643a.m816D(sbM833U, this.dismissed, ")");
     }
 }

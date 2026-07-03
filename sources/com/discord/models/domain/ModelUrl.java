@@ -1,6 +1,6 @@
 package com.discord.models.domain;
 
-import b.d.b.a.outline;
+import p007b.p100d.p104b.p105a.C1643a;
 
 /* JADX INFO: loaded from: classes.dex */
 public class ModelUrl {
@@ -40,9 +40,9 @@ public class ModelUrl {
     }
 
     public String toString() {
-        StringBuilder sbU = outline.U("ModelUrl(url=");
-        sbU.append(getUrl());
-        sbU.append(")");
-        return sbU.toString();
+        StringBuilder sbM833U = C1643a.m833U("ModelUrl(url=");
+        sbM833U.append(getUrl());
+        sbM833U.append(")");
+        return sbM833U.toString();
     }
 }

@@ -1,7 +1,7 @@
 package com.discord.models.domain;
 
 import com.discord.utilities.time.Clock;
-import d0.z.d.Intrinsics3;
+import p507d0.p592z.p594d.C12238m;
 
 /* JADX INFO: compiled from: NotificationSettingsModelUtils.kt */
 /* JADX INFO: loaded from: classes.dex */
@@ -13,7 +13,7 @@ public final class NotificationSettingsModelUtils {
 
     public static final boolean isMuted(boolean muted, ModelMuteConfig muteConfig, Clock clock) {
         Long endTimeMs;
-        Intrinsics3.checkNotNullParameter(clock, "clock");
+        C12238m.checkNotNullParameter(clock, "clock");
         return muted && !(muteConfig != null && (endTimeMs = muteConfig.getEndTimeMs()) != null && (endTimeMs.longValue() > clock.currentTimeMillis() ? 1 : (endTimeMs.longValue() == clock.currentTimeMillis() ? 0 : -1)) <= 0);
     }
 }

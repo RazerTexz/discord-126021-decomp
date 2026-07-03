@@ -7,7 +7,7 @@ import android.view.View;
 import android.view.ViewConfiguration;
 import android.widget.FrameLayout;
 import androidx.viewpager2.widget.ViewPager2;
-import d0.z.d.Intrinsics3;
+import p507d0.p592z.p594d.C12238m;
 
 /* JADX INFO: compiled from: NestedScrollableHost.kt */
 /* JADX INFO: loaded from: classes2.dex */
@@ -19,9 +19,9 @@ public final class NestedScrollableHost extends FrameLayout {
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public NestedScrollableHost(Context context) {
         super(context);
-        Intrinsics3.checkNotNullParameter(context, "context");
+        C12238m.checkNotNullParameter(context, "context");
         ViewConfiguration viewConfiguration = ViewConfiguration.get(getContext());
-        Intrinsics3.checkNotNullExpressionValue(viewConfiguration, "ViewConfiguration.get(context)");
+        C12238m.checkNotNullExpressionValue(viewConfiguration, "ViewConfiguration.get(context)");
         this.touchSlop = viewConfiguration.getScaledTouchSlop();
     }
 
@@ -106,7 +106,7 @@ public final class NestedScrollableHost extends FrameLayout {
 
     @Override // android.view.ViewGroup
     public boolean onInterceptTouchEvent(MotionEvent e) {
-        Intrinsics3.checkNotNullParameter(e, "e");
+        C12238m.checkNotNullParameter(e, "e");
         handleInterceptTouchEvent(e);
         return super.onInterceptTouchEvent(e);
     }
@@ -114,9 +114,9 @@ public final class NestedScrollableHost extends FrameLayout {
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public NestedScrollableHost(Context context, AttributeSet attributeSet) {
         super(context, attributeSet);
-        Intrinsics3.checkNotNullParameter(context, "context");
+        C12238m.checkNotNullParameter(context, "context");
         ViewConfiguration viewConfiguration = ViewConfiguration.get(getContext());
-        Intrinsics3.checkNotNullExpressionValue(viewConfiguration, "ViewConfiguration.get(context)");
+        C12238m.checkNotNullExpressionValue(viewConfiguration, "ViewConfiguration.get(context)");
         this.touchSlop = viewConfiguration.getScaledTouchSlop();
     }
 }

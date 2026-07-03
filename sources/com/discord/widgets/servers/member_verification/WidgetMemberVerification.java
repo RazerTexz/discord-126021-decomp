@@ -8,13 +8,7 @@ import androidx.core.widget.NestedScrollView;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentViewModelLazyKt;
 import androidx.recyclerview.widget.RecyclerView;
-import b.a.d.AppScreen2;
-import b.a.d.AppToast;
-import b.a.d.AppViewModelDelegates3;
-import b.a.d.AppViewModelDelegates5;
-import b.d.b.a.outline;
-import b.i.a.f.e.o.f;
-import com.discord.R;
+import com.discord.C5419R;
 import com.discord.api.guildjoinrequest.ApplicationStatus;
 import com.discord.app.AppFragment;
 import com.discord.databinding.WidgetMemberVerificationBinding;
@@ -25,9 +19,9 @@ import com.discord.utilities.dimmer.DimmerView;
 import com.discord.utilities.error.Error;
 import com.discord.utilities.icon.IconUtils;
 import com.discord.utilities.images.MGImages;
-import com.discord.utilities.rx.ObservableExtensionsKt;
+import com.discord.utilities.p501rx.ObservableExtensionsKt;
 import com.discord.utilities.viewbinding.FragmentViewBindingDelegate;
-import com.discord.utilities.viewbinding.FragmentViewBindingDelegate3;
+import com.discord.utilities.viewbinding.FragmentViewBindingDelegateKt;
 import com.discord.views.LoadingButton;
 import com.discord.views.MemberVerificationAvatarView;
 import com.discord.widgets.servers.member_verification.MemberVerificationPendingViewModel;
@@ -37,10 +31,6 @@ import com.discord.widgets.user.email.WidgetUserEmailVerify;
 import com.discord.widgets.user.phone.WidgetUserPhoneManage;
 import com.facebook.drawee.view.SimpleDraweeView;
 import com.google.gson.Gson;
-import d0.z.d.FunctionReferenceImpl;
-import d0.z.d.Intrinsics3;
-import d0.z.d.Lambda;
-import d0.z.d.Reflection2;
 import java.util.Objects;
 import kotlin.Lazy;
 import kotlin.NoWhenBranchMatchedException;
@@ -50,12 +40,22 @@ import kotlin.jvm.functions.Function1;
 import kotlin.jvm.functions.Function2;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.reflect.KProperty;
-import rx.Subscription;
+import p007b.p008a.p018d.C0865g0;
+import p007b.p008a.p018d.C0869i0;
+import p007b.p008a.p018d.C0870j;
+import p007b.p008a.p018d.C0876m;
+import p007b.p100d.p104b.p105a.C1643a;
+import p007b.p225i.p226a.p288f.p299e.p308o.C3404f;
+import p507d0.p592z.p594d.AbstractC12240o;
+import p507d0.p592z.p594d.C12216a0;
+import p507d0.p592z.p594d.C12236k;
+import p507d0.p592z.p594d.C12238m;
+import p658rx.Subscription;
 
 /* JADX INFO: compiled from: WidgetMemberVerification.kt */
 /* JADX INFO: loaded from: classes2.dex */
 public final class WidgetMemberVerification extends AppFragment {
-    public static final /* synthetic */ KProperty[] $$delegatedProperties = {outline.d0(WidgetMemberVerification.class, "binding", "getBinding()Lcom/discord/databinding/WidgetMemberVerificationBinding;", 0)};
+    public static final /* synthetic */ KProperty[] $$delegatedProperties = {C1643a.m846d0(WidgetMemberVerification.class, "binding", "getBinding()Lcom/discord/databinding/WidgetMemberVerificationBinding;", 0)};
 
     /* JADX INFO: renamed from: Companion, reason: from kotlin metadata */
     public static final Companion INSTANCE = new Companion(null);
@@ -83,15 +83,15 @@ public final class WidgetMemberVerification extends AppFragment {
         }
 
         public final void create(Context context, long guildId, String location, ModelInvite invite) {
-            Intrinsics3.checkNotNullParameter(context, "context");
-            Intrinsics3.checkNotNullParameter(location, ModelAuditLogEntry.CHANGE_KEY_LOCATION);
+            C12238m.checkNotNullParameter(context, "context");
+            C12238m.checkNotNullParameter(location, ModelAuditLogEntry.CHANGE_KEY_LOCATION);
             Intent intent = new Intent();
             intent.putExtra("INTENT_EXTRA_GUILD_ID", guildId);
             intent.putExtra(WidgetMemberVerification.INTENT_EXTRA_LOCATION, location);
             if ((invite != null ? invite.guild : null) != null) {
-                intent.putExtra(WidgetMemberVerification.INTENT_EXTRA_INVITE_GUILD, new Gson().m(invite.guild));
+                intent.putExtra(WidgetMemberVerification.INTENT_EXTRA_INVITE_GUILD, new Gson().m9209m(invite.guild));
             }
-            AppScreen2.d(context, WidgetMemberVerification.class, intent);
+            C0870j.m156d(context, WidgetMemberVerification.class, intent);
         }
 
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
@@ -117,17 +117,17 @@ public final class WidgetMemberVerification extends AppFragment {
         }
     }
 
-    /* JADX INFO: renamed from: com.discord.widgets.servers.member_verification.WidgetMemberVerification$configureVerificationBanner$1, reason: invalid class name */
+    /* JADX INFO: renamed from: com.discord.widgets.servers.member_verification.WidgetMemberVerification$configureVerificationBanner$1 */
     /* JADX INFO: compiled from: WidgetMemberVerification.kt */
-    public static final class AnonymousClass1 extends Lambda implements Function0<Unit> {
-        public AnonymousClass1() {
+    public static final class C95591 extends AbstractC12240o implements Function0<Unit> {
+        public C95591() {
             super(0);
         }
 
         @Override // kotlin.jvm.functions.Function0
         public /* bridge */ /* synthetic */ Unit invoke() {
             invoke2();
-            return Unit.a;
+            return Unit.f27425a;
         }
 
         /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
@@ -136,17 +136,17 @@ public final class WidgetMemberVerification extends AppFragment {
         }
     }
 
-    /* JADX INFO: renamed from: com.discord.widgets.servers.member_verification.WidgetMemberVerification$configureVerificationBanner$2, reason: invalid class name */
+    /* JADX INFO: renamed from: com.discord.widgets.servers.member_verification.WidgetMemberVerification$configureVerificationBanner$2 */
     /* JADX INFO: compiled from: WidgetMemberVerification.kt */
-    public static final class AnonymousClass2 extends Lambda implements Function0<Unit> {
-        public AnonymousClass2() {
+    public static final class C95602 extends AbstractC12240o implements Function0<Unit> {
+        public C95602() {
             super(0);
         }
 
         @Override // kotlin.jvm.functions.Function0
         public /* bridge */ /* synthetic */ Unit invoke() {
             invoke2();
-            return Unit.a;
+            return Unit.f27425a;
         }
 
         /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
@@ -155,17 +155,17 @@ public final class WidgetMemberVerification extends AppFragment {
         }
     }
 
-    /* JADX INFO: renamed from: com.discord.widgets.servers.member_verification.WidgetMemberVerification$onViewBound$1, reason: invalid class name */
+    /* JADX INFO: renamed from: com.discord.widgets.servers.member_verification.WidgetMemberVerification$onViewBound$1 */
     /* JADX INFO: compiled from: WidgetMemberVerification.kt */
-    public static final class AnonymousClass1 extends Lambda implements Function1<Boolean, Unit> {
-        public AnonymousClass1() {
+    public static final class C95611 extends AbstractC12240o implements Function1<Boolean, Unit> {
+        public C95611() {
             super(1);
         }
 
         @Override // kotlin.jvm.functions.Function1
         public /* bridge */ /* synthetic */ Unit invoke(Boolean bool) {
             invoke(bool.booleanValue());
-            return Unit.a;
+            return Unit.f27425a;
         }
 
         public final void invoke(boolean z2) {
@@ -173,64 +173,64 @@ public final class WidgetMemberVerification extends AppFragment {
         }
     }
 
-    /* JADX INFO: renamed from: com.discord.widgets.servers.member_verification.WidgetMemberVerification$onViewBound$2, reason: invalid class name */
+    /* JADX INFO: renamed from: com.discord.widgets.servers.member_verification.WidgetMemberVerification$onViewBound$2 */
     /* JADX INFO: compiled from: WidgetMemberVerification.kt */
-    public static final class AnonymousClass2 extends Lambda implements Function2<Integer, Object, Unit> {
-        public AnonymousClass2() {
+    public static final class C95622 extends AbstractC12240o implements Function2<Integer, Object, Unit> {
+        public C95622() {
             super(2);
         }
 
         @Override // kotlin.jvm.functions.Function2
         public /* bridge */ /* synthetic */ Unit invoke(Integer num, Object obj) {
             invoke(num.intValue(), obj);
-            return Unit.a;
+            return Unit.f27425a;
         }
 
         public final void invoke(int i, Object obj) {
-            Intrinsics3.checkNotNullParameter(obj, "value");
+            C12238m.checkNotNullParameter(obj, "value");
             WidgetMemberVerification.this.getViewModel().updateFormValidation(i, obj);
         }
     }
 
-    /* JADX INFO: renamed from: com.discord.widgets.servers.member_verification.WidgetMemberVerification$onViewBoundOrOnResume$1, reason: invalid class name */
+    /* JADX INFO: renamed from: com.discord.widgets.servers.member_verification.WidgetMemberVerification$onViewBoundOrOnResume$1 */
     /* JADX INFO: compiled from: WidgetMemberVerification.kt */
-    public static final /* synthetic */ class AnonymousClass1 extends FunctionReferenceImpl implements Function1<WidgetMemberVerificationViewModel.ViewState, Unit> {
-        public AnonymousClass1(WidgetMemberVerification widgetMemberVerification) {
+    public static final /* synthetic */ class C95631 extends C12236k implements Function1<WidgetMemberVerificationViewModel.ViewState, Unit> {
+        public C95631(WidgetMemberVerification widgetMemberVerification) {
             super(1, widgetMemberVerification, WidgetMemberVerification.class, "configureUI", "configureUI(Lcom/discord/widgets/servers/member_verification/WidgetMemberVerificationViewModel$ViewState;)V", 0);
         }
 
         @Override // kotlin.jvm.functions.Function1
         public /* bridge */ /* synthetic */ Unit invoke(WidgetMemberVerificationViewModel.ViewState viewState) {
             invoke2(viewState);
-            return Unit.a;
+            return Unit.f27425a;
         }
 
         /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
         public final void invoke2(WidgetMemberVerificationViewModel.ViewState viewState) {
-            Intrinsics3.checkNotNullParameter(viewState, "p1");
+            C12238m.checkNotNullParameter(viewState, "p1");
             ((WidgetMemberVerification) this.receiver).configureUI(viewState);
         }
     }
 
-    /* JADX INFO: renamed from: com.discord.widgets.servers.member_verification.WidgetMemberVerification$onViewBoundOrOnResume$2, reason: invalid class name */
+    /* JADX INFO: renamed from: com.discord.widgets.servers.member_verification.WidgetMemberVerification$onViewBoundOrOnResume$2 */
     /* JADX INFO: compiled from: WidgetMemberVerification.kt */
-    public static final class AnonymousClass2 extends Lambda implements Function1<WidgetMemberVerificationViewModel.Event, Unit> {
-        public AnonymousClass2() {
+    public static final class C95642 extends AbstractC12240o implements Function1<WidgetMemberVerificationViewModel.Event, Unit> {
+        public C95642() {
             super(1);
         }
 
         @Override // kotlin.jvm.functions.Function1
         public /* bridge */ /* synthetic */ Unit invoke(WidgetMemberVerificationViewModel.Event event) {
             invoke2(event);
-            return Unit.a;
+            return Unit.f27425a;
         }
 
         /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
         public final void invoke2(WidgetMemberVerificationViewModel.Event event) {
-            Intrinsics3.checkNotNullParameter(event, "event");
+            C12238m.checkNotNullParameter(event, "event");
             if (!(event instanceof WidgetMemberVerificationViewModel.Event.Success)) {
                 if (event instanceof WidgetMemberVerificationViewModel.Event.Error) {
-                    AppToast.i(WidgetMemberVerification.this, R.string.guild_settings_public_update_failed, 0, 4);
+                    C0876m.m171i(WidgetMemberVerification.this, C5419R.string.guild_settings_public_update_failed, 0, 4);
                     return;
                 }
                 return;
@@ -252,45 +252,45 @@ public final class WidgetMemberVerification extends AppFragment {
     }
 
     public WidgetMemberVerification() {
-        super(R.layout.widget_member_verification);
-        this.binding = FragmentViewBindingDelegate3.viewBinding$default(this, WidgetMemberVerification2.INSTANCE, null, 2, null);
-        WidgetMemberVerification3 widgetMemberVerification3 = new WidgetMemberVerification3(this);
-        AppViewModelDelegates3 appViewModelDelegates3 = new AppViewModelDelegates3(this);
-        this.viewModel = FragmentViewModelLazyKt.createViewModelLazy(this, Reflection2.getOrCreateKotlinClass(WidgetMemberVerificationViewModel.class), new WidgetMemberVerification$appViewModels$$inlined$viewModels$1(appViewModelDelegates3), new AppViewModelDelegates5(widgetMemberVerification3));
+        super(C5419R.layout.widget_member_verification);
+        this.binding = FragmentViewBindingDelegateKt.viewBinding$default(this, WidgetMemberVerification$binding$2.INSTANCE, null, 2, null);
+        WidgetMemberVerification$viewModel$2 widgetMemberVerification$viewModel$2 = new WidgetMemberVerification$viewModel$2(this);
+        C0865g0 c0865g0 = new C0865g0(this);
+        this.viewModel = FragmentViewModelLazyKt.createViewModelLazy(this, C12216a0.getOrCreateKotlinClass(WidgetMemberVerificationViewModel.class), new WidgetMemberVerification$appViewModels$$inlined$viewModels$1(c0865g0), new C0869i0(widgetMemberVerification$viewModel$2));
     }
 
     private final void configureLoadedUI(WidgetMemberVerificationViewModel.ViewState.Loaded viewState) {
-        NestedScrollView nestedScrollView = getBinding().g;
-        Intrinsics3.checkNotNullExpressionValue(nestedScrollView, "binding.memberVerificationScrollview");
+        NestedScrollView nestedScrollView = getBinding().f17243g;
+        C12238m.checkNotNullExpressionValue(nestedScrollView, "binding.memberVerificationScrollview");
         nestedScrollView.setVisibility(0);
-        getBinding().e.setIsLoading(viewState.getSubmitting());
-        DimmerView.setDimmed$default(getBinding().f2488b, false, false, 2, null);
-        LoadingButton loadingButton = getBinding().e;
-        Intrinsics3.checkNotNullExpressionValue(loadingButton, "binding.memberVerificationRulesConfirm");
+        getBinding().f17241e.setIsLoading(viewState.getSubmitting());
+        DimmerView.setDimmed$default(getBinding().f17238b, false, false, 2, null);
+        LoadingButton loadingButton = getBinding().f17241e;
+        C12238m.checkNotNullExpressionValue(loadingButton, "binding.memberVerificationRulesConfirm");
         loadingButton.setEnabled(!viewState.getDisabled());
-        RecyclerView recyclerView = getBinding().f;
-        Intrinsics3.checkNotNullExpressionValue(recyclerView, "binding.memberVerificationRulesRecycler");
+        RecyclerView recyclerView = getBinding().f17242f;
+        C12238m.checkNotNullExpressionValue(recyclerView, "binding.memberVerificationRulesRecycler");
         recyclerView.setVisibility(viewState.isRulesListVisible() ? 0 : 8);
-        MemberVerificationAvatarView memberVerificationAvatarView = getBinding().d;
+        MemberVerificationAvatarView memberVerificationAvatarView = getBinding().f17240d;
         Guild guild = viewState.getGuild();
         Objects.requireNonNull(memberVerificationAvatarView);
         boolean z2 = guild != null && guild.hasIcon();
-        TextView textView = memberVerificationAvatarView.binding.c;
-        Intrinsics3.checkNotNullExpressionValue(textView, "binding.memberVerificationText");
+        TextView textView = memberVerificationAvatarView.binding.f1308c;
+        C12238m.checkNotNullExpressionValue(textView, "binding.memberVerificationText");
         textView.setVisibility(z2 ^ true ? 0 : 8);
         if (z2) {
-            SimpleDraweeView simpleDraweeView = memberVerificationAvatarView.binding.f214b;
-            Intrinsics3.checkNotNullExpressionValue(simpleDraweeView, "binding.memberVerificationAvatar");
+            SimpleDraweeView simpleDraweeView = memberVerificationAvatarView.binding.f1307b;
+            C12238m.checkNotNullExpressionValue(simpleDraweeView, "binding.memberVerificationAvatar");
             IconUtils.setIcon$default(simpleDraweeView, IconUtils.getForGuild$default(guild, null, false, null, 14, null), 0, (Function1) null, (MGImages.ChangeDetector) null, 28, (Object) null);
-            TextView textView2 = memberVerificationAvatarView.binding.c;
-            Intrinsics3.checkNotNullExpressionValue(textView2, "binding.memberVerificationText");
+            TextView textView2 = memberVerificationAvatarView.binding.f1308c;
+            C12238m.checkNotNullExpressionValue(textView2, "binding.memberVerificationText");
             textView2.setText("");
         } else {
-            TextView textView3 = memberVerificationAvatarView.binding.c;
-            Intrinsics3.checkNotNullExpressionValue(textView3, "binding.memberVerificationText");
+            TextView textView3 = memberVerificationAvatarView.binding.f1308c;
+            C12238m.checkNotNullExpressionValue(textView3, "binding.memberVerificationText");
             textView3.setText(guild != null ? guild.getShortName() : null);
         }
-        getBinding().e.setOnClickListener(new View.OnClickListener() { // from class: com.discord.widgets.servers.member_verification.WidgetMemberVerification.configureLoadedUI.1
+        getBinding().f17241e.setOnClickListener(new View.OnClickListener() { // from class: com.discord.widgets.servers.member_verification.WidgetMemberVerification.configureLoadedUI.1
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
                 WidgetMemberVerification.this.getViewModel().applyToJoinGuild();
@@ -298,7 +298,7 @@ public final class WidgetMemberVerification extends AppFragment {
         });
         MemberVerificationRulesAdapter memberVerificationRulesAdapter = this.rulesAdapter;
         if (memberVerificationRulesAdapter == null) {
-            Intrinsics3.throwUninitializedPropertyAccessException("rulesAdapter");
+            C12238m.throwUninitializedPropertyAccessException("rulesAdapter");
         }
         memberVerificationRulesAdapter.setData(viewState.getFormItems());
         configureVerificationBanner(viewState);
@@ -306,7 +306,7 @@ public final class WidgetMemberVerification extends AppFragment {
 
     private final void configureUI(WidgetMemberVerificationViewModel.ViewState viewState) {
         if (viewState instanceof WidgetMemberVerificationViewModel.ViewState.Invalid) {
-            AppToast.i(this, R.string.default_failure_to_perform_action_message, 0, 4);
+            C0876m.m171i(this, C5419R.string.default_failure_to_perform_action_message, 0, 4);
             requireActivity().finish();
         } else if (viewState instanceof WidgetMemberVerificationViewModel.ViewState.Loaded) {
             configureLoadedUI((WidgetMemberVerificationViewModel.ViewState.Loaded) viewState);
@@ -314,16 +314,16 @@ public final class WidgetMemberVerification extends AppFragment {
             if (!(viewState instanceof WidgetMemberVerificationViewModel.ViewState.Loading)) {
                 throw new NoWhenBranchMatchedException();
             }
-            NestedScrollView nestedScrollView = getBinding().g;
-            Intrinsics3.checkNotNullExpressionValue(nestedScrollView, "binding.memberVerificationScrollview");
+            NestedScrollView nestedScrollView = getBinding().f17243g;
+            C12238m.checkNotNullExpressionValue(nestedScrollView, "binding.memberVerificationScrollview");
             nestedScrollView.setVisibility(8);
-            DimmerView.setDimmed$default(getBinding().f2488b, true, false, 2, null);
+            DimmerView.setDimmed$default(getBinding().f17238b, true, false, 2, null);
         }
     }
 
     private final void configureVerificationBanner(WidgetMemberVerificationViewModel.ViewState.Loaded viewState) {
-        MemberVerificationView memberVerificationView = getBinding().c;
-        Intrinsics3.checkNotNullExpressionValue(memberVerificationView, "binding.memberVerificationContainer");
+        MemberVerificationView memberVerificationView = getBinding().f17239c;
+        C12238m.checkNotNullExpressionValue(memberVerificationView, "binding.memberVerificationContainer");
         memberVerificationView.setVisibility(viewState.getVerificationType() != null ? 0 : 8);
         WidgetMemberVerificationViewModel.VerificationType verificationType = viewState.getVerificationType();
         if (verificationType == null) {
@@ -331,12 +331,12 @@ public final class WidgetMemberVerification extends AppFragment {
         }
         int iOrdinal = verificationType.ordinal();
         if (iOrdinal == 0) {
-            getBinding().c.configure(R.drawable.ic_phone_verification_24dp, R.string.member_verification_form_item_phone_verification_label, !viewState.getNeedsAdditionalVerification(), new AnonymousClass2());
+            getBinding().f17239c.configure(C5419R.drawable.ic_phone_verification_24dp, C5419R.string.member_verification_form_item_phone_verification_label, !viewState.getNeedsAdditionalVerification(), new C95602());
         } else {
             if (iOrdinal != 1) {
                 return;
             }
-            getBinding().c.configure(R.drawable.ic_email_verification_24dp, R.string.member_verification_form_item_email_verification_label, !viewState.getNeedsAdditionalVerification(), new AnonymousClass1());
+            getBinding().f17239c.configure(C5419R.drawable.ic_email_verification_24dp, C5419R.string.member_verification_form_item_email_verification_label, !viewState.getNeedsAdditionalVerification(), new C95591());
         }
     }
 
@@ -358,35 +358,35 @@ public final class WidgetMemberVerification extends AppFragment {
         if (stringExtra == 0) {
             return (Guild) stringExtra;
         }
-        return (Guild) f.E1(Guild.class).cast(new Gson().g(stringExtra, Guild.class));
+        return (Guild) C3404f.m4203E1(Guild.class).cast(new Gson().m9203g(stringExtra, Guild.class));
     }
 
     @Override // com.discord.app.AppFragment
     public void onViewBound(View view) {
-        Intrinsics3.checkNotNullParameter(view, "view");
+        C12238m.checkNotNullParameter(view, "view");
         super.onViewBound(view);
-        RecyclerView recyclerView = getBinding().f;
-        Intrinsics3.checkNotNullExpressionValue(recyclerView, "binding.memberVerificationRulesRecycler");
+        RecyclerView recyclerView = getBinding().f17242f;
+        C12238m.checkNotNullExpressionValue(recyclerView, "binding.memberVerificationRulesRecycler");
         this.rulesAdapter = new MemberVerificationRulesAdapter(recyclerView, this);
-        getBinding().f.setHasFixedSize(false);
-        RecyclerView recyclerView2 = getBinding().f;
-        Intrinsics3.checkNotNullExpressionValue(recyclerView2, "binding.memberVerificationRulesRecycler");
+        getBinding().f17242f.setHasFixedSize(false);
+        RecyclerView recyclerView2 = getBinding().f17242f;
+        C12238m.checkNotNullExpressionValue(recyclerView2, "binding.memberVerificationRulesRecycler");
         recyclerView2.setNestedScrollingEnabled(false);
         MemberVerificationRulesAdapter memberVerificationRulesAdapter = this.rulesAdapter;
         if (memberVerificationRulesAdapter == null) {
-            Intrinsics3.throwUninitializedPropertyAccessException("rulesAdapter");
+            C12238m.throwUninitializedPropertyAccessException("rulesAdapter");
         }
-        memberVerificationRulesAdapter.setOnUpdateRulesApproval(new AnonymousClass1());
+        memberVerificationRulesAdapter.setOnUpdateRulesApproval(new C95611());
         MemberVerificationRulesAdapter memberVerificationRulesAdapter2 = this.rulesAdapter;
         if (memberVerificationRulesAdapter2 == null) {
-            Intrinsics3.throwUninitializedPropertyAccessException("rulesAdapter");
+            C12238m.throwUninitializedPropertyAccessException("rulesAdapter");
         }
-        memberVerificationRulesAdapter2.setOnUserInputDataEntered(new AnonymousClass2());
-        RecyclerView recyclerView3 = getBinding().f;
-        Intrinsics3.checkNotNullExpressionValue(recyclerView3, "binding.memberVerificationRulesRecycler");
+        memberVerificationRulesAdapter2.setOnUserInputDataEntered(new C95622());
+        RecyclerView recyclerView3 = getBinding().f17242f;
+        C12238m.checkNotNullExpressionValue(recyclerView3, "binding.memberVerificationRulesRecycler");
         MemberVerificationRulesAdapter memberVerificationRulesAdapter3 = this.rulesAdapter;
         if (memberVerificationRulesAdapter3 == null) {
-            Intrinsics3.throwUninitializedPropertyAccessException("rulesAdapter");
+            C12238m.throwUninitializedPropertyAccessException("rulesAdapter");
         }
         recyclerView3.setAdapter(memberVerificationRulesAdapter3);
     }
@@ -394,7 +394,7 @@ public final class WidgetMemberVerification extends AppFragment {
     @Override // com.discord.app.AppFragment
     public void onViewBoundOrOnResume() {
         super.onViewBoundOrOnResume();
-        ObservableExtensionsKt.appSubscribe(ObservableExtensionsKt.bindToComponentLifecycle$default(getViewModel().observeViewState(), this, null, 2, null), (Class<?>) WidgetMemberVerification.class, (58 & 2) != 0 ? null : null, (Function1<? super Subscription, Unit>) ((58 & 4) != 0 ? null : null), (Function1<? super Error, Unit>) ((58 & 8) != 0 ? null : null), (Function0<Unit>) ((58 & 16) != 0 ? ObservableExtensionsKt.AnonymousClass1.INSTANCE : null), (Function0<Unit>) ((58 & 32) != 0 ? ObservableExtensionsKt.AnonymousClass2.INSTANCE : null), new AnonymousClass1(this));
-        ObservableExtensionsKt.appSubscribe(ObservableExtensionsKt.bindToComponentLifecycle$default(getViewModel().observeEvents(), this, null, 2, null), (Class<?>) WidgetMemberVerification.class, (58 & 2) != 0 ? null : null, (Function1<? super Subscription, Unit>) ((58 & 4) != 0 ? null : null), (Function1<? super Error, Unit>) ((58 & 8) != 0 ? null : null), (Function0<Unit>) ((58 & 16) != 0 ? ObservableExtensionsKt.AnonymousClass1.INSTANCE : null), (Function0<Unit>) ((58 & 32) != 0 ? ObservableExtensionsKt.AnonymousClass2.INSTANCE : null), new AnonymousClass2());
+        ObservableExtensionsKt.appSubscribe(ObservableExtensionsKt.bindToComponentLifecycle$default(getViewModel().observeViewState(), this, null, 2, null), (Class<?>) WidgetMemberVerification.class, (58 & 2) != 0 ? null : null, (Function1<? super Subscription, Unit>) ((58 & 4) != 0 ? null : null), (Function1<? super Error, Unit>) ((58 & 8) != 0 ? null : null), (Function0<Unit>) ((58 & 16) != 0 ? ObservableExtensionsKt.C68791.INSTANCE : null), (Function0<Unit>) ((58 & 32) != 0 ? ObservableExtensionsKt.C68802.INSTANCE : null), new C95631(this));
+        ObservableExtensionsKt.appSubscribe(ObservableExtensionsKt.bindToComponentLifecycle$default(getViewModel().observeEvents(), this, null, 2, null), (Class<?>) WidgetMemberVerification.class, (58 & 2) != 0 ? null : null, (Function1<? super Subscription, Unit>) ((58 & 4) != 0 ? null : null), (Function1<? super Error, Unit>) ((58 & 8) != 0 ? null : null), (Function0<Unit>) ((58 & 16) != 0 ? ObservableExtensionsKt.C68791.INSTANCE : null), (Function0<Unit>) ((58 & 32) != 0 ? ObservableExtensionsKt.C68802.INSTANCE : null), new C95642());
     }
 }

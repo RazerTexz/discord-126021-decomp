@@ -3,8 +3,6 @@ package com.discord.widgets.settings;
 import android.content.Context;
 import androidx.annotation.MainThread;
 import androidx.core.app.FrameMetricsAggregator;
-import b.a.d.AppViewModel;
-import b.d.b.a.outline;
 import com.discord.models.domain.ModelSubscription;
 import com.discord.models.presence.Presence;
 import com.discord.models.user.MeUser;
@@ -17,13 +15,10 @@ import com.discord.stores.StoreSubscriptions;
 import com.discord.stores.StoreUser;
 import com.discord.stores.StoreUserPresence;
 import com.discord.stores.updates.ObservationDeck;
-import com.discord.stores.updates.ObservationDeck4;
+import com.discord.stores.updates.ObservationDeckProvider;
 import com.discord.utilities.error.Error;
 import com.discord.utilities.handoff.MobileWebHandoff;
-import com.discord.utilities.rx.ObservableExtensionsKt;
-import d0.t.Collections2;
-import d0.z.d.Intrinsics3;
-import d0.z.d.Lambda;
+import com.discord.utilities.p501rx.ObservableExtensionsKt;
 import java.util.Collection;
 import java.util.Iterator;
 import java.util.List;
@@ -31,35 +26,40 @@ import kotlin.Unit;
 import kotlin.jvm.functions.Function0;
 import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.DefaultConstructorMarker;
-import rx.Observable;
-import rx.Subscription;
+import p007b.p008a.p018d.AbstractC0859d0;
+import p007b.p100d.p104b.p105a.C1643a;
+import p507d0.p580t.C12147n;
+import p507d0.p592z.p594d.AbstractC12240o;
+import p507d0.p592z.p594d.C12238m;
+import p658rx.Observable;
+import p658rx.Subscription;
 
 /* JADX INFO: compiled from: SettingsViewModel.kt */
 /* JADX INFO: loaded from: classes2.dex */
-public final class SettingsViewModel extends AppViewModel<ViewState> {
+public final class SettingsViewModel extends AbstractC0859d0<ViewState> {
 
     /* JADX INFO: renamed from: Companion, reason: from kotlin metadata */
     public static final Companion INSTANCE = new Companion(null);
     private static final String MANAGE_SUBSCRIPTIONS_URL = "/settings/subscriptions/role-subscriptions";
     private final StoreSubscriptions subscriptionsStore;
 
-    /* JADX INFO: renamed from: com.discord.widgets.settings.SettingsViewModel$1, reason: invalid class name */
+    /* JADX INFO: renamed from: com.discord.widgets.settings.SettingsViewModel$1 */
     /* JADX INFO: compiled from: SettingsViewModel.kt */
-    public static final class AnonymousClass1 extends Lambda implements Function1<StoreState, Unit> {
-        public AnonymousClass1() {
+    public static final class C95981 extends AbstractC12240o implements Function1<StoreState, Unit> {
+        public C95981() {
             super(1);
         }
 
         @Override // kotlin.jvm.functions.Function1
         public /* bridge */ /* synthetic */ Unit invoke(StoreState storeState) {
             invoke2(storeState);
-            return Unit.a;
+            return Unit.f27425a;
         }
 
         /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
         public final void invoke2(StoreState storeState) {
             SettingsViewModel settingsViewModel = SettingsViewModel.this;
-            Intrinsics3.checkNotNullExpressionValue(storeState, "storeState");
+            C12238m.checkNotNullExpressionValue(storeState, "storeState");
             settingsViewModel.handleStoreState(storeState);
         }
     }
@@ -74,7 +74,7 @@ public final class SettingsViewModel extends AppViewModel<ViewState> {
         }
 
         private final Observable<StoreState> observeStoreState(StoreUser userStore, StoreGuilds guildsStore, StoreUserPresence userPresenceStore, StoreOutboundPromotions outboundPromotionsStore, StoreNotificationUpsells notificationUpsellsStore, StoreExperiments experimentsStore, StoreSubscriptions subscriptionsStore, ObservationDeck observationDeck) {
-            return ObservationDeck.connectRx$default(observationDeck, new ObservationDeck.UpdateSource[]{userStore, guildsStore, userPresenceStore, outboundPromotionsStore, notificationUpsellsStore, subscriptionsStore}, false, null, null, new SettingsViewModel2(subscriptionsStore, userStore, guildsStore, userPresenceStore, outboundPromotionsStore, notificationUpsellsStore, experimentsStore), 14, null);
+            return ObservationDeck.connectRx$default(observationDeck, new ObservationDeck.UpdateSource[]{userStore, guildsStore, userPresenceStore, outboundPromotionsStore, notificationUpsellsStore, subscriptionsStore}, false, null, null, new SettingsViewModel$Companion$observeStoreState$1(subscriptionsStore, userStore, guildsStore, userPresenceStore, outboundPromotionsStore, notificationUpsellsStore, experimentsStore), 14, null);
         }
 
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
@@ -93,8 +93,8 @@ public final class SettingsViewModel extends AppViewModel<ViewState> {
         private final List<ModelSubscription> subscriptions;
 
         public StoreState(MeUser meUser, boolean z2, Presence presence, int i, boolean z3, boolean z4, List<ModelSubscription> list) {
-            Intrinsics3.checkNotNullParameter(meUser, "meUser");
-            Intrinsics3.checkNotNullParameter(presence, "presence");
+            C12238m.checkNotNullParameter(meUser, "meUser");
+            C12238m.checkNotNullParameter(presence, "presence");
             this.meUser = meUser;
             this.isStaffOrAlpha = z2;
             this.presence = presence;
@@ -170,8 +170,8 @@ public final class SettingsViewModel extends AppViewModel<ViewState> {
         }
 
         public final StoreState copy(MeUser meUser, boolean isStaffOrAlpha, Presence presence, int promoCount, boolean pushNotificationUpsellDismissed, boolean isEligibleForMobileWebSubscriptions, List<ModelSubscription> subscriptions) {
-            Intrinsics3.checkNotNullParameter(meUser, "meUser");
-            Intrinsics3.checkNotNullParameter(presence, "presence");
+            C12238m.checkNotNullParameter(meUser, "meUser");
+            C12238m.checkNotNullParameter(presence, "presence");
             return new StoreState(meUser, isStaffOrAlpha, presence, promoCount, pushNotificationUpsellDismissed, isEligibleForMobileWebSubscriptions, subscriptions);
         }
 
@@ -183,7 +183,7 @@ public final class SettingsViewModel extends AppViewModel<ViewState> {
                 return false;
             }
             StoreState storeState = (StoreState) other;
-            return Intrinsics3.areEqual(this.meUser, storeState.meUser) && this.isStaffOrAlpha == storeState.isStaffOrAlpha && Intrinsics3.areEqual(this.presence, storeState.presence) && this.promoCount == storeState.promoCount && this.pushNotificationUpsellDismissed == storeState.pushNotificationUpsellDismissed && this.isEligibleForMobileWebSubscriptions == storeState.isEligibleForMobileWebSubscriptions && Intrinsics3.areEqual(this.subscriptions, storeState.subscriptions);
+            return C12238m.areEqual(this.meUser, storeState.meUser) && this.isStaffOrAlpha == storeState.isStaffOrAlpha && C12238m.areEqual(this.presence, storeState.presence) && this.promoCount == storeState.promoCount && this.pushNotificationUpsellDismissed == storeState.pushNotificationUpsellDismissed && this.isEligibleForMobileWebSubscriptions == storeState.isEligibleForMobileWebSubscriptions && C12238m.areEqual(this.subscriptions, storeState.subscriptions);
         }
 
         public final MeUser getMeUser() {
@@ -249,20 +249,20 @@ public final class SettingsViewModel extends AppViewModel<ViewState> {
         }
 
         public String toString() {
-            StringBuilder sbU = outline.U("StoreState(meUser=");
-            sbU.append(this.meUser);
-            sbU.append(", isStaffOrAlpha=");
-            sbU.append(this.isStaffOrAlpha);
-            sbU.append(", presence=");
-            sbU.append(this.presence);
-            sbU.append(", promoCount=");
-            sbU.append(this.promoCount);
-            sbU.append(", pushNotificationUpsellDismissed=");
-            sbU.append(this.pushNotificationUpsellDismissed);
-            sbU.append(", isEligibleForMobileWebSubscriptions=");
-            sbU.append(this.isEligibleForMobileWebSubscriptions);
-            sbU.append(", subscriptions=");
-            return outline.L(sbU, this.subscriptions, ")");
+            StringBuilder sbM833U = C1643a.m833U("StoreState(meUser=");
+            sbM833U.append(this.meUser);
+            sbM833U.append(", isStaffOrAlpha=");
+            sbM833U.append(this.isStaffOrAlpha);
+            sbM833U.append(", presence=");
+            sbM833U.append(this.presence);
+            sbM833U.append(", promoCount=");
+            sbM833U.append(this.promoCount);
+            sbM833U.append(", pushNotificationUpsellDismissed=");
+            sbM833U.append(this.pushNotificationUpsellDismissed);
+            sbM833U.append(", isEligibleForMobileWebSubscriptions=");
+            sbM833U.append(this.isEligibleForMobileWebSubscriptions);
+            sbM833U.append(", subscriptions=");
+            return C1643a.m824L(sbM833U, this.subscriptions, ")");
         }
     }
 
@@ -281,8 +281,8 @@ public final class SettingsViewModel extends AppViewModel<ViewState> {
             /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
             public Loaded(MeUser meUser, boolean z2, Presence presence, int i, boolean z3, boolean z4) {
                 super(null);
-                Intrinsics3.checkNotNullParameter(meUser, "meUser");
-                Intrinsics3.checkNotNullParameter(presence, "presence");
+                C12238m.checkNotNullParameter(meUser, "meUser");
+                C12238m.checkNotNullParameter(presence, "presence");
                 this.meUser = meUser;
                 this.isStaffOrAlpha = z2;
                 this.presence = presence;
@@ -348,8 +348,8 @@ public final class SettingsViewModel extends AppViewModel<ViewState> {
             }
 
             public final Loaded copy(MeUser meUser, boolean isStaffOrAlpha, Presence presence, int promoCount, boolean pushNotificationUpsellDismissed, boolean showRoleSubscriptionsButton) {
-                Intrinsics3.checkNotNullParameter(meUser, "meUser");
-                Intrinsics3.checkNotNullParameter(presence, "presence");
+                C12238m.checkNotNullParameter(meUser, "meUser");
+                C12238m.checkNotNullParameter(presence, "presence");
                 return new Loaded(meUser, isStaffOrAlpha, presence, promoCount, pushNotificationUpsellDismissed, showRoleSubscriptionsButton);
             }
 
@@ -361,7 +361,7 @@ public final class SettingsViewModel extends AppViewModel<ViewState> {
                     return false;
                 }
                 Loaded loaded = (Loaded) other;
-                return Intrinsics3.areEqual(this.meUser, loaded.meUser) && this.isStaffOrAlpha == loaded.isStaffOrAlpha && Intrinsics3.areEqual(this.presence, loaded.presence) && this.promoCount == loaded.promoCount && this.pushNotificationUpsellDismissed == loaded.pushNotificationUpsellDismissed && this.showRoleSubscriptionsButton == loaded.showRoleSubscriptionsButton;
+                return C12238m.areEqual(this.meUser, loaded.meUser) && this.isStaffOrAlpha == loaded.isStaffOrAlpha && C12238m.areEqual(this.presence, loaded.presence) && this.promoCount == loaded.promoCount && this.pushNotificationUpsellDismissed == loaded.pushNotificationUpsellDismissed && this.showRoleSubscriptionsButton == loaded.showRoleSubscriptionsButton;
             }
 
             public final MeUser getMeUser() {
@@ -423,18 +423,18 @@ public final class SettingsViewModel extends AppViewModel<ViewState> {
             }
 
             public String toString() {
-                StringBuilder sbU = outline.U("Loaded(meUser=");
-                sbU.append(this.meUser);
-                sbU.append(", isStaffOrAlpha=");
-                sbU.append(this.isStaffOrAlpha);
-                sbU.append(", presence=");
-                sbU.append(this.presence);
-                sbU.append(", promoCount=");
-                sbU.append(this.promoCount);
-                sbU.append(", pushNotificationUpsellDismissed=");
-                sbU.append(this.pushNotificationUpsellDismissed);
-                sbU.append(", showRoleSubscriptionsButton=");
-                return outline.O(sbU, this.showRoleSubscriptionsButton, ")");
+                StringBuilder sbM833U = C1643a.m833U("Loaded(meUser=");
+                sbM833U.append(this.meUser);
+                sbM833U.append(", isStaffOrAlpha=");
+                sbM833U.append(this.isStaffOrAlpha);
+                sbM833U.append(", presence=");
+                sbM833U.append(this.presence);
+                sbM833U.append(", promoCount=");
+                sbM833U.append(this.promoCount);
+                sbM833U.append(", pushNotificationUpsellDismissed=");
+                sbM833U.append(this.pushNotificationUpsellDismissed);
+                sbM833U.append(", showRoleSubscriptionsButton=");
+                return C1643a.m827O(sbM833U, this.showRoleSubscriptionsButton, ")");
             }
         }
 
@@ -468,7 +468,7 @@ public final class SettingsViewModel extends AppViewModel<ViewState> {
         StoreSubscriptions subscriptions = (i & 16) != 0 ? StoreStream.INSTANCE.getSubscriptions() : storeSubscriptions;
         StoreUser users = (i & 32) != 0 ? StoreStream.INSTANCE.getUsers() : storeUser;
         StoreUserPresence presences = (i & 64) != 0 ? StoreStream.INSTANCE.getPresences() : storeUserPresence;
-        ObservationDeck observationDeck2 = (i & 128) != 0 ? ObservationDeck4.get() : observationDeck;
+        ObservationDeck observationDeck2 = (i & 128) != 0 ? ObservationDeckProvider.get() : observationDeck;
         this(experiments, guilds, notificationUpsells, outboundPromotions, subscriptions, users, presences, observationDeck2, (i & 256) != 0 ? INSTANCE.observeStoreState(users, guilds, presences, outboundPromotions, notificationUpsells, experiments, subscriptions, observationDeck2) : observable);
     }
 
@@ -480,7 +480,7 @@ public final class SettingsViewModel extends AppViewModel<ViewState> {
         if (storeState.isEligibleForMobileWebSubscriptions()) {
             List<ModelSubscription> subscriptions = storeState.getSubscriptions();
             if (subscriptions == null) {
-                subscriptions = Collections2.emptyList();
+                subscriptions = C12147n.emptyList();
             }
             if (!(subscriptions instanceof Collection) || !subscriptions.isEmpty()) {
                 Iterator<T> it = subscriptions.iterator();
@@ -510,7 +510,7 @@ public final class SettingsViewModel extends AppViewModel<ViewState> {
     }
 
     public final void openRoleSubscriptionsManagement(Context context) {
-        Intrinsics3.checkNotNullParameter(context, "context");
+        C12238m.checkNotNullParameter(context, "context");
         MobileWebHandoff.tryLaunchRedirectTo$default(new MobileWebHandoff(context, null, null, null, 14, null), MANAGE_SUBSCRIPTIONS_URL, false, false, 6, null);
     }
 
@@ -524,18 +524,18 @@ public final class SettingsViewModel extends AppViewModel<ViewState> {
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public SettingsViewModel(StoreExperiments storeExperiments, StoreGuilds storeGuilds, StoreNotificationUpsells storeNotificationUpsells, StoreOutboundPromotions storeOutboundPromotions, StoreSubscriptions storeSubscriptions, StoreUser storeUser, StoreUserPresence storeUserPresence, ObservationDeck observationDeck, Observable<StoreState> observable) {
         super(ViewState.Uninitialized.INSTANCE);
-        Intrinsics3.checkNotNullParameter(storeExperiments, "experimentsStore");
-        Intrinsics3.checkNotNullParameter(storeGuilds, "guildsStore");
-        Intrinsics3.checkNotNullParameter(storeNotificationUpsells, "notificationUpsellsStore");
-        Intrinsics3.checkNotNullParameter(storeOutboundPromotions, "outboundPromotionsStore");
-        Intrinsics3.checkNotNullParameter(storeSubscriptions, "subscriptionsStore");
-        Intrinsics3.checkNotNullParameter(storeUser, "userStore");
-        Intrinsics3.checkNotNullParameter(storeUserPresence, "userPresenceStore");
-        Intrinsics3.checkNotNullParameter(observationDeck, "observationDeck");
-        Intrinsics3.checkNotNullParameter(observable, "storeStateObservable");
+        C12238m.checkNotNullParameter(storeExperiments, "experimentsStore");
+        C12238m.checkNotNullParameter(storeGuilds, "guildsStore");
+        C12238m.checkNotNullParameter(storeNotificationUpsells, "notificationUpsellsStore");
+        C12238m.checkNotNullParameter(storeOutboundPromotions, "outboundPromotionsStore");
+        C12238m.checkNotNullParameter(storeSubscriptions, "subscriptionsStore");
+        C12238m.checkNotNullParameter(storeUser, "userStore");
+        C12238m.checkNotNullParameter(storeUserPresence, "userPresenceStore");
+        C12238m.checkNotNullParameter(observationDeck, "observationDeck");
+        C12238m.checkNotNullParameter(observable, "storeStateObservable");
         this.subscriptionsStore = storeSubscriptions;
-        Observable<StoreState> observableR = observable.r();
-        Intrinsics3.checkNotNullExpressionValue(observableR, "storeStateObservable\n   …  .distinctUntilChanged()");
-        ObservableExtensionsKt.appSubscribe(ObservableExtensionsKt.ui$default(ObservableExtensionsKt.computationLatest(observableR), this, null, 2, null), (Class<?>) SettingsViewModel.class, (58 & 2) != 0 ? null : null, (Function1<? super Subscription, Unit>) ((58 & 4) != 0 ? null : null), (Function1<? super Error, Unit>) ((58 & 8) != 0 ? null : null), (Function0<Unit>) ((58 & 16) != 0 ? ObservableExtensionsKt.AnonymousClass1.INSTANCE : null), (Function0<Unit>) ((58 & 32) != 0 ? ObservableExtensionsKt.AnonymousClass2.INSTANCE : null), new AnonymousClass1());
+        Observable<StoreState> observableM11112r = observable.m11112r();
+        C12238m.checkNotNullExpressionValue(observableM11112r, "storeStateObservable\n   …  .distinctUntilChanged()");
+        ObservableExtensionsKt.appSubscribe(ObservableExtensionsKt.ui$default(ObservableExtensionsKt.computationLatest(observableM11112r), this, null, 2, null), (Class<?>) SettingsViewModel.class, (58 & 2) != 0 ? null : null, (Function1<? super Subscription, Unit>) ((58 & 4) != 0 ? null : null), (Function1<? super Error, Unit>) ((58 & 8) != 0 ? null : null), (Function0<Unit>) ((58 & 16) != 0 ? ObservableExtensionsKt.C68791.INSTANCE : null), (Function0<Unit>) ((58 & 32) != 0 ? ObservableExtensionsKt.C68802.INSTANCE : null), new C95981());
     }
 }

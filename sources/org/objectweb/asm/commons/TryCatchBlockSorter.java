@@ -18,7 +18,7 @@ public class TryCatchBlockSorter extends MethodNode {
 
     protected TryCatchBlockSorter(int api, MethodVisitor methodVisitor, int access, String name, String descriptor, String signature, String[] exceptions) {
         super(api, access, name, descriptor, signature, exceptions);
-        this.mv = methodVisitor;
+        this.f27600mv = methodVisitor;
     }
 
     @Override // org.objectweb.asm.tree.MethodNode, org.objectweb.asm.MethodVisitor
@@ -38,8 +38,8 @@ public class TryCatchBlockSorter extends MethodNode {
         for (int i = 0; i < this.tryCatchBlocks.size(); i++) {
             this.tryCatchBlocks.get(i).updateIndex(i);
         }
-        if (this.mv != null) {
-            accept(this.mv);
+        if (this.f27600mv != null) {
+            accept(this.f27600mv);
         }
     }
 }

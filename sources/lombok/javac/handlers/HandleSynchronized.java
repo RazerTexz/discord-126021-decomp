@@ -31,7 +31,7 @@ public class HandleSynchronized extends JavacAnnotationHandler<Synchronized> {
             return;
         }
         JavacHandlerUtil.deleteAnnotationIfNeccessary(annotationNode, (Class<? extends Annotation>) Synchronized.class);
-        JavacNode methodNode = annotationNode.up();
+        JavacNode methodNode = annotationNode.m10925up();
         if (methodNode == null || methodNode.getKind() != AST.Kind.METHOD || !(methodNode.get() instanceof JCTree.JCMethodDecl)) {
             annotationNode.addError("@Synchronized is legal only on methods.");
             return;
@@ -49,7 +49,7 @@ public class HandleSynchronized extends JavacAnnotationHandler<Synchronized> {
             autoMake = true;
             lockName = isStatic[0] ? STATIC_LOCK_NAME : INSTANCE_LOCK_NAME;
         }
-        JavacTreeMaker maker = methodNode.getTreeMaker().at(ast.pos);
+        JavacTreeMaker maker = methodNode.getTreeMaker().m10939at(ast.pos);
         Context context = methodNode.getContext();
         JavacNode typeNode = JavacHandlerUtil.upToTypeNode(annotationNode);
         JavacHandlerUtil.MemberExistsResult exists = JavacHandlerUtil.MemberExistsResult.NOT_EXISTS;
@@ -74,7 +74,7 @@ public class HandleSynchronized extends JavacAnnotationHandler<Synchronized> {
             JCTree.JCExpression objectType = JavacHandlerUtil.genJavaLangTypeRef(methodNode, ast.pos, "Object");
             JCTree.JCNewArray newObjectArray = maker.NewArray(JavacHandlerUtil.genJavaLangTypeRef(methodNode, ast.pos, "Object"), List.of(maker.Literal(Javac.CTC_INT, 0)), null);
             JCTree.JCVariableDecl fieldDecl = JavacHandlerUtil.recursiveSetGeneratedBy(maker.VarDef(maker.Modifiers(18 | (isStatic[0] ? 8 : 0)), methodNode.toName(lockName), objectType, newObjectArray), ast, context);
-            JavacHandlerUtil.injectFieldAndMarkGenerated(methodNode.up(), fieldDecl);
+            JavacHandlerUtil.injectFieldAndMarkGenerated(methodNode.m10925up(), fieldDecl);
         }
         if (method.body == null) {
             return;

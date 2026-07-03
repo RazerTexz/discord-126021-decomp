@@ -18,25 +18,16 @@ import androidx.annotation.StringRes;
 import androidx.appcompat.widget.Toolbar;
 import androidx.core.app.NotificationCompat;
 import androidx.fragment.app.Fragment;
-import b.a.d.AppActivity2;
-import b.a.d.AppFragment2;
-import b.a.d.AppToast;
-import b.a.k.FormatUtils;
-import b.a.l.MediaPickerChooser2;
-import b.b.a.f.SimpleFileManager;
-import com.discord.R;
+import com.discord.C5419R;
 import com.discord.app.AppLogger;
 import com.discord.media_picker.MediaPicker;
 import com.discord.media_picker.RequestType;
 import com.discord.models.domain.ModelAuditLogEntry;
-import com.discord.utilities.attachments.AttachmentUtils;
+import com.discord.utilities.attachments.AttachmentUtilsKt;
 import com.discord.utilities.display.DisplayUtils;
 import com.discord.utilities.view.text.TextWatcher;
 import com.discord.views.ToolbarTitleLayout;
 import com.lytefast.flexinput.managers.FileManager;
-import d0.LazyJVM;
-import d0.z.d.Intrinsics3;
-import d0.z.d.Lambda;
 import java.io.File;
 import java.io.IOException;
 import java.util.Collection;
@@ -47,15 +38,24 @@ import kotlin.Lazy;
 import kotlin.Unit;
 import kotlin.jvm.functions.Function0;
 import kotlin.jvm.functions.Function1;
-import rx.functions.Action1;
-import rx.functions.Action2;
-import rx.functions.Func0;
-import rx.subjects.PublishSubject;
-import rx.subjects.Subject;
+import p007b.p008a.p018d.C0854b;
+import p007b.p008a.p018d.C0860e;
+import p007b.p008a.p018d.C0876m;
+import p007b.p008a.p027k.C1107b;
+import p007b.p008a.p032l.C1129b;
+import p007b.p076b.p077a.p081f.C1448b;
+import p507d0.C12083g;
+import p507d0.p592z.p594d.AbstractC12240o;
+import p507d0.p592z.p594d.C12238m;
+import p658rx.functions.Action1;
+import p658rx.functions.Action2;
+import p658rx.functions.Func0;
+import p658rx.subjects.PublishSubject;
+import p658rx.subjects.Subject;
 
 /* JADX INFO: compiled from: AppFragment.kt */
 /* JADX INFO: loaded from: classes.dex */
-public abstract class AppFragment extends Fragment implements AppComponent, AppPermissions2, MediaPicker.Provider, AppLogger.a {
+public abstract class AppFragment extends Fragment implements AppComponent, AppPermissionsRequests, MediaPicker.Provider, AppLogger.InterfaceC5455a {
 
     /* JADX INFO: renamed from: appLogger$delegate, reason: from kotlin metadata */
     private final Lazy appLogger;
@@ -63,13 +63,14 @@ public abstract class AppFragment extends Fragment implements AppComponent, AppP
     /* JADX INFO: renamed from: fileManager$delegate, reason: from kotlin metadata */
     private final Lazy fileManager;
     private boolean isRecreated;
-    private final AppLogger2 loggingConfig;
+    private final LoggingConfig loggingConfig;
     private boolean onViewBoundOrOnResumeInvoked;
     private final Subject<Void, Void> unsubscribeSignal;
 
+    /* JADX INFO: renamed from: com.discord.app.AppFragment$a */
     /* JADX INFO: compiled from: AppFragment.kt */
-    public static final class a extends Lambda implements Function0<AppLogger> {
-        public a() {
+    public static final class C5447a extends AbstractC12240o implements Function0<AppLogger> {
+        public C5447a() {
             super(0);
         }
 
@@ -79,34 +80,38 @@ public abstract class AppFragment extends Fragment implements AppComponent, AppP
         }
     }
 
+    /* JADX INFO: renamed from: com.discord.app.AppFragment$b */
     /* JADX INFO: compiled from: AppFragment.kt */
-    public static final class b extends Lambda implements Function0<SimpleFileManager> {
-        public b() {
+    public static final class C5448b extends AbstractC12240o implements Function0<C1448b> {
+        public C5448b() {
             super(0);
         }
 
         @Override // kotlin.jvm.functions.Function0
-        public SimpleFileManager invoke() {
-            return new SimpleFileManager(AppFragment.this.requireContext(), null, null, 6);
+        public C1448b invoke() {
+            return new C1448b(AppFragment.this.requireContext(), null, null, 6);
         }
     }
 
+    /* JADX INFO: renamed from: com.discord.app.AppFragment$c */
     /* JADX INFO: compiled from: AppFragment.kt */
-    public static final class c implements MediaPicker.a {
-        public c() {
+    public static final class C5449c implements MediaPicker.InterfaceC5527a {
+        public C5449c() {
         }
 
-        @Override // com.discord.media_picker.MediaPicker.a
-        public void a(Exception exc) {
-            Intrinsics3.checkNotNullParameter(exc, "e");
-            AppToast.h(AppFragment.this.getContext(), FormatUtils.e(AppFragment.this, R.string.upload_open_file_failed, new Object[]{exc.getMessage()}, (4 & 4) != 0 ? FormatUtils.a.j : null), 0, null, 12);
+        @Override // com.discord.media_picker.MediaPicker.InterfaceC5527a
+        /* JADX INFO: renamed from: a */
+        public void mo8354a(Exception exc) {
+            C12238m.checkNotNullParameter(exc, "e");
+            C0876m.m170h(AppFragment.this.getContext(), C1107b.m213e(AppFragment.this, C5419R.string.upload_open_file_failed, new Object[]{exc.getMessage()}, (4 & 4) != 0 ? C1107b.a.f1490j : null), 0, null, 12);
         }
 
-        @Override // com.discord.media_picker.MediaPicker.a
-        public void b(Uri uri, RequestType requestType) {
-            Intrinsics3.checkNotNullParameter(uri, NotificationCompat.MessagingStyle.Message.KEY_DATA_URI);
-            Intrinsics3.checkNotNullParameter(requestType, "request");
-            String mimeType$default = AttachmentUtils.getMimeType$default(AppFragment.this.requireContext().getContentResolver(), uri, null, 4, null);
+        @Override // com.discord.media_picker.MediaPicker.InterfaceC5527a
+        /* JADX INFO: renamed from: b */
+        public void mo8355b(Uri uri, RequestType requestType) {
+            C12238m.checkNotNullParameter(uri, NotificationCompat.MessagingStyle.Message.KEY_DATA_URI);
+            C12238m.checkNotNullParameter(requestType, "request");
+            String mimeType$default = AttachmentUtilsKt.getMimeType$default(AppFragment.this.requireContext().getContentResolver(), uri, null, 4, null);
             if (requestType.ordinal() != 3) {
                 AppFragment.this.onImageChosen(uri, mimeType$default);
             } else {
@@ -115,46 +120,48 @@ public abstract class AppFragment extends Fragment implements AppComponent, AppP
         }
     }
 
+    /* JADX INFO: renamed from: com.discord.app.AppFragment$d */
     /* JADX INFO: compiled from: AppFragment.kt */
-    public static final class d extends Lambda implements Function0<Unit> {
-        public d() {
+    public static final class C5450d extends AbstractC12240o implements Function0<Unit> {
+        public C5450d() {
             super(0);
         }
 
         @Override // kotlin.jvm.functions.Function0
         public Unit invoke() {
-            MediaPicker mediaPicker = MediaPicker.a;
+            MediaPicker mediaPicker = MediaPicker.f18555a;
             AppFragment appFragment = AppFragment.this;
-            CharSequence charSequenceE = FormatUtils.e(appFragment, R.string.choose_an_application, new Object[0], (4 & 4) != 0 ? FormatUtils.a.j : null);
-            AppFragment2 appFragment2 = new AppFragment2(this);
-            Intrinsics3.checkNotNullParameter(appFragment, "provider");
-            Intrinsics3.checkNotNullParameter(charSequenceE, "chooserTitle");
-            Intrinsics3.checkNotNullParameter("image/*", "mimeType");
-            Intrinsics3.checkNotNullParameter(appFragment2, "onError");
+            CharSequence charSequenceM213e = C1107b.m213e(appFragment, C5419R.string.choose_an_application, new Object[0], (4 & 4) != 0 ? C1107b.a.f1490j : null);
+            C0860e c0860e = new C0860e(this);
+            C12238m.checkNotNullParameter(appFragment, "provider");
+            C12238m.checkNotNullParameter(charSequenceM213e, "chooserTitle");
+            C12238m.checkNotNullParameter("image/*", "mimeType");
+            C12238m.checkNotNullParameter(c0860e, "onError");
             try {
-                Uri uriA = mediaPicker.a(appFragment);
+                Uri uriM8424a = mediaPicker.m8424a(appFragment);
                 PackageManager packageManager = appFragment.requireContext().getPackageManager();
-                Intrinsics3.checkNotNullExpressionValue(packageManager, "provider.requireContext().packageManager");
-                Intent intentB = MediaPickerChooser2.b(packageManager, charSequenceE, uriA, "image/*");
-                mediaPicker.c(appFragment.requireContext(), new Intent("android.media.action.IMAGE_CAPTURE"), uriA);
+                C12238m.checkNotNullExpressionValue(packageManager, "provider.requireContext().packageManager");
+                Intent intentM226b = C1129b.m226b(packageManager, charSequenceM213e, uriM8424a, "image/*");
+                mediaPicker.m8426c(appFragment.requireContext(), new Intent("android.media.action.IMAGE_CAPTURE"), uriM8424a);
                 try {
-                    appFragment.startActivityForResult(intentB, RequestType.CHOOSER.getCode$media_picker_release());
+                    appFragment.startActivityForResult(intentM226b, RequestType.CHOOSER.getCode$media_picker_release());
                 } catch (ActivityNotFoundException unused) {
                     throw new IOException("No application available for media picker.");
                 }
             } catch (IOException e) {
-                appFragment2.invoke(e);
+                c0860e.invoke(e);
             }
-            return Unit.a;
+            return Unit.f27425a;
         }
     }
 
+    /* JADX INFO: renamed from: com.discord.app.AppFragment$e */
     /* JADX INFO: compiled from: AppFragment.kt */
-    public static final class e extends Lambda implements Function0<Boolean> {
+    public static final class C5451e extends AbstractC12240o implements Function0<Boolean> {
         public final /* synthetic */ Func0 $onBackAction;
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-        public e(Func0 func0) {
+        public C5451e(Func0 func0) {
             super(0);
             this.$onBackAction = func0;
         }
@@ -162,17 +169,17 @@ public abstract class AppFragment extends Fragment implements AppComponent, AppP
         @Override // kotlin.jvm.functions.Function0
         public Boolean invoke() {
             Object objCall = this.$onBackAction.call();
-            Intrinsics3.checkNotNullExpressionValue(objCall, "onBackAction.call()");
+            C12238m.checkNotNullExpressionValue(objCall, "onBackAction.call()");
             return Boolean.valueOf(((Boolean) objCall).booleanValue());
         }
     }
 
     public AppFragment() {
-        PublishSubject publishSubjectK0 = PublishSubject.k0();
-        Intrinsics3.checkNotNullExpressionValue(publishSubjectK0, "PublishSubject.create()");
-        this.unsubscribeSignal = publishSubjectK0;
-        this.fileManager = LazyJVM.lazy(new b());
-        this.appLogger = LazyJVM.lazy(new a());
+        PublishSubject publishSubjectM11133k0 = PublishSubject.m11133k0();
+        C12238m.checkNotNullExpressionValue(publishSubjectM11133k0, "PublishSubject.create()");
+        this.unsubscribeSignal = publishSubjectM11133k0;
+        this.fileManager = C12083g.lazy(new C5448b());
+        this.appLogger = C12083g.lazy(new C5447a());
     }
 
     public static /* synthetic */ Unit bindToolbar$default(AppFragment appFragment, View view, int i, Object obj) {
@@ -241,13 +248,13 @@ public abstract class AppFragment extends Fragment implements AppComponent, AppP
     public final ToolbarTitleLayout getActionBarTitleLayout() {
         AppActivity appActivity = getAppActivity();
         if (appActivity != null) {
-            return appActivity.e();
+            return appActivity.m8345e();
         }
         return null;
     }
 
     public final AppActivity getAppActivity() {
-        return (AppActivity) e();
+        return (AppActivity) m95e();
     }
 
     public final AppLogger getAppLogger() {
@@ -260,18 +267,18 @@ public abstract class AppFragment extends Fragment implements AppComponent, AppP
 
     @Override // com.discord.media_picker.MediaPicker.Provider
     public File getImageFile() {
-        return getFileManager().b();
+        return getFileManager().mo409b();
     }
 
-    @Override // com.discord.app.AppLogger.a
-    public AppLogger2 getLoggingConfig() {
+    @Override // com.discord.app.AppLogger.InterfaceC5455a
+    public LoggingConfig getLoggingConfig() {
         return this.loggingConfig;
     }
 
     public final Intent getMostRecentIntent() {
-        Intent intentC;
+        Intent intentM8343c;
         AppActivity appActivity = getAppActivity();
-        return (appActivity == null || (intentC = appActivity.c()) == null) ? new Intent() : intentC;
+        return (appActivity == null || (intentM8343c = appActivity.m8343c()) == null) ? new Intent() : intentM8343c;
     }
 
     @Override // com.discord.app.AppComponent
@@ -279,7 +286,7 @@ public abstract class AppFragment extends Fragment implements AppComponent, AppP
         return this.unsubscribeSignal;
     }
 
-    @Override // com.discord.app.AppPermissions2
+    @Override // com.discord.app.AppPermissionsRequests
     public boolean hasMedia() {
         return requireAppActivity().appPermissions.hasMedia();
     }
@@ -304,11 +311,11 @@ public abstract class AppFragment extends Fragment implements AppComponent, AppP
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
         RequestType requestType;
         super.onActivityResult(requestCode, resultCode, data);
-        MediaPicker mediaPicker = MediaPicker.a;
+        MediaPicker mediaPicker = MediaPicker.f18555a;
         Context contextRequireContext = requireContext();
-        c cVar = new c();
-        Intrinsics3.checkNotNullParameter(contextRequireContext, "context");
-        Intrinsics3.checkNotNullParameter(cVar, "result");
+        C5449c c5449c = new C5449c();
+        C12238m.checkNotNullParameter(contextRequireContext, "context");
+        C12238m.checkNotNullParameter(c5449c, "result");
         Objects.requireNonNull(RequestType.INSTANCE);
         if (requestCode == 800) {
             requestType = RequestType.CROP;
@@ -333,17 +340,17 @@ public abstract class AppFragment extends Fragment implements AppComponent, AppP
         if (requestType != null) {
             try {
                 if (resultCode == -1) {
-                    Uri uriD = mediaPicker.d(contextRequireContext, requestType, data);
-                    contextRequireContext.sendBroadcast(new Intent("android.intent.action.MEDIA_SCANNER_SCAN_FILE", uriD));
-                    cVar.b(uriD, requestType);
+                    Uri uriM8427d = mediaPicker.m8427d(contextRequireContext, requestType, data);
+                    contextRequireContext.sendBroadcast(new Intent("android.intent.action.MEDIA_SCANNER_SCAN_FILE", uriM8427d));
+                    c5449c.mo8355b(uriM8427d, requestType);
                 } else {
                     if (resultCode == 0) {
                         return;
                     }
                     throw new IOException("Bad activity result code: " + resultCode + ", for request code: " + requestCode);
                 }
-            } catch (IOException e2) {
-                cVar.a(e2);
+            } catch (IOException e) {
+                c5449c.mo8354a(e);
             }
         }
     }
@@ -353,10 +360,10 @@ public abstract class AppFragment extends Fragment implements AppComponent, AppP
         AppActivity appActivity = getAppActivity();
         if (appActivity != null) {
             String name = getClass().getName();
-            Intrinsics3.checkNotNullExpressionValue(name, "javaClass.name");
-            Intrinsics3.checkNotNullParameter(name, "key");
-            Collection<HashMap<String, Function0<Boolean>>> collectionValues = appActivity.l.values();
-            Intrinsics3.checkNotNullExpressionValue(collectionValues, "backPressHandlers\n        .values");
+            C12238m.checkNotNullExpressionValue(name, "javaClass.name");
+            C12238m.checkNotNullParameter(name, "key");
+            Collection<HashMap<String, Function0<Boolean>>> collectionValues = appActivity.f505l.values();
+            C12238m.checkNotNullExpressionValue(collectionValues, "backPressHandlers\n        .values");
             Iterator<T> it = collectionValues.iterator();
             while (it.hasNext()) {
                 ((HashMap) it.next()).remove(name);
@@ -370,20 +377,20 @@ public abstract class AppFragment extends Fragment implements AppComponent, AppP
     public void onDetach() {
         AppActivity appActivity = getAppActivity();
         if (appActivity != null) {
-            Intrinsics3.checkNotNullParameter(this, "fragmentOwner");
+            C12238m.checkNotNullParameter(this, "fragmentOwner");
             appActivity.newIntentListeners.remove(Integer.valueOf(getId()));
         }
         super.onDetach();
     }
 
     public void onImageChosen(Uri uri, String mimeType) {
-        Intrinsics3.checkNotNullParameter(uri, NotificationCompat.MessagingStyle.Message.KEY_DATA_URI);
-        Intrinsics3.checkNotNullParameter(mimeType, "mimeType");
+        C12238m.checkNotNullParameter(uri, NotificationCompat.MessagingStyle.Message.KEY_DATA_URI);
+        C12238m.checkNotNullParameter(mimeType, "mimeType");
     }
 
     public void onImageCropped(Uri uri, String mimeType) {
-        Intrinsics3.checkNotNullParameter(uri, NotificationCompat.MessagingStyle.Message.KEY_DATA_URI);
-        Intrinsics3.checkNotNullParameter(mimeType, "mimeType");
+        C12238m.checkNotNullParameter(uri, NotificationCompat.MessagingStyle.Message.KEY_DATA_URI);
+        C12238m.checkNotNullParameter(mimeType, "mimeType");
     }
 
     @Override // androidx.fragment.app.Fragment
@@ -404,17 +411,17 @@ public abstract class AppFragment extends Fragment implements AppComponent, AppP
 
     @CallSuper
     public void onViewBound(View view) {
-        Intrinsics3.checkNotNullParameter(view, "view");
+        C12238m.checkNotNullParameter(view, "view");
     }
 
     @CallSuper
     public void onViewBoundOrOnResume() {
-        getAppLogger().b();
+        getAppLogger().m8372b();
     }
 
     @Override // androidx.fragment.app.Fragment
     public void onViewCreated(View view, Bundle savedInstanceState) {
-        Intrinsics3.checkNotNullParameter(view, "view");
+        C12238m.checkNotNullParameter(view, "view");
         super.onViewCreated(view, savedInstanceState);
         AppActivity appActivity = getAppActivity();
         if (appActivity != null) {
@@ -428,49 +435,49 @@ public abstract class AppFragment extends Fragment implements AppComponent, AppP
     }
 
     public final void openMediaChooser() {
-        requestMedia(new d());
+        requestMedia(new C5450d());
     }
 
-    @Override // com.discord.app.AppPermissions2
+    @Override // com.discord.app.AppPermissionsRequests
     public void requestCameraQRScanner(Function0<Unit> onSuccess, Function0<Unit> onFailure) {
-        Intrinsics3.checkNotNullParameter(onSuccess, "onSuccess");
+        C12238m.checkNotNullParameter(onSuccess, "onSuccess");
         requireAppActivity().appPermissions.requestCameraQRScanner(onSuccess, onFailure);
     }
 
-    @Override // com.discord.app.AppPermissions2
+    @Override // com.discord.app.AppPermissionsRequests
     public void requestContacts(Function0<Unit> onSuccess, Function0<Unit> onFailure) {
-        Intrinsics3.checkNotNullParameter(onSuccess, "onSuccess");
-        Intrinsics3.checkNotNullParameter(onFailure, "onFailure");
+        C12238m.checkNotNullParameter(onSuccess, "onSuccess");
+        C12238m.checkNotNullParameter(onFailure, "onFailure");
         requireAppActivity().appPermissions.requestContacts(onSuccess, onFailure);
     }
 
-    @Override // com.discord.app.AppPermissions2
+    @Override // com.discord.app.AppPermissionsRequests
     public void requestMedia(Function0<Unit> onSuccess) {
-        Intrinsics3.checkNotNullParameter(onSuccess, "onSuccess");
+        C12238m.checkNotNullParameter(onSuccess, "onSuccess");
         requireAppActivity().appPermissions.requestMedia(onSuccess);
     }
 
-    @Override // com.discord.app.AppPermissions2
+    @Override // com.discord.app.AppPermissionsRequests
     public void requestMediaDownload(Function0<Unit> onSuccess) {
-        Intrinsics3.checkNotNullParameter(onSuccess, "onSuccess");
+        C12238m.checkNotNullParameter(onSuccess, "onSuccess");
         requireAppActivity().appPermissions.requestMediaDownload(onSuccess);
     }
 
-    @Override // com.discord.app.AppPermissions2
+    @Override // com.discord.app.AppPermissionsRequests
     public void requestMicrophone(Function0<Unit> onFailure, Function0<Unit> onSuccess) {
-        Intrinsics3.checkNotNullParameter(onSuccess, "onSuccess");
+        C12238m.checkNotNullParameter(onSuccess, "onSuccess");
         requireAppActivity().appPermissions.requestMicrophone(onFailure, onSuccess);
     }
 
-    @Override // com.discord.app.AppPermissions2
+    @Override // com.discord.app.AppPermissionsRequests
     public void requestVideoCallPermissions(Function0<Unit> onSuccess) {
-        Intrinsics3.checkNotNullParameter(onSuccess, "onSuccess");
+        C12238m.checkNotNullParameter(onSuccess, "onSuccess");
         requireAppActivity().appPermissions.requestVideoCallPermissions(onSuccess);
     }
 
     public final AppActivity requireAppActivity() {
         AppActivity appActivity = getAppActivity();
-        Intrinsics3.checkNotNull(appActivity);
+        C12238m.checkNotNull(appActivity);
         return appActivity;
     }
 
@@ -483,8 +490,8 @@ public abstract class AppFragment extends Fragment implements AppComponent, AppP
         if (appActivity == null) {
             return null;
         }
-        boolean z2 = AppActivity.m;
-        return appActivity.k(showHomeAsUp, null, null);
+        boolean z2 = AppActivity.f14908m;
+        return appActivity.m8350k(showHomeAsUp, null, null);
     }
 
     public final Toolbar setActionBarOptionsMenu(@MenuRes int i, Action2<MenuItem, Context> action2) {
@@ -502,7 +509,7 @@ public abstract class AppFragment extends Fragment implements AppComponent, AppP
             menu.clear();
         }
         toolbar.inflateMenu(menuResId);
-        toolbar.setOnMenuItemClickListener(new AppActivity2(toolbar, menuResId, onSelected, onConfigured));
+        toolbar.setOnMenuItemClickListener(new C0854b(toolbar, menuResId, onSelected, onConfigured));
         Menu menu2 = toolbar.getMenu();
         if (menu2 != null && onConfigured != null) {
             onConfigured.call(menu2);
@@ -511,56 +518,56 @@ public abstract class AppFragment extends Fragment implements AppComponent, AppP
     }
 
     public final Unit setActionBarSubtitle(CharSequence subtitle) {
-        ToolbarTitleLayout toolbarTitleLayoutE;
+        ToolbarTitleLayout toolbarTitleLayoutM8345e;
         AppActivity appActivity = getAppActivity();
-        if (appActivity == null || (toolbarTitleLayoutE = appActivity.e()) == null) {
+        if (appActivity == null || (toolbarTitleLayoutM8345e = appActivity.m8345e()) == null) {
             return null;
         }
-        toolbarTitleLayoutE.setSubtitle(subtitle);
-        return Unit.a;
+        toolbarTitleLayoutM8345e.setSubtitle(subtitle);
+        return Unit.f27425a;
     }
 
     public final Unit setActionBarTitle(CharSequence title) {
         AppActivity appActivity = getAppActivity();
         if (appActivity != null) {
-            return appActivity.l(title, null);
+            return appActivity.m8351l(title, null);
         }
         return null;
     }
 
     public final Unit setActionBarTitleAccessibilityViewFocused() {
-        ToolbarTitleLayout toolbarTitleLayoutE;
+        ToolbarTitleLayout toolbarTitleLayoutM8345e;
         AppActivity appActivity = getAppActivity();
-        if (appActivity == null || (toolbarTitleLayoutE = appActivity.e()) == null) {
+        if (appActivity == null || (toolbarTitleLayoutM8345e = appActivity.m8345e()) == null) {
             return null;
         }
-        toolbarTitleLayoutE.sendAccessibilityEvent(8);
-        return Unit.a;
+        toolbarTitleLayoutM8345e.sendAccessibilityEvent(8);
+        return Unit.f27425a;
     }
 
     public final Unit setActionBarTitleClick(View.OnClickListener onClickListener) {
-        Intrinsics3.checkNotNullParameter(onClickListener, "onClickListener");
+        C12238m.checkNotNullParameter(onClickListener, "onClickListener");
         AppActivity appActivity = getAppActivity();
         if (appActivity == null) {
             return null;
         }
-        Intrinsics3.checkNotNullParameter(onClickListener, "onClickListener");
-        ToolbarTitleLayout toolbarTitleLayoutE = appActivity.e();
-        if (toolbarTitleLayoutE == null) {
+        C12238m.checkNotNullParameter(onClickListener, "onClickListener");
+        ToolbarTitleLayout toolbarTitleLayoutM8345e = appActivity.m8345e();
+        if (toolbarTitleLayoutM8345e == null) {
             return null;
         }
-        toolbarTitleLayoutE.setOnClickListener(onClickListener);
-        return Unit.a;
+        toolbarTitleLayoutM8345e.setOnClickListener(onClickListener);
+        return Unit.f27425a;
     }
 
     public final Unit setActionBarTitleColor(@ColorInt int color) {
-        ToolbarTitleLayout toolbarTitleLayoutE;
+        ToolbarTitleLayout toolbarTitleLayoutM8345e;
         AppActivity appActivity = getAppActivity();
-        if (appActivity == null || (toolbarTitleLayoutE = appActivity.e()) == null) {
+        if (appActivity == null || (toolbarTitleLayoutM8345e = appActivity.m8345e()) == null) {
             return null;
         }
-        toolbarTitleLayoutE.setTitleColor(color);
-        return Unit.a;
+        toolbarTitleLayoutM8345e.setTitleColor(color);
+        return Unit.f27425a;
     }
 
     public final Unit setActionBarTitleLayoutExpandedTappableArea() {
@@ -568,11 +575,11 @@ public abstract class AppFragment extends Fragment implements AppComponent, AppP
         if (appActivity == null) {
             return null;
         }
-        ToolbarTitleLayout toolbarTitleLayoutE = appActivity.e();
-        if (toolbarTitleLayoutE != null) {
-            toolbarTitleLayoutE.setLayoutParams(new Toolbar.LayoutParams(-1, -1));
+        ToolbarTitleLayout toolbarTitleLayoutM8345e = appActivity.m8345e();
+        if (toolbarTitleLayoutM8345e != null) {
+            toolbarTitleLayoutM8345e.setLayoutParams(new Toolbar.LayoutParams(-1, -1));
         }
-        return Unit.a;
+        return Unit.f27425a;
     }
 
     public final Unit setActionBarTitleLayoutMinimumTappableArea() {
@@ -580,11 +587,11 @@ public abstract class AppFragment extends Fragment implements AppComponent, AppP
         if (appActivity == null) {
             return null;
         }
-        ToolbarTitleLayout toolbarTitleLayoutE = appActivity.e();
-        if (toolbarTitleLayoutE != null) {
-            toolbarTitleLayoutE.setLayoutParams(new Toolbar.LayoutParams(-2, -2));
+        ToolbarTitleLayout toolbarTitleLayoutM8345e = appActivity.m8345e();
+        if (toolbarTitleLayoutM8345e != null) {
+            toolbarTitleLayoutM8345e.setLayoutParams(new Toolbar.LayoutParams(-2, -2));
         }
-        return Unit.a;
+        return Unit.f27425a;
     }
 
     public final void setOnBackPressed(Func0<Boolean> func0) {
@@ -592,35 +599,35 @@ public abstract class AppFragment extends Fragment implements AppComponent, AppP
     }
 
     public final void setOnBackPressed(Func0<Boolean> onBackAction, int priority) {
-        Intrinsics3.checkNotNullParameter(onBackAction, "onBackAction");
+        C12238m.checkNotNullParameter(onBackAction, "onBackAction");
         AppActivity appActivity = getAppActivity();
         if (appActivity != null) {
-            e eVar = new e(onBackAction);
+            C5451e c5451e = new C5451e(onBackAction);
             String name = getClass().getName();
-            Intrinsics3.checkNotNullExpressionValue(name, "javaClass.name");
-            Intrinsics3.checkNotNullParameter(eVar, "handler");
-            Intrinsics3.checkNotNullParameter(name, "key");
-            HashMap<String, Function0<Boolean>> map = appActivity.l.get(Integer.valueOf(priority));
+            C12238m.checkNotNullExpressionValue(name, "javaClass.name");
+            C12238m.checkNotNullParameter(c5451e, "handler");
+            C12238m.checkNotNullParameter(name, "key");
+            HashMap<String, Function0<Boolean>> map = appActivity.f505l.get(Integer.valueOf(priority));
             if (map == null) {
                 map = new HashMap<>();
             }
-            map.put(name, eVar);
-            appActivity.l.put(Integer.valueOf(priority), map);
+            map.put(name, c5451e);
+            appActivity.f505l.put(Integer.valueOf(priority), map);
         }
     }
 
     public final void setOnNewIntentListener(Function1<? super Intent, Unit> action) {
-        Intrinsics3.checkNotNullParameter(action, "action");
+        C12238m.checkNotNullParameter(action, "action");
         AppActivity appActivity = getAppActivity();
         if (appActivity != null) {
-            Intrinsics3.checkNotNullParameter(this, "fragmentOwner");
-            Intrinsics3.checkNotNullParameter(action, "action");
+            C12238m.checkNotNullParameter(this, "fragmentOwner");
+            C12238m.checkNotNullParameter(action, "action");
             appActivity.newIntentListeners.put(Integer.valueOf(getId()), action);
         }
     }
 
     public void showKeyboard(View view) {
-        Intrinsics3.checkNotNullParameter(view, "view");
+        C12238m.checkNotNullParameter(view, "view");
         AppActivity appActivity = getAppActivity();
         if (appActivity != null) {
             appActivity.showKeyboard(view);
@@ -629,19 +636,19 @@ public abstract class AppFragment extends Fragment implements AppComponent, AppP
 
     private final Unit bindToolbar(AppActivity appActivity, View view) {
         Toolbar toolbar;
-        if (view == null || (toolbar = (Toolbar) view.findViewById(R.id.action_bar_toolbar)) == null) {
+        if (view == null || (toolbar = (Toolbar) view.findViewById(C5419R.id.action_bar_toolbar)) == null) {
             return null;
         }
-        if (!Intrinsics3.areEqual(appActivity.toolbar, toolbar)) {
-            appActivity.n(toolbar);
+        if (!C12238m.areEqual(appActivity.toolbar, toolbar)) {
+            appActivity.m8353n(toolbar);
         }
-        return Unit.a;
+        return Unit.f27425a;
     }
 
     public final Unit setActionBarTitle(CharSequence title, @DrawableRes Integer leftDrawable) {
         AppActivity appActivity = getAppActivity();
         if (appActivity != null) {
-            return appActivity.l(title, leftDrawable);
+            return appActivity.m8351l(title, leftDrawable);
         }
         return null;
     }
@@ -660,51 +667,51 @@ public abstract class AppFragment extends Fragment implements AppComponent, AppP
         AppActivity appActivity = getAppActivity();
         if (appActivity != null) {
             String string = getString(subtitleResId);
-            ToolbarTitleLayout toolbarTitleLayoutE = appActivity.e();
-            if (toolbarTitleLayoutE != null) {
-                toolbarTitleLayoutE.setSubtitle(string);
-                return Unit.a;
+            ToolbarTitleLayout toolbarTitleLayoutM8345e = appActivity.m8345e();
+            if (toolbarTitleLayoutM8345e != null) {
+                toolbarTitleLayoutM8345e.setSubtitle(string);
+                return Unit.f27425a;
             }
         }
         return null;
     }
 
     public final void setActionBarTitle(CharSequence title, @DrawableRes Integer leftDrawable, @DrawableRes Integer trailingDrawable) {
-        ToolbarTitleLayout toolbarTitleLayoutE;
+        ToolbarTitleLayout toolbarTitleLayoutM8345e;
         AppActivity appActivity = getAppActivity();
-        if (appActivity == null || (toolbarTitleLayoutE = appActivity.e()) == null) {
+        if (appActivity == null || (toolbarTitleLayoutM8345e = appActivity.m8345e()) == null) {
             return;
         }
-        toolbarTitleLayoutE.a(title, leftDrawable, trailingDrawable);
+        toolbarTitleLayoutM8345e.m8564a(title, leftDrawable, trailingDrawable);
     }
 
-    @Override // com.discord.app.AppPermissions2
+    @Override // com.discord.app.AppPermissionsRequests
     public void requestCameraQRScanner(Function0<Unit> onSuccess) {
-        Intrinsics3.checkNotNullParameter(onSuccess, "onSuccess");
+        C12238m.checkNotNullParameter(onSuccess, "onSuccess");
         requireAppActivity().appPermissions.requestCameraQRScanner(onSuccess);
     }
 
     public final Toolbar setActionBarDisplayHomeAsUpEnabled(boolean showHomeAsUp, @DrawableRes Integer iconRes, @StringRes Integer iconAccessibilityLabel) {
         AppActivity appActivity = getAppActivity();
         if (appActivity != null) {
-            return appActivity.k(showHomeAsUp, iconRes, iconAccessibilityLabel);
+            return appActivity.m8350k(showHomeAsUp, iconRes, iconAccessibilityLabel);
         }
         return null;
     }
 
     public AppFragment(@LayoutRes int i) {
         super(i);
-        PublishSubject publishSubjectK0 = PublishSubject.k0();
-        Intrinsics3.checkNotNullExpressionValue(publishSubjectK0, "PublishSubject.create()");
-        this.unsubscribeSignal = publishSubjectK0;
-        this.fileManager = LazyJVM.lazy(new b());
-        this.appLogger = LazyJVM.lazy(new a());
+        PublishSubject publishSubjectM11133k0 = PublishSubject.m11133k0();
+        C12238m.checkNotNullExpressionValue(publishSubjectM11133k0, "PublishSubject.create()");
+        this.unsubscribeSignal = publishSubjectM11133k0;
+        this.fileManager = C12083g.lazy(new C5448b());
+        this.appLogger = C12083g.lazy(new C5447a());
     }
 
     public final Unit setActionBarTitle(@StringRes int titleResId) {
         AppActivity appActivity = getAppActivity();
         if (appActivity != null) {
-            return appActivity.l(getString(titleResId), null);
+            return appActivity.m8351l(getString(titleResId), null);
         }
         return null;
     }

@@ -28,7 +28,7 @@ import androidx.annotation.Nullable;
 import androidx.annotation.RestrictTo;
 import androidx.annotation.StringRes;
 import androidx.annotation.StyleRes;
-import androidx.appcompat.R;
+import androidx.appcompat.C0051R;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.content.res.AppCompatResources;
 import androidx.appcompat.view.CollapsibleActionView;
@@ -357,7 +357,7 @@ public class Toolbar extends ViewGroup {
 
     private void ensureNavButtonView() {
         if (this.mNavButtonView == null) {
-            this.mNavButtonView = new AppCompatImageButton(getContext(), null, R.attr.toolbarNavigationButtonStyle);
+            this.mNavButtonView = new AppCompatImageButton(getContext(), null, C0051R.attr.toolbarNavigationButtonStyle);
             LayoutParams layoutParamsGenerateDefaultLayoutParams = generateDefaultLayoutParams();
             layoutParamsGenerateDefaultLayoutParams.gravity = 8388611 | (this.mButtonGravity & 112);
             this.mNavButtonView.setLayoutParams(layoutParamsGenerateDefaultLayoutParams);
@@ -552,7 +552,7 @@ public class Toolbar extends ViewGroup {
 
     public void ensureCollapseButtonView() {
         if (this.mCollapseButtonView == null) {
-            AppCompatImageButton appCompatImageButton = new AppCompatImageButton(getContext(), null, R.attr.toolbarNavigationButtonStyle);
+            AppCompatImageButton appCompatImageButton = new AppCompatImageButton(getContext(), null, C0051R.attr.toolbarNavigationButtonStyle);
             this.mCollapseButtonView = appCompatImageButton;
             appCompatImageButton.setImageDrawable(this.mCollapseIcon);
             this.mCollapseButtonView.setContentDescription(this.mCollapseDescription);
@@ -1821,7 +1821,7 @@ public class Toolbar extends ViewGroup {
     }
 
     public Toolbar(@NonNull Context context, @Nullable AttributeSet attributeSet) {
-        this(context, attributeSet, R.attr.toolbarStyle);
+        this(context, attributeSet, C0051R.attr.toolbarStyle);
     }
 
     @Override // android.view.ViewGroup
@@ -2016,85 +2016,85 @@ public class Toolbar extends ViewGroup {
             }
         };
         Context context2 = getContext();
-        int[] iArr = R.styleable.Toolbar;
+        int[] iArr = C0051R.styleable.Toolbar;
         TintTypedArray tintTypedArrayObtainStyledAttributes = TintTypedArray.obtainStyledAttributes(context2, attributeSet, iArr, i, 0);
         ViewCompat.saveAttributeDataForStyleable(this, context, iArr, attributeSet, tintTypedArrayObtainStyledAttributes.getWrappedTypeArray(), i, 0);
-        this.mTitleTextAppearance = tintTypedArrayObtainStyledAttributes.getResourceId(R.styleable.Toolbar_titleTextAppearance, 0);
-        this.mSubtitleTextAppearance = tintTypedArrayObtainStyledAttributes.getResourceId(R.styleable.Toolbar_subtitleTextAppearance, 0);
-        this.mGravity = tintTypedArrayObtainStyledAttributes.getInteger(R.styleable.Toolbar_android_gravity, this.mGravity);
-        this.mButtonGravity = tintTypedArrayObtainStyledAttributes.getInteger(R.styleable.Toolbar_buttonGravity, 48);
-        int dimensionPixelOffset = tintTypedArrayObtainStyledAttributes.getDimensionPixelOffset(R.styleable.Toolbar_titleMargin, 0);
-        int i2 = R.styleable.Toolbar_titleMargins;
+        this.mTitleTextAppearance = tintTypedArrayObtainStyledAttributes.getResourceId(C0051R.styleable.Toolbar_titleTextAppearance, 0);
+        this.mSubtitleTextAppearance = tintTypedArrayObtainStyledAttributes.getResourceId(C0051R.styleable.Toolbar_subtitleTextAppearance, 0);
+        this.mGravity = tintTypedArrayObtainStyledAttributes.getInteger(C0051R.styleable.Toolbar_android_gravity, this.mGravity);
+        this.mButtonGravity = tintTypedArrayObtainStyledAttributes.getInteger(C0051R.styleable.Toolbar_buttonGravity, 48);
+        int dimensionPixelOffset = tintTypedArrayObtainStyledAttributes.getDimensionPixelOffset(C0051R.styleable.Toolbar_titleMargin, 0);
+        int i2 = C0051R.styleable.Toolbar_titleMargins;
         dimensionPixelOffset = tintTypedArrayObtainStyledAttributes.hasValue(i2) ? tintTypedArrayObtainStyledAttributes.getDimensionPixelOffset(i2, dimensionPixelOffset) : dimensionPixelOffset;
         this.mTitleMarginBottom = dimensionPixelOffset;
         this.mTitleMarginTop = dimensionPixelOffset;
         this.mTitleMarginEnd = dimensionPixelOffset;
         this.mTitleMarginStart = dimensionPixelOffset;
-        int dimensionPixelOffset2 = tintTypedArrayObtainStyledAttributes.getDimensionPixelOffset(R.styleable.Toolbar_titleMarginStart, -1);
+        int dimensionPixelOffset2 = tintTypedArrayObtainStyledAttributes.getDimensionPixelOffset(C0051R.styleable.Toolbar_titleMarginStart, -1);
         if (dimensionPixelOffset2 >= 0) {
             this.mTitleMarginStart = dimensionPixelOffset2;
         }
-        int dimensionPixelOffset3 = tintTypedArrayObtainStyledAttributes.getDimensionPixelOffset(R.styleable.Toolbar_titleMarginEnd, -1);
+        int dimensionPixelOffset3 = tintTypedArrayObtainStyledAttributes.getDimensionPixelOffset(C0051R.styleable.Toolbar_titleMarginEnd, -1);
         if (dimensionPixelOffset3 >= 0) {
             this.mTitleMarginEnd = dimensionPixelOffset3;
         }
-        int dimensionPixelOffset4 = tintTypedArrayObtainStyledAttributes.getDimensionPixelOffset(R.styleable.Toolbar_titleMarginTop, -1);
+        int dimensionPixelOffset4 = tintTypedArrayObtainStyledAttributes.getDimensionPixelOffset(C0051R.styleable.Toolbar_titleMarginTop, -1);
         if (dimensionPixelOffset4 >= 0) {
             this.mTitleMarginTop = dimensionPixelOffset4;
         }
-        int dimensionPixelOffset5 = tintTypedArrayObtainStyledAttributes.getDimensionPixelOffset(R.styleable.Toolbar_titleMarginBottom, -1);
+        int dimensionPixelOffset5 = tintTypedArrayObtainStyledAttributes.getDimensionPixelOffset(C0051R.styleable.Toolbar_titleMarginBottom, -1);
         if (dimensionPixelOffset5 >= 0) {
             this.mTitleMarginBottom = dimensionPixelOffset5;
         }
-        this.mMaxButtonHeight = tintTypedArrayObtainStyledAttributes.getDimensionPixelSize(R.styleable.Toolbar_maxButtonHeight, -1);
-        int dimensionPixelOffset6 = tintTypedArrayObtainStyledAttributes.getDimensionPixelOffset(R.styleable.Toolbar_contentInsetStart, Integer.MIN_VALUE);
-        int dimensionPixelOffset7 = tintTypedArrayObtainStyledAttributes.getDimensionPixelOffset(R.styleable.Toolbar_contentInsetEnd, Integer.MIN_VALUE);
-        int dimensionPixelSize = tintTypedArrayObtainStyledAttributes.getDimensionPixelSize(R.styleable.Toolbar_contentInsetLeft, 0);
-        int dimensionPixelSize2 = tintTypedArrayObtainStyledAttributes.getDimensionPixelSize(R.styleable.Toolbar_contentInsetRight, 0);
+        this.mMaxButtonHeight = tintTypedArrayObtainStyledAttributes.getDimensionPixelSize(C0051R.styleable.Toolbar_maxButtonHeight, -1);
+        int dimensionPixelOffset6 = tintTypedArrayObtainStyledAttributes.getDimensionPixelOffset(C0051R.styleable.Toolbar_contentInsetStart, Integer.MIN_VALUE);
+        int dimensionPixelOffset7 = tintTypedArrayObtainStyledAttributes.getDimensionPixelOffset(C0051R.styleable.Toolbar_contentInsetEnd, Integer.MIN_VALUE);
+        int dimensionPixelSize = tintTypedArrayObtainStyledAttributes.getDimensionPixelSize(C0051R.styleable.Toolbar_contentInsetLeft, 0);
+        int dimensionPixelSize2 = tintTypedArrayObtainStyledAttributes.getDimensionPixelSize(C0051R.styleable.Toolbar_contentInsetRight, 0);
         ensureContentInsets();
         this.mContentInsets.setAbsolute(dimensionPixelSize, dimensionPixelSize2);
         if (dimensionPixelOffset6 != Integer.MIN_VALUE || dimensionPixelOffset7 != Integer.MIN_VALUE) {
             this.mContentInsets.setRelative(dimensionPixelOffset6, dimensionPixelOffset7);
         }
-        this.mContentInsetStartWithNavigation = tintTypedArrayObtainStyledAttributes.getDimensionPixelOffset(R.styleable.Toolbar_contentInsetStartWithNavigation, Integer.MIN_VALUE);
-        this.mContentInsetEndWithActions = tintTypedArrayObtainStyledAttributes.getDimensionPixelOffset(R.styleable.Toolbar_contentInsetEndWithActions, Integer.MIN_VALUE);
-        this.mCollapseIcon = tintTypedArrayObtainStyledAttributes.getDrawable(R.styleable.Toolbar_collapseIcon);
-        this.mCollapseDescription = tintTypedArrayObtainStyledAttributes.getText(R.styleable.Toolbar_collapseContentDescription);
-        CharSequence text = tintTypedArrayObtainStyledAttributes.getText(R.styleable.Toolbar_title);
+        this.mContentInsetStartWithNavigation = tintTypedArrayObtainStyledAttributes.getDimensionPixelOffset(C0051R.styleable.Toolbar_contentInsetStartWithNavigation, Integer.MIN_VALUE);
+        this.mContentInsetEndWithActions = tintTypedArrayObtainStyledAttributes.getDimensionPixelOffset(C0051R.styleable.Toolbar_contentInsetEndWithActions, Integer.MIN_VALUE);
+        this.mCollapseIcon = tintTypedArrayObtainStyledAttributes.getDrawable(C0051R.styleable.Toolbar_collapseIcon);
+        this.mCollapseDescription = tintTypedArrayObtainStyledAttributes.getText(C0051R.styleable.Toolbar_collapseContentDescription);
+        CharSequence text = tintTypedArrayObtainStyledAttributes.getText(C0051R.styleable.Toolbar_title);
         if (!TextUtils.isEmpty(text)) {
             setTitle(text);
         }
-        CharSequence text2 = tintTypedArrayObtainStyledAttributes.getText(R.styleable.Toolbar_subtitle);
+        CharSequence text2 = tintTypedArrayObtainStyledAttributes.getText(C0051R.styleable.Toolbar_subtitle);
         if (!TextUtils.isEmpty(text2)) {
             setSubtitle(text2);
         }
         this.mPopupContext = getContext();
-        setPopupTheme(tintTypedArrayObtainStyledAttributes.getResourceId(R.styleable.Toolbar_popupTheme, 0));
-        Drawable drawable = tintTypedArrayObtainStyledAttributes.getDrawable(R.styleable.Toolbar_navigationIcon);
+        setPopupTheme(tintTypedArrayObtainStyledAttributes.getResourceId(C0051R.styleable.Toolbar_popupTheme, 0));
+        Drawable drawable = tintTypedArrayObtainStyledAttributes.getDrawable(C0051R.styleable.Toolbar_navigationIcon);
         if (drawable != null) {
             setNavigationIcon(drawable);
         }
-        CharSequence text3 = tintTypedArrayObtainStyledAttributes.getText(R.styleable.Toolbar_navigationContentDescription);
+        CharSequence text3 = tintTypedArrayObtainStyledAttributes.getText(C0051R.styleable.Toolbar_navigationContentDescription);
         if (!TextUtils.isEmpty(text3)) {
             setNavigationContentDescription(text3);
         }
-        Drawable drawable2 = tintTypedArrayObtainStyledAttributes.getDrawable(R.styleable.Toolbar_logo);
+        Drawable drawable2 = tintTypedArrayObtainStyledAttributes.getDrawable(C0051R.styleable.Toolbar_logo);
         if (drawable2 != null) {
             setLogo(drawable2);
         }
-        CharSequence text4 = tintTypedArrayObtainStyledAttributes.getText(R.styleable.Toolbar_logoDescription);
+        CharSequence text4 = tintTypedArrayObtainStyledAttributes.getText(C0051R.styleable.Toolbar_logoDescription);
         if (!TextUtils.isEmpty(text4)) {
             setLogoDescription(text4);
         }
-        int i3 = R.styleable.Toolbar_titleTextColor;
+        int i3 = C0051R.styleable.Toolbar_titleTextColor;
         if (tintTypedArrayObtainStyledAttributes.hasValue(i3)) {
             setTitleTextColor(tintTypedArrayObtainStyledAttributes.getColorStateList(i3));
         }
-        int i4 = R.styleable.Toolbar_subtitleTextColor;
+        int i4 = C0051R.styleable.Toolbar_subtitleTextColor;
         if (tintTypedArrayObtainStyledAttributes.hasValue(i4)) {
             setSubtitleTextColor(tintTypedArrayObtainStyledAttributes.getColorStateList(i4));
         }
-        int i5 = R.styleable.Toolbar_menu;
+        int i5 = C0051R.styleable.Toolbar_menu;
         if (tintTypedArrayObtainStyledAttributes.hasValue(i5)) {
             inflateMenu(tintTypedArrayObtainStyledAttributes.getResourceId(i5, 0));
         }

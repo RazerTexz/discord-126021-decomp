@@ -1,14 +1,5 @@
 package com.google.gson.internal.bind;
 
-import b.i.d.ExclusionStrategy;
-import b.i.d.FieldAttributes;
-import b.i.d.FieldNamingStrategy;
-import b.i.d.TypeAdapterFactory2;
-import b.i.d.p.Since2;
-import b.i.d.p.Until;
-import b.i.d.q.ObjectConstructor;
-import b.i.d.q.g;
-import b.i.d.q.y.ReflectionAccessor;
 import com.google.gson.JsonSyntaxException;
 import com.google.gson.TypeAdapter;
 import com.google.gson.internal.Excluder;
@@ -20,45 +11,66 @@ import java.lang.reflect.Field;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
+import p007b.p225i.p408d.C4898b;
+import p007b.p225i.p408d.InterfaceC4897a;
+import p007b.p225i.p408d.InterfaceC4900d;
+import p007b.p225i.p408d.InterfaceC4911o;
+import p007b.p225i.p408d.p409p.InterfaceC4914c;
+import p007b.p225i.p408d.p409p.InterfaceC4915d;
+import p007b.p225i.p408d.p410q.C4922g;
+import p007b.p225i.p408d.p410q.InterfaceC4933r;
+import p007b.p225i.p408d.p410q.p413y.AbstractC4944b;
 
 /* JADX INFO: loaded from: classes3.dex */
-public final class ReflectiveTypeAdapterFactory implements TypeAdapterFactory2 {
-    public final g j;
-    public final FieldNamingStrategy k;
-    public final Excluder l;
-    public final JsonAdapterAnnotationTypeAdapterFactory m;
-    public final ReflectionAccessor n = ReflectionAccessor.a;
+public final class ReflectiveTypeAdapterFactory implements InterfaceC4911o {
+
+    /* JADX INFO: renamed from: j */
+    public final C4922g f21527j;
+
+    /* JADX INFO: renamed from: k */
+    public final InterfaceC4900d f21528k;
+
+    /* JADX INFO: renamed from: l */
+    public final Excluder f21529l;
+
+    /* JADX INFO: renamed from: m */
+    public final JsonAdapterAnnotationTypeAdapterFactory f21530m;
+
+    /* JADX INFO: renamed from: n */
+    public final AbstractC4944b f21531n = AbstractC4944b.f13148a;
 
     public static final class Adapter<T> extends TypeAdapter<T> {
-        public final ObjectConstructor<T> a;
 
-        /* JADX INFO: renamed from: b, reason: collision with root package name */
-        public final Map<String, a> f3122b;
+        /* JADX INFO: renamed from: a */
+        public final InterfaceC4933r<T> f21532a;
 
-        public Adapter(ObjectConstructor<T> objectConstructor, Map<String, a> map) {
-            this.a = objectConstructor;
-            this.f3122b = map;
+        /* JADX INFO: renamed from: b */
+        public final Map<String, AbstractC11109a> f21533b;
+
+        public Adapter(InterfaceC4933r<T> interfaceC4933r, Map<String, AbstractC11109a> map) {
+            this.f21532a = interfaceC4933r;
+            this.f21533b = map;
         }
 
         @Override // com.google.gson.TypeAdapter
         public T read(JsonReader jsonReader) throws IOException {
-            if (jsonReader.N() == JsonToken.NULL) {
-                jsonReader.H();
+            if (jsonReader.mo6878N() == JsonToken.NULL) {
+                jsonReader.mo6876H();
                 return null;
             }
-            T tA = this.a.a();
+            T tMo6869a = this.f21532a.mo6869a();
             try {
-                jsonReader.b();
-                while (jsonReader.q()) {
-                    a aVar = this.f3122b.get(jsonReader.C());
-                    if (aVar == null || !aVar.c) {
-                        jsonReader.U();
+                jsonReader.mo6883b();
+                while (jsonReader.mo6888q()) {
+                    AbstractC11109a abstractC11109a = this.f21533b.get(jsonReader.mo6875C());
+                    if (abstractC11109a == null || !abstractC11109a.f21536c) {
+                        jsonReader.mo6879U();
                     } else {
-                        aVar.a(jsonReader, tA);
+                        abstractC11109a.mo6906a(jsonReader, tMo6869a);
                     }
                 }
-                jsonReader.f();
-                return tA;
+                jsonReader.mo6887f();
+                return tMo6869a;
             } catch (IllegalAccessException e) {
                 throw new AssertionError(e);
             } catch (IllegalStateException e2) {
@@ -69,64 +81,73 @@ public final class ReflectiveTypeAdapterFactory implements TypeAdapterFactory2 {
         @Override // com.google.gson.TypeAdapter
         public void write(JsonWriter jsonWriter, T t) throws IOException {
             if (t == null) {
-                jsonWriter.s();
+                jsonWriter.mo6905s();
                 return;
             }
-            jsonWriter.c();
+            jsonWriter.mo6901c();
             try {
-                for (a aVar : this.f3122b.values()) {
-                    if (aVar.c(t)) {
-                        jsonWriter.n(aVar.a);
-                        aVar.b(jsonWriter, t);
+                for (AbstractC11109a abstractC11109a : this.f21533b.values()) {
+                    if (abstractC11109a.mo6908c(t)) {
+                        jsonWriter.mo6904n(abstractC11109a.f21534a);
+                        abstractC11109a.mo6907b(jsonWriter, t);
                     }
                 }
-                jsonWriter.f();
+                jsonWriter.mo6903f();
             } catch (IllegalAccessException e) {
                 throw new AssertionError(e);
             }
         }
     }
 
-    public static abstract class a {
-        public final String a;
+    /* JADX INFO: renamed from: com.google.gson.internal.bind.ReflectiveTypeAdapterFactory$a */
+    public static abstract class AbstractC11109a {
 
-        /* JADX INFO: renamed from: b, reason: collision with root package name */
-        public final boolean f3123b;
-        public final boolean c;
+        /* JADX INFO: renamed from: a */
+        public final String f21534a;
 
-        public a(String str, boolean z2, boolean z3) {
-            this.a = str;
-            this.f3123b = z2;
-            this.c = z3;
+        /* JADX INFO: renamed from: b */
+        public final boolean f21535b;
+
+        /* JADX INFO: renamed from: c */
+        public final boolean f21536c;
+
+        public AbstractC11109a(String str, boolean z2, boolean z3) {
+            this.f21534a = str;
+            this.f21535b = z2;
+            this.f21536c = z3;
         }
 
-        public abstract void a(JsonReader jsonReader, Object obj) throws IllegalAccessException, IOException;
+        /* JADX INFO: renamed from: a */
+        public abstract void mo6906a(JsonReader jsonReader, Object obj) throws IllegalAccessException, IOException;
 
-        public abstract void b(JsonWriter jsonWriter, Object obj) throws IllegalAccessException, IOException;
+        /* JADX INFO: renamed from: b */
+        public abstract void mo6907b(JsonWriter jsonWriter, Object obj) throws IllegalAccessException, IOException;
 
-        public abstract boolean c(Object obj) throws IllegalAccessException, IOException;
+        /* JADX INFO: renamed from: c */
+        public abstract boolean mo6908c(Object obj) throws IllegalAccessException, IOException;
     }
 
-    public ReflectiveTypeAdapterFactory(g gVar, FieldNamingStrategy fieldNamingStrategy, Excluder excluder, JsonAdapterAnnotationTypeAdapterFactory jsonAdapterAnnotationTypeAdapterFactory) {
-        this.j = gVar;
-        this.k = fieldNamingStrategy;
-        this.l = excluder;
-        this.m = jsonAdapterAnnotationTypeAdapterFactory;
+    public ReflectiveTypeAdapterFactory(C4922g c4922g, InterfaceC4900d interfaceC4900d, Excluder excluder, JsonAdapterAnnotationTypeAdapterFactory jsonAdapterAnnotationTypeAdapterFactory) {
+        this.f21527j = c4922g;
+        this.f21528k = interfaceC4900d;
+        this.f21529l = excluder;
+        this.f21530m = jsonAdapterAnnotationTypeAdapterFactory;
     }
 
-    public boolean a(Field field, boolean z2) {
+    /* JADX INFO: renamed from: a */
+    public boolean m9233a(Field field, boolean z2) {
         boolean z3;
-        Excluder excluder = this.l;
+        Excluder excluder = this.f21529l;
         Class<?> type = field.getType();
-        if (!(excluder.b(type) || excluder.f(type, z2))) {
-            if ((excluder.l & field.getModifiers()) == 0 && ((excluder.k == -1.0d || excluder.i((Since2) field.getAnnotation(Since2.class), (Until) field.getAnnotation(Until.class))) && !field.isSynthetic() && ((excluder.m || !excluder.h(field.getType())) && !excluder.g(field.getType())))) {
-                List<ExclusionStrategy> list = z2 ? excluder.n : excluder.o;
+        if (!(excluder.m9217b(type) || excluder.m9218f(type, z2))) {
+            if ((excluder.f21485l & field.getModifiers()) == 0 && ((excluder.f21484k == -1.0d || excluder.m9221i((InterfaceC4914c) field.getAnnotation(InterfaceC4914c.class), (InterfaceC4915d) field.getAnnotation(InterfaceC4915d.class))) && !field.isSynthetic() && ((excluder.f21486m || !excluder.m9220h(field.getType())) && !excluder.m9219g(field.getType())))) {
+                List<InterfaceC4897a> list = z2 ? excluder.f21487n : excluder.f21488o;
                 if (!list.isEmpty()) {
-                    FieldAttributes fieldAttributes = new FieldAttributes(field);
-                    Iterator<ExclusionStrategy> it = list.iterator();
+                    C4898b c4898b = new C4898b(field);
+                    Iterator<InterfaceC4897a> it = list.iterator();
                     while (true) {
                         if (it.hasNext()) {
-                            if (it.next().a(fieldAttributes)) {
+                            if (it.next().m6846a(c4898b)) {
                                 z3 = true;
                             }
                         }
@@ -149,7 +170,7 @@ public final class ReflectiveTypeAdapterFactory implements TypeAdapterFactory2 {
         	at jadx.core.dex.visitors.MoveInlineVisitor.moveInline(MoveInlineVisitor.java:41)
         	at jadx.core.dex.visitors.ConstructorVisitor.visit(ConstructorVisitor.java:43)
         */
-    @Override // b.i.d.TypeAdapterFactory2
+    @Override // p007b.p225i.p408d.InterfaceC4911o
     public <T> com.google.gson.TypeAdapter<T> create(
     /*  JADX ERROR: Method generation error
         jadx.core.utils.exceptions.JadxRuntimeException: Code variable not set in r36v0 ??

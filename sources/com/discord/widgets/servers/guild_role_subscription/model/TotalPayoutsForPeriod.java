@@ -1,11 +1,11 @@
 package com.discord.widgets.servers.guild_role_subscription.model;
 
-import a0.a.a.b;
-import b.d.b.a.outline;
 import com.discord.api.guildrolesubscription.PayoutGroup;
-import d0.z.d.Intrinsics3;
 import java.util.Map;
 import kotlin.jvm.internal.DefaultConstructorMarker;
+import p001a0.p002a.p003a.C0002b;
+import p007b.p100d.p104b.p105a.C1643a;
+import p507d0.p592z.p594d.C12238m;
 
 /* JADX INFO: compiled from: TotalPayoutsForPeriod.kt */
 /* JADX INFO: loaded from: classes2.dex */
@@ -16,7 +16,7 @@ public final /* data */ class TotalPayoutsForPeriod {
     private final long subscriberCount;
 
     public TotalPayoutsForPeriod(String str, long j, long j2, Map<Long, PayoutGroup> map) {
-        Intrinsics3.checkNotNullParameter(str, "periodStartingAt");
+        C12238m.checkNotNullParameter(str, "periodStartingAt");
         this.periodStartingAt = str;
         this.subscriberCount = j;
         this.revenue = j2;
@@ -62,7 +62,7 @@ public final /* data */ class TotalPayoutsForPeriod {
     }
 
     public final TotalPayoutsForPeriod copy(String periodStartingAt, long subscriberCount, long revenue, Map<Long, PayoutGroup> payoutGroups) {
-        Intrinsics3.checkNotNullParameter(periodStartingAt, "periodStartingAt");
+        C12238m.checkNotNullParameter(periodStartingAt, "periodStartingAt");
         return new TotalPayoutsForPeriod(periodStartingAt, subscriberCount, revenue, payoutGroups);
     }
 
@@ -74,7 +74,7 @@ public final /* data */ class TotalPayoutsForPeriod {
             return false;
         }
         TotalPayoutsForPeriod totalPayoutsForPeriod = (TotalPayoutsForPeriod) other;
-        return Intrinsics3.areEqual(this.periodStartingAt, totalPayoutsForPeriod.periodStartingAt) && this.subscriberCount == totalPayoutsForPeriod.subscriberCount && this.revenue == totalPayoutsForPeriod.revenue && Intrinsics3.areEqual(this.payoutGroups, totalPayoutsForPeriod.payoutGroups);
+        return C12238m.areEqual(this.periodStartingAt, totalPayoutsForPeriod.periodStartingAt) && this.subscriberCount == totalPayoutsForPeriod.subscriberCount && this.revenue == totalPayoutsForPeriod.revenue && C12238m.areEqual(this.payoutGroups, totalPayoutsForPeriod.payoutGroups);
     }
 
     public final Map<Long, PayoutGroup> getPayoutGroups() {
@@ -95,20 +95,20 @@ public final /* data */ class TotalPayoutsForPeriod {
 
     public int hashCode() {
         String str = this.periodStartingAt;
-        int iA = (b.a(this.revenue) + ((b.a(this.subscriberCount) + ((str != null ? str.hashCode() : 0) * 31)) * 31)) * 31;
+        int iM3a = (C0002b.m3a(this.revenue) + ((C0002b.m3a(this.subscriberCount) + ((str != null ? str.hashCode() : 0) * 31)) * 31)) * 31;
         Map<Long, PayoutGroup> map = this.payoutGroups;
-        return iA + (map != null ? map.hashCode() : 0);
+        return iM3a + (map != null ? map.hashCode() : 0);
     }
 
     public String toString() {
-        StringBuilder sbU = outline.U("TotalPayoutsForPeriod(periodStartingAt=");
-        sbU.append(this.periodStartingAt);
-        sbU.append(", subscriberCount=");
-        sbU.append(this.subscriberCount);
-        sbU.append(", revenue=");
-        sbU.append(this.revenue);
-        sbU.append(", payoutGroups=");
-        return outline.M(sbU, this.payoutGroups, ")");
+        StringBuilder sbM833U = C1643a.m833U("TotalPayoutsForPeriod(periodStartingAt=");
+        sbM833U.append(this.periodStartingAt);
+        sbM833U.append(", subscriberCount=");
+        sbM833U.append(this.subscriberCount);
+        sbM833U.append(", revenue=");
+        sbM833U.append(this.revenue);
+        sbM833U.append(", payoutGroups=");
+        return C1643a.m825M(sbM833U, this.payoutGroups, ")");
     }
 
     public /* synthetic */ TotalPayoutsForPeriod(String str, long j, long j2, Map map, int i, DefaultConstructorMarker defaultConstructorMarker) {

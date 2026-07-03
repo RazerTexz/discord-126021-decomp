@@ -9,25 +9,27 @@ import com.google.android.material.button.MaterialButton;
 /* JADX INFO: loaded from: classes.dex */
 public final class WidgetNoticeNuxOverlayBinding implements ViewBinding {
 
+    /* JADX INFO: renamed from: a */
     @NonNull
-    public final LinearLayout a;
+    public final LinearLayout f17302a;
 
-    /* JADX INFO: renamed from: b, reason: collision with root package name */
+    /* JADX INFO: renamed from: b */
     @NonNull
-    public final MaterialButton f2501b;
+    public final MaterialButton f17303b;
 
+    /* JADX INFO: renamed from: c */
     @NonNull
-    public final MaterialButton c;
+    public final MaterialButton f17304c;
 
     public WidgetNoticeNuxOverlayBinding(@NonNull LinearLayout linearLayout, @NonNull MaterialButton materialButton, @NonNull MaterialButton materialButton2) {
-        this.a = linearLayout;
-        this.f2501b = materialButton;
-        this.c = materialButton2;
+        this.f17302a = linearLayout;
+        this.f17303b = materialButton;
+        this.f17304c = materialButton2;
     }
 
     @Override // androidx.viewbinding.ViewBinding
     @NonNull
     public View getRoot() {
-        return this.a;
+        return this.f17302a;
     }
 }

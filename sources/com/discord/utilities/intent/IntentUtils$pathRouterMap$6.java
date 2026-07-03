@@ -3,22 +3,22 @@ package com.discord.utilities.intent;
 import android.content.Context;
 import android.net.Uri;
 import com.discord.utilities.intent.RouteHandlers;
-import d0.z.d.FunctionReferenceImpl;
-import d0.z.d.Intrinsics3;
 import kotlin.jvm.functions.Function3;
 import kotlin.text.MatchResult;
+import p507d0.p592z.p594d.C12236k;
+import p507d0.p592z.p594d.C12238m;
 
 /* JADX INFO: compiled from: IntentUtils.kt */
 /* JADX INFO: loaded from: classes2.dex */
-public final /* synthetic */ class IntentUtils$pathRouterMap$6 extends FunctionReferenceImpl implements Function3<Uri, MatchResult, Context, RouteHandlers.AnalyticsMetadata> {
+public final /* synthetic */ class IntentUtils$pathRouterMap$6 extends C12236k implements Function3<Uri, MatchResult, Context, RouteHandlers.AnalyticsMetadata> {
     public IntentUtils$pathRouterMap$6(RouteHandlers routeHandlers) {
         super(3, routeHandlers, RouteHandlers.class, "selectUserProfile", "selectUserProfile(Landroid/net/Uri;Lkotlin/text/MatchResult;Landroid/content/Context;)Lcom/discord/utilities/intent/RouteHandlers$AnalyticsMetadata;", 0);
     }
 
     @Override // kotlin.jvm.functions.Function3
     public final RouteHandlers.AnalyticsMetadata invoke(Uri uri, MatchResult matchResult, Context context) {
-        Intrinsics3.checkNotNullParameter(uri, "p1");
-        Intrinsics3.checkNotNullParameter(context, "p3");
+        C12238m.checkNotNullParameter(uri, "p1");
+        C12238m.checkNotNullParameter(context, "p3");
         return ((RouteHandlers) this.receiver).selectUserProfile(uri, matchResult, context);
     }
 }

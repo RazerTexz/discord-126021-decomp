@@ -1,10 +1,10 @@
 package com.discord.api.sticker;
 
-import b.d.b.a.outline;
 import com.discord.models.domain.ModelAuditLogEntry;
-import d0.z.d.Intrinsics3;
 import java.io.Serializable;
 import kotlin.NoWhenBranchMatchedException;
+import p007b.p100d.p104b.p105a.C1643a;
+import p507d0.p592z.p594d.C12238m;
 
 /* JADX INFO: compiled from: Sticker.kt */
 /* JADX INFO: loaded from: classes.dex */
@@ -35,11 +35,11 @@ public final /* data */ class Sticker implements Serializable, BaseSticker {
 
     public Sticker(long j, Long l, Long l2, String str, String str2, StickerFormatType stickerFormatType, String str3, StickerType stickerType, Boolean bool, int i) {
         int i2 = i & 256;
-        Intrinsics3.checkNotNullParameter(str, ModelAuditLogEntry.CHANGE_KEY_NAME);
-        Intrinsics3.checkNotNullParameter(str2, ModelAuditLogEntry.CHANGE_KEY_DESCRIPTION);
-        Intrinsics3.checkNotNullParameter(stickerFormatType, "formatType");
-        Intrinsics3.checkNotNullParameter(str3, ModelAuditLogEntry.CHANGE_KEY_TAGS);
-        Intrinsics3.checkNotNullParameter(stickerType, "type");
+        C12238m.checkNotNullParameter(str, ModelAuditLogEntry.CHANGE_KEY_NAME);
+        C12238m.checkNotNullParameter(str2, ModelAuditLogEntry.CHANGE_KEY_DESCRIPTION);
+        C12238m.checkNotNullParameter(stickerFormatType, "formatType");
+        C12238m.checkNotNullParameter(str3, ModelAuditLogEntry.CHANGE_KEY_TAGS);
+        C12238m.checkNotNullParameter(stickerType, "type");
         this.id = j;
         this.packId = l;
         this.guildId = l2;
@@ -58,7 +58,8 @@ public final /* data */ class Sticker implements Serializable, BaseSticker {
     }
 
     @Override // com.discord.api.sticker.BaseSticker
-    public String b() {
+    /* JADX INFO: renamed from: b */
+    public String mo8228b() {
         int iOrdinal = this.formatType.ordinal();
         if (iOrdinal == 0) {
             return "";
@@ -73,7 +74,8 @@ public final /* data */ class Sticker implements Serializable, BaseSticker {
     }
 
     @Override // com.discord.api.sticker.BaseSticker
-    public StickerPartial c() {
+    /* JADX INFO: renamed from: c */
+    public StickerPartial mo8229c() {
         return new StickerPartial(this.id, this.formatType, this.name);
     }
 
@@ -96,7 +98,7 @@ public final /* data */ class Sticker implements Serializable, BaseSticker {
             return false;
         }
         Sticker sticker = (Sticker) other;
-        return this.id == sticker.id && Intrinsics3.areEqual(this.packId, sticker.packId) && Intrinsics3.areEqual(this.guildId, sticker.guildId) && Intrinsics3.areEqual(this.name, sticker.name) && Intrinsics3.areEqual(this.description, sticker.description) && Intrinsics3.areEqual(this.formatType, sticker.formatType) && Intrinsics3.areEqual(this.tags, sticker.tags) && Intrinsics3.areEqual(this.type, sticker.type) && Intrinsics3.areEqual(this.available, sticker.available);
+        return this.id == sticker.id && C12238m.areEqual(this.packId, sticker.packId) && C12238m.areEqual(this.guildId, sticker.guildId) && C12238m.areEqual(this.name, sticker.name) && C12238m.areEqual(this.description, sticker.description) && C12238m.areEqual(this.formatType, sticker.formatType) && C12238m.areEqual(this.tags, sticker.tags) && C12238m.areEqual(this.type, sticker.type) && C12238m.areEqual(this.available, sticker.available);
     }
 
     /* JADX INFO: renamed from: f, reason: from getter */
@@ -154,29 +156,30 @@ public final /* data */ class Sticker implements Serializable, BaseSticker {
         return this.type;
     }
 
-    public final boolean l() {
+    /* JADX INFO: renamed from: l */
+    public final boolean m8241l() {
         StickerFormatType stickerFormatType = this.formatType;
         return stickerFormatType == StickerFormatType.APNG || stickerFormatType == StickerFormatType.LOTTIE;
     }
 
     public String toString() {
-        StringBuilder sbU = outline.U("Sticker(id=");
-        sbU.append(this.id);
-        sbU.append(", packId=");
-        sbU.append(this.packId);
-        sbU.append(", guildId=");
-        sbU.append(this.guildId);
-        sbU.append(", name=");
-        sbU.append(this.name);
-        sbU.append(", description=");
-        sbU.append(this.description);
-        sbU.append(", formatType=");
-        sbU.append(this.formatType);
-        sbU.append(", tags=");
-        sbU.append(this.tags);
-        sbU.append(", type=");
-        sbU.append(this.type);
-        sbU.append(", available=");
-        return outline.D(sbU, this.available, ")");
+        StringBuilder sbM833U = C1643a.m833U("Sticker(id=");
+        sbM833U.append(this.id);
+        sbM833U.append(", packId=");
+        sbM833U.append(this.packId);
+        sbM833U.append(", guildId=");
+        sbM833U.append(this.guildId);
+        sbM833U.append(", name=");
+        sbM833U.append(this.name);
+        sbM833U.append(", description=");
+        sbM833U.append(this.description);
+        sbM833U.append(", formatType=");
+        sbM833U.append(this.formatType);
+        sbM833U.append(", tags=");
+        sbM833U.append(this.tags);
+        sbM833U.append(", type=");
+        sbM833U.append(this.type);
+        sbM833U.append(", available=");
+        return C1643a.m816D(sbM833U, this.available, ")");
     }
 }

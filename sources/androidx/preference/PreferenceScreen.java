@@ -12,7 +12,7 @@ public final class PreferenceScreen extends PreferenceGroup {
 
     @RestrictTo({RestrictTo.Scope.LIBRARY_GROUP_PREFIX})
     public PreferenceScreen(Context context, AttributeSet attributeSet) {
-        super(context, attributeSet, TypedArrayUtils.getAttr(context, R.attr.preferenceScreenStyle, android.R.attr.preferenceScreenStyle));
+        super(context, attributeSet, TypedArrayUtils.getAttr(context, C0525R.attr.preferenceScreenStyle, android.R.attr.preferenceScreenStyle));
         this.mShouldUseGeneratedIds = true;
     }
 

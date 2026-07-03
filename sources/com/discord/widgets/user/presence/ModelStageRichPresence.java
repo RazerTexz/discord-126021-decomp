@@ -1,29 +1,29 @@
 package com.discord.widgets.user.presence;
 
-import a0.a.a.b;
-import b.d.b.a.outline;
 import com.discord.api.activity.Activity;
 import com.discord.api.activity.ActivityAssets;
 import com.discord.models.domain.ModelAuditLogEntry;
 import com.discord.models.presence.Presence;
 import com.discord.stores.StoreStream;
 import com.discord.stores.StoreUserPresence;
-import com.discord.utilities.presence.ActivityUtils;
-import com.discord.utilities.presence.ActivityUtils2;
-import d0.f0._Sequences2;
-import d0.t.Sets5;
-import d0.t.SetsJVM;
-import d0.t._Collections;
-import d0.z.d.Intrinsics3;
-import d0.z.d.Lambda;
-import j0.k.Func1;
+import com.discord.utilities.presence.ActivityUtilsKt;
+import com.discord.utilities.presence.StageCallRichPresencePartyData;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
 import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.DefaultConstructorMarker;
-import rx.Observable;
+import p001a0.p002a.p003a.C0002b;
+import p007b.p100d.p104b.p105a.C1643a;
+import p507d0.p578f0.C12078q;
+import p507d0.p580t.C12146m0;
+import p507d0.p580t.C12148n0;
+import p507d0.p580t.C12163u;
+import p507d0.p592z.p594d.AbstractC12240o;
+import p507d0.p592z.p594d.C12238m;
+import p637j0.p641k.InterfaceC12589b;
+import p658rx.Observable;
 
 /* JADX INFO: compiled from: ModelStageRichPresence.kt */
 /* JADX INFO: loaded from: classes.dex */
@@ -58,16 +58,16 @@ public final /* data */ class ModelStageRichPresence {
         }
 
         public final Observable<List<ModelStageRichPresence>> observeStageRichPresence(StoreUserPresence storeUserPresence) {
-            Intrinsics3.checkNotNullParameter(storeUserPresence, "storeUserPresence");
-            Observable observableG = storeUserPresence.observeAllPresences().G(new Func1<Map<Long, ? extends Presence>, List<? extends ModelStageRichPresence>>() { // from class: com.discord.widgets.user.presence.ModelStageRichPresence$Companion$observeStageRichPresence$1
+            C12238m.checkNotNullParameter(storeUserPresence, "storeUserPresence");
+            Observable observableM11083G = storeUserPresence.observeAllPresences().m11083G(new InterfaceC12589b<Map<Long, ? extends Presence>, List<? extends ModelStageRichPresence>>() { // from class: com.discord.widgets.user.presence.ModelStageRichPresence$Companion$observeStageRichPresence$1
 
-                /* JADX INFO: renamed from: com.discord.widgets.user.presence.ModelStageRichPresence$Companion$observeStageRichPresence$1$1, reason: invalid class name */
+                /* JADX INFO: renamed from: com.discord.widgets.user.presence.ModelStageRichPresence$Companion$observeStageRichPresence$1$1 */
                 /* JADX INFO: compiled from: ModelStageRichPresence.kt */
-                public static final class AnonymousClass1 extends Lambda implements Function1<Long, ModelStageRichPresence> {
+                public static final class C102731 extends AbstractC12240o implements Function1<Long, ModelStageRichPresence> {
                     public final /* synthetic */ Map $userPresences;
 
                     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-                    public AnonymousClass1(Map map) {
+                    public C102731(Map map) {
                         super(1);
                         this.$userPresences = map;
                     }
@@ -80,7 +80,7 @@ public final /* data */ class ModelStageRichPresence {
                     public final ModelStageRichPresence invoke(long j) {
                         List<Activity> activities;
                         T next;
-                        ActivityUtils2 stageChannelRichPresencePartyData;
+                        StageCallRichPresencePartyData stageChannelRichPresencePartyData;
                         String smallText;
                         Presence presence = (Presence) this.$userPresences.get(Long.valueOf(j));
                         if (presence != null && (activities = presence.getActivities()) != null) {
@@ -91,9 +91,9 @@ public final /* data */ class ModelStageRichPresence {
                                     break;
                                 }
                                 next = it.next();
-                            } while (!ActivityUtils.isStageChannelActivity((Activity) next));
+                            } while (!ActivityUtilsKt.isStageChannelActivity((Activity) next));
                             Activity activity = next;
-                            if (activity != null && (stageChannelRichPresencePartyData = ActivityUtils.getStageChannelRichPresencePartyData(activity)) != null) {
+                            if (activity != null && (stageChannelRichPresencePartyData = ActivityUtilsKt.getStageChannelRichPresencePartyData(activity)) != null) {
                                 long channelId = stageChannelRichPresencePartyData.getChannelId();
                                 long stageInstanceId = stageChannelRichPresencePartyData.getStageInstanceId();
                                 boolean userIsSpeaker = stageChannelRichPresencePartyData.getUserIsSpeaker();
@@ -106,25 +106,25 @@ public final /* data */ class ModelStageRichPresence {
                                 if (assets2 == null || (smallText = assets2.getSmallText()) == null) {
                                     smallText = "";
                                 }
-                                return new ModelStageRichPresence(channelId, stageInstanceId, userIsSpeaker, guildId, guildIsPartnered, guildIsVerified, smallText, smallImage, activity.getName(), SetsJVM.setOf(Long.valueOf(j)), stageChannelRichPresencePartyData.getUserIsSpeaker() ? SetsJVM.setOf(Long.valueOf(j)) : Sets5.emptySet(), stageChannelRichPresencePartyData.getSpeakerCount(), stageChannelRichPresencePartyData.getAudienceSize());
+                                return new ModelStageRichPresence(channelId, stageInstanceId, userIsSpeaker, guildId, guildIsPartnered, guildIsVerified, smallText, smallImage, activity.getName(), C12146m0.setOf(Long.valueOf(j)), stageChannelRichPresencePartyData.getUserIsSpeaker() ? C12146m0.setOf(Long.valueOf(j)) : C12148n0.emptySet(), stageChannelRichPresencePartyData.getSpeakerCount(), stageChannelRichPresencePartyData.getAudienceSize());
                             }
                         }
                         return null;
                     }
                 }
 
-                @Override // j0.k.Func1
+                @Override // p637j0.p641k.InterfaceC12589b
                 public /* bridge */ /* synthetic */ List<? extends ModelStageRichPresence> call(Map<Long, ? extends Presence> map) {
                     return call2((Map<Long, Presence>) map);
                 }
 
                 /* JADX INFO: renamed from: call, reason: avoid collision after fix types in other method */
                 public final List<ModelStageRichPresence> call2(Map<Long, Presence> map) {
-                    return _Sequences2.toList(_Sequences2.mapNotNull(_Collections.asSequence(map.keySet()), new AnonymousClass1(map)));
+                    return C12078q.toList(C12078q.mapNotNull(C12163u.asSequence(map.keySet()), new C102731(map)));
                 }
             });
-            Intrinsics3.checkNotNullExpressionValue(observableG, "storeUserPresence\n      …   }.toList()\n          }");
-            return observableG;
+            C12238m.checkNotNullExpressionValue(observableM11083G, "storeUserPresence\n      …   }.toList()\n          }");
+            return observableM11083G;
         }
 
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
@@ -133,10 +133,10 @@ public final /* data */ class ModelStageRichPresence {
     }
 
     public ModelStageRichPresence(long j, long j2, boolean z2, long j3, boolean z3, boolean z4, String str, String str2, String str3, Set<Long> set, Set<Long> set2, long j4, long j5) {
-        Intrinsics3.checkNotNullParameter(str, "guildName");
-        Intrinsics3.checkNotNullParameter(str3, ModelAuditLogEntry.CHANGE_KEY_TOPIC);
-        Intrinsics3.checkNotNullParameter(set, "knownUserIds");
-        Intrinsics3.checkNotNullParameter(set2, "speakerIds");
+        C12238m.checkNotNullParameter(str, "guildName");
+        C12238m.checkNotNullParameter(str3, ModelAuditLogEntry.CHANGE_KEY_TOPIC);
+        C12238m.checkNotNullParameter(set, "knownUserIds");
+        C12238m.checkNotNullParameter(set2, "speakerIds");
         this.channelId = j;
         this.stageInstanceId = j2;
         this.userIsSpeaker = z2;
@@ -216,10 +216,10 @@ public final /* data */ class ModelStageRichPresence {
     }
 
     public final ModelStageRichPresence copy(long channelId, long stageInstanceId, boolean userIsSpeaker, long guildId, boolean guildIsPartnered, boolean guildIsVerified, String guildName, String guildIcon, String topic, Set<Long> knownUserIds, Set<Long> speakerIds, long speakerCount, long audienceSize) {
-        Intrinsics3.checkNotNullParameter(guildName, "guildName");
-        Intrinsics3.checkNotNullParameter(topic, ModelAuditLogEntry.CHANGE_KEY_TOPIC);
-        Intrinsics3.checkNotNullParameter(knownUserIds, "knownUserIds");
-        Intrinsics3.checkNotNullParameter(speakerIds, "speakerIds");
+        C12238m.checkNotNullParameter(guildName, "guildName");
+        C12238m.checkNotNullParameter(topic, ModelAuditLogEntry.CHANGE_KEY_TOPIC);
+        C12238m.checkNotNullParameter(knownUserIds, "knownUserIds");
+        C12238m.checkNotNullParameter(speakerIds, "speakerIds");
         return new ModelStageRichPresence(channelId, stageInstanceId, userIsSpeaker, guildId, guildIsPartnered, guildIsVerified, guildName, guildIcon, topic, knownUserIds, speakerIds, speakerCount, audienceSize);
     }
 
@@ -231,7 +231,7 @@ public final /* data */ class ModelStageRichPresence {
             return false;
         }
         ModelStageRichPresence modelStageRichPresence = (ModelStageRichPresence) other;
-        return this.channelId == modelStageRichPresence.channelId && this.stageInstanceId == modelStageRichPresence.stageInstanceId && this.userIsSpeaker == modelStageRichPresence.userIsSpeaker && this.guildId == modelStageRichPresence.guildId && this.guildIsPartnered == modelStageRichPresence.guildIsPartnered && this.guildIsVerified == modelStageRichPresence.guildIsVerified && Intrinsics3.areEqual(this.guildName, modelStageRichPresence.guildName) && Intrinsics3.areEqual(this.guildIcon, modelStageRichPresence.guildIcon) && Intrinsics3.areEqual(this.topic, modelStageRichPresence.topic) && Intrinsics3.areEqual(this.knownUserIds, modelStageRichPresence.knownUserIds) && Intrinsics3.areEqual(this.speakerIds, modelStageRichPresence.speakerIds) && this.speakerCount == modelStageRichPresence.speakerCount && this.audienceSize == modelStageRichPresence.audienceSize;
+        return this.channelId == modelStageRichPresence.channelId && this.stageInstanceId == modelStageRichPresence.stageInstanceId && this.userIsSpeaker == modelStageRichPresence.userIsSpeaker && this.guildId == modelStageRichPresence.guildId && this.guildIsPartnered == modelStageRichPresence.guildIsPartnered && this.guildIsVerified == modelStageRichPresence.guildIsVerified && C12238m.areEqual(this.guildName, modelStageRichPresence.guildName) && C12238m.areEqual(this.guildIcon, modelStageRichPresence.guildIcon) && C12238m.areEqual(this.topic, modelStageRichPresence.topic) && C12238m.areEqual(this.knownUserIds, modelStageRichPresence.knownUserIds) && C12238m.areEqual(this.speakerIds, modelStageRichPresence.speakerIds) && this.speakerCount == modelStageRichPresence.speakerCount && this.audienceSize == modelStageRichPresence.audienceSize;
     }
 
     public final long getAudienceSize() {
@@ -300,19 +300,19 @@ public final /* data */ class ModelStageRichPresence {
     /* JADX WARN: Type inference failed for: r2v1, types: [int] */
     /* JADX WARN: Type inference failed for: r2v6 */
     public int hashCode() {
-        int iA = (b.a(this.stageInstanceId) + (b.a(this.channelId) * 31)) * 31;
+        int iM3a = (C0002b.m3a(this.stageInstanceId) + (C0002b.m3a(this.channelId) * 31)) * 31;
         boolean z2 = this.userIsSpeaker;
         ?? r0 = z2;
         if (z2) {
             r0 = 1;
         }
-        int iA2 = (b.a(this.guildId) + ((iA + r0) * 31)) * 31;
+        int iM3a2 = (C0002b.m3a(this.guildId) + ((iM3a + r0) * 31)) * 31;
         boolean z3 = this.guildIsPartnered;
         ?? r1 = z3;
         if (z3) {
             r1 = 1;
         }
-        int i = (iA2 + r1) * 31;
+        int i = (iM3a2 + r1) * 31;
         boolean z4 = this.guildIsVerified;
         int i2 = (i + (z4 ? 1 : z4)) * 31;
         String str = this.guildName;
@@ -324,35 +324,35 @@ public final /* data */ class ModelStageRichPresence {
         Set<Long> set = this.knownUserIds;
         int iHashCode4 = (iHashCode3 + (set != null ? set.hashCode() : 0)) * 31;
         Set<Long> set2 = this.speakerIds;
-        return b.a(this.audienceSize) + ((b.a(this.speakerCount) + ((iHashCode4 + (set2 != null ? set2.hashCode() : 0)) * 31)) * 31);
+        return C0002b.m3a(this.audienceSize) + ((C0002b.m3a(this.speakerCount) + ((iHashCode4 + (set2 != null ? set2.hashCode() : 0)) * 31)) * 31);
     }
 
     public String toString() {
-        StringBuilder sbU = outline.U("ModelStageRichPresence(channelId=");
-        sbU.append(this.channelId);
-        sbU.append(", stageInstanceId=");
-        sbU.append(this.stageInstanceId);
-        sbU.append(", userIsSpeaker=");
-        sbU.append(this.userIsSpeaker);
-        sbU.append(", guildId=");
-        sbU.append(this.guildId);
-        sbU.append(", guildIsPartnered=");
-        sbU.append(this.guildIsPartnered);
-        sbU.append(", guildIsVerified=");
-        sbU.append(this.guildIsVerified);
-        sbU.append(", guildName=");
-        sbU.append(this.guildName);
-        sbU.append(", guildIcon=");
-        sbU.append(this.guildIcon);
-        sbU.append(", topic=");
-        sbU.append(this.topic);
-        sbU.append(", knownUserIds=");
-        sbU.append(this.knownUserIds);
-        sbU.append(", speakerIds=");
-        sbU.append(this.speakerIds);
-        sbU.append(", speakerCount=");
-        sbU.append(this.speakerCount);
-        sbU.append(", audienceSize=");
-        return outline.C(sbU, this.audienceSize, ")");
+        StringBuilder sbM833U = C1643a.m833U("ModelStageRichPresence(channelId=");
+        sbM833U.append(this.channelId);
+        sbM833U.append(", stageInstanceId=");
+        sbM833U.append(this.stageInstanceId);
+        sbM833U.append(", userIsSpeaker=");
+        sbM833U.append(this.userIsSpeaker);
+        sbM833U.append(", guildId=");
+        sbM833U.append(this.guildId);
+        sbM833U.append(", guildIsPartnered=");
+        sbM833U.append(this.guildIsPartnered);
+        sbM833U.append(", guildIsVerified=");
+        sbM833U.append(this.guildIsVerified);
+        sbM833U.append(", guildName=");
+        sbM833U.append(this.guildName);
+        sbM833U.append(", guildIcon=");
+        sbM833U.append(this.guildIcon);
+        sbM833U.append(", topic=");
+        sbM833U.append(this.topic);
+        sbM833U.append(", knownUserIds=");
+        sbM833U.append(this.knownUserIds);
+        sbM833U.append(", speakerIds=");
+        sbM833U.append(this.speakerIds);
+        sbM833U.append(", speakerCount=");
+        sbM833U.append(this.speakerCount);
+        sbM833U.append(", audienceSize=");
+        return C1643a.m815C(sbM833U, this.audienceSize, ")");
     }
 }

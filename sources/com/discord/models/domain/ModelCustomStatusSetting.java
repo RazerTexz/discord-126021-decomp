@@ -1,14 +1,14 @@
 package com.discord.models.domain;
 
 import androidx.core.app.NotificationCompat;
-import b.d.b.a.outline;
 import com.discord.models.domain.Model;
 import com.google.gson.stream.JsonToken;
-import d0.z.d.Intrinsics3;
 import java.io.IOException;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Ref$ObjectRef;
-import rx.functions.Action1;
+import p007b.p100d.p104b.p105a.C1643a;
+import p507d0.p592z.p594d.C12238m;
+import p658rx.functions.Action1;
 
 /* JADX INFO: compiled from: ModelCustomStatusSetting.kt */
 /* JADX INFO: loaded from: classes.dex */
@@ -47,8 +47,8 @@ public final /* data */ class ModelCustomStatusSetting {
         /* JADX WARN: Multi-variable type inference failed */
         @Override // com.discord.models.domain.Model.Parser
         public ModelCustomStatusSetting parse(final Model.JsonReader reader) throws IOException {
-            final Ref$ObjectRef ref$ObjectRefC0 = outline.c0(reader, "reader");
-            ref$ObjectRefC0.element = null;
+            final Ref$ObjectRef ref$ObjectRefM844c0 = C1643a.m844c0(reader, "reader");
+            ref$ObjectRefM844c0.element = null;
             final Ref$ObjectRef ref$ObjectRef = new Ref$ObjectRef();
             ref$ObjectRef.element = null;
             final Ref$ObjectRef ref$ObjectRef2 = new Ref$ObjectRef();
@@ -61,7 +61,7 @@ public final /* data */ class ModelCustomStatusSetting {
             }
             reader.nextObject(new Action1<String>() { // from class: com.discord.models.domain.ModelCustomStatusSetting$Parser$parse$1
                 /* JADX WARN: Failed to restore switch over string. Please report as a decompilation issue */
-                @Override // rx.functions.Action1
+                @Override // p658rx.functions.Action1
                 public final void call(String str) throws IOException {
                     if (str != null) {
                         switch (str.hashCode()) {
@@ -73,7 +73,7 @@ public final /* data */ class ModelCustomStatusSetting {
                                 break;
                             case 3556653:
                                 if (str.equals(NotificationCompat.MessagingStyle.Message.KEY_TEXT)) {
-                                    ref$ObjectRefC0.element = (T) reader.nextStringOrNull();
+                                    ref$ObjectRefM844c0.element = (T) reader.nextStringOrNull();
                                     return;
                                 }
                                 break;
@@ -94,7 +94,7 @@ public final /* data */ class ModelCustomStatusSetting {
                     reader.skipValue();
                 }
             });
-            return new ModelCustomStatusSetting((String) ref$ObjectRefC0.element, (Long) ref$ObjectRef.element, (String) ref$ObjectRef2.element, (String) ref$ObjectRef3.element);
+            return new ModelCustomStatusSetting((String) ref$ObjectRefM844c0.element, (Long) ref$ObjectRef.element, (String) ref$ObjectRef2.element, (String) ref$ObjectRef3.element);
         }
     }
 
@@ -153,7 +153,7 @@ public final /* data */ class ModelCustomStatusSetting {
             return false;
         }
         ModelCustomStatusSetting modelCustomStatusSetting = (ModelCustomStatusSetting) other;
-        return Intrinsics3.areEqual(this.text, modelCustomStatusSetting.text) && Intrinsics3.areEqual(this.emojiId, modelCustomStatusSetting.emojiId) && Intrinsics3.areEqual(this.emojiName, modelCustomStatusSetting.emojiName) && Intrinsics3.areEqual(this.expiresAt, modelCustomStatusSetting.expiresAt);
+        return C12238m.areEqual(this.text, modelCustomStatusSetting.text) && C12238m.areEqual(this.emojiId, modelCustomStatusSetting.emojiId) && C12238m.areEqual(this.emojiName, modelCustomStatusSetting.emojiName) && C12238m.areEqual(this.expiresAt, modelCustomStatusSetting.expiresAt);
     }
 
     public final Long getEmojiId() {
@@ -184,13 +184,13 @@ public final /* data */ class ModelCustomStatusSetting {
     }
 
     public String toString() {
-        StringBuilder sbU = outline.U("ModelCustomStatusSetting(text=");
-        sbU.append(this.text);
-        sbU.append(", emojiId=");
-        sbU.append(this.emojiId);
-        sbU.append(", emojiName=");
-        sbU.append(this.emojiName);
-        sbU.append(", expiresAt=");
-        return outline.J(sbU, this.expiresAt, ")");
+        StringBuilder sbM833U = C1643a.m833U("ModelCustomStatusSetting(text=");
+        sbM833U.append(this.text);
+        sbM833U.append(", emojiId=");
+        sbM833U.append(this.emojiId);
+        sbM833U.append(", emojiName=");
+        sbM833U.append(this.emojiName);
+        sbM833U.append(", expiresAt=");
+        return C1643a.m822J(sbM833U, this.expiresAt, ")");
     }
 }

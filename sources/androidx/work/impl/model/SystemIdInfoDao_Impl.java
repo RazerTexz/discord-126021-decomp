@@ -7,7 +7,7 @@ import androidx.room.RoomSQLiteQuery;
 import androidx.room.SharedSQLiteStatement;
 import androidx.room.util.CursorUtil;
 import androidx.room.util.DBUtil;
-import androidx.sqlite.db.SupportSQLiteStatement;
+import androidx.sqlite.p006db.SupportSQLiteStatement;
 
 /* JADX INFO: loaded from: classes.dex */
 public final class SystemIdInfoDao_Impl implements SystemIdInfoDao {

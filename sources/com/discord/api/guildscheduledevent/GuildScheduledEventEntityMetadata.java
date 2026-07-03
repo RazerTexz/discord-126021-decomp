@@ -1,10 +1,10 @@
 package com.discord.api.guildscheduledevent;
 
-import b.d.b.a.outline;
 import com.discord.models.domain.ModelAuditLogEntry;
-import d0.z.d.Intrinsics3;
 import java.io.Serializable;
 import kotlin.jvm.internal.DefaultConstructorMarker;
+import p007b.p100d.p104b.p105a.C1643a;
+import p507d0.p592z.p594d.C12238m;
 
 /* JADX INFO: compiled from: GuildScheduledEventEntityMetadata.kt */
 /* JADX INFO: loaded from: classes.dex */
@@ -31,8 +31,9 @@ public final /* data */ class GuildScheduledEventEntityMetadata implements Seria
         public Companion() {
         }
 
-        public final GuildScheduledEventEntityMetadata a(GuildScheduledEventEntityType entityType, String location) {
-            Intrinsics3.checkNotNullParameter(entityType, "entityType");
+        /* JADX INFO: renamed from: a */
+        public final GuildScheduledEventEntityMetadata m7992a(GuildScheduledEventEntityType entityType, String location) {
+            C12238m.checkNotNullParameter(entityType, "entityType");
             return entityType.ordinal() != 3 ? new GuildScheduledEventEntityMetadata(null, 1) : new GuildScheduledEventEntityMetadata(location);
         }
 
@@ -49,13 +50,14 @@ public final /* data */ class GuildScheduledEventEntityMetadata implements Seria
         return this.location;
     }
 
-    public final boolean b() {
+    /* JADX INFO: renamed from: b */
+    public final boolean m7991b() {
         return this.location == null;
     }
 
     public boolean equals(Object other) {
         if (this != other) {
-            return (other instanceof GuildScheduledEventEntityMetadata) && Intrinsics3.areEqual(this.location, ((GuildScheduledEventEntityMetadata) other).location);
+            return (other instanceof GuildScheduledEventEntityMetadata) && C12238m.areEqual(this.location, ((GuildScheduledEventEntityMetadata) other).location);
         }
         return true;
     }
@@ -69,7 +71,7 @@ public final /* data */ class GuildScheduledEventEntityMetadata implements Seria
     }
 
     public String toString() {
-        return outline.J(outline.U("GuildScheduledEventEntityMetadata(location="), this.location, ")");
+        return C1643a.m822J(C1643a.m833U("GuildScheduledEventEntityMetadata(location="), this.location, ")");
     }
 
     public GuildScheduledEventEntityMetadata(String str) {

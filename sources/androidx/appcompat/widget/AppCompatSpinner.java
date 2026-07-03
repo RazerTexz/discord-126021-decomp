@@ -32,6 +32,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.annotation.RestrictTo;
 import androidx.annotation.VisibleForTesting;
+import androidx.appcompat.C0051R;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.content.res.AppCompatResources;
 import androidx.appcompat.view.ContextThemeWrapper;
@@ -757,7 +758,7 @@ public class AppCompatSpinner extends Spinner implements TintableBackgroundView 
     }
 
     public AppCompatSpinner(@NonNull Context context, int i) {
-        this(context, null, androidx.appcompat.R.attr.spinnerStyle, i);
+        this(context, null, C0051R.attr.spinnerStyle, i);
     }
 
     @Override // android.widget.AdapterView
@@ -777,7 +778,7 @@ public class AppCompatSpinner extends Spinner implements TintableBackgroundView 
     }
 
     public AppCompatSpinner(@NonNull Context context, @Nullable AttributeSet attributeSet) {
-        this(context, attributeSet, androidx.appcompat.R.attr.spinnerStyle);
+        this(context, attributeSet, C0051R.attr.spinnerStyle);
     }
 
     public AppCompatSpinner(@NonNull Context context, @Nullable AttributeSet attributeSet, int i) {
@@ -811,12 +812,12 @@ public class AppCompatSpinner extends Spinner implements TintableBackgroundView 
         super(context, attributeSet, i);
         this.mTempRect = new Rect();
         ThemeUtils.checkAppCompatTheme(this, getContext());
-        TintTypedArray tintTypedArrayObtainStyledAttributes = TintTypedArray.obtainStyledAttributes(context, attributeSet, androidx.appcompat.R.styleable.Spinner, i, 0);
+        TintTypedArray tintTypedArrayObtainStyledAttributes = TintTypedArray.obtainStyledAttributes(context, attributeSet, C0051R.styleable.Spinner, i, 0);
         this.mBackgroundTintHelper = new AppCompatBackgroundHelper(this);
         if (theme != null) {
             this.mPopupContext = new ContextThemeWrapper(context, theme);
         } else {
-            int resourceId = tintTypedArrayObtainStyledAttributes.getResourceId(androidx.appcompat.R.styleable.Spinner_popupTheme, 0);
+            int resourceId = tintTypedArrayObtainStyledAttributes.getResourceId(C0051R.styleable.Spinner_popupTheme, 0);
             if (resourceId != 0) {
                 this.mPopupContext = new ContextThemeWrapper(context, resourceId);
             } else {
@@ -845,13 +846,13 @@ public class AppCompatSpinner extends Spinner implements TintableBackgroundView 
                         if (i2 != 0) {
                             DialogPopup dialogPopup = new DialogPopup();
                             this.mPopup = dialogPopup;
-                            dialogPopup.setPromptText(tintTypedArrayObtainStyledAttributes.getString(androidx.appcompat.R.styleable.Spinner_android_prompt));
+                            dialogPopup.setPromptText(tintTypedArrayObtainStyledAttributes.getString(C0051R.styleable.Spinner_android_prompt));
                         } else if (i2 == 1) {
                             final DropdownPopup dropdownPopup = new DropdownPopup(this.mPopupContext, attributeSet, i);
-                            TintTypedArray tintTypedArrayObtainStyledAttributes2 = TintTypedArray.obtainStyledAttributes(this.mPopupContext, attributeSet, androidx.appcompat.R.styleable.Spinner, i, 0);
-                            this.mDropDownWidth = tintTypedArrayObtainStyledAttributes2.getLayoutDimension(androidx.appcompat.R.styleable.Spinner_android_dropDownWidth, -2);
-                            dropdownPopup.setBackgroundDrawable(tintTypedArrayObtainStyledAttributes2.getDrawable(androidx.appcompat.R.styleable.Spinner_android_popupBackground));
-                            dropdownPopup.setPromptText(tintTypedArrayObtainStyledAttributes.getString(androidx.appcompat.R.styleable.Spinner_android_prompt));
+                            TintTypedArray tintTypedArrayObtainStyledAttributes2 = TintTypedArray.obtainStyledAttributes(this.mPopupContext, attributeSet, C0051R.styleable.Spinner, i, 0);
+                            this.mDropDownWidth = tintTypedArrayObtainStyledAttributes2.getLayoutDimension(C0051R.styleable.Spinner_android_dropDownWidth, -2);
+                            dropdownPopup.setBackgroundDrawable(tintTypedArrayObtainStyledAttributes2.getDrawable(C0051R.styleable.Spinner_android_popupBackground));
+                            dropdownPopup.setPromptText(tintTypedArrayObtainStyledAttributes.getString(C0051R.styleable.Spinner_android_prompt));
                             tintTypedArrayObtainStyledAttributes2.recycle();
                             this.mPopup = dropdownPopup;
                             this.mForwardingListener = new ForwardingListener(this) { // from class: androidx.appcompat.widget.AppCompatSpinner.1
@@ -871,10 +872,10 @@ public class AppCompatSpinner extends Spinner implements TintableBackgroundView 
                                 }
                             };
                         }
-                        textArray = tintTypedArrayObtainStyledAttributes.getTextArray(androidx.appcompat.R.styleable.Spinner_android_entries);
+                        textArray = tintTypedArrayObtainStyledAttributes.getTextArray(C0051R.styleable.Spinner_android_entries);
                         if (textArray != null) {
                             ArrayAdapter arrayAdapter = new ArrayAdapter(context, R.layout.simple_spinner_item, textArray);
-                            arrayAdapter.setDropDownViewResource(androidx.appcompat.R.layout.support_simple_spinner_dropdown_item);
+                            arrayAdapter.setDropDownViewResource(C0051R.layout.support_simple_spinner_dropdown_item);
                             setAdapter(arrayAdapter);
                         }
                         tintTypedArrayObtainStyledAttributes.recycle();
@@ -901,13 +902,13 @@ public class AppCompatSpinner extends Spinner implements TintableBackgroundView 
             if (i2 != 0) {
                 DialogPopup dialogPopup2 = new DialogPopup();
                 this.mPopup = dialogPopup2;
-                dialogPopup2.setPromptText(tintTypedArrayObtainStyledAttributes.getString(androidx.appcompat.R.styleable.Spinner_android_prompt));
+                dialogPopup2.setPromptText(tintTypedArrayObtainStyledAttributes.getString(C0051R.styleable.Spinner_android_prompt));
             } else if (i2 == 1) {
                 final DropdownPopup dropdownPopup2 = new DropdownPopup(this.mPopupContext, attributeSet, i);
-                TintTypedArray tintTypedArrayObtainStyledAttributes3 = TintTypedArray.obtainStyledAttributes(this.mPopupContext, attributeSet, androidx.appcompat.R.styleable.Spinner, i, 0);
-                this.mDropDownWidth = tintTypedArrayObtainStyledAttributes3.getLayoutDimension(androidx.appcompat.R.styleable.Spinner_android_dropDownWidth, -2);
-                dropdownPopup2.setBackgroundDrawable(tintTypedArrayObtainStyledAttributes3.getDrawable(androidx.appcompat.R.styleable.Spinner_android_popupBackground));
-                dropdownPopup2.setPromptText(tintTypedArrayObtainStyledAttributes.getString(androidx.appcompat.R.styleable.Spinner_android_prompt));
+                TintTypedArray tintTypedArrayObtainStyledAttributes3 = TintTypedArray.obtainStyledAttributes(this.mPopupContext, attributeSet, C0051R.styleable.Spinner, i, 0);
+                this.mDropDownWidth = tintTypedArrayObtainStyledAttributes3.getLayoutDimension(C0051R.styleable.Spinner_android_dropDownWidth, -2);
+                dropdownPopup2.setBackgroundDrawable(tintTypedArrayObtainStyledAttributes3.getDrawable(C0051R.styleable.Spinner_android_popupBackground));
+                dropdownPopup2.setPromptText(tintTypedArrayObtainStyledAttributes.getString(C0051R.styleable.Spinner_android_prompt));
                 tintTypedArrayObtainStyledAttributes3.recycle();
                 this.mPopup = dropdownPopup2;
                 this.mForwardingListener = new ForwardingListener(this) { // from class: androidx.appcompat.widget.AppCompatSpinner.1
@@ -927,10 +928,10 @@ public class AppCompatSpinner extends Spinner implements TintableBackgroundView 
                     }
                 };
             }
-            textArray = tintTypedArrayObtainStyledAttributes.getTextArray(androidx.appcompat.R.styleable.Spinner_android_entries);
+            textArray = tintTypedArrayObtainStyledAttributes.getTextArray(C0051R.styleable.Spinner_android_entries);
             if (textArray != null) {
                 ArrayAdapter arrayAdapter2 = new ArrayAdapter(context, R.layout.simple_spinner_item, textArray);
-                arrayAdapter2.setDropDownViewResource(androidx.appcompat.R.layout.support_simple_spinner_dropdown_item);
+                arrayAdapter2.setDropDownViewResource(C0051R.layout.support_simple_spinner_dropdown_item);
                 setAdapter(arrayAdapter2);
             }
             tintTypedArrayObtainStyledAttributes.recycle();

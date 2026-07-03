@@ -10,25 +10,27 @@ import com.google.android.material.tabs.TabLayout;
 /* JADX INFO: loaded from: classes.dex */
 public final class WidgetQuickMentionsDialogBinding implements ViewBinding {
 
+    /* JADX INFO: renamed from: a */
     @NonNull
-    public final ConstraintLayout a;
+    public final ConstraintLayout f17398a;
 
-    /* JADX INFO: renamed from: b, reason: collision with root package name */
+    /* JADX INFO: renamed from: b */
     @NonNull
-    public final ViewPager2 f2516b;
+    public final ViewPager2 f17399b;
 
+    /* JADX INFO: renamed from: c */
     @NonNull
-    public final TabLayout c;
+    public final TabLayout f17400c;
 
     public WidgetQuickMentionsDialogBinding(@NonNull ConstraintLayout constraintLayout, @NonNull ViewPager2 viewPager2, @NonNull TabLayout tabLayout) {
-        this.a = constraintLayout;
-        this.f2516b = viewPager2;
-        this.c = tabLayout;
+        this.f17398a = constraintLayout;
+        this.f17399b = viewPager2;
+        this.f17400c = tabLayout;
     }
 
     @Override // androidx.viewbinding.ViewBinding
     @NonNull
     public View getRoot() {
-        return this.a;
+        return this.f17398a;
     }
 }

@@ -5,9 +5,9 @@ import androidx.annotation.IntRange;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.annotation.RestrictTo;
-import b.d.b.a.outline;
 import java.util.Locale;
 import java.util.Objects;
+import p007b.p100d.p104b.p105a.C1643a;
 
 /* JADX INFO: loaded from: classes.dex */
 @RestrictTo({RestrictTo.Scope.LIBRARY_GROUP_PREFIX})
@@ -43,12 +43,12 @@ public final class Preconditions {
         if ((i & i2) == i) {
             return i;
         }
-        StringBuilder sbU = outline.U("Requested flags 0x");
-        sbU.append(Integer.toHexString(i));
-        sbU.append(", but only 0x");
-        sbU.append(Integer.toHexString(i2));
-        sbU.append(" are allowed");
-        throw new IllegalArgumentException(sbU.toString());
+        StringBuilder sbM833U = C1643a.m833U("Requested flags 0x");
+        sbM833U.append(Integer.toHexString(i));
+        sbM833U.append(", but only 0x");
+        sbM833U.append(Integer.toHexString(i2));
+        sbM833U.append(" are allowed");
+        throw new IllegalArgumentException(sbM833U.toString());
     }
 
     @NonNull

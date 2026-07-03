@@ -2,19 +2,22 @@ package com.google.zxing;
 
 /* JADX INFO: loaded from: classes3.dex */
 public final class FormatException extends ReaderException {
-    public static final FormatException l;
+
+    /* JADX INFO: renamed from: l */
+    public static final FormatException f21664l;
 
     static {
         FormatException formatException = new FormatException();
-        l = formatException;
-        formatException.setStackTrace(ReaderException.k);
+        f21664l = formatException;
+        formatException.setStackTrace(ReaderException.f21667k);
     }
 
     private FormatException() {
     }
 
-    public static FormatException a() {
-        return ReaderException.j ? new FormatException() : l;
+    /* JADX INFO: renamed from: a */
+    public static FormatException m9260a() {
+        return ReaderException.f21666j ? new FormatException() : f21664l;
     }
 
     public FormatException(Throwable th) {

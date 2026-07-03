@@ -1,13 +1,10 @@
 package com.esotericsoftware.kryo.serializers;
 
-import b.d.b.a.outline;
-import b.e.a.Log;
-import b.e.b.FieldAccess2;
 import com.esotericsoftware.kryo.Kryo;
 import com.esotericsoftware.kryo.NotNull;
 import com.esotericsoftware.kryo.Serializer;
-import com.esotericsoftware.kryo.io.Input;
-import com.esotericsoftware.kryo.io.Output;
+import com.esotericsoftware.kryo.p502io.Input;
+import com.esotericsoftware.kryo.p502io.Output;
 import com.esotericsoftware.kryo.serializers.FieldSerializerUnsafeUtil;
 import com.esotericsoftware.kryo.util.IntArray;
 import com.esotericsoftware.kryo.util.ObjectMap;
@@ -29,6 +26,9 @@ import java.util.Comparator;
 import java.util.HashSet;
 import java.util.Iterator;
 import java.util.List;
+import p007b.p100d.p104b.p105a.C1643a;
+import p007b.p106e.p107a.C1644a;
+import p007b.p106e.p108b.AbstractC1647c;
 
 /* JADX INFO: loaded from: classes.dex */
 public class FieldSerializer<T> extends Serializer<T> implements Comparator<CachedField> {
@@ -99,7 +99,7 @@ public class FieldSerializer<T> extends Serializer<T> implements Comparator<Cach
                 unsafeAvailable = true;
             }
         } catch (Throwable unused) {
-            Log.a aVar = Log.a;
+            C1644a.a aVar = C1644a.f3007a;
         }
     }
 
@@ -160,11 +160,11 @@ public class FieldSerializer<T> extends Serializer<T> implements Comparator<Cach
         int size = list.size();
         for (int i2 = 0; i2 < size; i2++) {
             Field field = list.get(i2);
-            int iH = -1;
+            int iM911h = -1;
             if (this.access != null && intArray.get(i + i2) == 1) {
-                iH = ((FieldAccess2) this.access).h(field.getName());
+                iM911h = ((AbstractC1647c) this.access).m911h(field.getName());
             }
-            list2.add(newCachedField(field, list2.size(), iH));
+            list2.add(newCachedField(field, list2.size(), iM911h));
         }
     }
 
@@ -232,9 +232,9 @@ public class FieldSerializer<T> extends Serializer<T> implements Comparator<Cach
                 return cachedField;
             }
         }
-        StringBuilder sbY = outline.Y("Field \"", str, "\" not found on class: ");
-        sbY.append(this.type.getName());
-        throw new IllegalArgumentException(sbY.toString());
+        StringBuilder sbM837Y = C1643a.m837Y("Field \"", str, "\" not found on class: ");
+        sbM837Y.append(this.type.getName());
+        throw new IllegalArgumentException(sbM837Y.toString());
     }
 
     public CachedField[] getFields() {
@@ -281,7 +281,7 @@ public class FieldSerializer<T> extends Serializer<T> implements Comparator<Cach
         Class[] clsArr = {field.getType()};
         Type genericType = this.config.isOptimizedGenerics() ? field.getGenericType() : null;
         if (!this.config.isOptimizedGenerics() || genericType == clsArr[0]) {
-            Log.a aVar = Log.a;
+            C1644a.a aVar = C1644a.f3007a;
             cachedFieldNewMatchingCachedField = newMatchingCachedField(field, i2, clsArr[0], genericType, null);
         } else {
             cachedFieldNewMatchingCachedField = this.genericsUtil.newCachedFieldOfGenericType(field, i2, clsArr, genericType);
@@ -294,7 +294,7 @@ public class FieldSerializer<T> extends Serializer<T> implements Comparator<Cach
         if (!this.config.isUseAsm()) {
             cachedFieldNewMatchingCachedField.offset = this.unsafeUtil.getObjectFieldOffset(field);
         }
-        cachedFieldNewMatchingCachedField.access = (FieldAccess2) this.access;
+        cachedFieldNewMatchingCachedField.access = (AbstractC1647c) this.access;
         cachedFieldNewMatchingCachedField.accessIndex = i2;
         cachedFieldNewMatchingCachedField.canBeNull = (!this.config.isFieldsCanBeNull() || clsArr[0].isPrimitive() || field.isAnnotationPresent(NotNull.class)) ? false : true;
         if (this.kryo.isFinal(clsArr[0]) || this.config.isFixedFieldTypes()) {
@@ -322,7 +322,7 @@ public class FieldSerializer<T> extends Serializer<T> implements Comparator<Cach
             return cachedFieldCreateCachedField;
         }
         ((ObjectField) cachedFieldCreateCachedField).generics = FieldSerializerGenericsUtil.getGenerics(type, this.kryo);
-        Log.a aVar = Log.a;
+        C1644a.a aVar = C1644a.f3007a;
         return cachedFieldCreateCachedField;
     }
 
@@ -382,9 +382,9 @@ public class FieldSerializer<T> extends Serializer<T> implements Comparator<Cach
                 while (true) {
                     CachedField[] cachedFieldArr4 = this.transientFields;
                     if (i2 >= cachedFieldArr4.length) {
-                        StringBuilder sbY = outline.Y("Field \"", str, "\" not found on class: ");
-                        sbY.append(this.type.getName());
-                        throw new IllegalArgumentException(sbY.toString());
+                        StringBuilder sbM837Y = C1643a.m837Y("Field \"", str, "\" not found on class: ");
+                        sbM837Y.append(this.type.getName());
+                        throw new IllegalArgumentException(sbM837Y.toString());
                     }
                     CachedField cachedField2 = cachedFieldArr4[i2];
                     if (getCachedFieldName(cachedField2).equals(str)) {
@@ -455,7 +455,7 @@ public class FieldSerializer<T> extends Serializer<T> implements Comparator<Cach
 
     @Override // com.esotericsoftware.kryo.Serializer
     public void write(Kryo kryo, Output output, T t) {
-        Log.a aVar = Log.a;
+        C1644a.a aVar = C1644a.f3007a;
         if (this.config.isOptimizedGenerics()) {
             if (this.typeParameters != null && this.generics != null) {
                 rebuildCachedFields();
@@ -480,7 +480,7 @@ public class FieldSerializer<T> extends Serializer<T> implements Comparator<Cach
     }
 
     public static abstract class CachedField<X> {
-        public FieldAccess2 access;
+        public AbstractC1647c access;
         public boolean canBeNull;
         public Field field;
         public Serializer serializer;
@@ -527,7 +527,7 @@ public class FieldSerializer<T> extends Serializer<T> implements Comparator<Cach
     }
 
     public FieldSerializer(Kryo kryo, Class cls, Class[] clsArr) {
-        this(kryo, cls, clsArr, kryo.getFieldSerializerConfig().mo77clone());
+        this(kryo, cls, clsArr, kryo.getFieldSerializerConfig().mo11454clone());
     }
 
     @Override // java.util.Comparator
@@ -538,7 +538,7 @@ public class FieldSerializer<T> extends Serializer<T> implements Comparator<Cach
     public void rebuildCachedFields(boolean z2) {
         List<Field> listBuildValidFieldsFromCachedFields;
         List<Field> listBuildValidFieldsFromCachedFields2;
-        Log.a aVar = Log.a;
+        C1644a.a aVar = C1644a.f3007a;
         if (this.type.isInterface()) {
             this.fields = new CachedField[0];
             return;
@@ -585,7 +585,7 @@ public class FieldSerializer<T> extends Serializer<T> implements Comparator<Cach
             listBuildValidFieldsFromCachedFields2 = buildValidFields(true, listAsList, context, intArray);
             if (this.config.isUseAsm() && !Util.IS_ANDROID && Modifier.isPublic(this.type.getModifiers()) && intArray.indexOf(1) != -1) {
                 try {
-                    this.access = FieldAccess2.a(this.type);
+                    this.access = AbstractC1647c.m895a(this.type);
                 } catch (RuntimeException unused) {
                 }
             }
@@ -618,7 +618,7 @@ public class FieldSerializer<T> extends Serializer<T> implements Comparator<Cach
         this.useMemRegions = false;
         this.hasObjectFields = false;
         this.varIntsEnabled = true;
-        Log.a aVar = Log.a;
+        C1644a.a aVar = C1644a.f3007a;
         this.config = fieldSerializerConfig;
         this.kryo = kryo;
         this.type = cls;

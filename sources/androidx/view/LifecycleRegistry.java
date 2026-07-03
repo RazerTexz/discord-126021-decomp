@@ -9,11 +9,11 @@ import androidx.arch.core.executor.ArchTaskExecutor;
 import androidx.arch.core.internal.FastSafeIterableMap;
 import androidx.arch.core.internal.SafeIterableMap;
 import androidx.view.Lifecycle;
-import b.d.b.a.outline;
 import java.lang.ref.WeakReference;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.Map;
+import p007b.p100d.p104b.p105a.C1643a;
 
 /* JADX INFO: loaded from: classes.dex */
 public class LifecycleRegistry extends Lifecycle {
@@ -55,9 +55,9 @@ public class LifecycleRegistry extends Lifecycle {
             while (value.mState.compareTo(this.mState) > 0 && !this.mNewEventOccurred && this.mObserverMap.contains(next.getKey())) {
                 Lifecycle.Event eventDownFrom = Lifecycle.Event.downFrom(value.mState);
                 if (eventDownFrom == null) {
-                    StringBuilder sbU = outline.U("no event down from ");
-                    sbU.append(value.mState);
-                    throw new IllegalStateException(sbU.toString());
+                    StringBuilder sbM833U = C1643a.m833U("no event down from ");
+                    sbM833U.append(value.mState);
+                    throw new IllegalStateException(sbM833U.toString());
                 }
                 pushParentState(eventDownFrom.getTargetState());
                 value.dispatchEvent(lifecycleOwner, eventDownFrom);
@@ -86,7 +86,7 @@ public class LifecycleRegistry extends Lifecycle {
     @SuppressLint({"RestrictedApi"})
     private void enforceMainThreadIfNeeded(String str) {
         if (this.mEnforceMainThread && !ArchTaskExecutor.getInstance().isMainThread()) {
-            throw new IllegalStateException(outline.y("Method ", str, " must be called on the main thread"));
+            throw new IllegalStateException(C1643a.m886y("Method ", str, " must be called on the main thread"));
         }
     }
 
@@ -99,9 +99,9 @@ public class LifecycleRegistry extends Lifecycle {
                 pushParentState(observerWithState.mState);
                 Lifecycle.Event eventUpFrom = Lifecycle.Event.upFrom(observerWithState.mState);
                 if (eventUpFrom == null) {
-                    StringBuilder sbU = outline.U("no event up from ");
-                    sbU.append(observerWithState.mState);
-                    throw new IllegalStateException(sbU.toString());
+                    StringBuilder sbM833U = C1643a.m833U("no event up from ");
+                    sbM833U.append(observerWithState.mState);
+                    throw new IllegalStateException(sbM833U.toString());
                 }
                 observerWithState.dispatchEvent(lifecycleOwner, eventUpFrom);
                 popParentState();
@@ -181,9 +181,9 @@ public class LifecycleRegistry extends Lifecycle {
                 pushParentState(observerWithState.mState);
                 Lifecycle.Event eventUpFrom = Lifecycle.Event.upFrom(observerWithState.mState);
                 if (eventUpFrom == null) {
-                    StringBuilder sbU = outline.U("no event up from ");
-                    sbU.append(observerWithState.mState);
-                    throw new IllegalStateException(sbU.toString());
+                    StringBuilder sbM833U = C1643a.m833U("no event up from ");
+                    sbM833U.append(observerWithState.mState);
+                    throw new IllegalStateException(sbM833U.toString());
                 }
                 observerWithState.dispatchEvent(lifecycleOwner, eventUpFrom);
                 popParentState();

@@ -1,14 +1,14 @@
 package com.discord.analytics.generated.events;
 
-import b.d.b.a.outline;
 import com.discord.analytics.generated.traits.TrackBase;
-import com.discord.analytics.generated.traits.TrackBase2;
+import com.discord.analytics.generated.traits.TrackBaseReceiver;
 import com.discord.api.science.AnalyticsSchema;
-import d0.z.d.Intrinsics3;
+import p007b.p100d.p104b.p105a.C1643a;
+import p507d0.p592z.p594d.C12238m;
 
 /* JADX INFO: compiled from: TrackInviteLoginSuccessful.kt */
 /* JADX INFO: loaded from: classes.dex */
-public final /* data */ class TrackInviteLoginSuccessful implements AnalyticsSchema, TrackBase2 {
+public final /* data */ class TrackInviteLoginSuccessful implements AnalyticsSchema, TrackBaseReceiver {
     private TrackBase trackBase;
     private final CharSequence inviteCode = null;
     private final Long guildId = null;
@@ -31,7 +31,7 @@ public final /* data */ class TrackInviteLoginSuccessful implements AnalyticsSch
             return false;
         }
         TrackInviteLoginSuccessful trackInviteLoginSuccessful = (TrackInviteLoginSuccessful) other;
-        return Intrinsics3.areEqual(this.inviteCode, trackInviteLoginSuccessful.inviteCode) && Intrinsics3.areEqual(this.guildId, trackInviteLoginSuccessful.guildId) && Intrinsics3.areEqual(this.channelId, trackInviteLoginSuccessful.channelId) && Intrinsics3.areEqual(this.inviterId, trackInviteLoginSuccessful.inviterId) && Intrinsics3.areEqual(this.prevUserId, trackInviteLoginSuccessful.prevUserId);
+        return C12238m.areEqual(this.inviteCode, trackInviteLoginSuccessful.inviteCode) && C12238m.areEqual(this.guildId, trackInviteLoginSuccessful.guildId) && C12238m.areEqual(this.channelId, trackInviteLoginSuccessful.channelId) && C12238m.areEqual(this.inviterId, trackInviteLoginSuccessful.inviterId) && C12238m.areEqual(this.prevUserId, trackInviteLoginSuccessful.prevUserId);
     }
 
     public int hashCode() {
@@ -48,15 +48,15 @@ public final /* data */ class TrackInviteLoginSuccessful implements AnalyticsSch
     }
 
     public String toString() {
-        StringBuilder sbU = outline.U("TrackInviteLoginSuccessful(inviteCode=");
-        sbU.append(this.inviteCode);
-        sbU.append(", guildId=");
-        sbU.append(this.guildId);
-        sbU.append(", channelId=");
-        sbU.append(this.channelId);
-        sbU.append(", inviterId=");
-        sbU.append(this.inviterId);
-        sbU.append(", prevUserId=");
-        return outline.G(sbU, this.prevUserId, ")");
+        StringBuilder sbM833U = C1643a.m833U("TrackInviteLoginSuccessful(inviteCode=");
+        sbM833U.append(this.inviteCode);
+        sbM833U.append(", guildId=");
+        sbM833U.append(this.guildId);
+        sbM833U.append(", channelId=");
+        sbM833U.append(this.channelId);
+        sbM833U.append(", inviterId=");
+        sbM833U.append(this.inviterId);
+        sbM833U.append(", prevUserId=");
+        return C1643a.m819G(sbM833U, this.prevUserId, ")");
     }
 }

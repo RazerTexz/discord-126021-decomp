@@ -1,9 +1,9 @@
 package com.discord.models.store.dto;
 
-import b.d.b.a.outline;
 import com.discord.models.domain.ModelAuditLogEntry;
-import d0.z.d.Intrinsics3;
 import java.io.Serializable;
+import p007b.p100d.p104b.p105a.C1643a;
+import p507d0.p592z.p594d.C12238m;
 
 /* JADX INFO: compiled from: ModelStoreAsset.kt */
 /* JADX INFO: loaded from: classes.dex */
@@ -16,7 +16,7 @@ public final /* data */ class ModelStoreAsset implements Serializable {
     private final Integer width;
 
     public ModelStoreAsset(long j, int i, String str, String str2, Integer num, Integer num2) {
-        Intrinsics3.checkNotNullParameter(str, "mimeType");
+        C12238m.checkNotNullParameter(str, "mimeType");
         this.id = j;
         this.size = i;
         this.mimeType = str;
@@ -56,7 +56,7 @@ public final /* data */ class ModelStoreAsset implements Serializable {
     }
 
     public final ModelStoreAsset copy(long id2, int size, String mimeType, String filename, Integer width, Integer height) {
-        Intrinsics3.checkNotNullParameter(mimeType, "mimeType");
+        C12238m.checkNotNullParameter(mimeType, "mimeType");
         return new ModelStoreAsset(id2, size, mimeType, filename, width, height);
     }
 
@@ -68,7 +68,7 @@ public final /* data */ class ModelStoreAsset implements Serializable {
             return false;
         }
         ModelStoreAsset modelStoreAsset = (ModelStoreAsset) other;
-        return this.id == modelStoreAsset.id && this.size == modelStoreAsset.size && Intrinsics3.areEqual(this.mimeType, modelStoreAsset.mimeType) && Intrinsics3.areEqual(this.filename, modelStoreAsset.filename) && Intrinsics3.areEqual(this.width, modelStoreAsset.width) && Intrinsics3.areEqual(this.height, modelStoreAsset.height);
+        return this.id == modelStoreAsset.id && this.size == modelStoreAsset.size && C12238m.areEqual(this.mimeType, modelStoreAsset.mimeType) && C12238m.areEqual(this.filename, modelStoreAsset.filename) && C12238m.areEqual(this.width, modelStoreAsset.width) && C12238m.areEqual(this.height, modelStoreAsset.height);
     }
 
     public final String getFilename() {
@@ -109,17 +109,17 @@ public final /* data */ class ModelStoreAsset implements Serializable {
     }
 
     public String toString() {
-        StringBuilder sbU = outline.U("ModelStoreAsset(id=");
-        sbU.append(this.id);
-        sbU.append(", size=");
-        sbU.append(this.size);
-        sbU.append(", mimeType=");
-        sbU.append(this.mimeType);
-        sbU.append(", filename=");
-        sbU.append(this.filename);
-        sbU.append(", width=");
-        sbU.append(this.width);
-        sbU.append(", height=");
-        return outline.F(sbU, this.height, ")");
+        StringBuilder sbM833U = C1643a.m833U("ModelStoreAsset(id=");
+        sbM833U.append(this.id);
+        sbM833U.append(", size=");
+        sbM833U.append(this.size);
+        sbM833U.append(", mimeType=");
+        sbM833U.append(this.mimeType);
+        sbM833U.append(", filename=");
+        sbM833U.append(this.filename);
+        sbM833U.append(", width=");
+        sbM833U.append(this.width);
+        sbM833U.append(", height=");
+        return C1643a.m818F(sbM833U, this.height, ")");
     }
 }

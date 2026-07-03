@@ -1,10 +1,10 @@
 package com.discord.stores;
 
-import b.d.b.a.outline;
 import com.discord.api.commands.ApplicationCommandAutocompleteChoice;
-import d0.z.d.Intrinsics3;
 import java.util.List;
 import kotlin.jvm.internal.DefaultConstructorMarker;
+import p007b.p100d.p104b.p105a.C1643a;
+import p507d0.p592z.p594d.C12238m;
 
 /* JADX INFO: compiled from: StoreApplicationCommands.kt */
 /* JADX INFO: loaded from: classes2.dex */
@@ -17,7 +17,7 @@ public abstract class CommandAutocompleteState {
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
         public Choices(List<ApplicationCommandAutocompleteChoice> list) {
             super(null);
-            Intrinsics3.checkNotNullParameter(list, "choices");
+            C12238m.checkNotNullParameter(list, "choices");
             this.choices = list;
         }
 
@@ -34,13 +34,13 @@ public abstract class CommandAutocompleteState {
         }
 
         public final Choices copy(List<ApplicationCommandAutocompleteChoice> choices) {
-            Intrinsics3.checkNotNullParameter(choices, "choices");
+            C12238m.checkNotNullParameter(choices, "choices");
             return new Choices(choices);
         }
 
         public boolean equals(Object other) {
             if (this != other) {
-                return (other instanceof Choices) && Intrinsics3.areEqual(this.choices, ((Choices) other).choices);
+                return (other instanceof Choices) && C12238m.areEqual(this.choices, ((Choices) other).choices);
             }
             return true;
         }
@@ -58,7 +58,7 @@ public abstract class CommandAutocompleteState {
         }
 
         public String toString() {
-            return outline.L(outline.U("Choices(choices="), this.choices, ")");
+            return C1643a.m824L(C1643a.m833U("Choices(choices="), this.choices, ")");
         }
     }
 

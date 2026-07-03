@@ -1,32 +1,32 @@
 package com.discord.widgets.guilds.invite;
 
 import androidx.annotation.MainThread;
-import b.a.d.AppViewModel;
-import b.d.b.a.outline;
 import com.discord.api.channel.Channel;
 import com.discord.models.domain.ModelInvite;
 import com.discord.stores.StoreInviteSettings;
 import com.discord.stores.StoreStream;
 import com.discord.utilities.error.Error;
-import com.discord.utilities.rx.ObservableExtensionsKt;
+import com.discord.utilities.p501rx.ObservableExtensionsKt;
 import com.discord.widgets.guilds.invite.GuildInviteSettingsViewModel;
-import d0.t._Collections;
-import d0.z.d.Intrinsics3;
-import d0.z.d.Lambda;
 import java.util.List;
 import java.util.Map;
 import kotlin.Unit;
 import kotlin.jvm.functions.Function0;
 import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.DefaultConstructorMarker;
-import rx.Observable;
-import rx.Subscription;
-import rx.functions.Func2;
-import rx.subjects.PublishSubject;
+import p007b.p008a.p018d.AbstractC0859d0;
+import p007b.p100d.p104b.p105a.C1643a;
+import p507d0.p580t.C12163u;
+import p507d0.p592z.p594d.AbstractC12240o;
+import p507d0.p592z.p594d.C12238m;
+import p658rx.Observable;
+import p658rx.Subscription;
+import p658rx.functions.Func2;
+import p658rx.subjects.PublishSubject;
 
 /* JADX INFO: compiled from: GuildInviteSettingsViewModel.kt */
 /* JADX INFO: loaded from: classes2.dex */
-public final class GuildInviteSettingsViewModel extends AppViewModel<ViewState> {
+public final class GuildInviteSettingsViewModel extends AbstractC0859d0<ViewState> {
 
     /* JADX INFO: renamed from: Companion, reason: from kotlin metadata */
     public static final Companion INSTANCE = new Companion(null);
@@ -39,22 +39,22 @@ public final class GuildInviteSettingsViewModel extends AppViewModel<ViewState> 
     private Channel targetChannel;
     private final TargetChannelSelector targetChannelSelector;
 
-    /* JADX INFO: renamed from: com.discord.widgets.guilds.invite.GuildInviteSettingsViewModel$1, reason: invalid class name */
+    /* JADX INFO: renamed from: com.discord.widgets.guilds.invite.GuildInviteSettingsViewModel$1 */
     /* JADX INFO: compiled from: GuildInviteSettingsViewModel.kt */
-    public static final class AnonymousClass1 extends Lambda implements Function1<StoreState, Unit> {
-        public AnonymousClass1() {
+    public static final class C86171 extends AbstractC12240o implements Function1<StoreState, Unit> {
+        public C86171() {
             super(1);
         }
 
         @Override // kotlin.jvm.functions.Function1
         public /* bridge */ /* synthetic */ Unit invoke(StoreState storeState) {
             invoke2(storeState);
-            return Unit.a;
+            return Unit.f27425a;
         }
 
         /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
         public final void invoke2(StoreState storeState) {
-            Intrinsics3.checkNotNullParameter(storeState, "storeState");
+            C12238m.checkNotNullParameter(storeState, "storeState");
             GuildInviteSettingsViewModel.this.handleStoreState(storeState);
         }
     }
@@ -65,21 +65,21 @@ public final class GuildInviteSettingsViewModel extends AppViewModel<ViewState> 
         }
 
         private final Observable<StoreState> observeStoreState(long guildId, StoreInviteSettings storeInviteSettings) {
-            Observable<StoreState> observableJ = Observable.j(storeInviteSettings.getInviteSettings(), storeInviteSettings.getInvitableChannels(guildId), new Func2<ModelInvite.Settings, Map<Long, ? extends Channel>, StoreState>() { // from class: com.discord.widgets.guilds.invite.GuildInviteSettingsViewModel$Companion$observeStoreState$1
-                @Override // rx.functions.Func2
+            Observable<StoreState> observableM11076j = Observable.m11076j(storeInviteSettings.getInviteSettings(), storeInviteSettings.getInvitableChannels(guildId), new Func2<ModelInvite.Settings, Map<Long, ? extends Channel>, StoreState>() { // from class: com.discord.widgets.guilds.invite.GuildInviteSettingsViewModel$Companion$observeStoreState$1
+                @Override // p658rx.functions.Func2
                 public /* bridge */ /* synthetic */ GuildInviteSettingsViewModel.StoreState call(ModelInvite.Settings settings, Map<Long, ? extends Channel> map) {
                     return call2(settings, (Map<Long, Channel>) map);
                 }
 
                 /* JADX INFO: renamed from: call, reason: avoid collision after fix types in other method */
                 public final GuildInviteSettingsViewModel.StoreState call2(ModelInvite.Settings settings, Map<Long, Channel> map) {
-                    Intrinsics3.checkNotNullExpressionValue(settings, "inviteSettings");
-                    Intrinsics3.checkNotNullExpressionValue(map, "invitableChannels");
+                    C12238m.checkNotNullExpressionValue(settings, "inviteSettings");
+                    C12238m.checkNotNullExpressionValue(map, "invitableChannels");
                     return new GuildInviteSettingsViewModel.StoreState(settings, map);
                 }
             });
-            Intrinsics3.checkNotNullExpressionValue(observableJ, "Observable.combineLatest…hannels\n        )\n      }");
-            return observableJ;
+            C12238m.checkNotNullExpressionValue(observableM11076j, "Observable.combineLatest…hannels\n        )\n      }");
+            return observableM11076j;
         }
 
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
@@ -106,7 +106,7 @@ public final class GuildInviteSettingsViewModel extends AppViewModel<ViewState> 
             /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
             public InviteCreationSuccess(GuildInvite guildInvite) {
                 super(null);
-                Intrinsics3.checkNotNullParameter(guildInvite, "invite");
+                C12238m.checkNotNullParameter(guildInvite, "invite");
                 this.invite = guildInvite;
             }
 
@@ -123,13 +123,13 @@ public final class GuildInviteSettingsViewModel extends AppViewModel<ViewState> 
             }
 
             public final InviteCreationSuccess copy(GuildInvite invite) {
-                Intrinsics3.checkNotNullParameter(invite, "invite");
+                C12238m.checkNotNullParameter(invite, "invite");
                 return new InviteCreationSuccess(invite);
             }
 
             public boolean equals(Object other) {
                 if (this != other) {
-                    return (other instanceof InviteCreationSuccess) && Intrinsics3.areEqual(this.invite, ((InviteCreationSuccess) other).invite);
+                    return (other instanceof InviteCreationSuccess) && C12238m.areEqual(this.invite, ((InviteCreationSuccess) other).invite);
                 }
                 return true;
             }
@@ -147,10 +147,10 @@ public final class GuildInviteSettingsViewModel extends AppViewModel<ViewState> 
             }
 
             public String toString() {
-                StringBuilder sbU = outline.U("InviteCreationSuccess(invite=");
-                sbU.append(this.invite);
-                sbU.append(")");
-                return sbU.toString();
+                StringBuilder sbM833U = C1643a.m833U("InviteCreationSuccess(invite=");
+                sbM833U.append(this.invite);
+                sbM833U.append(")");
+                return sbM833U.toString();
             }
         }
 
@@ -168,8 +168,8 @@ public final class GuildInviteSettingsViewModel extends AppViewModel<ViewState> 
         private final ModelInvite.Settings inviteSettings;
 
         public StoreState(ModelInvite.Settings settings, Map<Long, Channel> map) {
-            Intrinsics3.checkNotNullParameter(settings, "inviteSettings");
-            Intrinsics3.checkNotNullParameter(map, "invitableChannels");
+            C12238m.checkNotNullParameter(settings, "inviteSettings");
+            C12238m.checkNotNullParameter(map, "invitableChannels");
             this.inviteSettings = settings;
             this.invitableChannels = map;
         }
@@ -195,8 +195,8 @@ public final class GuildInviteSettingsViewModel extends AppViewModel<ViewState> 
         }
 
         public final StoreState copy(ModelInvite.Settings inviteSettings, Map<Long, Channel> invitableChannels) {
-            Intrinsics3.checkNotNullParameter(inviteSettings, "inviteSettings");
-            Intrinsics3.checkNotNullParameter(invitableChannels, "invitableChannels");
+            C12238m.checkNotNullParameter(inviteSettings, "inviteSettings");
+            C12238m.checkNotNullParameter(invitableChannels, "invitableChannels");
             return new StoreState(inviteSettings, invitableChannels);
         }
 
@@ -208,7 +208,7 @@ public final class GuildInviteSettingsViewModel extends AppViewModel<ViewState> 
                 return false;
             }
             StoreState storeState = (StoreState) other;
-            return Intrinsics3.areEqual(this.inviteSettings, storeState.inviteSettings) && Intrinsics3.areEqual(this.invitableChannels, storeState.invitableChannels);
+            return C12238m.areEqual(this.inviteSettings, storeState.inviteSettings) && C12238m.areEqual(this.invitableChannels, storeState.invitableChannels);
         }
 
         public final Map<Long, Channel> getInvitableChannels() {
@@ -227,10 +227,10 @@ public final class GuildInviteSettingsViewModel extends AppViewModel<ViewState> 
         }
 
         public String toString() {
-            StringBuilder sbU = outline.U("StoreState(inviteSettings=");
-            sbU.append(this.inviteSettings);
-            sbU.append(", invitableChannels=");
-            return outline.M(sbU, this.invitableChannels, ")");
+            StringBuilder sbM833U = C1643a.m833U("StoreState(inviteSettings=");
+            sbM833U.append(this.inviteSettings);
+            sbM833U.append(", invitableChannels=");
+            return C1643a.m825M(sbM833U, this.invitableChannels, ")");
         }
     }
 
@@ -241,8 +241,8 @@ public final class GuildInviteSettingsViewModel extends AppViewModel<ViewState> 
         private final Channel targetChannel;
 
         public ViewState(List<Channel> list, ModelInvite.Settings settings, Channel channel) {
-            Intrinsics3.checkNotNullParameter(list, "invitableChannels");
-            Intrinsics3.checkNotNullParameter(settings, "inviteSettings");
+            C12238m.checkNotNullParameter(list, "invitableChannels");
+            C12238m.checkNotNullParameter(settings, "inviteSettings");
             this.invitableChannels = list;
             this.inviteSettings = settings;
             this.targetChannel = channel;
@@ -277,8 +277,8 @@ public final class GuildInviteSettingsViewModel extends AppViewModel<ViewState> 
         }
 
         public final ViewState copy(List<Channel> invitableChannels, ModelInvite.Settings inviteSettings, Channel targetChannel) {
-            Intrinsics3.checkNotNullParameter(invitableChannels, "invitableChannels");
-            Intrinsics3.checkNotNullParameter(inviteSettings, "inviteSettings");
+            C12238m.checkNotNullParameter(invitableChannels, "invitableChannels");
+            C12238m.checkNotNullParameter(inviteSettings, "inviteSettings");
             return new ViewState(invitableChannels, inviteSettings, targetChannel);
         }
 
@@ -290,7 +290,7 @@ public final class GuildInviteSettingsViewModel extends AppViewModel<ViewState> 
                 return false;
             }
             ViewState viewState = (ViewState) other;
-            return Intrinsics3.areEqual(this.invitableChannels, viewState.invitableChannels) && Intrinsics3.areEqual(this.inviteSettings, viewState.inviteSettings) && Intrinsics3.areEqual(this.targetChannel, viewState.targetChannel);
+            return C12238m.areEqual(this.invitableChannels, viewState.invitableChannels) && C12238m.areEqual(this.inviteSettings, viewState.inviteSettings) && C12238m.areEqual(this.targetChannel, viewState.targetChannel);
         }
 
         public final List<Channel> getInvitableChannels() {
@@ -315,53 +315,53 @@ public final class GuildInviteSettingsViewModel extends AppViewModel<ViewState> 
         }
 
         public String toString() {
-            StringBuilder sbU = outline.U("ViewState(invitableChannels=");
-            sbU.append(this.invitableChannels);
-            sbU.append(", inviteSettings=");
-            sbU.append(this.inviteSettings);
-            sbU.append(", targetChannel=");
-            sbU.append(this.targetChannel);
-            sbU.append(")");
-            return sbU.toString();
+            StringBuilder sbM833U = C1643a.m833U("ViewState(invitableChannels=");
+            sbM833U.append(this.invitableChannels);
+            sbM833U.append(", inviteSettings=");
+            sbM833U.append(this.inviteSettings);
+            sbM833U.append(", targetChannel=");
+            sbM833U.append(this.targetChannel);
+            sbM833U.append(")");
+            return sbM833U.toString();
         }
     }
 
-    /* JADX INFO: renamed from: com.discord.widgets.guilds.invite.GuildInviteSettingsViewModel$generateInviteForChannel$1, reason: invalid class name */
+    /* JADX INFO: renamed from: com.discord.widgets.guilds.invite.GuildInviteSettingsViewModel$generateInviteForChannel$1 */
     /* JADX INFO: compiled from: GuildInviteSettingsViewModel.kt */
-    public static final class AnonymousClass1 extends Lambda implements Function1<ModelInvite, Unit> {
-        public AnonymousClass1() {
+    public static final class C86181 extends AbstractC12240o implements Function1<ModelInvite, Unit> {
+        public C86181() {
             super(1);
         }
 
         @Override // kotlin.jvm.functions.Function1
         public /* bridge */ /* synthetic */ Unit invoke(ModelInvite modelInvite) {
             invoke2(modelInvite);
-            return Unit.a;
+            return Unit.f27425a;
         }
 
         /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
         public final void invoke2(ModelInvite modelInvite) {
-            Intrinsics3.checkNotNullParameter(modelInvite, "invite");
+            C12238m.checkNotNullParameter(modelInvite, "invite");
             GuildInviteSettingsViewModel.this.handleInviteCreationSuccess(modelInvite);
         }
     }
 
-    /* JADX INFO: renamed from: com.discord.widgets.guilds.invite.GuildInviteSettingsViewModel$generateInviteForChannel$2, reason: invalid class name */
+    /* JADX INFO: renamed from: com.discord.widgets.guilds.invite.GuildInviteSettingsViewModel$generateInviteForChannel$2 */
     /* JADX INFO: compiled from: GuildInviteSettingsViewModel.kt */
-    public static final class AnonymousClass2 extends Lambda implements Function1<Error, Unit> {
-        public AnonymousClass2() {
+    public static final class C86192 extends AbstractC12240o implements Function1<Error, Unit> {
+        public C86192() {
             super(1);
         }
 
         @Override // kotlin.jvm.functions.Function1
         public /* bridge */ /* synthetic */ Unit invoke(Error error) {
             invoke2(error);
-            return Unit.a;
+            return Unit.f27425a;
         }
 
         /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
         public final void invoke2(Error error) {
-            Intrinsics3.checkNotNullParameter(error, "it");
+            C12238m.checkNotNullParameter(error, "it");
             GuildInviteSettingsViewModel.this.handleInviteCreationFailure();
         }
     }
@@ -373,20 +373,20 @@ public final class GuildInviteSettingsViewModel extends AppViewModel<ViewState> 
     }
 
     private final void generateInviteForChannel(long targetChannelId) {
-        ObservableExtensionsKt.appSubscribe(ObservableExtensionsKt.ui$default(ObservableExtensionsKt.restSubscribeOn$default(StoreInviteSettings.generateInvite$default(this.storeInviteSettings, targetChannelId, null, 2, null), false, 1, null), this, null, 2, null), (Class<?>) GuildInviteSettingsViewModel.class, (58 & 2) != 0 ? null : null, (Function1<? super Subscription, Unit>) ((58 & 4) != 0 ? null : null), (Function1<? super Error, Unit>) ((58 & 8) != 0 ? null : new AnonymousClass2()), (Function0<Unit>) ((58 & 16) != 0 ? ObservableExtensionsKt.AnonymousClass1.INSTANCE : null), (Function0<Unit>) ((58 & 32) != 0 ? ObservableExtensionsKt.AnonymousClass2.INSTANCE : null), new AnonymousClass1());
+        ObservableExtensionsKt.appSubscribe(ObservableExtensionsKt.ui$default(ObservableExtensionsKt.restSubscribeOn$default(StoreInviteSettings.generateInvite$default(this.storeInviteSettings, targetChannelId, null, 2, null), false, 1, null), this, null, 2, null), (Class<?>) GuildInviteSettingsViewModel.class, (58 & 2) != 0 ? null : null, (Function1<? super Subscription, Unit>) ((58 & 4) != 0 ? null : null), (Function1<? super Error, Unit>) ((58 & 8) != 0 ? null : new C86192()), (Function0<Unit>) ((58 & 16) != 0 ? ObservableExtensionsKt.C68791.INSTANCE : null), (Function0<Unit>) ((58 & 32) != 0 ? ObservableExtensionsKt.C68802.INSTANCE : null), new C86181());
     }
 
     @MainThread
     private final void handleInviteCreationFailure() {
         PublishSubject<Event> publishSubject = this.eventSubject;
-        publishSubject.k.onNext(Event.InviteCreationFailure.INSTANCE);
+        publishSubject.f27650k.onNext(Event.InviteCreationFailure.INSTANCE);
     }
 
     @MainThread
     private final void handleInviteCreationSuccess(ModelInvite invite) {
         GuildInvite guildInviteCreateFromModelInvite = GuildInvite.INSTANCE.createFromModelInvite(invite);
         PublishSubject<Event> publishSubject = this.eventSubject;
-        publishSubject.k.onNext(new Event.InviteCreationSuccess(guildInviteCreateFromModelInvite));
+        publishSubject.f27650k.onNext(new Event.InviteCreationSuccess(guildInviteCreateFromModelInvite));
     }
 
     @MainThread
@@ -402,7 +402,7 @@ public final class GuildInviteSettingsViewModel extends AppViewModel<ViewState> 
             targetChannel = this.targetChannelSelector.getTargetChannel(invitableChannels, this.channelId);
             this.targetChannel = targetChannel;
         }
-        updateViewState(new ViewState(_Collections.toList(invitableChannels.values()), inviteSettings, targetChannel));
+        updateViewState(new ViewState(C12163u.toList(invitableChannels.values()), inviteSettings, targetChannel));
         this.currentStoreState = storeState;
     }
 
@@ -433,7 +433,7 @@ public final class GuildInviteSettingsViewModel extends AppViewModel<ViewState> 
 
     @MainThread
     public final void updatePendingInviteSettings(ModelInvite.Settings settings) {
-        Intrinsics3.checkNotNullParameter(settings, "settings");
+        C12238m.checkNotNullParameter(settings, "settings");
         ViewState viewState = getViewState();
         if (viewState != null) {
             this.inviteSettings = settings;
@@ -444,16 +444,16 @@ public final class GuildInviteSettingsViewModel extends AppViewModel<ViewState> 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public GuildInviteSettingsViewModel(Long l, long j, StoreInviteSettings storeInviteSettings, TargetChannelSelector targetChannelSelector, Observable<StoreState> observable) {
         super(null, 1, null);
-        Intrinsics3.checkNotNullParameter(storeInviteSettings, "storeInviteSettings");
-        Intrinsics3.checkNotNullParameter(targetChannelSelector, "targetChannelSelector");
-        Intrinsics3.checkNotNullParameter(observable, "storeStateObservable");
+        C12238m.checkNotNullParameter(storeInviteSettings, "storeInviteSettings");
+        C12238m.checkNotNullParameter(targetChannelSelector, "targetChannelSelector");
+        C12238m.checkNotNullParameter(observable, "storeStateObservable");
         this.channelId = l;
         this.guildId = j;
         this.storeInviteSettings = storeInviteSettings;
         this.targetChannelSelector = targetChannelSelector;
-        PublishSubject<Event> publishSubjectK0 = PublishSubject.k0();
-        Intrinsics3.checkNotNullExpressionValue(publishSubjectK0, "PublishSubject.create()");
-        this.eventSubject = publishSubjectK0;
-        ObservableExtensionsKt.appSubscribe(ObservableExtensionsKt.ui$default(ObservableExtensionsKt.computationLatest(observable), this, null, 2, null), (Class<?>) GuildInviteSettingsViewModel.class, (58 & 2) != 0 ? null : null, (Function1<? super Subscription, Unit>) ((58 & 4) != 0 ? null : null), (Function1<? super Error, Unit>) ((58 & 8) != 0 ? null : null), (Function0<Unit>) ((58 & 16) != 0 ? ObservableExtensionsKt.AnonymousClass1.INSTANCE : null), (Function0<Unit>) ((58 & 32) != 0 ? ObservableExtensionsKt.AnonymousClass2.INSTANCE : null), new AnonymousClass1());
+        PublishSubject<Event> publishSubjectM11133k0 = PublishSubject.m11133k0();
+        C12238m.checkNotNullExpressionValue(publishSubjectM11133k0, "PublishSubject.create()");
+        this.eventSubject = publishSubjectM11133k0;
+        ObservableExtensionsKt.appSubscribe(ObservableExtensionsKt.ui$default(ObservableExtensionsKt.computationLatest(observable), this, null, 2, null), (Class<?>) GuildInviteSettingsViewModel.class, (58 & 2) != 0 ? null : null, (Function1<? super Subscription, Unit>) ((58 & 4) != 0 ? null : null), (Function1<? super Error, Unit>) ((58 & 8) != 0 ? null : null), (Function0<Unit>) ((58 & 16) != 0 ? ObservableExtensionsKt.C68791.INSTANCE : null), (Function0<Unit>) ((58 & 32) != 0 ? ObservableExtensionsKt.C68802.INSTANCE : null), new C86171());
     }
 }

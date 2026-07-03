@@ -1,6 +1,6 @@
 package org.objectweb.asm;
 
-import com.discord.widgets.chat.input.MentionUtils;
+import com.discord.widgets.chat.input.MentionUtilsKt;
 import java.io.DataInputStream;
 import java.io.IOException;
 import java.io.InputStream;
@@ -113,7 +113,7 @@ final class Constants {
 
     static void checkAsmExperimental(Object caller) {
         Class<?> callerClass = caller.getClass();
-        String internalName = callerClass.getName().replace('.', MentionUtils.SLASH_CHAR);
+        String internalName = callerClass.getName().replace('.', MentionUtilsKt.SLASH_CHAR);
         if (!isWhitelisted(internalName)) {
             checkIsPreview(callerClass.getClassLoader().getResourceAsStream(internalName + ".class"));
         }

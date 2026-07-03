@@ -5,9 +5,11 @@ import android.os.Parcelable;
 
 /* JADX INFO: loaded from: classes3.dex */
 public abstract class HCaptchaDialogListener implements Parcelable {
-    public abstract void a(HCaptchaException hCaptchaException);
+    /* JADX INFO: renamed from: a */
+    public abstract void mo9263a(HCaptchaException hCaptchaException);
 
-    public abstract void b(HCaptchaTokenResponse hCaptchaTokenResponse);
+    /* JADX INFO: renamed from: b */
+    public abstract void mo9264b(HCaptchaTokenResponse hCaptchaTokenResponse);
 
     @Override // android.os.Parcelable
     public int describeContents() {

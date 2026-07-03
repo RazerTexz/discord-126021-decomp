@@ -12,7 +12,7 @@ import android.widget.AbsListView;
 import android.widget.ListAdapter;
 import android.widget.ListView;
 import androidx.annotation.NonNull;
-import androidx.appcompat.R;
+import androidx.appcompat.C0051R;
 import androidx.appcompat.graphics.drawable.DrawableWrapper;
 import androidx.constraintlayout.solver.widgets.analyzer.BasicMeasure;
 import androidx.core.graphics.drawable.DrawableCompat;
@@ -112,7 +112,7 @@ public class DropDownListView extends ListView {
     }
 
     public DropDownListView(@NonNull Context context, boolean z2) {
-        super(context, null, R.attr.dropDownListViewStyle);
+        super(context, null, C0051R.attr.dropDownListViewStyle);
         this.mSelectorRect = new Rect();
         this.mSelectionLeftPadding = 0;
         this.mSelectionTopPadding = 0;

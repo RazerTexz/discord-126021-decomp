@@ -2,7 +2,7 @@ package com.discord.player;
 
 import android.os.Parcel;
 import android.os.Parcelable;
-import d0.z.d.Intrinsics3;
+import p507d0.p592z.p594d.C12238m;
 
 /* JADX INFO: compiled from: MediaType.kt */
 /* JADX INFO: loaded from: classes.dex */
@@ -15,10 +15,10 @@ public enum MediaType implements Parcelable {
     public static final Companion INSTANCE = new Parcelable.Creator<MediaType>(null) { // from class: com.discord.player.MediaType.a
         @Override // android.os.Parcelable.Creator
         public MediaType createFromParcel(Parcel parcel) {
-            Intrinsics3.checkNotNullParameter(parcel, "parcel");
+            C12238m.checkNotNullParameter(parcel, "parcel");
             String string = parcel.readString();
-            Intrinsics3.checkNotNull(string);
-            Intrinsics3.checkNotNullExpressionValue(string, "parcel.readString()!!");
+            C12238m.checkNotNull(string);
+            C12238m.checkNotNullExpressionValue(string, "parcel.readString()!!");
             return MediaType.valueOf(string);
         }
 
@@ -35,7 +35,7 @@ public enum MediaType implements Parcelable {
 
     @Override // android.os.Parcelable
     public void writeToParcel(Parcel parcel, int flags) {
-        Intrinsics3.checkNotNullParameter(parcel, "parcel");
+        C12238m.checkNotNullParameter(parcel, "parcel");
         parcel.writeString(name());
     }
 }

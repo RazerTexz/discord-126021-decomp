@@ -1,8 +1,8 @@
 package com.discord.api.message.embed;
 
-import b.d.b.a.outline;
 import com.discord.models.domain.ModelAuditLogEntry;
-import d0.z.d.Intrinsics3;
+import p007b.p100d.p104b.p105a.C1643a;
+import p507d0.p592z.p594d.C12238m;
 
 /* JADX INFO: compiled from: EmbedProvider.kt */
 /* JADX INFO: loaded from: classes.dex */
@@ -28,7 +28,7 @@ public final /* data */ class EmbedProvider {
             return false;
         }
         EmbedProvider embedProvider = (EmbedProvider) other;
-        return Intrinsics3.areEqual(this.name, embedProvider.name) && Intrinsics3.areEqual(this.url, embedProvider.url);
+        return C12238m.areEqual(this.name, embedProvider.name) && C12238m.areEqual(this.url, embedProvider.url);
     }
 
     public int hashCode() {
@@ -39,9 +39,9 @@ public final /* data */ class EmbedProvider {
     }
 
     public String toString() {
-        StringBuilder sbU = outline.U("EmbedProvider(name=");
-        sbU.append(this.name);
-        sbU.append(", url=");
-        return outline.J(sbU, this.url, ")");
+        StringBuilder sbM833U = C1643a.m833U("EmbedProvider(name=");
+        sbM833U.append(this.name);
+        sbM833U.append(", url=");
+        return C1643a.m822J(sbM833U, this.url, ")");
     }
 }

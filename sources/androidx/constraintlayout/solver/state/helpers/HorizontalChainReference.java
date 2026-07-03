@@ -11,8 +11,8 @@ public class HorizontalChainReference extends ChainReference {
     private Object mStartToEnd;
     private Object mStartToStart;
 
-    /* JADX INFO: renamed from: androidx.constraintlayout.solver.state.helpers.HorizontalChainReference$1, reason: invalid class name */
-    public static /* synthetic */ class AnonymousClass1 {
+    /* JADX INFO: renamed from: androidx.constraintlayout.solver.state.helpers.HorizontalChainReference$1 */
+    public static /* synthetic */ class C01871 {
         public static final /* synthetic */ int[] $SwitchMap$androidx$constraintlayout$solver$state$State$Chain;
 
         static {

@@ -1,14 +1,14 @@
 package com.discord.widgets.chat.input.autocomplete;
 
-import b.d.b.a.outline;
 import com.discord.models.member.GuildMember;
 import com.discord.models.presence.Presence;
 import com.discord.models.user.User;
 import com.discord.utilities.user.UserUtils;
-import d0.t.CollectionsJVM;
-import d0.z.d.Intrinsics3;
 import java.util.List;
 import kotlin.jvm.internal.DefaultConstructorMarker;
+import p007b.p100d.p104b.p105a.C1643a;
+import p507d0.p580t.C12145m;
+import p507d0.p592z.p594d.C12238m;
 
 /* JADX INFO: compiled from: Autocompletable.kt */
 /* JADX INFO: loaded from: classes2.dex */
@@ -73,7 +73,7 @@ public final /* data */ class UserAutocompletable extends Autocompletable {
     }
 
     public final UserAutocompletable copy(User user, GuildMember guildMember, String nickname, Presence presence, boolean canUserReadChannel) {
-        Intrinsics3.checkNotNullParameter(user, "user");
+        C12238m.checkNotNullParameter(user, "user");
         return new UserAutocompletable(user, guildMember, nickname, presence, canUserReadChannel);
     }
 
@@ -85,7 +85,7 @@ public final /* data */ class UserAutocompletable extends Autocompletable {
             return false;
         }
         UserAutocompletable userAutocompletable = (UserAutocompletable) other;
-        return Intrinsics3.areEqual(this.user, userAutocompletable.user) && Intrinsics3.areEqual(this.guildMember, userAutocompletable.guildMember) && Intrinsics3.areEqual(this.nickname, userAutocompletable.nickname) && Intrinsics3.areEqual(this.presence, userAutocompletable.presence) && this.canUserReadChannel == userAutocompletable.canUserReadChannel;
+        return C12238m.areEqual(this.user, userAutocompletable.user) && C12238m.areEqual(this.guildMember, userAutocompletable.guildMember) && C12238m.areEqual(this.nickname, userAutocompletable.nickname) && C12238m.areEqual(this.presence, userAutocompletable.presence) && this.canUserReadChannel == userAutocompletable.canUserReadChannel;
     }
 
     public final List<String> getAutoTextMatchers() {
@@ -107,11 +107,11 @@ public final /* data */ class UserAutocompletable extends Autocompletable {
 
     @Override // com.discord.widgets.chat.input.autocomplete.Autocompletable
     public String getInputReplacement() {
-        StringBuilder sbQ = outline.Q('<');
-        sbQ.append(leadingIdentifier().getIdentifier());
-        sbQ.append(this.user.getId());
-        sbQ.append('>');
-        return sbQ.toString();
+        StringBuilder sbM829Q = C1643a.m829Q('<');
+        sbM829Q.append(leadingIdentifier().getIdentifier());
+        sbM829Q.append(this.user.getId());
+        sbM829Q.append('>');
+        return sbM829Q.toString();
     }
 
     @Override // com.discord.widgets.chat.input.autocomplete.Autocompletable
@@ -163,31 +163,31 @@ public final /* data */ class UserAutocompletable extends Autocompletable {
     }
 
     public String toString() {
-        StringBuilder sbU = outline.U("UserAutocompletable(user=");
-        sbU.append(this.user);
-        sbU.append(", guildMember=");
-        sbU.append(this.guildMember);
-        sbU.append(", nickname=");
-        sbU.append(this.nickname);
-        sbU.append(", presence=");
-        sbU.append(this.presence);
-        sbU.append(", canUserReadChannel=");
-        return outline.O(sbU, this.canUserReadChannel, ")");
+        StringBuilder sbM833U = C1643a.m833U("UserAutocompletable(user=");
+        sbM833U.append(this.user);
+        sbM833U.append(", guildMember=");
+        sbM833U.append(this.guildMember);
+        sbM833U.append(", nickname=");
+        sbM833U.append(this.nickname);
+        sbM833U.append(", presence=");
+        sbM833U.append(this.presence);
+        sbM833U.append(", canUserReadChannel=");
+        return C1643a.m827O(sbM833U, this.canUserReadChannel, ")");
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public UserAutocompletable(User user, GuildMember guildMember, String str, Presence presence, boolean z2) {
         super(null);
-        Intrinsics3.checkNotNullParameter(user, "user");
+        C12238m.checkNotNullParameter(user, "user");
         List<String> listListOf = null;
         this.user = user;
         this.guildMember = guildMember;
         this.nickname = str;
         this.presence = presence;
         this.canUserReadChannel = z2;
-        this.textMatchers = CollectionsJVM.listOf(leadingIdentifier().getIdentifier() + user.getUsername() + UserUtils.INSTANCE.getDiscriminatorWithPadding(user));
+        this.textMatchers = C12145m.listOf(leadingIdentifier().getIdentifier() + user.getUsername() + UserUtils.INSTANCE.getDiscriminatorWithPadding(user));
         if (str != null) {
-            listListOf = CollectionsJVM.listOf(leadingIdentifier().getIdentifier() + str);
+            listListOf = C12145m.listOf(leadingIdentifier().getIdentifier() + str);
         }
         this.autoTextMatchers = listListOf;
     }

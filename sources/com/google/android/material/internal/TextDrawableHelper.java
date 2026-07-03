@@ -18,7 +18,7 @@ public class TextDrawableHelper {
     private TextAppearance textAppearance;
     private float textWidth;
     private final TextPaint textPaint = new TextPaint(1);
-    private final TextAppearanceFontCallback fontCallback = new a();
+    private final TextAppearanceFontCallback fontCallback = new C10946a();
     private boolean textWidthDirty = true;
 
     @Nullable
@@ -33,8 +33,9 @@ public class TextDrawableHelper {
         void onTextSizeChange();
     }
 
-    public class a extends TextAppearanceFontCallback {
-        public a() {
+    /* JADX INFO: renamed from: com.google.android.material.internal.TextDrawableHelper$a */
+    public class C10946a extends TextAppearanceFontCallback {
+        public C10946a() {
         }
 
         @Override // com.google.android.material.resources.TextAppearanceFontCallback

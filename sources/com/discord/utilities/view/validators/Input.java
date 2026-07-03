@@ -4,10 +4,10 @@ import android.view.View;
 import androidx.exifinterface.media.ExifInterface;
 import com.discord.models.domain.ModelAuditLogEntry;
 import com.google.android.material.textfield.TextInputLayout;
-import d0.g0.StringsJVM;
-import d0.z.d.Intrinsics3;
 import java.util.Arrays;
 import kotlin.jvm.functions.Function2;
+import p507d0.p579g0.C12103t;
+import p507d0.p592z.p594d.C12238m;
 
 /* JADX INFO: compiled from: Input.kt */
 /* JADX INFO: loaded from: classes2.dex */
@@ -21,15 +21,15 @@ public class Input<T extends View> {
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
         public EditTextInput(String str, TextInputLayout textInputLayout, InputValidator<? super TextInputLayout>... inputValidatorArr) {
             super(str, textInputLayout, (InputValidator[]) Arrays.copyOf(inputValidatorArr, inputValidatorArr.length));
-            Intrinsics3.checkNotNullParameter(str, ModelAuditLogEntry.CHANGE_KEY_NAME);
-            Intrinsics3.checkNotNullParameter(textInputLayout, "view");
-            Intrinsics3.checkNotNullParameter(inputValidatorArr, "validators");
+            C12238m.checkNotNullParameter(str, ModelAuditLogEntry.CHANGE_KEY_NAME);
+            C12238m.checkNotNullParameter(textInputLayout, "view");
+            C12238m.checkNotNullParameter(inputValidatorArr, "validators");
         }
 
         @Override // com.discord.utilities.view.validators.Input
         public boolean setErrorMessage(CharSequence errorMessage) {
             getView().setError(errorMessage);
-            boolean z2 = !(errorMessage == null || StringsJVM.isBlank(errorMessage));
+            boolean z2 = !(errorMessage == null || C12103t.isBlank(errorMessage));
             if (z2) {
                 getView().requestFocus();
             }
@@ -45,16 +45,16 @@ public class Input<T extends View> {
         /* JADX WARN: Multi-variable type inference failed */
         public GenericInput(String str, T t, InputValidator<? super T> inputValidator, Function2<? super T, ? super CharSequence, Boolean> function2) {
             super(str, t, inputValidator);
-            Intrinsics3.checkNotNullParameter(str, ModelAuditLogEntry.CHANGE_KEY_NAME);
-            Intrinsics3.checkNotNullParameter(t, "view");
-            Intrinsics3.checkNotNullParameter(inputValidator, "validator");
-            Intrinsics3.checkNotNullParameter(function2, "onError");
+            C12238m.checkNotNullParameter(str, ModelAuditLogEntry.CHANGE_KEY_NAME);
+            C12238m.checkNotNullParameter(t, "view");
+            C12238m.checkNotNullParameter(inputValidator, "validator");
+            C12238m.checkNotNullParameter(function2, "onError");
             this.onError = function2;
         }
 
         @Override // com.discord.utilities.view.validators.Input
         public boolean setErrorMessage(CharSequence errorMessage) {
-            if (errorMessage == null || StringsJVM.isBlank(errorMessage)) {
+            if (errorMessage == null || C12103t.isBlank(errorMessage)) {
                 return false;
             }
             return this.onError.invoke(getView(), errorMessage).booleanValue();
@@ -66,9 +66,9 @@ public class Input<T extends View> {
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
         public TextInputLayoutInput(String str, TextInputLayout textInputLayout, InputValidator<? super TextInputLayout>... inputValidatorArr) {
             super(str, textInputLayout, (InputValidator[]) Arrays.copyOf(inputValidatorArr, inputValidatorArr.length));
-            Intrinsics3.checkNotNullParameter(str, ModelAuditLogEntry.CHANGE_KEY_NAME);
-            Intrinsics3.checkNotNullParameter(textInputLayout, "view");
-            Intrinsics3.checkNotNullParameter(inputValidatorArr, "validators");
+            C12238m.checkNotNullParameter(str, ModelAuditLogEntry.CHANGE_KEY_NAME);
+            C12238m.checkNotNullParameter(textInputLayout, "view");
+            C12238m.checkNotNullParameter(inputValidatorArr, "validators");
         }
 
         @Override // com.discord.utilities.view.validators.Input
@@ -77,7 +77,7 @@ public class Input<T extends View> {
             if (getView().getEndIconMode() == 1) {
                 getView().setErrorIconDrawable(0);
             }
-            boolean z2 = !(errorMessage == null || StringsJVM.isBlank(errorMessage));
+            boolean z2 = !(errorMessage == null || C12103t.isBlank(errorMessage));
             getView().setErrorEnabled(z2);
             if (z2) {
                 getView().requestFocus();
@@ -88,9 +88,9 @@ public class Input<T extends View> {
 
     /* JADX WARN: Multi-variable type inference failed */
     public Input(String str, T t, InputValidator<? super T>... inputValidatorArr) {
-        Intrinsics3.checkNotNullParameter(str, ModelAuditLogEntry.CHANGE_KEY_NAME);
-        Intrinsics3.checkNotNullParameter(t, "view");
-        Intrinsics3.checkNotNullParameter(inputValidatorArr, "validators");
+        C12238m.checkNotNullParameter(str, ModelAuditLogEntry.CHANGE_KEY_NAME);
+        C12238m.checkNotNullParameter(t, "view");
+        C12238m.checkNotNullParameter(inputValidatorArr, "validators");
         this.name = str;
         this.view = t;
         this.validators = inputValidatorArr;

@@ -20,9 +20,7 @@ import androidx.appcompat.widget.ActivityChooserModel;
 import androidx.core.app.NotificationCompat;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
-import b.a.k.FormatUtils;
-import b.d.b.a.outline;
-import com.discord.R;
+import com.discord.C5419R;
 import com.discord.app.AppActivity;
 import com.discord.app.AppDialog;
 import com.discord.app.AppLog;
@@ -33,13 +31,8 @@ import com.discord.utilities.logging.Logger;
 import com.discord.utilities.view.extensions.ViewExtensions;
 import com.discord.utilities.view.text.LinkifiedTextView;
 import com.discord.utilities.viewbinding.FragmentViewBindingDelegate;
-import com.discord.utilities.viewbinding.FragmentViewBindingDelegate3;
+import com.discord.utilities.viewbinding.FragmentViewBindingDelegateKt;
 import com.google.android.material.button.MaterialButton;
-import d0.Tuples;
-import d0.g0.StringsJVM;
-import d0.t.Maps6;
-import d0.z.d.Intrinsics3;
-import d0.z.d.Lambda;
 import java.io.Serializable;
 import java.util.HashMap;
 import java.util.Map;
@@ -49,6 +42,13 @@ import kotlin.jvm.functions.Function1;
 import kotlin.jvm.functions.Function2;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.reflect.KProperty;
+import p007b.p008a.p027k.C1107b;
+import p007b.p100d.p104b.p105a.C1643a;
+import p507d0.C12116o;
+import p507d0.p579g0.C12103t;
+import p507d0.p580t.C12136h0;
+import p507d0.p592z.p594d.AbstractC12240o;
+import p507d0.p592z.p594d.C12238m;
 
 /* JADX INFO: compiled from: WidgetNoticeDialog.kt */
 /* JADX INFO: loaded from: classes2.dex */
@@ -72,7 +72,7 @@ public final class WidgetNoticeDialog extends AppDialog {
     private final FragmentViewBindingDelegate binding;
     private Map<Integer, ? extends Function1<? super View, Unit>> listenerMap;
     private Function0<Unit> onDismiss;
-    public static final /* synthetic */ KProperty[] $$delegatedProperties = {outline.d0(WidgetNoticeDialog.class, "binding", "getBinding()Lcom/discord/databinding/WidgetNoticeDialogBinding;", 0)};
+    public static final /* synthetic */ KProperty[] $$delegatedProperties = {C1643a.m846d0(WidgetNoticeDialog.class, "binding", "getBinding()Lcom/discord/databinding/WidgetNoticeDialogBinding;", 0)};
 
     /* JADX INFO: renamed from: Companion, reason: from kotlin metadata */
     public static final Companion INSTANCE = new Companion(null);
@@ -82,15 +82,15 @@ public final class WidgetNoticeDialog extends AppDialog {
         private final Function0<Unit> linkAction;
 
         public ActionLinkMovementMethod(Function0<Unit> function0) {
-            Intrinsics3.checkNotNullParameter(function0, "linkAction");
+            C12238m.checkNotNullParameter(function0, "linkAction");
             this.linkAction = function0;
         }
 
         @Override // android.text.method.LinkMovementMethod, android.text.method.ScrollingMovementMethod, android.text.method.BaseMovementMethod, android.text.method.MovementMethod
         public boolean onTouchEvent(TextView widget, Spannable buffer, MotionEvent event) {
-            Intrinsics3.checkNotNullParameter(widget, "widget");
-            Intrinsics3.checkNotNullParameter(buffer, "buffer");
-            Intrinsics3.checkNotNullParameter(event, "event");
+            C12238m.checkNotNullParameter(widget, "widget");
+            C12238m.checkNotNullParameter(buffer, "buffer");
+            C12238m.checkNotNullParameter(event, "event");
             boolean zOnTouchEvent = super.onTouchEvent(widget, buffer, event);
             if (event.getAction() == 1) {
                 this.linkAction.invoke();
@@ -113,7 +113,7 @@ public final class WidgetNoticeDialog extends AppDialog {
         private CharSequence title;
 
         public Builder(Context context) {
-            Intrinsics3.checkNotNullParameter(context, "context");
+            C12238m.checkNotNullParameter(context, "context");
             this.context = context;
             this.title = "";
             this.message = "";
@@ -154,42 +154,42 @@ public final class WidgetNoticeDialog extends AppDialog {
         }
 
         public final Builder setMessage(CharSequence text) {
-            Intrinsics3.checkNotNullParameter(text, NotificationCompat.MessagingStyle.Message.KEY_TEXT);
+            C12238m.checkNotNullParameter(text, NotificationCompat.MessagingStyle.Message.KEY_TEXT);
             this.message = text;
             return this;
         }
 
         public final Builder setNegativeButton(String text, Function1<? super View, Unit> onCancel) {
-            Intrinsics3.checkNotNullParameter(text, NotificationCompat.MessagingStyle.Message.KEY_TEXT);
-            Intrinsics3.checkNotNullParameter(onCancel, "onCancel");
+            C12238m.checkNotNullParameter(text, NotificationCompat.MessagingStyle.Message.KEY_TEXT);
+            C12238m.checkNotNullParameter(onCancel, "onCancel");
             this.cancelText = text;
             this.onCancel = onCancel;
             return this;
         }
 
         public final Builder setPositiveButton(String text, Function1<? super View, Unit> onConfirm) {
-            Intrinsics3.checkNotNullParameter(text, NotificationCompat.MessagingStyle.Message.KEY_TEXT);
-            Intrinsics3.checkNotNullParameter(onConfirm, "onConfirm");
+            C12238m.checkNotNullParameter(text, NotificationCompat.MessagingStyle.Message.KEY_TEXT);
+            C12238m.checkNotNullParameter(onConfirm, "onConfirm");
             this.confirmText = text;
             this.onConfirm = onConfirm;
             return this;
         }
 
         public final Builder setTag(String tag) {
-            Intrinsics3.checkNotNullParameter(tag, "tag");
+            C12238m.checkNotNullParameter(tag, "tag");
             this.tag = tag;
             return this;
         }
 
         public final Builder setTitle(CharSequence text) {
-            Intrinsics3.checkNotNullParameter(text, NotificationCompat.MessagingStyle.Message.KEY_TEXT);
+            C12238m.checkNotNullParameter(text, NotificationCompat.MessagingStyle.Message.KEY_TEXT);
             this.title = text;
             return this;
         }
 
         public final void show(FragmentManager fragmentManager) {
-            Intrinsics3.checkNotNullParameter(fragmentManager, "fragmentManager");
-            Companion.show$default(WidgetNoticeDialog.INSTANCE, fragmentManager, this.title, this.message, this.confirmText, this.cancelText, Maps6.mapOf(Tuples.to(Integer.valueOf(R.id.notice_ok), this.onConfirm), Tuples.to(Integer.valueOf(R.id.notice_cancel), this.onCancel)), null, null, null, this.themeId, null, null, 0, null, 15808, null);
+            C12238m.checkNotNullParameter(fragmentManager, "fragmentManager");
+            Companion.show$default(WidgetNoticeDialog.INSTANCE, fragmentManager, this.title, this.message, this.confirmText, this.cancelText, C12136h0.mapOf(C12116o.m10073to(Integer.valueOf(C5419R.id.notice_ok), this.onConfirm), C12116o.m10073to(Integer.valueOf(C5419R.id.notice_cancel), this.onCancel)), null, null, null, this.themeId, null, null, 0, null, 15808, null);
         }
 
         /* JADX WARN: Multi-variable type inference failed */
@@ -209,30 +209,30 @@ public final class WidgetNoticeDialog extends AppDialog {
         }
 
         public final Builder setMessage(@StringRes int stringResId) {
-            this.message = FormatUtils.b(this.context, stringResId, new Object[0], (4 & 4) != 0 ? FormatUtils.b.j : null);
+            this.message = C1107b.m210b(this.context, stringResId, new Object[0], (4 & 4) != 0 ? C1107b.b.f1491j : null);
             return this;
         }
 
         public final Builder setTitle(@StringRes int stringResId) {
             String string = this.context.getString(stringResId);
-            Intrinsics3.checkNotNullExpressionValue(string, "context.getString(stringResId)");
+            C12238m.checkNotNullExpressionValue(string, "context.getString(stringResId)");
             this.title = string;
             return this;
         }
 
         public final Builder setNegativeButton(@StringRes int stringResId, Function1<? super View, Unit> onCancel) {
-            Intrinsics3.checkNotNullParameter(onCancel, "onCancel");
+            C12238m.checkNotNullParameter(onCancel, "onCancel");
             String string = this.context.getString(stringResId);
-            Intrinsics3.checkNotNullExpressionValue(string, "context.getString(stringResId)");
+            C12238m.checkNotNullExpressionValue(string, "context.getString(stringResId)");
             this.cancelText = string;
             this.onCancel = onCancel;
             return this;
         }
 
         public final Builder setPositiveButton(@StringRes int stringResId, Function1<? super View, Unit> onConfirm) {
-            Intrinsics3.checkNotNullParameter(onConfirm, "onConfirm");
+            C12238m.checkNotNullParameter(onConfirm, "onConfirm");
             String string = this.context.getString(stringResId);
-            Intrinsics3.checkNotNullExpressionValue(string, "context.getString(stringResId)");
+            C12238m.checkNotNullExpressionValue(string, "context.getString(stringResId)");
             this.confirmText = string;
             this.onConfirm = onConfirm;
             return this;
@@ -250,8 +250,8 @@ public final class WidgetNoticeDialog extends AppDialog {
         }
 
         public final void show(FragmentManager fragmentManager, CharSequence headerText, CharSequence bodyText, CharSequence goText, CharSequence cancelText, Map<Integer, ? extends Function1<? super View, Unit>> listenerMap, StoreNotices.Dialog.Type type, @LayoutRes Integer aboveLayoutId, @LayoutRes Integer belowLayoutId, Integer dialogTheme, Boolean cancelable, String tag, int bodyTextAlignment, Function0<Unit> onDismiss) {
-            Intrinsics3.checkNotNullParameter(fragmentManager, "fragmentManager");
-            Intrinsics3.checkNotNullParameter(bodyText, "bodyText");
+            C12238m.checkNotNullParameter(fragmentManager, "fragmentManager");
+            C12238m.checkNotNullParameter(bodyText, "bodyText");
             WidgetNoticeDialog widgetNoticeDialog = new WidgetNoticeDialog();
             widgetNoticeDialog.setListenerMap(listenerMap);
             widgetNoticeDialog.setOnDismiss(onDismiss);
@@ -277,10 +277,10 @@ public final class WidgetNoticeDialog extends AppDialog {
             }
             bundle.putInt(WidgetNoticeDialog.ARG_BODY_TEXT_ALIGNMENT, bodyTextAlignment);
             Thread threadCurrentThread = Thread.currentThread();
-            Intrinsics3.checkNotNullExpressionValue(threadCurrentThread, "Thread.currentThread()");
+            C12238m.checkNotNullExpressionValue(threadCurrentThread, "Thread.currentThread()");
             StackTraceElement[] stackTrace = threadCurrentThread.getStackTrace();
             String string = stackTrace.length > 4 ? stackTrace[4].toString() : "";
-            Intrinsics3.checkNotNullExpressionValue(string, "if (stacktrace.size > 4)…ace[4].toString() else \"\"");
+            C12238m.checkNotNullExpressionValue(string, "if (stacktrace.size > 4)…ace[4].toString() else \"\"");
             bundle.putString(WidgetNoticeDialog.ARG_STACK_TRACE_CALLER_FRAME, string);
             widgetNoticeDialog.setArguments(bundle);
             if (tag == null) {
@@ -291,30 +291,30 @@ public final class WidgetNoticeDialog extends AppDialog {
 
         public final void showInputModal(AppActivity activity, CharSequence headerText, CharSequence bodyText, CharSequence hintText, Function2<? super Context, ? super String, Unit> onOKClicked, Function0<Unit> onCancelClicked, Boolean cancelable, StoreNotices.InputDialog.Type type, CharSequence goText, boolean shouldHideKeyboard) {
             CharSequence charSequence;
-            Intrinsics3.checkNotNullParameter(activity, ActivityChooserModel.ATTRIBUTE_ACTIVITY);
-            Intrinsics3.checkNotNullParameter(headerText, "headerText");
-            Intrinsics3.checkNotNullParameter(bodyText, "bodyText");
-            Intrinsics3.checkNotNullParameter(hintText, "hintText");
-            Intrinsics3.checkNotNullParameter(onOKClicked, "onOKClicked");
-            Intrinsics3.checkNotNullParameter(type, "type");
+            C12238m.checkNotNullParameter(activity, ActivityChooserModel.ATTRIBUTE_ACTIVITY);
+            C12238m.checkNotNullParameter(headerText, "headerText");
+            C12238m.checkNotNullParameter(bodyText, "bodyText");
+            C12238m.checkNotNullParameter(hintText, "hintText");
+            C12238m.checkNotNullParameter(onOKClicked, "onOKClicked");
+            C12238m.checkNotNullParameter(type, "type");
             HashMap map = new HashMap();
-            map.put(Integer.valueOf(R.id.notice_ok), new WidgetNoticeDialog$Companion$showInputModal$1(onOKClicked, shouldHideKeyboard));
+            map.put(Integer.valueOf(C5419R.id.notice_ok), new WidgetNoticeDialog$Companion$showInputModal$1(onOKClicked, shouldHideKeyboard));
             if (onCancelClicked != null) {
-                map.put(Integer.valueOf(R.id.notice_cancel), new WidgetNoticeDialog$Companion$showInputModal$2(onCancelClicked, shouldHideKeyboard));
+                map.put(Integer.valueOf(C5419R.id.notice_cancel), new WidgetNoticeDialog$Companion$showInputModal$2(onCancelClicked, shouldHideKeyboard));
             }
             map.put(0, new WidgetNoticeDialog$Companion$showInputModal$3(hintText));
             boolean z2 = type == StoreNotices.InputDialog.Type.PASSWORD;
             FragmentManager supportFragmentManager = activity.getSupportFragmentManager();
-            Intrinsics3.checkNotNullExpressionValue(supportFragmentManager, "activity.supportFragmentManager");
-            Integer numValueOf = Integer.valueOf(z2 ? R.layout.view_input_modal_password : R.layout.view_input_modal_text_no_suggestions);
+            C12238m.checkNotNullExpressionValue(supportFragmentManager, "activity.supportFragmentManager");
+            Integer numValueOf = Integer.valueOf(z2 ? C5419R.layout.view_input_modal_password : C5419R.layout.view_input_modal_text_no_suggestions);
             if (goText != null) {
                 charSequence = goText;
             } else {
-                String string = activity.getString(R.string.confirm);
-                Intrinsics3.checkNotNullExpressionValue(string, "activity.getString(R.string.confirm)");
+                String string = activity.getString(C5419R.string.confirm);
+                C12238m.checkNotNullExpressionValue(string, "activity.getString(R.string.confirm)");
                 charSequence = string;
             }
-            show$default(this, supportFragmentManager, headerText, bodyText, charSequence, activity.getString(R.string.cancel), map, null, null, numValueOf, null, cancelable, null, 0, null, 15040, null);
+            show$default(this, supportFragmentManager, headerText, bodyText, charSequence, activity.getString(C5419R.string.cancel), map, null, null, numValueOf, null, cancelable, null, 0, null, 15040, null);
         }
 
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
@@ -322,17 +322,17 @@ public final class WidgetNoticeDialog extends AppDialog {
         }
     }
 
-    /* JADX INFO: renamed from: com.discord.widgets.notice.WidgetNoticeDialog$onViewBound$2, reason: invalid class name */
+    /* JADX INFO: renamed from: com.discord.widgets.notice.WidgetNoticeDialog$onViewBound$2 */
     /* JADX INFO: compiled from: WidgetNoticeDialog.kt */
-    public static final class AnonymousClass2 extends Lambda implements Function0<Unit> {
-        public AnonymousClass2() {
+    public static final class C90952 extends AbstractC12240o implements Function0<Unit> {
+        public C90952() {
             super(0);
         }
 
         @Override // kotlin.jvm.functions.Function0
         public /* bridge */ /* synthetic */ Unit invoke() {
             invoke2();
-            return Unit.a;
+            return Unit.f27425a;
         }
 
         /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
@@ -342,8 +342,8 @@ public final class WidgetNoticeDialog extends AppDialog {
     }
 
     public WidgetNoticeDialog() {
-        super(R.layout.widget_notice_dialog);
-        this.binding = FragmentViewBindingDelegate3.viewBinding$default(this, WidgetNoticeDialog$binding$2.INSTANCE, null, 2, null);
+        super(C5419R.layout.widget_notice_dialog);
+        this.binding = FragmentViewBindingDelegateKt.viewBinding$default(this, WidgetNoticeDialog$binding$2.INSTANCE, null, 2, null);
     }
 
     private final WidgetNoticeDialogBinding getBinding() {
@@ -361,7 +361,7 @@ public final class WidgetNoticeDialog extends AppDialog {
         if (numValueOf == null) {
             return null;
         }
-        getBinding().f2500b.addView(getLayoutInflater().inflate(numValueOf.intValue(), (ViewGroup) getBinding().f2500b, false), i);
+        getBinding().f17296b.addView(getLayoutInflater().inflate(numValueOf.intValue(), (ViewGroup) getBinding().f17296b, false), i);
         return numValueOf;
     }
 
@@ -385,10 +385,10 @@ public final class WidgetNoticeDialog extends AppDialog {
     }
 
     public final void logOnStartError(Exception exception) {
-        Intrinsics3.checkNotNullParameter(exception, "exception");
+        C12238m.checkNotNullParameter(exception, "exception");
         Bundle arguments = getArguments();
         Serializable serializable = arguments != null ? arguments.getSerializable(ARG_STACK_TRACE_CALLER_FRAME) : null;
-        Logger.e$default(AppLog.g, "failed to start WidgetNoticeDialog from " + serializable, exception, null, 4, null);
+        Logger.e$default(AppLog.f14950g, "failed to start WidgetNoticeDialog from " + serializable, exception, null, 4, null);
     }
 
     @Override // com.discord.app.AppDialog, androidx.fragment.app.DialogFragment
@@ -399,7 +399,7 @@ public final class WidgetNoticeDialog extends AppDialog {
             TypedValue typedValue = new TypedValue();
             Context context = getContext();
             if (context != null && (theme = context.getTheme()) != null) {
-                theme.resolveAttribute(arguments.getInt(ARG_THEME_ID, R.attr.dialogTheme), typedValue, true);
+                theme.resolveAttribute(arguments.getInt(ARG_THEME_ID, C5419R.attr.dialogTheme), typedValue, true);
             }
             setStyle(1, typedValue.resourceId);
         }
@@ -408,7 +408,7 @@ public final class WidgetNoticeDialog extends AppDialog {
 
     @Override // androidx.fragment.app.DialogFragment, android.content.DialogInterface.OnDismissListener
     public void onDismiss(DialogInterface dialog) {
-        Intrinsics3.checkNotNullParameter(dialog, "dialog");
+        C12238m.checkNotNullParameter(dialog, "dialog");
         Function0<Unit> function0 = this.onDismiss;
         if (function0 != null) {
             function0.invoke();
@@ -421,45 +421,45 @@ public final class WidgetNoticeDialog extends AppDialog {
         Map<Integer, ? extends Function1<? super View, Unit>> map;
         Function1<? super View, Unit> function1;
         String string;
-        Intrinsics3.checkNotNullParameter(view, "view");
+        C12238m.checkNotNullParameter(view, "view");
         super.onViewBound(view);
         Bundle arguments = getArguments();
         setCancelable(arguments != null ? arguments.getBoolean(ARG_CANCELABLE, true) : true);
         Bundle arguments2 = getArguments();
         if (arguments2 != null && (string = arguments2.getString(ARG_NOTICE_TYPE)) != null) {
             StoreNotices notices = StoreStream.INSTANCE.getNotices();
-            Intrinsics3.checkNotNullExpressionValue(string, "it");
+            C12238m.checkNotNullExpressionValue(string, "it");
             notices.markDialogSeen(string);
         }
         Bundle arguments3 = getArguments();
         CharSequence charSequence = arguments3 != null ? arguments3.getCharSequence(ARG_HEADER_TEXT) : null;
-        TextView textView = getBinding().e;
-        Intrinsics3.checkNotNullExpressionValue(textView, "binding.noticeHeader");
+        TextView textView = getBinding().f17299e;
+        C12238m.checkNotNullExpressionValue(textView, "binding.noticeHeader");
         textView.setText(charSequence);
-        LinearLayout linearLayout = getBinding().f;
-        Intrinsics3.checkNotNullExpressionValue(linearLayout, "binding.noticeHeaderContainer");
-        linearLayout.setVisibility((charSequence == null || StringsJVM.isBlank(charSequence)) ^ true ? 0 : 8);
-        LinkifiedTextView linkifiedTextView = getBinding().c;
-        Intrinsics3.checkNotNullExpressionValue(linkifiedTextView, "binding.noticeBodyText");
+        LinearLayout linearLayout = getBinding().f17300f;
+        C12238m.checkNotNullExpressionValue(linearLayout, "binding.noticeHeaderContainer");
+        linearLayout.setVisibility((charSequence == null || C12103t.isBlank(charSequence)) ^ true ? 0 : 8);
+        LinkifiedTextView linkifiedTextView = getBinding().f17297c;
+        C12238m.checkNotNullExpressionValue(linkifiedTextView, "binding.noticeBodyText");
         Bundle arguments4 = getArguments();
         linkifiedTextView.setText(arguments4 != null ? arguments4.getCharSequence(ARG_BODY_TEXT) : null);
         if (isCancelable()) {
-            LinkifiedTextView linkifiedTextView2 = getBinding().c;
-            Intrinsics3.checkNotNullExpressionValue(linkifiedTextView2, "binding.noticeBodyText");
-            linkifiedTextView2.setMovementMethod(new ActionLinkMovementMethod(new AnonymousClass2()));
+            LinkifiedTextView linkifiedTextView2 = getBinding().f17297c;
+            C12238m.checkNotNullExpressionValue(linkifiedTextView2, "binding.noticeBodyText");
+            linkifiedTextView2.setMovementMethod(new ActionLinkMovementMethod(new C90952()));
         }
-        LinkifiedTextView linkifiedTextView3 = getBinding().c;
-        Intrinsics3.checkNotNullExpressionValue(linkifiedTextView3, "binding.noticeBodyText");
+        LinkifiedTextView linkifiedTextView3 = getBinding().f17297c;
+        C12238m.checkNotNullExpressionValue(linkifiedTextView3, "binding.noticeBodyText");
         Bundle arguments5 = getArguments();
         linkifiedTextView3.setTextAlignment(arguments5 != null ? arguments5.getInt(ARG_BODY_TEXT_ALIGNMENT) : 2);
-        MaterialButton materialButton = getBinding().g;
-        Intrinsics3.checkNotNullExpressionValue(materialButton, "binding.noticeOk");
+        MaterialButton materialButton = getBinding().f17301g;
+        C12238m.checkNotNullExpressionValue(materialButton, "binding.noticeOk");
         Bundle arguments6 = getArguments();
         ViewExtensions.setTextAndVisibilityBy(materialButton, arguments6 != null ? arguments6.getCharSequence(ARG_OK_TEXT) : null);
         Bundle arguments7 = getArguments();
         CharSequence charSequence2 = arguments7 != null ? arguments7.getCharSequence(ARG_CANCEL_TEXT) : null;
-        MaterialButton materialButton2 = getBinding().d;
-        Intrinsics3.checkNotNullExpressionValue(materialButton2, "binding.noticeCancel");
+        MaterialButton materialButton2 = getBinding().f17298d;
+        C12238m.checkNotNullExpressionValue(materialButton2, "binding.noticeCancel");
         ViewExtensions.setTextAndVisibilityBy(materialButton2, charSequence2);
         Bundle arguments8 = getArguments();
         if (arguments8 != null) {
@@ -467,17 +467,17 @@ public final class WidgetNoticeDialog extends AppDialog {
         }
         Bundle arguments9 = getArguments();
         if (arguments9 != null) {
-            LinearLayout linearLayout2 = getBinding().f2500b;
-            Intrinsics3.checkNotNullExpressionValue(linearLayout2, "binding.noticeBodyContainer");
+            LinearLayout linearLayout2 = getBinding().f17296b;
+            C12238m.checkNotNullExpressionValue(linearLayout2, "binding.noticeBodyContainer");
             insertLayoutInBundle(arguments9, ARG_BELOW_LAYOUT_ID, linearLayout2.getChildCount());
         }
-        getBinding().g.setOnClickListener(new View.OnClickListener() { // from class: com.discord.widgets.notice.WidgetNoticeDialog.onViewBound.4
+        getBinding().f17301g.setOnClickListener(new View.OnClickListener() { // from class: com.discord.widgets.notice.WidgetNoticeDialog.onViewBound.4
             @Override // android.view.View.OnClickListener
             public final void onClick(View view2) {
                 WidgetNoticeDialog.this.dismiss();
             }
         });
-        getBinding().d.setOnClickListener(new View.OnClickListener() { // from class: com.discord.widgets.notice.WidgetNoticeDialog.onViewBound.5
+        getBinding().f17298d.setOnClickListener(new View.OnClickListener() { // from class: com.discord.widgets.notice.WidgetNoticeDialog.onViewBound.5
             @Override // android.view.View.OnClickListener
             public final void onClick(View view2) {
                 WidgetNoticeDialog.this.dismiss();

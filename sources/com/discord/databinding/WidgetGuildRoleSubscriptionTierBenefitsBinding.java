@@ -12,45 +12,52 @@ import com.google.android.material.radiobutton.MaterialRadioButton;
 /* JADX INFO: loaded from: classes.dex */
 public final class WidgetGuildRoleSubscriptionTierBenefitsBinding implements ViewBinding {
 
+    /* JADX INFO: renamed from: a */
     @NonNull
-    public final LinearLayout a;
+    public final LinearLayout f16955a;
 
-    /* JADX INFO: renamed from: b, reason: collision with root package name */
+    /* JADX INFO: renamed from: b */
     @NonNull
-    public final MaterialRadioButton f2439b;
+    public final MaterialRadioButton f16956b;
 
+    /* JADX INFO: renamed from: c */
     @NonNull
-    public final View c;
+    public final View f16957c;
 
+    /* JADX INFO: renamed from: d */
     @NonNull
-    public final TextView d;
+    public final TextView f16958d;
 
+    /* JADX INFO: renamed from: e */
     @NonNull
-    public final TextView e;
+    public final TextView f16959e;
 
+    /* JADX INFO: renamed from: f */
     @NonNull
-    public final RadioGroup f;
+    public final RadioGroup f16960f;
 
+    /* JADX INFO: renamed from: g */
     @NonNull
-    public final MaterialRadioButton g;
+    public final MaterialRadioButton f16961g;
 
+    /* JADX INFO: renamed from: h */
     @NonNull
-    public final RecyclerView h;
+    public final RecyclerView f16962h;
 
     public WidgetGuildRoleSubscriptionTierBenefitsBinding(@NonNull LinearLayout linearLayout, @NonNull MaterialRadioButton materialRadioButton, @NonNull View view, @NonNull TextView textView, @NonNull TextView textView2, @NonNull RadioGroup radioGroup, @NonNull MaterialRadioButton materialRadioButton2, @NonNull RecyclerView recyclerView) {
-        this.a = linearLayout;
-        this.f2439b = materialRadioButton;
-        this.c = view;
-        this.d = textView;
-        this.e = textView2;
-        this.f = radioGroup;
-        this.g = materialRadioButton2;
-        this.h = recyclerView;
+        this.f16955a = linearLayout;
+        this.f16956b = materialRadioButton;
+        this.f16957c = view;
+        this.f16958d = textView;
+        this.f16959e = textView2;
+        this.f16960f = radioGroup;
+        this.f16961g = materialRadioButton2;
+        this.f16962h = recyclerView;
     }
 
     @Override // androidx.viewbinding.ViewBinding
     @NonNull
     public View getRoot() {
-        return this.a;
+        return this.f16955a;
     }
 }

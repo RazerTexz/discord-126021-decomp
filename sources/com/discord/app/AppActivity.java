@@ -1,5 +1,6 @@
 package com.discord.app;
 
+import android.R;
 import android.app.Application;
 import android.content.ContentResolver;
 import android.content.Context;
@@ -25,12 +26,7 @@ import androidx.appcompat.widget.Toolbar;
 import androidx.core.content.ContextCompat;
 import androidx.fragment.app.FragmentManager;
 import androidx.preference.PreferenceManager;
-import b.a.d.AppActivity3;
-import b.a.d.AppEventHandlerActivity;
-import b.a.d.AppPermissions;
-import b.a.d.AppScreen;
-import b.a.d.AppScreen2;
-import com.discord.R;
+import com.discord.C5419R;
 import com.discord.app.AppTransitionActivity;
 import com.discord.models.domain.ModelUserSettings;
 import com.discord.screenshot_detection.ScreenshotDetector;
@@ -48,7 +44,7 @@ import com.discord.utilities.error.Error;
 import com.discord.utilities.font.FontUtils;
 import com.discord.utilities.intent.IntentUtils;
 import com.discord.utilities.lifecycle.ApplicationProvider;
-import com.discord.utilities.rx.ObservableExtensionsKt;
+import com.discord.utilities.p501rx.ObservableExtensionsKt;
 import com.discord.views.ToolbarTitleLayout;
 import com.discord.widgets.debugging.WidgetFatalCrash;
 import com.discord.widgets.share.WidgetIncomingShare;
@@ -57,13 +53,6 @@ import com.discord.widgets.tabs.WidgetTabsHost;
 import com.discord.widgets.voice.call.WidgetVoiceCallIncoming;
 import com.discord.widgets.voice.fullscreen.WidgetCallFullscreen;
 import com.google.android.material.textfield.TextInputLayout;
-import d0.LazyJVM;
-import d0.a0.MathJVM;
-import d0.e0.KClass;
-import d0.z.JvmClassMapping;
-import d0.z.d.Intrinsics3;
-import d0.z.d.Lambda;
-import d0.z.d.Reflection2;
 import java.io.Serializable;
 import java.util.Collection;
 import java.util.Iterator;
@@ -76,16 +65,34 @@ import kotlin.Lazy;
 import kotlin.Unit;
 import kotlin.jvm.functions.Function0;
 import kotlin.jvm.functions.Function1;
-import rx.Subscription;
-import rx.subjects.PublishSubject;
-import rx.subjects.Subject;
+import p007b.p008a.p018d.AbstractActivityC0858d;
+import p007b.p008a.p018d.C0856c;
+import p007b.p008a.p018d.C0866h;
+import p007b.p008a.p018d.C0870j;
+import p007b.p008a.p018d.RunnableC0868i;
+import p507d0.C12083g;
+import p507d0.p508a0.C11210a;
+import p507d0.p513e0.InterfaceC11230c;
+import p507d0.p592z.C12209a;
+import p507d0.p592z.p594d.AbstractC12240o;
+import p507d0.p592z.p594d.C12216a0;
+import p507d0.p592z.p594d.C12238m;
+import p658rx.Subscription;
+import p658rx.subjects.PublishSubject;
+import p658rx.subjects.Subject;
 
 /* JADX INFO: compiled from: AppActivity.kt */
 /* JADX INFO: loaded from: classes.dex */
-public class AppActivity extends AppEventHandlerActivity implements AppComponent {
-    public static boolean m;
-    public static final Intent n = new Intent();
-    public static boolean o = true;
+public class AppActivity extends AbstractActivityC0858d implements AppComponent {
+
+    /* JADX INFO: renamed from: m */
+    public static boolean f14908m;
+
+    /* JADX INFO: renamed from: n */
+    public static final Intent f14909n = new Intent();
+
+    /* JADX INFO: renamed from: o */
+    public static boolean f14910o = true;
 
     /* JADX INFO: renamed from: p, reason: from kotlin metadata */
     public final LinkedHashMap<Integer, Function1<Intent, Unit>> newIntentListeners = new LinkedHashMap<>();
@@ -96,7 +103,7 @@ public class AppActivity extends AppEventHandlerActivity implements AppComponent
     /* JADX INFO: renamed from: r, reason: from kotlin metadata */
     public String originalLocale = "";
 
-    /* JADX INFO: renamed from: s, reason: collision with root package name and from kotlin metadata */
+    /* JADX INFO: renamed from: s, reason: from kotlin metadata */
     public boolean refreshEnabled = true;
 
     /* JADX INFO: renamed from: t, reason: from kotlin metadata */
@@ -111,38 +118,40 @@ public class AppActivity extends AppEventHandlerActivity implements AppComponent
     /* JADX INFO: renamed from: w, reason: from kotlin metadata */
     public Intent mostRecentIntent;
 
-    /* JADX INFO: renamed from: x, reason: collision with root package name and from kotlin metadata */
-    public final AppPermissions2 appPermissions;
+    /* JADX INFO: renamed from: x, reason: from kotlin metadata */
+    public final AppPermissionsRequests appPermissions;
 
     /* JADX INFO: compiled from: AppActivity.kt */
     public static final class AppAction extends AppActivity {
 
-        /* JADX INFO: renamed from: y, reason: collision with root package name and from kotlin metadata */
-        public final Lazy screen = LazyJVM.lazy(new a());
+        /* JADX INFO: renamed from: y, reason: from kotlin metadata */
+        public final Lazy screen = C12083g.lazy(new C5431a());
 
+        /* JADX INFO: renamed from: com.discord.app.AppActivity$AppAction$a */
         /* JADX INFO: compiled from: AppActivity.kt */
-        public static final class a extends Lambda implements Function0<Class<? extends AppFragment>> {
-            public a() {
+        public static final class C5431a extends AbstractC12240o implements Function0<Class<? extends AppFragment>> {
+            public C5431a() {
                 super(0);
             }
 
             @Override // kotlin.jvm.functions.Function0
             public Class<? extends AppFragment> invoke() {
                 int iHashCode;
-                String action = AppAction.this.c().getAction();
+                String action = AppAction.this.m8343c().getAction();
                 return (action != null && ((iHashCode = action.hashCode()) == -1173264947 ? action.equals("android.intent.action.SEND") : !(iHashCode == -1103390587 ? !action.equals("com.discord.intent.action.SDK") : !(iHashCode == -58484670 && action.equals("android.intent.action.SEND_MULTIPLE"))))) ? WidgetIncomingShare.class : WidgetTabsHost.class;
             }
         }
 
         @Override // com.discord.app.AppActivity
-        public Class<? extends AppComponent> d() {
+        /* JADX INFO: renamed from: d */
+        public Class<? extends AppComponent> mo8344d() {
             return (Class) this.screen.getValue();
         }
 
         @Override // com.discord.app.AppActivity, androidx.appcompat.app.AppCompatActivity, androidx.fragment.app.FragmentActivity, androidx.activity.ComponentActivity, androidx.core.app.ComponentActivity, android.app.Activity
         public void onCreate(Bundle savedInstanceState) {
             super.onCreate(savedInstanceState);
-            if (AppActivity.m) {
+            if (AppActivity.f14908m) {
                 finish();
             }
         }
@@ -151,11 +160,12 @@ public class AppActivity extends AppEventHandlerActivity implements AppComponent
     /* JADX INFO: compiled from: AppActivity.kt */
     public static final class Call extends AppActivity {
 
-        /* JADX INFO: renamed from: y, reason: collision with root package name and from kotlin metadata */
+        /* JADX INFO: renamed from: y, reason: from kotlin metadata */
         public final Class<? extends AppComponent> screen = WidgetCallFullscreen.class;
 
         @Override // com.discord.app.AppActivity
-        public Class<? extends AppComponent> d() {
+        /* JADX INFO: renamed from: d */
+        public Class<? extends AppComponent> mo8344d() {
             return this.screen;
         }
     }
@@ -163,11 +173,12 @@ public class AppActivity extends AppEventHandlerActivity implements AppComponent
     /* JADX INFO: compiled from: AppActivity.kt */
     public static final class IncomingCall extends AppActivity {
 
-        /* JADX INFO: renamed from: y, reason: collision with root package name and from kotlin metadata */
+        /* JADX INFO: renamed from: y, reason: from kotlin metadata */
         public final Class<? extends AppComponent> screen = WidgetVoiceCallIncoming.SystemCallIncoming.class;
 
         @Override // com.discord.app.AppActivity
-        public Class<? extends AppComponent> d() {
+        /* JADX INFO: renamed from: d */
+        public Class<? extends AppComponent> mo8344d() {
             return this.screen;
         }
     }
@@ -176,25 +187,28 @@ public class AppActivity extends AppEventHandlerActivity implements AppComponent
     public static final class Main extends AppActivity {
     }
 
+    /* JADX INFO: renamed from: com.discord.app.AppActivity$b */
     /* JADX INFO: compiled from: AppActivity.kt */
-    public static final class b extends Lambda implements Function0<Unit> {
-        public static final b j = new b();
+    public static final class C5433b extends AbstractC12240o implements Function0<Unit> {
 
-        public b() {
+        /* JADX INFO: renamed from: j */
+        public static final C5433b f14925j = new C5433b();
+
+        public C5433b() {
             super(0);
         }
 
         @Override // kotlin.jvm.functions.Function0
         public /* bridge */ /* synthetic */ Unit invoke() {
             invoke2();
-            return Unit.a;
+            return Unit.f27425a;
         }
 
         /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
         public final void invoke2() {
-            if (AppActivity.o) {
-                AppActivity.o = false;
-                AppLog.i("Application activity initialized.");
+            if (AppActivity.f14910o) {
+                AppActivity.f14910o = false;
+                AppLog.m8358i("Application activity initialized.");
                 StoreStream.Companion companion = StoreStream.INSTANCE;
                 ApplicationProvider applicationProvider = ApplicationProvider.INSTANCE;
                 companion.initialize(applicationProvider.get());
@@ -202,20 +216,21 @@ public class AppActivity extends AppEventHandlerActivity implements AppComponent
                 AccessibilityMonitor.INSTANCE.initialize(applicationProvider.get());
                 ShareUtils.INSTANCE.updateDirectShareTargets(applicationProvider.get());
                 GooglePlayBillingManager.INSTANCE.init(applicationProvider.get());
-                AppLog appLog = AppLog.g;
-                Intrinsics3.checkNotNullParameter(appLog, "logger");
+                AppLog appLog = AppLog.f14950g;
+                C12238m.checkNotNullParameter(appLog, "logger");
                 Application application = applicationProvider.get();
                 SharedPreferences defaultSharedPreferences = PreferenceManager.getDefaultSharedPreferences(applicationProvider.get());
-                Intrinsics3.checkNotNullExpressionValue(defaultSharedPreferences, "PreferenceManager.getDef…pplicationProvider.get())");
-                ScreenshotDetector.a = new ScreenshotDetector(application, appLog, defaultSharedPreferences);
+                C12238m.checkNotNullExpressionValue(defaultSharedPreferences, "PreferenceManager.getDef…pplicationProvider.get())");
+                ScreenshotDetector.f18938a = new ScreenshotDetector(application, appLog, defaultSharedPreferences);
                 BugReportManager.INSTANCE.init();
             }
         }
     }
 
+    /* JADX INFO: renamed from: com.discord.app.AppActivity$c */
     /* JADX INFO: compiled from: AppActivity.kt */
-    public static final class c extends Lambda implements Function1<StoreUserSettingsSystem.Settings, Unit> {
-        public c() {
+    public static final class C5434c extends AbstractC12240o implements Function1<StoreUserSettingsSystem.Settings, Unit> {
+        public C5434c() {
             super(1);
         }
 
@@ -224,58 +239,60 @@ public class AppActivity extends AppEventHandlerActivity implements AppComponent
         public Unit invoke(StoreUserSettingsSystem.Settings settings) {
             boolean z2;
             StoreUserSettingsSystem.Settings settings2 = settings;
-            Intrinsics3.checkNotNullParameter(settings2, "it");
+            C12238m.checkNotNullParameter(settings2, "it");
             AppActivity appActivity = AppActivity.this;
-            boolean z3 = AppActivity.m;
+            boolean z3 = AppActivity.f14908m;
             Objects.requireNonNull(appActivity);
             Locale localeObject = ModelUserSettings.getLocaleObject(settings2.getLocale());
-            Intrinsics3.checkNotNullExpressionValue(localeObject, "ModelUserSettings.getLocaleObject(model.locale)");
-            if (!appActivity.f(localeObject)) {
+            C12238m.checkNotNullExpressionValue(localeObject, "ModelUserSettings.getLocaleObject(model.locale)");
+            if (!appActivity.m8346f(localeObject)) {
                 String theme = settings2.getTheme();
-                AppActivity3 appActivity3 = new AppActivity3(appActivity);
+                C0856c c0856c = new C0856c(appActivity);
                 TypedValue typedValue = new TypedValue();
-                appActivity3.this$0.getTheme().resolveAttribute(R.attr.theme_name, typedValue, true);
-                if (!(!Intrinsics3.areEqual(typedValue.string, theme))) {
+                c0856c.this$0.getTheme().resolveAttribute(C5419R.attr.theme_name, typedValue, true);
+                if (!(!C12238m.areEqual(typedValue.string, theme))) {
                     int fontScale = settings2.getFontScale();
                     FontUtils fontUtils = FontUtils.INSTANCE;
                     ContentResolver contentResolver = appActivity.getContentResolver();
-                    Intrinsics3.checkNotNullExpressionValue(contentResolver, "contentResolver");
+                    C12238m.checkNotNullExpressionValue(contentResolver, "contentResolver");
                     if (!((fontScale == -1 && appActivity.originalFontScale != fontUtils.getSystemFontScaleInt(contentResolver)) || !(fontScale == -1 || appActivity.originalFontScale == fontScale))) {
                         z2 = false;
                     }
                 }
                 if (z2) {
-                    AppActivity.i(AppActivity.this, false, 1, null);
+                    AppActivity.m8341i(AppActivity.this, false, 1, null);
                 }
-                return Unit.a;
+                return Unit.f27425a;
             }
-            appActivity.b(settings2.getLocale(), true);
+            appActivity.m8342b(settings2.getLocale(), true);
             z2 = true;
             if (z2) {
-                AppActivity.i(AppActivity.this, false, 1, null);
+                AppActivity.m8341i(AppActivity.this, false, 1, null);
             }
-            return Unit.a;
+            return Unit.f27425a;
         }
     }
 
+    /* JADX INFO: renamed from: com.discord.app.AppActivity$d */
     /* JADX INFO: compiled from: AppActivity.kt */
-    public static final class d extends Lambda implements Function1<ScreenshotDetector.Screenshot, Unit> {
-        public d() {
+    public static final class C5435d extends AbstractC12240o implements Function1<ScreenshotDetector.Screenshot, Unit> {
+        public C5435d() {
             super(1);
         }
 
         @Override // kotlin.jvm.functions.Function1
         public Unit invoke(ScreenshotDetector.Screenshot screenshot) {
             ScreenshotDetector.Screenshot screenshot2 = screenshot;
-            Intrinsics3.checkNotNullParameter(screenshot2, "screenshot");
+            C12238m.checkNotNullParameter(screenshot2, "screenshot");
             BugReportManager.INSTANCE.get().onScreenshot(AppActivity.this, screenshot2);
-            return Unit.a;
+            return Unit.f27425a;
         }
     }
 
+    /* JADX INFO: renamed from: com.discord.app.AppActivity$e */
     /* JADX INFO: compiled from: AppActivity.kt */
-    public static final class e extends Lambda implements Function0<Class<? extends AppComponent>> {
-        public e() {
+    public static final class C5436e extends AbstractC12240o implements Function0<Class<? extends AppComponent>> {
+        public C5436e() {
             super(0);
         }
 
@@ -287,57 +304,64 @@ public class AppActivity extends AppEventHandlerActivity implements AppComponent
         }
     }
 
+    /* JADX INFO: renamed from: com.discord.app.AppActivity$f */
     /* JADX INFO: compiled from: AppActivity.kt */
-    public static final class f implements Runnable {
-        public final /* synthetic */ View j;
-        public final /* synthetic */ InputMethodManager k;
+    public static final class RunnableC5437f implements Runnable {
 
-        public f(View view, InputMethodManager inputMethodManager) {
-            this.j = view;
-            this.k = inputMethodManager;
+        /* JADX INFO: renamed from: j */
+        public final /* synthetic */ View f14926j;
+
+        /* JADX INFO: renamed from: k */
+        public final /* synthetic */ InputMethodManager f14927k;
+
+        public RunnableC5437f(View view, InputMethodManager inputMethodManager) {
+            this.f14926j = view;
+            this.f14927k = inputMethodManager;
         }
 
         @Override // java.lang.Runnable
         public final void run() {
             try {
-                View editText = this.j;
+                View editText = this.f14926j;
                 if ((editText instanceof TextInputLayout) && (editText = ((TextInputLayout) editText).getEditText()) == null) {
-                    editText = this.j;
+                    editText = this.f14926j;
                 }
                 editText.requestFocus();
-                this.k.showSoftInput(editText, 2);
+                this.f14927k.showSoftInput(editText, 2);
             } catch (Exception e) {
-                AppLog.g.d("Error Opening/Closing the Keyboard", e);
+                AppLog.f14950g.mo8362d("Error Opening/Closing the Keyboard", e);
             }
         }
     }
 
+    /* JADX INFO: renamed from: com.discord.app.AppActivity$g */
     /* JADX INFO: compiled from: AppActivity.kt */
-    public static final class g implements View.OnClickListener {
-        public g() {
+    public static final class ViewOnClickListenerC5438g implements View.OnClickListener {
+        public ViewOnClickListenerC5438g() {
         }
 
         @Override // android.view.View.OnClickListener
         public final void onClick(View view) throws Exception {
             AppActivity appActivity = AppActivity.this;
-            boolean z2 = AppActivity.m;
+            boolean z2 = AppActivity.f14908m;
             appActivity.hideKeyboard(null);
             AppActivity.this.onBackPressed();
         }
     }
 
     public AppActivity() {
-        PublishSubject publishSubjectK0 = PublishSubject.k0();
-        Intrinsics3.checkNotNullExpressionValue(publishSubjectK0, "PublishSubject.create()");
-        this.unsubscribeSignal = publishSubjectK0;
-        this.screen = LazyJVM.lazy(new e());
-        this.mostRecentIntent = n;
-        int i = AppPermissions2.a;
-        Intrinsics3.checkNotNullParameter(this, ActivityChooserModel.ATTRIBUTE_ACTIVITY);
-        this.appPermissions = new AppPermissions(this);
+        PublishSubject publishSubjectM11133k0 = PublishSubject.m11133k0();
+        C12238m.checkNotNullExpressionValue(publishSubjectM11133k0, "PublishSubject.create()");
+        this.unsubscribeSignal = publishSubjectM11133k0;
+        this.screen = C12083g.lazy(new C5436e());
+        this.mostRecentIntent = f14909n;
+        int i = AppPermissionsRequests.f14960a;
+        C12238m.checkNotNullParameter(this, ActivityChooserModel.ATTRIBUTE_ACTIVITY);
+        this.appPermissions = new C0866h(this);
     }
 
-    public static void i(AppActivity appActivity, boolean z2, int i, Object obj) {
+    /* JADX INFO: renamed from: i */
+    public static void m8341i(AppActivity appActivity, boolean z2, int i, Object obj) {
         if ((i & 1) != 0) {
             z2 = true;
         }
@@ -345,10 +369,10 @@ public class AppActivity extends AppEventHandlerActivity implements AppComponent
             appActivity.finish();
             if (z2) {
                 AppTransitionActivity.Transition transition = AppTransitionActivity.Transition.TYPE_FADE;
-                appActivity.overridePendingTransition(transition.getAnimations().c, transition.getAnimations().d);
+                appActivity.overridePendingTransition(transition.getAnimations().f14967c, transition.getAnimations().f14968d);
                 appActivity.getIntent().putExtra("transition", transition);
             }
-            AppScreen2.d(appActivity, appActivity.d(), appActivity.getIntent());
+            C0870j.m156d(appActivity, appActivity.mo8344d(), appActivity.getIntent());
         }
     }
 
@@ -357,9 +381,9 @@ public class AppActivity extends AppEventHandlerActivity implements AppComponent
         if (overrideConfiguration != null) {
             int i = overrideConfiguration.uiMode;
             Context baseContext = getBaseContext();
-            Intrinsics3.checkNotNullExpressionValue(baseContext, "baseContext");
+            C12238m.checkNotNullExpressionValue(baseContext, "baseContext");
             Resources resources = baseContext.getResources();
-            Intrinsics3.checkNotNullExpressionValue(resources, "baseContext.resources");
+            C12238m.checkNotNullExpressionValue(resources, "baseContext.resources");
             overrideConfiguration.setTo(resources.getConfiguration());
             overrideConfiguration.uiMode = i;
         }
@@ -387,56 +411,58 @@ public class AppActivity extends AppEventHandlerActivity implements AppComponent
      */
     @Override // androidx.appcompat.app.AppCompatActivity, android.app.Activity, android.view.ContextThemeWrapper, android.content.ContextWrapper
     public void attachBaseContext(Context newBase) {
-        b.j.invoke2();
+        C5433b.f14925j.invoke2();
         ?? r4 = newBase;
         if (newBase == null) {
             r4 = this;
         }
         ?? r5 = r4;
-        if (!o) {
+        if (!f14910o) {
             Resources resources = r4.getResources();
-            Intrinsics3.checkNotNullExpressionValue(resources, "oldContext.resources");
+            C12238m.checkNotNullExpressionValue(resources, "oldContext.resources");
             Configuration configuration = resources.getConfiguration();
             float targetFontScaleFloat = FontUtils.INSTANCE.getTargetFontScaleFloat(r4);
             configuration.fontScale = targetFontScaleFloat;
-            this.originalFontScale = MathJVM.roundToInt(targetFontScaleFloat * 100.0f);
+            this.originalFontScale = C11210a.roundToInt(targetFontScaleFloat * 100.0f);
             Context contextCreateConfigurationContext = r4.createConfigurationContext(configuration);
-            Intrinsics3.checkNotNullExpressionValue(contextCreateConfigurationContext, "oldContext.createConfigurationContext(config)");
+            C12238m.checkNotNullExpressionValue(contextCreateConfigurationContext, "oldContext.createConfigurationContext(config)");
             r5 = contextCreateConfigurationContext;
         }
         super.attachBaseContext(r5);
     }
 
-    public final void b(String localeString, boolean refreshIfChanged) {
+    /* JADX INFO: renamed from: b */
+    public final void m8342b(String localeString, boolean refreshIfChanged) {
         Locale localeObject = ModelUserSettings.getLocaleObject(localeString);
-        Intrinsics3.checkNotNullExpressionValue(localeObject, "locale");
-        if (f(localeObject)) {
+        C12238m.checkNotNullExpressionValue(localeObject, "locale");
+        if (m8346f(localeObject)) {
             Locale.setDefault(localeObject);
             if (Build.VERSION.SDK_INT >= 24) {
                 Resources resources = getResources();
-                Intrinsics3.checkNotNullExpressionValue(resources, "resources");
+                C12238m.checkNotNullExpressionValue(resources, "resources");
                 resources.getConfiguration().setLocale(localeObject);
             } else {
                 Resources resources2 = getResources();
-                Intrinsics3.checkNotNullExpressionValue(resources2, "resources");
+                C12238m.checkNotNullExpressionValue(resources2, "resources");
                 resources2.getConfiguration().locale = localeObject;
             }
             Resources resources3 = getResources();
             Resources resources4 = getResources();
-            Intrinsics3.checkNotNullExpressionValue(resources4, "resources");
+            C12238m.checkNotNullExpressionValue(resources4, "resources");
             Configuration configuration = resources4.getConfiguration();
             Resources resources5 = getResources();
-            Intrinsics3.checkNotNullExpressionValue(resources5, "resources");
+            C12238m.checkNotNullExpressionValue(resources5, "resources");
             resources3.updateConfiguration(configuration, resources5.getDisplayMetrics());
             if (refreshIfChanged) {
-                i(this, false, 1, null);
+                m8341i(this, false, 1, null);
             }
         }
     }
 
-    public final Intent c() {
+    /* JADX INFO: renamed from: c */
+    public final Intent m8343c() {
         Intent intent = this.mostRecentIntent;
-        Intent intent2 = n;
+        Intent intent2 = f14909n;
         if (intent != intent2) {
             return intent;
         }
@@ -444,40 +470,43 @@ public class AppActivity extends AppEventHandlerActivity implements AppComponent
         return intent3 != null ? intent3 : new Intent(intent2);
     }
 
-    public Class<? extends AppComponent> d() {
+    /* JADX INFO: renamed from: d */
+    public Class<? extends AppComponent> mo8344d() {
         return (Class) this.screen.getValue();
     }
 
-    public final ToolbarTitleLayout e() {
+    /* JADX INFO: renamed from: e */
+    public final ToolbarTitleLayout m8345e() {
         Toolbar toolbar = this.toolbar;
         View childAt = toolbar != null ? toolbar.getChildAt(0) : null;
         return (ToolbarTitleLayout) (childAt instanceof ToolbarTitleLayout ? childAt : null);
     }
 
-    public final boolean f(Locale locale) {
+    /* JADX INFO: renamed from: f */
+    public final boolean m8346f(Locale locale) {
         if (Build.VERSION.SDK_INT >= 24) {
             Resources resources = getResources();
-            Intrinsics3.checkNotNullExpressionValue(resources, "resources");
+            C12238m.checkNotNullExpressionValue(resources, "resources");
             Configuration configuration = resources.getConfiguration();
-            Intrinsics3.checkNotNullExpressionValue(configuration, "resources.configuration");
+            C12238m.checkNotNullExpressionValue(configuration, "resources.configuration");
             LocaleList locales = configuration.getLocales();
-            Intrinsics3.checkNotNullExpressionValue(locales, "resources.configuration.locales");
+            C12238m.checkNotNullExpressionValue(locales, "resources.configuration.locales");
             if (!locales.isEmpty()) {
                 Resources resources2 = getResources();
-                Intrinsics3.checkNotNullExpressionValue(resources2, "resources");
+                C12238m.checkNotNullExpressionValue(resources2, "resources");
                 Configuration configuration2 = resources2.getConfiguration();
-                Intrinsics3.checkNotNullExpressionValue(configuration2, "resources.configuration");
-                if (!(!Intrinsics3.areEqual(configuration2.getLocales().get(0), locale))) {
+                C12238m.checkNotNullExpressionValue(configuration2, "resources.configuration");
+                if (!(!C12238m.areEqual(configuration2.getLocales().get(0), locale))) {
                     return false;
                 }
             }
         } else {
             Resources resources3 = getResources();
-            Intrinsics3.checkNotNullExpressionValue(resources3, "resources");
+            C12238m.checkNotNullExpressionValue(resources3, "resources");
             if (resources3.getConfiguration().locale != null) {
                 Resources resources4 = getResources();
-                Intrinsics3.checkNotNullExpressionValue(resources4, "resources");
-                if (!(!Intrinsics3.areEqual(resources4.getConfiguration().locale, locale))) {
+                C12238m.checkNotNullExpressionValue(resources4, "resources");
+                if (!(!C12238m.areEqual(resources4.getConfiguration().locale, locale))) {
                     return false;
                 }
             }
@@ -485,14 +514,15 @@ public class AppActivity extends AppEventHandlerActivity implements AppComponent
         return true;
     }
 
-    public final boolean g(List<? extends KClass<? extends AppComponent>> screens) {
-        Intrinsics3.checkNotNullParameter(screens, "screens");
+    /* JADX INFO: renamed from: g */
+    public final boolean m8347g(List<? extends InterfaceC11230c<? extends AppComponent>> screens) {
+        C12238m.checkNotNullParameter(screens, "screens");
         if ((screens instanceof Collection) && screens.isEmpty()) {
             return false;
         }
         Iterator<T> it = screens.iterator();
         while (it.hasNext()) {
-            if (Intrinsics3.areEqual(JvmClassMapping.getJavaClass((KClass) it.next()), d())) {
+            if (C12238m.areEqual(C12209a.getJavaClass((InterfaceC11230c) it.next()), mo8344d())) {
                 return true;
             }
         }
@@ -504,44 +534,47 @@ public class AppActivity extends AppEventHandlerActivity implements AppComponent
         return this.unsubscribeSignal;
     }
 
-    public final boolean h(KClass<? extends AppComponent> screen) {
-        Intrinsics3.checkNotNullParameter(screen, "screen");
-        return Intrinsics3.areEqual(JvmClassMapping.getJavaClass(screen), d());
+    /* JADX INFO: renamed from: h */
+    public final boolean m8348h(InterfaceC11230c<? extends AppComponent> screen) {
+        C12238m.checkNotNullParameter(screen, "screen");
+        return C12238m.areEqual(C12209a.getJavaClass(screen), mo8344d());
     }
 
     public final void hideKeyboard(View view) {
-        m(false, view);
+        m8352m(false, view);
     }
 
-    public final void j(Context context) {
-        Intrinsics3.checkNotNullParameter(context, "context");
-        if (h(Reflection2.getOrCreateKotlinClass(WidgetTabsHost.class))) {
+    /* JADX INFO: renamed from: j */
+    public final void m8349j(Context context) {
+        C12238m.checkNotNullParameter(context, "context");
+        if (m8348h(C12216a0.getOrCreateKotlinClass(WidgetTabsHost.class))) {
             return;
         }
-        List<KClass<? extends AppFragment>> list = AppScreen2.a;
-        Intrinsics3.checkNotNullParameter(context, "context");
+        List<InterfaceC11230c<? extends AppFragment>> list = C0870j.f518a;
+        C12238m.checkNotNullParameter(context, "context");
         Intent intent = new Intent();
         intent.addFlags(67108864);
-        AppScreen2.c(context, false, intent, 2);
+        C0870j.m155c(context, false, intent, 2);
     }
 
-    public final Toolbar k(boolean showHomeAsUp, @DrawableRes Integer iconRes, @StringRes Integer iconAccessibilityLabel) {
+    /* JADX INFO: renamed from: k */
+    public final Toolbar m8350k(boolean showHomeAsUp, @DrawableRes Integer iconRes, @StringRes Integer iconAccessibilityLabel) {
         Toolbar toolbar = this.toolbar;
         Drawable drawable = null;
         if (toolbar == null) {
             return null;
         }
         if (showHomeAsUp) {
-            int themedDrawableRes$default = DrawableCompat.getThemedDrawableRes$default(toolbar, R.attr.ic_action_bar_back, 0, 2, (Object) null);
+            int themedDrawableRes$default = DrawableCompat.getThemedDrawableRes$default(toolbar, C5419R.attr.ic_action_bar_back, 0, 2, (Object) null);
             Context context = toolbar.getContext();
             if (iconRes != null) {
                 themedDrawableRes$default = iconRes.intValue();
             }
             drawable = ContextCompat.getDrawable(context, themedDrawableRes$default);
             if (drawable != null) {
-                androidx.core.graphics.drawable.DrawableCompat.setTint(drawable, ColorCompat.getThemedColor(toolbar, R.attr.colorInteractiveActive));
+                androidx.core.graphics.drawable.DrawableCompat.setTint(drawable, ColorCompat.getThemedColor(toolbar, C5419R.attr.colorInteractiveActive));
             }
-            toolbar.setNavigationContentDescription(getString(R.string.back));
+            toolbar.setNavigationContentDescription(getString(C5419R.string.back));
         }
         toolbar.setNavigationIcon(drawable);
         if (iconAccessibilityLabel == null) {
@@ -551,53 +584,56 @@ public class AppActivity extends AppEventHandlerActivity implements AppComponent
         return toolbar;
     }
 
-    public final Unit l(CharSequence title, @DrawableRes Integer leftDrawable) {
-        ToolbarTitleLayout toolbarTitleLayoutE = e();
-        if (toolbarTitleLayoutE == null) {
+    /* JADX INFO: renamed from: l */
+    public final Unit m8351l(CharSequence title, @DrawableRes Integer leftDrawable) {
+        ToolbarTitleLayout toolbarTitleLayoutM8345e = m8345e();
+        if (toolbarTitleLayoutM8345e == null) {
             return null;
         }
-        int i = ToolbarTitleLayout.j;
-        toolbarTitleLayoutE.a(title, leftDrawable, null);
-        return Unit.a;
+        int i = ToolbarTitleLayout.f19165j;
+        toolbarTitleLayoutM8345e.m8564a(title, leftDrawable, null);
+        return Unit.f27425a;
     }
 
-    public final void m(boolean keyboardOpen, View view) {
+    /* JADX INFO: renamed from: m */
+    public final void m8352m(boolean keyboardOpen, View view) {
         IBinder applicationWindowToken;
         View childAt;
         Object systemService = getSystemService("input_method");
         Objects.requireNonNull(systemService, "null cannot be cast to non-null type android.view.inputmethod.InputMethodManager");
         InputMethodManager inputMethodManager = (InputMethodManager) systemService;
         if (view == null || (applicationWindowToken = view.getWindowToken()) == null) {
-            FrameLayout frameLayout = (FrameLayout) findViewById(android.R.id.content);
+            FrameLayout frameLayout = (FrameLayout) findViewById(R.id.content);
             applicationWindowToken = (frameLayout == null || (childAt = frameLayout.getChildAt(0)) == null) ? null : childAt.getApplicationWindowToken();
         }
         if (keyboardOpen) {
             if (view != null) {
-                view.postDelayed(new f(view, inputMethodManager), 250L);
+                view.postDelayed(new RunnableC5437f(view, inputMethodManager), 250L);
             }
         } else {
             try {
                 inputMethodManager.hideSoftInputFromWindow(applicationWindowToken, 0);
-            } catch (Exception e2) {
-                AppLog.g.d("Error Opening/Closing the Keyboard", e2);
+            } catch (Exception e) {
+                AppLog.f14950g.mo8362d("Error Opening/Closing the Keyboard", e);
             }
         }
     }
 
-    public final void n(Toolbar toolbar) {
+    /* JADX INFO: renamed from: n */
+    public final void m8353n(Toolbar toolbar) {
         this.toolbar = toolbar;
-        if (e() == null) {
+        if (m8345e() == null) {
             Toolbar toolbar2 = this.toolbar;
             if (toolbar2 != null) {
                 toolbar2.addView(new ToolbarTitleLayout(this), 0);
             }
-            ToolbarTitleLayout toolbarTitleLayoutE = e();
-            if (toolbarTitleLayoutE != null) {
-                toolbarTitleLayoutE.setBackground(ContextCompat.getDrawable(this, DrawableCompat.getThemedDrawableRes$default(this, R.attr.selectableItemBackground, 0, 2, (Object) null)));
+            ToolbarTitleLayout toolbarTitleLayoutM8345e = m8345e();
+            if (toolbarTitleLayoutM8345e != null) {
+                toolbarTitleLayoutM8345e.setBackground(ContextCompat.getDrawable(this, DrawableCompat.getThemedDrawableRes$default(this, C5419R.attr.selectableItemBackground, 0, 2, (Object) null)));
             }
             Toolbar toolbar3 = this.toolbar;
             if (toolbar3 != null) {
-                toolbar3.setNavigationOnClickListener(new g());
+                toolbar3.setNavigationOnClickListener(new ViewOnClickListenerC5438g());
             }
         }
     }
@@ -605,31 +641,31 @@ public class AppActivity extends AppEventHandlerActivity implements AppComponent
     @Override // androidx.appcompat.app.AppCompatActivity, androidx.fragment.app.FragmentActivity, androidx.activity.ComponentActivity, androidx.core.app.ComponentActivity, android.app.Activity
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        a aVar = new a(0, this);
-        a aVar2 = new a(1, this);
+        C5432a c5432a = new C5432a(0, this);
+        C5432a c5432a2 = new C5432a(1, this);
         try {
             StoreStream.Companion companion = StoreStream.INSTANCE;
             String theme = companion.getUserSettingsSystem().getTheme();
             int i = 2131951650;
-            if (Intrinsics3.areEqual(theme, ModelUserSettings.THEME_LIGHT)) {
+            if (C12238m.areEqual(theme, ModelUserSettings.THEME_LIGHT)) {
                 i = 2131951657;
-            } else if (!Intrinsics3.areEqual(theme, ModelUserSettings.THEME_DARK) && Intrinsics3.areEqual(theme, ModelUserSettings.THEME_PURE_EVIL)) {
+            } else if (!C12238m.areEqual(theme, ModelUserSettings.THEME_DARK) && C12238m.areEqual(theme, ModelUserSettings.THEME_PURE_EVIL)) {
                 i = 2131951652;
             }
             setTheme(i);
-            b(companion.getUserSettingsSystem().getLocale(), false);
-            aVar.invoke2();
-            aVar2.invoke2();
-            if (h(Reflection2.getOrCreateKotlinClass(WidgetTabsHost.class)) && companion.getTabsNavigation().getSelectedTab() == NavigationTab.HOME) {
+            m8342b(companion.getUserSettingsSystem().getLocale(), false);
+            c5432a.invoke2();
+            c5432a2.invoke2();
+            if (m8348h(C12216a0.getOrCreateKotlinClass(WidgetTabsHost.class)) && companion.getTabsNavigation().getSelectedTab() == NavigationTab.HOME) {
                 return;
             }
-            companion.getAnalytics().appUiViewed(d());
-        } catch (Exception e2) {
-            if (!h(Reflection2.getOrCreateKotlinClass(WidgetFatalCrash.class))) {
+            companion.getAnalytics().appUiViewed(mo8344d());
+        } catch (Exception e) {
+            if (!m8348h(C12216a0.getOrCreateKotlinClass(WidgetFatalCrash.class))) {
                 WidgetFatalCrash.Companion companion2 = WidgetFatalCrash.INSTANCE;
-                String name = d().getName();
-                Intrinsics3.checkNotNullExpressionValue(name, "screen.name");
-                companion2.launch(this, e2, name);
+                String name = mo8344d().getName();
+                C12238m.checkNotNullExpressionValue(name, "screen.name");
+                companion2.launch(this, e, name);
             }
             finish();
         }
@@ -645,14 +681,14 @@ public class AppActivity extends AppEventHandlerActivity implements AppComponent
     public void onNewIntent(Intent intent) {
         super.onNewIntent(intent);
         if (intent == null) {
-            intent = n;
+            intent = f14909n;
         }
         this.mostRecentIntent = intent;
-        m = IntentUtils.INSTANCE.consumeExternalRoutingIntent(c(), this);
-        Intent intentC = c();
+        f14908m = IntentUtils.INSTANCE.consumeExternalRoutingIntent(m8343c(), this);
+        Intent intentM8343c = m8343c();
         Iterator<Map.Entry<Integer, Function1<Intent, Unit>>> it = this.newIntentListeners.entrySet().iterator();
         while (it.hasNext()) {
-            it.next().getValue().invoke(intentC);
+            it.next().getValue().invoke(intentM8343c);
         }
     }
 
@@ -665,83 +701,88 @@ public class AppActivity extends AppEventHandlerActivity implements AppComponent
     @Override // com.discord.app.AppTransitionActivity, androidx.fragment.app.FragmentActivity, android.app.Activity
     public void onResume() {
         super.onResume();
-        AppScreen2 appScreen2 = AppScreen2.g;
-        Intrinsics3.checkNotNullParameter(this, ActivityChooserModel.ATTRIBUTE_ACTIVITY);
-        boolean booleanExtra = c().getBooleanExtra("INTENT_RECREATE", false);
+        C0870j c0870j = C0870j.f524g;
+        C12238m.checkNotNullParameter(this, ActivityChooserModel.ATTRIBUTE_ACTIVITY);
+        boolean booleanExtra = m8343c().getBooleanExtra("INTENT_RECREATE", false);
         if (booleanExtra) {
-            c().removeExtra("INTENT_RECREATE");
-            new Handler(Looper.getMainLooper()).post(new AppScreen(this));
+            m8343c().removeExtra("INTENT_RECREATE");
+            new Handler(Looper.getMainLooper()).post(new RunnableC0868i(this));
         }
         if (booleanExtra) {
             return;
         }
         StoreStream.Companion companion = StoreStream.INSTANCE;
-        if ((!Intrinsics3.areEqual(companion.getUserSettingsSystem().getLocale(), this.originalLocale)) && (!Intrinsics3.areEqual(this.originalLocale, ""))) {
-            i(this, false, 1, null);
+        if ((!C12238m.areEqual(companion.getUserSettingsSystem().getLocale(), this.originalLocale)) && (!C12238m.areEqual(this.originalLocale, ""))) {
+            m8341i(this, false, 1, null);
             return;
         }
         this.originalLocale = companion.getUserSettingsSystem().getLocale();
-        ObservableExtensionsKt.appSubscribe(ObservableExtensionsKt.ui$default(companion.getUserSettingsSystem().observeSettings(true), this, null, 2, null), (Class<?>) getClass(), (58 & 2) != 0 ? null : null, (Function1<? super Subscription, Unit>) ((58 & 4) != 0 ? null : null), (Function1<? super Error, Unit>) ((58 & 8) != 0 ? null : null), (Function0<Unit>) ((58 & 16) != 0 ? ObservableExtensionsKt.AnonymousClass1.INSTANCE : null), (Function0<Unit>) ((58 & 32) != 0 ? ObservableExtensionsKt.AnonymousClass2.INSTANCE : null), new c());
-        ScreenshotDetector screenshotDetector = ScreenshotDetector.a;
+        ObservableExtensionsKt.appSubscribe(ObservableExtensionsKt.ui$default(companion.getUserSettingsSystem().observeSettings(true), this, null, 2, null), (Class<?>) getClass(), (58 & 2) != 0 ? null : null, (Function1<? super Subscription, Unit>) ((58 & 4) != 0 ? null : null), (Function1<? super Error, Unit>) ((58 & 8) != 0 ? null : null), (Function0<Unit>) ((58 & 16) != 0 ? ObservableExtensionsKt.C68791.INSTANCE : null), (Function0<Unit>) ((58 & 32) != 0 ? ObservableExtensionsKt.C68802.INSTANCE : null), new C5434c());
+        ScreenshotDetector screenshotDetector = ScreenshotDetector.f18938a;
         if (screenshotDetector == null) {
-            Intrinsics3.throwUninitializedPropertyAccessException("screenshotDetector");
+            C12238m.throwUninitializedPropertyAccessException("screenshotDetector");
         }
-        ObservableExtensionsKt.appSubscribe(ObservableExtensionsKt.ui$default(screenshotDetector.publishSubject, this, null, 2, null), (Class<?>) getClass(), (58 & 2) != 0 ? null : null, (Function1<? super Subscription, Unit>) ((58 & 4) != 0 ? null : null), (Function1<? super Error, Unit>) ((58 & 8) != 0 ? null : null), (Function0<Unit>) ((58 & 16) != 0 ? ObservableExtensionsKt.AnonymousClass1.INSTANCE : null), (Function0<Unit>) ((58 & 32) != 0 ? ObservableExtensionsKt.AnonymousClass2.INSTANCE : null), new d());
+        ObservableExtensionsKt.appSubscribe(ObservableExtensionsKt.ui$default(screenshotDetector.publishSubject, this, null, 2, null), (Class<?>) getClass(), (58 & 2) != 0 ? null : null, (Function1<? super Subscription, Unit>) ((58 & 4) != 0 ? null : null), (Function1<? super Error, Unit>) ((58 & 8) != 0 ? null : null), (Function0<Unit>) ((58 & 16) != 0 ? ObservableExtensionsKt.C68791.INSTANCE : null), (Function0<Unit>) ((58 & 32) != 0 ? ObservableExtensionsKt.C68802.INSTANCE : null), new C5435d());
     }
 
     public final void showKeyboard(View view) {
-        Intrinsics3.checkNotNullParameter(view, "view");
-        m(true, view);
+        C12238m.checkNotNullParameter(view, "view");
+        m8352m(true, view);
     }
 
+    /* JADX INFO: renamed from: com.discord.app.AppActivity$a */
     /* JADX INFO: compiled from: kotlin-style lambda group */
     /* JADX INFO: loaded from: classes2.dex */
-    public static final class a extends Lambda implements Function0<Unit> {
-        public final /* synthetic */ int j;
-        public final /* synthetic */ Object k;
+    public static final class C5432a extends AbstractC12240o implements Function0<Unit> {
+
+        /* JADX INFO: renamed from: j */
+        public final /* synthetic */ int f14923j;
+
+        /* JADX INFO: renamed from: k */
+        public final /* synthetic */ Object f14924k;
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-        public a(int i, Object obj) {
+        public C5432a(int i, Object obj) {
             super(0);
-            this.j = i;
-            this.k = obj;
+            this.f14923j = i;
+            this.f14924k = obj;
         }
 
         @Override // kotlin.jvm.functions.Function0
         public final Unit invoke() {
-            int i = this.j;
+            int i = this.f14923j;
             if (i == 0) {
                 invoke2();
-                return Unit.a;
+                return Unit.f27425a;
             }
             if (i != 1) {
                 throw null;
             }
             invoke2();
-            return Unit.a;
+            return Unit.f27425a;
         }
 
         /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
         public final void invoke2() {
-            int i = this.j;
+            int i = this.f14923j;
             if (i != 0) {
                 if (i == 1) {
-                    Objects.requireNonNull((AppActivity) this.k);
-                    AppActivity appActivity = (AppActivity) this.k;
+                    Objects.requireNonNull((AppActivity) this.f14924k);
+                    AppActivity appActivity = (AppActivity) this.f14924k;
                     if (appActivity.toolbar == null) {
-                        appActivity.n((Toolbar) appActivity.findViewById(R.id.action_bar_toolbar));
+                        appActivity.m8353n((Toolbar) appActivity.findViewById(C5419R.id.action_bar_toolbar));
                         return;
                     }
                     return;
                 }
                 throw null;
             }
-            AppActivity appActivity2 = (AppActivity) this.k;
-            AppActivity.m = IntentUtils.INSTANCE.consumeExternalRoutingIntent(appActivity2.c(), appActivity2);
-            Intent intentC = ((AppActivity) this.k).c();
-            AppActivity appActivity3 = (AppActivity) this.k;
+            AppActivity appActivity2 = (AppActivity) this.f14924k;
+            AppActivity.f14908m = IntentUtils.INSTANCE.consumeExternalRoutingIntent(appActivity2.m8343c(), appActivity2);
+            Intent intentM8343c = ((AppActivity) this.f14924k).m8343c();
+            AppActivity appActivity3 = (AppActivity) this.f14924k;
             Objects.requireNonNull(appActivity3);
-            Serializable serializableExtra = intentC != null ? intentC.getSerializableExtra("transition") : null;
+            Serializable serializableExtra = intentM8343c != null ? intentM8343c.getSerializableExtra("transition") : null;
             if (!(serializableExtra instanceof AppTransitionActivity.Transition)) {
                 serializableExtra = null;
             }
@@ -749,17 +790,17 @@ public class AppActivity extends AppEventHandlerActivity implements AppComponent
             if (AccessibilityUtils.INSTANCE.isReducedMotionEnabled()) {
                 transition = AppTransitionActivity.Transition.TYPE_FADE_FAST;
             } else if (transition == null) {
-                AppScreen2 appScreen2 = AppScreen2.g;
-                transition = appActivity3.g(AppScreen2.d) ? AppTransitionActivity.Transition.TYPE_SLIDE_HORIZONTAL : null;
+                C0870j c0870j = C0870j.f524g;
+                transition = appActivity3.m8347g(C0870j.f521d) ? AppTransitionActivity.Transition.TYPE_SLIDE_HORIZONTAL : null;
             }
-            appActivity3.k = transition != null ? transition.getAnimations() : null;
-            if (((AppActivity) this.k).getSupportFragmentManager().findFragmentByTag(((AppActivity) this.k).d().getName()) != null) {
+            appActivity3.f14964k = transition != null ? transition.getAnimations() : null;
+            if (((AppActivity) this.f14924k).getSupportFragmentManager().findFragmentByTag(((AppActivity) this.f14924k).mo8344d().getName()) != null) {
                 return;
             }
-            AppScreen2 appScreen3 = AppScreen2.g;
-            FragmentManager supportFragmentManager = ((AppActivity) this.k).getSupportFragmentManager();
-            AppActivity appActivity4 = (AppActivity) this.k;
-            AppScreen2.g(appScreen3, supportFragmentManager, appActivity4, appActivity4.d(), 0, false, null, null, 120);
+            C0870j c0870j2 = C0870j.f524g;
+            FragmentManager supportFragmentManager = ((AppActivity) this.f14924k).getSupportFragmentManager();
+            AppActivity appActivity4 = (AppActivity) this.f14924k;
+            C0870j.m158g(c0870j2, supportFragmentManager, appActivity4, appActivity4.mo8344d(), 0, false, null, null, 120);
         }
     }
 }

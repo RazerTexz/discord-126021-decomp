@@ -1,8 +1,8 @@
 package com.discord.api.stageinstance;
 
-import b.d.b.a.outline;
 import com.discord.models.domain.ModelAuditLogEntry;
-import d0.z.d.Intrinsics3;
+import p007b.p100d.p104b.p105a.C1643a;
+import p507d0.p592z.p594d.C12238m;
 
 /* JADX INFO: compiled from: StageInstance.kt */
 /* JADX INFO: loaded from: classes.dex */
@@ -47,7 +47,7 @@ public final /* data */ class StageInstance {
             return false;
         }
         StageInstance stageInstance = (StageInstance) other;
-        return this.id == stageInstance.id && this.guildId == stageInstance.guildId && this.channelId == stageInstance.channelId && Intrinsics3.areEqual(this.topic, stageInstance.topic) && Intrinsics3.areEqual(this.privacyLevel, stageInstance.privacyLevel) && Intrinsics3.areEqual(this.inviteCode, stageInstance.inviteCode);
+        return this.id == stageInstance.id && this.guildId == stageInstance.guildId && this.channelId == stageInstance.channelId && C12238m.areEqual(this.topic, stageInstance.topic) && C12238m.areEqual(this.privacyLevel, stageInstance.privacyLevel) && C12238m.areEqual(this.inviteCode, stageInstance.inviteCode);
     }
 
     /* JADX INFO: renamed from: f, reason: from getter */
@@ -70,17 +70,17 @@ public final /* data */ class StageInstance {
     }
 
     public String toString() {
-        StringBuilder sbU = outline.U("StageInstance(id=");
-        sbU.append(this.id);
-        sbU.append(", guildId=");
-        sbU.append(this.guildId);
-        sbU.append(", channelId=");
-        sbU.append(this.channelId);
-        sbU.append(", topic=");
-        sbU.append(this.topic);
-        sbU.append(", privacyLevel=");
-        sbU.append(this.privacyLevel);
-        sbU.append(", inviteCode=");
-        return outline.J(sbU, this.inviteCode, ")");
+        StringBuilder sbM833U = C1643a.m833U("StageInstance(id=");
+        sbM833U.append(this.id);
+        sbM833U.append(", guildId=");
+        sbM833U.append(this.guildId);
+        sbM833U.append(", channelId=");
+        sbM833U.append(this.channelId);
+        sbM833U.append(", topic=");
+        sbM833U.append(this.topic);
+        sbM833U.append(", privacyLevel=");
+        sbM833U.append(this.privacyLevel);
+        sbM833U.append(", inviteCode=");
+        return C1643a.m822J(sbM833U, this.inviteCode, ")");
     }
 }

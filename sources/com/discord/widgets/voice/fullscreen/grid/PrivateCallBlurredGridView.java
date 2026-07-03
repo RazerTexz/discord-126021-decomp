@@ -6,20 +6,20 @@ import android.util.AttributeSet;
 import android.widget.FrameLayout;
 import android.widget.GridLayout;
 import androidx.core.graphics.ColorUtils;
-import com.discord.R;
+import com.discord.C5419R;
 import com.discord.stores.StoreVoiceParticipants;
-import com.discord.utilities.collections.CollectionExtensions;
+import com.discord.utilities.collections.CollectionExtensionsKt;
 import com.discord.utilities.color.ColorCompat;
 import com.discord.utilities.dimen.DimenUtils;
 import com.discord.utilities.icon.IconUtils;
 import com.facebook.drawee.view.SimpleDraweeView;
 import com.github.mmin18.widget.RealtimeBlurView;
-import d0.t.Collections2;
-import d0.t._Collections;
-import d0.z.d.Intrinsics3;
 import java.util.LinkedHashMap;
 import java.util.List;
 import kotlin.jvm.internal.DefaultConstructorMarker;
+import p507d0.p580t.C12147n;
+import p507d0.p580t.C12163u;
+import p507d0.p592z.p594d.C12238m;
 
 /* JADX INFO: compiled from: PrivateCallBlurredGridView.kt */
 /* JADX INFO: loaded from: classes.dex */
@@ -32,8 +32,8 @@ public final class PrivateCallBlurredGridView extends FrameLayout {
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public PrivateCallBlurredGridView(Context context) {
         super(context);
-        Intrinsics3.checkNotNullParameter(context, "context");
-        this.callUsers = Collections2.emptyList();
+        C12238m.checkNotNullParameter(context, "context");
+        this.callUsers = C12147n.emptyList();
         RealtimeBlurView realtimeBlurView = new RealtimeBlurView(getContext(), null);
         this.blurView = realtimeBlurView;
         GridLayout gridLayout = new GridLayout(getContext());
@@ -41,7 +41,7 @@ public final class PrivateCallBlurredGridView extends FrameLayout {
         this.gridViewItems = new LinkedHashMap<>();
         gridLayout.setLayoutParams(new FrameLayout.LayoutParams(-1, -1));
         gridLayout.setColumnCount(getColumnSize());
-        int alphaComponent = ColorUtils.setAlphaComponent(ColorCompat.getColor(getContext(), R.color.primary_dark_600), (int) 204.0d);
+        int alphaComponent = ColorUtils.setAlphaComponent(ColorCompat.getColor(getContext(), C5419R.color.primary_dark_600), (int) 204.0d);
         realtimeBlurView.setLayoutParams(new FrameLayout.LayoutParams(-1, -1));
         realtimeBlurView.setBlurRadius(DimenUtils.dpToPixels(64));
         realtimeBlurView.setOverlayColor(alphaComponent);
@@ -57,13 +57,13 @@ public final class PrivateCallBlurredGridView extends FrameLayout {
 
     private final int getColumnSize() {
         Resources resources = getResources();
-        Intrinsics3.checkNotNullExpressionValue(resources, "resources");
+        C12238m.checkNotNullExpressionValue(resources, "resources");
         return isLandscape(resources) ? 3 : 2;
     }
 
     private final int getMaxShownParticipants() {
         Resources resources = getResources();
-        Intrinsics3.checkNotNullExpressionValue(resources, "resources");
+        C12238m.checkNotNullExpressionValue(resources, "resources");
         return isLandscape(resources) ? 6 : 4;
     }
 
@@ -72,10 +72,10 @@ public final class PrivateCallBlurredGridView extends FrameLayout {
     }
 
     public final void configure(List<StoreVoiceParticipants.VoiceUser> callUsers) {
-        Intrinsics3.checkNotNullParameter(callUsers, "callUsers");
-        List listTake = _Collections.take(callUsers, getMaxShownParticipants());
+        C12238m.checkNotNullParameter(callUsers, "callUsers");
+        List listTake = C12163u.take(callUsers, getMaxShownParticipants());
         boolean z2 = listTake.size() == 2;
-        boolean z3 = !CollectionExtensions.equals(this.callUsers, callUsers, PrivateCallBlurredGridView2.INSTANCE);
+        boolean z3 = !CollectionExtensionsKt.equals(this.callUsers, callUsers, PrivateCallBlurredGridView$configure$callUserOrderChanged$1.INSTANCE);
         if (z3) {
             this.gridView.removeAllViews();
         }
@@ -83,7 +83,7 @@ public final class PrivateCallBlurredGridView extends FrameLayout {
         for (Object obj : listTake) {
             int i2 = i + 1;
             if (i < 0) {
-                Collections2.throwIndexOverflow();
+                C12147n.throwIndexOverflow();
             }
             StoreVoiceParticipants.VoiceUser voiceUser = (StoreVoiceParticipants.VoiceUser) obj;
             boolean z4 = (i == listTake.size() - 1) && (i + (-1)) % 2 != 0;
@@ -107,8 +107,8 @@ public final class PrivateCallBlurredGridView extends FrameLayout {
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public PrivateCallBlurredGridView(Context context, AttributeSet attributeSet) {
         super(context, attributeSet);
-        Intrinsics3.checkNotNullParameter(context, "context");
-        this.callUsers = Collections2.emptyList();
+        C12238m.checkNotNullParameter(context, "context");
+        this.callUsers = C12147n.emptyList();
         RealtimeBlurView realtimeBlurView = new RealtimeBlurView(getContext(), null);
         this.blurView = realtimeBlurView;
         GridLayout gridLayout = new GridLayout(getContext());
@@ -116,7 +116,7 @@ public final class PrivateCallBlurredGridView extends FrameLayout {
         this.gridViewItems = new LinkedHashMap<>();
         gridLayout.setLayoutParams(new FrameLayout.LayoutParams(-1, -1));
         gridLayout.setColumnCount(getColumnSize());
-        int alphaComponent = ColorUtils.setAlphaComponent(ColorCompat.getColor(getContext(), R.color.primary_dark_600), (int) 204.0d);
+        int alphaComponent = ColorUtils.setAlphaComponent(ColorCompat.getColor(getContext(), C5419R.color.primary_dark_600), (int) 204.0d);
         realtimeBlurView.setLayoutParams(new FrameLayout.LayoutParams(-1, -1));
         realtimeBlurView.setBlurRadius(DimenUtils.dpToPixels(64));
         realtimeBlurView.setOverlayColor(alphaComponent);

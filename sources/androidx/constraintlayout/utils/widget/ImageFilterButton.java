@@ -14,7 +14,7 @@ import android.view.ViewOutlineProvider;
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.widget.AppCompatImageButton;
 import androidx.constraintlayout.utils.widget.ImageFilterView;
-import androidx.constraintlayout.widget.R;
+import androidx.constraintlayout.widget.C0201R;
 
 /* JADX INFO: loaded from: classes.dex */
 public class ImageFilterButton extends AppCompatImageButton {
@@ -42,24 +42,24 @@ public class ImageFilterButton extends AppCompatImageButton {
     private void init(Context context, AttributeSet attributeSet) {
         setPadding(0, 0, 0, 0);
         if (attributeSet != null) {
-            TypedArray typedArrayObtainStyledAttributes = getContext().obtainStyledAttributes(attributeSet, R.styleable.ImageFilterView);
+            TypedArray typedArrayObtainStyledAttributes = getContext().obtainStyledAttributes(attributeSet, C0201R.styleable.ImageFilterView);
             int indexCount = typedArrayObtainStyledAttributes.getIndexCount();
-            Drawable drawable = typedArrayObtainStyledAttributes.getDrawable(R.styleable.ImageFilterView_altSrc);
+            Drawable drawable = typedArrayObtainStyledAttributes.getDrawable(C0201R.styleable.ImageFilterView_altSrc);
             for (int i = 0; i < indexCount; i++) {
                 int index = typedArrayObtainStyledAttributes.getIndex(i);
-                if (index == R.styleable.ImageFilterView_crossfade) {
+                if (index == C0201R.styleable.ImageFilterView_crossfade) {
                     this.mCrossfade = typedArrayObtainStyledAttributes.getFloat(index, 0.0f);
-                } else if (index == R.styleable.ImageFilterView_warmth) {
+                } else if (index == C0201R.styleable.ImageFilterView_warmth) {
                     setWarmth(typedArrayObtainStyledAttributes.getFloat(index, 0.0f));
-                } else if (index == R.styleable.ImageFilterView_saturation) {
+                } else if (index == C0201R.styleable.ImageFilterView_saturation) {
                     setSaturation(typedArrayObtainStyledAttributes.getFloat(index, 0.0f));
-                } else if (index == R.styleable.ImageFilterView_contrast) {
+                } else if (index == C0201R.styleable.ImageFilterView_contrast) {
                     setContrast(typedArrayObtainStyledAttributes.getFloat(index, 0.0f));
-                } else if (index == R.styleable.ImageFilterView_round) {
+                } else if (index == C0201R.styleable.ImageFilterView_round) {
                     setRound(typedArrayObtainStyledAttributes.getDimension(index, 0.0f));
-                } else if (index == R.styleable.ImageFilterView_roundPercent) {
+                } else if (index == C0201R.styleable.ImageFilterView_roundPercent) {
                     setRoundPercent(typedArrayObtainStyledAttributes.getFloat(index, 0.0f));
-                } else if (index == R.styleable.ImageFilterView_overlay) {
+                } else if (index == C0201R.styleable.ImageFilterView_overlay) {
                     setOverlay(typedArrayObtainStyledAttributes.getBoolean(index, this.mOverlay));
                 }
             }

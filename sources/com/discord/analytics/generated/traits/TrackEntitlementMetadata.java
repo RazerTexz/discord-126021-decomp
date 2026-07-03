@@ -1,7 +1,7 @@
 package com.discord.analytics.generated.traits;
 
-import b.d.b.a.outline;
-import d0.z.d.Intrinsics3;
+import p007b.p100d.p104b.p105a.C1643a;
+import p507d0.p592z.p594d.C12238m;
 
 /* JADX INFO: compiled from: TrackEntitlementMetadata.kt */
 /* JADX INFO: loaded from: classes.dex */
@@ -21,7 +21,7 @@ public final /* data */ class TrackEntitlementMetadata {
             return false;
         }
         TrackEntitlementMetadata trackEntitlementMetadata = (TrackEntitlementMetadata) other;
-        return Intrinsics3.areEqual(this.entitlementId, trackEntitlementMetadata.entitlementId) && Intrinsics3.areEqual(this.entitlementCreatorId, trackEntitlementMetadata.entitlementCreatorId) && Intrinsics3.areEqual(this.entitlementSubscriptionPlanId, trackEntitlementMetadata.entitlementSubscriptionPlanId) && Intrinsics3.areEqual(this.entitlementPaymentId, trackEntitlementMetadata.entitlementPaymentId) && Intrinsics3.areEqual(this.giftCodeBatchId, trackEntitlementMetadata.giftCodeBatchId) && Intrinsics3.areEqual(this.giftStyle, trackEntitlementMetadata.giftStyle);
+        return C12238m.areEqual(this.entitlementId, trackEntitlementMetadata.entitlementId) && C12238m.areEqual(this.entitlementCreatorId, trackEntitlementMetadata.entitlementCreatorId) && C12238m.areEqual(this.entitlementSubscriptionPlanId, trackEntitlementMetadata.entitlementSubscriptionPlanId) && C12238m.areEqual(this.entitlementPaymentId, trackEntitlementMetadata.entitlementPaymentId) && C12238m.areEqual(this.giftCodeBatchId, trackEntitlementMetadata.giftCodeBatchId) && C12238m.areEqual(this.giftStyle, trackEntitlementMetadata.giftStyle);
     }
 
     public int hashCode() {
@@ -40,17 +40,17 @@ public final /* data */ class TrackEntitlementMetadata {
     }
 
     public String toString() {
-        StringBuilder sbU = outline.U("TrackEntitlementMetadata(entitlementId=");
-        sbU.append(this.entitlementId);
-        sbU.append(", entitlementCreatorId=");
-        sbU.append(this.entitlementCreatorId);
-        sbU.append(", entitlementSubscriptionPlanId=");
-        sbU.append(this.entitlementSubscriptionPlanId);
-        sbU.append(", entitlementPaymentId=");
-        sbU.append(this.entitlementPaymentId);
-        sbU.append(", giftCodeBatchId=");
-        sbU.append(this.giftCodeBatchId);
-        sbU.append(", giftStyle=");
-        return outline.G(sbU, this.giftStyle, ")");
+        StringBuilder sbM833U = C1643a.m833U("TrackEntitlementMetadata(entitlementId=");
+        sbM833U.append(this.entitlementId);
+        sbM833U.append(", entitlementCreatorId=");
+        sbM833U.append(this.entitlementCreatorId);
+        sbM833U.append(", entitlementSubscriptionPlanId=");
+        sbM833U.append(this.entitlementSubscriptionPlanId);
+        sbM833U.append(", entitlementPaymentId=");
+        sbM833U.append(this.entitlementPaymentId);
+        sbM833U.append(", giftCodeBatchId=");
+        sbM833U.append(this.giftCodeBatchId);
+        sbM833U.append(", giftStyle=");
+        return C1643a.m819G(sbM833U, this.giftStyle, ")");
     }
 }

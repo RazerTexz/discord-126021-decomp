@@ -2,12 +2,12 @@ package co.discord.media_engine;
 
 import android.content.Context;
 import androidx.annotation.AnyThread;
-import co.discord.media_engine.internal.ExtensionFunctions;
-import d0.z.d.Intrinsics3;
+import co.discord.media_engine.internal.ExtensionFunctionsKt;
 import org.webrtc.Camera1Enumerator;
 import org.webrtc.Camera2Enumerator;
 import org.webrtc.CameraEnumerator;
 import org.webrtc.CameraVideoCapturer;
+import p507d0.p592z.p594d.C12238m;
 
 /* JADX INFO: compiled from: CameraEnumeratorProvider.kt */
 /* JADX INFO: loaded from: classes.dex */
@@ -21,9 +21,9 @@ public final class CameraEnumeratorProvider {
 
     @AnyThread
     public static final CameraVideoCapturer createCapturer(String cameraName) {
-        Intrinsics3.checkNotNullParameter(cameraName, "cameraName");
+        C12238m.checkNotNullParameter(cameraName, "cameraName");
         CameraVideoCapturer cameraVideoCapturerCreateCapturer = get().createCapturer(cameraName, null);
-        Intrinsics3.checkNotNullExpressionValue(cameraVideoCapturerCreateCapturer, "get().createCapturer(cameraName, null)");
+        C12238m.checkNotNullExpressionValue(cameraVideoCapturerCreateCapturer, "get().createCapturer(cameraName, null)");
         return cameraVideoCapturerCreateCapturer;
     }
 
@@ -32,7 +32,7 @@ public final class CameraEnumeratorProvider {
         CameraEnumerator camera1Enumerator;
         camera1Enumerator = enumerator;
         if (camera1Enumerator == null) {
-            ExtensionFunctions.logi(TAG, "init was never called. Use Camera 1 API by default.");
+            ExtensionFunctionsKt.logi(TAG, "init was never called. Use Camera 1 API by default.");
             camera1Enumerator = new Camera1Enumerator();
         }
         return camera1Enumerator;
@@ -40,7 +40,7 @@ public final class CameraEnumeratorProvider {
 
     @AnyThread
     public static final synchronized void maybeInit(Context context) {
-        Intrinsics3.checkNotNullParameter(context, "context");
+        C12238m.checkNotNullParameter(context, "context");
         if (enumerator == null) {
             INSTANCE.init(context, false);
         }
@@ -49,15 +49,15 @@ public final class CameraEnumeratorProvider {
     @AnyThread
     public final synchronized void init(Context context, boolean forceCamera1) {
         CameraEnumerator camera1Enumerator;
-        Intrinsics3.checkNotNullParameter(context, "context");
+        C12238m.checkNotNullParameter(context, "context");
         if (forceCamera1) {
-            ExtensionFunctions.logi(TAG, "Override: Forcing Camera 1 API");
+            ExtensionFunctionsKt.logi(TAG, "Override: Forcing Camera 1 API");
             camera1Enumerator = new Camera1Enumerator();
         } else if (Camera2Enumerator.isSupported(context)) {
-            ExtensionFunctions.logi(TAG, "Use Camera 2 API");
+            ExtensionFunctionsKt.logi(TAG, "Use Camera 2 API");
             camera1Enumerator = new Camera2Enumerator(context.getApplicationContext());
         } else {
-            ExtensionFunctions.logi(TAG, "Camera 2 API is not supported. Use Camera 1 API");
+            ExtensionFunctionsKt.logi(TAG, "Camera 2 API is not supported. Use Camera 1 API");
             camera1Enumerator = new Camera1Enumerator();
         }
         enumerator = camera1Enumerator;

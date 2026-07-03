@@ -1,10 +1,10 @@
 package com.discord.models.domain;
 
-import b.d.b.a.outline;
 import com.discord.api.guildjoinrequest.ApplicationStatus;
 import com.discord.models.domain.ModelMemberVerificationForm;
-import d0.z.d.Intrinsics3;
 import java.util.List;
+import p007b.p100d.p104b.p105a.C1643a;
+import p507d0.p592z.p594d.C12238m;
 
 /* JADX INFO: compiled from: ModelMemberVerificationFormResponse.kt */
 /* JADX INFO: loaded from: classes.dex */
@@ -15,7 +15,7 @@ public final /* data */ class ModelMemberVerificationFormResponse {
     private final String lastSeen;
 
     public ModelMemberVerificationFormResponse(String str, ApplicationStatus applicationStatus, List<ModelMemberVerificationForm.FormField> list, Long l) {
-        Intrinsics3.checkNotNullParameter(applicationStatus, "applicationStatus");
+        C12238m.checkNotNullParameter(applicationStatus, "applicationStatus");
         this.lastSeen = str;
         this.applicationStatus = applicationStatus;
         this.formResponses = list;
@@ -59,7 +59,7 @@ public final /* data */ class ModelMemberVerificationFormResponse {
     }
 
     public final ModelMemberVerificationFormResponse copy(String lastSeen, ApplicationStatus applicationStatus, List<ModelMemberVerificationForm.FormField> formResponses, Long guildId) {
-        Intrinsics3.checkNotNullParameter(applicationStatus, "applicationStatus");
+        C12238m.checkNotNullParameter(applicationStatus, "applicationStatus");
         return new ModelMemberVerificationFormResponse(lastSeen, applicationStatus, formResponses, guildId);
     }
 
@@ -71,7 +71,7 @@ public final /* data */ class ModelMemberVerificationFormResponse {
             return false;
         }
         ModelMemberVerificationFormResponse modelMemberVerificationFormResponse = (ModelMemberVerificationFormResponse) other;
-        return Intrinsics3.areEqual(this.lastSeen, modelMemberVerificationFormResponse.lastSeen) && Intrinsics3.areEqual(this.applicationStatus, modelMemberVerificationFormResponse.applicationStatus) && Intrinsics3.areEqual(this.formResponses, modelMemberVerificationFormResponse.formResponses) && Intrinsics3.areEqual(this.guildId, modelMemberVerificationFormResponse.guildId);
+        return C12238m.areEqual(this.lastSeen, modelMemberVerificationFormResponse.lastSeen) && C12238m.areEqual(this.applicationStatus, modelMemberVerificationFormResponse.applicationStatus) && C12238m.areEqual(this.formResponses, modelMemberVerificationFormResponse.formResponses) && C12238m.areEqual(this.guildId, modelMemberVerificationFormResponse.guildId);
     }
 
     public final ApplicationStatus getApplicationStatus() {
@@ -102,13 +102,13 @@ public final /* data */ class ModelMemberVerificationFormResponse {
     }
 
     public String toString() {
-        StringBuilder sbU = outline.U("ModelMemberVerificationFormResponse(lastSeen=");
-        sbU.append(this.lastSeen);
-        sbU.append(", applicationStatus=");
-        sbU.append(this.applicationStatus);
-        sbU.append(", formResponses=");
-        sbU.append(this.formResponses);
-        sbU.append(", guildId=");
-        return outline.G(sbU, this.guildId, ")");
+        StringBuilder sbM833U = C1643a.m833U("ModelMemberVerificationFormResponse(lastSeen=");
+        sbM833U.append(this.lastSeen);
+        sbM833U.append(", applicationStatus=");
+        sbM833U.append(this.applicationStatus);
+        sbM833U.append(", formResponses=");
+        sbM833U.append(this.formResponses);
+        sbM833U.append(", guildId=");
+        return C1643a.m819G(sbM833U, this.guildId, ")");
     }
 }

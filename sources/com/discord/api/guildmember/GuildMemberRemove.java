@@ -1,8 +1,8 @@
 package com.discord.api.guildmember;
 
-import b.d.b.a.outline;
 import com.discord.api.user.User;
-import d0.z.d.Intrinsics3;
+import p007b.p100d.p104b.p105a.C1643a;
+import p507d0.p592z.p594d.C12238m;
 
 /* JADX INFO: compiled from: GuildMemberRemove.kt */
 /* JADX INFO: loaded from: classes.dex */
@@ -28,7 +28,7 @@ public final /* data */ class GuildMemberRemove {
             return false;
         }
         GuildMemberRemove guildMemberRemove = (GuildMemberRemove) other;
-        return this.guildId == guildMemberRemove.guildId && Intrinsics3.areEqual(this.user, guildMemberRemove.user);
+        return this.guildId == guildMemberRemove.guildId && C12238m.areEqual(this.user, guildMemberRemove.user);
     }
 
     public int hashCode() {
@@ -39,11 +39,11 @@ public final /* data */ class GuildMemberRemove {
     }
 
     public String toString() {
-        StringBuilder sbU = outline.U("GuildMemberRemove(guildId=");
-        sbU.append(this.guildId);
-        sbU.append(", user=");
-        sbU.append(this.user);
-        sbU.append(")");
-        return sbU.toString();
+        StringBuilder sbM833U = C1643a.m833U("GuildMemberRemove(guildId=");
+        sbM833U.append(this.guildId);
+        sbM833U.append(", user=");
+        sbM833U.append(this.user);
+        sbM833U.append(")");
+        return sbM833U.toString();
     }
 }

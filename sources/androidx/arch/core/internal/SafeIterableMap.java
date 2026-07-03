@@ -2,10 +2,10 @@ package androidx.arch.core.internal;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.RestrictTo;
-import b.d.b.a.outline;
 import java.util.Iterator;
 import java.util.Map;
 import java.util.WeakHashMap;
+import p007b.p100d.p104b.p105a.C1643a;
 
 /* JADX INFO: loaded from: classes.dex */
 @RestrictTo({RestrictTo.Scope.LIBRARY_GROUP_PREFIX})
@@ -320,15 +320,15 @@ public class SafeIterableMap<K, V> implements Iterable<Map.Entry<K, V>> {
     }
 
     public String toString() {
-        StringBuilder sbU = outline.U("[");
+        StringBuilder sbM833U = C1643a.m833U("[");
         Iterator<Map.Entry<K, V>> it = iterator();
         while (it.hasNext()) {
-            sbU.append(it.next().toString());
+            sbM833U.append(it.next().toString());
             if (it.hasNext()) {
-                sbU.append(", ");
+                sbM833U.append(", ");
             }
         }
-        sbU.append("]");
-        return sbU.toString();
+        sbM833U.append("]");
+        return sbM833U.toString();
     }
 }

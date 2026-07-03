@@ -2,9 +2,9 @@ package com.discord.widgets.chat.input.autocomplete;
 
 import com.discord.models.commands.ApplicationCommandOption;
 import com.discord.utilities.textprocessing.SimpleRoundedBackgroundSpan;
-import d0.z.d.Intrinsics3;
 import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.DefaultConstructorMarker;
+import p507d0.p592z.p594d.C12238m;
 
 /* JADX INFO: compiled from: ApplicationCommandSpan.kt */
 /* JADX INFO: loaded from: classes2.dex */
@@ -27,7 +27,7 @@ public final class ApplicationCommandSpan extends SimpleRoundedBackgroundSpan {
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public ApplicationCommandSpan(ApplicationCommandOption applicationCommandOption, String str, int i, int i2, int i3, int i4, int i5, float f, Integer num, boolean z2, Function1<? super String, String> function1) {
         super(i, i2, i3, i4, i5, f, num, z2, function1, 0, 512, null);
-        Intrinsics3.checkNotNullParameter(applicationCommandOption, "commandOption");
+        C12238m.checkNotNullParameter(applicationCommandOption, "commandOption");
         this.commandOption = applicationCommandOption;
         this.commandValue = str;
     }

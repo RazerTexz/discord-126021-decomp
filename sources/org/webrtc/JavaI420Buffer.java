@@ -1,10 +1,10 @@
 package org.webrtc;
 
 import androidx.annotation.Nullable;
-import b.d.b.a.outline;
 import java.nio.ByteBuffer;
 import org.webrtc.JniCommon;
 import org.webrtc.VideoFrame;
+import p007b.p100d.p104b.p105a.C1643a;
 
 /* JADX INFO: loaded from: classes3.dex */
 public class JavaI420Buffer implements VideoFrame.I420Buffer {
@@ -59,9 +59,9 @@ public class JavaI420Buffer implements VideoFrame.I420Buffer {
         if (byteBuffer.capacity() >= i4) {
             return;
         }
-        StringBuilder sbV = outline.V("Buffer must be at least ", i4, " bytes, but was ");
-        sbV.append(byteBuffer.capacity());
-        throw new IllegalArgumentException(sbV.toString());
+        StringBuilder sbM834V = C1643a.m834V("Buffer must be at least ", i4, " bytes, but was ");
+        sbM834V.append(byteBuffer.capacity());
+        throw new IllegalArgumentException(sbM834V.toString());
     }
 
     public static VideoFrame.Buffer cropAndScaleI420(final VideoFrame.I420Buffer i420Buffer, int i, int i2, int i3, int i4, int i5, int i6) {

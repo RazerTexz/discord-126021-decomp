@@ -2,8 +2,6 @@ package com.discord.widgets.guilds.profile;
 
 import android.content.Context;
 import androidx.annotation.MainThread;
-import b.a.d.AppViewModel;
-import b.d.b.a.outline;
 import com.discord.api.guildmember.PatchGuildMemberBody;
 import com.discord.models.guild.Guild;
 import com.discord.models.member.GuildMember;
@@ -15,15 +13,10 @@ import com.discord.stores.StoreUser;
 import com.discord.utilities.channel.GuildChannelsInfo;
 import com.discord.utilities.error.Error;
 import com.discord.utilities.icon.IconUtils;
+import com.discord.utilities.p501rx.ObservableExtensionsKt;
 import com.discord.utilities.rest.RestAPI;
-import com.discord.utilities.rx.ObservableExtensionsKt;
 import com.discord.utilities.user.UserUtils;
 import com.discord.widgets.guilds.profile.WidgetChangeGuildIdentityViewModel;
-import d0.t.CollectionsJVM;
-import d0.t._Collections;
-import d0.z.d.Intrinsics3;
-import d0.z.d.Lambda;
-import j0.k.Func1;
 import java.util.Collection;
 import java.util.List;
 import java.util.Map;
@@ -32,14 +25,21 @@ import kotlin.Unit;
 import kotlin.jvm.functions.Function0;
 import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.DefaultConstructorMarker;
-import rx.Observable;
-import rx.Subscription;
-import rx.functions.Func4;
-import rx.subjects.PublishSubject;
+import p007b.p008a.p018d.AbstractC0859d0;
+import p007b.p100d.p104b.p105a.C1643a;
+import p507d0.p580t.C12145m;
+import p507d0.p580t.C12163u;
+import p507d0.p592z.p594d.AbstractC12240o;
+import p507d0.p592z.p594d.C12238m;
+import p637j0.p641k.InterfaceC12589b;
+import p658rx.Observable;
+import p658rx.Subscription;
+import p658rx.functions.Func4;
+import p658rx.subjects.PublishSubject;
 
 /* JADX INFO: compiled from: WidgetChangeGuildIdentityViewModel.kt */
 /* JADX INFO: loaded from: classes2.dex */
-public final class WidgetChangeGuildIdentityViewModel extends AppViewModel<ViewState> {
+public final class WidgetChangeGuildIdentityViewModel extends AbstractC0859d0<ViewState> {
 
     /* JADX INFO: renamed from: Companion, reason: from kotlin metadata */
     public static final Companion INSTANCE = new Companion(null);
@@ -50,22 +50,22 @@ public final class WidgetChangeGuildIdentityViewModel extends AppViewModel<ViewS
     private boolean trackedModalOpen;
     private boolean trackedUpsell;
 
-    /* JADX INFO: renamed from: com.discord.widgets.guilds.profile.WidgetChangeGuildIdentityViewModel$1, reason: invalid class name */
+    /* JADX INFO: renamed from: com.discord.widgets.guilds.profile.WidgetChangeGuildIdentityViewModel$1 */
     /* JADX INFO: compiled from: WidgetChangeGuildIdentityViewModel.kt */
-    public static final class AnonymousClass1 extends Lambda implements Function1<StoreState, Unit> {
-        public AnonymousClass1() {
+    public static final class C87731 extends AbstractC12240o implements Function1<StoreState, Unit> {
+        public C87731() {
             super(1);
         }
 
         @Override // kotlin.jvm.functions.Function1
         public /* bridge */ /* synthetic */ Unit invoke(StoreState storeState) {
             invoke2(storeState);
-            return Unit.a;
+            return Unit.f27425a;
         }
 
         /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
         public final void invoke2(StoreState storeState) {
-            Intrinsics3.checkNotNullParameter(storeState, "storeState");
+            C12238m.checkNotNullParameter(storeState, "storeState");
             WidgetChangeGuildIdentityViewModel.this.handleStoreState(storeState);
         }
     }
@@ -76,11 +76,11 @@ public final class WidgetChangeGuildIdentityViewModel extends AppViewModel<ViewS
         }
 
         private final Observable<StoreState> observeStoreState(final long guildId, StoreGuilds storeGuilds, StoreUser storeUser) {
-            Observable<StoreState> observableH = Observable.h(GuildChannelsInfo.INSTANCE.get(guildId), storeGuilds.observeGuild(guildId), StoreUser.observeMe$default(storeUser, false, 1, null), StoreUser.observeMe$default(storeUser, false, 1, null).Y(new Func1<MeUser, Observable<? extends GuildMember>>() { // from class: com.discord.widgets.guilds.profile.WidgetChangeGuildIdentityViewModel$Companion$observeStoreState$1
-                @Override // j0.k.Func1
+            Observable<StoreState> observableM11073h = Observable.m11073h(GuildChannelsInfo.INSTANCE.get(guildId), storeGuilds.observeGuild(guildId), StoreUser.observeMe$default(storeUser, false, 1, null), StoreUser.observeMe$default(storeUser, false, 1, null).m11099Y(new InterfaceC12589b<MeUser, Observable<? extends GuildMember>>() { // from class: com.discord.widgets.guilds.profile.WidgetChangeGuildIdentityViewModel$Companion$observeStoreState$1
+                @Override // p637j0.p641k.InterfaceC12589b
                 public final Observable<? extends GuildMember> call(final MeUser meUser) {
-                    return StoreStream.INSTANCE.getGuilds().observeComputed(guildId, CollectionsJVM.listOf(Long.valueOf(meUser.getId()))).G(new Func1<Map<Long, ? extends GuildMember>, GuildMember>() { // from class: com.discord.widgets.guilds.profile.WidgetChangeGuildIdentityViewModel$Companion$observeStoreState$1.1
-                        @Override // j0.k.Func1
+                    return StoreStream.INSTANCE.getGuilds().observeComputed(guildId, C12145m.listOf(Long.valueOf(meUser.getId()))).m11083G(new InterfaceC12589b<Map<Long, ? extends GuildMember>, GuildMember>() { // from class: com.discord.widgets.guilds.profile.WidgetChangeGuildIdentityViewModel$Companion$observeStoreState$1.1
+                        @Override // p637j0.p641k.InterfaceC12589b
                         public /* bridge */ /* synthetic */ GuildMember call(Map<Long, ? extends GuildMember> map) {
                             return call2((Map<Long, GuildMember>) map);
                         }
@@ -92,15 +92,15 @@ public final class WidgetChangeGuildIdentityViewModel extends AppViewModel<ViewS
                     });
                 }
             }), new Func4<GuildChannelsInfo, Guild, MeUser, GuildMember, StoreState>() { // from class: com.discord.widgets.guilds.profile.WidgetChangeGuildIdentityViewModel$Companion$observeStoreState$2
-                @Override // rx.functions.Func4
+                @Override // p658rx.functions.Func4
                 public final WidgetChangeGuildIdentityViewModel.StoreState call(GuildChannelsInfo guildChannelsInfo, Guild guild, MeUser meUser, GuildMember guildMember) {
-                    Intrinsics3.checkNotNullExpressionValue(meUser, "meUser");
-                    Intrinsics3.checkNotNullExpressionValue(guildChannelsInfo, "guildChannelsInfo");
+                    C12238m.checkNotNullExpressionValue(meUser, "meUser");
+                    C12238m.checkNotNullExpressionValue(guildChannelsInfo, "guildChannelsInfo");
                     return new WidgetChangeGuildIdentityViewModel.StoreState(guild, meUser, guildMember, guildChannelsInfo);
                 }
             });
-            Intrinsics3.checkNotNullExpressionValue(observableH, "Observable.combineLatest…uildChannelsInfo)\n      }");
-            return observableH;
+            C12238m.checkNotNullExpressionValue(observableM11073h, "Observable.combineLatest…uildChannelsInfo)\n      }");
+            return observableM11073h;
         }
 
         public static /* synthetic */ Observable observeStoreState$default(Companion companion, long j, StoreGuilds storeGuilds, StoreUser storeUser, int i, Object obj) {
@@ -148,7 +148,7 @@ public final class WidgetChangeGuildIdentityViewModel extends AppViewModel<ViewS
 
             public boolean equals(Object other) {
                 if (this != other) {
-                    return (other instanceof MemberUpdateFailed) && Intrinsics3.areEqual(this.errorMessage, ((MemberUpdateFailed) other).errorMessage);
+                    return (other instanceof MemberUpdateFailed) && C12238m.areEqual(this.errorMessage, ((MemberUpdateFailed) other).errorMessage);
                 }
                 return true;
             }
@@ -166,7 +166,7 @@ public final class WidgetChangeGuildIdentityViewModel extends AppViewModel<ViewS
             }
 
             public String toString() {
-                return outline.J(outline.U("MemberUpdateFailed(errorMessage="), this.errorMessage, ")");
+                return C1643a.m822J(C1643a.m833U("MemberUpdateFailed(errorMessage="), this.errorMessage, ")");
             }
         }
 
@@ -195,8 +195,8 @@ public final class WidgetChangeGuildIdentityViewModel extends AppViewModel<ViewS
         private final GuildMember member;
 
         public StoreState(Guild guild, MeUser meUser, GuildMember guildMember, GuildChannelsInfo guildChannelsInfo) {
-            Intrinsics3.checkNotNullParameter(meUser, "meUser");
-            Intrinsics3.checkNotNullParameter(guildChannelsInfo, "guildChannelsInfo");
+            C12238m.checkNotNullParameter(meUser, "meUser");
+            C12238m.checkNotNullParameter(guildChannelsInfo, "guildChannelsInfo");
             this.guild = guild;
             this.meUser = meUser;
             this.member = guildMember;
@@ -240,8 +240,8 @@ public final class WidgetChangeGuildIdentityViewModel extends AppViewModel<ViewS
         }
 
         public final StoreState copy(Guild guild, MeUser meUser, GuildMember member, GuildChannelsInfo guildChannelsInfo) {
-            Intrinsics3.checkNotNullParameter(meUser, "meUser");
-            Intrinsics3.checkNotNullParameter(guildChannelsInfo, "guildChannelsInfo");
+            C12238m.checkNotNullParameter(meUser, "meUser");
+            C12238m.checkNotNullParameter(guildChannelsInfo, "guildChannelsInfo");
             return new StoreState(guild, meUser, member, guildChannelsInfo);
         }
 
@@ -253,7 +253,7 @@ public final class WidgetChangeGuildIdentityViewModel extends AppViewModel<ViewS
                 return false;
             }
             StoreState storeState = (StoreState) other;
-            return Intrinsics3.areEqual(this.guild, storeState.guild) && Intrinsics3.areEqual(this.meUser, storeState.meUser) && Intrinsics3.areEqual(this.member, storeState.member) && Intrinsics3.areEqual(this.guildChannelsInfo, storeState.guildChannelsInfo);
+            return C12238m.areEqual(this.guild, storeState.guild) && C12238m.areEqual(this.meUser, storeState.meUser) && C12238m.areEqual(this.member, storeState.member) && C12238m.areEqual(this.guildChannelsInfo, storeState.guildChannelsInfo);
         }
 
         public final Guild getGuild() {
@@ -284,16 +284,16 @@ public final class WidgetChangeGuildIdentityViewModel extends AppViewModel<ViewS
         }
 
         public String toString() {
-            StringBuilder sbU = outline.U("StoreState(guild=");
-            sbU.append(this.guild);
-            sbU.append(", meUser=");
-            sbU.append(this.meUser);
-            sbU.append(", member=");
-            sbU.append(this.member);
-            sbU.append(", guildChannelsInfo=");
-            sbU.append(this.guildChannelsInfo);
-            sbU.append(")");
-            return sbU.toString();
+            StringBuilder sbM833U = C1643a.m833U("StoreState(guild=");
+            sbM833U.append(this.guild);
+            sbM833U.append(", meUser=");
+            sbM833U.append(this.meUser);
+            sbM833U.append(", member=");
+            sbM833U.append(this.member);
+            sbM833U.append(", guildChannelsInfo=");
+            sbM833U.append(this.guildChannelsInfo);
+            sbM833U.append(")");
+            return sbM833U.toString();
         }
     }
 
@@ -385,9 +385,9 @@ public final class WidgetChangeGuildIdentityViewModel extends AppViewModel<ViewS
             }
 
             public final Loaded copy(Guild guild, MeUser meUser, GuildMember member, boolean canChangeNickname, String currentNickname, NullSerializable<String> currentAvatar, boolean dimmed) {
-                Intrinsics3.checkNotNullParameter(guild, "guild");
-                Intrinsics3.checkNotNullParameter(meUser, "meUser");
-                Intrinsics3.checkNotNullParameter(member, "member");
+                C12238m.checkNotNullParameter(guild, "guild");
+                C12238m.checkNotNullParameter(meUser, "meUser");
+                C12238m.checkNotNullParameter(member, "member");
                 return new Loaded(guild, meUser, member, canChangeNickname, currentNickname, currentAvatar, dimmed);
             }
 
@@ -399,7 +399,7 @@ public final class WidgetChangeGuildIdentityViewModel extends AppViewModel<ViewS
                     return false;
                 }
                 Loaded loaded = (Loaded) other;
-                return Intrinsics3.areEqual(this.guild, loaded.guild) && Intrinsics3.areEqual(this.meUser, loaded.meUser) && Intrinsics3.areEqual(this.member, loaded.member) && this.canChangeNickname == loaded.canChangeNickname && Intrinsics3.areEqual(this.currentNickname, loaded.currentNickname) && Intrinsics3.areEqual(this.currentAvatar, loaded.currentAvatar) && this.dimmed == loaded.dimmed;
+                return C12238m.areEqual(this.guild, loaded.guild) && C12238m.areEqual(this.meUser, loaded.meUser) && C12238m.areEqual(this.member, loaded.member) && this.canChangeNickname == loaded.canChangeNickname && C12238m.areEqual(this.currentNickname, loaded.currentNickname) && C12238m.areEqual(this.currentAvatar, loaded.currentAvatar) && this.dimmed == loaded.dimmed;
             }
 
             public final boolean getCanChangeNickname() {
@@ -482,29 +482,29 @@ public final class WidgetChangeGuildIdentityViewModel extends AppViewModel<ViewS
             }
 
             public String toString() {
-                StringBuilder sbU = outline.U("Loaded(guild=");
-                sbU.append(this.guild);
-                sbU.append(", meUser=");
-                sbU.append(this.meUser);
-                sbU.append(", member=");
-                sbU.append(this.member);
-                sbU.append(", canChangeNickname=");
-                sbU.append(this.canChangeNickname);
-                sbU.append(", currentNickname=");
-                sbU.append(this.currentNickname);
-                sbU.append(", currentAvatar=");
-                sbU.append(this.currentAvatar);
-                sbU.append(", dimmed=");
-                return outline.O(sbU, this.dimmed, ")");
+                StringBuilder sbM833U = C1643a.m833U("Loaded(guild=");
+                sbM833U.append(this.guild);
+                sbM833U.append(", meUser=");
+                sbM833U.append(this.meUser);
+                sbM833U.append(", member=");
+                sbM833U.append(this.member);
+                sbM833U.append(", canChangeNickname=");
+                sbM833U.append(this.canChangeNickname);
+                sbM833U.append(", currentNickname=");
+                sbM833U.append(this.currentNickname);
+                sbM833U.append(", currentAvatar=");
+                sbM833U.append(this.currentAvatar);
+                sbM833U.append(", dimmed=");
+                return C1643a.m827O(sbM833U, this.dimmed, ")");
             }
 
             /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
             public Loaded(Guild guild, MeUser meUser, GuildMember guildMember, boolean z2, String str, NullSerializable<String> nullSerializable, boolean z3) {
                 String forGuildMember$default;
                 super(null);
-                Intrinsics3.checkNotNullParameter(guild, "guild");
-                Intrinsics3.checkNotNullParameter(meUser, "meUser");
-                Intrinsics3.checkNotNullParameter(guildMember, "member");
+                C12238m.checkNotNullParameter(guild, "guild");
+                C12238m.checkNotNullParameter(meUser, "meUser");
+                C12238m.checkNotNullParameter(guildMember, "member");
                 this.guild = guild;
                 this.meUser = meUser;
                 this.member = guildMember;
@@ -513,21 +513,21 @@ public final class WidgetChangeGuildIdentityViewModel extends AppViewModel<ViewS
                 this.currentAvatar = nullSerializable;
                 this.dimmed = z3;
                 String nick = guildMember.getNick();
-                boolean z4 = (Intrinsics3.areEqual(nick == null ? "" : nick, str) ^ true) || nullSerializable != null;
+                boolean z4 = (C12238m.areEqual(nick == null ? "" : nick, str) ^ true) || nullSerializable != null;
                 this.isDirty = z4;
                 this.showSaveFab = z4;
                 if (!(nullSerializable instanceof NullSerializable)) {
                     forGuildMember$default = guildMember.hasAvatar() ? IconUtils.getForGuildMember$default(IconUtils.INSTANCE, guildMember, null, true, 2, null) : IconUtils.getForUser$default(meUser, true, null, 4, null);
-                } else if (nullSerializable instanceof NullSerializable.b) {
-                    forGuildMember$default = (String) ((NullSerializable.b) nullSerializable).a();
+                } else if (nullSerializable instanceof NullSerializable.C5566b) {
+                    forGuildMember$default = (String) ((NullSerializable.C5566b) nullSerializable).mo8429a();
                 } else {
-                    if (!(nullSerializable instanceof NullSerializable.a)) {
+                    if (!(nullSerializable instanceof NullSerializable.C5565a)) {
                         throw new NoWhenBranchMatchedException();
                     }
                     forGuildMember$default = IconUtils.getForUser$default(meUser, true, null, 4, null);
                 }
                 this.displayedAvatarURL = forGuildMember$default;
-                this.displayingGuildAvatar = nullSerializable instanceof NullSerializable ? nullSerializable instanceof NullSerializable.b : guildMember.hasAvatar();
+                this.displayingGuildAvatar = nullSerializable instanceof NullSerializable ? nullSerializable instanceof NullSerializable.C5566b : guildMember.hasAvatar();
                 this.shouldUpsell = !UserUtils.INSTANCE.isPremiumTier2(meUser);
             }
         }
@@ -549,13 +549,13 @@ public final class WidgetChangeGuildIdentityViewModel extends AppViewModel<ViewS
         }
     }
 
-    /* JADX INFO: renamed from: com.discord.widgets.guilds.profile.WidgetChangeGuildIdentityViewModel$saveMemberChanges$1, reason: invalid class name */
+    /* JADX INFO: renamed from: com.discord.widgets.guilds.profile.WidgetChangeGuildIdentityViewModel$saveMemberChanges$1 */
     /* JADX INFO: compiled from: WidgetChangeGuildIdentityViewModel.kt */
-    public static final class AnonymousClass1 extends Lambda implements Function1<Error, Unit> {
+    public static final class C87751 extends AbstractC12240o implements Function1<Error, Unit> {
         public final /* synthetic */ ViewState.Loaded $viewState;
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-        public AnonymousClass1(ViewState.Loaded loaded) {
+        public C87751(ViewState.Loaded loaded) {
             super(1);
             this.$viewState = loaded;
         }
@@ -563,7 +563,7 @@ public final class WidgetChangeGuildIdentityViewModel extends AppViewModel<ViewS
         @Override // kotlin.jvm.functions.Function1
         public /* bridge */ /* synthetic */ Unit invoke(Error error) {
             invoke2(error);
-            return Unit.a;
+            return Unit.f27425a;
         }
 
         /* JADX WARN: Code duplicated, block: B:7:0x005f  */
@@ -571,42 +571,42 @@ public final class WidgetChangeGuildIdentityViewModel extends AppViewModel<ViewS
         /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
         public final void invoke2(Error error) {
             String message;
-            Intrinsics3.checkNotNullParameter(error, "it");
+            C12238m.checkNotNullParameter(error, "it");
             Error.Response response = error.getResponse();
-            Intrinsics3.checkNotNullExpressionValue(response, "it.response");
+            C12238m.checkNotNullExpressionValue(response, "it.response");
             if (!response.getMessages().values().isEmpty()) {
                 Error.Response response2 = error.getResponse();
-                Intrinsics3.checkNotNullExpressionValue(response2, "it.response");
-                Object objFirst = _Collections.first(response2.getMessages().values());
-                Intrinsics3.checkNotNullExpressionValue(objFirst, "it.response.messages.values.first()");
+                C12238m.checkNotNullExpressionValue(response2, "it.response");
+                Object objFirst = C12163u.first(response2.getMessages().values());
+                C12238m.checkNotNullExpressionValue(objFirst, "it.response.messages.values.first()");
                 if (!((Collection) objFirst).isEmpty()) {
                     Error.Response response3 = error.getResponse();
-                    Intrinsics3.checkNotNullExpressionValue(response3, "it.response");
-                    Object objFirst2 = _Collections.first(response3.getMessages().values());
-                    Intrinsics3.checkNotNullExpressionValue(objFirst2, "it.response.messages.values.first()");
-                    message = (String) _Collections.first((List) objFirst2);
+                    C12238m.checkNotNullExpressionValue(response3, "it.response");
+                    Object objFirst2 = C12163u.first(response3.getMessages().values());
+                    C12238m.checkNotNullExpressionValue(objFirst2, "it.response.messages.values.first()");
+                    message = (String) C12163u.first((List) objFirst2);
                 } else {
                     Error.Response response4 = error.getResponse();
-                    Intrinsics3.checkNotNullExpressionValue(response4, "it.response");
+                    C12238m.checkNotNullExpressionValue(response4, "it.response");
                     message = response4.getMessage();
                 }
             } else {
                 Error.Response response5 = error.getResponse();
-                Intrinsics3.checkNotNullExpressionValue(response5, "it.response");
+                C12238m.checkNotNullExpressionValue(response5, "it.response");
                 message = response5.getMessage();
             }
-            WidgetChangeGuildIdentityViewModel.this.eventSubject.k.onNext((T) new Event.MemberUpdateFailed(message));
+            WidgetChangeGuildIdentityViewModel.this.eventSubject.f27650k.onNext((T) new Event.MemberUpdateFailed(message));
             WidgetChangeGuildIdentityViewModel.this.updateViewState(ViewState.Loaded.copy$default(this.$viewState, null, null, null, false, null, null, false, 63, null));
         }
     }
 
-    /* JADX INFO: renamed from: com.discord.widgets.guilds.profile.WidgetChangeGuildIdentityViewModel$saveMemberChanges$2, reason: invalid class name */
+    /* JADX INFO: renamed from: com.discord.widgets.guilds.profile.WidgetChangeGuildIdentityViewModel$saveMemberChanges$2 */
     /* JADX INFO: compiled from: WidgetChangeGuildIdentityViewModel.kt */
-    public static final class AnonymousClass2 extends Lambda implements Function1<com.discord.api.guildmember.GuildMember, Unit> {
+    public static final class C87762 extends AbstractC12240o implements Function1<com.discord.api.guildmember.GuildMember, Unit> {
         public final /* synthetic */ ViewState.Loaded $viewState;
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-        public AnonymousClass2(ViewState.Loaded loaded) {
+        public C87762(ViewState.Loaded loaded) {
             super(1);
             this.$viewState = loaded;
         }
@@ -614,14 +614,14 @@ public final class WidgetChangeGuildIdentityViewModel extends AppViewModel<ViewS
         @Override // kotlin.jvm.functions.Function1
         public /* bridge */ /* synthetic */ Unit invoke(com.discord.api.guildmember.GuildMember guildMember) {
             invoke2(guildMember);
-            return Unit.a;
+            return Unit.f27425a;
         }
 
         /* JADX WARN: Type inference incomplete: some casts might be missing */
         /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
         public final void invoke2(com.discord.api.guildmember.GuildMember guildMember) {
-            Intrinsics3.checkNotNullParameter(guildMember, "it");
-            WidgetChangeGuildIdentityViewModel.this.eventSubject.k.onNext((T) Event.MemberUpdateSucceeded.INSTANCE);
+            C12238m.checkNotNullParameter(guildMember, "it");
+            WidgetChangeGuildIdentityViewModel.this.eventSubject.f27650k.onNext((T) Event.MemberUpdateSucceeded.INSTANCE);
             WidgetChangeGuildIdentityViewModel.this.updateViewState(ViewState.Loaded.copy$default(this.$viewState, null, null, null, false, null, null, false, 63, null));
         }
     }
@@ -692,7 +692,7 @@ public final class WidgetChangeGuildIdentityViewModel extends AppViewModel<ViewS
 
     @MainThread
     public final void saveMemberChanges(Context context) {
-        Intrinsics3.checkNotNullParameter(context, "context");
+        C12238m.checkNotNullParameter(context, "context");
         ViewState viewState = getViewState();
         if (!(viewState instanceof ViewState.Loaded)) {
             viewState = null;
@@ -707,7 +707,7 @@ public final class WidgetChangeGuildIdentityViewModel extends AppViewModel<ViewS
             if (nick == null) {
                 nick = "";
             }
-            ObservableExtensionsKt.appSubscribe(ObservableExtensionsKt.ui$default(ObservableExtensionsKt.restSubscribeOn$default(restAPI.updateMeGuildMember(id2, new PatchGuildMemberBody(Intrinsics3.areEqual(currentNickname, nick) ^ true ? loaded.getCurrentNickname() : null, loaded.getCurrentAvatar(), null, null, 12)), false, 1, null), this, null, 2, null), (Class<?>) WidgetChangeGuildIdentityViewModel.class, (58 & 2) != 0 ? null : context, (Function1<? super Subscription, Unit>) ((58 & 4) != 0 ? null : null), (Function1<? super Error, Unit>) ((58 & 8) != 0 ? null : new AnonymousClass1(loaded)), (Function0<Unit>) ((58 & 16) != 0 ? ObservableExtensionsKt.AnonymousClass1.INSTANCE : null), (Function0<Unit>) ((58 & 32) != 0 ? ObservableExtensionsKt.AnonymousClass2.INSTANCE : null), new AnonymousClass2(loaded));
+            ObservableExtensionsKt.appSubscribe(ObservableExtensionsKt.ui$default(ObservableExtensionsKt.restSubscribeOn$default(restAPI.updateMeGuildMember(id2, new PatchGuildMemberBody(C12238m.areEqual(currentNickname, nick) ^ true ? loaded.getCurrentNickname() : null, loaded.getCurrentAvatar(), null, null, 12)), false, 1, null), this, null, 2, null), (Class<?>) WidgetChangeGuildIdentityViewModel.class, (58 & 2) != 0 ? null : context, (Function1<? super Subscription, Unit>) ((58 & 4) != 0 ? null : null), (Function1<? super Error, Unit>) ((58 & 8) != 0 ? null : new C87751(loaded)), (Function0<Unit>) ((58 & 16) != 0 ? ObservableExtensionsKt.C68791.INSTANCE : null), (Function0<Unit>) ((58 & 32) != 0 ? ObservableExtensionsKt.C68802.INSTANCE : null), new C87762(loaded));
         }
     }
 
@@ -727,19 +727,19 @@ public final class WidgetChangeGuildIdentityViewModel extends AppViewModel<ViewS
         }
         ViewState.Loaded loaded = (ViewState.Loaded) viewState;
         if (loaded != null) {
-            updateViewState(ViewState.Loaded.copy$default(loaded, null, null, null, false, null, dataUrl != null ? new NullSerializable.b(dataUrl) : new NullSerializable.a(null, 1), false, 95, null));
+            updateViewState(ViewState.Loaded.copy$default(loaded, null, null, null, false, null, dataUrl != null ? new NullSerializable.C5566b(dataUrl) : new NullSerializable.C5565a(null, 1), false, 95, null));
         }
     }
 
     @MainThread
     public final void updateNickname(String nickname) {
-        Intrinsics3.checkNotNullParameter(nickname, "nickname");
+        C12238m.checkNotNullParameter(nickname, "nickname");
         ViewState viewState = getViewState();
         if (!(viewState instanceof ViewState.Loaded)) {
             viewState = null;
         }
         ViewState.Loaded loaded = (ViewState.Loaded) viewState;
-        if (loaded == null || !(!Intrinsics3.areEqual(nickname, loaded.getCurrentNickname()))) {
+        if (loaded == null || !(!C12238m.areEqual(nickname, loaded.getCurrentNickname()))) {
             return;
         }
         updateViewState(ViewState.Loaded.copy$default(loaded, null, null, null, false, nickname, null, false, 111, null));
@@ -748,14 +748,14 @@ public final class WidgetChangeGuildIdentityViewModel extends AppViewModel<ViewS
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public WidgetChangeGuildIdentityViewModel(long j, String str, RestAPI restAPI) {
         super(ViewState.Loading.INSTANCE);
-        Intrinsics3.checkNotNullParameter(str, "sourceSection");
-        Intrinsics3.checkNotNullParameter(restAPI, "restAPI");
+        C12238m.checkNotNullParameter(str, "sourceSection");
+        C12238m.checkNotNullParameter(restAPI, "restAPI");
         this.guildId = j;
         this.sourceSection = str;
         this.restAPI = restAPI;
-        PublishSubject<Event> publishSubjectK0 = PublishSubject.k0();
-        Intrinsics3.checkNotNullExpressionValue(publishSubjectK0, "PublishSubject.create()");
-        this.eventSubject = publishSubjectK0;
-        ObservableExtensionsKt.appSubscribe(ObservableExtensionsKt.ui$default(ObservableExtensionsKt.computationLatest(Companion.observeStoreState$default(INSTANCE, j, null, null, 6, null)), this, null, 2, null), (Class<?>) WidgetChangeGuildIdentityViewModel.class, (58 & 2) != 0 ? null : null, (Function1<? super Subscription, Unit>) ((58 & 4) != 0 ? null : null), (Function1<? super Error, Unit>) ((58 & 8) != 0 ? null : null), (Function0<Unit>) ((58 & 16) != 0 ? ObservableExtensionsKt.AnonymousClass1.INSTANCE : null), (Function0<Unit>) ((58 & 32) != 0 ? ObservableExtensionsKt.AnonymousClass2.INSTANCE : null), new AnonymousClass1());
+        PublishSubject<Event> publishSubjectM11133k0 = PublishSubject.m11133k0();
+        C12238m.checkNotNullExpressionValue(publishSubjectM11133k0, "PublishSubject.create()");
+        this.eventSubject = publishSubjectM11133k0;
+        ObservableExtensionsKt.appSubscribe(ObservableExtensionsKt.ui$default(ObservableExtensionsKt.computationLatest(Companion.observeStoreState$default(INSTANCE, j, null, null, 6, null)), this, null, 2, null), (Class<?>) WidgetChangeGuildIdentityViewModel.class, (58 & 2) != 0 ? null : null, (Function1<? super Subscription, Unit>) ((58 & 4) != 0 ? null : null), (Function1<? super Error, Unit>) ((58 & 8) != 0 ? null : null), (Function0<Unit>) ((58 & 16) != 0 ? ObservableExtensionsKt.C68791.INSTANCE : null), (Function0<Unit>) ((58 & 32) != 0 ? ObservableExtensionsKt.C68802.INSTANCE : null), new C87731());
     }
 }

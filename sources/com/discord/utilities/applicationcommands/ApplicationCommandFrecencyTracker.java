@@ -1,10 +1,10 @@
 package com.discord.utilities.applicationcommands;
 
 import com.discord.utilities.frecency.FrecencyTracker;
-import d0.z.d.Intrinsics3;
 import java.util.Iterator;
 import java.util.List;
 import kotlin.jvm.internal.DefaultConstructorMarker;
+import p507d0.p592z.p594d.C12238m;
 
 /* JADX INFO: compiled from: ApplicationCommandFrecencyTracker.kt */
 /* JADX INFO: loaded from: classes2.dex */
@@ -41,7 +41,7 @@ public final class ApplicationCommandFrecencyTracker extends FrecencyTracker<Str
 
     @Override // com.discord.utilities.frecency.FrecencyTracker
     public int computeScore(List<Long> list, long j) {
-        Intrinsics3.checkNotNullParameter(list, "$this$computeScore");
+        C12238m.checkNotNullParameter(list, "$this$computeScore");
         Iterator<T> it = list.iterator();
         int daysWeight = 0;
         while (it.hasNext()) {

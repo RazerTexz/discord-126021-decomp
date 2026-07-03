@@ -10,21 +10,22 @@ import com.google.android.material.button.MaterialButton;
 /* JADX INFO: loaded from: classes.dex */
 public final class WidgetClientOutdatedBinding implements ViewBinding {
 
+    /* JADX INFO: renamed from: a */
     @NonNull
-    public final RelativeLayout a;
+    public final RelativeLayout f16397a;
 
-    /* JADX INFO: renamed from: b, reason: collision with root package name */
+    /* JADX INFO: renamed from: b */
     @NonNull
-    public final MaterialButton f2351b;
+    public final MaterialButton f16398b;
 
     public WidgetClientOutdatedBinding(@NonNull RelativeLayout relativeLayout, @NonNull LinearLayout linearLayout, @NonNull MaterialButton materialButton) {
-        this.a = relativeLayout;
-        this.f2351b = materialButton;
+        this.f16397a = relativeLayout;
+        this.f16398b = materialButton;
     }
 
     @Override // androidx.viewbinding.ViewBinding
     @NonNull
     public View getRoot() {
-        return this.a;
+        return this.f16397a;
     }
 }

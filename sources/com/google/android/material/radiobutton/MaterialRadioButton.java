@@ -1,5 +1,6 @@
 package com.google.android.material.radiobutton;
 
+import android.R;
 import android.content.Context;
 import android.content.res.ColorStateList;
 import android.content.res.TypedArray;
@@ -8,7 +9,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.widget.AppCompatRadioButton;
 import androidx.core.widget.CompoundButtonCompat;
-import com.google.android.material.R;
+import com.google.android.material.C10817R;
 import com.google.android.material.color.MaterialColors;
 import com.google.android.material.internal.ThemeEnforcement;
 import com.google.android.material.resources.MaterialResources;
@@ -16,8 +17,8 @@ import com.google.android.material.theme.overlay.MaterialThemeOverlay;
 
 /* JADX INFO: loaded from: classes3.dex */
 public class MaterialRadioButton extends AppCompatRadioButton {
-    private static final int DEF_STYLE_RES = R.style.Widget_MaterialComponents_CompoundButton_RadioButton;
-    private static final int[][] ENABLED_CHECKED_STATES = {new int[]{android.R.attr.state_enabled, android.R.attr.state_checked}, new int[]{android.R.attr.state_enabled, -16842912}, new int[]{-16842910, android.R.attr.state_checked}, new int[]{-16842910, -16842912}};
+    private static final int DEF_STYLE_RES = C10817R.style.Widget_MaterialComponents_CompoundButton_RadioButton;
+    private static final int[][] ENABLED_CHECKED_STATES = {new int[]{R.attr.state_enabled, R.attr.state_checked}, new int[]{R.attr.state_enabled, -16842912}, new int[]{-16842910, R.attr.state_checked}, new int[]{-16842910, -16842912}};
 
     @Nullable
     private ColorStateList materialThemeColorsTintList;
@@ -29,9 +30,9 @@ public class MaterialRadioButton extends AppCompatRadioButton {
 
     private ColorStateList getMaterialThemeColorsTintList() {
         if (this.materialThemeColorsTintList == null) {
-            int color = MaterialColors.getColor(this, R.attr.colorControlActivated);
-            int color2 = MaterialColors.getColor(this, R.attr.colorOnSurface);
-            int color3 = MaterialColors.getColor(this, R.attr.colorSurface);
+            int color = MaterialColors.getColor(this, C10817R.attr.colorControlActivated);
+            int color2 = MaterialColors.getColor(this, C10817R.attr.colorOnSurface);
+            int color3 = MaterialColors.getColor(this, C10817R.attr.colorSurface);
             int[][] iArr = ENABLED_CHECKED_STATES;
             int[] iArr2 = new int[iArr.length];
             iArr2[0] = MaterialColors.layer(color3, color, 1.0f);
@@ -65,7 +66,7 @@ public class MaterialRadioButton extends AppCompatRadioButton {
     }
 
     public MaterialRadioButton(@NonNull Context context, @Nullable AttributeSet attributeSet) {
-        this(context, attributeSet, R.attr.radioButtonStyle);
+        this(context, attributeSet, C10817R.attr.radioButtonStyle);
     }
 
     /* JADX WARN: Illegal instructions before constructor call */
@@ -73,12 +74,12 @@ public class MaterialRadioButton extends AppCompatRadioButton {
         int i2 = DEF_STYLE_RES;
         super(MaterialThemeOverlay.wrap(context, attributeSet, i, i2), attributeSet, i);
         Context context2 = getContext();
-        TypedArray typedArrayObtainStyledAttributes = ThemeEnforcement.obtainStyledAttributes(context2, attributeSet, R.styleable.MaterialRadioButton, i, i2, new int[0]);
-        int i3 = R.styleable.MaterialRadioButton_buttonTint;
+        TypedArray typedArrayObtainStyledAttributes = ThemeEnforcement.obtainStyledAttributes(context2, attributeSet, C10817R.styleable.MaterialRadioButton, i, i2, new int[0]);
+        int i3 = C10817R.styleable.MaterialRadioButton_buttonTint;
         if (typedArrayObtainStyledAttributes.hasValue(i3)) {
             CompoundButtonCompat.setButtonTintList(this, MaterialResources.getColorStateList(context2, typedArrayObtainStyledAttributes, i3));
         }
-        this.useMaterialThemeColors = typedArrayObtainStyledAttributes.getBoolean(R.styleable.MaterialRadioButton_useMaterialThemeColors, false);
+        this.useMaterialThemeColors = typedArrayObtainStyledAttributes.getBoolean(C10817R.styleable.MaterialRadioButton_useMaterialThemeColors, false);
         typedArrayObtainStyledAttributes.recycle();
     }
 }

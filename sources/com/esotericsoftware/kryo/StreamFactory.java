@@ -1,7 +1,7 @@
 package com.esotericsoftware.kryo;
 
-import com.esotericsoftware.kryo.io.Input;
-import com.esotericsoftware.kryo.io.Output;
+import com.esotericsoftware.kryo.p502io.Input;
+import com.esotericsoftware.kryo.p502io.Output;
 import java.io.InputStream;
 import java.io.OutputStream;
 

@@ -1,18 +1,18 @@
 package com.discord.analytics.generated.events.network_action;
 
-import b.d.b.a.outline;
 import com.discord.analytics.generated.traits.TrackBase;
-import com.discord.analytics.generated.traits.TrackBase2;
+import com.discord.analytics.generated.traits.TrackBaseReceiver;
 import com.discord.analytics.generated.traits.TrackLocationMetadata;
-import com.discord.analytics.generated.traits.TrackLocationMetadata2;
+import com.discord.analytics.generated.traits.TrackLocationMetadataReceiver;
 import com.discord.analytics.generated.traits.TrackNetworkMetadata;
-import com.discord.analytics.generated.traits.TrackNetworkMetadata2;
+import com.discord.analytics.generated.traits.TrackNetworkMetadataReceiver;
 import com.discord.api.science.AnalyticsSchema;
-import d0.z.d.Intrinsics3;
+import p007b.p100d.p104b.p105a.C1643a;
+import p507d0.p592z.p594d.C12238m;
 
 /* JADX INFO: compiled from: TrackNetworkActionUserSettingsUpdate.kt */
 /* JADX INFO: loaded from: classes.dex */
-public final /* data */ class TrackNetworkActionUserSettingsUpdate implements AnalyticsSchema, TrackBase2, TrackLocationMetadata2, TrackNetworkMetadata2 {
+public final /* data */ class TrackNetworkActionUserSettingsUpdate implements AnalyticsSchema, TrackBaseReceiver, TrackLocationMetadataReceiver, TrackNetworkMetadataReceiver {
     private TrackBase trackBase;
     private TrackLocationMetadata trackLocationMetadata;
     private TrackNetworkMetadata trackNetworkMetadata;
@@ -20,8 +20,9 @@ public final /* data */ class TrackNetworkActionUserSettingsUpdate implements An
     private final CharSequence value = null;
     private final transient String analyticsSchemaTypeName = "network_action_user_settings_update";
 
-    @Override // com.discord.analytics.generated.traits.TrackNetworkMetadata2
-    public void b(TrackNetworkMetadata trackNetworkMetadata) {
+    @Override // com.discord.analytics.generated.traits.TrackNetworkMetadataReceiver
+    /* JADX INFO: renamed from: b */
+    public void mo7529b(TrackNetworkMetadata trackNetworkMetadata) {
         this.trackNetworkMetadata = trackNetworkMetadata;
     }
 
@@ -39,7 +40,7 @@ public final /* data */ class TrackNetworkActionUserSettingsUpdate implements An
             return false;
         }
         TrackNetworkActionUserSettingsUpdate trackNetworkActionUserSettingsUpdate = (TrackNetworkActionUserSettingsUpdate) other;
-        return Intrinsics3.areEqual(this.key, trackNetworkActionUserSettingsUpdate.key) && Intrinsics3.areEqual(this.value, trackNetworkActionUserSettingsUpdate.value);
+        return C12238m.areEqual(this.key, trackNetworkActionUserSettingsUpdate.key) && C12238m.areEqual(this.value, trackNetworkActionUserSettingsUpdate.value);
     }
 
     public int hashCode() {
@@ -50,9 +51,9 @@ public final /* data */ class TrackNetworkActionUserSettingsUpdate implements An
     }
 
     public String toString() {
-        StringBuilder sbU = outline.U("TrackNetworkActionUserSettingsUpdate(key=");
-        sbU.append(this.key);
-        sbU.append(", value=");
-        return outline.E(sbU, this.value, ")");
+        StringBuilder sbM833U = C1643a.m833U("TrackNetworkActionUserSettingsUpdate(key=");
+        sbM833U.append(this.key);
+        sbM833U.append(", value=");
+        return C1643a.m817E(sbM833U, this.value, ")");
     }
 }

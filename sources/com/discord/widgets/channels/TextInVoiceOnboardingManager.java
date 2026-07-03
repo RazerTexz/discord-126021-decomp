@@ -7,11 +7,11 @@ import com.discord.utilities.time.Clock;
 import com.discord.utilities.time.ClockFactory;
 import com.discord.widgets.chat.list.TextInVoiceFeatureFlag;
 import com.discord.widgets.voice.fullscreen.WidgetCallFullscreen;
-import d0.t.CollectionsJVM;
-import d0.z.d.Intrinsics3;
-import d0.z.d.Reflection2;
 import kotlin.Unit;
 import kotlin.jvm.functions.Function0;
+import p507d0.p580t.C12145m;
+import p507d0.p592z.p594d.C12216a0;
+import p507d0.p592z.p594d.C12238m;
 
 /* JADX INFO: compiled from: TextInVoiceOnboardingManager.kt */
 /* JADX INFO: loaded from: classes2.dex */
@@ -39,7 +39,7 @@ public final class TextInVoiceOnboardingManager {
     }
 
     public final void show(Function0<Unit> onCtaClicked) {
-        Intrinsics3.checkNotNullParameter(onCtaClicked, "onCtaClicked");
-        StoreStream.INSTANCE.getNotices().requestToShow(new StoreNotices.Notice("NOTICE_NAME_TEXT_IN_VOICE_ONBOARDED", null, 0L, 0, true, CollectionsJVM.listOf(Reflection2.getOrCreateKotlinClass(WidgetCallFullscreen.class)), 0L, false, 0L, new TextInVoiceOnboardingManager2(onCtaClicked), 454, null));
+        C12238m.checkNotNullParameter(onCtaClicked, "onCtaClicked");
+        StoreStream.INSTANCE.getNotices().requestToShow(new StoreNotices.Notice("NOTICE_NAME_TEXT_IN_VOICE_ONBOARDED", null, 0L, 0, true, C12145m.listOf(C12216a0.getOrCreateKotlinClass(WidgetCallFullscreen.class)), 0L, false, 0L, new TextInVoiceOnboardingManager$show$textInVoiceOnboardingNotice$1(onCtaClicked), 454, null));
     }
 }

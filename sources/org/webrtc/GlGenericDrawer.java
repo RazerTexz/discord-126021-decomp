@@ -2,10 +2,10 @@ package org.webrtc;
 
 import android.opengl.GLES20;
 import androidx.annotation.Nullable;
-import b.d.b.a.outline;
 import java.nio.Buffer;
 import java.nio.FloatBuffer;
 import org.webrtc.RendererCommon;
+import p007b.p100d.p104b.p105a.C1643a;
 
 /* JADX INFO: loaded from: classes3.dex */
 public class GlGenericDrawer implements RendererCommon.GlDrawer {
@@ -53,9 +53,9 @@ public class GlGenericDrawer implements RendererCommon.GlDrawer {
         sb.append("precision mediump float;\n");
         sb.append("varying vec2 tc;\n");
         if (shaderType == ShaderType.YUV) {
-            outline.s0(sb, "uniform sampler2D y_tex;\n", "uniform sampler2D u_tex;\n", "uniform sampler2D v_tex;\n", "vec4 sample(vec2 p) {\n");
-            outline.s0(sb, "  float y = texture2D(y_tex, p).r * 1.16438;\n", "  float u = texture2D(u_tex, p).r;\n", "  float v = texture2D(v_tex, p).r;\n", "  return vec4(y + 1.59603 * v - 0.874202,\n");
-            outline.s0(sb, "    y - 0.391762 * u - 0.812968 * v + 0.531668,\n", "    y + 2.01723 * u - 1.08563, 1);\n", "}\n", str);
+            C1643a.m876s0(sb, "uniform sampler2D y_tex;\n", "uniform sampler2D u_tex;\n", "uniform sampler2D v_tex;\n", "vec4 sample(vec2 p) {\n");
+            C1643a.m876s0(sb, "  float y = texture2D(y_tex, p).r * 1.16438;\n", "  float u = texture2D(u_tex, p).r;\n", "  float v = texture2D(v_tex, p).r;\n", "  return vec4(y + 1.59603 * v - 0.874202,\n");
+            C1643a.m876s0(sb, "    y - 0.391762 * u - 0.812968 * v + 0.531668,\n", "    y + 2.01723 * u - 1.08563, 1);\n", "}\n", str);
         } else {
             String str2 = shaderType == shaderType2 ? "samplerExternalOES" : "sampler2D";
             sb.append("uniform ");

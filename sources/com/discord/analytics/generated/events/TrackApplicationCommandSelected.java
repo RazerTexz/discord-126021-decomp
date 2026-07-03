@@ -1,18 +1,18 @@
 package com.discord.analytics.generated.events;
 
-import b.d.b.a.outline;
 import com.discord.analytics.generated.traits.TrackBase;
-import com.discord.analytics.generated.traits.TrackBase2;
+import com.discord.analytics.generated.traits.TrackBaseReceiver;
 import com.discord.analytics.generated.traits.TrackChannel;
-import com.discord.analytics.generated.traits.TrackChannel2;
+import com.discord.analytics.generated.traits.TrackChannelReceiver;
 import com.discord.analytics.generated.traits.TrackGuild;
-import com.discord.analytics.generated.traits.TrackGuild2;
+import com.discord.analytics.generated.traits.TrackGuildReceiver;
 import com.discord.api.science.AnalyticsSchema;
-import d0.z.d.Intrinsics3;
+import p007b.p100d.p104b.p105a.C1643a;
+import p507d0.p592z.p594d.C12238m;
 
 /* JADX INFO: compiled from: TrackApplicationCommandSelected.kt */
 /* JADX INFO: loaded from: classes.dex */
-public final /* data */ class TrackApplicationCommandSelected implements AnalyticsSchema, TrackBase2, TrackGuild2, TrackChannel2 {
+public final /* data */ class TrackApplicationCommandSelected implements AnalyticsSchema, TrackBaseReceiver, TrackGuildReceiver, TrackChannelReceiver {
     private TrackBase trackBase;
     private TrackChannel trackChannel;
     private TrackGuild trackGuild;
@@ -20,14 +20,15 @@ public final /* data */ class TrackApplicationCommandSelected implements Analyti
     private final Long commandId = null;
     private final transient String analyticsSchemaTypeName = "application_command_selected";
 
-    @Override // com.discord.analytics.generated.traits.TrackGuild2
+    @Override // com.discord.analytics.generated.traits.TrackGuildReceiver
     /* JADX INFO: renamed from: a, reason: from getter */
     public TrackGuild getTrackGuild() {
         return this.trackGuild;
     }
 
-    @Override // com.discord.analytics.generated.traits.TrackGuild2
-    public void c(TrackGuild trackGuild) {
+    @Override // com.discord.analytics.generated.traits.TrackGuildReceiver
+    /* JADX INFO: renamed from: c */
+    public void mo7508c(TrackGuild trackGuild) {
         this.trackGuild = trackGuild;
     }
 
@@ -45,7 +46,7 @@ public final /* data */ class TrackApplicationCommandSelected implements Analyti
             return false;
         }
         TrackApplicationCommandSelected trackApplicationCommandSelected = (TrackApplicationCommandSelected) other;
-        return Intrinsics3.areEqual(this.applicationId, trackApplicationCommandSelected.applicationId) && Intrinsics3.areEqual(this.commandId, trackApplicationCommandSelected.commandId);
+        return C12238m.areEqual(this.applicationId, trackApplicationCommandSelected.applicationId) && C12238m.areEqual(this.commandId, trackApplicationCommandSelected.commandId);
     }
 
     public int hashCode() {
@@ -56,9 +57,9 @@ public final /* data */ class TrackApplicationCommandSelected implements Analyti
     }
 
     public String toString() {
-        StringBuilder sbU = outline.U("TrackApplicationCommandSelected(applicationId=");
-        sbU.append(this.applicationId);
-        sbU.append(", commandId=");
-        return outline.G(sbU, this.commandId, ")");
+        StringBuilder sbM833U = C1643a.m833U("TrackApplicationCommandSelected(applicationId=");
+        sbM833U.append(this.applicationId);
+        sbM833U.append(", commandId=");
+        return C1643a.m819G(sbM833U, this.commandId, ")");
     }
 }

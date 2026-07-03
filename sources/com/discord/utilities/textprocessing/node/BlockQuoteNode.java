@@ -3,16 +3,16 @@ package com.discord.utilities.textprocessing.node;
 import android.text.SpannableStringBuilder;
 import android.text.style.AbsoluteSizeSpan;
 import androidx.exifinterface.media.ExifInterface;
-import com.discord.R;
+import com.discord.C5419R;
 import com.discord.simpleast.core.node.Node;
 import com.discord.utilities.color.ColorCompat;
 import com.discord.utilities.dimen.DimenUtils;
 import com.discord.utilities.spans.QuoteSpan;
 import com.discord.utilities.textprocessing.node.BasicRenderContext;
-import d0.z.d.Intrinsics3;
 import java.util.Collection;
 import java.util.Iterator;
 import kotlin.jvm.internal.DefaultConstructorMarker;
+import p507d0.p592z.p594d.C12238m;
 
 /* JADX INFO: compiled from: BlockQuoteNode.kt */
 /* JADX INFO: loaded from: classes2.dex */
@@ -52,8 +52,8 @@ public final class BlockQuoteNode<T extends BasicRenderContext> extends Node<T> 
 
     @Override // com.discord.simpleast.core.node.Node
     public void render(SpannableStringBuilder builder, T renderContext) {
-        Intrinsics3.checkNotNullParameter(builder, "builder");
-        Intrinsics3.checkNotNullParameter(renderContext, "renderContext");
+        C12238m.checkNotNullParameter(builder, "builder");
+        C12238m.checkNotNullParameter(renderContext, "renderContext");
         builder.append('\n');
         int iDpToPixels = DimenUtils.dpToPixels(8);
         builder.setSpan(new AbsoluteSizeSpan(iDpToPixels), builder.length() - 1, builder.length(), 33);
@@ -68,7 +68,7 @@ public final class BlockQuoteNode<T extends BasicRenderContext> extends Node<T> 
         if (builder.length() == length) {
             builder.append(' ');
         }
-        builder.setSpan(new QuoteSpan(ColorCompat.getThemedColor(renderContext.getContext(), R.attr.theme_chat_block_quote_divider), STRIPE_WIDTH, GAP_WIDTH), length, builder.length(), 13107233);
+        builder.setSpan(new QuoteSpan(ColorCompat.getThemedColor(renderContext.getContext(), C5419R.attr.theme_chat_block_quote_divider), STRIPE_WIDTH, GAP_WIDTH), length, builder.length(), 13107233);
         builder.append('\n');
         builder.setSpan(new AbsoluteSizeSpan(iDpToPixels), builder.length() - 1, builder.length(), 13107233);
     }

@@ -25,7 +25,7 @@ import androidx.preference.PreferenceGroup;
 import androidx.preference.PreferenceManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
-import b.d.b.a.outline;
+import p007b.p100d.p104b.p105a.C1643a;
 
 /* JADX INFO: loaded from: classes.dex */
 @Deprecated
@@ -43,7 +43,7 @@ public abstract class PreferenceFragment extends Fragment implements PreferenceM
     private Runnable mSelectPreferenceRunnable;
     private Context mStyledContext;
     private final DividerDecoration mDividerDecoration = new DividerDecoration();
-    private int mLayoutResId = R.layout.preference_list_fragment;
+    private int mLayoutResId = C0525R.layout.preference_list_fragment;
     private final Handler mHandler = new Handler() { // from class: androidx.preference.PreferenceFragment.1
         @Override // android.os.Handler
         public void handleMessage(Message message) {
@@ -308,10 +308,10 @@ public abstract class PreferenceFragment extends Fragment implements PreferenceM
     public void onCreate(Bundle bundle) {
         super.onCreate(bundle);
         TypedValue typedValue = new TypedValue();
-        getActivity().getTheme().resolveAttribute(R.attr.preferenceTheme, typedValue, true);
+        getActivity().getTheme().resolveAttribute(C0525R.attr.preferenceTheme, typedValue, true);
         int i = typedValue.resourceId;
         if (i == 0) {
-            i = R.style.PreferenceThemeOverlay;
+            i = C0525R.style.PreferenceThemeOverlay;
         }
         ContextThemeWrapper contextThemeWrapper = new ContextThemeWrapper(getActivity(), i);
         this.mStyledContext = contextThemeWrapper;
@@ -337,10 +337,10 @@ public abstract class PreferenceFragment extends Fragment implements PreferenceM
     @Deprecated
     public RecyclerView onCreateRecyclerView(LayoutInflater layoutInflater, ViewGroup viewGroup, Bundle bundle) {
         RecyclerView recyclerView;
-        if (this.mStyledContext.getPackageManager().hasSystemFeature("android.hardware.type.automotive") && (recyclerView = (RecyclerView) viewGroup.findViewById(R.id.recycler_view)) != null) {
+        if (this.mStyledContext.getPackageManager().hasSystemFeature("android.hardware.type.automotive") && (recyclerView = (RecyclerView) viewGroup.findViewById(C0525R.id.recycler_view)) != null) {
             return recyclerView;
         }
-        RecyclerView recyclerView2 = (RecyclerView) layoutInflater.inflate(R.layout.preference_recyclerview, viewGroup, false);
+        RecyclerView recyclerView2 = (RecyclerView) layoutInflater.inflate(C0525R.layout.preference_recyclerview, viewGroup, false);
         recyclerView2.setLayoutManager(onCreateLayoutManager());
         recyclerView2.setAccessibilityDelegateCompat(new PreferenceRecyclerViewAccessibilityDelegate(recyclerView2));
         return recyclerView2;
@@ -349,11 +349,11 @@ public abstract class PreferenceFragment extends Fragment implements PreferenceM
     @Override // android.app.Fragment
     public View onCreateView(LayoutInflater layoutInflater, ViewGroup viewGroup, Bundle bundle) {
         Context context = this.mStyledContext;
-        TypedArray typedArrayObtainStyledAttributes = context.obtainStyledAttributes(null, R.styleable.PreferenceFragment, TypedArrayUtils.getAttr(context, R.attr.preferenceFragmentStyle, 16844038), 0);
-        this.mLayoutResId = typedArrayObtainStyledAttributes.getResourceId(R.styleable.PreferenceFragment_android_layout, this.mLayoutResId);
-        Drawable drawable = typedArrayObtainStyledAttributes.getDrawable(R.styleable.PreferenceFragment_android_divider);
-        int dimensionPixelSize = typedArrayObtainStyledAttributes.getDimensionPixelSize(R.styleable.PreferenceFragment_android_dividerHeight, -1);
-        boolean z2 = typedArrayObtainStyledAttributes.getBoolean(R.styleable.PreferenceFragment_allowDividerAfterLastItem, true);
+        TypedArray typedArrayObtainStyledAttributes = context.obtainStyledAttributes(null, C0525R.styleable.PreferenceFragment, TypedArrayUtils.getAttr(context, C0525R.attr.preferenceFragmentStyle, 16844038), 0);
+        this.mLayoutResId = typedArrayObtainStyledAttributes.getResourceId(C0525R.styleable.PreferenceFragment_android_layout, this.mLayoutResId);
+        Drawable drawable = typedArrayObtainStyledAttributes.getDrawable(C0525R.styleable.PreferenceFragment_android_divider);
+        int dimensionPixelSize = typedArrayObtainStyledAttributes.getDimensionPixelSize(C0525R.styleable.PreferenceFragment_android_dividerHeight, -1);
+        boolean z2 = typedArrayObtainStyledAttributes.getBoolean(C0525R.styleable.PreferenceFragment_allowDividerAfterLastItem, true);
         typedArrayObtainStyledAttributes.recycle();
         LayoutInflater layoutInflaterCloneInContext = layoutInflater.cloneInContext(this.mStyledContext);
         View viewInflate = layoutInflaterCloneInContext.inflate(this.mLayoutResId, viewGroup, false);
@@ -519,7 +519,7 @@ public abstract class PreferenceFragment extends Fragment implements PreferenceM
             preferenceFindPreference = preferenceScreenInflateFromResource.findPreference(str);
             if (!(preferenceFindPreference instanceof PreferenceScreen)) {
                 preference = preferenceFindPreference;
-                throw new IllegalArgumentException(outline.y("Preference object with key ", str, " is not a PreferenceScreen"));
+                throw new IllegalArgumentException(C1643a.m886y("Preference object with key ", str, " is not a PreferenceScreen"));
             }
         }
         preference = preferenceFindPreference;

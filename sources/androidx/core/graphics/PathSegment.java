@@ -3,7 +3,7 @@ package androidx.core.graphics;
 import android.graphics.PointF;
 import androidx.annotation.NonNull;
 import androidx.core.util.Preconditions;
-import b.d.b.a.outline;
+import p007b.p100d.p104b.p105a.C1643a;
 
 /* JADX INFO: loaded from: classes.dex */
 public final class PathSegment {
@@ -57,15 +57,15 @@ public final class PathSegment {
     }
 
     public String toString() {
-        StringBuilder sbU = outline.U("PathSegment{start=");
-        sbU.append(this.mStart);
-        sbU.append(", startFraction=");
-        sbU.append(this.mStartFraction);
-        sbU.append(", end=");
-        sbU.append(this.mEnd);
-        sbU.append(", endFraction=");
-        sbU.append(this.mEndFraction);
-        sbU.append('}');
-        return sbU.toString();
+        StringBuilder sbM833U = C1643a.m833U("PathSegment{start=");
+        sbM833U.append(this.mStart);
+        sbM833U.append(", startFraction=");
+        sbM833U.append(this.mStartFraction);
+        sbM833U.append(", end=");
+        sbM833U.append(this.mEnd);
+        sbM833U.append(", endFraction=");
+        sbM833U.append(this.mEndFraction);
+        sbM833U.append('}');
+        return sbM833U.toString();
     }
 }

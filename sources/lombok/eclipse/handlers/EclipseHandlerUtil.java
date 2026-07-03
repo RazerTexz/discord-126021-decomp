@@ -613,7 +613,7 @@ public class EclipseHandlerUtil {
     public static TypeReference namePlusTypeParamsToTypeReference(EclipseNode type, TypeParameter[] params, long p) {
         TypeDeclaration td = type.get();
         boolean instance = (td.modifiers & MODIFIERS_INDICATING_STATIC) == 0;
-        return namePlusTypeParamsToTypeReference(type.up(), td.name, instance, params, p);
+        return namePlusTypeParamsToTypeReference(type.m10925up(), td.name, instance, params, p);
     }
 
     public static TypeReference namePlusTypeParamsToTypeReference(EclipseNode parentType, char[] typeName, boolean instance, TypeParameter[] params, long p) {
@@ -897,7 +897,7 @@ public class EclipseHandlerUtil {
                     }
                 }
             }
-            node = node.up();
+            node = node.m10925up();
         }
         return null;
     }
@@ -1046,7 +1046,7 @@ public class EclipseHandlerUtil {
         EclipseNode type = context;
         TypeReference result = null;
         while (type != null && type.getKind() != AST.Kind.TYPE) {
-            type = type.up();
+            type = type.m10925up();
         }
         if (type != null && (type.get() instanceof TypeDeclaration)) {
             TypeDeclaration typeDecl = type.get();
@@ -1075,7 +1075,7 @@ public class EclipseHandlerUtil {
 
     public static TypeReference generateParameterizedTypeReference(EclipseNode type, TypeReference[] typeParams, long p) {
         TypeDeclaration td = type.get();
-        char[][] tn = getQualifiedInnerName(type.up(), td.name);
+        char[][] tn = getQualifiedInnerName(type.m10925up(), td.name);
         if (tn.length == 1) {
             return new ParameterizedSingleTypeReference(tn[0], typeParams, 0, p);
         }
@@ -1088,7 +1088,7 @@ public class EclipseHandlerUtil {
         rr[tnLen - 1] = typeParams;
         boolean instance = (td.modifiers & MODIFIERS_INDICATING_STATIC) == 0;
         if (instance) {
-            fillOuterTypeParams(rr, tnLen - 2, type.up(), p);
+            fillOuterTypeParams(rr, tnLen - 2, type.m10925up(), p);
         }
         return new ParameterizedQualifiedTypeReference(tn, rr, 0, ps);
     }
@@ -1132,12 +1132,12 @@ public class EclipseHandlerUtil {
         if ((td.modifiers & MODIFIERS_INDICATING_STATIC) != 0) {
             return filled;
         }
-        boolean f2 = fillOuterTypeParams(rr, idx - 1, node.up(), p);
+        boolean f2 = fillOuterTypeParams(rr, idx - 1, node.m10925up(), p);
         return f2 || filled;
     }
 
     public static NameReference generateNameReference(EclipseNode type, long p) {
-        char[][] tn = getQualifiedInnerName(type.up(), type.get().name);
+        char[][] tn = getQualifiedInnerName(type.m10925up(), type.get().name);
         if (tn.length == 1) {
             return new SingleNameReference(tn[0], p);
         }
@@ -1168,7 +1168,7 @@ public class EclipseHandlerUtil {
 
     public static TypeReference generateTypeReference(EclipseNode type, long p) {
         TypeDeclaration td = type.get();
-        char[][] tn = getQualifiedInnerName(type.up(), td.name);
+        char[][] tn = getQualifiedInnerName(type.m10925up(), td.name);
         if (tn.length == 1) {
             return new SingleTypeReference(tn[0], p);
         }
@@ -1177,10 +1177,10 @@ public class EclipseHandlerUtil {
         for (int i = 0; i < tnLen; i++) {
             ps[i] = p;
         }
-        boolean instance = (td.modifiers & MODIFIERS_INDICATING_STATIC) == 0 && type.up() != null && (type.up().get() instanceof TypeDeclaration);
+        boolean instance = (td.modifiers & MODIFIERS_INDICATING_STATIC) == 0 && type.m10925up() != null && (type.m10925up().get() instanceof TypeDeclaration);
         if (instance) {
             TypeReference[][] trs = new TypeReference[tn.length][];
-            boolean filled = fillOuterTypeParams(trs, trs.length - 2, type.up(), p);
+            boolean filled = fillOuterTypeParams(trs, trs.length - 2, type.m10925up(), p);
             if (filled) {
                 return new ParameterizedQualifiedTypeReference(tn, trs, 0, ps);
             }
@@ -1220,7 +1220,7 @@ public class EclipseHandlerUtil {
                 break;
             }
             count++;
-            eclipseNodeUp = n.up();
+            eclipseNodeUp = n.m10925up();
         }
         if (count == 0) {
             return new char[][]{name};
@@ -1235,7 +1235,7 @@ public class EclipseHandlerUtil {
             }
             count--;
             res[count] = n2.get().name;
-            eclipseNodeUp2 = n2.up();
+            eclipseNodeUp2 = n2.m10925up();
         }
         return res;
     }
@@ -1656,7 +1656,7 @@ public class EclipseHandlerUtil {
         boolean forceBool = EcjAugments.FieldDeclaration_booleanLazyGetter.get(fieldDeclaration).booleanValue();
         TypeReference fieldType = fieldDeclaration.type;
         boolean isBoolean = forceBool || isBoolean(fieldType);
-        EclipseNode typeNode = field.up();
+        EclipseNode typeNode = field.m10925up();
         for (String potentialGetterName : toAllGetterNames(field, isBoolean)) {
             for (EclipseNode potentialGetter : typeNode.down()) {
                 if (potentialGetter.getKind() == AST.Kind.METHOD && (potentialGetter.get() instanceof MethodDeclaration)) {
@@ -1677,7 +1677,7 @@ public class EclipseHandlerUtil {
                 hasGetterAnnotation = true;
             }
         }
-        if (!hasGetterAnnotation && HandleGetter.fieldQualifiesForGetterGeneration(field) && (containingType = field.up()) != null) {
+        if (!hasGetterAnnotation && HandleGetter.fieldQualifiesForGetterGeneration(field) && (containingType = field.m10925up()) != null) {
             for (EclipseNode child2 : containingType.down()) {
                 if (child2.getKind() == AST.Kind.ANNOTATION && annotationTypeMatches((Class<? extends java.lang.annotation.Annotation>) Data.class, child2)) {
                     hasGetterAnnotation = true;
@@ -1737,7 +1737,7 @@ public class EclipseHandlerUtil {
             FieldDeclaration fieldDecl = field.get();
             FieldReference ref = new FieldReference(fieldDecl.name, p);
             if ((fieldDecl.modifiers & 8) != 0) {
-                EclipseNode containerNode = field.up();
+                EclipseNode containerNode = field.m10925up();
                 if (containerNode != null && (containerNode.get() instanceof TypeDeclaration)) {
                     ref.receiver = new SingleNameReference(containerNode.get().name, p);
                 } else {
@@ -1805,7 +1805,7 @@ public class EclipseHandlerUtil {
             call.receiver = new ThisReference(pS, pE);
             setGeneratedBy(call.receiver, source);
         } else {
-            EclipseNode containerNode = method.up();
+            EclipseNode containerNode = method.m10925up();
             if (containerNode != null && (containerNode.get() instanceof TypeDeclaration)) {
                 call.receiver = new SingleNameReference(containerNode.get().name, p);
                 setGeneratedBy(call.receiver, source);
@@ -1899,7 +1899,7 @@ public class EclipseHandlerUtil {
             }
         }
         if (prefixes == null) {
-            EclipseNode eclipseNodeUp = field.up();
+            EclipseNode eclipseNodeUp = field.m10925up();
             loop1: while (true) {
                 EclipseNode current = eclipseNodeUp;
                 if (current == null) {
@@ -1915,7 +1915,7 @@ public class EclipseHandlerUtil {
                         break loop1;
                     }
                 }
-                eclipseNodeUp = current.up();
+                eclipseNodeUp = current.m10925up();
             }
         }
         if (prefixes == null) {
@@ -1930,7 +1930,7 @@ public class EclipseHandlerUtil {
                 return createAnnotation(Accessors.class, node);
             }
         }
-        EclipseNode eclipseNodeUp = field.up();
+        EclipseNode eclipseNodeUp = field.m10925up();
         while (true) {
             EclipseNode current = eclipseNodeUp;
             if (current != null) {
@@ -1939,9 +1939,9 @@ public class EclipseHandlerUtil {
                         return createAnnotation(Accessors.class, node2);
                     }
                 }
-                eclipseNodeUp = current.up();
+                eclipseNodeUp = current.m10925up();
             } else {
-                return AnnotationValues.of(Accessors.class, field);
+                return AnnotationValues.m10917of(Accessors.class, field);
             }
         }
     }
@@ -1951,7 +1951,7 @@ public class EclipseHandlerUtil {
             throw new NullPointerException("node");
         }
         while (node != null && !(node.get() instanceof TypeDeclaration)) {
-            node = node.up();
+            node = node.m10925up();
         }
         return node;
     }
@@ -1990,7 +1990,7 @@ public class EclipseHandlerUtil {
     public static MemberExistsResult methodExists(String methodName, EclipseNode node, boolean caseSensitive, int params) {
         char[] mName;
         while (node != null && !(node.get() instanceof TypeDeclaration)) {
-            node = node.up();
+            node = node.m10925up();
         }
         if (node != null && (node.get() instanceof TypeDeclaration)) {
             TypeDeclaration typeDecl = node.get();
@@ -2111,7 +2111,7 @@ public class EclipseHandlerUtil {
                         if (tossMe == null) {
                             break;
                         }
-                        tossMe.up().removeChild(tossMe);
+                        tossMe.m10925up().removeChild(tossMe);
                         break;
                     }
                 }

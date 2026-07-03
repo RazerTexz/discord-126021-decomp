@@ -1,28 +1,28 @@
 package com.discord.widgets.servers.guild_role_subscription;
 
-import a0.a.a.b;
-import b.a.d.AppViewModel;
-import b.d.b.a.outline;
 import com.discord.api.guildrolesubscription.GuildRoleSubscriptionGroupListing;
 import com.discord.stores.StoreGuildRoleSubscriptions;
 import com.discord.stores.StoreStream;
 import com.discord.stores.updates.ObservationDeck;
-import com.discord.stores.updates.ObservationDeck4;
+import com.discord.stores.updates.ObservationDeckProvider;
 import com.discord.utilities.error.Error;
-import com.discord.utilities.rx.ObservableExtensionsKt;
-import d0.z.d.Intrinsics3;
-import d0.z.d.Lambda;
+import com.discord.utilities.p501rx.ObservableExtensionsKt;
 import java.util.List;
 import kotlin.Unit;
 import kotlin.jvm.functions.Function0;
 import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.DefaultConstructorMarker;
-import rx.Observable;
-import rx.Subscription;
+import p001a0.p002a.p003a.C0002b;
+import p007b.p008a.p018d.AbstractC0859d0;
+import p007b.p100d.p104b.p105a.C1643a;
+import p507d0.p592z.p594d.AbstractC12240o;
+import p507d0.p592z.p594d.C12238m;
+import p658rx.Observable;
+import p658rx.Subscription;
 
 /* JADX INFO: compiled from: ServerSettingsGuildRoleSubscriptionTierListViewModel.kt */
 /* JADX INFO: loaded from: classes2.dex */
-public final class ServerSettingsGuildRoleSubscriptionTierListViewModel extends AppViewModel<ViewState> {
+public final class ServerSettingsGuildRoleSubscriptionTierListViewModel extends AbstractC0859d0<ViewState> {
 
     /* JADX INFO: renamed from: Companion, reason: from kotlin metadata */
     public static final Companion INSTANCE = new Companion(null);
@@ -30,22 +30,22 @@ public final class ServerSettingsGuildRoleSubscriptionTierListViewModel extends 
     private final long guildId;
     private final StoreGuildRoleSubscriptions storeGuildRoleSubscriptions;
 
-    /* JADX INFO: renamed from: com.discord.widgets.servers.guild_role_subscription.ServerSettingsGuildRoleSubscriptionTierListViewModel$1, reason: invalid class name */
+    /* JADX INFO: renamed from: com.discord.widgets.servers.guild_role_subscription.ServerSettingsGuildRoleSubscriptionTierListViewModel$1 */
     /* JADX INFO: compiled from: ServerSettingsGuildRoleSubscriptionTierListViewModel.kt */
-    public static final class AnonymousClass1 extends Lambda implements Function1<StoreState, Unit> {
-        public AnonymousClass1() {
+    public static final class C94421 extends AbstractC12240o implements Function1<StoreState, Unit> {
+        public C94421() {
             super(1);
         }
 
         @Override // kotlin.jvm.functions.Function1
         public /* bridge */ /* synthetic */ Unit invoke(StoreState storeState) {
             invoke2(storeState);
-            return Unit.a;
+            return Unit.f27425a;
         }
 
         /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
         public final void invoke2(StoreState storeState) {
-            Intrinsics3.checkNotNullParameter(storeState, "storeState");
+            C12238m.checkNotNullParameter(storeState, "storeState");
             ServerSettingsGuildRoleSubscriptionTierListViewModel.this.handleStoreState(storeState);
         }
     }
@@ -56,7 +56,7 @@ public final class ServerSettingsGuildRoleSubscriptionTierListViewModel extends 
         }
 
         private final Observable<StoreState> observeStoreState(long guildId, ObservationDeck observationDeck, StoreGuildRoleSubscriptions storeGuildRoleSubscriptions) {
-            return ObservationDeck.connectRx$default(observationDeck, new ObservationDeck.UpdateSource[]{storeGuildRoleSubscriptions}, false, null, null, new ServerSettingsGuildRoleSubscriptionTierListViewModel2(storeGuildRoleSubscriptions, guildId), 14, null);
+            return ObservationDeck.connectRx$default(observationDeck, new ObservationDeck.UpdateSource[]{storeGuildRoleSubscriptions}, false, null, null, new C9443xe26cdd81(storeGuildRoleSubscriptions, guildId), 14, null);
         }
 
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
@@ -90,7 +90,7 @@ public final class ServerSettingsGuildRoleSubscriptionTierListViewModel extends 
 
         public boolean equals(Object other) {
             if (this != other) {
-                return (other instanceof StoreState) && Intrinsics3.areEqual(this.guildRoleSubscriptionGroupState, ((StoreState) other).guildRoleSubscriptionGroupState);
+                return (other instanceof StoreState) && C12238m.areEqual(this.guildRoleSubscriptionGroupState, ((StoreState) other).guildRoleSubscriptionGroupState);
             }
             return true;
         }
@@ -108,10 +108,10 @@ public final class ServerSettingsGuildRoleSubscriptionTierListViewModel extends 
         }
 
         public String toString() {
-            StringBuilder sbU = outline.U("StoreState(guildRoleSubscriptionGroupState=");
-            sbU.append(this.guildRoleSubscriptionGroupState);
-            sbU.append(")");
-            return sbU.toString();
+            StringBuilder sbM833U = C1643a.m833U("StoreState(guildRoleSubscriptionGroupState=");
+            sbM833U.append(this.guildRoleSubscriptionGroupState);
+            sbM833U.append(")");
+            return sbM833U.toString();
         }
     }
 
@@ -129,14 +129,14 @@ public final class ServerSettingsGuildRoleSubscriptionTierListViewModel extends 
 
         /* JADX INFO: compiled from: ServerSettingsGuildRoleSubscriptionTierListViewModel.kt */
         public static final /* data */ class Loaded extends ViewState {
-            private final List<ServerSettingsGuildRoleSubscriptionTierAdapter2> adapterItems;
+            private final List<ServerSettingsGuildRoleSubscriptionTierAdapterItem> adapterItems;
             private final long groupListingId;
 
             /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
             /* JADX WARN: Multi-variable type inference failed */
-            public Loaded(List<? extends ServerSettingsGuildRoleSubscriptionTierAdapter2> list, long j) {
+            public Loaded(List<? extends ServerSettingsGuildRoleSubscriptionTierAdapterItem> list, long j) {
                 super(null);
-                Intrinsics3.checkNotNullParameter(list, "adapterItems");
+                C12238m.checkNotNullParameter(list, "adapterItems");
                 this.adapterItems = list;
                 this.groupListingId = j;
             }
@@ -152,7 +152,7 @@ public final class ServerSettingsGuildRoleSubscriptionTierListViewModel extends 
                 return loaded.copy(list, j);
             }
 
-            public final List<ServerSettingsGuildRoleSubscriptionTierAdapter2> component1() {
+            public final List<ServerSettingsGuildRoleSubscriptionTierAdapterItem> component1() {
                 return this.adapterItems;
             }
 
@@ -161,8 +161,8 @@ public final class ServerSettingsGuildRoleSubscriptionTierListViewModel extends 
                 return this.groupListingId;
             }
 
-            public final Loaded copy(List<? extends ServerSettingsGuildRoleSubscriptionTierAdapter2> adapterItems, long groupListingId) {
-                Intrinsics3.checkNotNullParameter(adapterItems, "adapterItems");
+            public final Loaded copy(List<? extends ServerSettingsGuildRoleSubscriptionTierAdapterItem> adapterItems, long groupListingId) {
+                C12238m.checkNotNullParameter(adapterItems, "adapterItems");
                 return new Loaded(adapterItems, groupListingId);
             }
 
@@ -174,10 +174,10 @@ public final class ServerSettingsGuildRoleSubscriptionTierListViewModel extends 
                     return false;
                 }
                 Loaded loaded = (Loaded) other;
-                return Intrinsics3.areEqual(this.adapterItems, loaded.adapterItems) && this.groupListingId == loaded.groupListingId;
+                return C12238m.areEqual(this.adapterItems, loaded.adapterItems) && this.groupListingId == loaded.groupListingId;
             }
 
-            public final List<ServerSettingsGuildRoleSubscriptionTierAdapter2> getAdapterItems() {
+            public final List<ServerSettingsGuildRoleSubscriptionTierAdapterItem> getAdapterItems() {
                 return this.adapterItems;
             }
 
@@ -186,15 +186,15 @@ public final class ServerSettingsGuildRoleSubscriptionTierListViewModel extends 
             }
 
             public int hashCode() {
-                List<ServerSettingsGuildRoleSubscriptionTierAdapter2> list = this.adapterItems;
-                return b.a(this.groupListingId) + ((list != null ? list.hashCode() : 0) * 31);
+                List<ServerSettingsGuildRoleSubscriptionTierAdapterItem> list = this.adapterItems;
+                return C0002b.m3a(this.groupListingId) + ((list != null ? list.hashCode() : 0) * 31);
             }
 
             public String toString() {
-                StringBuilder sbU = outline.U("Loaded(adapterItems=");
-                sbU.append(this.adapterItems);
-                sbU.append(", groupListingId=");
-                return outline.C(sbU, this.groupListingId, ")");
+                StringBuilder sbM833U = C1643a.m833U("Loaded(adapterItems=");
+                sbM833U.append(this.adapterItems);
+                sbM833U.append(", groupListingId=");
+                return C1643a.m815C(sbM833U, this.groupListingId, ")");
             }
         }
 
@@ -218,7 +218,7 @@ public final class ServerSettingsGuildRoleSubscriptionTierListViewModel extends 
     /* JADX WARN: Illegal instructions before constructor call */
     public /* synthetic */ ServerSettingsGuildRoleSubscriptionTierListViewModel(long j, StoreGuildRoleSubscriptions storeGuildRoleSubscriptions, ObservationDeck observationDeck, Observable observable, int i, DefaultConstructorMarker defaultConstructorMarker) {
         StoreGuildRoleSubscriptions guildRoleSubscriptions = (i & 2) != 0 ? StoreStream.INSTANCE.getGuildRoleSubscriptions() : storeGuildRoleSubscriptions;
-        ObservationDeck observationDeck2 = (i & 4) != 0 ? ObservationDeck4.get() : observationDeck;
+        ObservationDeck observationDeck2 = (i & 4) != 0 ? ObservationDeckProvider.get() : observationDeck;
         this(j, guildRoleSubscriptions, observationDeck2, (i & 8) != 0 ? INSTANCE.observeStoreState(j, observationDeck2, guildRoleSubscriptions) : observable);
     }
 
@@ -237,7 +237,7 @@ public final class ServerSettingsGuildRoleSubscriptionTierListViewModel extends 
             if (guildRoleSubscriptionGroupListing == null) {
                 updateViewState(ViewState.Failed.INSTANCE);
             } else {
-                updateViewState(new ViewState.Loaded(ServerSettingsGuildRoleSubscriptionTierListItemGenerator.generateServerSettingsGuildRoleSubscriptionTierListItems(guildRoleSubscriptionGroupListing.h(), 3), guildRoleSubscriptionGroupListing.getId()));
+                updateViewState(new ViewState.Loaded(ServerSettingsGuildRoleSubscriptionTierListItemGeneratorKt.generateServerSettingsGuildRoleSubscriptionTierListItems(guildRoleSubscriptionGroupListing.m7948h(), 3), guildRoleSubscriptionGroupListing.getId()));
             }
         }
     }
@@ -249,12 +249,12 @@ public final class ServerSettingsGuildRoleSubscriptionTierListViewModel extends 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public ServerSettingsGuildRoleSubscriptionTierListViewModel(long j, StoreGuildRoleSubscriptions storeGuildRoleSubscriptions, ObservationDeck observationDeck, Observable<StoreState> observable) {
         super(null, 1, null);
-        Intrinsics3.checkNotNullParameter(storeGuildRoleSubscriptions, "storeGuildRoleSubscriptions");
-        Intrinsics3.checkNotNullParameter(observationDeck, "observationDeck");
-        Intrinsics3.checkNotNullParameter(observable, "storeObservable");
+        C12238m.checkNotNullParameter(storeGuildRoleSubscriptions, "storeGuildRoleSubscriptions");
+        C12238m.checkNotNullParameter(observationDeck, "observationDeck");
+        C12238m.checkNotNullParameter(observable, "storeObservable");
         this.guildId = j;
         this.storeGuildRoleSubscriptions = storeGuildRoleSubscriptions;
         storeGuildRoleSubscriptions.fetchGuildRoleSubscriptionGroupsForGuild(j);
-        ObservableExtensionsKt.appSubscribe(ObservableExtensionsKt.ui$default(ObservableExtensionsKt.computationLatest(observable), this, null, 2, null), (Class<?>) ServerSettingsGuildRoleSubscriptionTierListViewModel.class, (58 & 2) != 0 ? null : null, (Function1<? super Subscription, Unit>) ((58 & 4) != 0 ? null : null), (Function1<? super Error, Unit>) ((58 & 8) != 0 ? null : null), (Function0<Unit>) ((58 & 16) != 0 ? ObservableExtensionsKt.AnonymousClass1.INSTANCE : null), (Function0<Unit>) ((58 & 32) != 0 ? ObservableExtensionsKt.AnonymousClass2.INSTANCE : null), new AnonymousClass1());
+        ObservableExtensionsKt.appSubscribe(ObservableExtensionsKt.ui$default(ObservableExtensionsKt.computationLatest(observable), this, null, 2, null), (Class<?>) ServerSettingsGuildRoleSubscriptionTierListViewModel.class, (58 & 2) != 0 ? null : null, (Function1<? super Subscription, Unit>) ((58 & 4) != 0 ? null : null), (Function1<? super Error, Unit>) ((58 & 8) != 0 ? null : null), (Function0<Unit>) ((58 & 16) != 0 ? ObservableExtensionsKt.C68791.INSTANCE : null), (Function0<Unit>) ((58 & 32) != 0 ? ObservableExtensionsKt.C68802.INSTANCE : null), new C94421());
     }
 }

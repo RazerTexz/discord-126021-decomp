@@ -1,9 +1,9 @@
 package com.discord.api.thread;
 
-import b.d.b.a.outline;
 import com.discord.models.domain.ModelAuditLogEntry;
-import d0.z.d.Intrinsics3;
 import java.util.List;
+import p007b.p100d.p104b.p105a.C1643a;
+import p507d0.p592z.p594d.C12238m;
 
 /* JADX INFO: compiled from: ThreadMembersUpdate.kt */
 /* JADX INFO: loaded from: classes.dex */
@@ -15,7 +15,8 @@ public final /* data */ class ThreadMembersUpdate {
     private final List<Long> memberIdsPreview;
     private final List<Long> removedMemberIds;
 
-    public final List<AugmentedThreadMember> a() {
+    /* JADX INFO: renamed from: a */
+    public final List<AugmentedThreadMember> m8275a() {
         return this.addedMembers;
     }
 
@@ -29,7 +30,8 @@ public final /* data */ class ThreadMembersUpdate {
         return this.id;
     }
 
-    public final List<Long> d() {
+    /* JADX INFO: renamed from: d */
+    public final List<Long> m8278d() {
         return this.removedMemberIds;
     }
 
@@ -41,7 +43,7 @@ public final /* data */ class ThreadMembersUpdate {
             return false;
         }
         ThreadMembersUpdate threadMembersUpdate = (ThreadMembersUpdate) other;
-        return this.id == threadMembersUpdate.id && this.guildId == threadMembersUpdate.guildId && this.memberCount == threadMembersUpdate.memberCount && Intrinsics3.areEqual(this.removedMemberIds, threadMembersUpdate.removedMemberIds) && Intrinsics3.areEqual(this.memberIdsPreview, threadMembersUpdate.memberIdsPreview) && Intrinsics3.areEqual(this.addedMembers, threadMembersUpdate.addedMembers);
+        return this.id == threadMembersUpdate.id && this.guildId == threadMembersUpdate.guildId && this.memberCount == threadMembersUpdate.memberCount && C12238m.areEqual(this.removedMemberIds, threadMembersUpdate.removedMemberIds) && C12238m.areEqual(this.memberIdsPreview, threadMembersUpdate.memberIdsPreview) && C12238m.areEqual(this.addedMembers, threadMembersUpdate.addedMembers);
     }
 
     public int hashCode() {
@@ -57,17 +59,17 @@ public final /* data */ class ThreadMembersUpdate {
     }
 
     public String toString() {
-        StringBuilder sbU = outline.U("ThreadMembersUpdate(id=");
-        sbU.append(this.id);
-        sbU.append(", guildId=");
-        sbU.append(this.guildId);
-        sbU.append(", memberCount=");
-        sbU.append(this.memberCount);
-        sbU.append(", removedMemberIds=");
-        sbU.append(this.removedMemberIds);
-        sbU.append(", memberIdsPreview=");
-        sbU.append(this.memberIdsPreview);
-        sbU.append(", addedMembers=");
-        return outline.L(sbU, this.addedMembers, ")");
+        StringBuilder sbM833U = C1643a.m833U("ThreadMembersUpdate(id=");
+        sbM833U.append(this.id);
+        sbM833U.append(", guildId=");
+        sbM833U.append(this.guildId);
+        sbM833U.append(", memberCount=");
+        sbM833U.append(this.memberCount);
+        sbM833U.append(", removedMemberIds=");
+        sbM833U.append(this.removedMemberIds);
+        sbM833U.append(", memberIdsPreview=");
+        sbM833U.append(this.memberIdsPreview);
+        sbM833U.append(", addedMembers=");
+        return C1643a.m824L(sbM833U, this.addedMembers, ")");
     }
 }

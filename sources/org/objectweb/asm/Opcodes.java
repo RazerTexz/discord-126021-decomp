@@ -21,7 +21,9 @@ public interface Opcodes {
     public static final int V1_6 = 50;
     public static final int V1_7 = 51;
     public static final int V1_8 = 52;
-    public static final int V9 = 53;
+
+    /* JADX INFO: renamed from: V9 */
+    public static final int f27603V9 = 53;
     public static final int V10 = 54;
     public static final int V11 = 55;
     public static final int V12 = 56;

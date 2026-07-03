@@ -1,5 +1,6 @@
 package com.google.android.material.bottomnavigation;
 
+import android.R;
 import android.content.Context;
 import android.content.res.ColorStateList;
 import android.graphics.drawable.ColorDrawable;
@@ -30,7 +31,7 @@ import androidx.core.graphics.drawable.DrawableCompat;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 import androidx.customview.view.AbsSavedState;
-import com.google.android.material.R;
+import com.google.android.material.C10817R;
 import com.google.android.material.badge.BadgeDrawable;
 import com.google.android.material.internal.ThemeEnforcement;
 import com.google.android.material.internal.ViewUtils;
@@ -42,7 +43,7 @@ import com.google.android.material.theme.overlay.MaterialThemeOverlay;
 
 /* JADX INFO: loaded from: classes3.dex */
 public class BottomNavigationView extends FrameLayout {
-    private static final int DEF_STYLE_RES = R.style.Widget_Design_BottomNavigationView;
+    private static final int DEF_STYLE_RES = C10817R.style.Widget_Design_BottomNavigationView;
     private static final int MENU_PRESENTER_ID = 1;
 
     @Nullable
@@ -68,12 +69,14 @@ public class BottomNavigationView extends FrameLayout {
     }
 
     public static class SavedState extends AbsSavedState {
-        public static final Parcelable.Creator<SavedState> CREATOR = new a();
+        public static final Parcelable.Creator<SavedState> CREATOR = new C10849a();
 
+        /* JADX INFO: renamed from: j */
         @Nullable
-        public Bundle j;
+        public Bundle f20922j;
 
-        public static class a implements Parcelable.ClassLoaderCreator<SavedState> {
+        /* JADX INFO: renamed from: com.google.android.material.bottomnavigation.BottomNavigationView$SavedState$a */
+        public static class C10849a implements Parcelable.ClassLoaderCreator<SavedState> {
             @Override // android.os.Parcelable.ClassLoaderCreator
             @NonNull
             public SavedState createFromParcel(@NonNull Parcel parcel, ClassLoader classLoader) {
@@ -100,17 +103,18 @@ public class BottomNavigationView extends FrameLayout {
         @Override // androidx.customview.view.AbsSavedState, android.os.Parcelable
         public void writeToParcel(@NonNull Parcel parcel, int i) {
             super.writeToParcel(parcel, i);
-            parcel.writeBundle(this.j);
+            parcel.writeBundle(this.f20922j);
         }
 
         public SavedState(@NonNull Parcel parcel, ClassLoader classLoader) {
             super(parcel, classLoader);
-            this.j = parcel.readBundle(classLoader == null ? SavedState.class.getClassLoader() : classLoader);
+            this.f20922j = parcel.readBundle(classLoader == null ? SavedState.class.getClassLoader() : classLoader);
         }
     }
 
-    public class a implements MenuBuilder.Callback {
-        public a() {
+    /* JADX INFO: renamed from: com.google.android.material.bottomnavigation.BottomNavigationView$a */
+    public class C10850a implements MenuBuilder.Callback {
+        public C10850a() {
         }
 
         @Override // androidx.appcompat.view.menu.MenuBuilder.Callback
@@ -127,8 +131,9 @@ public class BottomNavigationView extends FrameLayout {
         }
     }
 
-    public class b implements ViewUtils.OnApplyWindowInsetsListener {
-        public b(BottomNavigationView bottomNavigationView) {
+    /* JADX INFO: renamed from: com.google.android.material.bottomnavigation.BottomNavigationView$b */
+    public class C10851b implements ViewUtils.OnApplyWindowInsetsListener {
+        public C10851b(BottomNavigationView bottomNavigationView) {
         }
 
         @Override // com.google.android.material.internal.ViewUtils.OnApplyWindowInsetsListener
@@ -155,13 +160,13 @@ public class BottomNavigationView extends FrameLayout {
 
     private void addCompatibilityTopDivider(Context context) {
         View view = new View(context);
-        view.setBackgroundColor(ContextCompat.getColor(context, R.color.design_bottom_navigation_shadow_color));
-        view.setLayoutParams(new FrameLayout.LayoutParams(-1, getResources().getDimensionPixelSize(R.dimen.design_bottom_navigation_shadow_height)));
+        view.setBackgroundColor(ContextCompat.getColor(context, C10817R.color.design_bottom_navigation_shadow_color));
+        view.setLayoutParams(new FrameLayout.LayoutParams(-1, getResources().getDimensionPixelSize(C10817R.dimen.design_bottom_navigation_shadow_height)));
         addView(view);
     }
 
     private void applyWindowInsets() {
-        ViewUtils.doOnApplyWindowInsets(this, new b(this));
+        ViewUtils.doOnApplyWindowInsets(this, new C10851b(this));
     }
 
     @NonNull
@@ -279,14 +284,14 @@ public class BottomNavigationView extends FrameLayout {
         }
         SavedState savedState = (SavedState) parcelable;
         super.onRestoreInstanceState(savedState.getSuperState());
-        this.menu.restorePresenterStates(savedState.j);
+        this.menu.restorePresenterStates(savedState.f20922j);
     }
 
     @Override // android.view.View
     public Parcelable onSaveInstanceState() {
         SavedState savedState = new SavedState(super.onSaveInstanceState());
         Bundle bundle = new Bundle();
-        savedState.j = bundle;
+        savedState.f20922j = bundle;
         this.menu.savePresenterStates(bundle);
         return savedState;
     }
@@ -386,7 +391,7 @@ public class BottomNavigationView extends FrameLayout {
     }
 
     public BottomNavigationView(@NonNull Context context, @Nullable AttributeSet attributeSet) {
-        this(context, attributeSet, R.attr.bottomNavigationStyle);
+        this(context, attributeSet, C10817R.attr.bottomNavigationStyle);
     }
 
     public BottomNavigationView(@NonNull Context context, @Nullable AttributeSet attributeSet, int i) {
@@ -406,45 +411,45 @@ public class BottomNavigationView extends FrameLayout {
         bottomNavigationMenuView.setPresenter(bottomNavigationPresenter);
         bottomNavigationMenu.addMenuPresenter(bottomNavigationPresenter);
         bottomNavigationPresenter.initForMenu(getContext(), bottomNavigationMenu);
-        int[] iArr = R.styleable.BottomNavigationView;
-        int i2 = R.style.Widget_Design_BottomNavigationView;
-        int i3 = R.styleable.BottomNavigationView_itemTextAppearanceInactive;
-        int i4 = R.styleable.BottomNavigationView_itemTextAppearanceActive;
+        int[] iArr = C10817R.styleable.BottomNavigationView;
+        int i2 = C10817R.style.Widget_Design_BottomNavigationView;
+        int i3 = C10817R.styleable.BottomNavigationView_itemTextAppearanceInactive;
+        int i4 = C10817R.styleable.BottomNavigationView_itemTextAppearanceActive;
         TintTypedArray tintTypedArrayObtainTintedStyledAttributes = ThemeEnforcement.obtainTintedStyledAttributes(context2, attributeSet, iArr, i, i2, i3, i4);
-        int i5 = R.styleable.BottomNavigationView_itemIconTint;
+        int i5 = C10817R.styleable.BottomNavigationView_itemIconTint;
         if (tintTypedArrayObtainTintedStyledAttributes.hasValue(i5)) {
             bottomNavigationMenuView.setIconTintList(tintTypedArrayObtainTintedStyledAttributes.getColorStateList(i5));
         } else {
-            bottomNavigationMenuView.setIconTintList(bottomNavigationMenuView.createDefaultColorStateList(android.R.attr.textColorSecondary));
+            bottomNavigationMenuView.setIconTintList(bottomNavigationMenuView.createDefaultColorStateList(R.attr.textColorSecondary));
         }
-        setItemIconSize(tintTypedArrayObtainTintedStyledAttributes.getDimensionPixelSize(R.styleable.BottomNavigationView_itemIconSize, getResources().getDimensionPixelSize(R.dimen.design_bottom_navigation_icon_size)));
+        setItemIconSize(tintTypedArrayObtainTintedStyledAttributes.getDimensionPixelSize(C10817R.styleable.BottomNavigationView_itemIconSize, getResources().getDimensionPixelSize(C10817R.dimen.design_bottom_navigation_icon_size)));
         if (tintTypedArrayObtainTintedStyledAttributes.hasValue(i3)) {
             setItemTextAppearanceInactive(tintTypedArrayObtainTintedStyledAttributes.getResourceId(i3, 0));
         }
         if (tintTypedArrayObtainTintedStyledAttributes.hasValue(i4)) {
             setItemTextAppearanceActive(tintTypedArrayObtainTintedStyledAttributes.getResourceId(i4, 0));
         }
-        int i6 = R.styleable.BottomNavigationView_itemTextColor;
+        int i6 = C10817R.styleable.BottomNavigationView_itemTextColor;
         if (tintTypedArrayObtainTintedStyledAttributes.hasValue(i6)) {
             setItemTextColor(tintTypedArrayObtainTintedStyledAttributes.getColorStateList(i6));
         }
         if (getBackground() == null || (getBackground() instanceof ColorDrawable)) {
             ViewCompat.setBackground(this, createMaterialShapeDrawableBackground(context2));
         }
-        int i7 = R.styleable.BottomNavigationView_elevation;
+        int i7 = C10817R.styleable.BottomNavigationView_elevation;
         if (tintTypedArrayObtainTintedStyledAttributes.hasValue(i7)) {
             setElevation(tintTypedArrayObtainTintedStyledAttributes.getDimensionPixelSize(i7, 0));
         }
-        DrawableCompat.setTintList(getBackground().mutate(), MaterialResources.getColorStateList(context2, tintTypedArrayObtainTintedStyledAttributes, R.styleable.BottomNavigationView_backgroundTint));
-        setLabelVisibilityMode(tintTypedArrayObtainTintedStyledAttributes.getInteger(R.styleable.BottomNavigationView_labelVisibilityMode, -1));
-        setItemHorizontalTranslationEnabled(tintTypedArrayObtainTintedStyledAttributes.getBoolean(R.styleable.BottomNavigationView_itemHorizontalTranslationEnabled, true));
-        int resourceId = tintTypedArrayObtainTintedStyledAttributes.getResourceId(R.styleable.BottomNavigationView_itemBackground, 0);
+        DrawableCompat.setTintList(getBackground().mutate(), MaterialResources.getColorStateList(context2, tintTypedArrayObtainTintedStyledAttributes, C10817R.styleable.BottomNavigationView_backgroundTint));
+        setLabelVisibilityMode(tintTypedArrayObtainTintedStyledAttributes.getInteger(C10817R.styleable.BottomNavigationView_labelVisibilityMode, -1));
+        setItemHorizontalTranslationEnabled(tintTypedArrayObtainTintedStyledAttributes.getBoolean(C10817R.styleable.BottomNavigationView_itemHorizontalTranslationEnabled, true));
+        int resourceId = tintTypedArrayObtainTintedStyledAttributes.getResourceId(C10817R.styleable.BottomNavigationView_itemBackground, 0);
         if (resourceId != 0) {
             bottomNavigationMenuView.setItemBackgroundRes(resourceId);
         } else {
-            setItemRippleColor(MaterialResources.getColorStateList(context2, tintTypedArrayObtainTintedStyledAttributes, R.styleable.BottomNavigationView_itemRippleColor));
+            setItemRippleColor(MaterialResources.getColorStateList(context2, tintTypedArrayObtainTintedStyledAttributes, C10817R.styleable.BottomNavigationView_itemRippleColor));
         }
-        int i8 = R.styleable.BottomNavigationView_menu;
+        int i8 = C10817R.styleable.BottomNavigationView_menu;
         if (tintTypedArrayObtainTintedStyledAttributes.hasValue(i8)) {
             inflateMenu(tintTypedArrayObtainTintedStyledAttributes.getResourceId(i8, 0));
         }
@@ -453,7 +458,7 @@ public class BottomNavigationView extends FrameLayout {
         if (shouldDrawCompatibilityTopDivider()) {
             addCompatibilityTopDivider(context2);
         }
-        bottomNavigationMenu.setCallback(new a());
+        bottomNavigationMenu.setCallback(new C10850a());
         applyWindowInsets();
     }
 }

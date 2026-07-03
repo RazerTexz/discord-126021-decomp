@@ -1,10 +1,10 @@
 package com.discord.utilities.lazy.memberlist;
 
 import com.discord.utilities.collections.SparseMutableList;
-import d0.z.d.Intrinsics3;
 import java.util.SortedMap;
 import java.util.TreeMap;
 import kotlin.jvm.internal.DefaultConstructorMarker;
+import p507d0.p592z.p594d.C12238m;
 
 /* JADX INFO: compiled from: ThreadMemberList.kt */
 /* JADX INFO: loaded from: classes2.dex */
@@ -15,7 +15,7 @@ public final class ThreadMemberList implements MemberList {
     private SparseMutableList<MemberListRow> rows;
 
     public ThreadMemberList(String str, int i) {
-        Intrinsics3.checkNotNullParameter(str, "listId");
+        C12238m.checkNotNullParameter(str, "listId");
         this.listId = str;
         this.initialSize = i;
         this.rows = new SparseMutableList<>(getInitialSize(), 100);

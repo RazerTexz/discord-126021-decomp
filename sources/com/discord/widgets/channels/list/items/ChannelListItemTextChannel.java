@@ -1,9 +1,9 @@
 package com.discord.widgets.channels.list.items;
 
-import b.d.b.a.outline;
 import com.discord.api.channel.Channel;
 import com.discord.widgets.channels.list.WidgetChannelListUnreads;
-import d0.z.d.Intrinsics3;
+import p007b.p100d.p104b.p105a.C1643a;
+import p507d0.p592z.p594d.C12238m;
 
 /* JADX INFO: compiled from: ChannelListItemTextChannel.kt */
 /* JADX INFO: loaded from: classes2.dex */
@@ -21,7 +21,7 @@ public final /* data */ class ChannelListItemTextChannel implements ChannelListI
     private final int type;
 
     public ChannelListItemTextChannel(Channel channel, boolean z2, int i, boolean z3, boolean z4, boolean z5, boolean z6, boolean z7, boolean z8) {
-        Intrinsics3.checkNotNullParameter(channel, "channel");
+        C12238m.checkNotNullParameter(channel, "channel");
         this.channel = channel;
         this.selected = z2;
         this.mentionCount = i;
@@ -81,7 +81,7 @@ public final /* data */ class ChannelListItemTextChannel implements ChannelListI
     }
 
     public final ChannelListItemTextChannel copy(Channel channel, boolean selected, int mentionCount, boolean isUnread, boolean muted, boolean isLocked, boolean hasActiveThreads, boolean isGuildRoleSubscriptionLockedChannel, boolean isGuildRoleSubscriptionChannel) {
-        Intrinsics3.checkNotNullParameter(channel, "channel");
+        C12238m.checkNotNullParameter(channel, "channel");
         return new ChannelListItemTextChannel(channel, selected, mentionCount, isUnread, muted, isLocked, hasActiveThreads, isGuildRoleSubscriptionLockedChannel, isGuildRoleSubscriptionChannel);
     }
 
@@ -93,7 +93,7 @@ public final /* data */ class ChannelListItemTextChannel implements ChannelListI
             return false;
         }
         ChannelListItemTextChannel channelListItemTextChannel = (ChannelListItemTextChannel) other;
-        return Intrinsics3.areEqual(this.channel, channelListItemTextChannel.channel) && this.selected == channelListItemTextChannel.selected && getMentionCount() == channelListItemTextChannel.getMentionCount() && getIsUnread() == channelListItemTextChannel.getIsUnread() && this.muted == channelListItemTextChannel.muted && this.isLocked == channelListItemTextChannel.isLocked && this.hasActiveThreads == channelListItemTextChannel.hasActiveThreads && this.isGuildRoleSubscriptionLockedChannel == channelListItemTextChannel.isGuildRoleSubscriptionLockedChannel && this.isGuildRoleSubscriptionChannel == channelListItemTextChannel.isGuildRoleSubscriptionChannel;
+        return C12238m.areEqual(this.channel, channelListItemTextChannel.channel) && this.selected == channelListItemTextChannel.selected && getMentionCount() == channelListItemTextChannel.getMentionCount() && getIsUnread() == channelListItemTextChannel.getIsUnread() && this.muted == channelListItemTextChannel.muted && this.isLocked == channelListItemTextChannel.isLocked && this.hasActiveThreads == channelListItemTextChannel.hasActiveThreads && this.isGuildRoleSubscriptionLockedChannel == channelListItemTextChannel.isGuildRoleSubscriptionLockedChannel && this.isGuildRoleSubscriptionChannel == channelListItemTextChannel.isGuildRoleSubscriptionChannel;
     }
 
     public final Channel getChannel() {
@@ -217,23 +217,23 @@ public final /* data */ class ChannelListItemTextChannel implements ChannelListI
     }
 
     public String toString() {
-        StringBuilder sbU = outline.U("ChannelListItemTextChannel(channel=");
-        sbU.append(this.channel);
-        sbU.append(", selected=");
-        sbU.append(this.selected);
-        sbU.append(", mentionCount=");
-        sbU.append(getMentionCount());
-        sbU.append(", isUnread=");
-        sbU.append(getIsUnread());
-        sbU.append(", muted=");
-        sbU.append(this.muted);
-        sbU.append(", isLocked=");
-        sbU.append(this.isLocked);
-        sbU.append(", hasActiveThreads=");
-        sbU.append(this.hasActiveThreads);
-        sbU.append(", isGuildRoleSubscriptionLockedChannel=");
-        sbU.append(this.isGuildRoleSubscriptionLockedChannel);
-        sbU.append(", isGuildRoleSubscriptionChannel=");
-        return outline.O(sbU, this.isGuildRoleSubscriptionChannel, ")");
+        StringBuilder sbM833U = C1643a.m833U("ChannelListItemTextChannel(channel=");
+        sbM833U.append(this.channel);
+        sbM833U.append(", selected=");
+        sbM833U.append(this.selected);
+        sbM833U.append(", mentionCount=");
+        sbM833U.append(getMentionCount());
+        sbM833U.append(", isUnread=");
+        sbM833U.append(getIsUnread());
+        sbM833U.append(", muted=");
+        sbM833U.append(this.muted);
+        sbM833U.append(", isLocked=");
+        sbM833U.append(this.isLocked);
+        sbM833U.append(", hasActiveThreads=");
+        sbM833U.append(this.hasActiveThreads);
+        sbM833U.append(", isGuildRoleSubscriptionLockedChannel=");
+        sbM833U.append(this.isGuildRoleSubscriptionLockedChannel);
+        sbM833U.append(", isGuildRoleSubscriptionChannel=");
+        return C1643a.m827O(sbM833U, this.isGuildRoleSubscriptionChannel, ")");
     }
 }

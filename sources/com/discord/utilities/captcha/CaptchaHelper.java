@@ -6,21 +6,7 @@ import android.os.Bundle;
 import android.text.TextUtils;
 import androidx.appcompat.widget.ActivityChooserModel;
 import androidx.fragment.app.FragmentManager;
-import b.d.b.a.outline;
-import b.i.a.f.e.h.a;
-import b.i.a.f.e.h.c;
-import b.i.a.f.e.k.k;
-import b.i.a.f.e.k.s;
-import b.i.a.f.e.k.v;
-import b.i.a.f.h.o.i;
-import b.i.a.f.h.o.j;
-import b.i.a.f.h.o.l;
-import b.i.a.f.k.a;
-import b.i.a.f.n.c0;
-import b.i.a.f.n.d;
-import b.i.a.f.n.e;
-import b.i.a.f.n.g;
-import com.discord.R;
+import com.discord.C5419R;
 import com.discord.app.AppActivity;
 import com.discord.stores.StoreStream;
 import com.discord.widgets.notice.WidgetNoticeDialog;
@@ -36,8 +22,6 @@ import com.hcaptcha.sdk.HCaptchaException;
 import com.hcaptcha.sdk.HCaptchaSize;
 import com.hcaptcha.sdk.HCaptchaTheme;
 import com.hcaptcha.sdk.HCaptchaTokenResponse;
-import d0.z.d.Intrinsics3;
-import d0.z.d.Lambda;
 import java.util.Locale;
 import java.util.Objects;
 import java.util.concurrent.Executor;
@@ -45,9 +29,30 @@ import kotlin.Unit;
 import kotlin.jvm.functions.Function0;
 import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.DefaultConstructorMarker;
-import rx.Emitter;
-import rx.Observable;
-import rx.functions.Action1;
+import p007b.p100d.p104b.p105a.C1643a;
+import p007b.p225i.p226a.p288f.p299e.p300h.AbstractC3268c;
+import p007b.p225i.p226a.p288f.p299e.p300h.C3266a;
+import p007b.p225i.p226a.p288f.p299e.p300h.p301j.AbstractC3284d;
+import p007b.p225i.p226a.p288f.p299e.p304k.C3363k;
+import p007b.p225i.p226a.p288f.p299e.p304k.C3379s;
+import p007b.p225i.p226a.p288f.p299e.p304k.C3385v;
+import p007b.p225i.p226a.p288f.p313h.p328o.C3962i;
+import p007b.p225i.p226a.p288f.p313h.p328o.C3963j;
+import p007b.p225i.p226a.p288f.p313h.p328o.C3965l;
+import p007b.p225i.p226a.p288f.p336k.C4327a;
+import p007b.p225i.p226a.p288f.p340n.C4358c0;
+import p007b.p225i.p226a.p288f.p340n.C4363g;
+import p007b.p225i.p226a.p288f.p340n.InterfaceC4359d;
+import p007b.p225i.p226a.p288f.p340n.InterfaceC4361e;
+import p007b.p437j.p438a.C5065a;
+import p007b.p437j.p438a.C5067c;
+import p007b.p437j.p438a.p439f.InterfaceC5070a;
+import p007b.p437j.p438a.p439f.InterfaceC5072c;
+import p507d0.p592z.p594d.AbstractC12240o;
+import p507d0.p592z.p594d.C12238m;
+import p658rx.Emitter;
+import p658rx.Observable;
+import p658rx.functions.Action1;
 
 /* JADX INFO: compiled from: CaptchaHelper.kt */
 /* JADX INFO: loaded from: classes2.dex */
@@ -67,7 +72,7 @@ public final class CaptchaHelper {
         private final String captchaRqtoken;
 
         public CaptchaPayload(String str, String str2) {
-            Intrinsics3.checkNotNullParameter(str, "captchaKey");
+            C12238m.checkNotNullParameter(str, "captchaKey");
             this.captchaKey = str;
             this.captchaRqtoken = str2;
         }
@@ -93,7 +98,7 @@ public final class CaptchaHelper {
         }
 
         public final CaptchaPayload copy(String captchaKey, String captchaRqtoken) {
-            Intrinsics3.checkNotNullParameter(captchaKey, "captchaKey");
+            C12238m.checkNotNullParameter(captchaKey, "captchaKey");
             return new CaptchaPayload(captchaKey, captchaRqtoken);
         }
 
@@ -105,7 +110,7 @@ public final class CaptchaHelper {
                 return false;
             }
             CaptchaPayload captchaPayload = (CaptchaPayload) other;
-            return Intrinsics3.areEqual(this.captchaKey, captchaPayload.captchaKey) && Intrinsics3.areEqual(this.captchaRqtoken, captchaPayload.captchaRqtoken);
+            return C12238m.areEqual(this.captchaKey, captchaPayload.captchaKey) && C12238m.areEqual(this.captchaRqtoken, captchaPayload.captchaRqtoken);
         }
 
         public final String getCaptchaKey() {
@@ -124,10 +129,10 @@ public final class CaptchaHelper {
         }
 
         public String toString() {
-            StringBuilder sbU = outline.U("CaptchaPayload(captchaKey=");
-            sbU.append(this.captchaKey);
-            sbU.append(", captchaRqtoken=");
-            return outline.J(sbU, this.captchaRqtoken, ")");
+            StringBuilder sbM833U = C1643a.m833U("CaptchaPayload(captchaKey=");
+            sbM833U.append(this.captchaKey);
+            sbM833U.append(", captchaRqtoken=");
+            return C1643a.m822J(sbM833U, this.captchaRqtoken, ")");
         }
 
         public /* synthetic */ CaptchaPayload(String str, String str2, int i, DefaultConstructorMarker defaultConstructorMarker) {
@@ -177,8 +182,8 @@ public final class CaptchaHelper {
             }
 
             public final HCaptcha copy(String siteKey, Activity activity, String rqdata) {
-                Intrinsics3.checkNotNullParameter(siteKey, "siteKey");
-                Intrinsics3.checkNotNullParameter(activity, ActivityChooserModel.ATTRIBUTE_ACTIVITY);
+                C12238m.checkNotNullParameter(siteKey, "siteKey");
+                C12238m.checkNotNullParameter(activity, ActivityChooserModel.ATTRIBUTE_ACTIVITY);
                 return new HCaptcha(siteKey, activity, rqdata);
             }
 
@@ -190,7 +195,7 @@ public final class CaptchaHelper {
                     return false;
                 }
                 HCaptcha hCaptcha = (HCaptcha) other;
-                return Intrinsics3.areEqual(this.siteKey, hCaptcha.siteKey) && Intrinsics3.areEqual(this.activity, hCaptcha.activity) && Intrinsics3.areEqual(this.rqdata, hCaptcha.rqdata);
+                return C12238m.areEqual(this.siteKey, hCaptcha.siteKey) && C12238m.areEqual(this.activity, hCaptcha.activity) && C12238m.areEqual(this.rqdata, hCaptcha.rqdata);
             }
 
             public final Activity getActivity() {
@@ -215,19 +220,19 @@ public final class CaptchaHelper {
             }
 
             public String toString() {
-                StringBuilder sbU = outline.U("HCaptcha(siteKey=");
-                sbU.append(this.siteKey);
-                sbU.append(", activity=");
-                sbU.append(this.activity);
-                sbU.append(", rqdata=");
-                return outline.J(sbU, this.rqdata, ")");
+                StringBuilder sbM833U = C1643a.m833U("HCaptcha(siteKey=");
+                sbM833U.append(this.siteKey);
+                sbM833U.append(", activity=");
+                sbM833U.append(this.activity);
+                sbM833U.append(", rqdata=");
+                return C1643a.m822J(sbM833U, this.rqdata, ")");
             }
 
             /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
             public HCaptcha(String str, Activity activity, String str2) {
                 super(null);
-                Intrinsics3.checkNotNullParameter(str, "siteKey");
-                Intrinsics3.checkNotNullParameter(activity, ActivityChooserModel.ATTRIBUTE_ACTIVITY);
+                C12238m.checkNotNullParameter(str, "siteKey");
+                C12238m.checkNotNullParameter(activity, ActivityChooserModel.ATTRIBUTE_ACTIVITY);
                 this.siteKey = str;
                 this.activity = activity;
                 this.rqdata = str2;
@@ -241,7 +246,7 @@ public final class CaptchaHelper {
             /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
             public ReCaptcha(Activity activity) {
                 super(null);
-                Intrinsics3.checkNotNullParameter(activity, ActivityChooserModel.ATTRIBUTE_ACTIVITY);
+                C12238m.checkNotNullParameter(activity, ActivityChooserModel.ATTRIBUTE_ACTIVITY);
                 this.activity = activity;
             }
 
@@ -258,13 +263,13 @@ public final class CaptchaHelper {
             }
 
             public final ReCaptcha copy(Activity activity) {
-                Intrinsics3.checkNotNullParameter(activity, ActivityChooserModel.ATTRIBUTE_ACTIVITY);
+                C12238m.checkNotNullParameter(activity, ActivityChooserModel.ATTRIBUTE_ACTIVITY);
                 return new ReCaptcha(activity);
             }
 
             public boolean equals(Object other) {
                 if (this != other) {
-                    return (other instanceof ReCaptcha) && Intrinsics3.areEqual(this.activity, ((ReCaptcha) other).activity);
+                    return (other instanceof ReCaptcha) && C12238m.areEqual(this.activity, ((ReCaptcha) other).activity);
                 }
                 return true;
             }
@@ -282,10 +287,10 @@ public final class CaptchaHelper {
             }
 
             public String toString() {
-                StringBuilder sbU = outline.U("ReCaptcha(activity=");
-                sbU.append(this.activity);
-                sbU.append(")");
-                return sbU.toString();
+                StringBuilder sbM833U = C1643a.m833U("ReCaptcha(activity=");
+                sbM833U.append(this.activity);
+                sbM833U.append(")");
+                return sbM833U.toString();
             }
         }
 
@@ -303,7 +308,7 @@ public final class CaptchaHelper {
         private final String reasonCode;
 
         public Failure(int i, String str) {
-            Intrinsics3.checkNotNullParameter(str, "reasonCode");
+            C12238m.checkNotNullParameter(str, "reasonCode");
             this.errorStringId = i;
             this.reasonCode = str;
         }
@@ -329,7 +334,7 @@ public final class CaptchaHelper {
         }
 
         public final Failure copy(int errorStringId, String reasonCode) {
-            Intrinsics3.checkNotNullParameter(reasonCode, "reasonCode");
+            C12238m.checkNotNullParameter(reasonCode, "reasonCode");
             return new Failure(errorStringId, reasonCode);
         }
 
@@ -341,7 +346,7 @@ public final class CaptchaHelper {
                 return false;
             }
             Failure failure = (Failure) other;
-            return this.errorStringId == failure.errorStringId && Intrinsics3.areEqual(this.reasonCode, failure.reasonCode);
+            return this.errorStringId == failure.errorStringId && C12238m.areEqual(this.reasonCode, failure.reasonCode);
         }
 
         public final int getErrorStringId() {
@@ -360,10 +365,10 @@ public final class CaptchaHelper {
 
         @Override // java.lang.Throwable
         public String toString() {
-            StringBuilder sbU = outline.U("Failure(errorStringId=");
-            sbU.append(this.errorStringId);
-            sbU.append(", reasonCode=");
-            return outline.J(sbU, this.reasonCode, ")");
+            StringBuilder sbM833U = C1643a.m833U("Failure(errorStringId=");
+            sbM833U.append(this.errorStringId);
+            sbM833U.append(", reasonCode=");
+            return C1643a.m822J(sbM833U, this.reasonCode, ")");
         }
     }
 
@@ -371,70 +376,70 @@ public final class CaptchaHelper {
     }
 
     private final void ensurePlayServicesAvailable(GoogleApiAvailability googleApiAvailability, Activity activity, final Function0<Unit> function0, final Function1<? super Failure, Unit> function1) throws PackageManager.NameNotFoundException {
-        int iC = googleApiAvailability.c(activity);
-        if (iC == 0 || !googleApiAvailability.d(iC)) {
-            if (iC == 0) {
+        int iM9024c = googleApiAvailability.m9024c(activity);
+        if (iM9024c == 0 || !googleApiAvailability.m9025d(iM9024c)) {
+            if (iM9024c == 0) {
                 function0.invoke();
                 return;
             } else {
-                function1.invoke(new Failure(R.string.captcha_failed_unsupported, FAILED_DEVICE_UNSUPPORTED));
+                function1.invoke(new Failure(C5419R.string.captcha_failed_unsupported, FAILED_DEVICE_UNSUPPORTED));
                 return;
             }
         }
-        Task<Void> taskE = googleApiAvailability.e(activity);
-        e<Void> eVar = new e<Void>() { // from class: com.discord.utilities.captcha.CaptchaHelper.ensurePlayServicesAvailable.1
-            @Override // b.i.a.f.n.e
+        Task<Void> taskM9026e = googleApiAvailability.m9026e(activity);
+        InterfaceC4361e<Void> interfaceC4361e = new InterfaceC4361e<Void>() { // from class: com.discord.utilities.captcha.CaptchaHelper.ensurePlayServicesAvailable.1
+            @Override // p007b.p225i.p226a.p288f.p340n.InterfaceC4361e
             public final void onSuccess(Void r1) {
                 function0.invoke();
             }
         };
-        c0 c0Var = (c0) taskE;
-        Objects.requireNonNull(c0Var);
-        Executor executor = g.a;
-        c0Var.g(executor, eVar);
-        c0Var.e(executor, new d() { // from class: com.discord.utilities.captcha.CaptchaHelper.ensurePlayServicesAvailable.2
-            @Override // b.i.a.f.n.d
+        C4358c0 c4358c0 = (C4358c0) taskM9026e;
+        Objects.requireNonNull(c4358c0);
+        Executor executor = C4363g.f11479a;
+        c4358c0.mo6012g(executor, interfaceC4361e);
+        c4358c0.mo6010e(executor, new InterfaceC4359d() { // from class: com.discord.utilities.captcha.CaptchaHelper.ensurePlayServicesAvailable.2
+            @Override // p007b.p225i.p226a.p288f.p340n.InterfaceC4359d
             public final void onFailure(Exception exc) {
-                function1.invoke(new Failure(R.string.captcha_failed_play_services, CaptchaHelper.FAILED_MISSING_DEPS));
+                function1.invoke(new Failure(C5419R.string.captcha_failed_play_services, CaptchaHelper.FAILED_MISSING_DEPS));
             }
         });
-        Intrinsics3.checkNotNullExpressionValue(c0Var, "makeGooglePlayServicesAv…ISSING_DEPS))\n          }");
+        C12238m.checkNotNullExpressionValue(c4358c0, "makeGooglePlayServicesAv…ISSING_DEPS))\n          }");
     }
 
     /* JADX WARN: Type inference incomplete: some casts might be missing */
     private final void showCaptcha(SafetyNetClient safetyNetClient, final Function1<? super String, Unit> function1, final Function1<? super Failure, Unit> function2) {
         Objects.requireNonNull(safetyNetClient);
-        SafetyNetApi safetyNetApi = a.d;
-        c cVar = safetyNetClient.g;
-        Objects.requireNonNull((i) safetyNetApi);
+        SafetyNetApi safetyNetApi = C4327a.f11446d;
+        AbstractC3268c abstractC3268c = safetyNetClient.f9332g;
+        Objects.requireNonNull((C3962i) safetyNetApi);
         if (TextUtils.isEmpty(RECAPTCHA_SITE_KEY)) {
             throw new IllegalArgumentException("Null or empty site key in verifyWithRecaptcha");
         }
-        b.i.a.f.e.h.j.d dVarA = cVar.a(new j(cVar, RECAPTCHA_SITE_KEY));
-        v vVar = new v(new SafetyNetApi.RecaptchaTokenResponse());
-        k.b bVar = k.a;
+        AbstractC3284d abstractC3284dMo4048a = abstractC3268c.mo4048a(new C3963j(abstractC3268c, RECAPTCHA_SITE_KEY));
+        C3385v c3385v = new C3385v(new SafetyNetApi.RecaptchaTokenResponse());
+        C3363k.b bVar = C3363k.f9531a;
         TaskCompletionSource taskCompletionSource = new TaskCompletionSource();
-        dVarA.c(new s(dVarA, taskCompletionSource, vVar, bVar));
-        c0<TResult> c0Var = taskCompletionSource.a;
-        e<SafetyNetApi.RecaptchaTokenResponse> eVar = new e<SafetyNetApi.RecaptchaTokenResponse>() { // from class: com.discord.utilities.captcha.CaptchaHelper.showCaptcha.1
-            @Override // b.i.a.f.n.e
+        abstractC3284dMo4048a.mo4051c(new C3379s(abstractC3284dMo4048a, taskCompletionSource, c3385v, bVar));
+        C4358c0<TResult> c4358c0 = taskCompletionSource.f20845a;
+        InterfaceC4361e<SafetyNetApi.RecaptchaTokenResponse> interfaceC4361e = new InterfaceC4361e<SafetyNetApi.RecaptchaTokenResponse>() { // from class: com.discord.utilities.captcha.CaptchaHelper.showCaptcha.1
+            @Override // p007b.p225i.p226a.p288f.p340n.InterfaceC4361e
             public final void onSuccess(SafetyNetApi.RecaptchaTokenResponse recaptchaTokenResponse) {
-                Intrinsics3.checkNotNullExpressionValue(recaptchaTokenResponse, "it");
-                String strC = ((SafetyNetApi.a) recaptchaTokenResponse.a).C();
-                Intrinsics3.checkNotNullExpressionValue(strC, "userResponseToken");
-                if (strC.length() == 0) {
+                C12238m.checkNotNullExpressionValue(recaptchaTokenResponse, "it");
+                String strMo5438C = ((SafetyNetApi.InterfaceC10813a) recaptchaTokenResponse.f9340a).mo5438C();
+                C12238m.checkNotNullExpressionValue(strMo5438C, "userResponseToken");
+                if (strMo5438C.length() == 0) {
                     return;
                 }
-                function1.invoke("android:" + strC);
+                function1.invoke("android:" + strMo5438C);
             }
         };
-        Objects.requireNonNull(c0Var);
-        Executor executor = g.a;
-        c0Var.g(executor, eVar);
-        c0Var.e(executor, new d() { // from class: com.discord.utilities.captcha.CaptchaHelper.showCaptcha.2
-            @Override // b.i.a.f.n.d
+        Objects.requireNonNull(c4358c0);
+        Executor executor = C4363g.f11479a;
+        c4358c0.mo6012g(executor, interfaceC4361e);
+        c4358c0.mo6010e(executor, new InterfaceC4359d() { // from class: com.discord.utilities.captcha.CaptchaHelper.showCaptcha.2
+            @Override // p007b.p225i.p226a.p288f.p340n.InterfaceC4359d
             public final void onFailure(Exception exc) {
-                function2.invoke(new Failure(R.string.captcha_failed, CaptchaHelper.FAILED_CAPTCHA_EXPIRED));
+                function2.invoke(new Failure(C5419R.string.captcha_failed, CaptchaHelper.FAILED_CAPTCHA_EXPIRED));
             }
         });
     }
@@ -468,38 +473,38 @@ public final class CaptchaHelper {
         if (activity == null || (supportFragmentManager = activity.getSupportFragmentManager()) == null) {
             return;
         }
-        WidgetNoticeDialog.Builder negativeButton$default = WidgetNoticeDialog.Builder.setNegativeButton$default(new WidgetNoticeDialog.Builder(activity).setTitle(R.string.captcha_problems).setMessage(R.string.captcha_problems_info).setPositiveButton(R.string.captcha_open_browser, new CaptchaHelper2(activity, onOpenBrowser)), R.string.cancel, (Function1) null, 2, (Object) null);
-        Intrinsics3.checkNotNullExpressionValue(supportFragmentManager, "it");
+        WidgetNoticeDialog.Builder negativeButton$default = WidgetNoticeDialog.Builder.setNegativeButton$default(new WidgetNoticeDialog.Builder(activity).setTitle(C5419R.string.captcha_problems).setMessage(C5419R.string.captcha_problems_info).setPositiveButton(C5419R.string.captcha_open_browser, new CaptchaHelper$showCaptchaHelpDialog$$inlined$let$lambda$1(activity, onOpenBrowser)), C5419R.string.cancel, (Function1) null, 2, (Object) null);
+        C12238m.checkNotNullExpressionValue(supportFragmentManager, "it");
         negativeButton$default.show(supportFragmentManager);
     }
 
     public final Observable<String> tryShowCaptcha(final CaptchaRequest captchaRequest) {
-        Intrinsics3.checkNotNullParameter(captchaRequest, "captchaRequest");
-        Observable<String> observableO = Observable.o(new Action1<Emitter<String>>() { // from class: com.discord.utilities.captcha.CaptchaHelper.tryShowCaptcha.1
+        C12238m.checkNotNullParameter(captchaRequest, "captchaRequest");
+        Observable<String> observableM11080o = Observable.m11080o(new Action1<Emitter<String>>() { // from class: com.discord.utilities.captcha.CaptchaHelper.tryShowCaptcha.1
 
             /* JADX INFO: renamed from: com.discord.utilities.captcha.CaptchaHelper$tryShowCaptcha$1$3, reason: invalid class name */
             /* JADX INFO: compiled from: CaptchaHelper.kt */
-            public static final class AnonymousClass3 extends Lambda implements Function0<Unit> {
+            public static final class AnonymousClass3 extends AbstractC12240o implements Function0<Unit> {
                 public final /* synthetic */ Activity $activity;
                 public final /* synthetic */ Emitter $emitter;
                 public final /* synthetic */ Function1 $errorHandler;
 
-                /* JADX INFO: renamed from: com.discord.utilities.captcha.CaptchaHelper$tryShowCaptcha$1$3$1, reason: invalid class name and collision with other inner class name */
+                /* JADX INFO: renamed from: com.discord.utilities.captcha.CaptchaHelper$tryShowCaptcha$1$3$1, reason: invalid class name */
                 /* JADX INFO: compiled from: CaptchaHelper.kt */
-                public static final class C02101 extends Lambda implements Function1<String, Unit> {
-                    public C02101() {
+                public static final class AnonymousClass1 extends AbstractC12240o implements Function1<String, Unit> {
+                    public AnonymousClass1() {
                         super(1);
                     }
 
                     @Override // kotlin.jvm.functions.Function1
                     public /* bridge */ /* synthetic */ Unit invoke(String str) {
                         invoke2(str);
-                        return Unit.a;
+                        return Unit.f27425a;
                     }
 
                     /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
                     public final void invoke2(String str) {
-                        Intrinsics3.checkNotNullParameter(str, "token");
+                        C12238m.checkNotNullParameter(str, "token");
                         AnonymousClass3.this.$emitter.onNext(str);
                         AnonymousClass3.this.$emitter.onCompleted();
                     }
@@ -516,133 +521,135 @@ public final class CaptchaHelper {
                 @Override // kotlin.jvm.functions.Function0
                 public /* bridge */ /* synthetic */ Unit invoke() {
                     invoke2();
-                    return Unit.a;
+                    return Unit.f27425a;
                 }
 
                 /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
                 public final void invoke2() {
                     CaptchaHelper captchaHelper = CaptchaHelper.INSTANCE;
                     Activity activity = this.$activity;
-                    a.g<l> gVar = b.i.a.f.k.a.a;
+                    C3266a.g<C3965l> gVar = C4327a.f11443a;
                     SafetyNetClient safetyNetClient = new SafetyNetClient(activity);
-                    Intrinsics3.checkNotNullExpressionValue(safetyNetClient, "SafetyNet\n              …     .getClient(activity)");
-                    captchaHelper.showCaptcha(safetyNetClient, new C02101(), this.$errorHandler);
+                    C12238m.checkNotNullExpressionValue(safetyNetClient, "SafetyNet\n              …     .getClient(activity)");
+                    captchaHelper.showCaptcha(safetyNetClient, new AnonymousClass1(), this.$errorHandler);
                 }
             }
 
             /* JADX WARN: Type inference incomplete: some casts might be missing */
-            @Override // rx.functions.Action1
+            @Override // p658rx.functions.Action1
             public final void call(final Emitter<String> emitter) throws PackageManager.NameNotFoundException {
-                final CaptchaHelper3 captchaHelper3 = new CaptchaHelper3(emitter);
+                final CaptchaHelper$tryShowCaptcha$1$errorHandler$1 captchaHelper$tryShowCaptcha$1$errorHandler$1 = new CaptchaHelper$tryShowCaptcha$1$errorHandler$1(emitter);
                 CaptchaRequest captchaRequest2 = captchaRequest;
                 if (!(captchaRequest2 instanceof CaptchaRequest.HCaptcha)) {
                     if (captchaRequest2 instanceof CaptchaRequest.ReCaptcha) {
                         Activity activity = ((CaptchaRequest.ReCaptcha) captchaRequest2).getActivity();
                         CaptchaHelper captchaHelper = CaptchaHelper.INSTANCE;
-                        Object obj = GoogleApiAvailability.c;
-                        GoogleApiAvailability googleApiAvailability = GoogleApiAvailability.d;
-                        Intrinsics3.checkNotNullExpressionValue(googleApiAvailability, "GoogleApiAvailability\n              .getInstance()");
-                        captchaHelper.ensurePlayServicesAvailable(googleApiAvailability, activity, new AnonymousClass3(activity, emitter, captchaHelper3), captchaHelper3);
+                        Object obj = GoogleApiAvailability.f20480c;
+                        GoogleApiAvailability googleApiAvailability = GoogleApiAvailability.f20481d;
+                        C12238m.checkNotNullExpressionValue(googleApiAvailability, "GoogleApiAvailability\n              .getInstance()");
+                        captchaHelper.ensurePlayServicesAvailable(googleApiAvailability, activity, new AnonymousClass3(activity, emitter, captchaHelper$tryShowCaptcha$1$errorHandler$1), captchaHelper$tryShowCaptcha$1$errorHandler$1);
                         return;
                     }
                     return;
                 }
                 Activity activity2 = ((CaptchaRequest.HCaptcha) captchaRequest2).getActivity();
-                HCaptchaConfig.a aVarBuilder = HCaptchaConfig.builder();
+                HCaptchaConfig.C11151a c11151aBuilder = HCaptchaConfig.builder();
                 String siteKey = ((CaptchaRequest.HCaptcha) captchaRequest).getSiteKey();
-                Objects.requireNonNull(aVarBuilder);
+                Objects.requireNonNull(c11151aBuilder);
                 Objects.requireNonNull(siteKey, "siteKey is marked non-null but is null");
-                aVarBuilder.a = siteKey;
-                aVarBuilder.n = StoreStream.INSTANCE.getUserSettingsSystem().getLocale();
-                aVarBuilder.m = true;
+                c11151aBuilder.f21674a = siteKey;
+                c11151aBuilder.f21687n = StoreStream.INSTANCE.getUserSettingsSystem().getLocale();
+                c11151aBuilder.f21686m = true;
                 if (((CaptchaRequest.HCaptcha) captchaRequest).getRqdata() != null) {
-                    aVarBuilder.f = ((CaptchaRequest.HCaptcha) captchaRequest).getRqdata();
+                    c11151aBuilder.f21679f = ((CaptchaRequest.HCaptcha) captchaRequest).getRqdata();
                 }
-                Boolean bool = aVarBuilder.c;
-                if (!aVarBuilder.f3141b) {
+                Boolean bool = c11151aBuilder.f21676c;
+                if (!c11151aBuilder.f21675b) {
                     bool = Boolean.TRUE;
                 }
                 Boolean bool2 = bool;
-                Boolean bool3 = aVarBuilder.e;
-                if (!aVarBuilder.d) {
+                Boolean bool3 = c11151aBuilder.f21678e;
+                if (!c11151aBuilder.f21677d) {
                     bool3 = Boolean.TRUE;
                 }
                 Boolean bool4 = bool3;
-                String str$default$apiEndpoint = aVarBuilder.h;
-                if (!aVarBuilder.g) {
+                String str$default$apiEndpoint = c11151aBuilder.f21681h;
+                if (!c11151aBuilder.f21680g) {
                     str$default$apiEndpoint = HCaptchaConfig.$default$apiEndpoint();
                 }
                 String str = str$default$apiEndpoint;
-                String str$default$locale = aVarBuilder.n;
-                if (!aVarBuilder.m) {
+                String str$default$locale = c11151aBuilder.f21687n;
+                if (!c11151aBuilder.f21686m) {
                     str$default$locale = HCaptchaConfig.$default$locale();
                 }
                 String str2 = str$default$locale;
-                HCaptchaSize hCaptchaSize = aVarBuilder.p;
-                if (!aVarBuilder.o) {
+                HCaptchaSize hCaptchaSize = c11151aBuilder.f21689p;
+                if (!c11151aBuilder.f21688o) {
                     hCaptchaSize = HCaptchaSize.INVISIBLE;
                 }
                 HCaptchaSize hCaptchaSize2 = hCaptchaSize;
-                HCaptchaTheme hCaptchaTheme = aVarBuilder.r;
-                if (!aVarBuilder.q) {
+                HCaptchaTheme hCaptchaTheme = c11151aBuilder.f21691r;
+                if (!c11151aBuilder.f21690q) {
                     hCaptchaTheme = HCaptchaTheme.LIGHT;
                 }
-                HCaptchaConfig hCaptchaConfig = new HCaptchaConfig(aVarBuilder.a, bool2, bool4, aVarBuilder.f, str, aVarBuilder.i, aVarBuilder.j, aVarBuilder.k, aVarBuilder.l, str2, hCaptchaSize2, hCaptchaTheme);
-                final b.j.a.a aVar = new b.j.a.a(activity2);
+                HCaptchaConfig hCaptchaConfig = new HCaptchaConfig(c11151aBuilder.f21674a, bool2, bool4, c11151aBuilder.f21679f, str, c11151aBuilder.f21682i, c11151aBuilder.f21683j, c11151aBuilder.f21684k, c11151aBuilder.f21685l, str2, hCaptchaSize2, hCaptchaTheme);
+                final C5065a c5065a = new C5065a(activity2);
                 HCaptchaDialogListener hCaptchaDialogListener = new HCaptchaDialogListener() { // from class: com.hcaptcha.sdk.HCaptcha$1
                     @Override // com.hcaptcha.sdk.HCaptchaDialogListener
-                    public void a(HCaptchaException hCaptchaException) {
-                        b.j.a.a aVar2 = aVar;
-                        aVar2.f1897b = hCaptchaException;
-                        aVar2.a();
+                    /* JADX INFO: renamed from: a */
+                    public void mo9263a(HCaptchaException hCaptchaException) {
+                        C5065a c5065a2 = c5065a;
+                        c5065a2.f13595b = hCaptchaException;
+                        c5065a2.m7120a();
                     }
 
                     /* JADX WARN: Multi-variable type inference failed */
                     @Override // com.hcaptcha.sdk.HCaptchaDialogListener
-                    public void b(HCaptchaTokenResponse hCaptchaTokenResponse) {
-                        b.j.a.a aVar2 = aVar;
-                        aVar2.a = hCaptchaTokenResponse;
-                        aVar2.a();
+                    /* JADX INFO: renamed from: b */
+                    public void mo9264b(HCaptchaTokenResponse hCaptchaTokenResponse) {
+                        C5065a c5065a2 = c5065a;
+                        c5065a2.f13594a = hCaptchaTokenResponse;
+                        c5065a2.m7120a();
                     }
                 };
-                String str3 = b.j.a.c.j;
+                String str3 = C5067c.f13582j;
                 Bundle bundle = new Bundle();
                 bundle.putSerializable("hCaptchaConfig", hCaptchaConfig);
                 bundle.putParcelable("hCaptchaDialogListener", hCaptchaDialogListener);
-                b.j.a.c cVar = new b.j.a.c();
-                cVar.setArguments(bundle);
-                cVar.show(aVar.e, b.j.a.c.j);
-                aVar.c.add((b.j.a.f.c<TResult>) new b.j.a.f.c<HCaptchaTokenResponse>() { // from class: com.discord.utilities.captcha.CaptchaHelper.tryShowCaptcha.1.1
-                    @Override // b.j.a.f.c
+                C5067c c5067c = new C5067c();
+                c5067c.setArguments(bundle);
+                c5067c.show(c5065a.f13580e, C5067c.f13582j);
+                c5065a.f13596c.add((InterfaceC5072c<TResult>) new InterfaceC5072c<HCaptchaTokenResponse>() { // from class: com.discord.utilities.captcha.CaptchaHelper.tryShowCaptcha.1.1
+                    @Override // p007b.p437j.p438a.p439f.InterfaceC5072c
                     public final void onSuccess(HCaptchaTokenResponse hCaptchaTokenResponse) {
                         Emitter emitter2 = emitter;
-                        Intrinsics3.checkNotNullExpressionValue(hCaptchaTokenResponse, "hCaptchaTokenResponse");
-                        emitter2.onNext(hCaptchaTokenResponse.a);
+                        C12238m.checkNotNullExpressionValue(hCaptchaTokenResponse, "hCaptchaTokenResponse");
+                        emitter2.onNext(hCaptchaTokenResponse.f21692a);
                         emitter.onCompleted();
                     }
                 });
-                aVar.a();
-                aVar.d.add(new b.j.a.f.a() { // from class: com.discord.utilities.captcha.CaptchaHelper.tryShowCaptcha.1.2
-                    @Override // b.j.a.f.a
+                c5065a.m7120a();
+                c5065a.f13597d.add(new InterfaceC5070a() { // from class: com.discord.utilities.captcha.CaptchaHelper.tryShowCaptcha.1.2
+                    @Override // p007b.p437j.p438a.p439f.InterfaceC5070a
                     public final void onFailure(HCaptchaException hCaptchaException) {
-                        Intrinsics3.checkNotNullExpressionValue(hCaptchaException, "hCaptchaException");
-                        if (hCaptchaException.a() == HCaptchaError.CHALLENGE_CLOSED) {
+                        C12238m.checkNotNullExpressionValue(hCaptchaException, "hCaptchaException");
+                        if (hCaptchaException.m9265a() == HCaptchaError.CHALLENGE_CLOSED) {
                             emitter.onCompleted();
                             return;
                         }
-                        String strName = hCaptchaException.a().name();
+                        String strName = hCaptchaException.m9265a().name();
                         Locale locale = Locale.ROOT;
-                        Intrinsics3.checkNotNullExpressionValue(locale, "Locale.ROOT");
+                        C12238m.checkNotNullExpressionValue(locale, "Locale.ROOT");
                         Objects.requireNonNull(strName, "null cannot be cast to non-null type java.lang.String");
                         String lowerCase = strName.toLowerCase(locale);
-                        Intrinsics3.checkNotNullExpressionValue(lowerCase, "(this as java.lang.String).toLowerCase(locale)");
-                        captchaHelper3.invoke(new Failure(R.string.captcha_failed, lowerCase));
+                        C12238m.checkNotNullExpressionValue(lowerCase, "(this as java.lang.String).toLowerCase(locale)");
+                        captchaHelper$tryShowCaptcha$1$errorHandler$1.invoke(new Failure(C5419R.string.captcha_failed, lowerCase));
                     }
                 });
-                aVar.a();
+                c5065a.m7120a();
             }
         }, Emitter.BackpressureMode.BUFFER);
-        Intrinsics3.checkNotNullExpressionValue(observableO, "Observable.create({ emit….BackpressureMode.BUFFER)");
-        return observableO;
+        C12238m.checkNotNullExpressionValue(observableM11080o, "Observable.create({ emit….BackpressureMode.BUFFER)");
+        return observableM11080o;
     }
 }

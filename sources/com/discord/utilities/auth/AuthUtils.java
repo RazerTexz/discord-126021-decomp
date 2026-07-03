@@ -4,10 +4,9 @@ import android.annotation.SuppressLint;
 import android.util.Patterns;
 import androidx.annotation.StringRes;
 import androidx.core.app.NotificationCompat;
-import b.a.k.FormatUtils;
-import com.discord.R;
+import com.discord.C5419R;
 import com.discord.utilities.phone.PhoneUtils;
-import com.discord.utilities.string.StringUtils2;
+import com.discord.utilities.string.StringUtilsKt;
 import com.discord.utilities.time.ClockFactory;
 import com.discord.utilities.view.extensions.ViewExtensions;
 import com.discord.utilities.view.validators.BasicTextInputValidator;
@@ -16,18 +15,19 @@ import com.discord.utilities.view.validators.InputValidator;
 import com.discord.utilities.view.validators.ValidationManager;
 import com.discord.widgets.settings.account.WidgetSettingsAccountChangePassword;
 import com.google.android.material.textfield.TextInputLayout;
-import d0.c0.Random2;
-import d0.g0.StringNumberConversions;
-import d0.g0.Strings4;
-import d0.g0.StringsJVM;
-import d0.t.Collections2;
-import d0.z.d.Intrinsics3;
-import d0.z.d.Lambda;
 import java.io.UnsupportedEncodingException;
 import java.net.URLEncoder;
 import java.util.Iterator;
 import java.util.Objects;
 import kotlin.jvm.functions.Function1;
+import p007b.p008a.p027k.C1107b;
+import p507d0.p510c0.C11217d;
+import p507d0.p579g0.C12102s;
+import p507d0.p579g0.C12103t;
+import p507d0.p579g0.C12106w;
+import p507d0.p580t.C12147n;
+import p507d0.p592z.p594d.AbstractC12240o;
+import p507d0.p592z.p594d.C12238m;
 
 /* JADX INFO: compiled from: AuthUtils.kt */
 /* JADX INFO: loaded from: classes2.dex */
@@ -41,12 +41,12 @@ public final class AuthUtils {
     public static final String URL_GOOGLE_AUTHENTICATOR = "https://play.google.com/store/apps/details?id=com.google.android.apps.authenticator2";
     private static final String URL_PLAY_STORE = "https://play.google.com/store/apps/details";
 
-    /* JADX INFO: renamed from: com.discord.utilities.auth.AuthUtils$createEmailInputValidator$1, reason: invalid class name */
+    /* JADX INFO: renamed from: com.discord.utilities.auth.AuthUtils$createEmailInputValidator$1 */
     /* JADX INFO: compiled from: AuthUtils.kt */
-    public static final class AnonymousClass1 extends Lambda implements Function1<String, Boolean> {
-        public static final AnonymousClass1 INSTANCE = new AnonymousClass1();
+    public static final class C66961 extends AbstractC12240o implements Function1<String, Boolean> {
+        public static final C66961 INSTANCE = new C66961();
 
-        public AnonymousClass1() {
+        public C66961() {
             super(1);
         }
 
@@ -57,17 +57,17 @@ public final class AuthUtils {
 
         /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
         public final boolean invoke2(String str) {
-            Intrinsics3.checkNotNullParameter(str, "it");
+            C12238m.checkNotNullParameter(str, "it");
             return AuthUtils.INSTANCE.isValidEmail(str);
         }
     }
 
-    /* JADX INFO: renamed from: com.discord.utilities.auth.AuthUtils$createPasswordInputValidator$1, reason: invalid class name */
+    /* JADX INFO: renamed from: com.discord.utilities.auth.AuthUtils$createPasswordInputValidator$1 */
     /* JADX INFO: compiled from: AuthUtils.kt */
-    public static final class AnonymousClass1 extends Lambda implements Function1<String, Boolean> {
-        public static final AnonymousClass1 INSTANCE = new AnonymousClass1();
+    public static final class C66971 extends AbstractC12240o implements Function1<String, Boolean> {
+        public static final C66971 INSTANCE = new C66971();
 
-        public AnonymousClass1() {
+        public C66971() {
             super(1);
         }
 
@@ -78,17 +78,17 @@ public final class AuthUtils {
 
         /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
         public final boolean invoke2(String str) {
-            Intrinsics3.checkNotNullParameter(str, "it");
+            C12238m.checkNotNullParameter(str, "it");
             return AuthUtils.INSTANCE.isValidPasswordLength(str);
         }
     }
 
-    /* JADX INFO: renamed from: com.discord.utilities.auth.AuthUtils$createPhoneInputValidator$1, reason: invalid class name */
+    /* JADX INFO: renamed from: com.discord.utilities.auth.AuthUtils$createPhoneInputValidator$1 */
     /* JADX INFO: compiled from: AuthUtils.kt */
-    public static final class AnonymousClass1 extends Lambda implements Function1<String, Boolean> {
-        public static final AnonymousClass1 INSTANCE = new AnonymousClass1();
+    public static final class C66981 extends AbstractC12240o implements Function1<String, Boolean> {
+        public static final C66981 INSTANCE = new C66981();
 
-        public AnonymousClass1() {
+        public C66981() {
             super(1);
         }
 
@@ -99,7 +99,7 @@ public final class AuthUtils {
 
         /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
         public final boolean invoke2(String str) {
-            Intrinsics3.checkNotNullParameter(str, "it");
+            C12238m.checkNotNullParameter(str, "it");
             return PhoneUtils.INSTANCE.isValidPhoneFragment(str);
         }
     }
@@ -115,14 +115,14 @@ public final class AuthUtils {
         return new InputValidator<TextInputLayout>() { // from class: com.discord.utilities.auth.AuthUtils.createDiscriminatorInputValidator.1
             @Override // com.discord.utilities.view.validators.InputValidator
             public CharSequence getErrorMessage(TextInputLayout view) {
-                Intrinsics3.checkNotNullParameter(view, "view");
+                C12238m.checkNotNullParameter(view, "view");
                 String textOrEmpty = ViewExtensions.getTextOrEmpty(view);
-                Integer intOrNull = StringNumberConversions.toIntOrNull(textOrEmpty);
+                Integer intOrNull = C12102s.toIntOrNull(textOrEmpty);
                 if (intOrNull == null || textOrEmpty.length() != 4) {
-                    return FormatUtils.d(view, invalidFormatResId, new Object[0], (4 & 4) != 0 ? FormatUtils.c.j : null);
+                    return C1107b.m212d(view, invalidFormatResId, new Object[0], (4 & 4) != 0 ? C1107b.c.f1492j : null);
                 }
                 if (intOrNull.intValue() <= 0) {
-                    return FormatUtils.d(view, invalidValueResId, new Object[0], (4 & 4) != 0 ? FormatUtils.c.j : null);
+                    return C1107b.m212d(view, invalidValueResId, new Object[0], (4 & 4) != 0 ? C1107b.c.f1492j : null);
                 }
                 return null;
             }
@@ -130,54 +130,54 @@ public final class AuthUtils {
     }
 
     public final BasicTextInputValidator createEmailInputValidator(@StringRes int messageResId) {
-        return new BasicTextInputValidator(messageResId, AnonymousClass1.INSTANCE);
+        return new BasicTextInputValidator(messageResId, C66961.INSTANCE);
     }
 
     public final ValidationManager createEmailValidationManager(TextInputLayout emailInput) {
-        Intrinsics3.checkNotNullParameter(emailInput, "emailInput");
-        return new ValidationManager(new Input.TextInputLayoutInput(NotificationCompat.CATEGORY_EMAIL, emailInput, BasicTextInputValidator.INSTANCE.createRequiredInputValidator(R.string.email_required), createEmailInputValidator(R.string.email_invalid)));
+        C12238m.checkNotNullParameter(emailInput, "emailInput");
+        return new ValidationManager(new Input.TextInputLayoutInput(NotificationCompat.CATEGORY_EMAIL, emailInput, BasicTextInputValidator.INSTANCE.createRequiredInputValidator(C5419R.string.email_required), createEmailInputValidator(C5419R.string.email_invalid)));
     }
 
     public final BasicTextInputValidator createPasswordInputValidator(@StringRes int messageResId) {
-        return new BasicTextInputValidator(messageResId, AnonymousClass1.INSTANCE);
+        return new BasicTextInputValidator(messageResId, C66971.INSTANCE);
     }
 
     public final BasicTextInputValidator createPhoneInputValidator(@StringRes int messageResId) {
-        return new BasicTextInputValidator(messageResId, AnonymousClass1.INSTANCE);
+        return new BasicTextInputValidator(messageResId, C66981.INSTANCE);
     }
 
     @SuppressLint({"DefaultLocale"})
     public final String encodeTotpSecret(String secret) {
-        Intrinsics3.checkNotNullParameter(secret, "secret");
-        String strReplace$default = StringsJVM.replace$default(secret, " ", "", false, 4, (Object) null);
+        C12238m.checkNotNullParameter(secret, "secret");
+        String strReplace$default = C12103t.replace$default(secret, " ", "", false, 4, (Object) null);
         Objects.requireNonNull(strReplace$default, "null cannot be cast to non-null type java.lang.String");
         String upperCase = strReplace$default.toUpperCase();
-        Intrinsics3.checkNotNullExpressionValue(upperCase, "(this as java.lang.String).toUpperCase()");
+        C12238m.checkNotNullExpressionValue(upperCase, "(this as java.lang.String).toUpperCase()");
         Objects.requireNonNull(upperCase, "null cannot be cast to non-null type kotlin.CharSequence");
-        return Strings4.trim(upperCase).toString();
+        return C12106w.trim(upperCase).toString();
     }
 
     @SuppressLint({"DefaultLocale"})
     public final String generateNewTotpKey() throws UnsupportedEncodingException {
-        String strEncode = URLEncoder.encode(StringUtils2.encodeToBase32String(Random2.Random(ClockFactory.get().currentTimeMillis()).nextBytes(10)), "utf-8");
-        Intrinsics3.checkNotNullExpressionValue(strEncode, "URLEncoder\n        .enco…oBase32String(), \"utf-8\")");
-        String strReplace$default = StringsJVM.replace$default(strEncode, "=", "", false, 4, (Object) null);
+        String strEncode = URLEncoder.encode(StringUtilsKt.encodeToBase32String(C11217d.Random(ClockFactory.get().currentTimeMillis()).nextBytes(10)), "utf-8");
+        C12238m.checkNotNullExpressionValue(strEncode, "URLEncoder\n        .enco…oBase32String(), \"utf-8\")");
+        String strReplace$default = C12103t.replace$default(strEncode, "=", "", false, 4, (Object) null);
         Objects.requireNonNull(strReplace$default, "null cannot be cast to non-null type java.lang.String");
         String lowerCase = strReplace$default.toLowerCase();
-        Intrinsics3.checkNotNullExpressionValue(lowerCase, "(this as java.lang.String).toLowerCase()");
+        C12238m.checkNotNullExpressionValue(lowerCase, "(this as java.lang.String).toLowerCase()");
         Objects.requireNonNull(lowerCase, "null cannot be cast to non-null type kotlin.CharSequence");
-        StringBuilder sb = new StringBuilder(Strings4.trim(lowerCase).toString());
-        Iterator it = Collections2.listOf((Object[]) new Integer[]{12, 8, 4}).iterator();
+        StringBuilder sb = new StringBuilder(C12106w.trim(lowerCase).toString());
+        Iterator it = C12147n.listOf((Object[]) new Integer[]{12, 8, 4}).iterator();
         while (it.hasNext()) {
             sb.insert(((Number) it.next()).intValue(), " ");
         }
         String string = sb.toString();
-        Intrinsics3.checkNotNullExpressionValue(string, "builder.toString()");
+        C12238m.checkNotNullExpressionValue(string, "builder.toString()");
         return string;
     }
 
     public final boolean isValidPasswordLength(String password) {
-        Intrinsics3.checkNotNullParameter(password, WidgetSettingsAccountChangePassword.CURRENT_PASSWORD_FIELD);
+        C12238m.checkNotNullParameter(password, WidgetSettingsAccountChangePassword.CURRENT_PASSWORD_FIELD);
         int length = password.length();
         return 6 <= length && 128 >= length;
     }

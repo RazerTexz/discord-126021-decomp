@@ -51,7 +51,7 @@ public abstract class LombokNode<A extends AST<A, L, N>, L extends LombokNode<A,
     protected LombokNode(N node, List<L> children, AST.Kind kind) {
         this.kind = kind;
         this.node = node;
-        this.children = children != null ? LombokImmutableList.copyOf((Collection) children) : LombokImmutableList.of();
+        this.children = children != null ? LombokImmutableList.copyOf((Collection) children) : LombokImmutableList.m10918of();
         for (L child : this.children) {
             child.parent = this;
             if (!child.isStructurallySignificant) {
@@ -93,7 +93,8 @@ public abstract class LombokNode<A extends AST<A, L, N>, L extends LombokNode<A,
         return this.kind;
     }
 
-    public L up() {
+    /* JADX INFO: renamed from: up */
+    public L m10925up() {
         L result;
         L l = this.parent;
         while (true) {
@@ -111,16 +112,16 @@ public abstract class LombokNode<A extends AST<A, L, N>, L extends LombokNode<A,
         if (getKind() != AST.Kind.ANNOTATION) {
             return Collections.emptyList();
         }
-        LombokNode lombokNodeUp = up();
-        if (lombokNodeUp == null || lombokNodeUp.getKind() != AST.Kind.FIELD) {
+        LombokNode lombokNodeM10925up = m10925up();
+        if (lombokNodeM10925up == null || lombokNodeM10925up.getKind() != AST.Kind.FIELD) {
             return Collections.emptyList();
         }
-        LombokNode lombokNodeUp2 = lombokNodeUp.up();
-        if (lombokNodeUp2 == null || lombokNodeUp2.getKind() != AST.Kind.TYPE) {
+        LombokNode lombokNodeM10925up2 = lombokNodeM10925up.m10925up();
+        if (lombokNodeM10925up2 == null || lombokNodeM10925up2.getKind() != AST.Kind.TYPE) {
             return Collections.emptyList();
         }
         List<L> fields = new ArrayList<>();
-        for (L potentialField : lombokNodeUp2.down()) {
+        for (L potentialField : lombokNodeM10925up2.down()) {
             if (potentialField.getKind() == AST.Kind.FIELD && fieldContainsAnnotation(potentialField.get(), get())) {
                 fields.add(potentialField);
             }
@@ -188,7 +189,7 @@ public abstract class LombokNode<A extends AST<A, L, N>, L extends LombokNode<A,
         }
         getAst().identityDetector.remove(get());
         map.put(get(), this);
-        this.children = LombokImmutableList.of();
+        this.children = LombokImmutableList.m10918of();
         getAst().getNodeMap().remove(get());
     }
 

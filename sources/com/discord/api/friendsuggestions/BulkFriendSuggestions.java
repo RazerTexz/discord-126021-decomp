@@ -1,8 +1,8 @@
 package com.discord.api.friendsuggestions;
 
-import b.d.b.a.outline;
-import d0.z.d.Intrinsics3;
 import java.util.List;
+import p007b.p100d.p104b.p105a.C1643a;
+import p507d0.p592z.p594d.C12238m;
 
 /* JADX INFO: compiled from: BulkFriendSuggestions.kt */
 /* JADX INFO: loaded from: classes.dex */
@@ -15,7 +15,8 @@ public final /* data */ class BulkFriendSuggestions {
         return this.bulkAddToken;
     }
 
-    public final List<FriendSuggestion> b() {
+    /* JADX INFO: renamed from: b */
+    public final List<FriendSuggestion> m7829b() {
         return this.friendSuggestions;
     }
 
@@ -27,7 +28,7 @@ public final /* data */ class BulkFriendSuggestions {
             return false;
         }
         BulkFriendSuggestions bulkFriendSuggestions = (BulkFriendSuggestions) other;
-        return Intrinsics3.areEqual(this.bulkAddToken, bulkFriendSuggestions.bulkAddToken) && Intrinsics3.areEqual(this.friendSuggestions, bulkFriendSuggestions.friendSuggestions);
+        return C12238m.areEqual(this.bulkAddToken, bulkFriendSuggestions.bulkAddToken) && C12238m.areEqual(this.friendSuggestions, bulkFriendSuggestions.friendSuggestions);
     }
 
     public int hashCode() {
@@ -38,9 +39,9 @@ public final /* data */ class BulkFriendSuggestions {
     }
 
     public String toString() {
-        StringBuilder sbU = outline.U("BulkFriendSuggestions(bulkAddToken=");
-        sbU.append(this.bulkAddToken);
-        sbU.append(", friendSuggestions=");
-        return outline.L(sbU, this.friendSuggestions, ")");
+        StringBuilder sbM833U = C1643a.m833U("BulkFriendSuggestions(bulkAddToken=");
+        sbM833U.append(this.bulkAddToken);
+        sbM833U.append(", friendSuggestions=");
+        return C1643a.m824L(sbM833U, this.friendSuggestions, ")");
     }
 }

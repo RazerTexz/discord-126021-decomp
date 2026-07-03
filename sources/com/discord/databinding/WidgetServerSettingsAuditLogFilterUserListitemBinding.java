@@ -12,33 +12,37 @@ import com.google.android.material.radiobutton.MaterialRadioButton;
 /* JADX INFO: loaded from: classes.dex */
 public final class WidgetServerSettingsAuditLogFilterUserListitemBinding implements ViewBinding {
 
+    /* JADX INFO: renamed from: a */
     @NonNull
-    public final FrameLayout a;
+    public final FrameLayout f17516a;
 
-    /* JADX INFO: renamed from: b, reason: collision with root package name */
+    /* JADX INFO: renamed from: b */
     @NonNull
-    public final MaterialRadioButton f2541b;
+    public final MaterialRadioButton f17517b;
 
+    /* JADX INFO: renamed from: c */
     @NonNull
-    public final ImageView c;
+    public final ImageView f17518c;
 
+    /* JADX INFO: renamed from: d */
     @NonNull
-    public final TextView d;
+    public final TextView f17519d;
 
+    /* JADX INFO: renamed from: e */
     @NonNull
-    public final SettingsMemberView e;
+    public final SettingsMemberView f17520e;
 
     public WidgetServerSettingsAuditLogFilterUserListitemBinding(@NonNull FrameLayout frameLayout, @NonNull MaterialRadioButton materialRadioButton, @NonNull ImageView imageView, @NonNull TextView textView, @NonNull SettingsMemberView settingsMemberView) {
-        this.a = frameLayout;
-        this.f2541b = materialRadioButton;
-        this.c = imageView;
-        this.d = textView;
-        this.e = settingsMemberView;
+        this.f17516a = frameLayout;
+        this.f17517b = materialRadioButton;
+        this.f17518c = imageView;
+        this.f17519d = textView;
+        this.f17520e = settingsMemberView;
     }
 
     @Override // androidx.viewbinding.ViewBinding
     @NonNull
     public View getRoot() {
-        return this.a;
+        return this.f17516a;
     }
 }

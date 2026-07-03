@@ -13,8 +13,8 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.annotation.Px;
 import androidx.core.view.ViewCompat;
-import b.d.b.a.outline;
 import java.util.Arrays;
+import p007b.p100d.p104b.p105a.C1643a;
 
 /* JADX INFO: loaded from: classes.dex */
 public class ViewDragHelper {
@@ -431,10 +431,10 @@ public class ViewDragHelper {
 
     public void captureChildView(@NonNull View view, int i) {
         if (view.getParent() != this.mParentView) {
-            StringBuilder sbU = outline.U("captureChildView: parameter must be a descendant of the ViewDragHelper's tracked parent view (");
-            sbU.append(this.mParentView);
-            sbU.append(")");
-            throw new IllegalArgumentException(sbU.toString());
+            StringBuilder sbM833U = C1643a.m833U("captureChildView: parameter must be a descendant of the ViewDragHelper's tracked parent view (");
+            sbM833U.append(this.mParentView);
+            sbM833U.append(")");
+            throw new IllegalArgumentException(sbM833U.toString());
         }
         this.mCapturedView = view;
         this.mActivePointerId = i;

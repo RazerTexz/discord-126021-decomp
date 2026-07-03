@@ -4,8 +4,8 @@ import com.discord.stores.StoreAnalytics;
 import com.discord.stores.StoreStream;
 import com.discord.widgets.voice.feedback.FeedbackSubmitter;
 import com.discord.widgets.voice.feedback.PendingFeedback;
-import d0.z.d.Intrinsics3;
 import kotlin.jvm.internal.DefaultConstructorMarker;
+import p507d0.p592z.p594d.C12238m;
 
 /* JADX INFO: compiled from: StreamFeedbackSubmitter.kt */
 /* JADX INFO: loaded from: classes.dex */
@@ -14,8 +14,8 @@ public final class StreamFeedbackSubmitter implements FeedbackSubmitter {
     private PendingFeedback.StreamFeedback pendingStreamFeedback;
 
     public StreamFeedbackSubmitter(PendingFeedback.StreamFeedback streamFeedback, StoreAnalytics storeAnalytics) {
-        Intrinsics3.checkNotNullParameter(streamFeedback, "pendingStreamFeedback");
-        Intrinsics3.checkNotNullParameter(storeAnalytics, "analyticsStore");
+        C12238m.checkNotNullParameter(streamFeedback, "pendingStreamFeedback");
+        C12238m.checkNotNullParameter(storeAnalytics, "analyticsStore");
         this.pendingStreamFeedback = streamFeedback;
         this.analyticsStore = storeAnalytics;
     }
@@ -25,7 +25,7 @@ public final class StreamFeedbackSubmitter implements FeedbackSubmitter {
     }
 
     public final void setPendingStreamFeedback(PendingFeedback.StreamFeedback streamFeedback) {
-        Intrinsics3.checkNotNullParameter(streamFeedback, "<set-?>");
+        C12238m.checkNotNullParameter(streamFeedback, "<set-?>");
         this.pendingStreamFeedback = streamFeedback;
     }
 

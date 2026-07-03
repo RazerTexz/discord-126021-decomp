@@ -1,7 +1,5 @@
 package com.discord.stores;
 
-import a0.a.a.b;
-import b.d.b.a.outline;
 import com.discord.api.channel.Channel;
 import com.discord.api.channel.ChannelUtils;
 import com.discord.api.guild.Guild;
@@ -10,18 +8,10 @@ import com.discord.models.domain.ModelPayload;
 import com.discord.stores.updates.ObservationDeck;
 import com.discord.utilities.error.Error;
 import com.discord.utilities.frecency.FrecencyTracker;
+import com.discord.utilities.p501rx.ObservableExtensionsKt;
 import com.discord.utilities.permissions.PermissionUtils;
 import com.discord.utilities.persister.Persister;
-import com.discord.utilities.rx.ObservableExtensionsKt;
 import com.discord.widgets.user.search.ChannelFrecencyTracker;
-import d0.t.Maps6;
-import d0.t.MapsJVM;
-import d0.t.Sets5;
-import d0.t._Collections;
-import d0.z.d.Intrinsics3;
-import d0.z.d.Lambda;
-import j0.k.Func1;
-import j0.l.e.ScalarSynchronousObservable;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.HashMap;
@@ -35,8 +25,18 @@ import kotlin.Unit;
 import kotlin.jvm.functions.Function0;
 import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.DefaultConstructorMarker;
-import rx.Observable;
-import rx.Subscription;
+import p001a0.p002a.p003a.C0002b;
+import p007b.p100d.p104b.p105a.C1643a;
+import p507d0.p580t.C12134g0;
+import p507d0.p580t.C12136h0;
+import p507d0.p580t.C12148n0;
+import p507d0.p580t.C12163u;
+import p507d0.p592z.p594d.AbstractC12240o;
+import p507d0.p592z.p594d.C12238m;
+import p637j0.p641k.InterfaceC12589b;
+import p637j0.p642l.p647e.C12721k;
+import p658rx.Observable;
+import p658rx.Subscription;
 
 /* JADX INFO: compiled from: StoreChannelsSelected.kt */
 /* JADX INFO: loaded from: classes2.dex */
@@ -62,7 +62,7 @@ public final class StoreChannelsSelected extends StoreV2 {
     private final StoreStream stream;
     private final Map<Long, UserChannelSelection> userChannelSelections;
     private Subscription validateSelectedChannelSubscription;
-    private static final StoreChannelsSelected4 InitializedUpdateSource = new ObservationDeck.UpdateSource() { // from class: com.discord.stores.StoreChannelsSelected$Companion$InitializedUpdateSource$1
+    private static final StoreChannelsSelected$Companion$InitializedUpdateSource$1 InitializedUpdateSource = new ObservationDeck.UpdateSource() { // from class: com.discord.stores.StoreChannelsSelected$Companion$InitializedUpdateSource$1
     };
 
     /* JADX INFO: compiled from: StoreChannelsSelected.kt */
@@ -70,22 +70,22 @@ public final class StoreChannelsSelected extends StoreV2 {
 
         /* JADX INFO: compiled from: StoreChannelsSelected.kt */
         public static final /* data */ class Channel extends ResolvedSelectedChannel {
-            private final StoreChannelsSelected3 analyticsLocation;
-            private final StoreChannelsSelected2 analyticsViewType;
+            private final SelectedChannelAnalyticsLocation analyticsLocation;
+            private final ChannelAnalyticsViewType analyticsViewType;
             private final com.discord.api.channel.Channel channel;
             private final Long peekParent;
 
             /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-            public Channel(com.discord.api.channel.Channel channel, Long l, StoreChannelsSelected3 storeChannelsSelected3) {
+            public Channel(com.discord.api.channel.Channel channel, Long l, SelectedChannelAnalyticsLocation selectedChannelAnalyticsLocation) {
                 super(null);
-                Intrinsics3.checkNotNullParameter(channel, "channel");
+                C12238m.checkNotNullParameter(channel, "channel");
                 this.channel = channel;
                 this.peekParent = l;
-                this.analyticsLocation = storeChannelsSelected3;
-                this.analyticsViewType = l != null ? StoreChannelsSelected2.PEEK_VIEW : StoreChannelsSelected2.FULL_VIEW;
+                this.analyticsLocation = selectedChannelAnalyticsLocation;
+                this.analyticsViewType = l != null ? ChannelAnalyticsViewType.PEEK_VIEW : ChannelAnalyticsViewType.FULL_VIEW;
             }
 
-            public static /* synthetic */ Channel copy$default(Channel channel, com.discord.api.channel.Channel channel2, Long l, StoreChannelsSelected3 storeChannelsSelected3, int i, Object obj) {
+            public static /* synthetic */ Channel copy$default(Channel channel, com.discord.api.channel.Channel channel2, Long l, SelectedChannelAnalyticsLocation selectedChannelAnalyticsLocation, int i, Object obj) {
                 if ((i & 1) != 0) {
                     channel2 = channel.channel;
                 }
@@ -93,9 +93,9 @@ public final class StoreChannelsSelected extends StoreV2 {
                     l = channel.peekParent;
                 }
                 if ((i & 4) != 0) {
-                    storeChannelsSelected3 = channel.analyticsLocation;
+                    selectedChannelAnalyticsLocation = channel.analyticsLocation;
                 }
-                return channel.copy(channel2, l, storeChannelsSelected3);
+                return channel.copy(channel2, l, selectedChannelAnalyticsLocation);
             }
 
             /* JADX INFO: renamed from: component1, reason: from getter */
@@ -109,12 +109,12 @@ public final class StoreChannelsSelected extends StoreV2 {
             }
 
             /* JADX INFO: renamed from: component3, reason: from getter */
-            public final StoreChannelsSelected3 getAnalyticsLocation() {
+            public final SelectedChannelAnalyticsLocation getAnalyticsLocation() {
                 return this.analyticsLocation;
             }
 
-            public final Channel copy(com.discord.api.channel.Channel channel, Long peekParent, StoreChannelsSelected3 analyticsLocation) {
-                Intrinsics3.checkNotNullParameter(channel, "channel");
+            public final Channel copy(com.discord.api.channel.Channel channel, Long peekParent, SelectedChannelAnalyticsLocation analyticsLocation) {
+                C12238m.checkNotNullParameter(channel, "channel");
                 return new Channel(channel, peekParent, analyticsLocation);
             }
 
@@ -126,14 +126,14 @@ public final class StoreChannelsSelected extends StoreV2 {
                     return false;
                 }
                 Channel channel = (Channel) other;
-                return Intrinsics3.areEqual(this.channel, channel.channel) && Intrinsics3.areEqual(this.peekParent, channel.peekParent) && Intrinsics3.areEqual(this.analyticsLocation, channel.analyticsLocation);
+                return C12238m.areEqual(this.channel, channel.channel) && C12238m.areEqual(this.peekParent, channel.peekParent) && C12238m.areEqual(this.analyticsLocation, channel.analyticsLocation);
             }
 
-            public final StoreChannelsSelected3 getAnalyticsLocation() {
+            public final SelectedChannelAnalyticsLocation getAnalyticsLocation() {
                 return this.analyticsLocation;
             }
 
-            public final StoreChannelsSelected2 getAnalyticsViewType() {
+            public final ChannelAnalyticsViewType getAnalyticsViewType() {
                 return this.analyticsViewType;
             }
 
@@ -150,19 +150,19 @@ public final class StoreChannelsSelected extends StoreV2 {
                 int iHashCode = (channel != null ? channel.hashCode() : 0) * 31;
                 Long l = this.peekParent;
                 int iHashCode2 = (iHashCode + (l != null ? l.hashCode() : 0)) * 31;
-                StoreChannelsSelected3 storeChannelsSelected3 = this.analyticsLocation;
-                return iHashCode2 + (storeChannelsSelected3 != null ? storeChannelsSelected3.hashCode() : 0);
+                SelectedChannelAnalyticsLocation selectedChannelAnalyticsLocation = this.analyticsLocation;
+                return iHashCode2 + (selectedChannelAnalyticsLocation != null ? selectedChannelAnalyticsLocation.hashCode() : 0);
             }
 
             public String toString() {
-                StringBuilder sbU = outline.U("Channel(channel=");
-                sbU.append(this.channel);
-                sbU.append(", peekParent=");
-                sbU.append(this.peekParent);
-                sbU.append(", analyticsLocation=");
-                sbU.append(this.analyticsLocation);
-                sbU.append(")");
-                return sbU.toString();
+                StringBuilder sbM833U = C1643a.m833U("Channel(channel=");
+                sbM833U.append(this.channel);
+                sbM833U.append(", peekParent=");
+                sbM833U.append(this.peekParent);
+                sbM833U.append(", analyticsLocation=");
+                sbM833U.append(this.analyticsLocation);
+                sbM833U.append(")");
+                return sbM833U.toString();
             }
         }
 
@@ -175,7 +175,7 @@ public final class StoreChannelsSelected extends StoreV2 {
             /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
             public ThreadDraft(com.discord.api.channel.Channel channel, Long l, String str) {
                 super(null);
-                Intrinsics3.checkNotNullParameter(channel, "parentChannel");
+                C12238m.checkNotNullParameter(channel, "parentChannel");
                 this.parentChannel = channel;
                 this.starterMessageId = l;
                 this.threadStartLocation = str;
@@ -210,7 +210,7 @@ public final class StoreChannelsSelected extends StoreV2 {
             }
 
             public final ThreadDraft copy(com.discord.api.channel.Channel parentChannel, Long starterMessageId, String threadStartLocation) {
-                Intrinsics3.checkNotNullParameter(parentChannel, "parentChannel");
+                C12238m.checkNotNullParameter(parentChannel, "parentChannel");
                 return new ThreadDraft(parentChannel, starterMessageId, threadStartLocation);
             }
 
@@ -222,7 +222,7 @@ public final class StoreChannelsSelected extends StoreV2 {
                     return false;
                 }
                 ThreadDraft threadDraft = (ThreadDraft) other;
-                return Intrinsics3.areEqual(this.parentChannel, threadDraft.parentChannel) && Intrinsics3.areEqual(this.starterMessageId, threadDraft.starterMessageId) && Intrinsics3.areEqual(this.threadStartLocation, threadDraft.threadStartLocation);
+                return C12238m.areEqual(this.parentChannel, threadDraft.parentChannel) && C12238m.areEqual(this.starterMessageId, threadDraft.starterMessageId) && C12238m.areEqual(this.threadStartLocation, threadDraft.threadStartLocation);
             }
 
             public final com.discord.api.channel.Channel getParentChannel() {
@@ -251,12 +251,12 @@ public final class StoreChannelsSelected extends StoreV2 {
             }
 
             public String toString() {
-                StringBuilder sbU = outline.U("ThreadDraft(parentChannel=");
-                sbU.append(this.parentChannel);
-                sbU.append(", starterMessageId=");
-                sbU.append(this.starterMessageId);
-                sbU.append(", threadStartLocation=");
-                return outline.J(sbU, this.threadStartLocation, ")");
+                StringBuilder sbM833U = C1643a.m833U("ThreadDraft(parentChannel=");
+                sbM833U.append(this.parentChannel);
+                sbM833U.append(", starterMessageId=");
+                sbM833U.append(this.starterMessageId);
+                sbM833U.append(", threadStartLocation=");
+                return C1643a.m822J(sbM833U, this.threadStartLocation, ")");
             }
         }
 
@@ -307,13 +307,13 @@ public final class StoreChannelsSelected extends StoreV2 {
             if (this instanceof ThreadDraft) {
                 return -3L;
             }
-            if (Intrinsics3.areEqual(this, Unselected.INSTANCE)) {
+            if (C12238m.areEqual(this, Unselected.INSTANCE)) {
                 return 0L;
             }
-            if (Intrinsics3.areEqual(this, Unavailable.INSTANCE)) {
+            if (C12238m.areEqual(this, Unavailable.INSTANCE)) {
                 return -1L;
             }
-            if (Intrinsics3.areEqual(this, Uninitialized.INSTANCE)) {
+            if (C12238m.areEqual(this, Uninitialized.INSTANCE)) {
                 return -2L;
             }
             throw new NoWhenBranchMatchedException();
@@ -337,15 +337,15 @@ public final class StoreChannelsSelected extends StoreV2 {
 
         /* JADX INFO: compiled from: StoreChannelsSelected.kt */
         public static final /* data */ class SelectedChannel extends UserChannelSelection {
-            private final StoreChannelsSelected3 analyticsLocation;
+            private final SelectedChannelAnalyticsLocation analyticsLocation;
             private final long channelId;
             private final Long peekParent;
 
-            public /* synthetic */ SelectedChannel(long j, Long l, StoreChannelsSelected3 storeChannelsSelected3, int i, DefaultConstructorMarker defaultConstructorMarker) {
-                this(j, (i & 2) != 0 ? null : l, (i & 4) != 0 ? null : storeChannelsSelected3);
+            public /* synthetic */ SelectedChannel(long j, Long l, SelectedChannelAnalyticsLocation selectedChannelAnalyticsLocation, int i, DefaultConstructorMarker defaultConstructorMarker) {
+                this(j, (i & 2) != 0 ? null : l, (i & 4) != 0 ? null : selectedChannelAnalyticsLocation);
             }
 
-            public static /* synthetic */ SelectedChannel copy$default(SelectedChannel selectedChannel, long j, Long l, StoreChannelsSelected3 storeChannelsSelected3, int i, Object obj) {
+            public static /* synthetic */ SelectedChannel copy$default(SelectedChannel selectedChannel, long j, Long l, SelectedChannelAnalyticsLocation selectedChannelAnalyticsLocation, int i, Object obj) {
                 if ((i & 1) != 0) {
                     j = selectedChannel.channelId;
                 }
@@ -353,9 +353,9 @@ public final class StoreChannelsSelected extends StoreV2 {
                     l = selectedChannel.peekParent;
                 }
                 if ((i & 4) != 0) {
-                    storeChannelsSelected3 = selectedChannel.analyticsLocation;
+                    selectedChannelAnalyticsLocation = selectedChannel.analyticsLocation;
                 }
-                return selectedChannel.copy(j, l, storeChannelsSelected3);
+                return selectedChannel.copy(j, l, selectedChannelAnalyticsLocation);
             }
 
             /* JADX INFO: renamed from: component1, reason: from getter */
@@ -369,11 +369,11 @@ public final class StoreChannelsSelected extends StoreV2 {
             }
 
             /* JADX INFO: renamed from: component3, reason: from getter */
-            public final StoreChannelsSelected3 getAnalyticsLocation() {
+            public final SelectedChannelAnalyticsLocation getAnalyticsLocation() {
                 return this.analyticsLocation;
             }
 
-            public final SelectedChannel copy(long channelId, Long peekParent, StoreChannelsSelected3 analyticsLocation) {
+            public final SelectedChannel copy(long channelId, Long peekParent, SelectedChannelAnalyticsLocation analyticsLocation) {
                 return new SelectedChannel(channelId, peekParent, analyticsLocation);
             }
 
@@ -385,10 +385,10 @@ public final class StoreChannelsSelected extends StoreV2 {
                     return false;
                 }
                 SelectedChannel selectedChannel = (SelectedChannel) other;
-                return this.channelId == selectedChannel.channelId && Intrinsics3.areEqual(this.peekParent, selectedChannel.peekParent) && Intrinsics3.areEqual(this.analyticsLocation, selectedChannel.analyticsLocation);
+                return this.channelId == selectedChannel.channelId && C12238m.areEqual(this.peekParent, selectedChannel.peekParent) && C12238m.areEqual(this.analyticsLocation, selectedChannel.analyticsLocation);
             }
 
-            public final StoreChannelsSelected3 getAnalyticsLocation() {
+            public final SelectedChannelAnalyticsLocation getAnalyticsLocation() {
                 return this.analyticsLocation;
             }
 
@@ -401,29 +401,29 @@ public final class StoreChannelsSelected extends StoreV2 {
             }
 
             public int hashCode() {
-                int iA = b.a(this.channelId) * 31;
+                int iM3a = C0002b.m3a(this.channelId) * 31;
                 Long l = this.peekParent;
-                int iHashCode = (iA + (l != null ? l.hashCode() : 0)) * 31;
-                StoreChannelsSelected3 storeChannelsSelected3 = this.analyticsLocation;
-                return iHashCode + (storeChannelsSelected3 != null ? storeChannelsSelected3.hashCode() : 0);
+                int iHashCode = (iM3a + (l != null ? l.hashCode() : 0)) * 31;
+                SelectedChannelAnalyticsLocation selectedChannelAnalyticsLocation = this.analyticsLocation;
+                return iHashCode + (selectedChannelAnalyticsLocation != null ? selectedChannelAnalyticsLocation.hashCode() : 0);
             }
 
             public String toString() {
-                StringBuilder sbU = outline.U("SelectedChannel(channelId=");
-                sbU.append(this.channelId);
-                sbU.append(", peekParent=");
-                sbU.append(this.peekParent);
-                sbU.append(", analyticsLocation=");
-                sbU.append(this.analyticsLocation);
-                sbU.append(")");
-                return sbU.toString();
+                StringBuilder sbM833U = C1643a.m833U("SelectedChannel(channelId=");
+                sbM833U.append(this.channelId);
+                sbM833U.append(", peekParent=");
+                sbM833U.append(this.peekParent);
+                sbM833U.append(", analyticsLocation=");
+                sbM833U.append(this.analyticsLocation);
+                sbM833U.append(")");
+                return sbM833U.toString();
             }
 
-            public SelectedChannel(long j, Long l, StoreChannelsSelected3 storeChannelsSelected3) {
+            public SelectedChannel(long j, Long l, SelectedChannelAnalyticsLocation selectedChannelAnalyticsLocation) {
                 super(null);
                 this.channelId = j;
                 this.peekParent = l;
-                this.analyticsLocation = storeChannelsSelected3;
+                this.analyticsLocation = selectedChannelAnalyticsLocation;
             }
         }
 
@@ -480,7 +480,7 @@ public final class StoreChannelsSelected extends StoreV2 {
                     return false;
                 }
                 ThreadDraft threadDraft = (ThreadDraft) other;
-                return this.parentChannelId == threadDraft.parentChannelId && Intrinsics3.areEqual(this.starterMessageId, threadDraft.starterMessageId) && Intrinsics3.areEqual(this.locationThreadStart, threadDraft.locationThreadStart);
+                return this.parentChannelId == threadDraft.parentChannelId && C12238m.areEqual(this.starterMessageId, threadDraft.starterMessageId) && C12238m.areEqual(this.locationThreadStart, threadDraft.locationThreadStart);
             }
 
             public final String getLocationThreadStart() {
@@ -496,20 +496,20 @@ public final class StoreChannelsSelected extends StoreV2 {
             }
 
             public int hashCode() {
-                int iA = b.a(this.parentChannelId) * 31;
+                int iM3a = C0002b.m3a(this.parentChannelId) * 31;
                 Long l = this.starterMessageId;
-                int iHashCode = (iA + (l != null ? l.hashCode() : 0)) * 31;
+                int iHashCode = (iM3a + (l != null ? l.hashCode() : 0)) * 31;
                 String str = this.locationThreadStart;
                 return iHashCode + (str != null ? str.hashCode() : 0);
             }
 
             public String toString() {
-                StringBuilder sbU = outline.U("ThreadDraft(parentChannelId=");
-                sbU.append(this.parentChannelId);
-                sbU.append(", starterMessageId=");
-                sbU.append(this.starterMessageId);
-                sbU.append(", locationThreadStart=");
-                return outline.J(sbU, this.locationThreadStart, ")");
+                StringBuilder sbM833U = C1643a.m833U("ThreadDraft(parentChannelId=");
+                sbM833U.append(this.parentChannelId);
+                sbM833U.append(", starterMessageId=");
+                sbM833U.append(this.starterMessageId);
+                sbM833U.append(", locationThreadStart=");
+                return C1643a.m822J(sbM833U, this.locationThreadStart, ")");
             }
         }
 
@@ -532,7 +532,7 @@ public final class StoreChannelsSelected extends StoreV2 {
             if (this instanceof ThreadDraft) {
                 return ((ThreadDraft) this).getParentChannelId();
             }
-            if (Intrinsics3.areEqual(this, Unselected.INSTANCE)) {
+            if (C12238m.areEqual(this, Unselected.INSTANCE)) {
                 return 0L;
             }
             throw new NoWhenBranchMatchedException();
@@ -540,7 +540,7 @@ public final class StoreChannelsSelected extends StoreV2 {
 
         public final ResolvedSelectedChannel resolveWithChannel(Channel channel) {
             ResolvedSelectedChannel threadDraft;
-            Intrinsics3.checkNotNullParameter(channel, "channel");
+            C12238m.checkNotNullParameter(channel, "channel");
             if (this instanceof Unselected) {
                 return ResolvedSelectedChannel.Unselected.INSTANCE;
             }
@@ -562,10 +562,10 @@ public final class StoreChannelsSelected extends StoreV2 {
         }
     }
 
-    /* JADX INFO: renamed from: com.discord.stores.StoreChannelsSelected$observeId$1, reason: invalid class name */
+    /* JADX INFO: renamed from: com.discord.stores.StoreChannelsSelected$observeId$1 */
     /* JADX INFO: compiled from: StoreChannelsSelected.kt */
-    public static final class AnonymousClass1 extends Lambda implements Function0<Long> {
-        public AnonymousClass1() {
+    public static final class C58321 extends AbstractC12240o implements Function0<Long> {
+        public C58321() {
             super(0);
         }
 
@@ -580,10 +580,10 @@ public final class StoreChannelsSelected extends StoreV2 {
         }
     }
 
-    /* JADX INFO: renamed from: com.discord.stores.StoreChannelsSelected$observePreviousId$1, reason: invalid class name */
+    /* JADX INFO: renamed from: com.discord.stores.StoreChannelsSelected$observePreviousId$1 */
     /* JADX INFO: compiled from: StoreChannelsSelected.kt */
-    public static final class AnonymousClass1 extends Lambda implements Function0<Long> {
-        public AnonymousClass1() {
+    public static final class C58341 extends AbstractC12240o implements Function0<Long> {
+        public C58341() {
             super(0);
         }
 
@@ -598,10 +598,10 @@ public final class StoreChannelsSelected extends StoreV2 {
         }
     }
 
-    /* JADX INFO: renamed from: com.discord.stores.StoreChannelsSelected$observeResolvedSelectedChannel$1, reason: invalid class name */
+    /* JADX INFO: renamed from: com.discord.stores.StoreChannelsSelected$observeResolvedSelectedChannel$1 */
     /* JADX INFO: compiled from: StoreChannelsSelected.kt */
-    public static final class AnonymousClass1 extends Lambda implements Function0<ResolvedSelectedChannel> {
-        public AnonymousClass1() {
+    public static final class C58351 extends AbstractC12240o implements Function0<ResolvedSelectedChannel> {
+        public C58351() {
             super(0);
         }
 
@@ -612,10 +612,10 @@ public final class StoreChannelsSelected extends StoreV2 {
         }
     }
 
-    /* JADX INFO: renamed from: com.discord.stores.StoreChannelsSelected$observeSelectedChannel$1, reason: invalid class name */
+    /* JADX INFO: renamed from: com.discord.stores.StoreChannelsSelected$observeSelectedChannel$1 */
     /* JADX INFO: compiled from: StoreChannelsSelected.kt */
-    public static final class AnonymousClass1 extends Lambda implements Function0<Channel> {
-        public AnonymousClass1() {
+    public static final class C58361 extends AbstractC12240o implements Function0<Channel> {
+        public C58361() {
             super(0);
         }
 
@@ -626,9 +626,9 @@ public final class StoreChannelsSelected extends StoreV2 {
         }
     }
 
-    /* JADX INFO: renamed from: com.discord.stores.StoreChannelsSelected$validateSelectedChannel$1, reason: invalid class name */
+    /* JADX INFO: renamed from: com.discord.stores.StoreChannelsSelected$validateSelectedChannel$1 */
     /* JADX INFO: compiled from: StoreChannelsSelected.kt */
-    public static final class AnonymousClass1 extends Lambda implements Function0<ResolvedSelectedChannel> {
+    public static final class C58371 extends AbstractC12240o implements Function0<ResolvedSelectedChannel> {
         public final /* synthetic */ Map $allChannels;
         public final /* synthetic */ UserChannelSelection $channelSelection;
         public final /* synthetic */ boolean $isChannelStoreInitializedForAuthedUser;
@@ -636,7 +636,7 @@ public final class StoreChannelsSelected extends StoreV2 {
         public final /* synthetic */ long $selectedGuildId;
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-        public AnonymousClass1(UserChannelSelection userChannelSelection, Map map, long j, Map map2, boolean z2) {
+        public C58371(UserChannelSelection userChannelSelection, Map map, long j, Map map2, boolean z2) {
             super(0);
             this.$channelSelection = userChannelSelection;
             this.$allChannels = map;
@@ -653,33 +653,33 @@ public final class StoreChannelsSelected extends StoreV2 {
         }
     }
 
-    /* JADX INFO: renamed from: com.discord.stores.StoreChannelsSelected$validateSelectedChannel$2, reason: invalid class name */
+    /* JADX INFO: renamed from: com.discord.stores.StoreChannelsSelected$validateSelectedChannel$2 */
     /* JADX INFO: compiled from: StoreChannelsSelected.kt */
-    public static final class AnonymousClass2 extends Lambda implements Function1<Subscription, Unit> {
-        public AnonymousClass2() {
+    public static final class C58382 extends AbstractC12240o implements Function1<Subscription, Unit> {
+        public C58382() {
             super(1);
         }
 
         @Override // kotlin.jvm.functions.Function1
         public /* bridge */ /* synthetic */ Unit invoke(Subscription subscription) {
             invoke2(subscription);
-            return Unit.a;
+            return Unit.f27425a;
         }
 
         /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
         public final void invoke2(Subscription subscription) {
-            Intrinsics3.checkNotNullParameter(subscription, "it");
+            C12238m.checkNotNullParameter(subscription, "it");
             StoreChannelsSelected.this.validateSelectedChannelSubscription = subscription;
         }
     }
 
-    /* JADX INFO: renamed from: com.discord.stores.StoreChannelsSelected$validateSelectedChannel$3, reason: invalid class name */
+    /* JADX INFO: renamed from: com.discord.stores.StoreChannelsSelected$validateSelectedChannel$3 */
     /* JADX INFO: compiled from: StoreChannelsSelected.kt */
-    public static final class AnonymousClass3 extends Lambda implements Function1<ResolvedSelectedChannel, Unit> {
+    public static final class C58393 extends AbstractC12240o implements Function1<ResolvedSelectedChannel, Unit> {
 
         /* JADX INFO: renamed from: com.discord.stores.StoreChannelsSelected$validateSelectedChannel$3$1, reason: invalid class name */
         /* JADX INFO: compiled from: StoreChannelsSelected.kt */
-        public static final class AnonymousClass1 extends Lambda implements Function0<Unit> {
+        public static final class AnonymousClass1 extends AbstractC12240o implements Function0<Unit> {
             public final /* synthetic */ ResolvedSelectedChannel $selected;
 
             /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -691,26 +691,26 @@ public final class StoreChannelsSelected extends StoreV2 {
             @Override // kotlin.jvm.functions.Function0
             public /* bridge */ /* synthetic */ Unit invoke() {
                 invoke2();
-                return Unit.a;
+                return Unit.f27425a;
             }
 
             /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
             public final void invoke2() {
                 StoreChannelsSelected storeChannelsSelected = StoreChannelsSelected.this;
                 ResolvedSelectedChannel resolvedSelectedChannel = this.$selected;
-                Intrinsics3.checkNotNullExpressionValue(resolvedSelectedChannel, "selected");
+                C12238m.checkNotNullExpressionValue(resolvedSelectedChannel, "selected");
                 storeChannelsSelected.onSelectedChannelResolved(resolvedSelectedChannel);
             }
         }
 
-        public AnonymousClass3() {
+        public C58393() {
             super(1);
         }
 
         @Override // kotlin.jvm.functions.Function1
         public /* bridge */ /* synthetic */ Unit invoke(ResolvedSelectedChannel resolvedSelectedChannel) {
             invoke2(resolvedSelectedChannel);
-            return Unit.a;
+            return Unit.f27425a;
         }
 
         /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
@@ -720,12 +720,12 @@ public final class StoreChannelsSelected extends StoreV2 {
     }
 
     public StoreChannelsSelected(StoreStream storeStream, StoreChannels storeChannels, StorePermissions storePermissions, StoreGuildSelected storeGuildSelected, Dispatcher dispatcher, ObservationDeck observationDeck) {
-        Intrinsics3.checkNotNullParameter(storeStream, "stream");
-        Intrinsics3.checkNotNullParameter(storeChannels, "storeChannels");
-        Intrinsics3.checkNotNullParameter(storePermissions, "storePermissions");
-        Intrinsics3.checkNotNullParameter(storeGuildSelected, "storeGuildSelected");
-        Intrinsics3.checkNotNullParameter(dispatcher, "dispatcher");
-        Intrinsics3.checkNotNullParameter(observationDeck, "observationDeck");
+        C12238m.checkNotNullParameter(storeStream, "stream");
+        C12238m.checkNotNullParameter(storeChannels, "storeChannels");
+        C12238m.checkNotNullParameter(storePermissions, "storePermissions");
+        C12238m.checkNotNullParameter(storeGuildSelected, "storeGuildSelected");
+        C12238m.checkNotNullParameter(dispatcher, "dispatcher");
+        C12238m.checkNotNullParameter(observationDeck, "observationDeck");
         this.stream = storeStream;
         this.storeChannels = storeChannels;
         this.storePermissions = storePermissions;
@@ -747,22 +747,22 @@ public final class StoreChannelsSelected extends StoreV2 {
         ArrayList arrayList = new ArrayList();
         for (Object obj : collectionValues) {
             Channel channel = (Channel) obj;
-            if (channel.getGuildId() == guildId && ChannelUtils.v(channel) && PermissionUtils.hasAccess(channel, permissions)) {
+            if (channel.getGuildId() == guildId && ChannelUtils.m7698v(channel) && PermissionUtils.hasAccess(channel, permissions)) {
                 arrayList.add(obj);
             }
         }
-        return (Channel) _Collections.firstOrNull(_Collections.sortedWith(arrayList, ChannelUtils.h(Channel.INSTANCE)));
+        return (Channel) C12163u.firstOrNull(C12163u.sortedWith(arrayList, ChannelUtils.m7684h(Channel.INSTANCE)));
     }
 
     private final boolean isValidResolution(Channel channel, long guildId, Map<Long, Long> permissions) {
-        return channel.getGuildId() == guildId && ChannelUtils.G(channel) && PermissionUtils.hasAccess(channel, permissions);
+        return channel.getGuildId() == guildId && ChannelUtils.m7672G(channel) && PermissionUtils.hasAccess(channel, permissions);
     }
 
-    @Store3
+    @StoreThread
     private final void loadFromCache() {
         Map<Long, UserChannelSelection> map = this.userChannelSelections;
         Map<Long, Long> map2 = this.selectedChannelIdsCache.get();
-        LinkedHashMap linkedHashMap = new LinkedHashMap(MapsJVM.mapCapacity(map2.size()));
+        LinkedHashMap linkedHashMap = new LinkedHashMap(C12134g0.mapCapacity(map2.size()));
         Iterator<T> it = map2.entrySet().iterator();
         while (it.hasNext()) {
             Map.Entry entry = (Map.Entry) it.next();
@@ -771,7 +771,7 @@ public final class StoreChannelsSelected extends StoreV2 {
         map.putAll(linkedHashMap);
     }
 
-    @Store3
+    @StoreThread
     private final void onSelectedChannelResolved(ResolvedSelectedChannel resolvedSelectedChannel) {
         if (this.selectedChannel.getId() != resolvedSelectedChannel.getId()) {
             this.previouslySelectedChannel = this.selectedChannel;
@@ -785,7 +785,7 @@ public final class StoreChannelsSelected extends StoreV2 {
         }
         if (z2) {
             ResolvedSelectedChannel.Channel channel2 = (ResolvedSelectedChannel.Channel) resolvedSelectedChannel;
-            if (ChannelUtils.J(channel2.getChannel())) {
+            if (ChannelUtils.m7675J(channel2.getChannel())) {
                 this.stream.getAnalytics().trackTextInVoiceOpened(resolvedSelectedChannel.getId(), channel2.getAnalyticsLocation());
             }
             this.stream.getAnalytics().trackChannelOpened(resolvedSelectedChannel.getId(), channel2.getAnalyticsViewType(), channel2.getAnalyticsLocation());
@@ -809,11 +809,11 @@ public final class StoreChannelsSelected extends StoreV2 {
         return firstAvailableChannel == null ? ResolvedSelectedChannel.Unavailable.INSTANCE : new ResolvedSelectedChannel.Channel(firstAvailableChannel, null, null);
     }
 
-    @Store3
+    @StoreThread
     private final void updateInitializationState() {
         boolean z2 = this.stream.getAuthentication().getAuthState() != null;
         boolean z3 = this.initializedForAuthedUser;
-        boolean z4 = z2 && this.storeChannels.getInitializedForAuthedUser() && ((this.userChannelSelections.isEmpty() ^ true) || this.handledReadyPayload || this.isStoreInitTimedOut) && (Intrinsics3.areEqual(this.selectedChannel, ResolvedSelectedChannel.Uninitialized.INSTANCE) ^ true);
+        boolean z4 = z2 && this.storeChannels.getInitializedForAuthedUser() && ((this.userChannelSelections.isEmpty() ^ true) || this.handledReadyPayload || this.isStoreInitTimedOut) && (C12238m.areEqual(this.selectedChannel, ResolvedSelectedChannel.Uninitialized.INSTANCE) ^ true);
         if (z3 || !z4) {
             return;
         }
@@ -821,7 +821,7 @@ public final class StoreChannelsSelected extends StoreV2 {
         markChanged(InitializedUpdateSource);
     }
 
-    @Store3
+    @StoreThread
     private final void validateSelectedChannel() {
         Subscription subscription = this.validateSelectedChannelSubscription;
         if (subscription != null) {
@@ -830,12 +830,12 @@ public final class StoreChannelsSelected extends StoreV2 {
         Map<Long, Channel> channelsByIdInternal$app_productionGoogleRelease = this.storeChannels.getChannelsByIdInternal$app_productionGoogleRelease();
         boolean initializedForAuthedUser = this.storeChannels.getInitializedForAuthedUser();
         long selectedGuildIdInternal$app_productionGoogleRelease = this.storeGuildSelected.getSelectedGuildIdInternal$app_productionGoogleRelease();
-        Observable observableR = ObservableExtensionsKt.computationLatest(ObservationDeck.connectRx$default(this.observationDeck, new ObservationDeck.UpdateSource[]{this.storeGuildSelected, this.storeChannels, this.storePermissions}, false, null, null, new AnonymousClass1(this.userChannelSelections.get(Long.valueOf(selectedGuildIdInternal$app_productionGoogleRelease)), channelsByIdInternal$app_productionGoogleRelease, selectedGuildIdInternal$app_productionGoogleRelease, this.storePermissions.getPermissionsByChannelInternal$app_productionGoogleRelease(selectedGuildIdInternal$app_productionGoogleRelease), initializedForAuthedUser), 14, null)).r();
-        Intrinsics3.checkNotNullExpressionValue(observableR, "observationDeck\n        …  .distinctUntilChanged()");
-        ObservableExtensionsKt.appSubscribe(observableR, (Class<?>) StoreChannelsSelected.class, (58 & 2) != 0 ? null : null, (Function1<? super Subscription, Unit>) ((58 & 4) != 0 ? null : new AnonymousClass2()), (Function1<? super Error, Unit>) ((58 & 8) != 0 ? null : null), (Function0<Unit>) ((58 & 16) != 0 ? ObservableExtensionsKt.AnonymousClass1.INSTANCE : null), (Function0<Unit>) ((58 & 32) != 0 ? ObservableExtensionsKt.AnonymousClass2.INSTANCE : null), new AnonymousClass3());
+        Observable observableM11112r = ObservableExtensionsKt.computationLatest(ObservationDeck.connectRx$default(this.observationDeck, new ObservationDeck.UpdateSource[]{this.storeGuildSelected, this.storeChannels, this.storePermissions}, false, null, null, new C58371(this.userChannelSelections.get(Long.valueOf(selectedGuildIdInternal$app_productionGoogleRelease)), channelsByIdInternal$app_productionGoogleRelease, selectedGuildIdInternal$app_productionGoogleRelease, this.storePermissions.getPermissionsByChannelInternal$app_productionGoogleRelease(selectedGuildIdInternal$app_productionGoogleRelease), initializedForAuthedUser), 14, null)).m11112r();
+        C12238m.checkNotNullExpressionValue(observableM11112r, "observationDeck\n        …  .distinctUntilChanged()");
+        ObservableExtensionsKt.appSubscribe(observableM11112r, (Class<?>) StoreChannelsSelected.class, (58 & 2) != 0 ? null : null, (Function1<? super Subscription, Unit>) ((58 & 4) != 0 ? null : new C58382()), (Function1<? super Error, Unit>) ((58 & 8) != 0 ? null : null), (Function0<Unit>) ((58 & 16) != 0 ? ObservableExtensionsKt.C68791.INSTANCE : null), (Function0<Unit>) ((58 & 32) != 0 ? ObservableExtensionsKt.C68802.INSTANCE : null), new C58393());
     }
 
-    @Store3
+    @StoreThread
     public final void dismissCreateThread() {
         ResolvedSelectedChannel resolvedSelectedChannel = this.selectedChannel;
         if (!(resolvedSelectedChannel instanceof ResolvedSelectedChannel.ThreadDraft)) {
@@ -869,28 +869,28 @@ public final class StoreChannelsSelected extends StoreV2 {
         return null;
     }
 
-    @Store3
+    @StoreThread
     public final void handleChannelOrThreadCreateOrUpdate(Channel channel) {
-        Intrinsics3.checkNotNullParameter(channel, "channel");
+        C12238m.checkNotNullParameter(channel, "channel");
         if (channel.getId() == this.selectedChannel.getId()) {
             validateSelectedChannel();
         }
     }
 
-    @Store3
+    @StoreThread
     public final void handleChannelOrThreadDelete(Channel channel) {
-        Intrinsics3.checkNotNullParameter(channel, "channel");
+        C12238m.checkNotNullParameter(channel, "channel");
         if (channel.getId() == this.selectedChannel.getId()) {
             validateSelectedChannel();
         }
     }
 
-    @Store3
+    @StoreThread
     public final void handleConnectionOpen(ModelPayload payload) {
-        Intrinsics3.checkNotNullParameter(payload, "payload");
+        C12238m.checkNotNullParameter(payload, "payload");
         List<Guild> guilds = payload.getGuilds();
-        Intrinsics3.checkNotNullExpressionValue(guilds, "payload.guilds");
-        HashSet hashSetHashSetOf = Sets5.hashSetOf(0L);
+        C12238m.checkNotNullExpressionValue(guilds, "payload.guilds");
+        HashSet hashSetHashSetOf = C12148n0.hashSetOf(0L);
         Iterator<T> it = guilds.iterator();
         while (it.hasNext()) {
             hashSetHashSetOf.add(Long.valueOf(((Guild) it.next()).getId()));
@@ -902,7 +902,7 @@ public final class StoreChannelsSelected extends StoreV2 {
                 linkedHashMap.put(entry.getKey(), entry.getValue());
             }
         }
-        Map<? extends Long, ? extends UserChannelSelection> mutableMap = Maps6.toMutableMap(linkedHashMap);
+        Map<? extends Long, ? extends UserChannelSelection> mutableMap = C12136h0.toMutableMap(linkedHashMap);
         if (!mutableMap.containsKey(0L)) {
             mutableMap.put(0L, UserChannelSelection.Unselected.INSTANCE);
         }
@@ -912,17 +912,17 @@ public final class StoreChannelsSelected extends StoreV2 {
         validateSelectedChannel();
     }
 
-    @Store3
+    @StoreThread
     public final void handleGuildAdd(Guild guild) {
-        Intrinsics3.checkNotNullParameter(guild, "guild");
+        C12238m.checkNotNullParameter(guild, "guild");
         if (this.storeGuildSelected.getSelectedGuildIdInternal$app_productionGoogleRelease() == guild.getId()) {
             validateSelectedChannel();
         }
     }
 
-    @Store3
+    @StoreThread
     public final void handleGuildRemove(Guild guild) {
-        Intrinsics3.checkNotNullParameter(guild, "guild");
+        C12238m.checkNotNullParameter(guild, "guild");
         Channel maybeChannel = this.selectedChannel.getMaybeChannel();
         if (maybeChannel == null || maybeChannel.getGuildId() != guild.getId()) {
             return;
@@ -930,37 +930,37 @@ public final class StoreChannelsSelected extends StoreV2 {
         validateSelectedChannel();
     }
 
-    @Store3
+    @StoreThread
     public final void handleGuildSelected() {
         validateSelectedChannel();
     }
 
-    @Store3
+    @StoreThread
     public final void handleStoreInitTimeout() {
         this.isStoreInitTimedOut = true;
         updateInitializationState();
-        if (Intrinsics3.areEqual(this.selectedChannel, ResolvedSelectedChannel.Uninitialized.INSTANCE)) {
+        if (C12238m.areEqual(this.selectedChannel, ResolvedSelectedChannel.Uninitialized.INSTANCE)) {
             validateSelectedChannel();
         }
     }
 
-    @Store3
+    @StoreThread
     public final void init() {
         loadFromCache();
         validateSelectedChannel();
     }
 
     public final Observable<Long> observeId() {
-        return ObservationDeck.connectRx$default(this.observationDeck, new ObservationDeck.UpdateSource[]{this}, false, null, null, new AnonymousClass1(), 14, null);
+        return ObservationDeck.connectRx$default(this.observationDeck, new ObservationDeck.UpdateSource[]{this}, false, null, null, new C58321(), 14, null);
     }
 
     public final Observable<Boolean> observeInitializedForAuthedUser() {
-        Observable observableY = this.storeChannels.observeInitializedForAuthedUser().Y(new Func1<Boolean, Observable<? extends Boolean>>() { // from class: com.discord.stores.StoreChannelsSelected.observeInitializedForAuthedUser.1
+        Observable observableM11099Y = this.storeChannels.observeInitializedForAuthedUser().m11099Y(new InterfaceC12589b<Boolean, Observable<? extends Boolean>>() { // from class: com.discord.stores.StoreChannelsSelected.observeInitializedForAuthedUser.1
 
-            /* JADX INFO: renamed from: com.discord.stores.StoreChannelsSelected$observeInitializedForAuthedUser$1$1, reason: invalid class name and collision with other inner class name */
+            /* JADX INFO: renamed from: com.discord.stores.StoreChannelsSelected$observeInitializedForAuthedUser$1$1, reason: invalid class name */
             /* JADX INFO: compiled from: StoreChannelsSelected.kt */
-            public static final class C01061 extends Lambda implements Function0<Boolean> {
-                public C01061() {
+            public static final class AnonymousClass1 extends AbstractC12240o implements Function0<Boolean> {
+                public AnonymousClass1() {
                     super(0);
                 }
 
@@ -975,40 +975,40 @@ public final class StoreChannelsSelected extends StoreV2 {
                 }
             }
 
-            @Override // j0.k.Func1
+            @Override // p637j0.p641k.InterfaceC12589b
             public final Observable<? extends Boolean> call(Boolean bool) {
-                Intrinsics3.checkNotNullExpressionValue(bool, "isStoreChannelsInitialized");
-                return bool.booleanValue() ? ObservationDeck.connectRx$default(StoreChannelsSelected.this.observationDeck, new ObservationDeck.UpdateSource[]{StoreChannelsSelected.InitializedUpdateSource}, false, null, null, new C01061(), 14, null) : new ScalarSynchronousObservable(Boolean.FALSE);
+                C12238m.checkNotNullExpressionValue(bool, "isStoreChannelsInitialized");
+                return bool.booleanValue() ? ObservationDeck.connectRx$default(StoreChannelsSelected.this.observationDeck, new ObservationDeck.UpdateSource[]{StoreChannelsSelected.InitializedUpdateSource}, false, null, null, new AnonymousClass1(), 14, null) : new C12721k(Boolean.FALSE);
             }
         });
-        Intrinsics3.checkNotNullExpressionValue(observableY, "storeChannels.observeIni…            }\n          }");
-        return observableY;
+        C12238m.checkNotNullExpressionValue(observableM11099Y, "storeChannels.observeIni…            }\n          }");
+        return observableM11099Y;
     }
 
     public final Observable<Long> observePreviousId() {
-        return ObservationDeck.connectRx$default(this.observationDeck, new ObservationDeck.UpdateSource[]{this}, false, null, null, new AnonymousClass1(), 14, null);
+        return ObservationDeck.connectRx$default(this.observationDeck, new ObservationDeck.UpdateSource[]{this}, false, null, null, new C58341(), 14, null);
     }
 
     public final Observable<ResolvedSelectedChannel> observeResolvedSelectedChannel() {
-        return ObservationDeck.connectRx$default(this.observationDeck, new ObservationDeck.UpdateSource[]{this}, false, null, null, new AnonymousClass1(), 14, null);
+        return ObservationDeck.connectRx$default(this.observationDeck, new ObservationDeck.UpdateSource[]{this}, false, null, null, new C58351(), 14, null);
     }
 
     public final Observable<Channel> observeSelectedChannel() {
-        return ObservationDeck.connectRx$default(this.observationDeck, new ObservationDeck.UpdateSource[]{this}, false, null, null, new AnonymousClass1(), 14, null);
+        return ObservationDeck.connectRx$default(this.observationDeck, new ObservationDeck.UpdateSource[]{this}, false, null, null, new C58361(), 14, null);
     }
 
-    @Store3
+    @StoreThread
     public final void openCreateThread(long guildId, long channelId, Long parentMessageId, String threadStartLocation) {
         this.userChannelSelections.put(Long.valueOf(guildId), new UserChannelSelection.ThreadDraft(channelId, parentMessageId, threadStartLocation));
         validateSelectedChannel();
     }
 
     @Override // com.discord.stores.StoreV2
-    @Store3
+    @StoreThread
     public void snapshotData() {
         Persister.set$default(this.frecencyCache, this.frecency, false, 2, null);
         Map<Long, UserChannelSelection> map = this.userChannelSelections;
-        LinkedHashMap linkedHashMap = new LinkedHashMap(MapsJVM.mapCapacity(map.size()));
+        LinkedHashMap linkedHashMap = new LinkedHashMap(C12134g0.mapCapacity(map.size()));
         Iterator<T> it = map.entrySet().iterator();
         while (it.hasNext()) {
             Map.Entry entry = (Map.Entry) it.next();
@@ -1017,8 +1017,8 @@ public final class StoreChannelsSelected extends StoreV2 {
         this.selectedChannelIdsCache.set(linkedHashMap, true);
     }
 
-    @Store3
-    public final void trySelectChannel(long guildId, long channelId, Long peekParent, StoreChannelsSelected3 analyticsLocation) {
+    @StoreThread
+    public final void trySelectChannel(long guildId, long channelId, Long peekParent, SelectedChannelAnalyticsLocation analyticsLocation) {
         UserChannelSelection userChannelSelection = this.userChannelSelections.get(Long.valueOf(guildId));
         if (!(userChannelSelection instanceof UserChannelSelection.SelectedChannel)) {
             userChannelSelection = null;

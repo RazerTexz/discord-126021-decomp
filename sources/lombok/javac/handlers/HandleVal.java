@@ -18,7 +18,8 @@ import lombok.var;
 @HandlerPriority(65636)
 @ResolutionResetNeeded
 public class HandleVal extends JavacASTAdapter {
-    private static boolean eq(String typeTreeToString, String key) {
+    /* JADX INFO: renamed from: eq */
+    private static boolean m10948eq(String typeTreeToString, String key) {
         return typeTreeToString.equals(key) || typeTreeToString.equals(new StringBuilder("lombok.").append(key).toString()) || typeTreeToString.equals(new StringBuilder("lombok.experimental.").append(key).toString());
     }
 
@@ -31,7 +32,7 @@ public class HandleVal extends JavacASTAdapter {
             return;
         }
         String typeTreeToString = jCExpression.toString();
-        if (eq(typeTreeToString, "val") || eq(typeTreeToString, "var")) {
+        if (m10948eq(typeTreeToString, "val") || m10948eq(typeTreeToString, "var")) {
             boolean isVal = JavacHandlerUtil.typeMatches((Class<?>) val.class, localNode, (JCTree) jCExpression);
             boolean isVar = JavacHandlerUtil.typeMatches((Class<?>) var.class, localNode, (JCTree) jCExpression);
             if (isVal || isVar) {

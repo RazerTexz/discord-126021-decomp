@@ -3,15 +3,6 @@ package com.discord.utilities.websocket;
 import androidx.core.view.PointerIconCompat;
 import com.discord.models.domain.ModelAuditLogEntry;
 import com.discord.utilities.websocket.ZLibWebSocketListener;
-import d0.Tuples;
-import d0.t.Maps6;
-import d0.t.MapsJVM;
-import d0.z.d.Intrinsics3;
-import d0.z.d.Lambda;
-import f0.OkHttpClient;
-import f0.e0.k.Platform2;
-import j0.l.c.TrampolineScheduler;
-import j0.p.Schedulers2;
 import java.io.InputStreamReader;
 import java.util.Map;
 import java.util.concurrent.TimeUnit;
@@ -25,10 +16,19 @@ import kotlin.jvm.functions.Function3;
 import okhttp3.Request;
 import okhttp3.Response;
 import okhttp3.WebSocketListener;
-import rx.Observable;
-import rx.Scheduler;
-import rx.functions.Action1;
-import rx.subjects.PublishSubject;
+import p507d0.C12116o;
+import p507d0.p580t.C12134g0;
+import p507d0.p580t.C12136h0;
+import p507d0.p592z.p594d.AbstractC12240o;
+import p507d0.p592z.p594d.C12238m;
+import p600f0.C12380x;
+import p600f0.p601e0.p609k.C12333h;
+import p637j0.p642l.p645c.C12708m;
+import p637j0.p653p.C12781a;
+import p658rx.Observable;
+import p658rx.Scheduler;
+import p658rx.functions.Action1;
+import p658rx.subjects.PublishSubject;
 
 /* JADX INFO: compiled from: WebSocket.kt */
 /* JADX INFO: loaded from: classes2.dex */
@@ -70,7 +70,7 @@ public final class WebSocket {
         private final Throwable throwable;
 
         public Error(Throwable th, Response response) {
-            Intrinsics3.checkNotNullParameter(th, "throwable");
+            C12238m.checkNotNullParameter(th, "throwable");
             this.throwable = th;
             this.response = response;
         }
@@ -106,29 +106,29 @@ public final class WebSocket {
         CLOSED
     }
 
-    /* JADX INFO: renamed from: com.discord.utilities.websocket.WebSocket$connect$1, reason: invalid class name */
+    /* JADX INFO: renamed from: com.discord.utilities.websocket.WebSocket$connect$1 */
     /* JADX INFO: compiled from: WebSocket.kt */
-    public static final class AnonymousClass1 extends ZLibWebSocketListener.Listener {
+    public static final class C70581 extends ZLibWebSocketListener.Listener {
         private final RawMessageHandler rawMessageHandler;
 
-        public AnonymousClass1() {
+        public C70581() {
             this.rawMessageHandler = WebSocket.this.getRawMessageHandler();
         }
 
         private final void handleError(Exception exception, String errorMessage, String rawData) {
             Map mapEmptyMap;
-            if (rawData == null || (mapEmptyMap = MapsJVM.mapOf(Tuples.to("raw_data_string", rawData))) == null) {
-                mapEmptyMap = Maps6.emptyMap();
+            if (rawData == null || (mapEmptyMap = C12134g0.mapOf(C12116o.m10073to("raw_data_string", rawData))) == null) {
+                mapEmptyMap = C12136h0.emptyMap();
             }
             WebSocket.this.errorLogger.invoke(errorMessage, exception, mapEmptyMap);
             WebSocket.this.handleOnFailure(exception, null, false);
         }
 
-        public static /* synthetic */ void handleError$default(AnonymousClass1 anonymousClass1, Exception exc, String str, String str2, int i, Object obj) {
+        public static /* synthetic */ void handleError$default(C70581 c70581, Exception exc, String str, String str2, int i, Object obj) {
             if ((i & 4) != 0) {
                 str2 = null;
             }
-            anonymousClass1.handleError(exc, str, str2);
+            c70581.handleError(exc, str, str2);
         }
 
         @Override // com.discord.utilities.websocket.ZLibWebSocketListener.Listener
@@ -138,36 +138,36 @@ public final class WebSocket {
 
         @Override // okhttp3.WebSocketListener
         public void onClosed(okhttp3.WebSocket webSocket, int code, String reason) {
-            Intrinsics3.checkNotNullParameter(webSocket, "webSocket");
-            Intrinsics3.checkNotNullParameter(reason, ModelAuditLogEntry.CHANGE_KEY_REASON);
-            WebSocket.this.schedule(new WebSocket2(this, code, reason));
+            C12238m.checkNotNullParameter(webSocket, "webSocket");
+            C12238m.checkNotNullParameter(reason, ModelAuditLogEntry.CHANGE_KEY_REASON);
+            WebSocket.this.schedule(new WebSocket$connect$1$onClosed$1(this, code, reason));
         }
 
         @Override // okhttp3.WebSocketListener
         public void onClosing(okhttp3.WebSocket webSocket, int code, String reason) {
-            Intrinsics3.checkNotNullParameter(webSocket, "webSocket");
-            Intrinsics3.checkNotNullParameter(reason, ModelAuditLogEntry.CHANGE_KEY_REASON);
+            C12238m.checkNotNullParameter(webSocket, "webSocket");
+            C12238m.checkNotNullParameter(reason, ModelAuditLogEntry.CHANGE_KEY_REASON);
             WebSocket.this.state = State.CLOSING;
             WebSocket.this.getOnClosed().invoke(new Closed(code, reason));
         }
 
         @Override // okhttp3.WebSocketListener
         public void onFailure(okhttp3.WebSocket webSocket, Throwable t, Response response) {
-            Intrinsics3.checkNotNullParameter(webSocket, "webSocket");
-            Intrinsics3.checkNotNullParameter(t, "t");
-            WebSocket.this.schedule(new WebSocket3(this, t, response));
+            C12238m.checkNotNullParameter(webSocket, "webSocket");
+            C12238m.checkNotNullParameter(t, "t");
+            WebSocket.this.schedule(new WebSocket$connect$1$onFailure$1(this, t, response));
         }
 
         @Override // com.discord.utilities.websocket.ZLibWebSocketListener.Listener
         public void onInflateError(Exception e) {
-            Intrinsics3.checkNotNullParameter(e, "e");
+            C12238m.checkNotNullParameter(e, "e");
             handleError$default(this, e, "Unable to inflate message.", null, 4, null);
         }
 
         @Override // com.discord.utilities.websocket.ZLibWebSocketListener.Listener
         public void onInflatedMessage(okhttp3.WebSocket webSocket, InputStreamReader reader, int compressedByteLength) {
-            Intrinsics3.checkNotNullParameter(webSocket, "webSocket");
-            Intrinsics3.checkNotNullParameter(reader, "reader");
+            C12238m.checkNotNullParameter(webSocket, "webSocket");
+            C12238m.checkNotNullParameter(reader, "reader");
             try {
                 WebSocket.this.getOnMessage().invoke(reader, Integer.valueOf(compressedByteLength));
             } catch (Exception e) {
@@ -177,114 +177,114 @@ public final class WebSocket {
 
         @Override // okhttp3.WebSocketListener
         public void onOpen(okhttp3.WebSocket webSocket, Response response) {
-            Intrinsics3.checkNotNullParameter(webSocket, "webSocket");
-            Intrinsics3.checkNotNullParameter(response, "response");
-            WebSocket.this.schedule(new WebSocket4(this, webSocket, response));
+            C12238m.checkNotNullParameter(webSocket, "webSocket");
+            C12238m.checkNotNullParameter(response, "response");
+            WebSocket.this.schedule(new WebSocket$connect$1$onOpen$1(this, webSocket, response));
         }
     }
 
-    /* JADX INFO: renamed from: com.discord.utilities.websocket.WebSocket$resetListeners$1, reason: invalid class name */
+    /* JADX INFO: renamed from: com.discord.utilities.websocket.WebSocket$resetListeners$1 */
     /* JADX INFO: compiled from: WebSocket.kt */
-    public static final class AnonymousClass1 extends Lambda implements Function1<Opened, Unit> {
-        public static final AnonymousClass1 INSTANCE = new AnonymousClass1();
+    public static final class C70591 extends AbstractC12240o implements Function1<Opened, Unit> {
+        public static final C70591 INSTANCE = new C70591();
 
-        public AnonymousClass1() {
+        public C70591() {
             super(1);
         }
 
         @Override // kotlin.jvm.functions.Function1
         public /* bridge */ /* synthetic */ Unit invoke(Opened opened) {
             invoke2(opened);
-            return Unit.a;
+            return Unit.f27425a;
         }
 
         /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
         public final void invoke2(Opened opened) {
-            Intrinsics3.checkNotNullParameter(opened, "it");
+            C12238m.checkNotNullParameter(opened, "it");
         }
     }
 
-    /* JADX INFO: renamed from: com.discord.utilities.websocket.WebSocket$resetListeners$2, reason: invalid class name */
+    /* JADX INFO: renamed from: com.discord.utilities.websocket.WebSocket$resetListeners$2 */
     /* JADX INFO: compiled from: WebSocket.kt */
-    public static final class AnonymousClass2 extends Lambda implements Function1<Closed, Unit> {
-        public static final AnonymousClass2 INSTANCE = new AnonymousClass2();
+    public static final class C70602 extends AbstractC12240o implements Function1<Closed, Unit> {
+        public static final C70602 INSTANCE = new C70602();
 
-        public AnonymousClass2() {
+        public C70602() {
             super(1);
         }
 
         @Override // kotlin.jvm.functions.Function1
         public /* bridge */ /* synthetic */ Unit invoke(Closed closed) {
             invoke2(closed);
-            return Unit.a;
+            return Unit.f27425a;
         }
 
         /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
         public final void invoke2(Closed closed) {
-            Intrinsics3.checkNotNullParameter(closed, "it");
+            C12238m.checkNotNullParameter(closed, "it");
         }
     }
 
-    /* JADX INFO: renamed from: com.discord.utilities.websocket.WebSocket$resetListeners$3, reason: invalid class name */
+    /* JADX INFO: renamed from: com.discord.utilities.websocket.WebSocket$resetListeners$3 */
     /* JADX INFO: compiled from: WebSocket.kt */
-    public static final class AnonymousClass3 extends Lambda implements Function2<InputStreamReader, Integer, Unit> {
-        public static final AnonymousClass3 INSTANCE = new AnonymousClass3();
+    public static final class C70613 extends AbstractC12240o implements Function2<InputStreamReader, Integer, Unit> {
+        public static final C70613 INSTANCE = new C70613();
 
-        public AnonymousClass3() {
+        public C70613() {
             super(2);
         }
 
         @Override // kotlin.jvm.functions.Function2
         public /* bridge */ /* synthetic */ Unit invoke(InputStreamReader inputStreamReader, Integer num) {
             invoke(inputStreamReader, num.intValue());
-            return Unit.a;
+            return Unit.f27425a;
         }
 
         public final void invoke(InputStreamReader inputStreamReader, int i) {
-            Intrinsics3.checkNotNullParameter(inputStreamReader, "<anonymous parameter 0>");
+            C12238m.checkNotNullParameter(inputStreamReader, "<anonymous parameter 0>");
         }
     }
 
-    /* JADX INFO: renamed from: com.discord.utilities.websocket.WebSocket$resetListeners$4, reason: invalid class name */
+    /* JADX INFO: renamed from: com.discord.utilities.websocket.WebSocket$resetListeners$4 */
     /* JADX INFO: compiled from: WebSocket.kt */
-    public static final class AnonymousClass4 extends Lambda implements Function1<Error, Unit> {
-        public static final AnonymousClass4 INSTANCE = new AnonymousClass4();
+    public static final class C70624 extends AbstractC12240o implements Function1<Error, Unit> {
+        public static final C70624 INSTANCE = new C70624();
 
-        public AnonymousClass4() {
+        public C70624() {
             super(1);
         }
 
         @Override // kotlin.jvm.functions.Function1
         public /* bridge */ /* synthetic */ Unit invoke(Error error) {
             invoke2(error);
-            return Unit.a;
+            return Unit.f27425a;
         }
 
         /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
         public final void invoke2(Error error) {
-            Intrinsics3.checkNotNullParameter(error, "it");
+            C12238m.checkNotNullParameter(error, "it");
         }
     }
 
     /* JADX WARN: Multi-variable type inference failed */
     public WebSocket(Scheduler scheduler, Function3<? super String, ? super Exception, ? super Map<String, String>, Unit> function3, SSLSocketFactory sSLSocketFactory) {
-        Intrinsics3.checkNotNullParameter(function3, "errorLogger");
+        C12238m.checkNotNullParameter(function3, "errorLogger");
         this.errorLogger = function3;
         this.socketFactory = sSLSocketFactory;
-        PublishSubject<Function0<Unit>> publishSubjectK0 = PublishSubject.k0();
-        this.schedulerSubject = publishSubjectK0;
-        this.onOpened = WebSocket8.INSTANCE;
-        this.onClosed = WebSocket5.INSTANCE;
-        this.onMessage = WebSocket7.INSTANCE;
-        this.onError = WebSocket6.INSTANCE;
+        PublishSubject<Function0<Unit>> publishSubjectM11133k0 = PublishSubject.m11133k0();
+        this.schedulerSubject = publishSubjectM11133k0;
+        this.onOpened = WebSocket$onOpened$1.INSTANCE;
+        this.onClosed = WebSocket$onClosed$1.INSTANCE;
+        this.onMessage = WebSocket$onMessage$1.INSTANCE;
+        this.onError = WebSocket$onError$1.INSTANCE;
         this.state = State.NOT_YET_CONNECTED;
-        Observable<Function0<Unit>> observableK = publishSubjectK0.K();
+        Observable<Function0<Unit>> observableM11085K = publishSubjectM11133k0.m11085K();
         if (scheduler == null) {
-            AtomicReference<Schedulers2> atomicReference = Schedulers2.a;
-            scheduler = TrampolineScheduler.a;
+            AtomicReference<C12781a> atomicReference = C12781a.f27393a;
+            scheduler = C12708m.f27250a;
         }
-        observableK.J(scheduler).W(new Action1<Function0<? extends Unit>>() { // from class: com.discord.utilities.websocket.WebSocket.1
-            @Override // rx.functions.Action1
+        observableM11085K.m11084J(scheduler).m11097W(new Action1<Function0<? extends Unit>>() { // from class: com.discord.utilities.websocket.WebSocket.1
+            @Override // p658rx.functions.Action1
             public /* bridge */ /* synthetic */ void call(Function0<? extends Unit> function0) {
                 call2((Function0<Unit>) function0);
             }
@@ -294,26 +294,26 @@ public final class WebSocket {
                 function0.invoke();
             }
         }, new Action1<Throwable>() { // from class: com.discord.utilities.websocket.WebSocket.2
-            @Override // rx.functions.Action1
+            @Override // p658rx.functions.Action1
             public final void call(Throwable th) {
                 WebSocket webSocket = WebSocket.this;
-                Intrinsics3.checkNotNullExpressionValue(th, "it");
+                C12238m.checkNotNullExpressionValue(th, "it");
                 webSocket.handleOnFailure(th, null, WebSocket.this.getState() == State.CLOSED);
             }
         });
     }
 
     private final okhttp3.WebSocket createWebSocket(String url, SSLSocketFactory socketFactory, WebSocketListener listener) {
-        OkHttpClient.a aVar = new OkHttpClient.a();
+        C12380x.a aVar = new C12380x.a();
         if (socketFactory != null) {
-            Platform2.a aVar2 = Platform2.c;
-            aVar.b(socketFactory, Platform2.a.n());
+            C12333h.a aVar2 = C12333h.f25785c;
+            aVar.m10421b(socketFactory, C12333h.f25783a.mo10325n());
         }
-        aVar.a(1L, TimeUnit.MINUTES);
-        OkHttpClient okHttpClient = new OkHttpClient(aVar);
-        Request.a aVar3 = new Request.a();
-        aVar3.f(url);
-        return okHttpClient.g(aVar3.a(), listener);
+        aVar.m10420a(1L, TimeUnit.MINUTES);
+        C12380x c12380x = new C12380x(aVar);
+        Request.C12935a c12935a = new Request.C12935a();
+        c12935a.m10983f(url);
+        return c12380x.m10419g(c12935a.m10978a(), listener);
     }
 
     public static /* synthetic */ void disconnect$default(WebSocket webSocket, int i, String str, int i2, Object obj) {
@@ -336,14 +336,14 @@ public final class WebSocket {
     }
 
     private final void schedule(Function0<Unit> callback) {
-        this.schedulerSubject.k.onNext(callback);
+        this.schedulerSubject.f27650k.onNext(callback);
     }
 
     public final void connect(String url) {
-        Intrinsics3.checkNotNullParameter(url, "url");
+        C12238m.checkNotNullParameter(url, "url");
         disconnect(1000, "Closing existing connection.");
         this.state = State.CONNECTING;
-        this.client = createWebSocket(url, this.socketFactory, new ZLibWebSocketListener(new AnonymousClass1()));
+        this.client = createWebSocket(url, this.socketFactory, new ZLibWebSocketListener(new C70581()));
     }
 
     public final void disconnect() {
@@ -360,7 +360,7 @@ public final class WebSocket {
             this.state = State.CLOSING;
             try {
                 try {
-                    webSocket.e(code, reason);
+                    webSocket.mo10349e(code, reason);
                 } catch (Exception e) {
                     handleOnFailure(e, null, true);
                 }
@@ -395,43 +395,43 @@ public final class WebSocket {
     }
 
     public final void message(String message) {
-        Intrinsics3.checkNotNullParameter(message, "message");
+        C12238m.checkNotNullParameter(message, "message");
         okhttp3.WebSocket webSocket = this.client;
         if (webSocket == null || this.state != State.CONNECTED) {
             return;
         }
         try {
-            webSocket.a(message);
+            webSocket.mo10345a(message);
         } catch (IllegalStateException e) {
             handleOnFailure(e, null, true);
         }
     }
 
     public final void resetListeners() {
-        this.onOpened = AnonymousClass1.INSTANCE;
-        this.onClosed = AnonymousClass2.INSTANCE;
-        this.onMessage = AnonymousClass3.INSTANCE;
+        this.onOpened = C70591.INSTANCE;
+        this.onClosed = C70602.INSTANCE;
+        this.onMessage = C70613.INSTANCE;
         this.rawMessageHandler = null;
-        this.onError = AnonymousClass4.INSTANCE;
+        this.onError = C70624.INSTANCE;
     }
 
     public final void setOnClosed(Function1<? super Closed, Unit> function1) {
-        Intrinsics3.checkNotNullParameter(function1, "<set-?>");
+        C12238m.checkNotNullParameter(function1, "<set-?>");
         this.onClosed = function1;
     }
 
     public final void setOnError(Function1<? super Error, Unit> function1) {
-        Intrinsics3.checkNotNullParameter(function1, "<set-?>");
+        C12238m.checkNotNullParameter(function1, "<set-?>");
         this.onError = function1;
     }
 
     public final void setOnMessage(Function2<? super InputStreamReader, ? super Integer, Unit> function2) {
-        Intrinsics3.checkNotNullParameter(function2, "<set-?>");
+        C12238m.checkNotNullParameter(function2, "<set-?>");
         this.onMessage = function2;
     }
 
     public final void setOnOpened(Function1<? super Opened, Unit> function1) {
-        Intrinsics3.checkNotNullParameter(function1, "<set-?>");
+        C12238m.checkNotNullParameter(function1, "<set-?>");
         this.onOpened = function1;
     }
 

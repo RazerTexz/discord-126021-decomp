@@ -9,25 +9,27 @@ import androidx.viewbinding.ViewBinding;
 /* JADX INFO: loaded from: classes.dex */
 public final class ViewCommunityGetStartedHeaderBinding implements ViewBinding {
 
+    /* JADX INFO: renamed from: a */
     @NonNull
-    public final View a;
+    public final View f15401a;
 
-    /* JADX INFO: renamed from: b, reason: collision with root package name */
+    /* JADX INFO: renamed from: b */
     @NonNull
-    public final ImageView f2181b;
+    public final ImageView f15402b;
 
+    /* JADX INFO: renamed from: c */
     @NonNull
-    public final TextView c;
+    public final TextView f15403c;
 
     public ViewCommunityGetStartedHeaderBinding(@NonNull View view, @NonNull ImageView imageView, @NonNull TextView textView) {
-        this.a = view;
-        this.f2181b = imageView;
-        this.c = textView;
+        this.f15401a = view;
+        this.f15402b = imageView;
+        this.f15403c = textView;
     }
 
     @Override // androidx.viewbinding.ViewBinding
     @NonNull
     public View getRoot() {
-        return this.a;
+        return this.f15401a;
     }
 }

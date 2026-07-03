@@ -10,37 +10,42 @@ import com.discord.widgets.guild_role_subscriptions.setup.GuildRoleSubscriptionP
 /* JADX INFO: loaded from: classes.dex */
 public final class WidgetGuildRoleSubscriptionPlanFormatBinding implements ViewBinding {
 
+    /* JADX INFO: renamed from: a */
     @NonNull
-    public final LinearLayout a;
+    public final LinearLayout f16933a;
 
-    /* JADX INFO: renamed from: b, reason: collision with root package name */
+    /* JADX INFO: renamed from: b */
     @NonNull
-    public final View f2437b;
+    public final View f16934b;
 
+    /* JADX INFO: renamed from: c */
     @NonNull
-    public final TextView c;
+    public final TextView f16935c;
 
+    /* JADX INFO: renamed from: d */
     @NonNull
-    public final TextView d;
+    public final TextView f16936d;
 
+    /* JADX INFO: renamed from: e */
     @NonNull
-    public final GuildRoleSubscriptionPlanFormatRadioButton e;
+    public final GuildRoleSubscriptionPlanFormatRadioButton f16937e;
 
+    /* JADX INFO: renamed from: f */
     @NonNull
-    public final GuildRoleSubscriptionPlanFormatRadioButton f;
+    public final GuildRoleSubscriptionPlanFormatRadioButton f16938f;
 
     public WidgetGuildRoleSubscriptionPlanFormatBinding(@NonNull LinearLayout linearLayout, @NonNull View view, @NonNull TextView textView, @NonNull TextView textView2, @NonNull GuildRoleSubscriptionPlanFormatRadioButton guildRoleSubscriptionPlanFormatRadioButton, @NonNull GuildRoleSubscriptionPlanFormatRadioButton guildRoleSubscriptionPlanFormatRadioButton2) {
-        this.a = linearLayout;
-        this.f2437b = view;
-        this.c = textView;
-        this.d = textView2;
-        this.e = guildRoleSubscriptionPlanFormatRadioButton;
-        this.f = guildRoleSubscriptionPlanFormatRadioButton2;
+        this.f16933a = linearLayout;
+        this.f16934b = view;
+        this.f16935c = textView;
+        this.f16936d = textView2;
+        this.f16937e = guildRoleSubscriptionPlanFormatRadioButton;
+        this.f16938f = guildRoleSubscriptionPlanFormatRadioButton2;
     }
 
     @Override // androidx.viewbinding.ViewBinding
     @NonNull
     public View getRoot() {
-        return this.a;
+        return this.f16933a;
     }
 }

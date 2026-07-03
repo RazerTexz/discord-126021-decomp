@@ -3,20 +3,25 @@ package com.google.android.exoplayer2.metadata.flac;
 import android.os.Parcel;
 import android.os.Parcelable;
 import androidx.annotation.Nullable;
-import b.d.b.a.outline;
-import b.i.a.c.Format2;
-import b.i.a.c.MediaMetadata;
-import b.i.a.c.f3.Util2;
-import b.i.a.c.z2.Metadata2;
 import com.google.android.exoplayer2.metadata.Metadata;
+import p007b.p100d.p104b.p105a.C1643a;
+import p007b.p225i.p226a.p242c.C2811j1;
+import p007b.p225i.p226a.p242c.C2835p1;
+import p007b.p225i.p226a.p242c.p259f3.C2738e0;
+import p007b.p225i.p226a.p242c.p279z2.C3155a;
 
 /* JADX INFO: loaded from: classes3.dex */
 public final class VorbisComment implements Metadata.Entry {
-    public static final Parcelable.Creator<VorbisComment> CREATOR = new a();
-    public final String j;
-    public final String k;
+    public static final Parcelable.Creator<VorbisComment> CREATOR = new C10723a();
 
-    public class a implements Parcelable.Creator<VorbisComment> {
+    /* JADX INFO: renamed from: j */
+    public final String f19955j;
+
+    /* JADX INFO: renamed from: k */
+    public final String f19956k;
+
+    /* JADX INFO: renamed from: com.google.android.exoplayer2.metadata.flac.VorbisComment$a */
+    public class C10723a implements Parcelable.Creator<VorbisComment> {
         @Override // android.os.Parcelable.Creator
         public VorbisComment createFromParcel(Parcel parcel) {
             return new VorbisComment(parcel);
@@ -29,8 +34,8 @@ public final class VorbisComment implements Metadata.Entry {
     }
 
     public VorbisComment(String str, String str2) {
-        this.j = str;
-        this.k = str2;
+        this.f19955j = str;
+        this.f19956k = str2;
     }
 
     @Override // android.os.Parcelable
@@ -46,62 +51,65 @@ public final class VorbisComment implements Metadata.Entry {
             return false;
         }
         VorbisComment vorbisComment = (VorbisComment) obj;
-        return this.j.equals(vorbisComment.j) && this.k.equals(vorbisComment.k);
+        return this.f19955j.equals(vorbisComment.f19955j) && this.f19956k.equals(vorbisComment.f19956k);
     }
 
     public int hashCode() {
-        return this.k.hashCode() + outline.m(this.j, 527, 31);
+        return this.f19956k.hashCode() + C1643a.m863m(this.f19955j, 527, 31);
     }
 
     @Override // com.google.android.exoplayer2.metadata.Metadata.Entry
-    public void n(MediaMetadata.b bVar) {
-        String str = this.j;
+    /* JADX INFO: renamed from: n */
+    public void mo8878n(C2835p1.b bVar) {
+        String str = this.f19955j;
         str.hashCode();
         switch (str) {
             case "ALBUM":
-                bVar.c = this.k;
+                bVar.f7409c = this.f19956k;
                 break;
             case "TITLE":
-                bVar.a = this.k;
+                bVar.f7407a = this.f19956k;
                 break;
             case "DESCRIPTION":
-                bVar.g = this.k;
+                bVar.f7413g = this.f19956k;
                 break;
             case "ALBUMARTIST":
-                bVar.d = this.k;
+                bVar.f7410d = this.f19956k;
                 break;
             case "ARTIST":
-                bVar.f1050b = this.k;
+                bVar.f7408b = this.f19956k;
                 break;
         }
     }
 
     @Override // com.google.android.exoplayer2.metadata.Metadata.Entry
-    public /* synthetic */ byte[] o0() {
-        return Metadata2.a(this);
+    /* JADX INFO: renamed from: o0 */
+    public /* synthetic */ byte[] mo8879o0() {
+        return C3155a.m3892a(this);
     }
 
     public String toString() {
-        String str = this.j;
-        String str2 = this.k;
-        return outline.l(outline.b(str2, outline.b(str, 5)), "VC: ", str, "=", str2);
+        String str = this.f19955j;
+        String str2 = this.f19956k;
+        return C1643a.m861l(C1643a.m841b(str2, C1643a.m841b(str, 5)), "VC: ", str, "=", str2);
     }
 
     @Override // android.os.Parcelable
     public void writeToParcel(Parcel parcel, int i) {
-        parcel.writeString(this.j);
-        parcel.writeString(this.k);
+        parcel.writeString(this.f19955j);
+        parcel.writeString(this.f19956k);
     }
 
     @Override // com.google.android.exoplayer2.metadata.Metadata.Entry
-    public /* synthetic */ Format2 y() {
-        return Metadata2.b(this);
+    /* JADX INFO: renamed from: y */
+    public /* synthetic */ C2811j1 mo8880y() {
+        return C3155a.m3893b(this);
     }
 
     public VorbisComment(Parcel parcel) {
         String string = parcel.readString();
-        int i = Util2.a;
-        this.j = string;
-        this.k = parcel.readString();
+        int i = C2738e0.f6708a;
+        this.f19955j = string;
+        this.f19956k = parcel.readString();
     }
 }

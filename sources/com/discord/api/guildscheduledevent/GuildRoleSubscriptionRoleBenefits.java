@@ -1,9 +1,9 @@
 package com.discord.api.guildscheduledevent;
 
-import b.d.b.a.outline;
 import com.discord.api.guildrolesubscription.GuildRoleSubscriptionBenefit;
-import d0.z.d.Intrinsics3;
 import java.util.List;
+import p007b.p100d.p104b.p105a.C1643a;
+import p507d0.p592z.p594d.C12238m;
 
 /* JADX INFO: compiled from: GuildRoleSubscriptionRoleBenefits.kt */
 /* JADX INFO: loaded from: classes.dex */
@@ -11,7 +11,8 @@ public final /* data */ class GuildRoleSubscriptionRoleBenefits {
     private final List<GuildRoleSubscriptionBenefit> benefits;
     private final long skuId;
 
-    public final List<GuildRoleSubscriptionBenefit> a() {
+    /* JADX INFO: renamed from: a */
+    public final List<GuildRoleSubscriptionBenefit> m7971a() {
         return this.benefits;
     }
 
@@ -23,7 +24,7 @@ public final /* data */ class GuildRoleSubscriptionRoleBenefits {
             return false;
         }
         GuildRoleSubscriptionRoleBenefits guildRoleSubscriptionRoleBenefits = (GuildRoleSubscriptionRoleBenefits) other;
-        return this.skuId == guildRoleSubscriptionRoleBenefits.skuId && Intrinsics3.areEqual(this.benefits, guildRoleSubscriptionRoleBenefits.benefits);
+        return this.skuId == guildRoleSubscriptionRoleBenefits.skuId && C12238m.areEqual(this.benefits, guildRoleSubscriptionRoleBenefits.benefits);
     }
 
     public int hashCode() {
@@ -34,9 +35,9 @@ public final /* data */ class GuildRoleSubscriptionRoleBenefits {
     }
 
     public String toString() {
-        StringBuilder sbU = outline.U("GuildRoleSubscriptionRoleBenefits(skuId=");
-        sbU.append(this.skuId);
-        sbU.append(", benefits=");
-        return outline.L(sbU, this.benefits, ")");
+        StringBuilder sbM833U = C1643a.m833U("GuildRoleSubscriptionRoleBenefits(skuId=");
+        sbM833U.append(this.skuId);
+        sbM833U.append(", benefits=");
+        return C1643a.m824L(sbM833U, this.benefits, ")");
     }
 }

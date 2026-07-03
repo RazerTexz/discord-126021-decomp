@@ -11,29 +11,32 @@ import com.discord.views.CodeVerificationView;
 /* JADX INFO: loaded from: classes.dex */
 public final class WidgetConnectionsAddXboxBinding implements ViewBinding {
 
+    /* JADX INFO: renamed from: a */
     @NonNull
-    public final CoordinatorLayout a;
+    public final CoordinatorLayout f16405a;
 
-    /* JADX INFO: renamed from: b, reason: collision with root package name */
+    /* JADX INFO: renamed from: b */
     @NonNull
-    public final CodeVerificationView f2354b;
+    public final CodeVerificationView f16406b;
 
+    /* JADX INFO: renamed from: c */
     @NonNull
-    public final LinearLayout c;
+    public final LinearLayout f16407c;
 
+    /* JADX INFO: renamed from: d */
     @NonNull
-    public final DimmerView d;
+    public final DimmerView f16408d;
 
     public WidgetConnectionsAddXboxBinding(@NonNull CoordinatorLayout coordinatorLayout, @NonNull CodeVerificationView codeVerificationView, @NonNull LinearLayout linearLayout, @NonNull DimmerView dimmerView) {
-        this.a = coordinatorLayout;
-        this.f2354b = codeVerificationView;
-        this.c = linearLayout;
-        this.d = dimmerView;
+        this.f16405a = coordinatorLayout;
+        this.f16406b = codeVerificationView;
+        this.f16407c = linearLayout;
+        this.f16408d = dimmerView;
     }
 
     @Override // androidx.viewbinding.ViewBinding
     @NonNull
     public View getRoot() {
-        return this.a;
+        return this.f16405a;
     }
 }

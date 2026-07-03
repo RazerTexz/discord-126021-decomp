@@ -1,14 +1,14 @@
 package com.discord.analytics.generated.events;
 
-import b.d.b.a.outline;
 import com.discord.analytics.generated.traits.TrackBase;
-import com.discord.analytics.generated.traits.TrackBase2;
+import com.discord.analytics.generated.traits.TrackBaseReceiver;
 import com.discord.api.science.AnalyticsSchema;
-import d0.z.d.Intrinsics3;
+import p007b.p100d.p104b.p105a.C1643a;
+import p507d0.p592z.p594d.C12238m;
 
 /* JADX INFO: compiled from: TrackUpdateStreamerModeSettings.kt */
 /* JADX INFO: loaded from: classes.dex */
-public final /* data */ class TrackUpdateStreamerModeSettings implements AnalyticsSchema, TrackBase2 {
+public final /* data */ class TrackUpdateStreamerModeSettings implements AnalyticsSchema, TrackBaseReceiver {
     private TrackBase trackBase;
     private final Boolean automatic = null;
     private final Boolean disableNotifications = null;
@@ -32,7 +32,7 @@ public final /* data */ class TrackUpdateStreamerModeSettings implements Analyti
             return false;
         }
         TrackUpdateStreamerModeSettings trackUpdateStreamerModeSettings = (TrackUpdateStreamerModeSettings) other;
-        return Intrinsics3.areEqual(this.automatic, trackUpdateStreamerModeSettings.automatic) && Intrinsics3.areEqual(this.disableNotifications, trackUpdateStreamerModeSettings.disableNotifications) && Intrinsics3.areEqual(this.disableSounds, trackUpdateStreamerModeSettings.disableSounds) && Intrinsics3.areEqual(this.enabled, trackUpdateStreamerModeSettings.enabled) && Intrinsics3.areEqual(this.hideInstantInvites, trackUpdateStreamerModeSettings.hideInstantInvites) && Intrinsics3.areEqual(this.hidePersonalInfo, trackUpdateStreamerModeSettings.hidePersonalInfo);
+        return C12238m.areEqual(this.automatic, trackUpdateStreamerModeSettings.automatic) && C12238m.areEqual(this.disableNotifications, trackUpdateStreamerModeSettings.disableNotifications) && C12238m.areEqual(this.disableSounds, trackUpdateStreamerModeSettings.disableSounds) && C12238m.areEqual(this.enabled, trackUpdateStreamerModeSettings.enabled) && C12238m.areEqual(this.hideInstantInvites, trackUpdateStreamerModeSettings.hideInstantInvites) && C12238m.areEqual(this.hidePersonalInfo, trackUpdateStreamerModeSettings.hidePersonalInfo);
     }
 
     public int hashCode() {
@@ -51,17 +51,17 @@ public final /* data */ class TrackUpdateStreamerModeSettings implements Analyti
     }
 
     public String toString() {
-        StringBuilder sbU = outline.U("TrackUpdateStreamerModeSettings(automatic=");
-        sbU.append(this.automatic);
-        sbU.append(", disableNotifications=");
-        sbU.append(this.disableNotifications);
-        sbU.append(", disableSounds=");
-        sbU.append(this.disableSounds);
-        sbU.append(", enabled=");
-        sbU.append(this.enabled);
-        sbU.append(", hideInstantInvites=");
-        sbU.append(this.hideInstantInvites);
-        sbU.append(", hidePersonalInfo=");
-        return outline.D(sbU, this.hidePersonalInfo, ")");
+        StringBuilder sbM833U = C1643a.m833U("TrackUpdateStreamerModeSettings(automatic=");
+        sbM833U.append(this.automatic);
+        sbM833U.append(", disableNotifications=");
+        sbM833U.append(this.disableNotifications);
+        sbM833U.append(", disableSounds=");
+        sbM833U.append(this.disableSounds);
+        sbM833U.append(", enabled=");
+        sbM833U.append(this.enabled);
+        sbM833U.append(", hideInstantInvites=");
+        sbM833U.append(this.hideInstantInvites);
+        sbM833U.append(", hidePersonalInfo=");
+        return C1643a.m816D(sbM833U, this.hidePersonalInfo, ")");
     }
 }

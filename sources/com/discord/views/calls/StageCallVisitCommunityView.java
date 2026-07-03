@@ -7,36 +7,36 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 import androidx.constraintlayout.widget.ConstraintLayout;
-import b.a.i.ViewStageChannelVisitCommunityBinding;
-import com.discord.R;
+import com.discord.C5419R;
 import com.facebook.drawee.view.SimpleDraweeView;
-import d0.z.d.Intrinsics3;
+import p007b.p008a.p025i.C1083x3;
+import p507d0.p592z.p594d.C12238m;
 
 /* JADX INFO: compiled from: StageCallVisitCommunityView.kt */
 /* JADX INFO: loaded from: classes2.dex */
 public final class StageCallVisitCommunityView extends ConstraintLayout {
 
     /* JADX INFO: renamed from: j, reason: from kotlin metadata */
-    public final ViewStageChannelVisitCommunityBinding binding;
+    public final C1083x3 binding;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public StageCallVisitCommunityView(Context context, AttributeSet attributeSet) {
         super(context, attributeSet, 0);
-        Intrinsics3.checkNotNullParameter(context, "context");
-        View viewInflate = LayoutInflater.from(context).inflate(R.layout.view_stage_channel_visit_community, (ViewGroup) this, false);
+        C12238m.checkNotNullParameter(context, "context");
+        View viewInflate = LayoutInflater.from(context).inflate(C5419R.layout.view_stage_channel_visit_community, (ViewGroup) this, false);
         addView(viewInflate);
-        int i = R.id.visit_community_icon;
-        SimpleDraweeView simpleDraweeView = (SimpleDraweeView) viewInflate.findViewById(R.id.visit_community_icon);
+        int i = C5419R.id.visit_community_icon;
+        SimpleDraweeView simpleDraweeView = (SimpleDraweeView) viewInflate.findViewById(C5419R.id.visit_community_icon);
         if (simpleDraweeView != null) {
-            i = R.id.visit_community_icon_text;
-            TextView textView = (TextView) viewInflate.findViewById(R.id.visit_community_icon_text);
+            i = C5419R.id.visit_community_icon_text;
+            TextView textView = (TextView) viewInflate.findViewById(C5419R.id.visit_community_icon_text);
             if (textView != null) {
-                i = R.id.visit_community_text;
-                TextView textView2 = (TextView) viewInflate.findViewById(R.id.visit_community_text);
+                i = C5419R.id.visit_community_text;
+                TextView textView2 = (TextView) viewInflate.findViewById(C5419R.id.visit_community_text);
                 if (textView2 != null) {
-                    ViewStageChannelVisitCommunityBinding viewStageChannelVisitCommunityBinding = new ViewStageChannelVisitCommunityBinding((ConstraintLayout) viewInflate, simpleDraweeView, textView, textView2);
-                    Intrinsics3.checkNotNullExpressionValue(viewStageChannelVisitCommunityBinding, "ViewStageChannelVisitCom…rom(context), this, true)");
-                    this.binding = viewStageChannelVisitCommunityBinding;
+                    C1083x3 c1083x3 = new C1083x3((ConstraintLayout) viewInflate, simpleDraweeView, textView, textView2);
+                    C12238m.checkNotNullExpressionValue(c1083x3, "ViewStageChannelVisitCom…rom(context), this, true)");
+                    this.binding = c1083x3;
                     return;
                 }
             }

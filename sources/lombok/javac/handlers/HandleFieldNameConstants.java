@@ -67,7 +67,7 @@ public class HandleFieldNameConstants extends JavacAnnotationHandler<FieldNameCo
         HandlerUtil.handleExperimentalFlagUsage(annotationNode, ConfigurationKeys.FIELD_NAME_CONSTANTS_FLAG_USAGE, "@FieldNameConstants");
         JavacHandlerUtil.deleteAnnotationIfNeccessary(annotationNode, (Class<? extends Annotation>) FieldNameConstants.class);
         JavacHandlerUtil.deleteImportFromCompilationUnit(annotationNode, "lombok.AccessLevel");
-        JavacNode node = annotationNode.up();
+        JavacNode node = annotationNode.m10925up();
         FieldNameConstants annotationInstance = annotation.getInstance();
         AccessLevel level = annotationInstance.level();
         boolean asEnum = annotationInstance.asEnum();

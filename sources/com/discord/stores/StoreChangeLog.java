@@ -4,31 +4,31 @@ import android.app.Application;
 import android.content.Context;
 import android.content.SharedPreferences;
 import androidx.fragment.app.FragmentActivity;
-import b.i.a.f.e.o.f;
-import com.discord.R;
+import com.discord.C5419R;
 import com.discord.models.domain.ModelAuditLogEntry;
 import com.discord.stores.StoreNotices;
 import com.discord.utilities.SnowflakeUtils;
-import com.discord.utilities.string.StringUtils2;
+import com.discord.utilities.string.StringUtilsKt;
 import com.discord.utilities.time.Clock;
 import com.discord.widgets.changelog.WidgetChangeLog;
 import com.discord.widgets.changelog.WidgetChangeLogSpecial;
-import d0.Result3;
-import d0.g0.Strings4;
-import d0.g0.StringsJVM;
-import d0.w.h.Intrinsics2;
-import d0.w.i.a.ContinuationImpl6;
-import d0.w.i.a.DebugMetadata;
-import d0.z.d.Intrinsics3;
-import d0.z.d.Lambda;
 import kotlin.Unit;
 import kotlin.coroutines.Continuation;
 import kotlin.jvm.functions.Function0;
 import kotlin.jvm.functions.Function1;
 import kotlin.jvm.functions.Function2;
 import kotlinx.coroutines.CoroutineScope;
-import s.a.CoroutineScope2;
-import s.a.Dispatchers;
+import p007b.p225i.p226a.p288f.p299e.p308o.C3404f;
+import p507d0.C12113l;
+import p507d0.p579g0.C12103t;
+import p507d0.p579g0.C12106w;
+import p507d0.p584w.p585h.C12183c;
+import p507d0.p584w.p586i.p587a.AbstractC12194k;
+import p507d0.p584w.p586i.p587a.InterfaceC12188e;
+import p507d0.p592z.p594d.AbstractC12240o;
+import p507d0.p592z.p594d.C12238m;
+import p659s.p660a.C13124k0;
+import p659s.p660a.C13163x0;
 
 /* JADX INFO: compiled from: StoreChangeLog.kt */
 /* JADX INFO: loaded from: classes2.dex */
@@ -41,10 +41,10 @@ public final class StoreChangeLog extends Store {
     private final StoreUserSettingsSystem userSettingsSystem;
     private final StoreUser users;
 
-    /* JADX INFO: renamed from: com.discord.stores.StoreChangeLog$createChangeLogNotice$1, reason: invalid class name */
+    /* JADX INFO: renamed from: com.discord.stores.StoreChangeLog$createChangeLogNotice$1 */
     /* JADX INFO: compiled from: StoreChangeLog.kt */
-    public static final class AnonymousClass1 extends Lambda implements Function1<FragmentActivity, Boolean> {
-        public AnonymousClass1() {
+    public static final class C58081 extends AbstractC12240o implements Function1<FragmentActivity, Boolean> {
+        public C58081() {
             super(1);
         }
 
@@ -55,29 +55,29 @@ public final class StoreChangeLog extends Store {
 
         /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
         public final boolean invoke2(FragmentActivity fragmentActivity) {
-            Intrinsics3.checkNotNullParameter(fragmentActivity, "appActivity");
+            C12238m.checkNotNullParameter(fragmentActivity, "appActivity");
             StoreChangeLog.openChangeLog$default(StoreChangeLog.this, fragmentActivity, false, 2, null);
             return true;
         }
     }
 
-    /* JADX INFO: renamed from: com.discord.stores.StoreChangeLog$handleConnectionOpen$1, reason: invalid class name */
+    /* JADX INFO: renamed from: com.discord.stores.StoreChangeLog$handleConnectionOpen$1 */
     /* JADX INFO: compiled from: StoreChangeLog.kt */
-    @DebugMetadata(c = "com.discord.stores.StoreChangeLog$handleConnectionOpen$1", f = "StoreChangeLog.kt", l = {}, m = "invokeSuspend")
-    public static final class AnonymousClass1 extends ContinuationImpl6 implements Function2<CoroutineScope, Continuation<? super Unit>, Object> {
+    @InterfaceC12188e(m10084c = "com.discord.stores.StoreChangeLog$handleConnectionOpen$1", m10085f = "StoreChangeLog.kt", m10086l = {}, m10087m = "invokeSuspend")
+    public static final class C58091 extends AbstractC12194k implements Function2<CoroutineScope, Continuation<? super Unit>, Object> {
         public int label;
 
-        /* JADX INFO: renamed from: com.discord.stores.StoreChangeLog$handleConnectionOpen$1$1, reason: invalid class name and collision with other inner class name */
+        /* JADX INFO: renamed from: com.discord.stores.StoreChangeLog$handleConnectionOpen$1$1, reason: invalid class name */
         /* JADX INFO: compiled from: StoreChangeLog.kt */
-        public static final class C00991 extends Lambda implements Function0<Unit> {
-            public C00991() {
+        public static final class AnonymousClass1 extends AbstractC12240o implements Function0<Unit> {
+            public AnonymousClass1() {
                 super(0);
             }
 
             @Override // kotlin.jvm.functions.Function0
             public /* bridge */ /* synthetic */ Unit invoke() {
                 invoke2();
-                return Unit.a;
+                return Unit.f27425a;
             }
 
             /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
@@ -86,40 +86,40 @@ public final class StoreChangeLog extends Store {
             }
         }
 
-        public AnonymousClass1(Continuation continuation) {
+        public C58091(Continuation continuation) {
             super(2, continuation);
         }
 
-        @Override // d0.w.i.a.ContinuationImpl
+        @Override // p507d0.p584w.p586i.p587a.AbstractC12184a
         public final Continuation<Unit> create(Object obj, Continuation<?> continuation) {
-            Intrinsics3.checkNotNullParameter(continuation, "completion");
-            return StoreChangeLog.this.new AnonymousClass1(continuation);
+            C12238m.checkNotNullParameter(continuation, "completion");
+            return StoreChangeLog.this.new C58091(continuation);
         }
 
         @Override // kotlin.jvm.functions.Function2
         public final Object invoke(CoroutineScope coroutineScope, Continuation<? super Unit> continuation) {
-            return ((AnonymousClass1) create(coroutineScope, continuation)).invokeSuspend(Unit.a);
+            return ((C58091) create(coroutineScope, continuation)).invokeSuspend(Unit.f27425a);
         }
 
-        @Override // d0.w.i.a.ContinuationImpl
+        @Override // p507d0.p584w.p586i.p587a.AbstractC12184a
         public final Object invokeSuspend(Object obj) {
-            Intrinsics2.getCOROUTINE_SUSPENDED();
+            C12183c.getCOROUTINE_SUSPENDED();
             if (this.label != 0) {
                 throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
             }
-            Result3.throwOnFailure(obj);
-            StoreChangeLog.this.dispatcher.schedule(new C00991());
-            return Unit.a;
+            C12113l.throwOnFailure(obj);
+            StoreChangeLog.this.dispatcher.schedule(new AnonymousClass1());
+            return Unit.f27425a;
         }
     }
 
     public StoreChangeLog(Clock clock, StoreNotices storeNotices, StoreUser storeUser, StoreUserSettingsSystem storeUserSettingsSystem, StoreExperiments storeExperiments, Dispatcher dispatcher) {
-        Intrinsics3.checkNotNullParameter(clock, "clock");
-        Intrinsics3.checkNotNullParameter(storeNotices, "notices");
-        Intrinsics3.checkNotNullParameter(storeUser, "users");
-        Intrinsics3.checkNotNullParameter(storeUserSettingsSystem, "userSettingsSystem");
-        Intrinsics3.checkNotNullParameter(storeExperiments, "experiments");
-        Intrinsics3.checkNotNullParameter(dispatcher, "dispatcher");
+        C12238m.checkNotNullParameter(clock, "clock");
+        C12238m.checkNotNullParameter(storeNotices, "notices");
+        C12238m.checkNotNullParameter(storeUser, "users");
+        C12238m.checkNotNullParameter(storeUserSettingsSystem, "userSettingsSystem");
+        C12238m.checkNotNullParameter(storeExperiments, "experiments");
+        C12238m.checkNotNullParameter(dispatcher, "dispatcher");
         this.clock = clock;
         this.notices = storeNotices;
         this.users = storeUser;
@@ -129,7 +129,7 @@ public final class StoreChangeLog extends Store {
     }
 
     private final StoreNotices.Notice createChangeLogNotice() {
-        return new StoreNotices.Notice("CHANGE_LOG", null, 1337L, 0, true, null, 0L, false, 604800000L, new AnonymousClass1(), 226, null);
+        return new StoreNotices.Notice("CHANGE_LOG", null, 1337L, 0, true, null, 0L, false, 604800000L, new C58081(), 226, null);
     }
 
     private final String getChangelogExperimentString(Context context, String name, String fallback) {
@@ -138,7 +138,7 @@ public final class StoreChangeLog extends Store {
             return fallback;
         }
         String string = context.getString(identifier);
-        Intrinsics3.checkNotNullExpressionValue(string, "context.getString(id)");
+        C12238m.checkNotNullExpressionValue(string, "context.getString(id)");
         return string;
     }
 
@@ -162,30 +162,30 @@ public final class StoreChangeLog extends Store {
 
     private final void setLastSeenChangeLogVersion(String str) {
         SharedPreferences.Editor editorEdit = getPrefs().edit();
-        Intrinsics3.checkNotNullExpressionValue(editorEdit, "editor");
+        C12238m.checkNotNullExpressionValue(editorEdit, "editor");
         editorEdit.putString("CACHE_KEY_VIEWED_CHANGE_LOG_VERSION", str);
         editorEdit.apply();
     }
 
     private final boolean shouldShowChangelog(Context context, long userId, String targetLanguage, Integer experimentBucket) {
         String string;
-        int identifier = (experimentBucket != null && experimentBucket.intValue() == 1) ? context.getResources().getIdentifier("change_log_md_experiment_body", "string", context.getPackageName()) : R.string.change_log_md_body;
-        CharSequence stringByLocale = StringUtils2.getStringByLocale(context, identifier, "en");
-        CharSequence stringByLocale2 = StringUtils2.getStringByLocale(context, identifier, targetLanguage);
-        if ((!Intrinsics3.areEqual(targetLanguage, "en")) && Intrinsics3.areEqual(stringByLocale, stringByLocale2)) {
+        int identifier = (experimentBucket != null && experimentBucket.intValue() == 1) ? context.getResources().getIdentifier("change_log_md_experiment_body", "string", context.getPackageName()) : C5419R.string.change_log_md_body;
+        CharSequence stringByLocale = StringUtilsKt.getStringByLocale(context, identifier, "en");
+        CharSequence stringByLocale2 = StringUtilsKt.getStringByLocale(context, identifier, targetLanguage);
+        if ((!C12238m.areEqual(targetLanguage, "en")) && C12238m.areEqual(stringByLocale, stringByLocale2)) {
             return false;
         }
         if (experimentBucket != null && experimentBucket.intValue() == 1) {
-            String string2 = context.getString(R.string.change_log_md_date);
-            Intrinsics3.checkNotNullExpressionValue(string2, "context.getString(R.string.change_log_md_date)");
+            String string2 = context.getString(C5419R.string.change_log_md_date);
+            C12238m.checkNotNullExpressionValue(string2, "context.getString(R.string.change_log_md_date)");
             string = getChangelogExperimentString(context, "change_log_md_experiment_date", string2);
         } else {
-            string = context.getString(R.string.change_log_md_date);
-            Intrinsics3.checkNotNullExpressionValue(string, "context.getString(R.string.change_log_md_date)");
+            string = context.getString(C5419R.string.change_log_md_date);
+            C12238m.checkNotNullExpressionValue(string, "context.getString(R.string.change_log_md_date)");
         }
         String lastSeenChangeLogVersion = getLastSeenChangeLogVersion();
-        if (!(lastSeenChangeLogVersion == null || StringsJVM.isBlank(lastSeenChangeLogVersion)) && !isTooYoung(userId)) {
-            return !Intrinsics3.areEqual(string, getLastSeenChangeLogVersion());
+        if (!(lastSeenChangeLogVersion == null || C12103t.isBlank(lastSeenChangeLogVersion)) && !isTooYoung(userId)) {
+            return !C12238m.areEqual(string, getLastSeenChangeLogVersion());
         }
         markSeen(string);
         return false;
@@ -194,82 +194,82 @@ public final class StoreChangeLog extends Store {
     public final Application getApp() {
         Application application = this.app;
         if (application == null) {
-            Intrinsics3.throwUninitializedPropertyAccessException("app");
+            C12238m.throwUninitializedPropertyAccessException("app");
         }
         return application;
     }
 
-    @Store3
+    @StoreThread
     public final void handleConnectionOpen() {
-        f.H0(CoroutineScope2.j, Dispatchers.a, null, new AnonymousClass1(null), 2, null);
+        C3404f.m4211H0(C13163x0.f27919j, C13124k0.f27866a, null, new C58091(null), 2, null);
     }
 
-    @Store3
+    @StoreThread
     public final void handlePostConnectionOpen() {
-        String str = (String) Strings4.split$default((CharSequence) this.userSettingsSystem.getLocale(), new String[]{"-"}, false, 0, 6, (Object) null).get(0);
+        String str = (String) C12106w.split$default((CharSequence) this.userSettingsSystem.getLocale(), new String[]{"-"}, false, 0, 6, (Object) null).get(0);
         long id2 = this.users.getMeSnapshot().getId();
         Application application = this.app;
         if (application == null) {
-            Intrinsics3.throwUninitializedPropertyAccessException("app");
+            C12238m.throwUninitializedPropertyAccessException("app");
         }
         if (shouldShowChangelog(application, id2, str, null)) {
             this.notices.requestToShow(createChangeLogNotice());
         }
     }
 
-    @Store3
+    @StoreThread
     public final void init(Application app) {
-        Intrinsics3.checkNotNullParameter(app, "app");
+        C12238m.checkNotNullParameter(app, "app");
         init((Context) app);
         this.app = app;
     }
 
     public final void markSeen(String currentVersion) {
-        Intrinsics3.checkNotNullParameter(currentVersion, "currentVersion");
+        C12238m.checkNotNullParameter(currentVersion, "currentVersion");
         setLastSeenChangeLogVersion(currentVersion);
         StoreNotices.markSeen$default(this.notices, "CHANGE_LOG", 0L, 2, null);
     }
 
     public final void openChangeLog(Context context, boolean fromSettings) {
-        Intrinsics3.checkNotNullParameter(context, "context");
-        String string = context.getString(R.string.change_log_md_date);
-        Intrinsics3.checkNotNullExpressionValue(string, "context.getString(R.string.change_log_md_date)");
+        C12238m.checkNotNullParameter(context, "context");
+        String string = context.getString(C5419R.string.change_log_md_date);
+        C12238m.checkNotNullExpressionValue(string, "context.getString(R.string.change_log_md_date)");
         String changelogExperimentString = getChangelogExperimentString(context, "change_log_md_experiment_date", string);
-        String string2 = context.getString(R.string.change_log_md_revision);
-        Intrinsics3.checkNotNullExpressionValue(string2, "context.getString(R.string.change_log_md_revision)");
+        String string2 = context.getString(C5419R.string.change_log_md_revision);
+        C12238m.checkNotNullExpressionValue(string2, "context.getString(R.string.change_log_md_revision)");
         String changelogExperimentString2 = getChangelogExperimentString(context, "change_log_md_revision", string2);
-        String string3 = context.getString(R.string.change_log_md_video);
-        Intrinsics3.checkNotNullExpressionValue(string3, "context.getString(R.string.change_log_md_video)");
+        String string3 = context.getString(C5419R.string.change_log_md_video);
+        C12238m.checkNotNullExpressionValue(string3, "context.getString(R.string.change_log_md_video)");
         String changelogExperimentString3 = getChangelogExperimentString(context, "change_log_md_experiment_video", string3);
-        String string4 = context.getString(R.string.change_log_md_body);
-        Intrinsics3.checkNotNullExpressionValue(string4, "context.getString(R.string.change_log_md_body)");
+        String string4 = context.getString(C5419R.string.change_log_md_body);
+        C12238m.checkNotNullExpressionValue(string4, "context.getString(R.string.change_log_md_body)");
         String changelogExperimentString4 = getChangelogExperimentString(context, "change_log_md_experiment_body", string4);
-        String string5 = context.getString(R.string.back);
-        Intrinsics3.checkNotNullExpressionValue(string5, "context.getString(R.string.back)");
+        String string5 = context.getString(C5419R.string.back);
+        C12238m.checkNotNullExpressionValue(string5, "context.getString(R.string.back)");
         String changelogExperimentString5 = getChangelogExperimentString(context, "change_log_md_experiment_template", string5);
         WidgetChangeLogSpecial.Companion.ExitStyle exitStyle = fromSettings ? WidgetChangeLogSpecial.Companion.ExitStyle.BACK : WidgetChangeLogSpecial.Companion.ExitStyle.CLOSE;
-        if (Intrinsics3.areEqual(changelogExperimentString5, "special") && Intrinsics3.areEqual((Object) null, (Object) 1)) {
+        if (C12238m.areEqual(changelogExperimentString5, "special") && C12238m.areEqual((Object) null, (Object) 1)) {
             WidgetChangeLogSpecial.INSTANCE.launch(context, changelogExperimentString, changelogExperimentString2, changelogExperimentString3, changelogExperimentString4, exitStyle, true);
             return;
         }
-        if (Intrinsics3.areEqual((Object) null, (Object) 1)) {
+        if (C12238m.areEqual((Object) null, (Object) 1)) {
             WidgetChangeLog.INSTANCE.launch(context, changelogExperimentString, changelogExperimentString2, changelogExperimentString3, changelogExperimentString4);
             return;
         }
         WidgetChangeLog.Companion companion = WidgetChangeLog.INSTANCE;
-        String string6 = context.getString(R.string.change_log_md_date);
-        Intrinsics3.checkNotNullExpressionValue(string6, "context.getString(R.string.change_log_md_date)");
-        String string7 = context.getString(R.string.change_log_md_revision);
-        Intrinsics3.checkNotNullExpressionValue(string7, "context.getString(R.string.change_log_md_revision)");
-        String string8 = context.getString(R.string.change_log_md_video);
-        Intrinsics3.checkNotNullExpressionValue(string8, "context.getString(R.string.change_log_md_video)");
-        String string9 = context.getString(R.string.change_log_md_body);
-        Intrinsics3.checkNotNullExpressionValue(string9, "context.getString(R.string.change_log_md_body)");
+        String string6 = context.getString(C5419R.string.change_log_md_date);
+        C12238m.checkNotNullExpressionValue(string6, "context.getString(R.string.change_log_md_date)");
+        String string7 = context.getString(C5419R.string.change_log_md_revision);
+        C12238m.checkNotNullExpressionValue(string7, "context.getString(R.string.change_log_md_revision)");
+        String string8 = context.getString(C5419R.string.change_log_md_video);
+        C12238m.checkNotNullExpressionValue(string8, "context.getString(R.string.change_log_md_video)");
+        String string9 = context.getString(C5419R.string.change_log_md_body);
+        C12238m.checkNotNullExpressionValue(string9, "context.getString(R.string.change_log_md_body)");
         companion.launch(context, string6, string7, string8, string9);
     }
 
     public final void setApp(Application application) {
-        Intrinsics3.checkNotNullParameter(application, "<set-?>");
+        C12238m.checkNotNullParameter(application, "<set-?>");
         this.app = application;
     }
 }

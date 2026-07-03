@@ -110,7 +110,7 @@ public class EnqueueRunnable implements Runnable {
                 DependencyDao dependencyDao = workDatabase.dependencyDao();
                 ArrayList arrayList = new ArrayList();
                 for (WorkSpec.IdAndState idAndState : workSpecIdAndStatesForName) {
-                    if (!dependencyDao.hasDependents(idAndState.f39id)) {
+                    if (!dependencyDao.hasDependents(idAndState.f164id)) {
                         WorkInfo.State state2 = idAndState.state;
                         boolean z9 = (state2 == WorkInfo.State.SUCCEEDED) & z2;
                         if (state2 == WorkInfo.State.FAILED) {
@@ -118,7 +118,7 @@ public class EnqueueRunnable implements Runnable {
                         } else if (state2 == WorkInfo.State.CANCELLED) {
                             z3 = true;
                         }
-                        arrayList.add(idAndState.f39id);
+                        arrayList.add(idAndState.f164id);
                         z2 = z9;
                     }
                     dependencyDao = dependencyDao;
@@ -127,7 +127,7 @@ public class EnqueueRunnable implements Runnable {
                     WorkSpecDao workSpecDao = workDatabase.workSpecDao();
                     Iterator<WorkSpec.IdAndState> it2 = workSpecDao.getWorkSpecIdAndStatesForName(str).iterator();
                     while (it2.hasNext()) {
-                        workSpecDao.delete(it2.next().f39id);
+                        workSpecDao.delete(it2.next().f164id);
                     }
                     z6 = false;
                     z3 = false;
@@ -154,7 +154,7 @@ public class EnqueueRunnable implements Runnable {
                 WorkSpecDao workSpecDao2 = workDatabase.workSpecDao();
                 Iterator<WorkSpec.IdAndState> it4 = workSpecIdAndStatesForName.iterator();
                 while (it4.hasNext()) {
-                    workSpecDao2.delete(it4.next().f39id);
+                    workSpecDao2.delete(it4.next().f164id);
                 }
                 z5 = true;
             }

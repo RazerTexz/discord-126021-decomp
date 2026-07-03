@@ -5,10 +5,7 @@ import android.animation.AnimatorSet;
 import android.animation.Keyframe;
 import android.animation.ValueAnimator;
 import android.app.AlarmManager;
-import b.f.e.AbstractDataSource3;
-import b.f.e.DataSubscriber;
 import com.discord.widgets.chat.input.ChatInputViewModel;
-import d0.e0.p.d.m0.g.FqName;
 import java.io.BufferedOutputStream;
 import java.io.IOException;
 import java.io.OutputStream;
@@ -63,6 +60,9 @@ import org.eclipse.jdt.internal.core.dom.rewrite.RewriteEvent;
 import org.eclipse.jdt.internal.core.dom.rewrite.TokenScanner;
 import org.eclipse.jdt.internal.corext.refactoring.SearchResultGroup;
 import org.eclipse.jdt.internal.corext.refactoring.structure.ASTNodeSearchUtil;
+import p007b.p109f.p129e.AbstractC1723c;
+import p007b.p109f.p129e.InterfaceC1726f;
+import p507d0.p513e0.p514p.p515d.p517m0.p548g.C11713b;
 
 /* JADX INFO: loaded from: app.apk:Class50/lombok/launch/PatchFixesHider.SCL.lombok */
 final class PatchFixesHider {
@@ -189,7 +189,7 @@ final class PatchFixesHider {
             	at jadx.core.dex.visitors.ssa.SSATransform.process(SSATransform.java:57)
             	at jadx.core.dex.visitors.ssa.SSATransform.visit(SSATransform.java:44)
             */
-        public Delegate(b.f.e.AbstractDataSource3 r3, boolean r4, b.f.e.DataSubscriber r5, boolean r6) {
+        public Delegate(p007b.p109f.p129e.AbstractC1723c r3, boolean r4, p007b.p109f.p129e.InterfaceC1726f r5, boolean r6) {
             /*
                 r2 = this;
                 r0 = r2
@@ -207,7 +207,8 @@ final class PatchFixesHider {
             	at jadx.core.dex.visitors.ssa.SSATransform.process(SSATransform.java:57)
             	at jadx.core.dex.visitors.ssa.SSATransform.visit(SSATransform.java:44)
             */
-        static boolean d(
+        /* JADX INFO: renamed from: d */
+        static boolean m1016d(
         /*  JADX ERROR: ArrayIndexOutOfBoundsException in pass: SSATransform
             java.lang.ArrayIndexOutOfBoundsException: Index 8 out of bounds for length 8
             	at jadx.core.dex.visitors.ssa.RenameState.startVar(RenameState.java:58)
@@ -278,9 +279,9 @@ final class PatchFixesHider {
 
         /* JADX WARN: Type inference failed for: r0v2, types: [java.lang.Object[], void] */
         /* JADX INFO: renamed from: <init>, reason: not valid java name */
-        public static void m268init(AbstractDataSource3 abstractDataSource3, DataSubscriber dataSubscriber) {
+        public static void m11645init(AbstractC1723c abstractC1723c, InterfaceC1726f interfaceC1726f) {
             Method method = GET_CHILDREN;
-            Object[] objArr = {abstractDataSource3, dataSubscriber};
+            Object[] objArr = {abstractC1723c, interfaceC1726f};
         }
     }
 
@@ -371,7 +372,7 @@ final class PatchFixesHider {
             	at jadx.core.dex.visitors.ssa.SSATransform.visit(SSATransform.java:44)
             */
         /* JADX INFO: renamed from: <init>, reason: not valid java name */
-        static void m269init(
+        static void m11646init(
         /*  JADX ERROR: ArrayIndexOutOfBoundsException in pass: SSATransform
             java.lang.ArrayIndexOutOfBoundsException: Index 8 out of bounds for length 8
             	at jadx.core.dex.visitors.ssa.RenameState.startVar(RenameState.java:58)
@@ -562,7 +563,7 @@ final class PatchFixesHider {
             	at jadx.core.dex.visitors.ssa.SSATransform.process(SSATransform.java:57)
             	at jadx.core.dex.visitors.ssa.SSATransform.visit(SSATransform.java:44)
             */
-        public Javadoc(d0.e0.p.d.m0.g.FqName r3, d0.e0.p.d.m0.g.Name r4) {
+        public Javadoc(p507d0.p513e0.p514p.p515d.p517m0.p548g.C11713b r3, p507d0.p513e0.p514p.p515d.p517m0.p548g.C11716e r4) {
             /*
                 r2 = this;
                 r0 = r2
@@ -574,7 +575,7 @@ final class PatchFixesHider {
 
         /* JADX WARN: Type inference failed for: r0v3, types: [java.lang.reflect.Method, void] */
         /* JADX WARN: Type inference failed for: r0v5, types: [java.lang.reflect.Method, void] */
-        static Collection getAllContributedClassesIfPossible(FqName fqName) {
+        static Collection getAllContributedClassesIfPossible(C11713b c11713b) {
             Animator.setDuration("lombok.eclipse.agent.PatchJavadoc");
             Class[] clsArr = {String.class, IJavaElement.class};
             GET_HTML = AnimatorSet.end();
@@ -601,7 +602,7 @@ final class PatchFixesHider {
         /* JADX WARN: Type inference failed for: r0v2, types: [java.lang.StringBuffer, void] */
         /* JADX WARN: Type inference failed for: r4v2, types: [void] */
         /* JADX INFO: renamed from: <init>, reason: not valid java name */
-        public static void m271init(String str, int tab) {
+        public static void m11648init(String str, int tab) {
             StringBuffer output;
             TypeDeclaration type;
             Method method = PRINT_METHOD;

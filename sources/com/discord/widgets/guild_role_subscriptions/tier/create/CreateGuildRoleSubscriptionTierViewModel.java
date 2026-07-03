@@ -1,35 +1,35 @@
 package com.discord.widgets.guild_role_subscriptions.tier.create;
 
 import androidx.annotation.MainThread;
-import b.a.d.AppViewModel;
-import b.d.b.a.outline;
 import com.discord.api.guildrolesubscription.GuildRoleSubscriptionGroupListing;
 import com.discord.api.guildrolesubscription.GuildRoleSubscriptionTierListing;
 import com.discord.stores.StoreGuildRoleSubscriptions;
 import com.discord.stores.StoreGuilds;
 import com.discord.stores.StoreStream;
 import com.discord.stores.updates.ObservationDeck;
-import com.discord.stores.updates.ObservationDeck4;
+import com.discord.stores.updates.ObservationDeckProvider;
 import com.discord.utilities.color.ColorCompat;
 import com.discord.utilities.error.Error;
+import com.discord.utilities.p501rx.ObservableExtensionsKt;
 import com.discord.utilities.rest.RestAPI;
-import com.discord.utilities.rx.ObservableExtensionsKt;
 import com.discord.widgets.guild_role_subscriptions.GuildRoleSubscriptionUtils;
 import com.discord.widgets.guild_role_subscriptions.tier.model.GuildRoleSubscriptionTier;
-import d0.g0.StringsJVM;
-import d0.z.d.Intrinsics3;
-import d0.z.d.Lambda;
 import kotlin.Unit;
 import kotlin.jvm.functions.Function0;
 import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.DefaultConstructorMarker;
-import rx.Observable;
-import rx.Subscription;
-import rx.subjects.PublishSubject;
+import p007b.p008a.p018d.AbstractC0859d0;
+import p007b.p100d.p104b.p105a.C1643a;
+import p507d0.p579g0.C12103t;
+import p507d0.p592z.p594d.AbstractC12240o;
+import p507d0.p592z.p594d.C12238m;
+import p658rx.Observable;
+import p658rx.Subscription;
+import p658rx.subjects.PublishSubject;
 
 /* JADX INFO: compiled from: CreateGuildRoleSubscriptionTierViewModel.kt */
 /* JADX INFO: loaded from: classes2.dex */
-public final class CreateGuildRoleSubscriptionTierViewModel extends AppViewModel<ViewState> {
+public final class CreateGuildRoleSubscriptionTierViewModel extends AbstractC0859d0<ViewState> {
     private static final int CHANNEL_BENEFITS_STEP = 1;
 
     /* JADX INFO: renamed from: Companion, reason: from kotlin metadata */
@@ -44,23 +44,23 @@ public final class CreateGuildRoleSubscriptionTierViewModel extends AppViewModel
     private final RestAPI restApi;
     private final StoreGuildRoleSubscriptions storeGuildRoleSubscriptions;
 
-    /* JADX INFO: renamed from: com.discord.widgets.guild_role_subscriptions.tier.create.CreateGuildRoleSubscriptionTierViewModel$1, reason: invalid class name */
+    /* JADX INFO: renamed from: com.discord.widgets.guild_role_subscriptions.tier.create.CreateGuildRoleSubscriptionTierViewModel$1 */
     /* JADX INFO: compiled from: CreateGuildRoleSubscriptionTierViewModel.kt */
-    public static final class AnonymousClass1 extends Lambda implements Function1<StoreState, Unit> {
-        public AnonymousClass1() {
+    public static final class C84761 extends AbstractC12240o implements Function1<StoreState, Unit> {
+        public C84761() {
             super(1);
         }
 
         @Override // kotlin.jvm.functions.Function1
         public /* bridge */ /* synthetic */ Unit invoke(StoreState storeState) {
             invoke2(storeState);
-            return Unit.a;
+            return Unit.f27425a;
         }
 
         /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
         public final void invoke2(StoreState storeState) {
             CreateGuildRoleSubscriptionTierViewModel createGuildRoleSubscriptionTierViewModel = CreateGuildRoleSubscriptionTierViewModel.this;
-            Intrinsics3.checkNotNullExpressionValue(storeState, "storeState");
+            C12238m.checkNotNullExpressionValue(storeState, "storeState");
             createGuildRoleSubscriptionTierViewModel.handleStoreState(storeState);
         }
     }
@@ -71,7 +71,7 @@ public final class CreateGuildRoleSubscriptionTierViewModel extends AppViewModel
         }
 
         private final Observable<StoreState> observeStoreState(long guildId, ObservationDeck observationDeck, StoreGuildRoleSubscriptions storeGuildRoleSubscriptions, StoreGuilds storeGuilds) {
-            return ObservationDeck.connectRx$default(observationDeck, new ObservationDeck.UpdateSource[]{storeGuildRoleSubscriptions}, false, null, null, new CreateGuildRoleSubscriptionTierViewModel2(storeGuildRoleSubscriptions, guildId, storeGuilds), 14, null);
+            return ObservationDeck.connectRx$default(observationDeck, new ObservationDeck.UpdateSource[]{storeGuildRoleSubscriptions}, false, null, null, new C8477x4c799f75(storeGuildRoleSubscriptions, guildId, storeGuilds), 14, null);
         }
 
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
@@ -127,7 +127,7 @@ public final class CreateGuildRoleSubscriptionTierViewModel extends AppViewModel
             }
 
             public String toString() {
-                return outline.O(outline.U("ServerGatingUpdate(isFullServerGating="), this.isFullServerGating, ")");
+                return C1643a.m827O(C1643a.m833U("ServerGatingUpdate(isFullServerGating="), this.isFullServerGating, ")");
             }
         }
 
@@ -138,7 +138,7 @@ public final class CreateGuildRoleSubscriptionTierViewModel extends AppViewModel
             /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
             public SubmitFailure(Error error) {
                 super(null);
-                Intrinsics3.checkNotNullParameter(error, "error");
+                C12238m.checkNotNullParameter(error, "error");
                 this.error = error;
             }
 
@@ -155,13 +155,13 @@ public final class CreateGuildRoleSubscriptionTierViewModel extends AppViewModel
             }
 
             public final SubmitFailure copy(Error error) {
-                Intrinsics3.checkNotNullParameter(error, "error");
+                C12238m.checkNotNullParameter(error, "error");
                 return new SubmitFailure(error);
             }
 
             public boolean equals(Object other) {
                 if (this != other) {
-                    return (other instanceof SubmitFailure) && Intrinsics3.areEqual(this.error, ((SubmitFailure) other).error);
+                    return (other instanceof SubmitFailure) && C12238m.areEqual(this.error, ((SubmitFailure) other).error);
                 }
                 return true;
             }
@@ -179,10 +179,10 @@ public final class CreateGuildRoleSubscriptionTierViewModel extends AppViewModel
             }
 
             public String toString() {
-                StringBuilder sbU = outline.U("SubmitFailure(error=");
-                sbU.append(this.error);
-                sbU.append(")");
-                return sbU.toString();
+                StringBuilder sbM833U = C1643a.m833U("SubmitFailure(error=");
+                sbM833U.append(this.error);
+                sbM833U.append(")");
+                return sbM833U.toString();
             }
         }
 
@@ -250,7 +250,7 @@ public final class CreateGuildRoleSubscriptionTierViewModel extends AppViewModel
                 return false;
             }
             StoreState storeState = (StoreState) other;
-            return Intrinsics3.areEqual(this.guildRoleSubscriptionGroupListing, storeState.guildRoleSubscriptionGroupListing) && Intrinsics3.areEqual(this.fullServerGatingOverwrite, storeState.fullServerGatingOverwrite);
+            return C12238m.areEqual(this.guildRoleSubscriptionGroupListing, storeState.guildRoleSubscriptionGroupListing) && C12238m.areEqual(this.fullServerGatingOverwrite, storeState.fullServerGatingOverwrite);
         }
 
         public final Boolean getFullServerGatingOverwrite() {
@@ -269,10 +269,10 @@ public final class CreateGuildRoleSubscriptionTierViewModel extends AppViewModel
         }
 
         public String toString() {
-            StringBuilder sbU = outline.U("StoreState(guildRoleSubscriptionGroupListing=");
-            sbU.append(this.guildRoleSubscriptionGroupListing);
-            sbU.append(", fullServerGatingOverwrite=");
-            return outline.D(sbU, this.fullServerGatingOverwrite, ")");
+            StringBuilder sbM833U = C1643a.m833U("StoreState(guildRoleSubscriptionGroupListing=");
+            sbM833U.append(this.guildRoleSubscriptionGroupListing);
+            sbM833U.append(", fullServerGatingOverwrite=");
+            return C1643a.m816D(sbM833U, this.fullServerGatingOverwrite, ")");
         }
 
         public /* synthetic */ StoreState(GuildRoleSubscriptionGroupListing guildRoleSubscriptionGroupListing, Boolean bool, int i, DefaultConstructorMarker defaultConstructorMarker) {
@@ -346,7 +346,7 @@ public final class CreateGuildRoleSubscriptionTierViewModel extends AppViewModel
                 return false;
             }
             ViewState viewState = (ViewState) other;
-            return this.currentStep == viewState.currentStep && this.canProceed == viewState.canProceed && this.isSubmitting == viewState.isSubmitting && Intrinsics3.areEqual(this.guildRoleSubscriptionTier, viewState.guildRoleSubscriptionTier);
+            return this.currentStep == viewState.currentStep && this.canProceed == viewState.canProceed && this.isSubmitting == viewState.isSubmitting && C12238m.areEqual(this.guildRoleSubscriptionTier, viewState.guildRoleSubscriptionTier);
         }
 
         public final boolean getCanProceed() {
@@ -389,16 +389,16 @@ public final class CreateGuildRoleSubscriptionTierViewModel extends AppViewModel
         }
 
         public String toString() {
-            StringBuilder sbU = outline.U("ViewState(currentStep=");
-            sbU.append(this.currentStep);
-            sbU.append(", canProceed=");
-            sbU.append(this.canProceed);
-            sbU.append(", isSubmitting=");
-            sbU.append(this.isSubmitting);
-            sbU.append(", guildRoleSubscriptionTier=");
-            sbU.append(this.guildRoleSubscriptionTier);
-            sbU.append(")");
-            return sbU.toString();
+            StringBuilder sbM833U = C1643a.m833U("ViewState(currentStep=");
+            sbM833U.append(this.currentStep);
+            sbM833U.append(", canProceed=");
+            sbM833U.append(this.canProceed);
+            sbM833U.append(", isSubmitting=");
+            sbM833U.append(this.isSubmitting);
+            sbM833U.append(", guildRoleSubscriptionTier=");
+            sbM833U.append(this.guildRoleSubscriptionTier);
+            sbM833U.append(")");
+            return sbM833U.toString();
         }
 
         public /* synthetic */ ViewState(int i, boolean z2, boolean z3, GuildRoleSubscriptionTier guildRoleSubscriptionTier, int i2, DefaultConstructorMarker defaultConstructorMarker) {
@@ -406,44 +406,44 @@ public final class CreateGuildRoleSubscriptionTierViewModel extends AppViewModel
         }
     }
 
-    /* JADX INFO: renamed from: com.discord.widgets.guild_role_subscriptions.tier.create.CreateGuildRoleSubscriptionTierViewModel$submit$1, reason: invalid class name */
+    /* JADX INFO: renamed from: com.discord.widgets.guild_role_subscriptions.tier.create.CreateGuildRoleSubscriptionTierViewModel$submit$1 */
     /* JADX INFO: compiled from: CreateGuildRoleSubscriptionTierViewModel.kt */
-    public static final class AnonymousClass1 extends Lambda implements Function1<GuildRoleSubscriptionTierListing, Unit> {
-        public AnonymousClass1() {
+    public static final class C84781 extends AbstractC12240o implements Function1<GuildRoleSubscriptionTierListing, Unit> {
+        public C84781() {
             super(1);
         }
 
         @Override // kotlin.jvm.functions.Function1
         public /* bridge */ /* synthetic */ Unit invoke(GuildRoleSubscriptionTierListing guildRoleSubscriptionTierListing) {
             invoke2(guildRoleSubscriptionTierListing);
-            return Unit.a;
+            return Unit.f27425a;
         }
 
         /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
         public final void invoke2(GuildRoleSubscriptionTierListing guildRoleSubscriptionTierListing) {
-            Intrinsics3.checkNotNullParameter(guildRoleSubscriptionTierListing, "it");
+            C12238m.checkNotNullParameter(guildRoleSubscriptionTierListing, "it");
             CreateGuildRoleSubscriptionTierViewModel createGuildRoleSubscriptionTierViewModel = CreateGuildRoleSubscriptionTierViewModel.this;
             createGuildRoleSubscriptionTierViewModel.updateViewState(ViewState.copy$default(CreateGuildRoleSubscriptionTierViewModel.access$requireViewState(createGuildRoleSubscriptionTierViewModel), 0, false, false, null, 11, null));
             CreateGuildRoleSubscriptionTierViewModel.this.emitEvent(Event.SubmitSuccess.INSTANCE);
         }
     }
 
-    /* JADX INFO: renamed from: com.discord.widgets.guild_role_subscriptions.tier.create.CreateGuildRoleSubscriptionTierViewModel$submit$2, reason: invalid class name */
+    /* JADX INFO: renamed from: com.discord.widgets.guild_role_subscriptions.tier.create.CreateGuildRoleSubscriptionTierViewModel$submit$2 */
     /* JADX INFO: compiled from: CreateGuildRoleSubscriptionTierViewModel.kt */
-    public static final class AnonymousClass2 extends Lambda implements Function1<Error, Unit> {
-        public AnonymousClass2() {
+    public static final class C84792 extends AbstractC12240o implements Function1<Error, Unit> {
+        public C84792() {
             super(1);
         }
 
         @Override // kotlin.jvm.functions.Function1
         public /* bridge */ /* synthetic */ Unit invoke(Error error) {
             invoke2(error);
-            return Unit.a;
+            return Unit.f27425a;
         }
 
         /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
         public final void invoke2(Error error) {
-            Intrinsics3.checkNotNullParameter(error, "error");
+            C12238m.checkNotNullParameter(error, "error");
             CreateGuildRoleSubscriptionTierViewModel createGuildRoleSubscriptionTierViewModel = CreateGuildRoleSubscriptionTierViewModel.this;
             createGuildRoleSubscriptionTierViewModel.updateViewState(ViewState.copy$default(CreateGuildRoleSubscriptionTierViewModel.access$requireViewState(createGuildRoleSubscriptionTierViewModel), 0, false, false, null, 11, null));
             CreateGuildRoleSubscriptionTierViewModel.this.emitEvent(new Event.SubmitFailure(error));
@@ -455,7 +455,7 @@ public final class CreateGuildRoleSubscriptionTierViewModel extends AppViewModel
         RestAPI api = (i & 4) != 0 ? RestAPI.INSTANCE.getApi() : restAPI;
         StoreGuildRoleSubscriptions guildRoleSubscriptions = (i & 8) != 0 ? StoreStream.INSTANCE.getGuildRoleSubscriptions() : storeGuildRoleSubscriptions;
         StoreGuilds guilds = (i & 16) != 0 ? StoreStream.INSTANCE.getGuilds() : storeGuilds;
-        ObservationDeck observationDeck2 = (i & 32) != 0 ? ObservationDeck4.get() : observationDeck;
+        ObservationDeck observationDeck2 = (i & 32) != 0 ? ObservationDeckProvider.get() : observationDeck;
         this(j, j2, api, guildRoleSubscriptions, guilds, observationDeck2, (i & 64) != 0 ? INSTANCE.observeStoreState(j, observationDeck2, guildRoleSubscriptions, guilds) : observable);
     }
 
@@ -468,18 +468,18 @@ public final class CreateGuildRoleSubscriptionTierViewModel extends AppViewModel
         int currentStep = viewState.getCurrentStep();
         if (currentStep == 0) {
             String name = guildRoleSubscriptionTier != null ? guildRoleSubscriptionTier.getName() : null;
-            if (name == null || StringsJVM.isBlank(name)) {
+            if (name == null || C12103t.isBlank(name)) {
                 return false;
             }
             if ((guildRoleSubscriptionTier != null ? guildRoleSubscriptionTier.getPriceTier() : null) == null) {
                 return false;
             }
             String description = guildRoleSubscriptionTier.getDescription();
-            if (description == null || StringsJVM.isBlank(description)) {
+            if (description == null || C12103t.isBlank(description)) {
                 return false;
             }
             String image = guildRoleSubscriptionTier.getImage();
-            if (image == null || StringsJVM.isBlank(image)) {
+            if (image == null || C12103t.isBlank(image)) {
                 return false;
             }
         } else if (currentStep != 1 && currentStep != 2) {
@@ -495,7 +495,7 @@ public final class CreateGuildRoleSubscriptionTierViewModel extends AppViewModel
 
     @MainThread
     private final void emitEvent(Event event) {
-        this.eventSubject.k.onNext(event);
+        this.eventSubject.f27650k.onNext(event);
     }
 
     private final void handleStoreState(StoreState storeState) {
@@ -519,12 +519,12 @@ public final class CreateGuildRoleSubscriptionTierViewModel extends AppViewModel
 
     public final Observable<Event> observeEvents() {
         PublishSubject<Event> publishSubject = this.eventSubject;
-        Intrinsics3.checkNotNullExpressionValue(publishSubject, "eventSubject");
+        C12238m.checkNotNullExpressionValue(publishSubject, "eventSubject");
         return publishSubject;
     }
 
     public final void onTierUpdated(GuildRoleSubscriptionTier guildRoleSubscriptionTier) {
-        Intrinsics3.checkNotNullParameter(guildRoleSubscriptionTier, "guildRoleSubscriptionTier");
+        C12238m.checkNotNullParameter(guildRoleSubscriptionTier, "guildRoleSubscriptionTier");
         updateViewState(ViewState.copy$default(requireViewState(), 0, false, false, guildRoleSubscriptionTier, 7, null));
     }
 
@@ -532,34 +532,34 @@ public final class CreateGuildRoleSubscriptionTierViewModel extends AppViewModel
         GuildRoleSubscriptionTier guildRoleSubscriptionTier = requireViewState().getGuildRoleSubscriptionTier();
         if (guildRoleSubscriptionTier != null) {
             String name = guildRoleSubscriptionTier.getName();
-            if ((name == null || StringsJVM.isBlank(name)) || guildRoleSubscriptionTier.getPriceTier() == null || guildRoleSubscriptionTier.getMemberColor() == null) {
+            if ((name == null || C12103t.isBlank(name)) || guildRoleSubscriptionTier.getPriceTier() == null || guildRoleSubscriptionTier.getMemberColor() == null) {
                 return;
             }
-            ObservableExtensionsKt.appSubscribe(ObservableExtensionsKt.ui$default(GuildRoleSubscriptionUtils.INSTANCE.createGuildRoleSubscriptionTierListing(this.restApi, this.storeGuildRoleSubscriptions, this.guildId, this.groupListingId, guildRoleSubscriptionTier.getName(), guildRoleSubscriptionTier.getDescription(), guildRoleSubscriptionTier.getPriceTier().intValue(), guildRoleSubscriptionTier.getImage(), ColorCompat.INSTANCE.removeAlphaComponent(guildRoleSubscriptionTier.getMemberColor().intValue()), guildRoleSubscriptionTier.getMemberIcon(), guildRoleSubscriptionTier.canAccessAllChannelsOrDefault(this.isFullServerGating), guildRoleSubscriptionTier.getChannelBenefits(), guildRoleSubscriptionTier.getIntangibleBenefits()), this, null, 2, null), (Class<?>) CreateGuildRoleSubscriptionTierViewModel.class, (58 & 2) != 0 ? null : null, (Function1<? super Subscription, Unit>) ((58 & 4) != 0 ? null : null), (Function1<? super Error, Unit>) ((58 & 8) != 0 ? null : new AnonymousClass2()), (Function0<Unit>) ((58 & 16) != 0 ? ObservableExtensionsKt.AnonymousClass1.INSTANCE : null), (Function0<Unit>) ((58 & 32) != 0 ? ObservableExtensionsKt.AnonymousClass2.INSTANCE : null), new AnonymousClass1());
+            ObservableExtensionsKt.appSubscribe(ObservableExtensionsKt.ui$default(GuildRoleSubscriptionUtils.INSTANCE.createGuildRoleSubscriptionTierListing(this.restApi, this.storeGuildRoleSubscriptions, this.guildId, this.groupListingId, guildRoleSubscriptionTier.getName(), guildRoleSubscriptionTier.getDescription(), guildRoleSubscriptionTier.getPriceTier().intValue(), guildRoleSubscriptionTier.getImage(), ColorCompat.INSTANCE.removeAlphaComponent(guildRoleSubscriptionTier.getMemberColor().intValue()), guildRoleSubscriptionTier.getMemberIcon(), guildRoleSubscriptionTier.canAccessAllChannelsOrDefault(this.isFullServerGating), guildRoleSubscriptionTier.getChannelBenefits(), guildRoleSubscriptionTier.getIntangibleBenefits()), this, null, 2, null), (Class<?>) CreateGuildRoleSubscriptionTierViewModel.class, (58 & 2) != 0 ? null : null, (Function1<? super Subscription, Unit>) ((58 & 4) != 0 ? null : null), (Function1<? super Error, Unit>) ((58 & 8) != 0 ? null : new C84792()), (Function0<Unit>) ((58 & 16) != 0 ? ObservableExtensionsKt.C68791.INSTANCE : null), (Function0<Unit>) ((58 & 32) != 0 ? ObservableExtensionsKt.C68802.INSTANCE : null), new C84781());
         }
     }
 
-    @Override // b.a.d.AppViewModel
+    @Override // p007b.p008a.p018d.AbstractC0859d0
     public void updateViewState(ViewState viewState) {
-        Intrinsics3.checkNotNullParameter(viewState, "viewState");
+        C12238m.checkNotNullParameter(viewState, "viewState");
         super.updateViewState(ViewState.copy$default(viewState, 0, computeCanProceedToNextStep(viewState), false, null, 13, null));
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public CreateGuildRoleSubscriptionTierViewModel(long j, long j2, RestAPI restAPI, StoreGuildRoleSubscriptions storeGuildRoleSubscriptions, StoreGuilds storeGuilds, ObservationDeck observationDeck, Observable<StoreState> observable) {
         super(new ViewState(0, false, false, null, 15, null));
-        Intrinsics3.checkNotNullParameter(restAPI, "restApi");
-        Intrinsics3.checkNotNullParameter(storeGuildRoleSubscriptions, "storeGuildRoleSubscriptions");
-        Intrinsics3.checkNotNullParameter(storeGuilds, "storeGuilds");
-        Intrinsics3.checkNotNullParameter(observationDeck, "observationDeck");
-        Intrinsics3.checkNotNullParameter(observable, "storeStateObservable");
+        C12238m.checkNotNullParameter(restAPI, "restApi");
+        C12238m.checkNotNullParameter(storeGuildRoleSubscriptions, "storeGuildRoleSubscriptions");
+        C12238m.checkNotNullParameter(storeGuilds, "storeGuilds");
+        C12238m.checkNotNullParameter(observationDeck, "observationDeck");
+        C12238m.checkNotNullParameter(observable, "storeStateObservable");
         this.guildId = j;
         this.groupListingId = j2;
         this.restApi = restAPI;
         this.storeGuildRoleSubscriptions = storeGuildRoleSubscriptions;
-        this.eventSubject = PublishSubject.k0();
-        Observable<StoreState> observableR = observable.r();
-        Intrinsics3.checkNotNullExpressionValue(observableR, "storeStateObservable\n   …  .distinctUntilChanged()");
-        ObservableExtensionsKt.appSubscribe(ObservableExtensionsKt.ui$default(ObservableExtensionsKt.computationLatest(observableR), this, null, 2, null), (Class<?>) CreateGuildRoleSubscriptionTierViewModel.class, (58 & 2) != 0 ? null : null, (Function1<? super Subscription, Unit>) ((58 & 4) != 0 ? null : null), (Function1<? super Error, Unit>) ((58 & 8) != 0 ? null : null), (Function0<Unit>) ((58 & 16) != 0 ? ObservableExtensionsKt.AnonymousClass1.INSTANCE : null), (Function0<Unit>) ((58 & 32) != 0 ? ObservableExtensionsKt.AnonymousClass2.INSTANCE : null), new AnonymousClass1());
+        this.eventSubject = PublishSubject.m11133k0();
+        Observable<StoreState> observableM11112r = observable.m11112r();
+        C12238m.checkNotNullExpressionValue(observableM11112r, "storeStateObservable\n   …  .distinctUntilChanged()");
+        ObservableExtensionsKt.appSubscribe(ObservableExtensionsKt.ui$default(ObservableExtensionsKt.computationLatest(observableM11112r), this, null, 2, null), (Class<?>) CreateGuildRoleSubscriptionTierViewModel.class, (58 & 2) != 0 ? null : null, (Function1<? super Subscription, Unit>) ((58 & 4) != 0 ? null : null), (Function1<? super Error, Unit>) ((58 & 8) != 0 ? null : null), (Function0<Unit>) ((58 & 16) != 0 ? ObservableExtensionsKt.C68791.INSTANCE : null), (Function0<Unit>) ((58 & 32) != 0 ? ObservableExtensionsKt.C68802.INSTANCE : null), new C84761());
     }
 }

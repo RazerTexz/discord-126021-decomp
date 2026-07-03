@@ -1,7 +1,7 @@
 package com.discord.api.activity;
 
-import b.d.b.a.outline;
-import d0.z.d.Intrinsics3;
+import p007b.p100d.p104b.p105a.C1643a;
+import p507d0.p592z.p594d.C12238m;
 
 /* JADX INFO: compiled from: ActivityTimestamps.kt */
 /* JADX INFO: loaded from: classes.dex */
@@ -14,7 +14,8 @@ public final /* data */ class ActivityTimestamps {
         this.end = str2;
     }
 
-    public final long a(String number) {
+    /* JADX INFO: renamed from: a */
+    public final long m7560a(String number) {
         if (number == null || number.length() == 0) {
             return 0L;
         }
@@ -29,12 +30,14 @@ public final /* data */ class ActivityTimestamps {
         }
     }
 
-    public final long b() {
-        return a(this.end);
+    /* JADX INFO: renamed from: b */
+    public final long m7561b() {
+        return m7560a(this.end);
     }
 
-    public final long c() {
-        return a(this.start);
+    /* JADX INFO: renamed from: c */
+    public final long m7562c() {
+        return m7560a(this.start);
     }
 
     public boolean equals(Object other) {
@@ -45,7 +48,7 @@ public final /* data */ class ActivityTimestamps {
             return false;
         }
         ActivityTimestamps activityTimestamps = (ActivityTimestamps) other;
-        return Intrinsics3.areEqual(this.start, activityTimestamps.start) && Intrinsics3.areEqual(this.end, activityTimestamps.end);
+        return C12238m.areEqual(this.start, activityTimestamps.start) && C12238m.areEqual(this.end, activityTimestamps.end);
     }
 
     public int hashCode() {
@@ -56,9 +59,9 @@ public final /* data */ class ActivityTimestamps {
     }
 
     public String toString() {
-        StringBuilder sbU = outline.U("ActivityTimestamps(start=");
-        sbU.append(this.start);
-        sbU.append(", end=");
-        return outline.J(sbU, this.end, ")");
+        StringBuilder sbM833U = C1643a.m833U("ActivityTimestamps(start=");
+        sbM833U.append(this.start);
+        sbM833U.append(", end=");
+        return C1643a.m822J(sbM833U, this.end, ")");
     }
 }

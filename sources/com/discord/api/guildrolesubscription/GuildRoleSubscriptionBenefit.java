@@ -1,8 +1,8 @@
 package com.discord.api.guildrolesubscription;
 
-import b.d.b.a.outline;
 import com.discord.models.domain.ModelAuditLogEntry;
-import d0.z.d.Intrinsics3;
+import p007b.p100d.p104b.p105a.C1643a;
+import p507d0.p592z.p594d.C12238m;
 
 /* JADX INFO: compiled from: GuildRoleSubscriptionBenefit.kt */
 /* JADX INFO: loaded from: classes.dex */
@@ -15,8 +15,8 @@ public final /* data */ class GuildRoleSubscriptionBenefit {
     private final GuildRoleSubscriptionBenefitType refType;
 
     public GuildRoleSubscriptionBenefit(Long l, String str, String str2, GuildRoleSubscriptionBenefitType guildRoleSubscriptionBenefitType, String str3, Long l2) {
-        Intrinsics3.checkNotNullParameter(str2, ModelAuditLogEntry.CHANGE_KEY_NAME);
-        Intrinsics3.checkNotNullParameter(guildRoleSubscriptionBenefitType, "refType");
+        C12238m.checkNotNullParameter(str2, ModelAuditLogEntry.CHANGE_KEY_NAME);
+        C12238m.checkNotNullParameter(guildRoleSubscriptionBenefitType, "refType");
         this.emojiId = l;
         this.emojiName = str;
         this.name = str2;
@@ -58,7 +58,7 @@ public final /* data */ class GuildRoleSubscriptionBenefit {
             return false;
         }
         GuildRoleSubscriptionBenefit guildRoleSubscriptionBenefit = (GuildRoleSubscriptionBenefit) other;
-        return Intrinsics3.areEqual(this.emojiId, guildRoleSubscriptionBenefit.emojiId) && Intrinsics3.areEqual(this.emojiName, guildRoleSubscriptionBenefit.emojiName) && Intrinsics3.areEqual(this.name, guildRoleSubscriptionBenefit.name) && Intrinsics3.areEqual(this.refType, guildRoleSubscriptionBenefit.refType) && Intrinsics3.areEqual(this.description, guildRoleSubscriptionBenefit.description) && Intrinsics3.areEqual(this.refId, guildRoleSubscriptionBenefit.refId);
+        return C12238m.areEqual(this.emojiId, guildRoleSubscriptionBenefit.emojiId) && C12238m.areEqual(this.emojiName, guildRoleSubscriptionBenefit.emojiName) && C12238m.areEqual(this.name, guildRoleSubscriptionBenefit.name) && C12238m.areEqual(this.refType, guildRoleSubscriptionBenefit.refType) && C12238m.areEqual(this.description, guildRoleSubscriptionBenefit.description) && C12238m.areEqual(this.refId, guildRoleSubscriptionBenefit.refId);
     }
 
     /* JADX INFO: renamed from: f, reason: from getter */
@@ -82,17 +82,17 @@ public final /* data */ class GuildRoleSubscriptionBenefit {
     }
 
     public String toString() {
-        StringBuilder sbU = outline.U("GuildRoleSubscriptionBenefit(emojiId=");
-        sbU.append(this.emojiId);
-        sbU.append(", emojiName=");
-        sbU.append(this.emojiName);
-        sbU.append(", name=");
-        sbU.append(this.name);
-        sbU.append(", refType=");
-        sbU.append(this.refType);
-        sbU.append(", description=");
-        sbU.append(this.description);
-        sbU.append(", refId=");
-        return outline.G(sbU, this.refId, ")");
+        StringBuilder sbM833U = C1643a.m833U("GuildRoleSubscriptionBenefit(emojiId=");
+        sbM833U.append(this.emojiId);
+        sbM833U.append(", emojiName=");
+        sbM833U.append(this.emojiName);
+        sbM833U.append(", name=");
+        sbM833U.append(this.name);
+        sbM833U.append(", refType=");
+        sbM833U.append(this.refType);
+        sbM833U.append(", description=");
+        sbM833U.append(this.description);
+        sbM833U.append(", refId=");
+        return C1643a.m819G(sbM833U, this.refId, ")");
     }
 }

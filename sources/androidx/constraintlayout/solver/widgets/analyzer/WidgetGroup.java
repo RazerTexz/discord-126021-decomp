@@ -4,17 +4,17 @@ import androidx.constraintlayout.solver.LinearSystem;
 import androidx.constraintlayout.solver.widgets.Chain;
 import androidx.constraintlayout.solver.widgets.ConstraintWidget;
 import androidx.constraintlayout.solver.widgets.ConstraintWidgetContainer;
-import b.d.b.a.outline;
 import java.lang.ref.WeakReference;
 import java.util.ArrayList;
+import p007b.p100d.p104b.p105a.C1643a;
 
 /* JADX INFO: loaded from: classes.dex */
 public class WidgetGroup {
     private static final boolean DEBUG = false;
     public static int count;
 
-    /* JADX INFO: renamed from: id, reason: collision with root package name */
-    public int f33id;
+    /* JADX INFO: renamed from: id */
+    public int f123id;
     public int orientation;
     public ArrayList<ConstraintWidget> widgets = new ArrayList<>();
     public boolean authoritative = false;
@@ -49,11 +49,11 @@ public class WidgetGroup {
     }
 
     public WidgetGroup(int i) {
-        this.f33id = -1;
+        this.f123id = -1;
         this.orientation = 0;
         int i2 = count;
         count = i2 + 1;
-        this.f33id = i2;
+        this.f123id = i2;
         this.orientation = i;
     }
 
@@ -137,7 +137,7 @@ public class WidgetGroup {
         if (this.moveTo != -1 && size > 0) {
             for (int i = 0; i < arrayList.size(); i++) {
                 WidgetGroup widgetGroup = arrayList.get(i);
-                if (this.moveTo == widgetGroup.f33id) {
+                if (this.moveTo == widgetGroup.f123id) {
                     moveTo(this.orientation, widgetGroup);
                 }
             }
@@ -152,7 +152,7 @@ public class WidgetGroup {
     }
 
     public int getId() {
-        return this.f33id;
+        return this.f123id;
     }
 
     public int getOrientation() {
@@ -181,7 +181,7 @@ public class WidgetGroup {
                 constraintWidget.verticalGroup = widgetGroup.getId();
             }
         }
-        this.moveTo = widgetGroup.f33id;
+        this.moveTo = widgetGroup.f123id;
     }
 
     public void setAuthoritative(boolean z2) {
@@ -200,13 +200,13 @@ public class WidgetGroup {
         StringBuilder sb = new StringBuilder();
         sb.append(getOrientationString());
         sb.append(" [");
-        String strB = outline.B(sb, this.f33id, "] <");
+        String strM814B = C1643a.m814B(sb, this.f123id, "] <");
         for (ConstraintWidget constraintWidget : this.widgets) {
-            StringBuilder sbX = outline.X(strB, " ");
-            sbX.append(constraintWidget.getDebugName());
-            strB = sbX.toString();
+            StringBuilder sbM836X = C1643a.m836X(strM814B, " ");
+            sbM836X.append(constraintWidget.getDebugName());
+            strM814B = sbM836X.toString();
         }
-        return outline.w(strB, " >");
+        return C1643a.m883w(strM814B, " >");
     }
 
     public int measureWrap(LinearSystem linearSystem, int i) {

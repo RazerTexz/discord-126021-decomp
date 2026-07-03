@@ -354,7 +354,8 @@ public final class ViewPropertyAnimatorCompat {
         return this;
     }
 
-    public ViewPropertyAnimatorCompat x(float f) {
+    /* JADX INFO: renamed from: x */
+    public ViewPropertyAnimatorCompat m90x(float f) {
         View view = this.mView.get();
         if (view != null) {
             view.animate().x(f);
@@ -370,7 +371,8 @@ public final class ViewPropertyAnimatorCompat {
         return this;
     }
 
-    public ViewPropertyAnimatorCompat y(float f) {
+    /* JADX INFO: renamed from: y */
+    public ViewPropertyAnimatorCompat m91y(float f) {
         View view = this.mView.get();
         if (view != null) {
             view.animate().y(f);
@@ -386,7 +388,8 @@ public final class ViewPropertyAnimatorCompat {
         return this;
     }
 
-    public ViewPropertyAnimatorCompat z(float f) {
+    /* JADX INFO: renamed from: z */
+    public ViewPropertyAnimatorCompat m92z(float f) {
         View view = this.mView.get();
         if (view != null) {
             view.animate().z(f);

@@ -6,12 +6,12 @@ import android.opengl.GLES20;
 import android.os.Handler;
 import android.os.HandlerThread;
 import androidx.annotation.Nullable;
-import b.d.b.a.outline;
-import h0.c.EglBase2;
 import java.util.concurrent.Callable;
 import org.webrtc.EglBase;
 import org.webrtc.TextureBufferImpl;
 import org.webrtc.VideoFrame;
+import p007b.p100d.p104b.p105a.C1643a;
+import p617h0.p628c.C12477n0;
 
 /* JADX INFO: loaded from: classes3.dex */
 public class SurfaceTextureHelper {
@@ -61,7 +61,7 @@ public class SurfaceTextureHelper {
                 try {
                     return new SurfaceTextureHelper(context, handler, z2, yuvConverter, frameRefMonitor);
                 } catch (RuntimeException e) {
-                    Logging.e(SurfaceTextureHelper.TAG, str + " create failure", e);
+                    Logging.m11029e(SurfaceTextureHelper.TAG, str + " create failure", e);
                     return null;
                 }
             }
@@ -90,7 +90,7 @@ public class SurfaceTextureHelper {
         this.handler.post(new Runnable() { // from class: h0.c.x
             @Override // java.lang.Runnable
             public final void run() {
-                this.j.d();
+                this.f26468j.m11043d();
             }
         });
     }
@@ -108,7 +108,7 @@ public class SurfaceTextureHelper {
             return;
         }
         if (this.textureWidth == 0 || this.textureHeight == 0) {
-            Logging.w(TAG, "Texture size has not been set.");
+            Logging.m11031w(TAG, "Texture size has not been set.");
             return;
         }
         this.isTextureInUse = true;
@@ -137,7 +137,8 @@ public class SurfaceTextureHelper {
         }
     }
 
-    public /* synthetic */ void a() {
+    /* JADX INFO: renamed from: a */
+    public /* synthetic */ void m11040a() {
         this.isQuitting = true;
         if (this.isTextureInUse) {
             return;
@@ -145,20 +146,23 @@ public class SurfaceTextureHelper {
         release();
     }
 
-    public /* synthetic */ void b() {
+    /* JADX INFO: renamed from: b */
+    public /* synthetic */ void m11041b() {
         this.hasPendingTexture = true;
         tryDeliverTextureFrame();
     }
 
-    public /* synthetic */ void c(SurfaceTexture surfaceTexture) {
+    /* JADX INFO: renamed from: c */
+    public /* synthetic */ void m11042c(SurfaceTexture surfaceTexture) {
         if (this.hasPendingTexture) {
-            Logging.d(TAG, "A frame is already pending, dropping frame.");
+            Logging.m11027d(TAG, "A frame is already pending, dropping frame.");
         }
         this.hasPendingTexture = true;
         tryDeliverTextureFrame();
     }
 
-    public /* synthetic */ void d() {
+    /* JADX INFO: renamed from: d */
+    public /* synthetic */ void m11043d() {
         this.isTextureInUse = false;
         if (this.isQuitting) {
             release();
@@ -168,20 +172,22 @@ public class SurfaceTextureHelper {
     }
 
     public void dispose() {
-        Logging.d(TAG, "dispose()");
+        Logging.m11027d(TAG, "dispose()");
         ThreadUtils.invokeAtFrontUninterruptibly(this.handler, new Runnable() { // from class: h0.c.s
             @Override // java.lang.Runnable
             public final void run() {
-                this.j.a();
+                this.f26458j.m11040a();
             }
         });
     }
 
-    public /* synthetic */ void e(int i) {
+    /* JADX INFO: renamed from: e */
+    public /* synthetic */ void m11044e(int i) {
         this.frameRotation = i;
     }
 
-    public /* synthetic */ void f(int i, int i2) {
+    /* JADX INFO: renamed from: f */
+    public /* synthetic */ void m11045f(int i, int i2) {
         this.textureWidth = i;
         this.textureHeight = i2;
         tryDeliverTextureFrame();
@@ -191,12 +197,13 @@ public class SurfaceTextureHelper {
         this.handler.post(new Runnable() { // from class: h0.c.u
             @Override // java.lang.Runnable
             public final void run() {
-                this.j.b();
+                this.f26462j.m11041b();
             }
         });
     }
 
-    public /* synthetic */ void g() {
+    /* JADX INFO: renamed from: g */
+    public /* synthetic */ void m11046g() {
         this.listener = null;
         this.pendingListener = null;
     }
@@ -217,23 +224,23 @@ public class SurfaceTextureHelper {
         this.handler.post(new Runnable() { // from class: h0.c.v
             @Override // java.lang.Runnable
             public final void run() {
-                this.j.e(i);
+                this.f26465j.m11044e(i);
             }
         });
     }
 
     public void setTextureSize(final int i, final int i2) {
         if (i <= 0) {
-            throw new IllegalArgumentException(outline.q("Texture width must be positive, but was ", i));
+            throw new IllegalArgumentException(C1643a.m871q("Texture width must be positive, but was ", i));
         }
         if (i2 <= 0) {
-            throw new IllegalArgumentException(outline.q("Texture height must be positive, but was ", i2));
+            throw new IllegalArgumentException(C1643a.m871q("Texture height must be positive, but was ", i2));
         }
         this.surfaceTexture.setDefaultBufferSize(i, i2);
         this.handler.post(new Runnable() { // from class: h0.c.t
             @Override // java.lang.Runnable
             public final void run() {
-                this.j.f(i, i2);
+                this.f26459j.m11045f(i, i2);
             }
         });
     }
@@ -247,12 +254,12 @@ public class SurfaceTextureHelper {
     }
 
     public void stopListening() {
-        Logging.d(TAG, "stopListening()");
+        Logging.m11027d(TAG, "stopListening()");
         this.handler.removeCallbacks(this.setListenerRunnable);
         ThreadUtils.invokeAtFrontUninterruptibly(this.handler, new Runnable() { // from class: h0.c.w
             @Override // java.lang.Runnable
             public final void run() {
-                this.j.g();
+                this.f26467j.m11046g();
             }
         });
     }
@@ -289,9 +296,9 @@ public class SurfaceTextureHelper {
         this.setListenerRunnable = new Runnable() { // from class: org.webrtc.SurfaceTextureHelper.3
             @Override // java.lang.Runnable
             public void run() {
-                StringBuilder sbU = outline.U("Setting listener to ");
-                sbU.append(SurfaceTextureHelper.this.pendingListener);
-                Logging.d(SurfaceTextureHelper.TAG, sbU.toString());
+                StringBuilder sbM833U = C1643a.m833U("Setting listener to ");
+                sbM833U.append(SurfaceTextureHelper.this.pendingListener);
+                Logging.m11027d(SurfaceTextureHelper.TAG, sbM833U.toString());
                 SurfaceTextureHelper surfaceTextureHelper = SurfaceTextureHelper.this;
                 surfaceTextureHelper.listener = surfaceTextureHelper.pendingListener;
                 SurfaceTextureHelper.this.pendingListener = null;
@@ -308,11 +315,11 @@ public class SurfaceTextureHelper {
         this.timestampAligner = z2 ? new TimestampAligner() : null;
         this.yuvConverter = yuvConverter;
         this.frameRefMonitor = frameRefMonitor;
-        EglBase eglBaseB = EglBase2.b(context, EglBase.CONFIG_PIXEL_BUFFER);
-        this.eglBase = eglBaseB;
+        EglBase eglBaseM10663b = C12477n0.m10663b(context, EglBase.CONFIG_PIXEL_BUFFER);
+        this.eglBase = eglBaseM10663b;
         try {
-            eglBaseB.createDummyPbufferSurface();
-            eglBaseB.makeCurrent();
+            eglBaseM10663b.createDummyPbufferSurface();
+            eglBaseM10663b.makeCurrent();
             int iGenerateTexture = GlUtil.generateTexture(36197);
             this.oesTextureId = iGenerateTexture;
             SurfaceTexture surfaceTexture = new SurfaceTexture(iGenerateTexture);
@@ -320,7 +327,7 @@ public class SurfaceTextureHelper {
             setOnFrameAvailableListener(surfaceTexture, new SurfaceTexture.OnFrameAvailableListener() { // from class: h0.c.r
                 @Override // android.graphics.SurfaceTexture.OnFrameAvailableListener
                 public final void onFrameAvailable(SurfaceTexture surfaceTexture2) {
-                    this.j.c(surfaceTexture2);
+                    this.f26457j.m11042c(surfaceTexture2);
                 }
             }, handler);
         } catch (RuntimeException e) {

@@ -5,16 +5,16 @@ import android.graphics.Paint;
 import android.text.SpannableStringBuilder;
 import android.text.style.LeadingMarginSpan;
 import androidx.exifinterface.media.ExifInterface;
-import com.discord.R;
+import com.discord.C5419R;
 import com.discord.simpleast.core.node.Node;
 import com.discord.utilities.color.ColorCompat;
 import com.discord.utilities.spans.BulletSpan;
 import com.discord.utilities.spans.VerticalPaddingSpan;
 import com.discord.utilities.textprocessing.node.BasicRenderContext;
-import d0.z.d.Intrinsics3;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Iterator;
+import p507d0.p592z.p594d.C12238m;
 
 /* JADX INFO: compiled from: BulletListNode.kt */
 /* JADX INFO: loaded from: classes2.dex */
@@ -31,8 +31,8 @@ public final class BulletListNode<T extends BasicRenderContext> extends Node<T> 
 
     @Override // com.discord.simpleast.core.node.Node
     public void render(SpannableStringBuilder builder, T renderContext) {
-        Intrinsics3.checkNotNullParameter(builder, "builder");
-        Intrinsics3.checkNotNullParameter(renderContext, "renderContext");
+        C12238m.checkNotNullParameter(builder, "builder");
+        C12238m.checkNotNullParameter(renderContext, "renderContext");
         Context context = renderContext.getContext();
         int length = builder.length();
         Collection<Node<T>> children = getChildren();
@@ -43,10 +43,10 @@ public final class BulletListNode<T extends BasicRenderContext> extends Node<T> 
             }
         }
         ArrayList arrayList = new ArrayList(3);
-        int dimensionPixelSize = context.getResources().getDimensionPixelSize(R.dimen.markdown_bullet_gap);
-        int dimensionPixelSize2 = context.getResources().getDimensionPixelSize(R.dimen.markdown_bullet_gap) * this.nestedLevel;
-        int themedColor = ColorCompat.getThemedColor(context, R.attr.primary_400);
-        int dimensionPixelSize3 = context.getResources().getDimensionPixelSize(R.dimen.markdown_bullet_vertical_padding);
+        int dimensionPixelSize = context.getResources().getDimensionPixelSize(C5419R.dimen.markdown_bullet_gap);
+        int dimensionPixelSize2 = context.getResources().getDimensionPixelSize(C5419R.dimen.markdown_bullet_gap) * this.nestedLevel;
+        int themedColor = ColorCompat.getThemedColor(context, C5419R.attr.primary_400);
+        int dimensionPixelSize3 = context.getResources().getDimensionPixelSize(C5419R.dimen.markdown_bullet_vertical_padding);
         Paint.Style style = this.nestedLevel > 1 ? Paint.Style.STROKE : Paint.Style.FILL;
         arrayList.add(new VerticalPaddingSpan(dimensionPixelSize3, dimensionPixelSize3));
         arrayList.add(new LeadingMarginSpan.Standard(dimensionPixelSize2));

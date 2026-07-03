@@ -1,7 +1,7 @@
 package com.discord.analytics.generated.traits;
 
-import b.d.b.a.outline;
-import d0.z.d.Intrinsics3;
+import p007b.p100d.p104b.p105a.C1643a;
+import p507d0.p592z.p594d.C12238m;
 
 /* JADX INFO: compiled from: TrackChannel.kt */
 /* JADX INFO: loaded from: classes.dex */
@@ -39,7 +39,7 @@ public final /* data */ class TrackChannel {
             return false;
         }
         TrackChannel trackChannel = (TrackChannel) other;
-        return Intrinsics3.areEqual(this.channelId, trackChannel.channelId) && Intrinsics3.areEqual(this.channelType, trackChannel.channelType) && Intrinsics3.areEqual(this.channelSizeTotal, trackChannel.channelSizeTotal) && Intrinsics3.areEqual(this.channelSizeOnline, trackChannel.channelSizeOnline) && Intrinsics3.areEqual(this.channelMemberPerms, trackChannel.channelMemberPerms) && Intrinsics3.areEqual(this.channelHidden, trackChannel.channelHidden);
+        return C12238m.areEqual(this.channelId, trackChannel.channelId) && C12238m.areEqual(this.channelType, trackChannel.channelType) && C12238m.areEqual(this.channelSizeTotal, trackChannel.channelSizeTotal) && C12238m.areEqual(this.channelSizeOnline, trackChannel.channelSizeOnline) && C12238m.areEqual(this.channelMemberPerms, trackChannel.channelMemberPerms) && C12238m.areEqual(this.channelHidden, trackChannel.channelHidden);
     }
 
     public int hashCode() {
@@ -58,17 +58,17 @@ public final /* data */ class TrackChannel {
     }
 
     public String toString() {
-        StringBuilder sbU = outline.U("TrackChannel(channelId=");
-        sbU.append(this.channelId);
-        sbU.append(", channelType=");
-        sbU.append(this.channelType);
-        sbU.append(", channelSizeTotal=");
-        sbU.append(this.channelSizeTotal);
-        sbU.append(", channelSizeOnline=");
-        sbU.append(this.channelSizeOnline);
-        sbU.append(", channelMemberPerms=");
-        sbU.append(this.channelMemberPerms);
-        sbU.append(", channelHidden=");
-        return outline.D(sbU, this.channelHidden, ")");
+        StringBuilder sbM833U = C1643a.m833U("TrackChannel(channelId=");
+        sbM833U.append(this.channelId);
+        sbM833U.append(", channelType=");
+        sbM833U.append(this.channelType);
+        sbM833U.append(", channelSizeTotal=");
+        sbM833U.append(this.channelSizeTotal);
+        sbM833U.append(", channelSizeOnline=");
+        sbM833U.append(this.channelSizeOnline);
+        sbM833U.append(", channelMemberPerms=");
+        sbM833U.append(this.channelMemberPerms);
+        sbM833U.append(", channelHidden=");
+        return C1643a.m816D(sbM833U, this.channelHidden, ")");
     }
 }

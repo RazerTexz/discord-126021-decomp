@@ -2,16 +2,16 @@ package com.discord.widgets.guildscheduledevent.buttonconfiguration;
 
 import android.content.Context;
 import android.view.View;
-import b.a.k.FormatUtils;
-import b.d.b.a.outline;
-import com.discord.R;
+import com.discord.C5419R;
 import com.discord.api.guild.Guild;
 import com.discord.api.guildscheduledevent.GuildScheduledEvent;
 import com.discord.api.guildscheduledevent.GuildScheduledEventStatus;
 import com.discord.utilities.color.ColorCompat;
-import com.discord.utilities.guildscheduledevent.GuildScheduledEventUtilities2;
-import com.discord.utilities.guildscheduledevent.GuildScheduledEventUtilities5;
-import d0.z.d.Intrinsics3;
+import com.discord.utilities.guildscheduledevent.GuildScheduledEventTiming;
+import com.discord.utilities.guildscheduledevent.GuildScheduledEventUtilitiesKt;
+import p007b.p008a.p027k.C1107b;
+import p007b.p100d.p104b.p105a.C1643a;
+import p507d0.p592z.p594d.C12238m;
 
 /* JADX INFO: compiled from: DirectoryButtonConfiguration.kt */
 /* JADX INFO: loaded from: classes2.dex */
@@ -36,7 +36,7 @@ public final /* data */ class DirectoryButtonConfiguration implements ButtonConf
     private final View.OnClickListener shareButtonOnClickListener;
 
     public DirectoryButtonConfiguration(GuildScheduledEvent guildScheduledEvent, boolean z2, boolean z3, boolean z4, View.OnClickListener onClickListener, View.OnClickListener onClickListener2, View.OnClickListener onClickListener3, View.OnClickListener onClickListener4) {
-        Intrinsics3.checkNotNullParameter(guildScheduledEvent, "guildScheduledEvent");
+        C12238m.checkNotNullParameter(guildScheduledEvent, "guildScheduledEvent");
         this.guildScheduledEvent = guildScheduledEvent;
         this.isInGuild = z2;
         this.isRsvped = z3;
@@ -48,11 +48,11 @@ public final /* data */ class DirectoryButtonConfiguration implements ButtonConf
         boolean z5 = false;
         boolean z6 = guildScheduledEvent.getStatus() == GuildScheduledEventStatus.COMPLETED;
         this.isEventComplete = z6;
-        boolean z7 = GuildScheduledEventUtilities5.getEventTiming(guildScheduledEvent) == GuildScheduledEventUtilities2.LIVE;
+        boolean z7 = GuildScheduledEventUtilitiesKt.getEventTiming(guildScheduledEvent) == GuildScheduledEventTiming.LIVE;
         this.isEventActive = z7;
         this.primaryButtonVisible = (z4 && !z7 && z2) ? false : true;
-        this.secondaryButtonBackground = z3 ? R.drawable.bg_guild_scheduled_event_list_item_interested_button_interested : R.drawable.bg_guild_scheduled_event_list_item_interested_button_default;
-        this.secondaryButtonTextDrawableRes = z3 ? R.drawable.ic_check_active_16dp : R.drawable.ic_bell_16dp;
+        this.secondaryButtonBackground = z3 ? C5419R.drawable.bg_guild_scheduled_event_list_item_interested_button_interested : C5419R.drawable.bg_guild_scheduled_event_list_item_interested_button_default;
+        this.secondaryButtonTextDrawableRes = z3 ? C5419R.drawable.ic_check_active_16dp : C5419R.drawable.ic_bell_16dp;
         this.secondaryButtonEnabled = true;
         if (z2 && !z7 && !z6) {
             z5 = true;
@@ -100,7 +100,7 @@ public final /* data */ class DirectoryButtonConfiguration implements ButtonConf
     }
 
     public final DirectoryButtonConfiguration copy(GuildScheduledEvent guildScheduledEvent, boolean isInGuild, boolean isRsvped, boolean isDetailView, View.OnClickListener primaryButtonOnClickListener, View.OnClickListener secondaryButtonOnClickListener, View.OnClickListener shareButtonOnClickListener, View.OnClickListener extrasButtonOnClickListener) {
-        Intrinsics3.checkNotNullParameter(guildScheduledEvent, "guildScheduledEvent");
+        C12238m.checkNotNullParameter(guildScheduledEvent, "guildScheduledEvent");
         return new DirectoryButtonConfiguration(guildScheduledEvent, isInGuild, isRsvped, isDetailView, primaryButtonOnClickListener, secondaryButtonOnClickListener, shareButtonOnClickListener, extrasButtonOnClickListener);
     }
 
@@ -112,7 +112,7 @@ public final /* data */ class DirectoryButtonConfiguration implements ButtonConf
             return false;
         }
         DirectoryButtonConfiguration directoryButtonConfiguration = (DirectoryButtonConfiguration) other;
-        return Intrinsics3.areEqual(this.guildScheduledEvent, directoryButtonConfiguration.guildScheduledEvent) && this.isInGuild == directoryButtonConfiguration.isInGuild && this.isRsvped == directoryButtonConfiguration.isRsvped && this.isDetailView == directoryButtonConfiguration.isDetailView && Intrinsics3.areEqual(getPrimaryButtonOnClickListener(), directoryButtonConfiguration.getPrimaryButtonOnClickListener()) && Intrinsics3.areEqual(getSecondaryButtonOnClickListener(), directoryButtonConfiguration.getSecondaryButtonOnClickListener()) && Intrinsics3.areEqual(getShareButtonOnClickListener(), directoryButtonConfiguration.getShareButtonOnClickListener()) && Intrinsics3.areEqual(getExtrasButtonOnClickListener(), directoryButtonConfiguration.getExtrasButtonOnClickListener());
+        return C12238m.areEqual(this.guildScheduledEvent, directoryButtonConfiguration.guildScheduledEvent) && this.isInGuild == directoryButtonConfiguration.isInGuild && this.isRsvped == directoryButtonConfiguration.isRsvped && this.isDetailView == directoryButtonConfiguration.isDetailView && C12238m.areEqual(getPrimaryButtonOnClickListener(), directoryButtonConfiguration.getPrimaryButtonOnClickListener()) && C12238m.areEqual(getSecondaryButtonOnClickListener(), directoryButtonConfiguration.getSecondaryButtonOnClickListener()) && C12238m.areEqual(getShareButtonOnClickListener(), directoryButtonConfiguration.getShareButtonOnClickListener()) && C12238m.areEqual(getExtrasButtonOnClickListener(), directoryButtonConfiguration.getExtrasButtonOnClickListener());
     }
 
     @Override // com.discord.widgets.guildscheduledevent.buttonconfiguration.ButtonConfiguration
@@ -233,49 +233,49 @@ public final /* data */ class DirectoryButtonConfiguration implements ButtonConf
 
     @Override // com.discord.widgets.guildscheduledevent.buttonconfiguration.ButtonConfiguration
     public CharSequence primaryButtonText(Context context) {
-        Intrinsics3.checkNotNullParameter(context, "context");
+        C12238m.checkNotNullParameter(context, "context");
         if (this.isInGuild) {
-            return FormatUtils.b(context, R.string.hub_directory_card_joined_guild_button, new Object[0], (4 & 4) != 0 ? FormatUtils.b.j : null);
+            return C1107b.m210b(context, C5419R.string.hub_directory_card_joined_guild_button, new Object[0], (4 & 4) != 0 ? C1107b.b.f1491j : null);
         }
         Object[] objArr = new Object[1];
         Guild guild = this.guildScheduledEvent.getGuild();
         objArr[0] = guild != null ? guild.getName() : null;
-        return FormatUtils.b(context, R.string.lurker_mode_nag_bar_button, objArr, (4 & 4) != 0 ? FormatUtils.b.j : null);
+        return C1107b.m210b(context, C5419R.string.lurker_mode_nag_bar_button, objArr, (4 & 4) != 0 ? C1107b.b.f1491j : null);
     }
 
     @Override // com.discord.widgets.guildscheduledevent.buttonconfiguration.ButtonConfiguration
     public CharSequence secondaryButtonText(Context context) {
-        Intrinsics3.checkNotNullParameter(context, "context");
-        return FormatUtils.b(context, R.string.indicate_rsvp, new Object[0], (4 & 4) != 0 ? FormatUtils.b.j : null);
+        C12238m.checkNotNullParameter(context, "context");
+        return C1107b.m210b(context, C5419R.string.indicate_rsvp, new Object[0], (4 & 4) != 0 ? C1107b.b.f1491j : null);
     }
 
     @Override // com.discord.widgets.guildscheduledevent.buttonconfiguration.ButtonConfiguration
     public int secondaryButtonTextColor(Context context) {
-        Intrinsics3.checkNotNullParameter(context, "context");
+        C12238m.checkNotNullParameter(context, "context");
         if (getSecondaryButtonEnabled()) {
-            return (!this.isRsvped || this.isEventActive || this.isEventComplete) ? ColorCompat.getColor(context, R.color.white) : ColorCompat.getThemedColor(context, R.attr.colorBackgroundAccent);
+            return (!this.isRsvped || this.isEventActive || this.isEventComplete) ? ColorCompat.getColor(context, C5419R.color.white) : ColorCompat.getThemedColor(context, C5419R.attr.colorBackgroundAccent);
         }
-        return ColorCompat.getColor(context, R.color.white_alpha_40);
+        return ColorCompat.getColor(context, C5419R.color.white_alpha_40);
     }
 
     public String toString() {
-        StringBuilder sbU = outline.U("DirectoryButtonConfiguration(guildScheduledEvent=");
-        sbU.append(this.guildScheduledEvent);
-        sbU.append(", isInGuild=");
-        sbU.append(this.isInGuild);
-        sbU.append(", isRsvped=");
-        sbU.append(this.isRsvped);
-        sbU.append(", isDetailView=");
-        sbU.append(this.isDetailView);
-        sbU.append(", primaryButtonOnClickListener=");
-        sbU.append(getPrimaryButtonOnClickListener());
-        sbU.append(", secondaryButtonOnClickListener=");
-        sbU.append(getSecondaryButtonOnClickListener());
-        sbU.append(", shareButtonOnClickListener=");
-        sbU.append(getShareButtonOnClickListener());
-        sbU.append(", extrasButtonOnClickListener=");
-        sbU.append(getExtrasButtonOnClickListener());
-        sbU.append(")");
-        return sbU.toString();
+        StringBuilder sbM833U = C1643a.m833U("DirectoryButtonConfiguration(guildScheduledEvent=");
+        sbM833U.append(this.guildScheduledEvent);
+        sbM833U.append(", isInGuild=");
+        sbM833U.append(this.isInGuild);
+        sbM833U.append(", isRsvped=");
+        sbM833U.append(this.isRsvped);
+        sbM833U.append(", isDetailView=");
+        sbM833U.append(this.isDetailView);
+        sbM833U.append(", primaryButtonOnClickListener=");
+        sbM833U.append(getPrimaryButtonOnClickListener());
+        sbM833U.append(", secondaryButtonOnClickListener=");
+        sbM833U.append(getSecondaryButtonOnClickListener());
+        sbM833U.append(", shareButtonOnClickListener=");
+        sbM833U.append(getShareButtonOnClickListener());
+        sbM833U.append(", extrasButtonOnClickListener=");
+        sbM833U.append(getExtrasButtonOnClickListener());
+        sbM833U.append(")");
+        return sbM833U.toString();
     }
 }

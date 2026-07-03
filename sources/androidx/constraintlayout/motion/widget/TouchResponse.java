@@ -10,10 +10,10 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import androidx.constraintlayout.motion.widget.MotionLayout;
-import androidx.constraintlayout.widget.R;
+import androidx.constraintlayout.widget.C0201R;
 import androidx.core.widget.NestedScrollView;
-import b.d.b.a.outline;
 import org.xmlpull.v1.XmlPullParser;
+import p007b.p100d.p104b.p105a.C1643a;
 
 /* JADX INFO: loaded from: classes.dex */
 public class TouchResponse {
@@ -67,44 +67,44 @@ public class TouchResponse {
         int indexCount = typedArray.getIndexCount();
         for (int i = 0; i < indexCount; i++) {
             int index = typedArray.getIndex(i);
-            if (index == R.styleable.OnSwipe_touchAnchorId) {
+            if (index == C0201R.styleable.OnSwipe_touchAnchorId) {
                 this.mTouchAnchorId = typedArray.getResourceId(index, this.mTouchAnchorId);
-            } else if (index == R.styleable.OnSwipe_touchAnchorSide) {
+            } else if (index == C0201R.styleable.OnSwipe_touchAnchorSide) {
                 int i2 = typedArray.getInt(index, this.mTouchAnchorSide);
                 this.mTouchAnchorSide = i2;
                 float[][] fArr = TOUCH_SIDES;
                 this.mTouchAnchorX = fArr[i2][0];
                 this.mTouchAnchorY = fArr[i2][1];
-            } else if (index == R.styleable.OnSwipe_dragDirection) {
+            } else if (index == C0201R.styleable.OnSwipe_dragDirection) {
                 int i3 = typedArray.getInt(index, this.mTouchSide);
                 this.mTouchSide = i3;
                 float[][] fArr2 = TOUCH_DIRECTION;
                 this.mTouchDirectionX = fArr2[i3][0];
                 this.mTouchDirectionY = fArr2[i3][1];
-            } else if (index == R.styleable.OnSwipe_maxVelocity) {
+            } else if (index == C0201R.styleable.OnSwipe_maxVelocity) {
                 this.mMaxVelocity = typedArray.getFloat(index, this.mMaxVelocity);
-            } else if (index == R.styleable.OnSwipe_maxAcceleration) {
+            } else if (index == C0201R.styleable.OnSwipe_maxAcceleration) {
                 this.mMaxAcceleration = typedArray.getFloat(index, this.mMaxAcceleration);
-            } else if (index == R.styleable.OnSwipe_moveWhenScrollAtTop) {
+            } else if (index == C0201R.styleable.OnSwipe_moveWhenScrollAtTop) {
                 this.mMoveWhenScrollAtTop = typedArray.getBoolean(index, this.mMoveWhenScrollAtTop);
-            } else if (index == R.styleable.OnSwipe_dragScale) {
+            } else if (index == C0201R.styleable.OnSwipe_dragScale) {
                 this.mDragScale = typedArray.getFloat(index, this.mDragScale);
-            } else if (index == R.styleable.OnSwipe_dragThreshold) {
+            } else if (index == C0201R.styleable.OnSwipe_dragThreshold) {
                 this.mDragThreshold = typedArray.getFloat(index, this.mDragThreshold);
-            } else if (index == R.styleable.OnSwipe_touchRegionId) {
+            } else if (index == C0201R.styleable.OnSwipe_touchRegionId) {
                 this.mTouchRegionId = typedArray.getResourceId(index, this.mTouchRegionId);
-            } else if (index == R.styleable.OnSwipe_onTouchUp) {
+            } else if (index == C0201R.styleable.OnSwipe_onTouchUp) {
                 this.mOnTouchUp = typedArray.getInt(index, this.mOnTouchUp);
-            } else if (index == R.styleable.OnSwipe_nestedScrollFlags) {
+            } else if (index == C0201R.styleable.OnSwipe_nestedScrollFlags) {
                 this.mFlags = typedArray.getInteger(index, 0);
-            } else if (index == R.styleable.OnSwipe_limitBoundsTo) {
+            } else if (index == C0201R.styleable.OnSwipe_limitBoundsTo) {
                 this.mLimitBoundsTo = typedArray.getResourceId(index, 0);
             }
         }
     }
 
     private void fillFromAttributeList(Context context, AttributeSet attributeSet) {
-        TypedArray typedArrayObtainStyledAttributes = context.obtainStyledAttributes(attributeSet, R.styleable.OnSwipe);
+        TypedArray typedArrayObtainStyledAttributes = context.obtainStyledAttributes(attributeSet, C0201R.styleable.OnSwipe);
         fill(typedArrayObtainStyledAttributes);
         typedArrayObtainStyledAttributes.recycle();
     }
@@ -366,9 +366,9 @@ public class TouchResponse {
         if (i != -1) {
             viewFindViewById = this.mMotionLayout.findViewById(i);
             if (viewFindViewById == null) {
-                StringBuilder sbU = outline.U("cannot find TouchAnchorId @id/");
-                sbU.append(Debug.getName(this.mMotionLayout.getContext(), this.mTouchAnchorId));
-                Log.e(TAG, sbU.toString());
+                StringBuilder sbM833U = C1643a.m833U("cannot find TouchAnchorId @id/");
+                sbM833U.append(Debug.getName(this.mMotionLayout.getContext(), this.mTouchAnchorId));
+                Log.e(TAG, sbM833U.toString());
             }
         } else {
             viewFindViewById = null;

@@ -1,10 +1,10 @@
 package com.discord.models.domain;
 
-import b.d.b.a.outline;
 import com.discord.api.user.User;
 import com.discord.models.deserialization.gson.InboundGatewayGsonParser;
 import com.discord.models.domain.Model;
 import java.io.IOException;
+import p007b.p100d.p104b.p105a.C1643a;
 
 /* JADX INFO: loaded from: classes.dex */
 public class ModelGuildIntegration implements Model {
@@ -18,8 +18,8 @@ public class ModelGuildIntegration implements Model {
     private int expireBehavior;
     private int expireGracePeriod;
 
-    /* JADX INFO: renamed from: id, reason: collision with root package name */
-    private long f2721id;
+    /* JADX INFO: renamed from: id */
+    private long f18568id;
     private String name;
     private long roleId;
     private int subscriberCount;
@@ -30,8 +30,8 @@ public class ModelGuildIntegration implements Model {
 
     public static class IntegrationAccount implements Model {
 
-        /* JADX INFO: renamed from: id, reason: collision with root package name */
-        private String f2722id;
+        /* JADX INFO: renamed from: id */
+        private String f18569id;
         private String name;
 
         @Override // com.discord.models.domain.Model
@@ -39,7 +39,7 @@ public class ModelGuildIntegration implements Model {
             String strNextName = jsonReader.nextName();
             strNextName.hashCode();
             if (strNextName.equals(ModelAuditLogEntry.CHANGE_KEY_ID)) {
-                this.f2722id = jsonReader.nextString(this.f2722id);
+                this.f18569id = jsonReader.nextString(this.f18569id);
             } else if (strNextName.equals(ModelAuditLogEntry.CHANGE_KEY_NAME)) {
                 this.name = jsonReader.nextString(this.name);
             } else {
@@ -73,7 +73,7 @@ public class ModelGuildIntegration implements Model {
         }
 
         public String getId() {
-            return this.f2722id;
+            return this.f18569id;
         }
 
         public String getName() {
@@ -88,12 +88,12 @@ public class ModelGuildIntegration implements Model {
         }
 
         public String toString() {
-            StringBuilder sbU = outline.U("ModelGuildIntegration.IntegrationAccount(id=");
-            sbU.append(getId());
-            sbU.append(", name=");
-            sbU.append(getName());
-            sbU.append(")");
-            return sbU.toString();
+            StringBuilder sbM833U = C1643a.m833U("ModelGuildIntegration.IntegrationAccount(id=");
+            sbM833U.append(getId());
+            sbM833U.append(", name=");
+            sbM833U.append(getName());
+            sbM833U.append(")");
+            return sbM833U.toString();
         }
     }
 
@@ -136,10 +136,10 @@ public class ModelGuildIntegration implements Model {
         }
 
         public String toString() {
-            StringBuilder sbU = outline.U("ModelGuildIntegration.Update(guildId=");
-            sbU.append(getGuildId());
-            sbU.append(")");
-            return sbU.toString();
+            StringBuilder sbM833U = C1643a.m833U("ModelGuildIntegration.Update(guildId=");
+            sbM833U.append(getGuildId());
+            sbM833U.append(")");
+            return sbM833U.toString();
         }
     }
 
@@ -164,7 +164,7 @@ public class ModelGuildIntegration implements Model {
                 this.expireBehavior = jsonReader.nextInt(this.expireBehavior);
                 break;
             case "id":
-                this.f2721id = jsonReader.nextLong(this.f2721id);
+                this.f18568id = jsonReader.nextLong(this.f18568id);
                 break;
             case "name":
                 this.name = jsonReader.nextString(this.name);
@@ -241,9 +241,9 @@ public class ModelGuildIntegration implements Model {
         if (!"twitch".equals(this.type)) {
             return this.name;
         }
-        StringBuilder sbU = outline.U("twitch.tv/");
-        sbU.append(this.name);
-        return sbU.toString();
+        StringBuilder sbM833U = C1643a.m833U("twitch.tv/");
+        sbM833U.append(this.name);
+        return sbM833U.toString();
     }
 
     public int getExpireBehavior() {
@@ -255,7 +255,7 @@ public class ModelGuildIntegration implements Model {
     }
 
     public long getId() {
-        return this.f2721id;
+        return this.f18568id;
     }
 
     public String getName() {
@@ -314,33 +314,33 @@ public class ModelGuildIntegration implements Model {
     }
 
     public String toString() {
-        StringBuilder sbU = outline.U("ModelGuildIntegration(enableEmoticons=");
-        sbU.append(isEnableEmoticons());
-        sbU.append(", enabled=");
-        sbU.append(isEnabled());
-        sbU.append(", expireBehavior=");
-        sbU.append(getExpireBehavior());
-        sbU.append(", expireGracePeriod=");
-        sbU.append(getExpireGracePeriod());
-        sbU.append(", id=");
-        sbU.append(getId());
-        sbU.append(", name=");
-        sbU.append(getName());
-        sbU.append(", roleId=");
-        sbU.append(getRoleId());
-        sbU.append(", subscriberCount=");
-        sbU.append(getSubscriberCount());
-        sbU.append(", syncedAt=");
-        sbU.append(getSyncedAt());
-        sbU.append(", syncing=");
-        sbU.append(isSyncing());
-        sbU.append(", type=");
-        sbU.append(getType());
-        sbU.append(", user=");
-        sbU.append(getUser());
-        sbU.append(", account=");
-        sbU.append(getAccount());
-        sbU.append(")");
-        return sbU.toString();
+        StringBuilder sbM833U = C1643a.m833U("ModelGuildIntegration(enableEmoticons=");
+        sbM833U.append(isEnableEmoticons());
+        sbM833U.append(", enabled=");
+        sbM833U.append(isEnabled());
+        sbM833U.append(", expireBehavior=");
+        sbM833U.append(getExpireBehavior());
+        sbM833U.append(", expireGracePeriod=");
+        sbM833U.append(getExpireGracePeriod());
+        sbM833U.append(", id=");
+        sbM833U.append(getId());
+        sbM833U.append(", name=");
+        sbM833U.append(getName());
+        sbM833U.append(", roleId=");
+        sbM833U.append(getRoleId());
+        sbM833U.append(", subscriberCount=");
+        sbM833U.append(getSubscriberCount());
+        sbM833U.append(", syncedAt=");
+        sbM833U.append(getSyncedAt());
+        sbM833U.append(", syncing=");
+        sbM833U.append(isSyncing());
+        sbM833U.append(", type=");
+        sbM833U.append(getType());
+        sbM833U.append(", user=");
+        sbM833U.append(getUser());
+        sbM833U.append(", account=");
+        sbM833U.append(getAccount());
+        sbM833U.append(")");
+        return sbM833U.toString();
     }
 }

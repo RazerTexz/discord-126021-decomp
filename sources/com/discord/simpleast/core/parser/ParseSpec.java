@@ -2,7 +2,7 @@ package com.discord.simpleast.core.parser;
 
 import androidx.exifinterface.media.ExifInterface;
 import com.discord.simpleast.core.node.Node;
-import d0.z.d.Intrinsics3;
+import p507d0.p592z.p594d.C12238m;
 
 /* JADX INFO: compiled from: ParseSpec.kt */
 /* JADX INFO: loaded from: classes.dex */
@@ -11,7 +11,7 @@ public final class ParseSpec<R, S> {
     /* JADX INFO: renamed from: a, reason: from kotlin metadata */
     public final Node<R> root;
 
-    /* JADX INFO: renamed from: b, reason: collision with root package name and from kotlin metadata */
+    /* JADX INFO: renamed from: b, reason: from kotlin metadata */
     public final boolean isTerminal;
 
     /* JADX INFO: renamed from: c, reason: from kotlin metadata */
@@ -24,7 +24,7 @@ public final class ParseSpec<R, S> {
     public int endIndex;
 
     public ParseSpec(Node<R> node, S s2, int i, int i2) {
-        Intrinsics3.checkNotNullParameter(node, "root");
+        C12238m.checkNotNullParameter(node, "root");
         this.root = node;
         this.state = s2;
         this.isTerminal = false;
@@ -33,7 +33,7 @@ public final class ParseSpec<R, S> {
     }
 
     public ParseSpec(Node<R> node, S s2) {
-        Intrinsics3.checkNotNullParameter(node, "root");
+        C12238m.checkNotNullParameter(node, "root");
         this.root = node;
         this.state = s2;
         this.isTerminal = true;

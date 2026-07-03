@@ -6,9 +6,9 @@ import android.view.View;
 import android.view.ViewGroup;
 import androidx.constraintlayout.solver.widgets.analyzer.BasicMeasure;
 import androidx.recyclerview.widget.RecyclerView;
-import com.discord.R;
+import com.discord.C5419R;
 import com.discord.models.domain.ModelAuditLogEntry;
-import d0.z.d.Intrinsics3;
+import p507d0.p592z.p594d.C12238m;
 
 /* JADX INFO: compiled from: StickyHeaderItemDecoration.kt */
 /* JADX INFO: loaded from: classes2.dex */
@@ -26,8 +26,8 @@ public final class StickyHeaderItemDecoration extends RecyclerView.ItemDecoratio
         }
 
         public static final void layoutHeaderView(ViewGroup parent, View view) {
-            Intrinsics3.checkNotNullParameter(parent, "parent");
-            Intrinsics3.checkNotNullParameter(view, "view");
+            C12238m.checkNotNullParameter(parent, "parent");
+            C12238m.checkNotNullParameter(view, "view");
             int iMakeMeasureSpec = View.MeasureSpec.makeMeasureSpec(parent.getWidth(), BasicMeasure.EXACTLY);
             int iMakeMeasureSpec2 = View.MeasureSpec.makeMeasureSpec(parent.getHeight(), 0);
             view.measure(ViewGroup.getChildMeasureSpec(iMakeMeasureSpec, parent.getPaddingRight() + parent.getPaddingLeft(), view.getLayoutParams().width), ViewGroup.getChildMeasureSpec(iMakeMeasureSpec2, parent.getPaddingBottom() + parent.getPaddingTop(), view.getLayoutParams().height));
@@ -45,7 +45,7 @@ public final class StickyHeaderItemDecoration extends RecyclerView.ItemDecoratio
     }
 
     public StickyHeaderItemDecoration(StickyHeaderAdapter stickyHeaderAdapter) {
-        Intrinsics3.checkNotNullParameter(stickyHeaderAdapter, "adapter");
+        C12238m.checkNotNullParameter(stickyHeaderAdapter, "adapter");
         this.adapter = stickyHeaderAdapter;
     }
 
@@ -78,7 +78,7 @@ public final class StickyHeaderItemDecoration extends RecyclerView.ItemDecoratio
         int childCount = parent.getChildCount();
         for (int i = 0; i < childCount; i++) {
             View childAt = parent.getChildAt(i);
-            Intrinsics3.checkNotNullExpressionValue(childAt, "child");
+            C12238m.checkNotNullExpressionValue(childAt, "child");
             int top = childAt.getTop();
             int bottom = childAt.getBottom();
             if (top <= contactPoint && bottom > contactPoint) {
@@ -94,14 +94,14 @@ public final class StickyHeaderItemDecoration extends RecyclerView.ItemDecoratio
     }
 
     public final void blockClicks(RecyclerView parent) {
-        Intrinsics3.checkNotNullParameter(parent, "parent");
+        C12238m.checkNotNullParameter(parent, "parent");
         parent.addOnItemTouchListener(new RecyclerView.SimpleOnItemTouchListener() { // from class: com.discord.utilities.views.StickyHeaderItemDecoration.blockClicks.1
             /* JADX WARN: Code duplicated, block: B:17:0x005f  */
             @Override // androidx.recyclerview.widget.RecyclerView.SimpleOnItemTouchListener, androidx.recyclerview.widget.RecyclerView.OnItemTouchListener
             public boolean onInterceptTouchEvent(RecyclerView recyclerView, MotionEvent event) {
                 boolean z2;
-                Intrinsics3.checkNotNullParameter(recyclerView, "recyclerView");
-                Intrinsics3.checkNotNullParameter(event, "event");
+                C12238m.checkNotNullParameter(recyclerView, "recyclerView");
+                C12238m.checkNotNullParameter(event, "event");
                 int action = event.getAction();
                 if (action == 0) {
                     StickyHeaderItemDecoration.this.actionDownRawX = Float.valueOf(event.getRawX());
@@ -114,7 +114,7 @@ public final class StickyHeaderItemDecoration extends RecyclerView.ItemDecoratio
                     } else {
                         float fAbs = Math.abs(event.getRawX() - f.floatValue());
                         float fAbs2 = Math.abs(event.getRawY() - f2.floatValue());
-                        float dimensionPixelSize = recyclerView.getResources().getDimensionPixelSize(R.dimen.default_scroll_slop);
+                        float dimensionPixelSize = recyclerView.getResources().getDimensionPixelSize(C5419R.dimen.default_scroll_slop);
                         if (fAbs >= dimensionPixelSize || fAbs2 >= dimensionPixelSize) {
                             z2 = false;
                         } else {
@@ -137,9 +137,9 @@ public final class StickyHeaderItemDecoration extends RecyclerView.ItemDecoratio
     public void onDrawOver(Canvas canvas, RecyclerView parent, RecyclerView.State state) {
         int childAdapterPosition;
         int childAdapterPosition2;
-        Intrinsics3.checkNotNullParameter(canvas, "canvas");
-        Intrinsics3.checkNotNullParameter(parent, "parent");
-        Intrinsics3.checkNotNullParameter(state, "state");
+        C12238m.checkNotNullParameter(canvas, "canvas");
+        C12238m.checkNotNullParameter(parent, "parent");
+        C12238m.checkNotNullParameter(state, "state");
         super.onDrawOver(canvas, parent, state);
         View childAt = parent.getChildAt(0);
         if (childAt == null || (childAdapterPosition = parent.getChildAdapterPosition(childAt)) == -1) {

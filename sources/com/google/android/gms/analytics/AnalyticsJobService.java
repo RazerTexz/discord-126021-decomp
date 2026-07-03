@@ -5,84 +5,95 @@ import android.app.job.JobParameters;
 import android.app.job.JobService;
 import android.content.Intent;
 import androidx.annotation.RequiresPermission;
-import b.i.a.f.h.j.g;
-import b.i.a.f.h.j.m0;
-import b.i.a.f.h.j.t0;
-import b.i.a.f.h.j.x0;
 import java.util.Objects;
+import p007b.p225i.p226a.p288f.p313h.p323j.C3515g;
+import p007b.p225i.p226a.p288f.p313h.p323j.C3529m0;
+import p007b.p225i.p226a.p288f.p313h.p323j.C3543t0;
+import p007b.p225i.p226a.p288f.p313h.p323j.InterfaceC3551x0;
 
 /* JADX INFO: loaded from: classes3.dex */
 @TargetApi(24)
-public final class AnalyticsJobService extends JobService implements x0 {
-    public t0<AnalyticsJobService> j;
+public final class AnalyticsJobService extends JobService implements InterfaceC3551x0 {
 
-    @Override // b.i.a.f.h.j.x0
+    /* JADX INFO: renamed from: j */
+    public C3543t0<AnalyticsJobService> f20386j;
+
+    @Override // p007b.p225i.p226a.p288f.p313h.p323j.InterfaceC3551x0
     @TargetApi(24)
-    public final void a(JobParameters jobParameters, boolean z2) {
+    /* JADX INFO: renamed from: a */
+    public final void mo4503a(JobParameters jobParameters, boolean z2) {
         jobFinished(jobParameters, false);
     }
 
-    @Override // b.i.a.f.h.j.x0
-    public final boolean b(int i) {
+    @Override // p007b.p225i.p226a.p288f.p313h.p323j.InterfaceC3551x0
+    /* JADX INFO: renamed from: b */
+    public final boolean mo4504b(int i) {
         return stopSelfResult(i);
     }
 
-    public final t0<AnalyticsJobService> c() {
-        if (this.j == null) {
-            this.j = new t0<>(this);
+    /* JADX INFO: renamed from: c */
+    public final C3543t0<AnalyticsJobService> m9007c() {
+        if (this.f20386j == null) {
+            this.f20386j = new C3543t0<>(this);
         }
-        return this.j;
+        return this.f20386j;
     }
 
     @Override // android.app.Service
     @RequiresPermission(allOf = {"android.permission.INTERNET", "android.permission.ACCESS_NETWORK_STATE"})
     public final void onCreate() {
         super.onCreate();
-        g.b(c().c).c().C("Local AnalyticsService is starting up");
+        C3515g.m4450b(m9007c().f9802c).m4451c().m4427C("Local AnalyticsService is starting up");
     }
 
     @Override // android.app.Service
     @RequiresPermission(allOf = {"android.permission.INTERNET", "android.permission.ACCESS_NETWORK_STATE"})
     public final void onDestroy() {
-        g.b(c().c).c().C("Local AnalyticsService is shutting down");
+        C3515g.m4450b(m9007c().f9802c).m4451c().m4427C("Local AnalyticsService is shutting down");
         super.onDestroy();
     }
 
     @Override // android.app.Service
     @RequiresPermission(allOf = {"android.permission.INTERNET", "android.permission.ACCESS_NETWORK_STATE"})
     public final int onStartCommand(Intent intent, int i, int i2) {
-        c().a(intent, i2);
+        m9007c().m4501a(intent, i2);
         return 2;
     }
 
     @Override // android.app.job.JobService
     public final boolean onStartJob(final JobParameters jobParameters) {
-        final t0<AnalyticsJobService> t0VarC = c();
-        final m0 m0VarC = g.b(t0VarC.c).c();
+        final C3543t0<AnalyticsJobService> c3543t0M9007c = m9007c();
+        final C3529m0 c3529m0M4451c = C3515g.m4450b(c3543t0M9007c.f9802c).m4451c();
         String string = jobParameters.getExtras().getString("action");
-        m0VarC.b("Local AnalyticsJobService called. action", string);
+        c3529m0M4451c.m4431b("Local AnalyticsJobService called. action", string);
         if (!"com.google.android.gms.analytics.ANALYTICS_DISPATCH".equals(string)) {
             return true;
         }
-        t0VarC.b(new Runnable(t0VarC, m0VarC, jobParameters) { // from class: b.i.a.f.h.j.v0
-            public final t0 j;
-            public final m0 k;
-            public final JobParameters l;
+        c3543t0M9007c.m4502b(new Runnable(c3543t0M9007c, c3529m0M4451c, jobParameters) { // from class: b.i.a.f.h.j.v0
+
+            /* JADX INFO: renamed from: j */
+            public final C3543t0 f9808j;
+
+            /* JADX INFO: renamed from: k */
+            public final C3529m0 f9809k;
+
+            /* JADX INFO: renamed from: l */
+            public final JobParameters f9810l;
 
             {
-                this.j = t0VarC;
-                this.k = m0VarC;
-                this.l = jobParameters;
+                this.f9808j = c3543t0M9007c;
+                this.f9809k = c3529m0M4451c;
+                this.f9810l = jobParameters;
             }
 
             @Override // java.lang.Runnable
             public final void run() {
-                t0 t0Var = this.j;
-                m0 m0Var = this.k;
-                JobParameters jobParameters2 = this.l;
-                Objects.requireNonNull(t0Var);
-                m0Var.C("AnalyticsJobService processed last dispatch request");
-                t0Var.c.a(jobParameters2, false);
+                C3543t0 c3543t0 = this.f9808j;
+                C3529m0 c3529m0 = this.f9809k;
+                JobParameters jobParameters2 = this.f9810l;
+                Objects.requireNonNull(c3543t0);
+                c3529m0.m4427C("AnalyticsJobService processed last dispatch request");
+                c3543t0.f9802c.mo4503a(jobParameters2, false);
             }
         });
         return true;

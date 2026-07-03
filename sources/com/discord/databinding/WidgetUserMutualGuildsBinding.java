@@ -9,21 +9,22 @@ import androidx.viewbinding.ViewBinding;
 /* JADX INFO: loaded from: classes.dex */
 public final class WidgetUserMutualGuildsBinding implements ViewBinding {
 
+    /* JADX INFO: renamed from: a */
     @NonNull
-    public final CoordinatorLayout a;
+    public final CoordinatorLayout f18342a;
 
-    /* JADX INFO: renamed from: b, reason: collision with root package name */
+    /* JADX INFO: renamed from: b */
     @NonNull
-    public final RecyclerView f2685b;
+    public final RecyclerView f18343b;
 
     public WidgetUserMutualGuildsBinding(@NonNull CoordinatorLayout coordinatorLayout, @NonNull RecyclerView recyclerView) {
-        this.a = coordinatorLayout;
-        this.f2685b = recyclerView;
+        this.f18342a = coordinatorLayout;
+        this.f18343b = recyclerView;
     }
 
     @Override // androidx.viewbinding.ViewBinding
     @NonNull
     public View getRoot() {
-        return this.a;
+        return this.f18342a;
     }
 }

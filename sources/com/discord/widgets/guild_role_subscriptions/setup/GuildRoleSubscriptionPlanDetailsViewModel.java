@@ -1,16 +1,16 @@
 package com.discord.widgets.guild_role_subscriptions.setup;
 
-import b.a.d.AppViewModel;
-import b.d.b.a.outline;
 import com.discord.api.guildrolesubscription.GuildRoleSubscriptionGroupListing;
 import com.discord.api.guildrolesubscription.ImageAsset;
 import com.discord.models.domain.ModelAuditLogEntry;
-import d0.z.d.Intrinsics3;
 import kotlin.jvm.internal.DefaultConstructorMarker;
+import p007b.p008a.p018d.AbstractC0859d0;
+import p007b.p100d.p104b.p105a.C1643a;
+import p507d0.p592z.p594d.C12238m;
 
 /* JADX INFO: compiled from: GuildRoleSubscriptionPlanDetailsViewModel.kt */
 /* JADX INFO: loaded from: classes2.dex */
-public final class GuildRoleSubscriptionPlanDetailsViewModel extends AppViewModel<ViewState> {
+public final class GuildRoleSubscriptionPlanDetailsViewModel extends AbstractC0859d0<ViewState> {
 
     /* JADX INFO: compiled from: GuildRoleSubscriptionPlanDetailsViewModel.kt */
     public static final /* data */ class ViewState {
@@ -91,7 +91,7 @@ public final class GuildRoleSubscriptionPlanDetailsViewModel extends AppViewMode
                 return false;
             }
             ViewState viewState = (ViewState) other;
-            return Intrinsics3.areEqual(this.coverImage, viewState.coverImage) && Intrinsics3.areEqual(this.applicationId, viewState.applicationId) && Intrinsics3.areEqual(this.coverImageAssetId, viewState.coverImageAssetId) && Intrinsics3.areEqual(this.description, viewState.description) && this.isFullServerGate == viewState.isFullServerGate;
+            return C12238m.areEqual(this.coverImage, viewState.coverImage) && C12238m.areEqual(this.applicationId, viewState.applicationId) && C12238m.areEqual(this.coverImageAssetId, viewState.coverImageAssetId) && C12238m.areEqual(this.description, viewState.description) && this.isFullServerGate == viewState.isFullServerGate;
         }
 
         public final Long getApplicationId() {
@@ -137,16 +137,16 @@ public final class GuildRoleSubscriptionPlanDetailsViewModel extends AppViewMode
         }
 
         public String toString() {
-            StringBuilder sbU = outline.U("ViewState(coverImage=");
-            sbU.append(this.coverImage);
-            sbU.append(", applicationId=");
-            sbU.append(this.applicationId);
-            sbU.append(", coverImageAssetId=");
-            sbU.append(this.coverImageAssetId);
-            sbU.append(", description=");
-            sbU.append(this.description);
-            sbU.append(", isFullServerGate=");
-            return outline.O(sbU, this.isFullServerGate, ")");
+            StringBuilder sbM833U = C1643a.m833U("ViewState(coverImage=");
+            sbM833U.append(this.coverImage);
+            sbM833U.append(", applicationId=");
+            sbM833U.append(this.applicationId);
+            sbM833U.append(", coverImageAssetId=");
+            sbM833U.append(this.coverImageAssetId);
+            sbM833U.append(", description=");
+            sbM833U.append(this.description);
+            sbM833U.append(", isFullServerGate=");
+            return C1643a.m827O(sbM833U, this.isFullServerGate, ")");
         }
 
         public /* synthetic */ ViewState(String str, Long l, Long l2, String str2, boolean z2, int i, DefaultConstructorMarker defaultConstructorMarker) {
@@ -159,7 +159,7 @@ public final class GuildRoleSubscriptionPlanDetailsViewModel extends AppViewMode
     }
 
     public final void setGroupPlanDetails(GuildRoleSubscriptionGroupListing subscriptionGroupListing, Boolean fullServerGatingOverwrite) {
-        Intrinsics3.checkNotNullParameter(subscriptionGroupListing, "subscriptionGroupListing");
+        C12238m.checkNotNullParameter(subscriptionGroupListing, "subscriptionGroupListing");
         Long lValueOf = Long.valueOf(subscriptionGroupListing.getApplicationId());
         ImageAsset imageAsset = subscriptionGroupListing.getImageAsset();
         updateViewState(new ViewState(null, lValueOf, imageAsset != null ? Long.valueOf(imageAsset.getId()) : null, subscriptionGroupListing.getDescription(), fullServerGatingOverwrite != null ? fullServerGatingOverwrite.booleanValue() : subscriptionGroupListing.getFullServerGate(), 1, null));

@@ -1,14 +1,14 @@
 package com.discord.api.user;
 
-import b.d.b.a.outline;
 import com.discord.api.application.ProfileApplication;
 import com.discord.api.connectedaccounts.ConnectedAccount;
 import com.discord.api.guildmember.GuildMember;
 import com.discord.models.domain.ModelAuditLogEntry;
-import d0.t.Collections2;
-import d0.z.d.Intrinsics3;
 import java.util.List;
 import org.objectweb.asm.Opcodes;
+import p007b.p100d.p104b.p105a.C1643a;
+import p507d0.p580t.C12147n;
+import p507d0.p592z.p594d.C12238m;
 
 /* JADX INFO: compiled from: UserProfile.kt */
 /* JADX INFO: loaded from: classes.dex */
@@ -44,7 +44,7 @@ public final /* data */ class UserProfile {
                 return false;
             }
             GuildReference guildReference = (GuildReference) other;
-            return this.id == guildReference.id && Intrinsics3.areEqual(this.nick, guildReference.nick);
+            return this.id == guildReference.id && C12238m.areEqual(this.nick, guildReference.nick);
         }
 
         public int hashCode() {
@@ -55,10 +55,10 @@ public final /* data */ class UserProfile {
         }
 
         public String toString() {
-            StringBuilder sbU = outline.U("GuildReference(id=");
-            sbU.append(this.id);
-            sbU.append(", nick=");
-            return outline.J(sbU, this.nick, ")");
+            StringBuilder sbM833U = C1643a.m833U("GuildReference(id=");
+            sbM833U.append(this.id);
+            sbM833U.append(", nick=");
+            return C1643a.m822J(sbM833U, this.nick, ")");
         }
     }
 
@@ -67,9 +67,9 @@ public final /* data */ class UserProfile {
     }
 
     public UserProfile(List<ConnectedAccount> list, List<GuildReference> list2, User user, String str, String str2, GuildMember guildMember, ProfileApplication profileApplication) {
-        Intrinsics3.checkNotNullParameter(list, "connectedAccounts");
-        Intrinsics3.checkNotNullParameter(list2, "mutualGuilds");
-        Intrinsics3.checkNotNullParameter(user, "user");
+        C12238m.checkNotNullParameter(list, "connectedAccounts");
+        C12238m.checkNotNullParameter(list2, "mutualGuilds");
+        C12238m.checkNotNullParameter(user, "user");
         this.connectedAccounts = list;
         this.mutualGuilds = list2;
         this.user = user;
@@ -84,7 +84,8 @@ public final /* data */ class UserProfile {
         return this.application;
     }
 
-    public final List<ConnectedAccount> b() {
+    /* JADX INFO: renamed from: b */
+    public final List<ConnectedAccount> m8306b() {
         return this.connectedAccounts;
     }
 
@@ -93,7 +94,8 @@ public final /* data */ class UserProfile {
         return this.guildMember;
     }
 
-    public final List<GuildReference> d() {
+    /* JADX INFO: renamed from: d */
+    public final List<GuildReference> m8308d() {
         return this.mutualGuilds;
     }
 
@@ -110,7 +112,7 @@ public final /* data */ class UserProfile {
             return false;
         }
         UserProfile userProfile = (UserProfile) other;
-        return Intrinsics3.areEqual(this.connectedAccounts, userProfile.connectedAccounts) && Intrinsics3.areEqual(this.mutualGuilds, userProfile.mutualGuilds) && Intrinsics3.areEqual(this.user, userProfile.user) && Intrinsics3.areEqual(this.premiumSince, userProfile.premiumSince) && Intrinsics3.areEqual(this.premiumGuildSince, userProfile.premiumGuildSince) && Intrinsics3.areEqual(this.guildMember, userProfile.guildMember) && Intrinsics3.areEqual(this.application, userProfile.application);
+        return C12238m.areEqual(this.connectedAccounts, userProfile.connectedAccounts) && C12238m.areEqual(this.mutualGuilds, userProfile.mutualGuilds) && C12238m.areEqual(this.user, userProfile.user) && C12238m.areEqual(this.premiumSince, userProfile.premiumSince) && C12238m.areEqual(this.premiumGuildSince, userProfile.premiumGuildSince) && C12238m.areEqual(this.guildMember, userProfile.guildMember) && C12238m.areEqual(this.application, userProfile.application);
     }
 
     /* JADX INFO: renamed from: f, reason: from getter */
@@ -141,27 +143,27 @@ public final /* data */ class UserProfile {
     }
 
     public String toString() {
-        StringBuilder sbU = outline.U("UserProfile(connectedAccounts=");
-        sbU.append(this.connectedAccounts);
-        sbU.append(", mutualGuilds=");
-        sbU.append(this.mutualGuilds);
-        sbU.append(", user=");
-        sbU.append(this.user);
-        sbU.append(", premiumSince=");
-        sbU.append(this.premiumSince);
-        sbU.append(", premiumGuildSince=");
-        sbU.append(this.premiumGuildSince);
-        sbU.append(", guildMember=");
-        sbU.append(this.guildMember);
-        sbU.append(", application=");
-        sbU.append(this.application);
-        sbU.append(")");
-        return sbU.toString();
+        StringBuilder sbM833U = C1643a.m833U("UserProfile(connectedAccounts=");
+        sbM833U.append(this.connectedAccounts);
+        sbM833U.append(", mutualGuilds=");
+        sbM833U.append(this.mutualGuilds);
+        sbM833U.append(", user=");
+        sbM833U.append(this.user);
+        sbM833U.append(", premiumSince=");
+        sbM833U.append(this.premiumSince);
+        sbM833U.append(", premiumGuildSince=");
+        sbM833U.append(this.premiumGuildSince);
+        sbM833U.append(", guildMember=");
+        sbM833U.append(this.guildMember);
+        sbM833U.append(", application=");
+        sbM833U.append(this.application);
+        sbM833U.append(")");
+        return sbM833U.toString();
     }
 
     /* JADX WARN: 'this' call moved to the top of the method (can break code semantics) */
     public /* synthetic */ UserProfile(List list, List list2, User user, String str, String str2, GuildMember guildMember, ProfileApplication profileApplication, int i) {
-        this((i & 1) != 0 ? Collections2.emptyList() : null, (i & 2) != 0 ? Collections2.emptyList() : null, (i & 4) != 0 ? new User(0L, "", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 4194300) : null, null, null, null, null);
+        this((i & 1) != 0 ? C12147n.emptyList() : null, (i & 2) != 0 ? C12147n.emptyList() : null, (i & 4) != 0 ? new User(0L, "", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 4194300) : null, null, null, null, null);
         int i2 = i & 8;
         int i3 = i & 16;
         int i4 = i & 32;

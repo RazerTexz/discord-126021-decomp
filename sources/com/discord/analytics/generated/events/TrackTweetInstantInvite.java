@@ -1,14 +1,14 @@
 package com.discord.analytics.generated.events;
 
-import b.d.b.a.outline;
 import com.discord.analytics.generated.traits.TrackBase;
-import com.discord.analytics.generated.traits.TrackBase2;
+import com.discord.analytics.generated.traits.TrackBaseReceiver;
 import com.discord.api.science.AnalyticsSchema;
-import d0.z.d.Intrinsics3;
+import p007b.p100d.p104b.p105a.C1643a;
+import p507d0.p592z.p594d.C12238m;
 
 /* JADX INFO: compiled from: TrackTweetInstantInvite.kt */
 /* JADX INFO: loaded from: classes.dex */
-public final /* data */ class TrackTweetInstantInvite implements AnalyticsSchema, TrackBase2 {
+public final /* data */ class TrackTweetInstantInvite implements AnalyticsSchema, TrackBaseReceiver {
     private TrackBase trackBase;
     private final Long channel = null;
     private final Long server = null;
@@ -28,7 +28,7 @@ public final /* data */ class TrackTweetInstantInvite implements AnalyticsSchema
             return false;
         }
         TrackTweetInstantInvite trackTweetInstantInvite = (TrackTweetInstantInvite) other;
-        return Intrinsics3.areEqual(this.channel, trackTweetInstantInvite.channel) && Intrinsics3.areEqual(this.server, trackTweetInstantInvite.server);
+        return C12238m.areEqual(this.channel, trackTweetInstantInvite.channel) && C12238m.areEqual(this.server, trackTweetInstantInvite.server);
     }
 
     public int hashCode() {
@@ -39,9 +39,9 @@ public final /* data */ class TrackTweetInstantInvite implements AnalyticsSchema
     }
 
     public String toString() {
-        StringBuilder sbU = outline.U("TrackTweetInstantInvite(channel=");
-        sbU.append(this.channel);
-        sbU.append(", server=");
-        return outline.G(sbU, this.server, ")");
+        StringBuilder sbM833U = C1643a.m833U("TrackTweetInstantInvite(channel=");
+        sbM833U.append(this.channel);
+        sbM833U.append(", server=");
+        return C1643a.m819G(sbM833U, this.server, ")");
     }
 }

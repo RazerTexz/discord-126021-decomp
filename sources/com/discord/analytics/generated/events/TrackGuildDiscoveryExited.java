@@ -1,17 +1,17 @@
 package com.discord.analytics.generated.events;
 
-import b.d.b.a.outline;
 import com.discord.analytics.generated.traits.TrackBase;
-import com.discord.analytics.generated.traits.TrackBase2;
+import com.discord.analytics.generated.traits.TrackBaseReceiver;
 import com.discord.analytics.generated.traits.TrackLocationMetadata;
-import com.discord.analytics.generated.traits.TrackLocationMetadata2;
+import com.discord.analytics.generated.traits.TrackLocationMetadataReceiver;
 import com.discord.api.science.AnalyticsSchema;
-import d0.z.d.Intrinsics3;
 import java.util.List;
+import p007b.p100d.p104b.p105a.C1643a;
+import p507d0.p592z.p594d.C12238m;
 
 /* JADX INFO: compiled from: TrackGuildDiscoveryExited.kt */
 /* JADX INFO: loaded from: classes.dex */
-public final /* data */ class TrackGuildDiscoveryExited implements AnalyticsSchema, TrackBase2, TrackLocationMetadata2 {
+public final /* data */ class TrackGuildDiscoveryExited implements AnalyticsSchema, TrackBaseReceiver, TrackLocationMetadataReceiver {
     private TrackBase trackBase;
     private TrackLocationMetadata trackLocationMetadata;
     private final CharSequence loadId = null;
@@ -33,7 +33,7 @@ public final /* data */ class TrackGuildDiscoveryExited implements AnalyticsSche
             return false;
         }
         TrackGuildDiscoveryExited trackGuildDiscoveryExited = (TrackGuildDiscoveryExited) other;
-        return Intrinsics3.areEqual(this.loadId, trackGuildDiscoveryExited.loadId) && Intrinsics3.areEqual(this.guildIdsViewed, trackGuildDiscoveryExited.guildIdsViewed) && Intrinsics3.areEqual(this.recommendationsSource, trackGuildDiscoveryExited.recommendationsSource);
+        return C12238m.areEqual(this.loadId, trackGuildDiscoveryExited.loadId) && C12238m.areEqual(this.guildIdsViewed, trackGuildDiscoveryExited.guildIdsViewed) && C12238m.areEqual(this.recommendationsSource, trackGuildDiscoveryExited.recommendationsSource);
     }
 
     public int hashCode() {
@@ -46,11 +46,11 @@ public final /* data */ class TrackGuildDiscoveryExited implements AnalyticsSche
     }
 
     public String toString() {
-        StringBuilder sbU = outline.U("TrackGuildDiscoveryExited(loadId=");
-        sbU.append(this.loadId);
-        sbU.append(", guildIdsViewed=");
-        sbU.append(this.guildIdsViewed);
-        sbU.append(", recommendationsSource=");
-        return outline.E(sbU, this.recommendationsSource, ")");
+        StringBuilder sbM833U = C1643a.m833U("TrackGuildDiscoveryExited(loadId=");
+        sbM833U.append(this.loadId);
+        sbM833U.append(", guildIdsViewed=");
+        sbM833U.append(this.guildIdsViewed);
+        sbM833U.append(", recommendationsSource=");
+        return C1643a.m817E(sbM833U, this.recommendationsSource, ")");
     }
 }

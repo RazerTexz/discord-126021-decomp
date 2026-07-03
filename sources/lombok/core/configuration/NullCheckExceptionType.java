@@ -62,8 +62,8 @@ public enum NullCheckExceptionType {
         }
     };
 
-    private static final LombokImmutableList<String> METHOD_JDK = LombokImmutableList.of("java", "util", "Objects", "requireNonNull");
-    private static final LombokImmutableList<String> METHOD_GUAVA = LombokImmutableList.of("com", "google", "common", "base", "Preconditions", "checkNotNull", new String[0]);
+    private static final LombokImmutableList<String> METHOD_JDK = LombokImmutableList.m10922of("java", "util", "Objects", "requireNonNull");
+    private static final LombokImmutableList<String> METHOD_GUAVA = LombokImmutableList.m10924of("com", "google", "common", "base", "Preconditions", "checkNotNull", new String[0]);
 
     public abstract String getExceptionType();
 

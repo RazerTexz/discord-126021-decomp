@@ -12,29 +12,32 @@ import com.google.android.material.textfield.TextInputLayout;
 /* JADX INFO: loaded from: classes.dex */
 public final class WidgetHubWaitlistBinding implements ViewBinding {
 
+    /* JADX INFO: renamed from: a */
     @NonNull
-    public final LinearLayout a;
+    public final LinearLayout f17188a;
 
-    /* JADX INFO: renamed from: b, reason: collision with root package name */
+    /* JADX INFO: renamed from: b */
     @NonNull
-    public final LoadingButton f2478b;
+    public final LoadingButton f17189b;
 
+    /* JADX INFO: renamed from: c */
     @NonNull
-    public final TextInputEditText c;
+    public final TextInputEditText f17190c;
 
+    /* JADX INFO: renamed from: d */
     @NonNull
-    public final TextInputLayout d;
+    public final TextInputLayout f17191d;
 
     public WidgetHubWaitlistBinding(@NonNull LinearLayout linearLayout, @NonNull LoadingButton loadingButton, @NonNull TextInputEditText textInputEditText, @NonNull ScreenTitleView screenTitleView, @NonNull TextInputLayout textInputLayout) {
-        this.a = linearLayout;
-        this.f2478b = loadingButton;
-        this.c = textInputEditText;
-        this.d = textInputLayout;
+        this.f17188a = linearLayout;
+        this.f17189b = loadingButton;
+        this.f17190c = textInputEditText;
+        this.f17191d = textInputLayout;
     }
 
     @Override // androidx.viewbinding.ViewBinding
     @NonNull
     public View getRoot() {
-        return this.a;
+        return this.f17188a;
     }
 }

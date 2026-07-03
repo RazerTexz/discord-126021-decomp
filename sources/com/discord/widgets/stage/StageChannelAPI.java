@@ -7,8 +7,8 @@ import com.discord.models.domain.ModelAuditLogEntry;
 import com.discord.restapi.RestAPIParams;
 import com.discord.stores.StoreStream;
 import com.discord.utilities.rest.RestAPI;
-import d0.z.d.Intrinsics3;
-import rx.Observable;
+import p507d0.p592z.p594d.C12238m;
+import p658rx.Observable;
 
 /* JADX INFO: compiled from: StageChannelAPI.kt */
 /* JADX INFO: loaded from: classes2.dex */
@@ -51,13 +51,13 @@ public final class StageChannelAPI {
     }
 
     public final Observable<Void> setUserSuppressedInChannel(Channel channel, long userId, boolean isSuppressed, long meId) {
-        Intrinsics3.checkNotNullParameter(channel, "channel");
+        C12238m.checkNotNullParameter(channel, "channel");
         return userId == meId ? RestAPI.INSTANCE.getApiSerializeNulls().setMeSuppressed(channel, isSuppressed) : RestAPI.INSTANCE.getApi().setUserSuppressed(channel, userId, isSuppressed);
     }
 
     public final Observable<StageInstance> startStageInstance(long channelId, String topic, StageInstancePrivacyLevel privacyLevel, boolean sendStartNotification, String guildScheduledEventId) {
-        Intrinsics3.checkNotNullParameter(topic, ModelAuditLogEntry.CHANGE_KEY_TOPIC);
-        Intrinsics3.checkNotNullParameter(privacyLevel, "privacyLevel");
+        C12238m.checkNotNullParameter(topic, ModelAuditLogEntry.CHANGE_KEY_TOPIC);
+        C12238m.checkNotNullParameter(privacyLevel, "privacyLevel");
         return RestAPI.INSTANCE.getApi().startStageInstance(new RestAPIParams.StartStageInstanceBody(channelId, topic, privacyLevel, sendStartNotification, guildScheduledEventId));
     }
 
@@ -66,7 +66,7 @@ public final class StageChannelAPI {
     }
 
     public final Observable<Void> ackInvitationToSpeak(Channel channel, boolean accept) {
-        Intrinsics3.checkNotNullParameter(channel, "channel");
+        C12238m.checkNotNullParameter(channel, "channel");
         return setUserSuppressedInChannel$default(this, channel, StoreStream.INSTANCE.getUsers().getMeSnapshot().getId(), !accept, 0L, 8, null);
     }
 }

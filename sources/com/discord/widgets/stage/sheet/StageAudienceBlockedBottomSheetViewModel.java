@@ -1,8 +1,5 @@
 package com.discord.widgets.stage.sheet;
 
-import a0.a.a.b;
-import b.a.d.AppViewModel;
-import b.d.b.a.outline;
 import com.discord.api.channel.Channel;
 import com.discord.stores.StoreStageChannels;
 import com.discord.stores.StoreStream;
@@ -10,14 +7,11 @@ import com.discord.stores.StoreUserRelationships;
 import com.discord.stores.StoreVoiceParticipants;
 import com.discord.utilities.error.Error;
 import com.discord.utilities.mg_recycler.MGRecyclerDataPayload;
-import com.discord.utilities.rx.ObservableExtensionsKt;
+import com.discord.utilities.p501rx.ObservableExtensionsKt;
 import com.discord.widgets.stage.StageRoles;
 import com.discord.widgets.stage.sheet.StageAudienceBlockedBottomSheetAdapter;
 import com.discord.widgets.stage.sheet.StageAudienceBlockedBottomSheetViewModel;
 import com.discord.widgets.voice.model.CallModel;
-import d0.t.Maps6;
-import d0.z.d.FunctionReferenceImpl;
-import d0.z.d.Intrinsics3;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.LinkedHashMap;
@@ -28,34 +22,40 @@ import kotlin.Unit;
 import kotlin.jvm.functions.Function0;
 import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.DefaultConstructorMarker;
-import rx.Observable;
-import rx.Subscription;
-import rx.functions.Func3;
+import p001a0.p002a.p003a.C0002b;
+import p007b.p008a.p018d.AbstractC0859d0;
+import p007b.p100d.p104b.p105a.C1643a;
+import p507d0.p580t.C12136h0;
+import p507d0.p592z.p594d.C12236k;
+import p507d0.p592z.p594d.C12238m;
+import p658rx.Observable;
+import p658rx.Subscription;
+import p658rx.functions.Func3;
 
 /* JADX INFO: compiled from: StageAudienceBlockedBottomSheetViewModel.kt */
 /* JADX INFO: loaded from: classes2.dex */
-public final class StageAudienceBlockedBottomSheetViewModel extends AppViewModel<ViewState> {
+public final class StageAudienceBlockedBottomSheetViewModel extends AbstractC0859d0<ViewState> {
 
     /* JADX INFO: renamed from: Companion, reason: from kotlin metadata */
     public static final Companion INSTANCE = new Companion(null);
     private final long channelId;
 
-    /* JADX INFO: renamed from: com.discord.widgets.stage.sheet.StageAudienceBlockedBottomSheetViewModel$1, reason: invalid class name */
+    /* JADX INFO: renamed from: com.discord.widgets.stage.sheet.StageAudienceBlockedBottomSheetViewModel$1 */
     /* JADX INFO: compiled from: StageAudienceBlockedBottomSheetViewModel.kt */
-    public static final /* synthetic */ class AnonymousClass1 extends FunctionReferenceImpl implements Function1<StoreState, Unit> {
-        public AnonymousClass1(StageAudienceBlockedBottomSheetViewModel stageAudienceBlockedBottomSheetViewModel) {
+    public static final /* synthetic */ class C100161 extends C12236k implements Function1<StoreState, Unit> {
+        public C100161(StageAudienceBlockedBottomSheetViewModel stageAudienceBlockedBottomSheetViewModel) {
             super(1, stageAudienceBlockedBottomSheetViewModel, StageAudienceBlockedBottomSheetViewModel.class, "handleStoreState", "handleStoreState(Lcom/discord/widgets/stage/sheet/StageAudienceBlockedBottomSheetViewModel$StoreState;)V", 0);
         }
 
         @Override // kotlin.jvm.functions.Function1
         public /* bridge */ /* synthetic */ Unit invoke(StoreState storeState) {
             invoke2(storeState);
-            return Unit.a;
+            return Unit.f27425a;
         }
 
         /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
         public final void invoke2(StoreState storeState) {
-            Intrinsics3.checkNotNullParameter(storeState, "p1");
+            C12238m.checkNotNullParameter(storeState, "p1");
             ((StageAudienceBlockedBottomSheetViewModel) this.receiver).handleStoreState(storeState);
         }
     }
@@ -66,8 +66,8 @@ public final class StageAudienceBlockedBottomSheetViewModel extends AppViewModel
         }
 
         private final Observable<StoreState> observeStores(final long channelId, StoreUserRelationships userRelationshipsStore, StoreStageChannels stageStore) {
-            Observable<StoreState> observableI = Observable.i(CallModel.INSTANCE.get(channelId), userRelationshipsStore.observeForType(2), stageStore.observeStageRolesByChannel(channelId), new Func3<CallModel, Map<Long, ? extends Integer>, Map<Long, ? extends StageRoles>, StoreState>() { // from class: com.discord.widgets.stage.sheet.StageAudienceBlockedBottomSheetViewModel$Companion$observeStores$1
-                @Override // rx.functions.Func3
+            Observable<StoreState> observableM11075i = Observable.m11075i(CallModel.INSTANCE.get(channelId), userRelationshipsStore.observeForType(2), stageStore.observeStageRolesByChannel(channelId), new Func3<CallModel, Map<Long, ? extends Integer>, Map<Long, ? extends StageRoles>, StoreState>() { // from class: com.discord.widgets.stage.sheet.StageAudienceBlockedBottomSheetViewModel$Companion$observeStores$1
+                @Override // p658rx.functions.Func3
                 public /* bridge */ /* synthetic */ StageAudienceBlockedBottomSheetViewModel.StoreState call(CallModel callModel, Map<Long, ? extends Integer> map, Map<Long, ? extends StageRoles> map2) {
                     return call2(callModel, (Map<Long, Integer>) map, (Map<Long, StageRoles>) map2);
                 }
@@ -77,13 +77,13 @@ public final class StageAudienceBlockedBottomSheetViewModel extends AppViewModel
                     long j = channelId;
                     Set<Long> setKeySet = map.keySet();
                     if (map2 == null) {
-                        map2 = Maps6.emptyMap();
+                        map2 = C12136h0.emptyMap();
                     }
                     return new StageAudienceBlockedBottomSheetViewModel.StoreState(j, callModel, setKeySet, map2);
                 }
             });
-            Intrinsics3.checkNotNullExpressionValue(observableI, "Observable.combineLatest… emptyMap()\n      )\n    }");
-            return observableI;
+            C12238m.checkNotNullExpressionValue(observableM11075i, "Observable.combineLatest… emptyMap()\n      )\n    }");
+            return observableM11075i;
         }
 
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
@@ -99,8 +99,8 @@ public final class StageAudienceBlockedBottomSheetViewModel extends AppViewModel
         private final Map<Long, StageRoles> stageRoles;
 
         public StoreState(long j, CallModel callModel, Set<Long> set, Map<Long, StageRoles> map) {
-            Intrinsics3.checkNotNullParameter(set, "blockedUsers");
-            Intrinsics3.checkNotNullParameter(map, "stageRoles");
+            C12238m.checkNotNullParameter(set, "blockedUsers");
+            C12238m.checkNotNullParameter(map, "stageRoles");
             this.channelId = j;
             this.callModel = callModel;
             this.blockedUsers = set;
@@ -146,8 +146,8 @@ public final class StageAudienceBlockedBottomSheetViewModel extends AppViewModel
         }
 
         public final StoreState copy(long channelId, CallModel callModel, Set<Long> blockedUsers, Map<Long, StageRoles> stageRoles) {
-            Intrinsics3.checkNotNullParameter(blockedUsers, "blockedUsers");
-            Intrinsics3.checkNotNullParameter(stageRoles, "stageRoles");
+            C12238m.checkNotNullParameter(blockedUsers, "blockedUsers");
+            C12238m.checkNotNullParameter(stageRoles, "stageRoles");
             return new StoreState(channelId, callModel, blockedUsers, stageRoles);
         }
 
@@ -159,7 +159,7 @@ public final class StageAudienceBlockedBottomSheetViewModel extends AppViewModel
                 return false;
             }
             StoreState storeState = (StoreState) other;
-            return this.channelId == storeState.channelId && Intrinsics3.areEqual(this.callModel, storeState.callModel) && Intrinsics3.areEqual(this.blockedUsers, storeState.blockedUsers) && Intrinsics3.areEqual(this.stageRoles, storeState.stageRoles);
+            return this.channelId == storeState.channelId && C12238m.areEqual(this.callModel, storeState.callModel) && C12238m.areEqual(this.blockedUsers, storeState.blockedUsers) && C12238m.areEqual(this.stageRoles, storeState.stageRoles);
         }
 
         public final Set<Long> getBlockedUsers() {
@@ -179,9 +179,9 @@ public final class StageAudienceBlockedBottomSheetViewModel extends AppViewModel
         }
 
         public int hashCode() {
-            int iA = b.a(this.channelId) * 31;
+            int iM3a = C0002b.m3a(this.channelId) * 31;
             CallModel callModel = this.callModel;
-            int iHashCode = (iA + (callModel != null ? callModel.hashCode() : 0)) * 31;
+            int iHashCode = (iM3a + (callModel != null ? callModel.hashCode() : 0)) * 31;
             Set<Long> set = this.blockedUsers;
             int iHashCode2 = (iHashCode + (set != null ? set.hashCode() : 0)) * 31;
             Map<Long, StageRoles> map = this.stageRoles;
@@ -189,14 +189,14 @@ public final class StageAudienceBlockedBottomSheetViewModel extends AppViewModel
         }
 
         public String toString() {
-            StringBuilder sbU = outline.U("StoreState(channelId=");
-            sbU.append(this.channelId);
-            sbU.append(", callModel=");
-            sbU.append(this.callModel);
-            sbU.append(", blockedUsers=");
-            sbU.append(this.blockedUsers);
-            sbU.append(", stageRoles=");
-            return outline.M(sbU, this.stageRoles, ")");
+            StringBuilder sbM833U = C1643a.m833U("StoreState(channelId=");
+            sbM833U.append(this.channelId);
+            sbM833U.append(", callModel=");
+            sbM833U.append(this.callModel);
+            sbM833U.append(", blockedUsers=");
+            sbM833U.append(this.blockedUsers);
+            sbM833U.append(", stageRoles=");
+            return C1643a.m825M(sbM833U, this.stageRoles, ")");
         }
     }
 
@@ -221,8 +221,8 @@ public final class StageAudienceBlockedBottomSheetViewModel extends AppViewModel
             /* JADX WARN: Multi-variable type inference failed */
             public Loaded(Channel channel, List<? extends MGRecyclerDataPayload> list) {
                 super(null);
-                Intrinsics3.checkNotNullParameter(channel, "channel");
-                Intrinsics3.checkNotNullParameter(list, "listItems");
+                C12238m.checkNotNullParameter(channel, "channel");
+                C12238m.checkNotNullParameter(list, "listItems");
                 this.channel = channel;
                 this.listItems = list;
             }
@@ -248,8 +248,8 @@ public final class StageAudienceBlockedBottomSheetViewModel extends AppViewModel
             }
 
             public final Loaded copy(Channel channel, List<? extends MGRecyclerDataPayload> listItems) {
-                Intrinsics3.checkNotNullParameter(channel, "channel");
-                Intrinsics3.checkNotNullParameter(listItems, "listItems");
+                C12238m.checkNotNullParameter(channel, "channel");
+                C12238m.checkNotNullParameter(listItems, "listItems");
                 return new Loaded(channel, listItems);
             }
 
@@ -261,7 +261,7 @@ public final class StageAudienceBlockedBottomSheetViewModel extends AppViewModel
                     return false;
                 }
                 Loaded loaded = (Loaded) other;
-                return Intrinsics3.areEqual(this.channel, loaded.channel) && Intrinsics3.areEqual(this.listItems, loaded.listItems);
+                return C12238m.areEqual(this.channel, loaded.channel) && C12238m.areEqual(this.listItems, loaded.listItems);
             }
 
             public final Channel getChannel() {
@@ -280,10 +280,10 @@ public final class StageAudienceBlockedBottomSheetViewModel extends AppViewModel
             }
 
             public String toString() {
-                StringBuilder sbU = outline.U("Loaded(channel=");
-                sbU.append(this.channel);
-                sbU.append(", listItems=");
-                return outline.L(sbU, this.listItems, ")");
+                StringBuilder sbM833U = C1643a.m833U("Loaded(channel=");
+                sbM833U.append(this.channel);
+                sbM833U.append(", listItems=");
+                return C1643a.m824L(sbM833U, this.listItems, ")");
             }
         }
 
@@ -331,7 +331,7 @@ public final class StageAudienceBlockedBottomSheetViewModel extends AppViewModel
                 long jLongValue2 = ((Number) entry.getKey()).longValue();
                 StoreVoiceParticipants.VoiceUser voiceUser = (StoreVoiceParticipants.VoiceUser) entry.getValue();
                 StageRoles stageRoles = storeState.getStageRoles().get(Long.valueOf(jLongValue2));
-                arrayList.add(new StageAudienceBlockedBottomSheetAdapter.ListItem.Participant(voiceUser, stageRoles != null && StageRoles.m33isSpeakerimpl(stageRoles.m35unboximpl())));
+                arrayList.add(new StageAudienceBlockedBottomSheetAdapter.ListItem.Participant(voiceUser, stageRoles != null && StageRoles.m11410isSpeakerimpl(stageRoles.m11412unboximpl())));
             }
             Channel channel = callModel.getChannel();
             ArrayList arrayList2 = new ArrayList();
@@ -347,8 +347,8 @@ public final class StageAudienceBlockedBottomSheetViewModel extends AppViewModel
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public StageAudienceBlockedBottomSheetViewModel(long j, Observable<StoreState> observable) {
         super(null, 1, null);
-        Intrinsics3.checkNotNullParameter(observable, "storeStateObservable");
+        C12238m.checkNotNullParameter(observable, "storeStateObservable");
         this.channelId = j;
-        ObservableExtensionsKt.appSubscribe(ObservableExtensionsKt.ui$default(ObservableExtensionsKt.computationLatest(observable), this, null, 2, null), (Class<?>) StageAudienceBlockedBottomSheetViewModel.class, (58 & 2) != 0 ? null : null, (Function1<? super Subscription, Unit>) ((58 & 4) != 0 ? null : null), (Function1<? super Error, Unit>) ((58 & 8) != 0 ? null : null), (Function0<Unit>) ((58 & 16) != 0 ? ObservableExtensionsKt.AnonymousClass1.INSTANCE : null), (Function0<Unit>) ((58 & 32) != 0 ? ObservableExtensionsKt.AnonymousClass2.INSTANCE : null), new AnonymousClass1(this));
+        ObservableExtensionsKt.appSubscribe(ObservableExtensionsKt.ui$default(ObservableExtensionsKt.computationLatest(observable), this, null, 2, null), (Class<?>) StageAudienceBlockedBottomSheetViewModel.class, (58 & 2) != 0 ? null : null, (Function1<? super Subscription, Unit>) ((58 & 4) != 0 ? null : null), (Function1<? super Error, Unit>) ((58 & 8) != 0 ? null : null), (Function0<Unit>) ((58 & 16) != 0 ? ObservableExtensionsKt.C68791.INSTANCE : null), (Function0<Unit>) ((58 & 32) != 0 ? ObservableExtensionsKt.C68802.INSTANCE : null), new C100161(this));
     }
 }

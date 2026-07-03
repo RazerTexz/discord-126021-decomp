@@ -1,9 +1,9 @@
 package com.discord.views;
 
 import android.widget.Checkable;
-import d0.z.d.Intrinsics3;
 import java.util.Iterator;
 import java.util.List;
+import p507d0.p592z.p594d.C12238m;
 
 /* JADX INFO: compiled from: RadioManager.kt */
 /* JADX INFO: loaded from: classes2.dex */
@@ -14,7 +14,7 @@ public final class RadioManager {
 
     /* JADX WARN: Multi-variable type inference failed */
     public RadioManager(List<? extends Checkable> list) {
-        Intrinsics3.checkNotNullParameter(list, "buttons");
+        C12238m.checkNotNullParameter(list, "buttons");
         this.buttons = list;
         boolean z2 = false;
         for (Checkable checkable : list) {
@@ -29,14 +29,16 @@ public final class RadioManager {
         this.buttons.get(0).setChecked(true);
     }
 
-    public final void a(Checkable targetButton) {
-        Intrinsics3.checkNotNullParameter(targetButton, "targetButton");
+    /* JADX INFO: renamed from: a */
+    public final void m8550a(Checkable targetButton) {
+        C12238m.checkNotNullParameter(targetButton, "targetButton");
         for (Checkable checkable : this.buttons) {
-            checkable.setChecked(Intrinsics3.areEqual(checkable, targetButton));
+            checkable.setChecked(C12238m.areEqual(checkable, targetButton));
         }
     }
 
-    public final int b() {
+    /* JADX INFO: renamed from: b */
+    public final int m8551b() {
         Iterator<Checkable> it = this.buttons.iterator();
         int i = 0;
         while (it.hasNext()) {

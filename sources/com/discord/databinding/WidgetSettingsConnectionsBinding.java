@@ -10,25 +10,27 @@ import androidx.viewbinding.ViewBinding;
 /* JADX INFO: loaded from: classes.dex */
 public final class WidgetSettingsConnectionsBinding implements ViewBinding {
 
+    /* JADX INFO: renamed from: a */
     @NonNull
-    public final CoordinatorLayout a;
+    public final CoordinatorLayout f17932a;
 
-    /* JADX INFO: renamed from: b, reason: collision with root package name */
+    /* JADX INFO: renamed from: b */
     @NonNull
-    public final TextView f2614b;
+    public final TextView f17933b;
 
+    /* JADX INFO: renamed from: c */
     @NonNull
-    public final RecyclerView c;
+    public final RecyclerView f17934c;
 
     public WidgetSettingsConnectionsBinding(@NonNull CoordinatorLayout coordinatorLayout, @NonNull TextView textView, @NonNull RecyclerView recyclerView) {
-        this.a = coordinatorLayout;
-        this.f2614b = textView;
-        this.c = recyclerView;
+        this.f17932a = coordinatorLayout;
+        this.f17933b = textView;
+        this.f17934c = recyclerView;
     }
 
     @Override // androidx.viewbinding.ViewBinding
     @NonNull
     public View getRoot() {
-        return this.a;
+        return this.f17932a;
     }
 }

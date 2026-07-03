@@ -13,9 +13,9 @@ import android.widget.FrameLayout;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.annotation.RequiresApi;
-import androidx.fragment.R;
-import b.d.b.a.outline;
+import androidx.fragment.C0344R;
 import java.util.ArrayList;
+import p007b.p100d.p104b.p105a.C1643a;
 
 /* JADX INFO: loaded from: classes.dex */
 public final class FragmentContainerView extends FrameLayout {
@@ -178,9 +178,9 @@ public final class FragmentContainerView extends FrameLayout {
         this.mDrawDisappearingViewsFirst = true;
         if (attributeSet != null) {
             String classAttribute = attributeSet.getClassAttribute();
-            TypedArray typedArrayObtainStyledAttributes = context.obtainStyledAttributes(attributeSet, R.styleable.FragmentContainerView);
+            TypedArray typedArrayObtainStyledAttributes = context.obtainStyledAttributes(attributeSet, C0344R.styleable.FragmentContainerView);
             if (classAttribute == null) {
-                classAttribute = typedArrayObtainStyledAttributes.getString(R.styleable.FragmentContainerView_android_name);
+                classAttribute = typedArrayObtainStyledAttributes.getString(C0344R.styleable.FragmentContainerView_android_name);
                 str = "android:name";
             } else {
                 str = "class";
@@ -197,9 +197,9 @@ public final class FragmentContainerView extends FrameLayout {
         super(context, attributeSet);
         this.mDrawDisappearingViewsFirst = true;
         String classAttribute = attributeSet.getClassAttribute();
-        TypedArray typedArrayObtainStyledAttributes = context.obtainStyledAttributes(attributeSet, R.styleable.FragmentContainerView);
-        classAttribute = classAttribute == null ? typedArrayObtainStyledAttributes.getString(R.styleable.FragmentContainerView_android_name) : classAttribute;
-        String string = typedArrayObtainStyledAttributes.getString(R.styleable.FragmentContainerView_android_tag);
+        TypedArray typedArrayObtainStyledAttributes = context.obtainStyledAttributes(attributeSet, C0344R.styleable.FragmentContainerView);
+        classAttribute = classAttribute == null ? typedArrayObtainStyledAttributes.getString(C0344R.styleable.FragmentContainerView_android_name) : classAttribute;
+        String string = typedArrayObtainStyledAttributes.getString(C0344R.styleable.FragmentContainerView_android_tag);
         typedArrayObtainStyledAttributes.recycle();
         int id2 = getId();
         Fragment fragmentFindFragmentById = fragmentManager.findFragmentById(id2);
@@ -207,7 +207,7 @@ public final class FragmentContainerView extends FrameLayout {
             return;
         }
         if (id2 <= 0) {
-            throw new IllegalStateException(outline.y("FragmentContainerView must have an android:id to add Fragment ", classAttribute, string != null ? outline.w(" with tag ", string) : ""));
+            throw new IllegalStateException(C1643a.m886y("FragmentContainerView must have an android:id to add Fragment ", classAttribute, string != null ? C1643a.m883w(" with tag ", string) : ""));
         }
         Fragment fragmentInstantiate = fragmentManager.getFragmentFactory().instantiate(context.getClassLoader(), classAttribute);
         fragmentInstantiate.onInflate(context, attributeSet, (Bundle) null);

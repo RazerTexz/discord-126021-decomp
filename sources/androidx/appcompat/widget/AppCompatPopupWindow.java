@@ -8,7 +8,7 @@ import androidx.annotation.AttrRes;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.annotation.StyleRes;
-import androidx.appcompat.R;
+import androidx.appcompat.C0051R;
 import androidx.core.widget.PopupWindowCompat;
 
 /* JADX INFO: loaded from: classes.dex */
@@ -22,12 +22,12 @@ public class AppCompatPopupWindow extends PopupWindow {
     }
 
     private void init(Context context, AttributeSet attributeSet, int i, int i2) {
-        TintTypedArray tintTypedArrayObtainStyledAttributes = TintTypedArray.obtainStyledAttributes(context, attributeSet, R.styleable.PopupWindow, i, i2);
-        int i3 = R.styleable.PopupWindow_overlapAnchor;
+        TintTypedArray tintTypedArrayObtainStyledAttributes = TintTypedArray.obtainStyledAttributes(context, attributeSet, C0051R.styleable.PopupWindow, i, i2);
+        int i3 = C0051R.styleable.PopupWindow_overlapAnchor;
         if (tintTypedArrayObtainStyledAttributes.hasValue(i3)) {
             setSupportOverlapAnchor(tintTypedArrayObtainStyledAttributes.getBoolean(i3, false));
         }
-        setBackgroundDrawable(tintTypedArrayObtainStyledAttributes.getDrawable(R.styleable.PopupWindow_android_popupBackground));
+        setBackgroundDrawable(tintTypedArrayObtainStyledAttributes.getDrawable(C0051R.styleable.PopupWindow_android_popupBackground));
         tintTypedArrayObtainStyledAttributes.recycle();
     }
 

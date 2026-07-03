@@ -13,7 +13,9 @@ public class ThreadUtils {
 
     /* JADX INFO: renamed from: org.webrtc.ThreadUtils$1CaughtException, reason: invalid class name */
     public class C1CaughtException {
-        public Exception e;
+
+        /* JADX INFO: renamed from: e */
+        public Exception f27618e;
     }
 
     /* JADX INFO: renamed from: org.webrtc.ThreadUtils$1Result, reason: invalid class name */
@@ -99,17 +101,17 @@ public class ThreadUtils {
                 try {
                     c1Result.value = callable.call();
                 } catch (Exception e2) {
-                    c1CaughtException.e = e2;
+                    c1CaughtException.f27618e = e2;
                 }
                 countDownLatch.countDown();
             }
         });
         awaitUninterruptibly(countDownLatch);
-        if (c1CaughtException.e == null) {
+        if (c1CaughtException.f27618e == null) {
             return c1Result.value;
         }
-        RuntimeException runtimeException = new RuntimeException(c1CaughtException.e);
-        runtimeException.setStackTrace(concatStackTraces(c1CaughtException.e.getStackTrace(), runtimeException.getStackTrace()));
+        RuntimeException runtimeException = new RuntimeException(c1CaughtException.f27618e);
+        runtimeException.setStackTrace(concatStackTraces(c1CaughtException.f27618e.getStackTrace(), runtimeException.getStackTrace()));
         throw runtimeException;
     }
 

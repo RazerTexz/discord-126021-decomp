@@ -1,11 +1,11 @@
 package com.discord.widgets.chat.list.entries;
 
-import a0.a.a.b;
-import b.d.b.a.outline;
 import com.discord.models.botuikit.MessageComponent;
 import com.discord.models.message.Message;
-import d0.z.d.Intrinsics3;
 import java.util.List;
+import p001a0.p002a.p003a.C0002b;
+import p007b.p100d.p104b.p105a.C1643a;
+import p507d0.p592z.p594d.C12238m;
 
 /* JADX INFO: compiled from: BotUiComponentEntry.kt */
 /* JADX INFO: loaded from: classes2.dex */
@@ -19,8 +19,8 @@ public final /* data */ class BotUiComponentEntry extends ChatListEntry {
 
     /* JADX WARN: Multi-variable type inference failed */
     public BotUiComponentEntry(Message message, long j, Long l, List<? extends MessageComponent> list) {
-        Intrinsics3.checkNotNullParameter(message, "message");
-        Intrinsics3.checkNotNullParameter(list, "messageComponents");
+        C12238m.checkNotNullParameter(message, "message");
+        C12238m.checkNotNullParameter(list, "messageComponents");
         this.message = message;
         this.applicationId = j;
         this.guildId = l;
@@ -73,8 +73,8 @@ public final /* data */ class BotUiComponentEntry extends ChatListEntry {
     }
 
     public final BotUiComponentEntry copy(Message message, long applicationId, Long guildId, List<? extends MessageComponent> messageComponents) {
-        Intrinsics3.checkNotNullParameter(message, "message");
-        Intrinsics3.checkNotNullParameter(messageComponents, "messageComponents");
+        C12238m.checkNotNullParameter(message, "message");
+        C12238m.checkNotNullParameter(messageComponents, "messageComponents");
         return new BotUiComponentEntry(message, applicationId, guildId, messageComponents);
     }
 
@@ -86,7 +86,7 @@ public final /* data */ class BotUiComponentEntry extends ChatListEntry {
             return false;
         }
         BotUiComponentEntry botUiComponentEntry = (BotUiComponentEntry) other;
-        return Intrinsics3.areEqual(this.message, botUiComponentEntry.message) && this.applicationId == botUiComponentEntry.applicationId && Intrinsics3.areEqual(this.guildId, botUiComponentEntry.guildId) && Intrinsics3.areEqual(this.messageComponents, botUiComponentEntry.messageComponents);
+        return C12238m.areEqual(this.message, botUiComponentEntry.message) && this.applicationId == botUiComponentEntry.applicationId && C12238m.areEqual(this.guildId, botUiComponentEntry.guildId) && C12238m.areEqual(this.messageComponents, botUiComponentEntry.messageComponents);
     }
 
     public final long getApplicationId() {
@@ -117,21 +117,21 @@ public final /* data */ class BotUiComponentEntry extends ChatListEntry {
 
     public int hashCode() {
         Message message = this.message;
-        int iA = (b.a(this.applicationId) + ((message != null ? message.hashCode() : 0) * 31)) * 31;
+        int iM3a = (C0002b.m3a(this.applicationId) + ((message != null ? message.hashCode() : 0) * 31)) * 31;
         Long l = this.guildId;
-        int iHashCode = (iA + (l != null ? l.hashCode() : 0)) * 31;
+        int iHashCode = (iM3a + (l != null ? l.hashCode() : 0)) * 31;
         List<MessageComponent> list = this.messageComponents;
         return iHashCode + (list != null ? list.hashCode() : 0);
     }
 
     public String toString() {
-        StringBuilder sbU = outline.U("BotUiComponentEntry(message=");
-        sbU.append(this.message);
-        sbU.append(", applicationId=");
-        sbU.append(this.applicationId);
-        sbU.append(", guildId=");
-        sbU.append(this.guildId);
-        sbU.append(", messageComponents=");
-        return outline.L(sbU, this.messageComponents, ")");
+        StringBuilder sbM833U = C1643a.m833U("BotUiComponentEntry(message=");
+        sbM833U.append(this.message);
+        sbM833U.append(", applicationId=");
+        sbM833U.append(this.applicationId);
+        sbM833U.append(", guildId=");
+        sbM833U.append(this.guildId);
+        sbM833U.append(", messageComponents=");
+        return C1643a.m824L(sbM833U, this.messageComponents, ")");
     }
 }

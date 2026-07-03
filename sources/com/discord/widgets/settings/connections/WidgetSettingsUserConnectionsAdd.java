@@ -12,8 +12,7 @@ import androidx.annotation.LayoutRes;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.recyclerview.widget.RecyclerView;
-import b.d.b.a.outline;
-import com.discord.R;
+import com.discord.C5419R;
 import com.discord.app.AppBottomSheet;
 import com.discord.databinding.WidgetSettingsConnectionsAddBinding;
 import com.discord.databinding.WidgetSettingsItemAddConnectedAccountBinding;
@@ -28,23 +27,24 @@ import com.discord.utilities.mg_recycler.MGRecyclerDataPayload;
 import com.discord.utilities.mg_recycler.MGRecyclerViewHolder;
 import com.discord.utilities.platform.Platform;
 import com.discord.utilities.viewbinding.FragmentViewBindingDelegate;
-import com.discord.utilities.viewbinding.FragmentViewBindingDelegate3;
-import com.discord.widgets.playstation.PlaystationExperimentUtils;
+import com.discord.utilities.viewbinding.FragmentViewBindingDelegateKt;
+import com.discord.widgets.playstation.PlaystationExperimentUtilsKt;
 import com.discord.widgets.settings.connections.WidgetSettingsUserConnectionsAddXbox;
-import d0.t.Iterables2;
-import d0.z.d.Intrinsics3;
-import d0.z.d.Lambda;
 import java.util.ArrayList;
 import java.util.Iterator;
 import kotlin.Unit;
 import kotlin.jvm.functions.Function0;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.reflect.KProperty;
+import p007b.p100d.p104b.p105a.C1643a;
+import p507d0.p580t.C12149o;
+import p507d0.p592z.p594d.AbstractC12240o;
+import p507d0.p592z.p594d.C12238m;
 
 /* JADX INFO: compiled from: WidgetSettingsUserConnectionsAdd.kt */
 /* JADX INFO: loaded from: classes2.dex */
 public final class WidgetSettingsUserConnectionsAdd extends AppBottomSheet {
-    public static final /* synthetic */ KProperty[] $$delegatedProperties = {outline.d0(WidgetSettingsUserConnectionsAdd.class, "binding", "getBinding()Lcom/discord/databinding/WidgetSettingsConnectionsAddBinding;", 0)};
+    public static final /* synthetic */ KProperty[] $$delegatedProperties = {C1643a.m846d0(WidgetSettingsUserConnectionsAdd.class, "binding", "getBinding()Lcom/discord/databinding/WidgetSettingsConnectionsAddBinding;", 0)};
 
     /* JADX INFO: renamed from: Companion, reason: from kotlin metadata */
     public static final Companion INSTANCE = new Companion(null);
@@ -76,18 +76,18 @@ public final class WidgetSettingsUserConnectionsAdd extends AppBottomSheet {
             /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
             public ViewHolder(@LayoutRes int i, Adapter adapter, Function0<Unit> function0) {
                 super(i, adapter);
-                Intrinsics3.checkNotNullParameter(adapter, "adapter");
-                Intrinsics3.checkNotNullParameter(function0, "dialogDismissCallback");
+                C12238m.checkNotNullParameter(adapter, "adapter");
+                C12238m.checkNotNullParameter(function0, "dialogDismissCallback");
                 this.dialogDismissCallback = function0;
                 View view = this.itemView;
-                int i2 = R.id.add_connected_account_image;
-                ImageView imageView = (ImageView) view.findViewById(R.id.add_connected_account_image);
+                int i2 = C5419R.id.add_connected_account_image;
+                ImageView imageView = (ImageView) view.findViewById(C5419R.id.add_connected_account_image);
                 if (imageView != null) {
-                    i2 = R.id.add_connected_account_text;
-                    TextView textView = (TextView) view.findViewById(R.id.add_connected_account_text);
+                    i2 = C5419R.id.add_connected_account_text;
+                    TextView textView = (TextView) view.findViewById(C5419R.id.add_connected_account_text);
                     if (textView != null) {
                         WidgetSettingsItemAddConnectedAccountBinding widgetSettingsItemAddConnectedAccountBinding = new WidgetSettingsItemAddConnectedAccountBinding((LinearLayout) view, imageView, textView);
-                        Intrinsics3.checkNotNullExpressionValue(widgetSettingsItemAddConnectedAccountBinding, "WidgetSettingsItemAddCon…untBinding.bind(itemView)");
+                        C12238m.checkNotNullExpressionValue(widgetSettingsItemAddConnectedAccountBinding, "WidgetSettingsItemAddCon…untBinding.bind(itemView)");
                         this.binding = widgetSettingsItemAddConnectedAccountBinding;
                         return;
                     }
@@ -101,14 +101,14 @@ public final class WidgetSettingsUserConnectionsAdd extends AppBottomSheet {
 
             @Override // com.discord.utilities.mg_recycler.MGRecyclerViewHolder
             public void onConfigure(int position, final PlatformItem data) {
-                Intrinsics3.checkNotNullParameter(data, "data");
+                C12238m.checkNotNullParameter(data, "data");
                 super.onConfigure(position, data);
-                TextView textView = this.binding.c;
-                Intrinsics3.checkNotNullExpressionValue(textView, "binding.addConnectedAccountText");
+                TextView textView = this.binding.f17974c;
+                C12238m.checkNotNullExpressionValue(textView, "binding.addConnectedAccountText");
                 textView.setText(data.getPlatform().getProperName());
-                ImageView imageView = this.binding.f2622b;
+                ImageView imageView = this.binding.f17973b;
                 View view = this.itemView;
-                Intrinsics3.checkNotNullExpressionValue(view, "itemView");
+                C12238m.checkNotNullExpressionValue(view, "itemView");
                 Integer themedPlatformImage = data.getPlatform().getThemedPlatformImage();
                 imageView.setImageResource(DrawableCompat.getThemedDrawableRes$default(view, themedPlatformImage != null ? themedPlatformImage.intValue() : 0, 0, 2, (Object) null));
                 this.itemView.setOnClickListener(new View.OnClickListener() { // from class: com.discord.widgets.settings.connections.WidgetSettingsUserConnectionsAdd$Adapter$ViewHolder$onConfigure$1
@@ -117,17 +117,17 @@ public final class WidgetSettingsUserConnectionsAdd extends AppBottomSheet {
                         this.this$0.getDialogDismissCallback().invoke();
                         if (data.getPlatform().ordinal() == 12) {
                             WidgetSettingsUserConnectionsAddXbox.Companion companion = WidgetSettingsUserConnectionsAddXbox.Companion;
-                            Intrinsics3.checkNotNullExpressionValue(view2, "v");
+                            C12238m.checkNotNullExpressionValue(view2, "v");
                             Context context = view2.getContext();
-                            Intrinsics3.checkNotNullExpressionValue(context, "v.context");
+                            C12238m.checkNotNullExpressionValue(context, "v.context");
                             companion.launch(context);
                             return;
                         }
                         StoreUserConnections userConnections = StoreStream.INSTANCE.getUserConnections();
                         String platformId = data.getPlatform().getPlatformId();
-                        Intrinsics3.checkNotNullExpressionValue(view2, "v");
+                        C12238m.checkNotNullExpressionValue(view2, "v");
                         Context context2 = view2.getContext();
-                        Intrinsics3.checkNotNullExpressionValue(context2, "v.context");
+                        C12238m.checkNotNullExpressionValue(context2, "v.context");
                         userConnections.authorizeConnection(platformId, context2, Traits.Location.Page.USER_SETTINGS);
                     }
                 });
@@ -137,8 +137,8 @@ public final class WidgetSettingsUserConnectionsAdd extends AppBottomSheet {
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
         public Adapter(RecyclerView recyclerView, Function0<Unit> function0) {
             super(recyclerView, false, 2, null);
-            Intrinsics3.checkNotNullParameter(recyclerView, "recyclerView");
-            Intrinsics3.checkNotNullParameter(function0, "dialogDismissCallback");
+            C12238m.checkNotNullParameter(recyclerView, "recyclerView");
+            C12238m.checkNotNullParameter(function0, "dialogDismissCallback");
             this.dialogDismissCallback = function0;
         }
 
@@ -148,8 +148,8 @@ public final class WidgetSettingsUserConnectionsAdd extends AppBottomSheet {
 
         @Override // androidx.recyclerview.widget.RecyclerView.Adapter
         public MGRecyclerViewHolder<Adapter, PlatformItem> onCreateViewHolder(ViewGroup parent, int viewType) {
-            Intrinsics3.checkNotNullParameter(parent, "parent");
-            return new ViewHolder(R.layout.widget_settings_item_add_connected_account, this, this.dialogDismissCallback);
+            C12238m.checkNotNullParameter(parent, "parent");
+            return new ViewHolder(C5419R.layout.widget_settings_item_add_connected_account, this, this.dialogDismissCallback);
         }
     }
 
@@ -159,10 +159,10 @@ public final class WidgetSettingsUserConnectionsAdd extends AppBottomSheet {
         }
 
         public final void show(Fragment fragment) {
-            Intrinsics3.checkNotNullParameter(fragment, "fragment");
+            C12238m.checkNotNullParameter(fragment, "fragment");
             WidgetSettingsUserConnectionsAdd widgetSettingsUserConnectionsAdd = new WidgetSettingsUserConnectionsAdd();
             FragmentManager parentFragmentManager = fragment.getParentFragmentManager();
-            Intrinsics3.checkNotNullExpressionValue(parentFragmentManager, "fragment.parentFragmentManager");
+            C12238m.checkNotNullExpressionValue(parentFragmentManager, "fragment.parentFragmentManager");
             widgetSettingsUserConnectionsAdd.show(parentFragmentManager, "javaClass");
         }
 
@@ -178,7 +178,7 @@ public final class WidgetSettingsUserConnectionsAdd extends AppBottomSheet {
         private final int type;
 
         public PlatformItem(Platform platform) {
-            Intrinsics3.checkNotNullParameter(platform, "platform");
+            C12238m.checkNotNullParameter(platform, "platform");
             this.platform = platform;
             this.key = platform.name();
         }
@@ -196,13 +196,13 @@ public final class WidgetSettingsUserConnectionsAdd extends AppBottomSheet {
         }
 
         public final PlatformItem copy(Platform platform) {
-            Intrinsics3.checkNotNullParameter(platform, "platform");
+            C12238m.checkNotNullParameter(platform, "platform");
             return new PlatformItem(platform);
         }
 
         public boolean equals(Object other) {
             if (this != other) {
-                return (other instanceof PlatformItem) && Intrinsics3.areEqual(this.platform, ((PlatformItem) other).platform);
+                return (other instanceof PlatformItem) && C12238m.areEqual(this.platform, ((PlatformItem) other).platform);
             }
             return true;
         }
@@ -230,24 +230,24 @@ public final class WidgetSettingsUserConnectionsAdd extends AppBottomSheet {
         }
 
         public String toString() {
-            StringBuilder sbU = outline.U("PlatformItem(platform=");
-            sbU.append(this.platform);
-            sbU.append(")");
-            return sbU.toString();
+            StringBuilder sbM833U = C1643a.m833U("PlatformItem(platform=");
+            sbM833U.append(this.platform);
+            sbM833U.append(")");
+            return sbM833U.toString();
         }
     }
 
-    /* JADX INFO: renamed from: com.discord.widgets.settings.connections.WidgetSettingsUserConnectionsAdd$onViewCreated$1, reason: invalid class name */
+    /* JADX INFO: renamed from: com.discord.widgets.settings.connections.WidgetSettingsUserConnectionsAdd$onViewCreated$1 */
     /* JADX INFO: compiled from: WidgetSettingsUserConnectionsAdd.kt */
-    public static final class AnonymousClass1 extends Lambda implements Function0<Unit> {
-        public AnonymousClass1() {
+    public static final class C98351 extends AbstractC12240o implements Function0<Unit> {
+        public C98351() {
             super(0);
         }
 
         @Override // kotlin.jvm.functions.Function0
         public /* bridge */ /* synthetic */ Unit invoke() {
             invoke2();
-            return Unit.a;
+            return Unit.f27425a;
         }
 
         /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
@@ -261,7 +261,7 @@ public final class WidgetSettingsUserConnectionsAdd extends AppBottomSheet {
 
     public WidgetSettingsUserConnectionsAdd() {
         super(false, 1, null);
-        this.binding = FragmentViewBindingDelegate3.viewBinding$default(this, WidgetSettingsUserConnectionsAdd3.INSTANCE, null, 2, null);
+        this.binding = FragmentViewBindingDelegateKt.viewBinding$default(this, WidgetSettingsUserConnectionsAdd$binding$2.INSTANCE, null, 2, null);
     }
 
     private final WidgetSettingsConnectionsAddBinding getBinding() {
@@ -270,7 +270,7 @@ public final class WidgetSettingsUserConnectionsAdd extends AppBottomSheet {
 
     @Override // com.discord.app.AppBottomSheet
     public int getContentViewResId() {
-        return R.layout.widget_settings_connections_add;
+        return C5419R.layout.widget_settings_connections_add;
     }
 
     @Override // com.discord.app.AppBottomSheet, androidx.fragment.app.Fragment
@@ -285,9 +285,9 @@ public final class WidgetSettingsUserConnectionsAdd extends AppBottomSheet {
 
     @Override // com.discord.app.AppBottomSheet, androidx.fragment.app.Fragment
     public void onViewCreated(View view, Bundle savedInstanceState) {
-        Intrinsics3.checkNotNullParameter(view, "view");
+        C12238m.checkNotNullParameter(view, "view");
         super.onViewCreated(view, savedInstanceState);
-        boolean zCanSeePlaystationAccountIntegration = PlaystationExperimentUtils.canSeePlaystationAccountIntegration(StoreStream.INSTANCE.getExperiments());
+        boolean zCanSeePlaystationAccountIntegration = PlaystationExperimentUtilsKt.canSeePlaystationAccountIntegration(StoreStream.INSTANCE.getExperiments());
         Platform[] platformArrValues = Platform.values();
         ArrayList arrayList = new ArrayList();
         for (int i = 0; i < 15; i++) {
@@ -296,15 +296,15 @@ public final class WidgetSettingsUserConnectionsAdd extends AppBottomSheet {
                 arrayList.add(platform);
             }
         }
-        ArrayList arrayList2 = new ArrayList(Iterables2.collectionSizeOrDefault(arrayList, 10));
+        ArrayList arrayList2 = new ArrayList(C12149o.collectionSizeOrDefault(arrayList, 10));
         Iterator it = arrayList.iterator();
         while (it.hasNext()) {
             arrayList2.add(new PlatformItem((Platform) it.next()));
         }
         MGRecyclerAdapter.Companion companion = MGRecyclerAdapter.INSTANCE;
-        RecyclerView recyclerView = getBinding().f2613b;
-        Intrinsics3.checkNotNullExpressionValue(recyclerView, "binding.connectionsRecycler");
-        Adapter adapter = (Adapter) companion.configure(new Adapter(recyclerView, new AnonymousClass1()));
+        RecyclerView recyclerView = getBinding().f17931b;
+        C12238m.checkNotNullExpressionValue(recyclerView, "binding.connectionsRecycler");
+        Adapter adapter = (Adapter) companion.configure(new Adapter(recyclerView, new C98351()));
         this.adapter = adapter;
         if (adapter != null) {
             adapter.setData(arrayList2);

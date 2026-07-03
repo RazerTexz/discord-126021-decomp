@@ -1,46 +1,46 @@
 package com.discord.widgets.guild_role_subscriptions;
 
-import b.a.d.AppViewModel;
-import b.d.b.a.outline;
 import com.discord.stores.StoreGuildRoleSubscriptions;
 import com.discord.stores.StoreStream;
 import com.discord.stores.updates.ObservationDeck;
-import com.discord.stores.updates.ObservationDeck4;
+import com.discord.stores.updates.ObservationDeckProvider;
 import com.discord.utilities.error.Error;
-import com.discord.utilities.rx.ObservableExtensionsKt;
-import d0.z.d.Intrinsics3;
-import d0.z.d.Lambda;
+import com.discord.utilities.p501rx.ObservableExtensionsKt;
 import java.util.List;
 import kotlin.Unit;
 import kotlin.jvm.functions.Function0;
 import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.DefaultConstructorMarker;
-import rx.Observable;
-import rx.Subscription;
+import p007b.p008a.p018d.AbstractC0859d0;
+import p007b.p100d.p104b.p105a.C1643a;
+import p507d0.p592z.p594d.AbstractC12240o;
+import p507d0.p592z.p594d.C12238m;
+import p658rx.Observable;
+import p658rx.Subscription;
 
 /* JADX INFO: compiled from: PriceTierPickerBottomSheetViewModel.kt */
 /* JADX INFO: loaded from: classes2.dex */
-public final class PriceTierPickerBottomSheetViewModel extends AppViewModel<ViewState> {
+public final class PriceTierPickerBottomSheetViewModel extends AbstractC0859d0<ViewState> {
 
     /* JADX INFO: renamed from: Companion, reason: from kotlin metadata */
     public static final Companion INSTANCE = new Companion(null);
 
-    /* JADX INFO: renamed from: com.discord.widgets.guild_role_subscriptions.PriceTierPickerBottomSheetViewModel$1, reason: invalid class name */
+    /* JADX INFO: renamed from: com.discord.widgets.guild_role_subscriptions.PriceTierPickerBottomSheetViewModel$1 */
     /* JADX INFO: compiled from: PriceTierPickerBottomSheetViewModel.kt */
-    public static final class AnonymousClass1 extends Lambda implements Function1<StoreState, Unit> {
-        public AnonymousClass1() {
+    public static final class C84381 extends AbstractC12240o implements Function1<StoreState, Unit> {
+        public C84381() {
             super(1);
         }
 
         @Override // kotlin.jvm.functions.Function1
         public /* bridge */ /* synthetic */ Unit invoke(StoreState storeState) {
             invoke2(storeState);
-            return Unit.a;
+            return Unit.f27425a;
         }
 
         /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
         public final void invoke2(StoreState storeState) {
-            Intrinsics3.checkNotNullParameter(storeState, "storeState");
+            C12238m.checkNotNullParameter(storeState, "storeState");
             PriceTierPickerBottomSheetViewModel.this.handleStoreState(storeState);
         }
     }
@@ -51,12 +51,12 @@ public final class PriceTierPickerBottomSheetViewModel extends AppViewModel<View
         }
 
         private final Observable<StoreState> observeStoreState(ObservationDeck observationDeck, StoreGuildRoleSubscriptions storeGuildRoleSubscriptions) {
-            return ObservationDeck.connectRx$default(observationDeck, new ObservationDeck.UpdateSource[]{storeGuildRoleSubscriptions}, false, null, null, new PriceTierPickerBottomSheetViewModel2(storeGuildRoleSubscriptions), 14, null);
+            return ObservationDeck.connectRx$default(observationDeck, new ObservationDeck.UpdateSource[]{storeGuildRoleSubscriptions}, false, null, null, new C8439xe1dc6f86(storeGuildRoleSubscriptions), 14, null);
         }
 
         public static /* synthetic */ Observable observeStoreState$default(Companion companion, ObservationDeck observationDeck, StoreGuildRoleSubscriptions storeGuildRoleSubscriptions, int i, Object obj) {
             if ((i & 1) != 0) {
-                observationDeck = ObservationDeck4.get();
+                observationDeck = ObservationDeckProvider.get();
             }
             if ((i & 2) != 0) {
                 storeGuildRoleSubscriptions = StoreStream.INSTANCE.getGuildRoleSubscriptions();
@@ -74,7 +74,7 @@ public final class PriceTierPickerBottomSheetViewModel extends AppViewModel<View
         private final StoreGuildRoleSubscriptions.PriceTierState priceTierState;
 
         public StoreState(StoreGuildRoleSubscriptions.PriceTierState priceTierState) {
-            Intrinsics3.checkNotNullParameter(priceTierState, "priceTierState");
+            C12238m.checkNotNullParameter(priceTierState, "priceTierState");
             this.priceTierState = priceTierState;
         }
 
@@ -91,13 +91,13 @@ public final class PriceTierPickerBottomSheetViewModel extends AppViewModel<View
         }
 
         public final StoreState copy(StoreGuildRoleSubscriptions.PriceTierState priceTierState) {
-            Intrinsics3.checkNotNullParameter(priceTierState, "priceTierState");
+            C12238m.checkNotNullParameter(priceTierState, "priceTierState");
             return new StoreState(priceTierState);
         }
 
         public boolean equals(Object other) {
             if (this != other) {
-                return (other instanceof StoreState) && Intrinsics3.areEqual(this.priceTierState, ((StoreState) other).priceTierState);
+                return (other instanceof StoreState) && C12238m.areEqual(this.priceTierState, ((StoreState) other).priceTierState);
             }
             return true;
         }
@@ -115,10 +115,10 @@ public final class PriceTierPickerBottomSheetViewModel extends AppViewModel<View
         }
 
         public String toString() {
-            StringBuilder sbU = outline.U("StoreState(priceTierState=");
-            sbU.append(this.priceTierState);
-            sbU.append(")");
-            return sbU.toString();
+            StringBuilder sbM833U = C1643a.m833U("StoreState(priceTierState=");
+            sbM833U.append(this.priceTierState);
+            sbM833U.append(")");
+            return sbM833U.toString();
         }
     }
 
@@ -141,7 +141,7 @@ public final class PriceTierPickerBottomSheetViewModel extends AppViewModel<View
             /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
             public Loaded(List<Integer> list) {
                 super(null);
-                Intrinsics3.checkNotNullParameter(list, "priceTiers");
+                C12238m.checkNotNullParameter(list, "priceTiers");
                 this.priceTiers = list;
             }
 
@@ -158,13 +158,13 @@ public final class PriceTierPickerBottomSheetViewModel extends AppViewModel<View
             }
 
             public final Loaded copy(List<Integer> priceTiers) {
-                Intrinsics3.checkNotNullParameter(priceTiers, "priceTiers");
+                C12238m.checkNotNullParameter(priceTiers, "priceTiers");
                 return new Loaded(priceTiers);
             }
 
             public boolean equals(Object other) {
                 if (this != other) {
-                    return (other instanceof Loaded) && Intrinsics3.areEqual(this.priceTiers, ((Loaded) other).priceTiers);
+                    return (other instanceof Loaded) && C12238m.areEqual(this.priceTiers, ((Loaded) other).priceTiers);
                 }
                 return true;
             }
@@ -182,7 +182,7 @@ public final class PriceTierPickerBottomSheetViewModel extends AppViewModel<View
             }
 
             public String toString() {
-                return outline.L(outline.U("Loaded(priceTiers="), this.priceTiers, ")");
+                return C1643a.m824L(C1643a.m833U("Loaded(priceTiers="), this.priceTiers, ")");
             }
         }
 
@@ -226,9 +226,9 @@ public final class PriceTierPickerBottomSheetViewModel extends AppViewModel<View
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public PriceTierPickerBottomSheetViewModel(StoreGuildRoleSubscriptions storeGuildRoleSubscriptions, Observable<StoreState> observable) {
         super(null, 1, null);
-        Intrinsics3.checkNotNullParameter(storeGuildRoleSubscriptions, "storeGuildRoleSubscriptions");
-        Intrinsics3.checkNotNullParameter(observable, "storeObservable");
+        C12238m.checkNotNullParameter(storeGuildRoleSubscriptions, "storeGuildRoleSubscriptions");
+        C12238m.checkNotNullParameter(observable, "storeObservable");
         storeGuildRoleSubscriptions.fetchPriceTiersIfNonExisting();
-        ObservableExtensionsKt.appSubscribe(ObservableExtensionsKt.ui$default(ObservableExtensionsKt.computationLatest(observable), this, null, 2, null), (Class<?>) PriceTierPickerBottomSheetViewModel.class, (58 & 2) != 0 ? null : null, (Function1<? super Subscription, Unit>) ((58 & 4) != 0 ? null : null), (Function1<? super Error, Unit>) ((58 & 8) != 0 ? null : null), (Function0<Unit>) ((58 & 16) != 0 ? ObservableExtensionsKt.AnonymousClass1.INSTANCE : null), (Function0<Unit>) ((58 & 32) != 0 ? ObservableExtensionsKt.AnonymousClass2.INSTANCE : null), new AnonymousClass1());
+        ObservableExtensionsKt.appSubscribe(ObservableExtensionsKt.ui$default(ObservableExtensionsKt.computationLatest(observable), this, null, 2, null), (Class<?>) PriceTierPickerBottomSheetViewModel.class, (58 & 2) != 0 ? null : null, (Function1<? super Subscription, Unit>) ((58 & 4) != 0 ? null : null), (Function1<? super Error, Unit>) ((58 & 8) != 0 ? null : null), (Function0<Unit>) ((58 & 16) != 0 ? ObservableExtensionsKt.C68791.INSTANCE : null), (Function0<Unit>) ((58 & 32) != 0 ? ObservableExtensionsKt.C68802.INSTANCE : null), new C84381());
     }
 }

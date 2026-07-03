@@ -1,7 +1,7 @@
 package com.discord.analytics.generated.traits;
 
-import b.d.b.a.outline;
-import d0.z.d.Intrinsics3;
+import p007b.p100d.p104b.p105a.C1643a;
+import p507d0.p592z.p594d.C12238m;
 
 /* JADX INFO: compiled from: TrackActivityInternalMetadata.kt */
 /* JADX INFO: loaded from: classes.dex */
@@ -23,7 +23,7 @@ public final /* data */ class TrackActivityInternalMetadata {
             return false;
         }
         TrackActivityInternalMetadata trackActivityInternalMetadata = (TrackActivityInternalMetadata) other;
-        return Intrinsics3.areEqual(this.activityApplicationId, trackActivityInternalMetadata.activityApplicationId) && Intrinsics3.areEqual(this.groupSessionId, trackActivityInternalMetadata.groupSessionId) && Intrinsics3.areEqual(this.userSessionId, trackActivityInternalMetadata.userSessionId) && Intrinsics3.areEqual(this.activityInstanceId, trackActivityInternalMetadata.activityInstanceId) && Intrinsics3.areEqual(this.activityVersion, trackActivityInternalMetadata.activityVersion) && Intrinsics3.areEqual(this.numConcurrentUsers, trackActivityInternalMetadata.numConcurrentUsers) && Intrinsics3.areEqual(this.activityGuildId, trackActivityInternalMetadata.activityGuildId) && Intrinsics3.areEqual(this.participationMode, trackActivityInternalMetadata.participationMode);
+        return C12238m.areEqual(this.activityApplicationId, trackActivityInternalMetadata.activityApplicationId) && C12238m.areEqual(this.groupSessionId, trackActivityInternalMetadata.groupSessionId) && C12238m.areEqual(this.userSessionId, trackActivityInternalMetadata.userSessionId) && C12238m.areEqual(this.activityInstanceId, trackActivityInternalMetadata.activityInstanceId) && C12238m.areEqual(this.activityVersion, trackActivityInternalMetadata.activityVersion) && C12238m.areEqual(this.numConcurrentUsers, trackActivityInternalMetadata.numConcurrentUsers) && C12238m.areEqual(this.activityGuildId, trackActivityInternalMetadata.activityGuildId) && C12238m.areEqual(this.participationMode, trackActivityInternalMetadata.participationMode);
     }
 
     public int hashCode() {
@@ -46,21 +46,21 @@ public final /* data */ class TrackActivityInternalMetadata {
     }
 
     public String toString() {
-        StringBuilder sbU = outline.U("TrackActivityInternalMetadata(activityApplicationId=");
-        sbU.append(this.activityApplicationId);
-        sbU.append(", groupSessionId=");
-        sbU.append(this.groupSessionId);
-        sbU.append(", userSessionId=");
-        sbU.append(this.userSessionId);
-        sbU.append(", activityInstanceId=");
-        sbU.append(this.activityInstanceId);
-        sbU.append(", activityVersion=");
-        sbU.append(this.activityVersion);
-        sbU.append(", numConcurrentUsers=");
-        sbU.append(this.numConcurrentUsers);
-        sbU.append(", activityGuildId=");
-        sbU.append(this.activityGuildId);
-        sbU.append(", participationMode=");
-        return outline.E(sbU, this.participationMode, ")");
+        StringBuilder sbM833U = C1643a.m833U("TrackActivityInternalMetadata(activityApplicationId=");
+        sbM833U.append(this.activityApplicationId);
+        sbM833U.append(", groupSessionId=");
+        sbM833U.append(this.groupSessionId);
+        sbM833U.append(", userSessionId=");
+        sbM833U.append(this.userSessionId);
+        sbM833U.append(", activityInstanceId=");
+        sbM833U.append(this.activityInstanceId);
+        sbM833U.append(", activityVersion=");
+        sbM833U.append(this.activityVersion);
+        sbM833U.append(", numConcurrentUsers=");
+        sbM833U.append(this.numConcurrentUsers);
+        sbM833U.append(", activityGuildId=");
+        sbM833U.append(this.activityGuildId);
+        sbM833U.append(", participationMode=");
+        return C1643a.m817E(sbM833U, this.participationMode, ")");
     }
 }

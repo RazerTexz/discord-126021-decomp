@@ -8,8 +8,8 @@ import android.view.View;
 public class RendererCommon {
     private static float BALANCED_VISIBLE_FRACTION = 0.5625f;
 
-    /* JADX INFO: renamed from: org.webrtc.RendererCommon$1, reason: invalid class name */
-    public static /* synthetic */ class AnonymousClass1 {
+    /* JADX INFO: renamed from: org.webrtc.RendererCommon$1 */
+    public static /* synthetic */ class C129831 {
         public static final /* synthetic */ int[] $SwitchMap$org$webrtc$RendererCommon$ScalingType;
 
         static {

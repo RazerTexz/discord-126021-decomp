@@ -11,7 +11,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.annotation.RestrictTo;
 import androidx.core.app.BundleCompat;
-import x.a.a.ICustomTabsCallback;
+import p668x.p669a.p670a.InterfaceC13176a;
 
 /* JADX INFO: loaded from: classes.dex */
 public class CustomTabsSessionToken {
@@ -21,50 +21,50 @@ public class CustomTabsSessionToken {
     private final CustomTabsCallback mCallback;
 
     @Nullable
-    public final ICustomTabsCallback mCallbackBinder;
+    public final InterfaceC13176a mCallbackBinder;
 
     @Nullable
     private final PendingIntent mSessionId;
 
-    public static class MockCallback extends ICustomTabsCallback.a {
-        @Override // x.a.a.ICustomTabsCallback.a, android.os.IInterface
+    public static class MockCallback extends InterfaceC13176a.a {
+        @Override // p668x.p669a.p670a.InterfaceC13176a.a, android.os.IInterface
         public IBinder asBinder() {
             return this;
         }
 
-        @Override // x.a.a.ICustomTabsCallback
+        @Override // p668x.p669a.p670a.InterfaceC13176a
         public void extraCallback(String str, Bundle bundle) {
         }
 
-        @Override // x.a.a.ICustomTabsCallback
+        @Override // p668x.p669a.p670a.InterfaceC13176a
         public Bundle extraCallbackWithResult(String str, Bundle bundle) {
             return null;
         }
 
-        @Override // x.a.a.ICustomTabsCallback
+        @Override // p668x.p669a.p670a.InterfaceC13176a
         public void onMessageChannelReady(Bundle bundle) {
         }
 
-        @Override // x.a.a.ICustomTabsCallback
+        @Override // p668x.p669a.p670a.InterfaceC13176a
         public void onNavigationEvent(int i, Bundle bundle) {
         }
 
-        @Override // x.a.a.ICustomTabsCallback
+        @Override // p668x.p669a.p670a.InterfaceC13176a
         public void onPostMessage(String str, Bundle bundle) {
         }
 
-        @Override // x.a.a.ICustomTabsCallback
+        @Override // p668x.p669a.p670a.InterfaceC13176a
         public void onRelationshipValidationResult(int i, Uri uri, boolean z2, Bundle bundle) {
         }
     }
 
-    public CustomTabsSessionToken(@Nullable ICustomTabsCallback iCustomTabsCallback, @Nullable PendingIntent pendingIntent) {
-        if (iCustomTabsCallback == null && pendingIntent == null) {
+    public CustomTabsSessionToken(@Nullable InterfaceC13176a interfaceC13176a, @Nullable PendingIntent pendingIntent) {
+        if (interfaceC13176a == null && pendingIntent == null) {
             throw new IllegalStateException("CustomTabsSessionToken must have either a session id or a callback (or both).");
         }
-        this.mCallbackBinder = iCustomTabsCallback;
+        this.mCallbackBinder = interfaceC13176a;
         this.mSessionId = pendingIntent;
-        this.mCallback = iCustomTabsCallback == null ? null : new CustomTabsCallback() { // from class: androidx.browser.customtabs.CustomTabsSessionToken.1
+        this.mCallback = interfaceC13176a == null ? null : new CustomTabsCallback() { // from class: androidx.browser.customtabs.CustomTabsSessionToken.1
             @Override // androidx.browser.customtabs.CustomTabsCallback
             public void extraCallback(@NonNull String str, @Nullable Bundle bundle) {
                 try {
@@ -129,9 +129,9 @@ public class CustomTabsSessionToken {
     }
 
     private IBinder getCallbackBinderAssertNotNull() {
-        ICustomTabsCallback iCustomTabsCallback = this.mCallbackBinder;
-        if (iCustomTabsCallback != null) {
-            return iCustomTabsCallback.asBinder();
+        InterfaceC13176a interfaceC13176a = this.mCallbackBinder;
+        if (interfaceC13176a != null) {
+            return interfaceC13176a.asBinder();
         }
         throw new IllegalStateException("CustomTabSessionToken must have valid binder or pending session");
     }
@@ -147,7 +147,7 @@ public class CustomTabsSessionToken {
         if (binder == null && pendingIntent == null) {
             return null;
         }
-        return new CustomTabsSessionToken(binder != null ? ICustomTabsCallback.a.asInterface(binder) : null, pendingIntent);
+        return new CustomTabsSessionToken(binder != null ? InterfaceC13176a.a.asInterface(binder) : null, pendingIntent);
     }
 
     public boolean equals(Object obj) {
@@ -170,11 +170,11 @@ public class CustomTabsSessionToken {
 
     @Nullable
     public IBinder getCallbackBinder() {
-        ICustomTabsCallback iCustomTabsCallback = this.mCallbackBinder;
-        if (iCustomTabsCallback == null) {
+        InterfaceC13176a interfaceC13176a = this.mCallbackBinder;
+        if (interfaceC13176a == null) {
             return null;
         }
-        return iCustomTabsCallback.asBinder();
+        return interfaceC13176a.asBinder();
     }
 
     @Nullable

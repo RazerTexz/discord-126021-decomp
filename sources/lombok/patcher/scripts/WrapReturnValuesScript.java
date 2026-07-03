@@ -91,21 +91,21 @@ public final class WrapReturnValuesScript extends MethodLevelPatchScript {
             if (opcode == this.logistics.getReturnOpcode()) {
                 if (WrapReturnValuesScript.this.requests.contains(StackRequest.RETURN_VALUE)) {
                     if (!WrapReturnValuesScript.this.hijackReturnValue) {
-                        this.logistics.generateDupForReturn(this.mv);
+                        this.logistics.generateDupForReturn(this.f27600mv);
                     }
                 } else if (WrapReturnValuesScript.this.hijackReturnValue) {
-                    this.logistics.generatePopForReturn(this.mv);
+                    this.logistics.generatePopForReturn(this.f27600mv);
                 }
                 if (WrapReturnValuesScript.this.requests.contains(StackRequest.THIS)) {
-                    this.logistics.generateLoadOpcodeForThis(this.mv);
+                    this.logistics.generateLoadOpcodeForThis(this.f27600mv);
                 }
                 for (StackRequest param : StackRequest.PARAMS_IN_ORDER) {
                     if (WrapReturnValuesScript.this.requests.contains(param)) {
-                        this.logistics.generateLoadOpcodeForParam(param.getParamPos(), this.mv);
+                        this.logistics.generateLoadOpcodeForParam(param.getParamPos(), this.f27600mv);
                     }
                 }
                 if (WrapReturnValuesScript.this.insert) {
-                    WrapReturnValuesScript.insertMethod(WrapReturnValuesScript.this.wrapper, this.mv);
+                    WrapReturnValuesScript.insertMethod(WrapReturnValuesScript.this.wrapper, this.f27600mv);
                 } else {
                     super.visitMethodInsn(Opcodes.INVOKESTATIC, WrapReturnValuesScript.this.transplant ? this.ownClassSpec : WrapReturnValuesScript.this.wrapper.getClassSpec(), WrapReturnValuesScript.this.wrapper.getMethodName(), WrapReturnValuesScript.this.wrapper.getMethodDescriptor(), false);
                 }

@@ -2,9 +2,9 @@ package androidx.core.net;
 
 import android.net.Uri;
 import androidx.annotation.NonNull;
-import b.d.b.a.outline;
 import com.adjust.sdk.Constants;
-import com.discord.widgets.chat.input.MentionUtils;
+import com.discord.widgets.chat.input.MentionUtilsKt;
+import p007b.p100d.p104b.p105a.C1643a;
 
 /* JADX INFO: loaded from: classes.dex */
 public final class UriCompat {
@@ -19,7 +19,7 @@ public final class UriCompat {
             if (scheme.equalsIgnoreCase("tel") || scheme.equalsIgnoreCase("sip") || scheme.equalsIgnoreCase("sms") || scheme.equalsIgnoreCase("smsto") || scheme.equalsIgnoreCase("mailto") || scheme.equalsIgnoreCase("nfc")) {
                 StringBuilder sb = new StringBuilder(64);
                 sb.append(scheme);
-                sb.append(MentionUtils.EMOJIS_AND_STICKERS_CHAR);
+                sb.append(MentionUtilsKt.EMOJIS_AND_STICKERS_CHAR);
                 if (schemeSpecificPart != null) {
                     for (int i = 0; i < schemeSpecificPart.length(); i++) {
                         char cCharAt = schemeSpecificPart.charAt(i);
@@ -33,21 +33,21 @@ public final class UriCompat {
                 return sb.toString();
             }
             if (scheme.equalsIgnoreCase("http") || scheme.equalsIgnoreCase(Constants.SCHEME) || scheme.equalsIgnoreCase("ftp") || scheme.equalsIgnoreCase("rtsp")) {
-                StringBuilder sbU = outline.U("//");
+                StringBuilder sbM833U = C1643a.m833U("//");
                 String string = "";
-                sbU.append(uri.getHost() != null ? uri.getHost() : "");
+                sbM833U.append(uri.getHost() != null ? uri.getHost() : "");
                 if (uri.getPort() != -1) {
-                    StringBuilder sbU2 = outline.U(":");
-                    sbU2.append(uri.getPort());
-                    string = sbU2.toString();
+                    StringBuilder sbM833U2 = C1643a.m833U(":");
+                    sbM833U2.append(uri.getPort());
+                    string = sbM833U2.toString();
                 }
-                schemeSpecificPart = outline.J(sbU, string, "/...");
+                schemeSpecificPart = C1643a.m822J(sbM833U, string, "/...");
             }
         }
         StringBuilder sb2 = new StringBuilder(64);
         if (scheme != null) {
             sb2.append(scheme);
-            sb2.append(MentionUtils.EMOJIS_AND_STICKERS_CHAR);
+            sb2.append(MentionUtilsKt.EMOJIS_AND_STICKERS_CHAR);
         }
         if (schemeSpecificPart != null) {
             sb2.append(schemeSpecificPart);

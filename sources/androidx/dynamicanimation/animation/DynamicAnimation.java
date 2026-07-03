@@ -129,7 +129,9 @@ public abstract class DynamicAnimation<T extends DynamicAnimation<T>> implements
             view.setRotationY(f);
         }
     };
-    public static final ViewProperty X = new ViewProperty("x") { // from class: androidx.dynamicanimation.animation.DynamicAnimation.9
+
+    /* JADX INFO: renamed from: X */
+    public static final ViewProperty f139X = new ViewProperty("x") { // from class: androidx.dynamicanimation.animation.DynamicAnimation.9
         @Override // androidx.dynamicanimation.animation.FloatPropertyCompat
         public float getValue(View view) {
             return view.getX();
@@ -140,7 +142,9 @@ public abstract class DynamicAnimation<T extends DynamicAnimation<T>> implements
             view.setX(f);
         }
     };
-    public static final ViewProperty Y = new ViewProperty("y") { // from class: androidx.dynamicanimation.animation.DynamicAnimation.10
+
+    /* JADX INFO: renamed from: Y */
+    public static final ViewProperty f140Y = new ViewProperty("y") { // from class: androidx.dynamicanimation.animation.DynamicAnimation.10
         @Override // androidx.dynamicanimation.animation.FloatPropertyCompat
         public float getValue(View view) {
             return view.getY();
@@ -151,7 +155,9 @@ public abstract class DynamicAnimation<T extends DynamicAnimation<T>> implements
             view.setY(f);
         }
     };
-    public static final ViewProperty Z = new ViewProperty("z") { // from class: androidx.dynamicanimation.animation.DynamicAnimation.11
+
+    /* JADX INFO: renamed from: Z */
+    public static final ViewProperty f141Z = new ViewProperty("z") { // from class: androidx.dynamicanimation.animation.DynamicAnimation.11
         @Override // androidx.dynamicanimation.animation.FloatPropertyCompat
         public float getValue(View view) {
             return ViewCompat.getZ(view);

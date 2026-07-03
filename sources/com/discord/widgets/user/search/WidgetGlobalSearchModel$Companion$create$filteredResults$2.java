@@ -2,13 +2,13 @@ package com.discord.widgets.user.search;
 
 import com.discord.models.guild.Guild;
 import com.discord.widgets.user.search.WidgetGlobalSearchModel;
-import d0.z.d.Intrinsics3;
-import d0.z.d.Lambda;
 import kotlin.jvm.functions.Function1;
+import p507d0.p592z.p594d.AbstractC12240o;
+import p507d0.p592z.p594d.C12238m;
 
 /* JADX INFO: compiled from: WidgetGlobalSearchModel.kt */
 /* JADX INFO: loaded from: classes.dex */
-public final class WidgetGlobalSearchModel$Companion$create$filteredResults$2 extends Lambda implements Function1<Guild, WidgetGlobalSearchModel.ItemGuild> {
+public final class WidgetGlobalSearchModel$Companion$create$filteredResults$2 extends AbstractC12240o implements Function1<Guild, WidgetGlobalSearchModel.ItemGuild> {
     public final /* synthetic */ String $sanitizedFilter;
     public final /* synthetic */ WidgetGlobalSearchModel$Companion$create$3 $toItemGuild$3;
 
@@ -21,7 +21,7 @@ public final class WidgetGlobalSearchModel$Companion$create$filteredResults$2 ex
 
     @Override // kotlin.jvm.functions.Function1
     public final WidgetGlobalSearchModel.ItemGuild invoke(Guild guild) {
-        Intrinsics3.checkNotNullParameter(guild, "it");
+        C12238m.checkNotNullParameter(guild, "it");
         return this.$toItemGuild$3.invoke(guild, this.$sanitizedFilter);
     }
 }

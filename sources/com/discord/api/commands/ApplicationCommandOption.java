@@ -1,9 +1,9 @@
 package com.discord.api.commands;
 
-import b.d.b.a.outline;
 import com.discord.models.domain.ModelAuditLogEntry;
-import d0.z.d.Intrinsics3;
 import java.util.List;
+import p007b.p100d.p104b.p105a.C1643a;
+import p507d0.p592z.p594d.C12238m;
 
 /* JADX INFO: compiled from: ApplicationCommandOption.kt */
 /* JADX INFO: loaded from: classes.dex */
@@ -25,11 +25,13 @@ public final /* data */ class ApplicationCommandOption {
         return this.autocomplete;
     }
 
-    public final List<Integer> b() {
+    /* JADX INFO: renamed from: b */
+    public final List<Integer> m7727b() {
         return this.channelTypes;
     }
 
-    public final List<CommandChoice> c() {
+    /* JADX INFO: renamed from: c */
+    public final List<CommandChoice> m7728c() {
         return this.choices;
     }
 
@@ -51,7 +53,7 @@ public final /* data */ class ApplicationCommandOption {
             return false;
         }
         ApplicationCommandOption applicationCommandOption = (ApplicationCommandOption) other;
-        return Intrinsics3.areEqual(this.type, applicationCommandOption.type) && Intrinsics3.areEqual(this.name, applicationCommandOption.name) && Intrinsics3.areEqual(this.description, applicationCommandOption.description) && this.required == applicationCommandOption.required && this.default == applicationCommandOption.default && Intrinsics3.areEqual(this.channelTypes, applicationCommandOption.channelTypes) && Intrinsics3.areEqual(this.choices, applicationCommandOption.choices) && Intrinsics3.areEqual(this.options, applicationCommandOption.options) && this.autocomplete == applicationCommandOption.autocomplete && Intrinsics3.areEqual(this.minValue, applicationCommandOption.minValue) && Intrinsics3.areEqual(this.maxValue, applicationCommandOption.maxValue);
+        return C12238m.areEqual(this.type, applicationCommandOption.type) && C12238m.areEqual(this.name, applicationCommandOption.name) && C12238m.areEqual(this.description, applicationCommandOption.description) && this.required == applicationCommandOption.required && this.default == applicationCommandOption.default && C12238m.areEqual(this.channelTypes, applicationCommandOption.channelTypes) && C12238m.areEqual(this.choices, applicationCommandOption.choices) && C12238m.areEqual(this.options, applicationCommandOption.options) && this.autocomplete == applicationCommandOption.autocomplete && C12238m.areEqual(this.minValue, applicationCommandOption.minValue) && C12238m.areEqual(this.maxValue, applicationCommandOption.maxValue);
     }
 
     /* JADX INFO: renamed from: f, reason: from getter */
@@ -113,7 +115,8 @@ public final /* data */ class ApplicationCommandOption {
         return iHashCode7 + (number2 != null ? number2.hashCode() : 0);
     }
 
-    public final List<ApplicationCommandOption> i() {
+    /* JADX INFO: renamed from: i */
+    public final List<ApplicationCommandOption> m7734i() {
         return this.options;
     }
 
@@ -128,29 +131,29 @@ public final /* data */ class ApplicationCommandOption {
     }
 
     public String toString() {
-        StringBuilder sbU = outline.U("ApplicationCommandOption(type=");
-        sbU.append(this.type);
-        sbU.append(", name=");
-        sbU.append(this.name);
-        sbU.append(", description=");
-        sbU.append(this.description);
-        sbU.append(", required=");
-        sbU.append(this.required);
-        sbU.append(", default=");
-        sbU.append(this.default);
-        sbU.append(", channelTypes=");
-        sbU.append(this.channelTypes);
-        sbU.append(", choices=");
-        sbU.append(this.choices);
-        sbU.append(", options=");
-        sbU.append(this.options);
-        sbU.append(", autocomplete=");
-        sbU.append(this.autocomplete);
-        sbU.append(", minValue=");
-        sbU.append(this.minValue);
-        sbU.append(", maxValue=");
-        sbU.append(this.maxValue);
-        sbU.append(")");
-        return sbU.toString();
+        StringBuilder sbM833U = C1643a.m833U("ApplicationCommandOption(type=");
+        sbM833U.append(this.type);
+        sbM833U.append(", name=");
+        sbM833U.append(this.name);
+        sbM833U.append(", description=");
+        sbM833U.append(this.description);
+        sbM833U.append(", required=");
+        sbM833U.append(this.required);
+        sbM833U.append(", default=");
+        sbM833U.append(this.default);
+        sbM833U.append(", channelTypes=");
+        sbM833U.append(this.channelTypes);
+        sbM833U.append(", choices=");
+        sbM833U.append(this.choices);
+        sbM833U.append(", options=");
+        sbM833U.append(this.options);
+        sbM833U.append(", autocomplete=");
+        sbM833U.append(this.autocomplete);
+        sbM833U.append(", minValue=");
+        sbM833U.append(this.minValue);
+        sbM833U.append(", maxValue=");
+        sbM833U.append(this.maxValue);
+        sbM833U.append(")");
+        return sbM833U.toString();
     }
 }

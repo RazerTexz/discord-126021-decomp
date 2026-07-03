@@ -1,11 +1,11 @@
 package com.discord.models.domain;
 
-import b.d.b.a.outline;
 import com.discord.models.domain.Model;
-import d0.z.d.Intrinsics3;
 import java.io.IOException;
 import kotlin.jvm.internal.Ref$ObjectRef;
-import rx.functions.Action1;
+import p007b.p100d.p104b.p105a.C1643a;
+import p507d0.p592z.p594d.C12238m;
+import p658rx.functions.Action1;
 
 /* JADX INFO: compiled from: ModelPhoneVerificationToken.kt */
 /* JADX INFO: loaded from: classes.dex */
@@ -27,27 +27,27 @@ public final /* data */ class ModelPhoneVerificationToken {
             /* JADX WARN: Multi-variable type inference failed */
             @Override // com.discord.models.domain.Model.Parser
             public Update parse(final Model.JsonReader reader) throws IOException {
-                final Ref$ObjectRef ref$ObjectRefC0 = outline.c0(reader, "reader");
-                ref$ObjectRefC0.element = "";
+                final Ref$ObjectRef ref$ObjectRefM844c0 = C1643a.m844c0(reader, "reader");
+                ref$ObjectRefM844c0.element = "";
                 reader.nextObject(new Action1<String>() { // from class: com.discord.models.domain.ModelPhoneVerificationToken$Update$Parser$parse$1
-                    @Override // rx.functions.Action1
+                    @Override // p658rx.functions.Action1
                     public final void call(String str) throws IOException {
                         if (str == null || str.hashCode() != 110541305 || !str.equals("token")) {
                             reader.skipValue();
                             return;
                         }
-                        Ref$ObjectRef ref$ObjectRef = ref$ObjectRefC0;
+                        Ref$ObjectRef ref$ObjectRef = ref$ObjectRefM844c0;
                         T t = (T) reader.nextString("");
-                        Intrinsics3.checkNotNullExpressionValue(t, "reader.nextString(\"\")");
+                        C12238m.checkNotNullExpressionValue(t, "reader.nextString(\"\")");
                         ref$ObjectRef.element = t;
                     }
                 });
-                return new Update((String) ref$ObjectRefC0.element);
+                return new Update((String) ref$ObjectRefM844c0.element);
             }
         }
 
         public Update(String str) {
-            Intrinsics3.checkNotNullParameter(str, "token");
+            C12238m.checkNotNullParameter(str, "token");
             this.token = str;
         }
 
@@ -64,13 +64,13 @@ public final /* data */ class ModelPhoneVerificationToken {
         }
 
         public final Update copy(String token) {
-            Intrinsics3.checkNotNullParameter(token, "token");
+            C12238m.checkNotNullParameter(token, "token");
             return new Update(token);
         }
 
         public boolean equals(Object other) {
             if (this != other) {
-                return (other instanceof Update) && Intrinsics3.areEqual(this.token, ((Update) other).token);
+                return (other instanceof Update) && C12238m.areEqual(this.token, ((Update) other).token);
             }
             return true;
         }
@@ -88,12 +88,12 @@ public final /* data */ class ModelPhoneVerificationToken {
         }
 
         public String toString() {
-            return outline.J(outline.U("Update(token="), this.token, ")");
+            return C1643a.m822J(C1643a.m833U("Update(token="), this.token, ")");
         }
     }
 
     public ModelPhoneVerificationToken(String str) {
-        Intrinsics3.checkNotNullParameter(str, "token");
+        C12238m.checkNotNullParameter(str, "token");
         this.token = str;
     }
 
@@ -110,13 +110,13 @@ public final /* data */ class ModelPhoneVerificationToken {
     }
 
     public final ModelPhoneVerificationToken copy(String token) {
-        Intrinsics3.checkNotNullParameter(token, "token");
+        C12238m.checkNotNullParameter(token, "token");
         return new ModelPhoneVerificationToken(token);
     }
 
     public boolean equals(Object other) {
         if (this != other) {
-            return (other instanceof ModelPhoneVerificationToken) && Intrinsics3.areEqual(this.token, ((ModelPhoneVerificationToken) other).token);
+            return (other instanceof ModelPhoneVerificationToken) && C12238m.areEqual(this.token, ((ModelPhoneVerificationToken) other).token);
         }
         return true;
     }
@@ -134,6 +134,6 @@ public final /* data */ class ModelPhoneVerificationToken {
     }
 
     public String toString() {
-        return outline.J(outline.U("ModelPhoneVerificationToken(token="), this.token, ")");
+        return C1643a.m822J(C1643a.m833U("ModelPhoneVerificationToken(token="), this.token, ")");
     }
 }

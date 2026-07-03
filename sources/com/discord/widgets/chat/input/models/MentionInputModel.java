@@ -1,6 +1,5 @@
 package com.discord.widgets.chat.input.models;
 
-import b.d.b.a.outline;
 import com.discord.models.commands.Application;
 import com.discord.models.commands.ApplicationCommand;
 import com.discord.models.commands.ApplicationCommandOption;
@@ -8,35 +7,36 @@ import com.discord.stores.CommandAutocompleteState;
 import com.discord.widgets.chat.input.WidgetChatInputDiscoveryCommandsModel;
 import com.discord.widgets.chat.input.autocomplete.Autocompletable;
 import com.discord.widgets.chat.input.autocomplete.LeadingIdentifier;
-import d0.t.Collections2;
-import d0.t.Maps6;
-import d0.z.d.Intrinsics3;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
 import kotlin.jvm.internal.DefaultConstructorMarker;
-import kotlin.ranges.Ranges2;
+import kotlin.ranges.IntRange;
+import p007b.p100d.p104b.p105a.C1643a;
+import p507d0.p580t.C12136h0;
+import p507d0.p580t.C12147n;
+import p507d0.p592z.p594d.C12238m;
 
 /* JADX INFO: compiled from: MentionInputModel.kt */
 /* JADX INFO: loaded from: classes2.dex */
 public abstract class MentionInputModel {
     private final Map<LeadingIdentifier, Set<Autocompletable>> autocompletables;
     private final CharSequence input;
-    private final Map<Ranges2, Autocompletable> inputMentionsMap;
+    private final Map<IntRange, Autocompletable> inputMentionsMap;
 
     /* JADX INFO: compiled from: MentionInputModel.kt */
     public static final /* data */ class VerifiedMessageInputModel extends MentionInputModel {
         private final Map<LeadingIdentifier, Set<Autocompletable>> autocompletables;
         private final CharSequence input;
-        private final Map<Ranges2, Autocompletable> inputMentionsMap;
+        private final Map<IntRange, Autocompletable> inputMentionsMap;
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
         /* JADX WARN: Multi-variable type inference failed */
-        public VerifiedMessageInputModel(CharSequence charSequence, Map<LeadingIdentifier, ? extends Set<? extends Autocompletable>> map, Map<Ranges2, ? extends Autocompletable> map2) {
+        public VerifiedMessageInputModel(CharSequence charSequence, Map<LeadingIdentifier, ? extends Set<? extends Autocompletable>> map, Map<IntRange, ? extends Autocompletable> map2) {
             super(charSequence, map, map2, null);
-            Intrinsics3.checkNotNullParameter(charSequence, "input");
-            Intrinsics3.checkNotNullParameter(map, "autocompletables");
-            Intrinsics3.checkNotNullParameter(map2, "inputMentionsMap");
+            C12238m.checkNotNullParameter(charSequence, "input");
+            C12238m.checkNotNullParameter(map, "autocompletables");
+            C12238m.checkNotNullParameter(map2, "inputMentionsMap");
             this.input = charSequence;
             this.autocompletables = map;
             this.inputMentionsMap = map2;
@@ -64,14 +64,14 @@ public abstract class MentionInputModel {
             return getAutocompletables();
         }
 
-        public final Map<Ranges2, Autocompletable> component3() {
+        public final Map<IntRange, Autocompletable> component3() {
             return getInputMentionsMap();
         }
 
-        public final VerifiedMessageInputModel copy(CharSequence input, Map<LeadingIdentifier, ? extends Set<? extends Autocompletable>> autocompletables, Map<Ranges2, ? extends Autocompletable> inputMentionsMap) {
-            Intrinsics3.checkNotNullParameter(input, "input");
-            Intrinsics3.checkNotNullParameter(autocompletables, "autocompletables");
-            Intrinsics3.checkNotNullParameter(inputMentionsMap, "inputMentionsMap");
+        public final VerifiedMessageInputModel copy(CharSequence input, Map<LeadingIdentifier, ? extends Set<? extends Autocompletable>> autocompletables, Map<IntRange, ? extends Autocompletable> inputMentionsMap) {
+            C12238m.checkNotNullParameter(input, "input");
+            C12238m.checkNotNullParameter(autocompletables, "autocompletables");
+            C12238m.checkNotNullParameter(inputMentionsMap, "inputMentionsMap");
             return new VerifiedMessageInputModel(input, autocompletables, inputMentionsMap);
         }
 
@@ -83,7 +83,7 @@ public abstract class MentionInputModel {
                 return false;
             }
             VerifiedMessageInputModel verifiedMessageInputModel = (VerifiedMessageInputModel) other;
-            return Intrinsics3.areEqual(getInput(), verifiedMessageInputModel.getInput()) && Intrinsics3.areEqual(getAutocompletables(), verifiedMessageInputModel.getAutocompletables()) && Intrinsics3.areEqual(getInputMentionsMap(), verifiedMessageInputModel.getInputMentionsMap());
+            return C12238m.areEqual(getInput(), verifiedMessageInputModel.getInput()) && C12238m.areEqual(getAutocompletables(), verifiedMessageInputModel.getAutocompletables()) && C12238m.areEqual(getInputMentionsMap(), verifiedMessageInputModel.getInputMentionsMap());
         }
 
         @Override // com.discord.widgets.chat.input.models.MentionInputModel
@@ -97,7 +97,7 @@ public abstract class MentionInputModel {
         }
 
         @Override // com.discord.widgets.chat.input.models.MentionInputModel
-        public Map<Ranges2, Autocompletable> getInputMentionsMap() {
+        public Map<IntRange, Autocompletable> getInputMentionsMap() {
             return this.inputMentionsMap;
         }
 
@@ -106,24 +106,24 @@ public abstract class MentionInputModel {
             int iHashCode = (input != null ? input.hashCode() : 0) * 31;
             Map<LeadingIdentifier, Set<Autocompletable>> autocompletables = getAutocompletables();
             int iHashCode2 = (iHashCode + (autocompletables != null ? autocompletables.hashCode() : 0)) * 31;
-            Map<Ranges2, Autocompletable> inputMentionsMap = getInputMentionsMap();
+            Map<IntRange, Autocompletable> inputMentionsMap = getInputMentionsMap();
             return iHashCode2 + (inputMentionsMap != null ? inputMentionsMap.hashCode() : 0);
         }
 
         public String toString() {
-            StringBuilder sbU = outline.U("VerifiedMessageInputModel(input=");
-            sbU.append(getInput());
-            sbU.append(", autocompletables=");
-            sbU.append(getAutocompletables());
-            sbU.append(", inputMentionsMap=");
-            sbU.append(getInputMentionsMap());
-            sbU.append(")");
-            return sbU.toString();
+            StringBuilder sbM833U = C1643a.m833U("VerifiedMessageInputModel(input=");
+            sbM833U.append(getInput());
+            sbM833U.append(", autocompletables=");
+            sbM833U.append(getAutocompletables());
+            sbM833U.append(", inputMentionsMap=");
+            sbM833U.append(getInputMentionsMap());
+            sbM833U.append(")");
+            return sbM833U.toString();
         }
     }
 
     /* JADX WARN: Multi-variable type inference failed */
-    private MentionInputModel(CharSequence charSequence, Map<LeadingIdentifier, ? extends Set<? extends Autocompletable>> map, Map<Ranges2, ? extends Autocompletable> map2) {
+    private MentionInputModel(CharSequence charSequence, Map<LeadingIdentifier, ? extends Set<? extends Autocompletable>> map, Map<IntRange, ? extends Autocompletable> map2) {
         this.input = charSequence;
         this.autocompletables = map;
         this.inputMentionsMap = map2;
@@ -137,7 +137,7 @@ public abstract class MentionInputModel {
         return this.input;
     }
 
-    public Map<Ranges2, Autocompletable> getInputMentionsMap() {
+    public Map<IntRange, Autocompletable> getInputMentionsMap() {
         return this.inputMentionsMap;
     }
 
@@ -157,11 +157,11 @@ public abstract class MentionInputModel {
         private final Map<ApplicationCommandOption, Boolean> inputCommandOptionValidity;
         private final Map<ApplicationCommandOption, CommandOptionValue> inputCommandOptionValues;
         private final Map<ApplicationCommandOption, OptionRange> inputCommandOptionsRanges;
-        private final Map<Ranges2, Autocompletable> inputMentionsMap;
+        private final Map<IntRange, Autocompletable> inputMentionsMap;
         private final List<ApplicationCommand> queryCommands;
 
         public /* synthetic */ VerifiedCommandInputModel(CharSequence charSequence, Map map, Map map2, List list, List list2, WidgetChatInputDiscoveryCommandsModel widgetChatInputDiscoveryCommandsModel, Map map3, InputCommandContext inputCommandContext, AutocompleteApplicationCommands autocompleteApplicationCommands, Map map4, Map map5, Map map6, int i, DefaultConstructorMarker defaultConstructorMarker) {
-            this(charSequence, map, map2, (i & 8) != 0 ? Collections2.emptyList() : list, (i & 16) != 0 ? Collections2.emptyList() : list2, (i & 32) != 0 ? null : widgetChatInputDiscoveryCommandsModel, (i & 64) != 0 ? Maps6.emptyMap() : map3, inputCommandContext, autocompleteApplicationCommands, (i & 512) != 0 ? Maps6.emptyMap() : map4, (i & 1024) != 0 ? Maps6.emptyMap() : map5, (i & 2048) != 0 ? Maps6.emptyMap() : map6);
+            this(charSequence, map, map2, (i & 8) != 0 ? C12147n.emptyList() : list, (i & 16) != 0 ? C12147n.emptyList() : list2, (i & 32) != 0 ? null : widgetChatInputDiscoveryCommandsModel, (i & 64) != 0 ? C12136h0.emptyMap() : map3, inputCommandContext, autocompleteApplicationCommands, (i & 512) != 0 ? C12136h0.emptyMap() : map4, (i & 1024) != 0 ? C12136h0.emptyMap() : map5, (i & 2048) != 0 ? C12136h0.emptyMap() : map6);
         }
 
         public final List<Application> getApplications() {
@@ -207,7 +207,7 @@ public abstract class MentionInputModel {
         }
 
         @Override // com.discord.widgets.chat.input.models.MentionInputModel
-        public Map<Ranges2, Autocompletable> getInputMentionsMap() {
+        public Map<IntRange, Autocompletable> getInputMentionsMap() {
             return this.inputMentionsMap;
         }
 
@@ -217,19 +217,19 @@ public abstract class MentionInputModel {
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
         /* JADX WARN: Multi-variable type inference failed */
-        public VerifiedCommandInputModel(CharSequence charSequence, Map<LeadingIdentifier, ? extends Set<? extends Autocompletable>> map, Map<Ranges2, ? extends Autocompletable> map2, List<Application> list, List<? extends ApplicationCommand> list2, WidgetChatInputDiscoveryCommandsModel widgetChatInputDiscoveryCommandsModel, Map<String, ? extends Map<String, ? extends CommandAutocompleteState>> map3, InputCommandContext inputCommandContext, AutocompleteApplicationCommands autocompleteApplicationCommands, Map<ApplicationCommandOption, ? extends CommandOptionValue> map4, Map<ApplicationCommandOption, OptionRange> map5, Map<ApplicationCommandOption, Boolean> map6) {
+        public VerifiedCommandInputModel(CharSequence charSequence, Map<LeadingIdentifier, ? extends Set<? extends Autocompletable>> map, Map<IntRange, ? extends Autocompletable> map2, List<Application> list, List<? extends ApplicationCommand> list2, WidgetChatInputDiscoveryCommandsModel widgetChatInputDiscoveryCommandsModel, Map<String, ? extends Map<String, ? extends CommandAutocompleteState>> map3, InputCommandContext inputCommandContext, AutocompleteApplicationCommands autocompleteApplicationCommands, Map<ApplicationCommandOption, ? extends CommandOptionValue> map4, Map<ApplicationCommandOption, OptionRange> map5, Map<ApplicationCommandOption, Boolean> map6) {
             super(charSequence, map, map2, null);
-            Intrinsics3.checkNotNullParameter(charSequence, "input");
-            Intrinsics3.checkNotNullParameter(map, "autocompletables");
-            Intrinsics3.checkNotNullParameter(map2, "inputMentionsMap");
-            Intrinsics3.checkNotNullParameter(list, "applications");
-            Intrinsics3.checkNotNullParameter(list2, "queryCommands");
-            Intrinsics3.checkNotNullParameter(map3, "commandOptionAutocompleteItems");
-            Intrinsics3.checkNotNullParameter(inputCommandContext, "inputCommandContext");
-            Intrinsics3.checkNotNullParameter(autocompleteApplicationCommands, "commands");
-            Intrinsics3.checkNotNullParameter(map4, "inputCommandOptionValues");
-            Intrinsics3.checkNotNullParameter(map5, "inputCommandOptionsRanges");
-            Intrinsics3.checkNotNullParameter(map6, "inputCommandOptionValidity");
+            C12238m.checkNotNullParameter(charSequence, "input");
+            C12238m.checkNotNullParameter(map, "autocompletables");
+            C12238m.checkNotNullParameter(map2, "inputMentionsMap");
+            C12238m.checkNotNullParameter(list, "applications");
+            C12238m.checkNotNullParameter(list2, "queryCommands");
+            C12238m.checkNotNullParameter(map3, "commandOptionAutocompleteItems");
+            C12238m.checkNotNullParameter(inputCommandContext, "inputCommandContext");
+            C12238m.checkNotNullParameter(autocompleteApplicationCommands, "commands");
+            C12238m.checkNotNullParameter(map4, "inputCommandOptionValues");
+            C12238m.checkNotNullParameter(map5, "inputCommandOptionsRanges");
+            C12238m.checkNotNullParameter(map6, "inputCommandOptionValidity");
             this.input = charSequence;
             this.autocompletables = map;
             this.inputMentionsMap = map2;

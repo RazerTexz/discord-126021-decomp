@@ -366,7 +366,7 @@ public class JavacSingularsRecipes {
                 name = builderType.toName(HandlerUtil.buildAccessorName(setterPrefix, name.toString()));
             }
             statements.prepend(createConstructBuilderVarIfNeeded(maker, data, builderType, source));
-            com.sun.tools.javac.util.List<JCTree.JCAnnotation> methodAnnotations = JavacHandlerUtil.copyAnnotations(JavacHandlerUtil.findCopyableToBuilderSingularSetterAnnotations(data.annotation.up()));
+            com.sun.tools.javac.util.List<JCTree.JCAnnotation> methodAnnotations = JavacHandlerUtil.copyAnnotations(JavacHandlerUtil.findCopyableToBuilderSingularSetterAnnotations(data.annotation.m10925up()));
             finishAndInjectMethod(cfv, maker, returnType, returnStatement, data, builderType, source, deprecate, statements, name, params, methodAnnotations, access, null);
         }
 
@@ -405,11 +405,11 @@ public class JavacSingularsRecipes {
                 JCTree.JCBinary jCBinaryBinary = maker.Binary(Javac.CTC_NOT_EQUAL, maker.Ident(data.getPluralName()), maker.Literal(Javac.CTC_BOT, null));
                 JCTree.JCBlock jCBlockBlock = maker.Block(0L, statements.toList());
                 statements = new ListBuffer<>();
-                statements.add(maker.If(jCBinaryBinary, jCBlockBlock, null));
+                statements.add(maker.m10940If(jCBinaryBinary, jCBlockBlock, null));
             } else {
                 statements.prepend(JavacHandlerUtil.generateNullCheck(maker, null, data.getPluralName(), builderType, "%s cannot be null"));
             }
-            com.sun.tools.javac.util.List<JCTree.JCAnnotation> methodAnnotations = JavacHandlerUtil.copyAnnotations(JavacHandlerUtil.findCopyableToSetterAnnotations(data.annotation.up()));
+            com.sun.tools.javac.util.List<JCTree.JCAnnotation> methodAnnotations = JavacHandlerUtil.copyAnnotations(JavacHandlerUtil.findCopyableToSetterAnnotations(data.annotation.m10925up()));
             finishAndInjectMethod(cfv, maker, returnType, returnStatement, data, builderType, source, deprecate, statements, name, com.sun.tools.javac.util.List.of(param), methodAnnotations, access, Boolean.valueOf(ignoreNullCollections));
         }
 

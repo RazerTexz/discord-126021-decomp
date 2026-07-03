@@ -1,9 +1,9 @@
 package org.webrtc;
 
 import android.opengl.GLES20;
-import b.d.b.a.outline;
 import java.nio.Buffer;
 import java.nio.FloatBuffer;
+import p007b.p100d.p104b.p105a.C1643a;
 
 /* JADX INFO: loaded from: classes3.dex */
 public class GlShader {
@@ -16,9 +16,9 @@ public class GlShader {
         int iGlCreateProgram = GLES20.glCreateProgram();
         this.program = iGlCreateProgram;
         if (iGlCreateProgram == 0) {
-            StringBuilder sbU = outline.U("glCreateProgram() failed. GLES20 error: ");
-            sbU.append(GLES20.glGetError());
-            throw new RuntimeException(sbU.toString());
+            StringBuilder sbM833U = C1643a.m833U("glCreateProgram() failed. GLES20 error: ");
+            sbM833U.append(GLES20.glGetError());
+            throw new RuntimeException(sbM833U.toString());
         }
         GLES20.glAttachShader(iGlCreateProgram, iCompileShader);
         GLES20.glAttachShader(this.program, iCompileShader2);
@@ -30,9 +30,9 @@ public class GlShader {
             GLES20.glDeleteShader(iCompileShader2);
             GlUtil.checkNoGLES2Error("Creating GlShader");
         } else {
-            StringBuilder sbU2 = outline.U("Could not link program: ");
-            sbU2.append(GLES20.glGetProgramInfoLog(this.program));
-            Logging.e(TAG, sbU2.toString());
+            StringBuilder sbM833U2 = C1643a.m833U("Could not link program: ");
+            sbM833U2.append(GLES20.glGetProgramInfoLog(this.program));
+            Logging.m11028e(TAG, sbM833U2.toString());
             throw new RuntimeException(GLES20.glGetProgramInfoLog(this.program));
         }
     }
@@ -40,9 +40,9 @@ public class GlShader {
     private static int compileShader(int i, String str) {
         int iGlCreateShader = GLES20.glCreateShader(i);
         if (iGlCreateShader == 0) {
-            StringBuilder sbU = outline.U("glCreateShader() failed. GLES20 error: ");
-            sbU.append(GLES20.glGetError());
-            throw new RuntimeException(sbU.toString());
+            StringBuilder sbM833U = C1643a.m833U("glCreateShader() failed. GLES20 error: ");
+            sbM833U.append(GLES20.glGetError());
+            throw new RuntimeException(sbM833U.toString());
         }
         GLES20.glShaderSource(iGlCreateShader, str);
         GLES20.glCompileShader(iGlCreateShader);
@@ -52,11 +52,11 @@ public class GlShader {
             GlUtil.checkNoGLES2Error("compileShader");
             return iGlCreateShader;
         }
-        StringBuilder sbU2 = outline.U("Compile error ");
-        sbU2.append(GLES20.glGetShaderInfoLog(iGlCreateShader));
-        sbU2.append(" in shader:\n");
-        sbU2.append(str);
-        Logging.e(TAG, sbU2.toString());
+        StringBuilder sbM833U2 = C1643a.m833U("Compile error ");
+        sbM833U2.append(GLES20.glGetShaderInfoLog(iGlCreateShader));
+        sbM833U2.append(" in shader:\n");
+        sbM833U2.append(str);
+        Logging.m11028e(TAG, sbM833U2.toString());
         throw new RuntimeException(GLES20.glGetShaderInfoLog(iGlCreateShader));
     }
 
@@ -69,7 +69,7 @@ public class GlShader {
         if (iGlGetAttribLocation >= 0) {
             return iGlGetAttribLocation;
         }
-        throw new RuntimeException(outline.y("Could not locate '", str, "' in program"));
+        throw new RuntimeException(C1643a.m886y("Could not locate '", str, "' in program"));
     }
 
     public int getUniformLocation(String str) {
@@ -81,11 +81,11 @@ public class GlShader {
         if (iGlGetUniformLocation >= 0) {
             return iGlGetUniformLocation;
         }
-        throw new RuntimeException(outline.y("Could not locate uniform '", str, "' in program"));
+        throw new RuntimeException(C1643a.m886y("Could not locate uniform '", str, "' in program"));
     }
 
     public void release() {
-        Logging.d(TAG, "Deleting shader.");
+        Logging.m11027d(TAG, "Deleting shader.");
         int i = this.program;
         if (i != -1) {
             GLES20.glDeleteProgram(i);

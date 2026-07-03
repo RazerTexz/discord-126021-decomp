@@ -12,10 +12,15 @@ import androidx.media.utils.MediaConstants;
 @SuppressLint({"BanParcelableUsage"})
 public final class MediaMetadataCompat implements Parcelable {
     public static final Parcelable.Creator<MediaMetadataCompat> CREATOR;
-    public static final ArrayMap<String, Integer> j;
-    public final Bundle k;
 
-    public class a implements Parcelable.Creator<MediaMetadataCompat> {
+    /* JADX INFO: renamed from: j */
+    public static final ArrayMap<String, Integer> f36j;
+
+    /* JADX INFO: renamed from: k */
+    public final Bundle f37k;
+
+    /* JADX INFO: renamed from: android.support.v4.media.MediaMetadataCompat$a */
+    public class C0018a implements Parcelable.Creator<MediaMetadataCompat> {
         @Override // android.os.Parcelable.Creator
         public MediaMetadataCompat createFromParcel(Parcel parcel) {
             return new MediaMetadataCompat(parcel);
@@ -29,7 +34,7 @@ public final class MediaMetadataCompat implements Parcelable {
 
     static {
         ArrayMap<String, Integer> arrayMap = new ArrayMap<>();
-        j = arrayMap;
+        f36j = arrayMap;
         arrayMap.put("android.media.metadata.TITLE", 1);
         arrayMap.put("android.media.metadata.ARTIST", 1);
         arrayMap.put("android.media.metadata.DURATION", 0);
@@ -61,11 +66,11 @@ public final class MediaMetadataCompat implements Parcelable {
         arrayMap.put("android.media.metadata.MEDIA_URI", 1);
         arrayMap.put(MediaConstants.METADATA_KEY_IS_ADVERTISEMENT, 0);
         arrayMap.put("android.media.metadata.DOWNLOAD_STATUS", 0);
-        CREATOR = new a();
+        CREATOR = new C0018a();
     }
 
     public MediaMetadataCompat(Parcel parcel) {
-        this.k = parcel.readBundle(MediaSessionCompat.class.getClassLoader());
+        this.f37k = parcel.readBundle(MediaSessionCompat.class.getClassLoader());
     }
 
     @Override // android.os.Parcelable
@@ -75,6 +80,6 @@ public final class MediaMetadataCompat implements Parcelable {
 
     @Override // android.os.Parcelable
     public void writeToParcel(Parcel parcel, int i) {
-        parcel.writeBundle(this.k);
+        parcel.writeBundle(this.f37k);
     }
 }

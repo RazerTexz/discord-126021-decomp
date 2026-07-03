@@ -1,8 +1,6 @@
 package com.discord.widgets.guildscheduledevent;
 
 import android.content.res.Resources;
-import b.a.d.AppViewModel;
-import b.d.b.a.outline;
 import com.discord.api.channel.Channel;
 import com.discord.api.guildscheduledevent.GuildScheduledEvent;
 import com.discord.api.stageinstance.StageInstance;
@@ -19,13 +17,10 @@ import com.discord.stores.StoreStageInstances;
 import com.discord.stores.StoreStream;
 import com.discord.stores.StoreUser;
 import com.discord.utilities.error.Error;
-import com.discord.utilities.rx.ObservableCombineLatestOverloads2;
-import com.discord.utilities.rx.ObservableExtensionsKt;
+import com.discord.utilities.p501rx.ObservableCombineLatestOverloadsKt;
+import com.discord.utilities.p501rx.ObservableExtensionsKt;
 import com.discord.widgets.guilds.invite.InviteGenerator;
 import com.discord.widgets.guilds.invite.WidgetInviteModel;
-import d0.z.d.FunctionReferenceImpl;
-import d0.z.d.Intrinsics3;
-import d0.z.d.Lambda;
 import java.util.List;
 import java.util.Map;
 import kotlin.Unit;
@@ -33,13 +28,18 @@ import kotlin.jvm.functions.Function0;
 import kotlin.jvm.functions.Function1;
 import kotlin.jvm.functions.Function10;
 import kotlin.jvm.internal.DefaultConstructorMarker;
-import rx.Observable;
-import rx.Subscription;
-import rx.functions.Action1;
+import p007b.p008a.p018d.AbstractC0859d0;
+import p007b.p100d.p104b.p105a.C1643a;
+import p507d0.p592z.p594d.AbstractC12240o;
+import p507d0.p592z.p594d.C12236k;
+import p507d0.p592z.p594d.C12238m;
+import p658rx.Observable;
+import p658rx.Subscription;
+import p658rx.functions.Action1;
 
 /* JADX INFO: compiled from: WidgetGuildScheduledEventCreateSuccessViewModel.kt */
 /* JADX INFO: loaded from: classes2.dex */
-public final class WidgetGuildScheduledEventCreateSuccessViewModel extends AppViewModel<ViewState> {
+public final class WidgetGuildScheduledEventCreateSuccessViewModel extends AbstractC0859d0<ViewState> {
     private final Long channelId;
     private final long guildId;
     private final long guildScheduledEventId;
@@ -53,22 +53,22 @@ public final class WidgetGuildScheduledEventCreateSuccessViewModel extends AppVi
     private final StoreStageInstances storeStageInstances;
     private final StoreUser storeUser;
 
-    /* JADX INFO: renamed from: com.discord.widgets.guildscheduledevent.WidgetGuildScheduledEventCreateSuccessViewModel$2, reason: invalid class name */
+    /* JADX INFO: renamed from: com.discord.widgets.guildscheduledevent.WidgetGuildScheduledEventCreateSuccessViewModel$2 */
     /* JADX INFO: compiled from: WidgetGuildScheduledEventCreateSuccessViewModel.kt */
-    public static final /* synthetic */ class AnonymousClass2 extends FunctionReferenceImpl implements Function1<ViewState, Unit> {
-        public AnonymousClass2(WidgetGuildScheduledEventCreateSuccessViewModel widgetGuildScheduledEventCreateSuccessViewModel) {
+    public static final /* synthetic */ class C88532 extends C12236k implements Function1<ViewState, Unit> {
+        public C88532(WidgetGuildScheduledEventCreateSuccessViewModel widgetGuildScheduledEventCreateSuccessViewModel) {
             super(1, widgetGuildScheduledEventCreateSuccessViewModel, WidgetGuildScheduledEventCreateSuccessViewModel.class, "updateViewState", "updateViewState(Ljava/lang/Object;)V", 0);
         }
 
         @Override // kotlin.jvm.functions.Function1
         public /* bridge */ /* synthetic */ Unit invoke(ViewState viewState) {
             invoke2(viewState);
-            return Unit.a;
+            return Unit.f27425a;
         }
 
         /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
         public final void invoke2(ViewState viewState) {
-            Intrinsics3.checkNotNullParameter(viewState, "p1");
+            C12238m.checkNotNullParameter(viewState, "p1");
             ((WidgetGuildScheduledEventCreateSuccessViewModel) this.receiver).updateViewState(viewState);
         }
     }
@@ -106,7 +106,7 @@ public final class WidgetGuildScheduledEventCreateSuccessViewModel extends AppVi
             }
 
             public final Loaded copy(WidgetInviteModel widgetInviteModel, boolean showInviteSettings) {
-                Intrinsics3.checkNotNullParameter(widgetInviteModel, "widgetInviteModel");
+                C12238m.checkNotNullParameter(widgetInviteModel, "widgetInviteModel");
                 return new Loaded(widgetInviteModel, showInviteSettings);
             }
 
@@ -118,7 +118,7 @@ public final class WidgetGuildScheduledEventCreateSuccessViewModel extends AppVi
                     return false;
                 }
                 Loaded loaded = (Loaded) other;
-                return Intrinsics3.areEqual(this.widgetInviteModel, loaded.widgetInviteModel) && this.showInviteSettings == loaded.showInviteSettings;
+                return C12238m.areEqual(this.widgetInviteModel, loaded.widgetInviteModel) && this.showInviteSettings == loaded.showInviteSettings;
             }
 
             public final boolean getShowInviteSettings() {
@@ -146,16 +146,16 @@ public final class WidgetGuildScheduledEventCreateSuccessViewModel extends AppVi
             }
 
             public String toString() {
-                StringBuilder sbU = outline.U("Loaded(widgetInviteModel=");
-                sbU.append(this.widgetInviteModel);
-                sbU.append(", showInviteSettings=");
-                return outline.O(sbU, this.showInviteSettings, ")");
+                StringBuilder sbM833U = C1643a.m833U("Loaded(widgetInviteModel=");
+                sbM833U.append(this.widgetInviteModel);
+                sbM833U.append(", showInviteSettings=");
+                return C1643a.m827O(sbM833U, this.showInviteSettings, ")");
             }
 
             /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
             public Loaded(WidgetInviteModel widgetInviteModel, boolean z2) {
                 super(null);
-                Intrinsics3.checkNotNullParameter(widgetInviteModel, "widgetInviteModel");
+                C12238m.checkNotNullParameter(widgetInviteModel, "widgetInviteModel");
                 this.widgetInviteModel = widgetInviteModel;
                 this.showInviteSettings = z2;
             }
@@ -178,13 +178,13 @@ public final class WidgetGuildScheduledEventCreateSuccessViewModel extends AppVi
         }
     }
 
-    /* JADX INFO: renamed from: com.discord.widgets.guildscheduledevent.WidgetGuildScheduledEventCreateSuccessViewModel$generateInviteLink$1, reason: invalid class name */
+    /* JADX INFO: renamed from: com.discord.widgets.guildscheduledevent.WidgetGuildScheduledEventCreateSuccessViewModel$generateInviteLink$1 */
     /* JADX INFO: compiled from: WidgetGuildScheduledEventCreateSuccessViewModel.kt */
-    public static final class AnonymousClass1 extends Lambda implements Function1<Channel, Unit> {
+    public static final class C88541 extends AbstractC12240o implements Function1<Channel, Unit> {
         public final /* synthetic */ Long $channelId;
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-        public AnonymousClass1(Long l) {
+        public C88541(Long l) {
             super(1);
             this.$channelId = l;
         }
@@ -192,7 +192,7 @@ public final class WidgetGuildScheduledEventCreateSuccessViewModel extends AppVi
         @Override // kotlin.jvm.functions.Function1
         public /* bridge */ /* synthetic */ Unit invoke(Channel channel) {
             invoke2(channel);
-            return Unit.a;
+            return Unit.f27425a;
         }
 
         /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
@@ -207,12 +207,12 @@ public final class WidgetGuildScheduledEventCreateSuccessViewModel extends AppVi
         }
     }
 
-    /* JADX INFO: renamed from: com.discord.widgets.guildscheduledevent.WidgetGuildScheduledEventCreateSuccessViewModel$observeInvite$1, reason: invalid class name */
+    /* JADX INFO: renamed from: com.discord.widgets.guildscheduledevent.WidgetGuildScheduledEventCreateSuccessViewModel$observeInvite$1 */
     /* JADX INFO: compiled from: WidgetGuildScheduledEventCreateSuccessViewModel.kt */
-    public static final class AnonymousClass1 extends Lambda implements Function10<ModelInvite.Settings, Map<Long, ? extends Channel>, InviteGenerator.InviteGenerationState, MeUser, List<? extends Channel>, Guild, Map<Long, ? extends StageInstance>, GuildScheduledEvent, StoreInstantInvites.InviteState, Channel, ViewState.Loaded> {
-        public static final AnonymousClass1 INSTANCE = new AnonymousClass1();
+    public static final class C88551 extends AbstractC12240o implements Function10<ModelInvite.Settings, Map<Long, ? extends Channel>, InviteGenerator.InviteGenerationState, MeUser, List<? extends Channel>, Guild, Map<Long, ? extends StageInstance>, GuildScheduledEvent, StoreInstantInvites.InviteState, Channel, ViewState.Loaded> {
+        public static final C88551 INSTANCE = new C88551();
 
-        public AnonymousClass1() {
+        public C88551() {
             super(10);
         }
 
@@ -225,13 +225,13 @@ public final class WidgetGuildScheduledEventCreateSuccessViewModel extends AppVi
         public final ViewState.Loaded invoke2(ModelInvite.Settings settings, Map<Long, Channel> map, InviteGenerator.InviteGenerationState inviteGenerationState, MeUser meUser, List<Channel> list, Guild guild, Map<Long, StageInstance> map2, GuildScheduledEvent guildScheduledEvent, StoreInstantInvites.InviteState inviteState, Channel channel) {
             Long lValueOf;
             StoreInstantInvites.InviteState inviteState2 = inviteState;
-            Intrinsics3.checkNotNullParameter(settings, "settings");
-            Intrinsics3.checkNotNullParameter(map, "invitableChannels");
-            Intrinsics3.checkNotNullParameter(inviteGenerationState, "inviteGenerationState");
-            Intrinsics3.checkNotNullParameter(meUser, "me");
-            Intrinsics3.checkNotNullParameter(list, "dms");
-            Intrinsics3.checkNotNullParameter(map2, "guildStageInstances");
-            Intrinsics3.checkNotNullParameter(inviteState2, "storeInvite");
+            C12238m.checkNotNullParameter(settings, "settings");
+            C12238m.checkNotNullParameter(map, "invitableChannels");
+            C12238m.checkNotNullParameter(inviteGenerationState, "inviteGenerationState");
+            C12238m.checkNotNullParameter(meUser, "me");
+            C12238m.checkNotNullParameter(list, "dms");
+            C12238m.checkNotNullParameter(map2, "guildStageInstances");
+            C12238m.checkNotNullParameter(inviteState2, "storeInvite");
             WidgetInviteModel.Companion companion = WidgetInviteModel.INSTANCE;
             if (guildScheduledEvent == null || (lValueOf = guildScheduledEvent.getChannelId()) == null) {
                 lValueOf = channel != null ? Long.valueOf(channel.getId()) : null;
@@ -262,15 +262,15 @@ public final class WidgetGuildScheduledEventCreateSuccessViewModel extends AppVi
     }
 
     private final Observable<ViewState.Loaded> observeInvite(long guildId, Long eventId, String inviteStoreKey) {
-        Observable<ViewState.Loaded> observableR = ObservableExtensionsKt.computationLatest(ObservableCombineLatestOverloads2.combineLatest(this.storeInviteSettings.getInviteSettings(), this.storeInviteSettings.getInvitableChannels(guildId), this.inviteGenerator.getGenerationState(), StoreUser.observeMe$default(this.storeUser, false, 1, null), this.storeChannels.observeDMs(), this.storeGuilds.observeGuild(guildId), this.storeStageInstances.observeStageInstancesForGuild(guildId), this.storeGuildScheduledEvents.observeGuildScheduledEvent(eventId, Long.valueOf(guildId)), this.storeInstantInvites.observeInvite(inviteStoreKey), this.storeChannels.observeDefaultChannel(guildId), AnonymousClass1.INSTANCE)).r();
-        Intrinsics3.checkNotNullExpressionValue(observableR, "combineLatest(\n        s…  .distinctUntilChanged()");
-        return observableR;
+        Observable<ViewState.Loaded> observableM11112r = ObservableExtensionsKt.computationLatest(ObservableCombineLatestOverloadsKt.combineLatest(this.storeInviteSettings.getInviteSettings(), this.storeInviteSettings.getInvitableChannels(guildId), this.inviteGenerator.getGenerationState(), StoreUser.observeMe$default(this.storeUser, false, 1, null), this.storeChannels.observeDMs(), this.storeGuilds.observeGuild(guildId), this.storeStageInstances.observeStageInstancesForGuild(guildId), this.storeGuildScheduledEvents.observeGuildScheduledEvent(eventId, Long.valueOf(guildId)), this.storeInstantInvites.observeInvite(inviteStoreKey), this.storeChannels.observeDefaultChannel(guildId), C88551.INSTANCE)).m11112r();
+        C12238m.checkNotNullExpressionValue(observableM11112r, "combineLatest(\n        s…  .distinctUntilChanged()");
+        return observableM11112r;
     }
 
     public final void generateInviteLink(Long channelId) {
-        Observable<Channel> observableZ = this.storeChannels.observeDefaultChannel(this.guildId).z();
-        Intrinsics3.checkNotNullExpressionValue(observableZ, "storeChannels.observeDef…tChannel(guildId).first()");
-        ObservableExtensionsKt.appSubscribe(observableZ, (Class<?>) WidgetGuildScheduledEventCreateSuccessViewModel.class, (58 & 2) != 0 ? null : null, (Function1<? super Subscription, Unit>) ((58 & 4) != 0 ? null : null), (Function1<? super Error, Unit>) ((58 & 8) != 0 ? null : null), (Function0<Unit>) ((58 & 16) != 0 ? ObservableExtensionsKt.AnonymousClass1.INSTANCE : null), (Function0<Unit>) ((58 & 32) != 0 ? ObservableExtensionsKt.AnonymousClass2.INSTANCE : null), new AnonymousClass1(channelId));
+        Observable<Channel> observableM11119z = this.storeChannels.observeDefaultChannel(this.guildId).m11119z();
+        C12238m.checkNotNullExpressionValue(observableM11119z, "storeChannels.observeDef…tChannel(guildId).first()");
+        ObservableExtensionsKt.appSubscribe(observableM11119z, (Class<?>) WidgetGuildScheduledEventCreateSuccessViewModel.class, (58 & 2) != 0 ? null : null, (Function1<? super Subscription, Unit>) ((58 & 4) != 0 ? null : null), (Function1<? super Error, Unit>) ((58 & 8) != 0 ? null : null), (Function0<Unit>) ((58 & 16) != 0 ? ObservableExtensionsKt.C68791.INSTANCE : null), (Function0<Unit>) ((58 & 32) != 0 ? ObservableExtensionsKt.C68802.INSTANCE : null), new C88541(channelId));
     }
 
     public final Long getChannelId() {
@@ -322,22 +322,22 @@ public final class WidgetGuildScheduledEventCreateSuccessViewModel extends AppVi
     }
 
     public final void updateInviteSettings(ModelInvite.Settings settings) {
-        Intrinsics3.checkNotNullParameter(settings, "settings");
+        C12238m.checkNotNullParameter(settings, "settings");
         this.storeInviteSettings.setInviteSettings(settings);
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public WidgetGuildScheduledEventCreateSuccessViewModel(Long l, long j, long j2, StoreChannels storeChannels, StoreGuilds storeGuilds, StoreInviteSettings storeInviteSettings, StoreUser storeUser, StoreStageInstances storeStageInstances, StoreGuildScheduledEvents storeGuildScheduledEvents, StoreInstantInvites storeInstantInvites, InviteGenerator inviteGenerator, Resources resources) {
         super(ViewState.Uninitialized.INSTANCE);
-        Intrinsics3.checkNotNullParameter(storeChannels, "storeChannels");
-        Intrinsics3.checkNotNullParameter(storeGuilds, "storeGuilds");
-        Intrinsics3.checkNotNullParameter(storeInviteSettings, "storeInviteSettings");
-        Intrinsics3.checkNotNullParameter(storeUser, "storeUser");
-        Intrinsics3.checkNotNullParameter(storeStageInstances, "storeStageInstances");
-        Intrinsics3.checkNotNullParameter(storeGuildScheduledEvents, "storeGuildScheduledEvents");
-        Intrinsics3.checkNotNullParameter(storeInstantInvites, "storeInstantInvites");
-        Intrinsics3.checkNotNullParameter(inviteGenerator, "inviteGenerator");
-        Intrinsics3.checkNotNullParameter(resources, "resources");
+        C12238m.checkNotNullParameter(storeChannels, "storeChannels");
+        C12238m.checkNotNullParameter(storeGuilds, "storeGuilds");
+        C12238m.checkNotNullParameter(storeInviteSettings, "storeInviteSettings");
+        C12238m.checkNotNullParameter(storeUser, "storeUser");
+        C12238m.checkNotNullParameter(storeStageInstances, "storeStageInstances");
+        C12238m.checkNotNullParameter(storeGuildScheduledEvents, "storeGuildScheduledEvents");
+        C12238m.checkNotNullParameter(storeInstantInvites, "storeInstantInvites");
+        C12238m.checkNotNullParameter(inviteGenerator, "inviteGenerator");
+        C12238m.checkNotNullParameter(resources, "resources");
         this.channelId = l;
         this.guildId = j;
         this.guildScheduledEventId = j2;
@@ -350,15 +350,15 @@ public final class WidgetGuildScheduledEventCreateSuccessViewModel extends AppVi
         this.storeInstantInvites = storeInstantInvites;
         this.inviteGenerator = inviteGenerator;
         this.resources = resources;
-        Observable<ViewState.Loaded> observableU = observeInvite(j, Long.valueOf(j2), null).u(new Action1<ViewState.Loaded>() { // from class: com.discord.widgets.guildscheduledevent.WidgetGuildScheduledEventCreateSuccessViewModel.1
-            @Override // rx.functions.Action1
+        Observable<ViewState.Loaded> observableM11115u = observeInvite(j, Long.valueOf(j2), null).m11115u(new Action1<ViewState.Loaded>() { // from class: com.discord.widgets.guildscheduledevent.WidgetGuildScheduledEventCreateSuccessViewModel.1
+            @Override // p658rx.functions.Action1
             public final void call(ViewState.Loaded loaded) {
                 WidgetGuildScheduledEventCreateSuccessViewModel widgetGuildScheduledEventCreateSuccessViewModel = WidgetGuildScheduledEventCreateSuccessViewModel.this;
-                Intrinsics3.checkNotNullExpressionValue(loaded, "viewState");
+                C12238m.checkNotNullExpressionValue(loaded, "viewState");
                 widgetGuildScheduledEventCreateSuccessViewModel.generateInviteLinkFromViewState(loaded);
             }
         });
-        Intrinsics3.checkNotNullExpressionValue(observableU, "observeInvite(guildId, g…romViewState(viewState) }");
-        ObservableExtensionsKt.appSubscribe(ObservableExtensionsKt.ui$default(ObservableExtensionsKt.computationLatest(observableU), this, null, 2, null), (Class<?>) WidgetGuildScheduledEventCreateSuccessViewModel.class, (58 & 2) != 0 ? null : null, (Function1<? super Subscription, Unit>) ((58 & 4) != 0 ? null : null), (Function1<? super Error, Unit>) ((58 & 8) != 0 ? null : null), (Function0<Unit>) ((58 & 16) != 0 ? ObservableExtensionsKt.AnonymousClass1.INSTANCE : null), (Function0<Unit>) ((58 & 32) != 0 ? ObservableExtensionsKt.AnonymousClass2.INSTANCE : null), new AnonymousClass2(this));
+        C12238m.checkNotNullExpressionValue(observableM11115u, "observeInvite(guildId, g…romViewState(viewState) }");
+        ObservableExtensionsKt.appSubscribe(ObservableExtensionsKt.ui$default(ObservableExtensionsKt.computationLatest(observableM11115u), this, null, 2, null), (Class<?>) WidgetGuildScheduledEventCreateSuccessViewModel.class, (58 & 2) != 0 ? null : null, (Function1<? super Subscription, Unit>) ((58 & 4) != 0 ? null : null), (Function1<? super Error, Unit>) ((58 & 8) != 0 ? null : null), (Function0<Unit>) ((58 & 16) != 0 ? ObservableExtensionsKt.C68791.INSTANCE : null), (Function0<Unit>) ((58 & 32) != 0 ? ObservableExtensionsKt.C68802.INSTANCE : null), new C88532(this));
     }
 }

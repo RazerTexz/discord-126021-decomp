@@ -1,9 +1,9 @@
 package com.discord.widgets.chat.input.expression;
 
-import b.d.b.a.outline;
 import com.discord.widgets.chat.input.gifpicker.GifCategoryItem;
-import d0.z.d.Intrinsics3;
 import kotlin.jvm.internal.DefaultConstructorMarker;
+import p007b.p100d.p104b.p105a.C1643a;
+import p507d0.p592z.p594d.C12238m;
 
 /* JADX INFO: compiled from: ExpressionDetailPage.kt */
 /* JADX INFO: loaded from: classes2.dex */
@@ -16,7 +16,7 @@ public abstract class ExpressionDetailPage {
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
         public GifCategoryPage(GifCategoryItem gifCategoryItem) {
             super(null);
-            Intrinsics3.checkNotNullParameter(gifCategoryItem, "gifCategoryItem");
+            C12238m.checkNotNullParameter(gifCategoryItem, "gifCategoryItem");
             this.gifCategoryItem = gifCategoryItem;
         }
 
@@ -33,13 +33,13 @@ public abstract class ExpressionDetailPage {
         }
 
         public final GifCategoryPage copy(GifCategoryItem gifCategoryItem) {
-            Intrinsics3.checkNotNullParameter(gifCategoryItem, "gifCategoryItem");
+            C12238m.checkNotNullParameter(gifCategoryItem, "gifCategoryItem");
             return new GifCategoryPage(gifCategoryItem);
         }
 
         public boolean equals(Object other) {
             if (this != other) {
-                return (other instanceof GifCategoryPage) && Intrinsics3.areEqual(this.gifCategoryItem, ((GifCategoryPage) other).gifCategoryItem);
+                return (other instanceof GifCategoryPage) && C12238m.areEqual(this.gifCategoryItem, ((GifCategoryPage) other).gifCategoryItem);
             }
             return true;
         }
@@ -57,10 +57,10 @@ public abstract class ExpressionDetailPage {
         }
 
         public String toString() {
-            StringBuilder sbU = outline.U("GifCategoryPage(gifCategoryItem=");
-            sbU.append(this.gifCategoryItem);
-            sbU.append(")");
-            return sbU.toString();
+            StringBuilder sbM833U = C1643a.m833U("GifCategoryPage(gifCategoryItem=");
+            sbM833U.append(this.gifCategoryItem);
+            sbM833U.append(")");
+            return sbM833U.toString();
         }
     }
 

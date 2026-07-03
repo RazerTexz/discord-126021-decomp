@@ -1,15 +1,11 @@
 package com.discord.stores;
 
-import b.d.b.a.outline;
 import com.discord.models.domain.ModelGuildTemplate;
 import com.discord.stores.updates.ObservationDeck;
 import com.discord.utilities.analytics.AnalyticsTracker;
 import com.discord.utilities.error.Error;
+import com.discord.utilities.p501rx.ObservableExtensionsKt;
 import com.discord.utilities.rest.RestAPI;
-import com.discord.utilities.rx.ObservableExtensionsKt;
-import d0.t.Maps6;
-import d0.z.d.Intrinsics3;
-import d0.z.d.Lambda;
 import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.Map;
@@ -17,8 +13,12 @@ import kotlin.Unit;
 import kotlin.jvm.functions.Function0;
 import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.DefaultConstructorMarker;
-import rx.Observable;
-import rx.Subscription;
+import p007b.p100d.p104b.p105a.C1643a;
+import p507d0.p580t.C12136h0;
+import p507d0.p592z.p594d.AbstractC12240o;
+import p507d0.p592z.p594d.C12238m;
+import p658rx.Observable;
+import p658rx.Subscription;
 
 /* JADX INFO: compiled from: StoreGuildTemplates.kt */
 /* JADX INFO: loaded from: classes2.dex */
@@ -76,7 +76,7 @@ public final class StoreGuildTemplates extends StoreV2 {
             /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
             public Resolved(ModelGuildTemplate modelGuildTemplate) {
                 super(null);
-                Intrinsics3.checkNotNullParameter(modelGuildTemplate, "guildTemplate");
+                C12238m.checkNotNullParameter(modelGuildTemplate, "guildTemplate");
                 this.guildTemplate = modelGuildTemplate;
             }
 
@@ -93,13 +93,13 @@ public final class StoreGuildTemplates extends StoreV2 {
             }
 
             public final Resolved copy(ModelGuildTemplate guildTemplate) {
-                Intrinsics3.checkNotNullParameter(guildTemplate, "guildTemplate");
+                C12238m.checkNotNullParameter(guildTemplate, "guildTemplate");
                 return new Resolved(guildTemplate);
             }
 
             public boolean equals(Object other) {
                 if (this != other) {
-                    return (other instanceof Resolved) && Intrinsics3.areEqual(this.guildTemplate, ((Resolved) other).guildTemplate);
+                    return (other instanceof Resolved) && C12238m.areEqual(this.guildTemplate, ((Resolved) other).guildTemplate);
                 }
                 return true;
             }
@@ -117,10 +117,10 @@ public final class StoreGuildTemplates extends StoreV2 {
             }
 
             public String toString() {
-                StringBuilder sbU = outline.U("Resolved(guildTemplate=");
-                sbU.append(this.guildTemplate);
-                sbU.append(")");
-                return sbU.toString();
+                StringBuilder sbM833U = C1643a.m833U("Resolved(guildTemplate=");
+                sbM833U.append(this.guildTemplate);
+                sbM833U.append(")");
+                return sbM833U.toString();
             }
         }
 
@@ -144,13 +144,13 @@ public final class StoreGuildTemplates extends StoreV2 {
         }
     }
 
-    /* JADX INFO: renamed from: com.discord.stores.StoreGuildTemplates$maybeInitTemplateState$1, reason: invalid class name */
+    /* JADX INFO: renamed from: com.discord.stores.StoreGuildTemplates$maybeInitTemplateState$1 */
     /* JADX INFO: compiled from: StoreGuildTemplates.kt */
-    public static final class AnonymousClass1 extends Lambda implements Function0<Unit> {
+    public static final class C60831 extends AbstractC12240o implements Function0<Unit> {
         public final /* synthetic */ String $guildTemplateCode;
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-        public AnonymousClass1(String str) {
+        public C60831(String str) {
             super(0);
             this.$guildTemplateCode = str;
         }
@@ -158,7 +158,7 @@ public final class StoreGuildTemplates extends StoreV2 {
         @Override // kotlin.jvm.functions.Function0
         public /* bridge */ /* synthetic */ Unit invoke() {
             invoke2();
-            return Unit.a;
+            return Unit.f27425a;
         }
 
         /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
@@ -171,10 +171,10 @@ public final class StoreGuildTemplates extends StoreV2 {
         }
     }
 
-    /* JADX INFO: renamed from: com.discord.stores.StoreGuildTemplates$observeDynamicLinkGuildTemplateCode$1, reason: invalid class name */
+    /* JADX INFO: renamed from: com.discord.stores.StoreGuildTemplates$observeDynamicLinkGuildTemplateCode$1 */
     /* JADX INFO: compiled from: StoreGuildTemplates.kt */
-    public static final class AnonymousClass1 extends Lambda implements Function0<String> {
-        public AnonymousClass1() {
+    public static final class C60841 extends AbstractC12240o implements Function0<String> {
+        public C60841() {
             super(0);
         }
 
@@ -184,13 +184,13 @@ public final class StoreGuildTemplates extends StoreV2 {
         }
     }
 
-    /* JADX INFO: renamed from: com.discord.stores.StoreGuildTemplates$observeGuildTemplate$1, reason: invalid class name */
+    /* JADX INFO: renamed from: com.discord.stores.StoreGuildTemplates$observeGuildTemplate$1 */
     /* JADX INFO: compiled from: StoreGuildTemplates.kt */
-    public static final class AnonymousClass1 extends Lambda implements Function0<GuildTemplateState> {
+    public static final class C60851 extends AbstractC12240o implements Function0<GuildTemplateState> {
         public final /* synthetic */ String $guildTemplateCode;
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-        public AnonymousClass1(String str) {
+        public C60851(String str) {
             super(0);
             this.$guildTemplateCode = str;
         }
@@ -203,17 +203,17 @@ public final class StoreGuildTemplates extends StoreV2 {
         }
     }
 
-    /* JADX INFO: renamed from: com.discord.stores.StoreGuildTemplates$requestGuildTemplate$1, reason: invalid class name */
+    /* JADX INFO: renamed from: com.discord.stores.StoreGuildTemplates$requestGuildTemplate$1 */
     /* JADX INFO: compiled from: StoreGuildTemplates.kt */
-    public static final class AnonymousClass1 extends Lambda implements Function1<ModelGuildTemplate, Unit> {
+    public static final class C60861 extends AbstractC12240o implements Function1<ModelGuildTemplate, Unit> {
 
-        /* JADX INFO: renamed from: com.discord.stores.StoreGuildTemplates$requestGuildTemplate$1$1, reason: invalid class name and collision with other inner class name */
+        /* JADX INFO: renamed from: com.discord.stores.StoreGuildTemplates$requestGuildTemplate$1$1, reason: invalid class name */
         /* JADX INFO: compiled from: StoreGuildTemplates.kt */
-        public static final class C01331 extends Lambda implements Function0<Unit> {
+        public static final class AnonymousClass1 extends AbstractC12240o implements Function0<Unit> {
             public final /* synthetic */ ModelGuildTemplate $guildTemplate;
 
             /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-            public C01331(ModelGuildTemplate modelGuildTemplate) {
+            public AnonymousClass1(ModelGuildTemplate modelGuildTemplate) {
                 super(0);
                 this.$guildTemplate = modelGuildTemplate;
             }
@@ -221,7 +221,7 @@ public final class StoreGuildTemplates extends StoreV2 {
             @Override // kotlin.jvm.functions.Function0
             public /* bridge */ /* synthetic */ Unit invoke() {
                 invoke2();
-                return Unit.a;
+                return Unit.f27425a;
             }
 
             /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
@@ -230,31 +230,31 @@ public final class StoreGuildTemplates extends StoreV2 {
             }
         }
 
-        public AnonymousClass1() {
+        public C60861() {
             super(1);
         }
 
         @Override // kotlin.jvm.functions.Function1
         public /* bridge */ /* synthetic */ Unit invoke(ModelGuildTemplate modelGuildTemplate) {
             invoke2(modelGuildTemplate);
-            return Unit.a;
+            return Unit.f27425a;
         }
 
         /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
         public final void invoke2(ModelGuildTemplate modelGuildTemplate) {
-            Intrinsics3.checkNotNullParameter(modelGuildTemplate, "guildTemplate");
-            StoreGuildTemplates.this.dispatcher.schedule(new C01331(modelGuildTemplate));
+            C12238m.checkNotNullParameter(modelGuildTemplate, "guildTemplate");
+            StoreGuildTemplates.this.dispatcher.schedule(new AnonymousClass1(modelGuildTemplate));
         }
     }
 
-    /* JADX INFO: renamed from: com.discord.stores.StoreGuildTemplates$requestGuildTemplate$2, reason: invalid class name */
+    /* JADX INFO: renamed from: com.discord.stores.StoreGuildTemplates$requestGuildTemplate$2 */
     /* JADX INFO: compiled from: StoreGuildTemplates.kt */
-    public static final class AnonymousClass2 extends Lambda implements Function1<Error, Unit> {
+    public static final class C60872 extends AbstractC12240o implements Function1<Error, Unit> {
         public final /* synthetic */ String $guildTemplateCode;
 
         /* JADX INFO: renamed from: com.discord.stores.StoreGuildTemplates$requestGuildTemplate$2$1, reason: invalid class name */
         /* JADX INFO: compiled from: StoreGuildTemplates.kt */
-        public static final class AnonymousClass1 extends Lambda implements Function0<Unit> {
+        public static final class AnonymousClass1 extends AbstractC12240o implements Function0<Unit> {
             public final /* synthetic */ Error $error;
 
             /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -266,22 +266,22 @@ public final class StoreGuildTemplates extends StoreV2 {
             @Override // kotlin.jvm.functions.Function0
             public /* bridge */ /* synthetic */ Unit invoke() {
                 invoke2();
-                return Unit.a;
+                return Unit.f27425a;
             }
 
             /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
             public final void invoke2() {
-                AnonymousClass2 anonymousClass2 = AnonymousClass2.this;
+                C60872 c60872 = C60872.this;
                 StoreGuildTemplates storeGuildTemplates = StoreGuildTemplates.this;
-                String str = anonymousClass2.$guildTemplateCode;
+                String str = c60872.$guildTemplateCode;
                 Error.Type type = this.$error.getType();
-                Intrinsics3.checkNotNullExpressionValue(type, "error.type");
+                C12238m.checkNotNullExpressionValue(type, "error.type");
                 storeGuildTemplates.handleRequestGuildTemplateError(str, type);
             }
         }
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-        public AnonymousClass2(String str) {
+        public C60872(String str) {
             super(1);
             this.$guildTemplateCode = str;
         }
@@ -289,23 +289,23 @@ public final class StoreGuildTemplates extends StoreV2 {
         @Override // kotlin.jvm.functions.Function1
         public /* bridge */ /* synthetic */ Unit invoke(Error error) {
             invoke2(error);
-            return Unit.a;
+            return Unit.f27425a;
         }
 
         /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
         public final void invoke2(Error error) {
-            Intrinsics3.checkNotNullParameter(error, "error");
+            C12238m.checkNotNullParameter(error, "error");
             StoreGuildTemplates.this.dispatcher.schedule(new AnonymousClass1(error));
         }
     }
 
-    /* JADX INFO: renamed from: com.discord.stores.StoreGuildTemplates$setDynamicLinkGuildTemplateCode$1, reason: invalid class name */
+    /* JADX INFO: renamed from: com.discord.stores.StoreGuildTemplates$setDynamicLinkGuildTemplateCode$1 */
     /* JADX INFO: compiled from: StoreGuildTemplates.kt */
-    public static final class AnonymousClass1 extends Lambda implements Function0<Unit> {
+    public static final class C60881 extends AbstractC12240o implements Function0<Unit> {
         public final /* synthetic */ String $guildTemplateCode;
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-        public AnonymousClass1(String str) {
+        public C60881(String str) {
             super(0);
             this.$guildTemplateCode = str;
         }
@@ -313,7 +313,7 @@ public final class StoreGuildTemplates extends StoreV2 {
         @Override // kotlin.jvm.functions.Function0
         public /* bridge */ /* synthetic */ Unit invoke() {
             invoke2();
-            return Unit.a;
+            return Unit.f27425a;
         }
 
         /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
@@ -324,17 +324,17 @@ public final class StoreGuildTemplates extends StoreV2 {
     }
 
     public StoreGuildTemplates(ObservationDeck observationDeck, Dispatcher dispatcher, RestAPI restAPI) {
-        Intrinsics3.checkNotNullParameter(observationDeck, "observationDeck");
-        Intrinsics3.checkNotNullParameter(dispatcher, "dispatcher");
-        Intrinsics3.checkNotNullParameter(restAPI, "restAPI");
+        C12238m.checkNotNullParameter(observationDeck, "observationDeck");
+        C12238m.checkNotNullParameter(dispatcher, "dispatcher");
+        C12238m.checkNotNullParameter(restAPI, "restAPI");
         this.observationDeck = observationDeck;
         this.dispatcher = dispatcher;
         this.restAPI = restAPI;
         this.guildTemplatesByCode = new LinkedHashMap();
-        this.guildTemplatesByCodeSnapshot = Maps6.emptyMap();
+        this.guildTemplatesByCodeSnapshot = C12136h0.emptyMap();
     }
 
-    @Store3
+    @StoreThread
     private final void handleRequestGuildTemplateError(String guildTemplateCode, Error.Type errorType) {
         int iOrdinal = errorType.ordinal();
         if (iOrdinal == 3) {
@@ -350,7 +350,7 @@ public final class StoreGuildTemplates extends StoreV2 {
         }
     }
 
-    @Store3
+    @StoreThread
     private final void handleRequestGuildTemplateSuccess(ModelGuildTemplate guildTemplate) {
         this.guildTemplatesByCode.put(guildTemplate.getCode(), new GuildTemplateState.Resolved(guildTemplate));
         markChanged();
@@ -358,7 +358,7 @@ public final class StoreGuildTemplates extends StoreV2 {
     }
 
     private final void requestGuildTemplate(String guildTemplateCode) {
-        ObservableExtensionsKt.appSubscribe(ObservableExtensionsKt.restSubscribeOn$default(this.restAPI.getGuildTemplateCode(guildTemplateCode), false, 1, null), (Class<?>) StoreGuildTemplates.class, (58 & 2) != 0 ? null : null, (Function1<? super Subscription, Unit>) ((58 & 4) != 0 ? null : null), (Function1<? super Error, Unit>) ((58 & 8) != 0 ? null : new AnonymousClass2(guildTemplateCode)), (Function0<Unit>) ((58 & 16) != 0 ? ObservableExtensionsKt.AnonymousClass1.INSTANCE : null), (Function0<Unit>) ((58 & 32) != 0 ? ObservableExtensionsKt.AnonymousClass2.INSTANCE : null), new AnonymousClass1());
+        ObservableExtensionsKt.appSubscribe(ObservableExtensionsKt.restSubscribeOn$default(this.restAPI.getGuildTemplateCode(guildTemplateCode), false, 1, null), (Class<?>) StoreGuildTemplates.class, (58 & 2) != 0 ? null : null, (Function1<? super Subscription, Unit>) ((58 & 4) != 0 ? null : null), (Function1<? super Error, Unit>) ((58 & 8) != 0 ? null : new C60872(guildTemplateCode)), (Function0<Unit>) ((58 & 16) != 0 ? ObservableExtensionsKt.C68791.INSTANCE : null), (Function0<Unit>) ((58 & 32) != 0 ? ObservableExtensionsKt.C68802.INSTANCE : null), new C60861());
     }
 
     public final void clearDynamicLinkGuildTemplateCode() {
@@ -370,30 +370,30 @@ public final class StoreGuildTemplates extends StoreV2 {
     }
 
     public final GuildTemplateState getGuildTemplate(String guildTemplateCode) {
-        Intrinsics3.checkNotNullParameter(guildTemplateCode, "guildTemplateCode");
+        C12238m.checkNotNullParameter(guildTemplateCode, "guildTemplateCode");
         return this.guildTemplatesByCodeSnapshot.get(guildTemplateCode);
     }
 
     public final void maybeInitTemplateState(String guildTemplateCode) {
-        Intrinsics3.checkNotNullParameter(guildTemplateCode, "guildTemplateCode");
-        this.dispatcher.schedule(new AnonymousClass1(guildTemplateCode));
+        C12238m.checkNotNullParameter(guildTemplateCode, "guildTemplateCode");
+        this.dispatcher.schedule(new C60831(guildTemplateCode));
     }
 
     public final Observable<String> observeDynamicLinkGuildTemplateCode() {
-        Observable<String> observableR = ObservationDeck.connectRx$default(this.observationDeck, new ObservationDeck.UpdateSource[]{this}, false, null, null, new AnonymousClass1(), 14, null).r();
-        Intrinsics3.checkNotNullExpressionValue(observableR, "observationDeck.connectR…  .distinctUntilChanged()");
-        return observableR;
+        Observable<String> observableM11112r = ObservationDeck.connectRx$default(this.observationDeck, new ObservationDeck.UpdateSource[]{this}, false, null, null, new C60841(), 14, null).m11112r();
+        C12238m.checkNotNullExpressionValue(observableM11112r, "observationDeck.connectR…  .distinctUntilChanged()");
+        return observableM11112r;
     }
 
     public final Observable<GuildTemplateState> observeGuildTemplate(String guildTemplateCode) {
-        Intrinsics3.checkNotNullParameter(guildTemplateCode, "guildTemplateCode");
-        Observable<GuildTemplateState> observableR = ObservationDeck.connectRx$default(this.observationDeck, new ObservationDeck.UpdateSource[]{this}, false, null, null, new AnonymousClass1(guildTemplateCode), 14, null).r();
-        Intrinsics3.checkNotNullExpressionValue(observableR, "observationDeck.connectR… }.distinctUntilChanged()");
-        return observableR;
+        C12238m.checkNotNullParameter(guildTemplateCode, "guildTemplateCode");
+        Observable<GuildTemplateState> observableM11112r = ObservationDeck.connectRx$default(this.observationDeck, new ObservationDeck.UpdateSource[]{this}, false, null, null, new C60851(guildTemplateCode), 14, null).m11112r();
+        C12238m.checkNotNullExpressionValue(observableM11112r, "observationDeck.connectR… }.distinctUntilChanged()");
+        return observableM11112r;
     }
 
     public final void setDynamicLinkGuildTemplateCode(String guildTemplateCode) {
-        this.dispatcher.schedule(new AnonymousClass1(guildTemplateCode));
+        this.dispatcher.schedule(new C60881(guildTemplateCode));
     }
 
     @Override // com.discord.stores.StoreV2

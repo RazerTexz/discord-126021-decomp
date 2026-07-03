@@ -6,12 +6,12 @@ import com.discord.models.guild.Guild;
 import com.discord.stores.StoreExperiments;
 import com.discord.stores.StoreGuilds;
 import com.discord.stores.StoreStream;
-import d0.LazyJVM;
-import d0.z.d.Intrinsics3;
 import kotlin.Lazy;
 import kotlin.jvm.internal.DefaultConstructorMarker;
-import rx.Observable;
-import rx.functions.Func2;
+import p507d0.C12083g;
+import p507d0.p592z.p594d.C12238m;
+import p658rx.Observable;
+import p658rx.functions.Func2;
 
 /* JADX INFO: compiled from: NewThreadsPermissionsFeatureFlag.kt */
 /* JADX INFO: loaded from: classes2.dex */
@@ -19,7 +19,7 @@ public final class NewThreadsPermissionsFeatureFlag {
 
     /* JADX INFO: renamed from: Companion, reason: from kotlin metadata */
     public static final Companion INSTANCE = new Companion(null);
-    private static final Lazy INSTANCE$delegate = LazyJVM.lazy(NewThreadsPermissionsFeatureFlag2.INSTANCE);
+    private static final Lazy INSTANCE$delegate = C12083g.lazy(NewThreadsPermissionsFeatureFlag$Companion$INSTANCE$2.INSTANCE);
     private final StoreExperiments storeExperiments;
     private final StoreGuilds storeGuilds;
 
@@ -45,8 +45,8 @@ public final class NewThreadsPermissionsFeatureFlag {
     }
 
     public NewThreadsPermissionsFeatureFlag(StoreExperiments storeExperiments, StoreGuilds storeGuilds) {
-        Intrinsics3.checkNotNullParameter(storeExperiments, "storeExperiments");
-        Intrinsics3.checkNotNullParameter(storeGuilds, "storeGuilds");
+        C12238m.checkNotNullParameter(storeExperiments, "storeExperiments");
+        C12238m.checkNotNullParameter(storeGuilds, "storeGuilds");
         this.storeExperiments = storeExperiments;
         this.storeGuilds = storeGuilds;
     }
@@ -56,14 +56,14 @@ public final class NewThreadsPermissionsFeatureFlag {
     }
 
     public final Observable<Boolean> observeEnabled(long guildId) {
-        Observable<Boolean> observableJ = Observable.j(this.storeExperiments.observeGuildExperiment("2021-08_threads_permissions", guildId, true), this.storeGuilds.observeGuild(guildId), new Func2<Experiment, Guild, Boolean>() { // from class: com.discord.widgets.chat.list.NewThreadsPermissionsFeatureFlag.observeEnabled.1
-            @Override // rx.functions.Func2
+        Observable<Boolean> observableM11076j = Observable.m11076j(this.storeExperiments.observeGuildExperiment("2021-08_threads_permissions", guildId, true), this.storeGuilds.observeGuild(guildId), new Func2<Experiment, Guild, Boolean>() { // from class: com.discord.widgets.chat.list.NewThreadsPermissionsFeatureFlag.observeEnabled.1
+            @Override // p658rx.functions.Func2
             public final Boolean call(Experiment experiment, Guild guild) {
                 return Boolean.valueOf(NewThreadsPermissionsFeatureFlag.this.isEnabled(experiment, guild));
             }
         });
-        Intrinsics3.checkNotNullExpressionValue(observableJ, "Observable.combineLatest…dExperiment, guild)\n    }");
-        return observableJ;
+        C12238m.checkNotNullExpressionValue(observableM11076j, "Observable.combineLatest…dExperiment, guild)\n    }");
+        return observableM11076j;
     }
 
     public /* synthetic */ NewThreadsPermissionsFeatureFlag(StoreExperiments storeExperiments, StoreGuilds storeGuilds, int i, DefaultConstructorMarker defaultConstructorMarker) {

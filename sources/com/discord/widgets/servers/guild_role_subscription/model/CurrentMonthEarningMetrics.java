@@ -1,9 +1,9 @@
 package com.discord.widgets.servers.guild_role_subscription.model;
 
-import a0.a.a.b;
-import b.d.b.a.outline;
-import d0.z.d.Intrinsics3;
 import kotlin.jvm.internal.DefaultConstructorMarker;
+import p001a0.p002a.p003a.C0002b;
+import p007b.p100d.p104b.p105a.C1643a;
+import p507d0.p592z.p594d.C12238m;
 
 /* JADX INFO: compiled from: CurrentMonthEarningMetrics.kt */
 /* JADX INFO: loaded from: classes2.dex */
@@ -70,7 +70,7 @@ public final /* data */ class CurrentMonthEarningMetrics {
             return false;
         }
         CurrentMonthEarningMetrics currentMonthEarningMetrics = (CurrentMonthEarningMetrics) other;
-        return this.revenue == currentMonthEarningMetrics.revenue && Intrinsics3.areEqual(this.monthOverMonthRevenueChangePercent, currentMonthEarningMetrics.monthOverMonthRevenueChangePercent) && this.subscriberCount == currentMonthEarningMetrics.subscriberCount && Intrinsics3.areEqual(this.monthOverMonthSubscriberCountChange, currentMonthEarningMetrics.monthOverMonthSubscriberCountChange) && Intrinsics3.areEqual(this.nextPaymentDate, currentMonthEarningMetrics.nextPaymentDate) && Intrinsics3.areEqual(this.revenueSinceDate, currentMonthEarningMetrics.revenueSinceDate);
+        return this.revenue == currentMonthEarningMetrics.revenue && C12238m.areEqual(this.monthOverMonthRevenueChangePercent, currentMonthEarningMetrics.monthOverMonthRevenueChangePercent) && this.subscriberCount == currentMonthEarningMetrics.subscriberCount && C12238m.areEqual(this.monthOverMonthSubscriberCountChange, currentMonthEarningMetrics.monthOverMonthSubscriberCountChange) && C12238m.areEqual(this.nextPaymentDate, currentMonthEarningMetrics.nextPaymentDate) && C12238m.areEqual(this.revenueSinceDate, currentMonthEarningMetrics.revenueSinceDate);
     }
 
     public final Long getMonthOverMonthRevenueChangePercent() {
@@ -98,11 +98,11 @@ public final /* data */ class CurrentMonthEarningMetrics {
     }
 
     public int hashCode() {
-        int iA = b.a(this.revenue) * 31;
+        int iM3a = C0002b.m3a(this.revenue) * 31;
         Long l = this.monthOverMonthRevenueChangePercent;
-        int iA2 = (b.a(this.subscriberCount) + ((iA + (l != null ? l.hashCode() : 0)) * 31)) * 31;
+        int iM3a2 = (C0002b.m3a(this.subscriberCount) + ((iM3a + (l != null ? l.hashCode() : 0)) * 31)) * 31;
         Long l2 = this.monthOverMonthSubscriberCountChange;
-        int iHashCode = (iA2 + (l2 != null ? l2.hashCode() : 0)) * 31;
+        int iHashCode = (iM3a2 + (l2 != null ? l2.hashCode() : 0)) * 31;
         String str = this.nextPaymentDate;
         int iHashCode2 = (iHashCode + (str != null ? str.hashCode() : 0)) * 31;
         String str2 = this.revenueSinceDate;
@@ -110,18 +110,18 @@ public final /* data */ class CurrentMonthEarningMetrics {
     }
 
     public String toString() {
-        StringBuilder sbU = outline.U("CurrentMonthEarningMetrics(revenue=");
-        sbU.append(this.revenue);
-        sbU.append(", monthOverMonthRevenueChangePercent=");
-        sbU.append(this.monthOverMonthRevenueChangePercent);
-        sbU.append(", subscriberCount=");
-        sbU.append(this.subscriberCount);
-        sbU.append(", monthOverMonthSubscriberCountChange=");
-        sbU.append(this.monthOverMonthSubscriberCountChange);
-        sbU.append(", nextPaymentDate=");
-        sbU.append(this.nextPaymentDate);
-        sbU.append(", revenueSinceDate=");
-        return outline.J(sbU, this.revenueSinceDate, ")");
+        StringBuilder sbM833U = C1643a.m833U("CurrentMonthEarningMetrics(revenue=");
+        sbM833U.append(this.revenue);
+        sbM833U.append(", monthOverMonthRevenueChangePercent=");
+        sbM833U.append(this.monthOverMonthRevenueChangePercent);
+        sbM833U.append(", subscriberCount=");
+        sbM833U.append(this.subscriberCount);
+        sbM833U.append(", monthOverMonthSubscriberCountChange=");
+        sbM833U.append(this.monthOverMonthSubscriberCountChange);
+        sbM833U.append(", nextPaymentDate=");
+        sbM833U.append(this.nextPaymentDate);
+        sbM833U.append(", revenueSinceDate=");
+        return C1643a.m822J(sbM833U, this.revenueSinceDate, ")");
     }
 
     public /* synthetic */ CurrentMonthEarningMetrics(long j, Long l, long j2, Long l2, String str, String str2, int i, DefaultConstructorMarker defaultConstructorMarker) {

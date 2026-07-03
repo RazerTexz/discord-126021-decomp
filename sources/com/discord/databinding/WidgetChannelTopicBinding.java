@@ -13,41 +13,47 @@ import com.facebook.drawee.view.SimpleDraweeView;
 /* JADX INFO: loaded from: classes.dex */
 public final class WidgetChannelTopicBinding implements ViewBinding {
 
+    /* JADX INFO: renamed from: a */
     @NonNull
-    public final LinearLayout a;
+    public final LinearLayout f15961a;
 
-    /* JADX INFO: renamed from: b, reason: collision with root package name */
+    /* JADX INFO: renamed from: b */
     @NonNull
-    public final UserAkaView f2281b;
+    public final UserAkaView f15962b;
 
+    /* JADX INFO: renamed from: c */
     @NonNull
-    public final SimpleDraweeView c;
+    public final SimpleDraweeView f15963c;
 
+    /* JADX INFO: renamed from: d */
     @NonNull
-    public final ImageView d;
+    public final ImageView f15964d;
 
+    /* JADX INFO: renamed from: e */
     @NonNull
-    public final ImageView e;
+    public final ImageView f15965e;
 
+    /* JADX INFO: renamed from: f */
     @NonNull
-    public final TextView f;
+    public final TextView f15966f;
 
+    /* JADX INFO: renamed from: g */
     @NonNull
-    public final LinkifiedTextView g;
+    public final LinkifiedTextView f15967g;
 
     public WidgetChannelTopicBinding(@NonNull LinearLayout linearLayout, @NonNull UserAkaView userAkaView, @NonNull LinearLayout linearLayout2, @NonNull SimpleDraweeView simpleDraweeView, @NonNull ImageView imageView, @NonNull ImageView imageView2, @NonNull TextView textView, @NonNull LinkifiedTextView linkifiedTextView) {
-        this.a = linearLayout;
-        this.f2281b = userAkaView;
-        this.c = simpleDraweeView;
-        this.d = imageView;
-        this.e = imageView2;
-        this.f = textView;
-        this.g = linkifiedTextView;
+        this.f15961a = linearLayout;
+        this.f15962b = userAkaView;
+        this.f15963c = simpleDraweeView;
+        this.f15964d = imageView;
+        this.f15965e = imageView2;
+        this.f15966f = textView;
+        this.f15967g = linkifiedTextView;
     }
 
     @Override // androidx.viewbinding.ViewBinding
     @NonNull
     public View getRoot() {
-        return this.a;
+        return this.f15961a;
     }
 }

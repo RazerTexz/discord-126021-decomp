@@ -33,13 +33,13 @@ public class ConstraintLayoutStates {
 
         public State(Context context, XmlPullParser xmlPullParser) {
             this.mConstraintID = -1;
-            TypedArray typedArrayObtainStyledAttributes = context.obtainStyledAttributes(Xml.asAttributeSet(xmlPullParser), R.styleable.State);
+            TypedArray typedArrayObtainStyledAttributes = context.obtainStyledAttributes(Xml.asAttributeSet(xmlPullParser), C0201R.styleable.State);
             int indexCount = typedArrayObtainStyledAttributes.getIndexCount();
             for (int i = 0; i < indexCount; i++) {
                 int index = typedArrayObtainStyledAttributes.getIndex(i);
-                if (index == R.styleable.State_android_id) {
+                if (index == C0201R.styleable.State_android_id) {
                     this.mId = typedArrayObtainStyledAttributes.getResourceId(index, this.mId);
-                } else if (index == R.styleable.State_constraints) {
+                } else if (index == C0201R.styleable.State_constraints) {
                     this.mConstraintID = typedArrayObtainStyledAttributes.getResourceId(index, this.mConstraintID);
                     String resourceTypeName = context.getResources().getResourceTypeName(this.mConstraintID);
                     context.getResources().getResourceName(this.mConstraintID);
@@ -82,11 +82,11 @@ public class ConstraintLayoutStates {
             this.mMaxWidth = Float.NaN;
             this.mMaxHeight = Float.NaN;
             this.mConstraintID = -1;
-            TypedArray typedArrayObtainStyledAttributes = context.obtainStyledAttributes(Xml.asAttributeSet(xmlPullParser), R.styleable.Variant);
+            TypedArray typedArrayObtainStyledAttributes = context.obtainStyledAttributes(Xml.asAttributeSet(xmlPullParser), C0201R.styleable.Variant);
             int indexCount = typedArrayObtainStyledAttributes.getIndexCount();
             for (int i = 0; i < indexCount; i++) {
                 int index = typedArrayObtainStyledAttributes.getIndex(i);
-                if (index == R.styleable.Variant_constraints) {
+                if (index == C0201R.styleable.Variant_constraints) {
                     this.mConstraintID = typedArrayObtainStyledAttributes.getResourceId(index, this.mConstraintID);
                     String resourceTypeName = context.getResources().getResourceTypeName(this.mConstraintID);
                     context.getResources().getResourceName(this.mConstraintID);
@@ -95,13 +95,13 @@ public class ConstraintLayoutStates {
                         this.mConstraintSet = constraintSet;
                         constraintSet.clone(context, this.mConstraintID);
                     }
-                } else if (index == R.styleable.Variant_region_heightLessThan) {
+                } else if (index == C0201R.styleable.Variant_region_heightLessThan) {
                     this.mMaxHeight = typedArrayObtainStyledAttributes.getDimension(index, this.mMaxHeight);
-                } else if (index == R.styleable.Variant_region_heightMoreThan) {
+                } else if (index == C0201R.styleable.Variant_region_heightMoreThan) {
                     this.mMinHeight = typedArrayObtainStyledAttributes.getDimension(index, this.mMinHeight);
-                } else if (index == R.styleable.Variant_region_widthLessThan) {
+                } else if (index == C0201R.styleable.Variant_region_widthLessThan) {
                     this.mMaxWidth = typedArrayObtainStyledAttributes.getDimension(index, this.mMaxWidth);
-                } else if (index == R.styleable.Variant_region_widthMoreThan) {
+                } else if (index == C0201R.styleable.Variant_region_widthMoreThan) {
                     this.mMinWidth = typedArrayObtainStyledAttributes.getDimension(index, this.mMinWidth);
                 } else {
                     Log.v("ConstraintLayoutStates", "Unknown tag");

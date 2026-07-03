@@ -1,15 +1,15 @@
 package com.discord.utilities.system;
 
-import a0.a.a.b;
-import b.d.b.a.outline;
-import d0.LazyJVM;
-import d0.g0.StringNumberConversions;
-import d0.g0.Strings4;
-import d0.y.FileReadWrite;
-import d0.z.d.Intrinsics3;
 import java.io.File;
 import java.util.List;
 import kotlin.Lazy;
+import p001a0.p002a.p003a.C0002b;
+import p007b.p100d.p104b.p105a.C1643a;
+import p507d0.C12083g;
+import p507d0.p579g0.C12102s;
+import p507d0.p579g0.C12106w;
+import p507d0.p591y.C12205f;
+import p507d0.p592z.p594d.C12238m;
 
 /* JADX INFO: compiled from: ProcfsReader.kt */
 /* JADX INFO: loaded from: classes2.dex */
@@ -17,7 +17,7 @@ public final class ProcfsReader {
     public static final ProcfsReader INSTANCE = new ProcfsReader();
 
     /* JADX INFO: renamed from: pid$delegate, reason: from kotlin metadata */
-    private static final Lazy pid = LazyJVM.lazy(ProcfsReader2.INSTANCE);
+    private static final Lazy pid = C12083g.lazy(ProcfsReader$pid$2.INSTANCE);
     private static final Stat default = new Stat(0, 0, 0, 0);
 
     /* JADX INFO: compiled from: ProcfsReader.kt */
@@ -86,18 +86,18 @@ public final class ProcfsReader {
         }
 
         public int hashCode() {
-            return b.a(this.rssPages) + ((b.a(this.totalTime) + ((b.a(this.systemTime) + (b.a(this.userTime) * 31)) * 31)) * 31);
+            return C0002b.m3a(this.rssPages) + ((C0002b.m3a(this.totalTime) + ((C0002b.m3a(this.systemTime) + (C0002b.m3a(this.userTime) * 31)) * 31)) * 31);
         }
 
         public String toString() {
-            StringBuilder sbU = outline.U("Stat(userTime=");
-            sbU.append(this.userTime);
-            sbU.append(", systemTime=");
-            sbU.append(this.systemTime);
-            sbU.append(", totalTime=");
-            sbU.append(this.totalTime);
-            sbU.append(", rssPages=");
-            return outline.C(sbU, this.rssPages, ")");
+            StringBuilder sbM833U = C1643a.m833U("Stat(userTime=");
+            sbM833U.append(this.userTime);
+            sbM833U.append(", systemTime=");
+            sbM833U.append(this.systemTime);
+            sbM833U.append(", totalTime=");
+            sbM833U.append(this.totalTime);
+            sbM833U.append(", rssPages=");
+            return C1643a.m815C(sbM833U, this.rssPages, ")");
         }
     }
 
@@ -112,7 +112,7 @@ public final class ProcfsReader {
         if (input.length() == 0) {
             return default;
         }
-        List listSplit$default = Strings4.split$default((CharSequence) input, new char[]{' '}, false, 0, 6, (Object) null);
+        List listSplit$default = C12106w.split$default((CharSequence) input, new char[]{' '}, false, 0, 6, (Object) null);
         long j = toLong((String) listSplit$default.get(13));
         long j2 = toLong((String) listSplit$default.get(14));
         return new Stat(j, j2, j + j2, toLong((String) listSplit$default.get(23)));
@@ -121,7 +121,7 @@ public final class ProcfsReader {
     private final String readFile(File file) {
         try {
             if (file.exists()) {
-                return FileReadWrite.readText$default(file, null, 1, null);
+                return C12205f.readText$default(file, null, 1, null);
             }
             return null;
         } catch (Exception unused) {
@@ -130,7 +130,7 @@ public final class ProcfsReader {
     }
 
     private final long toLong(String s2) {
-        Long longOrNull = StringNumberConversions.toLongOrNull(s2);
+        Long longOrNull = C12102s.toLongOrNull(s2);
         if (longOrNull != null) {
             return longOrNull.longValue();
         }
@@ -138,11 +138,11 @@ public final class ProcfsReader {
     }
 
     public final Stat readStatFile() {
-        return readStatFile(new File(outline.B(outline.U("/proc/"), getPid(), "/stat")));
+        return readStatFile(new File(C1643a.m814B(C1643a.m833U("/proc/"), getPid(), "/stat")));
     }
 
     public final Stat readStatFile(File file) {
-        Intrinsics3.checkNotNullParameter(file, "file");
+        C12238m.checkNotNullParameter(file, "file");
         String file2 = readFile(file);
         return file2 != null ? parsePidStats(file2) : default;
     }

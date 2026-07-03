@@ -323,7 +323,7 @@ public class PeerConnectionFactory {
             Logging.injectLoggable(loggable, initializationOptions.loggableSeverity);
             nativeInjectLoggable(new JNILogging(initializationOptions.loggable), initializationOptions.loggableSeverity.ordinal());
         } else {
-            Logging.d(TAG, "PeerConnectionFactory was initialized without an injected Loggable. Any existing Loggable will be deleted.");
+            Logging.m11027d(TAG, "PeerConnectionFactory was initialized without an injected Loggable. Any existing Loggable will be deleted.");
             Logging.deleteInjectedLoggable();
             nativeDeleteLoggable();
         }
@@ -387,21 +387,21 @@ public class PeerConnectionFactory {
     private void onNetworkThreadReady() {
         this.networkThread = ThreadInfo.getCurrent();
         staticNetworkThread = this.networkThread;
-        Logging.d(TAG, "onNetworkThreadReady");
+        Logging.m11027d(TAG, "onNetworkThreadReady");
     }
 
     @CalledByNative
     private void onSignalingThreadReady() {
         this.signalingThread = ThreadInfo.getCurrent();
         staticSignalingThread = this.signalingThread;
-        Logging.d(TAG, "onSignalingThreadReady");
+        Logging.m11027d(TAG, "onSignalingThreadReady");
     }
 
     @CalledByNative
     private void onWorkerThreadReady() {
         this.workerThread = ThreadInfo.getCurrent();
         staticWorkerThread = this.workerThread;
-        Logging.d(TAG, "onWorkerThreadReady");
+        Logging.m11027d(TAG, "onWorkerThreadReady");
     }
 
     private static void printStackTrace(@Nullable ThreadInfo threadInfo, boolean z2) {
@@ -411,14 +411,14 @@ public class PeerConnectionFactory {
         String name = threadInfo.thread.getName();
         StackTraceElement[] stackTrace = threadInfo.thread.getStackTrace();
         if (stackTrace.length > 0) {
-            Logging.w(TAG, name + " stacktrace:");
+            Logging.m11031w(TAG, name + " stacktrace:");
             for (StackTraceElement stackTraceElement : stackTrace) {
-                Logging.w(TAG, stackTraceElement.toString());
+                Logging.m11031w(TAG, stackTraceElement.toString());
             }
         }
         if (z2) {
-            Logging.w(TAG, "*** *** *** *** *** *** *** *** *** *** *** *** *** *** *** ***");
-            Logging.w(TAG, "pid: " + Process.myPid() + ", tid: " + threadInfo.tid + ", name: " + name + "  >>> WebRTC <<<");
+            Logging.m11031w(TAG, "*** *** *** *** *** *** *** *** *** *** *** *** *** *** *** ***");
+            Logging.m11031w(TAG, "pid: " + Process.myPid() + ", tid: " + threadInfo.tid + ", name: " + name + "  >>> WebRTC <<<");
             nativePrintStackTrace(threadInfo.tid);
         }
     }

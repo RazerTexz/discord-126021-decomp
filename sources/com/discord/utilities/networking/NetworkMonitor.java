@@ -9,15 +9,15 @@ import android.net.Network;
 import android.net.NetworkCapabilities;
 import android.net.NetworkRequest;
 import android.os.Build;
-import com.discord.utilities.io.NetworkUtils;
 import com.discord.utilities.logging.Logger;
-import d0.z.d.Intrinsics3;
-import d0.z.d.Lambda;
-import j0.k.Func1;
+import com.discord.utilities.p500io.NetworkUtils;
 import kotlin.Unit;
 import kotlin.jvm.functions.Function0;
-import rx.Observable;
-import rx.subjects.BehaviorSubject;
+import p507d0.p592z.p594d.AbstractC12240o;
+import p507d0.p592z.p594d.C12238m;
+import p637j0.p641k.InterfaceC12589b;
+import p658rx.Observable;
+import p658rx.subjects.BehaviorSubject;
 
 /* JADX INFO: compiled from: NetworkMonitor.kt */
 /* JADX INFO: loaded from: classes2.dex */
@@ -32,23 +32,23 @@ public final class NetworkMonitor {
         OFFLINE_AIRPLANE_MODE
     }
 
-    /* JADX INFO: renamed from: com.discord.utilities.networking.NetworkMonitor$registerConnectivityNetworkMonitor$1, reason: invalid class name */
+    /* JADX INFO: renamed from: com.discord.utilities.networking.NetworkMonitor$registerConnectivityNetworkMonitor$1 */
     /* JADX INFO: compiled from: NetworkMonitor.kt */
-    public static final class AnonymousClass1 extends Lambda implements Function0<Unit> {
+    public static final class C68231 extends AbstractC12240o implements Function0<Unit> {
         public final /* synthetic */ ConnectivityManager $connectivityManager;
-        public final /* synthetic */ NetworkMonitor2 $networkCallback;
+        public final /* synthetic */ C6824xb4e4af5a $networkCallback;
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-        public AnonymousClass1(ConnectivityManager connectivityManager, NetworkMonitor2 networkMonitor2) {
+        public C68231(ConnectivityManager connectivityManager, C6824xb4e4af5a c6824xb4e4af5a) {
             super(0);
             this.$connectivityManager = connectivityManager;
-            this.$networkCallback = networkMonitor2;
+            this.$networkCallback = c6824xb4e4af5a;
         }
 
         @Override // kotlin.jvm.functions.Function0
         public /* bridge */ /* synthetic */ Unit invoke() {
             invoke2();
-            return Unit.a;
+            return Unit.f27425a;
         }
 
         /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
@@ -56,16 +56,16 @@ public final class NetworkMonitor {
             try {
                 this.$connectivityManager.registerNetworkCallback(new NetworkRequest.Builder().build(), this.$networkCallback);
             } catch (Exception e) {
-                NetworkMonitor.this.logger.i("[NetworkMonitor]", "Unable to register network callback.", e);
+                NetworkMonitor.this.logger.mo8366i("[NetworkMonitor]", "Unable to register network callback.", e);
             }
         }
     }
 
     public NetworkMonitor(Context context, Logger logger) {
-        Intrinsics3.checkNotNullParameter(context, "context");
-        Intrinsics3.checkNotNullParameter(logger, "logger");
+        C12238m.checkNotNullParameter(context, "context");
+        C12238m.checkNotNullParameter(logger, "logger");
         this.logger = logger;
-        this.networkStateSubject = BehaviorSubject.l0(getState$default(this, context, null, 2, null));
+        this.networkStateSubject = BehaviorSubject.m11130l0(getState$default(this, context, null, 2, null));
         registerConnectivityNetworkMonitor(context);
     }
 
@@ -92,8 +92,8 @@ public final class NetworkMonitor {
         context.registerReceiver(new BroadcastReceiver() { // from class: com.discord.utilities.networking.NetworkMonitor.registerBroadcastAirplaneMode.1
             @Override // android.content.BroadcastReceiver
             public void onReceive(Context context2, Intent intent) {
-                Intrinsics3.checkNotNullParameter(context2, "context");
-                Intrinsics3.checkNotNullParameter(intent, "intent");
+                C12238m.checkNotNullParameter(context2, "context");
+                C12238m.checkNotNullParameter(intent, "intent");
                 Logger.i$default(NetworkMonitor.this.logger, "[NetworkMonitor]", "Got airplane mode broadcast intent.", null, 4, null);
                 NetworkMonitor.updateNetworkState$default(NetworkMonitor.this, context2, null, 2, null);
             }
@@ -104,8 +104,8 @@ public final class NetworkMonitor {
         context.registerReceiver(new BroadcastReceiver() { // from class: com.discord.utilities.networking.NetworkMonitor.registerBroadcastConnectivityNetworkMonitor.1
             @Override // android.content.BroadcastReceiver
             public void onReceive(Context context2, Intent intent) {
-                Intrinsics3.checkNotNullParameter(context2, "context");
-                Intrinsics3.checkNotNullParameter(intent, "intent");
+                C12238m.checkNotNullParameter(context2, "context");
+                C12238m.checkNotNullParameter(intent, "intent");
                 Logger.i$default(NetworkMonitor.this.logger, "[NetworkMonitor]", "Got connectivity action broadcast intent.", null, 4, null);
                 NetworkMonitor.this.updateNetworkState(context2, intent);
             }
@@ -124,22 +124,22 @@ public final class NetworkMonitor {
             ?? r1 = new ConnectivityManager.NetworkCallback() { // from class: com.discord.utilities.networking.NetworkMonitor$registerConnectivityNetworkMonitor$networkCallback$1
                 @Override // android.net.ConnectivityManager.NetworkCallback
                 public void onAvailable(Network network) {
-                    Intrinsics3.checkNotNullParameter(network, "network");
+                    C12238m.checkNotNullParameter(network, "network");
                     Logger.i$default(this.this$0.logger, "[NetworkMonitor]", "Network callback, onAvailable fired: " + network, null, 4, null);
                     NetworkMonitor.updateNetworkState$default(this.this$0, context, null, 2, null);
                 }
 
                 @Override // android.net.ConnectivityManager.NetworkCallback
                 public void onCapabilitiesChanged(Network network, NetworkCapabilities networkCapabilities) {
-                    Intrinsics3.checkNotNullParameter(network, "network");
-                    Intrinsics3.checkNotNullParameter(networkCapabilities, "networkCapabilities");
+                    C12238m.checkNotNullParameter(network, "network");
+                    C12238m.checkNotNullParameter(networkCapabilities, "networkCapabilities");
                     Logger.i$default(this.this$0.logger, "[NetworkMonitor]", "Network callback, onCapabilitiesChanged fired: " + network, null, 4, null);
                     NetworkMonitor.updateNetworkState$default(this.this$0, context, null, 2, null);
                 }
 
                 @Override // android.net.ConnectivityManager.NetworkCallback
                 public void onLost(Network network) {
-                    Intrinsics3.checkNotNullParameter(network, "network");
+                    C12238m.checkNotNullParameter(network, "network");
                     Logger.i$default(this.this$0.logger, "[NetworkMonitor]", "Network callback, onLost fired: " + network, null, 4, null);
                     NetworkMonitor.updateNetworkState$default(this.this$0, context, null, 2, null);
                 }
@@ -150,15 +150,15 @@ public final class NetworkMonitor {
                     NetworkMonitor.updateNetworkState$default(this.this$0, context, null, 2, null);
                 }
             };
-            AnonymousClass1 anonymousClass1 = new AnonymousClass1(connectivityManager, r1);
+            C68231 c68231 = new C68231(connectivityManager, r1);
             if (Build.VERSION.SDK_INT >= 24) {
                 try {
                     connectivityManager.registerDefaultNetworkCallback(r1);
                 } catch (Exception unused) {
-                    anonymousClass1.invoke2();
+                    c68231.invoke2();
                 }
             } else {
-                anonymousClass1.invoke2();
+                c68231.invoke2();
             }
             registerBroadcastConnectivityNetworkMonitor(context);
             registerBroadcastAirplaneMode(context);
@@ -177,19 +177,19 @@ public final class NetworkMonitor {
     }
 
     public final Observable<Boolean> observeIsConnected() {
-        Observable<Boolean> observableR = observeState().G(new Func1<State, Boolean>() { // from class: com.discord.utilities.networking.NetworkMonitor.observeIsConnected.1
-            @Override // j0.k.Func1
+        Observable<Boolean> observableM11112r = observeState().m11083G(new InterfaceC12589b<State, Boolean>() { // from class: com.discord.utilities.networking.NetworkMonitor.observeIsConnected.1
+            @Override // p637j0.p641k.InterfaceC12589b
             public final Boolean call(State state) {
                 return Boolean.valueOf(state == State.ONLINE);
             }
-        }).r();
-        Intrinsics3.checkNotNullExpressionValue(observableR, "observeState().map { sta… }.distinctUntilChanged()");
-        return observableR;
+        }).m11112r();
+        C12238m.checkNotNullExpressionValue(observableM11112r, "observeState().map { sta… }.distinctUntilChanged()");
+        return observableM11112r;
     }
 
     public final Observable<State> observeState() {
-        Observable<State> observableR = this.networkStateSubject.K().r();
-        Intrinsics3.checkNotNullExpressionValue(observableR, "networkStateSubject.onBa…().distinctUntilChanged()");
-        return observableR;
+        Observable<State> observableM11112r = this.networkStateSubject.m11085K().m11112r();
+        C12238m.checkNotNullExpressionValue(observableM11112r, "networkStateSubject.onBa…().distinctUntilChanged()");
+        return observableM11112r;
     }
 }

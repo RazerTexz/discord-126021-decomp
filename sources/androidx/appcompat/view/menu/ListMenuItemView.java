@@ -1,5 +1,6 @@
 package androidx.appcompat.view.menu;
 
+import android.R;
 import android.content.Context;
 import android.content.res.TypedArray;
 import android.graphics.Rect;
@@ -16,7 +17,7 @@ import android.widget.LinearLayout;
 import android.widget.RadioButton;
 import android.widget.TextView;
 import androidx.annotation.RestrictTo;
-import androidx.appcompat.R;
+import androidx.appcompat.C0051R;
 import androidx.appcompat.view.menu.MenuView;
 import androidx.appcompat.widget.TintTypedArray;
 import androidx.core.view.ViewCompat;
@@ -44,7 +45,7 @@ public class ListMenuItemView extends LinearLayout implements MenuView.ItemView,
     private TextView mTitleView;
 
     public ListMenuItemView(Context context, AttributeSet attributeSet) {
-        this(context, attributeSet, R.attr.listMenuViewStyle);
+        this(context, attributeSet, C0051R.attr.listMenuViewStyle);
     }
 
     private void addContentView(View view) {
@@ -59,19 +60,19 @@ public class ListMenuItemView extends LinearLayout implements MenuView.ItemView,
     }
 
     private void insertCheckBox() {
-        CheckBox checkBox = (CheckBox) getInflater().inflate(R.layout.abc_list_menu_item_checkbox, (ViewGroup) this, false);
+        CheckBox checkBox = (CheckBox) getInflater().inflate(C0051R.layout.abc_list_menu_item_checkbox, (ViewGroup) this, false);
         this.mCheckBox = checkBox;
         addContentView(checkBox);
     }
 
     private void insertIconView() {
-        ImageView imageView = (ImageView) getInflater().inflate(R.layout.abc_list_menu_item_icon, (ViewGroup) this, false);
+        ImageView imageView = (ImageView) getInflater().inflate(C0051R.layout.abc_list_menu_item_icon, (ViewGroup) this, false);
         this.mIconView = imageView;
         addContentView(imageView, 0);
     }
 
     private void insertRadioButton() {
-        RadioButton radioButton = (RadioButton) getInflater().inflate(R.layout.abc_list_menu_item_radio, (ViewGroup) this, false);
+        RadioButton radioButton = (RadioButton) getInflater().inflate(C0051R.layout.abc_list_menu_item_radio, (ViewGroup) this, false);
         this.mRadioButton = radioButton;
         addContentView(radioButton);
     }
@@ -115,20 +116,20 @@ public class ListMenuItemView extends LinearLayout implements MenuView.ItemView,
     public void onFinishInflate() {
         super.onFinishInflate();
         ViewCompat.setBackground(this, this.mBackground);
-        TextView textView = (TextView) findViewById(R.id.title);
+        TextView textView = (TextView) findViewById(C0051R.id.title);
         this.mTitleView = textView;
         int i = this.mTextAppearance;
         if (i != -1) {
             textView.setTextAppearance(this.mTextAppearanceContext, i);
         }
-        this.mShortcutView = (TextView) findViewById(R.id.shortcut);
-        ImageView imageView = (ImageView) findViewById(R.id.submenuarrow);
+        this.mShortcutView = (TextView) findViewById(C0051R.id.shortcut);
+        ImageView imageView = (ImageView) findViewById(C0051R.id.submenuarrow);
         this.mSubMenuArrowView = imageView;
         if (imageView != null) {
             imageView.setImageDrawable(this.mSubMenuArrow);
         }
-        this.mGroupDivider = (ImageView) findViewById(R.id.group_divider);
-        this.mContent = (LinearLayout) findViewById(R.id.content);
+        this.mGroupDivider = (ImageView) findViewById(C0051R.id.group_divider);
+        this.mContent = (LinearLayout) findViewById(C0051R.id.content);
     }
 
     @Override // android.widget.LinearLayout, android.view.View
@@ -277,13 +278,13 @@ public class ListMenuItemView extends LinearLayout implements MenuView.ItemView,
 
     public ListMenuItemView(Context context, AttributeSet attributeSet, int i) {
         super(context, attributeSet);
-        TintTypedArray tintTypedArrayObtainStyledAttributes = TintTypedArray.obtainStyledAttributes(getContext(), attributeSet, R.styleable.MenuView, i, 0);
-        this.mBackground = tintTypedArrayObtainStyledAttributes.getDrawable(R.styleable.MenuView_android_itemBackground);
-        this.mTextAppearance = tintTypedArrayObtainStyledAttributes.getResourceId(R.styleable.MenuView_android_itemTextAppearance, -1);
-        this.mPreserveIconSpacing = tintTypedArrayObtainStyledAttributes.getBoolean(R.styleable.MenuView_preserveIconSpacing, false);
+        TintTypedArray tintTypedArrayObtainStyledAttributes = TintTypedArray.obtainStyledAttributes(getContext(), attributeSet, C0051R.styleable.MenuView, i, 0);
+        this.mBackground = tintTypedArrayObtainStyledAttributes.getDrawable(C0051R.styleable.MenuView_android_itemBackground);
+        this.mTextAppearance = tintTypedArrayObtainStyledAttributes.getResourceId(C0051R.styleable.MenuView_android_itemTextAppearance, -1);
+        this.mPreserveIconSpacing = tintTypedArrayObtainStyledAttributes.getBoolean(C0051R.styleable.MenuView_preserveIconSpacing, false);
         this.mTextAppearanceContext = context;
-        this.mSubMenuArrow = tintTypedArrayObtainStyledAttributes.getDrawable(R.styleable.MenuView_subMenuArrow);
-        TypedArray typedArrayObtainStyledAttributes = context.getTheme().obtainStyledAttributes(null, new int[]{android.R.attr.divider}, R.attr.dropDownListViewStyle, 0);
+        this.mSubMenuArrow = tintTypedArrayObtainStyledAttributes.getDrawable(C0051R.styleable.MenuView_subMenuArrow);
+        TypedArray typedArrayObtainStyledAttributes = context.getTheme().obtainStyledAttributes(null, new int[]{R.attr.divider}, C0051R.attr.dropDownListViewStyle, 0);
         this.mHasListDivider = typedArrayObtainStyledAttributes.hasValue(0);
         tintTypedArrayObtainStyledAttributes.recycle();
         typedArrayObtainStyledAttributes.recycle();

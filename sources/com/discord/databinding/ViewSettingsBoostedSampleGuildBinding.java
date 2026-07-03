@@ -11,33 +11,37 @@ import com.facebook.drawee.view.SimpleDraweeView;
 /* JADX INFO: loaded from: classes.dex */
 public final class ViewSettingsBoostedSampleGuildBinding implements ViewBinding {
 
+    /* JADX INFO: renamed from: a */
     @NonNull
-    public final CardView a;
+    public final CardView f15582a;
 
-    /* JADX INFO: renamed from: b, reason: collision with root package name */
+    /* JADX INFO: renamed from: b */
     @NonNull
-    public final TextView f2215b;
+    public final TextView f15583b;
 
+    /* JADX INFO: renamed from: c */
     @NonNull
-    public final SimpleDraweeView c;
+    public final SimpleDraweeView f15584c;
 
+    /* JADX INFO: renamed from: d */
     @NonNull
-    public final TextView d;
+    public final TextView f15585d;
 
+    /* JADX INFO: renamed from: e */
     @NonNull
-    public final GuildBoostProgressView e;
+    public final GuildBoostProgressView f15586e;
 
     public ViewSettingsBoostedSampleGuildBinding(@NonNull CardView cardView, @NonNull TextView textView, @NonNull SimpleDraweeView simpleDraweeView, @NonNull TextView textView2, @NonNull GuildBoostProgressView guildBoostProgressView) {
-        this.a = cardView;
-        this.f2215b = textView;
-        this.c = simpleDraweeView;
-        this.d = textView2;
-        this.e = guildBoostProgressView;
+        this.f15582a = cardView;
+        this.f15583b = textView;
+        this.f15584c = simpleDraweeView;
+        this.f15585d = textView2;
+        this.f15586e = guildBoostProgressView;
     }
 
     @Override // androidx.viewbinding.ViewBinding
     @NonNull
     public View getRoot() {
-        return this.a;
+        return this.f15582a;
     }
 }

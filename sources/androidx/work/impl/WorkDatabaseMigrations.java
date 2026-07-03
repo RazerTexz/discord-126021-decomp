@@ -5,7 +5,7 @@ import android.os.Build;
 import androidx.annotation.NonNull;
 import androidx.annotation.RestrictTo;
 import androidx.room.migration.Migration;
-import androidx.sqlite.db.SupportSQLiteDatabase;
+import androidx.sqlite.p006db.SupportSQLiteDatabase;
 import androidx.work.impl.utils.IdGenerator;
 import androidx.work.impl.utils.PreferenceUtils;
 

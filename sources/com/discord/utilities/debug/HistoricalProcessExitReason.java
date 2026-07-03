@@ -4,17 +4,17 @@ import android.app.ActivityManager;
 import android.app.ApplicationExitInfo;
 import android.os.Build;
 import androidx.appcompat.widget.ActivityChooserModel;
-import b.d.b.a.outline;
 import com.discord.models.domain.ModelAuditLogEntry;
 import com.discord.utilities.lifecycle.ApplicationProvider;
-import d0.LazyJVM;
-import d0.Tuples;
-import d0.t.Maps6;
-import d0.t._Collections;
-import d0.z.d.Intrinsics3;
 import java.util.List;
 import java.util.Map;
 import kotlin.Lazy;
+import p007b.p100d.p104b.p105a.C1643a;
+import p507d0.C12083g;
+import p507d0.C12116o;
+import p507d0.p580t.C12136h0;
+import p507d0.p580t.C12163u;
+import p507d0.p592z.p594d.C12238m;
 
 /* JADX INFO: compiled from: HistoricalProcessExitReason.kt */
 /* JADX INFO: loaded from: classes2.dex */
@@ -22,7 +22,7 @@ public final class HistoricalProcessExitReason {
     public static final HistoricalProcessExitReason INSTANCE = new HistoricalProcessExitReason();
 
     /* JADX INFO: renamed from: lastReason$delegate, reason: from kotlin metadata */
-    private static final Lazy lastReason = LazyJVM.lazy(HistoricalProcessExitReason2.INSTANCE);
+    private static final Lazy lastReason = C12083g.lazy(HistoricalProcessExitReason$lastReason$2.INSTANCE);
 
     /* JADX INFO: compiled from: HistoricalProcessExitReason.kt */
     public static final /* data */ class Reason {
@@ -30,7 +30,7 @@ public final class HistoricalProcessExitReason {
         private final String reason;
 
         public Reason(String str, String str2) {
-            Intrinsics3.checkNotNullParameter(str, ModelAuditLogEntry.CHANGE_KEY_REASON);
+            C12238m.checkNotNullParameter(str, ModelAuditLogEntry.CHANGE_KEY_REASON);
             this.reason = str;
             this.description = str2;
         }
@@ -56,7 +56,7 @@ public final class HistoricalProcessExitReason {
         }
 
         public final Reason copy(String reason, String description) {
-            Intrinsics3.checkNotNullParameter(reason, ModelAuditLogEntry.CHANGE_KEY_REASON);
+            C12238m.checkNotNullParameter(reason, ModelAuditLogEntry.CHANGE_KEY_REASON);
             return new Reason(reason, description);
         }
 
@@ -68,7 +68,7 @@ public final class HistoricalProcessExitReason {
                 return false;
             }
             Reason reason = (Reason) other;
-            return Intrinsics3.areEqual(this.reason, reason.reason) && Intrinsics3.areEqual(this.description, reason.description);
+            return C12238m.areEqual(this.reason, reason.reason) && C12238m.areEqual(this.description, reason.description);
         }
 
         public final String getDescription() {
@@ -87,10 +87,10 @@ public final class HistoricalProcessExitReason {
         }
 
         public String toString() {
-            StringBuilder sbU = outline.U("Reason(reason=");
-            sbU.append(this.reason);
-            sbU.append(", description=");
-            return outline.J(sbU, this.description, ")");
+            StringBuilder sbM833U = C1643a.m833U("Reason(reason=");
+            sbM833U.append(this.reason);
+            sbM833U.append(", description=");
+            return C1643a.m822J(sbM833U, this.description, ")");
         }
     }
 
@@ -102,7 +102,7 @@ public final class HistoricalProcessExitReason {
         if (Build.VERSION.SDK_INT < 30) {
             return null;
         }
-        Map mapMapOf = Maps6.mapOf(Tuples.to(6, "ANR"), Tuples.to(4, "CRASH"), Tuples.to(5, "CRASH_NATIVE"), Tuples.to(12, "DEPENDENCY_DIED"), Tuples.to(9, "EXCESSIVE_RESOURCE_USAGE"), Tuples.to(1, "EXIT_SELF"), Tuples.to(7, "INITIALIZATION_FAILURE"), Tuples.to(3, "LOW_MEMORY"), Tuples.to(13, "OTHER"), Tuples.to(8, "PERMISSION_CHANGE"), Tuples.to(2, "SIGNALED"), Tuples.to(0, "UNKNOWN"), Tuples.to(10, "USER_REQUESTED"), Tuples.to(11, "USER_STOPPED"));
+        Map mapMapOf = C12136h0.mapOf(C12116o.m10073to(6, "ANR"), C12116o.m10073to(4, "CRASH"), C12116o.m10073to(5, "CRASH_NATIVE"), C12116o.m10073to(12, "DEPENDENCY_DIED"), C12116o.m10073to(9, "EXCESSIVE_RESOURCE_USAGE"), C12116o.m10073to(1, "EXIT_SELF"), C12116o.m10073to(7, "INITIALIZATION_FAILURE"), C12116o.m10073to(3, "LOW_MEMORY"), C12116o.m10073to(13, "OTHER"), C12116o.m10073to(8, "PERMISSION_CHANGE"), C12116o.m10073to(2, "SIGNALED"), C12116o.m10073to(0, "UNKNOWN"), C12116o.m10073to(10, "USER_REQUESTED"), C12116o.m10073to(11, "USER_STOPPED"));
         Object systemService = ApplicationProvider.INSTANCE.get().getSystemService(ActivityChooserModel.ATTRIBUTE_ACTIVITY);
         if (!(systemService instanceof ActivityManager)) {
             systemService = null;
@@ -110,14 +110,14 @@ public final class HistoricalProcessExitReason {
         ActivityManager activityManager = (ActivityManager) systemService;
         if (activityManager != null) {
             List<ApplicationExitInfo> historicalProcessExitReasons = activityManager.getHistoricalProcessExitReasons(null, 0, 1);
-            Intrinsics3.checkNotNullExpressionValue(historicalProcessExitReasons, "activityManager.getHisto…ssExitReasons(null, 0, 1)");
-            ApplicationExitInfo applicationExitInfo = (ApplicationExitInfo) _Collections.firstOrNull((List) historicalProcessExitReasons);
+            C12238m.checkNotNullExpressionValue(historicalProcessExitReasons, "activityManager.getHisto…ssExitReasons(null, 0, 1)");
+            ApplicationExitInfo applicationExitInfo = (ApplicationExitInfo) C12163u.firstOrNull((List) historicalProcessExitReasons);
             if (applicationExitInfo != null) {
                 String string = (String) mapMapOf.get(Integer.valueOf(applicationExitInfo.getReason()));
                 if (string == null) {
-                    StringBuilder sbU = outline.U("Unknown ");
-                    sbU.append(applicationExitInfo.getReason());
-                    string = sbU.toString();
+                    StringBuilder sbM833U = C1643a.m833U("Unknown ");
+                    sbM833U.append(applicationExitInfo.getReason());
+                    string = sbM833U.toString();
                 }
                 reason = new Reason(string, applicationExitInfo.getDescription());
             }

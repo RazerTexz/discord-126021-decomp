@@ -6,7 +6,7 @@ import android.os.Parcel;
 import android.os.Parcelable;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import b.d.b.a.outline;
+import p007b.p100d.p104b.p105a.C1643a;
 
 /* JADX INFO: loaded from: classes.dex */
 @SuppressLint({"BanParcelableUsage"})
@@ -59,12 +59,12 @@ public final class ActivityResult implements Parcelable {
     }
 
     public String toString() {
-        StringBuilder sbU = outline.U("ActivityResult{resultCode=");
-        sbU.append(resultCodeToString(this.mResultCode));
-        sbU.append(", data=");
-        sbU.append(this.mData);
-        sbU.append('}');
-        return sbU.toString();
+        StringBuilder sbM833U = C1643a.m833U("ActivityResult{resultCode=");
+        sbM833U.append(resultCodeToString(this.mResultCode));
+        sbM833U.append(", data=");
+        sbM833U.append(this.mData);
+        sbM833U.append('}');
+        return sbM833U.toString();
     }
 
     @Override // android.os.Parcelable

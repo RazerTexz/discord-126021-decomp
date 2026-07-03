@@ -1,8 +1,8 @@
 package com.discord.api.user;
 
-import b.d.b.a.outline;
 import com.discord.nullserializable.NullSerializable;
-import d0.z.d.Intrinsics3;
+import p007b.p100d.p104b.p105a.C1643a;
+import p507d0.p592z.p594d.C12238m;
 
 /* JADX INFO: compiled from: PatchUserBody.kt */
 /* JADX INFO: loaded from: classes.dex */
@@ -27,7 +27,7 @@ public final /* data */ class PatchUserBody {
             return false;
         }
         PatchUserBody patchUserBody = (PatchUserBody) other;
-        return Intrinsics3.areEqual(this.avatar, patchUserBody.avatar) && Intrinsics3.areEqual(this.banner, patchUserBody.banner) && Intrinsics3.areEqual(this.bannerColor, patchUserBody.bannerColor) && Intrinsics3.areEqual(this.bio, patchUserBody.bio);
+        return C12238m.areEqual(this.avatar, patchUserBody.avatar) && C12238m.areEqual(this.banner, patchUserBody.banner) && C12238m.areEqual(this.bannerColor, patchUserBody.bannerColor) && C12238m.areEqual(this.bio, patchUserBody.bio);
     }
 
     public int hashCode() {
@@ -42,16 +42,16 @@ public final /* data */ class PatchUserBody {
     }
 
     public String toString() {
-        StringBuilder sbU = outline.U("PatchUserBody(avatar=");
-        sbU.append(this.avatar);
-        sbU.append(", banner=");
-        sbU.append(this.banner);
-        sbU.append(", bannerColor=");
-        sbU.append(this.bannerColor);
-        sbU.append(", bio=");
-        sbU.append(this.bio);
-        sbU.append(")");
-        return sbU.toString();
+        StringBuilder sbM833U = C1643a.m833U("PatchUserBody(avatar=");
+        sbM833U.append(this.avatar);
+        sbM833U.append(", banner=");
+        sbM833U.append(this.banner);
+        sbM833U.append(", bannerColor=");
+        sbM833U.append(this.bannerColor);
+        sbM833U.append(", bio=");
+        sbM833U.append(this.bio);
+        sbM833U.append(")");
+        return sbM833U.toString();
     }
 
     public PatchUserBody(NullSerializable<String> nullSerializable, NullSerializable<String> nullSerializable2, NullSerializable<String> nullSerializable3, NullSerializable<String> nullSerializable4) {

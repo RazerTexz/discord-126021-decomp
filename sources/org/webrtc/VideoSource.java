@@ -1,10 +1,10 @@
 package org.webrtc;
 
 import androidx.annotation.Nullable;
-import h0.c.VideoProcessor2;
 import org.webrtc.VideoFrame;
 import org.webrtc.VideoProcessor;
 import org.webrtc.VideoSource;
+import p617h0.p628c.C12489t0;
 
 /* JADX INFO: loaded from: classes3.dex */
 public class VideoSource extends MediaSource {
@@ -61,10 +61,10 @@ public class VideoSource extends MediaSource {
                         VideoSource.this.videoProcessor.onFrameCaptured(videoFrame, frameAdaptationParametersAdaptFrame);
                         return;
                     }
-                    VideoFrame videoFrameB = VideoProcessor2.b(videoFrame, frameAdaptationParametersAdaptFrame);
-                    if (videoFrameB != null) {
-                        VideoSource.this.nativeAndroidVideoTrackSource.onFrameCaptured(videoFrameB);
-                        videoFrameB.release();
+                    VideoFrame videoFrameM10680b = C12489t0.m10680b(videoFrame, frameAdaptationParametersAdaptFrame);
+                    if (videoFrameM10680b != null) {
+                        VideoSource.this.nativeAndroidVideoTrackSource.onFrameCaptured(videoFrameM10680b);
+                        videoFrameM10680b.release();
                     }
                 }
             }
@@ -72,7 +72,8 @@ public class VideoSource extends MediaSource {
         this.nativeAndroidVideoTrackSource = new NativeAndroidVideoTrackSource(j);
     }
 
-    public /* synthetic */ void a(VideoFrame videoFrame) {
+    /* JADX INFO: renamed from: a */
+    public /* synthetic */ void m11053a(VideoFrame videoFrame) {
         this.nativeAndroidVideoTrackSource.onFrameCaptured(videoFrame);
     }
 
@@ -114,11 +115,11 @@ public class VideoSource extends MediaSource {
                 videoProcessor.setSink(new VideoSink() { // from class: h0.c.i0
                     @Override // org.webrtc.VideoSink
                     public final void onFrame(final VideoFrame videoFrame) {
-                        final VideoSource videoSource = this.j;
+                        final VideoSource videoSource = this.f26438j;
                         videoSource.runWithReference(new Runnable() { // from class: h0.c.h0
                             @Override // java.lang.Runnable
                             public final void run() {
-                                videoSource.a(videoFrame);
+                                videoSource.m11053a(videoFrame);
                             }
                         });
                     }

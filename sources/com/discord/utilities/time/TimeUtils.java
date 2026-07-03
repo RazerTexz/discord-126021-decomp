@@ -2,14 +2,10 @@ package com.discord.utilities.time;
 
 import android.content.Context;
 import android.text.format.DateUtils;
-import b.a.k.FormatUtils;
-import b.d.b.a.outline;
 import com.adjust.sdk.Constants;
 import com.discord.i18n.RenderContext;
 import com.discord.utilities.SnowflakeUtils;
 import com.discord.utilities.locale.LocaleManager;
-import d0.z.d.Intrinsics3;
-import d0.z.d.Lambda;
 import java.text.DateFormat;
 import java.text.DateFormatSymbols;
 import java.text.ParseException;
@@ -22,6 +18,10 @@ import java.util.TimeZone;
 import java.util.concurrent.TimeUnit;
 import kotlin.Unit;
 import kotlin.jvm.functions.Function1;
+import p007b.p008a.p027k.C1107b;
+import p007b.p100d.p104b.p105a.C1643a;
+import p507d0.p592z.p594d.AbstractC12240o;
+import p507d0.p592z.p594d.C12238m;
 
 /* JADX INFO: compiled from: TimeUtils.kt */
 /* JADX INFO: loaded from: classes2.dex */
@@ -67,20 +67,20 @@ public final class TimeUtils {
     }
 
     public static final String currentTimeUTCDateString(Clock clock) {
-        Intrinsics3.checkNotNullParameter(clock, "clock");
+        C12238m.checkNotNullParameter(clock, "clock");
         return toUTCDateTime$default(Long.valueOf(clock.currentTimeMillis()), null, 2, null);
     }
 
     public static final int getMonthsBetweenDates(Date firstDate, Date secondDate) {
-        Intrinsics3.checkNotNullParameter(firstDate, "firstDate");
-        Intrinsics3.checkNotNullParameter(secondDate, "secondDate");
+        C12238m.checkNotNullParameter(firstDate, "firstDate");
+        C12238m.checkNotNullParameter(secondDate, "secondDate");
         Calendar calendar = Calendar.getInstance();
         if (firstDate.before(secondDate)) {
-            Intrinsics3.checkNotNullExpressionValue(calendar, "calendar");
+            C12238m.checkNotNullExpressionValue(calendar, "calendar");
             calendar.setTime(firstDate);
             firstDate = secondDate;
         } else {
-            Intrinsics3.checkNotNullExpressionValue(calendar, "calendar");
+            C12238m.checkNotNullExpressionValue(calendar, "calendar");
             calendar.setTime(secondDate);
         }
         int i = 0;
@@ -92,7 +92,7 @@ public final class TimeUtils {
     }
 
     public static final String getReadableTimeString(Context context, String utcDate) {
-        Intrinsics3.checkNotNullParameter(context, "context");
+        C12238m.checkNotNullParameter(context, "context");
         return toReadableTimeString$default(context, parseUTCDate(utcDate), null, 4, null).toString();
     }
 
@@ -131,7 +131,7 @@ public final class TimeUtils {
         String str3 = str2;
         if ((i2 & 8) != 0) {
             dateFormat = android.text.format.DateFormat.getMediumDateFormat(context);
-            Intrinsics3.checkNotNullExpressionValue(dateFormat, "DateFormat.getMediumDateFormat(context)");
+            C12238m.checkNotNullExpressionValue(dateFormat, "DateFormat.getMediumDateFormat(context)");
         }
         return timeUtils.renderUtcDate(str, context, str3, dateFormat, (i2 & 16) != 0 ? 0 : i);
     }
@@ -145,7 +145,7 @@ public final class TimeUtils {
 
     public static final Calendar toCalendar(long unixTimeMillis) {
         Calendar calendar = Calendar.getInstance(Locale.ROOT);
-        Intrinsics3.checkNotNullExpressionValue(calendar, "calendar");
+        C12238m.checkNotNullExpressionValue(calendar, "calendar");
         calendar.setTimeInMillis(unixTimeMillis);
         return calendar;
     }
@@ -168,14 +168,14 @@ public final class TimeUtils {
     }
 
     public static final CharSequence toReadableTimeString(Context context, long timestampMs, Clock clock) {
-        Intrinsics3.checkNotNullParameter(context, "context");
-        Intrinsics3.checkNotNullParameter(clock, "clock");
+        C12238m.checkNotNullParameter(context, "context");
+        C12238m.checkNotNullParameter(clock, "clock");
         LocaleManager localeManager2 = localeManager;
-        if (Intrinsics3.areEqual(localeManager2.getPrimaryLocale(context).getLanguage(), "en")) {
+        if (C12238m.areEqual(localeManager2.getPrimaryLocale(context).getLanguage(), "en")) {
             return INSTANCE.toReadableTimeStringEN(localeManager2.getPrimaryLocale(context), timestampMs, clock);
         }
         CharSequence relativeDateTimeString = DateUtils.getRelativeDateTimeString(context, timestampMs, 86400000L, 604800000L, 131072);
-        Intrinsics3.checkNotNullExpressionValue(relativeDateTimeString, "DateUtils.getRelativeDat…RMAT_NUMERIC_DATE\n      )");
+        C12238m.checkNotNullExpressionValue(relativeDateTimeString, "DateUtils.getRelativeDat…RMAT_NUMERIC_DATE\n      )");
         return relativeDateTimeString;
     }
 
@@ -194,7 +194,7 @@ public final class TimeUtils {
     }
 
     public static final String toUTCDateTime(Long unixTimeMillis, String format) {
-        Intrinsics3.checkNotNullParameter(format, "format");
+        C12238m.checkNotNullParameter(format, "format");
         SimpleDateFormat simpleDateFormat = new SimpleDateFormat(format, Locale.ROOT);
         simpleDateFormat.setTimeZone(TimeZone.getTimeZone("UTC"));
         if (unixTimeMillis == null) {
@@ -227,9 +227,9 @@ public final class TimeUtils {
     }
 
     public final String getLocalizedMonthName(int monthInt, Context context) {
-        Intrinsics3.checkNotNullParameter(context, "context");
+        C12238m.checkNotNullParameter(context, "context");
         String str = new DateFormatSymbols(localeManager.getPrimaryLocale(context)).getMonths()[monthInt - 1];
-        Intrinsics3.checkNotNullExpressionValue(str, "DateFormatSymbols(locale…xt)).months[monthInt - 1]");
+        C12238m.checkNotNullExpressionValue(str, "DateFormatSymbols(locale…xt)).months[monthInt - 1]");
         return str;
     }
 
@@ -250,17 +250,17 @@ public final class TimeUtils {
     }
 
     public final String renderUtcDate(String utcDate, Context context, String inputFormat, DateFormat outputFormat, int offsetDays) {
-        Intrinsics3.checkNotNullParameter(utcDate, "utcDate");
-        Intrinsics3.checkNotNullParameter(context, "context");
-        Intrinsics3.checkNotNullParameter(inputFormat, "inputFormat");
-        Intrinsics3.checkNotNullParameter(outputFormat, "outputFormat");
+        C12238m.checkNotNullParameter(utcDate, "utcDate");
+        C12238m.checkNotNullParameter(context, "context");
+        C12238m.checkNotNullParameter(inputFormat, "inputFormat");
+        C12238m.checkNotNullParameter(outputFormat, "outputFormat");
         return renderUtcDate(utcDate, localeManager.getPrimaryLocale(context), inputFormat, outputFormat, offsetDays);
     }
 
     public final String renderUtcDateTime(String utcDateTime, Context context, String inputFormat, int outputDateFormat, int outputTimeFormat) {
-        Intrinsics3.checkNotNullParameter(utcDateTime, "utcDateTime");
-        Intrinsics3.checkNotNullParameter(context, "context");
-        Intrinsics3.checkNotNullParameter(inputFormat, "inputFormat");
+        C12238m.checkNotNullParameter(utcDateTime, "utcDateTime");
+        C12238m.checkNotNullParameter(context, "context");
+        C12238m.checkNotNullParameter(inputFormat, "inputFormat");
         SimpleDateFormat simpleDateFormat = new SimpleDateFormat(inputFormat, localeManager.getPrimaryLocale(context));
         simpleDateFormat.setTimeZone(TimeZone.getTimeZone("UTC"));
         Date date = simpleDateFormat.parse(utcDateTime);
@@ -268,7 +268,7 @@ public final class TimeUtils {
             date = new Date();
         }
         String str = DateFormat.getDateTimeInstance(outputDateFormat, outputTimeFormat).format(date);
-        Intrinsics3.checkNotNullExpressionValue(str, "outputDateFormatInstance.format(date)");
+        C12238m.checkNotNullExpressionValue(str, "outputDateFormatInstance.format(date)");
         return str;
     }
 
@@ -278,23 +278,23 @@ public final class TimeUtils {
             return toFriendlyStringSimple(j, formatString, argName);
         }
         CharSequence relativeTimeSpanString = DateUtils.getRelativeTimeSpanString(startTimeMs, targetTimestampMs, 86400000L, 131072);
-        Intrinsics3.checkNotNullExpressionValue(relativeTimeSpanString, "DateUtils.getRelativeTim…AT_NUMERIC_DATE\n        )");
+        C12238m.checkNotNullExpressionValue(relativeTimeSpanString, "DateUtils.getRelativeTim…AT_NUMERIC_DATE\n        )");
         return relativeTimeSpanString;
     }
 
     public final CharSequence toFriendlyStringSimple(long deltaTimeMs, String formatString, String argName) {
         String elapsedTime = DateUtils.formatElapsedTime(TimeUnit.MILLISECONDS.toSeconds(Math.max(0L, deltaTimeMs)));
         if (formatString == null || argName == null) {
-            Intrinsics3.checkNotNullExpressionValue(elapsedTime, "elapsedTime");
+            C12238m.checkNotNullExpressionValue(elapsedTime, "elapsedTime");
             return elapsedTime;
         }
-        return FormatUtils.g(formatString, new Object[0], new AnonymousClass1(elapsedTime, argName));
+        return C1107b.m215g(formatString, new Object[0], new C69781(elapsedTime, argName));
     }
 
     public final String toReadableTimeStringEN(Locale locale, long unixTimeMillis, Clock clock) {
-        Intrinsics3.checkNotNullParameter(locale, "locale");
-        Intrinsics3.checkNotNullParameter(clock, "clock");
-        if (!Intrinsics3.areEqual(locale.getLanguage(), "en")) {
+        C12238m.checkNotNullParameter(locale, "locale");
+        C12238m.checkNotNullParameter(clock, "clock");
+        if (!C12238m.areEqual(locale.getLanguage(), "en")) {
             return "";
         }
         DateFormat timeInstance = DateFormat.getTimeInstance(3, locale);
@@ -307,34 +307,34 @@ public final class TimeUtils {
         calendar.add(5, 1);
         if (unixTimeMillis > calendar.getTimeInMillis()) {
             String str = dateTimeInstance.format(Long.valueOf(unixTimeMillis));
-            Intrinsics3.checkNotNullExpressionValue(str, "formatterDateTime.format(unixTimeMillis)");
+            C12238m.checkNotNullExpressionValue(str, "formatterDateTime.format(unixTimeMillis)");
             return str;
         }
         calendar.add(5, -1);
         if (unixTimeMillis > calendar.getTimeInMillis()) {
-            StringBuilder sbU = outline.U("Today at ");
-            sbU.append(timeInstance.format(Long.valueOf(unixTimeMillis)));
-            return sbU.toString();
+            StringBuilder sbM833U = C1643a.m833U("Today at ");
+            sbM833U.append(timeInstance.format(Long.valueOf(unixTimeMillis)));
+            return sbM833U.toString();
         }
         calendar.add(5, -1);
         if (unixTimeMillis > calendar.getTimeInMillis()) {
-            StringBuilder sbU2 = outline.U("Yesterday at ");
-            sbU2.append(timeInstance.format(Long.valueOf(unixTimeMillis)));
-            return sbU2.toString();
+            StringBuilder sbM833U2 = C1643a.m833U("Yesterday at ");
+            sbM833U2.append(timeInstance.format(Long.valueOf(unixTimeMillis)));
+            return sbM833U2.toString();
         }
         String str2 = dateTimeInstance.format(Long.valueOf(unixTimeMillis));
-        Intrinsics3.checkNotNullExpressionValue(str2, "formatterDateTime.format(unixTimeMillis)");
+        C12238m.checkNotNullExpressionValue(str2, "formatterDateTime.format(unixTimeMillis)");
         return str2;
     }
 
-    /* JADX INFO: renamed from: com.discord.utilities.time.TimeUtils$toFriendlyStringSimple$1, reason: invalid class name */
+    /* JADX INFO: renamed from: com.discord.utilities.time.TimeUtils$toFriendlyStringSimple$1 */
     /* JADX INFO: compiled from: TimeUtils.kt */
-    public static final class AnonymousClass1 extends Lambda implements Function1<RenderContext, Unit> {
+    public static final class C69781 extends AbstractC12240o implements Function1<RenderContext, Unit> {
         public final /* synthetic */ String $argName;
         public final /* synthetic */ String $elapsedTime;
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-        public AnonymousClass1(String str, String str2) {
+        public C69781(String str, String str2) {
             super(1);
             this.$elapsedTime = str;
             this.$argName = str2;
@@ -342,18 +342,18 @@ public final class TimeUtils {
 
         /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
         public final void invoke2(RenderContext renderContext) {
-            Intrinsics3.checkNotNullParameter(renderContext, "$receiver");
+            C12238m.checkNotNullParameter(renderContext, "$receiver");
             Map<String, String> map = renderContext.args;
             String str = this.$argName;
             String str2 = this.$elapsedTime;
-            Intrinsics3.checkNotNullExpressionValue(str2, "elapsedTime");
+            C12238m.checkNotNullExpressionValue(str2, "elapsedTime");
             map.put(str, str2);
         }
 
         @Override // kotlin.jvm.functions.Function1
         public /* bridge */ /* synthetic */ Unit invoke(RenderContext renderContext) {
             invoke2(renderContext);
-            return Unit.a;
+            return Unit.f27425a;
         }
     }
 
@@ -362,14 +362,14 @@ public final class TimeUtils {
         simpleDateFormat.setTimeZone(TimeZone.getTimeZone("UTC"));
         Date date = simpleDateFormat.parse(utcDate);
         Calendar calendar = Calendar.getInstance(locale);
-        Intrinsics3.checkNotNullExpressionValue(calendar, "calendar");
+        C12238m.checkNotNullExpressionValue(calendar, "calendar");
         if (date == null) {
             date = new Date();
         }
         calendar.setTime(date);
         calendar.add(5, offsetDays);
         String str = outputFormat.format(calendar.getTime());
-        Intrinsics3.checkNotNullExpressionValue(str, "outputFormat.format(offsetDate)");
+        C12238m.checkNotNullExpressionValue(str, "outputFormat.format(offsetDate)");
         return str;
     }
 
@@ -388,9 +388,9 @@ public final class TimeUtils {
     }
 
     public final String renderUtcDate(long unixTimeMillis, Context context, int outputFormat) {
-        Intrinsics3.checkNotNullParameter(context, "context");
+        C12238m.checkNotNullParameter(context, "context");
         String str = DateFormat.getDateInstance(outputFormat, localeManager.getPrimaryLocale(context)).format(Long.valueOf(unixTimeMillis));
-        Intrinsics3.checkNotNullExpressionValue(str, "formatter.format(unixTimeMillis)");
+        C12238m.checkNotNullExpressionValue(str, "formatter.format(unixTimeMillis)");
         return str;
     }
 }

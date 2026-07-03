@@ -3,14 +3,14 @@ package com.discord.widgets.guilds.join;
 import android.os.Bundle;
 import com.discord.app.AppFragment;
 import com.discord.utilities.captcha.CaptchaHelper;
-import d0.z.d.Intrinsics3;
-import d0.z.d.Lambda;
 import kotlin.Unit;
 import kotlin.jvm.functions.Function2;
+import p507d0.p592z.p594d.AbstractC12240o;
+import p507d0.p592z.p594d.C12238m;
 
 /* JADX INFO: compiled from: WidgetGuildJoinCaptchaBottomSheet.kt */
 /* JADX INFO: loaded from: classes2.dex */
-public final class WidgetGuildJoinCaptchaBottomSheet$Companion$registerForResult$1 extends Lambda implements Function2<String, Bundle, Unit> {
+public final class WidgetGuildJoinCaptchaBottomSheet$Companion$registerForResult$1 extends AbstractC12240o implements Function2<String, Bundle, Unit> {
     public final /* synthetic */ AppFragment $fragment;
     public final /* synthetic */ Function2 $onCaptchaPayloadReceived;
     public final /* synthetic */ String $requestKey;
@@ -26,17 +26,17 @@ public final class WidgetGuildJoinCaptchaBottomSheet$Companion$registerForResult
     @Override // kotlin.jvm.functions.Function2
     public /* bridge */ /* synthetic */ Unit invoke(String str, Bundle bundle) {
         invoke2(str, bundle);
-        return Unit.a;
+        return Unit.f27425a;
     }
 
     /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
     public final void invoke2(String str, Bundle bundle) {
-        Intrinsics3.checkNotNullParameter(str, "resultRequestKey");
-        Intrinsics3.checkNotNullParameter(bundle, "bundle");
-        if (Intrinsics3.areEqual(this.$requestKey, str)) {
+        C12238m.checkNotNullParameter(str, "resultRequestKey");
+        C12238m.checkNotNullParameter(bundle, "bundle");
+        if (C12238m.areEqual(this.$requestKey, str)) {
             String string = bundle.getString("INTENT_EXTRA_CAPTCHA_TOKEN", "");
             String string2 = bundle.getString("INTENT_EXTRA_CAPTCHA_RQTOKEN", "");
-            if (string == null || !(!Intrinsics3.areEqual(string, ""))) {
+            if (string == null || !(!C12238m.areEqual(string, ""))) {
                 return;
             }
             this.$onCaptchaPayloadReceived.invoke(this.$fragment, new CaptchaHelper.CaptchaPayload(string, string2));

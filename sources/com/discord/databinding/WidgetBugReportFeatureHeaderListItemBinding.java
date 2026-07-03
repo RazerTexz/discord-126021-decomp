@@ -9,25 +9,27 @@ import androidx.viewbinding.ViewBinding;
 /* JADX INFO: loaded from: classes.dex */
 public final class WidgetBugReportFeatureHeaderListItemBinding implements ViewBinding {
 
+    /* JADX INFO: renamed from: a */
     @NonNull
-    public final ConstraintLayout a;
+    public final ConstraintLayout f15752a;
 
-    /* JADX INFO: renamed from: b, reason: collision with root package name */
+    /* JADX INFO: renamed from: b */
     @NonNull
-    public final View f2243b;
+    public final View f15753b;
 
+    /* JADX INFO: renamed from: c */
     @NonNull
-    public final TextView c;
+    public final TextView f15754c;
 
     public WidgetBugReportFeatureHeaderListItemBinding(@NonNull ConstraintLayout constraintLayout, @NonNull View view, @NonNull TextView textView) {
-        this.a = constraintLayout;
-        this.f2243b = view;
-        this.c = textView;
+        this.f15752a = constraintLayout;
+        this.f15753b = view;
+        this.f15754c = textView;
     }
 
     @Override // androidx.viewbinding.ViewBinding
     @NonNull
     public View getRoot() {
-        return this.a;
+        return this.f15752a;
     }
 }

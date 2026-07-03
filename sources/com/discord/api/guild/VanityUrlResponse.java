@@ -1,8 +1,8 @@
 package com.discord.api.guild;
 
-import b.d.b.a.outline;
 import com.discord.models.domain.ModelAuditLogEntry;
-import d0.z.d.Intrinsics3;
+import p007b.p100d.p104b.p105a.C1643a;
+import p507d0.p592z.p594d.C12238m;
 
 /* JADX INFO: compiled from: VanityUrlResponse.kt */
 /* JADX INFO: loaded from: classes.dex */
@@ -28,7 +28,7 @@ public final /* data */ class VanityUrlResponse {
             return false;
         }
         VanityUrlResponse vanityUrlResponse = (VanityUrlResponse) other;
-        return Intrinsics3.areEqual(this.code, vanityUrlResponse.code) && this.uses == vanityUrlResponse.uses;
+        return C12238m.areEqual(this.code, vanityUrlResponse.code) && this.uses == vanityUrlResponse.uses;
     }
 
     public int hashCode() {
@@ -37,9 +37,9 @@ public final /* data */ class VanityUrlResponse {
     }
 
     public String toString() {
-        StringBuilder sbU = outline.U("VanityUrlResponse(code=");
-        sbU.append(this.code);
-        sbU.append(", uses=");
-        return outline.B(sbU, this.uses, ")");
+        StringBuilder sbM833U = C1643a.m833U("VanityUrlResponse(code=");
+        sbM833U.append(this.code);
+        sbM833U.append(", uses=");
+        return C1643a.m814B(sbM833U, this.uses, ")");
     }
 }

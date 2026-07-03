@@ -7,7 +7,7 @@ import androidx.room.RoomSQLiteQuery;
 import androidx.room.SharedSQLiteStatement;
 import androidx.room.util.DBUtil;
 import androidx.room.util.StringUtil;
-import androidx.sqlite.db.SupportSQLiteStatement;
+import androidx.sqlite.p006db.SupportSQLiteStatement;
 import androidx.work.Data;
 import java.util.ArrayList;
 import java.util.List;

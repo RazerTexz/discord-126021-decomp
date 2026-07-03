@@ -4,24 +4,24 @@ import android.view.View;
 import android.widget.TextView;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
-import b.a.k.FormatUtils;
-import b.d.b.a.outline;
-import com.discord.R;
+import com.discord.C5419R;
 import com.discord.app.AppDialog;
 import com.discord.databinding.ViewDialogConfirmationBinding;
 import com.discord.utilities.viewbinding.FragmentViewBindingDelegate;
-import com.discord.utilities.viewbinding.FragmentViewBindingDelegate3;
+import com.discord.utilities.viewbinding.FragmentViewBindingDelegateKt;
 import com.google.android.material.button.MaterialButton;
-import d0.z.d.Intrinsics3;
 import kotlin.Unit;
 import kotlin.jvm.functions.Function0;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.reflect.KProperty;
+import p007b.p008a.p027k.C1107b;
+import p007b.p100d.p104b.p105a.C1643a;
+import p507d0.p592z.p594d.C12238m;
 
 /* JADX INFO: compiled from: AddFriendsFailed.kt */
 /* JADX INFO: loaded from: classes2.dex */
 public final class AddFriendsFailed extends AppDialog {
-    public static final /* synthetic */ KProperty[] $$delegatedProperties = {outline.d0(AddFriendsFailed.class, "binding", "getBinding()Lcom/discord/databinding/ViewDialogConfirmationBinding;", 0)};
+    public static final /* synthetic */ KProperty[] $$delegatedProperties = {C1643a.m846d0(AddFriendsFailed.class, "binding", "getBinding()Lcom/discord/databinding/ViewDialogConfirmationBinding;", 0)};
 
     /* JADX INFO: renamed from: Companion, reason: from kotlin metadata */
     public static final Companion INSTANCE = new Companion(null);
@@ -36,7 +36,7 @@ public final class AddFriendsFailed extends AppDialog {
         }
 
         public final AddFriendsFailed show(FragmentManager fragmentManager) {
-            Intrinsics3.checkNotNullParameter(fragmentManager, "fragmentManager");
+            C12238m.checkNotNullParameter(fragmentManager, "fragmentManager");
             AddFriendsFailed addFriendsFailed = new AddFriendsFailed();
             addFriendsFailed.show(fragmentManager, AddFriendsFailed.class.getSimpleName());
             return addFriendsFailed;
@@ -48,8 +48,8 @@ public final class AddFriendsFailed extends AppDialog {
     }
 
     public AddFriendsFailed() {
-        super(R.layout.view_dialog_confirmation);
-        this.binding = FragmentViewBindingDelegate3.viewBinding$default(this, AddFriendsFailed2.INSTANCE, null, 2, null);
+        super(C5419R.layout.view_dialog_confirmation);
+        this.binding = FragmentViewBindingDelegateKt.viewBinding$default(this, AddFriendsFailed$binding$2.INSTANCE, null, 2, null);
     }
 
     private final ViewDialogConfirmationBinding getBinding() {
@@ -62,18 +62,18 @@ public final class AddFriendsFailed extends AppDialog {
 
     @Override // com.discord.app.AppDialog
     public void onViewBound(View view) {
-        Intrinsics3.checkNotNullParameter(view, "view");
+        C12238m.checkNotNullParameter(view, "view");
         super.onViewBound(view);
-        TextView textView = getBinding().d;
-        Intrinsics3.checkNotNullExpressionValue(textView, "binding.viewDialogConfirmationHeader");
-        textView.setText(FormatUtils.e(this, R.string.friend_request_failed_header, new Object[0], (4 & 4) != 0 ? FormatUtils.a.j : null));
-        TextView textView2 = getBinding().e;
-        Intrinsics3.checkNotNullExpressionValue(textView2, "binding.viewDialogConfirmationText");
-        textView2.setText(FormatUtils.e(this, R.string.friend_request_failed_body, new Object[0], (4 & 4) != 0 ? FormatUtils.a.j : null));
-        MaterialButton materialButton = getBinding().c;
-        Intrinsics3.checkNotNullExpressionValue(materialButton, "binding.viewDialogConfirmationConfirm");
-        materialButton.setText(FormatUtils.e(this, R.string.okay, new Object[0], (4 & 4) != 0 ? FormatUtils.a.j : null));
-        getBinding().c.setOnClickListener(new View.OnClickListener() { // from class: com.discord.widgets.contact_sync.AddFriendsFailed.onViewBound.1
+        TextView textView = getBinding().f15423d;
+        C12238m.checkNotNullExpressionValue(textView, "binding.viewDialogConfirmationHeader");
+        textView.setText(C1107b.m213e(this, C5419R.string.friend_request_failed_header, new Object[0], (4 & 4) != 0 ? C1107b.a.f1490j : null));
+        TextView textView2 = getBinding().f15424e;
+        C12238m.checkNotNullExpressionValue(textView2, "binding.viewDialogConfirmationText");
+        textView2.setText(C1107b.m213e(this, C5419R.string.friend_request_failed_body, new Object[0], (4 & 4) != 0 ? C1107b.a.f1490j : null));
+        MaterialButton materialButton = getBinding().f15422c;
+        C12238m.checkNotNullExpressionValue(materialButton, "binding.viewDialogConfirmationConfirm");
+        materialButton.setText(C1107b.m213e(this, C5419R.string.okay, new Object[0], (4 & 4) != 0 ? C1107b.a.f1490j : null));
+        getBinding().f15422c.setOnClickListener(new View.OnClickListener() { // from class: com.discord.widgets.contact_sync.AddFriendsFailed.onViewBound.1
             @Override // android.view.View.OnClickListener
             public final void onClick(View view2) {
                 AddFriendsFailed.this.dismiss();
@@ -83,8 +83,8 @@ public final class AddFriendsFailed extends AppDialog {
                 }
             }
         });
-        MaterialButton materialButton2 = getBinding().f2185b;
-        Intrinsics3.checkNotNullExpressionValue(materialButton2, "binding.viewDialogConfirmationCancel");
+        MaterialButton materialButton2 = getBinding().f15421b;
+        C12238m.checkNotNullExpressionValue(materialButton2, "binding.viewDialogConfirmationCancel");
         materialButton2.setVisibility(8);
     }
 

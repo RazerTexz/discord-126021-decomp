@@ -8,68 +8,72 @@ import android.view.LayoutInflater;
 import android.view.ViewGroup;
 import android.widget.FrameLayout;
 import androidx.annotation.NonNull;
-import b.q.a.l.UCropView2;
-import b.q.a.l.UCropView3;
-import com.yalantis.ucrop.R;
+import com.yalantis.ucrop.C11199R;
 import java.util.Objects;
+import p007b.p485q.p486a.p491l.C5308d;
+import p007b.p485q.p486a.p491l.C5309e;
 
 /* JADX INFO: loaded from: classes3.dex */
 public class UCropView extends FrameLayout {
-    public GestureCropImageView j;
-    public final OverlayView k;
+
+    /* JADX INFO: renamed from: j */
+    public GestureCropImageView f22241j;
+
+    /* JADX INFO: renamed from: k */
+    public final OverlayView f22242k;
 
     public UCropView(Context context, AttributeSet attributeSet) {
         super(context, attributeSet, 0);
-        LayoutInflater.from(context).inflate(R.e.ucrop_view, (ViewGroup) this, true);
-        this.j = (GestureCropImageView) findViewById(R.d.image_view_crop);
-        OverlayView overlayView = (OverlayView) findViewById(R.d.view_overlay);
-        this.k = overlayView;
-        TypedArray typedArrayObtainStyledAttributes = context.obtainStyledAttributes(attributeSet, R.h.ucrop_UCropView);
+        LayoutInflater.from(context).inflate(C11199R.e.ucrop_view, (ViewGroup) this, true);
+        this.f22241j = (GestureCropImageView) findViewById(C11199R.d.image_view_crop);
+        OverlayView overlayView = (OverlayView) findViewById(C11199R.d.view_overlay);
+        this.f22242k = overlayView;
+        TypedArray typedArrayObtainStyledAttributes = context.obtainStyledAttributes(attributeSet, C11199R.h.ucrop_UCropView);
         Objects.requireNonNull(overlayView);
-        overlayView.u = typedArrayObtainStyledAttributes.getBoolean(R.h.ucrop_UCropView_ucrop_circle_dimmed_layer, false);
-        int color = typedArrayObtainStyledAttributes.getColor(R.h.ucrop_UCropView_ucrop_dimmed_color, overlayView.getResources().getColor(R.a.ucrop_color_default_dimmed));
-        overlayView.v = color;
-        overlayView.f3183x.setColor(color);
-        overlayView.f3183x.setStyle(Paint.Style.STROKE);
-        overlayView.f3183x.setStrokeWidth(1.0f);
-        int dimensionPixelSize = typedArrayObtainStyledAttributes.getDimensionPixelSize(R.h.ucrop_UCropView_ucrop_frame_stroke_size, overlayView.getResources().getDimensionPixelSize(R.b.ucrop_default_crop_frame_stoke_width));
-        int color2 = typedArrayObtainStyledAttributes.getColor(R.h.ucrop_UCropView_ucrop_frame_color, overlayView.getResources().getColor(R.a.ucrop_color_default_crop_frame));
-        overlayView.f3185z.setStrokeWidth(dimensionPixelSize);
-        overlayView.f3185z.setColor(color2);
-        overlayView.f3185z.setStyle(Paint.Style.STROKE);
-        overlayView.A.setStrokeWidth(dimensionPixelSize * 3);
-        overlayView.A.setColor(color2);
-        overlayView.A.setStyle(Paint.Style.STROKE);
-        overlayView.f3182s = typedArrayObtainStyledAttributes.getBoolean(R.h.ucrop_UCropView_ucrop_show_frame, true);
-        int dimensionPixelSize2 = typedArrayObtainStyledAttributes.getDimensionPixelSize(R.h.ucrop_UCropView_ucrop_grid_stroke_size, overlayView.getResources().getDimensionPixelSize(R.b.ucrop_default_crop_grid_stoke_width));
-        int color3 = typedArrayObtainStyledAttributes.getColor(R.h.ucrop_UCropView_ucrop_grid_color, overlayView.getResources().getColor(R.a.ucrop_color_default_crop_grid));
-        overlayView.f3184y.setStrokeWidth(dimensionPixelSize2);
-        overlayView.f3184y.setColor(color3);
-        overlayView.o = typedArrayObtainStyledAttributes.getInt(R.h.ucrop_UCropView_ucrop_grid_row_count, 2);
-        overlayView.p = typedArrayObtainStyledAttributes.getInt(R.h.ucrop_UCropView_ucrop_grid_column_count, 2);
-        overlayView.t = typedArrayObtainStyledAttributes.getBoolean(R.h.ucrop_UCropView_ucrop_show_grid, true);
-        GestureCropImageView gestureCropImageView = this.j;
+        overlayView.f22235u = typedArrayObtainStyledAttributes.getBoolean(C11199R.h.ucrop_UCropView_ucrop_circle_dimmed_layer, false);
+        int color = typedArrayObtainStyledAttributes.getColor(C11199R.h.ucrop_UCropView_ucrop_dimmed_color, overlayView.getResources().getColor(C11199R.a.ucrop_color_default_dimmed));
+        overlayView.f22236v = color;
+        overlayView.f22238x.setColor(color);
+        overlayView.f22238x.setStyle(Paint.Style.STROKE);
+        overlayView.f22238x.setStrokeWidth(1.0f);
+        int dimensionPixelSize = typedArrayObtainStyledAttributes.getDimensionPixelSize(C11199R.h.ucrop_UCropView_ucrop_frame_stroke_size, overlayView.getResources().getDimensionPixelSize(C11199R.b.ucrop_default_crop_frame_stoke_width));
+        int color2 = typedArrayObtainStyledAttributes.getColor(C11199R.h.ucrop_UCropView_ucrop_frame_color, overlayView.getResources().getColor(C11199R.a.ucrop_color_default_crop_frame));
+        overlayView.f22240z.setStrokeWidth(dimensionPixelSize);
+        overlayView.f22240z.setColor(color2);
+        overlayView.f22240z.setStyle(Paint.Style.STROKE);
+        overlayView.f22214A.setStrokeWidth(dimensionPixelSize * 3);
+        overlayView.f22214A.setColor(color2);
+        overlayView.f22214A.setStyle(Paint.Style.STROKE);
+        overlayView.f22233s = typedArrayObtainStyledAttributes.getBoolean(C11199R.h.ucrop_UCropView_ucrop_show_frame, true);
+        int dimensionPixelSize2 = typedArrayObtainStyledAttributes.getDimensionPixelSize(C11199R.h.ucrop_UCropView_ucrop_grid_stroke_size, overlayView.getResources().getDimensionPixelSize(C11199R.b.ucrop_default_crop_grid_stoke_width));
+        int color3 = typedArrayObtainStyledAttributes.getColor(C11199R.h.ucrop_UCropView_ucrop_grid_color, overlayView.getResources().getColor(C11199R.a.ucrop_color_default_crop_grid));
+        overlayView.f22239y.setStrokeWidth(dimensionPixelSize2);
+        overlayView.f22239y.setColor(color3);
+        overlayView.f22229o = typedArrayObtainStyledAttributes.getInt(C11199R.h.ucrop_UCropView_ucrop_grid_row_count, 2);
+        overlayView.f22230p = typedArrayObtainStyledAttributes.getInt(C11199R.h.ucrop_UCropView_ucrop_grid_column_count, 2);
+        overlayView.f22234t = typedArrayObtainStyledAttributes.getBoolean(C11199R.h.ucrop_UCropView_ucrop_show_grid, true);
+        GestureCropImageView gestureCropImageView = this.f22241j;
         Objects.requireNonNull(gestureCropImageView);
-        float fAbs = Math.abs(typedArrayObtainStyledAttributes.getFloat(R.h.ucrop_UCropView_ucrop_aspect_ratio_x, 0.0f));
-        float fAbs2 = Math.abs(typedArrayObtainStyledAttributes.getFloat(R.h.ucrop_UCropView_ucrop_aspect_ratio_y, 0.0f));
+        float fAbs = Math.abs(typedArrayObtainStyledAttributes.getFloat(C11199R.h.ucrop_UCropView_ucrop_aspect_ratio_x, 0.0f));
+        float fAbs2 = Math.abs(typedArrayObtainStyledAttributes.getFloat(C11199R.h.ucrop_UCropView_ucrop_aspect_ratio_y, 0.0f));
         if (fAbs == 0.0f || fAbs2 == 0.0f) {
-            gestureCropImageView.A = 0.0f;
+            gestureCropImageView.f14454A = 0.0f;
         } else {
-            gestureCropImageView.A = fAbs / fAbs2;
+            gestureCropImageView.f14454A = fAbs / fAbs2;
         }
         typedArrayObtainStyledAttributes.recycle();
-        this.j.setCropBoundsChangeListener(new UCropView2(this));
-        overlayView.setOverlayViewChangeListener(new UCropView3(this));
+        this.f22241j.setCropBoundsChangeListener(new C5308d(this));
+        overlayView.setOverlayViewChangeListener(new C5309e(this));
     }
 
     @NonNull
     public GestureCropImageView getCropImageView() {
-        return this.j;
+        return this.f22241j;
     }
 
     @NonNull
     public OverlayView getOverlayView() {
-        return this.k;
+        return this.f22242k;
     }
 
     @Override // android.widget.FrameLayout, android.view.ViewGroup

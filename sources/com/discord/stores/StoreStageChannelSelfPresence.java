@@ -6,21 +6,21 @@ import com.discord.api.activity.ActivityType;
 import com.discord.api.voice.state.VoiceState;
 import com.discord.stores.updates.ObservationDeck;
 import com.discord.utilities.error.Error;
-import com.discord.utilities.presence.ActivityUtils;
-import com.discord.utilities.rx.ObservableExtensionsKt;
+import com.discord.utilities.p501rx.ObservableExtensionsKt;
+import com.discord.utilities.presence.ActivityUtilsKt;
 import com.discord.widgets.stage.StageRoles;
-import d0.z.d.Intrinsics3;
-import d0.z.d.Lambda;
-import j0.k.Func1;
 import java.util.Map;
 import java.util.concurrent.TimeUnit;
 import kotlin.Unit;
 import kotlin.jvm.functions.Function0;
 import kotlin.jvm.functions.Function1;
-import rx.Observable;
-import rx.Subscription;
-import rx.functions.Func2;
-import rx.subjects.BehaviorSubject;
+import p507d0.p592z.p594d.AbstractC12240o;
+import p507d0.p592z.p594d.C12238m;
+import p637j0.p641k.InterfaceC12589b;
+import p658rx.Observable;
+import p658rx.Subscription;
+import p658rx.functions.Func2;
+import p658rx.subjects.BehaviorSubject;
 
 /* JADX INFO: compiled from: StoreStageChannelSelfPresence.kt */
 /* JADX INFO: loaded from: classes2.dex */
@@ -35,10 +35,10 @@ public final class StoreStageChannelSelfPresence extends StoreV2 {
     private final StoreUser userStore;
     private final StoreVoiceChannelSelected voiceChannelSelected;
 
-    /* JADX INFO: renamed from: com.discord.stores.StoreStageChannelSelfPresence$init$1, reason: invalid class name */
+    /* JADX INFO: renamed from: com.discord.stores.StoreStageChannelSelfPresence$init$1 */
     /* JADX INFO: compiled from: StoreStageChannelSelfPresence.kt */
-    public static final class AnonymousClass1 extends Lambda implements Function0<Integer> {
-        public AnonymousClass1() {
+    public static final class C64081 extends AbstractC12240o implements Function0<Integer> {
+        public C64081() {
             super(0);
         }
 
@@ -54,13 +54,13 @@ public final class StoreStageChannelSelfPresence extends StoreV2 {
         }
     }
 
-    /* JADX INFO: renamed from: com.discord.stores.StoreStageChannelSelfPresence$init$3, reason: invalid class name */
+    /* JADX INFO: renamed from: com.discord.stores.StoreStageChannelSelfPresence$init$3 */
     /* JADX INFO: compiled from: StoreStageChannelSelfPresence.kt */
-    public static final class AnonymousClass3 extends Lambda implements Function1<Boolean, Unit> {
+    public static final class C64103 extends AbstractC12240o implements Function1<Boolean, Unit> {
 
         /* JADX INFO: renamed from: com.discord.stores.StoreStageChannelSelfPresence$init$3$1, reason: invalid class name */
         /* JADX INFO: compiled from: StoreStageChannelSelfPresence.kt */
-        public static final class AnonymousClass1 extends Lambda implements Function0<Unit> {
+        public static final class AnonymousClass1 extends AbstractC12240o implements Function0<Unit> {
             public final /* synthetic */ Boolean $showCurrentActivity;
 
             /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -72,7 +72,7 @@ public final class StoreStageChannelSelfPresence extends StoreV2 {
             @Override // kotlin.jvm.functions.Function0
             public /* bridge */ /* synthetic */ Unit invoke() {
                 invoke2();
-                return Unit.a;
+                return Unit.f27425a;
             }
 
             /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
@@ -81,7 +81,7 @@ public final class StoreStageChannelSelfPresence extends StoreV2 {
                 ActivityType activityType = ActivityType.LISTENING;
                 Activity stageChannelActivity = StoreStageChannelSelfPresence.this.getStageChannelActivity();
                 Boolean bool = this.$showCurrentActivity;
-                Intrinsics3.checkNotNullExpressionValue(bool, "showCurrentActivity");
+                C12238m.checkNotNullExpressionValue(bool, "showCurrentActivity");
                 if (!bool.booleanValue()) {
                     stageChannelActivity = null;
                 }
@@ -89,14 +89,14 @@ public final class StoreStageChannelSelfPresence extends StoreV2 {
             }
         }
 
-        public AnonymousClass3() {
+        public C64103() {
             super(1);
         }
 
         @Override // kotlin.jvm.functions.Function1
         public /* bridge */ /* synthetic */ Unit invoke(Boolean bool) {
             invoke2(bool);
-            return Unit.a;
+            return Unit.f27425a;
         }
 
         /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
@@ -106,13 +106,13 @@ public final class StoreStageChannelSelfPresence extends StoreV2 {
     }
 
     public StoreStageChannelSelfPresence(ObservationDeck observationDeck, StoreUser storeUser, StoreUserPresence storeUserPresence, StoreStageChannels storeStageChannels, StoreVoiceChannelSelected storeVoiceChannelSelected, StoreUserSettings storeUserSettings, Dispatcher dispatcher) {
-        Intrinsics3.checkNotNullParameter(observationDeck, "observationDeck");
-        Intrinsics3.checkNotNullParameter(storeUser, "userStore");
-        Intrinsics3.checkNotNullParameter(storeUserPresence, "userPresence");
-        Intrinsics3.checkNotNullParameter(storeStageChannels, "stageChannels");
-        Intrinsics3.checkNotNullParameter(storeVoiceChannelSelected, "voiceChannelSelected");
-        Intrinsics3.checkNotNullParameter(storeUserSettings, "userSettings");
-        Intrinsics3.checkNotNullParameter(dispatcher, "dispatcher");
+        C12238m.checkNotNullParameter(observationDeck, "observationDeck");
+        C12238m.checkNotNullParameter(storeUser, "userStore");
+        C12238m.checkNotNullParameter(storeUserPresence, "userPresence");
+        C12238m.checkNotNullParameter(storeStageChannels, "stageChannels");
+        C12238m.checkNotNullParameter(storeVoiceChannelSelected, "voiceChannelSelected");
+        C12238m.checkNotNullParameter(storeUserSettings, "userSettings");
+        C12238m.checkNotNullParameter(dispatcher, "dispatcher");
         this.observationDeck = observationDeck;
         this.userStore = storeUser;
         this.userPresence = storeUserPresence;
@@ -120,27 +120,27 @@ public final class StoreStageChannelSelfPresence extends StoreV2 {
         this.voiceChannelSelected = storeVoiceChannelSelected;
         this.userSettings = storeUserSettings;
         this.dispatcher = dispatcher;
-        BehaviorSubject<Unit> behaviorSubjectK0 = BehaviorSubject.k0();
-        Intrinsics3.checkNotNullExpressionValue(behaviorSubjectK0, "BehaviorSubject.create()");
-        this.publishStateTrigger = behaviorSubjectK0;
+        BehaviorSubject<Unit> behaviorSubjectM11129k0 = BehaviorSubject.m11129k0();
+        C12238m.checkNotNullExpressionValue(behaviorSubjectM11129k0, "BehaviorSubject.create()");
+        this.publishStateTrigger = behaviorSubjectM11129k0;
     }
 
-    @Store3
+    @StoreThread
     private final void updateActivity() {
         ActivityParty party;
         ActivityParty party2;
-        Activity activityCreateStageChannelListeningActivity = ActivityUtils.createStageChannelListeningActivity();
+        Activity activityCreateStageChannelListeningActivity = ActivityUtilsKt.createStageChannelListeningActivity();
         String id2 = (activityCreateStageChannelListeningActivity == null || (party2 = activityCreateStageChannelListeningActivity.getParty()) == null) ? null : party2.getId();
         Activity activity = this.stageChannelActivity;
-        if (!(!Intrinsics3.areEqual(id2, (activity == null || (party = activity.getParty()) == null) ? null : party.getId()))) {
+        if (!(!C12238m.areEqual(id2, (activity == null || (party = activity.getParty()) == null) ? null : party.getId()))) {
             String name = activityCreateStageChannelListeningActivity != null ? activityCreateStageChannelListeningActivity.getName() : null;
             Activity activity2 = this.stageChannelActivity;
-            if (!(!Intrinsics3.areEqual(name, activity2 != null ? activity2.getName() : null))) {
+            if (!(!C12238m.areEqual(name, activity2 != null ? activity2.getName() : null))) {
                 return;
             }
         }
         this.stageChannelActivity = activityCreateStageChannelListeningActivity;
-        this.publishStateTrigger.onNext(Unit.a);
+        this.publishStateTrigger.onNext(Unit.f27425a);
     }
 
     public final Dispatcher getDispatcher() {
@@ -179,48 +179,48 @@ public final class StoreStageChannelSelfPresence extends StoreV2 {
         return this.voiceChannelSelected;
     }
 
-    @Store3
+    @StoreThread
     public final void handleStageInstanceCreate() {
         updateActivity();
     }
 
-    @Store3
+    @StoreThread
     public final void handleStageInstanceDelete() {
         updateActivity();
     }
 
-    @Store3
+    @StoreThread
     public final void handleStageInstanceUpdate() {
         updateActivity();
     }
 
-    @Store3
+    @StoreThread
     public final void handleVoiceChannelSelected() {
         updateActivity();
     }
 
-    @Store3
+    @StoreThread
     public final void handleVoiceStateUpdate(VoiceState voiceState) {
-        Intrinsics3.checkNotNullParameter(voiceState, "voiceState");
+        C12238m.checkNotNullParameter(voiceState, "voiceState");
         if (voiceState.getUserId() == this.userStore.getMeSnapshot().getId()) {
             updateActivity();
         }
     }
 
     public final void init() {
-        Observable observableY = ObservationDeck.connectRx$default(this.observationDeck, new ObservationDeck.UpdateSource[]{this.stageChannels, this.voiceChannelSelected}, false, null, null, new AnonymousClass1(), 14, null).r().Y(new Func1<Integer, Observable<? extends Boolean>>() { // from class: com.discord.stores.StoreStageChannelSelfPresence.init.2
-            @Override // j0.k.Func1
+        Observable observableM11099Y = ObservationDeck.connectRx$default(this.observationDeck, new ObservationDeck.UpdateSource[]{this.stageChannels, this.voiceChannelSelected}, false, null, null, new C64081(), 14, null).m11112r().m11099Y(new InterfaceC12589b<Integer, Observable<? extends Boolean>>() { // from class: com.discord.stores.StoreStageChannelSelfPresence.init.2
+            @Override // p637j0.p641k.InterfaceC12589b
             public final Observable<? extends Boolean> call(Integer num) {
-                return Observable.j(ObservableExtensionsKt.leadingEdgeThrottle(StoreStageChannelSelfPresence.this.getPublishStateTrigger(), num.intValue(), TimeUnit.SECONDS), StoreStageChannelSelfPresence.this.getUserSettings().observeIsShowCurrentGameEnabled(), new Func2<Unit, Boolean, Boolean>() { // from class: com.discord.stores.StoreStageChannelSelfPresence.init.2.1
-                    @Override // rx.functions.Func2
+                return Observable.m11076j(ObservableExtensionsKt.leadingEdgeThrottle(StoreStageChannelSelfPresence.this.getPublishStateTrigger(), num.intValue(), TimeUnit.SECONDS), StoreStageChannelSelfPresence.this.getUserSettings().observeIsShowCurrentGameEnabled(), new Func2<Unit, Boolean, Boolean>() { // from class: com.discord.stores.StoreStageChannelSelfPresence.init.2.1
+                    @Override // p658rx.functions.Func2
                     public final Boolean call(Unit unit, Boolean bool) {
                         return bool;
                     }
                 });
             }
         });
-        Intrinsics3.checkNotNullExpressionValue(observableY, "observationDeck.connectR…bled -> isEnabled }\n    }");
-        ObservableExtensionsKt.appSubscribe(observableY, (Class<?>) StoreStageChannelSelfPresence.class, (58 & 2) != 0 ? null : null, (Function1<? super Subscription, Unit>) ((58 & 4) != 0 ? null : null), (Function1<? super Error, Unit>) ((58 & 8) != 0 ? null : null), (Function0<Unit>) ((58 & 16) != 0 ? ObservableExtensionsKt.AnonymousClass1.INSTANCE : null), (Function0<Unit>) ((58 & 32) != 0 ? ObservableExtensionsKt.AnonymousClass2.INSTANCE : null), new AnonymousClass3());
+        C12238m.checkNotNullExpressionValue(observableM11099Y, "observationDeck.connectR…bled -> isEnabled }\n    }");
+        ObservableExtensionsKt.appSubscribe(observableM11099Y, (Class<?>) StoreStageChannelSelfPresence.class, (58 & 2) != 0 ? null : null, (Function1<? super Subscription, Unit>) ((58 & 4) != 0 ? null : null), (Function1<? super Error, Unit>) ((58 & 8) != 0 ? null : null), (Function0<Unit>) ((58 & 16) != 0 ? ObservableExtensionsKt.C68791.INSTANCE : null), (Function0<Unit>) ((58 & 32) != 0 ? ObservableExtensionsKt.C68802.INSTANCE : null), new C64103());
     }
 
     public final void setStageChannelActivity(Activity activity) {

@@ -1,14 +1,14 @@
 package com.discord.analytics.generated.events;
 
-import b.d.b.a.outline;
 import com.discord.analytics.generated.traits.TrackBase;
-import com.discord.analytics.generated.traits.TrackBase2;
+import com.discord.analytics.generated.traits.TrackBaseReceiver;
 import com.discord.api.science.AnalyticsSchema;
-import d0.z.d.Intrinsics3;
+import p007b.p100d.p104b.p105a.C1643a;
+import p507d0.p592z.p594d.C12238m;
 
 /* JADX INFO: compiled from: TrackActivitySessionLeft.kt */
 /* JADX INFO: loaded from: classes.dex */
-public final /* data */ class TrackActivitySessionLeft implements AnalyticsSchema, TrackBase2 {
+public final /* data */ class TrackActivitySessionLeft implements AnalyticsSchema, TrackBaseReceiver {
     private TrackBase trackBase;
     private final Long channelId = null;
     private final Long guildId = null;
@@ -32,7 +32,7 @@ public final /* data */ class TrackActivitySessionLeft implements AnalyticsSchem
             return false;
         }
         TrackActivitySessionLeft trackActivitySessionLeft = (TrackActivitySessionLeft) other;
-        return Intrinsics3.areEqual(this.channelId, trackActivitySessionLeft.channelId) && Intrinsics3.areEqual(this.guildId, trackActivitySessionLeft.guildId) && Intrinsics3.areEqual(this.mediaSessionId, trackActivitySessionLeft.mediaSessionId) && Intrinsics3.areEqual(this.activitySessionId, trackActivitySessionLeft.activitySessionId) && Intrinsics3.areEqual(this.applicationId, trackActivitySessionLeft.applicationId) && Intrinsics3.areEqual(this.durationMs, trackActivitySessionLeft.durationMs);
+        return C12238m.areEqual(this.channelId, trackActivitySessionLeft.channelId) && C12238m.areEqual(this.guildId, trackActivitySessionLeft.guildId) && C12238m.areEqual(this.mediaSessionId, trackActivitySessionLeft.mediaSessionId) && C12238m.areEqual(this.activitySessionId, trackActivitySessionLeft.activitySessionId) && C12238m.areEqual(this.applicationId, trackActivitySessionLeft.applicationId) && C12238m.areEqual(this.durationMs, trackActivitySessionLeft.durationMs);
     }
 
     public int hashCode() {
@@ -51,17 +51,17 @@ public final /* data */ class TrackActivitySessionLeft implements AnalyticsSchem
     }
 
     public String toString() {
-        StringBuilder sbU = outline.U("TrackActivitySessionLeft(channelId=");
-        sbU.append(this.channelId);
-        sbU.append(", guildId=");
-        sbU.append(this.guildId);
-        sbU.append(", mediaSessionId=");
-        sbU.append(this.mediaSessionId);
-        sbU.append(", activitySessionId=");
-        sbU.append(this.activitySessionId);
-        sbU.append(", applicationId=");
-        sbU.append(this.applicationId);
-        sbU.append(", durationMs=");
-        return outline.G(sbU, this.durationMs, ")");
+        StringBuilder sbM833U = C1643a.m833U("TrackActivitySessionLeft(channelId=");
+        sbM833U.append(this.channelId);
+        sbM833U.append(", guildId=");
+        sbM833U.append(this.guildId);
+        sbM833U.append(", mediaSessionId=");
+        sbM833U.append(this.mediaSessionId);
+        sbM833U.append(", activitySessionId=");
+        sbM833U.append(this.activitySessionId);
+        sbM833U.append(", applicationId=");
+        sbM833U.append(this.applicationId);
+        sbM833U.append(", durationMs=");
+        return C1643a.m819G(sbM833U, this.durationMs, ")");
     }
 }

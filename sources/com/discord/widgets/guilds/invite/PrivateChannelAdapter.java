@@ -4,7 +4,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 import androidx.recyclerview.widget.RecyclerView;
-import com.discord.R;
+import com.discord.C5419R;
 import com.discord.api.channel.ChannelUtils;
 import com.discord.databinding.WidgetGuildInviteShareItemBinding;
 import com.discord.models.domain.ModelAuditLogEntry;
@@ -16,9 +16,9 @@ import com.discord.widgets.guilds.invite.InviteSuggestionItem;
 import com.discord.widgets.guilds.invite.PrivateChannelAdapter;
 import com.facebook.drawee.view.SimpleDraweeView;
 import com.google.android.material.button.MaterialButton;
-import d0.z.d.Intrinsics3;
 import kotlin.Unit;
 import kotlin.jvm.functions.Function1;
+import p507d0.p592z.p594d.C12238m;
 
 /* JADX INFO: compiled from: PrivateChannelAdapter.kt */
 /* JADX INFO: loaded from: classes2.dex */
@@ -31,11 +31,11 @@ public final class PrivateChannelAdapter extends MGRecyclerAdapterSimple<InviteS
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
         public Item(PrivateChannelAdapter privateChannelAdapter) {
-            super(R.layout.widget_guild_invite_share_item, privateChannelAdapter);
-            Intrinsics3.checkNotNullParameter(privateChannelAdapter, "adapter");
-            WidgetGuildInviteShareItemBinding widgetGuildInviteShareItemBindingA = WidgetGuildInviteShareItemBinding.a(this.itemView);
-            Intrinsics3.checkNotNullExpressionValue(widgetGuildInviteShareItemBindingA, "WidgetGuildInviteShareItemBinding.bind(itemView)");
-            this.binding = widgetGuildInviteShareItemBindingA;
+            super(C5419R.layout.widget_guild_invite_share_item, privateChannelAdapter);
+            C12238m.checkNotNullParameter(privateChannelAdapter, "adapter");
+            WidgetGuildInviteShareItemBinding widgetGuildInviteShareItemBindingM8417a = WidgetGuildInviteShareItemBinding.m8417a(this.itemView);
+            C12238m.checkNotNullExpressionValue(widgetGuildInviteShareItemBindingM8417a, "WidgetGuildInviteShareItemBinding.bind(itemView)");
+            this.binding = widgetGuildInviteShareItemBindingM8417a;
         }
 
         public static final /* synthetic */ PrivateChannelAdapter access$getAdapter$p(Item item) {
@@ -44,40 +44,40 @@ public final class PrivateChannelAdapter extends MGRecyclerAdapterSimple<InviteS
 
         @Override // com.discord.utilities.mg_recycler.MGRecyclerViewHolder
         public void onConfigure(int position, final InviteSuggestionItem data) {
-            Intrinsics3.checkNotNullParameter(data, "data");
+            C12238m.checkNotNullParameter(data, "data");
             super.onConfigure(position, data);
             boolean z2 = data instanceof InviteSuggestionItem.ChannelItem;
             if (z2) {
                 InviteSuggestionItem.ChannelItem channelItem = (InviteSuggestionItem.ChannelItem) data;
                 if (channelItem.getChannel().getType() != 1) {
-                    SimpleDraweeView simpleDraweeView = this.binding.f2421b;
-                    Intrinsics3.checkNotNullExpressionValue(simpleDraweeView, "binding.itemIconIv");
+                    SimpleDraweeView simpleDraweeView = this.binding.f16833b;
+                    C12238m.checkNotNullExpressionValue(simpleDraweeView, "binding.itemIconIv");
                     IconUtils.setIcon$default(simpleDraweeView, channelItem.getChannel(), 0, (MGImages.ChangeDetector) null, 12, (Object) null);
                 } else {
-                    SimpleDraweeView simpleDraweeView2 = this.binding.f2421b;
-                    Intrinsics3.checkNotNullExpressionValue(simpleDraweeView2, "binding.itemIconIv");
-                    IconUtils.setIcon$default(simpleDraweeView2, ChannelUtils.a(channelItem.getChannel()), 0, null, null, null, 60, null);
+                    SimpleDraweeView simpleDraweeView2 = this.binding.f16833b;
+                    C12238m.checkNotNullExpressionValue(simpleDraweeView2, "binding.itemIconIv");
+                    IconUtils.setIcon$default(simpleDraweeView2, ChannelUtils.m7677a(channelItem.getChannel()), 0, null, null, null, 60, null);
                 }
-                TextView textView = this.binding.d;
-                Intrinsics3.checkNotNullExpressionValue(textView, "binding.itemNameTv");
-                textView.setText(ChannelUtils.c(channelItem.getChannel()));
+                TextView textView = this.binding.f16835d;
+                C12238m.checkNotNullExpressionValue(textView, "binding.itemNameTv");
+                textView.setText(ChannelUtils.m7679c(channelItem.getChannel()));
             } else if (data instanceof InviteSuggestionItem.UserItem) {
-                SimpleDraweeView simpleDraweeView3 = this.binding.f2421b;
-                Intrinsics3.checkNotNullExpressionValue(simpleDraweeView3, "binding.itemIconIv");
+                SimpleDraweeView simpleDraweeView3 = this.binding.f16833b;
+                C12238m.checkNotNullExpressionValue(simpleDraweeView3, "binding.itemIconIv");
                 InviteSuggestionItem.UserItem userItem = (InviteSuggestionItem.UserItem) data;
                 IconUtils.setIcon$default(simpleDraweeView3, userItem.getUser(), 0, null, null, null, 60, null);
-                TextView textView2 = this.binding.d;
-                Intrinsics3.checkNotNullExpressionValue(textView2, "binding.itemNameTv");
+                TextView textView2 = this.binding.f16835d;
+                C12238m.checkNotNullExpressionValue(textView2, "binding.itemNameTv");
                 textView2.setText(userItem.getUser().getUsername());
             }
             if (z2 || (data instanceof InviteSuggestionItem.UserItem)) {
-                MaterialButton materialButton = this.binding.e;
-                Intrinsics3.checkNotNullExpressionValue(materialButton, "binding.itemSent");
+                MaterialButton materialButton = this.binding.f16836e;
+                C12238m.checkNotNullExpressionValue(materialButton, "binding.itemSent");
                 materialButton.setVisibility(data.hasSentInvite() ? 0 : 8);
-                MaterialButton materialButton2 = this.binding.c;
-                Intrinsics3.checkNotNullExpressionValue(materialButton2, "binding.itemInviteBtn");
+                MaterialButton materialButton2 = this.binding.f16834c;
+                C12238m.checkNotNullExpressionValue(materialButton2, "binding.itemInviteBtn");
                 materialButton2.setVisibility(data.hasSentInvite() ^ true ? 0 : 8);
-                this.binding.c.setOnClickListener(new View.OnClickListener() { // from class: com.discord.widgets.guilds.invite.PrivateChannelAdapter$Item$onConfigure$1
+                this.binding.f16834c.setOnClickListener(new View.OnClickListener() { // from class: com.discord.widgets.guilds.invite.PrivateChannelAdapter$Item$onConfigure$1
                     @Override // android.view.View.OnClickListener
                     public final void onClick(View view) {
                         PrivateChannelAdapter.Item.access$getAdapter$p(this.this$0).getOnClick().invoke(data);
@@ -90,8 +90,8 @@ public final class PrivateChannelAdapter extends MGRecyclerAdapterSimple<InviteS
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public PrivateChannelAdapter(RecyclerView recyclerView) {
         super(recyclerView, false, 2, null);
-        Intrinsics3.checkNotNullParameter(recyclerView, "recycler");
-        this.onClick = PrivateChannelAdapter3.INSTANCE;
+        C12238m.checkNotNullParameter(recyclerView, "recycler");
+        this.onClick = PrivateChannelAdapter$onClick$1.INSTANCE;
     }
 
     public final Function1<InviteSuggestionItem, Unit> getOnClick() {
@@ -99,13 +99,13 @@ public final class PrivateChannelAdapter extends MGRecyclerAdapterSimple<InviteS
     }
 
     public final void setOnClick(Function1<? super InviteSuggestionItem, Unit> function1) {
-        Intrinsics3.checkNotNullParameter(function1, "<set-?>");
+        C12238m.checkNotNullParameter(function1, "<set-?>");
         this.onClick = function1;
     }
 
     @Override // androidx.recyclerview.widget.RecyclerView.Adapter
     public Item onCreateViewHolder(ViewGroup parent, int viewType) {
-        Intrinsics3.checkNotNullParameter(parent, "parent");
+        C12238m.checkNotNullParameter(parent, "parent");
         return new Item(this);
     }
 }

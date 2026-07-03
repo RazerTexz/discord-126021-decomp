@@ -12,6 +12,7 @@ import android.view.View;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.annotation.RestrictTo;
+import androidx.appcompat.C0051R;
 import androidx.core.graphics.ColorUtils;
 
 /* JADX INFO: loaded from: classes.dex */
@@ -33,9 +34,9 @@ public class ThemeUtils {
     }
 
     public static void checkAppCompatTheme(@NonNull View view, @NonNull Context context) {
-        TypedArray typedArrayObtainStyledAttributes = context.obtainStyledAttributes(androidx.appcompat.R.styleable.AppCompatTheme);
+        TypedArray typedArrayObtainStyledAttributes = context.obtainStyledAttributes(C0051R.styleable.AppCompatTheme);
         try {
-            if (!typedArrayObtainStyledAttributes.hasValue(androidx.appcompat.R.styleable.AppCompatTheme_windowActionBar)) {
+            if (!typedArrayObtainStyledAttributes.hasValue(C0051R.styleable.AppCompatTheme_windowActionBar)) {
                 Log.e(TAG, "View " + view.getClass() + " is an AppCompat widget that can only be used with a Theme.AppCompat theme (or descendant).");
             }
         } finally {

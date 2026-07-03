@@ -7,14 +7,14 @@ import androidx.work.Worker;
 import androidx.work.WorkerParameters;
 import com.discord.app.AppLog;
 import com.discord.utilities.fcm.NotificationClient;
-import com.discord.utilities.io.NetworkUtils;
 import com.discord.utilities.logging.Logger;
+import com.discord.utilities.p500io.NetworkUtils;
 import com.discord.utilities.rest.RestAPI;
-import d0.z.d.Intrinsics3;
-import j0.m.BlockingObservable;
 import java.util.List;
 import java.util.Objects;
-import rx.Observable;
+import p507d0.p592z.p594d.C12238m;
+import p637j0.p650m.C12756a;
+import p658rx.Observable;
 
 /* JADX INFO: compiled from: CallActionWorker.kt */
 /* JADX INFO: loaded from: classes.dex */
@@ -22,36 +22,36 @@ public final class CallActionWorker extends Worker {
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public CallActionWorker(Context context, WorkerParameters workerParameters) {
         super(context, workerParameters);
-        Intrinsics3.checkNotNullParameter(context, "context");
-        Intrinsics3.checkNotNullParameter(workerParameters, "params");
+        C12238m.checkNotNullParameter(context, "context");
+        C12238m.checkNotNullParameter(workerParameters, "params");
     }
 
     @Override // androidx.work.Worker
     public ListenableWorker.Result doWork() {
-        AppLog appLog = AppLog.g;
+        AppLog appLog = AppLog.f14950g;
         String simpleName = CallActionWorker.class.getSimpleName();
-        Intrinsics3.checkNotNullExpressionValue(simpleName, "javaClass.simpleName");
+        C12238m.checkNotNullExpressionValue(simpleName, "javaClass.simpleName");
         StringBuilder sb = new StringBuilder();
         sb.append("Starting for [");
         Data inputData = getInputData();
-        Intrinsics3.checkNotNullExpressionValue(inputData, "inputData");
+        C12238m.checkNotNullExpressionValue(inputData, "inputData");
         sb.append(inputData.getKeyValueMap());
         sb.append(']');
         Logger.i$default(appLog, simpleName, sb.toString(), null, 4, null);
         if (!NotificationClient.INSTANCE.isAuthed()) {
             String simpleName2 = CallActionWorker.class.getSimpleName();
-            Intrinsics3.checkNotNullExpressionValue(simpleName2, "javaClass.simpleName");
+            C12238m.checkNotNullExpressionValue(simpleName2, "javaClass.simpleName");
             Logger.d$default(appLog, simpleName2, "Not authenticated. Aborting job request.", null, 4, null);
             ListenableWorker.Result resultFailure = ListenableWorker.Result.failure();
-            Intrinsics3.checkNotNullExpressionValue(resultFailure, "Result.failure()");
+            C12238m.checkNotNullExpressionValue(resultFailure, "Result.failure()");
             return resultFailure;
         }
         NetworkUtils networkUtils = NetworkUtils.INSTANCE;
         Context applicationContext = getApplicationContext();
-        Intrinsics3.checkNotNullExpressionValue(applicationContext, "applicationContext");
+        C12238m.checkNotNullExpressionValue(applicationContext, "applicationContext");
         if (!NetworkUtils.isDeviceConnected$default(networkUtils, applicationContext, null, null, 6, null)) {
             ListenableWorker.Result resultRetry = ListenableWorker.Result.retry();
-            Intrinsics3.checkNotNullExpressionValue(resultRetry, "Result.retry()");
+            C12238m.checkNotNullExpressionValue(resultRetry, "Result.retry()");
             return resultRetry;
         }
         long j = getInputData().getLong("com.discord.intent.extra.EXTRA_CHANNEL_ID", -1L);
@@ -59,22 +59,22 @@ public final class CallActionWorker extends Worker {
         try {
             Observable<Void> observableStopRinging = RestAPI.INSTANCE.getApi().stopRinging(j, j2, (List<Long>) null);
             Objects.requireNonNull(observableStopRinging);
-            new BlockingObservable(observableStopRinging).b();
+            new C12756a(observableStopRinging).m10860b();
             String simpleName3 = getClass().getSimpleName();
-            Intrinsics3.checkNotNullExpressionValue(simpleName3, "javaClass.simpleName");
+            C12238m.checkNotNullExpressionValue(simpleName3, "javaClass.simpleName");
             try {
                 Logger.d$default(appLog, simpleName3, "Call declined: " + j + '-' + j2, null, 4, null);
                 ListenableWorker.Result resultSuccess = ListenableWorker.Result.success();
-                Intrinsics3.checkNotNullExpressionValue(resultSuccess, "Result.success()");
+                C12238m.checkNotNullExpressionValue(resultSuccess, "Result.success()");
                 return resultSuccess;
             } catch (Throwable th) {
                 th = th;
-                AppLog appLog2 = AppLog.g;
+                AppLog appLog2 = AppLog.f14950g;
                 String simpleName4 = CallActionWorker.class.getSimpleName();
-                Intrinsics3.checkNotNullExpressionValue(simpleName4, "javaClass.simpleName");
-                appLog2.w(simpleName4, "Call declined failure: " + j + '-' + j2, th);
+                C12238m.checkNotNullExpressionValue(simpleName4, "javaClass.simpleName");
+                appLog2.mo8369w(simpleName4, "Call declined failure: " + j + '-' + j2, th);
                 ListenableWorker.Result resultRetry2 = getRunAttemptCount() < 3 ? ListenableWorker.Result.retry() : ListenableWorker.Result.failure();
-                Intrinsics3.checkNotNullExpressionValue(resultRetry2, "if (runAttemptCount < MA…y() else Result.failure()");
+                C12238m.checkNotNullExpressionValue(resultRetry2, "if (runAttemptCount < MA…y() else Result.failure()");
                 return resultRetry2;
             }
         } catch (Throwable th2) {

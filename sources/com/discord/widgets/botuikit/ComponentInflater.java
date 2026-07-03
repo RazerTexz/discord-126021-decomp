@@ -2,15 +2,15 @@ package com.discord.widgets.botuikit;
 
 import android.content.Context;
 import android.view.ViewGroup;
-import com.discord.api.botuikit.Component6;
+import com.discord.api.botuikit.ComponentType;
 import com.discord.models.botuikit.MessageComponent;
 import com.discord.widgets.botuikit.views.ActionRowComponentView;
 import com.discord.widgets.botuikit.views.ButtonComponentView;
 import com.discord.widgets.botuikit.views.ComponentView;
 import com.discord.widgets.botuikit.views.select.SelectComponentView;
-import d0.z.d.Intrinsics3;
 import kotlin.NoWhenBranchMatchedException;
 import kotlin.jvm.internal.DefaultConstructorMarker;
+import p507d0.p592z.p594d.C12238m;
 
 /* JADX INFO: compiled from: ComponentInflater.kt */
 /* JADX INFO: loaded from: classes2.dex */
@@ -26,7 +26,7 @@ public final class ComponentInflater {
         }
 
         public final ComponentInflater from(Context context) {
-            Intrinsics3.checkNotNullParameter(context, "context");
+            C12238m.checkNotNullParameter(context, "context");
             return new ComponentInflater(context);
         }
 
@@ -39,19 +39,19 @@ public final class ComponentInflater {
         public static final /* synthetic */ int[] $EnumSwitchMapping$0;
 
         static {
-            Component6.values();
+            ComponentType.values();
             int[] iArr = new int[5];
             $EnumSwitchMapping$0 = iArr;
-            iArr[Component6.ACTION_ROW.ordinal()] = 1;
-            iArr[Component6.BUTTON.ordinal()] = 2;
-            iArr[Component6.SELECT.ordinal()] = 3;
-            iArr[Component6.TEXT.ordinal()] = 4;
-            iArr[Component6.UNKNOWN.ordinal()] = 5;
+            iArr[ComponentType.ACTION_ROW.ordinal()] = 1;
+            iArr[ComponentType.BUTTON.ordinal()] = 2;
+            iArr[ComponentType.SELECT.ordinal()] = 3;
+            iArr[ComponentType.TEXT.ordinal()] = 4;
+            iArr[ComponentType.UNKNOWN.ordinal()] = 5;
         }
     }
 
     public ComponentInflater(Context context) {
-        Intrinsics3.checkNotNullParameter(context, "context");
+        C12238m.checkNotNullParameter(context, "context");
         this.context = context;
     }
 
@@ -59,9 +59,9 @@ public final class ComponentInflater {
         return this.context;
     }
 
-    public final ComponentView<? extends MessageComponent> inflateComponent(Component6 component, ViewGroup root) {
-        Intrinsics3.checkNotNullParameter(component, "component");
-        Intrinsics3.checkNotNullParameter(root, "root");
+    public final ComponentView<? extends MessageComponent> inflateComponent(ComponentType component, ViewGroup root) {
+        C12238m.checkNotNullParameter(component, "component");
+        C12238m.checkNotNullParameter(root, "root");
         int iOrdinal = component.ordinal();
         if (iOrdinal == 0) {
             return null;

@@ -16,10 +16,10 @@ import androidx.view.Observer;
 import androidx.view.ViewModel;
 import androidx.view.ViewModelProvider;
 import androidx.view.ViewModelStore;
-import b.d.b.a.outline;
 import java.io.FileDescriptor;
 import java.io.PrintWriter;
 import java.lang.reflect.Modifier;
+import p007b.p100d.p104b.p105a.C1643a;
 
 /* JADX INFO: loaded from: classes.dex */
 public class LoaderManagerImpl extends LoaderManager {
@@ -83,7 +83,7 @@ public class LoaderManagerImpl extends LoaderManager {
             printWriter.print(str);
             printWriter.print("mLoader=");
             printWriter.println(this.mLoader);
-            this.mLoader.dump(outline.w(str, "  "), fileDescriptor, printWriter, strArr);
+            this.mLoader.dump(C1643a.m883w(str, "  "), fileDescriptor, printWriter, strArr);
             if (this.mObserver != null) {
                 printWriter.print(str);
                 printWriter.print("mCallbacks=");
@@ -221,11 +221,11 @@ public class LoaderManagerImpl extends LoaderManager {
         @Override // androidx.view.Observer
         public void onChanged(@Nullable D d) {
             if (LoaderManagerImpl.DEBUG) {
-                StringBuilder sbU = outline.U("  onLoadFinished in ");
-                sbU.append(this.mLoader);
-                sbU.append(": ");
-                sbU.append(this.mLoader.dataToString(d));
-                Log.v(LoaderManagerImpl.TAG, sbU.toString());
+                StringBuilder sbM833U = C1643a.m833U("  onLoadFinished in ");
+                sbM833U.append(this.mLoader);
+                sbM833U.append(": ");
+                sbM833U.append(this.mLoader.dataToString(d));
+                Log.v(LoaderManagerImpl.TAG, sbM833U.toString());
             }
             this.mCallback.onLoadFinished(this.mLoader, d);
             this.mDeliveredData = true;
@@ -235,9 +235,9 @@ public class LoaderManagerImpl extends LoaderManager {
         public void reset() {
             if (this.mDeliveredData) {
                 if (LoaderManagerImpl.DEBUG) {
-                    StringBuilder sbU = outline.U("  Resetting: ");
-                    sbU.append(this.mLoader);
-                    Log.v(LoaderManagerImpl.TAG, sbU.toString());
+                    StringBuilder sbM833U = C1643a.m833U("  Resetting: ");
+                    sbM833U.append(this.mLoader);
+                    Log.v(LoaderManagerImpl.TAG, sbM833U.toString());
                 }
                 this.mCallback.onLoaderReset(this.mLoader);
             }

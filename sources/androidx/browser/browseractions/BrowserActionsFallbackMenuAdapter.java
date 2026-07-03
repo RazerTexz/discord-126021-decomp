@@ -10,12 +10,12 @@ import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
-import androidx.browser.R;
+import androidx.browser.C0143R;
 import androidx.core.content.res.ResourcesCompat;
-import b.i.b.d.a.ListenableFuture8;
 import java.util.List;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.Executor;
+import p007b.p225i.p355b.p359d.p360a.InterfaceFutureC4539a;
 
 /* JADX INFO: loaded from: classes.dex */
 @Deprecated
@@ -58,9 +58,9 @@ public class BrowserActionsFallbackMenuAdapter extends BaseAdapter {
         final ViewHolderItem viewHolderItem;
         BrowserActionItem browserActionItem = this.mMenuItems.get(i);
         if (view == null) {
-            view = LayoutInflater.from(this.mContext).inflate(R.layout.browser_actions_context_menu_row, (ViewGroup) null);
-            ImageView imageView = (ImageView) view.findViewById(R.id.browser_actions_menu_item_icon);
-            TextView textView = (TextView) view.findViewById(R.id.browser_actions_menu_item_text);
+            view = LayoutInflater.from(this.mContext).inflate(C0143R.layout.browser_actions_context_menu_row, (ViewGroup) null);
+            ImageView imageView = (ImageView) view.findViewById(C0143R.id.browser_actions_menu_item_icon);
+            TextView textView = (TextView) view.findViewById(C0143R.id.browser_actions_menu_item_text);
             if (imageView == null || textView == null) {
                 throw new IllegalStateException("Browser Actions fallback UI does not contain necessary Views.");
             }
@@ -74,15 +74,15 @@ public class BrowserActionsFallbackMenuAdapter extends BaseAdapter {
         if (browserActionItem.getIconId() != 0) {
             viewHolderItem.mIcon.setImageDrawable(ResourcesCompat.getDrawable(this.mContext.getResources(), browserActionItem.getIconId(), null));
         } else if (browserActionItem.getIconUri() != null) {
-            final ListenableFuture8<Bitmap> listenableFuture8LoadBitmap = BrowserServiceFileProvider.loadBitmap(this.mContext.getContentResolver(), browserActionItem.getIconUri());
-            listenableFuture8LoadBitmap.addListener(new Runnable() { // from class: androidx.browser.browseractions.BrowserActionsFallbackMenuAdapter.1
+            final InterfaceFutureC4539a<Bitmap> interfaceFutureC4539aLoadBitmap = BrowserServiceFileProvider.loadBitmap(this.mContext.getContentResolver(), browserActionItem.getIconUri());
+            interfaceFutureC4539aLoadBitmap.addListener(new Runnable() { // from class: androidx.browser.browseractions.BrowserActionsFallbackMenuAdapter.1
                 /* JADX WARN: Multi-variable type inference failed */
                 @Override // java.lang.Runnable
                 public void run() {
                     Bitmap bitmap;
                     if (TextUtils.equals(title, viewHolderItem.mText.getText())) {
                         try {
-                            bitmap = (Bitmap) listenableFuture8LoadBitmap.get();
+                            bitmap = (Bitmap) interfaceFutureC4539aLoadBitmap.get();
                         } catch (InterruptedException | ExecutionException unused) {
                             bitmap = null;
                         }

@@ -1,7 +1,6 @@
 package org.webrtc;
 
 import android.graphics.ImageFormat;
-import b.d.b.a.outline;
 import com.discord.widgets.settings.profile.WidgetEditUserOrGuildMemberProfile;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -9,6 +8,7 @@ import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
 import org.objectweb.asm.Opcodes;
+import p007b.p100d.p104b.p105a.C1643a;
 
 /* JADX INFO: loaded from: classes3.dex */
 public class CameraEnumerationAndroid {
@@ -43,12 +43,12 @@ public class CameraEnumerationAndroid {
             }
 
             public String toString() {
-                StringBuilder sbU = outline.U("[");
-                sbU.append(this.min / 1000.0f);
-                sbU.append(":");
-                sbU.append(this.max / 1000.0f);
-                sbU.append("]");
-                return sbU.toString();
+                StringBuilder sbM833U = C1643a.m833U("[");
+                sbM833U.append(this.min / 1000.0f);
+                sbM833U.append(":");
+                sbM833U.append(this.max / 1000.0f);
+                sbM833U.append("]");
+                return sbM833U.toString();
             }
         }
 

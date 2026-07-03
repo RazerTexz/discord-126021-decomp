@@ -7,7 +7,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.WorkerThread;
 import androidx.work.ListenableWorker;
 import androidx.work.impl.utils.futures.SettableFuture;
-import b.i.b.d.a.ListenableFuture8;
+import p007b.p225i.p355b.p359d.p360a.InterfaceFutureC4539a;
 
 /* JADX INFO: loaded from: classes.dex */
 public abstract class Worker extends ListenableWorker {
@@ -25,7 +25,7 @@ public abstract class Worker extends ListenableWorker {
 
     @Override // androidx.work.ListenableWorker
     @NonNull
-    public final ListenableFuture8<ListenableWorker.Result> startWork() {
+    public final InterfaceFutureC4539a<ListenableWorker.Result> startWork() {
         this.mFuture = SettableFuture.create();
         getBackgroundExecutor().execute(new Runnable() { // from class: androidx.work.Worker.1
             @Override // java.lang.Runnable

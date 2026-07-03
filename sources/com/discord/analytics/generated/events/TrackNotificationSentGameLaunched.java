@@ -1,14 +1,14 @@
 package com.discord.analytics.generated.events;
 
-import b.d.b.a.outline;
 import com.discord.analytics.generated.traits.TrackBase;
-import com.discord.analytics.generated.traits.TrackBase2;
+import com.discord.analytics.generated.traits.TrackBaseReceiver;
 import com.discord.api.science.AnalyticsSchema;
-import d0.z.d.Intrinsics3;
+import p007b.p100d.p104b.p105a.C1643a;
+import p507d0.p592z.p594d.C12238m;
 
 /* JADX INFO: compiled from: TrackNotificationSentGameLaunched.kt */
 /* JADX INFO: loaded from: classes.dex */
-public final /* data */ class TrackNotificationSentGameLaunched implements AnalyticsSchema, TrackBase2 {
+public final /* data */ class TrackNotificationSentGameLaunched implements AnalyticsSchema, TrackBaseReceiver {
     private TrackBase trackBase;
     private final Long launchingUserId = null;
     private final CharSequence gameName = null;
@@ -30,7 +30,7 @@ public final /* data */ class TrackNotificationSentGameLaunched implements Analy
             return false;
         }
         TrackNotificationSentGameLaunched trackNotificationSentGameLaunched = (TrackNotificationSentGameLaunched) other;
-        return Intrinsics3.areEqual(this.launchingUserId, trackNotificationSentGameLaunched.launchingUserId) && Intrinsics3.areEqual(this.gameName, trackNotificationSentGameLaunched.gameName) && Intrinsics3.areEqual(this.desktop, trackNotificationSentGameLaunched.desktop) && Intrinsics3.areEqual(this.mobile, trackNotificationSentGameLaunched.mobile);
+        return C12238m.areEqual(this.launchingUserId, trackNotificationSentGameLaunched.launchingUserId) && C12238m.areEqual(this.gameName, trackNotificationSentGameLaunched.gameName) && C12238m.areEqual(this.desktop, trackNotificationSentGameLaunched.desktop) && C12238m.areEqual(this.mobile, trackNotificationSentGameLaunched.mobile);
     }
 
     public int hashCode() {
@@ -45,13 +45,13 @@ public final /* data */ class TrackNotificationSentGameLaunched implements Analy
     }
 
     public String toString() {
-        StringBuilder sbU = outline.U("TrackNotificationSentGameLaunched(launchingUserId=");
-        sbU.append(this.launchingUserId);
-        sbU.append(", gameName=");
-        sbU.append(this.gameName);
-        sbU.append(", desktop=");
-        sbU.append(this.desktop);
-        sbU.append(", mobile=");
-        return outline.D(sbU, this.mobile, ")");
+        StringBuilder sbM833U = C1643a.m833U("TrackNotificationSentGameLaunched(launchingUserId=");
+        sbM833U.append(this.launchingUserId);
+        sbM833U.append(", gameName=");
+        sbM833U.append(this.gameName);
+        sbM833U.append(", desktop=");
+        sbM833U.append(this.desktop);
+        sbM833U.append(", mobile=");
+        return C1643a.m816D(sbM833U, this.mobile, ")");
     }
 }

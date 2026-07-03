@@ -3,8 +3,8 @@ package androidx.core.graphics;
 import android.graphics.Path;
 import android.util.Log;
 import androidx.annotation.Nullable;
-import b.d.b.a.outline;
 import java.util.ArrayList;
+import p007b.p100d.p104b.p105a.C1643a;
 
 /* JADX INFO: loaded from: classes.dex */
 public class PathParser {
@@ -81,7 +81,7 @@ public class PathParser {
             PathDataNode.nodesToPath(pathDataNodeArrCreateNodesFromPathData, path);
             return path;
         } catch (RuntimeException e) {
-            throw new RuntimeException(outline.w("Error in parsing ", str), e);
+            throw new RuntimeException(C1643a.m883w("Error in parsing ", str), e);
         }
     }
 
@@ -169,7 +169,7 @@ public class PathParser {
             }
             return copyOfRange(fArr, 0, i2);
         } catch (NumberFormatException e) {
-            throw new RuntimeException(outline.y("error in parsing \"", str, "\""), e);
+            throw new RuntimeException(C1643a.m886y("error in parsing \"", str, "\""), e);
         }
     }
 

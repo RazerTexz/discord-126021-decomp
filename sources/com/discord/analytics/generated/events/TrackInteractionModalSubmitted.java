@@ -1,14 +1,14 @@
 package com.discord.analytics.generated.events;
 
-import b.d.b.a.outline;
 import com.discord.analytics.generated.traits.TrackBase;
-import com.discord.analytics.generated.traits.TrackBase2;
+import com.discord.analytics.generated.traits.TrackBaseReceiver;
 import com.discord.api.science.AnalyticsSchema;
-import d0.z.d.Intrinsics3;
+import p007b.p100d.p104b.p105a.C1643a;
+import p507d0.p592z.p594d.C12238m;
 
 /* JADX INFO: compiled from: TrackInteractionModalSubmitted.kt */
 /* JADX INFO: loaded from: classes.dex */
-public final /* data */ class TrackInteractionModalSubmitted implements AnalyticsSchema, TrackBase2 {
+public final /* data */ class TrackInteractionModalSubmitted implements AnalyticsSchema, TrackBaseReceiver {
     private TrackBase trackBase;
     private final Long applicationId = null;
     private final Long interactionId = null;
@@ -28,7 +28,7 @@ public final /* data */ class TrackInteractionModalSubmitted implements Analytic
             return false;
         }
         TrackInteractionModalSubmitted trackInteractionModalSubmitted = (TrackInteractionModalSubmitted) other;
-        return Intrinsics3.areEqual(this.applicationId, trackInteractionModalSubmitted.applicationId) && Intrinsics3.areEqual(this.interactionId, trackInteractionModalSubmitted.interactionId);
+        return C12238m.areEqual(this.applicationId, trackInteractionModalSubmitted.applicationId) && C12238m.areEqual(this.interactionId, trackInteractionModalSubmitted.interactionId);
     }
 
     public int hashCode() {
@@ -39,9 +39,9 @@ public final /* data */ class TrackInteractionModalSubmitted implements Analytic
     }
 
     public String toString() {
-        StringBuilder sbU = outline.U("TrackInteractionModalSubmitted(applicationId=");
-        sbU.append(this.applicationId);
-        sbU.append(", interactionId=");
-        return outline.G(sbU, this.interactionId, ")");
+        StringBuilder sbM833U = C1643a.m833U("TrackInteractionModalSubmitted(applicationId=");
+        sbM833U.append(this.applicationId);
+        sbM833U.append(", interactionId=");
+        return C1643a.m819G(sbM833U, this.interactionId, ")");
     }
 }

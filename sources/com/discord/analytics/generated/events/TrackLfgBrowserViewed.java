@@ -1,14 +1,14 @@
 package com.discord.analytics.generated.events;
 
-import b.d.b.a.outline;
 import com.discord.analytics.generated.traits.TrackBase;
-import com.discord.analytics.generated.traits.TrackBase2;
+import com.discord.analytics.generated.traits.TrackBaseReceiver;
 import com.discord.api.science.AnalyticsSchema;
-import d0.z.d.Intrinsics3;
+import p007b.p100d.p104b.p105a.C1643a;
+import p507d0.p592z.p594d.C12238m;
 
 /* JADX INFO: compiled from: TrackLfgBrowserViewed.kt */
 /* JADX INFO: loaded from: classes.dex */
-public final /* data */ class TrackLfgBrowserViewed implements AnalyticsSchema, TrackBase2 {
+public final /* data */ class TrackLfgBrowserViewed implements AnalyticsSchema, TrackBaseReceiver {
     private TrackBase trackBase;
     private final Long gameId = null;
     private final CharSequence gameName = null;
@@ -30,7 +30,7 @@ public final /* data */ class TrackLfgBrowserViewed implements AnalyticsSchema, 
             return false;
         }
         TrackLfgBrowserViewed trackLfgBrowserViewed = (TrackLfgBrowserViewed) other;
-        return Intrinsics3.areEqual(this.gameId, trackLfgBrowserViewed.gameId) && Intrinsics3.areEqual(this.gameName, trackLfgBrowserViewed.gameName) && Intrinsics3.areEqual(this.isRefresh, trackLfgBrowserViewed.isRefresh) && Intrinsics3.areEqual(this.numGroups, trackLfgBrowserViewed.numGroups);
+        return C12238m.areEqual(this.gameId, trackLfgBrowserViewed.gameId) && C12238m.areEqual(this.gameName, trackLfgBrowserViewed.gameName) && C12238m.areEqual(this.isRefresh, trackLfgBrowserViewed.isRefresh) && C12238m.areEqual(this.numGroups, trackLfgBrowserViewed.numGroups);
     }
 
     public int hashCode() {
@@ -45,13 +45,13 @@ public final /* data */ class TrackLfgBrowserViewed implements AnalyticsSchema, 
     }
 
     public String toString() {
-        StringBuilder sbU = outline.U("TrackLfgBrowserViewed(gameId=");
-        sbU.append(this.gameId);
-        sbU.append(", gameName=");
-        sbU.append(this.gameName);
-        sbU.append(", isRefresh=");
-        sbU.append(this.isRefresh);
-        sbU.append(", numGroups=");
-        return outline.G(sbU, this.numGroups, ")");
+        StringBuilder sbM833U = C1643a.m833U("TrackLfgBrowserViewed(gameId=");
+        sbM833U.append(this.gameId);
+        sbM833U.append(", gameName=");
+        sbM833U.append(this.gameName);
+        sbM833U.append(", isRefresh=");
+        sbM833U.append(this.isRefresh);
+        sbM833U.append(", numGroups=");
+        return C1643a.m819G(sbM833U, this.numGroups, ")");
     }
 }

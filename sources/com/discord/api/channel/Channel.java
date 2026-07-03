@@ -2,17 +2,17 @@ package com.discord.api.channel;
 
 import androidx.constraintlayout.solver.widgets.analyzer.BasicMeasure;
 import androidx.exifinterface.media.ExifInterface;
-import b.d.b.a.outline;
 import com.discord.api.guildhash.GuildHashes;
 import com.discord.api.permission.PermissionOverwrite;
 import com.discord.api.thread.ThreadMember;
 import com.discord.api.thread.ThreadMetadata;
 import com.discord.api.user.User;
 import com.discord.models.domain.ModelAuditLogEntry;
-import d0.z.d.Intrinsics3;
 import java.util.List;
 import java.util.Objects;
 import kotlin.jvm.internal.DefaultConstructorMarker;
+import p007b.p100d.p104b.p105a.C1643a;
+import p507d0.p592z.p594d.C12238m;
 
 /* JADX INFO: compiled from: Channel.kt */
 /* JADX INFO: loaded from: classes.dex */
@@ -23,7 +23,9 @@ public final /* data */ class Channel {
     /* JADX INFO: renamed from: Companion, reason: from kotlin metadata */
     public static final Companion INSTANCE = new Companion(null);
     public static final int DIRECTORY = 14;
-    public static final int DM = 1;
+
+    /* JADX INFO: renamed from: DM */
+    public static final int f14853DM = 1;
     public static final long FLAGS_NONE = 0;
     public static final long FLAG_PINNED = 2;
     public static final int GROUP_DM = 3;
@@ -112,7 +114,8 @@ public final /* data */ class Channel {
         this.member = threadMember;
     }
 
-    public static Channel a(Channel channel, String str, int i, long j, String str2, long j2, long j3, long j4, List list, List list2, int i2, List list3, int i3, int i4, String str3, long j5, long j6, List list4, boolean z2, long j7, String str4, int i5, Integer num, String str5, Long l, GuildHashes guildHashes, List list5, List list6, ThreadMetadata threadMetadata, Integer num2, Integer num3, List list7, ThreadMember threadMember, int i6) {
+    /* JADX INFO: renamed from: a */
+    public static Channel m7629a(Channel channel, String str, int i, long j, String str2, long j2, long j3, long j4, List list, List list2, int i2, List list3, int i3, int i4, String str3, long j5, long j6, List list4, boolean z2, long j7, String str4, int i5, Integer num, String str5, Long l, GuildHashes guildHashes, List list5, List list6, ThreadMetadata threadMetadata, Integer num2, Integer num3, List list7, ThreadMember threadMember, int i6) {
         String str6 = (i6 & 1) != 0 ? channel.topic : null;
         int i7 = (i6 & 2) != 0 ? channel.type : i;
         long j8 = (i6 & 4) != 0 ? channel.guildId : j;
@@ -182,11 +185,13 @@ public final /* data */ class Channel {
         return this.applicationId;
     }
 
-    public final List<Long> c() {
+    /* JADX INFO: renamed from: c */
+    public final List<Long> m7636c() {
         return this.appliedTags;
     }
 
-    public final List<ForumTag> d() {
+    /* JADX INFO: renamed from: d */
+    public final List<ForumTag> m7637d() {
         return this.availableTags;
     }
 
@@ -203,7 +208,7 @@ public final /* data */ class Channel {
             return false;
         }
         Channel channel = (Channel) other;
-        return Intrinsics3.areEqual(this.topic, channel.topic) && this.type == channel.type && this.guildId == channel.guildId && Intrinsics3.areEqual(this.name, channel.name) && this.lastMessageId == channel.lastMessageId && this.id == channel.id && this.ownerId == channel.ownerId && Intrinsics3.areEqual(this.recipientIds, channel.recipientIds) && Intrinsics3.areEqual(this.recipients, channel.recipients) && this.position == channel.position && Intrinsics3.areEqual(this.permissionOverwrites, channel.permissionOverwrites) && this.userLimit == channel.userLimit && this.bitrate == channel.bitrate && Intrinsics3.areEqual(this.icon, channel.icon) && this.originChannelId == channel.originChannelId && this.applicationId == channel.applicationId && Intrinsics3.areEqual(this.nicks, channel.nicks) && this.nsfw == channel.nsfw && this.parentId == channel.parentId && Intrinsics3.areEqual(this.memberListId, channel.memberListId) && this.rateLimitPerUser == channel.rateLimitPerUser && Intrinsics3.areEqual(this.defaultAutoArchiveDuration, channel.defaultAutoArchiveDuration) && Intrinsics3.areEqual(this.rtcRegion, channel.rtcRegion) && Intrinsics3.areEqual(this.flags, channel.flags) && Intrinsics3.areEqual(this.guildHashes, channel.guildHashes) && Intrinsics3.areEqual(this.availableTags, channel.availableTags) && Intrinsics3.areEqual(this.appliedTags, channel.appliedTags) && Intrinsics3.areEqual(this.threadMetadata, channel.threadMetadata) && Intrinsics3.areEqual(this.messageCount, channel.messageCount) && Intrinsics3.areEqual(this.memberCount, channel.memberCount) && Intrinsics3.areEqual(this.memberIdsPreview, channel.memberIdsPreview) && Intrinsics3.areEqual(this.member, channel.member);
+        return C12238m.areEqual(this.topic, channel.topic) && this.type == channel.type && this.guildId == channel.guildId && C12238m.areEqual(this.name, channel.name) && this.lastMessageId == channel.lastMessageId && this.id == channel.id && this.ownerId == channel.ownerId && C12238m.areEqual(this.recipientIds, channel.recipientIds) && C12238m.areEqual(this.recipients, channel.recipients) && this.position == channel.position && C12238m.areEqual(this.permissionOverwrites, channel.permissionOverwrites) && this.userLimit == channel.userLimit && this.bitrate == channel.bitrate && C12238m.areEqual(this.icon, channel.icon) && this.originChannelId == channel.originChannelId && this.applicationId == channel.applicationId && C12238m.areEqual(this.nicks, channel.nicks) && this.nsfw == channel.nsfw && this.parentId == channel.parentId && C12238m.areEqual(this.memberListId, channel.memberListId) && this.rateLimitPerUser == channel.rateLimitPerUser && C12238m.areEqual(this.defaultAutoArchiveDuration, channel.defaultAutoArchiveDuration) && C12238m.areEqual(this.rtcRegion, channel.rtcRegion) && C12238m.areEqual(this.flags, channel.flags) && C12238m.areEqual(this.guildHashes, channel.guildHashes) && C12238m.areEqual(this.availableTags, channel.availableTags) && C12238m.areEqual(this.appliedTags, channel.appliedTags) && C12238m.areEqual(this.threadMetadata, channel.threadMetadata) && C12238m.areEqual(this.messageCount, channel.messageCount) && C12238m.areEqual(this.memberCount, channel.memberCount) && C12238m.areEqual(this.memberIdsPreview, channel.memberIdsPreview) && C12238m.areEqual(this.member, channel.member);
     }
 
     /* JADX INFO: renamed from: f, reason: from getter */
@@ -327,7 +332,8 @@ public final /* data */ class Channel {
         return this.name;
     }
 
-    public final List<ChannelRecipientNick> q() {
+    /* JADX INFO: renamed from: q */
+    public final List<ChannelRecipientNick> m7650q() {
         return this.nicks;
     }
 
@@ -347,72 +353,72 @@ public final /* data */ class Channel {
     }
 
     public String toString() {
-        StringBuilder sbU = outline.U("Channel(topic=");
-        sbU.append(this.topic);
-        sbU.append(", type=");
-        sbU.append(this.type);
-        sbU.append(", guildId=");
-        sbU.append(this.guildId);
-        sbU.append(", name=");
-        sbU.append(this.name);
-        sbU.append(", lastMessageId=");
-        sbU.append(this.lastMessageId);
-        sbU.append(", id=");
-        sbU.append(this.id);
-        sbU.append(", ownerId=");
-        sbU.append(this.ownerId);
-        sbU.append(", recipientIds=");
-        sbU.append(this.recipientIds);
-        sbU.append(", recipients=");
-        sbU.append(this.recipients);
-        sbU.append(", position=");
-        sbU.append(this.position);
-        sbU.append(", permissionOverwrites=");
-        sbU.append(this.permissionOverwrites);
-        sbU.append(", userLimit=");
-        sbU.append(this.userLimit);
-        sbU.append(", bitrate=");
-        sbU.append(this.bitrate);
-        sbU.append(", icon=");
-        sbU.append(this.icon);
-        sbU.append(", originChannelId=");
-        sbU.append(this.originChannelId);
-        sbU.append(", applicationId=");
-        sbU.append(this.applicationId);
-        sbU.append(", nicks=");
-        sbU.append(this.nicks);
-        sbU.append(", nsfw=");
-        sbU.append(this.nsfw);
-        sbU.append(", parentId=");
-        sbU.append(this.parentId);
-        sbU.append(", memberListId=");
-        sbU.append(this.memberListId);
-        sbU.append(", rateLimitPerUser=");
-        sbU.append(this.rateLimitPerUser);
-        sbU.append(", defaultAutoArchiveDuration=");
-        sbU.append(this.defaultAutoArchiveDuration);
-        sbU.append(", rtcRegion=");
-        sbU.append(this.rtcRegion);
-        sbU.append(", flags=");
-        sbU.append(this.flags);
-        sbU.append(", guildHashes=");
-        sbU.append(this.guildHashes);
-        sbU.append(", availableTags=");
-        sbU.append(this.availableTags);
-        sbU.append(", appliedTags=");
-        sbU.append(this.appliedTags);
-        sbU.append(", threadMetadata=");
-        sbU.append(this.threadMetadata);
-        sbU.append(", messageCount=");
-        sbU.append(this.messageCount);
-        sbU.append(", memberCount=");
-        sbU.append(this.memberCount);
-        sbU.append(", memberIdsPreview=");
-        sbU.append(this.memberIdsPreview);
-        sbU.append(", member=");
-        sbU.append(this.member);
-        sbU.append(")");
-        return sbU.toString();
+        StringBuilder sbM833U = C1643a.m833U("Channel(topic=");
+        sbM833U.append(this.topic);
+        sbM833U.append(", type=");
+        sbM833U.append(this.type);
+        sbM833U.append(", guildId=");
+        sbM833U.append(this.guildId);
+        sbM833U.append(", name=");
+        sbM833U.append(this.name);
+        sbM833U.append(", lastMessageId=");
+        sbM833U.append(this.lastMessageId);
+        sbM833U.append(", id=");
+        sbM833U.append(this.id);
+        sbM833U.append(", ownerId=");
+        sbM833U.append(this.ownerId);
+        sbM833U.append(", recipientIds=");
+        sbM833U.append(this.recipientIds);
+        sbM833U.append(", recipients=");
+        sbM833U.append(this.recipients);
+        sbM833U.append(", position=");
+        sbM833U.append(this.position);
+        sbM833U.append(", permissionOverwrites=");
+        sbM833U.append(this.permissionOverwrites);
+        sbM833U.append(", userLimit=");
+        sbM833U.append(this.userLimit);
+        sbM833U.append(", bitrate=");
+        sbM833U.append(this.bitrate);
+        sbM833U.append(", icon=");
+        sbM833U.append(this.icon);
+        sbM833U.append(", originChannelId=");
+        sbM833U.append(this.originChannelId);
+        sbM833U.append(", applicationId=");
+        sbM833U.append(this.applicationId);
+        sbM833U.append(", nicks=");
+        sbM833U.append(this.nicks);
+        sbM833U.append(", nsfw=");
+        sbM833U.append(this.nsfw);
+        sbM833U.append(", parentId=");
+        sbM833U.append(this.parentId);
+        sbM833U.append(", memberListId=");
+        sbM833U.append(this.memberListId);
+        sbM833U.append(", rateLimitPerUser=");
+        sbM833U.append(this.rateLimitPerUser);
+        sbM833U.append(", defaultAutoArchiveDuration=");
+        sbM833U.append(this.defaultAutoArchiveDuration);
+        sbM833U.append(", rtcRegion=");
+        sbM833U.append(this.rtcRegion);
+        sbM833U.append(", flags=");
+        sbM833U.append(this.flags);
+        sbM833U.append(", guildHashes=");
+        sbM833U.append(this.guildHashes);
+        sbM833U.append(", availableTags=");
+        sbM833U.append(this.availableTags);
+        sbM833U.append(", appliedTags=");
+        sbM833U.append(this.appliedTags);
+        sbM833U.append(", threadMetadata=");
+        sbM833U.append(this.threadMetadata);
+        sbM833U.append(", messageCount=");
+        sbM833U.append(this.messageCount);
+        sbM833U.append(", memberCount=");
+        sbM833U.append(this.memberCount);
+        sbM833U.append(", memberIdsPreview=");
+        sbM833U.append(this.memberIdsPreview);
+        sbM833U.append(", member=");
+        sbM833U.append(this.member);
+        sbM833U.append(")");
+        return sbM833U.toString();
     }
 
     /* JADX INFO: renamed from: u, reason: from getter */
@@ -420,7 +426,8 @@ public final /* data */ class Channel {
         return this.parentId;
     }
 
-    public final List<PermissionOverwrite> v() {
+    /* JADX INFO: renamed from: v */
+    public final List<PermissionOverwrite> m7655v() {
         return this.permissionOverwrites;
     }
 
@@ -434,11 +441,13 @@ public final /* data */ class Channel {
         return this.rateLimitPerUser;
     }
 
-    public final List<Long> y() {
+    /* JADX INFO: renamed from: y */
+    public final List<Long> m7658y() {
         return this.recipientIds;
     }
 
-    public final List<User> z() {
+    /* JADX INFO: renamed from: z */
+    public final List<User> m7659z() {
         return this.recipients;
     }
 }

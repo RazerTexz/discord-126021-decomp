@@ -22,18 +22,18 @@ public class DelayedWorkTracker {
     }
 
     public void schedule(@NonNull final WorkSpec workSpec) {
-        Runnable runnableRemove = this.mRunnables.remove(workSpec.f38id);
+        Runnable runnableRemove = this.mRunnables.remove(workSpec.f163id);
         if (runnableRemove != null) {
             this.mRunnableScheduler.cancel(runnableRemove);
         }
         Runnable runnable = new Runnable() { // from class: androidx.work.impl.background.greedy.DelayedWorkTracker.1
             @Override // java.lang.Runnable
             public void run() {
-                Logger.get().debug(DelayedWorkTracker.TAG, String.format("Scheduling work %s", workSpec.f38id), new Throwable[0]);
+                Logger.get().debug(DelayedWorkTracker.TAG, String.format("Scheduling work %s", workSpec.f163id), new Throwable[0]);
                 DelayedWorkTracker.this.mGreedyScheduler.schedule(workSpec);
             }
         };
-        this.mRunnables.put(workSpec.f38id, runnable);
+        this.mRunnables.put(workSpec.f163id, runnable);
         this.mRunnableScheduler.scheduleWithDelay(workSpec.calculateNextRunTime() - System.currentTimeMillis(), runnable);
     }
 

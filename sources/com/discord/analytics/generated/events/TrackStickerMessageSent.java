@@ -1,15 +1,15 @@
 package com.discord.analytics.generated.events;
 
-import b.d.b.a.outline;
 import com.discord.analytics.generated.traits.TrackBase;
-import com.discord.analytics.generated.traits.TrackBase2;
+import com.discord.analytics.generated.traits.TrackBaseReceiver;
 import com.discord.api.science.AnalyticsSchema;
-import d0.z.d.Intrinsics3;
 import java.util.List;
+import p007b.p100d.p104b.p105a.C1643a;
+import p507d0.p592z.p594d.C12238m;
 
 /* JADX INFO: compiled from: TrackStickerMessageSent.kt */
 /* JADX INFO: loaded from: classes.dex */
-public final /* data */ class TrackStickerMessageSent implements AnalyticsSchema, TrackBase2 {
+public final /* data */ class TrackStickerMessageSent implements AnalyticsSchema, TrackBaseReceiver {
     private TrackBase trackBase;
     private final Long messageId = null;
     private final Long channelId = null;
@@ -32,7 +32,7 @@ public final /* data */ class TrackStickerMessageSent implements AnalyticsSchema
             return false;
         }
         TrackStickerMessageSent trackStickerMessageSent = (TrackStickerMessageSent) other;
-        return Intrinsics3.areEqual(this.messageId, trackStickerMessageSent.messageId) && Intrinsics3.areEqual(this.channelId, trackStickerMessageSent.channelId) && Intrinsics3.areEqual(this.channelType, trackStickerMessageSent.channelType) && Intrinsics3.areEqual(this.guildId, trackStickerMessageSent.guildId) && Intrinsics3.areEqual(this.stickerIds, trackStickerMessageSent.stickerIds);
+        return C12238m.areEqual(this.messageId, trackStickerMessageSent.messageId) && C12238m.areEqual(this.channelId, trackStickerMessageSent.channelId) && C12238m.areEqual(this.channelType, trackStickerMessageSent.channelType) && C12238m.areEqual(this.guildId, trackStickerMessageSent.guildId) && C12238m.areEqual(this.stickerIds, trackStickerMessageSent.stickerIds);
     }
 
     public int hashCode() {
@@ -49,15 +49,15 @@ public final /* data */ class TrackStickerMessageSent implements AnalyticsSchema
     }
 
     public String toString() {
-        StringBuilder sbU = outline.U("TrackStickerMessageSent(messageId=");
-        sbU.append(this.messageId);
-        sbU.append(", channelId=");
-        sbU.append(this.channelId);
-        sbU.append(", channelType=");
-        sbU.append(this.channelType);
-        sbU.append(", guildId=");
-        sbU.append(this.guildId);
-        sbU.append(", stickerIds=");
-        return outline.L(sbU, this.stickerIds, ")");
+        StringBuilder sbM833U = C1643a.m833U("TrackStickerMessageSent(messageId=");
+        sbM833U.append(this.messageId);
+        sbM833U.append(", channelId=");
+        sbM833U.append(this.channelId);
+        sbM833U.append(", channelType=");
+        sbM833U.append(this.channelType);
+        sbM833U.append(", guildId=");
+        sbM833U.append(this.guildId);
+        sbM833U.append(", stickerIds=");
+        return C1643a.m824L(sbM833U, this.stickerIds, ")");
     }
 }

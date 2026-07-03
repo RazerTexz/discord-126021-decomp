@@ -2,15 +2,15 @@ package com.discord.widgets.chat.input;
 
 import com.discord.widgets.chat.MessageContent;
 import com.discord.widgets.chat.MessageManager;
-import d0.t.Collections2;
-import d0.z.d.Lambda;
 import kotlin.Unit;
 import kotlin.jvm.functions.Function1;
 import kotlin.jvm.functions.Function2;
+import p507d0.p580t.C12147n;
+import p507d0.p592z.p594d.AbstractC12240o;
 
 /* JADX INFO: compiled from: ChatInputViewModel.kt */
 /* JADX INFO: loaded from: classes2.dex */
-public final class ChatInputViewModel$sendMessage$sendMessage$1 extends Lambda implements Function1<Long, Unit> {
+public final class ChatInputViewModel$sendMessage$sendMessage$1 extends AbstractC12240o implements Function1<Long, Unit> {
     public final /* synthetic */ MessageManager.AttachmentsRequest $attachmentsRequest;
     public final /* synthetic */ MessageContent $messageContent;
     public final /* synthetic */ MessageManager $messageManager;
@@ -34,11 +34,11 @@ public final class ChatInputViewModel$sendMessage$sendMessage$1 extends Lambda i
     @Override // kotlin.jvm.functions.Function1
     public /* bridge */ /* synthetic */ Unit invoke(Long l) {
         invoke(l.longValue());
-        return Unit.a;
+        return Unit.f27425a;
     }
 
     public final void invoke(long j) {
         MessageManager messageManager = this.$messageManager;
-        this.$onValidationResult.invoke(Boolean.valueOf(messageManager.sendMessage((510 & 1) != 0 ? "" : this.$messageContent.getTextContent(), (510 & 2) != 0 ? null : this.$messageContent.getMentionedUsers(), (510 & 4) != 0 ? null : this.$attachmentsRequest, (510 & 8) != 0 ? null : Long.valueOf(j), (510 & 16) != 0 ? Collections2.emptyList() : null, (510 & 32) != 0, (510 & 64) != 0 ? null : this.$onMessageTooLong, (510 & 128) == 0 ? this.$onFilesTooLarge : null, (510 & 256) != 0 ? messageManager.defaultMessageResultHandler : new ChatInputViewModel$sendMessage$sendMessage$1$synchronousValidationSucceeded$1(this))));
+        this.$onValidationResult.invoke(Boolean.valueOf(messageManager.sendMessage((510 & 1) != 0 ? "" : this.$messageContent.getTextContent(), (510 & 2) != 0 ? null : this.$messageContent.getMentionedUsers(), (510 & 4) != 0 ? null : this.$attachmentsRequest, (510 & 8) != 0 ? null : Long.valueOf(j), (510 & 16) != 0 ? C12147n.emptyList() : null, (510 & 32) != 0, (510 & 64) != 0 ? null : this.$onMessageTooLong, (510 & 128) == 0 ? this.$onFilesTooLarge : null, (510 & 256) != 0 ? messageManager.defaultMessageResultHandler : new C7699x68c0d97b(this))));
     }
 }

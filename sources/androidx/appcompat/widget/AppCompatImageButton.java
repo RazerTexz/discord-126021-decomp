@@ -12,7 +12,7 @@ import androidx.annotation.DrawableRes;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.annotation.RestrictTo;
-import androidx.appcompat.R;
+import androidx.appcompat.C0051R;
 import androidx.core.view.TintableBackgroundView;
 import androidx.core.widget.TintableImageSourceView;
 
@@ -174,7 +174,7 @@ public class AppCompatImageButton extends ImageButton implements TintableBackgro
     }
 
     public AppCompatImageButton(@NonNull Context context, @Nullable AttributeSet attributeSet) {
-        this(context, attributeSet, R.attr.imageButtonStyle);
+        this(context, attributeSet, C0051R.attr.imageButtonStyle);
     }
 
     public AppCompatImageButton(@NonNull Context context, @Nullable AttributeSet attributeSet, int i) {

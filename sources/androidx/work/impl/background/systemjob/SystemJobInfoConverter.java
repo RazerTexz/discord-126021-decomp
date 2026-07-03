@@ -26,8 +26,8 @@ public class SystemJobInfoConverter {
     private static final String TAG = Logger.tagWithPrefix("SystemJobInfoConverter");
     private final ComponentName mWorkServiceComponent;
 
-    /* JADX INFO: renamed from: androidx.work.impl.background.systemjob.SystemJobInfoConverter$1, reason: invalid class name */
-    public static /* synthetic */ class AnonymousClass1 {
+    /* JADX INFO: renamed from: androidx.work.impl.background.systemjob.SystemJobInfoConverter$1 */
+    public static /* synthetic */ class C07381 {
         public static final /* synthetic */ int[] $SwitchMap$androidx$work$NetworkType;
 
         static {
@@ -93,7 +93,7 @@ public class SystemJobInfoConverter {
         Constraints constraints = workSpec.constraints;
         int iConvertNetworkType = convertNetworkType(constraints.getRequiredNetworkType());
         PersistableBundle persistableBundle = new PersistableBundle();
-        persistableBundle.putString(EXTRA_WORK_SPEC_ID, workSpec.f38id);
+        persistableBundle.putString(EXTRA_WORK_SPEC_ID, workSpec.f163id);
         persistableBundle.putBoolean(EXTRA_IS_PERIODIC, workSpec.isPeriodic());
         JobInfo.Builder extras = new JobInfo.Builder(i, this.mWorkServiceComponent).setRequiredNetworkType(iConvertNetworkType).setRequiresCharging(constraints.requiresCharging()).setRequiresDeviceIdle(constraints.requiresDeviceIdle()).setExtras(persistableBundle);
         if (!constraints.requiresDeviceIdle()) {

@@ -1,14 +1,14 @@
 package com.discord.analytics.generated.events;
 
-import b.d.b.a.outline;
 import com.discord.analytics.generated.traits.TrackBase;
-import com.discord.analytics.generated.traits.TrackBase2;
+import com.discord.analytics.generated.traits.TrackBaseReceiver;
 import com.discord.api.science.AnalyticsSchema;
-import d0.z.d.Intrinsics3;
+import p007b.p100d.p104b.p105a.C1643a;
+import p507d0.p592z.p594d.C12238m;
 
 /* JADX INFO: compiled from: TrackPasswordAction.kt */
 /* JADX INFO: loaded from: classes.dex */
-public final /* data */ class TrackPasswordAction implements AnalyticsSchema, TrackBase2 {
+public final /* data */ class TrackPasswordAction implements AnalyticsSchema, TrackBaseReceiver {
     private TrackBase trackBase;
     private final CharSequence action = null;
     private final Boolean isSuccess = null;
@@ -30,7 +30,7 @@ public final /* data */ class TrackPasswordAction implements AnalyticsSchema, Tr
             return false;
         }
         TrackPasswordAction trackPasswordAction = (TrackPasswordAction) other;
-        return Intrinsics3.areEqual(this.action, trackPasswordAction.action) && Intrinsics3.areEqual(this.isSuccess, trackPasswordAction.isSuccess) && Intrinsics3.areEqual(this.compliance, trackPasswordAction.compliance) && Intrinsics3.areEqual(this.isCompliant, trackPasswordAction.isCompliant);
+        return C12238m.areEqual(this.action, trackPasswordAction.action) && C12238m.areEqual(this.isSuccess, trackPasswordAction.isSuccess) && C12238m.areEqual(this.compliance, trackPasswordAction.compliance) && C12238m.areEqual(this.isCompliant, trackPasswordAction.isCompliant);
     }
 
     public int hashCode() {
@@ -45,13 +45,13 @@ public final /* data */ class TrackPasswordAction implements AnalyticsSchema, Tr
     }
 
     public String toString() {
-        StringBuilder sbU = outline.U("TrackPasswordAction(action=");
-        sbU.append(this.action);
-        sbU.append(", isSuccess=");
-        sbU.append(this.isSuccess);
-        sbU.append(", compliance=");
-        sbU.append(this.compliance);
-        sbU.append(", isCompliant=");
-        return outline.D(sbU, this.isCompliant, ")");
+        StringBuilder sbM833U = C1643a.m833U("TrackPasswordAction(action=");
+        sbM833U.append(this.action);
+        sbM833U.append(", isSuccess=");
+        sbM833U.append(this.isSuccess);
+        sbM833U.append(", compliance=");
+        sbM833U.append(this.compliance);
+        sbM833U.append(", isCompliant=");
+        return C1643a.m816D(sbM833U, this.isCompliant, ")");
     }
 }

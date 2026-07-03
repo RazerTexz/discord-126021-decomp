@@ -1,7 +1,7 @@
 package com.discord.utilities.threading;
 
-import d0.z.d.Intrinsics3;
 import java.util.concurrent.ThreadFactory;
+import p507d0.p592z.p594d.C12238m;
 
 /* JADX INFO: compiled from: PriorityThreadFactory.kt */
 /* JADX INFO: loaded from: classes2.dex */
@@ -14,7 +14,7 @@ public final class PriorityThreadFactory implements ThreadFactory {
 
     @Override // java.util.concurrent.ThreadFactory
     public Thread newThread(Runnable runnable) {
-        Intrinsics3.checkNotNullParameter(runnable, "runnable");
+        C12238m.checkNotNullParameter(runnable, "runnable");
         Thread thread = new Thread(runnable);
         thread.setPriority(this.threadPriority);
         return thread;

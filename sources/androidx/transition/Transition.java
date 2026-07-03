@@ -26,13 +26,13 @@ import androidx.collection.LongSparseArray;
 import androidx.core.content.res.TypedArrayUtils;
 import androidx.core.view.ViewCompat;
 import androidx.recyclerview.widget.RecyclerView;
-import b.d.b.a.outline;
 import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 import java.util.StringTokenizer;
+import p007b.p100d.p104b.p105a.C1643a;
 
 /* JADX INFO: loaded from: classes.dex */
 public abstract class Transition implements Cloneable {
@@ -439,7 +439,7 @@ public abstract class Transition implements Cloneable {
                 iArr[i] = 4;
             } else {
                 if (!strTrim.isEmpty()) {
-                    throw new InflateException(outline.y("Unknown match type in matchOrder: '", strTrim, "'"));
+                    throw new InflateException(C1643a.m886y("Unknown match type in matchOrder: '", strTrim, "'"));
                 }
                 int[] iArr2 = new int[iArr.length - 1];
                 System.arraycopy(iArr, 0, iArr2, 0, i);
@@ -1158,7 +1158,7 @@ public abstract class Transition implements Cloneable {
 
     @Override // 
     /* JADX INFO: renamed from: clone, reason: merged with bridge method [inline-methods] */
-    public Transition mo5clone() {
+    public Transition mo11382clone() {
         try {
             Transition transition = (Transition) super.clone();
             transition.mAnimators = new ArrayList<>();
@@ -1193,49 +1193,49 @@ public abstract class Transition implements Cloneable {
     }
 
     public String toString(String str) {
-        StringBuilder sbU = outline.U(str);
-        sbU.append(getClass().getSimpleName());
-        sbU.append("@");
-        sbU.append(Integer.toHexString(hashCode()));
-        sbU.append(": ");
-        String string = sbU.toString();
+        StringBuilder sbM833U = C1643a.m833U(str);
+        sbM833U.append(getClass().getSimpleName());
+        sbM833U.append("@");
+        sbM833U.append(Integer.toHexString(hashCode()));
+        sbM833U.append(": ");
+        String string = sbM833U.toString();
         if (this.mDuration != -1) {
-            string = outline.C(outline.X(string, "dur("), this.mDuration, ") ");
+            string = C1643a.m815C(C1643a.m836X(string, "dur("), this.mDuration, ") ");
         }
         if (this.mStartDelay != -1) {
-            string = outline.C(outline.X(string, "dly("), this.mStartDelay, ") ");
+            string = C1643a.m815C(C1643a.m836X(string, "dly("), this.mStartDelay, ") ");
         }
         if (this.mInterpolator != null) {
-            StringBuilder sbX = outline.X(string, "interp(");
-            sbX.append(this.mInterpolator);
-            sbX.append(") ");
-            string = sbX.toString();
+            StringBuilder sbM836X = C1643a.m836X(string, "interp(");
+            sbM836X.append(this.mInterpolator);
+            sbM836X.append(") ");
+            string = sbM836X.toString();
         }
         if (this.mTargetIds.size() <= 0 && this.mTargets.size() <= 0) {
             return string;
         }
-        String strW = outline.w(string, "tgts(");
+        String strM883w = C1643a.m883w(string, "tgts(");
         if (this.mTargetIds.size() > 0) {
             for (int i = 0; i < this.mTargetIds.size(); i++) {
                 if (i > 0) {
-                    strW = outline.w(strW, ", ");
+                    strM883w = C1643a.m883w(strM883w, ", ");
                 }
-                StringBuilder sbU2 = outline.U(strW);
-                sbU2.append(this.mTargetIds.get(i));
-                strW = sbU2.toString();
+                StringBuilder sbM833U2 = C1643a.m833U(strM883w);
+                sbM833U2.append(this.mTargetIds.get(i));
+                strM883w = sbM833U2.toString();
             }
         }
         if (this.mTargets.size() > 0) {
             for (int i2 = 0; i2 < this.mTargets.size(); i2++) {
                 if (i2 > 0) {
-                    strW = outline.w(strW, ", ");
+                    strM883w = C1643a.m883w(strM883w, ", ");
                 }
-                StringBuilder sbU3 = outline.U(strW);
-                sbU3.append(this.mTargets.get(i2));
-                strW = sbU3.toString();
+                StringBuilder sbM833U3 = C1643a.m833U(strM883w);
+                sbM833U3.append(this.mTargets.get(i2));
+                strM883w = sbM833U3.toString();
             }
         }
-        return outline.w(strW, ")");
+        return C1643a.m883w(strM883w, ")");
     }
 
     @NonNull

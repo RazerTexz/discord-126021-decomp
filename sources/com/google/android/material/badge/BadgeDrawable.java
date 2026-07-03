@@ -27,7 +27,7 @@ import androidx.annotation.StyleRes;
 import androidx.annotation.StyleableRes;
 import androidx.annotation.XmlRes;
 import androidx.core.view.ViewCompat;
-import com.google.android.material.R;
+import com.google.android.material.C10817R;
 import com.google.android.material.drawable.DrawableUtils;
 import com.google.android.material.internal.TextDrawableHelper;
 import com.google.android.material.internal.ThemeEnforcement;
@@ -48,10 +48,10 @@ public class BadgeDrawable extends Drawable implements TextDrawableHelper.TextDr
     private static final int DEFAULT_MAX_BADGE_CHARACTER_COUNT = 4;
 
     @StyleRes
-    private static final int DEFAULT_STYLE = R.style.Widget_MaterialComponents_Badge;
+    private static final int DEFAULT_STYLE = C10817R.style.Widget_MaterialComponents_Badge;
 
     @AttrRes
-    private static final int DEFAULT_THEME_ATTR = R.attr.badgeStyle;
+    private static final int DEFAULT_THEME_ATTR = C10817R.attr.badgeStyle;
     private static final int MAX_CIRCULAR_BADGE_NUMBER_COUNT = 9;
     public static final int TOP_END = 8388661;
     public static final int TOP_START = 8388659;
@@ -90,18 +90,23 @@ public class BadgeDrawable extends Drawable implements TextDrawableHelper.TextDr
     public @interface BadgeGravity {
     }
 
-    public class a implements Runnable {
-        public final /* synthetic */ View j;
-        public final /* synthetic */ FrameLayout k;
+    /* JADX INFO: renamed from: com.google.android.material.badge.BadgeDrawable$a */
+    public class RunnableC10828a implements Runnable {
 
-        public a(View view, FrameLayout frameLayout) {
-            this.j = view;
-            this.k = frameLayout;
+        /* JADX INFO: renamed from: j */
+        public final /* synthetic */ View f20881j;
+
+        /* JADX INFO: renamed from: k */
+        public final /* synthetic */ FrameLayout f20882k;
+
+        public RunnableC10828a(View view, FrameLayout frameLayout) {
+            this.f20881j = view;
+            this.f20882k = frameLayout;
         }
 
         @Override // java.lang.Runnable
         public void run() {
-            BadgeDrawable.this.updateBadgeCoordinates(this.j, this.k);
+            BadgeDrawable.this.updateBadgeCoordinates(this.f20881j, this.f20882k);
         }
     }
 
@@ -111,14 +116,14 @@ public class BadgeDrawable extends Drawable implements TextDrawableHelper.TextDr
         Resources resources = context.getResources();
         this.badgeBounds = new Rect();
         this.shapeDrawable = new MaterialShapeDrawable();
-        this.badgeRadius = resources.getDimensionPixelSize(R.dimen.mtrl_badge_radius);
-        this.badgeWidePadding = resources.getDimensionPixelSize(R.dimen.mtrl_badge_long_text_horizontal_padding);
-        this.badgeWithTextRadius = resources.getDimensionPixelSize(R.dimen.mtrl_badge_with_text_radius);
+        this.badgeRadius = resources.getDimensionPixelSize(C10817R.dimen.mtrl_badge_radius);
+        this.badgeWidePadding = resources.getDimensionPixelSize(C10817R.dimen.mtrl_badge_long_text_horizontal_padding);
+        this.badgeWithTextRadius = resources.getDimensionPixelSize(C10817R.dimen.mtrl_badge_with_text_radius);
         TextDrawableHelper textDrawableHelper = new TextDrawableHelper(this);
         this.textDrawableHelper = textDrawableHelper;
         textDrawableHelper.getTextPaint().setTextAlign(Paint.Align.CENTER);
         this.savedState = new SavedState(context);
-        setTextAppearanceResource(R.style.TextAppearance_MaterialComponents_Badge);
+        setTextAppearanceResource(C10817R.style.TextAppearance_MaterialComponents_Badge);
     }
 
     private void calculateCenterAndBounds(@NonNull Context context, @NonNull Rect rect, @NonNull View view) {
@@ -139,7 +144,7 @@ public class BadgeDrawable extends Drawable implements TextDrawableHelper.TextDr
             this.halfBadgeHeight = f2;
             this.halfBadgeWidth = (this.textDrawableHelper.getTextWidth(getBadgeText()) / 2.0f) + this.badgeWidePadding;
         }
-        int dimensionPixelSize = context.getResources().getDimensionPixelSize(hasNumber() ? R.dimen.mtrl_badge_text_horizontal_edge_offset : R.dimen.mtrl_badge_horizontal_edge_offset);
+        int dimensionPixelSize = context.getResources().getDimensionPixelSize(hasNumber() ? C10817R.dimen.mtrl_badge_text_horizontal_edge_offset : C10817R.dimen.mtrl_badge_horizontal_edge_offset);
         int i2 = this.savedState.badgeGravity;
         if (i2 == 8388659 || i2 == 8388691) {
             this.badgeCenterX = ViewCompat.getLayoutDirection(view) == 0 ? (rect.left - this.halfBadgeWidth) + dimensionPixelSize + this.savedState.horizontalOffset : ((rect.right + this.halfBadgeWidth) - dimensionPixelSize) - this.savedState.horizontalOffset;
@@ -190,24 +195,24 @@ public class BadgeDrawable extends Drawable implements TextDrawableHelper.TextDr
             return NumberFormat.getInstance().format(getNumber());
         }
         Context context = this.contextRef.get();
-        return context == null ? "" : context.getString(R.string.mtrl_exceed_max_badge_number_suffix, Integer.valueOf(this.maxBadgeNumber), DEFAULT_EXCEED_MAX_BADGE_NUMBER_SUFFIX);
+        return context == null ? "" : context.getString(C10817R.string.mtrl_exceed_max_badge_number_suffix, Integer.valueOf(this.maxBadgeNumber), DEFAULT_EXCEED_MAX_BADGE_NUMBER_SUFFIX);
     }
 
     private void loadDefaultStateFromAttributes(Context context, AttributeSet attributeSet, @AttrRes int i, @StyleRes int i2) {
-        TypedArray typedArrayObtainStyledAttributes = ThemeEnforcement.obtainStyledAttributes(context, attributeSet, R.styleable.Badge, i, i2, new int[0]);
-        setMaxCharacterCount(typedArrayObtainStyledAttributes.getInt(R.styleable.Badge_maxCharacterCount, 4));
-        int i3 = R.styleable.Badge_number;
+        TypedArray typedArrayObtainStyledAttributes = ThemeEnforcement.obtainStyledAttributes(context, attributeSet, C10817R.styleable.Badge, i, i2, new int[0]);
+        setMaxCharacterCount(typedArrayObtainStyledAttributes.getInt(C10817R.styleable.Badge_maxCharacterCount, 4));
+        int i3 = C10817R.styleable.Badge_number;
         if (typedArrayObtainStyledAttributes.hasValue(i3)) {
             setNumber(typedArrayObtainStyledAttributes.getInt(i3, 0));
         }
-        setBackgroundColor(readColorFromAttributes(context, typedArrayObtainStyledAttributes, R.styleable.Badge_backgroundColor));
-        int i4 = R.styleable.Badge_badgeTextColor;
+        setBackgroundColor(readColorFromAttributes(context, typedArrayObtainStyledAttributes, C10817R.styleable.Badge_backgroundColor));
+        int i4 = C10817R.styleable.Badge_badgeTextColor;
         if (typedArrayObtainStyledAttributes.hasValue(i4)) {
             setBadgeTextColor(readColorFromAttributes(context, typedArrayObtainStyledAttributes, i4));
         }
-        setBadgeGravity(typedArrayObtainStyledAttributes.getInt(R.styleable.Badge_badgeGravity, TOP_END));
-        setHorizontalOffset(typedArrayObtainStyledAttributes.getDimensionPixelOffset(R.styleable.Badge_horizontalOffset, 0));
-        setVerticalOffset(typedArrayObtainStyledAttributes.getDimensionPixelOffset(R.styleable.Badge_verticalOffset, 0));
+        setBadgeGravity(typedArrayObtainStyledAttributes.getInt(C10817R.styleable.Badge_badgeGravity, TOP_END));
+        setHorizontalOffset(typedArrayObtainStyledAttributes.getDimensionPixelOffset(C10817R.styleable.Badge_horizontalOffset, 0));
+        setVerticalOffset(typedArrayObtainStyledAttributes.getDimensionPixelOffset(C10817R.styleable.Badge_verticalOffset, 0));
         typedArrayObtainStyledAttributes.recycle();
     }
 
@@ -247,12 +252,12 @@ public class BadgeDrawable extends Drawable implements TextDrawableHelper.TextDr
 
     private void tryWrapAnchorInCompatParent(View view) {
         ViewGroup viewGroup = (ViewGroup) view.getParent();
-        if (viewGroup == null || viewGroup.getId() != R.id.mtrl_anchor_parent) {
+        if (viewGroup == null || viewGroup.getId() != C10817R.id.mtrl_anchor_parent) {
             WeakReference<FrameLayout> weakReference = this.customBadgeParentRef;
             if (weakReference == null || weakReference.get() != viewGroup) {
                 updateAnchorParentToNotClip(view);
                 FrameLayout frameLayout = new FrameLayout(view.getContext());
-                frameLayout.setId(R.id.mtrl_anchor_parent);
+                frameLayout.setId(C10817R.id.mtrl_anchor_parent);
                 frameLayout.setClipChildren(false);
                 frameLayout.setClipToPadding(false);
                 frameLayout.setLayoutParams(view.getLayoutParams());
@@ -264,7 +269,7 @@ public class BadgeDrawable extends Drawable implements TextDrawableHelper.TextDr
                 frameLayout.addView(view);
                 viewGroup.addView(frameLayout, iIndexOfChild);
                 this.customBadgeParentRef = new WeakReference<>(frameLayout);
-                frameLayout.post(new a(view, frameLayout));
+                frameLayout.post(new RunnableC10828a(view, frameLayout));
             }
         }
     }
@@ -546,7 +551,7 @@ public class BadgeDrawable extends Drawable implements TextDrawableHelper.TextDr
 
     @RestrictTo({RestrictTo.Scope.LIBRARY_GROUP})
     public static final class SavedState implements Parcelable {
-        public static final Parcelable.Creator<SavedState> CREATOR = new a();
+        public static final Parcelable.Creator<SavedState> CREATOR = new C10827a();
         private int alpha;
 
         @ColorInt
@@ -574,7 +579,8 @@ public class BadgeDrawable extends Drawable implements TextDrawableHelper.TextDr
         @Dimension(unit = 1)
         private int verticalOffset;
 
-        public static class a implements Parcelable.Creator<SavedState> {
+        /* JADX INFO: renamed from: com.google.android.material.badge.BadgeDrawable$SavedState$a */
+        public static class C10827a implements Parcelable.Creator<SavedState> {
             @Override // android.os.Parcelable.Creator
             @NonNull
             public SavedState createFromParcel(@NonNull Parcel parcel) {
@@ -591,10 +597,10 @@ public class BadgeDrawable extends Drawable implements TextDrawableHelper.TextDr
         public SavedState(@NonNull Context context) {
             this.alpha = 255;
             this.number = -1;
-            this.badgeTextColor = new TextAppearance(context, R.style.TextAppearance_MaterialComponents_Badge).textColor.getDefaultColor();
-            this.contentDescriptionNumberless = context.getString(R.string.mtrl_badge_numberless_content_description);
-            this.contentDescriptionQuantityStrings = R.plurals.mtrl_badge_content_description;
-            this.contentDescriptionExceedsMaxBadgeNumberRes = R.string.mtrl_exceed_max_badge_number_content_description;
+            this.badgeTextColor = new TextAppearance(context, C10817R.style.TextAppearance_MaterialComponents_Badge).textColor.getDefaultColor();
+            this.contentDescriptionNumberless = context.getString(C10817R.string.mtrl_badge_numberless_content_description);
+            this.contentDescriptionQuantityStrings = C10817R.plurals.mtrl_badge_content_description;
+            this.contentDescriptionExceedsMaxBadgeNumberRes = C10817R.string.mtrl_exceed_max_badge_number_content_description;
             this.isVisible = true;
         }
 

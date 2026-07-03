@@ -1,14 +1,14 @@
 package com.discord.analytics.generated.events;
 
-import b.d.b.a.outline;
 import com.discord.analytics.generated.traits.TrackBase;
-import com.discord.analytics.generated.traits.TrackBase2;
+import com.discord.analytics.generated.traits.TrackBaseReceiver;
 import com.discord.api.science.AnalyticsSchema;
-import d0.z.d.Intrinsics3;
+import p007b.p100d.p104b.p105a.C1643a;
+import p507d0.p592z.p594d.C12238m;
 
 /* JADX INFO: compiled from: TrackNetworkingPeerMetrics.kt */
 /* JADX INFO: loaded from: classes.dex */
-public final /* data */ class TrackNetworkingPeerMetrics implements AnalyticsSchema, TrackBase2 {
+public final /* data */ class TrackNetworkingPeerMetrics implements AnalyticsSchema, TrackBaseReceiver {
     private TrackBase trackBase;
     private final Long applicationId = null;
     private final Long peerId = null;
@@ -37,7 +37,7 @@ public final /* data */ class TrackNetworkingPeerMetrics implements AnalyticsSch
             return false;
         }
         TrackNetworkingPeerMetrics trackNetworkingPeerMetrics = (TrackNetworkingPeerMetrics) other;
-        return Intrinsics3.areEqual(this.applicationId, trackNetworkingPeerMetrics.applicationId) && Intrinsics3.areEqual(this.peerId, trackNetworkingPeerMetrics.peerId) && Intrinsics3.areEqual(this.intervalNs, trackNetworkingPeerMetrics.intervalNs) && Intrinsics3.areEqual(this.pingsSent, trackNetworkingPeerMetrics.pingsSent) && Intrinsics3.areEqual(this.pingsReceived, trackNetworkingPeerMetrics.pingsReceived) && Intrinsics3.areEqual(this.pongsSent, trackNetworkingPeerMetrics.pongsSent) && Intrinsics3.areEqual(this.pongsReceived, trackNetworkingPeerMetrics.pongsReceived) && Intrinsics3.areEqual(this.pingRttAvg, trackNetworkingPeerMetrics.pingRttAvg) && Intrinsics3.areEqual(this.pingRttMax, trackNetworkingPeerMetrics.pingRttMax) && Intrinsics3.areEqual(this.pingRttP95, trackNetworkingPeerMetrics.pingRttP95) && Intrinsics3.areEqual(this.pingRttStddev, trackNetworkingPeerMetrics.pingRttStddev);
+        return C12238m.areEqual(this.applicationId, trackNetworkingPeerMetrics.applicationId) && C12238m.areEqual(this.peerId, trackNetworkingPeerMetrics.peerId) && C12238m.areEqual(this.intervalNs, trackNetworkingPeerMetrics.intervalNs) && C12238m.areEqual(this.pingsSent, trackNetworkingPeerMetrics.pingsSent) && C12238m.areEqual(this.pingsReceived, trackNetworkingPeerMetrics.pingsReceived) && C12238m.areEqual(this.pongsSent, trackNetworkingPeerMetrics.pongsSent) && C12238m.areEqual(this.pongsReceived, trackNetworkingPeerMetrics.pongsReceived) && C12238m.areEqual(this.pingRttAvg, trackNetworkingPeerMetrics.pingRttAvg) && C12238m.areEqual(this.pingRttMax, trackNetworkingPeerMetrics.pingRttMax) && C12238m.areEqual(this.pingRttP95, trackNetworkingPeerMetrics.pingRttP95) && C12238m.areEqual(this.pingRttStddev, trackNetworkingPeerMetrics.pingRttStddev);
     }
 
     public int hashCode() {
@@ -66,27 +66,27 @@ public final /* data */ class TrackNetworkingPeerMetrics implements AnalyticsSch
     }
 
     public String toString() {
-        StringBuilder sbU = outline.U("TrackNetworkingPeerMetrics(applicationId=");
-        sbU.append(this.applicationId);
-        sbU.append(", peerId=");
-        sbU.append(this.peerId);
-        sbU.append(", intervalNs=");
-        sbU.append(this.intervalNs);
-        sbU.append(", pingsSent=");
-        sbU.append(this.pingsSent);
-        sbU.append(", pingsReceived=");
-        sbU.append(this.pingsReceived);
-        sbU.append(", pongsSent=");
-        sbU.append(this.pongsSent);
-        sbU.append(", pongsReceived=");
-        sbU.append(this.pongsReceived);
-        sbU.append(", pingRttAvg=");
-        sbU.append(this.pingRttAvg);
-        sbU.append(", pingRttMax=");
-        sbU.append(this.pingRttMax);
-        sbU.append(", pingRttP95=");
-        sbU.append(this.pingRttP95);
-        sbU.append(", pingRttStddev=");
-        return outline.G(sbU, this.pingRttStddev, ")");
+        StringBuilder sbM833U = C1643a.m833U("TrackNetworkingPeerMetrics(applicationId=");
+        sbM833U.append(this.applicationId);
+        sbM833U.append(", peerId=");
+        sbM833U.append(this.peerId);
+        sbM833U.append(", intervalNs=");
+        sbM833U.append(this.intervalNs);
+        sbM833U.append(", pingsSent=");
+        sbM833U.append(this.pingsSent);
+        sbM833U.append(", pingsReceived=");
+        sbM833U.append(this.pingsReceived);
+        sbM833U.append(", pongsSent=");
+        sbM833U.append(this.pongsSent);
+        sbM833U.append(", pongsReceived=");
+        sbM833U.append(this.pongsReceived);
+        sbM833U.append(", pingRttAvg=");
+        sbM833U.append(this.pingRttAvg);
+        sbM833U.append(", pingRttMax=");
+        sbM833U.append(this.pingRttMax);
+        sbM833U.append(", pingRttP95=");
+        sbM833U.append(this.pingRttP95);
+        sbM833U.append(", pingRttStddev=");
+        return C1643a.m819G(sbM833U, this.pingRttStddev, ")");
     }
 }

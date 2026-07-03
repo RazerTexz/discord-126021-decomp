@@ -10,21 +10,22 @@ import androidx.viewbinding.ViewBinding;
 /* JADX INFO: loaded from: classes.dex */
 public final class WidgetGuildSelectorBinding implements ViewBinding {
 
+    /* JADX INFO: renamed from: a */
     @NonNull
-    public final NestedScrollView a;
+    public final NestedScrollView f17050a;
 
-    /* JADX INFO: renamed from: b, reason: collision with root package name */
+    /* JADX INFO: renamed from: b */
     @NonNull
-    public final RecyclerView f2451b;
+    public final RecyclerView f17051b;
 
     public WidgetGuildSelectorBinding(@NonNull NestedScrollView nestedScrollView, @NonNull TextView textView, @NonNull RecyclerView recyclerView) {
-        this.a = nestedScrollView;
-        this.f2451b = recyclerView;
+        this.f17050a = nestedScrollView;
+        this.f17051b = recyclerView;
     }
 
     @Override // androidx.viewbinding.ViewBinding
     @NonNull
     public View getRoot() {
-        return this.a;
+        return this.f17050a;
     }
 }

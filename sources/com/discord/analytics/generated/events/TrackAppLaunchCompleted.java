@@ -1,14 +1,14 @@
 package com.discord.analytics.generated.events;
 
-import b.d.b.a.outline;
 import com.discord.analytics.generated.traits.TrackBase;
-import com.discord.analytics.generated.traits.TrackBase2;
+import com.discord.analytics.generated.traits.TrackBaseReceiver;
 import com.discord.api.science.AnalyticsSchema;
-import d0.z.d.Intrinsics3;
+import p007b.p100d.p104b.p105a.C1643a;
+import p507d0.p592z.p594d.C12238m;
 
 /* JADX INFO: compiled from: TrackAppLaunchCompleted.kt */
 /* JADX INFO: loaded from: classes.dex */
-public final /* data */ class TrackAppLaunchCompleted implements AnalyticsSchema, TrackBase2 {
+public final /* data */ class TrackAppLaunchCompleted implements AnalyticsSchema, TrackBaseReceiver {
     private TrackBase trackBase;
     private final CharSequence loadId = null;
     private final CharSequence screenName = null;
@@ -31,7 +31,7 @@ public final /* data */ class TrackAppLaunchCompleted implements AnalyticsSchema
             return false;
         }
         TrackAppLaunchCompleted trackAppLaunchCompleted = (TrackAppLaunchCompleted) other;
-        return Intrinsics3.areEqual(this.loadId, trackAppLaunchCompleted.loadId) && Intrinsics3.areEqual(this.screenName, trackAppLaunchCompleted.screenName) && Intrinsics3.areEqual(this.durationMsSinceAppOpened, trackAppLaunchCompleted.durationMsSinceAppOpened) && Intrinsics3.areEqual(this.hasCachedData, trackAppLaunchCompleted.hasCachedData) && Intrinsics3.areEqual(this.manifest, trackAppLaunchCompleted.manifest);
+        return C12238m.areEqual(this.loadId, trackAppLaunchCompleted.loadId) && C12238m.areEqual(this.screenName, trackAppLaunchCompleted.screenName) && C12238m.areEqual(this.durationMsSinceAppOpened, trackAppLaunchCompleted.durationMsSinceAppOpened) && C12238m.areEqual(this.hasCachedData, trackAppLaunchCompleted.hasCachedData) && C12238m.areEqual(this.manifest, trackAppLaunchCompleted.manifest);
     }
 
     public int hashCode() {
@@ -48,15 +48,15 @@ public final /* data */ class TrackAppLaunchCompleted implements AnalyticsSchema
     }
 
     public String toString() {
-        StringBuilder sbU = outline.U("TrackAppLaunchCompleted(loadId=");
-        sbU.append(this.loadId);
-        sbU.append(", screenName=");
-        sbU.append(this.screenName);
-        sbU.append(", durationMsSinceAppOpened=");
-        sbU.append(this.durationMsSinceAppOpened);
-        sbU.append(", hasCachedData=");
-        sbU.append(this.hasCachedData);
-        sbU.append(", manifest=");
-        return outline.E(sbU, this.manifest, ")");
+        StringBuilder sbM833U = C1643a.m833U("TrackAppLaunchCompleted(loadId=");
+        sbM833U.append(this.loadId);
+        sbM833U.append(", screenName=");
+        sbM833U.append(this.screenName);
+        sbM833U.append(", durationMsSinceAppOpened=");
+        sbM833U.append(this.durationMsSinceAppOpened);
+        sbM833U.append(", hasCachedData=");
+        sbM833U.append(this.hasCachedData);
+        sbM833U.append(", manifest=");
+        return C1643a.m817E(sbM833U, this.manifest, ")");
     }
 }

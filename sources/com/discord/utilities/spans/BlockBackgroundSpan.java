@@ -7,7 +7,7 @@ import android.text.Spanned;
 import android.text.style.LineBackgroundSpan;
 import androidx.annotation.ColorInt;
 import androidx.core.app.NotificationCompat;
-import d0.z.d.Intrinsics3;
+import p507d0.p592z.p594d.C12238m;
 
 /* JADX INFO: compiled from: BlockBackgroundSpan.kt */
 /* JADX INFO: loaded from: classes2.dex */
@@ -35,7 +35,7 @@ public final class BlockBackgroundSpan implements LineBackgroundSpan {
     }
 
     public final void draw(Canvas canvas) {
-        Intrinsics3.checkNotNullParameter(canvas, "canvas");
+        C12238m.checkNotNullParameter(canvas, "canvas");
         RectF rectF = this.rect;
         float f = this.radius;
         canvas.drawRoundRect(rectF, f, f, this.fillPaint);
@@ -46,9 +46,9 @@ public final class BlockBackgroundSpan implements LineBackgroundSpan {
 
     @Override // android.text.style.LineBackgroundSpan
     public void drawBackground(Canvas canvas, Paint paint, int left, int right, int top, int baseline, int bottom, CharSequence text, int start, int end, int lnum) {
-        Intrinsics3.checkNotNullParameter(canvas, "canvas");
-        Intrinsics3.checkNotNullParameter(paint, "paint");
-        Intrinsics3.checkNotNullParameter(text, NotificationCompat.MessagingStyle.Message.KEY_TEXT);
+        C12238m.checkNotNullParameter(canvas, "canvas");
+        C12238m.checkNotNullParameter(paint, "paint");
+        C12238m.checkNotNullParameter(text, NotificationCompat.MessagingStyle.Message.KEY_TEXT);
         if (((Spanned) (!(text instanceof Spanned) ? null : text)) != null) {
             Spanned spanned = (Spanned) text;
             if (spanned.getSpanStart(this) == start) {

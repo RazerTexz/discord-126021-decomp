@@ -10,25 +10,27 @@ import com.google.android.material.textfield.TextInputLayout;
 /* JADX INFO: loaded from: classes.dex */
 public final class WidgetAuditLogFilterBinding implements ViewBinding {
 
+    /* JADX INFO: renamed from: a */
     @NonNull
-    public final LinearLayout a;
+    public final LinearLayout f15665a;
 
-    /* JADX INFO: renamed from: b, reason: collision with root package name */
+    /* JADX INFO: renamed from: b */
     @NonNull
-    public final TextInputLayout f2228b;
+    public final TextInputLayout f15666b;
 
+    /* JADX INFO: renamed from: c */
     @NonNull
-    public final RecyclerView c;
+    public final RecyclerView f15667c;
 
     public WidgetAuditLogFilterBinding(@NonNull LinearLayout linearLayout, @NonNull TextInputLayout textInputLayout, @NonNull RecyclerView recyclerView) {
-        this.a = linearLayout;
-        this.f2228b = textInputLayout;
-        this.c = recyclerView;
+        this.f15665a = linearLayout;
+        this.f15666b = textInputLayout;
+        this.f15667c = recyclerView;
     }
 
     @Override // androidx.viewbinding.ViewBinding
     @NonNull
     public View getRoot() {
-        return this.a;
+        return this.f15665a;
     }
 }

@@ -4,13 +4,13 @@ import androidx.exifinterface.media.ExifInterface;
 import androidx.recyclerview.widget.RecyclerView;
 import com.discord.utilities.mg_recycler.CategoricalDragAndDropAdapter.Payload;
 import com.discord.utilities.mg_recycler.DragAndDropAdapter;
-import d0.t.Iterators4;
-import d0.z.d.Intrinsics3;
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map;
-import kotlin.ranges.Ranges2;
+import kotlin.ranges.IntRange;
+import p507d0.p580t.AbstractC12126c0;
+import p507d0.p592z.p594d.C12238m;
 
 /* JADX INFO: compiled from: CategoricalDragAndDropAdapter.kt */
 /* JADX INFO: loaded from: classes2.dex */
@@ -24,7 +24,7 @@ public abstract class CategoricalDragAndDropAdapter<T extends Payload> extends D
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public CategoricalDragAndDropAdapter(RecyclerView recyclerView) {
         super(recyclerView);
-        Intrinsics3.checkNotNullParameter(recyclerView, "recycler");
+        C12238m.checkNotNullParameter(recyclerView, "recycler");
     }
 
     @Override // com.discord.utilities.mg_recycler.DragAndDropAdapter
@@ -38,7 +38,7 @@ public abstract class CategoricalDragAndDropAdapter<T extends Payload> extends D
         int i = 0;
         for (int i2 = 0; i2 < size; i2++) {
             T t = getDataCopy().get(i2);
-            if (!Intrinsics3.areEqual(t.getCategory(), category)) {
+            if (!C12238m.areEqual(t.getCategory(), category)) {
                 category = t.getCategory();
                 i = 0;
             }
@@ -54,13 +54,13 @@ public abstract class CategoricalDragAndDropAdapter<T extends Payload> extends D
     @Override // com.discord.utilities.mg_recycler.DragAndDropHelper.Adapter
     public boolean isValidMove(int fromPosition, int toPosition) {
         String category = getDataCopy().get(fromPosition).getCategory();
-        Iterable ranges2 = new Ranges2(Math.min(fromPosition, toPosition), Math.max(fromPosition, toPosition));
-        if ((ranges2 instanceof Collection) && ((Collection) ranges2).isEmpty()) {
+        Iterable intRange = new IntRange(Math.min(fromPosition, toPosition), Math.max(fromPosition, toPosition));
+        if ((intRange instanceof Collection) && ((Collection) intRange).isEmpty()) {
             return true;
         }
-        Iterator it = ranges2.iterator();
+        Iterator it = intRange.iterator();
         while (it.hasNext()) {
-            if (!Intrinsics3.areEqual(getDataCopy().get(((Iterators4) it).nextInt()).getCategory(), category)) {
+            if (!C12238m.areEqual(getDataCopy().get(((AbstractC12126c0) it).nextInt()).getCategory(), category)) {
                 return false;
             }
         }

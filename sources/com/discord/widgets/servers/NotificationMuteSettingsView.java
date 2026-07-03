@@ -8,15 +8,15 @@ import android.view.ViewGroup;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import androidx.annotation.StringRes;
-import b.a.k.FormatUtils;
-import b.d.b.a.outline;
-import com.discord.R;
+import com.discord.C5419R;
 import com.discord.databinding.NotificationMuteSettingsViewBinding;
 import com.discord.utilities.time.TimeUtils;
-import d0.z.d.Intrinsics3;
 import kotlin.Unit;
 import kotlin.jvm.functions.Function0;
 import kotlin.jvm.internal.DefaultConstructorMarker;
+import p007b.p008a.p027k.C1107b;
+import p007b.p100d.p104b.p105a.C1643a;
+import p507d0.p592z.p594d.C12238m;
 
 /* JADX INFO: compiled from: NotificationMuteSettingsView.kt */
 /* JADX INFO: loaded from: classes2.dex */
@@ -34,8 +34,8 @@ public final class NotificationMuteSettingsView extends LinearLayout {
         private final CharSequence rawUnmuteText;
 
         public ViewState(boolean z2, String str, CharSequence charSequence, CharSequence charSequence2, CharSequence charSequence3, @StringRes int i, CharSequence charSequence4) {
-            Intrinsics3.checkNotNullParameter(charSequence, "rawMuteText");
-            Intrinsics3.checkNotNullParameter(charSequence3, "rawMutedStatusText");
+            C12238m.checkNotNullParameter(charSequence, "rawMuteText");
+            C12238m.checkNotNullParameter(charSequence3, "rawMutedStatusText");
             this.isMuted = z2;
             this.muteEndTime = str;
             this.rawMuteText = charSequence;
@@ -111,8 +111,8 @@ public final class NotificationMuteSettingsView extends LinearLayout {
         }
 
         public final ViewState copy(boolean isMuted, String muteEndTime, CharSequence rawMuteText, CharSequence rawUnmuteText, CharSequence rawMutedStatusText, @StringRes int rawMutedUntilStatusResId, CharSequence muteDescriptionText) {
-            Intrinsics3.checkNotNullParameter(rawMuteText, "rawMuteText");
-            Intrinsics3.checkNotNullParameter(rawMutedStatusText, "rawMutedStatusText");
+            C12238m.checkNotNullParameter(rawMuteText, "rawMuteText");
+            C12238m.checkNotNullParameter(rawMutedStatusText, "rawMutedStatusText");
             return new ViewState(isMuted, muteEndTime, rawMuteText, rawUnmuteText, rawMutedStatusText, rawMutedUntilStatusResId, muteDescriptionText);
         }
 
@@ -124,7 +124,7 @@ public final class NotificationMuteSettingsView extends LinearLayout {
                 return false;
             }
             ViewState viewState = (ViewState) other;
-            return this.isMuted == viewState.isMuted && Intrinsics3.areEqual(this.muteEndTime, viewState.muteEndTime) && Intrinsics3.areEqual(this.rawMuteText, viewState.rawMuteText) && Intrinsics3.areEqual(this.rawUnmuteText, viewState.rawUnmuteText) && Intrinsics3.areEqual(this.rawMutedStatusText, viewState.rawMutedStatusText) && this.rawMutedUntilStatusResId == viewState.rawMutedUntilStatusResId && Intrinsics3.areEqual(this.muteDescriptionText, viewState.muteDescriptionText);
+            return this.isMuted == viewState.isMuted && C12238m.areEqual(this.muteEndTime, viewState.muteEndTime) && C12238m.areEqual(this.rawMuteText, viewState.rawMuteText) && C12238m.areEqual(this.rawUnmuteText, viewState.rawUnmuteText) && C12238m.areEqual(this.rawMutedStatusText, viewState.rawMutedStatusText) && this.rawMutedUntilStatusResId == viewState.rawMutedUntilStatusResId && C12238m.areEqual(this.muteDescriptionText, viewState.muteDescriptionText);
         }
 
         public final CharSequence getMuteDescriptionText() {
@@ -179,20 +179,20 @@ public final class NotificationMuteSettingsView extends LinearLayout {
         }
 
         public String toString() {
-            StringBuilder sbU = outline.U("ViewState(isMuted=");
-            sbU.append(this.isMuted);
-            sbU.append(", muteEndTime=");
-            sbU.append(this.muteEndTime);
-            sbU.append(", rawMuteText=");
-            sbU.append(this.rawMuteText);
-            sbU.append(", rawUnmuteText=");
-            sbU.append(this.rawUnmuteText);
-            sbU.append(", rawMutedStatusText=");
-            sbU.append(this.rawMutedStatusText);
-            sbU.append(", rawMutedUntilStatusResId=");
-            sbU.append(this.rawMutedUntilStatusResId);
-            sbU.append(", muteDescriptionText=");
-            return outline.E(sbU, this.muteDescriptionText, ")");
+            StringBuilder sbM833U = C1643a.m833U("ViewState(isMuted=");
+            sbM833U.append(this.isMuted);
+            sbM833U.append(", muteEndTime=");
+            sbM833U.append(this.muteEndTime);
+            sbM833U.append(", rawMuteText=");
+            sbM833U.append(this.rawMuteText);
+            sbM833U.append(", rawUnmuteText=");
+            sbM833U.append(this.rawUnmuteText);
+            sbM833U.append(", rawMutedStatusText=");
+            sbM833U.append(this.rawMutedStatusText);
+            sbM833U.append(", rawMutedUntilStatusResId=");
+            sbM833U.append(this.rawMutedUntilStatusResId);
+            sbM833U.append(", muteDescriptionText=");
+            return C1643a.m817E(sbM833U, this.muteDescriptionText, ")");
         }
 
         public /* synthetic */ ViewState(boolean z2, String str, CharSequence charSequence, CharSequence charSequence2, CharSequence charSequence3, int i, CharSequence charSequence4, int i2, DefaultConstructorMarker defaultConstructorMarker) {
@@ -203,21 +203,21 @@ public final class NotificationMuteSettingsView extends LinearLayout {
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public NotificationMuteSettingsView(Context context, AttributeSet attributeSet) {
         super(context, attributeSet);
-        Intrinsics3.checkNotNullParameter(context, "context");
-        Intrinsics3.checkNotNullParameter(attributeSet, "attrs");
-        View viewInflate = LayoutInflater.from(context).inflate(R.layout.notification_mute_settings_view, (ViewGroup) this, false);
+        C12238m.checkNotNullParameter(context, "context");
+        C12238m.checkNotNullParameter(attributeSet, "attrs");
+        View viewInflate = LayoutInflater.from(context).inflate(C5419R.layout.notification_mute_settings_view, (ViewGroup) this, false);
         addView(viewInflate);
-        int i = R.id.notification_mute_settings_mute_item;
-        TextView textView = (TextView) viewInflate.findViewById(R.id.notification_mute_settings_mute_item);
+        int i = C5419R.id.notification_mute_settings_mute_item;
+        TextView textView = (TextView) viewInflate.findViewById(C5419R.id.notification_mute_settings_mute_item);
         if (textView != null) {
-            i = R.id.notification_mute_settings_mute_item_description;
-            TextView textView2 = (TextView) viewInflate.findViewById(R.id.notification_mute_settings_mute_item_description);
+            i = C5419R.id.notification_mute_settings_mute_item_description;
+            TextView textView2 = (TextView) viewInflate.findViewById(C5419R.id.notification_mute_settings_mute_item_description);
             if (textView2 != null) {
-                i = R.id.notification_mute_settings_mute_item_status;
-                TextView textView3 = (TextView) viewInflate.findViewById(R.id.notification_mute_settings_mute_item_status);
+                i = C5419R.id.notification_mute_settings_mute_item_status;
+                TextView textView3 = (TextView) viewInflate.findViewById(C5419R.id.notification_mute_settings_mute_item_status);
                 if (textView3 != null) {
                     NotificationMuteSettingsViewBinding notificationMuteSettingsViewBinding = new NotificationMuteSettingsViewBinding((LinearLayout) viewInflate, textView, textView2, textView3);
-                    Intrinsics3.checkNotNullExpressionValue(notificationMuteSettingsViewBinding, "NotificationMuteSettings…rom(context), this, true)");
+                    C12238m.checkNotNullExpressionValue(notificationMuteSettingsViewBinding, "NotificationMuteSettings…rom(context), this, true)");
                     this.binding = notificationMuteSettingsViewBinding;
                     return;
                 }
@@ -228,9 +228,9 @@ public final class NotificationMuteSettingsView extends LinearLayout {
 
     public final void updateView(ViewState viewState, final Function0<Unit> onMute, final Function0<Unit> onUnmute) {
         CharSequence rawMutedStatusText;
-        Intrinsics3.checkNotNullParameter(viewState, "viewState");
-        Intrinsics3.checkNotNullParameter(onMute, "onMute");
-        Intrinsics3.checkNotNullParameter(onUnmute, "onUnmute");
+        C12238m.checkNotNullParameter(viewState, "viewState");
+        C12238m.checkNotNullParameter(onMute, "onMute");
+        C12238m.checkNotNullParameter(onUnmute, "onUnmute");
         CharSequence rawMuteText = viewState.getRawMuteText();
         final boolean zIsMuted = viewState.isMuted();
         String muteEndTime = viewState.getMuteEndTime();
@@ -238,10 +238,10 @@ public final class NotificationMuteSettingsView extends LinearLayout {
         if (zIsMuted) {
             rawMuteText = viewState.getRawUnmuteText();
         }
-        TextView textView = this.binding.f2131b;
-        Intrinsics3.checkNotNullExpressionValue(textView, "binding.notificationMuteSettingsMuteItem");
+        TextView textView = this.binding.f15194b;
+        C12238m.checkNotNullExpressionValue(textView, "binding.notificationMuteSettingsMuteItem");
         textView.setText(rawMuteText);
-        this.binding.f2131b.setOnClickListener(new View.OnClickListener() { // from class: com.discord.widgets.servers.NotificationMuteSettingsView.updateView.1
+        this.binding.f15194b.setOnClickListener(new View.OnClickListener() { // from class: com.discord.widgets.servers.NotificationMuteSettingsView.updateView.1
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
                 if (zIsMuted) {
@@ -256,22 +256,22 @@ public final class NotificationMuteSettingsView extends LinearLayout {
         } else if (muteEndTime != null) {
             TimeUtils timeUtils = TimeUtils.INSTANCE;
             Context context = getContext();
-            Intrinsics3.checkNotNullExpressionValue(context, "context");
-            rawMutedStatusText = FormatUtils.d(this, viewState.getRawMutedUntilStatusResId(), new Object[]{TimeUtils.renderUtcDateTime$default(timeUtils, muteEndTime, context, null, 2, 3, 4, null)}, new NotificationMuteSettingsView2(this));
+            C12238m.checkNotNullExpressionValue(context, "context");
+            rawMutedStatusText = C1107b.m212d(this, viewState.getRawMutedUntilStatusResId(), new Object[]{TimeUtils.renderUtcDateTime$default(timeUtils, muteEndTime, context, null, 2, 3, 4, null)}, new NotificationMuteSettingsView$updateView$rawMuteStatusText$1(this));
         } else {
             rawMutedStatusText = viewState.getRawMutedStatusText();
         }
-        TextView textView2 = this.binding.d;
-        Intrinsics3.checkNotNullExpressionValue(textView2, "binding.notificationMuteSettingsMuteItemStatus");
+        TextView textView2 = this.binding.f15196d;
+        C12238m.checkNotNullExpressionValue(textView2, "binding.notificationMuteSettingsMuteItemStatus");
         textView2.setText(rawMutedStatusText);
-        TextView textView3 = this.binding.d;
-        Intrinsics3.checkNotNullExpressionValue(textView3, "binding.notificationMuteSettingsMuteItemStatus");
+        TextView textView3 = this.binding.f15196d;
+        C12238m.checkNotNullExpressionValue(textView3, "binding.notificationMuteSettingsMuteItemStatus");
         textView3.setVisibility(zIsMuted ? 0 : 8);
-        TextView textView4 = this.binding.c;
-        Intrinsics3.checkNotNullExpressionValue(textView4, "binding.notificationMute…ttingsMuteItemDescription");
+        TextView textView4 = this.binding.f15195c;
+        C12238m.checkNotNullExpressionValue(textView4, "binding.notificationMute…ttingsMuteItemDescription");
         textView4.setVisibility(muteDescriptionText != null ? 0 : 8);
-        TextView textView5 = this.binding.c;
-        Intrinsics3.checkNotNullExpressionValue(textView5, "binding.notificationMute…ttingsMuteItemDescription");
+        TextView textView5 = this.binding.f15195c;
+        C12238m.checkNotNullExpressionValue(textView5, "binding.notificationMute…ttingsMuteItemDescription");
         textView5.setText(muteDescriptionText);
     }
 }

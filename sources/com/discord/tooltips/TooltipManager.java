@@ -5,17 +5,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import androidx.annotation.MainThread;
 import androidx.core.view.ViewCompat;
-import b.a.j.FloatingViewManager;
-import b.a.j.FloatingViewManager2;
-import b.a.j.FloatingViewManager3;
-import b.a.j.FloatingViewManager4;
-import b.a.j.c;
-import b.a.v.AcknowledgedTooltipsCache;
-import b.a.v.TooltipManager2;
 import com.discord.floating_view_manager.FloatingViewGravity;
-import d0.LazyJVM;
-import d0.z.d.Intrinsics3;
-import d0.z.d.Lambda;
 import java.lang.ref.WeakReference;
 import java.util.LinkedHashMap;
 import java.util.LinkedHashSet;
@@ -26,7 +16,18 @@ import kotlin.Lazy;
 import kotlin.Unit;
 import kotlin.jvm.functions.Function0;
 import kotlin.jvm.internal.DefaultConstructorMarker;
-import rx.Observable;
+import p007b.p008a.p026j.C1100a;
+import p007b.p008a.p026j.C1103d;
+import p007b.p008a.p026j.C1104e;
+import p007b.p008a.p026j.ViewOnLayoutChangeListenerC1101b;
+import p007b.p008a.p026j.ViewOnLayoutChangeListenerC1102c;
+import p007b.p008a.p026j.ViewTreeObserverOnPreDrawListenerC1105f;
+import p007b.p008a.p058v.C1311a;
+import p007b.p008a.p058v.C1315e;
+import p507d0.C12083g;
+import p507d0.p592z.p594d.AbstractC12240o;
+import p507d0.p592z.p594d.C12238m;
+import p658rx.Observable;
 
 /* JADX INFO: compiled from: TooltipManager.kt */
 /* JADX INFO: loaded from: classes2.dex */
@@ -35,8 +36,8 @@ public class TooltipManager {
     /* JADX INFO: renamed from: a, reason: from kotlin metadata */
     public Map<String, Integer> tooltipNameToTooltipViewIdMap;
 
-    /* JADX INFO: renamed from: b, reason: collision with root package name and from kotlin metadata */
-    public final AcknowledgedTooltipsCache acknowledgedTooltipsCache;
+    /* JADX INFO: renamed from: b, reason: from kotlin metadata */
+    public final C1311a acknowledgedTooltipsCache;
 
     /* JADX INFO: renamed from: c, reason: from kotlin metadata */
     public final Set<String> shownTooltipNames;
@@ -45,35 +46,47 @@ public class TooltipManager {
     public final int maxTooltipsPerColdStart;
 
     /* JADX INFO: renamed from: e, reason: from kotlin metadata */
-    public final FloatingViewManager floatingViewManager;
+    public final C1100a floatingViewManager;
 
+    /* JADX INFO: renamed from: com.discord.tooltips.TooltipManager$a */
     /* JADX INFO: compiled from: TooltipManager.kt */
-    public static final class a {
-        public static WeakReference<TooltipManager> a;
+    public static final class C6647a {
 
-        /* JADX INFO: renamed from: b, reason: collision with root package name */
-        public static final Lazy f2815b = LazyJVM.lazy(C0202a.j);
-        public static final Lazy c = LazyJVM.lazy(b.j);
-        public static final a d = null;
+        /* JADX INFO: renamed from: a */
+        public static WeakReference<TooltipManager> f18972a;
 
-        /* JADX INFO: renamed from: com.discord.tooltips.TooltipManager$a$a, reason: collision with other inner class name */
+        /* JADX INFO: renamed from: b */
+        public static final Lazy f18973b = C12083g.lazy(a.f18976j);
+
+        /* JADX INFO: renamed from: c */
+        public static final Lazy f18974c = C12083g.lazy(b.f18977j);
+
+        /* JADX INFO: renamed from: d */
+        public static final C6647a f18975d = null;
+
+        /* JADX INFO: renamed from: com.discord.tooltips.TooltipManager$a$a */
         /* JADX INFO: compiled from: TooltipManager.kt */
-        public static final class C0202a extends Lambda implements Function0<AcknowledgedTooltipsCache> {
-            public static final C0202a j = new C0202a();
+        public static final class a extends AbstractC12240o implements Function0<C1311a> {
 
-            public C0202a() {
+            /* JADX INFO: renamed from: j */
+            public static final a f18976j = new a();
+
+            public a() {
                 super(0);
             }
 
             @Override // kotlin.jvm.functions.Function0
-            public AcknowledgedTooltipsCache invoke() {
-                return new AcknowledgedTooltipsCache(null, 1);
+            public C1311a invoke() {
+                return new C1311a(null, 1);
             }
         }
 
+        /* JADX INFO: renamed from: com.discord.tooltips.TooltipManager$a$b */
         /* JADX INFO: compiled from: TooltipManager.kt */
-        public static final class b extends Lambda implements Function0<Set<String>> {
-            public static final b j = new b();
+        public static final class b extends AbstractC12240o implements Function0<Set<String>> {
+
+            /* JADX INFO: renamed from: j */
+            public static final b f18977j = new b();
 
             public b() {
                 super(0);
@@ -86,13 +99,14 @@ public class TooltipManager {
         }
     }
 
+    /* JADX INFO: renamed from: com.discord.tooltips.TooltipManager$b */
     /* JADX INFO: compiled from: TooltipManager.kt */
-    public static class b {
+    public static class C6648b {
         private final String cacheKey;
         private final String tooltipName;
 
-        public b(String str, String str2) {
-            Intrinsics3.checkNotNullParameter(str2, "tooltipName");
+        public C6648b(String str, String str2) {
+            C12238m.checkNotNullParameter(str2, "tooltipName");
             this.cacheKey = str;
             this.tooltipName = str2;
         }
@@ -105,55 +119,57 @@ public class TooltipManager {
             return this.tooltipName;
         }
 
-        public /* synthetic */ b(String str, String str2, int i, DefaultConstructorMarker defaultConstructorMarker) {
+        public /* synthetic */ C6648b(String str, String str2, int i, DefaultConstructorMarker defaultConstructorMarker) {
             this((i & 1) != 0 ? null : str, str2);
         }
     }
 
-    public TooltipManager(AcknowledgedTooltipsCache acknowledgedTooltipsCache, Set set, int i, FloatingViewManager floatingViewManager, int i2) {
+    public TooltipManager(C1311a c1311a, Set set, int i, C1100a c1100a, int i2) {
         i = (i2 & 4) != 0 ? 1 : i;
-        Intrinsics3.checkNotNullParameter(acknowledgedTooltipsCache, "acknowledgedTooltipsCache");
-        Intrinsics3.checkNotNullParameter(set, "shownTooltipNames");
-        Intrinsics3.checkNotNullParameter(floatingViewManager, "floatingViewManager");
-        this.acknowledgedTooltipsCache = acknowledgedTooltipsCache;
+        C12238m.checkNotNullParameter(c1311a, "acknowledgedTooltipsCache");
+        C12238m.checkNotNullParameter(set, "shownTooltipNames");
+        C12238m.checkNotNullParameter(c1100a, "floatingViewManager");
+        this.acknowledgedTooltipsCache = c1311a;
         this.shownTooltipNames = set;
         this.maxTooltipsPerColdStart = i;
-        this.floatingViewManager = floatingViewManager;
-        floatingViewManager.a = new TooltipManager2(this);
+        this.floatingViewManager = c1100a;
+        c1100a.f1454a = new C1315e(this);
         this.tooltipNameToTooltipViewIdMap = new LinkedHashMap();
     }
 
     @MainThread
-    public final void a(b tooltip) {
-        Intrinsics3.checkNotNullParameter(tooltip, "tooltip");
-        c(tooltip);
+    /* JADX INFO: renamed from: a */
+    public final void m8512a(C6648b tooltip) {
+        C12238m.checkNotNullParameter(tooltip, "tooltip");
+        m8514c(tooltip);
         String cacheKey = tooltip.getCacheKey();
         if (cacheKey != null) {
-            AcknowledgedTooltipsCache acknowledgedTooltipsCache = this.acknowledgedTooltipsCache;
-            Objects.requireNonNull(acknowledgedTooltipsCache);
-            Intrinsics3.checkNotNullParameter(cacheKey, "tooltipCacheKey");
-            if (acknowledgedTooltipsCache.a.getBoolean(cacheKey, false)) {
+            C1311a c1311a = this.acknowledgedTooltipsCache;
+            Objects.requireNonNull(c1311a);
+            C12238m.checkNotNullParameter(cacheKey, "tooltipCacheKey");
+            if (c1311a.f1999a.getBoolean(cacheKey, false)) {
                 return;
             }
-            AcknowledgedTooltipsCache acknowledgedTooltipsCache2 = this.acknowledgedTooltipsCache;
-            Objects.requireNonNull(acknowledgedTooltipsCache2);
-            Intrinsics3.checkNotNullParameter(cacheKey, "tooltipCacheKey");
-            SharedPreferences.Editor editorEdit = acknowledgedTooltipsCache2.a.edit();
-            Intrinsics3.checkNotNullExpressionValue(editorEdit, "editor");
+            C1311a c1311a2 = this.acknowledgedTooltipsCache;
+            Objects.requireNonNull(c1311a2);
+            C12238m.checkNotNullParameter(cacheKey, "tooltipCacheKey");
+            SharedPreferences.Editor editorEdit = c1311a2.f1999a.edit();
+            C12238m.checkNotNullExpressionValue(editorEdit, "editor");
             editorEdit.putBoolean(cacheKey, true);
             editorEdit.apply();
         }
     }
 
     @MainThread
-    public final boolean b(b tooltip, boolean ignoreMaxTooltips) {
-        Intrinsics3.checkNotNullParameter(tooltip, "tooltip");
+    /* JADX INFO: renamed from: b */
+    public final boolean m8513b(C6648b tooltip, boolean ignoreMaxTooltips) {
+        C12238m.checkNotNullParameter(tooltip, "tooltip");
         String cacheKey = tooltip.getCacheKey();
         if (cacheKey != null) {
-            AcknowledgedTooltipsCache acknowledgedTooltipsCache = this.acknowledgedTooltipsCache;
-            Objects.requireNonNull(acknowledgedTooltipsCache);
-            Intrinsics3.checkNotNullParameter(cacheKey, "tooltipCacheKey");
-            boolean z2 = acknowledgedTooltipsCache.a.getBoolean(cacheKey, false);
+            C1311a c1311a = this.acknowledgedTooltipsCache;
+            Objects.requireNonNull(c1311a);
+            C12238m.checkNotNullParameter(cacheKey, "tooltipCacheKey");
+            boolean z2 = c1311a.f1999a.getBoolean(cacheKey, false);
             boolean zContains = this.shownTooltipNames.contains(tooltip.getTooltipName());
             int size = this.shownTooltipNames.size();
             if (z2) {
@@ -167,50 +183,52 @@ public class TooltipManager {
     }
 
     @MainThread
-    public final void c(b tooltip) {
-        Intrinsics3.checkNotNullParameter(tooltip, "tooltip");
+    /* JADX INFO: renamed from: c */
+    public final void m8514c(C6648b tooltip) {
+        C12238m.checkNotNullParameter(tooltip, "tooltip");
         Integer num = this.tooltipNameToTooltipViewIdMap.get(tooltip.getTooltipName());
         if (num != null) {
-            this.floatingViewManager.b(num.intValue());
+            this.floatingViewManager.m208b(num.intValue());
         }
     }
 
     @MainThread
-    public final void d(View anchorView, View tooltipView, b tooltip, FloatingViewGravity tooltipGravity, int xOffset, int yOffset, boolean ignoreMaxTooltips, Observable<Unit> componentPausedObservable) {
-        Intrinsics3.checkNotNullParameter(anchorView, "anchorView");
-        Intrinsics3.checkNotNullParameter(tooltipView, "tooltipView");
-        Intrinsics3.checkNotNullParameter(tooltip, "tooltip");
-        Intrinsics3.checkNotNullParameter(tooltipGravity, "tooltipGravity");
-        Intrinsics3.checkNotNullParameter(componentPausedObservable, "componentPausedObservable");
-        if (b(tooltip, ignoreMaxTooltips)) {
-            c(tooltip);
+    /* JADX INFO: renamed from: d */
+    public final void m8515d(View anchorView, View tooltipView, C6648b tooltip, FloatingViewGravity tooltipGravity, int xOffset, int yOffset, boolean ignoreMaxTooltips, Observable<Unit> componentPausedObservable) {
+        C12238m.checkNotNullParameter(anchorView, "anchorView");
+        C12238m.checkNotNullParameter(tooltipView, "tooltipView");
+        C12238m.checkNotNullParameter(tooltip, "tooltip");
+        C12238m.checkNotNullParameter(tooltipGravity, "tooltipGravity");
+        C12238m.checkNotNullParameter(componentPausedObservable, "componentPausedObservable");
+        if (m8513b(tooltip, ignoreMaxTooltips)) {
+            m8514c(tooltip);
             this.shownTooltipNames.add(tooltip.getTooltipName());
             this.tooltipNameToTooltipViewIdMap.put(tooltip.getTooltipName(), Integer.valueOf(tooltipView.getId()));
-            FloatingViewManager floatingViewManager = this.floatingViewManager;
-            Objects.requireNonNull(floatingViewManager);
-            Intrinsics3.checkNotNullParameter(anchorView, "anchorView");
-            Intrinsics3.checkNotNullParameter(tooltipView, "floatingView");
-            Intrinsics3.checkNotNullParameter(tooltipGravity, "floatingViewGravity");
-            Intrinsics3.checkNotNullParameter(componentPausedObservable, "componentPausedObservable");
+            C1100a c1100a = this.floatingViewManager;
+            Objects.requireNonNull(c1100a);
+            C12238m.checkNotNullParameter(anchorView, "anchorView");
+            C12238m.checkNotNullParameter(tooltipView, "floatingView");
+            C12238m.checkNotNullParameter(tooltipGravity, "floatingViewGravity");
+            C12238m.checkNotNullParameter(componentPausedObservable, "componentPausedObservable");
             View rootView = anchorView.getRootView();
             Objects.requireNonNull(rootView, "null cannot be cast to non-null type android.view.ViewGroup");
             ViewGroup viewGroup = (ViewGroup) rootView;
             tooltipView.setVisibility(4);
-            if (!floatingViewManager.f243b.containsKey(Integer.valueOf(tooltipView.getId()))) {
+            if (!c1100a.f1455b.containsKey(Integer.valueOf(tooltipView.getId()))) {
                 viewGroup.addView(tooltipView);
             }
             if (!ViewCompat.isLaidOut(tooltipView) || tooltipView.isLayoutRequested()) {
-                tooltipView.addOnLayoutChangeListener(new b.a.j.b(floatingViewManager, anchorView, tooltipView, tooltipGravity, xOffset, yOffset));
+                tooltipView.addOnLayoutChangeListener(new ViewOnLayoutChangeListenerC1101b(c1100a, anchorView, tooltipView, tooltipGravity, xOffset, yOffset));
             } else if (!ViewCompat.isLaidOut(anchorView) || anchorView.isLayoutRequested()) {
-                anchorView.addOnLayoutChangeListener(new c(floatingViewManager, anchorView, tooltipView, tooltipGravity, xOffset, yOffset));
+                anchorView.addOnLayoutChangeListener(new ViewOnLayoutChangeListenerC1102c(c1100a, anchorView, tooltipView, tooltipGravity, xOffset, yOffset));
             } else {
-                FloatingViewManager.a(floatingViewManager, tooltipView, anchorView, tooltipGravity, xOffset, yOffset);
+                C1100a.m207a(c1100a, tooltipView, anchorView, tooltipGravity, xOffset, yOffset);
                 tooltipView.setVisibility(0);
             }
-            FloatingViewManager4 floatingViewManager4 = new FloatingViewManager4(floatingViewManager, tooltipView, anchorView, tooltipGravity, xOffset, yOffset);
-            viewGroup.getViewTreeObserver().addOnPreDrawListener(floatingViewManager4);
-            floatingViewManager.f243b.put(Integer.valueOf(tooltipView.getId()), new FloatingViewManager.a(tooltipView, viewGroup, floatingViewManager4));
-            componentPausedObservable.Z(1).W(new FloatingViewManager2(floatingViewManager, tooltipView), new FloatingViewManager3(floatingViewManager));
+            ViewTreeObserverOnPreDrawListenerC1105f viewTreeObserverOnPreDrawListenerC1105f = new ViewTreeObserverOnPreDrawListenerC1105f(c1100a, tooltipView, anchorView, tooltipGravity, xOffset, yOffset);
+            viewGroup.getViewTreeObserver().addOnPreDrawListener(viewTreeObserverOnPreDrawListenerC1105f);
+            c1100a.f1455b.put(Integer.valueOf(tooltipView.getId()), new C1100a.a(tooltipView, viewGroup, viewTreeObserverOnPreDrawListenerC1105f));
+            componentPausedObservable.m11100Z(1).m11097W(new C1103d(c1100a, tooltipView), new C1104e(c1100a));
         }
     }
 }

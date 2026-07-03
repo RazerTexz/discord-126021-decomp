@@ -69,7 +69,7 @@ public class HandleFieldNameConstants extends EclipseAnnotationHandler<FieldName
     @Override // lombok.eclipse.EclipseAnnotationHandler
     public void handle(AnnotationValues<FieldNameConstants> annotation, org.eclipse.jdt.internal.compiler.ast.Annotation ast, EclipseNode annotationNode) {
         HandlerUtil.handleExperimentalFlagUsage(annotationNode, ConfigurationKeys.FIELD_NAME_CONSTANTS_FLAG_USAGE, "@FieldNameConstants");
-        EclipseNode node = annotationNode.up();
+        EclipseNode node = annotationNode.m10925up();
         FieldNameConstants annotationInstance = annotation.getInstance();
         AccessLevel level = annotationInstance.level();
         boolean asEnum = annotationInstance.asEnum();

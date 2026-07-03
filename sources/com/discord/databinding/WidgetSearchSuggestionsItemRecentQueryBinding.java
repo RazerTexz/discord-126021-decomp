@@ -10,25 +10,27 @@ import androidx.viewbinding.ViewBinding;
 /* JADX INFO: loaded from: classes.dex */
 public final class WidgetSearchSuggestionsItemRecentQueryBinding implements ViewBinding {
 
+    /* JADX INFO: renamed from: a */
     @NonNull
-    public final RelativeLayout a;
+    public final RelativeLayout f17439a;
 
-    /* JADX INFO: renamed from: b, reason: collision with root package name */
+    /* JADX INFO: renamed from: b */
     @NonNull
-    public final RelativeLayout f2529b;
+    public final RelativeLayout f17440b;
 
+    /* JADX INFO: renamed from: c */
     @NonNull
-    public final TextView c;
+    public final TextView f17441c;
 
     public WidgetSearchSuggestionsItemRecentQueryBinding(@NonNull RelativeLayout relativeLayout, @NonNull RelativeLayout relativeLayout2, @NonNull ImageView imageView, @NonNull TextView textView) {
-        this.a = relativeLayout;
-        this.f2529b = relativeLayout2;
-        this.c = textView;
+        this.f17439a = relativeLayout;
+        this.f17440b = relativeLayout2;
+        this.f17441c = textView;
     }
 
     @Override // androidx.viewbinding.ViewBinding
     @NonNull
     public View getRoot() {
-        return this.a;
+        return this.f17439a;
     }
 }

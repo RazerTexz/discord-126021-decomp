@@ -57,7 +57,7 @@ public class Schedulers {
                 long jCurrentTimeMillis = System.currentTimeMillis();
                 Iterator<WorkSpec> it = eligibleWorkForScheduling.iterator();
                 while (it.hasNext()) {
-                    workSpecDao.markWorkSpecScheduled(it.next().f38id, jCurrentTimeMillis);
+                    workSpecDao.markWorkSpecScheduled(it.next().f163id, jCurrentTimeMillis);
                 }
             }
             workDatabase.setTransactionSuccessful();

@@ -1,8 +1,8 @@
 package com.discord.api.connectedaccounts;
 
-import b.d.b.a.outline;
 import com.discord.models.domain.ModelAuditLogEntry;
-import d0.z.d.Intrinsics3;
+import p007b.p100d.p104b.p105a.C1643a;
+import p507d0.p592z.p594d.C12238m;
 
 /* JADX INFO: compiled from: ConnectedIntegrationAccount.kt */
 /* JADX INFO: loaded from: classes.dex */
@@ -23,7 +23,7 @@ public final /* data */ class ConnectedIntegrationAccount {
             return false;
         }
         ConnectedIntegrationAccount connectedIntegrationAccount = (ConnectedIntegrationAccount) other;
-        return Intrinsics3.areEqual(this.id, connectedIntegrationAccount.id) && Intrinsics3.areEqual(this.name, connectedIntegrationAccount.name);
+        return C12238m.areEqual(this.id, connectedIntegrationAccount.id) && C12238m.areEqual(this.name, connectedIntegrationAccount.name);
     }
 
     public int hashCode() {
@@ -34,9 +34,9 @@ public final /* data */ class ConnectedIntegrationAccount {
     }
 
     public String toString() {
-        StringBuilder sbU = outline.U("ConnectedIntegrationAccount(id=");
-        sbU.append(this.id);
-        sbU.append(", name=");
-        return outline.J(sbU, this.name, ")");
+        StringBuilder sbM833U = C1643a.m833U("ConnectedIntegrationAccount(id=");
+        sbM833U.append(this.id);
+        sbM833U.append(", name=");
+        return C1643a.m822J(sbM833U, this.name, ")");
     }
 }

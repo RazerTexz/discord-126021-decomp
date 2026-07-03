@@ -12,7 +12,7 @@ import android.text.style.CharacterStyle;
 import android.text.style.UpdateAppearance;
 import android.view.View;
 import android.widget.TextView;
-import d0.z.d.Intrinsics3;
+import p507d0.p592z.p594d.C12238m;
 
 /* JADX INFO: compiled from: TextViewFadeHelper.kt */
 /* JADX INFO: loaded from: classes2.dex */
@@ -39,7 +39,7 @@ public final class TextViewFadeHelper {
     }
 
     public TextViewFadeHelper(TextView textView) {
-        Intrinsics3.checkNotNullParameter(textView, "textView");
+        C12238m.checkNotNullParameter(textView, "textView");
         this.textView = textView;
         this.span = new LinearGradientSpan();
     }
@@ -69,7 +69,7 @@ public final class TextViewFadeHelper {
                     int lineEnd = layout.getLineEnd(i);
                     float lineWidth = layout.getLineWidth(i);
                     if (z2) {
-                        if (spanStart == lineStart && spanEnd == lineEnd && Intrinsics3.areEqual(this.lineWidth, lineWidth)) {
+                        if (spanStart == lineStart && spanEnd == lineEnd && C12238m.areEqual(this.lineWidth, lineWidth)) {
                             return;
                         } else {
                             spannable.removeSpan(this.span);

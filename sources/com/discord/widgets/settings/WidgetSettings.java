@@ -11,11 +11,7 @@ import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentViewModelLazyKt;
-import b.a.d.AppToast;
-import b.a.d.AppViewModelDelegates3;
-import b.a.d.AppViewModelDelegates5;
-import b.d.b.a.outline;
-import com.discord.R;
+import com.discord.C5419R;
 import com.discord.app.AppFragment;
 import com.discord.app.AppTransitionActivity;
 import com.discord.databinding.WidgetSettingsBinding;
@@ -23,18 +19,18 @@ import com.discord.models.presence.Presence;
 import com.discord.models.user.MeUser;
 import com.discord.stores.StoreChangeLog;
 import com.discord.stores.StoreStream;
-import com.discord.utilities.KotlinExtensions;
+import com.discord.utilities.KotlinExtensionsKt;
 import com.discord.utilities.accessibility.AccessibilityUtils;
 import com.discord.utilities.error.Error;
 import com.discord.utilities.navigation.SystemSettingNavigators;
 import com.discord.utilities.notifications.NotificationUtils;
+import com.discord.utilities.p501rx.ObservableExtensionsKt;
 import com.discord.utilities.presence.PresenceUtils;
 import com.discord.utilities.rest.RestAPI;
-import com.discord.utilities.rx.ObservableExtensionsKt;
 import com.discord.utilities.uri.UriHandler;
 import com.discord.utilities.user.UserUtils;
 import com.discord.utilities.viewbinding.FragmentViewBindingDelegate;
-import com.discord.utilities.viewbinding.FragmentViewBindingDelegate3;
+import com.discord.utilities.viewbinding.FragmentViewBindingDelegateKt;
 import com.discord.widgets.debugging.WidgetDebugging;
 import com.discord.widgets.media.WidgetQRScanner;
 import com.discord.widgets.notice.WidgetNoticeDialog;
@@ -64,25 +60,29 @@ import com.discord.widgets.user.profile.UserProfileHeaderView;
 import com.discord.widgets.user.profile.UserProfileHeaderViewModel;
 import com.google.android.material.shape.MaterialShapeDrawable;
 import com.google.android.material.shape.ShapeAppearanceModel;
-import d0.t.Collections2;
-import d0.z.d.FunctionReferenceImpl;
-import d0.z.d.Intrinsics3;
-import d0.z.d.Lambda;
-import d0.z.d.Reflection2;
 import kotlin.Lazy;
 import kotlin.NoWhenBranchMatchedException;
 import kotlin.Unit;
 import kotlin.jvm.functions.Function0;
 import kotlin.jvm.functions.Function1;
 import kotlin.reflect.KProperty;
-import rx.Observable;
-import rx.Subscription;
-import rx.functions.Action2;
+import p007b.p008a.p018d.C0865g0;
+import p007b.p008a.p018d.C0869i0;
+import p007b.p008a.p018d.C0876m;
+import p007b.p100d.p104b.p105a.C1643a;
+import p507d0.p580t.C12147n;
+import p507d0.p592z.p594d.AbstractC12240o;
+import p507d0.p592z.p594d.C12216a0;
+import p507d0.p592z.p594d.C12236k;
+import p507d0.p592z.p594d.C12238m;
+import p658rx.Observable;
+import p658rx.Subscription;
+import p658rx.functions.Action2;
 
 /* JADX INFO: compiled from: WidgetSettings.kt */
 /* JADX INFO: loaded from: classes2.dex */
 public final class WidgetSettings extends AppFragment implements OnTabSelectedListener {
-    public static final /* synthetic */ KProperty[] $$delegatedProperties = {outline.d0(WidgetSettings.class, "binding", "getBinding()Lcom/discord/databinding/WidgetSettingsBinding;", 0)};
+    public static final /* synthetic */ KProperty[] $$delegatedProperties = {C1643a.m846d0(WidgetSettings.class, "binding", "getBinding()Lcom/discord/databinding/WidgetSettingsBinding;", 0)};
 
     /* JADX INFO: renamed from: binding$delegate, reason: from kotlin metadata */
     private final FragmentViewBindingDelegate binding;
@@ -93,57 +93,57 @@ public final class WidgetSettings extends AppFragment implements OnTabSelectedLi
     /* JADX INFO: renamed from: viewModelUserProfileHeader$delegate, reason: from kotlin metadata */
     private final Lazy viewModelUserProfileHeader;
 
-    /* JADX INFO: renamed from: com.discord.widgets.settings.WidgetSettings$onViewBoundOrOnResume$1, reason: invalid class name */
+    /* JADX INFO: renamed from: com.discord.widgets.settings.WidgetSettings$onViewBoundOrOnResume$1 */
     /* JADX INFO: compiled from: WidgetSettings.kt */
-    public static final /* synthetic */ class AnonymousClass1 extends FunctionReferenceImpl implements Function1<SettingsViewModel.ViewState, Unit> {
-        public AnonymousClass1(WidgetSettings widgetSettings) {
+    public static final /* synthetic */ class C96161 extends C12236k implements Function1<SettingsViewModel.ViewState, Unit> {
+        public C96161(WidgetSettings widgetSettings) {
             super(1, widgetSettings, WidgetSettings.class, "configureUI", "configureUI(Lcom/discord/widgets/settings/SettingsViewModel$ViewState;)V", 0);
         }
 
         @Override // kotlin.jvm.functions.Function1
         public /* bridge */ /* synthetic */ Unit invoke(SettingsViewModel.ViewState viewState) {
             invoke2(viewState);
-            return Unit.a;
+            return Unit.f27425a;
         }
 
         /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
         public final void invoke2(SettingsViewModel.ViewState viewState) {
-            Intrinsics3.checkNotNullParameter(viewState, "p1");
+            C12238m.checkNotNullParameter(viewState, "p1");
             ((WidgetSettings) this.receiver).configureUI(viewState);
         }
     }
 
-    /* JADX INFO: renamed from: com.discord.widgets.settings.WidgetSettings$showLogoutDialog$1, reason: invalid class name */
+    /* JADX INFO: renamed from: com.discord.widgets.settings.WidgetSettings$showLogoutDialog$1 */
     /* JADX INFO: compiled from: WidgetSettings.kt */
-    public static final class AnonymousClass1 extends Lambda implements Function1<View, Unit> {
-        public static final AnonymousClass1 INSTANCE = new AnonymousClass1();
+    public static final class C96171 extends AbstractC12240o implements Function1<View, Unit> {
+        public static final C96171 INSTANCE = new C96171();
 
-        public AnonymousClass1() {
+        public C96171() {
             super(1);
         }
 
         @Override // kotlin.jvm.functions.Function1
         public /* bridge */ /* synthetic */ Unit invoke(View view) {
             invoke2(view);
-            return Unit.a;
+            return Unit.f27425a;
         }
 
         /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
         public final void invoke2(View view) {
-            Intrinsics3.checkNotNullParameter(view, "it");
+            C12238m.checkNotNullParameter(view, "it");
             StoreStream.INSTANCE.getAuthentication().logout();
         }
     }
 
     public WidgetSettings() {
-        super(R.layout.widget_settings);
-        this.binding = FragmentViewBindingDelegate3.viewBinding$default(this, WidgetSettings$binding$2.INSTANCE, null, 2, null);
+        super(C5419R.layout.widget_settings);
+        this.binding = FragmentViewBindingDelegateKt.viewBinding$default(this, WidgetSettings$binding$2.INSTANCE, null, 2, null);
         WidgetSettings$viewModel$2 widgetSettings$viewModel$2 = WidgetSettings$viewModel$2.INSTANCE;
-        AppViewModelDelegates3 appViewModelDelegates3 = new AppViewModelDelegates3(this);
-        this.viewModel = FragmentViewModelLazyKt.createViewModelLazy(this, Reflection2.getOrCreateKotlinClass(SettingsViewModel.class), new WidgetSettings$appViewModels$$inlined$viewModels$1(appViewModelDelegates3), new AppViewModelDelegates5(widgetSettings$viewModel$2));
+        C0865g0 c0865g0 = new C0865g0(this);
+        this.viewModel = FragmentViewModelLazyKt.createViewModelLazy(this, C12216a0.getOrCreateKotlinClass(SettingsViewModel.class), new WidgetSettings$appViewModels$$inlined$viewModels$1(c0865g0), new C0869i0(widgetSettings$viewModel$2));
         WidgetSettings$viewModelUserProfileHeader$2 widgetSettings$viewModelUserProfileHeader$2 = WidgetSettings$viewModelUserProfileHeader$2.INSTANCE;
-        AppViewModelDelegates3 appViewModelDelegates4 = new AppViewModelDelegates3(this);
-        this.viewModelUserProfileHeader = FragmentViewModelLazyKt.createViewModelLazy(this, Reflection2.getOrCreateKotlinClass(UserProfileHeaderViewModel.class), new WidgetSettings$appViewModels$$inlined$viewModels$2(appViewModelDelegates4), new AppViewModelDelegates5(widgetSettings$viewModelUserProfileHeader$2));
+        C0865g0 c0865g1 = new C0865g0(this);
+        this.viewModelUserProfileHeader = FragmentViewModelLazyKt.createViewModelLazy(this, C12216a0.getOrCreateKotlinClass(UserProfileHeaderViewModel.class), new WidgetSettings$appViewModels$$inlined$viewModels$2(c0865g1), new C0869i0(widgetSettings$viewModelUserProfileHeader$2));
     }
 
     private final void configureLoaded(SettingsViewModel.ViewState.Loaded model) {
@@ -153,81 +153,81 @@ public final class WidgetSettings extends AppFragment implements OnTabSelectedLi
         boolean zIsVerified = meUser.isVerified();
         boolean hasSubscription = userUtils.getHasSubscription(meUser);
         WidgetSettingsBinding binding = getBinding();
-        View view = binding.n;
-        Intrinsics3.checkNotNullExpressionValue(view, "developerOptionsDivider");
+        View view = binding.f17904n;
+        C12238m.checkNotNullExpressionValue(view, "developerOptionsDivider");
         view.setVisibility(z2 ? 0 : 8);
-        TextView textView = binding.o;
-        Intrinsics3.checkNotNullExpressionValue(textView, "developerOptionsHeader");
+        TextView textView = binding.f17905o;
+        C12238m.checkNotNullExpressionValue(textView, "developerOptionsHeader");
         textView.setVisibility(z2 ? 0 : 8);
-        TextView textView2 = binding.m;
-        Intrinsics3.checkNotNullExpressionValue(textView2, "developerOptions");
+        TextView textView2 = binding.f17903m;
+        C12238m.checkNotNullExpressionValue(textView2, "developerOptions");
         textView2.setVisibility(z2 ? 0 : 8);
-        binding.m.setOnClickListener(new View.OnClickListener() { // from class: com.discord.widgets.settings.WidgetSettings$configureLoaded$1$1
+        binding.f17903m.setOnClickListener(new View.OnClickListener() { // from class: com.discord.widgets.settings.WidgetSettings$configureLoaded$1$1
             @Override // android.view.View.OnClickListener
             public final void onClick(View view2) {
                 WidgetSettingsDeveloper.Companion companion = WidgetSettingsDeveloper.INSTANCE;
-                Intrinsics3.checkNotNullExpressionValue(view2, "it");
+                C12238m.checkNotNullExpressionValue(view2, "it");
                 Context context = view2.getContext();
-                Intrinsics3.checkNotNullExpressionValue(context, "it.context");
+                C12238m.checkNotNullExpressionValue(context, "it.context");
                 companion.launch(context);
             }
         });
-        LinearLayout linearLayout = binding.u;
-        Intrinsics3.checkNotNullExpressionValue(linearLayout, "nitroSettingsContainer");
+        LinearLayout linearLayout = binding.f17911u;
+        C12238m.checkNotNullExpressionValue(linearLayout, "nitroSettingsContainer");
         linearLayout.setVisibility(zIsVerified ? 0 : 8);
-        TextView textView3 = binding.E;
-        Intrinsics3.checkNotNullExpressionValue(textView3, "settingsNitro");
-        textView3.setText(getString(hasSubscription ? R.string.billing_manage_subscription : R.string.premium_settings_subscribe_today));
-        TextView textView4 = binding.q;
-        Intrinsics3.checkNotNullExpressionValue(textView4, "nitroBoosting");
-        textView4.setText(getString(hasSubscription ? R.string.premium_guild_perks_modal_manage_your_subscriptions : R.string.premium_settings_premium_guild_subscriptions));
+        TextView textView3 = binding.f17882E;
+        C12238m.checkNotNullExpressionValue(textView3, "settingsNitro");
+        textView3.setText(getString(hasSubscription ? C5419R.string.billing_manage_subscription : C5419R.string.premium_settings_subscribe_today));
+        TextView textView4 = binding.f17907q;
+        C12238m.checkNotNullExpressionValue(textView4, "nitroBoosting");
+        textView4.setText(getString(hasSubscription ? C5419R.string.premium_guild_perks_modal_manage_your_subscriptions : C5419R.string.premium_settings_premium_guild_subscriptions));
         Presence presence = model.getPresence();
-        binding.G.setPresence(presence);
-        TextView textView5 = binding.F;
-        Intrinsics3.checkNotNullExpressionValue(textView5, "settingsPresenceText");
+        binding.f17884G.setPresence(presence);
+        TextView textView5 = binding.f17883F;
+        C12238m.checkNotNullExpressionValue(textView5, "settingsPresenceText");
         textView5.setText(getString(PresenceUtils.INSTANCE.getStatusStringResForPresence(presence)));
-        TextView textView6 = binding.C;
-        Intrinsics3.checkNotNullExpressionValue(textView6, "roleSubscriptions");
+        TextView textView6 = binding.f17880C;
+        C12238m.checkNotNullExpressionValue(textView6, "roleSubscriptions");
         textView6.setVisibility(model.getShowRoleSubscriptionsButton() ? 0 : 8);
         if (model.getPromoCount() > 0) {
-            TextView textView7 = binding.r;
-            Intrinsics3.checkNotNullExpressionValue(textView7, "nitroGiftingBadge");
+            TextView textView7 = binding.f17908r;
+            C12238m.checkNotNullExpressionValue(textView7, "nitroGiftingBadge");
             textView7.setText(String.valueOf(model.getPromoCount()));
-            TextView textView8 = binding.r;
-            Intrinsics3.checkNotNullExpressionValue(textView8, "nitroGiftingBadge");
+            TextView textView8 = binding.f17908r;
+            C12238m.checkNotNullExpressionValue(textView8, "nitroGiftingBadge");
             MaterialShapeDrawable materialShapeDrawable = new MaterialShapeDrawable(new ShapeAppearanceModel.Builder().setAllCornerSizes(ShapeAppearanceModel.PILL).build());
-            materialShapeDrawable.setFillColor(ColorStateList.valueOf(ContextCompat.getColor(requireContext(), R.color.status_red_500)));
+            materialShapeDrawable.setFillColor(ColorStateList.valueOf(ContextCompat.getColor(requireContext(), C5419R.color.status_red_500)));
             textView8.setBackground(materialShapeDrawable);
-            TextView textView9 = binding.r;
-            Intrinsics3.checkNotNullExpressionValue(textView9, "nitroGiftingBadge");
+            TextView textView9 = binding.f17908r;
+            C12238m.checkNotNullExpressionValue(textView9, "nitroGiftingBadge");
             textView9.setVisibility(0);
         } else {
-            TextView textView10 = binding.r;
-            Intrinsics3.checkNotNullExpressionValue(textView10, "nitroGiftingBadge");
+            TextView textView10 = binding.f17908r;
+            C12238m.checkNotNullExpressionValue(textView10, "nitroGiftingBadge");
             textView10.setVisibility(8);
         }
-        LinearLayout linearLayout2 = binding.v;
-        Intrinsics3.checkNotNullExpressionValue(linearLayout2, "notificationUpsell");
+        LinearLayout linearLayout2 = binding.f17912v;
+        C12238m.checkNotNullExpressionValue(linearLayout2, "notificationUpsell");
         linearLayout2.setVisibility((NotificationManagerCompat.from(requireContext()).areNotificationsEnabled() || model.getPushNotificationUpsellDismissed()) ? false : true ? 0 : 8);
     }
 
     private final void configureToolbar() {
         AppFragment.bindToolbar$default(this, null, 1, null);
-        setActionBarTitle(R.string.user_settings);
+        setActionBarTitle(C5419R.string.user_settings);
         setActionBarTitleLayoutMinimumTappableArea();
-        AppFragment.setActionBarOptionsMenu$default(this, R.menu.menu_settings, new Action2<MenuItem, Context>() { // from class: com.discord.widgets.settings.WidgetSettings.configureToolbar.1
-            @Override // rx.functions.Action2
+        AppFragment.setActionBarOptionsMenu$default(this, C5419R.menu.menu_settings, new Action2<MenuItem, Context>() { // from class: com.discord.widgets.settings.WidgetSettings.configureToolbar.1
+            @Override // p658rx.functions.Action2
             public final void call(MenuItem menuItem, Context context) {
-                Intrinsics3.checkNotNullExpressionValue(menuItem, "menuItem");
+                C12238m.checkNotNullExpressionValue(menuItem, "menuItem");
                 switch (menuItem.getItemId()) {
-                    case R.id.menu_settings_debugging /* 2131364408 */:
+                    case C5419R.id.menu_settings_debugging /* 2131364408 */:
                         WidgetDebugging.Companion companion = WidgetDebugging.INSTANCE;
-                        Intrinsics3.checkNotNullExpressionValue(context, "context");
+                        C12238m.checkNotNullExpressionValue(context, "context");
                         companion.launch(context);
                         break;
-                    case R.id.menu_settings_log_out /* 2131364409 */:
+                    case C5419R.id.menu_settings_log_out /* 2131364409 */:
                         WidgetSettings widgetSettings = WidgetSettings.this;
-                        Intrinsics3.checkNotNullExpressionValue(context, "context");
+                        C12238m.checkNotNullExpressionValue(context, "context");
                         widgetSettings.showLogoutDialog(context);
                         break;
                 }
@@ -238,15 +238,15 @@ public final class WidgetSettings extends AppFragment implements OnTabSelectedLi
     private final void configureUI(SettingsViewModel.ViewState model) {
         Unit unit;
         if (model instanceof SettingsViewModel.ViewState.Uninitialized) {
-            unit = Unit.a;
+            unit = Unit.f27425a;
         } else {
             if (!(model instanceof SettingsViewModel.ViewState.Loaded)) {
                 throw new NoWhenBranchMatchedException();
             }
             configureLoaded((SettingsViewModel.ViewState.Loaded) model);
-            unit = Unit.a;
+            unit = Unit.f27425a;
         }
-        KotlinExtensions.getExhaustive(unit);
+        KotlinExtensionsKt.getExhaustive(unit);
     }
 
     private final WidgetSettingsBinding getBinding() {
@@ -263,8 +263,8 @@ public final class WidgetSettings extends AppFragment implements OnTabSelectedLi
 
     private final void showLogoutDialog(Context context) {
         FragmentManager parentFragmentManager = getParentFragmentManager();
-        Intrinsics3.checkNotNullExpressionValue(parentFragmentManager, "parentFragmentManager");
-        WidgetNoticeDialog.Builder.setNegativeButton$default(new WidgetNoticeDialog.Builder(context).setTitle(R.string.logout).setMessage(R.string.user_settings_confirm_logout).setDialogAttrTheme(R.attr.notice_theme_positive_red).setPositiveButton(R.string.logout, AnonymousClass1.INSTANCE), R.string.cancel, (Function1) null, 2, (Object) null).show(parentFragmentManager);
+        C12238m.checkNotNullExpressionValue(parentFragmentManager, "parentFragmentManager");
+        WidgetNoticeDialog.Builder.setNegativeButton$default(new WidgetNoticeDialog.Builder(context).setTitle(C5419R.string.logout).setMessage(C5419R.string.user_settings_confirm_logout).setDialogAttrTheme(C5419R.attr.notice_theme_positive_red).setPositiveButton(C5419R.string.logout, C96171.INSTANCE), C5419R.string.cancel, (Function1) null, 2, (Object) null).show(parentFragmentManager);
     }
 
     @Override // com.discord.widgets.tabs.OnTabSelectedListener
@@ -276,7 +276,7 @@ public final class WidgetSettings extends AppFragment implements OnTabSelectedLi
 
     @Override // com.discord.app.AppFragment
     public void onViewBound(View view) {
-        Intrinsics3.checkNotNullParameter(view, "view");
+        C12238m.checkNotNullParameter(view, "view");
         super.onViewBound(view);
         Fragment parentFragment = getParentFragment();
         if (!(parentFragment instanceof WidgetTabsHost)) {
@@ -287,34 +287,34 @@ public final class WidgetSettings extends AppFragment implements OnTabSelectedLi
             widgetTabsHost.registerTabSelectionListener(NavigationTab.SETTINGS, this);
         }
         final WidgetSettingsBinding binding = getBinding();
-        binding.D.setOnClickListener(new View.OnClickListener() { // from class: com.discord.widgets.settings.WidgetSettings$onViewBound$$inlined$with$lambda$1
+        binding.f17881D.setOnClickListener(new View.OnClickListener() { // from class: com.discord.widgets.settings.WidgetSettings$onViewBound$$inlined$with$lambda$1
             @Override // android.view.View.OnClickListener
             public final void onClick(View view2) {
                 WidgetUserStatusSheet.Companion.show(this.this$0);
             }
         });
-        UserProfileHeaderView userProfileHeaderView = binding.L;
+        UserProfileHeaderView userProfileHeaderView = binding.f17889L;
         Badge.Companion companion = Badge.INSTANCE;
         FragmentManager parentFragmentManager = getParentFragmentManager();
-        Intrinsics3.checkNotNullExpressionValue(parentFragmentManager, "parentFragmentManager");
+        C12238m.checkNotNullExpressionValue(parentFragmentManager, "parentFragmentManager");
         userProfileHeaderView.setOnBadgeClick(companion.onBadgeClick(parentFragmentManager, requireContext()));
-        binding.L.setOnBannerPress(new WidgetSettings$onViewBound$$inlined$with$lambda$2(this));
-        TextView textView = binding.f;
-        Intrinsics3.checkNotNullExpressionValue(textView, "appInfoHeader");
-        textView.setText(getString(R.string.app_information) + " - 126.21 - Stable (126021)");
-        binding.B.setOnClickListener(new View.OnClickListener() { // from class: com.discord.widgets.settings.WidgetSettings$onViewBound$$inlined$with$lambda$3
+        binding.f17889L.setOnBannerPress(new WidgetSettings$onViewBound$$inlined$with$lambda$2(this));
+        TextView textView = binding.f17896f;
+        C12238m.checkNotNullExpressionValue(textView, "appInfoHeader");
+        textView.setText(getString(C5419R.string.app_information) + " - 126.21 - Stable (126021)");
+        binding.f17879B.setOnClickListener(new View.OnClickListener() { // from class: com.discord.widgets.settings.WidgetSettings$onViewBound$$inlined$with$lambda$3
 
-            /* JADX INFO: renamed from: com.discord.widgets.settings.WidgetSettings$onViewBound$$inlined$with$lambda$3$1, reason: invalid class name */
+            /* JADX INFO: renamed from: com.discord.widgets.settings.WidgetSettings$onViewBound$$inlined$with$lambda$3$1 */
             /* JADX INFO: compiled from: WidgetSettings.kt */
-            public static final class AnonymousClass1 extends Lambda implements Function0<Unit> {
-                public AnonymousClass1() {
+            public static final class C96111 extends AbstractC12240o implements Function0<Unit> {
+                public C96111() {
                     super(0);
                 }
 
                 @Override // kotlin.jvm.functions.Function0
                 public /* bridge */ /* synthetic */ Unit invoke() {
                     invoke2();
-                    return Unit.a;
+                    return Unit.f27425a;
                 }
 
                 /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
@@ -325,335 +325,335 @@ public final class WidgetSettings extends AppFragment implements OnTabSelectedLi
 
             @Override // android.view.View.OnClickListener
             public final void onClick(View view2) {
-                this.this$0.requestCameraQRScanner(new AnonymousClass1());
+                this.this$0.requestCameraQRScanner(new C96111());
             }
         });
-        binding.u.setOnClickListener(new View.OnClickListener() { // from class: com.discord.widgets.settings.WidgetSettings$onViewBound$1$5
+        binding.f17911u.setOnClickListener(new View.OnClickListener() { // from class: com.discord.widgets.settings.WidgetSettings$onViewBound$1$5
             @Override // android.view.View.OnClickListener
             public final void onClick(View view2) {
                 WidgetSettingsPremium.Companion companion2 = WidgetSettingsPremium.INSTANCE;
-                Intrinsics3.checkNotNullExpressionValue(view2, "it");
+                C12238m.checkNotNullExpressionValue(view2, "it");
                 Context context = view2.getContext();
-                Intrinsics3.checkNotNullExpressionValue(context, "it.context");
+                C12238m.checkNotNullExpressionValue(context, "it.context");
                 WidgetSettingsPremium.Companion.launch$default(companion2, context, null, null, 6, null);
             }
         });
-        binding.q.setOnClickListener(new View.OnClickListener() { // from class: com.discord.widgets.settings.WidgetSettings$onViewBound$1$6
+        binding.f17907q.setOnClickListener(new View.OnClickListener() { // from class: com.discord.widgets.settings.WidgetSettings$onViewBound$1$6
             @Override // android.view.View.OnClickListener
             public final void onClick(View view2) {
                 WidgetSettingsGuildBoost.Companion companion2 = WidgetSettingsGuildBoost.INSTANCE;
-                Intrinsics3.checkNotNullExpressionValue(view2, "it");
+                C12238m.checkNotNullExpressionValue(view2, "it");
                 Context context = view2.getContext();
-                Intrinsics3.checkNotNullExpressionValue(context, "it.context");
+                C12238m.checkNotNullExpressionValue(context, "it.context");
                 companion2.launch(context);
             }
         });
-        binding.C.setOnClickListener(new View.OnClickListener() { // from class: com.discord.widgets.settings.WidgetSettings$onViewBound$$inlined$with$lambda$4
+        binding.f17880C.setOnClickListener(new View.OnClickListener() { // from class: com.discord.widgets.settings.WidgetSettings$onViewBound$$inlined$with$lambda$4
             @Override // android.view.View.OnClickListener
             public final void onClick(View view2) {
                 SettingsViewModel viewModel = this.this$0.getViewModel();
-                Intrinsics3.checkNotNullExpressionValue(view2, "it");
+                C12238m.checkNotNullExpressionValue(view2, "it");
                 Context context = view2.getContext();
-                Intrinsics3.checkNotNullExpressionValue(context, "it.context");
+                C12238m.checkNotNullExpressionValue(context, "it.context");
                 viewModel.openRoleSubscriptionsManagement(context);
             }
         });
-        binding.f2607s.setOnClickListener(new View.OnClickListener() { // from class: com.discord.widgets.settings.WidgetSettings$onViewBound$1$8
+        binding.f17909s.setOnClickListener(new View.OnClickListener() { // from class: com.discord.widgets.settings.WidgetSettings$onViewBound$1$8
             @Override // android.view.View.OnClickListener
             public final void onClick(View view2) {
                 WidgetSettingsGifting.Companion companion2 = WidgetSettingsGifting.INSTANCE;
-                Intrinsics3.checkNotNullExpressionValue(view2, "it");
+                C12238m.checkNotNullExpressionValue(view2, "it");
                 Context context = view2.getContext();
-                Intrinsics3.checkNotNullExpressionValue(context, "it.context");
+                C12238m.checkNotNullExpressionValue(context, "it.context");
                 WidgetSettingsGifting.Companion.launch$default(companion2, context, null, 2, null);
             }
         });
-        binding.c.setOnClickListener(new View.OnClickListener() { // from class: com.discord.widgets.settings.WidgetSettings$onViewBound$1$9
+        binding.f17893c.setOnClickListener(new View.OnClickListener() { // from class: com.discord.widgets.settings.WidgetSettings$onViewBound$1$9
             @Override // android.view.View.OnClickListener
             public final void onClick(View view2) {
                 WidgetSettingsAccount.Companion companion2 = WidgetSettingsAccount.INSTANCE;
-                Intrinsics3.checkNotNullExpressionValue(view2, "it");
+                C12238m.checkNotNullExpressionValue(view2, "it");
                 Context context = view2.getContext();
-                Intrinsics3.checkNotNullExpressionValue(context, "it.context");
+                C12238m.checkNotNullExpressionValue(context, "it.context");
                 WidgetSettingsAccount.Companion.launch$default(companion2, context, false, null, 6, null);
             }
         });
-        binding.A.setOnClickListener(new View.OnClickListener() { // from class: com.discord.widgets.settings.WidgetSettings$onViewBound$1$10
+        binding.f17878A.setOnClickListener(new View.OnClickListener() { // from class: com.discord.widgets.settings.WidgetSettings$onViewBound$1$10
             @Override // android.view.View.OnClickListener
             public final void onClick(View view2) {
-                WidgetEditUserOrGuildMemberProfile.Companion.launch$default(WidgetEditUserOrGuildMemberProfile.INSTANCE, outline.x(view2, "it", "it.context"), AppTransitionActivity.Transition.TYPE_SLIDE_HORIZONTAL, null, 4, null);
+                WidgetEditUserOrGuildMemberProfile.Companion.launch$default(WidgetEditUserOrGuildMemberProfile.INSTANCE, C1643a.m885x(view2, "it", "it.context"), AppTransitionActivity.Transition.TYPE_SLIDE_HORIZONTAL, null, 4, null);
             }
         });
-        binding.i.setOnClickListener(new View.OnClickListener() { // from class: com.discord.widgets.settings.WidgetSettings$onViewBound$1$11
+        binding.f17899i.setOnClickListener(new View.OnClickListener() { // from class: com.discord.widgets.settings.WidgetSettings$onViewBound$1$11
             @Override // android.view.View.OnClickListener
             public final void onClick(View view2) {
                 WidgetSettingsAuthorizedApps.Companion companion2 = WidgetSettingsAuthorizedApps.INSTANCE;
-                Intrinsics3.checkNotNullExpressionValue(view2, "it");
+                C12238m.checkNotNullExpressionValue(view2, "it");
                 Context context = view2.getContext();
-                Intrinsics3.checkNotNullExpressionValue(context, "it.context");
+                C12238m.checkNotNullExpressionValue(context, "it.context");
                 companion2.launch(context);
             }
         });
-        binding.f2610z.setOnClickListener(new View.OnClickListener() { // from class: com.discord.widgets.settings.WidgetSettings$onViewBound$1$12
+        binding.f17916z.setOnClickListener(new View.OnClickListener() { // from class: com.discord.widgets.settings.WidgetSettings$onViewBound$1$12
             @Override // android.view.View.OnClickListener
             public final void onClick(View view2) {
                 WidgetSettingsPrivacy.Companion companion2 = WidgetSettingsPrivacy.INSTANCE;
-                Intrinsics3.checkNotNullExpressionValue(view2, "it");
+                C12238m.checkNotNullExpressionValue(view2, "it");
                 Context context = view2.getContext();
-                Intrinsics3.checkNotNullExpressionValue(context, "it.context");
+                C12238m.checkNotNullExpressionValue(context, "it.context");
                 companion2.launch(context);
             }
         });
-        binding.l.setOnClickListener(new View.OnClickListener() { // from class: com.discord.widgets.settings.WidgetSettings$onViewBound$1$13
+        binding.f17902l.setOnClickListener(new View.OnClickListener() { // from class: com.discord.widgets.settings.WidgetSettings$onViewBound$1$13
             @Override // android.view.View.OnClickListener
             public final void onClick(View view2) {
                 WidgetSettingsUserConnections.Companion companion2 = WidgetSettingsUserConnections.INSTANCE;
-                Intrinsics3.checkNotNullExpressionValue(view2, "it");
+                C12238m.checkNotNullExpressionValue(view2, "it");
                 Context context = view2.getContext();
-                Intrinsics3.checkNotNullExpressionValue(context, "it.context");
+                C12238m.checkNotNullExpressionValue(context, "it.context");
                 companion2.launch(context);
             }
         });
-        binding.h.setOnClickListener(new View.OnClickListener() { // from class: com.discord.widgets.settings.WidgetSettings$onViewBound$1$14
+        binding.f17898h.setOnClickListener(new View.OnClickListener() { // from class: com.discord.widgets.settings.WidgetSettings$onViewBound$1$14
             @Override // android.view.View.OnClickListener
             public final void onClick(View view2) {
                 WidgetSettingsAppearance.Companion companion2 = WidgetSettingsAppearance.Companion;
-                Intrinsics3.checkNotNullExpressionValue(view2, "it");
+                C12238m.checkNotNullExpressionValue(view2, "it");
                 Context context = view2.getContext();
-                Intrinsics3.checkNotNullExpressionValue(context, "it.context");
+                C12238m.checkNotNullExpressionValue(context, "it.context");
                 companion2.launch(context);
             }
         });
-        binding.f2606b.setOnClickListener(new View.OnClickListener() { // from class: com.discord.widgets.settings.WidgetSettings$onViewBound$1$15
+        binding.f17892b.setOnClickListener(new View.OnClickListener() { // from class: com.discord.widgets.settings.WidgetSettings$onViewBound$1$15
             @Override // android.view.View.OnClickListener
             public final void onClick(View view2) {
                 WidgetSettingsAccessibility.Companion companion2 = WidgetSettingsAccessibility.Companion;
-                Intrinsics3.checkNotNullExpressionValue(view2, "it");
+                C12238m.checkNotNullExpressionValue(view2, "it");
                 Context context = view2.getContext();
-                Intrinsics3.checkNotNullExpressionValue(context, "it.context");
+                C12238m.checkNotNullExpressionValue(context, "it.context");
                 companion2.launch(context);
             }
         });
-        binding.j.setOnClickListener(new View.OnClickListener() { // from class: com.discord.widgets.settings.WidgetSettings$onViewBound$1$16
+        binding.f17900j.setOnClickListener(new View.OnClickListener() { // from class: com.discord.widgets.settings.WidgetSettings$onViewBound$1$16
             @Override // android.view.View.OnClickListener
             public final void onClick(View view2) {
                 WidgetSettingsBehavior.Companion companion2 = WidgetSettingsBehavior.Companion;
-                Intrinsics3.checkNotNullExpressionValue(view2, "it");
+                C12238m.checkNotNullExpressionValue(view2, "it");
                 Context context = view2.getContext();
-                Intrinsics3.checkNotNullExpressionValue(context, "it.context");
+                C12238m.checkNotNullExpressionValue(context, "it.context");
                 companion2.launch(context);
             }
         });
-        binding.p.setOnClickListener(new View.OnClickListener() { // from class: com.discord.widgets.settings.WidgetSettings$onViewBound$1$17
+        binding.f17906p.setOnClickListener(new View.OnClickListener() { // from class: com.discord.widgets.settings.WidgetSettings$onViewBound$1$17
             @Override // android.view.View.OnClickListener
             public final void onClick(View view2) {
                 WidgetSettingsLanguage.Companion companion2 = WidgetSettingsLanguage.INSTANCE;
-                Intrinsics3.checkNotNullExpressionValue(view2, "it");
+                C12238m.checkNotNullExpressionValue(view2, "it");
                 Context context = view2.getContext();
-                Intrinsics3.checkNotNullExpressionValue(context, "it.context");
+                C12238m.checkNotNullExpressionValue(context, "it.context");
                 companion2.launch(context);
             }
         });
-        binding.e.setOnClickListener(new View.OnClickListener() { // from class: com.discord.widgets.settings.WidgetSettings$onViewBound$1$18
+        binding.f17895e.setOnClickListener(new View.OnClickListener() { // from class: com.discord.widgets.settings.WidgetSettings$onViewBound$1$18
             @Override // android.view.View.OnClickListener
             public final void onClick(View view2) {
                 WidgetSettingsActivityStatus.Companion companion2 = WidgetSettingsActivityStatus.Companion;
-                Intrinsics3.checkNotNullExpressionValue(view2, "it");
+                C12238m.checkNotNullExpressionValue(view2, "it");
                 Context context = view2.getContext();
-                Intrinsics3.checkNotNullExpressionValue(context, "it.context");
+                C12238m.checkNotNullExpressionValue(context, "it.context");
                 companion2.launch(context);
             }
         });
-        binding.f2609y.setOnClickListener(new View.OnClickListener() { // from class: com.discord.widgets.settings.WidgetSettings$onViewBound$$inlined$with$lambda$5
+        binding.f17915y.setOnClickListener(new View.OnClickListener() { // from class: com.discord.widgets.settings.WidgetSettings$onViewBound$$inlined$with$lambda$5
             @Override // android.view.View.OnClickListener
             public final void onClick(View view2) {
                 NotificationUtils.INSTANCE.showNotificationPage(this.this$0);
             }
         });
-        binding.I.setOnClickListener(new View.OnClickListener() { // from class: com.discord.widgets.settings.WidgetSettings$onViewBound$1$20
+        binding.f17886I.setOnClickListener(new View.OnClickListener() { // from class: com.discord.widgets.settings.WidgetSettings$onViewBound$1$20
             @Override // android.view.View.OnClickListener
             public final void onClick(View view2) {
                 WidgetSettingsMedia.Companion companion2 = WidgetSettingsMedia.Companion;
-                Intrinsics3.checkNotNullExpressionValue(view2, "it");
+                C12238m.checkNotNullExpressionValue(view2, "it");
                 Context context = view2.getContext();
-                Intrinsics3.checkNotNullExpressionValue(context, "it.context");
+                C12238m.checkNotNullExpressionValue(context, "it.context");
                 companion2.launch(context);
             }
         });
-        binding.M.setOnClickListener(new View.OnClickListener() { // from class: com.discord.widgets.settings.WidgetSettings$onViewBound$1$21
+        binding.f17890M.setOnClickListener(new View.OnClickListener() { // from class: com.discord.widgets.settings.WidgetSettings$onViewBound$1$21
             @Override // android.view.View.OnClickListener
             public final void onClick(View view2) {
                 WidgetSettingsVoice.Companion companion2 = WidgetSettingsVoice.INSTANCE;
-                Intrinsics3.checkNotNullExpressionValue(view2, "it");
+                C12238m.checkNotNullExpressionValue(view2, "it");
                 Context context = view2.getContext();
-                Intrinsics3.checkNotNullExpressionValue(context, "it.context");
+                C12238m.checkNotNullExpressionValue(context, "it.context");
                 WidgetSettingsVoice.Companion.launch$default(companion2, context, null, false, 6, null);
             }
         });
-        binding.H.setOnClickListener(new View.OnClickListener() { // from class: com.discord.widgets.settings.WidgetSettings$onViewBound$1$22
+        binding.f17885H.setOnClickListener(new View.OnClickListener() { // from class: com.discord.widgets.settings.WidgetSettings$onViewBound$1$22
             @Override // android.view.View.OnClickListener
             public final void onClick(View view2) {
-                UriHandler.handle$default(UriHandler.INSTANCE, outline.x(view2, "it", "it.context"), "https://support.discord.com", false, false, null, 28, null);
+                UriHandler.handle$default(UriHandler.INSTANCE, C1643a.m885x(view2, "it", "it.context"), "https://support.discord.com", false, false, null, 28, null);
             }
         });
-        binding.J.setOnClickListener(new View.OnClickListener() { // from class: com.discord.widgets.settings.WidgetSettings$onViewBound$$inlined$with$lambda$6
+        binding.f17887J.setOnClickListener(new View.OnClickListener() { // from class: com.discord.widgets.settings.WidgetSettings$onViewBound$$inlined$with$lambda$6
 
-            /* JADX INFO: renamed from: com.discord.widgets.settings.WidgetSettings$onViewBound$$inlined$with$lambda$6$1, reason: invalid class name */
+            /* JADX INFO: renamed from: com.discord.widgets.settings.WidgetSettings$onViewBound$$inlined$with$lambda$6$1 */
             /* JADX INFO: compiled from: WidgetSettings.kt */
-            public static final class AnonymousClass1 extends Lambda implements Function1<Boolean, Unit> {
-                public AnonymousClass1() {
+            public static final class C96121 extends AbstractC12240o implements Function1<Boolean, Unit> {
+                public C96121() {
                     super(1);
                 }
 
-                public static /* synthetic */ void invoke$default(AnonymousClass1 anonymousClass1, boolean z2, int i, Object obj) {
+                public static /* synthetic */ void invoke$default(C96121 c96121, boolean z2, int i, Object obj) {
                     if ((i & 1) != 0) {
                         z2 = true;
                     }
-                    anonymousClass1.invoke(z2);
+                    c96121.invoke(z2);
                 }
 
                 @Override // kotlin.jvm.functions.Function1
                 public /* bridge */ /* synthetic */ Unit invoke(Boolean bool) {
                     invoke(bool.booleanValue());
-                    return Unit.a;
+                    return Unit.f27425a;
                 }
 
                 public final void invoke(boolean z2) {
                     WidgetSettings widgetSettings;
                     int i;
-                    TextView textView = binding.J;
-                    Intrinsics3.checkNotNullExpressionValue(textView, "uploadDebugLogs");
+                    TextView textView = binding.f17887J;
+                    C12238m.checkNotNullExpressionValue(textView, "uploadDebugLogs");
                     textView.setEnabled(z2);
-                    TextView textView2 = binding.J;
-                    Intrinsics3.checkNotNullExpressionValue(textView2, "uploadDebugLogs");
+                    TextView textView2 = binding.f17887J;
+                    C12238m.checkNotNullExpressionValue(textView2, "uploadDebugLogs");
                     if (z2) {
                         widgetSettings = this;
-                        i = R.string.upload_debug_logs;
+                        i = C5419R.string.upload_debug_logs;
                     } else {
                         widgetSettings = this;
-                        i = R.string.working;
+                        i = C5419R.string.working;
                     }
                     textView2.setText(widgetSettings.getString(i));
                 }
             }
 
-            /* JADX INFO: renamed from: com.discord.widgets.settings.WidgetSettings$onViewBound$$inlined$with$lambda$6$2, reason: invalid class name */
+            /* JADX INFO: renamed from: com.discord.widgets.settings.WidgetSettings$onViewBound$$inlined$with$lambda$6$2 */
             /* JADX INFO: compiled from: WidgetSettings.kt */
-            public static final class AnonymousClass2 extends Lambda implements Function1<Void, Unit> {
-                public final /* synthetic */ AnonymousClass1 $updateUploadDebugLogsUI$1;
+            public static final class C96132 extends AbstractC12240o implements Function1<Void, Unit> {
+                public final /* synthetic */ C96121 $updateUploadDebugLogsUI$1;
 
                 /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-                public AnonymousClass2(AnonymousClass1 anonymousClass1) {
+                public C96132(C96121 c96121) {
                     super(1);
-                    this.$updateUploadDebugLogsUI$1 = anonymousClass1;
+                    this.$updateUploadDebugLogsUI$1 = c96121;
                 }
 
                 @Override // kotlin.jvm.functions.Function1
                 public /* bridge */ /* synthetic */ Unit invoke(Void r1) {
                     invoke2(r1);
-                    return Unit.a;
+                    return Unit.f27425a;
                 }
 
                 /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
                 public final void invoke2(Void r4) {
-                    AppToast.i(this, R.string.upload_debug_log_success, 0, 4);
-                    AnonymousClass1.invoke$default(this.$updateUploadDebugLogsUI$1, false, 1, null);
+                    C0876m.m171i(this, C5419R.string.upload_debug_log_success, 0, 4);
+                    C96121.invoke$default(this.$updateUploadDebugLogsUI$1, false, 1, null);
                 }
             }
 
-            /* JADX INFO: renamed from: com.discord.widgets.settings.WidgetSettings$onViewBound$$inlined$with$lambda$6$3, reason: invalid class name */
+            /* JADX INFO: renamed from: com.discord.widgets.settings.WidgetSettings$onViewBound$$inlined$with$lambda$6$3 */
             /* JADX INFO: compiled from: WidgetSettings.kt */
-            public static final class AnonymousClass3 extends Lambda implements Function1<Error, Unit> {
-                public final /* synthetic */ AnonymousClass1 $updateUploadDebugLogsUI$1;
+            public static final class C96143 extends AbstractC12240o implements Function1<Error, Unit> {
+                public final /* synthetic */ C96121 $updateUploadDebugLogsUI$1;
 
                 /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-                public AnonymousClass3(AnonymousClass1 anonymousClass1) {
+                public C96143(C96121 c96121) {
                     super(1);
-                    this.$updateUploadDebugLogsUI$1 = anonymousClass1;
+                    this.$updateUploadDebugLogsUI$1 = c96121;
                 }
 
                 @Override // kotlin.jvm.functions.Function1
                 public /* bridge */ /* synthetic */ Unit invoke(Error error) {
                     invoke2(error);
-                    return Unit.a;
+                    return Unit.f27425a;
                 }
 
                 /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
                 public final void invoke2(Error error) {
-                    Intrinsics3.checkNotNullParameter(error, "it");
-                    AnonymousClass1.invoke$default(this.$updateUploadDebugLogsUI$1, false, 1, null);
+                    C12238m.checkNotNullParameter(error, "it");
+                    C96121.invoke$default(this.$updateUploadDebugLogsUI$1, false, 1, null);
                 }
             }
 
-            /* JADX INFO: renamed from: com.discord.widgets.settings.WidgetSettings$onViewBound$$inlined$with$lambda$6$4, reason: invalid class name */
+            /* JADX INFO: renamed from: com.discord.widgets.settings.WidgetSettings$onViewBound$$inlined$with$lambda$6$4 */
             /* JADX INFO: compiled from: WidgetSettings.kt */
-            public static final class AnonymousClass4 extends Lambda implements Function0<Unit> {
-                public final /* synthetic */ AnonymousClass1 $updateUploadDebugLogsUI$1;
+            public static final class C96154 extends AbstractC12240o implements Function0<Unit> {
+                public final /* synthetic */ C96121 $updateUploadDebugLogsUI$1;
 
                 /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-                public AnonymousClass4(AnonymousClass1 anonymousClass1) {
+                public C96154(C96121 c96121) {
                     super(0);
-                    this.$updateUploadDebugLogsUI$1 = anonymousClass1;
+                    this.$updateUploadDebugLogsUI$1 = c96121;
                 }
 
                 @Override // kotlin.jvm.functions.Function0
                 public /* bridge */ /* synthetic */ Unit invoke() {
                     invoke2();
-                    return Unit.a;
+                    return Unit.f27425a;
                 }
 
                 /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
                 public final void invoke2() {
-                    AnonymousClass1.invoke$default(this.$updateUploadDebugLogsUI$1, false, 1, null);
+                    C96121.invoke$default(this.$updateUploadDebugLogsUI$1, false, 1, null);
                 }
             }
 
             @Override // android.view.View.OnClickListener
             public final void onClick(View view2) {
-                AnonymousClass1 anonymousClass1 = new AnonymousClass1();
-                anonymousClass1.invoke(false);
+                C96121 c96121 = new C96121();
+                c96121.invoke(false);
                 Observable observableUi$default = ObservableExtensionsKt.ui$default(RestAPI.INSTANCE.uploadSystemLog(), this, null, 2, null);
                 Context context = this.getContext();
                 String name = binding.getClass().getName();
-                Intrinsics3.checkNotNullExpressionValue(name, "javaClass.name");
-                ObservableExtensionsKt.appSubscribe(observableUi$default, (117 & 1) != 0 ? null : context, name, (Function1<? super Subscription, Unit>) ((117 & 4) != 0 ? null : null), new AnonymousClass2(anonymousClass1), (Function1<? super Error, Unit>) ((117 & 16) != 0 ? null : new AnonymousClass3(anonymousClass1)), (Function0<Unit>) ((117 & 32) != 0 ? ObservableExtensionsKt.AnonymousClass3.INSTANCE : new AnonymousClass4(anonymousClass1)), (Function0<Unit>) ((117 & 64) != 0 ? ObservableExtensionsKt.AnonymousClass4.INSTANCE : null));
+                C12238m.checkNotNullExpressionValue(name, "javaClass.name");
+                ObservableExtensionsKt.appSubscribe(observableUi$default, (117 & 1) != 0 ? null : context, name, (Function1<? super Subscription, Unit>) ((117 & 4) != 0 ? null : null), new C96132(c96121), (Function1<? super Error, Unit>) ((117 & 16) != 0 ? null : new C96143(c96121)), (Function0<Unit>) ((117 & 32) != 0 ? ObservableExtensionsKt.C68813.INSTANCE : new C96154(c96121)), (Function0<Unit>) ((117 & 64) != 0 ? ObservableExtensionsKt.C68824.INSTANCE : null));
             }
         });
-        binding.d.setOnClickListener(new View.OnClickListener() { // from class: com.discord.widgets.settings.WidgetSettings$onViewBound$1$24
+        binding.f17894d.setOnClickListener(new View.OnClickListener() { // from class: com.discord.widgets.settings.WidgetSettings$onViewBound$1$24
             @Override // android.view.View.OnClickListener
             public final void onClick(View view2) {
-                UriHandler.handle$default(UriHandler.INSTANCE, outline.x(view2, "it", "it.context"), "https://discord.com/acknowledgements", false, false, null, 28, null);
+                UriHandler.handle$default(UriHandler.INSTANCE, C1643a.m885x(view2, "it", "it.context"), "https://discord.com/acknowledgements", false, false, null, 28, null);
             }
         });
-        binding.k.setOnClickListener(new View.OnClickListener() { // from class: com.discord.widgets.settings.WidgetSettings$onViewBound$1$25
+        binding.f17901k.setOnClickListener(new View.OnClickListener() { // from class: com.discord.widgets.settings.WidgetSettings$onViewBound$1$25
             @Override // android.view.View.OnClickListener
             public final void onClick(View view2) {
                 StoreChangeLog changeLog = StoreStream.INSTANCE.getChangeLog();
-                Intrinsics3.checkNotNullExpressionValue(view2, "it");
+                C12238m.checkNotNullExpressionValue(view2, "it");
                 Context context = view2.getContext();
-                Intrinsics3.checkNotNullExpressionValue(context, "it.context");
+                C12238m.checkNotNullExpressionValue(context, "it.context");
                 changeLog.openChangeLog(context, true);
             }
         });
-        binding.f2608x.setOnClickListener(new View.OnClickListener() { // from class: com.discord.widgets.settings.WidgetSettings$onViewBound$1$26
+        binding.f17914x.setOnClickListener(new View.OnClickListener() { // from class: com.discord.widgets.settings.WidgetSettings$onViewBound$1$26
             @Override // android.view.View.OnClickListener
             public final void onClick(View view2) {
                 SystemSettingNavigators systemSettingNavigators = SystemSettingNavigators.INSTANCE;
-                Intrinsics3.checkNotNullExpressionValue(view2, "it");
+                C12238m.checkNotNullExpressionValue(view2, "it");
                 Context context = view2.getContext();
-                Intrinsics3.checkNotNullExpressionValue(context, "it.context");
+                C12238m.checkNotNullExpressionValue(context, "it.context");
                 systemSettingNavigators.openSystemNotification(context);
             }
         });
-        binding.w.setOnClickListener(new View.OnClickListener() { // from class: com.discord.widgets.settings.WidgetSettings$onViewBound$1$27
+        binding.f17913w.setOnClickListener(new View.OnClickListener() { // from class: com.discord.widgets.settings.WidgetSettings$onViewBound$1$27
             @Override // android.view.View.OnClickListener
             public final void onClick(View view2) {
                 StoreStream.INSTANCE.getNotificationUpsells().dismissPushNotificationsUpsell();
             }
         });
-        for (TextView textView2 : Collections2.listOf((Object[]) new TextView[]{binding.K, binding.t, binding.g, binding.o, binding.f})) {
+        for (TextView textView2 : C12147n.listOf((Object[]) new TextView[]{binding.f17888K, binding.f17910t, binding.f17897g, binding.f17905o, binding.f17896f})) {
             AccessibilityUtils accessibilityUtils = AccessibilityUtils.INSTANCE;
-            Intrinsics3.checkNotNullExpressionValue(textView2, "header");
+            C12238m.checkNotNullExpressionValue(textView2, "header");
             accessibilityUtils.setViewIsHeading(textView2);
         }
     }
@@ -662,9 +662,9 @@ public final class WidgetSettings extends AppFragment implements OnTabSelectedLi
     public void onViewBoundOrOnResume() {
         super.onViewBoundOrOnResume();
         UserProfileHeaderView.Companion companion = UserProfileHeaderView.INSTANCE;
-        UserProfileHeaderView userProfileHeaderView = getBinding().L;
-        Intrinsics3.checkNotNullExpressionValue(userProfileHeaderView, "binding.userSettingsProfileHeaderView");
+        UserProfileHeaderView userProfileHeaderView = getBinding().f17889L;
+        C12238m.checkNotNullExpressionValue(userProfileHeaderView, "binding.userSettingsProfileHeaderView");
         companion.bind(userProfileHeaderView, this, getViewModelUserProfileHeader().observeViewState());
-        ObservableExtensionsKt.appSubscribe(ObservableExtensionsKt.bindToComponentLifecycle$default(getViewModel().observeViewState(), this, null, 2, null), (Class<?>) WidgetSettings.class, (58 & 2) != 0 ? null : null, (Function1<? super Subscription, Unit>) ((58 & 4) != 0 ? null : null), (Function1<? super Error, Unit>) ((58 & 8) != 0 ? null : null), (Function0<Unit>) ((58 & 16) != 0 ? ObservableExtensionsKt.AnonymousClass1.INSTANCE : null), (Function0<Unit>) ((58 & 32) != 0 ? ObservableExtensionsKt.AnonymousClass2.INSTANCE : null), new AnonymousClass1(this));
+        ObservableExtensionsKt.appSubscribe(ObservableExtensionsKt.bindToComponentLifecycle$default(getViewModel().observeViewState(), this, null, 2, null), (Class<?>) WidgetSettings.class, (58 & 2) != 0 ? null : null, (Function1<? super Subscription, Unit>) ((58 & 4) != 0 ? null : null), (Function1<? super Error, Unit>) ((58 & 8) != 0 ? null : null), (Function0<Unit>) ((58 & 16) != 0 ? ObservableExtensionsKt.C68791.INSTANCE : null), (Function0<Unit>) ((58 & 32) != 0 ? ObservableExtensionsKt.C68802.INSTANCE : null), new C96161(this));
     }
 }

@@ -1,10 +1,10 @@
 package co.discord.media_engine;
 
-import a0.a.a.a;
-import a0.a.a.b;
-import b.d.b.a.outline;
 import com.discord.models.domain.ModelAuditLogEntry;
-import d0.z.d.Intrinsics3;
+import p001a0.p002a.p003a.C0001a;
+import p001a0.p002a.p003a.C0002b;
+import p007b.p100d.p104b.p105a.C1643a;
+import p507d0.p592z.p594d.C12238m;
 
 /* JADX INFO: compiled from: Statistics.kt */
 /* JADX INFO: loaded from: classes.dex */
@@ -37,9 +37,9 @@ public final /* data */ class InboundRtpVideo {
     private final String type;
 
     public InboundRtpVideo(String str, long j, StatsCodec statsCodec, long j2, int i, int i2, int i3, int i4, Resolution resolution, String str2, int i5, int i6, int i7, int i8, int i9, int i10, long j3, long j4, long j5, long j6, long j7, long j8, long j9, long j10, long j11, double d) {
-        Intrinsics3.checkNotNullParameter(str, "type");
-        Intrinsics3.checkNotNullParameter(resolution, "resolution");
-        Intrinsics3.checkNotNullParameter(str2, "decoderImplementationName");
+        C12238m.checkNotNullParameter(str, "type");
+        C12238m.checkNotNullParameter(resolution, "resolution");
+        C12238m.checkNotNullParameter(str2, "decoderImplementationName");
         this.type = str;
         this.ssrc = j;
         this.codec = statsCodec;
@@ -199,9 +199,9 @@ public final /* data */ class InboundRtpVideo {
     }
 
     public final InboundRtpVideo copy(String type, long ssrc, StatsCodec codec, long bytesReceived, int packetsReceived, int packetsLost, int bitrate, int averageDecodeTime, Resolution resolution, String decoderImplementationName, int framesDecoded, int framesDropped, int framesReceived, int frameRateDecode, int frameRateNetwork, int frameRateRender, long firCount, long nackCount, long pliCount, long qpSum, long freezeCount, long pauseCount, long totalFreezesDuration, long totalPausesDuration, long totalFramesDuration, double sumOfSquaredFramesDurations) {
-        Intrinsics3.checkNotNullParameter(type, "type");
-        Intrinsics3.checkNotNullParameter(resolution, "resolution");
-        Intrinsics3.checkNotNullParameter(decoderImplementationName, "decoderImplementationName");
+        C12238m.checkNotNullParameter(type, "type");
+        C12238m.checkNotNullParameter(resolution, "resolution");
+        C12238m.checkNotNullParameter(decoderImplementationName, "decoderImplementationName");
         return new InboundRtpVideo(type, ssrc, codec, bytesReceived, packetsReceived, packetsLost, bitrate, averageDecodeTime, resolution, decoderImplementationName, framesDecoded, framesDropped, framesReceived, frameRateDecode, frameRateNetwork, frameRateRender, firCount, nackCount, pliCount, qpSum, freezeCount, pauseCount, totalFreezesDuration, totalPausesDuration, totalFramesDuration, sumOfSquaredFramesDurations);
     }
 
@@ -213,7 +213,7 @@ public final /* data */ class InboundRtpVideo {
             return false;
         }
         InboundRtpVideo inboundRtpVideo = (InboundRtpVideo) other;
-        return Intrinsics3.areEqual(this.type, inboundRtpVideo.type) && this.ssrc == inboundRtpVideo.ssrc && Intrinsics3.areEqual(this.codec, inboundRtpVideo.codec) && this.bytesReceived == inboundRtpVideo.bytesReceived && this.packetsReceived == inboundRtpVideo.packetsReceived && this.packetsLost == inboundRtpVideo.packetsLost && this.bitrate == inboundRtpVideo.bitrate && this.averageDecodeTime == inboundRtpVideo.averageDecodeTime && Intrinsics3.areEqual(this.resolution, inboundRtpVideo.resolution) && Intrinsics3.areEqual(this.decoderImplementationName, inboundRtpVideo.decoderImplementationName) && this.framesDecoded == inboundRtpVideo.framesDecoded && this.framesDropped == inboundRtpVideo.framesDropped && this.framesReceived == inboundRtpVideo.framesReceived && this.frameRateDecode == inboundRtpVideo.frameRateDecode && this.frameRateNetwork == inboundRtpVideo.frameRateNetwork && this.frameRateRender == inboundRtpVideo.frameRateRender && this.firCount == inboundRtpVideo.firCount && this.nackCount == inboundRtpVideo.nackCount && this.pliCount == inboundRtpVideo.pliCount && this.qpSum == inboundRtpVideo.qpSum && this.freezeCount == inboundRtpVideo.freezeCount && this.pauseCount == inboundRtpVideo.pauseCount && this.totalFreezesDuration == inboundRtpVideo.totalFreezesDuration && this.totalPausesDuration == inboundRtpVideo.totalPausesDuration && this.totalFramesDuration == inboundRtpVideo.totalFramesDuration && Double.compare(this.sumOfSquaredFramesDurations, inboundRtpVideo.sumOfSquaredFramesDurations) == 0;
+        return C12238m.areEqual(this.type, inboundRtpVideo.type) && this.ssrc == inboundRtpVideo.ssrc && C12238m.areEqual(this.codec, inboundRtpVideo.codec) && this.bytesReceived == inboundRtpVideo.bytesReceived && this.packetsReceived == inboundRtpVideo.packetsReceived && this.packetsLost == inboundRtpVideo.packetsLost && this.bitrate == inboundRtpVideo.bitrate && this.averageDecodeTime == inboundRtpVideo.averageDecodeTime && C12238m.areEqual(this.resolution, inboundRtpVideo.resolution) && C12238m.areEqual(this.decoderImplementationName, inboundRtpVideo.decoderImplementationName) && this.framesDecoded == inboundRtpVideo.framesDecoded && this.framesDropped == inboundRtpVideo.framesDropped && this.framesReceived == inboundRtpVideo.framesReceived && this.frameRateDecode == inboundRtpVideo.frameRateDecode && this.frameRateNetwork == inboundRtpVideo.frameRateNetwork && this.frameRateRender == inboundRtpVideo.frameRateRender && this.firCount == inboundRtpVideo.firCount && this.nackCount == inboundRtpVideo.nackCount && this.pliCount == inboundRtpVideo.pliCount && this.qpSum == inboundRtpVideo.qpSum && this.freezeCount == inboundRtpVideo.freezeCount && this.pauseCount == inboundRtpVideo.pauseCount && this.totalFreezesDuration == inboundRtpVideo.totalFreezesDuration && this.totalPausesDuration == inboundRtpVideo.totalPausesDuration && this.totalFramesDuration == inboundRtpVideo.totalFramesDuration && Double.compare(this.sumOfSquaredFramesDurations, inboundRtpVideo.sumOfSquaredFramesDurations) == 0;
     }
 
     public final int getAverageDecodeTime() {
@@ -322,69 +322,69 @@ public final /* data */ class InboundRtpVideo {
 
     public int hashCode() {
         String str = this.type;
-        int iA = (b.a(this.ssrc) + ((str != null ? str.hashCode() : 0) * 31)) * 31;
+        int iM3a = (C0002b.m3a(this.ssrc) + ((str != null ? str.hashCode() : 0) * 31)) * 31;
         StatsCodec statsCodec = this.codec;
-        int iA2 = (((((((((b.a(this.bytesReceived) + ((iA + (statsCodec != null ? statsCodec.hashCode() : 0)) * 31)) * 31) + this.packetsReceived) * 31) + this.packetsLost) * 31) + this.bitrate) * 31) + this.averageDecodeTime) * 31;
+        int iM3a2 = (((((((((C0002b.m3a(this.bytesReceived) + ((iM3a + (statsCodec != null ? statsCodec.hashCode() : 0)) * 31)) * 31) + this.packetsReceived) * 31) + this.packetsLost) * 31) + this.bitrate) * 31) + this.averageDecodeTime) * 31;
         Resolution resolution = this.resolution;
-        int iHashCode = (iA2 + (resolution != null ? resolution.hashCode() : 0)) * 31;
+        int iHashCode = (iM3a2 + (resolution != null ? resolution.hashCode() : 0)) * 31;
         String str2 = this.decoderImplementationName;
-        return a.a(this.sumOfSquaredFramesDurations) + ((b.a(this.totalFramesDuration) + ((b.a(this.totalPausesDuration) + ((b.a(this.totalFreezesDuration) + ((b.a(this.pauseCount) + ((b.a(this.freezeCount) + ((b.a(this.qpSum) + ((b.a(this.pliCount) + ((b.a(this.nackCount) + ((b.a(this.firCount) + ((((((((((((((iHashCode + (str2 != null ? str2.hashCode() : 0)) * 31) + this.framesDecoded) * 31) + this.framesDropped) * 31) + this.framesReceived) * 31) + this.frameRateDecode) * 31) + this.frameRateNetwork) * 31) + this.frameRateRender) * 31)) * 31)) * 31)) * 31)) * 31)) * 31)) * 31)) * 31)) * 31)) * 31);
+        return C0001a.m2a(this.sumOfSquaredFramesDurations) + ((C0002b.m3a(this.totalFramesDuration) + ((C0002b.m3a(this.totalPausesDuration) + ((C0002b.m3a(this.totalFreezesDuration) + ((C0002b.m3a(this.pauseCount) + ((C0002b.m3a(this.freezeCount) + ((C0002b.m3a(this.qpSum) + ((C0002b.m3a(this.pliCount) + ((C0002b.m3a(this.nackCount) + ((C0002b.m3a(this.firCount) + ((((((((((((((iHashCode + (str2 != null ? str2.hashCode() : 0)) * 31) + this.framesDecoded) * 31) + this.framesDropped) * 31) + this.framesReceived) * 31) + this.frameRateDecode) * 31) + this.frameRateNetwork) * 31) + this.frameRateRender) * 31)) * 31)) * 31)) * 31)) * 31)) * 31)) * 31)) * 31)) * 31)) * 31);
     }
 
     public String toString() {
-        StringBuilder sbU = outline.U("InboundRtpVideo(type=");
-        sbU.append(this.type);
-        sbU.append(", ssrc=");
-        sbU.append(this.ssrc);
-        sbU.append(", codec=");
-        sbU.append(this.codec);
-        sbU.append(", bytesReceived=");
-        sbU.append(this.bytesReceived);
-        sbU.append(", packetsReceived=");
-        sbU.append(this.packetsReceived);
-        sbU.append(", packetsLost=");
-        sbU.append(this.packetsLost);
-        sbU.append(", bitrate=");
-        sbU.append(this.bitrate);
-        sbU.append(", averageDecodeTime=");
-        sbU.append(this.averageDecodeTime);
-        sbU.append(", resolution=");
-        sbU.append(this.resolution);
-        sbU.append(", decoderImplementationName=");
-        sbU.append(this.decoderImplementationName);
-        sbU.append(", framesDecoded=");
-        sbU.append(this.framesDecoded);
-        sbU.append(", framesDropped=");
-        sbU.append(this.framesDropped);
-        sbU.append(", framesReceived=");
-        sbU.append(this.framesReceived);
-        sbU.append(", frameRateDecode=");
-        sbU.append(this.frameRateDecode);
-        sbU.append(", frameRateNetwork=");
-        sbU.append(this.frameRateNetwork);
-        sbU.append(", frameRateRender=");
-        sbU.append(this.frameRateRender);
-        sbU.append(", firCount=");
-        sbU.append(this.firCount);
-        sbU.append(", nackCount=");
-        sbU.append(this.nackCount);
-        sbU.append(", pliCount=");
-        sbU.append(this.pliCount);
-        sbU.append(", qpSum=");
-        sbU.append(this.qpSum);
-        sbU.append(", freezeCount=");
-        sbU.append(this.freezeCount);
-        sbU.append(", pauseCount=");
-        sbU.append(this.pauseCount);
-        sbU.append(", totalFreezesDuration=");
-        sbU.append(this.totalFreezesDuration);
-        sbU.append(", totalPausesDuration=");
-        sbU.append(this.totalPausesDuration);
-        sbU.append(", totalFramesDuration=");
-        sbU.append(this.totalFramesDuration);
-        sbU.append(", sumOfSquaredFramesDurations=");
-        sbU.append(this.sumOfSquaredFramesDurations);
-        sbU.append(")");
-        return sbU.toString();
+        StringBuilder sbM833U = C1643a.m833U("InboundRtpVideo(type=");
+        sbM833U.append(this.type);
+        sbM833U.append(", ssrc=");
+        sbM833U.append(this.ssrc);
+        sbM833U.append(", codec=");
+        sbM833U.append(this.codec);
+        sbM833U.append(", bytesReceived=");
+        sbM833U.append(this.bytesReceived);
+        sbM833U.append(", packetsReceived=");
+        sbM833U.append(this.packetsReceived);
+        sbM833U.append(", packetsLost=");
+        sbM833U.append(this.packetsLost);
+        sbM833U.append(", bitrate=");
+        sbM833U.append(this.bitrate);
+        sbM833U.append(", averageDecodeTime=");
+        sbM833U.append(this.averageDecodeTime);
+        sbM833U.append(", resolution=");
+        sbM833U.append(this.resolution);
+        sbM833U.append(", decoderImplementationName=");
+        sbM833U.append(this.decoderImplementationName);
+        sbM833U.append(", framesDecoded=");
+        sbM833U.append(this.framesDecoded);
+        sbM833U.append(", framesDropped=");
+        sbM833U.append(this.framesDropped);
+        sbM833U.append(", framesReceived=");
+        sbM833U.append(this.framesReceived);
+        sbM833U.append(", frameRateDecode=");
+        sbM833U.append(this.frameRateDecode);
+        sbM833U.append(", frameRateNetwork=");
+        sbM833U.append(this.frameRateNetwork);
+        sbM833U.append(", frameRateRender=");
+        sbM833U.append(this.frameRateRender);
+        sbM833U.append(", firCount=");
+        sbM833U.append(this.firCount);
+        sbM833U.append(", nackCount=");
+        sbM833U.append(this.nackCount);
+        sbM833U.append(", pliCount=");
+        sbM833U.append(this.pliCount);
+        sbM833U.append(", qpSum=");
+        sbM833U.append(this.qpSum);
+        sbM833U.append(", freezeCount=");
+        sbM833U.append(this.freezeCount);
+        sbM833U.append(", pauseCount=");
+        sbM833U.append(this.pauseCount);
+        sbM833U.append(", totalFreezesDuration=");
+        sbM833U.append(this.totalFreezesDuration);
+        sbM833U.append(", totalPausesDuration=");
+        sbM833U.append(this.totalPausesDuration);
+        sbM833U.append(", totalFramesDuration=");
+        sbM833U.append(this.totalFramesDuration);
+        sbM833U.append(", sumOfSquaredFramesDurations=");
+        sbM833U.append(this.sumOfSquaredFramesDurations);
+        sbM833U.append(")");
+        return sbM833U.toString();
     }
 }

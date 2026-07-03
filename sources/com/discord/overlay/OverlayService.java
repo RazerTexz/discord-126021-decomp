@@ -6,17 +6,17 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.IBinder;
 import android.view.View;
-import b.a.n.TrashEventListener;
-import b.a.n.h.OverlayTrashWrap;
-import b.d.b.a.outline;
 import com.discord.overlay.views.OverlayBubbleWrap;
-import d0.Standard2;
-import d0.z.d.Intrinsics3;
-import d0.z.d.Lambda;
 import java.util.Objects;
 import kotlin.Unit;
 import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.DefaultConstructorMarker;
+import p007b.p008a.p036n.InterfaceC1171f;
+import p007b.p008a.p036n.p038h.C1173a;
+import p007b.p100d.p104b.p105a.C1643a;
+import p507d0.C12111j;
+import p507d0.p592z.p594d.AbstractC12240o;
+import p507d0.p592z.p594d.C12238m;
 
 /* JADX INFO: compiled from: OverlayService.kt */
 /* JADX INFO: loaded from: classes.dex */
@@ -34,49 +34,56 @@ public abstract class OverlayService extends Service {
         }
     }
 
+    /* JADX INFO: renamed from: com.discord.overlay.OverlayService$a */
     /* JADX INFO: compiled from: OverlayService.kt */
-    public static final class a implements Runnable {
-        public final /* synthetic */ OverlayBubbleWrap k;
+    public static final class RunnableC5567a implements Runnable {
 
-        public a(OverlayBubbleWrap overlayBubbleWrap) {
-            this.k = overlayBubbleWrap;
+        /* JADX INFO: renamed from: k */
+        public final /* synthetic */ OverlayBubbleWrap f18616k;
+
+        public RunnableC5567a(OverlayBubbleWrap overlayBubbleWrap) {
+            this.f18616k = overlayBubbleWrap;
         }
 
         @Override // java.lang.Runnable
         public final void run() {
-            OverlayService.this.getOverlayManager().b(this.k);
+            OverlayService.this.getOverlayManager().m8431b(this.f18616k);
         }
     }
 
+    /* JADX INFO: renamed from: com.discord.overlay.OverlayService$b */
     /* JADX INFO: compiled from: OverlayService.kt */
-    public static final class b implements TrashEventListener {
-        public b() {
+    public static final class C5568b implements InterfaceC1171f {
+        public C5568b() {
         }
 
-        @Override // b.a.n.TrashEventListener
-        public void a(OverlayBubbleWrap overlayBubbleWrap) {
+        @Override // p007b.p008a.p036n.InterfaceC1171f
+        /* JADX INFO: renamed from: a */
+        public void mo227a(OverlayBubbleWrap overlayBubbleWrap) {
         }
 
-        @Override // b.a.n.TrashEventListener
-        public void b(OverlayBubbleWrap overlayBubbleWrap) {
-            Intrinsics3.checkNotNullParameter(overlayBubbleWrap, "bubble");
-            OverlayService.this.getOverlayManager().d(overlayBubbleWrap);
+        @Override // p007b.p008a.p036n.InterfaceC1171f
+        /* JADX INFO: renamed from: b */
+        public void mo228b(OverlayBubbleWrap overlayBubbleWrap) {
+            C12238m.checkNotNullParameter(overlayBubbleWrap, "bubble");
+            OverlayService.this.getOverlayManager().m8433d(overlayBubbleWrap);
         }
     }
 
+    /* JADX INFO: renamed from: com.discord.overlay.OverlayService$c */
     /* JADX INFO: compiled from: OverlayService.kt */
-    public static final class c extends Lambda implements Function1<View, Unit> {
-        public c() {
+    public static final class C5569c extends AbstractC12240o implements Function1<View, Unit> {
+        public C5569c() {
             super(1);
         }
 
         @Override // kotlin.jvm.functions.Function1
         public Unit invoke(View view) {
-            Intrinsics3.checkNotNullParameter(view, "it");
+            C12238m.checkNotNullParameter(view, "it");
             if (OverlayService.this.getOverlayManager().activeBubbles.isEmpty()) {
-                throw new Standard2(outline.w("An operation is not implemented: ", "handle stop service"));
+                throw new C12111j(C1643a.m883w("An operation is not implemented: ", "handle stop service"));
             }
-            return Unit.a;
+            return Unit.f27425a;
         }
     }
 
@@ -87,28 +94,28 @@ public abstract class OverlayService extends Service {
         }
         OverlayManager overlayManager = this.overlayManager;
         if (overlayManager == null) {
-            Intrinsics3.throwUninitializedPropertyAccessException("overlayManager");
+            C12238m.throwUninitializedPropertyAccessException("overlayManager");
         }
-        overlayManager.a(overlayBubbleWrapCreateOverlayBubble);
-        overlayBubbleWrapCreateOverlayBubble.post(new a(overlayBubbleWrapCreateOverlayBubble));
+        overlayManager.m8430a(overlayBubbleWrapCreateOverlayBubble);
+        overlayBubbleWrapCreateOverlayBubble.post(new RunnableC5567a(overlayBubbleWrapCreateOverlayBubble));
         OverlayManager overlayManager2 = this.overlayManager;
         if (overlayManager2 == null) {
-            Intrinsics3.throwUninitializedPropertyAccessException("overlayManager");
+            C12238m.throwUninitializedPropertyAccessException("overlayManager");
         }
         if (overlayManager2.trashWrap != null) {
             return true;
         }
         Context applicationContext = getApplicationContext();
-        Intrinsics3.checkNotNullExpressionValue(applicationContext, "applicationContext");
-        OverlayTrashWrap overlayTrashWrap = new OverlayTrashWrap(applicationContext);
+        C12238m.checkNotNullExpressionValue(applicationContext, "applicationContext");
+        C1173a c1173a = new C1173a(applicationContext);
         OverlayManager overlayManager3 = this.overlayManager;
         if (overlayManager3 == null) {
-            Intrinsics3.throwUninitializedPropertyAccessException("overlayManager");
+            C12238m.throwUninitializedPropertyAccessException("overlayManager");
         }
         Objects.requireNonNull(overlayManager3);
-        Intrinsics3.checkNotNullParameter(overlayTrashWrap, "trashWrap");
-        overlayManager3.trashWrap = overlayTrashWrap;
-        overlayManager3.windowManager.addView(overlayTrashWrap, overlayTrashWrap.getWindowLayoutParams());
+        C12238m.checkNotNullParameter(c1173a, "trashWrap");
+        overlayManager3.trashWrap = c1173a;
+        overlayManager3.windowManager.addView(c1173a, c1173a.getWindowLayoutParams());
         return true;
     }
 
@@ -119,7 +126,7 @@ public abstract class OverlayService extends Service {
     public final OverlayManager getOverlayManager() {
         OverlayManager overlayManager = this.overlayManager;
         if (overlayManager == null) {
-            Intrinsics3.throwUninitializedPropertyAccessException("overlayManager");
+            C12238m.throwUninitializedPropertyAccessException("overlayManager");
         }
         return overlayManager;
     }
@@ -142,31 +149,31 @@ public abstract class OverlayService extends Service {
     public void onCreate() {
         super.onCreate();
         Context applicationContext = getApplicationContext();
-        Intrinsics3.checkNotNullExpressionValue(applicationContext, "applicationContext");
+        C12238m.checkNotNullExpressionValue(applicationContext, "applicationContext");
         OverlayManager overlayManager = new OverlayManager(applicationContext, null, 2);
         this.overlayManager = overlayManager;
-        overlayManager.trashEventListener = new b();
+        overlayManager.trashEventListener = new C5568b();
         if (overlayManager == null) {
-            Intrinsics3.throwUninitializedPropertyAccessException("overlayManager");
+            C12238m.throwUninitializedPropertyAccessException("overlayManager");
         }
-        c cVar = new c();
+        C5569c c5569c = new C5569c();
         Objects.requireNonNull(overlayManager);
-        Intrinsics3.checkNotNullParameter(cVar, "<set-?>");
-        overlayManager.onOverlayBubbleRemoved = cVar;
+        C12238m.checkNotNullParameter(c5569c, "<set-?>");
+        overlayManager.onOverlayBubbleRemoved = c5569c;
     }
 
     @Override // android.app.Service
     public void onDestroy() {
         OverlayManager overlayManager = this.overlayManager;
         if (overlayManager == null) {
-            Intrinsics3.throwUninitializedPropertyAccessException("overlayManager");
+            C12238m.throwUninitializedPropertyAccessException("overlayManager");
         }
         overlayManager.close();
         super.onDestroy();
     }
 
     public final void setOverlayManager(OverlayManager overlayManager) {
-        Intrinsics3.checkNotNullParameter(overlayManager, "<set-?>");
+        C12238m.checkNotNullParameter(overlayManager, "<set-?>");
         this.overlayManager = overlayManager;
     }
 }

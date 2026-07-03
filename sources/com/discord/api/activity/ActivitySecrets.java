@@ -1,7 +1,7 @@
 package com.discord.api.activity;
 
-import b.d.b.a.outline;
-import d0.z.d.Intrinsics3;
+import p007b.p100d.p104b.p105a.C1643a;
+import p507d0.p592z.p594d.C12238m;
 
 /* JADX INFO: compiled from: ActivitySecrets.kt */
 /* JADX INFO: loaded from: classes.dex */
@@ -17,7 +17,7 @@ public final /* data */ class ActivitySecrets {
             return false;
         }
         ActivitySecrets activitySecrets = (ActivitySecrets) other;
-        return Intrinsics3.areEqual(this.match, activitySecrets.match) && Intrinsics3.areEqual(this.join, activitySecrets.join);
+        return C12238m.areEqual(this.match, activitySecrets.match) && C12238m.areEqual(this.join, activitySecrets.join);
     }
 
     public int hashCode() {
@@ -28,9 +28,9 @@ public final /* data */ class ActivitySecrets {
     }
 
     public String toString() {
-        StringBuilder sbU = outline.U("ActivitySecrets(match=");
-        sbU.append(this.match);
-        sbU.append(", join=");
-        return outline.J(sbU, this.join, ")");
+        StringBuilder sbM833U = C1643a.m833U("ActivitySecrets(match=");
+        sbM833U.append(this.match);
+        sbM833U.append(", join=");
+        return C1643a.m822J(sbM833U, this.join, ")");
     }
 }

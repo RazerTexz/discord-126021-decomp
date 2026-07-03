@@ -2,14 +2,14 @@ package com.discord.utilities.networking;
 
 import com.discord.utilities.logging.Logger;
 import com.discord.utilities.logging.LoggingProvider;
-import d0.z.d.Intrinsics3;
-import d0.z.d.Lambda;
 import java.util.Timer;
 import java.util.TimerTask;
 import java.util.concurrent.ExecutorService;
 import kotlin.Unit;
 import kotlin.jvm.functions.Function0;
 import kotlin.jvm.internal.DefaultConstructorMarker;
+import p507d0.p592z.p594d.AbstractC12240o;
+import p507d0.p592z.p594d.C12238m;
 
 /* JADX INFO: compiled from: Backoff.kt */
 /* JADX INFO: loaded from: classes2.dex */
@@ -55,7 +55,7 @@ public final class Backoff {
 
         @Override // com.discord.utilities.networking.Backoff.Scheduler
         public synchronized void schedule(final Function0<Unit> action, long delayMs) {
-            Intrinsics3.checkNotNullParameter(action, "action");
+            C12238m.checkNotNullParameter(action, "action");
             TimerTask timerTask = this.timeoutTimerTask;
             if (timerTask != null) {
                 timerTask.cancel();
@@ -81,7 +81,7 @@ public final class Backoff {
                         obj = new Runnable() { // from class: com.discord.utilities.networking.Backoff$sam$java_lang_Runnable$0
                             @Override // java.lang.Runnable
                             public final /* synthetic */ void run() {
-                                Intrinsics3.checkNotNullExpressionValue(function0.invoke(), "invoke(...)");
+                                C12238m.checkNotNullExpressionValue(function0.invoke(), "invoke(...)");
                             }
                         };
                     }
@@ -94,19 +94,19 @@ public final class Backoff {
         }
 
         public TimerScheduler(String str, ExecutorService executorService) {
-            Intrinsics3.checkNotNullParameter(str, "tag");
+            C12238m.checkNotNullParameter(str, "tag");
             this.tag = str;
             this.delegateExecutor = executorService;
         }
     }
 
-    /* JADX INFO: renamed from: com.discord.utilities.networking.Backoff$fail$1, reason: invalid class name */
+    /* JADX INFO: renamed from: com.discord.utilities.networking.Backoff$fail$1 */
     /* JADX INFO: compiled from: Backoff.kt */
-    public static final class AnonymousClass1 extends Lambda implements Function0<Unit> {
+    public static final class C68191 extends AbstractC12240o implements Function0<Unit> {
         public final /* synthetic */ Function0 $callback;
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-        public AnonymousClass1(Function0 function0) {
+        public C68191(Function0 function0) {
             super(0);
             this.$callback = function0;
         }
@@ -114,7 +114,7 @@ public final class Backoff {
         @Override // kotlin.jvm.functions.Function0
         public /* bridge */ /* synthetic */ Unit invoke() {
             invoke2();
-            return Unit.a;
+            return Unit.f27425a;
         }
 
         /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
@@ -128,7 +128,7 @@ public final class Backoff {
     }
 
     public Backoff(long j, long j2, int i, boolean z2, Scheduler scheduler) {
-        Intrinsics3.checkNotNullParameter(scheduler, "scheduler");
+        C12238m.checkNotNullParameter(scheduler, "scheduler");
         this.minBackoffMs = j;
         this.maxBackoffMs = j2;
         this.failureThreshold = i;
@@ -162,7 +162,7 @@ public final class Backoff {
         this.current = Math.min(j + ((long) (((long) 2) * j * dRandom)), this.maxBackoffMs);
         if (callback != null && !this.isPending) {
             this.isPending = true;
-            this.scheduler.schedule(new AnonymousClass1(callback), this.current);
+            this.scheduler.schedule(new C68191(callback), this.current);
         }
         return this.current;
     }

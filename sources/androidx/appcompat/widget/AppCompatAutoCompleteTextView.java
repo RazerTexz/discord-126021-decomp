@@ -14,6 +14,7 @@ import androidx.annotation.DrawableRes;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.annotation.RestrictTo;
+import androidx.appcompat.C0051R;
 import androidx.appcompat.content.res.AppCompatResources;
 import androidx.core.view.TintableBackgroundView;
 import androidx.core.widget.TextViewCompat;
@@ -124,7 +125,7 @@ public class AppCompatAutoCompleteTextView extends AutoCompleteTextView implemen
     }
 
     public AppCompatAutoCompleteTextView(@NonNull Context context, @Nullable AttributeSet attributeSet) {
-        this(context, attributeSet, androidx.appcompat.R.attr.autoCompleteTextViewStyle);
+        this(context, attributeSet, C0051R.attr.autoCompleteTextViewStyle);
     }
 
     public AppCompatAutoCompleteTextView(@NonNull Context context, @Nullable AttributeSet attributeSet, int i) {

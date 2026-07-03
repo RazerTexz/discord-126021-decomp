@@ -8,8 +8,6 @@ import androidx.core.app.NotificationCompat;
 import androidx.core.os.EnvironmentCompat;
 import androidx.fragment.app.FragmentActivity;
 import androidx.fragment.app.FragmentManager;
-import b.a.a.a0.WidgetGiftAcceptDialog;
-import b.d.b.a.outline;
 import com.discord.BuildConfig;
 import com.discord.api.channel.Channel;
 import com.discord.api.channel.ChannelUtils;
@@ -23,8 +21,8 @@ import com.discord.utilities.SnowflakeUtils;
 import com.discord.utilities.channel.ChannelSelector;
 import com.discord.utilities.error.Error;
 import com.discord.utilities.intent.StaticChannelRoutes;
-import com.discord.utilities.rx.ObservableExtensionsKt;
-import com.discord.widgets.chat.input.MentionUtils;
+import com.discord.utilities.p501rx.ObservableExtensionsKt;
+import com.discord.widgets.chat.input.MentionUtilsKt;
 import com.discord.widgets.forums.ForumUtils;
 import com.discord.widgets.guild_role_subscriptions.RoleSubscriptionsLinkingUtil;
 import com.discord.widgets.guilds.join.WidgetGuildJoin;
@@ -36,16 +34,6 @@ import com.discord.widgets.tabs.NavigationTab;
 import com.discord.widgets.user.search.WidgetGlobalSearchDialog;
 import com.discord.widgets.user.usersheet.WidgetUserSheet;
 import com.discord.widgets.voice.fullscreen.WidgetCallFullscreen;
-import d0.Tuples;
-import d0.g0.StringNumberConversions;
-import d0.g0.Strings4;
-import d0.g0.StringsJVM;
-import d0.t.Collections2;
-import d0.t.Maps6;
-import d0.t._Collections;
-import d0.z.d.FunctionReferenceImpl;
-import d0.z.d.Intrinsics3;
-import d0.z.d.Lambda;
 import java.lang.ref.WeakReference;
 import java.util.List;
 import java.util.Map;
@@ -56,8 +44,20 @@ import kotlin.jvm.functions.Function3;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.reflect.KFunction;
 import kotlin.text.MatchResult;
-import rx.Observable;
-import rx.Subscription;
+import p007b.p008a.p009a.p011a0.C0805c;
+import p007b.p100d.p104b.p105a.C1643a;
+import p507d0.C12116o;
+import p507d0.p579g0.C12102s;
+import p507d0.p579g0.C12103t;
+import p507d0.p579g0.C12106w;
+import p507d0.p580t.C12136h0;
+import p507d0.p580t.C12147n;
+import p507d0.p580t.C12163u;
+import p507d0.p592z.p594d.AbstractC12240o;
+import p507d0.p592z.p594d.C12236k;
+import p507d0.p592z.p594d.C12238m;
+import p658rx.Observable;
+import p658rx.Subscription;
 
 /* JADX INFO: compiled from: RouteHandlers.kt */
 /* JADX INFO: loaded from: classes2.dex */
@@ -89,7 +89,7 @@ public final class RouteHandlers {
         }
 
         public AnalyticsMetadata(String str, Long l, Long l2) {
-            Intrinsics3.checkNotNullParameter(str, "type");
+            C12238m.checkNotNullParameter(str, "type");
             this.type = str;
             this.guildId = l;
             this.channelId = l2;
@@ -123,14 +123,14 @@ public final class RouteHandlers {
         }
     }
 
-    /* JADX INFO: renamed from: com.discord.utilities.intent.RouteHandlers$handleQuery$1, reason: invalid class name */
+    /* JADX INFO: renamed from: com.discord.utilities.intent.RouteHandlers$handleQuery$1 */
     /* JADX INFO: compiled from: RouteHandlers.kt */
-    public static final class AnonymousClass1 extends Lambda implements Function1<FragmentActivity, Boolean> {
+    public static final class C67851 extends AbstractC12240o implements Function1<FragmentActivity, Boolean> {
         public final /* synthetic */ String $query;
         public final /* synthetic */ String $queryMessageText;
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-        public AnonymousClass1(String str, String str2) {
+        public C67851(String str, String str2) {
             super(1);
             this.$queryMessageText = str;
             this.$query = str2;
@@ -143,27 +143,27 @@ public final class RouteHandlers {
 
         /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
         public final boolean invoke2(FragmentActivity fragmentActivity) {
-            Intrinsics3.checkNotNullParameter(fragmentActivity, "ctx");
+            C12238m.checkNotNullParameter(fragmentActivity, "ctx");
             if (this.$queryMessageText.length() > 0) {
                 WidgetIncomingShare.INSTANCE.launch(fragmentActivity, this.$queryMessageText, this.$query);
             } else {
                 WidgetGlobalSearchDialog.Companion companion = WidgetGlobalSearchDialog.INSTANCE;
                 FragmentManager supportFragmentManager = fragmentActivity.getSupportFragmentManager();
-                Intrinsics3.checkNotNullExpressionValue(supportFragmentManager, "ctx.supportFragmentManager");
+                C12238m.checkNotNullExpressionValue(supportFragmentManager, "ctx.supportFragmentManager");
                 companion.show(supportFragmentManager, this.$query);
             }
             return true;
         }
     }
 
-    /* JADX INFO: renamed from: com.discord.utilities.intent.RouteHandlers$selectFeature$1, reason: invalid class name */
+    /* JADX INFO: renamed from: com.discord.utilities.intent.RouteHandlers$selectFeature$1 */
     /* JADX INFO: compiled from: RouteHandlers.kt */
-    public static final class AnonymousClass1 extends Lambda implements Function1<FragmentActivity, Boolean> {
+    public static final class C67861 extends AbstractC12240o implements Function1<FragmentActivity, Boolean> {
         public final /* synthetic */ Map $settingMap;
         public final /* synthetic */ String $settingsSubPath;
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-        public AnonymousClass1(Map map, String str) {
+        public C67861(Map map, String str) {
             super(1);
             this.$settingMap = map;
             this.$settingsSubPath = str;
@@ -176,7 +176,7 @@ public final class RouteHandlers {
 
         /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
         public final boolean invoke2(FragmentActivity fragmentActivity) {
-            Intrinsics3.checkNotNullParameter(fragmentActivity, "ctx");
+            C12238m.checkNotNullParameter(fragmentActivity, "ctx");
             Function1 function1 = (Function1) this.$settingMap.get(this.$settingsSubPath);
             if (function1 == null) {
                 return true;
@@ -185,15 +185,15 @@ public final class RouteHandlers {
         }
     }
 
-    /* JADX INFO: renamed from: com.discord.utilities.intent.RouteHandlers$voiceConnect$1, reason: invalid class name */
+    /* JADX INFO: renamed from: com.discord.utilities.intent.RouteHandlers$voiceConnect$1 */
     /* JADX INFO: compiled from: RouteHandlers.kt */
-    public static final class AnonymousClass1 extends Lambda implements Function1<Channel, Unit> {
+    public static final class C67871 extends AbstractC12240o implements Function1<Channel, Unit> {
         public final /* synthetic */ long $channelId;
         public final /* synthetic */ boolean $isServicePermissionDeniedRedirect;
         public final /* synthetic */ WeakReference $weakContext;
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-        public AnonymousClass1(WeakReference weakReference, long j, boolean z2) {
+        public C67871(WeakReference weakReference, long j, boolean z2) {
             super(1);
             this.$weakContext = weakReference;
             this.$channelId = j;
@@ -203,16 +203,16 @@ public final class RouteHandlers {
         @Override // kotlin.jvm.functions.Function1
         public /* bridge */ /* synthetic */ Unit invoke(Channel channel) {
             invoke2(channel);
-            return Unit.a;
+            return Unit.f27425a;
         }
 
         /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
         public final void invoke2(Channel channel) {
             Context context = (Context) this.$weakContext.get();
             if (context != null) {
-                Intrinsics3.checkNotNullExpressionValue(context, "weakContext.get() ?: return@appSubscribe");
-                Intrinsics3.checkNotNullExpressionValue(channel, "channel");
-                if (ChannelUtils.B(channel)) {
+                C12238m.checkNotNullExpressionValue(context, "weakContext.get() ?: return@appSubscribe");
+                C12238m.checkNotNullExpressionValue(channel, "channel");
+                if (ChannelUtils.m7667B(channel)) {
                     return;
                 }
                 StoreStream.INSTANCE.getVoiceChannelSelected().selectVoiceChannel(this.$channelId);
@@ -221,57 +221,57 @@ public final class RouteHandlers {
         }
     }
 
-    /* JADX INFO: renamed from: com.discord.utilities.intent.RouteHandlers$wildCardMatcher$1, reason: invalid class name */
+    /* JADX INFO: renamed from: com.discord.utilities.intent.RouteHandlers$wildCardMatcher$1 */
     /* JADX INFO: compiled from: RouteHandlers.kt */
-    public static final class AnonymousClass1 extends Lambda implements Function1<String, KFunction<? extends AnalyticsMetadata>> {
-        public static final AnonymousClass1 INSTANCE = new AnonymousClass1();
+    public static final class C67881 extends AbstractC12240o implements Function1<String, KFunction<? extends AnalyticsMetadata>> {
+        public static final C67881 INSTANCE = new C67881();
 
-        /* JADX INFO: renamed from: com.discord.utilities.intent.RouteHandlers$wildCardMatcher$1$1, reason: invalid class name and collision with other inner class name */
+        /* JADX INFO: renamed from: com.discord.utilities.intent.RouteHandlers$wildCardMatcher$1$1, reason: invalid class name */
         /* JADX INFO: compiled from: RouteHandlers.kt */
-        public static final /* synthetic */ class C02171 extends FunctionReferenceImpl implements Function3<Uri, MatchResult, Context, AnalyticsMetadata> {
-            public C02171(RouteHandlers routeHandlers) {
+        public static final /* synthetic */ class AnonymousClass1 extends C12236k implements Function3<Uri, MatchResult, Context, AnalyticsMetadata> {
+            public AnonymousClass1(RouteHandlers routeHandlers) {
                 super(3, routeHandlers, RouteHandlers.class, "acceptGift", "acceptGift(Landroid/net/Uri;Lkotlin/text/MatchResult;Landroid/content/Context;)Lcom/discord/utilities/intent/RouteHandlers$AnalyticsMetadata;", 0);
             }
 
             @Override // kotlin.jvm.functions.Function3
             public final AnalyticsMetadata invoke(Uri uri, MatchResult matchResult, Context context) {
-                Intrinsics3.checkNotNullParameter(uri, "p1");
-                Intrinsics3.checkNotNullParameter(context, "p3");
+                C12238m.checkNotNullParameter(uri, "p1");
+                C12238m.checkNotNullParameter(context, "p3");
                 return ((RouteHandlers) this.receiver).acceptGift(uri, matchResult, context);
             }
         }
 
         /* JADX INFO: renamed from: com.discord.utilities.intent.RouteHandlers$wildCardMatcher$1$2, reason: invalid class name */
         /* JADX INFO: compiled from: RouteHandlers.kt */
-        public static final /* synthetic */ class AnonymousClass2 extends FunctionReferenceImpl implements Function3<Uri, MatchResult, Context, AnalyticsMetadata> {
+        public static final /* synthetic */ class AnonymousClass2 extends C12236k implements Function3<Uri, MatchResult, Context, AnalyticsMetadata> {
             public AnonymousClass2(RouteHandlers routeHandlers) {
                 super(3, routeHandlers, RouteHandlers.class, "useInvite", "useInvite(Landroid/net/Uri;Lkotlin/text/MatchResult;Landroid/content/Context;)Lcom/discord/utilities/intent/RouteHandlers$AnalyticsMetadata;", 0);
             }
 
             @Override // kotlin.jvm.functions.Function3
             public final AnalyticsMetadata invoke(Uri uri, MatchResult matchResult, Context context) {
-                Intrinsics3.checkNotNullParameter(uri, "p1");
-                Intrinsics3.checkNotNullParameter(context, "p3");
+                C12238m.checkNotNullParameter(uri, "p1");
+                C12238m.checkNotNullParameter(context, "p3");
                 return ((RouteHandlers) this.receiver).useInvite(uri, matchResult, context);
             }
         }
 
         /* JADX INFO: renamed from: com.discord.utilities.intent.RouteHandlers$wildCardMatcher$1$3, reason: invalid class name */
         /* JADX INFO: compiled from: RouteHandlers.kt */
-        public static final /* synthetic */ class AnonymousClass3 extends FunctionReferenceImpl implements Function3<Uri, MatchResult, Context, AnalyticsMetadata> {
+        public static final /* synthetic */ class AnonymousClass3 extends C12236k implements Function3<Uri, MatchResult, Context, AnalyticsMetadata> {
             public AnonymousClass3(RouteHandlers routeHandlers) {
                 super(3, routeHandlers, RouteHandlers.class, "useGuildTemplate", "useGuildTemplate(Landroid/net/Uri;Lkotlin/text/MatchResult;Landroid/content/Context;)Lcom/discord/utilities/intent/RouteHandlers$AnalyticsMetadata;", 0);
             }
 
             @Override // kotlin.jvm.functions.Function3
             public final AnalyticsMetadata invoke(Uri uri, MatchResult matchResult, Context context) {
-                Intrinsics3.checkNotNullParameter(uri, "p1");
-                Intrinsics3.checkNotNullParameter(context, "p3");
+                C12238m.checkNotNullParameter(uri, "p1");
+                C12238m.checkNotNullParameter(context, "p3");
                 return ((RouteHandlers) this.receiver).useGuildTemplate(uri, matchResult, context);
             }
         }
 
-        public AnonymousClass1() {
+        public C67881() {
             super(1);
         }
 
@@ -298,15 +298,15 @@ public final class RouteHandlers {
          */
         /* JADX WARN: Code restructure failed: missing block: B:27:?, code lost:
         
-            return new com.discord.utilities.intent.RouteHandlers.AnonymousClass1.C02171(com.discord.utilities.intent.RouteHandlers.INSTANCE);
+            return new com.discord.utilities.intent.RouteHandlers.C67881.AnonymousClass1(com.discord.utilities.intent.RouteHandlers.INSTANCE);
          */
         /* JADX WARN: Code restructure failed: missing block: B:28:?, code lost:
         
-            return new com.discord.utilities.intent.RouteHandlers.AnonymousClass1.AnonymousClass2(com.discord.utilities.intent.RouteHandlers.INSTANCE);
+            return new com.discord.utilities.intent.RouteHandlers.C67881.AnonymousClass2(com.discord.utilities.intent.RouteHandlers.INSTANCE);
          */
         /* JADX WARN: Code restructure failed: missing block: B:29:?, code lost:
         
-            return new com.discord.utilities.intent.RouteHandlers.AnonymousClass1.AnonymousClass3(com.discord.utilities.intent.RouteHandlers.INSTANCE);
+            return new com.discord.utilities.intent.RouteHandlers.C67881.AnonymousClass3(com.discord.utilities.intent.RouteHandlers.INSTANCE);
          */
         /* JADX WARN: Code restructure failed: missing block: B:8:0x0011, code lost:
         
@@ -345,27 +345,27 @@ public final class RouteHandlers {
     private final AnalyticsMetadata acceptGift(Uri uri, MatchResult matchResult, Context context) {
         String str;
         List<String> groupValues;
-        String str2 = (matchResult == null || (groupValues = matchResult.getGroupValues()) == null) ? null : (String) _Collections.last((List) groupValues);
+        String str2 = (matchResult == null || (groupValues = matchResult.getGroupValues()) == null) ? null : (String) C12163u.last((List) groupValues);
         String queryParameter = uri.getQueryParameter("source");
         if (queryParameter != null) {
-            Intrinsics3.checkNotNullExpressionValue(queryParameter, "it");
-            str = StringsJVM.isBlank(queryParameter) ^ true ? queryParameter : null;
+            C12238m.checkNotNullExpressionValue(queryParameter, "it");
+            str = C12103t.isBlank(queryParameter) ^ true ? queryParameter : null;
             if (str == null) {
                 str = StoreInviteSettings.LOCATION_DEEPLINK;
             }
         } else {
             str = StoreInviteSettings.LOCATION_DEEPLINK;
         }
-        Intrinsics3.checkNotNullExpressionValue(str, "uri.getQueryParameter(\"s…ettings.LOCATION_DEEPLINK");
-        if (str2 != null && (!StringsJVM.isBlank(str2))) {
-            WidgetGiftAcceptDialog.INSTANCE.a(str2, str, 0L);
+        C12238m.checkNotNullExpressionValue(str, "uri.getQueryParameter(\"s…ettings.LOCATION_DEEPLINK");
+        if (str2 != null && (!C12103t.isBlank(str2))) {
+            C0805c.INSTANCE.m107a(str2, str, 0L);
         }
         return new AnalyticsMetadata("gift", null, null, 6, null);
     }
 
     private final AnalyticsMetadata useGuildTemplate(Uri uri, MatchResult matchResult, Context context) {
         List<String> groupValues;
-        String str = (matchResult == null || (groupValues = matchResult.getGroupValues()) == null) ? null : (String) _Collections.last((List) groupValues);
+        String str = (matchResult == null || (groupValues = matchResult.getGroupValues()) == null) ? null : (String) C12163u.last((List) groupValues);
         if (str != null) {
             StoreStream.INSTANCE.getGuildTemplates().setDynamicLinkGuildTemplateCode(str);
         }
@@ -375,14 +375,14 @@ public final class RouteHandlers {
     /* JADX WARN: Code duplicated, block: B:20:0x003a  */
     private final AnalyticsMetadata useInvite(Uri uri, MatchResult matchResult, Context context) {
         List<String> groupValues;
-        String str = (matchResult == null || (groupValues = matchResult.getGroupValues()) == null) ? null : (String) _Collections.last((List) groupValues);
-        if (!(!Intrinsics3.areEqual(str, "invite"))) {
+        String str = (matchResult == null || (groupValues = matchResult.getGroupValues()) == null) ? null : (String) C12163u.last((List) groupValues);
+        if (!(!C12238m.areEqual(str, "invite"))) {
             str = null;
         }
         String queryParameter = uri.getQueryParameter("source");
         if (queryParameter != null) {
-            Intrinsics3.checkNotNullExpressionValue(queryParameter, "it");
-            if (!(!StringsJVM.isBlank(queryParameter))) {
+            C12238m.checkNotNullExpressionValue(queryParameter, "it");
+            if (!(!C12103t.isBlank(queryParameter))) {
                 queryParameter = null;
             }
             if (queryParameter == null) {
@@ -391,7 +391,7 @@ public final class RouteHandlers {
         } else {
             queryParameter = StoreInviteSettings.LOCATION_DEEPLINK;
         }
-        Intrinsics3.checkNotNullExpressionValue(queryParameter, "uri.getQueryParameter(\"s…        ?: inviteLocation");
+        C12238m.checkNotNullExpressionValue(queryParameter, "uri.getQueryParameter(\"s…        ?: inviteLocation");
         String queryParameter2 = uri.getQueryParameter("event");
         Long snowflake = queryParameter2 != null ? SnowflakeUtils.INSTANCE.toSnowflake(queryParameter2) : null;
         if (str != null) {
@@ -404,63 +404,63 @@ public final class RouteHandlers {
 
     public final AnalyticsMetadata authorize(Uri uri, MatchResult matchResult, Context context) {
         boolean zAreEqual;
-        Intrinsics3.checkNotNullParameter(uri, NotificationCompat.MessagingStyle.Message.KEY_DATA_URI);
-        Intrinsics3.checkNotNullParameter(context, "context");
+        C12238m.checkNotNullParameter(uri, NotificationCompat.MessagingStyle.Message.KEY_DATA_URI);
+        C12238m.checkNotNullParameter(context, "context");
         if (!(context instanceof Activity) || Build.VERSION.SDK_INT < 22) {
             zAreEqual = false;
         } else {
             Uri referrer = ((Activity) context).getReferrer();
-            zAreEqual = Intrinsics3.areEqual(referrer != null ? referrer.getAuthority() : null, BuildConfig.APPLICATION_ID);
+            zAreEqual = C12238m.areEqual(referrer != null ? referrer.getAuthority() : null, BuildConfig.APPLICATION_ID);
         }
         Uri uriBuild = uri.buildUpon().appendQueryParameter("internal_referrer", String.valueOf(zAreEqual)).build();
         StoreAuthentication authentication = StoreStream.INSTANCE.getAuthentication();
-        Intrinsics3.checkNotNullExpressionValue(uriBuild, "oAuthUri");
+        C12238m.checkNotNullExpressionValue(uriBuild, "oAuthUri");
         authentication.setOAuthUriSubject(uriBuild);
         return new AnalyticsMetadata("oauth2", null, null, 6, null);
     }
 
     public final AnalyticsMetadata handleQuery(Uri uri, MatchResult matchResult, Context context) {
         String str;
-        Intrinsics3.checkNotNullParameter(uri, NotificationCompat.MessagingStyle.Message.KEY_DATA_URI);
-        Intrinsics3.checkNotNullParameter(context, "context");
+        C12238m.checkNotNullParameter(uri, NotificationCompat.MessagingStyle.Message.KEY_DATA_URI);
+        C12238m.checkNotNullParameter(context, "context");
         String queryParameter = uri.getQueryParameter("type");
         String queryParameter2 = uri.getQueryParameter("channelName");
         String str2 = "";
         String str3 = queryParameter2 != null ? queryParameter2 : "";
-        Intrinsics3.checkNotNullExpressionValue(str3, "uri.getQueryParameter(\"channelName\") ?: \"\"");
+        C12238m.checkNotNullExpressionValue(str3, "uri.getQueryParameter(\"channelName\") ?: \"\"");
         String queryParameter3 = uri.getQueryParameter("serverName");
         if (queryParameter3 == null) {
             queryParameter3 = "";
         }
-        Intrinsics3.checkNotNullExpressionValue(queryParameter3, "uri.getQueryParameter(\"serverName\") ?: \"\"");
+        C12238m.checkNotNullExpressionValue(queryParameter3, "uri.getQueryParameter(\"serverName\") ?: \"\"");
         String queryParameter4 = uri.getQueryParameter("userName");
         if (queryParameter4 == null) {
             queryParameter4 = "";
         }
-        Intrinsics3.checkNotNullExpressionValue(queryParameter4, "uri.getQueryParameter(\"userName\") ?: \"\"");
+        C12238m.checkNotNullExpressionValue(queryParameter4, "uri.getQueryParameter(\"userName\") ?: \"\"");
         String queryParameter5 = uri.getQueryParameter("userNameAlt");
         if (queryParameter5 == null) {
             queryParameter5 = "";
         }
-        Intrinsics3.checkNotNullExpressionValue(queryParameter5, "uri.getQueryParameter(\"userNameAlt\") ?: \"\"");
+        C12238m.checkNotNullExpressionValue(queryParameter5, "uri.getQueryParameter(\"userNameAlt\") ?: \"\"");
         String queryParameter6 = uri.getQueryParameter("messageText");
         if (queryParameter6 == null) {
             queryParameter6 = "";
         }
-        Intrinsics3.checkNotNullExpressionValue(queryParameter6, "uri.getQueryParameter(\"messageText\") ?: \"\"");
+        C12238m.checkNotNullExpressionValue(queryParameter6, "uri.getQueryParameter(\"messageText\") ?: \"\"");
         if (queryParameter != null) {
             int iHashCode = queryParameter.hashCode();
             if (iHashCode != -905826493) {
                 if (iHashCode != 3599307) {
                     if (iHashCode == 738950403 && queryParameter.equals("channel")) {
-                        List listSplit$default = Strings4.split$default((CharSequence) str3, new String[]{" in "}, false, 0, 6, (Object) null);
-                        String str4 = (String) (Collections2.getLastIndex(listSplit$default) >= 0 ? listSplit$default.get(0) : "");
-                        String str5 = (String) (1 <= Collections2.getLastIndex(listSplit$default) ? listSplit$default.get(1) : "");
+                        List listSplit$default = C12106w.split$default((CharSequence) str3, new String[]{" in "}, false, 0, 6, (Object) null);
+                        String str4 = (String) (C12147n.getLastIndex(listSplit$default) >= 0 ? listSplit$default.get(0) : "");
+                        String str5 = (String) (1 <= C12147n.getLastIndex(listSplit$default) ? listSplit$default.get(1) : "");
                         if (str5.length() > 0) {
                             str2 = ' ' + str5;
                         }
-                        str = MentionUtils.CHANNELS_CHAR + str4 + str2;
-                        StoreStream.INSTANCE.getNavigation().launchNotice("DEEPLINK_QUERY", new AnonymousClass1(queryParameter6, str));
+                        str = MentionUtilsKt.CHANNELS_CHAR + str4 + str2;
+                        StoreStream.INSTANCE.getNavigation().launchNotice("DEEPLINK_QUERY", new C67851(queryParameter6, str));
                         return new AnalyticsMetadata("query", null, null, 6, null);
                     }
                 } else if (queryParameter.equals("user")) {
@@ -470,13 +470,13 @@ public final class RouteHandlers {
                     if (queryParameter4.length() == 0) {
                         return AnalyticsMetadata.INSTANCE.getUNKNOWN();
                     }
-                    str = MentionUtils.MENTIONS_CHAR + queryParameter4;
-                    StoreStream.INSTANCE.getNavigation().launchNotice("DEEPLINK_QUERY", new AnonymousClass1(queryParameter6, str));
+                    str = MentionUtilsKt.MENTIONS_CHAR + queryParameter4;
+                    StoreStream.INSTANCE.getNavigation().launchNotice("DEEPLINK_QUERY", new C67851(queryParameter6, str));
                     return new AnalyticsMetadata("query", null, null, 6, null);
                 }
             } else if (queryParameter.equals("server")) {
                 str = '*' + queryParameter3;
-                StoreStream.INSTANCE.getNavigation().launchNotice("DEEPLINK_QUERY", new AnonymousClass1(queryParameter6, str));
+                StoreStream.INSTANCE.getNavigation().launchNotice("DEEPLINK_QUERY", new C67851(queryParameter6, str));
                 return new AnalyticsMetadata("query", null, null, 6, null);
             }
         }
@@ -484,8 +484,8 @@ public final class RouteHandlers {
     }
 
     public final AnalyticsMetadata navigateToFriendsScreen(Uri uri, MatchResult matchResult, Context context) {
-        Intrinsics3.checkNotNullParameter(uri, NotificationCompat.MessagingStyle.Message.KEY_DATA_URI);
-        Intrinsics3.checkNotNullParameter(context, "context");
+        C12238m.checkNotNullParameter(uri, NotificationCompat.MessagingStyle.Message.KEY_DATA_URI);
+        C12238m.checkNotNullParameter(context, "context");
         StoreStream.INSTANCE.getTabsNavigation().selectTab(NavigationTab.FRIENDS, true);
         return new AnalyticsMetadata("friends", null, null, 6, null);
     }
@@ -495,8 +495,8 @@ public final class RouteHandlers {
         String str;
         List<String> groupValues2;
         String str2;
-        Intrinsics3.checkNotNullParameter(uri, NotificationCompat.MessagingStyle.Message.KEY_DATA_URI);
-        Intrinsics3.checkNotNullParameter(context, "context");
+        C12238m.checkNotNullParameter(uri, NotificationCompat.MessagingStyle.Message.KEY_DATA_URI);
+        C12238m.checkNotNullParameter(context, "context");
         long j = 0;
         long j2 = (matchResult == null || (groupValues2 = matchResult.getGroupValues()) == null || (str2 = groupValues2.get(1)) == null) ? 0L : Long.parseLong(str2);
         if (matchResult != null && (groupValues = matchResult.getGroupValues()) != null && (str = groupValues.get(2)) != null) {
@@ -521,9 +521,9 @@ public final class RouteHandlers {
 
     public final AnalyticsMetadata remoteAuth(Uri uri, MatchResult matchResult, Context context) {
         List<String> groupValues;
-        Intrinsics3.checkNotNullParameter(uri, NotificationCompat.MessagingStyle.Message.KEY_DATA_URI);
-        Intrinsics3.checkNotNullParameter(context, "context");
-        if (((matchResult == null || (groupValues = matchResult.getGroupValues()) == null) ? null : (String) _Collections.last((List) groupValues)) != null) {
+        C12238m.checkNotNullParameter(uri, NotificationCompat.MessagingStyle.Message.KEY_DATA_URI);
+        C12238m.checkNotNullParameter(context, "context");
+        if (((matchResult == null || (groupValues = matchResult.getGroupValues()) == null) ? null : (String) C12163u.last((List) groupValues)) != null) {
             WidgetQRScanner.INSTANCE.launch(context, true);
         }
         return new AnalyticsMetadata("remoteAuth", null, null, 6, null);
@@ -540,20 +540,20 @@ public final class RouteHandlers {
         Long longOrNull2;
         List<String> groupValues3;
         String str3;
-        Intrinsics3.checkNotNullParameter(context, "context");
-        Intrinsics3.checkNotNullParameter(uri, NotificationCompat.MessagingStyle.Message.KEY_DATA_URI);
-        if (matchResult == null || (groupValues3 = matchResult.getGroupValues()) == null || (str3 = (String) _Collections.getOrNull(groupValues3, 1)) == null) {
+        C12238m.checkNotNullParameter(context, "context");
+        C12238m.checkNotNullParameter(uri, NotificationCompat.MessagingStyle.Message.KEY_DATA_URI);
+        if (matchResult == null || (groupValues3 = matchResult.getGroupValues()) == null || (str3 = (String) C12163u.getOrNull(groupValues3, 1)) == null) {
             jLongValue = 0;
         } else {
-            Long longOrNull3 = Intrinsics3.areEqual(str3, "@me") ? 0L : StringNumberConversions.toLongOrNull(str3);
+            Long longOrNull3 = C12238m.areEqual(str3, "@me") ? 0L : C12102s.toLongOrNull(str3);
             if (longOrNull3 != null) {
                 jLongValue = longOrNull3.longValue();
             } else {
                 jLongValue = 0;
             }
         }
-        long jLongValue2 = (matchResult == null || (groupValues2 = matchResult.getGroupValues()) == null || (str2 = (String) _Collections.getOrNull(groupValues2, 2)) == null || (longOrNull2 = StringNumberConversions.toLongOrNull(str2)) == null) ? 0L : longOrNull2.longValue();
-        long jLongValue3 = (matchResult == null || (groupValues = matchResult.getGroupValues()) == null || (str = (String) _Collections.getOrNull(groupValues, 3)) == null || (longOrNull = StringNumberConversions.toLongOrNull(str)) == null) ? 0L : longOrNull.longValue();
+        long jLongValue2 = (matchResult == null || (groupValues2 = matchResult.getGroupValues()) == null || (str2 = (String) C12163u.getOrNull(groupValues2, 2)) == null || (longOrNull2 = C12102s.toLongOrNull(str2)) == null) ? 0L : longOrNull2.longValue();
+        long jLongValue3 = (matchResult == null || (groupValues = matchResult.getGroupValues()) == null || (str = (String) C12163u.getOrNull(groupValues, 3)) == null || (longOrNull = C12102s.toLongOrNull(str)) == null) ? 0L : longOrNull.longValue();
         StoreStream.Companion companion = StoreStream.INSTANCE;
         StoreTabsNavigation tabsNavigation = companion.getTabsNavigation();
         if (jLongValue2 == 0 && jLongValue3 == 0 && jLongValue != 0) {
@@ -576,9 +576,9 @@ public final class RouteHandlers {
         List<String> groupValues;
         String str;
         Long longOrNull;
-        Intrinsics3.checkNotNullParameter(uri, NotificationCompat.MessagingStyle.Message.KEY_DATA_URI);
-        Intrinsics3.checkNotNullParameter(context, "context");
-        if (matchResult != null && (groupValues = matchResult.getGroupValues()) != null && (str = (String) _Collections.last((List) groupValues)) != null && (longOrNull = StringNumberConversions.toLongOrNull(str)) != null) {
+        C12238m.checkNotNullParameter(uri, NotificationCompat.MessagingStyle.Message.KEY_DATA_URI);
+        C12238m.checkNotNullParameter(context, "context");
+        if (matchResult != null && (groupValues = matchResult.getGroupValues()) != null && (str = (String) C12163u.last((List) groupValues)) != null && (longOrNull = C12102s.toLongOrNull(str)) != null) {
             ChannelSelector.INSTANCE.getInstance().findAndSetDirectMessage(context, longOrNull.longValue());
         }
         return new AnalyticsMetadata("DM", null, null, 6, null);
@@ -587,14 +587,14 @@ public final class RouteHandlers {
     public final AnalyticsMetadata selectFeature(Uri uri, MatchResult matchResult, Context context) {
         String str;
         List<String> groupValues;
-        Intrinsics3.checkNotNullParameter(uri, NotificationCompat.MessagingStyle.Message.KEY_DATA_URI);
-        Intrinsics3.checkNotNullParameter(context, "context");
-        if (matchResult == null || (groupValues = matchResult.getGroupValues()) == null || (str = (String) _Collections.getOrNull(groupValues, 1)) == null) {
+        C12238m.checkNotNullParameter(uri, NotificationCompat.MessagingStyle.Message.KEY_DATA_URI);
+        C12238m.checkNotNullParameter(context, "context");
+        if (matchResult == null || (groupValues = matchResult.getGroupValues()) == null || (str = (String) C12163u.getOrNull(groupValues, 1)) == null) {
             str = "";
         }
         String str2 = str;
-        Map mapMapOf = Maps6.mapOf(Tuples.to("/account", RouteHandlers$selectFeature$settingMap$1.INSTANCE), Tuples.to("/nitro", RouteHandlers$selectFeature$settingMap$2.INSTANCE), Tuples.to("/voice", RouteHandlers$selectFeature$settingMap$3.INSTANCE), Tuples.to("/createServer", RouteHandlers$selectFeature$settingMap$4.INSTANCE), Tuples.to("/quickSwitcher", RouteHandlers$selectFeature$settingMap$5.INSTANCE), Tuples.to("/friends", RouteHandlers$selectFeature$settingMap$6.INSTANCE), Tuples.to("/mentions", RouteHandlers$selectFeature$settingMap$7.INSTANCE), Tuples.to("/settings", RouteHandlers$selectFeature$settingMap$8.INSTANCE), Tuples.to("/contactSync", RouteHandlers$selectFeature$settingMap$9.INSTANCE), Tuples.to("/addFriends", RouteHandlers$selectFeature$settingMap$10.INSTANCE), Tuples.to("/editProfile", RouteHandlers$selectFeature$settingMap$11.INSTANCE), Tuples.to("/voiceChannel", new RouteHandlers$selectFeature$settingMap$12(uri)), Tuples.to("/xboxLinkBeta", RouteHandlers$selectFeature$settingMap$13.INSTANCE));
-        StoreStream.INSTANCE.getNavigation().launchNotice(outline.w("ROUTING:", str2), new AnonymousClass1(mapMapOf, str2));
+        Map mapMapOf = C12136h0.mapOf(C12116o.m10073to("/account", RouteHandlers$selectFeature$settingMap$1.INSTANCE), C12116o.m10073to("/nitro", RouteHandlers$selectFeature$settingMap$2.INSTANCE), C12116o.m10073to("/voice", RouteHandlers$selectFeature$settingMap$3.INSTANCE), C12116o.m10073to("/createServer", RouteHandlers$selectFeature$settingMap$4.INSTANCE), C12116o.m10073to("/quickSwitcher", RouteHandlers$selectFeature$settingMap$5.INSTANCE), C12116o.m10073to("/friends", RouteHandlers$selectFeature$settingMap$6.INSTANCE), C12116o.m10073to("/mentions", RouteHandlers$selectFeature$settingMap$7.INSTANCE), C12116o.m10073to("/settings", RouteHandlers$selectFeature$settingMap$8.INSTANCE), C12116o.m10073to("/contactSync", RouteHandlers$selectFeature$settingMap$9.INSTANCE), C12116o.m10073to("/addFriends", RouteHandlers$selectFeature$settingMap$10.INSTANCE), C12116o.m10073to("/editProfile", RouteHandlers$selectFeature$settingMap$11.INSTANCE), C12116o.m10073to("/voiceChannel", new RouteHandlers$selectFeature$settingMap$12(uri)), C12116o.m10073to("/xboxLinkBeta", RouteHandlers$selectFeature$settingMap$13.INSTANCE));
+        StoreStream.INSTANCE.getNavigation().launchNotice(C1643a.m883w("ROUTING:", str2), new C67861(mapMapOf, str2));
         return mapMapOf.containsKey(str2) ? new AnalyticsMetadata(str2, null, null, 6, null) : AnalyticsMetadata.INSTANCE.getUNKNOWN();
     }
 
@@ -603,10 +603,10 @@ public final class RouteHandlers {
         String str;
         List<String> groupValues2;
         String str2;
-        Intrinsics3.checkNotNullParameter(uri, NotificationCompat.MessagingStyle.Message.KEY_DATA_URI);
-        Intrinsics3.checkNotNullParameter(context, "context");
+        C12238m.checkNotNullParameter(uri, NotificationCompat.MessagingStyle.Message.KEY_DATA_URI);
+        C12238m.checkNotNullParameter(context, "context");
         long j = (matchResult == null || (groupValues2 = matchResult.getGroupValues()) == null || (str2 = groupValues2.get(1)) == null) ? 0L : Long.parseLong(str2);
-        Long longOrNull = (matchResult == null || (groupValues = matchResult.getGroupValues()) == null || (str = groupValues.get(2)) == null) ? null : StringNumberConversions.toLongOrNull(str);
+        Long longOrNull = (matchResult == null || (groupValues = matchResult.getGroupValues()) == null || (str = groupValues.get(2)) == null) ? null : C12102s.toLongOrNull(str);
         StoreStream.INSTANCE.getLurking().startLurkingAndNavigate(j, longOrNull, context);
         return new AnalyticsMetadata("lurk", Long.valueOf(j), longOrNull);
     }
@@ -614,8 +614,8 @@ public final class RouteHandlers {
     public final AnalyticsMetadata selectPremiumGuild(Uri uri, MatchResult matchResult, Context context) {
         List<String> groupValues;
         String str;
-        Intrinsics3.checkNotNullParameter(uri, NotificationCompat.MessagingStyle.Message.KEY_DATA_URI);
-        Intrinsics3.checkNotNullParameter(context, "context");
+        C12238m.checkNotNullParameter(uri, NotificationCompat.MessagingStyle.Message.KEY_DATA_URI);
+        C12238m.checkNotNullParameter(context, "context");
         long j = (matchResult == null || (groupValues = matchResult.getGroupValues()) == null || (str = groupValues.get(1)) == null) ? 0L : Long.parseLong(str);
         if (j != 0) {
             WidgetGuildBoost.INSTANCE.create(context, j);
@@ -624,8 +624,8 @@ public final class RouteHandlers {
     }
 
     public final AnalyticsMetadata selectStaticChannel(Context context, Uri uri, MatchResult matchResult) {
-        Intrinsics3.checkNotNullParameter(context, "context");
-        Intrinsics3.checkNotNullParameter(uri, NotificationCompat.MessagingStyle.Message.KEY_DATA_URI);
+        C12238m.checkNotNullParameter(context, "context");
+        C12238m.checkNotNullParameter(uri, NotificationCompat.MessagingStyle.Message.KEY_DATA_URI);
         StaticChannelRoutes.WithGuild withGuildExtractStaticRoute = StaticChannelRoutes.INSTANCE.extractStaticRoute(uri);
         if (withGuildExtractStaticRoute == null) {
             return AnalyticsMetadata.INSTANCE.getUNKNOWN();
@@ -648,9 +648,9 @@ public final class RouteHandlers {
     public final AnalyticsMetadata selectUserProfile(Uri uri, MatchResult matchResult, Context context) {
         List<String> groupValues;
         String str;
-        Intrinsics3.checkNotNullParameter(uri, NotificationCompat.MessagingStyle.Message.KEY_DATA_URI);
-        Intrinsics3.checkNotNullParameter(context, "context");
-        Long longOrNull = (matchResult == null || (groupValues = matchResult.getGroupValues()) == null || (str = (String) _Collections.last((List) groupValues)) == null) ? null : StringNumberConversions.toLongOrNull(str);
+        C12238m.checkNotNullParameter(uri, NotificationCompat.MessagingStyle.Message.KEY_DATA_URI);
+        C12238m.checkNotNullParameter(context, "context");
+        Long longOrNull = (matchResult == null || (groupValues = matchResult.getGroupValues()) == null || (str = (String) C12163u.last((List) groupValues)) == null) ? null : C12102s.toLongOrNull(str);
         String queryParameter = uri.getQueryParameter("friend_token");
         if (longOrNull != null) {
             WidgetUserSheet.INSTANCE.enqueueNotice(longOrNull.longValue(), queryParameter);
@@ -662,28 +662,28 @@ public final class RouteHandlers {
         List<String> groupValues;
         String str;
         Long longOrNull;
-        Intrinsics3.checkNotNullParameter(uri, NotificationCompat.MessagingStyle.Message.KEY_DATA_URI);
-        Intrinsics3.checkNotNullParameter(context, "context");
-        long jLongValue = (matchResult == null || (groupValues = matchResult.getGroupValues()) == null || (str = groupValues.get(1)) == null || (longOrNull = StringNumberConversions.toLongOrNull(str)) == null) ? 0L : longOrNull.longValue();
+        C12238m.checkNotNullParameter(uri, NotificationCompat.MessagingStyle.Message.KEY_DATA_URI);
+        C12238m.checkNotNullParameter(context, "context");
+        long jLongValue = (matchResult == null || (groupValues = matchResult.getGroupValues()) == null || (str = groupValues.get(1)) == null || (longOrNull = C12102s.toLongOrNull(str)) == null) ? 0L : longOrNull.longValue();
         boolean booleanQueryParameter = uri.getBooleanQueryParameter("service_denied", false);
         WeakReference weakReference = new WeakReference(context);
-        Observable<R> observableG = StoreStream.INSTANCE.getChannels().observeChannel(jLongValue).y(ObservableExtensionsKt.AnonymousClass1.INSTANCE).G(ObservableExtensionsKt.AnonymousClass2.INSTANCE);
-        Intrinsics3.checkNotNullExpressionValue(observableG, "filter { it != null }.map { it!! }");
-        ObservableExtensionsKt.appSubscribe(ObservableExtensionsKt.ui(ObservableExtensionsKt.takeSingleUntilTimeout$default(observableG, 0L, false, 3, null)), (Class<?>) RouteHandlers.class, (58 & 2) != 0 ? null : null, (Function1<? super Subscription, Unit>) ((58 & 4) != 0 ? null : null), (Function1<? super Error, Unit>) ((58 & 8) != 0 ? null : null), (Function0<Unit>) ((58 & 16) != 0 ? ObservableExtensionsKt.AnonymousClass1.INSTANCE : null), (Function0<Unit>) ((58 & 32) != 0 ? ObservableExtensionsKt.AnonymousClass2.INSTANCE : null), new AnonymousClass1(weakReference, jLongValue, booleanQueryParameter));
+        Observable<R> observableM11083G = StoreStream.INSTANCE.getChannels().observeChannel(jLongValue).m11118y(ObservableExtensionsKt.C68871.INSTANCE).m11083G(ObservableExtensionsKt.C68882.INSTANCE);
+        C12238m.checkNotNullExpressionValue(observableM11083G, "filter { it != null }.map { it!! }");
+        ObservableExtensionsKt.appSubscribe(ObservableExtensionsKt.m8518ui(ObservableExtensionsKt.takeSingleUntilTimeout$default(observableM11083G, 0L, false, 3, null)), (Class<?>) RouteHandlers.class, (58 & 2) != 0 ? null : null, (Function1<? super Subscription, Unit>) ((58 & 4) != 0 ? null : null), (Function1<? super Error, Unit>) ((58 & 8) != 0 ? null : null), (Function0<Unit>) ((58 & 16) != 0 ? ObservableExtensionsKt.C68791.INSTANCE : null), (Function0<Unit>) ((58 & 32) != 0 ? ObservableExtensionsKt.C68802.INSTANCE : null), new C67871(weakReference, jLongValue, booleanQueryParameter));
         return new AnalyticsMetadata("voice", null, Long.valueOf(jLongValue), 2, null);
     }
 
     public final AnalyticsMetadata wildCardMatcher(Uri uri, MatchResult matchResult, Context context) {
         AnalyticsMetadata analyticsMetadata;
-        Intrinsics3.checkNotNullParameter(uri, NotificationCompat.MessagingStyle.Message.KEY_DATA_URI);
-        Intrinsics3.checkNotNullParameter(context, "context");
+        C12238m.checkNotNullParameter(uri, NotificationCompat.MessagingStyle.Message.KEY_DATA_URI);
+        C12238m.checkNotNullParameter(context, "context");
         List<String> pathSegments = uri.getPathSegments();
-        String str = pathSegments != null ? (String) _Collections.firstOrNull((List) pathSegments) : null;
+        String str = pathSegments != null ? (String) C12163u.firstOrNull((List) pathSegments) : null;
         String host = uri.getHost();
-        AnonymousClass1 anonymousClass1 = AnonymousClass1.INSTANCE;
-        KFunction<AnalyticsMetadata> kFunctionInvoke = anonymousClass1.invoke(str);
+        C67881 c67881 = C67881.INSTANCE;
+        KFunction<AnalyticsMetadata> kFunctionInvoke = c67881.invoke(str);
         if (kFunctionInvoke == null) {
-            kFunctionInvoke = anonymousClass1.invoke(host);
+            kFunctionInvoke = c67881.invoke(host);
         }
         return (kFunctionInvoke == null || (analyticsMetadata = (AnalyticsMetadata) ((Function3) kFunctionInvoke).invoke(uri, matchResult, context)) == null) ? AnalyticsMetadata.INSTANCE.getUNKNOWN() : analyticsMetadata;
     }

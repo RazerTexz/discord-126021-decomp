@@ -1,18 +1,18 @@
 package com.discord.stores;
 
-import co.discord.media_engine.DeviceDescription4;
-import d0.w.i.a.ContinuationImpl6;
-import d0.w.i.a.DebugMetadata;
-import d0.z.d.Intrinsics3;
+import co.discord.media_engine.VideoInputDeviceDescription;
 import kotlin.Unit;
 import kotlin.coroutines.Continuation;
 import kotlin.jvm.functions.Function2;
 import kotlinx.coroutines.CoroutineScope;
+import p507d0.p584w.p586i.p587a.AbstractC12194k;
+import p507d0.p584w.p586i.p587a.InterfaceC12188e;
+import p507d0.p592z.p594d.C12238m;
 
 /* JADX INFO: compiled from: StoreMediaEngine.kt */
 /* JADX INFO: loaded from: classes2.dex */
-@DebugMetadata(c = "com.discord.stores.StoreMediaEngine$awaitVideoInputDevicesNativeAsync$devices$1", f = "StoreMediaEngine.kt", l = {266}, m = "invokeSuspend")
-public final class StoreMediaEngine$awaitVideoInputDevicesNativeAsync$devices$1 extends ContinuationImpl6 implements Function2<CoroutineScope, Continuation<? super DeviceDescription4[]>, Object> {
+@InterfaceC12188e(m10084c = "com.discord.stores.StoreMediaEngine$awaitVideoInputDevicesNativeAsync$devices$1", m10085f = "StoreMediaEngine.kt", m10086l = {266}, m10087m = "invokeSuspend")
+public final class StoreMediaEngine$awaitVideoInputDevicesNativeAsync$devices$1 extends AbstractC12194k implements Function2<CoroutineScope, Continuation<? super VideoInputDeviceDescription[]>, Object> {
     public int label;
     public final /* synthetic */ StoreMediaEngine this$0;
 
@@ -22,15 +22,15 @@ public final class StoreMediaEngine$awaitVideoInputDevicesNativeAsync$devices$1 
         this.this$0 = storeMediaEngine;
     }
 
-    @Override // d0.w.i.a.ContinuationImpl
+    @Override // p507d0.p584w.p586i.p587a.AbstractC12184a
     public final Continuation<Unit> create(Object obj, Continuation<?> continuation) {
-        Intrinsics3.checkNotNullParameter(continuation, "completion");
+        C12238m.checkNotNullParameter(continuation, "completion");
         return new StoreMediaEngine$awaitVideoInputDevicesNativeAsync$devices$1(this.this$0, continuation);
     }
 
     @Override // kotlin.jvm.functions.Function2
-    public final Object invoke(CoroutineScope coroutineScope, Continuation<? super DeviceDescription4[]> continuation) {
-        return ((StoreMediaEngine$awaitVideoInputDevicesNativeAsync$devices$1) create(coroutineScope, continuation)).invokeSuspend(Unit.a);
+    public final Object invoke(CoroutineScope coroutineScope, Continuation<? super VideoInputDeviceDescription[]> continuation) {
+        return ((StoreMediaEngine$awaitVideoInputDevicesNativeAsync$devices$1) create(coroutineScope, continuation)).invokeSuspend(Unit.f27425a);
     }
 
     /* JADX WARN: Code duplicated, block: B:11:0x0027 A[RETURN] */
@@ -47,16 +47,16 @@ public final class StoreMediaEngine$awaitVideoInputDevicesNativeAsync$devices$1 
         	at jadx.core.utils.ErrorsCounter.error(ErrorsCounter.java:31)
         	at jadx.core.dex.attributes.nodes.NotificationAttrNode.addError(NotificationAttrNode.java:19)
         */
-    @Override // d0.w.i.a.ContinuationImpl
+    @Override // p507d0.p584w.p586i.p587a.AbstractC12184a
     public final java.lang.Object invokeSuspend(java.lang.Object r6) {
         /*
             r5 = this;
-            java.lang.Object r0 = d0.w.h.Intrinsics2.getCOROUTINE_SUSPENDED()
+            java.lang.Object r0 = p507d0.p584w.p585h.C12183c.getCOROUTINE_SUSPENDED()
             int r1 = r5.label
             r2 = 1
             if (r1 == 0) goto L19
             if (r1 != r2) goto L11
-            d0.Result3.throwOnFailure(r6)
+            p507d0.C12113l.throwOnFailure(r6)
             r1 = r0
             r0 = r5
             goto L2c
@@ -66,7 +66,7 @@ public final class StoreMediaEngine$awaitVideoInputDevicesNativeAsync$devices$1 
             r6.<init>(r0)
             throw r6
         L19:
-            d0.Result3.throwOnFailure(r6)
+            p507d0.C12113l.throwOnFailure(r6)
             r6 = r5
         L1d:
             com.discord.stores.StoreMediaEngine r1 = r6.this$0
@@ -80,7 +80,7 @@ public final class StoreMediaEngine$awaitVideoInputDevicesNativeAsync$devices$1 
             r6 = r1
             r1 = r4
         L2c:
-            co.discord.media_engine.VideoInputDeviceDescription[] r6 = (co.discord.media_engine.DeviceDescription4[]) r6
+            co.discord.media_engine.VideoInputDeviceDescription[] r6 = (co.discord.media_engine.VideoInputDeviceDescription[]) r6
             int r3 = r6.length
             if (r3 != 0) goto L33
             r3 = 1

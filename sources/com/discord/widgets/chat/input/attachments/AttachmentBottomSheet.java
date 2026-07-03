@@ -10,22 +10,18 @@ import android.view.ViewGroup;
 import android.widget.FrameLayout;
 import androidx.appcompat.widget.AppCompatTextView;
 import androidx.constraintlayout.widget.ConstraintLayout;
-import androidx.core.os.Bundle2;
+import androidx.core.os.BundleKt;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
-import b.d.b.a.outline;
-import b.f.g.a.a.Fresco;
-import b.f.g.a.a.PipelineDraweeControllerBuilder;
-import b.f.j.d.RotationOptions;
-import com.discord.R;
+import com.discord.C5419R;
 import com.discord.app.AppBottomSheet;
 import com.discord.databinding.WidgetAttachmentBottomSheetBinding;
 import com.discord.utilities.embed.EmbedResourceUtils;
 import com.discord.utilities.time.TimeUtils;
 import com.discord.utilities.view.extensions.ViewExtensions;
 import com.discord.utilities.viewbinding.FragmentViewBindingDelegate;
-import com.discord.utilities.viewbinding.FragmentViewBindingDelegate3;
-import com.discord.widgets.chat.input.MentionUtils;
+import com.discord.utilities.viewbinding.FragmentViewBindingDelegateKt;
+import com.discord.widgets.chat.input.MentionUtilsKt;
 import com.facebook.drawee.controller.AbstractDraweeController;
 import com.facebook.drawee.controller.ControllerListener;
 import com.facebook.drawee.view.SimpleDraweeView;
@@ -35,23 +31,27 @@ import com.google.android.material.checkbox.MaterialCheckBox;
 import com.google.android.material.textview.MaterialTextView;
 import com.lytefast.flexinput.model.Attachment;
 import com.lytefast.flexinput.model.Media;
-import d0.Tuples;
-import d0.z.d.Intrinsics3;
-import d0.z.d.Lambda;
-import d0.z.d.Reflection2;
 import java.util.Objects;
-import kotlin.Tuples2;
+import kotlin.Pair;
 import kotlin.Unit;
 import kotlin.jvm.functions.Function0;
 import kotlin.jvm.functions.Function1;
 import kotlin.jvm.functions.Function4;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.reflect.KProperty;
+import p007b.p100d.p104b.p105a.C1643a;
+import p007b.p109f.p132g.p133a.p134a.C1731b;
+import p007b.p109f.p132g.p133a.p134a.C1733d;
+import p007b.p109f.p161j.p169d.C1885f;
+import p507d0.C12116o;
+import p507d0.p592z.p594d.AbstractC12240o;
+import p507d0.p592z.p594d.C12216a0;
+import p507d0.p592z.p594d.C12238m;
 
 /* JADX INFO: compiled from: AttachmentBottomSheet.kt */
 /* JADX INFO: loaded from: classes2.dex */
 public final class AttachmentBottomSheet extends AppBottomSheet {
-    public static final /* synthetic */ KProperty[] $$delegatedProperties = {outline.d0(AttachmentBottomSheet.class, "binding", "getBinding()Lcom/discord/databinding/WidgetAttachmentBottomSheetBinding;", 0)};
+    public static final /* synthetic */ KProperty[] $$delegatedProperties = {C1643a.m846d0(AttachmentBottomSheet.class, "binding", "getBinding()Lcom/discord/databinding/WidgetAttachmentBottomSheetBinding;", 0)};
 
     /* JADX INFO: renamed from: Companion, reason: from kotlin metadata */
     public static final Companion INSTANCE = new Companion(null);
@@ -81,17 +81,17 @@ public final class AttachmentBottomSheet extends AppBottomSheet {
         }
 
         public final AttachmentBottomSheet show(FragmentManager fragmentManager, Attachment<? extends Object> attachment, Function0<Unit> onFileRemoved, Function1<? super Boolean, Unit> onMarkSpoiler, Function0<Unit> onDismissed) {
-            Intrinsics3.checkNotNullParameter(fragmentManager, "fragmentManager");
-            Intrinsics3.checkNotNullParameter(attachment, "attachment");
-            Intrinsics3.checkNotNullParameter(onFileRemoved, "onFileRemoved");
-            Intrinsics3.checkNotNullParameter(onMarkSpoiler, "onMarkSpoiler");
+            C12238m.checkNotNullParameter(fragmentManager, "fragmentManager");
+            C12238m.checkNotNullParameter(attachment, "attachment");
+            C12238m.checkNotNullParameter(onFileRemoved, "onFileRemoved");
+            C12238m.checkNotNullParameter(onMarkSpoiler, "onMarkSpoiler");
             AttachmentBottomSheet attachmentBottomSheet = new AttachmentBottomSheet();
-            attachmentBottomSheet.setArguments(Bundle2.bundleOf(Tuples.to("EXTRA_ATTACHMENT", attachment)));
+            attachmentBottomSheet.setArguments(BundleKt.bundleOf(C12116o.m10073to("EXTRA_ATTACHMENT", attachment)));
             attachmentBottomSheet.onFileRemoved = onFileRemoved;
             attachmentBottomSheet.onMarkSpoiler = onMarkSpoiler;
             attachmentBottomSheet.onDismissed = onDismissed;
             attachmentBottomSheet.isSpoiler = attachment.getSpoiler();
-            attachmentBottomSheet.show(fragmentManager, Reflection2.getOrCreateKotlinClass(AttachmentBottomSheet.class).toString());
+            attachmentBottomSheet.show(fragmentManager, C12216a0.getOrCreateKotlinClass(AttachmentBottomSheet.class).toString());
             return attachmentBottomSheet;
         }
 
@@ -100,17 +100,17 @@ public final class AttachmentBottomSheet extends AppBottomSheet {
         }
     }
 
-    /* JADX INFO: renamed from: com.discord.widgets.chat.input.attachments.AttachmentBottomSheet$onViewCreated$1, reason: invalid class name */
+    /* JADX INFO: renamed from: com.discord.widgets.chat.input.attachments.AttachmentBottomSheet$onViewCreated$1 */
     /* JADX INFO: compiled from: AttachmentBottomSheet.kt */
-    public static final class AnonymousClass1 extends Lambda implements Function4<Integer, Integer, Integer, Integer, Unit> {
-        public AnonymousClass1() {
+    public static final class C77591 extends AbstractC12240o implements Function4<Integer, Integer, Integer, Integer, Unit> {
+        public C77591() {
             super(4);
         }
 
         @Override // kotlin.jvm.functions.Function4
         public /* bridge */ /* synthetic */ Unit invoke(Integer num, Integer num2, Integer num3, Integer num4) {
             invoke(num.intValue(), num2.intValue(), num3.intValue(), num4.intValue());
-            return Unit.a;
+            return Unit.f27425a;
         }
 
         public final void invoke(int i, int i2, int i3, int i4) {
@@ -121,7 +121,7 @@ public final class AttachmentBottomSheet extends AppBottomSheet {
 
     public AttachmentBottomSheet() {
         super(false, 1, null);
-        this.binding = FragmentViewBindingDelegate3.viewBinding$default(this, AttachmentBottomSheet2.INSTANCE, null, 2, null);
+        this.binding = FragmentViewBindingDelegateKt.viewBinding$default(this, AttachmentBottomSheet$binding$2.INSTANCE, null, 2, null);
         this.draweeControllerListener = new ControllerListener<ImageInfo>() { // from class: com.discord.widgets.chat.input.attachments.AttachmentBottomSheet$draweeControllerListener$1
             @Override // com.facebook.drawee.controller.ControllerListener
             public void onFailure(String id2, Throwable throwable) {
@@ -147,15 +147,15 @@ public final class AttachmentBottomSheet extends AppBottomSheet {
             public void onFinalImageSet(String id2, ImageInfo imageInfo, Animatable animatable) {
                 String string;
                 this.this$0.setAttachmentImageInfo(imageInfo);
-                SimpleDraweeView simpleDraweeView = this.this$0.getBinding().f;
-                Intrinsics3.checkNotNullExpressionValue(simpleDraweeView, "binding.attachmentPreview");
+                SimpleDraweeView simpleDraweeView = this.this$0.getBinding().f15662f;
+                C12238m.checkNotNullExpressionValue(simpleDraweeView, "binding.attachmentPreview");
                 ViewGroup.LayoutParams layoutParams = simpleDraweeView.getLayoutParams();
                 Objects.requireNonNull(layoutParams, "null cannot be cast to non-null type androidx.constraintlayout.widget.ConstraintLayout.LayoutParams");
                 ConstraintLayout.LayoutParams layoutParams2 = (ConstraintLayout.LayoutParams) layoutParams;
                 if ((imageInfo != null ? imageInfo.getWidth() : 0) > (imageInfo != null ? imageInfo.getHeight() : 0)) {
                     StringBuilder sb = new StringBuilder();
                     sb.append(imageInfo != null ? Integer.valueOf(imageInfo.getWidth()) : null);
-                    sb.append(MentionUtils.EMOJIS_AND_STICKERS_CHAR);
+                    sb.append(MentionUtilsKt.EMOJIS_AND_STICKERS_CHAR);
                     sb.append(imageInfo != null ? Integer.valueOf(imageInfo.getHeight()) : null);
                     string = sb.toString();
                 } else {
@@ -186,7 +186,7 @@ public final class AttachmentBottomSheet extends AppBottomSheet {
 
     @Override // com.discord.app.AppBottomSheet
     public int getContentViewResId() {
-        return R.layout.widget_attachment_bottom_sheet;
+        return C5419R.layout.widget_attachment_bottom_sheet;
     }
 
     public final ControllerListener<ImageInfo> getDraweeControllerListener() {
@@ -196,28 +196,28 @@ public final class AttachmentBottomSheet extends AppBottomSheet {
     /* JADX WARN: Type inference failed for: r0v4, types: [REQUEST, com.facebook.imagepipeline.request.ImageRequest] */
     public final void loadAttachment() {
         Attachment<? extends Object> attachment = this.attachment;
-        ImageRequestBuilder imageRequestBuilderB = ImageRequestBuilder.b(attachment != null ? attachment.getUri() : null);
-        imageRequestBuilderB.e = RotationOptions.a;
-        PipelineDraweeControllerBuilder pipelineDraweeControllerBuilderA = Fresco.a();
-        pipelineDraweeControllerBuilderA.m = true;
-        SimpleDraweeView simpleDraweeView = getBinding().f;
-        Intrinsics3.checkNotNullExpressionValue(simpleDraweeView, "binding.attachmentPreview");
-        pipelineDraweeControllerBuilderA.n = simpleDraweeView.getController();
-        pipelineDraweeControllerBuilderA.h = imageRequestBuilderB.a();
-        AbstractDraweeController abstractDraweeControllerA = pipelineDraweeControllerBuilderA.a();
-        abstractDraweeControllerA.f(this.draweeControllerListener);
-        SimpleDraweeView simpleDraweeView2 = getBinding().f;
-        Intrinsics3.checkNotNullExpressionValue(simpleDraweeView2, "binding.attachmentPreview");
-        simpleDraweeView2.setController(abstractDraweeControllerA);
+        ImageRequestBuilder imageRequestBuilderM8723b = ImageRequestBuilder.m8723b(attachment != null ? attachment.getUri() : null);
+        imageRequestBuilderM8723b.f19616e = C1885f.f3721a;
+        C1733d c1733dM1037a = C1731b.m1037a();
+        c1733dM1037a.f19489m = true;
+        SimpleDraweeView simpleDraweeView = getBinding().f15662f;
+        C12238m.checkNotNullExpressionValue(simpleDraweeView, "binding.attachmentPreview");
+        c1733dM1037a.f19490n = simpleDraweeView.getController();
+        c1733dM1037a.f19484h = imageRequestBuilderM8723b.m8724a();
+        AbstractDraweeController abstractDraweeControllerM8667a = c1733dM1037a.m8667a();
+        abstractDraweeControllerM8667a.m8656f(this.draweeControllerListener);
+        SimpleDraweeView simpleDraweeView2 = getBinding().f15662f;
+        C12238m.checkNotNullExpressionValue(simpleDraweeView2, "binding.attachmentPreview");
+        simpleDraweeView2.setController(abstractDraweeControllerM8667a);
     }
 
     public final void markSpoiler(boolean spoiler) {
         this.isSpoiler = spoiler;
-        MaterialCheckBox materialCheckBox = getBinding().e;
-        Intrinsics3.checkNotNullExpressionValue(materialCheckBox, "binding.attachmentMarkSpoilerCheckbox");
+        MaterialCheckBox materialCheckBox = getBinding().f15661e;
+        C12238m.checkNotNullExpressionValue(materialCheckBox, "binding.attachmentMarkSpoilerCheckbox");
         materialCheckBox.setChecked(spoiler);
-        FrameLayout frameLayout = getBinding().h;
-        Intrinsics3.checkNotNullExpressionValue(frameLayout, "binding.attachmentSpoilerCover");
+        FrameLayout frameLayout = getBinding().f15664h;
+        C12238m.checkNotNullExpressionValue(frameLayout, "binding.attachmentSpoilerCover");
         frameLayout.setVisibility(spoiler ? 0 : 8);
     }
 
@@ -229,7 +229,7 @@ public final class AttachmentBottomSheet extends AppBottomSheet {
 
     @Override // androidx.fragment.app.DialogFragment, android.content.DialogInterface.OnDismissListener
     public void onDismiss(DialogInterface dialog) {
-        Intrinsics3.checkNotNullParameter(dialog, "dialog");
+        C12238m.checkNotNullParameter(dialog, "dialog");
         super.onDismiss(dialog);
         this.onFileRemoved = null;
         this.onMarkSpoiler = null;
@@ -248,39 +248,39 @@ public final class AttachmentBottomSheet extends AppBottomSheet {
     @Override // com.discord.app.AppBottomSheet, androidx.fragment.app.Fragment
     public void onViewCreated(View view, Bundle savedInstanceState) {
         CharSequence string;
-        Intrinsics3.checkNotNullParameter(view, "view");
+        C12238m.checkNotNullParameter(view, "view");
         super.onViewCreated(view, savedInstanceState);
-        AppCompatTextView appCompatTextView = getBinding().c;
-        Intrinsics3.checkNotNullExpressionValue(appCompatTextView, "binding.attachmentFilename");
+        AppCompatTextView appCompatTextView = getBinding().f15659c;
+        C12238m.checkNotNullExpressionValue(appCompatTextView, "binding.attachmentFilename");
         Attachment<? extends Object> attachment = this.attachment;
         appCompatTextView.setText(attachment != null ? attachment.getDisplayName() : null);
-        SimpleDraweeView simpleDraweeView = getBinding().f;
-        Intrinsics3.checkNotNullExpressionValue(simpleDraweeView, "binding.attachmentPreview");
-        ViewExtensions.addOnSizeChangedListener(simpleDraweeView, new AnonymousClass1());
+        SimpleDraweeView simpleDraweeView = getBinding().f15662f;
+        C12238m.checkNotNullExpressionValue(simpleDraweeView, "binding.attachmentPreview");
+        ViewExtensions.addOnSizeChangedListener(simpleDraweeView, new C77591());
         Attachment<? extends Object> attachment2 = this.attachment;
         if (!(attachment2 instanceof Media)) {
             attachment2 = null;
         }
         Media media = (Media) attachment2;
-        Long l = media != null ? media.k : null;
-        MaterialTextView materialTextView = getBinding().f2227b;
-        Intrinsics3.checkNotNullExpressionValue(materialTextView, "binding.attachmentDuration");
+        Long l = media != null ? media.f22083k : null;
+        MaterialTextView materialTextView = getBinding().f15658b;
+        C12238m.checkNotNullExpressionValue(materialTextView, "binding.attachmentDuration");
         materialTextView.setVisibility(l != null ? 0 : 8);
         if (l != null) {
             long jLongValue = l.longValue();
-            MaterialTextView materialTextView2 = getBinding().f2227b;
-            Intrinsics3.checkNotNullExpressionValue(materialTextView2, "binding.attachmentDuration");
+            MaterialTextView materialTextView2 = getBinding().f15658b;
+            C12238m.checkNotNullExpressionValue(materialTextView2, "binding.attachmentDuration");
             if (jLongValue > 0) {
                 string = TimeUtils.toFriendlyStringSimple$default(TimeUtils.INSTANCE, jLongValue, null, null, 6, null);
             } else {
                 Context context = getContext();
-                string = context != null ? context.getString(R.string.video) : null;
+                string = context != null ? context.getString(C5419R.string.video) : null;
             }
             materialTextView2.setText(string);
         }
         markSpoiler(this.isSpoiler);
         loadAttachment();
-        getBinding().g.setOnClickListener(new View.OnClickListener() { // from class: com.discord.widgets.chat.input.attachments.AttachmentBottomSheet.onViewCreated.3
+        getBinding().f15663g.setOnClickListener(new View.OnClickListener() { // from class: com.discord.widgets.chat.input.attachments.AttachmentBottomSheet.onViewCreated.3
             @Override // android.view.View.OnClickListener
             public final void onClick(View view2) {
                 Function0 function0 = AttachmentBottomSheet.this.onFileRemoved;
@@ -289,7 +289,7 @@ public final class AttachmentBottomSheet extends AppBottomSheet {
                 AttachmentBottomSheet.this.dismiss();
             }
         });
-        getBinding().d.setOnClickListener(new View.OnClickListener() { // from class: com.discord.widgets.chat.input.attachments.AttachmentBottomSheet.onViewCreated.4
+        getBinding().f15660d.setOnClickListener(new View.OnClickListener() { // from class: com.discord.widgets.chat.input.attachments.AttachmentBottomSheet.onViewCreated.4
             @Override // android.view.View.OnClickListener
             public final void onClick(View view2) {
                 boolean z2 = !AttachmentBottomSheet.this.isSpoiler;
@@ -299,7 +299,7 @@ public final class AttachmentBottomSheet extends AppBottomSheet {
                 }
             }
         });
-        setPeekHeightBottomView(getBinding().g);
+        setPeekHeightBottomView(getBinding().f15663g);
     }
 
     public final void setAttachment(Attachment<? extends Object> attachment) {
@@ -325,15 +325,15 @@ public final class AttachmentBottomSheet extends AppBottomSheet {
         int height = imageInfo.getHeight();
         EmbedResourceUtils embedResourceUtils = EmbedResourceUtils.INSTANCE;
         Resources resources = getResources();
-        Intrinsics3.checkNotNullExpressionValue(resources, "resources");
-        Tuples2 tuples2CalculateScaledSize = embedResourceUtils.calculateScaledSize(width, height, iIntValue, iIntValue, resources, (32 & 32) != 0 ? 0 : 0);
-        FrameLayout frameLayout = getBinding().h;
-        Intrinsics3.checkNotNullExpressionValue(frameLayout, "binding.attachmentSpoilerCover");
+        C12238m.checkNotNullExpressionValue(resources, "resources");
+        Pair pairCalculateScaledSize = embedResourceUtils.calculateScaledSize(width, height, iIntValue, iIntValue, resources, (32 & 32) != 0 ? 0 : 0);
+        FrameLayout frameLayout = getBinding().f15664h;
+        C12238m.checkNotNullExpressionValue(frameLayout, "binding.attachmentSpoilerCover");
         ViewGroup.LayoutParams layoutParams = frameLayout.getLayoutParams();
         Objects.requireNonNull(layoutParams, "null cannot be cast to non-null type androidx.constraintlayout.widget.ConstraintLayout.LayoutParams");
         ConstraintLayout.LayoutParams layoutParams2 = (ConstraintLayout.LayoutParams) layoutParams;
-        ((ViewGroup.MarginLayoutParams) layoutParams2).width = ((Number) tuples2CalculateScaledSize.getFirst()).intValue();
-        ((ViewGroup.MarginLayoutParams) layoutParams2).height = ((Number) tuples2CalculateScaledSize.getSecond()).intValue();
+        ((ViewGroup.MarginLayoutParams) layoutParams2).width = ((Number) pairCalculateScaledSize.getFirst()).intValue();
+        ((ViewGroup.MarginLayoutParams) layoutParams2).height = ((Number) pairCalculateScaledSize.getSecond()).intValue();
         frameLayout.setLayoutParams(layoutParams2);
     }
 }

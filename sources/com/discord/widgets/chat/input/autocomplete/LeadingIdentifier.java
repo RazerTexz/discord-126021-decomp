@@ -1,17 +1,17 @@
 package com.discord.widgets.chat.input.autocomplete;
 
-import com.discord.widgets.chat.AutocompleteUtils;
-import com.discord.widgets.chat.AutocompleteUtils2;
-import com.discord.widgets.chat.input.MentionUtils;
+import com.discord.widgets.chat.AutocompleteSelectionTypes;
+import com.discord.widgets.chat.AutocompleteTypes;
+import com.discord.widgets.chat.input.MentionUtilsKt;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 
 /* JADX INFO: compiled from: Autocompletable.kt */
 /* JADX INFO: loaded from: classes2.dex */
 public enum LeadingIdentifier {
-    APP_COMMAND(Character.valueOf(MentionUtils.SLASH_CHAR)),
-    EMOJI_AND_STICKERS(Character.valueOf(MentionUtils.EMOJIS_AND_STICKERS_CHAR)),
-    CHANNELS(Character.valueOf(MentionUtils.CHANNELS_CHAR)),
-    MENTION(Character.valueOf(MentionUtils.MENTIONS_CHAR)),
+    APP_COMMAND(Character.valueOf(MentionUtilsKt.SLASH_CHAR)),
+    EMOJI_AND_STICKERS(Character.valueOf(MentionUtilsKt.EMOJIS_AND_STICKERS_CHAR)),
+    CHANNELS(Character.valueOf(MentionUtilsKt.CHANNELS_CHAR)),
+    MENTION(Character.valueOf(MentionUtilsKt.MENTIONS_CHAR)),
     NONE(null);
 
 

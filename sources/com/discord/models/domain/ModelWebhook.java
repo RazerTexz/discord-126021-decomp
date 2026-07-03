@@ -1,8 +1,8 @@
 package com.discord.models.domain;
 
-import b.d.b.a.outline;
 import com.discord.models.domain.Model;
 import java.io.IOException;
+import p007b.p100d.p104b.p105a.C1643a;
 
 /* JADX INFO: loaded from: classes.dex */
 public class ModelWebhook implements Model {
@@ -10,8 +10,8 @@ public class ModelWebhook implements Model {
     private long channelId;
     private long guildId;
 
-    /* JADX INFO: renamed from: id, reason: collision with root package name */
-    private long f2737id;
+    /* JADX INFO: renamed from: id */
+    private long f18586id;
     private String name;
 
     @Override // com.discord.models.domain.Model
@@ -29,7 +29,7 @@ public class ModelWebhook implements Model {
                 this.guildId = jsonReader.nextLong(this.guildId);
                 break;
             case "id":
-                this.f2737id = jsonReader.nextLong(this.f2737id);
+                this.f18586id = jsonReader.nextLong(this.f18586id);
                 break;
             case "name":
                 this.name = jsonReader.nextString(this.name);
@@ -78,7 +78,7 @@ public class ModelWebhook implements Model {
     }
 
     public long getId() {
-        return this.f2737id;
+        return this.f18586id;
     }
 
     public String getName() {
@@ -97,17 +97,17 @@ public class ModelWebhook implements Model {
     }
 
     public String toString() {
-        StringBuilder sbU = outline.U("ModelWebhook(avatar=");
-        sbU.append(getAvatar());
-        sbU.append(", name=");
-        sbU.append(getName());
-        sbU.append(", channelId=");
-        sbU.append(getChannelId());
-        sbU.append(", guildId=");
-        sbU.append(getGuildId());
-        sbU.append(", id=");
-        sbU.append(getId());
-        sbU.append(")");
-        return sbU.toString();
+        StringBuilder sbM833U = C1643a.m833U("ModelWebhook(avatar=");
+        sbM833U.append(getAvatar());
+        sbM833U.append(", name=");
+        sbM833U.append(getName());
+        sbM833U.append(", channelId=");
+        sbM833U.append(getChannelId());
+        sbM833U.append(", guildId=");
+        sbM833U.append(getGuildId());
+        sbM833U.append(", id=");
+        sbM833U.append(getId());
+        sbM833U.append(")");
+        return sbM833U.toString();
     }
 }

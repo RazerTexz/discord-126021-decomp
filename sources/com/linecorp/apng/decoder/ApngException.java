@@ -1,10 +1,10 @@
 package com.linecorp.apng.decoder;
 
-import b.d.b.a.outline;
-import d0.z.d.Intrinsics3;
 import java.util.NoSuchElementException;
 import kotlin.NoWhenBranchMatchedException;
 import kotlin.jvm.internal.DefaultConstructorMarker;
+import p007b.p100d.p104b.p105a.C1643a;
+import p507d0.p592z.p594d.C12238m;
 
 /* JADX INFO: compiled from: ApngException.kt */
 /* JADX INFO: loaded from: classes3.dex */
@@ -104,10 +104,10 @@ public final class ApngException extends Exception {
             case ERR_UNSUPPORTED_TYPE:
                 return "Unsupported image type.";
             case ERR_WITH_CHILD_EXCEPTION:
-                StringBuilder sbU = outline.U("Failed with sub exception : ");
+                StringBuilder sbM833U = C1643a.m833U("Failed with sub exception : ");
                 Throwable cause = getCause();
-                sbU.append(cause != null ? cause.getMessage() : null);
-                return sbU.toString();
+                sbM833U.append(cause != null ? cause.getMessage() : null);
+                return sbM833U.toString();
             default:
                 throw new NoWhenBranchMatchedException();
         }
@@ -116,13 +116,13 @@ public final class ApngException extends Exception {
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public ApngException(ErrorCode errorCode, Throwable th) {
         super(th);
-        Intrinsics3.checkNotNullParameter(errorCode, "errorCode");
+        C12238m.checkNotNullParameter(errorCode, "errorCode");
         this.errorCode = errorCode;
     }
 
     /* JADX WARN: 'this' call moved to the top of the method (can break code semantics) */
     public ApngException(Throwable th) {
         this(ErrorCode.ERR_WITH_CHILD_EXCEPTION, th);
-        Intrinsics3.checkNotNullParameter(th, "throwable");
+        C12238m.checkNotNullParameter(th, "throwable");
     }
 }

@@ -1,25 +1,25 @@
 package com.discord.stores;
 
-import a0.a.a.b;
 import androidx.core.app.NotificationCompat;
 import androidx.recyclerview.widget.LinearLayoutManager;
-import b.d.b.a.outline;
 import com.discord.models.message.Message;
 import com.discord.models.user.User;
 import com.discord.stores.updates.ObservationDeck;
-import com.discord.stores.updates.ObservationDeck4;
-import com.discord.utilities.rx.ObservableExtensionsKt;
+import com.discord.stores.updates.ObservationDeckProvider;
+import com.discord.utilities.p501rx.ObservableExtensionsKt;
 import com.discord.utilities.user.UserUtils;
-import d0.t.Collections2;
-import d0.z.d.Intrinsics3;
-import d0.z.d.Lambda;
 import java.util.ArrayList;
 import java.util.List;
 import kotlin.Unit;
 import kotlin.jvm.functions.Function0;
 import kotlin.jvm.internal.DefaultConstructorMarker;
-import rx.Observable;
-import rx.subjects.PublishSubject;
+import p001a0.p002a.p003a.C0002b;
+import p007b.p100d.p104b.p105a.C1643a;
+import p507d0.p580t.C12147n;
+import p507d0.p592z.p594d.AbstractC12240o;
+import p507d0.p592z.p594d.C12238m;
+import p658rx.Observable;
+import p658rx.subjects.PublishSubject;
 
 /* JADX INFO: compiled from: StoreChat.kt */
 /* JADX INFO: loaded from: classes2.dex */
@@ -38,8 +38,8 @@ public final class StoreChat extends StoreV2 {
         private final Message message;
 
         public EditingMessage(Message message, CharSequence charSequence) {
-            Intrinsics3.checkNotNullParameter(message, "message");
-            Intrinsics3.checkNotNullParameter(charSequence, "content");
+            C12238m.checkNotNullParameter(message, "message");
+            C12238m.checkNotNullParameter(charSequence, "content");
             this.message = message;
             this.content = charSequence;
         }
@@ -65,8 +65,8 @@ public final class StoreChat extends StoreV2 {
         }
 
         public final EditingMessage copy(Message message, CharSequence content) {
-            Intrinsics3.checkNotNullParameter(message, "message");
-            Intrinsics3.checkNotNullParameter(content, "content");
+            C12238m.checkNotNullParameter(message, "message");
+            C12238m.checkNotNullParameter(content, "content");
             return new EditingMessage(message, content);
         }
 
@@ -78,7 +78,7 @@ public final class StoreChat extends StoreV2 {
                 return false;
             }
             EditingMessage editingMessage = (EditingMessage) other;
-            return Intrinsics3.areEqual(this.message, editingMessage.message) && Intrinsics3.areEqual(this.content, editingMessage.content);
+            return C12238m.areEqual(this.message, editingMessage.message) && C12238m.areEqual(this.content, editingMessage.content);
         }
 
         public final CharSequence getContent() {
@@ -97,10 +97,10 @@ public final class StoreChat extends StoreV2 {
         }
 
         public String toString() {
-            StringBuilder sbU = outline.U("EditingMessage(message=");
-            sbU.append(this.message);
-            sbU.append(", content=");
-            return outline.E(sbU, this.content, ")");
+            StringBuilder sbM833U = C1643a.m833U("EditingMessage(message=");
+            sbM833U.append(this.message);
+            sbM833U.append(", content=");
+            return C1643a.m817E(sbM833U, this.content, ")");
         }
     }
 
@@ -114,7 +114,7 @@ public final class StoreChat extends StoreV2 {
             /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
             public AppendChatText(String str) {
                 super(null);
-                Intrinsics3.checkNotNullParameter(str, NotificationCompat.MessagingStyle.Message.KEY_TEXT);
+                C12238m.checkNotNullParameter(str, NotificationCompat.MessagingStyle.Message.KEY_TEXT);
                 this.text = str;
             }
 
@@ -131,13 +131,13 @@ public final class StoreChat extends StoreV2 {
             }
 
             public final AppendChatText copy(String text) {
-                Intrinsics3.checkNotNullParameter(text, NotificationCompat.MessagingStyle.Message.KEY_TEXT);
+                C12238m.checkNotNullParameter(text, NotificationCompat.MessagingStyle.Message.KEY_TEXT);
                 return new AppendChatText(text);
             }
 
             public boolean equals(Object other) {
                 if (this != other) {
-                    return (other instanceof AppendChatText) && Intrinsics3.areEqual(this.text, ((AppendChatText) other).text);
+                    return (other instanceof AppendChatText) && C12238m.areEqual(this.text, ((AppendChatText) other).text);
                 }
                 return true;
             }
@@ -155,7 +155,7 @@ public final class StoreChat extends StoreV2 {
             }
 
             public String toString() {
-                return outline.J(outline.U("AppendChatText(text="), this.text, ")");
+                return C1643a.m822J(C1643a.m833U("AppendChatText(text="), this.text, ")");
             }
         }
 
@@ -166,7 +166,7 @@ public final class StoreChat extends StoreV2 {
             /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
             public ReplaceChatText(String str) {
                 super(null);
-                Intrinsics3.checkNotNullParameter(str, NotificationCompat.MessagingStyle.Message.KEY_TEXT);
+                C12238m.checkNotNullParameter(str, NotificationCompat.MessagingStyle.Message.KEY_TEXT);
                 this.text = str;
             }
 
@@ -183,13 +183,13 @@ public final class StoreChat extends StoreV2 {
             }
 
             public final ReplaceChatText copy(String text) {
-                Intrinsics3.checkNotNullParameter(text, NotificationCompat.MessagingStyle.Message.KEY_TEXT);
+                C12238m.checkNotNullParameter(text, NotificationCompat.MessagingStyle.Message.KEY_TEXT);
                 return new ReplaceChatText(text);
             }
 
             public boolean equals(Object other) {
                 if (this != other) {
-                    return (other instanceof ReplaceChatText) && Intrinsics3.areEqual(this.text, ((ReplaceChatText) other).text);
+                    return (other instanceof ReplaceChatText) && C12238m.areEqual(this.text, ((ReplaceChatText) other).text);
                 }
                 return true;
             }
@@ -207,7 +207,7 @@ public final class StoreChat extends StoreV2 {
             }
 
             public String toString() {
-                return outline.J(outline.U("ReplaceChatText(text="), this.text, ")");
+                return C1643a.m822J(C1643a.m833U("ReplaceChatText(text="), this.text, ")");
             }
         }
 
@@ -219,10 +219,10 @@ public final class StoreChat extends StoreV2 {
         }
     }
 
-    /* JADX INFO: renamed from: com.discord.stores.StoreChat$observeEditingMessage$1, reason: invalid class name */
+    /* JADX INFO: renamed from: com.discord.stores.StoreChat$observeEditingMessage$1 */
     /* JADX INFO: compiled from: StoreChat.kt */
-    public static final class AnonymousClass1 extends Lambda implements Function0<EditingMessage> {
-        public AnonymousClass1() {
+    public static final class C58401 extends AbstractC12240o implements Function0<EditingMessage> {
+        public C58401() {
             super(0);
         }
 
@@ -233,10 +233,10 @@ public final class StoreChat extends StoreV2 {
         }
     }
 
-    /* JADX INFO: renamed from: com.discord.stores.StoreChat$observeExpandedBlockedMessageIds$1, reason: invalid class name */
+    /* JADX INFO: renamed from: com.discord.stores.StoreChat$observeExpandedBlockedMessageIds$1 */
     /* JADX INFO: compiled from: StoreChat.kt */
-    public static final class AnonymousClass1 extends Lambda implements Function0<List<? extends Long>> {
-        public AnonymousClass1() {
+    public static final class C58411 extends AbstractC12240o implements Function0<List<? extends Long>> {
+        public C58411() {
             super(0);
         }
 
@@ -246,10 +246,10 @@ public final class StoreChat extends StoreV2 {
         }
     }
 
-    /* JADX INFO: renamed from: com.discord.stores.StoreChat$observeInteractionState$1, reason: invalid class name */
+    /* JADX INFO: renamed from: com.discord.stores.StoreChat$observeInteractionState$1 */
     /* JADX INFO: compiled from: StoreChat.kt */
-    public static final class AnonymousClass1 extends Lambda implements Function0<InteractionState> {
-        public AnonymousClass1() {
+    public static final class C58421 extends AbstractC12240o implements Function0<InteractionState> {
+        public C58421() {
             super(0);
         }
 
@@ -260,13 +260,13 @@ public final class StoreChat extends StoreV2 {
         }
     }
 
-    /* JADX INFO: renamed from: com.discord.stores.StoreChat$setEditingMessage$1, reason: invalid class name */
+    /* JADX INFO: renamed from: com.discord.stores.StoreChat$setEditingMessage$1 */
     /* JADX INFO: compiled from: StoreChat.kt */
-    public static final class AnonymousClass1 extends Lambda implements Function0<Unit> {
+    public static final class C58431 extends AbstractC12240o implements Function0<Unit> {
         public final /* synthetic */ EditingMessage $editingMessage;
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-        public AnonymousClass1(EditingMessage editingMessage) {
+        public C58431(EditingMessage editingMessage) {
             super(0);
             this.$editingMessage = editingMessage;
         }
@@ -274,7 +274,7 @@ public final class StoreChat extends StoreV2 {
         @Override // kotlin.jvm.functions.Function0
         public /* bridge */ /* synthetic */ Unit invoke() {
             invoke2();
-            return Unit.a;
+            return Unit.f27425a;
         }
 
         /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
@@ -284,13 +284,13 @@ public final class StoreChat extends StoreV2 {
         }
     }
 
-    /* JADX INFO: renamed from: com.discord.stores.StoreChat$setInteractionState$1, reason: invalid class name */
+    /* JADX INFO: renamed from: com.discord.stores.StoreChat$setInteractionState$1 */
     /* JADX INFO: compiled from: StoreChat.kt */
-    public static final class AnonymousClass1 extends Lambda implements Function0<Unit> {
+    public static final class C58441 extends AbstractC12240o implements Function0<Unit> {
         public final /* synthetic */ InteractionState $interactionState;
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-        public AnonymousClass1(InteractionState interactionState) {
+        public C58441(InteractionState interactionState) {
             super(0);
             this.$interactionState = interactionState;
         }
@@ -298,7 +298,7 @@ public final class StoreChat extends StoreV2 {
         @Override // kotlin.jvm.functions.Function0
         public /* bridge */ /* synthetic */ Unit invoke() {
             invoke2();
-            return Unit.a;
+            return Unit.f27425a;
         }
 
         /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
@@ -308,13 +308,13 @@ public final class StoreChat extends StoreV2 {
         }
     }
 
-    /* JADX INFO: renamed from: com.discord.stores.StoreChat$toggleBlockedMessageGroup$1, reason: invalid class name */
+    /* JADX INFO: renamed from: com.discord.stores.StoreChat$toggleBlockedMessageGroup$1 */
     /* JADX INFO: compiled from: StoreChat.kt */
-    public static final class AnonymousClass1 extends Lambda implements Function0<Unit> {
+    public static final class C58451 extends AbstractC12240o implements Function0<Unit> {
         public final /* synthetic */ long $messageId;
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-        public AnonymousClass1(long j) {
+        public C58451(long j) {
             super(0);
             this.$messageId = j;
         }
@@ -322,7 +322,7 @@ public final class StoreChat extends StoreV2 {
         @Override // kotlin.jvm.functions.Function0
         public /* bridge */ /* synthetic */ Unit invoke() {
             invoke2();
-            return Unit.a;
+            return Unit.f27425a;
         }
 
         /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
@@ -337,7 +337,7 @@ public final class StoreChat extends StoreV2 {
     }
 
     public /* synthetic */ StoreChat(Dispatcher dispatcher, ObservationDeck observationDeck, int i, DefaultConstructorMarker defaultConstructorMarker) {
-        this(dispatcher, (i & 2) != 0 ? ObservationDeck4.get() : observationDeck);
+        this(dispatcher, (i & 2) != 0 ? ObservationDeckProvider.get() : observationDeck);
     }
 
     public final void appendMention(User user, long guildId) {
@@ -346,11 +346,11 @@ public final class StoreChat extends StoreV2 {
                 return;
             }
             StoreGatewayConnection.requestGuildMembers$default(StoreStream.INSTANCE.getGatewaySocket(), guildId, user.getUsername(), null, null, 12, null);
-            StringBuilder sbU = outline.U("@");
-            sbU.append(user.getUsername());
-            sbU.append(UserUtils.INSTANCE.getDiscriminatorWithPadding(user));
-            String string = sbU.toString();
-            this.eventSubject.k.onNext(new Event.AppendChatText(string + ' '));
+            StringBuilder sbM833U = C1643a.m833U("@");
+            sbM833U.append(user.getUsername());
+            sbM833U.append(UserUtils.INSTANCE.getDiscriminatorWithPadding(user));
+            String string = sbM833U.toString();
+            this.eventSubject.f27650k.onNext(new Event.AppendChatText(string + ' '));
         }
     }
 
@@ -367,43 +367,43 @@ public final class StoreChat extends StoreV2 {
     }
 
     public final Observable<EditingMessage> observeEditingMessage() {
-        Observable<EditingMessage> observableR = ObservationDeck.connectRx$default(this.observationDeck, new ObservationDeck.UpdateSource[]{this}, false, null, null, new AnonymousClass1(), 14, null).r();
-        Intrinsics3.checkNotNullExpressionValue(observableR, "observationDeck.connectR… }.distinctUntilChanged()");
-        return observableR;
+        Observable<EditingMessage> observableM11112r = ObservationDeck.connectRx$default(this.observationDeck, new ObservationDeck.UpdateSource[]{this}, false, null, null, new C58401(), 14, null).m11112r();
+        C12238m.checkNotNullExpressionValue(observableM11112r, "observationDeck.connectR… }.distinctUntilChanged()");
+        return observableM11112r;
     }
 
     public final Observable<Event> observeEvents() {
         PublishSubject<Event> publishSubject = this.eventSubject;
-        Intrinsics3.checkNotNullExpressionValue(publishSubject, "eventSubject");
+        C12238m.checkNotNullExpressionValue(publishSubject, "eventSubject");
         return publishSubject;
     }
 
     public final Observable<List<Long>> observeExpandedBlockedMessageIds() {
-        Observable<List<Long>> observableR = ObservationDeck.connectRx$default(this.observationDeck, new ObservationDeck.UpdateSource[]{this}, false, null, null, new AnonymousClass1(), 14, null).r();
-        Intrinsics3.checkNotNullExpressionValue(observableR, "observationDeck.connectR… }.distinctUntilChanged()");
-        return observableR;
+        Observable<List<Long>> observableM11112r = ObservationDeck.connectRx$default(this.observationDeck, new ObservationDeck.UpdateSource[]{this}, false, null, null, new C58411(), 14, null).m11112r();
+        C12238m.checkNotNullExpressionValue(observableM11112r, "observationDeck.connectR… }.distinctUntilChanged()");
+        return observableM11112r;
     }
 
     public final Observable<InteractionState> observeInteractionState() {
-        Observable observableG = ObservationDeck.connectRx$default(this.observationDeck, new ObservationDeck.UpdateSource[]{this}, false, null, null, new AnonymousClass1(), 14, null).y(ObservableExtensionsKt.AnonymousClass1.INSTANCE).G(ObservableExtensionsKt.AnonymousClass2.INSTANCE);
-        Intrinsics3.checkNotNullExpressionValue(observableG, "filter { it != null }.map { it!! }");
-        Observable<InteractionState> observableR = observableG.r();
-        Intrinsics3.checkNotNullExpressionValue(observableR, "observationDeck.connectR…  .distinctUntilChanged()");
-        return observableR;
+        Observable observableM11083G = ObservationDeck.connectRx$default(this.observationDeck, new ObservationDeck.UpdateSource[]{this}, false, null, null, new C58421(), 14, null).m11118y(ObservableExtensionsKt.C68871.INSTANCE).m11083G(ObservableExtensionsKt.C68882.INSTANCE);
+        C12238m.checkNotNullExpressionValue(observableM11083G, "filter { it != null }.map { it!! }");
+        Observable<InteractionState> observableM11112r = observableM11083G.m11112r();
+        C12238m.checkNotNullExpressionValue(observableM11112r, "observationDeck.connectR…  .distinctUntilChanged()");
+        return observableM11112r;
     }
 
     public final void replaceChatText(String text) {
-        Intrinsics3.checkNotNullParameter(text, NotificationCompat.MessagingStyle.Message.KEY_TEXT);
-        this.eventSubject.k.onNext(new Event.ReplaceChatText(text + ' '));
+        C12238m.checkNotNullParameter(text, NotificationCompat.MessagingStyle.Message.KEY_TEXT);
+        this.eventSubject.f27650k.onNext(new Event.ReplaceChatText(text + ' '));
     }
 
     public final void setEditingMessage(EditingMessage editingMessage) {
-        this.dispatcher.schedule(new AnonymousClass1(editingMessage));
+        this.dispatcher.schedule(new C58431(editingMessage));
     }
 
     public final void setInteractionState(InteractionState interactionState) {
-        Intrinsics3.checkNotNullParameter(interactionState, "interactionState");
-        this.dispatcher.schedule(new AnonymousClass1(interactionState));
+        C12238m.checkNotNullParameter(interactionState, "interactionState");
+        this.dispatcher.schedule(new C58441(interactionState));
     }
 
     @Override // com.discord.stores.StoreV2
@@ -413,17 +413,17 @@ public final class StoreChat extends StoreV2 {
     }
 
     public final void toggleBlockedMessageGroup(long messageId) {
-        this.dispatcher.schedule(new AnonymousClass1(messageId));
+        this.dispatcher.schedule(new C58451(messageId));
     }
 
     public StoreChat(Dispatcher dispatcher, ObservationDeck observationDeck) {
-        Intrinsics3.checkNotNullParameter(dispatcher, "dispatcher");
-        Intrinsics3.checkNotNullParameter(observationDeck, "observationDeck");
+        C12238m.checkNotNullParameter(dispatcher, "dispatcher");
+        C12238m.checkNotNullParameter(observationDeck, "observationDeck");
         this.dispatcher = dispatcher;
         this.observationDeck = observationDeck;
         this.expandedBlockedMessageGroups = new ArrayList();
-        this.expandedBlockedMessageGroupsSnapshot = Collections2.emptyList();
-        this.eventSubject = PublishSubject.k0();
+        this.expandedBlockedMessageGroupsSnapshot = C12147n.emptyList();
+        this.eventSubject = PublishSubject.m11133k0();
     }
 
     /* JADX INFO: compiled from: StoreChat.kt */
@@ -548,13 +548,13 @@ public final class StoreChat extends StoreV2 {
         /* JADX WARN: Type inference failed for: r0v7 */
         /* JADX WARN: Type inference failed for: r1v4, types: [int] */
         public int hashCode() {
-            int iA = (b.a(this.lastMessageId) + (b.a(this.channelId) * 31)) * 31;
+            int iM3a = (C0002b.m3a(this.lastMessageId) + (C0002b.m3a(this.channelId) * 31)) * 31;
             boolean z2 = this.isTouchedSinceLastJump;
             ?? r0 = z2;
             if (z2) {
                 r0 = 1;
             }
-            return ((iA + r0) * 31) + this.scrollState;
+            return ((iM3a + r0) * 31) + this.scrollState;
         }
 
         /* JADX INFO: renamed from: isAtBottom, reason: from getter */
@@ -584,14 +584,14 @@ public final class StoreChat extends StoreV2 {
         }
 
         public String toString() {
-            StringBuilder sbU = outline.U("InteractionState(channelId=");
-            sbU.append(this.channelId);
-            sbU.append(", lastMessageId=");
-            sbU.append(this.lastMessageId);
-            sbU.append(", isTouchedSinceLastJump=");
-            sbU.append(this.isTouchedSinceLastJump);
-            sbU.append(", scrollState=");
-            return outline.B(sbU, this.scrollState, ")");
+            StringBuilder sbM833U = C1643a.m833U("InteractionState(channelId=");
+            sbM833U.append(this.channelId);
+            sbM833U.append(", lastMessageId=");
+            sbM833U.append(this.lastMessageId);
+            sbM833U.append(", isTouchedSinceLastJump=");
+            sbM833U.append(this.isTouchedSinceLastJump);
+            sbM833U.append(", scrollState=");
+            return C1643a.m814B(sbM833U, this.scrollState, ")");
         }
 
         public InteractionState(long j, long j2, boolean z2, LinearLayoutManager linearLayoutManager) {

@@ -10,37 +10,37 @@ import androidx.activity.result.ActivityResultCallback;
 import androidx.activity.result.ActivityResultLauncher;
 import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.fragment.app.Fragment;
-import b.a.d.AppScreen2;
-import b.a.d.o;
-import b.d.b.a.outline;
-import com.discord.R;
+import com.discord.C5419R;
 import com.discord.api.user.User;
 import com.discord.app.AppActivity;
 import com.discord.app.AppFragment;
 import com.discord.databinding.WidgetUserEmailUpdateBinding;
 import com.discord.restapi.RestAPIParams;
+import com.discord.utilities.p501rx.ObservableExtensionsKt;
 import com.discord.utilities.rest.RestAPI;
-import com.discord.utilities.rx.ObservableExtensionsKt;
 import com.discord.utilities.view.extensions.ViewExtensions;
 import com.discord.utilities.viewbinding.FragmentViewBindingDelegate;
-import com.discord.utilities.viewbinding.FragmentViewBindingDelegate3;
+import com.discord.utilities.viewbinding.FragmentViewBindingDelegateKt;
 import com.discord.widgets.user.account.WidgetUserAccountVerifyBase;
 import com.google.android.material.button.MaterialButton;
 import com.google.android.material.textfield.TextInputLayout;
-import d0.z.d.Intrinsics3;
-import d0.z.d.Lambda;
 import java.util.regex.Pattern;
 import kotlin.Unit;
 import kotlin.jvm.functions.Function0;
 import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.reflect.KProperty;
-import rx.functions.Action1;
+import p007b.p008a.p018d.C0870j;
+import p007b.p008a.p018d.C0879o;
+import p007b.p100d.p104b.p105a.C1643a;
+import p507d0.p592z.p594d.AbstractC12240o;
+import p507d0.p592z.p594d.C12238m;
+import p658rx.functions.Action1;
 
 /* JADX INFO: compiled from: WidgetUserEmailUpdate.kt */
 /* JADX INFO: loaded from: classes.dex */
 public final class WidgetUserEmailUpdate extends WidgetUserAccountVerifyBase {
-    public static final /* synthetic */ KProperty[] $$delegatedProperties = {outline.d0(WidgetUserEmailUpdate.class, "binding", "getBinding()Lcom/discord/databinding/WidgetUserEmailUpdateBinding;", 0)};
+    public static final /* synthetic */ KProperty[] $$delegatedProperties = {C1643a.m846d0(WidgetUserEmailUpdate.class, "binding", "getBinding()Lcom/discord/databinding/WidgetUserEmailUpdateBinding;", 0)};
 
     /* JADX INFO: renamed from: Companion, reason: from kotlin metadata */
     public static final Companion INSTANCE = new Companion(null);
@@ -62,29 +62,29 @@ public final class WidgetUserEmailUpdate extends WidgetUserAccountVerifyBase {
         }
 
         public final void launch(Context context, WidgetUserAccountVerifyBase.Mode mode, ActivityResultLauncher<Intent> launcher) {
-            Intrinsics3.checkNotNullParameter(context, "context");
-            Intrinsics3.checkNotNullParameter(mode, "mode");
+            C12238m.checkNotNullParameter(context, "context");
+            C12238m.checkNotNullParameter(mode, "mode");
             Intent launchIntent = WidgetUserAccountVerifyBase.INSTANCE.getLaunchIntent(mode, false, true);
             if (launcher != null) {
-                AppScreen2.g.f(context, launcher, WidgetUserEmailUpdate.class, launchIntent);
+                C0870j.f524g.m160f(context, launcher, WidgetUserEmailUpdate.class, launchIntent);
             } else {
-                AppScreen2.d(context, WidgetUserEmailUpdate.class, launchIntent);
+                C0870j.m156d(context, WidgetUserEmailUpdate.class, launchIntent);
             }
         }
 
         public final ActivityResultLauncher<Intent> registerForResult(AppFragment fragment, final Function0<Unit> callback) {
-            Intrinsics3.checkNotNullParameter(fragment, "fragment");
-            Intrinsics3.checkNotNullParameter(callback, "callback");
+            C12238m.checkNotNullParameter(fragment, "fragment");
+            C12238m.checkNotNullParameter(callback, "callback");
             ActivityResultLauncher<Intent> activityResultLauncherRegisterForActivityResult = fragment.registerForActivityResult(new ActivityResultContracts.StartActivityForResult(), new ActivityResultCallback<ActivityResult>() { // from class: com.discord.widgets.user.email.WidgetUserEmailUpdate$Companion$registerForResult$1
                 @Override // androidx.activity.result.ActivityResultCallback
                 public final void onActivityResult(ActivityResult activityResult) {
-                    Intrinsics3.checkNotNullExpressionValue(activityResult, "activityResult");
+                    C12238m.checkNotNullExpressionValue(activityResult, "activityResult");
                     if (activityResult.getResultCode() == -1) {
                         callback.invoke();
                     }
                 }
             });
-            Intrinsics3.checkNotNullExpressionValue(activityResultLauncherRegisterForActivityResult, "fragment.registerForActi…k()\n          }\n        }");
+            C12238m.checkNotNullExpressionValue(activityResultLauncherRegisterForActivityResult, "fragment.registerForActi…k()\n          }\n        }");
             return activityResultLauncherRegisterForActivityResult;
         }
 
@@ -93,49 +93,49 @@ public final class WidgetUserEmailUpdate extends WidgetUserAccountVerifyBase {
         }
     }
 
-    /* JADX INFO: renamed from: com.discord.widgets.user.email.WidgetUserEmailUpdate$onViewBound$1, reason: invalid class name */
+    /* JADX INFO: renamed from: com.discord.widgets.user.email.WidgetUserEmailUpdate$onViewBound$1 */
     /* JADX INFO: compiled from: WidgetUserEmailUpdate.kt */
-    public static final class AnonymousClass1 extends Lambda implements Function1<Editable, Unit> {
-        public AnonymousClass1() {
+    public static final class C102531 extends AbstractC12240o implements Function1<Editable, Unit> {
+        public C102531() {
             super(1);
         }
 
         @Override // kotlin.jvm.functions.Function1
         public /* bridge */ /* synthetic */ Unit invoke(Editable editable) {
             invoke2(editable);
-            return Unit.a;
+            return Unit.f27425a;
         }
 
         /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
         public final void invoke2(Editable editable) {
-            Intrinsics3.checkNotNullParameter(editable, "it");
+            C12238m.checkNotNullParameter(editable, "it");
             WidgetUserEmailUpdate.this.handleTextChanged();
         }
     }
 
-    /* JADX INFO: renamed from: com.discord.widgets.user.email.WidgetUserEmailUpdate$onViewBound$2, reason: invalid class name */
+    /* JADX INFO: renamed from: com.discord.widgets.user.email.WidgetUserEmailUpdate$onViewBound$2 */
     /* JADX INFO: compiled from: WidgetUserEmailUpdate.kt */
-    public static final class AnonymousClass2 extends Lambda implements Function1<Editable, Unit> {
-        public AnonymousClass2() {
+    public static final class C102542 extends AbstractC12240o implements Function1<Editable, Unit> {
+        public C102542() {
             super(1);
         }
 
         @Override // kotlin.jvm.functions.Function1
         public /* bridge */ /* synthetic */ Unit invoke(Editable editable) {
             invoke2(editable);
-            return Unit.a;
+            return Unit.f27425a;
         }
 
         /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
         public final void invoke2(Editable editable) {
-            Intrinsics3.checkNotNullParameter(editable, "it");
+            C12238m.checkNotNullParameter(editable, "it");
             WidgetUserEmailUpdate.this.handleTextChanged();
         }
     }
 
     public WidgetUserEmailUpdate() {
-        super(R.layout.widget_user_email_update);
-        this.binding = FragmentViewBindingDelegate3.viewBinding$default(this, WidgetUserEmailUpdate3.INSTANCE, null, 2, null);
+        super(C5419R.layout.widget_user_email_update);
+        this.binding = FragmentViewBindingDelegateKt.viewBinding$default(this, WidgetUserEmailUpdate$binding$2.INSTANCE, null, 2, null);
     }
 
     private final WidgetUserEmailUpdateBinding getBinding() {
@@ -145,12 +145,12 @@ public final class WidgetUserEmailUpdate extends WidgetUserAccountVerifyBase {
     /* JADX WARN: Code duplicated, block: B:7:0x0033  */
     private final void handleTextChanged() {
         boolean z2;
-        TextInputLayout textInputLayout = getBinding().d;
-        Intrinsics3.checkNotNullExpressionValue(textInputLayout, "binding.alertVerifyEmailChangePassword");
+        TextInputLayout textInputLayout = getBinding().f18328d;
+        C12238m.checkNotNullExpressionValue(textInputLayout, "binding.alertVerifyEmailChangePassword");
         if (ViewExtensions.getTextOrEmpty(textInputLayout).length() >= 3) {
             Pattern pattern = Patterns.EMAIL_ADDRESS;
-            TextInputLayout textInputLayout2 = getBinding().c;
-            Intrinsics3.checkNotNullExpressionValue(textInputLayout2, "binding.alertVerifyEmailChangeEmail");
+            TextInputLayout textInputLayout2 = getBinding().f18327c;
+            C12238m.checkNotNullExpressionValue(textInputLayout2, "binding.alertVerifyEmailChangeEmail");
             if (pattern.matcher(ViewExtensions.getTextOrEmpty(textInputLayout2)).matches()) {
                 z2 = true;
             } else {
@@ -159,8 +159,8 @@ public final class WidgetUserEmailUpdate extends WidgetUserAccountVerifyBase {
         } else {
             z2 = false;
         }
-        MaterialButton materialButton = getBinding().f2680b;
-        Intrinsics3.checkNotNullExpressionValue(materialButton, "binding.alertVerifyEmailChange");
+        MaterialButton materialButton = getBinding().f18326b;
+        C12238m.checkNotNullExpressionValue(materialButton, "binding.alertVerifyEmailChange");
         materialButton.setEnabled(z2);
     }
 
@@ -177,27 +177,27 @@ public final class WidgetUserEmailUpdate extends WidgetUserAccountVerifyBase {
 
     @Override // com.discord.widgets.user.account.WidgetUserAccountVerifyBase, com.discord.app.AppFragment
     public void onViewBound(View view) {
-        Intrinsics3.checkNotNullParameter(view, "view");
+        C12238m.checkNotNullParameter(view, "view");
         super.onViewBound(view);
         AppFragment.setActionBarDisplayHomeAsUpEnabled$default(this, false, 1, null);
-        TextInputLayout textInputLayout = getBinding().c;
-        Intrinsics3.checkNotNullExpressionValue(textInputLayout, "binding.alertVerifyEmailChangeEmail");
-        ViewExtensions.addBindedTextWatcher(textInputLayout, this, new AnonymousClass1());
-        TextInputLayout textInputLayout2 = getBinding().d;
-        Intrinsics3.checkNotNullExpressionValue(textInputLayout2, "binding.alertVerifyEmailChangePassword");
-        ViewExtensions.addBindedTextWatcher(textInputLayout2, this, new AnonymousClass2());
-        getBinding().f2680b.setOnClickListener(new View.OnClickListener() { // from class: com.discord.widgets.user.email.WidgetUserEmailUpdate.onViewBound.3
+        TextInputLayout textInputLayout = getBinding().f18327c;
+        C12238m.checkNotNullExpressionValue(textInputLayout, "binding.alertVerifyEmailChangeEmail");
+        ViewExtensions.addBindedTextWatcher(textInputLayout, this, new C102531());
+        TextInputLayout textInputLayout2 = getBinding().f18328d;
+        C12238m.checkNotNullExpressionValue(textInputLayout2, "binding.alertVerifyEmailChangePassword");
+        ViewExtensions.addBindedTextWatcher(textInputLayout2, this, new C102542());
+        getBinding().f18326b.setOnClickListener(new View.OnClickListener() { // from class: com.discord.widgets.user.email.WidgetUserEmailUpdate.onViewBound.3
             @Override // android.view.View.OnClickListener
             public final void onClick(View view2) {
                 RestAPI api = RestAPI.INSTANCE.getApi();
                 RestAPIParams.UserInfo.Companion companion = RestAPIParams.UserInfo.INSTANCE;
-                TextInputLayout textInputLayout3 = WidgetUserEmailUpdate.this.getBinding().c;
-                Intrinsics3.checkNotNullExpressionValue(textInputLayout3, "binding.alertVerifyEmailChangeEmail");
+                TextInputLayout textInputLayout3 = WidgetUserEmailUpdate.this.getBinding().f18327c;
+                C12238m.checkNotNullExpressionValue(textInputLayout3, "binding.alertVerifyEmailChangeEmail");
                 String textOrEmpty = ViewExtensions.getTextOrEmpty(textInputLayout3);
-                TextInputLayout textInputLayout4 = WidgetUserEmailUpdate.this.getBinding().d;
-                Intrinsics3.checkNotNullExpressionValue(textInputLayout4, "binding.alertVerifyEmailChangePassword");
-                ObservableExtensionsKt.ui$default(ObservableExtensionsKt.withDimmer$default(ObservableExtensionsKt.restSubscribeOn$default(api.patchUser(companion.createForEmail(textOrEmpty, ViewExtensions.getTextOrEmpty(textInputLayout4))), false, 1, null), WidgetUserEmailUpdate.this.getBinding().e, 0L, 2, null), WidgetUserEmailUpdate.this, null, 2, null).k(o.i(new Action1<User>() { // from class: com.discord.widgets.user.email.WidgetUserEmailUpdate.onViewBound.3.1
-                    @Override // rx.functions.Action1
+                TextInputLayout textInputLayout4 = WidgetUserEmailUpdate.this.getBinding().f18328d;
+                C12238m.checkNotNullExpressionValue(textInputLayout4, "binding.alertVerifyEmailChangePassword");
+                ObservableExtensionsKt.ui$default(ObservableExtensionsKt.withDimmer$default(ObservableExtensionsKt.restSubscribeOn$default(api.patchUser(companion.createForEmail(textOrEmpty, ViewExtensions.getTextOrEmpty(textInputLayout4))), false, 1, null), WidgetUserEmailUpdate.this.getBinding().f18329e, 0L, 2, null), WidgetUserEmailUpdate.this, null, 2, null).m11108k(C0879o.m182i(new Action1<User>() { // from class: com.discord.widgets.user.email.WidgetUserEmailUpdate.onViewBound.3.1
+                    @Override // p658rx.functions.Action1
                     public final void call(User user) {
                         WidgetUserEmailUpdate.this.onEmailUpdated();
                     }

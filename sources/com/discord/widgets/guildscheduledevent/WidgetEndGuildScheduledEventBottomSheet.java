@@ -2,36 +2,36 @@ package com.discord.widgets.guildscheduledevent;
 
 import android.os.Bundle;
 import android.view.View;
-import androidx.core.os.Bundle2;
+import androidx.core.os.BundleKt;
 import androidx.fragment.app.Fragment;
-import androidx.fragment.app.Fragment2;
+import androidx.fragment.app.FragmentKt;
 import androidx.fragment.app.FragmentManager;
-import b.d.b.a.outline;
-import com.discord.R;
+import com.discord.C5419R;
 import com.discord.app.AppBottomSheet;
 import com.discord.databinding.WidgetEndStageBottomSheetBinding;
 import com.discord.utilities.error.Error;
-import com.discord.utilities.rx.ObservableExtensionsKt;
+import com.discord.utilities.p501rx.ObservableExtensionsKt;
 import com.discord.utilities.viewbinding.FragmentViewBindingDelegate;
-import com.discord.utilities.viewbinding.FragmentViewBindingDelegate3;
+import com.discord.utilities.viewbinding.FragmentViewBindingDelegateKt;
 import com.discord.views.ScreenTitleView;
 import com.google.android.material.button.MaterialButton;
-import d0.LazyJVM;
-import d0.Tuples;
-import d0.z.d.Intrinsics3;
-import d0.z.d.Lambda;
 import kotlin.Lazy;
 import kotlin.Unit;
 import kotlin.jvm.functions.Function0;
 import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.reflect.KProperty;
-import rx.Subscription;
+import p007b.p100d.p104b.p105a.C1643a;
+import p507d0.C12083g;
+import p507d0.C12116o;
+import p507d0.p592z.p594d.AbstractC12240o;
+import p507d0.p592z.p594d.C12238m;
+import p658rx.Subscription;
 
 /* JADX INFO: compiled from: WidgetEndGuildScheduledEventBottomSheet.kt */
 /* JADX INFO: loaded from: classes2.dex */
 public final class WidgetEndGuildScheduledEventBottomSheet extends AppBottomSheet {
-    public static final /* synthetic */ KProperty[] $$delegatedProperties = {outline.d0(WidgetEndGuildScheduledEventBottomSheet.class, "binding", "getBinding()Lcom/discord/databinding/WidgetEndStageBottomSheetBinding;", 0)};
+    public static final /* synthetic */ KProperty[] $$delegatedProperties = {C1643a.m846d0(WidgetEndGuildScheduledEventBottomSheet.class, "binding", "getBinding()Lcom/discord/databinding/WidgetEndStageBottomSheetBinding;", 0)};
 
     /* JADX INFO: renamed from: Companion, reason: from kotlin metadata */
     public static final Companion INSTANCE = new Companion(null);
@@ -55,17 +55,17 @@ public final class WidgetEndGuildScheduledEventBottomSheet extends AppBottomShee
         }
 
         public final void registerForResult(Fragment fragment, String requestKey, Function0<Unit> onActionTaken) {
-            Intrinsics3.checkNotNullParameter(fragment, "fragment");
-            Intrinsics3.checkNotNullParameter(requestKey, "requestKey");
-            Intrinsics3.checkNotNullParameter(onActionTaken, "onActionTaken");
-            Fragment2.setFragmentResultListener(fragment, requestKey, new WidgetEndGuildScheduledEventBottomSheet2(requestKey, onActionTaken));
+            C12238m.checkNotNullParameter(fragment, "fragment");
+            C12238m.checkNotNullParameter(requestKey, "requestKey");
+            C12238m.checkNotNullParameter(onActionTaken, "onActionTaken");
+            FragmentKt.setFragmentResultListener(fragment, requestKey, new C8840x74fb94df(requestKey, onActionTaken));
         }
 
         public final void show(FragmentManager fragmentManager, String requestKey, long guildId, long guildScheduledEventId) {
-            Intrinsics3.checkNotNullParameter(fragmentManager, "fragmentManager");
-            Intrinsics3.checkNotNullParameter(requestKey, "requestKey");
+            C12238m.checkNotNullParameter(fragmentManager, "fragmentManager");
+            C12238m.checkNotNullParameter(requestKey, "requestKey");
             WidgetEndGuildScheduledEventBottomSheet widgetEndGuildScheduledEventBottomSheet = new WidgetEndGuildScheduledEventBottomSheet();
-            widgetEndGuildScheduledEventBottomSheet.setArguments(Bundle2.bundleOf(Tuples.to("com.discord.intent.extra.EXTRA_GUILD_SCHEDULED_EVENT_ID", Long.valueOf(guildScheduledEventId)), Tuples.to("com.discord.intent.extra.EXTRA_GUILD_ID", Long.valueOf(guildId)), Tuples.to(WidgetEndGuildScheduledEventBottomSheet.EXTRA_REQUEST_KEY, requestKey)));
+            widgetEndGuildScheduledEventBottomSheet.setArguments(BundleKt.bundleOf(C12116o.m10073to("com.discord.intent.extra.EXTRA_GUILD_SCHEDULED_EVENT_ID", Long.valueOf(guildScheduledEventId)), C12116o.m10073to("com.discord.intent.extra.EXTRA_GUILD_ID", Long.valueOf(guildId)), C12116o.m10073to(WidgetEndGuildScheduledEventBottomSheet.EXTRA_REQUEST_KEY, requestKey)));
             widgetEndGuildScheduledEventBottomSheet.show(fragmentManager, WidgetEndGuildScheduledEventBottomSheet.class.getSimpleName());
         }
 
@@ -74,39 +74,39 @@ public final class WidgetEndGuildScheduledEventBottomSheet extends AppBottomShee
         }
     }
 
-    /* JADX INFO: renamed from: com.discord.widgets.guildscheduledevent.WidgetEndGuildScheduledEventBottomSheet$onConfirmEnd$1, reason: invalid class name */
+    /* JADX INFO: renamed from: com.discord.widgets.guildscheduledevent.WidgetEndGuildScheduledEventBottomSheet$onConfirmEnd$1 */
     /* JADX INFO: compiled from: WidgetEndGuildScheduledEventBottomSheet.kt */
-    public static final class AnonymousClass1 extends Lambda implements Function1<Unit, Unit> {
-        public static final AnonymousClass1 INSTANCE = new AnonymousClass1();
+    public static final class C88411 extends AbstractC12240o implements Function1<Unit, Unit> {
+        public static final C88411 INSTANCE = new C88411();
 
-        public AnonymousClass1() {
+        public C88411() {
             super(1);
         }
 
         @Override // kotlin.jvm.functions.Function1
         public /* bridge */ /* synthetic */ Unit invoke(Unit unit) {
             invoke2(unit);
-            return Unit.a;
+            return Unit.f27425a;
         }
 
         /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
         public final void invoke2(Unit unit) {
-            Intrinsics3.checkNotNullParameter(unit, "it");
+            C12238m.checkNotNullParameter(unit, "it");
         }
     }
 
     public WidgetEndGuildScheduledEventBottomSheet() {
         super(false, 1, null);
-        this.binding = FragmentViewBindingDelegate3.viewBinding$default(this, WidgetEndGuildScheduledEventBottomSheet3.INSTANCE, null, 2, null);
-        this.guildScheduledEventId = LazyJVM.lazy(new WidgetEndGuildScheduledEventBottomSheet5(this));
-        this.guildId = LazyJVM.lazy(new WidgetEndGuildScheduledEventBottomSheet4(this));
-        this.requestKey = LazyJVM.lazy(new WidgetEndGuildScheduledEventBottomSheet6(this));
+        this.binding = FragmentViewBindingDelegateKt.viewBinding$default(this, WidgetEndGuildScheduledEventBottomSheet$binding$2.INSTANCE, null, 2, null);
+        this.guildScheduledEventId = C12083g.lazy(new WidgetEndGuildScheduledEventBottomSheet$guildScheduledEventId$2(this));
+        this.guildId = C12083g.lazy(new WidgetEndGuildScheduledEventBottomSheet$guildId$2(this));
+        this.requestKey = C12083g.lazy(new WidgetEndGuildScheduledEventBottomSheet$requestKey$2(this));
     }
 
     private final void callOnActionTaken() {
         String requestKey = getRequestKey();
-        Intrinsics3.checkNotNullExpressionValue(requestKey, "requestKey");
-        Fragment2.setFragmentResult(this, requestKey, new Bundle());
+        C12238m.checkNotNullExpressionValue(requestKey, "requestKey");
+        FragmentKt.setFragmentResult(this, requestKey, new Bundle());
     }
 
     private final WidgetEndStageBottomSheetBinding getBinding() {
@@ -126,37 +126,37 @@ public final class WidgetEndGuildScheduledEventBottomSheet extends AppBottomShee
     }
 
     private final void onConfirmEnd() {
-        ObservableExtensionsKt.appSubscribe(ObservableExtensionsKt.restSubscribeOn$default(GuildScheduledEventAPI.INSTANCE.endEvent(getGuildId(), getGuildScheduledEventId()), false, 1, null), (Class<?>) WidgetEndGuildScheduledEventBottomSheet.class, (58 & 2) != 0 ? null : null, (Function1<? super Subscription, Unit>) ((58 & 4) != 0 ? null : null), (Function1<? super Error, Unit>) ((58 & 8) != 0 ? null : null), (Function0<Unit>) ((58 & 16) != 0 ? ObservableExtensionsKt.AnonymousClass1.INSTANCE : null), (Function0<Unit>) ((58 & 32) != 0 ? ObservableExtensionsKt.AnonymousClass2.INSTANCE : null), AnonymousClass1.INSTANCE);
+        ObservableExtensionsKt.appSubscribe(ObservableExtensionsKt.restSubscribeOn$default(GuildScheduledEventAPI.INSTANCE.endEvent(getGuildId(), getGuildScheduledEventId()), false, 1, null), (Class<?>) WidgetEndGuildScheduledEventBottomSheet.class, (58 & 2) != 0 ? null : null, (Function1<? super Subscription, Unit>) ((58 & 4) != 0 ? null : null), (Function1<? super Error, Unit>) ((58 & 8) != 0 ? null : null), (Function0<Unit>) ((58 & 16) != 0 ? ObservableExtensionsKt.C68791.INSTANCE : null), (Function0<Unit>) ((58 & 32) != 0 ? ObservableExtensionsKt.C68802.INSTANCE : null), C88411.INSTANCE);
     }
 
     @Override // com.discord.app.AppBottomSheet
     public int getContentViewResId() {
-        return R.layout.widget_end_stage_bottom_sheet;
+        return C5419R.layout.widget_end_stage_bottom_sheet;
     }
 
     @Override // com.discord.app.AppBottomSheet, androidx.fragment.app.Fragment
     public void onViewCreated(View view, Bundle savedInstanceState) {
-        Intrinsics3.checkNotNullParameter(view, "view");
+        C12238m.checkNotNullParameter(view, "view");
         super.onViewCreated(view, savedInstanceState);
-        ScreenTitleView screenTitleView = getBinding().d;
-        String string = requireContext().getString(R.string.guild_event_end_prompt_title);
-        Intrinsics3.checkNotNullExpressionValue(string, "requireContext().getStri…d_event_end_prompt_title)");
+        ScreenTitleView screenTitleView = getBinding().f16601d;
+        String string = requireContext().getString(C5419R.string.guild_event_end_prompt_title);
+        C12238m.checkNotNullExpressionValue(string, "requireContext().getStri…d_event_end_prompt_title)");
         screenTitleView.setTitle(string);
-        getBinding().d.setSubtitle(null);
-        MaterialButton materialButton = getBinding().f2382b;
-        Intrinsics3.checkNotNullExpressionValue(materialButton, "binding.cancel");
-        materialButton.setText(requireContext().getString(R.string.guild_event_end_prompt_cancel));
-        MaterialButton materialButton2 = getBinding().c;
-        Intrinsics3.checkNotNullExpressionValue(materialButton2, "binding.confirm");
-        materialButton2.setText(requireContext().getString(R.string.guild_event_end_prompt_confirm));
-        getBinding().f2382b.setOnClickListener(new View.OnClickListener() { // from class: com.discord.widgets.guildscheduledevent.WidgetEndGuildScheduledEventBottomSheet.onViewCreated.1
+        getBinding().f16601d.setSubtitle(null);
+        MaterialButton materialButton = getBinding().f16599b;
+        C12238m.checkNotNullExpressionValue(materialButton, "binding.cancel");
+        materialButton.setText(requireContext().getString(C5419R.string.guild_event_end_prompt_cancel));
+        MaterialButton materialButton2 = getBinding().f16600c;
+        C12238m.checkNotNullExpressionValue(materialButton2, "binding.confirm");
+        materialButton2.setText(requireContext().getString(C5419R.string.guild_event_end_prompt_confirm));
+        getBinding().f16599b.setOnClickListener(new View.OnClickListener() { // from class: com.discord.widgets.guildscheduledevent.WidgetEndGuildScheduledEventBottomSheet.onViewCreated.1
             @Override // android.view.View.OnClickListener
             public final void onClick(View view2) {
                 WidgetEndGuildScheduledEventBottomSheet.this.dismiss();
                 WidgetEndGuildScheduledEventBottomSheet.this.callOnActionTaken();
             }
         });
-        getBinding().c.setOnClickListener(new View.OnClickListener() { // from class: com.discord.widgets.guildscheduledevent.WidgetEndGuildScheduledEventBottomSheet.onViewCreated.2
+        getBinding().f16600c.setOnClickListener(new View.OnClickListener() { // from class: com.discord.widgets.guildscheduledevent.WidgetEndGuildScheduledEventBottomSheet.onViewCreated.2
             @Override // android.view.View.OnClickListener
             public final void onClick(View view2) {
                 WidgetEndGuildScheduledEventBottomSheet.this.dismiss();

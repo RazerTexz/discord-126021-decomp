@@ -1,8 +1,6 @@
 package com.discord.widgets.chat.input.sticker;
 
 import androidx.annotation.MainThread;
-import b.a.d.AppViewModel;
-import b.d.b.a.outline;
 import com.discord.api.premium.PremiumTier;
 import com.discord.api.sticker.Sticker;
 import com.discord.models.sticker.dto.ModelStickerPack;
@@ -16,14 +14,11 @@ import com.discord.utilities.analytics.AnalyticsTracker;
 import com.discord.utilities.analytics.Traits;
 import com.discord.utilities.error.Error;
 import com.discord.utilities.mg_recycler.MGRecyclerDataPayload;
-import com.discord.utilities.premium.PremiumUtils3;
-import com.discord.utilities.rx.ObservableExtensionsKt;
+import com.discord.utilities.p501rx.ObservableExtensionsKt;
+import com.discord.utilities.premium.PremiumUtilsKt;
 import com.discord.utilities.stickers.StickerUtils;
-import com.discord.widgets.chat.input.sticker.StickerAdapterItems3;
+import com.discord.widgets.chat.input.sticker.StickerItem;
 import com.discord.widgets.chat.input.sticker.StickerPackStoreSheetViewModel;
-import d0.t.Collections2;
-import d0.z.d.Intrinsics3;
-import d0.z.d.Lambda;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Iterator;
@@ -33,36 +28,41 @@ import kotlin.Unit;
 import kotlin.jvm.functions.Function0;
 import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.DefaultConstructorMarker;
-import rx.Observable;
-import rx.Subscription;
-import rx.functions.Func3;
+import p007b.p008a.p018d.AbstractC0859d0;
+import p007b.p100d.p104b.p105a.C1643a;
+import p507d0.p580t.C12147n;
+import p507d0.p592z.p594d.AbstractC12240o;
+import p507d0.p592z.p594d.C12238m;
+import p658rx.Observable;
+import p658rx.Subscription;
+import p658rx.functions.Func3;
 
 /* JADX INFO: compiled from: StickerPackStoreSheetViewModel.kt */
 /* JADX INFO: loaded from: classes2.dex */
-public final class StickerPackStoreSheetViewModel extends AppViewModel<ViewState> {
+public final class StickerPackStoreSheetViewModel extends AbstractC0859d0<ViewState> {
 
     /* JADX INFO: renamed from: Companion, reason: from kotlin metadata */
     public static final Companion INSTANCE = new Companion(null);
-    private final StickerPackStoreSheetViewModel2 analytics;
+    private final StickerPackStoreSheetAnalytics analytics;
     private final long stickerPackId;
     private final StoreStickers stickersStore;
 
-    /* JADX INFO: renamed from: com.discord.widgets.chat.input.sticker.StickerPackStoreSheetViewModel$1, reason: invalid class name */
+    /* JADX INFO: renamed from: com.discord.widgets.chat.input.sticker.StickerPackStoreSheetViewModel$1 */
     /* JADX INFO: compiled from: StickerPackStoreSheetViewModel.kt */
-    public static final class AnonymousClass1 extends Lambda implements Function1<StoreState, Unit> {
-        public AnonymousClass1() {
+    public static final class C78931 extends AbstractC12240o implements Function1<StoreState, Unit> {
+        public C78931() {
             super(1);
         }
 
         @Override // kotlin.jvm.functions.Function1
         public /* bridge */ /* synthetic */ Unit invoke(StoreState storeState) {
             invoke2(storeState);
-            return Unit.a;
+            return Unit.f27425a;
         }
 
         /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
         public final void invoke2(StoreState storeState) {
-            Intrinsics3.checkNotNullParameter(storeState, "storeState");
+            C12238m.checkNotNullParameter(storeState, "storeState");
             StickerPackStoreSheetViewModel.this.handleStoreState(storeState);
         }
     }
@@ -75,30 +75,30 @@ public final class StickerPackStoreSheetViewModel extends AppViewModel<ViewState
         private final List<MGRecyclerDataPayload> buildStoreStickerListItems(ModelStickerPack stickerPack, int stickerAnimationSettings, User meUser) {
             ArrayList arrayList = new ArrayList();
             if (stickerPack.getStickers().isEmpty()) {
-                return Collections2.emptyList();
+                return C12147n.emptyList();
             }
-            arrayList.add(new StickerAdapterItems4(stickerPack, false));
+            arrayList.add(new StoreHeaderItem(stickerPack, false));
             for (Sticker sticker : stickerPack.getStickers()) {
-                arrayList.add(new StickerAdapterItems3(sticker, stickerAnimationSettings, StickerAdapterItems3.Mode.STORE, StickerUtils.getStickerSendability$default(StickerUtils.INSTANCE, sticker, meUser, null, null, 12, null)));
+                arrayList.add(new StickerItem(sticker, stickerAnimationSettings, StickerItem.Mode.STORE, StickerUtils.getStickerSendability$default(StickerUtils.INSTANCE, sticker, meUser, null, null, 12, null)));
             }
             return arrayList;
         }
 
         private final Observable<StoreState> observeStoreState(long stickerPackId, StoreStickers storeStickers, StoreUserSettings storeUserSettings, StoreUser storeUser) {
-            Observable<StoreState> observableI = Observable.i(storeStickers.observeStickerPack(stickerPackId), StoreUserSettings.observeStickerAnimationSettings$default(storeUserSettings, false, 1, null), StoreUser.observeMe$default(storeUser, false, 1, null), new Func3<StoreStickers.StickerPackState, Integer, MeUser, StoreState>() { // from class: com.discord.widgets.chat.input.sticker.StickerPackStoreSheetViewModel$Companion$observeStoreState$1
-                @Override // rx.functions.Func3
+            Observable<StoreState> observableM11075i = Observable.m11075i(storeStickers.observeStickerPack(stickerPackId), StoreUserSettings.observeStickerAnimationSettings$default(storeUserSettings, false, 1, null), StoreUser.observeMe$default(storeUser, false, 1, null), new Func3<StoreStickers.StickerPackState, Integer, MeUser, StoreState>() { // from class: com.discord.widgets.chat.input.sticker.StickerPackStoreSheetViewModel$Companion$observeStoreState$1
+                @Override // p658rx.functions.Func3
                 public /* bridge */ /* synthetic */ StickerPackStoreSheetViewModel.StoreState call(StoreStickers.StickerPackState stickerPackState, Integer num, MeUser meUser) {
                     return call(stickerPackState, num.intValue(), meUser);
                 }
 
                 public final StickerPackStoreSheetViewModel.StoreState call(StoreStickers.StickerPackState stickerPackState, int i, MeUser meUser) {
-                    Intrinsics3.checkNotNullParameter(stickerPackState, "stickerPack");
-                    Intrinsics3.checkNotNullParameter(meUser, "meUser");
+                    C12238m.checkNotNullParameter(stickerPackState, "stickerPack");
+                    C12238m.checkNotNullParameter(meUser, "meUser");
                     return new StickerPackStoreSheetViewModel.StoreState(stickerPackState, i, meUser);
                 }
             });
-            Intrinsics3.checkNotNullExpressionValue(observableI, "Observable.combineLatest…ser\n          )\n        }");
-            return observableI;
+            C12238m.checkNotNullExpressionValue(observableM11075i, "Observable.combineLatest…ser\n          )\n        }");
+            return observableM11075i;
         }
 
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
@@ -113,8 +113,8 @@ public final class StickerPackStoreSheetViewModel extends AppViewModel<ViewState
         private final StoreStickers.StickerPackState stickerPack;
 
         public StoreState(StoreStickers.StickerPackState stickerPackState, int i, User user) {
-            Intrinsics3.checkNotNullParameter(stickerPackState, "stickerPack");
-            Intrinsics3.checkNotNullParameter(user, "meUser");
+            C12238m.checkNotNullParameter(stickerPackState, "stickerPack");
+            C12238m.checkNotNullParameter(user, "meUser");
             this.stickerPack = stickerPackState;
             this.stickerAnimationSettings = i;
             this.meUser = user;
@@ -149,8 +149,8 @@ public final class StickerPackStoreSheetViewModel extends AppViewModel<ViewState
         }
 
         public final StoreState copy(StoreStickers.StickerPackState stickerPack, int stickerAnimationSettings, User meUser) {
-            Intrinsics3.checkNotNullParameter(stickerPack, "stickerPack");
-            Intrinsics3.checkNotNullParameter(meUser, "meUser");
+            C12238m.checkNotNullParameter(stickerPack, "stickerPack");
+            C12238m.checkNotNullParameter(meUser, "meUser");
             return new StoreState(stickerPack, stickerAnimationSettings, meUser);
         }
 
@@ -162,7 +162,7 @@ public final class StickerPackStoreSheetViewModel extends AppViewModel<ViewState
                 return false;
             }
             StoreState storeState = (StoreState) other;
-            return Intrinsics3.areEqual(this.stickerPack, storeState.stickerPack) && this.stickerAnimationSettings == storeState.stickerAnimationSettings && Intrinsics3.areEqual(this.meUser, storeState.meUser);
+            return C12238m.areEqual(this.stickerPack, storeState.stickerPack) && this.stickerAnimationSettings == storeState.stickerAnimationSettings && C12238m.areEqual(this.meUser, storeState.meUser);
         }
 
         public final User getMeUser() {
@@ -185,14 +185,14 @@ public final class StickerPackStoreSheetViewModel extends AppViewModel<ViewState
         }
 
         public String toString() {
-            StringBuilder sbU = outline.U("StoreState(stickerPack=");
-            sbU.append(this.stickerPack);
-            sbU.append(", stickerAnimationSettings=");
-            sbU.append(this.stickerAnimationSettings);
-            sbU.append(", meUser=");
-            sbU.append(this.meUser);
-            sbU.append(")");
-            return sbU.toString();
+            StringBuilder sbM833U = C1643a.m833U("StoreState(stickerPack=");
+            sbM833U.append(this.stickerPack);
+            sbM833U.append(", stickerAnimationSettings=");
+            sbM833U.append(this.stickerAnimationSettings);
+            sbM833U.append(", meUser=");
+            sbM833U.append(this.meUser);
+            sbM833U.append(")");
+            return sbM833U.toString();
         }
     }
 
@@ -205,9 +205,9 @@ public final class StickerPackStoreSheetViewModel extends AppViewModel<ViewState
 
         /* JADX WARN: Multi-variable type inference failed */
         public ViewState(ModelStickerPack modelStickerPack, List<? extends MGRecyclerDataPayload> list, PremiumTier premiumTier, boolean z2) {
-            Intrinsics3.checkNotNullParameter(modelStickerPack, "stickerPack");
-            Intrinsics3.checkNotNullParameter(list, "stickerItems");
-            Intrinsics3.checkNotNullParameter(premiumTier, "meUserPremiumTier");
+            C12238m.checkNotNullParameter(modelStickerPack, "stickerPack");
+            C12238m.checkNotNullParameter(list, "stickerItems");
+            C12238m.checkNotNullParameter(premiumTier, "meUserPremiumTier");
             this.stickerPack = modelStickerPack;
             this.stickerItems = list;
             this.meUserPremiumTier = premiumTier;
@@ -232,7 +232,7 @@ public final class StickerPackStoreSheetViewModel extends AppViewModel<ViewState
         }
 
         public final boolean canUserAccessToPremiumStickers() {
-            return PremiumUtils3.grantsAccessToPremiumStickers(this.meUserPremiumTier);
+            return PremiumUtilsKt.grantsAccessToPremiumStickers(this.meUserPremiumTier);
         }
 
         /* JADX INFO: renamed from: component1, reason: from getter */
@@ -255,9 +255,9 @@ public final class StickerPackStoreSheetViewModel extends AppViewModel<ViewState
         }
 
         public final ViewState copy(ModelStickerPack stickerPack, List<? extends MGRecyclerDataPayload> stickerItems, PremiumTier meUserPremiumTier, boolean isPackEnabled) {
-            Intrinsics3.checkNotNullParameter(stickerPack, "stickerPack");
-            Intrinsics3.checkNotNullParameter(stickerItems, "stickerItems");
-            Intrinsics3.checkNotNullParameter(meUserPremiumTier, "meUserPremiumTier");
+            C12238m.checkNotNullParameter(stickerPack, "stickerPack");
+            C12238m.checkNotNullParameter(stickerItems, "stickerItems");
+            C12238m.checkNotNullParameter(meUserPremiumTier, "meUserPremiumTier");
             return new ViewState(stickerPack, stickerItems, meUserPremiumTier, isPackEnabled);
         }
 
@@ -269,7 +269,7 @@ public final class StickerPackStoreSheetViewModel extends AppViewModel<ViewState
                 return false;
             }
             ViewState viewState = (ViewState) other;
-            return Intrinsics3.areEqual(this.stickerPack, viewState.stickerPack) && Intrinsics3.areEqual(this.stickerItems, viewState.stickerItems) && Intrinsics3.areEqual(this.meUserPremiumTier, viewState.meUserPremiumTier) && this.isPackEnabled == viewState.isPackEnabled;
+            return C12238m.areEqual(this.stickerPack, viewState.stickerPack) && C12238m.areEqual(this.stickerItems, viewState.stickerItems) && C12238m.areEqual(this.meUserPremiumTier, viewState.meUserPremiumTier) && this.isPackEnabled == viewState.isPackEnabled;
         }
 
         public final PremiumTier getMeUserPremiumTier() {
@@ -309,14 +309,14 @@ public final class StickerPackStoreSheetViewModel extends AppViewModel<ViewState
         }
 
         public String toString() {
-            StringBuilder sbU = outline.U("ViewState(stickerPack=");
-            sbU.append(this.stickerPack);
-            sbU.append(", stickerItems=");
-            sbU.append(this.stickerItems);
-            sbU.append(", meUserPremiumTier=");
-            sbU.append(this.meUserPremiumTier);
-            sbU.append(", isPackEnabled=");
-            return outline.O(sbU, this.isPackEnabled, ")");
+            StringBuilder sbM833U = C1643a.m833U("ViewState(stickerPack=");
+            sbM833U.append(this.stickerPack);
+            sbM833U.append(", stickerItems=");
+            sbM833U.append(this.stickerItems);
+            sbM833U.append(", meUserPremiumTier=");
+            sbM833U.append(this.meUserPremiumTier);
+            sbM833U.append(", isPackEnabled=");
+            return C1643a.m827O(sbM833U, this.isPackEnabled, ")");
         }
     }
 
@@ -324,22 +324,22 @@ public final class StickerPackStoreSheetViewModel extends AppViewModel<ViewState
         public static final /* synthetic */ int[] $EnumSwitchMapping$0;
 
         static {
-            WidgetStickerPackStoreSheet2.values();
+            StickerPackStoreSheetViewType.values();
             int[] iArr = new int[3];
             $EnumSwitchMapping$0 = iArr;
-            iArr[WidgetStickerPackStoreSheet2.STICKER_POPOUT_VIEW_ALL.ordinal()] = 1;
+            iArr[StickerPackStoreSheetViewType.STICKER_POPOUT_VIEW_ALL.ordinal()] = 1;
         }
     }
 
     /* JADX WARN: Illegal instructions before constructor call */
-    public /* synthetic */ StickerPackStoreSheetViewModel(long j, StoreStickers storeStickers, StickerPackStoreSheetViewModel2 stickerPackStoreSheetViewModel2, Observable observable, int i, DefaultConstructorMarker defaultConstructorMarker) {
+    public /* synthetic */ StickerPackStoreSheetViewModel(long j, StoreStickers storeStickers, StickerPackStoreSheetAnalytics stickerPackStoreSheetAnalytics, Observable observable, int i, DefaultConstructorMarker defaultConstructorMarker) {
         storeStickers = (i & 2) != 0 ? StoreStream.INSTANCE.getStickers() : storeStickers;
         if ((i & 8) != 0) {
             Companion companion = INSTANCE;
             StoreStream.Companion companion2 = StoreStream.INSTANCE;
             observable = companion.observeStoreState(j, storeStickers, companion2.getUserSettings(), companion2.getUsers());
         }
-        this(j, storeStickers, stickerPackStoreSheetViewModel2, observable);
+        this(j, storeStickers, stickerPackStoreSheetAnalytics, observable);
     }
 
     private final void handleLoadedStoreState(StoreState storeState) {
@@ -383,16 +383,16 @@ public final class StickerPackStoreSheetViewModel extends AppViewModel<ViewState
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public StickerPackStoreSheetViewModel(long j, StoreStickers storeStickers, StickerPackStoreSheetViewModel2 stickerPackStoreSheetViewModel2, Observable<StoreState> observable) {
+    public StickerPackStoreSheetViewModel(long j, StoreStickers storeStickers, StickerPackStoreSheetAnalytics stickerPackStoreSheetAnalytics, Observable<StoreState> observable) {
         super(null);
-        Intrinsics3.checkNotNullParameter(storeStickers, "stickersStore");
-        Intrinsics3.checkNotNullParameter(stickerPackStoreSheetViewModel2, "analytics");
-        Intrinsics3.checkNotNullParameter(observable, "storeStateObservable");
+        C12238m.checkNotNullParameter(storeStickers, "stickersStore");
+        C12238m.checkNotNullParameter(stickerPackStoreSheetAnalytics, "analytics");
+        C12238m.checkNotNullParameter(observable, "storeStateObservable");
         this.stickerPackId = j;
         this.stickersStore = storeStickers;
-        this.analytics = stickerPackStoreSheetViewModel2;
+        this.analytics = stickerPackStoreSheetAnalytics;
         fetchStickersData();
         trackStickerPackStoreSheetViewed();
-        ObservableExtensionsKt.appSubscribe(ObservableExtensionsKt.ui$default(ObservableExtensionsKt.computationLatest(observable), this, null, 2, null), (Class<?>) StickerPackStoreSheetViewModel.class, (58 & 2) != 0 ? null : null, (Function1<? super Subscription, Unit>) ((58 & 4) != 0 ? null : null), (Function1<? super Error, Unit>) ((58 & 8) != 0 ? null : null), (Function0<Unit>) ((58 & 16) != 0 ? ObservableExtensionsKt.AnonymousClass1.INSTANCE : null), (Function0<Unit>) ((58 & 32) != 0 ? ObservableExtensionsKt.AnonymousClass2.INSTANCE : null), new AnonymousClass1());
+        ObservableExtensionsKt.appSubscribe(ObservableExtensionsKt.ui$default(ObservableExtensionsKt.computationLatest(observable), this, null, 2, null), (Class<?>) StickerPackStoreSheetViewModel.class, (58 & 2) != 0 ? null : null, (Function1<? super Subscription, Unit>) ((58 & 4) != 0 ? null : null), (Function1<? super Error, Unit>) ((58 & 8) != 0 ? null : null), (Function0<Unit>) ((58 & 16) != 0 ? ObservableExtensionsKt.C68791.INSTANCE : null), (Function0<Unit>) ((58 & 32) != 0 ? ObservableExtensionsKt.C68802.INSTANCE : null), new C78931());
     }
 }

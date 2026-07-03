@@ -1,14 +1,14 @@
 package com.discord.analytics.generated.events;
 
-import b.d.b.a.outline;
 import com.discord.analytics.generated.traits.TrackBase;
-import com.discord.analytics.generated.traits.TrackBase2;
+import com.discord.analytics.generated.traits.TrackBaseReceiver;
 import com.discord.api.science.AnalyticsSchema;
-import d0.z.d.Intrinsics3;
+import p007b.p100d.p104b.p105a.C1643a;
+import p507d0.p592z.p594d.C12238m;
 
 /* JADX INFO: compiled from: TrackNotificationPermissionStatus.kt */
 /* JADX INFO: loaded from: classes.dex */
-public final /* data */ class TrackNotificationPermissionStatus implements AnalyticsSchema, TrackBase2 {
+public final /* data */ class TrackNotificationPermissionStatus implements AnalyticsSchema, TrackBaseReceiver {
     private TrackBase trackBase;
     private final Boolean osEnabled = null;
     private final Boolean foregroundAppEnabled = null;
@@ -29,7 +29,7 @@ public final /* data */ class TrackNotificationPermissionStatus implements Analy
             return false;
         }
         TrackNotificationPermissionStatus trackNotificationPermissionStatus = (TrackNotificationPermissionStatus) other;
-        return Intrinsics3.areEqual(this.osEnabled, trackNotificationPermissionStatus.osEnabled) && Intrinsics3.areEqual(this.foregroundAppEnabled, trackNotificationPermissionStatus.foregroundAppEnabled) && Intrinsics3.areEqual(this.backgroundAppEnabled, trackNotificationPermissionStatus.backgroundAppEnabled);
+        return C12238m.areEqual(this.osEnabled, trackNotificationPermissionStatus.osEnabled) && C12238m.areEqual(this.foregroundAppEnabled, trackNotificationPermissionStatus.foregroundAppEnabled) && C12238m.areEqual(this.backgroundAppEnabled, trackNotificationPermissionStatus.backgroundAppEnabled);
     }
 
     public int hashCode() {
@@ -42,11 +42,11 @@ public final /* data */ class TrackNotificationPermissionStatus implements Analy
     }
 
     public String toString() {
-        StringBuilder sbU = outline.U("TrackNotificationPermissionStatus(osEnabled=");
-        sbU.append(this.osEnabled);
-        sbU.append(", foregroundAppEnabled=");
-        sbU.append(this.foregroundAppEnabled);
-        sbU.append(", backgroundAppEnabled=");
-        return outline.D(sbU, this.backgroundAppEnabled, ")");
+        StringBuilder sbM833U = C1643a.m833U("TrackNotificationPermissionStatus(osEnabled=");
+        sbM833U.append(this.osEnabled);
+        sbM833U.append(", foregroundAppEnabled=");
+        sbM833U.append(this.foregroundAppEnabled);
+        sbM833U.append(", backgroundAppEnabled=");
+        return C1643a.m816D(sbM833U, this.backgroundAppEnabled, ")");
     }
 }

@@ -1,14 +1,14 @@
 package com.discord.analytics.generated.events;
 
-import b.d.b.a.outline;
 import com.discord.analytics.generated.traits.TrackBase;
-import com.discord.analytics.generated.traits.TrackBase2;
+import com.discord.analytics.generated.traits.TrackBaseReceiver;
 import com.discord.api.science.AnalyticsSchema;
-import d0.z.d.Intrinsics3;
+import p007b.p100d.p104b.p105a.C1643a;
+import p507d0.p592z.p594d.C12238m;
 
 /* JADX INFO: compiled from: TrackUpdateNote.kt */
 /* JADX INFO: loaded from: classes.dex */
-public final /* data */ class TrackUpdateNote implements AnalyticsSchema, TrackBase2 {
+public final /* data */ class TrackUpdateNote implements AnalyticsSchema, TrackBaseReceiver {
     private TrackBase trackBase;
     private final Long otherUser = null;
     private final CharSequence type = null;
@@ -28,7 +28,7 @@ public final /* data */ class TrackUpdateNote implements AnalyticsSchema, TrackB
             return false;
         }
         TrackUpdateNote trackUpdateNote = (TrackUpdateNote) other;
-        return Intrinsics3.areEqual(this.otherUser, trackUpdateNote.otherUser) && Intrinsics3.areEqual(this.type, trackUpdateNote.type);
+        return C12238m.areEqual(this.otherUser, trackUpdateNote.otherUser) && C12238m.areEqual(this.type, trackUpdateNote.type);
     }
 
     public int hashCode() {
@@ -39,9 +39,9 @@ public final /* data */ class TrackUpdateNote implements AnalyticsSchema, TrackB
     }
 
     public String toString() {
-        StringBuilder sbU = outline.U("TrackUpdateNote(otherUser=");
-        sbU.append(this.otherUser);
-        sbU.append(", type=");
-        return outline.E(sbU, this.type, ")");
+        StringBuilder sbM833U = C1643a.m833U("TrackUpdateNote(otherUser=");
+        sbM833U.append(this.otherUser);
+        sbM833U.append(", type=");
+        return C1643a.m817E(sbM833U, this.type, ")");
     }
 }

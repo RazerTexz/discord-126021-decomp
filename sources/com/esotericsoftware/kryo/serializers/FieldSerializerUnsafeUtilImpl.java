@@ -1,13 +1,13 @@
 package com.esotericsoftware.kryo.serializers;
 
-import b.e.a.Log;
-import b.e.b.FieldAccess2;
 import com.esotericsoftware.kryo.serializers.FieldSerializer;
 import com.esotericsoftware.kryo.serializers.UnsafeCacheFields;
 import com.esotericsoftware.kryo.util.IntArray;
 import com.esotericsoftware.kryo.util.UnsafeUtil;
 import java.lang.reflect.Field;
 import java.util.List;
+import p007b.p106e.p107a.C1644a;
+import p007b.p106e.p108b.AbstractC1647c;
 
 /* JADX INFO: loaded from: classes.dex */
 public final class FieldSerializerUnsafeUtilImpl implements FieldSerializerUnsafeUtil {
@@ -41,7 +41,7 @@ public final class FieldSerializerUnsafeUtilImpl implements FieldSerializerUnsaf
     @Override // com.esotericsoftware.kryo.serializers.FieldSerializerUnsafeUtil
     public void createUnsafeCacheFieldsAndRegions(List<Field> list, List<FieldSerializer.CachedField> list2, int i, IntArray intArray) {
         int i2;
-        int iH;
+        int iM911h;
         long jObjectFieldOffset;
         long j = 0;
         Field field = null;
@@ -54,22 +54,22 @@ public final class FieldSerializerUnsafeUtilImpl implements FieldSerializerUnsaf
             Field field2 = list.get(i3);
             if (this.serializer.access != null) {
                 i2 = size;
-                iH = intArray.get(i + i3) == 1 ? ((FieldAccess2) this.serializer.access).h(field2.getName()) : -1;
+                iM911h = intArray.get(i + i3) == 1 ? ((AbstractC1647c) this.serializer.access).m911h(field2.getName()) : -1;
                 jObjectFieldOffset = UnsafeUtil.unsafe().objectFieldOffset(field2);
                 long jFieldSizeOf = jObjectFieldOffset + ((long) fieldSizeOf(field2.getType()));
                 if (field2.getType().isPrimitive() && z2) {
                     if (i4 > 1) {
-                        Log.a aVar = Log.a;
+                        C1644a.a aVar = C1644a.f3007a;
                         UnsafeCacheFields.UnsafeRegionField unsafeRegionField = new UnsafeCacheFields.UnsafeRegionField(j, j2 - j);
                         unsafeRegionField.field = field;
                         list2.add(unsafeRegionField);
                     } else if (field != null) {
                         list2.add(this.serializer.newCachedField(field, list2.size(), i5));
                     }
-                    list2.add(this.serializer.newCachedField(field2, list2.size(), iH));
+                    list2.add(this.serializer.newCachedField(field2, list2.size(), iM911h));
                     z2 = false;
                 } else if (!field2.getType().isPrimitive()) {
-                    list2.add(this.serializer.newCachedField(field2, list2.size(), iH));
+                    list2.add(this.serializer.newCachedField(field2, list2.size(), iM911h));
                 } else if (z2) {
                     i4++;
                 } else {
@@ -79,7 +79,7 @@ public final class FieldSerializerUnsafeUtilImpl implements FieldSerializerUnsaf
                 }
                 i3++;
                 field = field2;
-                i5 = iH;
+                i5 = iM911h;
                 j2 = jFieldSizeOf;
             } else {
                 i2 = size;
@@ -88,7 +88,7 @@ public final class FieldSerializerUnsafeUtilImpl implements FieldSerializerUnsaf
             long jFieldSizeOf2 = jObjectFieldOffset + ((long) fieldSizeOf(field2.getType()));
             if (field2.getType().isPrimitive()) {
                 if (!field2.getType().isPrimitive()) {
-                    list2.add(this.serializer.newCachedField(field2, list2.size(), iH));
+                    list2.add(this.serializer.newCachedField(field2, list2.size(), iM911h));
                 } else if (z2) {
                     j = jObjectFieldOffset;
                     z2 = true;
@@ -97,7 +97,7 @@ public final class FieldSerializerUnsafeUtilImpl implements FieldSerializerUnsaf
                     i4++;
                 }
             } else if (!field2.getType().isPrimitive()) {
-                list2.add(this.serializer.newCachedField(field2, list2.size(), iH));
+                list2.add(this.serializer.newCachedField(field2, list2.size(), iM911h));
             } else if (z2) {
                 j = jObjectFieldOffset;
                 z2 = true;
@@ -107,7 +107,7 @@ public final class FieldSerializerUnsafeUtilImpl implements FieldSerializerUnsaf
             }
             i3++;
             field = field2;
-            i5 = iH;
+            i5 = iM911h;
             j2 = jFieldSizeOf2;
         }
         if (!this.serializer.getUseAsmEnabled() && this.serializer.getUseMemRegions() && z2) {
@@ -116,7 +116,7 @@ public final class FieldSerializerUnsafeUtilImpl implements FieldSerializerUnsaf
                     list2.add(this.serializer.newCachedField(field, list2.size(), i5));
                 }
             } else {
-                Log.a aVar2 = Log.a;
+                C1644a.a aVar2 = C1644a.f3007a;
                 UnsafeCacheFields.UnsafeRegionField unsafeRegionField2 = new UnsafeCacheFields.UnsafeRegionField(j, j2 - j);
                 unsafeRegionField2.field = field;
                 list2.add(unsafeRegionField2);

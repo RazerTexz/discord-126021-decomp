@@ -1,7 +1,5 @@
 package com.discord.utilities.embed;
 
-import b.c.a.a0.AnimatableValueParser;
-import b.d.b.a.outline;
 import com.discord.api.channel.Channel;
 import com.discord.api.channel.ChannelUtils;
 import com.discord.api.stageinstance.RecommendedStageInstance;
@@ -11,11 +9,13 @@ import com.discord.stores.StoreInstantInvites;
 import com.discord.stores.StoreRequestedStageChannels;
 import com.discord.stores.StoreStream;
 import com.discord.utilities.SnowflakeUtils;
-import d0.z.d.Intrinsics3;
 import java.util.Map;
 import kotlin.jvm.internal.DefaultConstructorMarker;
-import rx.Observable;
-import rx.functions.Func4;
+import p007b.p085c.p086a.p087a0.C1460d;
+import p007b.p100d.p104b.p105a.C1643a;
+import p507d0.p592z.p594d.C12238m;
+import p658rx.Observable;
+import p658rx.functions.Func4;
 
 /* JADX INFO: compiled from: InviteEmbedModel.kt */
 /* JADX INFO: loaded from: classes2.dex */
@@ -51,23 +51,23 @@ public final /* data */ class InviteEmbedModel {
         }
 
         public final Observable<InviteEmbedModel> observe(Observable<Map<Long, Channel>> channelsObservable, Observable<Map<String, StoreInstantInvites.InviteState>> knownInvitesObservable, Observable<Map<Long, StageInstance>> stageInstancesObservable, Observable<Map<Long, StoreRequestedStageChannels.StageInstanceState>> requestedStageInstances) {
-            Intrinsics3.checkNotNullParameter(channelsObservable, "channelsObservable");
-            Intrinsics3.checkNotNullParameter(knownInvitesObservable, "knownInvitesObservable");
-            Intrinsics3.checkNotNullParameter(stageInstancesObservable, "stageInstancesObservable");
-            Intrinsics3.checkNotNullParameter(requestedStageInstances, "requestedStageInstances");
-            final InviteEmbedModel2 inviteEmbedModel2 = InviteEmbedModel2.INSTANCE;
-            Object obj = inviteEmbedModel2;
-            if (inviteEmbedModel2 != null) {
+            C12238m.checkNotNullParameter(channelsObservable, "channelsObservable");
+            C12238m.checkNotNullParameter(knownInvitesObservable, "knownInvitesObservable");
+            C12238m.checkNotNullParameter(stageInstancesObservable, "stageInstancesObservable");
+            C12238m.checkNotNullParameter(requestedStageInstances, "requestedStageInstances");
+            final InviteEmbedModel$Companion$observe$1 inviteEmbedModel$Companion$observe$1 = InviteEmbedModel$Companion$observe$1.INSTANCE;
+            Object obj = inviteEmbedModel$Companion$observe$1;
+            if (inviteEmbedModel$Companion$observe$1 != null) {
                 obj = new Func4() { // from class: com.discord.utilities.embed.InviteEmbedModel$sam$rx_functions_Func4$0
-                    @Override // rx.functions.Func4
+                    @Override // p658rx.functions.Func4
                     public final /* synthetic */ Object call(Object obj2, Object obj3, Object obj4, Object obj5) {
-                        return inviteEmbedModel2.invoke(obj2, obj3, obj4, obj5);
+                        return inviteEmbedModel$Companion$observe$1.invoke(obj2, obj3, obj4, obj5);
                     }
                 };
             }
-            Observable<InviteEmbedModel> observableH = Observable.h(channelsObservable, knownInvitesObservable, stageInstancesObservable, requestedStageInstances, (Func4) obj);
-            Intrinsics3.checkNotNullExpressionValue(observableH, "Observable.combineLatest… ::InviteEmbedModel\n    )");
-            return observableH;
+            Observable<InviteEmbedModel> observableM11073h = Observable.m11073h(channelsObservable, knownInvitesObservable, stageInstancesObservable, requestedStageInstances, (Func4) obj);
+            C12238m.checkNotNullExpressionValue(observableM11073h, "Observable.combineLatest… ::InviteEmbedModel\n    )");
+            return observableM11073h;
         }
 
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
@@ -77,10 +77,10 @@ public final /* data */ class InviteEmbedModel {
 
     /* JADX WARN: Multi-variable type inference failed */
     public InviteEmbedModel(Map<Long, Channel> map, Map<String, ? extends StoreInstantInvites.InviteState> map2, Map<Long, StageInstance> map3, Map<Long, StoreRequestedStageChannels.StageInstanceState> map4) {
-        Intrinsics3.checkNotNullParameter(map, "channels");
-        Intrinsics3.checkNotNullParameter(map2, "invites");
-        Intrinsics3.checkNotNullParameter(map3, "stageInstances");
-        Intrinsics3.checkNotNullParameter(map4, "requestedInstances");
+        C12238m.checkNotNullParameter(map, "channels");
+        C12238m.checkNotNullParameter(map2, "invites");
+        C12238m.checkNotNullParameter(map3, "stageInstances");
+        C12238m.checkNotNullParameter(map4, "requestedInstances");
         this.channels = map;
         this.invites = map2;
         this.stageInstances = map3;
@@ -121,10 +121,10 @@ public final /* data */ class InviteEmbedModel {
     }
 
     public final InviteEmbedModel copy(Map<Long, Channel> channels, Map<String, ? extends StoreInstantInvites.InviteState> invites, Map<Long, StageInstance> stageInstances, Map<Long, StoreRequestedStageChannels.StageInstanceState> requestedInstances) {
-        Intrinsics3.checkNotNullParameter(channels, "channels");
-        Intrinsics3.checkNotNullParameter(invites, "invites");
-        Intrinsics3.checkNotNullParameter(stageInstances, "stageInstances");
-        Intrinsics3.checkNotNullParameter(requestedInstances, "requestedInstances");
+        C12238m.checkNotNullParameter(channels, "channels");
+        C12238m.checkNotNullParameter(invites, "invites");
+        C12238m.checkNotNullParameter(stageInstances, "stageInstances");
+        C12238m.checkNotNullParameter(requestedInstances, "requestedInstances");
         return new InviteEmbedModel(channels, invites, stageInstances, requestedInstances);
     }
 
@@ -136,11 +136,11 @@ public final /* data */ class InviteEmbedModel {
             return false;
         }
         InviteEmbedModel inviteEmbedModel = (InviteEmbedModel) other;
-        return Intrinsics3.areEqual(this.channels, inviteEmbedModel.channels) && Intrinsics3.areEqual(this.invites, inviteEmbedModel.invites) && Intrinsics3.areEqual(this.stageInstances, inviteEmbedModel.stageInstances) && Intrinsics3.areEqual(this.requestedInstances, inviteEmbedModel.requestedInstances);
+        return C12238m.areEqual(this.channels, inviteEmbedModel.channels) && C12238m.areEqual(this.invites, inviteEmbedModel.invites) && C12238m.areEqual(this.stageInstances, inviteEmbedModel.stageInstances) && C12238m.areEqual(this.requestedInstances, inviteEmbedModel.requestedInstances);
     }
 
     public final ModelInvite getResolvedInvite(String inviteKey) {
-        Intrinsics3.checkNotNullParameter(inviteKey, "inviteKey");
+        C12238m.checkNotNullParameter(inviteKey, "inviteKey");
         StoreInstantInvites.InviteState inviteState = this.invites.get(inviteKey);
         if (!(inviteState instanceof StoreInstantInvites.InviteState.Resolved)) {
             inviteState = null;
@@ -166,24 +166,24 @@ public final /* data */ class InviteEmbedModel {
     public final ModelInvite resolveInviteCodeForPublicStage(String inviteCode) {
         RecommendedStageInstance stageInstance;
         StageInstance recommendedStageInstance;
-        Intrinsics3.checkNotNullParameter(inviteCode, "inviteCode");
+        C12238m.checkNotNullParameter(inviteCode, "inviteCode");
         ModelInvite resolvedInvite = getResolvedInvite(inviteCode);
         if (resolvedInvite != null) {
             Channel channel = resolvedInvite.getChannel();
-            if (!(channel != null && ChannelUtils.D(channel))) {
+            if (!(channel != null && ChannelUtils.m7669D(channel))) {
                 channel = null;
             }
             if (channel != null) {
-                Intrinsics3.checkNotNullExpressionValue(channel, "invite.channel.takeIf { … == true } ?: return null");
-                StageInstance stageInstance2 = (StageInstance) outline.d(channel, this.stageInstances);
-                if (stageInstance2 != null && AnimatableValueParser.W0(stageInstance2)) {
+                C12238m.checkNotNullExpressionValue(channel, "invite.channel.takeIf { … == true } ?: return null");
+                StageInstance stageInstance2 = (StageInstance) C1643a.m845d(channel, this.stageInstances);
+                if (stageInstance2 != null && C1460d.m484W0(stageInstance2)) {
                     return resolvedInvite;
                 }
-                if (((Channel) outline.d(channel, this.channels)) != null) {
+                if (((Channel) C1643a.m845d(channel, this.channels)) != null) {
                     return null;
                 }
-                StoreRequestedStageChannels.StageInstanceState stageInstanceState = (StoreRequestedStageChannels.StageInstanceState) outline.d(channel, this.requestedInstances);
-                if (stageInstanceState != null && (stageInstance = stageInstanceState.getStageInstance()) != null && (recommendedStageInstance = stageInstance.getInstance()) != null && AnimatableValueParser.W0(recommendedStageInstance)) {
+                StoreRequestedStageChannels.StageInstanceState stageInstanceState = (StoreRequestedStageChannels.StageInstanceState) C1643a.m845d(channel, this.requestedInstances);
+                if (stageInstanceState != null && (stageInstance = stageInstanceState.getStageInstance()) != null && (recommendedStageInstance = stageInstance.getInstance()) != null && C1460d.m484W0(recommendedStageInstance)) {
                     return resolvedInvite;
                 }
                 if (stageInstanceState == null || stageInstanceState.isError()) {
@@ -195,10 +195,10 @@ public final /* data */ class InviteEmbedModel {
     }
 
     public final ModelInvite resolveInviteForGuildScheduledEvent(String inviteCode, String eventId) {
-        Intrinsics3.checkNotNullParameter(inviteCode, "inviteCode");
-        Intrinsics3.checkNotNullParameter(eventId, "eventId");
+        C12238m.checkNotNullParameter(inviteCode, "inviteCode");
+        C12238m.checkNotNullParameter(eventId, "eventId");
         String inviteStoreKey = ModelInvite.getInviteStoreKey(inviteCode, SnowflakeUtils.INSTANCE.toSnowflake(eventId));
-        Intrinsics3.checkNotNullExpressionValue(inviteStoreKey, "ModelInvite.getInviteSto…d.toSnowflake()\n        )");
+        C12238m.checkNotNullExpressionValue(inviteStoreKey, "ModelInvite.getInviteSto…d.toSnowflake()\n        )");
         ModelInvite resolvedInvite = getResolvedInvite(inviteStoreKey);
         if ((resolvedInvite != null ? resolvedInvite.getGuildScheduledEvent() : null) != null) {
             return resolvedInvite;
@@ -207,13 +207,13 @@ public final /* data */ class InviteEmbedModel {
     }
 
     public String toString() {
-        StringBuilder sbU = outline.U("InviteEmbedModel(channels=");
-        sbU.append(this.channels);
-        sbU.append(", invites=");
-        sbU.append(this.invites);
-        sbU.append(", stageInstances=");
-        sbU.append(this.stageInstances);
-        sbU.append(", requestedInstances=");
-        return outline.M(sbU, this.requestedInstances, ")");
+        StringBuilder sbM833U = C1643a.m833U("InviteEmbedModel(channels=");
+        sbM833U.append(this.channels);
+        sbM833U.append(", invites=");
+        sbM833U.append(this.invites);
+        sbM833U.append(", stageInstances=");
+        sbM833U.append(this.stageInstances);
+        sbM833U.append(", requestedInstances=");
+        return C1643a.m825M(sbM833U, this.requestedInstances, ")");
     }
 }

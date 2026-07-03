@@ -14,13 +14,16 @@ public interface PooledByteBuffer extends Closeable {
 
     ByteBuffer getByteBuffer();
 
-    byte h(int i);
+    /* JADX INFO: renamed from: h */
+    byte mo1395h(int i);
 
-    int i(int i, byte[] bArr, int i2, int i3);
+    /* JADX INFO: renamed from: i */
+    int mo1396i(int i, byte[] bArr, int i2, int i3);
 
     boolean isClosed();
 
-    long k();
+    /* JADX INFO: renamed from: k */
+    long mo1397k();
 
     int size();
 }

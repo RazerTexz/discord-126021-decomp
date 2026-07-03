@@ -4,16 +4,6 @@ import android.content.Context;
 import androidx.work.ListenableWorker;
 import androidx.work.impl.utils.futures.SettableFuture;
 import androidx.work.impl.utils.taskexecutor.TaskExecutor;
-import b.i.a.f.e.o.f;
-import b.i.b.d.a.ListenableFuture8;
-import d0.Result2;
-import d0.Result3;
-import d0.w.h.Intrinsics2;
-import d0.w.h.IntrinsicsJvm;
-import d0.w.i.a.ContinuationImpl6;
-import d0.w.i.a.DebugMetadata;
-import d0.w.i.a.DebugProbes;
-import d0.z.d.Intrinsics3;
 import java.util.concurrent.CancellationException;
 import java.util.concurrent.ExecutionException;
 import kotlin.Unit;
@@ -22,51 +12,63 @@ import kotlin.jvm.functions.Function2;
 import kotlinx.coroutines.CancellableContinuation;
 import kotlinx.coroutines.CoroutineDispatcher;
 import kotlinx.coroutines.CoroutineScope;
-import s.a.CancellableContinuationImpl5;
-import s.a.CompletableJob;
-import s.a.Dispatchers;
-import s.a.f1;
+import p007b.p225i.p226a.p288f.p299e.p308o.C3404f;
+import p007b.p225i.p355b.p359d.p360a.InterfaceFutureC4539a;
+import p507d0.C12112k;
+import p507d0.C12113l;
+import p507d0.p584w.p585h.C12182b;
+import p507d0.p584w.p585h.C12183c;
+import p507d0.p584w.p586i.p587a.AbstractC12194k;
+import p507d0.p584w.p586i.p587a.C12190g;
+import p507d0.p584w.p586i.p587a.InterfaceC12188e;
+import p507d0.p592z.p594d.C12238m;
+import p659s.p660a.C13110f1;
+import p659s.p660a.C13124k0;
+import p659s.p660a.C13126l;
+import p659s.p660a.InterfaceC13153u;
 
 /* JADX INFO: compiled from: CoroutineWorker.kt */
 /* JADX INFO: loaded from: classes.dex */
 public abstract class CoroutineWorker extends ListenableWorker {
     private final CoroutineDispatcher coroutineContext;
     private final SettableFuture<ListenableWorker.Result> future;
-    private final CompletableJob job;
+    private final InterfaceC13153u job;
 
-    /* JADX INFO: renamed from: androidx.work.CoroutineWorker$startWork$1, reason: invalid class name */
+    /* JADX INFO: renamed from: androidx.work.CoroutineWorker$startWork$1 */
     /* JADX INFO: compiled from: CoroutineWorker.kt */
-    @DebugMetadata(c = "androidx.work.CoroutineWorker$startWork$1", f = "CoroutineWorker.kt", l = {68}, m = "invokeSuspend")
-    public static final class AnonymousClass1 extends ContinuationImpl6 implements Function2<CoroutineScope, Continuation<? super Unit>, Object> {
+    @InterfaceC12188e(m10084c = "androidx.work.CoroutineWorker$startWork$1", m10085f = "CoroutineWorker.kt", m10086l = {68}, m10087m = "invokeSuspend")
+    public static final class C07141 extends AbstractC12194k implements Function2<CoroutineScope, Continuation<? super Unit>, Object> {
         public Object L$0;
         public int label;
-        private CoroutineScope p$;
 
-        public AnonymousClass1(Continuation continuation) {
+        /* JADX INFO: renamed from: p$ */
+        private CoroutineScope f162p$;
+
+        public C07141(Continuation continuation) {
             super(2, continuation);
         }
 
-        @Override // d0.w.i.a.ContinuationImpl
+        @Override // p507d0.p584w.p586i.p587a.AbstractC12184a
         public final Continuation<Unit> create(Object obj, Continuation<?> continuation) {
-            Intrinsics3.checkParameterIsNotNull(continuation, "completion");
-            AnonymousClass1 anonymousClass1 = CoroutineWorker.this.new AnonymousClass1(continuation);
-            anonymousClass1.p$ = (CoroutineScope) obj;
-            return anonymousClass1;
+            C12238m.checkParameterIsNotNull(continuation, "completion");
+            C07141 c07141 = CoroutineWorker.this.new C07141(continuation);
+            c07141.f162p$ = (CoroutineScope) obj;
+            return c07141;
         }
 
         @Override // kotlin.jvm.functions.Function2
         public final Object invoke(CoroutineScope coroutineScope, Continuation<? super Unit> continuation) {
-            return ((AnonymousClass1) create(coroutineScope, continuation)).invokeSuspend(Unit.a);
+            return ((C07141) create(coroutineScope, continuation)).invokeSuspend(Unit.f27425a);
         }
 
-        @Override // d0.w.i.a.ContinuationImpl
+        @Override // p507d0.p584w.p586i.p587a.AbstractC12184a
         public final Object invokeSuspend(Object obj) {
-            Object coroutine_suspended = Intrinsics2.getCOROUTINE_SUSPENDED();
+            Object coroutine_suspended = C12183c.getCOROUTINE_SUSPENDED();
             int i = this.label;
             try {
                 if (i == 0) {
-                    Result3.throwOnFailure(obj);
-                    CoroutineScope coroutineScope = this.p$;
+                    C12113l.throwOnFailure(obj);
+                    CoroutineScope coroutineScope = this.f162p$;
                     CoroutineWorker coroutineWorker = CoroutineWorker.this;
                     this.L$0 = coroutineScope;
                     this.label = 1;
@@ -78,37 +80,37 @@ public abstract class CoroutineWorker extends ListenableWorker {
                     if (i != 1) {
                         throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
                     }
-                    Result3.throwOnFailure(obj);
+                    C12113l.throwOnFailure(obj);
                 }
                 CoroutineWorker.this.getFuture$work_runtime_ktx_release().set((ListenableWorker.Result) obj);
             } catch (Throwable th) {
                 CoroutineWorker.this.getFuture$work_runtime_ktx_release().setException(th);
             }
-            return Unit.a;
+            return Unit.f27425a;
         }
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public CoroutineWorker(Context context, WorkerParameters workerParameters) {
         super(context, workerParameters);
-        Intrinsics3.checkParameterIsNotNull(context, "appContext");
-        Intrinsics3.checkParameterIsNotNull(workerParameters, "params");
-        this.job = new f1(null);
+        C12238m.checkParameterIsNotNull(context, "appContext");
+        C12238m.checkParameterIsNotNull(workerParameters, "params");
+        this.job = new C13110f1(null);
         SettableFuture<ListenableWorker.Result> settableFutureCreate = SettableFuture.create();
-        Intrinsics3.checkExpressionValueIsNotNull(settableFutureCreate, "SettableFuture.create()");
+        C12238m.checkExpressionValueIsNotNull(settableFutureCreate, "SettableFuture.create()");
         this.future = settableFutureCreate;
         Runnable runnable = new Runnable() { // from class: androidx.work.CoroutineWorker.1
             @Override // java.lang.Runnable
             public final void run() {
                 if (CoroutineWorker.this.getFuture$work_runtime_ktx_release().isCancelled()) {
-                    f.t(CoroutineWorker.this.getJob(), null, 1, null);
+                    C3404f.m4343t(CoroutineWorker.this.getJob(), null, 1, null);
                 }
             }
         };
         TaskExecutor taskExecutor = getTaskExecutor();
-        Intrinsics3.checkExpressionValueIsNotNull(taskExecutor, "taskExecutor");
+        C12238m.checkExpressionValueIsNotNull(taskExecutor, "taskExecutor");
         settableFutureCreate.addListener(runnable, taskExecutor.getBackgroundExecutor());
-        this.coroutineContext = Dispatchers.a;
+        this.coroutineContext = C13124k0.f27866a;
     }
 
     public static /* synthetic */ void coroutineContext$annotations() {
@@ -125,7 +127,7 @@ public abstract class CoroutineWorker extends ListenableWorker {
     }
 
     /* JADX INFO: renamed from: getJob$work_runtime_ktx_release, reason: from getter */
-    public final CompletableJob getJob() {
+    public final InterfaceC13153u getJob() {
         return this.job;
     }
 
@@ -136,12 +138,12 @@ public abstract class CoroutineWorker extends ListenableWorker {
     }
 
     public final Object setForeground(ForegroundInfo foregroundInfo, Continuation<? super Unit> continuation) throws Throwable {
-        Object objU;
-        final ListenableFuture8<Void> foregroundAsync = setForegroundAsync(foregroundInfo);
-        Intrinsics3.checkExpressionValueIsNotNull(foregroundAsync, "setForegroundAsync(foregroundInfo)");
+        Object objM11326u;
+        final InterfaceFutureC4539a<Void> foregroundAsync = setForegroundAsync(foregroundInfo);
+        C12238m.checkExpressionValueIsNotNull(foregroundAsync, "setForegroundAsync(foregroundInfo)");
         if (foregroundAsync.isDone()) {
             try {
-                objU = foregroundAsync.get();
+                objM11326u = foregroundAsync.get();
             } catch (ExecutionException e) {
                 Throwable cause = e.getCause();
                 if (cause != null) {
@@ -150,45 +152,45 @@ public abstract class CoroutineWorker extends ListenableWorker {
                 throw e;
             }
         } else {
-            final CancellableContinuationImpl5 cancellableContinuationImpl5 = new CancellableContinuationImpl5(IntrinsicsJvm.intercepted(continuation), 1);
+            final C13126l c13126l = new C13126l(C12182b.intercepted(continuation), 1);
             foregroundAsync.addListener(new Runnable() { // from class: androidx.work.CoroutineWorker$await$$inlined$suspendCancellableCoroutine$lambda$2
                 @Override // java.lang.Runnable
                 public final void run() {
                     try {
-                        CancellableContinuation cancellableContinuation = cancellableContinuationImpl5;
+                        CancellableContinuation cancellableContinuation = c13126l;
                         V v = foregroundAsync.get();
-                        Result2.a aVar = Result2.j;
-                        cancellableContinuation.resumeWith(Result2.m97constructorimpl(v));
+                        C12112k.a aVar = C12112k.f25169j;
+                        cancellableContinuation.resumeWith(C12112k.m11474constructorimpl(v));
                     } catch (Throwable th) {
                         Throwable cause2 = th.getCause();
                         if (cause2 == null) {
                             cause2 = th;
                         }
                         if (th instanceof CancellationException) {
-                            cancellableContinuationImpl5.k(cause2);
+                            c13126l.mo10906k(cause2);
                             return;
                         }
-                        CancellableContinuation cancellableContinuation2 = cancellableContinuationImpl5;
-                        Result2.a aVar2 = Result2.j;
-                        cancellableContinuation2.resumeWith(Result2.m97constructorimpl(Result3.createFailure(cause2)));
+                        CancellableContinuation cancellableContinuation2 = c13126l;
+                        C12112k.a aVar2 = C12112k.f25169j;
+                        cancellableContinuation2.resumeWith(C12112k.m11474constructorimpl(C12113l.createFailure(cause2)));
                     }
                 }
             }, DirectExecutor.INSTANCE);
-            objU = cancellableContinuationImpl5.u();
-            if (objU == Intrinsics2.getCOROUTINE_SUSPENDED()) {
-                DebugProbes.probeCoroutineSuspended(continuation);
+            objM11326u = c13126l.m11326u();
+            if (objM11326u == C12183c.getCOROUTINE_SUSPENDED()) {
+                C12190g.probeCoroutineSuspended(continuation);
             }
         }
-        return objU == Intrinsics2.getCOROUTINE_SUSPENDED() ? objU : Unit.a;
+        return objM11326u == C12183c.getCOROUTINE_SUSPENDED() ? objM11326u : Unit.f27425a;
     }
 
     public final Object setProgress(Data data, Continuation<? super Unit> continuation) throws Throwable {
-        Object objU;
-        final ListenableFuture8<Void> progressAsync = setProgressAsync(data);
-        Intrinsics3.checkExpressionValueIsNotNull(progressAsync, "setProgressAsync(data)");
+        Object objM11326u;
+        final InterfaceFutureC4539a<Void> progressAsync = setProgressAsync(data);
+        C12238m.checkExpressionValueIsNotNull(progressAsync, "setProgressAsync(data)");
         if (progressAsync.isDone()) {
             try {
-                objU = progressAsync.get();
+                objM11326u = progressAsync.get();
             } catch (ExecutionException e) {
                 Throwable cause = e.getCause();
                 if (cause != null) {
@@ -197,41 +199,41 @@ public abstract class CoroutineWorker extends ListenableWorker {
                 throw e;
             }
         } else {
-            final CancellableContinuationImpl5 cancellableContinuationImpl5 = new CancellableContinuationImpl5(IntrinsicsJvm.intercepted(continuation), 1);
+            final C13126l c13126l = new C13126l(C12182b.intercepted(continuation), 1);
             progressAsync.addListener(new Runnable() { // from class: androidx.work.CoroutineWorker$await$$inlined$suspendCancellableCoroutine$lambda$1
                 @Override // java.lang.Runnable
                 public final void run() {
                     try {
-                        CancellableContinuation cancellableContinuation = cancellableContinuationImpl5;
+                        CancellableContinuation cancellableContinuation = c13126l;
                         V v = progressAsync.get();
-                        Result2.a aVar = Result2.j;
-                        cancellableContinuation.resumeWith(Result2.m97constructorimpl(v));
+                        C12112k.a aVar = C12112k.f25169j;
+                        cancellableContinuation.resumeWith(C12112k.m11474constructorimpl(v));
                     } catch (Throwable th) {
                         Throwable cause2 = th.getCause();
                         if (cause2 == null) {
                             cause2 = th;
                         }
                         if (th instanceof CancellationException) {
-                            cancellableContinuationImpl5.k(cause2);
+                            c13126l.mo10906k(cause2);
                             return;
                         }
-                        CancellableContinuation cancellableContinuation2 = cancellableContinuationImpl5;
-                        Result2.a aVar2 = Result2.j;
-                        cancellableContinuation2.resumeWith(Result2.m97constructorimpl(Result3.createFailure(cause2)));
+                        CancellableContinuation cancellableContinuation2 = c13126l;
+                        C12112k.a aVar2 = C12112k.f25169j;
+                        cancellableContinuation2.resumeWith(C12112k.m11474constructorimpl(C12113l.createFailure(cause2)));
                     }
                 }
             }, DirectExecutor.INSTANCE);
-            objU = cancellableContinuationImpl5.u();
-            if (objU == Intrinsics2.getCOROUTINE_SUSPENDED()) {
-                DebugProbes.probeCoroutineSuspended(continuation);
+            objM11326u = c13126l.m11326u();
+            if (objM11326u == C12183c.getCOROUTINE_SUSPENDED()) {
+                C12190g.probeCoroutineSuspended(continuation);
             }
         }
-        return objU == Intrinsics2.getCOROUTINE_SUSPENDED() ? objU : Unit.a;
+        return objM11326u == C12183c.getCOROUTINE_SUSPENDED() ? objM11326u : Unit.f27425a;
     }
 
     @Override // androidx.work.ListenableWorker
-    public final ListenableFuture8<ListenableWorker.Result> startWork() {
-        f.H0(f.c(getCoroutineContext().plus(this.job)), null, null, new AnonymousClass1(null), 3, null);
+    public final InterfaceFutureC4539a<ListenableWorker.Result> startWork() {
+        C3404f.m4211H0(C3404f.m4275c(getCoroutineContext().plus(this.job)), null, null, new C07141(null), 3, null);
         return this.future;
     }
 }

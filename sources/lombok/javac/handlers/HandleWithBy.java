@@ -28,13 +28,15 @@ import lombok.javac.handlers.JavacHandlerUtil;
 
 /* JADX INFO: loaded from: app.apk:lombok/javac/handlers/HandleWithBy.SCL.lombok */
 public class HandleWithBy extends JavacAnnotationHandler<WithBy> {
-    private static final LombokImmutableList<String> NAME_JUF_FUNCTION = LombokImmutableList.of("java", "util", "function", "Function");
-    private static final LombokImmutableList<String> NAME_JUF_OP = LombokImmutableList.of("java", "util", "function", "UnaryOperator");
-    private static final LombokImmutableList<String> NAME_JUF_DOUBLEOP = LombokImmutableList.of("java", "util", "function", "DoubleUnaryOperator");
-    private static final LombokImmutableList<String> NAME_JUF_INTOP = LombokImmutableList.of("java", "util", "function", "IntUnaryOperator");
-    private static final LombokImmutableList<String> NAME_JUF_LONGOP = LombokImmutableList.of("java", "util", "function", "LongUnaryOperator");
+    private static final LombokImmutableList<String> NAME_JUF_FUNCTION = LombokImmutableList.m10922of("java", "util", "function", "Function");
+    private static final LombokImmutableList<String> NAME_JUF_OP = LombokImmutableList.m10922of("java", "util", "function", "UnaryOperator");
+    private static final LombokImmutableList<String> NAME_JUF_DOUBLEOP = LombokImmutableList.m10922of("java", "util", "function", "DoubleUnaryOperator");
+    private static final LombokImmutableList<String> NAME_JUF_INTOP = LombokImmutableList.m10922of("java", "util", "function", "IntUnaryOperator");
+    private static final LombokImmutableList<String> NAME_JUF_LONGOP = LombokImmutableList.m10922of("java", "util", "function", "LongUnaryOperator");
     private static /* synthetic */ int[] $SWITCH_TABLE$lombok$core$AST$Kind;
-    private static /* synthetic */ int[] $SWITCH_TABLE$lombok$javac$handlers$JavacHandlerUtil$MemberExistsResult;
+
+    /* JADX INFO: renamed from: $SWITCH_TABLE$lombok$javac$handlers$JavacHandlerUtil$MemberExistsResult */
+    private static /* synthetic */ int[] f27491x2486df07;
 
     static /* synthetic */ int[] $SWITCH_TABLE$lombok$core$AST$Kind() {
         int[] iArr = $SWITCH_TABLE$lombok$core$AST$Kind;
@@ -86,8 +88,9 @@ public class HandleWithBy extends JavacAnnotationHandler<WithBy> {
         return iArr2;
     }
 
-    static /* synthetic */ int[] $SWITCH_TABLE$lombok$javac$handlers$JavacHandlerUtil$MemberExistsResult() {
-        int[] iArr = $SWITCH_TABLE$lombok$javac$handlers$JavacHandlerUtil$MemberExistsResult;
+    /* JADX INFO: renamed from: $SWITCH_TABLE$lombok$javac$handlers$JavacHandlerUtil$MemberExistsResult */
+    static /* synthetic */ int[] m10950x2486df07() {
+        int[] iArr = f27491x2486df07;
         if (iArr != null) {
             return iArr;
         }
@@ -104,7 +107,7 @@ public class HandleWithBy extends JavacAnnotationHandler<WithBy> {
             iArr2[JavacHandlerUtil.MemberExistsResult.NOT_EXISTS.ordinal()] = 1;
         } catch (NoSuchFieldError unused3) {
         }
-        $SWITCH_TABLE$lombok$javac$handlers$JavacHandlerUtil$MemberExistsResult = iArr2;
+        f27491x2486df07 = iArr2;
         return iArr2;
     }
 
@@ -142,7 +145,7 @@ public class HandleWithBy extends JavacAnnotationHandler<WithBy> {
         Collection<JavacNode> fields = annotationNode.upFromAnnotationToFields();
         JavacHandlerUtil.deleteAnnotationIfNeccessary(annotationNode, (Class<? extends Annotation>) WithBy.class);
         JavacHandlerUtil.deleteImportFromCompilationUnit(annotationNode, "lombok.AccessLevel");
-        JavacNode node = annotationNode.up();
+        JavacNode node = annotationNode.m10925up();
         AccessLevel level = annotation.getInstance().value();
         if (level == AccessLevel.NONE || node == null) {
             return;
@@ -168,7 +171,7 @@ public class HandleWithBy extends JavacAnnotationHandler<WithBy> {
     }
 
     public void createWithByForField(AccessLevel level, JavacNode fieldNode, JavacNode source, boolean strictMode, List<JCTree.JCAnnotation> onMethod) {
-        JavacNode typeNode = fieldNode.up();
+        JavacNode typeNode = fieldNode.m10925up();
         boolean makeAbstract = (typeNode == null || typeNode.getKind() != AST.Kind.TYPE || (typeNode.get().mods.flags & Permission.VIEW_CHANNEL) == 0) ? false : true;
         if (fieldNode.getKind() != AST.Kind.FIELD) {
             fieldNode.addError("@WithBy is only supported on a class or a field.");
@@ -202,7 +205,7 @@ public class HandleWithBy extends JavacAnnotationHandler<WithBy> {
             return;
         }
         for (String altName : JavacHandlerUtil.toAllWithByNames(fieldNode)) {
-            switch ($SWITCH_TABLE$lombok$javac$handlers$JavacHandlerUtil$MemberExistsResult()[JavacHandlerUtil.methodExists(altName, fieldNode, false, 1).ordinal()]) {
+            switch (m10950x2486df07()[JavacHandlerUtil.methodExists(altName, fieldNode, false, 1).ordinal()]) {
                 case 1:
                 default:
                     break;
@@ -219,7 +222,7 @@ public class HandleWithBy extends JavacAnnotationHandler<WithBy> {
         }
         long access = JavacHandlerUtil.toJavacModifier(level);
         JCTree.JCMethodDecl createdWithBy = createWithBy(access, fieldNode, fieldNode.getTreeMaker(), source, onMethod, makeAbstract);
-        Symbol.ClassSymbol sym = fieldNode.up().get().sym;
+        Symbol.ClassSymbol sym = fieldNode.m10925up().get().sym;
         Type returnType = sym == null ? null : sym.type;
         JavacHandlerUtil.injectMethod(typeNode, createdWithBy, List.of(JavacHandlerUtil.getMirrorForFieldType(fieldNode)), returnType);
     }
@@ -293,7 +296,7 @@ public class HandleWithBy extends JavacAnnotationHandler<WithBy> {
                 return null;
             }
             ListBuffer<JCTree.JCExpression> args = new ListBuffer<>();
-            for (JavacNode child : field.up().down()) {
+            for (JavacNode child : field.m10925up().down()) {
                 if (child.getKind() == AST.Kind.FIELD) {
                     JCTree.JCVariableDecl childDecl = child.get();
                     if (!childDecl.name.toString().startsWith("$")) {

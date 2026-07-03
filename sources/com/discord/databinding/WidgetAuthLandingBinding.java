@@ -14,33 +14,37 @@ import com.google.android.material.button.MaterialButton;
 /* JADX INFO: loaded from: classes.dex */
 public final class WidgetAuthLandingBinding implements ViewBinding {
 
+    /* JADX INFO: renamed from: a */
     @NonNull
-    public final RelativeLayout a;
+    public final RelativeLayout f15675a;
 
-    /* JADX INFO: renamed from: b, reason: collision with root package name */
+    /* JADX INFO: renamed from: b */
     @NonNull
-    public final AuthInviteInfoView f2231b;
+    public final AuthInviteInfoView f15676b;
 
+    /* JADX INFO: renamed from: c */
     @NonNull
-    public final MaterialButton c;
+    public final MaterialButton f15677c;
 
+    /* JADX INFO: renamed from: d */
     @NonNull
-    public final MaterialButton d;
+    public final MaterialButton f15678d;
 
+    /* JADX INFO: renamed from: e */
     @NonNull
-    public final AppViewFlipper e;
+    public final AppViewFlipper f15679e;
 
     public WidgetAuthLandingBinding(@NonNull RelativeLayout relativeLayout, @NonNull LinearLayout linearLayout, @NonNull AuthInviteInfoView authInviteInfoView, @NonNull MaterialButton materialButton, @NonNull ImageView imageView, @NonNull MaterialButton materialButton2, @NonNull AppViewFlipper appViewFlipper, @NonNull ScreenTitleView screenTitleView) {
-        this.a = relativeLayout;
-        this.f2231b = authInviteInfoView;
-        this.c = materialButton;
-        this.d = materialButton2;
-        this.e = appViewFlipper;
+        this.f15675a = relativeLayout;
+        this.f15676b = authInviteInfoView;
+        this.f15677c = materialButton;
+        this.f15678d = materialButton2;
+        this.f15679e = appViewFlipper;
     }
 
     @Override // androidx.viewbinding.ViewBinding
     @NonNull
     public View getRoot() {
-        return this.a;
+        return this.f15675a;
     }
 }

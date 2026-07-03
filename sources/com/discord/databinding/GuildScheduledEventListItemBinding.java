@@ -8,21 +8,22 @@ import com.discord.widgets.guildscheduledevent.GuildScheduledEventItemView;
 /* JADX INFO: loaded from: classes.dex */
 public final class GuildScheduledEventListItemBinding implements ViewBinding {
 
+    /* JADX INFO: renamed from: a */
     @NonNull
-    public final GuildScheduledEventItemView a;
+    public final GuildScheduledEventItemView f15150a;
 
-    /* JADX INFO: renamed from: b, reason: collision with root package name */
+    /* JADX INFO: renamed from: b */
     @NonNull
-    public final GuildScheduledEventItemView f2121b;
+    public final GuildScheduledEventItemView f15151b;
 
     public GuildScheduledEventListItemBinding(@NonNull GuildScheduledEventItemView guildScheduledEventItemView, @NonNull GuildScheduledEventItemView guildScheduledEventItemView2) {
-        this.a = guildScheduledEventItemView;
-        this.f2121b = guildScheduledEventItemView2;
+        this.f15150a = guildScheduledEventItemView;
+        this.f15151b = guildScheduledEventItemView2;
     }
 
     @Override // androidx.viewbinding.ViewBinding
     @NonNull
     public View getRoot() {
-        return this.a;
+        return this.f15150a;
     }
 }

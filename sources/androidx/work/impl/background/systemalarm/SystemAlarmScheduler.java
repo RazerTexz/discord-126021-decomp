@@ -18,8 +18,8 @@ public class SystemAlarmScheduler implements Scheduler {
     }
 
     private void scheduleWorkSpec(@NonNull WorkSpec workSpec) {
-        Logger.get().debug(TAG, String.format("Scheduling work with workSpecId %s", workSpec.f38id), new Throwable[0]);
-        this.mContext.startService(CommandHandler.createScheduleWorkIntent(this.mContext, workSpec.f38id));
+        Logger.get().debug(TAG, String.format("Scheduling work with workSpecId %s", workSpec.f163id), new Throwable[0]);
+        this.mContext.startService(CommandHandler.createScheduleWorkIntent(this.mContext, workSpec.f163id));
     }
 
     @Override // androidx.work.impl.Scheduler

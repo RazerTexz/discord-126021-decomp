@@ -4,23 +4,23 @@ import android.content.Context;
 import android.os.Bundle;
 import android.view.View;
 import androidx.fragment.app.Fragment;
-import b.a.d.AppScreen2;
-import b.d.b.a.outline;
-import com.discord.R;
+import com.discord.C5419R;
 import com.discord.app.AppFragment;
 import com.discord.databinding.WidgetClientOutdatedBinding;
 import com.discord.utilities.uri.UriHandler;
 import com.discord.utilities.viewbinding.FragmentViewBindingDelegate;
-import com.discord.utilities.viewbinding.FragmentViewBindingDelegate3;
-import d0.z.d.Intrinsics3;
+import com.discord.utilities.viewbinding.FragmentViewBindingDelegateKt;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.reflect.KProperty;
-import rx.functions.Func0;
+import p007b.p008a.p018d.C0870j;
+import p007b.p100d.p104b.p105a.C1643a;
+import p507d0.p592z.p594d.C12238m;
+import p658rx.functions.Func0;
 
 /* JADX INFO: compiled from: WidgetClientOutdated.kt */
 /* JADX INFO: loaded from: classes2.dex */
 public final class WidgetClientOutdated extends AppFragment {
-    public static final /* synthetic */ KProperty[] $$delegatedProperties = {outline.d0(WidgetClientOutdated.class, "binding", "getBinding()Lcom/discord/databinding/WidgetClientOutdatedBinding;", 0)};
+    public static final /* synthetic */ KProperty[] $$delegatedProperties = {C1643a.m846d0(WidgetClientOutdated.class, "binding", "getBinding()Lcom/discord/databinding/WidgetClientOutdatedBinding;", 0)};
 
     /* JADX INFO: renamed from: Companion, reason: from kotlin metadata */
     public static final Companion INSTANCE = new Companion(null);
@@ -34,8 +34,8 @@ public final class WidgetClientOutdated extends AppFragment {
         }
 
         public final void launch(Context context) {
-            Intrinsics3.checkNotNullParameter(context, "context");
-            AppScreen2.e(context, WidgetClientOutdated.class, null, 4);
+            C12238m.checkNotNullParameter(context, "context");
+            C0870j.m157e(context, WidgetClientOutdated.class, null, 4);
         }
 
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
@@ -44,8 +44,8 @@ public final class WidgetClientOutdated extends AppFragment {
     }
 
     public WidgetClientOutdated() {
-        super(R.layout.widget_client_outdated);
-        this.binding = FragmentViewBindingDelegate3.viewBinding$default(this, WidgetClientOutdated2.INSTANCE, null, 2, null);
+        super(C5419R.layout.widget_client_outdated);
+        this.binding = FragmentViewBindingDelegateKt.viewBinding$default(this, WidgetClientOutdated$binding$2.INSTANCE, null, 2, null);
     }
 
     private final WidgetClientOutdatedBinding getBinding() {
@@ -54,19 +54,19 @@ public final class WidgetClientOutdated extends AppFragment {
 
     @Override // com.discord.app.AppFragment, androidx.fragment.app.Fragment
     public void onViewCreated(View view, Bundle savedInstanceState) {
-        Intrinsics3.checkNotNullParameter(view, "view");
+        C12238m.checkNotNullParameter(view, "view");
         super.onViewCreated(view, savedInstanceState);
-        getBinding().f2351b.setOnClickListener(new View.OnClickListener() { // from class: com.discord.widgets.client.WidgetClientOutdated.onViewCreated.1
+        getBinding().f16398b.setOnClickListener(new View.OnClickListener() { // from class: com.discord.widgets.client.WidgetClientOutdated.onViewCreated.1
             @Override // android.view.View.OnClickListener
             public final void onClick(View view2) {
-                Intrinsics3.checkNotNullExpressionValue(view2, "v");
+                C12238m.checkNotNullExpressionValue(view2, "v");
                 Context context = view2.getContext();
-                Intrinsics3.checkNotNullExpressionValue(context, "v.context");
+                C12238m.checkNotNullExpressionValue(context, "v.context");
                 UriHandler.directToPlayStore$default(context, null, null, 6, null);
             }
         });
         AppFragment.setOnBackPressed$default(this, new Func0<Boolean>() { // from class: com.discord.widgets.client.WidgetClientOutdated.onViewCreated.2
-            @Override // rx.functions.Func0, java.util.concurrent.Callable
+            @Override // p658rx.functions.Func0, java.util.concurrent.Callable
             public final Boolean call() {
                 return Boolean.TRUE;
             }

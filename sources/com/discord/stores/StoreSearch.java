@@ -1,13 +1,11 @@
 package com.discord.stores;
 
-import a0.a.a.b;
-import b.d.b.a.outline;
 import com.discord.api.user.NsfwAllowance;
 import com.discord.models.domain.ModelAuditLogEntry;
 import com.discord.stores.updates.ObservationDeck;
 import com.discord.utilities.analytics.Traits;
 import com.discord.utilities.error.Error;
-import com.discord.utilities.rx.ObservableExtensionsKt;
+import com.discord.utilities.p501rx.ObservableExtensionsKt;
 import com.discord.utilities.search.history.MGPreferenceSearchHistoryCache;
 import com.discord.utilities.search.history.SearchHistoryCache;
 import com.discord.utilities.search.network.SearchFetcher;
@@ -16,23 +14,25 @@ import com.discord.utilities.search.network.state.SearchState;
 import com.discord.utilities.search.query.node.QueryNode;
 import com.discord.utilities.search.strings.SearchStringProvider;
 import com.discord.utilities.search.suggestion.SearchSuggestionEngine;
-import com.discord.widgets.chat.AutocompleteUtils;
-import d0.t.Collections2;
-import d0.z.d.FunctionReferenceImpl;
-import d0.z.d.Intrinsics3;
-import d0.z.d.Lambda;
-import j0.k.Func1;
-import j0.l.e.ScalarSynchronousObservable;
+import com.discord.widgets.chat.AutocompleteSelectionTypes;
 import java.util.Collection;
 import java.util.List;
 import kotlin.NoWhenBranchMatchedException;
 import kotlin.Unit;
 import kotlin.jvm.functions.Function0;
 import kotlin.jvm.functions.Function1;
-import rx.Observable;
-import rx.Subscription;
-import rx.subjects.BehaviorSubject;
-import rx.subjects.SerializedSubject;
+import p001a0.p002a.p003a.C0002b;
+import p007b.p100d.p104b.p105a.C1643a;
+import p507d0.p580t.C12147n;
+import p507d0.p592z.p594d.AbstractC12240o;
+import p507d0.p592z.p594d.C12236k;
+import p507d0.p592z.p594d.C12238m;
+import p637j0.p641k.InterfaceC12589b;
+import p637j0.p642l.p647e.C12721k;
+import p658rx.Observable;
+import p658rx.Subscription;
+import p658rx.subjects.BehaviorSubject;
+import p658rx.subjects.SerializedSubject;
 
 /* JADX INFO: compiled from: StoreSearch.kt */
 /* JADX INFO: loaded from: classes2.dex */
@@ -68,7 +68,7 @@ public final class StoreSearch {
         }
 
         public SearchTarget(Type type, long j) {
-            Intrinsics3.checkNotNullParameter(type, "type");
+            C12238m.checkNotNullParameter(type, "type");
             this.type = type;
             this.id = j;
         }
@@ -94,7 +94,7 @@ public final class StoreSearch {
         }
 
         public final SearchTarget copy(Type type, long id2) {
-            Intrinsics3.checkNotNullParameter(type, "type");
+            C12238m.checkNotNullParameter(type, "type");
             return new SearchTarget(type, id2);
         }
 
@@ -106,7 +106,7 @@ public final class StoreSearch {
                 return false;
             }
             SearchTarget searchTarget = (SearchTarget) other;
-            return Intrinsics3.areEqual(this.type, searchTarget.type) && this.id == searchTarget.id;
+            return C12238m.areEqual(this.type, searchTarget.type) && this.id == searchTarget.id;
         }
 
         public final long getId() {
@@ -119,14 +119,14 @@ public final class StoreSearch {
 
         public int hashCode() {
             Type type = this.type;
-            return b.a(this.id) + ((type != null ? type.hashCode() : 0) * 31);
+            return C0002b.m3a(this.id) + ((type != null ? type.hashCode() : 0) * 31);
         }
 
         public String toString() {
-            StringBuilder sbU = outline.U("SearchTarget(type=");
-            sbU.append(this.type);
-            sbU.append(", id=");
-            return outline.C(sbU, this.id, ")");
+            StringBuilder sbM833U = C1643a.m833U("SearchTarget(type=");
+            sbM833U.append(this.type);
+            sbM833U.append(", id=");
+            return C1643a.m815C(sbM833U, this.id, ")");
         }
     }
 
@@ -142,17 +142,17 @@ public final class StoreSearch {
         }
     }
 
-    /* JADX INFO: renamed from: com.discord.stores.StoreSearch$init$4, reason: invalid class name */
+    /* JADX INFO: renamed from: com.discord.stores.StoreSearch$init$4 */
     /* JADX INFO: compiled from: StoreSearch.kt */
-    public static final /* synthetic */ class AnonymousClass4 extends FunctionReferenceImpl implements Function1<Subscription, Unit> {
-        public AnonymousClass4(StoreSearch storeSearch) {
+    public static final /* synthetic */ class C63804 extends C12236k implements Function1<Subscription, Unit> {
+        public C63804(StoreSearch storeSearch) {
             super(1, storeSearch, StoreSearch.class, "handleSubscription", "handleSubscription(Lrx/Subscription;)V", 0);
         }
 
         @Override // kotlin.jvm.functions.Function1
         public /* bridge */ /* synthetic */ Unit invoke(Subscription subscription) {
             invoke2(subscription);
-            return Unit.a;
+            return Unit.f27425a;
         }
 
         /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
@@ -161,17 +161,17 @@ public final class StoreSearch {
         }
     }
 
-    /* JADX INFO: renamed from: com.discord.stores.StoreSearch$init$5, reason: invalid class name */
+    /* JADX INFO: renamed from: com.discord.stores.StoreSearch$init$5 */
     /* JADX INFO: compiled from: StoreSearch.kt */
-    public static final class AnonymousClass5 extends Lambda implements Function1<DisplayState, Unit> {
-        public AnonymousClass5() {
+    public static final class C63815 extends AbstractC12240o implements Function1<DisplayState, Unit> {
+        public C63815() {
             super(1);
         }
 
         @Override // kotlin.jvm.functions.Function1
         public /* bridge */ /* synthetic */ Unit invoke(DisplayState displayState) {
             invoke2(displayState);
-            return Unit.a;
+            return Unit.f27425a;
         }
 
         /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
@@ -180,18 +180,18 @@ public final class StoreSearch {
                 StoreSearch.this.getStoreSearchQuery().clear();
             }
             StoreSearch storeSearch = StoreSearch.this;
-            Intrinsics3.checkNotNullExpressionValue(displayState, "it");
+            C12238m.checkNotNullExpressionValue(displayState, "it");
             storeSearch.onStateChanged(displayState);
         }
     }
 
-    /* JADX INFO: renamed from: com.discord.stores.StoreSearch$init$6, reason: invalid class name */
+    /* JADX INFO: renamed from: com.discord.stores.StoreSearch$init$6 */
     /* JADX INFO: compiled from: StoreSearch.kt */
-    public static final class AnonymousClass6 extends Lambda implements Function1<SearchState, Unit> {
+    public static final class C63826 extends AbstractC12240o implements Function1<SearchState, Unit> {
 
         /* JADX INFO: renamed from: com.discord.stores.StoreSearch$init$6$1, reason: invalid class name */
         /* JADX INFO: compiled from: StoreSearch.kt */
-        public static final class AnonymousClass1 extends Lambda implements Function0<Unit> {
+        public static final class AnonymousClass1 extends AbstractC12240o implements Function0<Unit> {
             public final /* synthetic */ SearchState $searchState;
 
             /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -203,7 +203,7 @@ public final class StoreSearch {
             @Override // kotlin.jvm.functions.Function0
             public /* bridge */ /* synthetic */ Unit invoke() {
                 invoke2();
-                return Unit.a;
+                return Unit.f27425a;
             }
 
             /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
@@ -212,32 +212,32 @@ public final class StoreSearch {
             }
         }
 
-        public AnonymousClass6() {
+        public C63826() {
             super(1);
         }
 
         @Override // kotlin.jvm.functions.Function1
         public /* bridge */ /* synthetic */ Unit invoke(SearchState searchState) {
             invoke2(searchState);
-            return Unit.a;
+            return Unit.f27425a;
         }
 
         /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
         public final void invoke2(SearchState searchState) {
-            Intrinsics3.checkNotNullParameter(searchState, "searchState");
+            C12238m.checkNotNullParameter(searchState, "searchState");
             StoreSearch.this.dispatcher.schedule(new AnonymousClass1(searchState));
         }
     }
 
     public StoreSearch(StoreSearchData storeSearchData, StoreSearchInput storeSearchInput, StoreSearchQuery storeSearchQuery, StoreStream storeStream, Dispatcher dispatcher, StoreGuildsNsfw storeGuildsNsfw, StoreUser storeUser, SearchHistoryCache searchHistoryCache) {
-        Intrinsics3.checkNotNullParameter(storeSearchData, "storeSearchData");
-        Intrinsics3.checkNotNullParameter(storeSearchInput, "storeSearchInput");
-        Intrinsics3.checkNotNullParameter(storeSearchQuery, "storeSearchQuery");
-        Intrinsics3.checkNotNullParameter(storeStream, "stream");
-        Intrinsics3.checkNotNullParameter(dispatcher, "dispatcher");
-        Intrinsics3.checkNotNullParameter(storeGuildsNsfw, "storeGuildsNsfw");
-        Intrinsics3.checkNotNullParameter(storeUser, "storeUser");
-        Intrinsics3.checkNotNullParameter(searchHistoryCache, "historyCache");
+        C12238m.checkNotNullParameter(storeSearchData, "storeSearchData");
+        C12238m.checkNotNullParameter(storeSearchInput, "storeSearchInput");
+        C12238m.checkNotNullParameter(storeSearchQuery, "storeSearchQuery");
+        C12238m.checkNotNullParameter(storeStream, "stream");
+        C12238m.checkNotNullParameter(dispatcher, "dispatcher");
+        C12238m.checkNotNullParameter(storeGuildsNsfw, "storeGuildsNsfw");
+        C12238m.checkNotNullParameter(storeUser, "storeUser");
+        C12238m.checkNotNullParameter(searchHistoryCache, "historyCache");
         this.storeSearchData = storeSearchData;
         this.storeSearchInput = storeSearchInput;
         this.storeSearchQuery = storeSearchQuery;
@@ -246,8 +246,8 @@ public final class StoreSearch {
         this.storeGuildsNsfw = storeGuildsNsfw;
         this.storeUser = storeUser;
         this.historyCache = searchHistoryCache;
-        this.displayStateSubject = new SerializedSubject<>(BehaviorSubject.l0(DisplayState.SUGGESTIONS));
-        this.searchTargetSubject = new SerializedSubject<>(BehaviorSubject.k0());
+        this.displayStateSubject = new SerializedSubject<>(BehaviorSubject.m11130l0(DisplayState.SUGGESTIONS));
+        this.searchTargetSubject = new SerializedSubject<>(BehaviorSubject.m11129k0());
     }
 
     private final synchronized void handleSubscription(Subscription subscription) {
@@ -273,40 +273,40 @@ public final class StoreSearch {
     }
 
     private final synchronized void init(SearchTarget searchTarget, SearchStringProvider searchStringProvider) {
-        if (Intrinsics3.areEqual(this.searchTarget, searchTarget)) {
+        if (C12238m.areEqual(this.searchTarget, searchTarget)) {
             return;
         }
         updateTarget(searchTarget);
         this.storeSearchData.init(searchTarget);
         this.storeSearchInput.init(searchStringProvider);
-        Observable observableI = Observable.I(this.storeSearchQuery.getState().y(new Func1<SearchState, Boolean>() { // from class: com.discord.stores.StoreSearch.init.1
-            @Override // j0.k.Func1
+        Observable observableM11064I = Observable.m11064I(this.storeSearchQuery.getState().m11118y(new InterfaceC12589b<SearchState, Boolean>() { // from class: com.discord.stores.StoreSearch.init.1
+            @Override // p637j0.p641k.InterfaceC12589b
             public final Boolean call(SearchState searchState) {
                 return Boolean.valueOf(searchState.getQueryFetchState() != QueryFetchState.NONE);
             }
-        }).G(new Func1<SearchState, DisplayState>() { // from class: com.discord.stores.StoreSearch.init.2
-            @Override // j0.k.Func1
+        }).m11083G(new InterfaceC12589b<SearchState, DisplayState>() { // from class: com.discord.stores.StoreSearch.init.2
+            @Override // p637j0.p641k.InterfaceC12589b
             public final DisplayState call(SearchState searchState) {
                 return DisplayState.RESULTS;
             }
-        }), this.storeSearchInput.getCurrentParsedInput().G(new Func1<List<? extends QueryNode>, DisplayState>() { // from class: com.discord.stores.StoreSearch.init.3
-            @Override // j0.k.Func1
+        }), this.storeSearchInput.getCurrentParsedInput().m11083G(new InterfaceC12589b<List<? extends QueryNode>, DisplayState>() { // from class: com.discord.stores.StoreSearch.init.3
+            @Override // p637j0.p641k.InterfaceC12589b
             public final DisplayState call(List<? extends QueryNode> list) {
                 return DisplayState.SUGGESTIONS;
             }
         }));
-        Intrinsics3.checkNotNullExpressionValue(observableI, "Observable\n        .merg…splayState.SUGGESTIONS })");
-        ObservableExtensionsKt.appSubscribe(observableI, (Class<?>) getClass(), (58 & 2) != 0 ? null : null, (Function1<? super Subscription, Unit>) ((58 & 4) != 0 ? null : new AnonymousClass4(this)), (Function1<? super Error, Unit>) ((58 & 8) != 0 ? null : null), (Function0<Unit>) ((58 & 16) != 0 ? ObservableExtensionsKt.AnonymousClass1.INSTANCE : null), (Function0<Unit>) ((58 & 32) != 0 ? ObservableExtensionsKt.AnonymousClass2.INSTANCE : null), new AnonymousClass5());
-        ObservableExtensionsKt.appSubscribe(this.storeSearchQuery.getState(), (Class<?>) getClass(), (58 & 2) != 0 ? null : null, (Function1<? super Subscription, Unit>) ((58 & 4) != 0 ? null : null), (Function1<? super Error, Unit>) ((58 & 8) != 0 ? null : null), (Function0<Unit>) ((58 & 16) != 0 ? ObservableExtensionsKt.AnonymousClass1.INSTANCE : null), (Function0<Unit>) ((58 & 32) != 0 ? ObservableExtensionsKt.AnonymousClass2.INSTANCE : null), new AnonymousClass6());
+        C12238m.checkNotNullExpressionValue(observableM11064I, "Observable\n        .merg…splayState.SUGGESTIONS })");
+        ObservableExtensionsKt.appSubscribe(observableM11064I, (Class<?>) getClass(), (58 & 2) != 0 ? null : null, (Function1<? super Subscription, Unit>) ((58 & 4) != 0 ? null : new C63804(this)), (Function1<? super Error, Unit>) ((58 & 8) != 0 ? null : null), (Function0<Unit>) ((58 & 16) != 0 ? ObservableExtensionsKt.C68791.INSTANCE : null), (Function0<Unit>) ((58 & 32) != 0 ? ObservableExtensionsKt.C68802.INSTANCE : null), new C63815());
+        ObservableExtensionsKt.appSubscribe(this.storeSearchQuery.getState(), (Class<?>) getClass(), (58 & 2) != 0 ? null : null, (Function1<? super Subscription, Unit>) ((58 & 4) != 0 ? null : null), (Function1<? super Error, Unit>) ((58 & 8) != 0 ? null : null), (Function0<Unit>) ((58 & 16) != 0 ? ObservableExtensionsKt.C68791.INSTANCE : null), (Function0<Unit>) ((58 & 32) != 0 ? ObservableExtensionsKt.C68802.INSTANCE : null), new C63826());
     }
 
     private final void onStateChanged(DisplayState displayState) {
-        this.displayStateSubject.k.onNext(displayState);
+        this.displayStateSubject.f27653k.onNext(displayState);
     }
 
     private final synchronized void updateTarget(SearchTarget searchTarget) {
         this.searchTarget = searchTarget;
-        this.searchTargetSubject.k.onNext(searchTarget);
+        this.searchTargetSubject.f27653k.onNext(searchTarget);
     }
 
     public final synchronized void clear() {
@@ -327,20 +327,20 @@ public final class StoreSearch {
     }
 
     public final Observable<DisplayState> getDisplayState() {
-        Observable<DisplayState> observableR = ObservableExtensionsKt.computationLatest(this.displayStateSubject).r();
-        Intrinsics3.checkNotNullExpressionValue(observableR, "displayStateSubject\n    …  .distinctUntilChanged()");
-        return observableR;
+        Observable<DisplayState> observableM11112r = ObservableExtensionsKt.computationLatest(this.displayStateSubject).m11112r();
+        C12238m.checkNotNullExpressionValue(observableM11112r, "displayStateSubject\n    …  .distinctUntilChanged()");
+        return observableM11112r;
     }
 
     public final Observable<Collection<List<QueryNode>>> getHistory() {
-        Observable observableY = this.searchTargetSubject.Y(new Func1<SearchTarget, Observable<? extends Collection<? extends List<? extends QueryNode>>>>() { // from class: com.discord.stores.StoreSearch.getHistory.1
-            @Override // j0.k.Func1
+        Observable observableM11099Y = this.searchTargetSubject.m11099Y(new InterfaceC12589b<SearchTarget, Observable<? extends Collection<? extends List<? extends QueryNode>>>>() { // from class: com.discord.stores.StoreSearch.getHistory.1
+            @Override // p637j0.p641k.InterfaceC12589b
             public final Observable<? extends Collection<List<QueryNode>>> call(SearchTarget searchTarget) {
-                return searchTarget != null ? StoreSearch.this.historyCache.getHistory(searchTarget) : new ScalarSynchronousObservable(Collections2.emptyList());
+                return searchTarget != null ? StoreSearch.this.historyCache.getHistory(searchTarget) : new C12721k(C12147n.emptyList());
             }
         });
-        Intrinsics3.checkNotNullExpressionValue(observableY, "searchTargetSubject\n    …())\n          }\n        }");
-        return observableY;
+        C12238m.checkNotNullExpressionValue(observableM11099Y, "searchTargetSubject\n    …())\n          }\n        }");
+        return observableM11099Y;
     }
 
     public final StoreSearchData getStoreSearchData() {
@@ -356,20 +356,20 @@ public final class StoreSearch {
     }
 
     public final void initForChannel(long channelId, SearchStringProvider searchStringProvider) {
-        Intrinsics3.checkNotNullParameter(searchStringProvider, "searchStringProvider");
+        C12238m.checkNotNullParameter(searchStringProvider, "searchStringProvider");
         init(new SearchTarget(SearchTarget.Type.CHANNEL, channelId), searchStringProvider);
         SearchSuggestionEngine.INSTANCE.setTargetGuildId(null);
     }
 
     public final void initForGuild(long guildId, SearchStringProvider searchStringProvider) {
-        Intrinsics3.checkNotNullParameter(searchStringProvider, "searchStringProvider");
+        C12238m.checkNotNullParameter(searchStringProvider, "searchStringProvider");
         init(new SearchTarget(SearchTarget.Type.GUILD, guildId), searchStringProvider);
         SearchSuggestionEngine.INSTANCE.setTargetGuildId(Long.valueOf(guildId));
     }
 
     public final void loadInitial(String queryString, SearchStringProvider searchStringProvider) {
-        Intrinsics3.checkNotNullParameter(queryString, "queryString");
-        Intrinsics3.checkNotNullParameter(searchStringProvider, "searchStringProvider");
+        C12238m.checkNotNullParameter(queryString, "queryString");
+        C12238m.checkNotNullParameter(searchStringProvider, "searchStringProvider");
         SearchTarget searchTarget = this.searchTarget;
         if (searchTarget != null) {
             this.storeSearchQuery.parseAndQuery(this, searchTarget, queryString, searchStringProvider, includeNsfw(searchTarget));
@@ -384,20 +384,20 @@ public final class StoreSearch {
     }
 
     public final void persistQuery$app_productionGoogleRelease(SearchTarget searchTarget, List<? extends QueryNode> query) {
-        Intrinsics3.checkNotNullParameter(searchTarget, "searchTarget");
-        Intrinsics3.checkNotNullParameter(query, "query");
+        C12238m.checkNotNullParameter(searchTarget, "searchTarget");
+        C12238m.checkNotNullParameter(query, "query");
         this.historyCache.persistQuery(searchTarget, query);
     }
 
     /* JADX WARN: 'this' call moved to the top of the method (can break code semantics) */
     public StoreSearch(StoreStream storeStream, Dispatcher dispatcher, StoreGuildsNsfw storeGuildsNsfw, StoreUser storeUser, ObservationDeck observationDeck, StoreChannels storeChannels, StoreGuilds storeGuilds) {
         this(new StoreSearchData(observationDeck, storeChannels, storeUser, storeGuilds), new StoreSearchInput(), new StoreSearchQuery(new SearchFetcher()), storeStream, dispatcher, storeGuildsNsfw, storeUser, new MGPreferenceSearchHistoryCache());
-        Intrinsics3.checkNotNullParameter(storeStream, "stream");
-        Intrinsics3.checkNotNullParameter(dispatcher, "dispatcher");
-        Intrinsics3.checkNotNullParameter(storeGuildsNsfw, "storeGuildsNsfw");
-        Intrinsics3.checkNotNullParameter(storeUser, "storeUser");
-        Intrinsics3.checkNotNullParameter(observationDeck, "observationDeck");
-        Intrinsics3.checkNotNullParameter(storeChannels, "storeChannels");
-        Intrinsics3.checkNotNullParameter(storeGuilds, "storeGuilds");
+        C12238m.checkNotNullParameter(storeStream, "stream");
+        C12238m.checkNotNullParameter(dispatcher, "dispatcher");
+        C12238m.checkNotNullParameter(storeGuildsNsfw, "storeGuildsNsfw");
+        C12238m.checkNotNullParameter(storeUser, "storeUser");
+        C12238m.checkNotNullParameter(observationDeck, "observationDeck");
+        C12238m.checkNotNullParameter(storeChannels, "storeChannels");
+        C12238m.checkNotNullParameter(storeGuilds, "storeGuilds");
     }
 }

@@ -23,7 +23,8 @@ public class CmdReader<T> {
         this.settingsDescriptor = settingsDescriptor;
     }
 
-    public static <T> CmdReader<T> of(Class<T> settingsDescriptor) {
+    /* JADX INFO: renamed from: of */
+    public static <T> CmdReader<T> m9327of(Class<T> settingsDescriptor) {
         return new CmdReader<>(settingsDescriptor);
     }
 

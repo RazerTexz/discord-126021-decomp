@@ -5,10 +5,10 @@ import android.content.pm.PackageManager;
 import com.discord.api.user.UserSurvey;
 import com.discord.stores.StoreStream;
 import com.discord.utilities.time.ClockFactory;
-import d0.z.d.Intrinsics3;
-import j0.k.Func1;
-import j0.l.e.ScalarSynchronousObservable;
-import rx.Observable;
+import p507d0.p592z.p594d.C12238m;
+import p637j0.p641k.InterfaceC12589b;
+import p637j0.p642l.p647e.C12721k;
+import p658rx.Observable;
 
 /* JADX INFO: compiled from: SurveyUtils.kt */
 /* JADX INFO: loaded from: classes2.dex */
@@ -35,11 +35,11 @@ public final class SurveyUtils {
         }
 
         public Survey(String str, String str2, String str3, String str4, String str5) {
-            Intrinsics3.checkNotNullParameter(str, "surveyId");
-            Intrinsics3.checkNotNullParameter(str2, "surveyURL");
-            Intrinsics3.checkNotNullParameter(str3, "noticeKey");
-            Intrinsics3.checkNotNullParameter(str4, "surveyBody");
-            Intrinsics3.checkNotNullParameter(str5, "surveyTitle");
+            C12238m.checkNotNullParameter(str, "surveyId");
+            C12238m.checkNotNullParameter(str2, "surveyURL");
+            C12238m.checkNotNullParameter(str3, "noticeKey");
+            C12238m.checkNotNullParameter(str4, "surveyBody");
+            C12238m.checkNotNullParameter(str5, "surveyTitle");
             this.surveyId = str;
             this.surveyURL = str2;
             this.noticeKey = str3;
@@ -75,12 +75,12 @@ public final class SurveyUtils {
         try {
             Application application = applicationContext;
             if (application == null) {
-                Intrinsics3.throwUninitializedPropertyAccessException("applicationContext");
+                C12238m.throwUninitializedPropertyAccessException("applicationContext");
             }
             PackageManager packageManager = application.getPackageManager();
             Application application2 = applicationContext;
             if (application2 == null) {
-                Intrinsics3.throwUninitializedPropertyAccessException("applicationContext");
+                C12238m.throwUninitializedPropertyAccessException("applicationContext");
             }
             return ClockFactory.get().currentTimeMillis() - packageManager.getPackageInfo(application2.getPackageName(), 0).firstInstallTime >= MIN_APP_INSTALL_TIME;
         } catch (PackageManager.NameNotFoundException unused) {
@@ -90,8 +90,8 @@ public final class SurveyUtils {
 
     public final Observable<Survey> getSurveyToShow() {
         if (isInstallOldEnough()) {
-            Observable observableG = StoreStream.INSTANCE.getUserSurvey().observeUserSurvey().G(new Func1<UserSurvey, Survey>() { // from class: com.discord.utilities.surveys.SurveyUtils.getSurveyToShow.1
-                @Override // j0.k.Func1
+            Observable observableM11083G = StoreStream.INSTANCE.getUserSurvey().observeUserSurvey().m11083G(new InterfaceC12589b<UserSurvey, Survey>() { // from class: com.discord.utilities.surveys.SurveyUtils.getSurveyToShow.1
+                @Override // p637j0.p641k.InterfaceC12589b
                 public final Survey call(UserSurvey userSurvey) {
                     if (userSurvey != null) {
                         return new Survey(userSurvey.getKey(), userSurvey.getUrl(), userSurvey.getKey(), userSurvey.getPrompt(), userSurvey.getCta());
@@ -99,16 +99,16 @@ public final class SurveyUtils {
                     return null;
                 }
             });
-            Intrinsics3.checkNotNullExpressionValue(observableG, "StoreStream\n        .get…  )\n          }\n        }");
-            return observableG;
+            C12238m.checkNotNullExpressionValue(observableM11083G, "StoreStream\n        .get…  )\n          }\n        }");
+            return observableM11083G;
         }
-        ScalarSynchronousObservable scalarSynchronousObservable = new ScalarSynchronousObservable(Survey.None.INSTANCE);
-        Intrinsics3.checkNotNullExpressionValue(scalarSynchronousObservable, "Observable.just(Survey.None)");
-        return scalarSynchronousObservable;
+        C12721k c12721k = new C12721k(Survey.None.INSTANCE);
+        C12238m.checkNotNullExpressionValue(c12721k, "Observable.just(Survey.None)");
+        return c12721k;
     }
 
     public final void init(Application applicationContext2) {
-        Intrinsics3.checkNotNullParameter(applicationContext2, "applicationContext");
+        C12238m.checkNotNullParameter(applicationContext2, "applicationContext");
         applicationContext = applicationContext2;
     }
 }

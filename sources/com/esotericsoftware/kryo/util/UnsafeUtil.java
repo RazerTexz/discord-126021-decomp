@@ -1,13 +1,13 @@
 package com.esotericsoftware.kryo.util;
 
-import b.d.b.a.outline;
-import b.e.a.Log;
 import java.lang.reflect.Constructor;
 import java.lang.reflect.Field;
 import java.nio.ByteBuffer;
 import java.util.Arrays;
 import java.util.Comparator;
 import java.util.List;
+import p007b.p100d.p104b.p105a.C1643a;
+import p007b.p106e.p107a.C1644a;
 import sun.misc.Cleaner;
 import sun.misc.Unsafe;
 import sun.nio.ch.DirectBuffer;
@@ -40,7 +40,7 @@ public class UnsafeUtil {
         long j4;
         try {
             if (Util.IS_ANDROID) {
-                Log.a aVar = Log.a;
+                C1644a.a aVar = C1644a.f3007a;
                 jArrayBaseOffset7 = 0;
                 j3 = 0;
                 j2 = 0;
@@ -72,7 +72,7 @@ public class UnsafeUtil {
                                             j2 = jArrayBaseOffset;
                                             j3 = jArrayBaseOffset2;
                                         } catch (Exception unused) {
-                                            Log.a aVar2 = Log.a;
+                                            C1644a.a aVar2 = C1644a.f3007a;
                                             j = 0;
                                             unsafe2 = unsafe;
                                             j2 = jArrayBaseOffset;
@@ -84,7 +84,7 @@ public class UnsafeUtil {
                                 } catch (Exception unused3) {
                                     jArrayBaseOffset = 0;
                                     jArrayBaseOffset6 = 0;
-                                    Log.a aVar3 = Log.a;
+                                    C1644a.a aVar3 = C1644a.f3007a;
                                     j = 0;
                                     unsafe2 = unsafe;
                                     j2 = jArrayBaseOffset;
@@ -105,7 +105,7 @@ public class UnsafeUtil {
                                 jArrayBaseOffset = 0;
                                 jArrayBaseOffset5 = 0;
                                 jArrayBaseOffset6 = 0;
-                                Log.a aVar4 = Log.a;
+                                C1644a.a aVar4 = C1644a.f3007a;
                                 j = 0;
                                 unsafe2 = unsafe;
                                 j2 = jArrayBaseOffset;
@@ -127,7 +127,7 @@ public class UnsafeUtil {
                             jArrayBaseOffset4 = 0;
                             jArrayBaseOffset5 = 0;
                             jArrayBaseOffset6 = 0;
-                            Log.a aVar5 = Log.a;
+                            C1644a.a aVar5 = C1644a.f3007a;
                             j = 0;
                             unsafe2 = unsafe;
                             j2 = jArrayBaseOffset;
@@ -150,7 +150,7 @@ public class UnsafeUtil {
                         jArrayBaseOffset4 = 0;
                         jArrayBaseOffset5 = 0;
                         jArrayBaseOffset6 = 0;
-                        Log.a aVar6 = Log.a;
+                        C1644a.a aVar6 = C1644a.f3007a;
                         j = 0;
                         unsafe2 = unsafe;
                         j2 = jArrayBaseOffset;
@@ -174,7 +174,7 @@ public class UnsafeUtil {
                     jArrayBaseOffset4 = 0;
                     jArrayBaseOffset5 = 0;
                     jArrayBaseOffset6 = 0;
-                    Log.a aVar7 = Log.a;
+                    C1644a.a aVar7 = C1644a.f3007a;
                     j = 0;
                     unsafe2 = unsafe;
                     j2 = jArrayBaseOffset;
@@ -223,7 +223,7 @@ public class UnsafeUtil {
         try {
             return constructor.newInstance(Long.valueOf(j), Integer.valueOf(i), null);
         } catch (Exception e) {
-            throw new RuntimeException(outline.t("Cannot allocate ByteBuffer at a given address: ", j), e);
+            throw new RuntimeException(C1643a.m877t("Cannot allocate ByteBuffer at a given address: ", j), e);
         }
     }
 
@@ -249,7 +249,7 @@ public class UnsafeUtil {
             }
         });
         for (Field field : list) {
-            Log.a aVar = Log.a;
+            C1644a.a aVar = C1644a.f3007a;
         }
         return fieldArr;
     }

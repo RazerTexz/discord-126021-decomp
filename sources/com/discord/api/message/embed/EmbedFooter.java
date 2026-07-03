@@ -1,8 +1,8 @@
 package com.discord.api.message.embed;
 
 import androidx.core.app.NotificationCompat;
-import b.d.b.a.outline;
-import d0.z.d.Intrinsics3;
+import p007b.p100d.p104b.p105a.C1643a;
+import p507d0.p592z.p594d.C12238m;
 
 /* JADX INFO: compiled from: EmbedFooter.kt */
 /* JADX INFO: loaded from: classes.dex */
@@ -29,7 +29,7 @@ public final /* data */ class EmbedFooter {
             return false;
         }
         EmbedFooter embedFooter = (EmbedFooter) other;
-        return Intrinsics3.areEqual(this.text, embedFooter.text) && Intrinsics3.areEqual(this.iconUrl, embedFooter.iconUrl) && Intrinsics3.areEqual(this.proxyIconUrl, embedFooter.proxyIconUrl);
+        return C12238m.areEqual(this.text, embedFooter.text) && C12238m.areEqual(this.iconUrl, embedFooter.iconUrl) && C12238m.areEqual(this.proxyIconUrl, embedFooter.proxyIconUrl);
     }
 
     public int hashCode() {
@@ -42,11 +42,11 @@ public final /* data */ class EmbedFooter {
     }
 
     public String toString() {
-        StringBuilder sbU = outline.U("EmbedFooter(text=");
-        sbU.append(this.text);
-        sbU.append(", iconUrl=");
-        sbU.append(this.iconUrl);
-        sbU.append(", proxyIconUrl=");
-        return outline.J(sbU, this.proxyIconUrl, ")");
+        StringBuilder sbM833U = C1643a.m833U("EmbedFooter(text=");
+        sbM833U.append(this.text);
+        sbM833U.append(", iconUrl=");
+        sbM833U.append(this.iconUrl);
+        sbM833U.append(", proxyIconUrl=");
+        return C1643a.m822J(sbM833U, this.proxyIconUrl, ")");
     }
 }

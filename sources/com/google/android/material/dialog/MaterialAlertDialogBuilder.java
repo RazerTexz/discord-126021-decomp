@@ -1,5 +1,6 @@
 package com.google.android.material.dialog;
 
+import android.R;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.res.ColorStateList;
@@ -25,7 +26,7 @@ import androidx.annotation.StyleRes;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.view.ContextThemeWrapper;
 import androidx.core.view.ViewCompat;
-import com.google.android.material.R;
+import com.google.android.material.C10817R;
 import com.google.android.material.color.MaterialColors;
 import com.google.android.material.resources.MaterialAttributes;
 import com.google.android.material.shape.MaterialShapeDrawable;
@@ -35,13 +36,13 @@ import com.google.android.material.theme.overlay.MaterialThemeOverlay;
 public class MaterialAlertDialogBuilder extends AlertDialog.Builder {
 
     @AttrRes
-    private static final int DEF_STYLE_ATTR = R.attr.alertDialogStyle;
+    private static final int DEF_STYLE_ATTR = C10817R.attr.alertDialogStyle;
 
     @StyleRes
-    private static final int DEF_STYLE_RES = R.style.MaterialAlertDialog_MaterialComponents;
+    private static final int DEF_STYLE_RES = C10817R.style.MaterialAlertDialog_MaterialComponents;
 
     @AttrRes
-    private static final int MATERIAL_ALERT_DIALOG_THEME_OVERLAY = R.attr.materialAlertDialogTheme;
+    private static final int MATERIAL_ALERT_DIALOG_THEME_OVERLAY = C10817R.attr.materialAlertDialogTheme;
 
     @Nullable
     private Drawable background;
@@ -137,13 +138,13 @@ public class MaterialAlertDialogBuilder extends AlertDialog.Builder {
         int i2 = DEF_STYLE_ATTR;
         int i3 = DEF_STYLE_RES;
         this.backgroundInsets = MaterialDialogs.getDialogBackgroundInsets(context2, i2, i3);
-        int color = MaterialColors.getColor(context2, R.attr.colorSurface, getClass().getCanonicalName());
+        int color = MaterialColors.getColor(context2, C10817R.attr.colorSurface, getClass().getCanonicalName());
         MaterialShapeDrawable materialShapeDrawable = new MaterialShapeDrawable(context2, null, i2, i3);
         materialShapeDrawable.initializeElevationOverlay(context2);
         materialShapeDrawable.setFillColor(ColorStateList.valueOf(color));
         if (Build.VERSION.SDK_INT >= 28) {
             TypedValue typedValue = new TypedValue();
-            theme.resolveAttribute(android.R.attr.dialogCornerRadius, typedValue, true);
+            theme.resolveAttribute(R.attr.dialogCornerRadius, typedValue, true);
             float dimension = typedValue.getDimension(getContext().getResources().getDisplayMetrics());
             if (typedValue.type == 5 && dimension >= 0.0f) {
                 materialShapeDrawable.setCornerSize(dimension);

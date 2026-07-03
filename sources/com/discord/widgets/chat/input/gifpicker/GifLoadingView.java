@@ -10,18 +10,18 @@ import android.view.ViewGroup;
 import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.recyclerview.widget.StaggeredGridLayoutManager;
-import com.discord.R;
+import com.discord.C5419R;
 import com.discord.databinding.LoadingGifItemViewBinding;
 import com.discord.models.domain.ModelAuditLogEntry;
 import com.discord.utilities.dimen.DimenUtils;
 import com.discord.utilities.recycler.GridColumnSpaceItemDecoration;
-import d0.t.Collections2;
-import d0.z.d.Intrinsics3;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import org.objectweb.asm.Opcodes;
+import p507d0.p580t.C12147n;
+import p507d0.p592z.p594d.C12238m;
 
 /* JADX INFO: compiled from: GifLoadingView.kt */
 /* JADX INFO: loaded from: classes2.dex */
@@ -31,7 +31,7 @@ public final class GifLoadingView extends RecyclerView {
 
     /* JADX INFO: compiled from: GifLoadingView.kt */
     public static final class LoadingGifAdapter extends RecyclerView.Adapter<LoadingGifViewHolder> {
-        private List<Integer> heightsDp = Collections2.emptyList();
+        private List<Integer> heightsDp = C12147n.emptyList();
 
         @Override // androidx.recyclerview.widget.RecyclerView.Adapter
         public int getItemCount() {
@@ -39,24 +39,24 @@ public final class GifLoadingView extends RecyclerView {
         }
 
         public final void setData(List<Integer> heightsDp) {
-            Intrinsics3.checkNotNullParameter(heightsDp, "heightsDp");
+            C12238m.checkNotNullParameter(heightsDp, "heightsDp");
             this.heightsDp = heightsDp;
             notifyDataSetChanged();
         }
 
         @Override // androidx.recyclerview.widget.RecyclerView.Adapter
         public void onBindViewHolder(LoadingGifViewHolder holder, int position) {
-            Intrinsics3.checkNotNullParameter(holder, "holder");
+            C12238m.checkNotNullParameter(holder, "holder");
             holder.configure(this.heightsDp.get(position).intValue());
         }
 
         @Override // androidx.recyclerview.widget.RecyclerView.Adapter
         public LoadingGifViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-            Intrinsics3.checkNotNullParameter(parent, "parent");
-            View viewInflate = LayoutInflater.from(parent.getContext()).inflate(R.layout.loading_gif_item_view, parent, false);
+            C12238m.checkNotNullParameter(parent, "parent");
+            View viewInflate = LayoutInflater.from(parent.getContext()).inflate(C5419R.layout.loading_gif_item_view, parent, false);
             Objects.requireNonNull(viewInflate, "rootView");
             LoadingGifItemViewBinding loadingGifItemViewBinding = new LoadingGifItemViewBinding((CardView) viewInflate);
-            Intrinsics3.checkNotNullExpressionValue(loadingGifItemViewBinding, "LoadingGifItemViewBindin….context), parent, false)");
+            C12238m.checkNotNullExpressionValue(loadingGifItemViewBinding, "LoadingGifItemViewBindin….context), parent, false)");
             return new LoadingGifViewHolder(loadingGifItemViewBinding);
         }
     }
@@ -67,22 +67,22 @@ public final class GifLoadingView extends RecyclerView {
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
         public LoadingGifViewHolder(LoadingGifItemViewBinding loadingGifItemViewBinding) {
-            super(loadingGifItemViewBinding.a);
-            Intrinsics3.checkNotNullParameter(loadingGifItemViewBinding, "binding");
+            super(loadingGifItemViewBinding.f15182a);
+            C12238m.checkNotNullParameter(loadingGifItemViewBinding, "binding");
             this.binding = loadingGifItemViewBinding;
         }
 
         public final void configure(int heightDp) {
-            CardView cardView = this.binding.a;
-            Intrinsics3.checkNotNullExpressionValue(cardView, "binding.root");
+            CardView cardView = this.binding.f15182a;
+            C12238m.checkNotNullExpressionValue(cardView, "binding.root");
             ViewGroup.LayoutParams layoutParams = cardView.getLayoutParams();
-            CardView cardView2 = this.binding.a;
-            Intrinsics3.checkNotNullExpressionValue(cardView2, "binding.root");
+            CardView cardView2 = this.binding.f15182a;
+            C12238m.checkNotNullExpressionValue(cardView2, "binding.root");
             Resources resources = cardView2.getResources();
-            Intrinsics3.checkNotNullExpressionValue(resources, "binding.root.resources");
+            C12238m.checkNotNullExpressionValue(resources, "binding.root.resources");
             layoutParams.height = (int) (heightDp * resources.getDisplayMetrics().density);
-            CardView cardView3 = this.binding.a;
-            Intrinsics3.checkNotNullExpressionValue(cardView3, "binding.root");
+            CardView cardView3 = this.binding.f15182a;
+            C12238m.checkNotNullExpressionValue(cardView3, "binding.root");
             cardView3.setLayoutParams(layoutParams);
         }
     }
@@ -90,13 +90,13 @@ public final class GifLoadingView extends RecyclerView {
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public GifLoadingView(Context context) {
         super(context);
-        Intrinsics3.checkNotNullParameter(context, "context");
+        C12238m.checkNotNullParameter(context, "context");
         this.loadingGifAdapter = new LoadingGifAdapter();
     }
 
     private final void initialize(AttributeSet attrs) {
-        TypedArray typedArrayObtainStyledAttributes = getContext().obtainStyledAttributes(attrs, R.a.GifLoadingView, 0, 0);
-        Intrinsics3.checkNotNullExpressionValue(typedArrayObtainStyledAttributes, "context.obtainStyledAttr…ble.GifLoadingView, 0, 0)");
+        TypedArray typedArrayObtainStyledAttributes = getContext().obtainStyledAttributes(attrs, C5419R.a.GifLoadingView, 0, 0);
+        C12238m.checkNotNullExpressionValue(typedArrayObtainStyledAttributes, "context.obtainStyledAttr…ble.GifLoadingView, 0, 0)");
         try {
             this.isStaggered = typedArrayObtainStyledAttributes.getBoolean(0, false);
             typedArrayObtainStyledAttributes.recycle();
@@ -139,7 +139,7 @@ public final class GifLoadingView extends RecyclerView {
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public GifLoadingView(Context context, AttributeSet attributeSet) {
         super(context, attributeSet);
-        Intrinsics3.checkNotNullParameter(context, "context");
+        C12238m.checkNotNullParameter(context, "context");
         this.loadingGifAdapter = new LoadingGifAdapter();
         initialize(attributeSet);
     }
@@ -151,7 +151,7 @@ public final class GifLoadingView extends RecyclerView {
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public GifLoadingView(Context context, AttributeSet attributeSet, int i) {
         super(context, attributeSet, i);
-        Intrinsics3.checkNotNullParameter(context, "context");
+        C12238m.checkNotNullParameter(context, "context");
         this.loadingGifAdapter = new LoadingGifAdapter();
         initialize(attributeSet);
     }

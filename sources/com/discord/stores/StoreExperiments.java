@@ -9,26 +9,20 @@ import com.discord.models.experiments.dto.GuildExperimentDto;
 import com.discord.models.experiments.dto.UnauthenticatedUserExperimentsDto;
 import com.discord.models.experiments.dto.UserExperimentDto;
 import com.discord.stores.updates.ObservationDeck;
-import com.discord.stores.updates.ObservationDeck4;
+import com.discord.stores.updates.ObservationDeckProvider;
 import com.discord.utilities.analytics.AnalyticsTracker;
 import com.discord.utilities.error.Error;
 import com.discord.utilities.experiments.ExperimentRegistry;
-import com.discord.utilities.experiments.ExperimentRegistry2;
 import com.discord.utilities.experiments.ExperimentUtils;
+import com.discord.utilities.experiments.RegisteredExperiment;
+import com.discord.utilities.p501rx.ObservableExtensionsKt;
 import com.discord.utilities.persister.Persister;
 import com.discord.utilities.rest.RestAPI;
-import com.discord.utilities.rx.ObservableExtensionsKt;
 import com.discord.utilities.time.Clock;
 import com.discord.utilities.user.UserUtils;
-import com.discord.widgets.chat.input.MentionUtils;
+import com.discord.widgets.chat.input.MentionUtilsKt;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
-import d0.d0._Ranges;
-import d0.t.Iterables2;
-import d0.t.Maps6;
-import d0.t.MapsJVM;
-import d0.z.d.Intrinsics3;
-import d0.z.d.Lambda;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.HashMap;
@@ -41,8 +35,14 @@ import kotlin.Unit;
 import kotlin.jvm.functions.Function0;
 import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.DefaultConstructorMarker;
-import rx.Observable;
-import rx.Subscription;
+import p507d0.p512d0.C11226f;
+import p507d0.p580t.C12134g0;
+import p507d0.p580t.C12136h0;
+import p507d0.p580t.C12149o;
+import p507d0.p592z.p594d.AbstractC12240o;
+import p507d0.p592z.p594d.C12238m;
+import p658rx.Observable;
+import p658rx.Subscription;
 
 /* JADX INFO: compiled from: StoreExperiments.kt */
 /* JADX INFO: loaded from: classes2.dex */
@@ -77,9 +77,9 @@ public final class StoreExperiments extends StoreV2 {
 
     /* JADX INFO: renamed from: Companion, reason: from kotlin metadata */
     public static final Companion INSTANCE = new Companion(null);
-    private static final StoreExperiments3 InitializedUpdateSource = new ObservationDeck.UpdateSource() { // from class: com.discord.stores.StoreExperiments$Companion$InitializedUpdateSource$1
+    private static final StoreExperiments$Companion$InitializedUpdateSource$1 InitializedUpdateSource = new ObservationDeck.UpdateSource() { // from class: com.discord.stores.StoreExperiments$Companion$InitializedUpdateSource$1
     };
-    private static final StoreExperiments2 ExperimentOverridesUpdateSource = new ObservationDeck.UpdateSource() { // from class: com.discord.stores.StoreExperiments$Companion$ExperimentOverridesUpdateSource$1
+    private static final StoreExperiments$Companion$ExperimentOverridesUpdateSource$1 ExperimentOverridesUpdateSource = new ObservationDeck.UpdateSource() { // from class: com.discord.stores.StoreExperiments$Companion$ExperimentOverridesUpdateSource$1
     };
 
     /* JADX INFO: compiled from: StoreExperiments.kt */
@@ -88,8 +88,8 @@ public final class StoreExperiments extends StoreV2 {
         }
 
         public final boolean isExperimentalAlpha(StoreGuilds storeGuilds, StoreUser storeUser) {
-            Intrinsics3.checkNotNullParameter(storeGuilds, "storeGuilds");
-            Intrinsics3.checkNotNullParameter(storeUser, "storeUser");
+            C12238m.checkNotNullParameter(storeGuilds, "storeGuilds");
+            C12238m.checkNotNullParameter(storeUser, "storeUser");
             return UserUtils.INSTANCE.isStaff(storeUser.getMeSnapshot()) || storeGuilds.getGuilds().get(Long.valueOf(StoreExperiments.DISCORD_TESTERS_GUILD_ID)) != null;
         }
 
@@ -98,13 +98,13 @@ public final class StoreExperiments extends StoreV2 {
         }
     }
 
-    /* JADX INFO: renamed from: com.discord.stores.StoreExperiments$clearOverride$1, reason: invalid class name */
+    /* JADX INFO: renamed from: com.discord.stores.StoreExperiments$clearOverride$1 */
     /* JADX INFO: compiled from: StoreExperiments.kt */
-    public static final class AnonymousClass1 extends Lambda implements Function0<Unit> {
+    public static final class C59151 extends AbstractC12240o implements Function0<Unit> {
         public final /* synthetic */ String $experimentName;
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-        public AnonymousClass1(String str) {
+        public C59151(String str) {
             super(0);
             this.$experimentName = str;
         }
@@ -112,7 +112,7 @@ public final class StoreExperiments extends StoreV2 {
         @Override // kotlin.jvm.functions.Function0
         public /* bridge */ /* synthetic */ Unit invoke() {
             invoke2();
-            return Unit.a;
+            return Unit.f27425a;
         }
 
         /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
@@ -121,10 +121,10 @@ public final class StoreExperiments extends StoreV2 {
         }
     }
 
-    /* JADX INFO: renamed from: com.discord.stores.StoreExperiments$getExperimentalAlpha$1, reason: invalid class name */
+    /* JADX INFO: renamed from: com.discord.stores.StoreExperiments$getExperimentalAlpha$1 */
     /* JADX INFO: compiled from: StoreExperiments.kt */
-    public static final class AnonymousClass1 extends Lambda implements Function0<Boolean> {
-        public AnonymousClass1() {
+    public static final class C59161 extends AbstractC12240o implements Function0<Boolean> {
+        public C59161() {
             super(0);
         }
 
@@ -139,19 +139,19 @@ public final class StoreExperiments extends StoreV2 {
         }
     }
 
-    /* JADX INFO: renamed from: com.discord.stores.StoreExperiments$getGuildExperiment$1, reason: invalid class name */
+    /* JADX INFO: renamed from: com.discord.stores.StoreExperiments$getGuildExperiment$1 */
     /* JADX INFO: compiled from: StoreExperiments.kt */
-    public static final class AnonymousClass1 extends Lambda implements Function0<Unit> {
-        public static final AnonymousClass1 INSTANCE = new AnonymousClass1();
+    public static final class C59171 extends AbstractC12240o implements Function0<Unit> {
+        public static final C59171 INSTANCE = new C59171();
 
-        public AnonymousClass1() {
+        public C59171() {
             super(0);
         }
 
         @Override // kotlin.jvm.functions.Function0
         public /* bridge */ /* synthetic */ Unit invoke() {
             invoke2();
-            return Unit.a;
+            return Unit.f27425a;
         }
 
         /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
@@ -159,19 +159,19 @@ public final class StoreExperiments extends StoreV2 {
         }
     }
 
-    /* JADX INFO: renamed from: com.discord.stores.StoreExperiments$getUserExperiment$1, reason: invalid class name */
+    /* JADX INFO: renamed from: com.discord.stores.StoreExperiments$getUserExperiment$1 */
     /* JADX INFO: compiled from: StoreExperiments.kt */
-    public static final class AnonymousClass1 extends Lambda implements Function0<Unit> {
-        public static final AnonymousClass1 INSTANCE = new AnonymousClass1();
+    public static final class C59181 extends AbstractC12240o implements Function0<Unit> {
+        public static final C59181 INSTANCE = new C59181();
 
-        public AnonymousClass1() {
+        public C59181() {
             super(0);
         }
 
         @Override // kotlin.jvm.functions.Function0
         public /* bridge */ /* synthetic */ Unit invoke() {
             invoke2();
-            return Unit.a;
+            return Unit.f27425a;
         }
 
         /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
@@ -179,10 +179,10 @@ public final class StoreExperiments extends StoreV2 {
         }
     }
 
-    /* JADX INFO: renamed from: com.discord.stores.StoreExperiments$isInitialized$1, reason: invalid class name */
+    /* JADX INFO: renamed from: com.discord.stores.StoreExperiments$isInitialized$1 */
     /* JADX INFO: compiled from: StoreExperiments.kt */
-    public static final class AnonymousClass1 extends Lambda implements Function0<Boolean> {
-        public AnonymousClass1() {
+    public static final class C59191 extends AbstractC12240o implements Function0<Boolean> {
+        public C59191() {
             super(0);
         }
 
@@ -197,15 +197,15 @@ public final class StoreExperiments extends StoreV2 {
         }
     }
 
-    /* JADX INFO: renamed from: com.discord.stores.StoreExperiments$observeGuildExperiment$1, reason: invalid class name */
+    /* JADX INFO: renamed from: com.discord.stores.StoreExperiments$observeGuildExperiment$1 */
     /* JADX INFO: compiled from: StoreExperiments.kt */
-    public static final class AnonymousClass1 extends Lambda implements Function0<Experiment> {
+    public static final class C59211 extends AbstractC12240o implements Function0<Experiment> {
         public final /* synthetic */ String $experimentName;
         public final /* synthetic */ long $guildId;
         public final /* synthetic */ boolean $trackExposure;
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-        public AnonymousClass1(String str, long j, boolean z2) {
+        public C59211(String str, long j, boolean z2) {
             super(0);
             this.$experimentName = str;
             this.$guildId = j;
@@ -219,10 +219,10 @@ public final class StoreExperiments extends StoreV2 {
         }
     }
 
-    /* JADX INFO: renamed from: com.discord.stores.StoreExperiments$observeOverrides$1, reason: invalid class name */
+    /* JADX INFO: renamed from: com.discord.stores.StoreExperiments$observeOverrides$1 */
     /* JADX INFO: compiled from: StoreExperiments.kt */
-    public static final class AnonymousClass1 extends Lambda implements Function0<Map<String, ? extends Integer>> {
-        public AnonymousClass1() {
+    public static final class C59221 extends AbstractC12240o implements Function0<Map<String, ? extends Integer>> {
+        public C59221() {
             super(0);
         }
 
@@ -232,14 +232,14 @@ public final class StoreExperiments extends StoreV2 {
         }
     }
 
-    /* JADX INFO: renamed from: com.discord.stores.StoreExperiments$observeUserExperiment$1, reason: invalid class name */
+    /* JADX INFO: renamed from: com.discord.stores.StoreExperiments$observeUserExperiment$1 */
     /* JADX INFO: compiled from: StoreExperiments.kt */
-    public static final class AnonymousClass1 extends Lambda implements Function0<Experiment> {
+    public static final class C59231 extends AbstractC12240o implements Function0<Experiment> {
         public final /* synthetic */ String $name;
         public final /* synthetic */ boolean $trackExposure;
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-        public AnonymousClass1(String str, boolean z2) {
+        public C59231(String str, boolean z2) {
             super(0);
             this.$name = str;
             this.$trackExposure = z2;
@@ -252,14 +252,14 @@ public final class StoreExperiments extends StoreV2 {
         }
     }
 
-    /* JADX INFO: renamed from: com.discord.stores.StoreExperiments$setOverride$1, reason: invalid class name */
+    /* JADX INFO: renamed from: com.discord.stores.StoreExperiments$setOverride$1 */
     /* JADX INFO: compiled from: StoreExperiments.kt */
-    public static final class AnonymousClass1 extends Lambda implements Function0<Unit> {
+    public static final class C59241 extends AbstractC12240o implements Function0<Unit> {
         public final /* synthetic */ int $bucket;
         public final /* synthetic */ String $experimentName;
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-        public AnonymousClass1(int i, String str) {
+        public C59241(int i, String str) {
             super(0);
             this.$bucket = i;
             this.$experimentName = str;
@@ -268,7 +268,7 @@ public final class StoreExperiments extends StoreV2 {
         @Override // kotlin.jvm.functions.Function0
         public /* bridge */ /* synthetic */ Unit invoke() {
             invoke2();
-            return Unit.a;
+            return Unit.f27425a;
         }
 
         /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
@@ -281,17 +281,17 @@ public final class StoreExperiments extends StoreV2 {
         }
     }
 
-    /* JADX INFO: renamed from: com.discord.stores.StoreExperiments$tryInitializeExperiments$1, reason: invalid class name */
+    /* JADX INFO: renamed from: com.discord.stores.StoreExperiments$tryInitializeExperiments$1 */
     /* JADX INFO: compiled from: StoreExperiments.kt */
-    public static final class AnonymousClass1 extends Lambda implements Function1<UnauthenticatedUserExperimentsDto, Unit> {
+    public static final class C59251 extends AbstractC12240o implements Function1<UnauthenticatedUserExperimentsDto, Unit> {
 
-        /* JADX INFO: renamed from: com.discord.stores.StoreExperiments$tryInitializeExperiments$1$1, reason: invalid class name and collision with other inner class name */
+        /* JADX INFO: renamed from: com.discord.stores.StoreExperiments$tryInitializeExperiments$1$1, reason: invalid class name */
         /* JADX INFO: compiled from: StoreExperiments.kt */
-        public static final class C01091 extends Lambda implements Function0<Unit> {
+        public static final class AnonymousClass1 extends AbstractC12240o implements Function0<Unit> {
             public final /* synthetic */ UnauthenticatedUserExperimentsDto $it;
 
             /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-            public C01091(UnauthenticatedUserExperimentsDto unauthenticatedUserExperimentsDto) {
+            public AnonymousClass1(UnauthenticatedUserExperimentsDto unauthenticatedUserExperimentsDto) {
                 super(0);
                 this.$it = unauthenticatedUserExperimentsDto;
             }
@@ -299,7 +299,7 @@ public final class StoreExperiments extends StoreV2 {
             @Override // kotlin.jvm.functions.Function0
             public /* bridge */ /* synthetic */ Unit invoke() {
                 invoke2();
-                return Unit.a;
+                return Unit.f27425a;
             }
 
             /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
@@ -307,7 +307,7 @@ public final class StoreExperiments extends StoreV2 {
                 StoreExperiments.this.storeAuthentication.setFingerprint(this.$it.getFingerprint(), false);
                 StoreExperiments storeExperiments = StoreExperiments.this;
                 List<UserExperimentDto> assignments = this.$it.getAssignments();
-                LinkedHashMap linkedHashMap = new LinkedHashMap(_Ranges.coerceAtLeast(MapsJVM.mapCapacity(Iterables2.collectionSizeOrDefault(assignments, 10)), 16));
+                LinkedHashMap linkedHashMap = new LinkedHashMap(C11226f.coerceAtLeast(C12134g0.mapCapacity(C12149o.collectionSizeOrDefault(assignments, 10)), 16));
                 for (Object obj : assignments) {
                     linkedHashMap.put(Long.valueOf(((UserExperimentDto) obj).getNameHash()), obj);
                 }
@@ -316,29 +316,29 @@ public final class StoreExperiments extends StoreV2 {
             }
         }
 
-        public AnonymousClass1() {
+        public C59251() {
             super(1);
         }
 
         @Override // kotlin.jvm.functions.Function1
         public /* bridge */ /* synthetic */ Unit invoke(UnauthenticatedUserExperimentsDto unauthenticatedUserExperimentsDto) {
             invoke2(unauthenticatedUserExperimentsDto);
-            return Unit.a;
+            return Unit.f27425a;
         }
 
         /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
         public final void invoke2(UnauthenticatedUserExperimentsDto unauthenticatedUserExperimentsDto) {
-            StoreExperiments.this.dispatcher.schedule(new C01091(unauthenticatedUserExperimentsDto));
+            StoreExperiments.this.dispatcher.schedule(new AnonymousClass1(unauthenticatedUserExperimentsDto));
         }
     }
 
-    /* JADX INFO: renamed from: com.discord.stores.StoreExperiments$tryInitializeExperiments$2, reason: invalid class name */
+    /* JADX INFO: renamed from: com.discord.stores.StoreExperiments$tryInitializeExperiments$2 */
     /* JADX INFO: compiled from: StoreExperiments.kt */
-    public static final class AnonymousClass2 extends Lambda implements Function1<Error, Unit> {
+    public static final class C59262 extends AbstractC12240o implements Function1<Error, Unit> {
 
         /* JADX INFO: renamed from: com.discord.stores.StoreExperiments$tryInitializeExperiments$2$1, reason: invalid class name */
         /* JADX INFO: compiled from: StoreExperiments.kt */
-        public static final class AnonymousClass1 extends Lambda implements Function0<Unit> {
+        public static final class AnonymousClass1 extends AbstractC12240o implements Function0<Unit> {
             public AnonymousClass1() {
                 super(0);
             }
@@ -346,7 +346,7 @@ public final class StoreExperiments extends StoreV2 {
             @Override // kotlin.jvm.functions.Function0
             public /* bridge */ /* synthetic */ Unit invoke() {
                 invoke2();
-                return Unit.a;
+                return Unit.f27425a;
             }
 
             /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
@@ -355,34 +355,34 @@ public final class StoreExperiments extends StoreV2 {
             }
         }
 
-        public AnonymousClass2() {
+        public C59262() {
             super(1);
         }
 
         @Override // kotlin.jvm.functions.Function1
         public /* bridge */ /* synthetic */ Unit invoke(Error error) {
             invoke2(error);
-            return Unit.a;
+            return Unit.f27425a;
         }
 
         /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
         public final void invoke2(Error error) {
-            Intrinsics3.checkNotNullParameter(error, "it");
+            C12238m.checkNotNullParameter(error, "it");
             StoreExperiments.this.dispatcher.schedule(new AnonymousClass1());
         }
     }
 
     public /* synthetic */ StoreExperiments(Clock clock, Dispatcher dispatcher, StoreUser storeUser, StoreGuilds storeGuilds, StoreAuthentication storeAuthentication, StoreGuildMemberCounts storeGuildMemberCounts, ObservationDeck observationDeck, int i, DefaultConstructorMarker defaultConstructorMarker) {
-        this(clock, dispatcher, storeUser, storeGuilds, storeAuthentication, storeGuildMemberCounts, (i & 64) != 0 ? ObservationDeck4.get() : observationDeck);
+        this(clock, dispatcher, storeUser, storeGuilds, storeAuthentication, storeGuildMemberCounts, (i & 64) != 0 ? ObservationDeckProvider.get() : observationDeck);
     }
 
     private final void cacheExperimentTrackedExposureTimestamps() {
-        getPrefs().edit().putString(EXPERIMENT_TRACKED_EXPOSURE_TIMESTAMPS_CACHE_KEY, new Gson().m(this.experimentTrackedExposureTimestamps)).apply();
+        getPrefs().edit().putString(EXPERIMENT_TRACKED_EXPOSURE_TIMESTAMPS_CACHE_KEY, new Gson().m9209m(this.experimentTrackedExposureTimestamps)).apply();
     }
 
     private final void cacheGuildExperiments() {
         Collection<GuildExperimentDto> collectionValues = this.guildExperiments.values();
-        Intrinsics3.checkNotNullExpressionValue(collectionValues, "guildExperiments.values");
+        C12238m.checkNotNullExpressionValue(collectionValues, "guildExperiments.values");
         ArrayList arrayList = new ArrayList();
         Iterator<T> it = collectionValues.iterator();
         while (true) {
@@ -393,8 +393,8 @@ public final class StoreExperiments extends StoreV2 {
             }
             Object next = it.next();
             GuildExperimentDto guildExperimentDto = (GuildExperimentDto) next;
-            Collection<ExperimentRegistry2> collectionValues2 = ExperimentRegistry.INSTANCE.getRegisteredExperiments().values();
-            Intrinsics3.checkNotNullExpressionValue(collectionValues2, "ExperimentRegistry.registeredExperiments.values");
+            Collection<RegisteredExperiment> collectionValues2 = ExperimentRegistry.INSTANCE.getRegisteredExperiments().values();
+            C12238m.checkNotNullExpressionValue(collectionValues2, "ExperimentRegistry.registeredExperiments.values");
             if (!(collectionValues2 instanceof Collection) || !collectionValues2.isEmpty()) {
                 Iterator<T> it2 = collectionValues2.iterator();
                 do {
@@ -402,7 +402,7 @@ public final class StoreExperiments extends StoreV2 {
                         z2 = false;
                         break;
                     }
-                } while (!(ExperimentHash.INSTANCE.from(((ExperimentRegistry2) it2.next()).getName()) == guildExperimentDto.getExperimentIdHash()));
+                } while (!(ExperimentHash.INSTANCE.from(((RegisteredExperiment) it2.next()).getName()) == guildExperimentDto.getExperimentIdHash()));
             } else {
                 z2 = false;
                 break;
@@ -424,8 +424,8 @@ public final class StoreExperiments extends StoreV2 {
                 return;
             }
             Map.Entry<Long, UserExperimentDto> next = it.next();
-            Collection<ExperimentRegistry2> collectionValues = ExperimentRegistry.INSTANCE.getRegisteredExperiments().values();
-            Intrinsics3.checkNotNullExpressionValue(collectionValues, "ExperimentRegistry.registeredExperiments.values");
+            Collection<RegisteredExperiment> collectionValues = ExperimentRegistry.INSTANCE.getRegisteredExperiments().values();
+            C12238m.checkNotNullExpressionValue(collectionValues, "ExperimentRegistry.registeredExperiments.values");
             if (!(collectionValues instanceof Collection) || !collectionValues.isEmpty()) {
                 Iterator<T> it2 = collectionValues.iterator();
                 do {
@@ -433,7 +433,7 @@ public final class StoreExperiments extends StoreV2 {
                         z2 = false;
                         break;
                     }
-                } while (!(ExperimentHash.INSTANCE.from(((ExperimentRegistry2) it2.next()).getName()) == next.getValue().getNameHash()));
+                } while (!(ExperimentHash.INSTANCE.from(((RegisteredExperiment) it2.next()).getName()) == next.getValue().getNameHash()));
             } else {
                 z2 = false;
                 break;
@@ -449,13 +449,13 @@ public final class StoreExperiments extends StoreV2 {
         cacheExperimentTrackedExposureTimestamps();
     }
 
-    @Store3
+    @StoreThread
     private final void handleClearOverride(String experimentName) {
         this.experimentOverrides.remove(experimentName);
         markChanged(ExperimentOverridesUpdateSource);
     }
 
-    @Store3
+    @StoreThread
     private final void handleLoadedGuildExperiments(Collection<GuildExperimentDto> experiments, boolean doCache) {
         this.guildExperiments.clear();
         this.memoizedGuildExperiments.clear();
@@ -469,7 +469,7 @@ public final class StoreExperiments extends StoreV2 {
         markChanged();
     }
 
-    @Store3
+    @StoreThread
     private final void handleLoadedUserExperiments(Map<Long, UserExperimentDto> experiments, boolean doCache) {
         this.userExperiments.clear();
         this.userExperiments.putAll(experiments);
@@ -479,7 +479,7 @@ public final class StoreExperiments extends StoreV2 {
         markChanged();
     }
 
-    @Store3
+    @StoreThread
     private final void handleSetOverride(String experimentName, int bucket) {
         this.experimentOverrides.put(experimentName, Integer.valueOf(bucket));
         markChanged(ExperimentOverridesUpdateSource);
@@ -488,19 +488,19 @@ public final class StoreExperiments extends StoreV2 {
     private final Map<String, Long> loadCachedExperimentTrackedExposureTimestamps() {
         String string = getPrefs().getString(EXPERIMENT_TRACKED_EXPOSURE_TIMESTAMPS_CACHE_KEY, null);
         if (string == null) {
-            return Maps6.emptyMap();
+            return C12136h0.emptyMap();
         }
-        Object objG = new Gson().g(string, new TypeToken<Map<String, ? extends Long>>() { // from class: com.discord.stores.StoreExperiments$loadCachedExperimentTrackedExposureTimestamps$typeToken$1
+        Object objM9203g = new Gson().m9203g(string, new TypeToken<Map<String, ? extends Long>>() { // from class: com.discord.stores.StoreExperiments$loadCachedExperimentTrackedExposureTimestamps$typeToken$1
         }.getType());
-        Intrinsics3.checkNotNullExpressionValue(objG, "Gson().fromJson(json, typeToken)");
-        return (Map) objG;
+        C12238m.checkNotNullExpressionValue(objM9203g, "Gson().fromJson(json, typeToken)");
+        return (Map) objM9203g;
     }
 
     private final synchronized void memoizeGuildExperiment(String experimentName, long guildId, Experiment experiment) {
-        this.memoizedGuildExperiments.put(experimentName + MentionUtils.EMOJIS_AND_STICKERS_CHAR + guildId, experiment);
+        this.memoizedGuildExperiments.put(experimentName + MentionUtilsKt.EMOJIS_AND_STICKERS_CHAR + guildId, experiment);
     }
 
-    @Store3
+    @StoreThread
     private final void reset() {
         if (this.authToken == null) {
             this.userExperiments.clear();
@@ -512,14 +512,14 @@ public final class StoreExperiments extends StoreV2 {
         }
     }
 
-    @Store3
+    @StoreThread
     private final void setInitialized() {
         this.initialized = true;
         markChanged(InitializedUpdateSource);
     }
 
     private final synchronized void trackExposureToGuildExperiment(String name, long guildId, int bucket, int revision) {
-        String str = name + MentionUtils.EMOJIS_AND_STICKERS_CHAR + guildId;
+        String str = name + MentionUtilsKt.EMOJIS_AND_STICKERS_CHAR + guildId;
         if (wasExperimentExposureTrackedRecently(str, this.clock.currentTimeMillis())) {
             return;
         }
@@ -535,9 +535,9 @@ public final class StoreExperiments extends StoreV2 {
         didTrackExposureToExperiment(name);
     }
 
-    @Store3
+    @StoreThread
     private final void tryInitializeExperiments() {
-        if (this.initialized || Intrinsics3.areEqual(this.authToken, UNINITIALIZED) || Intrinsics3.areEqual(this.fingerprint, UNINITIALIZED)) {
+        if (this.initialized || C12238m.areEqual(this.authToken, UNINITIALIZED) || C12238m.areEqual(this.fingerprint, UNINITIALIZED)) {
             return;
         }
         this.initialized = true;
@@ -545,9 +545,9 @@ public final class StoreExperiments extends StoreV2 {
             setInitialized();
             return;
         }
-        Observable observableC0 = ObservableExtensionsKt.restSubscribeOn$default(RestAPI.INSTANCE.getApi().getExperiments(), false, 1, null).c0(2000L, TimeUnit.MILLISECONDS);
-        Intrinsics3.checkNotNullExpressionValue(observableC0, "RestAPI\n          .api\n …0, TimeUnit.MILLISECONDS)");
-        ObservableExtensionsKt.appSubscribe(observableC0, (Class<?>) StoreExperiments.class, (58 & 2) != 0 ? null : null, (Function1<? super Subscription, Unit>) ((58 & 4) != 0 ? null : null), (Function1<? super Error, Unit>) ((58 & 8) != 0 ? null : new AnonymousClass2()), (Function0<Unit>) ((58 & 16) != 0 ? ObservableExtensionsKt.AnonymousClass1.INSTANCE : null), (Function0<Unit>) ((58 & 32) != 0 ? ObservableExtensionsKt.AnonymousClass2.INSTANCE : null), new AnonymousClass1());
+        Observable observableM11104c0 = ObservableExtensionsKt.restSubscribeOn$default(RestAPI.INSTANCE.getApi().getExperiments(), false, 1, null).m11104c0(2000L, TimeUnit.MILLISECONDS);
+        C12238m.checkNotNullExpressionValue(observableM11104c0, "RestAPI\n          .api\n …0, TimeUnit.MILLISECONDS)");
+        ObservableExtensionsKt.appSubscribe(observableM11104c0, (Class<?>) StoreExperiments.class, (58 & 2) != 0 ? null : null, (Function1<? super Subscription, Unit>) ((58 & 4) != 0 ? null : null), (Function1<? super Error, Unit>) ((58 & 8) != 0 ? null : new C59262()), (Function0<Unit>) ((58 & 16) != 0 ? ObservableExtensionsKt.C68791.INSTANCE : null), (Function0<Unit>) ((58 & 32) != 0 ? ObservableExtensionsKt.C68802.INSTANCE : null), new C59251());
     }
 
     private final boolean wasExperimentExposureTrackedRecently(String exposureKey, long nowMs) {
@@ -555,28 +555,28 @@ public final class StoreExperiments extends StoreV2 {
         if (l == null) {
             l = Long.MIN_VALUE;
         }
-        Intrinsics3.checkNotNullExpressionValue(l, "experimentTrackedExposur…y] ?: Timestamp.MIN_VALUE");
+        C12238m.checkNotNullExpressionValue(l, "experimentTrackedExposur…y] ?: Timestamp.MIN_VALUE");
         return nowMs - 604800000 < l.longValue();
     }
 
     public final void clearOverride(String experimentName) {
-        Intrinsics3.checkNotNullParameter(experimentName, "experimentName");
-        this.dispatcher.schedule(new AnonymousClass1(experimentName));
+        C12238m.checkNotNullParameter(experimentName, "experimentName");
+        this.dispatcher.schedule(new C59151(experimentName));
     }
 
     public final Observable<Boolean> getExperimentalAlpha() {
-        return ObservationDeck.connectRx$default(this.observationDeck, new ObservationDeck.UpdateSource[]{this.storeUser, this.storeGuilds}, false, null, null, new AnonymousClass1(), 14, null);
+        return ObservationDeck.connectRx$default(this.observationDeck, new ObservationDeck.UpdateSource[]{this.storeUser, this.storeGuilds}, false, null, null, new C59161(), 14, null);
     }
 
     public final Experiment getGuildExperiment(String experimentName, long guildId, boolean trackExposure) {
-        Intrinsics3.checkNotNullParameter(experimentName, "experimentName");
+        C12238m.checkNotNullParameter(experimentName, "experimentName");
         long jFrom = ExperimentHash.INSTANCE.from(experimentName);
         Integer num = this.experimentOverridesSnapshot.get(experimentName);
         GuildExperimentDto guildExperimentDto = this.guildExperimentsSnapshot.get(Long.valueOf(jFrom));
         if (num != null) {
-            return new Experiment(guildExperimentDto != null ? guildExperimentDto.getRevision() : 0, num.intValue(), 0, true, AnonymousClass1.INSTANCE);
+            return new Experiment(guildExperimentDto != null ? guildExperimentDto.getRevision() : 0, num.intValue(), 0, true, C59171.INSTANCE);
         }
-        Experiment memoizedGuildExperiment$app_productionGoogleRelease = getMemoizedGuildExperiment$app_productionGoogleRelease(guildId + MentionUtils.EMOJIS_AND_STICKERS_CHAR + experimentName, guildId);
+        Experiment memoizedGuildExperiment$app_productionGoogleRelease = getMemoizedGuildExperiment$app_productionGoogleRelease(guildId + MentionUtilsKt.EMOJIS_AND_STICKERS_CHAR + experimentName, guildId);
         if (memoizedGuildExperiment$app_productionGoogleRelease != null) {
             return memoizedGuildExperiment$app_productionGoogleRelease;
         }
@@ -585,7 +585,7 @@ public final class StoreExperiments extends StoreV2 {
         }
         int iComputeGuildExperimentBucket = ExperimentUtils.INSTANCE.computeGuildExperimentBucket(experimentName, guildId, this.storeGuildMemberCounts.getApproximateMemberCount(guildId), this.storeGuilds.getGuild(guildId), guildExperimentDto);
         int revision = guildExperimentDto.getRevision();
-        Experiment experiment = new Experiment(revision, iComputeGuildExperimentBucket, 0, false, new StoreExperiments4(this, experimentName, guildId, iComputeGuildExperimentBucket, revision));
+        Experiment experiment = new Experiment(revision, iComputeGuildExperimentBucket, 0, false, new StoreExperiments$getGuildExperiment$experiment$1(this, experimentName, guildId, iComputeGuildExperimentBucket, revision));
         if (trackExposure) {
             experiment.getTrackExposure().invoke();
         }
@@ -594,17 +594,17 @@ public final class StoreExperiments extends StoreV2 {
     }
 
     public final synchronized Experiment getMemoizedGuildExperiment$app_productionGoogleRelease(String experimentName, long guildId) {
-        Intrinsics3.checkNotNullParameter(experimentName, "experimentName");
-        return this.memoizedGuildExperiments.get(experimentName + MentionUtils.EMOJIS_AND_STICKERS_CHAR + guildId);
+        C12238m.checkNotNullParameter(experimentName, "experimentName");
+        return this.memoizedGuildExperiments.get(experimentName + MentionUtilsKt.EMOJIS_AND_STICKERS_CHAR + guildId);
     }
 
     public final Experiment getUserExperiment(String name, boolean trackExposure) {
-        Intrinsics3.checkNotNullParameter(name, ModelAuditLogEntry.CHANGE_KEY_NAME);
+        C12238m.checkNotNullParameter(name, ModelAuditLogEntry.CHANGE_KEY_NAME);
         long jFrom = ExperimentHash.INSTANCE.from(name);
         Integer num = this.experimentOverridesSnapshot.get(name);
         UserExperimentDto userExperimentDto = this.userExperimentsSnapshot.get(Long.valueOf(jFrom));
         if (num != null) {
-            return new Experiment(userExperimentDto != null ? userExperimentDto.getRevision() : 0, num.intValue(), userExperimentDto != null ? userExperimentDto.getPopulation() : 0, true, AnonymousClass1.INSTANCE);
+            return new Experiment(userExperimentDto != null ? userExperimentDto.getRevision() : 0, num.intValue(), userExperimentDto != null ? userExperimentDto.getPopulation() : 0, true, C59181.INSTANCE);
         }
         if (userExperimentDto == null) {
             return null;
@@ -612,43 +612,43 @@ public final class StoreExperiments extends StoreV2 {
         int bucket = userExperimentDto.getBucket();
         int population = userExperimentDto.getPopulation();
         int revision = userExperimentDto.getRevision();
-        Experiment experiment = new Experiment(revision, bucket, population, false, new StoreExperiments5(this, name, bucket, population, revision));
+        Experiment experiment = new Experiment(revision, bucket, population, false, new StoreExperiments$getUserExperiment$experiment$1(this, name, bucket, population, revision));
         if (trackExposure) {
             experiment.getTrackExposure().invoke();
         }
         return experiment;
     }
 
-    @Store3
+    @StoreThread
     public final void handleAuthToken(String authToken) {
         this.authToken = authToken;
         reset();
         tryInitializeExperiments();
     }
 
-    @Store3
+    @StoreThread
     public final void handleConnectionOpen(ModelPayload payload) {
-        Intrinsics3.checkNotNullParameter(payload, "payload");
+        C12238m.checkNotNullParameter(payload, "payload");
         Map<Long, UserExperimentDto> experiments = payload.getExperiments();
-        Intrinsics3.checkNotNullExpressionValue(experiments, "payload.experiments");
+        C12238m.checkNotNullExpressionValue(experiments, "payload.experiments");
         handleLoadedUserExperiments(experiments, true);
         List<GuildExperimentDto> guildExperiments = payload.getGuildExperiments();
         if (guildExperiments != null) {
-            Intrinsics3.checkNotNullExpressionValue(guildExperiments, "it");
+            C12238m.checkNotNullExpressionValue(guildExperiments, "it");
             handleLoadedGuildExperiments(guildExperiments, true);
         }
     }
 
-    @Store3
+    @StoreThread
     public final void handleFingerprint(String fingerprint) {
         this.fingerprint = fingerprint;
         tryInitializeExperiments();
     }
 
     @Override // com.discord.stores.Store
-    @Store3
+    @StoreThread
     public void init(Context context) {
-        Intrinsics3.checkNotNullParameter(context, "context");
+        C12238m.checkNotNullParameter(context, "context");
         super.init(context);
         this.experimentTrackedExposureTimestamps.putAll(loadCachedExperimentTrackedExposureTimestamps());
         this.experimentOverrides.putAll(this.experimentOverridesCache.get());
@@ -658,32 +658,32 @@ public final class StoreExperiments extends StoreV2 {
     }
 
     public final Observable<Boolean> isInitialized() {
-        return ObservationDeck.connectRx$default(this.observationDeck, new ObservationDeck.UpdateSource[]{InitializedUpdateSource}, false, null, null, new AnonymousClass1(), 14, null);
+        return ObservationDeck.connectRx$default(this.observationDeck, new ObservationDeck.UpdateSource[]{InitializedUpdateSource}, false, null, null, new C59191(), 14, null);
     }
 
     public final Observable<Experiment> observeGuildExperiment(String experimentName, long guildId, boolean trackExposure) {
-        Intrinsics3.checkNotNullParameter(experimentName, "experimentName");
-        return ObservationDeck.connectRx$default(this.observationDeck, new ObservationDeck.UpdateSource[]{this}, false, null, null, new AnonymousClass1(experimentName, guildId, trackExposure), 14, null);
+        C12238m.checkNotNullParameter(experimentName, "experimentName");
+        return ObservationDeck.connectRx$default(this.observationDeck, new ObservationDeck.UpdateSource[]{this}, false, null, null, new C59211(experimentName, guildId, trackExposure), 14, null);
     }
 
     public final Observable<Map<String, Integer>> observeOverrides() {
-        return ObservationDeck.connectRx$default(this.observationDeck, new ObservationDeck.UpdateSource[]{ExperimentOverridesUpdateSource}, false, null, null, new AnonymousClass1(), 14, null);
+        return ObservationDeck.connectRx$default(this.observationDeck, new ObservationDeck.UpdateSource[]{ExperimentOverridesUpdateSource}, false, null, null, new C59221(), 14, null);
     }
 
     public final Observable<Experiment> observeUserExperiment(String name, boolean trackExposure) {
-        Intrinsics3.checkNotNullParameter(name, ModelAuditLogEntry.CHANGE_KEY_NAME);
-        Observable<Experiment> observableR = ObservationDeck.connectRx$default(this.observationDeck, new ObservationDeck.UpdateSource[]{this}, false, null, null, new AnonymousClass1(name, trackExposure), 14, null).r();
-        Intrinsics3.checkNotNullExpressionValue(observableR, "observationDeck.connectR…  .distinctUntilChanged()");
-        return observableR;
+        C12238m.checkNotNullParameter(name, ModelAuditLogEntry.CHANGE_KEY_NAME);
+        Observable<Experiment> observableM11112r = ObservationDeck.connectRx$default(this.observationDeck, new ObservationDeck.UpdateSource[]{this}, false, null, null, new C59231(name, trackExposure), 14, null).m11112r();
+        C12238m.checkNotNullExpressionValue(observableM11112r, "observationDeck.connectR…  .distinctUntilChanged()");
+        return observableM11112r;
     }
 
     public final void setOverride(String experimentName, int bucket) {
-        Intrinsics3.checkNotNullParameter(experimentName, "experimentName");
-        this.dispatcher.schedule(new AnonymousClass1(bucket, experimentName));
+        C12238m.checkNotNullParameter(experimentName, "experimentName");
+        this.dispatcher.schedule(new C59241(bucket, experimentName));
     }
 
     @Override // com.discord.stores.StoreV2
-    @Store3
+    @StoreThread
     public void snapshotData() {
         super.snapshotData();
         this.userExperimentsSnapshot = new HashMap(this.userExperiments);
@@ -695,13 +695,13 @@ public final class StoreExperiments extends StoreV2 {
     }
 
     public StoreExperiments(Clock clock, Dispatcher dispatcher, StoreUser storeUser, StoreGuilds storeGuilds, StoreAuthentication storeAuthentication, StoreGuildMemberCounts storeGuildMemberCounts, ObservationDeck observationDeck) {
-        Intrinsics3.checkNotNullParameter(clock, "clock");
-        Intrinsics3.checkNotNullParameter(dispatcher, "dispatcher");
-        Intrinsics3.checkNotNullParameter(storeUser, "storeUser");
-        Intrinsics3.checkNotNullParameter(storeGuilds, "storeGuilds");
-        Intrinsics3.checkNotNullParameter(storeAuthentication, "storeAuthentication");
-        Intrinsics3.checkNotNullParameter(storeGuildMemberCounts, "storeGuildMemberCounts");
-        Intrinsics3.checkNotNullParameter(observationDeck, "observationDeck");
+        C12238m.checkNotNullParameter(clock, "clock");
+        C12238m.checkNotNullParameter(dispatcher, "dispatcher");
+        C12238m.checkNotNullParameter(storeUser, "storeUser");
+        C12238m.checkNotNullParameter(storeGuilds, "storeGuilds");
+        C12238m.checkNotNullParameter(storeAuthentication, "storeAuthentication");
+        C12238m.checkNotNullParameter(storeGuildMemberCounts, "storeGuildMemberCounts");
+        C12238m.checkNotNullParameter(observationDeck, "observationDeck");
         this.clock = clock;
         this.dispatcher = dispatcher;
         this.storeUser = storeUser;
@@ -711,9 +711,9 @@ public final class StoreExperiments extends StoreV2 {
         this.observationDeck = observationDeck;
         this.authToken = UNINITIALIZED;
         this.fingerprint = UNINITIALIZED;
-        this.userExperimentsSnapshot = Maps6.emptyMap();
-        this.guildExperimentsSnapshot = Maps6.emptyMap();
-        this.experimentOverridesSnapshot = Maps6.emptyMap();
+        this.userExperimentsSnapshot = C12136h0.emptyMap();
+        this.guildExperimentsSnapshot = C12136h0.emptyMap();
+        this.experimentOverridesSnapshot = C12136h0.emptyMap();
         this.userExperiments = new HashMap<>();
         this.guildExperiments = new HashMap<>();
         this.experimentOverrides = new HashMap<>();

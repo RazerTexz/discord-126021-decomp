@@ -10,25 +10,27 @@ import com.facebook.drawee.view.SimpleDraweeView;
 /* JADX INFO: loaded from: classes.dex */
 public final class ViewGuildRoleSubscriptionPlanDetailsReviewBinding implements ViewBinding {
 
+    /* JADX INFO: renamed from: a */
     @NonNull
-    public final LinearLayout a;
+    public final LinearLayout f15483a;
 
-    /* JADX INFO: renamed from: b, reason: collision with root package name */
+    /* JADX INFO: renamed from: b */
     @NonNull
-    public final SimpleDraweeView f2196b;
+    public final SimpleDraweeView f15484b;
 
+    /* JADX INFO: renamed from: c */
     @NonNull
-    public final TextView c;
+    public final TextView f15485c;
 
     public ViewGuildRoleSubscriptionPlanDetailsReviewBinding(@NonNull LinearLayout linearLayout, @NonNull SimpleDraweeView simpleDraweeView, @NonNull TextView textView) {
-        this.a = linearLayout;
-        this.f2196b = simpleDraweeView;
-        this.c = textView;
+        this.f15483a = linearLayout;
+        this.f15484b = simpleDraweeView;
+        this.f15485c = textView;
     }
 
     @Override // androidx.viewbinding.ViewBinding
     @NonNull
     public View getRoot() {
-        return this.a;
+        return this.f15483a;
     }
 }

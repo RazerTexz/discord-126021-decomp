@@ -1,18 +1,18 @@
 package com.discord.analytics.generated.events;
 
-import b.d.b.a.outline;
 import com.discord.analytics.generated.traits.TrackBase;
-import com.discord.analytics.generated.traits.TrackBase2;
+import com.discord.analytics.generated.traits.TrackBaseReceiver;
 import com.discord.analytics.generated.traits.TrackChannel;
-import com.discord.analytics.generated.traits.TrackChannel2;
+import com.discord.analytics.generated.traits.TrackChannelReceiver;
 import com.discord.analytics.generated.traits.TrackGuild;
-import com.discord.analytics.generated.traits.TrackGuild2;
+import com.discord.analytics.generated.traits.TrackGuildReceiver;
 import com.discord.api.science.AnalyticsSchema;
-import d0.z.d.Intrinsics3;
+import p007b.p100d.p104b.p105a.C1643a;
+import p507d0.p592z.p594d.C12238m;
 
 /* JADX INFO: compiled from: TrackDeepLinkReceived.kt */
 /* JADX INFO: loaded from: classes.dex */
-public final /* data */ class TrackDeepLinkReceived implements AnalyticsSchema, TrackBase2, TrackGuild2, TrackChannel2 {
+public final /* data */ class TrackDeepLinkReceived implements AnalyticsSchema, TrackBaseReceiver, TrackGuildReceiver, TrackChannelReceiver {
     private TrackBase trackBase;
     private TrackChannel trackChannel;
     private TrackGuild trackGuild;
@@ -22,14 +22,15 @@ public final /* data */ class TrackDeepLinkReceived implements AnalyticsSchema, 
     private final Boolean previewEnabled = null;
     private final transient String analyticsSchemaTypeName = "deep_link_received";
 
-    @Override // com.discord.analytics.generated.traits.TrackGuild2
+    @Override // com.discord.analytics.generated.traits.TrackGuildReceiver
     /* JADX INFO: renamed from: a, reason: from getter */
     public TrackGuild getTrackGuild() {
         return this.trackGuild;
     }
 
-    @Override // com.discord.analytics.generated.traits.TrackGuild2
-    public void c(TrackGuild trackGuild) {
+    @Override // com.discord.analytics.generated.traits.TrackGuildReceiver
+    /* JADX INFO: renamed from: c */
+    public void mo7508c(TrackGuild trackGuild) {
         this.trackGuild = trackGuild;
     }
 
@@ -47,7 +48,7 @@ public final /* data */ class TrackDeepLinkReceived implements AnalyticsSchema, 
             return false;
         }
         TrackDeepLinkReceived trackDeepLinkReceived = (TrackDeepLinkReceived) other;
-        return Intrinsics3.areEqual(this.source, trackDeepLinkReceived.source) && Intrinsics3.areEqual(this.type, trackDeepLinkReceived.type) && Intrinsics3.areEqual(this.voiceAction, trackDeepLinkReceived.voiceAction) && Intrinsics3.areEqual(this.previewEnabled, trackDeepLinkReceived.previewEnabled);
+        return C12238m.areEqual(this.source, trackDeepLinkReceived.source) && C12238m.areEqual(this.type, trackDeepLinkReceived.type) && C12238m.areEqual(this.voiceAction, trackDeepLinkReceived.voiceAction) && C12238m.areEqual(this.previewEnabled, trackDeepLinkReceived.previewEnabled);
     }
 
     public int hashCode() {
@@ -62,13 +63,13 @@ public final /* data */ class TrackDeepLinkReceived implements AnalyticsSchema, 
     }
 
     public String toString() {
-        StringBuilder sbU = outline.U("TrackDeepLinkReceived(source=");
-        sbU.append(this.source);
-        sbU.append(", type=");
-        sbU.append(this.type);
-        sbU.append(", voiceAction=");
-        sbU.append(this.voiceAction);
-        sbU.append(", previewEnabled=");
-        return outline.D(sbU, this.previewEnabled, ")");
+        StringBuilder sbM833U = C1643a.m833U("TrackDeepLinkReceived(source=");
+        sbM833U.append(this.source);
+        sbM833U.append(", type=");
+        sbM833U.append(this.type);
+        sbM833U.append(", voiceAction=");
+        sbM833U.append(this.voiceAction);
+        sbM833U.append(", previewEnabled=");
+        return C1643a.m816D(sbM833U, this.previewEnabled, ")");
     }
 }

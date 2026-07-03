@@ -1,18 +1,18 @@
 package com.discord.analytics.generated.events;
 
-import b.d.b.a.outline;
 import com.discord.analytics.generated.traits.TrackBase;
-import com.discord.analytics.generated.traits.TrackBase2;
+import com.discord.analytics.generated.traits.TrackBaseReceiver;
 import com.discord.analytics.generated.traits.TrackChannel;
-import com.discord.analytics.generated.traits.TrackChannel2;
+import com.discord.analytics.generated.traits.TrackChannelReceiver;
 import com.discord.analytics.generated.traits.TrackGuild;
-import com.discord.analytics.generated.traits.TrackGuild2;
+import com.discord.analytics.generated.traits.TrackGuildReceiver;
 import com.discord.api.science.AnalyticsSchema;
-import d0.z.d.Intrinsics3;
+import p007b.p100d.p104b.p105a.C1643a;
+import p507d0.p592z.p594d.C12238m;
 
 /* JADX INFO: compiled from: TrackServerSetupCtaClicked.kt */
 /* JADX INFO: loaded from: classes.dex */
-public final /* data */ class TrackServerSetupCtaClicked implements AnalyticsSchema, TrackBase2, TrackGuild2, TrackChannel2 {
+public final /* data */ class TrackServerSetupCtaClicked implements AnalyticsSchema, TrackBaseReceiver, TrackGuildReceiver, TrackChannelReceiver {
     private TrackBase trackBase;
     private TrackChannel trackChannel;
     private TrackGuild trackGuild;
@@ -23,14 +23,15 @@ public final /* data */ class TrackServerSetupCtaClicked implements AnalyticsSch
     private final Long numActionsCompleted = null;
     private final transient String analyticsSchemaTypeName = "server_setup_cta_clicked";
 
-    @Override // com.discord.analytics.generated.traits.TrackGuild2
+    @Override // com.discord.analytics.generated.traits.TrackGuildReceiver
     /* JADX INFO: renamed from: a, reason: from getter */
     public TrackGuild getTrackGuild() {
         return this.trackGuild;
     }
 
-    @Override // com.discord.analytics.generated.traits.TrackGuild2
-    public void c(TrackGuild trackGuild) {
+    @Override // com.discord.analytics.generated.traits.TrackGuildReceiver
+    /* JADX INFO: renamed from: c */
+    public void mo7508c(TrackGuild trackGuild) {
         this.trackGuild = trackGuild;
     }
 
@@ -48,7 +49,7 @@ public final /* data */ class TrackServerSetupCtaClicked implements AnalyticsSch
             return false;
         }
         TrackServerSetupCtaClicked trackServerSetupCtaClicked = (TrackServerSetupCtaClicked) other;
-        return Intrinsics3.areEqual(this.setupType, trackServerSetupCtaClicked.setupType) && Intrinsics3.areEqual(this.action, trackServerSetupCtaClicked.action) && Intrinsics3.areEqual(this.actionCompleted, trackServerSetupCtaClicked.actionCompleted) && Intrinsics3.areEqual(this.numTotalActions, trackServerSetupCtaClicked.numTotalActions) && Intrinsics3.areEqual(this.numActionsCompleted, trackServerSetupCtaClicked.numActionsCompleted);
+        return C12238m.areEqual(this.setupType, trackServerSetupCtaClicked.setupType) && C12238m.areEqual(this.action, trackServerSetupCtaClicked.action) && C12238m.areEqual(this.actionCompleted, trackServerSetupCtaClicked.actionCompleted) && C12238m.areEqual(this.numTotalActions, trackServerSetupCtaClicked.numTotalActions) && C12238m.areEqual(this.numActionsCompleted, trackServerSetupCtaClicked.numActionsCompleted);
     }
 
     public int hashCode() {
@@ -65,15 +66,15 @@ public final /* data */ class TrackServerSetupCtaClicked implements AnalyticsSch
     }
 
     public String toString() {
-        StringBuilder sbU = outline.U("TrackServerSetupCtaClicked(setupType=");
-        sbU.append(this.setupType);
-        sbU.append(", action=");
-        sbU.append(this.action);
-        sbU.append(", actionCompleted=");
-        sbU.append(this.actionCompleted);
-        sbU.append(", numTotalActions=");
-        sbU.append(this.numTotalActions);
-        sbU.append(", numActionsCompleted=");
-        return outline.G(sbU, this.numActionsCompleted, ")");
+        StringBuilder sbM833U = C1643a.m833U("TrackServerSetupCtaClicked(setupType=");
+        sbM833U.append(this.setupType);
+        sbM833U.append(", action=");
+        sbM833U.append(this.action);
+        sbM833U.append(", actionCompleted=");
+        sbM833U.append(this.actionCompleted);
+        sbM833U.append(", numTotalActions=");
+        sbM833U.append(this.numTotalActions);
+        sbM833U.append(", numActionsCompleted=");
+        return C1643a.m819G(sbM833U, this.numActionsCompleted, ")");
     }
 }

@@ -11,33 +11,37 @@ import com.facebook.drawee.view.SimpleDraweeView;
 /* JADX INFO: loaded from: classes.dex */
 public final class ViewServerSettingsGuildRoleSubscriptionTierItemBinding implements ViewBinding {
 
+    /* JADX INFO: renamed from: a */
     @NonNull
-    public final ConstraintLayout a;
+    public final ConstraintLayout f15560a;
 
-    /* JADX INFO: renamed from: b, reason: collision with root package name */
+    /* JADX INFO: renamed from: b */
     @NonNull
-    public final TextView f2210b;
+    public final TextView f15561b;
 
+    /* JADX INFO: renamed from: c */
     @NonNull
-    public final SimpleDraweeView c;
+    public final SimpleDraweeView f15562c;
 
+    /* JADX INFO: renamed from: d */
     @NonNull
-    public final TextView d;
+    public final TextView f15563d;
 
+    /* JADX INFO: renamed from: e */
     @NonNull
-    public final TextView e;
+    public final TextView f15564e;
 
     public ViewServerSettingsGuildRoleSubscriptionTierItemBinding(@NonNull ConstraintLayout constraintLayout, @NonNull TextView textView, @NonNull ImageView imageView, @NonNull SimpleDraweeView simpleDraweeView, @NonNull TextView textView2, @NonNull TextView textView3) {
-        this.a = constraintLayout;
-        this.f2210b = textView;
-        this.c = simpleDraweeView;
-        this.d = textView2;
-        this.e = textView3;
+        this.f15560a = constraintLayout;
+        this.f15561b = textView;
+        this.f15562c = simpleDraweeView;
+        this.f15563d = textView2;
+        this.f15564e = textView3;
     }
 
     @Override // androidx.viewbinding.ViewBinding
     @NonNull
     public View getRoot() {
-        return this.a;
+        return this.f15560a;
     }
 }

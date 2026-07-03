@@ -133,7 +133,7 @@ public class TransformEclipseAST {
             DebugSnapshotStore.INSTANCE.snapshot(ast, "transform entry", new Object[0]);
             long histoToken = lombokTracker == null ? 0L : lombokTracker.start();
             EclipseAST existing = getAST(ast, false);
-            new TransformEclipseAST(existing).go();
+            new TransformEclipseAST(existing).m10927go();
             if (lombokTracker != null) {
                 lombokTracker.end(histoToken);
             }
@@ -158,7 +158,8 @@ public class TransformEclipseAST {
         this.ast = ast;
     }
 
-    public void go() {
+    /* JADX INFO: renamed from: go */
+    public void m10927go() {
         long nextPriority = Long.MIN_VALUE;
         for (Long d : handlers.getPriorities()) {
             if (nextPriority <= d.longValue()) {

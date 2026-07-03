@@ -1,8 +1,8 @@
 package co.discord.media_engine.internal;
 
-import b.d.b.a.outline;
 import co.discord.media_engine.PlayoutMetric;
-import d0.z.d.Intrinsics3;
+import p007b.p100d.p104b.p105a.C1643a;
+import p507d0.p592z.p594d.C12238m;
 
 /* JADX INFO: compiled from: NativeStatistics.kt */
 /* JADX INFO: loaded from: classes.dex */
@@ -19,16 +19,16 @@ public final /* data */ class InboundPlayout {
     private final PlayoutMetric videoJitterTarget;
 
     public InboundPlayout(PlayoutMetric playoutMetric, PlayoutMetric playoutMetric2, PlayoutMetric playoutMetric3, PlayoutMetric playoutMetric4, PlayoutMetric playoutMetric5, PlayoutMetric playoutMetric6, PlayoutMetric playoutMetric7, PlayoutMetric playoutMetric8, PlayoutMetric playoutMetric9, PlayoutMetric playoutMetric10) {
-        Intrinsics3.checkNotNullParameter(playoutMetric, "audioJitterBuffer");
-        Intrinsics3.checkNotNullParameter(playoutMetric2, "audioJitterDelay");
-        Intrinsics3.checkNotNullParameter(playoutMetric3, "audioJitterTarget");
-        Intrinsics3.checkNotNullParameter(playoutMetric4, "audioPlayoutUnderruns");
-        Intrinsics3.checkNotNullParameter(playoutMetric5, "audioCaptureOverruns");
-        Intrinsics3.checkNotNullParameter(playoutMetric6, "videoJitterBuffer");
-        Intrinsics3.checkNotNullParameter(playoutMetric7, "videoJitterDelay");
-        Intrinsics3.checkNotNullParameter(playoutMetric8, "videoJitterTarget");
-        Intrinsics3.checkNotNullParameter(playoutMetric9, "relativeReceptionDelay");
-        Intrinsics3.checkNotNullParameter(playoutMetric10, "relativePlayoutDelay");
+        C12238m.checkNotNullParameter(playoutMetric, "audioJitterBuffer");
+        C12238m.checkNotNullParameter(playoutMetric2, "audioJitterDelay");
+        C12238m.checkNotNullParameter(playoutMetric3, "audioJitterTarget");
+        C12238m.checkNotNullParameter(playoutMetric4, "audioPlayoutUnderruns");
+        C12238m.checkNotNullParameter(playoutMetric5, "audioCaptureOverruns");
+        C12238m.checkNotNullParameter(playoutMetric6, "videoJitterBuffer");
+        C12238m.checkNotNullParameter(playoutMetric7, "videoJitterDelay");
+        C12238m.checkNotNullParameter(playoutMetric8, "videoJitterTarget");
+        C12238m.checkNotNullParameter(playoutMetric9, "relativeReceptionDelay");
+        C12238m.checkNotNullParameter(playoutMetric10, "relativePlayoutDelay");
         this.audioJitterBuffer = playoutMetric;
         this.audioJitterDelay = playoutMetric2;
         this.audioJitterTarget = playoutMetric3;
@@ -92,16 +92,16 @@ public final /* data */ class InboundPlayout {
     }
 
     public final InboundPlayout copy(PlayoutMetric audioJitterBuffer, PlayoutMetric audioJitterDelay, PlayoutMetric audioJitterTarget, PlayoutMetric audioPlayoutUnderruns, PlayoutMetric audioCaptureOverruns, PlayoutMetric videoJitterBuffer, PlayoutMetric videoJitterDelay, PlayoutMetric videoJitterTarget, PlayoutMetric relativeReceptionDelay, PlayoutMetric relativePlayoutDelay) {
-        Intrinsics3.checkNotNullParameter(audioJitterBuffer, "audioJitterBuffer");
-        Intrinsics3.checkNotNullParameter(audioJitterDelay, "audioJitterDelay");
-        Intrinsics3.checkNotNullParameter(audioJitterTarget, "audioJitterTarget");
-        Intrinsics3.checkNotNullParameter(audioPlayoutUnderruns, "audioPlayoutUnderruns");
-        Intrinsics3.checkNotNullParameter(audioCaptureOverruns, "audioCaptureOverruns");
-        Intrinsics3.checkNotNullParameter(videoJitterBuffer, "videoJitterBuffer");
-        Intrinsics3.checkNotNullParameter(videoJitterDelay, "videoJitterDelay");
-        Intrinsics3.checkNotNullParameter(videoJitterTarget, "videoJitterTarget");
-        Intrinsics3.checkNotNullParameter(relativeReceptionDelay, "relativeReceptionDelay");
-        Intrinsics3.checkNotNullParameter(relativePlayoutDelay, "relativePlayoutDelay");
+        C12238m.checkNotNullParameter(audioJitterBuffer, "audioJitterBuffer");
+        C12238m.checkNotNullParameter(audioJitterDelay, "audioJitterDelay");
+        C12238m.checkNotNullParameter(audioJitterTarget, "audioJitterTarget");
+        C12238m.checkNotNullParameter(audioPlayoutUnderruns, "audioPlayoutUnderruns");
+        C12238m.checkNotNullParameter(audioCaptureOverruns, "audioCaptureOverruns");
+        C12238m.checkNotNullParameter(videoJitterBuffer, "videoJitterBuffer");
+        C12238m.checkNotNullParameter(videoJitterDelay, "videoJitterDelay");
+        C12238m.checkNotNullParameter(videoJitterTarget, "videoJitterTarget");
+        C12238m.checkNotNullParameter(relativeReceptionDelay, "relativeReceptionDelay");
+        C12238m.checkNotNullParameter(relativePlayoutDelay, "relativePlayoutDelay");
         return new InboundPlayout(audioJitterBuffer, audioJitterDelay, audioJitterTarget, audioPlayoutUnderruns, audioCaptureOverruns, videoJitterBuffer, videoJitterDelay, videoJitterTarget, relativeReceptionDelay, relativePlayoutDelay);
     }
 
@@ -113,7 +113,7 @@ public final /* data */ class InboundPlayout {
             return false;
         }
         InboundPlayout inboundPlayout = (InboundPlayout) other;
-        return Intrinsics3.areEqual(this.audioJitterBuffer, inboundPlayout.audioJitterBuffer) && Intrinsics3.areEqual(this.audioJitterDelay, inboundPlayout.audioJitterDelay) && Intrinsics3.areEqual(this.audioJitterTarget, inboundPlayout.audioJitterTarget) && Intrinsics3.areEqual(this.audioPlayoutUnderruns, inboundPlayout.audioPlayoutUnderruns) && Intrinsics3.areEqual(this.audioCaptureOverruns, inboundPlayout.audioCaptureOverruns) && Intrinsics3.areEqual(this.videoJitterBuffer, inboundPlayout.videoJitterBuffer) && Intrinsics3.areEqual(this.videoJitterDelay, inboundPlayout.videoJitterDelay) && Intrinsics3.areEqual(this.videoJitterTarget, inboundPlayout.videoJitterTarget) && Intrinsics3.areEqual(this.relativeReceptionDelay, inboundPlayout.relativeReceptionDelay) && Intrinsics3.areEqual(this.relativePlayoutDelay, inboundPlayout.relativePlayoutDelay);
+        return C12238m.areEqual(this.audioJitterBuffer, inboundPlayout.audioJitterBuffer) && C12238m.areEqual(this.audioJitterDelay, inboundPlayout.audioJitterDelay) && C12238m.areEqual(this.audioJitterTarget, inboundPlayout.audioJitterTarget) && C12238m.areEqual(this.audioPlayoutUnderruns, inboundPlayout.audioPlayoutUnderruns) && C12238m.areEqual(this.audioCaptureOverruns, inboundPlayout.audioCaptureOverruns) && C12238m.areEqual(this.videoJitterBuffer, inboundPlayout.videoJitterBuffer) && C12238m.areEqual(this.videoJitterDelay, inboundPlayout.videoJitterDelay) && C12238m.areEqual(this.videoJitterTarget, inboundPlayout.videoJitterTarget) && C12238m.areEqual(this.relativeReceptionDelay, inboundPlayout.relativeReceptionDelay) && C12238m.areEqual(this.relativePlayoutDelay, inboundPlayout.relativePlayoutDelay);
     }
 
     public final PlayoutMetric getAudioCaptureOverruns() {
@@ -180,27 +180,27 @@ public final /* data */ class InboundPlayout {
     }
 
     public String toString() {
-        StringBuilder sbU = outline.U("InboundPlayout(audioJitterBuffer=");
-        sbU.append(this.audioJitterBuffer);
-        sbU.append(", audioJitterDelay=");
-        sbU.append(this.audioJitterDelay);
-        sbU.append(", audioJitterTarget=");
-        sbU.append(this.audioJitterTarget);
-        sbU.append(", audioPlayoutUnderruns=");
-        sbU.append(this.audioPlayoutUnderruns);
-        sbU.append(", audioCaptureOverruns=");
-        sbU.append(this.audioCaptureOverruns);
-        sbU.append(", videoJitterBuffer=");
-        sbU.append(this.videoJitterBuffer);
-        sbU.append(", videoJitterDelay=");
-        sbU.append(this.videoJitterDelay);
-        sbU.append(", videoJitterTarget=");
-        sbU.append(this.videoJitterTarget);
-        sbU.append(", relativeReceptionDelay=");
-        sbU.append(this.relativeReceptionDelay);
-        sbU.append(", relativePlayoutDelay=");
-        sbU.append(this.relativePlayoutDelay);
-        sbU.append(")");
-        return sbU.toString();
+        StringBuilder sbM833U = C1643a.m833U("InboundPlayout(audioJitterBuffer=");
+        sbM833U.append(this.audioJitterBuffer);
+        sbM833U.append(", audioJitterDelay=");
+        sbM833U.append(this.audioJitterDelay);
+        sbM833U.append(", audioJitterTarget=");
+        sbM833U.append(this.audioJitterTarget);
+        sbM833U.append(", audioPlayoutUnderruns=");
+        sbM833U.append(this.audioPlayoutUnderruns);
+        sbM833U.append(", audioCaptureOverruns=");
+        sbM833U.append(this.audioCaptureOverruns);
+        sbM833U.append(", videoJitterBuffer=");
+        sbM833U.append(this.videoJitterBuffer);
+        sbM833U.append(", videoJitterDelay=");
+        sbM833U.append(this.videoJitterDelay);
+        sbM833U.append(", videoJitterTarget=");
+        sbM833U.append(this.videoJitterTarget);
+        sbM833U.append(", relativeReceptionDelay=");
+        sbM833U.append(this.relativeReceptionDelay);
+        sbM833U.append(", relativePlayoutDelay=");
+        sbM833U.append(this.relativePlayoutDelay);
+        sbM833U.append(")");
+        return sbM833U.toString();
     }
 }

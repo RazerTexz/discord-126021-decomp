@@ -4,7 +4,7 @@ import com.discord.stores.StoreSearch;
 import com.discord.utilities.search.query.node.QueryNode;
 import java.util.Collection;
 import java.util.List;
-import rx.Observable;
+import p658rx.Observable;
 
 /* JADX INFO: compiled from: SearchHistoryCache.kt */
 /* JADX INFO: loaded from: classes2.dex */

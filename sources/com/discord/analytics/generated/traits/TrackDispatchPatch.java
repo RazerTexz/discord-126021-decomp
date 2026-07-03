@@ -1,8 +1,8 @@
 package com.discord.analytics.generated.traits;
 
-import b.d.b.a.outline;
-import d0.z.d.Intrinsics3;
 import java.util.List;
+import p007b.p100d.p104b.p105a.C1643a;
+import p507d0.p592z.p594d.C12238m;
 
 /* JADX INFO: compiled from: TrackDispatchPatch.kt */
 /* JADX INFO: loaded from: classes.dex */
@@ -19,7 +19,7 @@ public final /* data */ class TrackDispatchPatch {
             return false;
         }
         TrackDispatchPatch trackDispatchPatch = (TrackDispatchPatch) other;
-        return Intrinsics3.areEqual(this.targetBuildId, trackDispatchPatch.targetBuildId) && Intrinsics3.areEqual(this.targetManifestIds, trackDispatchPatch.targetManifestIds) && Intrinsics3.areEqual(this.patchType, trackDispatchPatch.patchType);
+        return C12238m.areEqual(this.targetBuildId, trackDispatchPatch.targetBuildId) && C12238m.areEqual(this.targetManifestIds, trackDispatchPatch.targetManifestIds) && C12238m.areEqual(this.patchType, trackDispatchPatch.patchType);
     }
 
     public int hashCode() {
@@ -32,11 +32,11 @@ public final /* data */ class TrackDispatchPatch {
     }
 
     public String toString() {
-        StringBuilder sbU = outline.U("TrackDispatchPatch(targetBuildId=");
-        sbU.append(this.targetBuildId);
-        sbU.append(", targetManifestIds=");
-        sbU.append(this.targetManifestIds);
-        sbU.append(", patchType=");
-        return outline.E(sbU, this.patchType, ")");
+        StringBuilder sbM833U = C1643a.m833U("TrackDispatchPatch(targetBuildId=");
+        sbM833U.append(this.targetBuildId);
+        sbM833U.append(", targetManifestIds=");
+        sbM833U.append(this.targetManifestIds);
+        sbM833U.append(", patchType=");
+        return C1643a.m817E(sbM833U, this.patchType, ")");
     }
 }

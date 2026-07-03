@@ -85,8 +85,9 @@ public final class OsUtils {
         return drives;
     }
 
+    /* JADX INFO: renamed from: lombok.installer.OsUtils$OS */
     /* JADX INFO: loaded from: app.apk:lombok/installer/OsUtils$OS.SCL.lombok */
-    public enum OS {
+    public enum EnumC12884OS {
         MAC_OS_X("\n"),
         WINDOWS("\r\n"),
         UNIX("\n");
@@ -94,15 +95,15 @@ public final class OsUtils {
         private final String lineEnding;
 
         /* JADX INFO: renamed from: values, reason: to resolve conflict with enum method */
-        public static OS[] valuesCustom() {
-            OS[] osArrValuesCustom = values();
-            int length = osArrValuesCustom.length;
-            OS[] osArr = new OS[length];
-            System.arraycopy(osArrValuesCustom, 0, osArr, 0, length);
-            return osArr;
+        public static EnumC12884OS[] valuesCustom() {
+            EnumC12884OS[] enumC12884OSArrValuesCustom = values();
+            int length = enumC12884OSArrValuesCustom.length;
+            EnumC12884OS[] enumC12884OSArr = new EnumC12884OS[length];
+            System.arraycopy(enumC12884OSArrValuesCustom, 0, enumC12884OSArr, 0, length);
+            return enumC12884OSArr;
         }
 
-        OS(String lineEnding) {
+        EnumC12884OS(String lineEnding) {
             this.lineEnding = lineEnding;
         }
 
@@ -111,11 +112,11 @@ public final class OsUtils {
         }
     }
 
-    public static OS getOS() {
+    public static EnumC12884OS getOS() {
         String prop = System.getProperty("os.name", "").toLowerCase();
         if (!prop.matches("^.*\\bmac\\b.*$") && !prop.matches("^.*\\bdarwin\\b.*$")) {
-            return prop.matches("^.*\\bwin(dows|32|64)?\\b.*$") ? OS.WINDOWS : OS.UNIX;
+            return prop.matches("^.*\\bwin(dows|32|64)?\\b.*$") ? EnumC12884OS.WINDOWS : EnumC12884OS.UNIX;
         }
-        return OS.MAC_OS_X;
+        return EnumC12884OS.MAC_OS_X;
     }
 }

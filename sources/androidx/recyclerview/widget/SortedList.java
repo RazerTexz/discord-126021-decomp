@@ -2,11 +2,11 @@ package androidx.recyclerview.widget;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import b.d.b.a.outline;
 import java.lang.reflect.Array;
 import java.util.Arrays;
 import java.util.Collection;
 import java.util.Comparator;
+import p007b.p100d.p104b.p105a.C1643a;
 
 /* JADX INFO: loaded from: classes.dex */
 public class SortedList<T> {
@@ -127,9 +127,9 @@ public class SortedList<T> {
     private void addToData(int i, T t) {
         int i2 = this.mSize;
         if (i > i2) {
-            StringBuilder sbV = outline.V("cannot add item to ", i, " because size is ");
-            sbV.append(this.mSize);
-            throw new IndexOutOfBoundsException(sbV.toString());
+            StringBuilder sbM834V = C1643a.m834V("cannot add item to ", i, " because size is ");
+            sbM834V.append(this.mSize);
+            throw new IndexOutOfBoundsException(sbM834V.toString());
         }
         T[] tArr = this.mData;
         if (i2 == tArr.length) {
@@ -461,9 +461,9 @@ public class SortedList<T> {
             T[] tArr = this.mOldData;
             return (tArr == null || i < (i2 = this.mNewDataStart)) ? this.mData[i] : tArr[(i - i2) + this.mOldDataStart];
         }
-        StringBuilder sbV = outline.V("Asked to get item at ", i, " but size is ");
-        sbV.append(this.mSize);
-        throw new IndexOutOfBoundsException(sbV.toString());
+        StringBuilder sbM834V = C1643a.m834V("Asked to get item at ", i, " but size is ");
+        sbM834V.append(this.mSize);
+        throw new IndexOutOfBoundsException(sbM834V.toString());
     }
 
     public int indexOf(T t) {

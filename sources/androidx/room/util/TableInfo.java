@@ -5,8 +5,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.annotation.RestrictTo;
 import androidx.room.ColumnInfo;
-import androidx.sqlite.db.SupportSQLiteDatabase;
-import b.d.b.a.outline;
+import androidx.sqlite.p006db.SupportSQLiteDatabase;
 import com.discord.models.domain.ModelAuditLogEntry;
 import java.util.ArrayList;
 import java.util.Collections;
@@ -17,6 +16,7 @@ import java.util.Locale;
 import java.util.Map;
 import java.util.Set;
 import java.util.TreeMap;
+import p007b.p100d.p104b.p105a.C1643a;
 
 /* JADX INFO: loaded from: classes.dex */
 @RestrictTo({RestrictTo.Scope.LIBRARY_GROUP_PREFIX})
@@ -98,24 +98,24 @@ public class TableInfo {
         }
 
         public String toString() {
-            StringBuilder sbU = outline.U("Column{name='");
-            sbU.append(this.name);
-            sbU.append('\'');
-            sbU.append(", type='");
-            sbU.append(this.type);
-            sbU.append('\'');
-            sbU.append(", affinity='");
-            sbU.append(this.affinity);
-            sbU.append('\'');
-            sbU.append(", notNull=");
-            sbU.append(this.notNull);
-            sbU.append(", primaryKeyPosition=");
-            sbU.append(this.primaryKeyPosition);
-            sbU.append(", defaultValue='");
-            sbU.append(this.defaultValue);
-            sbU.append('\'');
-            sbU.append('}');
-            return sbU.toString();
+            StringBuilder sbM833U = C1643a.m833U("Column{name='");
+            sbM833U.append(this.name);
+            sbM833U.append('\'');
+            sbM833U.append(", type='");
+            sbM833U.append(this.type);
+            sbM833U.append('\'');
+            sbM833U.append(", affinity='");
+            sbM833U.append(this.affinity);
+            sbM833U.append('\'');
+            sbM833U.append(", notNull=");
+            sbM833U.append(this.notNull);
+            sbM833U.append(", primaryKeyPosition=");
+            sbM833U.append(this.primaryKeyPosition);
+            sbM833U.append(", defaultValue='");
+            sbM833U.append(this.defaultValue);
+            sbM833U.append('\'');
+            sbM833U.append('}');
+            return sbM833U.toString();
         }
 
         public Column(String str, String str2, boolean z2, int i, String str3, int i2) {
@@ -170,25 +170,25 @@ public class TableInfo {
         }
 
         public int hashCode() {
-            return this.referenceColumnNames.hashCode() + ((this.columnNames.hashCode() + outline.m(this.onUpdate, outline.m(this.onDelete, this.referenceTable.hashCode() * 31, 31), 31)) * 31);
+            return this.referenceColumnNames.hashCode() + ((this.columnNames.hashCode() + C1643a.m863m(this.onUpdate, C1643a.m863m(this.onDelete, this.referenceTable.hashCode() * 31, 31), 31)) * 31);
         }
 
         public String toString() {
-            StringBuilder sbU = outline.U("ForeignKey{referenceTable='");
-            sbU.append(this.referenceTable);
-            sbU.append('\'');
-            sbU.append(", onDelete='");
-            sbU.append(this.onDelete);
-            sbU.append('\'');
-            sbU.append(", onUpdate='");
-            sbU.append(this.onUpdate);
-            sbU.append('\'');
-            sbU.append(", columnNames=");
-            sbU.append(this.columnNames);
-            sbU.append(", referenceColumnNames=");
-            sbU.append(this.referenceColumnNames);
-            sbU.append('}');
-            return sbU.toString();
+            StringBuilder sbM833U = C1643a.m833U("ForeignKey{referenceTable='");
+            sbM833U.append(this.referenceTable);
+            sbM833U.append('\'');
+            sbM833U.append(", onDelete='");
+            sbM833U.append(this.onDelete);
+            sbM833U.append('\'');
+            sbM833U.append(", onUpdate='");
+            sbM833U.append(this.onUpdate);
+            sbM833U.append('\'');
+            sbM833U.append(", columnNames=");
+            sbM833U.append(this.columnNames);
+            sbM833U.append(", referenceColumnNames=");
+            sbM833U.append(this.referenceColumnNames);
+            sbM833U.append('}');
+            return sbM833U.toString();
         }
     }
 
@@ -245,15 +245,15 @@ public class TableInfo {
         }
 
         public String toString() {
-            StringBuilder sbU = outline.U("Index{name='");
-            sbU.append(this.name);
-            sbU.append('\'');
-            sbU.append(", unique=");
-            sbU.append(this.unique);
-            sbU.append(", columns=");
-            sbU.append(this.columns);
-            sbU.append('}');
-            return sbU.toString();
+            StringBuilder sbM833U = C1643a.m833U("Index{name='");
+            sbM833U.append(this.name);
+            sbM833U.append('\'');
+            sbM833U.append(", unique=");
+            sbM833U.append(this.unique);
+            sbM833U.append(", columns=");
+            sbM833U.append(this.columns);
+            sbM833U.append('}');
+            return sbM833U.toString();
         }
     }
 
@@ -433,17 +433,17 @@ public class TableInfo {
     }
 
     public String toString() {
-        StringBuilder sbU = outline.U("TableInfo{name='");
-        sbU.append(this.name);
-        sbU.append('\'');
-        sbU.append(", columns=");
-        sbU.append(this.columns);
-        sbU.append(", foreignKeys=");
-        sbU.append(this.foreignKeys);
-        sbU.append(", indices=");
-        sbU.append(this.indices);
-        sbU.append('}');
-        return sbU.toString();
+        StringBuilder sbM833U = C1643a.m833U("TableInfo{name='");
+        sbM833U.append(this.name);
+        sbM833U.append('\'');
+        sbM833U.append(", columns=");
+        sbM833U.append(this.columns);
+        sbM833U.append(", foreignKeys=");
+        sbM833U.append(this.foreignKeys);
+        sbM833U.append(", indices=");
+        sbM833U.append(this.indices);
+        sbM833U.append('}');
+        return sbM833U.toString();
     }
 
     public TableInfo(String str, Map<String, Column> map, Set<ForeignKey> set) {

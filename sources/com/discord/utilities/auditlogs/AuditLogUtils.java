@@ -6,9 +6,7 @@ import android.text.format.DateUtils;
 import android.view.View;
 import androidx.annotation.DrawableRes;
 import androidx.annotation.StringRes;
-import b.a.k.FormatUtils;
-import b.d.b.a.outline;
-import com.discord.R;
+import com.discord.C5419R;
 import com.discord.api.sticker.Sticker;
 import com.discord.app.AppLog;
 import com.discord.models.domain.ModelAuditLogEntry;
@@ -16,11 +14,9 @@ import com.discord.stores.StoreStream;
 import com.discord.utilities.SnowflakeUtils;
 import com.discord.utilities.drawable.DrawableCompat;
 import com.discord.utilities.logging.Logger;
-import com.discord.utilities.resources.StringResourceUtils;
+import com.discord.utilities.resources.StringResourceUtilsKt;
 import com.discord.utilities.time.Clock;
 import com.discord.utilities.time.ClockFactory;
-import d0.LazyJVM;
-import d0.z.d.Intrinsics3;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
@@ -28,6 +24,10 @@ import java.util.NoSuchElementException;
 import java.util.Objects;
 import java.util.concurrent.TimeUnit;
 import kotlin.Lazy;
+import p007b.p008a.p027k.C1107b;
+import p007b.p100d.p104b.p105a.C1643a;
+import p507d0.C12083g;
+import p507d0.p592z.p594d.C12238m;
 
 /* JADX INFO: compiled from: AuditLogUtils.kt */
 /* JADX INFO: loaded from: classes2.dex */
@@ -35,7 +35,7 @@ public final class AuditLogUtils {
     public static final AuditLogUtils INSTANCE = new AuditLogUtils();
 
     /* JADX INFO: renamed from: ALL_ACTION_TYPES$delegate, reason: from kotlin metadata */
-    private static final Lazy ALL_ACTION_TYPES = LazyJVM.lazy(AuditLogUtils2.INSTANCE);
+    private static final Lazy ALL_ACTION_TYPES = C12083g.lazy(AuditLogUtils$ALL_ACTION_TYPES$2.INSTANCE);
 
     public final /* synthetic */ class WhenMappings {
         public static final /* synthetic */ int[] $EnumSwitchMapping$0;
@@ -94,32 +94,32 @@ public final class AuditLogUtils {
         Object obj2 = null;
         switch (actionTypeId) {
             case 1:
-                return R.string.guild_settings_audit_log_guild_update;
+                return C5419R.string.guild_settings_audit_log_guild_update;
             case 20:
-                return R.string.guild_settings_audit_log_member_kick;
+                return C5419R.string.guild_settings_audit_log_member_kick;
             case 21:
-                return R.string.guild_settings_audit_log_member_prune;
+                return C5419R.string.guild_settings_audit_log_member_prune;
             case 22:
-                return R.string.guild_settings_audit_log_member_ban_add;
+                return C5419R.string.guild_settings_audit_log_member_ban_add;
             case 23:
-                return R.string.guild_settings_audit_log_member_ban_remove;
+                return C5419R.string.guild_settings_audit_log_member_ban_remove;
             case 24:
-                return R.string.guild_settings_audit_log_member_update;
+                return C5419R.string.guild_settings_audit_log_member_update;
             case 25:
-                return R.string.guild_settings_audit_log_member_role_update;
+                return C5419R.string.guild_settings_audit_log_member_role_update;
             case 26:
-                return R.string.guild_settings_audit_log_member_move;
+                return C5419R.string.guild_settings_audit_log_member_move;
             case 27:
-                return R.string.guild_settings_audit_log_member_disconnect;
+                return C5419R.string.guild_settings_audit_log_member_disconnect;
             case 28:
-                return R.string.guild_settings_audit_log_bot_add;
+                return C5419R.string.guild_settings_audit_log_bot_add;
             case 110:
                 List<ModelAuditLogEntry.Change> changes = auditLogEntry.getChanges();
                 if (changes != null) {
                     for (Object obj3 : changes) {
                         ModelAuditLogEntry.Change change3 = (ModelAuditLogEntry.Change) obj3;
-                        Intrinsics3.checkNotNullExpressionValue(change3, "it");
-                        if (Intrinsics3.areEqual(change3.getKey(), "type")) {
+                        C12238m.checkNotNullExpressionValue(change3, "it");
+                        if (C12238m.areEqual(change3.getKey(), "type")) {
                             obj2 = obj3;
                             change = (ModelAuditLogEntry.Change) obj2;
                         }
@@ -133,13 +133,13 @@ public final class AuditLogUtils {
                 Objects.requireNonNull(newValue, "null cannot be cast to non-null type kotlin.Long");
                 int iLongValue = (int) ((Long) newValue).longValue();
                 if (iLongValue != 10) {
-                    return iLongValue != 12 ? R.string.guild_settings_audit_log_thread_create : R.string.guild_settings_audit_log_private_thread_create;
+                    return iLongValue != 12 ? C5419R.string.guild_settings_audit_log_thread_create : C5419R.string.guild_settings_audit_log_private_thread_create;
                 }
-                return R.string.guild_settings_audit_log_announcement_thread_create;
+                return C5419R.string.guild_settings_audit_log_announcement_thread_create;
             case 111:
-                return R.string.guild_settings_audit_log_thread_update;
+                return C5419R.string.guild_settings_audit_log_thread_update;
             case 112:
-                return R.string.guild_settings_audit_log_thread_delete;
+                return C5419R.string.guild_settings_audit_log_thread_delete;
             default:
                 switch (actionTypeId) {
                     case 10:
@@ -147,8 +147,8 @@ public final class AuditLogUtils {
                         if (changes2 != null) {
                             for (Object obj4 : changes2) {
                                 ModelAuditLogEntry.Change change4 = (ModelAuditLogEntry.Change) obj4;
-                                Intrinsics3.checkNotNullExpressionValue(change4, "it");
-                                if (Intrinsics3.areEqual(change4.getKey(), "type")) {
+                                C12238m.checkNotNullExpressionValue(change4, "it");
+                                if (C12238m.areEqual(change4.getKey(), "type")) {
                                     obj = obj4;
                                     change2 = (ModelAuditLogEntry.Change) obj;
                                 }
@@ -162,100 +162,100 @@ public final class AuditLogUtils {
                         Objects.requireNonNull(newValue2, "null cannot be cast to non-null type kotlin.Long");
                         int iLongValue2 = (int) ((Long) newValue2).longValue();
                         if (iLongValue2 == 2) {
-                            return R.string.guild_settings_audit_log_channel_voice_create;
+                            return C5419R.string.guild_settings_audit_log_channel_voice_create;
                         }
                         if (iLongValue2 != 4) {
-                            return iLongValue2 != 13 ? R.string.guild_settings_audit_log_channel_text_create : R.string.guild_settings_audit_log_channel_stage_create;
+                            return iLongValue2 != 13 ? C5419R.string.guild_settings_audit_log_channel_text_create : C5419R.string.guild_settings_audit_log_channel_stage_create;
                         }
-                        return R.string.guild_settings_audit_log_channel_category_create;
+                        return C5419R.string.guild_settings_audit_log_channel_category_create;
                     case 11:
-                        return R.string.guild_settings_audit_log_channel_update;
+                        return C5419R.string.guild_settings_audit_log_channel_update;
                     case 12:
-                        return R.string.guild_settings_audit_log_channel_delete;
+                        return C5419R.string.guild_settings_audit_log_channel_delete;
                     case 13:
-                        return R.string.guild_settings_audit_log_channel_overwrite_create;
+                        return C5419R.string.guild_settings_audit_log_channel_overwrite_create;
                     case 14:
-                        return R.string.guild_settings_audit_log_channel_overwrite_update;
+                        return C5419R.string.guild_settings_audit_log_channel_overwrite_update;
                     case 15:
-                        return R.string.guild_settings_audit_log_channel_overwrite_delete;
+                        return C5419R.string.guild_settings_audit_log_channel_overwrite_delete;
                     default:
                         switch (actionTypeId) {
                             case 30:
-                                return R.string.guild_settings_audit_log_role_create;
+                                return C5419R.string.guild_settings_audit_log_role_create;
                             case 31:
-                                return R.string.guild_settings_audit_log_role_update;
+                                return C5419R.string.guild_settings_audit_log_role_update;
                             case 32:
-                                return R.string.guild_settings_audit_log_role_delete;
+                                return C5419R.string.guild_settings_audit_log_role_delete;
                             default:
                                 switch (actionTypeId) {
                                     case 40:
-                                        return R.string.guild_settings_audit_log_invite_create;
+                                        return C5419R.string.guild_settings_audit_log_invite_create;
                                     case 41:
-                                        return R.string.guild_settings_audit_log_invite_update;
+                                        return C5419R.string.guild_settings_audit_log_invite_update;
                                     case 42:
-                                        return R.string.guild_settings_audit_log_invite_delete;
+                                        return C5419R.string.guild_settings_audit_log_invite_delete;
                                     default:
                                         switch (actionTypeId) {
                                             case 50:
-                                                return R.string.guild_settings_audit_log_webhook_create;
+                                                return C5419R.string.guild_settings_audit_log_webhook_create;
                                             case 51:
-                                                return R.string.guild_settings_audit_log_webhook_update;
+                                                return C5419R.string.guild_settings_audit_log_webhook_update;
                                             case 52:
-                                                return R.string.guild_settings_audit_log_webhook_delete;
+                                                return C5419R.string.guild_settings_audit_log_webhook_delete;
                                             default:
                                                 switch (actionTypeId) {
                                                     case 60:
-                                                        return R.string.guild_settings_audit_log_emoji_create;
+                                                        return C5419R.string.guild_settings_audit_log_emoji_create;
                                                     case 61:
-                                                        return R.string.guild_settings_audit_log_emoji_update;
+                                                        return C5419R.string.guild_settings_audit_log_emoji_update;
                                                     case 62:
-                                                        return R.string.guild_settings_audit_log_emoji_delete;
+                                                        return C5419R.string.guild_settings_audit_log_emoji_delete;
                                                     default:
                                                         switch (actionTypeId) {
                                                             case 72:
-                                                                return R.string.guild_settings_audit_log_message_delete;
+                                                                return C5419R.string.guild_settings_audit_log_message_delete;
                                                             case 73:
-                                                                return R.string.guild_settings_audit_log_message_bulk_delete;
+                                                                return C5419R.string.guild_settings_audit_log_message_bulk_delete;
                                                             case 74:
-                                                                return R.string.guild_settings_audit_log_message_pin;
+                                                                return C5419R.string.guild_settings_audit_log_message_pin;
                                                             case 75:
-                                                                return R.string.guild_settings_audit_log_message_unpin;
+                                                                return C5419R.string.guild_settings_audit_log_message_unpin;
                                                             default:
                                                                 switch (actionTypeId) {
                                                                     case 80:
-                                                                        return R.string.guild_settings_audit_log_integration_create;
+                                                                        return C5419R.string.guild_settings_audit_log_integration_create;
                                                                     case 81:
-                                                                        return R.string.guild_settings_audit_log_integration_update;
+                                                                        return C5419R.string.guild_settings_audit_log_integration_update;
                                                                     case 82:
-                                                                        return R.string.guild_settings_audit_log_integration_delete;
+                                                                        return C5419R.string.guild_settings_audit_log_integration_delete;
                                                                     case 83:
-                                                                        return R.string.guild_settings_audit_log_stage_instance_create;
+                                                                        return C5419R.string.guild_settings_audit_log_stage_instance_create;
                                                                     case 84:
-                                                                        return R.string.guild_settings_audit_log_stage_instance_update;
+                                                                        return C5419R.string.guild_settings_audit_log_stage_instance_update;
                                                                     case 85:
-                                                                        return auditLogEntry.getUserId() == 0 ? R.string.guild_settings_audit_log_stage_instance_delete_no_user : R.string.guild_settings_audit_log_stage_instance_delete;
+                                                                        return auditLogEntry.getUserId() == 0 ? C5419R.string.guild_settings_audit_log_stage_instance_delete_no_user : C5419R.string.guild_settings_audit_log_stage_instance_delete;
                                                                     default:
                                                                         switch (actionTypeId) {
                                                                             case 90:
-                                                                                return R.string.guild_settings_audit_log_sticker_create;
+                                                                                return C5419R.string.guild_settings_audit_log_sticker_create;
                                                                             case 91:
-                                                                                return R.string.guild_settings_audit_log_sticker_update;
+                                                                                return C5419R.string.guild_settings_audit_log_sticker_update;
                                                                             case 92:
-                                                                                return R.string.guild_settings_audit_log_sticker_delete;
+                                                                                return C5419R.string.guild_settings_audit_log_sticker_delete;
                                                                             default:
                                                                                 switch (actionTypeId) {
                                                                                     case 100:
-                                                                                        return R.string.guild_settings_audit_log_scheduled_event_create;
+                                                                                        return C5419R.string.guild_settings_audit_log_scheduled_event_create;
                                                                                     case 101:
-                                                                                        return R.string.guild_settings_audit_log_scheduled_event_update;
+                                                                                        return C5419R.string.guild_settings_audit_log_scheduled_event_update;
                                                                                     case 102:
-                                                                                        return R.string.guild_settings_audit_log_scheduled_event_delete;
+                                                                                        return C5419R.string.guild_settings_audit_log_scheduled_event_delete;
                                                                                     default:
-                                                                                        AppLog appLog = AppLog.g;
-                                                                                        StringBuilder sbU = outline.U("Unknown audit log action type: ");
-                                                                                        sbU.append(auditLogEntry.getActionTypeId());
-                                                                                        Logger.e$default(appLog, sbU.toString(), null, null, 6, null);
-                                                                                        return R.string.guild_settings_audit_log_unknown_action;
+                                                                                        AppLog appLog = AppLog.f14950g;
+                                                                                        StringBuilder sbM833U = C1643a.m833U("Unknown audit log action type: ");
+                                                                                        sbM833U.append(auditLogEntry.getActionTypeId());
+                                                                                        Logger.e$default(appLog, sbM833U.toString(), null, null, 6, null);
+                                                                                        return C5419R.string.guild_settings_audit_log_unknown_action;
                                                                                 }
                                                                         }
                                                                 }
@@ -287,9 +287,9 @@ public final class AuditLogUtils {
             if (targetType != null) {
                 int iOrdinal = targetType.ordinal();
                 if (iOrdinal == 3) {
-                    StringBuilder sbU = outline.U(channelPrefix);
-                    sbU.append(getTargetValue(auditLogEntry, ModelAuditLogEntry.CHANGE_KEY_NAME));
-                    string = sbU.toString();
+                    StringBuilder sbM833U = C1643a.m833U(channelPrefix);
+                    sbM833U.append(getTargetValue(auditLogEntry, ModelAuditLogEntry.CHANGE_KEY_NAME));
+                    string = sbM833U.toString();
                 } else if (iOrdinal == 10) {
                     string = getTargetValue(auditLogEntry, "type");
                 } else if (iOrdinal == 6) {
@@ -336,8 +336,8 @@ public final class AuditLogUtils {
             }
             next = it.next();
             change = (ModelAuditLogEntry.Change) next;
-            Intrinsics3.checkNotNullExpressionValue(change, "it");
-        } while (!Intrinsics3.areEqual(change.getKey(), str));
+            C12238m.checkNotNullExpressionValue(change, "it");
+        } while (!C12238m.areEqual(change.getKey(), str));
         ModelAuditLogEntry.Change change2 = (ModelAuditLogEntry.Change) next;
         if (change2 != null) {
             return change2.getValue();
@@ -350,9 +350,9 @@ public final class AuditLogUtils {
         long jCurrentTimeMillis = clock.currentTimeMillis() - timestamp;
         CharSequence relativeTimeSpanString = DateUtils.getRelativeTimeSpanString(timestamp, clock.currentTimeMillis(), 86400000L, 131092);
         if (TimeUnit.MILLISECONDS.toDays(jCurrentTimeMillis) < 7) {
-            return FormatUtils.b(context, R.string.guild_settings_audit_log_time_at_android, new Object[]{relativeTimeSpanString, DateUtils.formatDateTime(context, timestamp, 1)}, (4 & 4) != 0 ? FormatUtils.b.j : null);
+            return C1107b.m210b(context, C5419R.string.guild_settings_audit_log_time_at_android, new Object[]{relativeTimeSpanString, DateUtils.formatDateTime(context, timestamp, 1)}, (4 & 4) != 0 ? C1107b.b.f1491j : null);
         }
-        Intrinsics3.checkNotNullExpressionValue(relativeTimeSpanString, "timeString");
+        C12238m.checkNotNullExpressionValue(relativeTimeSpanString, "timeString");
         return relativeTimeSpanString;
     }
 
@@ -363,120 +363,120 @@ public final class AuditLogUtils {
     @StringRes
     public final int getActionName(int actionTypeId) {
         if (actionTypeId == 0) {
-            return R.string.guild_settings_filter_all_actions;
+            return C5419R.string.guild_settings_filter_all_actions;
         }
         if (actionTypeId == 1) {
-            return R.string.guild_settings_action_filter_guild_update;
+            return C5419R.string.guild_settings_action_filter_guild_update;
         }
         switch (actionTypeId) {
             case 10:
-                return R.string.guild_settings_action_filter_channel_create;
+                return C5419R.string.guild_settings_action_filter_channel_create;
             case 11:
-                return R.string.guild_settings_action_filter_channel_update;
+                return C5419R.string.guild_settings_action_filter_channel_update;
             case 12:
-                return R.string.guild_settings_action_filter_channel_delete;
+                return C5419R.string.guild_settings_action_filter_channel_delete;
             case 13:
-                return R.string.guild_settings_action_filter_channel_overwrite_create;
+                return C5419R.string.guild_settings_action_filter_channel_overwrite_create;
             case 14:
-                return R.string.guild_settings_action_filter_channel_overwrite_update;
+                return C5419R.string.guild_settings_action_filter_channel_overwrite_update;
             case 15:
-                return R.string.guild_settings_action_filter_channel_overwrite_delete;
+                return C5419R.string.guild_settings_action_filter_channel_overwrite_delete;
             default:
                 switch (actionTypeId) {
                     case 20:
-                        return R.string.guild_settings_action_filter_member_kick;
+                        return C5419R.string.guild_settings_action_filter_member_kick;
                     case 21:
-                        return R.string.guild_settings_action_filter_member_prune;
+                        return C5419R.string.guild_settings_action_filter_member_prune;
                     case 22:
-                        return R.string.guild_settings_action_filter_member_ban_add;
+                        return C5419R.string.guild_settings_action_filter_member_ban_add;
                     case 23:
-                        return R.string.guild_settings_action_filter_member_ban_remove;
+                        return C5419R.string.guild_settings_action_filter_member_ban_remove;
                     case 24:
-                        return R.string.guild_settings_action_filter_member_update;
+                        return C5419R.string.guild_settings_action_filter_member_update;
                     case 25:
-                        return R.string.guild_settings_action_filter_member_role_update;
+                        return C5419R.string.guild_settings_action_filter_member_role_update;
                     case 26:
-                        return R.string.guild_settings_action_filter_member_move;
+                        return C5419R.string.guild_settings_action_filter_member_move;
                     case 27:
-                        return R.string.guild_settings_action_filter_member_disconnect;
+                        return C5419R.string.guild_settings_action_filter_member_disconnect;
                     case 28:
-                        return R.string.guild_settings_action_filter_bot_add;
+                        return C5419R.string.guild_settings_action_filter_bot_add;
                     case 100:
-                        return R.string.guild_settings_action_filter_guild_scheduled_event_create;
+                        return C5419R.string.guild_settings_action_filter_guild_scheduled_event_create;
                     case 101:
-                        return R.string.guild_settings_action_filter_guild_scheduled_event_update;
+                        return C5419R.string.guild_settings_action_filter_guild_scheduled_event_update;
                     case 102:
-                        return R.string.guild_settings_action_filter_guild_scheduled_event_delete;
+                        return C5419R.string.guild_settings_action_filter_guild_scheduled_event_delete;
                     case 110:
-                        return R.string.guild_settings_action_filter_thread_create;
+                        return C5419R.string.guild_settings_action_filter_thread_create;
                     case 111:
-                        return R.string.guild_settings_action_filter_thread_update;
+                        return C5419R.string.guild_settings_action_filter_thread_update;
                     case 112:
-                        return R.string.guild_settings_action_filter_thread_delete;
+                        return C5419R.string.guild_settings_action_filter_thread_delete;
                     default:
                         switch (actionTypeId) {
                             case 30:
-                                return R.string.guild_settings_action_filter_role_create;
+                                return C5419R.string.guild_settings_action_filter_role_create;
                             case 31:
-                                return R.string.guild_settings_action_filter_role_update;
+                                return C5419R.string.guild_settings_action_filter_role_update;
                             case 32:
-                                return R.string.guild_settings_action_filter_role_delete;
+                                return C5419R.string.guild_settings_action_filter_role_delete;
                             default:
                                 switch (actionTypeId) {
                                     case 40:
-                                        return R.string.guild_settings_action_filter_invite_create;
+                                        return C5419R.string.guild_settings_action_filter_invite_create;
                                     case 41:
-                                        return R.string.guild_settings_action_filter_invite_update;
+                                        return C5419R.string.guild_settings_action_filter_invite_update;
                                     case 42:
-                                        return R.string.guild_settings_action_filter_invite_delete;
+                                        return C5419R.string.guild_settings_action_filter_invite_delete;
                                     default:
                                         switch (actionTypeId) {
                                             case 50:
-                                                return R.string.guild_settings_action_filter_webhook_create;
+                                                return C5419R.string.guild_settings_action_filter_webhook_create;
                                             case 51:
-                                                return R.string.guild_settings_action_filter_webhook_update;
+                                                return C5419R.string.guild_settings_action_filter_webhook_update;
                                             case 52:
-                                                return R.string.guild_settings_action_filter_webhook_delete;
+                                                return C5419R.string.guild_settings_action_filter_webhook_delete;
                                             default:
                                                 switch (actionTypeId) {
                                                     case 60:
-                                                        return R.string.guild_settings_action_filter_emoji_create;
+                                                        return C5419R.string.guild_settings_action_filter_emoji_create;
                                                     case 61:
-                                                        return R.string.guild_settings_action_filter_emoji_update;
+                                                        return C5419R.string.guild_settings_action_filter_emoji_update;
                                                     case 62:
-                                                        return R.string.guild_settings_action_filter_emoji_delete;
+                                                        return C5419R.string.guild_settings_action_filter_emoji_delete;
                                                     default:
                                                         switch (actionTypeId) {
                                                             case 72:
-                                                                return R.string.guild_settings_action_filter_message_delete;
+                                                                return C5419R.string.guild_settings_action_filter_message_delete;
                                                             case 73:
-                                                                return R.string.guild_settings_action_filter_message_bulk_delete;
+                                                                return C5419R.string.guild_settings_action_filter_message_bulk_delete;
                                                             case 74:
-                                                                return R.string.guild_settings_action_filter_message_pin;
+                                                                return C5419R.string.guild_settings_action_filter_message_pin;
                                                             case 75:
-                                                                return R.string.guild_settings_action_filter_message_unpin;
+                                                                return C5419R.string.guild_settings_action_filter_message_unpin;
                                                             default:
                                                                 switch (actionTypeId) {
                                                                     case 80:
-                                                                        return R.string.guild_settings_action_filter_integration_create;
+                                                                        return C5419R.string.guild_settings_action_filter_integration_create;
                                                                     case 81:
-                                                                        return R.string.guild_settings_action_filter_integration_update;
+                                                                        return C5419R.string.guild_settings_action_filter_integration_update;
                                                                     case 82:
-                                                                        return R.string.guild_settings_action_filter_integration_delete;
+                                                                        return C5419R.string.guild_settings_action_filter_integration_delete;
                                                                     case 83:
-                                                                        return R.string.guild_settings_action_filter_stage_instance_create;
+                                                                        return C5419R.string.guild_settings_action_filter_stage_instance_create;
                                                                     case 84:
-                                                                        return R.string.guild_settings_action_filter_stage_instance_update;
+                                                                        return C5419R.string.guild_settings_action_filter_stage_instance_update;
                                                                     case 85:
-                                                                        return R.string.guild_settings_action_filter_stage_instance_delete;
+                                                                        return C5419R.string.guild_settings_action_filter_stage_instance_delete;
                                                                     default:
                                                                         switch (actionTypeId) {
                                                                             case 90:
-                                                                                return R.string.guild_settings_action_filter_sticker_create;
+                                                                                return C5419R.string.guild_settings_action_filter_sticker_create;
                                                                             case 91:
-                                                                                return R.string.guild_settings_action_filter_sticker_update;
+                                                                                return C5419R.string.guild_settings_action_filter_sticker_update;
                                                                             case 92:
-                                                                                return R.string.guild_settings_action_filter_sticker_delete;
+                                                                                return C5419R.string.guild_settings_action_filter_sticker_delete;
                                                                             default:
                                                                                 return 0;
                                                                         }
@@ -496,13 +496,13 @@ public final class AuditLogUtils {
         if (actionType != null) {
             int iOrdinal = actionType.ordinal();
             if (iOrdinal == 1) {
-                return R.drawable.ic_audit_audit_create_24dp;
+                return C5419R.drawable.ic_audit_audit_create_24dp;
             }
             if (iOrdinal == 2) {
-                return R.drawable.ic_audit_audit_update_24dp;
+                return C5419R.drawable.ic_audit_audit_update_24dp;
             }
             if (iOrdinal == 3) {
-                return R.drawable.ic_audit_audit_delete_24dp;
+                return C5419R.drawable.ic_audit_audit_delete_24dp;
             }
         }
         return 0;
@@ -526,25 +526,25 @@ public final class AuditLogUtils {
         Object next;
         ModelAuditLogEntry.Change change3;
         ModelAuditLogEntry.Change change4;
-        Intrinsics3.checkNotNullParameter(auditLogEntry, "auditLogEntry");
-        Intrinsics3.checkNotNullParameter(username, "username");
-        Intrinsics3.checkNotNullParameter(context, "context");
-        Intrinsics3.checkNotNullParameter(targets, "targets");
-        Intrinsics3.checkNotNullParameter(prefix, "prefix");
+        C12238m.checkNotNullParameter(auditLogEntry, "auditLogEntry");
+        C12238m.checkNotNullParameter(username, "username");
+        C12238m.checkNotNullParameter(context, "context");
+        C12238m.checkNotNullParameter(targets, "targets");
+        C12238m.checkNotNullParameter(prefix, "prefix");
         int actionTypeId = auditLogEntry.getActionTypeId();
         if (actionTypeId == 21) {
             int entryTitle = getEntryTitle(auditLogEntry);
             Object[] objArr = new Object[2];
             objArr[0] = username;
             Resources resources = context.getResources();
-            Intrinsics3.checkNotNullExpressionValue(resources, "context.resources");
+            C12238m.checkNotNullExpressionValue(resources, "context.resources");
             ModelAuditLogEntry.Options options = auditLogEntry.getOptions();
             int membersRemoved = options != null ? options.getMembersRemoved() : 0;
             Object[] objArr2 = new Object[1];
             ModelAuditLogEntry.Options options2 = auditLogEntry.getOptions();
             objArr2[0] = Integer.valueOf(options2 != null ? options2.getMembersRemoved() : 0);
-            objArr[1] = StringResourceUtils.getQuantityString(resources, context, R.plurals.guild_settings_audit_log_member_prune_count, membersRemoved, objArr2);
-            return FormatUtils.b(context, entryTitle, objArr, (4 & 4) != 0 ? FormatUtils.b.j : null);
+            objArr[1] = StringResourceUtilsKt.getQuantityString(resources, context, C5419R.plurals.guild_settings_audit_log_member_prune_count, membersRemoved, objArr2);
+            return C1107b.m210b(context, entryTitle, objArr, (4 & 4) != 0 ? C1107b.b.f1491j : null);
         }
         if (actionTypeId == 42) {
             int entryTitle2 = getEntryTitle(auditLogEntry);
@@ -558,8 +558,8 @@ public final class AuditLogUtils {
                         throw new NoSuchElementException("Collection contains no element matching the predicate.");
                     }
                     change = (ModelAuditLogEntry.Change) it.next();
-                    Intrinsics3.checkNotNullExpressionValue(change, "it");
-                } while (!Intrinsics3.areEqual(change.getKey(), ModelAuditLogEntry.CHANGE_KEY_CODE));
+                    C12238m.checkNotNullExpressionValue(change, "it");
+                } while (!C12238m.areEqual(change.getKey(), ModelAuditLogEntry.CHANGE_KEY_CODE));
                 if (change != null) {
                     oldValue = change.getOldValue();
                 } else {
@@ -569,7 +569,7 @@ public final class AuditLogUtils {
                 oldValue = null;
             }
             objArr3[1] = String.valueOf(oldValue);
-            return FormatUtils.b(context, entryTitle2, objArr3, (4 & 4) != 0 ? FormatUtils.b.j : null);
+            return C1107b.m210b(context, entryTitle2, objArr3, (4 & 4) != 0 ? C1107b.b.f1491j : null);
         }
         if (actionTypeId == 26) {
             ModelAuditLogEntry.Options options3 = auditLogEntry.getOptions();
@@ -582,13 +582,13 @@ public final class AuditLogUtils {
             Object[] objArr5 = new Object[1];
             ModelAuditLogEntry.Options options5 = auditLogEntry.getOptions();
             objArr5[0] = Integer.valueOf(options5 != null ? options5.getCount() : 0);
-            objArr4[1] = StringResourceUtils.getI18nPluralString(context, R.plurals.guild_settings_audit_log_member_move_count, count, objArr5);
+            objArr4[1] = StringResourceUtilsKt.getI18nPluralString(context, C5419R.plurals.guild_settings_audit_log_member_move_count, count, objArr5);
             Map<Long, CharSequence> map = targets.get(ModelAuditLogEntry.TargetType.CHANNEL);
             if (map == null || (charSequenceValueOf = map.get(lValueOf)) == null) {
                 charSequenceValueOf = lValueOf != null ? String.valueOf(lValueOf.longValue()) : null;
             }
             objArr4[2] = charSequenceValueOf;
-            return FormatUtils.b(context, entryTitle3, objArr4, (4 & 4) != 0 ? FormatUtils.b.j : null);
+            return C1107b.m210b(context, entryTitle3, objArr4, (4 & 4) != 0 ? C1107b.b.f1491j : null);
         }
         if (actionTypeId == 27) {
             int entryTitle4 = getEntryTitle(auditLogEntry);
@@ -599,8 +599,8 @@ public final class AuditLogUtils {
             Object[] objArr7 = new Object[1];
             ModelAuditLogEntry.Options options7 = auditLogEntry.getOptions();
             objArr7[0] = Integer.valueOf(options7 != null ? options7.getCount() : 0);
-            objArr6[1] = StringResourceUtils.getI18nPluralString(context, R.plurals.guild_settings_audit_log_member_disconnect_count, count2, objArr7);
-            return FormatUtils.b(context, entryTitle4, objArr6, (4 & 4) != 0 ? FormatUtils.b.j : null);
+            objArr6[1] = StringResourceUtilsKt.getI18nPluralString(context, C5419R.plurals.guild_settings_audit_log_member_disconnect_count, count2, objArr7);
+            return C1107b.m210b(context, entryTitle4, objArr6, (4 & 4) != 0 ? C1107b.b.f1491j : null);
         }
         switch (actionTypeId) {
             case 60:
@@ -617,8 +617,8 @@ public final class AuditLogUtils {
                             throw new NoSuchElementException("Collection contains no element matching the predicate.");
                         }
                         change2 = (ModelAuditLogEntry.Change) it2.next();
-                        Intrinsics3.checkNotNullExpressionValue(change2, "it");
-                    } while (!Intrinsics3.areEqual(change2.getKey(), ModelAuditLogEntry.CHANGE_KEY_NAME));
+                        C12238m.checkNotNullExpressionValue(change2, "it");
+                    } while (!C12238m.areEqual(change2.getKey(), ModelAuditLogEntry.CHANGE_KEY_NAME));
                     if (change2 != null) {
                         value = change2.getValue();
                     } else {
@@ -628,7 +628,7 @@ public final class AuditLogUtils {
                     value = null;
                 }
                 objArr8[1] = String.valueOf(value);
-                return FormatUtils.b(context, entryTitle5, objArr8, (4 & 4) != 0 ? FormatUtils.b.j : null);
+                return C1107b.m210b(context, entryTitle5, objArr8, (4 & 4) != 0 ? C1107b.b.f1491j : null);
             default:
                 switch (actionTypeId) {
                     case 72:
@@ -642,14 +642,14 @@ public final class AuditLogUtils {
                         Object[] objArr10 = new Object[1];
                         ModelAuditLogEntry.Options options10 = auditLogEntry.getOptions();
                         objArr10[0] = Integer.valueOf(options10 != null ? options10.getCount() : 0);
-                        objArr9[1] = StringResourceUtils.getI18nPluralString(context, R.plurals.guild_settings_audit_log_message_delete_count, count3, objArr10);
+                        objArr9[1] = StringResourceUtilsKt.getI18nPluralString(context, C5419R.plurals.guild_settings_audit_log_message_delete_count, count3, objArr10);
                         objArr9[2] = getTargetText(auditLogEntry, targets, prefix);
                         Map<Long, CharSequence> map2 = targets.get(ModelAuditLogEntry.TargetType.CHANNEL);
                         if (map2 == null || (charSequenceValueOf2 = map2.get(lValueOf2)) == null) {
                             charSequenceValueOf2 = lValueOf2 != null ? String.valueOf(lValueOf2.longValue()) : null;
                         }
                         objArr9[3] = charSequenceValueOf2;
-                        return FormatUtils.b(context, entryTitle6, objArr9, (4 & 4) != 0 ? FormatUtils.b.j : null);
+                        return C1107b.m210b(context, entryTitle6, objArr9, (4 & 4) != 0 ? C1107b.b.f1491j : null);
                     case 73:
                         int entryTitle7 = getEntryTitle(auditLogEntry);
                         Object[] objArr11 = new Object[3];
@@ -659,9 +659,9 @@ public final class AuditLogUtils {
                         Object[] objArr12 = new Object[1];
                         ModelAuditLogEntry.Options options12 = auditLogEntry.getOptions();
                         objArr12[0] = Integer.valueOf(options12 != null ? options12.getCount() : 0);
-                        objArr11[1] = StringResourceUtils.getI18nPluralString(context, R.plurals.guild_settings_audit_log_message_bulk_delete_count, count4, objArr12);
+                        objArr11[1] = StringResourceUtilsKt.getI18nPluralString(context, C5419R.plurals.guild_settings_audit_log_message_bulk_delete_count, count4, objArr12);
                         objArr11[2] = getTargetText(auditLogEntry, targets, prefix);
-                        return FormatUtils.b(context, entryTitle7, objArr11, (4 & 4) != 0 ? FormatUtils.b.j : null);
+                        return C1107b.m210b(context, entryTitle7, objArr11, (4 & 4) != 0 ? C1107b.b.f1491j : null);
                     case 74:
                     case 75:
                         ModelAuditLogEntry.Options options13 = auditLogEntry.getOptions();
@@ -675,7 +675,7 @@ public final class AuditLogUtils {
                             charSequenceValueOf3 = lValueOf3 != null ? String.valueOf(lValueOf3.longValue()) : null;
                         }
                         objArr13[2] = charSequenceValueOf3;
-                        return FormatUtils.b(context, entryTitle8, objArr13, (4 & 4) != 0 ? FormatUtils.b.j : null);
+                        return C1107b.m210b(context, entryTitle8, objArr13, (4 & 4) != 0 ? C1107b.b.f1491j : null);
                     default:
                         switch (actionTypeId) {
                             case 83:
@@ -687,7 +687,7 @@ public final class AuditLogUtils {
                                 if (map4 == null || (charSequenceValueOf4 = map4.get(lValueOf4)) == null) {
                                     charSequenceValueOf4 = lValueOf4 != null ? String.valueOf(lValueOf4.longValue()) : null;
                                 }
-                                return auditLogEntry.getUserId() == 0 ? FormatUtils.b(context, getEntryTitle(auditLogEntry), new Object[]{charSequenceValueOf4}, (4 & 4) != 0 ? FormatUtils.b.j : null) : FormatUtils.b(context, getEntryTitle(auditLogEntry), new Object[]{username, charSequenceValueOf4}, (4 & 4) != 0 ? FormatUtils.b.j : null);
+                                return auditLogEntry.getUserId() == 0 ? C1107b.m210b(context, getEntryTitle(auditLogEntry), new Object[]{charSequenceValueOf4}, (4 & 4) != 0 ? C1107b.b.f1491j : null) : C1107b.m210b(context, getEntryTitle(auditLogEntry), new Object[]{username, charSequenceValueOf4}, (4 & 4) != 0 ? C1107b.b.f1491j : null);
                             default:
                                 switch (actionTypeId) {
                                     case 90:
@@ -705,7 +705,7 @@ public final class AuditLogUtils {
                                                     if (it3.hasNext()) {
                                                         next = it3.next();
                                                         change4 = (ModelAuditLogEntry.Change) next;
-                                                        Intrinsics3.checkNotNullExpressionValue(change4, "it");
+                                                        C12238m.checkNotNullExpressionValue(change4, "it");
                                                     } else {
                                                         next = null;
                                                     }
@@ -715,7 +715,7 @@ public final class AuditLogUtils {
                                                     } else {
                                                         value2 = null;
                                                     }
-                                                } while (!Intrinsics3.areEqual(change4.getKey(), ModelAuditLogEntry.CHANGE_KEY_NAME));
+                                                } while (!C12238m.areEqual(change4.getKey(), ModelAuditLogEntry.CHANGE_KEY_NAME));
                                                 change3 = (ModelAuditLogEntry.Change) next;
                                                 if (change3 != null) {
                                                     value2 = change3.getValue();
@@ -728,9 +728,9 @@ public final class AuditLogUtils {
                                             strValueOf = String.valueOf(value2);
                                         }
                                         objArr14[1] = strValueOf;
-                                        return FormatUtils.b(context, entryTitle9, objArr14, (4 & 4) != 0 ? FormatUtils.b.j : null);
+                                        return C1107b.m210b(context, entryTitle9, objArr14, (4 & 4) != 0 ? C1107b.b.f1491j : null);
                                     default:
-                                        return FormatUtils.b(context, getEntryTitle(auditLogEntry), new Object[]{username, getTargetText(auditLogEntry, targets, prefix)}, (4 & 4) != 0 ? FormatUtils.b.j : null);
+                                        return C1107b.m210b(context, getEntryTitle(auditLogEntry), new Object[]{username, getTargetText(auditLogEntry, targets, prefix)}, (4 & 4) != 0 ? C1107b.b.f1491j : null);
                                 }
                         }
                 }
@@ -739,55 +739,55 @@ public final class AuditLogUtils {
 
     @DrawableRes
     public final int getTargetTypeImage(View view, int actionTypeId) {
-        Intrinsics3.checkNotNullParameter(view, "view");
+        C12238m.checkNotNullParameter(view, "view");
         ModelAuditLogEntry.TargetType targetType = ModelAuditLogEntry.getTargetType(actionTypeId);
-        Intrinsics3.checkNotNullExpressionValue(targetType, "ModelAuditLogEntry.getTargetType(actionTypeId)");
+        C12238m.checkNotNullExpressionValue(targetType, "ModelAuditLogEntry.getTargetType(actionTypeId)");
         if (actionTypeId == 72) {
-            return DrawableCompat.getThemedDrawableRes(view, R.attr.ic_audit_message, 0);
+            return DrawableCompat.getThemedDrawableRes(view, C5419R.attr.ic_audit_message, 0);
         }
         int iOrdinal = targetType.ordinal();
         if (iOrdinal == 0) {
-            return DrawableCompat.getThemedDrawableRes(view, R.attr.ic_audit_all, 0);
+            return DrawableCompat.getThemedDrawableRes(view, C5419R.attr.ic_audit_all, 0);
         }
         switch (iOrdinal) {
             case 2:
-                return DrawableCompat.getThemedDrawableRes(view, R.attr.ic_audit_server, 0);
+                return DrawableCompat.getThemedDrawableRes(view, C5419R.attr.ic_audit_server, 0);
             case 3:
             case 4:
-                return DrawableCompat.getThemedDrawableRes(view, R.attr.ic_audit_channel, 0);
+                return DrawableCompat.getThemedDrawableRes(view, C5419R.attr.ic_audit_channel, 0);
             case 5:
-                return DrawableCompat.getThemedDrawableRes(view, R.attr.ic_audit_member, 0);
+                return DrawableCompat.getThemedDrawableRes(view, C5419R.attr.ic_audit_member, 0);
             case 6:
-                return DrawableCompat.getThemedDrawableRes(view, R.attr.ic_audit_role, 0);
+                return DrawableCompat.getThemedDrawableRes(view, C5419R.attr.ic_audit_role, 0);
             case 7:
-                return DrawableCompat.getThemedDrawableRes(view, R.attr.ic_audit_invite, 0);
+                return DrawableCompat.getThemedDrawableRes(view, C5419R.attr.ic_audit_invite, 0);
             case 8:
-                return DrawableCompat.getThemedDrawableRes(view, R.attr.ic_audit_webhook, 0);
+                return DrawableCompat.getThemedDrawableRes(view, C5419R.attr.ic_audit_webhook, 0);
             case 9:
-                return DrawableCompat.getThemedDrawableRes(view, R.attr.ic_audit_emoji, 0);
+                return DrawableCompat.getThemedDrawableRes(view, C5419R.attr.ic_audit_emoji, 0);
             case 10:
-                return DrawableCompat.getThemedDrawableRes(view, R.attr.ic_audit_integration, 0);
+                return DrawableCompat.getThemedDrawableRes(view, C5419R.attr.ic_audit_integration, 0);
             case 11:
-                return DrawableCompat.getThemedDrawableRes(view, R.attr.ic_audit_stage_instance, 0);
+                return DrawableCompat.getThemedDrawableRes(view, C5419R.attr.ic_audit_stage_instance, 0);
             case 12:
-                return DrawableCompat.getThemedDrawableRes(view, R.attr.ic_audit_calendar, 0);
+                return DrawableCompat.getThemedDrawableRes(view, C5419R.attr.ic_audit_calendar, 0);
             case 13:
-                return DrawableCompat.getThemedDrawableRes(view, R.attr.ic_audit_sticker, 0);
+                return DrawableCompat.getThemedDrawableRes(view, C5419R.attr.ic_audit_sticker, 0);
             case 14:
-                return DrawableCompat.getThemedDrawableRes(view, R.attr.ic_audit_thread, 0);
+                return DrawableCompat.getThemedDrawableRes(view, C5419R.attr.ic_audit_thread, 0);
             default:
                 return 0;
         }
     }
 
     public final long getTimestampStart(ModelAuditLogEntry modelAuditLogEntry) {
-        Intrinsics3.checkNotNullParameter(modelAuditLogEntry, "$this$getTimestampStart");
+        C12238m.checkNotNullParameter(modelAuditLogEntry, "$this$getTimestampStart");
         return (modelAuditLogEntry.getId() >>> 22) + SnowflakeUtils.DISCORD_EPOCH;
     }
 
     public final CharSequence getTimestampString(ModelAuditLogEntry auditLogEntry, Context context) {
-        Intrinsics3.checkNotNullParameter(auditLogEntry, "auditLogEntry");
-        Intrinsics3.checkNotNullParameter(context, "context");
+        C12238m.checkNotNullParameter(auditLogEntry, "auditLogEntry");
+        C12238m.checkNotNullParameter(context, "context");
         if (auditLogEntry.getTimestampEnd() == null) {
             return getTimestampText(getTimestampStart(auditLogEntry), context);
         }
@@ -796,7 +796,7 @@ public final class AuditLogUtils {
         if (timestampEnd == null) {
             timestampEnd = 0L;
         }
-        Intrinsics3.checkNotNullExpressionValue(timestampEnd, "auditLogEntry.timestampEnd ?: 0L");
+        C12238m.checkNotNullExpressionValue(timestampEnd, "auditLogEntry.timestampEnd ?: 0L");
         return timestampText + " - " + getTimestampText(timestampEnd.longValue(), context);
     }
 }

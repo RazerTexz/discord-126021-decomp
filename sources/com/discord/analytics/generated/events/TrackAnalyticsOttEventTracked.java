@@ -1,14 +1,14 @@
 package com.discord.analytics.generated.events;
 
-import b.d.b.a.outline;
 import com.discord.analytics.generated.traits.TrackBase;
-import com.discord.analytics.generated.traits.TrackBase2;
+import com.discord.analytics.generated.traits.TrackBaseReceiver;
 import com.discord.api.science.AnalyticsSchema;
-import d0.z.d.Intrinsics3;
+import p007b.p100d.p104b.p105a.C1643a;
+import p507d0.p592z.p594d.C12238m;
 
 /* JADX INFO: compiled from: TrackAnalyticsOttEventTracked.kt */
 /* JADX INFO: loaded from: classes.dex */
-public final /* data */ class TrackAnalyticsOttEventTracked implements AnalyticsSchema, TrackBase2 {
+public final /* data */ class TrackAnalyticsOttEventTracked implements AnalyticsSchema, TrackBaseReceiver {
     private TrackBase trackBase;
     private final CharSequence kpi = null;
     private final CharSequence fpc = null;
@@ -29,7 +29,7 @@ public final /* data */ class TrackAnalyticsOttEventTracked implements Analytics
             return false;
         }
         TrackAnalyticsOttEventTracked trackAnalyticsOttEventTracked = (TrackAnalyticsOttEventTracked) other;
-        return Intrinsics3.areEqual(this.kpi, trackAnalyticsOttEventTracked.kpi) && Intrinsics3.areEqual(this.fpc, trackAnalyticsOttEventTracked.fpc) && Intrinsics3.areEqual(this.pip, trackAnalyticsOttEventTracked.pip);
+        return C12238m.areEqual(this.kpi, trackAnalyticsOttEventTracked.kpi) && C12238m.areEqual(this.fpc, trackAnalyticsOttEventTracked.fpc) && C12238m.areEqual(this.pip, trackAnalyticsOttEventTracked.pip);
     }
 
     public int hashCode() {
@@ -42,11 +42,11 @@ public final /* data */ class TrackAnalyticsOttEventTracked implements Analytics
     }
 
     public String toString() {
-        StringBuilder sbU = outline.U("TrackAnalyticsOttEventTracked(kpi=");
-        sbU.append(this.kpi);
-        sbU.append(", fpc=");
-        sbU.append(this.fpc);
-        sbU.append(", pip=");
-        return outline.E(sbU, this.pip, ")");
+        StringBuilder sbM833U = C1643a.m833U("TrackAnalyticsOttEventTracked(kpi=");
+        sbM833U.append(this.kpi);
+        sbM833U.append(", fpc=");
+        sbM833U.append(this.fpc);
+        sbM833U.append(", pip=");
+        return C1643a.m817E(sbM833U, this.pip, ")");
     }
 }

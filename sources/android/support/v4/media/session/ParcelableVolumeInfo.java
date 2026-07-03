@@ -7,14 +7,25 @@ import android.os.Parcelable;
 /* JADX INFO: loaded from: classes.dex */
 @SuppressLint({"BanParcelableUsage"})
 public class ParcelableVolumeInfo implements Parcelable {
-    public static final Parcelable.Creator<ParcelableVolumeInfo> CREATOR = new a();
-    public int j;
-    public int k;
-    public int l;
-    public int m;
-    public int n;
+    public static final Parcelable.Creator<ParcelableVolumeInfo> CREATOR = new C0025a();
 
-    public class a implements Parcelable.Creator<ParcelableVolumeInfo> {
+    /* JADX INFO: renamed from: j */
+    public int f54j;
+
+    /* JADX INFO: renamed from: k */
+    public int f55k;
+
+    /* JADX INFO: renamed from: l */
+    public int f56l;
+
+    /* JADX INFO: renamed from: m */
+    public int f57m;
+
+    /* JADX INFO: renamed from: n */
+    public int f58n;
+
+    /* JADX INFO: renamed from: android.support.v4.media.session.ParcelableVolumeInfo$a */
+    public class C0025a implements Parcelable.Creator<ParcelableVolumeInfo> {
         @Override // android.os.Parcelable.Creator
         public ParcelableVolumeInfo createFromParcel(Parcel parcel) {
             return new ParcelableVolumeInfo(parcel);
@@ -27,11 +38,11 @@ public class ParcelableVolumeInfo implements Parcelable {
     }
 
     public ParcelableVolumeInfo(Parcel parcel) {
-        this.j = parcel.readInt();
-        this.l = parcel.readInt();
-        this.m = parcel.readInt();
-        this.n = parcel.readInt();
-        this.k = parcel.readInt();
+        this.f54j = parcel.readInt();
+        this.f56l = parcel.readInt();
+        this.f57m = parcel.readInt();
+        this.f58n = parcel.readInt();
+        this.f55k = parcel.readInt();
     }
 
     @Override // android.os.Parcelable
@@ -41,10 +52,10 @@ public class ParcelableVolumeInfo implements Parcelable {
 
     @Override // android.os.Parcelable
     public void writeToParcel(Parcel parcel, int i) {
-        parcel.writeInt(this.j);
-        parcel.writeInt(this.l);
-        parcel.writeInt(this.m);
-        parcel.writeInt(this.n);
-        parcel.writeInt(this.k);
+        parcel.writeInt(this.f54j);
+        parcel.writeInt(this.f56l);
+        parcel.writeInt(this.f57m);
+        parcel.writeInt(this.f58n);
+        parcel.writeInt(this.f55k);
     }
 }

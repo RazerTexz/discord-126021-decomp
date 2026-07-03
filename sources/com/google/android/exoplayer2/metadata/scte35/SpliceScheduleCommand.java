@@ -8,10 +8,13 @@ import java.util.List;
 
 /* JADX INFO: loaded from: classes3.dex */
 public final class SpliceScheduleCommand extends SpliceCommand {
-    public static final Parcelable.Creator<SpliceScheduleCommand> CREATOR = new a();
-    public final List<c> j;
+    public static final Parcelable.Creator<SpliceScheduleCommand> CREATOR = new C10746a();
 
-    public class a implements Parcelable.Creator<SpliceScheduleCommand> {
+    /* JADX INFO: renamed from: j */
+    public final List<C10748c> f20038j;
+
+    /* JADX INFO: renamed from: com.google.android.exoplayer2.metadata.scte35.SpliceScheduleCommand$a */
+    public class C10746a implements Parcelable.Creator<SpliceScheduleCommand> {
         @Override // android.os.Parcelable.Creator
         public SpliceScheduleCommand createFromParcel(Parcel parcel) {
             return new SpliceScheduleCommand(parcel, null);
@@ -23,108 +26,132 @@ public final class SpliceScheduleCommand extends SpliceCommand {
         }
     }
 
-    public SpliceScheduleCommand(List<c> list) {
-        this.j = Collections.unmodifiableList(list);
+    public SpliceScheduleCommand(List<C10748c> list) {
+        this.f20038j = Collections.unmodifiableList(list);
     }
 
     @Override // android.os.Parcelable
     public void writeToParcel(Parcel parcel, int i) {
-        int size = this.j.size();
+        int size = this.f20038j.size();
         parcel.writeInt(size);
         for (int i2 = 0; i2 < size; i2++) {
-            c cVar = this.j.get(i2);
-            parcel.writeLong(cVar.a);
-            parcel.writeByte(cVar.f2953b ? (byte) 1 : (byte) 0);
-            parcel.writeByte(cVar.c ? (byte) 1 : (byte) 0);
-            parcel.writeByte(cVar.d ? (byte) 1 : (byte) 0);
-            int size2 = cVar.f.size();
+            C10748c c10748c = this.f20038j.get(i2);
+            parcel.writeLong(c10748c.f20041a);
+            parcel.writeByte(c10748c.f20042b ? (byte) 1 : (byte) 0);
+            parcel.writeByte(c10748c.f20043c ? (byte) 1 : (byte) 0);
+            parcel.writeByte(c10748c.f20044d ? (byte) 1 : (byte) 0);
+            int size2 = c10748c.f20046f.size();
             parcel.writeInt(size2);
             for (int i3 = 0; i3 < size2; i3++) {
-                b bVar = cVar.f.get(i3);
-                parcel.writeInt(bVar.a);
-                parcel.writeLong(bVar.f2952b);
+                C10747b c10747b = c10748c.f20046f.get(i3);
+                parcel.writeInt(c10747b.f20039a);
+                parcel.writeLong(c10747b.f20040b);
             }
-            parcel.writeLong(cVar.e);
-            parcel.writeByte(cVar.g ? (byte) 1 : (byte) 0);
-            parcel.writeLong(cVar.h);
-            parcel.writeInt(cVar.i);
-            parcel.writeInt(cVar.j);
-            parcel.writeInt(cVar.k);
+            parcel.writeLong(c10748c.f20045e);
+            parcel.writeByte(c10748c.f20047g ? (byte) 1 : (byte) 0);
+            parcel.writeLong(c10748c.f20048h);
+            parcel.writeInt(c10748c.f20049i);
+            parcel.writeInt(c10748c.f20050j);
+            parcel.writeInt(c10748c.f20051k);
         }
     }
 
-    public static final class b {
-        public final int a;
+    /* JADX INFO: renamed from: com.google.android.exoplayer2.metadata.scte35.SpliceScheduleCommand$b */
+    public static final class C10747b {
 
-        /* JADX INFO: renamed from: b, reason: collision with root package name */
-        public final long f2952b;
+        /* JADX INFO: renamed from: a */
+        public final int f20039a;
 
-        public b(int i, long j) {
-            this.a = i;
-            this.f2952b = j;
+        /* JADX INFO: renamed from: b */
+        public final long f20040b;
+
+        public C10747b(int i, long j) {
+            this.f20039a = i;
+            this.f20040b = j;
         }
 
-        public b(int i, long j, a aVar) {
-            this.a = i;
-            this.f2952b = j;
+        public C10747b(int i, long j, C10746a c10746a) {
+            this.f20039a = i;
+            this.f20040b = j;
         }
     }
 
-    public SpliceScheduleCommand(Parcel parcel, a aVar) {
+    public SpliceScheduleCommand(Parcel parcel, C10746a c10746a) {
         int i = parcel.readInt();
         ArrayList arrayList = new ArrayList(i);
         for (int i2 = 0; i2 < i; i2++) {
-            arrayList.add(new c(parcel));
+            arrayList.add(new C10748c(parcel));
         }
-        this.j = Collections.unmodifiableList(arrayList);
+        this.f20038j = Collections.unmodifiableList(arrayList);
     }
 
-    public static final class c {
-        public final long a;
+    /* JADX INFO: renamed from: com.google.android.exoplayer2.metadata.scte35.SpliceScheduleCommand$c */
+    public static final class C10748c {
 
-        /* JADX INFO: renamed from: b, reason: collision with root package name */
-        public final boolean f2953b;
-        public final boolean c;
-        public final boolean d;
-        public final long e;
-        public final List<b> f;
-        public final boolean g;
-        public final long h;
-        public final int i;
-        public final int j;
-        public final int k;
+        /* JADX INFO: renamed from: a */
+        public final long f20041a;
 
-        public c(long j, boolean z2, boolean z3, boolean z4, List<b> list, long j2, boolean z5, long j3, int i, int i2, int i3) {
-            this.a = j;
-            this.f2953b = z2;
-            this.c = z3;
-            this.d = z4;
-            this.f = Collections.unmodifiableList(list);
-            this.e = j2;
-            this.g = z5;
-            this.h = j3;
-            this.i = i;
-            this.j = i2;
-            this.k = i3;
+        /* JADX INFO: renamed from: b */
+        public final boolean f20042b;
+
+        /* JADX INFO: renamed from: c */
+        public final boolean f20043c;
+
+        /* JADX INFO: renamed from: d */
+        public final boolean f20044d;
+
+        /* JADX INFO: renamed from: e */
+        public final long f20045e;
+
+        /* JADX INFO: renamed from: f */
+        public final List<C10747b> f20046f;
+
+        /* JADX INFO: renamed from: g */
+        public final boolean f20047g;
+
+        /* JADX INFO: renamed from: h */
+        public final long f20048h;
+
+        /* JADX INFO: renamed from: i */
+        public final int f20049i;
+
+        /* JADX INFO: renamed from: j */
+        public final int f20050j;
+
+        /* JADX INFO: renamed from: k */
+        public final int f20051k;
+
+        public C10748c(long j, boolean z2, boolean z3, boolean z4, List<C10747b> list, long j2, boolean z5, long j3, int i, int i2, int i3) {
+            this.f20041a = j;
+            this.f20042b = z2;
+            this.f20043c = z3;
+            this.f20044d = z4;
+            this.f20046f = Collections.unmodifiableList(list);
+            this.f20045e = j2;
+            this.f20047g = z5;
+            this.f20048h = j3;
+            this.f20049i = i;
+            this.f20050j = i2;
+            this.f20051k = i3;
         }
 
-        public c(Parcel parcel) {
-            this.a = parcel.readLong();
-            this.f2953b = parcel.readByte() == 1;
-            this.c = parcel.readByte() == 1;
-            this.d = parcel.readByte() == 1;
+        public C10748c(Parcel parcel) {
+            this.f20041a = parcel.readLong();
+            this.f20042b = parcel.readByte() == 1;
+            this.f20043c = parcel.readByte() == 1;
+            this.f20044d = parcel.readByte() == 1;
             int i = parcel.readInt();
             ArrayList arrayList = new ArrayList(i);
             for (int i2 = 0; i2 < i; i2++) {
-                arrayList.add(new b(parcel.readInt(), parcel.readLong()));
+                arrayList.add(new C10747b(parcel.readInt(), parcel.readLong()));
             }
-            this.f = Collections.unmodifiableList(arrayList);
-            this.e = parcel.readLong();
-            this.g = parcel.readByte() == 1;
-            this.h = parcel.readLong();
-            this.i = parcel.readInt();
-            this.j = parcel.readInt();
-            this.k = parcel.readInt();
+            this.f20046f = Collections.unmodifiableList(arrayList);
+            this.f20045e = parcel.readLong();
+            this.f20047g = parcel.readByte() == 1;
+            this.f20048h = parcel.readLong();
+            this.f20049i = parcel.readInt();
+            this.f20050j = parcel.readInt();
+            this.f20051k = parcel.readInt();
         }
     }
 }

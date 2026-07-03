@@ -5,30 +5,32 @@ import androidx.annotation.NonNull;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewbinding.ViewBinding;
-import b.a.i.ThreadBrowserEmptyBinding;
+import p007b.p008a.p025i.C1046s1;
 
 /* JADX INFO: loaded from: classes.dex */
 public final class WidgetThreadBrowserActiveBinding implements ViewBinding {
 
+    /* JADX INFO: renamed from: a */
     @NonNull
-    public final ConstraintLayout a;
+    public final ConstraintLayout f18264a;
 
-    /* JADX INFO: renamed from: b, reason: collision with root package name */
+    /* JADX INFO: renamed from: b */
     @NonNull
-    public final ThreadBrowserEmptyBinding f2668b;
+    public final C1046s1 f18265b;
 
+    /* JADX INFO: renamed from: c */
     @NonNull
-    public final RecyclerView c;
+    public final RecyclerView f18266c;
 
-    public WidgetThreadBrowserActiveBinding(@NonNull ConstraintLayout constraintLayout, @NonNull ThreadBrowserEmptyBinding threadBrowserEmptyBinding, @NonNull RecyclerView recyclerView) {
-        this.a = constraintLayout;
-        this.f2668b = threadBrowserEmptyBinding;
-        this.c = recyclerView;
+    public WidgetThreadBrowserActiveBinding(@NonNull ConstraintLayout constraintLayout, @NonNull C1046s1 c1046s1, @NonNull RecyclerView recyclerView) {
+        this.f18264a = constraintLayout;
+        this.f18265b = c1046s1;
+        this.f18266c = recyclerView;
     }
 
     @Override // androidx.viewbinding.ViewBinding
     @NonNull
     public View getRoot() {
-        return this.a;
+        return this.f18264a;
     }
 }

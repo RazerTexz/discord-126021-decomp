@@ -16,12 +16,12 @@ import androidx.work.Data;
 import androidx.work.Logger;
 import androidx.work.WorkInfo;
 import androidx.work.WorkRequest;
-import b.d.b.a.outline;
 import com.discord.models.domain.ModelAuditLogEntry;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 import java.util.UUID;
+import p007b.p100d.p104b.p105a.C1643a;
 
 /* JADX INFO: loaded from: classes.dex */
 @Entity(indices = {@Index({"schedule_requested_at"}), @Index({"period_start_time"})})
@@ -58,11 +58,11 @@ public final class WorkSpec {
     @ColumnInfo(name = "flex_duration")
     public long flexDuration;
 
-    /* JADX INFO: renamed from: id, reason: collision with root package name */
+    /* JADX INFO: renamed from: id */
     @NonNull
     @PrimaryKey
     @ColumnInfo(name = ModelAuditLogEntry.CHANGE_KEY_ID)
-    public String f38id;
+    public String f163id;
 
     @ColumnInfo(name = "initial_delay")
     public long initialDelay;
@@ -107,9 +107,9 @@ public final class WorkSpec {
 
     public static class IdAndState {
 
-        /* JADX INFO: renamed from: id, reason: collision with root package name */
+        /* JADX INFO: renamed from: id */
         @ColumnInfo(name = ModelAuditLogEntry.CHANGE_KEY_ID)
-        public String f39id;
+        public String f164id;
 
         @ColumnInfo(name = "state")
         public WorkInfo.State state;
@@ -125,19 +125,19 @@ public final class WorkSpec {
             if (this.state != idAndState.state) {
                 return false;
             }
-            return this.f39id.equals(idAndState.f39id);
+            return this.f164id.equals(idAndState.f164id);
         }
 
         public int hashCode() {
-            return this.state.hashCode() + (this.f39id.hashCode() * 31);
+            return this.state.hashCode() + (this.f164id.hashCode() * 31);
         }
     }
 
     public static class WorkInfoPojo {
 
-        /* JADX INFO: renamed from: id, reason: collision with root package name */
+        /* JADX INFO: renamed from: id */
         @ColumnInfo(name = ModelAuditLogEntry.CHANGE_KEY_ID)
-        public String f40id;
+        public String f165id;
 
         @ColumnInfo(name = "output")
         public Data output;
@@ -165,8 +165,8 @@ public final class WorkSpec {
             if (this.runAttemptCount != workInfoPojo.runAttemptCount) {
                 return false;
             }
-            String str = this.f40id;
-            if (str == null ? workInfoPojo.f40id != null : !str.equals(workInfoPojo.f40id)) {
+            String str = this.f165id;
+            if (str == null ? workInfoPojo.f165id != null : !str.equals(workInfoPojo.f165id)) {
                 return false;
             }
             if (this.state != workInfoPojo.state) {
@@ -189,7 +189,7 @@ public final class WorkSpec {
         }
 
         public int hashCode() {
-            String str = this.f40id;
+            String str = this.f165id;
             int iHashCode = (str != null ? str.hashCode() : 0) * 31;
             WorkInfo.State state = this.state;
             int iHashCode2 = (iHashCode + (state != null ? state.hashCode() : 0)) * 31;
@@ -204,7 +204,7 @@ public final class WorkSpec {
         @NonNull
         public WorkInfo toWorkInfo() {
             List<Data> list = this.progress;
-            return new WorkInfo(UUID.fromString(this.f40id), this.state, this.output, this.tags, (list == null || list.isEmpty()) ? Data.EMPTY : this.progress.get(0), this.runAttemptCount);
+            return new WorkInfo(UUID.fromString(this.f165id), this.state, this.output, this.tags, (list == null || list.isEmpty()) ? Data.EMPTY : this.progress.get(0), this.runAttemptCount);
         }
     }
 
@@ -217,7 +217,7 @@ public final class WorkSpec {
         this.backoffPolicy = BackoffPolicy.EXPONENTIAL;
         this.backoffDelayDuration = 30000L;
         this.scheduleRequestedAt = -1L;
-        this.f38id = str;
+        this.f163id = str;
         this.workerClassName = str2;
     }
 
@@ -257,7 +257,7 @@ public final class WorkSpec {
             return false;
         }
         WorkSpec workSpec = (WorkSpec) obj;
-        if (this.initialDelay != workSpec.initialDelay || this.intervalDuration != workSpec.intervalDuration || this.flexDuration != workSpec.flexDuration || this.runAttemptCount != workSpec.runAttemptCount || this.backoffDelayDuration != workSpec.backoffDelayDuration || this.periodStartTime != workSpec.periodStartTime || this.minimumRetentionDuration != workSpec.minimumRetentionDuration || this.scheduleRequestedAt != workSpec.scheduleRequestedAt || this.runInForeground != workSpec.runInForeground || !this.f38id.equals(workSpec.f38id) || this.state != workSpec.state || !this.workerClassName.equals(workSpec.workerClassName)) {
+        if (this.initialDelay != workSpec.initialDelay || this.intervalDuration != workSpec.intervalDuration || this.flexDuration != workSpec.flexDuration || this.runAttemptCount != workSpec.runAttemptCount || this.backoffDelayDuration != workSpec.backoffDelayDuration || this.periodStartTime != workSpec.periodStartTime || this.minimumRetentionDuration != workSpec.minimumRetentionDuration || this.scheduleRequestedAt != workSpec.scheduleRequestedAt || this.runInForeground != workSpec.runInForeground || !this.f163id.equals(workSpec.f163id) || this.state != workSpec.state || !this.workerClassName.equals(workSpec.workerClassName)) {
             return false;
         }
         String str = this.inputMergerClassName;
@@ -272,9 +272,9 @@ public final class WorkSpec {
     }
 
     public int hashCode() {
-        int iM = outline.m(this.workerClassName, (this.state.hashCode() + (this.f38id.hashCode() * 31)) * 31, 31);
+        int iM863m = C1643a.m863m(this.workerClassName, (this.state.hashCode() + (this.f163id.hashCode() * 31)) * 31, 31);
         String str = this.inputMergerClassName;
-        int iHashCode = (this.output.hashCode() + ((this.input.hashCode() + ((iM + (str != null ? str.hashCode() : 0)) * 31)) * 31)) * 31;
+        int iHashCode = (this.output.hashCode() + ((this.input.hashCode() + ((iM863m + (str != null ? str.hashCode() : 0)) * 31)) * 31)) * 31;
         long j = this.initialDelay;
         int i = (iHashCode + ((int) (j ^ (j >>> 32)))) * 31;
         long j2 = this.intervalDuration;
@@ -321,7 +321,7 @@ public final class WorkSpec {
 
     @NonNull
     public String toString() {
-        return outline.J(outline.U("{WorkSpec: "), this.f38id, "}");
+        return C1643a.m822J(C1643a.m833U("{WorkSpec: "), this.f163id, "}");
     }
 
     public void setPeriodic(long j, long j2) {
@@ -350,7 +350,7 @@ public final class WorkSpec {
         this.backoffPolicy = BackoffPolicy.EXPONENTIAL;
         this.backoffDelayDuration = 30000L;
         this.scheduleRequestedAt = -1L;
-        this.f38id = workSpec.f38id;
+        this.f163id = workSpec.f163id;
         this.workerClassName = workSpec.workerClassName;
         this.state = workSpec.state;
         this.inputMergerClassName = workSpec.inputMergerClassName;

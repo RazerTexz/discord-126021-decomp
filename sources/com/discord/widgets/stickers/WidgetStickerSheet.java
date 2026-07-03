@@ -9,11 +9,7 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentActivity;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentViewModelLazyKt;
-import b.a.d.AppViewModelDelegates3;
-import b.a.d.AppViewModelDelegates5;
-import b.a.k.FormatUtils;
-import b.d.b.a.outline;
-import com.discord.R;
+import com.discord.C5419R;
 import com.discord.api.channel.Channel;
 import com.discord.api.premium.PremiumTier;
 import com.discord.api.sticker.Sticker;
@@ -25,33 +21,37 @@ import com.discord.models.sticker.dto.ModelStickerPack;
 import com.discord.stores.StoreStream;
 import com.discord.utilities.analytics.Traits;
 import com.discord.utilities.error.Error;
-import com.discord.utilities.rx.ObservableExtensionsKt;
+import com.discord.utilities.p501rx.ObservableExtensionsKt;
 import com.discord.utilities.stickers.StickerUtils;
 import com.discord.utilities.viewbinding.FragmentViewBindingDelegate;
-import com.discord.utilities.viewbinding.FragmentViewBindingDelegate3;
+import com.discord.utilities.viewbinding.FragmentViewBindingDelegateKt;
 import com.discord.views.LoadingButton;
 import com.discord.widgets.chat.input.expression.ExpressionPickerEvent;
 import com.discord.widgets.chat.input.expression.ExpressionPickerEventBus;
+import com.discord.widgets.chat.input.sticker.StickerPackStoreSheetViewType;
 import com.discord.widgets.chat.input.sticker.WidgetStickerPackStoreSheet;
-import com.discord.widgets.chat.input.sticker.WidgetStickerPackStoreSheet2;
 import com.discord.widgets.settings.premium.WidgetSettingsPremium;
 import com.discord.widgets.stickers.StickerPremiumUpsellDialog;
 import com.discord.widgets.stickers.StickerSheetViewModel;
 import com.google.android.material.button.MaterialButton;
 import com.google.android.material.chip.Chip;
-import d0.z.d.FunctionReferenceImpl;
-import d0.z.d.Intrinsics3;
-import d0.z.d.Lambda;
-import d0.z.d.Reflection2;
 import kotlin.Lazy;
 import kotlin.Unit;
 import kotlin.jvm.functions.Function0;
 import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.reflect.KProperty;
-import rx.Observable;
-import rx.Subscription;
-import rx.subscriptions.CompositeSubscription;
+import p007b.p008a.p018d.C0865g0;
+import p007b.p008a.p018d.C0869i0;
+import p007b.p008a.p027k.C1107b;
+import p007b.p100d.p104b.p105a.C1643a;
+import p507d0.p592z.p594d.AbstractC12240o;
+import p507d0.p592z.p594d.C12216a0;
+import p507d0.p592z.p594d.C12236k;
+import p507d0.p592z.p594d.C12238m;
+import p658rx.Observable;
+import p658rx.Subscription;
+import p658rx.subscriptions.CompositeSubscription;
 
 /* JADX INFO: compiled from: WidgetStickerSheet.kt */
 /* JADX INFO: loaded from: classes.dex */
@@ -63,7 +63,7 @@ public final class WidgetStickerSheet extends AppBottomSheet {
 
     /* JADX INFO: renamed from: viewModel$delegate, reason: from kotlin metadata */
     private final Lazy viewModel;
-    public static final /* synthetic */ KProperty[] $$delegatedProperties = {outline.d0(WidgetStickerSheet.class, "binding", "getBinding()Lcom/discord/databinding/WidgetStickerSheetBinding;", 0)};
+    public static final /* synthetic */ KProperty[] $$delegatedProperties = {C1643a.m846d0(WidgetStickerSheet.class, "binding", "getBinding()Lcom/discord/databinding/WidgetStickerSheetBinding;", 0)};
 
     /* JADX INFO: renamed from: Companion, reason: from kotlin metadata */
     public static final Companion INSTANCE = new Companion(null);
@@ -75,8 +75,8 @@ public final class WidgetStickerSheet extends AppBottomSheet {
 
         public final void show(FragmentManager fragmentManager, Sticker sticker, long channelId) {
             Channel channelFindChannelById;
-            Intrinsics3.checkNotNullParameter(fragmentManager, "fragmentManager");
-            Intrinsics3.checkNotNullParameter(sticker, "sticker");
+            C12238m.checkNotNullParameter(fragmentManager, "fragmentManager");
+            C12238m.checkNotNullParameter(sticker, "sticker");
             if (sticker.getType() == StickerType.STANDARD && (channelFindChannelById = StoreStream.INSTANCE.getChannels().findChannelById(channelId)) != null) {
                 String str = channelFindChannelById.getGuildId() == 0 ? "DM Channel" : Traits.Location.Page.GUILD_CHANNEL;
                 WidgetStickerSheet widgetStickerSheet = new WidgetStickerSheet();
@@ -93,34 +93,34 @@ public final class WidgetStickerSheet extends AppBottomSheet {
         }
     }
 
-    /* JADX INFO: renamed from: com.discord.widgets.stickers.WidgetStickerSheet$bindSubscriptions$1, reason: invalid class name */
+    /* JADX INFO: renamed from: com.discord.widgets.stickers.WidgetStickerSheet$bindSubscriptions$1 */
     /* JADX INFO: compiled from: WidgetStickerSheet.kt */
-    public static final /* synthetic */ class AnonymousClass1 extends FunctionReferenceImpl implements Function1<StickerSheetViewModel.ViewState, Unit> {
-        public AnonymousClass1(WidgetStickerSheet widgetStickerSheet) {
+    public static final /* synthetic */ class C101361 extends C12236k implements Function1<StickerSheetViewModel.ViewState, Unit> {
+        public C101361(WidgetStickerSheet widgetStickerSheet) {
             super(1, widgetStickerSheet, WidgetStickerSheet.class, "configureUI", "configureUI(Lcom/discord/widgets/stickers/StickerSheetViewModel$ViewState;)V", 0);
         }
 
         @Override // kotlin.jvm.functions.Function1
         public /* bridge */ /* synthetic */ Unit invoke(StickerSheetViewModel.ViewState viewState) {
             invoke2(viewState);
-            return Unit.a;
+            return Unit.f27425a;
         }
 
         /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
         public final void invoke2(StickerSheetViewModel.ViewState viewState) {
-            Intrinsics3.checkNotNullParameter(viewState, "p1");
+            C12238m.checkNotNullParameter(viewState, "p1");
             ((WidgetStickerSheet) this.receiver).configureUI(viewState);
         }
     }
 
-    /* JADX INFO: renamed from: com.discord.widgets.stickers.WidgetStickerSheet$configureUI$2, reason: invalid class name */
+    /* JADX INFO: renamed from: com.discord.widgets.stickers.WidgetStickerSheet$configureUI$2 */
     /* JADX INFO: compiled from: WidgetStickerSheet.kt */
-    public static final class AnonymousClass2 extends Lambda implements Function1<RenderContext, Unit> {
-        public static final AnonymousClass2 INSTANCE = new AnonymousClass2();
+    public static final class C101382 extends AbstractC12240o implements Function1<RenderContext, Unit> {
+        public static final C101382 INSTANCE = new C101382();
 
         /* JADX INFO: renamed from: com.discord.widgets.stickers.WidgetStickerSheet$configureUI$2$1, reason: invalid class name */
         /* JADX INFO: compiled from: WidgetStickerSheet.kt */
-        public static final class AnonymousClass1 extends Lambda implements Function1<View, Unit> {
+        public static final class AnonymousClass1 extends AbstractC12240o implements Function1<View, Unit> {
             public static final AnonymousClass1 INSTANCE = new AnonymousClass1();
 
             public AnonymousClass1() {
@@ -130,87 +130,87 @@ public final class WidgetStickerSheet extends AppBottomSheet {
             @Override // kotlin.jvm.functions.Function1
             public /* bridge */ /* synthetic */ Unit invoke(View view) {
                 invoke2(view);
-                return Unit.a;
+                return Unit.f27425a;
             }
 
             /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
             public final void invoke2(View view) {
-                Intrinsics3.checkNotNullParameter(view, "view");
+                C12238m.checkNotNullParameter(view, "view");
                 WidgetSettingsPremium.Companion companion = WidgetSettingsPremium.INSTANCE;
                 Context context = view.getContext();
-                Intrinsics3.checkNotNullExpressionValue(context, "view.context");
+                C12238m.checkNotNullExpressionValue(context, "view.context");
                 WidgetSettingsPremium.Companion.launch$default(companion, context, null, "Sticker Nitro Upsell Popout", 2, null);
             }
         }
 
-        public AnonymousClass2() {
+        public C101382() {
             super(1);
         }
 
         @Override // kotlin.jvm.functions.Function1
         public /* bridge */ /* synthetic */ Unit invoke(RenderContext renderContext) {
             invoke2(renderContext);
-            return Unit.a;
+            return Unit.f27425a;
         }
 
         /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
         public final void invoke2(RenderContext renderContext) {
-            Intrinsics3.checkNotNullParameter(renderContext, "$receiver");
-            renderContext.b("onClick", AnonymousClass1.INSTANCE);
+            C12238m.checkNotNullParameter(renderContext, "$receiver");
+            renderContext.m8423b("onClick", AnonymousClass1.INSTANCE);
         }
     }
 
     public WidgetStickerSheet() {
         super(false, 1, null);
-        this.binding = FragmentViewBindingDelegate3.viewBinding$default(this, WidgetStickerSheet2.INSTANCE, null, 2, null);
-        WidgetStickerSheet3 widgetStickerSheet3 = new WidgetStickerSheet3(this);
-        AppViewModelDelegates3 appViewModelDelegates3 = new AppViewModelDelegates3(this);
-        this.viewModel = FragmentViewModelLazyKt.createViewModelLazy(this, Reflection2.getOrCreateKotlinClass(StickerSheetViewModel.class), new WidgetStickerSheet$appViewModels$$inlined$viewModels$1(appViewModelDelegates3), new AppViewModelDelegates5(widgetStickerSheet3));
+        this.binding = FragmentViewBindingDelegateKt.viewBinding$default(this, WidgetStickerSheet$binding$2.INSTANCE, null, 2, null);
+        WidgetStickerSheet$viewModel$2 widgetStickerSheet$viewModel$2 = new WidgetStickerSheet$viewModel$2(this);
+        C0865g0 c0865g0 = new C0865g0(this);
+        this.viewModel = FragmentViewModelLazyKt.createViewModelLazy(this, C12216a0.getOrCreateKotlinClass(StickerSheetViewModel.class), new WidgetStickerSheet$appViewModels$$inlined$viewModels$1(c0865g0), new C0869i0(widgetStickerSheet$viewModel$2));
     }
 
     private final void configureUI(final StickerSheetViewModel.ViewState viewState) {
-        CharSequence charSequenceE;
+        CharSequence charSequenceM213e;
         final ModelStickerPack modelStickerPackComponent1 = viewState.getStickerPack();
         final Sticker stickerComponent2 = viewState.getSticker();
         PremiumTier premiumTierComponent3 = viewState.getMeUserPremiumTier();
         final boolean zComponent4 = viewState.getIsStickerPackEnabled();
-        TextView textView = getBinding().d;
-        Intrinsics3.checkNotNullExpressionValue(textView, "binding.stickerSheetStickerName");
+        TextView textView = getBinding().f18210d;
+        C12238m.checkNotNullExpressionValue(textView, "binding.stickerSheetStickerName");
         textView.setText(stickerComponent2.getName());
         if (!viewState.getCanUsePremiumStickers()) {
-            getBinding().c.setOnClickListener(new View.OnClickListener() { // from class: com.discord.widgets.stickers.WidgetStickerSheet.configureUI.1
+            getBinding().f18209c.setOnClickListener(new View.OnClickListener() { // from class: com.discord.widgets.stickers.WidgetStickerSheet.configureUI.1
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
                     WidgetSettingsPremium.Companion companion = WidgetSettingsPremium.INSTANCE;
                     FragmentActivity fragmentActivityRequireActivity = WidgetStickerSheet.this.requireActivity();
-                    Intrinsics3.checkNotNullExpressionValue(fragmentActivityRequireActivity, "requireActivity()");
+                    C12238m.checkNotNullExpressionValue(fragmentActivityRequireActivity, "requireActivity()");
                     WidgetSettingsPremium.Companion.launch$default(companion, fragmentActivityRequireActivity, null, "Sticker Nitro Upsell Popout", 2, null);
                 }
             });
         }
-        TextView textView2 = getBinding().c;
-        Intrinsics3.checkNotNullExpressionValue(textView2, "binding.stickerSheetStickerInfo");
+        TextView textView2 = getBinding().f18209c;
+        C12238m.checkNotNullExpressionValue(textView2, "binding.stickerSheetStickerInfo");
         if (zComponent4 || viewState.getCanUsePremiumStickers() || modelStickerPackComponent1.isPremiumPack()) {
-            charSequenceE = FormatUtils.e(this, R.string.sticker_popout_pack_info_premium, new Object[]{modelStickerPackComponent1.getName()}, (4 & 4) != 0 ? FormatUtils.a.j : null);
+            charSequenceM213e = C1107b.m213e(this, C5419R.string.sticker_popout_pack_info_premium, new Object[]{modelStickerPackComponent1.getName()}, (4 & 4) != 0 ? C1107b.a.f1490j : null);
         } else {
-            charSequenceE = !modelStickerPackComponent1.canBePurchased() ? FormatUtils.e(this, R.string.sticker_popout_pack_info_unavailable, new Object[]{modelStickerPackComponent1.getName()}, (4 & 4) != 0 ? FormatUtils.a.j : null) : FormatUtils.e(this, R.string.sticker_popout_pack_info, new Object[]{modelStickerPackComponent1.getName(), String.valueOf(StickerUtils.INSTANCE.calculatePremiumStickerPackDiscount())}, AnonymousClass2.INSTANCE);
+            charSequenceM213e = !modelStickerPackComponent1.canBePurchased() ? C1107b.m213e(this, C5419R.string.sticker_popout_pack_info_unavailable, new Object[]{modelStickerPackComponent1.getName()}, (4 & 4) != 0 ? C1107b.a.f1490j : null) : C1107b.m213e(this, C5419R.string.sticker_popout_pack_info, new Object[]{modelStickerPackComponent1.getName(), String.valueOf(StickerUtils.INSTANCE.calculatePremiumStickerPackDiscount())}, C101382.INSTANCE);
         }
-        textView2.setText(charSequenceE);
+        textView2.setText(charSequenceM213e);
         try {
-            getBinding().h.d(modelStickerPackComponent1.getStickers().get(0), 0);
-            getBinding().i.d(modelStickerPackComponent1.getStickers().get(1), 0);
-            getBinding().j.d(modelStickerPackComponent1.getStickers().get(2), 0);
-            getBinding().k.d(modelStickerPackComponent1.getStickers().get(3), 0);
+            getBinding().f18214h.m8616d(modelStickerPackComponent1.getStickers().get(0), 0);
+            getBinding().f18215i.m8616d(modelStickerPackComponent1.getStickers().get(1), 0);
+            getBinding().f18216j.m8616d(modelStickerPackComponent1.getStickers().get(2), 0);
+            getBinding().f18217k.m8616d(modelStickerPackComponent1.getStickers().get(3), 0);
         } catch (IndexOutOfBoundsException unused) {
         }
         Bundle arguments = getArguments();
         final String string = arguments != null ? arguments.getString(ANALYTICS_LOCATION) : null;
         StickerUtils stickerUtils = StickerUtils.INSTANCE;
         Context contextRequireContext = requireContext();
-        Intrinsics3.checkNotNullExpressionValue(contextRequireContext, "requireContext()");
-        getBinding().f2663b.setText(stickerUtils.getStickerPackPremiumPriceLabel(contextRequireContext, modelStickerPackComponent1, premiumTierComponent3, zComponent4));
-        getBinding().f2663b.setIsLoading(false);
-        getBinding().f2663b.setOnClickListener(new View.OnClickListener() { // from class: com.discord.widgets.stickers.WidgetStickerSheet.configureUI.3
+        C12238m.checkNotNullExpressionValue(contextRequireContext, "requireContext()");
+        getBinding().f18208b.setText(stickerUtils.getStickerPackPremiumPriceLabel(contextRequireContext, modelStickerPackComponent1, premiumTierComponent3, zComponent4));
+        getBinding().f18208b.setIsLoading(false);
+        getBinding().f18208b.setOnClickListener(new View.OnClickListener() { // from class: com.discord.widgets.stickers.WidgetStickerSheet.configureUI.3
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
                 if (!zComponent4 || viewState.getCanUsePremiumStickers()) {
@@ -219,17 +219,17 @@ public final class WidgetStickerSheet extends AppBottomSheet {
                 WidgetStickerSheet.this.dismiss();
                 StickerPremiumUpsellDialog.Companion companion = StickerPremiumUpsellDialog.INSTANCE;
                 FragmentManager parentFragmentManager = WidgetStickerSheet.this.getParentFragmentManager();
-                Intrinsics3.checkNotNullExpressionValue(parentFragmentManager, "parentFragmentManager");
+                C12238m.checkNotNullExpressionValue(parentFragmentManager, "parentFragmentManager");
                 companion.show(parentFragmentManager, new Traits.Location(null, Traits.Location.Section.STICKER_POPOUT, null, null, null, 29, null));
             }
         });
-        LoadingButton loadingButton = getBinding().f2663b;
-        Intrinsics3.checkNotNullExpressionValue(loadingButton, "binding.stickerSheetBuyButton");
+        LoadingButton loadingButton = getBinding().f18208b;
+        C12238m.checkNotNullExpressionValue(loadingButton, "binding.stickerSheetBuyButton");
         loadingButton.setVisibility(zComponent4 && !viewState.getCanUsePremiumStickers() ? 0 : 8);
-        MaterialButton materialButton = getBinding().e;
-        Intrinsics3.checkNotNullExpressionValue(materialButton, "binding.stickerSheetViewButton");
+        MaterialButton materialButton = getBinding().f18211e;
+        C12238m.checkNotNullExpressionValue(materialButton, "binding.stickerSheetViewButton");
         materialButton.setVisibility(zComponent4 ? 0 : 8);
-        getBinding().e.setOnClickListener(new View.OnClickListener() { // from class: com.discord.widgets.stickers.WidgetStickerSheet.configureUI.4
+        getBinding().f18211e.setOnClickListener(new View.OnClickListener() { // from class: com.discord.widgets.stickers.WidgetStickerSheet.configureUI.4
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
                 if (zComponent4 && viewState.getCanUsePremiumStickers()) {
@@ -237,19 +237,19 @@ public final class WidgetStickerSheet extends AppBottomSheet {
                 } else {
                     WidgetStickerPackStoreSheet.Companion companion = WidgetStickerPackStoreSheet.INSTANCE;
                     FragmentManager parentFragmentManager = WidgetStickerSheet.this.getParentFragmentManager();
-                    Intrinsics3.checkNotNullExpressionValue(parentFragmentManager, "parentFragmentManager");
-                    companion.show(parentFragmentManager, stickerComponent2, WidgetStickerPackStoreSheet2.STICKER_POPOUT_VIEW_ALL, string, StickerPurchaseLocation.INSTANCE.getPopoutPurchaseLocation(modelStickerPackComponent1.canBePurchased()));
+                    C12238m.checkNotNullExpressionValue(parentFragmentManager, "parentFragmentManager");
+                    companion.show(parentFragmentManager, stickerComponent2, StickerPackStoreSheetViewType.STICKER_POPOUT_VIEW_ALL, string, StickerPurchaseLocation.INSTANCE.getPopoutPurchaseLocation(modelStickerPackComponent1.canBePurchased()));
                 }
                 WidgetStickerSheet.this.dismiss();
             }
         });
-        RelativeLayout relativeLayout = getBinding().g;
-        Intrinsics3.checkNotNullExpressionValue(relativeLayout, "binding.stickerSheetViewLimitedContainer");
+        RelativeLayout relativeLayout = getBinding().f18213g;
+        C12238m.checkNotNullExpressionValue(relativeLayout, "binding.stickerSheetViewLimitedContainer");
         relativeLayout.setVisibility(modelStickerPackComponent1.isLimitedPack() ? 0 : 8);
-        Chip chip = getBinding().f;
-        Intrinsics3.checkNotNullExpressionValue(chip, "binding.stickerSheetViewLimitedChip");
+        Chip chip = getBinding().f18212f;
+        C12238m.checkNotNullExpressionValue(chip, "binding.stickerSheetViewLimitedChip");
         Context contextRequireContext2 = requireContext();
-        Intrinsics3.checkNotNullExpressionValue(contextRequireContext2, "requireContext()");
+        C12238m.checkNotNullExpressionValue(contextRequireContext2, "requireContext()");
         chip.setText(stickerUtils.getLimitedTimeLeftString(contextRequireContext2, modelStickerPackComponent1.getStoreListing()));
     }
 
@@ -267,14 +267,14 @@ public final class WidgetStickerSheet extends AppBottomSheet {
 
     @Override // com.discord.app.AppBottomSheet
     public void bindSubscriptions(CompositeSubscription compositeSubscription) {
-        Intrinsics3.checkNotNullParameter(compositeSubscription, "compositeSubscription");
-        Observable observableR = ObservableExtensionsKt.bindToComponentLifecycle$default(getViewModel().observeViewState(), this, null, 2, null).r();
-        Intrinsics3.checkNotNullExpressionValue(observableR, "viewModel\n        .obser…  .distinctUntilChanged()");
-        ObservableExtensionsKt.appSubscribe(observableR, (Class<?>) WidgetStickerSheet.class, (58 & 2) != 0 ? null : null, (Function1<? super Subscription, Unit>) ((58 & 4) != 0 ? null : null), (Function1<? super Error, Unit>) ((58 & 8) != 0 ? null : null), (Function0<Unit>) ((58 & 16) != 0 ? ObservableExtensionsKt.AnonymousClass1.INSTANCE : null), (Function0<Unit>) ((58 & 32) != 0 ? ObservableExtensionsKt.AnonymousClass2.INSTANCE : null), new AnonymousClass1(this));
+        C12238m.checkNotNullParameter(compositeSubscription, "compositeSubscription");
+        Observable observableM11112r = ObservableExtensionsKt.bindToComponentLifecycle$default(getViewModel().observeViewState(), this, null, 2, null).m11112r();
+        C12238m.checkNotNullExpressionValue(observableM11112r, "viewModel\n        .obser…  .distinctUntilChanged()");
+        ObservableExtensionsKt.appSubscribe(observableM11112r, (Class<?>) WidgetStickerSheet.class, (58 & 2) != 0 ? null : null, (Function1<? super Subscription, Unit>) ((58 & 4) != 0 ? null : null), (Function1<? super Error, Unit>) ((58 & 8) != 0 ? null : null), (Function0<Unit>) ((58 & 16) != 0 ? ObservableExtensionsKt.C68791.INSTANCE : null), (Function0<Unit>) ((58 & 32) != 0 ? ObservableExtensionsKt.C68802.INSTANCE : null), new C101361(this));
     }
 
     @Override // com.discord.app.AppBottomSheet
     public int getContentViewResId() {
-        return R.layout.widget_sticker_sheet;
+        return C5419R.layout.widget_sticker_sheet;
     }
 }

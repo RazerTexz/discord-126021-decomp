@@ -9,29 +9,32 @@ import com.discord.views.CheckedSetting;
 /* JADX INFO: loaded from: classes.dex */
 public final class WidgetUserMentionsFilterBinding implements ViewBinding {
 
+    /* JADX INFO: renamed from: a */
     @NonNull
-    public final NestedScrollView a;
+    public final NestedScrollView f18336a;
 
-    /* JADX INFO: renamed from: b, reason: collision with root package name */
+    /* JADX INFO: renamed from: b */
     @NonNull
-    public final CheckedSetting f2683b;
+    public final CheckedSetting f18337b;
 
+    /* JADX INFO: renamed from: c */
     @NonNull
-    public final CheckedSetting c;
+    public final CheckedSetting f18338c;
 
+    /* JADX INFO: renamed from: d */
     @NonNull
-    public final CheckedSetting d;
+    public final CheckedSetting f18339d;
 
     public WidgetUserMentionsFilterBinding(@NonNull NestedScrollView nestedScrollView, @NonNull CheckedSetting checkedSetting, @NonNull CheckedSetting checkedSetting2, @NonNull CheckedSetting checkedSetting3) {
-        this.a = nestedScrollView;
-        this.f2683b = checkedSetting;
-        this.c = checkedSetting2;
-        this.d = checkedSetting3;
+        this.f18336a = nestedScrollView;
+        this.f18337b = checkedSetting;
+        this.f18338c = checkedSetting2;
+        this.f18339d = checkedSetting3;
     }
 
     @Override // androidx.viewbinding.ViewBinding
     @NonNull
     public View getRoot() {
-        return this.a;
+        return this.f18336a;
     }
 }

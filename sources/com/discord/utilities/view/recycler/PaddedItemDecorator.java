@@ -3,10 +3,10 @@ package com.discord.utilities.view.recycler;
 import android.graphics.Rect;
 import android.view.View;
 import androidx.recyclerview.widget.RecyclerView;
-import b.d.b.a.outline;
-import d0.Standard2;
-import d0.z.d.Intrinsics3;
 import kotlin.jvm.internal.DefaultConstructorMarker;
+import p007b.p100d.p104b.p105a.C1643a;
+import p507d0.C12111j;
+import p507d0.p592z.p594d.C12238m;
 
 /* JADX INFO: compiled from: PaddedItemDecorator.kt */
 /* JADX INFO: loaded from: classes2.dex */
@@ -22,10 +22,10 @@ public final class PaddedItemDecorator extends RecyclerView.ItemDecoration {
 
     @Override // androidx.recyclerview.widget.RecyclerView.ItemDecoration
     public void getItemOffsets(Rect outRect, View view, RecyclerView parent, RecyclerView.State state) {
-        Intrinsics3.checkNotNullParameter(outRect, "outRect");
-        Intrinsics3.checkNotNullParameter(view, "view");
-        Intrinsics3.checkNotNullParameter(parent, "parent");
-        Intrinsics3.checkNotNullParameter(state, "state");
+        C12238m.checkNotNullParameter(outRect, "outRect");
+        C12238m.checkNotNullParameter(view, "view");
+        C12238m.checkNotNullParameter(parent, "parent");
+        C12238m.checkNotNullParameter(state, "state");
         super.getItemOffsets(outRect, view, parent, state);
         int childAdapterPosition = parent.getChildAdapterPosition(view);
         boolean z2 = childAdapterPosition == 0;
@@ -40,7 +40,7 @@ public final class PaddedItemDecorator extends RecyclerView.ItemDecoration {
             return;
         }
         if (i != 1) {
-            throw new Standard2(outline.w("An operation is not implemented: ", outline.B(outline.U("Other("), this.orientation, ") orientation padding for items not supported yet.")));
+            throw new C12111j(C1643a.m883w("An operation is not implemented: ", C1643a.m814B(C1643a.m833U("Other("), this.orientation, ") orientation padding for items not supported yet.")));
         }
         outRect.top = (!z2 || this.spaceBetweenItemsOnly) ? 0 : this.spaceVert;
         outRect.bottom = (z3 && this.spaceBetweenItemsOnly) ? 0 : this.spaceVert;

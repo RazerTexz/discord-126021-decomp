@@ -1,26 +1,29 @@
 package com.fasterxml.jackson.core;
 
-import b.g.a.b.JsonLocation;
+import p007b.p195g.p196a.p198b.C2109e;
 
 /* JADX INFO: loaded from: classes3.dex */
 public class JsonProcessingException extends JacksonException {
     private static final long serialVersionUID = 123;
-    public JsonLocation _location;
+    public C2109e _location;
 
-    public JsonProcessingException(String str, JsonLocation jsonLocation) {
+    public JsonProcessingException(String str, C2109e c2109e) {
         super(str, null);
         this._location = null;
     }
 
-    public String a() {
+    /* JADX INFO: renamed from: a */
+    public String mo8739a() {
         return null;
     }
 
-    public String b() {
+    /* JADX INFO: renamed from: b */
+    public String m8740b() {
         return super.getMessage();
     }
 
-    public Object c() {
+    /* JADX INFO: renamed from: c */
+    public Object mo8737c() {
         return null;
     }
 
@@ -30,20 +33,20 @@ public class JsonProcessingException extends JacksonException {
         if (message == null) {
             message = "N/A";
         }
-        JsonLocation jsonLocation = this._location;
-        String strA = a();
-        if (jsonLocation == null && strA == null) {
+        C2109e c2109e = this._location;
+        String strMo8739a = mo8739a();
+        if (c2109e == null && strMo8739a == null) {
             return message;
         }
         StringBuilder sb = new StringBuilder(100);
         sb.append(message);
-        if (strA != null) {
-            sb.append(strA);
+        if (strMo8739a != null) {
+            sb.append(strMo8739a);
         }
-        if (jsonLocation != null) {
+        if (c2109e != null) {
             sb.append('\n');
             sb.append(" at ");
-            sb.append(jsonLocation.toString());
+            sb.append(c2109e.toString());
         }
         return sb.toString();
     }

@@ -22,7 +22,7 @@ import androidx.annotation.RestrictTo;
 import androidx.annotation.StringRes;
 import androidx.constraintlayout.solver.widgets.analyzer.BasicMeasure;
 import androidx.coordinatorlayout.widget.CoordinatorLayout;
-import com.google.android.material.R;
+import com.google.android.material.C10817R;
 import com.google.android.material.snackbar.BaseTransientBottomBar;
 
 /* JADX INFO: loaded from: classes3.dex */
@@ -102,24 +102,27 @@ public class Snackbar extends BaseTransientBottomBar<Snackbar> {
         }
     }
 
-    public class a implements View.OnClickListener {
-        public final /* synthetic */ View.OnClickListener j;
+    /* JADX INFO: renamed from: com.google.android.material.snackbar.Snackbar$a */
+    public class ViewOnClickListenerC11003a implements View.OnClickListener {
 
-        public a(View.OnClickListener onClickListener) {
-            this.j = onClickListener;
+        /* JADX INFO: renamed from: j */
+        public final /* synthetic */ View.OnClickListener f21146j;
+
+        public ViewOnClickListenerC11003a(View.OnClickListener onClickListener) {
+            this.f21146j = onClickListener;
         }
 
         @Override // android.view.View.OnClickListener
         public void onClick(View view) {
-            this.j.onClick(view);
+            this.f21146j.onClick(view);
             Snackbar.this.dispatchDismiss(1);
         }
     }
 
     static {
-        int i = R.attr.snackbarButtonStyle;
+        int i = C10817R.attr.snackbarButtonStyle;
         SNACKBAR_BUTTON_STYLE_ATTR = new int[]{i};
-        SNACKBAR_CONTENT_STYLE_ATTRS = new int[]{i, R.attr.snackbarTextViewStyle};
+        SNACKBAR_CONTENT_STYLE_ATTRS = new int[]{i, C10817R.attr.snackbarTextViewStyle};
     }
 
     private Snackbar(@NonNull Context context, @NonNull ViewGroup viewGroup, @NonNull View view, @NonNull ContentViewCallback contentViewCallback) {
@@ -178,7 +181,7 @@ public class Snackbar extends BaseTransientBottomBar<Snackbar> {
         if (context == null) {
             context = viewGroupFindSuitableParent.getContext();
         }
-        SnackbarContentLayout snackbarContentLayout = (SnackbarContentLayout) LayoutInflater.from(context).inflate(hasSnackbarContentStyleAttrs(context) ? R.layout.mtrl_layout_snackbar_include : R.layout.design_layout_snackbar_include, viewGroupFindSuitableParent, false);
+        SnackbarContentLayout snackbarContentLayout = (SnackbarContentLayout) LayoutInflater.from(context).inflate(hasSnackbarContentStyleAttrs(context) ? C10817R.layout.mtrl_layout_snackbar_include : C10817R.layout.design_layout_snackbar_include, viewGroupFindSuitableParent, false);
         Snackbar snackbar = new Snackbar(context, viewGroupFindSuitableParent, snackbarContentLayout, snackbarContentLayout);
         snackbar.setText(charSequence);
         snackbar.setDuration(i);
@@ -291,7 +294,7 @@ public class Snackbar extends BaseTransientBottomBar<Snackbar> {
             this.hasAction = true;
             actionView.setVisibility(0);
             actionView.setText(charSequence);
-            actionView.setOnClickListener(new a(onClickListener));
+            actionView.setOnClickListener(new ViewOnClickListenerC11003a(onClickListener));
         }
         return this;
     }

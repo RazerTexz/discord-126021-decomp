@@ -17,7 +17,7 @@ public class Main {
 
     public static void main(String[] args) throws IOException {
         Thread.currentThread().setContextClassLoader(Main.class.getClassLoader());
-        int err = new Main(SpiLoadUtil.readAllFromIterator(SpiLoadUtil.findServices(LombokApp.class)), Arrays.asList(args)).go();
+        int err = new Main(SpiLoadUtil.readAllFromIterator(SpiLoadUtil.findServices(LombokApp.class)), Arrays.asList(args)).m10926go();
         if (err != 0) {
             System.exit(err);
         }
@@ -95,7 +95,8 @@ public class Main {
         this.args = args;
     }
 
-    public int go() {
+    /* JADX INFO: renamed from: go */
+    public int m10926go() {
         if (!this.args.isEmpty() && HELP_SWITCHES.contains(this.args.get(0))) {
             printHelp(null, System.out);
             return 0;

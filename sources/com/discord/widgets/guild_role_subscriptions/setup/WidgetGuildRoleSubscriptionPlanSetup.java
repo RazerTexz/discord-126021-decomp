@@ -3,21 +3,17 @@ package com.discord.widgets.guild_role_subscriptions.setup;
 import android.content.Context;
 import android.content.Intent;
 import android.view.View;
-import androidx.core.os.Bundle2;
+import androidx.core.os.BundleKt;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentActivity;
 import androidx.fragment.app.FragmentViewModelLazyKt;
-import b.a.d.AppScreen2;
-import b.a.d.AppViewModelDelegates2;
-import b.a.y.p0.StepsView2;
-import b.d.b.a.outline;
-import com.discord.R;
+import com.discord.C5419R;
 import com.discord.app.AppFragment;
 import com.discord.databinding.WidgetGuildSubscriptionPlanSetupBinding;
 import com.discord.utilities.error.Error;
-import com.discord.utilities.rx.ObservableExtensionsKt;
+import com.discord.utilities.p501rx.ObservableExtensionsKt;
 import com.discord.utilities.viewbinding.FragmentViewBindingDelegate;
-import com.discord.utilities.viewbinding.FragmentViewBindingDelegate3;
+import com.discord.utilities.viewbinding.FragmentViewBindingDelegateKt;
 import com.discord.views.steps.StepsView;
 import com.discord.widgets.guild_role_subscriptions.setup.GuildRoleSubscriptionPlanDetailsViewModel;
 import com.discord.widgets.guild_role_subscriptions.setup.GuildRoleSubscriptionPlanSetupViewModel;
@@ -28,12 +24,6 @@ import com.discord.widgets.guild_role_subscriptions.tier.create.WidgetGuildRoleS
 import com.discord.widgets.guild_role_subscriptions.tier.create.benefits.GuildRoleSubscriptionTierBenefitListType;
 import com.discord.widgets.guild_role_subscriptions.tier.create.benefits.WidgetGuildRoleSubscriptionTierBenefits;
 import com.discord.widgets.servers.guild_role_subscription.WidgetServerSettingsGuildRoleSubscriptionTierList;
-import d0.LazyJVM;
-import d0.Tuples;
-import d0.t.Collections2;
-import d0.z.d.Intrinsics3;
-import d0.z.d.Lambda;
-import d0.z.d.Reflection2;
 import java.util.List;
 import kotlin.Lazy;
 import kotlin.Unit;
@@ -41,14 +31,24 @@ import kotlin.jvm.functions.Function0;
 import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.reflect.KProperty;
-import rx.Observable;
-import rx.Subscription;
-import rx.functions.Func0;
+import p007b.p008a.p018d.C0863f0;
+import p007b.p008a.p018d.C0870j;
+import p007b.p008a.p062y.p069p0.C1369a;
+import p007b.p100d.p104b.p105a.C1643a;
+import p507d0.C12083g;
+import p507d0.C12116o;
+import p507d0.p580t.C12147n;
+import p507d0.p592z.p594d.AbstractC12240o;
+import p507d0.p592z.p594d.C12216a0;
+import p507d0.p592z.p594d.C12238m;
+import p658rx.Observable;
+import p658rx.Subscription;
+import p658rx.functions.Func0;
 
 /* JADX INFO: compiled from: WidgetGuildRoleSubscriptionPlanSetup.kt */
 /* JADX INFO: loaded from: classes2.dex */
 public final class WidgetGuildRoleSubscriptionPlanSetup extends AppFragment {
-    public static final /* synthetic */ KProperty[] $$delegatedProperties = {outline.d0(WidgetGuildRoleSubscriptionPlanSetup.class, "binding", "getBinding()Lcom/discord/databinding/WidgetGuildSubscriptionPlanSetupBinding;", 0)};
+    public static final /* synthetic */ KProperty[] $$delegatedProperties = {C1643a.m846d0(WidgetGuildRoleSubscriptionPlanSetup.class, "binding", "getBinding()Lcom/discord/databinding/WidgetGuildSubscriptionPlanSetupBinding;", 0)};
 
     /* JADX INFO: renamed from: Companion, reason: from kotlin metadata */
     public static final Companion INSTANCE = new Companion(null);
@@ -75,10 +75,10 @@ public final class WidgetGuildRoleSubscriptionPlanSetup extends AppFragment {
         }
 
         public final void launch(Context context, long guildId) {
-            Intrinsics3.checkNotNullParameter(context, "context");
+            C12238m.checkNotNullParameter(context, "context");
             Intent intent = new Intent();
             intent.putExtra("INTENT_EXTRA_GUILD_ID", guildId);
-            AppScreen2.d(context, WidgetGuildRoleSubscriptionPlanSetup.class, intent);
+            C0870j.m156d(context, WidgetGuildRoleSubscriptionPlanSetup.class, intent);
         }
 
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
@@ -86,57 +86,57 @@ public final class WidgetGuildRoleSubscriptionPlanSetup extends AppFragment {
         }
     }
 
-    /* JADX INFO: renamed from: com.discord.widgets.guild_role_subscriptions.setup.WidgetGuildRoleSubscriptionPlanSetup$onViewBoundOrOnResume$1, reason: invalid class name */
+    /* JADX INFO: renamed from: com.discord.widgets.guild_role_subscriptions.setup.WidgetGuildRoleSubscriptionPlanSetup$onViewBoundOrOnResume$1 */
     /* JADX INFO: compiled from: WidgetGuildRoleSubscriptionPlanSetup.kt */
-    public static final class AnonymousClass1 extends Lambda implements Function1<GuildRoleSubscriptionPlanSetupViewModel.ViewState, Unit> {
-        public AnonymousClass1() {
+    public static final class C84701 extends AbstractC12240o implements Function1<GuildRoleSubscriptionPlanSetupViewModel.ViewState, Unit> {
+        public C84701() {
             super(1);
         }
 
         @Override // kotlin.jvm.functions.Function1
         public /* bridge */ /* synthetic */ Unit invoke(GuildRoleSubscriptionPlanSetupViewModel.ViewState viewState) {
             invoke2(viewState);
-            return Unit.a;
+            return Unit.f27425a;
         }
 
         /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
         public final void invoke2(GuildRoleSubscriptionPlanSetupViewModel.ViewState viewState) {
-            Intrinsics3.checkNotNullParameter(viewState, "it");
+            C12238m.checkNotNullParameter(viewState, "it");
             WidgetGuildRoleSubscriptionPlanSetup.this.configureUI(viewState);
         }
     }
 
-    /* JADX INFO: renamed from: com.discord.widgets.guild_role_subscriptions.setup.WidgetGuildRoleSubscriptionPlanSetup$onViewBoundOrOnResume$2, reason: invalid class name */
+    /* JADX INFO: renamed from: com.discord.widgets.guild_role_subscriptions.setup.WidgetGuildRoleSubscriptionPlanSetup$onViewBoundOrOnResume$2 */
     /* JADX INFO: compiled from: WidgetGuildRoleSubscriptionPlanSetup.kt */
-    public static final class AnonymousClass2 extends Lambda implements Function1<GuildRoleSubscriptionPlanSetupViewModel.Event, Unit> {
-        public AnonymousClass2() {
+    public static final class C84712 extends AbstractC12240o implements Function1<GuildRoleSubscriptionPlanSetupViewModel.Event, Unit> {
+        public C84712() {
             super(1);
         }
 
         @Override // kotlin.jvm.functions.Function1
         public /* bridge */ /* synthetic */ Unit invoke(GuildRoleSubscriptionPlanSetupViewModel.Event event) {
             invoke2(event);
-            return Unit.a;
+            return Unit.f27425a;
         }
 
         /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
         public final void invoke2(GuildRoleSubscriptionPlanSetupViewModel.Event event) {
-            Intrinsics3.checkNotNullParameter(event, "it");
+            C12238m.checkNotNullParameter(event, "it");
             WidgetGuildRoleSubscriptionPlanSetup.this.handleEvents(event);
         }
     }
 
-    /* JADX INFO: renamed from: com.discord.widgets.guild_role_subscriptions.setup.WidgetGuildRoleSubscriptionPlanSetup$onViewBoundOrOnResume$3, reason: invalid class name */
+    /* JADX INFO: renamed from: com.discord.widgets.guild_role_subscriptions.setup.WidgetGuildRoleSubscriptionPlanSetup$onViewBoundOrOnResume$3 */
     /* JADX INFO: compiled from: WidgetGuildRoleSubscriptionPlanSetup.kt */
-    public static final class AnonymousClass3 extends Lambda implements Function1<GuildRoleSubscriptionTierViewModel.ViewState, Unit> {
-        public AnonymousClass3() {
+    public static final class C84723 extends AbstractC12240o implements Function1<GuildRoleSubscriptionTierViewModel.ViewState, Unit> {
+        public C84723() {
             super(1);
         }
 
         @Override // kotlin.jvm.functions.Function1
         public /* bridge */ /* synthetic */ Unit invoke(GuildRoleSubscriptionTierViewModel.ViewState viewState) {
             invoke2(viewState);
-            return Unit.a;
+            return Unit.f27425a;
         }
 
         /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
@@ -145,17 +145,17 @@ public final class WidgetGuildRoleSubscriptionPlanSetup extends AppFragment {
         }
     }
 
-    /* JADX INFO: renamed from: com.discord.widgets.guild_role_subscriptions.setup.WidgetGuildRoleSubscriptionPlanSetup$onViewBoundOrOnResume$4, reason: invalid class name */
+    /* JADX INFO: renamed from: com.discord.widgets.guild_role_subscriptions.setup.WidgetGuildRoleSubscriptionPlanSetup$onViewBoundOrOnResume$4 */
     /* JADX INFO: compiled from: WidgetGuildRoleSubscriptionPlanSetup.kt */
-    public static final class AnonymousClass4 extends Lambda implements Function1<GuildRoleSubscriptionPlanDetailsViewModel.ViewState, Unit> {
-        public AnonymousClass4() {
+    public static final class C84734 extends AbstractC12240o implements Function1<GuildRoleSubscriptionPlanDetailsViewModel.ViewState, Unit> {
+        public C84734() {
             super(1);
         }
 
         @Override // kotlin.jvm.functions.Function1
         public /* bridge */ /* synthetic */ Unit invoke(GuildRoleSubscriptionPlanDetailsViewModel.ViewState viewState) {
             invoke2(viewState);
-            return Unit.a;
+            return Unit.f27425a;
         }
 
         /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
@@ -166,20 +166,20 @@ public final class WidgetGuildRoleSubscriptionPlanSetup extends AppFragment {
     }
 
     public WidgetGuildRoleSubscriptionPlanSetup() {
-        super(R.layout.widget_guild_subscription_plan_setup);
-        this.binding = FragmentViewBindingDelegate3.viewBinding$default(this, WidgetGuildRoleSubscriptionPlanSetup$binding$2.INSTANCE, null, 2, null);
-        this.guildId = LazyJVM.lazy(new WidgetGuildRoleSubscriptionPlanSetup$guildId$2(this));
-        this.setupViewModel = FragmentViewModelLazyKt.createViewModelLazy(this, Reflection2.getOrCreateKotlinClass(GuildRoleSubscriptionPlanSetupViewModel.class), new WidgetGuildRoleSubscriptionPlanSetup$appActivityViewModels$$inlined$activityViewModels$1(this), new AppViewModelDelegates2(new WidgetGuildRoleSubscriptionPlanSetup$setupViewModel$2(this)));
-        this.createTierViewModel = FragmentViewModelLazyKt.createViewModelLazy(this, Reflection2.getOrCreateKotlinClass(GuildRoleSubscriptionTierViewModel.class), new WidgetGuildRoleSubscriptionPlanSetup$appActivityViewModels$$inlined$activityViewModels$3(this), new AppViewModelDelegates2(WidgetGuildRoleSubscriptionPlanSetup$createTierViewModel$2.INSTANCE));
-        this.subscriptionPlanDetailsViewModel = FragmentViewModelLazyKt.createViewModelLazy(this, Reflection2.getOrCreateKotlinClass(GuildRoleSubscriptionPlanDetailsViewModel.class), new WidgetGuildRoleSubscriptionPlanSetup$appActivityViewModels$$inlined$activityViewModels$5(this), new AppViewModelDelegates2(WidgetGuildRoleSubscriptionPlanSetup$subscriptionPlanDetailsViewModel$2.INSTANCE));
+        super(C5419R.layout.widget_guild_subscription_plan_setup);
+        this.binding = FragmentViewBindingDelegateKt.viewBinding$default(this, WidgetGuildRoleSubscriptionPlanSetup$binding$2.INSTANCE, null, 2, null);
+        this.guildId = C12083g.lazy(new WidgetGuildRoleSubscriptionPlanSetup$guildId$2(this));
+        this.setupViewModel = FragmentViewModelLazyKt.createViewModelLazy(this, C12216a0.getOrCreateKotlinClass(GuildRoleSubscriptionPlanSetupViewModel.class), new C8462x7a5837b1(this), new C0863f0(new WidgetGuildRoleSubscriptionPlanSetup$setupViewModel$2(this)));
+        this.createTierViewModel = FragmentViewModelLazyKt.createViewModelLazy(this, C12216a0.getOrCreateKotlinClass(GuildRoleSubscriptionTierViewModel.class), new C8464x7a5837b3(this), new C0863f0(WidgetGuildRoleSubscriptionPlanSetup$createTierViewModel$2.INSTANCE));
+        this.subscriptionPlanDetailsViewModel = FragmentViewModelLazyKt.createViewModelLazy(this, C12216a0.getOrCreateKotlinClass(GuildRoleSubscriptionPlanDetailsViewModel.class), new C8466x7a5837b5(this), new C0863f0(C8474x77ee71a8.INSTANCE));
     }
 
     private final void configureUI(GuildRoleSubscriptionPlanSetupViewModel.ViewState viewState) {
-        StepsView stepsView = getBinding().f2454b;
+        StepsView stepsView = getBinding().f17072b;
         stepsView.setIsNextButtonEnabled(viewState.getCanProceedToNextStep());
         stepsView.setIsDoneButtonEnabled(!viewState.isSubmitting());
         stepsView.setIsLoading(viewState.isSubmitting());
-        stepsView.b(viewState.getCurrentStep());
+        stepsView.m8610b(viewState.getCurrentStep());
     }
 
     private final WidgetGuildSubscriptionPlanSetupBinding getBinding() {
@@ -209,9 +209,9 @@ public final class WidgetGuildRoleSubscriptionPlanSetup extends AppFragment {
             }
         } else {
             WidgetServerSettingsGuildRoleSubscriptionTierList.INSTANCE.launch(requireContext(), getGuildId());
-            FragmentActivity fragmentActivityE = e();
-            if (fragmentActivityE != null) {
-                fragmentActivityE.finish();
+            FragmentActivity fragmentActivityM95e = m95e();
+            if (fragmentActivityM95e != null) {
+                fragmentActivityM95e.finish();
             }
         }
     }
@@ -222,17 +222,17 @@ public final class WidgetGuildRoleSubscriptionPlanSetup extends AppFragment {
 
     @Override // com.discord.app.AppFragment
     public void onViewBound(View view) {
-        Intrinsics3.checkNotNullParameter(view, "view");
+        C12238m.checkNotNullParameter(view, "view");
         super.onViewBound(view);
-        List listListOf = Collections2.listOf((Object[]) new StepsView.b.a[]{new StepsView.b.a(WidgetGuildRoleSubscriptionPlanFormat.class, R.string.guild_role_subscription_create_tier_continue, 0, 0, null, new WidgetGuildRoleSubscriptionPlanSetup$onViewBound$steps$1(this), null, null, false, false, false, 476), new StepsView.b.a(WidgetGuildRoleSubscriptionPlanDetails.class, R.string.guild_role_subscription_create_tier_continue, 0, 0, null, new WidgetGuildRoleSubscriptionPlanSetup$onViewBound$steps$2(this), null, null, false, false, false, 476), new StepsView.b.a(WidgetGuildRoleSubscriptionTierDetails.class, R.string.guild_role_subscription_create_tier_continue, 0, 0, null, new WidgetGuildRoleSubscriptionPlanSetup$onViewBound$steps$3(this), null, null, false, false, false, 476), new StepsView.b.a(WidgetGuildRoleSubscriptionTierBenefits.class, R.string.guild_role_subscription_create_tier_continue, 0, 0, Bundle2.bundleOf(Tuples.to("com.discord.intent.extra.EXTRA_GUILD_ID", Long.valueOf(getGuildId())), Tuples.to(WidgetGuildRoleSubscriptionTierBenefits.INTENT_EXTRA_BENEFIT_LIST_TYPE, GuildRoleSubscriptionTierBenefitListType.CHANNEL)), new WidgetGuildRoleSubscriptionPlanSetup$onViewBound$steps$4(this), null, null, false, false, false, 460), new StepsView.b.a(WidgetGuildRoleSubscriptionTierBenefits.class, R.string.guild_role_subscription_create_tier_continue, 0, 0, Bundle2.bundleOf(Tuples.to("com.discord.intent.extra.EXTRA_GUILD_ID", Long.valueOf(getGuildId())), Tuples.to(WidgetGuildRoleSubscriptionTierBenefits.INTENT_EXTRA_BENEFIT_LIST_TYPE, GuildRoleSubscriptionTierBenefitListType.INTANGIBLE)), new WidgetGuildRoleSubscriptionPlanSetup$onViewBound$steps$5(this), null, null, false, false, false, 460), new StepsView.b.a(WidgetGuildRoleSubscriptionTierDesign.class, R.string.guild_role_subscription_create_tier_continue, 0, 0, null, new WidgetGuildRoleSubscriptionPlanSetup$onViewBound$steps$6(this), null, null, false, false, false, 476), new StepsView.b.a(WidgetGuildRoleSubscriptionReview.class, 0, 0, R.string.guild_role_subscription_plan_finish, Bundle2.bundleOf(Tuples.to("com.discord.intent.extra.EXTRA_GUILD_ID", Long.valueOf(getGuildId())), Tuples.to(WidgetGuildRoleSubscriptionReview.ARG_IS_SUBSCRIPTION_GROUP_PLAN_REVIEW_MODE, Boolean.TRUE)), null, null, new WidgetGuildRoleSubscriptionPlanSetup$onViewBound$steps$7(this), false, false, false, 358)});
-        StepsView stepsView = getBinding().f2454b;
-        StepsView.d dVar = new StepsView.d(this, listListOf);
-        WidgetGuildRoleSubscriptionPlanSetup$onViewBound$$inlined$apply$lambda$1 widgetGuildRoleSubscriptionPlanSetup$onViewBound$$inlined$apply$lambda$1 = new WidgetGuildRoleSubscriptionPlanSetup$onViewBound$$inlined$apply$lambda$1(this, listListOf);
-        int i = StepsView.j;
-        stepsView.a(dVar, widgetGuildRoleSubscriptionPlanSetup$onViewBound$$inlined$apply$lambda$1, StepsView2.j);
+        List listListOf = C12147n.listOf((Object[]) new StepsView.AbstractC7123b.a[]{new StepsView.AbstractC7123b.a(WidgetGuildRoleSubscriptionPlanFormat.class, C5419R.string.guild_role_subscription_create_tier_continue, 0, 0, null, new WidgetGuildRoleSubscriptionPlanSetup$onViewBound$steps$1(this), null, null, false, false, false, 476), new StepsView.AbstractC7123b.a(WidgetGuildRoleSubscriptionPlanDetails.class, C5419R.string.guild_role_subscription_create_tier_continue, 0, 0, null, new WidgetGuildRoleSubscriptionPlanSetup$onViewBound$steps$2(this), null, null, false, false, false, 476), new StepsView.AbstractC7123b.a(WidgetGuildRoleSubscriptionTierDetails.class, C5419R.string.guild_role_subscription_create_tier_continue, 0, 0, null, new WidgetGuildRoleSubscriptionPlanSetup$onViewBound$steps$3(this), null, null, false, false, false, 476), new StepsView.AbstractC7123b.a(WidgetGuildRoleSubscriptionTierBenefits.class, C5419R.string.guild_role_subscription_create_tier_continue, 0, 0, BundleKt.bundleOf(C12116o.m10073to("com.discord.intent.extra.EXTRA_GUILD_ID", Long.valueOf(getGuildId())), C12116o.m10073to(WidgetGuildRoleSubscriptionTierBenefits.INTENT_EXTRA_BENEFIT_LIST_TYPE, GuildRoleSubscriptionTierBenefitListType.CHANNEL)), new WidgetGuildRoleSubscriptionPlanSetup$onViewBound$steps$4(this), null, null, false, false, false, 460), new StepsView.AbstractC7123b.a(WidgetGuildRoleSubscriptionTierBenefits.class, C5419R.string.guild_role_subscription_create_tier_continue, 0, 0, BundleKt.bundleOf(C12116o.m10073to("com.discord.intent.extra.EXTRA_GUILD_ID", Long.valueOf(getGuildId())), C12116o.m10073to(WidgetGuildRoleSubscriptionTierBenefits.INTENT_EXTRA_BENEFIT_LIST_TYPE, GuildRoleSubscriptionTierBenefitListType.INTANGIBLE)), new WidgetGuildRoleSubscriptionPlanSetup$onViewBound$steps$5(this), null, null, false, false, false, 460), new StepsView.AbstractC7123b.a(WidgetGuildRoleSubscriptionTierDesign.class, C5419R.string.guild_role_subscription_create_tier_continue, 0, 0, null, new WidgetGuildRoleSubscriptionPlanSetup$onViewBound$steps$6(this), null, null, false, false, false, 476), new StepsView.AbstractC7123b.a(WidgetGuildRoleSubscriptionReview.class, 0, 0, C5419R.string.guild_role_subscription_plan_finish, BundleKt.bundleOf(C12116o.m10073to("com.discord.intent.extra.EXTRA_GUILD_ID", Long.valueOf(getGuildId())), C12116o.m10073to(WidgetGuildRoleSubscriptionReview.ARG_IS_SUBSCRIPTION_GROUP_PLAN_REVIEW_MODE, Boolean.TRUE)), null, null, new WidgetGuildRoleSubscriptionPlanSetup$onViewBound$steps$7(this), false, false, false, 358)});
+        StepsView stepsView = getBinding().f17072b;
+        StepsView.C7125d c7125d = new StepsView.C7125d(this, listListOf);
+        C8468x52b555ab c8468x52b555ab = new C8468x52b555ab(this, listListOf);
+        int i = StepsView.f19295j;
+        stepsView.m8609a(c7125d, c8468x52b555ab, C1369a.f2064j);
         stepsView.setStepProgressIndicatorVisible(true);
         AppFragment.setOnBackPressed$default(this, new Func0<Boolean>() { // from class: com.discord.widgets.guild_role_subscriptions.setup.WidgetGuildRoleSubscriptionPlanSetup.onViewBound.2
-            @Override // rx.functions.Func0, java.util.concurrent.Callable
+            @Override // p658rx.functions.Func0, java.util.concurrent.Callable
             public final Boolean call() {
                 WidgetGuildRoleSubscriptionPlanSetup.this.getSetupViewModel().goToPreviousStep();
                 return Boolean.TRUE;
@@ -243,13 +243,13 @@ public final class WidgetGuildRoleSubscriptionPlanSetup extends AppFragment {
     @Override // com.discord.app.AppFragment
     public void onViewBoundOrOnResume() {
         super.onViewBoundOrOnResume();
-        ObservableExtensionsKt.appSubscribe(ObservableExtensionsKt.bindToComponentLifecycle$default(getSetupViewModel().observeViewState(), this, null, 2, null), (Class<?>) WidgetGuildRoleSubscriptionPlanSetup.class, (58 & 2) != 0 ? null : null, (Function1<? super Subscription, Unit>) ((58 & 4) != 0 ? null : null), (Function1<? super Error, Unit>) ((58 & 8) != 0 ? null : null), (Function0<Unit>) ((58 & 16) != 0 ? ObservableExtensionsKt.AnonymousClass1.INSTANCE : null), (Function0<Unit>) ((58 & 32) != 0 ? ObservableExtensionsKt.AnonymousClass2.INSTANCE : null), new AnonymousClass1());
-        ObservableExtensionsKt.appSubscribe(ObservableExtensionsKt.bindToComponentLifecycle$default(getSetupViewModel().observeEvents(), this, null, 2, null), (Class<?>) WidgetGuildRoleSubscriptionPlanSetup.class, (58 & 2) != 0 ? null : null, (Function1<? super Subscription, Unit>) ((58 & 4) != 0 ? null : null), (Function1<? super Error, Unit>) ((58 & 8) != 0 ? null : null), (Function0<Unit>) ((58 & 16) != 0 ? ObservableExtensionsKt.AnonymousClass1.INSTANCE : null), (Function0<Unit>) ((58 & 32) != 0 ? ObservableExtensionsKt.AnonymousClass2.INSTANCE : null), new AnonymousClass2());
-        Observable<GuildRoleSubscriptionTierViewModel.ViewState> observableR = getCreateTierViewModel().observeViewState().r();
-        Intrinsics3.checkNotNullExpressionValue(observableR, "createTierViewModel\n    …  .distinctUntilChanged()");
-        ObservableExtensionsKt.appSubscribe(ObservableExtensionsKt.bindToComponentLifecycle$default(observableR, this, null, 2, null), (Class<?>) WidgetGuildRoleSubscriptionPlanSetup.class, (58 & 2) != 0 ? null : null, (Function1<? super Subscription, Unit>) ((58 & 4) != 0 ? null : null), (Function1<? super Error, Unit>) ((58 & 8) != 0 ? null : null), (Function0<Unit>) ((58 & 16) != 0 ? ObservableExtensionsKt.AnonymousClass1.INSTANCE : null), (Function0<Unit>) ((58 & 32) != 0 ? ObservableExtensionsKt.AnonymousClass2.INSTANCE : null), new AnonymousClass3());
-        Observable<GuildRoleSubscriptionPlanDetailsViewModel.ViewState> observableR2 = getSubscriptionPlanDetailsViewModel().observeViewState().r();
-        Intrinsics3.checkNotNullExpressionValue(observableR2, "subscriptionPlanDetailsV…  .distinctUntilChanged()");
-        ObservableExtensionsKt.appSubscribe(ObservableExtensionsKt.bindToComponentLifecycle$default(observableR2, this, null, 2, null), (Class<?>) WidgetGuildRoleSubscriptionPlanSetup.class, (58 & 2) != 0 ? null : null, (Function1<? super Subscription, Unit>) ((58 & 4) != 0 ? null : null), (Function1<? super Error, Unit>) ((58 & 8) != 0 ? null : null), (Function0<Unit>) ((58 & 16) != 0 ? ObservableExtensionsKt.AnonymousClass1.INSTANCE : null), (Function0<Unit>) ((58 & 32) != 0 ? ObservableExtensionsKt.AnonymousClass2.INSTANCE : null), new AnonymousClass4());
+        ObservableExtensionsKt.appSubscribe(ObservableExtensionsKt.bindToComponentLifecycle$default(getSetupViewModel().observeViewState(), this, null, 2, null), (Class<?>) WidgetGuildRoleSubscriptionPlanSetup.class, (58 & 2) != 0 ? null : null, (Function1<? super Subscription, Unit>) ((58 & 4) != 0 ? null : null), (Function1<? super Error, Unit>) ((58 & 8) != 0 ? null : null), (Function0<Unit>) ((58 & 16) != 0 ? ObservableExtensionsKt.C68791.INSTANCE : null), (Function0<Unit>) ((58 & 32) != 0 ? ObservableExtensionsKt.C68802.INSTANCE : null), new C84701());
+        ObservableExtensionsKt.appSubscribe(ObservableExtensionsKt.bindToComponentLifecycle$default(getSetupViewModel().observeEvents(), this, null, 2, null), (Class<?>) WidgetGuildRoleSubscriptionPlanSetup.class, (58 & 2) != 0 ? null : null, (Function1<? super Subscription, Unit>) ((58 & 4) != 0 ? null : null), (Function1<? super Error, Unit>) ((58 & 8) != 0 ? null : null), (Function0<Unit>) ((58 & 16) != 0 ? ObservableExtensionsKt.C68791.INSTANCE : null), (Function0<Unit>) ((58 & 32) != 0 ? ObservableExtensionsKt.C68802.INSTANCE : null), new C84712());
+        Observable<GuildRoleSubscriptionTierViewModel.ViewState> observableM11112r = getCreateTierViewModel().observeViewState().m11112r();
+        C12238m.checkNotNullExpressionValue(observableM11112r, "createTierViewModel\n    …  .distinctUntilChanged()");
+        ObservableExtensionsKt.appSubscribe(ObservableExtensionsKt.bindToComponentLifecycle$default(observableM11112r, this, null, 2, null), (Class<?>) WidgetGuildRoleSubscriptionPlanSetup.class, (58 & 2) != 0 ? null : null, (Function1<? super Subscription, Unit>) ((58 & 4) != 0 ? null : null), (Function1<? super Error, Unit>) ((58 & 8) != 0 ? null : null), (Function0<Unit>) ((58 & 16) != 0 ? ObservableExtensionsKt.C68791.INSTANCE : null), (Function0<Unit>) ((58 & 32) != 0 ? ObservableExtensionsKt.C68802.INSTANCE : null), new C84723());
+        Observable<GuildRoleSubscriptionPlanDetailsViewModel.ViewState> observableM11112r2 = getSubscriptionPlanDetailsViewModel().observeViewState().m11112r();
+        C12238m.checkNotNullExpressionValue(observableM11112r2, "subscriptionPlanDetailsV…  .distinctUntilChanged()");
+        ObservableExtensionsKt.appSubscribe(ObservableExtensionsKt.bindToComponentLifecycle$default(observableM11112r2, this, null, 2, null), (Class<?>) WidgetGuildRoleSubscriptionPlanSetup.class, (58 & 2) != 0 ? null : null, (Function1<? super Subscription, Unit>) ((58 & 4) != 0 ? null : null), (Function1<? super Error, Unit>) ((58 & 8) != 0 ? null : null), (Function0<Unit>) ((58 & 16) != 0 ? ObservableExtensionsKt.C68791.INSTANCE : null), (Function0<Unit>) ((58 & 32) != 0 ? ObservableExtensionsKt.C68802.INSTANCE : null), new C84734());
     }
 }

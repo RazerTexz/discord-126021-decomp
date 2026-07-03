@@ -28,10 +28,10 @@ public class HandleJacksonized extends JavacAnnotationHandler<Jacksonized> {
         String str;
         String strBuildMethodName;
         HandlerUtil.handleExperimentalFlagUsage(annotationNode, ConfigurationKeys.JACKSONIZED_FLAG_USAGE, "@Jacksonized");
-        JavacNode annotatedNode = annotationNode.up();
+        JavacNode annotatedNode = annotationNode.m10925up();
         JavacHandlerUtil.deleteAnnotationIfNeccessary(annotationNode, (Class<? extends Annotation>) Jacksonized.class);
         if (annotatedNode.getKind() != AST.Kind.TYPE) {
-            tdNode = annotatedNode.up();
+            tdNode = annotatedNode.m10925up();
         } else {
             tdNode = annotatedNode;
         }

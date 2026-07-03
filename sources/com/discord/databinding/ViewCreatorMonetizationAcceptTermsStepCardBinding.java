@@ -10,37 +10,42 @@ import androidx.viewbinding.ViewBinding;
 /* JADX INFO: loaded from: classes.dex */
 public final class ViewCreatorMonetizationAcceptTermsStepCardBinding implements ViewBinding {
 
+    /* JADX INFO: renamed from: a */
     @NonNull
-    public final View a;
+    public final View f15414a;
 
-    /* JADX INFO: renamed from: b, reason: collision with root package name */
+    /* JADX INFO: renamed from: b */
     @NonNull
-    public final TextView f2184b;
+    public final TextView f15415b;
 
+    /* JADX INFO: renamed from: c */
     @NonNull
-    public final ImageView c;
+    public final ImageView f15416c;
 
+    /* JADX INFO: renamed from: d */
     @NonNull
-    public final Space d;
+    public final Space f15417d;
 
+    /* JADX INFO: renamed from: e */
     @NonNull
-    public final TextView e;
+    public final TextView f15418e;
 
+    /* JADX INFO: renamed from: f */
     @NonNull
-    public final TextView f;
+    public final TextView f15419f;
 
     public ViewCreatorMonetizationAcceptTermsStepCardBinding(@NonNull View view, @NonNull TextView textView, @NonNull ImageView imageView, @NonNull Space space, @NonNull TextView textView2, @NonNull TextView textView3) {
-        this.a = view;
-        this.f2184b = textView;
-        this.c = imageView;
-        this.d = space;
-        this.e = textView2;
-        this.f = textView3;
+        this.f15414a = view;
+        this.f15415b = textView;
+        this.f15416c = imageView;
+        this.f15417d = space;
+        this.f15418e = textView2;
+        this.f15419f = textView3;
     }
 
     @Override // androidx.viewbinding.ViewBinding
     @NonNull
     public View getRoot() {
-        return this.a;
+        return this.f15414a;
     }
 }

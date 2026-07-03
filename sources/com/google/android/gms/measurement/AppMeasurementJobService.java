@@ -5,39 +5,45 @@ import android.app.job.JobParameters;
 import android.app.job.JobService;
 import android.content.Intent;
 import androidx.annotation.MainThread;
-import b.i.a.f.i.b.k9;
-import b.i.a.f.i.b.p8;
-import b.i.a.f.i.b.q3;
-import b.i.a.f.i.b.t8;
-import b.i.a.f.i.b.u4;
-import b.i.a.f.i.b.u8;
 import java.util.Objects;
+import p007b.p225i.p226a.p288f.p330i.p332b.C4097k9;
+import p007b.p225i.p226a.p288f.p330i.p332b.C4151p8;
+import p007b.p225i.p226a.p288f.p330i.p332b.C4157q3;
+import p007b.p225i.p226a.p288f.p330i.p332b.C4202u4;
+import p007b.p225i.p226a.p288f.p330i.p332b.InterfaceC4195t8;
+import p007b.p225i.p226a.p288f.p330i.p332b.RunnableC4206u8;
 
 /* JADX INFO: compiled from: com.google.android.gms:play-services-measurement@@18.0.0 */
 /* JADX INFO: loaded from: classes3.dex */
 @TargetApi(24)
-public final class AppMeasurementJobService extends JobService implements t8 {
-    public p8<AppMeasurementJobService> j;
+public final class AppMeasurementJobService extends JobService implements InterfaceC4195t8 {
 
-    @Override // b.i.a.f.i.b.t8
+    /* JADX INFO: renamed from: j */
+    public C4151p8<AppMeasurementJobService> f20656j;
+
+    @Override // p007b.p225i.p226a.p288f.p330i.p332b.InterfaceC4195t8
     @TargetApi(24)
-    public final void a(JobParameters jobParameters, boolean z2) {
+    /* JADX INFO: renamed from: a */
+    public final void mo5868a(JobParameters jobParameters, boolean z2) {
         jobFinished(jobParameters, false);
     }
 
-    @Override // b.i.a.f.i.b.t8
-    public final void b(Intent intent) {
+    @Override // p007b.p225i.p226a.p288f.p330i.p332b.InterfaceC4195t8
+    /* JADX INFO: renamed from: b */
+    public final void mo5869b(Intent intent) {
     }
 
-    public final p8<AppMeasurementJobService> c() {
-        if (this.j == null) {
-            this.j = new p8<>(this);
+    /* JADX INFO: renamed from: c */
+    public final C4151p8<AppMeasurementJobService> m9109c() {
+        if (this.f20656j == null) {
+            this.f20656j = new C4151p8<>(this);
         }
-        return this.j;
+        return this.f20656j;
     }
 
-    @Override // b.i.a.f.i.b.t8
-    public final boolean f(int i) {
+    @Override // p007b.p225i.p226a.p288f.p330i.p332b.InterfaceC4195t8
+    /* JADX INFO: renamed from: f */
+    public final boolean mo5870f(int i) {
         throw new UnsupportedOperationException();
     }
 
@@ -45,54 +51,60 @@ public final class AppMeasurementJobService extends JobService implements t8 {
     @MainThread
     public final void onCreate() {
         super.onCreate();
-        u4.b(c().a, null, null).g().n.a("Local AppMeasurementService is starting up");
+        C4202u4.m5933b(m9109c().f11131a, null, null).mo5726g().f11149n.m5860a("Local AppMeasurementService is starting up");
     }
 
     @Override // android.app.Service
     @MainThread
     public final void onDestroy() {
-        u4.b(c().a, null, null).g().n.a("Local AppMeasurementService is shutting down");
+        C4202u4.m5933b(m9109c().f11131a, null, null).mo5726g().f11149n.m5860a("Local AppMeasurementService is shutting down");
         super.onDestroy();
     }
 
     @Override // android.app.Service
     @MainThread
     public final void onRebind(Intent intent) {
-        c().c(intent);
+        m9109c().m5787c(intent);
     }
 
     @Override // android.app.job.JobService
     public final boolean onStartJob(final JobParameters jobParameters) {
-        final p8<AppMeasurementJobService> p8VarC = c();
-        final q3 q3VarG = u4.b(p8VarC.a, null, null).g();
+        final C4151p8<AppMeasurementJobService> c4151p8M9109c = m9109c();
+        final C4157q3 c4157q3Mo5726g = C4202u4.m5933b(c4151p8M9109c.f11131a, null, null).mo5726g();
         String string = jobParameters.getExtras().getString("action");
-        q3VarG.n.b("Local AppMeasurementJobService called. action", string);
+        c4157q3Mo5726g.f11149n.m5861b("Local AppMeasurementJobService called. action", string);
         if (!"com.google.android.gms.measurement.UPLOAD".equals(string)) {
             return true;
         }
-        Runnable runnable = new Runnable(p8VarC, q3VarG, jobParameters) { // from class: b.i.a.f.i.b.r8
-            public final p8 j;
-            public final q3 k;
-            public final JobParameters l;
+        Runnable runnable = new Runnable(c4151p8M9109c, c4157q3Mo5726g, jobParameters) { // from class: b.i.a.f.i.b.r8
+
+            /* JADX INFO: renamed from: j */
+            public final C4151p8 f11186j;
+
+            /* JADX INFO: renamed from: k */
+            public final C4157q3 f11187k;
+
+            /* JADX INFO: renamed from: l */
+            public final JobParameters f11188l;
 
             {
-                this.j = p8VarC;
-                this.k = q3VarG;
-                this.l = jobParameters;
+                this.f11186j = c4151p8M9109c;
+                this.f11187k = c4157q3Mo5726g;
+                this.f11188l = jobParameters;
             }
 
             @Override // java.lang.Runnable
             public final void run() {
-                p8 p8Var = this.j;
-                q3 q3Var = this.k;
-                JobParameters jobParameters2 = this.l;
-                Objects.requireNonNull(p8Var);
-                q3Var.n.a("AppMeasurementJobService processed last upload request.");
-                p8Var.a.a(jobParameters2, false);
+                C4151p8 c4151p8 = this.f11186j;
+                C4157q3 c4157q3 = this.f11187k;
+                JobParameters jobParameters2 = this.f11188l;
+                Objects.requireNonNull(c4151p8);
+                c4157q3.f11149n.m5860a("AppMeasurementJobService processed last upload request.");
+                c4151p8.f11131a.mo5868a(jobParameters2, false);
             }
         };
-        k9 k9VarB = k9.b(p8VarC.a);
-        k9VarB.f().v(new u8(k9VarB, runnable));
+        C4097k9 c4097k9M5698b = C4097k9.m5698b(c4151p8M9109c.f11131a);
+        c4097k9M5698b.mo5725f().m5852v(new RunnableC4206u8(c4097k9M5698b, runnable));
         return true;
     }
 
@@ -104,7 +116,7 @@ public final class AppMeasurementJobService extends JobService implements t8 {
     @Override // android.app.Service
     @MainThread
     public final boolean onUnbind(Intent intent) {
-        c().a(intent);
+        m9109c().m5785a(intent);
         return true;
     }
 }

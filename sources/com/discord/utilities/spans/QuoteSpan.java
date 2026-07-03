@@ -10,7 +10,7 @@ import androidx.annotation.ColorInt;
 import androidx.annotation.IntRange;
 import androidx.annotation.Px;
 import androidx.core.app.NotificationCompat;
-import d0.z.d.Intrinsics3;
+import p507d0.p592z.p594d.C12238m;
 
 /* JADX INFO: compiled from: QuoteSpan.kt */
 /* JADX INFO: loaded from: classes2.dex */
@@ -42,10 +42,10 @@ public final class QuoteSpan implements LeadingMarginSpan {
 
     @Override // android.text.style.LeadingMarginSpan
     public void drawLeadingMargin(Canvas c, Paint p, int x2, int dir, int top, int baseline, int bottom, CharSequence text, int start, int end, boolean first, Layout layout) {
-        Intrinsics3.checkNotNullParameter(c, "c");
-        Intrinsics3.checkNotNullParameter(p, "p");
-        Intrinsics3.checkNotNullParameter(text, NotificationCompat.MessagingStyle.Message.KEY_TEXT);
-        Intrinsics3.checkNotNullParameter(layout, "layout");
+        C12238m.checkNotNullParameter(c, "c");
+        C12238m.checkNotNullParameter(p, "p");
+        C12238m.checkNotNullParameter(text, NotificationCompat.MessagingStyle.Message.KEY_TEXT);
+        C12238m.checkNotNullParameter(layout, "layout");
         if (text instanceof Spanned) {
             Spanned spanned = (Spanned) text;
             if (spanned.getSpanStart(this) == start) {

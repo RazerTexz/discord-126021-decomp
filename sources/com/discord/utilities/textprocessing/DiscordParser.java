@@ -1,17 +1,17 @@
 package com.discord.utilities.textprocessing;
 
 import android.content.Context;
-import b.a.t.b.b.SimpleMarkdownRules2;
-import b.a.t.b.b.SimpleMarkdownRules5;
 import com.discord.simpleast.core.node.Node;
 import com.discord.simpleast.core.parser.Parser;
 import com.discord.utilities.textprocessing.node.EditedMessageNode;
 import com.discord.utilities.textprocessing.node.ZeroSpaceWidthNode;
 import com.facebook.drawee.span.DraweeSpanStringBuilder;
-import d0.z.d.Intrinsics3;
 import java.util.List;
 import java.util.regex.Pattern;
 import kotlin.NoWhenBranchMatchedException;
+import p007b.p008a.p050t.p052b.p054b.C1300b;
+import p007b.p008a.p050t.p052b.p054b.C1303e;
+import p507d0.p592z.p594d.C12238m;
 
 /* JADX INFO: compiled from: DiscordParser.kt */
 /* JADX INFO: loaded from: classes2.dex */
@@ -51,10 +51,10 @@ public final class DiscordParser {
         Parser<MessageRenderContext, Node<MessageRenderContext>, MessageParseState> parser = new Parser<>(false, 1, null);
         Rules rules = Rules.INSTANCE;
         parser.addRule(rules.createSoftHyphenRule());
-        SimpleMarkdownRules5 simpleMarkdownRules5 = SimpleMarkdownRules5.h;
-        Pattern pattern = SimpleMarkdownRules5.f;
-        Intrinsics3.checkNotNullExpressionValue(pattern, "PATTERN_ESCAPE");
-        parser.addRule(new SimpleMarkdownRules2(simpleMarkdownRules5, pattern));
+        C1303e c1303e = C1303e.f1988h;
+        Pattern pattern = C1303e.f1986f;
+        C12238m.checkNotNullExpressionValue(pattern, "PATTERN_ESCAPE");
+        parser.addRule(new C1300b(c1303e, pattern));
         if (renderBlockQuotes) {
             parser.addRule(rules.createBlockQuoteRule());
         }
@@ -82,7 +82,7 @@ public final class DiscordParser {
         if (renderLists) {
             parser.addRule(rules.createListItemRule());
         }
-        parser.addRules(SimpleMarkdownRules5.a(false, false));
+        parser.addRules(C1303e.m371a(false, false));
         parser.addRule(rules.createTextReplacementRule());
         return parser;
     }
@@ -102,10 +102,10 @@ public final class DiscordParser {
 
     public static final DraweeSpanStringBuilder parseChannelMessage(Context context, String messageText, MessageRenderContext messageRenderContext, MessagePreprocessor preprocessor, ParserOptions parserOptions, boolean isEdited) {
         Parser<MessageRenderContext, Node<MessageRenderContext>, MessageParseState> parser;
-        Intrinsics3.checkNotNullParameter(context, "context");
-        Intrinsics3.checkNotNullParameter(messageRenderContext, "messageRenderContext");
-        Intrinsics3.checkNotNullParameter(preprocessor, "preprocessor");
-        Intrinsics3.checkNotNullParameter(parserOptions, "parserOptions");
+        C12238m.checkNotNullParameter(context, "context");
+        C12238m.checkNotNullParameter(messageRenderContext, "messageRenderContext");
+        C12238m.checkNotNullParameter(preprocessor, "preprocessor");
+        C12238m.checkNotNullParameter(parserOptions, "parserOptions");
         int iOrdinal = parserOptions.ordinal();
         if (iOrdinal == 0) {
             parser = SAFE_LINK_PARSER;

@@ -11,7 +11,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.annotation.RestrictTo;
 import androidx.annotation.StyleRes;
-import com.google.android.material.R;
+import com.google.android.material.C10817R;
 import com.google.android.material.dialog.InsetDialogOnTouchListener;
 import com.google.android.material.dialog.MaterialDialogs;
 import com.google.android.material.resources.MaterialAttributes;
@@ -25,7 +25,7 @@ public class MaterialStyledDatePickerDialog extends DatePickerDialog {
     private static final int DEF_STYLE_ATTR = 16843612;
 
     @StyleRes
-    private static final int DEF_STYLE_RES = R.style.MaterialAlertDialog_MaterialComponents_Picker_Date_Spinner;
+    private static final int DEF_STYLE_RES = C10817R.style.MaterialAlertDialog_MaterialComponents_Picker_Date_Spinner;
 
     @NonNull
     private final Drawable background;
@@ -55,7 +55,7 @@ public class MaterialStyledDatePickerDialog extends DatePickerDialog {
     public MaterialStyledDatePickerDialog(@NonNull Context context, int i, @Nullable DatePickerDialog.OnDateSetListener onDateSetListener, int i2, int i3, int i4) {
         super(context, i, onDateSetListener, i2, i3, i4);
         Context context2 = getContext();
-        int iResolveOrThrow = MaterialAttributes.resolveOrThrow(getContext(), R.attr.colorSurface, getClass().getCanonicalName());
+        int iResolveOrThrow = MaterialAttributes.resolveOrThrow(getContext(), C10817R.attr.colorSurface, getClass().getCanonicalName());
         int i5 = DEF_STYLE_RES;
         MaterialShapeDrawable materialShapeDrawable = new MaterialShapeDrawable(context2, null, 16843612, i5);
         materialShapeDrawable.setFillColor(ColorStateList.valueOf(iResolveOrThrow));

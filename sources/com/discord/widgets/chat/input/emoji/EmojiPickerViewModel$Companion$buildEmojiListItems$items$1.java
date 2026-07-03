@@ -1,13 +1,13 @@
 package com.discord.widgets.chat.input.emoji;
 
 import com.discord.models.domain.emoji.Emoji;
-import d0.z.d.Intrinsics3;
-import d0.z.d.Lambda;
 import kotlin.jvm.functions.Function1;
+import p507d0.p592z.p594d.AbstractC12240o;
+import p507d0.p592z.p594d.C12238m;
 
 /* JADX INFO: compiled from: EmojiPickerViewModel.kt */
 /* JADX INFO: loaded from: classes2.dex */
-public final class EmojiPickerViewModel$Companion$buildEmojiListItems$items$1 extends Lambda implements Function1<Emoji, Boolean> {
+public final class EmojiPickerViewModel$Companion$buildEmojiListItems$items$1 extends AbstractC12240o implements Function1<Emoji, Boolean> {
     public final /* synthetic */ boolean $includeUnavailable;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -23,7 +23,7 @@ public final class EmojiPickerViewModel$Companion$buildEmojiListItems$items$1 ex
 
     /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
     public final boolean invoke2(Emoji emoji) {
-        Intrinsics3.checkNotNullParameter(emoji, "emoji");
+        C12238m.checkNotNullParameter(emoji, "emoji");
         if (this.$includeUnavailable) {
             return true;
         }

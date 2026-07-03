@@ -2,7 +2,7 @@ package lombok.patcher;
 
 import androidx.exifinterface.media.ExifInterface;
 import com.adjust.sdk.Constants;
-import com.discord.widgets.chat.input.MentionUtils;
+import com.discord.widgets.chat.input.MentionUtilsKt;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
@@ -110,7 +110,7 @@ public class Hook {
         StringBuilder out = new StringBuilder();
         for (String part : type.split("\\.")) {
             if (out.length() > 0) {
-                out.append(MentionUtils.SLASH_CHAR);
+                out.append(MentionUtilsKt.SLASH_CHAR);
             }
             out.append(part);
         }

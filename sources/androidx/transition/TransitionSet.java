@@ -15,9 +15,9 @@ import androidx.annotation.Nullable;
 import androidx.annotation.RestrictTo;
 import androidx.core.content.res.TypedArrayUtils;
 import androidx.transition.Transition;
-import b.d.b.a.outline;
 import java.util.ArrayList;
 import java.util.Iterator;
+import p007b.p100d.p104b.p105a.C1643a;
 
 /* JADX INFO: loaded from: classes.dex */
 public class TransitionSet extends Transition {
@@ -288,7 +288,7 @@ public class TransitionSet extends Transition {
             this.mPlayTogether = true;
         } else {
             if (i != 1) {
-                throw new AndroidRuntimeException(outline.q("Invalid parameter for TransitionSet ordering: ", i));
+                throw new AndroidRuntimeException(C1643a.m871q("Invalid parameter for TransitionSet ordering: ", i));
             }
             this.mPlayTogether = false;
         }
@@ -320,9 +320,9 @@ public class TransitionSet extends Transition {
     public String toString(String str) {
         String string = super.toString(str);
         for (int i = 0; i < this.mTransitions.size(); i++) {
-            StringBuilder sbX = outline.X(string, "\n");
-            sbX.append(this.mTransitions.get(i).toString(str + "  "));
-            string = sbX.toString();
+            StringBuilder sbM836X = C1643a.m836X(string, "\n");
+            sbM836X.append(this.mTransitions.get(i).toString(str + "  "));
+            string = sbM836X.toString();
         }
         return string;
     }
@@ -335,12 +335,12 @@ public class TransitionSet extends Transition {
 
     @Override // androidx.transition.Transition
     /* JADX INFO: renamed from: clone */
-    public Transition mo5clone() {
-        TransitionSet transitionSet = (TransitionSet) super.mo5clone();
+    public Transition mo11382clone() {
+        TransitionSet transitionSet = (TransitionSet) super.mo11382clone();
         transitionSet.mTransitions = new ArrayList<>();
         int size = this.mTransitions.size();
         for (int i = 0; i < size; i++) {
-            transitionSet.addTransitionInternal(this.mTransitions.get(i).mo5clone());
+            transitionSet.addTransitionInternal(this.mTransitions.get(i).mo11382clone());
         }
         return transitionSet;
     }

@@ -6,7 +6,6 @@ import android.view.ViewGroup;
 import androidx.annotation.IdRes;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import b.d.b.a.outline;
 import java.io.FileDescriptor;
 import java.io.PrintWriter;
 import java.util.ArrayList;
@@ -14,6 +13,7 @@ import java.util.Collections;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
+import p007b.p100d.p104b.p105a.C1643a;
 
 /* JADX INFO: loaded from: classes.dex */
 public class FragmentStore {
@@ -49,7 +49,7 @@ public class FragmentStore {
     }
 
     public void dump(@NonNull String str, @Nullable FileDescriptor fileDescriptor, @NonNull PrintWriter printWriter, @Nullable String[] strArr) {
-        String strW = outline.w(str, "    ");
+        String strM883w = C1643a.m883w(str, "    ");
         if (!this.mActive.isEmpty()) {
             printWriter.print(str);
             printWriter.print("Active Fragments:");
@@ -58,7 +58,7 @@ public class FragmentStore {
                 if (fragmentStateManager != null) {
                     Fragment fragment = fragmentStateManager.getFragment();
                     printWriter.println(fragment);
-                    fragment.dump(strW, fileDescriptor, printWriter, strArr);
+                    fragment.dump(strM883w, fileDescriptor, printWriter, strArr);
                 } else {
                     printWriter.println("null");
                 }
@@ -282,7 +282,7 @@ public class FragmentStore {
             for (String str : list) {
                 Fragment fragmentFindActiveFragment = findActiveFragment(str);
                 if (fragmentFindActiveFragment == null) {
-                    throw new IllegalStateException(outline.y("No instantiated fragment for (", str, ")"));
+                    throw new IllegalStateException(C1643a.m886y("No instantiated fragment for (", str, ")"));
                 }
                 if (FragmentManager.isLoggingEnabled(2)) {
                     Log.v("FragmentManager", "restoreSaveState: added (" + str + "): " + fragmentFindActiveFragment);

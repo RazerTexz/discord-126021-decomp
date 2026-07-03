@@ -15,13 +15,7 @@ import android.widget.TextView;
 import androidx.annotation.MainThread;
 import androidx.appcompat.app.AlertDialog;
 import androidx.fragment.app.Fragment;
-import b.a.d.AppScreen2;
-import b.a.d.AppToast;
-import b.a.d.o;
-import b.a.i.WidgetAuthMfaInfoBinding;
-import b.a.k.FormatUtils;
-import b.d.b.a.outline;
-import com.discord.R;
+import com.discord.C5419R;
 import com.discord.app.AppActivity;
 import com.discord.app.AppFragment;
 import com.discord.databinding.WidgetAuthMfaBackupCodesBinding;
@@ -33,27 +27,33 @@ import com.discord.stores.StoreStream;
 import com.discord.utilities.analytics.AnalyticsTracker;
 import com.discord.utilities.auth.AuthUtils;
 import com.discord.utilities.error.Error;
-import com.discord.utilities.rx.ObservableExtensionsKt;
+import com.discord.utilities.p501rx.ObservableExtensionsKt;
 import com.discord.utilities.view.extensions.ViewExtensions;
 import com.discord.utilities.view.text.LinkifiedTextView;
 import com.discord.utilities.viewbinding.FragmentViewBindingDelegate;
-import com.discord.utilities.viewbinding.FragmentViewBindingDelegate3;
+import com.discord.utilities.viewbinding.FragmentViewBindingDelegateKt;
 import com.discord.views.CodeVerificationView;
 import com.google.android.material.button.MaterialButton;
 import com.google.android.material.textfield.TextInputLayout;
-import d0.z.d.FunctionReferenceImpl;
-import d0.z.d.Intrinsics3;
-import d0.z.d.Lambda;
 import java.util.concurrent.TimeUnit;
 import kotlin.Unit;
 import kotlin.jvm.functions.Function0;
 import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.reflect.KProperty;
-import rx.Observable;
-import rx.Subscription;
-import rx.functions.Action1;
-import rx.functions.Action2;
+import p007b.p008a.p018d.C0870j;
+import p007b.p008a.p018d.C0876m;
+import p007b.p008a.p018d.C0879o;
+import p007b.p008a.p025i.C1014n4;
+import p007b.p008a.p027k.C1107b;
+import p007b.p100d.p104b.p105a.C1643a;
+import p507d0.p592z.p594d.AbstractC12240o;
+import p507d0.p592z.p594d.C12236k;
+import p507d0.p592z.p594d.C12238m;
+import p658rx.Observable;
+import p658rx.Subscription;
+import p658rx.functions.Action1;
+import p658rx.functions.Action2;
 
 /* JADX INFO: compiled from: WidgetAuthMfa.kt */
 /* JADX INFO: loaded from: classes2.dex */
@@ -65,7 +65,7 @@ public final class WidgetAuthMfa extends AppFragment {
     private final FragmentViewBindingDelegate binding;
     private boolean ignoreAutopaste;
     private String ticket;
-    public static final /* synthetic */ KProperty[] $$delegatedProperties = {outline.d0(WidgetAuthMfa.class, "binding", "getBinding()Lcom/discord/databinding/WidgetAuthMfaBinding;", 0)};
+    public static final /* synthetic */ KProperty[] $$delegatedProperties = {C1643a.m846d0(WidgetAuthMfa.class, "binding", "getBinding()Lcom/discord/databinding/WidgetAuthMfaBinding;", 0)};
 
     /* JADX INFO: renamed from: Companion, reason: from kotlin metadata */
     public static final Companion INSTANCE = new Companion(null);
@@ -76,11 +76,11 @@ public final class WidgetAuthMfa extends AppFragment {
         }
 
         public final void start(Context context, String ticket) {
-            Intrinsics3.checkNotNullParameter(context, "context");
-            Intrinsics3.checkNotNullParameter(ticket, "ticket");
+            C12238m.checkNotNullParameter(context, "context");
+            C12238m.checkNotNullParameter(ticket, "ticket");
             Intent intent = new Intent();
             intent.putExtra(WidgetAuthMfa.INTENT_TICKET, ticket);
-            AppScreen2.d(context, WidgetAuthMfa.class, intent);
+            C0870j.m156d(context, WidgetAuthMfa.class, intent);
         }
 
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
@@ -88,19 +88,19 @@ public final class WidgetAuthMfa extends AppFragment {
         }
     }
 
-    /* JADX INFO: renamed from: com.discord.widgets.auth.WidgetAuthMfa$evaluateCode$1, reason: invalid class name */
+    /* JADX INFO: renamed from: com.discord.widgets.auth.WidgetAuthMfa$evaluateCode$1 */
     /* JADX INFO: compiled from: WidgetAuthMfa.kt */
-    public static final class AnonymousClass1 extends Lambda implements Function1<ModelLoginResult, Unit> {
-        public static final AnonymousClass1 INSTANCE = new AnonymousClass1();
+    public static final class C71961 extends AbstractC12240o implements Function1<ModelLoginResult, Unit> {
+        public static final C71961 INSTANCE = new C71961();
 
-        public AnonymousClass1() {
+        public C71961() {
             super(1);
         }
 
         @Override // kotlin.jvm.functions.Function1
         public /* bridge */ /* synthetic */ Unit invoke(ModelLoginResult modelLoginResult) {
             invoke2(modelLoginResult);
-            return Unit.a;
+            return Unit.f27425a;
         }
 
         /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
@@ -109,17 +109,17 @@ public final class WidgetAuthMfa extends AppFragment {
         }
     }
 
-    /* JADX INFO: renamed from: com.discord.widgets.auth.WidgetAuthMfa$onResume$1, reason: invalid class name */
+    /* JADX INFO: renamed from: com.discord.widgets.auth.WidgetAuthMfa$onResume$1 */
     /* JADX INFO: compiled from: WidgetAuthMfa.kt */
-    public static final class AnonymousClass1 extends Lambda implements Function1<Long, Unit> {
-        public AnonymousClass1() {
+    public static final class C71981 extends AbstractC12240o implements Function1<Long, Unit> {
+        public C71981() {
             super(1);
         }
 
         @Override // kotlin.jvm.functions.Function1
         public /* bridge */ /* synthetic */ Unit invoke(Long l) {
             invoke2(l);
-            return Unit.a;
+            return Unit.f27425a;
         }
 
         /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
@@ -128,96 +128,96 @@ public final class WidgetAuthMfa extends AppFragment {
         }
     }
 
-    /* JADX INFO: renamed from: com.discord.widgets.auth.WidgetAuthMfa$onViewBound$2, reason: invalid class name */
+    /* JADX INFO: renamed from: com.discord.widgets.auth.WidgetAuthMfa$onViewBound$2 */
     /* JADX INFO: compiled from: WidgetAuthMfa.kt */
-    public static final /* synthetic */ class AnonymousClass2 extends FunctionReferenceImpl implements Function1<String, Unit> {
-        public AnonymousClass2(WidgetAuthMfa widgetAuthMfa) {
+    public static final /* synthetic */ class C72002 extends C12236k implements Function1<String, Unit> {
+        public C72002(WidgetAuthMfa widgetAuthMfa) {
             super(1, widgetAuthMfa, WidgetAuthMfa.class, "evaluateCode", "evaluateCode(Ljava/lang/String;)V", 0);
         }
 
         @Override // kotlin.jvm.functions.Function1
         public /* bridge */ /* synthetic */ Unit invoke(String str) {
             invoke2(str);
-            return Unit.a;
+            return Unit.f27425a;
         }
 
         /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
         public final void invoke2(String str) {
-            Intrinsics3.checkNotNullParameter(str, "p1");
+            C12238m.checkNotNullParameter(str, "p1");
             ((WidgetAuthMfa) this.receiver).evaluateCode(str);
         }
     }
 
-    /* JADX INFO: renamed from: com.discord.widgets.auth.WidgetAuthMfa$tryPasteCodeFromClipboard$1, reason: invalid class name */
+    /* JADX INFO: renamed from: com.discord.widgets.auth.WidgetAuthMfa$tryPasteCodeFromClipboard$1 */
     /* JADX INFO: compiled from: WidgetAuthMfa.kt */
-    public static final class AnonymousClass1 extends Lambda implements Function1<String, Unit> {
-        public static final AnonymousClass1 INSTANCE = new AnonymousClass1();
+    public static final class C72041 extends AbstractC12240o implements Function1<String, Unit> {
+        public static final C72041 INSTANCE = new C72041();
 
-        public AnonymousClass1() {
+        public C72041() {
             super(1);
         }
 
         @Override // kotlin.jvm.functions.Function1
         public /* bridge */ /* synthetic */ Unit invoke(String str) {
             invoke2(str);
-            return Unit.a;
+            return Unit.f27425a;
         }
 
         /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
         public final void invoke2(String str) {
-            Intrinsics3.checkNotNullParameter(str, "it");
+            C12238m.checkNotNullParameter(str, "it");
         }
     }
 
-    /* JADX INFO: renamed from: com.discord.widgets.auth.WidgetAuthMfa$tryPasteCodeFromClipboard$2, reason: invalid class name */
+    /* JADX INFO: renamed from: com.discord.widgets.auth.WidgetAuthMfa$tryPasteCodeFromClipboard$2 */
     /* JADX INFO: compiled from: WidgetAuthMfa.kt */
-    public static final /* synthetic */ class AnonymousClass2 extends FunctionReferenceImpl implements Function1<String, Unit> {
-        public AnonymousClass2(WidgetAuthMfa widgetAuthMfa) {
+    public static final /* synthetic */ class C72052 extends C12236k implements Function1<String, Unit> {
+        public C72052(WidgetAuthMfa widgetAuthMfa) {
             super(1, widgetAuthMfa, WidgetAuthMfa.class, "evaluateCode", "evaluateCode(Ljava/lang/String;)V", 0);
         }
 
         @Override // kotlin.jvm.functions.Function1
         public /* bridge */ /* synthetic */ Unit invoke(String str) {
             invoke2(str);
-            return Unit.a;
+            return Unit.f27425a;
         }
 
         /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
         public final void invoke2(String str) {
-            Intrinsics3.checkNotNullParameter(str, "p1");
+            C12238m.checkNotNullParameter(str, "p1");
             ((WidgetAuthMfa) this.receiver).evaluateCode(str);
         }
     }
 
-    /* JADX INFO: renamed from: com.discord.widgets.auth.WidgetAuthMfa$tryPasteCodeFromClipboard$3, reason: invalid class name */
+    /* JADX INFO: renamed from: com.discord.widgets.auth.WidgetAuthMfa$tryPasteCodeFromClipboard$3 */
     /* JADX INFO: compiled from: WidgetAuthMfa.kt */
-    public static final class AnonymousClass3 extends Lambda implements Function1<Long, Unit> {
-        public AnonymousClass3() {
+    public static final class C72063 extends AbstractC12240o implements Function1<Long, Unit> {
+        public C72063() {
             super(1);
         }
 
         @Override // kotlin.jvm.functions.Function1
         public /* bridge */ /* synthetic */ Unit invoke(Long l) {
             invoke2(l);
-            return Unit.a;
+            return Unit.f27425a;
         }
 
         /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
         public final void invoke2(Long l) {
             WidgetAuthMfa widgetAuthMfa = WidgetAuthMfa.this;
-            widgetAuthMfa.evaluateCode(widgetAuthMfa.getBinding().f2234b.getCom.discord.models.domain.ModelAuditLogEntry.CHANGE_KEY_CODE java.lang.String());
+            widgetAuthMfa.evaluateCode(widgetAuthMfa.getBinding().f15693b.getCom.discord.models.domain.ModelAuditLogEntry.CHANGE_KEY_CODE java.lang.String());
         }
     }
 
     public WidgetAuthMfa() {
-        super(R.layout.widget_auth_mfa);
-        this.binding = FragmentViewBindingDelegate3.viewBinding$default(this, WidgetAuthMfa2.INSTANCE, null, 2, null);
+        super(C5419R.layout.widget_auth_mfa);
+        this.binding = FragmentViewBindingDelegateKt.viewBinding$default(this, WidgetAuthMfa$binding$2.INSTANCE, null, 2, null);
         this.ignoreAutopaste = true;
     }
 
     private final void evaluateBackupCode(AlertDialog dialog, String code) {
         if (code.length() < 8) {
-            AppToast.i(this, R.string.two_fa_backup_code_enter_wrong, 0, 4);
+            C0876m.m171i(this, C5419R.string.two_fa_backup_code_enter_wrong, 0, 4);
         } else {
             dialog.hide();
             evaluateCode(code);
@@ -226,18 +226,18 @@ public final class WidgetAuthMfa extends AppFragment {
 
     private final void evaluateCode(String code) {
         if (TextUtils.isEmpty(code)) {
-            AppToast.i(this, R.string.two_fa_token_required, 0, 4);
+            C0876m.m171i(this, C5419R.string.two_fa_token_required, 0, 4);
             return;
         }
         StoreAuthentication authentication = StoreStream.INSTANCE.getAuthentication();
         String str = this.ticket;
         if (str == null) {
-            Intrinsics3.throwUninitializedPropertyAccessException("ticket");
+            C12238m.throwUninitializedPropertyAccessException("ticket");
         }
-        ObservableExtensionsKt.withDimmer(ObservableExtensionsKt.ui$default(authentication.authMFA(code, str), this, null, 2, null), getBinding().c, 0L).k(o.a.g(getContext(), AnonymousClass1.INSTANCE, new Action1<Error>() { // from class: com.discord.widgets.auth.WidgetAuthMfa.evaluateCode.2
-            @Override // rx.functions.Action1
+        ObservableExtensionsKt.withDimmer(ObservableExtensionsKt.ui$default(authentication.authMFA(code, str), this, null, 2, null), getBinding().f15694c, 0L).m11108k(C0879o.f566a.m184g(getContext(), C71961.INSTANCE, new Action1<Error>() { // from class: com.discord.widgets.auth.WidgetAuthMfa.evaluateCode.2
+            @Override // p658rx.functions.Action1
             public final void call(Error error) {
-                WidgetAuthMfa.this.getBinding().f2234b.b();
+                WidgetAuthMfa.this.getBinding().f15693b.m8538b();
                 AnalyticsTracker.INSTANCE.loginAttempt(false);
             }
         }));
@@ -249,32 +249,32 @@ public final class WidgetAuthMfa extends AppFragment {
 
     @MainThread
     private final void showBackupCodesDialog() {
-        View viewInflate = getLayoutInflater().inflate(R.layout.widget_auth_mfa_backup_codes, (ViewGroup) null, false);
-        int i = R.id.server_settings_delete_server_header;
-        TextView textView = (TextView) viewInflate.findViewById(R.id.server_settings_delete_server_header);
+        View viewInflate = getLayoutInflater().inflate(C5419R.layout.widget_auth_mfa_backup_codes, (ViewGroup) null, false);
+        int i = C5419R.id.server_settings_delete_server_header;
+        TextView textView = (TextView) viewInflate.findViewById(C5419R.id.server_settings_delete_server_header);
         if (textView != null) {
-            i = R.id.widget_auth_mfa_backup_codes_cancel;
-            MaterialButton materialButton = (MaterialButton) viewInflate.findViewById(R.id.widget_auth_mfa_backup_codes_cancel);
+            i = C5419R.id.widget_auth_mfa_backup_codes_cancel;
+            MaterialButton materialButton = (MaterialButton) viewInflate.findViewById(C5419R.id.widget_auth_mfa_backup_codes_cancel);
             if (materialButton != null) {
-                i = R.id.widget_auth_mfa_backup_codes_edittext;
-                TextInputLayout textInputLayout = (TextInputLayout) viewInflate.findViewById(R.id.widget_auth_mfa_backup_codes_edittext);
+                i = C5419R.id.widget_auth_mfa_backup_codes_edittext;
+                TextInputLayout textInputLayout = (TextInputLayout) viewInflate.findViewById(C5419R.id.widget_auth_mfa_backup_codes_edittext);
                 if (textInputLayout != null) {
-                    i = R.id.widget_auth_mfa_backup_codes_send;
-                    MaterialButton materialButton2 = (MaterialButton) viewInflate.findViewById(R.id.widget_auth_mfa_backup_codes_send);
+                    i = C5419R.id.widget_auth_mfa_backup_codes_send;
+                    MaterialButton materialButton2 = (MaterialButton) viewInflate.findViewById(C5419R.id.widget_auth_mfa_backup_codes_send);
                     if (materialButton2 != null) {
                         LinearLayout linearLayout = (LinearLayout) viewInflate;
                         final WidgetAuthMfaBackupCodesBinding widgetAuthMfaBackupCodesBinding = new WidgetAuthMfaBackupCodesBinding(linearLayout, textView, materialButton, textInputLayout, materialButton2);
-                        Intrinsics3.checkNotNullExpressionValue(widgetAuthMfaBackupCodesBinding, "WidgetAuthMfaBackupCodes…outInflater, null, false)");
-                        Intrinsics3.checkNotNullExpressionValue(linearLayout, "binding.root");
+                        C12238m.checkNotNullExpressionValue(widgetAuthMfaBackupCodesBinding, "WidgetAuthMfaBackupCodes…outInflater, null, false)");
+                        C12238m.checkNotNullExpressionValue(linearLayout, "binding.root");
                         final AlertDialog alertDialogShow = new AlertDialog.Builder(linearLayout.getContext()).setView(linearLayout).show();
                         materialButton2.setOnClickListener(new View.OnClickListener() { // from class: com.discord.widgets.auth.WidgetAuthMfa.showBackupCodesDialog.1
                             @Override // android.view.View.OnClickListener
                             public final void onClick(View view) {
                                 WidgetAuthMfa widgetAuthMfa = WidgetAuthMfa.this;
                                 AlertDialog alertDialog = alertDialogShow;
-                                Intrinsics3.checkNotNullExpressionValue(alertDialog, "dialog");
-                                TextInputLayout textInputLayout2 = widgetAuthMfaBackupCodesBinding.c;
-                                Intrinsics3.checkNotNullExpressionValue(textInputLayout2, "binding.widgetAuthMfaBackupCodesEdittext");
+                                C12238m.checkNotNullExpressionValue(alertDialog, "dialog");
+                                TextInputLayout textInputLayout2 = widgetAuthMfaBackupCodesBinding.f15690c;
+                                C12238m.checkNotNullExpressionValue(textInputLayout2, "binding.widgetAuthMfaBackupCodesEdittext");
                                 widgetAuthMfa.evaluateBackupCode(alertDialog, ViewExtensions.getTextOrEmpty(textInputLayout2));
                             }
                         });
@@ -294,22 +294,22 @@ public final class WidgetAuthMfa extends AppFragment {
 
     @MainThread
     private final void showInfoDialog() {
-        View viewInflate = getLayoutInflater().inflate(R.layout.widget_auth_mfa_info, (ViewGroup) null, false);
-        int i = R.id.server_settings_delete_server_header;
-        TextView textView = (TextView) viewInflate.findViewById(R.id.server_settings_delete_server_header);
+        View viewInflate = getLayoutInflater().inflate(C5419R.layout.widget_auth_mfa_info, (ViewGroup) null, false);
+        int i = C5419R.id.server_settings_delete_server_header;
+        TextView textView = (TextView) viewInflate.findViewById(C5419R.id.server_settings_delete_server_header);
         if (textView != null) {
-            i = R.id.widget_auth_mfa_info_okay;
-            MaterialButton materialButton = (MaterialButton) viewInflate.findViewById(R.id.widget_auth_mfa_info_okay);
+            i = C5419R.id.widget_auth_mfa_info_okay;
+            MaterialButton materialButton = (MaterialButton) viewInflate.findViewById(C5419R.id.widget_auth_mfa_info_okay);
             if (materialButton != null) {
-                i = R.id.widget_auth_mfa_info_text;
-                LinkifiedTextView linkifiedTextView = (LinkifiedTextView) viewInflate.findViewById(R.id.widget_auth_mfa_info_text);
+                i = C5419R.id.widget_auth_mfa_info_text;
+                LinkifiedTextView linkifiedTextView = (LinkifiedTextView) viewInflate.findViewById(C5419R.id.widget_auth_mfa_info_text);
                 if (linkifiedTextView != null) {
                     LinearLayout linearLayout = (LinearLayout) viewInflate;
-                    Intrinsics3.checkNotNullExpressionValue(new WidgetAuthMfaInfoBinding(linearLayout, textView, materialButton, linkifiedTextView), "WidgetAuthMfaInfoBinding…outInflater, null, false)");
-                    Intrinsics3.checkNotNullExpressionValue(linearLayout, "binding.root");
+                    C12238m.checkNotNullExpressionValue(new C1014n4(linearLayout, textView, materialButton, linkifiedTextView), "WidgetAuthMfaInfoBinding…outInflater, null, false)");
+                    C12238m.checkNotNullExpressionValue(linearLayout, "binding.root");
                     final AlertDialog alertDialogShow = new AlertDialog.Builder(linearLayout.getContext()).setView(linearLayout).show();
-                    Intrinsics3.checkNotNullExpressionValue(linkifiedTextView, "binding.widgetAuthMfaInfoText");
-                    FormatUtils.m(linkifiedTextView, R.string.two_fa_download_app_body, new Object[]{AuthUtils.URL_AUTHY, AuthUtils.URL_GOOGLE_AUTHENTICATOR}, (4 & 4) != 0 ? FormatUtils.g.j : null);
+                    C12238m.checkNotNullExpressionValue(linkifiedTextView, "binding.widgetAuthMfaInfoText");
+                    C1107b.m221m(linkifiedTextView, C5419R.string.two_fa_download_app_body, new Object[]{AuthUtils.URL_AUTHY, AuthUtils.URL_GOOGLE_AUTHENTICATOR}, (4 & 4) != 0 ? C1107b.g.f1495j : null);
                     materialButton.setOnClickListener(new View.OnClickListener() { // from class: com.discord.widgets.auth.WidgetAuthMfa.showInfoDialog.1
                         @Override // android.view.View.OnClickListener
                         public final void onClick(View view) {
@@ -327,7 +327,7 @@ public final class WidgetAuthMfa extends AppFragment {
         ClipData primaryClip;
         Context context = getContext();
         if (context != null) {
-            Intrinsics3.checkNotNullExpressionValue(context, "context ?: return");
+            C12238m.checkNotNullExpressionValue(context, "context ?: return");
             Object systemService = context.getSystemService("clipboard");
             if (!(systemService instanceof ClipboardManager)) {
                 systemService = null;
@@ -336,18 +336,18 @@ public final class WidgetAuthMfa extends AppFragment {
             if (clipboardManager == null || (primaryClip = clipboardManager.getPrimaryClip()) == null) {
                 return;
             }
-            Intrinsics3.checkNotNullExpressionValue(primaryClip, "clipboard.primaryClip ?: return");
+            C12238m.checkNotNullExpressionValue(primaryClip, "clipboard.primaryClip ?: return");
             if (primaryClip.getItemCount() >= 1) {
                 CharSequence charSequenceCoerceToText = primaryClip.getItemAt(0).coerceToText(context);
                 if (charSequenceCoerceToText.length() == 6 && TextUtils.isDigitsOnly(charSequenceCoerceToText)) {
-                    getBinding().f2234b.setOnCodeEntered(AnonymousClass1.INSTANCE);
-                    CodeVerificationView codeVerificationView = getBinding().f2234b;
-                    Intrinsics3.checkNotNullExpressionValue(charSequenceCoerceToText, "clipboardText");
+                    getBinding().f15693b.setOnCodeEntered(C72041.INSTANCE);
+                    CodeVerificationView codeVerificationView = getBinding().f15693b;
+                    C12238m.checkNotNullExpressionValue(charSequenceCoerceToText, "clipboardText");
                     codeVerificationView.setCode(charSequenceCoerceToText);
-                    getBinding().f2234b.setOnCodeEntered(new AnonymousClass2(this));
-                    Observable<Long> observableD0 = Observable.d0(500L, TimeUnit.MILLISECONDS);
-                    Intrinsics3.checkNotNullExpressionValue(observableD0, "Observable\n            .…L, TimeUnit.MILLISECONDS)");
-                    ObservableExtensionsKt.appSubscribe(ObservableExtensionsKt.ui$default(observableD0, this, null, 2, null), (Class<?>) WidgetAuthMfa.class, (58 & 2) != 0 ? null : null, (Function1<? super Subscription, Unit>) ((58 & 4) != 0 ? null : null), (Function1<? super Error, Unit>) ((58 & 8) != 0 ? null : null), (Function0<Unit>) ((58 & 16) != 0 ? ObservableExtensionsKt.AnonymousClass1.INSTANCE : null), (Function0<Unit>) ((58 & 32) != 0 ? ObservableExtensionsKt.AnonymousClass2.INSTANCE : null), new AnonymousClass3());
+                    getBinding().f15693b.setOnCodeEntered(new C72052(this));
+                    Observable<Long> observableM11068d0 = Observable.m11068d0(500L, TimeUnit.MILLISECONDS);
+                    C12238m.checkNotNullExpressionValue(observableM11068d0, "Observable\n            .…L, TimeUnit.MILLISECONDS)");
+                    ObservableExtensionsKt.appSubscribe(ObservableExtensionsKt.ui$default(observableM11068d0, this, null, 2, null), (Class<?>) WidgetAuthMfa.class, (58 & 2) != 0 ? null : null, (Function1<? super Subscription, Unit>) ((58 & 4) != 0 ? null : null), (Function1<? super Error, Unit>) ((58 & 8) != 0 ? null : null), (Function0<Unit>) ((58 & 16) != 0 ? ObservableExtensionsKt.C68791.INSTANCE : null), (Function0<Unit>) ((58 & 32) != 0 ? ObservableExtensionsKt.C68802.INSTANCE : null), new C72063());
                 }
             }
         }
@@ -355,8 +355,8 @@ public final class WidgetAuthMfa extends AppFragment {
 
     @Override // androidx.fragment.app.Fragment
     public boolean onContextItemSelected(MenuItem item) {
-        Intrinsics3.checkNotNullParameter(item, "item");
-        if (item.getItemId() != R.id.menu_code_verification_paste) {
+        C12238m.checkNotNullParameter(item, "item");
+        if (item.getItemId() != C5419R.id.menu_code_verification_paste) {
             return super.onContextItemSelected(item);
         }
         tryPasteCodeFromClipboard();
@@ -365,10 +365,10 @@ public final class WidgetAuthMfa extends AppFragment {
 
     @Override // androidx.fragment.app.Fragment, android.view.View.OnCreateContextMenuListener
     public void onCreateContextMenu(ContextMenu menu, View v, ContextMenu.ContextMenuInfo menuInfo) {
-        Intrinsics3.checkNotNullParameter(menu, "menu");
-        Intrinsics3.checkNotNullParameter(v, "v");
+        C12238m.checkNotNullParameter(menu, "menu");
+        C12238m.checkNotNullParameter(v, "v");
         super.onCreateContextMenu(menu, v, menuInfo);
-        new MenuInflater(requireContext()).inflate(R.menu.menu_code_verification, menu);
+        new MenuInflater(requireContext()).inflate(C5419R.menu.menu_code_verification, menu);
     }
 
     @Override // com.discord.app.AppFragment, androidx.fragment.app.Fragment
@@ -378,25 +378,25 @@ public final class WidgetAuthMfa extends AppFragment {
             this.ignoreAutopaste = false;
             return;
         }
-        Observable<Long> observableD0 = Observable.d0(250L, TimeUnit.MILLISECONDS);
-        Intrinsics3.checkNotNullExpressionValue(observableD0, "Observable\n          .ti…L, TimeUnit.MILLISECONDS)");
-        ObservableExtensionsKt.appSubscribe(ObservableExtensionsKt.ui$default(observableD0, this, null, 2, null), (Class<?>) WidgetAuthMfa.class, (58 & 2) != 0 ? null : null, (Function1<? super Subscription, Unit>) ((58 & 4) != 0 ? null : null), (Function1<? super Error, Unit>) ((58 & 8) != 0 ? null : null), (Function0<Unit>) ((58 & 16) != 0 ? ObservableExtensionsKt.AnonymousClass1.INSTANCE : null), (Function0<Unit>) ((58 & 32) != 0 ? ObservableExtensionsKt.AnonymousClass2.INSTANCE : null), new AnonymousClass1());
+        Observable<Long> observableM11068d0 = Observable.m11068d0(250L, TimeUnit.MILLISECONDS);
+        C12238m.checkNotNullExpressionValue(observableM11068d0, "Observable\n          .ti…L, TimeUnit.MILLISECONDS)");
+        ObservableExtensionsKt.appSubscribe(ObservableExtensionsKt.ui$default(observableM11068d0, this, null, 2, null), (Class<?>) WidgetAuthMfa.class, (58 & 2) != 0 ? null : null, (Function1<? super Subscription, Unit>) ((58 & 4) != 0 ? null : null), (Function1<? super Error, Unit>) ((58 & 8) != 0 ? null : null), (Function0<Unit>) ((58 & 16) != 0 ? ObservableExtensionsKt.C68791.INSTANCE : null), (Function0<Unit>) ((58 & 32) != 0 ? ObservableExtensionsKt.C68802.INSTANCE : null), new C71981());
     }
 
     @Override // com.discord.app.AppFragment
     public void onViewBound(View view) {
         AppActivity appActivity;
-        Intrinsics3.checkNotNullParameter(view, "view");
+        C12238m.checkNotNullParameter(view, "view");
         super.onViewBound(view);
-        AppFragment.setActionBarOptionsMenu$default(this, R.menu.menu_auth_mfa, new Action2<MenuItem, Context>() { // from class: com.discord.widgets.auth.WidgetAuthMfa.onViewBound.1
-            @Override // rx.functions.Action2
+        AppFragment.setActionBarOptionsMenu$default(this, C5419R.menu.menu_auth_mfa, new Action2<MenuItem, Context>() { // from class: com.discord.widgets.auth.WidgetAuthMfa.onViewBound.1
+            @Override // p658rx.functions.Action2
             public final void call(MenuItem menuItem, Context context) {
-                Intrinsics3.checkNotNullExpressionValue(menuItem, "menuItem");
+                C12238m.checkNotNullExpressionValue(menuItem, "menuItem");
                 switch (menuItem.getItemId()) {
-                    case R.id.menu_auth_mfa_backup_codes /* 2131364363 */:
+                    case C5419R.id.menu_auth_mfa_backup_codes /* 2131364363 */:
                         WidgetAuthMfa.this.showBackupCodesDialog();
                         break;
-                    case R.id.menu_auth_mfa_info /* 2131364364 */:
+                    case C5419R.id.menu_auth_mfa_info /* 2131364364 */:
                         WidgetAuthMfa.this.showInfoDialog();
                         break;
                 }
@@ -408,12 +408,12 @@ public final class WidgetAuthMfa extends AppFragment {
         }
         this.ticket = stringExtra;
         if (stringExtra == null) {
-            Intrinsics3.throwUninitializedPropertyAccessException("ticket");
+            C12238m.throwUninitializedPropertyAccessException("ticket");
         }
         if ((stringExtra.length() == 0) && (appActivity = getAppActivity()) != null) {
             appActivity.finish();
         }
-        getBinding().f2234b.setOnCodeEntered(new AnonymousClass2(this));
-        registerForContextMenu(getBinding().f2234b);
+        getBinding().f15693b.setOnCodeEntered(new C72002(this));
+        registerForContextMenu(getBinding().f15693b);
     }
 }

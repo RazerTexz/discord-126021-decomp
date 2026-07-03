@@ -14,10 +14,10 @@ import androidx.annotation.Px;
 import androidx.annotation.RequiresApi;
 import androidx.annotation.RestrictTo;
 import androidx.core.view.ViewCompat;
-import b.d.b.a.outline;
-import com.google.android.material.R;
+import com.google.android.material.C10817R;
 import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
+import p007b.p100d.p104b.p105a.C1643a;
 
 /* JADX INFO: loaded from: classes3.dex */
 @RequiresApi(21)
@@ -33,37 +33,43 @@ public final class SlideDistanceProvider implements VisibilityAnimatorProvider {
     public @interface GravityFlag {
     }
 
-    public static class a extends AnimatorListenerAdapter {
-        public final /* synthetic */ View a;
+    /* JADX INFO: renamed from: com.google.android.material.transition.platform.SlideDistanceProvider$a */
+    public static class C11063a extends AnimatorListenerAdapter {
 
-        /* JADX INFO: renamed from: b, reason: collision with root package name */
-        public final /* synthetic */ float f3107b;
+        /* JADX INFO: renamed from: a */
+        public final /* synthetic */ View f21399a;
 
-        public a(View view, float f) {
-            this.a = view;
-            this.f3107b = f;
+        /* JADX INFO: renamed from: b */
+        public final /* synthetic */ float f21400b;
+
+        public C11063a(View view, float f) {
+            this.f21399a = view;
+            this.f21400b = f;
         }
 
         @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
         public void onAnimationEnd(Animator animator) {
-            this.a.setTranslationX(this.f3107b);
+            this.f21399a.setTranslationX(this.f21400b);
         }
     }
 
-    public static class b extends AnimatorListenerAdapter {
-        public final /* synthetic */ View a;
+    /* JADX INFO: renamed from: com.google.android.material.transition.platform.SlideDistanceProvider$b */
+    public static class C11064b extends AnimatorListenerAdapter {
 
-        /* JADX INFO: renamed from: b, reason: collision with root package name */
-        public final /* synthetic */ float f3108b;
+        /* JADX INFO: renamed from: a */
+        public final /* synthetic */ View f21401a;
 
-        public b(View view, float f) {
-            this.a = view;
-            this.f3108b = f;
+        /* JADX INFO: renamed from: b */
+        public final /* synthetic */ float f21402b;
+
+        public C11064b(View view, float f) {
+            this.f21401a = view;
+            this.f21402b = f;
         }
 
         @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
         public void onAnimationEnd(Animator animator) {
-            this.a.setTranslationY(this.f3108b);
+            this.f21401a.setTranslationY(this.f21402b);
         }
     }
 
@@ -92,7 +98,7 @@ public final class SlideDistanceProvider implements VisibilityAnimatorProvider {
         if (i == 8388613) {
             return createTranslationXAnimator(view2, isRtl(view) ? translationX - i2 : i2 + translationX, translationX, translationX);
         }
-        throw new IllegalArgumentException(outline.q("Invalid slide direction: ", i));
+        throw new IllegalArgumentException(C1643a.m871q("Invalid slide direction: ", i));
     }
 
     private static Animator createTranslationDisappearAnimator(View view, View view2, int i, @Px int i2) {
@@ -116,24 +122,24 @@ public final class SlideDistanceProvider implements VisibilityAnimatorProvider {
         if (i == 8388613) {
             return createTranslationXAnimator(view2, translationX, isRtl(view) ? i2 + translationX : translationX - i2, translationX);
         }
-        throw new IllegalArgumentException(outline.q("Invalid slide direction: ", i));
+        throw new IllegalArgumentException(C1643a.m871q("Invalid slide direction: ", i));
     }
 
     private static Animator createTranslationXAnimator(View view, float f, float f2, float f3) {
         ObjectAnimator objectAnimatorOfPropertyValuesHolder = ObjectAnimator.ofPropertyValuesHolder(view, PropertyValuesHolder.ofFloat((Property<?, Float>) View.TRANSLATION_X, f, f2));
-        objectAnimatorOfPropertyValuesHolder.addListener(new a(view, f3));
+        objectAnimatorOfPropertyValuesHolder.addListener(new C11063a(view, f3));
         return objectAnimatorOfPropertyValuesHolder;
     }
 
     private static Animator createTranslationYAnimator(View view, float f, float f2, float f3) {
         ObjectAnimator objectAnimatorOfPropertyValuesHolder = ObjectAnimator.ofPropertyValuesHolder(view, PropertyValuesHolder.ofFloat((Property<?, Float>) View.TRANSLATION_Y, f, f2));
-        objectAnimatorOfPropertyValuesHolder.addListener(new b(view, f3));
+        objectAnimatorOfPropertyValuesHolder.addListener(new C11064b(view, f3));
         return objectAnimatorOfPropertyValuesHolder;
     }
 
     private int getSlideDistanceOrDefault(Context context) {
         int i = this.slideDistance;
-        return i != -1 ? i : context.getResources().getDimensionPixelSize(R.dimen.mtrl_transition_shared_axis_slide_distance);
+        return i != -1 ? i : context.getResources().getDimensionPixelSize(C10817R.dimen.mtrl_transition_shared_axis_slide_distance);
     }
 
     private static boolean isRtl(View view) {

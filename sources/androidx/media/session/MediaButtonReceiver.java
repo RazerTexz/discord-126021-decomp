@@ -20,16 +20,16 @@ import android.view.KeyEvent;
 import androidx.annotation.RestrictTo;
 import androidx.core.content.ContextCompat;
 import androidx.media.MediaBrowserServiceCompat;
-import b.d.b.a.outline;
 import java.util.List;
 import java.util.concurrent.ConcurrentHashMap;
 import org.objectweb.asm.Opcodes;
+import p007b.p100d.p104b.p105a.C1643a;
 
 /* JADX INFO: loaded from: classes.dex */
 public class MediaButtonReceiver extends BroadcastReceiver {
     private static final String TAG = "MediaButtonReceiver";
 
-    public static class MediaButtonConnectionCallback extends MediaBrowserCompat.c {
+    public static class MediaButtonConnectionCallback extends MediaBrowserCompat.C0006c {
         private final Context mContext;
         private final Intent mIntent;
         private MediaBrowserCompat mMediaBrowser;
@@ -43,27 +43,27 @@ public class MediaButtonReceiver extends BroadcastReceiver {
 
         private void finish() {
             Messenger messenger;
-            MediaBrowserCompat.e eVar = (MediaBrowserCompat.e) this.mMediaBrowser.f14b;
-            MediaBrowserCompat.i iVar = eVar.f;
-            if (iVar != null && (messenger = eVar.g) != null) {
+            MediaBrowserCompat.C0008e c0008e = (MediaBrowserCompat.C0008e) this.mMediaBrowser.f6b;
+            MediaBrowserCompat.C0012i c0012i = c0008e.f17f;
+            if (c0012i != null && (messenger = c0008e.f18g) != null) {
                 try {
-                    iVar.a(7, null, messenger);
+                    c0012i.m12a(7, null, messenger);
                 } catch (RemoteException unused) {
                     Log.i("MediaBrowserCompat", "Remote error unregistering client messenger.");
                 }
             }
-            eVar.f16b.disconnect();
+            c0008e.f13b.disconnect();
             this.mPendingResult.finish();
         }
 
-        @Override // android.support.v4.media.MediaBrowserCompat.c
+        @Override // android.support.v4.media.MediaBrowserCompat.C0006c
         public void onConnected() {
             Context context = this.mContext;
-            MediaBrowserCompat.e eVar = (MediaBrowserCompat.e) this.mMediaBrowser.f14b;
-            if (eVar.h == null) {
-                eVar.h = MediaSessionCompat.Token.a(eVar.f16b.getSessionToken(), null);
+            MediaBrowserCompat.C0008e c0008e = (MediaBrowserCompat.C0008e) this.mMediaBrowser.f6b;
+            if (c0008e.f19h == null) {
+                c0008e.f19h = MediaSessionCompat.Token.m45a(c0008e.f13b.getSessionToken(), null);
             }
-            MediaSessionCompat.Token token = eVar.h;
+            MediaSessionCompat.Token token = c0008e.f19h;
             new ConcurrentHashMap();
             if (token == null) {
                 throw new IllegalArgumentException("sessionToken must not be null");
@@ -73,16 +73,16 @@ public class MediaButtonReceiver extends BroadcastReceiver {
             if (keyEvent == null) {
                 throw new IllegalArgumentException("KeyEvent may not be null");
             }
-            mediaControllerCompat$MediaControllerImplApi21.a.dispatchMediaButtonEvent(keyEvent);
+            mediaControllerCompat$MediaControllerImplApi21.f40a.dispatchMediaButtonEvent(keyEvent);
             finish();
         }
 
-        @Override // android.support.v4.media.MediaBrowserCompat.c
+        @Override // android.support.v4.media.MediaBrowserCompat.C0006c
         public void onConnectionFailed() {
             finish();
         }
 
-        @Override // android.support.v4.media.MediaBrowserCompat.c
+        @Override // android.support.v4.media.MediaBrowserCompat.C0006c
         public void onConnectionSuspended() {
             finish();
         }
@@ -129,9 +129,9 @@ public class MediaButtonReceiver extends BroadcastReceiver {
         if (listQueryIntentServices.isEmpty()) {
             return null;
         }
-        StringBuilder sbY = outline.Y("Expected 1 service that handles ", str, ", found ");
-        sbY.append(listQueryIntentServices.size());
-        throw new IllegalStateException(sbY.toString());
+        StringBuilder sbM837Y = C1643a.m837Y("Expected 1 service that handles ", str, ", found ");
+        sbM837Y.append(listQueryIntentServices.size());
+        throw new IllegalStateException(sbM837Y.toString());
     }
 
     public static KeyEvent handleIntent(MediaSessionCompat mediaSessionCompat, Intent intent) {
@@ -163,7 +163,7 @@ public class MediaButtonReceiver extends BroadcastReceiver {
         MediaBrowserCompat mediaBrowserCompat = new MediaBrowserCompat(applicationContext, serviceComponentByAction2, mediaButtonConnectionCallback, null);
         mediaButtonConnectionCallback.setMediaBrowser(mediaBrowserCompat);
         Log.d("MediaBrowserCompat", "Connecting to a MediaBrowserService.");
-        ((MediaBrowserCompat.e) mediaBrowserCompat.f14b).f16b.connect();
+        ((MediaBrowserCompat.C0008e) mediaBrowserCompat.f6b).f13b.connect();
     }
 
     @SuppressLint({"WrongConstant"})
@@ -198,6 +198,6 @@ public class MediaButtonReceiver extends BroadcastReceiver {
         intent.setComponent(componentName);
         intent.putExtra("android.intent.extra.KEY_EVENT", new KeyEvent(0, i));
         intent.addFlags(268435456);
-        return PendingIntent.getBroadcast(context, i, intent, MediaSessionCompat.a);
+        return PendingIntent.getBroadcast(context, i, intent, MediaSessionCompat.f46a);
     }
 }

@@ -16,21 +16,40 @@ import androidx.annotation.RequiresApi;
 /* JADX INFO: loaded from: classes.dex */
 @SuppressLint({"BanParcelableUsage"})
 public final class MediaDescriptionCompat implements Parcelable {
-    public static final Parcelable.Creator<MediaDescriptionCompat> CREATOR = new a();
-    public final String j;
-    public final CharSequence k;
-    public final CharSequence l;
-    public final CharSequence m;
-    public final Bitmap n;
-    public final Uri o;
-    public final Bundle p;
-    public final Uri q;
-    public MediaDescription r;
+    public static final Parcelable.Creator<MediaDescriptionCompat> CREATOR = new C0015a();
 
-    public class a implements Parcelable.Creator<MediaDescriptionCompat> {
+    /* JADX INFO: renamed from: j */
+    public final String f27j;
+
+    /* JADX INFO: renamed from: k */
+    public final CharSequence f28k;
+
+    /* JADX INFO: renamed from: l */
+    public final CharSequence f29l;
+
+    /* JADX INFO: renamed from: m */
+    public final CharSequence f30m;
+
+    /* JADX INFO: renamed from: n */
+    public final Bitmap f31n;
+
+    /* JADX INFO: renamed from: o */
+    public final Uri f32o;
+
+    /* JADX INFO: renamed from: p */
+    public final Bundle f33p;
+
+    /* JADX INFO: renamed from: q */
+    public final Uri f34q;
+
+    /* JADX INFO: renamed from: r */
+    public MediaDescription f35r;
+
+    /* JADX INFO: renamed from: android.support.v4.media.MediaDescriptionCompat$a */
+    public class C0015a implements Parcelable.Creator<MediaDescriptionCompat> {
         @Override // android.os.Parcelable.Creator
         public MediaDescriptionCompat createFromParcel(Parcel parcel) {
-            return MediaDescriptionCompat.a(MediaDescription.CREATOR.createFromParcel(parcel));
+            return MediaDescriptionCompat.m14a(MediaDescription.CREATOR.createFromParcel(parcel));
         }
 
         @Override // android.os.Parcelable.Creator
@@ -39,153 +58,174 @@ public final class MediaDescriptionCompat implements Parcelable {
         }
     }
 
+    /* JADX INFO: renamed from: android.support.v4.media.MediaDescriptionCompat$b */
     @RequiresApi(21)
-    public static class b {
+    public static class C0016b {
         @DoNotInline
-        public static MediaDescription a(MediaDescription.Builder builder) {
+        /* JADX INFO: renamed from: a */
+        public static MediaDescription m15a(MediaDescription.Builder builder) {
             return builder.build();
         }
 
         @DoNotInline
-        public static MediaDescription.Builder b() {
+        /* JADX INFO: renamed from: b */
+        public static MediaDescription.Builder m16b() {
             return new MediaDescription.Builder();
         }
 
         @Nullable
         @DoNotInline
-        public static CharSequence c(MediaDescription mediaDescription) {
+        /* JADX INFO: renamed from: c */
+        public static CharSequence m17c(MediaDescription mediaDescription) {
             return mediaDescription.getDescription();
         }
 
         @Nullable
         @DoNotInline
-        public static Bundle d(MediaDescription mediaDescription) {
+        /* JADX INFO: renamed from: d */
+        public static Bundle m18d(MediaDescription mediaDescription) {
             return mediaDescription.getExtras();
         }
 
         @Nullable
         @DoNotInline
-        public static Bitmap e(MediaDescription mediaDescription) {
+        /* JADX INFO: renamed from: e */
+        public static Bitmap m19e(MediaDescription mediaDescription) {
             return mediaDescription.getIconBitmap();
         }
 
         @Nullable
         @DoNotInline
-        public static Uri f(MediaDescription mediaDescription) {
+        /* JADX INFO: renamed from: f */
+        public static Uri m20f(MediaDescription mediaDescription) {
             return mediaDescription.getIconUri();
         }
 
         @Nullable
         @DoNotInline
-        public static String g(MediaDescription mediaDescription) {
+        /* JADX INFO: renamed from: g */
+        public static String m21g(MediaDescription mediaDescription) {
             return mediaDescription.getMediaId();
         }
 
         @Nullable
         @DoNotInline
-        public static CharSequence h(MediaDescription mediaDescription) {
+        /* JADX INFO: renamed from: h */
+        public static CharSequence m22h(MediaDescription mediaDescription) {
             return mediaDescription.getSubtitle();
         }
 
         @Nullable
         @DoNotInline
-        public static CharSequence i(MediaDescription mediaDescription) {
+        /* JADX INFO: renamed from: i */
+        public static CharSequence m23i(MediaDescription mediaDescription) {
             return mediaDescription.getTitle();
         }
 
         @DoNotInline
-        public static void j(MediaDescription.Builder builder, @Nullable CharSequence charSequence) {
+        /* JADX INFO: renamed from: j */
+        public static void m24j(MediaDescription.Builder builder, @Nullable CharSequence charSequence) {
             builder.setDescription(charSequence);
         }
 
         @DoNotInline
-        public static void k(MediaDescription.Builder builder, @Nullable Bundle bundle) {
+        /* JADX INFO: renamed from: k */
+        public static void m25k(MediaDescription.Builder builder, @Nullable Bundle bundle) {
             builder.setExtras(bundle);
         }
 
         @DoNotInline
-        public static void l(MediaDescription.Builder builder, @Nullable Bitmap bitmap) {
+        /* JADX INFO: renamed from: l */
+        public static void m26l(MediaDescription.Builder builder, @Nullable Bitmap bitmap) {
             builder.setIconBitmap(bitmap);
         }
 
         @DoNotInline
-        public static void m(MediaDescription.Builder builder, @Nullable Uri uri) {
+        /* JADX INFO: renamed from: m */
+        public static void m27m(MediaDescription.Builder builder, @Nullable Uri uri) {
             builder.setIconUri(uri);
         }
 
         @DoNotInline
-        public static void n(MediaDescription.Builder builder, @Nullable String str) {
+        /* JADX INFO: renamed from: n */
+        public static void m28n(MediaDescription.Builder builder, @Nullable String str) {
             builder.setMediaId(str);
         }
 
         @DoNotInline
-        public static void o(MediaDescription.Builder builder, @Nullable CharSequence charSequence) {
+        /* JADX INFO: renamed from: o */
+        public static void m29o(MediaDescription.Builder builder, @Nullable CharSequence charSequence) {
             builder.setSubtitle(charSequence);
         }
 
         @DoNotInline
-        public static void p(MediaDescription.Builder builder, @Nullable CharSequence charSequence) {
+        /* JADX INFO: renamed from: p */
+        public static void m30p(MediaDescription.Builder builder, @Nullable CharSequence charSequence) {
             builder.setTitle(charSequence);
         }
     }
 
+    /* JADX INFO: renamed from: android.support.v4.media.MediaDescriptionCompat$c */
     @RequiresApi(23)
-    public static class c {
+    public static class C0017c {
         @Nullable
         @DoNotInline
-        public static Uri a(MediaDescription mediaDescription) {
+        /* JADX INFO: renamed from: a */
+        public static Uri m31a(MediaDescription mediaDescription) {
             return mediaDescription.getMediaUri();
         }
 
         @DoNotInline
-        public static void b(MediaDescription.Builder builder, @Nullable Uri uri) {
+        /* JADX INFO: renamed from: b */
+        public static void m32b(MediaDescription.Builder builder, @Nullable Uri uri) {
             builder.setMediaUri(uri);
         }
     }
 
     public MediaDescriptionCompat(String str, CharSequence charSequence, CharSequence charSequence2, CharSequence charSequence3, Bitmap bitmap, Uri uri, Bundle bundle, Uri uri2) {
-        this.j = str;
-        this.k = charSequence;
-        this.l = charSequence2;
-        this.m = charSequence3;
-        this.n = bitmap;
-        this.o = uri;
-        this.p = bundle;
-        this.q = uri2;
+        this.f27j = str;
+        this.f28k = charSequence;
+        this.f29l = charSequence2;
+        this.f30m = charSequence3;
+        this.f31n = bitmap;
+        this.f32o = uri;
+        this.f33p = bundle;
+        this.f34q = uri2;
     }
 
-    public static MediaDescriptionCompat a(Object obj) {
+    /* JADX INFO: renamed from: a */
+    public static MediaDescriptionCompat m14a(Object obj) {
         Bundle bundle;
         if (obj == null) {
             return null;
         }
         int i = Build.VERSION.SDK_INT;
         MediaDescription mediaDescription = (MediaDescription) obj;
-        String strG = b.g(mediaDescription);
-        CharSequence charSequenceI = b.i(mediaDescription);
-        CharSequence charSequenceH = b.h(mediaDescription);
-        CharSequence charSequenceC = b.c(mediaDescription);
-        Bitmap bitmapE = b.e(mediaDescription);
-        Uri uriF = b.f(mediaDescription);
-        Bundle bundleD = b.d(mediaDescription);
-        if (bundleD != null) {
-            bundleD = MediaSessionCompat.b(bundleD);
+        String strM21g = C0016b.m21g(mediaDescription);
+        CharSequence charSequenceM23i = C0016b.m23i(mediaDescription);
+        CharSequence charSequenceM22h = C0016b.m22h(mediaDescription);
+        CharSequence charSequenceM17c = C0016b.m17c(mediaDescription);
+        Bitmap bitmapM19e = C0016b.m19e(mediaDescription);
+        Uri uriM20f = C0016b.m20f(mediaDescription);
+        Bundle bundleM18d = C0016b.m18d(mediaDescription);
+        if (bundleM18d != null) {
+            bundleM18d = MediaSessionCompat.m41b(bundleM18d);
         }
-        Uri uriA = bundleD != null ? (Uri) bundleD.getParcelable("android.support.v4.media.description.MEDIA_URI") : null;
-        if (uriA == null) {
-            bundle = bundleD;
-        } else if (bundleD.containsKey("android.support.v4.media.description.NULL_BUNDLE_FLAG") && bundleD.size() == 2) {
+        Uri uriM31a = bundleM18d != null ? (Uri) bundleM18d.getParcelable("android.support.v4.media.description.MEDIA_URI") : null;
+        if (uriM31a == null) {
+            bundle = bundleM18d;
+        } else if (bundleM18d.containsKey("android.support.v4.media.description.NULL_BUNDLE_FLAG") && bundleM18d.size() == 2) {
             bundle = null;
         } else {
-            bundleD.remove("android.support.v4.media.description.MEDIA_URI");
-            bundleD.remove("android.support.v4.media.description.NULL_BUNDLE_FLAG");
-            bundle = bundleD;
+            bundleM18d.remove("android.support.v4.media.description.MEDIA_URI");
+            bundleM18d.remove("android.support.v4.media.description.NULL_BUNDLE_FLAG");
+            bundle = bundleM18d;
         }
-        if (uriA == null) {
-            uriA = i >= 23 ? c.a(mediaDescription) : null;
+        if (uriM31a == null) {
+            uriM31a = i >= 23 ? C0017c.m31a(mediaDescription) : null;
         }
-        MediaDescriptionCompat mediaDescriptionCompat = new MediaDescriptionCompat(strG, charSequenceI, charSequenceH, charSequenceC, bitmapE, uriF, bundle, uriA);
-        mediaDescriptionCompat.r = mediaDescription;
+        MediaDescriptionCompat mediaDescriptionCompat = new MediaDescriptionCompat(strM21g, charSequenceM23i, charSequenceM22h, charSequenceM17c, bitmapM19e, uriM20f, bundle, uriM31a);
+        mediaDescriptionCompat.f35r = mediaDescription;
         return mediaDescriptionCompat;
     }
 
@@ -195,40 +235,40 @@ public final class MediaDescriptionCompat implements Parcelable {
     }
 
     public String toString() {
-        return ((Object) this.k) + ", " + ((Object) this.l) + ", " + ((Object) this.m);
+        return ((Object) this.f28k) + ", " + ((Object) this.f29l) + ", " + ((Object) this.f30m);
     }
 
     @Override // android.os.Parcelable
     public void writeToParcel(Parcel parcel, int i) {
         Bundle bundle;
         int i2 = Build.VERSION.SDK_INT;
-        MediaDescription mediaDescriptionA = this.r;
-        if (mediaDescriptionA == null) {
-            MediaDescription.Builder builderB = b.b();
-            b.n(builderB, this.j);
-            b.p(builderB, this.k);
-            b.o(builderB, this.l);
-            b.j(builderB, this.m);
-            b.l(builderB, this.n);
-            b.m(builderB, this.o);
-            if (i2 >= 23 || this.q == null) {
-                b.k(builderB, this.p);
+        MediaDescription mediaDescriptionM15a = this.f35r;
+        if (mediaDescriptionM15a == null) {
+            MediaDescription.Builder builderM16b = C0016b.m16b();
+            C0016b.m28n(builderM16b, this.f27j);
+            C0016b.m30p(builderM16b, this.f28k);
+            C0016b.m29o(builderM16b, this.f29l);
+            C0016b.m24j(builderM16b, this.f30m);
+            C0016b.m26l(builderM16b, this.f31n);
+            C0016b.m27m(builderM16b, this.f32o);
+            if (i2 >= 23 || this.f34q == null) {
+                C0016b.m25k(builderM16b, this.f33p);
             } else {
-                if (this.p == null) {
+                if (this.f33p == null) {
                     bundle = new Bundle();
                     bundle.putBoolean("android.support.v4.media.description.NULL_BUNDLE_FLAG", true);
                 } else {
-                    bundle = new Bundle(this.p);
+                    bundle = new Bundle(this.f33p);
                 }
-                bundle.putParcelable("android.support.v4.media.description.MEDIA_URI", this.q);
-                b.k(builderB, bundle);
+                bundle.putParcelable("android.support.v4.media.description.MEDIA_URI", this.f34q);
+                C0016b.m25k(builderM16b, bundle);
             }
             if (i2 >= 23) {
-                c.b(builderB, this.q);
+                C0017c.m32b(builderM16b, this.f34q);
             }
-            mediaDescriptionA = b.a(builderB);
-            this.r = mediaDescriptionA;
+            mediaDescriptionM15a = C0016b.m15a(builderM16b);
+            this.f35r = mediaDescriptionM15a;
         }
-        mediaDescriptionA.writeToParcel(parcel, i);
+        mediaDescriptionM15a.writeToParcel(parcel, i);
     }
 }

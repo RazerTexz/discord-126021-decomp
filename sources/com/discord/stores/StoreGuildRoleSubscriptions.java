@@ -1,6 +1,5 @@
 package com.discord.stores;
 
-import b.d.b.a.outline;
 import com.discord.api.guildrolesubscription.GuildRoleSubscriptionFreeTrialIntervalTypes;
 import com.discord.api.guildrolesubscription.GuildRoleSubscriptionGroupListing;
 import com.discord.api.guildrolesubscription.GuildRoleSubscriptionTierFreeTrial;
@@ -8,33 +7,34 @@ import com.discord.api.guildrolesubscription.GuildRoleSubscriptionTierListing;
 import com.discord.api.guildrolesubscription.SubscriptionTrialInterval;
 import com.discord.api.premium.PriceTierType;
 import com.discord.utilities.error.Error;
+import com.discord.utilities.p501rx.ObservableExtensionsKt;
 import com.discord.utilities.rest.RestAPI;
-import com.discord.utilities.rx.ObservableExtensionsKt;
 import com.discord.widgets.guild_role_subscriptions.GuildRoleSubscriptionsFeatureFlag;
-import d0.d0._Ranges;
-import d0.t.Collections2;
-import d0.t.Iterables2;
-import d0.t.Maps6;
-import d0.t.MapsJVM;
-import d0.t._Collections;
-import d0.z.d.Intrinsics3;
-import d0.z.d.Lambda;
-import j0.k.Func1;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
-import kotlin.Tuples2;
+import kotlin.Pair;
 import kotlin.Unit;
 import kotlin.jvm.functions.Function0;
 import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import org.objectweb.asm.Opcodes;
-import rx.Observable;
-import rx.Subscription;
-import rx.functions.Func2;
+import p007b.p100d.p104b.p105a.C1643a;
+import p507d0.p512d0.C11226f;
+import p507d0.p580t.C12134g0;
+import p507d0.p580t.C12136h0;
+import p507d0.p580t.C12147n;
+import p507d0.p580t.C12149o;
+import p507d0.p580t.C12163u;
+import p507d0.p592z.p594d.AbstractC12240o;
+import p507d0.p592z.p594d.C12238m;
+import p637j0.p641k.InterfaceC12589b;
+import p658rx.Observable;
+import p658rx.Subscription;
+import p658rx.functions.Func2;
 
 /* JADX INFO: compiled from: StoreGuildRoleSubscriptions.kt */
 /* JADX INFO: loaded from: classes2.dex */
@@ -107,7 +107,7 @@ public final class StoreGuildRoleSubscriptions extends StoreV2 {
 
             public boolean equals(Object other) {
                 if (this != other) {
-                    return (other instanceof Loaded) && Intrinsics3.areEqual(this.freeTrials, ((Loaded) other).freeTrials);
+                    return (other instanceof Loaded) && C12238m.areEqual(this.freeTrials, ((Loaded) other).freeTrials);
                 }
                 return true;
             }
@@ -125,7 +125,7 @@ public final class StoreGuildRoleSubscriptions extends StoreV2 {
             }
 
             public String toString() {
-                return outline.M(outline.U("Loaded(freeTrials="), this.freeTrials, ")");
+                return C1643a.m825M(C1643a.m833U("Loaded(freeTrials="), this.freeTrials, ")");
             }
 
             public Loaded(Map<Long, GuildRoleSubscriptionTierFreeTrial> map) {
@@ -213,7 +213,7 @@ public final class StoreGuildRoleSubscriptions extends StoreV2 {
 
             public boolean equals(Object other) {
                 if (this != other) {
-                    return (other instanceof Loaded) && Intrinsics3.areEqual(this.guildRoleSubscriptionGroupListing, ((Loaded) other).guildRoleSubscriptionGroupListing);
+                    return (other instanceof Loaded) && C12238m.areEqual(this.guildRoleSubscriptionGroupListing, ((Loaded) other).guildRoleSubscriptionGroupListing);
                 }
                 return true;
             }
@@ -231,10 +231,10 @@ public final class StoreGuildRoleSubscriptions extends StoreV2 {
             }
 
             public String toString() {
-                StringBuilder sbU = outline.U("Loaded(guildRoleSubscriptionGroupListing=");
-                sbU.append(this.guildRoleSubscriptionGroupListing);
-                sbU.append(")");
-                return sbU.toString();
+                StringBuilder sbM833U = C1643a.m833U("Loaded(guildRoleSubscriptionGroupListing=");
+                sbM833U.append(this.guildRoleSubscriptionGroupListing);
+                sbM833U.append(")");
+                return sbM833U.toString();
             }
         }
 
@@ -288,7 +288,7 @@ public final class StoreGuildRoleSubscriptions extends StoreV2 {
             /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
             public Loaded(List<Integer> list) {
                 super(null);
-                Intrinsics3.checkNotNullParameter(list, "priceTiers");
+                C12238m.checkNotNullParameter(list, "priceTiers");
                 this.priceTiers = list;
             }
 
@@ -305,13 +305,13 @@ public final class StoreGuildRoleSubscriptions extends StoreV2 {
             }
 
             public final Loaded copy(List<Integer> priceTiers) {
-                Intrinsics3.checkNotNullParameter(priceTiers, "priceTiers");
+                C12238m.checkNotNullParameter(priceTiers, "priceTiers");
                 return new Loaded(priceTiers);
             }
 
             public boolean equals(Object other) {
                 if (this != other) {
-                    return (other instanceof Loaded) && Intrinsics3.areEqual(this.priceTiers, ((Loaded) other).priceTiers);
+                    return (other instanceof Loaded) && C12238m.areEqual(this.priceTiers, ((Loaded) other).priceTiers);
                 }
                 return true;
             }
@@ -329,7 +329,7 @@ public final class StoreGuildRoleSubscriptions extends StoreV2 {
             }
 
             public String toString() {
-                return outline.L(outline.U("Loaded(priceTiers="), this.priceTiers, ")");
+                return C1643a.m824L(C1643a.m833U("Loaded(priceTiers="), this.priceTiers, ")");
             }
         }
 
@@ -359,13 +359,13 @@ public final class StoreGuildRoleSubscriptions extends StoreV2 {
         }
     }
 
-    /* JADX INFO: renamed from: com.discord.stores.StoreGuildRoleSubscriptions$fetchGuildRoleSubscriptionGroup$1, reason: invalid class name */
+    /* JADX INFO: renamed from: com.discord.stores.StoreGuildRoleSubscriptions$fetchGuildRoleSubscriptionGroup$1 */
     /* JADX INFO: compiled from: StoreGuildRoleSubscriptions.kt */
-    public static final class AnonymousClass1 extends Lambda implements Function0<Unit> {
+    public static final class C60441 extends AbstractC12240o implements Function0<Unit> {
         public final /* synthetic */ long $guildId;
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-        public AnonymousClass1(long j) {
+        public C60441(long j) {
             super(0);
             this.$guildId = j;
         }
@@ -373,7 +373,7 @@ public final class StoreGuildRoleSubscriptions extends StoreV2 {
         @Override // kotlin.jvm.functions.Function0
         public /* bridge */ /* synthetic */ Unit invoke() {
             invoke2();
-            return Unit.a;
+            return Unit.f27425a;
         }
 
         /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
@@ -383,14 +383,14 @@ public final class StoreGuildRoleSubscriptions extends StoreV2 {
         }
     }
 
-    /* JADX INFO: renamed from: com.discord.stores.StoreGuildRoleSubscriptions$fetchGuildRoleSubscriptionGroup$2, reason: invalid class name */
+    /* JADX INFO: renamed from: com.discord.stores.StoreGuildRoleSubscriptions$fetchGuildRoleSubscriptionGroup$2 */
     /* JADX INFO: compiled from: StoreGuildRoleSubscriptions.kt */
-    public static final class AnonymousClass2 extends Lambda implements Function1<Tuples2<? extends GuildRoleSubscriptionGroupListing, ? extends List<? extends GuildRoleSubscriptionTierFreeTrial>>, Unit> {
+    public static final class C60452 extends AbstractC12240o implements Function1<Pair<? extends GuildRoleSubscriptionGroupListing, ? extends List<? extends GuildRoleSubscriptionTierFreeTrial>>, Unit> {
         public final /* synthetic */ long $guildId;
 
         /* JADX INFO: renamed from: com.discord.stores.StoreGuildRoleSubscriptions$fetchGuildRoleSubscriptionGroup$2$1, reason: invalid class name */
         /* JADX INFO: compiled from: StoreGuildRoleSubscriptions.kt */
-        public static final class AnonymousClass1 extends Lambda implements Function0<Unit> {
+        public static final class AnonymousClass1 extends AbstractC12240o implements Function0<Unit> {
             public final /* synthetic */ GuildRoleSubscriptionGroupListing $guildRoleSubscriptionGroupListing;
             public final /* synthetic */ List $guildRoleSubscriptionTrials;
 
@@ -404,44 +404,44 @@ public final class StoreGuildRoleSubscriptions extends StoreV2 {
             @Override // kotlin.jvm.functions.Function0
             public /* bridge */ /* synthetic */ Unit invoke() {
                 invoke2();
-                return Unit.a;
+                return Unit.f27425a;
             }
 
             /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
             public final void invoke2() {
-                AnonymousClass2 anonymousClass2 = AnonymousClass2.this;
-                StoreGuildRoleSubscriptions.this.handleGuildRoleSubscriptionGroupFetch(anonymousClass2.$guildId, this.$guildRoleSubscriptionGroupListing);
-                AnonymousClass2 anonymousClass3 = AnonymousClass2.this;
-                StoreGuildRoleSubscriptions.this.handleGuildRoleSubscriptionFreeTrialListFetch(anonymousClass3.$guildId, this.$guildRoleSubscriptionTrials);
+                C60452 c60452 = C60452.this;
+                StoreGuildRoleSubscriptions.this.handleGuildRoleSubscriptionGroupFetch(c60452.$guildId, this.$guildRoleSubscriptionGroupListing);
+                C60452 c60453 = C60452.this;
+                StoreGuildRoleSubscriptions.this.handleGuildRoleSubscriptionFreeTrialListFetch(c60453.$guildId, this.$guildRoleSubscriptionTrials);
             }
         }
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-        public AnonymousClass2(long j) {
+        public C60452(long j) {
             super(1);
             this.$guildId = j;
         }
 
         @Override // kotlin.jvm.functions.Function1
-        public /* bridge */ /* synthetic */ Unit invoke(Tuples2<? extends GuildRoleSubscriptionGroupListing, ? extends List<? extends GuildRoleSubscriptionTierFreeTrial>> tuples2) {
-            invoke2((Tuples2<GuildRoleSubscriptionGroupListing, ? extends List<GuildRoleSubscriptionTierFreeTrial>>) tuples2);
-            return Unit.a;
+        public /* bridge */ /* synthetic */ Unit invoke(Pair<? extends GuildRoleSubscriptionGroupListing, ? extends List<? extends GuildRoleSubscriptionTierFreeTrial>> pair) {
+            invoke2((Pair<GuildRoleSubscriptionGroupListing, ? extends List<GuildRoleSubscriptionTierFreeTrial>>) pair);
+            return Unit.f27425a;
         }
 
         /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
-        public final void invoke2(Tuples2<GuildRoleSubscriptionGroupListing, ? extends List<GuildRoleSubscriptionTierFreeTrial>> tuples2) {
-            StoreGuildRoleSubscriptions.this.dispatcher.schedule(new AnonymousClass1(tuples2.component1(), tuples2.component2()));
+        public final void invoke2(Pair<GuildRoleSubscriptionGroupListing, ? extends List<GuildRoleSubscriptionTierFreeTrial>> pair) {
+            StoreGuildRoleSubscriptions.this.dispatcher.schedule(new AnonymousClass1(pair.component1(), pair.component2()));
         }
     }
 
-    /* JADX INFO: renamed from: com.discord.stores.StoreGuildRoleSubscriptions$fetchGuildRoleSubscriptionGroup$3, reason: invalid class name */
+    /* JADX INFO: renamed from: com.discord.stores.StoreGuildRoleSubscriptions$fetchGuildRoleSubscriptionGroup$3 */
     /* JADX INFO: compiled from: StoreGuildRoleSubscriptions.kt */
-    public static final class AnonymousClass3 extends Lambda implements Function1<Error, Unit> {
+    public static final class C60463 extends AbstractC12240o implements Function1<Error, Unit> {
         public final /* synthetic */ long $guildId;
 
         /* JADX INFO: renamed from: com.discord.stores.StoreGuildRoleSubscriptions$fetchGuildRoleSubscriptionGroup$3$1, reason: invalid class name */
         /* JADX INFO: compiled from: StoreGuildRoleSubscriptions.kt */
-        public static final class AnonymousClass1 extends Lambda implements Function0<Unit> {
+        public static final class AnonymousClass1 extends AbstractC12240o implements Function0<Unit> {
             public final /* synthetic */ Error $error;
 
             /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -453,22 +453,22 @@ public final class StoreGuildRoleSubscriptions extends StoreV2 {
             @Override // kotlin.jvm.functions.Function0
             public /* bridge */ /* synthetic */ Unit invoke() {
                 invoke2();
-                return Unit.a;
+                return Unit.f27425a;
             }
 
             /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
             public final void invoke2() {
                 Map map = StoreGuildRoleSubscriptions.this.guildRoleSubscriptionGroups;
-                Long lValueOf = Long.valueOf(AnonymousClass3.this.$guildId);
+                Long lValueOf = Long.valueOf(C60463.this.$guildId);
                 Error.Response response = this.$error.getResponse();
-                Intrinsics3.checkNotNullExpressionValue(response, "error.response");
+                C12238m.checkNotNullExpressionValue(response, "error.response");
                 map.put(lValueOf, new GuildRoleSubscriptionGroupState.Failed(response.getMessage()));
                 StoreGuildRoleSubscriptions.this.markChanged();
             }
         }
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-        public AnonymousClass3(long j) {
+        public C60463(long j) {
             super(1);
             this.$guildId = j;
         }
@@ -476,23 +476,23 @@ public final class StoreGuildRoleSubscriptions extends StoreV2 {
         @Override // kotlin.jvm.functions.Function1
         public /* bridge */ /* synthetic */ Unit invoke(Error error) {
             invoke2(error);
-            return Unit.a;
+            return Unit.f27425a;
         }
 
         /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
         public final void invoke2(Error error) {
-            Intrinsics3.checkNotNullParameter(error, "error");
+            C12238m.checkNotNullParameter(error, "error");
             StoreGuildRoleSubscriptions.this.dispatcher.schedule(new AnonymousClass1(error));
         }
     }
 
-    /* JADX INFO: renamed from: com.discord.stores.StoreGuildRoleSubscriptions$fetchGuildRoleSubscriptionGroupsForGuild$1, reason: invalid class name */
+    /* JADX INFO: renamed from: com.discord.stores.StoreGuildRoleSubscriptions$fetchGuildRoleSubscriptionGroupsForGuild$1 */
     /* JADX INFO: compiled from: StoreGuildRoleSubscriptions.kt */
-    public static final class AnonymousClass1 extends Lambda implements Function0<Unit> {
+    public static final class C60491 extends AbstractC12240o implements Function0<Unit> {
         public final /* synthetic */ long $guildId;
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-        public AnonymousClass1(long j) {
+        public C60491(long j) {
             super(0);
             this.$guildId = j;
         }
@@ -500,7 +500,7 @@ public final class StoreGuildRoleSubscriptions extends StoreV2 {
         @Override // kotlin.jvm.functions.Function0
         public /* bridge */ /* synthetic */ Unit invoke() {
             invoke2();
-            return Unit.a;
+            return Unit.f27425a;
         }
 
         /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
@@ -510,14 +510,14 @@ public final class StoreGuildRoleSubscriptions extends StoreV2 {
         }
     }
 
-    /* JADX INFO: renamed from: com.discord.stores.StoreGuildRoleSubscriptions$fetchGuildRoleSubscriptionGroupsForGuild$2, reason: invalid class name */
+    /* JADX INFO: renamed from: com.discord.stores.StoreGuildRoleSubscriptions$fetchGuildRoleSubscriptionGroupsForGuild$2 */
     /* JADX INFO: compiled from: StoreGuildRoleSubscriptions.kt */
-    public static final class AnonymousClass2 extends Lambda implements Function1<Tuples2<? extends List<? extends GuildRoleSubscriptionGroupListing>, ? extends List<? extends GuildRoleSubscriptionTierFreeTrial>>, Unit> {
+    public static final class C60502 extends AbstractC12240o implements Function1<Pair<? extends List<? extends GuildRoleSubscriptionGroupListing>, ? extends List<? extends GuildRoleSubscriptionTierFreeTrial>>, Unit> {
         public final /* synthetic */ long $guildId;
 
         /* JADX INFO: renamed from: com.discord.stores.StoreGuildRoleSubscriptions$fetchGuildRoleSubscriptionGroupsForGuild$2$1, reason: invalid class name */
         /* JADX INFO: compiled from: StoreGuildRoleSubscriptions.kt */
-        public static final class AnonymousClass1 extends Lambda implements Function0<Unit> {
+        public static final class AnonymousClass1 extends AbstractC12240o implements Function0<Unit> {
             public final /* synthetic */ List $guildRoleSubscriptionFreeTrials;
             public final /* synthetic */ List $guildRoleSubscriptionGroupListings;
 
@@ -531,48 +531,48 @@ public final class StoreGuildRoleSubscriptions extends StoreV2 {
             @Override // kotlin.jvm.functions.Function0
             public /* bridge */ /* synthetic */ Unit invoke() {
                 invoke2();
-                return Unit.a;
+                return Unit.f27425a;
             }
 
             /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
             public final void invoke2() {
-                AnonymousClass2 anonymousClass2 = AnonymousClass2.this;
+                C60502 c60502 = C60502.this;
                 StoreGuildRoleSubscriptions storeGuildRoleSubscriptions = StoreGuildRoleSubscriptions.this;
-                long j = anonymousClass2.$guildId;
+                long j = c60502.$guildId;
                 List list = this.$guildRoleSubscriptionGroupListings;
-                Intrinsics3.checkNotNullExpressionValue(list, "guildRoleSubscriptionGroupListings");
-                storeGuildRoleSubscriptions.handleGuildRoleSubscriptionGroupFetch(j, (GuildRoleSubscriptionGroupListing) _Collections.getOrNull(list, 0));
-                AnonymousClass2 anonymousClass3 = AnonymousClass2.this;
-                StoreGuildRoleSubscriptions.this.handleGuildRoleSubscriptionFreeTrialListFetch(anonymousClass3.$guildId, this.$guildRoleSubscriptionFreeTrials);
+                C12238m.checkNotNullExpressionValue(list, "guildRoleSubscriptionGroupListings");
+                storeGuildRoleSubscriptions.handleGuildRoleSubscriptionGroupFetch(j, (GuildRoleSubscriptionGroupListing) C12163u.getOrNull(list, 0));
+                C60502 c60503 = C60502.this;
+                StoreGuildRoleSubscriptions.this.handleGuildRoleSubscriptionFreeTrialListFetch(c60503.$guildId, this.$guildRoleSubscriptionFreeTrials);
             }
         }
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-        public AnonymousClass2(long j) {
+        public C60502(long j) {
             super(1);
             this.$guildId = j;
         }
 
         @Override // kotlin.jvm.functions.Function1
-        public /* bridge */ /* synthetic */ Unit invoke(Tuples2<? extends List<? extends GuildRoleSubscriptionGroupListing>, ? extends List<? extends GuildRoleSubscriptionTierFreeTrial>> tuples2) {
-            invoke2((Tuples2<? extends List<GuildRoleSubscriptionGroupListing>, ? extends List<GuildRoleSubscriptionTierFreeTrial>>) tuples2);
-            return Unit.a;
+        public /* bridge */ /* synthetic */ Unit invoke(Pair<? extends List<? extends GuildRoleSubscriptionGroupListing>, ? extends List<? extends GuildRoleSubscriptionTierFreeTrial>> pair) {
+            invoke2((Pair<? extends List<GuildRoleSubscriptionGroupListing>, ? extends List<GuildRoleSubscriptionTierFreeTrial>>) pair);
+            return Unit.f27425a;
         }
 
         /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
-        public final void invoke2(Tuples2<? extends List<GuildRoleSubscriptionGroupListing>, ? extends List<GuildRoleSubscriptionTierFreeTrial>> tuples2) {
-            StoreGuildRoleSubscriptions.this.dispatcher.schedule(new AnonymousClass1(tuples2.component1(), tuples2.component2()));
+        public final void invoke2(Pair<? extends List<GuildRoleSubscriptionGroupListing>, ? extends List<GuildRoleSubscriptionTierFreeTrial>> pair) {
+            StoreGuildRoleSubscriptions.this.dispatcher.schedule(new AnonymousClass1(pair.component1(), pair.component2()));
         }
     }
 
-    /* JADX INFO: renamed from: com.discord.stores.StoreGuildRoleSubscriptions$fetchGuildRoleSubscriptionGroupsForGuild$3, reason: invalid class name */
+    /* JADX INFO: renamed from: com.discord.stores.StoreGuildRoleSubscriptions$fetchGuildRoleSubscriptionGroupsForGuild$3 */
     /* JADX INFO: compiled from: StoreGuildRoleSubscriptions.kt */
-    public static final class AnonymousClass3 extends Lambda implements Function1<Error, Unit> {
+    public static final class C60513 extends AbstractC12240o implements Function1<Error, Unit> {
         public final /* synthetic */ long $guildId;
 
         /* JADX INFO: renamed from: com.discord.stores.StoreGuildRoleSubscriptions$fetchGuildRoleSubscriptionGroupsForGuild$3$1, reason: invalid class name */
         /* JADX INFO: compiled from: StoreGuildRoleSubscriptions.kt */
-        public static final class AnonymousClass1 extends Lambda implements Function0<Unit> {
+        public static final class AnonymousClass1 extends AbstractC12240o implements Function0<Unit> {
             public final /* synthetic */ Error $it;
 
             /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -584,22 +584,22 @@ public final class StoreGuildRoleSubscriptions extends StoreV2 {
             @Override // kotlin.jvm.functions.Function0
             public /* bridge */ /* synthetic */ Unit invoke() {
                 invoke2();
-                return Unit.a;
+                return Unit.f27425a;
             }
 
             /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
             public final void invoke2() {
                 Map map = StoreGuildRoleSubscriptions.this.guildRoleSubscriptionGroups;
-                Long lValueOf = Long.valueOf(AnonymousClass3.this.$guildId);
+                Long lValueOf = Long.valueOf(C60513.this.$guildId);
                 Error.Response response = this.$it.getResponse();
-                Intrinsics3.checkNotNullExpressionValue(response, "it.response");
+                C12238m.checkNotNullExpressionValue(response, "it.response");
                 map.put(lValueOf, new GuildRoleSubscriptionGroupState.Failed(response.getMessage()));
                 StoreGuildRoleSubscriptions.this.markChanged();
             }
         }
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-        public AnonymousClass3(long j) {
+        public C60513(long j) {
             super(1);
             this.$guildId = j;
         }
@@ -607,27 +607,27 @@ public final class StoreGuildRoleSubscriptions extends StoreV2 {
         @Override // kotlin.jvm.functions.Function1
         public /* bridge */ /* synthetic */ Unit invoke(Error error) {
             invoke2(error);
-            return Unit.a;
+            return Unit.f27425a;
         }
 
         /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
         public final void invoke2(Error error) {
-            Intrinsics3.checkNotNullParameter(error, "it");
+            C12238m.checkNotNullParameter(error, "it");
             StoreGuildRoleSubscriptions.this.dispatcher.schedule(new AnonymousClass1(error));
         }
     }
 
-    /* JADX INFO: renamed from: com.discord.stores.StoreGuildRoleSubscriptions$fetchPriceTiersIfNonExisting$1, reason: invalid class name */
+    /* JADX INFO: renamed from: com.discord.stores.StoreGuildRoleSubscriptions$fetchPriceTiersIfNonExisting$1 */
     /* JADX INFO: compiled from: StoreGuildRoleSubscriptions.kt */
-    public static final class AnonymousClass1 extends Lambda implements Function0<Unit> {
-        public AnonymousClass1() {
+    public static final class C60541 extends AbstractC12240o implements Function0<Unit> {
+        public C60541() {
             super(0);
         }
 
         @Override // kotlin.jvm.functions.Function0
         public /* bridge */ /* synthetic */ Unit invoke() {
             invoke2();
-            return Unit.a;
+            return Unit.f27425a;
         }
 
         /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
@@ -637,13 +637,13 @@ public final class StoreGuildRoleSubscriptions extends StoreV2 {
         }
     }
 
-    /* JADX INFO: renamed from: com.discord.stores.StoreGuildRoleSubscriptions$fetchPriceTiersIfNonExisting$2, reason: invalid class name */
+    /* JADX INFO: renamed from: com.discord.stores.StoreGuildRoleSubscriptions$fetchPriceTiersIfNonExisting$2 */
     /* JADX INFO: compiled from: StoreGuildRoleSubscriptions.kt */
-    public static final class AnonymousClass2 extends Lambda implements Function1<List<? extends Integer>, Unit> {
+    public static final class C60552 extends AbstractC12240o implements Function1<List<? extends Integer>, Unit> {
 
         /* JADX INFO: renamed from: com.discord.stores.StoreGuildRoleSubscriptions$fetchPriceTiersIfNonExisting$2$1, reason: invalid class name */
         /* JADX INFO: compiled from: StoreGuildRoleSubscriptions.kt */
-        public static final class AnonymousClass1 extends Lambda implements Function0<Unit> {
+        public static final class AnonymousClass1 extends AbstractC12240o implements Function0<Unit> {
             public final /* synthetic */ List $it;
 
             /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -655,7 +655,7 @@ public final class StoreGuildRoleSubscriptions extends StoreV2 {
             @Override // kotlin.jvm.functions.Function0
             public /* bridge */ /* synthetic */ Unit invoke() {
                 invoke2();
-                return Unit.a;
+                return Unit.f27425a;
             }
 
             /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
@@ -665,30 +665,30 @@ public final class StoreGuildRoleSubscriptions extends StoreV2 {
             }
         }
 
-        public AnonymousClass2() {
+        public C60552() {
             super(1);
         }
 
         @Override // kotlin.jvm.functions.Function1
         public /* bridge */ /* synthetic */ Unit invoke(List<? extends Integer> list) {
             invoke2((List<Integer>) list);
-            return Unit.a;
+            return Unit.f27425a;
         }
 
         /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
         public final void invoke2(List<Integer> list) {
-            Intrinsics3.checkNotNullParameter(list, "it");
+            C12238m.checkNotNullParameter(list, "it");
             StoreGuildRoleSubscriptions.this.dispatcher.schedule(new AnonymousClass1(list));
         }
     }
 
-    /* JADX INFO: renamed from: com.discord.stores.StoreGuildRoleSubscriptions$fetchPriceTiersIfNonExisting$3, reason: invalid class name */
+    /* JADX INFO: renamed from: com.discord.stores.StoreGuildRoleSubscriptions$fetchPriceTiersIfNonExisting$3 */
     /* JADX INFO: compiled from: StoreGuildRoleSubscriptions.kt */
-    public static final class AnonymousClass3 extends Lambda implements Function1<Error, Unit> {
+    public static final class C60563 extends AbstractC12240o implements Function1<Error, Unit> {
 
         /* JADX INFO: renamed from: com.discord.stores.StoreGuildRoleSubscriptions$fetchPriceTiersIfNonExisting$3$1, reason: invalid class name */
         /* JADX INFO: compiled from: StoreGuildRoleSubscriptions.kt */
-        public static final class AnonymousClass1 extends Lambda implements Function0<Unit> {
+        public static final class AnonymousClass1 extends AbstractC12240o implements Function0<Unit> {
             public final /* synthetic */ Error $it;
 
             /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -700,44 +700,44 @@ public final class StoreGuildRoleSubscriptions extends StoreV2 {
             @Override // kotlin.jvm.functions.Function0
             public /* bridge */ /* synthetic */ Unit invoke() {
                 invoke2();
-                return Unit.a;
+                return Unit.f27425a;
             }
 
             /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
             public final void invoke2() {
                 StoreGuildRoleSubscriptions storeGuildRoleSubscriptions = StoreGuildRoleSubscriptions.this;
                 Error.Response response = this.$it.getResponse();
-                Intrinsics3.checkNotNullExpressionValue(response, "it.response");
+                C12238m.checkNotNullExpressionValue(response, "it.response");
                 storeGuildRoleSubscriptions.priceTierState = new PriceTierState.Failed(response.getMessage());
                 StoreGuildRoleSubscriptions.this.markChanged();
             }
         }
 
-        public AnonymousClass3() {
+        public C60563() {
             super(1);
         }
 
         @Override // kotlin.jvm.functions.Function1
         public /* bridge */ /* synthetic */ Unit invoke(Error error) {
             invoke2(error);
-            return Unit.a;
+            return Unit.f27425a;
         }
 
         /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
         public final void invoke2(Error error) {
-            Intrinsics3.checkNotNullParameter(error, "it");
+            C12238m.checkNotNullParameter(error, "it");
             StoreGuildRoleSubscriptions.this.dispatcher.schedule(new AnonymousClass1(error));
         }
     }
 
-    /* JADX INFO: renamed from: com.discord.stores.StoreGuildRoleSubscriptions$handleGuildRoleSubscriptionFreeTrialListFetch$1, reason: invalid class name */
+    /* JADX INFO: renamed from: com.discord.stores.StoreGuildRoleSubscriptions$handleGuildRoleSubscriptionFreeTrialListFetch$1 */
     /* JADX INFO: compiled from: StoreGuildRoleSubscriptions.kt */
-    public static final class AnonymousClass1 extends Lambda implements Function0<Unit> {
+    public static final class C60571 extends AbstractC12240o implements Function0<Unit> {
         public final /* synthetic */ long $guildId;
         public final /* synthetic */ List $guildRoleSubscriptionFreeTrialList;
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-        public AnonymousClass1(List list, long j) {
+        public C60571(List list, long j) {
             super(0);
             this.$guildRoleSubscriptionFreeTrialList = list;
             this.$guildId = j;
@@ -746,7 +746,7 @@ public final class StoreGuildRoleSubscriptions extends StoreV2 {
         @Override // kotlin.jvm.functions.Function0
         public /* bridge */ /* synthetic */ Unit invoke() {
             invoke2();
-            return Unit.a;
+            return Unit.f27425a;
         }
 
         /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
@@ -757,23 +757,23 @@ public final class StoreGuildRoleSubscriptions extends StoreV2 {
                 StoreGuildRoleSubscriptions.this.markChanged();
                 return;
             }
-            LinkedHashMap linkedHashMap = new LinkedHashMap(_Ranges.coerceAtLeast(MapsJVM.mapCapacity(Iterables2.collectionSizeOrDefault(list, 10)), 16));
+            LinkedHashMap linkedHashMap = new LinkedHashMap(C11226f.coerceAtLeast(C12134g0.mapCapacity(C12149o.collectionSizeOrDefault(list, 10)), 16));
             for (Object obj : list) {
                 linkedHashMap.put(Long.valueOf(((GuildRoleSubscriptionTierFreeTrial) obj).getId()), obj);
             }
-            StoreGuildRoleSubscriptions.this.guildRoleSubscriptionFreeTrials.put(Long.valueOf(this.$guildId), Maps6.toMutableMap(linkedHashMap));
+            StoreGuildRoleSubscriptions.this.guildRoleSubscriptionFreeTrials.put(Long.valueOf(this.$guildId), C12136h0.toMutableMap(linkedHashMap));
             StoreGuildRoleSubscriptions.this.markChanged();
         }
     }
 
-    /* JADX INFO: renamed from: com.discord.stores.StoreGuildRoleSubscriptions$handleGuildRoleSubscriptionGroupFetch$1, reason: invalid class name */
+    /* JADX INFO: renamed from: com.discord.stores.StoreGuildRoleSubscriptions$handleGuildRoleSubscriptionGroupFetch$1 */
     /* JADX INFO: compiled from: StoreGuildRoleSubscriptions.kt */
-    public static final class AnonymousClass1 extends Lambda implements Function0<Unit> {
+    public static final class C60581 extends AbstractC12240o implements Function0<Unit> {
         public final /* synthetic */ long $guildId;
         public final /* synthetic */ GuildRoleSubscriptionGroupListing $guildRoleSubscriptionGroupListing;
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-        public AnonymousClass1(GuildRoleSubscriptionGroupListing guildRoleSubscriptionGroupListing, long j) {
+        public C60581(GuildRoleSubscriptionGroupListing guildRoleSubscriptionGroupListing, long j) {
             super(0);
             this.$guildRoleSubscriptionGroupListing = guildRoleSubscriptionGroupListing;
             this.$guildId = j;
@@ -782,7 +782,7 @@ public final class StoreGuildRoleSubscriptions extends StoreV2 {
         @Override // kotlin.jvm.functions.Function0
         public /* bridge */ /* synthetic */ Unit invoke() {
             invoke2();
-            return Unit.a;
+            return Unit.f27425a;
         }
 
         /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
@@ -791,18 +791,18 @@ public final class StoreGuildRoleSubscriptions extends StoreV2 {
                 StoreGuildRoleSubscriptions.this.guildRoleSubscriptionGroups.put(Long.valueOf(this.$guildId), new GuildRoleSubscriptionGroupState.Loaded(this.$guildRoleSubscriptionGroupListing));
                 StoreGuildRoleSubscriptions.this.guildRoleSubscriptionTiers.remove(Long.valueOf(this.$guildId));
             } else {
-                StoreGuildRoleSubscriptions.this.guildRoleSubscriptionGroups.put(Long.valueOf(this.$guildId), new GuildRoleSubscriptionGroupState.Loaded(GuildRoleSubscriptionGroupListing.a(this.$guildRoleSubscriptionGroupListing, 0L, 0L, 0L, null, null, null, null, false, Opcodes.ATHROW)));
-                List<Long> listI = this.$guildRoleSubscriptionGroupListing.i();
-                if (listI == null || listI.isEmpty()) {
+                StoreGuildRoleSubscriptions.this.guildRoleSubscriptionGroups.put(Long.valueOf(this.$guildId), new GuildRoleSubscriptionGroupState.Loaded(GuildRoleSubscriptionGroupListing.m7941a(this.$guildRoleSubscriptionGroupListing, 0L, 0L, 0L, null, null, null, null, false, Opcodes.ATHROW)));
+                List<Long> listM7949i = this.$guildRoleSubscriptionGroupListing.m7949i();
+                if (listM7949i == null || listM7949i.isEmpty()) {
                     StoreGuildRoleSubscriptions.this.guildRoleSubscriptionTiers.remove(Long.valueOf(this.$guildId));
                 } else {
                     Map linkedHashMap = (Map) StoreGuildRoleSubscriptions.this.guildRoleSubscriptionTiers.get(Long.valueOf(this.$guildId));
                     if (linkedHashMap == null) {
                         linkedHashMap = new LinkedHashMap();
                     }
-                    List<GuildRoleSubscriptionTierListing> listH = this.$guildRoleSubscriptionGroupListing.h();
-                    if (listH != null) {
-                        for (GuildRoleSubscriptionTierListing guildRoleSubscriptionTierListing : listH) {
+                    List<GuildRoleSubscriptionTierListing> listM7948h = this.$guildRoleSubscriptionGroupListing.m7948h();
+                    if (listM7948h != null) {
+                        for (GuildRoleSubscriptionTierListing guildRoleSubscriptionTierListing : listM7948h) {
                             linkedHashMap.put(Long.valueOf(guildRoleSubscriptionTierListing.getId()), guildRoleSubscriptionTierListing);
                         }
                     }
@@ -813,14 +813,14 @@ public final class StoreGuildRoleSubscriptions extends StoreV2 {
         }
     }
 
-    /* JADX INFO: renamed from: com.discord.stores.StoreGuildRoleSubscriptions$handleGuildRoleSubscriptionGroupUpdate$1, reason: invalid class name */
+    /* JADX INFO: renamed from: com.discord.stores.StoreGuildRoleSubscriptions$handleGuildRoleSubscriptionGroupUpdate$1 */
     /* JADX INFO: compiled from: StoreGuildRoleSubscriptions.kt */
-    public static final class AnonymousClass1 extends Lambda implements Function0<Unit> {
+    public static final class C60591 extends AbstractC12240o implements Function0<Unit> {
         public final /* synthetic */ long $guildId;
         public final /* synthetic */ GuildRoleSubscriptionGroupListing $guildRoleSubscriptionGroupListing;
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-        public AnonymousClass1(long j, GuildRoleSubscriptionGroupListing guildRoleSubscriptionGroupListing) {
+        public C60591(long j, GuildRoleSubscriptionGroupListing guildRoleSubscriptionGroupListing) {
             super(0);
             this.$guildId = j;
             this.$guildRoleSubscriptionGroupListing = guildRoleSubscriptionGroupListing;
@@ -829,7 +829,7 @@ public final class StoreGuildRoleSubscriptions extends StoreV2 {
         @Override // kotlin.jvm.functions.Function0
         public /* bridge */ /* synthetic */ Unit invoke() {
             invoke2();
-            return Unit.a;
+            return Unit.f27425a;
         }
 
         /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
@@ -839,14 +839,14 @@ public final class StoreGuildRoleSubscriptions extends StoreV2 {
         }
     }
 
-    /* JADX INFO: renamed from: com.discord.stores.StoreGuildRoleSubscriptions$handleGuildRoleSubscriptionTierListingDelete$1, reason: invalid class name */
+    /* JADX INFO: renamed from: com.discord.stores.StoreGuildRoleSubscriptions$handleGuildRoleSubscriptionTierListingDelete$1 */
     /* JADX INFO: compiled from: StoreGuildRoleSubscriptions.kt */
-    public static final class AnonymousClass1 extends Lambda implements Function0<Unit> {
+    public static final class C60601 extends AbstractC12240o implements Function0<Unit> {
         public final /* synthetic */ long $guildId;
         public final /* synthetic */ long $guildRoleSubscriptionTierListingId;
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-        public AnonymousClass1(long j, long j2) {
+        public C60601(long j, long j2) {
             super(0);
             this.$guildId = j;
             this.$guildRoleSubscriptionTierListingId = j2;
@@ -855,7 +855,7 @@ public final class StoreGuildRoleSubscriptions extends StoreV2 {
         @Override // kotlin.jvm.functions.Function0
         public /* bridge */ /* synthetic */ Unit invoke() {
             invoke2();
-            return Unit.a;
+            return Unit.f27425a;
         }
 
         /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
@@ -868,14 +868,14 @@ public final class StoreGuildRoleSubscriptions extends StoreV2 {
         }
     }
 
-    /* JADX INFO: renamed from: com.discord.stores.StoreGuildRoleSubscriptions$handleGuildRoleSubscriptionTierListingUpdate$1, reason: invalid class name */
+    /* JADX INFO: renamed from: com.discord.stores.StoreGuildRoleSubscriptions$handleGuildRoleSubscriptionTierListingUpdate$1 */
     /* JADX INFO: compiled from: StoreGuildRoleSubscriptions.kt */
-    public static final class AnonymousClass1 extends Lambda implements Function0<Unit> {
+    public static final class C60611 extends AbstractC12240o implements Function0<Unit> {
         public final /* synthetic */ long $guildId;
         public final /* synthetic */ GuildRoleSubscriptionTierListing $guildRoleSubscriptionTierListing;
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-        public AnonymousClass1(long j, GuildRoleSubscriptionTierListing guildRoleSubscriptionTierListing) {
+        public C60611(long j, GuildRoleSubscriptionTierListing guildRoleSubscriptionTierListing) {
             super(0);
             this.$guildId = j;
             this.$guildRoleSubscriptionTierListing = guildRoleSubscriptionTierListing;
@@ -884,7 +884,7 @@ public final class StoreGuildRoleSubscriptions extends StoreV2 {
         @Override // kotlin.jvm.functions.Function0
         public /* bridge */ /* synthetic */ Unit invoke() {
             invoke2();
-            return Unit.a;
+            return Unit.f27425a;
         }
 
         /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
@@ -899,15 +899,15 @@ public final class StoreGuildRoleSubscriptions extends StoreV2 {
         }
     }
 
-    /* JADX INFO: renamed from: com.discord.stores.StoreGuildRoleSubscriptions$handleGuildRoleSubscriptionTierTrialUpdate$1, reason: invalid class name */
+    /* JADX INFO: renamed from: com.discord.stores.StoreGuildRoleSubscriptions$handleGuildRoleSubscriptionTierTrialUpdate$1 */
     /* JADX INFO: compiled from: StoreGuildRoleSubscriptions.kt */
-    public static final class AnonymousClass1 extends Lambda implements Function0<Unit> {
+    public static final class C60621 extends AbstractC12240o implements Function0<Unit> {
         public final /* synthetic */ long $guildId;
         public final /* synthetic */ long $guildRoleSubscriptionGroupListingId;
         public final /* synthetic */ GuildRoleSubscriptionTierFreeTrial $guildRoleSubscriptionTierFreeTrial;
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-        public AnonymousClass1(long j, GuildRoleSubscriptionTierFreeTrial guildRoleSubscriptionTierFreeTrial, long j2) {
+        public C60621(long j, GuildRoleSubscriptionTierFreeTrial guildRoleSubscriptionTierFreeTrial, long j2) {
             super(0);
             this.$guildId = j;
             this.$guildRoleSubscriptionTierFreeTrial = guildRoleSubscriptionTierFreeTrial;
@@ -917,7 +917,7 @@ public final class StoreGuildRoleSubscriptions extends StoreV2 {
         @Override // kotlin.jvm.functions.Function0
         public /* bridge */ /* synthetic */ Unit invoke() {
             invoke2();
-            return Unit.a;
+            return Unit.f27425a;
         }
 
         /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
@@ -937,66 +937,66 @@ public final class StoreGuildRoleSubscriptions extends StoreV2 {
     }
 
     private final void handleGuildRoleSubscriptionFreeTrialListFetch(long guildId, List<GuildRoleSubscriptionTierFreeTrial> guildRoleSubscriptionFreeTrialList) {
-        this.dispatcher.schedule(new AnonymousClass1(guildRoleSubscriptionFreeTrialList, guildId));
+        this.dispatcher.schedule(new C60571(guildRoleSubscriptionFreeTrialList, guildId));
     }
 
     private final void handleGuildRoleSubscriptionGroupFetch(long guildId, GuildRoleSubscriptionGroupListing guildRoleSubscriptionGroupListing) {
-        this.dispatcher.schedule(new AnonymousClass1(guildRoleSubscriptionGroupListing, guildId));
+        this.dispatcher.schedule(new C60581(guildRoleSubscriptionGroupListing, guildId));
     }
 
     public final void fetchGuildRoleSubscriptionGroup(long guildId, long guildRoleSubscriptionGroupId) {
         if (this.guildRoleSubscriptionGroupsSnapshot.get(Long.valueOf(guildId)) instanceof GuildRoleSubscriptionGroupState.Loading) {
             return;
         }
-        this.dispatcher.schedule(new AnonymousClass1(guildId));
-        Observable observableJ0 = GuildRoleSubscriptionsFeatureFlag.INSTANCE.getINSTANCE().isGuildEligibleForGuildRoleSubscriptionTrials(guildId) ? Observable.j0(this.restAPI.getGuildRoleSubscriptionGroupListing(guildId, guildRoleSubscriptionGroupId), this.restAPI.getGuildRoleSubscriptionFreeTrials(guildId), new Func2<GuildRoleSubscriptionGroupListing, List<? extends GuildRoleSubscriptionTierFreeTrial>, Tuples2<? extends GuildRoleSubscriptionGroupListing, ? extends List<? extends GuildRoleSubscriptionTierFreeTrial>>>() { // from class: com.discord.stores.StoreGuildRoleSubscriptions$fetchGuildRoleSubscriptionGroup$observable$1
-            @Override // rx.functions.Func2
-            public /* bridge */ /* synthetic */ Tuples2<? extends GuildRoleSubscriptionGroupListing, ? extends List<? extends GuildRoleSubscriptionTierFreeTrial>> call(GuildRoleSubscriptionGroupListing guildRoleSubscriptionGroupListing, List<? extends GuildRoleSubscriptionTierFreeTrial> list) {
+        this.dispatcher.schedule(new C60441(guildId));
+        Observable observableM11077j0 = GuildRoleSubscriptionsFeatureFlag.INSTANCE.getINSTANCE().isGuildEligibleForGuildRoleSubscriptionTrials(guildId) ? Observable.m11077j0(this.restAPI.getGuildRoleSubscriptionGroupListing(guildId, guildRoleSubscriptionGroupId), this.restAPI.getGuildRoleSubscriptionFreeTrials(guildId), new Func2<GuildRoleSubscriptionGroupListing, List<? extends GuildRoleSubscriptionTierFreeTrial>, Pair<? extends GuildRoleSubscriptionGroupListing, ? extends List<? extends GuildRoleSubscriptionTierFreeTrial>>>() { // from class: com.discord.stores.StoreGuildRoleSubscriptions$fetchGuildRoleSubscriptionGroup$observable$1
+            @Override // p658rx.functions.Func2
+            public /* bridge */ /* synthetic */ Pair<? extends GuildRoleSubscriptionGroupListing, ? extends List<? extends GuildRoleSubscriptionTierFreeTrial>> call(GuildRoleSubscriptionGroupListing guildRoleSubscriptionGroupListing, List<? extends GuildRoleSubscriptionTierFreeTrial> list) {
                 return call2(guildRoleSubscriptionGroupListing, (List<GuildRoleSubscriptionTierFreeTrial>) list);
             }
 
             /* JADX INFO: renamed from: call, reason: avoid collision after fix types in other method */
-            public final Tuples2<GuildRoleSubscriptionGroupListing, List<GuildRoleSubscriptionTierFreeTrial>> call2(GuildRoleSubscriptionGroupListing guildRoleSubscriptionGroupListing, List<GuildRoleSubscriptionTierFreeTrial> list) {
-                return new Tuples2<>(guildRoleSubscriptionGroupListing, list);
+            public final Pair<GuildRoleSubscriptionGroupListing, List<GuildRoleSubscriptionTierFreeTrial>> call2(GuildRoleSubscriptionGroupListing guildRoleSubscriptionGroupListing, List<GuildRoleSubscriptionTierFreeTrial> list) {
+                return new Pair<>(guildRoleSubscriptionGroupListing, list);
             }
-        }) : this.restAPI.getGuildRoleSubscriptionGroupListing(guildId, guildRoleSubscriptionGroupId).G(new Func1<GuildRoleSubscriptionGroupListing, Tuples2>() { // from class: com.discord.stores.StoreGuildRoleSubscriptions$fetchGuildRoleSubscriptionGroup$observable$2
-            @Override // j0.k.Func1
-            public final Tuples2 call(GuildRoleSubscriptionGroupListing guildRoleSubscriptionGroupListing) {
-                return new Tuples2(guildRoleSubscriptionGroupListing, null);
+        }) : this.restAPI.getGuildRoleSubscriptionGroupListing(guildId, guildRoleSubscriptionGroupId).m11083G(new InterfaceC12589b<GuildRoleSubscriptionGroupListing, Pair>() { // from class: com.discord.stores.StoreGuildRoleSubscriptions$fetchGuildRoleSubscriptionGroup$observable$2
+            @Override // p637j0.p641k.InterfaceC12589b
+            public final Pair call(GuildRoleSubscriptionGroupListing guildRoleSubscriptionGroupListing) {
+                return new Pair(guildRoleSubscriptionGroupListing, null);
             }
         });
-        Intrinsics3.checkNotNullExpressionValue(observableJ0, "observable");
-        ObservableExtensionsKt.appSubscribe(ObservableExtensionsKt.restSubscribeOn$default(observableJ0, false, 1, null), (Class<?>) StoreGuildRoleSubscriptions.class, (58 & 2) != 0 ? null : null, (Function1<? super Subscription, Unit>) ((58 & 4) != 0 ? null : null), (Function1<? super Error, Unit>) ((58 & 8) != 0 ? null : new AnonymousClass3(guildId)), (Function0<Unit>) ((58 & 16) != 0 ? ObservableExtensionsKt.AnonymousClass1.INSTANCE : null), (Function0<Unit>) ((58 & 32) != 0 ? ObservableExtensionsKt.AnonymousClass2.INSTANCE : null), new AnonymousClass2(guildId));
+        C12238m.checkNotNullExpressionValue(observableM11077j0, "observable");
+        ObservableExtensionsKt.appSubscribe(ObservableExtensionsKt.restSubscribeOn$default(observableM11077j0, false, 1, null), (Class<?>) StoreGuildRoleSubscriptions.class, (58 & 2) != 0 ? null : null, (Function1<? super Subscription, Unit>) ((58 & 4) != 0 ? null : null), (Function1<? super Error, Unit>) ((58 & 8) != 0 ? null : new C60463(guildId)), (Function0<Unit>) ((58 & 16) != 0 ? ObservableExtensionsKt.C68791.INSTANCE : null), (Function0<Unit>) ((58 & 32) != 0 ? ObservableExtensionsKt.C68802.INSTANCE : null), new C60452(guildId));
     }
 
     public final void fetchGuildRoleSubscriptionGroupsForGuild(long guildId) {
         if (this.guildRoleSubscriptionGroupsSnapshot.get(Long.valueOf(guildId)) instanceof GuildRoleSubscriptionGroupState.Loading) {
             return;
         }
-        this.dispatcher.schedule(new AnonymousClass1(guildId));
-        Observable observableJ0 = GuildRoleSubscriptionsFeatureFlag.INSTANCE.getINSTANCE().isGuildEligibleForGuildRoleSubscriptionTrials(guildId) ? Observable.j0(this.restAPI.getGuildRoleSubscriptionGroupListings(guildId), this.restAPI.getGuildRoleSubscriptionFreeTrials(guildId), new Func2<List<? extends GuildRoleSubscriptionGroupListing>, List<? extends GuildRoleSubscriptionTierFreeTrial>, Tuples2<? extends List<? extends GuildRoleSubscriptionGroupListing>, ? extends List<? extends GuildRoleSubscriptionTierFreeTrial>>>() { // from class: com.discord.stores.StoreGuildRoleSubscriptions$fetchGuildRoleSubscriptionGroupsForGuild$observable$1
-            @Override // rx.functions.Func2
-            public /* bridge */ /* synthetic */ Tuples2<? extends List<? extends GuildRoleSubscriptionGroupListing>, ? extends List<? extends GuildRoleSubscriptionTierFreeTrial>> call(List<? extends GuildRoleSubscriptionGroupListing> list, List<? extends GuildRoleSubscriptionTierFreeTrial> list2) {
+        this.dispatcher.schedule(new C60491(guildId));
+        Observable observableM11077j0 = GuildRoleSubscriptionsFeatureFlag.INSTANCE.getINSTANCE().isGuildEligibleForGuildRoleSubscriptionTrials(guildId) ? Observable.m11077j0(this.restAPI.getGuildRoleSubscriptionGroupListings(guildId), this.restAPI.getGuildRoleSubscriptionFreeTrials(guildId), new Func2<List<? extends GuildRoleSubscriptionGroupListing>, List<? extends GuildRoleSubscriptionTierFreeTrial>, Pair<? extends List<? extends GuildRoleSubscriptionGroupListing>, ? extends List<? extends GuildRoleSubscriptionTierFreeTrial>>>() { // from class: com.discord.stores.StoreGuildRoleSubscriptions$fetchGuildRoleSubscriptionGroupsForGuild$observable$1
+            @Override // p658rx.functions.Func2
+            public /* bridge */ /* synthetic */ Pair<? extends List<? extends GuildRoleSubscriptionGroupListing>, ? extends List<? extends GuildRoleSubscriptionTierFreeTrial>> call(List<? extends GuildRoleSubscriptionGroupListing> list, List<? extends GuildRoleSubscriptionTierFreeTrial> list2) {
                 return call2((List<GuildRoleSubscriptionGroupListing>) list, (List<GuildRoleSubscriptionTierFreeTrial>) list2);
             }
 
             /* JADX INFO: renamed from: call, reason: avoid collision after fix types in other method */
-            public final Tuples2<List<GuildRoleSubscriptionGroupListing>, List<GuildRoleSubscriptionTierFreeTrial>> call2(List<GuildRoleSubscriptionGroupListing> list, List<GuildRoleSubscriptionTierFreeTrial> list2) {
-                return new Tuples2<>(list, list2);
+            public final Pair<List<GuildRoleSubscriptionGroupListing>, List<GuildRoleSubscriptionTierFreeTrial>> call2(List<GuildRoleSubscriptionGroupListing> list, List<GuildRoleSubscriptionTierFreeTrial> list2) {
+                return new Pair<>(list, list2);
             }
-        }) : this.restAPI.getGuildRoleSubscriptionGroupListings(guildId).G(new Func1<List<? extends GuildRoleSubscriptionGroupListing>, Tuples2>() { // from class: com.discord.stores.StoreGuildRoleSubscriptions$fetchGuildRoleSubscriptionGroupsForGuild$observable$2
-            @Override // j0.k.Func1
-            public /* bridge */ /* synthetic */ Tuples2 call(List<? extends GuildRoleSubscriptionGroupListing> list) {
+        }) : this.restAPI.getGuildRoleSubscriptionGroupListings(guildId).m11083G(new InterfaceC12589b<List<? extends GuildRoleSubscriptionGroupListing>, Pair>() { // from class: com.discord.stores.StoreGuildRoleSubscriptions$fetchGuildRoleSubscriptionGroupsForGuild$observable$2
+            @Override // p637j0.p641k.InterfaceC12589b
+            public /* bridge */ /* synthetic */ Pair call(List<? extends GuildRoleSubscriptionGroupListing> list) {
                 return call2((List<GuildRoleSubscriptionGroupListing>) list);
             }
 
             /* JADX INFO: renamed from: call, reason: avoid collision after fix types in other method */
-            public final Tuples2 call2(List<GuildRoleSubscriptionGroupListing> list) {
-                return new Tuples2(list, null);
+            public final Pair call2(List<GuildRoleSubscriptionGroupListing> list) {
+                return new Pair(list, null);
             }
         });
-        Intrinsics3.checkNotNullExpressionValue(observableJ0, "observable");
-        ObservableExtensionsKt.appSubscribe(ObservableExtensionsKt.restSubscribeOn$default(observableJ0, false, 1, null), (Class<?>) StoreGuildRoleSubscriptions.class, (58 & 2) != 0 ? null : null, (Function1<? super Subscription, Unit>) ((58 & 4) != 0 ? null : null), (Function1<? super Error, Unit>) ((58 & 8) != 0 ? null : new AnonymousClass3(guildId)), (Function0<Unit>) ((58 & 16) != 0 ? ObservableExtensionsKt.AnonymousClass1.INSTANCE : null), (Function0<Unit>) ((58 & 32) != 0 ? ObservableExtensionsKt.AnonymousClass2.INSTANCE : null), new AnonymousClass2(guildId));
+        C12238m.checkNotNullExpressionValue(observableM11077j0, "observable");
+        ObservableExtensionsKt.appSubscribe(ObservableExtensionsKt.restSubscribeOn$default(observableM11077j0, false, 1, null), (Class<?>) StoreGuildRoleSubscriptions.class, (58 & 2) != 0 ? null : null, (Function1<? super Subscription, Unit>) ((58 & 4) != 0 ? null : null), (Function1<? super Error, Unit>) ((58 & 8) != 0 ? null : new C60513(guildId)), (Function0<Unit>) ((58 & 16) != 0 ? ObservableExtensionsKt.C68791.INSTANCE : null), (Function0<Unit>) ((58 & 32) != 0 ? ObservableExtensionsKt.C68802.INSTANCE : null), new C60502(guildId));
     }
 
     public final void fetchPriceTiersIfNonExisting() {
@@ -1004,12 +1004,12 @@ public final class StoreGuildRoleSubscriptions extends StoreV2 {
         if ((priceTierState instanceof PriceTierState.Loading) || (priceTierState instanceof PriceTierState.Loaded)) {
             return;
         }
-        this.dispatcher.schedule(new AnonymousClass1());
-        ObservableExtensionsKt.appSubscribe(ObservableExtensionsKt.restSubscribeOn$default(this.restAPI.getPriceTiers(PriceTierType.GUILD_ROLE_SUBSCRIPTIONS.getApiValue()), false, 1, null), (Class<?>) StoreGuildRoleSubscriptions.class, (58 & 2) != 0 ? null : null, (Function1<? super Subscription, Unit>) ((58 & 4) != 0 ? null : null), (Function1<? super Error, Unit>) ((58 & 8) != 0 ? null : new AnonymousClass3()), (Function0<Unit>) ((58 & 16) != 0 ? ObservableExtensionsKt.AnonymousClass1.INSTANCE : null), (Function0<Unit>) ((58 & 32) != 0 ? ObservableExtensionsKt.AnonymousClass2.INSTANCE : null), new AnonymousClass2());
+        this.dispatcher.schedule(new C60541());
+        ObservableExtensionsKt.appSubscribe(ObservableExtensionsKt.restSubscribeOn$default(this.restAPI.getPriceTiers(PriceTierType.GUILD_ROLE_SUBSCRIPTIONS.getApiValue()), false, 1, null), (Class<?>) StoreGuildRoleSubscriptions.class, (58 & 2) != 0 ? null : null, (Function1<? super Subscription, Unit>) ((58 & 4) != 0 ? null : null), (Function1<? super Error, Unit>) ((58 & 8) != 0 ? null : new C60563()), (Function0<Unit>) ((58 & 16) != 0 ? ObservableExtensionsKt.C68791.INSTANCE : null), (Function0<Unit>) ((58 & 32) != 0 ? ObservableExtensionsKt.C68802.INSTANCE : null), new C60552());
     }
 
     public final List<Integer> getGuildRoleSubscriptionFreeTrialActiveUserLimitOptions() {
-        return Collections2.listOf((Object[]) new Integer[]{null, 10, 25, 50, 100});
+        return C12147n.listOf((Object[]) new Integer[]{null, 10, 25, 50, 100});
     }
 
     public final GuildRoleSubscriptionTierFreeTrial getGuildRoleSubscriptionFreeTrialForListing(long guildId, long listingId) {
@@ -1022,7 +1022,7 @@ public final class StoreGuildRoleSubscriptions extends StoreV2 {
 
     public final List<SubscriptionTrialInterval> getGuildRoleSubscriptionFreeTrialIntervalOptions() {
         GuildRoleSubscriptionFreeTrialIntervalTypes guildRoleSubscriptionFreeTrialIntervalTypes = GuildRoleSubscriptionFreeTrialIntervalTypes.DAILY;
-        return Collections2.listOf((Object[]) new SubscriptionTrialInterval[]{new SubscriptionTrialInterval(guildRoleSubscriptionFreeTrialIntervalTypes, 1), new SubscriptionTrialInterval(guildRoleSubscriptionFreeTrialIntervalTypes, 7)});
+        return C12147n.listOf((Object[]) new SubscriptionTrialInterval[]{new SubscriptionTrialInterval(guildRoleSubscriptionFreeTrialIntervalTypes, 1), new SubscriptionTrialInterval(guildRoleSubscriptionFreeTrialIntervalTypes, 7)});
     }
 
     public final Map<Long, GuildRoleSubscriptionTierFreeTrial> getGuildRoleSubscriptionFreeTrials(long guildId) {
@@ -1031,7 +1031,7 @@ public final class StoreGuildRoleSubscriptions extends StoreV2 {
 
     public final GuildRoleSubscriptionGroupState getGuildRoleSubscriptionState(long guildId) {
         List listEmptyList;
-        List<Long> listI;
+        List<Long> listM7949i;
         GuildRoleSubscriptionGroupState guildRoleSubscriptionGroupState = this.guildRoleSubscriptionGroupsSnapshot.get(Long.valueOf(guildId));
         if (guildRoleSubscriptionGroupState == null) {
             return null;
@@ -1040,11 +1040,11 @@ public final class StoreGuildRoleSubscriptions extends StoreV2 {
             return guildRoleSubscriptionGroupState;
         }
         GuildRoleSubscriptionGroupListing guildRoleSubscriptionGroupListing = ((GuildRoleSubscriptionGroupState.Loaded) guildRoleSubscriptionGroupState).getGuildRoleSubscriptionGroupListing();
-        if (guildRoleSubscriptionGroupListing == null || (listI = guildRoleSubscriptionGroupListing.i()) == null) {
-            listEmptyList = Collections2.emptyList();
+        if (guildRoleSubscriptionGroupListing == null || (listM7949i = guildRoleSubscriptionGroupListing.m7949i()) == null) {
+            listEmptyList = C12147n.emptyList();
         } else {
             ArrayList arrayList = new ArrayList();
-            Iterator<T> it = listI.iterator();
+            Iterator<T> it = listM7949i.iterator();
             while (it.hasNext()) {
                 long jLongValue = ((Number) it.next()).longValue();
                 Map<Long, GuildRoleSubscriptionTierListing> map = this.guildRoleSubscriptionTiersSnapshot.get(Long.valueOf(guildId));
@@ -1055,7 +1055,7 @@ public final class StoreGuildRoleSubscriptions extends StoreV2 {
             }
             listEmptyList = arrayList;
         }
-        return new GuildRoleSubscriptionGroupState.Loaded(guildRoleSubscriptionGroupListing != null ? GuildRoleSubscriptionGroupListing.a(guildRoleSubscriptionGroupListing, 0L, 0L, 0L, null, null, null, listEmptyList, false, Opcodes.ATHROW) : null);
+        return new GuildRoleSubscriptionGroupState.Loaded(guildRoleSubscriptionGroupListing != null ? GuildRoleSubscriptionGroupListing.m7941a(guildRoleSubscriptionGroupListing, 0L, 0L, 0L, null, null, null, listEmptyList, false, Opcodes.ATHROW) : null);
     }
 
     /* JADX INFO: renamed from: getPriceTiersState, reason: from getter */
@@ -1064,33 +1064,33 @@ public final class StoreGuildRoleSubscriptions extends StoreV2 {
     }
 
     public final void handleGuildRoleSubscriptionGroupUpdate(long guildId, GuildRoleSubscriptionGroupListing guildRoleSubscriptionGroupListing) {
-        Intrinsics3.checkNotNullParameter(guildRoleSubscriptionGroupListing, "guildRoleSubscriptionGroupListing");
-        this.dispatcher.schedule(new AnonymousClass1(guildId, guildRoleSubscriptionGroupListing));
+        C12238m.checkNotNullParameter(guildRoleSubscriptionGroupListing, "guildRoleSubscriptionGroupListing");
+        this.dispatcher.schedule(new C60591(guildId, guildRoleSubscriptionGroupListing));
     }
 
     public final void handleGuildRoleSubscriptionTierListingCreate(long guildId, long guildRoleSubscriptionGroupListingId, GuildRoleSubscriptionTierListing guildRoleSubscriptionTierListing) {
-        Intrinsics3.checkNotNullParameter(guildRoleSubscriptionTierListing, "guildRoleSubscriptionTierListing");
+        C12238m.checkNotNullParameter(guildRoleSubscriptionTierListing, "guildRoleSubscriptionTierListing");
         handleGuildRoleSubscriptionTierListingUpdate(guildId, guildRoleSubscriptionTierListing);
         fetchGuildRoleSubscriptionGroup(guildId, guildRoleSubscriptionGroupListingId);
     }
 
     public final void handleGuildRoleSubscriptionTierListingDelete(long guildId, long guildRoleSubscriptionGroupListingId, long guildRoleSubscriptionTierListingId) {
-        this.dispatcher.schedule(new AnonymousClass1(guildId, guildRoleSubscriptionTierListingId));
+        this.dispatcher.schedule(new C60601(guildId, guildRoleSubscriptionTierListingId));
         fetchGuildRoleSubscriptionGroup(guildId, guildRoleSubscriptionGroupListingId);
     }
 
     public final void handleGuildRoleSubscriptionTierListingUpdate(long guildId, GuildRoleSubscriptionTierListing guildRoleSubscriptionTierListing) {
-        Intrinsics3.checkNotNullParameter(guildRoleSubscriptionTierListing, "guildRoleSubscriptionTierListing");
-        this.dispatcher.schedule(new AnonymousClass1(guildId, guildRoleSubscriptionTierListing));
+        C12238m.checkNotNullParameter(guildRoleSubscriptionTierListing, "guildRoleSubscriptionTierListing");
+        this.dispatcher.schedule(new C60611(guildId, guildRoleSubscriptionTierListing));
     }
 
     public final void handleGuildRoleSubscriptionTierTrialUpdate(long guildId, long guildRoleSubscriptionGroupListingId, GuildRoleSubscriptionTierFreeTrial guildRoleSubscriptionTierFreeTrial) {
-        Intrinsics3.checkNotNullParameter(guildRoleSubscriptionTierFreeTrial, "guildRoleSubscriptionTierFreeTrial");
-        this.dispatcher.schedule(new AnonymousClass1(guildId, guildRoleSubscriptionTierFreeTrial, guildRoleSubscriptionGroupListingId));
+        C12238m.checkNotNullParameter(guildRoleSubscriptionTierFreeTrial, "guildRoleSubscriptionTierFreeTrial");
+        this.dispatcher.schedule(new C60621(guildId, guildRoleSubscriptionTierFreeTrial, guildRoleSubscriptionGroupListingId));
     }
 
     @Override // com.discord.stores.StoreV2
-    @Store3
+    @StoreThread
     public void snapshotData() {
         super.snapshotData();
         this.priceTierStateSnapshot = this.priceTierState;
@@ -1100,18 +1100,18 @@ public final class StoreGuildRoleSubscriptions extends StoreV2 {
     }
 
     public StoreGuildRoleSubscriptions(Dispatcher dispatcher, RestAPI restAPI) {
-        Intrinsics3.checkNotNullParameter(dispatcher, "dispatcher");
-        Intrinsics3.checkNotNullParameter(restAPI, "restAPI");
+        C12238m.checkNotNullParameter(dispatcher, "dispatcher");
+        C12238m.checkNotNullParameter(restAPI, "restAPI");
         this.dispatcher = dispatcher;
         this.restAPI = restAPI;
         PriceTierState.Uninitialized uninitialized = PriceTierState.Uninitialized.INSTANCE;
         this.priceTierState = uninitialized;
         this.priceTierStateSnapshot = uninitialized;
         this.guildRoleSubscriptionGroups = new LinkedHashMap();
-        this.guildRoleSubscriptionGroupsSnapshot = Maps6.emptyMap();
+        this.guildRoleSubscriptionGroupsSnapshot = C12136h0.emptyMap();
         this.guildRoleSubscriptionTiers = new LinkedHashMap();
-        this.guildRoleSubscriptionTiersSnapshot = Maps6.emptyMap();
+        this.guildRoleSubscriptionTiersSnapshot = C12136h0.emptyMap();
         this.guildRoleSubscriptionFreeTrials = new LinkedHashMap();
-        this.guildRoleSubscriptionFreeTrialsSnapshot = Maps6.emptyMap();
+        this.guildRoleSubscriptionFreeTrialsSnapshot = C12136h0.emptyMap();
     }
 }

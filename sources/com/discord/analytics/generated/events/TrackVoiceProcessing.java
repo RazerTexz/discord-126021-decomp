@@ -1,16 +1,16 @@
 package com.discord.analytics.generated.events;
 
-import b.d.b.a.outline;
 import com.discord.analytics.generated.traits.TrackBase;
-import com.discord.analytics.generated.traits.TrackBase2;
+import com.discord.analytics.generated.traits.TrackBaseReceiver;
 import com.discord.analytics.generated.traits.TrackLocationMetadata;
-import com.discord.analytics.generated.traits.TrackLocationMetadata2;
+import com.discord.analytics.generated.traits.TrackLocationMetadataReceiver;
 import com.discord.api.science.AnalyticsSchema;
-import d0.z.d.Intrinsics3;
+import p007b.p100d.p104b.p105a.C1643a;
+import p507d0.p592z.p594d.C12238m;
 
 /* JADX INFO: compiled from: TrackVoiceProcessing.kt */
 /* JADX INFO: loaded from: classes.dex */
-public final /* data */ class TrackVoiceProcessing implements AnalyticsSchema, TrackBase2, TrackLocationMetadata2 {
+public final /* data */ class TrackVoiceProcessing implements AnalyticsSchema, TrackBaseReceiver, TrackLocationMetadataReceiver {
     private TrackBase trackBase;
     private TrackLocationMetadata trackLocationMetadata;
     private final Boolean noiseCancellerCpuOveruse = null;
@@ -35,7 +35,7 @@ public final /* data */ class TrackVoiceProcessing implements AnalyticsSchema, T
             return false;
         }
         TrackVoiceProcessing trackVoiceProcessing = (TrackVoiceProcessing) other;
-        return Intrinsics3.areEqual(this.noiseCancellerCpuOveruse, trackVoiceProcessing.noiseCancellerCpuOveruse) && Intrinsics3.areEqual(this.noiseCancellerError, trackVoiceProcessing.noiseCancellerError) && Intrinsics3.areEqual(this.noiseCancellation, trackVoiceProcessing.noiseCancellation) && Intrinsics3.areEqual(this.echoCancellation, trackVoiceProcessing.echoCancellation) && Intrinsics3.areEqual(this.noiseSuppression, trackVoiceProcessing.noiseSuppression) && Intrinsics3.areEqual(this.automaticGainControl, trackVoiceProcessing.automaticGainControl);
+        return C12238m.areEqual(this.noiseCancellerCpuOveruse, trackVoiceProcessing.noiseCancellerCpuOveruse) && C12238m.areEqual(this.noiseCancellerError, trackVoiceProcessing.noiseCancellerError) && C12238m.areEqual(this.noiseCancellation, trackVoiceProcessing.noiseCancellation) && C12238m.areEqual(this.echoCancellation, trackVoiceProcessing.echoCancellation) && C12238m.areEqual(this.noiseSuppression, trackVoiceProcessing.noiseSuppression) && C12238m.areEqual(this.automaticGainControl, trackVoiceProcessing.automaticGainControl);
     }
 
     public int hashCode() {
@@ -54,17 +54,17 @@ public final /* data */ class TrackVoiceProcessing implements AnalyticsSchema, T
     }
 
     public String toString() {
-        StringBuilder sbU = outline.U("TrackVoiceProcessing(noiseCancellerCpuOveruse=");
-        sbU.append(this.noiseCancellerCpuOveruse);
-        sbU.append(", noiseCancellerError=");
-        sbU.append(this.noiseCancellerError);
-        sbU.append(", noiseCancellation=");
-        sbU.append(this.noiseCancellation);
-        sbU.append(", echoCancellation=");
-        sbU.append(this.echoCancellation);
-        sbU.append(", noiseSuppression=");
-        sbU.append(this.noiseSuppression);
-        sbU.append(", automaticGainControl=");
-        return outline.D(sbU, this.automaticGainControl, ")");
+        StringBuilder sbM833U = C1643a.m833U("TrackVoiceProcessing(noiseCancellerCpuOveruse=");
+        sbM833U.append(this.noiseCancellerCpuOveruse);
+        sbM833U.append(", noiseCancellerError=");
+        sbM833U.append(this.noiseCancellerError);
+        sbM833U.append(", noiseCancellation=");
+        sbM833U.append(this.noiseCancellation);
+        sbM833U.append(", echoCancellation=");
+        sbM833U.append(this.echoCancellation);
+        sbM833U.append(", noiseSuppression=");
+        sbM833U.append(this.noiseSuppression);
+        sbM833U.append(", automaticGainControl=");
+        return C1643a.m816D(sbM833U, this.automaticGainControl, ")");
     }
 }

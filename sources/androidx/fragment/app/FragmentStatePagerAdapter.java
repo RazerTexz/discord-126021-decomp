@@ -10,8 +10,8 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.view.Lifecycle;
 import androidx.viewpager.widget.PagerAdapter;
-import b.d.b.a.outline;
 import java.util.ArrayList;
+import p007b.p100d.p104b.p105a.C1643a;
 
 /* JADX INFO: loaded from: classes.dex */
 @Deprecated
@@ -157,7 +157,7 @@ public abstract class FragmentStatePagerAdapter extends PagerAdapter {
                 if (bundle == null) {
                     bundle = new Bundle();
                 }
-                this.mFragmentManager.putFragment(bundle, outline.q("f", i), fragment);
+                this.mFragmentManager.putFragment(bundle, C1643a.m871q("f", i), fragment);
             }
         }
         return bundle;

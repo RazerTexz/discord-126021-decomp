@@ -1,14 +1,14 @@
 package com.discord.analytics.generated.events;
 
-import b.d.b.a.outline;
 import com.discord.analytics.generated.traits.TrackBase;
-import com.discord.analytics.generated.traits.TrackBase2;
+import com.discord.analytics.generated.traits.TrackBaseReceiver;
 import com.discord.api.science.AnalyticsSchema;
-import d0.z.d.Intrinsics3;
+import p007b.p100d.p104b.p105a.C1643a;
+import p507d0.p592z.p594d.C12238m;
 
 /* JADX INFO: compiled from: TrackChatInputComponentViewed.kt */
 /* JADX INFO: loaded from: classes.dex */
-public final /* data */ class TrackChatInputComponentViewed implements AnalyticsSchema, TrackBase2 {
+public final /* data */ class TrackChatInputComponentViewed implements AnalyticsSchema, TrackBaseReceiver {
     private TrackBase trackBase;
     private final CharSequence type = null;
     private final transient String analyticsSchemaTypeName = "chat_input_component_viewed";
@@ -21,7 +21,7 @@ public final /* data */ class TrackChatInputComponentViewed implements Analytics
 
     public boolean equals(Object other) {
         if (this != other) {
-            return (other instanceof TrackChatInputComponentViewed) && Intrinsics3.areEqual(this.type, ((TrackChatInputComponentViewed) other).type);
+            return (other instanceof TrackChatInputComponentViewed) && C12238m.areEqual(this.type, ((TrackChatInputComponentViewed) other).type);
         }
         return true;
     }
@@ -35,6 +35,6 @@ public final /* data */ class TrackChatInputComponentViewed implements Analytics
     }
 
     public String toString() {
-        return outline.E(outline.U("TrackChatInputComponentViewed(type="), this.type, ")");
+        return C1643a.m817E(C1643a.m833U("TrackChatInputComponentViewed(type="), this.type, ")");
     }
 }

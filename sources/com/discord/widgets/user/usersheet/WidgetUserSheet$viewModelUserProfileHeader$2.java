@@ -1,12 +1,12 @@
 package com.discord.widgets.user.usersheet;
 
 import com.discord.widgets.user.profile.UserProfileHeaderViewModel;
-import d0.z.d.Lambda;
 import kotlin.jvm.functions.Function0;
+import p507d0.p592z.p594d.AbstractC12240o;
 
 /* JADX INFO: compiled from: WidgetUserSheet.kt */
 /* JADX INFO: loaded from: classes.dex */
-public final class WidgetUserSheet$viewModelUserProfileHeader$2 extends Lambda implements Function0<UserProfileHeaderViewModel> {
+public final class WidgetUserSheet$viewModelUserProfileHeader$2 extends AbstractC12240o implements Function0<UserProfileHeaderViewModel> {
     public final /* synthetic */ WidgetUserSheet this$0;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */

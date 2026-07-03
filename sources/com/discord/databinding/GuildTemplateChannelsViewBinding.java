@@ -9,21 +9,22 @@ import androidx.viewbinding.ViewBinding;
 /* JADX INFO: loaded from: classes.dex */
 public final class GuildTemplateChannelsViewBinding implements ViewBinding {
 
+    /* JADX INFO: renamed from: a */
     @NonNull
-    public final LinearLayout a;
+    public final LinearLayout f15159a;
 
-    /* JADX INFO: renamed from: b, reason: collision with root package name */
+    /* JADX INFO: renamed from: b */
     @NonNull
-    public final RecyclerView f2124b;
+    public final RecyclerView f15160b;
 
     public GuildTemplateChannelsViewBinding(@NonNull LinearLayout linearLayout, @NonNull RecyclerView recyclerView) {
-        this.a = linearLayout;
-        this.f2124b = recyclerView;
+        this.f15159a = linearLayout;
+        this.f15160b = recyclerView;
     }
 
     @Override // androidx.viewbinding.ViewBinding
     @NonNull
     public View getRoot() {
-        return this.a;
+        return this.f15159a;
     }
 }

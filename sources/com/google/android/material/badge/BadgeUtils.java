@@ -11,7 +11,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.view.menu.ActionMenuItemView;
 import androidx.appcompat.widget.Toolbar;
-import com.google.android.material.R;
+import com.google.android.material.C10817R;
 import com.google.android.material.badge.BadgeDrawable;
 import com.google.android.material.internal.ParcelableSparseArray;
 import com.google.android.material.internal.ToolbarUtils;
@@ -22,28 +22,37 @@ public class BadgeUtils {
     private static final String LOG_TAG = "BadgeUtils";
     public static final boolean USE_COMPAT_PARENT = false;
 
-    public static class a implements Runnable {
-        public final /* synthetic */ Toolbar j;
-        public final /* synthetic */ int k;
-        public final /* synthetic */ BadgeDrawable l;
-        public final /* synthetic */ FrameLayout m;
+    /* JADX INFO: renamed from: com.google.android.material.badge.BadgeUtils$a */
+    public static class RunnableC10829a implements Runnable {
 
-        public a(Toolbar toolbar, int i, BadgeDrawable badgeDrawable, FrameLayout frameLayout) {
-            this.j = toolbar;
-            this.k = i;
-            this.l = badgeDrawable;
-            this.m = frameLayout;
+        /* JADX INFO: renamed from: j */
+        public final /* synthetic */ Toolbar f20884j;
+
+        /* JADX INFO: renamed from: k */
+        public final /* synthetic */ int f20885k;
+
+        /* JADX INFO: renamed from: l */
+        public final /* synthetic */ BadgeDrawable f20886l;
+
+        /* JADX INFO: renamed from: m */
+        public final /* synthetic */ FrameLayout f20887m;
+
+        public RunnableC10829a(Toolbar toolbar, int i, BadgeDrawable badgeDrawable, FrameLayout frameLayout) {
+            this.f20884j = toolbar;
+            this.f20885k = i;
+            this.f20886l = badgeDrawable;
+            this.f20887m = frameLayout;
         }
 
         @Override // java.lang.Runnable
         public void run() {
-            ActionMenuItemView actionMenuItemView = ToolbarUtils.getActionMenuItemView(this.j, this.k);
+            ActionMenuItemView actionMenuItemView = ToolbarUtils.getActionMenuItemView(this.f20884j, this.f20885k);
             if (actionMenuItemView != null) {
-                BadgeDrawable badgeDrawable = this.l;
-                badgeDrawable.setHorizontalOffset(this.j.getResources().getDimensionPixelOffset(R.dimen.mtrl_badge_toolbar_action_menu_item_horizontal_offset) + badgeDrawable.getHorizontalOffset());
-                BadgeDrawable badgeDrawable2 = this.l;
-                badgeDrawable2.setVerticalOffset(this.j.getResources().getDimensionPixelOffset(R.dimen.mtrl_badge_toolbar_action_menu_item_vertical_offset) + badgeDrawable2.getVerticalOffset());
-                BadgeUtils.attachBadgeDrawable(this.l, actionMenuItemView, this.m);
+                BadgeDrawable badgeDrawable = this.f20886l;
+                badgeDrawable.setHorizontalOffset(this.f20884j.getResources().getDimensionPixelOffset(C10817R.dimen.mtrl_badge_toolbar_action_menu_item_horizontal_offset) + badgeDrawable.getHorizontalOffset());
+                BadgeDrawable badgeDrawable2 = this.f20886l;
+                badgeDrawable2.setVerticalOffset(this.f20884j.getResources().getDimensionPixelOffset(C10817R.dimen.mtrl_badge_toolbar_action_menu_item_vertical_offset) + badgeDrawable2.getVerticalOffset());
+                BadgeUtils.attachBadgeDrawable(this.f20886l, actionMenuItemView, this.f20887m);
             }
         }
     }
@@ -134,6 +143,6 @@ public class BadgeUtils {
     }
 
     public static void attachBadgeDrawable(@NonNull BadgeDrawable badgeDrawable, @NonNull Toolbar toolbar, @IdRes int i, @Nullable FrameLayout frameLayout) {
-        toolbar.post(new a(toolbar, i, badgeDrawable, frameLayout));
+        toolbar.post(new RunnableC10829a(toolbar, i, badgeDrawable, frameLayout));
     }
 }

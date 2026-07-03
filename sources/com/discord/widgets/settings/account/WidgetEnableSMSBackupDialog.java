@@ -6,34 +6,34 @@ import android.view.View;
 import android.widget.TextView;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
-import b.a.d.AppToast;
-import b.d.b.a.outline;
-import com.discord.R;
+import com.discord.C5419R;
 import com.discord.app.AppDialog;
 import com.discord.databinding.WidgetEnableSmsBackupDialogBinding;
 import com.discord.restapi.RestAPIParams;
 import com.discord.stores.StoreStream;
 import com.discord.utilities.error.Error;
+import com.discord.utilities.p501rx.ObservableExtensionsKt;
 import com.discord.utilities.rest.RestAPI;
-import com.discord.utilities.rx.ObservableExtensionsKt;
 import com.discord.utilities.view.extensions.ViewExtensions;
 import com.discord.utilities.viewbinding.FragmentViewBindingDelegate;
-import com.discord.utilities.viewbinding.FragmentViewBindingDelegate3;
+import com.discord.utilities.viewbinding.FragmentViewBindingDelegateKt;
 import com.google.android.material.textfield.TextInputLayout;
-import d0.z.d.Intrinsics3;
-import d0.z.d.Lambda;
 import kotlin.Unit;
 import kotlin.jvm.functions.Function0;
 import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.reflect.KProperty;
-import rx.Observable;
-import rx.Subscription;
+import p007b.p008a.p018d.C0876m;
+import p007b.p100d.p104b.p105a.C1643a;
+import p507d0.p592z.p594d.AbstractC12240o;
+import p507d0.p592z.p594d.C12238m;
+import p658rx.Observable;
+import p658rx.Subscription;
 
 /* JADX INFO: compiled from: WidgetEnableSMSBackupDialog.kt */
 /* JADX INFO: loaded from: classes2.dex */
 public final class WidgetEnableSMSBackupDialog extends AppDialog {
-    public static final /* synthetic */ KProperty[] $$delegatedProperties = {outline.d0(WidgetEnableSMSBackupDialog.class, "binding", "getBinding()Lcom/discord/databinding/WidgetEnableSmsBackupDialogBinding;", 0)};
+    public static final /* synthetic */ KProperty[] $$delegatedProperties = {C1643a.m846d0(WidgetEnableSMSBackupDialog.class, "binding", "getBinding()Lcom/discord/databinding/WidgetEnableSmsBackupDialogBinding;", 0)};
 
     /* JADX INFO: renamed from: Companion, reason: from kotlin metadata */
     public static final Companion INSTANCE = new Companion(null);
@@ -48,7 +48,7 @@ public final class WidgetEnableSMSBackupDialog extends AppDialog {
         }
 
         public final void show(FragmentManager fragmentManager, boolean enable) {
-            Intrinsics3.checkNotNullParameter(fragmentManager, "fragmentManager");
+            C12238m.checkNotNullParameter(fragmentManager, "fragmentManager");
             WidgetEnableSMSBackupDialog widgetEnableSMSBackupDialog = new WidgetEnableSMSBackupDialog();
             Bundle bundle = new Bundle();
             bundle.putBoolean(WidgetEnableSMSBackupDialog.EXTRA_ENABLE, enable);
@@ -65,65 +65,65 @@ public final class WidgetEnableSMSBackupDialog extends AppDialog {
         }
     }
 
-    /* JADX INFO: renamed from: com.discord.widgets.settings.account.WidgetEnableSMSBackupDialog$enableSMSBackup$1, reason: invalid class name */
+    /* JADX INFO: renamed from: com.discord.widgets.settings.account.WidgetEnableSMSBackupDialog$enableSMSBackup$1 */
     /* JADX INFO: compiled from: WidgetEnableSMSBackupDialog.kt */
-    public static final class AnonymousClass1 extends Lambda implements Function1<Error, Unit> {
-        public AnonymousClass1() {
+    public static final class C97131 extends AbstractC12240o implements Function1<Error, Unit> {
+        public C97131() {
             super(1);
         }
 
         @Override // kotlin.jvm.functions.Function1
         public /* bridge */ /* synthetic */ Unit invoke(Error error) {
             invoke2(error);
-            return Unit.a;
+            return Unit.f27425a;
         }
 
         /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
         public final void invoke2(Error error) {
-            Intrinsics3.checkNotNullParameter(error, "it");
-            WidgetEnableSMSBackupDialog.this.getBinding().d.setIsLoading(false);
+            C12238m.checkNotNullParameter(error, "it");
+            WidgetEnableSMSBackupDialog.this.getBinding().f16595d.setIsLoading(false);
             View view = WidgetEnableSMSBackupDialog.this.getView();
             Context context = view != null ? view.getContext() : null;
             Error.Response response = error.getResponse();
-            Intrinsics3.checkNotNullExpressionValue(response, "it.response");
-            AppToast.h(context, response.getMessage(), 0, null, 12);
+            C12238m.checkNotNullExpressionValue(response, "it.response");
+            C0876m.m170h(context, response.getMessage(), 0, null, 12);
         }
     }
 
-    /* JADX INFO: renamed from: com.discord.widgets.settings.account.WidgetEnableSMSBackupDialog$enableSMSBackup$2, reason: invalid class name */
+    /* JADX INFO: renamed from: com.discord.widgets.settings.account.WidgetEnableSMSBackupDialog$enableSMSBackup$2 */
     /* JADX INFO: compiled from: WidgetEnableSMSBackupDialog.kt */
-    public static final class AnonymousClass2 extends Lambda implements Function1<Void, Unit> {
-        public AnonymousClass2() {
+    public static final class C97142 extends AbstractC12240o implements Function1<Void, Unit> {
+        public C97142() {
             super(1);
         }
 
         @Override // kotlin.jvm.functions.Function1
         public /* bridge */ /* synthetic */ Unit invoke(Void r1) {
             invoke2(r1);
-            return Unit.a;
+            return Unit.f27425a;
         }
 
         /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
         public final void invoke2(Void r2) {
             StoreStream.INSTANCE.getMFA().togglingSMSBackup();
-            WidgetEnableSMSBackupDialog.this.getBinding().d.setIsLoading(false);
+            WidgetEnableSMSBackupDialog.this.getBinding().f16595d.setIsLoading(false);
             WidgetEnableSMSBackupDialog.this.dismiss();
         }
     }
 
     public WidgetEnableSMSBackupDialog() {
-        super(R.layout.widget_enable_sms_backup_dialog);
-        this.binding = FragmentViewBindingDelegate3.viewBinding$default(this, WidgetEnableSMSBackupDialog2.INSTANCE, null, 2, null);
+        super(C5419R.layout.widget_enable_sms_backup_dialog);
+        this.binding = FragmentViewBindingDelegateKt.viewBinding$default(this, WidgetEnableSMSBackupDialog$binding$2.INSTANCE, null, 2, null);
         setCancelable(false);
     }
 
     private final void enableSMSBackup(boolean enable) {
-        TextInputLayout textInputLayout = getBinding().f;
-        Intrinsics3.checkNotNullExpressionValue(textInputLayout, "binding.enableSmsBackupPasswordWrap");
+        TextInputLayout textInputLayout = getBinding().f16597f;
+        C12238m.checkNotNullExpressionValue(textInputLayout, "binding.enableSmsBackupPasswordWrap");
         RestAPIParams.ActivateMfaSMS activateMfaSMS = new RestAPIParams.ActivateMfaSMS(ViewExtensions.getTextOrEmpty(textInputLayout));
         Observable<Void> observableEnableMfaSMS = enable ? RestAPI.INSTANCE.getApi().enableMfaSMS(activateMfaSMS) : RestAPI.INSTANCE.getApi().disableMfaSMS(activateMfaSMS);
-        getBinding().d.setIsLoading(true);
-        ObservableExtensionsKt.appSubscribe(ObservableExtensionsKt.ui$default(ObservableExtensionsKt.restSubscribeOn$default(observableEnableMfaSMS, false, 1, null), this, null, 2, null), (Class<?>) WidgetEnableSMSBackupDialog.class, (58 & 2) != 0 ? null : null, (Function1<? super Subscription, Unit>) ((58 & 4) != 0 ? null : null), (Function1<? super Error, Unit>) ((58 & 8) != 0 ? null : new AnonymousClass1()), (Function0<Unit>) ((58 & 16) != 0 ? ObservableExtensionsKt.AnonymousClass1.INSTANCE : null), (Function0<Unit>) ((58 & 32) != 0 ? ObservableExtensionsKt.AnonymousClass2.INSTANCE : null), new AnonymousClass2());
+        getBinding().f16595d.setIsLoading(true);
+        ObservableExtensionsKt.appSubscribe(ObservableExtensionsKt.ui$default(ObservableExtensionsKt.restSubscribeOn$default(observableEnableMfaSMS, false, 1, null), this, null, 2, null), (Class<?>) WidgetEnableSMSBackupDialog.class, (58 & 2) != 0 ? null : null, (Function1<? super Subscription, Unit>) ((58 & 4) != 0 ? null : null), (Function1<? super Error, Unit>) ((58 & 8) != 0 ? null : new C97131()), (Function0<Unit>) ((58 & 16) != 0 ? ObservableExtensionsKt.C68791.INSTANCE : null), (Function0<Unit>) ((58 & 32) != 0 ? ObservableExtensionsKt.C68802.INSTANCE : null), new C97142());
     }
 
     private final WidgetEnableSmsBackupDialogBinding getBinding() {
@@ -146,30 +146,30 @@ public final class WidgetEnableSMSBackupDialog extends AppDialog {
             return;
         }
         if (boolValueOf.booleanValue()) {
-            TextView textView = getBinding().e;
-            Intrinsics3.checkNotNullExpressionValue(textView, "binding.enableSmsBackupHeader");
-            textView.setText(getString(R.string.mfa_sms_enable));
-            TextView textView2 = getBinding().f2381b;
-            Intrinsics3.checkNotNullExpressionValue(textView2, "binding.enableSmsBackupBody");
-            textView2.setText(getString(R.string.mfa_sms_auth_sales_pitch));
-            getBinding().d.setText(getString(R.string.enable));
+            TextView textView = getBinding().f16596e;
+            C12238m.checkNotNullExpressionValue(textView, "binding.enableSmsBackupHeader");
+            textView.setText(getString(C5419R.string.mfa_sms_enable));
+            TextView textView2 = getBinding().f16593b;
+            C12238m.checkNotNullExpressionValue(textView2, "binding.enableSmsBackupBody");
+            textView2.setText(getString(C5419R.string.mfa_sms_auth_sales_pitch));
+            getBinding().f16595d.setText(getString(C5419R.string.enable));
         } else {
-            TextView textView3 = getBinding().e;
-            Intrinsics3.checkNotNullExpressionValue(textView3, "binding.enableSmsBackupHeader");
-            textView3.setText(getString(R.string.mfa_sms_remove));
-            TextView textView4 = getBinding().f2381b;
-            Intrinsics3.checkNotNullExpressionValue(textView4, "binding.enableSmsBackupBody");
-            textView4.setText(getString(R.string.mfa_sms_confirm_remove_body));
-            getBinding().d.setText(getString(R.string.disable));
+            TextView textView3 = getBinding().f16596e;
+            C12238m.checkNotNullExpressionValue(textView3, "binding.enableSmsBackupHeader");
+            textView3.setText(getString(C5419R.string.mfa_sms_remove));
+            TextView textView4 = getBinding().f16593b;
+            C12238m.checkNotNullExpressionValue(textView4, "binding.enableSmsBackupBody");
+            textView4.setText(getString(C5419R.string.mfa_sms_confirm_remove_body));
+            getBinding().f16595d.setText(getString(C5419R.string.disable));
         }
-        getBinding().c.setOnClickListener(new View.OnClickListener() { // from class: com.discord.widgets.settings.account.WidgetEnableSMSBackupDialog.onResume.1
+        getBinding().f16594c.setOnClickListener(new View.OnClickListener() { // from class: com.discord.widgets.settings.account.WidgetEnableSMSBackupDialog.onResume.1
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
                 WidgetEnableSMSBackupDialog.this.dismiss();
             }
         });
-        getBinding().d.setIsLoading(false);
-        getBinding().d.setOnClickListener(new View.OnClickListener() { // from class: com.discord.widgets.settings.account.WidgetEnableSMSBackupDialog.onResume.2
+        getBinding().f16595d.setIsLoading(false);
+        getBinding().f16595d.setOnClickListener(new View.OnClickListener() { // from class: com.discord.widgets.settings.account.WidgetEnableSMSBackupDialog.onResume.2
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
                 WidgetEnableSMSBackupDialog.this.enableSMSBackup(boolValueOf.booleanValue());

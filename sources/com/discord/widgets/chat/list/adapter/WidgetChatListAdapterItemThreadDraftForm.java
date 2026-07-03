@@ -13,9 +13,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.core.content.ContextCompat;
-import b.a.a.b.GuildBoostUpsellDialog;
-import b.a.k.FormatUtils;
-import com.discord.R;
+import com.discord.C5419R;
 import com.discord.api.channel.ChannelUtils;
 import com.discord.api.guild.GuildFeature;
 import com.discord.databinding.WidgetChatListAdapterItemThreadDraftFormBinding;
@@ -36,12 +34,14 @@ import com.discord.widgets.chat.list.entries.ChatListEntry;
 import com.discord.widgets.chat.list.entries.ThreadDraftFormEntry;
 import com.google.android.material.switchmaterial.SwitchMaterial;
 import com.google.android.material.textfield.TextInputLayout;
-import d0.z.d.Intrinsics3;
-import d0.z.d.Lambda;
 import java.util.Locale;
 import java.util.Objects;
 import kotlin.Unit;
 import kotlin.jvm.functions.Function1;
+import p007b.p008a.p009a.p012b.C0813e;
+import p007b.p008a.p027k.C1107b;
+import p507d0.p592z.p594d.AbstractC12240o;
+import p507d0.p592z.p594d.C12238m;
 
 /* JADX INFO: compiled from: WidgetChatListAdapterItemThreadDraftForm.kt */
 /* JADX INFO: loaded from: classes2.dex */
@@ -50,69 +50,69 @@ public final class WidgetChatListAdapterItemThreadDraftForm extends WidgetChatLi
     private final AppFlexInputViewModel flexInputViewModel;
     private TextWatcher nameTextWatcher;
 
-    /* JADX INFO: renamed from: com.discord.widgets.chat.list.adapter.WidgetChatListAdapterItemThreadDraftForm$configureAutoArchive$1, reason: invalid class name */
+    /* JADX INFO: renamed from: com.discord.widgets.chat.list.adapter.WidgetChatListAdapterItemThreadDraftForm$configureAutoArchive$1 */
     /* JADX INFO: compiled from: WidgetChatListAdapterItemThreadDraftForm.kt */
-    public static final class AnonymousClass1 extends Lambda implements Function1<RenderContext, Unit> {
+    public static final class C81391 extends AbstractC12240o implements Function1<RenderContext, Unit> {
         public final /* synthetic */ ThreadDraftFormEntry $data;
         public final /* synthetic */ StoreThreadDraft.ThreadDraftState $draftState;
 
-        /* JADX INFO: renamed from: com.discord.widgets.chat.list.adapter.WidgetChatListAdapterItemThreadDraftForm$configureAutoArchive$1$1, reason: invalid class name and collision with other inner class name */
+        /* JADX INFO: renamed from: com.discord.widgets.chat.list.adapter.WidgetChatListAdapterItemThreadDraftForm$configureAutoArchive$1$1, reason: invalid class name */
         /* JADX INFO: compiled from: WidgetChatListAdapterItemThreadDraftForm.kt */
-        public static final class C02781 extends Lambda implements Function1<Hook, Unit> {
+        public static final class AnonymousClass1 extends AbstractC12240o implements Function1<Hook, Unit> {
 
             /* JADX INFO: renamed from: com.discord.widgets.chat.list.adapter.WidgetChatListAdapterItemThreadDraftForm$configureAutoArchive$1$1$1, reason: invalid class name and collision with other inner class name */
             /* JADX INFO: compiled from: WidgetChatListAdapterItemThreadDraftForm.kt */
-            public static final class C02791 extends Lambda implements Function1<View, Unit> {
-                public C02791() {
+            public static final class C132811 extends AbstractC12240o implements Function1<View, Unit> {
+                public C132811() {
                     super(1);
                 }
 
                 @Override // kotlin.jvm.functions.Function1
                 public /* bridge */ /* synthetic */ Unit invoke(View view) {
                     invoke2(view);
-                    return Unit.a;
+                    return Unit.f27425a;
                 }
 
                 /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
                 public final void invoke2(View view) {
-                    Intrinsics3.checkNotNullParameter(view, "it");
-                    WidgetThreadDraftArchiveSheet.INSTANCE.show(WidgetChatListAdapterItemThreadDraftForm.access$getAdapter$p(WidgetChatListAdapterItemThreadDraftForm.this).getFragmentManager(), AnonymousClass1.this.$data.getGuildId());
+                    C12238m.checkNotNullParameter(view, "it");
+                    WidgetThreadDraftArchiveSheet.INSTANCE.show(WidgetChatListAdapterItemThreadDraftForm.access$getAdapter$p(WidgetChatListAdapterItemThreadDraftForm.this).getFragmentManager(), C81391.this.$data.getGuildId());
                 }
             }
 
-            public C02781() {
+            public AnonymousClass1() {
                 super(1);
             }
 
             @Override // kotlin.jvm.functions.Function1
             public /* bridge */ /* synthetic */ Unit invoke(Hook hook) {
                 invoke2(hook);
-                return Unit.a;
+                return Unit.f27425a;
             }
 
             /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
             public final void invoke2(Hook hook) {
-                Intrinsics3.checkNotNullParameter(hook, "$receiver");
+                C12238m.checkNotNullParameter(hook, "$receiver");
                 ThreadUtils threadUtils = ThreadUtils.INSTANCE;
                 Context context = WidgetChatListAdapterItemThreadDraftForm.access$getAdapter$p(WidgetChatListAdapterItemThreadDraftForm.this).getContext();
-                Integer autoArchiveDuration = AnonymousClass1.this.$draftState.getAutoArchiveDuration();
+                Integer autoArchiveDuration = C81391.this.$draftState.getAutoArchiveDuration();
                 if (autoArchiveDuration == null) {
-                    autoArchiveDuration = AnonymousClass1.this.$data.getDefaultAutoArchiveDuration();
+                    autoArchiveDuration = C81391.this.$data.getDefaultAutoArchiveDuration();
                 }
                 String strAutoArchiveDurationName = threadUtils.autoArchiveDurationName(context, autoArchiveDuration != null ? autoArchiveDuration.intValue() : 1440);
                 Locale locale = Locale.getDefault();
-                Intrinsics3.checkNotNullExpressionValue(locale, "Locale.getDefault()");
+                C12238m.checkNotNullExpressionValue(locale, "Locale.getDefault()");
                 Objects.requireNonNull(strAutoArchiveDurationName, "null cannot be cast to non-null type java.lang.String");
                 String lowerCase = strAutoArchiveDurationName.toLowerCase(locale);
-                Intrinsics3.checkNotNullExpressionValue(lowerCase, "(this as java.lang.String).toLowerCase(locale)");
+                C12238m.checkNotNullExpressionValue(lowerCase, "(this as java.lang.String).toLowerCase(locale)");
                 hook.replacementText = lowerCase;
-                hook.styles.add(new ClickableSpan(Integer.valueOf(ColorCompat.getThemedColor(WidgetChatListAdapterItemThreadDraftForm.access$getAdapter$p(WidgetChatListAdapterItemThreadDraftForm.this).getContext(), R.attr.colorHeaderPrimary)), true, null, new C02791(), 4, null));
+                hook.styles.add(new ClickableSpan(Integer.valueOf(ColorCompat.getThemedColor(WidgetChatListAdapterItemThreadDraftForm.access$getAdapter$p(WidgetChatListAdapterItemThreadDraftForm.this).getContext(), C5419R.attr.colorHeaderPrimary)), true, null, new C132811(), 4, null));
                 hook.styles.add(new StyleSpan(1));
             }
         }
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-        public AnonymousClass1(StoreThreadDraft.ThreadDraftState threadDraftState, ThreadDraftFormEntry threadDraftFormEntry) {
+        public C81391(StoreThreadDraft.ThreadDraftState threadDraftState, ThreadDraftFormEntry threadDraftFormEntry) {
             super(1);
             this.$draftState = threadDraftState;
             this.$data = threadDraftFormEntry;
@@ -121,48 +121,48 @@ public final class WidgetChatListAdapterItemThreadDraftForm extends WidgetChatLi
         @Override // kotlin.jvm.functions.Function1
         public /* bridge */ /* synthetic */ Unit invoke(RenderContext renderContext) {
             invoke2(renderContext);
-            return Unit.a;
+            return Unit.f27425a;
         }
 
         /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
         public final void invoke2(RenderContext renderContext) {
-            Intrinsics3.checkNotNullParameter(renderContext, "$receiver");
-            renderContext.a("durationHook", new C02781());
+            C12238m.checkNotNullParameter(renderContext, "$receiver");
+            renderContext.m8422a("durationHook", new AnonymousClass1());
         }
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public WidgetChatListAdapterItemThreadDraftForm(WidgetChatListAdapter widgetChatListAdapter, AppFlexInputViewModel appFlexInputViewModel) {
-        super(R.layout.widget_chat_list_adapter_item_thread_draft_form, widgetChatListAdapter);
-        Intrinsics3.checkNotNullParameter(widgetChatListAdapter, "adapter");
+        super(C5419R.layout.widget_chat_list_adapter_item_thread_draft_form, widgetChatListAdapter);
+        C12238m.checkNotNullParameter(widgetChatListAdapter, "adapter");
         this.flexInputViewModel = appFlexInputViewModel;
         View view = this.itemView;
-        int i = R.id.auto_archive_duration;
-        TextView textView = (TextView) view.findViewById(R.id.auto_archive_duration);
+        int i = C5419R.id.auto_archive_duration;
+        TextView textView = (TextView) view.findViewById(C5419R.id.auto_archive_duration);
         if (textView != null) {
-            i = R.id.divider_stroke;
-            View viewFindViewById = view.findViewById(R.id.divider_stroke);
+            i = C5419R.id.divider_stroke;
+            View viewFindViewById = view.findViewById(C5419R.id.divider_stroke);
             if (viewFindViewById != null) {
-                i = R.id.private_thread_toggle;
-                ConstraintLayout constraintLayout = (ConstraintLayout) view.findViewById(R.id.private_thread_toggle);
+                i = C5419R.id.private_thread_toggle;
+                ConstraintLayout constraintLayout = (ConstraintLayout) view.findViewById(C5419R.id.private_thread_toggle);
                 if (constraintLayout != null) {
-                    i = R.id.private_thread_toggle_badge;
-                    TextView textView2 = (TextView) view.findViewById(R.id.private_thread_toggle_badge);
+                    i = C5419R.id.private_thread_toggle_badge;
+                    TextView textView2 = (TextView) view.findViewById(C5419R.id.private_thread_toggle_badge);
                     if (textView2 != null) {
-                        i = R.id.private_thread_toggle_switch;
-                        SwitchMaterial switchMaterial = (SwitchMaterial) view.findViewById(R.id.private_thread_toggle_switch);
+                        i = C5419R.id.private_thread_toggle_switch;
+                        SwitchMaterial switchMaterial = (SwitchMaterial) view.findViewById(C5419R.id.private_thread_toggle_switch);
                         if (switchMaterial != null) {
-                            i = R.id.private_thread_toggle_text;
-                            LinearLayout linearLayout = (LinearLayout) view.findViewById(R.id.private_thread_toggle_text);
+                            i = C5419R.id.private_thread_toggle_text;
+                            LinearLayout linearLayout = (LinearLayout) view.findViewById(C5419R.id.private_thread_toggle_text);
                             if (linearLayout != null) {
-                                i = R.id.thread_icon;
-                                ImageView imageView = (ImageView) view.findViewById(R.id.thread_icon);
+                                i = C5419R.id.thread_icon;
+                                ImageView imageView = (ImageView) view.findViewById(C5419R.id.thread_icon);
                                 if (imageView != null) {
-                                    i = R.id.thread_name_input;
-                                    TextInputLayout textInputLayout = (TextInputLayout) view.findViewById(R.id.thread_name_input);
+                                    i = C5419R.id.thread_name_input;
+                                    TextInputLayout textInputLayout = (TextInputLayout) view.findViewById(C5419R.id.thread_name_input);
                                     if (textInputLayout != null) {
                                         WidgetChatListAdapterItemThreadDraftFormBinding widgetChatListAdapterItemThreadDraftFormBinding = new WidgetChatListAdapterItemThreadDraftFormBinding((LinearLayout) view, textView, viewFindViewById, constraintLayout, textView2, switchMaterial, linearLayout, imageView, textInputLayout);
-                                        Intrinsics3.checkNotNullExpressionValue(widgetChatListAdapterItemThreadDraftFormBinding, "WidgetChatListAdapterIte…ormBinding.bind(itemView)");
+                                        C12238m.checkNotNullExpressionValue(widgetChatListAdapterItemThreadDraftFormBinding, "WidgetChatListAdapterIte…ormBinding.bind(itemView)");
                                         this.binding = widgetChatListAdapterItemThreadDraftFormBinding;
                                         return;
                                     }
@@ -182,10 +182,10 @@ public final class WidgetChatListAdapterItemThreadDraftForm extends WidgetChatLi
 
     private final void configureAutoArchive(final ThreadDraftFormEntry data) {
         StoreThreadDraft.ThreadDraftState threadDraftState = data.getThreadDraftState();
-        TextView textView = this.binding.f2340b;
-        Intrinsics3.checkNotNullExpressionValue(textView, "binding.autoArchiveDuration");
-        FormatUtils.m(textView, R.string.create_thread_header_2, new Object[0], new AnonymousClass1(threadDraftState, data));
-        this.binding.f2340b.setOnClickListener(new View.OnClickListener() { // from class: com.discord.widgets.chat.list.adapter.WidgetChatListAdapterItemThreadDraftForm.configureAutoArchive.2
+        TextView textView = this.binding.f16330b;
+        C12238m.checkNotNullExpressionValue(textView, "binding.autoArchiveDuration");
+        C1107b.m221m(textView, C5419R.string.create_thread_header_2, new Object[0], new C81391(threadDraftState, data));
+        this.binding.f16330b.setOnClickListener(new View.OnClickListener() { // from class: com.discord.widgets.chat.list.adapter.WidgetChatListAdapterItemThreadDraftForm.configureAutoArchive.2
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
                 WidgetThreadDraftArchiveSheet.INSTANCE.show(WidgetChatListAdapterItemThreadDraftForm.access$getAdapter$p(WidgetChatListAdapterItemThreadDraftForm.this).getFragmentManager(), data.getGuildId());
@@ -196,31 +196,31 @@ public final class WidgetChatListAdapterItemThreadDraftForm extends WidgetChatLi
     private final void configureIcon(ThreadDraftFormEntry data) {
         int i;
         StoreThreadDraft.ThreadDraftState threadDraftState = data.getThreadDraftState();
-        if (ChannelUtils.q(data.getParentChannel())) {
-            i = R.drawable.ic_channel_forum_post;
+        if (ChannelUtils.m7693q(data.getParentChannel())) {
+            i = C5419R.drawable.ic_channel_forum_post;
         } else {
-            i = threadDraftState.isPrivate() ? R.drawable.ic_thread_locked : R.drawable.ic_thread;
+            i = threadDraftState.isPrivate() ? C5419R.drawable.ic_thread_locked : C5419R.drawable.ic_thread;
         }
-        this.binding.f.setImageResource(i);
+        this.binding.f16334f.setImageResource(i);
     }
 
     private final void configurePrivateThreadOption(final ThreadDraftFormEntry data) {
         final StoreThreadDraft.ThreadDraftState threadDraftState = data.getThreadDraftState();
         final StoreThreadDraft threadDraft = StoreStream.INSTANCE.getThreadDraft();
-        if (ChannelUtils.q(data.getParentChannel())) {
-            ConstraintLayout constraintLayout = this.binding.c;
-            Intrinsics3.checkNotNullExpressionValue(constraintLayout, "binding.privateThreadToggle");
+        if (ChannelUtils.m7693q(data.getParentChannel())) {
+            ConstraintLayout constraintLayout = this.binding.f16331c;
+            C12238m.checkNotNullExpressionValue(constraintLayout, "binding.privateThreadToggle");
             constraintLayout.setVisibility(8);
             return;
         }
-        ConstraintLayout constraintLayout2 = this.binding.c;
-        Intrinsics3.checkNotNullExpressionValue(constraintLayout2, "binding.privateThreadToggle");
+        ConstraintLayout constraintLayout2 = this.binding.f16331c;
+        C12238m.checkNotNullExpressionValue(constraintLayout2, "binding.privateThreadToggle");
         constraintLayout2.setVisibility(data.getParentMessageId() == null && data.getCanSeePrivateThreadOption() ? 0 : 8);
         if (!data.getCanCreatePublicThread() && !threadDraftState.isPrivate()) {
             threadDraft.setDraftState(StoreThreadDraft.ThreadDraftState.copy$default(threadDraftState, true, null, null, false, false, 30, null));
-            this.binding.c.setOnClickListener(null);
+            this.binding.f16331c.setOnClickListener(null);
         } else if (data.getCanCreatePrivateThread()) {
-            this.binding.c.setOnClickListener(new View.OnClickListener() { // from class: com.discord.widgets.chat.list.adapter.WidgetChatListAdapterItemThreadDraftForm.configurePrivateThreadOption.2
+            this.binding.f16331c.setOnClickListener(new View.OnClickListener() { // from class: com.discord.widgets.chat.list.adapter.WidgetChatListAdapterItemThreadDraftForm.configurePrivateThreadOption.2
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
                     StoreThreadDraft storeThreadDraft = threadDraft;
@@ -229,22 +229,22 @@ public final class WidgetChatListAdapterItemThreadDraftForm extends WidgetChatLi
                 }
             });
         } else {
-            this.binding.c.setOnClickListener(new View.OnClickListener() { // from class: com.discord.widgets.chat.list.adapter.WidgetChatListAdapterItemThreadDraftForm.configurePrivateThreadOption.1
+            this.binding.f16331c.setOnClickListener(new View.OnClickListener() { // from class: com.discord.widgets.chat.list.adapter.WidgetChatListAdapterItemThreadDraftForm.configurePrivateThreadOption.1
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
-                    GuildBoostUpsellDialog.INSTANCE.a(WidgetChatListAdapterItemThreadDraftForm.access$getAdapter$p(WidgetChatListAdapterItemThreadDraftForm.this).getFragmentManager(), data.getGuildId(), Long.valueOf(data.getParentChannel().getId()), PremiumUtils.INSTANCE.getMinimumBoostTierForGuildFeature(GuildFeature.PRIVATE_THREADS), new Traits.Location(Traits.Location.Page.GUILD_CHANNEL, Traits.Location.Section.THREAD_CREATION_OPTIONS, Traits.Location.Obj.PRIVATE_THREAD_CHECKBOX, null, null, 24, null));
+                    C0813e.INSTANCE.m119a(WidgetChatListAdapterItemThreadDraftForm.access$getAdapter$p(WidgetChatListAdapterItemThreadDraftForm.this).getFragmentManager(), data.getGuildId(), Long.valueOf(data.getParentChannel().getId()), PremiumUtils.INSTANCE.getMinimumBoostTierForGuildFeature(GuildFeature.PRIVATE_THREADS), new Traits.Location(Traits.Location.Page.GUILD_CHANNEL, Traits.Location.Section.THREAD_CREATION_OPTIONS, Traits.Location.Obj.PRIVATE_THREAD_CHECKBOX, null, null, 24, null));
                 }
             });
         }
-        SwitchMaterial switchMaterial = this.binding.e;
-        Intrinsics3.checkNotNullExpressionValue(switchMaterial, "binding.privateThreadToggleSwitch");
+        SwitchMaterial switchMaterial = this.binding.f16333e;
+        C12238m.checkNotNullExpressionValue(switchMaterial, "binding.privateThreadToggleSwitch");
         switchMaterial.setChecked(threadDraftState.isPrivate());
         PremiumUtils.BoostFeatureBadgeData boostFeatureBadgeDataForGuildFeature = PremiumUtils.INSTANCE.getBoostFeatureBadgeDataForGuildFeature(data.getGuild(), Long.valueOf(data.getParentChannel().getId()), GuildFeature.PRIVATE_THREADS, ((WidgetChatListAdapter) this.adapter).getContext(), ((WidgetChatListAdapter) this.adapter).getFragmentManager(), (32 & 32) != 0 ? null : null, (32 & 64) != 0 ? null : new Traits.Location(null, Traits.Location.Section.THREAD_CREATION_OPTIONS, Traits.Location.Obj.PRIVATE_THREAD_CHECKBOX, null, null, 25, null));
-        TextView textView = this.binding.d;
-        Intrinsics3.checkNotNullExpressionValue(textView, "binding.privateThreadToggleBadge");
+        TextView textView = this.binding.f16332d;
+        C12238m.checkNotNullExpressionValue(textView, "binding.privateThreadToggleBadge");
         textView.setText(boostFeatureBadgeDataForGuildFeature.getText());
-        TextView textView2 = this.binding.d;
-        Drawable drawable = ContextCompat.getDrawable(((WidgetChatListAdapter) this.adapter).getContext(), R.drawable.ic_boosted_badge_12dp);
+        TextView textView2 = this.binding.f16332d;
+        Drawable drawable = ContextCompat.getDrawable(((WidgetChatListAdapter) this.adapter).getContext(), C5419R.drawable.ic_boosted_badge_12dp);
         if (drawable != null) {
             drawable.setTint(boostFeatureBadgeDataForGuildFeature.getIconColor());
         } else {
@@ -258,12 +258,12 @@ public final class WidgetChatListAdapterItemThreadDraftForm extends WidgetChatLi
         final StoreThreadDraft threadDraft = StoreStream.INSTANCE.getThreadDraft();
         String threadName = threadDraftState.getThreadName();
         if (threadName == null || threadName.length() == 0) {
-            TextInputLayout textInputLayout = this.binding.g;
-            Intrinsics3.checkNotNullExpressionValue(textInputLayout, "binding.threadNameInput");
+            TextInputLayout textInputLayout = this.binding.f16335g;
+            C12238m.checkNotNullExpressionValue(textInputLayout, "binding.threadNameInput");
             ViewExtensions.clear(textInputLayout);
         }
-        TextInputLayout textInputLayout2 = this.binding.g;
-        Intrinsics3.checkNotNullExpressionValue(textInputLayout2, "binding.threadNameInput");
+        TextInputLayout textInputLayout2 = this.binding.f16335g;
+        C12238m.checkNotNullExpressionValue(textInputLayout2, "binding.threadNameInput");
         EditText editText = textInputLayout2.getEditText();
         if (editText != null) {
             editText.removeTextChangedListener(this.nameTextWatcher);
@@ -313,18 +313,18 @@ public final class WidgetChatListAdapterItemThreadDraftForm extends WidgetChatLi
             });
         }
         if (!threadDraftState.getShouldDisplayNameError()) {
-            TextInputLayout textInputLayout3 = this.binding.g;
-            Intrinsics3.checkNotNullExpressionValue(textInputLayout3, "binding.threadNameInput");
+            TextInputLayout textInputLayout3 = this.binding.f16335g;
+            C12238m.checkNotNullExpressionValue(textInputLayout3, "binding.threadNameInput");
             textInputLayout3.setErrorEnabled(false);
             return;
         }
-        TextInputLayout textInputLayout4 = this.binding.g;
-        Intrinsics3.checkNotNullExpressionValue(textInputLayout4, "binding.threadNameInput");
-        TextInputLayout textInputLayout5 = this.binding.g;
-        Intrinsics3.checkNotNullExpressionValue(textInputLayout5, "binding.threadNameInput");
-        textInputLayout4.setError(textInputLayout5.getContext().getString(R.string.member_verification_form_required_item));
-        TextInputLayout textInputLayout6 = this.binding.g;
-        Intrinsics3.checkNotNullExpressionValue(textInputLayout6, "binding.threadNameInput");
+        TextInputLayout textInputLayout4 = this.binding.f16335g;
+        C12238m.checkNotNullExpressionValue(textInputLayout4, "binding.threadNameInput");
+        TextInputLayout textInputLayout5 = this.binding.f16335g;
+        C12238m.checkNotNullExpressionValue(textInputLayout5, "binding.threadNameInput");
+        textInputLayout4.setError(textInputLayout5.getContext().getString(C5419R.string.member_verification_form_required_item));
+        TextInputLayout textInputLayout6 = this.binding.f16335g;
+        C12238m.checkNotNullExpressionValue(textInputLayout6, "binding.threadNameInput");
         textInputLayout6.setErrorEnabled(true);
     }
 
@@ -335,13 +335,13 @@ public final class WidgetChatListAdapterItemThreadDraftForm extends WidgetChatLi
     /* JADX WARN: Can't rename method to resolve collision */
     @Override // com.discord.widgets.chat.list.adapter.WidgetChatListItem, com.discord.utilities.mg_recycler.MGRecyclerViewHolder
     public void onConfigure(int position, ChatListEntry data) {
-        Intrinsics3.checkNotNullParameter(data, "data");
+        C12238m.checkNotNullParameter(data, "data");
         super.onConfigure(position, data);
         ThreadDraftFormEntry threadDraftFormEntry = (ThreadDraftFormEntry) data;
         configureThreadNameInput(threadDraftFormEntry);
         configureAutoArchive(threadDraftFormEntry);
         configureIcon(threadDraftFormEntry);
         configurePrivateThreadOption(threadDraftFormEntry);
-        this.binding.g.requestFocus();
+        this.binding.f16335g.requestFocus();
     }
 }

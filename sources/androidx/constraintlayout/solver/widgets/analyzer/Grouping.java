@@ -20,7 +20,7 @@ public class Grouping {
     public static WidgetGroup findDependents(ConstraintWidget constraintWidget, int i, ArrayList<WidgetGroup> arrayList, WidgetGroup widgetGroup) {
         int iFindGroupInDependents;
         int i2 = i == 0 ? constraintWidget.horizontalGroup : constraintWidget.verticalGroup;
-        if (i2 != -1 && (widgetGroup == null || i2 != widgetGroup.f33id)) {
+        if (i2 != -1 && (widgetGroup == null || i2 != widgetGroup.f123id)) {
             for (int i3 = 0; i3 < arrayList.size(); i3++) {
                 WidgetGroup widgetGroup2 = arrayList.get(i3);
                 if (widgetGroup2.getId() == i2) {
@@ -74,7 +74,7 @@ public class Grouping {
         int size = arrayList.size();
         for (int i2 = 0; i2 < size; i2++) {
             WidgetGroup widgetGroup = arrayList.get(i2);
-            if (i == widgetGroup.f33id) {
+            if (i == widgetGroup.f123id) {
                 return widgetGroup;
             }
         }

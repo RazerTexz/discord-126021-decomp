@@ -16,8 +16,8 @@ import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
 import java.util.List;
 import java.util.NoSuchElementException;
-import x.a.a.ICustomTabsCallback;
-import x.a.a.ICustomTabsService;
+import p668x.p669a.p670a.InterfaceC13176a;
+import p668x.p669a.p670a.InterfaceC13177b;
 
 /* JADX INFO: loaded from: classes.dex */
 public abstract class CustomTabsService extends Service {
@@ -37,11 +37,11 @@ public abstract class CustomTabsService extends Service {
     public static final int RESULT_SUCCESS = 0;
     public static final String TRUSTED_WEB_ACTIVITY_CATEGORY = "androidx.browser.trusted.category.TrustedWebActivities";
     public final SimpleArrayMap<IBinder, IBinder.DeathRecipient> mDeathRecipientMap = new SimpleArrayMap<>();
-    private ICustomTabsService.a mBinder = new AnonymousClass1();
+    private InterfaceC13177b.a mBinder = new BinderC01531();
 
-    /* JADX INFO: renamed from: androidx.browser.customtabs.CustomTabsService$1, reason: invalid class name */
-    public class AnonymousClass1 extends ICustomTabsService.a {
-        public AnonymousClass1() {
+    /* JADX INFO: renamed from: androidx.browser.customtabs.CustomTabsService$1 */
+    public class BinderC01531 extends InterfaceC13177b.a {
+        public BinderC01531() {
         }
 
         @Nullable
@@ -54,19 +54,19 @@ public abstract class CustomTabsService extends Service {
             return pendingIntent;
         }
 
-        private boolean newSessionInternal(@NonNull ICustomTabsCallback iCustomTabsCallback, @Nullable PendingIntent pendingIntent) {
-            final CustomTabsSessionToken customTabsSessionToken = new CustomTabsSessionToken(iCustomTabsCallback, pendingIntent);
+        private boolean newSessionInternal(@NonNull InterfaceC13176a interfaceC13176a, @Nullable PendingIntent pendingIntent) {
+            final CustomTabsSessionToken customTabsSessionToken = new CustomTabsSessionToken(interfaceC13176a, pendingIntent);
             try {
                 IBinder.DeathRecipient deathRecipient = new IBinder.DeathRecipient() { // from class: y.a.a.a
                     @Override // android.os.IBinder.DeathRecipient
                     public final void binderDied() {
-                        CustomTabsService.AnonymousClass1 anonymousClass1 = this.a;
+                        CustomTabsService.BinderC01531 binderC01531 = this.f27950a;
                         CustomTabsService.this.cleanUpSession(customTabsSessionToken);
                     }
                 };
                 synchronized (CustomTabsService.this.mDeathRecipientMap) {
-                    iCustomTabsCallback.asBinder().linkToDeath(deathRecipient, 0);
-                    CustomTabsService.this.mDeathRecipientMap.put(iCustomTabsCallback.asBinder(), deathRecipient);
+                    interfaceC13176a.asBinder().linkToDeath(deathRecipient, 0);
+                    CustomTabsService.this.mDeathRecipientMap.put(interfaceC13176a.asBinder(), deathRecipient);
                 }
                 return CustomTabsService.this.newSession(customTabsSessionToken);
             } catch (RemoteException unused) {
@@ -74,57 +74,57 @@ public abstract class CustomTabsService extends Service {
             }
         }
 
-        @Override // x.a.a.ICustomTabsService
+        @Override // p668x.p669a.p670a.InterfaceC13177b
         public Bundle extraCommand(@NonNull String str, @Nullable Bundle bundle) {
             return CustomTabsService.this.extraCommand(str, bundle);
         }
 
-        @Override // x.a.a.ICustomTabsService
-        public boolean mayLaunchUrl(@Nullable ICustomTabsCallback iCustomTabsCallback, @Nullable Uri uri, @Nullable Bundle bundle, @Nullable List<Bundle> list) {
-            return CustomTabsService.this.mayLaunchUrl(new CustomTabsSessionToken(iCustomTabsCallback, getSessionIdFromBundle(bundle)), uri, bundle, list);
+        @Override // p668x.p669a.p670a.InterfaceC13177b
+        public boolean mayLaunchUrl(@Nullable InterfaceC13176a interfaceC13176a, @Nullable Uri uri, @Nullable Bundle bundle, @Nullable List<Bundle> list) {
+            return CustomTabsService.this.mayLaunchUrl(new CustomTabsSessionToken(interfaceC13176a, getSessionIdFromBundle(bundle)), uri, bundle, list);
         }
 
-        @Override // x.a.a.ICustomTabsService
-        public boolean newSession(@NonNull ICustomTabsCallback iCustomTabsCallback) {
-            return newSessionInternal(iCustomTabsCallback, null);
+        @Override // p668x.p669a.p670a.InterfaceC13177b
+        public boolean newSession(@NonNull InterfaceC13176a interfaceC13176a) {
+            return newSessionInternal(interfaceC13176a, null);
         }
 
-        @Override // x.a.a.ICustomTabsService
-        public boolean newSessionWithExtras(@NonNull ICustomTabsCallback iCustomTabsCallback, @Nullable Bundle bundle) {
-            return newSessionInternal(iCustomTabsCallback, getSessionIdFromBundle(bundle));
+        @Override // p668x.p669a.p670a.InterfaceC13177b
+        public boolean newSessionWithExtras(@NonNull InterfaceC13176a interfaceC13176a, @Nullable Bundle bundle) {
+            return newSessionInternal(interfaceC13176a, getSessionIdFromBundle(bundle));
         }
 
-        @Override // x.a.a.ICustomTabsService
-        public int postMessage(@NonNull ICustomTabsCallback iCustomTabsCallback, @NonNull String str, @Nullable Bundle bundle) {
-            return CustomTabsService.this.postMessage(new CustomTabsSessionToken(iCustomTabsCallback, getSessionIdFromBundle(bundle)), str, bundle);
+        @Override // p668x.p669a.p670a.InterfaceC13177b
+        public int postMessage(@NonNull InterfaceC13176a interfaceC13176a, @NonNull String str, @Nullable Bundle bundle) {
+            return CustomTabsService.this.postMessage(new CustomTabsSessionToken(interfaceC13176a, getSessionIdFromBundle(bundle)), str, bundle);
         }
 
-        @Override // x.a.a.ICustomTabsService
-        public boolean receiveFile(@NonNull ICustomTabsCallback iCustomTabsCallback, @NonNull Uri uri, int i, @Nullable Bundle bundle) {
-            return CustomTabsService.this.receiveFile(new CustomTabsSessionToken(iCustomTabsCallback, getSessionIdFromBundle(bundle)), uri, i, bundle);
+        @Override // p668x.p669a.p670a.InterfaceC13177b
+        public boolean receiveFile(@NonNull InterfaceC13176a interfaceC13176a, @NonNull Uri uri, int i, @Nullable Bundle bundle) {
+            return CustomTabsService.this.receiveFile(new CustomTabsSessionToken(interfaceC13176a, getSessionIdFromBundle(bundle)), uri, i, bundle);
         }
 
-        @Override // x.a.a.ICustomTabsService
-        public boolean requestPostMessageChannel(@NonNull ICustomTabsCallback iCustomTabsCallback, @NonNull Uri uri) {
-            return CustomTabsService.this.requestPostMessageChannel(new CustomTabsSessionToken(iCustomTabsCallback, null), uri);
+        @Override // p668x.p669a.p670a.InterfaceC13177b
+        public boolean requestPostMessageChannel(@NonNull InterfaceC13176a interfaceC13176a, @NonNull Uri uri) {
+            return CustomTabsService.this.requestPostMessageChannel(new CustomTabsSessionToken(interfaceC13176a, null), uri);
         }
 
-        @Override // x.a.a.ICustomTabsService
-        public boolean requestPostMessageChannelWithExtras(@NonNull ICustomTabsCallback iCustomTabsCallback, @NonNull Uri uri, @NonNull Bundle bundle) {
-            return CustomTabsService.this.requestPostMessageChannel(new CustomTabsSessionToken(iCustomTabsCallback, getSessionIdFromBundle(bundle)), uri);
+        @Override // p668x.p669a.p670a.InterfaceC13177b
+        public boolean requestPostMessageChannelWithExtras(@NonNull InterfaceC13176a interfaceC13176a, @NonNull Uri uri, @NonNull Bundle bundle) {
+            return CustomTabsService.this.requestPostMessageChannel(new CustomTabsSessionToken(interfaceC13176a, getSessionIdFromBundle(bundle)), uri);
         }
 
-        @Override // x.a.a.ICustomTabsService
-        public boolean updateVisuals(@NonNull ICustomTabsCallback iCustomTabsCallback, @Nullable Bundle bundle) {
-            return CustomTabsService.this.updateVisuals(new CustomTabsSessionToken(iCustomTabsCallback, getSessionIdFromBundle(bundle)), bundle);
+        @Override // p668x.p669a.p670a.InterfaceC13177b
+        public boolean updateVisuals(@NonNull InterfaceC13176a interfaceC13176a, @Nullable Bundle bundle) {
+            return CustomTabsService.this.updateVisuals(new CustomTabsSessionToken(interfaceC13176a, getSessionIdFromBundle(bundle)), bundle);
         }
 
-        @Override // x.a.a.ICustomTabsService
-        public boolean validateRelationship(@NonNull ICustomTabsCallback iCustomTabsCallback, int i, @NonNull Uri uri, @Nullable Bundle bundle) {
-            return CustomTabsService.this.validateRelationship(new CustomTabsSessionToken(iCustomTabsCallback, getSessionIdFromBundle(bundle)), i, uri, bundle);
+        @Override // p668x.p669a.p670a.InterfaceC13177b
+        public boolean validateRelationship(@NonNull InterfaceC13176a interfaceC13176a, int i, @NonNull Uri uri, @Nullable Bundle bundle) {
+            return CustomTabsService.this.validateRelationship(new CustomTabsSessionToken(interfaceC13176a, getSessionIdFromBundle(bundle)), i, uri, bundle);
         }
 
-        @Override // x.a.a.ICustomTabsService
+        @Override // p668x.p669a.p670a.InterfaceC13177b
         public boolean warmup(long j) {
             return CustomTabsService.this.warmup(j);
         }

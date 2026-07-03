@@ -1,7 +1,7 @@
 package com.discord.analytics.generated.traits;
 
-import b.d.b.a.outline;
-import d0.z.d.Intrinsics3;
+import p007b.p100d.p104b.p105a.C1643a;
+import p507d0.p592z.p594d.C12238m;
 
 /* JADX INFO: compiled from: TrackLocationMetadata.kt */
 /* JADX INFO: loaded from: classes.dex */
@@ -20,7 +20,7 @@ public final /* data */ class TrackLocationMetadata {
             return false;
         }
         TrackLocationMetadata trackLocationMetadata = (TrackLocationMetadata) other;
-        return Intrinsics3.areEqual(this.locationPage, trackLocationMetadata.locationPage) && Intrinsics3.areEqual(this.locationSection, trackLocationMetadata.locationSection) && Intrinsics3.areEqual(this.locationObject, trackLocationMetadata.locationObject) && Intrinsics3.areEqual(this.locationObjectType, trackLocationMetadata.locationObjectType) && Intrinsics3.areEqual(this.locationPromotionId, trackLocationMetadata.locationPromotionId);
+        return C12238m.areEqual(this.locationPage, trackLocationMetadata.locationPage) && C12238m.areEqual(this.locationSection, trackLocationMetadata.locationSection) && C12238m.areEqual(this.locationObject, trackLocationMetadata.locationObject) && C12238m.areEqual(this.locationObjectType, trackLocationMetadata.locationObjectType) && C12238m.areEqual(this.locationPromotionId, trackLocationMetadata.locationPromotionId);
     }
 
     public int hashCode() {
@@ -37,15 +37,15 @@ public final /* data */ class TrackLocationMetadata {
     }
 
     public String toString() {
-        StringBuilder sbU = outline.U("TrackLocationMetadata(locationPage=");
-        sbU.append(this.locationPage);
-        sbU.append(", locationSection=");
-        sbU.append(this.locationSection);
-        sbU.append(", locationObject=");
-        sbU.append(this.locationObject);
-        sbU.append(", locationObjectType=");
-        sbU.append(this.locationObjectType);
-        sbU.append(", locationPromotionId=");
-        return outline.G(sbU, this.locationPromotionId, ")");
+        StringBuilder sbM833U = C1643a.m833U("TrackLocationMetadata(locationPage=");
+        sbM833U.append(this.locationPage);
+        sbM833U.append(", locationSection=");
+        sbM833U.append(this.locationSection);
+        sbM833U.append(", locationObject=");
+        sbM833U.append(this.locationObject);
+        sbM833U.append(", locationObjectType=");
+        sbM833U.append(this.locationObjectType);
+        sbM833U.append(", locationPromotionId=");
+        return C1643a.m819G(sbM833U, this.locationPromotionId, ")");
     }
 }

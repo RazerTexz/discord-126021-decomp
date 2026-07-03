@@ -11,7 +11,6 @@ import android.os.Message;
 import android.view.Surface;
 import androidx.annotation.Nullable;
 import androidx.recyclerview.widget.RecyclerView;
-import h0.c.EglBase2;
 import java.nio.ByteBuffer;
 import java.text.DecimalFormat;
 import java.util.ArrayList;
@@ -21,6 +20,7 @@ import java.util.concurrent.TimeUnit;
 import org.webrtc.EglBase;
 import org.webrtc.GlUtil;
 import org.webrtc.RendererCommon;
+import p617h0.p628c.C12477n0;
 
 /* JADX INFO: loaded from: classes3.dex */
 public class EglRenderer implements VideoSink {
@@ -127,7 +127,7 @@ public class EglRenderer implements VideoSink {
             try {
                 super.dispatchMessage(message);
             } catch (Exception e) {
-                Logging.e(EglRenderer.TAG, "Exception on EglRenderer thread", e);
+                Logging.m11029e(EglRenderer.TAG, "Exception on EglRenderer thread", e);
                 this.exceptionCallback.run();
                 throw e;
             }
@@ -146,7 +146,7 @@ public class EglRenderer implements VideoSink {
     }
 
     /* JADX INFO: renamed from: clearSurfaceOnRenderThread, reason: merged with bridge method [inline-methods] */
-    private void b(float f, float f2, float f3, float f4) {
+    private void m11019b(float f, float f2, float f3, float f4) {
         EglBase eglBase = this.eglBase;
         if (eglBase == null || !eglBase.hasSurface()) {
             return;
@@ -163,10 +163,10 @@ public class EglRenderer implements VideoSink {
     }
 
     /* JADX INFO: renamed from: lambda$init$0, reason: merged with bridge method [inline-methods] */
-    private void d(EglBase.Context context, int[] iArr) {
+    private void m11020d(EglBase.Context context, int[] iArr) {
         if (context != null) {
             logD("EglBase.create shared context");
-            this.eglBase = EglBase2.b(context, iArr);
+            this.eglBase = C12477n0.m10663b(context, iArr);
         } else {
             logD("EglBase10.create context");
             Object obj = EglBase.lock;
@@ -175,11 +175,11 @@ public class EglRenderer implements VideoSink {
     }
 
     private void logD(String str) {
-        Logging.d(TAG, this.name + str);
+        Logging.m11027d(TAG, this.name + str);
     }
 
     private void logE(String str, Throwable th) {
-        Logging.e(TAG, this.name + str, th);
+        Logging.m11029e(TAG, this.name + str, th);
     }
 
     private void logStatistics() {
@@ -195,7 +195,7 @@ public class EglRenderer implements VideoSink {
     }
 
     private void logW(String str) {
-        Logging.w(TAG, this.name + str);
+        Logging.m11031w(TAG, this.name + str);
     }
 
     private void notifyCallbacks(VideoFrame videoFrame, boolean z2) {
@@ -380,7 +380,8 @@ public class EglRenderer implements VideoSink {
         }
     }
 
-    public /* synthetic */ void a(RendererCommon.GlDrawer glDrawer, FrameListener frameListener, float f, boolean z2) {
+    /* JADX INFO: renamed from: a */
+    public /* synthetic */ void m11018a(RendererCommon.GlDrawer glDrawer, FrameListener frameListener, float f, boolean z2) {
         if (glDrawer == null) {
             glDrawer = this.drawer;
         }
@@ -403,7 +404,8 @@ public class EglRenderer implements VideoSink {
         setFpsReduction(Float.POSITIVE_INFINITY);
     }
 
-    public /* synthetic */ void e(CountDownLatch countDownLatch) {
+    /* JADX INFO: renamed from: e */
+    public /* synthetic */ void m11021e(CountDownLatch countDownLatch) {
         synchronized (EglBase.lock) {
             GLES20.glUseProgram(0);
         }
@@ -424,12 +426,14 @@ public class EglRenderer implements VideoSink {
         countDownLatch.countDown();
     }
 
-    public /* synthetic */ void f(Looper looper) {
+    /* JADX INFO: renamed from: f */
+    public /* synthetic */ void m11022f(Looper looper) {
         logD("Quitting render thread.");
         looper.quit();
     }
 
-    public /* synthetic */ void g(Runnable runnable) {
+    /* JADX INFO: renamed from: g */
+    public /* synthetic */ void m11023g(Runnable runnable) {
         EglBase eglBase = this.eglBase;
         if (eglBase != null) {
             eglBase.detachCurrent();
@@ -438,7 +442,8 @@ public class EglRenderer implements VideoSink {
         runnable.run();
     }
 
-    public /* synthetic */ void h(CountDownLatch countDownLatch, FrameListener frameListener) {
+    /* JADX INFO: renamed from: h */
+    public /* synthetic */ void m11024h(CountDownLatch countDownLatch, FrameListener frameListener) {
         countDownLatch.countDown();
         Iterator<FrameListenerAndParams> it = this.frameListeners.iterator();
         while (it.hasNext()) {
@@ -470,7 +475,7 @@ public class EglRenderer implements VideoSink {
             ThreadUtils.invokeAtFrontUninterruptibly(handlerWithExceptionCallback, new Runnable() { // from class: h0.c.j
                 @Override // java.lang.Runnable
                 public final void run() {
-                    this.j.d(context, iArr);
+                    this.f26439j.m11020d(context, iArr);
                 }
             });
             this.renderThreadHandler.post(this.eglSurfaceCreationRunnable);
@@ -501,7 +506,7 @@ public class EglRenderer implements VideoSink {
                 this.renderThreadHandler.post(new Runnable() { // from class: h0.c.i
                     @Override // java.lang.Runnable
                     public final void run() throws Throwable {
-                        this.j.renderFrameOnRenderThread();
+                        this.f26437j.renderFrameOnRenderThread();
                     }
                 });
             }
@@ -546,14 +551,14 @@ public class EglRenderer implements VideoSink {
             this.renderThreadHandler.postAtFrontOfQueue(new Runnable() { // from class: h0.c.h
                 @Override // java.lang.Runnable
                 public final void run() {
-                    this.j.e(countDownLatch);
+                    this.f26433j.m11021e(countDownLatch);
                 }
             });
             final Looper looper = this.renderThreadHandler.getLooper();
             this.renderThreadHandler.post(new Runnable() { // from class: h0.c.k
                 @Override // java.lang.Runnable
                 public final void run() {
-                    this.j.f(looper);
+                    this.f26443j.m11022f(looper);
                 }
             });
             this.renderThreadHandler = null;
@@ -580,7 +585,7 @@ public class EglRenderer implements VideoSink {
                 this.renderThreadHandler.postAtFrontOfQueue(new Runnable() { // from class: h0.c.e
                     @Override // java.lang.Runnable
                     public final void run() {
-                        this.j.g(runnable);
+                        this.f26416j.m11023g(runnable);
                     }
                 });
             }
@@ -599,7 +604,7 @@ public class EglRenderer implements VideoSink {
             postToRenderThread(new Runnable() { // from class: h0.c.g
                 @Override // java.lang.Runnable
                 public final void run() {
-                    this.j.h(countDownLatch, frameListener);
+                    this.f26427j.m11024h(countDownLatch, frameListener);
                 }
             });
             ThreadUtils.awaitUninterruptibly(countDownLatch);
@@ -685,7 +690,7 @@ public class EglRenderer implements VideoSink {
             handler.postAtFrontOfQueue(new Runnable() { // from class: h0.c.f
                 @Override // java.lang.Runnable
                 public final void run() {
-                    this.j.b(f, f2, f3, f4);
+                    this.f26420j.m11019b(f, f2, f3, f4);
                 }
             });
         }
@@ -699,7 +704,7 @@ public class EglRenderer implements VideoSink {
         postToRenderThread(new Runnable() { // from class: h0.c.l
             @Override // java.lang.Runnable
             public final void run() {
-                this.j.a(glDrawer, frameListener, f, z2);
+                this.f26446j.m11018a(glDrawer, frameListener, f, z2);
             }
         });
     }

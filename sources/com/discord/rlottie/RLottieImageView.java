@@ -8,8 +8,8 @@ import android.view.Display;
 import android.view.WindowManager;
 import androidx.appcompat.widget.AppCompatImageView;
 import com.discord.rlottie.RLottieDrawable;
-import d0.z.d.Intrinsics3;
 import kotlin.TypeCastException;
+import p507d0.p592z.p594d.C12238m;
 
 /* JADX INFO: compiled from: RLottieImageView.kt */
 /* JADX INFO: loaded from: classes.dex */
@@ -27,18 +27,19 @@ public class RLottieImageView extends AppCompatImageView {
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public RLottieImageView(Context context, AttributeSet attributeSet) {
         super(context, attributeSet);
-        Intrinsics3.checkParameterIsNotNull(context, "context");
+        C12238m.checkParameterIsNotNull(context, "context");
         RLottieDrawable.PlaybackMode playbackMode = RLottieDrawable.PlaybackMode.FREEZE;
     }
 
     @SuppressLint({"AnnotateVersionCheck"})
-    public final Display a(Context context) {
+    /* JADX INFO: renamed from: a */
+    public final Display m8448a(Context context) {
         if (Build.VERSION.SDK_INT >= 30) {
             Display display = context.getDisplay();
             if (display == null) {
-                Intrinsics3.throwNpe();
+                C12238m.throwNpe();
             }
-            Intrinsics3.checkExpressionValueIsNotNull(display, "display!!");
+            C12238m.checkExpressionValueIsNotNull(display, "display!!");
             return display;
         }
         Object systemService = context.getSystemService("window");
@@ -46,11 +47,12 @@ public class RLottieImageView extends AppCompatImageView {
             throw new TypeCastException("null cannot be cast to non-null type android.view.WindowManager");
         }
         Display defaultDisplay = ((WindowManager) systemService).getDefaultDisplay();
-        Intrinsics3.checkExpressionValueIsNotNull(defaultDisplay, "(getSystemService(Contex…owManager).defaultDisplay");
+        C12238m.checkExpressionValueIsNotNull(defaultDisplay, "(getSystemService(Contex…owManager).defaultDisplay");
         return defaultDisplay;
     }
 
-    public final void b() {
+    /* JADX INFO: renamed from: b */
+    public final void m8449b() {
         RLottieDrawable rLottieDrawable = this.drawable;
         if (rLottieDrawable == null) {
             return;
@@ -62,20 +64,21 @@ public class RLottieImageView extends AppCompatImageView {
         rLottieDrawable.start();
     }
 
-    public final void c(int resId, int w, int h) {
+    /* JADX INFO: renamed from: c */
+    public final void m8450c(int resId, int w, int h) {
         RLottieDrawable.PlaybackMode playbackMode = RLottieDrawable.PlaybackMode.LOOP;
-        Intrinsics3.checkParameterIsNotNull(playbackMode, "playbackMode");
+        C12238m.checkParameterIsNotNull(playbackMode, "playbackMode");
         Context context = getContext();
-        Intrinsics3.checkExpressionValueIsNotNull(context, "context");
+        C12238m.checkExpressionValueIsNotNull(context, "context");
         String strValueOf = String.valueOf(resId);
         Context context2 = getContext();
-        Intrinsics3.checkExpressionValueIsNotNull(context2, "context");
-        RLottieDrawable rLottieDrawable = new RLottieDrawable(context, resId, strValueOf, w, h, a(context2).getRefreshRate(), false, (int[]) null);
+        C12238m.checkExpressionValueIsNotNull(context2, "context");
+        RLottieDrawable rLottieDrawable = new RLottieDrawable(context, resId, strValueOf, w, h, m8448a(context2).getRefreshRate(), false, (int[]) null);
         this.drawable = rLottieDrawable;
-        rLottieDrawable.f(playbackMode);
+        rLottieDrawable.m8447f(playbackMode);
         RLottieDrawable rLottieDrawable2 = this.drawable;
         if (rLottieDrawable2 != null) {
-            rLottieDrawable2.e(true);
+            rLottieDrawable2.m8446e(true);
         }
         setImageDrawable(this.drawable);
     }
@@ -97,15 +100,15 @@ public class RLottieImageView extends AppCompatImageView {
         this.attachedToWindow = false;
         RLottieDrawable rLottieDrawable = this.drawable;
         if (rLottieDrawable != null) {
-            rLottieDrawable.P = false;
+            rLottieDrawable.f18711P = false;
         }
     }
 
     public final void setPlaybackMode(RLottieDrawable.PlaybackMode playbackMode) {
-        Intrinsics3.checkParameterIsNotNull(playbackMode, "playbackMode");
+        C12238m.checkParameterIsNotNull(playbackMode, "playbackMode");
         RLottieDrawable rLottieDrawable = this.drawable;
         if (rLottieDrawable != null) {
-            rLottieDrawable.f(playbackMode);
+            rLottieDrawable.m8447f(playbackMode);
         }
     }
 
@@ -117,11 +120,11 @@ public class RLottieImageView extends AppCompatImageView {
             } else if (progress > 1.0f) {
                 progress = 1.0f;
             }
-            rLottieDrawable.I = (int) (rLottieDrawable.r[0] * progress);
-            rLottieDrawable.f2769z = false;
-            rLottieDrawable.G = false;
-            if (!rLottieDrawable.d()) {
-                rLottieDrawable.H = true;
+            rLottieDrawable.f18704I = (int) (rLottieDrawable.f18722r[0] * progress);
+            rLottieDrawable.f18730z = false;
+            rLottieDrawable.f18702G = false;
+            if (!rLottieDrawable.m8445d()) {
+                rLottieDrawable.f18703H = true;
             }
             rLottieDrawable.invalidateSelf();
         }

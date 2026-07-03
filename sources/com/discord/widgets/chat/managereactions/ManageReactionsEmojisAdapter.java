@@ -6,8 +6,7 @@ import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 import androidx.recyclerview.widget.RecyclerView;
-import b.d.b.a.outline;
-import com.discord.R;
+import com.discord.C5419R;
 import com.discord.api.message.reaction.MessageReaction;
 import com.discord.databinding.WidgetManageReactionsEmojiBinding;
 import com.discord.models.domain.ModelAuditLogEntry;
@@ -18,9 +17,10 @@ import com.discord.utilities.mg_recycler.MGRecyclerViewHolder;
 import com.discord.utilities.textprocessing.node.EmojiNode;
 import com.discord.utilities.view.text.SimpleDraweeSpanTextView;
 import com.discord.widgets.chat.managereactions.ManageReactionsEmojisAdapter;
-import d0.z.d.Intrinsics3;
 import kotlin.Unit;
 import kotlin.jvm.functions.Function1;
+import p007b.p100d.p104b.p105a.C1643a;
+import p507d0.p592z.p594d.C12238m;
 
 /* JADX INFO: compiled from: ManageReactionsEmojisAdapter.kt */
 /* JADX INFO: loaded from: classes2.dex */
@@ -36,10 +36,10 @@ public final class ManageReactionsEmojisAdapter extends MGRecyclerAdapterSimple<
         private final int type;
 
         public ReactionEmojiItem(MessageReaction messageReaction, boolean z2) {
-            Intrinsics3.checkNotNullParameter(messageReaction, "reaction");
+            C12238m.checkNotNullParameter(messageReaction, "reaction");
             this.reaction = messageReaction;
             this.isSelected = z2;
-            this.key = messageReaction.getEmoji().c();
+            this.key = messageReaction.getEmoji().m8116c();
         }
 
         public static /* synthetic */ ReactionEmojiItem copy$default(ReactionEmojiItem reactionEmojiItem, MessageReaction messageReaction, boolean z2, int i, Object obj) {
@@ -63,7 +63,7 @@ public final class ManageReactionsEmojisAdapter extends MGRecyclerAdapterSimple<
         }
 
         public final ReactionEmojiItem copy(MessageReaction reaction, boolean isSelected) {
-            Intrinsics3.checkNotNullParameter(reaction, "reaction");
+            C12238m.checkNotNullParameter(reaction, "reaction");
             return new ReactionEmojiItem(reaction, isSelected);
         }
 
@@ -75,7 +75,7 @@ public final class ManageReactionsEmojisAdapter extends MGRecyclerAdapterSimple<
                 return false;
             }
             ReactionEmojiItem reactionEmojiItem = (ReactionEmojiItem) other;
-            return Intrinsics3.areEqual(this.reaction, reactionEmojiItem.reaction) && this.isSelected == reactionEmojiItem.isSelected;
+            return C12238m.areEqual(this.reaction, reactionEmojiItem.reaction) && this.isSelected == reactionEmojiItem.isSelected;
         }
 
         @Override // com.discord.utilities.mg_recycler.MGRecyclerDataPayload, com.discord.utilities.recycler.DiffKeyProvider
@@ -113,10 +113,10 @@ public final class ManageReactionsEmojisAdapter extends MGRecyclerAdapterSimple<
         }
 
         public String toString() {
-            StringBuilder sbU = outline.U("ReactionEmojiItem(reaction=");
-            sbU.append(this.reaction);
-            sbU.append(", isSelected=");
-            return outline.O(sbU, this.isSelected, ")");
+            StringBuilder sbM833U = C1643a.m833U("ReactionEmojiItem(reaction=");
+            sbM833U.append(this.reaction);
+            sbM833U.append(", isSelected=");
+            return C1643a.m827O(sbM833U, this.isSelected, ")");
         }
     }
 
@@ -127,23 +127,23 @@ public final class ManageReactionsEmojisAdapter extends MGRecyclerAdapterSimple<
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
         public ReactionEmojiViewHolder(ManageReactionsEmojisAdapter manageReactionsEmojisAdapter) {
-            super(R.layout.widget_manage_reactions_emoji, manageReactionsEmojisAdapter);
-            Intrinsics3.checkNotNullParameter(manageReactionsEmojisAdapter, "adapter");
+            super(C5419R.layout.widget_manage_reactions_emoji, manageReactionsEmojisAdapter);
+            C12238m.checkNotNullParameter(manageReactionsEmojisAdapter, "adapter");
             View view = this.itemView;
-            int i = R.id.manage_reactions_emoji_container;
-            LinearLayout linearLayout = (LinearLayout) view.findViewById(R.id.manage_reactions_emoji_container);
+            int i = C5419R.id.manage_reactions_emoji_container;
+            LinearLayout linearLayout = (LinearLayout) view.findViewById(C5419R.id.manage_reactions_emoji_container);
             if (linearLayout != null) {
-                i = R.id.manage_reactions_emoji_counter;
-                TextView textView = (TextView) view.findViewById(R.id.manage_reactions_emoji_counter);
+                i = C5419R.id.manage_reactions_emoji_counter;
+                TextView textView = (TextView) view.findViewById(C5419R.id.manage_reactions_emoji_counter);
                 if (textView != null) {
-                    i = R.id.manage_reactions_emoji_emoji_textview;
-                    SimpleDraweeSpanTextView simpleDraweeSpanTextView = (SimpleDraweeSpanTextView) view.findViewById(R.id.manage_reactions_emoji_emoji_textview);
+                    i = C5419R.id.manage_reactions_emoji_emoji_textview;
+                    SimpleDraweeSpanTextView simpleDraweeSpanTextView = (SimpleDraweeSpanTextView) view.findViewById(C5419R.id.manage_reactions_emoji_emoji_textview);
                     if (simpleDraweeSpanTextView != null) {
-                        i = R.id.manage_reactions_emoji_selected_indicator;
-                        View viewFindViewById = view.findViewById(R.id.manage_reactions_emoji_selected_indicator);
+                        i = C5419R.id.manage_reactions_emoji_selected_indicator;
+                        View viewFindViewById = view.findViewById(C5419R.id.manage_reactions_emoji_selected_indicator);
                         if (viewFindViewById != null) {
                             WidgetManageReactionsEmojiBinding widgetManageReactionsEmojiBinding = new WidgetManageReactionsEmojiBinding((RelativeLayout) view, linearLayout, textView, simpleDraweeSpanTextView, viewFindViewById);
-                            Intrinsics3.checkNotNullExpressionValue(widgetManageReactionsEmojiBinding, "WidgetManageReactionsEmojiBinding.bind(itemView)");
+                            C12238m.checkNotNullExpressionValue(widgetManageReactionsEmojiBinding, "WidgetManageReactionsEmojiBinding.bind(itemView)");
                             this.binding = widgetManageReactionsEmojiBinding;
                             return;
                         }
@@ -159,24 +159,24 @@ public final class ManageReactionsEmojisAdapter extends MGRecyclerAdapterSimple<
 
         @Override // com.discord.utilities.mg_recycler.MGRecyclerViewHolder
         public void onConfigure(int position, final ReactionEmojiItem data) {
-            Intrinsics3.checkNotNullParameter(data, "data");
+            C12238m.checkNotNullParameter(data, "data");
             super.onConfigure(position, data);
             EmojiNode.Companion companion = EmojiNode.INSTANCE;
-            SimpleDraweeSpanTextView simpleDraweeSpanTextView = this.binding.c;
-            Intrinsics3.checkNotNullExpressionValue(simpleDraweeSpanTextView, "binding.manageReactionsEmojiEmojiTextview");
+            SimpleDraweeSpanTextView simpleDraweeSpanTextView = this.binding.f17220c;
+            C12238m.checkNotNullExpressionValue(simpleDraweeSpanTextView, "binding.manageReactionsEmojiEmojiTextview");
             companion.renderEmoji(simpleDraweeSpanTextView, data.getReaction().getEmoji(), true, emojiSizePx);
-            TextView textView = this.binding.f2483b;
-            Intrinsics3.checkNotNullExpressionValue(textView, "binding.manageReactionsEmojiCounter");
+            TextView textView = this.binding.f17219b;
+            C12238m.checkNotNullExpressionValue(textView, "binding.manageReactionsEmojiCounter");
             textView.setText(String.valueOf(data.getReaction().getCount()));
-            View view = this.binding.d;
-            Intrinsics3.checkNotNullExpressionValue(view, "binding.manageReactionsEmojiSelectedIndicator");
+            View view = this.binding.f17221d;
+            C12238m.checkNotNullExpressionValue(view, "binding.manageReactionsEmojiSelectedIndicator");
             view.setVisibility(data.isSelected() ? 0 : 4);
-            this.binding.a.setOnClickListener(new View.OnClickListener() { // from class: com.discord.widgets.chat.managereactions.ManageReactionsEmojisAdapter$ReactionEmojiViewHolder$onConfigure$1
+            this.binding.f17218a.setOnClickListener(new View.OnClickListener() { // from class: com.discord.widgets.chat.managereactions.ManageReactionsEmojisAdapter$ReactionEmojiViewHolder$onConfigure$1
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view2) {
                     Function1<String, Unit> onEmojiSelectedListener = ManageReactionsEmojisAdapter.ReactionEmojiViewHolder.access$getAdapter$p(this.this$0).getOnEmojiSelectedListener();
                     if (onEmojiSelectedListener != null) {
-                        onEmojiSelectedListener.invoke(data.getReaction().getEmoji().c());
+                        onEmojiSelectedListener.invoke(data.getReaction().getEmoji().m8116c());
                     }
                 }
             });
@@ -186,7 +186,7 @@ public final class ManageReactionsEmojisAdapter extends MGRecyclerAdapterSimple<
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public ManageReactionsEmojisAdapter(RecyclerView recyclerView) {
         super(recyclerView, false, 2, null);
-        Intrinsics3.checkNotNullParameter(recyclerView, "recycler");
+        C12238m.checkNotNullParameter(recyclerView, "recycler");
     }
 
     public final Function1<String, Unit> getOnEmojiSelectedListener() {
@@ -199,7 +199,7 @@ public final class ManageReactionsEmojisAdapter extends MGRecyclerAdapterSimple<
 
     @Override // androidx.recyclerview.widget.RecyclerView.Adapter
     public MGRecyclerViewHolder<?, ReactionEmojiItem> onCreateViewHolder(ViewGroup parent, int viewType) {
-        Intrinsics3.checkNotNullParameter(parent, "parent");
+        C12238m.checkNotNullParameter(parent, "parent");
         if (viewType == 0) {
             return new ReactionEmojiViewHolder(this);
         }

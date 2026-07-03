@@ -8,21 +8,22 @@ import com.facebook.drawee.view.SimpleDraweeView;
 /* JADX INFO: loaded from: classes.dex */
 public final class EmojiPickerEmojiItemBinding implements ViewBinding {
 
+    /* JADX INFO: renamed from: a */
     @NonNull
-    public final SimpleDraweeView a;
+    public final SimpleDraweeView f15056a;
 
-    /* JADX INFO: renamed from: b, reason: collision with root package name */
+    /* JADX INFO: renamed from: b */
     @NonNull
-    public final SimpleDraweeView f2101b;
+    public final SimpleDraweeView f15057b;
 
     public EmojiPickerEmojiItemBinding(@NonNull SimpleDraweeView simpleDraweeView, @NonNull SimpleDraweeView simpleDraweeView2) {
-        this.a = simpleDraweeView;
-        this.f2101b = simpleDraweeView2;
+        this.f15056a = simpleDraweeView;
+        this.f15057b = simpleDraweeView2;
     }
 
     @Override // androidx.viewbinding.ViewBinding
     @NonNull
     public View getRoot() {
-        return this.a;
+        return this.f15056a;
     }
 }

@@ -10,33 +10,37 @@ import androidx.viewbinding.ViewBinding;
 /* JADX INFO: loaded from: classes.dex */
 public final class WidgetChatListAdapterItemMessageHeaderBinding implements ViewBinding {
 
+    /* JADX INFO: renamed from: a */
     @NonNull
-    public final RelativeLayout a;
+    public final RelativeLayout f16256a;
 
-    /* JADX INFO: renamed from: b, reason: collision with root package name */
+    /* JADX INFO: renamed from: b */
     @NonNull
-    public final TextView f2327b;
+    public final TextView f16257b;
 
+    /* JADX INFO: renamed from: c */
     @NonNull
-    public final View c;
+    public final View f16258c;
 
+    /* JADX INFO: renamed from: d */
     @NonNull
-    public final TextView d;
+    public final TextView f16259d;
 
+    /* JADX INFO: renamed from: e */
     @NonNull
-    public final Space e;
+    public final Space f16260e;
 
     public WidgetChatListAdapterItemMessageHeaderBinding(@NonNull RelativeLayout relativeLayout, @NonNull TextView textView, @NonNull View view, @NonNull TextView textView2, @NonNull Space space) {
-        this.a = relativeLayout;
-        this.f2327b = textView;
-        this.c = view;
-        this.d = textView2;
-        this.e = space;
+        this.f16256a = relativeLayout;
+        this.f16257b = textView;
+        this.f16258c = view;
+        this.f16259d = textView2;
+        this.f16260e = space;
     }
 
     @Override // androidx.viewbinding.ViewBinding
     @NonNull
     public View getRoot() {
-        return this.a;
+        return this.f16256a;
     }
 }

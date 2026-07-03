@@ -1,14 +1,14 @@
 package com.discord.analytics.generated.events;
 
-import b.d.b.a.outline;
 import com.discord.analytics.generated.traits.TrackBase;
-import com.discord.analytics.generated.traits.TrackBase2;
+import com.discord.analytics.generated.traits.TrackBaseReceiver;
 import com.discord.api.science.AnalyticsSchema;
-import d0.z.d.Intrinsics3;
+import p007b.p100d.p104b.p105a.C1643a;
+import p507d0.p592z.p594d.C12238m;
 
 /* JADX INFO: compiled from: TrackDeleteGuild.kt */
 /* JADX INFO: loaded from: classes.dex */
-public final /* data */ class TrackDeleteGuild implements AnalyticsSchema, TrackBase2 {
+public final /* data */ class TrackDeleteGuild implements AnalyticsSchema, TrackBaseReceiver {
     private TrackBase trackBase;
     private final Long guildId = null;
     private final CharSequence guildName = null;
@@ -34,7 +34,7 @@ public final /* data */ class TrackDeleteGuild implements AnalyticsSchema, Track
             return false;
         }
         TrackDeleteGuild trackDeleteGuild = (TrackDeleteGuild) other;
-        return Intrinsics3.areEqual(this.guildId, trackDeleteGuild.guildId) && Intrinsics3.areEqual(this.guildName, trackDeleteGuild.guildName) && Intrinsics3.areEqual(this.guildSizeTotal, trackDeleteGuild.guildSizeTotal) && Intrinsics3.areEqual(this.guildNumChannels, trackDeleteGuild.guildNumChannels) && Intrinsics3.areEqual(this.guildNumTextChannels, trackDeleteGuild.guildNumTextChannels) && Intrinsics3.areEqual(this.guildNumVoiceChannels, trackDeleteGuild.guildNumVoiceChannels) && Intrinsics3.areEqual(this.guildNumRoles, trackDeleteGuild.guildNumRoles) && Intrinsics3.areEqual(this.guildIsVip, trackDeleteGuild.guildIsVip);
+        return C12238m.areEqual(this.guildId, trackDeleteGuild.guildId) && C12238m.areEqual(this.guildName, trackDeleteGuild.guildName) && C12238m.areEqual(this.guildSizeTotal, trackDeleteGuild.guildSizeTotal) && C12238m.areEqual(this.guildNumChannels, trackDeleteGuild.guildNumChannels) && C12238m.areEqual(this.guildNumTextChannels, trackDeleteGuild.guildNumTextChannels) && C12238m.areEqual(this.guildNumVoiceChannels, trackDeleteGuild.guildNumVoiceChannels) && C12238m.areEqual(this.guildNumRoles, trackDeleteGuild.guildNumRoles) && C12238m.areEqual(this.guildIsVip, trackDeleteGuild.guildIsVip);
     }
 
     public int hashCode() {
@@ -57,21 +57,21 @@ public final /* data */ class TrackDeleteGuild implements AnalyticsSchema, Track
     }
 
     public String toString() {
-        StringBuilder sbU = outline.U("TrackDeleteGuild(guildId=");
-        sbU.append(this.guildId);
-        sbU.append(", guildName=");
-        sbU.append(this.guildName);
-        sbU.append(", guildSizeTotal=");
-        sbU.append(this.guildSizeTotal);
-        sbU.append(", guildNumChannels=");
-        sbU.append(this.guildNumChannels);
-        sbU.append(", guildNumTextChannels=");
-        sbU.append(this.guildNumTextChannels);
-        sbU.append(", guildNumVoiceChannels=");
-        sbU.append(this.guildNumVoiceChannels);
-        sbU.append(", guildNumRoles=");
-        sbU.append(this.guildNumRoles);
-        sbU.append(", guildIsVip=");
-        return outline.D(sbU, this.guildIsVip, ")");
+        StringBuilder sbM833U = C1643a.m833U("TrackDeleteGuild(guildId=");
+        sbM833U.append(this.guildId);
+        sbM833U.append(", guildName=");
+        sbM833U.append(this.guildName);
+        sbM833U.append(", guildSizeTotal=");
+        sbM833U.append(this.guildSizeTotal);
+        sbM833U.append(", guildNumChannels=");
+        sbM833U.append(this.guildNumChannels);
+        sbM833U.append(", guildNumTextChannels=");
+        sbM833U.append(this.guildNumTextChannels);
+        sbM833U.append(", guildNumVoiceChannels=");
+        sbM833U.append(this.guildNumVoiceChannels);
+        sbM833U.append(", guildNumRoles=");
+        sbM833U.append(this.guildNumRoles);
+        sbM833U.append(", guildIsVip=");
+        return C1643a.m816D(sbM833U, this.guildIsVip, ")");
     }
 }

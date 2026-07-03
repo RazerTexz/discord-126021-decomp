@@ -4,10 +4,10 @@ import android.graphics.Matrix;
 import android.graphics.Point;
 import android.opengl.GLES20;
 import androidx.annotation.Nullable;
-import b.d.b.a.outline;
 import java.nio.ByteBuffer;
 import org.webrtc.RendererCommon;
 import org.webrtc.VideoFrame;
+import p007b.p100d.p104b.p105a.C1643a;
 
 /* JADX INFO: loaded from: classes3.dex */
 public class VideoFrameDrawer {
@@ -23,8 +23,8 @@ public class VideoFrameDrawer {
     private final YuvUploader yuvUploader = new YuvUploader(null);
     private final Matrix renderMatrix = new Matrix();
 
-    /* JADX INFO: renamed from: org.webrtc.VideoFrameDrawer$1, reason: invalid class name */
-    public static /* synthetic */ class AnonymousClass1 {
+    /* JADX INFO: renamed from: org.webrtc.VideoFrameDrawer$1 */
+    public static /* synthetic */ class C129961 {
         public static final /* synthetic */ int[] $SwitchMap$org$webrtc$VideoFrame$TextureBuffer$Type;
 
         static {
@@ -109,7 +109,7 @@ public class VideoFrameDrawer {
             return this.yuvTextures;
         }
 
-        public /* synthetic */ YuvUploader(AnonymousClass1 anonymousClass1) {
+        public /* synthetic */ YuvUploader(C129961 c129961) {
             this();
         }
     }
@@ -200,10 +200,10 @@ public class VideoFrameDrawer {
             glDrawer.drawYuv(this.yuvUploader.getYuvTextures(), RendererCommon.convertMatrixFromAndroidGraphicsMatrix(this.renderMatrix), this.renderWidth, this.renderHeight, i, i2, i3, i4);
             return;
         }
-        StringBuilder sbU = outline.U("Illegal frame size: ");
-        sbU.append(this.renderWidth);
-        sbU.append("x");
-        sbU.append(this.renderHeight);
-        Logging.w(TAG, sbU.toString());
+        StringBuilder sbM833U = C1643a.m833U("Illegal frame size: ");
+        sbM833U.append(this.renderWidth);
+        sbM833U.append("x");
+        sbM833U.append(this.renderHeight);
+        Logging.m11031w(TAG, sbM833U.toString());
     }
 }

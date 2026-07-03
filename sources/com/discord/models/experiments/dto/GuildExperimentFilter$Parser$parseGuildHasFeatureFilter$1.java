@@ -3,11 +3,11 @@ package com.discord.models.experiments.dto;
 import com.discord.api.guild.GuildFeature;
 import com.discord.models.deserialization.gson.InboundGatewayGsonParser;
 import com.discord.models.domain.Model;
-import d0.t._Collections;
-import d0.z.d.Intrinsics3;
 import java.io.IOException;
 import java.util.List;
 import kotlin.jvm.internal.Ref$ObjectRef;
+import p507d0.p580t.C12163u;
+import p507d0.p592z.p594d.C12238m;
 
 /* JADX INFO: compiled from: GuildExperimentFilter.kt */
 /* JADX INFO: loaded from: classes.dex */
@@ -40,8 +40,8 @@ public final class GuildExperimentFilter$Parser$parseGuildHasFeatureFilter$1 imp
                         return (GuildFeature) InboundGatewayGsonParser.fromJson(GuildExperimentFilter$Parser$parseGuildHasFeatureFilter$1.this.$reader, GuildFeature.class);
                     }
                 });
-                Intrinsics3.checkNotNullExpressionValue(listNextList, "reader.nextList {\n      …ass.java)\n              }");
-                ref$ObjectRef.element = _Collections.toSet(listNextList);
+                C12238m.checkNotNullExpressionValue(listNextList, "reader.nextList {\n      …ass.java)\n              }");
+                ref$ObjectRef.element = C12163u.toSet(listNextList);
             }
         });
     }

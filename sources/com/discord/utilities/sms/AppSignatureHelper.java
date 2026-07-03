@@ -4,17 +4,17 @@ import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.ContextWrapper;
 import android.util.Base64;
-import b.i.a.f.e.o.f;
 import com.discord.app.AppLog;
 import com.discord.utilities.logging.Logger;
-import d0.LazyJVM;
-import d0.z.d.Intrinsics3;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import kotlin.Lazy;
 import kotlin.jvm.internal.DefaultConstructorMarker;
+import p007b.p225i.p226a.p288f.p299e.p308o.C3404f;
+import p507d0.C12083g;
+import p507d0.p592z.p594d.C12238m;
 
 /* JADX INFO: compiled from: AppSignatureHelper.kt */
 /* JADX INFO: loaded from: classes2.dex */
@@ -40,27 +40,27 @@ public final class AppSignatureHelper extends ContextWrapper {
             String str = packageName + ' ' + signature;
             try {
                 MessageDigest messageDigest = MessageDigest.getInstance("SHA-256");
-                Intrinsics3.checkNotNullExpressionValue(messageDigest, "MessageDigest.getInstance(HASH_TYPE)");
-                messageDigest.update(f.K(str));
+                C12238m.checkNotNullExpressionValue(messageDigest, "MessageDigest.getInstance(HASH_TYPE)");
+                messageDigest.update(C3404f.m4219K(str));
                 byte[] bArrDigest = messageDigest.digest();
-                Intrinsics3.checkNotNullExpressionValue(bArrDigest, "messageDigest.digest()");
+                C12238m.checkNotNullExpressionValue(bArrDigest, "messageDigest.digest()");
                 byte[] bArrCopyOfRange = Arrays.copyOfRange(bArrDigest, 0, 9);
-                Intrinsics3.checkNotNullExpressionValue(bArrCopyOfRange, "Arrays.copyOfRange(hashS…ure, 0, NUM_HASHED_BYTES)");
+                C12238m.checkNotNullExpressionValue(bArrCopyOfRange, "Arrays.copyOfRange(hashS…ure, 0, NUM_HASHED_BYTES)");
                 String strEncodeToString = Base64.encodeToString(bArrCopyOfRange, 3);
-                Intrinsics3.checkNotNullExpressionValue(strEncodeToString, "Base64.encodeToString(ha…ADDING or Base64.NO_WRAP)");
+                C12238m.checkNotNullExpressionValue(strEncodeToString, "Base64.encodeToString(ha…ADDING or Base64.NO_WRAP)");
                 if (strEncodeToString == null) {
                     throw new NullPointerException("null cannot be cast to non-null type java.lang.String");
                 }
                 String strSubstring = strEncodeToString.substring(0, 11);
-                Intrinsics3.checkNotNullExpressionValue(strSubstring, "(this as java.lang.Strin…ing(startIndex, endIndex)");
-                AppLog appLog = AppLog.g;
+                C12238m.checkNotNullExpressionValue(strSubstring, "(this as java.lang.Strin…ing(startIndex, endIndex)");
+                AppLog appLog = AppLog.f14950g;
                 String tag = getTAG();
                 String str2 = String.format("pkg: %s -- hash: %s", Arrays.copyOf(new Object[]{packageName, strSubstring}, 2));
-                Intrinsics3.checkNotNullExpressionValue(str2, "java.lang.String.format(format, *args)");
+                C12238m.checkNotNullExpressionValue(str2, "java.lang.String.format(format, *args)");
                 Logger.d$default(appLog, tag, str2, null, 4, null);
                 return strSubstring;
             } catch (NoSuchAlgorithmException e) {
-                Logger.e$default(AppLog.g, getTAG(), "hash:NoSuchAlgorithm", e, null, 8, null);
+                Logger.e$default(AppLog.f14950g, getTAG(), "hash:NoSuchAlgorithm", e, null, 8, null);
                 return null;
             }
         }
@@ -76,13 +76,13 @@ public final class AppSignatureHelper extends ContextWrapper {
 
     static {
         String simpleName = AppSignatureHelper.class.getSimpleName();
-        Intrinsics3.checkNotNullExpressionValue(simpleName, "AppSignatureHelper::class.java.simpleName");
+        C12238m.checkNotNullExpressionValue(simpleName, "AppSignatureHelper::class.java.simpleName");
         TAG = simpleName;
     }
 
     public AppSignatureHelper(Context context) {
         super(context);
-        this.appSignatures = LazyJVM.lazy(new AppSignatureHelper2(this));
+        this.appSignatures = C12083g.lazy(new AppSignatureHelper$appSignatures$2(this));
     }
 
     public final ArrayList<String> getAppSignatures() {

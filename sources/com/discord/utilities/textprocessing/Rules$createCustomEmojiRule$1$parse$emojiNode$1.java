@@ -3,13 +3,13 @@ package com.discord.utilities.textprocessing;
 import android.content.Context;
 import androidx.exifinterface.media.ExifInterface;
 import com.discord.models.domain.emoji.ModelEmojiCustom;
-import d0.z.d.Intrinsics3;
-import d0.z.d.Lambda;
 import kotlin.jvm.functions.Function3;
+import p507d0.p592z.p594d.AbstractC12240o;
+import p507d0.p592z.p594d.C12238m;
 
 /* JADX INFO: compiled from: Rules.kt */
 /* JADX INFO: loaded from: classes2.dex */
-public final class Rules$createCustomEmojiRule$1$parse$emojiNode$1 extends Lambda implements Function3<Boolean, Integer, Context, String> {
+public final class Rules$createCustomEmojiRule$1$parse$emojiNode$1 extends AbstractC12240o implements Function3<Boolean, Integer, Context, String> {
     public final /* synthetic */ long $emojiId;
     public final /* synthetic */ boolean $isAnimated;
 
@@ -26,9 +26,9 @@ public final class Rules$createCustomEmojiRule$1$parse$emojiNode$1 extends Lambd
     }
 
     public final String invoke(boolean z2, int i, Context context) {
-        Intrinsics3.checkNotNullParameter(context, "<anonymous parameter 2>");
+        C12238m.checkNotNullParameter(context, "<anonymous parameter 2>");
         String imageUri = ModelEmojiCustom.getImageUri(this.$emojiId, z2 && this.$isAnimated, i);
-        Intrinsics3.checkNotNullExpressionValue(imageUri, "ModelEmojiCustom.getImag…bled && isAnimated, size)");
+        C12238m.checkNotNullExpressionValue(imageUri, "ModelEmojiCustom.getImag…bled && isAnimated, size)");
         return imageUri;
     }
 }

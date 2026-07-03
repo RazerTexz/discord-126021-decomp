@@ -24,7 +24,7 @@ public class MaterialColors {
     }
 
     @ColorInt
-    public static int compositeARGBWithAlpha(@ColorInt int i, @IntRange(from = 0, to = 255) int i2) {
+    public static int compositeARGBWithAlpha(@ColorInt int i, @IntRange(from = 0, m76to = 255) int i2) {
         return ColorUtils.setAlphaComponent(i, (Color.alpha(i) * i2) / 255);
     }
 
@@ -44,7 +44,7 @@ public class MaterialColors {
     }
 
     @ColorInt
-    public static int layer(@NonNull View view, @AttrRes int i, @AttrRes int i2, @FloatRange(from = 0.0d, to = 1.0d) float f) {
+    public static int layer(@NonNull View view, @AttrRes int i, @AttrRes int i2, @FloatRange(from = 0.0d, m75to = 1.0d) float f) {
         return layer(getColor(view, i), getColor(view, i2), f);
     }
 
@@ -60,7 +60,7 @@ public class MaterialColors {
     }
 
     @ColorInt
-    public static int layer(@ColorInt int i, @ColorInt int i2, @FloatRange(from = 0.0d, to = 1.0d) float f) {
+    public static int layer(@ColorInt int i, @ColorInt int i2, @FloatRange(from = 0.0d, m75to = 1.0d) float f) {
         return layer(i, ColorUtils.setAlphaComponent(i2, Math.round(Color.alpha(i2) * f)));
     }
 

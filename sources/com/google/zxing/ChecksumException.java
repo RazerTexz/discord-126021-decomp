@@ -2,18 +2,21 @@ package com.google.zxing;
 
 /* JADX INFO: loaded from: classes3.dex */
 public final class ChecksumException extends ReaderException {
-    public static final ChecksumException l;
+
+    /* JADX INFO: renamed from: l */
+    public static final ChecksumException f21663l;
 
     static {
         ChecksumException checksumException = new ChecksumException();
-        l = checksumException;
-        checksumException.setStackTrace(ReaderException.k);
+        f21663l = checksumException;
+        checksumException.setStackTrace(ReaderException.f21667k);
     }
 
     private ChecksumException() {
     }
 
-    public static ChecksumException a() {
-        return ReaderException.j ? new ChecksumException() : l;
+    /* JADX INFO: renamed from: a */
+    public static ChecksumException m9259a() {
+        return ReaderException.f21666j ? new ChecksumException() : f21663l;
     }
 }

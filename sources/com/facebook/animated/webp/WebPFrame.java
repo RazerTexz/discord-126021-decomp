@@ -1,16 +1,16 @@
 package com.facebook.animated.webp;
 
 import android.graphics.Bitmap;
-import b.f.d.d.DoNotStrip;
-import b.f.j.a.a.AnimatedImageFrame;
+import p007b.p109f.p115d.p119d.InterfaceC1680c;
+import p007b.p109f.p161j.p162a.p163a.InterfaceC1837d;
 
 /* JADX INFO: loaded from: classes.dex */
-public class WebPFrame implements AnimatedImageFrame {
+public class WebPFrame implements InterfaceC1837d {
 
-    @DoNotStrip
+    @InterfaceC1680c
     private long mNativeContext;
 
-    @DoNotStrip
+    @InterfaceC1680c
     public WebPFrame(long j) {
         this.mNativeContext = j;
     }
@@ -35,31 +35,36 @@ public class WebPFrame implements AnimatedImageFrame {
 
     private native boolean nativeShouldDisposeToBackgroundColor();
 
-    @Override // b.f.j.a.a.AnimatedImageFrame
-    public void a(int i, int i2, Bitmap bitmap) {
+    @Override // p007b.p109f.p161j.p162a.p163a.InterfaceC1837d
+    /* JADX INFO: renamed from: a */
+    public void mo1185a(int i, int i2, Bitmap bitmap) {
         nativeRenderFrame(i, i2, bitmap);
     }
 
-    @Override // b.f.j.a.a.AnimatedImageFrame
-    public int b() {
+    @Override // p007b.p109f.p161j.p162a.p163a.InterfaceC1837d
+    /* JADX INFO: renamed from: b */
+    public int mo1186b() {
         return nativeGetXOffset();
     }
 
-    @Override // b.f.j.a.a.AnimatedImageFrame
-    public int c() {
+    @Override // p007b.p109f.p161j.p162a.p163a.InterfaceC1837d
+    /* JADX INFO: renamed from: c */
+    public int mo1187c() {
         return nativeGetYOffset();
     }
 
-    public boolean d() {
+    /* JADX INFO: renamed from: d */
+    public boolean m8630d() {
         return nativeIsBlendWithPreviousFrame();
     }
 
-    @Override // b.f.j.a.a.AnimatedImageFrame
+    @Override // p007b.p109f.p161j.p162a.p163a.InterfaceC1837d
     public void dispose() {
         nativeDispose();
     }
 
-    public boolean e() {
+    /* JADX INFO: renamed from: e */
+    public boolean m8631e() {
         return nativeShouldDisposeToBackgroundColor();
     }
 
@@ -67,12 +72,12 @@ public class WebPFrame implements AnimatedImageFrame {
         nativeFinalize();
     }
 
-    @Override // b.f.j.a.a.AnimatedImageFrame
+    @Override // p007b.p109f.p161j.p162a.p163a.InterfaceC1837d
     public int getHeight() {
         return nativeGetHeight();
     }
 
-    @Override // b.f.j.a.a.AnimatedImageFrame
+    @Override // p007b.p109f.p161j.p162a.p163a.InterfaceC1837d
     public int getWidth() {
         return nativeGetWidth();
     }

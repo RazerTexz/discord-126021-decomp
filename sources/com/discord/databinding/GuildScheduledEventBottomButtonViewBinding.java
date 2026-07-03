@@ -9,66 +9,73 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.viewbinding.ViewBinding;
-import com.discord.R;
+import com.discord.C5419R;
 
 /* JADX INFO: loaded from: classes.dex */
 public final class GuildScheduledEventBottomButtonViewBinding implements ViewBinding {
 
+    /* JADX INFO: renamed from: a */
     @NonNull
-    public final ConstraintLayout a;
+    public final ConstraintLayout f15126a;
 
-    /* JADX INFO: renamed from: b, reason: collision with root package name */
+    /* JADX INFO: renamed from: b */
     @NonNull
-    public final ImageView f2118b;
+    public final ImageView f15127b;
 
+    /* JADX INFO: renamed from: c */
     @NonNull
-    public final ImageView c;
+    public final ImageView f15128c;
 
+    /* JADX INFO: renamed from: d */
     @NonNull
-    public final TextView d;
+    public final TextView f15129d;
 
+    /* JADX INFO: renamed from: e */
     @NonNull
-    public final ImageView e;
+    public final ImageView f15130e;
 
+    /* JADX INFO: renamed from: f */
     @NonNull
-    public final TextView f;
+    public final TextView f15131f;
 
+    /* JADX INFO: renamed from: g */
     @NonNull
-    public final ImageView g;
+    public final ImageView f15132g;
 
     public GuildScheduledEventBottomButtonViewBinding(@NonNull ConstraintLayout constraintLayout, @NonNull ImageView imageView, @NonNull ImageView imageView2, @NonNull TextView textView, @NonNull ImageView imageView3, @NonNull TextView textView2, @NonNull ImageView imageView4) {
-        this.a = constraintLayout;
-        this.f2118b = imageView;
-        this.c = imageView2;
-        this.d = textView;
-        this.e = imageView3;
-        this.f = textView2;
-        this.g = imageView4;
+        this.f15126a = constraintLayout;
+        this.f15127b = imageView;
+        this.f15128c = imageView2;
+        this.f15129d = textView;
+        this.f15130e = imageView3;
+        this.f15131f = textView2;
+        this.f15132g = imageView4;
     }
 
     @NonNull
-    public static GuildScheduledEventBottomButtonViewBinding a(@NonNull LayoutInflater layoutInflater, @Nullable ViewGroup viewGroup, boolean z2) {
-        View viewInflate = layoutInflater.inflate(R.layout.guild_scheduled_event_bottom_button_view, viewGroup, false);
+    /* JADX INFO: renamed from: a */
+    public static GuildScheduledEventBottomButtonViewBinding m8386a(@NonNull LayoutInflater layoutInflater, @Nullable ViewGroup viewGroup, boolean z2) {
+        View viewInflate = layoutInflater.inflate(C5419R.layout.guild_scheduled_event_bottom_button_view, viewGroup, false);
         if (z2) {
             viewGroup.addView(viewInflate);
         }
-        int i = R.id.extra_button;
-        ImageView imageView = (ImageView) viewInflate.findViewById(R.id.extra_button);
+        int i = C5419R.id.extra_button;
+        ImageView imageView = (ImageView) viewInflate.findViewById(C5419R.id.extra_button);
         if (imageView != null) {
-            i = R.id.primary_button;
-            ImageView imageView2 = (ImageView) viewInflate.findViewById(R.id.primary_button);
+            i = C5419R.id.primary_button;
+            ImageView imageView2 = (ImageView) viewInflate.findViewById(C5419R.id.primary_button);
             if (imageView2 != null) {
-                i = R.id.primary_button_text;
-                TextView textView = (TextView) viewInflate.findViewById(R.id.primary_button_text);
+                i = C5419R.id.primary_button_text;
+                TextView textView = (TextView) viewInflate.findViewById(C5419R.id.primary_button_text);
                 if (textView != null) {
-                    i = R.id.secondary_button;
-                    ImageView imageView3 = (ImageView) viewInflate.findViewById(R.id.secondary_button);
+                    i = C5419R.id.secondary_button;
+                    ImageView imageView3 = (ImageView) viewInflate.findViewById(C5419R.id.secondary_button);
                     if (imageView3 != null) {
-                        i = R.id.secondary_button_text;
-                        TextView textView2 = (TextView) viewInflate.findViewById(R.id.secondary_button_text);
+                        i = C5419R.id.secondary_button_text;
+                        TextView textView2 = (TextView) viewInflate.findViewById(C5419R.id.secondary_button_text);
                         if (textView2 != null) {
-                            i = R.id.share_button;
-                            ImageView imageView4 = (ImageView) viewInflate.findViewById(R.id.share_button);
+                            i = C5419R.id.share_button;
+                            ImageView imageView4 = (ImageView) viewInflate.findViewById(C5419R.id.share_button);
                             if (imageView4 != null) {
                                 return new GuildScheduledEventBottomButtonViewBinding((ConstraintLayout) viewInflate, imageView, imageView2, textView, imageView3, textView2, imageView4);
                             }
@@ -83,6 +90,6 @@ public final class GuildScheduledEventBottomButtonViewBinding implements ViewBin
     @Override // androidx.viewbinding.ViewBinding
     @NonNull
     public View getRoot() {
-        return this.a;
+        return this.f15126a;
     }
 }

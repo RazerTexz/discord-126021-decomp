@@ -1,15 +1,15 @@
 package com.discord.analytics.generated.events;
 
 import androidx.appcompat.widget.ActivityChooserModel;
-import b.d.b.a.outline;
 import com.discord.analytics.generated.traits.TrackBase;
-import com.discord.analytics.generated.traits.TrackBase2;
+import com.discord.analytics.generated.traits.TrackBaseReceiver;
 import com.discord.api.science.AnalyticsSchema;
-import d0.z.d.Intrinsics3;
+import p007b.p100d.p104b.p105a.C1643a;
+import p507d0.p592z.p594d.C12238m;
 
 /* JADX INFO: compiled from: TrackVideoInputInitialized.kt */
 /* JADX INFO: loaded from: classes.dex */
-public final /* data */ class TrackVideoInputInitialized implements AnalyticsSchema, TrackBase2 {
+public final /* data */ class TrackVideoInputInitialized implements AnalyticsSchema, TrackBaseReceiver {
     private TrackBase trackBase;
     private final CharSequence deviceName = null;
     private final Long timeToFirstFrameMs = null;
@@ -31,7 +31,7 @@ public final /* data */ class TrackVideoInputInitialized implements AnalyticsSch
             return false;
         }
         TrackVideoInputInitialized trackVideoInputInitialized = (TrackVideoInputInitialized) other;
-        return Intrinsics3.areEqual(this.deviceName, trackVideoInputInitialized.deviceName) && Intrinsics3.areEqual(this.timeToFirstFrameMs, trackVideoInputInitialized.timeToFirstFrameMs) && Intrinsics3.areEqual(this.timedOut, trackVideoInputInitialized.timedOut) && Intrinsics3.areEqual(this.activity, trackVideoInputInitialized.activity);
+        return C12238m.areEqual(this.deviceName, trackVideoInputInitialized.deviceName) && C12238m.areEqual(this.timeToFirstFrameMs, trackVideoInputInitialized.timeToFirstFrameMs) && C12238m.areEqual(this.timedOut, trackVideoInputInitialized.timedOut) && C12238m.areEqual(this.activity, trackVideoInputInitialized.activity);
     }
 
     public int hashCode() {
@@ -46,15 +46,15 @@ public final /* data */ class TrackVideoInputInitialized implements AnalyticsSch
     }
 
     public String toString() {
-        StringBuilder sbU = outline.U("TrackVideoInputInitialized(deviceName=");
-        sbU.append(this.deviceName);
-        sbU.append(", timeToFirstFrameMs=");
-        sbU.append(this.timeToFirstFrameMs);
-        sbU.append(", timedOut=");
-        sbU.append(this.timedOut);
-        sbU.append(", activity=");
-        sbU.append(this.activity);
-        sbU.append(")");
-        return sbU.toString();
+        StringBuilder sbM833U = C1643a.m833U("TrackVideoInputInitialized(deviceName=");
+        sbM833U.append(this.deviceName);
+        sbM833U.append(", timeToFirstFrameMs=");
+        sbM833U.append(this.timeToFirstFrameMs);
+        sbM833U.append(", timedOut=");
+        sbM833U.append(this.timedOut);
+        sbM833U.append(", activity=");
+        sbM833U.append(this.activity);
+        sbM833U.append(")");
+        return sbM833U.toString();
     }
 }

@@ -1,13 +1,13 @@
 package com.discord.api.user;
 
 import androidx.core.app.NotificationCompat;
-import b.d.b.a.outline;
 import com.discord.api.guildmember.GuildMember;
 import com.discord.api.premium.PremiumTier;
 import com.discord.models.domain.ModelAuditLogEntry;
 import com.discord.nullserializable.NullSerializable;
-import d0.z.d.Intrinsics3;
 import java.io.Serializable;
+import p007b.p100d.p104b.p105a.C1643a;
+import p507d0.p592z.p594d.C12238m;
 
 /* JADX INFO: compiled from: User.kt */
 /* JADX INFO: loaded from: classes.dex */
@@ -56,8 +56,8 @@ public final /* data */ class User implements Serializable {
         int i13 = 524288 & i;
         int i14 = 1048576 & i;
         int i15 = i & 2097152;
-        Intrinsics3.checkNotNullParameter(str, "username");
-        Intrinsics3.checkNotNullParameter(str7, "discriminator");
+        C12238m.checkNotNullParameter(str, "username");
+        C12238m.checkNotNullParameter(str7, "discriminator");
         this.id = j;
         this.username = str;
         this.avatar = nullSerializable5;
@@ -82,19 +82,23 @@ public final /* data */ class User implements Serializable {
         this.bannerColor = null;
     }
 
-    public final NullSerializable<String> a() {
+    /* JADX INFO: renamed from: a */
+    public final NullSerializable<String> m8288a() {
         return this.avatar;
     }
 
-    public final NullSerializable<String> b() {
+    /* JADX INFO: renamed from: b */
+    public final NullSerializable<String> m8289b() {
         return this.banner;
     }
 
-    public final NullSerializable<String> c() {
+    /* JADX INFO: renamed from: c */
+    public final NullSerializable<String> m8290c() {
         return this.bannerColor;
     }
 
-    public final NullSerializable<String> d() {
+    /* JADX INFO: renamed from: d */
+    public final NullSerializable<String> m8291d() {
         return this.bio;
     }
 
@@ -111,7 +115,7 @@ public final /* data */ class User implements Serializable {
             return false;
         }
         User user = (User) other;
-        return this.id == user.id && Intrinsics3.areEqual(this.username, user.username) && Intrinsics3.areEqual(this.avatar, user.avatar) && Intrinsics3.areEqual(this.banner, user.banner) && Intrinsics3.areEqual(this.discriminator, user.discriminator) && Intrinsics3.areEqual(this.publicFlags, user.publicFlags) && Intrinsics3.areEqual(this.flags, user.flags) && Intrinsics3.areEqual(this.bot, user.bot) && Intrinsics3.areEqual(this.system, user.system) && Intrinsics3.areEqual(this.token, user.token) && Intrinsics3.areEqual(this.email, user.email) && Intrinsics3.areEqual(this.verified, user.verified) && Intrinsics3.areEqual(this.locale, user.locale) && Intrinsics3.areEqual(this.nsfwAllowed, user.nsfwAllowed) && Intrinsics3.areEqual(this.mfaEnabled, user.mfaEnabled) && Intrinsics3.areEqual(this.phone, user.phone) && Intrinsics3.areEqual(this.analyticsToken, user.analyticsToken) && Intrinsics3.areEqual(this.premiumType, user.premiumType) && Intrinsics3.areEqual(this.approximateGuildCount, user.approximateGuildCount) && Intrinsics3.areEqual(this.member, user.member) && Intrinsics3.areEqual(this.bio, user.bio) && Intrinsics3.areEqual(this.bannerColor, user.bannerColor);
+        return this.id == user.id && C12238m.areEqual(this.username, user.username) && C12238m.areEqual(this.avatar, user.avatar) && C12238m.areEqual(this.banner, user.banner) && C12238m.areEqual(this.discriminator, user.discriminator) && C12238m.areEqual(this.publicFlags, user.publicFlags) && C12238m.areEqual(this.flags, user.flags) && C12238m.areEqual(this.bot, user.bot) && C12238m.areEqual(this.system, user.system) && C12238m.areEqual(this.token, user.token) && C12238m.areEqual(this.email, user.email) && C12238m.areEqual(this.verified, user.verified) && C12238m.areEqual(this.locale, user.locale) && C12238m.areEqual(this.nsfwAllowed, user.nsfwAllowed) && C12238m.areEqual(this.mfaEnabled, user.mfaEnabled) && C12238m.areEqual(this.phone, user.phone) && C12238m.areEqual(this.analyticsToken, user.analyticsToken) && C12238m.areEqual(this.premiumType, user.premiumType) && C12238m.areEqual(this.approximateGuildCount, user.approximateGuildCount) && C12238m.areEqual(this.member, user.member) && C12238m.areEqual(this.bio, user.bio) && C12238m.areEqual(this.bannerColor, user.bannerColor);
     }
 
     /* JADX INFO: renamed from: f, reason: from getter */
@@ -230,51 +234,51 @@ public final /* data */ class User implements Serializable {
     }
 
     public String toString() {
-        StringBuilder sbU = outline.U("User(id=");
-        sbU.append(this.id);
-        sbU.append(", username=");
-        sbU.append(this.username);
-        sbU.append(", avatar=");
-        sbU.append(this.avatar);
-        sbU.append(", banner=");
-        sbU.append(this.banner);
-        sbU.append(", discriminator=");
-        sbU.append(this.discriminator);
-        sbU.append(", publicFlags=");
-        sbU.append(this.publicFlags);
-        sbU.append(", flags=");
-        sbU.append(this.flags);
-        sbU.append(", bot=");
-        sbU.append(this.bot);
-        sbU.append(", system=");
-        sbU.append(this.system);
-        sbU.append(", token=");
-        sbU.append(this.token);
-        sbU.append(", email=");
-        sbU.append(this.email);
-        sbU.append(", verified=");
-        sbU.append(this.verified);
-        sbU.append(", locale=");
-        sbU.append(this.locale);
-        sbU.append(", nsfwAllowed=");
-        sbU.append(this.nsfwAllowed);
-        sbU.append(", mfaEnabled=");
-        sbU.append(this.mfaEnabled);
-        sbU.append(", phone=");
-        sbU.append(this.phone);
-        sbU.append(", analyticsToken=");
-        sbU.append(this.analyticsToken);
-        sbU.append(", premiumType=");
-        sbU.append(this.premiumType);
-        sbU.append(", approximateGuildCount=");
-        sbU.append(this.approximateGuildCount);
-        sbU.append(", member=");
-        sbU.append(this.member);
-        sbU.append(", bio=");
-        sbU.append(this.bio);
-        sbU.append(", bannerColor=");
-        sbU.append(this.bannerColor);
-        sbU.append(")");
-        return sbU.toString();
+        StringBuilder sbM833U = C1643a.m833U("User(id=");
+        sbM833U.append(this.id);
+        sbM833U.append(", username=");
+        sbM833U.append(this.username);
+        sbM833U.append(", avatar=");
+        sbM833U.append(this.avatar);
+        sbM833U.append(", banner=");
+        sbM833U.append(this.banner);
+        sbM833U.append(", discriminator=");
+        sbM833U.append(this.discriminator);
+        sbM833U.append(", publicFlags=");
+        sbM833U.append(this.publicFlags);
+        sbM833U.append(", flags=");
+        sbM833U.append(this.flags);
+        sbM833U.append(", bot=");
+        sbM833U.append(this.bot);
+        sbM833U.append(", system=");
+        sbM833U.append(this.system);
+        sbM833U.append(", token=");
+        sbM833U.append(this.token);
+        sbM833U.append(", email=");
+        sbM833U.append(this.email);
+        sbM833U.append(", verified=");
+        sbM833U.append(this.verified);
+        sbM833U.append(", locale=");
+        sbM833U.append(this.locale);
+        sbM833U.append(", nsfwAllowed=");
+        sbM833U.append(this.nsfwAllowed);
+        sbM833U.append(", mfaEnabled=");
+        sbM833U.append(this.mfaEnabled);
+        sbM833U.append(", phone=");
+        sbM833U.append(this.phone);
+        sbM833U.append(", analyticsToken=");
+        sbM833U.append(this.analyticsToken);
+        sbM833U.append(", premiumType=");
+        sbM833U.append(this.premiumType);
+        sbM833U.append(", approximateGuildCount=");
+        sbM833U.append(this.approximateGuildCount);
+        sbM833U.append(", member=");
+        sbM833U.append(this.member);
+        sbM833U.append(", bio=");
+        sbM833U.append(this.bio);
+        sbM833U.append(", bannerColor=");
+        sbM833U.append(this.bannerColor);
+        sbM833U.append(")");
+        return sbM833U.toString();
     }
 }

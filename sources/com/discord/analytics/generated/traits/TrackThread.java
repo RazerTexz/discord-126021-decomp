@@ -1,7 +1,7 @@
 package com.discord.analytics.generated.traits;
 
-import b.d.b.a.outline;
-import d0.z.d.Intrinsics3;
+import p007b.p100d.p104b.p105a.C1643a;
+import p507d0.p592z.p594d.C12238m;
 
 /* JADX INFO: compiled from: TrackThread.kt */
 /* JADX INFO: loaded from: classes.dex */
@@ -21,7 +21,7 @@ public final /* data */ class TrackThread {
             return false;
         }
         TrackThread trackThread = (TrackThread) other;
-        return Intrinsics3.areEqual(this.threadApproximateMemberCount, trackThread.threadApproximateMemberCount) && Intrinsics3.areEqual(this.threadApproximateMessageCount, trackThread.threadApproximateMessageCount) && Intrinsics3.areEqual(this.threadArchived, trackThread.threadArchived) && Intrinsics3.areEqual(this.threadLocked, trackThread.threadLocked) && Intrinsics3.areEqual(this.threadAutoArchiveDurationMinutes, trackThread.threadAutoArchiveDurationMinutes) && Intrinsics3.areEqual(this.threadApproximateCreationDate, trackThread.threadApproximateCreationDate);
+        return C12238m.areEqual(this.threadApproximateMemberCount, trackThread.threadApproximateMemberCount) && C12238m.areEqual(this.threadApproximateMessageCount, trackThread.threadApproximateMessageCount) && C12238m.areEqual(this.threadArchived, trackThread.threadArchived) && C12238m.areEqual(this.threadLocked, trackThread.threadLocked) && C12238m.areEqual(this.threadAutoArchiveDurationMinutes, trackThread.threadAutoArchiveDurationMinutes) && C12238m.areEqual(this.threadApproximateCreationDate, trackThread.threadApproximateCreationDate);
     }
 
     public int hashCode() {
@@ -40,17 +40,17 @@ public final /* data */ class TrackThread {
     }
 
     public String toString() {
-        StringBuilder sbU = outline.U("TrackThread(threadApproximateMemberCount=");
-        sbU.append(this.threadApproximateMemberCount);
-        sbU.append(", threadApproximateMessageCount=");
-        sbU.append(this.threadApproximateMessageCount);
-        sbU.append(", threadArchived=");
-        sbU.append(this.threadArchived);
-        sbU.append(", threadLocked=");
-        sbU.append(this.threadLocked);
-        sbU.append(", threadAutoArchiveDurationMinutes=");
-        sbU.append(this.threadAutoArchiveDurationMinutes);
-        sbU.append(", threadApproximateCreationDate=");
-        return outline.G(sbU, this.threadApproximateCreationDate, ")");
+        StringBuilder sbM833U = C1643a.m833U("TrackThread(threadApproximateMemberCount=");
+        sbM833U.append(this.threadApproximateMemberCount);
+        sbM833U.append(", threadApproximateMessageCount=");
+        sbM833U.append(this.threadApproximateMessageCount);
+        sbM833U.append(", threadArchived=");
+        sbM833U.append(this.threadArchived);
+        sbM833U.append(", threadLocked=");
+        sbM833U.append(this.threadLocked);
+        sbM833U.append(", threadAutoArchiveDurationMinutes=");
+        sbM833U.append(this.threadAutoArchiveDurationMinutes);
+        sbM833U.append(", threadApproximateCreationDate=");
+        return C1643a.m819G(sbM833U, this.threadApproximateCreationDate, ")");
     }
 }

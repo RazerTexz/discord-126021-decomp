@@ -21,7 +21,8 @@ public enum MessageActivityType {
         public Companion() {
         }
 
-        public final MessageActivityType a(Integer num) {
+        /* JADX INFO: renamed from: a */
+        public final MessageActivityType m8059a(Integer num) {
             MessageActivityType messageActivityType = MessageActivityType.JOIN;
             int apiInt = messageActivityType.getApiInt();
             if (num != null && num.intValue() == apiInt) {

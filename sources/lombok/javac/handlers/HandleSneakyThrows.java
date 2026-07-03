@@ -89,7 +89,7 @@ public class HandleSneakyThrows extends JavacAnnotationHandler<SneakyThrows> {
             }
             exceptions.add(exception);
         }
-        JavacNode owner = annotationNode.up();
+        JavacNode owner = annotationNode.m10925up();
         switch ($SWITCH_TABLE$lombok$core$AST$Kind()[owner.getKind().ordinal()]) {
             case 5:
                 handleMethod(annotationNode, owner.get(), exceptions);
@@ -101,7 +101,7 @@ public class HandleSneakyThrows extends JavacAnnotationHandler<SneakyThrows> {
     }
 
     public void handleMethod(JavacNode annotation, JCTree.JCMethodDecl method, Collection<String> exceptions) {
-        JavacNode methodNode = annotation.up();
+        JavacNode methodNode = annotation.m10925up();
         if ((method.mods.flags & Permission.VIEW_CHANNEL) != 0) {
             annotation.addError("@SneakyThrows can only be used on concrete methods.");
             return;

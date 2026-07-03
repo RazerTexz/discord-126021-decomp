@@ -1,73 +1,77 @@
 package com.facebook.animated.gif;
 
 import android.graphics.Bitmap;
-import b.f.d.d.DoNotStrip;
-import b.f.j.a.a.AnimatedImageFrame;
+import p007b.p109f.p115d.p119d.InterfaceC1680c;
+import p007b.p109f.p161j.p162a.p163a.InterfaceC1837d;
 
 /* JADX INFO: loaded from: classes.dex */
-public class GifFrame implements AnimatedImageFrame {
+public class GifFrame implements InterfaceC1837d {
 
-    @DoNotStrip
+    @InterfaceC1680c
     private long mNativeContext;
 
-    @DoNotStrip
+    @InterfaceC1680c
     public GifFrame(long j) {
         this.mNativeContext = j;
     }
 
-    @DoNotStrip
+    @InterfaceC1680c
     private native void nativeDispose();
 
-    @DoNotStrip
+    @InterfaceC1680c
     private native void nativeFinalize();
 
-    @DoNotStrip
+    @InterfaceC1680c
     private native int nativeGetDisposalMode();
 
-    @DoNotStrip
+    @InterfaceC1680c
     private native int nativeGetDurationMs();
 
-    @DoNotStrip
+    @InterfaceC1680c
     private native int nativeGetHeight();
 
-    @DoNotStrip
+    @InterfaceC1680c
     private native int nativeGetTransparentPixelColor();
 
-    @DoNotStrip
+    @InterfaceC1680c
     private native int nativeGetWidth();
 
-    @DoNotStrip
+    @InterfaceC1680c
     private native int nativeGetXOffset();
 
-    @DoNotStrip
+    @InterfaceC1680c
     private native int nativeGetYOffset();
 
-    @DoNotStrip
+    @InterfaceC1680c
     private native boolean nativeHasTransparency();
 
-    @DoNotStrip
+    @InterfaceC1680c
     private native void nativeRenderFrame(int i, int i2, Bitmap bitmap);
 
-    @Override // b.f.j.a.a.AnimatedImageFrame
-    public void a(int i, int i2, Bitmap bitmap) {
+    @Override // p007b.p109f.p161j.p162a.p163a.InterfaceC1837d
+    /* JADX INFO: renamed from: a */
+    public void mo1185a(int i, int i2, Bitmap bitmap) {
         nativeRenderFrame(i, i2, bitmap);
     }
 
-    @Override // b.f.j.a.a.AnimatedImageFrame
-    public int b() {
+    @Override // p007b.p109f.p161j.p162a.p163a.InterfaceC1837d
+    /* JADX INFO: renamed from: b */
+    public int mo1186b() {
         return nativeGetXOffset();
     }
 
-    @Override // b.f.j.a.a.AnimatedImageFrame
-    public int c() {
+    @Override // p007b.p109f.p161j.p162a.p163a.InterfaceC1837d
+    /* JADX INFO: renamed from: c */
+    public int mo1187c() {
         return nativeGetYOffset();
     }
 
-    public int d() {
+    /* JADX INFO: renamed from: d */
+    public int m8628d() {
         return nativeGetDisposalMode();
     }
 
-    @Override // b.f.j.a.a.AnimatedImageFrame
+    @Override // p007b.p109f.p161j.p162a.p163a.InterfaceC1837d
     public void dispose() {
         nativeDispose();
     }
@@ -76,12 +80,12 @@ public class GifFrame implements AnimatedImageFrame {
         nativeFinalize();
     }
 
-    @Override // b.f.j.a.a.AnimatedImageFrame
+    @Override // p007b.p109f.p161j.p162a.p163a.InterfaceC1837d
     public int getHeight() {
         return nativeGetHeight();
     }
 
-    @Override // b.f.j.a.a.AnimatedImageFrame
+    @Override // p007b.p109f.p161j.p162a.p163a.InterfaceC1837d
     public int getWidth() {
         return nativeGetWidth();
     }

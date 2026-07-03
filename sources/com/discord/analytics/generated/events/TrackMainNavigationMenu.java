@@ -1,16 +1,16 @@
 package com.discord.analytics.generated.events;
 
-import b.d.b.a.outline;
 import com.discord.analytics.generated.traits.TrackBase;
-import com.discord.analytics.generated.traits.TrackBase2;
+import com.discord.analytics.generated.traits.TrackBaseReceiver;
 import com.discord.analytics.generated.traits.TrackMarketingSite;
-import com.discord.analytics.generated.traits.TrackMarketingSite2;
+import com.discord.analytics.generated.traits.TrackMarketingSiteReceiver;
 import com.discord.api.science.AnalyticsSchema;
-import d0.z.d.Intrinsics3;
+import p007b.p100d.p104b.p105a.C1643a;
+import p507d0.p592z.p594d.C12238m;
 
 /* JADX INFO: compiled from: TrackMainNavigationMenu.kt */
 /* JADX INFO: loaded from: classes.dex */
-public final /* data */ class TrackMainNavigationMenu implements AnalyticsSchema, TrackBase2, TrackMarketingSite2 {
+public final /* data */ class TrackMainNavigationMenu implements AnalyticsSchema, TrackBaseReceiver, TrackMarketingSiteReceiver {
     private TrackBase trackBase;
     private TrackMarketingSite trackMarketingSite;
     private final CharSequence linkclicked = null;
@@ -33,7 +33,7 @@ public final /* data */ class TrackMainNavigationMenu implements AnalyticsSchema
             return false;
         }
         TrackMainNavigationMenu trackMainNavigationMenu = (TrackMainNavigationMenu) other;
-        return Intrinsics3.areEqual(this.linkclicked, trackMainNavigationMenu.linkclicked) && Intrinsics3.areEqual(this.googleanalytics, trackMainNavigationMenu.googleanalytics) && Intrinsics3.areEqual(this.pageName, trackMainNavigationMenu.pageName) && Intrinsics3.areEqual(this.staticExperimentUuid, trackMainNavigationMenu.staticExperimentUuid);
+        return C12238m.areEqual(this.linkclicked, trackMainNavigationMenu.linkclicked) && C12238m.areEqual(this.googleanalytics, trackMainNavigationMenu.googleanalytics) && C12238m.areEqual(this.pageName, trackMainNavigationMenu.pageName) && C12238m.areEqual(this.staticExperimentUuid, trackMainNavigationMenu.staticExperimentUuid);
     }
 
     public int hashCode() {
@@ -48,13 +48,13 @@ public final /* data */ class TrackMainNavigationMenu implements AnalyticsSchema
     }
 
     public String toString() {
-        StringBuilder sbU = outline.U("TrackMainNavigationMenu(linkclicked=");
-        sbU.append(this.linkclicked);
-        sbU.append(", googleanalytics=");
-        sbU.append(this.googleanalytics);
-        sbU.append(", pageName=");
-        sbU.append(this.pageName);
-        sbU.append(", staticExperimentUuid=");
-        return outline.E(sbU, this.staticExperimentUuid, ")");
+        StringBuilder sbM833U = C1643a.m833U("TrackMainNavigationMenu(linkclicked=");
+        sbM833U.append(this.linkclicked);
+        sbM833U.append(", googleanalytics=");
+        sbM833U.append(this.googleanalytics);
+        sbM833U.append(", pageName=");
+        sbM833U.append(this.pageName);
+        sbM833U.append(", staticExperimentUuid=");
+        return C1643a.m817E(sbM833U, this.staticExperimentUuid, ")");
     }
 }

@@ -9,13 +9,7 @@ import android.graphics.Rect;
 import android.view.View;
 import android.view.ViewGroup;
 import androidx.core.app.NotificationCompat;
-import b.a.d.AppToast;
-import b.a.n.OverlayManager4;
-import b.a.n.OverlayManager5;
-import b.a.y.OverlayVoiceBubble2;
-import b.a.y.OverlayVoiceSelectorBubbleDialog3;
-import b.d.b.a.outline;
-import com.discord.R;
+import com.discord.C5419R;
 import com.discord.app.AppLog;
 import com.discord.overlay.OverlayManager;
 import com.discord.overlay.OverlayService;
@@ -26,16 +20,13 @@ import com.discord.stores.StoreStream;
 import com.discord.utilities.color.ColorCompat;
 import com.discord.utilities.device.DeviceUtils;
 import com.discord.utilities.error.Error;
-import com.discord.utilities.extensions.PendingIntentExtensions;
+import com.discord.utilities.extensions.PendingIntentExtensionsKt;
 import com.discord.utilities.fcm.NotificationClient;
 import com.discord.utilities.intent.IntentUtils;
 import com.discord.utilities.logging.Logger;
-import com.discord.utilities.rx.ObservableExtensionsKt;
+import com.discord.utilities.p501rx.ObservableExtensionsKt;
 import com.discord.views.OverlayMenuBubbleDialog;
 import com.facebook.drawee.view.SimpleDraweeView;
-import d0.z.d.Intrinsics3;
-import d0.z.d.Lambda;
-import j0.k.Func1;
 import java.lang.ref.WeakReference;
 import java.util.Iterator;
 import java.util.Objects;
@@ -43,8 +34,17 @@ import kotlin.Unit;
 import kotlin.jvm.functions.Function0;
 import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.DefaultConstructorMarker;
-import rx.Observable;
-import rx.Subscription;
+import p007b.p008a.p018d.C0876m;
+import p007b.p008a.p036n.C1168c;
+import p007b.p008a.p036n.ViewOnClickListenerC1169d;
+import p007b.p008a.p062y.C1387w;
+import p007b.p008a.p062y.C1390z;
+import p007b.p100d.p104b.p105a.C1643a;
+import p507d0.p592z.p594d.AbstractC12240o;
+import p507d0.p592z.p594d.C12238m;
+import p637j0.p641k.InterfaceC12589b;
+import p658rx.Observable;
+import p658rx.Subscription;
 
 /* JADX INFO: compiled from: DiscordOverlayService.kt */
 /* JADX INFO: loaded from: classes2.dex */
@@ -73,7 +73,7 @@ public final class DiscordOverlayService extends OverlayService {
                 try {
                     context.startService(createOverlayIntent(context, action));
                 } catch (Exception e) {
-                    AppLog.g.v(DiscordOverlayService.LOG_TAG, "Overlay request failed.", e);
+                    AppLog.f14950g.m8517v(DiscordOverlayService.LOG_TAG, "Overlay request failed.", e);
                 }
             }
         }
@@ -86,36 +86,36 @@ public final class DiscordOverlayService extends OverlayService {
         }
 
         public final void launchForClose(Context context) {
-            Intrinsics3.checkNotNullParameter(context, "context");
+            C12238m.checkNotNullParameter(context, "context");
             tryStartOverlayService(context, DiscordOverlayService.ACTION_CLOSE, false);
         }
 
         public final void launchForConnect(Context context) {
-            Intrinsics3.checkNotNullParameter(context, "context");
+            C12238m.checkNotNullParameter(context, "context");
             StoreStream.Companion companion = StoreStream.INSTANCE;
             if (!companion.getUserSettings().getIsMobileOverlayEnabled()) {
-                AppToast.g(context, R.string.overlay_mobile_required, 1, null, 8);
+                C0876m.m169g(context, C5419R.string.overlay_mobile_required, 1, null, 8);
                 return;
             }
             WeakReference weakReference = new WeakReference(context);
-            Observable observableG = ObservableExtensionsKt.takeSingleUntilTimeout$default(companion.getRtcConnection().getConnectionState(), 1000L, false, 2, null).G(new Func1<RtcConnection.StateChange, String>() { // from class: com.discord.utilities.voice.DiscordOverlayService$Companion$launchForConnect$1
-                @Override // j0.k.Func1
+            Observable observableM11083G = ObservableExtensionsKt.takeSingleUntilTimeout$default(companion.getRtcConnection().getConnectionState(), 1000L, false, 2, null).m11083G(new InterfaceC12589b<RtcConnection.StateChange, String>() { // from class: com.discord.utilities.voice.DiscordOverlayService$Companion$launchForConnect$1
+                @Override // p637j0.p641k.InterfaceC12589b
                 public final String call(RtcConnection.StateChange stateChange) {
                     RtcConnection.State state = stateChange.state;
-                    return (!(state instanceof RtcConnection.State.d) || ((RtcConnection.State.d) state).a) ? "com.discord.actions.OVERLAY_OPEN" : "com.discord.actions.OVERLAY_SELECTOR";
+                    return (!(state instanceof RtcConnection.State.C5610d) || ((RtcConnection.State.C5610d) state).f18812a) ? "com.discord.actions.OVERLAY_OPEN" : "com.discord.actions.OVERLAY_SELECTOR";
                 }
             });
-            Intrinsics3.checkNotNullExpressionValue(observableG, "StoreStream\n            …          }\n            }");
-            ObservableExtensionsKt.appSubscribe(ObservableExtensionsKt.ui(observableG), (Class<?>) DiscordOverlayService.class, (58 & 2) != 0 ? null : context, (Function1<? super Subscription, Unit>) ((58 & 4) != 0 ? null : null), (Function1<? super Error, Unit>) ((58 & 8) != 0 ? null : null), (Function0<Unit>) ((58 & 16) != 0 ? ObservableExtensionsKt.AnonymousClass1.INSTANCE : null), (Function0<Unit>) ((58 & 32) != 0 ? ObservableExtensionsKt.AnonymousClass2.INSTANCE : null), new DiscordOverlayService3(weakReference));
+            C12238m.checkNotNullExpressionValue(observableM11083G, "StoreStream\n            …          }\n            }");
+            ObservableExtensionsKt.appSubscribe(ObservableExtensionsKt.m8518ui(observableM11083G), (Class<?>) DiscordOverlayService.class, (58 & 2) != 0 ? null : context, (Function1<? super Subscription, Unit>) ((58 & 4) != 0 ? null : null), (Function1<? super Error, Unit>) ((58 & 8) != 0 ? null : null), (Function0<Unit>) ((58 & 16) != 0 ? ObservableExtensionsKt.C68791.INSTANCE : null), (Function0<Unit>) ((58 & 32) != 0 ? ObservableExtensionsKt.C68802.INSTANCE : null), new DiscordOverlayService$Companion$launchForConnect$2(weakReference));
         }
 
         public final void launchForVoice(Context context) {
-            Intrinsics3.checkNotNullParameter(context, "context");
+            C12238m.checkNotNullParameter(context, "context");
             tryStartOverlayService$default(this, context, DiscordOverlayService.ACTION_VOICE, false, 4, null);
         }
 
         public final void launchForVoiceChannelSelect(Context context) {
-            Intrinsics3.checkNotNullParameter(context, "context");
+            C12238m.checkNotNullParameter(context, "context");
             tryStartOverlayService$default(this, context, DiscordOverlayService.ACTION_SELECTOR, false, 4, null);
         }
 
@@ -124,33 +124,33 @@ public final class DiscordOverlayService extends OverlayService {
         }
     }
 
-    /* JADX INFO: renamed from: com.discord.utilities.voice.DiscordOverlayService$createMenu$1, reason: invalid class name */
+    /* JADX INFO: renamed from: com.discord.utilities.voice.DiscordOverlayService$createMenu$1 */
     /* JADX INFO: compiled from: DiscordOverlayService.kt */
-    public static final class AnonymousClass1 extends Lambda implements Function1<OverlayDialog, Unit> {
-        public AnonymousClass1() {
+    public static final class C70311 extends AbstractC12240o implements Function1<OverlayDialog, Unit> {
+        public C70311() {
             super(1);
         }
 
         @Override // kotlin.jvm.functions.Function1
         public /* bridge */ /* synthetic */ Unit invoke(OverlayDialog overlayDialog) {
             invoke2(overlayDialog);
-            return Unit.a;
+            return Unit.f27425a;
         }
 
         /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
         public final void invoke2(OverlayDialog overlayDialog) {
-            Intrinsics3.checkNotNullParameter(overlayDialog, "it");
-            DiscordOverlayService.this.getOverlayManager().d(overlayDialog);
+            C12238m.checkNotNullParameter(overlayDialog, "it");
+            DiscordOverlayService.this.getOverlayManager().m8433d(overlayDialog);
         }
     }
 
-    /* JADX INFO: renamed from: com.discord.utilities.voice.DiscordOverlayService$createVoiceBubble$1, reason: invalid class name */
+    /* JADX INFO: renamed from: com.discord.utilities.voice.DiscordOverlayService$createVoiceBubble$1 */
     /* JADX INFO: compiled from: DiscordOverlayService.kt */
-    public static final class AnonymousClass1 extends Lambda implements Function1<OverlayBubbleWrap, OverlayBubbleWrap> {
+    public static final class C70321 extends AbstractC12240o implements Function1<OverlayBubbleWrap, OverlayBubbleWrap> {
         public final /* synthetic */ String $anchorTag;
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-        public AnonymousClass1(String str) {
+        public C70321(String str) {
             super(1);
             this.$anchorTag = str;
         }
@@ -159,10 +159,10 @@ public final class DiscordOverlayService extends OverlayService {
         public final OverlayBubbleWrap invoke(OverlayBubbleWrap overlayBubbleWrap) {
             Rect rect;
             SimpleDraweeView imageView$app_productionGoogleRelease;
-            Intrinsics3.checkNotNullParameter(overlayBubbleWrap, "srcBubble");
+            C12238m.checkNotNullParameter(overlayBubbleWrap, "srcBubble");
             OverlayMenuBubbleDialog overlayMenuBubbleDialogCreateMenu = DiscordOverlayService.this.createMenu();
-            OverlayVoiceBubble2 overlayVoiceBubble2 = (OverlayVoiceBubble2) (!(overlayBubbleWrap instanceof OverlayVoiceBubble2) ? null : overlayBubbleWrap);
-            if (overlayVoiceBubble2 == null || (imageView$app_productionGoogleRelease = overlayVoiceBubble2.getImageView$app_productionGoogleRelease()) == null) {
+            C1387w c1387w = (C1387w) (!(overlayBubbleWrap instanceof C1387w) ? null : overlayBubbleWrap);
+            if (c1387w == null || (imageView$app_productionGoogleRelease = c1387w.getImageView$app_productionGoogleRelease()) == null) {
                 rect = new Rect();
             } else {
                 ViewGroup.LayoutParams layoutParams = imageView$app_productionGoogleRelease.getLayoutParams();
@@ -187,68 +187,68 @@ public final class DiscordOverlayService extends OverlayService {
         }
     }
 
-    /* JADX INFO: renamed from: com.discord.utilities.voice.DiscordOverlayService$createVoiceSelector$1, reason: invalid class name */
+    /* JADX INFO: renamed from: com.discord.utilities.voice.DiscordOverlayService$createVoiceSelector$1 */
     /* JADX INFO: compiled from: DiscordOverlayService.kt */
-    public static final class AnonymousClass1 extends Lambda implements Function1<OverlayDialog, Unit> {
-        public AnonymousClass1() {
+    public static final class C70331 extends AbstractC12240o implements Function1<OverlayDialog, Unit> {
+        public C70331() {
             super(1);
         }
 
         @Override // kotlin.jvm.functions.Function1
         public /* bridge */ /* synthetic */ Unit invoke(OverlayDialog overlayDialog) {
             invoke2(overlayDialog);
-            return Unit.a;
+            return Unit.f27425a;
         }
 
         /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
         public final void invoke2(OverlayDialog overlayDialog) {
-            Intrinsics3.checkNotNullParameter(overlayDialog, "it");
-            DiscordOverlayService.this.getOverlayManager().d(overlayDialog);
+            C12238m.checkNotNullParameter(overlayDialog, "it");
+            DiscordOverlayService.this.getOverlayManager().m8433d(overlayDialog);
         }
     }
 
-    /* JADX INFO: renamed from: com.discord.utilities.voice.DiscordOverlayService$onCreate$1, reason: invalid class name */
+    /* JADX INFO: renamed from: com.discord.utilities.voice.DiscordOverlayService$onCreate$1 */
     /* JADX INFO: compiled from: DiscordOverlayService.kt */
-    public static final class AnonymousClass1 extends Lambda implements Function1<View, Unit> {
-        public static final AnonymousClass1 INSTANCE = new AnonymousClass1();
+    public static final class C70341 extends AbstractC12240o implements Function1<View, Unit> {
+        public static final C70341 INSTANCE = new C70341();
 
-        public AnonymousClass1() {
+        public C70341() {
             super(1);
         }
 
         @Override // kotlin.jvm.functions.Function1
         public /* bridge */ /* synthetic */ Unit invoke(View view) {
             invoke2(view);
-            return Unit.a;
+            return Unit.f27425a;
         }
 
         /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
         public final void invoke2(View view) {
-            Intrinsics3.checkNotNullParameter(view, "it");
-            if (view instanceof OverlayVoiceBubble2) {
+            C12238m.checkNotNullParameter(view, "it");
+            if (view instanceof C1387w) {
                 StoreStream.INSTANCE.getAnalytics().onOverlayVoiceEvent(true);
             }
         }
     }
 
-    /* JADX INFO: renamed from: com.discord.utilities.voice.DiscordOverlayService$onCreate$2, reason: invalid class name */
+    /* JADX INFO: renamed from: com.discord.utilities.voice.DiscordOverlayService$onCreate$2 */
     /* JADX INFO: compiled from: DiscordOverlayService.kt */
-    public static final class AnonymousClass2 extends Lambda implements Function1<View, Unit> {
-        public AnonymousClass2() {
+    public static final class C70352 extends AbstractC12240o implements Function1<View, Unit> {
+        public C70352() {
             super(1);
         }
 
         @Override // kotlin.jvm.functions.Function1
         public /* bridge */ /* synthetic */ Unit invoke(View view) {
             invoke2(view);
-            return Unit.a;
+            return Unit.f27425a;
         }
 
         /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
         public final void invoke2(View view) {
-            Intrinsics3.checkNotNullParameter(view, "it");
-            Logger.v$default(AppLog.g, DiscordOverlayService.LOG_TAG, "removeView: " + view, null, 4, null);
-            if (view instanceof OverlayVoiceBubble2) {
+            C12238m.checkNotNullParameter(view, "it");
+            Logger.v$default(AppLog.f14950g, DiscordOverlayService.LOG_TAG, "removeView: " + view, null, 4, null);
+            if (view instanceof C1387w) {
                 StoreStream.INSTANCE.getAnalytics().onOverlayVoiceEvent(false);
             }
             if (DiscordOverlayService.this.getOverlayManager().activeBubbles.isEmpty()) {
@@ -257,14 +257,14 @@ public final class DiscordOverlayService extends OverlayService {
         }
     }
 
-    /* JADX INFO: renamed from: com.discord.utilities.voice.DiscordOverlayService$onStartCommand$2, reason: invalid class name */
+    /* JADX INFO: renamed from: com.discord.utilities.voice.DiscordOverlayService$onStartCommand$2 */
     /* JADX INFO: compiled from: DiscordOverlayService.kt */
-    public static final class AnonymousClass2 extends Lambda implements Function1<Boolean, Unit> {
+    public static final class C70372 extends AbstractC12240o implements Function1<Boolean, Unit> {
         public final /* synthetic */ Intent $intent;
         public final /* synthetic */ int $startId;
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-        public AnonymousClass2(int i, Intent intent) {
+        public C70372(int i, Intent intent) {
             super(1);
             this.$startId = i;
             this.$intent = intent;
@@ -273,7 +273,7 @@ public final class DiscordOverlayService extends OverlayService {
         @Override // kotlin.jvm.functions.Function1
         public /* bridge */ /* synthetic */ Unit invoke(Boolean bool) {
             invoke2(bool);
-            return Unit.a;
+            return Unit.f27425a;
         }
 
         /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
@@ -286,7 +286,7 @@ public final class DiscordOverlayService extends OverlayService {
             try {
                 DiscordOverlayService.super.handleStart(this.$intent);
             } catch (Exception e) {
-                Logger.e$default(AppLog.g, DiscordOverlayService.LOG_TAG, "Overlay failed to handle a request.", e, null, 8, null);
+                Logger.e$default(AppLog.f14950g, DiscordOverlayService.LOG_TAG, "Overlay failed to handle a request.", e, null, 8, null);
                 Companion.tryStartOverlayService$default(DiscordOverlayService.INSTANCE, DiscordOverlayService.this, DiscordOverlayService.ACTION_CLOSE, false, 4, null);
             }
         }
@@ -294,48 +294,48 @@ public final class DiscordOverlayService extends OverlayService {
 
     private final OverlayMenuBubbleDialog createMenu() {
         Context applicationContext = getApplicationContext();
-        Intrinsics3.checkNotNullExpressionValue(applicationContext, "applicationContext");
+        C12238m.checkNotNullExpressionValue(applicationContext, "applicationContext");
         OverlayMenuBubbleDialog overlayMenuBubbleDialog = new OverlayMenuBubbleDialog(applicationContext);
-        overlayMenuBubbleDialog.getInsetMargins().top = overlayMenuBubbleDialog.getResources().getDimensionPixelOffset(R.dimen.vertical_safe_margin);
-        overlayMenuBubbleDialog.setOnDialogClosed(new AnonymousClass1());
+        overlayMenuBubbleDialog.getInsetMargins().top = overlayMenuBubbleDialog.getResources().getDimensionPixelOffset(C5419R.dimen.vertical_safe_margin);
+        overlayMenuBubbleDialog.setOnDialogClosed(new C70311());
         return overlayMenuBubbleDialog;
     }
 
     private final OverlayBubbleWrap createVoiceBubble() {
-        int dimensionPixelOffset = getResources().getDimensionPixelOffset(R.dimen.overlay_safe_margin);
+        int dimensionPixelOffset = getResources().getDimensionPixelOffset(C5419R.dimen.overlay_safe_margin);
         Context applicationContext = getApplicationContext();
-        Intrinsics3.checkNotNullExpressionValue(applicationContext, "applicationContext");
-        OverlayVoiceBubble2 overlayVoiceBubble2 = new OverlayVoiceBubble2(applicationContext);
+        C12238m.checkNotNullExpressionValue(applicationContext, "applicationContext");
+        C1387w c1387w = new C1387w(applicationContext);
         int i = -dimensionPixelOffset;
-        overlayVoiceBubble2.getInsetMargins().set(i, dimensionPixelOffset, i, dimensionPixelOffset);
+        c1387w.getInsetMargins().set(i, dimensionPixelOffset, i, dimensionPixelOffset);
         OverlayManager overlayManager = getOverlayManager();
-        AnonymousClass1 anonymousClass1 = new AnonymousClass1("Active Voice Bubble");
+        C70321 c70321 = new C70321("Active Voice Bubble");
         Objects.requireNonNull(overlayManager);
-        Intrinsics3.checkNotNullParameter(overlayVoiceBubble2, "srcBubble");
-        Intrinsics3.checkNotNullParameter("Active Voice Bubble", "anchorViewTag");
-        Intrinsics3.checkNotNullParameter(anonymousClass1, "menuBubbleProvider");
-        overlayVoiceBubble2.setOnClickListener(new OverlayManager5(overlayManager, anonymousClass1, overlayVoiceBubble2, "Active Voice Bubble"));
+        C12238m.checkNotNullParameter(c1387w, "srcBubble");
+        C12238m.checkNotNullParameter("Active Voice Bubble", "anchorViewTag");
+        C12238m.checkNotNullParameter(c70321, "menuBubbleProvider");
+        c1387w.setOnClickListener(new ViewOnClickListenerC1169d(overlayManager, c70321, c1387w, "Active Voice Bubble"));
         OverlayManager overlayManager2 = getOverlayManager();
         Objects.requireNonNull(overlayManager2);
-        Intrinsics3.checkNotNullParameter(overlayVoiceBubble2, "bubble");
-        overlayVoiceBubble2.setOnTouchListener(overlayManager2.bubbleOnTouchListener);
-        overlayVoiceBubble2.setOnMovingStateChanged(new OverlayManager4(overlayManager2, overlayVoiceBubble2));
-        return overlayVoiceBubble2;
+        C12238m.checkNotNullParameter(c1387w, "bubble");
+        c1387w.setOnTouchListener(overlayManager2.bubbleOnTouchListener);
+        c1387w.setOnMovingStateChanged(new C1168c(overlayManager2, c1387w));
+        return c1387w;
     }
 
     private final OverlayBubbleWrap createVoiceSelector() {
         Context applicationContext = getApplicationContext();
-        Intrinsics3.checkNotNullExpressionValue(applicationContext, "applicationContext");
-        OverlayVoiceSelectorBubbleDialog3 overlayVoiceSelectorBubbleDialog3 = new OverlayVoiceSelectorBubbleDialog3(applicationContext);
-        overlayVoiceSelectorBubbleDialog3.setOnDialogClosed(new AnonymousClass1());
-        return overlayVoiceSelectorBubbleDialog3;
+        C12238m.checkNotNullExpressionValue(applicationContext, "applicationContext");
+        C1390z c1390z = new C1390z(applicationContext);
+        c1390z.setOnDialogClosed(new C70331());
+        return c1390z;
     }
 
     @Override // com.discord.overlay.OverlayService
     public Notification createNotification(Intent intent) {
-        PendingIntent service = PendingIntent.getService(this, 1010, INSTANCE.createOverlayIntent(this, ACTION_CLOSE), PendingIntentExtensions.immutablePendingIntentFlag(134217728));
-        Notification notificationBuild = new NotificationCompat.Builder(this, NotificationClient.NOTIF_CHANNEL_MEDIA_CONNECTIONS).setCategory(NotificationCompat.CATEGORY_SERVICE).setPriority(-2).setOnlyAlertOnce(true).setLocalOnly(true).setSmallIcon(R.drawable.ic_notification_24dp).setColor(ColorCompat.getColor(this, R.color.status_green_600)).setContentTitle(getString(R.string.overlay)).setContentText(getString(R.string.overlay_mobile_toggle_desc)).setOngoing(true).addAction(R.drawable.ic_close_grey_24dp, getString(R.string.close), service).addAction(R.drawable.ic_settings_grey_a60_24dp, getString(R.string.settings), PendingIntent.getActivity(this, 1010, new Intent("android.intent.action.VIEW", IntentUtils.RouteBuilders.Uris.INSTANCE.getSelectSettingsVoice()).setPackage(getPackageName()), PendingIntentExtensions.immutablePendingIntentFlag(134217728))).build();
-        Intrinsics3.checkNotNullExpressionValue(notificationBuild, "NotificationCompat.Build…       )\n        .build()");
+        PendingIntent service = PendingIntent.getService(this, 1010, INSTANCE.createOverlayIntent(this, ACTION_CLOSE), PendingIntentExtensionsKt.immutablePendingIntentFlag(134217728));
+        Notification notificationBuild = new NotificationCompat.Builder(this, NotificationClient.NOTIF_CHANNEL_MEDIA_CONNECTIONS).setCategory(NotificationCompat.CATEGORY_SERVICE).setPriority(-2).setOnlyAlertOnce(true).setLocalOnly(true).setSmallIcon(C5419R.drawable.ic_notification_24dp).setColor(ColorCompat.getColor(this, C5419R.color.status_green_600)).setContentTitle(getString(C5419R.string.overlay)).setContentText(getString(C5419R.string.overlay_mobile_toggle_desc)).setOngoing(true).addAction(C5419R.drawable.ic_close_grey_24dp, getString(C5419R.string.close), service).addAction(C5419R.drawable.ic_settings_grey_a60_24dp, getString(C5419R.string.settings), PendingIntent.getActivity(this, 1010, new Intent("android.intent.action.VIEW", IntentUtils.RouteBuilders.Uris.INSTANCE.getSelectSettingsVoice()).setPackage(getPackageName()), PendingIntentExtensionsKt.immutablePendingIntentFlag(134217728))).build();
+        C12238m.checkNotNullExpressionValue(notificationBuild, "NotificationCompat.Build…       )\n        .build()");
         return notificationBuild;
     }
 
@@ -343,7 +343,7 @@ public final class DiscordOverlayService extends OverlayService {
     public OverlayBubbleWrap createOverlayBubble(Intent intent) {
         Object next;
         Object next2;
-        Intrinsics3.checkNotNullParameter(intent, "intent");
+        C12238m.checkNotNullParameter(intent, "intent");
         String action = intent.getAction();
         if (action == null) {
             return null;
@@ -360,7 +360,7 @@ public final class DiscordOverlayService extends OverlayService {
                     break;
                 }
                 next = it.next();
-            } while (!(((OverlayBubbleWrap) next) instanceof OverlayVoiceBubble2));
+            } while (!(((OverlayBubbleWrap) next) instanceof C1387w));
             if (((OverlayBubbleWrap) next) != null) {
                 return null;
             }
@@ -382,7 +382,7 @@ public final class DiscordOverlayService extends OverlayService {
                 break;
             }
             next2 = it2.next();
-        } while (!(((OverlayBubbleWrap) next2) instanceof OverlayVoiceBubble2));
+        } while (!(((OverlayBubbleWrap) next2) instanceof C1387w));
         OverlayBubbleWrap overlayBubbleWrap = (OverlayBubbleWrap) next2;
         if (overlayBubbleWrap == null) {
             return createVoiceBubble();
@@ -396,39 +396,39 @@ public final class DiscordOverlayService extends OverlayService {
         super.onCreate();
         StoreStream.Companion companion = StoreStream.INSTANCE;
         Application application = getApplication();
-        Intrinsics3.checkNotNullExpressionValue(application, "application");
+        C12238m.checkNotNullExpressionValue(application, "application");
         companion.initialize(application);
         OverlayManager overlayManager = getOverlayManager();
-        AnonymousClass1 anonymousClass1 = AnonymousClass1.INSTANCE;
+        C70341 c70341 = C70341.INSTANCE;
         Objects.requireNonNull(overlayManager);
-        Intrinsics3.checkNotNullParameter(anonymousClass1, "<set-?>");
-        overlayManager.onOverlayBubbleAdded = anonymousClass1;
+        C12238m.checkNotNullParameter(c70341, "<set-?>");
+        overlayManager.onOverlayBubbleAdded = c70341;
         OverlayManager overlayManager2 = getOverlayManager();
-        AnonymousClass2 anonymousClass2 = new AnonymousClass2();
+        C70352 c70352 = new C70352();
         Objects.requireNonNull(overlayManager2);
-        Intrinsics3.checkNotNullParameter(anonymousClass2, "<set-?>");
-        overlayManager2.onOverlayBubbleRemoved = anonymousClass2;
+        C12238m.checkNotNullParameter(c70352, "<set-?>");
+        overlayManager2.onOverlayBubbleRemoved = c70352;
     }
 
     @Override // android.app.Service
     public int onStartCommand(Intent intent, int flags, int startId) {
-        AppLog appLog = AppLog.g;
-        StringBuilder sbU = outline.U("onStartCommand: ");
-        sbU.append(intent != null ? intent.getAction() : null);
-        Logger.v$default(appLog, LOG_TAG, sbU.toString(), null, 4, null);
-        if (Intrinsics3.areEqual(intent != null ? intent.getAction() : null, ACTION_CLOSE) || !DeviceUtils.INSTANCE.canDrawOverlays(this)) {
+        AppLog appLog = AppLog.f14950g;
+        StringBuilder sbM833U = C1643a.m833U("onStartCommand: ");
+        sbM833U.append(intent != null ? intent.getAction() : null);
+        Logger.v$default(appLog, LOG_TAG, sbM833U.toString(), null, 4, null);
+        if (C12238m.areEqual(intent != null ? intent.getAction() : null, ACTION_CLOSE) || !DeviceUtils.INSTANCE.canDrawOverlays(this)) {
             stopForeground(true);
             stopSelf(startId);
             return 2;
         }
-        Observable<Boolean> observableZ = StoreStream.INSTANCE.isInitializedObservable().y(new Func1<Boolean, Boolean>() { // from class: com.discord.utilities.voice.DiscordOverlayService.onStartCommand.1
-            @Override // j0.k.Func1
+        Observable<Boolean> observableM11100Z = StoreStream.INSTANCE.isInitializedObservable().m11118y(new InterfaceC12589b<Boolean, Boolean>() { // from class: com.discord.utilities.voice.DiscordOverlayService.onStartCommand.1
+            @Override // p637j0.p641k.InterfaceC12589b
             public final Boolean call(Boolean bool) {
-                return Boolean.valueOf(Intrinsics3.areEqual(bool, Boolean.TRUE));
+                return Boolean.valueOf(C12238m.areEqual(bool, Boolean.TRUE));
             }
-        }).Z(1);
-        Intrinsics3.checkNotNullExpressionValue(observableZ, "StoreStream.isInitialize….takeFirst { it == true }");
-        ObservableExtensionsKt.appSubscribe(ObservableExtensionsKt.ui(observableZ), (Class<?>) DiscordOverlayService.class, (58 & 2) != 0 ? null : null, (Function1<? super Subscription, Unit>) ((58 & 4) != 0 ? null : null), (Function1<? super Error, Unit>) ((58 & 8) != 0 ? null : null), (Function0<Unit>) ((58 & 16) != 0 ? ObservableExtensionsKt.AnonymousClass1.INSTANCE : null), (Function0<Unit>) ((58 & 32) != 0 ? ObservableExtensionsKt.AnonymousClass2.INSTANCE : null), new AnonymousClass2(startId, intent));
+        }).m11100Z(1);
+        C12238m.checkNotNullExpressionValue(observableM11100Z, "StoreStream.isInitialize….takeFirst { it == true }");
+        ObservableExtensionsKt.appSubscribe(ObservableExtensionsKt.m8518ui(observableM11100Z), (Class<?>) DiscordOverlayService.class, (58 & 2) != 0 ? null : null, (Function1<? super Subscription, Unit>) ((58 & 4) != 0 ? null : null), (Function1<? super Error, Unit>) ((58 & 8) != 0 ? null : null), (Function0<Unit>) ((58 & 16) != 0 ? ObservableExtensionsKt.C68791.INSTANCE : null), (Function0<Unit>) ((58 & 32) != 0 ? ObservableExtensionsKt.C68802.INSTANCE : null), new C70372(startId, intent));
         return 3;
     }
 }

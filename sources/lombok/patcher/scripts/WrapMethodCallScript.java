@@ -82,21 +82,21 @@ public class WrapMethodCallScript extends MethodLevelPatchScript {
             if (WrapMethodCallScript.this.callToWrap.getClassSpec().equals(owner) && WrapMethodCallScript.this.callToWrap.getMethodName().equals(name) && WrapMethodCallScript.this.callToWrap.getMethodDescriptor().equals(desc)) {
                 if (WrapMethodCallScript.this.leaveReturnValueIntact) {
                     if (WrapMethodCallScript.this.callToWrap.isConstructor()) {
-                        this.mv.visitInsn(89);
+                        this.f27600mv.visitInsn(89);
                     } else {
-                        MethodLogistics.generateDupForType(MethodTarget.decomposeFullDesc(WrapMethodCallScript.this.callToWrap.getMethodDescriptor()).get(0), this.mv);
+                        MethodLogistics.generateDupForType(MethodTarget.decomposeFullDesc(WrapMethodCallScript.this.callToWrap.getMethodDescriptor()).get(0), this.f27600mv);
                     }
                 }
                 if (WrapMethodCallScript.this.extraRequests.contains(StackRequest.THIS)) {
-                    this.logistics.generateLoadOpcodeForThis(this.mv);
+                    this.logistics.generateLoadOpcodeForThis(this.f27600mv);
                 }
                 for (StackRequest param : StackRequest.PARAMS_IN_ORDER) {
                     if (WrapMethodCallScript.this.extraRequests.contains(param)) {
-                        this.logistics.generateLoadOpcodeForParam(param.getParamPos(), this.mv);
+                        this.logistics.generateLoadOpcodeForParam(param.getParamPos(), this.f27600mv);
                     }
                 }
                 if (WrapMethodCallScript.this.insert) {
-                    WrapMethodCallScript.insertMethod(WrapMethodCallScript.this.wrapper, this.mv);
+                    WrapMethodCallScript.insertMethod(WrapMethodCallScript.this.wrapper, this.f27600mv);
                 } else {
                     super.visitMethodInsn(Opcodes.INVOKESTATIC, WrapMethodCallScript.this.transplant ? this.ownClassSpec : WrapMethodCallScript.this.wrapper.getClassSpec(), WrapMethodCallScript.this.wrapper.getMethodName(), WrapMethodCallScript.this.wrapper.getMethodDescriptor(), false);
                 }

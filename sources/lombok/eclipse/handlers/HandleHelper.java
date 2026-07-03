@@ -62,7 +62,7 @@ public class HandleHelper extends EclipseAnnotationHandler<Helper> {
     public void handle(AnnotationValues<Helper> annotation, Annotation ast, EclipseNode annotationNode) {
         char[] name;
         HandlerUtil.handleExperimentalFlagUsage(annotationNode, ConfigurationKeys.HELPER_FLAG_USAGE, "@Helper");
-        EclipseNode annotatedType = annotationNode.up();
+        EclipseNode annotatedType = annotationNode.m10925up();
         EclipseNode containingBlock = annotatedType == null ? null : annotatedType.directUp();
         Statement[] origStatements = getStatementsFromAstNode(containingBlock == null ? null : containingBlock.get());
         if (annotatedType == null || annotatedType.getKind() != AST.Kind.TYPE || origStatements == null) {

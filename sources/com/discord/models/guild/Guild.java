@@ -1,8 +1,6 @@
 package com.discord.models.guild;
 
-import a0.a.a.b;
 import androidx.constraintlayout.solver.widgets.analyzer.BasicMeasure;
-import b.d.b.a.outline;
 import com.discord.api.emoji.GuildEmoji;
 import com.discord.api.guild.GuildExplicitContentFilter;
 import com.discord.api.guild.GuildFeature;
@@ -14,14 +12,16 @@ import com.discord.api.role.GuildRole;
 import com.discord.api.sticker.Sticker;
 import com.discord.models.domain.ModelAuditLogEntry;
 import com.discord.models.domain.ModelNotificationSettings;
-import com.discord.utilities.guilds.GuildUtils;
-import d0.t.Collections2;
-import d0.t.Sets5;
-import d0.t._Collections;
-import d0.z.d.Intrinsics3;
+import com.discord.utilities.guilds.GuildUtilsKt;
 import java.util.List;
 import java.util.Set;
 import kotlin.jvm.internal.DefaultConstructorMarker;
+import p001a0.p002a.p003a.C0002b;
+import p007b.p100d.p104b.p105a.C1643a;
+import p507d0.p580t.C12147n;
+import p507d0.p580t.C12148n0;
+import p507d0.p580t.C12163u;
+import p507d0.p592z.p594d.C12238m;
 
 /* JADX INFO: compiled from: Guild.kt */
 /* JADX INFO: loaded from: classes.dex */
@@ -68,14 +68,14 @@ public final /* data */ class Guild {
 
     /* JADX WARN: Multi-variable type inference failed */
     public Guild(List<GuildRole> list, List<GuildEmoji> list2, List<Sticker> list3, String str, String str2, int i, long j, String str3, long j2, String str4, GuildVerificationLevel guildVerificationLevel, GuildExplicitContentFilter guildExplicitContentFilter, boolean z2, int i2, int i3, Long l, Long l2, Set<? extends GuildFeature> set, int i4, String str5, String str6, int i5, int i6, int i7, String str7, Long l3, Long l4, String str8, GuildWelcomeScreen guildWelcomeScreen, GuildMaxVideoChannelUsers guildMaxVideoChannelUsers, String str9, int i8, boolean z3, GuildHubType guildHubType) {
-        Intrinsics3.checkNotNullParameter(list, "roles");
-        Intrinsics3.checkNotNullParameter(list2, "emojis");
-        Intrinsics3.checkNotNullParameter(list3, "stickers");
-        Intrinsics3.checkNotNullParameter(str, ModelAuditLogEntry.CHANGE_KEY_NAME);
-        Intrinsics3.checkNotNullParameter(guildVerificationLevel, "verificationLevel");
-        Intrinsics3.checkNotNullParameter(guildExplicitContentFilter, "explicitContentFilter");
-        Intrinsics3.checkNotNullParameter(set, "features");
-        Intrinsics3.checkNotNullParameter(guildMaxVideoChannelUsers, "maxVideoChannelUsers");
+        C12238m.checkNotNullParameter(list, "roles");
+        C12238m.checkNotNullParameter(list2, "emojis");
+        C12238m.checkNotNullParameter(list3, "stickers");
+        C12238m.checkNotNullParameter(str, ModelAuditLogEntry.CHANGE_KEY_NAME);
+        C12238m.checkNotNullParameter(guildVerificationLevel, "verificationLevel");
+        C12238m.checkNotNullParameter(guildExplicitContentFilter, "explicitContentFilter");
+        C12238m.checkNotNullParameter(set, "features");
+        C12238m.checkNotNullParameter(guildMaxVideoChannelUsers, "maxVideoChannelUsers");
         this.roles = list;
         this.emojis = list2;
         this.stickers = list3;
@@ -110,7 +110,7 @@ public final /* data */ class Guild {
         this.approximatePresenceCount = i8;
         this.nsfw = z3;
         this.hubType = guildHubType;
-        this.shortName = GuildUtils.computeShortName(str);
+        this.shortName = GuildUtilsKt.computeShortName(str);
     }
 
     public final boolean canHaveAnimatedBanner() {
@@ -296,14 +296,14 @@ public final /* data */ class Guild {
     }
 
     public final Guild copy(List<GuildRole> roles, List<GuildEmoji> emojis, List<Sticker> stickers, String name, String description, int defaultMessageNotifications, long id2, String region, long ownerId, String icon, GuildVerificationLevel verificationLevel, GuildExplicitContentFilter explicitContentFilter, boolean unavailable, int mfaLevel, int afkTimeout, Long afkChannelId, Long systemChannelId, Set<? extends GuildFeature> features, int memberCount, String banner, String splash, int premiumTier, int premiumSubscriptionCount, int systemChannelFlags, String joinedAt, Long rulesChannelId, Long publicUpdatesChannelId, String preferredLocale, GuildWelcomeScreen welcomeScreen, GuildMaxVideoChannelUsers maxVideoChannelUsers, String vanityUrlCode, int approximatePresenceCount, boolean nsfw, GuildHubType hubType) {
-        Intrinsics3.checkNotNullParameter(roles, "roles");
-        Intrinsics3.checkNotNullParameter(emojis, "emojis");
-        Intrinsics3.checkNotNullParameter(stickers, "stickers");
-        Intrinsics3.checkNotNullParameter(name, ModelAuditLogEntry.CHANGE_KEY_NAME);
-        Intrinsics3.checkNotNullParameter(verificationLevel, "verificationLevel");
-        Intrinsics3.checkNotNullParameter(explicitContentFilter, "explicitContentFilter");
-        Intrinsics3.checkNotNullParameter(features, "features");
-        Intrinsics3.checkNotNullParameter(maxVideoChannelUsers, "maxVideoChannelUsers");
+        C12238m.checkNotNullParameter(roles, "roles");
+        C12238m.checkNotNullParameter(emojis, "emojis");
+        C12238m.checkNotNullParameter(stickers, "stickers");
+        C12238m.checkNotNullParameter(name, ModelAuditLogEntry.CHANGE_KEY_NAME);
+        C12238m.checkNotNullParameter(verificationLevel, "verificationLevel");
+        C12238m.checkNotNullParameter(explicitContentFilter, "explicitContentFilter");
+        C12238m.checkNotNullParameter(features, "features");
+        C12238m.checkNotNullParameter(maxVideoChannelUsers, "maxVideoChannelUsers");
         return new Guild(roles, emojis, stickers, name, description, defaultMessageNotifications, id2, region, ownerId, icon, verificationLevel, explicitContentFilter, unavailable, mfaLevel, afkTimeout, afkChannelId, systemChannelId, features, memberCount, banner, splash, premiumTier, premiumSubscriptionCount, systemChannelFlags, joinedAt, rulesChannelId, publicUpdatesChannelId, preferredLocale, welcomeScreen, maxVideoChannelUsers, vanityUrlCode, approximatePresenceCount, nsfw, hubType);
     }
 
@@ -315,7 +315,7 @@ public final /* data */ class Guild {
             return false;
         }
         Guild guild = (Guild) other;
-        return Intrinsics3.areEqual(this.roles, guild.roles) && Intrinsics3.areEqual(this.emojis, guild.emojis) && Intrinsics3.areEqual(this.stickers, guild.stickers) && Intrinsics3.areEqual(this.name, guild.name) && Intrinsics3.areEqual(this.description, guild.description) && this.defaultMessageNotifications == guild.defaultMessageNotifications && this.id == guild.id && Intrinsics3.areEqual(this.region, guild.region) && this.ownerId == guild.ownerId && Intrinsics3.areEqual(this.icon, guild.icon) && Intrinsics3.areEqual(this.verificationLevel, guild.verificationLevel) && Intrinsics3.areEqual(this.explicitContentFilter, guild.explicitContentFilter) && this.unavailable == guild.unavailable && this.mfaLevel == guild.mfaLevel && this.afkTimeout == guild.afkTimeout && Intrinsics3.areEqual(this.afkChannelId, guild.afkChannelId) && Intrinsics3.areEqual(this.systemChannelId, guild.systemChannelId) && Intrinsics3.areEqual(this.features, guild.features) && this.memberCount == guild.memberCount && Intrinsics3.areEqual(this.banner, guild.banner) && Intrinsics3.areEqual(this.splash, guild.splash) && this.premiumTier == guild.premiumTier && this.premiumSubscriptionCount == guild.premiumSubscriptionCount && this.systemChannelFlags == guild.systemChannelFlags && Intrinsics3.areEqual(this.joinedAt, guild.joinedAt) && Intrinsics3.areEqual(this.rulesChannelId, guild.rulesChannelId) && Intrinsics3.areEqual(this.publicUpdatesChannelId, guild.publicUpdatesChannelId) && Intrinsics3.areEqual(this.preferredLocale, guild.preferredLocale) && Intrinsics3.areEqual(this.welcomeScreen, guild.welcomeScreen) && Intrinsics3.areEqual(this.maxVideoChannelUsers, guild.maxVideoChannelUsers) && Intrinsics3.areEqual(this.vanityUrlCode, guild.vanityUrlCode) && this.approximatePresenceCount == guild.approximatePresenceCount && this.nsfw == guild.nsfw && Intrinsics3.areEqual(this.hubType, guild.hubType);
+        return C12238m.areEqual(this.roles, guild.roles) && C12238m.areEqual(this.emojis, guild.emojis) && C12238m.areEqual(this.stickers, guild.stickers) && C12238m.areEqual(this.name, guild.name) && C12238m.areEqual(this.description, guild.description) && this.defaultMessageNotifications == guild.defaultMessageNotifications && this.id == guild.id && C12238m.areEqual(this.region, guild.region) && this.ownerId == guild.ownerId && C12238m.areEqual(this.icon, guild.icon) && C12238m.areEqual(this.verificationLevel, guild.verificationLevel) && C12238m.areEqual(this.explicitContentFilter, guild.explicitContentFilter) && this.unavailable == guild.unavailable && this.mfaLevel == guild.mfaLevel && this.afkTimeout == guild.afkTimeout && C12238m.areEqual(this.afkChannelId, guild.afkChannelId) && C12238m.areEqual(this.systemChannelId, guild.systemChannelId) && C12238m.areEqual(this.features, guild.features) && this.memberCount == guild.memberCount && C12238m.areEqual(this.banner, guild.banner) && C12238m.areEqual(this.splash, guild.splash) && this.premiumTier == guild.premiumTier && this.premiumSubscriptionCount == guild.premiumSubscriptionCount && this.systemChannelFlags == guild.systemChannelFlags && C12238m.areEqual(this.joinedAt, guild.joinedAt) && C12238m.areEqual(this.rulesChannelId, guild.rulesChannelId) && C12238m.areEqual(this.publicUpdatesChannelId, guild.publicUpdatesChannelId) && C12238m.areEqual(this.preferredLocale, guild.preferredLocale) && C12238m.areEqual(this.welcomeScreen, guild.welcomeScreen) && C12238m.areEqual(this.maxVideoChannelUsers, guild.maxVideoChannelUsers) && C12238m.areEqual(this.vanityUrlCode, guild.vanityUrlCode) && this.approximatePresenceCount == guild.approximatePresenceCount && this.nsfw == guild.nsfw && C12238m.areEqual(this.hubType, guild.hubType);
     }
 
     public final Long getAfkChannelId() {
@@ -459,7 +459,7 @@ public final /* data */ class Guild {
     }
 
     public final boolean hasFeature(GuildFeature feature) {
-        Intrinsics3.checkNotNullParameter(feature, "feature");
+        C12238m.checkNotNullParameter(feature, "feature");
         return this.features.contains(feature);
     }
 
@@ -485,11 +485,11 @@ public final /* data */ class Guild {
         String str = this.name;
         int iHashCode4 = (iHashCode3 + (str != null ? str.hashCode() : 0)) * 31;
         String str2 = this.description;
-        int iA = (b.a(this.id) + ((((iHashCode4 + (str2 != null ? str2.hashCode() : 0)) * 31) + this.defaultMessageNotifications) * 31)) * 31;
+        int iM3a = (C0002b.m3a(this.id) + ((((iHashCode4 + (str2 != null ? str2.hashCode() : 0)) * 31) + this.defaultMessageNotifications) * 31)) * 31;
         String str3 = this.region;
-        int iA2 = (b.a(this.ownerId) + ((iA + (str3 != null ? str3.hashCode() : 0)) * 31)) * 31;
+        int iM3a2 = (C0002b.m3a(this.ownerId) + ((iM3a + (str3 != null ? str3.hashCode() : 0)) * 31)) * 31;
         String str4 = this.icon;
-        int iHashCode5 = (iA2 + (str4 != null ? str4.hashCode() : 0)) * 31;
+        int iHashCode5 = (iM3a2 + (str4 != null ? str4.hashCode() : 0)) * 31;
         GuildVerificationLevel guildVerificationLevel = this.verificationLevel;
         int iHashCode6 = (iHashCode5 + (guildVerificationLevel != null ? guildVerificationLevel.hashCode() : 0)) * 31;
         GuildExplicitContentFilter guildExplicitContentFilter = this.explicitContentFilter;
@@ -539,209 +539,209 @@ public final /* data */ class Guild {
     }
 
     public final Guild merge(com.discord.api.guild.Guild apiGuild) {
-        Intrinsics3.checkNotNullParameter(apiGuild, "apiGuild");
-        List listEmptyList = Collections2.emptyList();
-        List<GuildEmoji> listK = apiGuild.k();
-        if (listK == null) {
-            listK = Collections2.emptyList();
+        C12238m.checkNotNullParameter(apiGuild, "apiGuild");
+        List listEmptyList = C12147n.emptyList();
+        List<GuildEmoji> listM7864k = apiGuild.m7864k();
+        if (listM7864k == null) {
+            listM7864k = C12147n.emptyList();
         }
         List list = null;
-        String strX = apiGuild.getName();
-        String strI = apiGuild.getDescription();
-        if (strI == null) {
-            strI = this.description;
+        String strM7877x = apiGuild.getName();
+        String strM7862i = apiGuild.getDescription();
+        if (strM7862i == null) {
+            strM7862i = this.description;
         }
-        Integer numH = apiGuild.getDefaultMessageNotifications();
-        int iIntValue = numH != null ? numH.intValue() : this.defaultMessageNotifications;
-        long jR = apiGuild.getId() != 0 ? apiGuild.getId() : this.id;
-        String strF = apiGuild.getRegion();
-        if (strF == null) {
-            strF = this.region;
+        Integer numM7861h = apiGuild.getDefaultMessageNotifications();
+        int iIntValue = numM7861h != null ? numM7861h.intValue() : this.defaultMessageNotifications;
+        long jM7871r = apiGuild.getId() != 0 ? apiGuild.getId() : this.id;
+        String strM7841F = apiGuild.getRegion();
+        if (strM7841F == null) {
+            strM7841F = this.region;
         }
-        long jZ = apiGuild.getOwnerId() != 0 ? apiGuild.getOwnerId() : this.ownerId;
-        String strQ = apiGuild.getIcon();
-        if (strQ == null) {
-            strQ = this.icon;
+        long jM7879z = apiGuild.getOwnerId() != 0 ? apiGuild.getOwnerId() : this.ownerId;
+        String strM7870q = apiGuild.getIcon();
+        if (strM7870q == null) {
+            strM7870q = this.icon;
         }
-        String str = strQ;
-        GuildVerificationLevel guildVerificationLevelQ = apiGuild.getVerificationLevel();
-        if (guildVerificationLevelQ == null) {
-            guildVerificationLevelQ = this.verificationLevel;
+        String str = strM7870q;
+        GuildVerificationLevel guildVerificationLevelM7852Q = apiGuild.getVerificationLevel();
+        if (guildVerificationLevelM7852Q == null) {
+            guildVerificationLevelM7852Q = this.verificationLevel;
         }
-        GuildVerificationLevel guildVerificationLevel = guildVerificationLevelQ;
-        GuildExplicitContentFilter guildExplicitContentFilterL = apiGuild.getExplicitContentFilter();
-        if (guildExplicitContentFilterL == null) {
-            guildExplicitContentFilterL = this.explicitContentFilter;
+        GuildVerificationLevel guildVerificationLevel = guildVerificationLevelM7852Q;
+        GuildExplicitContentFilter guildExplicitContentFilterM7865l = apiGuild.getExplicitContentFilter();
+        if (guildExplicitContentFilterM7865l == null) {
+            guildExplicitContentFilterM7865l = this.explicitContentFilter;
         }
-        GuildExplicitContentFilter guildExplicitContentFilter = guildExplicitContentFilterL;
-        boolean zO = apiGuild.getUnavailable();
-        int iW = apiGuild.getMfaLevel();
-        int iC = apiGuild.getAfkTimeout() != 0 ? apiGuild.getAfkTimeout() : this.afkTimeout;
-        Long lB = apiGuild.getAfkChannelId();
-        Long lM = apiGuild.getSystemChannelId();
-        Set set = _Collections.toSet(apiGuild.m());
+        GuildExplicitContentFilter guildExplicitContentFilter = guildExplicitContentFilterM7865l;
+        boolean zM7850O = apiGuild.getUnavailable();
+        int iM7876w = apiGuild.getMfaLevel();
+        int iM7856c = apiGuild.getAfkTimeout() != 0 ? apiGuild.getAfkTimeout() : this.afkTimeout;
+        Long lM7855b = apiGuild.getAfkChannelId();
+        Long lM7848M = apiGuild.getSystemChannelId();
+        Set set = C12163u.toSet(apiGuild.m7866m());
         int i = 0;
-        String strE = apiGuild.getBanner();
-        String strI2 = apiGuild.getSplash();
-        if (strI2 == null) {
-            strI2 = this.splash;
+        String strM7858e = apiGuild.getBanner();
+        String strM7844I = apiGuild.getSplash();
+        if (strM7844I == null) {
+            strM7844I = this.splash;
         }
-        String str2 = strI2;
-        int iC2 = apiGuild.getPremiumTier();
-        int iB = apiGuild.getPremiumSubscriptionCount();
-        int iL = apiGuild.getSystemChannelFlags();
-        String strS = apiGuild.getJoinedAt();
-        if (strS == null) {
-            strS = this.joinedAt;
+        String str2 = strM7844I;
+        int iM7838C = apiGuild.getPremiumTier();
+        int iM7837B = apiGuild.getPremiumSubscriptionCount();
+        int iM7847L = apiGuild.getSystemChannelFlags();
+        String strM7872s = apiGuild.getJoinedAt();
+        if (strM7872s == null) {
+            strM7872s = this.joinedAt;
         }
-        String str3 = strS;
-        Long lH = apiGuild.getRulesChannelId();
-        if (lH == null) {
-            lH = this.rulesChannelId;
+        String str3 = strM7872s;
+        Long lM7843H = apiGuild.getRulesChannelId();
+        if (lM7843H == null) {
+            lM7843H = this.rulesChannelId;
         }
-        Long l = lH;
-        Long lE = apiGuild.getPublicUpdatesChannelId();
-        if (lE == null) {
-            lE = this.publicUpdatesChannelId;
+        Long l = lM7843H;
+        Long lM7840E = apiGuild.getPublicUpdatesChannelId();
+        if (lM7840E == null) {
+            lM7840E = this.publicUpdatesChannelId;
         }
-        Long l2 = lE;
-        String strA = apiGuild.getPreferredLocale();
-        if (strA == null) {
-            strA = this.preferredLocale;
+        Long l2 = lM7840E;
+        String strM7836A = apiGuild.getPreferredLocale();
+        if (strM7836A == null) {
+            strM7836A = this.preferredLocale;
         }
-        String str4 = strA;
-        GuildWelcomeScreen guildWelcomeScreenS = apiGuild.getWelcomeScreen();
-        if (guildWelcomeScreenS == null) {
-            guildWelcomeScreenS = this.welcomeScreen;
+        String str4 = strM7836A;
+        GuildWelcomeScreen guildWelcomeScreenM7854S = apiGuild.getWelcomeScreen();
+        if (guildWelcomeScreenM7854S == null) {
+            guildWelcomeScreenM7854S = this.welcomeScreen;
         }
-        GuildWelcomeScreen guildWelcomeScreen = guildWelcomeScreenS;
-        GuildMaxVideoChannelUsers guildMaxVideoChannelUsersT = apiGuild.getMaxVideoChannelUsers();
-        if (guildMaxVideoChannelUsersT == null) {
-            guildMaxVideoChannelUsersT = this.maxVideoChannelUsers;
+        GuildWelcomeScreen guildWelcomeScreen = guildWelcomeScreenM7854S;
+        GuildMaxVideoChannelUsers guildMaxVideoChannelUsersM7873t = apiGuild.getMaxVideoChannelUsers();
+        if (guildMaxVideoChannelUsersM7873t == null) {
+            guildMaxVideoChannelUsersM7873t = this.maxVideoChannelUsers;
         }
-        GuildMaxVideoChannelUsers guildMaxVideoChannelUsers = guildMaxVideoChannelUsersT;
-        String strP = apiGuild.getVanityUrlCode();
-        if (strP == null) {
-            strP = this.vanityUrlCode;
+        GuildMaxVideoChannelUsers guildMaxVideoChannelUsers = guildMaxVideoChannelUsersM7873t;
+        String strM7851P = apiGuild.getVanityUrlCode();
+        if (strM7851P == null) {
+            strM7851P = this.vanityUrlCode;
         }
-        return new Guild(listEmptyList, listK, list, strX, strI, iIntValue, jR, strF, jZ, str, guildVerificationLevel, guildExplicitContentFilter, zO, iW, iC, lB, lM, set, i, strE, str2, iC2, iB, iL, str3, l, l2, str4, guildWelcomeScreen, guildMaxVideoChannelUsers, strP, apiGuild.getApproximatePresenceCount() != 0 ? apiGuild.getApproximatePresenceCount() : this.approximatePresenceCount, apiGuild.getNsfw(), apiGuild.getHubType(), 4, 0, null);
+        return new Guild(listEmptyList, listM7864k, list, strM7877x, strM7862i, iIntValue, jM7871r, strM7841F, jM7879z, str, guildVerificationLevel, guildExplicitContentFilter, zM7850O, iM7876w, iM7856c, lM7855b, lM7848M, set, i, strM7858e, str2, iM7838C, iM7837B, iM7847L, str3, l, l2, str4, guildWelcomeScreen, guildMaxVideoChannelUsers, strM7851P, apiGuild.getApproximatePresenceCount() != 0 ? apiGuild.getApproximatePresenceCount() : this.approximatePresenceCount, apiGuild.getNsfw(), apiGuild.getHubType(), 4, 0, null);
     }
 
     public String toString() {
-        StringBuilder sbU = outline.U("Guild(roles=");
-        sbU.append(this.roles);
-        sbU.append(", emojis=");
-        sbU.append(this.emojis);
-        sbU.append(", stickers=");
-        sbU.append(this.stickers);
-        sbU.append(", name=");
-        sbU.append(this.name);
-        sbU.append(", description=");
-        sbU.append(this.description);
-        sbU.append(", defaultMessageNotifications=");
-        sbU.append(this.defaultMessageNotifications);
-        sbU.append(", id=");
-        sbU.append(this.id);
-        sbU.append(", region=");
-        sbU.append(this.region);
-        sbU.append(", ownerId=");
-        sbU.append(this.ownerId);
-        sbU.append(", icon=");
-        sbU.append(this.icon);
-        sbU.append(", verificationLevel=");
-        sbU.append(this.verificationLevel);
-        sbU.append(", explicitContentFilter=");
-        sbU.append(this.explicitContentFilter);
-        sbU.append(", unavailable=");
-        sbU.append(this.unavailable);
-        sbU.append(", mfaLevel=");
-        sbU.append(this.mfaLevel);
-        sbU.append(", afkTimeout=");
-        sbU.append(this.afkTimeout);
-        sbU.append(", afkChannelId=");
-        sbU.append(this.afkChannelId);
-        sbU.append(", systemChannelId=");
-        sbU.append(this.systemChannelId);
-        sbU.append(", features=");
-        sbU.append(this.features);
-        sbU.append(", memberCount=");
-        sbU.append(this.memberCount);
-        sbU.append(", banner=");
-        sbU.append(this.banner);
-        sbU.append(", splash=");
-        sbU.append(this.splash);
-        sbU.append(", premiumTier=");
-        sbU.append(this.premiumTier);
-        sbU.append(", premiumSubscriptionCount=");
-        sbU.append(this.premiumSubscriptionCount);
-        sbU.append(", systemChannelFlags=");
-        sbU.append(this.systemChannelFlags);
-        sbU.append(", joinedAt=");
-        sbU.append(this.joinedAt);
-        sbU.append(", rulesChannelId=");
-        sbU.append(this.rulesChannelId);
-        sbU.append(", publicUpdatesChannelId=");
-        sbU.append(this.publicUpdatesChannelId);
-        sbU.append(", preferredLocale=");
-        sbU.append(this.preferredLocale);
-        sbU.append(", welcomeScreen=");
-        sbU.append(this.welcomeScreen);
-        sbU.append(", maxVideoChannelUsers=");
-        sbU.append(this.maxVideoChannelUsers);
-        sbU.append(", vanityUrlCode=");
-        sbU.append(this.vanityUrlCode);
-        sbU.append(", approximatePresenceCount=");
-        sbU.append(this.approximatePresenceCount);
-        sbU.append(", nsfw=");
-        sbU.append(this.nsfw);
-        sbU.append(", hubType=");
-        sbU.append(this.hubType);
-        sbU.append(")");
-        return sbU.toString();
+        StringBuilder sbM833U = C1643a.m833U("Guild(roles=");
+        sbM833U.append(this.roles);
+        sbM833U.append(", emojis=");
+        sbM833U.append(this.emojis);
+        sbM833U.append(", stickers=");
+        sbM833U.append(this.stickers);
+        sbM833U.append(", name=");
+        sbM833U.append(this.name);
+        sbM833U.append(", description=");
+        sbM833U.append(this.description);
+        sbM833U.append(", defaultMessageNotifications=");
+        sbM833U.append(this.defaultMessageNotifications);
+        sbM833U.append(", id=");
+        sbM833U.append(this.id);
+        sbM833U.append(", region=");
+        sbM833U.append(this.region);
+        sbM833U.append(", ownerId=");
+        sbM833U.append(this.ownerId);
+        sbM833U.append(", icon=");
+        sbM833U.append(this.icon);
+        sbM833U.append(", verificationLevel=");
+        sbM833U.append(this.verificationLevel);
+        sbM833U.append(", explicitContentFilter=");
+        sbM833U.append(this.explicitContentFilter);
+        sbM833U.append(", unavailable=");
+        sbM833U.append(this.unavailable);
+        sbM833U.append(", mfaLevel=");
+        sbM833U.append(this.mfaLevel);
+        sbM833U.append(", afkTimeout=");
+        sbM833U.append(this.afkTimeout);
+        sbM833U.append(", afkChannelId=");
+        sbM833U.append(this.afkChannelId);
+        sbM833U.append(", systemChannelId=");
+        sbM833U.append(this.systemChannelId);
+        sbM833U.append(", features=");
+        sbM833U.append(this.features);
+        sbM833U.append(", memberCount=");
+        sbM833U.append(this.memberCount);
+        sbM833U.append(", banner=");
+        sbM833U.append(this.banner);
+        sbM833U.append(", splash=");
+        sbM833U.append(this.splash);
+        sbM833U.append(", premiumTier=");
+        sbM833U.append(this.premiumTier);
+        sbM833U.append(", premiumSubscriptionCount=");
+        sbM833U.append(this.premiumSubscriptionCount);
+        sbM833U.append(", systemChannelFlags=");
+        sbM833U.append(this.systemChannelFlags);
+        sbM833U.append(", joinedAt=");
+        sbM833U.append(this.joinedAt);
+        sbM833U.append(", rulesChannelId=");
+        sbM833U.append(this.rulesChannelId);
+        sbM833U.append(", publicUpdatesChannelId=");
+        sbM833U.append(this.publicUpdatesChannelId);
+        sbM833U.append(", preferredLocale=");
+        sbM833U.append(this.preferredLocale);
+        sbM833U.append(", welcomeScreen=");
+        sbM833U.append(this.welcomeScreen);
+        sbM833U.append(", maxVideoChannelUsers=");
+        sbM833U.append(this.maxVideoChannelUsers);
+        sbM833U.append(", vanityUrlCode=");
+        sbM833U.append(this.vanityUrlCode);
+        sbM833U.append(", approximatePresenceCount=");
+        sbM833U.append(this.approximatePresenceCount);
+        sbM833U.append(", nsfw=");
+        sbM833U.append(this.nsfw);
+        sbM833U.append(", hubType=");
+        sbM833U.append(this.hubType);
+        sbM833U.append(")");
+        return sbM833U.toString();
     }
 
     public /* synthetic */ Guild(List list, List list2, List list3, String str, String str2, int i, long j, String str3, long j2, String str4, GuildVerificationLevel guildVerificationLevel, GuildExplicitContentFilter guildExplicitContentFilter, boolean z2, int i2, int i3, Long l, Long l2, Set set, int i4, String str5, String str6, int i5, int i6, int i7, String str7, Long l3, Long l4, String str8, GuildWelcomeScreen guildWelcomeScreen, GuildMaxVideoChannelUsers guildMaxVideoChannelUsers, String str9, int i8, boolean z3, GuildHubType guildHubType, int i9, int i10, DefaultConstructorMarker defaultConstructorMarker) {
-        this((i9 & 1) != 0 ? Collections2.emptyList() : list, (i9 & 2) != 0 ? Collections2.emptyList() : list2, (i9 & 4) != 0 ? Collections2.emptyList() : list3, (i9 & 8) != 0 ? "" : str, (i9 & 16) != 0 ? null : str2, (i9 & 32) != 0 ? ModelNotificationSettings.FREQUENCY_ALL : i, (i9 & 64) != 0 ? 0L : j, (i9 & 128) != 0 ? null : str3, (i9 & 256) == 0 ? j2 : 0L, (i9 & 512) != 0 ? null : str4, (i9 & 1024) != 0 ? GuildVerificationLevel.NONE : guildVerificationLevel, (i9 & 2048) != 0 ? GuildExplicitContentFilter.NONE : guildExplicitContentFilter, (i9 & 4096) != 0 ? false : z2, (i9 & 8192) != 0 ? 0 : i2, (i9 & 16384) != 0 ? 0 : i3, (i9 & 32768) != 0 ? null : l, (i9 & 65536) != 0 ? null : l2, (i9 & 131072) != 0 ? Sets5.emptySet() : set, (i9 & 262144) != 0 ? 0 : i4, (i9 & 524288) != 0 ? null : str5, (i9 & 1048576) != 0 ? null : str6, (i9 & 2097152) != 0 ? 0 : i5, (i9 & 4194304) != 0 ? 0 : i6, (i9 & 8388608) != 0 ? 0 : i7, (i9 & 16777216) != 0 ? null : str7, (i9 & 33554432) != 0 ? null : l3, (i9 & 67108864) != 0 ? null : l4, (i9 & 134217728) != 0 ? null : str8, (i9 & 268435456) != 0 ? null : guildWelcomeScreen, (i9 & 536870912) != 0 ? GuildMaxVideoChannelUsers.Unlimited.INSTANCE : guildMaxVideoChannelUsers, (i9 & BasicMeasure.EXACTLY) != 0 ? null : str9, (i9 & Integer.MIN_VALUE) != 0 ? 0 : i8, (i10 & 1) == 0 ? z3 : false, (i10 & 2) != 0 ? null : guildHubType);
+        this((i9 & 1) != 0 ? C12147n.emptyList() : list, (i9 & 2) != 0 ? C12147n.emptyList() : list2, (i9 & 4) != 0 ? C12147n.emptyList() : list3, (i9 & 8) != 0 ? "" : str, (i9 & 16) != 0 ? null : str2, (i9 & 32) != 0 ? ModelNotificationSettings.FREQUENCY_ALL : i, (i9 & 64) != 0 ? 0L : j, (i9 & 128) != 0 ? null : str3, (i9 & 256) == 0 ? j2 : 0L, (i9 & 512) != 0 ? null : str4, (i9 & 1024) != 0 ? GuildVerificationLevel.NONE : guildVerificationLevel, (i9 & 2048) != 0 ? GuildExplicitContentFilter.NONE : guildExplicitContentFilter, (i9 & 4096) != 0 ? false : z2, (i9 & 8192) != 0 ? 0 : i2, (i9 & 16384) != 0 ? 0 : i3, (i9 & 32768) != 0 ? null : l, (i9 & 65536) != 0 ? null : l2, (i9 & 131072) != 0 ? C12148n0.emptySet() : set, (i9 & 262144) != 0 ? 0 : i4, (i9 & 524288) != 0 ? null : str5, (i9 & 1048576) != 0 ? null : str6, (i9 & 2097152) != 0 ? 0 : i5, (i9 & 4194304) != 0 ? 0 : i6, (i9 & 8388608) != 0 ? 0 : i7, (i9 & 16777216) != 0 ? null : str7, (i9 & 33554432) != 0 ? null : l3, (i9 & 67108864) != 0 ? null : l4, (i9 & 134217728) != 0 ? null : str8, (i9 & 268435456) != 0 ? null : guildWelcomeScreen, (i9 & 536870912) != 0 ? GuildMaxVideoChannelUsers.Unlimited.INSTANCE : guildMaxVideoChannelUsers, (i9 & BasicMeasure.EXACTLY) != 0 ? null : str9, (i9 & Integer.MIN_VALUE) != 0 ? 0 : i8, (i10 & 1) == 0 ? z3 : false, (i10 & 2) != 0 ? null : guildHubType);
     }
 
     /* JADX WARN: Illegal instructions before constructor call */
     public Guild(com.discord.api.guild.Guild guild) {
-        Intrinsics3.checkNotNullParameter(guild, "apiGuild");
-        List<GuildRole> listG = guild.G();
-        List<GuildRole> listEmptyList = listG == null ? Collections2.emptyList() : listG;
-        List<GuildEmoji> listK = guild.k();
-        List<GuildEmoji> listEmptyList2 = listK == null ? Collections2.emptyList() : listK;
+        C12238m.checkNotNullParameter(guild, "apiGuild");
+        List<GuildRole> listM7842G = guild.m7842G();
+        List<GuildRole> listEmptyList = listM7842G == null ? C12147n.emptyList() : listM7842G;
+        List<GuildEmoji> listM7864k = guild.m7864k();
+        List<GuildEmoji> listEmptyList2 = listM7864k == null ? C12147n.emptyList() : listM7864k;
         List list = null;
-        String strX = guild.getName();
-        String strI = guild.getDescription();
-        Integer numH = guild.getDefaultMessageNotifications();
-        int iIntValue = numH != null ? numH.intValue() : ModelNotificationSettings.FREQUENCY_ALL;
-        long jR = guild.getId();
-        String strF = guild.getRegion();
-        long jZ = guild.getOwnerId();
-        String strQ = guild.getIcon();
-        GuildVerificationLevel guildVerificationLevelQ = guild.getVerificationLevel();
-        GuildVerificationLevel guildVerificationLevel = guildVerificationLevelQ == null ? GuildVerificationLevel.NONE : guildVerificationLevelQ;
-        GuildExplicitContentFilter guildExplicitContentFilterL = guild.getExplicitContentFilter();
-        GuildExplicitContentFilter guildExplicitContentFilter = guildExplicitContentFilterL == null ? GuildExplicitContentFilter.NONE : guildExplicitContentFilterL;
-        boolean zO = guild.getUnavailable();
-        int iW = guild.getMfaLevel();
-        int iC = guild.getAfkTimeout();
-        Long lB = guild.getAfkChannelId();
-        Long lM = guild.getSystemChannelId();
-        Set set = _Collections.toSet(guild.m());
-        int iU = guild.getMemberCount();
-        String strE = guild.getBanner();
-        String strI2 = guild.getSplash();
-        int iC2 = guild.getPremiumTier();
-        int iB = guild.getPremiumSubscriptionCount();
-        int iL = guild.getSystemChannelFlags();
-        String strS = guild.getJoinedAt();
-        Long lH = guild.getRulesChannelId();
-        Long lE = guild.getPublicUpdatesChannelId();
-        String strA = guild.getPreferredLocale();
-        GuildWelcomeScreen guildWelcomeScreenS = guild.getWelcomeScreen();
-        GuildMaxVideoChannelUsers guildMaxVideoChannelUsersT = guild.getMaxVideoChannelUsers();
-        this(listEmptyList, listEmptyList2, list, strX, strI, iIntValue, jR, strF, jZ, strQ, guildVerificationLevel, guildExplicitContentFilter, zO, iW, iC, lB, lM, set, iU, strE, strI2, iC2, iB, iL, strS, lH, lE, strA, guildWelcomeScreenS, guildMaxVideoChannelUsersT == null ? GuildMaxVideoChannelUsers.Unlimited.INSTANCE : guildMaxVideoChannelUsersT, guild.getVanityUrlCode(), guild.getApproximatePresenceCount(), guild.getNsfw(), guild.getHubType(), 4, 0, null);
+        String strM7877x = guild.getName();
+        String strM7862i = guild.getDescription();
+        Integer numM7861h = guild.getDefaultMessageNotifications();
+        int iIntValue = numM7861h != null ? numM7861h.intValue() : ModelNotificationSettings.FREQUENCY_ALL;
+        long jM7871r = guild.getId();
+        String strM7841F = guild.getRegion();
+        long jM7879z = guild.getOwnerId();
+        String strM7870q = guild.getIcon();
+        GuildVerificationLevel guildVerificationLevelM7852Q = guild.getVerificationLevel();
+        GuildVerificationLevel guildVerificationLevel = guildVerificationLevelM7852Q == null ? GuildVerificationLevel.NONE : guildVerificationLevelM7852Q;
+        GuildExplicitContentFilter guildExplicitContentFilterM7865l = guild.getExplicitContentFilter();
+        GuildExplicitContentFilter guildExplicitContentFilter = guildExplicitContentFilterM7865l == null ? GuildExplicitContentFilter.NONE : guildExplicitContentFilterM7865l;
+        boolean zM7850O = guild.getUnavailable();
+        int iM7876w = guild.getMfaLevel();
+        int iM7856c = guild.getAfkTimeout();
+        Long lM7855b = guild.getAfkChannelId();
+        Long lM7848M = guild.getSystemChannelId();
+        Set set = C12163u.toSet(guild.m7866m());
+        int iM7874u = guild.getMemberCount();
+        String strM7858e = guild.getBanner();
+        String strM7844I = guild.getSplash();
+        int iM7838C = guild.getPremiumTier();
+        int iM7837B = guild.getPremiumSubscriptionCount();
+        int iM7847L = guild.getSystemChannelFlags();
+        String strM7872s = guild.getJoinedAt();
+        Long lM7843H = guild.getRulesChannelId();
+        Long lM7840E = guild.getPublicUpdatesChannelId();
+        String strM7836A = guild.getPreferredLocale();
+        GuildWelcomeScreen guildWelcomeScreenM7854S = guild.getWelcomeScreen();
+        GuildMaxVideoChannelUsers guildMaxVideoChannelUsersM7873t = guild.getMaxVideoChannelUsers();
+        this(listEmptyList, listEmptyList2, list, strM7877x, strM7862i, iIntValue, jM7871r, strM7841F, jM7879z, strM7870q, guildVerificationLevel, guildExplicitContentFilter, zM7850O, iM7876w, iM7856c, lM7855b, lM7848M, set, iM7874u, strM7858e, strM7844I, iM7838C, iM7837B, iM7847L, strM7872s, lM7843H, lM7840E, strM7836A, guildWelcomeScreenM7854S, guildMaxVideoChannelUsersM7873t == null ? GuildMaxVideoChannelUsers.Unlimited.INSTANCE : guildMaxVideoChannelUsersM7873t, guild.getVanityUrlCode(), guild.getApproximatePresenceCount(), guild.getNsfw(), guild.getHubType(), 4, 0, null);
     }
 }

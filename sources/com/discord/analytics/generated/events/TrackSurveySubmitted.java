@@ -1,14 +1,14 @@
 package com.discord.analytics.generated.events;
 
-import b.d.b.a.outline;
 import com.discord.analytics.generated.traits.TrackBase;
-import com.discord.analytics.generated.traits.TrackBase2;
+import com.discord.analytics.generated.traits.TrackBaseReceiver;
 import com.discord.api.science.AnalyticsSchema;
-import d0.z.d.Intrinsics3;
+import p007b.p100d.p104b.p105a.C1643a;
+import p507d0.p592z.p594d.C12238m;
 
 /* JADX INFO: compiled from: TrackSurveySubmitted.kt */
 /* JADX INFO: loaded from: classes.dex */
-public final /* data */ class TrackSurveySubmitted implements AnalyticsSchema, TrackBase2 {
+public final /* data */ class TrackSurveySubmitted implements AnalyticsSchema, TrackBaseReceiver {
     private TrackBase trackBase;
     private final CharSequence surveyType = null;
     private final CharSequence question1 = null;
@@ -33,7 +33,7 @@ public final /* data */ class TrackSurveySubmitted implements AnalyticsSchema, T
             return false;
         }
         TrackSurveySubmitted trackSurveySubmitted = (TrackSurveySubmitted) other;
-        return Intrinsics3.areEqual(this.surveyType, trackSurveySubmitted.surveyType) && Intrinsics3.areEqual(this.question1, trackSurveySubmitted.question1) && Intrinsics3.areEqual(this.answer1, trackSurveySubmitted.answer1) && Intrinsics3.areEqual(this.isOther1, trackSurveySubmitted.isOther1) && Intrinsics3.areEqual(this.question2, trackSurveySubmitted.question2) && Intrinsics3.areEqual(this.answer2, trackSurveySubmitted.answer2) && Intrinsics3.areEqual(this.isOther2, trackSurveySubmitted.isOther2);
+        return C12238m.areEqual(this.surveyType, trackSurveySubmitted.surveyType) && C12238m.areEqual(this.question1, trackSurveySubmitted.question1) && C12238m.areEqual(this.answer1, trackSurveySubmitted.answer1) && C12238m.areEqual(this.isOther1, trackSurveySubmitted.isOther1) && C12238m.areEqual(this.question2, trackSurveySubmitted.question2) && C12238m.areEqual(this.answer2, trackSurveySubmitted.answer2) && C12238m.areEqual(this.isOther2, trackSurveySubmitted.isOther2);
     }
 
     public int hashCode() {
@@ -54,19 +54,19 @@ public final /* data */ class TrackSurveySubmitted implements AnalyticsSchema, T
     }
 
     public String toString() {
-        StringBuilder sbU = outline.U("TrackSurveySubmitted(surveyType=");
-        sbU.append(this.surveyType);
-        sbU.append(", question1=");
-        sbU.append(this.question1);
-        sbU.append(", answer1=");
-        sbU.append(this.answer1);
-        sbU.append(", isOther1=");
-        sbU.append(this.isOther1);
-        sbU.append(", question2=");
-        sbU.append(this.question2);
-        sbU.append(", answer2=");
-        sbU.append(this.answer2);
-        sbU.append(", isOther2=");
-        return outline.D(sbU, this.isOther2, ")");
+        StringBuilder sbM833U = C1643a.m833U("TrackSurveySubmitted(surveyType=");
+        sbM833U.append(this.surveyType);
+        sbM833U.append(", question1=");
+        sbM833U.append(this.question1);
+        sbM833U.append(", answer1=");
+        sbM833U.append(this.answer1);
+        sbM833U.append(", isOther1=");
+        sbM833U.append(this.isOther1);
+        sbM833U.append(", question2=");
+        sbM833U.append(this.question2);
+        sbM833U.append(", answer2=");
+        sbM833U.append(this.answer2);
+        sbM833U.append(", isOther2=");
+        return C1643a.m816D(sbM833U, this.isOther2, ")");
     }
 }

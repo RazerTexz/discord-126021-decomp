@@ -1,9 +1,9 @@
 package com.discord.widgets.chat.list.entries;
 
-import b.d.b.a.outline;
 import com.discord.api.guildscheduledevent.GuildScheduledEvent;
 import com.discord.models.domain.ModelInvite;
-import d0.z.d.Intrinsics3;
+import p007b.p100d.p104b.p105a.C1643a;
+import p507d0.p592z.p594d.C12238m;
 
 /* JADX INFO: compiled from: GuildScheduledEventInviteEntry.kt */
 /* JADX INFO: loaded from: classes2.dex */
@@ -15,18 +15,18 @@ public final /* data */ class GuildScheduledEventInviteEntry extends ChatListEnt
     private final int type;
 
     public GuildScheduledEventInviteEntry(ModelInvite modelInvite, String str, GuildScheduledEvent guildScheduledEvent) {
-        Intrinsics3.checkNotNullParameter(modelInvite, "invite");
-        Intrinsics3.checkNotNullParameter(str, "inviteCode");
-        Intrinsics3.checkNotNullParameter(guildScheduledEvent, "guildScheduledEvent");
+        C12238m.checkNotNullParameter(modelInvite, "invite");
+        C12238m.checkNotNullParameter(str, "inviteCode");
+        C12238m.checkNotNullParameter(guildScheduledEvent, "guildScheduledEvent");
         this.invite = modelInvite;
         this.inviteCode = str;
         this.guildScheduledEvent = guildScheduledEvent;
         this.type = 43;
-        StringBuilder sbU = outline.U("43 -- ");
-        sbU.append(guildScheduledEvent.getId());
-        sbU.append(" -- ");
-        sbU.append(str);
-        this.key = sbU.toString();
+        StringBuilder sbM833U = C1643a.m833U("43 -- ");
+        sbM833U.append(guildScheduledEvent.getId());
+        sbM833U.append(" -- ");
+        sbM833U.append(str);
+        this.key = sbM833U.toString();
     }
 
     public static /* synthetic */ GuildScheduledEventInviteEntry copy$default(GuildScheduledEventInviteEntry guildScheduledEventInviteEntry, ModelInvite modelInvite, String str, GuildScheduledEvent guildScheduledEvent, int i, Object obj) {
@@ -58,9 +58,9 @@ public final /* data */ class GuildScheduledEventInviteEntry extends ChatListEnt
     }
 
     public final GuildScheduledEventInviteEntry copy(ModelInvite invite, String inviteCode, GuildScheduledEvent guildScheduledEvent) {
-        Intrinsics3.checkNotNullParameter(invite, "invite");
-        Intrinsics3.checkNotNullParameter(inviteCode, "inviteCode");
-        Intrinsics3.checkNotNullParameter(guildScheduledEvent, "guildScheduledEvent");
+        C12238m.checkNotNullParameter(invite, "invite");
+        C12238m.checkNotNullParameter(inviteCode, "inviteCode");
+        C12238m.checkNotNullParameter(guildScheduledEvent, "guildScheduledEvent");
         return new GuildScheduledEventInviteEntry(invite, inviteCode, guildScheduledEvent);
     }
 
@@ -72,7 +72,7 @@ public final /* data */ class GuildScheduledEventInviteEntry extends ChatListEnt
             return false;
         }
         GuildScheduledEventInviteEntry guildScheduledEventInviteEntry = (GuildScheduledEventInviteEntry) other;
-        return Intrinsics3.areEqual(this.invite, guildScheduledEventInviteEntry.invite) && Intrinsics3.areEqual(this.inviteCode, guildScheduledEventInviteEntry.inviteCode) && Intrinsics3.areEqual(this.guildScheduledEvent, guildScheduledEventInviteEntry.guildScheduledEvent);
+        return C12238m.areEqual(this.invite, guildScheduledEventInviteEntry.invite) && C12238m.areEqual(this.inviteCode, guildScheduledEventInviteEntry.inviteCode) && C12238m.areEqual(this.guildScheduledEvent, guildScheduledEventInviteEntry.guildScheduledEvent);
     }
 
     public final GuildScheduledEvent getGuildScheduledEvent() {
@@ -107,13 +107,13 @@ public final /* data */ class GuildScheduledEventInviteEntry extends ChatListEnt
     }
 
     public String toString() {
-        StringBuilder sbU = outline.U("GuildScheduledEventInviteEntry(invite=");
-        sbU.append(this.invite);
-        sbU.append(", inviteCode=");
-        sbU.append(this.inviteCode);
-        sbU.append(", guildScheduledEvent=");
-        sbU.append(this.guildScheduledEvent);
-        sbU.append(")");
-        return sbU.toString();
+        StringBuilder sbM833U = C1643a.m833U("GuildScheduledEventInviteEntry(invite=");
+        sbM833U.append(this.invite);
+        sbM833U.append(", inviteCode=");
+        sbM833U.append(this.inviteCode);
+        sbM833U.append(", guildScheduledEvent=");
+        sbM833U.append(this.guildScheduledEvent);
+        sbM833U.append(")");
+        return sbM833U.toString();
     }
 }

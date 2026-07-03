@@ -1,13 +1,11 @@
 package com.esotericsoftware.kryo.serializers;
 
-import b.d.b.a.outline;
-import b.e.a.Log;
 import com.esotericsoftware.kryo.Kryo;
 import com.esotericsoftware.kryo.KryoException;
-import com.esotericsoftware.kryo.io.Input;
-import com.esotericsoftware.kryo.io.InputChunked;
-import com.esotericsoftware.kryo.io.Output;
-import com.esotericsoftware.kryo.io.OutputChunked;
+import com.esotericsoftware.kryo.p502io.Input;
+import com.esotericsoftware.kryo.p502io.InputChunked;
+import com.esotericsoftware.kryo.p502io.Output;
+import com.esotericsoftware.kryo.p502io.OutputChunked;
 import com.esotericsoftware.kryo.serializers.FieldSerializer;
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;
@@ -16,6 +14,8 @@ import java.lang.annotation.Target;
 import java.lang.reflect.Field;
 import java.util.Arrays;
 import java.util.Comparator;
+import p007b.p100d.p104b.p105a.C1643a;
+import p007b.p106e.p107a.C1644a;
 
 /* JADX INFO: loaded from: classes.dex */
 public class TaggedFieldSerializer<T> extends FieldSerializer<T> {
@@ -39,7 +39,7 @@ public class TaggedFieldSerializer<T> extends FieldSerializer<T> {
     }
 
     public TaggedFieldSerializer(Kryo kryo, Class cls) {
-        super(kryo, cls, null, kryo.getTaggedFieldSerializerConfig().mo77clone());
+        super(kryo, cls, null, kryo.getTaggedFieldSerializerConfig().mo11454clone());
     }
 
     @Override // com.esotericsoftware.kryo.serializers.FieldSerializer
@@ -48,7 +48,7 @@ public class TaggedFieldSerializer<T> extends FieldSerializer<T> {
         int length = fields.length;
         for (int i = 0; i < length; i++) {
             if (fields[i].getField().getAnnotation(Tag.class) == null) {
-                Log.a aVar = Log.a;
+                C1644a.a aVar = C1644a.f3007a;
                 super.removeField(fields[i]);
             }
         }
@@ -118,16 +118,16 @@ public class TaggedFieldSerializer<T> extends FieldSerializer<T> {
             }
             if (cachedField == null) {
                 if (!isSkipUnknownTags()) {
-                    StringBuilder sbV = outline.V("Unknown field tag: ", varInt2, " (");
-                    sbV.append(getType().getName());
-                    sbV.append(")");
-                    throw new KryoException(sbV.toString());
+                    StringBuilder sbM834V = C1643a.m834V("Unknown field tag: ", varInt2, " (");
+                    sbM834V.append(getType().getName());
+                    sbM834V.append(")");
+                    throw new KryoException(sbM834V.toString());
                 }
                 if (inputChunked == null) {
                     inputChunked = new InputChunked(input, 1024);
                 }
                 inputChunked.nextChunks();
-                Log.a aVar = Log.a;
+                C1644a.a aVar = C1644a.f3007a;
             } else if (z2) {
                 if (inputChunked == null) {
                     inputChunked = new InputChunked(input, 1024);

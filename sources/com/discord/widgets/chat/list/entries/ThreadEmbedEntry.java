@@ -1,13 +1,13 @@
 package com.discord.widgets.chat.list.entries;
 
-import a0.a.a.b;
-import b.d.b.a.outline;
 import com.discord.api.channel.Channel;
 import com.discord.api.role.GuildRole;
 import com.discord.models.member.GuildMember;
 import com.discord.models.message.Message;
-import d0.z.d.Intrinsics3;
 import java.util.Map;
+import p001a0.p002a.p003a.C0002b;
+import p007b.p100d.p104b.p105a.C1643a;
+import p507d0.p592z.p594d.C12238m;
 
 /* JADX INFO: compiled from: ThreadEmbedEntry.kt */
 /* JADX INFO: loaded from: classes2.dex */
@@ -25,9 +25,9 @@ public final /* data */ class ThreadEmbedEntry extends ChatListEntry {
     private final int type;
 
     public ThreadEmbedEntry(long j, Channel channel, int i, Message message, Map<Long, GuildRole> map, Map<Long, String> map2, boolean z2, GuildMember guildMember, Message message2) {
-        Intrinsics3.checkNotNullParameter(channel, "thread");
-        Intrinsics3.checkNotNullParameter(map2, "nickOrUsernames");
-        Intrinsics3.checkNotNullParameter(message2, "parentMessage");
+        C12238m.checkNotNullParameter(channel, "thread");
+        C12238m.checkNotNullParameter(map2, "nickOrUsernames");
+        C12238m.checkNotNullParameter(message2, "parentMessage");
         this.messageId = j;
         this.thread = channel;
         this.threadMessageCount = i;
@@ -38,7 +38,7 @@ public final /* data */ class ThreadEmbedEntry extends ChatListEntry {
         this.mostRecentMessageGuildMember = guildMember;
         this.parentMessage = message2;
         this.type = 35;
-        this.key = outline.t("35 -- ", j);
+        this.key = C1643a.m877t("35 -- ", j);
     }
 
     /* JADX INFO: renamed from: component1, reason: from getter */
@@ -85,9 +85,9 @@ public final /* data */ class ThreadEmbedEntry extends ChatListEntry {
     }
 
     public final ThreadEmbedEntry copy(long messageId, Channel thread, int threadMessageCount, Message mostRecentMessage, Map<Long, GuildRole> roleMentions, Map<Long, String> nickOrUsernames, boolean animateEmojis, GuildMember mostRecentMessageGuildMember, Message parentMessage) {
-        Intrinsics3.checkNotNullParameter(thread, "thread");
-        Intrinsics3.checkNotNullParameter(nickOrUsernames, "nickOrUsernames");
-        Intrinsics3.checkNotNullParameter(parentMessage, "parentMessage");
+        C12238m.checkNotNullParameter(thread, "thread");
+        C12238m.checkNotNullParameter(nickOrUsernames, "nickOrUsernames");
+        C12238m.checkNotNullParameter(parentMessage, "parentMessage");
         return new ThreadEmbedEntry(messageId, thread, threadMessageCount, mostRecentMessage, roleMentions, nickOrUsernames, animateEmojis, mostRecentMessageGuildMember, parentMessage);
     }
 
@@ -99,7 +99,7 @@ public final /* data */ class ThreadEmbedEntry extends ChatListEntry {
             return false;
         }
         ThreadEmbedEntry threadEmbedEntry = (ThreadEmbedEntry) other;
-        return this.messageId == threadEmbedEntry.messageId && Intrinsics3.areEqual(this.thread, threadEmbedEntry.thread) && this.threadMessageCount == threadEmbedEntry.threadMessageCount && Intrinsics3.areEqual(this.mostRecentMessage, threadEmbedEntry.mostRecentMessage) && Intrinsics3.areEqual(this.roleMentions, threadEmbedEntry.roleMentions) && Intrinsics3.areEqual(this.nickOrUsernames, threadEmbedEntry.nickOrUsernames) && this.animateEmojis == threadEmbedEntry.animateEmojis && Intrinsics3.areEqual(this.mostRecentMessageGuildMember, threadEmbedEntry.mostRecentMessageGuildMember) && Intrinsics3.areEqual(this.parentMessage, threadEmbedEntry.parentMessage);
+        return this.messageId == threadEmbedEntry.messageId && C12238m.areEqual(this.thread, threadEmbedEntry.thread) && this.threadMessageCount == threadEmbedEntry.threadMessageCount && C12238m.areEqual(this.mostRecentMessage, threadEmbedEntry.mostRecentMessage) && C12238m.areEqual(this.roleMentions, threadEmbedEntry.roleMentions) && C12238m.areEqual(this.nickOrUsernames, threadEmbedEntry.nickOrUsernames) && this.animateEmojis == threadEmbedEntry.animateEmojis && C12238m.areEqual(this.mostRecentMessageGuildMember, threadEmbedEntry.mostRecentMessageGuildMember) && C12238m.areEqual(this.parentMessage, threadEmbedEntry.parentMessage);
     }
 
     public final boolean getAnimateEmojis() {
@@ -154,9 +154,9 @@ public final /* data */ class ThreadEmbedEntry extends ChatListEntry {
     /* JADX WARN: Type inference failed for: r1v20 */
     /* JADX WARN: Type inference failed for: r1v25 */
     public int hashCode() {
-        int iA = b.a(this.messageId) * 31;
+        int iM3a = C0002b.m3a(this.messageId) * 31;
         Channel channel = this.thread;
-        int iHashCode = (((iA + (channel != null ? channel.hashCode() : 0)) * 31) + this.threadMessageCount) * 31;
+        int iHashCode = (((iM3a + (channel != null ? channel.hashCode() : 0)) * 31) + this.threadMessageCount) * 31;
         Message message = this.mostRecentMessage;
         int iHashCode2 = (iHashCode + (message != null ? message.hashCode() : 0)) * 31;
         Map<Long, GuildRole> map = this.roleMentions;
@@ -176,25 +176,25 @@ public final /* data */ class ThreadEmbedEntry extends ChatListEntry {
     }
 
     public String toString() {
-        StringBuilder sbU = outline.U("ThreadEmbedEntry(messageId=");
-        sbU.append(this.messageId);
-        sbU.append(", thread=");
-        sbU.append(this.thread);
-        sbU.append(", threadMessageCount=");
-        sbU.append(this.threadMessageCount);
-        sbU.append(", mostRecentMessage=");
-        sbU.append(this.mostRecentMessage);
-        sbU.append(", roleMentions=");
-        sbU.append(this.roleMentions);
-        sbU.append(", nickOrUsernames=");
-        sbU.append(this.nickOrUsernames);
-        sbU.append(", animateEmojis=");
-        sbU.append(this.animateEmojis);
-        sbU.append(", mostRecentMessageGuildMember=");
-        sbU.append(this.mostRecentMessageGuildMember);
-        sbU.append(", parentMessage=");
-        sbU.append(this.parentMessage);
-        sbU.append(")");
-        return sbU.toString();
+        StringBuilder sbM833U = C1643a.m833U("ThreadEmbedEntry(messageId=");
+        sbM833U.append(this.messageId);
+        sbM833U.append(", thread=");
+        sbM833U.append(this.thread);
+        sbM833U.append(", threadMessageCount=");
+        sbM833U.append(this.threadMessageCount);
+        sbM833U.append(", mostRecentMessage=");
+        sbM833U.append(this.mostRecentMessage);
+        sbM833U.append(", roleMentions=");
+        sbM833U.append(this.roleMentions);
+        sbM833U.append(", nickOrUsernames=");
+        sbM833U.append(this.nickOrUsernames);
+        sbM833U.append(", animateEmojis=");
+        sbM833U.append(this.animateEmojis);
+        sbM833U.append(", mostRecentMessageGuildMember=");
+        sbM833U.append(this.mostRecentMessageGuildMember);
+        sbM833U.append(", parentMessage=");
+        sbM833U.append(this.parentMessage);
+        sbM833U.append(")");
+        return sbM833U.toString();
     }
 }

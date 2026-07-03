@@ -2,7 +2,7 @@ package org.objectweb.asm.commons;
 
 import androidx.exifinterface.media.ExifInterface;
 import com.adjust.sdk.Constants;
-import com.discord.widgets.chat.input.MentionUtils;
+import com.discord.widgets.chat.input.MentionUtilsKt;
 import java.lang.reflect.Constructor;
 import java.util.HashMap;
 import java.util.Map;
@@ -102,7 +102,7 @@ public class Method {
                 }
                 stringBuilder.append(elementType);
             } else {
-                stringBuilder.append(elementType.replace('.', MentionUtils.SLASH_CHAR));
+                stringBuilder.append(elementType.replace('.', MentionUtilsKt.SLASH_CHAR));
             }
             stringBuilder.append(';');
         }

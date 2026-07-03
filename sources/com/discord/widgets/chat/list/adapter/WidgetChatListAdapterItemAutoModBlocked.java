@@ -5,8 +5,7 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 import androidx.constraintlayout.widget.ConstraintLayout;
-import b.a.k.FormatUtils;
-import com.discord.R;
+import com.discord.C5419R;
 import com.discord.api.user.User;
 import com.discord.api.utcdatetime.UtcDateTime;
 import com.discord.databinding.WidgetChatListAdapterItemAutoModBlockedBinding;
@@ -34,92 +33,93 @@ import com.discord.widgets.chat.list.entries.ChatListEntry;
 import com.discord.widgets.chat.list.entries.MessageEntry;
 import com.facebook.drawee.span.DraweeSpanStringBuilder;
 import com.facebook.drawee.view.SimpleDraweeView;
-import d0.z.d.Intrinsics3;
-import d0.z.d.Lambda;
 import kotlin.Unit;
 import kotlin.jvm.functions.Function1;
 import kotlin.jvm.functions.Function3;
+import p007b.p008a.p027k.C1107b;
+import p507d0.p592z.p594d.AbstractC12240o;
+import p507d0.p592z.p594d.C12238m;
 
 /* JADX INFO: compiled from: WidgetChatListAdapterItemAutoModBlocked.kt */
 /* JADX INFO: loaded from: classes2.dex */
 public final class WidgetChatListAdapterItemAutoModBlocked extends WidgetChatListItem {
     private final WidgetChatListAdapterItemAutoModBlockedBinding binding;
 
-    /* JADX INFO: renamed from: com.discord.widgets.chat.list.adapter.WidgetChatListAdapterItemAutoModBlocked$getMessageRenderContext$1, reason: invalid class name */
+    /* JADX INFO: renamed from: com.discord.widgets.chat.list.adapter.WidgetChatListAdapterItemAutoModBlocked$getMessageRenderContext$1 */
     /* JADX INFO: compiled from: WidgetChatListAdapterItemAutoModBlocked.kt */
-    public static final class AnonymousClass1 extends Lambda implements Function3<Context, String, String, Unit> {
-        public static final AnonymousClass1 INSTANCE = new AnonymousClass1();
+    public static final class C80201 extends AbstractC12240o implements Function3<Context, String, String, Unit> {
+        public static final C80201 INSTANCE = new C80201();
 
-        public AnonymousClass1() {
+        public C80201() {
             super(3);
         }
 
         @Override // kotlin.jvm.functions.Function3
         public /* bridge */ /* synthetic */ Unit invoke(Context context, String str, String str2) {
             invoke2(context, str, str2);
-            return Unit.a;
+            return Unit.f27425a;
         }
 
         /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
         public final void invoke2(Context context, String str, String str2) {
-            Intrinsics3.checkNotNullParameter(context, "clickContext");
-            Intrinsics3.checkNotNullParameter(str, "url");
+            C12238m.checkNotNullParameter(context, "clickContext");
+            C12238m.checkNotNullParameter(str, "url");
             UriHandler.handleOrUntrusted(context, str, str2);
         }
     }
 
-    /* JADX INFO: renamed from: com.discord.widgets.chat.list.adapter.WidgetChatListAdapterItemAutoModBlocked$getMessageRenderContext$2, reason: invalid class name */
+    /* JADX INFO: renamed from: com.discord.widgets.chat.list.adapter.WidgetChatListAdapterItemAutoModBlocked$getMessageRenderContext$2 */
     /* JADX INFO: compiled from: WidgetChatListAdapterItemAutoModBlocked.kt */
-    public static final class AnonymousClass2 extends Lambda implements Function1<String, Unit> {
-        public AnonymousClass2() {
+    public static final class C80212 extends AbstractC12240o implements Function1<String, Unit> {
+        public C80212() {
             super(1);
         }
 
         @Override // kotlin.jvm.functions.Function1
         public /* bridge */ /* synthetic */ Unit invoke(String str) {
             invoke2(str);
-            return Unit.a;
+            return Unit.f27425a;
         }
 
         /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
         public final void invoke2(String str) {
-            Intrinsics3.checkNotNullParameter(str, "url");
+            C12238m.checkNotNullParameter(str, "url");
             WidgetChatListAdapterItemAutoModBlocked.access$getAdapter$p(WidgetChatListAdapterItemAutoModBlocked.this).getEventHandler().onUrlLongClicked(str);
         }
     }
 
-    /* JADX INFO: renamed from: com.discord.widgets.chat.list.adapter.WidgetChatListAdapterItemAutoModBlocked$getMessageRenderContext$3, reason: invalid class name */
+    /* JADX INFO: renamed from: com.discord.widgets.chat.list.adapter.WidgetChatListAdapterItemAutoModBlocked$getMessageRenderContext$3 */
     /* JADX INFO: compiled from: WidgetChatListAdapterItemAutoModBlocked.kt */
-    public static final class AnonymousClass3 extends Lambda implements Function1<SpoilerNode<?>, Unit> {
-        public static final AnonymousClass3 INSTANCE = new AnonymousClass3();
+    public static final class C80223 extends AbstractC12240o implements Function1<SpoilerNode<?>, Unit> {
+        public static final C80223 INSTANCE = new C80223();
 
-        public AnonymousClass3() {
+        public C80223() {
             super(1);
         }
 
         @Override // kotlin.jvm.functions.Function1
         public /* bridge */ /* synthetic */ Unit invoke(SpoilerNode<?> spoilerNode) {
             invoke2(spoilerNode);
-            return Unit.a;
+            return Unit.f27425a;
         }
 
         /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
         public final void invoke2(SpoilerNode<?> spoilerNode) {
-            Intrinsics3.checkNotNullParameter(spoilerNode, "it");
+            C12238m.checkNotNullParameter(spoilerNode, "it");
         }
     }
 
-    /* JADX INFO: renamed from: com.discord.widgets.chat.list.adapter.WidgetChatListAdapterItemAutoModBlocked$getMessageRenderContext$4, reason: invalid class name */
+    /* JADX INFO: renamed from: com.discord.widgets.chat.list.adapter.WidgetChatListAdapterItemAutoModBlocked$getMessageRenderContext$4 */
     /* JADX INFO: compiled from: WidgetChatListAdapterItemAutoModBlocked.kt */
-    public static final class AnonymousClass4 extends Lambda implements Function1<Long, Unit> {
-        public AnonymousClass4() {
+    public static final class C80234 extends AbstractC12240o implements Function1<Long, Unit> {
+        public C80234() {
             super(1);
         }
 
         @Override // kotlin.jvm.functions.Function1
         public /* bridge */ /* synthetic */ Unit invoke(Long l) {
             invoke(l.longValue());
-            return Unit.a;
+            return Unit.f27425a;
         }
 
         public final void invoke(long j) {
@@ -128,13 +128,13 @@ public final class WidgetChatListAdapterItemAutoModBlocked extends WidgetChatLis
         }
     }
 
-    /* JADX INFO: renamed from: com.discord.widgets.chat.list.adapter.WidgetChatListAdapterItemAutoModBlocked$getMessageRenderContext$5, reason: invalid class name */
+    /* JADX INFO: renamed from: com.discord.widgets.chat.list.adapter.WidgetChatListAdapterItemAutoModBlocked$getMessageRenderContext$5 */
     /* JADX INFO: compiled from: WidgetChatListAdapterItemAutoModBlocked.kt */
-    public static final class AnonymousClass5 extends Lambda implements Function1<Long, Unit> {
+    public static final class C80245 extends AbstractC12240o implements Function1<Long, Unit> {
         public final /* synthetic */ Context $context;
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-        public AnonymousClass5(Context context) {
+        public C80245(Context context) {
             super(1);
             this.$context = context;
         }
@@ -142,7 +142,7 @@ public final class WidgetChatListAdapterItemAutoModBlocked extends WidgetChatLis
         @Override // kotlin.jvm.functions.Function1
         public /* bridge */ /* synthetic */ Unit invoke(Long l) {
             invoke(l.longValue());
-            return Unit.a;
+            return Unit.f27425a;
         }
 
         public final void invoke(long j) {
@@ -150,33 +150,33 @@ public final class WidgetChatListAdapterItemAutoModBlocked extends WidgetChatLis
         }
     }
 
-    /* JADX INFO: renamed from: com.discord.widgets.chat.list.adapter.WidgetChatListAdapterItemAutoModBlocked$onConfigure$1, reason: invalid class name */
+    /* JADX INFO: renamed from: com.discord.widgets.chat.list.adapter.WidgetChatListAdapterItemAutoModBlocked$onConfigure$1 */
     /* JADX INFO: compiled from: WidgetChatListAdapterItemAutoModBlocked.kt */
-    public static final class AnonymousClass1 extends Lambda implements Function1<RenderContext, Unit> {
+    public static final class C80251 extends AbstractC12240o implements Function1<RenderContext, Unit> {
         public final /* synthetic */ MessageEntry $messageEntry;
 
-        /* JADX INFO: renamed from: com.discord.widgets.chat.list.adapter.WidgetChatListAdapterItemAutoModBlocked$onConfigure$1$1, reason: invalid class name and collision with other inner class name */
+        /* JADX INFO: renamed from: com.discord.widgets.chat.list.adapter.WidgetChatListAdapterItemAutoModBlocked$onConfigure$1$1, reason: invalid class name */
         /* JADX INFO: compiled from: WidgetChatListAdapterItemAutoModBlocked.kt */
-        public static final class C02701 extends Lambda implements Function1<View, Unit> {
-            public C02701() {
+        public static final class AnonymousClass1 extends AbstractC12240o implements Function1<View, Unit> {
+            public AnonymousClass1() {
                 super(1);
             }
 
             @Override // kotlin.jvm.functions.Function1
             public /* bridge */ /* synthetic */ Unit invoke(View view) {
                 invoke2(view);
-                return Unit.a;
+                return Unit.f27425a;
             }
 
             /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
             public final void invoke2(View view) {
-                Intrinsics3.checkNotNullParameter(view, "<anonymous parameter 0>");
-                WidgetChatListAdapterItemAutoModBlocked.access$getAdapter$p(WidgetChatListAdapterItemAutoModBlocked.this).getEventHandler().onDismissLocalMessageClicked(AnonymousClass1.this.$messageEntry.getMessage());
+                C12238m.checkNotNullParameter(view, "<anonymous parameter 0>");
+                WidgetChatListAdapterItemAutoModBlocked.access$getAdapter$p(WidgetChatListAdapterItemAutoModBlocked.this).getEventHandler().onDismissLocalMessageClicked(C80251.this.$messageEntry.getMessage());
             }
         }
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-        public AnonymousClass1(MessageEntry messageEntry) {
+        public C80251(MessageEntry messageEntry) {
             super(1);
             this.$messageEntry = messageEntry;
         }
@@ -184,56 +184,56 @@ public final class WidgetChatListAdapterItemAutoModBlocked extends WidgetChatLis
         @Override // kotlin.jvm.functions.Function1
         public /* bridge */ /* synthetic */ Unit invoke(RenderContext renderContext) {
             invoke2(renderContext);
-            return Unit.a;
+            return Unit.f27425a;
         }
 
         /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
         public final void invoke2(RenderContext renderContext) {
-            Intrinsics3.checkNotNullParameter(renderContext, "$receiver");
-            renderContext.b("onClick", new C02701());
+            C12238m.checkNotNullParameter(renderContext, "$receiver");
+            renderContext.m8423b("onClick", new AnonymousClass1());
         }
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public WidgetChatListAdapterItemAutoModBlocked(WidgetChatListAdapter widgetChatListAdapter) {
-        super(R.layout.widget_chat_list_adapter_item_auto_mod_blocked, widgetChatListAdapter);
-        Intrinsics3.checkNotNullParameter(widgetChatListAdapter, "adapter");
+        super(C5419R.layout.widget_chat_list_adapter_item_auto_mod_blocked, widgetChatListAdapter);
+        C12238m.checkNotNullParameter(widgetChatListAdapter, "adapter");
         View view = this.itemView;
-        int i = R.id.chat_list_adapter_item_text_avatar;
-        SimpleDraweeView simpleDraweeView = (SimpleDraweeView) view.findViewById(R.id.chat_list_adapter_item_text_avatar);
+        int i = C5419R.id.chat_list_adapter_item_text_avatar;
+        SimpleDraweeView simpleDraweeView = (SimpleDraweeView) view.findViewById(C5419R.id.chat_list_adapter_item_text_avatar);
         if (simpleDraweeView != null) {
-            i = R.id.dismiss_message;
-            LinkifiedTextView linkifiedTextView = (LinkifiedTextView) view.findViewById(R.id.dismiss_message);
+            i = C5419R.id.dismiss_message;
+            LinkifiedTextView linkifiedTextView = (LinkifiedTextView) view.findViewById(C5419R.id.dismiss_message);
             if (linkifiedTextView != null) {
-                i = R.id.eye_icon;
-                ImageView imageView = (ImageView) view.findViewById(R.id.eye_icon);
+                i = C5419R.id.eye_icon;
+                ImageView imageView = (ImageView) view.findViewById(C5419R.id.eye_icon);
                 if (imageView != null) {
-                    i = R.id.message_content;
-                    SimpleDraweeSpanTextView simpleDraweeSpanTextView = (SimpleDraweeSpanTextView) view.findViewById(R.id.message_content);
+                    i = C5419R.id.message_content;
+                    SimpleDraweeSpanTextView simpleDraweeSpanTextView = (SimpleDraweeSpanTextView) view.findViewById(C5419R.id.message_content);
                     if (simpleDraweeSpanTextView != null) {
-                        i = R.id.red_rectangle;
-                        ImageView imageView2 = (ImageView) view.findViewById(R.id.red_rectangle);
+                        i = C5419R.id.red_rectangle;
+                        ImageView imageView2 = (ImageView) view.findViewById(C5419R.id.red_rectangle);
                         if (imageView2 != null) {
-                            i = R.id.text_container;
-                            ConstraintLayout constraintLayout = (ConstraintLayout) view.findViewById(R.id.text_container);
+                            i = C5419R.id.text_container;
+                            ConstraintLayout constraintLayout = (ConstraintLayout) view.findViewById(C5419R.id.text_container);
                             if (constraintLayout != null) {
-                                i = R.id.timestamp;
-                                TextView textView = (TextView) view.findViewById(R.id.timestamp);
+                                i = C5419R.id.timestamp;
+                                TextView textView = (TextView) view.findViewById(C5419R.id.timestamp);
                                 if (textView != null) {
-                                    i = R.id.username;
-                                    TextView textView2 = (TextView) view.findViewById(R.id.username);
+                                    i = C5419R.id.username;
+                                    TextView textView2 = (TextView) view.findViewById(C5419R.id.username);
                                     if (textView2 != null) {
-                                        i = R.id.username_container;
-                                        ConstraintLayout constraintLayout2 = (ConstraintLayout) view.findViewById(R.id.username_container);
+                                        i = C5419R.id.username_container;
+                                        ConstraintLayout constraintLayout2 = (ConstraintLayout) view.findViewById(C5419R.id.username_container);
                                         if (constraintLayout2 != null) {
-                                            i = R.id.visibility_notice_container;
-                                            ConstraintLayout constraintLayout3 = (ConstraintLayout) view.findViewById(R.id.visibility_notice_container);
+                                            i = C5419R.id.visibility_notice_container;
+                                            ConstraintLayout constraintLayout3 = (ConstraintLayout) view.findViewById(C5419R.id.visibility_notice_container);
                                             if (constraintLayout3 != null) {
-                                                i = R.id.warning_message;
-                                                TextView textView3 = (TextView) view.findViewById(R.id.warning_message);
+                                                i = C5419R.id.warning_message;
+                                                TextView textView3 = (TextView) view.findViewById(C5419R.id.warning_message);
                                                 if (textView3 != null) {
                                                     WidgetChatListAdapterItemAutoModBlockedBinding widgetChatListAdapterItemAutoModBlockedBinding = new WidgetChatListAdapterItemAutoModBlockedBinding((ConstraintLayout) view, simpleDraweeView, linkifiedTextView, imageView, simpleDraweeSpanTextView, imageView2, constraintLayout, textView, textView2, constraintLayout2, constraintLayout3, textView3);
-                                                    Intrinsics3.checkNotNullExpressionValue(widgetChatListAdapterItemAutoModBlockedBinding, "WidgetChatListAdapterIte…kedBinding.bind(itemView)");
+                                                    C12238m.checkNotNullExpressionValue(widgetChatListAdapterItemAutoModBlockedBinding, "WidgetChatListAdapterIte…kedBinding.bind(itemView)");
                                                     this.binding = widgetChatListAdapterItemAutoModBlockedBinding;
                                                     return;
                                                 }
@@ -260,7 +260,7 @@ public final class WidgetChatListAdapterItemAutoModBlocked extends WidgetChatLis
     }
 
     private final MessageRenderContext getMessageRenderContext(Context context, MessageEntry messageEntry) {
-        return new MessageRenderContext(context, ((WidgetChatListAdapter) this.adapter).getData().getUserId(), messageEntry.getAnimateEmojis(), messageEntry.getNickOrUsernames(), ((WidgetChatListAdapter) this.adapter).getData().getChannelNames(), messageEntry.getRoles(), R.attr.colorTextLink, AnonymousClass1.INSTANCE, new AnonymousClass2(), ColorCompat.getThemedColor(context, R.attr.theme_chat_spoiler_bg), ColorCompat.getThemedColor(context, R.attr.theme_chat_spoiler_bg_visible), AnonymousClass3.INSTANCE, new AnonymousClass4(), new AnonymousClass5(context));
+        return new MessageRenderContext(context, ((WidgetChatListAdapter) this.adapter).getData().getUserId(), messageEntry.getAnimateEmojis(), messageEntry.getNickOrUsernames(), ((WidgetChatListAdapter) this.adapter).getData().getChannelNames(), messageEntry.getRoles(), C5419R.attr.colorTextLink, C80201.INSTANCE, new C80212(), ColorCompat.getThemedColor(context, C5419R.attr.theme_chat_spoiler_bg), ColorCompat.getThemedColor(context, C5419R.attr.theme_chat_spoiler_bg_visible), C80223.INSTANCE, new C80234(), new C80245(context));
     }
 
     private final void processMessageText(SimpleDraweeSpanTextView textView, MessageEntry messageEntry) {
@@ -270,7 +270,7 @@ public final class WidgetChatListAdapterItemAutoModBlocked extends WidgetChatLis
         boolean z2 = (editedTimestamp != null ? editedTimestamp.getDateTimeMillis() : 0L) > 0;
         String content = message.getContent();
         MessagePreprocessor messagePreprocessor = getMessagePreprocessor(((WidgetChatListAdapter) this.adapter).getData().getUserId(), message, messageEntry.getMessageState());
-        Intrinsics3.checkNotNullExpressionValue(context, "context");
+        C12238m.checkNotNullExpressionValue(context, "context");
         DraweeSpanStringBuilder channelMessage = DiscordParser.parseChannelMessage(context, content, getMessageRenderContext(context, messageEntry), messagePreprocessor, DiscordParser.ParserOptions.DEFAULT, z2);
         textView.setVisibility(channelMessage.length() > 0 ? 0 : 8);
         textView.setDraweeSpanStringBuilder(channelMessage);
@@ -280,38 +280,38 @@ public final class WidgetChatListAdapterItemAutoModBlocked extends WidgetChatLis
     @Override // com.discord.widgets.chat.list.adapter.WidgetChatListItem, com.discord.utilities.mg_recycler.MGRecyclerViewHolder
     public void onConfigure(int position, ChatListEntry data) {
         String username;
-        Intrinsics3.checkNotNullParameter(data, "data");
+        C12238m.checkNotNullParameter(data, "data");
         super.onConfigure(position, data);
         MessageEntry messageEntry = (MessageEntry) data;
-        int color = GuildMember.INSTANCE.getColor(messageEntry.getAuthor(), ColorCompat.getThemedColor(((WidgetChatListAdapter) this.adapter).getContext(), R.attr.colorHeaderPrimary));
-        SimpleDraweeSpanTextView simpleDraweeSpanTextView = this.binding.d;
-        Intrinsics3.checkNotNullExpressionValue(simpleDraweeSpanTextView, "binding.messageContent");
+        int color = GuildMember.INSTANCE.getColor(messageEntry.getAuthor(), ColorCompat.getThemedColor(((WidgetChatListAdapter) this.adapter).getContext(), C5419R.attr.colorHeaderPrimary));
+        SimpleDraweeSpanTextView simpleDraweeSpanTextView = this.binding.f16157d;
+        C12238m.checkNotNullExpressionValue(simpleDraweeSpanTextView, "binding.messageContent");
         processMessageText(simpleDraweeSpanTextView, messageEntry);
         if (messageEntry.getMessage().getAuthor() != null) {
-            SimpleDraweeView simpleDraweeView = this.binding.f2310b;
-            Intrinsics3.checkNotNullExpressionValue(simpleDraweeView, "binding.chatListAdapterItemTextAvatar");
-            IconUtils.setIcon$default(simpleDraweeView, new CoreUser(messageEntry.getMessage().getAuthor()), R.dimen.avatar_size_chat, null, null, messageEntry.getAuthor(), 24, null);
+            SimpleDraweeView simpleDraweeView = this.binding.f16155b;
+            C12238m.checkNotNullExpressionValue(simpleDraweeView, "binding.chatListAdapterItemTextAvatar");
+            IconUtils.setIcon$default(simpleDraweeView, new CoreUser(messageEntry.getMessage().getAuthor()), C5419R.dimen.avatar_size_chat, null, null, messageEntry.getAuthor(), 24, null);
         }
-        TextView textView = this.binding.f;
-        Intrinsics3.checkNotNullExpressionValue(textView, "binding.username");
+        TextView textView = this.binding.f16159f;
+        C12238m.checkNotNullExpressionValue(textView, "binding.username");
         GuildMember author = messageEntry.getAuthor();
         if (author == null || (username = author.getNick()) == null) {
             User author2 = messageEntry.getMessage().getAuthor();
             username = author2 != null ? author2.getUsername() : null;
         }
-        FormatUtils.o(textView, username, new Object[0], null, 4);
-        this.binding.f.setTextColor(color);
-        TextView textView2 = this.binding.e;
-        Intrinsics3.checkNotNullExpressionValue(textView2, "binding.timestamp");
+        C1107b.m223o(textView, username, new Object[0], null, 4);
+        this.binding.f16159f.setTextColor(color);
+        TextView textView2 = this.binding.f16158e;
+        C12238m.checkNotNullExpressionValue(textView2, "binding.timestamp");
         Context context = ((WidgetChatListAdapter) this.adapter).getContext();
         UtcDateTime timestamp = messageEntry.getMessage().getTimestamp();
         textView2.setText(TimeUtils.toReadableTimeString$default(context, timestamp != null ? timestamp.getDateTimeMillis() : 0L, null, 4, null));
-        LinkifiedTextView linkifiedTextView = this.binding.c;
-        Intrinsics3.checkNotNullExpressionValue(linkifiedTextView, "binding.dismissMessage");
-        FormatUtils.m(linkifiedTextView, R.string.guild_automod_visibility_message, new Object[0], new AnonymousClass1(messageEntry));
+        LinkifiedTextView linkifiedTextView = this.binding.f16156c;
+        C12238m.checkNotNullExpressionValue(linkifiedTextView, "binding.dismissMessage");
+        C1107b.m221m(linkifiedTextView, C5419R.string.guild_automod_visibility_message, new Object[0], new C80251(messageEntry));
         if (messageEntry.getMessage().getEditedTimestamp() != null) {
-            TextView textView3 = this.binding.e;
-            Intrinsics3.checkNotNullExpressionValue(textView3, "binding.timestamp");
+            TextView textView3 = this.binding.f16158e;
+            C12238m.checkNotNullExpressionValue(textView3, "binding.timestamp");
             Context context2 = ((WidgetChatListAdapter) this.adapter).getContext();
             UtcDateTime timestamp2 = messageEntry.getMessage().getTimestamp();
             textView3.setText(TimeUtils.toReadableTimeString$default(context2, timestamp2 != null ? timestamp2.getDateTimeMillis() : 0L, null, 4, null));

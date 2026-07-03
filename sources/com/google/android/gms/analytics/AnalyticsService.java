@@ -5,34 +5,39 @@ import android.app.job.JobParameters;
 import android.content.Intent;
 import android.os.IBinder;
 import androidx.annotation.RequiresPermission;
-import b.i.a.f.h.j.g;
-import b.i.a.f.h.j.t0;
-import b.i.a.f.h.j.x0;
+import p007b.p225i.p226a.p288f.p313h.p323j.C3515g;
+import p007b.p225i.p226a.p288f.p313h.p323j.C3543t0;
+import p007b.p225i.p226a.p288f.p313h.p323j.InterfaceC3551x0;
 
 /* JADX INFO: loaded from: classes3.dex */
-public final class AnalyticsService extends Service implements x0 {
-    public t0<AnalyticsService> j;
+public final class AnalyticsService extends Service implements InterfaceC3551x0 {
 
-    @Override // b.i.a.f.h.j.x0
-    public final void a(JobParameters jobParameters, boolean z2) {
+    /* JADX INFO: renamed from: j */
+    public C3543t0<AnalyticsService> f20388j;
+
+    @Override // p007b.p225i.p226a.p288f.p313h.p323j.InterfaceC3551x0
+    /* JADX INFO: renamed from: a */
+    public final void mo4503a(JobParameters jobParameters, boolean z2) {
         throw new UnsupportedOperationException();
     }
 
-    @Override // b.i.a.f.h.j.x0
-    public final boolean b(int i) {
+    @Override // p007b.p225i.p226a.p288f.p313h.p323j.InterfaceC3551x0
+    /* JADX INFO: renamed from: b */
+    public final boolean mo4504b(int i) {
         return stopSelfResult(i);
     }
 
-    public final t0<AnalyticsService> c() {
-        if (this.j == null) {
-            this.j = new t0<>(this);
+    /* JADX INFO: renamed from: c */
+    public final C3543t0<AnalyticsService> m9008c() {
+        if (this.f20388j == null) {
+            this.f20388j = new C3543t0<>(this);
         }
-        return this.j;
+        return this.f20388j;
     }
 
     @Override // android.app.Service
     public final IBinder onBind(Intent intent) {
-        c();
+        m9008c();
         return null;
     }
 
@@ -40,20 +45,20 @@ public final class AnalyticsService extends Service implements x0 {
     @RequiresPermission(allOf = {"android.permission.INTERNET", "android.permission.ACCESS_NETWORK_STATE"})
     public final void onCreate() {
         super.onCreate();
-        g.b(c().c).c().C("Local AnalyticsService is starting up");
+        C3515g.m4450b(m9008c().f9802c).m4451c().m4427C("Local AnalyticsService is starting up");
     }
 
     @Override // android.app.Service
     @RequiresPermission(allOf = {"android.permission.INTERNET", "android.permission.ACCESS_NETWORK_STATE"})
     public final void onDestroy() {
-        g.b(c().c).c().C("Local AnalyticsService is shutting down");
+        C3515g.m4450b(m9008c().f9802c).m4451c().m4427C("Local AnalyticsService is shutting down");
         super.onDestroy();
     }
 
     @Override // android.app.Service
     @RequiresPermission(allOf = {"android.permission.INTERNET", "android.permission.ACCESS_NETWORK_STATE"})
     public final int onStartCommand(Intent intent, int i, int i2) {
-        c().a(intent, i2);
+        m9008c().m4501a(intent, i2);
         return 2;
     }
 }

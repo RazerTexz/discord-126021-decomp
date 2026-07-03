@@ -182,7 +182,7 @@ public class PatchExtensionMethod {
     static EclipseNode upToType(EclipseNode typeNode) {
         EclipseNode node = typeNode;
         do {
-            node = node.up();
+            node = node.m10925up();
             if (node == null) {
                 break;
             }

@@ -3,11 +3,11 @@ package androidx.work;
 import androidx.annotation.IntRange;
 import androidx.annotation.NonNull;
 import androidx.annotation.RestrictTo;
-import b.d.b.a.outline;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 import java.util.UUID;
+import p007b.p100d.p104b.p105a.C1643a;
 
 /* JADX INFO: loaded from: classes.dex */
 public final class WorkInfo {
@@ -100,18 +100,18 @@ public final class WorkInfo {
     }
 
     public String toString() {
-        StringBuilder sbU = outline.U("WorkInfo{mId='");
-        sbU.append(this.mId);
-        sbU.append('\'');
-        sbU.append(", mState=");
-        sbU.append(this.mState);
-        sbU.append(", mOutputData=");
-        sbU.append(this.mOutputData);
-        sbU.append(", mTags=");
-        sbU.append(this.mTags);
-        sbU.append(", mProgress=");
-        sbU.append(this.mProgress);
-        sbU.append('}');
-        return sbU.toString();
+        StringBuilder sbM833U = C1643a.m833U("WorkInfo{mId='");
+        sbM833U.append(this.mId);
+        sbM833U.append('\'');
+        sbM833U.append(", mState=");
+        sbM833U.append(this.mState);
+        sbM833U.append(", mOutputData=");
+        sbM833U.append(this.mOutputData);
+        sbM833U.append(", mTags=");
+        sbM833U.append(this.mTags);
+        sbM833U.append(", mProgress=");
+        sbM833U.append(this.mProgress);
+        sbM833U.append('}');
+        return sbM833U.toString();
     }
 }

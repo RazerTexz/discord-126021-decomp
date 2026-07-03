@@ -1,20 +1,20 @@
 package com.discord.analytics.generated.events;
 
-import b.d.b.a.outline;
 import com.discord.analytics.generated.traits.TrackBase;
-import com.discord.analytics.generated.traits.TrackBase2;
+import com.discord.analytics.generated.traits.TrackBaseReceiver;
 import com.discord.analytics.generated.traits.TrackEntitlementMetadata;
-import com.discord.analytics.generated.traits.TrackEntitlementMetadata2;
+import com.discord.analytics.generated.traits.TrackEntitlementMetadataReceiver;
 import com.discord.analytics.generated.traits.TrackPaymentMetadata;
-import com.discord.analytics.generated.traits.TrackPaymentMetadata2;
+import com.discord.analytics.generated.traits.TrackPaymentMetadataReceiver;
 import com.discord.analytics.generated.traits.TrackSubscriptionMetadata;
-import com.discord.analytics.generated.traits.TrackSubscriptionMetadata2;
+import com.discord.analytics.generated.traits.TrackSubscriptionMetadataReceiver;
 import com.discord.api.science.AnalyticsSchema;
-import d0.z.d.Intrinsics3;
+import p007b.p100d.p104b.p105a.C1643a;
+import p507d0.p592z.p594d.C12238m;
 
 /* JADX INFO: compiled from: TrackSubscriptionPeriodScheduled.kt */
 /* JADX INFO: loaded from: classes.dex */
-public final /* data */ class TrackSubscriptionPeriodScheduled implements AnalyticsSchema, TrackBase2, TrackSubscriptionMetadata2, TrackEntitlementMetadata2, TrackPaymentMetadata2 {
+public final /* data */ class TrackSubscriptionPeriodScheduled implements AnalyticsSchema, TrackBaseReceiver, TrackSubscriptionMetadataReceiver, TrackEntitlementMetadataReceiver, TrackPaymentMetadataReceiver {
     private TrackBase trackBase;
     private TrackEntitlementMetadata trackEntitlementMetadata;
     private TrackPaymentMetadata trackPaymentMetadata;
@@ -44,7 +44,7 @@ public final /* data */ class TrackSubscriptionPeriodScheduled implements Analyt
             return false;
         }
         TrackSubscriptionPeriodScheduled trackSubscriptionPeriodScheduled = (TrackSubscriptionPeriodScheduled) other;
-        return Intrinsics3.areEqual(this.subscriptionId, trackSubscriptionPeriodScheduled.subscriptionId) && Intrinsics3.areEqual(this.paymentId, trackSubscriptionPeriodScheduled.paymentId) && Intrinsics3.areEqual(this.paymentGateway, trackSubscriptionPeriodScheduled.paymentGateway) && Intrinsics3.areEqual(this.skuId, trackSubscriptionPeriodScheduled.skuId) && Intrinsics3.areEqual(this.scheduledStartTimestamp, trackSubscriptionPeriodScheduled.scheduledStartTimestamp) && Intrinsics3.areEqual(this.scheduledEndTimestamp, trackSubscriptionPeriodScheduled.scheduledEndTimestamp) && Intrinsics3.areEqual(this.accessType, trackSubscriptionPeriodScheduled.accessType) && Intrinsics3.areEqual(this.expectedToAutorenew, trackSubscriptionPeriodScheduled.expectedToAutorenew) && Intrinsics3.areEqual(this.renewal, trackSubscriptionPeriodScheduled.renewal);
+        return C12238m.areEqual(this.subscriptionId, trackSubscriptionPeriodScheduled.subscriptionId) && C12238m.areEqual(this.paymentId, trackSubscriptionPeriodScheduled.paymentId) && C12238m.areEqual(this.paymentGateway, trackSubscriptionPeriodScheduled.paymentGateway) && C12238m.areEqual(this.skuId, trackSubscriptionPeriodScheduled.skuId) && C12238m.areEqual(this.scheduledStartTimestamp, trackSubscriptionPeriodScheduled.scheduledStartTimestamp) && C12238m.areEqual(this.scheduledEndTimestamp, trackSubscriptionPeriodScheduled.scheduledEndTimestamp) && C12238m.areEqual(this.accessType, trackSubscriptionPeriodScheduled.accessType) && C12238m.areEqual(this.expectedToAutorenew, trackSubscriptionPeriodScheduled.expectedToAutorenew) && C12238m.areEqual(this.renewal, trackSubscriptionPeriodScheduled.renewal);
     }
 
     public int hashCode() {
@@ -69,23 +69,23 @@ public final /* data */ class TrackSubscriptionPeriodScheduled implements Analyt
     }
 
     public String toString() {
-        StringBuilder sbU = outline.U("TrackSubscriptionPeriodScheduled(subscriptionId=");
-        sbU.append(this.subscriptionId);
-        sbU.append(", paymentId=");
-        sbU.append(this.paymentId);
-        sbU.append(", paymentGateway=");
-        sbU.append(this.paymentGateway);
-        sbU.append(", skuId=");
-        sbU.append(this.skuId);
-        sbU.append(", scheduledStartTimestamp=");
-        sbU.append(this.scheduledStartTimestamp);
-        sbU.append(", scheduledEndTimestamp=");
-        sbU.append(this.scheduledEndTimestamp);
-        sbU.append(", accessType=");
-        sbU.append(this.accessType);
-        sbU.append(", expectedToAutorenew=");
-        sbU.append(this.expectedToAutorenew);
-        sbU.append(", renewal=");
-        return outline.D(sbU, this.renewal, ")");
+        StringBuilder sbM833U = C1643a.m833U("TrackSubscriptionPeriodScheduled(subscriptionId=");
+        sbM833U.append(this.subscriptionId);
+        sbM833U.append(", paymentId=");
+        sbM833U.append(this.paymentId);
+        sbM833U.append(", paymentGateway=");
+        sbM833U.append(this.paymentGateway);
+        sbM833U.append(", skuId=");
+        sbM833U.append(this.skuId);
+        sbM833U.append(", scheduledStartTimestamp=");
+        sbM833U.append(this.scheduledStartTimestamp);
+        sbM833U.append(", scheduledEndTimestamp=");
+        sbM833U.append(this.scheduledEndTimestamp);
+        sbM833U.append(", accessType=");
+        sbM833U.append(this.accessType);
+        sbM833U.append(", expectedToAutorenew=");
+        sbM833U.append(this.expectedToAutorenew);
+        sbM833U.append(", renewal=");
+        return C1643a.m816D(sbM833U, this.renewal, ")");
     }
 }

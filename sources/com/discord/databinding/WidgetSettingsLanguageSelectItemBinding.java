@@ -11,29 +11,32 @@ import androidx.viewbinding.ViewBinding;
 /* JADX INFO: loaded from: classes.dex */
 public final class WidgetSettingsLanguageSelectItemBinding implements ViewBinding {
 
+    /* JADX INFO: renamed from: a */
     @NonNull
-    public final ConstraintLayout a;
+    public final ConstraintLayout f18001a;
 
-    /* JADX INFO: renamed from: b, reason: collision with root package name */
+    /* JADX INFO: renamed from: b */
     @NonNull
-    public final ImageView f2629b;
+    public final ImageView f18002b;
 
+    /* JADX INFO: renamed from: c */
     @NonNull
-    public final TextView c;
+    public final TextView f18003c;
 
+    /* JADX INFO: renamed from: d */
     @NonNull
-    public final TextView d;
+    public final TextView f18004d;
 
     public WidgetSettingsLanguageSelectItemBinding(@NonNull ConstraintLayout constraintLayout, @NonNull ImageView imageView, @NonNull Barrier barrier, @NonNull TextView textView, @NonNull TextView textView2) {
-        this.a = constraintLayout;
-        this.f2629b = imageView;
-        this.c = textView;
-        this.d = textView2;
+        this.f18001a = constraintLayout;
+        this.f18002b = imageView;
+        this.f18003c = textView;
+        this.f18004d = textView2;
     }
 
     @Override // androidx.viewbinding.ViewBinding
     @NonNull
     public View getRoot() {
-        return this.a;
+        return this.f18001a;
     }
 }

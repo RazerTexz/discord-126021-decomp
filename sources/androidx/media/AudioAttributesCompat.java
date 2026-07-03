@@ -11,9 +11,9 @@ import androidx.media.AudioAttributesImplApi21;
 import androidx.media.AudioAttributesImplApi26;
 import androidx.media.AudioAttributesImplBase;
 import androidx.versionedparcelable.VersionedParcelable;
-import b.d.b.a.outline;
 import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
+import p007b.p100d.p104b.p105a.C1643a;
 
 /* JADX INFO: loaded from: classes.dex */
 public class AudioAttributesCompat implements VersionedParcelable {
@@ -138,7 +138,7 @@ public class AudioAttributesCompat implements VersionedParcelable {
             case 15:
             default:
                 if (z2) {
-                    throw new IllegalArgumentException(outline.r("Unknown usage value ", i2, " in audio attributes"));
+                    throw new IllegalArgumentException(C1643a.m873r("Unknown usage value ", i2, " in audio attributes"));
                 }
                 return 3;
         }
@@ -178,7 +178,7 @@ public class AudioAttributesCompat implements VersionedParcelable {
                 return "USAGE_GAME";
             case 15:
             default:
-                return outline.q("unknown usage ", i);
+                return C1643a.m871q("unknown usage ", i);
             case 16:
                 return "USAGE_ASSISTANT";
         }

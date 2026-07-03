@@ -1,14 +1,16 @@
 package com.franmontiel.persistentcookiejar.cache;
 
-import b.d.b.a.outline;
-import f0.Cookie;
+import p007b.p100d.p104b.p105a.C1643a;
+import p600f0.C12370n;
 
 /* JADX INFO: loaded from: classes3.dex */
 public class IdentifiableCookie {
-    public Cookie a;
 
-    public IdentifiableCookie(Cookie cookie) {
-        this.a = cookie;
+    /* JADX INFO: renamed from: a */
+    public C12370n f19667a;
+
+    public IdentifiableCookie(C12370n c12370n) {
+        this.f19667a = c12370n;
     }
 
     public boolean equals(Object obj) {
@@ -16,18 +18,18 @@ public class IdentifiableCookie {
             return false;
         }
         IdentifiableCookie identifiableCookie = (IdentifiableCookie) obj;
-        if (!identifiableCookie.a.f.equals(this.a.f) || !identifiableCookie.a.i.equals(this.a.i) || !identifiableCookie.a.j.equals(this.a.j)) {
+        if (!identifiableCookie.f19667a.f25947f.equals(this.f19667a.f25947f) || !identifiableCookie.f19667a.f25950i.equals(this.f19667a.f25950i) || !identifiableCookie.f19667a.f25951j.equals(this.f19667a.f25951j)) {
             return false;
         }
-        Cookie cookie = identifiableCookie.a;
-        boolean z2 = cookie.k;
-        Cookie cookie2 = this.a;
-        return z2 == cookie2.k && cookie.n == cookie2.n;
+        C12370n c12370n = identifiableCookie.f19667a;
+        boolean z2 = c12370n.f25952k;
+        C12370n c12370n2 = this.f19667a;
+        return z2 == c12370n2.f25952k && c12370n.f25955n == c12370n2.f25955n;
     }
 
     public int hashCode() {
-        int iM = outline.m(this.a.j, outline.m(this.a.i, outline.m(this.a.f, 527, 31), 31), 31);
-        Cookie cookie = this.a;
-        return ((iM + (!cookie.k ? 1 : 0)) * 31) + (!cookie.n ? 1 : 0);
+        int iM863m = C1643a.m863m(this.f19667a.f25951j, C1643a.m863m(this.f19667a.f25950i, C1643a.m863m(this.f19667a.f25947f, 527, 31), 31), 31);
+        C12370n c12370n = this.f19667a;
+        return ((iM863m + (!c12370n.f25952k ? 1 : 0)) * 31) + (!c12370n.f25955n ? 1 : 0);
     }
 }

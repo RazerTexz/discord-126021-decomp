@@ -2,13 +2,13 @@ package com.discord.widgets.user.search;
 
 import com.discord.api.channel.Channel;
 import com.discord.widgets.user.search.WidgetGlobalSearchModel;
-import d0.z.d.Intrinsics3;
-import d0.z.d.Lambda;
 import kotlin.jvm.functions.Function1;
+import p507d0.p592z.p594d.AbstractC12240o;
+import p507d0.p592z.p594d.C12238m;
 
 /* JADX INFO: compiled from: WidgetGlobalSearchModel.kt */
 /* JADX INFO: loaded from: classes.dex */
-public final class WidgetGlobalSearchModel$Companion$create$results$1 extends Lambda implements Function1<WidgetGlobalSearchModel.ItemDataPayload, Boolean> {
+public final class WidgetGlobalSearchModel$Companion$create$results$1 extends AbstractC12240o implements Function1<WidgetGlobalSearchModel.ItemDataPayload, Boolean> {
     public final /* synthetic */ Channel $lastChannel;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -24,7 +24,7 @@ public final class WidgetGlobalSearchModel$Companion$create$results$1 extends La
 
     /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
     public final boolean invoke2(WidgetGlobalSearchModel.ItemDataPayload itemDataPayload) {
-        Intrinsics3.checkNotNullParameter(itemDataPayload, "it");
+        C12238m.checkNotNullParameter(itemDataPayload, "it");
         long id2 = this.$lastChannel.getId();
         Channel channel = itemDataPayload.getChannel();
         return channel != null && id2 == channel.getId();

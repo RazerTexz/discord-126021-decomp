@@ -1,12 +1,12 @@
 package com.discord.analytics.generated.events;
 
 import com.discord.analytics.generated.traits.TrackBase;
-import com.discord.analytics.generated.traits.TrackBase2;
+import com.discord.analytics.generated.traits.TrackBaseReceiver;
 import com.discord.api.science.AnalyticsSchema;
 
 /* JADX INFO: compiled from: TrackNuoMobileAppTextSuccess.kt */
 /* JADX INFO: loaded from: classes.dex */
-public final class TrackNuoMobileAppTextSuccess implements AnalyticsSchema, TrackBase2 {
+public final class TrackNuoMobileAppTextSuccess implements AnalyticsSchema, TrackBaseReceiver {
     private final transient String analyticsSchemaTypeName = "nuo_mobile_app_text_success";
     private TrackBase trackBase;
 

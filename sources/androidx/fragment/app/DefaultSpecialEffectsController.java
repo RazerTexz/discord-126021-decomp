@@ -19,39 +19,41 @@ import androidx.core.view.ViewCompat;
 import androidx.core.view.ViewGroupCompat;
 import androidx.fragment.app.FragmentAnim;
 import androidx.fragment.app.SpecialEffectsController;
-import b.d.b.a.outline;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
+import p007b.p100d.p104b.p105a.C1643a;
 
 /* JADX INFO: loaded from: classes.dex */
 public class DefaultSpecialEffectsController extends SpecialEffectsController {
 
-    /* JADX INFO: renamed from: androidx.fragment.app.DefaultSpecialEffectsController$10, reason: invalid class name */
-    public static /* synthetic */ class AnonymousClass10 {
-        public static final /* synthetic */ int[] $SwitchMap$androidx$fragment$app$SpecialEffectsController$Operation$State;
+    /* JADX INFO: renamed from: androidx.fragment.app.DefaultSpecialEffectsController$10 */
+    public static /* synthetic */ class C034710 {
+
+        /* JADX INFO: renamed from: $SwitchMap$androidx$fragment$app$SpecialEffectsController$Operation$State */
+        public static final /* synthetic */ int[] f142xe493b431;
 
         static {
             SpecialEffectsController.Operation.State.values();
             int[] iArr = new int[4];
-            $SwitchMap$androidx$fragment$app$SpecialEffectsController$Operation$State = iArr;
+            f142xe493b431 = iArr;
             try {
                 iArr[SpecialEffectsController.Operation.State.GONE.ordinal()] = 1;
             } catch (NoSuchFieldError unused) {
             }
             try {
-                $SwitchMap$androidx$fragment$app$SpecialEffectsController$Operation$State[SpecialEffectsController.Operation.State.INVISIBLE.ordinal()] = 2;
+                f142xe493b431[SpecialEffectsController.Operation.State.INVISIBLE.ordinal()] = 2;
             } catch (NoSuchFieldError unused2) {
             }
             try {
-                $SwitchMap$androidx$fragment$app$SpecialEffectsController$Operation$State[SpecialEffectsController.Operation.State.REMOVED.ordinal()] = 3;
+                f142xe493b431[SpecialEffectsController.Operation.State.REMOVED.ordinal()] = 3;
             } catch (NoSuchFieldError unused3) {
             }
             try {
-                $SwitchMap$androidx$fragment$app$SpecialEffectsController$Operation$State[SpecialEffectsController.Operation.State.VISIBLE.ordinal()] = 4;
+                f142xe493b431[SpecialEffectsController.Operation.State.VISIBLE.ordinal()] = 4;
             } catch (NoSuchFieldError unused4) {
             }
         }
@@ -202,7 +204,7 @@ public class DefaultSpecialEffectsController extends SpecialEffectsController {
                             container.post(new Runnable() { // from class: androidx.fragment.app.DefaultSpecialEffectsController.4.1
                                 @Override // java.lang.Runnable
                                 public void run() {
-                                    AnonymousClass4 anonymousClass4 = AnonymousClass4.this;
+                                    AnimationAnimationListenerC03504 animationAnimationListenerC03504 = AnimationAnimationListenerC03504.this;
                                     container.endViewTransition(view2);
                                     animationInfo2.completeSpecialEffect();
                                 }
@@ -264,12 +266,12 @@ public class DefaultSpecialEffectsController extends SpecialEffectsController {
                 if (fragmentTransitionImpl == null) {
                     fragmentTransitionImpl = handlingImpl;
                 } else if (handlingImpl != null && fragmentTransitionImpl != handlingImpl) {
-                    StringBuilder sbU = outline.U("Mixing framework transitions and AndroidX transitions is not allowed. Fragment ");
-                    sbU.append(transitionInfo.getOperation().getFragment());
-                    sbU.append(" returned Transition ");
-                    sbU.append(transitionInfo.getTransition());
-                    sbU.append(" which uses a different Transition  type than other Fragments.");
-                    throw new IllegalArgumentException(sbU.toString());
+                    StringBuilder sbM833U = C1643a.m833U("Mixing framework transitions and AndroidX transitions is not allowed. Fragment ");
+                    sbM833U.append(transitionInfo.getOperation().getFragment());
+                    sbM833U.append(" returned Transition ");
+                    sbM833U.append(transitionInfo.getTransition());
+                    sbM833U.append(" which uses a different Transition  type than other Fragments.");
+                    throw new IllegalArgumentException(sbM833U.toString());
                 }
             }
         }
@@ -726,13 +728,13 @@ public class DefaultSpecialEffectsController extends SpecialEffectsController {
             if (handlingImpl == null || handlingImpl2 == null || handlingImpl == handlingImpl2) {
                 return handlingImpl != null ? handlingImpl : handlingImpl2;
             }
-            StringBuilder sbU = outline.U("Mixing framework transitions and AndroidX transitions is not allowed. Fragment ");
-            sbU.append(getOperation().getFragment());
-            sbU.append(" returned Transition ");
-            sbU.append(this.mTransition);
-            sbU.append(" which uses a different Transition  type than its shared element transition ");
-            sbU.append(this.mSharedElementTransition);
-            throw new IllegalArgumentException(sbU.toString());
+            StringBuilder sbM833U = C1643a.m833U("Mixing framework transitions and AndroidX transitions is not allowed. Fragment ");
+            sbM833U.append(getOperation().getFragment());
+            sbM833U.append(" returned Transition ");
+            sbM833U.append(this.mTransition);
+            sbM833U.append(" which uses a different Transition  type than its shared element transition ");
+            sbM833U.append(this.mSharedElementTransition);
+            throw new IllegalArgumentException(sbM833U.toString());
         }
 
         @Nullable

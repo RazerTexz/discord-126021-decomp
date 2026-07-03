@@ -11,37 +11,42 @@ import com.discord.views.ChatActionItem;
 /* JADX INFO: loaded from: classes.dex */
 public final class WidgetChatListAdapterItemGuildWelcomeBinding implements ViewBinding {
 
+    /* JADX INFO: renamed from: a */
     @NonNull
-    public final LinearLayout a;
+    public final LinearLayout f16232a;
 
-    /* JADX INFO: renamed from: b, reason: collision with root package name */
+    /* JADX INFO: renamed from: b */
     @NonNull
-    public final TextView f2324b;
+    public final TextView f16233b;
 
+    /* JADX INFO: renamed from: c */
     @NonNull
-    public final LinkifiedTextView c;
+    public final LinkifiedTextView f16234c;
 
+    /* JADX INFO: renamed from: d */
     @NonNull
-    public final LinkifiedTextView d;
+    public final LinkifiedTextView f16235d;
 
+    /* JADX INFO: renamed from: e */
     @NonNull
-    public final ChatActionItem e;
+    public final ChatActionItem f16236e;
 
+    /* JADX INFO: renamed from: f */
     @NonNull
-    public final ChatActionItem f;
+    public final ChatActionItem f16237f;
 
     public WidgetChatListAdapterItemGuildWelcomeBinding(@NonNull LinearLayout linearLayout, @NonNull TextView textView, @NonNull LinkifiedTextView linkifiedTextView, @NonNull LinkifiedTextView linkifiedTextView2, @NonNull ChatActionItem chatActionItem, @NonNull ChatActionItem chatActionItem2) {
-        this.a = linearLayout;
-        this.f2324b = textView;
-        this.c = linkifiedTextView;
-        this.d = linkifiedTextView2;
-        this.e = chatActionItem;
-        this.f = chatActionItem2;
+        this.f16232a = linearLayout;
+        this.f16233b = textView;
+        this.f16234c = linkifiedTextView;
+        this.f16235d = linkifiedTextView2;
+        this.f16236e = chatActionItem;
+        this.f16237f = chatActionItem2;
     }
 
     @Override // androidx.viewbinding.ViewBinding
     @NonNull
     public View getRoot() {
-        return this.a;
+        return this.f16232a;
     }
 }

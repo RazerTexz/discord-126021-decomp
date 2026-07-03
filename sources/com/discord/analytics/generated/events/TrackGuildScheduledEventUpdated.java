@@ -1,22 +1,22 @@
 package com.discord.analytics.generated.events;
 
-import b.d.b.a.outline;
 import com.discord.analytics.generated.traits.TrackBase;
-import com.discord.analytics.generated.traits.TrackBase2;
+import com.discord.analytics.generated.traits.TrackBaseReceiver;
 import com.discord.analytics.generated.traits.TrackChannel;
-import com.discord.analytics.generated.traits.TrackChannel2;
+import com.discord.analytics.generated.traits.TrackChannelReceiver;
 import com.discord.analytics.generated.traits.TrackGuild;
-import com.discord.analytics.generated.traits.TrackGuild2;
+import com.discord.analytics.generated.traits.TrackGuildReceiver;
 import com.discord.analytics.generated.traits.TrackGuildScheduledEvent;
-import com.discord.analytics.generated.traits.TrackGuildScheduledEvent2;
+import com.discord.analytics.generated.traits.TrackGuildScheduledEventReceiver;
 import com.discord.api.science.AnalyticsSchema;
 import com.discord.models.domain.ModelAuditLogEntry;
-import d0.z.d.Intrinsics3;
 import java.util.List;
+import p007b.p100d.p104b.p105a.C1643a;
+import p507d0.p592z.p594d.C12238m;
 
 /* JADX INFO: compiled from: TrackGuildScheduledEventUpdated.kt */
 /* JADX INFO: loaded from: classes.dex */
-public final /* data */ class TrackGuildScheduledEventUpdated implements AnalyticsSchema, TrackBase2, TrackGuild2, TrackChannel2, TrackGuildScheduledEvent2 {
+public final /* data */ class TrackGuildScheduledEventUpdated implements AnalyticsSchema, TrackBaseReceiver, TrackGuildReceiver, TrackChannelReceiver, TrackGuildScheduledEventReceiver {
     private TrackBase trackBase;
     private TrackChannel trackChannel;
     private TrackGuild trackGuild;
@@ -42,14 +42,15 @@ public final /* data */ class TrackGuildScheduledEventUpdated implements Analyti
     private final Long maxConcurrentParticipants = null;
     private final transient String analyticsSchemaTypeName = "guild_scheduled_event_updated";
 
-    @Override // com.discord.analytics.generated.traits.TrackGuild2
+    @Override // com.discord.analytics.generated.traits.TrackGuildReceiver
     /* JADX INFO: renamed from: a, reason: from getter */
     public TrackGuild getTrackGuild() {
         return this.trackGuild;
     }
 
-    @Override // com.discord.analytics.generated.traits.TrackGuild2
-    public void c(TrackGuild trackGuild) {
+    @Override // com.discord.analytics.generated.traits.TrackGuildReceiver
+    /* JADX INFO: renamed from: c */
+    public void mo7508c(TrackGuild trackGuild) {
         this.trackGuild = trackGuild;
     }
 
@@ -67,7 +68,7 @@ public final /* data */ class TrackGuildScheduledEventUpdated implements Analyti
             return false;
         }
         TrackGuildScheduledEventUpdated trackGuildScheduledEventUpdated = (TrackGuildScheduledEventUpdated) other;
-        return Intrinsics3.areEqual(this.guildScheduledEventId, trackGuildScheduledEventUpdated.guildScheduledEventId) && Intrinsics3.areEqual(this.name, trackGuildScheduledEventUpdated.name) && Intrinsics3.areEqual(this.startTime, trackGuildScheduledEventUpdated.startTime) && Intrinsics3.areEqual(this.endTime, trackGuildScheduledEventUpdated.endTime) && Intrinsics3.areEqual(this.skuIds, trackGuildScheduledEventUpdated.skuIds) && Intrinsics3.areEqual(this.guildScheduledEventStatus, trackGuildScheduledEventUpdated.guildScheduledEventStatus) && Intrinsics3.areEqual(this.privacyLevel, trackGuildScheduledEventUpdated.privacyLevel) && Intrinsics3.areEqual(this.guildScheduledEventEntityType, trackGuildScheduledEventUpdated.guildScheduledEventEntityType) && Intrinsics3.areEqual(this.guildScheduledEventExternalLocation, trackGuildScheduledEventUpdated.guildScheduledEventExternalLocation) && Intrinsics3.areEqual(this.guildScheduledEventInterestedCount, trackGuildScheduledEventUpdated.guildScheduledEventInterestedCount) && Intrinsics3.areEqual(this.description, trackGuildScheduledEventUpdated.description) && Intrinsics3.areEqual(this.updaterId, trackGuildScheduledEventUpdated.updaterId) && Intrinsics3.areEqual(this.numParticipants, trackGuildScheduledEventUpdated.numParticipants) && Intrinsics3.areEqual(this.totalUniqueListeners, trackGuildScheduledEventUpdated.totalUniqueListeners) && Intrinsics3.areEqual(this.maxConcurrentListeners, trackGuildScheduledEventUpdated.maxConcurrentListeners) && Intrinsics3.areEqual(this.totalUniqueSpeakers, trackGuildScheduledEventUpdated.totalUniqueSpeakers) && Intrinsics3.areEqual(this.maxConcurrentSpeakers, trackGuildScheduledEventUpdated.maxConcurrentSpeakers) && Intrinsics3.areEqual(this.totalUniqueParticipants, trackGuildScheduledEventUpdated.totalUniqueParticipants) && Intrinsics3.areEqual(this.maxConcurrentParticipants, trackGuildScheduledEventUpdated.maxConcurrentParticipants);
+        return C12238m.areEqual(this.guildScheduledEventId, trackGuildScheduledEventUpdated.guildScheduledEventId) && C12238m.areEqual(this.name, trackGuildScheduledEventUpdated.name) && C12238m.areEqual(this.startTime, trackGuildScheduledEventUpdated.startTime) && C12238m.areEqual(this.endTime, trackGuildScheduledEventUpdated.endTime) && C12238m.areEqual(this.skuIds, trackGuildScheduledEventUpdated.skuIds) && C12238m.areEqual(this.guildScheduledEventStatus, trackGuildScheduledEventUpdated.guildScheduledEventStatus) && C12238m.areEqual(this.privacyLevel, trackGuildScheduledEventUpdated.privacyLevel) && C12238m.areEqual(this.guildScheduledEventEntityType, trackGuildScheduledEventUpdated.guildScheduledEventEntityType) && C12238m.areEqual(this.guildScheduledEventExternalLocation, trackGuildScheduledEventUpdated.guildScheduledEventExternalLocation) && C12238m.areEqual(this.guildScheduledEventInterestedCount, trackGuildScheduledEventUpdated.guildScheduledEventInterestedCount) && C12238m.areEqual(this.description, trackGuildScheduledEventUpdated.description) && C12238m.areEqual(this.updaterId, trackGuildScheduledEventUpdated.updaterId) && C12238m.areEqual(this.numParticipants, trackGuildScheduledEventUpdated.numParticipants) && C12238m.areEqual(this.totalUniqueListeners, trackGuildScheduledEventUpdated.totalUniqueListeners) && C12238m.areEqual(this.maxConcurrentListeners, trackGuildScheduledEventUpdated.maxConcurrentListeners) && C12238m.areEqual(this.totalUniqueSpeakers, trackGuildScheduledEventUpdated.totalUniqueSpeakers) && C12238m.areEqual(this.maxConcurrentSpeakers, trackGuildScheduledEventUpdated.maxConcurrentSpeakers) && C12238m.areEqual(this.totalUniqueParticipants, trackGuildScheduledEventUpdated.totalUniqueParticipants) && C12238m.areEqual(this.maxConcurrentParticipants, trackGuildScheduledEventUpdated.maxConcurrentParticipants);
     }
 
     public int hashCode() {
@@ -112,43 +113,43 @@ public final /* data */ class TrackGuildScheduledEventUpdated implements Analyti
     }
 
     public String toString() {
-        StringBuilder sbU = outline.U("TrackGuildScheduledEventUpdated(guildScheduledEventId=");
-        sbU.append(this.guildScheduledEventId);
-        sbU.append(", name=");
-        sbU.append(this.name);
-        sbU.append(", startTime=");
-        sbU.append(this.startTime);
-        sbU.append(", endTime=");
-        sbU.append(this.endTime);
-        sbU.append(", skuIds=");
-        sbU.append(this.skuIds);
-        sbU.append(", guildScheduledEventStatus=");
-        sbU.append(this.guildScheduledEventStatus);
-        sbU.append(", privacyLevel=");
-        sbU.append(this.privacyLevel);
-        sbU.append(", guildScheduledEventEntityType=");
-        sbU.append(this.guildScheduledEventEntityType);
-        sbU.append(", guildScheduledEventExternalLocation=");
-        sbU.append(this.guildScheduledEventExternalLocation);
-        sbU.append(", guildScheduledEventInterestedCount=");
-        sbU.append(this.guildScheduledEventInterestedCount);
-        sbU.append(", description=");
-        sbU.append(this.description);
-        sbU.append(", updaterId=");
-        sbU.append(this.updaterId);
-        sbU.append(", numParticipants=");
-        sbU.append(this.numParticipants);
-        sbU.append(", totalUniqueListeners=");
-        sbU.append(this.totalUniqueListeners);
-        sbU.append(", maxConcurrentListeners=");
-        sbU.append(this.maxConcurrentListeners);
-        sbU.append(", totalUniqueSpeakers=");
-        sbU.append(this.totalUniqueSpeakers);
-        sbU.append(", maxConcurrentSpeakers=");
-        sbU.append(this.maxConcurrentSpeakers);
-        sbU.append(", totalUniqueParticipants=");
-        sbU.append(this.totalUniqueParticipants);
-        sbU.append(", maxConcurrentParticipants=");
-        return outline.G(sbU, this.maxConcurrentParticipants, ")");
+        StringBuilder sbM833U = C1643a.m833U("TrackGuildScheduledEventUpdated(guildScheduledEventId=");
+        sbM833U.append(this.guildScheduledEventId);
+        sbM833U.append(", name=");
+        sbM833U.append(this.name);
+        sbM833U.append(", startTime=");
+        sbM833U.append(this.startTime);
+        sbM833U.append(", endTime=");
+        sbM833U.append(this.endTime);
+        sbM833U.append(", skuIds=");
+        sbM833U.append(this.skuIds);
+        sbM833U.append(", guildScheduledEventStatus=");
+        sbM833U.append(this.guildScheduledEventStatus);
+        sbM833U.append(", privacyLevel=");
+        sbM833U.append(this.privacyLevel);
+        sbM833U.append(", guildScheduledEventEntityType=");
+        sbM833U.append(this.guildScheduledEventEntityType);
+        sbM833U.append(", guildScheduledEventExternalLocation=");
+        sbM833U.append(this.guildScheduledEventExternalLocation);
+        sbM833U.append(", guildScheduledEventInterestedCount=");
+        sbM833U.append(this.guildScheduledEventInterestedCount);
+        sbM833U.append(", description=");
+        sbM833U.append(this.description);
+        sbM833U.append(", updaterId=");
+        sbM833U.append(this.updaterId);
+        sbM833U.append(", numParticipants=");
+        sbM833U.append(this.numParticipants);
+        sbM833U.append(", totalUniqueListeners=");
+        sbM833U.append(this.totalUniqueListeners);
+        sbM833U.append(", maxConcurrentListeners=");
+        sbM833U.append(this.maxConcurrentListeners);
+        sbM833U.append(", totalUniqueSpeakers=");
+        sbM833U.append(this.totalUniqueSpeakers);
+        sbM833U.append(", maxConcurrentSpeakers=");
+        sbM833U.append(this.maxConcurrentSpeakers);
+        sbM833U.append(", totalUniqueParticipants=");
+        sbM833U.append(this.totalUniqueParticipants);
+        sbM833U.append(", maxConcurrentParticipants=");
+        return C1643a.m819G(sbM833U, this.maxConcurrentParticipants, ")");
     }
 }

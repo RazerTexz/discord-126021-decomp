@@ -25,7 +25,6 @@ import androidx.work.impl.utils.WorkForegroundUpdater;
 import androidx.work.impl.utils.WorkProgressUpdater;
 import androidx.work.impl.utils.futures.SettableFuture;
 import androidx.work.impl.utils.taskexecutor.TaskExecutor;
-import b.i.b.d.a.ListenableFuture8;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.LinkedList;
@@ -33,6 +32,7 @@ import java.util.List;
 import java.util.UUID;
 import java.util.concurrent.CancellationException;
 import java.util.concurrent.ExecutionException;
+import p007b.p225i.p355b.p359d.p360a.InterfaceFutureC4539a;
 
 /* JADX INFO: loaded from: classes.dex */
 @RestrictTo({RestrictTo.Scope.LIBRARY_GROUP})
@@ -62,7 +62,7 @@ public class WorkerWrapper implements Runnable {
     public SettableFuture<Boolean> mFuture = SettableFuture.create();
 
     @Nullable
-    public ListenableFuture8<ListenableWorker.Result> mInnerFuture = null;
+    public InterfaceFutureC4539a<ListenableWorker.Result> mInnerFuture = null;
 
     @RestrictTo({RestrictTo.Scope.LIBRARY_GROUP})
     public static class Builder {
@@ -432,7 +432,7 @@ public class WorkerWrapper implements Runnable {
     }
 
     @NonNull
-    public ListenableFuture8<Boolean> getFuture() {
+    public InterfaceFutureC4539a<Boolean> getFuture() {
         return this.mFuture;
     }
 
@@ -441,9 +441,9 @@ public class WorkerWrapper implements Runnable {
         boolean zIsDone;
         this.mInterrupted = true;
         tryCheckForInterruptionAndResolve();
-        ListenableFuture8<ListenableWorker.Result> listenableFuture8 = this.mInnerFuture;
-        if (listenableFuture8 != null) {
-            zIsDone = listenableFuture8.isDone();
+        InterfaceFutureC4539a<ListenableWorker.Result> interfaceFutureC4539a = this.mInnerFuture;
+        if (interfaceFutureC4539a != null) {
+            zIsDone = interfaceFutureC4539a.isDone();
             this.mInnerFuture.cancel(true);
         } else {
             zIsDone = false;

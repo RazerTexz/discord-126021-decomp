@@ -6,35 +6,35 @@ import android.view.View;
 import android.widget.TextView;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
-import b.a.d.AppToast;
-import b.a.k.FormatUtils;
-import b.d.b.a.outline;
-import com.discord.R;
+import com.discord.C5419R;
 import com.discord.app.AppDialog;
 import com.discord.databinding.WidgetKickUserBinding;
 import com.discord.i18n.RenderContext;
 import com.discord.utilities.error.Error;
+import com.discord.utilities.p501rx.ObservableExtensionsKt;
 import com.discord.utilities.rest.RestAPI;
-import com.discord.utilities.rx.ObservableExtensionsKt;
 import com.discord.utilities.view.extensions.ViewExtensions;
 import com.discord.utilities.viewbinding.FragmentViewBindingDelegate;
-import com.discord.utilities.viewbinding.FragmentViewBindingDelegate3;
+import com.discord.utilities.viewbinding.FragmentViewBindingDelegateKt;
 import com.google.android.material.textfield.TextInputLayout;
-import d0.g0.StringsJVM;
-import d0.z.d.Intrinsics3;
-import d0.z.d.Lambda;
 import java.util.Map;
 import kotlin.Unit;
 import kotlin.jvm.functions.Function0;
 import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.reflect.KProperty;
-import rx.Subscription;
+import p007b.p008a.p018d.C0876m;
+import p007b.p008a.p027k.C1107b;
+import p007b.p100d.p104b.p105a.C1643a;
+import p507d0.p579g0.C12103t;
+import p507d0.p592z.p594d.AbstractC12240o;
+import p507d0.p592z.p594d.C12238m;
+import p658rx.Subscription;
 
 /* JADX INFO: compiled from: WidgetKickUser.kt */
 /* JADX INFO: loaded from: classes.dex */
 public final class WidgetKickUser extends AppDialog {
-    public static final /* synthetic */ KProperty[] $$delegatedProperties = {outline.d0(WidgetKickUser.class, "binding", "getBinding()Lcom/discord/databinding/WidgetKickUserBinding;", 0)};
+    public static final /* synthetic */ KProperty[] $$delegatedProperties = {C1643a.m846d0(WidgetKickUser.class, "binding", "getBinding()Lcom/discord/databinding/WidgetKickUserBinding;", 0)};
 
     /* JADX INFO: renamed from: Companion, reason: from kotlin metadata */
     public static final Companion INSTANCE = new Companion(null);
@@ -48,8 +48,8 @@ public final class WidgetKickUser extends AppDialog {
         }
 
         public final void launch(String userName, long guildId, long userId, FragmentManager fragmentManager) {
-            Intrinsics3.checkNotNullParameter(userName, "userName");
-            Intrinsics3.checkNotNullParameter(fragmentManager, "fragmentManager");
+            C12238m.checkNotNullParameter(userName, "userName");
+            C12238m.checkNotNullParameter(fragmentManager, "fragmentManager");
             WidgetKickUser widgetKickUser = new WidgetKickUser();
             Bundle bundle = new Bundle();
             bundle.putString("com.discord.intent.extra.EXTRA_USER_NAME", userName);
@@ -65,8 +65,8 @@ public final class WidgetKickUser extends AppDialog {
     }
 
     public WidgetKickUser() {
-        super(R.layout.widget_kick_user);
-        this.binding = FragmentViewBindingDelegate3.viewBinding$default(this, WidgetKickUser2.INSTANCE, null, 2, null);
+        super(C5419R.layout.widget_kick_user);
+        this.binding = FragmentViewBindingDelegateKt.viewBinding$default(this, WidgetKickUser$binding$2.INSTANCE, null, 2, null);
     }
 
     private final WidgetKickUserBinding getBinding() {
@@ -83,23 +83,23 @@ public final class WidgetKickUser extends AppDialog {
         final String string = getArgumentsOrDefault().getString("com.discord.intent.extra.EXTRA_USER_NAME", "");
         final long j = getArgumentsOrDefault().getLong("com.discord.intent.extra.EXTRA_GUILD_ID", -1L);
         final long j2 = getArgumentsOrDefault().getLong("com.discord.intent.extra.EXTRA_USER_ID", -1L);
-        TextView textView = getBinding().f;
-        Intrinsics3.checkNotNullExpressionValue(textView, "binding.kickUserTitle");
-        FormatUtils.m(textView, R.string.kick_user_title, new Object[0], new AnonymousClass1(string));
-        TextView textView2 = getBinding().f2481b;
-        Intrinsics3.checkNotNullExpressionValue(textView2, "binding.kickUserBody");
-        FormatUtils.m(textView2, R.string.kick_user_body, new Object[0], new AnonymousClass2(string));
-        getBinding().c.setOnClickListener(new View.OnClickListener() { // from class: com.discord.widgets.user.WidgetKickUser.onViewBoundOrOnResume.3
+        TextView textView = getBinding().f17214f;
+        C12238m.checkNotNullExpressionValue(textView, "binding.kickUserTitle");
+        C1107b.m221m(textView, C5419R.string.kick_user_title, new Object[0], new C101871(string));
+        TextView textView2 = getBinding().f17210b;
+        C12238m.checkNotNullExpressionValue(textView2, "binding.kickUserBody");
+        C1107b.m221m(textView2, C5419R.string.kick_user_body, new Object[0], new C101882(string));
+        getBinding().f17211c.setOnClickListener(new View.OnClickListener() { // from class: com.discord.widgets.user.WidgetKickUser.onViewBoundOrOnResume.3
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
                 WidgetKickUser.this.dismiss();
             }
         });
-        getBinding().d.setOnClickListener(new View.OnClickListener() { // from class: com.discord.widgets.user.WidgetKickUser.onViewBoundOrOnResume.4
+        getBinding().f17212d.setOnClickListener(new View.OnClickListener() { // from class: com.discord.widgets.user.WidgetKickUser.onViewBoundOrOnResume.4
 
             /* JADX INFO: renamed from: com.discord.widgets.user.WidgetKickUser$onViewBoundOrOnResume$4$1, reason: invalid class name */
             /* JADX INFO: compiled from: WidgetKickUser.kt */
-            public static final class AnonymousClass1 extends Lambda implements Function1<Void, Unit> {
+            public static final class AnonymousClass1 extends AbstractC12240o implements Function1<Void, Unit> {
                 public AnonymousClass1() {
                     super(1);
                 }
@@ -107,79 +107,79 @@ public final class WidgetKickUser extends AppDialog {
                 @Override // kotlin.jvm.functions.Function1
                 public /* bridge */ /* synthetic */ Unit invoke(Void r1) {
                     invoke2(r1);
-                    return Unit.a;
+                    return Unit.f27425a;
                 }
 
                 /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
                 public final void invoke2(Void r7) {
                     Context context = WidgetKickUser.this.getContext();
                     Context context2 = WidgetKickUser.this.getContext();
-                    AppToast.h(context, context2 != null ? FormatUtils.b(context2, R.string.kick_user_confirmed, new Object[]{string}, (4 & 4) != 0 ? FormatUtils.b.j : null) : null, 0, null, 12);
+                    C0876m.m170h(context, context2 != null ? C1107b.m210b(context2, C5419R.string.kick_user_confirmed, new Object[]{string}, (4 & 4) != 0 ? C1107b.b.f1491j : null) : null, 0, null, 12);
                     WidgetKickUser.this.dismiss();
                 }
             }
 
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                TextInputLayout textInputLayout = WidgetKickUser.this.getBinding().e;
-                Intrinsics3.checkNotNullExpressionValue(textInputLayout, "binding.kickUserReason");
+                TextInputLayout textInputLayout = WidgetKickUser.this.getBinding().f17213e;
+                C12238m.checkNotNullExpressionValue(textInputLayout, "binding.kickUserReason");
                 String textOrEmpty = ViewExtensions.getTextOrEmpty(textInputLayout);
-                ObservableExtensionsKt.appSubscribe(ObservableExtensionsKt.ui$default(ObservableExtensionsKt.restSubscribeOn$default(RestAPI.INSTANCE.getApi().kickGuildMember(j, j2, StringsJVM.isBlank(textOrEmpty) ^ true ? textOrEmpty : null), false, 1, null), WidgetKickUser.this, null, 2, null), (Class<?>) WidgetKickUser.this.getClass(), (58 & 2) != 0 ? null : WidgetKickUser.this.getContext(), (Function1<? super Subscription, Unit>) ((58 & 4) != 0 ? null : null), (Function1<? super Error, Unit>) ((58 & 8) != 0 ? null : null), (Function0<Unit>) ((58 & 16) != 0 ? ObservableExtensionsKt.AnonymousClass1.INSTANCE : null), (Function0<Unit>) ((58 & 32) != 0 ? ObservableExtensionsKt.AnonymousClass2.INSTANCE : null), new AnonymousClass1());
+                ObservableExtensionsKt.appSubscribe(ObservableExtensionsKt.ui$default(ObservableExtensionsKt.restSubscribeOn$default(RestAPI.INSTANCE.getApi().kickGuildMember(j, j2, C12103t.isBlank(textOrEmpty) ^ true ? textOrEmpty : null), false, 1, null), WidgetKickUser.this, null, 2, null), (Class<?>) WidgetKickUser.this.getClass(), (58 & 2) != 0 ? null : WidgetKickUser.this.getContext(), (Function1<? super Subscription, Unit>) ((58 & 4) != 0 ? null : null), (Function1<? super Error, Unit>) ((58 & 8) != 0 ? null : null), (Function0<Unit>) ((58 & 16) != 0 ? ObservableExtensionsKt.C68791.INSTANCE : null), (Function0<Unit>) ((58 & 32) != 0 ? ObservableExtensionsKt.C68802.INSTANCE : null), new AnonymousClass1());
             }
         });
     }
 
-    /* JADX INFO: renamed from: com.discord.widgets.user.WidgetKickUser$onViewBoundOrOnResume$1, reason: invalid class name */
+    /* JADX INFO: renamed from: com.discord.widgets.user.WidgetKickUser$onViewBoundOrOnResume$1 */
     /* JADX INFO: compiled from: WidgetKickUser.kt */
-    public static final class AnonymousClass1 extends Lambda implements Function1<RenderContext, Unit> {
+    public static final class C101871 extends AbstractC12240o implements Function1<RenderContext, Unit> {
         public final /* synthetic */ String $userName;
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-        public AnonymousClass1(String str) {
+        public C101871(String str) {
             super(1);
             this.$userName = str;
         }
 
         /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
         public final void invoke2(RenderContext renderContext) {
-            Intrinsics3.checkNotNullParameter(renderContext, "$receiver");
+            C12238m.checkNotNullParameter(renderContext, "$receiver");
             Map<String, String> map = renderContext.args;
             String str = this.$userName;
-            Intrinsics3.checkNotNullExpressionValue(str, "userName");
+            C12238m.checkNotNullExpressionValue(str, "userName");
             map.put("user", str);
         }
 
         @Override // kotlin.jvm.functions.Function1
         public /* bridge */ /* synthetic */ Unit invoke(RenderContext renderContext) {
             invoke2(renderContext);
-            return Unit.a;
+            return Unit.f27425a;
         }
     }
 
-    /* JADX INFO: renamed from: com.discord.widgets.user.WidgetKickUser$onViewBoundOrOnResume$2, reason: invalid class name */
+    /* JADX INFO: renamed from: com.discord.widgets.user.WidgetKickUser$onViewBoundOrOnResume$2 */
     /* JADX INFO: compiled from: WidgetKickUser.kt */
-    public static final class AnonymousClass2 extends Lambda implements Function1<RenderContext, Unit> {
+    public static final class C101882 extends AbstractC12240o implements Function1<RenderContext, Unit> {
         public final /* synthetic */ String $userName;
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-        public AnonymousClass2(String str) {
+        public C101882(String str) {
             super(1);
             this.$userName = str;
         }
 
         /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
         public final void invoke2(RenderContext renderContext) {
-            Intrinsics3.checkNotNullParameter(renderContext, "$receiver");
+            C12238m.checkNotNullParameter(renderContext, "$receiver");
             Map<String, String> map = renderContext.args;
             String str = this.$userName;
-            Intrinsics3.checkNotNullExpressionValue(str, "userName");
+            C12238m.checkNotNullExpressionValue(str, "userName");
             map.put("user", str);
         }
 
         @Override // kotlin.jvm.functions.Function1
         public /* bridge */ /* synthetic */ Unit invoke(RenderContext renderContext) {
             invoke2(renderContext);
-            return Unit.a;
+            return Unit.f27425a;
         }
     }
 }

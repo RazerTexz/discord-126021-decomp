@@ -13,7 +13,7 @@ public final class GrowthTeamFeatures {
     }
 
     private final boolean isBucketEnabled(Integer num, String str, int i, boolean z2) {
-        AppLog.i("Experiment triggered: " + str + " | Track Exposure: " + z2 + " | Assigned Bucket: " + num);
+        AppLog.m8358i("Experiment triggered: " + str + " | Track Exposure: " + z2 + " | Assigned Bucket: " + num);
         return num != null && num.intValue() == i;
     }
 

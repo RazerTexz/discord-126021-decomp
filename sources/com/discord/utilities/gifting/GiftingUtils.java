@@ -7,32 +7,32 @@ import androidx.fragment.app.FragmentActivity;
 import androidx.fragment.app.FragmentManager;
 import com.android.billingclient.api.BillingFlowParams;
 import com.android.billingclient.api.SkuDetails;
-import com.discord.R;
+import com.discord.C5419R;
 import com.discord.api.premium.PremiumTier;
 import com.discord.models.domain.ModelAuditLogEntry;
-import com.discord.models.domain.ModelSku4;
+import com.discord.models.domain.ModelSkuKt;
 import com.discord.stores.StoreGooglePlayPurchases;
 import com.discord.stores.StoreStream;
 import com.discord.utilities.analytics.Traits;
 import com.discord.utilities.billing.GooglePlayBillingManager;
 import com.discord.utilities.billing.GooglePlayInAppSku;
-import com.discord.utilities.billing.GooglePlayInAppSku2;
+import com.discord.utilities.billing.GooglePlayInAppSkuKt;
 import com.discord.utilities.premium.PremiumUtils;
-import com.discord.utilities.resources.DurationUtils2;
-import com.discord.utilities.resources.DurationUtils3;
+import com.discord.utilities.resources.DurationUnit;
+import com.discord.utilities.resources.DurationUtilsKt;
 import com.discord.utilities.time.TimeUtils;
 import com.discord.utilities.user.UserUtils;
 import com.discord.widgets.notice.WidgetNoticeDialog;
-import d0.Tuples;
-import d0.t.Maps6;
-import d0.z.d.Intrinsics3;
-import d0.z.d.Lambda;
 import java.util.ArrayList;
 import java.util.Locale;
 import java.util.Objects;
 import kotlin.Unit;
 import kotlin.jvm.functions.Function0;
 import kotlin.jvm.functions.Function1;
+import p507d0.C12116o;
+import p507d0.p580t.C12136h0;
+import p507d0.p592z.p594d.AbstractC12240o;
+import p507d0.p592z.p594d.C12238m;
 
 /* JADX INFO: compiled from: GiftingUtils.kt */
 /* JADX INFO: loaded from: classes2.dex */
@@ -59,14 +59,14 @@ public final class GiftingUtils {
         }
     }
 
-    /* JADX INFO: renamed from: com.discord.utilities.gifting.GiftingUtils$buyGift$1, reason: invalid class name */
+    /* JADX INFO: renamed from: com.discord.utilities.gifting.GiftingUtils$buyGift$1 */
     /* JADX INFO: compiled from: GiftingUtils.kt */
-    public static final class AnonymousClass1 extends Lambda implements Function0<Unit> {
+    public static final class C67611 extends AbstractC12240o implements Function0<Unit> {
         public final /* synthetic */ FragmentActivity $activity;
         public final /* synthetic */ BillingFlowParams $billingParams;
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-        public AnonymousClass1(FragmentActivity fragmentActivity, BillingFlowParams billingFlowParams) {
+        public C67611(FragmentActivity fragmentActivity, BillingFlowParams billingFlowParams) {
             super(0);
             this.$activity = fragmentActivity;
             this.$billingParams = billingFlowParams;
@@ -75,7 +75,7 @@ public final class GiftingUtils {
         @Override // kotlin.jvm.functions.Function0
         public /* bridge */ /* synthetic */ Unit invoke() {
             invoke2();
-            return Unit.a;
+            return Unit.f27425a;
         }
 
         /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
@@ -87,40 +87,40 @@ public final class GiftingUtils {
         }
     }
 
-    /* JADX INFO: renamed from: com.discord.utilities.gifting.GiftingUtils$buyGift$2, reason: invalid class name */
+    /* JADX INFO: renamed from: com.discord.utilities.gifting.GiftingUtils$buyGift$2 */
     /* JADX INFO: compiled from: GiftingUtils.kt */
-    public static final class AnonymousClass2 extends Lambda implements Function1<View, Unit> {
+    public static final class C67622 extends AbstractC12240o implements Function1<View, Unit> {
         public final /* synthetic */ GooglePlayInAppSku $inAppSku;
-        public final /* synthetic */ AnonymousClass1 $launchBillingFlow$1;
+        public final /* synthetic */ C67611 $launchBillingFlow$1;
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-        public AnonymousClass2(GooglePlayInAppSku googlePlayInAppSku, AnonymousClass1 anonymousClass1) {
+        public C67622(GooglePlayInAppSku googlePlayInAppSku, C67611 c67611) {
             super(1);
             this.$inAppSku = googlePlayInAppSku;
-            this.$launchBillingFlow$1 = anonymousClass1;
+            this.$launchBillingFlow$1 = c67611;
         }
 
         @Override // kotlin.jvm.functions.Function1
         public /* bridge */ /* synthetic */ Unit invoke(View view) {
             invoke2(view);
-            return Unit.a;
+            return Unit.f27425a;
         }
 
         /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
         public final void invoke2(View view) {
-            Intrinsics3.checkNotNullParameter(view, "it");
+            C12238m.checkNotNullParameter(view, "it");
             StoreStream.INSTANCE.getGooglePlayPurchases().trackPaymentFlowStep(this.$inAppSku.getPaymentGatewaySkuId(), "warning_dialog", "");
             this.$launchBillingFlow$1.invoke2();
         }
     }
 
-    /* JADX INFO: renamed from: com.discord.utilities.gifting.GiftingUtils$buyGift$3, reason: invalid class name */
+    /* JADX INFO: renamed from: com.discord.utilities.gifting.GiftingUtils$buyGift$3 */
     /* JADX INFO: compiled from: GiftingUtils.kt */
-    public static final class AnonymousClass3 extends Lambda implements Function1<View, Unit> {
+    public static final class C67633 extends AbstractC12240o implements Function1<View, Unit> {
         public final /* synthetic */ Function0 $dismissWarningCallback;
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-        public AnonymousClass3(Function0 function0) {
+        public C67633(Function0 function0) {
             super(1);
             this.$dismissWarningCallback = function0;
         }
@@ -128,25 +128,25 @@ public final class GiftingUtils {
         @Override // kotlin.jvm.functions.Function1
         public /* bridge */ /* synthetic */ Unit invoke(View view) {
             invoke2(view);
-            return Unit.a;
+            return Unit.f27425a;
         }
 
         /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
         public final void invoke2(View view) {
-            Intrinsics3.checkNotNullParameter(view, "it");
+            C12238m.checkNotNullParameter(view, "it");
             Function0 function0 = this.$dismissWarningCallback;
             if (function0 != null) {
             }
         }
     }
 
-    /* JADX INFO: renamed from: com.discord.utilities.gifting.GiftingUtils$buyGift$4, reason: invalid class name */
+    /* JADX INFO: renamed from: com.discord.utilities.gifting.GiftingUtils$buyGift$4 */
     /* JADX INFO: compiled from: GiftingUtils.kt */
-    public static final class AnonymousClass4 extends Lambda implements Function0<Unit> {
+    public static final class C67644 extends AbstractC12240o implements Function0<Unit> {
         public final /* synthetic */ Function0 $dismissWarningCallback;
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-        public AnonymousClass4(Function0 function0) {
+        public C67644(Function0 function0) {
             super(0);
             this.$dismissWarningCallback = function0;
         }
@@ -154,7 +154,7 @@ public final class GiftingUtils {
         @Override // kotlin.jvm.functions.Function0
         public /* bridge */ /* synthetic */ Unit invoke() {
             invoke2();
-            return Unit.a;
+            return Unit.f27425a;
         }
 
         /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
@@ -177,9 +177,9 @@ public final class GiftingUtils {
     }
 
     public final void buyGift(FragmentActivity activity, GooglePlayInAppSku inAppSku, Traits.Location location, Function0<Unit> dismissWarningCallback) throws Exception {
-        Intrinsics3.checkNotNullParameter(activity, ActivityChooserModel.ATTRIBUTE_ACTIVITY);
-        Intrinsics3.checkNotNullParameter(inAppSku, "inAppSku");
-        Intrinsics3.checkNotNullParameter(location, ModelAuditLogEntry.CHANGE_KEY_LOCATION);
+        C12238m.checkNotNullParameter(activity, ActivityChooserModel.ATTRIBUTE_ACTIVITY);
+        C12238m.checkNotNullParameter(inAppSku, "inAppSku");
+        C12238m.checkNotNullParameter(location, ModelAuditLogEntry.CHANGE_KEY_LOCATION);
         SkuDetails skuDetails = inAppSku.getSkuDetails();
         if (skuDetails == null) {
             throw new Exception("No skuDetails for " + inAppSku);
@@ -190,13 +190,13 @@ public final class GiftingUtils {
         if (obfuscatedUserId == null) {
             throw new Exception("No current user ID");
         }
-        BillingFlowParams.a aVar = new BillingFlowParams.a();
+        BillingFlowParams.C5412a c5412a = new BillingFlowParams.C5412a();
         ArrayList<SkuDetails> arrayList = new ArrayList<>();
         arrayList.add(skuDetails);
-        aVar.d = arrayList;
-        aVar.a = obfuscatedUserId;
-        BillingFlowParams billingFlowParamsA = aVar.a();
-        Intrinsics3.checkNotNullExpressionValue(billingFlowParamsA, "BillingFlowParams\n      …dUserId)\n        .build()");
+        c5412a.f14556d = arrayList;
+        c5412a.f14553a = obfuscatedUserId;
+        BillingFlowParams billingFlowParamsM7495a = c5412a.m7495a();
+        C12238m.checkNotNullExpressionValue(billingFlowParamsM7495a, "BillingFlowParams\n      …dUserId)\n        .build()");
         Long skuId = inAppSku.getSkuId();
         if (skuId == null) {
             throw new Exception("No skuId for " + inAppSku);
@@ -205,74 +205,74 @@ public final class GiftingUtils {
         StoreGooglePlayPurchases googlePlayPurchases = companion.getGooglePlayPurchases();
         String paymentGatewaySkuId = inAppSku.getPaymentGatewaySkuId();
         int id2 = SkuTypes.SUBSCRIPTION.getId();
-        String strA = skuDetails.a();
-        Intrinsics3.checkNotNullExpressionValue(strA, "skuDetails.description");
-        Traits.StoreSku storeSku = new Traits.StoreSku(jLongValue, id2, 521842831262875670L, strA);
+        String strM7500a = skuDetails.m7500a();
+        C12238m.checkNotNullExpressionValue(strM7500a, "skuDetails.description");
+        Traits.StoreSku storeSku = new Traits.StoreSku(jLongValue, id2, 521842831262875670L, strM7500a);
         PremiumUtils premiumUtils = PremiumUtils.INSTANCE;
-        int iMicroAmountToMinor = premiumUtils.microAmountToMinor(skuDetails.c());
-        int iMicroAmountToMinor2 = premiumUtils.microAmountToMinor(skuDetails.f2006b.has("original_price_micros") ? skuDetails.f2006b.optLong("original_price_micros") : skuDetails.c());
-        String strOptString = skuDetails.f2006b.optString("price_currency_code");
-        Intrinsics3.checkNotNullExpressionValue(strOptString, "skuDetails.priceCurrencyCode");
+        int iMicroAmountToMinor = premiumUtils.microAmountToMinor(skuDetails.m7502c());
+        int iMicroAmountToMinor2 = premiumUtils.microAmountToMinor(skuDetails.f14567b.has("original_price_micros") ? skuDetails.f14567b.optLong("original_price_micros") : skuDetails.m7502c());
+        String strOptString = skuDetails.f14567b.optString("price_currency_code");
+        C12238m.checkNotNullExpressionValue(strOptString, "skuDetails.priceCurrencyCode");
         Locale locale = Locale.ROOT;
-        Intrinsics3.checkNotNullExpressionValue(locale, "Locale.ROOT");
+        C12238m.checkNotNullExpressionValue(locale, "Locale.ROOT");
         Objects.requireNonNull(strOptString, "null cannot be cast to non-null type java.lang.String");
         String lowerCase = strOptString.toLowerCase(locale);
-        Intrinsics3.checkNotNullExpressionValue(lowerCase, "(this as java.lang.String).toLowerCase(locale)");
+        C12238m.checkNotNullExpressionValue(lowerCase, "(this as java.lang.String).toLowerCase(locale)");
         googlePlayPurchases.trackPaymentFlowStarted(paymentGatewaySkuId, jLongValue, location, storeSku, new Traits.Payment(Traits.Payment.Type.SUBSCRIPTION, iMicroAmountToMinor, iMicroAmountToMinor2, lowerCase, true));
-        AnonymousClass1 anonymousClass1 = new AnonymousClass1(activity, billingFlowParamsA);
+        C67611 c67611 = new C67611(activity, billingFlowParamsM7495a);
         if (companion.getGooglePlayPurchases().hasSeenGiftingWarning()) {
-            anonymousClass1.invoke2();
+            c67611.invoke2();
             return;
         }
         WidgetNoticeDialog.Companion companion2 = WidgetNoticeDialog.INSTANCE;
         FragmentManager supportFragmentManager = activity.getSupportFragmentManager();
-        Intrinsics3.checkNotNullExpressionValue(supportFragmentManager, "activity.supportFragmentManager");
-        String string = activity.getString(R.string.dialog_just_so_you_know);
-        String string2 = activity.getString(R.string.gift_purchase_google_play_notice_extended);
-        Intrinsics3.checkNotNullExpressionValue(string2, "activity.getString(R.str…gle_play_notice_extended)");
-        WidgetNoticeDialog.Companion.show$default(companion2, supportFragmentManager, string, string2, activity.getString(R.string.application_store_buy_gift), activity.getString(R.string.nevermind), Maps6.mapOf(Tuples.to(Integer.valueOf(R.id.notice_ok), new AnonymousClass2(inAppSku, anonymousClass1)), Tuples.to(Integer.valueOf(R.id.notice_cancel), new AnonymousClass3(dismissWarningCallback))), null, null, null, null, null, null, 0, new AnonymousClass4(dismissWarningCallback), 8128, null);
+        C12238m.checkNotNullExpressionValue(supportFragmentManager, "activity.supportFragmentManager");
+        String string = activity.getString(C5419R.string.dialog_just_so_you_know);
+        String string2 = activity.getString(C5419R.string.gift_purchase_google_play_notice_extended);
+        C12238m.checkNotNullExpressionValue(string2, "activity.getString(R.str…gle_play_notice_extended)");
+        WidgetNoticeDialog.Companion.show$default(companion2, supportFragmentManager, string, string2, activity.getString(C5419R.string.application_store_buy_gift), activity.getString(C5419R.string.nevermind), C12136h0.mapOf(C12116o.m10073to(Integer.valueOf(C5419R.id.notice_ok), new C67622(inAppSku, c67611)), C12116o.m10073to(Integer.valueOf(C5419R.id.notice_cancel), new C67633(dismissWarningCallback))), null, null, null, null, null, null, 0, new C67644(dismissWarningCallback), 8128, null);
         companion.getGooglePlayPurchases().markViewedGiftingWarning();
     }
 
     public final String generateGiftUrl(String giftCode) {
-        Intrinsics3.checkNotNullParameter(giftCode, "giftCode");
+        C12238m.checkNotNullParameter(giftCode, "giftCode");
         return "https://discord.gift/" + giftCode;
     }
 
     public final Integer getIconForSku(GooglePlayInAppSku inAppSku) {
-        Intrinsics3.checkNotNullParameter(inAppSku, "inAppSku");
-        if (Intrinsics3.areEqual(inAppSku, GooglePlayInAppSku2.getPremiumTier1Month())) {
-            return Integer.valueOf(R.drawable.ic_plan_premium_tier_1);
+        C12238m.checkNotNullParameter(inAppSku, "inAppSku");
+        if (C12238m.areEqual(inAppSku, GooglePlayInAppSkuKt.getPremiumTier1Month())) {
+            return Integer.valueOf(C5419R.drawable.ic_plan_premium_tier_1);
         }
-        if (Intrinsics3.areEqual(inAppSku, GooglePlayInAppSku2.getPremiumTier1Year())) {
-            return Integer.valueOf(R.drawable.ic_plan_premium_tier_1_year);
+        if (C12238m.areEqual(inAppSku, GooglePlayInAppSkuKt.getPremiumTier1Year())) {
+            return Integer.valueOf(C5419R.drawable.ic_plan_premium_tier_1_year);
         }
-        if (Intrinsics3.areEqual(inAppSku, GooglePlayInAppSku2.getPremiumTier2Month())) {
-            return Integer.valueOf(R.drawable.ic_plan_premium_tier_2);
+        if (C12238m.areEqual(inAppSku, GooglePlayInAppSkuKt.getPremiumTier2Month())) {
+            return Integer.valueOf(C5419R.drawable.ic_plan_premium_tier_2);
         }
-        if (Intrinsics3.areEqual(inAppSku, GooglePlayInAppSku2.getPremiumTier2Year())) {
-            return Integer.valueOf(R.drawable.ic_plan_premium_tier_2_year);
+        if (C12238m.areEqual(inAppSku, GooglePlayInAppSkuKt.getPremiumTier2Year())) {
+            return Integer.valueOf(C5419R.drawable.ic_plan_premium_tier_2_year);
         }
         return null;
     }
 
     public final PremiumTier getTierForSku(Long skuId) {
-        if (skuId != null && skuId.longValue() == ModelSku4.PREMIUM_TIER_1_SKU_ID) {
+        if (skuId != null && skuId.longValue() == ModelSkuKt.PREMIUM_TIER_1_SKU_ID) {
             return PremiumTier.TIER_1;
         }
-        if (skuId != null && skuId.longValue() == ModelSku4.PREMIUM_TIER_2_SKU_ID) {
+        if (skuId != null && skuId.longValue() == ModelSkuKt.PREMIUM_TIER_2_SKU_ID) {
             return PremiumTier.TIER_2;
         }
         return null;
     }
 
     public final CharSequence getTimeString(long millis, Context context) {
-        Intrinsics3.checkNotNullParameter(context, "context");
+        C12238m.checkNotNullParameter(context, "context");
         TimeUtils timeUtils = TimeUtils.INSTANCE;
         int hoursFromMillis = timeUtils.getHoursFromMillis(millis);
         if (hoursFromMillis > 0) {
-            return DurationUtils3.formatDuration(context, DurationUtils2.HOURS, hoursFromMillis);
+            return DurationUtilsKt.formatDuration(context, DurationUnit.HOURS, hoursFromMillis);
         }
-        return DurationUtils3.formatDuration(context, DurationUtils2.MINS, timeUtils.getMinutesFromMillis(millis));
+        return DurationUtilsKt.formatDuration(context, DurationUnit.MINS, timeUtils.getMinutesFromMillis(millis));
     }
 }

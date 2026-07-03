@@ -14,8 +14,8 @@ import androidx.annotation.RestrictTo;
 import androidx.fragment.app.FragmentTransaction;
 import androidx.recyclerview.widget.ItemTouchHelper;
 import androidx.recyclerview.widget.RecyclerView;
-import b.d.b.a.outline;
 import java.util.List;
+import p007b.p100d.p104b.p105a.C1643a;
 
 /* JADX INFO: loaded from: classes.dex */
 public class LinearLayoutManager extends RecyclerView.LayoutManager implements ItemTouchHelper.ViewDropHandler, RecyclerView.SmoothScroller.ScrollVectorProvider {
@@ -112,16 +112,16 @@ public class LinearLayoutManager extends RecyclerView.LayoutManager implements I
         }
 
         public String toString() {
-            StringBuilder sbU = outline.U("AnchorInfo{mPosition=");
-            sbU.append(this.mPosition);
-            sbU.append(", mCoordinate=");
-            sbU.append(this.mCoordinate);
-            sbU.append(", mLayoutFromEnd=");
-            sbU.append(this.mLayoutFromEnd);
-            sbU.append(", mValid=");
-            sbU.append(this.mValid);
-            sbU.append('}');
-            return sbU.toString();
+            StringBuilder sbM833U = C1643a.m833U("AnchorInfo{mPosition=");
+            sbM833U.append(this.mPosition);
+            sbM833U.append(", mCoordinate=");
+            sbM833U.append(this.mCoordinate);
+            sbM833U.append(", mLayoutFromEnd=");
+            sbM833U.append(this.mLayoutFromEnd);
+            sbM833U.append(", mValid=");
+            sbM833U.append(this.mValid);
+            sbM833U.append('}');
+            return sbM833U.toString();
         }
     }
 
@@ -184,17 +184,17 @@ public class LinearLayoutManager extends RecyclerView.LayoutManager implements I
         }
 
         public void log() {
-            StringBuilder sbU = outline.U("avail:");
-            sbU.append(this.mAvailable);
-            sbU.append(", ind:");
-            sbU.append(this.mCurrentPosition);
-            sbU.append(", dir:");
-            sbU.append(this.mItemDirection);
-            sbU.append(", offset:");
-            sbU.append(this.mOffset);
-            sbU.append(", layoutDir:");
-            sbU.append(this.mLayoutDirection);
-            Log.d(TAG, sbU.toString());
+            StringBuilder sbM833U = C1643a.m833U("avail:");
+            sbM833U.append(this.mAvailable);
+            sbM833U.append(", ind:");
+            sbM833U.append(this.mCurrentPosition);
+            sbM833U.append(", dir:");
+            sbM833U.append(this.mItemDirection);
+            sbM833U.append(", offset:");
+            sbM833U.append(this.mOffset);
+            sbM833U.append(", layoutDir:");
+            sbM833U.append(this.mLayoutDirection);
+            Log.d(TAG, sbM833U.toString());
         }
 
         public View next(RecyclerView.Recycler recycler) {
@@ -416,11 +416,11 @@ public class LinearLayoutManager extends RecyclerView.LayoutManager implements I
         Log.d(TAG, "internal representation of views on the screen");
         for (int i = 0; i < getChildCount(); i++) {
             View childAt = getChildAt(i);
-            StringBuilder sbU = outline.U("item ");
-            sbU.append(getPosition(childAt));
-            sbU.append(", coord:");
-            sbU.append(this.mOrientationHelper.getDecoratedStart(childAt));
-            Log.d(TAG, sbU.toString());
+            StringBuilder sbM833U = C1643a.m833U("item ");
+            sbM833U.append(getPosition(childAt));
+            sbM833U.append(", coord:");
+            sbM833U.append(this.mOrientationHelper.getDecoratedStart(childAt));
+            Log.d(TAG, sbM833U.toString());
         }
         Log.d(TAG, "==============");
     }
@@ -1449,7 +1449,7 @@ public class LinearLayoutManager extends RecyclerView.LayoutManager implements I
 
     public void setOrientation(int i) {
         if (i != 0 && i != 1) {
-            throw new IllegalArgumentException(outline.q("invalid orientation:", i));
+            throw new IllegalArgumentException(C1643a.m871q("invalid orientation:", i));
         }
         assertNotInLayoutOrScroll(null);
         if (i != this.mOrientation || this.mOrientationHelper == null) {
@@ -1505,9 +1505,9 @@ public class LinearLayoutManager extends RecyclerView.LayoutManager implements I
     }
 
     public void validateChildOrder() {
-        StringBuilder sbU = outline.U("validating child count ");
-        sbU.append(getChildCount());
-        Log.d(TAG, sbU.toString());
+        StringBuilder sbM833U = C1643a.m833U("validating child count ");
+        sbM833U.append(getChildCount());
+        Log.d(TAG, sbM833U.toString());
         if (getChildCount() < 1) {
             return;
         }
@@ -1520,9 +1520,9 @@ public class LinearLayoutManager extends RecyclerView.LayoutManager implements I
                 int decoratedStart2 = this.mOrientationHelper.getDecoratedStart(childAt);
                 if (position2 < position) {
                     logChildren();
-                    StringBuilder sbU2 = outline.U("detected invalid position. loc invalid? ");
-                    sbU2.append(decoratedStart2 < decoratedStart);
-                    throw new RuntimeException(sbU2.toString());
+                    StringBuilder sbM833U2 = C1643a.m833U("detected invalid position. loc invalid? ");
+                    sbM833U2.append(decoratedStart2 < decoratedStart);
+                    throw new RuntimeException(sbM833U2.toString());
                 }
                 if (decoratedStart2 > decoratedStart) {
                     logChildren();
@@ -1537,9 +1537,9 @@ public class LinearLayoutManager extends RecyclerView.LayoutManager implements I
             int decoratedStart3 = this.mOrientationHelper.getDecoratedStart(childAt2);
             if (position3 < position) {
                 logChildren();
-                StringBuilder sbU3 = outline.U("detected invalid position. loc invalid? ");
-                sbU3.append(decoratedStart3 < decoratedStart);
-                throw new RuntimeException(sbU3.toString());
+                StringBuilder sbM833U3 = C1643a.m833U("detected invalid position. loc invalid? ");
+                sbM833U3.append(decoratedStart3 < decoratedStart);
+                throw new RuntimeException(sbM833U3.toString());
             }
             if (decoratedStart3 < decoratedStart) {
                 logChildren();

@@ -1,16 +1,16 @@
 package com.discord.analytics.generated.events;
 
-import b.d.b.a.outline;
 import com.discord.analytics.generated.traits.TrackBase;
-import com.discord.analytics.generated.traits.TrackBase2;
+import com.discord.analytics.generated.traits.TrackBaseReceiver;
 import com.discord.analytics.generated.traits.TrackChannel;
-import com.discord.analytics.generated.traits.TrackChannel2;
+import com.discord.analytics.generated.traits.TrackChannelReceiver;
 import com.discord.api.science.AnalyticsSchema;
-import d0.z.d.Intrinsics3;
+import p007b.p100d.p104b.p105a.C1643a;
+import p507d0.p592z.p594d.C12238m;
 
 /* JADX INFO: compiled from: TrackDmEmptyAction.kt */
 /* JADX INFO: loaded from: classes.dex */
-public final /* data */ class TrackDmEmptyAction implements AnalyticsSchema, TrackBase2, TrackChannel2 {
+public final /* data */ class TrackDmEmptyAction implements AnalyticsSchema, TrackBaseReceiver, TrackChannelReceiver {
     private TrackBase trackBase;
     private TrackChannel trackChannel;
     private final CharSequence source = null;
@@ -31,7 +31,7 @@ public final /* data */ class TrackDmEmptyAction implements AnalyticsSchema, Tra
             return false;
         }
         TrackDmEmptyAction trackDmEmptyAction = (TrackDmEmptyAction) other;
-        return Intrinsics3.areEqual(this.source, trackDmEmptyAction.source) && Intrinsics3.areEqual(this.type, trackDmEmptyAction.type);
+        return C12238m.areEqual(this.source, trackDmEmptyAction.source) && C12238m.areEqual(this.type, trackDmEmptyAction.type);
     }
 
     public int hashCode() {
@@ -42,9 +42,9 @@ public final /* data */ class TrackDmEmptyAction implements AnalyticsSchema, Tra
     }
 
     public String toString() {
-        StringBuilder sbU = outline.U("TrackDmEmptyAction(source=");
-        sbU.append(this.source);
-        sbU.append(", type=");
-        return outline.E(sbU, this.type, ")");
+        StringBuilder sbM833U = C1643a.m833U("TrackDmEmptyAction(source=");
+        sbM833U.append(this.source);
+        sbM833U.append(", type=");
+        return C1643a.m817E(sbM833U, this.type, ")");
     }
 }

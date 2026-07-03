@@ -1,14 +1,14 @@
 package com.discord.analytics.generated.events;
 
-import b.d.b.a.outline;
 import com.discord.analytics.generated.traits.TrackBase;
-import com.discord.analytics.generated.traits.TrackBase2;
+import com.discord.analytics.generated.traits.TrackBaseReceiver;
 import com.discord.api.science.AnalyticsSchema;
-import d0.z.d.Intrinsics3;
+import p007b.p100d.p104b.p105a.C1643a;
+import p507d0.p592z.p594d.C12238m;
 
 /* JADX INFO: compiled from: TrackCallReportProblem.kt */
 /* JADX INFO: loaded from: classes.dex */
-public final /* data */ class TrackCallReportProblem implements AnalyticsSchema, TrackBase2 {
+public final /* data */ class TrackCallReportProblem implements AnalyticsSchema, TrackBaseReceiver {
     private TrackBase trackBase;
     private final Long channelId = null;
     private final Long channelType = null;
@@ -53,7 +53,7 @@ public final /* data */ class TrackCallReportProblem implements AnalyticsSchema,
             return false;
         }
         TrackCallReportProblem trackCallReportProblem = (TrackCallReportProblem) other;
-        return Intrinsics3.areEqual(this.channelId, trackCallReportProblem.channelId) && Intrinsics3.areEqual(this.channelType, trackCallReportProblem.channelType) && Intrinsics3.areEqual(this.guildId, trackCallReportProblem.guildId) && Intrinsics3.areEqual(this.rtcConnectionId, trackCallReportProblem.rtcConnectionId) && Intrinsics3.areEqual(this.duration, trackCallReportProblem.duration) && Intrinsics3.areEqual(this.voiceStateCount, trackCallReportProblem.voiceStateCount) && Intrinsics3.areEqual(this.videoStreamCount, trackCallReportProblem.videoStreamCount) && Intrinsics3.areEqual(this.videoEnabled, trackCallReportProblem.videoEnabled) && Intrinsics3.areEqual(this.mediaSessionId, trackCallReportProblem.mediaSessionId) && Intrinsics3.areEqual(this.rating, trackCallReportProblem.rating) && Intrinsics3.areEqual(this.feedback, trackCallReportProblem.feedback) && Intrinsics3.areEqual(this.reasonCode, trackCallReportProblem.reasonCode) && Intrinsics3.areEqual(this.reasonDescription, trackCallReportProblem.reasonDescription) && Intrinsics3.areEqual(this.audioInputMode, trackCallReportProblem.audioInputMode) && Intrinsics3.areEqual(this.automaticAudioInputSensitivityEnabled, trackCallReportProblem.automaticAudioInputSensitivityEnabled) && Intrinsics3.areEqual(this.audioInputSensitivity, trackCallReportProblem.audioInputSensitivity) && Intrinsics3.areEqual(this.echoCancellationEnabled, trackCallReportProblem.echoCancellationEnabled) && Intrinsics3.areEqual(this.noiseSuppressionEnabled, trackCallReportProblem.noiseSuppressionEnabled) && Intrinsics3.areEqual(this.noiseCancellationEnabled, trackCallReportProblem.noiseCancellationEnabled) && Intrinsics3.areEqual(this.automaticGainControlEnabled, trackCallReportProblem.automaticGainControlEnabled) && Intrinsics3.areEqual(this.audioOutputMode, trackCallReportProblem.audioOutputMode) && Intrinsics3.areEqual(this.voiceOutputVolume, trackCallReportProblem.voiceOutputVolume) && Intrinsics3.areEqual(this.videoHardwareScalingEnabled, trackCallReportProblem.videoHardwareScalingEnabled) && Intrinsics3.areEqual(this.audioMode, trackCallReportProblem.audioMode) && Intrinsics3.areEqual(this.inputDeviceName, trackCallReportProblem.inputDeviceName) && Intrinsics3.areEqual(this.outputDeviceName, trackCallReportProblem.outputDeviceName) && Intrinsics3.areEqual(this.videoDeviceName, trackCallReportProblem.videoDeviceName);
+        return C12238m.areEqual(this.channelId, trackCallReportProblem.channelId) && C12238m.areEqual(this.channelType, trackCallReportProblem.channelType) && C12238m.areEqual(this.guildId, trackCallReportProblem.guildId) && C12238m.areEqual(this.rtcConnectionId, trackCallReportProblem.rtcConnectionId) && C12238m.areEqual(this.duration, trackCallReportProblem.duration) && C12238m.areEqual(this.voiceStateCount, trackCallReportProblem.voiceStateCount) && C12238m.areEqual(this.videoStreamCount, trackCallReportProblem.videoStreamCount) && C12238m.areEqual(this.videoEnabled, trackCallReportProblem.videoEnabled) && C12238m.areEqual(this.mediaSessionId, trackCallReportProblem.mediaSessionId) && C12238m.areEqual(this.rating, trackCallReportProblem.rating) && C12238m.areEqual(this.feedback, trackCallReportProblem.feedback) && C12238m.areEqual(this.reasonCode, trackCallReportProblem.reasonCode) && C12238m.areEqual(this.reasonDescription, trackCallReportProblem.reasonDescription) && C12238m.areEqual(this.audioInputMode, trackCallReportProblem.audioInputMode) && C12238m.areEqual(this.automaticAudioInputSensitivityEnabled, trackCallReportProblem.automaticAudioInputSensitivityEnabled) && C12238m.areEqual(this.audioInputSensitivity, trackCallReportProblem.audioInputSensitivity) && C12238m.areEqual(this.echoCancellationEnabled, trackCallReportProblem.echoCancellationEnabled) && C12238m.areEqual(this.noiseSuppressionEnabled, trackCallReportProblem.noiseSuppressionEnabled) && C12238m.areEqual(this.noiseCancellationEnabled, trackCallReportProblem.noiseCancellationEnabled) && C12238m.areEqual(this.automaticGainControlEnabled, trackCallReportProblem.automaticGainControlEnabled) && C12238m.areEqual(this.audioOutputMode, trackCallReportProblem.audioOutputMode) && C12238m.areEqual(this.voiceOutputVolume, trackCallReportProblem.voiceOutputVolume) && C12238m.areEqual(this.videoHardwareScalingEnabled, trackCallReportProblem.videoHardwareScalingEnabled) && C12238m.areEqual(this.audioMode, trackCallReportProblem.audioMode) && C12238m.areEqual(this.inputDeviceName, trackCallReportProblem.inputDeviceName) && C12238m.areEqual(this.outputDeviceName, trackCallReportProblem.outputDeviceName) && C12238m.areEqual(this.videoDeviceName, trackCallReportProblem.videoDeviceName);
     }
 
     public int hashCode() {
@@ -114,59 +114,59 @@ public final /* data */ class TrackCallReportProblem implements AnalyticsSchema,
     }
 
     public String toString() {
-        StringBuilder sbU = outline.U("TrackCallReportProblem(channelId=");
-        sbU.append(this.channelId);
-        sbU.append(", channelType=");
-        sbU.append(this.channelType);
-        sbU.append(", guildId=");
-        sbU.append(this.guildId);
-        sbU.append(", rtcConnectionId=");
-        sbU.append(this.rtcConnectionId);
-        sbU.append(", duration=");
-        sbU.append(this.duration);
-        sbU.append(", voiceStateCount=");
-        sbU.append(this.voiceStateCount);
-        sbU.append(", videoStreamCount=");
-        sbU.append(this.videoStreamCount);
-        sbU.append(", videoEnabled=");
-        sbU.append(this.videoEnabled);
-        sbU.append(", mediaSessionId=");
-        sbU.append(this.mediaSessionId);
-        sbU.append(", rating=");
-        sbU.append(this.rating);
-        sbU.append(", feedback=");
-        sbU.append(this.feedback);
-        sbU.append(", reasonCode=");
-        sbU.append(this.reasonCode);
-        sbU.append(", reasonDescription=");
-        sbU.append(this.reasonDescription);
-        sbU.append(", audioInputMode=");
-        sbU.append(this.audioInputMode);
-        sbU.append(", automaticAudioInputSensitivityEnabled=");
-        sbU.append(this.automaticAudioInputSensitivityEnabled);
-        sbU.append(", audioInputSensitivity=");
-        sbU.append(this.audioInputSensitivity);
-        sbU.append(", echoCancellationEnabled=");
-        sbU.append(this.echoCancellationEnabled);
-        sbU.append(", noiseSuppressionEnabled=");
-        sbU.append(this.noiseSuppressionEnabled);
-        sbU.append(", noiseCancellationEnabled=");
-        sbU.append(this.noiseCancellationEnabled);
-        sbU.append(", automaticGainControlEnabled=");
-        sbU.append(this.automaticGainControlEnabled);
-        sbU.append(", audioOutputMode=");
-        sbU.append(this.audioOutputMode);
-        sbU.append(", voiceOutputVolume=");
-        sbU.append(this.voiceOutputVolume);
-        sbU.append(", videoHardwareScalingEnabled=");
-        sbU.append(this.videoHardwareScalingEnabled);
-        sbU.append(", audioMode=");
-        sbU.append(this.audioMode);
-        sbU.append(", inputDeviceName=");
-        sbU.append(this.inputDeviceName);
-        sbU.append(", outputDeviceName=");
-        sbU.append(this.outputDeviceName);
-        sbU.append(", videoDeviceName=");
-        return outline.E(sbU, this.videoDeviceName, ")");
+        StringBuilder sbM833U = C1643a.m833U("TrackCallReportProblem(channelId=");
+        sbM833U.append(this.channelId);
+        sbM833U.append(", channelType=");
+        sbM833U.append(this.channelType);
+        sbM833U.append(", guildId=");
+        sbM833U.append(this.guildId);
+        sbM833U.append(", rtcConnectionId=");
+        sbM833U.append(this.rtcConnectionId);
+        sbM833U.append(", duration=");
+        sbM833U.append(this.duration);
+        sbM833U.append(", voiceStateCount=");
+        sbM833U.append(this.voiceStateCount);
+        sbM833U.append(", videoStreamCount=");
+        sbM833U.append(this.videoStreamCount);
+        sbM833U.append(", videoEnabled=");
+        sbM833U.append(this.videoEnabled);
+        sbM833U.append(", mediaSessionId=");
+        sbM833U.append(this.mediaSessionId);
+        sbM833U.append(", rating=");
+        sbM833U.append(this.rating);
+        sbM833U.append(", feedback=");
+        sbM833U.append(this.feedback);
+        sbM833U.append(", reasonCode=");
+        sbM833U.append(this.reasonCode);
+        sbM833U.append(", reasonDescription=");
+        sbM833U.append(this.reasonDescription);
+        sbM833U.append(", audioInputMode=");
+        sbM833U.append(this.audioInputMode);
+        sbM833U.append(", automaticAudioInputSensitivityEnabled=");
+        sbM833U.append(this.automaticAudioInputSensitivityEnabled);
+        sbM833U.append(", audioInputSensitivity=");
+        sbM833U.append(this.audioInputSensitivity);
+        sbM833U.append(", echoCancellationEnabled=");
+        sbM833U.append(this.echoCancellationEnabled);
+        sbM833U.append(", noiseSuppressionEnabled=");
+        sbM833U.append(this.noiseSuppressionEnabled);
+        sbM833U.append(", noiseCancellationEnabled=");
+        sbM833U.append(this.noiseCancellationEnabled);
+        sbM833U.append(", automaticGainControlEnabled=");
+        sbM833U.append(this.automaticGainControlEnabled);
+        sbM833U.append(", audioOutputMode=");
+        sbM833U.append(this.audioOutputMode);
+        sbM833U.append(", voiceOutputVolume=");
+        sbM833U.append(this.voiceOutputVolume);
+        sbM833U.append(", videoHardwareScalingEnabled=");
+        sbM833U.append(this.videoHardwareScalingEnabled);
+        sbM833U.append(", audioMode=");
+        sbM833U.append(this.audioMode);
+        sbM833U.append(", inputDeviceName=");
+        sbM833U.append(this.inputDeviceName);
+        sbM833U.append(", outputDeviceName=");
+        sbM833U.append(this.outputDeviceName);
+        sbM833U.append(", videoDeviceName=");
+        return C1643a.m817E(sbM833U, this.videoDeviceName, ")");
     }
 }

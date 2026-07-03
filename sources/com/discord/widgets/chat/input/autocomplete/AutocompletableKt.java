@@ -1,15 +1,15 @@
 package com.discord.widgets.chat.input.autocomplete;
 
-import d0.z.d.Intrinsics3;
 import java.util.Locale;
 import java.util.Objects;
 import kotlin.NoWhenBranchMatchedException;
+import p507d0.p592z.p594d.C12238m;
 
 /* JADX INFO: compiled from: Autocompletable.kt */
 /* JADX INFO: loaded from: classes2.dex */
 public final class AutocompletableKt {
     public static final int getSortIndex(Autocompletable autocompletable) {
-        Intrinsics3.checkNotNullParameter(autocompletable, "$this$getSortIndex");
+        C12238m.checkNotNullParameter(autocompletable, "$this$getSortIndex");
         if (autocompletable instanceof UserAutocompletable) {
             return 0;
         }
@@ -45,10 +45,10 @@ public final class AutocompletableKt {
 
     private static final String lower(String str) {
         Locale locale = Locale.getDefault();
-        Intrinsics3.checkNotNullExpressionValue(locale, "Locale.getDefault()");
+        C12238m.checkNotNullExpressionValue(locale, "Locale.getDefault()");
         Objects.requireNonNull(str, "null cannot be cast to non-null type java.lang.String");
         String lowerCase = str.toLowerCase(locale);
-        Intrinsics3.checkNotNullExpressionValue(lowerCase, "(this as java.lang.String).toLowerCase(locale)");
+        C12238m.checkNotNullExpressionValue(lowerCase, "(this as java.lang.String).toLowerCase(locale)");
         return lowerCase;
     }
 }

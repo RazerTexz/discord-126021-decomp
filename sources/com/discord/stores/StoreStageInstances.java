@@ -5,11 +5,7 @@ import com.discord.api.guild.Guild;
 import com.discord.api.stageinstance.StageInstance;
 import com.discord.models.domain.ModelPayload;
 import com.discord.stores.updates.ObservationDeck;
-import com.discord.stores.updates.ObservationDeck4;
-import d0.t.Maps6;
-import d0.t.Sets5;
-import d0.z.d.Intrinsics3;
-import d0.z.d.Lambda;
+import com.discord.stores.updates.ObservationDeckProvider;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.LinkedHashMap;
@@ -18,7 +14,11 @@ import java.util.Map;
 import java.util.Set;
 import kotlin.jvm.functions.Function0;
 import kotlin.jvm.internal.DefaultConstructorMarker;
-import rx.Observable;
+import p507d0.p580t.C12136h0;
+import p507d0.p580t.C12148n0;
+import p507d0.p592z.p594d.AbstractC12240o;
+import p507d0.p592z.p594d.C12238m;
+import p658rx.Observable;
 
 /* JADX INFO: compiled from: StoreStageInstances.kt */
 /* JADX INFO: loaded from: classes2.dex */
@@ -29,13 +29,13 @@ public final class StoreStageInstances extends StoreV2 {
     private final Map<Long, Map<Long, StageInstance>> stageInstancesByGuild;
     private Map<Long, ? extends Map<Long, StageInstance>> stageInstancesByGuildSnapshot;
 
-    /* JADX INFO: renamed from: com.discord.stores.StoreStageInstances$observeStageInstanceForChannel$1, reason: invalid class name */
+    /* JADX INFO: renamed from: com.discord.stores.StoreStageInstances$observeStageInstanceForChannel$1 */
     /* JADX INFO: compiled from: StoreStageInstances.kt */
-    public static final class AnonymousClass1 extends Lambda implements Function0<StageInstance> {
+    public static final class C64201 extends AbstractC12240o implements Function0<StageInstance> {
         public final /* synthetic */ long $channelId;
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-        public AnonymousClass1(long j) {
+        public C64201(long j) {
             super(0);
             this.$channelId = j;
         }
@@ -47,10 +47,10 @@ public final class StoreStageInstances extends StoreV2 {
         }
     }
 
-    /* JADX INFO: renamed from: com.discord.stores.StoreStageInstances$observeStageInstances$1, reason: invalid class name */
+    /* JADX INFO: renamed from: com.discord.stores.StoreStageInstances$observeStageInstances$1 */
     /* JADX INFO: compiled from: StoreStageInstances.kt */
-    public static final class AnonymousClass1 extends Lambda implements Function0<Map<Long, ? extends StageInstance>> {
-        public AnonymousClass1() {
+    public static final class C64211 extends AbstractC12240o implements Function0<Map<Long, ? extends StageInstance>> {
+        public C64211() {
             super(0);
         }
 
@@ -60,13 +60,13 @@ public final class StoreStageInstances extends StoreV2 {
         }
     }
 
-    /* JADX INFO: renamed from: com.discord.stores.StoreStageInstances$observeStageInstancesForGuild$1, reason: invalid class name */
+    /* JADX INFO: renamed from: com.discord.stores.StoreStageInstances$observeStageInstancesForGuild$1 */
     /* JADX INFO: compiled from: StoreStageInstances.kt */
-    public static final class AnonymousClass1 extends Lambda implements Function0<Map<Long, ? extends StageInstance>> {
+    public static final class C64221 extends AbstractC12240o implements Function0<Map<Long, ? extends StageInstance>> {
         public final /* synthetic */ long $guildId;
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-        public AnonymousClass1(long j) {
+        public C64221(long j) {
             super(0);
             this.$guildId = j;
         }
@@ -83,7 +83,7 @@ public final class StoreStageInstances extends StoreV2 {
     }
 
     public /* synthetic */ StoreStageInstances(ObservationDeck observationDeck, int i, DefaultConstructorMarker defaultConstructorMarker) {
-        this((i & 1) != 0 ? ObservationDeck4.get() : observationDeck);
+        this((i & 1) != 0 ? ObservationDeckProvider.get() : observationDeck);
     }
 
     private final void handleDelete(Long guildId, long channelId) {
@@ -126,53 +126,53 @@ public final class StoreStageInstances extends StoreV2 {
 
     public final Map<Long, StageInstance> getStageInstancesForGuild(long guildId) {
         Map<Long, StageInstance> map = this.stageInstancesByGuildSnapshot.get(Long.valueOf(guildId));
-        return map != null ? map : Maps6.emptyMap();
+        return map != null ? map : C12136h0.emptyMap();
     }
 
-    @Store3
+    @StoreThread
     public final Map<Long, StageInstance> getStageInstancesForGuildInternal(long guildId) {
         Map<Long, StageInstance> map = this.stageInstancesByGuild.get(Long.valueOf(guildId));
-        return map != null ? map : Maps6.emptyMap();
+        return map != null ? map : C12136h0.emptyMap();
     }
 
-    @Store3
+    @StoreThread
     public final void handleChannelDelete(Channel channel) {
-        Intrinsics3.checkNotNullParameter(channel, "channel");
+        C12238m.checkNotNullParameter(channel, "channel");
         handleDelete(Long.valueOf(channel.getGuildId()), channel.getId());
     }
 
-    @Store3
+    @StoreThread
     public final void handleConnectionOpen(ModelPayload payload) {
-        Intrinsics3.checkNotNullParameter(payload, "payload");
+        C12238m.checkNotNullParameter(payload, "payload");
         this.stageInstancesByGuild.clear();
         this.stageInstancesByChannel.clear();
         List<Guild> guilds = payload.getGuilds();
-        Intrinsics3.checkNotNullExpressionValue(guilds, "payload.guilds");
+        C12238m.checkNotNullExpressionValue(guilds, "payload.guilds");
         for (Guild guild : guilds) {
-            Intrinsics3.checkNotNullExpressionValue(guild, "it");
+            C12238m.checkNotNullExpressionValue(guild, "it");
             handleGuildAdd(guild);
         }
     }
 
-    @Store3
+    @StoreThread
     public final void handleGuildAdd(Guild guild) {
-        Intrinsics3.checkNotNullParameter(guild, "guild");
-        List<StageInstance> listJ = guild.J();
-        if (listJ != null) {
-            Iterator<T> it = listJ.iterator();
+        C12238m.checkNotNullParameter(guild, "guild");
+        List<StageInstance> listM7845J = guild.m7845J();
+        if (listM7845J != null) {
+            Iterator<T> it = listM7845J.iterator();
             while (it.hasNext()) {
                 handleStageInstanceCreateOrUpdate((StageInstance) it.next());
             }
         }
     }
 
-    @Store3
+    @StoreThread
     public final void handleGuildRemove(Guild guild) {
         Set<Long> setEmptySet;
-        Intrinsics3.checkNotNullParameter(guild, "guild");
+        C12238m.checkNotNullParameter(guild, "guild");
         Map<Long, StageInstance> mapRemove = this.stageInstancesByGuild.remove(Long.valueOf(guild.getId()));
         if (mapRemove == null || (setEmptySet = mapRemove.keySet()) == null) {
-            setEmptySet = Sets5.emptySet();
+            setEmptySet = C12148n0.emptySet();
         }
         if (setEmptySet.isEmpty()) {
             return;
@@ -181,38 +181,38 @@ public final class StoreStageInstances extends StoreV2 {
         markChanged();
     }
 
-    @Store3
+    @StoreThread
     public final void handleStageInstanceCreate(StageInstance stageInstance) {
-        Intrinsics3.checkNotNullParameter(stageInstance, "stageInstance");
+        C12238m.checkNotNullParameter(stageInstance, "stageInstance");
         handleStageInstanceCreateOrUpdate(stageInstance);
     }
 
-    @Store3
+    @StoreThread
     public final void handleStageInstanceDelete(StageInstance stageInstance) {
-        Intrinsics3.checkNotNullParameter(stageInstance, "stageInstance");
+        C12238m.checkNotNullParameter(stageInstance, "stageInstance");
         handleDelete(Long.valueOf(stageInstance.getGuildId()), stageInstance.getChannelId());
     }
 
-    @Store3
+    @StoreThread
     public final void handleStageInstanceUpdate(StageInstance stageInstance) {
-        Intrinsics3.checkNotNullParameter(stageInstance, "stageInstance");
+        C12238m.checkNotNullParameter(stageInstance, "stageInstance");
         handleStageInstanceCreateOrUpdate(stageInstance);
     }
 
     public final Observable<StageInstance> observeStageInstanceForChannel(long channelId) {
-        return ObservationDeck.connectRx$default(this.observationDeck, new ObservationDeck.UpdateSource[]{this}, false, null, null, new AnonymousClass1(channelId), 14, null);
+        return ObservationDeck.connectRx$default(this.observationDeck, new ObservationDeck.UpdateSource[]{this}, false, null, null, new C64201(channelId), 14, null);
     }
 
     public final Observable<Map<Long, StageInstance>> observeStageInstances() {
-        return ObservationDeck.connectRx$default(this.observationDeck, new ObservationDeck.UpdateSource[]{this}, false, null, null, new AnonymousClass1(), 14, null);
+        return ObservationDeck.connectRx$default(this.observationDeck, new ObservationDeck.UpdateSource[]{this}, false, null, null, new C64211(), 14, null);
     }
 
     public final Observable<Map<Long, StageInstance>> observeStageInstancesForGuild(long guildId) {
-        return ObservationDeck.connectRx$default(this.observationDeck, new ObservationDeck.UpdateSource[]{this}, false, null, null, new AnonymousClass1(guildId), 14, null);
+        return ObservationDeck.connectRx$default(this.observationDeck, new ObservationDeck.UpdateSource[]{this}, false, null, null, new C64221(guildId), 14, null);
     }
 
     @Override // com.discord.stores.StoreV2
-    @Store3
+    @StoreThread
     public void snapshotData() {
         this.stageInstancesByChannelSnapshot = new HashMap(this.stageInstancesByChannel);
         HashMap map = new HashMap();
@@ -223,7 +223,7 @@ public final class StoreStageInstances extends StoreV2 {
     }
 
     public StoreStageInstances(ObservationDeck observationDeck) {
-        Intrinsics3.checkNotNullParameter(observationDeck, "observationDeck");
+        C12238m.checkNotNullParameter(observationDeck, "observationDeck");
         this.observationDeck = observationDeck;
         this.stageInstancesByChannel = new LinkedHashMap();
         this.stageInstancesByChannelSnapshot = new HashMap();

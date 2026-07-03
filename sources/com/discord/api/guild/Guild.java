@@ -2,7 +2,6 @@ package com.discord.api.guild;
 
 import androidx.constraintlayout.solver.widgets.analyzer.BasicMeasure;
 import androidx.exifinterface.media.ExifInterface;
-import b.d.b.a.outline;
 import com.discord.api.channel.Channel;
 import com.discord.api.embeddedactivities.EmbeddedActivityInGuild;
 import com.discord.api.emoji.GuildEmoji;
@@ -16,9 +15,10 @@ import com.discord.api.stageinstance.StageInstance;
 import com.discord.api.sticker.Sticker;
 import com.discord.api.voice.state.VoiceState;
 import com.discord.models.domain.ModelAuditLogEntry;
-import d0.z.d.Intrinsics3;
 import java.util.List;
 import java.util.Objects;
+import p007b.p100d.p104b.p105a.C1643a;
+import p507d0.p592z.p594d.C12238m;
 
 /* JADX INFO: compiled from: Guild.kt */
 /* JADX INFO: loaded from: classes.dex */
@@ -72,8 +72,8 @@ public final /* data */ class Guild {
 
     /* JADX WARN: Multi-variable type inference failed */
     public Guild(List<GuildRole> list, List<GuildEmoji> list2, List<Sticker> list3, String str, String str2, Integer num, long j, String str3, long j2, String str4, GuildVerificationLevel guildVerificationLevel, GuildExplicitContentFilter guildExplicitContentFilter, List<Presence> list4, List<Channel> list5, List<GuildMember> list6, List<VoiceState> list7, boolean z2, int i, int i2, Long l, Long l2, List<? extends GuildFeature> list8, int i3, String str5, String str6, int i4, int i5, int i6, String str7, Long l3, Long l4, String str8, GuildWelcomeScreen guildWelcomeScreen, GuildMaxVideoChannelUsers guildMaxVideoChannelUsers, String str9, int i7, int i8, Long l5, GuildHashes guildHashes, List<Channel> list9, List<Channel> list10, boolean z3, List<StageInstance> list11, List<GuildScheduledEvent> list12, List<EmbeddedActivityInGuild> list13, GuildHubType guildHubType) {
-        Intrinsics3.checkNotNullParameter(str, ModelAuditLogEntry.CHANGE_KEY_NAME);
-        Intrinsics3.checkNotNullParameter(list8, "features");
+        C12238m.checkNotNullParameter(str, ModelAuditLogEntry.CHANGE_KEY_NAME);
+        C12238m.checkNotNullParameter(list8, "features");
         this.roles = list;
         this.emojis = list2;
         this.stickers = list3;
@@ -122,7 +122,8 @@ public final /* data */ class Guild {
         this.hubType = guildHubType;
     }
 
-    public static Guild a(Guild guild, List list, List list2, List list3, String str, String str2, Integer num, long j, String str3, long j2, String str4, GuildVerificationLevel guildVerificationLevel, GuildExplicitContentFilter guildExplicitContentFilter, List list4, List list5, List list6, List list7, boolean z2, int i, int i2, Long l, Long l2, List list8, int i3, String str5, String str6, int i4, int i5, int i6, String str7, Long l3, Long l4, String str8, GuildWelcomeScreen guildWelcomeScreen, GuildMaxVideoChannelUsers guildMaxVideoChannelUsers, String str9, int i7, int i8, Long l5, GuildHashes guildHashes, List list9, List list10, boolean z3, List list11, List list12, List list13, GuildHubType guildHubType, int i9, int i10) {
+    /* JADX INFO: renamed from: a */
+    public static Guild m7835a(Guild guild, List list, List list2, List list3, String str, String str2, Integer num, long j, String str3, long j2, String str4, GuildVerificationLevel guildVerificationLevel, GuildExplicitContentFilter guildExplicitContentFilter, List list4, List list5, List list6, List list7, boolean z2, int i, int i2, Long l, Long l2, List list8, int i3, String str5, String str6, int i4, int i5, int i6, String str7, Long l3, Long l4, String str8, GuildWelcomeScreen guildWelcomeScreen, GuildMaxVideoChannelUsers guildMaxVideoChannelUsers, String str9, int i7, int i8, Long l5, GuildHashes guildHashes, List list9, List list10, boolean z3, List list11, List list12, List list13, GuildHubType guildHubType, int i9, int i10) {
         List list14 = (i9 & 1) != 0 ? guild.roles : list;
         List list15 = (i9 & 2) != 0 ? guild.emojis : list2;
         List list16 = (i9 & 4) != 0 ? guild.stickers : list3;
@@ -171,8 +172,8 @@ public final /* data */ class Guild {
         List<EmbeddedActivityInGuild> list26 = (i10 & 4096) != 0 ? guild.embeddedActivities : null;
         GuildHubType guildHubType2 = (i10 & 8192) != 0 ? guild.hubType : null;
         Objects.requireNonNull(guild);
-        Intrinsics3.checkNotNullParameter(str10, ModelAuditLogEntry.CHANGE_KEY_NAME);
-        Intrinsics3.checkNotNullParameter(list21, "features");
+        C12238m.checkNotNullParameter(str10, ModelAuditLogEntry.CHANGE_KEY_NAME);
+        C12238m.checkNotNullParameter(list21, "features");
         return new Guild(list14, list15, list16, str10, str11, num2, j3, str12, j4, str14, guildVerificationLevel2, guildExplicitContentFilter2, list17, list18, list19, list20, z4, i11, i12, l6, l7, list21, i13, str15, str16, i14, i15, i16, str17, l8, l9, str18, guildWelcomeScreen2, guildMaxVideoChannelUsers2, str19, i17, i18, l10, guildHashes2, list22, list23, z5, list24, list25, list26, guildHubType2);
     }
 
@@ -191,7 +192,8 @@ public final /* data */ class Guild {
         return this.premiumTier;
     }
 
-    public final List<Presence> D() {
+    /* JADX INFO: renamed from: D */
+    public final List<Presence> m7839D() {
         return this.presences;
     }
 
@@ -205,7 +207,8 @@ public final /* data */ class Guild {
         return this.region;
     }
 
-    public final List<GuildRole> G() {
+    /* JADX INFO: renamed from: G */
+    public final List<GuildRole> m7842G() {
         return this.roles;
     }
 
@@ -219,11 +222,13 @@ public final /* data */ class Guild {
         return this.splash;
     }
 
-    public final List<StageInstance> J() {
+    /* JADX INFO: renamed from: J */
+    public final List<StageInstance> m7845J() {
         return this.stageInstances;
     }
 
-    public final List<Sticker> K() {
+    /* JADX INFO: renamed from: K */
+    public final List<Sticker> m7846K() {
         return this.stickers;
     }
 
@@ -237,7 +242,8 @@ public final /* data */ class Guild {
         return this.systemChannelId;
     }
 
-    public final List<Channel> N() {
+    /* JADX INFO: renamed from: N */
+    public final List<Channel> m7849N() {
         return this.threads;
     }
 
@@ -256,7 +262,8 @@ public final /* data */ class Guild {
         return this.verificationLevel;
     }
 
-    public final List<VoiceState> R() {
+    /* JADX INFO: renamed from: R */
+    public final List<VoiceState> m7853R() {
         return this.voiceStates;
     }
 
@@ -293,14 +300,16 @@ public final /* data */ class Guild {
             return false;
         }
         Guild guild = (Guild) other;
-        return Intrinsics3.areEqual(this.roles, guild.roles) && Intrinsics3.areEqual(this.emojis, guild.emojis) && Intrinsics3.areEqual(this.stickers, guild.stickers) && Intrinsics3.areEqual(this.name, guild.name) && Intrinsics3.areEqual(this.description, guild.description) && Intrinsics3.areEqual(this.defaultMessageNotifications, guild.defaultMessageNotifications) && this.id == guild.id && Intrinsics3.areEqual(this.region, guild.region) && this.ownerId == guild.ownerId && Intrinsics3.areEqual(this.icon, guild.icon) && Intrinsics3.areEqual(this.verificationLevel, guild.verificationLevel) && Intrinsics3.areEqual(this.explicitContentFilter, guild.explicitContentFilter) && Intrinsics3.areEqual(this.presences, guild.presences) && Intrinsics3.areEqual(this.channels, guild.channels) && Intrinsics3.areEqual(this.members, guild.members) && Intrinsics3.areEqual(this.voiceStates, guild.voiceStates) && this.unavailable == guild.unavailable && this.mfaLevel == guild.mfaLevel && this.afkTimeout == guild.afkTimeout && Intrinsics3.areEqual(this.afkChannelId, guild.afkChannelId) && Intrinsics3.areEqual(this.systemChannelId, guild.systemChannelId) && Intrinsics3.areEqual(this.features, guild.features) && this.memberCount == guild.memberCount && Intrinsics3.areEqual(this.banner, guild.banner) && Intrinsics3.areEqual(this.splash, guild.splash) && this.premiumTier == guild.premiumTier && this.premiumSubscriptionCount == guild.premiumSubscriptionCount && this.systemChannelFlags == guild.systemChannelFlags && Intrinsics3.areEqual(this.joinedAt, guild.joinedAt) && Intrinsics3.areEqual(this.rulesChannelId, guild.rulesChannelId) && Intrinsics3.areEqual(this.publicUpdatesChannelId, guild.publicUpdatesChannelId) && Intrinsics3.areEqual(this.preferredLocale, guild.preferredLocale) && Intrinsics3.areEqual(this.welcomeScreen, guild.welcomeScreen) && Intrinsics3.areEqual(this.maxVideoChannelUsers, guild.maxVideoChannelUsers) && Intrinsics3.areEqual(this.vanityUrlCode, guild.vanityUrlCode) && this.approximateMemberCount == guild.approximateMemberCount && this.approximatePresenceCount == guild.approximatePresenceCount && Intrinsics3.areEqual(this.permissions, guild.permissions) && Intrinsics3.areEqual(this.guildHashes, guild.guildHashes) && Intrinsics3.areEqual(this.channelUpdates, guild.channelUpdates) && Intrinsics3.areEqual(this.threads, guild.threads) && this.nsfw == guild.nsfw && Intrinsics3.areEqual(this.stageInstances, guild.stageInstances) && Intrinsics3.areEqual(this.guildScheduledEvents, guild.guildScheduledEvents) && Intrinsics3.areEqual(this.embeddedActivities, guild.embeddedActivities) && Intrinsics3.areEqual(this.hubType, guild.hubType);
+        return C12238m.areEqual(this.roles, guild.roles) && C12238m.areEqual(this.emojis, guild.emojis) && C12238m.areEqual(this.stickers, guild.stickers) && C12238m.areEqual(this.name, guild.name) && C12238m.areEqual(this.description, guild.description) && C12238m.areEqual(this.defaultMessageNotifications, guild.defaultMessageNotifications) && this.id == guild.id && C12238m.areEqual(this.region, guild.region) && this.ownerId == guild.ownerId && C12238m.areEqual(this.icon, guild.icon) && C12238m.areEqual(this.verificationLevel, guild.verificationLevel) && C12238m.areEqual(this.explicitContentFilter, guild.explicitContentFilter) && C12238m.areEqual(this.presences, guild.presences) && C12238m.areEqual(this.channels, guild.channels) && C12238m.areEqual(this.members, guild.members) && C12238m.areEqual(this.voiceStates, guild.voiceStates) && this.unavailable == guild.unavailable && this.mfaLevel == guild.mfaLevel && this.afkTimeout == guild.afkTimeout && C12238m.areEqual(this.afkChannelId, guild.afkChannelId) && C12238m.areEqual(this.systemChannelId, guild.systemChannelId) && C12238m.areEqual(this.features, guild.features) && this.memberCount == guild.memberCount && C12238m.areEqual(this.banner, guild.banner) && C12238m.areEqual(this.splash, guild.splash) && this.premiumTier == guild.premiumTier && this.premiumSubscriptionCount == guild.premiumSubscriptionCount && this.systemChannelFlags == guild.systemChannelFlags && C12238m.areEqual(this.joinedAt, guild.joinedAt) && C12238m.areEqual(this.rulesChannelId, guild.rulesChannelId) && C12238m.areEqual(this.publicUpdatesChannelId, guild.publicUpdatesChannelId) && C12238m.areEqual(this.preferredLocale, guild.preferredLocale) && C12238m.areEqual(this.welcomeScreen, guild.welcomeScreen) && C12238m.areEqual(this.maxVideoChannelUsers, guild.maxVideoChannelUsers) && C12238m.areEqual(this.vanityUrlCode, guild.vanityUrlCode) && this.approximateMemberCount == guild.approximateMemberCount && this.approximatePresenceCount == guild.approximatePresenceCount && C12238m.areEqual(this.permissions, guild.permissions) && C12238m.areEqual(this.guildHashes, guild.guildHashes) && C12238m.areEqual(this.channelUpdates, guild.channelUpdates) && C12238m.areEqual(this.threads, guild.threads) && this.nsfw == guild.nsfw && C12238m.areEqual(this.stageInstances, guild.stageInstances) && C12238m.areEqual(this.guildScheduledEvents, guild.guildScheduledEvents) && C12238m.areEqual(this.embeddedActivities, guild.embeddedActivities) && C12238m.areEqual(this.hubType, guild.hubType);
     }
 
-    public final List<Channel> f() {
+    /* JADX INFO: renamed from: f */
+    public final List<Channel> m7859f() {
         return this.channelUpdates;
     }
 
-    public final List<Channel> g() {
+    /* JADX INFO: renamed from: g */
+    public final List<Channel> m7860g() {
         return this.channels;
     }
 
@@ -404,11 +413,13 @@ public final /* data */ class Guild {
         return this.description;
     }
 
-    public final List<EmbeddedActivityInGuild> j() {
+    /* JADX INFO: renamed from: j */
+    public final List<EmbeddedActivityInGuild> m7863j() {
         return this.embeddedActivities;
     }
 
-    public final List<GuildEmoji> k() {
+    /* JADX INFO: renamed from: k */
+    public final List<GuildEmoji> m7864k() {
         return this.emojis;
     }
 
@@ -417,7 +428,8 @@ public final /* data */ class Guild {
         return this.explicitContentFilter;
     }
 
-    public final List<GuildFeature> m() {
+    /* JADX INFO: renamed from: m */
+    public final List<GuildFeature> m7866m() {
         return this.features;
     }
 
@@ -426,7 +438,8 @@ public final /* data */ class Guild {
         return this.guildHashes;
     }
 
-    public final List<GuildScheduledEvent> o() {
+    /* JADX INFO: renamed from: o */
+    public final List<GuildScheduledEvent> m7868o() {
         return this.guildScheduledEvents;
     }
 
@@ -456,100 +469,100 @@ public final /* data */ class Guild {
     }
 
     public String toString() {
-        StringBuilder sbU = outline.U("Guild(roles=");
-        sbU.append(this.roles);
-        sbU.append(", emojis=");
-        sbU.append(this.emojis);
-        sbU.append(", stickers=");
-        sbU.append(this.stickers);
-        sbU.append(", name=");
-        sbU.append(this.name);
-        sbU.append(", description=");
-        sbU.append(this.description);
-        sbU.append(", defaultMessageNotifications=");
-        sbU.append(this.defaultMessageNotifications);
-        sbU.append(", id=");
-        sbU.append(this.id);
-        sbU.append(", region=");
-        sbU.append(this.region);
-        sbU.append(", ownerId=");
-        sbU.append(this.ownerId);
-        sbU.append(", icon=");
-        sbU.append(this.icon);
-        sbU.append(", verificationLevel=");
-        sbU.append(this.verificationLevel);
-        sbU.append(", explicitContentFilter=");
-        sbU.append(this.explicitContentFilter);
-        sbU.append(", presences=");
-        sbU.append(this.presences);
-        sbU.append(", channels=");
-        sbU.append(this.channels);
-        sbU.append(", members=");
-        sbU.append(this.members);
-        sbU.append(", voiceStates=");
-        sbU.append(this.voiceStates);
-        sbU.append(", unavailable=");
-        sbU.append(this.unavailable);
-        sbU.append(", mfaLevel=");
-        sbU.append(this.mfaLevel);
-        sbU.append(", afkTimeout=");
-        sbU.append(this.afkTimeout);
-        sbU.append(", afkChannelId=");
-        sbU.append(this.afkChannelId);
-        sbU.append(", systemChannelId=");
-        sbU.append(this.systemChannelId);
-        sbU.append(", features=");
-        sbU.append(this.features);
-        sbU.append(", memberCount=");
-        sbU.append(this.memberCount);
-        sbU.append(", banner=");
-        sbU.append(this.banner);
-        sbU.append(", splash=");
-        sbU.append(this.splash);
-        sbU.append(", premiumTier=");
-        sbU.append(this.premiumTier);
-        sbU.append(", premiumSubscriptionCount=");
-        sbU.append(this.premiumSubscriptionCount);
-        sbU.append(", systemChannelFlags=");
-        sbU.append(this.systemChannelFlags);
-        sbU.append(", joinedAt=");
-        sbU.append(this.joinedAt);
-        sbU.append(", rulesChannelId=");
-        sbU.append(this.rulesChannelId);
-        sbU.append(", publicUpdatesChannelId=");
-        sbU.append(this.publicUpdatesChannelId);
-        sbU.append(", preferredLocale=");
-        sbU.append(this.preferredLocale);
-        sbU.append(", welcomeScreen=");
-        sbU.append(this.welcomeScreen);
-        sbU.append(", maxVideoChannelUsers=");
-        sbU.append(this.maxVideoChannelUsers);
-        sbU.append(", vanityUrlCode=");
-        sbU.append(this.vanityUrlCode);
-        sbU.append(", approximateMemberCount=");
-        sbU.append(this.approximateMemberCount);
-        sbU.append(", approximatePresenceCount=");
-        sbU.append(this.approximatePresenceCount);
-        sbU.append(", permissions=");
-        sbU.append(this.permissions);
-        sbU.append(", guildHashes=");
-        sbU.append(this.guildHashes);
-        sbU.append(", channelUpdates=");
-        sbU.append(this.channelUpdates);
-        sbU.append(", threads=");
-        sbU.append(this.threads);
-        sbU.append(", nsfw=");
-        sbU.append(this.nsfw);
-        sbU.append(", stageInstances=");
-        sbU.append(this.stageInstances);
-        sbU.append(", guildScheduledEvents=");
-        sbU.append(this.guildScheduledEvents);
-        sbU.append(", embeddedActivities=");
-        sbU.append(this.embeddedActivities);
-        sbU.append(", hubType=");
-        sbU.append(this.hubType);
-        sbU.append(")");
-        return sbU.toString();
+        StringBuilder sbM833U = C1643a.m833U("Guild(roles=");
+        sbM833U.append(this.roles);
+        sbM833U.append(", emojis=");
+        sbM833U.append(this.emojis);
+        sbM833U.append(", stickers=");
+        sbM833U.append(this.stickers);
+        sbM833U.append(", name=");
+        sbM833U.append(this.name);
+        sbM833U.append(", description=");
+        sbM833U.append(this.description);
+        sbM833U.append(", defaultMessageNotifications=");
+        sbM833U.append(this.defaultMessageNotifications);
+        sbM833U.append(", id=");
+        sbM833U.append(this.id);
+        sbM833U.append(", region=");
+        sbM833U.append(this.region);
+        sbM833U.append(", ownerId=");
+        sbM833U.append(this.ownerId);
+        sbM833U.append(", icon=");
+        sbM833U.append(this.icon);
+        sbM833U.append(", verificationLevel=");
+        sbM833U.append(this.verificationLevel);
+        sbM833U.append(", explicitContentFilter=");
+        sbM833U.append(this.explicitContentFilter);
+        sbM833U.append(", presences=");
+        sbM833U.append(this.presences);
+        sbM833U.append(", channels=");
+        sbM833U.append(this.channels);
+        sbM833U.append(", members=");
+        sbM833U.append(this.members);
+        sbM833U.append(", voiceStates=");
+        sbM833U.append(this.voiceStates);
+        sbM833U.append(", unavailable=");
+        sbM833U.append(this.unavailable);
+        sbM833U.append(", mfaLevel=");
+        sbM833U.append(this.mfaLevel);
+        sbM833U.append(", afkTimeout=");
+        sbM833U.append(this.afkTimeout);
+        sbM833U.append(", afkChannelId=");
+        sbM833U.append(this.afkChannelId);
+        sbM833U.append(", systemChannelId=");
+        sbM833U.append(this.systemChannelId);
+        sbM833U.append(", features=");
+        sbM833U.append(this.features);
+        sbM833U.append(", memberCount=");
+        sbM833U.append(this.memberCount);
+        sbM833U.append(", banner=");
+        sbM833U.append(this.banner);
+        sbM833U.append(", splash=");
+        sbM833U.append(this.splash);
+        sbM833U.append(", premiumTier=");
+        sbM833U.append(this.premiumTier);
+        sbM833U.append(", premiumSubscriptionCount=");
+        sbM833U.append(this.premiumSubscriptionCount);
+        sbM833U.append(", systemChannelFlags=");
+        sbM833U.append(this.systemChannelFlags);
+        sbM833U.append(", joinedAt=");
+        sbM833U.append(this.joinedAt);
+        sbM833U.append(", rulesChannelId=");
+        sbM833U.append(this.rulesChannelId);
+        sbM833U.append(", publicUpdatesChannelId=");
+        sbM833U.append(this.publicUpdatesChannelId);
+        sbM833U.append(", preferredLocale=");
+        sbM833U.append(this.preferredLocale);
+        sbM833U.append(", welcomeScreen=");
+        sbM833U.append(this.welcomeScreen);
+        sbM833U.append(", maxVideoChannelUsers=");
+        sbM833U.append(this.maxVideoChannelUsers);
+        sbM833U.append(", vanityUrlCode=");
+        sbM833U.append(this.vanityUrlCode);
+        sbM833U.append(", approximateMemberCount=");
+        sbM833U.append(this.approximateMemberCount);
+        sbM833U.append(", approximatePresenceCount=");
+        sbM833U.append(this.approximatePresenceCount);
+        sbM833U.append(", permissions=");
+        sbM833U.append(this.permissions);
+        sbM833U.append(", guildHashes=");
+        sbM833U.append(this.guildHashes);
+        sbM833U.append(", channelUpdates=");
+        sbM833U.append(this.channelUpdates);
+        sbM833U.append(", threads=");
+        sbM833U.append(this.threads);
+        sbM833U.append(", nsfw=");
+        sbM833U.append(this.nsfw);
+        sbM833U.append(", stageInstances=");
+        sbM833U.append(this.stageInstances);
+        sbM833U.append(", guildScheduledEvents=");
+        sbM833U.append(this.guildScheduledEvents);
+        sbM833U.append(", embeddedActivities=");
+        sbM833U.append(this.embeddedActivities);
+        sbM833U.append(", hubType=");
+        sbM833U.append(this.hubType);
+        sbM833U.append(")");
+        return sbM833U.toString();
     }
 
     /* JADX INFO: renamed from: u, reason: from getter */
@@ -557,7 +570,8 @@ public final /* data */ class Guild {
         return this.memberCount;
     }
 
-    public final List<GuildMember> v() {
+    /* JADX INFO: renamed from: v */
+    public final List<GuildMember> m7875v() {
         return this.members;
     }
 

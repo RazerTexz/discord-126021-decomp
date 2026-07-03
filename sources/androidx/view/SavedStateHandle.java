@@ -11,13 +11,13 @@ import androidx.annotation.MainThread;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.view.SavedStateRegistry;
-import b.d.b.a.outline;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Map;
 import java.util.Set;
+import p007b.p100d.p104b.p105a.C1643a;
 
 /* JADX INFO: loaded from: classes.dex */
 public final class SavedStateHandle {
@@ -104,10 +104,10 @@ public final class SavedStateHandle {
                 return;
             }
         }
-        StringBuilder sbU = outline.U("Can't put value with type ");
-        sbU.append(obj.getClass());
-        sbU.append(" into saved state");
-        throw new IllegalArgumentException(sbU.toString());
+        StringBuilder sbM833U = C1643a.m833U("Can't put value with type ");
+        sbM833U.append(obj.getClass());
+        sbM833U.append(" into saved state");
+        throw new IllegalArgumentException(sbM833U.toString());
     }
 
     @MainThread

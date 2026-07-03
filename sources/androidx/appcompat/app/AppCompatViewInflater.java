@@ -10,6 +10,7 @@ import android.view.InflateException;
 import android.view.View;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.appcompat.C0051R;
 import androidx.appcompat.view.ContextThemeWrapper;
 import androidx.appcompat.widget.AppCompatAutoCompleteTextView;
 import androidx.appcompat.widget.AppCompatButton;
@@ -28,10 +29,10 @@ import androidx.appcompat.widget.AppCompatToggleButton;
 import androidx.appcompat.widget.TintContextWrapper;
 import androidx.collection.SimpleArrayMap;
 import androidx.core.view.ViewCompat;
-import b.d.b.a.outline;
 import java.lang.reflect.Constructor;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
+import p007b.p100d.p104b.p105a.C1643a;
 
 /* JADX INFO: loaded from: classes.dex */
 public class AppCompatViewInflater {
@@ -71,17 +72,17 @@ public class AppCompatViewInflater {
             if (id2 == -1) {
                 string = "";
             } else {
-                StringBuilder sbU = outline.U(" with id '");
-                sbU.append(this.mHostView.getContext().getResources().getResourceEntryName(id2));
-                sbU.append("'");
-                string = sbU.toString();
+                StringBuilder sbM833U = C1643a.m833U(" with id '");
+                sbM833U.append(this.mHostView.getContext().getResources().getResourceEntryName(id2));
+                sbM833U.append("'");
+                string = sbM833U.toString();
             }
-            StringBuilder sbU2 = outline.U("Could not find method ");
-            sbU2.append(this.mMethodName);
-            sbU2.append("(View) in a parent or ancestor Context for android:onClick attribute defined on view ");
-            sbU2.append(this.mHostView.getClass());
-            sbU2.append(string);
-            throw new IllegalStateException(sbU2.toString());
+            StringBuilder sbM833U2 = C1643a.m833U("Could not find method ");
+            sbM833U2.append(this.mMethodName);
+            sbM833U2.append("(View) in a parent or ancestor Context for android:onClick attribute defined on view ");
+            sbM833U2.append(this.mHostView.getClass());
+            sbM833U2.append(string);
+            throw new IllegalStateException(sbM833U2.toString());
         }
 
         @Override // android.view.View.OnClickListener
@@ -165,9 +166,9 @@ public class AppCompatViewInflater {
     }
 
     private static Context themifyContext(Context context, AttributeSet attributeSet, boolean z2, boolean z3) {
-        TypedArray typedArrayObtainStyledAttributes = context.obtainStyledAttributes(attributeSet, androidx.appcompat.R.styleable.View, 0, 0);
-        int resourceId = z2 ? typedArrayObtainStyledAttributes.getResourceId(androidx.appcompat.R.styleable.View_android_theme, 0) : 0;
-        if (z3 && resourceId == 0 && (resourceId = typedArrayObtainStyledAttributes.getResourceId(androidx.appcompat.R.styleable.View_theme, 0)) != 0) {
+        TypedArray typedArrayObtainStyledAttributes = context.obtainStyledAttributes(attributeSet, C0051R.styleable.View, 0, 0);
+        int resourceId = z2 ? typedArrayObtainStyledAttributes.getResourceId(C0051R.styleable.View_android_theme, 0) : 0;
+        if (z3 && resourceId == 0 && (resourceId = typedArrayObtainStyledAttributes.getResourceId(C0051R.styleable.View_theme, 0)) != 0) {
             Log.i(LOG_TAG, "app:theme is now deprecated. Please move to using android:theme instead.");
         }
         typedArrayObtainStyledAttributes.recycle();

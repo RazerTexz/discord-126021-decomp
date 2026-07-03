@@ -11,11 +11,11 @@ import android.graphics.drawable.Drawable;
 import androidx.annotation.ColorInt;
 import androidx.annotation.FloatRange;
 import androidx.annotation.RestrictTo;
-import androidx.appcompat.R;
+import androidx.appcompat.C0051R;
 import androidx.core.graphics.drawable.DrawableCompat;
-import b.d.b.a.outline;
 import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
+import p007b.p100d.p104b.p105a.C1643a;
 
 /* JADX INFO: loaded from: classes.dex */
 public class DrawerArrowDrawable extends Drawable {
@@ -52,20 +52,20 @@ public class DrawerArrowDrawable extends Drawable {
         paint.setStrokeJoin(Paint.Join.MITER);
         paint.setStrokeCap(Paint.Cap.BUTT);
         paint.setAntiAlias(true);
-        TypedArray typedArrayObtainStyledAttributes = context.getTheme().obtainStyledAttributes(null, R.styleable.DrawerArrowToggle, R.attr.drawerArrowStyle, R.style.Base_Widget_AppCompat_DrawerArrowToggle);
-        setColor(typedArrayObtainStyledAttributes.getColor(R.styleable.DrawerArrowToggle_color, 0));
-        setBarThickness(typedArrayObtainStyledAttributes.getDimension(R.styleable.DrawerArrowToggle_thickness, 0.0f));
-        setSpinEnabled(typedArrayObtainStyledAttributes.getBoolean(R.styleable.DrawerArrowToggle_spinBars, true));
-        setGapSize(Math.round(typedArrayObtainStyledAttributes.getDimension(R.styleable.DrawerArrowToggle_gapBetweenBars, 0.0f)));
-        this.mSize = typedArrayObtainStyledAttributes.getDimensionPixelSize(R.styleable.DrawerArrowToggle_drawableSize, 0);
-        this.mBarLength = Math.round(typedArrayObtainStyledAttributes.getDimension(R.styleable.DrawerArrowToggle_barLength, 0.0f));
-        this.mArrowHeadLength = Math.round(typedArrayObtainStyledAttributes.getDimension(R.styleable.DrawerArrowToggle_arrowHeadLength, 0.0f));
-        this.mArrowShaftLength = typedArrayObtainStyledAttributes.getDimension(R.styleable.DrawerArrowToggle_arrowShaftLength, 0.0f);
+        TypedArray typedArrayObtainStyledAttributes = context.getTheme().obtainStyledAttributes(null, C0051R.styleable.DrawerArrowToggle, C0051R.attr.drawerArrowStyle, C0051R.style.Base_Widget_AppCompat_DrawerArrowToggle);
+        setColor(typedArrayObtainStyledAttributes.getColor(C0051R.styleable.DrawerArrowToggle_color, 0));
+        setBarThickness(typedArrayObtainStyledAttributes.getDimension(C0051R.styleable.DrawerArrowToggle_thickness, 0.0f));
+        setSpinEnabled(typedArrayObtainStyledAttributes.getBoolean(C0051R.styleable.DrawerArrowToggle_spinBars, true));
+        setGapSize(Math.round(typedArrayObtainStyledAttributes.getDimension(C0051R.styleable.DrawerArrowToggle_gapBetweenBars, 0.0f)));
+        this.mSize = typedArrayObtainStyledAttributes.getDimensionPixelSize(C0051R.styleable.DrawerArrowToggle_drawableSize, 0);
+        this.mBarLength = Math.round(typedArrayObtainStyledAttributes.getDimension(C0051R.styleable.DrawerArrowToggle_barLength, 0.0f));
+        this.mArrowHeadLength = Math.round(typedArrayObtainStyledAttributes.getDimension(C0051R.styleable.DrawerArrowToggle_arrowHeadLength, 0.0f));
+        this.mArrowShaftLength = typedArrayObtainStyledAttributes.getDimension(C0051R.styleable.DrawerArrowToggle_arrowShaftLength, 0.0f);
         typedArrayObtainStyledAttributes.recycle();
     }
 
     private static float lerp(float f, float f2, float f3) {
-        return outline.a(f2, f, f3, f);
+        return C1643a.m839a(f2, f, f3, f);
     }
 
     @Override // android.graphics.drawable.Drawable
@@ -159,7 +159,7 @@ public class DrawerArrowDrawable extends Drawable {
         return this.mPaint;
     }
 
-    @FloatRange(from = 0.0d, to = 1.0d)
+    @FloatRange(from = 0.0d, m75to = 1.0d)
     public float getProgress() {
         return this.mProgress;
     }
@@ -232,7 +232,7 @@ public class DrawerArrowDrawable extends Drawable {
         }
     }
 
-    public void setProgress(@FloatRange(from = 0.0d, to = 1.0d) float f) {
+    public void setProgress(@FloatRange(from = 0.0d, m75to = 1.0d) float f) {
         if (this.mProgress != f) {
             this.mProgress = f;
             invalidateSelf();

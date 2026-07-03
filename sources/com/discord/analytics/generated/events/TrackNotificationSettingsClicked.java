@@ -1,14 +1,14 @@
 package com.discord.analytics.generated.events;
 
-import b.d.b.a.outline;
 import com.discord.analytics.generated.traits.TrackBase;
-import com.discord.analytics.generated.traits.TrackBase2;
+import com.discord.analytics.generated.traits.TrackBaseReceiver;
 import com.discord.api.science.AnalyticsSchema;
-import d0.z.d.Intrinsics3;
+import p007b.p100d.p104b.p105a.C1643a;
+import p507d0.p592z.p594d.C12238m;
 
 /* JADX INFO: compiled from: TrackNotificationSettingsClicked.kt */
 /* JADX INFO: loaded from: classes.dex */
-public final /* data */ class TrackNotificationSettingsClicked implements AnalyticsSchema, TrackBase2 {
+public final /* data */ class TrackNotificationSettingsClicked implements AnalyticsSchema, TrackBaseReceiver {
     private TrackBase trackBase;
     private final CharSequence settingType = null;
     private final Long currentStatus = null;
@@ -28,7 +28,7 @@ public final /* data */ class TrackNotificationSettingsClicked implements Analyt
             return false;
         }
         TrackNotificationSettingsClicked trackNotificationSettingsClicked = (TrackNotificationSettingsClicked) other;
-        return Intrinsics3.areEqual(this.settingType, trackNotificationSettingsClicked.settingType) && Intrinsics3.areEqual(this.currentStatus, trackNotificationSettingsClicked.currentStatus);
+        return C12238m.areEqual(this.settingType, trackNotificationSettingsClicked.settingType) && C12238m.areEqual(this.currentStatus, trackNotificationSettingsClicked.currentStatus);
     }
 
     public int hashCode() {
@@ -39,9 +39,9 @@ public final /* data */ class TrackNotificationSettingsClicked implements Analyt
     }
 
     public String toString() {
-        StringBuilder sbU = outline.U("TrackNotificationSettingsClicked(settingType=");
-        sbU.append(this.settingType);
-        sbU.append(", currentStatus=");
-        return outline.G(sbU, this.currentStatus, ")");
+        StringBuilder sbM833U = C1643a.m833U("TrackNotificationSettingsClicked(settingType=");
+        sbM833U.append(this.settingType);
+        sbM833U.append(", currentStatus=");
+        return C1643a.m819G(sbM833U, this.currentStatus, ")");
     }
 }

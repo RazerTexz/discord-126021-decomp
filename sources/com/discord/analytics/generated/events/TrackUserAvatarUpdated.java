@@ -1,16 +1,16 @@
 package com.discord.analytics.generated.events;
 
-import b.d.b.a.outline;
 import com.discord.analytics.generated.traits.TrackBase;
-import com.discord.analytics.generated.traits.TrackBase2;
+import com.discord.analytics.generated.traits.TrackBaseReceiver;
 import com.discord.analytics.generated.traits.TrackLocationMetadata;
-import com.discord.analytics.generated.traits.TrackLocationMetadata2;
+import com.discord.analytics.generated.traits.TrackLocationMetadataReceiver;
 import com.discord.api.science.AnalyticsSchema;
-import d0.z.d.Intrinsics3;
+import p007b.p100d.p104b.p105a.C1643a;
+import p507d0.p592z.p594d.C12238m;
 
 /* JADX INFO: compiled from: TrackUserAvatarUpdated.kt */
 /* JADX INFO: loaded from: classes.dex */
-public final /* data */ class TrackUserAvatarUpdated implements AnalyticsSchema, TrackBase2, TrackLocationMetadata2 {
+public final /* data */ class TrackUserAvatarUpdated implements AnalyticsSchema, TrackBaseReceiver, TrackLocationMetadataReceiver {
     private TrackBase trackBase;
     private TrackLocationMetadata trackLocationMetadata;
     private final Boolean animated = null;
@@ -31,7 +31,7 @@ public final /* data */ class TrackUserAvatarUpdated implements AnalyticsSchema,
             return false;
         }
         TrackUserAvatarUpdated trackUserAvatarUpdated = (TrackUserAvatarUpdated) other;
-        return Intrinsics3.areEqual(this.animated, trackUserAvatarUpdated.animated) && Intrinsics3.areEqual(this.defaultAvatarSelected, trackUserAvatarUpdated.defaultAvatarSelected);
+        return C12238m.areEqual(this.animated, trackUserAvatarUpdated.animated) && C12238m.areEqual(this.defaultAvatarSelected, trackUserAvatarUpdated.defaultAvatarSelected);
     }
 
     public int hashCode() {
@@ -42,9 +42,9 @@ public final /* data */ class TrackUserAvatarUpdated implements AnalyticsSchema,
     }
 
     public String toString() {
-        StringBuilder sbU = outline.U("TrackUserAvatarUpdated(animated=");
-        sbU.append(this.animated);
-        sbU.append(", defaultAvatarSelected=");
-        return outline.G(sbU, this.defaultAvatarSelected, ")");
+        StringBuilder sbM833U = C1643a.m833U("TrackUserAvatarUpdated(animated=");
+        sbM833U.append(this.animated);
+        sbM833U.append(", defaultAvatarSelected=");
+        return C1643a.m819G(sbM833U, this.defaultAvatarSelected, ")");
     }
 }

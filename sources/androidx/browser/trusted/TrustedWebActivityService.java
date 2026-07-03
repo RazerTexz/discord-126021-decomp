@@ -22,7 +22,7 @@ import androidx.annotation.RestrictTo;
 import androidx.browser.trusted.TrustedWebActivityServiceConnection;
 import androidx.core.app.NotificationManagerCompat;
 import java.util.Locale;
-import x.a.a.d.ITrustedWebActivityService;
+import p668x.p669a.p670a.p671d.InterfaceC13180b;
 
 /* JADX INFO: loaded from: classes.dex */
 public abstract class TrustedWebActivityService extends Service {
@@ -35,7 +35,7 @@ public abstract class TrustedWebActivityService extends Service {
     public static final int SMALL_ICON_NOT_SET = -1;
     private NotificationManager mNotificationManager;
     public int mVerifiedUid = -1;
-    private final ITrustedWebActivityService.a mBinder = new ITrustedWebActivityService.a() { // from class: androidx.browser.trusted.TrustedWebActivityService.1
+    private final InterfaceC13180b.a mBinder = new InterfaceC13180b.a() { // from class: androidx.browser.trusted.TrustedWebActivityService.1
         private void checkCaller() {
             TrustedWebActivityService trustedWebActivityService = TrustedWebActivityService.this;
             if (trustedWebActivityService.mVerifiedUid == -1) {
@@ -59,44 +59,44 @@ public abstract class TrustedWebActivityService extends Service {
             }
         }
 
-        @Override // x.a.a.d.ITrustedWebActivityService
+        @Override // p668x.p669a.p670a.p671d.InterfaceC13180b
         public Bundle areNotificationsEnabled(Bundle bundle) {
             checkCaller();
             return new TrustedWebActivityServiceConnection.ResultArgs(TrustedWebActivityService.this.onAreNotificationsEnabled(TrustedWebActivityServiceConnection.NotificationsEnabledArgs.fromBundle(bundle).channelName)).toBundle();
         }
 
-        @Override // x.a.a.d.ITrustedWebActivityService
+        @Override // p668x.p669a.p670a.p671d.InterfaceC13180b
         public void cancelNotification(Bundle bundle) {
             checkCaller();
             TrustedWebActivityServiceConnection.CancelNotificationArgs cancelNotificationArgsFromBundle = TrustedWebActivityServiceConnection.CancelNotificationArgs.fromBundle(bundle);
             TrustedWebActivityService.this.onCancelNotification(cancelNotificationArgsFromBundle.platformTag, cancelNotificationArgsFromBundle.platformId);
         }
 
-        @Override // x.a.a.d.ITrustedWebActivityService
+        @Override // p668x.p669a.p670a.p671d.InterfaceC13180b
         public Bundle extraCommand(String str, Bundle bundle, IBinder iBinder) {
             checkCaller();
             return TrustedWebActivityService.this.onExtraCommand(str, bundle, TrustedWebActivityCallbackRemote.fromBinder(iBinder));
         }
 
-        @Override // x.a.a.d.ITrustedWebActivityService
+        @Override // p668x.p669a.p670a.p671d.InterfaceC13180b
         public Bundle getActiveNotifications() {
             checkCaller();
             return new TrustedWebActivityServiceConnection.ActiveNotificationsArgs(TrustedWebActivityService.this.onGetActiveNotifications()).toBundle();
         }
 
-        @Override // x.a.a.d.ITrustedWebActivityService
+        @Override // p668x.p669a.p670a.p671d.InterfaceC13180b
         public Bundle getSmallIconBitmap() {
             checkCaller();
             return TrustedWebActivityService.this.onGetSmallIconBitmap();
         }
 
-        @Override // x.a.a.d.ITrustedWebActivityService
+        @Override // p668x.p669a.p670a.p671d.InterfaceC13180b
         public int getSmallIconId() {
             checkCaller();
             return TrustedWebActivityService.this.onGetSmallIconId();
         }
 
-        @Override // x.a.a.d.ITrustedWebActivityService
+        @Override // p668x.p669a.p670a.p671d.InterfaceC13180b
         public Bundle notifyNotificationWithChannel(Bundle bundle) {
             checkCaller();
             TrustedWebActivityServiceConnection.NotifyNotificationArgs notifyNotificationArgsFromBundle = TrustedWebActivityServiceConnection.NotifyNotificationArgs.fromBundle(bundle);

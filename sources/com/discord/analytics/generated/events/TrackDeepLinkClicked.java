@@ -1,14 +1,14 @@
 package com.discord.analytics.generated.events;
 
-import b.d.b.a.outline;
 import com.discord.analytics.generated.traits.TrackBase;
-import com.discord.analytics.generated.traits.TrackBase2;
+import com.discord.analytics.generated.traits.TrackBaseReceiver;
 import com.discord.api.science.AnalyticsSchema;
-import d0.z.d.Intrinsics3;
+import p007b.p100d.p104b.p105a.C1643a;
+import p507d0.p592z.p594d.C12238m;
 
 /* JADX INFO: compiled from: TrackDeepLinkClicked.kt */
 /* JADX INFO: loaded from: classes.dex */
-public final /* data */ class TrackDeepLinkClicked implements AnalyticsSchema, TrackBase2 {
+public final /* data */ class TrackDeepLinkClicked implements AnalyticsSchema, TrackBaseReceiver {
     private TrackBase trackBase;
     private final Long fingerprint = null;
     private final CharSequence attemptId = null;
@@ -32,7 +32,7 @@ public final /* data */ class TrackDeepLinkClicked implements AnalyticsSchema, T
             return false;
         }
         TrackDeepLinkClicked trackDeepLinkClicked = (TrackDeepLinkClicked) other;
-        return Intrinsics3.areEqual(this.fingerprint, trackDeepLinkClicked.fingerprint) && Intrinsics3.areEqual(this.attemptId, trackDeepLinkClicked.attemptId) && Intrinsics3.areEqual(this.source, trackDeepLinkClicked.source) && Intrinsics3.areEqual(this.inviteCode, trackDeepLinkClicked.inviteCode) && Intrinsics3.areEqual(this.guildTemplateCode, trackDeepLinkClicked.guildTemplateCode) && Intrinsics3.areEqual(this.destination, trackDeepLinkClicked.destination);
+        return C12238m.areEqual(this.fingerprint, trackDeepLinkClicked.fingerprint) && C12238m.areEqual(this.attemptId, trackDeepLinkClicked.attemptId) && C12238m.areEqual(this.source, trackDeepLinkClicked.source) && C12238m.areEqual(this.inviteCode, trackDeepLinkClicked.inviteCode) && C12238m.areEqual(this.guildTemplateCode, trackDeepLinkClicked.guildTemplateCode) && C12238m.areEqual(this.destination, trackDeepLinkClicked.destination);
     }
 
     public int hashCode() {
@@ -51,17 +51,17 @@ public final /* data */ class TrackDeepLinkClicked implements AnalyticsSchema, T
     }
 
     public String toString() {
-        StringBuilder sbU = outline.U("TrackDeepLinkClicked(fingerprint=");
-        sbU.append(this.fingerprint);
-        sbU.append(", attemptId=");
-        sbU.append(this.attemptId);
-        sbU.append(", source=");
-        sbU.append(this.source);
-        sbU.append(", inviteCode=");
-        sbU.append(this.inviteCode);
-        sbU.append(", guildTemplateCode=");
-        sbU.append(this.guildTemplateCode);
-        sbU.append(", destination=");
-        return outline.E(sbU, this.destination, ")");
+        StringBuilder sbM833U = C1643a.m833U("TrackDeepLinkClicked(fingerprint=");
+        sbM833U.append(this.fingerprint);
+        sbM833U.append(", attemptId=");
+        sbM833U.append(this.attemptId);
+        sbM833U.append(", source=");
+        sbM833U.append(this.source);
+        sbM833U.append(", inviteCode=");
+        sbM833U.append(this.inviteCode);
+        sbM833U.append(", guildTemplateCode=");
+        sbM833U.append(this.guildTemplateCode);
+        sbM833U.append(", destination=");
+        return C1643a.m817E(sbM833U, this.destination, ")");
     }
 }

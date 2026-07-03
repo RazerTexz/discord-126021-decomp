@@ -9,10 +9,10 @@ import android.graphics.Path;
 import android.graphics.RectF;
 import android.util.AttributeSet;
 import android.view.View;
-import com.discord.R;
+import com.discord.C5419R;
 import com.discord.utilities.color.ColorCompat;
 import com.discord.utilities.dimen.DimenUtils;
-import d0.z.d.Intrinsics3;
+import p507d0.p592z.p594d.C12238m;
 
 /* JADX INFO: compiled from: ViewReplySpline.kt */
 /* JADX INFO: loaded from: classes2.dex */
@@ -42,7 +42,7 @@ public final class ViewReplySpline extends View {
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public ViewReplySpline(Context context, AttributeSet attributeSet) {
         super(context, attributeSet);
-        Intrinsics3.checkNotNullParameter(context, "context");
+        C12238m.checkNotNullParameter(context, "context");
         Paint paint = new Paint();
         this.paint = paint;
         this.path = new Path();
@@ -59,10 +59,10 @@ public final class ViewReplySpline extends View {
         paint.setStyle(Paint.Style.STROKE);
         paint.setStrokeCap(Paint.Cap.ROUND);
         paint.setStrokeWidth(f);
-        paint.setColor(ColorCompat.getThemedColor(this, R.attr.colorBackgroundAccent));
+        paint.setColor(ColorCompat.getThemedColor(this, C5419R.attr.colorBackgroundAccent));
         if (attributeSet != null) {
-            TypedArray typedArrayObtainStyledAttributes = context.obtainStyledAttributes(attributeSet, R.a.ViewReplySpline, 0, 0);
-            Intrinsics3.checkNotNullExpressionValue(typedArrayObtainStyledAttributes, "context.obtainStyledAttr…* defStyleRes */0\n      )");
+            TypedArray typedArrayObtainStyledAttributes = context.obtainStyledAttributes(attributeSet, C5419R.a.ViewReplySpline, 0, 0);
+            C12238m.checkNotNullExpressionValue(typedArrayObtainStyledAttributes, "context.obtainStyledAttr…* defStyleRes */0\n      )");
             float dimension = typedArrayObtainStyledAttributes.getDimension(3, 0.0f);
             float dimension2 = typedArrayObtainStyledAttributes.getDimension(1, 0.0f);
             this.orientation = typedArrayObtainStyledAttributes.getInteger(2, 0);

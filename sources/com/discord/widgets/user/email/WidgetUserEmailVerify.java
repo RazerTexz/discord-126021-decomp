@@ -7,43 +7,43 @@ import androidx.activity.result.ActivityResultLauncher;
 import androidx.core.app.NotificationCompat;
 import androidx.exifinterface.media.ExifInterface;
 import androidx.fragment.app.Fragment;
-import b.a.d.AppScreen2;
-import b.a.d.AppToast;
-import b.a.k.FormatUtils;
-import b.d.b.a.outline;
-import com.discord.R;
+import com.discord.C5419R;
 import com.discord.analytics.generated.events.network_action.TrackNetworkActionUserVerifyResend;
-import com.discord.analytics.generated.traits.TrackNetworkMetadata2;
+import com.discord.analytics.generated.traits.TrackNetworkMetadataReceiver;
 import com.discord.databinding.WidgetUserEmailVerifyBinding;
 import com.discord.models.user.MeUser;
 import com.discord.restapi.RestAPIParams;
 import com.discord.stores.StoreStream;
 import com.discord.stores.StoreUser;
-import com.discord.stores.utilities.RestCallState5;
+import com.discord.stores.utilities.RestCallStateKt;
 import com.discord.utilities.error.Error;
+import com.discord.utilities.p501rx.ObservableExtensionsKt;
 import com.discord.utilities.rest.RestAPI;
-import com.discord.utilities.rx.ObservableExtensionsKt;
 import com.discord.utilities.viewbinding.FragmentViewBindingDelegate;
-import com.discord.utilities.viewbinding.FragmentViewBindingDelegate3;
+import com.discord.utilities.viewbinding.FragmentViewBindingDelegateKt;
 import com.discord.widgets.user.account.WidgetUserAccountVerifyBase;
 import com.discord.widgets.user.email.WidgetUserEmailUpdate;
 import com.discord.widgets.user.email.WidgetUserEmailVerify;
-import d0.z.d.FunctionReferenceImpl;
-import d0.z.d.Intrinsics3;
-import d0.z.d.Lambda;
-import j0.k.Func1;
 import kotlin.Unit;
 import kotlin.jvm.functions.Function0;
 import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.reflect.KProperty;
-import rx.Observable;
-import rx.Subscription;
+import p007b.p008a.p018d.C0870j;
+import p007b.p008a.p018d.C0876m;
+import p007b.p008a.p027k.C1107b;
+import p007b.p100d.p104b.p105a.C1643a;
+import p507d0.p592z.p594d.AbstractC12240o;
+import p507d0.p592z.p594d.C12236k;
+import p507d0.p592z.p594d.C12238m;
+import p637j0.p641k.InterfaceC12589b;
+import p658rx.Observable;
+import p658rx.Subscription;
 
 /* JADX INFO: compiled from: WidgetUserEmailVerify.kt */
 /* JADX INFO: loaded from: classes.dex */
 public final class WidgetUserEmailVerify extends WidgetUserAccountVerifyBase {
-    public static final /* synthetic */ KProperty[] $$delegatedProperties = {outline.d0(WidgetUserEmailVerify.class, "binding", "getBinding()Lcom/discord/databinding/WidgetUserEmailVerifyBinding;", 0)};
+    public static final /* synthetic */ KProperty[] $$delegatedProperties = {C1643a.m846d0(WidgetUserEmailVerify.class, "binding", "getBinding()Lcom/discord/databinding/WidgetUserEmailVerifyBinding;", 0)};
 
     /* JADX INFO: renamed from: Companion, reason: from kotlin metadata */
     public static final Companion INSTANCE = new Companion(null);
@@ -58,9 +58,9 @@ public final class WidgetUserEmailVerify extends WidgetUserAccountVerifyBase {
         }
 
         public final void launch(Context context, WidgetUserAccountVerifyBase.Mode mode) {
-            Intrinsics3.checkNotNullParameter(context, "context");
-            Intrinsics3.checkNotNullParameter(mode, "mode");
-            AppScreen2.d(context, WidgetUserEmailVerify.class, WidgetUserAccountVerifyBase.INSTANCE.getLaunchIntent(mode, false, true));
+            C12238m.checkNotNullParameter(context, "context");
+            C12238m.checkNotNullParameter(mode, "mode");
+            C0870j.m156d(context, WidgetUserEmailVerify.class, WidgetUserAccountVerifyBase.INSTANCE.getLaunchIntent(mode, false, true));
         }
 
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
@@ -83,15 +83,15 @@ public final class WidgetUserEmailVerify extends WidgetUserAccountVerifyBase {
             }
 
             public final Observable<Model> get() {
-                Observable<Model> observableR = StoreUser.observeMe$default(StoreStream.INSTANCE.getUsers(), false, 1, null).G(new Func1<MeUser, Model>() { // from class: com.discord.widgets.user.email.WidgetUserEmailVerify$Model$Companion$get$1
-                    @Override // j0.k.Func1
+                Observable<Model> observableM11112r = StoreUser.observeMe$default(StoreStream.INSTANCE.getUsers(), false, 1, null).m11083G(new InterfaceC12589b<MeUser, Model>() { // from class: com.discord.widgets.user.email.WidgetUserEmailVerify$Model$Companion$get$1
+                    @Override // p637j0.p641k.InterfaceC12589b
                     public final WidgetUserEmailVerify.Model call(MeUser meUser) {
-                        Intrinsics3.checkNotNullExpressionValue(meUser, "me");
+                        C12238m.checkNotNullExpressionValue(meUser, "me");
                         return new WidgetUserEmailVerify.Model(meUser);
                     }
-                }).r();
-                Intrinsics3.checkNotNullExpressionValue(observableR, "getUsers()\n            .…  .distinctUntilChanged()");
-                return observableR;
+                }).m11112r();
+                C12238m.checkNotNullExpressionValue(observableM11112r, "getUsers()\n            .…  .distinctUntilChanged()");
+                return observableM11112r;
             }
 
             public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
@@ -100,7 +100,7 @@ public final class WidgetUserEmailVerify extends WidgetUserAccountVerifyBase {
         }
 
         public Model(MeUser meUser) {
-            Intrinsics3.checkNotNullParameter(meUser, "me");
+            C12238m.checkNotNullParameter(meUser, "me");
             this.me = meUser;
             this.email = meUser.getEmail();
             this.verified = meUser.isVerified();
@@ -119,13 +119,13 @@ public final class WidgetUserEmailVerify extends WidgetUserAccountVerifyBase {
         }
 
         public final Model copy(MeUser me2) {
-            Intrinsics3.checkNotNullParameter(me2, "me");
+            C12238m.checkNotNullParameter(me2, "me");
             return new Model(me2);
         }
 
         public boolean equals(Object other) {
             if (this != other) {
-                return (other instanceof Model) && Intrinsics3.areEqual(this.me, ((Model) other).me);
+                return (other instanceof Model) && C12238m.areEqual(this.me, ((Model) other).me);
             }
             return true;
         }
@@ -151,37 +151,37 @@ public final class WidgetUserEmailVerify extends WidgetUserAccountVerifyBase {
         }
 
         public String toString() {
-            StringBuilder sbU = outline.U("Model(me=");
-            sbU.append(this.me);
-            sbU.append(")");
-            return sbU.toString();
+            StringBuilder sbM833U = C1643a.m833U("Model(me=");
+            sbM833U.append(this.me);
+            sbM833U.append(")");
+            return sbM833U.toString();
         }
     }
 
-    /* JADX INFO: renamed from: com.discord.widgets.user.email.WidgetUserEmailVerify$onViewBoundOrOnResume$1, reason: invalid class name */
+    /* JADX INFO: renamed from: com.discord.widgets.user.email.WidgetUserEmailVerify$onViewBoundOrOnResume$1 */
     /* JADX INFO: compiled from: WidgetUserEmailVerify.kt */
-    public static final /* synthetic */ class AnonymousClass1 extends FunctionReferenceImpl implements Function1<Model, Unit> {
-        public AnonymousClass1(WidgetUserEmailVerify widgetUserEmailVerify) {
+    public static final /* synthetic */ class C102581 extends C12236k implements Function1<Model, Unit> {
+        public C102581(WidgetUserEmailVerify widgetUserEmailVerify) {
             super(1, widgetUserEmailVerify, WidgetUserEmailVerify.class, "configureUI", "configureUI(Lcom/discord/widgets/user/email/WidgetUserEmailVerify$Model;)V", 0);
         }
 
         @Override // kotlin.jvm.functions.Function1
         public /* bridge */ /* synthetic */ Unit invoke(Model model) {
             invoke2(model);
-            return Unit.a;
+            return Unit.f27425a;
         }
 
         /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
         public final void invoke2(Model model) {
-            Intrinsics3.checkNotNullParameter(model, "p1");
+            C12238m.checkNotNullParameter(model, "p1");
             ((WidgetUserEmailVerify) this.receiver).configureUI(model);
         }
     }
 
     public WidgetUserEmailVerify() {
-        super(R.layout.widget_user_email_verify);
-        this.binding = FragmentViewBindingDelegate3.viewBinding$default(this, WidgetUserEmailVerify3.INSTANCE, null, 2, null);
-        this.emailUpdateLauncher = WidgetUserEmailUpdate.INSTANCE.registerForResult(this, new WidgetUserEmailVerify4(this));
+        super(C5419R.layout.widget_user_email_verify);
+        this.binding = FragmentViewBindingDelegateKt.viewBinding$default(this, WidgetUserEmailVerify$binding$2.INSTANCE, null, 2, null);
+        this.emailUpdateLauncher = WidgetUserEmailUpdate.INSTANCE.registerForResult(this, new WidgetUserEmailVerify$emailUpdateLauncher$1(this));
     }
 
     private final void configureUI(final Model model) {
@@ -191,17 +191,17 @@ public final class WidgetUserEmailVerify extends WidgetUserAccountVerifyBase {
         } else if (model.getEmail() == null) {
             WidgetUserEmailUpdate.INSTANCE.launch(requireContext(), getMode(), this.emailUpdateLauncher);
         } else {
-            getBinding().f2681b.setOnClickListener(new View.OnClickListener() { // from class: com.discord.widgets.user.email.WidgetUserEmailVerify.configureUI.1
+            getBinding().f18331b.setOnClickListener(new View.OnClickListener() { // from class: com.discord.widgets.user.email.WidgetUserEmailVerify.configureUI.1
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
-                    WidgetUserEmailUpdate.Companion.launch$default(WidgetUserEmailUpdate.INSTANCE, outline.x(view, "it", "it.context"), WidgetUserEmailVerify.this.getMode(), null, 4, null);
+                    WidgetUserEmailUpdate.Companion.launch$default(WidgetUserEmailUpdate.INSTANCE, C1643a.m885x(view, "it", "it.context"), WidgetUserEmailVerify.this.getMode(), null, 4, null);
                 }
             });
-            getBinding().c.setOnClickListener(new View.OnClickListener() { // from class: com.discord.widgets.user.email.WidgetUserEmailVerify.configureUI.2
+            getBinding().f18332c.setOnClickListener(new View.OnClickListener() { // from class: com.discord.widgets.user.email.WidgetUserEmailVerify.configureUI.2
 
                 /* JADX INFO: renamed from: com.discord.widgets.user.email.WidgetUserEmailVerify$configureUI$2$1, reason: invalid class name */
                 /* JADX INFO: compiled from: WidgetUserEmailVerify.kt */
-                public static final class AnonymousClass1 extends Lambda implements Function1<Void, TrackNetworkMetadata2> {
+                public static final class AnonymousClass1 extends AbstractC12240o implements Function1<Void, TrackNetworkMetadataReceiver> {
                     public static final AnonymousClass1 INSTANCE = new AnonymousClass1();
 
                     public AnonymousClass1() {
@@ -209,35 +209,35 @@ public final class WidgetUserEmailVerify extends WidgetUserAccountVerifyBase {
                     }
 
                     @Override // kotlin.jvm.functions.Function1
-                    public final TrackNetworkMetadata2 invoke(Void r1) {
+                    public final TrackNetworkMetadataReceiver invoke(Void r1) {
                         return new TrackNetworkActionUserVerifyResend();
                     }
                 }
 
-                /* JADX INFO: renamed from: com.discord.widgets.user.email.WidgetUserEmailVerify$configureUI$2$2, reason: invalid class name and collision with other inner class name */
+                /* JADX INFO: renamed from: com.discord.widgets.user.email.WidgetUserEmailVerify$configureUI$2$2, reason: invalid class name */
                 /* JADX INFO: compiled from: WidgetUserEmailVerify.kt */
-                public static final class C03512 extends Lambda implements Function1<Void, Unit> {
-                    public C03512() {
+                public static final class AnonymousClass2 extends AbstractC12240o implements Function1<Void, Unit> {
+                    public AnonymousClass2() {
                         super(1);
                     }
 
                     @Override // kotlin.jvm.functions.Function1
                     public /* bridge */ /* synthetic */ Unit invoke(Void r1) {
                         invoke2(r1);
-                        return Unit.a;
+                        return Unit.f27425a;
                     }
 
                     /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
                     public final void invoke2(Void r6) {
-                        AnonymousClass2 anonymousClass2 = AnonymousClass2.this;
+                        ViewOnClickListenerC102572 viewOnClickListenerC102572 = ViewOnClickListenerC102572.this;
                         WidgetUserEmailVerify widgetUserEmailVerify = WidgetUserEmailVerify.this;
-                        AppToast.j(widgetUserEmailVerify, FormatUtils.e(widgetUserEmailVerify, R.string.verification_email_body, new Object[]{model.getEmail()}, (4 & 4) != 0 ? FormatUtils.a.j : null), 0, 4);
+                        C0876m.m172j(widgetUserEmailVerify, C1107b.m213e(widgetUserEmailVerify, C5419R.string.verification_email_body, new Object[]{model.getEmail()}, (4 & 4) != 0 ? C1107b.a.f1490j : null), 0, 4);
                     }
                 }
 
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
-                    ObservableExtensionsKt.appSubscribe(ObservableExtensionsKt.ui$default(RestCallState5.logNetworkAction(ObservableExtensionsKt.restSubscribeOn$default(RestAPI.INSTANCE.getApi().postAuthVerifyResend(new RestAPIParams.EmptyBody()), false, 1, null), AnonymousClass1.INSTANCE), WidgetUserEmailVerify.this, null, 2, null), (Class<?>) WidgetUserEmailVerify.this.getClass(), (58 & 2) != 0 ? null : WidgetUserEmailVerify.this.getContext(), (Function1<? super Subscription, Unit>) ((58 & 4) != 0 ? null : null), (Function1<? super Error, Unit>) ((58 & 8) != 0 ? null : null), (Function0<Unit>) ((58 & 16) != 0 ? ObservableExtensionsKt.AnonymousClass1.INSTANCE : null), (Function0<Unit>) ((58 & 32) != 0 ? ObservableExtensionsKt.AnonymousClass2.INSTANCE : null), new C03512());
+                    ObservableExtensionsKt.appSubscribe(ObservableExtensionsKt.ui$default(RestCallStateKt.logNetworkAction(ObservableExtensionsKt.restSubscribeOn$default(RestAPI.INSTANCE.getApi().postAuthVerifyResend(new RestAPIParams.EmptyBody()), false, 1, null), AnonymousClass1.INSTANCE), WidgetUserEmailVerify.this, null, 2, null), (Class<?>) WidgetUserEmailVerify.this.getClass(), (58 & 2) != 0 ? null : WidgetUserEmailVerify.this.getContext(), (Function1<? super Subscription, Unit>) ((58 & 4) != 0 ? null : null), (Function1<? super Error, Unit>) ((58 & 8) != 0 ? null : null), (Function0<Unit>) ((58 & 16) != 0 ? ObservableExtensionsKt.C68791.INSTANCE : null), (Function0<Unit>) ((58 & 32) != 0 ? ObservableExtensionsKt.C68802.INSTANCE : null), new AnonymousClass2());
                 }
             });
         }
@@ -250,6 +250,6 @@ public final class WidgetUserEmailVerify extends WidgetUserAccountVerifyBase {
     @Override // com.discord.widgets.user.account.WidgetUserAccountVerifyBase, com.discord.app.AppFragment
     public void onViewBoundOrOnResume() {
         super.onViewBoundOrOnResume();
-        ObservableExtensionsKt.appSubscribe(ObservableExtensionsKt.ui$default(Model.INSTANCE.get(), this, null, 2, null), (Class<?>) WidgetUserEmailVerify.class, (58 & 2) != 0 ? null : null, (Function1<? super Subscription, Unit>) ((58 & 4) != 0 ? null : null), (Function1<? super Error, Unit>) ((58 & 8) != 0 ? null : null), (Function0<Unit>) ((58 & 16) != 0 ? ObservableExtensionsKt.AnonymousClass1.INSTANCE : null), (Function0<Unit>) ((58 & 32) != 0 ? ObservableExtensionsKt.AnonymousClass2.INSTANCE : null), new AnonymousClass1(this));
+        ObservableExtensionsKt.appSubscribe(ObservableExtensionsKt.ui$default(Model.INSTANCE.get(), this, null, 2, null), (Class<?>) WidgetUserEmailVerify.class, (58 & 2) != 0 ? null : null, (Function1<? super Subscription, Unit>) ((58 & 4) != 0 ? null : null), (Function1<? super Error, Unit>) ((58 & 8) != 0 ? null : null), (Function0<Unit>) ((58 & 16) != 0 ? ObservableExtensionsKt.C68791.INSTANCE : null), (Function0<Unit>) ((58 & 32) != 0 ? ObservableExtensionsKt.C68802.INSTANCE : null), new C102581(this));
     }
 }

@@ -1,10 +1,10 @@
 package co.discord.media_engine.internal;
 
-import b.d.b.a.outline;
 import com.discord.models.domain.ModelAuditLogEntry;
-import d0.z.d.Intrinsics3;
 import java.util.Arrays;
 import org.webrtc.MediaStreamTrack;
+import p007b.p100d.p104b.p105a.C1643a;
+import p507d0.p592z.p594d.C12238m;
 
 /* JADX INFO: compiled from: NativeStatistics.kt */
 /* JADX INFO: loaded from: classes.dex */
@@ -14,7 +14,7 @@ public final /* data */ class Outbound {
     private final OutboundVideo[] videos;
 
     public Outbound(String str, OutboundAudio outboundAudio, OutboundVideo[] outboundVideoArr) {
-        Intrinsics3.checkNotNullParameter(str, ModelAuditLogEntry.CHANGE_KEY_ID);
+        C12238m.checkNotNullParameter(str, ModelAuditLogEntry.CHANGE_KEY_ID);
         this.id = str;
         this.audio = outboundAudio;
         this.videos = outboundVideoArr;
@@ -49,7 +49,7 @@ public final /* data */ class Outbound {
     }
 
     public final Outbound copy(String id2, OutboundAudio audio, OutboundVideo[] videos) {
-        Intrinsics3.checkNotNullParameter(id2, ModelAuditLogEntry.CHANGE_KEY_ID);
+        C12238m.checkNotNullParameter(id2, ModelAuditLogEntry.CHANGE_KEY_ID);
         return new Outbound(id2, audio, videos);
     }
 
@@ -61,7 +61,7 @@ public final /* data */ class Outbound {
             return false;
         }
         Outbound outbound = (Outbound) other;
-        return Intrinsics3.areEqual(this.id, outbound.id) && Intrinsics3.areEqual(this.audio, outbound.audio) && Intrinsics3.areEqual(this.videos, outbound.videos);
+        return C12238m.areEqual(this.id, outbound.id) && C12238m.areEqual(this.audio, outbound.audio) && C12238m.areEqual(this.videos, outbound.videos);
     }
 
     public final OutboundAudio getAudio() {
@@ -86,13 +86,13 @@ public final /* data */ class Outbound {
     }
 
     public String toString() {
-        StringBuilder sbU = outline.U("Outbound(id=");
-        sbU.append(this.id);
-        sbU.append(", audio=");
-        sbU.append(this.audio);
-        sbU.append(", videos=");
-        sbU.append(Arrays.toString(this.videos));
-        sbU.append(")");
-        return sbU.toString();
+        StringBuilder sbM833U = C1643a.m833U("Outbound(id=");
+        sbM833U.append(this.id);
+        sbM833U.append(", audio=");
+        sbM833U.append(this.audio);
+        sbM833U.append(", videos=");
+        sbM833U.append(Arrays.toString(this.videos));
+        sbM833U.append(")");
+        return sbM833U.toString();
     }
 }

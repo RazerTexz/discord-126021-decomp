@@ -10,25 +10,27 @@ import androidx.viewbinding.ViewBinding;
 /* JADX INFO: loaded from: classes.dex */
 public final class WidgetSettingsVoiceInputModeBinding implements ViewBinding {
 
+    /* JADX INFO: renamed from: a */
     @NonNull
-    public final NestedScrollView a;
+    public final NestedScrollView f18121a;
 
-    /* JADX INFO: renamed from: b, reason: collision with root package name */
+    /* JADX INFO: renamed from: b */
     @NonNull
-    public final LinearLayout f2646b;
+    public final LinearLayout f18122b;
 
+    /* JADX INFO: renamed from: c */
     @NonNull
-    public final LinearLayout c;
+    public final LinearLayout f18123c;
 
     public WidgetSettingsVoiceInputModeBinding(@NonNull NestedScrollView nestedScrollView, @NonNull TextView textView, @NonNull LinearLayout linearLayout, @NonNull LinearLayout linearLayout2) {
-        this.a = nestedScrollView;
-        this.f2646b = linearLayout;
-        this.c = linearLayout2;
+        this.f18121a = nestedScrollView;
+        this.f18122b = linearLayout;
+        this.f18123c = linearLayout2;
     }
 
     @Override // androidx.viewbinding.ViewBinding
     @NonNull
     public View getRoot() {
-        return this.a;
+        return this.f18121a;
     }
 }

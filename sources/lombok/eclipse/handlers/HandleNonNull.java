@@ -112,9 +112,9 @@ public class HandleNonNull extends EclipseAnnotationHandler<NonNull> {
         EclipseNode paramNode;
         int i;
         HandlerUtil.handleFlagUsage(annotationNode, ConfigurationKeys.NON_NULL_FLAG_USAGE, "@NonNull");
-        if (annotationNode.up().getKind() == AST.Kind.FIELD) {
+        if (annotationNode.m10925up().getKind() == AST.Kind.FIELD) {
             try {
-                if (Eclipse.isPrimitive(annotationNode.up().get().type)) {
+                if (Eclipse.isPrimitive(annotationNode.m10925up().get().type)) {
                     annotationNode.addWarning("@NonNull is meaningless on a primitive.");
                     return;
                 }
@@ -123,9 +123,9 @@ public class HandleNonNull extends EclipseAnnotationHandler<NonNull> {
                 return;
             }
         }
-        switch ($SWITCH_TABLE$lombok$core$AST$Kind()[annotationNode.up().getKind().ordinal()]) {
+        switch ($SWITCH_TABLE$lombok$core$AST$Kind()[annotationNode.m10925up().getKind().ordinal()]) {
             case 7:
-                paramNode = annotationNode.up();
+                paramNode = annotationNode.m10925up();
                 break;
             case 8:
             case 9:
@@ -155,7 +155,7 @@ public class HandleNonNull extends EclipseAnnotationHandler<NonNull> {
         }
         try {
             Argument param = paramNode.get();
-            AbstractMethodDeclaration declaration = paramNode.up().get();
+            AbstractMethodDeclaration declaration = paramNode.m10925up().get();
             if ((!force && EclipseHandlerUtil.isGenerated(declaration)) || declaration.isAbstract()) {
                 return;
             }
@@ -221,7 +221,7 @@ public class HandleNonNull extends EclipseAnnotationHandler<NonNull> {
                 newStatements2[skipOver2] = nullCheck;
                 declaration.statements = newStatements2;
             }
-            paramNode.up().rebuild();
+            paramNode.m10925up().rebuild();
         } catch (Exception unused2) {
         }
     }

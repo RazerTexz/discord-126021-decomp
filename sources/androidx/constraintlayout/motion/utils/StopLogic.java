@@ -2,7 +2,7 @@ package androidx.constraintlayout.motion.utils;
 
 import android.util.Log;
 import androidx.constraintlayout.motion.widget.MotionInterpolator;
-import b.d.b.a.outline;
+import p007b.p100d.p104b.p105a.C1643a;
 
 /* JADX INFO: loaded from: classes.dex */
 public class StopLogic extends MotionInterpolator {
@@ -160,9 +160,9 @@ public class StopLogic extends MotionInterpolator {
     }
 
     public void debug(String str, String str2, float f) {
-        StringBuilder sbX = outline.X(str2, " ===== ");
-        sbX.append(this.mType);
-        Log.v(str, sbX.toString());
+        StringBuilder sbM836X = C1643a.m836X(str2, " ===== ");
+        sbM836X.append(this.mType);
+        Log.v(str, sbM836X.toString());
         StringBuilder sb = new StringBuilder();
         sb.append(str2);
         sb.append(this.mBackwards ? "backwards" : "forward ");
@@ -173,22 +173,22 @@ public class StopLogic extends MotionInterpolator {
         Log.v(str, sb.toString());
         Log.v(str, str2 + " dur " + this.mStage1Duration + " vel " + this.mStage1Velocity + " pos " + this.mStage1EndPosition);
         if (this.mNumberOfStages > 1) {
-            StringBuilder sbX2 = outline.X(str2, " dur ");
-            sbX2.append(this.mStage2Duration);
-            sbX2.append(" vel ");
-            sbX2.append(this.mStage2Velocity);
-            sbX2.append(" pos ");
-            sbX2.append(this.mStage2EndPosition);
-            Log.v(str, sbX2.toString());
+            StringBuilder sbM836X2 = C1643a.m836X(str2, " dur ");
+            sbM836X2.append(this.mStage2Duration);
+            sbM836X2.append(" vel ");
+            sbM836X2.append(this.mStage2Velocity);
+            sbM836X2.append(" pos ");
+            sbM836X2.append(this.mStage2EndPosition);
+            Log.v(str, sbM836X2.toString());
         }
         if (this.mNumberOfStages > 2) {
-            StringBuilder sbX3 = outline.X(str2, " dur ");
-            sbX3.append(this.mStage3Duration);
-            sbX3.append(" vel ");
-            sbX3.append(this.mStage3Velocity);
-            sbX3.append(" pos ");
-            sbX3.append(this.mStage3EndPosition);
-            Log.v(str, sbX3.toString());
+            StringBuilder sbM836X3 = C1643a.m836X(str2, " dur ");
+            sbM836X3.append(this.mStage3Duration);
+            sbM836X3.append(" vel ");
+            sbM836X3.append(this.mStage3Velocity);
+            sbM836X3.append(" pos ");
+            sbM836X3.append(this.mStage3EndPosition);
+            Log.v(str, sbM836X3.toString());
         }
         float f2 = this.mStage1Duration;
         if (f <= f2) {

@@ -3,11 +3,11 @@ package com.discord.stores;
 import com.discord.stores.updates.ObservationDeck;
 import com.discord.utilities.persister.Persister;
 import com.discord.widgets.chat.input.expression.ExpressionTrayTab;
-import d0.z.d.Intrinsics3;
-import d0.z.d.Lambda;
 import kotlin.Unit;
 import kotlin.jvm.functions.Function0;
-import rx.Observable;
+import p507d0.p592z.p594d.AbstractC12240o;
+import p507d0.p592z.p594d.C12238m;
+import p658rx.Observable;
 
 /* JADX INFO: compiled from: StoreExpressionPickerNavigation.kt */
 /* JADX INFO: loaded from: classes2.dex */
@@ -17,10 +17,10 @@ public final class StoreExpressionPickerNavigation extends StoreV2 {
     private ExpressionTrayTab selectedTab;
     private final Persister<ExpressionTrayTab> selectedTabPersister;
 
-    /* JADX INFO: renamed from: com.discord.stores.StoreExpressionPickerNavigation$observeSelectedTab$1, reason: invalid class name */
+    /* JADX INFO: renamed from: com.discord.stores.StoreExpressionPickerNavigation$observeSelectedTab$1 */
     /* JADX INFO: compiled from: StoreExpressionPickerNavigation.kt */
-    public static final class AnonymousClass1 extends Lambda implements Function0<ExpressionTrayTab> {
-        public AnonymousClass1() {
+    public static final class C59271 extends AbstractC12240o implements Function0<ExpressionTrayTab> {
+        public C59271() {
             super(0);
         }
 
@@ -31,13 +31,13 @@ public final class StoreExpressionPickerNavigation extends StoreV2 {
         }
     }
 
-    /* JADX INFO: renamed from: com.discord.stores.StoreExpressionPickerNavigation$onSelectTab$1, reason: invalid class name */
+    /* JADX INFO: renamed from: com.discord.stores.StoreExpressionPickerNavigation$onSelectTab$1 */
     /* JADX INFO: compiled from: StoreExpressionPickerNavigation.kt */
-    public static final class AnonymousClass1 extends Lambda implements Function0<Unit> {
+    public static final class C59281 extends AbstractC12240o implements Function0<Unit> {
         public final /* synthetic */ ExpressionTrayTab $expressionTrayTab;
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-        public AnonymousClass1(ExpressionTrayTab expressionTrayTab) {
+        public C59281(ExpressionTrayTab expressionTrayTab) {
             super(0);
             this.$expressionTrayTab = expressionTrayTab;
         }
@@ -45,7 +45,7 @@ public final class StoreExpressionPickerNavigation extends StoreV2 {
         @Override // kotlin.jvm.functions.Function0
         public /* bridge */ /* synthetic */ Unit invoke() {
             invoke2();
-            return Unit.a;
+            return Unit.f27425a;
         }
 
         /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
@@ -56,8 +56,8 @@ public final class StoreExpressionPickerNavigation extends StoreV2 {
     }
 
     public StoreExpressionPickerNavigation(ObservationDeck observationDeck, Dispatcher dispatcher) {
-        Intrinsics3.checkNotNullParameter(observationDeck, "observationDeck");
-        Intrinsics3.checkNotNullParameter(dispatcher, "dispatcher");
+        C12238m.checkNotNullParameter(observationDeck, "observationDeck");
+        C12238m.checkNotNullParameter(dispatcher, "dispatcher");
         this.observationDeck = observationDeck;
         this.dispatcher = dispatcher;
         this.selectedTab = ExpressionTrayTab.EMOJI;
@@ -67,18 +67,18 @@ public final class StoreExpressionPickerNavigation extends StoreV2 {
     }
 
     public final Observable<ExpressionTrayTab> observeSelectedTab() {
-        Observable<ExpressionTrayTab> observableR = ObservationDeck.connectRx$default(this.observationDeck, new ObservationDeck.UpdateSource[]{this}, false, null, null, new AnonymousClass1(), 14, null).r();
-        Intrinsics3.checkNotNullExpressionValue(observableR, "observationDeck.connectR… }.distinctUntilChanged()");
-        return observableR;
+        Observable<ExpressionTrayTab> observableM11112r = ObservationDeck.connectRx$default(this.observationDeck, new ObservationDeck.UpdateSource[]{this}, false, null, null, new C59271(), 14, null).m11112r();
+        C12238m.checkNotNullExpressionValue(observableM11112r, "observationDeck.connectR… }.distinctUntilChanged()");
+        return observableM11112r;
     }
 
     public final void onSelectTab(ExpressionTrayTab expressionTrayTab) {
-        Intrinsics3.checkNotNullParameter(expressionTrayTab, "expressionTrayTab");
-        this.dispatcher.schedule(new AnonymousClass1(expressionTrayTab));
+        C12238m.checkNotNullParameter(expressionTrayTab, "expressionTrayTab");
+        this.dispatcher.schedule(new C59281(expressionTrayTab));
     }
 
     @Override // com.discord.stores.StoreV2
-    @Store3
+    @StoreThread
     public void snapshotData() {
         this.selectedTabPersister.set(this.selectedTab, true);
     }

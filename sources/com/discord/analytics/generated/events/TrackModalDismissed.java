@@ -1,20 +1,20 @@
 package com.discord.analytics.generated.events;
 
-import b.d.b.a.outline;
 import com.discord.analytics.generated.traits.TrackBase;
-import com.discord.analytics.generated.traits.TrackBase2;
+import com.discord.analytics.generated.traits.TrackBaseReceiver;
 import com.discord.analytics.generated.traits.TrackGuild;
-import com.discord.analytics.generated.traits.TrackGuild2;
+import com.discord.analytics.generated.traits.TrackGuildReceiver;
 import com.discord.analytics.generated.traits.TrackLocationMetadata;
-import com.discord.analytics.generated.traits.TrackLocationMetadata2;
+import com.discord.analytics.generated.traits.TrackLocationMetadataReceiver;
 import com.discord.analytics.generated.traits.TrackSourceMetadata;
-import com.discord.analytics.generated.traits.TrackSourceMetadata2;
+import com.discord.analytics.generated.traits.TrackSourceMetadataReceiver;
 import com.discord.api.science.AnalyticsSchema;
-import d0.z.d.Intrinsics3;
+import p007b.p100d.p104b.p105a.C1643a;
+import p507d0.p592z.p594d.C12238m;
 
 /* JADX INFO: compiled from: TrackModalDismissed.kt */
 /* JADX INFO: loaded from: classes.dex */
-public final /* data */ class TrackModalDismissed implements AnalyticsSchema, TrackBase2, TrackGuild2, TrackLocationMetadata2, TrackSourceMetadata2 {
+public final /* data */ class TrackModalDismissed implements AnalyticsSchema, TrackBaseReceiver, TrackGuildReceiver, TrackLocationMetadataReceiver, TrackSourceMetadataReceiver {
     private TrackBase trackBase;
     private TrackGuild trackGuild;
     private TrackLocationMetadata trackLocationMetadata;
@@ -24,14 +24,15 @@ public final /* data */ class TrackModalDismissed implements AnalyticsSchema, Tr
     private final Long durationOpenMs = null;
     private final transient String analyticsSchemaTypeName = "modal_dismissed";
 
-    @Override // com.discord.analytics.generated.traits.TrackGuild2
+    @Override // com.discord.analytics.generated.traits.TrackGuildReceiver
     /* JADX INFO: renamed from: a, reason: from getter */
     public TrackGuild getTrackGuild() {
         return this.trackGuild;
     }
 
-    @Override // com.discord.analytics.generated.traits.TrackGuild2
-    public void c(TrackGuild trackGuild) {
+    @Override // com.discord.analytics.generated.traits.TrackGuildReceiver
+    /* JADX INFO: renamed from: c */
+    public void mo7508c(TrackGuild trackGuild) {
         this.trackGuild = trackGuild;
     }
 
@@ -49,7 +50,7 @@ public final /* data */ class TrackModalDismissed implements AnalyticsSchema, Tr
             return false;
         }
         TrackModalDismissed trackModalDismissed = (TrackModalDismissed) other;
-        return Intrinsics3.areEqual(this.type, trackModalDismissed.type) && Intrinsics3.areEqual(this.dismissType, trackModalDismissed.dismissType) && Intrinsics3.areEqual(this.durationOpenMs, trackModalDismissed.durationOpenMs);
+        return C12238m.areEqual(this.type, trackModalDismissed.type) && C12238m.areEqual(this.dismissType, trackModalDismissed.dismissType) && C12238m.areEqual(this.durationOpenMs, trackModalDismissed.durationOpenMs);
     }
 
     public int hashCode() {
@@ -62,11 +63,11 @@ public final /* data */ class TrackModalDismissed implements AnalyticsSchema, Tr
     }
 
     public String toString() {
-        StringBuilder sbU = outline.U("TrackModalDismissed(type=");
-        sbU.append(this.type);
-        sbU.append(", dismissType=");
-        sbU.append(this.dismissType);
-        sbU.append(", durationOpenMs=");
-        return outline.G(sbU, this.durationOpenMs, ")");
+        StringBuilder sbM833U = C1643a.m833U("TrackModalDismissed(type=");
+        sbM833U.append(this.type);
+        sbM833U.append(", dismissType=");
+        sbM833U.append(this.dismissType);
+        sbM833U.append(", durationOpenMs=");
+        return C1643a.m819G(sbM833U, this.durationOpenMs, ")");
     }
 }

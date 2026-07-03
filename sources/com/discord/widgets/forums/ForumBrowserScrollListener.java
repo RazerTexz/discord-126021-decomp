@@ -2,10 +2,10 @@ package com.discord.widgets.forums;
 
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
-import d0.z.d.Intrinsics3;
 import kotlin.Unit;
 import kotlin.jvm.functions.Function0;
 import kotlin.jvm.functions.Function1;
+import p507d0.p592z.p594d.C12238m;
 
 /* JADX INFO: compiled from: ForumBrowserScrollListener.kt */
 /* JADX INFO: loaded from: classes2.dex */
@@ -16,7 +16,7 @@ public final class ForumBrowserScrollListener extends RecyclerView.OnScrollListe
 
     @Override // androidx.recyclerview.widget.RecyclerView.OnScrollListener
     public void onScrollStateChanged(RecyclerView recyclerView, int newState) {
-        Intrinsics3.checkNotNullParameter(recyclerView, "recyclerView");
+        C12238m.checkNotNullParameter(recyclerView, "recyclerView");
         super.onScrollStateChanged(recyclerView, newState);
         Function1<? super Integer, Unit> function1 = this.onScrollStateChangedCallback;
         if (function1 != null) {
@@ -27,7 +27,7 @@ public final class ForumBrowserScrollListener extends RecyclerView.OnScrollListe
     @Override // androidx.recyclerview.widget.RecyclerView.OnScrollListener
     public void onScrolled(RecyclerView recyclerView, int dx, int dy) {
         Function0<Unit> function0;
-        Intrinsics3.checkNotNullParameter(recyclerView, "recyclerView");
+        C12238m.checkNotNullParameter(recyclerView, "recyclerView");
         super.onScrolled(recyclerView, dx, dy);
         RecyclerView.LayoutManager layoutManager = recyclerView.getLayoutManager();
         if (!(layoutManager instanceof LinearLayoutManager)) {
@@ -47,17 +47,17 @@ public final class ForumBrowserScrollListener extends RecyclerView.OnScrollListe
     }
 
     public final void setOnScrollCallback(Function0<Unit> onScroll) {
-        Intrinsics3.checkNotNullParameter(onScroll, "onScroll");
+        C12238m.checkNotNullParameter(onScroll, "onScroll");
         this.onScrollCallback = onScroll;
     }
 
     public final void setOnScrollEndCallback(Function0<Unit> onScrollEnd) {
-        Intrinsics3.checkNotNullParameter(onScrollEnd, "onScrollEnd");
+        C12238m.checkNotNullParameter(onScrollEnd, "onScrollEnd");
         this.onScrollEndCallback = onScrollEnd;
     }
 
     public final void setOnScrollStateChangedCallback(Function1<? super Integer, Unit> onScrollStateChanged) {
-        Intrinsics3.checkNotNullParameter(onScrollStateChanged, "onScrollStateChanged");
+        C12238m.checkNotNullParameter(onScrollStateChanged, "onScrollStateChanged");
         this.onScrollStateChangedCallback = onScrollStateChanged;
     }
 }

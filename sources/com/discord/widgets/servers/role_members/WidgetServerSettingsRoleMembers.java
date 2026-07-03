@@ -2,35 +2,24 @@ package com.discord.widgets.servers.role_members;
 
 import android.content.Context;
 import android.view.View;
-import androidx.core.os.Bundle2;
+import androidx.core.os.BundleKt;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentViewModelLazyKt;
 import androidx.recyclerview.widget.RecyclerView;
-import b.a.a.SimpleConfirmationDialog;
-import b.a.d.AppToast;
-import b.a.d.AppViewModelDelegates3;
-import b.a.d.AppViewModelDelegates5;
-import b.a.k.FormatUtils;
-import b.d.b.a.outline;
-import com.discord.R;
+import com.discord.C5419R;
 import com.discord.app.AppFragment;
 import com.discord.app.AppViewFlipper;
 import com.discord.databinding.WidgetServerSettingsRoleMembersBinding;
-import com.discord.dialogs.SimpleConfirmationDialog2;
+import com.discord.dialogs.SimpleConfirmationDialogArgs;
 import com.discord.models.member.GuildMember;
 import com.discord.models.user.User;
 import com.discord.utilities.error.Error;
-import com.discord.utilities.rx.ObservableExtensionsKt;
+import com.discord.utilities.p501rx.ObservableExtensionsKt;
 import com.discord.utilities.user.UserUtils;
 import com.discord.utilities.viewbinding.FragmentViewBindingDelegate;
-import com.discord.utilities.viewbinding.FragmentViewBindingDelegate3;
+import com.discord.utilities.viewbinding.FragmentViewBindingDelegateKt;
 import com.discord.widgets.servers.role_members.ServerSettingsRoleMembersViewModel;
-import d0.LazyJVM;
-import d0.Tuples;
-import d0.z.d.Intrinsics3;
-import d0.z.d.Lambda;
-import d0.z.d.Reflection2;
 import kotlin.Lazy;
 import kotlin.Unit;
 import kotlin.jvm.functions.Function0;
@@ -38,13 +27,24 @@ import kotlin.jvm.functions.Function1;
 import kotlin.jvm.functions.Function2;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.reflect.KProperty;
-import rx.Observable;
-import rx.Subscription;
+import p007b.p008a.p009a.C0825e;
+import p007b.p008a.p018d.C0865g0;
+import p007b.p008a.p018d.C0869i0;
+import p007b.p008a.p018d.C0876m;
+import p007b.p008a.p027k.C1107b;
+import p007b.p100d.p104b.p105a.C1643a;
+import p507d0.C12083g;
+import p507d0.C12116o;
+import p507d0.p592z.p594d.AbstractC12240o;
+import p507d0.p592z.p594d.C12216a0;
+import p507d0.p592z.p594d.C12238m;
+import p658rx.Observable;
+import p658rx.Subscription;
 
 /* JADX INFO: compiled from: WidgetServerSettingsRoleMembers.kt */
 /* JADX INFO: loaded from: classes2.dex */
 public final class WidgetServerSettingsRoleMembers extends AppFragment {
-    public static final /* synthetic */ KProperty[] $$delegatedProperties = {outline.d0(WidgetServerSettingsRoleMembers.class, "binding", "getBinding()Lcom/discord/databinding/WidgetServerSettingsRoleMembersBinding;", 0)};
+    public static final /* synthetic */ KProperty[] $$delegatedProperties = {C1643a.m846d0(WidgetServerSettingsRoleMembers.class, "binding", "getBinding()Lcom/discord/databinding/WidgetServerSettingsRoleMembersBinding;", 0)};
 
     /* JADX INFO: renamed from: Companion, reason: from kotlin metadata */
     public static final Companion INSTANCE = new Companion(null);
@@ -52,7 +52,7 @@ public final class WidgetServerSettingsRoleMembers extends AppFragment {
     private static final String INTENT_EXTRA_GUILD_ROLE_ID = "INTENT_EXTRA_GUILD_ROLE_ID";
     private static final int ROLE_MEMBERS_VIEW_FLIPPER_LOADING_STATE = 0;
     private static final int ROLE_MEMBERS_VIEW_FLIPPER_RESULT = 1;
-    private WidgetServerSettingsRoleMembers2 adapter;
+    private ServerSettingsRoleMembersAdapter adapter;
 
     /* JADX INFO: renamed from: binding$delegate, reason: from kotlin metadata */
     private final FragmentViewBindingDelegate binding;
@@ -73,7 +73,7 @@ public final class WidgetServerSettingsRoleMembers extends AppFragment {
 
         public final WidgetServerSettingsRoleMembers newInstance(long guildRoleId, long guildId) {
             WidgetServerSettingsRoleMembers widgetServerSettingsRoleMembers = new WidgetServerSettingsRoleMembers();
-            widgetServerSettingsRoleMembers.setArguments(Bundle2.bundleOf(Tuples.to(WidgetServerSettingsRoleMembers.INTENT_EXTRA_GUILD_ROLE_ID, Long.valueOf(guildRoleId)), Tuples.to("INTENT_EXTRA_GUILD_ID", Long.valueOf(guildId))));
+            widgetServerSettingsRoleMembers.setArguments(BundleKt.bundleOf(C12116o.m10073to(WidgetServerSettingsRoleMembers.INTENT_EXTRA_GUILD_ROLE_ID, Long.valueOf(guildRoleId)), C12116o.m10073to("INTENT_EXTRA_GUILD_ID", Long.valueOf(guildId))));
             return widgetServerSettingsRoleMembers;
         }
 
@@ -82,13 +82,13 @@ public final class WidgetServerSettingsRoleMembers extends AppFragment {
         }
     }
 
-    /* JADX INFO: renamed from: com.discord.widgets.servers.role_members.WidgetServerSettingsRoleMembers$configureUI$1, reason: invalid class name */
+    /* JADX INFO: renamed from: com.discord.widgets.servers.role_members.WidgetServerSettingsRoleMembers$configureUI$1 */
     /* JADX INFO: compiled from: WidgetServerSettingsRoleMembers.kt */
-    public static final class AnonymousClass1 extends Lambda implements Function2<GuildMember, User, Unit> {
+    public static final class C95771 extends AbstractC12240o implements Function2<GuildMember, User, Unit> {
         public final /* synthetic */ ServerSettingsRoleMembersViewModel.ViewState $viewState;
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-        public AnonymousClass1(ServerSettingsRoleMembersViewModel.ViewState viewState) {
+        public C95771(ServerSettingsRoleMembersViewModel.ViewState viewState) {
             super(2);
             this.$viewState = viewState;
         }
@@ -96,17 +96,17 @@ public final class WidgetServerSettingsRoleMembers extends AppFragment {
         @Override // kotlin.jvm.functions.Function2
         public /* bridge */ /* synthetic */ Unit invoke(GuildMember guildMember, User user) {
             invoke2(guildMember, user);
-            return Unit.a;
+            return Unit.f27425a;
         }
 
         /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
         public final void invoke2(final GuildMember guildMember, User user) {
-            Intrinsics3.checkNotNullParameter(guildMember, "guildMember");
-            Intrinsics3.checkNotNullParameter(user, "user");
-            SimpleConfirmationDialog.Companion companion = SimpleConfirmationDialog.INSTANCE;
+            C12238m.checkNotNullParameter(guildMember, "guildMember");
+            C12238m.checkNotNullParameter(user, "user");
+            C0825e.Companion companion = C0825e.INSTANCE;
             FragmentManager childFragmentManager = WidgetServerSettingsRoleMembers.this.getChildFragmentManager();
-            Intrinsics3.checkNotNullExpressionValue(childFragmentManager, "childFragmentManager");
-            String string = WidgetServerSettingsRoleMembers.this.getString(R.string.role_remove_member_confirm_title);
+            C12238m.checkNotNullExpressionValue(childFragmentManager, "childFragmentManager");
+            String string = WidgetServerSettingsRoleMembers.this.getString(C5419R.string.role_remove_member_confirm_title);
             Context contextRequireContext = WidgetServerSettingsRoleMembers.this.requireContext();
             Object[] objArr = new Object[2];
             Object nick = guildMember.getNick();
@@ -115,7 +115,7 @@ public final class WidgetServerSettingsRoleMembers extends AppFragment {
             }
             objArr[0] = nick;
             objArr[1] = ((ServerSettingsRoleMembersViewModel.ViewState.Loaded) this.$viewState).getRole().getName();
-            companion.a(childFragmentManager, new SimpleConfirmationDialog2(string, FormatUtils.b(contextRequireContext, R.string.role_remove_member_confirm_body, objArr, (4 & 4) != 0 ? FormatUtils.b.j : null).toString(), WidgetServerSettingsRoleMembers.this.getString(R.string.remove), WidgetServerSettingsRoleMembers.this.getString(R.string.cancel)), new View.OnClickListener() { // from class: com.discord.widgets.servers.role_members.WidgetServerSettingsRoleMembers.configureUI.1.1
+            companion.m128a(childFragmentManager, new SimpleConfirmationDialogArgs(string, C1107b.m210b(contextRequireContext, C5419R.string.role_remove_member_confirm_body, objArr, (4 & 4) != 0 ? C1107b.b.f1491j : null).toString(), WidgetServerSettingsRoleMembers.this.getString(C5419R.string.remove), WidgetServerSettingsRoleMembers.this.getString(C5419R.string.cancel)), new View.OnClickListener() { // from class: com.discord.widgets.servers.role_members.WidgetServerSettingsRoleMembers.configureUI.1.1
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
                     WidgetServerSettingsRoleMembers.this.getViewModel().removeRoleFromMember(guildMember);
@@ -124,96 +124,96 @@ public final class WidgetServerSettingsRoleMembers extends AppFragment {
         }
     }
 
-    /* JADX INFO: renamed from: com.discord.widgets.servers.role_members.WidgetServerSettingsRoleMembers$onViewBound$1, reason: invalid class name */
+    /* JADX INFO: renamed from: com.discord.widgets.servers.role_members.WidgetServerSettingsRoleMembers$onViewBound$1 */
     /* JADX INFO: compiled from: WidgetServerSettingsRoleMembers.kt */
-    public static final class AnonymousClass1 extends Lambda implements Function1<String, Unit> {
-        public AnonymousClass1() {
+    public static final class C95781 extends AbstractC12240o implements Function1<String, Unit> {
+        public C95781() {
             super(1);
         }
 
         @Override // kotlin.jvm.functions.Function1
         public /* bridge */ /* synthetic */ Unit invoke(String str) {
             invoke2(str);
-            return Unit.a;
+            return Unit.f27425a;
         }
 
         /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
         public final void invoke2(String str) {
-            Intrinsics3.checkNotNullParameter(str, "searchQuery");
+            C12238m.checkNotNullParameter(str, "searchQuery");
             WidgetServerSettingsRoleMembers.this.getViewModel().updateSearchQuery(str);
         }
     }
 
-    /* JADX INFO: renamed from: com.discord.widgets.servers.role_members.WidgetServerSettingsRoleMembers$onViewBoundOrOnResume$1, reason: invalid class name */
+    /* JADX INFO: renamed from: com.discord.widgets.servers.role_members.WidgetServerSettingsRoleMembers$onViewBoundOrOnResume$1 */
     /* JADX INFO: compiled from: WidgetServerSettingsRoleMembers.kt */
-    public static final class AnonymousClass1 extends Lambda implements Function1<ServerSettingsRoleMembersViewModel.ViewState, Unit> {
-        public AnonymousClass1() {
+    public static final class C95791 extends AbstractC12240o implements Function1<ServerSettingsRoleMembersViewModel.ViewState, Unit> {
+        public C95791() {
             super(1);
         }
 
         @Override // kotlin.jvm.functions.Function1
         public /* bridge */ /* synthetic */ Unit invoke(ServerSettingsRoleMembersViewModel.ViewState viewState) {
             invoke2(viewState);
-            return Unit.a;
+            return Unit.f27425a;
         }
 
         /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
         public final void invoke2(ServerSettingsRoleMembersViewModel.ViewState viewState) {
             WidgetServerSettingsRoleMembers widgetServerSettingsRoleMembers = WidgetServerSettingsRoleMembers.this;
-            Intrinsics3.checkNotNullExpressionValue(viewState, "it");
+            C12238m.checkNotNullExpressionValue(viewState, "it");
             widgetServerSettingsRoleMembers.configureUI(viewState);
         }
     }
 
-    /* JADX INFO: renamed from: com.discord.widgets.servers.role_members.WidgetServerSettingsRoleMembers$onViewBoundOrOnResume$2, reason: invalid class name */
+    /* JADX INFO: renamed from: com.discord.widgets.servers.role_members.WidgetServerSettingsRoleMembers$onViewBoundOrOnResume$2 */
     /* JADX INFO: compiled from: WidgetServerSettingsRoleMembers.kt */
-    public static final class AnonymousClass2 extends Lambda implements Function1<ServerSettingsRoleMembersViewModel.Event, Unit> {
-        public AnonymousClass2() {
+    public static final class C95802 extends AbstractC12240o implements Function1<ServerSettingsRoleMembersViewModel.Event, Unit> {
+        public C95802() {
             super(1);
         }
 
         @Override // kotlin.jvm.functions.Function1
         public /* bridge */ /* synthetic */ Unit invoke(ServerSettingsRoleMembersViewModel.Event event) {
             invoke2(event);
-            return Unit.a;
+            return Unit.f27425a;
         }
 
         /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
         public final void invoke2(ServerSettingsRoleMembersViewModel.Event event) {
-            Intrinsics3.checkNotNullParameter(event, "it");
+            C12238m.checkNotNullParameter(event, "it");
             WidgetServerSettingsRoleMembers.this.handleEvents(event);
         }
     }
 
     public WidgetServerSettingsRoleMembers() {
-        super(R.layout.widget_server_settings_role_members);
-        this.binding = FragmentViewBindingDelegate3.viewBinding$default(this, WidgetServerSettingsRoleMembers4.INSTANCE, null, 2, null);
-        this.guildRoleId = LazyJVM.lazy(new WidgetServerSettingsRoleMembers6(this));
-        this.guildId = LazyJVM.lazy(new WidgetServerSettingsRoleMembers5(this));
-        WidgetServerSettingsRoleMembers7 widgetServerSettingsRoleMembers7 = new WidgetServerSettingsRoleMembers7(this);
-        AppViewModelDelegates3 appViewModelDelegates3 = new AppViewModelDelegates3(this);
-        this.viewModel = FragmentViewModelLazyKt.createViewModelLazy(this, Reflection2.getOrCreateKotlinClass(ServerSettingsRoleMembersViewModel.class), new WidgetServerSettingsRoleMembers$appViewModels$$inlined$viewModels$1(appViewModelDelegates3), new AppViewModelDelegates5(widgetServerSettingsRoleMembers7));
+        super(C5419R.layout.widget_server_settings_role_members);
+        this.binding = FragmentViewBindingDelegateKt.viewBinding$default(this, WidgetServerSettingsRoleMembers$binding$2.INSTANCE, null, 2, null);
+        this.guildRoleId = C12083g.lazy(new WidgetServerSettingsRoleMembers$guildRoleId$2(this));
+        this.guildId = C12083g.lazy(new WidgetServerSettingsRoleMembers$guildId$2(this));
+        WidgetServerSettingsRoleMembers$viewModel$2 widgetServerSettingsRoleMembers$viewModel$2 = new WidgetServerSettingsRoleMembers$viewModel$2(this);
+        C0865g0 c0865g0 = new C0865g0(this);
+        this.viewModel = FragmentViewModelLazyKt.createViewModelLazy(this, C12216a0.getOrCreateKotlinClass(ServerSettingsRoleMembersViewModel.class), new C9576x93a19a7a(c0865g0), new C0869i0(widgetServerSettingsRoleMembers$viewModel$2));
     }
 
     private final void configureUI(ServerSettingsRoleMembersViewModel.ViewState viewState) {
         if (viewState instanceof ServerSettingsRoleMembersViewModel.ViewState.Loading) {
-            AppViewFlipper appViewFlipper = getBinding().f2584b;
-            Intrinsics3.checkNotNullExpressionValue(appViewFlipper, "binding.roleMembersAppViewFlipper");
+            AppViewFlipper appViewFlipper = getBinding().f17745b;
+            C12238m.checkNotNullExpressionValue(appViewFlipper, "binding.roleMembersAppViewFlipper");
             appViewFlipper.setDisplayedChild(0);
         } else if (viewState instanceof ServerSettingsRoleMembersViewModel.ViewState.Loaded) {
-            AppViewFlipper appViewFlipper2 = getBinding().f2584b;
-            Intrinsics3.checkNotNullExpressionValue(appViewFlipper2, "binding.roleMembersAppViewFlipper");
+            AppViewFlipper appViewFlipper2 = getBinding().f17745b;
+            C12238m.checkNotNullExpressionValue(appViewFlipper2, "binding.roleMembersAppViewFlipper");
             appViewFlipper2.setDisplayedChild(1);
-            WidgetServerSettingsRoleMembers2 widgetServerSettingsRoleMembers2 = this.adapter;
-            if (widgetServerSettingsRoleMembers2 == null) {
-                Intrinsics3.throwUninitializedPropertyAccessException("adapter");
+            ServerSettingsRoleMembersAdapter serverSettingsRoleMembersAdapter = this.adapter;
+            if (serverSettingsRoleMembersAdapter == null) {
+                C12238m.throwUninitializedPropertyAccessException("adapter");
             }
-            widgetServerSettingsRoleMembers2.setRemoveMemberClickListener(new AnonymousClass1(viewState));
-            WidgetServerSettingsRoleMembers2 widgetServerSettingsRoleMembers3 = this.adapter;
-            if (widgetServerSettingsRoleMembers3 == null) {
-                Intrinsics3.throwUninitializedPropertyAccessException("adapter");
+            serverSettingsRoleMembersAdapter.setRemoveMemberClickListener(new C95771(viewState));
+            ServerSettingsRoleMembersAdapter serverSettingsRoleMembersAdapter2 = this.adapter;
+            if (serverSettingsRoleMembersAdapter2 == null) {
+                C12238m.throwUninitializedPropertyAccessException("adapter");
             }
-            widgetServerSettingsRoleMembers3.setItems(((ServerSettingsRoleMembersViewModel.ViewState.Loaded) viewState).getMemberList());
+            serverSettingsRoleMembersAdapter2.setItems(((ServerSettingsRoleMembersViewModel.ViewState.Loaded) viewState).getMemberList());
         }
     }
 
@@ -235,32 +235,32 @@ public final class WidgetServerSettingsRoleMembers extends AppFragment {
 
     private final void handleEvents(ServerSettingsRoleMembersViewModel.Event event) {
         if (event instanceof ServerSettingsRoleMembersViewModel.Event.RemoveMemberFailure) {
-            AppToast.i(this, R.string.default_failure_to_perform_action_message, 0, 4);
+            C0876m.m171i(this, C5419R.string.default_failure_to_perform_action_message, 0, 4);
         }
     }
 
     /* JADX WARN: Multi-variable type inference failed */
     @Override // com.discord.app.AppFragment
     public void onViewBound(View view) {
-        Intrinsics3.checkNotNullParameter(view, "view");
+        C12238m.checkNotNullParameter(view, "view");
         super.onViewBound(view);
-        this.adapter = new WidgetServerSettingsRoleMembers2(this, null, 2, 0 == true ? 1 : 0);
-        RecyclerView recyclerView = getBinding().c;
-        Intrinsics3.checkNotNullExpressionValue(recyclerView, "binding.serverSettingsRoleMembersList");
-        WidgetServerSettingsRoleMembers2 widgetServerSettingsRoleMembers2 = this.adapter;
-        if (widgetServerSettingsRoleMembers2 == null) {
-            Intrinsics3.throwUninitializedPropertyAccessException("adapter");
+        this.adapter = new ServerSettingsRoleMembersAdapter(this, null, 2, 0 == true ? 1 : 0);
+        RecyclerView recyclerView = getBinding().f17746c;
+        C12238m.checkNotNullExpressionValue(recyclerView, "binding.serverSettingsRoleMembersList");
+        ServerSettingsRoleMembersAdapter serverSettingsRoleMembersAdapter = this.adapter;
+        if (serverSettingsRoleMembersAdapter == null) {
+            C12238m.throwUninitializedPropertyAccessException("adapter");
         }
-        recyclerView.setAdapter(widgetServerSettingsRoleMembers2);
-        getBinding().d.a(this, new AnonymousClass1());
+        recyclerView.setAdapter(serverSettingsRoleMembersAdapter);
+        getBinding().f17747d.m8553a(this, new C95781());
     }
 
     @Override // com.discord.app.AppFragment
     public void onViewBoundOrOnResume() {
         super.onViewBoundOrOnResume();
-        Observable<ServerSettingsRoleMembersViewModel.ViewState> observableR = getViewModel().observeViewState().r();
-        Intrinsics3.checkNotNullExpressionValue(observableR, "viewModel\n        .obser…  .distinctUntilChanged()");
-        ObservableExtensionsKt.appSubscribe(ObservableExtensionsKt.bindToComponentLifecycle$default(observableR, this, null, 2, null), (Class<?>) WidgetServerSettingsRoleMembers.class, (58 & 2) != 0 ? null : null, (Function1<? super Subscription, Unit>) ((58 & 4) != 0 ? null : null), (Function1<? super Error, Unit>) ((58 & 8) != 0 ? null : null), (Function0<Unit>) ((58 & 16) != 0 ? ObservableExtensionsKt.AnonymousClass1.INSTANCE : null), (Function0<Unit>) ((58 & 32) != 0 ? ObservableExtensionsKt.AnonymousClass2.INSTANCE : null), new AnonymousClass1());
-        ObservableExtensionsKt.appSubscribe(ObservableExtensionsKt.bindToComponentLifecycle$default(getViewModel().observeEvents(), this, null, 2, null), (Class<?>) WidgetServerSettingsRoleMembers.class, (58 & 2) != 0 ? null : null, (Function1<? super Subscription, Unit>) ((58 & 4) != 0 ? null : null), (Function1<? super Error, Unit>) ((58 & 8) != 0 ? null : null), (Function0<Unit>) ((58 & 16) != 0 ? ObservableExtensionsKt.AnonymousClass1.INSTANCE : null), (Function0<Unit>) ((58 & 32) != 0 ? ObservableExtensionsKt.AnonymousClass2.INSTANCE : null), new AnonymousClass2());
+        Observable<ServerSettingsRoleMembersViewModel.ViewState> observableM11112r = getViewModel().observeViewState().m11112r();
+        C12238m.checkNotNullExpressionValue(observableM11112r, "viewModel\n        .obser…  .distinctUntilChanged()");
+        ObservableExtensionsKt.appSubscribe(ObservableExtensionsKt.bindToComponentLifecycle$default(observableM11112r, this, null, 2, null), (Class<?>) WidgetServerSettingsRoleMembers.class, (58 & 2) != 0 ? null : null, (Function1<? super Subscription, Unit>) ((58 & 4) != 0 ? null : null), (Function1<? super Error, Unit>) ((58 & 8) != 0 ? null : null), (Function0<Unit>) ((58 & 16) != 0 ? ObservableExtensionsKt.C68791.INSTANCE : null), (Function0<Unit>) ((58 & 32) != 0 ? ObservableExtensionsKt.C68802.INSTANCE : null), new C95791());
+        ObservableExtensionsKt.appSubscribe(ObservableExtensionsKt.bindToComponentLifecycle$default(getViewModel().observeEvents(), this, null, 2, null), (Class<?>) WidgetServerSettingsRoleMembers.class, (58 & 2) != 0 ? null : null, (Function1<? super Subscription, Unit>) ((58 & 4) != 0 ? null : null), (Function1<? super Error, Unit>) ((58 & 8) != 0 ? null : null), (Function0<Unit>) ((58 & 16) != 0 ? ObservableExtensionsKt.C68791.INSTANCE : null), (Function0<Unit>) ((58 & 32) != 0 ? ObservableExtensionsKt.C68802.INSTANCE : null), new C95802());
     }
 }

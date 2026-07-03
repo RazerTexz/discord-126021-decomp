@@ -227,7 +227,7 @@ public class Delombok {
             System.out.println(e.getMessage());
             System.exit(1);
         }
-        CmdReader<CmdArgs> reader = CmdReader.of(CmdArgs.class);
+        CmdReader<CmdArgs> reader = CmdReader.m9327of(CmdArgs.class);
         try {
             CmdArgs args = reader.make(rawArgs);
             if (args.help || (args.input.isEmpty() && !args.formatHelp)) {

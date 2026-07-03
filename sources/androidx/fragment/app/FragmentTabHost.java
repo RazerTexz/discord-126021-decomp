@@ -15,8 +15,8 @@ import android.widget.TabHost;
 import android.widget.TabWidget;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import b.d.b.a.outline;
 import java.util.ArrayList;
+import p007b.p100d.p104b.p105a.C1643a;
 
 /* JADX INFO: loaded from: classes.dex */
 @Deprecated
@@ -68,10 +68,10 @@ public class FragmentTabHost extends TabHost implements TabHost.OnTabChangeListe
 
         @NonNull
         public String toString() {
-            StringBuilder sbU = outline.U("FragmentTabHost.SavedState{");
-            sbU.append(Integer.toHexString(System.identityHashCode(this)));
-            sbU.append(" curTab=");
-            return outline.J(sbU, this.curTab, "}");
+            StringBuilder sbM833U = C1643a.m833U("FragmentTabHost.SavedState{");
+            sbM833U.append(Integer.toHexString(System.identityHashCode(this)));
+            sbM833U.append(" curTab=");
+            return C1643a.m822J(sbM833U, this.curTab, "}");
         }
 
         @Override // android.view.View.BaseSavedState, android.view.AbsSavedState, android.os.Parcelable
@@ -147,9 +147,9 @@ public class FragmentTabHost extends TabHost implements TabHost.OnTabChangeListe
             if (frameLayout != null) {
                 return;
             }
-            StringBuilder sbU = outline.U("No tab content FrameLayout found for id ");
-            sbU.append(this.mContainerId);
-            throw new IllegalStateException(sbU.toString());
+            StringBuilder sbM833U = C1643a.m833U("No tab content FrameLayout found for id ");
+            sbM833U.append(this.mContainerId);
+            throw new IllegalStateException(sbM833U.toString());
         }
     }
 

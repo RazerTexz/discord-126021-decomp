@@ -1,13 +1,13 @@
 package com.discord.stores;
 
-import b.d.b.a.outline;
 import com.discord.api.user.User;
 import com.discord.stores.updates.ObservationDeck;
-import d0.z.d.Intrinsics3;
-import d0.z.d.Lambda;
 import kotlin.Unit;
 import kotlin.jvm.functions.Function0;
-import rx.Observable;
+import p007b.p100d.p104b.p105a.C1643a;
+import p507d0.p592z.p594d.AbstractC12240o;
+import p507d0.p592z.p594d.C12238m;
+import p658rx.Observable;
 
 /* JADX INFO: compiled from: StoreMFA.kt */
 /* JADX INFO: loaded from: classes2.dex */
@@ -30,7 +30,7 @@ public final class StoreMFA extends StoreV2 {
         private final boolean isTogglingSMSBackup;
 
         public State(MFAActivationState mFAActivationState, boolean z2) {
-            Intrinsics3.checkNotNullParameter(mFAActivationState, "activationState");
+            C12238m.checkNotNullParameter(mFAActivationState, "activationState");
             this.activationState = mFAActivationState;
             this.isTogglingSMSBackup = z2;
         }
@@ -56,7 +56,7 @@ public final class StoreMFA extends StoreV2 {
         }
 
         public final State copy(MFAActivationState activationState, boolean isTogglingSMSBackup) {
-            Intrinsics3.checkNotNullParameter(activationState, "activationState");
+            C12238m.checkNotNullParameter(activationState, "activationState");
             return new State(activationState, isTogglingSMSBackup);
         }
 
@@ -68,7 +68,7 @@ public final class StoreMFA extends StoreV2 {
                 return false;
             }
             State state = (State) other;
-            return Intrinsics3.areEqual(this.activationState, state.activationState) && this.isTogglingSMSBackup == state.isTogglingSMSBackup;
+            return C12238m.areEqual(this.activationState, state.activationState) && this.isTogglingSMSBackup == state.isTogglingSMSBackup;
         }
 
         public final MFAActivationState getActivationState() {
@@ -96,17 +96,17 @@ public final class StoreMFA extends StoreV2 {
         }
 
         public String toString() {
-            StringBuilder sbU = outline.U("State(activationState=");
-            sbU.append(this.activationState);
-            sbU.append(", isTogglingSMSBackup=");
-            return outline.O(sbU, this.isTogglingSMSBackup, ")");
+            StringBuilder sbM833U = C1643a.m833U("State(activationState=");
+            sbM833U.append(this.activationState);
+            sbM833U.append(", isTogglingSMSBackup=");
+            return C1643a.m827O(sbM833U, this.isTogglingSMSBackup, ")");
         }
     }
 
-    /* JADX INFO: renamed from: com.discord.stores.StoreMFA$observeState$1, reason: invalid class name */
+    /* JADX INFO: renamed from: com.discord.stores.StoreMFA$observeState$1 */
     /* JADX INFO: compiled from: StoreMFA.kt */
-    public static final class AnonymousClass1 extends Lambda implements Function0<State> {
-        public AnonymousClass1() {
+    public static final class C61601 extends AbstractC12240o implements Function0<State> {
+        public C61601() {
             super(0);
         }
 
@@ -117,17 +117,17 @@ public final class StoreMFA extends StoreV2 {
         }
     }
 
-    /* JADX INFO: renamed from: com.discord.stores.StoreMFA$togglingSMSBackup$1, reason: invalid class name */
+    /* JADX INFO: renamed from: com.discord.stores.StoreMFA$togglingSMSBackup$1 */
     /* JADX INFO: compiled from: StoreMFA.kt */
-    public static final class AnonymousClass1 extends Lambda implements Function0<Unit> {
-        public AnonymousClass1() {
+    public static final class C61611 extends AbstractC12240o implements Function0<Unit> {
+        public C61611() {
             super(0);
         }
 
         @Override // kotlin.jvm.functions.Function0
         public /* bridge */ /* synthetic */ Unit invoke() {
             invoke2();
-            return Unit.a;
+            return Unit.f27425a;
         }
 
         /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
@@ -138,13 +138,13 @@ public final class StoreMFA extends StoreV2 {
         }
     }
 
-    /* JADX INFO: renamed from: com.discord.stores.StoreMFA$updatePendingMFAState$1, reason: invalid class name */
+    /* JADX INFO: renamed from: com.discord.stores.StoreMFA$updatePendingMFAState$1 */
     /* JADX INFO: compiled from: StoreMFA.kt */
-    public static final class AnonymousClass1 extends Lambda implements Function0<Unit> {
+    public static final class C61621 extends AbstractC12240o implements Function0<Unit> {
         public final /* synthetic */ MFAActivationState $newActivationState;
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-        public AnonymousClass1(MFAActivationState mFAActivationState) {
+        public C61621(MFAActivationState mFAActivationState) {
             super(0);
             this.$newActivationState = mFAActivationState;
         }
@@ -152,7 +152,7 @@ public final class StoreMFA extends StoreV2 {
         @Override // kotlin.jvm.functions.Function0
         public /* bridge */ /* synthetic */ Unit invoke() {
             invoke2();
-            return Unit.a;
+            return Unit.f27425a;
         }
 
         /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
@@ -164,18 +164,18 @@ public final class StoreMFA extends StoreV2 {
     }
 
     public StoreMFA(StoreStream storeStream, Dispatcher dispatcher, ObservationDeck observationDeck) {
-        Intrinsics3.checkNotNullParameter(storeStream, "stream");
-        Intrinsics3.checkNotNullParameter(dispatcher, "dispatcher");
-        Intrinsics3.checkNotNullParameter(observationDeck, "observationDeck");
+        C12238m.checkNotNullParameter(storeStream, "stream");
+        C12238m.checkNotNullParameter(dispatcher, "dispatcher");
+        C12238m.checkNotNullParameter(observationDeck, "observationDeck");
         this.stream = storeStream;
         this.dispatcher = dispatcher;
         this.observationDeck = observationDeck;
         this.state = new State(MFAActivationState.NONE, false);
     }
 
-    @Store3
+    @StoreThread
     public final void handleUserUpdated(User user) {
-        Intrinsics3.checkNotNullParameter(user, "user");
+        C12238m.checkNotNullParameter(user, "user");
         if (user.getId() == this.stream.getUsers().getMe().getId()) {
             this.state = new State(MFAActivationState.NONE, false);
             markChanged();
@@ -183,17 +183,17 @@ public final class StoreMFA extends StoreV2 {
     }
 
     public final Observable<State> observeState() {
-        Observable<State> observableR = ObservationDeck.connectRx$default(this.observationDeck, new ObservationDeck.UpdateSource[]{this}, false, null, null, new AnonymousClass1(), 14, null).r();
-        Intrinsics3.checkNotNullExpressionValue(observableR, "observationDeck.connectR… }.distinctUntilChanged()");
-        return observableR;
+        Observable<State> observableM11112r = ObservationDeck.connectRx$default(this.observationDeck, new ObservationDeck.UpdateSource[]{this}, false, null, null, new C61601(), 14, null).m11112r();
+        C12238m.checkNotNullExpressionValue(observableM11112r, "observationDeck.connectR… }.distinctUntilChanged()");
+        return observableM11112r;
     }
 
     public final void togglingSMSBackup() {
-        this.dispatcher.schedule(new AnonymousClass1());
+        this.dispatcher.schedule(new C61611());
     }
 
     public final void updatePendingMFAState(MFAActivationState newActivationState) {
-        Intrinsics3.checkNotNullParameter(newActivationState, "newActivationState");
-        this.dispatcher.schedule(new AnonymousClass1(newActivationState));
+        C12238m.checkNotNullParameter(newActivationState, "newActivationState");
+        this.dispatcher.schedule(new C61621(newActivationState));
     }
 }

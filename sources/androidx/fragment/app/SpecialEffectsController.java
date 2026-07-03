@@ -8,12 +8,12 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.core.os.CancellationSignal;
 import androidx.core.view.ViewCompat;
-import androidx.fragment.R;
-import b.d.b.a.outline;
+import androidx.fragment.C0344R;
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.Iterator;
 import java.util.List;
+import p007b.p100d.p104b.p105a.C1643a;
 
 /* JADX INFO: loaded from: classes.dex */
 public abstract class SpecialEffectsController {
@@ -23,44 +23,48 @@ public abstract class SpecialEffectsController {
     public boolean mOperationDirectionIsPop = false;
     public boolean mIsContainerPostponed = false;
 
-    /* JADX INFO: renamed from: androidx.fragment.app.SpecialEffectsController$3, reason: invalid class name */
-    public static /* synthetic */ class AnonymousClass3 {
-        public static final /* synthetic */ int[] $SwitchMap$androidx$fragment$app$SpecialEffectsController$Operation$LifecycleImpact;
-        public static final /* synthetic */ int[] $SwitchMap$androidx$fragment$app$SpecialEffectsController$Operation$State;
+    /* JADX INFO: renamed from: androidx.fragment.app.SpecialEffectsController$3 */
+    public static /* synthetic */ class C04173 {
+
+        /* JADX INFO: renamed from: $SwitchMap$androidx$fragment$app$SpecialEffectsController$Operation$LifecycleImpact */
+        public static final /* synthetic */ int[] f143xb9e640f0;
+
+        /* JADX INFO: renamed from: $SwitchMap$androidx$fragment$app$SpecialEffectsController$Operation$State */
+        public static final /* synthetic */ int[] f144xe493b431;
 
         static {
             Operation.LifecycleImpact.values();
             int[] iArr = new int[3];
-            $SwitchMap$androidx$fragment$app$SpecialEffectsController$Operation$LifecycleImpact = iArr;
+            f143xb9e640f0 = iArr;
             try {
                 iArr[Operation.LifecycleImpact.ADDING.ordinal()] = 1;
             } catch (NoSuchFieldError unused) {
             }
             try {
-                $SwitchMap$androidx$fragment$app$SpecialEffectsController$Operation$LifecycleImpact[Operation.LifecycleImpact.REMOVING.ordinal()] = 2;
+                f143xb9e640f0[Operation.LifecycleImpact.REMOVING.ordinal()] = 2;
             } catch (NoSuchFieldError unused2) {
             }
             try {
-                $SwitchMap$androidx$fragment$app$SpecialEffectsController$Operation$LifecycleImpact[Operation.LifecycleImpact.NONE.ordinal()] = 3;
+                f143xb9e640f0[Operation.LifecycleImpact.NONE.ordinal()] = 3;
             } catch (NoSuchFieldError unused3) {
             }
             Operation.State.values();
             int[] iArr2 = new int[4];
-            $SwitchMap$androidx$fragment$app$SpecialEffectsController$Operation$State = iArr2;
+            f144xe493b431 = iArr2;
             try {
                 iArr2[Operation.State.REMOVED.ordinal()] = 1;
             } catch (NoSuchFieldError unused4) {
             }
             try {
-                $SwitchMap$androidx$fragment$app$SpecialEffectsController$Operation$State[Operation.State.VISIBLE.ordinal()] = 2;
+                f144xe493b431[Operation.State.VISIBLE.ordinal()] = 2;
             } catch (NoSuchFieldError unused5) {
             }
             try {
-                $SwitchMap$androidx$fragment$app$SpecialEffectsController$Operation$State[Operation.State.GONE.ordinal()] = 3;
+                f144xe493b431[Operation.State.GONE.ordinal()] = 3;
             } catch (NoSuchFieldError unused6) {
             }
             try {
-                $SwitchMap$androidx$fragment$app$SpecialEffectsController$Operation$State[Operation.State.INVISIBLE.ordinal()] = 4;
+                f144xe493b431[Operation.State.INVISIBLE.ordinal()] = 4;
             } catch (NoSuchFieldError unused7) {
             }
         }
@@ -173,36 +177,36 @@ public abstract class SpecialEffectsController {
 
     public void enqueueAdd(@NonNull Operation.State state, @NonNull FragmentStateManager fragmentStateManager) {
         if (FragmentManager.isLoggingEnabled(2)) {
-            StringBuilder sbU = outline.U("SpecialEffectsController: Enqueuing add operation for fragment ");
-            sbU.append(fragmentStateManager.getFragment());
-            Log.v(FragmentManager.TAG, sbU.toString());
+            StringBuilder sbM833U = C1643a.m833U("SpecialEffectsController: Enqueuing add operation for fragment ");
+            sbM833U.append(fragmentStateManager.getFragment());
+            Log.v(FragmentManager.TAG, sbM833U.toString());
         }
         enqueue(state, Operation.LifecycleImpact.ADDING, fragmentStateManager);
     }
 
     public void enqueueHide(@NonNull FragmentStateManager fragmentStateManager) {
         if (FragmentManager.isLoggingEnabled(2)) {
-            StringBuilder sbU = outline.U("SpecialEffectsController: Enqueuing hide operation for fragment ");
-            sbU.append(fragmentStateManager.getFragment());
-            Log.v(FragmentManager.TAG, sbU.toString());
+            StringBuilder sbM833U = C1643a.m833U("SpecialEffectsController: Enqueuing hide operation for fragment ");
+            sbM833U.append(fragmentStateManager.getFragment());
+            Log.v(FragmentManager.TAG, sbM833U.toString());
         }
         enqueue(Operation.State.GONE, Operation.LifecycleImpact.NONE, fragmentStateManager);
     }
 
     public void enqueueRemove(@NonNull FragmentStateManager fragmentStateManager) {
         if (FragmentManager.isLoggingEnabled(2)) {
-            StringBuilder sbU = outline.U("SpecialEffectsController: Enqueuing remove operation for fragment ");
-            sbU.append(fragmentStateManager.getFragment());
-            Log.v(FragmentManager.TAG, sbU.toString());
+            StringBuilder sbM833U = C1643a.m833U("SpecialEffectsController: Enqueuing remove operation for fragment ");
+            sbM833U.append(fragmentStateManager.getFragment());
+            Log.v(FragmentManager.TAG, sbM833U.toString());
         }
         enqueue(Operation.State.REMOVED, Operation.LifecycleImpact.REMOVING, fragmentStateManager);
     }
 
     public void enqueueShow(@NonNull FragmentStateManager fragmentStateManager) {
         if (FragmentManager.isLoggingEnabled(2)) {
-            StringBuilder sbU = outline.U("SpecialEffectsController: Enqueuing show operation for fragment ");
-            sbU.append(fragmentStateManager.getFragment());
-            Log.v(FragmentManager.TAG, sbU.toString());
+            StringBuilder sbM833U = C1643a.m833U("SpecialEffectsController: Enqueuing show operation for fragment ");
+            sbM833U.append(fragmentStateManager.getFragment());
+            Log.v(FragmentManager.TAG, sbM833U.toString());
         }
         enqueue(Operation.State.VISIBLE, Operation.LifecycleImpact.NONE, fragmentStateManager);
     }
@@ -434,14 +438,14 @@ public abstract class SpecialEffectsController {
             if (iOrdinal == 0) {
                 if (this.mFinalState != State.REMOVED) {
                     if (FragmentManager.isLoggingEnabled(2)) {
-                        StringBuilder sbU = outline.U("SpecialEffectsController: For fragment ");
-                        sbU.append(this.mFragment);
-                        sbU.append(" mFinalState = ");
-                        sbU.append(this.mFinalState);
-                        sbU.append(" -> ");
-                        sbU.append(state);
-                        sbU.append(". ");
-                        Log.v(FragmentManager.TAG, sbU.toString());
+                        StringBuilder sbM833U = C1643a.m833U("SpecialEffectsController: For fragment ");
+                        sbM833U.append(this.mFragment);
+                        sbM833U.append(" mFinalState = ");
+                        sbM833U.append(this.mFinalState);
+                        sbM833U.append(" -> ");
+                        sbM833U.append(state);
+                        sbM833U.append(". ");
+                        Log.v(FragmentManager.TAG, sbM833U.toString());
                     }
                     this.mFinalState = state;
                     return;
@@ -451,12 +455,12 @@ public abstract class SpecialEffectsController {
             if (iOrdinal == 1) {
                 if (this.mFinalState == State.REMOVED) {
                     if (FragmentManager.isLoggingEnabled(2)) {
-                        StringBuilder sbU2 = outline.U("SpecialEffectsController: For fragment ");
-                        sbU2.append(this.mFragment);
-                        sbU2.append(" mFinalState = REMOVED -> VISIBLE. mLifecycleImpact = ");
-                        sbU2.append(this.mLifecycleImpact);
-                        sbU2.append(" to ADDING.");
-                        Log.v(FragmentManager.TAG, sbU2.toString());
+                        StringBuilder sbM833U2 = C1643a.m833U("SpecialEffectsController: For fragment ");
+                        sbM833U2.append(this.mFragment);
+                        sbM833U2.append(" mFinalState = REMOVED -> VISIBLE. mLifecycleImpact = ");
+                        sbM833U2.append(this.mLifecycleImpact);
+                        sbM833U2.append(" to ADDING.");
+                        Log.v(FragmentManager.TAG, sbM833U2.toString());
                     }
                     this.mFinalState = State.VISIBLE;
                     this.mLifecycleImpact = LifecycleImpact.ADDING;
@@ -468,14 +472,14 @@ public abstract class SpecialEffectsController {
                 return;
             }
             if (FragmentManager.isLoggingEnabled(2)) {
-                StringBuilder sbU3 = outline.U("SpecialEffectsController: For fragment ");
-                sbU3.append(this.mFragment);
-                sbU3.append(" mFinalState = ");
-                sbU3.append(this.mFinalState);
-                sbU3.append(" -> REMOVED. mLifecycleImpact  = ");
-                sbU3.append(this.mLifecycleImpact);
-                sbU3.append(" to REMOVING.");
-                Log.v(FragmentManager.TAG, sbU3.toString());
+                StringBuilder sbM833U3 = C1643a.m833U("SpecialEffectsController: For fragment ");
+                sbM833U3.append(this.mFragment);
+                sbM833U3.append(" mFinalState = ");
+                sbM833U3.append(this.mFinalState);
+                sbM833U3.append(" -> REMOVED. mLifecycleImpact  = ");
+                sbM833U3.append(this.mLifecycleImpact);
+                sbM833U3.append(" to REMOVING.");
+                Log.v(FragmentManager.TAG, sbM833U3.toString());
             }
             this.mFinalState = State.REMOVED;
             this.mLifecycleImpact = LifecycleImpact.REMOVING;
@@ -486,22 +490,22 @@ public abstract class SpecialEffectsController {
 
         @NonNull
         public String toString() {
-            StringBuilder sbX = outline.X("Operation ", "{");
-            sbX.append(Integer.toHexString(System.identityHashCode(this)));
-            sbX.append("} ");
-            sbX.append("{");
-            sbX.append("mFinalState = ");
-            sbX.append(this.mFinalState);
-            sbX.append("} ");
-            sbX.append("{");
-            sbX.append("mLifecycleImpact = ");
-            sbX.append(this.mLifecycleImpact);
-            sbX.append("} ");
-            sbX.append("{");
-            sbX.append("mFragment = ");
-            sbX.append(this.mFragment);
-            sbX.append("}");
-            return sbX.toString();
+            StringBuilder sbM836X = C1643a.m836X("Operation ", "{");
+            sbM836X.append(Integer.toHexString(System.identityHashCode(this)));
+            sbM836X.append("} ");
+            sbM836X.append("{");
+            sbM836X.append("mFinalState = ");
+            sbM836X.append(this.mFinalState);
+            sbM836X.append("} ");
+            sbM836X.append("{");
+            sbM836X.append("mLifecycleImpact = ");
+            sbM836X.append(this.mLifecycleImpact);
+            sbM836X.append("} ");
+            sbM836X.append("{");
+            sbM836X.append("mFragment = ");
+            sbM836X.append(this.mFragment);
+            sbM836X.append("}");
+            return sbM836X.toString();
         }
 
         public enum State {
@@ -562,14 +566,14 @@ public abstract class SpecialEffectsController {
                 if (i == 8) {
                     return GONE;
                 }
-                throw new IllegalArgumentException(outline.q("Unknown visibility ", i));
+                throw new IllegalArgumentException(C1643a.m871q("Unknown visibility ", i));
             }
         }
     }
 
     @NonNull
     public static SpecialEffectsController getOrCreateController(@NonNull ViewGroup viewGroup, @NonNull SpecialEffectsControllerFactory specialEffectsControllerFactory) {
-        int i = R.id.special_effects_controller_view_tag;
+        int i = C0344R.id.special_effects_controller_view_tag;
         Object tag = viewGroup.getTag(i);
         if (tag instanceof SpecialEffectsController) {
             return (SpecialEffectsController) tag;

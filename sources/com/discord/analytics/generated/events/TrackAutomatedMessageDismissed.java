@@ -1,18 +1,18 @@
 package com.discord.analytics.generated.events;
 
-import b.d.b.a.outline;
 import com.discord.analytics.generated.traits.TrackBase;
-import com.discord.analytics.generated.traits.TrackBase2;
+import com.discord.analytics.generated.traits.TrackBaseReceiver;
 import com.discord.analytics.generated.traits.TrackChannel;
-import com.discord.analytics.generated.traits.TrackChannel2;
+import com.discord.analytics.generated.traits.TrackChannelReceiver;
 import com.discord.analytics.generated.traits.TrackGuild;
-import com.discord.analytics.generated.traits.TrackGuild2;
+import com.discord.analytics.generated.traits.TrackGuildReceiver;
 import com.discord.api.science.AnalyticsSchema;
-import d0.z.d.Intrinsics3;
+import p007b.p100d.p104b.p105a.C1643a;
+import p507d0.p592z.p594d.C12238m;
 
 /* JADX INFO: compiled from: TrackAutomatedMessageDismissed.kt */
 /* JADX INFO: loaded from: classes.dex */
-public final /* data */ class TrackAutomatedMessageDismissed implements AnalyticsSchema, TrackBase2, TrackGuild2, TrackChannel2 {
+public final /* data */ class TrackAutomatedMessageDismissed implements AnalyticsSchema, TrackBaseReceiver, TrackGuildReceiver, TrackChannelReceiver {
     private TrackBase trackBase;
     private TrackChannel trackChannel;
     private TrackGuild trackGuild;
@@ -20,14 +20,15 @@ public final /* data */ class TrackAutomatedMessageDismissed implements Analytic
     private final CharSequence messageName = null;
     private final transient String analyticsSchemaTypeName = "automated_message_dismissed";
 
-    @Override // com.discord.analytics.generated.traits.TrackGuild2
+    @Override // com.discord.analytics.generated.traits.TrackGuildReceiver
     /* JADX INFO: renamed from: a, reason: from getter */
     public TrackGuild getTrackGuild() {
         return this.trackGuild;
     }
 
-    @Override // com.discord.analytics.generated.traits.TrackGuild2
-    public void c(TrackGuild trackGuild) {
+    @Override // com.discord.analytics.generated.traits.TrackGuildReceiver
+    /* JADX INFO: renamed from: c */
+    public void mo7508c(TrackGuild trackGuild) {
         this.trackGuild = trackGuild;
     }
 
@@ -45,7 +46,7 @@ public final /* data */ class TrackAutomatedMessageDismissed implements Analytic
             return false;
         }
         TrackAutomatedMessageDismissed trackAutomatedMessageDismissed = (TrackAutomatedMessageDismissed) other;
-        return Intrinsics3.areEqual(this.messageAuthor, trackAutomatedMessageDismissed.messageAuthor) && Intrinsics3.areEqual(this.messageName, trackAutomatedMessageDismissed.messageName);
+        return C12238m.areEqual(this.messageAuthor, trackAutomatedMessageDismissed.messageAuthor) && C12238m.areEqual(this.messageName, trackAutomatedMessageDismissed.messageName);
     }
 
     public int hashCode() {
@@ -56,9 +57,9 @@ public final /* data */ class TrackAutomatedMessageDismissed implements Analytic
     }
 
     public String toString() {
-        StringBuilder sbU = outline.U("TrackAutomatedMessageDismissed(messageAuthor=");
-        sbU.append(this.messageAuthor);
-        sbU.append(", messageName=");
-        return outline.E(sbU, this.messageName, ")");
+        StringBuilder sbM833U = C1643a.m833U("TrackAutomatedMessageDismissed(messageAuthor=");
+        sbM833U.append(this.messageAuthor);
+        sbM833U.append(", messageName=");
+        return C1643a.m817E(sbM833U, this.messageName, ")");
     }
 }

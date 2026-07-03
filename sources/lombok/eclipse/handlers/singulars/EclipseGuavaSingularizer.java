@@ -35,7 +35,9 @@ import org.eclipse.jdt.internal.compiler.ast.TypeReference;
 
 /* JADX INFO: loaded from: app.apk:lombok/eclipse/handlers/singulars/EclipseGuavaSingularizer.SCL.lombok */
 abstract class EclipseGuavaSingularizer extends EclipseSingularsRecipes.EclipseSingularizer {
-    protected static final char[] OF = {'o', 'f'};
+
+    /* JADX INFO: renamed from: OF */
+    protected static final char[] f27478OF = {'o', 'f'};
     protected static final char[][] CGCC = {new char[]{'c', 'o', 'm'}, new char[]{'g', 'o', 'o', 'g', 'l', 'e'}, new char[]{'c', 'o', 'm', 'm', 'o', 'n'}, new char[]{'c', 'o', 'l', 'l', 'e', 'c', 't'}};
 
     protected abstract LombokImmutableList<String> getArgumentSuffixes();
@@ -71,7 +73,7 @@ abstract class EclipseGuavaSingularizer extends EclipseSingularsRecipes.EclipseS
 
     @Override // lombok.eclipse.handlers.EclipseSingularsRecipes.EclipseSingularizer
     protected char[] getEmptyMakerSelector(String targetFqn) {
-        return OF;
+        return f27478OF;
     }
 
     @Override // lombok.eclipse.handlers.EclipseSingularsRecipes.EclipseSingularizer
@@ -95,9 +97,9 @@ abstract class EclipseGuavaSingularizer extends EclipseSingularsRecipes.EclipseS
 
     @Override // lombok.eclipse.handlers.EclipseSingularsRecipes.EclipseSingularizer
     public void generateMethods(CheckerFrameworkVersion cfv, EclipseSingularsRecipes.SingularData data, boolean deprecate, EclipseNode builderType, boolean fluent, EclipseSingularsRecipes.TypeReferenceMaker returnTypeMaker, EclipseSingularsRecipes.StatementMaker returnStatementMaker, AccessLevel access) {
-        generateSingularMethod(cfv, deprecate, returnTypeMaker.make(), returnStatementMaker.mo186make(), data, builderType, fluent, access);
-        generatePluralMethod(cfv, deprecate, returnTypeMaker.make(), returnStatementMaker.mo186make(), data, builderType, fluent, access);
-        generateClearMethod(cfv, deprecate, returnTypeMaker.make(), returnStatementMaker.mo186make(), data, builderType, access);
+        generateSingularMethod(cfv, deprecate, returnTypeMaker.make(), returnStatementMaker.mo11563make(), data, builderType, fluent, access);
+        generatePluralMethod(cfv, deprecate, returnTypeMaker.make(), returnStatementMaker.mo11563make(), data, builderType, fluent, access);
+        generateClearMethod(cfv, deprecate, returnTypeMaker.make(), returnStatementMaker.mo11563make(), data, builderType, access);
     }
 
     void generateClearMethod(CheckerFrameworkVersion cfv, boolean deprecate, TypeReference returnType, Statement returnStatement, EclipseSingularsRecipes.SingularData data, EclipseNode builderType, AccessLevel access) {
@@ -157,7 +159,7 @@ abstract class EclipseGuavaSingularizer extends EclipseSingularsRecipes.EclipseS
         char[] prefixedSingularName = data.getSetterPrefix().length == 0 ? data.getSingularName() : HandlerUtil.buildAccessorName(new String(data.getSetterPrefix()), new String(data.getSingularName())).toCharArray();
         md.selector = fluent ? prefixedSingularName : HandlerUtil.buildAccessorName("add", new String(data.getSingularName())).toCharArray();
         Annotation[] selfReturnAnnotations = generateSelfReturnAnnotations(deprecate, cfv, data.getSource());
-        Annotation[] copyToSetterAnnotations = EclipseHandlerUtil.copyAnnotations(md, EclipseHandlerUtil.findCopyableToBuilderSingularSetterAnnotations(data.getAnnotation().up()));
+        Annotation[] copyToSetterAnnotations = EclipseHandlerUtil.copyAnnotations(md, EclipseHandlerUtil.findCopyableToBuilderSingularSetterAnnotations(data.getAnnotation().m10925up()));
         md.annotations = (Annotation[]) EclipseHandlerUtil.concat(selfReturnAnnotations, copyToSetterAnnotations, Annotation.class);
         if (returnStatement != null) {
             EclipseHandlerUtil.createRelevantNonNullAnnotation(builderType, md);
@@ -191,7 +193,7 @@ abstract class EclipseGuavaSingularizer extends EclipseSingularsRecipes.EclipseS
         char[] prefixedSelector = data.getSetterPrefix().length == 0 ? data.getPluralName() : HandlerUtil.buildAccessorName(new String(data.getSetterPrefix()), new String(data.getPluralName())).toCharArray();
         md.selector = fluent ? prefixedSelector : HandlerUtil.buildAccessorName("addAll", new String(data.getPluralName())).toCharArray();
         Annotation[] selfReturnAnnotations = generateSelfReturnAnnotations(deprecate, cfv, data.getSource());
-        Annotation[] copyToSetterAnnotations = EclipseHandlerUtil.copyAnnotations(md, EclipseHandlerUtil.findCopyableToSetterAnnotations(data.getAnnotation().up()));
+        Annotation[] copyToSetterAnnotations = EclipseHandlerUtil.copyAnnotations(md, EclipseHandlerUtil.findCopyableToSetterAnnotations(data.getAnnotation().m10925up()));
         md.annotations = (Annotation[]) EclipseHandlerUtil.concat(selfReturnAnnotations, copyToSetterAnnotations, Annotation.class);
         if (returnStatement != null) {
             EclipseHandlerUtil.createRelevantNonNullAnnotation(builderType, md);

@@ -1,7 +1,7 @@
 package androidx.room;
 
 import androidx.annotation.RestrictTo;
-import b.d.b.a.outline;
+import p007b.p100d.p104b.p105a.C1643a;
 
 /* JADX INFO: loaded from: classes.dex */
 @RestrictTo({RestrictTo.Scope.LIBRARY_GROUP_PREFIX})
@@ -18,6 +18,6 @@ public class RoomMasterTable {
     }
 
     public static String createInsertQuery(String str) {
-        return outline.y("INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, '", str, "')");
+        return C1643a.m886y("INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, '", str, "')");
     }
 }

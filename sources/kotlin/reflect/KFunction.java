@@ -1,10 +1,10 @@
 package kotlin.reflect;
 
-import d0.Function3;
+import p507d0.InterfaceC11213c;
 
 /* JADX INFO: compiled from: KFunction.kt */
 /* JADX INFO: loaded from: classes3.dex */
-public interface KFunction<R> extends KCallable<R>, Function3<R> {
+public interface KFunction<R> extends KCallable<R>, InterfaceC11213c<R> {
     boolean isExternal();
 
     boolean isInfix();

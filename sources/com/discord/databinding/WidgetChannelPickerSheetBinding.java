@@ -13,29 +13,32 @@ import com.google.android.material.appbar.AppBarLayout;
 /* JADX INFO: loaded from: classes.dex */
 public final class WidgetChannelPickerSheetBinding implements ViewBinding {
 
+    /* JADX INFO: renamed from: a */
     @NonNull
-    public final CoordinatorLayout a;
+    public final CoordinatorLayout f15883a;
 
-    /* JADX INFO: renamed from: b, reason: collision with root package name */
+    /* JADX INFO: renamed from: b */
     @NonNull
-    public final AppViewFlipper f2264b;
+    public final AppViewFlipper f15884b;
 
+    /* JADX INFO: renamed from: c */
     @NonNull
-    public final RecyclerView c;
+    public final RecyclerView f15885c;
 
+    /* JADX INFO: renamed from: d */
     @NonNull
-    public final SearchInputView d;
+    public final SearchInputView f15886d;
 
     public WidgetChannelPickerSheetBinding(@NonNull CoordinatorLayout coordinatorLayout, @NonNull AppBarLayout appBarLayout, @NonNull AppViewFlipper appViewFlipper, @NonNull RecyclerView recyclerView, @NonNull SearchInputView searchInputView, @NonNull Toolbar toolbar) {
-        this.a = coordinatorLayout;
-        this.f2264b = appViewFlipper;
-        this.c = recyclerView;
-        this.d = searchInputView;
+        this.f15883a = coordinatorLayout;
+        this.f15884b = appViewFlipper;
+        this.f15885c = recyclerView;
+        this.f15886d = searchInputView;
     }
 
     @Override // androidx.viewbinding.ViewBinding
     @NonNull
     public View getRoot() {
-        return this.a;
+        return this.f15883a;
     }
 }

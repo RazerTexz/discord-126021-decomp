@@ -1,16 +1,16 @@
 package com.discord.analytics.generated.events.activity_internal;
 
-import b.d.b.a.outline;
 import com.discord.analytics.generated.traits.TrackActivityInternalMetadata;
-import com.discord.analytics.generated.traits.TrackActivityInternalMetadata2;
+import com.discord.analytics.generated.traits.TrackActivityInternalMetadataReceiver;
 import com.discord.analytics.generated.traits.TrackBase;
-import com.discord.analytics.generated.traits.TrackBase2;
+import com.discord.analytics.generated.traits.TrackBaseReceiver;
 import com.discord.api.science.AnalyticsSchema;
-import d0.z.d.Intrinsics3;
+import p007b.p100d.p104b.p105a.C1643a;
+import p507d0.p592z.p594d.C12238m;
 
 /* JADX INFO: compiled from: TrackActivityInternalWatchTogetherSearched.kt */
 /* JADX INFO: loaded from: classes.dex */
-public final /* data */ class TrackActivityInternalWatchTogetherSearched implements AnalyticsSchema, TrackBase2, TrackActivityInternalMetadata2 {
+public final /* data */ class TrackActivityInternalWatchTogetherSearched implements AnalyticsSchema, TrackBaseReceiver, TrackActivityInternalMetadataReceiver {
     private TrackActivityInternalMetadata trackActivityInternalMetadata;
     private TrackBase trackBase;
     private final Boolean isHost = null;
@@ -31,7 +31,7 @@ public final /* data */ class TrackActivityInternalWatchTogetherSearched impleme
             return false;
         }
         TrackActivityInternalWatchTogetherSearched trackActivityInternalWatchTogetherSearched = (TrackActivityInternalWatchTogetherSearched) other;
-        return Intrinsics3.areEqual(this.isHost, trackActivityInternalWatchTogetherSearched.isHost) && Intrinsics3.areEqual(this.searchType, trackActivityInternalWatchTogetherSearched.searchType);
+        return C12238m.areEqual(this.isHost, trackActivityInternalWatchTogetherSearched.isHost) && C12238m.areEqual(this.searchType, trackActivityInternalWatchTogetherSearched.searchType);
     }
 
     public int hashCode() {
@@ -42,9 +42,9 @@ public final /* data */ class TrackActivityInternalWatchTogetherSearched impleme
     }
 
     public String toString() {
-        StringBuilder sbU = outline.U("TrackActivityInternalWatchTogetherSearched(isHost=");
-        sbU.append(this.isHost);
-        sbU.append(", searchType=");
-        return outline.E(sbU, this.searchType, ")");
+        StringBuilder sbM833U = C1643a.m833U("TrackActivityInternalWatchTogetherSearched(isHost=");
+        sbM833U.append(this.isHost);
+        sbM833U.append(", searchType=");
+        return C1643a.m817E(sbM833U, this.searchType, ")");
     }
 }

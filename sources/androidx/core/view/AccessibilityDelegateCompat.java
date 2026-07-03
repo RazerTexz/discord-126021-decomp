@@ -10,7 +10,7 @@ import android.view.accessibility.AccessibilityNodeInfo;
 import android.view.accessibility.AccessibilityNodeProvider;
 import androidx.annotation.RequiresApi;
 import androidx.annotation.RestrictTo;
-import androidx.core.R;
+import androidx.core.C0205R;
 import androidx.core.view.accessibility.AccessibilityClickableSpanCompat;
 import androidx.core.view.accessibility.AccessibilityNodeInfoCompat;
 import androidx.core.view.accessibility.AccessibilityNodeProviderCompat;
@@ -97,7 +97,7 @@ public class AccessibilityDelegateCompat {
     }
 
     public static List<AccessibilityNodeInfoCompat.AccessibilityActionCompat> getActionList(View view) {
-        List<AccessibilityNodeInfoCompat.AccessibilityActionCompat> list = (List) view.getTag(R.id.tag_accessibility_actions);
+        List<AccessibilityNodeInfoCompat.AccessibilityActionCompat> list = (List) view.getTag(C0205R.id.tag_accessibility_actions);
         return list == null ? Collections.emptyList() : list;
     }
 
@@ -115,7 +115,7 @@ public class AccessibilityDelegateCompat {
 
     private boolean performClickableSpanAction(int i, View view) {
         WeakReference weakReference;
-        SparseArray sparseArray = (SparseArray) view.getTag(R.id.tag_accessibility_clickable_spans);
+        SparseArray sparseArray = (SparseArray) view.getTag(C0205R.id.tag_accessibility_clickable_spans);
         if (sparseArray == null || (weakReference = (WeakReference) sparseArray.get(i)) == null) {
             return false;
         }
@@ -172,7 +172,7 @@ public class AccessibilityDelegateCompat {
         if (!zPerformAccessibilityAction) {
             zPerformAccessibilityAction = this.mOriginalDelegate.performAccessibilityAction(view, i, bundle);
         }
-        return (zPerformAccessibilityAction || i != R.id.accessibility_action_clickable_span) ? zPerformAccessibilityAction : performClickableSpanAction(bundle.getInt(AccessibilityClickableSpanCompat.SPAN_ID, -1), view);
+        return (zPerformAccessibilityAction || i != C0205R.id.accessibility_action_clickable_span) ? zPerformAccessibilityAction : performClickableSpanAction(bundle.getInt(AccessibilityClickableSpanCompat.SPAN_ID, -1), view);
     }
 
     public void sendAccessibilityEvent(View view, int i) {

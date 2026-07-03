@@ -12,41 +12,47 @@ import com.google.android.material.chip.Chip;
 /* JADX INFO: loaded from: classes.dex */
 public final class StickerStoreHeaderItemBinding implements ViewBinding {
 
+    /* JADX INFO: renamed from: a */
     @NonNull
-    public final LinearLayout a;
+    public final LinearLayout f15281a;
 
-    /* JADX INFO: renamed from: b, reason: collision with root package name */
+    /* JADX INFO: renamed from: b */
     @NonNull
-    public final FrameLayout f2155b;
+    public final FrameLayout f15282b;
 
+    /* JADX INFO: renamed from: c */
     @NonNull
-    public final RelativeLayout c;
+    public final RelativeLayout f15283c;
 
+    /* JADX INFO: renamed from: d */
     @NonNull
-    public final TextView d;
+    public final TextView f15284d;
 
+    /* JADX INFO: renamed from: e */
     @NonNull
-    public final FrameLayout e;
+    public final FrameLayout f15285e;
 
+    /* JADX INFO: renamed from: f */
     @NonNull
-    public final TextView f;
+    public final TextView f15286f;
 
+    /* JADX INFO: renamed from: g */
     @NonNull
-    public final TextView g;
+    public final TextView f15287g;
 
     public StickerStoreHeaderItemBinding(@NonNull LinearLayout linearLayout, @NonNull FrameLayout frameLayout, @NonNull RelativeLayout relativeLayout, @NonNull TextView textView, @NonNull Chip chip, @NonNull FrameLayout frameLayout2, @NonNull TextView textView2, @NonNull TextView textView3) {
-        this.a = linearLayout;
-        this.f2155b = frameLayout;
-        this.c = relativeLayout;
-        this.d = textView;
-        this.e = frameLayout2;
-        this.f = textView2;
-        this.g = textView3;
+        this.f15281a = linearLayout;
+        this.f15282b = frameLayout;
+        this.f15283c = relativeLayout;
+        this.f15284d = textView;
+        this.f15285e = frameLayout2;
+        this.f15286f = textView2;
+        this.f15287g = textView3;
     }
 
     @Override // androidx.viewbinding.ViewBinding
     @NonNull
     public View getRoot() {
-        return this.a;
+        return this.f15281a;
     }
 }

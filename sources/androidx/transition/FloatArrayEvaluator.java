@@ -1,7 +1,7 @@
 package androidx.transition;
 
 import android.animation.TypeEvaluator;
-import b.d.b.a.outline;
+import p007b.p100d.p104b.p105a.C1643a;
 
 /* JADX INFO: loaded from: classes.dex */
 public class FloatArrayEvaluator implements TypeEvaluator<float[]> {
@@ -19,7 +19,7 @@ public class FloatArrayEvaluator implements TypeEvaluator<float[]> {
         }
         for (int i = 0; i < fArr3.length; i++) {
             float f2 = fArr[i];
-            fArr3[i] = outline.a(fArr2[i], f2, f, f2);
+            fArr3[i] = C1643a.m839a(fArr2[i], f2, f, f2);
         }
         return fArr3;
     }

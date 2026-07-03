@@ -1,11 +1,11 @@
 package com.discord.api.message.embed;
 
-import b.d.b.a.outline;
 import com.discord.api.utcdatetime.UtcDateTime;
 import com.discord.models.domain.ModelAuditLogEntry;
-import d0.z.d.Intrinsics3;
 import java.util.List;
 import org.webrtc.MediaStreamTrack;
+import p007b.p100d.p104b.p105a.C1643a;
+import p507d0.p592z.p594d.C12238m;
 
 /* JADX INFO: compiled from: MessageEmbed.kt */
 /* JADX INFO: loaded from: classes.dex */
@@ -39,7 +39,8 @@ public final /* data */ class MessageEmbed {
         return this.description;
     }
 
-    public final List<EmbedField> d() {
+    /* JADX INFO: renamed from: d */
+    public final List<EmbedField> m8101d() {
         return this.fields;
     }
 
@@ -56,7 +57,7 @@ public final /* data */ class MessageEmbed {
             return false;
         }
         MessageEmbed messageEmbed = (MessageEmbed) other;
-        return Intrinsics3.areEqual(this.title, messageEmbed.title) && Intrinsics3.areEqual(this.type, messageEmbed.type) && Intrinsics3.areEqual(this.description, messageEmbed.description) && Intrinsics3.areEqual(this.url, messageEmbed.url) && Intrinsics3.areEqual(this.timestamp, messageEmbed.timestamp) && Intrinsics3.areEqual(this.color, messageEmbed.color) && Intrinsics3.areEqual(this.footer, messageEmbed.footer) && Intrinsics3.areEqual(this.image, messageEmbed.image) && Intrinsics3.areEqual(this.thumbnail, messageEmbed.thumbnail) && Intrinsics3.areEqual(this.video, messageEmbed.video) && Intrinsics3.areEqual(this.provider, messageEmbed.provider) && Intrinsics3.areEqual(this.author, messageEmbed.author) && Intrinsics3.areEqual(this.fields, messageEmbed.fields);
+        return C12238m.areEqual(this.title, messageEmbed.title) && C12238m.areEqual(this.type, messageEmbed.type) && C12238m.areEqual(this.description, messageEmbed.description) && C12238m.areEqual(this.url, messageEmbed.url) && C12238m.areEqual(this.timestamp, messageEmbed.timestamp) && C12238m.areEqual(this.color, messageEmbed.color) && C12238m.areEqual(this.footer, messageEmbed.footer) && C12238m.areEqual(this.image, messageEmbed.image) && C12238m.areEqual(this.thumbnail, messageEmbed.thumbnail) && C12238m.areEqual(this.video, messageEmbed.video) && C12238m.areEqual(this.provider, messageEmbed.provider) && C12238m.areEqual(this.author, messageEmbed.author) && C12238m.areEqual(this.fields, messageEmbed.fields);
     }
 
     /* JADX INFO: renamed from: f, reason: from getter */
@@ -129,31 +130,31 @@ public final /* data */ class MessageEmbed {
     }
 
     public String toString() {
-        StringBuilder sbU = outline.U("MessageEmbed(title=");
-        sbU.append(this.title);
-        sbU.append(", type=");
-        sbU.append(this.type);
-        sbU.append(", description=");
-        sbU.append(this.description);
-        sbU.append(", url=");
-        sbU.append(this.url);
-        sbU.append(", timestamp=");
-        sbU.append(this.timestamp);
-        sbU.append(", color=");
-        sbU.append(this.color);
-        sbU.append(", footer=");
-        sbU.append(this.footer);
-        sbU.append(", image=");
-        sbU.append(this.image);
-        sbU.append(", thumbnail=");
-        sbU.append(this.thumbnail);
-        sbU.append(", video=");
-        sbU.append(this.video);
-        sbU.append(", provider=");
-        sbU.append(this.provider);
-        sbU.append(", author=");
-        sbU.append(this.author);
-        sbU.append(", fields=");
-        return outline.L(sbU, this.fields, ")");
+        StringBuilder sbM833U = C1643a.m833U("MessageEmbed(title=");
+        sbM833U.append(this.title);
+        sbM833U.append(", type=");
+        sbM833U.append(this.type);
+        sbM833U.append(", description=");
+        sbM833U.append(this.description);
+        sbM833U.append(", url=");
+        sbM833U.append(this.url);
+        sbM833U.append(", timestamp=");
+        sbM833U.append(this.timestamp);
+        sbM833U.append(", color=");
+        sbM833U.append(this.color);
+        sbM833U.append(", footer=");
+        sbM833U.append(this.footer);
+        sbM833U.append(", image=");
+        sbM833U.append(this.image);
+        sbM833U.append(", thumbnail=");
+        sbM833U.append(this.thumbnail);
+        sbM833U.append(", video=");
+        sbM833U.append(this.video);
+        sbM833U.append(", provider=");
+        sbM833U.append(this.provider);
+        sbM833U.append(", author=");
+        sbM833U.append(this.author);
+        sbM833U.append(", fields=");
+        return C1643a.m824L(sbM833U, this.fields, ")");
     }
 }

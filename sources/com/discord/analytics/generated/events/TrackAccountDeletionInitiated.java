@@ -1,14 +1,14 @@
 package com.discord.analytics.generated.events;
 
-import b.d.b.a.outline;
 import com.discord.analytics.generated.traits.TrackBase;
-import com.discord.analytics.generated.traits.TrackBase2;
+import com.discord.analytics.generated.traits.TrackBaseReceiver;
 import com.discord.api.science.AnalyticsSchema;
-import d0.z.d.Intrinsics3;
+import p007b.p100d.p104b.p105a.C1643a;
+import p507d0.p592z.p594d.C12238m;
 
 /* JADX INFO: compiled from: TrackAccountDeletionInitiated.kt */
 /* JADX INFO: loaded from: classes.dex */
-public final /* data */ class TrackAccountDeletionInitiated implements AnalyticsSchema, TrackBase2 {
+public final /* data */ class TrackAccountDeletionInitiated implements AnalyticsSchema, TrackBaseReceiver {
     private TrackBase trackBase;
     private final CharSequence initiatedBy = null;
     private final Long reasonCode = null;
@@ -28,7 +28,7 @@ public final /* data */ class TrackAccountDeletionInitiated implements Analytics
             return false;
         }
         TrackAccountDeletionInitiated trackAccountDeletionInitiated = (TrackAccountDeletionInitiated) other;
-        return Intrinsics3.areEqual(this.initiatedBy, trackAccountDeletionInitiated.initiatedBy) && Intrinsics3.areEqual(this.reasonCode, trackAccountDeletionInitiated.reasonCode);
+        return C12238m.areEqual(this.initiatedBy, trackAccountDeletionInitiated.initiatedBy) && C12238m.areEqual(this.reasonCode, trackAccountDeletionInitiated.reasonCode);
     }
 
     public int hashCode() {
@@ -39,9 +39,9 @@ public final /* data */ class TrackAccountDeletionInitiated implements Analytics
     }
 
     public String toString() {
-        StringBuilder sbU = outline.U("TrackAccountDeletionInitiated(initiatedBy=");
-        sbU.append(this.initiatedBy);
-        sbU.append(", reasonCode=");
-        return outline.G(sbU, this.reasonCode, ")");
+        StringBuilder sbM833U = C1643a.m833U("TrackAccountDeletionInitiated(initiatedBy=");
+        sbM833U.append(this.initiatedBy);
+        sbM833U.append(", reasonCode=");
+        return C1643a.m819G(sbM833U, this.reasonCode, ")");
     }
 }

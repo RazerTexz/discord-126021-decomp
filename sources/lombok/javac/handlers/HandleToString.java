@@ -22,7 +22,9 @@ import lombok.javac.handlers.JavacHandlerUtil;
 /* JADX INFO: loaded from: app.apk:lombok/javac/handlers/HandleToString.SCL.lombok */
 public class HandleToString extends JavacAnnotationHandler<ToString> {
     private static /* synthetic */ int[] $SWITCH_TABLE$lombok$core$configuration$CallSuperType;
-    private static /* synthetic */ int[] $SWITCH_TABLE$lombok$javac$handlers$JavacHandlerUtil$MemberExistsResult;
+
+    /* JADX INFO: renamed from: $SWITCH_TABLE$lombok$javac$handlers$JavacHandlerUtil$MemberExistsResult */
+    private static /* synthetic */ int[] f27489x2486df07;
 
     static /* synthetic */ int[] $SWITCH_TABLE$lombok$core$configuration$CallSuperType() {
         int[] iArr = $SWITCH_TABLE$lombok$core$configuration$CallSuperType;
@@ -46,8 +48,9 @@ public class HandleToString extends JavacAnnotationHandler<ToString> {
         return iArr2;
     }
 
-    static /* synthetic */ int[] $SWITCH_TABLE$lombok$javac$handlers$JavacHandlerUtil$MemberExistsResult() {
-        int[] iArr = $SWITCH_TABLE$lombok$javac$handlers$JavacHandlerUtil$MemberExistsResult;
+    /* JADX INFO: renamed from: $SWITCH_TABLE$lombok$javac$handlers$JavacHandlerUtil$MemberExistsResult */
+    static /* synthetic */ int[] m10947x2486df07() {
+        int[] iArr = f27489x2486df07;
         if (iArr != null) {
             return iArr;
         }
@@ -64,7 +67,7 @@ public class HandleToString extends JavacAnnotationHandler<ToString> {
             iArr2[JavacHandlerUtil.MemberExistsResult.NOT_EXISTS.ordinal()] = 1;
         } catch (NoSuchFieldError unused3) {
         }
-        $SWITCH_TABLE$lombok$javac$handlers$JavacHandlerUtil$MemberExistsResult = iArr2;
+        f27489x2486df07 = iArr2;
         return iArr2;
     }
 
@@ -73,7 +76,7 @@ public class HandleToString extends JavacAnnotationHandler<ToString> {
         HandlerUtil.handleFlagUsage(annotationNode, ConfigurationKeys.TO_STRING_FLAG_USAGE, "@ToString");
         JavacHandlerUtil.deleteAnnotationIfNeccessary(annotationNode, (Class<? extends Annotation>) ToString.class);
         ToString ann = annotation.getInstance();
-        List<InclusionExclusionUtils.Included<JavacNode, ToString.Include>> members = InclusionExclusionUtils.handleToStringMarking(annotationNode.up(), annotation, annotationNode);
+        List<InclusionExclusionUtils.Included<JavacNode, ToString.Include>> members = InclusionExclusionUtils.handleToStringMarking(annotationNode.m10925up(), annotation, annotationNode);
         if (members == null) {
             return;
         }
@@ -86,7 +89,7 @@ public class HandleToString extends JavacAnnotationHandler<ToString> {
         HandlerUtil.FieldAccess fieldAccess = doNotUseGetters ? HandlerUtil.FieldAccess.PREFER_FIELD : HandlerUtil.FieldAccess.GETTER;
         Boolean fieldNamesConfiguration = (Boolean) annotationNode.getAst().readConfiguration(ConfigurationKeys.TO_STRING_INCLUDE_FIELD_NAMES);
         boolean includeNames = (annotation.isExplicit("includeFieldNames") || fieldNamesConfiguration == null) ? ann.includeFieldNames() : fieldNamesConfiguration.booleanValue();
-        generateToString(annotationNode.up(), annotationNode, members, includeNames, callSuper, true, fieldAccess);
+        generateToString(annotationNode.m10925up(), annotationNode, members, includeNames, callSuper, true, fieldAccess);
     }
 
     public void generateToStringForType(JavacNode typeNode, JavacNode errorNode) {
@@ -114,7 +117,7 @@ public class HandleToString extends JavacAnnotationHandler<ToString> {
         if (notAClass) {
             source.addError("@ToString is only supported on a class or enum.");
         }
-        switch ($SWITCH_TABLE$lombok$javac$handlers$JavacHandlerUtil$MemberExistsResult()[JavacHandlerUtil.methodExists("toString", typeNode, 0).ordinal()]) {
+        switch (m10947x2486df07()[JavacHandlerUtil.methodExists("toString", typeNode, 0).ordinal()]) {
             case 1:
                 if (callSuper == null) {
                     if (JavacHandlerUtil.isDirectDescendantOfObject(typeNode)) {
@@ -244,12 +247,12 @@ public class HandleToString extends JavacAnnotationHandler<ToString> {
 
     public static String getTypeName(JavacNode typeNode) {
         String typeName = typeNode.get().name.toString();
-        JavacNode javacNodeUp = typeNode.up();
+        JavacNode javacNodeUp = typeNode.m10925up();
         while (true) {
             JavacNode upType = javacNodeUp;
             if (upType.getKind() == AST.Kind.TYPE) {
                 typeName = String.valueOf(upType.get().name.toString()) + "." + typeName;
-                javacNodeUp = upType.up();
+                javacNodeUp = upType.m10925up();
             } else {
                 return typeName;
             }

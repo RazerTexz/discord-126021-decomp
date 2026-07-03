@@ -30,32 +30,22 @@ import com.discord.models.domain.ModelPayload;
 import com.discord.models.message.Message;
 import com.discord.models.user.CoreUser;
 import com.discord.stores.StoreMessagesLoader;
-import com.discord.utilities.attachments.AttachmentUtils;
+import com.discord.utilities.attachments.AttachmentUtilsKt;
 import com.discord.utilities.captcha.CaptchaHelper;
 import com.discord.utilities.error.Error;
 import com.discord.utilities.logging.Logger;
-import com.discord.utilities.message.LocalMessageCreators;
+import com.discord.utilities.message.LocalMessageCreatorsKt;
 import com.discord.utilities.messagesend.MessageQueue;
-import com.discord.utilities.messagesend.MessageQueue3;
-import com.discord.utilities.messagesend.MessageQueue4;
+import com.discord.utilities.messagesend.MessageRequest;
+import com.discord.utilities.messagesend.MessageResult;
+import com.discord.utilities.p501rx.ObservableExtensionsKt;
+import com.discord.utilities.rest.ProcessedMessageContent;
 import com.discord.utilities.rest.RestAPI;
-import com.discord.utilities.rest.SendUtils3;
-import com.discord.utilities.rest.SendUtils5;
-import com.discord.utilities.rx.ObservableExtensionsKt;
+import com.discord.utilities.rest.SendUtilsKt;
 import com.discord.utilities.time.Clock;
 import com.discord.utilities.user.UserUtils;
 import com.discord.workers.BackgroundMessageSendWorker;
 import com.lytefast.flexinput.model.Attachment;
-import d0.t.Collections2;
-import d0.t.CollectionsJVM;
-import d0.t.Iterables2;
-import d0.t._Collections;
-import d0.z.d.Intrinsics3;
-import d0.z.d.Lambda;
-import j0.k.Func1;
-import j0.l.a.OnSubscribeFromIterable;
-import j0.l.a.OnSubscribeLift;
-import j0.l.a.OperatorMerge;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.HashMap;
@@ -74,13 +64,23 @@ import kotlin.jvm.functions.Function2;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Ref$ObjectRef;
 import org.objectweb.asm.Opcodes;
-import rx.Emitter;
-import rx.Observable;
-import rx.Subscription;
-import rx.functions.Action1;
-import rx.functions.Func2;
-import rx.functions.Func3;
-import rx.subjects.BehaviorSubject;
+import p507d0.p580t.C12145m;
+import p507d0.p580t.C12147n;
+import p507d0.p580t.C12149o;
+import p507d0.p580t.C12163u;
+import p507d0.p592z.p594d.AbstractC12240o;
+import p507d0.p592z.p594d.C12238m;
+import p637j0.p641k.InterfaceC12589b;
+import p637j0.p642l.p643a.C12662q;
+import p637j0.p642l.p643a.C12666r;
+import p637j0.p642l.p643a.C12685x0;
+import p658rx.Emitter;
+import p658rx.Observable;
+import p658rx.Subscription;
+import p658rx.functions.Action1;
+import p658rx.functions.Func2;
+import p658rx.functions.Func3;
+import p658rx.subjects.BehaviorSubject;
 
 /* JADX INFO: compiled from: StoreMessages.kt */
 /* JADX INFO: loaded from: classes2.dex */
@@ -106,7 +106,7 @@ public final class StoreMessages extends Store {
 
         private final Operation cancelBackgroundSendingWork(Context context) {
             Operation operationCancelUniqueWork = WorkManager.getInstance(context).cancelUniqueWork("BACKGROUND_MESSAGE_SENDING");
-            Intrinsics3.checkNotNullExpressionValue(operationCancelUniqueWork, "WorkManager.getInstance(…dWorker.UNIQUE_WORK_NAME)");
+            C12238m.checkNotNullExpressionValue(operationCancelUniqueWork, "WorkManager.getInstance(…dWorker.UNIQUE_WORK_NAME)");
             return operationCancelUniqueWork;
         }
 
@@ -115,19 +115,19 @@ public final class StoreMessages extends Store {
         }
     }
 
-    /* JADX INFO: renamed from: com.discord.stores.StoreMessages$deleteMessage$1, reason: invalid class name */
+    /* JADX INFO: renamed from: com.discord.stores.StoreMessages$deleteMessage$1 */
     /* JADX INFO: compiled from: StoreMessages.kt */
-    public static final class AnonymousClass1 extends Lambda implements Function1<Void, Unit> {
-        public static final AnonymousClass1 INSTANCE = new AnonymousClass1();
+    public static final class C62241 extends AbstractC12240o implements Function1<Void, Unit> {
+        public static final C62241 INSTANCE = new C62241();
 
-        public AnonymousClass1() {
+        public C62241() {
             super(1);
         }
 
         @Override // kotlin.jvm.functions.Function1
         public /* bridge */ /* synthetic */ Unit invoke(Void r1) {
             invoke2(r1);
-            return Unit.a;
+            return Unit.f27425a;
         }
 
         /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
@@ -135,15 +135,15 @@ public final class StoreMessages extends Store {
         }
     }
 
-    /* JADX INFO: renamed from: com.discord.stores.StoreMessages$deleteMessage$2, reason: invalid class name */
+    /* JADX INFO: renamed from: com.discord.stores.StoreMessages$deleteMessage$2 */
     /* JADX INFO: compiled from: StoreMessages.kt */
-    public static final class AnonymousClass2 extends Lambda implements Function0<Unit> {
+    public static final class C62252 extends AbstractC12240o implements Function0<Unit> {
         public final /* synthetic */ long $channelId;
         public final /* synthetic */ Message $message;
         public final /* synthetic */ long $messageId;
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-        public AnonymousClass2(Message message, long j, long j2) {
+        public C62252(Message message, long j, long j2) {
             super(0);
             this.$message = message;
             this.$channelId = j;
@@ -153,7 +153,7 @@ public final class StoreMessages extends Store {
         @Override // kotlin.jvm.functions.Function0
         public /* bridge */ /* synthetic */ Unit invoke() {
             invoke2();
-            return Unit.a;
+            return Unit.f27425a;
         }
 
         /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
@@ -166,7 +166,7 @@ public final class StoreMessages extends Store {
                 StoreMessages.this.handleLocalMessageDelete(this.$message);
                 Integer type = this.$message.getType();
                 if (type != null && type.intValue() == -2) {
-                    StoreMessages.this.trackFailedLocalMessageResolved(this.$message, StoreMessages2.DELETED);
+                    StoreMessages.this.trackFailedLocalMessageResolved(this.$message, FailedMessageResolutionType.DELETED);
                 }
             } else if (this.$message.isEphemeralMessage()) {
                 StoreMessages.this.handleMessageDelete(new ModelMessageDelete(this.$channelId, this.$messageId));
@@ -175,57 +175,57 @@ public final class StoreMessages extends Store {
         }
     }
 
-    /* JADX INFO: renamed from: com.discord.stores.StoreMessages$editMessage$1, reason: invalid class name */
+    /* JADX INFO: renamed from: com.discord.stores.StoreMessages$editMessage$1 */
     /* JADX INFO: compiled from: StoreMessages.kt */
-    public static final class AnonymousClass1 extends Lambda implements Function2<MessageQueue4, Boolean, Unit> {
+    public static final class C62261 extends AbstractC12240o implements Function2<MessageResult, Boolean, Unit> {
         public final /* synthetic */ MessageAllowedMentions $allowedMentions;
         public final /* synthetic */ long $attemptTimestamp;
         public final /* synthetic */ long $channelId;
         public final /* synthetic */ String $content;
         public final /* synthetic */ long $messageId;
 
-        /* JADX INFO: renamed from: com.discord.stores.StoreMessages$editMessage$1$1, reason: invalid class name and collision with other inner class name */
+        /* JADX INFO: renamed from: com.discord.stores.StoreMessages$editMessage$1$1, reason: invalid class name */
         /* JADX INFO: compiled from: StoreMessages.kt */
-        public static final class C01571 extends Lambda implements Function0<Unit> {
-            public final /* synthetic */ MessageQueue4 $result;
+        public static final class AnonymousClass1 extends AbstractC12240o implements Function0<Unit> {
+            public final /* synthetic */ MessageResult $result;
 
             /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-            public C01571(MessageQueue4 messageQueue4) {
+            public AnonymousClass1(MessageResult messageResult) {
                 super(0);
-                this.$result = messageQueue4;
+                this.$result = messageResult;
             }
 
             @Override // kotlin.jvm.functions.Function0
             public /* bridge */ /* synthetic */ Unit invoke() {
                 invoke2();
-                return Unit.a;
+                return Unit.f27425a;
             }
 
             /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
             public final void invoke2() {
                 Message messageCreateLocalMessage;
                 User author;
-                if (this.$result instanceof MessageQueue4.AutoModBlock) {
-                    AnonymousClass1 anonymousClass1 = AnonymousClass1.this;
-                    Message message = StoreMessages.this.getMessage(anonymousClass1.$channelId, anonymousClass1.$messageId);
+                if (this.$result instanceof MessageResult.AutoModBlock) {
+                    C62261 c62261 = C62261.this;
+                    Message message = StoreMessages.this.getMessage(c62261.$channelId, c62261.$messageId);
                     if (message == null || (author = message.getAuthor()) == null) {
                         messageCreateLocalMessage = null;
                     } else {
-                        AnonymousClass1 anonymousClass2 = AnonymousClass1.this;
-                        String str = anonymousClass2.$content;
-                        long j = anonymousClass2.$channelId;
+                        C62261 c62262 = C62261.this;
+                        String str = c62262.$content;
+                        long j = c62262.$channelId;
                         List<User> mentions = message.getMentions();
                         List<MessageAttachment> attachments = message.getAttachments();
                         boolean z2 = true ^ (attachments == null || attachments.isEmpty());
                         Application application = message.getApplication();
                         MessageActivity activity = message.getActivity();
                         Clock clock = StoreMessages.this.clock;
-                        List listEmptyList = Collections2.emptyList();
-                        Long lValueOf = Long.valueOf(AnonymousClass1.this.$attemptTimestamp);
+                        List listEmptyList = C12147n.emptyList();
+                        Long lValueOf = Long.valueOf(C62261.this.$attemptTimestamp);
                         Long initialAttemptTimestamp = message.getInitialAttemptTimestamp();
-                        Long lValueOf2 = Long.valueOf(initialAttemptTimestamp != null ? initialAttemptTimestamp.longValue() : AnonymousClass1.this.$attemptTimestamp);
+                        Long lValueOf2 = Long.valueOf(initialAttemptTimestamp != null ? initialAttemptTimestamp.longValue() : C62261.this.$attemptTimestamp);
                         Integer numRetries = message.getNumRetries();
-                        messageCreateLocalMessage = LocalMessageCreators.createLocalMessage(str, j, author, mentions, false, z2, application, activity, clock, listEmptyList, lValueOf, lValueOf2, Integer.valueOf(numRetries != null ? numRetries.intValue() : 0), message.getStickers(), message.getMessageReference(), AnonymousClass1.this.$allowedMentions, (65536 & 65536) != 0 ? null : null);
+                        messageCreateLocalMessage = LocalMessageCreatorsKt.createLocalMessage(str, j, author, mentions, false, z2, application, activity, clock, listEmptyList, lValueOf, lValueOf2, Integer.valueOf(numRetries != null ? numRetries.intValue() : 0), message.getStickers(), message.getMessageReference(), C62261.this.$allowedMentions, (65536 & 65536) != 0 ? null : null);
                     }
                     if (messageCreateLocalMessage != null) {
                         StoreMessages storeMessages = StoreMessages.this;
@@ -236,7 +236,7 @@ public final class StoreMessages extends Store {
         }
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-        public AnonymousClass1(long j, long j2, String str, long j3, MessageAllowedMentions messageAllowedMentions) {
+        public C62261(long j, long j2, String str, long j3, MessageAllowedMentions messageAllowedMentions) {
             super(2);
             this.$channelId = j;
             this.$messageId = j2;
@@ -246,24 +246,24 @@ public final class StoreMessages extends Store {
         }
 
         @Override // kotlin.jvm.functions.Function2
-        public /* bridge */ /* synthetic */ Unit invoke(MessageQueue4 messageQueue4, Boolean bool) {
-            invoke(messageQueue4, bool.booleanValue());
-            return Unit.a;
+        public /* bridge */ /* synthetic */ Unit invoke(MessageResult messageResult, Boolean bool) {
+            invoke(messageResult, bool.booleanValue());
+            return Unit.f27425a;
         }
 
-        public final void invoke(MessageQueue4 messageQueue4, boolean z2) {
-            Intrinsics3.checkNotNullParameter(messageQueue4, "result");
-            StoreMessages.this.dispatcher.schedule(new C01571(messageQueue4));
+        public final void invoke(MessageResult messageResult, boolean z2) {
+            C12238m.checkNotNullParameter(messageResult, "result");
+            StoreMessages.this.dispatcher.schedule(new AnonymousClass1(messageResult));
         }
     }
 
-    /* JADX INFO: renamed from: com.discord.stores.StoreMessages$markMessageFailed$1, reason: invalid class name */
+    /* JADX INFO: renamed from: com.discord.stores.StoreMessages$markMessageFailed$1 */
     /* JADX INFO: compiled from: StoreMessages.kt */
-    public static final class AnonymousClass1 extends Lambda implements Function0<Unit> {
+    public static final class C62281 extends AbstractC12240o implements Function0<Unit> {
         public final /* synthetic */ Message $localMessage;
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-        public AnonymousClass1(Message message) {
+        public C62281(Message message) {
             super(0);
             this.$localMessage = message;
         }
@@ -271,7 +271,7 @@ public final class StoreMessages extends Store {
         @Override // kotlin.jvm.functions.Function0
         public /* bridge */ /* synthetic */ Unit invoke() {
             invoke2();
-            return Unit.a;
+            return Unit.f27425a;
         }
 
         /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
@@ -280,17 +280,17 @@ public final class StoreMessages extends Store {
         }
     }
 
-    /* JADX INFO: renamed from: com.discord.stores.StoreMessages$resendAllLocalMessages$1, reason: invalid class name */
+    /* JADX INFO: renamed from: com.discord.stores.StoreMessages$resendAllLocalMessages$1 */
     /* JADX INFO: compiled from: StoreMessages.kt */
-    public static final class AnonymousClass1 extends Lambda implements Function0<Unit> {
-        public AnonymousClass1() {
+    public static final class C62361 extends AbstractC12240o implements Function0<Unit> {
+        public C62361() {
             super(0);
         }
 
         @Override // kotlin.jvm.functions.Function0
         public /* bridge */ /* synthetic */ Unit invoke() {
             invoke2();
-            return Unit.a;
+            return Unit.f27425a;
         }
 
         /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
@@ -299,33 +299,33 @@ public final class StoreMessages extends Store {
         }
     }
 
-    /* JADX INFO: renamed from: com.discord.stores.StoreMessages$resendAllLocalMessages$2, reason: invalid class name */
+    /* JADX INFO: renamed from: com.discord.stores.StoreMessages$resendAllLocalMessages$2 */
     /* JADX INFO: compiled from: StoreMessages.kt */
-    public static final class AnonymousClass2 extends Lambda implements Function1<MessageQueue4, Unit> {
-        public static final AnonymousClass2 INSTANCE = new AnonymousClass2();
+    public static final class C62372 extends AbstractC12240o implements Function1<MessageResult, Unit> {
+        public static final C62372 INSTANCE = new C62372();
 
-        public AnonymousClass2() {
+        public C62372() {
             super(1);
         }
 
         @Override // kotlin.jvm.functions.Function1
-        public /* bridge */ /* synthetic */ Unit invoke(MessageQueue4 messageQueue4) {
-            invoke2(messageQueue4);
-            return Unit.a;
+        public /* bridge */ /* synthetic */ Unit invoke(MessageResult messageResult) {
+            invoke2(messageResult);
+            return Unit.f27425a;
         }
 
         /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
-        public final void invoke2(MessageQueue4 messageQueue4) {
+        public final void invoke2(MessageResult messageResult) {
         }
     }
 
-    /* JADX INFO: renamed from: com.discord.stores.StoreMessages$resendMessage$1, reason: invalid class name */
+    /* JADX INFO: renamed from: com.discord.stores.StoreMessages$resendMessage$1 */
     /* JADX INFO: compiled from: StoreMessages.kt */
-    public static final class AnonymousClass1 extends Lambda implements Function0<Unit> {
+    public static final class C62381 extends AbstractC12240o implements Function0<Unit> {
         public final /* synthetic */ Message $message;
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-        public AnonymousClass1(Message message) {
+        public C62381(Message message) {
             super(0);
             this.$message = message;
         }
@@ -333,7 +333,7 @@ public final class StoreMessages extends Store {
         @Override // kotlin.jvm.functions.Function0
         public /* bridge */ /* synthetic */ Unit invoke() {
             invoke2();
-            return Unit.a;
+            return Unit.f27425a;
         }
 
         /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
@@ -342,34 +342,34 @@ public final class StoreMessages extends Store {
         }
     }
 
-    /* JADX INFO: renamed from: com.discord.stores.StoreMessages$resendMessageWithCaptcha$1, reason: invalid class name */
+    /* JADX INFO: renamed from: com.discord.stores.StoreMessages$resendMessageWithCaptcha$1 */
     /* JADX INFO: compiled from: StoreMessages.kt */
-    public static final class AnonymousClass1 extends Lambda implements Function1<MessageQueue4, Unit> {
-        public static final AnonymousClass1 INSTANCE = new AnonymousClass1();
+    public static final class C62391 extends AbstractC12240o implements Function1<MessageResult, Unit> {
+        public static final C62391 INSTANCE = new C62391();
 
-        public AnonymousClass1() {
+        public C62391() {
             super(1);
         }
 
         @Override // kotlin.jvm.functions.Function1
-        public /* bridge */ /* synthetic */ Unit invoke(MessageQueue4 messageQueue4) {
-            invoke2(messageQueue4);
-            return Unit.a;
+        public /* bridge */ /* synthetic */ Unit invoke(MessageResult messageResult) {
+            invoke2(messageResult);
+            return Unit.f27425a;
         }
 
         /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
-        public final void invoke2(MessageQueue4 messageQueue4) {
-            Intrinsics3.checkNotNullParameter(messageQueue4, "it");
+        public final void invoke2(MessageResult messageResult) {
+            C12238m.checkNotNullParameter(messageResult, "it");
         }
     }
 
-    /* JADX INFO: renamed from: com.discord.stores.StoreMessages$sendMessage$1, reason: invalid class name */
+    /* JADX INFO: renamed from: com.discord.stores.StoreMessages$sendMessage$1 */
     /* JADX INFO: compiled from: StoreMessages.kt */
-    public static final class AnonymousClass1 extends Lambda implements Function0<Unit> {
+    public static final class C62401 extends AbstractC12240o implements Function0<Unit> {
         public final /* synthetic */ Message $invalidAttachmentsMessage;
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-        public AnonymousClass1(Message message) {
+        public C62401(Message message) {
             super(0);
             this.$invalidAttachmentsMessage = message;
         }
@@ -377,7 +377,7 @@ public final class StoreMessages extends Store {
         @Override // kotlin.jvm.functions.Function0
         public /* bridge */ /* synthetic */ Unit invoke() {
             invoke2();
-            return Unit.a;
+            return Unit.f27425a;
         }
 
         /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
@@ -386,13 +386,13 @@ public final class StoreMessages extends Store {
         }
     }
 
-    /* JADX INFO: renamed from: com.discord.stores.StoreMessages$sendMessage$3, reason: invalid class name */
+    /* JADX INFO: renamed from: com.discord.stores.StoreMessages$sendMessage$3 */
     /* JADX INFO: compiled from: StoreMessages.kt */
-    public static final class AnonymousClass3 extends Lambda implements Function0<Unit> {
+    public static final class C62423 extends AbstractC12240o implements Function0<Unit> {
         public final /* synthetic */ Message $localMessage;
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-        public AnonymousClass3(Message message) {
+        public C62423(Message message) {
             super(0);
             this.$localMessage = message;
         }
@@ -400,7 +400,7 @@ public final class StoreMessages extends Store {
         @Override // kotlin.jvm.functions.Function0
         public /* bridge */ /* synthetic */ Unit invoke() {
             invoke2();
-            return Unit.a;
+            return Unit.f27425a;
         }
 
         /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
@@ -409,36 +409,36 @@ public final class StoreMessages extends Store {
         }
     }
 
-    /* JADX INFO: renamed from: com.discord.stores.StoreMessages$sendMessage$4, reason: invalid class name */
+    /* JADX INFO: renamed from: com.discord.stores.StoreMessages$sendMessage$4 */
     /* JADX INFO: compiled from: StoreMessages.kt */
-    public static final class AnonymousClass4 extends Lambda implements Function0<Unit> {
-        public AnonymousClass4() {
+    public static final class C62434 extends AbstractC12240o implements Function0<Unit> {
+        public C62434() {
             super(0);
         }
 
         @Override // kotlin.jvm.functions.Function0
         public /* bridge */ /* synthetic */ Unit invoke() {
             invoke2();
-            return Unit.a;
+            return Unit.f27425a;
         }
 
         /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
         public final void invoke2() {
             Context contextAccess$getContext$p = StoreMessages.access$getContext$p(StoreMessages.this);
-            Intrinsics3.checkNotNullParameter(contextAccess$getContext$p, "context");
+            C12238m.checkNotNullParameter(contextAccess$getContext$p, "context");
             OneTimeWorkRequest oneTimeWorkRequestBuild = new OneTimeWorkRequest.Builder(BackgroundMessageSendWorker.class).setInitialDelay(StoreMessages.BACKGROUND_SENDING_DELAY_MS, TimeUnit.MILLISECONDS).setConstraints(new Constraints.Builder().setRequiredNetworkType(NetworkType.CONNECTED).build()).build();
-            Intrinsics3.checkNotNullExpressionValue(oneTimeWorkRequestBuild, "OneTimeWorkRequestBuilde…     )\n          .build()");
+            C12238m.checkNotNullExpressionValue(oneTimeWorkRequestBuild, "OneTimeWorkRequestBuilde…     )\n          .build()");
             WorkManager.getInstance(contextAccess$getContext$p).enqueueUniqueWork("BACKGROUND_MESSAGE_SENDING", ExistingWorkPolicy.REPLACE, oneTimeWorkRequestBuild);
         }
     }
 
-    /* JADX INFO: renamed from: com.discord.stores.StoreMessages$sendMessage$5, reason: invalid class name */
+    /* JADX INFO: renamed from: com.discord.stores.StoreMessages$sendMessage$5 */
     /* JADX INFO: compiled from: StoreMessages.kt */
-    public static final class AnonymousClass5 extends Lambda implements Function0<Unit> {
+    public static final class C62445 extends AbstractC12240o implements Function0<Unit> {
         public final /* synthetic */ Message $message;
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-        public AnonymousClass5(Message message) {
+        public C62445(Message message) {
             super(0);
             this.$message = message;
         }
@@ -446,24 +446,24 @@ public final class StoreMessages extends Store {
         @Override // kotlin.jvm.functions.Function0
         public /* bridge */ /* synthetic */ Unit invoke() {
             invoke2();
-            return Unit.a;
+            return Unit.f27425a;
         }
 
         /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
         public final void invoke2() {
             StoreMessages.this.handleLocalMessageCreate(this.$message);
             Context contextAccess$getContext$p = StoreMessages.access$getContext$p(StoreMessages.this);
-            Intrinsics3.checkNotNullParameter(contextAccess$getContext$p, "context");
+            C12238m.checkNotNullParameter(contextAccess$getContext$p, "context");
             OneTimeWorkRequest oneTimeWorkRequestBuild = new OneTimeWorkRequest.Builder(BackgroundMessageSendWorker.class).setInitialDelay(StoreMessages.BACKGROUND_SENDING_DELAY_MS, TimeUnit.MILLISECONDS).setConstraints(new Constraints.Builder().setRequiredNetworkType(NetworkType.CONNECTED).build()).build();
-            Intrinsics3.checkNotNullExpressionValue(oneTimeWorkRequestBuild, "OneTimeWorkRequestBuilde…     )\n          .build()");
+            C12238m.checkNotNullExpressionValue(oneTimeWorkRequestBuild, "OneTimeWorkRequestBuilde…     )\n          .build()");
             WorkManager.getInstance(contextAccess$getContext$p).enqueueUniqueWork("BACKGROUND_MESSAGE_SENDING", ExistingWorkPolicy.REPLACE, oneTimeWorkRequestBuild);
         }
     }
 
     public StoreMessages(StoreStream storeStream, Dispatcher dispatcher, Clock clock) {
-        Intrinsics3.checkNotNullParameter(storeStream, "stream");
-        Intrinsics3.checkNotNullParameter(dispatcher, "dispatcher");
-        Intrinsics3.checkNotNullParameter(clock, "clock");
+        C12238m.checkNotNullParameter(storeStream, "stream");
+        C12238m.checkNotNullParameter(dispatcher, "dispatcher");
+        C12238m.checkNotNullParameter(clock, "clock");
         this.stream = storeStream;
         this.dispatcher = dispatcher;
         this.clock = clock;
@@ -471,57 +471,57 @@ public final class StoreMessages extends Store {
         this.localMessagesHolder = new StoreLocalMessagesHolder();
         this.queueExecutor = Executors.newSingleThreadExecutor();
         this.messageQueues = new HashMap<>();
-        this.initResendFinished = BehaviorSubject.l0(Boolean.FALSE);
+        this.initResendFinished = BehaviorSubject.m11130l0(Boolean.FALSE);
     }
 
     public static final /* synthetic */ Context access$getContext$p(StoreMessages storeMessages) {
         Context context = storeMessages.context;
         if (context == null) {
-            Intrinsics3.throwUninitializedPropertyAccessException("context");
+            C12238m.throwUninitializedPropertyAccessException("context");
         }
         return context;
     }
 
-    private final Observable<MessageQueue4> enqueueRequest(final long channelId, final Function1<? super Emitter<MessageQueue4>, ? extends MessageQueue3> createRequest) {
-        Observable<MessageQueue4> observableX = Observable.o(new Action1<Emitter<MessageQueue4>>() { // from class: com.discord.stores.StoreMessages.enqueueRequest.1
-            @Override // rx.functions.Action1
-            public final void call(Emitter<MessageQueue4> emitter) {
+    private final Observable<MessageResult> enqueueRequest(final long channelId, final Function1<? super Emitter<MessageResult>, ? extends MessageRequest> createRequest) {
+        Observable<MessageResult> observableM11098X = Observable.m11080o(new Action1<Emitter<MessageResult>>() { // from class: com.discord.stores.StoreMessages.enqueueRequest.1
+            @Override // p658rx.functions.Action1
+            public final void call(Emitter<MessageResult> emitter) {
                 MessageQueue orCreateMessageQueue = StoreMessages.this.getOrCreateMessageQueue(channelId);
                 Function1 function1 = createRequest;
-                Intrinsics3.checkNotNullExpressionValue(emitter, "emitter");
-                orCreateMessageQueue.enqueue((MessageQueue3) function1.invoke(emitter));
+                C12238m.checkNotNullExpressionValue(emitter, "emitter");
+                orCreateMessageQueue.enqueue((MessageRequest) function1.invoke(emitter));
             }
-        }, Emitter.BackpressureMode.ERROR).X(this.dispatcher.getScheduler());
-        Intrinsics3.checkNotNullExpressionValue(observableX, "Observable.create<Messag…eOn(dispatcher.scheduler)");
-        return observableX;
+        }, Emitter.BackpressureMode.ERROR).m11098X(this.dispatcher.getScheduler());
+        C12238m.checkNotNullExpressionValue(observableM11098X, "Observable.create<Messag…eOn(dispatcher.scheduler)");
+        return observableM11098X;
     }
 
-    @Store3
+    @StoreThread
     private final MessageQueue getOrCreateMessageQueue(long channelId) {
         MessageQueue messageQueue = this.messageQueues.get(Long.valueOf(channelId));
         if (messageQueue == null) {
             Context context = this.context;
             if (context == null) {
-                Intrinsics3.throwUninitializedPropertyAccessException("context");
+                C12238m.throwUninitializedPropertyAccessException("context");
             }
             ContentResolver contentResolver = context.getContentResolver();
-            Intrinsics3.checkNotNullExpressionValue(contentResolver, "context.contentResolver");
+            C12238m.checkNotNullExpressionValue(contentResolver, "context.contentResolver");
             ExecutorService executorService = this.queueExecutor;
-            Intrinsics3.checkNotNullExpressionValue(executorService, "queueExecutor");
+            C12238m.checkNotNullExpressionValue(executorService, "queueExecutor");
             messageQueue = new MessageQueue(contentResolver, executorService, this.clock);
             this.messageQueues.put(Long.valueOf(channelId), messageQueue);
         }
         return messageQueue;
     }
 
-    @Store3
+    @StoreThread
     private final void handleInteractionStateUpdate(InteractionStateUpdate interactionUpdate, boolean isFailed, boolean isLoading) {
         Message message;
-        ApplicationCommandLocalSendData applicationCommandLocalSendData = this.stream.getApplicationInteractions().getApplicationCommandLocalSendDataSet$app_productionGoogleRelease().get(interactionUpdate.getNonce());
+        ApplicationCommandLocalSendData applicationCommandLocalSendData = this.stream.getApplicationInteractions().m8506x27c7fac9().get(interactionUpdate.getNonce());
         if (applicationCommandLocalSendData == null || (message = this.localMessagesHolder.getMessage(applicationCommandLocalSendData.getChannelId(), applicationCommandLocalSendData.getNonceString())) == null) {
             return;
         }
-        this.localMessagesHolder.addMessage(LocalMessageCreators.createLocalApplicationCommandMessage(message, interactionUpdate.getId(), isFailed, isLoading, this.clock));
+        this.localMessagesHolder.addMessage(LocalMessageCreatorsKt.createLocalApplicationCommandMessage(message, interactionUpdate.getId(), isFailed, isLoading, this.clock));
     }
 
     public static /* synthetic */ void handleInteractionStateUpdate$default(StoreMessages storeMessages, InteractionStateUpdate interactionStateUpdate, boolean z2, boolean z3, int i, Object obj) {
@@ -534,22 +534,22 @@ public final class StoreMessages extends Store {
         storeMessages.handleInteractionStateUpdate(interactionStateUpdate, z2, z3);
     }
 
-    @Store3
+    @StoreThread
     private final void handleLocalMessageCreate(Message message) {
         this.localMessagesHolder.addMessage(message);
     }
 
-    @Store3
+    @StoreThread
     private final void handleLocalMessageDelete(Message localMessage) {
         this.localMessagesHolder.deleteMessage(localMessage);
     }
 
-    @Store3
+    @StoreThread
     private final void handleSendMessageCaptchaRequired(Message localMessage) {
         this.localMessagesHolder.addMessage(Message.copy$default(localMessage, 0L, 0L, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, -6, null, null, null, null, null, null, null, null, null, null, null, null, null, null, false, null, null, null, null, null, null, -131073, Opcodes.LAND, null));
     }
 
-    @Store3
+    @StoreThread
     private final void handleSendMessageFailure(Message localMessage) {
         deleteMessage(localMessage);
         String content = localMessage.getContent();
@@ -559,11 +559,11 @@ public final class StoreMessages extends Store {
         String str = content;
         long channelId = localMessage.getChannelId();
         User author = localMessage.getAuthor();
-        Intrinsics3.checkNotNull(author);
-        handleLocalMessageCreate(LocalMessageCreators.createLocalMessage(str, channelId, author, localMessage.getMentions(), true, localMessage.getHasLocalUploads(), localMessage.getApplication(), localMessage.getActivity(), this.clock, localMessage.getLocalAttachments(), localMessage.getLastManualAttemptTimestamp(), localMessage.getInitialAttemptTimestamp(), localMessage.getNumRetries(), localMessage.getStickers(), localMessage.getMessageReference(), localMessage.getAllowedMentions(), (65536 & 65536) != 0 ? null : null));
+        C12238m.checkNotNull(author);
+        handleLocalMessageCreate(LocalMessageCreatorsKt.createLocalMessage(str, channelId, author, localMessage.getMentions(), true, localMessage.getHasLocalUploads(), localMessage.getApplication(), localMessage.getActivity(), this.clock, localMessage.getLocalAttachments(), localMessage.getLastManualAttemptTimestamp(), localMessage.getInitialAttemptTimestamp(), localMessage.getNumRetries(), localMessage.getStickers(), localMessage.getMessageReference(), localMessage.getAllowedMentions(), (65536 & 65536) != 0 ? null : null));
     }
 
-    @Store3
+    @StoreThread
     private final void handleSendMessageFailureAutoMod(Message localMessage, UtcDateTime editedTimestamp) {
         handleLocalMessageCreate(Message.copy$default(localMessage, 0L, 0L, null, null, null, null, editedTimestamp, null, null, null, null, null, null, null, null, null, null, -8, null, null, null, null, null, null, null, null, null, null, null, null, null, null, false, null, null, null, null, null, null, -131137, Opcodes.LAND, null));
     }
@@ -576,11 +576,11 @@ public final class StoreMessages extends Store {
     }
 
     private final void handleSendMessageValidationError(Message localMessage, String errorMessage) {
-        Logger.e$default(AppLog.g, "ValidationError", errorMessage, null, null, 12, null);
+        Logger.e$default(AppLog.f14950g, "ValidationError", errorMessage, null, null, 12, null);
         deleteMessage(localMessage);
     }
 
-    @Store3
+    @StoreThread
     private final void markLocalCaptchaRequiredMessagesFailed() {
         List<Message> flattenedMessages = this.localMessagesHolder.getFlattenedMessages();
         ArrayList<Message> arrayList = new ArrayList();
@@ -596,8 +596,8 @@ public final class StoreMessages extends Store {
     }
 
     private final Observable<List<Message>> observeLocalMessagesForChannel(final long channelId) {
-        Observable<R> observableG = this.localMessagesHolder.getMessagesPublisher().G(new Func1<Map<Long, ? extends List<? extends Message>>, List<? extends Message>>() { // from class: com.discord.stores.StoreMessages.observeLocalMessagesForChannel.1
-            @Override // j0.k.Func1
+        Observable<R> observableM11083G = this.localMessagesHolder.getMessagesPublisher().m11083G(new InterfaceC12589b<Map<Long, ? extends List<? extends Message>>, List<? extends Message>>() { // from class: com.discord.stores.StoreMessages.observeLocalMessagesForChannel.1
+            @Override // p637j0.p641k.InterfaceC12589b
             public /* bridge */ /* synthetic */ List<? extends Message> call(Map<Long, ? extends List<? extends Message>> map) {
                 return call2((Map<Long, ? extends List<Message>>) map);
             }
@@ -605,12 +605,12 @@ public final class StoreMessages extends Store {
             /* JADX INFO: renamed from: call, reason: avoid collision after fix types in other method */
             public final List<Message> call2(Map<Long, ? extends List<Message>> map) {
                 List<Message> list = map.get(Long.valueOf(channelId));
-                return list != null ? list : Collections2.emptyList();
+                return list != null ? list : C12147n.emptyList();
             }
         });
-        Intrinsics3.checkNotNullExpressionValue(observableG, "localMessagesHolder\n    …annelId] ?: emptyList() }");
-        Observable<List<Message>> observableS = ObservableExtensionsKt.computationBuffered(observableG).s(new Func2<List<? extends Message>, List<? extends Message>, Boolean>() { // from class: com.discord.stores.StoreMessages.observeLocalMessagesForChannel.2
-            @Override // rx.functions.Func2
+        C12238m.checkNotNullExpressionValue(observableM11083G, "localMessagesHolder\n    …annelId] ?: emptyList() }");
+        Observable<List<Message>> observableM11113s = ObservableExtensionsKt.computationBuffered(observableM11083G).m11113s(new Func2<List<? extends Message>, List<? extends Message>, Boolean>() { // from class: com.discord.stores.StoreMessages.observeLocalMessagesForChannel.2
+            @Override // p658rx.functions.Func2
             public /* bridge */ /* synthetic */ Boolean call(List<? extends Message> list, List<? extends Message> list2) {
                 return call2((List<Message>) list, (List<Message>) list2);
             }
@@ -620,21 +620,21 @@ public final class StoreMessages extends Store {
                 return Boolean.valueOf(list == list2);
             }
         });
-        Intrinsics3.checkNotNullExpressionValue(observableS, "localMessagesHolder\n    …messages1 === messages2 }");
-        return observableS;
+        C12238m.checkNotNullExpressionValue(observableM11113s, "localMessagesHolder\n    …messages1 === messages2 }");
+        return observableM11113s;
     }
 
     private final Observable<List<Message>> observeSyncedMessagesForChannel(final long channelId) {
-        Observable<R> observableG = this.holder.getMessagesPublisher().G(new Func1<Map<Long, List<Message>>, List<? extends Message>>() { // from class: com.discord.stores.StoreMessages.observeSyncedMessagesForChannel.1
-            @Override // j0.k.Func1
+        Observable<R> observableM11083G = this.holder.getMessagesPublisher().m11083G(new InterfaceC12589b<Map<Long, List<Message>>, List<? extends Message>>() { // from class: com.discord.stores.StoreMessages.observeSyncedMessagesForChannel.1
+            @Override // p637j0.p641k.InterfaceC12589b
             public final List<Message> call(Map<Long, List<Message>> map) {
                 List<Message> list = map.get(Long.valueOf(channelId));
-                return list != null ? list : Collections2.emptyList();
+                return list != null ? list : C12147n.emptyList();
             }
         });
-        Intrinsics3.checkNotNullExpressionValue(observableG, "holder\n          .messag…annelId] ?: emptyList() }");
-        Observable<List<Message>> observableS = ObservableExtensionsKt.computationBuffered(observableG).s(new Func2<List<? extends Message>, List<? extends Message>, Boolean>() { // from class: com.discord.stores.StoreMessages.observeSyncedMessagesForChannel.2
-            @Override // rx.functions.Func2
+        C12238m.checkNotNullExpressionValue(observableM11083G, "holder\n          .messag…annelId] ?: emptyList() }");
+        Observable<List<Message>> observableM11113s = ObservableExtensionsKt.computationBuffered(observableM11083G).m11113s(new Func2<List<? extends Message>, List<? extends Message>, Boolean>() { // from class: com.discord.stores.StoreMessages.observeSyncedMessagesForChannel.2
+            @Override // p658rx.functions.Func2
             public /* bridge */ /* synthetic */ Boolean call(List<? extends Message> list, List<? extends Message> list2) {
                 return call2((List<Message>) list, (List<Message>) list2);
             }
@@ -644,11 +644,11 @@ public final class StoreMessages extends Store {
                 return Boolean.valueOf(list == list2);
             }
         });
-        Intrinsics3.checkNotNullExpressionValue(observableS, "holder\n          .messag…messages1 === messages2 }");
-        return observableS;
+        C12238m.checkNotNullExpressionValue(observableM11113s, "holder\n          .messag…messages1 === messages2 }");
+        return observableM11113s;
     }
 
-    @Store3
+    @StoreThread
     private final void resendAllLocalMessages() {
         List<Message> flattenedMessages = this.localMessagesHolder.getFlattenedMessages();
         ArrayList arrayList = new ArrayList();
@@ -658,14 +658,14 @@ public final class StoreMessages extends Store {
                 arrayList.add(obj);
             }
         }
-        ArrayList arrayList2 = new ArrayList(Iterables2.collectionSizeOrDefault(arrayList, 10));
+        ArrayList arrayList2 = new ArrayList(C12149o.collectionSizeOrDefault(arrayList, 10));
         Iterator it = arrayList.iterator();
         while (it.hasNext()) {
             arrayList2.add(resendMessage$default(this, (Message) it.next(), true, null, 4, null));
         }
-        Observable observableH0 = Observable.h0(new OnSubscribeLift(Observable.h0(new OnSubscribeFromIterable(arrayList2)).j, OperatorMerge.a.a));
-        Intrinsics3.checkNotNullExpressionValue(observableH0, "Observable\n        .mergeDelayError(observables)");
-        ObservableExtensionsKt.appSubscribe(observableH0, (Class<?>) StoreMessages.class, (58 & 2) != 0 ? null : null, (Function1<? super Subscription, Unit>) ((58 & 4) != 0 ? null : null), (Function1<? super Error, Unit>) ((58 & 8) != 0 ? null : null), (Function0<Unit>) ((58 & 16) != 0 ? ObservableExtensionsKt.AnonymousClass1.INSTANCE : new AnonymousClass1()), (Function0<Unit>) ((58 & 32) != 0 ? ObservableExtensionsKt.AnonymousClass2.INSTANCE : null), AnonymousClass2.INSTANCE);
+        Observable observableM11074h0 = Observable.m11074h0(new C12666r(Observable.m11074h0(new C12662q(arrayList2)).f27640j, C12685x0.a.f27082a));
+        C12238m.checkNotNullExpressionValue(observableM11074h0, "Observable\n        .mergeDelayError(observables)");
+        ObservableExtensionsKt.appSubscribe(observableM11074h0, (Class<?>) StoreMessages.class, (58 & 2) != 0 ? null : null, (Function1<? super Subscription, Unit>) ((58 & 4) != 0 ? null : null), (Function1<? super Error, Unit>) ((58 & 8) != 0 ? null : null), (Function0<Unit>) ((58 & 16) != 0 ? ObservableExtensionsKt.C68791.INSTANCE : new C62361()), (Function0<Unit>) ((58 & 32) != 0 ? ObservableExtensionsKt.C68802.INSTANCE : null), C62372.INSTANCE);
     }
 
     public static /* synthetic */ Observable resendMessage$default(StoreMessages storeMessages, Message message, boolean z2, CaptchaHelper.CaptchaPayload captchaPayload, int i, Object obj) {
@@ -685,7 +685,7 @@ public final class StoreMessages extends Store {
 
     /* JADX WARN: Code duplicated, block: B:18:0x003f  */
     /* JADX WARN: Code duplicated, block: B:35:0x0077  */
-    private final void trackFailedLocalMessageResolved(Message localMessage, StoreMessages2 failedMessageResolutionType) {
+    private final void trackFailedLocalMessageResolved(Message localMessage, FailedMessageResolutionType failedMessageResolutionType) {
         boolean z2;
         boolean z3;
         ArrayList arrayList;
@@ -706,11 +706,11 @@ public final class StoreMessages extends Store {
                     LocalAttachment localAttachment = (LocalAttachment) it.next();
                     Context context = this.context;
                     if (context == null) {
-                        Intrinsics3.throwUninitializedPropertyAccessException("context");
+                        C12238m.throwUninitializedPropertyAccessException("context");
                     }
                     ContentResolver contentResolver = context.getContentResolver();
-                    Intrinsics3.checkNotNullExpressionValue(contentResolver, "context.contentResolver");
-                    if (AttachmentUtils.isImageAttachment(localAttachment, contentResolver)) {
+                    C12238m.checkNotNullExpressionValue(contentResolver, "context.contentResolver");
+                    if (AttachmentUtilsKt.isImageAttachment(localAttachment, contentResolver)) {
                         z5 = true;
                         break;
                     }
@@ -739,11 +739,11 @@ public final class StoreMessages extends Store {
                     LocalAttachment localAttachment2 = (LocalAttachment) it2.next();
                     Context context2 = this.context;
                     if (context2 == null) {
-                        Intrinsics3.throwUninitializedPropertyAccessException("context");
+                        C12238m.throwUninitializedPropertyAccessException("context");
                     }
                     ContentResolver contentResolver2 = context2.getContentResolver();
-                    Intrinsics3.checkNotNullExpressionValue(contentResolver2, "context.contentResolver");
-                    if (AttachmentUtils.isVideoAttachment(localAttachment2, contentResolver2)) {
+                    C12238m.checkNotNullExpressionValue(contentResolver2, "context.contentResolver");
+                    if (AttachmentUtilsKt.isVideoAttachment(localAttachment2, contentResolver2)) {
                         z4 = true;
                         break;
                     }
@@ -760,24 +760,24 @@ public final class StoreMessages extends Store {
         }
         List<LocalAttachment> localAttachments3 = localMessage.getLocalAttachments();
         if (localAttachments3 != null) {
-            arrayList = new ArrayList(Iterables2.collectionSizeOrDefault(localAttachments3, 10));
+            arrayList = new ArrayList(C12149o.collectionSizeOrDefault(localAttachments3, 10));
             Iterator<T> it3 = localAttachments3.iterator();
             while (it3.hasNext()) {
                 Uri uri = Uri.parse(((LocalAttachment) it3.next()).getUriString());
-                Intrinsics3.checkNotNullExpressionValue(uri, "Uri.parse(localAttachment.uriString)");
+                C12238m.checkNotNullExpressionValue(uri, "Uri.parse(localAttachment.uriString)");
                 Context context3 = this.context;
                 if (context3 == null) {
-                    Intrinsics3.throwUninitializedPropertyAccessException("context");
+                    C12238m.throwUninitializedPropertyAccessException("context");
                 }
                 ContentResolver contentResolver3 = context3.getContentResolver();
-                Intrinsics3.checkNotNullExpressionValue(contentResolver3, "context.contentResolver");
-                arrayList.add(Long.valueOf(SendUtils5.computeFileSizeBytes(uri, contentResolver3)));
+                C12238m.checkNotNullExpressionValue(contentResolver3, "context.contentResolver");
+                arrayList.add(Long.valueOf(SendUtilsKt.computeFileSizeBytes(uri, contentResolver3)));
             }
         } else {
             arrayList = null;
         }
-        int iLongValue = (arrayList == null || (l = (Long) _Collections.maxOrNull((Iterable) arrayList)) == null) ? 0 : (int) l.longValue();
-        int iSumOfLong = arrayList != null ? (int) _Collections.sumOfLong(arrayList) : 0;
+        int iLongValue = (arrayList == null || (l = (Long) C12163u.maxOrNull((Iterable) arrayList)) == null) ? 0 : (int) l.longValue();
+        int iSumOfLong = arrayList != null ? (int) C12163u.sumOfLong(arrayList) : 0;
         StoreAnalytics analytics = StoreStream.INSTANCE.getAnalytics();
         List<LocalAttachment> localAttachments4 = localMessage.getLocalAttachments();
         int size = localAttachments4 != null ? localAttachments4.size() : 0;
@@ -788,13 +788,13 @@ public final class StoreMessages extends Store {
     }
 
     public final void cancelMessageSend(long channelId, String requestId) {
-        Intrinsics3.checkNotNullParameter(requestId, "requestId");
+        C12238m.checkNotNullParameter(requestId, "requestId");
         getOrCreateMessageQueue(channelId).cancel(requestId);
     }
 
-    @Store3
+    @StoreThread
     public final void deleteLocalMessage(long channelId, String nonce) {
-        Intrinsics3.checkNotNullParameter(nonce, "nonce");
+        C12238m.checkNotNullParameter(nonce, "nonce");
         getOrCreateMessageQueue(channelId).cancel(nonce);
         handleLocalMessageDelete(channelId, nonce);
     }
@@ -806,25 +806,25 @@ public final class StoreMessages extends Store {
         long id2 = message.getId();
         long channelId = message.getChannelId();
         if (message.isLocal() || message.isEphemeralMessage()) {
-            this.dispatcher.schedule(new AnonymousClass2(message, channelId, id2));
+            this.dispatcher.schedule(new C62252(message, channelId, id2));
         } else {
-            ObservableExtensionsKt.appSubscribe(ObservableExtensionsKt.restSubscribeOn$default(RestAPI.INSTANCE.getApi().deleteMessage(channelId, id2), false, 1, null), (117 & 1) != 0 ? null : null, "deleteMessage", (Function1<? super Subscription, Unit>) ((117 & 4) != 0 ? null : null), AnonymousClass1.INSTANCE, (Function1<? super Error, Unit>) ((117 & 16) != 0 ? null : null), (Function0<Unit>) ((117 & 32) != 0 ? ObservableExtensionsKt.AnonymousClass3.INSTANCE : null), (Function0<Unit>) ((117 & 64) != 0 ? ObservableExtensionsKt.AnonymousClass4.INSTANCE : null));
+            ObservableExtensionsKt.appSubscribe(ObservableExtensionsKt.restSubscribeOn$default(RestAPI.INSTANCE.getApi().deleteMessage(channelId, id2), false, 1, null), (117 & 1) != 0 ? null : null, "deleteMessage", (Function1<? super Subscription, Unit>) ((117 & 4) != 0 ? null : null), C62241.INSTANCE, (Function1<? super Error, Unit>) ((117 & 16) != 0 ? null : null), (Function0<Unit>) ((117 & 32) != 0 ? ObservableExtensionsKt.C68813.INSTANCE : null), (Function0<Unit>) ((117 & 64) != 0 ? ObservableExtensionsKt.C68824.INSTANCE : null));
         }
     }
 
     public final void editMessage(long messageId, long channelId, String content, MessageAllowedMentions allowedMentions) {
-        Intrinsics3.checkNotNullParameter(content, "content");
+        C12238m.checkNotNullParameter(content, "content");
         long jCurrentTimeMillis = this.clock.currentTimeMillis();
-        getOrCreateMessageQueue(channelId).enqueue(new MessageQueue3.Edit(channelId, content, messageId, allowedMentions, jCurrentTimeMillis, new AnonymousClass1(channelId, messageId, content, jCurrentTimeMillis, allowedMentions)));
+        getOrCreateMessageQueue(channelId).enqueue(new MessageRequest.Edit(channelId, content, messageId, allowedMentions, jCurrentTimeMillis, new C62261(channelId, messageId, content, jCurrentTimeMillis, allowedMentions)));
     }
 
     public final Observable<Set<Long>> getAllDetached() {
         Observable<Set<Long>> detachedChannelsSubject = this.holder.getDetachedChannelsSubject();
-        Intrinsics3.checkNotNullExpressionValue(detachedChannelsSubject, "holder\n          .detachedChannelsSubject");
+        C12238m.checkNotNullExpressionValue(detachedChannelsSubject, "holder\n          .detachedChannelsSubject");
         return ObservableExtensionsKt.computationLatest(detachedChannelsSubject);
     }
 
-    @Store3
+    @StoreThread
     public final Message getMessage(long channelId, long messageId) {
         TreeMap<Long, Message> messagesForChannel = this.holder.getMessagesForChannel(Long.valueOf(channelId));
         if (messagesForChannel != null) {
@@ -837,14 +837,14 @@ public final class StoreMessages extends Store {
         this.holder.setSelectedChannelId(channelId);
     }
 
-    @Store3
+    @StoreThread
     public final void handleConnected(boolean connected) {
         if (!connected) {
             this.holder.invalidate();
             return;
         }
         Collection<MessageQueue> collectionValues = this.messageQueues.values();
-        Intrinsics3.checkNotNullExpressionValue(collectionValues, "messageQueues.values");
+        C12238m.checkNotNullExpressionValue(collectionValues, "messageQueues.values");
         Iterator<T> it = collectionValues.iterator();
         while (it.hasNext()) {
             ((MessageQueue) it.next()).handleConnected();
@@ -852,33 +852,33 @@ public final class StoreMessages extends Store {
     }
 
     public final void handleConnectionOpen(ModelPayload payload) {
-        Intrinsics3.checkNotNullParameter(payload, "payload");
+        C12238m.checkNotNullParameter(payload, "payload");
         this.holder.setMyUserId(payload.getMe().getId());
     }
 
-    @Store3
+    @StoreThread
     public final void handleInteractionCreate(InteractionStateUpdate interactionUpdate) {
-        Intrinsics3.checkNotNullParameter(interactionUpdate, "interactionUpdate");
+        C12238m.checkNotNullParameter(interactionUpdate, "interactionUpdate");
         handleInteractionStateUpdate$default(this, interactionUpdate, false, true, 2, null);
     }
 
-    @Store3
+    @StoreThread
     public final void handleInteractionFailure(InteractionStateUpdate interactionUpdate) {
-        Intrinsics3.checkNotNullParameter(interactionUpdate, "interactionUpdate");
+        C12238m.checkNotNullParameter(interactionUpdate, "interactionUpdate");
         handleInteractionStateUpdate$default(this, interactionUpdate, true, false, 4, null);
     }
 
-    @Store3
+    @StoreThread
     public final void handleInteractionModalCreate(InteractionModalCreate interactionModalCreate) {
-        Intrinsics3.checkNotNullParameter(interactionModalCreate, "interactionModalCreate");
-        ApplicationCommandLocalSendData applicationCommandLocalSendData = this.stream.getApplicationInteractions().getApplicationCommandLocalSendDataSet$app_productionGoogleRelease().get(interactionModalCreate.getNonce());
+        C12238m.checkNotNullParameter(interactionModalCreate, "interactionModalCreate");
+        ApplicationCommandLocalSendData applicationCommandLocalSendData = this.stream.getApplicationInteractions().m8506x27c7fac9().get(interactionModalCreate.getNonce());
         if (applicationCommandLocalSendData != null) {
             this.localMessagesHolder.deleteMessage(applicationCommandLocalSendData.getChannelId(), applicationCommandLocalSendData.getNonceString());
         }
     }
 
     public final void handleMessageCreate(List<com.discord.api.message.Message> messagesList) {
-        Intrinsics3.checkNotNullParameter(messagesList, "messagesList");
+        C12238m.checkNotNullParameter(messagesList, "messagesList");
         for (com.discord.api.message.Message message : messagesList) {
             String nonce = message.getNonce();
             if (nonce != null) {
@@ -886,7 +886,7 @@ public final class StoreMessages extends Store {
             }
         }
         StoreMessagesHolder storeMessagesHolder = this.holder;
-        ArrayList arrayList = new ArrayList(Iterables2.collectionSizeOrDefault(messagesList, 10));
+        ArrayList arrayList = new ArrayList(C12149o.collectionSizeOrDefault(messagesList, 10));
         Iterator<T> it = messagesList.iterator();
         while (it.hasNext()) {
             arrayList.add(new Message((com.discord.api.message.Message) it.next()));
@@ -895,21 +895,21 @@ public final class StoreMessages extends Store {
     }
 
     public final void handleMessageDelete(ModelMessageDelete messageDelete) {
-        Intrinsics3.checkNotNullParameter(messageDelete, "messageDelete");
+        C12238m.checkNotNullParameter(messageDelete, "messageDelete");
         long channelId = messageDelete.getChannelId();
         List<Long> messageIds = messageDelete.getMessageIds();
-        Intrinsics3.checkNotNullExpressionValue(messageIds, "messageDelete.messageIds");
+        C12238m.checkNotNullExpressionValue(messageIds, "messageDelete.messageIds");
         handleMessageDelete(channelId, messageIds);
     }
 
     public final void handleMessageUpdate(com.discord.api.message.Message message) {
-        Intrinsics3.checkNotNullParameter(message, "message");
+        C12238m.checkNotNullParameter(message, "message");
         this.holder.updateMessages(message);
     }
 
     public final void handleMessagesLoaded(StoreMessagesLoader.ChannelChunk chunk) {
-        Intrinsics3.checkNotNullParameter(chunk, "chunk");
-        this.holder.loadMessageChunks(CollectionsJVM.listOf(chunk));
+        C12238m.checkNotNullParameter(chunk, "chunk");
+        this.holder.loadMessageChunks(C12145m.listOf(chunk));
     }
 
     public final void handlePreLogout() {
@@ -917,23 +917,23 @@ public final class StoreMessages extends Store {
     }
 
     public final void handleReactionUpdate(List<MessageReactionUpdate> updates, boolean add) {
-        Intrinsics3.checkNotNullParameter(updates, "updates");
+        C12238m.checkNotNullParameter(updates, "updates");
         this.holder.updateReactions(updates, add);
     }
 
     public final void handleReactionsRemoveAll(MessageReactionUpdate update) {
-        Intrinsics3.checkNotNullParameter(update, "update");
+        C12238m.checkNotNullParameter(update, "update");
         this.holder.removeAllReactions(update);
     }
 
     public final void handleReactionsRemoveEmoji(MessageReactionUpdate update) {
-        Intrinsics3.checkNotNullParameter(update, "update");
+        C12238m.checkNotNullParameter(update, "update");
         this.holder.removeEmojiReactions(update);
     }
 
     @Override // com.discord.stores.Store
     public void init(Context context) {
-        Intrinsics3.checkNotNullParameter(context, "context");
+        C12238m.checkNotNullParameter(context, "context");
         super.init(context);
         this.context = context;
         this.holder.init(true);
@@ -947,18 +947,18 @@ public final class StoreMessages extends Store {
         if (nonce == null || (message = this.localMessagesHolder.getMessage(channelId, nonce)) == null) {
             return;
         }
-        this.dispatcher.schedule(new AnonymousClass1(message));
+        this.dispatcher.schedule(new C62281(message));
     }
 
     public final BehaviorSubject<Boolean> observeInitResendFinished() {
         BehaviorSubject<Boolean> behaviorSubject = this.initResendFinished;
-        Intrinsics3.checkNotNullExpressionValue(behaviorSubject, "initResendFinished");
+        C12238m.checkNotNullExpressionValue(behaviorSubject, "initResendFinished");
         return behaviorSubject;
     }
 
     public final Observable<Boolean> observeIsDetached(final long channelId) {
-        Observable<Boolean> observableR = getAllDetached().G(new Func1<Set<? extends Long>, Boolean>() { // from class: com.discord.stores.StoreMessages.observeIsDetached.1
-            @Override // j0.k.Func1
+        Observable<Boolean> observableM11112r = getAllDetached().m11083G(new InterfaceC12589b<Set<? extends Long>, Boolean>() { // from class: com.discord.stores.StoreMessages.observeIsDetached.1
+            @Override // p637j0.p641k.InterfaceC12589b
             public /* bridge */ /* synthetic */ Boolean call(Set<? extends Long> set) {
                 return call2((Set<Long>) set);
             }
@@ -967,49 +967,49 @@ public final class StoreMessages extends Store {
             public final Boolean call2(Set<Long> set) {
                 return Boolean.valueOf(set.contains(Long.valueOf(channelId)));
             }
-        }).r();
-        Intrinsics3.checkNotNullExpressionValue(observableR, "allDetached\n          .m…  .distinctUntilChanged()");
-        return observableR;
+        }).m11112r();
+        C12238m.checkNotNullExpressionValue(observableM11112r, "allDetached\n          .m…  .distinctUntilChanged()");
+        return observableM11112r;
     }
 
     public final Observable<List<Message>> observeMessagesForChannel(long channelId) {
-        Observable<List<Message>> observableI = Observable.i(observeSyncedMessagesForChannel(channelId), observeLocalMessagesForChannel(channelId), observeIsDetached(channelId), new Func3<List<? extends Message>, List<? extends Message>, Boolean, List<? extends Message>>() { // from class: com.discord.stores.StoreMessages.observeMessagesForChannel.1
-            @Override // rx.functions.Func3
+        Observable<List<Message>> observableM11075i = Observable.m11075i(observeSyncedMessagesForChannel(channelId), observeLocalMessagesForChannel(channelId), observeIsDetached(channelId), new Func3<List<? extends Message>, List<? extends Message>, Boolean, List<? extends Message>>() { // from class: com.discord.stores.StoreMessages.observeMessagesForChannel.1
+            @Override // p658rx.functions.Func3
             public /* bridge */ /* synthetic */ List<? extends Message> call(List<? extends Message> list, List<? extends Message> list2, Boolean bool) {
                 return call2((List<Message>) list, (List<Message>) list2, bool);
             }
 
             /* JADX INFO: renamed from: call, reason: avoid collision after fix types in other method */
             public final List<Message> call2(List<Message> list, List<Message> list2, Boolean bool) {
-                Intrinsics3.checkNotNullExpressionValue(bool, "isDetached");
+                C12238m.checkNotNullExpressionValue(bool, "isDetached");
                 if (bool.booleanValue()) {
                     return list;
                 }
-                Intrinsics3.checkNotNullExpressionValue(list, "messages");
-                Intrinsics3.checkNotNullExpressionValue(list2, "localMessages");
-                return _Collections.plus((Collection) list, (Iterable) list2);
+                C12238m.checkNotNullExpressionValue(list, "messages");
+                C12238m.checkNotNullExpressionValue(list2, "localMessages");
+                return C12163u.plus((Collection) list, (Iterable) list2);
             }
         });
-        Intrinsics3.checkNotNullExpressionValue(observableI, "Observable.combineLatest…ges + localMessages\n    }");
-        return observableI;
+        C12238m.checkNotNullExpressionValue(observableM11075i, "Observable.combineLatest…ges + localMessages\n    }");
+        return observableM11075i;
     }
 
-    public final Observable<MessageQueue4> resendMessage(Message message, boolean isAutoAttempt, CaptchaHelper.CaptchaPayload captchaPayload) {
+    public final Observable<MessageResult> resendMessage(Message message, boolean isAutoAttempt, CaptchaHelper.CaptchaPayload captchaPayload) {
         ArrayList arrayList;
         ArrayList arrayList2;
         Integer type;
         Integer type2;
         Integer type3;
-        Intrinsics3.checkNotNullParameter(message, "message");
+        C12238m.checkNotNullParameter(message, "message");
         if ((isAutoAttempt && (((type2 = message.getType()) == null || type2.intValue() != -1) && ((type3 = message.getType()) == null || type3.intValue() != -6))) || (!isAutoAttempt && ((type = message.getType()) == null || type.intValue() != -2))) {
             throw new IllegalArgumentException("Incorrect " + isAutoAttempt + " auto attempt and message type " + message.getType());
         }
-        this.dispatcher.schedule(new AnonymousClass1(message));
+        this.dispatcher.schedule(new C62381(message));
         Integer numRetries = message.getNumRetries();
         int iIntValue = numRetries != null ? numRetries.intValue() : 0;
         long channelId = message.getChannelId();
         User author = message.getAuthor();
-        Intrinsics3.checkNotNull(author);
+        C12238m.checkNotNull(author);
         CoreUser coreUser = new CoreUser(author);
         String content = message.getContent();
         if (content == null) {
@@ -1017,7 +1017,7 @@ public final class StoreMessages extends Store {
         }
         List<User> mentions = message.getMentions();
         if (mentions != null) {
-            arrayList = new ArrayList(Iterables2.collectionSizeOrDefault(mentions, 10));
+            arrayList = new ArrayList(C12149o.collectionSizeOrDefault(mentions, 10));
             Iterator<T> it = mentions.iterator();
             while (it.hasNext()) {
                 arrayList.add(new CoreUser((User) it.next()));
@@ -1027,11 +1027,11 @@ public final class StoreMessages extends Store {
         }
         List<LocalAttachment> localAttachments = message.getLocalAttachments();
         if (localAttachments != null) {
-            arrayList2 = new ArrayList(Iterables2.collectionSizeOrDefault(localAttachments, 10));
+            arrayList2 = new ArrayList(C12149o.collectionSizeOrDefault(localAttachments, 10));
             for (LocalAttachment localAttachment : localAttachments) {
                 Uri uri = Uri.parse(localAttachment.getUriString());
                 long id2 = localAttachment.getId();
-                Intrinsics3.checkNotNullExpressionValue(uri, "contentUri");
+                C12238m.checkNotNullExpressionValue(uri, "contentUri");
                 arrayList2.add(new Attachment(id2, uri, localAttachment.getDisplayName(), null, false, 16, null));
             }
         } else {
@@ -1042,68 +1042,68 @@ public final class StoreMessages extends Store {
 
     public final void resendMessageWithCaptcha(long channelId, String nonce, CaptchaHelper.CaptchaPayload captchaPayload) {
         Message message;
-        Intrinsics3.checkNotNullParameter(captchaPayload, "captchaPayload");
+        C12238m.checkNotNullParameter(captchaPayload, "captchaPayload");
         if (nonce == null || (message = this.localMessagesHolder.getMessage(channelId, nonce)) == null) {
             return;
         }
-        ObservableExtensionsKt.appSubscribe(ObservableExtensionsKt.ui(resendMessage(message, true, captchaPayload)), (Class<?>) StoreMessages.class, (58 & 2) != 0 ? null : null, (Function1<? super Subscription, Unit>) ((58 & 4) != 0 ? null : null), (Function1<? super Error, Unit>) ((58 & 8) != 0 ? null : null), (Function0<Unit>) ((58 & 16) != 0 ? ObservableExtensionsKt.AnonymousClass1.INSTANCE : null), (Function0<Unit>) ((58 & 32) != 0 ? ObservableExtensionsKt.AnonymousClass2.INSTANCE : null), AnonymousClass1.INSTANCE);
+        ObservableExtensionsKt.appSubscribe(ObservableExtensionsKt.m8518ui(resendMessage(message, true, captchaPayload)), (Class<?>) StoreMessages.class, (58 & 2) != 0 ? null : null, (Function1<? super Subscription, Unit>) ((58 & 4) != 0 ? null : null), (Function1<? super Error, Unit>) ((58 & 8) != 0 ? null : null), (Function0<Unit>) ((58 & 16) != 0 ? ObservableExtensionsKt.C68791.INSTANCE : null), (Function0<Unit>) ((58 & 32) != 0 ? ObservableExtensionsKt.C68802.INSTANCE : null), C62391.INSTANCE);
     }
 
     /* JADX WARN: Multi-variable type inference failed */
     /* JADX WARN: Type inference failed for: r4v5, types: [T, java.util.List] */
-    public final Observable<MessageQueue4> sendMessage(long channelId, com.discord.models.user.User author, String content, List<? extends com.discord.models.user.User> mentions, List<? extends Attachment<?>> attachments, List<? extends BaseSticker> stickers, MessageReference messageReference, MessageAllowedMentions allowedMentions, Application application, Activity activity, MessageActivity messageActivity, Long lastManualAttemptTimestamp, Long initialAttemptTimestamp, Integer numRetries, CaptchaHelper.CaptchaPayload captchaPayload) {
+    public final Observable<MessageResult> sendMessage(long channelId, com.discord.models.user.User author, String content, List<? extends com.discord.models.user.User> mentions, List<? extends Attachment<?>> attachments, List<? extends BaseSticker> stickers, MessageReference messageReference, MessageAllowedMentions allowedMentions, Application application, Activity activity, MessageActivity messageActivity, Long lastManualAttemptTimestamp, Long initialAttemptTimestamp, Integer numRetries, CaptchaHelper.CaptchaPayload captchaPayload) {
         List listEmptyList;
         ArrayList arrayList;
         String content2 = content;
-        Intrinsics3.checkNotNullParameter(author, "author");
-        Intrinsics3.checkNotNullParameter(content2, "content");
+        C12238m.checkNotNullParameter(author, "author");
+        C12238m.checkNotNullParameter(content2, "content");
         Ref$ObjectRef ref$ObjectRef = new Ref$ObjectRef();
         ref$ObjectRef.element = attachments;
         if (!(attachments == 0 || attachments.isEmpty())) {
-            SendUtils3.Companion companion = SendUtils3.INSTANCE;
+            ProcessedMessageContent.Companion companion = ProcessedMessageContent.INSTANCE;
             Context context = this.context;
             if (context == null) {
-                Intrinsics3.throwUninitializedPropertyAccessException("context");
+                C12238m.throwUninitializedPropertyAccessException("context");
             }
-            SendUtils3 sendUtils3FromAttachments = companion.fromAttachments(attachments, content2, context);
-            List<Attachment<?>> invalidAttachments = sendUtils3FromAttachments.getInvalidAttachments();
+            ProcessedMessageContent processedMessageContentFromAttachments = companion.fromAttachments(attachments, content2, context);
+            List<Attachment<?>> invalidAttachments = processedMessageContentFromAttachments.getInvalidAttachments();
             if (!invalidAttachments.isEmpty()) {
                 User userSynthesizeApiUser = UserUtils.INSTANCE.synthesizeApiUser(author);
                 Clock clock = this.clock;
-                ArrayList arrayList2 = new ArrayList(Iterables2.collectionSizeOrDefault(invalidAttachments, 10));
+                ArrayList arrayList2 = new ArrayList(C12149o.collectionSizeOrDefault(invalidAttachments, 10));
                 Iterator<T> it = invalidAttachments.iterator();
                 while (it.hasNext()) {
-                    arrayList2.add(AttachmentUtils.toLocalAttachment((Attachment) it.next()));
+                    arrayList2.add(AttachmentUtilsKt.toLocalAttachment((Attachment) it.next()));
                 }
-                this.dispatcher.schedule(new AnonymousClass1(LocalMessageCreators.createInvalidAttachmentsMessage(channelId, userSynthesizeApiUser, clock, arrayList2)));
+                this.dispatcher.schedule(new C62401(LocalMessageCreatorsKt.createInvalidAttachmentsMessage(channelId, userSynthesizeApiUser, clock, arrayList2)));
             }
-            ref$ObjectRef.element = sendUtils3FromAttachments.getValidAttachments();
-            content2 = sendUtils3FromAttachments.getContent();
+            ref$ObjectRef.element = processedMessageContentFromAttachments.getValidAttachments();
+            content2 = processedMessageContentFromAttachments.getContent();
             List list = (List) ref$ObjectRef.element;
             if (list == null || list.isEmpty()) {
                 if (content2.length() == 0) {
-                    Observable<MessageQueue4> observableO = Observable.o(new Action1<Emitter<MessageQueue4>>() { // from class: com.discord.stores.StoreMessages.sendMessage.2
-                        @Override // rx.functions.Action1
-                        public final void call(Emitter<MessageQueue4> emitter) {
-                            emitter.onNext(MessageQueue4.NoValidContent.INSTANCE);
+                    Observable<MessageResult> observableM11080o = Observable.m11080o(new Action1<Emitter<MessageResult>>() { // from class: com.discord.stores.StoreMessages.sendMessage.2
+                        @Override // p658rx.functions.Action1
+                        public final void call(Emitter<MessageResult> emitter) {
+                            emitter.onNext(MessageResult.NoValidContent.INSTANCE);
                             emitter.onCompleted();
                         }
                     }, Emitter.BackpressureMode.ERROR);
-                    Intrinsics3.checkNotNullExpressionValue(observableO, "Observable.create({ emit…r.BackpressureMode.ERROR)");
-                    return observableO;
+                    C12238m.checkNotNullExpressionValue(observableM11080o, "Observable.create({ emit…r.BackpressureMode.ERROR)");
+                    return observableM11080o;
                 }
             }
         }
         long jLongValue = lastManualAttemptTimestamp != null ? lastManualAttemptTimestamp.longValue() : this.clock.currentTimeMillis();
         User userSynthesizeApiUser2 = UserUtils.INSTANCE.synthesizeApiUser(author);
         if (mentions != null) {
-            listEmptyList = new ArrayList(Iterables2.collectionSizeOrDefault(mentions, 10));
+            listEmptyList = new ArrayList(C12149o.collectionSizeOrDefault(mentions, 10));
             Iterator<T> it2 = mentions.iterator();
             while (it2.hasNext()) {
                 listEmptyList.add(UserUtils.INSTANCE.synthesizeApiUser((com.discord.models.user.User) it2.next()));
             }
         } else {
-            listEmptyList = Collections2.emptyList();
+            listEmptyList = C12147n.emptyList();
         }
         List list2 = listEmptyList;
         List list3 = (List) ref$ObjectRef.element;
@@ -1111,24 +1111,24 @@ public final class StoreMessages extends Store {
         Clock clock2 = this.clock;
         List list4 = (List) ref$ObjectRef.element;
         if (list4 != null) {
-            ArrayList arrayList3 = new ArrayList(Iterables2.collectionSizeOrDefault(list4, 10));
+            ArrayList arrayList3 = new ArrayList(C12149o.collectionSizeOrDefault(list4, 10));
             Iterator it3 = list4.iterator();
             while (it3.hasNext()) {
-                arrayList3.add(AttachmentUtils.toLocalAttachment((Attachment) it3.next()));
+                arrayList3.add(AttachmentUtilsKt.toLocalAttachment((Attachment) it3.next()));
             }
             arrayList = arrayList3;
         } else {
             arrayList = null;
         }
-        Message messageCreateLocalMessage = LocalMessageCreators.createLocalMessage(content2, channelId, userSynthesizeApiUser2, list2, false, z2, application, messageActivity, clock2, arrayList, Long.valueOf(jLongValue), Long.valueOf(initialAttemptTimestamp != null ? initialAttemptTimestamp.longValue() : this.clock.currentTimeMillis()), Integer.valueOf(numRetries != null ? numRetries.intValue() : 0), stickers, messageReference, allowedMentions, captchaPayload);
+        Message messageCreateLocalMessage = LocalMessageCreatorsKt.createLocalMessage(content2, channelId, userSynthesizeApiUser2, list2, false, z2, application, messageActivity, clock2, arrayList, Long.valueOf(jLongValue), Long.valueOf(initialAttemptTimestamp != null ? initialAttemptTimestamp.longValue() : this.clock.currentTimeMillis()), Integer.valueOf(numRetries != null ? numRetries.intValue() : 0), stickers, messageReference, allowedMentions, captchaPayload);
         if (messageActivity == null) {
-            this.dispatcher.schedule(new AnonymousClass3(messageCreateLocalMessage));
+            this.dispatcher.schedule(new C62423(messageCreateLocalMessage));
         }
-        this.dispatcher.schedule(new AnonymousClass4());
-        return enqueueRequest(channelId, new StoreMessages3(this, messageCreateLocalMessage, ref$ObjectRef, activity, jLongValue));
+        this.dispatcher.schedule(new C62434());
+        return enqueueRequest(channelId, new StoreMessages$sendMessage$createRequest$1(this, messageCreateLocalMessage, ref$ObjectRef, activity, jLongValue));
     }
 
-    @Store3
+    @StoreThread
     private final void handleLocalMessageDelete(long channelId, String nonce) {
         this.localMessagesHolder.deleteMessage(channelId, nonce);
     }
@@ -1146,8 +1146,8 @@ public final class StoreMessages extends Store {
     }
 
     public final Observable<Message> observeMessagesForChannel(long channelId, final long messageId) {
-        Observable<Message> observableR = observeMessagesForChannel(channelId).G(new Func1<List<? extends Message>, Message>() { // from class: com.discord.stores.StoreMessages.observeMessagesForChannel.2
-            @Override // j0.k.Func1
+        Observable<Message> observableM11112r = observeMessagesForChannel(channelId).m11083G(new InterfaceC12589b<List<? extends Message>, Message>() { // from class: com.discord.stores.StoreMessages.observeMessagesForChannel.2
+            @Override // p637j0.p641k.InterfaceC12589b
             public /* bridge */ /* synthetic */ Message call(List<? extends Message> list) {
                 return call2((List<Message>) list);
             }
@@ -1155,7 +1155,7 @@ public final class StoreMessages extends Store {
             /* JADX INFO: renamed from: call, reason: avoid collision after fix types in other method */
             public final Message call2(List<Message> list) {
                 T next;
-                Intrinsics3.checkNotNullExpressionValue(list, "messages");
+                C12238m.checkNotNullExpressionValue(list, "messages");
                 Iterator<T> it = list.iterator();
                 while (it.hasNext()) {
                     next = it.next();
@@ -1166,15 +1166,15 @@ public final class StoreMessages extends Store {
                 next = (T) null;
                 return next;
             }
-        }).r();
-        Intrinsics3.checkNotNullExpressionValue(observableR, "observeMessagesForChanne…  .distinctUntilChanged()");
-        return observableR;
+        }).m11112r();
+        C12238m.checkNotNullExpressionValue(observableM11112r, "observeMessagesForChanne…  .distinctUntilChanged()");
+        return observableM11112r;
     }
 
-    public final Observable<MessageQueue4> sendMessage(Message message, ApplicationCommandLocalSendData applicationCommandLocalSendData, List<? extends Attachment<?>> attachments) {
-        Intrinsics3.checkNotNullParameter(message, "message");
-        Intrinsics3.checkNotNullParameter(applicationCommandLocalSendData, "applicationCommandLocalSendData");
-        this.dispatcher.schedule(new AnonymousClass5(message));
-        return enqueueRequest(message.getChannelId(), new StoreMessages4(this, message, applicationCommandLocalSendData, attachments));
+    public final Observable<MessageResult> sendMessage(Message message, ApplicationCommandLocalSendData applicationCommandLocalSendData, List<? extends Attachment<?>> attachments) {
+        C12238m.checkNotNullParameter(message, "message");
+        C12238m.checkNotNullParameter(applicationCommandLocalSendData, "applicationCommandLocalSendData");
+        this.dispatcher.schedule(new C62445(message));
+        return enqueueRequest(message.getChannelId(), new StoreMessages$sendMessage$createRequest$2(this, message, applicationCommandLocalSendData, attachments));
     }
 }

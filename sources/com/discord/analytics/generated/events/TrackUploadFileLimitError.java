@@ -1,14 +1,14 @@
 package com.discord.analytics.generated.events;
 
-import b.d.b.a.outline;
 import com.discord.analytics.generated.traits.TrackBase;
-import com.discord.analytics.generated.traits.TrackBase2;
+import com.discord.analytics.generated.traits.TrackBaseReceiver;
 import com.discord.api.science.AnalyticsSchema;
-import d0.z.d.Intrinsics3;
+import p007b.p100d.p104b.p105a.C1643a;
+import p507d0.p592z.p594d.C12238m;
 
 /* JADX INFO: compiled from: TrackUploadFileLimitError.kt */
 /* JADX INFO: loaded from: classes.dex */
-public final /* data */ class TrackUploadFileLimitError implements AnalyticsSchema, TrackBase2 {
+public final /* data */ class TrackUploadFileLimitError implements AnalyticsSchema, TrackBaseReceiver {
     private TrackBase trackBase;
     private final Long existingCount = null;
     private final Long newCount = null;
@@ -28,7 +28,7 @@ public final /* data */ class TrackUploadFileLimitError implements AnalyticsSche
             return false;
         }
         TrackUploadFileLimitError trackUploadFileLimitError = (TrackUploadFileLimitError) other;
-        return Intrinsics3.areEqual(this.existingCount, trackUploadFileLimitError.existingCount) && Intrinsics3.areEqual(this.newCount, trackUploadFileLimitError.newCount);
+        return C12238m.areEqual(this.existingCount, trackUploadFileLimitError.existingCount) && C12238m.areEqual(this.newCount, trackUploadFileLimitError.newCount);
     }
 
     public int hashCode() {
@@ -39,9 +39,9 @@ public final /* data */ class TrackUploadFileLimitError implements AnalyticsSche
     }
 
     public String toString() {
-        StringBuilder sbU = outline.U("TrackUploadFileLimitError(existingCount=");
-        sbU.append(this.existingCount);
-        sbU.append(", newCount=");
-        return outline.G(sbU, this.newCount, ")");
+        StringBuilder sbM833U = C1643a.m833U("TrackUploadFileLimitError(existingCount=");
+        sbM833U.append(this.existingCount);
+        sbM833U.append(", newCount=");
+        return C1643a.m819G(sbM833U, this.newCount, ")");
     }
 }

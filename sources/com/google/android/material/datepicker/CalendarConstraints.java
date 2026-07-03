@@ -6,12 +6,12 @@ import android.os.Parcelable;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.core.util.ObjectsCompat;
-import b.i.a.g.d.UtcDates;
 import java.util.Arrays;
+import p007b.p225i.p226a.p341g.p345d.C4401l;
 
 /* JADX INFO: loaded from: classes3.dex */
 public final class CalendarConstraints implements Parcelable {
-    public static final Parcelable.Creator<CalendarConstraints> CREATOR = new a();
+    public static final Parcelable.Creator<CalendarConstraints> CREATOR = new C10878a();
 
     @NonNull
     private final Month end;
@@ -31,7 +31,8 @@ public final class CalendarConstraints implements Parcelable {
         boolean isValid(long j);
     }
 
-    public static class a implements Parcelable.Creator<CalendarConstraints> {
+    /* JADX INFO: renamed from: com.google.android.material.datepicker.CalendarConstraints$a */
+    public static class C10878a implements Parcelable.Creator<CalendarConstraints> {
         @Override // android.os.Parcelable.Creator
         @NonNull
         public CalendarConstraints createFromParcel(@NonNull Parcel parcel) {
@@ -45,7 +46,7 @@ public final class CalendarConstraints implements Parcelable {
         }
     }
 
-    public /* synthetic */ CalendarConstraints(Month month, Month month2, DateValidator dateValidator, Month month3, a aVar) {
+    public /* synthetic */ CalendarConstraints(Month month, Month month2, DateValidator dateValidator, Month month3, C10878a c10878a) {
         this(month, month2, dateValidator, month3);
     }
 
@@ -104,9 +105,9 @@ public final class CalendarConstraints implements Parcelable {
     }
 
     public boolean isWithinBounds(long j) {
-        if (this.start.k(1) <= j) {
+        if (this.start.m9136k(1) <= j) {
             Month month = this.end;
-            if (j <= month.k(month.n)) {
+            if (j <= month.m9136k(month.f20988n)) {
                 return true;
             }
         }
@@ -130,14 +131,14 @@ public final class CalendarConstraints implements Parcelable {
         this.end = month2;
         this.openAt = month3;
         this.validator = dateValidator;
-        if (month3 != null && month.j.compareTo(month3.j) > 0) {
+        if (month3 != null && month.f20984j.compareTo(month3.f20984j) > 0) {
             throw new IllegalArgumentException("start Month cannot be after current Month");
         }
-        if (month3 != null && month3.j.compareTo(month2.j) > 0) {
+        if (month3 != null && month3.f20984j.compareTo(month2.f20984j) > 0) {
             throw new IllegalArgumentException("current Month cannot be after end Month");
         }
-        this.monthSpan = month.o(month2) + 1;
-        this.yearSpan = (month2.l - month.l) + 1;
+        this.monthSpan = month.m9139o(month2) + 1;
+        this.yearSpan = (month2.f20986l - month.f20986l) + 1;
     }
 
     public static final class Builder {
@@ -146,8 +147,8 @@ public final class CalendarConstraints implements Parcelable {
         private Long openAt;
         private long start;
         private DateValidator validator;
-        public static final long DEFAULT_START = UtcDates.a(Month.g(1900, 0).o);
-        public static final long DEFAULT_END = UtcDates.a(Month.g(2100, 11).o);
+        public static final long DEFAULT_START = C4401l.m6068a(Month.m9131g(1900, 0).f20989o);
+        public static final long DEFAULT_END = C4401l.m6068a(Month.m9131g(2100, 11).f20989o);
 
         public Builder() {
             this.start = DEFAULT_START;
@@ -159,11 +160,11 @@ public final class CalendarConstraints implements Parcelable {
         public CalendarConstraints build() {
             Bundle bundle = new Bundle();
             bundle.putParcelable(DEEP_COPY_VALIDATOR_KEY, this.validator);
-            Month monthH = Month.h(this.start);
-            Month monthH2 = Month.h(this.end);
+            Month monthM9132h = Month.m9132h(this.start);
+            Month monthM9132h2 = Month.m9132h(this.end);
             DateValidator dateValidator = (DateValidator) bundle.getParcelable(DEEP_COPY_VALIDATOR_KEY);
             Long l = this.openAt;
-            return new CalendarConstraints(monthH, monthH2, dateValidator, l == null ? null : Month.h(l.longValue()), null);
+            return new CalendarConstraints(monthM9132h, monthM9132h2, dateValidator, l == null ? null : Month.m9132h(l.longValue()), null);
         }
 
         @NonNull
@@ -194,9 +195,9 @@ public final class CalendarConstraints implements Parcelable {
             this.start = DEFAULT_START;
             this.end = DEFAULT_END;
             this.validator = DateValidatorPointForward.from(Long.MIN_VALUE);
-            this.start = calendarConstraints.start.o;
-            this.end = calendarConstraints.end.o;
-            this.openAt = Long.valueOf(calendarConstraints.openAt.o);
+            this.start = calendarConstraints.start.f20989o;
+            this.end = calendarConstraints.end.f20989o;
+            this.openAt = Long.valueOf(calendarConstraints.openAt.f20989o);
             this.validator = calendarConstraints.validator;
         }
     }

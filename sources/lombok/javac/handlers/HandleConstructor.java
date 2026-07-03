@@ -145,7 +145,7 @@ public class HandleConstructor {
             HandlerUtil.handleFlagUsage(annotationNode, ConfigurationKeys.NO_ARGS_CONSTRUCTOR_FLAG_USAGE, "@NoArgsConstructor", ConfigurationKeys.ANY_CONSTRUCTOR_FLAG_USAGE, "any @xArgsConstructor");
             JavacHandlerUtil.deleteAnnotationIfNeccessary(annotationNode, (Class<? extends Annotation>) NoArgsConstructor.class);
             JavacHandlerUtil.deleteImportFromCompilationUnit(annotationNode, "lombok.AccessLevel");
-            JavacNode typeNode = annotationNode.up();
+            JavacNode typeNode = annotationNode.m10925up();
             if (HandleConstructor.checkLegality(typeNode, annotationNode, NAME)) {
                 List<JCTree.JCAnnotation> onConstructor = JavacHandlerUtil.unboxAndRemoveAnnotationParameter(ast, "onConstructor", "@NoArgsConstructor(onConstructor", annotationNode);
                 NoArgsConstructor ann = annotation.getInstance();
@@ -170,7 +170,7 @@ public class HandleConstructor {
             HandlerUtil.handleFlagUsage(annotationNode, ConfigurationKeys.REQUIRED_ARGS_CONSTRUCTOR_FLAG_USAGE, "@RequiredArgsConstructor", ConfigurationKeys.ANY_CONSTRUCTOR_FLAG_USAGE, "any @xArgsConstructor");
             JavacHandlerUtil.deleteAnnotationIfNeccessary(annotationNode, (Class<? extends Annotation>) RequiredArgsConstructor.class);
             JavacHandlerUtil.deleteImportFromCompilationUnit(annotationNode, "lombok.AccessLevel");
-            JavacNode typeNode = annotationNode.up();
+            JavacNode typeNode = annotationNode.m10925up();
             if (HandleConstructor.checkLegality(typeNode, annotationNode, NAME)) {
                 List<JCTree.JCAnnotation> onConstructor = JavacHandlerUtil.unboxAndRemoveAnnotationParameter(ast, "onConstructor", "@RequiredArgsConstructor(onConstructor", annotationNode);
                 RequiredArgsConstructor ann = annotation.getInstance();
@@ -227,7 +227,7 @@ public class HandleConstructor {
             HandlerUtil.handleFlagUsage(annotationNode, ConfigurationKeys.ALL_ARGS_CONSTRUCTOR_FLAG_USAGE, "@AllArgsConstructor", ConfigurationKeys.ANY_CONSTRUCTOR_FLAG_USAGE, "any @xArgsConstructor");
             JavacHandlerUtil.deleteAnnotationIfNeccessary(annotationNode, (Class<? extends Annotation>) AllArgsConstructor.class);
             JavacHandlerUtil.deleteImportFromCompilationUnit(annotationNode, "lombok.AccessLevel");
-            JavacNode typeNode = annotationNode.up();
+            JavacNode typeNode = annotationNode.m10925up();
             if (HandleConstructor.checkLegality(typeNode, annotationNode, NAME)) {
                 List<JCTree.JCAnnotation> onConstructor = JavacHandlerUtil.unboxAndRemoveAnnotationParameter(ast, "onConstructor", "@AllArgsConstructor(onConstructor", annotationNode);
                 AllArgsConstructor ann = annotation.getInstance();
@@ -517,12 +517,12 @@ public class HandleConstructor {
     }
 
     public static boolean isLocalType(JavacNode type) {
-        AST.Kind kind = type.up().getKind();
+        AST.Kind kind = type.m10925up().getKind();
         if (kind == AST.Kind.COMPILATION_UNIT) {
             return false;
         }
         if (kind == AST.Kind.TYPE) {
-            return isLocalType(type.up());
+            return isLocalType(type.m10925up());
         }
         return true;
     }

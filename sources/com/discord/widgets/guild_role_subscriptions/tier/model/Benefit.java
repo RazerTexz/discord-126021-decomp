@@ -1,18 +1,18 @@
 package com.discord.widgets.guild_role_subscriptions.tier.model;
 
-import a0.a.a.b;
 import android.os.Parcel;
 import android.os.Parcelable;
 import androidx.annotation.DrawableRes;
-import b.d.b.a.outline;
 import com.discord.api.guildrolesubscription.GuildRoleSubscriptionBenefit;
 import com.discord.api.guildrolesubscription.GuildRoleSubscriptionBenefitType;
 import com.discord.models.domain.ModelAuditLogEntry;
 import com.discord.models.domain.emoji.Emoji;
 import com.discord.models.domain.emoji.ModelEmojiCustom;
 import com.discord.models.domain.emoji.ModelEmojiUnicode;
-import d0.z.d.Intrinsics3;
 import kotlin.jvm.internal.DefaultConstructorMarker;
+import p001a0.p002a.p003a.C0002b;
+import p007b.p100d.p104b.p105a.C1643a;
+import p507d0.p592z.p594d.C12238m;
 
 /* JADX INFO: compiled from: Benefit.kt */
 /* JADX INFO: loaded from: classes2.dex */
@@ -31,7 +31,7 @@ public abstract class Benefit implements Parcelable {
             /* JADX WARN: Can't rename method to resolve collision */
             @Override // android.os.Parcelable.Creator
             public final ChannelBenefit createFromParcel(Parcel parcel) {
-                Intrinsics3.checkNotNullParameter(parcel, "in");
+                C12238m.checkNotNullParameter(parcel, "in");
                 return new ChannelBenefit(parcel.readString(), (Emoji) parcel.readParcelable(ChannelBenefit.class.getClassLoader()), parcel.readString(), parcel.readInt() != 0 ? Integer.valueOf(parcel.readInt()) : null, parcel.readLong());
             }
 
@@ -91,8 +91,8 @@ public abstract class Benefit implements Parcelable {
         }
 
         public final ChannelBenefit copy(String name, Emoji emoji, String description, @DrawableRes Integer channelIconResId, long channelId) {
-            Intrinsics3.checkNotNullParameter(name, ModelAuditLogEntry.CHANGE_KEY_NAME);
-            Intrinsics3.checkNotNullParameter(emoji, "emoji");
+            C12238m.checkNotNullParameter(name, ModelAuditLogEntry.CHANGE_KEY_NAME);
+            C12238m.checkNotNullParameter(emoji, "emoji");
             return new ChannelBenefit(name, emoji, description, channelIconResId, channelId);
         }
 
@@ -105,7 +105,7 @@ public abstract class Benefit implements Parcelable {
         public boolean equals(Object other) {
             if (super.equals(other) && (other instanceof ChannelBenefit)) {
                 ChannelBenefit channelBenefit = (ChannelBenefit) other;
-                if (Intrinsics3.areEqual(this.channelIconResId, channelBenefit.channelIconResId) && this.channelId == channelBenefit.channelId) {
+                if (C12238m.areEqual(this.channelIconResId, channelBenefit.channelIconResId) && this.channelId == channelBenefit.channelId) {
                     return true;
                 }
             }
@@ -140,7 +140,7 @@ public abstract class Benefit implements Parcelable {
             String description = getDescription();
             int iHashCode2 = (iHashCode + (description != null ? description.hashCode() : 0)) * 31;
             Integer num = this.channelIconResId;
-            return b.a(this.channelId) + ((iHashCode2 + (num != null ? num.intValue() : 0)) * 31);
+            return C0002b.m3a(this.channelId) + ((iHashCode2 + (num != null ? num.intValue() : 0)) * 31);
         }
 
         @Override // com.discord.widgets.guild_role_subscriptions.tier.model.Benefit
@@ -160,22 +160,22 @@ public abstract class Benefit implements Parcelable {
         }
 
         public String toString() {
-            StringBuilder sbU = outline.U("ChannelBenefit(name=");
-            sbU.append(getName());
-            sbU.append(", emoji=");
-            sbU.append(getEmoji());
-            sbU.append(", description=");
-            sbU.append(getDescription());
-            sbU.append(", channelIconResId=");
-            sbU.append(this.channelIconResId);
-            sbU.append(", channelId=");
-            return outline.C(sbU, this.channelId, ")");
+            StringBuilder sbM833U = C1643a.m833U("ChannelBenefit(name=");
+            sbM833U.append(getName());
+            sbM833U.append(", emoji=");
+            sbM833U.append(getEmoji());
+            sbM833U.append(", description=");
+            sbM833U.append(getDescription());
+            sbM833U.append(", channelIconResId=");
+            sbM833U.append(this.channelIconResId);
+            sbM833U.append(", channelId=");
+            return C1643a.m815C(sbM833U, this.channelId, ")");
         }
 
         @Override // android.os.Parcelable
         public void writeToParcel(Parcel parcel, int flags) {
             int iIntValue;
-            Intrinsics3.checkNotNullParameter(parcel, "parcel");
+            C12238m.checkNotNullParameter(parcel, "parcel");
             parcel.writeString(this.name);
             parcel.writeParcelable(this.emoji, flags);
             parcel.writeString(this.description);
@@ -193,8 +193,8 @@ public abstract class Benefit implements Parcelable {
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
         public ChannelBenefit(String str, Emoji emoji, String str2, @DrawableRes Integer num, long j) {
             super(null);
-            Intrinsics3.checkNotNullParameter(str, ModelAuditLogEntry.CHANGE_KEY_NAME);
-            Intrinsics3.checkNotNullParameter(emoji, "emoji");
+            C12238m.checkNotNullParameter(str, ModelAuditLogEntry.CHANGE_KEY_NAME);
+            C12238m.checkNotNullParameter(emoji, "emoji");
             this.name = str;
             this.emoji = emoji;
             this.description = str2;
@@ -214,7 +214,7 @@ public abstract class Benefit implements Parcelable {
             /* JADX WARN: Can't rename method to resolve collision */
             @Override // android.os.Parcelable.Creator
             public final IntangibleBenefit createFromParcel(Parcel parcel) {
-                Intrinsics3.checkNotNullParameter(parcel, "in");
+                C12238m.checkNotNullParameter(parcel, "in");
                 return new IntangibleBenefit(parcel.readString(), (Emoji) parcel.readParcelable(IntangibleBenefit.class.getClassLoader()), parcel.readString());
             }
 
@@ -255,8 +255,8 @@ public abstract class Benefit implements Parcelable {
         }
 
         public final IntangibleBenefit copy(String name, Emoji emoji, String description) {
-            Intrinsics3.checkNotNullParameter(name, ModelAuditLogEntry.CHANGE_KEY_NAME);
-            Intrinsics3.checkNotNullParameter(emoji, "emoji");
+            C12238m.checkNotNullParameter(name, ModelAuditLogEntry.CHANGE_KEY_NAME);
+            C12238m.checkNotNullParameter(emoji, "emoji");
             return new IntangibleBenefit(name, emoji, description);
         }
 
@@ -308,19 +308,19 @@ public abstract class Benefit implements Parcelable {
         }
 
         public String toString() {
-            StringBuilder sbU = outline.U("IntangibleBenefit(name=");
-            sbU.append(getName());
-            sbU.append(", emoji=");
-            sbU.append(getEmoji());
-            sbU.append(", description=");
-            sbU.append(getDescription());
-            sbU.append(")");
-            return sbU.toString();
+            StringBuilder sbM833U = C1643a.m833U("IntangibleBenefit(name=");
+            sbM833U.append(getName());
+            sbM833U.append(", emoji=");
+            sbM833U.append(getEmoji());
+            sbM833U.append(", description=");
+            sbM833U.append(getDescription());
+            sbM833U.append(")");
+            return sbM833U.toString();
         }
 
         @Override // android.os.Parcelable
         public void writeToParcel(Parcel parcel, int flags) {
-            Intrinsics3.checkNotNullParameter(parcel, "parcel");
+            C12238m.checkNotNullParameter(parcel, "parcel");
             parcel.writeString(this.name);
             parcel.writeParcelable(this.emoji, flags);
             parcel.writeString(this.description);
@@ -329,8 +329,8 @@ public abstract class Benefit implements Parcelable {
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
         public IntangibleBenefit(String str, Emoji emoji, String str2) {
             super(null);
-            Intrinsics3.checkNotNullParameter(str, ModelAuditLogEntry.CHANGE_KEY_NAME);
-            Intrinsics3.checkNotNullParameter(emoji, "emoji");
+            C12238m.checkNotNullParameter(str, ModelAuditLogEntry.CHANGE_KEY_NAME);
+            C12238m.checkNotNullParameter(emoji, "emoji");
             this.name = str;
             this.emoji = emoji;
             this.description = str2;
@@ -343,7 +343,7 @@ public abstract class Benefit implements Parcelable {
     public boolean equals(Object other) {
         if (other instanceof Benefit) {
             Benefit benefit = (Benefit) other;
-            if (Intrinsics3.areEqual(getName(), benefit.getName()) && Intrinsics3.areEqual(getDescription(), benefit.getDescription())) {
+            if (C12238m.areEqual(getName(), benefit.getName()) && C12238m.areEqual(getDescription(), benefit.getDescription())) {
                 Emoji emoji = getEmoji();
                 if (!(emoji instanceof ModelEmojiCustom)) {
                     emoji = null;
@@ -355,7 +355,7 @@ public abstract class Benefit implements Parcelable {
                     emoji2 = null;
                 }
                 ModelEmojiCustom modelEmojiCustom2 = (ModelEmojiCustom) emoji2;
-                if (Intrinsics3.areEqual(lValueOf, modelEmojiCustom2 != null ? Long.valueOf(modelEmojiCustom2.getId()) : null)) {
+                if (C12238m.areEqual(lValueOf, modelEmojiCustom2 != null ? Long.valueOf(modelEmojiCustom2.getId()) : null)) {
                     Emoji emoji3 = getEmoji();
                     if (!(emoji3 instanceof ModelEmojiUnicode)) {
                         emoji3 = null;
@@ -367,7 +367,7 @@ public abstract class Benefit implements Parcelable {
                         emoji4 = null;
                     }
                     ModelEmojiUnicode modelEmojiUnicode2 = (ModelEmojiUnicode) emoji4;
-                    if (Intrinsics3.areEqual(surrogates, modelEmojiUnicode2 != null ? modelEmojiUnicode2.getSurrogates() : null)) {
+                    if (C12238m.areEqual(surrogates, modelEmojiUnicode2 != null ? modelEmojiUnicode2.getSurrogates() : null)) {
                         return true;
                     }
                 }

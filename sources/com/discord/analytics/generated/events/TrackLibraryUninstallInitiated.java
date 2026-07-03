@@ -1,14 +1,14 @@
 package com.discord.analytics.generated.events;
 
 import com.discord.analytics.generated.traits.TrackBase;
-import com.discord.analytics.generated.traits.TrackBase2;
+import com.discord.analytics.generated.traits.TrackBaseReceiver;
 import com.discord.analytics.generated.traits.TrackStoreSkuMetadata;
-import com.discord.analytics.generated.traits.TrackStoreSkuMetadata2;
+import com.discord.analytics.generated.traits.TrackStoreSkuMetadataReceiver;
 import com.discord.api.science.AnalyticsSchema;
 
 /* JADX INFO: compiled from: TrackLibraryUninstallInitiated.kt */
 /* JADX INFO: loaded from: classes.dex */
-public final class TrackLibraryUninstallInitiated implements AnalyticsSchema, TrackBase2, TrackStoreSkuMetadata2 {
+public final class TrackLibraryUninstallInitiated implements AnalyticsSchema, TrackBaseReceiver, TrackStoreSkuMetadataReceiver {
     private final transient String analyticsSchemaTypeName = "library_uninstall_initiated";
     private TrackBase trackBase;
     private TrackStoreSkuMetadata trackStoreSkuMetadata;

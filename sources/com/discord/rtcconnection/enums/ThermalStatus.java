@@ -28,7 +28,8 @@ public enum ThermalStatus {
 
         /* JADX WARN: Code duplicated, block: B:15:0x001e  */
         /* JADX WARN: Code duplicated, block: B:19:? A[RETURN, SYNTHETIC] */
-        public final ThermalStatus a(int i) {
+        /* JADX INFO: renamed from: a */
+        public final ThermalStatus m8500a(int i) {
             ThermalStatus thermalStatus;
             ThermalStatus[] thermalStatusArrValues = ThermalStatus.values();
             for (int i2 = 0; i2 < 7; i2++) {

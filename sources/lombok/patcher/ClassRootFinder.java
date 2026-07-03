@@ -1,7 +1,7 @@
 package lombok.patcher;
 
 import com.adjust.sdk.Constants;
-import com.discord.widgets.chat.input.MentionUtils;
+import com.discord.widgets.chat.input.MentionUtilsKt;
 import com.discord.widgets.chat.input.autocomplete.AutocompleteViewModel;
 import java.io.File;
 import java.io.UnsupportedEncodingException;
@@ -51,7 +51,7 @@ public class ClassRootFinder {
             if (!new File(path).exists()) {
                 path = urlDecode(self2.substring(5), true);
             }
-            String suffix = AutocompleteViewModel.COMMAND_DISCOVER_TOKEN + packageBase.replace('.', MentionUtils.SLASH_CHAR) + AutocompleteViewModel.COMMAND_DISCOVER_TOKEN + name + ".class";
+            String suffix = AutocompleteViewModel.COMMAND_DISCOVER_TOKEN + packageBase.replace('.', MentionUtilsKt.SLASH_CHAR) + AutocompleteViewModel.COMMAND_DISCOVER_TOKEN + name + ".class";
             if (!path.endsWith(suffix)) {
                 throw new IllegalArgumentException("Unknown path structure: " + path);
             }

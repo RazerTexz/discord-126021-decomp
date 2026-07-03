@@ -10,49 +10,39 @@ import android.widget.ScrollView;
 import android.widget.TextView;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentViewModelLazyKt;
-import b.a.d.AppScreen2;
-import b.a.d.AppViewModelDelegates3;
-import b.a.d.AppViewModelDelegates5;
-import b.a.k.FormatUtils;
-import b.d.b.a.outline;
-import com.discord.R;
+import com.discord.C5419R;
 import com.discord.api.creatormonetization.CreatorMonetizationEligibilityRequirements;
 import com.discord.api.creatormonetization.CreatorMonetizationEnableRequest;
 import com.discord.api.guild.GuildFeature;
 import com.discord.app.AppFragment;
-import com.discord.app.AppLogger2;
 import com.discord.app.AppViewFlipper;
-import com.discord.databinding.WidgetServerSettingsCreatorMonetizationOnboardingAcceptTermsBinding;
+import com.discord.app.LoggingConfig;
+import com.discord.databinding.C5473x4f85106c;
+import com.discord.databinding.C5474x305cfbd8;
 import com.discord.databinding.WidgetServerSettingsCreatorMonetizationOnboardingBinding;
-import com.discord.databinding.WidgetServerSettingsCreatorMonetizationOnboardingCreateRequestBinding;
 import com.discord.i18n.Hook;
 import com.discord.i18n.RenderContext;
-import com.discord.utilities.KotlinExtensions;
-import com.discord.utilities.color.ColorCompat2;
+import com.discord.utilities.KotlinExtensionsKt;
+import com.discord.utilities.color.ColorCompatKt;
 import com.discord.utilities.error.Error;
-import com.discord.utilities.resources.DurationUtils2;
-import com.discord.utilities.resources.DurationUtils3;
-import com.discord.utilities.resources.DurationUtils4;
-import com.discord.utilities.resources.StringResourceUtils;
-import com.discord.utilities.rx.ObservableExtensionsKt;
+import com.discord.utilities.p501rx.ObservableExtensionsKt;
+import com.discord.utilities.resources.DurationUnit;
+import com.discord.utilities.resources.DurationUtilsKt;
+import com.discord.utilities.resources.MillisecondsFormatter;
+import com.discord.utilities.resources.StringResourceUtilsKt;
 import com.discord.utilities.textprocessing.FontColorSpan;
 import com.discord.utilities.time.Clock;
 import com.discord.utilities.time.ClockFactory;
-import com.discord.utilities.view.extensions.ScrollViewExtensions;
+import com.discord.utilities.view.extensions.ScrollViewExtensionsKt;
 import com.discord.utilities.view.text.LinkifiedTextView;
 import com.discord.utilities.viewbinding.FragmentViewBindingDelegate;
-import com.discord.utilities.viewbinding.FragmentViewBindingDelegate3;
+import com.discord.utilities.viewbinding.FragmentViewBindingDelegateKt;
 import com.discord.utilities.views.viewstub.LazyViewStubDelegate;
 import com.discord.views.LoadingButton;
 import com.discord.widgets.servers.creator_monetization_eligibility.EligibilityChecklistView;
 import com.discord.widgets.servers.creator_monetization_eligibility.onboarding.ServerSettingsCreatorMonetizationOnboardingViewModel;
 import com.discord.widgets.servers.guild_role_subscription.WidgetServerSettingsEmptyGuildRoleSubscriptions;
 import com.google.android.material.button.MaterialButton;
-import d0.LazyJVM;
-import d0.t.Collections2;
-import d0.z.d.Intrinsics3;
-import d0.z.d.Lambda;
-import d0.z.d.Reflection2;
 import java.util.List;
 import kotlin.Lazy;
 import kotlin.NoWhenBranchMatchedException;
@@ -61,13 +51,23 @@ import kotlin.jvm.functions.Function0;
 import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.reflect.KProperty;
-import rx.Observable;
-import rx.Subscription;
+import p007b.p008a.p018d.C0865g0;
+import p007b.p008a.p018d.C0869i0;
+import p007b.p008a.p018d.C0870j;
+import p007b.p008a.p027k.C1107b;
+import p007b.p100d.p104b.p105a.C1643a;
+import p507d0.C12083g;
+import p507d0.p580t.C12147n;
+import p507d0.p592z.p594d.AbstractC12240o;
+import p507d0.p592z.p594d.C12216a0;
+import p507d0.p592z.p594d.C12238m;
+import p658rx.Observable;
+import p658rx.Subscription;
 
 /* JADX INFO: compiled from: WidgetServerSettingsCreatorMonetizationOnboarding.kt */
 /* JADX INFO: loaded from: classes2.dex */
 public final class WidgetServerSettingsCreatorMonetizationOnboarding extends AppFragment {
-    public static final /* synthetic */ KProperty[] $$delegatedProperties = {outline.d0(WidgetServerSettingsCreatorMonetizationOnboarding.class, "binding", "getBinding()Lcom/discord/databinding/WidgetServerSettingsCreatorMonetizationOnboardingBinding;", 0)};
+    public static final /* synthetic */ KProperty[] $$delegatedProperties = {C1643a.m846d0(WidgetServerSettingsCreatorMonetizationOnboarding.class, "binding", "getBinding()Lcom/discord/databinding/WidgetServerSettingsCreatorMonetizationOnboardingBinding;", 0)};
 
     /* JADX INFO: renamed from: Companion, reason: from kotlin metadata */
     public static final Companion INSTANCE = new Companion(null);
@@ -107,7 +107,7 @@ public final class WidgetServerSettingsCreatorMonetizationOnboarding extends App
             if (time <= 0) {
                 return null;
             }
-            return DurationUtils4.INSTANCE.formatDurationInMillis(context, time);
+            return MillisecondsFormatter.INSTANCE.formatDurationInMillis(context, time);
         }
 
         public static /* synthetic */ CharSequence formatRejectionCooldown$default(Companion companion, Context context, CreatorMonetizationEligibilityRequirements.Rejection rejection, Clock clock, int i, Object obj) {
@@ -118,10 +118,10 @@ public final class WidgetServerSettingsCreatorMonetizationOnboarding extends App
         }
 
         public final void launch(Context context, long guildId) {
-            Intrinsics3.checkNotNullParameter(context, "context");
+            C12238m.checkNotNullParameter(context, "context");
             Intent intent = new Intent();
             intent.putExtra("com.discord.intent.extra.EXTRA_GUILD_ID", guildId);
-            AppScreen2.d(context, WidgetServerSettingsCreatorMonetizationOnboarding.class, intent);
+            C0870j.m156d(context, WidgetServerSettingsCreatorMonetizationOnboarding.class, intent);
         }
 
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
@@ -129,105 +129,105 @@ public final class WidgetServerSettingsCreatorMonetizationOnboarding extends App
         }
     }
 
-    /* JADX INFO: renamed from: com.discord.widgets.servers.creator_monetization_eligibility.onboarding.WidgetServerSettingsCreatorMonetizationOnboarding$configureCreateRequestState$4, reason: invalid class name */
+    /* JADX INFO: renamed from: com.discord.widgets.servers.creator_monetization_eligibility.onboarding.WidgetServerSettingsCreatorMonetizationOnboarding$configureCreateRequestState$4 */
     /* JADX INFO: compiled from: WidgetServerSettingsCreatorMonetizationOnboarding.kt */
-    public static final class AnonymousClass4 extends Lambda implements Function1<RenderContext, Unit> {
-        public AnonymousClass4() {
+    public static final class C94304 extends AbstractC12240o implements Function1<RenderContext, Unit> {
+        public C94304() {
             super(1);
         }
 
         @Override // kotlin.jvm.functions.Function1
         public /* bridge */ /* synthetic */ Unit invoke(RenderContext renderContext) {
             invoke2(renderContext);
-            return Unit.a;
+            return Unit.f27425a;
         }
 
         /* JADX INFO: renamed from: com.discord.widgets.servers.creator_monetization_eligibility.onboarding.WidgetServerSettingsCreatorMonetizationOnboarding$configureCreateRequestState$4$1, reason: invalid class name */
         /* JADX INFO: compiled from: WidgetServerSettingsCreatorMonetizationOnboarding.kt */
-        public static final class AnonymousClass1 extends Lambda implements Function1<Hook, Unit> {
+        public static final class AnonymousClass1 extends AbstractC12240o implements Function1<Hook, Unit> {
             public AnonymousClass1() {
                 super(1);
             }
 
             /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
             public final void invoke2(Hook hook) {
-                Intrinsics3.checkNotNullParameter(hook, "$receiver");
-                hook.styles.add(new FontColorSpan(ColorCompat2.getColor(WidgetServerSettingsCreatorMonetizationOnboarding.this, R.color.status_red_500)));
+                C12238m.checkNotNullParameter(hook, "$receiver");
+                hook.styles.add(new FontColorSpan(ColorCompatKt.getColor(WidgetServerSettingsCreatorMonetizationOnboarding.this, C5419R.color.status_red_500)));
             }
 
             @Override // kotlin.jvm.functions.Function1
             public /* bridge */ /* synthetic */ Unit invoke(Hook hook) {
                 invoke2(hook);
-                return Unit.a;
+                return Unit.f27425a;
             }
         }
 
         /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
         public final void invoke2(RenderContext renderContext) {
-            Intrinsics3.checkNotNullParameter(renderContext, "$receiver");
-            renderContext.a("doesNotHook", new AnonymousClass1());
+            C12238m.checkNotNullParameter(renderContext, "$receiver");
+            renderContext.m8422a("doesNotHook", new AnonymousClass1());
         }
     }
 
-    /* JADX INFO: renamed from: com.discord.widgets.servers.creator_monetization_eligibility.onboarding.WidgetServerSettingsCreatorMonetizationOnboarding$onViewBoundOrOnResume$1, reason: invalid class name */
+    /* JADX INFO: renamed from: com.discord.widgets.servers.creator_monetization_eligibility.onboarding.WidgetServerSettingsCreatorMonetizationOnboarding$onViewBoundOrOnResume$1 */
     /* JADX INFO: compiled from: WidgetServerSettingsCreatorMonetizationOnboarding.kt */
-    public static final class AnonymousClass1 extends Lambda implements Function1<ServerSettingsCreatorMonetizationOnboardingViewModel.ViewState, Unit> {
-        public AnonymousClass1() {
+    public static final class C94341 extends AbstractC12240o implements Function1<ServerSettingsCreatorMonetizationOnboardingViewModel.ViewState, Unit> {
+        public C94341() {
             super(1);
         }
 
         @Override // kotlin.jvm.functions.Function1
         public /* bridge */ /* synthetic */ Unit invoke(ServerSettingsCreatorMonetizationOnboardingViewModel.ViewState viewState) {
             invoke2(viewState);
-            return Unit.a;
+            return Unit.f27425a;
         }
 
         /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
         public final void invoke2(ServerSettingsCreatorMonetizationOnboardingViewModel.ViewState viewState) {
             WidgetServerSettingsCreatorMonetizationOnboarding widgetServerSettingsCreatorMonetizationOnboarding = WidgetServerSettingsCreatorMonetizationOnboarding.this;
-            Intrinsics3.checkNotNullExpressionValue(viewState, "it");
+            C12238m.checkNotNullExpressionValue(viewState, "it");
             widgetServerSettingsCreatorMonetizationOnboarding.configureUI(viewState);
-            WidgetServerSettingsCreatorMonetizationOnboarding.this.getAppLogger().b();
+            WidgetServerSettingsCreatorMonetizationOnboarding.this.getAppLogger().m8372b();
         }
     }
 
-    /* JADX INFO: renamed from: com.discord.widgets.servers.creator_monetization_eligibility.onboarding.WidgetServerSettingsCreatorMonetizationOnboarding$onViewBoundOrOnResume$2, reason: invalid class name */
+    /* JADX INFO: renamed from: com.discord.widgets.servers.creator_monetization_eligibility.onboarding.WidgetServerSettingsCreatorMonetizationOnboarding$onViewBoundOrOnResume$2 */
     /* JADX INFO: compiled from: WidgetServerSettingsCreatorMonetizationOnboarding.kt */
-    public static final class AnonymousClass2 extends Lambda implements Function1<ServerSettingsCreatorMonetizationOnboardingViewModel.Event, Unit> {
-        public AnonymousClass2() {
+    public static final class C94352 extends AbstractC12240o implements Function1<ServerSettingsCreatorMonetizationOnboardingViewModel.Event, Unit> {
+        public C94352() {
             super(1);
         }
 
         @Override // kotlin.jvm.functions.Function1
         public /* bridge */ /* synthetic */ Unit invoke(ServerSettingsCreatorMonetizationOnboardingViewModel.Event event) throws Throwable {
             invoke2(event);
-            return Unit.a;
+            return Unit.f27425a;
         }
 
         /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
         public final void invoke2(ServerSettingsCreatorMonetizationOnboardingViewModel.Event event) throws Throwable {
-            Intrinsics3.checkNotNullParameter(event, "it");
+            C12238m.checkNotNullParameter(event, "it");
             WidgetServerSettingsCreatorMonetizationOnboarding.this.handleEvent(event);
         }
     }
 
     public WidgetServerSettingsCreatorMonetizationOnboarding() {
-        super(R.layout.widget_server_settings_creator_monetization_onboarding);
-        this.binding = FragmentViewBindingDelegate3.viewBinding$default(this, WidgetServerSettingsCreatorMonetizationOnboarding$binding$2.INSTANCE, null, 2, null);
-        this.guildId = LazyJVM.lazy(new WidgetServerSettingsCreatorMonetizationOnboarding$guildId$2(this));
+        super(C5419R.layout.widget_server_settings_creator_monetization_onboarding);
+        this.binding = FragmentViewBindingDelegateKt.viewBinding$default(this, WidgetServerSettingsCreatorMonetizationOnboarding$binding$2.INSTANCE, null, 2, null);
+        this.guildId = C12083g.lazy(new WidgetServerSettingsCreatorMonetizationOnboarding$guildId$2(this));
         WidgetServerSettingsCreatorMonetizationOnboarding$viewModel$2 widgetServerSettingsCreatorMonetizationOnboarding$viewModel$2 = new WidgetServerSettingsCreatorMonetizationOnboarding$viewModel$2(this);
-        AppViewModelDelegates3 appViewModelDelegates3 = new AppViewModelDelegates3(this);
-        this.viewModel = FragmentViewModelLazyKt.createViewModelLazy(this, Reflection2.getOrCreateKotlinClass(ServerSettingsCreatorMonetizationOnboardingViewModel.class), new WidgetServerSettingsCreatorMonetizationOnboarding$appViewModels$$inlined$viewModels$1(appViewModelDelegates3), new AppViewModelDelegates5(widgetServerSettingsCreatorMonetizationOnboarding$viewModel$2));
-        this.createRequestBinding = LazyJVM.lazy(new WidgetServerSettingsCreatorMonetizationOnboarding$createRequestBinding$2(this));
-        this.acceptTermsBinding = LazyJVM.lazy(new WidgetServerSettingsCreatorMonetizationOnboarding$acceptTermsBinding$2(this));
+        C0865g0 c0865g0 = new C0865g0(this);
+        this.viewModel = FragmentViewModelLazyKt.createViewModelLazy(this, C12216a0.getOrCreateKotlinClass(ServerSettingsCreatorMonetizationOnboardingViewModel.class), new C9424x8b88e847(c0865g0), new C0869i0(widgetServerSettingsCreatorMonetizationOnboarding$viewModel$2));
+        this.createRequestBinding = C12083g.lazy(new C9431x4350d5de(this));
+        this.acceptTermsBinding = C12083g.lazy(new C9422xff1a9372(this));
         LazyViewStubDelegate.Companion companion = LazyViewStubDelegate.INSTANCE;
-        this.createRequestOnlyGuildOwnerNotice = companion.lazyViewStub(new WidgetServerSettingsCreatorMonetizationOnboarding$createRequestOnlyGuildOwnerNotice$2(this));
-        this.acceptTermsOnlyGuildOwnerNotice = companion.lazyViewStub(new WidgetServerSettingsCreatorMonetizationOnboarding$acceptTermsOnlyGuildOwnerNotice$2(this));
+        this.createRequestOnlyGuildOwnerNotice = companion.lazyViewStub(new C9432x5ac632a7(this));
+        this.acceptTermsOnlyGuildOwnerNotice = companion.lazyViewStub(new C9423x1fb02593(this));
     }
 
     private final void configureAcceptTermsState(final ServerSettingsCreatorMonetizationOnboardingViewModel.ViewState.AcceptTerms viewState) {
         getAcceptTermsOnlyGuildOwnerNotice().setVisible(!viewState.isGuildOwner());
-        CheckBox checkBox = getAcceptTermsBinding().c;
+        CheckBox checkBox = getAcceptTermsBinding().f17594c;
         checkBox.setChecked(viewState.getHasAcceptedTerms());
         checkBox.setEnabled(!viewState.isSubmitting() && viewState.isGuildOwner());
         checkBox.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() { // from class: com.discord.widgets.servers.creator_monetization_eligibility.onboarding.WidgetServerSettingsCreatorMonetizationOnboarding$configureAcceptTermsState$$inlined$apply$lambda$1
@@ -235,13 +235,13 @@ public final class WidgetServerSettingsCreatorMonetizationOnboarding extends App
             public final void onCheckedChanged(CompoundButton compoundButton, boolean z2) {
                 this.this$0.getViewModel().setHasAcceptedTerms(z2);
                 if (z2) {
-                    ScrollView scrollView = this.this$0.getAcceptTermsBinding().d;
-                    Intrinsics3.checkNotNullExpressionValue(scrollView, "acceptTermsBinding.acceptTermsScrollView");
-                    ScrollViewExtensions.flashScrollBars(scrollView);
+                    ScrollView scrollView = this.this$0.getAcceptTermsBinding().f17595d;
+                    C12238m.checkNotNullExpressionValue(scrollView, "acceptTermsBinding.acceptTermsScrollView");
+                    ScrollViewExtensionsKt.flashScrollBars(scrollView);
                 }
             }
         });
-        LoadingButton loadingButton = getAcceptTermsBinding().f2557b;
+        LoadingButton loadingButton = getAcceptTermsBinding().f17593b;
         loadingButton.setEnabled(viewState.getHasAcceptedTerms() && viewState.isGuildOwner());
         loadingButton.setIsLoading(viewState.isSubmitting());
         loadingButton.setOnClickListener(new View.OnClickListener() { // from class: com.discord.widgets.servers.creator_monetization_eligibility.onboarding.WidgetServerSettingsCreatorMonetizationOnboarding$configureAcceptTermsState$$inlined$apply$lambda$2
@@ -256,7 +256,7 @@ public final class WidgetServerSettingsCreatorMonetizationOnboarding extends App
     private final void configureCreateRequestState(final ServerSettingsCreatorMonetizationOnboardingViewModel.ViewState.CreateRequest viewState) {
         CharSequence rejectionCooldown$default;
         boolean z2;
-        LoadingButton loadingButton = getCreateRequestBinding().c;
+        LoadingButton loadingButton = getCreateRequestBinding().f17604c;
         loadingButton.setEnabled(viewState.getRequirements().getCanApply() && viewState.isGuildOwner());
         loadingButton.setVisibility(viewState.isApplicationPending() ^ true ? 0 : 8);
         loadingButton.setIsLoading(viewState.isSubmitting());
@@ -267,66 +267,66 @@ public final class WidgetServerSettingsCreatorMonetizationOnboarding extends App
             }
         });
         getCreateRequestOnlyGuildOwnerNotice().setVisible(!viewState.isGuildOwner());
-        MaterialButton materialButton = getCreateRequestBinding().f2559b;
-        Intrinsics3.checkNotNullExpressionValue(materialButton, "createRequestBinding.applicationPendingButton");
+        MaterialButton materialButton = getCreateRequestBinding().f17603b;
+        C12238m.checkNotNullExpressionValue(materialButton, "createRequestBinding.applicationPendingButton");
         materialButton.setVisibility(viewState.isApplicationPending() ? 0 : 8);
-        TextView textView = getCreateRequestBinding().h;
-        CreatorMonetizationEligibilityRequirements.Rejection rejectionJ = viewState.getRequirements().getRejection();
-        if (rejectionJ != null) {
+        TextView textView = getCreateRequestBinding().f17609h;
+        CreatorMonetizationEligibilityRequirements.Rejection rejectionM7775j = viewState.getRequirements().getRejection();
+        if (rejectionM7775j != null) {
             Companion companion = INSTANCE;
             Context context = textView.getContext();
-            Intrinsics3.checkNotNullExpressionValue(context, "context");
-            rejectionCooldown$default = Companion.formatRejectionCooldown$default(companion, context, rejectionJ, null, 2, null);
+            C12238m.checkNotNullExpressionValue(context, "context");
+            rejectionCooldown$default = Companion.formatRejectionCooldown$default(companion, context, rejectionM7775j, null, 2, null);
         } else {
             rejectionCooldown$default = null;
         }
         if (rejectionCooldown$default != null) {
-            CreatorMonetizationEnableRequest creatorMonetizationEnableRequestF = viewState.getRequirements().getLatestRequest();
-            z2 = (creatorMonetizationEnableRequestF != null ? creatorMonetizationEnableRequestF.getState() : null) == CreatorMonetizationEnableRequest.State.REJECTED;
+            CreatorMonetizationEnableRequest creatorMonetizationEnableRequestM7771f = viewState.getRequirements().getLatestRequest();
+            z2 = (creatorMonetizationEnableRequestM7771f != null ? creatorMonetizationEnableRequestM7771f.getState() : null) == CreatorMonetizationEnableRequest.State.REJECTED;
         }
         textView.setVisibility(z2 ? 0 : 8);
         if (rejectionCooldown$default != null) {
-            FormatUtils.m(textView, R.string.guild_role_subscription_settings_enable_request_rejected, new Object[0], new WidgetServerSettingsCreatorMonetizationOnboarding$configureCreateRequestState$2$1(rejectionCooldown$default));
+            C1107b.m221m(textView, C5419R.string.guild_role_subscription_settings_enable_request_rejected, new Object[0], new C9428x2d7e4c81(rejectionCooldown$default));
         }
-        LinkifiedTextView linkifiedTextView = getCreateRequestBinding().i;
-        Intrinsics3.checkNotNullExpressionValue(linkifiedTextView, "createRequestBinding.requirementsDescription");
-        FormatUtils.m(linkifiedTextView, R.string.guild_role_subscription_settings_enable_requirements_description, new Object[0], AnonymousClass3.INSTANCE);
-        ImageView imageView = getCreateRequestBinding().e;
-        Intrinsics3.checkNotNullExpressionValue(imageView, "createRequestBinding.eli…yChecklistHeaderIndicator");
+        LinkifiedTextView linkifiedTextView = getCreateRequestBinding().f17610i;
+        C12238m.checkNotNullExpressionValue(linkifiedTextView, "createRequestBinding.requirementsDescription");
+        C1107b.m221m(linkifiedTextView, C5419R.string.guild_role_subscription_settings_enable_requirements_description, new Object[0], C94293.INSTANCE);
+        ImageView imageView = getCreateRequestBinding().f17606e;
+        C12238m.checkNotNullExpressionValue(imageView, "createRequestBinding.eli…yChecklistHeaderIndicator");
         imageView.setActivated(viewState.getRequirements().getSufficient());
         if (viewState.getRequirements().getSufficient()) {
-            TextView textView2 = getCreateRequestBinding().f;
-            Intrinsics3.checkNotNullExpressionValue(textView2, "createRequestBinding.eligibilityChecklistTitle");
-            FormatUtils.m(textView2, R.string.guild_role_subscription_settings_eligible_message, new Object[0], (4 & 4) != 0 ? FormatUtils.g.j : null);
+            TextView textView2 = getCreateRequestBinding().f17607f;
+            C12238m.checkNotNullExpressionValue(textView2, "createRequestBinding.eligibilityChecklistTitle");
+            C1107b.m221m(textView2, C5419R.string.guild_role_subscription_settings_eligible_message, new Object[0], (4 & 4) != 0 ? C1107b.g.f1495j : null);
         } else {
-            TextView textView3 = getCreateRequestBinding().f;
-            Intrinsics3.checkNotNullExpressionValue(textView3, "createRequestBinding.eligibilityChecklistTitle");
-            FormatUtils.m(textView3, R.string.guild_role_subscription_settings_not_eligible_message, new Object[0], new AnonymousClass4());
+            TextView textView3 = getCreateRequestBinding().f17607f;
+            C12238m.checkNotNullExpressionValue(textView3, "createRequestBinding.eligibilityChecklistTitle");
+            C1107b.m221m(textView3, C5419R.string.guild_role_subscription_settings_not_eligible_message, new Object[0], new C94304());
         }
-        getCreateRequestBinding().d.bind(toChecklistRequirements(viewState.getRequirements()));
+        getCreateRequestBinding().f17605d.bind(toChecklistRequirements(viewState.getRequirements()));
     }
 
     private final void configureUI(ServerSettingsCreatorMonetizationOnboardingViewModel.ViewState viewState) {
         Unit unit;
         if (viewState instanceof ServerSettingsCreatorMonetizationOnboardingViewModel.ViewState.Loading) {
-            AppViewFlipper appViewFlipper = getBinding().e;
-            Intrinsics3.checkNotNullExpressionValue(appViewFlipper, "binding.viewFlipper");
+            AppViewFlipper appViewFlipper = getBinding().f17601e;
+            C12238m.checkNotNullExpressionValue(appViewFlipper, "binding.viewFlipper");
             appViewFlipper.setDisplayedChild(0);
-            unit = Unit.a;
+            unit = Unit.f27425a;
         } else if (viewState instanceof ServerSettingsCreatorMonetizationOnboardingViewModel.ViewState.Error) {
-            AppViewFlipper appViewFlipper2 = getBinding().e;
-            Intrinsics3.checkNotNullExpressionValue(appViewFlipper2, "binding.viewFlipper");
+            AppViewFlipper appViewFlipper2 = getBinding().f17601e;
+            C12238m.checkNotNullExpressionValue(appViewFlipper2, "binding.viewFlipper");
             appViewFlipper2.setDisplayedChild(1);
-            TextView textView = getBinding().f2558b;
-            Intrinsics3.checkNotNullExpressionValue(textView, "binding.errorNoticeText");
+            TextView textView = getBinding().f17598b;
+            C12238m.checkNotNullExpressionValue(textView, "binding.errorNoticeText");
             textView.setText(((ServerSettingsCreatorMonetizationOnboardingViewModel.ViewState.Error) viewState).getError().getDisplayString(requireContext()));
-            unit = Unit.a;
+            unit = Unit.f27425a;
         } else if (viewState instanceof ServerSettingsCreatorMonetizationOnboardingViewModel.ViewState.CreateRequest) {
-            AppViewFlipper appViewFlipper3 = getBinding().e;
-            Intrinsics3.checkNotNullExpressionValue(appViewFlipper3, "binding.viewFlipper");
+            AppViewFlipper appViewFlipper3 = getBinding().f17601e;
+            C12238m.checkNotNullExpressionValue(appViewFlipper3, "binding.viewFlipper");
             appViewFlipper3.setDisplayedChild(2);
             configureCreateRequestState((ServerSettingsCreatorMonetizationOnboardingViewModel.ViewState.CreateRequest) viewState);
-            unit = Unit.a;
+            unit = Unit.f27425a;
         } else {
             if (!(viewState instanceof ServerSettingsCreatorMonetizationOnboardingViewModel.ViewState.AcceptTerms)) {
                 throw new NoWhenBranchMatchedException();
@@ -335,24 +335,24 @@ public final class WidgetServerSettingsCreatorMonetizationOnboarding extends App
             if (acceptTerms.getGuild().hasFeature(GuildFeature.CREATOR_MONETIZABLE)) {
                 WidgetServerSettingsEmptyGuildRoleSubscriptions.INSTANCE.launch(requireContext(), getGuildId());
                 requireActivity().finish();
-                unit = Unit.a;
+                unit = Unit.f27425a;
             } else {
-                AppViewFlipper appViewFlipper4 = getBinding().e;
-                Intrinsics3.checkNotNullExpressionValue(appViewFlipper4, "binding.viewFlipper");
+                AppViewFlipper appViewFlipper4 = getBinding().f17601e;
+                C12238m.checkNotNullExpressionValue(appViewFlipper4, "binding.viewFlipper");
                 appViewFlipper4.setDisplayedChild(3);
                 configureAcceptTermsState(acceptTerms);
-                unit = Unit.a;
+                unit = Unit.f27425a;
             }
         }
-        KotlinExtensions.getExhaustive(unit);
+        KotlinExtensionsKt.getExhaustive(unit);
     }
 
     private final CharSequence formatDurationFromDays(int minimumAgeInDays) {
-        return (minimumAgeInDays <= 0 || minimumAgeInDays % 7 != 0) ? DurationUtils3.formatDuration(requireContext(), DurationUtils2.DAYS, minimumAgeInDays) : DurationUtils3.formatDuration(requireContext(), DurationUtils2.WEEKS, minimumAgeInDays / 7);
+        return (minimumAgeInDays <= 0 || minimumAgeInDays % 7 != 0) ? DurationUtilsKt.formatDuration(requireContext(), DurationUnit.DAYS, minimumAgeInDays) : DurationUtilsKt.formatDuration(requireContext(), DurationUnit.WEEKS, minimumAgeInDays / 7);
     }
 
-    private final WidgetServerSettingsCreatorMonetizationOnboardingAcceptTermsBinding getAcceptTermsBinding() {
-        return (WidgetServerSettingsCreatorMonetizationOnboardingAcceptTermsBinding) this.acceptTermsBinding.getValue();
+    private final C5473x4f85106c getAcceptTermsBinding() {
+        return (C5473x4f85106c) this.acceptTermsBinding.getValue();
     }
 
     private final LazyViewStubDelegate getAcceptTermsOnlyGuildOwnerNotice() {
@@ -363,8 +363,8 @@ public final class WidgetServerSettingsCreatorMonetizationOnboarding extends App
         return (WidgetServerSettingsCreatorMonetizationOnboardingBinding) this.binding.getValue((Fragment) this, $$delegatedProperties[0]);
     }
 
-    private final WidgetServerSettingsCreatorMonetizationOnboardingCreateRequestBinding getCreateRequestBinding() {
-        return (WidgetServerSettingsCreatorMonetizationOnboardingCreateRequestBinding) this.createRequestBinding.getValue();
+    private final C5474x305cfbd8 getCreateRequestBinding() {
+        return (C5474x305cfbd8) this.createRequestBinding.getValue();
     }
 
     private final LazyViewStubDelegate getCreateRequestOnlyGuildOwnerNotice() {
@@ -381,7 +381,7 @@ public final class WidgetServerSettingsCreatorMonetizationOnboarding extends App
 
     private final void handleEvent(ServerSettingsCreatorMonetizationOnboardingViewModel.Event event) throws Throwable {
         if (event instanceof ServerSettingsCreatorMonetizationOnboardingViewModel.Event.ShowErrorToast) {
-            Error.handle(((ServerSettingsCreatorMonetizationOnboardingViewModel.Event.ShowErrorToast) event).getError(), WidgetServerSettingsCreatorMonetizationOnboarding.class.getSimpleName(), null, e());
+            Error.handle(((ServerSettingsCreatorMonetizationOnboardingViewModel.Event.ShowErrorToast) event).getError(), WidgetServerSettingsCreatorMonetizationOnboarding.class.getSimpleName(), null, m95e());
         }
     }
 
@@ -391,144 +391,144 @@ public final class WidgetServerSettingsCreatorMonetizationOnboarding extends App
 
     private final List<EligibilityChecklistView.Requirement> toChecklistRequirements(CreatorMonetizationEligibilityRequirements creatorMonetizationEligibilityRequirements) {
         EligibilityChecklistView.Requirement[] requirementArr = new EligibilityChecklistView.Requirement[6];
-        String string = creatorMonetizationEligibilityRequirements.getSize() ? getString(R.string.guild_role_subscription_settings_eligibility_requirement_members_eligible) : getString(R.string.guild_role_subscription_settings_eligibility_requirement_members_not_eligible);
-        Intrinsics3.checkNotNullExpressionValue(string, "when {\n                s…eligible)\n              }");
-        requirementArr[0] = new EligibilityChecklistView.Requirement(string, FormatUtils.e(this, R.string.guild_role_subscription_settings_eligibility_requirement_members_description, new Object[0], new AnonymousClass1(creatorMonetizationEligibilityRequirements)), creatorMonetizationEligibilityRequirements.getSize());
-        String string2 = creatorMonetizationEligibilityRequirements.getAge() ? getString(R.string.guild_role_subscription_settings_eligibility_requirement_age_eligible) : getString(R.string.guild_role_subscription_settings_eligibility_requirement_age_not_eligible);
-        Intrinsics3.checkNotNullExpressionValue(string2, "when {\n                a…eligible)\n              }");
-        requirementArr[1] = new EligibilityChecklistView.Requirement(string2, FormatUtils.e(this, R.string.guild_role_subscription_settings_eligibility_requirement_age_description, new Object[0], new AnonymousClass2(creatorMonetizationEligibilityRequirements)), creatorMonetizationEligibilityRequirements.getAge());
-        String string3 = creatorMonetizationEligibilityRequirements.getSafeEnvironment() ? getString(R.string.guild_role_subscription_settings_eligibility_requirement_violations_eligible) : getString(R.string.guild_role_subscription_settings_eligibility_requirement_violations_not_eligible);
-        Intrinsics3.checkNotNullExpressionValue(string3, "when {\n                s…        )\n              }");
-        requirementArr[2] = new EligibilityChecklistView.Requirement(string3, FormatUtils.e(this, R.string.guild_role_subscription_settings_eligibility_requirement_violations_description, new Object[0], AnonymousClass3.INSTANCE), creatorMonetizationEligibilityRequirements.getSafeEnvironment());
-        String string4 = creatorMonetizationEligibilityRequirements.getEngagementHealthy() ? getString(R.string.guild_role_subscription_settings_eligibility_requirement_communicators_eligible) : getString(R.string.guild_role_subscription_settings_eligibility_requirement_communicators_not_eligible);
-        Intrinsics3.checkNotNullExpressionValue(string4, "when {\n                e…        )\n              }");
-        String string5 = getString(R.string.guild_role_subscription_settings_eligibility_requirement_communicators_description);
-        Intrinsics3.checkNotNullExpressionValue(string5, "getString(R.string.guild…ommunicators_description)");
+        String string = creatorMonetizationEligibilityRequirements.getSize() ? getString(C5419R.string.f14692x95c3e2c2) : getString(C5419R.string.f14693xc54a792e);
+        C12238m.checkNotNullExpressionValue(string, "when {\n                s…eligible)\n              }");
+        requirementArr[0] = new EligibilityChecklistView.Requirement(string, C1107b.m213e(this, C5419R.string.f14691x26fcaf31, new Object[0], new C94361(creatorMonetizationEligibilityRequirements)), creatorMonetizationEligibilityRequirements.getSize());
+        String string2 = creatorMonetizationEligibilityRequirements.getAge() ? getString(C5419R.string.f14686xe742c01c) : getString(C5419R.string.f14687x57071988);
+        C12238m.checkNotNullExpressionValue(string2, "when {\n                a…eligible)\n              }");
+        requirementArr[1] = new EligibilityChecklistView.Requirement(string2, C1107b.m213e(this, C5419R.string.f14685xe15d9b97, new Object[0], new C94372(creatorMonetizationEligibilityRequirements)), creatorMonetizationEligibilityRequirements.getAge());
+        String string3 = creatorMonetizationEligibilityRequirements.getSafeEnvironment() ? getString(C5419R.string.f14701x95059463) : getString(C5419R.string.f14702x328724f);
+        C12238m.checkNotNullExpressionValue(string3, "when {\n                s…        )\n              }");
+        requirementArr[2] = new EligibilityChecklistView.Requirement(string3, C1107b.m213e(this, C5419R.string.f14700xa4da8df0, new Object[0], C94383.INSTANCE), creatorMonetizationEligibilityRequirements.getSafeEnvironment());
+        String string4 = creatorMonetizationEligibilityRequirements.getEngagementHealthy() ? getString(C5419R.string.f14689xa26c16fd) : getString(C5419R.string.f14690x1df817e9);
+        C12238m.checkNotNullExpressionValue(string4, "when {\n                e…        )\n              }");
+        String string5 = getString(C5419R.string.f14688x1112cd16);
+        C12238m.checkNotNullExpressionValue(string5, "getString(R.string.guild…ommunicators_description)");
         requirementArr[3] = new EligibilityChecklistView.Requirement(string4, string5, creatorMonetizationEligibilityRequirements.getEngagementHealthy());
-        String string6 = creatorMonetizationEligibilityRequirements.getRetentionHealthy() ? getString(R.string.guild_role_subscription_settings_eligibility_requirement_retention_eligible) : getString(R.string.guild_role_subscription_settings_eligibility_requirement_retention_not_eligible);
-        Intrinsics3.checkNotNullExpressionValue(string6, "when {\n                r…eligible)\n              }");
-        String string7 = getString(R.string.guild_role_subscription_settings_eligibility_requirement_retention_description);
-        Intrinsics3.checkNotNullExpressionValue(string7, "getString(R.string.guild…nt_retention_description)");
+        String string6 = creatorMonetizationEligibilityRequirements.getRetentionHealthy() ? getString(C5419R.string.f14698x8b46b51d) : getString(C5419R.string.f14699xbe16a609);
+        C12238m.checkNotNullExpressionValue(string6, "when {\n                r…eligible)\n              }");
+        String string7 = getString(C5419R.string.f14697x89d9faf6);
+        C12238m.checkNotNullExpressionValue(string7, "getString(R.string.guild…nt_retention_description)");
         requirementArr[4] = new EligibilityChecklistView.Requirement(string6, string7, creatorMonetizationEligibilityRequirements.getRetentionHealthy());
-        String string8 = creatorMonetizationEligibilityRequirements.i().isEmpty() ? getString(R.string.guild_role_subscription_settings_eligibility_requirement_nsfw_content_eligible) : getString(R.string.guild_role_subscription_settings_eligibility_requirement_nsfw_content_not_eligible);
-        Intrinsics3.checkNotNullExpressionValue(string8, "when {\n                n…        )\n              }");
-        String string9 = getString(R.string.guild_role_subscription_settings_eligibility_requirement_nsfw_content_description);
-        Intrinsics3.checkNotNullExpressionValue(string9, "getString(R.string.guild…nsfw_content_description)");
-        requirementArr[5] = new EligibilityChecklistView.Requirement(string8, string9, creatorMonetizationEligibilityRequirements.i().isEmpty());
-        return Collections2.listOf((Object[]) requirementArr);
+        String string8 = creatorMonetizationEligibilityRequirements.m7774i().isEmpty() ? getString(C5419R.string.f14695xfcdc6141) : getString(C5419R.string.f14696xd6f1a02d);
+        C12238m.checkNotNullExpressionValue(string8, "when {\n                n…        )\n              }");
+        String string9 = getString(C5419R.string.f14694x82652c52);
+        C12238m.checkNotNullExpressionValue(string9, "getString(R.string.guild…nsfw_content_description)");
+        requirementArr[5] = new EligibilityChecklistView.Requirement(string8, string9, creatorMonetizationEligibilityRequirements.m7774i().isEmpty());
+        return C12147n.listOf((Object[]) requirementArr);
     }
 
-    @Override // com.discord.app.AppFragment, com.discord.app.AppLogger.a
-    public AppLogger2 getLoggingConfig() {
-        return (AppLogger2) getViewModel().withViewState(new WidgetServerSettingsCreatorMonetizationOnboarding$loggingConfig$1(this));
+    @Override // com.discord.app.AppFragment, com.discord.app.AppLogger.InterfaceC5455a
+    public LoggingConfig getLoggingConfig() {
+        return (LoggingConfig) getViewModel().withViewState(new C9433x9aac34d0(this));
     }
 
     @Override // com.discord.app.AppFragment
     public void onViewBound(View view) {
-        Intrinsics3.checkNotNullParameter(view, "view");
+        C12238m.checkNotNullParameter(view, "view");
         super.onViewBound(view);
         setActionBarDisplayHomeAsUpEnabled(true);
-        setActionBarTitle(R.string.guild_settings_role_subscriptions_title);
+        setActionBarTitle(C5419R.string.guild_settings_role_subscriptions_title);
     }
 
     @Override // com.discord.app.AppFragment
     public void onViewBoundOrOnResume() {
         super.onViewBoundOrOnResume();
-        Observable<ServerSettingsCreatorMonetizationOnboardingViewModel.ViewState> observableR = getViewModel().observeViewState().r();
-        Intrinsics3.checkNotNullExpressionValue(observableR, "viewModel\n        .obser…  .distinctUntilChanged()");
-        ObservableExtensionsKt.appSubscribe(ObservableExtensionsKt.bindToComponentLifecycle$default(observableR, this, null, 2, null), (Class<?>) WidgetServerSettingsCreatorMonetizationOnboarding.class, (58 & 2) != 0 ? null : null, (Function1<? super Subscription, Unit>) ((58 & 4) != 0 ? null : null), (Function1<? super Error, Unit>) ((58 & 8) != 0 ? null : null), (Function0<Unit>) ((58 & 16) != 0 ? ObservableExtensionsKt.AnonymousClass1.INSTANCE : null), (Function0<Unit>) ((58 & 32) != 0 ? ObservableExtensionsKt.AnonymousClass2.INSTANCE : null), new AnonymousClass1());
-        ObservableExtensionsKt.appSubscribe(ObservableExtensionsKt.bindToComponentLifecycle$default(getViewModel().listenForEvents(), this, null, 2, null), (Class<?>) WidgetServerSettingsCreatorMonetizationOnboarding.class, (58 & 2) != 0 ? null : null, (Function1<? super Subscription, Unit>) ((58 & 4) != 0 ? null : null), (Function1<? super Error, Unit>) ((58 & 8) != 0 ? null : null), (Function0<Unit>) ((58 & 16) != 0 ? ObservableExtensionsKt.AnonymousClass1.INSTANCE : null), (Function0<Unit>) ((58 & 32) != 0 ? ObservableExtensionsKt.AnonymousClass2.INSTANCE : null), new AnonymousClass2());
+        Observable<ServerSettingsCreatorMonetizationOnboardingViewModel.ViewState> observableM11112r = getViewModel().observeViewState().m11112r();
+        C12238m.checkNotNullExpressionValue(observableM11112r, "viewModel\n        .obser…  .distinctUntilChanged()");
+        ObservableExtensionsKt.appSubscribe(ObservableExtensionsKt.bindToComponentLifecycle$default(observableM11112r, this, null, 2, null), (Class<?>) WidgetServerSettingsCreatorMonetizationOnboarding.class, (58 & 2) != 0 ? null : null, (Function1<? super Subscription, Unit>) ((58 & 4) != 0 ? null : null), (Function1<? super Error, Unit>) ((58 & 8) != 0 ? null : null), (Function0<Unit>) ((58 & 16) != 0 ? ObservableExtensionsKt.C68791.INSTANCE : null), (Function0<Unit>) ((58 & 32) != 0 ? ObservableExtensionsKt.C68802.INSTANCE : null), new C94341());
+        ObservableExtensionsKt.appSubscribe(ObservableExtensionsKt.bindToComponentLifecycle$default(getViewModel().listenForEvents(), this, null, 2, null), (Class<?>) WidgetServerSettingsCreatorMonetizationOnboarding.class, (58 & 2) != 0 ? null : null, (Function1<? super Subscription, Unit>) ((58 & 4) != 0 ? null : null), (Function1<? super Error, Unit>) ((58 & 8) != 0 ? null : null), (Function0<Unit>) ((58 & 16) != 0 ? ObservableExtensionsKt.C68791.INSTANCE : null), (Function0<Unit>) ((58 & 32) != 0 ? ObservableExtensionsKt.C68802.INSTANCE : null), new C94352());
     }
 
-    /* JADX INFO: renamed from: com.discord.widgets.servers.creator_monetization_eligibility.onboarding.WidgetServerSettingsCreatorMonetizationOnboarding$configureCreateRequestState$3, reason: invalid class name */
+    /* JADX INFO: renamed from: com.discord.widgets.servers.creator_monetization_eligibility.onboarding.WidgetServerSettingsCreatorMonetizationOnboarding$configureCreateRequestState$3 */
     /* JADX INFO: compiled from: WidgetServerSettingsCreatorMonetizationOnboarding.kt */
-    public static final class AnonymousClass3 extends Lambda implements Function1<RenderContext, Unit> {
-        public static final AnonymousClass3 INSTANCE = new AnonymousClass3();
+    public static final class C94293 extends AbstractC12240o implements Function1<RenderContext, Unit> {
+        public static final C94293 INSTANCE = new C94293();
 
-        public AnonymousClass3() {
+        public C94293() {
             super(1);
         }
 
         /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
         public final void invoke2(RenderContext renderContext) {
-            Intrinsics3.checkNotNullParameter(renderContext, "$receiver");
+            C12238m.checkNotNullParameter(renderContext, "$receiver");
             renderContext.args.put("faqUrl", "https://support.discord.com/hc/en-us/articles/5371495812631");
         }
 
         @Override // kotlin.jvm.functions.Function1
         public /* bridge */ /* synthetic */ Unit invoke(RenderContext renderContext) {
             invoke2(renderContext);
-            return Unit.a;
+            return Unit.f27425a;
         }
     }
 
-    /* JADX INFO: renamed from: com.discord.widgets.servers.creator_monetization_eligibility.onboarding.WidgetServerSettingsCreatorMonetizationOnboarding$toChecklistRequirements$2, reason: invalid class name */
+    /* JADX INFO: renamed from: com.discord.widgets.servers.creator_monetization_eligibility.onboarding.WidgetServerSettingsCreatorMonetizationOnboarding$toChecklistRequirements$2 */
     /* JADX INFO: compiled from: WidgetServerSettingsCreatorMonetizationOnboarding.kt */
-    public static final class AnonymousClass2 extends Lambda implements Function1<RenderContext, Unit> {
+    public static final class C94372 extends AbstractC12240o implements Function1<RenderContext, Unit> {
         public final /* synthetic */ CreatorMonetizationEligibilityRequirements $this_toChecklistRequirements;
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-        public AnonymousClass2(CreatorMonetizationEligibilityRequirements creatorMonetizationEligibilityRequirements) {
+        public C94372(CreatorMonetizationEligibilityRequirements creatorMonetizationEligibilityRequirements) {
             super(1);
             this.$this_toChecklistRequirements = creatorMonetizationEligibilityRequirements;
         }
 
         /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
         public final void invoke2(RenderContext renderContext) {
-            Intrinsics3.checkNotNullParameter(renderContext, "$receiver");
+            C12238m.checkNotNullParameter(renderContext, "$receiver");
             renderContext.args.put("minimumAge", WidgetServerSettingsCreatorMonetizationOnboarding.this.formatDurationFromDays(this.$this_toChecklistRequirements.getMinimumAgeInDays()).toString());
         }
 
         @Override // kotlin.jvm.functions.Function1
         public /* bridge */ /* synthetic */ Unit invoke(RenderContext renderContext) {
             invoke2(renderContext);
-            return Unit.a;
+            return Unit.f27425a;
         }
     }
 
-    /* JADX INFO: renamed from: com.discord.widgets.servers.creator_monetization_eligibility.onboarding.WidgetServerSettingsCreatorMonetizationOnboarding$toChecklistRequirements$3, reason: invalid class name */
+    /* JADX INFO: renamed from: com.discord.widgets.servers.creator_monetization_eligibility.onboarding.WidgetServerSettingsCreatorMonetizationOnboarding$toChecklistRequirements$3 */
     /* JADX INFO: compiled from: WidgetServerSettingsCreatorMonetizationOnboarding.kt */
-    public static final class AnonymousClass3 extends Lambda implements Function1<RenderContext, Unit> {
-        public static final AnonymousClass3 INSTANCE = new AnonymousClass3();
+    public static final class C94383 extends AbstractC12240o implements Function1<RenderContext, Unit> {
+        public static final C94383 INSTANCE = new C94383();
 
-        public AnonymousClass3() {
+        public C94383() {
             super(1);
         }
 
         /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
         public final void invoke2(RenderContext renderContext) {
-            Intrinsics3.checkNotNullParameter(renderContext, "$receiver");
+            C12238m.checkNotNullParameter(renderContext, "$receiver");
             renderContext.args.put("communityGuidelinesUrl", "https://support.discord.com/hc/en-us/articles/360035969312");
         }
 
         @Override // kotlin.jvm.functions.Function1
         public /* bridge */ /* synthetic */ Unit invoke(RenderContext renderContext) {
             invoke2(renderContext);
-            return Unit.a;
+            return Unit.f27425a;
         }
     }
 
-    /* JADX INFO: renamed from: com.discord.widgets.servers.creator_monetization_eligibility.onboarding.WidgetServerSettingsCreatorMonetizationOnboarding$toChecklistRequirements$1, reason: invalid class name */
+    /* JADX INFO: renamed from: com.discord.widgets.servers.creator_monetization_eligibility.onboarding.WidgetServerSettingsCreatorMonetizationOnboarding$toChecklistRequirements$1 */
     /* JADX INFO: compiled from: WidgetServerSettingsCreatorMonetizationOnboarding.kt */
-    public static final class AnonymousClass1 extends Lambda implements Function1<RenderContext, Unit> {
+    public static final class C94361 extends AbstractC12240o implements Function1<RenderContext, Unit> {
         public final /* synthetic */ CreatorMonetizationEligibilityRequirements $this_toChecklistRequirements;
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-        public AnonymousClass1(CreatorMonetizationEligibilityRequirements creatorMonetizationEligibilityRequirements) {
+        public C94361(CreatorMonetizationEligibilityRequirements creatorMonetizationEligibilityRequirements) {
             super(1);
             this.$this_toChecklistRequirements = creatorMonetizationEligibilityRequirements;
         }
 
         /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
         public final void invoke2(RenderContext renderContext) {
-            Intrinsics3.checkNotNullParameter(renderContext, "$receiver");
-            renderContext.args.put("minimumSize", StringResourceUtils.getI18nPluralString(WidgetServerSettingsCreatorMonetizationOnboarding.this.requireContext(), R.plurals.guild_role_subscription_settings_eligibility_requirement_members_description_minimumSize, this.$this_toChecklistRequirements.getMinimumSize(), Integer.valueOf(this.$this_toChecklistRequirements.getMinimumSize())).toString());
+            C12238m.checkNotNullParameter(renderContext, "$receiver");
+            renderContext.args.put("minimumSize", StringResourceUtilsKt.getI18nPluralString(WidgetServerSettingsCreatorMonetizationOnboarding.this.requireContext(), C5419R.plurals.guild_role_subscription_settings_eligibility_requirement_members_description_minimumSize, this.$this_toChecklistRequirements.getMinimumSize(), Integer.valueOf(this.$this_toChecklistRequirements.getMinimumSize())).toString());
         }
 
         @Override // kotlin.jvm.functions.Function1
         public /* bridge */ /* synthetic */ Unit invoke(RenderContext renderContext) {
             invoke2(renderContext);
-            return Unit.a;
+            return Unit.f27425a;
         }
     }
 }

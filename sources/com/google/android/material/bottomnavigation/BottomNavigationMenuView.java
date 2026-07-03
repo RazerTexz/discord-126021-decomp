@@ -20,6 +20,7 @@ import androidx.annotation.Nullable;
 import androidx.annotation.RestrictTo;
 import androidx.annotation.StyleRes;
 import androidx.annotation.VisibleForTesting;
+import androidx.appcompat.C0051R;
 import androidx.appcompat.content.res.AppCompatResources;
 import androidx.appcompat.view.menu.MenuBuilder;
 import androidx.appcompat.view.menu.MenuItemImpl;
@@ -32,6 +33,7 @@ import androidx.interpolator.view.animation.FastOutSlowInInterpolator;
 import androidx.transition.AutoTransition;
 import androidx.transition.TransitionManager;
 import androidx.transition.TransitionSet;
+import com.google.android.material.C10817R;
 import com.google.android.material.badge.BadgeDrawable;
 import com.google.android.material.internal.TextScale;
 import java.util.HashSet;
@@ -88,8 +90,9 @@ public class BottomNavigationMenuView extends ViewGroup implements MenuView {
     private final TransitionSet set;
     private int[] tempChildWidths;
 
-    public class a implements View.OnClickListener {
-        public a() {
+    /* JADX INFO: renamed from: com.google.android.material.bottomnavigation.BottomNavigationMenuView$a */
+    public class ViewOnClickListenerC10847a implements View.OnClickListener {
+        public ViewOnClickListenerC10847a() {
         }
 
         @Override // android.view.View.OnClickListener
@@ -220,7 +223,7 @@ public class BottomNavigationMenuView extends ViewGroup implements MenuView {
             return null;
         }
         ColorStateList colorStateList = AppCompatResources.getColorStateList(getContext(), typedValue.resourceId);
-        if (!getContext().getTheme().resolveAttribute(androidx.appcompat.R.attr.colorPrimary, typedValue, true)) {
+        if (!getContext().getTheme().resolveAttribute(C0051R.attr.colorPrimary, typedValue, true)) {
             return null;
         }
         int i2 = typedValue.data;
@@ -592,11 +595,11 @@ public class BottomNavigationMenuView extends ViewGroup implements MenuView {
         this.selectedItemPosition = 0;
         this.badgeDrawables = new SparseArray<>(5);
         Resources resources = getResources();
-        this.inactiveItemMaxWidth = resources.getDimensionPixelSize(com.google.android.material.R.dimen.design_bottom_navigation_item_max_width);
-        this.inactiveItemMinWidth = resources.getDimensionPixelSize(com.google.android.material.R.dimen.design_bottom_navigation_item_min_width);
-        this.activeItemMaxWidth = resources.getDimensionPixelSize(com.google.android.material.R.dimen.design_bottom_navigation_active_item_max_width);
-        this.activeItemMinWidth = resources.getDimensionPixelSize(com.google.android.material.R.dimen.design_bottom_navigation_active_item_min_width);
-        this.itemHeight = resources.getDimensionPixelSize(com.google.android.material.R.dimen.design_bottom_navigation_height);
+        this.inactiveItemMaxWidth = resources.getDimensionPixelSize(C10817R.dimen.design_bottom_navigation_item_max_width);
+        this.inactiveItemMinWidth = resources.getDimensionPixelSize(C10817R.dimen.design_bottom_navigation_item_min_width);
+        this.activeItemMaxWidth = resources.getDimensionPixelSize(C10817R.dimen.design_bottom_navigation_active_item_max_width);
+        this.activeItemMinWidth = resources.getDimensionPixelSize(C10817R.dimen.design_bottom_navigation_active_item_min_width);
+        this.itemHeight = resources.getDimensionPixelSize(C10817R.dimen.design_bottom_navigation_height);
         this.itemTextColorDefault = createDefaultColorStateList(R.attr.textColorSecondary);
         AutoTransition autoTransition = new AutoTransition();
         this.set = autoTransition;
@@ -604,7 +607,7 @@ public class BottomNavigationMenuView extends ViewGroup implements MenuView {
         autoTransition.setDuration(ACTIVE_ANIMATION_DURATION_MS);
         autoTransition.setInterpolator((TimeInterpolator) new FastOutSlowInInterpolator());
         autoTransition.addTransition(new TextScale());
-        this.onClickListener = new a();
+        this.onClickListener = new ViewOnClickListenerC10847a();
         this.tempChildWidths = new int[5];
         ViewCompat.setImportantForAccessibility(this, 1);
     }

@@ -13,44 +13,73 @@ import android.util.TypedValue;
 import android.view.View;
 import android.view.ViewTreeObserver;
 import androidx.core.view.ViewCompat;
-import b.h.a.a.AndroidStockBlurImpl;
-import b.h.a.a.AndroidXBlurImpl;
-import b.h.a.a.BlurImpl;
-import b.h.a.a.EmptyBlurImpl;
-import b.h.a.a.SupportLibraryBlurImpl;
-import com.github.mmin18.realtimeblurview.R;
+import com.github.mmin18.realtimeblurview.C10679R;
+import p007b.p222h.p223a.p224a.C2398a;
+import p007b.p222h.p223a.p224a.C2399b;
+import p007b.p222h.p223a.p224a.C2401d;
+import p007b.p222h.p223a.p224a.C2402e;
+import p007b.p222h.p223a.p224a.InterfaceC2400c;
 
 /* JADX INFO: loaded from: classes3.dex */
 public class RealtimeBlurView extends View {
-    public static int j;
-    public static int k;
-    public static b l = new b(null);
-    public final ViewTreeObserver.OnPreDrawListener A;
-    public float m;
-    public int n;
-    public float o;
-    public final BlurImpl p;
-    public boolean q;
-    public Bitmap r;
 
-    /* JADX INFO: renamed from: s, reason: collision with root package name */
-    public Bitmap f2910s;
-    public Canvas t;
-    public boolean u;
-    public Paint v;
-    public final Rect w;
+    /* JADX INFO: renamed from: j */
+    public static int f19673j;
 
-    /* JADX INFO: renamed from: x, reason: collision with root package name */
-    public final Rect f2911x;
+    /* JADX INFO: renamed from: k */
+    public static int f19674k;
 
-    /* JADX INFO: renamed from: y, reason: collision with root package name */
-    public View f2912y;
+    /* JADX INFO: renamed from: l */
+    public static C10681b f19675l = new C10681b(null);
 
-    /* JADX INFO: renamed from: z, reason: collision with root package name */
-    public boolean f2913z;
+    /* JADX INFO: renamed from: A */
+    public final ViewTreeObserver.OnPreDrawListener f19676A;
 
-    public class a implements ViewTreeObserver.OnPreDrawListener {
-        public a() {
+    /* JADX INFO: renamed from: m */
+    public float f19677m;
+
+    /* JADX INFO: renamed from: n */
+    public int f19678n;
+
+    /* JADX INFO: renamed from: o */
+    public float f19679o;
+
+    /* JADX INFO: renamed from: p */
+    public final InterfaceC2400c f19680p;
+
+    /* JADX INFO: renamed from: q */
+    public boolean f19681q;
+
+    /* JADX INFO: renamed from: r */
+    public Bitmap f19682r;
+
+    /* JADX INFO: renamed from: s */
+    public Bitmap f19683s;
+
+    /* JADX INFO: renamed from: t */
+    public Canvas f19684t;
+
+    /* JADX INFO: renamed from: u */
+    public boolean f19685u;
+
+    /* JADX INFO: renamed from: v */
+    public Paint f19686v;
+
+    /* JADX INFO: renamed from: w */
+    public final Rect f19687w;
+
+    /* JADX INFO: renamed from: x */
+    public final Rect f19688x;
+
+    /* JADX INFO: renamed from: y */
+    public View f19689y;
+
+    /* JADX INFO: renamed from: z */
+    public boolean f19690z;
+
+    /* JADX INFO: renamed from: com.github.mmin18.widget.RealtimeBlurView$a */
+    public class ViewTreeObserverOnPreDrawListenerC10680a implements ViewTreeObserver.OnPreDrawListener {
+        public ViewTreeObserverOnPreDrawListenerC10680a() {
         }
 
         /* JADX WARN: Code duplicated, block: B:30:0x0083  */
@@ -68,15 +97,15 @@ public class RealtimeBlurView extends View {
             RealtimeBlurView realtimeBlurView;
             int[] iArr = new int[2];
             RealtimeBlurView realtimeBlurView2 = RealtimeBlurView.this;
-            Bitmap bitmap2 = realtimeBlurView2.f2910s;
-            View view = realtimeBlurView2.f2912y;
+            Bitmap bitmap2 = realtimeBlurView2.f19683s;
+            View view = realtimeBlurView2.f19689y;
             if (view != null && realtimeBlurView2.isShown()) {
                 RealtimeBlurView realtimeBlurView3 = RealtimeBlurView.this;
-                float f = realtimeBlurView3.o;
+                float f = realtimeBlurView3.f19679o;
                 if (f == 0.0f) {
-                    realtimeBlurView3.b();
+                    realtimeBlurView3.m8751b();
                 } else {
-                    float f2 = realtimeBlurView3.m;
+                    float f2 = realtimeBlurView3.f19677m;
                     float f3 = f / f2;
                     if (f3 > 25.0f) {
                         f2 = (f2 * f3) / 25.0f;
@@ -86,21 +115,21 @@ public class RealtimeBlurView extends View {
                     int height = realtimeBlurView3.getHeight();
                     int iMax = Math.max(1, (int) (width / f2));
                     int iMax2 = Math.max(1, (int) (height / f2));
-                    boolean z4 = realtimeBlurView3.q;
-                    if (realtimeBlurView3.t == null || (bitmap = realtimeBlurView3.f2910s) == null || bitmap.getWidth() != iMax || realtimeBlurView3.f2910s.getHeight() != iMax2) {
-                        realtimeBlurView3.c();
+                    boolean z4 = realtimeBlurView3.f19681q;
+                    if (realtimeBlurView3.f19684t == null || (bitmap = realtimeBlurView3.f19683s) == null || bitmap.getWidth() != iMax || realtimeBlurView3.f19683s.getHeight() != iMax2) {
+                        realtimeBlurView3.m8752c();
                         try {
                             Bitmap bitmapCreateBitmap = Bitmap.createBitmap(iMax, iMax2, Bitmap.Config.ARGB_8888);
-                            realtimeBlurView3.r = bitmapCreateBitmap;
+                            realtimeBlurView3.f19682r = bitmapCreateBitmap;
                             if (bitmapCreateBitmap != null) {
-                                realtimeBlurView3.t = new Canvas(realtimeBlurView3.r);
+                                realtimeBlurView3.f19684t = new Canvas(realtimeBlurView3.f19682r);
                                 Bitmap bitmapCreateBitmap2 = Bitmap.createBitmap(iMax, iMax2, Bitmap.Config.ARGB_8888);
-                                realtimeBlurView3.f2910s = bitmapCreateBitmap2;
+                                realtimeBlurView3.f19683s = bitmapCreateBitmap2;
                                 if (bitmapCreateBitmap2 != null) {
                                     z4 = true;
                                     if (z4) {
-                                        if (realtimeBlurView3.p.b(realtimeBlurView3.getContext(), realtimeBlurView3.r, f3)) {
-                                            realtimeBlurView3.q = false;
+                                        if (realtimeBlurView3.f19680p.mo2285b(realtimeBlurView3.getContext(), realtimeBlurView3.f19682r, f3)) {
+                                            realtimeBlurView3.f19681q = false;
                                         }
                                     }
                                     z2 = true;
@@ -108,17 +137,17 @@ public class RealtimeBlurView extends View {
                             }
                         } catch (Throwable unused) {
                         }
-                        realtimeBlurView3.b();
+                        realtimeBlurView3.m8751b();
                     } else {
                         if (z4) {
-                            if (realtimeBlurView3.p.b(realtimeBlurView3.getContext(), realtimeBlurView3.r, f3)) {
-                                realtimeBlurView3.q = false;
+                            if (realtimeBlurView3.f19680p.mo2285b(realtimeBlurView3.getContext(), realtimeBlurView3.f19682r, f3)) {
+                                realtimeBlurView3.f19681q = false;
                             }
                         }
                         z2 = true;
                     }
                     if (z2) {
-                        if (RealtimeBlurView.this.f2910s != bitmap2) {
+                        if (RealtimeBlurView.this.f19683s != bitmap2) {
                             z3 = true;
                         } else {
                             z3 = false;
@@ -130,42 +159,42 @@ public class RealtimeBlurView extends View {
                         int i3 = i + iArr[0];
                         int i4 = i2 + iArr[1];
                         RealtimeBlurView realtimeBlurView4 = RealtimeBlurView.this;
-                        realtimeBlurView4.r.eraseColor(realtimeBlurView4.n & ViewCompat.MEASURED_SIZE_MASK);
-                        int iSave = RealtimeBlurView.this.t.save();
+                        realtimeBlurView4.f19682r.eraseColor(realtimeBlurView4.f19678n & ViewCompat.MEASURED_SIZE_MASK);
+                        int iSave = RealtimeBlurView.this.f19684t.save();
                         RealtimeBlurView realtimeBlurView5 = RealtimeBlurView.this;
-                        realtimeBlurView5.u = true;
-                        RealtimeBlurView.j++;
+                        realtimeBlurView5.f19685u = true;
+                        RealtimeBlurView.f19673j++;
                         try {
-                            realtimeBlurView5.t.scale((realtimeBlurView5.r.getWidth() * 1.0f) / RealtimeBlurView.this.getWidth(), (RealtimeBlurView.this.r.getHeight() * 1.0f) / RealtimeBlurView.this.getHeight());
-                            RealtimeBlurView.this.t.translate(-i3, -i4);
+                            realtimeBlurView5.f19684t.scale((realtimeBlurView5.f19682r.getWidth() * 1.0f) / RealtimeBlurView.this.getWidth(), (RealtimeBlurView.this.f19682r.getHeight() * 1.0f) / RealtimeBlurView.this.getHeight());
+                            RealtimeBlurView.this.f19684t.translate(-i3, -i4);
                             if (view.getBackground() != null) {
-                                view.getBackground().draw(RealtimeBlurView.this.t);
+                                view.getBackground().draw(RealtimeBlurView.this.f19684t);
                             }
-                            view.draw(RealtimeBlurView.this.t);
-                            RealtimeBlurView.this.u = false;
-                            RealtimeBlurView.a();
+                            view.draw(RealtimeBlurView.this.f19684t);
+                            RealtimeBlurView.this.f19685u = false;
+                            RealtimeBlurView.m8750a();
                             realtimeBlurView = RealtimeBlurView.this;
-                        } catch (b unused2) {
-                            RealtimeBlurView.this.u = false;
-                            RealtimeBlurView.a();
+                        } catch (C10681b unused2) {
+                            RealtimeBlurView.this.f19685u = false;
+                            RealtimeBlurView.m8750a();
                             realtimeBlurView = RealtimeBlurView.this;
                         } catch (Throwable th) {
-                            RealtimeBlurView.this.u = false;
-                            RealtimeBlurView.a();
-                            RealtimeBlurView.this.t.restoreToCount(iSave);
+                            RealtimeBlurView.this.f19685u = false;
+                            RealtimeBlurView.m8750a();
+                            RealtimeBlurView.this.f19684t.restoreToCount(iSave);
                             throw th;
                         }
-                        realtimeBlurView.t.restoreToCount(iSave);
+                        realtimeBlurView.f19684t.restoreToCount(iSave);
                         RealtimeBlurView realtimeBlurView6 = RealtimeBlurView.this;
-                        realtimeBlurView6.p.a(realtimeBlurView6.r, realtimeBlurView6.f2910s);
-                        if (z3 || RealtimeBlurView.this.f2913z) {
+                        realtimeBlurView6.f19680p.mo2284a(realtimeBlurView6.f19682r, realtimeBlurView6.f19683s);
+                        if (z3 || RealtimeBlurView.this.f19690z) {
                             RealtimeBlurView.this.invalidate();
                         }
                     }
                 }
                 z2 = false;
                 if (z2) {
-                    if (RealtimeBlurView.this.f2910s != bitmap2) {
+                    if (RealtimeBlurView.this.f19683s != bitmap2) {
                         z3 = true;
                     } else {
                         z3 = false;
@@ -177,23 +206,23 @@ public class RealtimeBlurView extends View {
                     int i7 = i5 + iArr[0];
                     int i8 = i6 + iArr[1];
                     RealtimeBlurView realtimeBlurView7 = RealtimeBlurView.this;
-                    realtimeBlurView7.r.eraseColor(realtimeBlurView7.n & ViewCompat.MEASURED_SIZE_MASK);
-                    int iSave2 = RealtimeBlurView.this.t.save();
+                    realtimeBlurView7.f19682r.eraseColor(realtimeBlurView7.f19678n & ViewCompat.MEASURED_SIZE_MASK);
+                    int iSave2 = RealtimeBlurView.this.f19684t.save();
                     RealtimeBlurView realtimeBlurView8 = RealtimeBlurView.this;
-                    realtimeBlurView8.u = true;
-                    RealtimeBlurView.j++;
-                    realtimeBlurView8.t.scale((realtimeBlurView8.r.getWidth() * 1.0f) / RealtimeBlurView.this.getWidth(), (RealtimeBlurView.this.r.getHeight() * 1.0f) / RealtimeBlurView.this.getHeight());
-                    RealtimeBlurView.this.t.translate(-i7, -i8);
+                    realtimeBlurView8.f19685u = true;
+                    RealtimeBlurView.f19673j++;
+                    realtimeBlurView8.f19684t.scale((realtimeBlurView8.f19682r.getWidth() * 1.0f) / RealtimeBlurView.this.getWidth(), (RealtimeBlurView.this.f19682r.getHeight() * 1.0f) / RealtimeBlurView.this.getHeight());
+                    RealtimeBlurView.this.f19684t.translate(-i7, -i8);
                     if (view.getBackground() != null) {
-                        view.getBackground().draw(RealtimeBlurView.this.t);
+                        view.getBackground().draw(RealtimeBlurView.this.f19684t);
                     }
-                    view.draw(RealtimeBlurView.this.t);
-                    RealtimeBlurView.this.u = false;
-                    RealtimeBlurView.a();
+                    view.draw(RealtimeBlurView.this.f19684t);
+                    RealtimeBlurView.this.f19685u = false;
+                    RealtimeBlurView.m8750a();
                     realtimeBlurView = RealtimeBlurView.this;
-                    realtimeBlurView.t.restoreToCount(iSave2);
+                    realtimeBlurView.f19684t.restoreToCount(iSave2);
                     RealtimeBlurView realtimeBlurView9 = RealtimeBlurView.this;
-                    realtimeBlurView9.p.a(realtimeBlurView9.r, realtimeBlurView9.f2910s);
+                    realtimeBlurView9.f19680p.mo2284a(realtimeBlurView9.f19682r, realtimeBlurView9.f19683s);
                     if (z3) {
                         RealtimeBlurView.this.invalidate();
                     } else {
@@ -205,55 +234,59 @@ public class RealtimeBlurView extends View {
         }
     }
 
-    public static class b extends RuntimeException {
-        public b(a aVar) {
+    /* JADX INFO: renamed from: com.github.mmin18.widget.RealtimeBlurView$b */
+    public static class C10681b extends RuntimeException {
+        public C10681b(ViewTreeObserverOnPreDrawListenerC10680a viewTreeObserverOnPreDrawListenerC10680a) {
         }
     }
 
     public RealtimeBlurView(Context context, AttributeSet attributeSet) {
         super(context, null);
-        this.w = new Rect();
-        this.f2911x = new Rect();
-        this.A = new a();
-        this.p = getBlurImpl();
-        TypedArray typedArrayObtainStyledAttributes = context.obtainStyledAttributes((AttributeSet) null, R.a.RealtimeBlurView);
-        this.o = typedArrayObtainStyledAttributes.getDimension(R.a.RealtimeBlurView_realtimeBlurRadius, TypedValue.applyDimension(1, 10.0f, context.getResources().getDisplayMetrics()));
-        this.m = typedArrayObtainStyledAttributes.getFloat(R.a.RealtimeBlurView_realtimeDownsampleFactor, 4.0f);
-        this.n = typedArrayObtainStyledAttributes.getColor(R.a.RealtimeBlurView_realtimeOverlayColor, -1426063361);
+        this.f19687w = new Rect();
+        this.f19688x = new Rect();
+        this.f19676A = new ViewTreeObserverOnPreDrawListenerC10680a();
+        this.f19680p = getBlurImpl();
+        TypedArray typedArrayObtainStyledAttributes = context.obtainStyledAttributes((AttributeSet) null, C10679R.a.RealtimeBlurView);
+        this.f19679o = typedArrayObtainStyledAttributes.getDimension(C10679R.a.RealtimeBlurView_realtimeBlurRadius, TypedValue.applyDimension(1, 10.0f, context.getResources().getDisplayMetrics()));
+        this.f19677m = typedArrayObtainStyledAttributes.getFloat(C10679R.a.RealtimeBlurView_realtimeDownsampleFactor, 4.0f);
+        this.f19678n = typedArrayObtainStyledAttributes.getColor(C10679R.a.RealtimeBlurView_realtimeOverlayColor, -1426063361);
         typedArrayObtainStyledAttributes.recycle();
-        this.v = new Paint();
+        this.f19686v = new Paint();
     }
 
-    public static /* synthetic */ int a() {
-        int i = j;
-        j = i - 1;
+    /* JADX INFO: renamed from: a */
+    public static /* synthetic */ int m8750a() {
+        int i = f19673j;
+        f19673j = i - 1;
         return i;
     }
 
-    public void b() {
-        c();
-        this.p.release();
+    /* JADX INFO: renamed from: b */
+    public void m8751b() {
+        m8752c();
+        this.f19680p.release();
     }
 
-    public final void c() {
-        Bitmap bitmap = this.r;
+    /* JADX INFO: renamed from: c */
+    public final void m8752c() {
+        Bitmap bitmap = this.f19682r;
         if (bitmap != null) {
             bitmap.recycle();
-            this.r = null;
+            this.f19682r = null;
         }
-        Bitmap bitmap2 = this.f2910s;
+        Bitmap bitmap2 = this.f19683s;
         if (bitmap2 != null) {
             bitmap2.recycle();
-            this.f2910s = null;
+            this.f19683s = null;
         }
     }
 
     @Override // android.view.View
     public void draw(Canvas canvas) {
-        if (this.u) {
-            throw l;
+        if (this.f19685u) {
+            throw f19675l;
         }
-        if (j > 0) {
+        if (f19673j > 0) {
             return;
         }
         super.draw(canvas);
@@ -270,102 +303,102 @@ public class RealtimeBlurView extends View {
         return null;
     }
 
-    public BlurImpl getBlurImpl() {
-        if (k == 0) {
+    public InterfaceC2400c getBlurImpl() {
+        if (f19674k == 0) {
             try {
-                AndroidStockBlurImpl androidStockBlurImpl = new AndroidStockBlurImpl();
+                C2398a c2398a = new C2398a();
                 Bitmap bitmapCreateBitmap = Bitmap.createBitmap(4, 4, Bitmap.Config.ARGB_8888);
-                androidStockBlurImpl.b(getContext(), bitmapCreateBitmap, 4.0f);
-                androidStockBlurImpl.release();
+                c2398a.mo2285b(getContext(), bitmapCreateBitmap, 4.0f);
+                c2398a.release();
                 bitmapCreateBitmap.recycle();
-                k = 3;
+                f19674k = 3;
             } catch (Throwable unused) {
             }
         }
-        if (k == 0) {
+        if (f19674k == 0) {
             try {
                 getClass().getClassLoader().loadClass("androidx.renderscript.RenderScript");
-                AndroidXBlurImpl androidXBlurImpl = new AndroidXBlurImpl();
+                C2399b c2399b = new C2399b();
                 Bitmap bitmapCreateBitmap2 = Bitmap.createBitmap(4, 4, Bitmap.Config.ARGB_8888);
-                androidXBlurImpl.b(getContext(), bitmapCreateBitmap2, 4.0f);
-                androidXBlurImpl.release();
+                c2399b.mo2285b(getContext(), bitmapCreateBitmap2, 4.0f);
+                c2399b.release();
                 bitmapCreateBitmap2.recycle();
-                k = 1;
+                f19674k = 1;
             } catch (Throwable unused2) {
             }
         }
-        if (k == 0) {
+        if (f19674k == 0) {
             try {
                 getClass().getClassLoader().loadClass("androidx.renderscript.RenderScript");
-                SupportLibraryBlurImpl supportLibraryBlurImpl = new SupportLibraryBlurImpl();
+                C2402e c2402e = new C2402e();
                 Bitmap bitmapCreateBitmap3 = Bitmap.createBitmap(4, 4, Bitmap.Config.ARGB_8888);
-                supportLibraryBlurImpl.b(getContext(), bitmapCreateBitmap3, 4.0f);
-                supportLibraryBlurImpl.release();
+                c2402e.mo2285b(getContext(), bitmapCreateBitmap3, 4.0f);
+                c2402e.release();
                 bitmapCreateBitmap3.recycle();
-                k = 2;
+                f19674k = 2;
             } catch (Throwable unused3) {
             }
         }
-        if (k == 0) {
-            k = -1;
+        if (f19674k == 0) {
+            f19674k = -1;
         }
-        int i = k;
+        int i = f19674k;
         if (i == 1) {
-            return new AndroidXBlurImpl();
+            return new C2399b();
         }
         if (i != 2) {
-            return i != 3 ? new EmptyBlurImpl() : new AndroidStockBlurImpl();
+            return i != 3 ? new C2401d() : new C2398a();
         }
-        return new SupportLibraryBlurImpl();
+        return new C2402e();
     }
 
     @Override // android.view.View
     public void onAttachedToWindow() {
         super.onAttachedToWindow();
         View activityDecorView = getActivityDecorView();
-        this.f2912y = activityDecorView;
+        this.f19689y = activityDecorView;
         if (activityDecorView == null) {
-            this.f2913z = false;
+            this.f19690z = false;
             return;
         }
-        activityDecorView.getViewTreeObserver().addOnPreDrawListener(this.A);
-        boolean z2 = this.f2912y.getRootView() != getRootView();
-        this.f2913z = z2;
+        activityDecorView.getViewTreeObserver().addOnPreDrawListener(this.f19676A);
+        boolean z2 = this.f19689y.getRootView() != getRootView();
+        this.f19690z = z2;
         if (z2) {
-            this.f2912y.postInvalidate();
+            this.f19689y.postInvalidate();
         }
     }
 
     @Override // android.view.View
     public void onDetachedFromWindow() {
-        View view = this.f2912y;
+        View view = this.f19689y;
         if (view != null) {
-            view.getViewTreeObserver().removeOnPreDrawListener(this.A);
+            view.getViewTreeObserver().removeOnPreDrawListener(this.f19676A);
         }
-        b();
+        m8751b();
         super.onDetachedFromWindow();
     }
 
     @Override // android.view.View
     public void onDraw(Canvas canvas) {
         super.onDraw(canvas);
-        Bitmap bitmap = this.f2910s;
-        int i = this.n;
+        Bitmap bitmap = this.f19683s;
+        int i = this.f19678n;
         if (bitmap != null) {
-            this.w.right = bitmap.getWidth();
-            this.w.bottom = bitmap.getHeight();
-            this.f2911x.right = getWidth();
-            this.f2911x.bottom = getHeight();
-            canvas.drawBitmap(bitmap, this.w, this.f2911x, (Paint) null);
+            this.f19687w.right = bitmap.getWidth();
+            this.f19687w.bottom = bitmap.getHeight();
+            this.f19688x.right = getWidth();
+            this.f19688x.bottom = getHeight();
+            canvas.drawBitmap(bitmap, this.f19687w, this.f19688x, (Paint) null);
         }
-        this.v.setColor(i);
-        canvas.drawRect(this.f2911x, this.v);
+        this.f19686v.setColor(i);
+        canvas.drawRect(this.f19688x, this.f19686v);
     }
 
     public void setBlurRadius(float f) {
-        if (this.o != f) {
-            this.o = f;
-            this.q = true;
+        if (this.f19679o != f) {
+            this.f19679o = f;
+            this.f19681q = true;
             invalidate();
         }
     }
@@ -374,17 +407,17 @@ public class RealtimeBlurView extends View {
         if (f <= 0.0f) {
             throw new IllegalArgumentException("Downsample factor must be greater than 0.");
         }
-        if (this.m != f) {
-            this.m = f;
-            this.q = true;
-            c();
+        if (this.f19677m != f) {
+            this.f19677m = f;
+            this.f19681q = true;
+            m8752c();
             invalidate();
         }
     }
 
     public void setOverlayColor(int i) {
-        if (this.n != i) {
-            this.n = i;
+        if (this.f19678n != i) {
+            this.f19678n = i;
             invalidate();
         }
     }

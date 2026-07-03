@@ -1,12 +1,12 @@
 package com.discord.models.domain;
 
-import b.d.b.a.outline;
 import com.discord.models.domain.Model;
 import com.discord.models.domain.ModelSku;
-import d0.z.d.Intrinsics3;
 import java.io.IOException;
 import kotlin.jvm.internal.Ref$ObjectRef;
-import rx.functions.Action1;
+import p007b.p100d.p104b.p105a.C1643a;
+import p507d0.p592z.p594d.C12238m;
+import p658rx.functions.Action1;
 
 /* JADX INFO: compiled from: ModelStoreListing.kt */
 /* JADX INFO: loaded from: classes.dex */
@@ -25,18 +25,18 @@ public final /* data */ class ModelStoreListing {
         /* JADX WARN: Multi-variable type inference failed */
         @Override // com.discord.models.domain.Model.Parser
         public ModelStoreListing parse(final Model.JsonReader reader) throws IOException {
-            final Ref$ObjectRef ref$ObjectRefC0 = outline.c0(reader, "reader");
-            ref$ObjectRefC0.element = null;
+            final Ref$ObjectRef ref$ObjectRefM844c0 = C1643a.m844c0(reader, "reader");
+            ref$ObjectRefM844c0.element = null;
             final Ref$ObjectRef ref$ObjectRef = new Ref$ObjectRef();
             ref$ObjectRef.element = null;
             reader.nextObject(new Action1<String>() { // from class: com.discord.models.domain.ModelStoreListing$Parser$parse$1
-                @Override // rx.functions.Action1
+                @Override // p658rx.functions.Action1
                 public final void call(String str) throws IOException {
                     if (str != null) {
                         int iHashCode = str.hashCode();
                         if (iHashCode != 3355) {
                             if (iHashCode == 113949 && str.equals("sku")) {
-                                ref$ObjectRefC0.element = (T) ModelSku.Parser.INSTANCE.parse(reader);
+                                ref$ObjectRefM844c0.element = (T) ModelSku.Parser.INSTANCE.parse(reader);
                                 return;
                             }
                         } else if (str.equals(ModelAuditLogEntry.CHANGE_KEY_ID)) {
@@ -47,15 +47,15 @@ public final /* data */ class ModelStoreListing {
                     reader.skipValue();
                 }
             });
-            ModelSku modelSku = (ModelSku) ref$ObjectRefC0.element;
-            Intrinsics3.checkNotNull(modelSku);
+            ModelSku modelSku = (ModelSku) ref$ObjectRefM844c0.element;
+            C12238m.checkNotNull(modelSku);
             Long l = (Long) ref$ObjectRef.element;
             return new ModelStoreListing(modelSku, l != null ? l.longValue() : 0L);
         }
     }
 
     public ModelStoreListing(ModelSku modelSku, long j) {
-        Intrinsics3.checkNotNullParameter(modelSku, "sku");
+        C12238m.checkNotNullParameter(modelSku, "sku");
         this.sku = modelSku;
         this.id = j;
     }
@@ -81,7 +81,7 @@ public final /* data */ class ModelStoreListing {
     }
 
     public final ModelStoreListing copy(ModelSku sku, long id2) {
-        Intrinsics3.checkNotNullParameter(sku, "sku");
+        C12238m.checkNotNullParameter(sku, "sku");
         return new ModelStoreListing(sku, id2);
     }
 
@@ -93,7 +93,7 @@ public final /* data */ class ModelStoreListing {
             return false;
         }
         ModelStoreListing modelStoreListing = (ModelStoreListing) other;
-        return Intrinsics3.areEqual(this.sku, modelStoreListing.sku) && this.id == modelStoreListing.id;
+        return C12238m.areEqual(this.sku, modelStoreListing.sku) && this.id == modelStoreListing.id;
     }
 
     public final long getId() {
@@ -112,9 +112,9 @@ public final /* data */ class ModelStoreListing {
     }
 
     public String toString() {
-        StringBuilder sbU = outline.U("ModelStoreListing(sku=");
-        sbU.append(this.sku);
-        sbU.append(", id=");
-        return outline.C(sbU, this.id, ")");
+        StringBuilder sbM833U = C1643a.m833U("ModelStoreListing(sku=");
+        sbM833U.append(this.sku);
+        sbM833U.append(", id=");
+        return C1643a.m815C(sbM833U, this.id, ")");
     }
 }

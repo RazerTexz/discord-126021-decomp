@@ -1,14 +1,14 @@
 package com.discord.analytics.generated.events;
 
-import b.d.b.a.outline;
 import com.discord.analytics.generated.traits.TrackBase;
-import com.discord.analytics.generated.traits.TrackBase2;
+import com.discord.analytics.generated.traits.TrackBaseReceiver;
 import com.discord.api.science.AnalyticsSchema;
-import d0.z.d.Intrinsics3;
+import p007b.p100d.p104b.p105a.C1643a;
+import p507d0.p592z.p594d.C12238m;
 
 /* JADX INFO: compiled from: TrackSubscriptionAccountHoldRecovered.kt */
 /* JADX INFO: loaded from: classes.dex */
-public final /* data */ class TrackSubscriptionAccountHoldRecovered implements AnalyticsSchema, TrackBase2 {
+public final /* data */ class TrackSubscriptionAccountHoldRecovered implements AnalyticsSchema, TrackBaseReceiver {
     private TrackBase trackBase;
     private final Long subscriptionId = null;
     private final Long subscriptionType = null;
@@ -34,7 +34,7 @@ public final /* data */ class TrackSubscriptionAccountHoldRecovered implements A
             return false;
         }
         TrackSubscriptionAccountHoldRecovered trackSubscriptionAccountHoldRecovered = (TrackSubscriptionAccountHoldRecovered) other;
-        return Intrinsics3.areEqual(this.subscriptionId, trackSubscriptionAccountHoldRecovered.subscriptionId) && Intrinsics3.areEqual(this.subscriptionType, trackSubscriptionAccountHoldRecovered.subscriptionType) && Intrinsics3.areEqual(this.paymentGatewayPlanId, trackSubscriptionAccountHoldRecovered.paymentGatewayPlanId) && Intrinsics3.areEqual(this.planId, trackSubscriptionAccountHoldRecovered.planId) && Intrinsics3.areEqual(this.paymentGateway, trackSubscriptionAccountHoldRecovered.paymentGateway) && Intrinsics3.areEqual(this.createdAt, trackSubscriptionAccountHoldRecovered.createdAt) && Intrinsics3.areEqual(this.currentPeriodStart, trackSubscriptionAccountHoldRecovered.currentPeriodStart) && Intrinsics3.areEqual(this.currentPeriodEnd, trackSubscriptionAccountHoldRecovered.currentPeriodEnd);
+        return C12238m.areEqual(this.subscriptionId, trackSubscriptionAccountHoldRecovered.subscriptionId) && C12238m.areEqual(this.subscriptionType, trackSubscriptionAccountHoldRecovered.subscriptionType) && C12238m.areEqual(this.paymentGatewayPlanId, trackSubscriptionAccountHoldRecovered.paymentGatewayPlanId) && C12238m.areEqual(this.planId, trackSubscriptionAccountHoldRecovered.planId) && C12238m.areEqual(this.paymentGateway, trackSubscriptionAccountHoldRecovered.paymentGateway) && C12238m.areEqual(this.createdAt, trackSubscriptionAccountHoldRecovered.createdAt) && C12238m.areEqual(this.currentPeriodStart, trackSubscriptionAccountHoldRecovered.currentPeriodStart) && C12238m.areEqual(this.currentPeriodEnd, trackSubscriptionAccountHoldRecovered.currentPeriodEnd);
     }
 
     public int hashCode() {
@@ -57,21 +57,21 @@ public final /* data */ class TrackSubscriptionAccountHoldRecovered implements A
     }
 
     public String toString() {
-        StringBuilder sbU = outline.U("TrackSubscriptionAccountHoldRecovered(subscriptionId=");
-        sbU.append(this.subscriptionId);
-        sbU.append(", subscriptionType=");
-        sbU.append(this.subscriptionType);
-        sbU.append(", paymentGatewayPlanId=");
-        sbU.append(this.paymentGatewayPlanId);
-        sbU.append(", planId=");
-        sbU.append(this.planId);
-        sbU.append(", paymentGateway=");
-        sbU.append(this.paymentGateway);
-        sbU.append(", createdAt=");
-        sbU.append(this.createdAt);
-        sbU.append(", currentPeriodStart=");
-        sbU.append(this.currentPeriodStart);
-        sbU.append(", currentPeriodEnd=");
-        return outline.G(sbU, this.currentPeriodEnd, ")");
+        StringBuilder sbM833U = C1643a.m833U("TrackSubscriptionAccountHoldRecovered(subscriptionId=");
+        sbM833U.append(this.subscriptionId);
+        sbM833U.append(", subscriptionType=");
+        sbM833U.append(this.subscriptionType);
+        sbM833U.append(", paymentGatewayPlanId=");
+        sbM833U.append(this.paymentGatewayPlanId);
+        sbM833U.append(", planId=");
+        sbM833U.append(this.planId);
+        sbM833U.append(", paymentGateway=");
+        sbM833U.append(this.paymentGateway);
+        sbM833U.append(", createdAt=");
+        sbM833U.append(this.createdAt);
+        sbM833U.append(", currentPeriodStart=");
+        sbM833U.append(this.currentPeriodStart);
+        sbM833U.append(", currentPeriodEnd=");
+        return C1643a.m819G(sbM833U, this.currentPeriodEnd, ")");
     }
 }

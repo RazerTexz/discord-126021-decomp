@@ -1,10 +1,10 @@
 package com.discord.widgets.chat.managereactions;
 
-import b.d.b.a.outline;
 import com.discord.utilities.mg_recycler.MGRecyclerDataPayload;
 import com.discord.widgets.chat.managereactions.ManageReactionsEmojisAdapter;
-import d0.z.d.Intrinsics3;
 import java.util.List;
+import p007b.p100d.p104b.p105a.C1643a;
+import p507d0.p592z.p594d.C12238m;
 
 /* JADX INFO: compiled from: ManageReactionsModel.kt */
 /* JADX INFO: loaded from: classes2.dex */
@@ -14,8 +14,8 @@ public final /* data */ class ManageReactionsModel {
 
     /* JADX WARN: Multi-variable type inference failed */
     public ManageReactionsModel(List<ManageReactionsEmojisAdapter.ReactionEmojiItem> list, List<? extends MGRecyclerDataPayload> list2) {
-        Intrinsics3.checkNotNullParameter(list, "reactionItems");
-        Intrinsics3.checkNotNullParameter(list2, "userItems");
+        C12238m.checkNotNullParameter(list, "reactionItems");
+        C12238m.checkNotNullParameter(list2, "userItems");
         this.reactionItems = list;
         this.userItems = list2;
     }
@@ -40,8 +40,8 @@ public final /* data */ class ManageReactionsModel {
     }
 
     public final ManageReactionsModel copy(List<ManageReactionsEmojisAdapter.ReactionEmojiItem> reactionItems, List<? extends MGRecyclerDataPayload> userItems) {
-        Intrinsics3.checkNotNullParameter(reactionItems, "reactionItems");
-        Intrinsics3.checkNotNullParameter(userItems, "userItems");
+        C12238m.checkNotNullParameter(reactionItems, "reactionItems");
+        C12238m.checkNotNullParameter(userItems, "userItems");
         return new ManageReactionsModel(reactionItems, userItems);
     }
 
@@ -53,7 +53,7 @@ public final /* data */ class ManageReactionsModel {
             return false;
         }
         ManageReactionsModel manageReactionsModel = (ManageReactionsModel) other;
-        return Intrinsics3.areEqual(this.reactionItems, manageReactionsModel.reactionItems) && Intrinsics3.areEqual(this.userItems, manageReactionsModel.userItems);
+        return C12238m.areEqual(this.reactionItems, manageReactionsModel.reactionItems) && C12238m.areEqual(this.userItems, manageReactionsModel.userItems);
     }
 
     public final List<ManageReactionsEmojisAdapter.ReactionEmojiItem> getReactionItems() {
@@ -72,9 +72,9 @@ public final /* data */ class ManageReactionsModel {
     }
 
     public String toString() {
-        StringBuilder sbU = outline.U("ManageReactionsModel(reactionItems=");
-        sbU.append(this.reactionItems);
-        sbU.append(", userItems=");
-        return outline.L(sbU, this.userItems, ")");
+        StringBuilder sbM833U = C1643a.m833U("ManageReactionsModel(reactionItems=");
+        sbM833U.append(this.reactionItems);
+        sbM833U.append(", userItems=");
+        return C1643a.m824L(sbM833U, this.userItems, ")");
     }
 }

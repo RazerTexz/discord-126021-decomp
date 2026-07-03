@@ -1,8 +1,8 @@
 package com.discord.widgets.chat.list.entries;
 
-import a0.a.a.b;
-import b.d.b.a.outline;
-import d0.z.d.Intrinsics3;
+import p001a0.p002a.p003a.C0002b;
+import p007b.p100d.p104b.p105a.C1643a;
+import p507d0.p592z.p594d.C12238m;
 
 /* JADX INFO: compiled from: UploadProgressEntry.kt */
 /* JADX INFO: loaded from: classes2.dex */
@@ -13,7 +13,7 @@ public final /* data */ class UploadProgressEntry extends ChatListEntry {
     private final int type;
 
     public UploadProgressEntry(String str, long j) {
-        Intrinsics3.checkNotNullParameter(str, "messageNonce");
+        C12238m.checkNotNullParameter(str, "messageNonce");
         this.messageNonce = str;
         this.channelId = j;
         this.type = 6;
@@ -41,7 +41,7 @@ public final /* data */ class UploadProgressEntry extends ChatListEntry {
     }
 
     public final UploadProgressEntry copy(String messageNonce, long channelId) {
-        Intrinsics3.checkNotNullParameter(messageNonce, "messageNonce");
+        C12238m.checkNotNullParameter(messageNonce, "messageNonce");
         return new UploadProgressEntry(messageNonce, channelId);
     }
 
@@ -53,7 +53,7 @@ public final /* data */ class UploadProgressEntry extends ChatListEntry {
             return false;
         }
         UploadProgressEntry uploadProgressEntry = (UploadProgressEntry) other;
-        return Intrinsics3.areEqual(this.messageNonce, uploadProgressEntry.messageNonce) && this.channelId == uploadProgressEntry.channelId;
+        return C12238m.areEqual(this.messageNonce, uploadProgressEntry.messageNonce) && this.channelId == uploadProgressEntry.channelId;
     }
 
     public final long getChannelId() {
@@ -76,13 +76,13 @@ public final /* data */ class UploadProgressEntry extends ChatListEntry {
 
     public int hashCode() {
         String str = this.messageNonce;
-        return b.a(this.channelId) + ((str != null ? str.hashCode() : 0) * 31);
+        return C0002b.m3a(this.channelId) + ((str != null ? str.hashCode() : 0) * 31);
     }
 
     public String toString() {
-        StringBuilder sbU = outline.U("UploadProgressEntry(messageNonce=");
-        sbU.append(this.messageNonce);
-        sbU.append(", channelId=");
-        return outline.C(sbU, this.channelId, ")");
+        StringBuilder sbM833U = C1643a.m833U("UploadProgressEntry(messageNonce=");
+        sbM833U.append(this.messageNonce);
+        sbM833U.append(", channelId=");
+        return C1643a.m815C(sbM833U, this.channelId, ")");
     }
 }

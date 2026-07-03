@@ -1,8 +1,8 @@
 package com.discord.api.report;
 
-import b.d.b.a.outline;
-import d0.z.d.Intrinsics3;
 import java.util.List;
+import p007b.p100d.p104b.p105a.C1643a;
+import p507d0.p592z.p594d.C12238m;
 
 /* JADX INFO: compiled from: InAppReportsMenu.kt */
 /* JADX INFO: loaded from: classes.dex */
@@ -11,13 +11,14 @@ public final /* data */ class NodeElementResult {
     private final String key;
 
     public NodeElementResult(String str, List<ReportNodeElementData> list) {
-        Intrinsics3.checkNotNullParameter(str, "key");
-        Intrinsics3.checkNotNullParameter(list, "data");
+        C12238m.checkNotNullParameter(str, "key");
+        C12238m.checkNotNullParameter(list, "data");
         this.key = str;
         this.data = list;
     }
 
-    public final List<ReportNodeElementData> a() {
+    /* JADX INFO: renamed from: a */
+    public final List<ReportNodeElementData> m8166a() {
         return this.data;
     }
 
@@ -34,7 +35,7 @@ public final /* data */ class NodeElementResult {
             return false;
         }
         NodeElementResult nodeElementResult = (NodeElementResult) other;
-        return Intrinsics3.areEqual(this.key, nodeElementResult.key) && Intrinsics3.areEqual(this.data, nodeElementResult.data);
+        return C12238m.areEqual(this.key, nodeElementResult.key) && C12238m.areEqual(this.data, nodeElementResult.data);
     }
 
     public int hashCode() {
@@ -45,9 +46,9 @@ public final /* data */ class NodeElementResult {
     }
 
     public String toString() {
-        StringBuilder sbU = outline.U("NodeElementResult(key=");
-        sbU.append(this.key);
-        sbU.append(", data=");
-        return outline.L(sbU, this.data, ")");
+        StringBuilder sbM833U = C1643a.m833U("NodeElementResult(key=");
+        sbM833U.append(this.key);
+        sbM833U.append(", data=");
+        return C1643a.m824L(sbM833U, this.data, ")");
     }
 }

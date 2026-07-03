@@ -9,7 +9,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.coordinatorlayout.widget.CoordinatorLayout;
 import androidx.core.view.ViewCompat;
-import com.google.android.material.R;
+import com.google.android.material.C10817R;
 import com.google.android.material.animation.MotionSpec;
 import com.google.android.material.animation.Positioning;
 import com.google.android.material.transformation.FabTransformationBehavior;
@@ -59,7 +59,7 @@ public class FabTransformationSheetBehavior extends FabTransformationBehavior {
     @Override // com.google.android.material.transformation.FabTransformationBehavior
     @NonNull
     public FabTransformationBehavior.FabTransformationSpec onCreateMotionSpec(Context context, boolean z2) {
-        int i = z2 ? R.animator.mtrl_fab_transformation_sheet_expand_spec : R.animator.mtrl_fab_transformation_sheet_collapse_spec;
+        int i = z2 ? C10817R.animator.mtrl_fab_transformation_sheet_expand_spec : C10817R.animator.mtrl_fab_transformation_sheet_collapse_spec;
         FabTransformationBehavior.FabTransformationSpec fabTransformationSpec = new FabTransformationBehavior.FabTransformationSpec();
         fabTransformationSpec.timings = MotionSpec.createFromResource(context, i);
         fabTransformationSpec.positioning = new Positioning(17, 0.0f, 0.0f);

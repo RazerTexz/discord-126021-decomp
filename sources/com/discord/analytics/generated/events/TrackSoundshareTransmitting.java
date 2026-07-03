@@ -1,14 +1,14 @@
 package com.discord.analytics.generated.events;
 
-import b.d.b.a.outline;
 import com.discord.analytics.generated.traits.TrackBase;
-import com.discord.analytics.generated.traits.TrackBase2;
+import com.discord.analytics.generated.traits.TrackBaseReceiver;
 import com.discord.api.science.AnalyticsSchema;
-import d0.z.d.Intrinsics3;
+import p007b.p100d.p104b.p105a.C1643a;
+import p507d0.p592z.p594d.C12238m;
 
 /* JADX INFO: compiled from: TrackSoundshareTransmitting.kt */
 /* JADX INFO: loaded from: classes.dex */
-public final /* data */ class TrackSoundshareTransmitting implements AnalyticsSchema, TrackBase2 {
+public final /* data */ class TrackSoundshareTransmitting implements AnalyticsSchema, TrackBaseReceiver {
     private TrackBase trackBase;
     private final CharSequence soundshareSession = null;
     private final CharSequence shareGameName = null;
@@ -29,7 +29,7 @@ public final /* data */ class TrackSoundshareTransmitting implements AnalyticsSc
             return false;
         }
         TrackSoundshareTransmitting trackSoundshareTransmitting = (TrackSoundshareTransmitting) other;
-        return Intrinsics3.areEqual(this.soundshareSession, trackSoundshareTransmitting.soundshareSession) && Intrinsics3.areEqual(this.shareGameName, trackSoundshareTransmitting.shareGameName) && Intrinsics3.areEqual(this.shareGameId, trackSoundshareTransmitting.shareGameId);
+        return C12238m.areEqual(this.soundshareSession, trackSoundshareTransmitting.soundshareSession) && C12238m.areEqual(this.shareGameName, trackSoundshareTransmitting.shareGameName) && C12238m.areEqual(this.shareGameId, trackSoundshareTransmitting.shareGameId);
     }
 
     public int hashCode() {
@@ -42,11 +42,11 @@ public final /* data */ class TrackSoundshareTransmitting implements AnalyticsSc
     }
 
     public String toString() {
-        StringBuilder sbU = outline.U("TrackSoundshareTransmitting(soundshareSession=");
-        sbU.append(this.soundshareSession);
-        sbU.append(", shareGameName=");
-        sbU.append(this.shareGameName);
-        sbU.append(", shareGameId=");
-        return outline.G(sbU, this.shareGameId, ")");
+        StringBuilder sbM833U = C1643a.m833U("TrackSoundshareTransmitting(soundshareSession=");
+        sbM833U.append(this.soundshareSession);
+        sbM833U.append(", shareGameName=");
+        sbM833U.append(this.shareGameName);
+        sbM833U.append(", shareGameId=");
+        return C1643a.m819G(sbM833U, this.shareGameId, ")");
     }
 }

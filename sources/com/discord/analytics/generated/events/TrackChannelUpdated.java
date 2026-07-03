@@ -1,17 +1,17 @@
 package com.discord.analytics.generated.events;
 
-import b.d.b.a.outline;
 import com.discord.analytics.generated.traits.TrackBase;
-import com.discord.analytics.generated.traits.TrackBase2;
+import com.discord.analytics.generated.traits.TrackBaseReceiver;
 import com.discord.analytics.generated.traits.TrackChannel;
-import com.discord.analytics.generated.traits.TrackChannel2;
+import com.discord.analytics.generated.traits.TrackChannelReceiver;
 import com.discord.api.science.AnalyticsSchema;
 import com.discord.models.domain.ModelAuditLogEntry;
-import d0.z.d.Intrinsics3;
+import p007b.p100d.p104b.p105a.C1643a;
+import p507d0.p592z.p594d.C12238m;
 
 /* JADX INFO: compiled from: TrackChannelUpdated.kt */
 /* JADX INFO: loaded from: classes.dex */
-public final /* data */ class TrackChannelUpdated implements AnalyticsSchema, TrackBase2, TrackChannel2 {
+public final /* data */ class TrackChannelUpdated implements AnalyticsSchema, TrackBaseReceiver, TrackChannelReceiver {
     private TrackBase trackBase;
     private TrackChannel trackChannel;
     private final Long guildId = null;
@@ -56,7 +56,7 @@ public final /* data */ class TrackChannelUpdated implements AnalyticsSchema, Tr
             return false;
         }
         TrackChannelUpdated trackChannelUpdated = (TrackChannelUpdated) other;
-        return Intrinsics3.areEqual(this.guildId, trackChannelUpdated.guildId) && Intrinsics3.areEqual(this.guildName, trackChannelUpdated.guildName) && Intrinsics3.areEqual(this.oldName, trackChannelUpdated.oldName) && Intrinsics3.areEqual(this.newName, trackChannelUpdated.newName) && Intrinsics3.areEqual(this.oldNsfw, trackChannelUpdated.oldNsfw) && Intrinsics3.areEqual(this.newNsfw, trackChannelUpdated.newNsfw) && Intrinsics3.areEqual(this.bitrate, trackChannelUpdated.bitrate) && Intrinsics3.areEqual(this.oldBitrate, trackChannelUpdated.oldBitrate) && Intrinsics3.areEqual(this.rtcRegion, trackChannelUpdated.rtcRegion) && Intrinsics3.areEqual(this.oldRtcRegion, trackChannelUpdated.oldRtcRegion) && Intrinsics3.areEqual(this.videoQualityMode, trackChannelUpdated.videoQualityMode) && Intrinsics3.areEqual(this.oldVideoQualityMode, trackChannelUpdated.oldVideoQualityMode) && Intrinsics3.areEqual(this.defaultAutoArchiveDurationMinutes, trackChannelUpdated.defaultAutoArchiveDurationMinutes) && Intrinsics3.areEqual(this.oldDefaultAutoArchiveDurationMinutes, trackChannelUpdated.oldDefaultAutoArchiveDurationMinutes) && Intrinsics3.areEqual(this.oldArchived, trackChannelUpdated.oldArchived) && Intrinsics3.areEqual(this.newArchived, trackChannelUpdated.newArchived) && Intrinsics3.areEqual(this.oldLocked, trackChannelUpdated.oldLocked) && Intrinsics3.areEqual(this.newLocked, trackChannelUpdated.newLocked) && Intrinsics3.areEqual(this.oldInvitable, trackChannelUpdated.oldInvitable) && Intrinsics3.areEqual(this.newInvitable, trackChannelUpdated.newInvitable) && Intrinsics3.areEqual(this.oldAutoArchiveDurationMinutes, trackChannelUpdated.oldAutoArchiveDurationMinutes) && Intrinsics3.areEqual(this.newAutoArchiveDurationMinutes, trackChannelUpdated.newAutoArchiveDurationMinutes) && Intrinsics3.areEqual(this.oldBannerHash, trackChannelUpdated.oldBannerHash) && Intrinsics3.areEqual(this.newBannerHash, trackChannelUpdated.newBannerHash) && Intrinsics3.areEqual(this.oldFlags, trackChannelUpdated.oldFlags) && Intrinsics3.areEqual(this.newFlags, trackChannelUpdated.newFlags);
+        return C12238m.areEqual(this.guildId, trackChannelUpdated.guildId) && C12238m.areEqual(this.guildName, trackChannelUpdated.guildName) && C12238m.areEqual(this.oldName, trackChannelUpdated.oldName) && C12238m.areEqual(this.newName, trackChannelUpdated.newName) && C12238m.areEqual(this.oldNsfw, trackChannelUpdated.oldNsfw) && C12238m.areEqual(this.newNsfw, trackChannelUpdated.newNsfw) && C12238m.areEqual(this.bitrate, trackChannelUpdated.bitrate) && C12238m.areEqual(this.oldBitrate, trackChannelUpdated.oldBitrate) && C12238m.areEqual(this.rtcRegion, trackChannelUpdated.rtcRegion) && C12238m.areEqual(this.oldRtcRegion, trackChannelUpdated.oldRtcRegion) && C12238m.areEqual(this.videoQualityMode, trackChannelUpdated.videoQualityMode) && C12238m.areEqual(this.oldVideoQualityMode, trackChannelUpdated.oldVideoQualityMode) && C12238m.areEqual(this.defaultAutoArchiveDurationMinutes, trackChannelUpdated.defaultAutoArchiveDurationMinutes) && C12238m.areEqual(this.oldDefaultAutoArchiveDurationMinutes, trackChannelUpdated.oldDefaultAutoArchiveDurationMinutes) && C12238m.areEqual(this.oldArchived, trackChannelUpdated.oldArchived) && C12238m.areEqual(this.newArchived, trackChannelUpdated.newArchived) && C12238m.areEqual(this.oldLocked, trackChannelUpdated.oldLocked) && C12238m.areEqual(this.newLocked, trackChannelUpdated.newLocked) && C12238m.areEqual(this.oldInvitable, trackChannelUpdated.oldInvitable) && C12238m.areEqual(this.newInvitable, trackChannelUpdated.newInvitable) && C12238m.areEqual(this.oldAutoArchiveDurationMinutes, trackChannelUpdated.oldAutoArchiveDurationMinutes) && C12238m.areEqual(this.newAutoArchiveDurationMinutes, trackChannelUpdated.newAutoArchiveDurationMinutes) && C12238m.areEqual(this.oldBannerHash, trackChannelUpdated.oldBannerHash) && C12238m.areEqual(this.newBannerHash, trackChannelUpdated.newBannerHash) && C12238m.areEqual(this.oldFlags, trackChannelUpdated.oldFlags) && C12238m.areEqual(this.newFlags, trackChannelUpdated.newFlags);
     }
 
     public int hashCode() {
@@ -115,57 +115,57 @@ public final /* data */ class TrackChannelUpdated implements AnalyticsSchema, Tr
     }
 
     public String toString() {
-        StringBuilder sbU = outline.U("TrackChannelUpdated(guildId=");
-        sbU.append(this.guildId);
-        sbU.append(", guildName=");
-        sbU.append(this.guildName);
-        sbU.append(", oldName=");
-        sbU.append(this.oldName);
-        sbU.append(", newName=");
-        sbU.append(this.newName);
-        sbU.append(", oldNsfw=");
-        sbU.append(this.oldNsfw);
-        sbU.append(", newNsfw=");
-        sbU.append(this.newNsfw);
-        sbU.append(", bitrate=");
-        sbU.append(this.bitrate);
-        sbU.append(", oldBitrate=");
-        sbU.append(this.oldBitrate);
-        sbU.append(", rtcRegion=");
-        sbU.append(this.rtcRegion);
-        sbU.append(", oldRtcRegion=");
-        sbU.append(this.oldRtcRegion);
-        sbU.append(", videoQualityMode=");
-        sbU.append(this.videoQualityMode);
-        sbU.append(", oldVideoQualityMode=");
-        sbU.append(this.oldVideoQualityMode);
-        sbU.append(", defaultAutoArchiveDurationMinutes=");
-        sbU.append(this.defaultAutoArchiveDurationMinutes);
-        sbU.append(", oldDefaultAutoArchiveDurationMinutes=");
-        sbU.append(this.oldDefaultAutoArchiveDurationMinutes);
-        sbU.append(", oldArchived=");
-        sbU.append(this.oldArchived);
-        sbU.append(", newArchived=");
-        sbU.append(this.newArchived);
-        sbU.append(", oldLocked=");
-        sbU.append(this.oldLocked);
-        sbU.append(", newLocked=");
-        sbU.append(this.newLocked);
-        sbU.append(", oldInvitable=");
-        sbU.append(this.oldInvitable);
-        sbU.append(", newInvitable=");
-        sbU.append(this.newInvitable);
-        sbU.append(", oldAutoArchiveDurationMinutes=");
-        sbU.append(this.oldAutoArchiveDurationMinutes);
-        sbU.append(", newAutoArchiveDurationMinutes=");
-        sbU.append(this.newAutoArchiveDurationMinutes);
-        sbU.append(", oldBannerHash=");
-        sbU.append(this.oldBannerHash);
-        sbU.append(", newBannerHash=");
-        sbU.append(this.newBannerHash);
-        sbU.append(", oldFlags=");
-        sbU.append(this.oldFlags);
-        sbU.append(", newFlags=");
-        return outline.G(sbU, this.newFlags, ")");
+        StringBuilder sbM833U = C1643a.m833U("TrackChannelUpdated(guildId=");
+        sbM833U.append(this.guildId);
+        sbM833U.append(", guildName=");
+        sbM833U.append(this.guildName);
+        sbM833U.append(", oldName=");
+        sbM833U.append(this.oldName);
+        sbM833U.append(", newName=");
+        sbM833U.append(this.newName);
+        sbM833U.append(", oldNsfw=");
+        sbM833U.append(this.oldNsfw);
+        sbM833U.append(", newNsfw=");
+        sbM833U.append(this.newNsfw);
+        sbM833U.append(", bitrate=");
+        sbM833U.append(this.bitrate);
+        sbM833U.append(", oldBitrate=");
+        sbM833U.append(this.oldBitrate);
+        sbM833U.append(", rtcRegion=");
+        sbM833U.append(this.rtcRegion);
+        sbM833U.append(", oldRtcRegion=");
+        sbM833U.append(this.oldRtcRegion);
+        sbM833U.append(", videoQualityMode=");
+        sbM833U.append(this.videoQualityMode);
+        sbM833U.append(", oldVideoQualityMode=");
+        sbM833U.append(this.oldVideoQualityMode);
+        sbM833U.append(", defaultAutoArchiveDurationMinutes=");
+        sbM833U.append(this.defaultAutoArchiveDurationMinutes);
+        sbM833U.append(", oldDefaultAutoArchiveDurationMinutes=");
+        sbM833U.append(this.oldDefaultAutoArchiveDurationMinutes);
+        sbM833U.append(", oldArchived=");
+        sbM833U.append(this.oldArchived);
+        sbM833U.append(", newArchived=");
+        sbM833U.append(this.newArchived);
+        sbM833U.append(", oldLocked=");
+        sbM833U.append(this.oldLocked);
+        sbM833U.append(", newLocked=");
+        sbM833U.append(this.newLocked);
+        sbM833U.append(", oldInvitable=");
+        sbM833U.append(this.oldInvitable);
+        sbM833U.append(", newInvitable=");
+        sbM833U.append(this.newInvitable);
+        sbM833U.append(", oldAutoArchiveDurationMinutes=");
+        sbM833U.append(this.oldAutoArchiveDurationMinutes);
+        sbM833U.append(", newAutoArchiveDurationMinutes=");
+        sbM833U.append(this.newAutoArchiveDurationMinutes);
+        sbM833U.append(", oldBannerHash=");
+        sbM833U.append(this.oldBannerHash);
+        sbM833U.append(", newBannerHash=");
+        sbM833U.append(this.newBannerHash);
+        sbM833U.append(", oldFlags=");
+        sbM833U.append(this.oldFlags);
+        sbM833U.append(", newFlags=");
+        return C1643a.m819G(sbM833U, this.newFlags, ")");
     }
 }

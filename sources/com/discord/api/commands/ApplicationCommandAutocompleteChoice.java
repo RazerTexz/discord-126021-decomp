@@ -1,8 +1,8 @@
 package com.discord.api.commands;
 
-import b.d.b.a.outline;
 import com.discord.models.domain.ModelAuditLogEntry;
-import d0.z.d.Intrinsics3;
+import p007b.p100d.p104b.p105a.C1643a;
+import p507d0.p592z.p594d.C12238m;
 
 /* JADX INFO: compiled from: ApplicationCommandAutocompleteChoice.kt */
 /* JADX INFO: loaded from: classes.dex */
@@ -28,7 +28,7 @@ public final /* data */ class ApplicationCommandAutocompleteChoice {
             return false;
         }
         ApplicationCommandAutocompleteChoice applicationCommandAutocompleteChoice = (ApplicationCommandAutocompleteChoice) other;
-        return Intrinsics3.areEqual(this.name, applicationCommandAutocompleteChoice.name) && Intrinsics3.areEqual(this.value, applicationCommandAutocompleteChoice.value);
+        return C12238m.areEqual(this.name, applicationCommandAutocompleteChoice.name) && C12238m.areEqual(this.value, applicationCommandAutocompleteChoice.value);
     }
 
     public int hashCode() {
@@ -39,9 +39,9 @@ public final /* data */ class ApplicationCommandAutocompleteChoice {
     }
 
     public String toString() {
-        StringBuilder sbU = outline.U("ApplicationCommandAutocompleteChoice(name=");
-        sbU.append(this.name);
-        sbU.append(", value=");
-        return outline.J(sbU, this.value, ")");
+        StringBuilder sbM833U = C1643a.m833U("ApplicationCommandAutocompleteChoice(name=");
+        sbM833U.append(this.name);
+        sbM833U.append(", value=");
+        return C1643a.m822J(sbM833U, this.value, ")");
     }
 }

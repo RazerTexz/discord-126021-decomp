@@ -4,13 +4,13 @@ import android.content.Context;
 import android.os.Build;
 import androidx.annotation.ColorInt;
 import androidx.annotation.DrawableRes;
-import b.a.k.FormatUtils;
-import com.discord.R;
+import com.discord.C5419R;
 import com.discord.rtcconnection.RtcConnection;
 import com.discord.utilities.color.ColorCompat;
 import com.discord.utilities.streams.StreamContext;
-import d0.z.d.Intrinsics3;
 import kotlin.NoWhenBranchMatchedException;
+import p007b.p008a.p027k.C1107b;
+import p507d0.p592z.p594d.C12238m;
 
 /* JADX INFO: compiled from: VoiceViewUtils.kt */
 /* JADX INFO: loaded from: classes2.dex */
@@ -55,18 +55,18 @@ public final class VoiceViewUtils {
 
     public final int getCallIndicatorIcon(boolean hasVideo, StreamContext streamContext) {
         if (streamContext == null || !streamContext.isCurrentUserParticipating()) {
-            return hasVideo ? R.drawable.ic_videocam_white_16dp : R.drawable.ic_call_indicator_voice_16dp;
+            return hasVideo ? C5419R.drawable.ic_videocam_white_16dp : C5419R.drawable.ic_call_indicator_voice_16dp;
         }
-        return streamContext.isSelfStream() ? R.drawable.ic_call_indicator_mobile_screenshare_16dp : R.drawable.ic_call_indicator_streaming_16dp;
+        return streamContext.isSelfStream() ? C5419R.drawable.ic_call_indicator_mobile_screenshare_16dp : C5419R.drawable.ic_call_indicator_streaming_16dp;
     }
 
     public final CharSequence getConnectedText(Context context, RtcConnection.State rtcConnectionState, StreamContext streamContext, boolean hasVideo) {
         int i;
-        Intrinsics3.checkNotNullParameter(context, "context");
-        RtcConnection.State.f fVar = RtcConnection.State.f.a;
-        if (rtcConnectionState == fVar && streamContext != null && streamContext.isCurrentUserParticipating()) {
+        C12238m.checkNotNullParameter(context, "context");
+        RtcConnection.State.C5612f c5612f = RtcConnection.State.C5612f.f18814a;
+        if (rtcConnectionState == c5612f && streamContext != null && streamContext.isCurrentUserParticipating()) {
             if (streamContext.isSelfStream()) {
-                return FormatUtils.b(context, R.string.connection_status_stream_self_connected, new Object[0], (4 & 4) != 0 ? FormatUtils.b.j : null);
+                return C1107b.m210b(context, C5419R.string.connection_status_stream_self_connected, new Object[0], (4 & 4) != 0 ? C1107b.b.f1491j : null);
             }
             Object[] objArr = new Object[1];
             String userNickname = streamContext.getUserNickname();
@@ -74,28 +74,28 @@ public final class VoiceViewUtils {
                 userNickname = streamContext.getUser().getUsername();
             }
             objArr[0] = userNickname;
-            return FormatUtils.b(context, R.string.connection_status_stream_connected, objArr, (4 & 4) != 0 ? FormatUtils.b.j : null);
+            return C1107b.m210b(context, C5419R.string.connection_status_stream_connected, objArr, (4 & 4) != 0 ? C1107b.b.f1491j : null);
         }
-        if (Intrinsics3.areEqual(rtcConnectionState, RtcConnection.State.c.a)) {
-            i = R.string.connection_status_connecting;
-        } else if (Intrinsics3.areEqual(rtcConnectionState, RtcConnection.State.e.a)) {
-            i = R.string.connection_status_no_route;
-        } else if (Intrinsics3.areEqual(rtcConnectionState, RtcConnection.State.b.a)) {
-            i = R.string.connection_status_awaiting_endpoint;
-        } else if (Intrinsics3.areEqual(rtcConnectionState, RtcConnection.State.a.a)) {
-            i = R.string.connection_status_authenticating;
-        } else if (Intrinsics3.areEqual(rtcConnectionState, RtcConnection.State.g.a)) {
-            i = R.string.connection_status_rtc_connecting;
-        } else if (Intrinsics3.areEqual(rtcConnectionState, fVar)) {
-            i = hasVideo ? R.string.connection_status_video_connected : R.string.connection_status_voice_connected;
+        if (C12238m.areEqual(rtcConnectionState, RtcConnection.State.C5609c.f18811a)) {
+            i = C5419R.string.connection_status_connecting;
+        } else if (C12238m.areEqual(rtcConnectionState, RtcConnection.State.C5611e.f18813a)) {
+            i = C5419R.string.connection_status_no_route;
+        } else if (C12238m.areEqual(rtcConnectionState, RtcConnection.State.C5608b.f18810a)) {
+            i = C5419R.string.connection_status_awaiting_endpoint;
+        } else if (C12238m.areEqual(rtcConnectionState, RtcConnection.State.C5607a.f18809a)) {
+            i = C5419R.string.connection_status_authenticating;
+        } else if (C12238m.areEqual(rtcConnectionState, RtcConnection.State.C5613g.f18815a)) {
+            i = C5419R.string.connection_status_rtc_connecting;
+        } else if (C12238m.areEqual(rtcConnectionState, c5612f)) {
+            i = hasVideo ? C5419R.string.connection_status_video_connected : C5419R.string.connection_status_voice_connected;
         } else {
-            if (!(rtcConnectionState instanceof RtcConnection.State.d) && !Intrinsics3.areEqual(rtcConnectionState, RtcConnection.State.h.a) && rtcConnectionState != null) {
+            if (!(rtcConnectionState instanceof RtcConnection.State.C5610d) && !C12238m.areEqual(rtcConnectionState, RtcConnection.State.C5614h.f18816a) && rtcConnectionState != null) {
                 throw new NoWhenBranchMatchedException();
             }
-            i = R.string.connection_status_disconnected;
+            i = C5419R.string.connection_status_disconnected;
         }
         String string = context.getString(i);
-        Intrinsics3.checkNotNullExpressionValue(string, "context.getString(resId)");
+        C12238m.checkNotNullExpressionValue(string, "context.getString(resId)");
         return string;
     }
 
@@ -108,29 +108,29 @@ public final class VoiceViewUtils {
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public final int getConnectionStatusColor(RtcConnection.State connectionState, RtcConnection.Quality connectionQuality, Context context) {
-        Intrinsics3.checkNotNullParameter(context, "context");
-        if (!Intrinsics3.areEqual(connectionState, RtcConnection.State.f.a)) {
-            if (Intrinsics3.areEqual(connectionState, RtcConnection.State.b.a) || Intrinsics3.areEqual(connectionState, RtcConnection.State.c.a) || Intrinsics3.areEqual(connectionState, RtcConnection.State.a.a) || Intrinsics3.areEqual(connectionState, RtcConnection.State.g.a)) {
-                return ColorCompat.getColor(context, R.color.status_yellow_500);
+        C12238m.checkNotNullParameter(context, "context");
+        if (!C12238m.areEqual(connectionState, RtcConnection.State.C5612f.f18814a)) {
+            if (C12238m.areEqual(connectionState, RtcConnection.State.C5608b.f18810a) || C12238m.areEqual(connectionState, RtcConnection.State.C5609c.f18811a) || C12238m.areEqual(connectionState, RtcConnection.State.C5607a.f18809a) || C12238m.areEqual(connectionState, RtcConnection.State.C5613g.f18815a)) {
+                return ColorCompat.getColor(context, C5419R.color.status_yellow_500);
             }
-            if (Intrinsics3.areEqual(connectionState, RtcConnection.State.e.a)) {
-                return ColorCompat.getColor(context, R.color.status_red_500);
+            if (C12238m.areEqual(connectionState, RtcConnection.State.C5611e.f18813a)) {
+                return ColorCompat.getColor(context, C5419R.color.status_red_500);
             }
-            return ((connectionState instanceof RtcConnection.State.d) || Intrinsics3.areEqual(connectionState, RtcConnection.State.h.a)) ? ColorCompat.getColor(context, R.color.status_red_500) : ColorCompat.getColor(context, R.color.status_red_500);
+            return ((connectionState instanceof RtcConnection.State.C5610d) || C12238m.areEqual(connectionState, RtcConnection.State.C5614h.f18816a)) ? ColorCompat.getColor(context, C5419R.color.status_red_500) : ColorCompat.getColor(context, C5419R.color.status_red_500);
         }
         if (connectionQuality != null) {
             int iOrdinal = connectionQuality.ordinal();
             if (iOrdinal != 0) {
                 if (iOrdinal == 1) {
-                    return ColorCompat.getColor(context, R.color.status_red_500);
+                    return ColorCompat.getColor(context, C5419R.color.status_red_500);
                 }
                 if (iOrdinal == 2) {
-                    return ColorCompat.getColor(context, R.color.status_yellow_500);
+                    return ColorCompat.getColor(context, C5419R.color.status_yellow_500);
                 }
             }
-            return ColorCompat.getColor(context, R.color.status_green_600);
+            return ColorCompat.getColor(context, C5419R.color.status_green_600);
         }
-        return ColorCompat.getColor(context, R.color.status_green_600);
+        return ColorCompat.getColor(context, C5419R.color.status_green_600);
     }
 
     public final boolean getIsSoundshareSupported() {
@@ -141,14 +141,14 @@ public final class VoiceViewUtils {
     public final int getQualityIndicator(RtcConnection.Quality connectionQuality) {
         int iOrdinal;
         if (connectionQuality == null || (iOrdinal = connectionQuality.ordinal()) == 0) {
-            return R.drawable.ic_voice_quality_unknown;
+            return C5419R.drawable.ic_voice_quality_unknown;
         }
         if (iOrdinal == 1) {
-            return R.drawable.ic_voice_quality_bad;
+            return C5419R.drawable.ic_voice_quality_bad;
         }
         if (iOrdinal != 2) {
-            return iOrdinal != 3 ? R.drawable.ic_voice_quality_unknown : R.drawable.ic_voice_quality_fine;
+            return iOrdinal != 3 ? C5419R.drawable.ic_voice_quality_unknown : C5419R.drawable.ic_voice_quality_fine;
         }
-        return R.drawable.ic_voice_quality_average;
+        return C5419R.drawable.ic_voice_quality_average;
     }
 }

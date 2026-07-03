@@ -13,10 +13,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.annotation.RestrictTo;
 import androidx.core.util.Pair;
-import b.i.a.f.e.o.f;
-import b.i.a.g.d.DateFormatTextWatcher;
-import b.i.a.g.d.UtcDates;
-import com.google.android.material.R;
+import com.google.android.material.C10817R;
 import com.google.android.material.internal.ManufacturerUtils;
 import com.google.android.material.internal.ViewUtils;
 import com.google.android.material.resources.MaterialAttributes;
@@ -26,41 +23,50 @@ import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Locale;
+import p007b.p225i.p226a.p288f.p299e.p308o.C3404f;
+import p007b.p225i.p226a.p341g.p345d.AbstractC4392c;
+import p007b.p225i.p226a.p341g.p345d.C4401l;
 
 /* JADX INFO: loaded from: classes3.dex */
 @RestrictTo({RestrictTo.Scope.LIBRARY_GROUP})
 public class SingleDateSelector implements DateSelector<Long> {
-    public static final Parcelable.Creator<SingleDateSelector> CREATOR = new b();
+    public static final Parcelable.Creator<SingleDateSelector> CREATOR = new C10907b();
 
     @Nullable
     private Long selectedItem;
 
-    public class a extends DateFormatTextWatcher {
-        public final /* synthetic */ OnSelectionChangedListener p;
+    /* JADX INFO: renamed from: com.google.android.material.datepicker.SingleDateSelector$a */
+    public class C10906a extends AbstractC4392c {
+
+        /* JADX INFO: renamed from: p */
+        public final /* synthetic */ OnSelectionChangedListener f21004p;
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-        public a(String str, DateFormat dateFormat, TextInputLayout textInputLayout, CalendarConstraints calendarConstraints, OnSelectionChangedListener onSelectionChangedListener) {
+        public C10906a(String str, DateFormat dateFormat, TextInputLayout textInputLayout, CalendarConstraints calendarConstraints, OnSelectionChangedListener onSelectionChangedListener) {
             super(str, dateFormat, textInputLayout, calendarConstraints);
-            this.p = onSelectionChangedListener;
+            this.f21004p = onSelectionChangedListener;
         }
 
-        @Override // b.i.a.g.d.DateFormatTextWatcher
-        public void a() {
-            this.p.onIncompleteSelectionChanged();
+        @Override // p007b.p225i.p226a.p341g.p345d.AbstractC4392c
+        /* JADX INFO: renamed from: a */
+        public void mo6060a() {
+            this.f21004p.onIncompleteSelectionChanged();
         }
 
-        @Override // b.i.a.g.d.DateFormatTextWatcher
-        public void b(@Nullable Long l) {
+        @Override // p007b.p225i.p226a.p341g.p345d.AbstractC4392c
+        /* JADX INFO: renamed from: b */
+        public void mo6061b(@Nullable Long l) {
             if (l == null) {
                 SingleDateSelector.this.clearSelection();
             } else {
                 SingleDateSelector.this.select(l.longValue());
             }
-            this.p.onSelectionChanged(SingleDateSelector.this.getSelection());
+            this.f21004p.onSelectionChanged(SingleDateSelector.this.getSelection());
         }
     }
 
-    public static class b implements Parcelable.Creator<SingleDateSelector> {
+    /* JADX INFO: renamed from: com.google.android.material.datepicker.SingleDateSelector$b */
+    public static class C10907b implements Parcelable.Creator<SingleDateSelector> {
         @Override // android.os.Parcelable.Creator
         @NonNull
         public SingleDateSelector createFromParcel(@NonNull Parcel parcel) {
@@ -87,12 +93,12 @@ public class SingleDateSelector implements DateSelector<Long> {
 
     @Override // com.google.android.material.datepicker.DateSelector
     public int getDefaultThemeResId(Context context) {
-        return MaterialAttributes.resolveOrThrow(context, R.attr.materialCalendarTheme, MaterialDatePicker.class.getCanonicalName());
+        return MaterialAttributes.resolveOrThrow(context, C10817R.attr.materialCalendarTheme, MaterialDatePicker.class.getCanonicalName());
     }
 
     @Override // com.google.android.material.datepicker.DateSelector
     public int getDefaultTitleResId() {
-        return R.string.mtrl_picker_date_header_title;
+        return C10817R.string.mtrl_picker_date_header_title;
     }
 
     @Override // com.google.android.material.datepicker.DateSelector
@@ -118,9 +124,9 @@ public class SingleDateSelector implements DateSelector<Long> {
         Resources resources = context.getResources();
         Long l = this.selectedItem;
         if (l == null) {
-            return resources.getString(R.string.mtrl_picker_date_header_unselected);
+            return resources.getString(C10817R.string.mtrl_picker_date_header_unselected);
         }
-        return resources.getString(R.string.mtrl_picker_date_header_selected, f.s0(l.longValue(), Locale.getDefault()));
+        return resources.getString(C10817R.string.mtrl_picker_date_header_selected, C3404f.m4340s0(l.longValue(), Locale.getDefault()));
     }
 
     @Override // com.google.android.material.datepicker.DateSelector
@@ -130,20 +136,20 @@ public class SingleDateSelector implements DateSelector<Long> {
 
     @Override // com.google.android.material.datepicker.DateSelector
     public View onCreateTextInputView(@NonNull LayoutInflater layoutInflater, @Nullable ViewGroup viewGroup, @Nullable Bundle bundle, CalendarConstraints calendarConstraints, @NonNull OnSelectionChangedListener<Long> onSelectionChangedListener) {
-        View viewInflate = layoutInflater.inflate(R.layout.mtrl_picker_text_input_date, viewGroup, false);
-        TextInputLayout textInputLayout = (TextInputLayout) viewInflate.findViewById(R.id.mtrl_picker_text_input_date);
+        View viewInflate = layoutInflater.inflate(C10817R.layout.mtrl_picker_text_input_date, viewGroup, false);
+        TextInputLayout textInputLayout = (TextInputLayout) viewInflate.findViewById(C10817R.id.mtrl_picker_text_input_date);
         EditText editText = textInputLayout.getEditText();
         if (ManufacturerUtils.isDateInputKeyboardMissingSeparatorCharacters()) {
             editText.setInputType(17);
         }
-        SimpleDateFormat simpleDateFormatE = UtcDates.e();
-        String strF = UtcDates.f(viewInflate.getResources(), simpleDateFormatE);
-        textInputLayout.setPlaceholderText(strF);
+        SimpleDateFormat simpleDateFormatM6072e = C4401l.m6072e();
+        String strM6073f = C4401l.m6073f(viewInflate.getResources(), simpleDateFormatM6072e);
+        textInputLayout.setPlaceholderText(strM6073f);
         Long l = this.selectedItem;
         if (l != null) {
-            editText.setText(simpleDateFormatE.format(l));
+            editText.setText(simpleDateFormatM6072e.format(l));
         }
-        editText.addTextChangedListener(new a(strF, simpleDateFormatE, textInputLayout, calendarConstraints, onSelectionChangedListener));
+        editText.addTextChangedListener(new C10906a(strM6073f, simpleDateFormatM6072e, textInputLayout, calendarConstraints, onSelectionChangedListener));
         ViewUtils.requestFocusAndShowKeyboard(editText);
         return viewInflate;
     }
@@ -167,6 +173,6 @@ public class SingleDateSelector implements DateSelector<Long> {
 
     @Override // com.google.android.material.datepicker.DateSelector
     public void setSelection(@Nullable Long l) {
-        this.selectedItem = l == null ? null : Long.valueOf(UtcDates.a(l.longValue()));
+        this.selectedItem = l == null ? null : Long.valueOf(C4401l.m6068a(l.longValue()));
     }
 }

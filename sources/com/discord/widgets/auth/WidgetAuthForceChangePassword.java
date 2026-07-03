@@ -3,13 +3,13 @@ package com.discord.widgets.auth;
 import android.content.Context;
 import android.view.View;
 import android.widget.ImageView;
-import b.a.d.AppScreen2;
 import com.discord.stores.StoreStream;
 import com.discord.utilities.analytics.AnalyticsTracker;
 import com.discord.widgets.settings.account.WidgetSettingsAccountChangePassword;
-import d0.z.d.Intrinsics3;
 import kotlin.jvm.internal.DefaultConstructorMarker;
-import rx.functions.Func0;
+import p007b.p008a.p018d.C0870j;
+import p507d0.p592z.p594d.C12238m;
+import p658rx.functions.Func0;
 
 /* JADX INFO: compiled from: WidgetAuthForceChangePassword.kt */
 /* JADX INFO: loaded from: classes2.dex */
@@ -24,8 +24,8 @@ public final class WidgetAuthForceChangePassword extends WidgetSettingsAccountCh
         }
 
         public final void launch(Context context) {
-            Intrinsics3.checkNotNullParameter(context, "context");
-            AppScreen2.e(context, WidgetAuthForceChangePassword.class, null, 4);
+            C12238m.checkNotNullParameter(context, "context");
+            C0870j.m157e(context, WidgetAuthForceChangePassword.class, null, 4);
         }
 
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
@@ -40,13 +40,13 @@ public final class WidgetAuthForceChangePassword extends WidgetSettingsAccountCh
 
     @Override // com.discord.widgets.settings.account.WidgetSettingsAccountChangePassword, com.discord.app.AppFragment
     public void onViewBound(View view) {
-        Intrinsics3.checkNotNullParameter(view, "view");
+        C12238m.checkNotNullParameter(view, "view");
         super.onViewBound(view);
-        ImageView imageView = getBinding().f2596b;
-        Intrinsics3.checkNotNullExpressionValue(imageView, "binding.authChangePasswordIcon");
+        ImageView imageView = getBinding().f17819b;
+        C12238m.checkNotNullExpressionValue(imageView, "binding.authChangePasswordIcon");
         imageView.setVisibility(0);
         setOnBackPressed(new Func0<Boolean>() { // from class: com.discord.widgets.auth.WidgetAuthForceChangePassword.onViewBound.1
-            @Override // rx.functions.Func0, java.util.concurrent.Callable
+            @Override // p658rx.functions.Func0, java.util.concurrent.Callable
             public final Boolean call() {
                 StoreStream.INSTANCE.getAuthentication().logout();
                 return Boolean.TRUE;

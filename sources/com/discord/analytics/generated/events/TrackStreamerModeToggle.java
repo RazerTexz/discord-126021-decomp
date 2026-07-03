@@ -1,14 +1,14 @@
 package com.discord.analytics.generated.events;
 
-import b.d.b.a.outline;
 import com.discord.analytics.generated.traits.TrackBase;
-import com.discord.analytics.generated.traits.TrackBase2;
+import com.discord.analytics.generated.traits.TrackBaseReceiver;
 import com.discord.api.science.AnalyticsSchema;
-import d0.z.d.Intrinsics3;
+import p007b.p100d.p104b.p105a.C1643a;
+import p507d0.p592z.p594d.C12238m;
 
 /* JADX INFO: compiled from: TrackStreamerModeToggle.kt */
 /* JADX INFO: loaded from: classes.dex */
-public final /* data */ class TrackStreamerModeToggle implements AnalyticsSchema, TrackBase2 {
+public final /* data */ class TrackStreamerModeToggle implements AnalyticsSchema, TrackBaseReceiver {
     private TrackBase trackBase;
     private final Boolean automatic = null;
     private final Boolean enabled = null;
@@ -28,7 +28,7 @@ public final /* data */ class TrackStreamerModeToggle implements AnalyticsSchema
             return false;
         }
         TrackStreamerModeToggle trackStreamerModeToggle = (TrackStreamerModeToggle) other;
-        return Intrinsics3.areEqual(this.automatic, trackStreamerModeToggle.automatic) && Intrinsics3.areEqual(this.enabled, trackStreamerModeToggle.enabled);
+        return C12238m.areEqual(this.automatic, trackStreamerModeToggle.automatic) && C12238m.areEqual(this.enabled, trackStreamerModeToggle.enabled);
     }
 
     public int hashCode() {
@@ -39,9 +39,9 @@ public final /* data */ class TrackStreamerModeToggle implements AnalyticsSchema
     }
 
     public String toString() {
-        StringBuilder sbU = outline.U("TrackStreamerModeToggle(automatic=");
-        sbU.append(this.automatic);
-        sbU.append(", enabled=");
-        return outline.D(sbU, this.enabled, ")");
+        StringBuilder sbM833U = C1643a.m833U("TrackStreamerModeToggle(automatic=");
+        sbM833U.append(this.automatic);
+        sbM833U.append(", enabled=");
+        return C1643a.m816D(sbM833U, this.enabled, ")");
     }
 }

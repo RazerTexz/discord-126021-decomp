@@ -9,10 +9,7 @@ import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.ItemTouchHelper;
 import androidx.recyclerview.widget.RecyclerView;
-import b.a.d.AppScreen2;
-import b.a.d.AppToast;
-import b.d.b.a.outline;
-import com.discord.R;
+import com.discord.C5419R;
 import com.discord.app.AppFragment;
 import com.discord.app.AppLog;
 import com.discord.databinding.IconListItemTextViewBinding;
@@ -24,44 +21,47 @@ import com.discord.utilities.color.ColorCompat;
 import com.discord.utilities.dimen.DimenUtils;
 import com.discord.utilities.error.Error;
 import com.discord.utilities.experiments.ExperimentRegistry;
-import com.discord.utilities.experiments.ExperimentRegistry2;
+import com.discord.utilities.experiments.RegisteredExperiment;
 import com.discord.utilities.logging.Logger;
-import com.discord.utilities.rx.ObservableExtensionsKt;
+import com.discord.utilities.p501rx.ObservableExtensionsKt;
 import com.discord.utilities.time.TimeUtils;
 import com.discord.utilities.viewbinding.FragmentViewBindingDelegate;
-import com.discord.utilities.viewbinding.FragmentViewBindingDelegate3;
+import com.discord.utilities.viewbinding.FragmentViewBindingDelegateKt;
 import com.discord.utilities.views.SimpleRecyclerAdapter;
 import com.discord.utilities.views.SwipeableItemTouchHelper;
 import com.discord.views.CheckedSetting;
 import com.discord.widgets.settings.developer.ExperimentOverridesAdapter;
 import com.discord.widgets.settings.developer.WidgetSettingsDeveloper;
 import com.hammerandchisel.libdiscord.Discord;
-import d0.t.Iterables2;
-import d0.t.MapsJVM;
-import d0.t._Maps;
-import d0.z.d.Intrinsics3;
-import d0.z.d.Lambda;
-import j0.k.Func1;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Objects;
-import kotlin.Tuples2;
+import kotlin.Pair;
 import kotlin.Unit;
 import kotlin.jvm.functions.Function0;
 import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.reflect.KProperty;
-import rx.Observable;
-import rx.Subscription;
-import rx.functions.Action1;
+import p007b.p008a.p018d.C0870j;
+import p007b.p008a.p018d.C0876m;
+import p007b.p100d.p104b.p105a.C1643a;
+import p507d0.p580t.C12134g0;
+import p507d0.p580t.C12138i0;
+import p507d0.p580t.C12149o;
+import p507d0.p592z.p594d.AbstractC12240o;
+import p507d0.p592z.p594d.C12238m;
+import p637j0.p641k.InterfaceC12589b;
+import p658rx.Observable;
+import p658rx.Subscription;
+import p658rx.functions.Action1;
 
 /* JADX INFO: compiled from: WidgetSettingsDeveloper.kt */
 /* JADX INFO: loaded from: classes2.dex */
 public final class WidgetSettingsDeveloper extends AppFragment {
-    public static final /* synthetic */ KProperty[] $$delegatedProperties = {outline.d0(WidgetSettingsDeveloper.class, "binding", "getBinding()Lcom/discord/databinding/WidgetSettingsDeveloperBinding;", 0)};
+    public static final /* synthetic */ KProperty[] $$delegatedProperties = {C1643a.m846d0(WidgetSettingsDeveloper.class, "binding", "getBinding()Lcom/discord/databinding/WidgetSettingsDeveloperBinding;", 0)};
 
     /* JADX INFO: renamed from: Companion, reason: from kotlin metadata */
     public static final Companion INSTANCE = new Companion(null);
@@ -76,8 +76,8 @@ public final class WidgetSettingsDeveloper extends AppFragment {
         }
 
         public final void launch(Context context) {
-            Intrinsics3.checkNotNullParameter(context, "context");
-            AppScreen2.e(context, WidgetSettingsDeveloper.class, null, 4);
+            C12238m.checkNotNullParameter(context, "context");
+            C0870j.m157e(context, WidgetSettingsDeveloper.class, null, 4);
         }
 
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
@@ -86,88 +86,88 @@ public final class WidgetSettingsDeveloper extends AppFragment {
     }
 
     /* JADX INFO: compiled from: WidgetSettingsDeveloper.kt */
-    public static final class NoticeViewHolder extends SimpleRecyclerAdapter.ViewHolder<Tuples2<? extends String, ? extends Long>> {
+    public static final class NoticeViewHolder extends SimpleRecyclerAdapter.ViewHolder<Pair<? extends String, ? extends Long>> {
         private final IconListItemTextViewBinding binding;
         public String noticeName;
 
         /* JADX WARN: Illegal instructions before constructor call */
         public NoticeViewHolder(IconListItemTextViewBinding iconListItemTextViewBinding) {
-            Intrinsics3.checkNotNullParameter(iconListItemTextViewBinding, "binding");
-            TextView textView = iconListItemTextViewBinding.a;
-            Intrinsics3.checkNotNullExpressionValue(textView, "binding.root");
+            C12238m.checkNotNullParameter(iconListItemTextViewBinding, "binding");
+            TextView textView = iconListItemTextViewBinding.f15165a;
+            C12238m.checkNotNullExpressionValue(textView, "binding.root");
             super(textView);
             this.binding = iconListItemTextViewBinding;
         }
 
         @Override // com.discord.utilities.views.SimpleRecyclerAdapter.ViewHolder
-        public /* bridge */ /* synthetic */ void bind(Tuples2<? extends String, ? extends Long> tuples2) {
-            bind2((Tuples2<String, Long>) tuples2);
+        public /* bridge */ /* synthetic */ void bind(Pair<? extends String, ? extends Long> pair) {
+            bind2((Pair<String, Long>) pair);
         }
 
         public final String getNoticeName() {
             String str = this.noticeName;
             if (str == null) {
-                Intrinsics3.throwUninitializedPropertyAccessException("noticeName");
+                C12238m.throwUninitializedPropertyAccessException("noticeName");
             }
             return str;
         }
 
         public final void setNoticeName(String str) {
-            Intrinsics3.checkNotNullParameter(str, "<set-?>");
+            C12238m.checkNotNullParameter(str, "<set-?>");
             this.noticeName = str;
         }
 
         @SuppressLint({"SetTextI18n"})
         /* JADX INFO: renamed from: bind, reason: avoid collision after fix types in other method */
-        public void bind2(Tuples2<String, Long> data) {
-            Intrinsics3.checkNotNullParameter(data, "data");
+        public void bind2(Pair<String, Long> data) {
+            C12238m.checkNotNullParameter(data, "data");
             String strComponent1 = data.component1();
             long jLongValue = data.component2().longValue();
             this.noticeName = strComponent1;
-            TextView textView = this.binding.a;
-            Intrinsics3.checkNotNullExpressionValue(textView, "binding.root");
+            TextView textView = this.binding.f15165a;
+            C12238m.checkNotNullExpressionValue(textView, "binding.root");
             Context context = textView.getContext();
-            Intrinsics3.checkNotNullExpressionValue(context, "binding.root.context");
+            C12238m.checkNotNullExpressionValue(context, "binding.root.context");
             CharSequence readableTimeString$default = TimeUtils.toReadableTimeString$default(context, jLongValue, null, 4, null);
-            TextView textView2 = this.binding.a;
-            Intrinsics3.checkNotNullExpressionValue(textView2, "binding.root");
+            TextView textView2 = this.binding.f15165a;
+            C12238m.checkNotNullExpressionValue(textView2, "binding.root");
             textView2.setText(strComponent1 + " @ " + readableTimeString$default);
         }
     }
 
-    /* JADX INFO: renamed from: com.discord.widgets.settings.developer.WidgetSettingsDeveloper$setupExperimentSection$1, reason: invalid class name */
+    /* JADX INFO: renamed from: com.discord.widgets.settings.developer.WidgetSettingsDeveloper$setupExperimentSection$1 */
     /* JADX INFO: compiled from: WidgetSettingsDeveloper.kt */
-    public static final class AnonymousClass1<T, R> implements Func1<Map<String, ? extends Integer>, List<? extends 1.1>> {
+    public static final class C98481<T, R> implements InterfaceC12589b<Map<String, ? extends Integer>, List<? extends 1.1>> {
         public final /* synthetic */ StoreExperiments $experimentStore;
 
-        public AnonymousClass1(StoreExperiments storeExperiments) {
+        public C98481(StoreExperiments storeExperiments) {
             this.$experimentStore = storeExperiments;
         }
 
-        @Override // j0.k.Func1
+        @Override // p637j0.p641k.InterfaceC12589b
         public /* bridge */ /* synthetic */ List<? extends 1.1> call(Map<String, ? extends Integer> map) {
             return call2((Map<String, Integer>) map);
         }
 
         /* JADX INFO: renamed from: call, reason: avoid collision after fix types in other method */
         public final List<1.1> call2(final Map<String, Integer> map) {
-            Collection<ExperimentRegistry2> collectionValues = ExperimentRegistry.INSTANCE.getRegisteredExperiments().values();
-            Intrinsics3.checkNotNullExpressionValue(collectionValues, "ExperimentRegistry\n     …nts\n              .values");
-            ArrayList arrayList = new ArrayList(Iterables2.collectionSizeOrDefault(collectionValues, 10));
-            for (final ExperimentRegistry2 experimentRegistry2 : collectionValues) {
+            Collection<RegisteredExperiment> collectionValues = ExperimentRegistry.INSTANCE.getRegisteredExperiments().values();
+            C12238m.checkNotNullExpressionValue(collectionValues, "ExperimentRegistry\n     …nts\n              .values");
+            ArrayList arrayList = new ArrayList(C12149o.collectionSizeOrDefault(collectionValues, 10));
+            for (final RegisteredExperiment registeredExperiment : collectionValues) {
                 arrayList.add(new ExperimentOverridesAdapter.Item(this, map) { // from class: com.discord.widgets.settings.developer.WidgetSettingsDeveloper$setupExperimentSection$1$$special$$inlined$map$lambda$1
                     public final /* synthetic */ Map $allOverrides$inlined;
                     private final String apiName;
                     private final List<String> bucketDescriptions;
                     private final String name;
                     private final Integer overrideBucket;
-                    public final /* synthetic */ WidgetSettingsDeveloper.AnonymousClass1 this$0;
+                    public final /* synthetic */ WidgetSettingsDeveloper.C98481 this$0;
                     private final Function1<Integer, Unit> onOverrideBucketSelected = new AnonymousClass1();
                     private final Function0<Unit> onOverrideBucketCleared = new AnonymousClass2();
 
                     /* JADX INFO: renamed from: com.discord.widgets.settings.developer.WidgetSettingsDeveloper$setupExperimentSection$1$$special$$inlined$map$lambda$1$1, reason: invalid class name */
                     /* JADX INFO: compiled from: WidgetSettingsDeveloper.kt */
-                    public static final class AnonymousClass1 extends Lambda implements Function1<Integer, Unit> {
+                    public static final class AnonymousClass1 extends AbstractC12240o implements Function1<Integer, Unit> {
                         public AnonymousClass1() {
                             super(1);
                         }
@@ -175,18 +175,18 @@ public final class WidgetSettingsDeveloper extends AppFragment {
                         @Override // kotlin.jvm.functions.Function1
                         public /* bridge */ /* synthetic */ Unit invoke(Integer num) {
                             invoke(num.intValue());
-                            return Unit.a;
+                            return Unit.f27425a;
                         }
 
                         public final void invoke(int i) {
-                            WidgetSettingsDeveloper3 widgetSettingsDeveloper3 = WidgetSettingsDeveloper3.this;
-                            widgetSettingsDeveloper3.this$0.$experimentStore.setOverride(widgetSettingsDeveloper3.$registeredExperiment.getName(), i);
+                            C9849x7b0c2b35 c9849x7b0c2b35 = C9849x7b0c2b35.this;
+                            c9849x7b0c2b35.this$0.$experimentStore.setOverride(c9849x7b0c2b35.$registeredExperiment.getName(), i);
                         }
                     }
 
                     /* JADX INFO: renamed from: com.discord.widgets.settings.developer.WidgetSettingsDeveloper$setupExperimentSection$1$$special$$inlined$map$lambda$1$2, reason: invalid class name */
                     /* JADX INFO: compiled from: WidgetSettingsDeveloper.kt */
-                    public static final class AnonymousClass2 extends Lambda implements Function0<Unit> {
+                    public static final class AnonymousClass2 extends AbstractC12240o implements Function0<Unit> {
                         public AnonymousClass2() {
                             super(0);
                         }
@@ -194,13 +194,13 @@ public final class WidgetSettingsDeveloper extends AppFragment {
                         @Override // kotlin.jvm.functions.Function0
                         public /* bridge */ /* synthetic */ Unit invoke() {
                             invoke2();
-                            return Unit.a;
+                            return Unit.f27425a;
                         }
 
                         /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
                         public final void invoke2() {
-                            WidgetSettingsDeveloper3 widgetSettingsDeveloper3 = WidgetSettingsDeveloper3.this;
-                            widgetSettingsDeveloper3.this$0.$experimentStore.clearOverride(widgetSettingsDeveloper3.$registeredExperiment.getName());
+                            C9849x7b0c2b35 c9849x7b0c2b35 = C9849x7b0c2b35.this;
+                            c9849x7b0c2b35.this$0.$experimentStore.clearOverride(c9849x7b0c2b35.$registeredExperiment.getName());
                         }
                     }
 
@@ -248,42 +248,42 @@ public final class WidgetSettingsDeveloper extends AppFragment {
         }
     }
 
-    /* JADX INFO: renamed from: com.discord.widgets.settings.developer.WidgetSettingsDeveloper$setupExperimentSection$2, reason: invalid class name */
+    /* JADX INFO: renamed from: com.discord.widgets.settings.developer.WidgetSettingsDeveloper$setupExperimentSection$2 */
     /* JADX INFO: compiled from: WidgetSettingsDeveloper.kt */
-    public static final class AnonymousClass2 extends Lambda implements Function1<List<? extends AnonymousClass1.1.1>, Unit> {
-        public AnonymousClass2() {
+    public static final class C98502 extends AbstractC12240o implements Function1<List<? extends C98481.1.1>, Unit> {
+        public C98502() {
             super(1);
         }
 
         @Override // kotlin.jvm.functions.Function1
-        public /* bridge */ /* synthetic */ Unit invoke(List<? extends AnonymousClass1.1.1> list) {
-            invoke2((List<AnonymousClass1.1.1>) list);
-            return Unit.a;
+        public /* bridge */ /* synthetic */ Unit invoke(List<? extends C98481.1.1> list) {
+            invoke2((List<C98481.1.1>) list);
+            return Unit.f27425a;
         }
 
         /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
-        public final void invoke2(List<AnonymousClass1.1.1> list) {
+        public final void invoke2(List<C98481.1.1> list) {
             ExperimentOverridesAdapter experimentOverridesAdapterAccess$getExperimentOverridesAdapter$p = WidgetSettingsDeveloper.access$getExperimentOverridesAdapter$p(WidgetSettingsDeveloper.this);
-            Intrinsics3.checkNotNullExpressionValue(list, "data");
+            C12238m.checkNotNullExpressionValue(list, "data");
             experimentOverridesAdapterAccess$getExperimentOverridesAdapter$p.setData(list);
         }
     }
 
-    /* JADX INFO: renamed from: com.discord.widgets.settings.developer.WidgetSettingsDeveloper$setupNoticesSection$1, reason: invalid class name */
+    /* JADX INFO: renamed from: com.discord.widgets.settings.developer.WidgetSettingsDeveloper$setupNoticesSection$1 */
     /* JADX INFO: compiled from: WidgetSettingsDeveloper.kt */
-    public static final class AnonymousClass1 extends Lambda implements Function0<ItemTouchHelper> {
-        public AnonymousClass1() {
+    public static final class C98511 extends AbstractC12240o implements Function0<ItemTouchHelper> {
+        public C98511() {
             super(0);
         }
 
         /* JADX WARN: Can't rename method to resolve collision */
         @Override // kotlin.jvm.functions.Function0
         public final ItemTouchHelper invoke() {
-            final SwipeableItemTouchHelper.SwipeRevealConfiguration swipeRevealConfiguration = new SwipeableItemTouchHelper.SwipeRevealConfiguration(ColorCompat.getColor(WidgetSettingsDeveloper.this, R.color.status_red_500), ContextCompat.getDrawable(WidgetSettingsDeveloper.this.requireContext(), R.drawable.ic_delete_white_24dp), DimenUtils.dpToPixels(8));
+            final SwipeableItemTouchHelper.SwipeRevealConfiguration swipeRevealConfiguration = new SwipeableItemTouchHelper.SwipeRevealConfiguration(ColorCompat.getColor(WidgetSettingsDeveloper.this, C5419R.color.status_red_500), ContextCompat.getDrawable(WidgetSettingsDeveloper.this.requireContext(), C5419R.drawable.ic_delete_white_24dp), DimenUtils.dpToPixels(8));
             return new ItemTouchHelper(new SwipeableItemTouchHelper(swipeRevealConfiguration, swipeRevealConfiguration) { // from class: com.discord.widgets.settings.developer.WidgetSettingsDeveloper.setupNoticesSection.1.1
                 @Override // androidx.recyclerview.widget.ItemTouchHelper.Callback
                 public void onSwiped(RecyclerView.ViewHolder viewHolder, int direction) {
-                    Intrinsics3.checkNotNullParameter(viewHolder, "viewHolder");
+                    C12238m.checkNotNullParameter(viewHolder, "viewHolder");
                     if (viewHolder instanceof NoticeViewHolder) {
                         StoreStream.INSTANCE.getNotices().clearSeen(((NoticeViewHolder) viewHolder).getNoticeName());
                     }
@@ -292,40 +292,40 @@ public final class WidgetSettingsDeveloper extends AppFragment {
         }
     }
 
-    /* JADX INFO: renamed from: com.discord.widgets.settings.developer.WidgetSettingsDeveloper$setupNoticesSection$3, reason: invalid class name */
+    /* JADX INFO: renamed from: com.discord.widgets.settings.developer.WidgetSettingsDeveloper$setupNoticesSection$3 */
     /* JADX INFO: compiled from: WidgetSettingsDeveloper.kt */
-    public static final class AnonymousClass3 extends Lambda implements Function1<List<? extends Tuples2<? extends String, ? extends Long>>, Unit> {
+    public static final class C98533 extends AbstractC12240o implements Function1<List<? extends Pair<? extends String, ? extends Long>>, Unit> {
         public final /* synthetic */ SimpleRecyclerAdapter $noticesAdapter;
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-        public AnonymousClass3(SimpleRecyclerAdapter simpleRecyclerAdapter) {
+        public C98533(SimpleRecyclerAdapter simpleRecyclerAdapter) {
             super(1);
             this.$noticesAdapter = simpleRecyclerAdapter;
         }
 
         @Override // kotlin.jvm.functions.Function1
-        public /* bridge */ /* synthetic */ Unit invoke(List<? extends Tuples2<? extends String, ? extends Long>> list) {
-            invoke2((List<Tuples2<String, Long>>) list);
-            return Unit.a;
+        public /* bridge */ /* synthetic */ Unit invoke(List<? extends Pair<? extends String, ? extends Long>> list) {
+            invoke2((List<Pair<String, Long>>) list);
+            return Unit.f27425a;
         }
 
         /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
-        public final void invoke2(List<Tuples2<String, Long>> list) {
+        public final void invoke2(List<Pair<String, Long>> list) {
             SimpleRecyclerAdapter simpleRecyclerAdapter = this.$noticesAdapter;
-            Intrinsics3.checkNotNullExpressionValue(list, "noticesSeenMap");
+            C12238m.checkNotNullExpressionValue(list, "noticesSeenMap");
             simpleRecyclerAdapter.setData(list);
         }
     }
 
     public WidgetSettingsDeveloper() {
-        super(R.layout.widget_settings_developer);
-        this.binding = FragmentViewBindingDelegate3.viewBinding$default(this, WidgetSettingsDeveloper2.INSTANCE, null, 2, null);
+        super(C5419R.layout.widget_settings_developer);
+        this.binding = FragmentViewBindingDelegateKt.viewBinding$default(this, WidgetSettingsDeveloper$binding$2.INSTANCE, null, 2, null);
     }
 
     public static final /* synthetic */ ExperimentOverridesAdapter access$getExperimentOverridesAdapter$p(WidgetSettingsDeveloper widgetSettingsDeveloper) {
         ExperimentOverridesAdapter experimentOverridesAdapter = widgetSettingsDeveloper.experimentOverridesAdapter;
         if (experimentOverridesAdapter == null) {
-            Intrinsics3.throwUninitializedPropertyAccessException("experimentOverridesAdapter");
+            C12238m.throwUninitializedPropertyAccessException("experimentOverridesAdapter");
         }
         return experimentOverridesAdapter;
     }
@@ -339,24 +339,24 @@ public final class WidgetSettingsDeveloper extends AppFragment {
     }
 
     private final void setupCrashes() {
-        getBinding().d.setOnClickListener(new View.OnClickListener() { // from class: com.discord.widgets.settings.developer.WidgetSettingsDeveloper.setupCrashes.1
+        getBinding().f17938d.setOnClickListener(new View.OnClickListener() { // from class: com.discord.widgets.settings.developer.WidgetSettingsDeveloper.setupCrashes.1
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
                 throw new RuntimeException("This is a developer triggered crash.");
             }
         });
-        getBinding().c.setOnClickListener(new View.OnClickListener() { // from class: com.discord.widgets.settings.developer.WidgetSettingsDeveloper.setupCrashes.2
+        getBinding().f17937c.setOnClickListener(new View.OnClickListener() { // from class: com.discord.widgets.settings.developer.WidgetSettingsDeveloper.setupCrashes.2
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
                 try {
                     throw new RuntimeException("This is a developer triggered crash (caught).");
                 } catch (Exception e) {
-                    Logger.e$default(AppLog.g, "setupCrashes", e, null, 4, null);
-                    AppToast.j(WidgetSettingsDeveloper.this, "Done.", 0, 4);
+                    Logger.e$default(AppLog.f14950g, "setupCrashes", e, null, 4, null);
+                    C0876m.m172j(WidgetSettingsDeveloper.this, "Done.", 0, 4);
                 }
             }
         });
-        getBinding().f2615b.setOnClickListener(new View.OnClickListener() { // from class: com.discord.widgets.settings.developer.WidgetSettingsDeveloper.setupCrashes.3
+        getBinding().f17936b.setOnClickListener(new View.OnClickListener() { // from class: com.discord.widgets.settings.developer.WidgetSettingsDeveloper.setupCrashes.3
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
                 Context context = WidgetSettingsDeveloper.this.getContext();
@@ -364,57 +364,57 @@ public final class WidgetSettingsDeveloper extends AppFragment {
                 new Discord(context).crash();
             }
         });
-        getBinding().g.setOnClickListener(new View.OnClickListener() { // from class: com.discord.widgets.settings.developer.WidgetSettingsDeveloper.setupCrashes.4
+        getBinding().f17941g.setOnClickListener(new View.OnClickListener() { // from class: com.discord.widgets.settings.developer.WidgetSettingsDeveloper.setupCrashes.4
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
                 StoreStream.INSTANCE.getGatewaySocket().simulateReconnectForTesting();
-                AppToast.j(WidgetSettingsDeveloper.this, "Done.", 0, 4);
+                C0876m.m172j(WidgetSettingsDeveloper.this, "Done.", 0, 4);
             }
         });
     }
 
     private final void setupExperimentSection() {
         this.experimentOverridesAdapter = new ExperimentOverridesAdapter();
-        RecyclerView recyclerView = getBinding().e;
-        Intrinsics3.checkNotNullExpressionValue(recyclerView, "binding.developerSettingsExperiments");
+        RecyclerView recyclerView = getBinding().f17939e;
+        C12238m.checkNotNullExpressionValue(recyclerView, "binding.developerSettingsExperiments");
         ExperimentOverridesAdapter experimentOverridesAdapter = this.experimentOverridesAdapter;
         if (experimentOverridesAdapter == null) {
-            Intrinsics3.throwUninitializedPropertyAccessException("experimentOverridesAdapter");
+            C12238m.throwUninitializedPropertyAccessException("experimentOverridesAdapter");
         }
         recyclerView.setAdapter(experimentOverridesAdapter);
         StoreExperiments experiments = StoreStream.INSTANCE.getExperiments();
-        Observable<R> observableG = experiments.observeOverrides().G(new AnonymousClass1(experiments));
-        Intrinsics3.checkNotNullExpressionValue(observableG, "experimentStore\n        …              }\n        }");
-        ObservableExtensionsKt.appSubscribe(ObservableExtensionsKt.ui$default(observableG, this, null, 2, null), (Class<?>) WidgetSettingsDeveloper.class, (58 & 2) != 0 ? null : null, (Function1<? super Subscription, Unit>) ((58 & 4) != 0 ? null : null), (Function1<? super Error, Unit>) ((58 & 8) != 0 ? null : null), (Function0<Unit>) ((58 & 16) != 0 ? ObservableExtensionsKt.AnonymousClass1.INSTANCE : null), (Function0<Unit>) ((58 & 32) != 0 ? ObservableExtensionsKt.AnonymousClass2.INSTANCE : null), new AnonymousClass2());
+        Observable<R> observableM11083G = experiments.observeOverrides().m11083G(new C98481(experiments));
+        C12238m.checkNotNullExpressionValue(observableM11083G, "experimentStore\n        …              }\n        }");
+        ObservableExtensionsKt.appSubscribe(ObservableExtensionsKt.ui$default(observableM11083G, this, null, 2, null), (Class<?>) WidgetSettingsDeveloper.class, (58 & 2) != 0 ? null : null, (Function1<? super Subscription, Unit>) ((58 & 4) != 0 ? null : null), (Function1<? super Error, Unit>) ((58 & 8) != 0 ? null : null), (Function0<Unit>) ((58 & 16) != 0 ? ObservableExtensionsKt.C68791.INSTANCE : null), (Function0<Unit>) ((58 & 32) != 0 ? ObservableExtensionsKt.C68802.INSTANCE : null), new C98502());
     }
 
     private final void setupNoticesSection() {
-        SimpleRecyclerAdapter simpleRecyclerAdapter = new SimpleRecyclerAdapter(null, WidgetSettingsDeveloper4.INSTANCE, 1, null);
-        RecyclerView recyclerView = getBinding().f;
-        Intrinsics3.checkNotNullExpressionValue(recyclerView, "binding.developerSettingsNotices");
+        SimpleRecyclerAdapter simpleRecyclerAdapter = new SimpleRecyclerAdapter(null, WidgetSettingsDeveloper$setupNoticesSection$noticesAdapter$1.INSTANCE, 1, null);
+        RecyclerView recyclerView = getBinding().f17940f;
+        C12238m.checkNotNullExpressionValue(recyclerView, "binding.developerSettingsNotices");
         recyclerView.setAdapter(simpleRecyclerAdapter);
-        new AnonymousClass1().invoke().attachToRecyclerView(getBinding().f);
-        Observable<R> observableG = StoreStream.INSTANCE.getNotices().observeNoticesSeen().G(new Func1<HashMap<String, Long>, List<? extends Tuples2<? extends String, ? extends Long>>>() { // from class: com.discord.widgets.settings.developer.WidgetSettingsDeveloper.setupNoticesSection.2
-            @Override // j0.k.Func1
-            public final List<Tuples2<String, Long>> call(HashMap<String, Long> map) {
-                Intrinsics3.checkNotNullExpressionValue(map, "noticesSeenMap");
-                return _Maps.toList(MapsJVM.toSortedMap(map));
+        new C98511().invoke().attachToRecyclerView(getBinding().f17940f);
+        Observable<R> observableM11083G = StoreStream.INSTANCE.getNotices().observeNoticesSeen().m11083G(new InterfaceC12589b<HashMap<String, Long>, List<? extends Pair<? extends String, ? extends Long>>>() { // from class: com.discord.widgets.settings.developer.WidgetSettingsDeveloper.setupNoticesSection.2
+            @Override // p637j0.p641k.InterfaceC12589b
+            public final List<Pair<String, Long>> call(HashMap<String, Long> map) {
+                C12238m.checkNotNullExpressionValue(map, "noticesSeenMap");
+                return C12138i0.toList(C12134g0.toSortedMap(map));
             }
         });
-        Intrinsics3.checkNotNullExpressionValue(observableG, "StoreStream\n        .get…      .toList()\n        }");
-        ObservableExtensionsKt.appSubscribe(ObservableExtensionsKt.ui$default(ObservableExtensionsKt.computationLatest(observableG), this, null, 2, null), (Class<?>) WidgetSettingsDeveloper.class, (58 & 2) != 0 ? null : null, (Function1<? super Subscription, Unit>) ((58 & 4) != 0 ? null : null), (Function1<? super Error, Unit>) ((58 & 8) != 0 ? null : null), (Function0<Unit>) ((58 & 16) != 0 ? ObservableExtensionsKt.AnonymousClass1.INSTANCE : null), (Function0<Unit>) ((58 & 32) != 0 ? ObservableExtensionsKt.AnonymousClass2.INSTANCE : null), new AnonymousClass3(simpleRecyclerAdapter));
+        C12238m.checkNotNullExpressionValue(observableM11083G, "StoreStream\n        .get…      .toList()\n        }");
+        ObservableExtensionsKt.appSubscribe(ObservableExtensionsKt.ui$default(ObservableExtensionsKt.computationLatest(observableM11083G), this, null, 2, null), (Class<?>) WidgetSettingsDeveloper.class, (58 & 2) != 0 ? null : null, (Function1<? super Subscription, Unit>) ((58 & 4) != 0 ? null : null), (Function1<? super Error, Unit>) ((58 & 8) != 0 ? null : null), (Function0<Unit>) ((58 & 16) != 0 ? ObservableExtensionsKt.C68791.INSTANCE : null), (Function0<Unit>) ((58 & 32) != 0 ? ObservableExtensionsKt.C68802.INSTANCE : null), new C98533(simpleRecyclerAdapter));
     }
 
     private final void setupScreenshotDetector() {
         final BugReportManager bugReportManager = BugReportManager.INSTANCE.get();
-        CheckedSetting checkedSetting = getBinding().h;
-        Intrinsics3.checkNotNullExpressionValue(checkedSetting, "binding.settingsDeveloperScreenshotBugReporting");
+        CheckedSetting checkedSetting = getBinding().f17942h;
+        C12238m.checkNotNullExpressionValue(checkedSetting, "binding.settingsDeveloperScreenshotBugReporting");
         checkedSetting.setChecked(bugReportManager.getSettingsEnabled());
-        getBinding().h.setOnCheckedListener(new Action1<Boolean>() { // from class: com.discord.widgets.settings.developer.WidgetSettingsDeveloper.setupScreenshotDetector.1
-            @Override // rx.functions.Action1
+        getBinding().f17942h.setOnCheckedListener(new Action1<Boolean>() { // from class: com.discord.widgets.settings.developer.WidgetSettingsDeveloper.setupScreenshotDetector.1
+            @Override // p658rx.functions.Action1
             public final void call(Boolean bool) {
                 BugReportManager bugReportManager2 = bugReportManager;
-                Intrinsics3.checkNotNullExpressionValue(bool, "isChecked");
+                C12238m.checkNotNullExpressionValue(bool, "isChecked");
                 bugReportManager2.setBugReportingSettingEnabled(bool.booleanValue());
             }
         });
@@ -422,10 +422,10 @@ public final class WidgetSettingsDeveloper extends AppFragment {
 
     @Override // com.discord.app.AppFragment
     public void onViewBound(View view) {
-        Intrinsics3.checkNotNullParameter(view, "view");
+        C12238m.checkNotNullParameter(view, "view");
         super.onViewBound(view);
         setActionBarDisplayHomeAsUpEnabled(true);
-        setActionBarTitle(R.string.developer_options);
+        setActionBarTitle(C5419R.string.developer_options);
         setupCrashes();
     }
 

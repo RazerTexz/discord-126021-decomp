@@ -1,10 +1,10 @@
 package co.discord.media_engine.internal;
 
-import a0.a.a.a;
-import a0.a.a.b;
 import androidx.constraintlayout.solver.widgets.analyzer.BasicMeasure;
-import b.d.b.a.outline;
-import d0.z.d.Intrinsics3;
+import p001a0.p002a.p003a.C0001a;
+import p001a0.p002a.p003a.C0002b;
+import p007b.p100d.p104b.p105a.C1643a;
+import p507d0.p592z.p594d.C12238m;
 
 /* JADX INFO: compiled from: NativeStatistics.kt */
 /* JADX INFO: loaded from: classes.dex */
@@ -43,11 +43,11 @@ public final /* data */ class InboundVideo {
     private final int width;
 
     public InboundVideo(String str, int i, int i2, int i3, int i4, int i5, String str2, FrameCounts frameCounts, long j, long j2, int i6, int i7, int i8, int i9, int i10, int i11, long j3, int i12, int i13, InboundRtcpStats inboundRtcpStats, InboundRtpStats inboundRtpStats, long j4, float f, float f2, int i14, int i15, long j5, long j6, long j7, long j8, long j9, double d) {
-        Intrinsics3.checkNotNullParameter(str, "codecName");
-        Intrinsics3.checkNotNullParameter(str2, "decoderImplementationName");
-        Intrinsics3.checkNotNullParameter(frameCounts, "frameCounts");
-        Intrinsics3.checkNotNullParameter(inboundRtcpStats, "rtcpStats");
-        Intrinsics3.checkNotNullParameter(inboundRtpStats, "rtpStats");
+        C12238m.checkNotNullParameter(str, "codecName");
+        C12238m.checkNotNullParameter(str2, "decoderImplementationName");
+        C12238m.checkNotNullParameter(frameCounts, "frameCounts");
+        C12238m.checkNotNullParameter(inboundRtcpStats, "rtcpStats");
+        C12238m.checkNotNullParameter(inboundRtpStats, "rtpStats");
         this.codecName = str;
         this.codecPayloadType = i;
         this.currentDelay = i2;
@@ -266,11 +266,11 @@ public final /* data */ class InboundVideo {
     }
 
     public final InboundVideo copy(String codecName, int codecPayloadType, int currentDelay, int currentPayloadType, int decodeFrameRate, int decode, String decoderImplementationName, FrameCounts frameCounts, long framesDecoded, long framesRendered, int framesDropped, int height, int jitterBuffer, int maxDecode, int minPlayoutDelay, int networkFrameRate, long qpSum, int renderDelay, int renderFrameRate, InboundRtcpStats rtcpStats, InboundRtpStats rtpStats, long ssrc, float syncOffset, float targetDelay, int totalBitrate, int width, long freezeCount, long pauseCount, long totalFreezesDuration, long totalPausesDuration, long totalFramesDuration, double sumOfSquaredFramesDurations) {
-        Intrinsics3.checkNotNullParameter(codecName, "codecName");
-        Intrinsics3.checkNotNullParameter(decoderImplementationName, "decoderImplementationName");
-        Intrinsics3.checkNotNullParameter(frameCounts, "frameCounts");
-        Intrinsics3.checkNotNullParameter(rtcpStats, "rtcpStats");
-        Intrinsics3.checkNotNullParameter(rtpStats, "rtpStats");
+        C12238m.checkNotNullParameter(codecName, "codecName");
+        C12238m.checkNotNullParameter(decoderImplementationName, "decoderImplementationName");
+        C12238m.checkNotNullParameter(frameCounts, "frameCounts");
+        C12238m.checkNotNullParameter(rtcpStats, "rtcpStats");
+        C12238m.checkNotNullParameter(rtpStats, "rtpStats");
         return new InboundVideo(codecName, codecPayloadType, currentDelay, currentPayloadType, decodeFrameRate, decode, decoderImplementationName, frameCounts, framesDecoded, framesRendered, framesDropped, height, jitterBuffer, maxDecode, minPlayoutDelay, networkFrameRate, qpSum, renderDelay, renderFrameRate, rtcpStats, rtpStats, ssrc, syncOffset, targetDelay, totalBitrate, width, freezeCount, pauseCount, totalFreezesDuration, totalPausesDuration, totalFramesDuration, sumOfSquaredFramesDurations);
     }
 
@@ -282,7 +282,7 @@ public final /* data */ class InboundVideo {
             return false;
         }
         InboundVideo inboundVideo = (InboundVideo) other;
-        return Intrinsics3.areEqual(this.codecName, inboundVideo.codecName) && this.codecPayloadType == inboundVideo.codecPayloadType && this.currentDelay == inboundVideo.currentDelay && this.currentPayloadType == inboundVideo.currentPayloadType && this.decodeFrameRate == inboundVideo.decodeFrameRate && this.decode == inboundVideo.decode && Intrinsics3.areEqual(this.decoderImplementationName, inboundVideo.decoderImplementationName) && Intrinsics3.areEqual(this.frameCounts, inboundVideo.frameCounts) && this.framesDecoded == inboundVideo.framesDecoded && this.framesRendered == inboundVideo.framesRendered && this.framesDropped == inboundVideo.framesDropped && this.height == inboundVideo.height && this.jitterBuffer == inboundVideo.jitterBuffer && this.maxDecode == inboundVideo.maxDecode && this.minPlayoutDelay == inboundVideo.minPlayoutDelay && this.networkFrameRate == inboundVideo.networkFrameRate && this.qpSum == inboundVideo.qpSum && this.renderDelay == inboundVideo.renderDelay && this.renderFrameRate == inboundVideo.renderFrameRate && Intrinsics3.areEqual(this.rtcpStats, inboundVideo.rtcpStats) && Intrinsics3.areEqual(this.rtpStats, inboundVideo.rtpStats) && this.ssrc == inboundVideo.ssrc && Float.compare(this.syncOffset, inboundVideo.syncOffset) == 0 && Float.compare(this.targetDelay, inboundVideo.targetDelay) == 0 && this.totalBitrate == inboundVideo.totalBitrate && this.width == inboundVideo.width && this.freezeCount == inboundVideo.freezeCount && this.pauseCount == inboundVideo.pauseCount && this.totalFreezesDuration == inboundVideo.totalFreezesDuration && this.totalPausesDuration == inboundVideo.totalPausesDuration && this.totalFramesDuration == inboundVideo.totalFramesDuration && Double.compare(this.sumOfSquaredFramesDurations, inboundVideo.sumOfSquaredFramesDurations) == 0;
+        return C12238m.areEqual(this.codecName, inboundVideo.codecName) && this.codecPayloadType == inboundVideo.codecPayloadType && this.currentDelay == inboundVideo.currentDelay && this.currentPayloadType == inboundVideo.currentPayloadType && this.decodeFrameRate == inboundVideo.decodeFrameRate && this.decode == inboundVideo.decode && C12238m.areEqual(this.decoderImplementationName, inboundVideo.decoderImplementationName) && C12238m.areEqual(this.frameCounts, inboundVideo.frameCounts) && this.framesDecoded == inboundVideo.framesDecoded && this.framesRendered == inboundVideo.framesRendered && this.framesDropped == inboundVideo.framesDropped && this.height == inboundVideo.height && this.jitterBuffer == inboundVideo.jitterBuffer && this.maxDecode == inboundVideo.maxDecode && this.minPlayoutDelay == inboundVideo.minPlayoutDelay && this.networkFrameRate == inboundVideo.networkFrameRate && this.qpSum == inboundVideo.qpSum && this.renderDelay == inboundVideo.renderDelay && this.renderFrameRate == inboundVideo.renderFrameRate && C12238m.areEqual(this.rtcpStats, inboundVideo.rtcpStats) && C12238m.areEqual(this.rtpStats, inboundVideo.rtpStats) && this.ssrc == inboundVideo.ssrc && Float.compare(this.syncOffset, inboundVideo.syncOffset) == 0 && Float.compare(this.targetDelay, inboundVideo.targetDelay) == 0 && this.totalBitrate == inboundVideo.totalBitrate && this.width == inboundVideo.width && this.freezeCount == inboundVideo.freezeCount && this.pauseCount == inboundVideo.pauseCount && this.totalFreezesDuration == inboundVideo.totalFreezesDuration && this.totalPausesDuration == inboundVideo.totalPausesDuration && this.totalFramesDuration == inboundVideo.totalFramesDuration && Double.compare(this.sumOfSquaredFramesDurations, inboundVideo.sumOfSquaredFramesDurations) == 0;
     }
 
     public final String getCodecName() {
@@ -419,79 +419,79 @@ public final /* data */ class InboundVideo {
         String str2 = this.decoderImplementationName;
         int iHashCode2 = (iHashCode + (str2 != null ? str2.hashCode() : 0)) * 31;
         FrameCounts frameCounts = this.frameCounts;
-        int iA = (((((b.a(this.qpSum) + ((((((((((((((b.a(this.framesRendered) + ((b.a(this.framesDecoded) + ((iHashCode2 + (frameCounts != null ? frameCounts.hashCode() : 0)) * 31)) * 31)) * 31) + this.framesDropped) * 31) + this.height) * 31) + this.jitterBuffer) * 31) + this.maxDecode) * 31) + this.minPlayoutDelay) * 31) + this.networkFrameRate) * 31)) * 31) + this.renderDelay) * 31) + this.renderFrameRate) * 31;
+        int iM3a = (((((C0002b.m3a(this.qpSum) + ((((((((((((((C0002b.m3a(this.framesRendered) + ((C0002b.m3a(this.framesDecoded) + ((iHashCode2 + (frameCounts != null ? frameCounts.hashCode() : 0)) * 31)) * 31)) * 31) + this.framesDropped) * 31) + this.height) * 31) + this.jitterBuffer) * 31) + this.maxDecode) * 31) + this.minPlayoutDelay) * 31) + this.networkFrameRate) * 31)) * 31) + this.renderDelay) * 31) + this.renderFrameRate) * 31;
         InboundRtcpStats inboundRtcpStats = this.rtcpStats;
-        int iHashCode3 = (iA + (inboundRtcpStats != null ? inboundRtcpStats.hashCode() : 0)) * 31;
+        int iHashCode3 = (iM3a + (inboundRtcpStats != null ? inboundRtcpStats.hashCode() : 0)) * 31;
         InboundRtpStats inboundRtpStats = this.rtpStats;
-        return a.a(this.sumOfSquaredFramesDurations) + ((b.a(this.totalFramesDuration) + ((b.a(this.totalPausesDuration) + ((b.a(this.totalFreezesDuration) + ((b.a(this.pauseCount) + ((b.a(this.freezeCount) + ((((((Float.floatToIntBits(this.targetDelay) + ((Float.floatToIntBits(this.syncOffset) + ((b.a(this.ssrc) + ((iHashCode3 + (inboundRtpStats != null ? inboundRtpStats.hashCode() : 0)) * 31)) * 31)) * 31)) * 31) + this.totalBitrate) * 31) + this.width) * 31)) * 31)) * 31)) * 31)) * 31)) * 31);
+        return C0001a.m2a(this.sumOfSquaredFramesDurations) + ((C0002b.m3a(this.totalFramesDuration) + ((C0002b.m3a(this.totalPausesDuration) + ((C0002b.m3a(this.totalFreezesDuration) + ((C0002b.m3a(this.pauseCount) + ((C0002b.m3a(this.freezeCount) + ((((((Float.floatToIntBits(this.targetDelay) + ((Float.floatToIntBits(this.syncOffset) + ((C0002b.m3a(this.ssrc) + ((iHashCode3 + (inboundRtpStats != null ? inboundRtpStats.hashCode() : 0)) * 31)) * 31)) * 31)) * 31) + this.totalBitrate) * 31) + this.width) * 31)) * 31)) * 31)) * 31)) * 31)) * 31);
     }
 
     public String toString() {
-        StringBuilder sbU = outline.U("InboundVideo(codecName=");
-        sbU.append(this.codecName);
-        sbU.append(", codecPayloadType=");
-        sbU.append(this.codecPayloadType);
-        sbU.append(", currentDelay=");
-        sbU.append(this.currentDelay);
-        sbU.append(", currentPayloadType=");
-        sbU.append(this.currentPayloadType);
-        sbU.append(", decodeFrameRate=");
-        sbU.append(this.decodeFrameRate);
-        sbU.append(", decode=");
-        sbU.append(this.decode);
-        sbU.append(", decoderImplementationName=");
-        sbU.append(this.decoderImplementationName);
-        sbU.append(", frameCounts=");
-        sbU.append(this.frameCounts);
-        sbU.append(", framesDecoded=");
-        sbU.append(this.framesDecoded);
-        sbU.append(", framesRendered=");
-        sbU.append(this.framesRendered);
-        sbU.append(", framesDropped=");
-        sbU.append(this.framesDropped);
-        sbU.append(", height=");
-        sbU.append(this.height);
-        sbU.append(", jitterBuffer=");
-        sbU.append(this.jitterBuffer);
-        sbU.append(", maxDecode=");
-        sbU.append(this.maxDecode);
-        sbU.append(", minPlayoutDelay=");
-        sbU.append(this.minPlayoutDelay);
-        sbU.append(", networkFrameRate=");
-        sbU.append(this.networkFrameRate);
-        sbU.append(", qpSum=");
-        sbU.append(this.qpSum);
-        sbU.append(", renderDelay=");
-        sbU.append(this.renderDelay);
-        sbU.append(", renderFrameRate=");
-        sbU.append(this.renderFrameRate);
-        sbU.append(", rtcpStats=");
-        sbU.append(this.rtcpStats);
-        sbU.append(", rtpStats=");
-        sbU.append(this.rtpStats);
-        sbU.append(", ssrc=");
-        sbU.append(this.ssrc);
-        sbU.append(", syncOffset=");
-        sbU.append(this.syncOffset);
-        sbU.append(", targetDelay=");
-        sbU.append(this.targetDelay);
-        sbU.append(", totalBitrate=");
-        sbU.append(this.totalBitrate);
-        sbU.append(", width=");
-        sbU.append(this.width);
-        sbU.append(", freezeCount=");
-        sbU.append(this.freezeCount);
-        sbU.append(", pauseCount=");
-        sbU.append(this.pauseCount);
-        sbU.append(", totalFreezesDuration=");
-        sbU.append(this.totalFreezesDuration);
-        sbU.append(", totalPausesDuration=");
-        sbU.append(this.totalPausesDuration);
-        sbU.append(", totalFramesDuration=");
-        sbU.append(this.totalFramesDuration);
-        sbU.append(", sumOfSquaredFramesDurations=");
-        sbU.append(this.sumOfSquaredFramesDurations);
-        sbU.append(")");
-        return sbU.toString();
+        StringBuilder sbM833U = C1643a.m833U("InboundVideo(codecName=");
+        sbM833U.append(this.codecName);
+        sbM833U.append(", codecPayloadType=");
+        sbM833U.append(this.codecPayloadType);
+        sbM833U.append(", currentDelay=");
+        sbM833U.append(this.currentDelay);
+        sbM833U.append(", currentPayloadType=");
+        sbM833U.append(this.currentPayloadType);
+        sbM833U.append(", decodeFrameRate=");
+        sbM833U.append(this.decodeFrameRate);
+        sbM833U.append(", decode=");
+        sbM833U.append(this.decode);
+        sbM833U.append(", decoderImplementationName=");
+        sbM833U.append(this.decoderImplementationName);
+        sbM833U.append(", frameCounts=");
+        sbM833U.append(this.frameCounts);
+        sbM833U.append(", framesDecoded=");
+        sbM833U.append(this.framesDecoded);
+        sbM833U.append(", framesRendered=");
+        sbM833U.append(this.framesRendered);
+        sbM833U.append(", framesDropped=");
+        sbM833U.append(this.framesDropped);
+        sbM833U.append(", height=");
+        sbM833U.append(this.height);
+        sbM833U.append(", jitterBuffer=");
+        sbM833U.append(this.jitterBuffer);
+        sbM833U.append(", maxDecode=");
+        sbM833U.append(this.maxDecode);
+        sbM833U.append(", minPlayoutDelay=");
+        sbM833U.append(this.minPlayoutDelay);
+        sbM833U.append(", networkFrameRate=");
+        sbM833U.append(this.networkFrameRate);
+        sbM833U.append(", qpSum=");
+        sbM833U.append(this.qpSum);
+        sbM833U.append(", renderDelay=");
+        sbM833U.append(this.renderDelay);
+        sbM833U.append(", renderFrameRate=");
+        sbM833U.append(this.renderFrameRate);
+        sbM833U.append(", rtcpStats=");
+        sbM833U.append(this.rtcpStats);
+        sbM833U.append(", rtpStats=");
+        sbM833U.append(this.rtpStats);
+        sbM833U.append(", ssrc=");
+        sbM833U.append(this.ssrc);
+        sbM833U.append(", syncOffset=");
+        sbM833U.append(this.syncOffset);
+        sbM833U.append(", targetDelay=");
+        sbM833U.append(this.targetDelay);
+        sbM833U.append(", totalBitrate=");
+        sbM833U.append(this.totalBitrate);
+        sbM833U.append(", width=");
+        sbM833U.append(this.width);
+        sbM833U.append(", freezeCount=");
+        sbM833U.append(this.freezeCount);
+        sbM833U.append(", pauseCount=");
+        sbM833U.append(this.pauseCount);
+        sbM833U.append(", totalFreezesDuration=");
+        sbM833U.append(this.totalFreezesDuration);
+        sbM833U.append(", totalPausesDuration=");
+        sbM833U.append(this.totalPausesDuration);
+        sbM833U.append(", totalFramesDuration=");
+        sbM833U.append(this.totalFramesDuration);
+        sbM833U.append(", sumOfSquaredFramesDurations=");
+        sbM833U.append(this.sumOfSquaredFramesDurations);
+        sbM833U.append(")");
+        return sbM833U.toString();
     }
 }

@@ -1,8 +1,6 @@
 package com.discord.widgets.tos;
 
 import androidx.annotation.MainThread;
-import b.a.d.AppViewModel;
-import b.d.b.a.outline;
 import com.discord.api.channel.Channel;
 import com.discord.api.channel.ChannelUtils;
 import com.discord.api.report.ReportReason;
@@ -12,44 +10,46 @@ import com.discord.restapi.RestAPIInterface;
 import com.discord.restapi.RestAPIParams;
 import com.discord.stores.StoreStream;
 import com.discord.utilities.error.Error;
+import com.discord.utilities.p501rx.ObservableExtensionsKt;
 import com.discord.utilities.rest.RestAPI;
-import com.discord.utilities.rx.ObservableExtensionsKt;
-import d0.z.d.FunctionReferenceImpl;
-import d0.z.d.Intrinsics3;
-import d0.z.d.Lambda;
-import j0.k.Func1;
 import java.util.List;
 import kotlin.Unit;
 import kotlin.jvm.functions.Function0;
 import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.DefaultConstructorMarker;
-import rx.Observable;
-import rx.Subscription;
+import p007b.p008a.p018d.AbstractC0859d0;
+import p007b.p100d.p104b.p105a.C1643a;
+import p507d0.p592z.p594d.AbstractC12240o;
+import p507d0.p592z.p594d.C12236k;
+import p507d0.p592z.p594d.C12238m;
+import p637j0.p641k.InterfaceC12589b;
+import p658rx.Observable;
+import p658rx.Subscription;
 
 /* JADX INFO: compiled from: WidgetTosReportViolationViewModel.kt */
 /* JADX INFO: loaded from: classes.dex */
-public final class WidgetTosReportViolationViewModel extends AppViewModel<ViewState> {
+public final class WidgetTosReportViolationViewModel extends AbstractC0859d0<ViewState> {
     private final long channelId;
     private final long messageId;
     private ReportReason reasonSelected;
     private StoreState storeState;
 
-    /* JADX INFO: renamed from: com.discord.widgets.tos.WidgetTosReportViolationViewModel$1, reason: invalid class name */
+    /* JADX INFO: renamed from: com.discord.widgets.tos.WidgetTosReportViolationViewModel$1 */
     /* JADX INFO: compiled from: WidgetTosReportViolationViewModel.kt */
-    public static final /* synthetic */ class AnonymousClass1 extends FunctionReferenceImpl implements Function1<StoreState, Unit> {
-        public AnonymousClass1(WidgetTosReportViolationViewModel widgetTosReportViolationViewModel) {
+    public static final /* synthetic */ class C101791 extends C12236k implements Function1<StoreState, Unit> {
+        public C101791(WidgetTosReportViolationViewModel widgetTosReportViolationViewModel) {
             super(1, widgetTosReportViolationViewModel, WidgetTosReportViolationViewModel.class, "generateViewState", "generateViewState(Lcom/discord/widgets/tos/WidgetTosReportViolationViewModel$StoreState;)V", 0);
         }
 
         @Override // kotlin.jvm.functions.Function1
         public /* bridge */ /* synthetic */ Unit invoke(StoreState storeState) {
             invoke2(storeState);
-            return Unit.a;
+            return Unit.f27425a;
         }
 
         /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
         public final void invoke2(StoreState storeState) {
-            Intrinsics3.checkNotNullParameter(storeState, "p1");
+            C12238m.checkNotNullParameter(storeState, "p1");
             ((WidgetTosReportViolationViewModel) this.receiver).generateViewState(storeState);
         }
     }
@@ -64,7 +64,7 @@ public final class WidgetTosReportViolationViewModel extends AppViewModel<ViewSt
             /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
             public ReportReasons(List<ReportReason> list) {
                 super(null);
-                Intrinsics3.checkNotNullParameter(list, "reasons");
+                C12238m.checkNotNullParameter(list, "reasons");
                 this.reasons = list;
             }
 
@@ -81,13 +81,13 @@ public final class WidgetTosReportViolationViewModel extends AppViewModel<ViewSt
             }
 
             public final ReportReasons copy(List<ReportReason> reasons) {
-                Intrinsics3.checkNotNullParameter(reasons, "reasons");
+                C12238m.checkNotNullParameter(reasons, "reasons");
                 return new ReportReasons(reasons);
             }
 
             public boolean equals(Object other) {
                 if (this != other) {
-                    return (other instanceof ReportReasons) && Intrinsics3.areEqual(this.reasons, ((ReportReasons) other).reasons);
+                    return (other instanceof ReportReasons) && C12238m.areEqual(this.reasons, ((ReportReasons) other).reasons);
                 }
                 return true;
             }
@@ -105,7 +105,7 @@ public final class WidgetTosReportViolationViewModel extends AppViewModel<ViewSt
             }
 
             public String toString() {
-                return outline.L(outline.U("ReportReasons(reasons="), this.reasons, ")");
+                return C1643a.m824L(C1643a.m833U("ReportReasons(reasons="), this.reasons, ")");
             }
         }
 
@@ -127,7 +127,7 @@ public final class WidgetTosReportViolationViewModel extends AppViewModel<ViewSt
             /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
             public Loaded(List<ReportReason> list) {
                 super(null);
-                Intrinsics3.checkNotNullParameter(list, "reasons");
+                C12238m.checkNotNullParameter(list, "reasons");
                 this.reasons = list;
             }
 
@@ -144,13 +144,13 @@ public final class WidgetTosReportViolationViewModel extends AppViewModel<ViewSt
             }
 
             public final Loaded copy(List<ReportReason> reasons) {
-                Intrinsics3.checkNotNullParameter(reasons, "reasons");
+                C12238m.checkNotNullParameter(reasons, "reasons");
                 return new Loaded(reasons);
             }
 
             public boolean equals(Object other) {
                 if (this != other) {
-                    return (other instanceof Loaded) && Intrinsics3.areEqual(this.reasons, ((Loaded) other).reasons);
+                    return (other instanceof Loaded) && C12238m.areEqual(this.reasons, ((Loaded) other).reasons);
                 }
                 return true;
             }
@@ -168,7 +168,7 @@ public final class WidgetTosReportViolationViewModel extends AppViewModel<ViewSt
             }
 
             public String toString() {
-                return outline.L(outline.U("Loaded(reasons="), this.reasons, ")");
+                return C1643a.m824L(C1643a.m833U("Loaded(reasons="), this.reasons, ")");
             }
         }
 
@@ -240,7 +240,7 @@ public final class WidgetTosReportViolationViewModel extends AppViewModel<ViewSt
             }
 
             public String toString() {
-                return outline.B(outline.U("Submitting(reason="), this.reason, ")");
+                return C1643a.m814B(C1643a.m833U("Submitting(reason="), this.reason, ")");
             }
         }
 
@@ -252,42 +252,42 @@ public final class WidgetTosReportViolationViewModel extends AppViewModel<ViewSt
         }
     }
 
-    /* JADX INFO: renamed from: com.discord.widgets.tos.WidgetTosReportViolationViewModel$sendReportAPICall$1, reason: invalid class name */
+    /* JADX INFO: renamed from: com.discord.widgets.tos.WidgetTosReportViolationViewModel$sendReportAPICall$1 */
     /* JADX INFO: compiled from: WidgetTosReportViolationViewModel.kt */
-    public static final class AnonymousClass1 extends Lambda implements Function1<Error, Unit> {
-        public AnonymousClass1() {
+    public static final class C101811 extends AbstractC12240o implements Function1<Error, Unit> {
+        public C101811() {
             super(1);
         }
 
         @Override // kotlin.jvm.functions.Function1
         public /* bridge */ /* synthetic */ Unit invoke(Error error) {
             invoke2(error);
-            return Unit.a;
+            return Unit.f27425a;
         }
 
         /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
         public final void invoke2(Error error) {
-            Intrinsics3.checkNotNullParameter(error, "it");
+            C12238m.checkNotNullParameter(error, "it");
             WidgetTosReportViolationViewModel.this.updateViewState(ViewState.SubmissionError.INSTANCE);
         }
     }
 
-    /* JADX INFO: renamed from: com.discord.widgets.tos.WidgetTosReportViolationViewModel$sendReportAPICall$2, reason: invalid class name */
+    /* JADX INFO: renamed from: com.discord.widgets.tos.WidgetTosReportViolationViewModel$sendReportAPICall$2 */
     /* JADX INFO: compiled from: WidgetTosReportViolationViewModel.kt */
-    public static final class AnonymousClass2 extends Lambda implements Function1<Unit, Unit> {
-        public AnonymousClass2() {
+    public static final class C101822 extends AbstractC12240o implements Function1<Unit, Unit> {
+        public C101822() {
             super(1);
         }
 
         @Override // kotlin.jvm.functions.Function1
         public /* bridge */ /* synthetic */ Unit invoke(Unit unit) {
             invoke2(unit);
-            return Unit.a;
+            return Unit.f27425a;
         }
 
         /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
         public final void invoke2(Unit unit) {
-            Intrinsics3.checkNotNullParameter(unit, "it");
+            C12238m.checkNotNullParameter(unit, "it");
             WidgetTosReportViolationViewModel.this.updateViewState(ViewState.Submitted.INSTANCE);
         }
     }
@@ -296,9 +296,9 @@ public final class WidgetTosReportViolationViewModel extends AppViewModel<ViewSt
         super(ViewState.Loading.INSTANCE);
         this.channelId = j;
         this.messageId = j2;
-        Observable<StoreState> observableR = observeStoreState().r();
-        Intrinsics3.checkNotNullExpressionValue(observableR, "observeStoreState()\n    …  .distinctUntilChanged()");
-        ObservableExtensionsKt.appSubscribe(ObservableExtensionsKt.ui$default(ObservableExtensionsKt.computationLatest(observableR), this, null, 2, null), (Class<?>) WidgetTosReportViolationViewModel.class, (58 & 2) != 0 ? null : null, (Function1<? super Subscription, Unit>) ((58 & 4) != 0 ? null : null), (Function1<? super Error, Unit>) ((58 & 8) != 0 ? null : null), (Function0<Unit>) ((58 & 16) != 0 ? ObservableExtensionsKt.AnonymousClass1.INSTANCE : null), (Function0<Unit>) ((58 & 32) != 0 ? ObservableExtensionsKt.AnonymousClass2.INSTANCE : null), new AnonymousClass1(this));
+        Observable<StoreState> observableM11112r = observeStoreState().m11112r();
+        C12238m.checkNotNullExpressionValue(observableM11112r, "observeStoreState()\n    …  .distinctUntilChanged()");
+        ObservableExtensionsKt.appSubscribe(ObservableExtensionsKt.ui$default(ObservableExtensionsKt.computationLatest(observableM11112r), this, null, 2, null), (Class<?>) WidgetTosReportViolationViewModel.class, (58 & 2) != 0 ? null : null, (Function1<? super Subscription, Unit>) ((58 & 4) != 0 ? null : null), (Function1<? super Error, Unit>) ((58 & 8) != 0 ? null : null), (Function0<Unit>) ((58 & 16) != 0 ? ObservableExtensionsKt.C68791.INSTANCE : null), (Function0<Unit>) ((58 & 32) != 0 ? ObservableExtensionsKt.C68802.INSTANCE : null), new C101791(this));
     }
 
     @MainThread
@@ -310,20 +310,20 @@ public final class WidgetTosReportViolationViewModel extends AppViewModel<ViewSt
     }
 
     private final Observable<StoreState> observeStoreState() {
-        Observable<StoreState> observableG = ObservableExtensionsKt.restSubscribeOn$default(RestAPIInterface.DefaultImpls.report$default(RestAPI.INSTANCE.getApi(), Long.valueOf(this.channelId), null, Long.valueOf(this.messageId), null, 2, null), false, 1, null).G(new Func1<List<? extends ReportReason>, StoreState>() { // from class: com.discord.widgets.tos.WidgetTosReportViolationViewModel.observeStoreState.1
-            @Override // j0.k.Func1
+        Observable<StoreState> observableM11083G = ObservableExtensionsKt.restSubscribeOn$default(RestAPIInterface.DefaultImpls.report$default(RestAPI.INSTANCE.getApi(), Long.valueOf(this.channelId), null, Long.valueOf(this.messageId), null, 2, null), false, 1, null).m11083G(new InterfaceC12589b<List<? extends ReportReason>, StoreState>() { // from class: com.discord.widgets.tos.WidgetTosReportViolationViewModel.observeStoreState.1
+            @Override // p637j0.p641k.InterfaceC12589b
             public /* bridge */ /* synthetic */ StoreState call(List<? extends ReportReason> list) {
                 return call2((List<ReportReason>) list);
             }
 
             /* JADX INFO: renamed from: call, reason: avoid collision after fix types in other method */
             public final StoreState call2(List<ReportReason> list) {
-                Intrinsics3.checkNotNullExpressionValue(list, "reportReasons");
+                C12238m.checkNotNullExpressionValue(list, "reportReasons");
                 return new StoreState.ReportReasons(list);
             }
         });
-        Intrinsics3.checkNotNullExpressionValue(observableG, "RestAPI\n          .api\n …eportReasons)\n          }");
-        return observableG;
+        C12238m.checkNotNullExpressionValue(observableM11083G, "RestAPI\n          .api\n …eportReasons)\n          }");
+        return observableM11083G;
     }
 
     public final ReportReason getReasonSelected() {
@@ -334,7 +334,7 @@ public final class WidgetTosReportViolationViewModel extends AppViewModel<ViewSt
     public final void handleDismissError() {
         StoreState storeState = this.storeState;
         if (storeState == null) {
-            Intrinsics3.throwUninitializedPropertyAccessException("storeState");
+            C12238m.throwUninitializedPropertyAccessException("storeState");
         }
         generateViewState(storeState);
     }
@@ -352,13 +352,13 @@ public final class WidgetTosReportViolationViewModel extends AppViewModel<ViewSt
         StoreStream.Companion companion = StoreStream.INSTANCE;
         Channel channel = companion.getChannels().getChannel(channelId);
         if (channel != null && channel.getType() == 1) {
-            User userA = ChannelUtils.a(channel);
-            Long lValueOf = userA != null ? Long.valueOf(userA.getId()) : null;
+            User userM7677a = ChannelUtils.m7677a(channel);
+            Long lValueOf = userM7677a != null ? Long.valueOf(userM7677a.getId()) : null;
             if (lValueOf != null) {
-                companion.getUserProfile().fetchProfile(lValueOf.longValue(), (12 & 2) != 0 ? null : null, (12 & 4) != 0 ? false : false, (12 & 8) != 0 ? null : new WidgetTosReportViolationViewModel2(this, reason, channelId, messageId));
+                companion.getUserProfile().fetchProfile(lValueOf.longValue(), (12 & 2) != 0 ? null : null, (12 & 4) != 0 ? false : false, (12 & 8) != 0 ? null : new C10183xbd60399a(this, reason, channelId, messageId));
             }
         }
-        ObservableExtensionsKt.appSubscribe(ObservableExtensionsKt.ui(ObservableExtensionsKt.restSubscribeOn$default(RestAPI.INSTANCE.getApi().report(new RestAPIParams.Report(reason, Long.valueOf(channelId), Long.valueOf(messageId))), false, 1, null)), (Class<?>) WidgetTosReportViolationViewModel.class, (58 & 2) != 0 ? null : null, (Function1<? super Subscription, Unit>) ((58 & 4) != 0 ? null : null), (Function1<? super Error, Unit>) ((58 & 8) != 0 ? null : new AnonymousClass1()), (Function0<Unit>) ((58 & 16) != 0 ? ObservableExtensionsKt.AnonymousClass1.INSTANCE : null), (Function0<Unit>) ((58 & 32) != 0 ? ObservableExtensionsKt.AnonymousClass2.INSTANCE : null), new AnonymousClass2());
+        ObservableExtensionsKt.appSubscribe(ObservableExtensionsKt.m8518ui(ObservableExtensionsKt.restSubscribeOn$default(RestAPI.INSTANCE.getApi().report(new RestAPIParams.Report(reason, Long.valueOf(channelId), Long.valueOf(messageId))), false, 1, null)), (Class<?>) WidgetTosReportViolationViewModel.class, (58 & 2) != 0 ? null : null, (Function1<? super Subscription, Unit>) ((58 & 4) != 0 ? null : null), (Function1<? super Error, Unit>) ((58 & 8) != 0 ? null : new C101811()), (Function0<Unit>) ((58 & 16) != 0 ? ObservableExtensionsKt.C68791.INSTANCE : null), (Function0<Unit>) ((58 & 32) != 0 ? ObservableExtensionsKt.C68802.INSTANCE : null), new C101822());
     }
 
     public final void setReasonSelected(ReportReason reportReason) {

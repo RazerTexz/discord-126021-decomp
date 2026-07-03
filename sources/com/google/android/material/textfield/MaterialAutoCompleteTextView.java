@@ -16,7 +16,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.widget.AppCompatAutoCompleteTextView;
 import androidx.appcompat.widget.ListPopupWindow;
-import com.google.android.material.R;
+import com.google.android.material.C10817R;
 import com.google.android.material.internal.ManufacturerUtils;
 import com.google.android.material.internal.ThemeEnforcement;
 import com.google.android.material.theme.overlay.MaterialThemeOverlay;
@@ -34,8 +34,9 @@ public class MaterialAutoCompleteTextView extends AppCompatAutoCompleteTextView 
     @NonNull
     private final Rect tempRect;
 
-    public class a implements AdapterView.OnItemClickListener {
-        public a() {
+    /* JADX INFO: renamed from: com.google.android.material.textfield.MaterialAutoCompleteTextView$a */
+    public class C11013a implements AdapterView.OnItemClickListener {
+        public C11013a() {
         }
 
         @Override // android.widget.AdapterView.OnItemClickListener
@@ -147,15 +148,15 @@ public class MaterialAutoCompleteTextView extends AppCompatAutoCompleteTextView 
     }
 
     public MaterialAutoCompleteTextView(@NonNull Context context, @Nullable AttributeSet attributeSet) {
-        this(context, attributeSet, R.attr.autoCompleteTextViewStyle);
+        this(context, attributeSet, C10817R.attr.autoCompleteTextViewStyle);
     }
 
     public MaterialAutoCompleteTextView(@NonNull Context context, @Nullable AttributeSet attributeSet, int i) {
         super(MaterialThemeOverlay.wrap(context, attributeSet, i, 0), attributeSet, i);
         this.tempRect = new Rect();
         Context context2 = getContext();
-        TypedArray typedArrayObtainStyledAttributes = ThemeEnforcement.obtainStyledAttributes(context2, attributeSet, R.styleable.MaterialAutoCompleteTextView, i, R.style.Widget_AppCompat_AutoCompleteTextView, new int[0]);
-        int i2 = R.styleable.MaterialAutoCompleteTextView_android_inputType;
+        TypedArray typedArrayObtainStyledAttributes = ThemeEnforcement.obtainStyledAttributes(context2, attributeSet, C10817R.styleable.MaterialAutoCompleteTextView, i, C10817R.style.Widget_AppCompat_AutoCompleteTextView, new int[0]);
+        int i2 = C10817R.styleable.MaterialAutoCompleteTextView_android_inputType;
         if (typedArrayObtainStyledAttributes.hasValue(i2) && typedArrayObtainStyledAttributes.getInt(i2, 0) == 0) {
             setKeyListener(null);
         }
@@ -166,7 +167,7 @@ public class MaterialAutoCompleteTextView extends AppCompatAutoCompleteTextView 
         listPopupWindow.setAnchorView(this);
         listPopupWindow.setInputMethodMode(2);
         listPopupWindow.setAdapter(getAdapter());
-        listPopupWindow.setOnItemClickListener(new a());
+        listPopupWindow.setOnItemClickListener(new C11013a());
         typedArrayObtainStyledAttributes.recycle();
     }
 }

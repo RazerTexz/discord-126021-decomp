@@ -16,8 +16,7 @@ import android.webkit.MimeTypeMap;
 import androidx.annotation.GuardedBy;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import b.d.b.a.outline;
-import com.discord.widgets.chat.input.MentionUtils;
+import com.discord.widgets.chat.input.MentionUtilsKt;
 import com.discord.widgets.chat.input.autocomplete.AutocompleteViewModel;
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -25,6 +24,7 @@ import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
 import org.xmlpull.v1.XmlPullParserException;
+import p007b.p100d.p104b.p105a.C1643a;
 
 /* JADX INFO: loaded from: classes.dex */
 public class FileProvider extends ContentProvider {
@@ -105,10 +105,10 @@ public class FileProvider extends ContentProvider {
                     }
                 }
                 if (entry == null) {
-                    throw new IllegalArgumentException(outline.w("Failed to find configured root that contains ", canonicalPath));
+                    throw new IllegalArgumentException(C1643a.m883w("Failed to find configured root that contains ", canonicalPath));
                 }
                 String path2 = entry.getValue().getPath();
-                return new Uri.Builder().scheme("content").authority(this.mAuthority).encodedPath(Uri.encode(entry.getKey()) + MentionUtils.SLASH_CHAR + Uri.encode(path2.endsWith(AutocompleteViewModel.COMMAND_DISCOVER_TOKEN) ? canonicalPath.substring(path2.length()) : canonicalPath.substring(path2.length() + 1), AutocompleteViewModel.COMMAND_DISCOVER_TOKEN)).build();
+                return new Uri.Builder().scheme("content").authority(this.mAuthority).encodedPath(Uri.encode(entry.getKey()) + MentionUtilsKt.SLASH_CHAR + Uri.encode(path2.endsWith(AutocompleteViewModel.COMMAND_DISCOVER_TOKEN) ? canonicalPath.substring(path2.length()) : canonicalPath.substring(path2.length() + 1), AutocompleteViewModel.COMMAND_DISCOVER_TOKEN)).build();
             } catch (IOException unused) {
                 throw new IllegalArgumentException("Failed to resolve canonical path for " + file);
             }
@@ -168,14 +168,14 @@ public class FileProvider extends ContentProvider {
         if ("rwt".equals(str)) {
             return 1006632960;
         }
-        throw new IllegalArgumentException(outline.w("Invalid mode: ", str));
+        throw new IllegalArgumentException(C1643a.m883w("Invalid mode: ", str));
     }
 
     private static PathStrategy parsePathStrategy(Context context, String str) throws XmlPullParserException, IOException {
         SimplePathStrategy simplePathStrategy = new SimplePathStrategy(str);
         ProviderInfo providerInfoResolveContentProvider = context.getPackageManager().resolveContentProvider(str, 128);
         if (providerInfoResolveContentProvider == null) {
-            throw new IllegalArgumentException(outline.w("Couldn't find meta-data for provider with authority ", str));
+            throw new IllegalArgumentException(C1643a.m883w("Couldn't find meta-data for provider with authority ", str));
         }
         XmlResourceParser xmlResourceParserLoadXmlMetaData = providerInfoResolveContentProvider.loadXmlMetaData(context.getPackageManager(), META_DATA_FILE_PROVIDER_PATHS);
         if (xmlResourceParserLoadXmlMetaData == null) {

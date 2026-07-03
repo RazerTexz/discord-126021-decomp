@@ -1,20 +1,20 @@
 package com.discord.analytics.generated.events;
 
-import b.d.b.a.outline;
 import com.discord.analytics.generated.traits.TrackBase;
-import com.discord.analytics.generated.traits.TrackBase2;
+import com.discord.analytics.generated.traits.TrackBaseReceiver;
 import com.discord.analytics.generated.traits.TrackChannel;
-import com.discord.analytics.generated.traits.TrackChannel2;
+import com.discord.analytics.generated.traits.TrackChannelReceiver;
 import com.discord.analytics.generated.traits.TrackGuild;
-import com.discord.analytics.generated.traits.TrackGuild2;
+import com.discord.analytics.generated.traits.TrackGuildReceiver;
 import com.discord.analytics.generated.traits.TrackLocationMetadata;
-import com.discord.analytics.generated.traits.TrackLocationMetadata2;
+import com.discord.analytics.generated.traits.TrackLocationMetadataReceiver;
 import com.discord.api.science.AnalyticsSchema;
-import d0.z.d.Intrinsics3;
+import p007b.p100d.p104b.p105a.C1643a;
+import p507d0.p592z.p594d.C12238m;
 
 /* JADX INFO: compiled from: TrackInviteSent.kt */
 /* JADX INFO: loaded from: classes.dex */
-public final /* data */ class TrackInviteSent implements AnalyticsSchema, TrackBase2, TrackGuild2, TrackChannel2, TrackLocationMetadata2 {
+public final /* data */ class TrackInviteSent implements AnalyticsSchema, TrackBaseReceiver, TrackGuildReceiver, TrackChannelReceiver, TrackLocationMetadataReceiver {
     private TrackBase trackBase;
     private TrackChannel trackChannel;
     private TrackGuild trackGuild;
@@ -38,14 +38,15 @@ public final /* data */ class TrackInviteSent implements AnalyticsSchema, TrackB
     private final Long inviteGuildScheduledEventId = null;
     private final transient String analyticsSchemaTypeName = "invite_sent";
 
-    @Override // com.discord.analytics.generated.traits.TrackGuild2
+    @Override // com.discord.analytics.generated.traits.TrackGuildReceiver
     /* JADX INFO: renamed from: a, reason: from getter */
     public TrackGuild getTrackGuild() {
         return this.trackGuild;
     }
 
-    @Override // com.discord.analytics.generated.traits.TrackGuild2
-    public void c(TrackGuild trackGuild) {
+    @Override // com.discord.analytics.generated.traits.TrackGuildReceiver
+    /* JADX INFO: renamed from: c */
+    public void mo7508c(TrackGuild trackGuild) {
         this.trackGuild = trackGuild;
     }
 
@@ -63,7 +64,7 @@ public final /* data */ class TrackInviteSent implements AnalyticsSchema, TrackB
             return false;
         }
         TrackInviteSent trackInviteSent = (TrackInviteSent) other;
-        return Intrinsics3.areEqual(this.inviteType, trackInviteSent.inviteType) && Intrinsics3.areEqual(this.inviteCode, trackInviteSent.inviteCode) && Intrinsics3.areEqual(this.messageId, trackInviteSent.messageId) && Intrinsics3.areEqual(this.inviteGuildId, trackInviteSent.inviteGuildId) && Intrinsics3.areEqual(this.inviteChannelId, trackInviteSent.inviteChannelId) && Intrinsics3.areEqual(this.inviteChannelType, trackInviteSent.inviteChannelType) && Intrinsics3.areEqual(this.inviteInviterId, trackInviteSent.inviteInviterId) && Intrinsics3.areEqual(this.applicationId, trackInviteSent.applicationId) && Intrinsics3.areEqual(this.destinationUserId, trackInviteSent.destinationUserId) && Intrinsics3.areEqual(this.isSuggested, trackInviteSent.isSuggested) && Intrinsics3.areEqual(this.rowNum, trackInviteSent.rowNum) && Intrinsics3.areEqual(this.numTotal, trackInviteSent.numTotal) && Intrinsics3.areEqual(this.numAffinityConnections, trackInviteSent.numAffinityConnections) && Intrinsics3.areEqual(this.isFiltered, trackInviteSent.isFiltered) && Intrinsics3.areEqual(this.numSelected, trackInviteSent.numSelected) && Intrinsics3.areEqual(this.sendType, trackInviteSent.sendType) && Intrinsics3.areEqual(this.inviteGuildScheduledEventId, trackInviteSent.inviteGuildScheduledEventId);
+        return C12238m.areEqual(this.inviteType, trackInviteSent.inviteType) && C12238m.areEqual(this.inviteCode, trackInviteSent.inviteCode) && C12238m.areEqual(this.messageId, trackInviteSent.messageId) && C12238m.areEqual(this.inviteGuildId, trackInviteSent.inviteGuildId) && C12238m.areEqual(this.inviteChannelId, trackInviteSent.inviteChannelId) && C12238m.areEqual(this.inviteChannelType, trackInviteSent.inviteChannelType) && C12238m.areEqual(this.inviteInviterId, trackInviteSent.inviteInviterId) && C12238m.areEqual(this.applicationId, trackInviteSent.applicationId) && C12238m.areEqual(this.destinationUserId, trackInviteSent.destinationUserId) && C12238m.areEqual(this.isSuggested, trackInviteSent.isSuggested) && C12238m.areEqual(this.rowNum, trackInviteSent.rowNum) && C12238m.areEqual(this.numTotal, trackInviteSent.numTotal) && C12238m.areEqual(this.numAffinityConnections, trackInviteSent.numAffinityConnections) && C12238m.areEqual(this.isFiltered, trackInviteSent.isFiltered) && C12238m.areEqual(this.numSelected, trackInviteSent.numSelected) && C12238m.areEqual(this.sendType, trackInviteSent.sendType) && C12238m.areEqual(this.inviteGuildScheduledEventId, trackInviteSent.inviteGuildScheduledEventId);
     }
 
     public int hashCode() {
@@ -104,39 +105,39 @@ public final /* data */ class TrackInviteSent implements AnalyticsSchema, TrackB
     }
 
     public String toString() {
-        StringBuilder sbU = outline.U("TrackInviteSent(inviteType=");
-        sbU.append(this.inviteType);
-        sbU.append(", inviteCode=");
-        sbU.append(this.inviteCode);
-        sbU.append(", messageId=");
-        sbU.append(this.messageId);
-        sbU.append(", inviteGuildId=");
-        sbU.append(this.inviteGuildId);
-        sbU.append(", inviteChannelId=");
-        sbU.append(this.inviteChannelId);
-        sbU.append(", inviteChannelType=");
-        sbU.append(this.inviteChannelType);
-        sbU.append(", inviteInviterId=");
-        sbU.append(this.inviteInviterId);
-        sbU.append(", applicationId=");
-        sbU.append(this.applicationId);
-        sbU.append(", destinationUserId=");
-        sbU.append(this.destinationUserId);
-        sbU.append(", isSuggested=");
-        sbU.append(this.isSuggested);
-        sbU.append(", rowNum=");
-        sbU.append(this.rowNum);
-        sbU.append(", numTotal=");
-        sbU.append(this.numTotal);
-        sbU.append(", numAffinityConnections=");
-        sbU.append(this.numAffinityConnections);
-        sbU.append(", isFiltered=");
-        sbU.append(this.isFiltered);
-        sbU.append(", numSelected=");
-        sbU.append(this.numSelected);
-        sbU.append(", sendType=");
-        sbU.append(this.sendType);
-        sbU.append(", inviteGuildScheduledEventId=");
-        return outline.G(sbU, this.inviteGuildScheduledEventId, ")");
+        StringBuilder sbM833U = C1643a.m833U("TrackInviteSent(inviteType=");
+        sbM833U.append(this.inviteType);
+        sbM833U.append(", inviteCode=");
+        sbM833U.append(this.inviteCode);
+        sbM833U.append(", messageId=");
+        sbM833U.append(this.messageId);
+        sbM833U.append(", inviteGuildId=");
+        sbM833U.append(this.inviteGuildId);
+        sbM833U.append(", inviteChannelId=");
+        sbM833U.append(this.inviteChannelId);
+        sbM833U.append(", inviteChannelType=");
+        sbM833U.append(this.inviteChannelType);
+        sbM833U.append(", inviteInviterId=");
+        sbM833U.append(this.inviteInviterId);
+        sbM833U.append(", applicationId=");
+        sbM833U.append(this.applicationId);
+        sbM833U.append(", destinationUserId=");
+        sbM833U.append(this.destinationUserId);
+        sbM833U.append(", isSuggested=");
+        sbM833U.append(this.isSuggested);
+        sbM833U.append(", rowNum=");
+        sbM833U.append(this.rowNum);
+        sbM833U.append(", numTotal=");
+        sbM833U.append(this.numTotal);
+        sbM833U.append(", numAffinityConnections=");
+        sbM833U.append(this.numAffinityConnections);
+        sbM833U.append(", isFiltered=");
+        sbM833U.append(this.isFiltered);
+        sbM833U.append(", numSelected=");
+        sbM833U.append(this.numSelected);
+        sbM833U.append(", sendType=");
+        sbM833U.append(this.sendType);
+        sbM833U.append(", inviteGuildScheduledEventId=");
+        return C1643a.m819G(sbM833U, this.inviteGuildScheduledEventId, ")");
     }
 }

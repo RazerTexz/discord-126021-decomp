@@ -2,8 +2,6 @@ package com.google.android.exoplayer2.upstream;
 
 import android.net.Uri;
 import androidx.annotation.Nullable;
-import b.i.a.c.e3.BaseDataSource;
-import b.i.a.c.e3.DataSpec;
 import java.io.IOException;
 import java.net.DatagramPacket;
 import java.net.DatagramSocket;
@@ -12,26 +10,42 @@ import java.net.InetSocketAddress;
 import java.net.MulticastSocket;
 import java.net.SocketTimeoutException;
 import java.util.Objects;
+import p007b.p225i.p226a.p242c.p257e3.AbstractC2705g;
+import p007b.p225i.p226a.p242c.p257e3.C2712n;
 
 /* JADX INFO: loaded from: classes3.dex */
-public final class UdpDataSource extends BaseDataSource {
-    public final int e;
-    public final byte[] f;
-    public final DatagramPacket g;
+public final class UdpDataSource extends AbstractC2705g {
 
-    @Nullable
-    public Uri h;
+    /* JADX INFO: renamed from: e */
+    public final int f20254e;
 
-    @Nullable
-    public DatagramSocket i;
+    /* JADX INFO: renamed from: f */
+    public final byte[] f20255f;
 
-    @Nullable
-    public MulticastSocket j;
+    /* JADX INFO: renamed from: g */
+    public final DatagramPacket f20256g;
 
+    /* JADX INFO: renamed from: h */
     @Nullable
-    public InetAddress k;
-    public boolean l;
-    public int m;
+    public Uri f20257h;
+
+    /* JADX INFO: renamed from: i */
+    @Nullable
+    public DatagramSocket f20258i;
+
+    /* JADX INFO: renamed from: j */
+    @Nullable
+    public MulticastSocket f20259j;
+
+    /* JADX INFO: renamed from: k */
+    @Nullable
+    public InetAddress f20260k;
+
+    /* JADX INFO: renamed from: l */
+    public boolean f20261l;
+
+    /* JADX INFO: renamed from: m */
+    public int f20262m;
 
     public static final class UdpDataSourceException extends DataSourceException {
         public UdpDataSourceException(Throwable th, int i) {
@@ -41,34 +55,35 @@ public final class UdpDataSource extends BaseDataSource {
 
     public UdpDataSource() {
         super(true);
-        this.e = 8000;
+        this.f20254e = 8000;
         byte[] bArr = new byte[2000];
-        this.f = bArr;
-        this.g = new DatagramPacket(bArr, 0, 2000);
+        this.f20255f = bArr;
+        this.f20256g = new DatagramPacket(bArr, 0, 2000);
     }
 
-    @Override // b.i.a.c.e3.DataSource3
-    public long a(DataSpec dataSpec) throws UdpDataSourceException {
-        Uri uri = dataSpec.a;
-        this.h = uri;
+    @Override // p007b.p225i.p226a.p242c.p257e3.InterfaceC2710l
+    /* JADX INFO: renamed from: a */
+    public long mo2586a(C2712n c2712n) throws UdpDataSourceException {
+        Uri uri = c2712n.f6542a;
+        this.f20257h = uri;
         String host = uri.getHost();
         Objects.requireNonNull(host);
-        int port = this.h.getPort();
-        r(dataSpec);
+        int port = this.f20257h.getPort();
+        m2850r(c2712n);
         try {
-            this.k = InetAddress.getByName(host);
-            InetSocketAddress inetSocketAddress = new InetSocketAddress(this.k, port);
-            if (this.k.isMulticastAddress()) {
+            this.f20260k = InetAddress.getByName(host);
+            InetSocketAddress inetSocketAddress = new InetSocketAddress(this.f20260k, port);
+            if (this.f20260k.isMulticastAddress()) {
                 MulticastSocket multicastSocket = new MulticastSocket(inetSocketAddress);
-                this.j = multicastSocket;
-                multicastSocket.joinGroup(this.k);
-                this.i = this.j;
+                this.f20259j = multicastSocket;
+                multicastSocket.joinGroup(this.f20260k);
+                this.f20258i = this.f20259j;
             } else {
-                this.i = new DatagramSocket(inetSocketAddress);
+                this.f20258i = new DatagramSocket(inetSocketAddress);
             }
-            this.i.setSoTimeout(this.e);
-            this.l = true;
-            s(dataSpec);
+            this.f20258i.setSoTimeout(this.f20254e);
+            this.f20261l = true;
+            m2851s(c2712n);
             return -1L;
         } catch (IOException e) {
             throw new UdpDataSourceException(e, 2001);
@@ -77,62 +92,63 @@ public final class UdpDataSource extends BaseDataSource {
         }
     }
 
-    @Override // b.i.a.c.e3.DataSource3
+    @Override // p007b.p225i.p226a.p242c.p257e3.InterfaceC2710l
     public void close() {
-        this.h = null;
-        MulticastSocket multicastSocket = this.j;
+        this.f20257h = null;
+        MulticastSocket multicastSocket = this.f20259j;
         if (multicastSocket != null) {
             try {
-                InetAddress inetAddress = this.k;
+                InetAddress inetAddress = this.f20260k;
                 Objects.requireNonNull(inetAddress);
                 multicastSocket.leaveGroup(inetAddress);
             } catch (IOException unused) {
             }
-            this.j = null;
+            this.f20259j = null;
         }
-        DatagramSocket datagramSocket = this.i;
+        DatagramSocket datagramSocket = this.f20258i;
         if (datagramSocket != null) {
             datagramSocket.close();
-            this.i = null;
+            this.f20258i = null;
         }
-        this.k = null;
-        this.m = 0;
-        if (this.l) {
-            this.l = false;
-            q();
+        this.f20260k = null;
+        this.f20262m = 0;
+        if (this.f20261l) {
+            this.f20261l = false;
+            m2849q();
         }
     }
 
-    @Override // b.i.a.c.e3.DataSource3
+    @Override // p007b.p225i.p226a.p242c.p257e3.InterfaceC2710l
     @Nullable
-    public Uri n() {
-        return this.h;
+    /* JADX INFO: renamed from: n */
+    public Uri mo2589n() {
+        return this.f20257h;
     }
 
-    @Override // b.i.a.c.e3.DataReader
+    @Override // p007b.p225i.p226a.p242c.p257e3.InterfaceC2706h
     public int read(byte[] bArr, int i, int i2) throws UdpDataSourceException {
         if (i2 == 0) {
             return 0;
         }
-        if (this.m == 0) {
+        if (this.f20262m == 0) {
             try {
-                DatagramSocket datagramSocket = this.i;
+                DatagramSocket datagramSocket = this.f20258i;
                 Objects.requireNonNull(datagramSocket);
-                datagramSocket.receive(this.g);
-                int length = this.g.getLength();
-                this.m = length;
-                p(length);
+                datagramSocket.receive(this.f20256g);
+                int length = this.f20256g.getLength();
+                this.f20262m = length;
+                m2848p(length);
             } catch (SocketTimeoutException e) {
                 throw new UdpDataSourceException(e, 2002);
             } catch (IOException e2) {
                 throw new UdpDataSourceException(e2, 2001);
             }
         }
-        int length2 = this.g.getLength();
-        int i3 = this.m;
+        int length2 = this.f20256g.getLength();
+        int i3 = this.f20262m;
         int iMin = Math.min(i3, i2);
-        System.arraycopy(this.f, length2 - i3, bArr, i, iMin);
-        this.m -= iMin;
+        System.arraycopy(this.f20255f, length2 - i3, bArr, i, iMin);
+        this.f20262m -= iMin;
         return iMin;
     }
 }

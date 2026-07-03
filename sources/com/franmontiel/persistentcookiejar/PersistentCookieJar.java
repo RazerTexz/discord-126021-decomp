@@ -4,54 +4,58 @@ import com.franmontiel.persistentcookiejar.cache.CookieCache;
 import com.franmontiel.persistentcookiejar.cache.SetCookieCache;
 import com.franmontiel.persistentcookiejar.persistence.CookiePersistor;
 import com.franmontiel.persistentcookiejar.persistence.SharedPrefsCookiePersistor;
-import f0.Cookie;
-import f0.HttpUrl;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
+import p600f0.C12370n;
+import p600f0.C12379w;
 
 /* JADX INFO: loaded from: classes3.dex */
 public class PersistentCookieJar implements ClearableCookieJar {
 
-    /* JADX INFO: renamed from: b, reason: collision with root package name */
-    public CookieCache f2909b;
-    public CookiePersistor c;
+    /* JADX INFO: renamed from: b */
+    public CookieCache f19665b;
+
+    /* JADX INFO: renamed from: c */
+    public CookiePersistor f19666c;
 
     public PersistentCookieJar(CookieCache cookieCache, CookiePersistor cookiePersistor) {
-        this.f2909b = cookieCache;
-        this.c = cookiePersistor;
-        ((SetCookieCache) cookieCache).addAll(((SharedPrefsCookiePersistor) cookiePersistor).c());
+        this.f19665b = cookieCache;
+        this.f19666c = cookiePersistor;
+        ((SetCookieCache) cookieCache).addAll(((SharedPrefsCookiePersistor) cookiePersistor).m8749c());
     }
 
-    @Override // f0.CookieJar2
-    public synchronized void a(HttpUrl httpUrl, List<Cookie> list) {
-        this.f2909b.addAll(list);
-        CookiePersistor cookiePersistor = this.c;
+    @Override // p600f0.InterfaceC12372p
+    /* JADX INFO: renamed from: a */
+    public synchronized void mo8745a(C12379w c12379w, List<C12370n> list) {
+        this.f19665b.addAll(list);
+        CookiePersistor cookiePersistor = this.f19666c;
         ArrayList arrayList = new ArrayList();
-        for (Cookie cookie : list) {
-            if (cookie.m) {
-                arrayList.add(cookie);
+        for (C12370n c12370n : list) {
+            if (c12370n.f25954m) {
+                arrayList.add(c12370n);
             }
         }
-        cookiePersistor.a(arrayList);
+        cookiePersistor.mo8747a(arrayList);
     }
 
-    @Override // f0.CookieJar2
-    public synchronized List<Cookie> b(HttpUrl httpUrl) {
+    @Override // p600f0.InterfaceC12372p
+    /* JADX INFO: renamed from: b */
+    public synchronized List<C12370n> mo8746b(C12379w c12379w) {
         ArrayList arrayList;
         ArrayList arrayList2 = new ArrayList();
         arrayList = new ArrayList();
-        Iterator<Cookie> it = this.f2909b.iterator();
+        Iterator<C12370n> it = this.f19665b.iterator();
         while (it.hasNext()) {
-            Cookie next = it.next();
-            if (next.h < System.currentTimeMillis()) {
+            C12370n next = it.next();
+            if (next.f25949h < System.currentTimeMillis()) {
                 arrayList2.add(next);
                 it.remove();
-            } else if (next.a(httpUrl)) {
+            } else if (next.m10384a(c12379w)) {
                 arrayList.add(next);
             }
         }
-        this.c.removeAll(arrayList2);
+        this.f19666c.removeAll(arrayList2);
         return arrayList;
     }
 }

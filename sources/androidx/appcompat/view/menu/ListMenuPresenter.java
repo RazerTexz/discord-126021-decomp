@@ -12,7 +12,7 @@ import android.widget.AdapterView;
 import android.widget.BaseAdapter;
 import android.widget.ListAdapter;
 import androidx.annotation.RestrictTo;
-import androidx.appcompat.R;
+import androidx.appcompat.C0051R;
 import androidx.appcompat.view.menu.MenuPresenter;
 import androidx.appcompat.view.menu.MenuView;
 import java.util.ArrayList;
@@ -134,7 +134,7 @@ public class ListMenuPresenter implements MenuPresenter, AdapterView.OnItemClick
     @Override // androidx.appcompat.view.menu.MenuPresenter
     public MenuView getMenuView(ViewGroup viewGroup) {
         if (this.mMenuView == null) {
-            this.mMenuView = (ExpandedMenuView) this.mInflater.inflate(R.layout.abc_expanded_menu_layout, viewGroup, false);
+            this.mMenuView = (ExpandedMenuView) this.mInflater.inflate(C0051R.layout.abc_expanded_menu_layout, viewGroup, false);
             if (this.mAdapter == null) {
                 this.mAdapter = new MenuAdapter();
             }

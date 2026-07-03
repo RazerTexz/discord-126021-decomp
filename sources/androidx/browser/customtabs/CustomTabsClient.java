@@ -20,18 +20,18 @@ import androidx.annotation.RestrictTo;
 import androidx.browser.customtabs.CustomTabsSession;
 import java.util.ArrayList;
 import java.util.List;
-import x.a.a.ICustomTabsCallback;
-import x.a.a.ICustomTabsService;
+import p668x.p669a.p670a.InterfaceC13176a;
+import p668x.p669a.p670a.InterfaceC13177b;
 
 /* JADX INFO: loaded from: classes.dex */
 public class CustomTabsClient {
     private static final String TAG = "CustomTabsClient";
     private final Context mApplicationContext;
-    private final ICustomTabsService mService;
+    private final InterfaceC13177b mService;
     private final ComponentName mServiceComponentName;
 
-    public CustomTabsClient(ICustomTabsService iCustomTabsService, ComponentName componentName, Context context) {
-        this.mService = iCustomTabsService;
+    public CustomTabsClient(InterfaceC13177b interfaceC13177b, ComponentName componentName, Context context) {
+        this.mService = interfaceC13177b;
         this.mServiceComponentName = componentName;
         this.mApplicationContext = context;
     }
@@ -76,11 +76,11 @@ public class CustomTabsClient {
         }
     }
 
-    private ICustomTabsCallback.a createCallbackWrapper(@Nullable final CustomTabsCallback customTabsCallback) {
-        return new ICustomTabsCallback.a() { // from class: androidx.browser.customtabs.CustomTabsClient.2
+    private InterfaceC13176a.a createCallbackWrapper(@Nullable final CustomTabsCallback customTabsCallback) {
+        return new InterfaceC13176a.a() { // from class: androidx.browser.customtabs.CustomTabsClient.2
             private Handler mHandler = new Handler(Looper.getMainLooper());
 
-            @Override // x.a.a.ICustomTabsCallback
+            @Override // p668x.p669a.p670a.InterfaceC13176a
             public void extraCallback(final String str, final Bundle bundle) throws RemoteException {
                 if (customTabsCallback == null) {
                     return;
@@ -93,7 +93,7 @@ public class CustomTabsClient {
                 });
             }
 
-            @Override // x.a.a.ICustomTabsCallback
+            @Override // p668x.p669a.p670a.InterfaceC13176a
             public Bundle extraCallbackWithResult(@NonNull String str, @Nullable Bundle bundle) throws RemoteException {
                 CustomTabsCallback customTabsCallback2 = customTabsCallback;
                 if (customTabsCallback2 == null) {
@@ -102,7 +102,7 @@ public class CustomTabsClient {
                 return customTabsCallback2.extraCallbackWithResult(str, bundle);
             }
 
-            @Override // x.a.a.ICustomTabsCallback
+            @Override // p668x.p669a.p670a.InterfaceC13176a
             public void onMessageChannelReady(final Bundle bundle) throws RemoteException {
                 if (customTabsCallback == null) {
                     return;
@@ -115,7 +115,7 @@ public class CustomTabsClient {
                 });
             }
 
-            @Override // x.a.a.ICustomTabsCallback
+            @Override // p668x.p669a.p670a.InterfaceC13176a
             public void onNavigationEvent(final int i, final Bundle bundle) {
                 if (customTabsCallback == null) {
                     return;
@@ -128,7 +128,7 @@ public class CustomTabsClient {
                 });
             }
 
-            @Override // x.a.a.ICustomTabsCallback
+            @Override // p668x.p669a.p670a.InterfaceC13176a
             public void onPostMessage(final String str, final Bundle bundle) throws RemoteException {
                 if (customTabsCallback == null) {
                     return;
@@ -141,7 +141,7 @@ public class CustomTabsClient {
                 });
             }
 
-            @Override // x.a.a.ICustomTabsCallback
+            @Override // p668x.p669a.p670a.InterfaceC13176a
             public void onRelationshipValidationResult(final int i, final Uri uri, final boolean z2, @Nullable final Bundle bundle) throws RemoteException {
                 if (customTabsCallback == null) {
                     return;
@@ -174,7 +174,7 @@ public class CustomTabsClient {
     @Nullable
     private CustomTabsSession newSessionInternal(@Nullable CustomTabsCallback customTabsCallback, @Nullable PendingIntent pendingIntent) {
         boolean zNewSession;
-        ICustomTabsCallback.a aVarCreateCallbackWrapper = createCallbackWrapper(customTabsCallback);
+        InterfaceC13176a.a aVarCreateCallbackWrapper = createCallbackWrapper(customTabsCallback);
         try {
             if (pendingIntent != null) {
                 Bundle bundle = new Bundle();

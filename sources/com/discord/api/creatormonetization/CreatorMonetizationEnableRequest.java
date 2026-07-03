@@ -1,8 +1,8 @@
 package com.discord.api.creatormonetization;
 
-import b.d.b.a.outline;
 import com.discord.models.domain.ModelAuditLogEntry;
-import d0.z.d.Intrinsics3;
+import p007b.p100d.p104b.p105a.C1643a;
+import p507d0.p592z.p594d.C12238m;
 
 /* JADX INFO: compiled from: CreatorMonetizationEnableRequest.kt */
 /* JADX INFO: loaded from: classes.dex */
@@ -35,7 +35,7 @@ public final /* data */ class CreatorMonetizationEnableRequest {
             return false;
         }
         CreatorMonetizationEnableRequest creatorMonetizationEnableRequest = (CreatorMonetizationEnableRequest) other;
-        return this.id == creatorMonetizationEnableRequest.id && Intrinsics3.areEqual(this.state, creatorMonetizationEnableRequest.state);
+        return this.id == creatorMonetizationEnableRequest.id && C12238m.areEqual(this.state, creatorMonetizationEnableRequest.state);
     }
 
     public int hashCode() {
@@ -46,11 +46,11 @@ public final /* data */ class CreatorMonetizationEnableRequest {
     }
 
     public String toString() {
-        StringBuilder sbU = outline.U("CreatorMonetizationEnableRequest(id=");
-        sbU.append(this.id);
-        sbU.append(", state=");
-        sbU.append(this.state);
-        sbU.append(")");
-        return sbU.toString();
+        StringBuilder sbM833U = C1643a.m833U("CreatorMonetizationEnableRequest(id=");
+        sbM833U.append(this.id);
+        sbM833U.append(", state=");
+        sbM833U.append(this.state);
+        sbM833U.append(")");
+        return sbM833U.toString();
     }
 }

@@ -1,14 +1,14 @@
 package com.discord.widgets.guilds.join;
 
-import a0.a.a.b;
-import b.d.b.a.outline;
 import com.discord.api.guild.Guild;
 import com.discord.utilities.error.Error;
-import d0.z.d.Intrinsics3;
 import kotlin.Unit;
 import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.DefaultConstructorMarker;
-import rx.Subscription;
+import p001a0.p002a.p003a.C0002b;
+import p007b.p100d.p104b.p105a.C1643a;
+import p507d0.p592z.p594d.C12238m;
+import p658rx.Subscription;
 
 /* JADX INFO: compiled from: WidgetGuildJoinCaptchaBottomSheet.kt */
 /* JADX INFO: loaded from: classes2.dex */
@@ -63,8 +63,8 @@ public final /* data */ class JoinArgs extends CaptchaArgs {
     }
 
     public final JoinArgs copy(long guildId, boolean isLurker, String sessionId, Long directoryChannelId, Class<?> errorClass, Function1<? super Subscription, Unit> subscriptionHandler, Function1<? super Error, Unit> errorHandler, Function1<? super Guild, Unit> onNext) {
-        Intrinsics3.checkNotNullParameter(errorClass, "errorClass");
-        Intrinsics3.checkNotNullParameter(onNext, "onNext");
+        C12238m.checkNotNullParameter(errorClass, "errorClass");
+        C12238m.checkNotNullParameter(onNext, "onNext");
         return new JoinArgs(guildId, isLurker, sessionId, directoryChannelId, errorClass, subscriptionHandler, errorHandler, onNext);
     }
 
@@ -76,7 +76,7 @@ public final /* data */ class JoinArgs extends CaptchaArgs {
             return false;
         }
         JoinArgs joinArgs = (JoinArgs) other;
-        return this.guildId == joinArgs.guildId && this.isLurker == joinArgs.isLurker && Intrinsics3.areEqual(this.sessionId, joinArgs.sessionId) && Intrinsics3.areEqual(this.directoryChannelId, joinArgs.directoryChannelId) && Intrinsics3.areEqual(this.errorClass, joinArgs.errorClass) && Intrinsics3.areEqual(this.subscriptionHandler, joinArgs.subscriptionHandler) && Intrinsics3.areEqual(this.errorHandler, joinArgs.errorHandler) && Intrinsics3.areEqual(this.onNext, joinArgs.onNext);
+        return this.guildId == joinArgs.guildId && this.isLurker == joinArgs.isLurker && C12238m.areEqual(this.sessionId, joinArgs.sessionId) && C12238m.areEqual(this.directoryChannelId, joinArgs.directoryChannelId) && C12238m.areEqual(this.errorClass, joinArgs.errorClass) && C12238m.areEqual(this.subscriptionHandler, joinArgs.subscriptionHandler) && C12238m.areEqual(this.errorHandler, joinArgs.errorHandler) && C12238m.areEqual(this.onNext, joinArgs.onNext);
     }
 
     public final Long getDirectoryChannelId() {
@@ -113,13 +113,13 @@ public final /* data */ class JoinArgs extends CaptchaArgs {
     /* JADX WARN: Type inference failed for: r1v23 */
     /* JADX WARN: Type inference failed for: r1v24 */
     public int hashCode() {
-        int iA = b.a(this.guildId) * 31;
+        int iM3a = C0002b.m3a(this.guildId) * 31;
         boolean z2 = this.isLurker;
         ?? r1 = z2;
         if (z2) {
             r1 = 1;
         }
-        int i = (iA + r1) * 31;
+        int i = (iM3a + r1) * 31;
         String str = this.sessionId;
         int iHashCode = (i + (str != null ? str.hashCode() : 0)) * 31;
         Long l = this.directoryChannelId;
@@ -139,32 +139,32 @@ public final /* data */ class JoinArgs extends CaptchaArgs {
     }
 
     public String toString() {
-        StringBuilder sbU = outline.U("JoinArgs(guildId=");
-        sbU.append(this.guildId);
-        sbU.append(", isLurker=");
-        sbU.append(this.isLurker);
-        sbU.append(", sessionId=");
-        sbU.append(this.sessionId);
-        sbU.append(", directoryChannelId=");
-        sbU.append(this.directoryChannelId);
-        sbU.append(", errorClass=");
-        sbU.append(this.errorClass);
-        sbU.append(", subscriptionHandler=");
-        sbU.append(this.subscriptionHandler);
-        sbU.append(", errorHandler=");
-        sbU.append(this.errorHandler);
-        sbU.append(", onNext=");
-        sbU.append(this.onNext);
-        sbU.append(")");
-        return sbU.toString();
+        StringBuilder sbM833U = C1643a.m833U("JoinArgs(guildId=");
+        sbM833U.append(this.guildId);
+        sbM833U.append(", isLurker=");
+        sbM833U.append(this.isLurker);
+        sbM833U.append(", sessionId=");
+        sbM833U.append(this.sessionId);
+        sbM833U.append(", directoryChannelId=");
+        sbM833U.append(this.directoryChannelId);
+        sbM833U.append(", errorClass=");
+        sbM833U.append(this.errorClass);
+        sbM833U.append(", subscriptionHandler=");
+        sbM833U.append(this.subscriptionHandler);
+        sbM833U.append(", errorHandler=");
+        sbM833U.append(this.errorHandler);
+        sbM833U.append(", onNext=");
+        sbM833U.append(this.onNext);
+        sbM833U.append(")");
+        return sbM833U.toString();
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     /* JADX WARN: Multi-variable type inference failed */
     public JoinArgs(long j, boolean z2, String str, Long l, Class<?> cls, Function1<? super Subscription, Unit> function1, Function1<? super Error, Unit> function2, Function1<? super Guild, Unit> function3) {
         super(null);
-        Intrinsics3.checkNotNullParameter(cls, "errorClass");
-        Intrinsics3.checkNotNullParameter(function3, "onNext");
+        C12238m.checkNotNullParameter(cls, "errorClass");
+        C12238m.checkNotNullParameter(function3, "onNext");
         this.guildId = j;
         this.isLurker = z2;
         this.sessionId = str;

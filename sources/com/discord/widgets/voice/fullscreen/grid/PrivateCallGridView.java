@@ -8,21 +8,21 @@ import android.view.View;
 import android.widget.TableLayout;
 import android.widget.TableRow;
 import android.widget.TextView;
-import androidx.core.view.ViewGroup;
-import com.discord.R;
+import androidx.core.view.ViewGroupKt;
+import com.discord.C5419R;
 import com.discord.stores.StoreVoiceParticipants;
-import com.discord.utilities.collections.CollectionExtensions;
+import com.discord.utilities.collections.CollectionExtensionsKt;
 import com.discord.utilities.dimen.DimenUtils;
 import com.discord.views.VoiceUserView;
 import com.google.android.material.badge.BadgeDrawable;
-import d0.t.Collections2;
-import d0.t._Collections;
-import d0.z.d.Intrinsics3;
 import java.util.Iterator;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Objects;
 import kotlin.jvm.internal.DefaultConstructorMarker;
+import p507d0.p580t.C12147n;
+import p507d0.p580t.C12163u;
+import p507d0.p592z.p594d.C12238m;
 
 /* JADX INFO: compiled from: PrivateCallGridView.kt */
 /* JADX INFO: loaded from: classes.dex */
@@ -53,14 +53,14 @@ public final class PrivateCallGridView extends TableLayout {
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public PrivateCallGridView(Context context) {
         super(context);
-        Intrinsics3.checkNotNullParameter(context, "context");
-        this.callUsers = Collections2.emptyList();
+        C12238m.checkNotNullParameter(context, "context");
+        this.callUsers = C12147n.emptyList();
         this.callUserViews = new LinkedHashMap<>();
     }
 
     private final VoiceUserView createCallUserView() {
         Context context = getContext();
-        Intrinsics3.checkNotNullExpressionValue(context, "context");
+        C12238m.checkNotNullExpressionValue(context, "context");
         VoiceUserView voiceUserView = new VoiceUserView(context, null, 0, 6);
         TableRow.LayoutParams layoutParams = new TableRow.LayoutParams();
         int iDpToPixels = DimenUtils.dpToPixels(2);
@@ -82,21 +82,21 @@ public final class PrivateCallGridView extends TableLayout {
             linkedHashMap.put(lValueOf, voiceUserViewCreateCallUserView);
         }
         VoiceUserView voiceUserView = voiceUserViewCreateCallUserView;
-        int i = VoiceUserView.j;
-        voiceUserView.a(callUserItem, R.dimen.avatar_size_unrestricted);
+        int i = VoiceUserView.f19182j;
+        voiceUserView.m8570a(callUserItem, C5419R.dimen.avatar_size_unrestricted);
         voiceUserView.setSelected(false);
         return voiceUserView;
     }
 
     private final int getColumnSize() {
         Resources resources = getResources();
-        Intrinsics3.checkNotNullExpressionValue(resources, "resources");
+        C12238m.checkNotNullExpressionValue(resources, "resources");
         return isLandscape(resources) ? 6 : 3;
     }
 
     private final int getMaxShownParticipants() {
         Resources resources = getResources();
-        Intrinsics3.checkNotNullExpressionValue(resources, "resources");
+        C12238m.checkNotNullExpressionValue(resources, "resources");
         return isLandscape(resources) ? 6 : 9;
     }
 
@@ -104,7 +104,7 @@ public final class PrivateCallGridView extends TableLayout {
         if (!(rowIndex == 0 && callUsers.size() == 2)) {
             return null;
         }
-        View viewInflate = TableLayout.inflate(getContext(), R.layout.view_private_call_grid_spacer, null);
+        View viewInflate = TableLayout.inflate(getContext(), C5419R.layout.view_private_call_grid_spacer, null);
         Objects.requireNonNull(viewInflate, "null cannot be cast to non-null type android.widget.TextView");
         return (TextView) viewInflate;
     }
@@ -114,7 +114,7 @@ public final class PrivateCallGridView extends TableLayout {
         if (!(rowIndex == ((int) Math.ceil(((double) getMaxShownParticipants()) / ((double) getColumnSize()))) - 1) || !isOverflowingParticipants(callUsers)) {
             return null;
         }
-        View viewInflate = TableLayout.inflate(getContext(), R.layout.view_private_call_grid_overflow, null);
+        View viewInflate = TableLayout.inflate(getContext(), C5419R.layout.view_private_call_grid_overflow, null);
         Objects.requireNonNull(viewInflate, "null cannot be cast to non-null type android.widget.TextView");
         TextView textView = (TextView) viewInflate;
         TableRow.LayoutParams layoutParams = new TableRow.LayoutParams(DimenUtils.dpToPixels(92), DimenUtils.dpToPixels(92));
@@ -126,7 +126,7 @@ public final class PrivateCallGridView extends TableLayout {
     }
 
     private final List<StoreVoiceParticipants.VoiceUser> getVisibleCallUsers(List<StoreVoiceParticipants.VoiceUser> callUsers) {
-        return isOverflowingParticipants(callUsers) ? _Collections.take(callUsers, getMaxShownParticipants() - 1) : callUsers;
+        return isOverflowingParticipants(callUsers) ? C12163u.take(callUsers, getMaxShownParticipants() - 1) : callUsers;
     }
 
     private final boolean isLandscape(Resources resources) {
@@ -138,7 +138,7 @@ public final class PrivateCallGridView extends TableLayout {
     }
 
     private final void removeViewsAndSubviews() {
-        for (View view : ViewGroup.getChildren(this)) {
+        for (View view : ViewGroupKt.getChildren(this)) {
             Objects.requireNonNull(view, "null cannot be cast to non-null type android.widget.TableRow");
             ((TableRow) view).removeAllViews();
         }
@@ -146,14 +146,14 @@ public final class PrivateCallGridView extends TableLayout {
     }
 
     public final void configure(List<StoreVoiceParticipants.VoiceUser> callUsers) {
-        Intrinsics3.checkNotNullParameter(callUsers, "callUsers");
-        if (!CollectionExtensions.equals(this.callUsers, callUsers, PrivateCallGridView2.INSTANCE)) {
+        C12238m.checkNotNullParameter(callUsers, "callUsers");
+        if (!CollectionExtensionsKt.equals(this.callUsers, callUsers, PrivateCallGridView$configure$callUserOrderChanged$1.INSTANCE)) {
             removeViewsAndSubviews();
             int i = 0;
-            for (Object obj : _Collections.chunked(getVisibleCallUsers(callUsers), getColumnSize())) {
+            for (Object obj : C12163u.chunked(getVisibleCallUsers(callUsers), getColumnSize())) {
                 int i2 = i + 1;
                 if (i < 0) {
-                    Collections2.throwIndexOverflow();
+                    C12147n.throwIndexOverflow();
                 }
                 TableRow tableRow = new TableRow(getContext());
                 tableRow.setGravity(17);
@@ -184,8 +184,8 @@ public final class PrivateCallGridView extends TableLayout {
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public PrivateCallGridView(Context context, AttributeSet attributeSet) {
         super(context, attributeSet);
-        Intrinsics3.checkNotNullParameter(context, "context");
-        this.callUsers = Collections2.emptyList();
+        C12238m.checkNotNullParameter(context, "context");
+        this.callUsers = C12147n.emptyList();
         this.callUserViews = new LinkedHashMap<>();
     }
 

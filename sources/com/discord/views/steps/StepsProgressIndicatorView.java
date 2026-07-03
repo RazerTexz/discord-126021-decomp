@@ -7,11 +7,11 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
 import android.widget.TextView;
-import com.discord.R;
+import com.discord.C5419R;
 import com.discord.app.AppLog;
 import com.discord.utilities.logging.Logger;
-import d0.z.d.Intrinsics3;
 import java.util.Objects;
+import p507d0.p592z.p594d.C12238m;
 
 /* JADX INFO: compiled from: StepsProgressIndicatorView.kt */
 /* JADX INFO: loaded from: classes2.dex */
@@ -23,16 +23,17 @@ public final class StepsProgressIndicatorView extends LinearLayout {
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public StepsProgressIndicatorView(Context context, AttributeSet attributeSet) {
         super(context, attributeSet);
-        Intrinsics3.checkNotNullParameter(context, "context");
+        C12238m.checkNotNullParameter(context, "context");
         setOrientation(0);
     }
 
-    public final void a() {
+    /* JADX INFO: renamed from: a */
+    public final void m8608a() {
         removeAllViews();
         LayoutInflater layoutInflaterFrom = LayoutInflater.from(getContext());
         int i = this.totalStepCount;
         for (int i2 = 0; i2 < i; i2++) {
-            View viewInflate = layoutInflaterFrom.inflate(R.layout.steps_progress_indicator_dot_view, (ViewGroup) this, false);
+            View viewInflate = layoutInflaterFrom.inflate(C5419R.layout.steps_progress_indicator_dot_view, (ViewGroup) this, false);
             addView(viewInflate);
             Objects.requireNonNull(viewInflate, "rootView");
         }
@@ -40,11 +41,11 @@ public final class StepsProgressIndicatorView extends LinearLayout {
 
     public final void setCurrentStepIndex(int currentStepIndex) {
         if (currentStepIndex >= this.totalStepCount) {
-            Logger.d$default(AppLog.g, "Current step cannot be greater than the total step count", null, 2, null);
+            Logger.d$default(AppLog.f14950g, "Current step cannot be greater than the total step count", null, 2, null);
             return;
         }
         if (getChildCount() != this.totalStepCount) {
-            a();
+            m8608a();
         }
         int i = this.totalStepCount;
         int i2 = 0;
@@ -72,7 +73,7 @@ public final class StepsProgressIndicatorView extends LinearLayout {
 
     public final void setTotalStepCount(int totalStepCount) {
         this.totalStepCount = totalStepCount;
-        a();
+        m8608a();
         setCurrentStepIndex(0);
     }
 }

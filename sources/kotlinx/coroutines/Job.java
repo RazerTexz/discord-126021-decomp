@@ -5,40 +5,49 @@ import kotlin.Unit;
 import kotlin.coroutines.CoroutineContext;
 import kotlin.jvm.functions.Function1;
 import kotlin.sequences.Sequence;
-import s.a.Job2;
-import s.a.Job4;
-import s.a.Job6;
+import p659s.p660a.InterfaceC13130m0;
+import p659s.p660a.InterfaceC13138p;
+import p659s.p660a.InterfaceC13144r;
 
 /* JADX INFO: compiled from: Job.kt */
 /* JADX INFO: loaded from: classes3.dex */
 public interface Job extends CoroutineContext.Element {
 
     /* JADX INFO: renamed from: h, reason: from kotlin metadata */
-    public static final Companion INSTANCE = Companion.a;
+    public static final Companion INSTANCE = Companion.f27463a;
 
     /* JADX INFO: renamed from: kotlinx.coroutines.Job$a, reason: from kotlin metadata */
     /* JADX INFO: compiled from: Job.kt */
     public static final class Companion implements CoroutineContext.Key<Job> {
-        public static final /* synthetic */ Companion a = new Companion();
+
+        /* JADX INFO: renamed from: a */
+        public static final /* synthetic */ Companion f27463a = new Companion();
 
         static {
-            int i = CoroutineExceptionHandler.g;
+            int i = CoroutineExceptionHandler.f27455g;
         }
     }
 
-    Job4 D(Job6 child);
+    /* JADX INFO: renamed from: D */
+    InterfaceC13138p mo10909D(InterfaceC13144r child);
 
-    boolean a();
+    /* JADX INFO: renamed from: a */
+    boolean mo10910a();
 
-    void b(CancellationException cause);
+    /* JADX INFO: renamed from: b */
+    void mo10911b(CancellationException cause);
 
-    Sequence<Job> e();
+    /* JADX INFO: renamed from: e */
+    Sequence<Job> mo10912e();
 
-    Job2 n(boolean onCancelling, boolean invokeImmediately, Function1<? super Throwable, Unit> handler);
+    /* JADX INFO: renamed from: n */
+    InterfaceC13130m0 mo10913n(boolean onCancelling, boolean invokeImmediately, Function1<? super Throwable, Unit> handler);
 
-    CancellationException q();
+    /* JADX INFO: renamed from: q */
+    CancellationException mo10914q();
 
     boolean start();
 
-    Job2 u(Function1<? super Throwable, Unit> handler);
+    /* JADX INFO: renamed from: u */
+    InterfaceC13130m0 mo10915u(Function1<? super Throwable, Unit> handler);
 }

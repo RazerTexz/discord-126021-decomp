@@ -3,7 +3,7 @@ package com.discord.widgets.guild_role_subscriptions.tier;
 import android.graphics.Rect;
 import android.view.View;
 import androidx.recyclerview.widget.RecyclerView;
-import d0.z.d.Intrinsics3;
+import p507d0.p592z.p594d.C12238m;
 
 /* JADX INFO: compiled from: GuildRoleSubscriptionTierItemDecoration.kt */
 /* JADX INFO: loaded from: classes2.dex */
@@ -18,10 +18,10 @@ public final class GuildRoleSubscriptionTierItemDecoration extends RecyclerView.
 
     @Override // androidx.recyclerview.widget.RecyclerView.ItemDecoration
     public void getItemOffsets(Rect outRect, View view, RecyclerView parent, RecyclerView.State state) {
-        Intrinsics3.checkNotNullParameter(outRect, "outRect");
-        Intrinsics3.checkNotNullParameter(view, "view");
-        Intrinsics3.checkNotNullParameter(parent, "parent");
-        Intrinsics3.checkNotNullParameter(state, "state");
+        C12238m.checkNotNullParameter(outRect, "outRect");
+        C12238m.checkNotNullParameter(view, "view");
+        C12238m.checkNotNullParameter(parent, "parent");
+        C12238m.checkNotNullParameter(state, "state");
         super.getItemOffsets(outRect, view, parent, state);
         int childAdapterPosition = parent.getChildAdapterPosition(view);
         RecyclerView.Adapter adapter = parent.getAdapter();

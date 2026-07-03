@@ -1,5 +1,6 @@
 package androidx.appcompat.widget;
 
+import android.R;
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
 import android.content.Context;
@@ -25,7 +26,7 @@ import android.widget.SpinnerAdapter;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.RestrictTo;
-import androidx.appcompat.R;
+import androidx.appcompat.C0051R;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.view.ActionBarPolicy;
 import androidx.appcompat.widget.LinearLayoutCompat;
@@ -103,9 +104,9 @@ public class ScrollingTabContainerView extends HorizontalScrollView implements A
 
         /* JADX WARN: Illegal instructions before constructor call */
         public TabView(Context context, ActionBar.Tab tab, boolean z2) {
-            int i = R.attr.actionBarTabStyle;
+            int i = C0051R.attr.actionBarTabStyle;
             super(context, null, i);
-            int[] iArr = {android.R.attr.background};
+            int[] iArr = {R.attr.background};
             this.BG_ATTRS = iArr;
             this.mTab = tab;
             TintTypedArray tintTypedArrayObtainStyledAttributes = TintTypedArray.obtainStyledAttributes(context, null, iArr, i, 0);
@@ -213,7 +214,7 @@ public class ScrollingTabContainerView extends HorizontalScrollView implements A
             boolean z2 = !TextUtils.isEmpty(text);
             if (z2) {
                 if (this.mTextView == null) {
-                    AppCompatTextView appCompatTextView = new AppCompatTextView(getContext(), null, R.attr.actionBarTabTextStyle);
+                    AppCompatTextView appCompatTextView = new AppCompatTextView(getContext(), null, C0051R.attr.actionBarTabTextStyle);
                     appCompatTextView.setEllipsize(TextUtils.TruncateAt.END);
                     LinearLayout.LayoutParams layoutParams2 = new LinearLayout.LayoutParams(-2, -2);
                     layoutParams2.gravity = 16;
@@ -286,14 +287,14 @@ public class ScrollingTabContainerView extends HorizontalScrollView implements A
     }
 
     private Spinner createSpinner() {
-        AppCompatSpinner appCompatSpinner = new AppCompatSpinner(getContext(), null, R.attr.actionDropDownStyle);
+        AppCompatSpinner appCompatSpinner = new AppCompatSpinner(getContext(), null, C0051R.attr.actionDropDownStyle);
         appCompatSpinner.setLayoutParams(new LinearLayoutCompat.LayoutParams(-2, -1));
         appCompatSpinner.setOnItemSelectedListener(this);
         return appCompatSpinner;
     }
 
     private LinearLayoutCompat createTabLayout() {
-        LinearLayoutCompat linearLayoutCompat = new LinearLayoutCompat(getContext(), null, R.attr.actionBarTabBarStyle);
+        LinearLayoutCompat linearLayoutCompat = new LinearLayoutCompat(getContext(), null, C0051R.attr.actionBarTabBarStyle);
         linearLayoutCompat.setMeasureWithLargestChildEnabled(true);
         linearLayoutCompat.setGravity(17);
         linearLayoutCompat.setLayoutParams(new LinearLayoutCompat.LayoutParams(-2, -1));

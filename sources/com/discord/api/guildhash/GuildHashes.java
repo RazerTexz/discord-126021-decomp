@@ -1,7 +1,7 @@
 package com.discord.api.guildhash;
 
-import b.d.b.a.outline;
-import d0.z.d.Intrinsics3;
+import p007b.p100d.p104b.p105a.C1643a;
+import p507d0.p592z.p594d.C12238m;
 
 /* JADX INFO: compiled from: GuildHashes.kt */
 /* JADX INFO: loaded from: classes.dex */
@@ -39,7 +39,7 @@ public final /* data */ class GuildHashes {
             return false;
         }
         GuildHashes guildHashes = (GuildHashes) other;
-        return Intrinsics3.areEqual(this.metadata, guildHashes.metadata) && Intrinsics3.areEqual(this.channels, guildHashes.channels) && Intrinsics3.areEqual(this.roles, guildHashes.roles) && this.version == guildHashes.version;
+        return C12238m.areEqual(this.metadata, guildHashes.metadata) && C12238m.areEqual(this.channels, guildHashes.channels) && C12238m.areEqual(this.roles, guildHashes.roles) && this.version == guildHashes.version;
     }
 
     public int hashCode() {
@@ -52,13 +52,13 @@ public final /* data */ class GuildHashes {
     }
 
     public String toString() {
-        StringBuilder sbU = outline.U("GuildHashes(metadata=");
-        sbU.append(this.metadata);
-        sbU.append(", channels=");
-        sbU.append(this.channels);
-        sbU.append(", roles=");
-        sbU.append(this.roles);
-        sbU.append(", version=");
-        return outline.B(sbU, this.version, ")");
+        StringBuilder sbM833U = C1643a.m833U("GuildHashes(metadata=");
+        sbM833U.append(this.metadata);
+        sbM833U.append(", channels=");
+        sbM833U.append(this.channels);
+        sbM833U.append(", roles=");
+        sbM833U.append(this.roles);
+        sbM833U.append(", version=");
+        return C1643a.m814B(sbM833U, this.version, ")");
     }
 }

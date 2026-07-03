@@ -4,7 +4,6 @@ import androidx.appcompat.widget.ActivityChooserModel;
 import androidx.constraintlayout.solver.widgets.analyzer.BasicMeasure;
 import androidx.core.app.NotificationCompat;
 import androidx.exifinterface.media.ExifInterface;
-import b.d.b.a.outline;
 import com.discord.api.application.Application;
 import com.discord.api.botuikit.Component;
 import com.discord.api.channel.Channel;
@@ -21,8 +20,9 @@ import com.discord.api.sticker.StickerPartial;
 import com.discord.api.user.User;
 import com.discord.api.utcdatetime.UtcDateTime;
 import com.discord.models.domain.ModelAuditLogEntry;
-import d0.z.d.Intrinsics3;
 import java.util.List;
+import p007b.p100d.p104b.p105a.C1643a;
+import p507d0.p592z.p594d.C12238m;
 
 /* JADX INFO: compiled from: Message.kt */
 /* JADX INFO: loaded from: classes.dex */
@@ -128,11 +128,13 @@ public final /* data */ class Message {
         this.roleSubscriptionData = roleSubscriptionData2;
     }
 
-    public final List<StickerPartial> A() {
+    /* JADX INFO: renamed from: A */
+    public final List<StickerPartial> m8021A() {
         return this.stickerItems;
     }
 
-    public final List<Sticker> B() {
+    /* JADX INFO: renamed from: B */
+    public final List<Sticker> m8022B() {
         return this.stickers;
     }
 
@@ -176,7 +178,8 @@ public final /* data */ class Message {
         return this.applicationId;
     }
 
-    public final List<MessageAttachment> d() {
+    /* JADX INFO: renamed from: d */
+    public final List<MessageAttachment> m8031d() {
         return this.attachments;
     }
 
@@ -193,7 +196,7 @@ public final /* data */ class Message {
             return false;
         }
         Message message = (Message) other;
-        return this.id == message.id && this.channelId == message.channelId && Intrinsics3.areEqual(this.author, message.author) && Intrinsics3.areEqual(this.content, message.content) && Intrinsics3.areEqual(this.timestamp, message.timestamp) && Intrinsics3.areEqual(this.editedTimestamp, message.editedTimestamp) && Intrinsics3.areEqual(this.tts, message.tts) && Intrinsics3.areEqual(this.mentionEveryone, message.mentionEveryone) && Intrinsics3.areEqual(this.mentions, message.mentions) && Intrinsics3.areEqual(this.mentionRoles, message.mentionRoles) && Intrinsics3.areEqual(this.attachments, message.attachments) && Intrinsics3.areEqual(this.embeds, message.embeds) && Intrinsics3.areEqual(this.reactions, message.reactions) && Intrinsics3.areEqual(this.nonce, message.nonce) && Intrinsics3.areEqual(this.pinned, message.pinned) && Intrinsics3.areEqual(this.webhookId, message.webhookId) && Intrinsics3.areEqual(this.type, message.type) && Intrinsics3.areEqual(this.activity, message.activity) && Intrinsics3.areEqual(this.application, message.application) && Intrinsics3.areEqual(this.applicationId, message.applicationId) && Intrinsics3.areEqual(this.messageReference, message.messageReference) && Intrinsics3.areEqual(this.flags, message.flags) && Intrinsics3.areEqual(this.stickers, message.stickers) && Intrinsics3.areEqual(this.stickerItems, message.stickerItems) && Intrinsics3.areEqual(this.referencedMessage, message.referencedMessage) && Intrinsics3.areEqual(this.interaction, message.interaction) && Intrinsics3.areEqual(this.thread, message.thread) && Intrinsics3.areEqual(this.components, message.components) && Intrinsics3.areEqual(this.call, message.call) && Intrinsics3.areEqual(this.guildId, message.guildId) && Intrinsics3.areEqual(this.member, message.member) && Intrinsics3.areEqual(this.hit, message.hit) && Intrinsics3.areEqual(this.roleSubscriptionData, message.roleSubscriptionData);
+        return this.id == message.id && this.channelId == message.channelId && C12238m.areEqual(this.author, message.author) && C12238m.areEqual(this.content, message.content) && C12238m.areEqual(this.timestamp, message.timestamp) && C12238m.areEqual(this.editedTimestamp, message.editedTimestamp) && C12238m.areEqual(this.tts, message.tts) && C12238m.areEqual(this.mentionEveryone, message.mentionEveryone) && C12238m.areEqual(this.mentions, message.mentions) && C12238m.areEqual(this.mentionRoles, message.mentionRoles) && C12238m.areEqual(this.attachments, message.attachments) && C12238m.areEqual(this.embeds, message.embeds) && C12238m.areEqual(this.reactions, message.reactions) && C12238m.areEqual(this.nonce, message.nonce) && C12238m.areEqual(this.pinned, message.pinned) && C12238m.areEqual(this.webhookId, message.webhookId) && C12238m.areEqual(this.type, message.type) && C12238m.areEqual(this.activity, message.activity) && C12238m.areEqual(this.application, message.application) && C12238m.areEqual(this.applicationId, message.applicationId) && C12238m.areEqual(this.messageReference, message.messageReference) && C12238m.areEqual(this.flags, message.flags) && C12238m.areEqual(this.stickers, message.stickers) && C12238m.areEqual(this.stickerItems, message.stickerItems) && C12238m.areEqual(this.referencedMessage, message.referencedMessage) && C12238m.areEqual(this.interaction, message.interaction) && C12238m.areEqual(this.thread, message.thread) && C12238m.areEqual(this.components, message.components) && C12238m.areEqual(this.call, message.call) && C12238m.areEqual(this.guildId, message.guildId) && C12238m.areEqual(this.member, message.member) && C12238m.areEqual(this.hit, message.hit) && C12238m.areEqual(this.roleSubscriptionData, message.roleSubscriptionData);
     }
 
     /* JADX INFO: renamed from: f, reason: from getter */
@@ -206,7 +209,8 @@ public final /* data */ class Message {
         return this.channelId;
     }
 
-    public final List<Component> h() {
+    /* JADX INFO: renamed from: h */
+    public final List<Component> m8035h() {
         return this.components;
     }
 
@@ -288,7 +292,8 @@ public final /* data */ class Message {
         return this.editedTimestamp;
     }
 
-    public final List<MessageEmbed> k() {
+    /* JADX INFO: renamed from: k */
+    public final List<MessageEmbed> m8038k() {
         return this.embeds;
     }
 
@@ -327,83 +332,85 @@ public final /* data */ class Message {
         return this.mentionEveryone;
     }
 
-    public final List<Long> s() {
+    /* JADX INFO: renamed from: s */
+    public final List<Long> m8046s() {
         return this.mentionRoles;
     }
 
-    public final List<User> t() {
+    /* JADX INFO: renamed from: t */
+    public final List<User> m8047t() {
         return this.mentions;
     }
 
     public String toString() {
-        StringBuilder sbU = outline.U("Message(id=");
-        sbU.append(this.id);
-        sbU.append(", channelId=");
-        sbU.append(this.channelId);
-        sbU.append(", author=");
-        sbU.append(this.author);
-        sbU.append(", content=");
-        sbU.append(this.content);
-        sbU.append(", timestamp=");
-        sbU.append(this.timestamp);
-        sbU.append(", editedTimestamp=");
-        sbU.append(this.editedTimestamp);
-        sbU.append(", tts=");
-        sbU.append(this.tts);
-        sbU.append(", mentionEveryone=");
-        sbU.append(this.mentionEveryone);
-        sbU.append(", mentions=");
-        sbU.append(this.mentions);
-        sbU.append(", mentionRoles=");
-        sbU.append(this.mentionRoles);
-        sbU.append(", attachments=");
-        sbU.append(this.attachments);
-        sbU.append(", embeds=");
-        sbU.append(this.embeds);
-        sbU.append(", reactions=");
-        sbU.append(this.reactions);
-        sbU.append(", nonce=");
-        sbU.append(this.nonce);
-        sbU.append(", pinned=");
-        sbU.append(this.pinned);
-        sbU.append(", webhookId=");
-        sbU.append(this.webhookId);
-        sbU.append(", type=");
-        sbU.append(this.type);
-        sbU.append(", activity=");
-        sbU.append(this.activity);
-        sbU.append(", application=");
-        sbU.append(this.application);
-        sbU.append(", applicationId=");
-        sbU.append(this.applicationId);
-        sbU.append(", messageReference=");
-        sbU.append(this.messageReference);
-        sbU.append(", flags=");
-        sbU.append(this.flags);
-        sbU.append(", stickers=");
-        sbU.append(this.stickers);
-        sbU.append(", stickerItems=");
-        sbU.append(this.stickerItems);
-        sbU.append(", referencedMessage=");
-        sbU.append(this.referencedMessage);
-        sbU.append(", interaction=");
-        sbU.append(this.interaction);
-        sbU.append(", thread=");
-        sbU.append(this.thread);
-        sbU.append(", components=");
-        sbU.append(this.components);
-        sbU.append(", call=");
-        sbU.append(this.call);
-        sbU.append(", guildId=");
-        sbU.append(this.guildId);
-        sbU.append(", member=");
-        sbU.append(this.member);
-        sbU.append(", hit=");
-        sbU.append(this.hit);
-        sbU.append(", roleSubscriptionData=");
-        sbU.append(this.roleSubscriptionData);
-        sbU.append(")");
-        return sbU.toString();
+        StringBuilder sbM833U = C1643a.m833U("Message(id=");
+        sbM833U.append(this.id);
+        sbM833U.append(", channelId=");
+        sbM833U.append(this.channelId);
+        sbM833U.append(", author=");
+        sbM833U.append(this.author);
+        sbM833U.append(", content=");
+        sbM833U.append(this.content);
+        sbM833U.append(", timestamp=");
+        sbM833U.append(this.timestamp);
+        sbM833U.append(", editedTimestamp=");
+        sbM833U.append(this.editedTimestamp);
+        sbM833U.append(", tts=");
+        sbM833U.append(this.tts);
+        sbM833U.append(", mentionEveryone=");
+        sbM833U.append(this.mentionEveryone);
+        sbM833U.append(", mentions=");
+        sbM833U.append(this.mentions);
+        sbM833U.append(", mentionRoles=");
+        sbM833U.append(this.mentionRoles);
+        sbM833U.append(", attachments=");
+        sbM833U.append(this.attachments);
+        sbM833U.append(", embeds=");
+        sbM833U.append(this.embeds);
+        sbM833U.append(", reactions=");
+        sbM833U.append(this.reactions);
+        sbM833U.append(", nonce=");
+        sbM833U.append(this.nonce);
+        sbM833U.append(", pinned=");
+        sbM833U.append(this.pinned);
+        sbM833U.append(", webhookId=");
+        sbM833U.append(this.webhookId);
+        sbM833U.append(", type=");
+        sbM833U.append(this.type);
+        sbM833U.append(", activity=");
+        sbM833U.append(this.activity);
+        sbM833U.append(", application=");
+        sbM833U.append(this.application);
+        sbM833U.append(", applicationId=");
+        sbM833U.append(this.applicationId);
+        sbM833U.append(", messageReference=");
+        sbM833U.append(this.messageReference);
+        sbM833U.append(", flags=");
+        sbM833U.append(this.flags);
+        sbM833U.append(", stickers=");
+        sbM833U.append(this.stickers);
+        sbM833U.append(", stickerItems=");
+        sbM833U.append(this.stickerItems);
+        sbM833U.append(", referencedMessage=");
+        sbM833U.append(this.referencedMessage);
+        sbM833U.append(", interaction=");
+        sbM833U.append(this.interaction);
+        sbM833U.append(", thread=");
+        sbM833U.append(this.thread);
+        sbM833U.append(", components=");
+        sbM833U.append(this.components);
+        sbM833U.append(", call=");
+        sbM833U.append(this.call);
+        sbM833U.append(", guildId=");
+        sbM833U.append(this.guildId);
+        sbM833U.append(", member=");
+        sbM833U.append(this.member);
+        sbM833U.append(", hit=");
+        sbM833U.append(this.hit);
+        sbM833U.append(", roleSubscriptionData=");
+        sbM833U.append(this.roleSubscriptionData);
+        sbM833U.append(")");
+        return sbM833U.toString();
     }
 
     /* JADX INFO: renamed from: u, reason: from getter */
@@ -421,7 +428,8 @@ public final /* data */ class Message {
         return this.pinned;
     }
 
-    public final List<MessageReaction> x() {
+    /* JADX INFO: renamed from: x */
+    public final List<MessageReaction> m8051x() {
         return this.reactions;
     }
 

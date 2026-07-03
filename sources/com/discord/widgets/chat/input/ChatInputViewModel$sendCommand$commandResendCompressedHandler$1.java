@@ -6,8 +6,6 @@ import com.discord.widgets.chat.MessageManager;
 import com.discord.widgets.chat.input.ChatInputViewModel;
 import com.discord.widgets.chat.input.models.ApplicationCommandData;
 import com.lytefast.flexinput.model.Attachment;
-import d0.z.d.Intrinsics3;
-import d0.z.d.Lambda;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.LinkedHashMap;
@@ -17,10 +15,12 @@ import java.util.NoSuchElementException;
 import kotlin.Unit;
 import kotlin.jvm.functions.Function0;
 import kotlin.jvm.functions.Function1;
+import p507d0.p592z.p594d.AbstractC12240o;
+import p507d0.p592z.p594d.C12238m;
 
 /* JADX INFO: compiled from: ChatInputViewModel.kt */
 /* JADX INFO: loaded from: classes2.dex */
-public final class ChatInputViewModel$sendCommand$commandResendCompressedHandler$1 extends Lambda implements Function0<Unit> {
+public final class ChatInputViewModel$sendCommand$commandResendCompressedHandler$1 extends AbstractC12240o implements Function0<Unit> {
     public final /* synthetic */ ApplicationCommandData $applicationCommandData;
     public final /* synthetic */ Map $attachments;
     public final /* synthetic */ ChatInputViewModel.AttachmentContext $attachmentsContext;
@@ -29,26 +29,26 @@ public final class ChatInputViewModel$sendCommand$commandResendCompressedHandler
     public final /* synthetic */ MessageManager $messageManager;
     public final /* synthetic */ ChatInputViewModel this$0;
 
-    /* JADX INFO: renamed from: com.discord.widgets.chat.input.ChatInputViewModel$sendCommand$commandResendCompressedHandler$1$1, reason: invalid class name */
+    /* JADX INFO: renamed from: com.discord.widgets.chat.input.ChatInputViewModel$sendCommand$commandResendCompressedHandler$1$1 */
     /* JADX INFO: compiled from: ChatInputViewModel.kt */
-    public static final class AnonymousClass1 extends Lambda implements Function1<List<? extends Attachment<?>>, Unit> {
-        public AnonymousClass1() {
+    public static final class C76941 extends AbstractC12240o implements Function1<List<? extends Attachment<?>>, Unit> {
+        public C76941() {
             super(1);
         }
 
         @Override // kotlin.jvm.functions.Function1
         public /* bridge */ /* synthetic */ Unit invoke(List<? extends Attachment<?>> list) {
             invoke2(list);
-            return Unit.a;
+            return Unit.f27425a;
         }
 
         /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
         public final void invoke2(List<? extends Attachment<?>> list) {
             Object next;
-            Intrinsics3.checkNotNullParameter(list, "compressedAttachments");
+            C12238m.checkNotNullParameter(list, "compressedAttachments");
             LinkedHashMap linkedHashMap = new LinkedHashMap();
             for (Object obj : list) {
-                Unit unit = Unit.a;
+                Unit unit = Unit.f27425a;
                 Object arrayList = linkedHashMap.get(unit);
                 if (arrayList == null) {
                     arrayList = new ArrayList();
@@ -69,7 +69,7 @@ public final class ChatInputViewModel$sendCommand$commandResendCompressedHandler
                 linkedHashMap2.put(key, next);
             }
             ChatInputViewModel$sendCommand$commandResendCompressedHandler$1 chatInputViewModel$sendCommand$commandResendCompressedHandler$1 = ChatInputViewModel$sendCommand$commandResendCompressedHandler$1.this;
-            chatInputViewModel$sendCommand$commandResendCompressedHandler$1.this$0.sendCommand(chatInputViewModel$sendCommand$commandResendCompressedHandler$1.$context, chatInputViewModel$sendCommand$commandResendCompressedHandler$1.$messageManager, chatInputViewModel$sendCommand$commandResendCompressedHandler$1.$applicationCommandData, linkedHashMap2, (64 & 16) != 0 ? false : chatInputViewModel$sendCommand$commandResendCompressedHandler$1.$autocomplete, (64 & 32) != 0 ? false : true, (64 & 64) != 0 ? ChatInputViewModel.AnonymousClass1.INSTANCE : null);
+            chatInputViewModel$sendCommand$commandResendCompressedHandler$1.this$0.sendCommand(chatInputViewModel$sendCommand$commandResendCompressedHandler$1.$context, chatInputViewModel$sendCommand$commandResendCompressedHandler$1.$messageManager, chatInputViewModel$sendCommand$commandResendCompressedHandler$1.$applicationCommandData, linkedHashMap2, (64 & 16) != 0 ? false : chatInputViewModel$sendCommand$commandResendCompressedHandler$1.$autocomplete, (64 & 32) != 0 ? false : true, (64 & 64) != 0 ? ChatInputViewModel.C76931.INSTANCE : null);
         }
     }
 
@@ -88,11 +88,11 @@ public final class ChatInputViewModel$sendCommand$commandResendCompressedHandler
     @Override // kotlin.jvm.functions.Function0
     public /* bridge */ /* synthetic */ Unit invoke() {
         invoke2();
-        return Unit.a;
+        return Unit.f27425a;
     }
 
     /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
     public final void invoke2() {
-        SendUtils.INSTANCE.compressImageAttachments(this.$context, this.$attachmentsContext.getAttachments(), new AnonymousClass1());
+        SendUtils.INSTANCE.compressImageAttachments(this.$context, this.$attachmentsContext.getAttachments(), new C76941());
     }
 }

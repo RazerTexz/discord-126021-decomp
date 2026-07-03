@@ -1,14 +1,14 @@
 package com.discord.analytics.generated.events;
 
-import b.d.b.a.outline;
 import com.discord.analytics.generated.traits.TrackBase;
-import com.discord.analytics.generated.traits.TrackBase2;
+import com.discord.analytics.generated.traits.TrackBaseReceiver;
 import com.discord.api.science.AnalyticsSchema;
-import d0.z.d.Intrinsics3;
+import p007b.p100d.p104b.p105a.C1643a;
+import p507d0.p592z.p594d.C12238m;
 
 /* JADX INFO: compiled from: TrackOverlayHooked.kt */
 /* JADX INFO: loaded from: classes.dex */
-public final /* data */ class TrackOverlayHooked implements AnalyticsSchema, TrackBase2 {
+public final /* data */ class TrackOverlayHooked implements AnalyticsSchema, TrackBaseReceiver {
     private TrackBase trackBase;
     private final CharSequence nonce = null;
     private final CharSequence graphicsApi = null;
@@ -28,7 +28,7 @@ public final /* data */ class TrackOverlayHooked implements AnalyticsSchema, Tra
             return false;
         }
         TrackOverlayHooked trackOverlayHooked = (TrackOverlayHooked) other;
-        return Intrinsics3.areEqual(this.nonce, trackOverlayHooked.nonce) && Intrinsics3.areEqual(this.graphicsApi, trackOverlayHooked.graphicsApi);
+        return C12238m.areEqual(this.nonce, trackOverlayHooked.nonce) && C12238m.areEqual(this.graphicsApi, trackOverlayHooked.graphicsApi);
     }
 
     public int hashCode() {
@@ -39,9 +39,9 @@ public final /* data */ class TrackOverlayHooked implements AnalyticsSchema, Tra
     }
 
     public String toString() {
-        StringBuilder sbU = outline.U("TrackOverlayHooked(nonce=");
-        sbU.append(this.nonce);
-        sbU.append(", graphicsApi=");
-        return outline.E(sbU, this.graphicsApi, ")");
+        StringBuilder sbM833U = C1643a.m833U("TrackOverlayHooked(nonce=");
+        sbM833U.append(this.nonce);
+        sbM833U.append(", graphicsApi=");
+        return C1643a.m817E(sbM833U, this.graphicsApi, ")");
     }
 }

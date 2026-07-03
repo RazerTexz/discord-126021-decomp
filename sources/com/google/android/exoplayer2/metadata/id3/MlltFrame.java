@@ -3,19 +3,30 @@ package com.google.android.exoplayer2.metadata.id3;
 import android.os.Parcel;
 import android.os.Parcelable;
 import androidx.annotation.Nullable;
-import b.i.a.c.f3.Util2;
 import java.util.Arrays;
+import p007b.p225i.p226a.p242c.p259f3.C2738e0;
 
 /* JADX INFO: loaded from: classes3.dex */
 public final class MlltFrame extends Id3Frame {
-    public static final Parcelable.Creator<MlltFrame> CREATOR = new a();
-    public final int k;
-    public final int l;
-    public final int m;
-    public final int[] n;
-    public final int[] o;
+    public static final Parcelable.Creator<MlltFrame> CREATOR = new C10733a();
 
-    public class a implements Parcelable.Creator<MlltFrame> {
+    /* JADX INFO: renamed from: k */
+    public final int f19993k;
+
+    /* JADX INFO: renamed from: l */
+    public final int f19994l;
+
+    /* JADX INFO: renamed from: m */
+    public final int f19995m;
+
+    /* JADX INFO: renamed from: n */
+    public final int[] f19996n;
+
+    /* JADX INFO: renamed from: o */
+    public final int[] f19997o;
+
+    /* JADX INFO: renamed from: com.google.android.exoplayer2.metadata.id3.MlltFrame$a */
+    public class C10733a implements Parcelable.Creator<MlltFrame> {
         @Override // android.os.Parcelable.Creator
         public MlltFrame createFromParcel(Parcel parcel) {
             return new MlltFrame(parcel);
@@ -29,11 +40,11 @@ public final class MlltFrame extends Id3Frame {
 
     public MlltFrame(int i, int i2, int i3, int[] iArr, int[] iArr2) {
         super("MLLT");
-        this.k = i;
-        this.l = i2;
-        this.m = i3;
-        this.n = iArr;
-        this.o = iArr2;
+        this.f19993k = i;
+        this.f19994l = i2;
+        this.f19995m = i3;
+        this.f19996n = iArr;
+        this.f19997o = iArr2;
     }
 
     @Override // com.google.android.exoplayer2.metadata.id3.Id3Frame, android.os.Parcelable
@@ -49,30 +60,30 @@ public final class MlltFrame extends Id3Frame {
             return false;
         }
         MlltFrame mlltFrame = (MlltFrame) obj;
-        return this.k == mlltFrame.k && this.l == mlltFrame.l && this.m == mlltFrame.m && Arrays.equals(this.n, mlltFrame.n) && Arrays.equals(this.o, mlltFrame.o);
+        return this.f19993k == mlltFrame.f19993k && this.f19994l == mlltFrame.f19994l && this.f19995m == mlltFrame.f19995m && Arrays.equals(this.f19996n, mlltFrame.f19996n) && Arrays.equals(this.f19997o, mlltFrame.f19997o);
     }
 
     public int hashCode() {
-        return Arrays.hashCode(this.o) + ((Arrays.hashCode(this.n) + ((((((527 + this.k) * 31) + this.l) * 31) + this.m) * 31)) * 31);
+        return Arrays.hashCode(this.f19997o) + ((Arrays.hashCode(this.f19996n) + ((((((527 + this.f19993k) * 31) + this.f19994l) * 31) + this.f19995m) * 31)) * 31);
     }
 
     @Override // android.os.Parcelable
     public void writeToParcel(Parcel parcel, int i) {
-        parcel.writeInt(this.k);
-        parcel.writeInt(this.l);
-        parcel.writeInt(this.m);
-        parcel.writeIntArray(this.n);
-        parcel.writeIntArray(this.o);
+        parcel.writeInt(this.f19993k);
+        parcel.writeInt(this.f19994l);
+        parcel.writeInt(this.f19995m);
+        parcel.writeIntArray(this.f19996n);
+        parcel.writeIntArray(this.f19997o);
     }
 
     public MlltFrame(Parcel parcel) {
         super("MLLT");
-        this.k = parcel.readInt();
-        this.l = parcel.readInt();
-        this.m = parcel.readInt();
+        this.f19993k = parcel.readInt();
+        this.f19994l = parcel.readInt();
+        this.f19995m = parcel.readInt();
         int[] iArrCreateIntArray = parcel.createIntArray();
-        int i = Util2.a;
-        this.n = iArrCreateIntArray;
-        this.o = parcel.createIntArray();
+        int i = C2738e0.f6708a;
+        this.f19996n = iArrCreateIntArray;
+        this.f19997o = parcel.createIntArray();
     }
 }

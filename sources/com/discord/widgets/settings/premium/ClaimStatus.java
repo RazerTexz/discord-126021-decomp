@@ -1,14 +1,14 @@
 package com.discord.widgets.settings.premium;
 
-import a0.a.a.b;
 import android.os.Parcel;
 import android.os.Parcelable;
-import b.d.b.a.outline;
 import com.discord.api.utcdatetime.UtcDateTime;
 import com.discord.models.domain.ModelAuditLogEntry;
-import com.discord.utilities.Parcelers;
-import d0.z.d.Intrinsics3;
+import com.discord.utilities.UtcDateTimeParceler;
 import kotlin.jvm.internal.DefaultConstructorMarker;
+import p001a0.p002a.p003a.C0002b;
+import p007b.p100d.p104b.p105a.C1643a;
+import p507d0.p592z.p594d.C12238m;
 
 /* JADX INFO: compiled from: ClaimStatus.kt */
 /* JADX INFO: loaded from: classes2.dex */
@@ -27,8 +27,8 @@ public abstract class ClaimStatus implements Parcelable {
             /* JADX WARN: Can't rename method to resolve collision */
             @Override // android.os.Parcelable.Creator
             public final Claimed createFromParcel(Parcel parcel) {
-                Intrinsics3.checkNotNullParameter(parcel, "in");
-                return new Claimed(parcel.readLong(), parcel.readString(), parcel.readString(), parcel.readString(), Parcelers.INSTANCE.create(parcel));
+                C12238m.checkNotNullParameter(parcel, "in");
+                return new Claimed(parcel.readLong(), parcel.readString(), parcel.readString(), parcel.readString(), UtcDateTimeParceler.INSTANCE.create(parcel));
             }
 
             /* JADX WARN: Can't rename method to resolve collision */
@@ -41,10 +41,10 @@ public abstract class ClaimStatus implements Parcelable {
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
         public Claimed(long j, String str, String str2, String str3, UtcDateTime utcDateTime) {
             super(null);
-            Intrinsics3.checkNotNullParameter(str, ModelAuditLogEntry.CHANGE_KEY_CODE);
-            Intrinsics3.checkNotNullParameter(str2, "body");
-            Intrinsics3.checkNotNullParameter(str3, "link");
-            Intrinsics3.checkNotNullParameter(utcDateTime, "redeemBy");
+            C12238m.checkNotNullParameter(str, ModelAuditLogEntry.CHANGE_KEY_CODE);
+            C12238m.checkNotNullParameter(str2, "body");
+            C12238m.checkNotNullParameter(str3, "link");
+            C12238m.checkNotNullParameter(utcDateTime, "redeemBy");
             this.promoId = j;
             this.code = str;
             this.body = str2;
@@ -101,10 +101,10 @@ public abstract class ClaimStatus implements Parcelable {
         }
 
         public final Claimed copy(long promoId, String code, String body, String link, UtcDateTime redeemBy) {
-            Intrinsics3.checkNotNullParameter(code, ModelAuditLogEntry.CHANGE_KEY_CODE);
-            Intrinsics3.checkNotNullParameter(body, "body");
-            Intrinsics3.checkNotNullParameter(link, "link");
-            Intrinsics3.checkNotNullParameter(redeemBy, "redeemBy");
+            C12238m.checkNotNullParameter(code, ModelAuditLogEntry.CHANGE_KEY_CODE);
+            C12238m.checkNotNullParameter(body, "body");
+            C12238m.checkNotNullParameter(link, "link");
+            C12238m.checkNotNullParameter(redeemBy, "redeemBy");
             return new Claimed(promoId, code, body, link, redeemBy);
         }
 
@@ -121,7 +121,7 @@ public abstract class ClaimStatus implements Parcelable {
                 return false;
             }
             Claimed claimed = (Claimed) other;
-            return this.promoId == claimed.promoId && Intrinsics3.areEqual(this.code, claimed.code) && Intrinsics3.areEqual(this.body, claimed.body) && Intrinsics3.areEqual(this.link, claimed.link) && Intrinsics3.areEqual(this.redeemBy, claimed.redeemBy);
+            return this.promoId == claimed.promoId && C12238m.areEqual(this.code, claimed.code) && C12238m.areEqual(this.body, claimed.body) && C12238m.areEqual(this.link, claimed.link) && C12238m.areEqual(this.redeemBy, claimed.redeemBy);
         }
 
         public final String getBody() {
@@ -145,9 +145,9 @@ public abstract class ClaimStatus implements Parcelable {
         }
 
         public int hashCode() {
-            int iA = b.a(this.promoId) * 31;
+            int iM3a = C0002b.m3a(this.promoId) * 31;
             String str = this.code;
-            int iHashCode = (iA + (str != null ? str.hashCode() : 0)) * 31;
+            int iHashCode = (iM3a + (str != null ? str.hashCode() : 0)) * 31;
             String str2 = this.body;
             int iHashCode2 = (iHashCode + (str2 != null ? str2.hashCode() : 0)) * 31;
             String str3 = this.link;
@@ -157,28 +157,28 @@ public abstract class ClaimStatus implements Parcelable {
         }
 
         public String toString() {
-            StringBuilder sbU = outline.U("Claimed(promoId=");
-            sbU.append(this.promoId);
-            sbU.append(", code=");
-            sbU.append(this.code);
-            sbU.append(", body=");
-            sbU.append(this.body);
-            sbU.append(", link=");
-            sbU.append(this.link);
-            sbU.append(", redeemBy=");
-            sbU.append(this.redeemBy);
-            sbU.append(")");
-            return sbU.toString();
+            StringBuilder sbM833U = C1643a.m833U("Claimed(promoId=");
+            sbM833U.append(this.promoId);
+            sbM833U.append(", code=");
+            sbM833U.append(this.code);
+            sbM833U.append(", body=");
+            sbM833U.append(this.body);
+            sbM833U.append(", link=");
+            sbM833U.append(this.link);
+            sbM833U.append(", redeemBy=");
+            sbM833U.append(this.redeemBy);
+            sbM833U.append(")");
+            return sbM833U.toString();
         }
 
         @Override // android.os.Parcelable
         public void writeToParcel(Parcel parcel, int flags) {
-            Intrinsics3.checkNotNullParameter(parcel, "parcel");
+            C12238m.checkNotNullParameter(parcel, "parcel");
             parcel.writeLong(this.promoId);
             parcel.writeString(this.code);
             parcel.writeString(this.body);
             parcel.writeString(this.link);
-            Parcelers.INSTANCE.write(this.redeemBy, parcel, flags);
+            UtcDateTimeParceler.INSTANCE.write(this.redeemBy, parcel, flags);
         }
     }
 
@@ -192,8 +192,8 @@ public abstract class ClaimStatus implements Parcelable {
             /* JADX WARN: Can't rename method to resolve collision */
             @Override // android.os.Parcelable.Creator
             public final Unclaimed createFromParcel(Parcel parcel) {
-                Intrinsics3.checkNotNullParameter(parcel, "in");
-                return new Unclaimed(parcel.readLong(), Parcelers.INSTANCE.create(parcel));
+                C12238m.checkNotNullParameter(parcel, "in");
+                return new Unclaimed(parcel.readLong(), UtcDateTimeParceler.INSTANCE.create(parcel));
             }
 
             /* JADX WARN: Can't rename method to resolve collision */
@@ -206,7 +206,7 @@ public abstract class ClaimStatus implements Parcelable {
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
         public Unclaimed(long j, UtcDateTime utcDateTime) {
             super(null);
-            Intrinsics3.checkNotNullParameter(utcDateTime, "claimBy");
+            C12238m.checkNotNullParameter(utcDateTime, "claimBy");
             this.promoId = j;
             this.claimBy = utcDateTime;
         }
@@ -232,7 +232,7 @@ public abstract class ClaimStatus implements Parcelable {
         }
 
         public final Unclaimed copy(long promoId, UtcDateTime claimBy) {
-            Intrinsics3.checkNotNullParameter(claimBy, "claimBy");
+            C12238m.checkNotNullParameter(claimBy, "claimBy");
             return new Unclaimed(promoId, claimBy);
         }
 
@@ -249,7 +249,7 @@ public abstract class ClaimStatus implements Parcelable {
                 return false;
             }
             Unclaimed unclaimed = (Unclaimed) other;
-            return this.promoId == unclaimed.promoId && Intrinsics3.areEqual(this.claimBy, unclaimed.claimBy);
+            return this.promoId == unclaimed.promoId && C12238m.areEqual(this.claimBy, unclaimed.claimBy);
         }
 
         public final UtcDateTime getClaimBy() {
@@ -261,25 +261,25 @@ public abstract class ClaimStatus implements Parcelable {
         }
 
         public int hashCode() {
-            int iA = b.a(this.promoId) * 31;
+            int iM3a = C0002b.m3a(this.promoId) * 31;
             UtcDateTime utcDateTime = this.claimBy;
-            return iA + (utcDateTime != null ? utcDateTime.hashCode() : 0);
+            return iM3a + (utcDateTime != null ? utcDateTime.hashCode() : 0);
         }
 
         public String toString() {
-            StringBuilder sbU = outline.U("Unclaimed(promoId=");
-            sbU.append(this.promoId);
-            sbU.append(", claimBy=");
-            sbU.append(this.claimBy);
-            sbU.append(")");
-            return sbU.toString();
+            StringBuilder sbM833U = C1643a.m833U("Unclaimed(promoId=");
+            sbM833U.append(this.promoId);
+            sbM833U.append(", claimBy=");
+            sbM833U.append(this.claimBy);
+            sbM833U.append(")");
+            return sbM833U.toString();
         }
 
         @Override // android.os.Parcelable
         public void writeToParcel(Parcel parcel, int flags) {
-            Intrinsics3.checkNotNullParameter(parcel, "parcel");
+            C12238m.checkNotNullParameter(parcel, "parcel");
             parcel.writeLong(this.promoId);
-            Parcelers.INSTANCE.write(this.claimBy, parcel, flags);
+            UtcDateTimeParceler.INSTANCE.write(this.claimBy, parcel, flags);
         }
     }
 

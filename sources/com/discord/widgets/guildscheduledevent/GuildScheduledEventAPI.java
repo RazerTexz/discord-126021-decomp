@@ -4,7 +4,7 @@ import com.discord.api.guildscheduledevent.GuildScheduledEventStatus;
 import com.discord.restapi.RestAPIParams;
 import com.discord.utilities.rest.RestAPI;
 import kotlin.Unit;
-import rx.Observable;
+import p658rx.Observable;
 
 /* JADX INFO: compiled from: GuildScheduledEventAPI.kt */
 /* JADX INFO: loaded from: classes2.dex */

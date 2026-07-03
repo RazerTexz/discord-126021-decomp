@@ -1,9 +1,9 @@
 package com.discord.api.report;
 
-import b.d.b.a.outline;
 import com.discord.models.domain.ModelAuditLogEntry;
-import d0.z.d.Intrinsics3;
 import java.util.Map;
+import p007b.p100d.p104b.p105a.C1643a;
+import p507d0.p592z.p594d.C12238m;
 
 /* JADX INFO: compiled from: InAppReportsMenu.kt */
 /* JADX INFO: loaded from: classes.dex */
@@ -27,7 +27,8 @@ public final /* data */ class MenuAPIResponse {
         return this.name;
     }
 
-    public final Map<Integer, ReportNode> c() {
+    /* JADX INFO: renamed from: c */
+    public final Map<Integer, ReportNode> m8161c() {
         return this.nodes;
     }
 
@@ -49,7 +50,7 @@ public final /* data */ class MenuAPIResponse {
             return false;
         }
         MenuAPIResponse menuAPIResponse = (MenuAPIResponse) other;
-        return Intrinsics3.areEqual(this.name, menuAPIResponse.name) && Intrinsics3.areEqual(this.variant, menuAPIResponse.variant) && Intrinsics3.areEqual(this.version, menuAPIResponse.version) && Intrinsics3.areEqual(this.language, menuAPIResponse.language) && this.success_node_id == menuAPIResponse.success_node_id && this.root_node_id == menuAPIResponse.root_node_id && Intrinsics3.areEqual(this.postback_url, menuAPIResponse.postback_url) && Intrinsics3.areEqual(this.nodes, menuAPIResponse.nodes);
+        return C12238m.areEqual(this.name, menuAPIResponse.name) && C12238m.areEqual(this.variant, menuAPIResponse.variant) && C12238m.areEqual(this.version, menuAPIResponse.version) && C12238m.areEqual(this.language, menuAPIResponse.language) && this.success_node_id == menuAPIResponse.success_node_id && this.root_node_id == menuAPIResponse.root_node_id && C12238m.areEqual(this.postback_url, menuAPIResponse.postback_url) && C12238m.areEqual(this.nodes, menuAPIResponse.nodes);
     }
 
     /* JADX INFO: renamed from: f, reason: from getter */
@@ -78,21 +79,21 @@ public final /* data */ class MenuAPIResponse {
     }
 
     public String toString() {
-        StringBuilder sbU = outline.U("MenuAPIResponse(name=");
-        sbU.append(this.name);
-        sbU.append(", variant=");
-        sbU.append(this.variant);
-        sbU.append(", version=");
-        sbU.append(this.version);
-        sbU.append(", language=");
-        sbU.append(this.language);
-        sbU.append(", success_node_id=");
-        sbU.append(this.success_node_id);
-        sbU.append(", root_node_id=");
-        sbU.append(this.root_node_id);
-        sbU.append(", postback_url=");
-        sbU.append(this.postback_url);
-        sbU.append(", nodes=");
-        return outline.M(sbU, this.nodes, ")");
+        StringBuilder sbM833U = C1643a.m833U("MenuAPIResponse(name=");
+        sbM833U.append(this.name);
+        sbM833U.append(", variant=");
+        sbM833U.append(this.variant);
+        sbM833U.append(", version=");
+        sbM833U.append(this.version);
+        sbM833U.append(", language=");
+        sbM833U.append(this.language);
+        sbM833U.append(", success_node_id=");
+        sbM833U.append(this.success_node_id);
+        sbM833U.append(", root_node_id=");
+        sbM833U.append(this.root_node_id);
+        sbM833U.append(", postback_url=");
+        sbM833U.append(this.postback_url);
+        sbM833U.append(", nodes=");
+        return C1643a.m825M(sbM833U, this.nodes, ")");
     }
 }

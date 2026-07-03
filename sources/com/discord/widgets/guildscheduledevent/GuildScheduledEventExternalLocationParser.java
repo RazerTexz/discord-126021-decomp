@@ -1,7 +1,6 @@
 package com.discord.widgets.guildscheduledevent;
 
 import android.content.Context;
-import b.d.b.a.outline;
 import com.discord.models.domain.ModelAuditLogEntry;
 import com.discord.simpleast.core.node.Node;
 import com.discord.simpleast.core.parser.Parser;
@@ -10,11 +9,12 @@ import com.discord.utilities.textprocessing.MessageParseState;
 import com.discord.utilities.textprocessing.MessageRenderContext;
 import com.discord.widgets.guildscheduledevent.GuildScheduledEventLocationInfo;
 import com.facebook.drawee.span.DraweeSpanStringBuilder;
-import d0.LazyJVM;
-import d0.z.d.Intrinsics3;
 import kotlin.Lazy;
 import kotlin.NoWhenBranchMatchedException;
 import kotlin.jvm.internal.DefaultConstructorMarker;
+import p007b.p100d.p104b.p105a.C1643a;
+import p507d0.C12083g;
+import p507d0.p592z.p594d.C12238m;
 
 /* JADX INFO: compiled from: GuildScheduledEventExternalLocationParser.kt */
 /* JADX INFO: loaded from: classes2.dex */
@@ -22,7 +22,7 @@ public final class GuildScheduledEventExternalLocationParser {
 
     /* JADX INFO: renamed from: Companion, reason: from kotlin metadata */
     public static final Companion INSTANCE = new Companion(null);
-    private static final Lazy PARSER$delegate = LazyJVM.lazy(GuildScheduledEventExternalLocationParser2.INSTANCE);
+    private static final Lazy PARSER$delegate = C12083g.lazy(GuildScheduledEventExternalLocationParser$Companion$PARSER$2.INSTANCE);
     private Cache cache = new Cache("", "");
 
     /* JADX INFO: compiled from: GuildScheduledEventExternalLocationParser.kt */
@@ -31,8 +31,8 @@ public final class GuildScheduledEventExternalLocationParser {
         private final CharSequence output;
 
         public Cache(String str, CharSequence charSequence) {
-            Intrinsics3.checkNotNullParameter(str, ModelAuditLogEntry.CHANGE_KEY_LOCATION);
-            Intrinsics3.checkNotNullParameter(charSequence, "output");
+            C12238m.checkNotNullParameter(str, ModelAuditLogEntry.CHANGE_KEY_LOCATION);
+            C12238m.checkNotNullParameter(charSequence, "output");
             this.location = str;
             this.output = charSequence;
         }
@@ -58,8 +58,8 @@ public final class GuildScheduledEventExternalLocationParser {
         }
 
         public final Cache copy(String location, CharSequence output) {
-            Intrinsics3.checkNotNullParameter(location, ModelAuditLogEntry.CHANGE_KEY_LOCATION);
-            Intrinsics3.checkNotNullParameter(output, "output");
+            C12238m.checkNotNullParameter(location, ModelAuditLogEntry.CHANGE_KEY_LOCATION);
+            C12238m.checkNotNullParameter(output, "output");
             return new Cache(location, output);
         }
 
@@ -71,7 +71,7 @@ public final class GuildScheduledEventExternalLocationParser {
                 return false;
             }
             Cache cache = (Cache) other;
-            return Intrinsics3.areEqual(this.location, cache.location) && Intrinsics3.areEqual(this.output, cache.output);
+            return C12238m.areEqual(this.location, cache.location) && C12238m.areEqual(this.output, cache.output);
         }
 
         public final String getLocation() {
@@ -90,10 +90,10 @@ public final class GuildScheduledEventExternalLocationParser {
         }
 
         public String toString() {
-            StringBuilder sbU = outline.U("Cache(location=");
-            sbU.append(this.location);
-            sbU.append(", output=");
-            return outline.E(sbU, this.output, ")");
+            StringBuilder sbM833U = C1643a.m833U("Cache(location=");
+            sbM833U.append(this.location);
+            sbM833U.append(", output=");
+            return C1643a.m817E(sbM833U, this.output, ")");
         }
     }
 
@@ -114,7 +114,7 @@ public final class GuildScheduledEventExternalLocationParser {
     }
 
     private final CharSequence parse(Context context, String location) {
-        if (Intrinsics3.areEqual(this.cache.getLocation(), location)) {
+        if (C12238m.areEqual(this.cache.getLocation(), location)) {
             return this.cache.getOutput();
         }
         DraweeSpanStringBuilder draweeSpanStringBuilderRender = AstRenderer.render(Parser.parse$default(INSTANCE.getPARSER(), location, MessageParseState.INSTANCE.getInitialState(), null, 4, null), new MessageRenderContext(context, 0L, false, null, null, null, 0, null, null, 0, 0, null, null, null, 16376, null));
@@ -123,8 +123,8 @@ public final class GuildScheduledEventExternalLocationParser {
     }
 
     public final CharSequence getTextFromLocation(Context context, GuildScheduledEventLocationInfo locationInfo) {
-        Intrinsics3.checkNotNullParameter(context, "context");
-        Intrinsics3.checkNotNullParameter(locationInfo, "locationInfo");
+        C12238m.checkNotNullParameter(context, "context");
+        C12238m.checkNotNullParameter(locationInfo, "locationInfo");
         if (locationInfo instanceof GuildScheduledEventLocationInfo.ChannelLocation) {
             return locationInfo.getLocationName();
         }

@@ -4,29 +4,29 @@ import android.app.Dialog;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.view.Window;
-import androidx.core.os.Bundle2;
+import androidx.core.os.BundleKt;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentViewModelLazyKt;
-import com.discord.R;
+import com.discord.C5419R;
 import com.discord.app.AppDialog;
 import com.discord.stores.StoreStream;
 import com.discord.utilities.accessibility.AccessibilityUtils;
 import com.discord.utilities.analytics.AnalyticsTracker;
 import com.discord.utilities.error.Error;
-import com.discord.utilities.rx.ObservableExtensionsKt;
-import d0.Tuples;
-import d0.z.d.Intrinsics3;
-import d0.z.d.Lambda;
-import d0.z.d.Reflection2;
+import com.discord.utilities.p501rx.ObservableExtensionsKt;
 import java.util.Objects;
 import kotlin.Lazy;
 import kotlin.Unit;
 import kotlin.jvm.functions.Function0;
 import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.DefaultConstructorMarker;
-import rx.Observable;
-import rx.Subscription;
+import p507d0.C12116o;
+import p507d0.p592z.p594d.AbstractC12240o;
+import p507d0.p592z.p594d.C12216a0;
+import p507d0.p592z.p594d.C12238m;
+import p658rx.Observable;
+import p658rx.Subscription;
 
 /* JADX INFO: compiled from: WidgetGlobalSearchDialog.kt */
 /* JADX INFO: loaded from: classes.dex */
@@ -51,7 +51,7 @@ public final class WidgetGlobalSearchDialog extends AppDialog {
         }
 
         public final void dismiss(FragmentManager fragmentManager) {
-            Intrinsics3.checkNotNullParameter(fragmentManager, "fragmentManager");
+            C12238m.checkNotNullParameter(fragmentManager, "fragmentManager");
             Fragment fragmentFindFragmentByTag = fragmentManager.findFragmentByTag("javaClass");
             if (fragmentFindFragmentByTag == null || !(fragmentFindFragmentByTag instanceof WidgetGlobalSearchDialog)) {
                 return;
@@ -60,10 +60,10 @@ public final class WidgetGlobalSearchDialog extends AppDialog {
         }
 
         public final void show(FragmentManager fragmentManager, String searchText) {
-            Intrinsics3.checkNotNullParameter(fragmentManager, "fragmentManager");
+            C12238m.checkNotNullParameter(fragmentManager, "fragmentManager");
             dismiss(fragmentManager);
             WidgetGlobalSearchDialog widgetGlobalSearchDialog = new WidgetGlobalSearchDialog();
-            widgetGlobalSearchDialog.setArguments(Bundle2.bundleOf(Tuples.to(WidgetGlobalSearch.EXTRA_SEARCH_TEXT, searchText)));
+            widgetGlobalSearchDialog.setArguments(BundleKt.bundleOf(C12116o.m10073to(WidgetGlobalSearch.EXTRA_SEARCH_TEXT, searchText)));
             widgetGlobalSearchDialog.show(fragmentManager, "javaClass");
             AnalyticsTracker.INSTANCE.quickSwitcherOpen();
         }
@@ -73,37 +73,37 @@ public final class WidgetGlobalSearchDialog extends AppDialog {
         }
     }
 
-    /* JADX INFO: renamed from: com.discord.widgets.user.search.WidgetGlobalSearchDialog$onViewBoundOrOnResume$1, reason: invalid class name */
+    /* JADX INFO: renamed from: com.discord.widgets.user.search.WidgetGlobalSearchDialog$onViewBoundOrOnResume$1 */
     /* JADX INFO: compiled from: WidgetGlobalSearchDialog.kt */
-    public static final class AnonymousClass1 extends Lambda implements Function1<Unit, Unit> {
-        public AnonymousClass1() {
+    public static final class C103251 extends AbstractC12240o implements Function1<Unit, Unit> {
+        public C103251() {
             super(1);
         }
 
         @Override // kotlin.jvm.functions.Function1
         public /* bridge */ /* synthetic */ Unit invoke(Unit unit) {
             invoke2(unit);
-            return Unit.a;
+            return Unit.f27425a;
         }
 
         /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
         public final void invoke2(Unit unit) {
-            Intrinsics3.checkNotNullParameter(unit, "it");
+            C12238m.checkNotNullParameter(unit, "it");
             WidgetGlobalSearchDialog.this.dismiss();
         }
     }
 
-    /* JADX INFO: renamed from: com.discord.widgets.user.search.WidgetGlobalSearchDialog$onViewBoundOrOnResume$2, reason: invalid class name */
+    /* JADX INFO: renamed from: com.discord.widgets.user.search.WidgetGlobalSearchDialog$onViewBoundOrOnResume$2 */
     /* JADX INFO: compiled from: WidgetGlobalSearchDialog.kt */
-    public static final class AnonymousClass2 extends Lambda implements Function1<Long, Unit> {
-        public AnonymousClass2() {
+    public static final class C103262 extends AbstractC12240o implements Function1<Long, Unit> {
+        public C103262() {
             super(1);
         }
 
         @Override // kotlin.jvm.functions.Function1
         public /* bridge */ /* synthetic */ Unit invoke(Long l) {
             invoke2(l);
-            return Unit.a;
+            return Unit.f27425a;
         }
 
         /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
@@ -113,8 +113,8 @@ public final class WidgetGlobalSearchDialog extends AppDialog {
     }
 
     public WidgetGlobalSearchDialog() {
-        super(R.layout.widget_global_search_dialog);
-        this.dismissViewModel = FragmentViewModelLazyKt.createViewModelLazy(this, Reflection2.getOrCreateKotlinClass(WidgetGlobalSearchDismissModel.class), new WidgetGlobalSearchDialog$$special$$inlined$activityViewModels$1(this), new WidgetGlobalSearchDialog$$special$$inlined$activityViewModels$2(this));
+        super(C5419R.layout.widget_global_search_dialog);
+        this.dismissViewModel = FragmentViewModelLazyKt.createViewModelLazy(this, C12216a0.getOrCreateKotlinClass(WidgetGlobalSearchDismissModel.class), new WidgetGlobalSearchDialog$$special$$inlined$activityViewModels$1(this), new WidgetGlobalSearchDialog$$special$$inlined$activityViewModels$2(this));
     }
 
     private final WidgetGlobalSearchDismissModel getDismissViewModel() {
@@ -122,7 +122,7 @@ public final class WidgetGlobalSearchDialog extends AppDialog {
     }
 
     private final WidgetGlobalSearch getFragment() {
-        Fragment fragmentFindFragmentById = getChildFragmentManager().findFragmentById(R.id.widget_global_search_container);
+        Fragment fragmentFindFragmentById = getChildFragmentManager().findFragmentById(C5419R.id.widget_global_search_container);
         Objects.requireNonNull(fragmentFindFragmentById, "null cannot be cast to non-null type com.discord.widgets.user.search.WidgetGlobalSearch");
         return (WidgetGlobalSearch) fragmentFindFragmentById;
     }
@@ -158,9 +158,9 @@ public final class WidgetGlobalSearchDialog extends AppDialog {
     @Override // com.discord.app.AppDialog
     public void onViewBoundOrOnResume() {
         super.onViewBoundOrOnResume();
-        ObservableExtensionsKt.appSubscribe(ObservableExtensionsKt.ui$default(getDismissViewModel().getDismissEvents(), this, null, 2, null), (Class<?>) WidgetGlobalSearchDialog.class, (58 & 2) != 0 ? null : null, (Function1<? super Subscription, Unit>) ((58 & 4) != 0 ? null : null), (Function1<? super Error, Unit>) ((58 & 8) != 0 ? null : null), (Function0<Unit>) ((58 & 16) != 0 ? ObservableExtensionsKt.AnonymousClass1.INSTANCE : null), (Function0<Unit>) ((58 & 32) != 0 ? ObservableExtensionsKt.AnonymousClass2.INSTANCE : null), new AnonymousClass1());
-        Observable observableS = ObservableExtensionsKt.computationLatest(StoreStream.INSTANCE.getChannelsSelected().observeId()).r().S(1);
-        Intrinsics3.checkNotNullExpressionValue(observableS, "StoreStream\n        .get…hanged()\n        .skip(1)");
-        ObservableExtensionsKt.appSubscribe(ObservableExtensionsKt.ui$default(observableS, this, null, 2, null), (Class<?>) WidgetGlobalSearchDialog.class, (58 & 2) != 0 ? null : null, (Function1<? super Subscription, Unit>) ((58 & 4) != 0 ? null : null), (Function1<? super Error, Unit>) ((58 & 8) != 0 ? null : null), (Function0<Unit>) ((58 & 16) != 0 ? ObservableExtensionsKt.AnonymousClass1.INSTANCE : null), (Function0<Unit>) ((58 & 32) != 0 ? ObservableExtensionsKt.AnonymousClass2.INSTANCE : null), new AnonymousClass2());
+        ObservableExtensionsKt.appSubscribe(ObservableExtensionsKt.ui$default(getDismissViewModel().getDismissEvents(), this, null, 2, null), (Class<?>) WidgetGlobalSearchDialog.class, (58 & 2) != 0 ? null : null, (Function1<? super Subscription, Unit>) ((58 & 4) != 0 ? null : null), (Function1<? super Error, Unit>) ((58 & 8) != 0 ? null : null), (Function0<Unit>) ((58 & 16) != 0 ? ObservableExtensionsKt.C68791.INSTANCE : null), (Function0<Unit>) ((58 & 32) != 0 ? ObservableExtensionsKt.C68802.INSTANCE : null), new C103251());
+        Observable observableM11093S = ObservableExtensionsKt.computationLatest(StoreStream.INSTANCE.getChannelsSelected().observeId()).m11112r().m11093S(1);
+        C12238m.checkNotNullExpressionValue(observableM11093S, "StoreStream\n        .get…hanged()\n        .skip(1)");
+        ObservableExtensionsKt.appSubscribe(ObservableExtensionsKt.ui$default(observableM11093S, this, null, 2, null), (Class<?>) WidgetGlobalSearchDialog.class, (58 & 2) != 0 ? null : null, (Function1<? super Subscription, Unit>) ((58 & 4) != 0 ? null : null), (Function1<? super Error, Unit>) ((58 & 8) != 0 ? null : null), (Function0<Unit>) ((58 & 16) != 0 ? ObservableExtensionsKt.C68791.INSTANCE : null), (Function0<Unit>) ((58 & 32) != 0 ? ObservableExtensionsKt.C68802.INSTANCE : null), new C103262());
     }
 }

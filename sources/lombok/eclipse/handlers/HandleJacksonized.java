@@ -34,9 +34,9 @@ public class HandleJacksonized extends EclipseAnnotationHandler<Jacksonized> {
     public void handle(AnnotationValues<Jacksonized> annotation, Annotation ast, EclipseNode annotationNode) {
         EclipseNode tdNode;
         HandlerUtil.handleExperimentalFlagUsage(annotationNode, ConfigurationKeys.JACKSONIZED_FLAG_USAGE, "@Jacksonized");
-        EclipseNode annotatedNode = annotationNode.up();
+        EclipseNode annotatedNode = annotationNode.m10925up();
         if (annotatedNode.getKind() != AST.Kind.TYPE) {
-            tdNode = annotatedNode.up();
+            tdNode = annotatedNode.m10925up();
         } else {
             tdNode = annotatedNode;
         }

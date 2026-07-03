@@ -80,7 +80,8 @@ public class RtpSender {
         return nativeGetStreams(this.nativeRtpSender);
     }
 
-    public String id() {
+    /* JADX INFO: renamed from: id */
+    public String m11039id() {
         checkRtpSenderExists();
         return nativeGetId(this.nativeRtpSender);
     }

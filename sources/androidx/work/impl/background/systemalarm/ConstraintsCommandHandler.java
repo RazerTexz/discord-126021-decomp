@@ -37,14 +37,14 @@ public class ConstraintsCommandHandler {
         ArrayList arrayList = new ArrayList(scheduledWork.size());
         long jCurrentTimeMillis = System.currentTimeMillis();
         for (WorkSpec workSpec : scheduledWork) {
-            String str = workSpec.f38id;
+            String str = workSpec.f163id;
             if (jCurrentTimeMillis >= workSpec.calculateNextRunTime() && (!workSpec.hasConstraints() || this.mWorkConstraintsTracker.areAllConstraintsMet(str))) {
                 arrayList.add(workSpec);
             }
         }
         Iterator it = arrayList.iterator();
         while (it.hasNext()) {
-            String str2 = ((WorkSpec) it.next()).f38id;
+            String str2 = ((WorkSpec) it.next()).f163id;
             Intent intentCreateDelayMetIntent = CommandHandler.createDelayMetIntent(this.mContext, str2);
             Logger.get().debug(TAG, String.format("Creating a delay_met command for workSpec with id (%s)", str2), new Throwable[0]);
             SystemAlarmDispatcher systemAlarmDispatcher = this.mDispatcher;

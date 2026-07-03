@@ -1,20 +1,20 @@
 package com.discord.analytics.generated.events;
 
-import b.d.b.a.outline;
 import com.discord.analytics.generated.traits.TrackBase;
-import com.discord.analytics.generated.traits.TrackBase2;
+import com.discord.analytics.generated.traits.TrackBaseReceiver;
 import com.discord.analytics.generated.traits.TrackChannel;
-import com.discord.analytics.generated.traits.TrackChannel2;
+import com.discord.analytics.generated.traits.TrackChannelReceiver;
 import com.discord.analytics.generated.traits.TrackGuild;
-import com.discord.analytics.generated.traits.TrackGuild2;
+import com.discord.analytics.generated.traits.TrackGuildReceiver;
 import com.discord.analytics.generated.traits.TrackLocationMetadata;
-import com.discord.analytics.generated.traits.TrackLocationMetadata2;
+import com.discord.analytics.generated.traits.TrackLocationMetadataReceiver;
 import com.discord.api.science.AnalyticsSchema;
-import d0.z.d.Intrinsics3;
+import p007b.p100d.p104b.p105a.C1643a;
+import p507d0.p592z.p594d.C12238m;
 
 /* JADX INFO: compiled from: TrackNotificationSettingsUpdated.kt */
 /* JADX INFO: loaded from: classes.dex */
-public final /* data */ class TrackNotificationSettingsUpdated implements AnalyticsSchema, TrackBase2, TrackGuild2, TrackChannel2, TrackLocationMetadata2 {
+public final /* data */ class TrackNotificationSettingsUpdated implements AnalyticsSchema, TrackBaseReceiver, TrackGuildReceiver, TrackChannelReceiver, TrackLocationMetadataReceiver {
     private TrackBase trackBase;
     private TrackChannel trackChannel;
     private TrackGuild trackGuild;
@@ -36,14 +36,15 @@ public final /* data */ class TrackNotificationSettingsUpdated implements Analyt
     private final Long guildNotifyHighlights = null;
     private final transient String analyticsSchemaTypeName = "notification_settings_updated";
 
-    @Override // com.discord.analytics.generated.traits.TrackGuild2
+    @Override // com.discord.analytics.generated.traits.TrackGuildReceiver
     /* JADX INFO: renamed from: a, reason: from getter */
     public TrackGuild getTrackGuild() {
         return this.trackGuild;
     }
 
-    @Override // com.discord.analytics.generated.traits.TrackGuild2
-    public void c(TrackGuild trackGuild) {
+    @Override // com.discord.analytics.generated.traits.TrackGuildReceiver
+    /* JADX INFO: renamed from: c */
+    public void mo7508c(TrackGuild trackGuild) {
         this.trackGuild = trackGuild;
     }
 
@@ -61,7 +62,7 @@ public final /* data */ class TrackNotificationSettingsUpdated implements Analyt
             return false;
         }
         TrackNotificationSettingsUpdated trackNotificationSettingsUpdated = (TrackNotificationSettingsUpdated) other;
-        return Intrinsics3.areEqual(this.updateType, trackNotificationSettingsUpdated.updateType) && Intrinsics3.areEqual(this.guildSuppressEveryone, trackNotificationSettingsUpdated.guildSuppressEveryone) && Intrinsics3.areEqual(this.guildSuppressRoles, trackNotificationSettingsUpdated.guildSuppressRoles) && Intrinsics3.areEqual(this.guildIsMuted, trackNotificationSettingsUpdated.guildIsMuted) && Intrinsics3.areEqual(this.guildMutedUntil, trackNotificationSettingsUpdated.guildMutedUntil) && Intrinsics3.areEqual(this.guildReceiveMobilePush, trackNotificationSettingsUpdated.guildReceiveMobilePush) && Intrinsics3.areEqual(this.guildMessageNotificationSettings, trackNotificationSettingsUpdated.guildMessageNotificationSettings) && Intrinsics3.areEqual(this.parentId, trackNotificationSettingsUpdated.parentId) && Intrinsics3.areEqual(this.channelIsOverridden, trackNotificationSettingsUpdated.channelIsOverridden) && Intrinsics3.areEqual(this.channelIsMuted, trackNotificationSettingsUpdated.channelIsMuted) && Intrinsics3.areEqual(this.channeMutedUntil, trackNotificationSettingsUpdated.channeMutedUntil) && Intrinsics3.areEqual(this.channelMutedUntil, trackNotificationSettingsUpdated.channelMutedUntil) && Intrinsics3.areEqual(this.channelMessageNotificationSettings, trackNotificationSettingsUpdated.channelMessageNotificationSettings) && Intrinsics3.areEqual(this.guildScheduledEventsMuted, trackNotificationSettingsUpdated.guildScheduledEventsMuted) && Intrinsics3.areEqual(this.guildNotifyHighlights, trackNotificationSettingsUpdated.guildNotifyHighlights);
+        return C12238m.areEqual(this.updateType, trackNotificationSettingsUpdated.updateType) && C12238m.areEqual(this.guildSuppressEveryone, trackNotificationSettingsUpdated.guildSuppressEveryone) && C12238m.areEqual(this.guildSuppressRoles, trackNotificationSettingsUpdated.guildSuppressRoles) && C12238m.areEqual(this.guildIsMuted, trackNotificationSettingsUpdated.guildIsMuted) && C12238m.areEqual(this.guildMutedUntil, trackNotificationSettingsUpdated.guildMutedUntil) && C12238m.areEqual(this.guildReceiveMobilePush, trackNotificationSettingsUpdated.guildReceiveMobilePush) && C12238m.areEqual(this.guildMessageNotificationSettings, trackNotificationSettingsUpdated.guildMessageNotificationSettings) && C12238m.areEqual(this.parentId, trackNotificationSettingsUpdated.parentId) && C12238m.areEqual(this.channelIsOverridden, trackNotificationSettingsUpdated.channelIsOverridden) && C12238m.areEqual(this.channelIsMuted, trackNotificationSettingsUpdated.channelIsMuted) && C12238m.areEqual(this.channeMutedUntil, trackNotificationSettingsUpdated.channeMutedUntil) && C12238m.areEqual(this.channelMutedUntil, trackNotificationSettingsUpdated.channelMutedUntil) && C12238m.areEqual(this.channelMessageNotificationSettings, trackNotificationSettingsUpdated.channelMessageNotificationSettings) && C12238m.areEqual(this.guildScheduledEventsMuted, trackNotificationSettingsUpdated.guildScheduledEventsMuted) && C12238m.areEqual(this.guildNotifyHighlights, trackNotificationSettingsUpdated.guildNotifyHighlights);
     }
 
     public int hashCode() {
@@ -98,35 +99,35 @@ public final /* data */ class TrackNotificationSettingsUpdated implements Analyt
     }
 
     public String toString() {
-        StringBuilder sbU = outline.U("TrackNotificationSettingsUpdated(updateType=");
-        sbU.append(this.updateType);
-        sbU.append(", guildSuppressEveryone=");
-        sbU.append(this.guildSuppressEveryone);
-        sbU.append(", guildSuppressRoles=");
-        sbU.append(this.guildSuppressRoles);
-        sbU.append(", guildIsMuted=");
-        sbU.append(this.guildIsMuted);
-        sbU.append(", guildMutedUntil=");
-        sbU.append(this.guildMutedUntil);
-        sbU.append(", guildReceiveMobilePush=");
-        sbU.append(this.guildReceiveMobilePush);
-        sbU.append(", guildMessageNotificationSettings=");
-        sbU.append(this.guildMessageNotificationSettings);
-        sbU.append(", parentId=");
-        sbU.append(this.parentId);
-        sbU.append(", channelIsOverridden=");
-        sbU.append(this.channelIsOverridden);
-        sbU.append(", channelIsMuted=");
-        sbU.append(this.channelIsMuted);
-        sbU.append(", channeMutedUntil=");
-        sbU.append(this.channeMutedUntil);
-        sbU.append(", channelMutedUntil=");
-        sbU.append(this.channelMutedUntil);
-        sbU.append(", channelMessageNotificationSettings=");
-        sbU.append(this.channelMessageNotificationSettings);
-        sbU.append(", guildScheduledEventsMuted=");
-        sbU.append(this.guildScheduledEventsMuted);
-        sbU.append(", guildNotifyHighlights=");
-        return outline.G(sbU, this.guildNotifyHighlights, ")");
+        StringBuilder sbM833U = C1643a.m833U("TrackNotificationSettingsUpdated(updateType=");
+        sbM833U.append(this.updateType);
+        sbM833U.append(", guildSuppressEveryone=");
+        sbM833U.append(this.guildSuppressEveryone);
+        sbM833U.append(", guildSuppressRoles=");
+        sbM833U.append(this.guildSuppressRoles);
+        sbM833U.append(", guildIsMuted=");
+        sbM833U.append(this.guildIsMuted);
+        sbM833U.append(", guildMutedUntil=");
+        sbM833U.append(this.guildMutedUntil);
+        sbM833U.append(", guildReceiveMobilePush=");
+        sbM833U.append(this.guildReceiveMobilePush);
+        sbM833U.append(", guildMessageNotificationSettings=");
+        sbM833U.append(this.guildMessageNotificationSettings);
+        sbM833U.append(", parentId=");
+        sbM833U.append(this.parentId);
+        sbM833U.append(", channelIsOverridden=");
+        sbM833U.append(this.channelIsOverridden);
+        sbM833U.append(", channelIsMuted=");
+        sbM833U.append(this.channelIsMuted);
+        sbM833U.append(", channeMutedUntil=");
+        sbM833U.append(this.channeMutedUntil);
+        sbM833U.append(", channelMutedUntil=");
+        sbM833U.append(this.channelMutedUntil);
+        sbM833U.append(", channelMessageNotificationSettings=");
+        sbM833U.append(this.channelMessageNotificationSettings);
+        sbM833U.append(", guildScheduledEventsMuted=");
+        sbM833U.append(this.guildScheduledEventsMuted);
+        sbM833U.append(", guildNotifyHighlights=");
+        return C1643a.m819G(sbM833U, this.guildNotifyHighlights, ")");
     }
 }

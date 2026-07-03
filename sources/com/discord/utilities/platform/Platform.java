@@ -3,16 +3,16 @@ package com.discord.utilities.platform;
 import androidx.annotation.AttrRes;
 import androidx.annotation.ColorRes;
 import androidx.annotation.DrawableRes;
-import b.d.b.a.outline;
-import com.discord.R;
+import com.discord.C5419R;
 import com.discord.api.activity.ActivityPlatform;
 import com.discord.api.connectedaccounts.ConnectedAccount;
-import d0.g0.Strings4;
-import d0.z.d.Intrinsics3;
 import java.util.Locale;
 import java.util.Objects;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import org.objectweb.asm.Opcodes;
+import p007b.p100d.p104b.p105a.C1643a;
+import p507d0.p579g0.C12106w;
+import p507d0.p592z.p594d.C12238m;
 
 /* JADX WARN: Enum visitor error
 jadx.core.utils.exceptions.JadxRuntimeException: Init of enum field 'BATTLENET' uses external variables
@@ -103,16 +103,16 @@ public final class Platform {
         }
 
         public final Platform from(String platformName) {
-            Intrinsics3.checkNotNullParameter(platformName, "platformName");
+            C12238m.checkNotNullParameter(platformName, "platformName");
             try {
-                String string = Strings4.trim(platformName).toString();
+                String string = C12106w.trim(platformName).toString();
                 Locale locale = Locale.ENGLISH;
-                Intrinsics3.checkNotNullExpressionValue(locale, "Locale.ENGLISH");
+                C12238m.checkNotNullExpressionValue(locale, "Locale.ENGLISH");
                 if (string == null) {
                     throw new NullPointerException("null cannot be cast to non-null type java.lang.String");
                 }
                 String upperCase = string.toUpperCase(locale);
-                Intrinsics3.checkNotNullExpressionValue(upperCase, "(this as java.lang.String).toUpperCase(locale)");
+                C12238m.checkNotNullExpressionValue(upperCase, "(this as java.lang.String).toUpperCase(locale)");
                 return Platform.valueOf(upperCase);
             } catch (Exception unused) {
                 return Platform.NONE;
@@ -120,7 +120,7 @@ public final class Platform {
         }
 
         public final Platform from(ConnectedAccount connectedAccount) {
-            Intrinsics3.checkNotNullParameter(connectedAccount, "connectedAccount");
+            C12238m.checkNotNullParameter(connectedAccount, "connectedAccount");
             return from(connectedAccount.getType());
         }
     }
@@ -144,41 +144,41 @@ public final class Platform {
 
     static {
         boolean z2 = false;
-        Platform platform = new Platform("BATTLENET", 0, "Battle.net", Integer.valueOf(R.color.battlenet), Integer.valueOf(R.attr.ic_account_battlenet), Integer.valueOf(R.drawable.ic_account_battlenet_white_24dp), false, false, z2, 112, null);
+        Platform platform = new Platform("BATTLENET", 0, "Battle.net", Integer.valueOf(C5419R.color.battlenet), Integer.valueOf(C5419R.attr.ic_account_battlenet), Integer.valueOf(C5419R.drawable.ic_account_battlenet_white_24dp), false, false, z2, 112, null);
         BATTLENET = platform;
-        Platform platform2 = new Platform("FACEBOOK", 1, "Facebook", Integer.valueOf(R.color.facebook), Integer.valueOf(R.attr.ic_account_facebook), Integer.valueOf(R.drawable.ic_account_facebook_white_24dp), false, false, true, 48, null);
+        Platform platform2 = new Platform("FACEBOOK", 1, "Facebook", Integer.valueOf(C5419R.color.facebook), Integer.valueOf(C5419R.attr.ic_account_facebook), Integer.valueOf(C5419R.drawable.ic_account_facebook_white_24dp), false, false, true, 48, null);
         FACEBOOK = platform2;
         boolean z3 = false;
         DefaultConstructorMarker defaultConstructorMarker = null;
-        Platform platform3 = new Platform("GITHUB", 2, "GitHub", Integer.valueOf(R.color.github), Integer.valueOf(R.attr.ic_account_github), Integer.valueOf(R.drawable.ic_account_github_white_24dp), z2, z3, true, 48, defaultConstructorMarker);
+        Platform platform3 = new Platform("GITHUB", 2, "GitHub", Integer.valueOf(C5419R.color.github), Integer.valueOf(C5419R.attr.ic_account_github), Integer.valueOf(C5419R.drawable.ic_account_github_white_24dp), z2, z3, true, 48, defaultConstructorMarker);
         GITHUB = platform3;
-        Platform platform4 = new Platform("LEAGUEOFLEGENDS", 3, "League of Legends", Integer.valueOf(R.color.league_of_legends), Integer.valueOf(R.attr.ic_account_league_of_legends), Integer.valueOf(R.drawable.ic_account_league_of_legends_white_24dp), z2, z3, false, 112, defaultConstructorMarker);
+        Platform platform4 = new Platform("LEAGUEOFLEGENDS", 3, "League of Legends", Integer.valueOf(C5419R.color.league_of_legends), Integer.valueOf(C5419R.attr.ic_account_league_of_legends), Integer.valueOf(C5419R.drawable.ic_account_league_of_legends_white_24dp), z2, z3, false, 112, defaultConstructorMarker);
         LEAGUEOFLEGENDS = platform4;
         boolean z4 = true;
-        Platform platform5 = new Platform("PLAYSTATION", 4, "PlayStation Network", Integer.valueOf(R.color.playstation), Integer.valueOf(R.attr.ic_account_playstation), Integer.valueOf(R.drawable.ic_account_playstation_white_24dp), z2, true, z4, 16, defaultConstructorMarker);
+        Platform platform5 = new Platform("PLAYSTATION", 4, "PlayStation Network", Integer.valueOf(C5419R.color.playstation), Integer.valueOf(C5419R.attr.ic_account_playstation), Integer.valueOf(C5419R.drawable.ic_account_playstation_white_24dp), z2, true, z4, 16, defaultConstructorMarker);
         PLAYSTATION = platform5;
-        Platform platform6 = new Platform("REDDIT", 5, "Reddit", Integer.valueOf(R.color.reddit), Integer.valueOf(R.attr.ic_account_reddit), Integer.valueOf(R.drawable.ic_account_reddit_white_24dp), z2, false, z4, 48, defaultConstructorMarker);
+        Platform platform6 = new Platform("REDDIT", 5, "Reddit", Integer.valueOf(C5419R.color.reddit), Integer.valueOf(C5419R.attr.ic_account_reddit), Integer.valueOf(C5419R.drawable.ic_account_reddit_white_24dp), z2, false, z4, 48, defaultConstructorMarker);
         REDDIT = platform6;
         boolean z5 = false;
-        Platform platform7 = new Platform("SAMSUNG", 6, "Samsung Galaxy", null, Integer.valueOf(R.attr.ic_account_samsung), Integer.valueOf(R.drawable.ic_account_samsung_white_24dp), z2, true, z5, 82, defaultConstructorMarker);
+        Platform platform7 = new Platform("SAMSUNG", 6, "Samsung Galaxy", null, Integer.valueOf(C5419R.attr.ic_account_samsung), Integer.valueOf(C5419R.drawable.ic_account_samsung_white_24dp), z2, true, z5, 82, defaultConstructorMarker);
         SAMSUNG = platform7;
-        Platform platform8 = new Platform("SKYPE", 7, "Skype", Integer.valueOf(R.color.skype), Integer.valueOf(R.attr.ic_account_skype), Integer.valueOf(R.drawable.ic_account_skype_white_24dp), z2, false, z5, 112, defaultConstructorMarker);
+        Platform platform8 = new Platform("SKYPE", 7, "Skype", Integer.valueOf(C5419R.color.skype), Integer.valueOf(C5419R.attr.ic_account_skype), Integer.valueOf(C5419R.drawable.ic_account_skype_white_24dp), z2, false, z5, 112, defaultConstructorMarker);
         SKYPE = platform8;
         boolean z6 = true;
-        Platform platform9 = new Platform("SPOTIFY", 8, "Spotify", Integer.valueOf(R.color.spotify), Integer.valueOf(R.attr.ic_account_spotify), Integer.valueOf(R.drawable.ic_account_spotify_white_24dp), z2, true, z6, 16, defaultConstructorMarker);
+        Platform platform9 = new Platform("SPOTIFY", 8, "Spotify", Integer.valueOf(C5419R.color.spotify), Integer.valueOf(C5419R.attr.ic_account_spotify), Integer.valueOf(C5419R.drawable.ic_account_spotify_white_24dp), z2, true, z6, 16, defaultConstructorMarker);
         SPOTIFY = platform9;
         boolean z7 = false;
         int i = 48;
-        Platform platform10 = new Platform("STEAM", 9, "Steam", Integer.valueOf(R.color.steam), Integer.valueOf(R.attr.ic_account_steam), Integer.valueOf(R.drawable.ic_account_steam_white_24dp), z2, z7, z6, i, defaultConstructorMarker);
+        Platform platform10 = new Platform("STEAM", 9, "Steam", Integer.valueOf(C5419R.color.steam), Integer.valueOf(C5419R.attr.ic_account_steam), Integer.valueOf(C5419R.drawable.ic_account_steam_white_24dp), z2, z7, z6, i, defaultConstructorMarker);
         STEAM = platform10;
-        Platform platform11 = new Platform("TWITCH", 10, "Twitch", Integer.valueOf(R.color.twitch), Integer.valueOf(R.attr.ic_account_twitch), Integer.valueOf(R.drawable.ic_account_twitch_white_24dp), z2, z7, z6, i, defaultConstructorMarker);
+        Platform platform11 = new Platform("TWITCH", 10, "Twitch", Integer.valueOf(C5419R.color.twitch), Integer.valueOf(C5419R.attr.ic_account_twitch), Integer.valueOf(C5419R.drawable.ic_account_twitch_white_24dp), z2, z7, z6, i, defaultConstructorMarker);
         TWITCH = platform11;
-        Platform platform12 = new Platform("TWITTER", 11, "Twitter", Integer.valueOf(R.color.twitter), Integer.valueOf(R.attr.ic_account_twitter), Integer.valueOf(R.drawable.ic_account_twitter_white_24dp), z2, z7, z6, i, defaultConstructorMarker);
+        Platform platform12 = new Platform("TWITTER", 11, "Twitter", Integer.valueOf(C5419R.color.twitter), Integer.valueOf(C5419R.attr.ic_account_twitter), Integer.valueOf(C5419R.drawable.ic_account_twitter_white_24dp), z2, z7, z6, i, defaultConstructorMarker);
         TWITTER = platform12;
-        Platform platform13 = new Platform("XBOX", 12, "Xbox", Integer.valueOf(R.color.xbox), Integer.valueOf(R.attr.ic_account_xbox), Integer.valueOf(R.drawable.ic_account_xbox_white_24dp), z2, true, z6, 16, defaultConstructorMarker);
+        Platform platform13 = new Platform("XBOX", 12, "Xbox", Integer.valueOf(C5419R.color.xbox), Integer.valueOf(C5419R.attr.ic_account_xbox), Integer.valueOf(C5419R.drawable.ic_account_xbox_white_24dp), z2, true, z6, 16, defaultConstructorMarker);
         XBOX = platform13;
         boolean z8 = false;
-        Platform platform14 = new Platform("YOUTUBE", 13, "YouTube", Integer.valueOf(R.color.youtube), Integer.valueOf(R.attr.ic_account_youtube), Integer.valueOf(R.drawable.ic_account_youtube_white_24dp), z2, z8, z6, 48, defaultConstructorMarker);
+        Platform platform14 = new Platform("YOUTUBE", 13, "YouTube", Integer.valueOf(C5419R.color.youtube), Integer.valueOf(C5419R.attr.ic_account_youtube), Integer.valueOf(C5419R.drawable.ic_account_youtube_white_24dp), z2, z8, z6, 48, defaultConstructorMarker);
         YOUTUBE = platform14;
         Platform platform15 = new Platform("NONE", 14, null, null, null, null, z2, z8, false, Opcodes.LAND, defaultConstructorMarker);
         NONE = platform15;
@@ -197,10 +197,10 @@ public final class Platform {
         this.enabled = z4;
         String strName = name();
         Locale locale = Locale.ENGLISH;
-        Intrinsics3.checkNotNullExpressionValue(locale, "Locale.ENGLISH");
+        C12238m.checkNotNullExpressionValue(locale, "Locale.ENGLISH");
         Objects.requireNonNull(strName, "null cannot be cast to non-null type java.lang.String");
         String lowerCase = strName.toLowerCase(locale);
-        Intrinsics3.checkNotNullExpressionValue(lowerCase, "(this as java.lang.String).toLowerCase(locale)");
+        C12238m.checkNotNullExpressionValue(lowerCase, "(this as java.lang.String).toLowerCase(locale)");
         this.platformId = lowerCase;
     }
 
@@ -245,40 +245,40 @@ public final class Platform {
     }
 
     public final String getProfileUrl(ConnectedAccount connectedAccount) {
-        Intrinsics3.checkNotNullParameter(connectedAccount, "connectedAccount");
+        C12238m.checkNotNullParameter(connectedAccount, "connectedAccount");
         int iOrdinal = ordinal();
         if (iOrdinal == 2) {
-            StringBuilder sbU = outline.U("https://github.com/");
-            sbU.append(connectedAccount.getName());
-            return sbU.toString();
+            StringBuilder sbM833U = C1643a.m833U("https://github.com/");
+            sbM833U.append(connectedAccount.getName());
+            return sbM833U.toString();
         }
         if (iOrdinal == 5) {
-            StringBuilder sbU2 = outline.U("https://reddit.com/u/");
-            sbU2.append(connectedAccount.getName());
-            return sbU2.toString();
+            StringBuilder sbM833U2 = C1643a.m833U("https://reddit.com/u/");
+            sbM833U2.append(connectedAccount.getName());
+            return sbM833U2.toString();
         }
         if (iOrdinal == 13) {
-            StringBuilder sbU3 = outline.U("https://youtube.com/channel/");
-            sbU3.append(connectedAccount.getId());
-            return sbU3.toString();
+            StringBuilder sbM833U3 = C1643a.m833U("https://youtube.com/channel/");
+            sbM833U3.append(connectedAccount.getId());
+            return sbM833U3.toString();
         }
         switch (iOrdinal) {
             case 8:
-                StringBuilder sbU4 = outline.U("https://open.spotify.com/user/");
-                sbU4.append(connectedAccount.getId());
-                return sbU4.toString();
+                StringBuilder sbM833U4 = C1643a.m833U("https://open.spotify.com/user/");
+                sbM833U4.append(connectedAccount.getId());
+                return sbM833U4.toString();
             case 9:
-                StringBuilder sbU5 = outline.U("https://steamcommunity.com/profiles/");
-                sbU5.append(connectedAccount.getId());
-                return sbU5.toString();
+                StringBuilder sbM833U5 = C1643a.m833U("https://steamcommunity.com/profiles/");
+                sbM833U5.append(connectedAccount.getId());
+                return sbM833U5.toString();
             case 10:
-                StringBuilder sbU6 = outline.U("https://twitch.tv/");
-                sbU6.append(connectedAccount.getName());
-                return sbU6.toString();
+                StringBuilder sbM833U6 = C1643a.m833U("https://twitch.tv/");
+                sbM833U6.append(connectedAccount.getName());
+                return sbM833U6.toString();
             case 11:
-                StringBuilder sbU7 = outline.U("https://www.twitter.com/");
-                sbU7.append(connectedAccount.getName());
-                return sbU7.toString();
+                StringBuilder sbM833U7 = C1643a.m833U("https://www.twitter.com/");
+                sbM833U7.append(connectedAccount.getName());
+                return sbM833U7.toString();
             default:
                 return null;
         }

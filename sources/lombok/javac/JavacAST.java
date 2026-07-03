@@ -210,7 +210,7 @@ public class JavacAST extends AST<JavacAST, JavacNode, JCTree> {
     }
 
     public JavacTreeMaker getTreeMaker() {
-        this.treeMaker.at(-1);
+        this.treeMaker.m10939at(-1);
         return this.treeMaker;
     }
 

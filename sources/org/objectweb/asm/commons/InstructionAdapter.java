@@ -316,10 +316,10 @@ public class InstructionAdapter extends MethodVisitor {
                 and(Type.LONG_TYPE);
                 return;
             case 128:
-                or(Type.INT_TYPE);
+                m11013or(Type.INT_TYPE);
                 return;
             case Opcodes.LOR /* 129 */:
-                or(Type.LONG_TYPE);
+                m11013or(Type.LONG_TYPE);
                 return;
             case 130:
                 xor(Type.INT_TYPE);
@@ -752,175 +752,176 @@ public class InstructionAdapter extends MethodVisitor {
     }
 
     public void nop() {
-        this.mv.visitInsn(0);
+        this.f27600mv.visitInsn(0);
     }
 
     public void aconst(Object value) {
         if (value == null) {
-            this.mv.visitInsn(1);
+            this.f27600mv.visitInsn(1);
         } else {
-            this.mv.visitLdcInsn(value);
+            this.f27600mv.visitLdcInsn(value);
         }
     }
 
     public void iconst(int intValue) {
         if (intValue >= -1 && intValue <= 5) {
-            this.mv.visitInsn(3 + intValue);
+            this.f27600mv.visitInsn(3 + intValue);
             return;
         }
         if (intValue >= -128 && intValue <= 127) {
-            this.mv.visitIntInsn(16, intValue);
+            this.f27600mv.visitIntInsn(16, intValue);
         } else if (intValue >= -32768 && intValue <= 32767) {
-            this.mv.visitIntInsn(17, intValue);
+            this.f27600mv.visitIntInsn(17, intValue);
         } else {
-            this.mv.visitLdcInsn(Integer.valueOf(intValue));
+            this.f27600mv.visitLdcInsn(Integer.valueOf(intValue));
         }
     }
 
     public void lconst(long longValue) {
         if (longValue == 0 || longValue == 1) {
-            this.mv.visitInsn(9 + ((int) longValue));
+            this.f27600mv.visitInsn(9 + ((int) longValue));
         } else {
-            this.mv.visitLdcInsn(Long.valueOf(longValue));
+            this.f27600mv.visitLdcInsn(Long.valueOf(longValue));
         }
     }
 
     public void fconst(float floatValue) {
         int bits = Float.floatToIntBits(floatValue);
         if (bits == 0 || bits == 1065353216 || bits == 1073741824) {
-            this.mv.visitInsn(11 + ((int) floatValue));
+            this.f27600mv.visitInsn(11 + ((int) floatValue));
         } else {
-            this.mv.visitLdcInsn(Float.valueOf(floatValue));
+            this.f27600mv.visitLdcInsn(Float.valueOf(floatValue));
         }
     }
 
     public void dconst(double doubleValue) {
         long bits = Double.doubleToLongBits(doubleValue);
         if (bits == 0 || bits == 4607182418800017408L) {
-            this.mv.visitInsn(14 + ((int) doubleValue));
+            this.f27600mv.visitInsn(14 + ((int) doubleValue));
         } else {
-            this.mv.visitLdcInsn(Double.valueOf(doubleValue));
+            this.f27600mv.visitLdcInsn(Double.valueOf(doubleValue));
         }
     }
 
     public void tconst(Type type) {
-        this.mv.visitLdcInsn(type);
+        this.f27600mv.visitLdcInsn(type);
     }
 
     public void hconst(Handle handle) {
-        this.mv.visitLdcInsn(handle);
+        this.f27600mv.visitLdcInsn(handle);
     }
 
     public void cconst(ConstantDynamic constantDynamic) {
-        this.mv.visitLdcInsn(constantDynamic);
+        this.f27600mv.visitLdcInsn(constantDynamic);
     }
 
     public void load(int var, Type type) {
-        this.mv.visitVarInsn(type.getOpcode(21), var);
+        this.f27600mv.visitVarInsn(type.getOpcode(21), var);
     }
 
     public void aload(Type type) {
-        this.mv.visitInsn(type.getOpcode(46));
+        this.f27600mv.visitInsn(type.getOpcode(46));
     }
 
     public void store(int var, Type type) {
-        this.mv.visitVarInsn(type.getOpcode(54), var);
+        this.f27600mv.visitVarInsn(type.getOpcode(54), var);
     }
 
     public void astore(Type type) {
-        this.mv.visitInsn(type.getOpcode(79));
+        this.f27600mv.visitInsn(type.getOpcode(79));
     }
 
     public void pop() {
-        this.mv.visitInsn(87);
+        this.f27600mv.visitInsn(87);
     }
 
     public void pop2() {
-        this.mv.visitInsn(88);
+        this.f27600mv.visitInsn(88);
     }
 
     public void dup() {
-        this.mv.visitInsn(89);
+        this.f27600mv.visitInsn(89);
     }
 
     public void dup2() {
-        this.mv.visitInsn(92);
+        this.f27600mv.visitInsn(92);
     }
 
     public void dupX1() {
-        this.mv.visitInsn(90);
+        this.f27600mv.visitInsn(90);
     }
 
     public void dupX2() {
-        this.mv.visitInsn(91);
+        this.f27600mv.visitInsn(91);
     }
 
     public void dup2X1() {
-        this.mv.visitInsn(93);
+        this.f27600mv.visitInsn(93);
     }
 
     public void dup2X2() {
-        this.mv.visitInsn(94);
+        this.f27600mv.visitInsn(94);
     }
 
     public void swap() {
-        this.mv.visitInsn(95);
+        this.f27600mv.visitInsn(95);
     }
 
     public void add(Type type) {
-        this.mv.visitInsn(type.getOpcode(96));
+        this.f27600mv.visitInsn(type.getOpcode(96));
     }
 
     public void sub(Type type) {
-        this.mv.visitInsn(type.getOpcode(100));
+        this.f27600mv.visitInsn(type.getOpcode(100));
     }
 
     public void mul(Type type) {
-        this.mv.visitInsn(type.getOpcode(104));
+        this.f27600mv.visitInsn(type.getOpcode(104));
     }
 
     public void div(Type type) {
-        this.mv.visitInsn(type.getOpcode(108));
+        this.f27600mv.visitInsn(type.getOpcode(108));
     }
 
     public void rem(Type type) {
-        this.mv.visitInsn(type.getOpcode(112));
+        this.f27600mv.visitInsn(type.getOpcode(112));
     }
 
     public void neg(Type type) {
-        this.mv.visitInsn(type.getOpcode(116));
+        this.f27600mv.visitInsn(type.getOpcode(116));
     }
 
     public void shl(Type type) {
-        this.mv.visitInsn(type.getOpcode(120));
+        this.f27600mv.visitInsn(type.getOpcode(120));
     }
 
     public void shr(Type type) {
-        this.mv.visitInsn(type.getOpcode(122));
+        this.f27600mv.visitInsn(type.getOpcode(122));
     }
 
     public void ushr(Type type) {
-        this.mv.visitInsn(type.getOpcode(124));
+        this.f27600mv.visitInsn(type.getOpcode(124));
     }
 
     public void and(Type type) {
-        this.mv.visitInsn(type.getOpcode(126));
+        this.f27600mv.visitInsn(type.getOpcode(126));
     }
 
-    public void or(Type type) {
-        this.mv.visitInsn(type.getOpcode(128));
+    /* JADX INFO: renamed from: or */
+    public void m11013or(Type type) {
+        this.f27600mv.visitInsn(type.getOpcode(128));
     }
 
     public void xor(Type type) {
-        this.mv.visitInsn(type.getOpcode(130));
+        this.f27600mv.visitInsn(type.getOpcode(130));
     }
 
     public void iinc(int var, int increment) {
-        this.mv.visitIincInsn(var, increment);
+        this.f27600mv.visitIincInsn(var, increment);
     }
 
     public void cast(Type from, Type to) {
-        cast(this.mv, from, to);
+        cast(this.f27600mv, from, to);
     }
 
     static void cast(MethodVisitor methodVisitor, Type from, Type to) {
@@ -987,111 +988,111 @@ public class InstructionAdapter extends MethodVisitor {
     }
 
     public void lcmp() {
-        this.mv.visitInsn(Opcodes.LCMP);
+        this.f27600mv.visitInsn(Opcodes.LCMP);
     }
 
     public void cmpl(Type type) {
-        this.mv.visitInsn(type == Type.FLOAT_TYPE ? Opcodes.FCMPL : Opcodes.DCMPL);
+        this.f27600mv.visitInsn(type == Type.FLOAT_TYPE ? Opcodes.FCMPL : Opcodes.DCMPL);
     }
 
     public void cmpg(Type type) {
-        this.mv.visitInsn(type == Type.FLOAT_TYPE ? 150 : Opcodes.DCMPG);
+        this.f27600mv.visitInsn(type == Type.FLOAT_TYPE ? 150 : Opcodes.DCMPG);
     }
 
     public void ifeq(Label label) {
-        this.mv.visitJumpInsn(153, label);
+        this.f27600mv.visitJumpInsn(153, label);
     }
 
     public void ifne(Label label) {
-        this.mv.visitJumpInsn(154, label);
+        this.f27600mv.visitJumpInsn(154, label);
     }
 
     public void iflt(Label label) {
-        this.mv.visitJumpInsn(155, label);
+        this.f27600mv.visitJumpInsn(155, label);
     }
 
     public void ifge(Label label) {
-        this.mv.visitJumpInsn(156, label);
+        this.f27600mv.visitJumpInsn(156, label);
     }
 
     public void ifgt(Label label) {
-        this.mv.visitJumpInsn(157, label);
+        this.f27600mv.visitJumpInsn(157, label);
     }
 
     public void ifle(Label label) {
-        this.mv.visitJumpInsn(158, label);
+        this.f27600mv.visitJumpInsn(158, label);
     }
 
     public void ificmpeq(Label label) {
-        this.mv.visitJumpInsn(Opcodes.IF_ICMPEQ, label);
+        this.f27600mv.visitJumpInsn(Opcodes.IF_ICMPEQ, label);
     }
 
     public void ificmpne(Label label) {
-        this.mv.visitJumpInsn(Opcodes.IF_ICMPNE, label);
+        this.f27600mv.visitJumpInsn(Opcodes.IF_ICMPNE, label);
     }
 
     public void ificmplt(Label label) {
-        this.mv.visitJumpInsn(Opcodes.IF_ICMPLT, label);
+        this.f27600mv.visitJumpInsn(Opcodes.IF_ICMPLT, label);
     }
 
     public void ificmpge(Label label) {
-        this.mv.visitJumpInsn(Opcodes.IF_ICMPGE, label);
+        this.f27600mv.visitJumpInsn(Opcodes.IF_ICMPGE, label);
     }
 
     public void ificmpgt(Label label) {
-        this.mv.visitJumpInsn(Opcodes.IF_ICMPGT, label);
+        this.f27600mv.visitJumpInsn(Opcodes.IF_ICMPGT, label);
     }
 
     public void ificmple(Label label) {
-        this.mv.visitJumpInsn(Opcodes.IF_ICMPLE, label);
+        this.f27600mv.visitJumpInsn(Opcodes.IF_ICMPLE, label);
     }
 
     public void ifacmpeq(Label label) {
-        this.mv.visitJumpInsn(Opcodes.IF_ACMPEQ, label);
+        this.f27600mv.visitJumpInsn(Opcodes.IF_ACMPEQ, label);
     }
 
     public void ifacmpne(Label label) {
-        this.mv.visitJumpInsn(Opcodes.IF_ACMPNE, label);
+        this.f27600mv.visitJumpInsn(Opcodes.IF_ACMPNE, label);
     }
 
     public void goTo(Label label) {
-        this.mv.visitJumpInsn(Opcodes.GOTO, label);
+        this.f27600mv.visitJumpInsn(Opcodes.GOTO, label);
     }
 
     public void jsr(Label label) {
-        this.mv.visitJumpInsn(Opcodes.JSR, label);
+        this.f27600mv.visitJumpInsn(Opcodes.JSR, label);
     }
 
     public void ret(int var) {
-        this.mv.visitVarInsn(Opcodes.RET, var);
+        this.f27600mv.visitVarInsn(Opcodes.RET, var);
     }
 
     public void tableswitch(int min, int max, Label dflt, Label... labels) {
-        this.mv.visitTableSwitchInsn(min, max, dflt, labels);
+        this.f27600mv.visitTableSwitchInsn(min, max, dflt, labels);
     }
 
     public void lookupswitch(Label dflt, int[] keys, Label[] labels) {
-        this.mv.visitLookupSwitchInsn(dflt, keys, labels);
+        this.f27600mv.visitLookupSwitchInsn(dflt, keys, labels);
     }
 
     public void areturn(Type type) {
-        this.mv.visitInsn(type.getOpcode(Opcodes.IRETURN));
+        this.f27600mv.visitInsn(type.getOpcode(Opcodes.IRETURN));
     }
 
     public void getstatic(String owner, String name, String descriptor) {
-        this.mv.visitFieldInsn(Opcodes.GETSTATIC, owner, name, descriptor);
+        this.f27600mv.visitFieldInsn(Opcodes.GETSTATIC, owner, name, descriptor);
     }
 
     public void putstatic(String owner, String name, String descriptor) {
-        this.mv.visitFieldInsn(Opcodes.PUTSTATIC, owner, name, descriptor);
+        this.f27600mv.visitFieldInsn(Opcodes.PUTSTATIC, owner, name, descriptor);
     }
 
     public void getfield(String owner, String name, String descriptor) {
-        this.mv.visitFieldInsn(180, owner, name, descriptor);
+        this.f27600mv.visitFieldInsn(180, owner, name, descriptor);
     }
 
     public void putfield(String owner, String name, String descriptor) {
-        this.mv.visitFieldInsn(Opcodes.PUTFIELD, owner, name, descriptor);
+        this.f27600mv.visitFieldInsn(Opcodes.PUTFIELD, owner, name, descriptor);
     }
 
     @Deprecated
@@ -1099,7 +1100,7 @@ public class InstructionAdapter extends MethodVisitor {
         if (this.api >= 327680) {
             invokevirtual(owner, name, descriptor, false);
         } else {
-            this.mv.visitMethodInsn(Opcodes.INVOKEVIRTUAL, owner, name, descriptor);
+            this.f27600mv.visitMethodInsn(Opcodes.INVOKEVIRTUAL, owner, name, descriptor);
         }
     }
 
@@ -1111,7 +1112,7 @@ public class InstructionAdapter extends MethodVisitor {
             invokevirtual(owner, name, descriptor);
             return;
         }
-        this.mv.visitMethodInsn(Opcodes.INVOKEVIRTUAL, owner, name, descriptor, isInterface);
+        this.f27600mv.visitMethodInsn(Opcodes.INVOKEVIRTUAL, owner, name, descriptor, isInterface);
     }
 
     @Deprecated
@@ -1119,7 +1120,7 @@ public class InstructionAdapter extends MethodVisitor {
         if (this.api >= 327680) {
             invokespecial(owner, name, descriptor, false);
         } else {
-            this.mv.visitMethodInsn(Opcodes.INVOKESPECIAL, owner, name, descriptor, false);
+            this.f27600mv.visitMethodInsn(Opcodes.INVOKESPECIAL, owner, name, descriptor, false);
         }
     }
 
@@ -1131,7 +1132,7 @@ public class InstructionAdapter extends MethodVisitor {
             invokespecial(owner, name, descriptor);
             return;
         }
-        this.mv.visitMethodInsn(Opcodes.INVOKESPECIAL, owner, name, descriptor, isInterface);
+        this.f27600mv.visitMethodInsn(Opcodes.INVOKESPECIAL, owner, name, descriptor, isInterface);
     }
 
     @Deprecated
@@ -1139,7 +1140,7 @@ public class InstructionAdapter extends MethodVisitor {
         if (this.api >= 327680) {
             invokestatic(owner, name, descriptor, false);
         } else {
-            this.mv.visitMethodInsn(Opcodes.INVOKESTATIC, owner, name, descriptor, false);
+            this.f27600mv.visitMethodInsn(Opcodes.INVOKESTATIC, owner, name, descriptor, false);
         }
     }
 
@@ -1151,23 +1152,23 @@ public class InstructionAdapter extends MethodVisitor {
             invokestatic(owner, name, descriptor);
             return;
         }
-        this.mv.visitMethodInsn(Opcodes.INVOKESTATIC, owner, name, descriptor, isInterface);
+        this.f27600mv.visitMethodInsn(Opcodes.INVOKESTATIC, owner, name, descriptor, isInterface);
     }
 
     public void invokeinterface(String owner, String name, String descriptor) {
-        this.mv.visitMethodInsn(Opcodes.INVOKEINTERFACE, owner, name, descriptor, true);
+        this.f27600mv.visitMethodInsn(Opcodes.INVOKEINTERFACE, owner, name, descriptor, true);
     }
 
     public void invokedynamic(String name, String descriptor, Handle bootstrapMethodHandle, Object[] bootstrapMethodArguments) {
-        this.mv.visitInvokeDynamicInsn(name, descriptor, bootstrapMethodHandle, bootstrapMethodArguments);
+        this.f27600mv.visitInvokeDynamicInsn(name, descriptor, bootstrapMethodHandle, bootstrapMethodArguments);
     }
 
     public void anew(Type type) {
-        this.mv.visitTypeInsn(Opcodes.NEW, type.getInternalName());
+        this.f27600mv.visitTypeInsn(Opcodes.NEW, type.getInternalName());
     }
 
     public void newarray(Type type) {
-        newarray(this.mv, type);
+        newarray(this.f27600mv, type);
     }
 
     static void newarray(MethodVisitor methodVisitor, Type type) {
@@ -1205,42 +1206,42 @@ public class InstructionAdapter extends MethodVisitor {
     }
 
     public void arraylength() {
-        this.mv.visitInsn(Opcodes.ARRAYLENGTH);
+        this.f27600mv.visitInsn(Opcodes.ARRAYLENGTH);
     }
 
     public void athrow() {
-        this.mv.visitInsn(Opcodes.ATHROW);
+        this.f27600mv.visitInsn(Opcodes.ATHROW);
     }
 
     public void checkcast(Type type) {
-        this.mv.visitTypeInsn(Opcodes.CHECKCAST, type.getInternalName());
+        this.f27600mv.visitTypeInsn(Opcodes.CHECKCAST, type.getInternalName());
     }
 
     public void instanceOf(Type type) {
-        this.mv.visitTypeInsn(Opcodes.INSTANCEOF, type.getInternalName());
+        this.f27600mv.visitTypeInsn(Opcodes.INSTANCEOF, type.getInternalName());
     }
 
     public void monitorenter() {
-        this.mv.visitInsn(Opcodes.MONITORENTER);
+        this.f27600mv.visitInsn(Opcodes.MONITORENTER);
     }
 
     public void monitorexit() {
-        this.mv.visitInsn(Opcodes.MONITOREXIT);
+        this.f27600mv.visitInsn(Opcodes.MONITOREXIT);
     }
 
     public void multianewarray(String descriptor, int numDimensions) {
-        this.mv.visitMultiANewArrayInsn(descriptor, numDimensions);
+        this.f27600mv.visitMultiANewArrayInsn(descriptor, numDimensions);
     }
 
     public void ifnull(Label label) {
-        this.mv.visitJumpInsn(Opcodes.IFNULL, label);
+        this.f27600mv.visitJumpInsn(Opcodes.IFNULL, label);
     }
 
     public void ifnonnull(Label label) {
-        this.mv.visitJumpInsn(Opcodes.IFNONNULL, label);
+        this.f27600mv.visitJumpInsn(Opcodes.IFNONNULL, label);
     }
 
     public void mark(Label label) {
-        this.mv.visitLabel(label);
+        this.f27600mv.visitLabel(label);
     }
 }

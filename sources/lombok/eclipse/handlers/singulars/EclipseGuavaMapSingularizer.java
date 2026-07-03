@@ -9,8 +9,8 @@ import lombok.eclipse.handlers.EclipseSingularsRecipes;
 
 /* JADX INFO: loaded from: app.apk:lombok/eclipse/handlers/singulars/EclipseGuavaMapSingularizer.SCL.lombok */
 public class EclipseGuavaMapSingularizer extends EclipseGuavaSingularizer {
-    private static final LombokImmutableList<String> SUFFIXES = LombokImmutableList.of("key", "value");
-    private static final LombokImmutableList<String> SUPPORTED_TYPES = LombokImmutableList.of("com.google.common.collect.ImmutableMap", "com.google.common.collect.ImmutableBiMap", "com.google.common.collect.ImmutableSortedMap");
+    private static final LombokImmutableList<String> SUFFIXES = LombokImmutableList.m10920of("key", "value");
+    private static final LombokImmutableList<String> SUPPORTED_TYPES = LombokImmutableList.m10921of("com.google.common.collect.ImmutableMap", "com.google.common.collect.ImmutableBiMap", "com.google.common.collect.ImmutableSortedMap");
 
     @Override // lombok.eclipse.handlers.singulars.EclipseGuavaSingularizer, lombok.eclipse.handlers.EclipseSingularsRecipes.EclipseSingularizer
     public /* bridge */ /* synthetic */ List generateFields(EclipseSingularsRecipes.SingularData singularData, EclipseNode eclipseNode) {

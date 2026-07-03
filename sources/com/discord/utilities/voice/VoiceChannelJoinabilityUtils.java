@@ -1,7 +1,5 @@
 package com.discord.utilities.voice;
 
-import b.c.a.a0.AnimatableValueParser;
-import b.d.b.a.outline;
 import com.discord.api.channel.Channel;
 import com.discord.api.channel.ChannelUtils;
 import com.discord.api.guild.GuildMaxVideoChannelUsers;
@@ -19,16 +17,18 @@ import com.discord.stores.StoreVoiceChannelSelected;
 import com.discord.stores.StoreVoiceStates;
 import com.discord.utilities.guilds.GuildVerificationLevelUtils;
 import com.discord.utilities.permissions.PermissionUtils;
-import d0.t.Maps6;
-import d0.z.d.Intrinsics3;
-import j0.k.Func1;
-import j0.l.e.ScalarSynchronousObservable;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Iterator;
 import java.util.Map;
-import rx.Observable;
-import rx.functions.Func6;
+import p007b.p085c.p086a.p087a0.C1460d;
+import p007b.p100d.p104b.p105a.C1643a;
+import p507d0.p580t.C12136h0;
+import p507d0.p592z.p594d.C12238m;
+import p637j0.p641k.InterfaceC12589b;
+import p637j0.p642l.p647e.C12721k;
+import p658rx.Observable;
+import p658rx.functions.Func6;
 
 /* JADX INFO: compiled from: VoiceChannelJoinabilityUtils.kt */
 /* JADX INFO: loaded from: classes2.dex */
@@ -38,24 +38,24 @@ public final class VoiceChannelJoinabilityUtils {
     private VoiceChannelJoinabilityUtils() {
     }
 
-    public final VoiceChannelJoinabilityUtils2 computeJoinability(Channel channel, Collection<VoiceState> channelVoiceStates, Long channelPermissions, GuildMaxVideoChannelUsers guildMaxVideoChannelUsers, GuildVerificationLevel verificationLevelTriggered, Long selectedVoiceChannelId, StageInstance stageInstance) {
+    public final VoiceChannelJoinability computeJoinability(Channel channel, Collection<VoiceState> channelVoiceStates, Long channelPermissions, GuildMaxVideoChannelUsers guildMaxVideoChannelUsers, GuildVerificationLevel verificationLevelTriggered, Long selectedVoiceChannelId, StageInstance stageInstance) {
         boolean z2;
-        Intrinsics3.checkNotNullParameter(channel, "channel");
-        Intrinsics3.checkNotNullParameter(channelVoiceStates, "channelVoiceStates");
-        Intrinsics3.checkNotNullParameter(guildMaxVideoChannelUsers, "guildMaxVideoChannelUsers");
-        Intrinsics3.checkNotNullParameter(verificationLevelTriggered, "verificationLevelTriggered");
-        if (ChannelUtils.B(channel)) {
-            return VoiceChannelJoinabilityUtils2.CAN_JOIN;
+        C12238m.checkNotNullParameter(channel, "channel");
+        C12238m.checkNotNullParameter(channelVoiceStates, "channelVoiceStates");
+        C12238m.checkNotNullParameter(guildMaxVideoChannelUsers, "guildMaxVideoChannelUsers");
+        C12238m.checkNotNullParameter(verificationLevelTriggered, "verificationLevelTriggered");
+        if (ChannelUtils.m7667B(channel)) {
+            return VoiceChannelJoinability.CAN_JOIN;
         }
         long id2 = channel.getId();
         if (selectedVoiceChannelId != null && id2 == selectedVoiceChannelId.longValue()) {
-            return VoiceChannelJoinabilityUtils2.CAN_JOIN;
+            return VoiceChannelJoinability.CAN_JOIN;
         }
         if (!PermissionUtils.can(Permission.CONNECT, channelPermissions)) {
-            return VoiceChannelJoinabilityUtils2.PERMISSIONS_MISSING;
+            return VoiceChannelJoinability.PERMISSIONS_MISSING;
         }
-        if ((verificationLevelTriggered != GuildVerificationLevel.NONE) && (stageInstance == null || !AnimatableValueParser.W0(stageInstance))) {
-            return VoiceChannelJoinabilityUtils2.PERMISSIONS_MISSING;
+        if ((verificationLevelTriggered != GuildVerificationLevel.NONE) && (stageInstance == null || !C1460d.m484W0(stageInstance))) {
+            return VoiceChannelJoinability.PERMISSIONS_MISSING;
         }
         ArrayList arrayList = new ArrayList();
         for (Object obj : channelVoiceStates) {
@@ -82,25 +82,25 @@ public final class VoiceChannelJoinabilityUtils {
         }
         boolean zCan = PermissionUtils.can(Permission.MOVE_MEMBERS, channelPermissions);
         if (size >= (channel.getUserLimit() != 0 ? channel.getUserLimit() : Integer.MAX_VALUE) && !zCan) {
-            return VoiceChannelJoinabilityUtils2.CHANNEL_FULL;
+            return VoiceChannelJoinability.CHANNEL_FULL;
         }
         boolean zCan2 = PermissionUtils.can(8L, channelPermissions);
         if (!(z2 && (guildMaxVideoChannelUsers instanceof GuildMaxVideoChannelUsers.Limited) && size >= ((GuildMaxVideoChannelUsers.Limited) guildMaxVideoChannelUsers).getLimit()) || zCan2) {
-            return VoiceChannelJoinabilityUtils2.CAN_JOIN;
+            return VoiceChannelJoinability.CAN_JOIN;
         }
-        return (((GuildMaxVideoChannelUsers.Limited) guildMaxVideoChannelUsers).getLimit() == size && zCan) ? VoiceChannelJoinabilityUtils2.CAN_JOIN : VoiceChannelJoinabilityUtils2.GUILD_VIDEO_AT_CAPACITY;
+        return (((GuildMaxVideoChannelUsers.Limited) guildMaxVideoChannelUsers).getLimit() == size && zCan) ? VoiceChannelJoinability.CAN_JOIN : VoiceChannelJoinability.GUILD_VIDEO_AT_CAPACITY;
     }
 
-    public final VoiceChannelJoinabilityUtils2 getJoinability(long channelId) {
+    public final VoiceChannelJoinability getJoinability(long channelId) {
         GuildMaxVideoChannelUsers maxVideoChannelUsers;
         StoreStream.Companion companion = StoreStream.INSTANCE;
         Channel channel = companion.getChannels().getChannel(channelId);
         if (channel == null) {
-            return VoiceChannelJoinabilityUtils2.CHANNEL_DOES_NOT_EXIST;
+            return VoiceChannelJoinability.CHANNEL_DOES_NOT_EXIST;
         }
-        Map mapEmptyMap = (Map) outline.c(channel, companion.getVoiceStates().get());
+        Map mapEmptyMap = (Map) C1643a.m843c(channel, companion.getVoiceStates().get());
         if (mapEmptyMap == null) {
-            mapEmptyMap = Maps6.emptyMap();
+            mapEmptyMap = C12136h0.emptyMap();
         }
         Collection collectionValues = mapEmptyMap.values();
         ArrayList arrayList = new ArrayList();
@@ -122,24 +122,24 @@ public final class VoiceChannelJoinabilityUtils {
         return computeJoinability(channel, arrayList, l, maxVideoChannelUsers, verificationLevelTriggered$default, Long.valueOf(selectedVoiceChannelId), stageInstanceForChannel);
     }
 
-    public final Observable<VoiceChannelJoinabilityUtils2> observeJoinability(final long channelId, StoreChannels channelsStore, final StoreGuilds guildsStore, final StorePermissions permissionsStore, final StoreVoiceStates voiceStatesStore, final StoreVoiceChannelSelected voiceChannelSelectedStore, final StoreStageInstances stageInstancesStore) {
-        Intrinsics3.checkNotNullParameter(channelsStore, "channelsStore");
-        Intrinsics3.checkNotNullParameter(guildsStore, "guildsStore");
-        Intrinsics3.checkNotNullParameter(permissionsStore, "permissionsStore");
-        Intrinsics3.checkNotNullParameter(voiceStatesStore, "voiceStatesStore");
-        Intrinsics3.checkNotNullParameter(voiceChannelSelectedStore, "voiceChannelSelectedStore");
-        Intrinsics3.checkNotNullParameter(stageInstancesStore, "stageInstancesStore");
-        Observable observableY = channelsStore.observeChannel(channelId).Y(new Func1<Channel, Observable<? extends VoiceChannelJoinabilityUtils2>>() { // from class: com.discord.utilities.voice.VoiceChannelJoinabilityUtils.observeJoinability.1
-            @Override // j0.k.Func1
-            public final Observable<? extends VoiceChannelJoinabilityUtils2> call(final Channel channel) {
-                return channel == null ? new ScalarSynchronousObservable(VoiceChannelJoinabilityUtils2.CHANNEL_DOES_NOT_EXIST) : Observable.f(voiceStatesStore.observe(channel.getGuildId(), channelId), permissionsStore.observePermissionsForChannel(channelId), guildsStore.observeGuild(channel.getGuildId()), GuildVerificationLevelUtils.observeVerificationLevelTriggered$default(GuildVerificationLevelUtils.INSTANCE, channel.getGuildId(), null, null, null, 14, null), voiceChannelSelectedStore.observeSelectedVoiceChannelId(), stageInstancesStore.observeStageInstanceForChannel(channelId), new Func6<Map<Long, ? extends VoiceState>, Long, Guild, GuildVerificationLevel, Long, StageInstance, VoiceChannelJoinabilityUtils2>() { // from class: com.discord.utilities.voice.VoiceChannelJoinabilityUtils.observeJoinability.1.1
-                    @Override // rx.functions.Func6
-                    public /* bridge */ /* synthetic */ VoiceChannelJoinabilityUtils2 call(Map<Long, ? extends VoiceState> map, Long l, Guild guild, GuildVerificationLevel guildVerificationLevel, Long l2, StageInstance stageInstance) {
+    public final Observable<VoiceChannelJoinability> observeJoinability(final long channelId, StoreChannels channelsStore, final StoreGuilds guildsStore, final StorePermissions permissionsStore, final StoreVoiceStates voiceStatesStore, final StoreVoiceChannelSelected voiceChannelSelectedStore, final StoreStageInstances stageInstancesStore) {
+        C12238m.checkNotNullParameter(channelsStore, "channelsStore");
+        C12238m.checkNotNullParameter(guildsStore, "guildsStore");
+        C12238m.checkNotNullParameter(permissionsStore, "permissionsStore");
+        C12238m.checkNotNullParameter(voiceStatesStore, "voiceStatesStore");
+        C12238m.checkNotNullParameter(voiceChannelSelectedStore, "voiceChannelSelectedStore");
+        C12238m.checkNotNullParameter(stageInstancesStore, "stageInstancesStore");
+        Observable observableM11099Y = channelsStore.observeChannel(channelId).m11099Y(new InterfaceC12589b<Channel, Observable<? extends VoiceChannelJoinability>>() { // from class: com.discord.utilities.voice.VoiceChannelJoinabilityUtils.observeJoinability.1
+            @Override // p637j0.p641k.InterfaceC12589b
+            public final Observable<? extends VoiceChannelJoinability> call(final Channel channel) {
+                return channel == null ? new C12721k(VoiceChannelJoinability.CHANNEL_DOES_NOT_EXIST) : Observable.m11071f(voiceStatesStore.observe(channel.getGuildId(), channelId), permissionsStore.observePermissionsForChannel(channelId), guildsStore.observeGuild(channel.getGuildId()), GuildVerificationLevelUtils.observeVerificationLevelTriggered$default(GuildVerificationLevelUtils.INSTANCE, channel.getGuildId(), null, null, null, 14, null), voiceChannelSelectedStore.observeSelectedVoiceChannelId(), stageInstancesStore.observeStageInstanceForChannel(channelId), new Func6<Map<Long, ? extends VoiceState>, Long, Guild, GuildVerificationLevel, Long, StageInstance, VoiceChannelJoinability>() { // from class: com.discord.utilities.voice.VoiceChannelJoinabilityUtils.observeJoinability.1.1
+                    @Override // p658rx.functions.Func6
+                    public /* bridge */ /* synthetic */ VoiceChannelJoinability call(Map<Long, ? extends VoiceState> map, Long l, Guild guild, GuildVerificationLevel guildVerificationLevel, Long l2, StageInstance stageInstance) {
                         return call2((Map<Long, VoiceState>) map, l, guild, guildVerificationLevel, l2, stageInstance);
                     }
 
                     /* JADX INFO: renamed from: call, reason: avoid collision after fix types in other method */
-                    public final VoiceChannelJoinabilityUtils2 call2(Map<Long, VoiceState> map, Long l, Guild guild, GuildVerificationLevel guildVerificationLevel, Long l2, StageInstance stageInstance) {
+                    public final VoiceChannelJoinability call2(Map<Long, VoiceState> map, Long l, Guild guild, GuildVerificationLevel guildVerificationLevel, Long l2, StageInstance stageInstance) {
                         GuildMaxVideoChannelUsers maxVideoChannelUsers;
                         VoiceChannelJoinabilityUtils voiceChannelJoinabilityUtils = VoiceChannelJoinabilityUtils.INSTANCE;
                         Channel channel2 = channel;
@@ -147,13 +147,13 @@ public final class VoiceChannelJoinabilityUtils {
                         if (guild == null || (maxVideoChannelUsers = guild.getMaxVideoChannelUsers()) == null) {
                             maxVideoChannelUsers = GuildMaxVideoChannelUsers.Unlimited.INSTANCE;
                         }
-                        Intrinsics3.checkNotNullExpressionValue(guildVerificationLevel, "verificationLevelTriggered");
+                        C12238m.checkNotNullExpressionValue(guildVerificationLevel, "verificationLevelTriggered");
                         return voiceChannelJoinabilityUtils.computeJoinability(channel2, collectionValues, l, maxVideoChannelUsers, guildVerificationLevel, l2, stageInstance);
                     }
                 });
             }
         });
-        Intrinsics3.checkNotNullExpressionValue(observableY, "channelsStore\n        .o…  }\n          }\n        }");
-        return observableY;
+        C12238m.checkNotNullExpressionValue(observableM11099Y, "channelsStore\n        .o…  }\n          }\n        }");
+        return observableM11099Y;
     }
 }

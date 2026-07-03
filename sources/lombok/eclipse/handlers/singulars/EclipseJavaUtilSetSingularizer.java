@@ -36,7 +36,7 @@ public class EclipseJavaUtilSetSingularizer extends EclipseJavaUtilListSetSingul
 
     @Override // lombok.eclipse.handlers.EclipseSingularsRecipes.EclipseSingularizer
     public LombokImmutableList<String> getSupportedTypes() {
-        return LombokImmutableList.of("java.util.Set", "java.util.SortedSet", "java.util.NavigableSet");
+        return LombokImmutableList.m10921of("java.util.Set", "java.util.SortedSet", "java.util.NavigableSet");
     }
 
     @Override // lombok.eclipse.handlers.EclipseSingularsRecipes.EclipseSingularizer

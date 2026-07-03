@@ -1,14 +1,14 @@
 package com.discord.analytics.generated.events;
 
-import b.d.b.a.outline;
 import com.discord.analytics.generated.traits.TrackBase;
-import com.discord.analytics.generated.traits.TrackBase2;
+import com.discord.analytics.generated.traits.TrackBaseReceiver;
 import com.discord.api.science.AnalyticsSchema;
-import d0.z.d.Intrinsics3;
+import p007b.p100d.p104b.p105a.C1643a;
+import p507d0.p592z.p594d.C12238m;
 
 /* JADX INFO: compiled from: TrackSendEmail.kt */
 /* JADX INFO: loaded from: classes.dex */
-public final /* data */ class TrackSendEmail implements AnalyticsSchema, TrackBase2 {
+public final /* data */ class TrackSendEmail implements AnalyticsSchema, TrackBaseReceiver {
     private TrackBase trackBase;
     private final CharSequence emailType = null;
     private final CharSequence trackingPixelUuid = null;
@@ -28,7 +28,7 @@ public final /* data */ class TrackSendEmail implements AnalyticsSchema, TrackBa
             return false;
         }
         TrackSendEmail trackSendEmail = (TrackSendEmail) other;
-        return Intrinsics3.areEqual(this.emailType, trackSendEmail.emailType) && Intrinsics3.areEqual(this.trackingPixelUuid, trackSendEmail.trackingPixelUuid);
+        return C12238m.areEqual(this.emailType, trackSendEmail.emailType) && C12238m.areEqual(this.trackingPixelUuid, trackSendEmail.trackingPixelUuid);
     }
 
     public int hashCode() {
@@ -39,9 +39,9 @@ public final /* data */ class TrackSendEmail implements AnalyticsSchema, TrackBa
     }
 
     public String toString() {
-        StringBuilder sbU = outline.U("TrackSendEmail(emailType=");
-        sbU.append(this.emailType);
-        sbU.append(", trackingPixelUuid=");
-        return outline.E(sbU, this.trackingPixelUuid, ")");
+        StringBuilder sbM833U = C1643a.m833U("TrackSendEmail(emailType=");
+        sbM833U.append(this.emailType);
+        sbM833U.append(", trackingPixelUuid=");
+        return C1643a.m817E(sbM833U, this.trackingPixelUuid, ")");
     }
 }

@@ -1,7 +1,5 @@
 package com.discord.widgets.guild_automod;
 
-import b.a.d.AppViewModel;
-import b.d.b.a.outline;
 import com.discord.api.message.embed.MessageEmbed;
 import com.discord.models.message.Message;
 import com.discord.stores.StoreMessages;
@@ -9,45 +7,47 @@ import com.discord.stores.StoreStream;
 import com.discord.utilities.analytics.AnalyticsTracker;
 import com.discord.utilities.error.Error;
 import com.discord.utilities.guildautomod.AutoModUtils;
-import com.discord.utilities.rx.ObservableExtensionsKt;
+import com.discord.utilities.p501rx.ObservableExtensionsKt;
 import com.discord.widgets.guild_automod.ReportIssueWithAutoModViewModel;
-import d0.t._Collections;
-import d0.z.d.FunctionReferenceImpl;
-import d0.z.d.Intrinsics3;
-import j0.k.Func1;
 import java.util.List;
 import kotlin.Unit;
 import kotlin.jvm.functions.Function0;
 import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.DefaultConstructorMarker;
-import rx.Observable;
-import rx.Subscription;
+import p007b.p008a.p018d.AbstractC0859d0;
+import p007b.p100d.p104b.p105a.C1643a;
+import p507d0.p580t.C12163u;
+import p507d0.p592z.p594d.C12236k;
+import p507d0.p592z.p594d.C12238m;
+import p637j0.p641k.InterfaceC12589b;
+import p658rx.Observable;
+import p658rx.Subscription;
 
 /* JADX INFO: compiled from: ReportIssueWithAutoModViewModel.kt */
 /* JADX INFO: loaded from: classes2.dex */
-public final class ReportIssueWithAutoModViewModel extends AppViewModel<ViewState> {
+public final class ReportIssueWithAutoModViewModel extends AbstractC0859d0<ViewState> {
 
     /* JADX INFO: renamed from: Companion, reason: from kotlin metadata */
     public static final Companion INSTANCE = new Companion(null);
     private final long channelId;
     private final long messageId;
 
-    /* JADX INFO: renamed from: com.discord.widgets.guild_automod.ReportIssueWithAutoModViewModel$1, reason: invalid class name */
+    /* JADX INFO: renamed from: com.discord.widgets.guild_automod.ReportIssueWithAutoModViewModel$1 */
     /* JADX INFO: compiled from: ReportIssueWithAutoModViewModel.kt */
-    public static final /* synthetic */ class AnonymousClass1 extends FunctionReferenceImpl implements Function1<StoreState, Unit> {
-        public AnonymousClass1(ReportIssueWithAutoModViewModel reportIssueWithAutoModViewModel) {
+    public static final /* synthetic */ class C84141 extends C12236k implements Function1<StoreState, Unit> {
+        public C84141(ReportIssueWithAutoModViewModel reportIssueWithAutoModViewModel) {
             super(1, reportIssueWithAutoModViewModel, ReportIssueWithAutoModViewModel.class, "handleStoreState", "handleStoreState(Lcom/discord/widgets/guild_automod/ReportIssueWithAutoModViewModel$StoreState;)V", 0);
         }
 
         @Override // kotlin.jvm.functions.Function1
         public /* bridge */ /* synthetic */ Unit invoke(StoreState storeState) {
             invoke2(storeState);
-            return Unit.a;
+            return Unit.f27425a;
         }
 
         /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
         public final void invoke2(StoreState storeState) {
-            Intrinsics3.checkNotNullParameter(storeState, "p1");
+            C12238m.checkNotNullParameter(storeState, "p1");
             ((ReportIssueWithAutoModViewModel) this.receiver).handleStoreState(storeState);
         }
     }
@@ -58,14 +58,14 @@ public final class ReportIssueWithAutoModViewModel extends AppViewModel<ViewStat
         }
 
         private final Observable<StoreState> observeStores(long channelId, long messageId, StoreMessages messageStore) {
-            Observable observableG = messageStore.observeMessagesForChannel(channelId, messageId).G(new Func1<Message, StoreState>() { // from class: com.discord.widgets.guild_automod.ReportIssueWithAutoModViewModel$Companion$observeStores$1
-                @Override // j0.k.Func1
+            Observable observableM11083G = messageStore.observeMessagesForChannel(channelId, messageId).m11083G(new InterfaceC12589b<Message, StoreState>() { // from class: com.discord.widgets.guild_automod.ReportIssueWithAutoModViewModel$Companion$observeStores$1
+                @Override // p637j0.p641k.InterfaceC12589b
                 public final ReportIssueWithAutoModViewModel.StoreState call(Message message) {
                     return new ReportIssueWithAutoModViewModel.StoreState(message);
                 }
             });
-            Intrinsics3.checkNotNullExpressionValue(observableG, "messageStore.observeMess…te(clientMessage)\n      }");
-            return observableG;
+            C12238m.checkNotNullExpressionValue(observableM11083G, "messageStore.observeMess…te(clientMessage)\n      }");
+            return observableM11083G;
         }
 
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
@@ -99,7 +99,7 @@ public final class ReportIssueWithAutoModViewModel extends AppViewModel<ViewStat
 
         public boolean equals(Object other) {
             if (this != other) {
-                return (other instanceof StoreState) && Intrinsics3.areEqual(this.message, ((StoreState) other).message);
+                return (other instanceof StoreState) && C12238m.areEqual(this.message, ((StoreState) other).message);
             }
             return true;
         }
@@ -117,10 +117,10 @@ public final class ReportIssueWithAutoModViewModel extends AppViewModel<ViewStat
         }
 
         public String toString() {
-            StringBuilder sbU = outline.U("StoreState(message=");
-            sbU.append(this.message);
-            sbU.append(")");
-            return sbU.toString();
+            StringBuilder sbM833U = C1643a.m833U("StoreState(message=");
+            sbM833U.append(this.message);
+            sbM833U.append(")");
+            return sbM833U.toString();
         }
     }
 
@@ -144,8 +144,8 @@ public final class ReportIssueWithAutoModViewModel extends AppViewModel<ViewStat
             /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
             public Valid(Message message, String str) {
                 super(null);
-                Intrinsics3.checkNotNullParameter(message, "message");
-                Intrinsics3.checkNotNullParameter(str, "selectedOption");
+                C12238m.checkNotNullParameter(message, "message");
+                C12238m.checkNotNullParameter(str, "selectedOption");
                 this.message = message;
                 this.selectedOption = str;
             }
@@ -171,8 +171,8 @@ public final class ReportIssueWithAutoModViewModel extends AppViewModel<ViewStat
             }
 
             public final Valid copy(Message message, String selectedOption) {
-                Intrinsics3.checkNotNullParameter(message, "message");
-                Intrinsics3.checkNotNullParameter(selectedOption, "selectedOption");
+                C12238m.checkNotNullParameter(message, "message");
+                C12238m.checkNotNullParameter(selectedOption, "selectedOption");
                 return new Valid(message, selectedOption);
             }
 
@@ -184,7 +184,7 @@ public final class ReportIssueWithAutoModViewModel extends AppViewModel<ViewStat
                     return false;
                 }
                 Valid valid = (Valid) other;
-                return Intrinsics3.areEqual(this.message, valid.message) && Intrinsics3.areEqual(this.selectedOption, valid.selectedOption);
+                return C12238m.areEqual(this.message, valid.message) && C12238m.areEqual(this.selectedOption, valid.selectedOption);
             }
 
             public final Message getMessage() {
@@ -203,10 +203,10 @@ public final class ReportIssueWithAutoModViewModel extends AppViewModel<ViewStat
             }
 
             public String toString() {
-                StringBuilder sbU = outline.U("Valid(message=");
-                sbU.append(this.message);
-                sbU.append(", selectedOption=");
-                return outline.J(sbU, this.selectedOption, ")");
+                StringBuilder sbM833U = C1643a.m833U("Valid(message=");
+                sbM833U.append(this.message);
+                sbM833U.append(", selectedOption=");
+                return C1643a.m822J(sbM833U, this.selectedOption, ")");
             }
         }
 
@@ -237,15 +237,15 @@ public final class ReportIssueWithAutoModViewModel extends AppViewModel<ViewStat
         } else {
             Message message = storeState.getMessage();
             if (valid2 == null || (value = valid2.getSelectedOption()) == null) {
-                value = ReportIssueWithAutoModViewModel2.ALLOWED.getValue();
+                value = FeedbackType.ALLOWED.getValue();
             }
             valid = new ViewState.Valid(message, value);
         }
         updateViewState(valid);
     }
 
-    public final void onFeedbackTypeSelected(ReportIssueWithAutoModViewModel2 feedbackType) {
-        Intrinsics3.checkNotNullParameter(feedbackType, "feedbackType");
+    public final void onFeedbackTypeSelected(FeedbackType feedbackType) {
+        C12238m.checkNotNullParameter(feedbackType, "feedbackType");
         ViewState viewState = getViewState();
         if (viewState instanceof ViewState.Valid) {
             updateViewState(ViewState.Valid.copy$default((ViewState.Valid) viewState, null, feedbackType.getValue(), 1, null));
@@ -254,12 +254,12 @@ public final class ReportIssueWithAutoModViewModel extends AppViewModel<ViewStat
 
     public final void onSubmit(Function0<Unit> onCompleted) {
         String embedFieldValue;
-        Intrinsics3.checkNotNullParameter(onCompleted, "onCompleted");
+        C12238m.checkNotNullParameter(onCompleted, "onCompleted");
         ViewState viewState = getViewState();
         if (viewState instanceof ViewState.Valid) {
             ViewState.Valid valid = (ViewState.Valid) viewState;
             List<MessageEmbed> embeds = valid.getMessage().getEmbeds();
-            MessageEmbed messageEmbed = embeds != null ? (MessageEmbed) _Collections.first((List) embeds) : null;
+            MessageEmbed messageEmbed = embeds != null ? (MessageEmbed) C12163u.first((List) embeds) : null;
             AnalyticsTracker analyticsTracker = AnalyticsTracker.INSTANCE;
             if (messageEmbed == null || (embedFieldValue = AutoModUtils.INSTANCE.getEmbedFieldValue(messageEmbed, "decision_id")) == null) {
                 embedFieldValue = "";
@@ -274,10 +274,10 @@ public final class ReportIssueWithAutoModViewModel extends AppViewModel<ViewStat
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public ReportIssueWithAutoModViewModel(long j, long j2, StoreMessages storeMessages, Observable<StoreState> observable) {
         super(null, 1, null);
-        Intrinsics3.checkNotNullParameter(storeMessages, "messageStore");
-        Intrinsics3.checkNotNullParameter(observable, "storeStateObservable");
+        C12238m.checkNotNullParameter(storeMessages, "messageStore");
+        C12238m.checkNotNullParameter(observable, "storeStateObservable");
         this.channelId = j;
         this.messageId = j2;
-        ObservableExtensionsKt.appSubscribe(ObservableExtensionsKt.ui$default(ObservableExtensionsKt.computationLatest(observable), this, null, 2, null), (Class<?>) ReportIssueWithAutoModViewModel.class, (58 & 2) != 0 ? null : null, (Function1<? super Subscription, Unit>) ((58 & 4) != 0 ? null : null), (Function1<? super Error, Unit>) ((58 & 8) != 0 ? null : null), (Function0<Unit>) ((58 & 16) != 0 ? ObservableExtensionsKt.AnonymousClass1.INSTANCE : null), (Function0<Unit>) ((58 & 32) != 0 ? ObservableExtensionsKt.AnonymousClass2.INSTANCE : null), new AnonymousClass1(this));
+        ObservableExtensionsKt.appSubscribe(ObservableExtensionsKt.ui$default(ObservableExtensionsKt.computationLatest(observable), this, null, 2, null), (Class<?>) ReportIssueWithAutoModViewModel.class, (58 & 2) != 0 ? null : null, (Function1<? super Subscription, Unit>) ((58 & 4) != 0 ? null : null), (Function1<? super Error, Unit>) ((58 & 8) != 0 ? null : null), (Function0<Unit>) ((58 & 16) != 0 ? ObservableExtensionsKt.C68791.INSTANCE : null), (Function0<Unit>) ((58 & 32) != 0 ? ObservableExtensionsKt.C68802.INSTANCE : null), new C84141(this));
     }
 }

@@ -1,14 +1,14 @@
 package com.discord.analytics.generated.events;
 
 import com.discord.analytics.generated.traits.TrackBase;
-import com.discord.analytics.generated.traits.TrackBase2;
+import com.discord.analytics.generated.traits.TrackBaseReceiver;
 import com.discord.analytics.generated.traits.TrackMarketingSite;
-import com.discord.analytics.generated.traits.TrackMarketingSite2;
+import com.discord.analytics.generated.traits.TrackMarketingSiteReceiver;
 import com.discord.api.science.AnalyticsSchema;
 
 /* JADX INFO: compiled from: TrackMktgHypesquadLoaded.kt */
 /* JADX INFO: loaded from: classes.dex */
-public final class TrackMktgHypesquadLoaded implements AnalyticsSchema, TrackBase2, TrackMarketingSite2 {
+public final class TrackMktgHypesquadLoaded implements AnalyticsSchema, TrackBaseReceiver, TrackMarketingSiteReceiver {
     private final transient String analyticsSchemaTypeName = "mktg_hypesquad_loaded";
     private TrackBase trackBase;
     private TrackMarketingSite trackMarketingSite;

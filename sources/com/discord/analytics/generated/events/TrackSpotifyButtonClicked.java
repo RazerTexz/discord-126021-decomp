@@ -1,14 +1,14 @@
 package com.discord.analytics.generated.events;
 
-import b.d.b.a.outline;
 import com.discord.analytics.generated.traits.TrackBase;
-import com.discord.analytics.generated.traits.TrackBase2;
+import com.discord.analytics.generated.traits.TrackBaseReceiver;
 import com.discord.api.science.AnalyticsSchema;
-import d0.z.d.Intrinsics3;
+import p007b.p100d.p104b.p105a.C1643a;
+import p507d0.p592z.p594d.C12238m;
 
 /* JADX INFO: compiled from: TrackSpotifyButtonClicked.kt */
 /* JADX INFO: loaded from: classes.dex */
-public final /* data */ class TrackSpotifyButtonClicked implements AnalyticsSchema, TrackBase2 {
+public final /* data */ class TrackSpotifyButtonClicked implements AnalyticsSchema, TrackBaseReceiver {
     private TrackBase trackBase;
     private final CharSequence type = null;
     private final Boolean isPremium = null;
@@ -31,7 +31,7 @@ public final /* data */ class TrackSpotifyButtonClicked implements AnalyticsSche
             return false;
         }
         TrackSpotifyButtonClicked trackSpotifyButtonClicked = (TrackSpotifyButtonClicked) other;
-        return Intrinsics3.areEqual(this.type, trackSpotifyButtonClicked.type) && Intrinsics3.areEqual(this.isPremium, trackSpotifyButtonClicked.isPremium) && Intrinsics3.areEqual(this.partyId, trackSpotifyButtonClicked.partyId) && Intrinsics3.areEqual(this.otherUserId, trackSpotifyButtonClicked.otherUserId) && Intrinsics3.areEqual(this.source, trackSpotifyButtonClicked.source);
+        return C12238m.areEqual(this.type, trackSpotifyButtonClicked.type) && C12238m.areEqual(this.isPremium, trackSpotifyButtonClicked.isPremium) && C12238m.areEqual(this.partyId, trackSpotifyButtonClicked.partyId) && C12238m.areEqual(this.otherUserId, trackSpotifyButtonClicked.otherUserId) && C12238m.areEqual(this.source, trackSpotifyButtonClicked.source);
     }
 
     public int hashCode() {
@@ -48,15 +48,15 @@ public final /* data */ class TrackSpotifyButtonClicked implements AnalyticsSche
     }
 
     public String toString() {
-        StringBuilder sbU = outline.U("TrackSpotifyButtonClicked(type=");
-        sbU.append(this.type);
-        sbU.append(", isPremium=");
-        sbU.append(this.isPremium);
-        sbU.append(", partyId=");
-        sbU.append(this.partyId);
-        sbU.append(", otherUserId=");
-        sbU.append(this.otherUserId);
-        sbU.append(", source=");
-        return outline.E(sbU, this.source, ")");
+        StringBuilder sbM833U = C1643a.m833U("TrackSpotifyButtonClicked(type=");
+        sbM833U.append(this.type);
+        sbM833U.append(", isPremium=");
+        sbM833U.append(this.isPremium);
+        sbM833U.append(", partyId=");
+        sbM833U.append(this.partyId);
+        sbM833U.append(", otherUserId=");
+        sbM833U.append(this.otherUserId);
+        sbM833U.append(", source=");
+        return C1643a.m817E(sbM833U, this.source, ")");
     }
 }

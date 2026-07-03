@@ -3,10 +3,10 @@ package com.discord.views;
 import android.content.Context;
 import android.util.AttributeSet;
 import com.google.android.material.appbar.AppBarLayout;
-import d0.z.d.Intrinsics3;
-import d0.z.d.Lambda;
 import kotlin.Unit;
 import kotlin.jvm.functions.Function1;
+import p507d0.p592z.p594d.AbstractC12240o;
+import p507d0.p592z.p594d.C12238m;
 
 /* JADX INFO: compiled from: CustomAppBarLayout.kt */
 /* JADX INFO: loaded from: classes2.dex */
@@ -21,29 +21,33 @@ public final class CustomAppBarLayout extends AppBarLayout {
     /* JADX INFO: renamed from: l, reason: from kotlin metadata */
     public Function1<? super Float, Unit> onPercentCollapsedCallback;
 
+    /* JADX INFO: renamed from: com.discord.views.CustomAppBarLayout$a */
     /* JADX INFO: compiled from: CustomAppBarLayout.kt */
-    public static final class a extends Lambda implements Function1<Float, Unit> {
-        public static final a j = new a();
+    public static final class C7073a extends AbstractC12240o implements Function1<Float, Unit> {
 
-        public a() {
+        /* JADX INFO: renamed from: j */
+        public static final C7073a f19048j = new C7073a();
+
+        public C7073a() {
             super(1);
         }
 
         @Override // kotlin.jvm.functions.Function1
         public Unit invoke(Float f) {
             f.floatValue();
-            return Unit.a;
+            return Unit.f27425a;
         }
     }
 
+    /* JADX INFO: renamed from: com.discord.views.CustomAppBarLayout$b */
     /* JADX INFO: compiled from: CustomAppBarLayout.kt */
-    public static final class b implements AppBarLayout.OnOffsetChangedListener {
-        public b() {
+    public static final class C7074b implements AppBarLayout.OnOffsetChangedListener {
+        public C7074b() {
         }
 
         @Override // com.google.android.material.appbar.AppBarLayout.OnOffsetChangedListener, com.google.android.material.appbar.AppBarLayout.BaseOnOffsetChangedListener
         public final void onOffsetChanged(AppBarLayout appBarLayout, int i) {
-            Intrinsics3.checkNotNullExpressionValue(appBarLayout, "appBar");
+            C12238m.checkNotNullExpressionValue(appBarLayout, "appBar");
             float fAbs = appBarLayout.getTotalScrollRange() <= 0 ? 1.0f : Math.abs(i) / appBarLayout.getTotalScrollRange();
             CustomAppBarLayout customAppBarLayout = CustomAppBarLayout.this;
             if (fAbs != customAppBarLayout.percentCollapsed) {
@@ -56,12 +60,13 @@ public final class CustomAppBarLayout extends AppBarLayout {
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public CustomAppBarLayout(Context context, AttributeSet attributeSet) {
         super(context, attributeSet);
-        Intrinsics3.checkNotNullParameter(context, "context");
-        this.percentCollapsedOffsetChangeListener = new b();
-        this.onPercentCollapsedCallback = a.j;
+        C12238m.checkNotNullParameter(context, "context");
+        this.percentCollapsedOffsetChangeListener = new C7074b();
+        this.onPercentCollapsedCallback = C7073a.f19048j;
     }
 
-    public final boolean a() {
+    /* JADX INFO: renamed from: a */
+    public final boolean m8542a() {
         return this.percentCollapsed == 1.0f;
     }
 
@@ -78,7 +83,7 @@ public final class CustomAppBarLayout extends AppBarLayout {
     }
 
     public final void setOnPercentCollapsedCallback(Function1<? super Float, Unit> callback) {
-        Intrinsics3.checkNotNullParameter(callback, "callback");
+        C12238m.checkNotNullParameter(callback, "callback");
         this.onPercentCollapsedCallback = callback;
     }
 }

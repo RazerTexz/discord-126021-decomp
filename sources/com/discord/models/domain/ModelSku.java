@@ -1,17 +1,17 @@
 package com.discord.models.domain;
 
-import b.d.b.a.outline;
 import com.discord.api.application.Application;
 import com.discord.api.premium.PremiumTier;
 import com.discord.models.deserialization.gson.InboundGatewayGsonParser;
 import com.discord.models.domain.Model;
 import com.discord.models.domain.ModelSku;
-import d0.z.d.Intrinsics3;
 import java.io.IOException;
 import java.util.Map;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Ref$ObjectRef;
-import rx.functions.Action1;
+import p007b.p100d.p104b.p105a.C1643a;
+import p507d0.p592z.p594d.C12238m;
+import p658rx.functions.Action1;
 
 /* JADX INFO: compiled from: ModelSku.kt */
 /* JADX INFO: loaded from: classes.dex */
@@ -66,11 +66,11 @@ public final /* data */ class ModelSku {
         }
 
         public String toString() {
-            return outline.B(outline.U("ExternalSkuStrategy(type="), this.type, ")");
+            return C1643a.m814B(C1643a.m833U("ExternalSkuStrategy(type="), this.type, ")");
         }
 
         /* JADX INFO: renamed from: getType, reason: collision with other method in class */
-        public final ExternalStrategyTypes m6getType() {
+        public final ExternalStrategyTypes m11383getType() {
             return ExternalStrategyTypes.INSTANCE.from(this.type);
         }
     }
@@ -186,10 +186,10 @@ public final /* data */ class ModelSku {
         }
 
         public String toString() {
-            StringBuilder sbU = outline.U("ModelPremiumSkuPrice(amount=");
-            sbU.append(this.amount);
-            sbU.append(", percentage=");
-            return outline.B(sbU, this.percentage, ")");
+            StringBuilder sbM833U = C1643a.m833U("ModelPremiumSkuPrice(amount=");
+            sbM833U.append(this.amount);
+            sbM833U.append(", percentage=");
+            return C1643a.m814B(sbM833U, this.percentage, ")");
         }
     }
 
@@ -204,8 +204,8 @@ public final /* data */ class ModelSku {
         /* JADX WARN: Multi-variable type inference failed */
         @Override // com.discord.models.domain.Model.Parser
         public ModelSku parse(final Model.JsonReader reader) throws IOException {
-            final Ref$ObjectRef ref$ObjectRefC0 = outline.c0(reader, "reader");
-            ref$ObjectRefC0.element = null;
+            final Ref$ObjectRef ref$ObjectRefM844c0 = C1643a.m844c0(reader, "reader");
+            ref$ObjectRefM844c0.element = null;
             final Ref$ObjectRef ref$ObjectRef = new Ref$ObjectRef();
             ref$ObjectRef.element = null;
             final Ref$ObjectRef ref$ObjectRef2 = new Ref$ObjectRef();
@@ -222,13 +222,13 @@ public final /* data */ class ModelSku {
             ref$ObjectRef7.element = null;
             reader.nextObject(new Action1<String>() { // from class: com.discord.models.domain.ModelSku$Parser$parse$1
                 /* JADX WARN: Failed to restore switch over string. Please report as a decompilation issue */
-                @Override // rx.functions.Action1
+                @Override // p658rx.functions.Action1
                 public final void call(String str) throws IOException {
                     if (str != null) {
                         switch (str.hashCode()) {
                             case -1287148950:
                                 if (str.equals(ModelAuditLogEntry.CHANGE_KEY_APPLICATION_ID)) {
-                                    ref$ObjectRefC0.element = (T) reader.nextLongOrNull();
+                                    ref$ObjectRefM844c0.element = (T) reader.nextLongOrNull();
                                     return;
                                 }
                                 break;
@@ -279,7 +279,7 @@ public final /* data */ class ModelSku {
                     reader.skipValue();
                 }
             });
-            Long l = (Long) ref$ObjectRefC0.element;
+            Long l = (Long) ref$ObjectRefM844c0.element;
             long jLongValue = l != null ? l.longValue() : 0L;
             String str = (String) ref$ObjectRef.element;
             if (str == null) {
@@ -290,14 +290,14 @@ public final /* data */ class ModelSku {
             long jLongValue2 = l2 != null ? l2.longValue() : 0L;
             Application application = (Application) ref$ObjectRef3.element;
             Boolean bool = (Boolean) ref$ObjectRef4.element;
-            Intrinsics3.checkNotNull(bool);
+            C12238m.checkNotNull(bool);
             boolean zBooleanValue = bool.booleanValue();
             Integer num = (Integer) ref$ObjectRef5.element;
-            Intrinsics3.checkNotNull(num);
+            C12238m.checkNotNull(num);
             int iIntValue = num.intValue();
             Price price = (Price) ref$ObjectRef6.element;
             Integer num2 = (Integer) ref$ObjectRef7.element;
-            Intrinsics3.checkNotNull(num2);
+            C12238m.checkNotNull(num2);
             return new ModelSku(jLongValue, str2, jLongValue2, application, zBooleanValue, iIntValue, price, num2.intValue(), null);
         }
     }
@@ -319,12 +319,12 @@ public final /* data */ class ModelSku {
             /* JADX WARN: Multi-variable type inference failed */
             @Override // com.discord.models.domain.Model.Parser
             public Price parse(final Model.JsonReader reader) throws IOException {
-                final Ref$ObjectRef ref$ObjectRefC0 = outline.c0(reader, "reader");
-                ref$ObjectRefC0.element = null;
+                final Ref$ObjectRef ref$ObjectRefM844c0 = C1643a.m844c0(reader, "reader");
+                ref$ObjectRefM844c0.element = null;
                 final Ref$ObjectRef ref$ObjectRef = new Ref$ObjectRef();
                 ref$ObjectRef.element = null;
                 reader.nextObject(new Action1<String>() { // from class: com.discord.models.domain.ModelSku$Price$Parser$parse$1
-                    @Override // rx.functions.Action1
+                    @Override // p658rx.functions.Action1
                     public final void call(String str) throws IOException {
                         if (str != null) {
                             int iHashCode = str.hashCode();
@@ -334,14 +334,14 @@ public final /* data */ class ModelSku {
                                     return;
                                 }
                             } else if (str.equals("amount")) {
-                                ref$ObjectRefC0.element = (T) reader.nextIntOrNull();
+                                ref$ObjectRefM844c0.element = (T) reader.nextIntOrNull();
                                 return;
                             }
                         }
                         reader.skipValue();
                     }
                 });
-                Integer num = (Integer) ref$ObjectRefC0.element;
+                Integer num = (Integer) ref$ObjectRefM844c0.element;
                 int iIntValue = num != null ? num.intValue() : -1;
                 String str = (String) ref$ObjectRef.element;
                 if (str == null) {
@@ -352,7 +352,7 @@ public final /* data */ class ModelSku {
         }
 
         public Price(int i, String str, Map<PremiumTier, ModelPremiumSkuPrice> map) {
-            Intrinsics3.checkNotNullParameter(str, "currency");
+            C12238m.checkNotNullParameter(str, "currency");
             this.amount = i;
             this.currency = str;
             this.premium = map;
@@ -387,7 +387,7 @@ public final /* data */ class ModelSku {
         }
 
         public final Price copy(int amount, String currency, Map<PremiumTier, ModelPremiumSkuPrice> premium) {
-            Intrinsics3.checkNotNullParameter(currency, "currency");
+            C12238m.checkNotNullParameter(currency, "currency");
             return new Price(amount, currency, premium);
         }
 
@@ -399,7 +399,7 @@ public final /* data */ class ModelSku {
                 return false;
             }
             Price price = (Price) other;
-            return this.amount == price.amount && Intrinsics3.areEqual(this.currency, price.currency) && Intrinsics3.areEqual(this.premium, price.premium);
+            return this.amount == price.amount && C12238m.areEqual(this.currency, price.currency) && C12238m.areEqual(this.premium, price.premium);
         }
 
         public final int getAmount() {
@@ -423,12 +423,12 @@ public final /* data */ class ModelSku {
         }
 
         public String toString() {
-            StringBuilder sbU = outline.U("Price(amount=");
-            sbU.append(this.amount);
-            sbU.append(", currency=");
-            sbU.append(this.currency);
-            sbU.append(", premium=");
-            return outline.M(sbU, this.premium, ")");
+            StringBuilder sbM833U = C1643a.m833U("Price(amount=");
+            sbM833U.append(this.amount);
+            sbM833U.append(", currency=");
+            sbM833U.append(this.currency);
+            sbM833U.append(", premium=");
+            return C1643a.m825M(sbM833U, this.premium, ")");
         }
 
         public /* synthetic */ Price(int i, String str, Map map, int i2, DefaultConstructorMarker defaultConstructorMarker) {
@@ -444,7 +444,7 @@ public final /* data */ class ModelSku {
     }
 
     public ModelSku(long j, String str, long j2, Application application, boolean z2, int i, Price price, int i2, Map<Integer, ExternalSkuStrategy> map) {
-        Intrinsics3.checkNotNullParameter(str, ModelAuditLogEntry.CHANGE_KEY_NAME);
+        C12238m.checkNotNullParameter(str, ModelAuditLogEntry.CHANGE_KEY_NAME);
         this.applicationId = j;
         this.name = str;
         this.id = j2;
@@ -501,7 +501,7 @@ public final /* data */ class ModelSku {
     }
 
     public final ModelSku copy(long applicationId, String name, long id2, Application application, boolean premium, int type, Price price, int flags, Map<Integer, ExternalSkuStrategy> externalSkuStrategies) {
-        Intrinsics3.checkNotNullParameter(name, ModelAuditLogEntry.CHANGE_KEY_NAME);
+        C12238m.checkNotNullParameter(name, ModelAuditLogEntry.CHANGE_KEY_NAME);
         return new ModelSku(applicationId, name, id2, application, premium, type, price, flags, externalSkuStrategies);
     }
 
@@ -513,7 +513,7 @@ public final /* data */ class ModelSku {
             return false;
         }
         ModelSku modelSku = (ModelSku) other;
-        return this.applicationId == modelSku.applicationId && Intrinsics3.areEqual(this.name, modelSku.name) && this.id == modelSku.id && Intrinsics3.areEqual(this.application, modelSku.application) && this.premium == modelSku.premium && this.type == modelSku.type && Intrinsics3.areEqual(this.price, modelSku.price) && this.flags == modelSku.flags && Intrinsics3.areEqual(this.externalSkuStrategies, modelSku.externalSkuStrategies);
+        return this.applicationId == modelSku.applicationId && C12238m.areEqual(this.name, modelSku.name) && this.id == modelSku.id && C12238m.areEqual(this.application, modelSku.application) && this.premium == modelSku.premium && this.type == modelSku.type && C12238m.areEqual(this.price, modelSku.price) && this.flags == modelSku.flags && C12238m.areEqual(this.externalSkuStrategies, modelSku.externalSkuStrategies);
     }
 
     public final Application getApplication() {
@@ -550,10 +550,10 @@ public final /* data */ class ModelSku {
 
     public final SkuCategory getSkuCategory() {
         long j = this.id;
-        if (j == ModelSku4.PREMIUM_TIER_1_SKU_ID) {
+        if (j == ModelSkuKt.PREMIUM_TIER_1_SKU_ID) {
             return SkuCategory.NITRO_CLASSIC;
         }
-        return j == ModelSku4.PREMIUM_TIER_2_SKU_ID ? SkuCategory.NITRO : SkuCategory.GAME;
+        return j == ModelSkuKt.PREMIUM_TIER_2_SKU_ID ? SkuCategory.NITRO : SkuCategory.GAME;
     }
 
     public final int getType() {
@@ -595,23 +595,23 @@ public final /* data */ class ModelSku {
     }
 
     public String toString() {
-        StringBuilder sbU = outline.U("ModelSku(applicationId=");
-        sbU.append(this.applicationId);
-        sbU.append(", name=");
-        sbU.append(this.name);
-        sbU.append(", id=");
-        sbU.append(this.id);
-        sbU.append(", application=");
-        sbU.append(this.application);
-        sbU.append(", premium=");
-        sbU.append(this.premium);
-        sbU.append(", type=");
-        sbU.append(this.type);
-        sbU.append(", price=");
-        sbU.append(this.price);
-        sbU.append(", flags=");
-        sbU.append(this.flags);
-        sbU.append(", externalSkuStrategies=");
-        return outline.M(sbU, this.externalSkuStrategies, ")");
+        StringBuilder sbM833U = C1643a.m833U("ModelSku(applicationId=");
+        sbM833U.append(this.applicationId);
+        sbM833U.append(", name=");
+        sbM833U.append(this.name);
+        sbM833U.append(", id=");
+        sbM833U.append(this.id);
+        sbM833U.append(", application=");
+        sbM833U.append(this.application);
+        sbM833U.append(", premium=");
+        sbM833U.append(this.premium);
+        sbM833U.append(", type=");
+        sbM833U.append(this.type);
+        sbM833U.append(", price=");
+        sbM833U.append(this.price);
+        sbM833U.append(", flags=");
+        sbM833U.append(this.flags);
+        sbM833U.append(", externalSkuStrategies=");
+        return C1643a.m825M(sbM833U, this.externalSkuStrategies, ")");
     }
 }

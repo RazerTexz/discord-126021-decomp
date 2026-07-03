@@ -1,14 +1,14 @@
 package com.discord.analytics.generated.events;
 
-import b.d.b.a.outline;
 import com.discord.analytics.generated.traits.TrackBase;
-import com.discord.analytics.generated.traits.TrackBase2;
+import com.discord.analytics.generated.traits.TrackBaseReceiver;
 import com.discord.api.science.AnalyticsSchema;
-import d0.z.d.Intrinsics3;
+import p007b.p100d.p104b.p105a.C1643a;
+import p507d0.p592z.p594d.C12238m;
 
 /* JADX INFO: compiled from: TrackJoinedIntegration.kt */
 /* JADX INFO: loaded from: classes.dex */
-public final /* data */ class TrackJoinedIntegration implements AnalyticsSchema, TrackBase2 {
+public final /* data */ class TrackJoinedIntegration implements AnalyticsSchema, TrackBaseReceiver {
     private TrackBase trackBase;
     private final Long guild = null;
     private final Long guildOwner = null;
@@ -33,7 +33,7 @@ public final /* data */ class TrackJoinedIntegration implements AnalyticsSchema,
             return false;
         }
         TrackJoinedIntegration trackJoinedIntegration = (TrackJoinedIntegration) other;
-        return Intrinsics3.areEqual(this.guild, trackJoinedIntegration.guild) && Intrinsics3.areEqual(this.guildOwner, trackJoinedIntegration.guildOwner) && Intrinsics3.areEqual(this.integration, trackJoinedIntegration.integration) && Intrinsics3.areEqual(this.integrationType, trackJoinedIntegration.integrationType) && Intrinsics3.areEqual(this.integrationUser, trackJoinedIntegration.integrationUser) && Intrinsics3.areEqual(this.userDay, trackJoinedIntegration.userDay) && Intrinsics3.areEqual(this.userGuilds, trackJoinedIntegration.userGuilds);
+        return C12238m.areEqual(this.guild, trackJoinedIntegration.guild) && C12238m.areEqual(this.guildOwner, trackJoinedIntegration.guildOwner) && C12238m.areEqual(this.integration, trackJoinedIntegration.integration) && C12238m.areEqual(this.integrationType, trackJoinedIntegration.integrationType) && C12238m.areEqual(this.integrationUser, trackJoinedIntegration.integrationUser) && C12238m.areEqual(this.userDay, trackJoinedIntegration.userDay) && C12238m.areEqual(this.userGuilds, trackJoinedIntegration.userGuilds);
     }
 
     public int hashCode() {
@@ -54,19 +54,19 @@ public final /* data */ class TrackJoinedIntegration implements AnalyticsSchema,
     }
 
     public String toString() {
-        StringBuilder sbU = outline.U("TrackJoinedIntegration(guild=");
-        sbU.append(this.guild);
-        sbU.append(", guildOwner=");
-        sbU.append(this.guildOwner);
-        sbU.append(", integration=");
-        sbU.append(this.integration);
-        sbU.append(", integrationType=");
-        sbU.append(this.integrationType);
-        sbU.append(", integrationUser=");
-        sbU.append(this.integrationUser);
-        sbU.append(", userDay=");
-        sbU.append(this.userDay);
-        sbU.append(", userGuilds=");
-        return outline.G(sbU, this.userGuilds, ")");
+        StringBuilder sbM833U = C1643a.m833U("TrackJoinedIntegration(guild=");
+        sbM833U.append(this.guild);
+        sbM833U.append(", guildOwner=");
+        sbM833U.append(this.guildOwner);
+        sbM833U.append(", integration=");
+        sbM833U.append(this.integration);
+        sbM833U.append(", integrationType=");
+        sbM833U.append(this.integrationType);
+        sbM833U.append(", integrationUser=");
+        sbM833U.append(this.integrationUser);
+        sbM833U.append(", userDay=");
+        sbM833U.append(this.userDay);
+        sbM833U.append(", userGuilds=");
+        return C1643a.m819G(sbM833U, this.userGuilds, ")");
     }
 }

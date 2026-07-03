@@ -1,87 +1,92 @@
 package com.facebook.animated.gif;
 
 import android.graphics.Bitmap;
-import b.c.a.a0.AnimatableValueParser;
-import b.f.d.d.DoNotStrip;
-import b.f.j.a.a.AnimatedDrawableFrameInfo;
-import b.f.j.a.a.AnimatedImage;
-import b.f.j.a.a.AnimatedImageFrame;
-import b.f.j.a.b.AnimatedImageDecoder;
-import b.f.j.d.ImageDecodeOptions;
-import b.f.m.n.NativeLoader;
 import java.nio.ByteBuffer;
+import p007b.p085c.p086a.p087a0.C1460d;
+import p007b.p109f.p115d.p119d.InterfaceC1680c;
+import p007b.p109f.p161j.p162a.p163a.C1835b;
+import p007b.p109f.p161j.p162a.p163a.InterfaceC1836c;
+import p007b.p109f.p161j.p162a.p163a.InterfaceC1837d;
+import p007b.p109f.p161j.p162a.p164b.InterfaceC1842c;
+import p007b.p109f.p161j.p169d.C1881b;
+import p007b.p109f.p190m.p191n.C2061a;
 
 /* JADX INFO: loaded from: classes.dex */
-@DoNotStrip
-public class GifImage implements AnimatedImage, AnimatedImageDecoder {
-    public static volatile boolean a;
+@InterfaceC1680c
+public class GifImage implements InterfaceC1836c, InterfaceC1842c {
 
-    /* JADX INFO: renamed from: b, reason: collision with root package name */
-    public Bitmap.Config f2881b = null;
+    /* JADX INFO: renamed from: a */
+    public static volatile boolean f19418a;
 
-    @DoNotStrip
+    /* JADX INFO: renamed from: b */
+    public Bitmap.Config f19419b = null;
+
+    @InterfaceC1680c
     private long mNativeContext;
 
-    @DoNotStrip
+    @InterfaceC1680c
     public GifImage() {
     }
 
-    public static synchronized void k() {
-        if (!a) {
-            a = true;
-            NativeLoader.c("gifimage");
+    /* JADX INFO: renamed from: k */
+    public static synchronized void m8629k() {
+        if (!f19418a) {
+            f19418a = true;
+            C2061a.m1589c("gifimage");
         }
     }
 
-    @DoNotStrip
+    @InterfaceC1680c
     private static native GifImage nativeCreateFromDirectByteBuffer(ByteBuffer byteBuffer, int i, boolean z2);
 
-    @DoNotStrip
+    @InterfaceC1680c
     private static native GifImage nativeCreateFromFileDescriptor(int i, int i2, boolean z2);
 
-    @DoNotStrip
+    @InterfaceC1680c
     private static native GifImage nativeCreateFromNativeMemory(long j, int i, int i2, boolean z2);
 
-    @DoNotStrip
+    @InterfaceC1680c
     private native void nativeDispose();
 
-    @DoNotStrip
+    @InterfaceC1680c
     private native void nativeFinalize();
 
-    @DoNotStrip
+    @InterfaceC1680c
     private native int nativeGetDuration();
 
-    @DoNotStrip
+    @InterfaceC1680c
     private native GifFrame nativeGetFrame(int i);
 
-    @DoNotStrip
+    @InterfaceC1680c
     private native int nativeGetFrameCount();
 
-    @DoNotStrip
+    @InterfaceC1680c
     private native int[] nativeGetFrameDurations();
 
-    @DoNotStrip
+    @InterfaceC1680c
     private native int nativeGetHeight();
 
-    @DoNotStrip
+    @InterfaceC1680c
     private native int nativeGetLoopCount();
 
-    @DoNotStrip
+    @InterfaceC1680c
     private native int nativeGetSizeInBytes();
 
-    @DoNotStrip
+    @InterfaceC1680c
     private native int nativeGetWidth();
 
-    @DoNotStrip
+    @InterfaceC1680c
     private native boolean nativeIsAnimated();
 
-    @Override // b.f.j.a.a.AnimatedImage
-    public int a() {
+    @Override // p007b.p109f.p161j.p162a.p163a.InterfaceC1836c
+    /* JADX INFO: renamed from: a */
+    public int mo1177a() {
         return nativeGetFrameCount();
     }
 
-    @Override // b.f.j.a.a.AnimatedImage
-    public int b() {
+    @Override // p007b.p109f.p161j.p162a.p163a.InterfaceC1836c
+    /* JADX INFO: renamed from: b */
+    public int mo1178b() {
         int iNativeGetLoopCount = nativeGetLoopCount();
         if (iNativeGetLoopCount == -1) {
             return 1;
@@ -92,27 +97,31 @@ public class GifImage implements AnimatedImage, AnimatedImageDecoder {
         return 0;
     }
 
-    @Override // b.f.j.a.b.AnimatedImageDecoder
-    public AnimatedImage c(ByteBuffer byteBuffer, ImageDecodeOptions imageDecodeOptions) {
-        k();
+    @Override // p007b.p109f.p161j.p162a.p164b.InterfaceC1842c
+    /* JADX INFO: renamed from: c */
+    public InterfaceC1836c mo1192c(ByteBuffer byteBuffer, C1881b c1881b) {
+        m8629k();
         byteBuffer.rewind();
-        GifImage gifImageNativeCreateFromDirectByteBuffer = nativeCreateFromDirectByteBuffer(byteBuffer, imageDecodeOptions.c, false);
-        gifImageNativeCreateFromDirectByteBuffer.f2881b = imageDecodeOptions.e;
+        GifImage gifImageNativeCreateFromDirectByteBuffer = nativeCreateFromDirectByteBuffer(byteBuffer, c1881b.f3708c, false);
+        gifImageNativeCreateFromDirectByteBuffer.f19419b = c1881b.f3710e;
         return gifImageNativeCreateFromDirectByteBuffer;
     }
 
-    @Override // b.f.j.a.a.AnimatedImage
-    public Bitmap.Config d() {
-        return this.f2881b;
+    @Override // p007b.p109f.p161j.p162a.p163a.InterfaceC1836c
+    /* JADX INFO: renamed from: d */
+    public Bitmap.Config mo1179d() {
+        return this.f19419b;
     }
 
-    @Override // b.f.j.a.a.AnimatedImage
-    public AnimatedImageFrame e(int i) {
+    @Override // p007b.p109f.p161j.p162a.p163a.InterfaceC1836c
+    /* JADX INFO: renamed from: e */
+    public InterfaceC1837d mo1180e(int i) {
         return nativeGetFrame(i);
     }
 
-    @Override // b.f.j.a.a.AnimatedImage
-    public boolean f() {
+    @Override // p007b.p109f.p161j.p162a.p163a.InterfaceC1836c
+    /* JADX INFO: renamed from: f */
+    public boolean mo1181f() {
         return false;
     }
 
@@ -120,61 +129,65 @@ public class GifImage implements AnimatedImage, AnimatedImageDecoder {
         nativeFinalize();
     }
 
-    @Override // b.f.j.a.a.AnimatedImage
-    public AnimatedDrawableFrameInfo g(int i) {
+    @Override // p007b.p109f.p161j.p162a.p163a.InterfaceC1836c
+    /* JADX INFO: renamed from: g */
+    public C1835b mo1182g(int i) {
         int i2;
         GifFrame gifFrameNativeGetFrame = nativeGetFrame(i);
         try {
-            int iB = gifFrameNativeGetFrame.b();
-            int iC = gifFrameNativeGetFrame.c();
+            int iMo1186b = gifFrameNativeGetFrame.mo1186b();
+            int iMo1187c = gifFrameNativeGetFrame.mo1187c();
             int width = gifFrameNativeGetFrame.getWidth();
             int height = gifFrameNativeGetFrame.getHeight();
-            int iD = gifFrameNativeGetFrame.d();
-            if (iD != 0 && iD != 1) {
+            int iM8628d = gifFrameNativeGetFrame.m8628d();
+            if (iM8628d != 0 && iM8628d != 1) {
                 i2 = 3;
-                if (iD == 2) {
+                if (iM8628d == 2) {
                     i2 = 2;
-                } else if (iD == 3) {
+                } else if (iM8628d == 3) {
                 }
-                return new AnimatedDrawableFrameInfo(i, iB, iC, width, height, 1, i2);
+                return new C1835b(i, iMo1186b, iMo1187c, width, height, 1, i2);
             }
             i2 = 1;
-            return new AnimatedDrawableFrameInfo(i, iB, iC, width, height, 1, i2);
+            return new C1835b(i, iMo1186b, iMo1187c, width, height, 1, i2);
         } finally {
             gifFrameNativeGetFrame.dispose();
         }
     }
 
-    @Override // b.f.j.a.a.AnimatedImage
+    @Override // p007b.p109f.p161j.p162a.p163a.InterfaceC1836c
     public int getHeight() {
         return nativeGetHeight();
     }
 
-    @Override // b.f.j.a.a.AnimatedImage
+    @Override // p007b.p109f.p161j.p162a.p163a.InterfaceC1836c
     public int getWidth() {
         return nativeGetWidth();
     }
 
-    @Override // b.f.j.a.b.AnimatedImageDecoder
-    public AnimatedImage h(long j, int i, ImageDecodeOptions imageDecodeOptions) {
-        k();
-        AnimatableValueParser.i(Boolean.valueOf(j != 0));
-        GifImage gifImageNativeCreateFromNativeMemory = nativeCreateFromNativeMemory(j, i, imageDecodeOptions.c, false);
-        gifImageNativeCreateFromNativeMemory.f2881b = imageDecodeOptions.e;
+    @Override // p007b.p109f.p161j.p162a.p164b.InterfaceC1842c
+    /* JADX INFO: renamed from: h */
+    public InterfaceC1836c mo1193h(long j, int i, C1881b c1881b) {
+        m8629k();
+        C1460d.m527i(Boolean.valueOf(j != 0));
+        GifImage gifImageNativeCreateFromNativeMemory = nativeCreateFromNativeMemory(j, i, c1881b.f3708c, false);
+        gifImageNativeCreateFromNativeMemory.f19419b = c1881b.f3710e;
         return gifImageNativeCreateFromNativeMemory;
     }
 
-    @Override // b.f.j.a.a.AnimatedImage
-    public int[] i() {
+    @Override // p007b.p109f.p161j.p162a.p163a.InterfaceC1836c
+    /* JADX INFO: renamed from: i */
+    public int[] mo1183i() {
         return nativeGetFrameDurations();
     }
 
-    @Override // b.f.j.a.a.AnimatedImage
-    public int j() {
+    @Override // p007b.p109f.p161j.p162a.p163a.InterfaceC1836c
+    /* JADX INFO: renamed from: j */
+    public int mo1184j() {
         return nativeGetSizeInBytes();
     }
 
-    @DoNotStrip
+    @InterfaceC1680c
     public GifImage(long j) {
         this.mNativeContext = j;
     }

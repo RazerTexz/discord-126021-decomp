@@ -9,7 +9,7 @@ import java.util.Arrays;
 public final class RelativeCornerSize implements CornerSize {
     private final float percent;
 
-    public RelativeCornerSize(@FloatRange(from = 0.0d, to = 1.0d) float f) {
+    public RelativeCornerSize(@FloatRange(from = 0.0d, m75to = 1.0d) float f) {
         this.percent = f;
     }
 
@@ -25,7 +25,7 @@ public final class RelativeCornerSize implements CornerSize {
         return rectF.height() * this.percent;
     }
 
-    @FloatRange(from = 0.0d, to = 1.0d)
+    @FloatRange(from = 0.0d, m75to = 1.0d)
     public float getRelativePercent() {
         return this.percent;
     }

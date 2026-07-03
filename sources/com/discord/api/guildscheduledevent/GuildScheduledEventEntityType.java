@@ -21,7 +21,8 @@ public enum GuildScheduledEventEntityType {
         public Companion() {
         }
 
-        public final GuildScheduledEventEntityType a(int type) {
+        /* JADX INFO: renamed from: a */
+        public final GuildScheduledEventEntityType m7993a(int type) {
             if (type == 0) {
                 return GuildScheduledEventEntityType.NONE;
             }

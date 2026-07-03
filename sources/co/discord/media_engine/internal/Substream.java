@@ -1,8 +1,8 @@
 package co.discord.media_engine.internal;
 
-import a0.a.a.b;
-import b.d.b.a.outline;
-import d0.z.d.Intrinsics3;
+import p001a0.p002a.p003a.C0002b;
+import p007b.p100d.p104b.p105a.C1643a;
+import p507d0.p592z.p594d.C12238m;
 
 /* JADX INFO: compiled from: NativeStatistics.kt */
 /* JADX INFO: loaded from: classes.dex */
@@ -21,9 +21,9 @@ public final /* data */ class Substream {
     private final int width;
 
     public Substream(int i, FrameCounts frameCounts, int i2, boolean z2, boolean z3, int i3, int i4, RtcpStats rtcpStats, RtpStats rtpStats, long j, int i5, int i6) {
-        Intrinsics3.checkNotNullParameter(frameCounts, "frameCounts");
-        Intrinsics3.checkNotNullParameter(rtcpStats, "rtcpStats");
-        Intrinsics3.checkNotNullParameter(rtpStats, "rtpStats");
+        C12238m.checkNotNullParameter(frameCounts, "frameCounts");
+        C12238m.checkNotNullParameter(rtcpStats, "rtcpStats");
+        C12238m.checkNotNullParameter(rtpStats, "rtpStats");
         this.avgDelay = i;
         this.frameCounts = frameCounts;
         this.height = i2;
@@ -99,9 +99,9 @@ public final /* data */ class Substream {
     }
 
     public final Substream copy(int avgDelay, FrameCounts frameCounts, int height, boolean isFlexFEC, boolean isRTX, int maxDelay, int retransmitBitrate, RtcpStats rtcpStats, RtpStats rtpStats, long ssrc, int totalBitrate, int width) {
-        Intrinsics3.checkNotNullParameter(frameCounts, "frameCounts");
-        Intrinsics3.checkNotNullParameter(rtcpStats, "rtcpStats");
-        Intrinsics3.checkNotNullParameter(rtpStats, "rtpStats");
+        C12238m.checkNotNullParameter(frameCounts, "frameCounts");
+        C12238m.checkNotNullParameter(rtcpStats, "rtcpStats");
+        C12238m.checkNotNullParameter(rtpStats, "rtpStats");
         return new Substream(avgDelay, frameCounts, height, isFlexFEC, isRTX, maxDelay, retransmitBitrate, rtcpStats, rtpStats, ssrc, totalBitrate, width);
     }
 
@@ -113,7 +113,7 @@ public final /* data */ class Substream {
             return false;
         }
         Substream substream = (Substream) other;
-        return this.avgDelay == substream.avgDelay && Intrinsics3.areEqual(this.frameCounts, substream.frameCounts) && this.height == substream.height && this.isFlexFEC == substream.isFlexFEC && this.isRTX == substream.isRTX && this.maxDelay == substream.maxDelay && this.retransmitBitrate == substream.retransmitBitrate && Intrinsics3.areEqual(this.rtcpStats, substream.rtcpStats) && Intrinsics3.areEqual(this.rtpStats, substream.rtpStats) && this.ssrc == substream.ssrc && this.totalBitrate == substream.totalBitrate && this.width == substream.width;
+        return this.avgDelay == substream.avgDelay && C12238m.areEqual(this.frameCounts, substream.frameCounts) && this.height == substream.height && this.isFlexFEC == substream.isFlexFEC && this.isRTX == substream.isRTX && this.maxDelay == substream.maxDelay && this.retransmitBitrate == substream.retransmitBitrate && C12238m.areEqual(this.rtcpStats, substream.rtcpStats) && C12238m.areEqual(this.rtpStats, substream.rtpStats) && this.ssrc == substream.ssrc && this.totalBitrate == substream.totalBitrate && this.width == substream.width;
     }
 
     public final int getAvgDelay() {
@@ -179,7 +179,7 @@ public final /* data */ class Substream {
         RtcpStats rtcpStats = this.rtcpStats;
         int iHashCode2 = (i3 + (rtcpStats != null ? rtcpStats.hashCode() : 0)) * 31;
         RtpStats rtpStats = this.rtpStats;
-        return ((((b.a(this.ssrc) + ((iHashCode2 + (rtpStats != null ? rtpStats.hashCode() : 0)) * 31)) * 31) + this.totalBitrate) * 31) + this.width;
+        return ((((C0002b.m3a(this.ssrc) + ((iHashCode2 + (rtpStats != null ? rtpStats.hashCode() : 0)) * 31)) * 31) + this.totalBitrate) * 31) + this.width;
     }
 
     public final boolean isFlexFEC() {
@@ -191,29 +191,29 @@ public final /* data */ class Substream {
     }
 
     public String toString() {
-        StringBuilder sbU = outline.U("Substream(avgDelay=");
-        sbU.append(this.avgDelay);
-        sbU.append(", frameCounts=");
-        sbU.append(this.frameCounts);
-        sbU.append(", height=");
-        sbU.append(this.height);
-        sbU.append(", isFlexFEC=");
-        sbU.append(this.isFlexFEC);
-        sbU.append(", isRTX=");
-        sbU.append(this.isRTX);
-        sbU.append(", maxDelay=");
-        sbU.append(this.maxDelay);
-        sbU.append(", retransmitBitrate=");
-        sbU.append(this.retransmitBitrate);
-        sbU.append(", rtcpStats=");
-        sbU.append(this.rtcpStats);
-        sbU.append(", rtpStats=");
-        sbU.append(this.rtpStats);
-        sbU.append(", ssrc=");
-        sbU.append(this.ssrc);
-        sbU.append(", totalBitrate=");
-        sbU.append(this.totalBitrate);
-        sbU.append(", width=");
-        return outline.B(sbU, this.width, ")");
+        StringBuilder sbM833U = C1643a.m833U("Substream(avgDelay=");
+        sbM833U.append(this.avgDelay);
+        sbM833U.append(", frameCounts=");
+        sbM833U.append(this.frameCounts);
+        sbM833U.append(", height=");
+        sbM833U.append(this.height);
+        sbM833U.append(", isFlexFEC=");
+        sbM833U.append(this.isFlexFEC);
+        sbM833U.append(", isRTX=");
+        sbM833U.append(this.isRTX);
+        sbM833U.append(", maxDelay=");
+        sbM833U.append(this.maxDelay);
+        sbM833U.append(", retransmitBitrate=");
+        sbM833U.append(this.retransmitBitrate);
+        sbM833U.append(", rtcpStats=");
+        sbM833U.append(this.rtcpStats);
+        sbM833U.append(", rtpStats=");
+        sbM833U.append(this.rtpStats);
+        sbM833U.append(", ssrc=");
+        sbM833U.append(this.ssrc);
+        sbM833U.append(", totalBitrate=");
+        sbM833U.append(this.totalBitrate);
+        sbM833U.append(", width=");
+        return C1643a.m814B(sbM833U, this.width, ")");
     }
 }

@@ -1,8 +1,8 @@
 package com.discord.models.domain;
 
-import b.d.b.a.outline;
 import com.discord.models.domain.Model;
 import java.io.IOException;
+import p007b.p100d.p104b.p105a.C1643a;
 
 /* JADX INFO: loaded from: classes.dex */
 public class ModelGateway implements Model {
@@ -47,9 +47,9 @@ public class ModelGateway implements Model {
     }
 
     public String toString() {
-        StringBuilder sbU = outline.U("ModelGateway(url=");
-        sbU.append(getUrl());
-        sbU.append(")");
-        return sbU.toString();
+        StringBuilder sbM833U = C1643a.m833U("ModelGateway(url=");
+        sbM833U.append(getUrl());
+        sbM833U.append(")");
+        return sbM833U.toString();
     }
 }

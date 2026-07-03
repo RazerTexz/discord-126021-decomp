@@ -6,18 +6,18 @@ import androidx.activity.result.ActivityResult;
 import androidx.activity.result.ActivityResultCallback;
 import androidx.activity.result.ActivityResultLauncher;
 import androidx.activity.result.contract.ActivityResultContracts;
-import b.a.d.AppScreen2;
 import com.discord.app.AppFragment;
 import com.discord.utilities.auth.RegistrationFlowRepo;
 import com.discord.utilities.captcha.CaptchaErrorBody;
 import com.discord.utilities.captcha.CaptchaHelper;
 import com.discord.utilities.error.Error;
 import com.discord.widgets.captcha.WidgetCaptcha;
-import d0.z.d.Intrinsics3;
 import java.util.List;
 import kotlin.Unit;
 import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.DefaultConstructorMarker;
+import p007b.p008a.p018d.C0870j;
+import p507d0.p592z.p594d.C12238m;
 
 /* JADX INFO: compiled from: WidgetAuthCaptcha.kt */
 /* JADX INFO: loaded from: classes2.dex */
@@ -35,18 +35,18 @@ public final class WidgetAuthCaptcha extends WidgetCaptcha {
         }
 
         public final void launch(Context context, ActivityResultLauncher<Intent> launcher, CaptchaErrorBody captchaErrorBody) {
-            Intrinsics3.checkNotNullParameter(context, "context");
-            Intrinsics3.checkNotNullParameter(launcher, "launcher");
+            C12238m.checkNotNullParameter(context, "context");
+            C12238m.checkNotNullParameter(launcher, "launcher");
             Intent intent = new Intent();
             intent.putExtra(WidgetAuthCaptcha.EXTRA_CAPTCHA_ERROR_BODY, captchaErrorBody);
-            AppScreen2.g.f(context, launcher, WidgetAuthCaptcha.class, intent);
+            C0870j.f524g.m160f(context, launcher, WidgetAuthCaptcha.class, intent);
         }
 
         public final void processErrorsForCaptcha(Context context, ActivityResultLauncher<Intent> launcher, List<String> unhandledErrors, Error error) {
-            Intrinsics3.checkNotNullParameter(context, "context");
-            Intrinsics3.checkNotNullParameter(launcher, "launcher");
-            Intrinsics3.checkNotNullParameter(unhandledErrors, "unhandledErrors");
-            Intrinsics3.checkNotNullParameter(error, "error");
+            C12238m.checkNotNullParameter(context, "context");
+            C12238m.checkNotNullParameter(launcher, "launcher");
+            C12238m.checkNotNullParameter(unhandledErrors, "unhandledErrors");
+            C12238m.checkNotNullParameter(error, "error");
             if (unhandledErrors.remove(CaptchaHelper.CAPTCHA_KEY)) {
                 launch(context, launcher, CaptchaErrorBody.INSTANCE.createFromError(error));
                 error.setShowErrorToasts(false);
@@ -54,12 +54,12 @@ public final class WidgetAuthCaptcha extends WidgetCaptcha {
         }
 
         public final ActivityResultLauncher<Intent> registerForResult(AppFragment fragment, final Function1<? super CaptchaHelper.CaptchaPayload, Unit> callback) {
-            Intrinsics3.checkNotNullParameter(fragment, "fragment");
-            Intrinsics3.checkNotNullParameter(callback, "callback");
+            C12238m.checkNotNullParameter(fragment, "fragment");
+            C12238m.checkNotNullParameter(callback, "callback");
             ActivityResultLauncher<Intent> activityResultLauncherRegisterForActivityResult = fragment.registerForActivityResult(new ActivityResultContracts.StartActivityForResult(), new ActivityResultCallback<ActivityResult>() { // from class: com.discord.widgets.auth.WidgetAuthCaptcha$Companion$registerForResult$1
                 @Override // androidx.activity.result.ActivityResultCallback
                 public final void onActivityResult(ActivityResult activityResult) {
-                    Intrinsics3.checkNotNullExpressionValue(activityResult, "activityResult");
+                    C12238m.checkNotNullExpressionValue(activityResult, "activityResult");
                     if (activityResult.getResultCode() == -1) {
                         Intent data = activityResult.getData();
                         String stringExtra = data != null ? data.getStringExtra("RESULT_EXTRA_TOKEN") : null;
@@ -71,7 +71,7 @@ public final class WidgetAuthCaptcha extends WidgetCaptcha {
                     }
                 }
             });
-            Intrinsics3.checkNotNullExpressionValue(activityResultLauncherRegisterForActivityResult, "fragment.registerForActi…  }\n          }\n        }");
+            C12238m.checkNotNullExpressionValue(activityResultLauncherRegisterForActivityResult, "fragment.registerForActi…  }\n          }\n        }");
             return activityResultLauncherRegisterForActivityResult;
         }
 
@@ -82,7 +82,7 @@ public final class WidgetAuthCaptcha extends WidgetCaptcha {
 
     @Override // com.discord.widgets.captcha.WidgetCaptcha
     public void trackTransition(String action, List<String> details) {
-        Intrinsics3.checkNotNullParameter(action, "action");
+        C12238m.checkNotNullParameter(action, "action");
         RegistrationFlowRepo.INSTANCE.getINSTANCE().trackTransition("Captcha", action, details);
     }
 }

@@ -1,13 +1,13 @@
 package com.discord.widgets.voice.fullscreen;
 
 import androidx.recyclerview.widget.RecyclerView;
-import d0.z.d.Intrinsics3;
-import d0.z.d.Lambda;
 import kotlin.jvm.functions.Function0;
+import p507d0.p592z.p594d.AbstractC12240o;
+import p507d0.p592z.p594d.C12238m;
 
 /* JADX INFO: compiled from: WidgetCallFullscreen.kt */
 /* JADX INFO: loaded from: classes.dex */
-public final class WidgetCallFullscreen$setUpGridRecycler$layoutManager$1 extends Lambda implements Function0<Integer> {
+public final class WidgetCallFullscreen$setUpGridRecycler$layoutManager$1 extends AbstractC12240o implements Function0<Integer> {
     public final /* synthetic */ int $layoutManagerOrientation;
     public final /* synthetic */ WidgetCallFullscreen this$0;
 
@@ -27,15 +27,15 @@ public final class WidgetCallFullscreen$setUpGridRecycler$layoutManager$1 extend
     public final int invoke2() {
         int i = this.$layoutManagerOrientation;
         if (i == 0) {
-            RecyclerView recyclerView = this.this$0.getBinding().p;
-            Intrinsics3.checkNotNullExpressionValue(recyclerView, "binding.callVideoRecycler");
+            RecyclerView recyclerView = this.this$0.getBinding().f15773p;
+            C12238m.checkNotNullExpressionValue(recyclerView, "binding.callVideoRecycler");
             return recyclerView.getWidth();
         }
         if (i != 1) {
             throw new IllegalStateException();
         }
-        RecyclerView recyclerView2 = this.this$0.getBinding().p;
-        Intrinsics3.checkNotNullExpressionValue(recyclerView2, "binding.callVideoRecycler");
+        RecyclerView recyclerView2 = this.this$0.getBinding().f15773p;
+        C12238m.checkNotNullExpressionValue(recyclerView2, "binding.callVideoRecycler");
         return recyclerView2.getHeight();
     }
 }

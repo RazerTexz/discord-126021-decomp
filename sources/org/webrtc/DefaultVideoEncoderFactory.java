@@ -1,11 +1,11 @@
 package org.webrtc;
 
 import androidx.annotation.Nullable;
-import h0.c.VideoEncoderFactory2;
 import java.util.Arrays;
 import java.util.LinkedHashSet;
 import org.webrtc.EglBase;
 import org.webrtc.VideoEncoderFactory;
+import p617h0.p628c.C12487s0;
 
 /* JADX INFO: loaded from: classes3.dex */
 public class DefaultVideoEncoderFactory implements VideoEncoderFactory {
@@ -29,12 +29,12 @@ public class DefaultVideoEncoderFactory implements VideoEncoderFactory {
 
     @Override // org.webrtc.VideoEncoderFactory
     public /* synthetic */ VideoEncoderFactory.VideoEncoderSelector getEncoderSelector() {
-        return VideoEncoderFactory2.a(this);
+        return C12487s0.m10677a(this);
     }
 
     @Override // org.webrtc.VideoEncoderFactory
     public /* synthetic */ VideoCodecInfo[] getImplementations() {
-        return VideoEncoderFactory2.b(this);
+        return C12487s0.m10678b(this);
     }
 
     @Override // org.webrtc.VideoEncoderFactory

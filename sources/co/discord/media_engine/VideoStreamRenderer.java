@@ -3,9 +3,6 @@ package co.discord.media_engine;
 import android.content.Context;
 import android.util.AttributeSet;
 import com.hammerandchisel.libdiscord.Discord;
-import d0.t.Sets5;
-import d0.t._Collections;
-import d0.z.d.Intrinsics3;
 import java.util.LinkedHashMap;
 import java.util.Map;
 import java.util.Set;
@@ -13,6 +10,9 @@ import kotlin.jvm.internal.DefaultConstructorMarker;
 import org.webrtc.RendererCommon;
 import org.webrtc.SurfaceViewRenderer;
 import org.webrtc.VideoFrame;
+import p507d0.p580t.C12148n0;
+import p507d0.p580t.C12163u;
+import p507d0.p592z.p594d.C12238m;
 
 /* JADX INFO: compiled from: VideoStreamRenderer.kt */
 /* JADX INFO: loaded from: classes.dex */
@@ -29,9 +29,9 @@ public class VideoStreamRenderer extends SurfaceViewRenderer {
         }
 
         public final void addSink(Discord discord, VideoStreamRenderer sink, String streamId) {
-            Intrinsics3.checkNotNullParameter(discord, "discord");
-            Intrinsics3.checkNotNullParameter(sink, "sink");
-            Intrinsics3.checkNotNullParameter(streamId, "streamId");
+            C12238m.checkNotNullParameter(discord, "discord");
+            C12238m.checkNotNullParameter(sink, "sink");
+            C12238m.checkNotNullParameter(streamId, "streamId");
             synchronized (VideoStreamRenderer.streams) {
                 Muxer unused = VideoStreamRenderer.Muxer;
                 Set set = (Set) VideoStreamRenderer.streams.get(streamId);
@@ -40,13 +40,13 @@ public class VideoStreamRenderer extends SurfaceViewRenderer {
                         set.add(sink);
                     }
                 } else {
-                    final Set setMutableSetOf = Sets5.mutableSetOf(sink);
+                    final Set setMutableSetOf = C12148n0.mutableSetOf(sink);
                     discord.setVideoOutputSink(streamId, new Discord.VideoFrameCallback() { // from class: co.discord.media_engine.VideoStreamRenderer$Muxer$addSink$1$2
                         @Override // com.hammerandchisel.libdiscord.Discord.VideoFrameCallback
                         public final boolean onFrame(VideoFrame videoFrame) {
-                            Intrinsics3.checkNotNullParameter(videoFrame, "frame");
+                            C12238m.checkNotNullParameter(videoFrame, "frame");
                             synchronized (setMutableSetOf) {
-                                VideoStreamRenderer videoStreamRenderer = (VideoStreamRenderer) _Collections.firstOrNull(setMutableSetOf);
+                                VideoStreamRenderer videoStreamRenderer = (VideoStreamRenderer) C12163u.firstOrNull(setMutableSetOf);
                                 if (videoStreamRenderer != null) {
                                     videoStreamRenderer.onFrame(videoFrame);
                                 }
@@ -62,9 +62,9 @@ public class VideoStreamRenderer extends SurfaceViewRenderer {
         }
 
         public final void removeSink(Discord discord, VideoStreamRenderer sink, String streamId) {
-            Intrinsics3.checkNotNullParameter(discord, "discord");
-            Intrinsics3.checkNotNullParameter(sink, "sink");
-            Intrinsics3.checkNotNullParameter(streamId, "streamId");
+            C12238m.checkNotNullParameter(discord, "discord");
+            C12238m.checkNotNullParameter(sink, "sink");
+            C12238m.checkNotNullParameter(streamId, "streamId");
             synchronized (VideoStreamRenderer.streams) {
                 Muxer unused = VideoStreamRenderer.Muxer;
                 Set set = (Set) VideoStreamRenderer.streams.get(streamId);
@@ -89,7 +89,7 @@ public class VideoStreamRenderer extends SurfaceViewRenderer {
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public VideoStreamRenderer(Context context) {
         super(context);
-        Intrinsics3.checkNotNullParameter(context, "ctx");
+        C12238m.checkNotNullParameter(context, "ctx");
         this.streamIdentifier = "";
     }
 
@@ -126,8 +126,8 @@ public class VideoStreamRenderer extends SurfaceViewRenderer {
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public VideoStreamRenderer(Context context, AttributeSet attributeSet) {
         super(context, attributeSet);
-        Intrinsics3.checkNotNullParameter(context, "ctx");
-        Intrinsics3.checkNotNullParameter(attributeSet, "attrs");
+        C12238m.checkNotNullParameter(context, "ctx");
+        C12238m.checkNotNullParameter(attributeSet, "attrs");
         this.streamIdentifier = "";
     }
 }

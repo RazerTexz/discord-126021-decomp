@@ -21,7 +21,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.annotation.RestrictTo;
 import androidx.annotation.VisibleForTesting;
-import androidx.browser.R;
+import androidx.browser.C0143R;
 import androidx.core.widget.TextViewCompat;
 import com.discord.restapi.RestAPIBuilder;
 import java.util.ArrayList;
@@ -58,7 +58,7 @@ public class BrowserActionsFallbackMenuUi implements AdapterView.OnItemClickList
             @Override // java.lang.Runnable
             public void run() {
                 ((ClipboardManager) BrowserActionsFallbackMenuUi.this.mContext.getSystemService("clipboard")).setPrimaryClip(ClipData.newPlainText("url", BrowserActionsFallbackMenuUi.this.mUri.toString()));
-                Toast.makeText(BrowserActionsFallbackMenuUi.this.mContext, BrowserActionsFallbackMenuUi.this.mContext.getString(R.string.copy_toast_msg), 0).show();
+                Toast.makeText(BrowserActionsFallbackMenuUi.this.mContext, BrowserActionsFallbackMenuUi.this.mContext.getString(C0143R.string.copy_toast_msg), 0).show();
             }
         };
     }
@@ -66,9 +66,9 @@ public class BrowserActionsFallbackMenuUi implements AdapterView.OnItemClickList
     @NonNull
     private List<BrowserActionItem> buildFallbackMenuItemList(List<BrowserActionItem> list) {
         ArrayList arrayList = new ArrayList();
-        arrayList.add(new BrowserActionItem(this.mContext.getString(R.string.fallback_menu_item_open_in_browser), buildOpenInBrowserAction()));
-        arrayList.add(new BrowserActionItem(this.mContext.getString(R.string.fallback_menu_item_copy_link), buildCopyAction()));
-        arrayList.add(new BrowserActionItem(this.mContext.getString(R.string.fallback_menu_item_share_link), buildShareAction()));
+        arrayList.add(new BrowserActionItem(this.mContext.getString(C0143R.string.fallback_menu_item_open_in_browser), buildOpenInBrowserAction()));
+        arrayList.add(new BrowserActionItem(this.mContext.getString(C0143R.string.fallback_menu_item_copy_link), buildCopyAction()));
+        arrayList.add(new BrowserActionItem(this.mContext.getString(C0143R.string.fallback_menu_item_share_link), buildShareAction()));
         arrayList.addAll(list);
         return arrayList;
     }
@@ -85,8 +85,8 @@ public class BrowserActionsFallbackMenuUi implements AdapterView.OnItemClickList
     }
 
     private BrowserActionsFallbackMenuView initMenuView(View view) {
-        BrowserActionsFallbackMenuView browserActionsFallbackMenuView = (BrowserActionsFallbackMenuView) view.findViewById(R.id.browser_actions_menu_view);
-        final TextView textView = (TextView) view.findViewById(R.id.browser_actions_header_text);
+        BrowserActionsFallbackMenuView browserActionsFallbackMenuView = (BrowserActionsFallbackMenuView) view.findViewById(C0143R.id.browser_actions_menu_view);
+        final TextView textView = (TextView) view.findViewById(C0143R.id.browser_actions_header_text);
         textView.setText(this.mUri.toString());
         textView.setOnClickListener(new View.OnClickListener() { // from class: androidx.browser.browseractions.BrowserActionsFallbackMenuUi.3
             @Override // android.view.View.OnClickListener
@@ -100,14 +100,14 @@ public class BrowserActionsFallbackMenuUi implements AdapterView.OnItemClickList
                 }
             }
         });
-        ListView listView = (ListView) view.findViewById(R.id.browser_actions_menu_items);
+        ListView listView = (ListView) view.findViewById(C0143R.id.browser_actions_menu_items);
         listView.setAdapter((ListAdapter) new BrowserActionsFallbackMenuAdapter(this.mMenuItems, this.mContext));
         listView.setOnItemClickListener(this);
         return browserActionsFallbackMenuView;
     }
 
     public void displayMenu() {
-        final View viewInflate = LayoutInflater.from(this.mContext).inflate(R.layout.browser_actions_context_menu_page, (ViewGroup) null);
+        final View viewInflate = LayoutInflater.from(this.mContext).inflate(C0143R.layout.browser_actions_context_menu_page, (ViewGroup) null);
         BrowserActionsFallbackMenuDialog browserActionsFallbackMenuDialog = new BrowserActionsFallbackMenuDialog(this.mContext, initMenuView(viewInflate));
         this.mBrowserActionsDialog = browserActionsFallbackMenuDialog;
         browserActionsFallbackMenuDialog.setContentView(viewInflate);

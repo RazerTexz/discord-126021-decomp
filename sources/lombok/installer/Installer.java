@@ -151,7 +151,7 @@ public class Installer {
     /* JADX WARN: Type inference failed for: r0v4, types: [java.lang.Throwable] */
     private static int guiInstaller() {
         int iIntValue;
-        if (OsUtils.getOS() == OsUtils.OS.MAC_OS_X) {
+        if (OsUtils.getOS() == OsUtils.EnumC12884OS.MAC_OS_X) {
             System.setProperty("com.apple.mrj.application.apple.menu.about.name", "Lombok Installer");
             System.setProperty("com.apple.macos.use-file-dialog-packages", "true");
         }
@@ -210,7 +210,7 @@ public class Installer {
     }
 
     public static int cliInstaller(boolean uninstall, List<String> rawArgs) {
-        CmdReader<CmdArgs> reader = CmdReader.of(CmdArgs.class);
+        CmdReader<CmdArgs> reader = CmdReader.m9327of(CmdArgs.class);
         try {
             CmdArgs args = reader.make((String[]) rawArgs.toArray(new String[0]));
             if (args.help) {

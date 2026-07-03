@@ -1,21 +1,13 @@
 package com.discord.stores;
 
 import androidx.core.view.PointerIconCompat;
-import b.d.b.a.outline;
 import com.discord.models.domain.ModelPaymentSource;
-import com.discord.models.domain.ModelPaymentSource3;
+import com.discord.models.domain.PaymentSourceRaw;
 import com.discord.stores.updates.ObservationDeck;
-import com.discord.stores.updates.ObservationDeck4;
+import com.discord.stores.updates.ObservationDeckProvider;
 import com.discord.utilities.error.Error;
+import com.discord.utilities.p501rx.ObservableExtensionsKt;
 import com.discord.utilities.rest.RestAPI;
-import com.discord.utilities.rx.ObservableExtensionsKt;
-import d0.t.Collections2;
-import d0.t.Iterables2;
-import d0.t._Collections;
-import d0.u.a;
-import d0.z.d.Intrinsics3;
-import d0.z.d.Lambda;
-import j0.k.Func1;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Comparator;
@@ -26,8 +18,16 @@ import kotlin.Unit;
 import kotlin.jvm.functions.Function0;
 import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.DefaultConstructorMarker;
-import rx.Observable;
-import rx.Subscription;
+import p007b.p100d.p104b.p105a.C1643a;
+import p507d0.p580t.C12147n;
+import p507d0.p580t.C12149o;
+import p507d0.p580t.C12163u;
+import p507d0.p582u.C12169a;
+import p507d0.p592z.p594d.AbstractC12240o;
+import p507d0.p592z.p594d.C12238m;
+import p637j0.p641k.InterfaceC12589b;
+import p658rx.Observable;
+import p658rx.Subscription;
 
 /* JADX INFO: compiled from: StorePaymentSources.kt */
 /* JADX INFO: loaded from: classes2.dex */
@@ -58,7 +58,7 @@ public final class StorePaymentSources extends StoreV2 {
             /* JADX WARN: Multi-variable type inference failed */
             public Loaded(List<? extends ModelPaymentSource> list) {
                 super(null);
-                Intrinsics3.checkNotNullParameter(list, "paymentSources");
+                C12238m.checkNotNullParameter(list, "paymentSources");
                 this.paymentSources = list;
             }
 
@@ -75,13 +75,13 @@ public final class StorePaymentSources extends StoreV2 {
             }
 
             public final Loaded copy(List<? extends ModelPaymentSource> paymentSources) {
-                Intrinsics3.checkNotNullParameter(paymentSources, "paymentSources");
+                C12238m.checkNotNullParameter(paymentSources, "paymentSources");
                 return new Loaded(paymentSources);
             }
 
             public boolean equals(Object other) {
                 if (this != other) {
-                    return (other instanceof Loaded) && Intrinsics3.areEqual(this.paymentSources, ((Loaded) other).paymentSources);
+                    return (other instanceof Loaded) && C12238m.areEqual(this.paymentSources, ((Loaded) other).paymentSources);
                 }
                 return true;
             }
@@ -99,7 +99,7 @@ public final class StorePaymentSources extends StoreV2 {
             }
 
             public String toString() {
-                return outline.L(outline.U("Loaded(paymentSources="), this.paymentSources, ")");
+                return C1643a.m824L(C1643a.m833U("Loaded(paymentSources="), this.paymentSources, ")");
             }
         }
 
@@ -129,21 +129,21 @@ public final class StorePaymentSources extends StoreV2 {
         }
     }
 
-    /* JADX INFO: renamed from: com.discord.stores.StorePaymentSources$fetchPaymentSources$1, reason: invalid class name */
+    /* JADX INFO: renamed from: com.discord.stores.StorePaymentSources$fetchPaymentSources$1 */
     /* JADX INFO: compiled from: StorePaymentSources.kt */
-    public static final class AnonymousClass1 extends Lambda implements Function0<Unit> {
+    public static final class C63231 extends AbstractC12240o implements Function0<Unit> {
 
         /* JADX INFO: renamed from: com.discord.stores.StorePaymentSources$fetchPaymentSources$1$2, reason: invalid class name */
         /* JADX INFO: compiled from: StorePaymentSources.kt */
-        public static final class AnonymousClass2 extends Lambda implements Function1<List<? extends ModelPaymentSource>, Unit> {
+        public static final class AnonymousClass2 extends AbstractC12240o implements Function1<List<? extends ModelPaymentSource>, Unit> {
 
-            /* JADX INFO: renamed from: com.discord.stores.StorePaymentSources$fetchPaymentSources$1$2$1, reason: invalid class name and collision with other inner class name */
+            /* JADX INFO: renamed from: com.discord.stores.StorePaymentSources$fetchPaymentSources$1$2$1, reason: invalid class name */
             /* JADX INFO: compiled from: StorePaymentSources.kt */
-            public static final class C01631 extends Lambda implements Function0<Unit> {
+            public static final class AnonymousClass1 extends AbstractC12240o implements Function0<Unit> {
                 public final /* synthetic */ List $paymentSources;
 
                 /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-                public C01631(List list) {
+                public AnonymousClass1(List list) {
                     super(0);
                     this.$paymentSources = list;
                 }
@@ -151,14 +151,14 @@ public final class StorePaymentSources extends StoreV2 {
                 @Override // kotlin.jvm.functions.Function0
                 public /* bridge */ /* synthetic */ Unit invoke() {
                     invoke2();
-                    return Unit.a;
+                    return Unit.f27425a;
                 }
 
                 /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
                 public final void invoke2() {
                     StorePaymentSources storePaymentSources = StorePaymentSources.this;
                     List list = this.$paymentSources;
-                    Intrinsics3.checkNotNullExpressionValue(list, "paymentSources");
+                    C12238m.checkNotNullExpressionValue(list, "paymentSources");
                     storePaymentSources.handlePaymentSourcesFetchSuccess(list);
                 }
             }
@@ -170,30 +170,30 @@ public final class StorePaymentSources extends StoreV2 {
             @Override // kotlin.jvm.functions.Function1
             public /* bridge */ /* synthetic */ Unit invoke(List<? extends ModelPaymentSource> list) {
                 invoke2(list);
-                return Unit.a;
+                return Unit.f27425a;
             }
 
             /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
             public final void invoke2(List<? extends ModelPaymentSource> list) {
-                StorePaymentSources.this.dispatcher.schedule(new C01631(list));
+                StorePaymentSources.this.dispatcher.schedule(new AnonymousClass1(list));
             }
         }
 
         /* JADX INFO: renamed from: com.discord.stores.StorePaymentSources$fetchPaymentSources$1$3, reason: invalid class name */
         /* JADX INFO: compiled from: StorePaymentSources.kt */
-        public static final class AnonymousClass3 extends Lambda implements Function1<Error, Unit> {
+        public static final class AnonymousClass3 extends AbstractC12240o implements Function1<Error, Unit> {
 
-            /* JADX INFO: renamed from: com.discord.stores.StorePaymentSources$fetchPaymentSources$1$3$1, reason: invalid class name and collision with other inner class name */
+            /* JADX INFO: renamed from: com.discord.stores.StorePaymentSources$fetchPaymentSources$1$3$1, reason: invalid class name */
             /* JADX INFO: compiled from: StorePaymentSources.kt */
-            public static final class C01641 extends Lambda implements Function0<Unit> {
-                public C01641() {
+            public static final class AnonymousClass1 extends AbstractC12240o implements Function0<Unit> {
+                public AnonymousClass1() {
                     super(0);
                 }
 
                 @Override // kotlin.jvm.functions.Function0
                 public /* bridge */ /* synthetic */ Unit invoke() {
                     invoke2();
-                    return Unit.a;
+                    return Unit.f27425a;
                 }
 
                 /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
@@ -209,24 +209,24 @@ public final class StorePaymentSources extends StoreV2 {
             @Override // kotlin.jvm.functions.Function1
             public /* bridge */ /* synthetic */ Unit invoke(Error error) {
                 invoke2(error);
-                return Unit.a;
+                return Unit.f27425a;
             }
 
             /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
             public final void invoke2(Error error) {
-                Intrinsics3.checkNotNullParameter(error, "it");
-                StorePaymentSources.this.dispatcher.schedule(new C01641());
+                C12238m.checkNotNullParameter(error, "it");
+                StorePaymentSources.this.dispatcher.schedule(new AnonymousClass1());
             }
         }
 
-        public AnonymousClass1() {
+        public C63231() {
             super(0);
         }
 
         @Override // kotlin.jvm.functions.Function0
         public /* bridge */ /* synthetic */ Unit invoke() {
             invoke2();
-            return Unit.a;
+            return Unit.f27425a;
         }
 
         /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
@@ -235,28 +235,28 @@ public final class StorePaymentSources extends StoreV2 {
                 return;
             }
             StorePaymentSources.this.handlePaymentSourcesFetchStart();
-            Observable observableG = ObservableExtensionsKt.restSubscribeOn$default(StorePaymentSources.this.restAPI.getPaymentSources(), false, 1, null).G(new Func1<List<? extends ModelPaymentSource3>, List<? extends ModelPaymentSource>>() { // from class: com.discord.stores.StorePaymentSources.fetchPaymentSources.1.1
-                @Override // j0.k.Func1
-                public /* bridge */ /* synthetic */ List<? extends ModelPaymentSource> call(List<? extends ModelPaymentSource3> list) {
-                    return call2((List<ModelPaymentSource3>) list);
+            Observable observableM11083G = ObservableExtensionsKt.restSubscribeOn$default(StorePaymentSources.this.restAPI.getPaymentSources(), false, 1, null).m11083G(new InterfaceC12589b<List<? extends PaymentSourceRaw>, List<? extends ModelPaymentSource>>() { // from class: com.discord.stores.StorePaymentSources.fetchPaymentSources.1.1
+                @Override // p637j0.p641k.InterfaceC12589b
+                public /* bridge */ /* synthetic */ List<? extends ModelPaymentSource> call(List<? extends PaymentSourceRaw> list) {
+                    return call2((List<PaymentSourceRaw>) list);
                 }
 
                 /* JADX INFO: renamed from: call, reason: avoid collision after fix types in other method */
-                public final List<ModelPaymentSource> call2(List<ModelPaymentSource3> list) {
+                public final List<ModelPaymentSource> call2(List<PaymentSourceRaw> list) {
                     StorePaymentSources storePaymentSources = StorePaymentSources.this;
-                    Intrinsics3.checkNotNullExpressionValue(list, "it");
+                    C12238m.checkNotNullExpressionValue(list, "it");
                     return storePaymentSources.ensureDefaultPaymentSource(list);
                 }
             });
-            Intrinsics3.checkNotNullExpressionValue(observableG, "restAPI\n          .getPa…efaultPaymentSource(it) }");
-            ObservableExtensionsKt.appSubscribe(observableG, (Class<?>) StorePaymentSources.this.getClass(), (58 & 2) != 0 ? null : null, (Function1<? super Subscription, Unit>) ((58 & 4) != 0 ? null : null), (Function1<? super Error, Unit>) ((58 & 8) != 0 ? null : new AnonymousClass3()), (Function0<Unit>) ((58 & 16) != 0 ? ObservableExtensionsKt.AnonymousClass1.INSTANCE : null), (Function0<Unit>) ((58 & 32) != 0 ? ObservableExtensionsKt.AnonymousClass2.INSTANCE : null), new AnonymousClass2());
+            C12238m.checkNotNullExpressionValue(observableM11083G, "restAPI\n          .getPa…efaultPaymentSource(it) }");
+            ObservableExtensionsKt.appSubscribe(observableM11083G, (Class<?>) StorePaymentSources.this.getClass(), (58 & 2) != 0 ? null : null, (Function1<? super Subscription, Unit>) ((58 & 4) != 0 ? null : null), (Function1<? super Error, Unit>) ((58 & 8) != 0 ? null : new AnonymousClass3()), (Function0<Unit>) ((58 & 16) != 0 ? ObservableExtensionsKt.C68791.INSTANCE : null), (Function0<Unit>) ((58 & 32) != 0 ? ObservableExtensionsKt.C68802.INSTANCE : null), new AnonymousClass2());
         }
     }
 
-    /* JADX INFO: renamed from: com.discord.stores.StorePaymentSources$observePaymentSourcesState$1, reason: invalid class name */
+    /* JADX INFO: renamed from: com.discord.stores.StorePaymentSources$observePaymentSourcesState$1 */
     /* JADX INFO: compiled from: StorePaymentSources.kt */
-    public static final class AnonymousClass1 extends Lambda implements Function0<PaymentSourcesState> {
-        public AnonymousClass1() {
+    public static final class C63241 extends AbstractC12240o implements Function0<PaymentSourcesState> {
+        public C63241() {
             super(0);
         }
 
@@ -268,50 +268,50 @@ public final class StorePaymentSources extends StoreV2 {
     }
 
     public /* synthetic */ StorePaymentSources(Dispatcher dispatcher, ObservationDeck observationDeck, RestAPI restAPI, int i, DefaultConstructorMarker defaultConstructorMarker) {
-        this(dispatcher, (i & 2) != 0 ? ObservationDeck4.get() : observationDeck, (i & 4) != 0 ? RestAPI.INSTANCE.getApi() : restAPI);
+        this(dispatcher, (i & 2) != 0 ? ObservationDeckProvider.get() : observationDeck, (i & 4) != 0 ? RestAPI.INSTANCE.getApi() : restAPI);
     }
 
-    private final List<ModelPaymentSource> ensureDefaultPaymentSource(List<ModelPaymentSource3> rawPaymentSources) {
+    private final List<ModelPaymentSource> ensureDefaultPaymentSource(List<PaymentSourceRaw> rawPaymentSources) {
         if (rawPaymentSources.isEmpty()) {
-            return Collections2.emptyList();
+            return C12147n.emptyList();
         }
-        List mutableList = _Collections.toMutableList((Collection) _Collections.sortedWith(rawPaymentSources, new Comparator() { // from class: com.discord.stores.StorePaymentSources$ensureDefaultPaymentSource$$inlined$sortedBy$1
+        List mutableList = C12163u.toMutableList((Collection) C12163u.sortedWith(rawPaymentSources, new Comparator() { // from class: com.discord.stores.StorePaymentSources$ensureDefaultPaymentSource$$inlined$sortedBy$1
             /* JADX WARN: Multi-variable type inference failed */
             @Override // java.util.Comparator
             public final int compare(T t, T t2) {
-                return a.compareValues(Integer.valueOf(!((ModelPaymentSource3) t).getDefault() ? 1 : 0), Integer.valueOf(!((ModelPaymentSource3) t2).getDefault() ? 1 : 0));
+                return C12169a.compareValues(Integer.valueOf(!((PaymentSourceRaw) t).getDefault() ? 1 : 0), Integer.valueOf(!((PaymentSourceRaw) t2).getDefault() ? 1 : 0));
             }
         }));
-        ModelPaymentSource3 modelPaymentSource3 = (ModelPaymentSource3) _Collections.first(mutableList);
-        mutableList.set(0, modelPaymentSource3.copy((PointerIconCompat.TYPE_CROSSHAIR & 1) != 0 ? modelPaymentSource3.type : 0, (PointerIconCompat.TYPE_CROSSHAIR & 2) != 0 ? modelPaymentSource3.id : null, (PointerIconCompat.TYPE_CROSSHAIR & 4) != 0 ? modelPaymentSource3.invalid : false, (PointerIconCompat.TYPE_CROSSHAIR & 8) != 0 ? modelPaymentSource3.billingAddress : null, (PointerIconCompat.TYPE_CROSSHAIR & 16) != 0 ? modelPaymentSource3.default : true, (PointerIconCompat.TYPE_CROSSHAIR & 32) != 0 ? modelPaymentSource3.email : null, (PointerIconCompat.TYPE_CROSSHAIR & 64) != 0 ? modelPaymentSource3.brand : null, (PointerIconCompat.TYPE_CROSSHAIR & 128) != 0 ? modelPaymentSource3.last_4 : null, (PointerIconCompat.TYPE_CROSSHAIR & 256) != 0 ? modelPaymentSource3.expiresMonth : 0, (PointerIconCompat.TYPE_CROSSHAIR & 512) != 0 ? modelPaymentSource3.expiresYear : 0));
-        ArrayList arrayList = new ArrayList(Iterables2.collectionSizeOrDefault(mutableList, 10));
+        PaymentSourceRaw paymentSourceRaw = (PaymentSourceRaw) C12163u.first(mutableList);
+        mutableList.set(0, paymentSourceRaw.copy((PointerIconCompat.TYPE_CROSSHAIR & 1) != 0 ? paymentSourceRaw.type : 0, (PointerIconCompat.TYPE_CROSSHAIR & 2) != 0 ? paymentSourceRaw.id : null, (PointerIconCompat.TYPE_CROSSHAIR & 4) != 0 ? paymentSourceRaw.invalid : false, (PointerIconCompat.TYPE_CROSSHAIR & 8) != 0 ? paymentSourceRaw.billingAddress : null, (PointerIconCompat.TYPE_CROSSHAIR & 16) != 0 ? paymentSourceRaw.default : true, (PointerIconCompat.TYPE_CROSSHAIR & 32) != 0 ? paymentSourceRaw.email : null, (PointerIconCompat.TYPE_CROSSHAIR & 64) != 0 ? paymentSourceRaw.brand : null, (PointerIconCompat.TYPE_CROSSHAIR & 128) != 0 ? paymentSourceRaw.last_4 : null, (PointerIconCompat.TYPE_CROSSHAIR & 256) != 0 ? paymentSourceRaw.expiresMonth : 0, (PointerIconCompat.TYPE_CROSSHAIR & 512) != 0 ? paymentSourceRaw.expiresYear : 0));
+        ArrayList arrayList = new ArrayList(C12149o.collectionSizeOrDefault(mutableList, 10));
         Iterator it = mutableList.iterator();
         while (it.hasNext()) {
-            arrayList.add(ModelPaymentSource.INSTANCE.wrap((ModelPaymentSource3) it.next()));
+            arrayList.add(ModelPaymentSource.INSTANCE.wrap((PaymentSourceRaw) it.next()));
         }
         return arrayList;
     }
 
-    @Store3
+    @StoreThread
     private final void handlePaymentSourcesFetchFailure() {
         this.paymentSourcesState = PaymentSourcesState.Failure.INSTANCE;
         markChanged();
     }
 
-    @Store3
+    @StoreThread
     private final void handlePaymentSourcesFetchStart() {
         this.paymentSourcesState = PaymentSourcesState.Loading.INSTANCE;
         markChanged();
     }
 
-    @Store3
+    @StoreThread
     private final void handlePaymentSourcesFetchSuccess(List<? extends ModelPaymentSource> paymentSources) {
         this.paymentSourcesState = new PaymentSourcesState.Loaded(paymentSources);
         markChanged();
     }
 
     public final void fetchPaymentSources() {
-        this.dispatcher.schedule(new AnonymousClass1());
+        this.dispatcher.schedule(new C63231());
     }
 
     /* JADX INFO: renamed from: getPaymentSourcesState, reason: from getter */
@@ -319,41 +319,41 @@ public final class StorePaymentSources extends StoreV2 {
         return this.paymentSourcesStateSnapshot;
     }
 
-    @Store3
+    @StoreThread
     public final void handlePreLogout() {
         this.paymentSourcesState = PaymentSourcesState.Unfetched.INSTANCE;
         markChanged();
     }
 
-    @Store3
+    @StoreThread
     public final void handleUserPaymentSourcesUpdate() {
         fetchPaymentSources();
     }
 
     public final Observable<PaymentSourcesState> observePaymentSourcesState() {
-        Observable<PaymentSourcesState> observableR = ObservationDeck.connectRx$default(this.observationDeck, new ObservationDeck.UpdateSource[]{this}, false, null, null, new AnonymousClass1(), 14, null).r();
-        Intrinsics3.checkNotNullExpressionValue(observableR, "observationDeck.connectR… }.distinctUntilChanged()");
-        return observableR;
+        Observable<PaymentSourcesState> observableM11112r = ObservationDeck.connectRx$default(this.observationDeck, new ObservationDeck.UpdateSource[]{this}, false, null, null, new C63241(), 14, null).m11112r();
+        C12238m.checkNotNullExpressionValue(observableM11112r, "observationDeck.connectR… }.distinctUntilChanged()");
+        return observableM11112r;
     }
 
     @Override // com.discord.stores.StoreV2
-    @Store3
+    @StoreThread
     public void snapshotData() {
         super.snapshotData();
         PaymentSourcesState paymentSourcesStateCopy = this.paymentSourcesState;
         if (paymentSourcesStateCopy instanceof PaymentSourcesState.Loaded) {
             PaymentSourcesState.Loaded loaded = (PaymentSourcesState.Loaded) paymentSourcesStateCopy;
             paymentSourcesStateCopy = loaded.copy(new ArrayList(loaded.getPaymentSources()));
-        } else if (!Intrinsics3.areEqual(paymentSourcesStateCopy, PaymentSourcesState.Loading.INSTANCE) && !Intrinsics3.areEqual(paymentSourcesStateCopy, PaymentSourcesState.Failure.INSTANCE) && !Intrinsics3.areEqual(paymentSourcesStateCopy, PaymentSourcesState.Unfetched.INSTANCE)) {
+        } else if (!C12238m.areEqual(paymentSourcesStateCopy, PaymentSourcesState.Loading.INSTANCE) && !C12238m.areEqual(paymentSourcesStateCopy, PaymentSourcesState.Failure.INSTANCE) && !C12238m.areEqual(paymentSourcesStateCopy, PaymentSourcesState.Unfetched.INSTANCE)) {
             throw new NoWhenBranchMatchedException();
         }
         this.paymentSourcesStateSnapshot = paymentSourcesStateCopy;
     }
 
     public StorePaymentSources(Dispatcher dispatcher, ObservationDeck observationDeck, RestAPI restAPI) {
-        Intrinsics3.checkNotNullParameter(dispatcher, "dispatcher");
-        Intrinsics3.checkNotNullParameter(observationDeck, "observationDeck");
-        Intrinsics3.checkNotNullParameter(restAPI, "restAPI");
+        C12238m.checkNotNullParameter(dispatcher, "dispatcher");
+        C12238m.checkNotNullParameter(observationDeck, "observationDeck");
+        C12238m.checkNotNullParameter(restAPI, "restAPI");
         this.dispatcher = dispatcher;
         this.observationDeck = observationDeck;
         this.restAPI = restAPI;

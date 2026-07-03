@@ -11,12 +11,10 @@ import androidx.annotation.RestrictTo;
 import androidx.annotation.WorkerThread;
 import androidx.collection.ArrayMap;
 import androidx.concurrent.futures.ResolvableFuture;
-import androidx.core.content.pm.ShortcutInfoCompat;
-import androidx.core.content.pm.ShortcutInfoCompatSaver;
+import androidx.core.content.p004pm.ShortcutInfoCompat;
+import androidx.core.content.p004pm.ShortcutInfoCompatSaver;
 import androidx.core.graphics.drawable.IconCompat;
 import androidx.sharetarget.ShortcutsInfoSerialization;
-import b.d.b.a.outline;
-import b.i.b.d.a.ListenableFuture8;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
@@ -31,11 +29,13 @@ import java.util.concurrent.ExecutorService;
 import java.util.concurrent.LinkedBlockingQueue;
 import java.util.concurrent.ThreadPoolExecutor;
 import java.util.concurrent.TimeUnit;
+import p007b.p100d.p104b.p105a.C1643a;
+import p007b.p225i.p355b.p359d.p360a.InterfaceFutureC4539a;
 
 /* JADX INFO: loaded from: classes.dex */
 @RequiresApi(19)
 @RestrictTo({RestrictTo.Scope.LIBRARY_GROUP_PREFIX})
-public class ShortcutInfoCompatSaverImpl extends ShortcutInfoCompatSaver<ListenableFuture8<Void>> {
+public class ShortcutInfoCompatSaverImpl extends ShortcutInfoCompatSaver<InterfaceFutureC4539a<Void>> {
     private static final String DIRECTORY_BITMAPS = "ShortcutInfoCompatSaver_share_targets_bitmaps";
     private static final String DIRECTORY_TARGETS = "ShortcutInfoCompatSaver_share_targets";
     private static final int EXECUTOR_KEEP_ALIVE_TIME_SECS = 20;
@@ -49,7 +49,7 @@ public class ShortcutInfoCompatSaverImpl extends ShortcutInfoCompatSaver<Listena
     private final ExecutorService mDiskIoService;
     public final File mTargetsXmlFile;
     public final Map<String, ShortcutsInfoSerialization.ShortcutContainer> mShortcutsMap = new ArrayMap();
-    public final Map<String, ListenableFuture8<?>> mScheduledBitmapTasks = new ArrayMap();
+    public final Map<String, InterfaceFutureC4539a<?>> mScheduledBitmapTasks = new ArrayMap();
 
     @AnyThread
     public ShortcutInfoCompatSaverImpl(Context context, ExecutorService executorService, ExecutorService executorService2) {
@@ -102,7 +102,7 @@ public class ShortcutInfoCompatSaverImpl extends ShortcutInfoCompatSaver<Listena
         return sInstance;
     }
 
-    private ListenableFuture8<Void> submitDiskOperation(final Runnable runnable) {
+    private InterfaceFutureC4539a<Void> submitDiskOperation(final Runnable runnable) {
         final ResolvableFuture resolvableFutureCreate = ResolvableFuture.create();
         this.mDiskIoService.submit(new Runnable() { // from class: androidx.sharetarget.ShortcutInfoCompatSaverImpl.9
             @Override // java.lang.Runnable
@@ -121,9 +121,9 @@ public class ShortcutInfoCompatSaverImpl extends ShortcutInfoCompatSaver<Listena
         return resolvableFutureCreate;
     }
 
-    @Override // androidx.core.content.pm.ShortcutInfoCompatSaver
+    @Override // androidx.core.content.p004pm.ShortcutInfoCompatSaver
     @AnyThread
-    public /* bridge */ /* synthetic */ ListenableFuture8<Void> addShortcuts(List list) {
+    public /* bridge */ /* synthetic */ InterfaceFutureC4539a<Void> addShortcuts(List list) {
         return addShortcuts((List<ShortcutInfoCompat>) list);
     }
 
@@ -204,7 +204,7 @@ public class ShortcutInfoCompatSaverImpl extends ShortcutInfoCompatSaver<Listena
         return IconCompat.createWithBitmap(bitmap);
     }
 
-    @Override // androidx.core.content.pm.ShortcutInfoCompatSaver
+    @Override // androidx.core.content.p004pm.ShortcutInfoCompatSaver
     @WorkerThread
     public List<ShortcutInfoCompat> getShortcuts() throws Exception {
         return (List) this.mCacheUpdateService.submit(new Callable<ArrayList<ShortcutInfoCompat>>() { // from class: androidx.sharetarget.ShortcutInfoCompatSaverImpl.4
@@ -220,9 +220,9 @@ public class ShortcutInfoCompatSaverImpl extends ShortcutInfoCompatSaver<Listena
         }).get();
     }
 
-    @Override // androidx.core.content.pm.ShortcutInfoCompatSaver
+    @Override // androidx.core.content.p004pm.ShortcutInfoCompatSaver
     @AnyThread
-    public /* bridge */ /* synthetic */ ListenableFuture8<Void> removeShortcuts(List list) {
+    public /* bridge */ /* synthetic */ InterfaceFutureC4539a<Void> removeShortcuts(List list) {
         return removeShortcuts((List<String>) list);
     }
 
@@ -253,11 +253,11 @@ public class ShortcutInfoCompatSaverImpl extends ShortcutInfoCompatSaver<Listena
             }
         } catch (IOException | OutOfMemoryError | RuntimeException e) {
             Log.wtf(TAG, "Unable to write bitmap to file", e);
-            throw new RuntimeException(outline.w("Unable to write bitmap to file ", str), e);
+            throw new RuntimeException(C1643a.m883w("Unable to write bitmap to file ", str), e);
         }
     }
 
-    public ListenableFuture8<Void> scheduleBitmapSaving(final Bitmap bitmap, final String str) {
+    public InterfaceFutureC4539a<Void> scheduleBitmapSaving(final Bitmap bitmap, final String str) {
         return submitDiskOperation(new Runnable() { // from class: androidx.sharetarget.ShortcutInfoCompatSaverImpl.8
             @Override // java.lang.Runnable
             public void run() {
@@ -268,18 +268,18 @@ public class ShortcutInfoCompatSaverImpl extends ShortcutInfoCompatSaver<Listena
 
     public void scheduleSyncCurrentState(final ResolvableFuture<Void> resolvableFuture) {
         final ArrayList arrayList = new ArrayList(this.mShortcutsMap.values());
-        final ListenableFuture8<Void> listenableFuture8SubmitDiskOperation = submitDiskOperation(new Runnable() { // from class: androidx.sharetarget.ShortcutInfoCompatSaverImpl.10
+        final InterfaceFutureC4539a<Void> interfaceFutureC4539aSubmitDiskOperation = submitDiskOperation(new Runnable() { // from class: androidx.sharetarget.ShortcutInfoCompatSaverImpl.10
             @Override // java.lang.Runnable
             public void run() {
                 ShortcutInfoCompatSaverImpl.this.deleteDanglingBitmaps(arrayList);
                 ShortcutsInfoSerialization.saveAsXml(arrayList, ShortcutInfoCompatSaverImpl.this.mTargetsXmlFile);
             }
         });
-        listenableFuture8SubmitDiskOperation.addListener(new Runnable() { // from class: androidx.sharetarget.ShortcutInfoCompatSaverImpl.11
+        interfaceFutureC4539aSubmitDiskOperation.addListener(new Runnable() { // from class: androidx.sharetarget.ShortcutInfoCompatSaverImpl.11
             @Override // java.lang.Runnable
             public void run() {
                 try {
-                    listenableFuture8SubmitDiskOperation.get();
+                    interfaceFutureC4539aSubmitDiskOperation.get();
                     resolvableFuture.set(null);
                 } catch (Exception e) {
                     resolvableFuture.setException(e);
@@ -289,9 +289,9 @@ public class ShortcutInfoCompatSaverImpl extends ShortcutInfoCompatSaver<Listena
     }
 
     /* JADX WARN: Can't rename method to resolve collision */
-    @Override // androidx.core.content.pm.ShortcutInfoCompatSaver
+    @Override // androidx.core.content.p004pm.ShortcutInfoCompatSaver
     @AnyThread
-    public ListenableFuture8<Void> addShortcuts(List<ShortcutInfoCompat> list) {
+    public InterfaceFutureC4539a<Void> addShortcuts(List<ShortcutInfoCompat> list) {
         final ArrayList arrayList = new ArrayList(list.size());
         Iterator<ShortcutInfoCompat> it = list.iterator();
         while (it.hasNext()) {
@@ -309,20 +309,20 @@ public class ShortcutInfoCompatSaverImpl extends ShortcutInfoCompatSaver<Listena
                         final String id2 = shortcutInfoCompat.getId();
                         ShortcutInfoCompatSaverImpl.this.mShortcutsMap.put(id2, shortcutContainerContainerFrom);
                         if (bitmap != null) {
-                            final ListenableFuture8<Void> listenableFuture8ScheduleBitmapSaving = ShortcutInfoCompatSaverImpl.this.scheduleBitmapSaving(bitmap, shortcutContainerContainerFrom.mBitmapPath);
-                            ListenableFuture8<?> listenableFuture8Put = ShortcutInfoCompatSaverImpl.this.mScheduledBitmapTasks.put(id2, listenableFuture8ScheduleBitmapSaving);
-                            if (listenableFuture8Put != null) {
-                                listenableFuture8Put.cancel(false);
+                            final InterfaceFutureC4539a<Void> interfaceFutureC4539aScheduleBitmapSaving = ShortcutInfoCompatSaverImpl.this.scheduleBitmapSaving(bitmap, shortcutContainerContainerFrom.mBitmapPath);
+                            InterfaceFutureC4539a<?> interfaceFutureC4539aPut = ShortcutInfoCompatSaverImpl.this.mScheduledBitmapTasks.put(id2, interfaceFutureC4539aScheduleBitmapSaving);
+                            if (interfaceFutureC4539aPut != null) {
+                                interfaceFutureC4539aPut.cancel(false);
                             }
-                            listenableFuture8ScheduleBitmapSaving.addListener(new Runnable() { // from class: androidx.sharetarget.ShortcutInfoCompatSaverImpl.7.1
+                            interfaceFutureC4539aScheduleBitmapSaving.addListener(new Runnable() { // from class: androidx.sharetarget.ShortcutInfoCompatSaverImpl.7.1
                                 @Override // java.lang.Runnable
                                 public void run() {
                                     ShortcutInfoCompatSaverImpl.this.mScheduledBitmapTasks.remove(id2);
-                                    if (listenableFuture8ScheduleBitmapSaving.isCancelled()) {
+                                    if (interfaceFutureC4539aScheduleBitmapSaving.isCancelled()) {
                                         return;
                                     }
                                     try {
-                                        listenableFuture8ScheduleBitmapSaving.get();
+                                        interfaceFutureC4539aScheduleBitmapSaving.get();
                                     } catch (Exception e) {
                                         resolvableFutureCreate.setException(e);
                                     }
@@ -338,15 +338,15 @@ public class ShortcutInfoCompatSaverImpl extends ShortcutInfoCompatSaver<Listena
     }
 
     /* JADX WARN: Can't rename method to resolve collision */
-    @Override // androidx.core.content.pm.ShortcutInfoCompatSaver
+    @Override // androidx.core.content.p004pm.ShortcutInfoCompatSaver
     @AnyThread
-    public ListenableFuture8<Void> removeAllShortcuts() {
+    public InterfaceFutureC4539a<Void> removeAllShortcuts() {
         final ResolvableFuture resolvableFutureCreate = ResolvableFuture.create();
         this.mCacheUpdateService.submit(new Runnable() { // from class: androidx.sharetarget.ShortcutInfoCompatSaverImpl.3
             @Override // java.lang.Runnable
             public void run() {
                 ShortcutInfoCompatSaverImpl.this.mShortcutsMap.clear();
-                Iterator<ListenableFuture8<?>> it = ShortcutInfoCompatSaverImpl.this.mScheduledBitmapTasks.values().iterator();
+                Iterator<InterfaceFutureC4539a<?>> it = ShortcutInfoCompatSaverImpl.this.mScheduledBitmapTasks.values().iterator();
                 while (it.hasNext()) {
                     it.next().cancel(false);
                 }
@@ -358,9 +358,9 @@ public class ShortcutInfoCompatSaverImpl extends ShortcutInfoCompatSaver<Listena
     }
 
     /* JADX WARN: Can't rename method to resolve collision */
-    @Override // androidx.core.content.pm.ShortcutInfoCompatSaver
+    @Override // androidx.core.content.p004pm.ShortcutInfoCompatSaver
     @AnyThread
-    public ListenableFuture8<Void> removeShortcuts(List<String> list) {
+    public InterfaceFutureC4539a<Void> removeShortcuts(List<String> list) {
         final ArrayList arrayList = new ArrayList(list);
         final ResolvableFuture resolvableFutureCreate = ResolvableFuture.create();
         this.mCacheUpdateService.submit(new Runnable() { // from class: androidx.sharetarget.ShortcutInfoCompatSaverImpl.2
@@ -368,9 +368,9 @@ public class ShortcutInfoCompatSaverImpl extends ShortcutInfoCompatSaver<Listena
             public void run() {
                 for (String str : arrayList) {
                     ShortcutInfoCompatSaverImpl.this.mShortcutsMap.remove(str);
-                    ListenableFuture8<?> listenableFuture8Remove = ShortcutInfoCompatSaverImpl.this.mScheduledBitmapTasks.remove(str);
-                    if (listenableFuture8Remove != null) {
-                        listenableFuture8Remove.cancel(false);
+                    InterfaceFutureC4539a<?> interfaceFutureC4539aRemove = ShortcutInfoCompatSaverImpl.this.mScheduledBitmapTasks.remove(str);
+                    if (interfaceFutureC4539aRemove != null) {
+                        interfaceFutureC4539aRemove.cancel(false);
                     }
                 }
                 ShortcutInfoCompatSaverImpl.this.scheduleSyncCurrentState(resolvableFutureCreate);

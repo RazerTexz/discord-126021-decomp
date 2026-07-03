@@ -2,14 +2,14 @@ package com.discord.widgets.hubs;
 
 import android.os.Bundle;
 import android.os.Parcelable;
-import b.d.b.a.outline;
 import com.discord.app.AppFragment;
-import d0.z.d.Lambda;
 import kotlin.jvm.functions.Function0;
+import p007b.p100d.p104b.p105a.C1643a;
+import p507d0.p592z.p594d.AbstractC12240o;
 
 /* JADX INFO: compiled from: ArgUtils.kt */
 /* JADX INFO: loaded from: classes2.dex */
-public final class WidgetHubAuthentication$$special$$inlined$args$1 extends Lambda implements Function0<WidgetHubAuthenticationlViewModel2> {
+public final class WidgetHubAuthentication$$special$$inlined$args$1 extends AbstractC12240o implements Function0<HubAuthenticationArgs> {
     public final /* synthetic */ String $argsKey;
     public final /* synthetic */ AppFragment $this_args;
 
@@ -23,22 +23,22 @@ public final class WidgetHubAuthentication$$special$$inlined$args$1 extends Lamb
     /* JADX WARN: Can't rename method to resolve collision */
     /* JADX WARN: Multi-variable type inference failed */
     @Override // kotlin.jvm.functions.Function0
-    public final WidgetHubAuthenticationlViewModel2 invoke() {
+    public final HubAuthenticationArgs invoke() {
         Parcelable parcelableExtra;
         Bundle arguments = this.$this_args.getArguments();
         Object obj = arguments != null ? arguments.get(this.$argsKey) : null;
-        WidgetHubAuthenticationlViewModel2 widgetHubAuthenticationlViewModel2 = (WidgetHubAuthenticationlViewModel2) (obj instanceof WidgetHubAuthenticationlViewModel2 ? obj : null);
-        WidgetHubAuthenticationlViewModel2 widgetHubAuthenticationlViewModel3 = widgetHubAuthenticationlViewModel2;
-        if (widgetHubAuthenticationlViewModel2 == null) {
+        HubAuthenticationArgs hubAuthenticationArgs = (HubAuthenticationArgs) (obj instanceof HubAuthenticationArgs ? obj : null);
+        HubAuthenticationArgs hubAuthenticationArgs2 = hubAuthenticationArgs;
+        if (hubAuthenticationArgs == null) {
             parcelableExtra = this.$this_args.getMostRecentIntent().getParcelableExtra(this.$argsKey);
         }
-        if (widgetHubAuthenticationlViewModel3 != 0) {
-            widgetHubAuthenticationlViewModel3 = parcelableExtra;
-            return widgetHubAuthenticationlViewModel3;
+        if (hubAuthenticationArgs2 != 0) {
+            hubAuthenticationArgs2 = parcelableExtra;
+            return hubAuthenticationArgs2;
         }
-        widgetHubAuthenticationlViewModel3 = parcelableExtra;
-        StringBuilder sbU = outline.U("Missing args for class type ");
-        outline.l0(WidgetHubAuthenticationlViewModel2.class, sbU, " + key ");
-        throw new IllegalStateException(outline.H(sbU, this.$argsKey, '!'));
+        hubAuthenticationArgs2 = parcelableExtra;
+        StringBuilder sbM833U = C1643a.m833U("Missing args for class type ");
+        C1643a.m862l0(HubAuthenticationArgs.class, sbM833U, " + key ");
+        throw new IllegalStateException(C1643a.m820H(sbM833U, this.$argsKey, '!'));
     }
 }

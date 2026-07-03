@@ -1,12 +1,12 @@
 package com.discord.widgets.guild_role_subscriptions.tier.create.benefits;
 
-import d0.z.d.Lambda;
 import java.io.Serializable;
 import kotlin.jvm.functions.Function0;
+import p507d0.p592z.p594d.AbstractC12240o;
 
 /* JADX INFO: compiled from: WidgetGuildRoleSubscriptionTierBenefits.kt */
 /* JADX INFO: loaded from: classes2.dex */
-public final class WidgetGuildRoleSubscriptionTierBenefits$benefitListType$2 extends Lambda implements Function0<GuildRoleSubscriptionTierBenefitListType> {
+public final class WidgetGuildRoleSubscriptionTierBenefits$benefitListType$2 extends AbstractC12240o implements Function0<GuildRoleSubscriptionTierBenefitListType> {
     public final /* synthetic */ WidgetGuildRoleSubscriptionTierBenefits this$0;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */

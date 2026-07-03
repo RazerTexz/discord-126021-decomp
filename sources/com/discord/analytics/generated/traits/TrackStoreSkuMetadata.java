@@ -1,7 +1,7 @@
 package com.discord.analytics.generated.traits;
 
-import b.d.b.a.outline;
-import d0.z.d.Intrinsics3;
+import p007b.p100d.p104b.p105a.C1643a;
+import p507d0.p592z.p594d.C12238m;
 
 /* JADX INFO: compiled from: TrackStoreSkuMetadata.kt */
 /* JADX INFO: loaded from: classes.dex */
@@ -22,7 +22,7 @@ public final /* data */ class TrackStoreSkuMetadata {
             return false;
         }
         TrackStoreSkuMetadata trackStoreSkuMetadata = (TrackStoreSkuMetadata) other;
-        return Intrinsics3.areEqual(this.skuId, trackStoreSkuMetadata.skuId) && Intrinsics3.areEqual(this.skuType, trackStoreSkuMetadata.skuType) && Intrinsics3.areEqual(this.applicationId, trackStoreSkuMetadata.applicationId) && Intrinsics3.areEqual(this.applicationName, trackStoreSkuMetadata.applicationName) && Intrinsics3.areEqual(this.storeTitle, trackStoreSkuMetadata.storeTitle) && Intrinsics3.areEqual(this.distributionType, trackStoreSkuMetadata.distributionType) && Intrinsics3.areEqual(this.quantity, trackStoreSkuMetadata.quantity);
+        return C12238m.areEqual(this.skuId, trackStoreSkuMetadata.skuId) && C12238m.areEqual(this.skuType, trackStoreSkuMetadata.skuType) && C12238m.areEqual(this.applicationId, trackStoreSkuMetadata.applicationId) && C12238m.areEqual(this.applicationName, trackStoreSkuMetadata.applicationName) && C12238m.areEqual(this.storeTitle, trackStoreSkuMetadata.storeTitle) && C12238m.areEqual(this.distributionType, trackStoreSkuMetadata.distributionType) && C12238m.areEqual(this.quantity, trackStoreSkuMetadata.quantity);
     }
 
     public int hashCode() {
@@ -43,19 +43,19 @@ public final /* data */ class TrackStoreSkuMetadata {
     }
 
     public String toString() {
-        StringBuilder sbU = outline.U("TrackStoreSkuMetadata(skuId=");
-        sbU.append(this.skuId);
-        sbU.append(", skuType=");
-        sbU.append(this.skuType);
-        sbU.append(", applicationId=");
-        sbU.append(this.applicationId);
-        sbU.append(", applicationName=");
-        sbU.append(this.applicationName);
-        sbU.append(", storeTitle=");
-        sbU.append(this.storeTitle);
-        sbU.append(", distributionType=");
-        sbU.append(this.distributionType);
-        sbU.append(", quantity=");
-        return outline.G(sbU, this.quantity, ")");
+        StringBuilder sbM833U = C1643a.m833U("TrackStoreSkuMetadata(skuId=");
+        sbM833U.append(this.skuId);
+        sbM833U.append(", skuType=");
+        sbM833U.append(this.skuType);
+        sbM833U.append(", applicationId=");
+        sbM833U.append(this.applicationId);
+        sbM833U.append(", applicationName=");
+        sbM833U.append(this.applicationName);
+        sbM833U.append(", storeTitle=");
+        sbM833U.append(this.storeTitle);
+        sbM833U.append(", distributionType=");
+        sbM833U.append(this.distributionType);
+        sbM833U.append(", quantity=");
+        return C1643a.m819G(sbM833U, this.quantity, ")");
     }
 }

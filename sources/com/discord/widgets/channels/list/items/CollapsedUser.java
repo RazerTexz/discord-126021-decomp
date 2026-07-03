@@ -1,12 +1,12 @@
 package com.discord.widgets.channels.list.items;
 
-import a0.a.a.b;
-import b.d.b.a.outline;
 import com.discord.models.user.User;
 import com.discord.utilities.mg_recycler.MGRecyclerDataPayload;
 import com.discord.utilities.user.UserUtils;
-import d0.z.d.Intrinsics3;
 import kotlin.jvm.internal.DefaultConstructorMarker;
+import p001a0.p002a.p003a.C0002b;
+import p007b.p100d.p104b.p105a.C1643a;
+import p507d0.p592z.p594d.C12238m;
 
 /* JADX INFO: compiled from: CollapsedUser.kt */
 /* JADX INFO: loaded from: classes2.dex */
@@ -42,7 +42,7 @@ public final /* data */ class CollapsedUser implements MGRecyclerDataPayload {
     }
 
     public CollapsedUser(User user, boolean z2, long j) {
-        Intrinsics3.checkNotNullParameter(user, "user");
+        C12238m.checkNotNullParameter(user, "user");
         this.user = user;
         this.emptySlot = z2;
         this.extraCount = j;
@@ -78,7 +78,7 @@ public final /* data */ class CollapsedUser implements MGRecyclerDataPayload {
     }
 
     public final CollapsedUser copy(User user, boolean emptySlot, long extraCount) {
-        Intrinsics3.checkNotNullParameter(user, "user");
+        C12238m.checkNotNullParameter(user, "user");
         return new CollapsedUser(user, emptySlot, extraCount);
     }
 
@@ -90,7 +90,7 @@ public final /* data */ class CollapsedUser implements MGRecyclerDataPayload {
             return false;
         }
         CollapsedUser collapsedUser = (CollapsedUser) other;
-        return Intrinsics3.areEqual(this.user, collapsedUser.user) && this.emptySlot == collapsedUser.emptySlot && this.extraCount == collapsedUser.extraCount;
+        return C12238m.areEqual(this.user, collapsedUser.user) && this.emptySlot == collapsedUser.emptySlot && this.extraCount == collapsedUser.extraCount;
     }
 
     public final boolean getEmptySlot() {
@@ -128,16 +128,16 @@ public final /* data */ class CollapsedUser implements MGRecyclerDataPayload {
         if (z2) {
             r1 = 1;
         }
-        return b.a(this.extraCount) + ((iHashCode + r1) * 31);
+        return C0002b.m3a(this.extraCount) + ((iHashCode + r1) * 31);
     }
 
     public String toString() {
-        StringBuilder sbU = outline.U("CollapsedUser(user=");
-        sbU.append(this.user);
-        sbU.append(", emptySlot=");
-        sbU.append(this.emptySlot);
-        sbU.append(", extraCount=");
-        return outline.C(sbU, this.extraCount, ")");
+        StringBuilder sbM833U = C1643a.m833U("CollapsedUser(user=");
+        sbM833U.append(this.user);
+        sbM833U.append(", emptySlot=");
+        sbM833U.append(this.emptySlot);
+        sbM833U.append(", extraCount=");
+        return C1643a.m815C(sbM833U, this.extraCount, ")");
     }
 
     public /* synthetic */ CollapsedUser(User user, boolean z2, long j, int i, DefaultConstructorMarker defaultConstructorMarker) {

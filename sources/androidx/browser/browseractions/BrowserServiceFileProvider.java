@@ -19,14 +19,14 @@ import androidx.annotation.UiThread;
 import androidx.concurrent.futures.ResolvableFuture;
 import androidx.core.content.FileProvider;
 import androidx.core.util.AtomicFile;
-import b.d.b.a.outline;
-import b.i.b.d.a.ListenableFuture8;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
+import p007b.p100d.p104b.p105a.C1643a;
+import p007b.p225i.p355b.p359d.p360a.InterfaceFutureC4539a;
 
 /* JADX INFO: loaded from: classes.dex */
 @RestrictTo({RestrictTo.Scope.LIBRARY})
@@ -174,7 +174,7 @@ public final class BrowserServiceFileProvider extends FileProvider {
     }
 
     private static Uri generateUri(Context context, String str) {
-        return new Uri.Builder().scheme(CONTENT_SCHEME).authority(context.getPackageName() + AUTHORITY_SUFFIX).path(outline.y(FILE_SUB_DIR_NAME, str, FILE_EXTENSION)).build();
+        return new Uri.Builder().scheme(CONTENT_SCHEME).authority(context.getPackageName() + AUTHORITY_SUFFIX).path(C1643a.m886y(FILE_SUB_DIR_NAME, str, FILE_EXTENSION)).build();
     }
 
     public static void grantReadPermission(@NonNull Intent intent, @Nullable List<Uri> list, @NonNull Context context) {
@@ -191,7 +191,7 @@ public final class BrowserServiceFileProvider extends FileProvider {
     }
 
     @NonNull
-    public static ListenableFuture8<Bitmap> loadBitmap(@NonNull final ContentResolver contentResolver, @NonNull final Uri uri) {
+    public static InterfaceFutureC4539a<Bitmap> loadBitmap(@NonNull final ContentResolver contentResolver, @NonNull final Uri uri) {
         final ResolvableFuture resolvableFutureCreate = ResolvableFuture.create();
         AsyncTask.THREAD_POOL_EXECUTOR.execute(new Runnable() { // from class: androidx.browser.browseractions.BrowserServiceFileProvider.1
             @Override // java.lang.Runnable
@@ -220,9 +220,9 @@ public final class BrowserServiceFileProvider extends FileProvider {
     @NonNull
     @UiThread
     public static ResolvableFuture<Uri> saveBitmap(@NonNull Context context, @NonNull Bitmap bitmap, @NonNull String str, int i) {
-        StringBuilder sbX = outline.X(str, "_");
-        sbX.append(Integer.toString(i));
-        String string = sbX.toString();
+        StringBuilder sbM836X = C1643a.m836X(str, "_");
+        sbM836X.append(Integer.toString(i));
+        String string = sbM836X.toString();
         Uri uriGenerateUri = generateUri(context, string);
         ResolvableFuture<Uri> resolvableFutureCreate = ResolvableFuture.create();
         new FileSaveTask(context, string, bitmap, uriGenerateUri, resolvableFutureCreate).executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR, new String[0]);

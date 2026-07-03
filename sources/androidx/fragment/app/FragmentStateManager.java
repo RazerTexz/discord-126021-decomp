@@ -14,12 +14,12 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.core.os.EnvironmentCompat;
 import androidx.core.view.ViewCompat;
-import androidx.fragment.R;
+import androidx.fragment.C0344R;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.SpecialEffectsController;
 import androidx.view.Lifecycle;
 import androidx.view.ViewModelStoreOwner;
-import b.d.b.a.outline;
+import p007b.p100d.p104b.p105a.C1643a;
 
 /* JADX INFO: loaded from: classes.dex */
 public class FragmentStateManager {
@@ -37,8 +37,8 @@ public class FragmentStateManager {
     private boolean mMovingToState = false;
     private int mFragmentManagerState = -1;
 
-    /* JADX INFO: renamed from: androidx.fragment.app.FragmentStateManager$2, reason: invalid class name */
-    public static /* synthetic */ class AnonymousClass2 {
+    /* JADX INFO: renamed from: androidx.fragment.app.FragmentStateManager$2 */
+    public static /* synthetic */ class C03922 {
         public static final /* synthetic */ int[] $SwitchMap$androidx$lifecycle$Lifecycle$State;
 
         static {
@@ -115,9 +115,9 @@ public class FragmentStateManager {
 
     public void activityCreated() {
         if (FragmentManager.isLoggingEnabled(3)) {
-            StringBuilder sbU = outline.U("moveto ACTIVITY_CREATED: ");
-            sbU.append(this.mFragment);
-            Log.d("FragmentManager", sbU.toString());
+            StringBuilder sbM833U = C1643a.m833U("moveto ACTIVITY_CREATED: ");
+            sbM833U.append(this.mFragment);
+            Log.d("FragmentManager", sbM833U.toString());
         }
         Fragment fragment = this.mFragment;
         fragment.performActivityCreated(fragment.mSavedFragmentState);
@@ -134,9 +134,9 @@ public class FragmentStateManager {
 
     public void attach() {
         if (FragmentManager.isLoggingEnabled(3)) {
-            StringBuilder sbU = outline.U("moveto ATTACHED: ");
-            sbU.append(this.mFragment);
-            Log.d("FragmentManager", sbU.toString());
+            StringBuilder sbM833U = C1643a.m833U("moveto ATTACHED: ");
+            sbM833U.append(this.mFragment);
+            Log.d("FragmentManager", sbM833U.toString());
         }
         Fragment fragment = this.mFragment;
         Fragment fragment2 = fragment.mTarget;
@@ -144,12 +144,12 @@ public class FragmentStateManager {
         if (fragment2 != null) {
             FragmentStateManager fragmentStateManager2 = this.mFragmentStore.getFragmentStateManager(fragment2.mWho);
             if (fragmentStateManager2 == null) {
-                StringBuilder sbU2 = outline.U("Fragment ");
-                sbU2.append(this.mFragment);
-                sbU2.append(" declared target fragment ");
-                sbU2.append(this.mFragment.mTarget);
-                sbU2.append(" that does not belong to this FragmentManager!");
-                throw new IllegalStateException(sbU2.toString());
+                StringBuilder sbM833U2 = C1643a.m833U("Fragment ");
+                sbM833U2.append(this.mFragment);
+                sbM833U2.append(" declared target fragment ");
+                sbM833U2.append(this.mFragment.mTarget);
+                sbM833U2.append(" that does not belong to this FragmentManager!");
+                throw new IllegalStateException(sbM833U2.toString());
             }
             Fragment fragment3 = this.mFragment;
             fragment3.mTargetWho = fragment3.mTarget.mWho;
@@ -158,10 +158,10 @@ public class FragmentStateManager {
         } else {
             String str = fragment.mTargetWho;
             if (str != null && (fragmentStateManager = this.mFragmentStore.getFragmentStateManager(str)) == null) {
-                StringBuilder sbU3 = outline.U("Fragment ");
-                sbU3.append(this.mFragment);
-                sbU3.append(" declared target fragment ");
-                throw new IllegalStateException(outline.J(sbU3, this.mFragment.mTargetWho, " that does not belong to this FragmentManager!"));
+                StringBuilder sbM833U3 = C1643a.m833U("Fragment ");
+                sbM833U3.append(this.mFragment);
+                sbM833U3.append(" declared target fragment ");
+                throw new IllegalStateException(C1643a.m822J(sbM833U3, this.mFragment.mTargetWho, " that does not belong to this FragmentManager!"));
             }
         }
         if (fragmentStateManager != null && (FragmentManager.USE_STATE_MANAGER || fragmentStateManager.getFragment().mState < 1)) {
@@ -228,18 +228,18 @@ public class FragmentStateManager {
             iMin = Math.min(iMin, 4);
         }
         if (FragmentManager.isLoggingEnabled(2)) {
-            StringBuilder sbV = outline.V("computeExpectedState() of ", iMin, " for ");
-            sbV.append(this.mFragment);
-            Log.v("FragmentManager", sbV.toString());
+            StringBuilder sbM834V = C1643a.m834V("computeExpectedState() of ", iMin, " for ");
+            sbM834V.append(this.mFragment);
+            Log.v("FragmentManager", sbM834V.toString());
         }
         return iMin;
     }
 
     public void create() {
         if (FragmentManager.isLoggingEnabled(3)) {
-            StringBuilder sbU = outline.U("moveto CREATED: ");
-            sbU.append(this.mFragment);
-            Log.d("FragmentManager", sbU.toString());
+            StringBuilder sbM833U = C1643a.m833U("moveto CREATED: ");
+            sbM833U.append(this.mFragment);
+            Log.d("FragmentManager", sbM833U.toString());
         }
         Fragment fragment = this.mFragment;
         if (fragment.mIsCreated) {
@@ -261,9 +261,9 @@ public class FragmentStateManager {
             return;
         }
         if (FragmentManager.isLoggingEnabled(3)) {
-            StringBuilder sbU = outline.U("moveto CREATE_VIEW: ");
-            sbU.append(this.mFragment);
-            Log.d("FragmentManager", sbU.toString());
+            StringBuilder sbM833U = C1643a.m833U("moveto CREATE_VIEW: ");
+            sbM833U.append(this.mFragment);
+            Log.d("FragmentManager", sbM833U.toString());
         }
         Fragment fragment = this.mFragment;
         LayoutInflater layoutInflaterPerformGetLayoutInflater = fragment.performGetLayoutInflater(fragment.mSavedFragmentState);
@@ -276,10 +276,10 @@ public class FragmentStateManager {
             int i = fragment2.mContainerId;
             if (i != 0) {
                 if (i == -1) {
-                    StringBuilder sbU2 = outline.U("Cannot create fragment ");
-                    sbU2.append(this.mFragment);
-                    sbU2.append(" for a container view with no id");
-                    throw new IllegalArgumentException(sbU2.toString());
+                    StringBuilder sbM833U2 = C1643a.m833U("Cannot create fragment ");
+                    sbM833U2.append(this.mFragment);
+                    sbM833U2.append(" for a container view with no id");
+                    throw new IllegalArgumentException(sbM833U2.toString());
                 }
                 viewGroup = (ViewGroup) fragment2.mFragmentManager.getContainer().onFindViewById(this.mFragment.mContainerId);
                 if (viewGroup == null) {
@@ -290,13 +290,13 @@ public class FragmentStateManager {
                         } catch (Resources.NotFoundException unused) {
                             resourceName = EnvironmentCompat.MEDIA_UNKNOWN;
                         }
-                        StringBuilder sbU3 = outline.U("No view found for id 0x");
-                        sbU3.append(Integer.toHexString(this.mFragment.mContainerId));
-                        sbU3.append(" (");
-                        sbU3.append(resourceName);
-                        sbU3.append(") for fragment ");
-                        sbU3.append(this.mFragment);
-                        throw new IllegalArgumentException(sbU3.toString());
+                        StringBuilder sbM833U3 = C1643a.m833U("No view found for id 0x");
+                        sbM833U3.append(Integer.toHexString(this.mFragment.mContainerId));
+                        sbM833U3.append(" (");
+                        sbM833U3.append(resourceName);
+                        sbM833U3.append(") for fragment ");
+                        sbM833U3.append(this.mFragment);
+                        throw new IllegalArgumentException(sbM833U3.toString());
                     }
                 }
             }
@@ -309,7 +309,7 @@ public class FragmentStateManager {
             boolean z2 = false;
             view.setSaveFromParentEnabled(false);
             Fragment fragment5 = this.mFragment;
-            fragment5.mView.setTag(R.id.fragment_container_view_tag, fragment5);
+            fragment5.mView.setTag(C0344R.id.fragment_container_view_tag, fragment5);
             if (viewGroup != null) {
                 addViewToContainer();
             }
@@ -366,9 +366,9 @@ public class FragmentStateManager {
     public void destroy() {
         Fragment fragmentFindActiveFragment;
         if (FragmentManager.isLoggingEnabled(3)) {
-            StringBuilder sbU = outline.U("movefrom CREATED: ");
-            sbU.append(this.mFragment);
-            Log.d("FragmentManager", sbU.toString());
+            StringBuilder sbM833U = C1643a.m833U("movefrom CREATED: ");
+            sbM833U.append(this.mFragment);
+            Log.d("FragmentManager", sbM833U.toString());
         }
         Fragment fragment = this.mFragment;
         boolean zIsChangingConfigurations = true;
@@ -412,9 +412,9 @@ public class FragmentStateManager {
     public void destroyFragmentView() {
         View view;
         if (FragmentManager.isLoggingEnabled(3)) {
-            StringBuilder sbU = outline.U("movefrom CREATE_VIEW: ");
-            sbU.append(this.mFragment);
-            Log.d("FragmentManager", sbU.toString());
+            StringBuilder sbM833U = C1643a.m833U("movefrom CREATE_VIEW: ");
+            sbM833U.append(this.mFragment);
+            Log.d("FragmentManager", sbM833U.toString());
         }
         Fragment fragment = this.mFragment;
         ViewGroup viewGroup = fragment.mContainer;
@@ -433,9 +433,9 @@ public class FragmentStateManager {
 
     public void detach() {
         if (FragmentManager.isLoggingEnabled(3)) {
-            StringBuilder sbU = outline.U("movefrom ATTACHED: ");
-            sbU.append(this.mFragment);
-            Log.d("FragmentManager", sbU.toString());
+            StringBuilder sbM833U = C1643a.m833U("movefrom ATTACHED: ");
+            sbM833U.append(this.mFragment);
+            Log.d("FragmentManager", sbM833U.toString());
         }
         this.mFragment.performDetach();
         boolean z2 = false;
@@ -450,9 +450,9 @@ public class FragmentStateManager {
         }
         if (z2 || this.mFragmentStore.getNonConfig().shouldDestroy(this.mFragment)) {
             if (FragmentManager.isLoggingEnabled(3)) {
-                StringBuilder sbU2 = outline.U("initState called for fragment: ");
-                sbU2.append(this.mFragment);
-                Log.d("FragmentManager", sbU2.toString());
+                StringBuilder sbM833U2 = C1643a.m833U("initState called for fragment: ");
+                sbM833U2.append(this.mFragment);
+                Log.d("FragmentManager", sbM833U2.toString());
             }
             this.mFragment.initState();
         }
@@ -462,9 +462,9 @@ public class FragmentStateManager {
         Fragment fragment = this.mFragment;
         if (fragment.mFromLayout && fragment.mInLayout && !fragment.mPerformedCreateView) {
             if (FragmentManager.isLoggingEnabled(3)) {
-                StringBuilder sbU = outline.U("moveto CREATE_VIEW: ");
-                sbU.append(this.mFragment);
-                Log.d("FragmentManager", sbU.toString());
+                StringBuilder sbM833U = C1643a.m833U("moveto CREATE_VIEW: ");
+                sbM833U.append(this.mFragment);
+                Log.d("FragmentManager", sbM833U.toString());
             }
             Fragment fragment2 = this.mFragment;
             fragment2.performCreateView(fragment2.performGetLayoutInflater(fragment2.mSavedFragmentState), null, this.mFragment.mSavedFragmentState);
@@ -472,7 +472,7 @@ public class FragmentStateManager {
             if (view != null) {
                 view.setSaveFromParentEnabled(false);
                 Fragment fragment3 = this.mFragment;
-                fragment3.mView.setTag(R.id.fragment_container_view_tag, fragment3);
+                fragment3.mView.setTag(C0344R.id.fragment_container_view_tag, fragment3);
                 Fragment fragment4 = this.mFragment;
                 if (fragment4.mHidden) {
                     fragment4.mView.setVisibility(8);
@@ -497,9 +497,9 @@ public class FragmentStateManager {
         ViewGroup viewGroup3;
         if (this.mMovingToState) {
             if (FragmentManager.isLoggingEnabled(2)) {
-                StringBuilder sbU = outline.U("Ignoring re-entrant call to moveToExpectedState() for ");
-                sbU.append(getFragment());
-                Log.v("FragmentManager", sbU.toString());
+                StringBuilder sbM833U = C1643a.m833U("Ignoring re-entrant call to moveToExpectedState() for ");
+                sbM833U.append(getFragment());
+                Log.v("FragmentManager", sbM833U.toString());
                 return;
             }
             return;
@@ -606,9 +606,9 @@ public class FragmentStateManager {
 
     public void pause() {
         if (FragmentManager.isLoggingEnabled(3)) {
-            StringBuilder sbU = outline.U("movefrom RESUMED: ");
-            sbU.append(this.mFragment);
-            Log.d("FragmentManager", sbU.toString());
+            StringBuilder sbM833U = C1643a.m833U("movefrom RESUMED: ");
+            sbM833U.append(this.mFragment);
+            Log.d("FragmentManager", sbM833U.toString());
         }
         this.mFragment.performPause();
         this.mDispatcher.dispatchOnFragmentPaused(this.mFragment, false);
@@ -647,9 +647,9 @@ public class FragmentStateManager {
 
     public void resume() {
         if (FragmentManager.isLoggingEnabled(3)) {
-            StringBuilder sbU = outline.U("moveto RESUMED: ");
-            sbU.append(this.mFragment);
-            Log.d("FragmentManager", sbU.toString());
+            StringBuilder sbM833U = C1643a.m833U("moveto RESUMED: ");
+            sbM833U.append(this.mFragment);
+            Log.d("FragmentManager", sbM833U.toString());
         }
         View focusedView = this.mFragment.getFocusedView();
         if (focusedView != null && isFragmentViewChild(focusedView)) {
@@ -731,9 +731,9 @@ public class FragmentStateManager {
 
     public void start() {
         if (FragmentManager.isLoggingEnabled(3)) {
-            StringBuilder sbU = outline.U("moveto STARTED: ");
-            sbU.append(this.mFragment);
-            Log.d("FragmentManager", sbU.toString());
+            StringBuilder sbM833U = C1643a.m833U("moveto STARTED: ");
+            sbM833U.append(this.mFragment);
+            Log.d("FragmentManager", sbM833U.toString());
         }
         this.mFragment.performStart();
         this.mDispatcher.dispatchOnFragmentStarted(this.mFragment, false);
@@ -741,9 +741,9 @@ public class FragmentStateManager {
 
     public void stop() {
         if (FragmentManager.isLoggingEnabled(3)) {
-            StringBuilder sbU = outline.U("movefrom STARTED: ");
-            sbU.append(this.mFragment);
-            Log.d("FragmentManager", sbU.toString());
+            StringBuilder sbM833U = C1643a.m833U("movefrom STARTED: ");
+            sbM833U.append(this.mFragment);
+            Log.d("FragmentManager", sbM833U.toString());
         }
         this.mFragment.performStop();
         this.mDispatcher.dispatchOnFragmentStopped(this.mFragment, false);

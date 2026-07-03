@@ -12,7 +12,7 @@ import androidx.annotation.Nullable;
 import androidx.annotation.RequiresApi;
 import androidx.annotation.RestrictTo;
 import androidx.appcompat.graphics.drawable.DrawableContainer;
-import androidx.appcompat.resources.R;
+import androidx.appcompat.resources.C0080R;
 import androidx.appcompat.widget.ResourceManagerInternal;
 import androidx.core.content.res.TypedArrayUtils;
 import java.io.IOException;
@@ -107,8 +107,8 @@ public class StateListDrawable extends DrawableContainer {
                 return;
             }
             if (next2 == 2 && depth2 <= depth && xmlPullParser.getName().equals("item")) {
-                TypedArray typedArrayObtainAttributes = TypedArrayUtils.obtainAttributes(resources, theme, attributeSet, R.styleable.StateListDrawableItem);
-                int resourceId = typedArrayObtainAttributes.getResourceId(R.styleable.StateListDrawableItem_android_drawable, -1);
+                TypedArray typedArrayObtainAttributes = TypedArrayUtils.obtainAttributes(resources, theme, attributeSet, C0080R.styleable.StateListDrawableItem);
+                int resourceId = typedArrayObtainAttributes.getResourceId(C0080R.styleable.StateListDrawableItem_android_drawable, -1);
                 Drawable drawable = resourceId > 0 ? ResourceManagerInternal.get().getDrawable(context, resourceId) : null;
                 typedArrayObtainAttributes.recycle();
                 int[] iArrExtractStateSet = extractStateSet(attributeSet);
@@ -129,11 +129,11 @@ public class StateListDrawable extends DrawableContainer {
     private void updateStateFromTypedArray(TypedArray typedArray) {
         StateListState stateListState = this.mStateListState;
         stateListState.mChangingConfigurations |= typedArray.getChangingConfigurations();
-        stateListState.mVariablePadding = typedArray.getBoolean(R.styleable.StateListDrawable_android_variablePadding, stateListState.mVariablePadding);
-        stateListState.mConstantSize = typedArray.getBoolean(R.styleable.StateListDrawable_android_constantSize, stateListState.mConstantSize);
-        stateListState.mEnterFadeDuration = typedArray.getInt(R.styleable.StateListDrawable_android_enterFadeDuration, stateListState.mEnterFadeDuration);
-        stateListState.mExitFadeDuration = typedArray.getInt(R.styleable.StateListDrawable_android_exitFadeDuration, stateListState.mExitFadeDuration);
-        stateListState.mDither = typedArray.getBoolean(R.styleable.StateListDrawable_android_dither, stateListState.mDither);
+        stateListState.mVariablePadding = typedArray.getBoolean(C0080R.styleable.StateListDrawable_android_variablePadding, stateListState.mVariablePadding);
+        stateListState.mConstantSize = typedArray.getBoolean(C0080R.styleable.StateListDrawable_android_constantSize, stateListState.mConstantSize);
+        stateListState.mEnterFadeDuration = typedArray.getInt(C0080R.styleable.StateListDrawable_android_enterFadeDuration, stateListState.mEnterFadeDuration);
+        stateListState.mExitFadeDuration = typedArray.getInt(C0080R.styleable.StateListDrawable_android_exitFadeDuration, stateListState.mExitFadeDuration);
+        stateListState.mDither = typedArray.getBoolean(C0080R.styleable.StateListDrawable_android_dither, stateListState.mDither);
     }
 
     public void addState(int[] iArr, Drawable drawable) {
@@ -195,8 +195,8 @@ public class StateListDrawable extends DrawableContainer {
     }
 
     public void inflate(@NonNull Context context, @NonNull Resources resources, @NonNull XmlPullParser xmlPullParser, @NonNull AttributeSet attributeSet, @Nullable Resources.Theme theme) throws XmlPullParserException, IOException {
-        TypedArray typedArrayObtainAttributes = TypedArrayUtils.obtainAttributes(resources, theme, attributeSet, R.styleable.StateListDrawable);
-        setVisible(typedArrayObtainAttributes.getBoolean(R.styleable.StateListDrawable_android_visible, true), true);
+        TypedArray typedArrayObtainAttributes = TypedArrayUtils.obtainAttributes(resources, theme, attributeSet, C0080R.styleable.StateListDrawable);
+        setVisible(typedArrayObtainAttributes.getBoolean(C0080R.styleable.StateListDrawable_android_visible, true), true);
         updateStateFromTypedArray(typedArrayObtainAttributes);
         updateDensity(resources);
         typedArrayObtainAttributes.recycle();

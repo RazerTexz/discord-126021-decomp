@@ -5,7 +5,7 @@ import android.graphics.drawable.Drawable;
 import android.util.AttributeSet;
 import android.view.View;
 import androidx.appcompat.widget.TintTypedArray;
-import com.google.android.material.R;
+import com.google.android.material.C10817R;
 
 /* JADX INFO: loaded from: classes3.dex */
 public class TabItem extends View {
@@ -19,10 +19,10 @@ public class TabItem extends View {
 
     public TabItem(Context context, AttributeSet attributeSet) {
         super(context, attributeSet);
-        TintTypedArray tintTypedArrayObtainStyledAttributes = TintTypedArray.obtainStyledAttributes(context, attributeSet, R.styleable.TabItem);
-        this.text = tintTypedArrayObtainStyledAttributes.getText(R.styleable.TabItem_android_text);
-        this.icon = tintTypedArrayObtainStyledAttributes.getDrawable(R.styleable.TabItem_android_icon);
-        this.customLayout = tintTypedArrayObtainStyledAttributes.getResourceId(R.styleable.TabItem_android_layout, 0);
+        TintTypedArray tintTypedArrayObtainStyledAttributes = TintTypedArray.obtainStyledAttributes(context, attributeSet, C10817R.styleable.TabItem);
+        this.text = tintTypedArrayObtainStyledAttributes.getText(C10817R.styleable.TabItem_android_text);
+        this.icon = tintTypedArrayObtainStyledAttributes.getDrawable(C10817R.styleable.TabItem_android_icon);
+        this.customLayout = tintTypedArrayObtainStyledAttributes.getResourceId(C10817R.styleable.TabItem_android_layout, 0);
         tintTypedArrayObtainStyledAttributes.recycle();
     }
 }

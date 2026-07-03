@@ -1,18 +1,11 @@
 package com.discord.stores;
 
-import b.d.b.a.outline;
 import com.discord.api.channel.Channel;
 import com.discord.api.channel.ChannelUtils;
 import com.discord.api.thread.ThreadMetadata;
 import com.discord.models.thread.dto.ModelThreadListSync;
 import com.discord.stores.updates.ObservationDeck;
-import com.discord.stores.updates.ObservationDeck4;
-import d0.t.Maps6;
-import d0.t.MapsJVM;
-import d0.t.Sets5;
-import d0.t._Collections;
-import d0.z.d.Intrinsics3;
-import d0.z.d.Lambda;
+import com.discord.stores.updates.ObservationDeckProvider;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.HashMap;
@@ -23,7 +16,14 @@ import java.util.Map;
 import java.util.Set;
 import kotlin.jvm.functions.Function0;
 import kotlin.jvm.internal.DefaultConstructorMarker;
-import rx.Observable;
+import p007b.p100d.p104b.p105a.C1643a;
+import p507d0.p580t.C12134g0;
+import p507d0.p580t.C12136h0;
+import p507d0.p580t.C12148n0;
+import p507d0.p580t.C12163u;
+import p507d0.p592z.p594d.AbstractC12240o;
+import p507d0.p592z.p594d.C12238m;
+import p658rx.Observable;
 
 /* JADX INFO: compiled from: StoreThreadsActive.kt */
 /* JADX INFO: loaded from: classes2.dex */
@@ -39,14 +39,14 @@ public final class StoreThreadsActive extends StoreV2 {
     private final Map<Long, Channel> threadsById;
     private Map<Long, Channel> threadsByIdSnapshot;
 
-    /* JADX INFO: renamed from: com.discord.stores.StoreThreadsActive$observeActiveThreadsForChannel$1, reason: invalid class name */
+    /* JADX INFO: renamed from: com.discord.stores.StoreThreadsActive$observeActiveThreadsForChannel$1 */
     /* JADX INFO: compiled from: StoreThreadsActive.kt */
-    public static final class AnonymousClass1 extends Lambda implements Function0<Map<Long, ? extends Channel>> {
+    public static final class C65351 extends AbstractC12240o implements Function0<Map<Long, ? extends Channel>> {
         public final /* synthetic */ Long $channelId;
         public final /* synthetic */ long $guildId;
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-        public AnonymousClass1(long j, Long l) {
+        public C65351(long j, Long l) {
             super(0);
             this.$guildId = j;
             this.$channelId = l;
@@ -58,13 +58,13 @@ public final class StoreThreadsActive extends StoreV2 {
         }
     }
 
-    /* JADX INFO: renamed from: com.discord.stores.StoreThreadsActive$observeActiveThreadsForGuild$1, reason: invalid class name */
+    /* JADX INFO: renamed from: com.discord.stores.StoreThreadsActive$observeActiveThreadsForGuild$1 */
     /* JADX INFO: compiled from: StoreThreadsActive.kt */
-    public static final class AnonymousClass1 extends Lambda implements Function0<Map<Long, ? extends Channel>> {
+    public static final class C65361 extends AbstractC12240o implements Function0<Map<Long, ? extends Channel>> {
         public final /* synthetic */ long $guildId;
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-        public AnonymousClass1(long j) {
+        public C65361(long j) {
             super(0);
             this.$guildId = j;
         }
@@ -75,10 +75,10 @@ public final class StoreThreadsActive extends StoreV2 {
         }
     }
 
-    /* JADX INFO: renamed from: com.discord.stores.StoreThreadsActive$observeAllActiveForumThreadsById$1, reason: invalid class name */
+    /* JADX INFO: renamed from: com.discord.stores.StoreThreadsActive$observeAllActiveForumThreadsById$1 */
     /* JADX INFO: compiled from: StoreThreadsActive.kt */
-    public static final class AnonymousClass1 extends Lambda implements Function0<Map<Long, ? extends Channel>> {
-        public AnonymousClass1() {
+    public static final class C65371 extends AbstractC12240o implements Function0<Map<Long, ? extends Channel>> {
+        public C65371() {
             super(0);
         }
 
@@ -88,10 +88,10 @@ public final class StoreThreadsActive extends StoreV2 {
         }
     }
 
-    /* JADX INFO: renamed from: com.discord.stores.StoreThreadsActive$observeAllActiveThreadsById$1, reason: invalid class name */
+    /* JADX INFO: renamed from: com.discord.stores.StoreThreadsActive$observeAllActiveThreadsById$1 */
     /* JADX INFO: compiled from: StoreThreadsActive.kt */
-    public static final class AnonymousClass1 extends Lambda implements Function0<Map<Long, ? extends Channel>> {
-        public AnonymousClass1() {
+    public static final class C65381 extends AbstractC12240o implements Function0<Map<Long, ? extends Channel>> {
+        public C65381() {
             super(0);
         }
 
@@ -101,13 +101,13 @@ public final class StoreThreadsActive extends StoreV2 {
         }
     }
 
-    /* JADX INFO: renamed from: com.discord.stores.StoreThreadsActive$observeChannelsWithActiveThreadsByGuild$1, reason: invalid class name */
+    /* JADX INFO: renamed from: com.discord.stores.StoreThreadsActive$observeChannelsWithActiveThreadsByGuild$1 */
     /* JADX INFO: compiled from: StoreThreadsActive.kt */
-    public static final class AnonymousClass1 extends Lambda implements Function0<Set<? extends Long>> {
+    public static final class C65391 extends AbstractC12240o implements Function0<Set<? extends Long>> {
         public final /* synthetic */ long $guildId;
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-        public AnonymousClass1(long j) {
+        public C65391(long j) {
             super(0);
             this.$guildId = j;
         }
@@ -118,13 +118,13 @@ public final class StoreThreadsActive extends StoreV2 {
         }
     }
 
-    /* JADX INFO: renamed from: com.discord.stores.StoreThreadsActive$observeIsThreadSyncedGuild$1, reason: invalid class name */
+    /* JADX INFO: renamed from: com.discord.stores.StoreThreadsActive$observeIsThreadSyncedGuild$1 */
     /* JADX INFO: compiled from: StoreThreadsActive.kt */
-    public static final class AnonymousClass1 extends Lambda implements Function0<Boolean> {
+    public static final class C65401 extends AbstractC12240o implements Function0<Boolean> {
         public final /* synthetic */ long $guildId;
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-        public AnonymousClass1(long j) {
+        public C65401(long j) {
             super(0);
             this.$guildId = j;
         }
@@ -140,10 +140,10 @@ public final class StoreThreadsActive extends StoreV2 {
         }
     }
 
-    /* JADX INFO: renamed from: com.discord.stores.StoreThreadsActive$observeThreadSyncedGuilds$1, reason: invalid class name */
+    /* JADX INFO: renamed from: com.discord.stores.StoreThreadsActive$observeThreadSyncedGuilds$1 */
     /* JADX INFO: compiled from: StoreThreadsActive.kt */
-    public static final class AnonymousClass1 extends Lambda implements Function0<Set<? extends Long>> {
-        public AnonymousClass1() {
+    public static final class C65411 extends AbstractC12240o implements Function0<Set<? extends Long>> {
+        public C65411() {
             super(0);
         }
 
@@ -154,11 +154,11 @@ public final class StoreThreadsActive extends StoreV2 {
     }
 
     public /* synthetic */ StoreThreadsActive(StoreChannels storeChannels, ObservationDeck observationDeck, int i, DefaultConstructorMarker defaultConstructorMarker) {
-        this(storeChannels, (i & 2) != 0 ? ObservationDeck4.get() : observationDeck);
+        this(storeChannels, (i & 2) != 0 ? ObservationDeckProvider.get() : observationDeck);
     }
 
     private final void deleteThread(Channel channel) {
-        Map map = (Map) outline.c(channel, this.threadsByGuild);
+        Map map = (Map) C1643a.m843c(channel, this.threadsByGuild);
         if (map != null && map.containsKey(Long.valueOf(channel.getId()))) {
             map.remove(Long.valueOf(channel.getId()));
             markChanged();
@@ -183,11 +183,11 @@ public final class StoreThreadsActive extends StoreV2 {
 
     private final Map<Long, Channel> getActiveThreadsForChannel(long guildId, Long channelId) {
         if (channelId == null) {
-            return Maps6.emptyMap();
+            return C12136h0.emptyMap();
         }
         Map<Long, Channel> mapEmptyMap = this.threadsByGuildSnapshot.get(Long.valueOf(guildId));
         if (mapEmptyMap == null) {
-            mapEmptyMap = Maps6.emptyMap();
+            mapEmptyMap = C12136h0.emptyMap();
         }
         LinkedHashMap linkedHashMap = new LinkedHashMap();
         for (Map.Entry<Long, Channel> entry : mapEmptyMap.entrySet()) {
@@ -200,23 +200,23 @@ public final class StoreThreadsActive extends StoreV2 {
 
     private final Map<Long, Channel> getActiveThreadsForGuild(long guildId) {
         Map<Long, Channel> map = this.threadsByGuildSnapshot.get(Long.valueOf(guildId));
-        return map != null ? map : Maps6.emptyMap();
+        return map != null ? map : C12136h0.emptyMap();
     }
 
     private final Set<Long> getChannelsWithActiveThreadsByGuild(long guildId) {
         Map<Long, Channel> mapEmptyMap = this.threadsByGuildSnapshot.get(Long.valueOf(guildId));
         if (mapEmptyMap == null) {
-            mapEmptyMap = Maps6.emptyMap();
+            mapEmptyMap = C12136h0.emptyMap();
         }
         ArrayList arrayList = new ArrayList(mapEmptyMap.size());
         Iterator<Map.Entry<Long, Channel>> it = mapEmptyMap.entrySet().iterator();
         while (it.hasNext()) {
             arrayList.add(Long.valueOf(it.next().getValue().getParentId()));
         }
-        return _Collections.toSet(arrayList);
+        return C12163u.toSet(arrayList);
     }
 
-    @Store3
+    @StoreThread
     private final void rebuildThreadByIdMaps() {
         this.threadsById.clear();
         this.forumThreadsById.clear();
@@ -226,21 +226,21 @@ public final class StoreThreadsActive extends StoreV2 {
                 long jLongValue2 = entry2.getKey().longValue();
                 Channel value = entry2.getValue();
                 this.threadsById.put(Long.valueOf(jLongValue2), value);
-                if (ChannelUtils.r(value, this.storeChannels.getChannelInternal$app_productionGoogleRelease(jLongValue, value.getParentId()))) {
+                if (ChannelUtils.m7694r(value, this.storeChannels.getChannelInternal$app_productionGoogleRelease(jLongValue, value.getParentId()))) {
                     this.forumThreadsById.put(Long.valueOf(jLongValue2), value);
                 }
             }
         }
     }
 
-    @Store3
+    @StoreThread
     private final void syncThreadsFromChannelStore() {
         ThreadMetadata threadMetadata;
         this.threadsByGuild.clear();
         for (Map.Entry<Long, Channel> entry : this.storeChannels.getThreadsByIdInternal$app_productionGoogleRelease().entrySet()) {
             long jLongValue = entry.getKey().longValue();
             Channel value = entry.getValue();
-            if (ChannelUtils.H(value) && ((threadMetadata = value.getThreadMetadata()) == null || !threadMetadata.getArchived())) {
+            if (ChannelUtils.m7673H(value) && ((threadMetadata = value.getThreadMetadata()) == null || !threadMetadata.getArchived())) {
                 Map<Long, Map<Long, Channel>> map = this.threadsByGuild;
                 Long lValueOf = Long.valueOf(value.getGuildId());
                 Map<Long, Channel> map2 = map.get(lValueOf);
@@ -255,25 +255,25 @@ public final class StoreThreadsActive extends StoreV2 {
         markChanged();
     }
 
-    @Store3
+    @StoreThread
     public final Map<Long, Channel> getAllActiveThreadsByIdInternal$app_productionGoogleRelease() {
         return this.threadsById;
     }
 
-    @Store3
+    @StoreThread
     public final Map<Long, Map<Long, Channel>> getAllActiveThreadsInternal$app_productionGoogleRelease() {
         return this.threadsByGuild;
     }
 
-    @Store3
+    @StoreThread
     public final Map<Long, Channel> getAllForumThreadsByIdInternal$app_productionGoogleRelease() {
         return this.forumThreadsById;
     }
 
-    @Store3
+    @StoreThread
     public final void handleChannelCreateOrUpdate(Channel channel) {
-        Intrinsics3.checkNotNullParameter(channel, "channel");
-        Map map = (Map) outline.c(channel, this.threadsByGuild);
+        C12238m.checkNotNullParameter(channel, "channel");
+        Map map = (Map) C1643a.m843c(channel, this.threadsByGuild);
         if (map != null) {
             Collection collectionValues = map.values();
             ArrayList<Channel> arrayList = new ArrayList();
@@ -301,7 +301,7 @@ public final class StoreThreadsActive extends StoreV2 {
         }
     }
 
-    @Store3
+    @StoreThread
     public final void handleConnectionOpen() {
         this.threadsById.clear();
         this.forumThreadsById.clear();
@@ -311,20 +311,20 @@ public final class StoreThreadsActive extends StoreV2 {
         markChanged();
     }
 
-    @Store3
+    @StoreThread
     public final void handleGuildCreate() {
         syncThreadsFromChannelStore();
     }
 
-    @Store3
+    @StoreThread
     public final void handleGuildDelete(long guildId) {
         deleteThreads(guildId);
     }
 
-    @Store3
+    @StoreThread
     public final void handleThreadCreateOrUpdate(Channel channel) {
-        Intrinsics3.checkNotNullParameter(channel, "channel");
-        if (ChannelUtils.H(channel)) {
+        C12238m.checkNotNullParameter(channel, "channel");
+        if (ChannelUtils.m7673H(channel)) {
             ThreadMetadata threadMetadata = channel.getThreadMetadata();
             if (threadMetadata != null && threadMetadata.getArchived()) {
                 deleteThread(channel);
@@ -339,22 +339,22 @@ public final class StoreThreadsActive extends StoreV2 {
             }
             map2.put(Long.valueOf(channel.getId()), channel);
             this.threadsById.put(Long.valueOf(channel.getId()), channel);
-            if (ChannelUtils.r(channel, this.storeChannels.getChannelInternal$app_productionGoogleRelease(channel.getGuildId(), channel.getParentId()))) {
+            if (ChannelUtils.m7694r(channel, this.storeChannels.getChannelInternal$app_productionGoogleRelease(channel.getGuildId(), channel.getParentId()))) {
                 this.forumThreadsById.put(Long.valueOf(channel.getId()), channel);
             }
             markChanged();
         }
     }
 
-    @Store3
+    @StoreThread
     public final void handleThreadDelete(Channel channel) {
-        Intrinsics3.checkNotNullParameter(channel, "channel");
+        C12238m.checkNotNullParameter(channel, "channel");
         deleteThread(channel);
     }
 
-    @Store3
+    @StoreThread
     public final void handleThreadListSync(ModelThreadListSync payload) {
-        Intrinsics3.checkNotNullParameter(payload, "payload");
+        C12238m.checkNotNullParameter(payload, "payload");
         Map<Long, Map<Long, Channel>> map = this.threadsByGuild;
         Long lValueOf = Long.valueOf(payload.getGuildId());
         Map<Long, Channel> map2 = map.get(lValueOf);
@@ -364,11 +364,11 @@ public final class StoreThreadsActive extends StoreV2 {
         }
         Map<Long, Channel> map3 = map2;
         for (Channel channel : payload.getThreads()) {
-            if (ChannelUtils.H(channel)) {
+            if (ChannelUtils.m7673H(channel)) {
                 map3.put(Long.valueOf(channel.getId()), channel);
                 this.threadsById.put(Long.valueOf(channel.getId()), channel);
             }
-            if (ChannelUtils.r(channel, this.storeChannels.getChannelInternal$app_productionGoogleRelease(channel.getGuildId(), channel.getParentId()))) {
+            if (ChannelUtils.m7694r(channel, this.storeChannels.getChannelInternal$app_productionGoogleRelease(channel.getGuildId(), channel.getParentId()))) {
                 this.forumThreadsById.put(Long.valueOf(channel.getId()), channel);
             }
         }
@@ -377,67 +377,67 @@ public final class StoreThreadsActive extends StoreV2 {
     }
 
     public final Observable<Map<Long, Channel>> observeActiveThreadsForChannel(long guildId, Long channelId) {
-        Observable<Map<Long, Channel>> observableR = ObservationDeck.connectRx$default(this.observationDeck, new ObservationDeck.UpdateSource[]{this}, false, null, null, new AnonymousClass1(guildId, channelId), 14, null).r();
-        Intrinsics3.checkNotNullExpressionValue(observableR, "observationDeck.connectR…  .distinctUntilChanged()");
-        return observableR;
+        Observable<Map<Long, Channel>> observableM11112r = ObservationDeck.connectRx$default(this.observationDeck, new ObservationDeck.UpdateSource[]{this}, false, null, null, new C65351(guildId, channelId), 14, null).m11112r();
+        C12238m.checkNotNullExpressionValue(observableM11112r, "observationDeck.connectR…  .distinctUntilChanged()");
+        return observableM11112r;
     }
 
     public final Observable<Map<Long, Channel>> observeActiveThreadsForGuild(long guildId) {
-        Observable<Map<Long, Channel>> observableR = ObservationDeck.connectRx$default(this.observationDeck, new ObservationDeck.UpdateSource[]{this}, false, null, null, new AnonymousClass1(guildId), 14, null).r();
-        Intrinsics3.checkNotNullExpressionValue(observableR, "observationDeck.connectR…  .distinctUntilChanged()");
-        return observableR;
+        Observable<Map<Long, Channel>> observableM11112r = ObservationDeck.connectRx$default(this.observationDeck, new ObservationDeck.UpdateSource[]{this}, false, null, null, new C65361(guildId), 14, null).m11112r();
+        C12238m.checkNotNullExpressionValue(observableM11112r, "observationDeck.connectR…  .distinctUntilChanged()");
+        return observableM11112r;
     }
 
     public final Observable<Map<Long, Channel>> observeAllActiveForumThreadsById() {
-        return ObservationDeck.connectRx$default(this.observationDeck, new ObservationDeck.UpdateSource[]{this}, false, null, null, new AnonymousClass1(), 14, null);
+        return ObservationDeck.connectRx$default(this.observationDeck, new ObservationDeck.UpdateSource[]{this}, false, null, null, new C65371(), 14, null);
     }
 
     public final Observable<Map<Long, Channel>> observeAllActiveThreadsById() {
-        return ObservationDeck.connectRx$default(this.observationDeck, new ObservationDeck.UpdateSource[]{this}, false, null, null, new AnonymousClass1(), 14, null);
+        return ObservationDeck.connectRx$default(this.observationDeck, new ObservationDeck.UpdateSource[]{this}, false, null, null, new C65381(), 14, null);
     }
 
     public final Observable<Set<Long>> observeChannelsWithActiveThreadsByGuild(long guildId) {
-        Observable<Set<Long>> observableR = ObservationDeck.connectRx$default(this.observationDeck, new ObservationDeck.UpdateSource[]{this}, false, null, null, new AnonymousClass1(guildId), 14, null).r();
-        Intrinsics3.checkNotNullExpressionValue(observableR, "observationDeck.connectR…  .distinctUntilChanged()");
-        return observableR;
+        Observable<Set<Long>> observableM11112r = ObservationDeck.connectRx$default(this.observationDeck, new ObservationDeck.UpdateSource[]{this}, false, null, null, new C65391(guildId), 14, null).m11112r();
+        C12238m.checkNotNullExpressionValue(observableM11112r, "observationDeck.connectR…  .distinctUntilChanged()");
+        return observableM11112r;
     }
 
     public final Observable<Boolean> observeIsThreadSyncedGuild(long guildId) {
-        return ObservationDeck.connectRx$default(this.observationDeck, new ObservationDeck.UpdateSource[]{this}, false, null, null, new AnonymousClass1(guildId), 14, null);
+        return ObservationDeck.connectRx$default(this.observationDeck, new ObservationDeck.UpdateSource[]{this}, false, null, null, new C65401(guildId), 14, null);
     }
 
     public final Observable<Set<Long>> observeThreadSyncedGuilds() {
-        return ObservationDeck.connectRx$default(this.observationDeck, new ObservationDeck.UpdateSource[]{this}, false, null, null, new AnonymousClass1(), 14, null);
+        return ObservationDeck.connectRx$default(this.observationDeck, new ObservationDeck.UpdateSource[]{this}, false, null, null, new C65411(), 14, null);
     }
 
     @Override // com.discord.stores.StoreV2
-    @Store3
+    @StoreThread
     public void snapshotData() {
         this.threadsByIdSnapshot = new HashMap(this.threadsById);
         this.forumThreadsByIdSnapshot = new HashMap(this.forumThreadsById);
         Map<Long, Map<Long, Channel>> map = this.threadsByGuild;
-        LinkedHashMap linkedHashMap = new LinkedHashMap(MapsJVM.mapCapacity(map.size()));
+        LinkedHashMap linkedHashMap = new LinkedHashMap(C12134g0.mapCapacity(map.size()));
         Iterator<T> it = map.entrySet().iterator();
         while (it.hasNext()) {
             Map.Entry entry = (Map.Entry) it.next();
             linkedHashMap.put(entry.getKey(), new HashMap((Map) entry.getValue()));
         }
         this.threadsByGuildSnapshot = linkedHashMap;
-        this.threadSyncedGuildsSnapshot = _Collections.toSet(this.threadSyncedGuilds);
+        this.threadSyncedGuildsSnapshot = C12163u.toSet(this.threadSyncedGuilds);
     }
 
     public StoreThreadsActive(StoreChannels storeChannels, ObservationDeck observationDeck) {
-        Intrinsics3.checkNotNullParameter(storeChannels, "storeChannels");
-        Intrinsics3.checkNotNullParameter(observationDeck, "observationDeck");
+        C12238m.checkNotNullParameter(storeChannels, "storeChannels");
+        C12238m.checkNotNullParameter(observationDeck, "observationDeck");
         this.storeChannels = storeChannels;
         this.observationDeck = observationDeck;
         this.threadsById = new HashMap();
-        this.threadsByIdSnapshot = Maps6.emptyMap();
+        this.threadsByIdSnapshot = C12136h0.emptyMap();
         this.forumThreadsById = new HashMap();
-        this.forumThreadsByIdSnapshot = Maps6.emptyMap();
+        this.forumThreadsByIdSnapshot = C12136h0.emptyMap();
         this.threadsByGuild = new HashMap();
-        this.threadsByGuildSnapshot = Maps6.emptyMap();
+        this.threadsByGuildSnapshot = C12136h0.emptyMap();
         this.threadSyncedGuilds = new LinkedHashSet();
-        this.threadSyncedGuildsSnapshot = Sets5.emptySet();
+        this.threadSyncedGuildsSnapshot = C12148n0.emptySet();
     }
 }

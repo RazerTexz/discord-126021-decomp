@@ -12,8 +12,8 @@ import androidx.work.impl.model.WorkProgress;
 import androidx.work.impl.model.WorkSpec;
 import androidx.work.impl.utils.futures.SettableFuture;
 import androidx.work.impl.utils.taskexecutor.TaskExecutor;
-import b.i.b.d.a.ListenableFuture8;
 import java.util.UUID;
+import p007b.p225i.p355b.p359d.p360a.InterfaceFutureC4539a;
 
 /* JADX INFO: loaded from: classes.dex */
 @RestrictTo({RestrictTo.Scope.LIBRARY_GROUP})
@@ -29,7 +29,7 @@ public class WorkProgressUpdater implements ProgressUpdater {
 
     @Override // androidx.work.ProgressUpdater
     @NonNull
-    public ListenableFuture8<Void> updateProgress(@NonNull Context context, @NonNull final UUID uuid, @NonNull final Data data) {
+    public InterfaceFutureC4539a<Void> updateProgress(@NonNull Context context, @NonNull final UUID uuid, @NonNull final Data data) {
         final SettableFuture settableFutureCreate = SettableFuture.create();
         this.mTaskExecutor.executeOnBackgroundThread(new Runnable() { // from class: androidx.work.impl.utils.WorkProgressUpdater.1
             @Override // java.lang.Runnable

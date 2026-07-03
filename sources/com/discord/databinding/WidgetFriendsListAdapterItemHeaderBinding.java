@@ -9,21 +9,22 @@ import androidx.viewbinding.ViewBinding;
 /* JADX INFO: loaded from: classes.dex */
 public final class WidgetFriendsListAdapterItemHeaderBinding implements ViewBinding {
 
+    /* JADX INFO: renamed from: a */
     @NonNull
-    public final FrameLayout a;
+    public final FrameLayout f16664a;
 
-    /* JADX INFO: renamed from: b, reason: collision with root package name */
+    /* JADX INFO: renamed from: b */
     @NonNull
-    public final TextView f2393b;
+    public final TextView f16665b;
 
     public WidgetFriendsListAdapterItemHeaderBinding(@NonNull FrameLayout frameLayout, @NonNull TextView textView) {
-        this.a = frameLayout;
-        this.f2393b = textView;
+        this.f16664a = frameLayout;
+        this.f16665b = textView;
     }
 
     @Override // androidx.viewbinding.ViewBinding
     @NonNull
     public View getRoot() {
-        return this.a;
+        return this.f16664a;
     }
 }

@@ -1,9 +1,9 @@
 package com.discord.api.localizedstring;
 
-import b.d.b.a.outline;
-import d0.z.d.Intrinsics3;
 import java.io.Serializable;
 import java.util.Map;
+import p007b.p100d.p104b.p105a.C1643a;
+import p507d0.p592z.p594d.C12238m;
 
 /* JADX INFO: compiled from: LocalizedString.kt */
 /* JADX INFO: loaded from: classes.dex */
@@ -12,8 +12,8 @@ public final /* data */ class LocalizedString implements Serializable {
     private final Map<String, String> localizations;
 
     public LocalizedString(String str, Map<String, String> map) {
-        Intrinsics3.checkNotNullParameter(str, "default");
-        Intrinsics3.checkNotNullParameter(map, "localizations");
+        C12238m.checkNotNullParameter(str, "default");
+        C12238m.checkNotNullParameter(map, "localizations");
         this.default = str;
         this.localizations = map;
     }
@@ -23,7 +23,8 @@ public final /* data */ class LocalizedString implements Serializable {
         return this.default;
     }
 
-    public final Map<String, String> b() {
+    /* JADX INFO: renamed from: b */
+    public final Map<String, String> m8017b() {
         return this.localizations;
     }
 
@@ -35,7 +36,7 @@ public final /* data */ class LocalizedString implements Serializable {
             return false;
         }
         LocalizedString localizedString = (LocalizedString) other;
-        return Intrinsics3.areEqual(this.default, localizedString.default) && Intrinsics3.areEqual(this.localizations, localizedString.localizations);
+        return C12238m.areEqual(this.default, localizedString.default) && C12238m.areEqual(this.localizations, localizedString.localizations);
     }
 
     public int hashCode() {
@@ -46,9 +47,9 @@ public final /* data */ class LocalizedString implements Serializable {
     }
 
     public String toString() {
-        StringBuilder sbU = outline.U("LocalizedString(default=");
-        sbU.append(this.default);
-        sbU.append(", localizations=");
-        return outline.M(sbU, this.localizations, ")");
+        StringBuilder sbM833U = C1643a.m833U("LocalizedString(default=");
+        sbM833U.append(this.default);
+        sbM833U.append(", localizations=");
+        return C1643a.m825M(sbM833U, this.localizations, ")");
     }
 }

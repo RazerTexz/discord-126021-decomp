@@ -6,16 +6,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
-import b.a.i.StickerViewBinding;
-import b.a.k.FormatUtils;
-import b.a.y.q0.StickerView2;
-import b.a.y.q0.StickerView3;
-import b.a.y.q0.StickerView5;
-import b.a.y.q0.StickerView6;
-import b.a.y.q0.StickerView7;
-import b.a.y.q0.StickerView9;
-import b.f.g.e.v;
-import com.discord.R;
+import com.discord.C5419R;
 import com.discord.api.sticker.BaseSticker;
 import com.discord.api.sticker.Sticker;
 import com.discord.api.sticker.StickerFormatType;
@@ -29,27 +20,36 @@ import com.discord.utilities.apng.ApngUtils;
 import com.discord.utilities.error.Error;
 import com.discord.utilities.images.MGImages;
 import com.discord.utilities.logging.Logger;
-import com.discord.utilities.rx.ObservableExtensionsKt;
+import com.discord.utilities.p501rx.ObservableExtensionsKt;
 import com.discord.utilities.stickers.StickerUtils;
 import com.facebook.drawee.drawable.ScalingUtils$ScaleType;
 import com.facebook.drawee.generic.GenericDraweeHierarchy;
 import com.facebook.drawee.view.SimpleDraweeView;
-import d0.z.d.Intrinsics3;
 import java.io.File;
 import java.util.Objects;
 import kotlin.Unit;
 import kotlin.jvm.functions.Function0;
 import kotlin.jvm.functions.Function1;
 import kotlinx.coroutines.Job;
-import rx.Observable;
-import rx.Subscription;
+import p007b.p008a.p025i.C1039r1;
+import p007b.p008a.p027k.C1107b;
+import p007b.p008a.p062y.p070q0.C1371a;
+import p007b.p008a.p062y.p070q0.C1372b;
+import p007b.p008a.p062y.p070q0.C1374d;
+import p007b.p008a.p062y.p070q0.C1375e;
+import p007b.p008a.p062y.p070q0.C1376f;
+import p007b.p008a.p062y.p070q0.C1378h;
+import p007b.p109f.p132g.p142e.C1788v;
+import p507d0.p592z.p594d.C12238m;
+import p658rx.Observable;
+import p658rx.Subscription;
 
 /* JADX INFO: compiled from: StickerView.kt */
 /* JADX INFO: loaded from: classes2.dex */
 public final class StickerView extends FrameLayout {
 
     /* JADX INFO: renamed from: j, reason: from kotlin metadata */
-    public final StickerViewBinding binding;
+    public final C1039r1 binding;
 
     /* JADX INFO: renamed from: k, reason: from kotlin metadata */
     public BaseSticker sticker;
@@ -63,20 +63,20 @@ public final class StickerView extends FrameLayout {
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public StickerView(Context context, AttributeSet attributeSet) {
         super(context, attributeSet);
-        Intrinsics3.checkNotNullParameter(context, "context");
-        LayoutInflater.from(getContext()).inflate(R.layout.sticker_view, this);
-        int i = R.id.sticker_view_imageview;
-        SimpleDraweeView simpleDraweeView = (SimpleDraweeView) findViewById(R.id.sticker_view_imageview);
+        C12238m.checkNotNullParameter(context, "context");
+        LayoutInflater.from(getContext()).inflate(C5419R.layout.sticker_view, this);
+        int i = C5419R.id.sticker_view_imageview;
+        SimpleDraweeView simpleDraweeView = (SimpleDraweeView) findViewById(C5419R.id.sticker_view_imageview);
         if (simpleDraweeView != null) {
-            i = R.id.sticker_view_lottie;
-            RLottieImageView rLottieImageView = (RLottieImageView) findViewById(R.id.sticker_view_lottie);
+            i = C5419R.id.sticker_view_lottie;
+            RLottieImageView rLottieImageView = (RLottieImageView) findViewById(C5419R.id.sticker_view_lottie);
             if (rLottieImageView != null) {
-                i = R.id.sticker_view_placeholder;
-                ImageView imageView = (ImageView) findViewById(R.id.sticker_view_placeholder);
+                i = C5419R.id.sticker_view_placeholder;
+                ImageView imageView = (ImageView) findViewById(C5419R.id.sticker_view_placeholder);
                 if (imageView != null) {
-                    StickerViewBinding stickerViewBinding = new StickerViewBinding(this, simpleDraweeView, rLottieImageView, imageView);
-                    Intrinsics3.checkNotNullExpressionValue(stickerViewBinding, "StickerViewBinding.infla…ater.from(context), this)");
-                    this.binding = stickerViewBinding;
+                    C1039r1 c1039r1 = new C1039r1(this, simpleDraweeView, rLottieImageView, imageView);
+                    C12238m.checkNotNullExpressionValue(c1039r1, "StickerViewBinding.infla…ater.from(context), this)");
+                    this.binding = c1039r1;
                     return;
                 }
             }
@@ -84,50 +84,55 @@ public final class StickerView extends FrameLayout {
         throw new NullPointerException("Missing required view with ID: ".concat(getResources().getResourceName(i)));
     }
 
-    public static final Job a(StickerView stickerView, File file, boolean z2) {
+    /* JADX INFO: renamed from: a */
+    public static final Job m8612a(StickerView stickerView, File file, boolean z2) {
         Objects.requireNonNull(stickerView);
         ApngUtils apngUtils = ApngUtils.INSTANCE;
-        SimpleDraweeView simpleDraweeView = stickerView.binding.f191b;
-        Intrinsics3.checkNotNullExpressionValue(simpleDraweeView, "binding.stickerViewImageview");
+        SimpleDraweeView simpleDraweeView = stickerView.binding.f1177b;
+        C12238m.checkNotNullExpressionValue(simpleDraweeView, "binding.stickerViewImageview");
         StickerUtils stickerUtils = StickerUtils.INSTANCE;
         return apngUtils.renderApngFromFile(file, simpleDraweeView, Integer.valueOf(stickerUtils.getDEFAULT_STICKER_SIZE_PX()), Integer.valueOf(stickerUtils.getDEFAULT_STICKER_SIZE_PX()), z2);
     }
 
-    public static /* synthetic */ void e(StickerView stickerView, BaseSticker baseSticker, Integer num, int i) {
+    /* JADX INFO: renamed from: e */
+    public static /* synthetic */ void m8613e(StickerView stickerView, BaseSticker baseSticker, Integer num, int i) {
         int i2 = i & 2;
-        stickerView.d(baseSticker, null);
+        stickerView.m8616d(baseSticker, null);
     }
 
-    public final void b() {
-        SimpleDraweeView simpleDraweeView = this.binding.f191b;
-        Intrinsics3.checkNotNullExpressionValue(simpleDraweeView, "binding.stickerViewImageview");
+    /* JADX INFO: renamed from: b */
+    public final void m8614b() {
+        SimpleDraweeView simpleDraweeView = this.binding.f1177b;
+        C12238m.checkNotNullExpressionValue(simpleDraweeView, "binding.stickerViewImageview");
         simpleDraweeView.setBackground(null);
-        RLottieImageView rLottieImageView = this.binding.c;
-        Intrinsics3.checkNotNullExpressionValue(rLottieImageView, "binding.stickerViewLottie");
+        RLottieImageView rLottieImageView = this.binding.f1178c;
+        C12238m.checkNotNullExpressionValue(rLottieImageView, "binding.stickerViewLottie");
         rLottieImageView.setBackground(null);
     }
 
-    public final CharSequence c(BaseSticker sticker) {
+    /* JADX INFO: renamed from: c */
+    public final CharSequence m8615c(BaseSticker sticker) {
         if (!(sticker instanceof Sticker)) {
             if (!(sticker instanceof StickerPartial)) {
                 return null;
             }
             Context context = getContext();
-            Intrinsics3.checkNotNullExpressionValue(context, "context");
-            return FormatUtils.b(context, R.string.sticker_a11y_label, new Object[]{((StickerPartial) sticker).getName()}, (4 & 4) != 0 ? FormatUtils.b.j : null);
+            C12238m.checkNotNullExpressionValue(context, "context");
+            return C1107b.m210b(context, C5419R.string.sticker_a11y_label, new Object[]{((StickerPartial) sticker).getName()}, (4 & 4) != 0 ? C1107b.b.f1491j : null);
         }
         Context context2 = getContext();
-        Intrinsics3.checkNotNullExpressionValue(context2, "context");
+        C12238m.checkNotNullExpressionValue(context2, "context");
         StringBuilder sb = new StringBuilder();
         Sticker sticker2 = (Sticker) sticker;
         sb.append(sticker2.getName());
         sb.append(", ");
         sb.append(sticker2.getDescription());
-        return FormatUtils.b(context2, R.string.sticker_a11y_label, new Object[]{sb.toString()}, (4 & 4) != 0 ? FormatUtils.b.j : null);
+        return C1107b.m210b(context2, C5419R.string.sticker_a11y_label, new Object[]{sb.toString()}, (4 & 4) != 0 ? C1107b.b.f1491j : null);
     }
 
-    public final void d(BaseSticker sticker, Integer stickerAnimationSettings) {
-        Intrinsics3.checkNotNullParameter(sticker, "sticker");
+    /* JADX INFO: renamed from: d */
+    public final void m8616d(BaseSticker sticker, Integer stickerAnimationSettings) {
+        C12238m.checkNotNullParameter(sticker, "sticker");
         BaseSticker baseSticker = this.sticker;
         if (baseSticker != null && baseSticker.getId() == sticker.getId()) {
             if (this.subscription != null) {
@@ -145,75 +150,75 @@ public final class StickerView extends FrameLayout {
         this.sticker = sticker;
         int iOrdinal = sticker.getFormatType().ordinal();
         if (iOrdinal == 1) {
-            SimpleDraweeView simpleDraweeView = this.binding.f191b;
-            Intrinsics3.checkNotNullExpressionValue(simpleDraweeView, "binding.stickerViewImageview");
+            SimpleDraweeView simpleDraweeView = this.binding.f1177b;
+            C12238m.checkNotNullExpressionValue(simpleDraweeView, "binding.stickerViewImageview");
             simpleDraweeView.setVisibility(0);
-            ImageView imageView = this.binding.d;
-            Intrinsics3.checkNotNullExpressionValue(imageView, "binding.stickerViewPlaceholder");
+            ImageView imageView = this.binding.f1179d;
+            C12238m.checkNotNullExpressionValue(imageView, "binding.stickerViewPlaceholder");
             imageView.setVisibility(8);
-            RLottieImageView rLottieImageView = this.binding.c;
-            Intrinsics3.checkNotNullExpressionValue(rLottieImageView, "binding.stickerViewLottie");
+            RLottieImageView rLottieImageView = this.binding.f1178c;
+            C12238m.checkNotNullExpressionValue(rLottieImageView, "binding.stickerViewLottie");
             rLottieImageView.setVisibility(8);
-            SimpleDraweeView simpleDraweeView2 = this.binding.f191b;
-            Intrinsics3.checkNotNullExpressionValue(simpleDraweeView2, "binding.stickerViewImageview");
-            simpleDraweeView2.setContentDescription(c(sticker));
-            SimpleDraweeView simpleDraweeView3 = this.binding.f191b;
-            Intrinsics3.checkNotNullExpressionValue(simpleDraweeView3, "binding.stickerViewImageview");
+            SimpleDraweeView simpleDraweeView2 = this.binding.f1177b;
+            C12238m.checkNotNullExpressionValue(simpleDraweeView2, "binding.stickerViewImageview");
+            simpleDraweeView2.setContentDescription(m8615c(sticker));
+            SimpleDraweeView simpleDraweeView3 = this.binding.f1177b;
+            C12238m.checkNotNullExpressionValue(simpleDraweeView3, "binding.stickerViewImageview");
             MGImages.setImage$default(simpleDraweeView3, StickerUtils.getCDNAssetUrl$default(StickerUtils.INSTANCE, sticker, null, false, 6, null), 0, 0, false, null, null, 124, null);
-            SimpleDraweeView simpleDraweeView4 = this.binding.f191b;
-            Intrinsics3.checkNotNullExpressionValue(simpleDraweeView4, "binding.stickerViewImageview");
+            SimpleDraweeView simpleDraweeView4 = this.binding.f1177b;
+            C12238m.checkNotNullExpressionValue(simpleDraweeView4, "binding.stickerViewImageview");
             GenericDraweeHierarchy hierarchy = simpleDraweeView4.getHierarchy();
-            Intrinsics3.checkNotNullExpressionValue(hierarchy, "binding.stickerViewImageview.hierarchy");
-            ScalingUtils$ScaleType scalingUtils$ScaleType = ScalingUtils$ScaleType.a;
-            hierarchy.n(v.l);
+            C12238m.checkNotNullExpressionValue(hierarchy, "binding.stickerViewImageview.hierarchy");
+            ScalingUtils$ScaleType scalingUtils$ScaleType = ScalingUtils$ScaleType.f19495a;
+            hierarchy.m8678n(C1788v.f3446l);
             return;
         }
         if (iOrdinal == 2) {
-            SimpleDraweeView simpleDraweeView5 = this.binding.f191b;
-            Intrinsics3.checkNotNullExpressionValue(simpleDraweeView5, "binding.stickerViewImageview");
+            SimpleDraweeView simpleDraweeView5 = this.binding.f1177b;
+            C12238m.checkNotNullExpressionValue(simpleDraweeView5, "binding.stickerViewImageview");
             simpleDraweeView5.setVisibility(0);
-            ImageView imageView2 = this.binding.d;
-            Intrinsics3.checkNotNullExpressionValue(imageView2, "binding.stickerViewPlaceholder");
+            ImageView imageView2 = this.binding.f1179d;
+            C12238m.checkNotNullExpressionValue(imageView2, "binding.stickerViewPlaceholder");
             imageView2.setVisibility(0);
-            RLottieImageView rLottieImageView2 = this.binding.c;
-            Intrinsics3.checkNotNullExpressionValue(rLottieImageView2, "binding.stickerViewLottie");
+            RLottieImageView rLottieImageView2 = this.binding.f1178c;
+            C12238m.checkNotNullExpressionValue(rLottieImageView2, "binding.stickerViewLottie");
             rLottieImageView2.setVisibility(8);
-            this.binding.f191b.setImageDrawable(null);
-            SimpleDraweeView simpleDraweeView6 = this.binding.f191b;
-            Intrinsics3.checkNotNullExpressionValue(simpleDraweeView6, "binding.stickerViewImageview");
+            this.binding.f1177b.setImageDrawable(null);
+            SimpleDraweeView simpleDraweeView6 = this.binding.f1177b;
+            C12238m.checkNotNullExpressionValue(simpleDraweeView6, "binding.stickerViewImageview");
             GenericDraweeHierarchy hierarchy2 = simpleDraweeView6.getHierarchy();
-            Intrinsics3.checkNotNullExpressionValue(hierarchy2, "binding.stickerViewImageview.hierarchy");
-            ScalingUtils$ScaleType scalingUtils$ScaleType2 = ScalingUtils$ScaleType.a;
-            hierarchy2.n(v.l);
+            C12238m.checkNotNullExpressionValue(hierarchy2, "binding.stickerViewImageview.hierarchy");
+            ScalingUtils$ScaleType scalingUtils$ScaleType2 = ScalingUtils$ScaleType.f19495a;
+            hierarchy2.m8678n(C1788v.f3446l);
             StickerUtils stickerUtils = StickerUtils.INSTANCE;
             Context context = getContext();
-            Intrinsics3.checkNotNullExpressionValue(context, "context");
-            Observable observableJ = Observable.j(ObservableExtensionsKt.restSubscribeOn$default(stickerUtils.fetchSticker(context, sticker), false, 1, null), StoreUserSettings.observeStickerAnimationSettings$default(StoreStream.INSTANCE.getUserSettings(), false, 1, null), StickerView2.j);
-            Intrinsics3.checkNotNullExpressionValue(observableJ, "Observable.combineLatest…lobalAnimationSettings) }");
-            ObservableExtensionsKt.appSubscribe(ObservableExtensionsKt.ui(observableJ), (Class<?>) StickerView.class, (58 & 2) != 0 ? null : null, (Function1<? super Subscription, Unit>) ((58 & 4) != 0 ? null : new StickerView3(this)), (Function1<? super Error, Unit>) ((58 & 8) != 0 ? null : null), (Function0<Unit>) ((58 & 16) != 0 ? ObservableExtensionsKt.AnonymousClass1.INSTANCE : null), (Function0<Unit>) ((58 & 32) != 0 ? ObservableExtensionsKt.AnonymousClass2.INSTANCE : null), new StickerView5(this, stickerAnimationSettings, sticker));
+            C12238m.checkNotNullExpressionValue(context, "context");
+            Observable observableM11076j = Observable.m11076j(ObservableExtensionsKt.restSubscribeOn$default(stickerUtils.fetchSticker(context, sticker), false, 1, null), StoreUserSettings.observeStickerAnimationSettings$default(StoreStream.INSTANCE.getUserSettings(), false, 1, null), C1371a.f2066j);
+            C12238m.checkNotNullExpressionValue(observableM11076j, "Observable.combineLatest…lobalAnimationSettings) }");
+            ObservableExtensionsKt.appSubscribe(ObservableExtensionsKt.m8518ui(observableM11076j), (Class<?>) StickerView.class, (58 & 2) != 0 ? null : null, (Function1<? super Subscription, Unit>) ((58 & 4) != 0 ? null : new C1372b(this)), (Function1<? super Error, Unit>) ((58 & 8) != 0 ? null : null), (Function0<Unit>) ((58 & 16) != 0 ? ObservableExtensionsKt.C68791.INSTANCE : null), (Function0<Unit>) ((58 & 32) != 0 ? ObservableExtensionsKt.C68802.INSTANCE : null), new C1374d(this, stickerAnimationSettings, sticker));
             return;
         }
         if (iOrdinal != 3) {
-            Logger.e$default(AppLog.g, "Invalid Sticker Format passed to " + StickerView.class + ", type: " + sticker.getFormatType(), null, null, 6, null);
+            Logger.e$default(AppLog.f14950g, "Invalid Sticker Format passed to " + StickerView.class + ", type: " + sticker.getFormatType(), null, null, 6, null);
             return;
         }
-        SimpleDraweeView simpleDraweeView7 = this.binding.f191b;
-        Intrinsics3.checkNotNullExpressionValue(simpleDraweeView7, "binding.stickerViewImageview");
+        SimpleDraweeView simpleDraweeView7 = this.binding.f1177b;
+        C12238m.checkNotNullExpressionValue(simpleDraweeView7, "binding.stickerViewImageview");
         simpleDraweeView7.setVisibility(8);
-        ImageView imageView3 = this.binding.d;
-        Intrinsics3.checkNotNullExpressionValue(imageView3, "binding.stickerViewPlaceholder");
+        ImageView imageView3 = this.binding.f1179d;
+        C12238m.checkNotNullExpressionValue(imageView3, "binding.stickerViewPlaceholder");
         imageView3.setVisibility(0);
-        RLottieImageView rLottieImageView3 = this.binding.c;
-        Intrinsics3.checkNotNullExpressionValue(rLottieImageView3, "binding.stickerViewLottie");
+        RLottieImageView rLottieImageView3 = this.binding.f1178c;
+        C12238m.checkNotNullExpressionValue(rLottieImageView3, "binding.stickerViewLottie");
         rLottieImageView3.setVisibility(0);
-        this.binding.c.setImageDrawable(null);
-        this.binding.c.clearAnimation();
+        this.binding.f1178c.setImageDrawable(null);
+        this.binding.f1178c.clearAnimation();
         StickerUtils stickerUtils2 = StickerUtils.INSTANCE;
         Context context2 = getContext();
-        Intrinsics3.checkNotNullExpressionValue(context2, "context");
-        Observable observableJ2 = Observable.j(ObservableExtensionsKt.restSubscribeOn$default(stickerUtils2.fetchSticker(context2, sticker), false, 1, null), StoreUserSettings.observeStickerAnimationSettings$default(StoreStream.INSTANCE.getUserSettings(), false, 1, null), StickerView6.j);
-        Intrinsics3.checkNotNullExpressionValue(observableJ2, "Observable.combineLatest…lobalAnimationSettings) }");
-        ObservableExtensionsKt.appSubscribe(ObservableExtensionsKt.ui(observableJ2), (Class<?>) StickerView.class, (58 & 2) != 0 ? null : null, (Function1<? super Subscription, Unit>) ((58 & 4) != 0 ? null : new StickerView7(this)), (Function1<? super Error, Unit>) ((58 & 8) != 0 ? null : null), (Function0<Unit>) ((58 & 16) != 0 ? ObservableExtensionsKt.AnonymousClass1.INSTANCE : null), (Function0<Unit>) ((58 & 32) != 0 ? ObservableExtensionsKt.AnonymousClass2.INSTANCE : null), new StickerView9(this, stickerAnimationSettings, sticker));
+        C12238m.checkNotNullExpressionValue(context2, "context");
+        Observable observableM11076j2 = Observable.m11076j(ObservableExtensionsKt.restSubscribeOn$default(stickerUtils2.fetchSticker(context2, sticker), false, 1, null), StoreUserSettings.observeStickerAnimationSettings$default(StoreStream.INSTANCE.getUserSettings(), false, 1, null), C1375e.f2067j);
+        C12238m.checkNotNullExpressionValue(observableM11076j2, "Observable.combineLatest…lobalAnimationSettings) }");
+        ObservableExtensionsKt.appSubscribe(ObservableExtensionsKt.m8518ui(observableM11076j2), (Class<?>) StickerView.class, (58 & 2) != 0 ? null : null, (Function1<? super Subscription, Unit>) ((58 & 4) != 0 ? null : new C1376f(this)), (Function1<? super Error, Unit>) ((58 & 8) != 0 ? null : null), (Function0<Unit>) ((58 & 16) != 0 ? ObservableExtensionsKt.C68791.INSTANCE : null), (Function0<Unit>) ((58 & 32) != 0 ? ObservableExtensionsKt.C68802.INSTANCE : null), new C1378h(this, stickerAnimationSettings, sticker));
     }
 
     public final Subscription getSubscription() {
@@ -239,12 +244,12 @@ public final class StickerView extends FrameLayout {
         }
         int iOrdinal = formatType.ordinal();
         if (iOrdinal == 1 || iOrdinal == 2) {
-            this.binding.f191b.setOnClickListener(onClickListener);
+            this.binding.f1177b.setOnClickListener(onClickListener);
         } else {
             if (iOrdinal != 3) {
                 return;
             }
-            this.binding.c.setOnClickListener(onClickListener);
+            this.binding.f1178c.setOnClickListener(onClickListener);
         }
     }
 }

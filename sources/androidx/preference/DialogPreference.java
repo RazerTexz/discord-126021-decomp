@@ -25,17 +25,17 @@ public abstract class DialogPreference extends Preference {
 
     public DialogPreference(Context context, AttributeSet attributeSet, int i, int i2) {
         super(context, attributeSet, i, i2);
-        TypedArray typedArrayObtainStyledAttributes = context.obtainStyledAttributes(attributeSet, R.styleable.DialogPreference, i, i2);
-        String string = TypedArrayUtils.getString(typedArrayObtainStyledAttributes, R.styleable.DialogPreference_dialogTitle, R.styleable.DialogPreference_android_dialogTitle);
+        TypedArray typedArrayObtainStyledAttributes = context.obtainStyledAttributes(attributeSet, C0525R.styleable.DialogPreference, i, i2);
+        String string = TypedArrayUtils.getString(typedArrayObtainStyledAttributes, C0525R.styleable.DialogPreference_dialogTitle, C0525R.styleable.DialogPreference_android_dialogTitle);
         this.mDialogTitle = string;
         if (string == null) {
             this.mDialogTitle = getTitle();
         }
-        this.mDialogMessage = TypedArrayUtils.getString(typedArrayObtainStyledAttributes, R.styleable.DialogPreference_dialogMessage, R.styleable.DialogPreference_android_dialogMessage);
-        this.mDialogIcon = TypedArrayUtils.getDrawable(typedArrayObtainStyledAttributes, R.styleable.DialogPreference_dialogIcon, R.styleable.DialogPreference_android_dialogIcon);
-        this.mPositiveButtonText = TypedArrayUtils.getString(typedArrayObtainStyledAttributes, R.styleable.DialogPreference_positiveButtonText, R.styleable.DialogPreference_android_positiveButtonText);
-        this.mNegativeButtonText = TypedArrayUtils.getString(typedArrayObtainStyledAttributes, R.styleable.DialogPreference_negativeButtonText, R.styleable.DialogPreference_android_negativeButtonText);
-        this.mDialogLayoutResId = TypedArrayUtils.getResourceId(typedArrayObtainStyledAttributes, R.styleable.DialogPreference_dialogLayout, R.styleable.DialogPreference_android_dialogLayout, 0);
+        this.mDialogMessage = TypedArrayUtils.getString(typedArrayObtainStyledAttributes, C0525R.styleable.DialogPreference_dialogMessage, C0525R.styleable.DialogPreference_android_dialogMessage);
+        this.mDialogIcon = TypedArrayUtils.getDrawable(typedArrayObtainStyledAttributes, C0525R.styleable.DialogPreference_dialogIcon, C0525R.styleable.DialogPreference_android_dialogIcon);
+        this.mPositiveButtonText = TypedArrayUtils.getString(typedArrayObtainStyledAttributes, C0525R.styleable.DialogPreference_positiveButtonText, C0525R.styleable.DialogPreference_android_positiveButtonText);
+        this.mNegativeButtonText = TypedArrayUtils.getString(typedArrayObtainStyledAttributes, C0525R.styleable.DialogPreference_negativeButtonText, C0525R.styleable.DialogPreference_android_negativeButtonText);
+        this.mDialogLayoutResId = TypedArrayUtils.getResourceId(typedArrayObtainStyledAttributes, C0525R.styleable.DialogPreference_dialogLayout, C0525R.styleable.DialogPreference_android_dialogLayout, 0);
         typedArrayObtainStyledAttributes.recycle();
     }
 
@@ -117,7 +117,7 @@ public abstract class DialogPreference extends Preference {
     }
 
     public DialogPreference(Context context, AttributeSet attributeSet) {
-        this(context, attributeSet, TypedArrayUtils.getAttr(context, R.attr.dialogPreferenceStyle, android.R.attr.dialogPreferenceStyle));
+        this(context, attributeSet, TypedArrayUtils.getAttr(context, C0525R.attr.dialogPreferenceStyle, android.R.attr.dialogPreferenceStyle));
     }
 
     public DialogPreference(Context context) {

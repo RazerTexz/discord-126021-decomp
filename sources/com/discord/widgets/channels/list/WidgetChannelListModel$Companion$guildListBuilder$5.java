@@ -1,15 +1,15 @@
 package com.discord.widgets.channels.list;
 
 import com.discord.api.channel.Channel;
-import d0.z.d.Lambda;
 import java.util.Collection;
 import java.util.Iterator;
 import java.util.Map;
 import kotlin.jvm.functions.Function1;
+import p507d0.p592z.p594d.AbstractC12240o;
 
 /* JADX INFO: compiled from: WidgetChannelListModel.kt */
 /* JADX INFO: loaded from: classes2.dex */
-public final class WidgetChannelListModel$Companion$guildListBuilder$5 extends Lambda implements Function1<Long, Boolean> {
+public final class WidgetChannelListModel$Companion$guildListBuilder$5 extends AbstractC12240o implements Function1<Long, Boolean> {
     public final /* synthetic */ Channel $selectedChannel;
     public final /* synthetic */ Map $threadParentMap;
 

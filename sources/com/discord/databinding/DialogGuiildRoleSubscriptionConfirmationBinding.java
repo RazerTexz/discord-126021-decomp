@@ -10,33 +10,37 @@ import com.google.android.material.button.MaterialButton;
 /* JADX INFO: loaded from: classes.dex */
 public final class DialogGuiildRoleSubscriptionConfirmationBinding implements ViewBinding {
 
+    /* JADX INFO: renamed from: a */
     @NonNull
-    public final LinearLayout a;
+    public final LinearLayout f15034a;
 
-    /* JADX INFO: renamed from: b, reason: collision with root package name */
+    /* JADX INFO: renamed from: b */
     @NonNull
-    public final MaterialButton f2094b;
+    public final MaterialButton f15035b;
 
+    /* JADX INFO: renamed from: c */
     @NonNull
-    public final MaterialButton c;
+    public final MaterialButton f15036c;
 
+    /* JADX INFO: renamed from: d */
     @NonNull
-    public final TextView d;
+    public final TextView f15037d;
 
+    /* JADX INFO: renamed from: e */
     @NonNull
-    public final TextView e;
+    public final TextView f15038e;
 
     public DialogGuiildRoleSubscriptionConfirmationBinding(@NonNull LinearLayout linearLayout, @NonNull MaterialButton materialButton, @NonNull MaterialButton materialButton2, @NonNull TextView textView, @NonNull TextView textView2) {
-        this.a = linearLayout;
-        this.f2094b = materialButton;
-        this.c = materialButton2;
-        this.d = textView;
-        this.e = textView2;
+        this.f15034a = linearLayout;
+        this.f15035b = materialButton;
+        this.f15036c = materialButton2;
+        this.f15037d = textView;
+        this.f15038e = textView2;
     }
 
     @Override // androidx.viewbinding.ViewBinding
     @NonNull
     public View getRoot() {
-        return this.a;
+        return this.f15034a;
     }
 }

@@ -1,10 +1,10 @@
 package com.discord.api.creatormonetization;
 
-import b.d.b.a.outline;
-import d0.z.d.Intrinsics3;
 import java.util.Date;
 import java.util.Map;
 import java.util.Objects;
+import p007b.p100d.p104b.p105a.C1643a;
+import p507d0.p592z.p594d.C12238m;
 
 /* JADX INFO: compiled from: CreatorMonetizationEligibilityRequirements.kt */
 /* JADX INFO: loaded from: classes.dex */
@@ -58,7 +58,7 @@ public final /* data */ class CreatorMonetizationEligibilityRequirements {
                 return false;
             }
             HealthScore healthScore = (HealthScore) other;
-            return Intrinsics3.areEqual(this.avgNonnewParticipators, healthScore.avgNonnewParticipators) && Intrinsics3.areEqual(this.avgNonnewCommunicators, healthScore.avgNonnewCommunicators) && Intrinsics3.areEqual(this.numIntentfulJoiners, healthScore.numIntentfulJoiners) && Intrinsics3.areEqual(this.percRetW1Intentful, healthScore.percRetW1Intentful) && Intrinsics3.areEqual(this.guildSize, healthScore.guildSize) && Intrinsics3.areEqual(this.communicators, healthScore.communicators) && Intrinsics3.areEqual(this.percRetW1, healthScore.percRetW1);
+            return C12238m.areEqual(this.avgNonnewParticipators, healthScore.avgNonnewParticipators) && C12238m.areEqual(this.avgNonnewCommunicators, healthScore.avgNonnewCommunicators) && C12238m.areEqual(this.numIntentfulJoiners, healthScore.numIntentfulJoiners) && C12238m.areEqual(this.percRetW1Intentful, healthScore.percRetW1Intentful) && C12238m.areEqual(this.guildSize, healthScore.guildSize) && C12238m.areEqual(this.communicators, healthScore.communicators) && C12238m.areEqual(this.percRetW1, healthScore.percRetW1);
         }
 
         public int hashCode() {
@@ -79,22 +79,22 @@ public final /* data */ class CreatorMonetizationEligibilityRequirements {
         }
 
         public String toString() {
-            StringBuilder sbU = outline.U("HealthScore(avgNonnewParticipators=");
-            sbU.append(this.avgNonnewParticipators);
-            sbU.append(", avgNonnewCommunicators=");
-            sbU.append(this.avgNonnewCommunicators);
-            sbU.append(", numIntentfulJoiners=");
-            sbU.append(this.numIntentfulJoiners);
-            sbU.append(", percRetW1Intentful=");
-            sbU.append(this.percRetW1Intentful);
-            sbU.append(", guildSize=");
-            sbU.append(this.guildSize);
-            sbU.append(", communicators=");
-            sbU.append(this.communicators);
-            sbU.append(", percRetW1=");
-            sbU.append(this.percRetW1);
-            sbU.append(")");
-            return sbU.toString();
+            StringBuilder sbM833U = C1643a.m833U("HealthScore(avgNonnewParticipators=");
+            sbM833U.append(this.avgNonnewParticipators);
+            sbM833U.append(", avgNonnewCommunicators=");
+            sbM833U.append(this.avgNonnewCommunicators);
+            sbM833U.append(", numIntentfulJoiners=");
+            sbM833U.append(this.numIntentfulJoiners);
+            sbM833U.append(", percRetW1Intentful=");
+            sbM833U.append(this.percRetW1Intentful);
+            sbM833U.append(", guildSize=");
+            sbM833U.append(this.guildSize);
+            sbM833U.append(", communicators=");
+            sbM833U.append(this.communicators);
+            sbM833U.append(", percRetW1=");
+            sbM833U.append(this.percRetW1);
+            sbM833U.append(")");
+            return sbM833U.toString();
         }
     }
 
@@ -109,7 +109,7 @@ public final /* data */ class CreatorMonetizationEligibilityRequirements {
 
         public boolean equals(Object other) {
             if (this != other) {
-                return (other instanceof Rejection) && Intrinsics3.areEqual(this.canReapplyAt, ((Rejection) other).canReapplyAt);
+                return (other instanceof Rejection) && C12238m.areEqual(this.canReapplyAt, ((Rejection) other).canReapplyAt);
             }
             return true;
         }
@@ -123,15 +123,15 @@ public final /* data */ class CreatorMonetizationEligibilityRequirements {
         }
 
         public String toString() {
-            StringBuilder sbU = outline.U("Rejection(canReapplyAt=");
-            sbU.append(this.canReapplyAt);
-            sbU.append(")");
-            return sbU.toString();
+            StringBuilder sbM833U = C1643a.m833U("Rejection(canReapplyAt=");
+            sbM833U.append(this.canReapplyAt);
+            sbM833U.append(")");
+            return sbM833U.toString();
         }
     }
 
     public CreatorMonetizationEligibilityRequirements(long j, CreatorMonetizationEnableRequest creatorMonetizationEnableRequest, boolean z2, boolean z3, boolean z4, boolean z5, Map<String, ? extends Object> map, boolean z6, boolean z7, boolean z8, HealthScore healthScore, boolean z9, Rejection rejection, int i, int i2) {
-        Intrinsics3.checkNotNullParameter(map, "nsfwProperties");
+        C12238m.checkNotNullParameter(map, "nsfwProperties");
         this.guildId = j;
         this.latestRequest = creatorMonetizationEnableRequest;
         this.canApply = z2;
@@ -149,7 +149,8 @@ public final /* data */ class CreatorMonetizationEligibilityRequirements {
         this.minimumSize = i2;
     }
 
-    public static CreatorMonetizationEligibilityRequirements a(CreatorMonetizationEligibilityRequirements creatorMonetizationEligibilityRequirements, long j, CreatorMonetizationEnableRequest creatorMonetizationEnableRequest, boolean z2, boolean z3, boolean z4, boolean z5, Map map, boolean z6, boolean z7, boolean z8, HealthScore healthScore, boolean z9, Rejection rejection, int i, int i2, int i3) {
+    /* JADX INFO: renamed from: a */
+    public static CreatorMonetizationEligibilityRequirements m7766a(CreatorMonetizationEligibilityRequirements creatorMonetizationEligibilityRequirements, long j, CreatorMonetizationEnableRequest creatorMonetizationEnableRequest, boolean z2, boolean z3, boolean z4, boolean z5, Map map, boolean z6, boolean z7, boolean z8, HealthScore healthScore, boolean z9, Rejection rejection, int i, int i2, int i3) {
         long j2 = (i3 & 1) != 0 ? creatorMonetizationEligibilityRequirements.guildId : j;
         CreatorMonetizationEnableRequest creatorMonetizationEnableRequest2 = (i3 & 2) != 0 ? creatorMonetizationEligibilityRequirements.latestRequest : creatorMonetizationEnableRequest;
         boolean z10 = (i3 & 4) != 0 ? creatorMonetizationEligibilityRequirements.canApply : z2;
@@ -166,7 +167,7 @@ public final /* data */ class CreatorMonetizationEligibilityRequirements {
         int i4 = (i3 & 8192) != 0 ? creatorMonetizationEligibilityRequirements.minimumAgeInDays : i;
         int i5 = (i3 & 16384) != 0 ? creatorMonetizationEligibilityRequirements.minimumSize : i2;
         Objects.requireNonNull(creatorMonetizationEligibilityRequirements);
-        Intrinsics3.checkNotNullParameter(map2, "nsfwProperties");
+        C12238m.checkNotNullParameter(map2, "nsfwProperties");
         return new CreatorMonetizationEligibilityRequirements(j2, creatorMonetizationEnableRequest2, z10, z11, z12, z13, map2, z14, z15, z16, healthScore2, z17, rejection2, i4, i5);
     }
 
@@ -198,7 +199,7 @@ public final /* data */ class CreatorMonetizationEligibilityRequirements {
             return false;
         }
         CreatorMonetizationEligibilityRequirements creatorMonetizationEligibilityRequirements = (CreatorMonetizationEligibilityRequirements) other;
-        return this.guildId == creatorMonetizationEligibilityRequirements.guildId && Intrinsics3.areEqual(this.latestRequest, creatorMonetizationEligibilityRequirements.latestRequest) && this.canApply == creatorMonetizationEligibilityRequirements.canApply && this.sufficient == creatorMonetizationEligibilityRequirements.sufficient && this.age == creatorMonetizationEligibilityRequirements.age && this.engagementHealthy == creatorMonetizationEligibilityRequirements.engagementHealthy && Intrinsics3.areEqual(this.nsfwProperties, creatorMonetizationEligibilityRequirements.nsfwProperties) && this.retentionHealthy == creatorMonetizationEligibilityRequirements.retentionHealthy && this.safeEnvironment == creatorMonetizationEligibilityRequirements.safeEnvironment && this.size == creatorMonetizationEligibilityRequirements.size && Intrinsics3.areEqual(this.healthScore, creatorMonetizationEligibilityRequirements.healthScore) && this.healthScorePending == creatorMonetizationEligibilityRequirements.healthScorePending && Intrinsics3.areEqual(this.rejection, creatorMonetizationEligibilityRequirements.rejection) && this.minimumAgeInDays == creatorMonetizationEligibilityRequirements.minimumAgeInDays && this.minimumSize == creatorMonetizationEligibilityRequirements.minimumSize;
+        return this.guildId == creatorMonetizationEligibilityRequirements.guildId && C12238m.areEqual(this.latestRequest, creatorMonetizationEligibilityRequirements.latestRequest) && this.canApply == creatorMonetizationEligibilityRequirements.canApply && this.sufficient == creatorMonetizationEligibilityRequirements.sufficient && this.age == creatorMonetizationEligibilityRequirements.age && this.engagementHealthy == creatorMonetizationEligibilityRequirements.engagementHealthy && C12238m.areEqual(this.nsfwProperties, creatorMonetizationEligibilityRequirements.nsfwProperties) && this.retentionHealthy == creatorMonetizationEligibilityRequirements.retentionHealthy && this.safeEnvironment == creatorMonetizationEligibilityRequirements.safeEnvironment && this.size == creatorMonetizationEligibilityRequirements.size && C12238m.areEqual(this.healthScore, creatorMonetizationEligibilityRequirements.healthScore) && this.healthScorePending == creatorMonetizationEligibilityRequirements.healthScorePending && C12238m.areEqual(this.rejection, creatorMonetizationEligibilityRequirements.rejection) && this.minimumAgeInDays == creatorMonetizationEligibilityRequirements.minimumAgeInDays && this.minimumSize == creatorMonetizationEligibilityRequirements.minimumSize;
     }
 
     /* JADX INFO: renamed from: f, reason: from getter */
@@ -299,7 +300,8 @@ public final /* data */ class CreatorMonetizationEligibilityRequirements {
         return ((((i9 + (rejection != null ? rejection.hashCode() : 0)) * 31) + this.minimumAgeInDays) * 31) + this.minimumSize;
     }
 
-    public final Map<String, Object> i() {
+    /* JADX INFO: renamed from: i */
+    public final Map<String, Object> m7774i() {
         return this.nsfwProperties;
     }
 
@@ -329,35 +331,35 @@ public final /* data */ class CreatorMonetizationEligibilityRequirements {
     }
 
     public String toString() {
-        StringBuilder sbU = outline.U("CreatorMonetizationEligibilityRequirements(guildId=");
-        sbU.append(this.guildId);
-        sbU.append(", latestRequest=");
-        sbU.append(this.latestRequest);
-        sbU.append(", canApply=");
-        sbU.append(this.canApply);
-        sbU.append(", sufficient=");
-        sbU.append(this.sufficient);
-        sbU.append(", age=");
-        sbU.append(this.age);
-        sbU.append(", engagementHealthy=");
-        sbU.append(this.engagementHealthy);
-        sbU.append(", nsfwProperties=");
-        sbU.append(this.nsfwProperties);
-        sbU.append(", retentionHealthy=");
-        sbU.append(this.retentionHealthy);
-        sbU.append(", safeEnvironment=");
-        sbU.append(this.safeEnvironment);
-        sbU.append(", size=");
-        sbU.append(this.size);
-        sbU.append(", healthScore=");
-        sbU.append(this.healthScore);
-        sbU.append(", healthScorePending=");
-        sbU.append(this.healthScorePending);
-        sbU.append(", rejection=");
-        sbU.append(this.rejection);
-        sbU.append(", minimumAgeInDays=");
-        sbU.append(this.minimumAgeInDays);
-        sbU.append(", minimumSize=");
-        return outline.B(sbU, this.minimumSize, ")");
+        StringBuilder sbM833U = C1643a.m833U("CreatorMonetizationEligibilityRequirements(guildId=");
+        sbM833U.append(this.guildId);
+        sbM833U.append(", latestRequest=");
+        sbM833U.append(this.latestRequest);
+        sbM833U.append(", canApply=");
+        sbM833U.append(this.canApply);
+        sbM833U.append(", sufficient=");
+        sbM833U.append(this.sufficient);
+        sbM833U.append(", age=");
+        sbM833U.append(this.age);
+        sbM833U.append(", engagementHealthy=");
+        sbM833U.append(this.engagementHealthy);
+        sbM833U.append(", nsfwProperties=");
+        sbM833U.append(this.nsfwProperties);
+        sbM833U.append(", retentionHealthy=");
+        sbM833U.append(this.retentionHealthy);
+        sbM833U.append(", safeEnvironment=");
+        sbM833U.append(this.safeEnvironment);
+        sbM833U.append(", size=");
+        sbM833U.append(this.size);
+        sbM833U.append(", healthScore=");
+        sbM833U.append(this.healthScore);
+        sbM833U.append(", healthScorePending=");
+        sbM833U.append(this.healthScorePending);
+        sbM833U.append(", rejection=");
+        sbM833U.append(this.rejection);
+        sbM833U.append(", minimumAgeInDays=");
+        sbM833U.append(this.minimumAgeInDays);
+        sbM833U.append(", minimumSize=");
+        return C1643a.m814B(sbM833U, this.minimumSize, ")");
     }
 }

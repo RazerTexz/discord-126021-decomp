@@ -27,16 +27,7 @@ import androidx.core.app.NotificationCompat;
 import androidx.core.content.ContextCompat;
 import androidx.core.view.ViewCompat;
 import androidx.exifinterface.media.ExifInterface;
-import b.a.f.Chip2;
-import b.a.f.Chip3;
-import b.a.f.ChipsEditText;
-import b.a.f.ChipsVerticalLinearLayout;
-import b.a.f.ChipsView2;
-import b.a.f.ChipsView3;
-import b.a.f.h.ViewChipDefaultBinding;
-import com.discord.chips_view.ChipsView.a;
-import d0.t._Collections;
-import d0.z.d.Intrinsics3;
+import com.discord.chips_view.ChipsView.InterfaceC5465a;
 import java.util.Collection;
 import java.util.Iterator;
 import java.util.LinkedHashMap;
@@ -44,20 +35,31 @@ import java.util.Map;
 import java.util.Objects;
 import kotlin.Unit;
 import kotlin.jvm.functions.Function1;
+import p007b.p008a.p021f.C0898d;
+import p007b.p008a.p021f.C0899e;
+import p007b.p008a.p021f.RunnableC0896b;
+import p007b.p008a.p021f.ViewOnClickListenerC0895a;
+import p007b.p008a.p021f.ViewOnClickListenerC0901g;
+import p007b.p008a.p021f.ViewOnFocusChangeListenerC0900f;
+import p007b.p008a.p021f.p022h.C0902a;
+import p507d0.p580t.C12163u;
+import p507d0.p592z.p594d.C12238m;
 
 /* JADX INFO: compiled from: ChipsView.kt */
 /* JADX INFO: loaded from: classes.dex */
-public final class ChipsView<K, V extends a> extends ScrollView implements ChipsEditText.a {
-    public static final /* synthetic */ int j = 0;
+public final class ChipsView<K, V extends InterfaceC5465a> extends ScrollView implements C0898d.a {
+
+    /* JADX INFO: renamed from: j */
+    public static final /* synthetic */ int f14975j = 0;
 
     /* JADX INFO: renamed from: A, reason: from kotlin metadata */
-    public final ChipsEditText mEditText;
+    public final C0898d mEditText;
 
     /* JADX INFO: renamed from: B, reason: from kotlin metadata */
-    public ChipsVerticalLinearLayout mRootChipsLayout;
+    public C0899e mRootChipsLayout;
 
     /* JADX INFO: renamed from: C, reason: from kotlin metadata */
-    public final LinkedHashMap<K, Chip2<K, V>> mChipList;
+    public final LinkedHashMap<K, ViewOnClickListenerC0895a<K, V>> mChipList;
 
     /* JADX INFO: renamed from: D, reason: from kotlin metadata */
     public Object mCurrentEditTextSpan;
@@ -95,7 +97,7 @@ public final class ChipsView<K, V extends a> extends ScrollView implements Chips
     /* JADX INFO: renamed from: r, reason: from kotlin metadata */
     public int mChipsBgColorClicked;
 
-    /* JADX INFO: renamed from: s, reason: collision with root package name and from kotlin metadata */
+    /* JADX INFO: renamed from: s, reason: from kotlin metadata */
     public int mChipsTextColor;
 
     /* JADX INFO: renamed from: t, reason: from kotlin metadata */
@@ -110,28 +112,30 @@ public final class ChipsView<K, V extends a> extends ScrollView implements Chips
     /* JADX INFO: renamed from: w, reason: from kotlin metadata */
     public int mChipsHintRes;
 
-    /* JADX INFO: renamed from: x, reason: collision with root package name and from kotlin metadata */
+    /* JADX INFO: renamed from: x, reason: from kotlin metadata */
     public int mChipLayout;
 
-    /* JADX INFO: renamed from: y, reason: collision with root package name and from kotlin metadata */
+    /* JADX INFO: renamed from: y, reason: from kotlin metadata */
     public float mDensity;
 
-    /* JADX INFO: renamed from: z, reason: collision with root package name and from kotlin metadata */
+    /* JADX INFO: renamed from: z, reason: from kotlin metadata */
     public final RelativeLayout mChipsContainer;
 
+    /* JADX INFO: renamed from: com.discord.chips_view.ChipsView$a */
     /* JADX INFO: compiled from: ChipsView.kt */
-    public interface a {
+    public interface InterfaceC5465a {
         String getDisplayString();
     }
 
+    /* JADX INFO: renamed from: com.discord.chips_view.ChipsView$b */
     /* JADX INFO: compiled from: ChipsView.kt */
-    public final class b implements TextWatcher {
-        public b() {
+    public final class C5466b implements TextWatcher {
+        public C5466b() {
         }
 
         @Override // android.text.TextWatcher
         public void afterTextChanged(Editable editable) {
-            Intrinsics3.checkNotNullParameter(editable, "s");
+            C12238m.checkNotNullParameter(editable, "s");
             Function1<CharSequence, Unit> textChangedListener = ChipsView.this.getTextChangedListener();
             if (textChangedListener != null) {
                 textChangedListener.invoke(editable);
@@ -140,24 +144,25 @@ public final class ChipsView<K, V extends a> extends ScrollView implements Chips
 
         @Override // android.text.TextWatcher
         public void beforeTextChanged(CharSequence charSequence, int i, int i2, int i3) {
-            Intrinsics3.checkNotNullParameter(charSequence, "s");
+            C12238m.checkNotNullParameter(charSequence, "s");
         }
 
         @Override // android.text.TextWatcher
         public void onTextChanged(CharSequence charSequence, int i, int i2, int i3) {
-            Intrinsics3.checkNotNullParameter(charSequence, "s");
+            C12238m.checkNotNullParameter(charSequence, "s");
         }
     }
 
+    /* JADX INFO: renamed from: com.discord.chips_view.ChipsView$c */
     /* JADX INFO: compiled from: ChipsView.kt */
-    public final class c extends InputConnectionWrapper {
-        public c(InputConnection inputConnection) {
+    public final class C5467c extends InputConnectionWrapper {
+        public C5467c(InputConnection inputConnection) {
             super(inputConnection, true);
         }
 
         @Override // android.view.inputmethod.InputConnectionWrapper, android.view.inputmethod.InputConnection
         public boolean commitText(CharSequence charSequence, int i) {
-            Intrinsics3.checkNotNullParameter(charSequence, NotificationCompat.MessagingStyle.Message.KEY_TEXT);
+            C12238m.checkNotNullParameter(charSequence, NotificationCompat.MessagingStyle.Message.KEY_TEXT);
             return super.commitText(charSequence, i);
         }
 
@@ -171,26 +176,26 @@ public final class ChipsView<K, V extends a> extends ScrollView implements Chips
 
         @Override // android.view.inputmethod.InputConnectionWrapper, android.view.inputmethod.InputConnection
         public boolean sendKeyEvent(KeyEvent keyEvent) {
-            Intrinsics3.checkNotNullParameter(keyEvent, "event");
+            C12238m.checkNotNullParameter(keyEvent, "event");
             if (ChipsView.this.mEditText.length() != 0 || keyEvent.getAction() != 0 || keyEvent.getKeyCode() != 67) {
                 return super.sendKeyEvent(keyEvent);
             }
             ChipsView chipsView = ChipsView.this;
             if (chipsView.mChipList.size() > 0) {
                 try {
-                    Iterator<Map.Entry<K, Chip2<K, V>>> it = chipsView.mChipList.entrySet().iterator();
-                    Chip2<K, V> value = null;
+                    Iterator<Map.Entry<K, ViewOnClickListenerC0895a<K, V>>> it = chipsView.mChipList.entrySet().iterator();
+                    ViewOnClickListenerC0895a<K, V> value = null;
                     while (it.hasNext()) {
                         value = it.next().getValue();
                     }
                     if (value != null) {
-                        Intrinsics3.checkNotNullParameter(value, "chip");
-                        chipsView.f(value);
-                        if (value.k) {
-                            chipsView.e(value);
+                        C12238m.checkNotNullParameter(value, "chip");
+                        chipsView.m8380f(value);
+                        if (value.f602k) {
+                            chipsView.m8379e(value);
                         } else {
-                            value.k = true;
-                            chipsView.c(false);
+                            value.f602k = true;
+                            chipsView.m8377c(false);
                         }
                     }
                 } catch (IndexOutOfBoundsException e) {
@@ -201,9 +206,10 @@ public final class ChipsView<K, V extends a> extends ScrollView implements Chips
         }
     }
 
+    /* JADX INFO: renamed from: com.discord.chips_view.ChipsView$d */
     /* JADX INFO: compiled from: ChipsView.kt */
-    public static final class d implements Runnable {
-        public d() {
+    public static final class RunnableC5468d implements Runnable {
+        public RunnableC5468d() {
         }
 
         @Override // java.lang.Runnable
@@ -212,31 +218,34 @@ public final class ChipsView<K, V extends a> extends ScrollView implements Chips
         }
     }
 
+    /* JADX INFO: renamed from: com.discord.chips_view.ChipsView$e */
     /* JADX INFO: compiled from: ChipsView.kt */
-    public static final class e implements Runnable {
-        public final /* synthetic */ boolean k;
+    public static final class RunnableC5469e implements Runnable {
 
-        public e(boolean z2) {
-            this.k = z2;
+        /* JADX INFO: renamed from: k */
+        public final /* synthetic */ boolean f15003k;
+
+        public RunnableC5469e(boolean z2) {
+            this.f15003k = z2;
         }
 
         @Override // java.lang.Runnable
         public final void run() {
             ChipsView chipsView = ChipsView.this;
-            boolean z2 = this.k;
-            int i = ChipsView.j;
-            chipsView.c(z2);
+            boolean z2 = this.f15003k;
+            int i = ChipsView.f14975j;
+            chipsView.m8377c(z2);
         }
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public ChipsView(Context context, AttributeSet attributeSet) {
         super(context, attributeSet);
-        Intrinsics3.checkNotNullParameter(context, "context");
-        Intrinsics3.checkNotNullParameter(attributeSet, "attrs");
+        C12238m.checkNotNullParameter(context, "context");
+        C12238m.checkNotNullParameter(attributeSet, "attrs");
         this.mChipList = new LinkedHashMap<>();
         Resources resources = getResources();
-        Intrinsics3.checkNotNullExpressionValue(resources, "resources");
+        C12238m.checkNotNullExpressionValue(resources, "resources");
         this.mDensity = resources.getDisplayMetrics().density;
         RelativeLayout relativeLayout = new RelativeLayout(getContext());
         this.mChipsContainer = relativeLayout;
@@ -247,70 +256,72 @@ public final class ChipsView<K, V extends a> extends ScrollView implements Chips
         linearLayout.setFocusableInTouchMode(true);
         relativeLayout.addView(linearLayout);
         Context context2 = getContext();
-        Intrinsics3.checkNotNullExpressionValue(context2, "context");
-        ChipsEditText chipsEditText = new ChipsEditText(context2, this);
-        this.mEditText = chipsEditText;
-        TypedArray typedArrayObtainStyledAttributes = context.getTheme().obtainStyledAttributes(attributeSet, R.c.ChipsView, 0, 0);
-        Intrinsics3.checkNotNullExpressionValue(typedArrayObtainStyledAttributes, "context.theme.obtainStyl…tyleable.ChipsView, 0, 0)");
+        C12238m.checkNotNullExpressionValue(context2, "context");
+        C0898d c0898d = new C0898d(context2, this);
+        this.mEditText = c0898d;
+        TypedArray typedArrayObtainStyledAttributes = context.getTheme().obtainStyledAttributes(attributeSet, C5470R.c.ChipsView, 0, 0);
+        C12238m.checkNotNullExpressionValue(typedArrayObtainStyledAttributes, "context.theme.obtainStyl…tyleable.ChipsView, 0, 0)");
         try {
-            this.mMaxHeight = typedArrayObtainStyledAttributes.getDimensionPixelSize(R.c.ChipsView_cv_max_height, -1);
-            this.mVerticalSpacingPx = typedArrayObtainStyledAttributes.getDimensionPixelSize(R.c.ChipsView_cv_vertical_spacing, (int) (1 * this.mDensity));
-            this.mChipHeightPx = typedArrayObtainStyledAttributes.getDimensionPixelSize(R.c.ChipsView_cv_height, (int) (24 * this.mDensity));
-            this.mChipsColor = typedArrayObtainStyledAttributes.getColor(R.c.ChipsView_cv_color, ContextCompat.getColor(context, android.R.color.darker_gray));
-            this.mChipsColorClicked = typedArrayObtainStyledAttributes.getColor(R.c.ChipsView_cv_color_clicked, ContextCompat.getColor(context, android.R.color.white));
-            this.mChipsBgColor = typedArrayObtainStyledAttributes.getColor(R.c.ChipsView_cv_bg_color, ContextCompat.getColor(context, android.R.color.white));
-            this.mChipsBgResId = typedArrayObtainStyledAttributes.getResourceId(R.c.ChipsView_cv_chip_bg_res, 0);
-            this.mChipsBgColorClicked = typedArrayObtainStyledAttributes.getColor(R.c.ChipsView_cv_bg_color_clicked, ContextCompat.getColor(context, android.R.color.holo_blue_dark));
-            this.mChipsTextColor = typedArrayObtainStyledAttributes.getColor(R.c.ChipsView_cv_text_color, ViewCompat.MEASURED_STATE_MASK);
-            this.mChipsTextColorClicked = typedArrayObtainStyledAttributes.getColor(R.c.ChipsView_cv_text_color_clicked, -1);
-            this.mChipsHintRes = typedArrayObtainStyledAttributes.getResourceId(R.c.ChipsView_cv_hint, 0);
-            typedArrayObtainStyledAttributes.getResourceId(R.c.ChipsView_cv_icon_placeholder, 0);
-            this.mChipsSearchTextColor = typedArrayObtainStyledAttributes.getColor(R.c.ChipsView_cv_search_text_color, ViewCompat.MEASURED_STATE_MASK);
-            this.mChipsSearchTextSize = typedArrayObtainStyledAttributes.getDimensionPixelSize(R.c.ChipsView_cv_search_text_size, 49);
-            this.mChipLayout = typedArrayObtainStyledAttributes.getResourceId(R.c.ChipsView_cv_chip_layout, R.b.view_chip_default);
+            this.mMaxHeight = typedArrayObtainStyledAttributes.getDimensionPixelSize(C5470R.c.ChipsView_cv_max_height, -1);
+            this.mVerticalSpacingPx = typedArrayObtainStyledAttributes.getDimensionPixelSize(C5470R.c.ChipsView_cv_vertical_spacing, (int) (1 * this.mDensity));
+            this.mChipHeightPx = typedArrayObtainStyledAttributes.getDimensionPixelSize(C5470R.c.ChipsView_cv_height, (int) (24 * this.mDensity));
+            this.mChipsColor = typedArrayObtainStyledAttributes.getColor(C5470R.c.ChipsView_cv_color, ContextCompat.getColor(context, android.R.color.darker_gray));
+            this.mChipsColorClicked = typedArrayObtainStyledAttributes.getColor(C5470R.c.ChipsView_cv_color_clicked, ContextCompat.getColor(context, android.R.color.white));
+            this.mChipsBgColor = typedArrayObtainStyledAttributes.getColor(C5470R.c.ChipsView_cv_bg_color, ContextCompat.getColor(context, android.R.color.white));
+            this.mChipsBgResId = typedArrayObtainStyledAttributes.getResourceId(C5470R.c.ChipsView_cv_chip_bg_res, 0);
+            this.mChipsBgColorClicked = typedArrayObtainStyledAttributes.getColor(C5470R.c.ChipsView_cv_bg_color_clicked, ContextCompat.getColor(context, android.R.color.holo_blue_dark));
+            this.mChipsTextColor = typedArrayObtainStyledAttributes.getColor(C5470R.c.ChipsView_cv_text_color, ViewCompat.MEASURED_STATE_MASK);
+            this.mChipsTextColorClicked = typedArrayObtainStyledAttributes.getColor(C5470R.c.ChipsView_cv_text_color_clicked, -1);
+            this.mChipsHintRes = typedArrayObtainStyledAttributes.getResourceId(C5470R.c.ChipsView_cv_hint, 0);
+            typedArrayObtainStyledAttributes.getResourceId(C5470R.c.ChipsView_cv_icon_placeholder, 0);
+            this.mChipsSearchTextColor = typedArrayObtainStyledAttributes.getColor(C5470R.c.ChipsView_cv_search_text_color, ViewCompat.MEASURED_STATE_MASK);
+            this.mChipsSearchTextSize = typedArrayObtainStyledAttributes.getDimensionPixelSize(C5470R.c.ChipsView_cv_search_text_size, 49);
+            this.mChipLayout = typedArrayObtainStyledAttributes.getResourceId(C5470R.c.ChipsView_cv_chip_layout, C5470R.b.view_chip_default);
             typedArrayObtainStyledAttributes.recycle();
             int i = this.mChipHeightPx + this.mVerticalSpacingPx;
             RelativeLayout.LayoutParams layoutParams = new RelativeLayout.LayoutParams(-1, i);
             float f = 4;
             layoutParams.leftMargin = (int) (this.mDensity * f);
             layoutParams.addRule(12, -1);
-            chipsEditText.setLayoutParams(layoutParams);
-            chipsEditText.setPadding(0, 0, 0, this.mVerticalSpacingPx);
-            chipsEditText.setBackgroundColor(Color.argb(0, 0, 0, 0));
-            chipsEditText.setImeOptions(268435456);
-            chipsEditText.setInputType(1);
-            chipsEditText.setTextColor(this.mChipsSearchTextColor);
-            chipsEditText.setTextSize(0, this.mChipsSearchTextSize);
-            relativeLayout.addView(chipsEditText);
+            c0898d.setLayoutParams(layoutParams);
+            c0898d.setPadding(0, 0, 0, this.mVerticalSpacingPx);
+            c0898d.setBackgroundColor(Color.argb(0, 0, 0, 0));
+            c0898d.setImeOptions(268435456);
+            c0898d.setInputType(1);
+            c0898d.setTextColor(this.mChipsSearchTextColor);
+            c0898d.setTextSize(0, this.mChipsSearchTextSize);
+            relativeLayout.addView(c0898d);
             Context context3 = getContext();
-            Intrinsics3.checkNotNullExpressionValue(context3, "context");
-            ChipsVerticalLinearLayout chipsVerticalLinearLayout = new ChipsVerticalLinearLayout(context3, i);
-            chipsVerticalLinearLayout.setOrientation(1);
-            chipsVerticalLinearLayout.setLayoutParams(new ViewGroup.LayoutParams(-1, -2));
-            chipsVerticalLinearLayout.setPadding(0, (int) (f * this.mDensity), 0, 0);
-            this.mRootChipsLayout = chipsVerticalLinearLayout;
-            relativeLayout.addView(chipsVerticalLinearLayout);
-            relativeLayout.setOnClickListener(new ChipsView3(this));
-            chipsEditText.addTextChangedListener(new b());
-            chipsEditText.setOnFocusChangeListener(new ChipsView2(this));
-            c(false);
+            C12238m.checkNotNullExpressionValue(context3, "context");
+            C0899e c0899e = new C0899e(context3, i);
+            c0899e.setOrientation(1);
+            c0899e.setLayoutParams(new ViewGroup.LayoutParams(-1, -2));
+            c0899e.setPadding(0, (int) (f * this.mDensity), 0, 0);
+            this.mRootChipsLayout = c0899e;
+            relativeLayout.addView(c0899e);
+            relativeLayout.setOnClickListener(new ViewOnClickListenerC0901g(this));
+            c0898d.addTextChangedListener(new C5466b());
+            c0898d.setOnFocusChangeListener(new ViewOnFocusChangeListenerC0900f(this));
+            m8377c(false);
         } catch (Throwable th) {
             typedArrayObtainStyledAttributes.recycle();
             throw th;
         }
     }
 
-    @Override // b.a.f.ChipsEditText.a
-    public InputConnection a(InputConnection target) {
-        return new c(target);
+    @Override // p007b.p008a.p021f.C0898d.a
+    /* JADX INFO: renamed from: a */
+    public InputConnection mo187a(InputConnection target) {
+        return new C5467c(target);
     }
 
-    public final void b(String displayName, String imageContentDescription, K key, V data) {
+    /* JADX INFO: renamed from: b */
+    public final void m8376b(String displayName, String imageContentDescription, K key, V data) {
         if (this.mChipList.containsKey(key)) {
             return;
         }
         this.mEditText.setText("");
-        Chip2<K, V> chip2 = new Chip2<>(displayName, imageContentDescription, key, data, new Chip2.a(this.mChipsBgColorClicked, this.mDensity, this.mChipsBgResId, this.mChipsBgColor, this.mChipsTextColor, this.mChipsTextColorClicked, this.mChipsColorClicked, this.mChipsColor, this.mChipHeightPx, this.mChipLayout), this);
+        ViewOnClickListenerC0895a<K, V> viewOnClickListenerC0895a = new ViewOnClickListenerC0895a<>(displayName, imageContentDescription, key, data, new ViewOnClickListenerC0895a.a(this.mChipsBgColorClicked, this.mDensity, this.mChipsBgResId, this.mChipsBgColor, this.mChipsTextColor, this.mChipsTextColorClicked, this.mChipsColorClicked, this.mChipsColor, this.mChipHeightPx, this.mChipLayout), this);
         Editable text = this.mEditText.getText();
         if (text != null) {
             Object obj = this.mCurrentEditTextSpan;
@@ -320,16 +331,17 @@ public final class ChipsView<K, V extends a> extends ScrollView implements Chips
             text.setSpan(this.mCurrentEditTextSpan, 0, 0, 17);
         }
         this.mEditText.setText(text);
-        this.mChipList.put(key, chip2);
+        this.mChipList.put(key, viewOnClickListenerC0895a);
         Function1<? super V, Unit> function1 = this.chipAddedListener;
         if (function1 != null) {
-            function1.invoke((Object) chip2.o);
+            function1.invoke((Object) viewOnClickListenerC0895a.f606o);
         }
-        c(true);
-        post(new d());
+        m8377c(true);
+        post(new RunnableC5468d());
     }
 
-    public final void c(boolean moveCursor) {
+    /* JADX INFO: renamed from: c */
+    public final void m8377c(boolean moveCursor) {
         TextView textView;
         RelativeLayout relativeLayout;
         Drawable background;
@@ -341,102 +353,102 @@ public final class ChipsView<K, V extends a> extends ScrollView implements Chips
         ImageView imageView;
         RelativeLayout relativeLayout3;
         RelativeLayout relativeLayout4;
-        ChipsVerticalLinearLayout chipsVerticalLinearLayout = this.mRootChipsLayout;
-        ChipsVerticalLinearLayout.a aVar = null;
-        if (chipsVerticalLinearLayout != null) {
-            Collection<Chip2<K, V>> collectionValues = this.mChipList.values();
-            Intrinsics3.checkNotNullExpressionValue(collectionValues, "mChipList.values");
-            Intrinsics3.checkNotNullParameter(collectionValues, "chips");
-            Iterator<LinearLayout> it = chipsVerticalLinearLayout.j.iterator();
+        C0899e c0899e = this.mRootChipsLayout;
+        C0899e.a aVar = null;
+        if (c0899e != null) {
+            Collection<ViewOnClickListenerC0895a<K, V>> collectionValues = this.mChipList.values();
+            C12238m.checkNotNullExpressionValue(collectionValues, "mChipList.values");
+            C12238m.checkNotNullParameter(collectionValues, "chips");
+            Iterator<LinearLayout> it = c0899e.f618j.iterator();
             while (it.hasNext()) {
                 it.next().removeAllViews();
             }
-            chipsVerticalLinearLayout.j.clear();
-            chipsVerticalLinearLayout.removeAllViews();
-            int width = chipsVerticalLinearLayout.getWidth();
+            c0899e.f618j.clear();
+            c0899e.removeAllViews();
+            int width = c0899e.getWidth();
             if (width != 0) {
-                LinearLayout linearLayoutA = chipsVerticalLinearLayout.a();
+                LinearLayout linearLayoutM188a = c0899e.m188a();
                 int i = 0;
                 int i2 = 0;
-                for (Chip2<K, V> chip2 : collectionValues) {
-                    if (chip2.j == null) {
-                        View viewInflate = LayoutInflater.from(chip2.q.getContext()).inflate(R.b.view_chip_default, (ViewGroup) null, false);
-                        int i3 = R.a.chip_image;
+                for (ViewOnClickListenerC0895a<K, V> viewOnClickListenerC0895a : collectionValues) {
+                    if (viewOnClickListenerC0895a.f601j == null) {
+                        View viewInflate = LayoutInflater.from(viewOnClickListenerC0895a.f608q.getContext()).inflate(C5470R.b.view_chip_default, (ViewGroup) null, false);
+                        int i3 = C5470R.a.chip_image;
                         ImageView imageView2 = (ImageView) viewInflate.findViewById(i3);
                         if (imageView2 != null) {
-                            i3 = R.a.chip_text;
+                            i3 = C5470R.a.chip_text;
                             TextView textView5 = (TextView) viewInflate.findViewById(i3);
                             if (textView5 != null) {
-                                chip2.j = new ViewChipDefaultBinding((RelativeLayout) viewInflate, imageView2, textView5);
-                                LinearLayout.LayoutParams layoutParams = new LinearLayout.LayoutParams(-2, chip2.p.f);
-                                ViewChipDefaultBinding viewChipDefaultBinding = chip2.j;
-                                if (viewChipDefaultBinding != null && (relativeLayout4 = viewChipDefaultBinding.a) != null) {
+                                viewOnClickListenerC0895a.f601j = new C0902a((RelativeLayout) viewInflate, imageView2, textView5);
+                                LinearLayout.LayoutParams layoutParams = new LinearLayout.LayoutParams(-2, viewOnClickListenerC0895a.f607p.f614f);
+                                C0902a c0902a = viewOnClickListenerC0895a.f601j;
+                                if (c0902a != null && (relativeLayout4 = c0902a.f623a) != null) {
                                     relativeLayout4.setLayoutParams(layoutParams);
                                 }
-                                ViewChipDefaultBinding viewChipDefaultBinding2 = chip2.j;
-                                if (viewChipDefaultBinding2 != null && (relativeLayout3 = viewChipDefaultBinding2.a) != null) {
-                                    relativeLayout3.setBackgroundResource(chip2.p.f66b);
-                                    relativeLayout3.post(new Chip3(relativeLayout3, chip2));
-                                    relativeLayout3.setOnClickListener(chip2);
+                                C0902a c0902a2 = viewOnClickListenerC0895a.f601j;
+                                if (c0902a2 != null && (relativeLayout3 = c0902a2.f623a) != null) {
+                                    relativeLayout3.setBackgroundResource(viewOnClickListenerC0895a.f607p.f610b);
+                                    relativeLayout3.post(new RunnableC0896b(relativeLayout3, viewOnClickListenerC0895a));
+                                    relativeLayout3.setOnClickListener(viewOnClickListenerC0895a);
                                 }
-                                ViewChipDefaultBinding viewChipDefaultBinding3 = chip2.j;
-                                if (viewChipDefaultBinding3 != null && (imageView = viewChipDefaultBinding3.f67b) != null) {
-                                    imageView.setOnClickListener(chip2);
-                                    Intrinsics3.checkNotNullExpressionValue(imageView, "it");
-                                    imageView.setContentDescription(chip2.m);
+                                C0902a c0902a3 = viewOnClickListenerC0895a.f601j;
+                                if (c0902a3 != null && (imageView = c0902a3.f624b) != null) {
+                                    imageView.setOnClickListener(viewOnClickListenerC0895a);
+                                    C12238m.checkNotNullExpressionValue(imageView, "it");
+                                    imageView.setContentDescription(viewOnClickListenerC0895a.f604m);
                                 }
-                                ViewChipDefaultBinding viewChipDefaultBinding4 = chip2.j;
-                                if (viewChipDefaultBinding4 != null && (textView4 = viewChipDefaultBinding4.c) != null) {
-                                    textView4.setTextColor(chip2.p.d);
+                                C0902a c0902a4 = viewOnClickListenerC0895a.f601j;
+                                if (c0902a4 != null && (textView4 = c0902a4.f625c) != null) {
+                                    textView4.setTextColor(viewOnClickListenerC0895a.f607p.f612d);
                                 }
                             }
                         }
                         throw new NullPointerException("Missing required view with ID: ".concat(viewInflate.getResources().getResourceName(i3)));
                     }
-                    ViewChipDefaultBinding viewChipDefaultBinding5 = chip2.j;
-                    if (viewChipDefaultBinding5 != null && (textView3 = viewChipDefaultBinding5.c) != null) {
-                        textView3.setText(chip2.l);
+                    C0902a c0902a5 = viewOnClickListenerC0895a.f601j;
+                    if (c0902a5 != null && (textView3 = c0902a5.f625c) != null) {
+                        textView3.setText(viewOnClickListenerC0895a.f603l);
                     }
-                    if (chip2.k) {
-                        ViewChipDefaultBinding viewChipDefaultBinding6 = chip2.j;
-                        if (viewChipDefaultBinding6 != null && (relativeLayout2 = viewChipDefaultBinding6.a) != null && (background2 = relativeLayout2.getBackground()) != null) {
-                            background2.setColorFilter(chip2.p.a, PorterDuff.Mode.SRC_ATOP);
+                    if (viewOnClickListenerC0895a.f602k) {
+                        C0902a c0902a6 = viewOnClickListenerC0895a.f601j;
+                        if (c0902a6 != null && (relativeLayout2 = c0902a6.f623a) != null && (background2 = relativeLayout2.getBackground()) != null) {
+                            background2.setColorFilter(viewOnClickListenerC0895a.f607p.f609a, PorterDuff.Mode.SRC_ATOP);
                         }
-                        ViewChipDefaultBinding viewChipDefaultBinding7 = chip2.j;
-                        if (viewChipDefaultBinding7 != null && (textView2 = viewChipDefaultBinding7.c) != null) {
-                            textView2.setTextColor(chip2.p.e);
+                        C0902a c0902a7 = viewOnClickListenerC0895a.f601j;
+                        if (c0902a7 != null && (textView2 = c0902a7.f625c) != null) {
+                            textView2.setTextColor(viewOnClickListenerC0895a.f607p.f613e);
                         }
                     } else {
-                        ViewChipDefaultBinding viewChipDefaultBinding8 = chip2.j;
-                        if (viewChipDefaultBinding8 != null && (relativeLayout = viewChipDefaultBinding8.a) != null && (background = relativeLayout.getBackground()) != null) {
-                            background.setColorFilter(chip2.p.c, PorterDuff.Mode.SRC_ATOP);
+                        C0902a c0902a8 = viewOnClickListenerC0895a.f601j;
+                        if (c0902a8 != null && (relativeLayout = c0902a8.f623a) != null && (background = relativeLayout.getBackground()) != null) {
+                            background.setColorFilter(viewOnClickListenerC0895a.f607p.f611c, PorterDuff.Mode.SRC_ATOP);
                         }
-                        ViewChipDefaultBinding viewChipDefaultBinding9 = chip2.j;
-                        if (viewChipDefaultBinding9 != null && (textView = viewChipDefaultBinding9.c) != null) {
-                            textView.setTextColor(chip2.p.d);
+                        C0902a c0902a9 = viewOnClickListenerC0895a.f601j;
+                        if (c0902a9 != null && (textView = c0902a9.f625c) != null) {
+                            textView.setTextColor(viewOnClickListenerC0895a.f607p.f612d);
                         }
                     }
-                    ViewChipDefaultBinding viewChipDefaultBinding10 = chip2.j;
-                    RelativeLayout relativeLayout5 = viewChipDefaultBinding10 != null ? viewChipDefaultBinding10.a : null;
-                    Intrinsics3.checkNotNull(relativeLayout5);
+                    C0902a c0902a10 = viewOnClickListenerC0895a.f601j;
+                    RelativeLayout relativeLayout5 = c0902a10 != null ? c0902a10.f623a : null;
+                    C12238m.checkNotNull(relativeLayout5);
                     relativeLayout5.measure(View.MeasureSpec.makeMeasureSpec(0, 0), View.MeasureSpec.makeMeasureSpec(0, 0));
                     if (relativeLayout5.getMeasuredWidth() + i > width) {
                         i2++;
-                        linearLayoutA = chipsVerticalLinearLayout.a();
+                        linearLayoutM188a = c0899e.m188a();
                         i = 0;
                     }
                     int measuredWidth = relativeLayout5.getMeasuredWidth();
                     ViewGroup.LayoutParams layoutParams2 = relativeLayout5.getLayoutParams();
                     Objects.requireNonNull(layoutParams2, "null cannot be cast to non-null type android.widget.LinearLayout.LayoutParams");
                     i += measuredWidth + ((LinearLayout.LayoutParams) layoutParams2).rightMargin;
-                    linearLayoutA.addView(relativeLayout5);
+                    linearLayoutM188a.addView(relativeLayout5);
                 }
                 if (width - i < width * 0.15f) {
                     i2++;
-                    chipsVerticalLinearLayout.a();
+                    c0899e.m188a();
                     i = 0;
                 }
-                aVar = new ChipsVerticalLinearLayout.a(i2, i);
+                aVar = new C0899e.a(i2, i);
             }
         }
         if (this.mChipList.isEmpty()) {
@@ -448,10 +460,10 @@ public final class ChipsView<K, V extends a> extends ScrollView implements Chips
             this.mEditText.setHint("");
         }
         if (aVar == null) {
-            post(new e(moveCursor));
+            post(new RunnableC5469e(moveCursor));
             return;
         }
-        int i5 = aVar.a;
+        int i5 = aVar.f620a;
         Editable text = this.mEditText.getText();
         Object obj = this.mCurrentEditTextSpan;
         if (obj != null && text != null) {
@@ -464,42 +476,45 @@ public final class ChipsView<K, V extends a> extends ScrollView implements Chips
         }
         this.mEditText.setText(text);
         if (moveCursor) {
-            ChipsEditText chipsEditText = this.mEditText;
-            chipsEditText.setSelection(chipsEditText.length());
+            C0898d c0898d = this.mEditText;
+            c0898d.setSelection(c0898d.length());
         }
     }
 
-    public final void d(Collection<?> pruneData) {
-        Intrinsics3.checkNotNullParameter(pruneData, "pruneData");
-        Iterator<Map.Entry<K, Chip2<K, V>>> it = this.mChipList.entrySet().iterator();
+    /* JADX INFO: renamed from: d */
+    public final void m8378d(Collection<?> pruneData) {
+        C12238m.checkNotNullParameter(pruneData, "pruneData");
+        Iterator<Map.Entry<K, ViewOnClickListenerC0895a<K, V>>> it = this.mChipList.entrySet().iterator();
         boolean z2 = false;
         while (it.hasNext()) {
-            if (!_Collections.contains(pruneData, it.next().getKey())) {
+            if (!C12163u.contains(pruneData, it.next().getKey())) {
                 it.remove();
                 z2 = true;
             }
         }
         if (z2) {
-            c(true);
+            m8377c(true);
         }
     }
 
-    public final void e(Chip2<K, V> chip) {
-        this.mChipList.remove(chip.n);
+    /* JADX INFO: renamed from: e */
+    public final void m8379e(ViewOnClickListenerC0895a<K, V> chip) {
+        this.mChipList.remove(chip.f605n);
         Function1<? super V, Unit> function1 = this.chipDeletedListener;
         if (function1 != null) {
-            function1.invoke((Object) chip.o);
+            function1.invoke((Object) chip.f606o);
         }
-        c(true);
+        m8377c(true);
     }
 
-    public final void f(Chip2<?, ?> rootChip) {
-        for (Chip2<K, V> chip2 : this.mChipList.values()) {
-            if (chip2 != rootChip) {
-                chip2.k = false;
+    /* JADX INFO: renamed from: f */
+    public final void m8380f(ViewOnClickListenerC0895a<?, ?> rootChip) {
+        for (ViewOnClickListenerC0895a<K, V> viewOnClickListenerC0895a : this.mChipList.values()) {
+            if (viewOnClickListenerC0895a != rootChip) {
+                viewOnClickListenerC0895a.f602k = false;
             }
         }
-        c(false);
+        m8377c(false);
     }
 
     public final Function1<V, Unit> getChipAddedListener() {
@@ -537,7 +552,7 @@ public final class ChipsView<K, V extends a> extends ScrollView implements Chips
     }
 
     public final void setText(String str) {
-        Intrinsics3.checkNotNullParameter(str, NotificationCompat.MessagingStyle.Message.KEY_TEXT);
+        C12238m.checkNotNullParameter(str, NotificationCompat.MessagingStyle.Message.KEY_TEXT);
         this.mEditText.setText(str);
     }
 

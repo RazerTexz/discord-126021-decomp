@@ -8,16 +8,22 @@ import androidx.annotation.Nullable;
 import androidx.annotation.RestrictTo;
 import androidx.core.view.GravityCompat;
 import androidx.transition.TransitionValues;
-import b.d.b.a.outline;
-import b.i.a.g.l.MaterialVisibility;
 import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
+import p007b.p100d.p104b.p105a.C1643a;
+import p007b.p225i.p226a.p341g.p353l.AbstractC4466h;
 
 /* JADX INFO: loaded from: classes3.dex */
-public final class MaterialSharedAxis extends MaterialVisibility<VisibilityAnimatorProvider> {
-    public static final int X = 0;
-    public static final int Y = 1;
-    public static final int Z = 2;
+public final class MaterialSharedAxis extends AbstractC4466h<VisibilityAnimatorProvider> {
+
+    /* JADX INFO: renamed from: X */
+    public static final int f21316X = 0;
+
+    /* JADX INFO: renamed from: Y */
+    public static final int f21317Y = 1;
+
+    /* JADX INFO: renamed from: Z */
+    public static final int f21318Z = 2;
     private final int axis;
     private final boolean forward;
 
@@ -42,19 +48,19 @@ public final class MaterialSharedAxis extends MaterialVisibility<VisibilityAnima
         if (i == 2) {
             return new ScaleProvider(z2);
         }
-        throw new IllegalArgumentException(outline.q("Invalid axis: ", i));
+        throw new IllegalArgumentException(C1643a.m871q("Invalid axis: ", i));
     }
 
     private static VisibilityAnimatorProvider createSecondaryAnimatorProvider() {
         return new FadeThroughProvider();
     }
 
-    @Override // b.i.a.g.l.MaterialVisibility
+    @Override // p007b.p225i.p226a.p341g.p353l.AbstractC4466h
     public /* bridge */ /* synthetic */ void addAdditionalAnimatorProvider(@NonNull VisibilityAnimatorProvider visibilityAnimatorProvider) {
         super.addAdditionalAnimatorProvider(visibilityAnimatorProvider);
     }
 
-    @Override // b.i.a.g.l.MaterialVisibility
+    @Override // p007b.p225i.p226a.p341g.p353l.AbstractC4466h
     public /* bridge */ /* synthetic */ void clearAdditionalAnimatorProvider() {
         super.clearAdditionalAnimatorProvider();
     }
@@ -63,13 +69,13 @@ public final class MaterialSharedAxis extends MaterialVisibility<VisibilityAnima
         return this.axis;
     }
 
-    @Override // b.i.a.g.l.MaterialVisibility
+    @Override // p007b.p225i.p226a.p341g.p353l.AbstractC4466h
     @NonNull
     public /* bridge */ /* synthetic */ VisibilityAnimatorProvider getPrimaryAnimatorProvider() {
         return super.getPrimaryAnimatorProvider();
     }
 
-    @Override // b.i.a.g.l.MaterialVisibility
+    @Override // p007b.p225i.p226a.p341g.p353l.AbstractC4466h
     @Nullable
     public /* bridge */ /* synthetic */ VisibilityAnimatorProvider getSecondaryAnimatorProvider() {
         return super.getSecondaryAnimatorProvider();
@@ -79,22 +85,22 @@ public final class MaterialSharedAxis extends MaterialVisibility<VisibilityAnima
         return this.forward;
     }
 
-    @Override // b.i.a.g.l.MaterialVisibility, androidx.transition.Visibility
+    @Override // p007b.p225i.p226a.p341g.p353l.AbstractC4466h, androidx.transition.Visibility
     public /* bridge */ /* synthetic */ Animator onAppear(ViewGroup viewGroup, View view, TransitionValues transitionValues, TransitionValues transitionValues2) {
         return super.onAppear(viewGroup, view, transitionValues, transitionValues2);
     }
 
-    @Override // b.i.a.g.l.MaterialVisibility, androidx.transition.Visibility
+    @Override // p007b.p225i.p226a.p341g.p353l.AbstractC4466h, androidx.transition.Visibility
     public /* bridge */ /* synthetic */ Animator onDisappear(ViewGroup viewGroup, View view, TransitionValues transitionValues, TransitionValues transitionValues2) {
         return super.onDisappear(viewGroup, view, transitionValues, transitionValues2);
     }
 
-    @Override // b.i.a.g.l.MaterialVisibility
+    @Override // p007b.p225i.p226a.p341g.p353l.AbstractC4466h
     public /* bridge */ /* synthetic */ boolean removeAdditionalAnimatorProvider(@NonNull VisibilityAnimatorProvider visibilityAnimatorProvider) {
         return super.removeAdditionalAnimatorProvider(visibilityAnimatorProvider);
     }
 
-    @Override // b.i.a.g.l.MaterialVisibility
+    @Override // p007b.p225i.p226a.p341g.p353l.AbstractC4466h
     public /* bridge */ /* synthetic */ void setSecondaryAnimatorProvider(@Nullable VisibilityAnimatorProvider visibilityAnimatorProvider) {
         super.setSecondaryAnimatorProvider(visibilityAnimatorProvider);
     }

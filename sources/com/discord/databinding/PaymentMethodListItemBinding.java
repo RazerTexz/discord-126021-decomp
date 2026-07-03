@@ -10,25 +10,27 @@ import com.google.android.material.button.MaterialButton;
 /* JADX INFO: loaded from: classes.dex */
 public final class PaymentMethodListItemBinding implements ViewBinding {
 
+    /* JADX INFO: renamed from: a */
     @NonNull
-    public final RelativeLayout a;
+    public final RelativeLayout f15204a;
 
-    /* JADX INFO: renamed from: b, reason: collision with root package name */
+    /* JADX INFO: renamed from: b */
     @NonNull
-    public final MaterialButton f2134b;
+    public final MaterialButton f15205b;
 
+    /* JADX INFO: renamed from: c */
     @NonNull
-    public final PaymentSourceView c;
+    public final PaymentSourceView f15206c;
 
     public PaymentMethodListItemBinding(@NonNull RelativeLayout relativeLayout, @NonNull MaterialButton materialButton, @NonNull PaymentSourceView paymentSourceView) {
-        this.a = relativeLayout;
-        this.f2134b = materialButton;
-        this.c = paymentSourceView;
+        this.f15204a = relativeLayout;
+        this.f15205b = materialButton;
+        this.f15206c = paymentSourceView;
     }
 
     @Override // androidx.viewbinding.ViewBinding
     @NonNull
     public View getRoot() {
-        return this.a;
+        return this.f15204a;
     }
 }

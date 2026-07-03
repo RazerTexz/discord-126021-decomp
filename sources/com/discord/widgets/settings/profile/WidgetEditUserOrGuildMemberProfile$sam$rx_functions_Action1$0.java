@@ -1,8 +1,8 @@
 package com.discord.widgets.settings.profile;
 
-import d0.z.d.Intrinsics3;
 import kotlin.jvm.functions.Function1;
-import rx.functions.Action1;
+import p507d0.p592z.p594d.C12238m;
+import p658rx.functions.Action1;
 
 /* JADX INFO: compiled from: WidgetEditUserOrGuildMemberProfile.kt */
 /* JADX INFO: loaded from: classes2.dex */
@@ -13,8 +13,8 @@ public final class WidgetEditUserOrGuildMemberProfile$sam$rx_functions_Action1$0
         this.function = function1;
     }
 
-    @Override // rx.functions.Action1
+    @Override // p658rx.functions.Action1
     public final /* synthetic */ void call(Object obj) {
-        Intrinsics3.checkNotNullExpressionValue(this.function.invoke(obj), "invoke(...)");
+        C12238m.checkNotNullExpressionValue(this.function.invoke(obj), "invoke(...)");
     }
 }

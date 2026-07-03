@@ -1,21 +1,21 @@
 package com.discord.analytics.generated.events;
 
-import b.d.b.a.outline;
 import com.discord.analytics.generated.traits.TrackBase;
-import com.discord.analytics.generated.traits.TrackBase2;
+import com.discord.analytics.generated.traits.TrackBaseReceiver;
 import com.discord.analytics.generated.traits.TrackChannel;
-import com.discord.analytics.generated.traits.TrackChannel2;
+import com.discord.analytics.generated.traits.TrackChannelReceiver;
 import com.discord.analytics.generated.traits.TrackGuild;
-import com.discord.analytics.generated.traits.TrackGuild2;
+import com.discord.analytics.generated.traits.TrackGuildReceiver;
 import com.discord.analytics.generated.traits.TrackLocationMetadata;
-import com.discord.analytics.generated.traits.TrackLocationMetadata2;
+import com.discord.analytics.generated.traits.TrackLocationMetadataReceiver;
 import com.discord.api.science.AnalyticsSchema;
-import d0.z.d.Intrinsics3;
 import java.util.List;
+import p007b.p100d.p104b.p105a.C1643a;
+import p507d0.p592z.p594d.C12238m;
 
 /* JADX INFO: compiled from: TrackStarredChannelsUpdated.kt */
 /* JADX INFO: loaded from: classes.dex */
-public final /* data */ class TrackStarredChannelsUpdated implements AnalyticsSchema, TrackBase2, TrackGuild2, TrackChannel2, TrackLocationMetadata2 {
+public final /* data */ class TrackStarredChannelsUpdated implements AnalyticsSchema, TrackBaseReceiver, TrackGuildReceiver, TrackChannelReceiver, TrackLocationMetadataReceiver {
     private TrackBase trackBase;
     private TrackChannel trackChannel;
     private TrackGuild trackGuild;
@@ -24,14 +24,15 @@ public final /* data */ class TrackStarredChannelsUpdated implements AnalyticsSc
     private final List<Long> channelIds = null;
     private final transient String analyticsSchemaTypeName = "starred_channels_updated";
 
-    @Override // com.discord.analytics.generated.traits.TrackGuild2
+    @Override // com.discord.analytics.generated.traits.TrackGuildReceiver
     /* JADX INFO: renamed from: a, reason: from getter */
     public TrackGuild getTrackGuild() {
         return this.trackGuild;
     }
 
-    @Override // com.discord.analytics.generated.traits.TrackGuild2
-    public void c(TrackGuild trackGuild) {
+    @Override // com.discord.analytics.generated.traits.TrackGuildReceiver
+    /* JADX INFO: renamed from: c */
+    public void mo7508c(TrackGuild trackGuild) {
         this.trackGuild = trackGuild;
     }
 
@@ -49,7 +50,7 @@ public final /* data */ class TrackStarredChannelsUpdated implements AnalyticsSc
             return false;
         }
         TrackStarredChannelsUpdated trackStarredChannelsUpdated = (TrackStarredChannelsUpdated) other;
-        return Intrinsics3.areEqual(this.actionType, trackStarredChannelsUpdated.actionType) && Intrinsics3.areEqual(this.channelIds, trackStarredChannelsUpdated.channelIds);
+        return C12238m.areEqual(this.actionType, trackStarredChannelsUpdated.actionType) && C12238m.areEqual(this.channelIds, trackStarredChannelsUpdated.channelIds);
     }
 
     public int hashCode() {
@@ -60,9 +61,9 @@ public final /* data */ class TrackStarredChannelsUpdated implements AnalyticsSc
     }
 
     public String toString() {
-        StringBuilder sbU = outline.U("TrackStarredChannelsUpdated(actionType=");
-        sbU.append(this.actionType);
-        sbU.append(", channelIds=");
-        return outline.L(sbU, this.channelIds, ")");
+        StringBuilder sbM833U = C1643a.m833U("TrackStarredChannelsUpdated(actionType=");
+        sbM833U.append(this.actionType);
+        sbM833U.append(", channelIds=");
+        return C1643a.m824L(sbM833U, this.channelIds, ")");
     }
 }

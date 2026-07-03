@@ -12,7 +12,7 @@ import android.view.ViewParent;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.annotation.RestrictTo;
-import androidx.appcompat.R;
+import androidx.appcompat.C0051R;
 import java.lang.ref.WeakReference;
 
 /* JADX INFO: loaded from: classes.dex */
@@ -128,10 +128,10 @@ public final class ViewStubCompat extends View {
     public ViewStubCompat(@NonNull Context context, @Nullable AttributeSet attributeSet, int i) {
         super(context, attributeSet, i);
         this.mLayoutResource = 0;
-        TypedArray typedArrayObtainStyledAttributes = context.obtainStyledAttributes(attributeSet, R.styleable.ViewStubCompat, i, 0);
-        this.mInflatedId = typedArrayObtainStyledAttributes.getResourceId(R.styleable.ViewStubCompat_android_inflatedId, -1);
-        this.mLayoutResource = typedArrayObtainStyledAttributes.getResourceId(R.styleable.ViewStubCompat_android_layout, 0);
-        setId(typedArrayObtainStyledAttributes.getResourceId(R.styleable.ViewStubCompat_android_id, -1));
+        TypedArray typedArrayObtainStyledAttributes = context.obtainStyledAttributes(attributeSet, C0051R.styleable.ViewStubCompat, i, 0);
+        this.mInflatedId = typedArrayObtainStyledAttributes.getResourceId(C0051R.styleable.ViewStubCompat_android_inflatedId, -1);
+        this.mLayoutResource = typedArrayObtainStyledAttributes.getResourceId(C0051R.styleable.ViewStubCompat_android_layout, 0);
+        setId(typedArrayObtainStyledAttributes.getResourceId(C0051R.styleable.ViewStubCompat_android_id, -1));
         typedArrayObtainStyledAttributes.recycle();
         setVisibility(8);
         setWillNotDraw(true);

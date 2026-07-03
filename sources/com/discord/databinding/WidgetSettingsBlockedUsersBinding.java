@@ -11,25 +11,27 @@ import com.discord.app.AppViewFlipper;
 /* JADX INFO: loaded from: classes.dex */
 public final class WidgetSettingsBlockedUsersBinding implements ViewBinding {
 
+    /* JADX INFO: renamed from: a */
     @NonNull
-    public final CoordinatorLayout a;
+    public final CoordinatorLayout f17917a;
 
-    /* JADX INFO: renamed from: b, reason: collision with root package name */
+    /* JADX INFO: renamed from: b */
     @NonNull
-    public final AppViewFlipper f2611b;
+    public final AppViewFlipper f17918b;
 
+    /* JADX INFO: renamed from: c */
     @NonNull
-    public final RecyclerView c;
+    public final RecyclerView f17919c;
 
     public WidgetSettingsBlockedUsersBinding(@NonNull CoordinatorLayout coordinatorLayout, @NonNull AppViewFlipper appViewFlipper, @NonNull RecyclerView recyclerView, @NonNull ImageView imageView) {
-        this.a = coordinatorLayout;
-        this.f2611b = appViewFlipper;
-        this.c = recyclerView;
+        this.f17917a = coordinatorLayout;
+        this.f17918b = appViewFlipper;
+        this.f17919c = recyclerView;
     }
 
     @Override // androidx.viewbinding.ViewBinding
     @NonNull
     public View getRoot() {
-        return this.a;
+        return this.f17917a;
     }
 }

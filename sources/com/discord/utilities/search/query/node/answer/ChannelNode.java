@@ -1,16 +1,16 @@
 package com.discord.utilities.search.query.node.answer;
 
 import androidx.core.app.NotificationCompat;
-import b.d.b.a.outline;
 import com.discord.models.domain.ModelAuditLogEntry;
 import com.discord.utilities.search.network.SearchQuery;
 import com.discord.utilities.search.query.FilterType;
 import com.discord.utilities.search.validation.SearchData;
-import com.discord.widgets.chat.input.MentionUtils;
-import d0.t.SetsJVM;
-import d0.t._Collections;
-import d0.z.d.Intrinsics3;
+import com.discord.widgets.chat.input.MentionUtilsKt;
 import java.util.Set;
+import p007b.p100d.p104b.p105a.C1643a;
+import p507d0.p580t.C12146m0;
+import p507d0.p580t.C12163u;
+import p507d0.p592z.p594d.C12238m;
 
 /* JADX INFO: compiled from: ChannelNode.kt */
 /* JADX INFO: loaded from: classes2.dex */
@@ -18,7 +18,7 @@ public final /* data */ class ChannelNode extends AnswerNode {
     private final String channelName;
 
     public ChannelNode(String str) {
-        Intrinsics3.checkNotNullParameter(str, "channelName");
+        C12238m.checkNotNullParameter(str, "channelName");
         this.channelName = str;
     }
 
@@ -35,13 +35,13 @@ public final /* data */ class ChannelNode extends AnswerNode {
     }
 
     public final ChannelNode copy(String channelName) {
-        Intrinsics3.checkNotNullParameter(channelName, "channelName");
+        C12238m.checkNotNullParameter(channelName, "channelName");
         return new ChannelNode(channelName);
     }
 
     public boolean equals(Object other) {
         if (this != other) {
-            return (other instanceof ChannelNode) && Intrinsics3.areEqual(this.channelName, ((ChannelNode) other).channelName);
+            return (other instanceof ChannelNode) && C12238m.areEqual(this.channelName, ((ChannelNode) other).channelName);
         }
         return true;
     }
@@ -52,7 +52,7 @@ public final /* data */ class ChannelNode extends AnswerNode {
 
     @Override // com.discord.utilities.search.query.node.answer.AnswerNode
     public Set<FilterType> getValidFilters() {
-        return SetsJVM.setOf(FilterType.IN);
+        return C12146m0.setOf(FilterType.IN);
     }
 
     public int hashCode() {
@@ -65,28 +65,28 @@ public final /* data */ class ChannelNode extends AnswerNode {
 
     @Override // com.discord.utilities.search.query.node.answer.AnswerNode
     public boolean isValid(SearchData searchData) {
-        Intrinsics3.checkNotNullParameter(searchData, "searchData");
+        C12238m.checkNotNullParameter(searchData, "searchData");
         return searchData.getChannelNameIndex().containsKey(this.channelName);
     }
 
     public String toString() {
-        return outline.J(outline.U("ChannelNode(channelName="), this.channelName, ")");
+        return C1643a.m822J(C1643a.m833U("ChannelNode(channelName="), this.channelName, ")");
     }
 
     @Override // com.discord.utilities.search.query.node.answer.AnswerNode
     public void updateQuery(SearchQuery.Builder queryBuilder, SearchData searchData, FilterType filterType) {
         Long l;
-        Intrinsics3.checkNotNullParameter(queryBuilder, "queryBuilder");
-        Intrinsics3.checkNotNullParameter(searchData, "searchData");
-        if (_Collections.contains(getValidFilters(), filterType) && (l = searchData.getChannelNameIndex().get(this.channelName)) != null) {
+        C12238m.checkNotNullParameter(queryBuilder, "queryBuilder");
+        C12238m.checkNotNullParameter(searchData, "searchData");
+        if (C12163u.contains(getValidFilters(), filterType) && (l = searchData.getChannelNameIndex().get(this.channelName)) != null) {
             queryBuilder.appendParam(ModelAuditLogEntry.CHANGE_KEY_CHANNEL_ID, String.valueOf(l.longValue()));
         }
     }
 
     @Override // com.discord.utilities.search.query.node.QueryNode
     public String getText() {
-        StringBuilder sbQ = outline.Q(MentionUtils.CHANNELS_CHAR);
-        sbQ.append(this.channelName);
-        return sbQ.toString();
+        StringBuilder sbM829Q = C1643a.m829Q(MentionUtilsKt.CHANNELS_CHAR);
+        sbM829Q.append(this.channelName);
+        return sbM829Q.toString();
     }
 }

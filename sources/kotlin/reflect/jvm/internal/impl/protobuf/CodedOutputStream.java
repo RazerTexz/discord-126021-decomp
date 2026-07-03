@@ -1,24 +1,32 @@
 package kotlin.reflect.jvm.internal.impl.protobuf;
 
-import b.d.b.a.outline;
 import com.adjust.sdk.Constants;
-import d0.e0.p.d.m0.i.ByteString3;
-import d0.e0.p.d.m0.i.LazyFieldLite;
-import d0.e0.p.d.m0.i.MessageLite;
 import java.io.IOException;
 import java.io.OutputStream;
 import java.io.UnsupportedEncodingException;
 import org.objectweb.asm.Opcodes;
+import p007b.p100d.p104b.p105a.C1643a;
+import p507d0.p513e0.p514p.p515d.p517m0.p550i.AbstractC11723c;
+import p507d0.p513e0.p514p.p515d.p517m0.p550i.C11730j;
+import p507d0.p513e0.p514p.p515d.p517m0.p550i.InterfaceC11734n;
 
 /* JADX INFO: loaded from: classes3.dex */
 public final class CodedOutputStream {
-    public final byte[] a;
 
-    /* JADX INFO: renamed from: b, reason: collision with root package name */
-    public final int f3806b;
-    public final OutputStream e;
-    public int d = 0;
-    public int c = 0;
+    /* JADX INFO: renamed from: a */
+    public final byte[] f27445a;
+
+    /* JADX INFO: renamed from: b */
+    public final int f27446b;
+
+    /* JADX INFO: renamed from: e */
+    public final OutputStream f27449e;
+
+    /* JADX INFO: renamed from: d */
+    public int f27448d = 0;
+
+    /* JADX INFO: renamed from: c */
+    public int f27447c = 0;
 
     public static class OutOfSpaceException extends IOException {
         public OutOfSpaceException() {
@@ -27,9 +35,9 @@ public final class CodedOutputStream {
     }
 
     public CodedOutputStream(OutputStream outputStream, byte[] bArr) {
-        this.e = outputStream;
-        this.a = bArr;
-        this.f3806b = bArr.length;
+        this.f27449e = outputStream;
+        this.f27445a = bArr;
+        this.f27446b = bArr.length;
     }
 
     public static int computeBoolSize(int i, boolean z2) {
@@ -44,12 +52,12 @@ public final class CodedOutputStream {
         return computeRawVarint32Size(bArr.length) + bArr.length;
     }
 
-    public static int computeBytesSize(int i, ByteString3 byteString3) {
-        return computeBytesSizeNoTag(byteString3) + computeTagSize(i);
+    public static int computeBytesSize(int i, AbstractC11723c abstractC11723c) {
+        return computeBytesSizeNoTag(abstractC11723c) + computeTagSize(i);
     }
 
-    public static int computeBytesSizeNoTag(ByteString3 byteString3) {
-        return byteString3.size() + computeRawVarint32Size(byteString3.size());
+    public static int computeBytesSizeNoTag(AbstractC11723c abstractC11723c) {
+        return abstractC11723c.size() + computeRawVarint32Size(abstractC11723c.size());
     }
 
     public static int computeDoubleSize(int i, double d) {
@@ -84,8 +92,8 @@ public final class CodedOutputStream {
         return 4;
     }
 
-    public static int computeGroupSizeNoTag(MessageLite messageLite) {
-        return messageLite.getSerializedSize();
+    public static int computeGroupSizeNoTag(InterfaceC11734n interfaceC11734n) {
+        return interfaceC11734n.getSerializedSize();
     }
 
     public static int computeInt32Size(int i, int i2) {
@@ -103,17 +111,17 @@ public final class CodedOutputStream {
         return computeRawVarint64Size(j);
     }
 
-    public static int computeLazyFieldSizeNoTag(LazyFieldLite lazyFieldLite) {
-        int serializedSize = lazyFieldLite.getSerializedSize();
+    public static int computeLazyFieldSizeNoTag(C11730j c11730j) {
+        int serializedSize = c11730j.getSerializedSize();
         return computeRawVarint32Size(serializedSize) + serializedSize;
     }
 
-    public static int computeMessageSize(int i, MessageLite messageLite) {
-        return computeMessageSizeNoTag(messageLite) + computeTagSize(i);
+    public static int computeMessageSize(int i, InterfaceC11734n interfaceC11734n) {
+        return computeMessageSizeNoTag(interfaceC11734n) + computeTagSize(i);
     }
 
-    public static int computeMessageSizeNoTag(MessageLite messageLite) {
-        int serializedSize = messageLite.getSerializedSize();
+    public static int computeMessageSizeNoTag(InterfaceC11734n interfaceC11734n) {
+        int serializedSize = interfaceC11734n.getSerializedSize();
         return computeRawVarint32Size(serializedSize) + serializedSize;
     }
 
@@ -211,18 +219,19 @@ public final class CodedOutputStream {
         return new CodedOutputStream(outputStream, new byte[i]);
     }
 
-    public final void a() throws IOException {
-        OutputStream outputStream = this.e;
+    /* JADX INFO: renamed from: a */
+    public final void m10894a() throws IOException {
+        OutputStream outputStream = this.f27449e;
         if (outputStream == null) {
             throw new OutOfSpaceException();
         }
-        outputStream.write(this.a, 0, this.c);
-        this.c = 0;
+        outputStream.write(this.f27445a, 0, this.f27447c);
+        this.f27447c = 0;
     }
 
     public void flush() throws IOException {
-        if (this.e != null) {
-            a();
+        if (this.f27449e != null) {
+            m10894a();
         }
     }
 
@@ -240,14 +249,14 @@ public final class CodedOutputStream {
         writeRawBytes(bArr);
     }
 
-    public void writeBytes(int i, ByteString3 byteString3) throws IOException {
+    public void writeBytes(int i, AbstractC11723c abstractC11723c) throws IOException {
         writeTag(i, 2);
-        writeBytesNoTag(byteString3);
+        writeBytesNoTag(abstractC11723c);
     }
 
-    public void writeBytesNoTag(ByteString3 byteString3) throws IOException {
-        writeRawVarint32(byteString3.size());
-        writeRawBytes(byteString3);
+    public void writeBytesNoTag(AbstractC11723c abstractC11723c) throws IOException {
+        writeRawVarint32(abstractC11723c.size());
+        writeRawBytes(abstractC11723c);
     }
 
     public void writeDouble(int i, double d) throws IOException {
@@ -285,14 +294,14 @@ public final class CodedOutputStream {
         writeRawLittleEndian32(Float.floatToRawIntBits(f));
     }
 
-    public void writeGroup(int i, MessageLite messageLite) throws IOException {
+    public void writeGroup(int i, InterfaceC11734n interfaceC11734n) throws IOException {
         writeTag(i, 3);
-        writeGroupNoTag(messageLite);
+        writeGroupNoTag(interfaceC11734n);
         writeTag(i, 4);
     }
 
-    public void writeGroupNoTag(MessageLite messageLite) throws IOException {
-        messageLite.writeTo(this);
+    public void writeGroupNoTag(InterfaceC11734n interfaceC11734n) throws IOException {
+        interfaceC11734n.writeTo(this);
     }
 
     public void writeInt32(int i, int i2) throws IOException {
@@ -312,36 +321,36 @@ public final class CodedOutputStream {
         writeRawVarint64(j);
     }
 
-    public void writeMessage(int i, MessageLite messageLite) throws IOException {
+    public void writeMessage(int i, InterfaceC11734n interfaceC11734n) throws IOException {
         writeTag(i, 2);
-        writeMessageNoTag(messageLite);
+        writeMessageNoTag(interfaceC11734n);
     }
 
-    public void writeMessageNoTag(MessageLite messageLite) throws IOException {
-        writeRawVarint32(messageLite.getSerializedSize());
-        messageLite.writeTo(this);
+    public void writeMessageNoTag(InterfaceC11734n interfaceC11734n) throws IOException {
+        writeRawVarint32(interfaceC11734n.getSerializedSize());
+        interfaceC11734n.writeTo(this);
     }
 
-    public void writeMessageSetExtension(int i, MessageLite messageLite) throws IOException {
+    public void writeMessageSetExtension(int i, InterfaceC11734n interfaceC11734n) throws IOException {
         writeTag(1, 3);
         writeUInt32(2, i);
-        writeMessage(3, messageLite);
+        writeMessage(3, interfaceC11734n);
         writeTag(1, 4);
     }
 
     public void writeRawByte(byte b2) throws IOException {
-        if (this.c == this.f3806b) {
-            a();
+        if (this.f27447c == this.f27446b) {
+            m10894a();
         }
-        byte[] bArr = this.a;
-        int i = this.c;
-        this.c = i + 1;
+        byte[] bArr = this.f27445a;
+        int i = this.f27447c;
+        this.f27447c = i + 1;
         bArr[i] = b2;
-        this.d++;
+        this.f27448d++;
     }
 
-    public void writeRawBytes(ByteString3 byteString3) throws IOException {
-        writeRawBytes(byteString3, 0, byteString3.size());
+    public void writeRawBytes(AbstractC11723c abstractC11723c) throws IOException {
+        writeRawBytes(abstractC11723c, 0, abstractC11723c.size());
     }
 
     public void writeRawLittleEndian32(int i) throws IOException {
@@ -427,70 +436,70 @@ public final class CodedOutputStream {
     }
 
     public void writeRawBytes(byte[] bArr, int i, int i2) throws IOException {
-        int i3 = this.f3806b;
-        int i4 = this.c;
+        int i3 = this.f27446b;
+        int i4 = this.f27447c;
         if (i3 - i4 >= i2) {
-            System.arraycopy(bArr, i, this.a, i4, i2);
-            this.c += i2;
-            this.d += i2;
+            System.arraycopy(bArr, i, this.f27445a, i4, i2);
+            this.f27447c += i2;
+            this.f27448d += i2;
             return;
         }
         int i5 = i3 - i4;
-        System.arraycopy(bArr, i, this.a, i4, i5);
+        System.arraycopy(bArr, i, this.f27445a, i4, i5);
         int i6 = i + i5;
         int i7 = i2 - i5;
-        this.c = this.f3806b;
-        this.d += i5;
-        a();
-        if (i7 <= this.f3806b) {
-            System.arraycopy(bArr, i6, this.a, 0, i7);
-            this.c = i7;
+        this.f27447c = this.f27446b;
+        this.f27448d += i5;
+        m10894a();
+        if (i7 <= this.f27446b) {
+            System.arraycopy(bArr, i6, this.f27445a, 0, i7);
+            this.f27447c = i7;
         } else {
-            this.e.write(bArr, i6, i7);
+            this.f27449e.write(bArr, i6, i7);
         }
-        this.d += i7;
+        this.f27448d += i7;
     }
 
     public void writeRawByte(int i) throws IOException {
         writeRawByte((byte) i);
     }
 
-    public void writeRawBytes(ByteString3 byteString3, int i, int i2) throws IOException {
-        int i3 = this.f3806b;
-        int i4 = this.c;
+    public void writeRawBytes(AbstractC11723c abstractC11723c, int i, int i2) throws IOException {
+        int i3 = this.f27446b;
+        int i4 = this.f27447c;
         if (i3 - i4 >= i2) {
-            byteString3.copyTo(this.a, i, i4, i2);
-            this.c += i2;
-            this.d += i2;
+            abstractC11723c.copyTo(this.f27445a, i, i4, i2);
+            this.f27447c += i2;
+            this.f27448d += i2;
             return;
         }
         int i5 = i3 - i4;
-        byteString3.copyTo(this.a, i, i4, i5);
+        abstractC11723c.copyTo(this.f27445a, i, i4, i5);
         int i6 = i + i5;
         int i7 = i2 - i5;
-        this.c = this.f3806b;
-        this.d += i5;
-        a();
-        if (i7 <= this.f3806b) {
-            byteString3.copyTo(this.a, i6, 0, i7);
-            this.c = i7;
+        this.f27447c = this.f27446b;
+        this.f27448d += i5;
+        m10894a();
+        if (i7 <= this.f27446b) {
+            abstractC11723c.copyTo(this.f27445a, i6, 0, i7);
+            this.f27447c = i7;
         } else {
-            OutputStream outputStream = this.e;
+            OutputStream outputStream = this.f27449e;
             if (i6 < 0) {
-                throw new IndexOutOfBoundsException(outline.g(30, "Source offset < 0: ", i6));
+                throw new IndexOutOfBoundsException(C1643a.m851g(30, "Source offset < 0: ", i6));
             }
             if (i7 >= 0) {
                 int i8 = i6 + i7;
-                if (i8 > byteString3.size()) {
-                    throw new IndexOutOfBoundsException(outline.g(39, "Source end offset exceeded: ", i8));
+                if (i8 > abstractC11723c.size()) {
+                    throw new IndexOutOfBoundsException(C1643a.m851g(39, "Source end offset exceeded: ", i8));
                 }
                 if (i7 > 0) {
-                    byteString3.k(outputStream, i6, i7);
+                    abstractC11723c.mo9830k(outputStream, i6, i7);
                 }
             } else {
-                throw new IndexOutOfBoundsException(outline.g(23, "Length < 0: ", i7));
+                throw new IndexOutOfBoundsException(C1643a.m851g(23, "Length < 0: ", i7));
             }
         }
-        this.d += i7;
+        this.f27448d += i7;
     }
 }

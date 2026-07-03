@@ -1,7 +1,5 @@
 package com.discord.models.domain;
 
-import b.d.b.a.outline;
-import b.i.d.TypeAdapterFactory2;
 import com.google.gson.Gson;
 import com.google.gson.TypeAdapter;
 import com.google.gson.reflect.TypeToken;
@@ -14,14 +12,16 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import rx.functions.Action1;
-import rx.functions.Func0;
+import p007b.p100d.p104b.p105a.C1643a;
+import p007b.p225i.p408d.InterfaceC4911o;
+import p658rx.functions.Action1;
+import p658rx.functions.Func0;
 
 /* JADX INFO: loaded from: classes.dex */
 public interface Model {
 
-    /* JADX INFO: renamed from: com.discord.models.domain.Model$1, reason: invalid class name */
-    public static /* synthetic */ class AnonymousClass1 {
+    /* JADX INFO: renamed from: com.discord.models.domain.Model$1 */
+    public static /* synthetic */ class C55311 {
         public static final /* synthetic */ int[] $SwitchMap$com$google$gson$stream$JsonToken;
 
         static {
@@ -48,7 +48,9 @@ public interface Model {
     }
 
     public static class JsonReader implements Closeable {
-        public final com.google.gson.stream.JsonReader in;
+
+        /* JADX INFO: renamed from: in */
+        public final com.google.gson.stream.JsonReader f18559in;
 
         public interface ItemFactory<T> {
             T get() throws IOException;
@@ -59,74 +61,74 @@ public interface Model {
         }
 
         public JsonReader(com.google.gson.stream.JsonReader jsonReader) {
-            this.in = jsonReader;
+            this.f18559in = jsonReader;
         }
 
         @Override // java.io.Closeable, java.lang.AutoCloseable
         public void close() throws IOException {
-            this.in.close();
+            this.f18559in.close();
         }
 
         public boolean hasNext() throws IOException {
-            return this.in.q();
+            return this.f18559in.mo6888q();
         }
 
         public boolean nextBoolean(boolean z2) throws IOException {
-            if (this.in.N() != JsonToken.NULL) {
-                return this.in.u();
+            if (this.f18559in.mo6878N() != JsonToken.NULL) {
+                return this.f18559in.mo6889u();
             }
-            this.in.H();
+            this.f18559in.mo6876H();
             return z2;
         }
 
         public Boolean nextBooleanOrNull() throws IOException {
-            if (this.in.N() != JsonToken.NULL) {
-                return Boolean.valueOf(this.in.u());
+            if (this.f18559in.mo6878N() != JsonToken.NULL) {
+                return Boolean.valueOf(this.f18559in.mo6889u());
             }
-            this.in.H();
+            this.f18559in.mo6876H();
             return null;
         }
 
         public double nextDouble(double d) throws IOException {
-            if (this.in.N() != JsonToken.NULL) {
-                return this.in.x();
+            if (this.f18559in.mo6878N() != JsonToken.NULL) {
+                return this.f18559in.mo6890x();
             }
-            this.in.H();
+            this.f18559in.mo6876H();
             return d;
         }
 
         public int nextInt(int i) throws IOException {
-            if (this.in.N() != JsonToken.NULL) {
-                return this.in.y();
+            if (this.f18559in.mo6878N() != JsonToken.NULL) {
+                return this.f18559in.mo6891y();
             }
-            this.in.H();
+            this.f18559in.mo6876H();
             return i;
         }
 
         public Integer nextIntOrNull() throws IOException {
-            if (this.in.N() != JsonToken.NULL) {
-                return Integer.valueOf(this.in.y());
+            if (this.f18559in.mo6878N() != JsonToken.NULL) {
+                return Integer.valueOf(this.f18559in.mo6891y());
             }
-            this.in.H();
+            this.f18559in.mo6876H();
             return null;
         }
 
         public <T> List<T> nextList(ItemFactory<T> itemFactory) throws IOException {
             ArrayList arrayList = new ArrayList();
-            this.in.a();
-            while (this.in.q()) {
+            this.f18559in.mo6882a();
+            while (this.f18559in.mo6888q()) {
                 T t = itemFactory.get();
                 if (t != null) {
                     arrayList.add(t);
                 }
             }
-            this.in.e();
+            this.f18559in.mo6886e();
             return arrayList;
         }
 
         public <K, V> HashMap<K, V> nextListAsMap(ItemFactory<V> itemFactory, KeySelector<K, V> keySelector) throws IOException {
             return (HashMap) nextListAsMap(itemFactory, keySelector, new Func0() { // from class: b.a.m.a.e0
-                @Override // rx.functions.Func0, java.util.concurrent.Callable
+                @Override // p658rx.functions.Func0, java.util.concurrent.Callable
                 public final Object call() {
                     return new HashMap();
                 }
@@ -134,82 +136,82 @@ public interface Model {
         }
 
         public void nextListIndexed(Runnable... runnableArr) throws IOException {
-            this.in.a();
+            this.f18559in.mo6882a();
             int i = 0;
-            while (this.in.q()) {
+            while (this.f18559in.mo6888q()) {
                 if (runnableArr.length > i) {
                     runnableArr[i].run();
                 } else {
-                    this.in.U();
+                    this.f18559in.mo6879U();
                 }
                 i++;
             }
-            this.in.e();
+            this.f18559in.mo6886e();
         }
 
         public long nextLong(long j) throws IOException {
-            if (this.in.N() != JsonToken.NULL) {
-                return this.in.A();
+            if (this.f18559in.mo6878N() != JsonToken.NULL) {
+                return this.f18559in.mo6874A();
             }
-            this.in.H();
+            this.f18559in.mo6876H();
             return j;
         }
 
         public Long nextLongOrNull() throws IOException {
-            if (this.in.N() != JsonToken.NULL) {
-                return Long.valueOf(this.in.A());
+            if (this.f18559in.mo6878N() != JsonToken.NULL) {
+                return Long.valueOf(this.f18559in.mo6874A());
             }
-            this.in.H();
+            this.f18559in.mo6876H();
             return null;
         }
 
         public String nextName() throws IOException {
-            return this.in.C();
+            return this.f18559in.mo6875C();
         }
 
         public void nextNull() throws IOException {
-            this.in.H();
+            this.f18559in.mo6876H();
         }
 
         public void nextObject(Action1<String> action1) throws IOException {
-            this.in.b();
+            this.f18559in.mo6883b();
             while (hasNext()) {
-                action1.call(this.in.C());
+                action1.call(this.f18559in.mo6875C());
             }
-            this.in.f();
+            this.f18559in.mo6887f();
         }
 
         public String nextString(String str) throws IOException {
-            if (this.in.N() != JsonToken.NULL) {
-                return this.in.J();
+            if (this.f18559in.mo6878N() != JsonToken.NULL) {
+                return this.f18559in.mo6877J();
             }
-            this.in.H();
+            this.f18559in.mo6876H();
             return str;
         }
 
         public String nextStringOrNull() throws IOException {
-            if (this.in.N() != JsonToken.NULL) {
-                return this.in.J();
+            if (this.f18559in.mo6878N() != JsonToken.NULL) {
+                return this.f18559in.mo6877J();
             }
-            this.in.H();
+            this.f18559in.mo6876H();
             return null;
         }
 
         public <T extends Model> T parse(T t) throws IOException {
-            if (this.in.N() == JsonToken.NULL) {
-                this.in.H();
+            if (this.f18559in.mo6878N() == JsonToken.NULL) {
+                this.f18559in.mo6876H();
                 return null;
             }
-            this.in.b();
-            while (this.in.q()) {
+            this.f18559in.mo6883b();
+            while (this.f18559in.mo6888q()) {
                 t.assignField(this);
             }
-            this.in.f();
+            this.f18559in.mo6887f();
             return t;
         }
 
         public <T> Object parseUnknown(ItemFactory<T> itemFactory) throws IOException {
-            int iOrdinal = this.in.N().ordinal();
+            int iOrdinal = this.f18559in.mo6878N().ordinal();
             if (iOrdinal == 0) {
                 return nextList(itemFactory);
             }
@@ -226,28 +228,28 @@ public interface Model {
         }
 
         public JsonToken peek() throws IOException {
-            return this.in.N();
+            return this.f18559in.mo6878N();
         }
 
         public void skipValue() throws IOException {
-            this.in.U();
+            this.f18559in.mo6879U();
         }
 
         public <K, V, M extends Map<K, V>> M nextListAsMap(ItemFactory<V> itemFactory, KeySelector<K, V> keySelector, Func0<M> func0) throws IOException {
             M mCall = func0.call();
-            this.in.a();
-            while (this.in.q()) {
+            this.f18559in.mo6882a();
+            while (this.f18559in.mo6888q()) {
                 V v = itemFactory.get();
                 if (v != null) {
                     mCall.put(keySelector.get(v), v);
                 }
             }
-            this.in.e();
+            this.f18559in.mo6886e();
             return mCall;
         }
 
         public JsonReader(Reader reader) {
-            this.in = new com.google.gson.stream.JsonReader(reader);
+            this.f18559in = new com.google.gson.stream.JsonReader(reader);
         }
     }
 
@@ -255,8 +257,8 @@ public interface Model {
         T parse(JsonReader jsonReader);
     }
 
-    public static class TypeAdapterFactory implements TypeAdapterFactory2 {
-        @Override // b.i.d.TypeAdapterFactory2
+    public static class TypeAdapterFactory implements InterfaceC4911o {
+        @Override // p007b.p225i.p408d.InterfaceC4911o
         public <T> TypeAdapter<T> create(Gson gson, final TypeToken<T> typeToken) {
             if (Model.class.isAssignableFrom(typeToken.getRawType())) {
                 return new TypeAdapter<T>() { // from class: com.discord.models.domain.Model.TypeAdapterFactory.1
@@ -278,7 +280,7 @@ public interface Model {
 
                     @Override // com.google.gson.TypeAdapter
                     public void write(JsonWriter jsonWriter, T t) throws IOException {
-                        throw new IOException(outline.v("Writer incorrectly invoked for object.", t));
+                        throw new IOException(C1643a.m881v("Writer incorrectly invoked for object.", t));
                     }
                 };
             }

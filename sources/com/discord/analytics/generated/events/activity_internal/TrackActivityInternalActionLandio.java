@@ -1,16 +1,16 @@
 package com.discord.analytics.generated.events.activity_internal;
 
-import b.d.b.a.outline;
 import com.discord.analytics.generated.traits.TrackActivityInternalMetadata;
-import com.discord.analytics.generated.traits.TrackActivityInternalMetadata2;
+import com.discord.analytics.generated.traits.TrackActivityInternalMetadataReceiver;
 import com.discord.analytics.generated.traits.TrackBase;
-import com.discord.analytics.generated.traits.TrackBase2;
+import com.discord.analytics.generated.traits.TrackBaseReceiver;
 import com.discord.api.science.AnalyticsSchema;
-import d0.z.d.Intrinsics3;
+import p007b.p100d.p104b.p105a.C1643a;
+import p507d0.p592z.p594d.C12238m;
 
 /* JADX INFO: compiled from: TrackActivityInternalActionLandio.kt */
 /* JADX INFO: loaded from: classes.dex */
-public final /* data */ class TrackActivityInternalActionLandio implements AnalyticsSchema, TrackBase2, TrackActivityInternalMetadata2 {
+public final /* data */ class TrackActivityInternalActionLandio implements AnalyticsSchema, TrackBaseReceiver, TrackActivityInternalMetadataReceiver {
     private TrackActivityInternalMetadata trackActivityInternalMetadata;
     private TrackBase trackBase;
     private final CharSequence actionName = null;
@@ -42,7 +42,7 @@ public final /* data */ class TrackActivityInternalActionLandio implements Analy
             return false;
         }
         TrackActivityInternalActionLandio trackActivityInternalActionLandio = (TrackActivityInternalActionLandio) other;
-        return Intrinsics3.areEqual(this.actionName, trackActivityInternalActionLandio.actionName) && Intrinsics3.areEqual(this.ping, trackActivityInternalActionLandio.ping) && Intrinsics3.areEqual(this.server, trackActivityInternalActionLandio.server) && Intrinsics3.areEqual(this.pingPeak, trackActivityInternalActionLandio.pingPeak) && Intrinsics3.areEqual(this.frame, trackActivityInternalActionLandio.frame) && Intrinsics3.areEqual(this.framePeak, trackActivityInternalActionLandio.framePeak) && Intrinsics3.areEqual(this.numPlayers, trackActivityInternalActionLandio.numPlayers) && Intrinsics3.areEqual(this.numVotesYes, trackActivityInternalActionLandio.numVotesYes) && Intrinsics3.areEqual(this.numVotesNo, trackActivityInternalActionLandio.numVotesNo) && Intrinsics3.areEqual(this.turnLifespan, trackActivityInternalActionLandio.turnLifespan) && Intrinsics3.areEqual(this.turnKills, trackActivityInternalActionLandio.turnKills) && Intrinsics3.areEqual(this.turnClaimed, trackActivityInternalActionLandio.turnClaimed) && Intrinsics3.areEqual(this.toggleEnable, trackActivityInternalActionLandio.toggleEnable);
+        return C12238m.areEqual(this.actionName, trackActivityInternalActionLandio.actionName) && C12238m.areEqual(this.ping, trackActivityInternalActionLandio.ping) && C12238m.areEqual(this.server, trackActivityInternalActionLandio.server) && C12238m.areEqual(this.pingPeak, trackActivityInternalActionLandio.pingPeak) && C12238m.areEqual(this.frame, trackActivityInternalActionLandio.frame) && C12238m.areEqual(this.framePeak, trackActivityInternalActionLandio.framePeak) && C12238m.areEqual(this.numPlayers, trackActivityInternalActionLandio.numPlayers) && C12238m.areEqual(this.numVotesYes, trackActivityInternalActionLandio.numVotesYes) && C12238m.areEqual(this.numVotesNo, trackActivityInternalActionLandio.numVotesNo) && C12238m.areEqual(this.turnLifespan, trackActivityInternalActionLandio.turnLifespan) && C12238m.areEqual(this.turnKills, trackActivityInternalActionLandio.turnKills) && C12238m.areEqual(this.turnClaimed, trackActivityInternalActionLandio.turnClaimed) && C12238m.areEqual(this.toggleEnable, trackActivityInternalActionLandio.toggleEnable);
     }
 
     public int hashCode() {
@@ -75,31 +75,31 @@ public final /* data */ class TrackActivityInternalActionLandio implements Analy
     }
 
     public String toString() {
-        StringBuilder sbU = outline.U("TrackActivityInternalActionLandio(actionName=");
-        sbU.append(this.actionName);
-        sbU.append(", ping=");
-        sbU.append(this.ping);
-        sbU.append(", server=");
-        sbU.append(this.server);
-        sbU.append(", pingPeak=");
-        sbU.append(this.pingPeak);
-        sbU.append(", frame=");
-        sbU.append(this.frame);
-        sbU.append(", framePeak=");
-        sbU.append(this.framePeak);
-        sbU.append(", numPlayers=");
-        sbU.append(this.numPlayers);
-        sbU.append(", numVotesYes=");
-        sbU.append(this.numVotesYes);
-        sbU.append(", numVotesNo=");
-        sbU.append(this.numVotesNo);
-        sbU.append(", turnLifespan=");
-        sbU.append(this.turnLifespan);
-        sbU.append(", turnKills=");
-        sbU.append(this.turnKills);
-        sbU.append(", turnClaimed=");
-        sbU.append(this.turnClaimed);
-        sbU.append(", toggleEnable=");
-        return outline.D(sbU, this.toggleEnable, ")");
+        StringBuilder sbM833U = C1643a.m833U("TrackActivityInternalActionLandio(actionName=");
+        sbM833U.append(this.actionName);
+        sbM833U.append(", ping=");
+        sbM833U.append(this.ping);
+        sbM833U.append(", server=");
+        sbM833U.append(this.server);
+        sbM833U.append(", pingPeak=");
+        sbM833U.append(this.pingPeak);
+        sbM833U.append(", frame=");
+        sbM833U.append(this.frame);
+        sbM833U.append(", framePeak=");
+        sbM833U.append(this.framePeak);
+        sbM833U.append(", numPlayers=");
+        sbM833U.append(this.numPlayers);
+        sbM833U.append(", numVotesYes=");
+        sbM833U.append(this.numVotesYes);
+        sbM833U.append(", numVotesNo=");
+        sbM833U.append(this.numVotesNo);
+        sbM833U.append(", turnLifespan=");
+        sbM833U.append(this.turnLifespan);
+        sbM833U.append(", turnKills=");
+        sbM833U.append(this.turnKills);
+        sbM833U.append(", turnClaimed=");
+        sbM833U.append(this.turnClaimed);
+        sbM833U.append(", toggleEnable=");
+        return C1643a.m816D(sbM833U, this.toggleEnable, ")");
     }
 }

@@ -14,11 +14,11 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.annotation.RestrictTo;
 import androidx.recyclerview.widget.RecyclerView;
-import b.d.b.a.outline;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.BitSet;
 import java.util.List;
+import p007b.p100d.p104b.p105a.C1643a;
 
 /* JADX INFO: loaded from: classes.dex */
 public class StaggeredGridLayoutManager extends RecyclerView.LayoutManager implements RecyclerView.SmoothScroller.ScrollVectorProvider {
@@ -1115,11 +1115,11 @@ public class StaggeredGridLayoutManager extends RecyclerView.LayoutManager imple
         if (iArr == null) {
             iArr = new int[this.mSpanCount];
         } else if (iArr.length < this.mSpanCount) {
-            StringBuilder sbU = outline.U("Provided int[]'s size must be more than or equal to span count. Expected:");
-            sbU.append(this.mSpanCount);
-            sbU.append(", array size:");
-            sbU.append(iArr.length);
-            throw new IllegalArgumentException(sbU.toString());
+            StringBuilder sbM833U = C1643a.m833U("Provided int[]'s size must be more than or equal to span count. Expected:");
+            sbM833U.append(this.mSpanCount);
+            sbM833U.append(", array size:");
+            sbM833U.append(iArr.length);
+            throw new IllegalArgumentException(sbM833U.toString());
         }
         for (int i = 0; i < this.mSpanCount; i++) {
             iArr[i] = this.mSpans[i].findFirstCompletelyVisibleItemPosition();
@@ -1179,11 +1179,11 @@ public class StaggeredGridLayoutManager extends RecyclerView.LayoutManager imple
         if (iArr == null) {
             iArr = new int[this.mSpanCount];
         } else if (iArr.length < this.mSpanCount) {
-            StringBuilder sbU = outline.U("Provided int[]'s size must be more than or equal to span count. Expected:");
-            sbU.append(this.mSpanCount);
-            sbU.append(", array size:");
-            sbU.append(iArr.length);
-            throw new IllegalArgumentException(sbU.toString());
+            StringBuilder sbM833U = C1643a.m833U("Provided int[]'s size must be more than or equal to span count. Expected:");
+            sbM833U.append(this.mSpanCount);
+            sbM833U.append(", array size:");
+            sbM833U.append(iArr.length);
+            throw new IllegalArgumentException(sbM833U.toString());
         }
         for (int i = 0; i < this.mSpanCount; i++) {
             iArr[i] = this.mSpans[i].findFirstVisibleItemPosition();
@@ -1195,11 +1195,11 @@ public class StaggeredGridLayoutManager extends RecyclerView.LayoutManager imple
         if (iArr == null) {
             iArr = new int[this.mSpanCount];
         } else if (iArr.length < this.mSpanCount) {
-            StringBuilder sbU = outline.U("Provided int[]'s size must be more than or equal to span count. Expected:");
-            sbU.append(this.mSpanCount);
-            sbU.append(", array size:");
-            sbU.append(iArr.length);
-            throw new IllegalArgumentException(sbU.toString());
+            StringBuilder sbM833U = C1643a.m833U("Provided int[]'s size must be more than or equal to span count. Expected:");
+            sbM833U.append(this.mSpanCount);
+            sbM833U.append(", array size:");
+            sbM833U.append(iArr.length);
+            throw new IllegalArgumentException(sbM833U.toString());
         }
         for (int i = 0; i < this.mSpanCount; i++) {
             iArr[i] = this.mSpans[i].findLastCompletelyVisibleItemPosition();
@@ -1211,11 +1211,11 @@ public class StaggeredGridLayoutManager extends RecyclerView.LayoutManager imple
         if (iArr == null) {
             iArr = new int[this.mSpanCount];
         } else if (iArr.length < this.mSpanCount) {
-            StringBuilder sbU = outline.U("Provided int[]'s size must be more than or equal to span count. Expected:");
-            sbU.append(this.mSpanCount);
-            sbU.append(", array size:");
-            sbU.append(iArr.length);
-            throw new IllegalArgumentException(sbU.toString());
+            StringBuilder sbM833U = C1643a.m833U("Provided int[]'s size must be more than or equal to span count. Expected:");
+            sbM833U.append(this.mSpanCount);
+            sbM833U.append(", array size:");
+            sbM833U.append(iArr.length);
+            throw new IllegalArgumentException(sbM833U.toString());
         }
         for (int i = 0; i < this.mSpanCount; i++) {
             iArr[i] = this.mSpans[i].findLastVisibleItemPosition();
@@ -2485,16 +2485,16 @@ public class StaggeredGridLayoutManager extends RecyclerView.LayoutManager imple
             }
 
             public String toString() {
-                StringBuilder sbU = outline.U("FullSpanItem{mPosition=");
-                sbU.append(this.mPosition);
-                sbU.append(", mGapDir=");
-                sbU.append(this.mGapDir);
-                sbU.append(", mHasUnwantedGapAfter=");
-                sbU.append(this.mHasUnwantedGapAfter);
-                sbU.append(", mGapPerSpan=");
-                sbU.append(Arrays.toString(this.mGapPerSpan));
-                sbU.append('}');
-                return sbU.toString();
+                StringBuilder sbM833U = C1643a.m833U("FullSpanItem{mPosition=");
+                sbM833U.append(this.mPosition);
+                sbM833U.append(", mGapDir=");
+                sbM833U.append(this.mGapDir);
+                sbM833U.append(", mHasUnwantedGapAfter=");
+                sbM833U.append(this.mHasUnwantedGapAfter);
+                sbM833U.append(", mGapPerSpan=");
+                sbM833U.append(Arrays.toString(this.mGapPerSpan));
+                sbM833U.append('}');
+                return sbM833U.toString();
             }
 
             @Override // android.os.Parcelable

@@ -76,7 +76,7 @@ public class AddFieldScript extends PatchScript {
             @Override // org.objectweb.asm.ClassVisitor
             public void visitEnd() {
                 if (!this.alreadyAdded) {
-                    FieldVisitor fv = this.cv.visitField(AddFieldScript.this.accessFlags, AddFieldScript.this.fieldName, AddFieldScript.this.fieldType, null, AddFieldScript.this.value);
+                    FieldVisitor fv = this.f27598cv.visitField(AddFieldScript.this.accessFlags, AddFieldScript.this.fieldName, AddFieldScript.this.fieldType, null, AddFieldScript.this.value);
                     fv.visitEnd();
                 }
                 super.visitEnd();

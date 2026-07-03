@@ -10,10 +10,10 @@ import android.util.Log;
 import androidx.annotation.RestrictTo;
 import androidx.annotation.WorkerThread;
 import androidx.sharetarget.ShareTargetCompat;
-import b.d.b.a.outline;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
+import p007b.p100d.p104b.p105a.C1643a;
 
 /* JADX INFO: loaded from: classes.dex */
 @RestrictTo({RestrictTo.Scope.LIBRARY_GROUP_PREFIX})
@@ -60,9 +60,9 @@ public class ShareTargetXmlParser {
         if (xmlResourceParserLoadXmlMetaData != null) {
             return xmlResourceParserLoadXmlMetaData;
         }
-        StringBuilder sbU = outline.U("Failed to open android.app.shortcuts meta-data resource of ");
-        sbU.append(activityInfo.name);
-        throw new IllegalArgumentException(sbU.toString());
+        StringBuilder sbM833U = C1643a.m833U("Failed to open android.app.shortcuts meta-data resource of ");
+        sbM833U.append(activityInfo.name);
+        throw new IllegalArgumentException(sbM833U.toString());
     }
 
     private static ShareTargetCompat parseShareTarget(XmlResourceParser xmlResourceParser) throws Exception {

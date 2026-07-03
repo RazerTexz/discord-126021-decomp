@@ -1,11 +1,9 @@
 package com.discord.stores;
 
-import a0.a.a.b;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
-import b.d.b.a.outline;
-import co.discord.media_engine.DeviceDescription4;
+import co.discord.media_engine.VideoInputDeviceDescription;
 import com.discord.api.channel.Channel;
 import com.discord.api.channel.ChannelUtils;
 import com.discord.api.guild.GuildFeature;
@@ -31,8 +29,8 @@ import com.discord.rtcconnection.audio.DiscordAudioManager;
 import com.discord.rtcconnection.mediaengine.MediaEngine;
 import com.discord.rtcconnection.mediaengine.MediaEngineConnection;
 import com.discord.stores.StoreGifting;
-import com.discord.utilities.KotlinExtensions;
-import com.discord.utilities.PermissionOverwriteUtils;
+import com.discord.utilities.KotlinExtensionsKt;
+import com.discord.utilities.PermissionOverwriteUtilsKt;
 import com.discord.utilities.SnowflakeUtils;
 import com.discord.utilities.analytics.AnalyticsTracker;
 import com.discord.utilities.analytics.AnalyticsUtils;
@@ -40,11 +38,11 @@ import com.discord.utilities.analytics.AppStartAnalyticsTracker;
 import com.discord.utilities.analytics.SearchType;
 import com.discord.utilities.analytics.Traits;
 import com.discord.utilities.channel.ChannelNotificationSettingsUtils;
-import com.discord.utilities.collections.CollectionExtensions;
+import com.discord.utilities.collections.CollectionExtensionsKt;
 import com.discord.utilities.error.Error;
 import com.discord.utilities.intent.RouteHandlers;
-import com.discord.utilities.rest.SendUtils2;
-import com.discord.utilities.rx.ObservableExtensionsKt;
+import com.discord.utilities.p501rx.ObservableExtensionsKt;
+import com.discord.utilities.rest.FileUploadAlertType;
 import com.discord.utilities.time.Clock;
 import com.discord.widgets.auth.WidgetAuthLanding;
 import com.discord.widgets.chat.input.emoji.EmojiPickerContextType;
@@ -54,16 +52,6 @@ import com.discord.widgets.home.WidgetHome;
 import com.discord.widgets.share.WidgetIncomingShare;
 import com.discord.widgets.voice.feedback.FeedbackIssue;
 import com.discord.widgets.voice.feedback.PendingFeedback;
-import d0.Tuples;
-import d0.d0._Ranges;
-import d0.t.Collections2;
-import d0.t.Maps6;
-import d0.t.MapsJVM;
-import d0.z.d.FunctionReferenceImpl;
-import d0.z.d.Intrinsics3;
-import d0.z.d.Lambda;
-import j0.k.Func1;
-import j0.l.e.ScalarSynchronousObservable;
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.Iterator;
@@ -72,13 +60,25 @@ import java.util.Map;
 import java.util.Set;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicBoolean;
-import kotlin.Tuples2;
+import kotlin.Pair;
 import kotlin.Unit;
 import kotlin.jvm.functions.Function0;
 import kotlin.jvm.functions.Function1;
-import rx.Observable;
-import rx.Subscription;
-import rx.subjects.PublishSubject;
+import p001a0.p002a.p003a.C0002b;
+import p007b.p100d.p104b.p105a.C1643a;
+import p507d0.C12116o;
+import p507d0.p512d0.C11226f;
+import p507d0.p580t.C12134g0;
+import p507d0.p580t.C12136h0;
+import p507d0.p580t.C12147n;
+import p507d0.p592z.p594d.AbstractC12240o;
+import p507d0.p592z.p594d.C12236k;
+import p507d0.p592z.p594d.C12238m;
+import p637j0.p641k.InterfaceC12589b;
+import p637j0.p642l.p647e.C12721k;
+import p658rx.Observable;
+import p658rx.Subscription;
+import p658rx.subjects.PublishSubject;
 
 /* JADX INFO: compiled from: StoreAnalytics.kt */
 /* JADX INFO: loaded from: classes2.dex */
@@ -100,7 +100,7 @@ public final class StoreAnalytics extends Store {
         private final long timestamp;
 
         public ScreenViewed(Class<? extends AppComponent> cls, long j) {
-            Intrinsics3.checkNotNullParameter(cls, "screen");
+            C12238m.checkNotNullParameter(cls, "screen");
             this.screen = cls;
             this.timestamp = j;
         }
@@ -126,7 +126,7 @@ public final class StoreAnalytics extends Store {
         }
 
         public final ScreenViewed copy(Class<? extends AppComponent> screen, long timestamp) {
-            Intrinsics3.checkNotNullParameter(screen, "screen");
+            C12238m.checkNotNullParameter(screen, "screen");
             return new ScreenViewed(screen, timestamp);
         }
 
@@ -138,7 +138,7 @@ public final class StoreAnalytics extends Store {
                 return false;
             }
             ScreenViewed screenViewed = (ScreenViewed) other;
-            return Intrinsics3.areEqual(this.screen, screenViewed.screen) && this.timestamp == screenViewed.timestamp;
+            return C12238m.areEqual(this.screen, screenViewed.screen) && this.timestamp == screenViewed.timestamp;
         }
 
         public final Class<? extends AppComponent> getScreen() {
@@ -151,14 +151,14 @@ public final class StoreAnalytics extends Store {
 
         public int hashCode() {
             Class<? extends AppComponent> cls = this.screen;
-            return b.a(this.timestamp) + ((cls != null ? cls.hashCode() : 0) * 31);
+            return C0002b.m3a(this.timestamp) + ((cls != null ? cls.hashCode() : 0) * 31);
         }
 
         public String toString() {
-            StringBuilder sbU = outline.U("ScreenViewed(screen=");
-            sbU.append(this.screen);
-            sbU.append(", timestamp=");
-            return outline.C(sbU, this.timestamp, ")");
+            StringBuilder sbM833U = C1643a.m833U("ScreenViewed(screen=");
+            sbM833U.append(this.screen);
+            sbM833U.append(", timestamp=");
+            return C1643a.m815C(sbM833U, this.timestamp, ")");
         }
     }
 
@@ -180,18 +180,18 @@ public final class StoreAnalytics extends Store {
         }
     }
 
-    /* JADX INFO: renamed from: com.discord.stores.StoreAnalytics$ackMessage$1, reason: invalid class name */
+    /* JADX INFO: renamed from: com.discord.stores.StoreAnalytics$ackMessage$1 */
     /* JADX INFO: compiled from: StoreAnalytics.kt */
-    public static final class AnonymousClass1 extends Lambda implements Function0<Unit> {
+    public static final class C56751 extends AbstractC12240o implements Function0<Unit> {
         public final /* synthetic */ long $channelId;
 
-        /* JADX INFO: renamed from: com.discord.stores.StoreAnalytics$ackMessage$1$1, reason: invalid class name and collision with other inner class name */
+        /* JADX INFO: renamed from: com.discord.stores.StoreAnalytics$ackMessage$1$1, reason: invalid class name */
         /* JADX INFO: compiled from: StoreAnalytics.kt */
-        public static final class C00741 extends Lambda implements Function0<Map<String, ? extends Object>> {
+        public static final class AnonymousClass1 extends AbstractC12240o implements Function0<Map<String, ? extends Object>> {
             public final /* synthetic */ Map $properties;
 
             /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-            public C00741(Map map) {
+            public AnonymousClass1(Map map) {
                 super(0);
                 this.$properties = map;
             }
@@ -203,7 +203,7 @@ public final class StoreAnalytics extends Store {
         }
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-        public AnonymousClass1(long j) {
+        public C56751(long j) {
             super(0);
             this.$channelId = j;
         }
@@ -211,49 +211,49 @@ public final class StoreAnalytics extends Store {
         @Override // kotlin.jvm.functions.Function0
         public /* bridge */ /* synthetic */ Unit invoke() {
             invoke2();
-            return Unit.a;
+            return Unit.f27425a;
         }
 
         /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
         public final void invoke2() {
             Channel channelFindChannelByIdInternal$app_productionGoogleRelease = StoreAnalytics.this.stores.getChannels().findChannelByIdInternal$app_productionGoogleRelease(this.$channelId);
             if (channelFindChannelByIdInternal$app_productionGoogleRelease != null) {
-                AnalyticsTracker.INSTANCE.ackMessage(channelFindChannelByIdInternal$app_productionGoogleRelease, new C00741(Maps6.plus(StoreAnalytics.this.getGuildAnalyticsPropertiesInternal(channelFindChannelByIdInternal$app_productionGoogleRelease.getGuildId()), StoreAnalytics.getChannelSnapshotAnalyticsProperties$default(StoreAnalytics.this, channelFindChannelByIdInternal$app_productionGoogleRelease, false, 2, (Object) null))));
+                AnalyticsTracker.INSTANCE.ackMessage(channelFindChannelByIdInternal$app_productionGoogleRelease, new AnonymousClass1(C12136h0.plus(StoreAnalytics.this.getGuildAnalyticsPropertiesInternal(channelFindChannelByIdInternal$app_productionGoogleRelease.getGuildId()), StoreAnalytics.getChannelSnapshotAnalyticsProperties$default(StoreAnalytics.this, channelFindChannelByIdInternal$app_productionGoogleRelease, false, 2, (Object) null))));
             }
         }
     }
 
-    /* JADX INFO: renamed from: com.discord.stores.StoreAnalytics$init$1, reason: invalid class name */
+    /* JADX INFO: renamed from: com.discord.stores.StoreAnalytics$init$1 */
     /* JADX INFO: compiled from: StoreAnalytics.kt */
-    public static final class AnonymousClass1 extends Lambda implements Function1<MediaEngineConnection.InputMode, Unit> {
-        public AnonymousClass1() {
+    public static final class C56761 extends AbstractC12240o implements Function1<MediaEngineConnection.InputMode, Unit> {
+        public C56761() {
             super(1);
         }
 
         @Override // kotlin.jvm.functions.Function1
         public /* bridge */ /* synthetic */ Unit invoke(MediaEngineConnection.InputMode inputMode) {
             invoke2(inputMode);
-            return Unit.a;
+            return Unit.f27425a;
         }
 
         /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
         public final void invoke2(MediaEngineConnection.InputMode inputMode) {
-            Intrinsics3.checkNotNullParameter(inputMode, "it");
+            C12238m.checkNotNullParameter(inputMode, "it");
             StoreAnalytics.this.inputMode = inputMode.toString();
         }
     }
 
-    /* JADX INFO: renamed from: com.discord.stores.StoreAnalytics$init$2, reason: invalid class name */
+    /* JADX INFO: renamed from: com.discord.stores.StoreAnalytics$init$2 */
     /* JADX INFO: compiled from: StoreAnalytics.kt */
-    public static final class AnonymousClass2 extends Lambda implements Function1<Channel, Unit> {
-        public AnonymousClass2() {
+    public static final class C56772 extends AbstractC12240o implements Function1<Channel, Unit> {
+        public C56772() {
             super(1);
         }
 
         @Override // kotlin.jvm.functions.Function1
         public /* bridge */ /* synthetic */ Unit invoke(Channel channel) {
             invoke2(channel);
-            return Unit.a;
+            return Unit.f27425a;
         }
 
         /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
@@ -262,34 +262,34 @@ public final class StoreAnalytics extends Store {
         }
     }
 
-    /* JADX INFO: renamed from: com.discord.stores.StoreAnalytics$init$4, reason: invalid class name */
+    /* JADX INFO: renamed from: com.discord.stores.StoreAnalytics$init$4 */
     /* JADX INFO: compiled from: StoreAnalytics.kt */
-    public static final /* synthetic */ class AnonymousClass4 extends FunctionReferenceImpl implements Function1<ScreenViewed, Unit> {
-        public AnonymousClass4(StoreAnalytics storeAnalytics) {
+    public static final /* synthetic */ class C56794 extends C12236k implements Function1<ScreenViewed, Unit> {
+        public C56794(StoreAnalytics storeAnalytics) {
             super(1, storeAnalytics, StoreAnalytics.class, "onScreenViewed", "onScreenViewed(Lcom/discord/stores/StoreAnalytics$ScreenViewed;)V", 0);
         }
 
         @Override // kotlin.jvm.functions.Function1
         public /* bridge */ /* synthetic */ Unit invoke(ScreenViewed screenViewed) {
             invoke2(screenViewed);
-            return Unit.a;
+            return Unit.f27425a;
         }
 
         /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
         public final void invoke2(ScreenViewed screenViewed) {
-            Intrinsics3.checkNotNullParameter(screenViewed, "p1");
+            C12238m.checkNotNullParameter(screenViewed, "p1");
             ((StoreAnalytics) this.receiver).onScreenViewed(screenViewed);
         }
     }
 
-    /* JADX INFO: renamed from: com.discord.stores.StoreAnalytics$onGuildSettingsPaneViewed$1, reason: invalid class name */
+    /* JADX INFO: renamed from: com.discord.stores.StoreAnalytics$onGuildSettingsPaneViewed$1 */
     /* JADX INFO: compiled from: StoreAnalytics.kt */
-    public static final class AnonymousClass1 extends Lambda implements Function0<Unit> {
+    public static final class C56801 extends AbstractC12240o implements Function0<Unit> {
         public final /* synthetic */ long $guildId;
         public final /* synthetic */ String $pane;
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-        public AnonymousClass1(long j, String str) {
+        public C56801(long j, String str) {
             super(0);
             this.$guildId = j;
             this.$pane = str;
@@ -298,7 +298,7 @@ public final class StoreAnalytics extends Store {
         @Override // kotlin.jvm.functions.Function0
         public /* bridge */ /* synthetic */ Unit invoke() {
             invoke2();
-            return Unit.a;
+            return Unit.f27425a;
         }
 
         /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
@@ -307,14 +307,14 @@ public final class StoreAnalytics extends Store {
         }
     }
 
-    /* JADX INFO: renamed from: com.discord.stores.StoreAnalytics$onNotificationSettingsUpdated$1, reason: invalid class name */
+    /* JADX INFO: renamed from: com.discord.stores.StoreAnalytics$onNotificationSettingsUpdated$1 */
     /* JADX INFO: compiled from: StoreAnalytics.kt */
-    public static final class AnonymousClass1 extends Lambda implements Function0<Unit> {
+    public static final class C56811 extends AbstractC12240o implements Function0<Unit> {
         public final /* synthetic */ Long $channelId;
         public final /* synthetic */ ModelNotificationSettings $notifSettings;
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-        public AnonymousClass1(Long l, ModelNotificationSettings modelNotificationSettings) {
+        public C56811(Long l, ModelNotificationSettings modelNotificationSettings) {
             super(0);
             this.$channelId = l;
             this.$notifSettings = modelNotificationSettings;
@@ -323,7 +323,7 @@ public final class StoreAnalytics extends Store {
         @Override // kotlin.jvm.functions.Function0
         public /* bridge */ /* synthetic */ Unit invoke() {
             invoke2();
-            return Unit.a;
+            return Unit.f27425a;
         }
 
         /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
@@ -334,7 +334,7 @@ public final class StoreAnalytics extends Store {
             if (l != null) {
                 long jLongValue = l.longValue();
                 List<ModelNotificationSettings.ChannelOverride> channelOverrides = this.$notifSettings.getChannelOverrides();
-                Intrinsics3.checkNotNullExpressionValue(channelOverrides, "notifSettings.channelOverrides");
+                C12238m.checkNotNullExpressionValue(channelOverrides, "notifSettings.channelOverrides");
                 boolean z2 = true;
                 if (!(channelOverrides instanceof Collection) || !channelOverrides.isEmpty()) {
                     Iterator<T> it = channelOverrides.iterator();
@@ -344,7 +344,7 @@ public final class StoreAnalytics extends Store {
                             break;
                         } else {
                             channelOverride = (ModelNotificationSettings.ChannelOverride) it.next();
-                            Intrinsics3.checkNotNullExpressionValue(channelOverride, "it");
+                            C12238m.checkNotNullExpressionValue(channelOverride, "it");
                         }
                     } while (!(channelOverride.getChannelId() == jLongValue));
                 } else {
@@ -362,13 +362,13 @@ public final class StoreAnalytics extends Store {
         }
     }
 
-    /* JADX INFO: renamed from: com.discord.stores.StoreAnalytics$onOverlayVoiceEvent$1, reason: invalid class name */
+    /* JADX INFO: renamed from: com.discord.stores.StoreAnalytics$onOverlayVoiceEvent$1 */
     /* JADX INFO: compiled from: StoreAnalytics.kt */
-    public static final class AnonymousClass1 extends Lambda implements Function0<Unit> {
+    public static final class C56821 extends AbstractC12240o implements Function0<Unit> {
         public final /* synthetic */ boolean $isActive;
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-        public AnonymousClass1(boolean z2) {
+        public C56821(boolean z2) {
             super(0);
             this.$isActive = z2;
         }
@@ -376,7 +376,7 @@ public final class StoreAnalytics extends Store {
         @Override // kotlin.jvm.functions.Function0
         public /* bridge */ /* synthetic */ Unit invoke() {
             invoke2();
-            return Unit.a;
+            return Unit.f27425a;
         }
 
         /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
@@ -384,7 +384,7 @@ public final class StoreAnalytics extends Store {
             Map<String, String> mapEmptyMap;
             RtcConnection rtcConnection$app_productionGoogleRelease = StoreAnalytics.this.stores.getRtcConnection().getRtcConnection();
             if (rtcConnection$app_productionGoogleRelease == null || (mapEmptyMap = AnalyticsUtils.INSTANCE.getProperties$app_productionGoogleRelease(rtcConnection$app_productionGoogleRelease)) == null) {
-                mapEmptyMap = Maps6.emptyMap();
+                mapEmptyMap = C12136h0.emptyMap();
             }
             if (!this.$isActive) {
                 AnalyticsTracker.INSTANCE.overlayVoiceClosed(mapEmptyMap);
@@ -393,25 +393,25 @@ public final class StoreAnalytics extends Store {
             Channel channel = StoreAnalytics.this.selectedVoiceChannel;
             Map guildAnalyticsPropertiesInternal = channel != null ? StoreAnalytics.this.getGuildAnalyticsPropertiesInternal(channel.getGuildId()) : null;
             if (guildAnalyticsPropertiesInternal == null) {
-                guildAnalyticsPropertiesInternal = Maps6.emptyMap();
+                guildAnalyticsPropertiesInternal = C12136h0.emptyMap();
             }
-            Map mapPlus = Maps6.plus(guildAnalyticsPropertiesInternal, mapEmptyMap);
+            Map mapPlus = C12136h0.plus(guildAnalyticsPropertiesInternal, mapEmptyMap);
             Channel channel2 = StoreAnalytics.this.selectedVoiceChannel;
             Map<String, Object> properties$app_productionGoogleRelease = channel2 != null ? AnalyticsUtils.INSTANCE.getProperties$app_productionGoogleRelease(channel2) : null;
             if (properties$app_productionGoogleRelease == null) {
-                properties$app_productionGoogleRelease = Maps6.emptyMap();
+                properties$app_productionGoogleRelease = C12136h0.emptyMap();
             }
-            AnalyticsTracker.INSTANCE.overlayVoiceOpened(Maps6.plus(mapPlus, properties$app_productionGoogleRelease));
+            AnalyticsTracker.INSTANCE.overlayVoiceOpened(C12136h0.plus(mapPlus, properties$app_productionGoogleRelease));
         }
     }
 
-    /* JADX INFO: renamed from: com.discord.stores.StoreAnalytics$onScreenViewed$1, reason: invalid class name */
+    /* JADX INFO: renamed from: com.discord.stores.StoreAnalytics$onScreenViewed$1 */
     /* JADX INFO: compiled from: StoreAnalytics.kt */
-    public static final class AnonymousClass1 extends Lambda implements Function0<Unit> {
+    public static final class C56831 extends AbstractC12240o implements Function0<Unit> {
         public final /* synthetic */ ScreenViewed $screenViewed;
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-        public AnonymousClass1(ScreenViewed screenViewed) {
+        public C56831(ScreenViewed screenViewed) {
             super(0);
             this.$screenViewed = screenViewed;
         }
@@ -419,38 +419,38 @@ public final class StoreAnalytics extends Store {
         @Override // kotlin.jvm.functions.Function0
         public /* bridge */ /* synthetic */ Unit invoke() {
             invoke2();
-            return Unit.a;
+            return Unit.f27425a;
         }
 
         /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
         public final void invoke2() {
             String simpleName;
             Class<? extends AppComponent> screen = this.$screenViewed.getScreen();
-            if (Intrinsics3.areEqual(screen, WidgetHome.class)) {
+            if (C12238m.areEqual(screen, WidgetHome.class)) {
                 simpleName = StoreAnalytics.this.stores.getGuildSelected().getSelectedGuildId() == 0 ? "private_channel" : "guild";
-            } else if (Intrinsics3.areEqual(screen, WidgetGuildInvite.class)) {
+            } else if (C12238m.areEqual(screen, WidgetGuildInvite.class)) {
                 simpleName = "invite";
-            } else if (Intrinsics3.areEqual(screen, WidgetIncomingShare.class)) {
+            } else if (C12238m.areEqual(screen, WidgetIncomingShare.class)) {
                 simpleName = AnalyticsTracker.ATTACHMENT_SOURCE_SHARE;
             } else {
-                simpleName = Intrinsics3.areEqual(screen, WidgetAuthLanding.class) ? "app_landing" : this.$screenViewed.getScreen().getSimpleName();
+                simpleName = C12238m.areEqual(screen, WidgetAuthLanding.class) ? "app_landing" : this.$screenViewed.getScreen().getSimpleName();
             }
             AppStartAnalyticsTracker companion = AppStartAnalyticsTracker.INSTANCE.getInstance();
-            Intrinsics3.checkNotNullExpressionValue(simpleName, "screenName");
+            C12238m.checkNotNullExpressionValue(simpleName, "screenName");
             companion.appUiViewed(simpleName, this.$screenViewed.getTimestamp());
         }
     }
 
-    /* JADX INFO: renamed from: com.discord.stores.StoreAnalytics$onThreadNotificationSettingsUpdated$1, reason: invalid class name */
+    /* JADX INFO: renamed from: com.discord.stores.StoreAnalytics$onThreadNotificationSettingsUpdated$1 */
     /* JADX INFO: compiled from: StoreAnalytics.kt */
-    public static final class AnonymousClass1 extends Lambda implements Function0<Unit> {
+    public static final class C56841 extends AbstractC12240o implements Function0<Unit> {
         public final /* synthetic */ long $channelId;
         public final /* synthetic */ int $flags;
         public final /* synthetic */ int $oldFlags;
         public final /* synthetic */ long $parentChannelId;
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-        public AnonymousClass1(long j, long j2, int i, int i2) {
+        public C56841(long j, long j2, int i, int i2) {
             super(0);
             this.$channelId = j;
             this.$parentChannelId = j2;
@@ -461,7 +461,7 @@ public final class StoreAnalytics extends Store {
         @Override // kotlin.jvm.functions.Function0
         public /* bridge */ /* synthetic */ Unit invoke() {
             invoke2();
-            return Unit.a;
+            return Unit.f27425a;
         }
 
         /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
@@ -482,13 +482,13 @@ public final class StoreAnalytics extends Store {
         }
     }
 
-    /* JADX INFO: renamed from: com.discord.stores.StoreAnalytics$trackCallReportProblem$1, reason: invalid class name */
+    /* JADX INFO: renamed from: com.discord.stores.StoreAnalytics$trackCallReportProblem$1 */
     /* JADX INFO: compiled from: StoreAnalytics.kt */
-    public static final class AnonymousClass1 extends Lambda implements Function0<Unit> {
+    public static final class C56851 extends AbstractC12240o implements Function0<Unit> {
         public final /* synthetic */ PendingFeedback.CallFeedback $pendingCallFeedback;
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-        public AnonymousClass1(PendingFeedback.CallFeedback callFeedback) {
+        public C56851(PendingFeedback.CallFeedback callFeedback) {
             super(0);
             this.$pendingCallFeedback = callFeedback;
         }
@@ -496,7 +496,7 @@ public final class StoreAnalytics extends Store {
         @Override // kotlin.jvm.functions.Function0
         public /* bridge */ /* synthetic */ Unit invoke() {
             invoke2();
-            return Unit.a;
+            return Unit.f27425a;
         }
 
         /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
@@ -508,22 +508,22 @@ public final class StoreAnalytics extends Store {
                 DiscordAudioManager.AudioDevice lastActiveAudioDevice$app_productionGoogleRelease = StoreAnalytics.this.stores.getAudioManagerV2().getLastActiveAudioDevice();
                 AnalyticsTracker analyticsTracker = AnalyticsTracker.INSTANCE;
                 String rtcConnectionId = this.$pendingCallFeedback.getRtcConnectionId();
-                Map<Long, VoiceState> mapEmptyMap = (Map) outline.c(channelFindChannelByIdInternal$app_productionGoogleRelease, StoreAnalytics.this.stores.getVoiceStates().get());
+                Map<Long, VoiceState> mapEmptyMap = (Map) C1643a.m843c(channelFindChannelByIdInternal$app_productionGoogleRelease, StoreAnalytics.this.stores.getVoiceStates().get());
                 if (mapEmptyMap == null) {
-                    mapEmptyMap = Maps6.emptyMap();
+                    mapEmptyMap = C12136h0.emptyMap();
                 }
                 analyticsTracker.callReportProblem(id2, rtcConnectionId, channelFindChannelByIdInternal$app_productionGoogleRelease, mapEmptyMap, this.$pendingCallFeedback.getDurationMs(), this.$pendingCallFeedback.getMediaSessionId(), this.$pendingCallFeedback.getFeedbackRating(), this.$pendingCallFeedback.getReasonCode(), this.$pendingCallFeedback.getReasonDescription(), mediaSettings.getVoiceConfigurationBlocking(), lastActiveAudioDevice$app_productionGoogleRelease, mediaSettings.getVideoHardwareScalingBlocking(), this.$pendingCallFeedback.getIssueDetails());
             }
         }
     }
 
-    /* JADX INFO: renamed from: com.discord.stores.StoreAnalytics$trackGuildViewed$1, reason: invalid class name */
+    /* JADX INFO: renamed from: com.discord.stores.StoreAnalytics$trackGuildViewed$1 */
     /* JADX INFO: compiled from: StoreAnalytics.kt */
-    public static final class AnonymousClass1 extends Lambda implements Function0<Map<String, ? extends Object>> {
+    public static final class C56861 extends AbstractC12240o implements Function0<Map<String, ? extends Object>> {
         public final /* synthetic */ Map $properties;
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-        public AnonymousClass1(Map map) {
+        public C56861(Map map) {
             super(0);
             this.$properties = map;
         }
@@ -534,13 +534,13 @@ public final class StoreAnalytics extends Store {
         }
     }
 
-    /* JADX INFO: renamed from: com.discord.stores.StoreAnalytics$trackMediaSessionJoined$1, reason: invalid class name */
+    /* JADX INFO: renamed from: com.discord.stores.StoreAnalytics$trackMediaSessionJoined$1 */
     /* JADX INFO: compiled from: StoreAnalytics.kt */
-    public static final class AnonymousClass1 extends Lambda implements Function0<Unit> {
+    public static final class C56871 extends AbstractC12240o implements Function0<Unit> {
         public final /* synthetic */ Map $properties;
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-        public AnonymousClass1(Map map) {
+        public C56871(Map map) {
             super(0);
             this.$properties = map;
         }
@@ -548,7 +548,7 @@ public final class StoreAnalytics extends Store {
         @Override // kotlin.jvm.functions.Function0
         public /* bridge */ /* synthetic */ Unit invoke() {
             invoke2();
-            return Unit.a;
+            return Unit.f27425a;
         }
 
         /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
@@ -557,15 +557,15 @@ public final class StoreAnalytics extends Store {
         }
     }
 
-    /* JADX INFO: renamed from: com.discord.stores.StoreAnalytics$trackOpenGiftAcceptModal$1, reason: invalid class name */
+    /* JADX INFO: renamed from: com.discord.stores.StoreAnalytics$trackOpenGiftAcceptModal$1 */
     /* JADX INFO: compiled from: StoreAnalytics.kt */
-    public static final class AnonymousClass1 extends Lambda implements Function0<Unit> {
+    public static final class C56881 extends AbstractC12240o implements Function0<Unit> {
         public final /* synthetic */ long $channelId;
         public final /* synthetic */ String $giftCode;
         public final /* synthetic */ String $location;
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-        public AnonymousClass1(String str, long j, String str2) {
+        public C56881(String str, long j, String str2) {
             super(0);
             this.$giftCode = str;
             this.$channelId = j;
@@ -575,7 +575,7 @@ public final class StoreAnalytics extends Store {
         @Override // kotlin.jvm.functions.Function0
         public /* bridge */ /* synthetic */ Unit invoke() {
             invoke2();
-            return Unit.a;
+            return Unit.f27425a;
         }
 
         /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
@@ -595,13 +595,13 @@ public final class StoreAnalytics extends Store {
         }
     }
 
-    /* JADX INFO: renamed from: com.discord.stores.StoreAnalytics$trackShowCallFeedbackSheet$1, reason: invalid class name */
+    /* JADX INFO: renamed from: com.discord.stores.StoreAnalytics$trackShowCallFeedbackSheet$1 */
     /* JADX INFO: compiled from: StoreAnalytics.kt */
-    public static final class AnonymousClass1 extends Lambda implements Function0<Unit> {
+    public static final class C56891 extends AbstractC12240o implements Function0<Unit> {
         public final /* synthetic */ long $channelId;
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-        public AnonymousClass1(long j) {
+        public C56891(long j) {
             super(0);
             this.$channelId = j;
         }
@@ -609,7 +609,7 @@ public final class StoreAnalytics extends Store {
         @Override // kotlin.jvm.functions.Function0
         public /* bridge */ /* synthetic */ Unit invoke() {
             invoke2();
-            return Unit.a;
+            return Unit.f27425a;
         }
 
         /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
@@ -621,15 +621,15 @@ public final class StoreAnalytics extends Store {
         }
     }
 
-    /* JADX INFO: renamed from: com.discord.stores.StoreAnalytics$trackVoiceAudioOutputModeSelected$1, reason: invalid class name */
+    /* JADX INFO: renamed from: com.discord.stores.StoreAnalytics$trackVoiceAudioOutputModeSelected$1 */
     /* JADX INFO: compiled from: StoreAnalytics.kt */
-    public static final class AnonymousClass1 extends Lambda implements Function0<Unit> {
+    public static final class C56901 extends AbstractC12240o implements Function0<Unit> {
         public final /* synthetic */ long $channelId;
         public final /* synthetic */ DiscordAudioManager.DeviceTypes $fromAudioOutputMode;
         public final /* synthetic */ DiscordAudioManager.DeviceTypes $toAudioOutputMode;
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-        public AnonymousClass1(long j, DiscordAudioManager.DeviceTypes deviceTypes, DiscordAudioManager.DeviceTypes deviceTypes2) {
+        public C56901(long j, DiscordAudioManager.DeviceTypes deviceTypes, DiscordAudioManager.DeviceTypes deviceTypes2) {
             super(0);
             this.$channelId = j;
             this.$fromAudioOutputMode = deviceTypes;
@@ -639,7 +639,7 @@ public final class StoreAnalytics extends Store {
         @Override // kotlin.jvm.functions.Function0
         public /* bridge */ /* synthetic */ Unit invoke() {
             invoke2();
-            return Unit.a;
+            return Unit.f27425a;
         }
 
         /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
@@ -653,13 +653,13 @@ public final class StoreAnalytics extends Store {
         }
     }
 
-    /* JADX INFO: renamed from: com.discord.stores.StoreAnalytics$trackVoiceConnectionFailure$1, reason: invalid class name */
+    /* JADX INFO: renamed from: com.discord.stores.StoreAnalytics$trackVoiceConnectionFailure$1 */
     /* JADX INFO: compiled from: StoreAnalytics.kt */
-    public static final class AnonymousClass1 extends Lambda implements Function0<Unit> {
+    public static final class C56911 extends AbstractC12240o implements Function0<Unit> {
         public final /* synthetic */ Map $properties;
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-        public AnonymousClass1(Map map) {
+        public C56911(Map map) {
             super(0);
             this.$properties = map;
         }
@@ -667,7 +667,7 @@ public final class StoreAnalytics extends Store {
         @Override // kotlin.jvm.functions.Function0
         public /* bridge */ /* synthetic */ Unit invoke() {
             invoke2();
-            return Unit.a;
+            return Unit.f27425a;
         }
 
         /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
@@ -676,18 +676,18 @@ public final class StoreAnalytics extends Store {
         }
     }
 
-    /* JADX INFO: renamed from: com.discord.stores.StoreAnalytics$trackVoiceConnectionSuccess$1, reason: invalid class name */
+    /* JADX INFO: renamed from: com.discord.stores.StoreAnalytics$trackVoiceConnectionSuccess$1 */
     /* JADX INFO: compiled from: StoreAnalytics.kt */
-    public static final class AnonymousClass1 extends Lambda implements Function0<Unit> {
+    public static final class C56921 extends AbstractC12240o implements Function0<Unit> {
         public final /* synthetic */ Map $properties;
 
-        /* JADX INFO: renamed from: com.discord.stores.StoreAnalytics$trackVoiceConnectionSuccess$1$1, reason: invalid class name and collision with other inner class name */
+        /* JADX INFO: renamed from: com.discord.stores.StoreAnalytics$trackVoiceConnectionSuccess$1$1, reason: invalid class name */
         /* JADX INFO: compiled from: StoreAnalytics.kt */
-        public static final class C00751 extends Lambda implements Function1<MediaEngine.AudioInfo, Unit> {
+        public static final class AnonymousClass1 extends AbstractC12240o implements Function1<MediaEngine.AudioInfo, Unit> {
             public final /* synthetic */ Channel $channel;
 
             /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-            public C00751(Channel channel) {
+            public AnonymousClass1(Channel channel) {
                 super(1);
                 this.$channel = channel;
             }
@@ -695,20 +695,20 @@ public final class StoreAnalytics extends Store {
             @Override // kotlin.jvm.functions.Function1
             public /* bridge */ /* synthetic */ Unit invoke(MediaEngine.AudioInfo audioInfo) {
                 invoke2(audioInfo);
-                return Unit.a;
+                return Unit.f27425a;
             }
 
             /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
             public final void invoke2(MediaEngine.AudioInfo audioInfo) {
-                Intrinsics3.checkNotNullParameter(audioInfo, "audioInfo");
+                C12238m.checkNotNullParameter(audioInfo, "audioInfo");
                 AnalyticsTracker analyticsTracker = AnalyticsTracker.INSTANCE;
-                AnonymousClass1 anonymousClass1 = AnonymousClass1.this;
-                analyticsTracker.voiceConnectionSuccess(anonymousClass1.$properties, audioInfo, this.$channel, StoreAnalytics.this.stores.getRtcRegion().getPreferredRegion());
+                C56921 c56921 = C56921.this;
+                analyticsTracker.voiceConnectionSuccess(c56921.$properties, audioInfo, this.$channel, StoreAnalytics.this.stores.getRtcRegion().getPreferredRegion());
             }
         }
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-        public AnonymousClass1(Map map) {
+        public C56921(Map map) {
             super(0);
             this.$properties = map;
         }
@@ -716,23 +716,23 @@ public final class StoreAnalytics extends Store {
         @Override // kotlin.jvm.functions.Function0
         public /* bridge */ /* synthetic */ Unit invoke() {
             invoke2();
-            return Unit.a;
+            return Unit.f27425a;
         }
 
         /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
         public final void invoke2() {
             Channel channelFindChannelByIdInternal$app_productionGoogleRelease = StoreAnalytics.this.stores.getChannels().findChannelByIdInternal$app_productionGoogleRelease(StoreAnalytics.this.stores.getVoiceChannelSelected().getSelectedVoiceChannelId());
-            ObservableExtensionsKt.appSubscribe(ObservableExtensionsKt.computationLatest(StoreAnalytics.this.stores.getMediaEngine().getMediaEngine().e()), (Class<?>) StoreAnalytics.this.getClass(), (58 & 2) != 0 ? null : null, (Function1<? super Subscription, Unit>) ((58 & 4) != 0 ? null : null), (Function1<? super Error, Unit>) ((58 & 8) != 0 ? null : null), (Function0<Unit>) ((58 & 16) != 0 ? ObservableExtensionsKt.AnonymousClass1.INSTANCE : null), (Function0<Unit>) ((58 & 32) != 0 ? ObservableExtensionsKt.AnonymousClass2.INSTANCE : null), new C00751(channelFindChannelByIdInternal$app_productionGoogleRelease));
+            ObservableExtensionsKt.appSubscribe(ObservableExtensionsKt.computationLatest(StoreAnalytics.this.stores.getMediaEngine().getMediaEngine().mo325e()), (Class<?>) StoreAnalytics.this.getClass(), (58 & 2) != 0 ? null : null, (Function1<? super Subscription, Unit>) ((58 & 4) != 0 ? null : null), (Function1<? super Error, Unit>) ((58 & 8) != 0 ? null : null), (Function0<Unit>) ((58 & 16) != 0 ? ObservableExtensionsKt.C68791.INSTANCE : null), (Function0<Unit>) ((58 & 32) != 0 ? ObservableExtensionsKt.C68802.INSTANCE : null), new AnonymousClass1(channelFindChannelByIdInternal$app_productionGoogleRelease));
         }
     }
 
-    /* JADX INFO: renamed from: com.discord.stores.StoreAnalytics$trackVoiceDisconnect$1, reason: invalid class name */
+    /* JADX INFO: renamed from: com.discord.stores.StoreAnalytics$trackVoiceDisconnect$1 */
     /* JADX INFO: compiled from: StoreAnalytics.kt */
-    public static final class AnonymousClass1 extends Lambda implements Function0<Unit> {
+    public static final class C56931 extends AbstractC12240o implements Function0<Unit> {
         public final /* synthetic */ Map $properties;
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-        public AnonymousClass1(Map map) {
+        public C56931(Map map) {
             super(0);
             this.$properties = map;
         }
@@ -740,7 +740,7 @@ public final class StoreAnalytics extends Store {
         @Override // kotlin.jvm.functions.Function0
         public /* bridge */ /* synthetic */ Unit invoke() {
             invoke2();
-            return Unit.a;
+            return Unit.f27425a;
         }
 
         /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
@@ -750,33 +750,33 @@ public final class StoreAnalytics extends Store {
     }
 
     public StoreAnalytics(StoreStream storeStream, Dispatcher dispatcher, Clock clock) {
-        Intrinsics3.checkNotNullParameter(storeStream, "stores");
-        Intrinsics3.checkNotNullParameter(dispatcher, "dispatcher");
-        Intrinsics3.checkNotNullParameter(clock, "clock");
+        C12238m.checkNotNullParameter(storeStream, "stores");
+        C12238m.checkNotNullParameter(dispatcher, "dispatcher");
+        C12238m.checkNotNullParameter(clock, "clock");
         this.stores = storeStream;
         this.dispatcher = dispatcher;
         this.clock = clock;
         this.hasTrackedAppUiShown = new AtomicBoolean(false);
-        this.screenViewedSubject = PublishSubject.k0();
+        this.screenViewedSubject = PublishSubject.m11133k0();
     }
 
     private final void emojiPickerUpsellViewed(AnalyticsTracker.PremiumUpsellType type, EmojiPickerContextType emojiPickerContextType, Map<String, ? extends Object> properties) {
         String str;
-        if (Intrinsics3.areEqual(emojiPickerContextType, EmojiPickerContextType.Global.INSTANCE)) {
+        if (C12238m.areEqual(emojiPickerContextType, EmojiPickerContextType.Global.INSTANCE)) {
             str = "Custom Status Modal";
-        } else if (Intrinsics3.areEqual(emojiPickerContextType, EmojiPickerContextType.Chat.INSTANCE)) {
+        } else if (C12238m.areEqual(emojiPickerContextType, EmojiPickerContextType.Chat.INSTANCE)) {
             Channel channel = this.stores.getChannels().getChannel(this.stores.getChannelsSelected().getId());
             str = (channel == null || channel.getGuildId() != 0) ? Traits.Location.Page.GUILD_CHANNEL : "DM Channel";
         } else {
             str = "";
         }
-        AnalyticsTracker.premiumUpsellViewed$default(AnalyticsTracker.INSTANCE, type, new Traits.Location((String) KotlinExtensions.getExhaustive(str), Traits.Location.Section.EMOJI_PICKER_POPOUT, Traits.Location.Obj.BUTTON_UPSELL, Traits.Location.ObjType.SEARCH, null, 16, null), Maps6.plus(properties, Tuples.to("has_search_query", Boolean.TRUE)), null, 8, null);
+        AnalyticsTracker.premiumUpsellViewed$default(AnalyticsTracker.INSTANCE, type, new Traits.Location((String) KotlinExtensionsKt.getExhaustive(str), Traits.Location.Section.EMOJI_PICKER_POPOUT, Traits.Location.Obj.BUTTON_UPSELL, Traits.Location.ObjType.SEARCH, null, 16, null), C12136h0.plus(properties, C12116o.m10073to("has_search_query", Boolean.TRUE)), null, 8, null);
     }
 
     /* JADX WARN: Multi-variable type inference failed */
     public static /* synthetic */ void emojiPickerUpsellViewed$default(StoreAnalytics storeAnalytics, AnalyticsTracker.PremiumUpsellType premiumUpsellType, EmojiPickerContextType emojiPickerContextType, Map map, int i, Object obj) {
         if ((i & 4) != 0) {
-            map = Maps6.emptyMap();
+            map = C12136h0.emptyMap();
         }
         storeAnalytics.emojiPickerUpsellViewed(premiumUpsellType, emojiPickerContextType, map);
     }
@@ -784,7 +784,7 @@ public final class StoreAnalytics extends Store {
     private final Map<String, Object> getChannelSnapshotAnalyticsProperties(long channelId, boolean includeNsfw) {
         Channel channel = this.stores.getChannels().getChannel(channelId);
         Map<String, Object> channelSnapshotAnalyticsProperties = channel != null ? getChannelSnapshotAnalyticsProperties(channel, includeNsfw) : null;
-        return channelSnapshotAnalyticsProperties != null ? channelSnapshotAnalyticsProperties : Maps6.emptyMap();
+        return channelSnapshotAnalyticsProperties != null ? channelSnapshotAnalyticsProperties : C12136h0.emptyMap();
     }
 
     public static /* synthetic */ Map getChannelSnapshotAnalyticsProperties$default(StoreAnalytics storeAnalytics, long j, boolean z2, int i, Object obj) {
@@ -794,7 +794,7 @@ public final class StoreAnalytics extends Store {
         return storeAnalytics.getChannelSnapshotAnalyticsProperties(j, z2);
     }
 
-    @Store3
+    @StoreThread
     private final Map<String, Object> getGuildAnalyticsPropertiesInternal(long guildId) {
         Collection<Channel> collectionEmptyList;
         GuildMember guildMember;
@@ -806,7 +806,7 @@ public final class StoreAnalytics extends Store {
         int approximateMemberCount = this.stores.getGuildMemberCounts().getApproximateMemberCount(guildId);
         Map<Long, Channel> channelsForGuildInternal$app_productionGoogleRelease = this.stores.getChannels().getChannelsForGuildInternal$app_productionGoogleRelease(guildId);
         if (channelsForGuildInternal$app_productionGoogleRelease == null || (collectionEmptyList = channelsForGuildInternal$app_productionGoogleRelease.values()) == null) {
-            collectionEmptyList = Collections2.emptyList();
+            collectionEmptyList = C12147n.emptyList();
         }
         Collection<Channel> collection = collectionEmptyList;
         Map<Long, GuildRole> map = this.stores.getGuilds().getGuildRolesInternal$app_productionGoogleRelease().get(Long.valueOf(guildId));
@@ -820,14 +820,14 @@ public final class StoreAnalytics extends Store {
 
     private final Map<String, Object> getGuildAndChannelSnapshotAnalyticsProperties(long channelId) {
         Channel channel = this.stores.getChannels().getChannel(channelId);
-        Map<String, Object> mapPlus = channel != null ? Maps6.plus(getGuildSnapshotAnalyticsProperties(channel.getGuildId()), getChannelSnapshotAnalyticsProperties$default(this, channel, false, 2, (Object) null)) : null;
-        return mapPlus != null ? mapPlus : Maps6.emptyMap();
+        Map<String, Object> mapPlus = channel != null ? C12136h0.plus(getGuildSnapshotAnalyticsProperties(channel.getGuildId()), getChannelSnapshotAnalyticsProperties$default(this, channel, false, 2, (Object) null)) : null;
+        return mapPlus != null ? mapPlus : C12136h0.emptyMap();
     }
 
     private final Map<String, Object> getGuildSnapshotAnalyticsProperties(long guildId) {
         Guild guild = this.stores.getGuilds().getGuilds().get(Long.valueOf(guildId));
         Map<String, Object> guildSnapshotAnalyticsProperties = guild != null ? getGuildSnapshotAnalyticsProperties(guild) : null;
-        return guildSnapshotAnalyticsProperties != null ? guildSnapshotAnalyticsProperties : Maps6.emptyMap();
+        return guildSnapshotAnalyticsProperties != null ? guildSnapshotAnalyticsProperties : C12136h0.emptyMap();
     }
 
     private final Map<String, Object> getSnapshotAnalyticsProperties() {
@@ -864,67 +864,67 @@ public final class StoreAnalytics extends Store {
         Integer threadMessageCount = this.stores.getThreadMessages().getThreadMessageCount(channel.getId());
         boolean z2 = false;
         int iIntValue = threadMessageCount != null ? threadMessageCount.intValue() : 0;
-        Tuples2[] tuples2Arr = new Tuples2[9];
-        tuples2Arr[0] = Tuples.to(ModelAuditLogEntry.CHANGE_KEY_CHANNEL_ID, Long.valueOf(channel.getId()));
-        tuples2Arr[1] = Tuples.to(ModelAuditLogEntry.CHANGE_KEY_GUILD_ID, Long.valueOf(channel.getGuildId()));
-        tuples2Arr[2] = Tuples.to("parent_id", Long.valueOf(channel.getParentId()));
-        tuples2Arr[3] = Tuples.to("channel_type", Integer.valueOf(channel.getType()));
-        tuples2Arr[4] = Tuples.to("thread_approximate_message_count", Integer.valueOf(_Ranges.coerceAtMost(iIntValue, 50)));
+        Pair[] pairArr = new Pair[9];
+        pairArr[0] = C12116o.m10073to(ModelAuditLogEntry.CHANGE_KEY_CHANNEL_ID, Long.valueOf(channel.getId()));
+        pairArr[1] = C12116o.m10073to(ModelAuditLogEntry.CHANGE_KEY_GUILD_ID, Long.valueOf(channel.getGuildId()));
+        pairArr[2] = C12116o.m10073to("parent_id", Long.valueOf(channel.getParentId()));
+        pairArr[3] = C12116o.m10073to("channel_type", Integer.valueOf(channel.getType()));
+        pairArr[4] = C12116o.m10073to("thread_approximate_message_count", Integer.valueOf(C11226f.coerceAtMost(iIntValue, 50)));
         ThreadMetadata threadMetadata = channel.getThreadMetadata();
-        tuples2Arr[5] = Tuples.to("thread_archived", Boolean.valueOf(threadMetadata != null && threadMetadata.getArchived()));
+        pairArr[5] = C12116o.m10073to("thread_archived", Boolean.valueOf(threadMetadata != null && threadMetadata.getArchived()));
         ThreadMetadata threadMetadata2 = channel.getThreadMetadata();
         if (threadMetadata2 != null && threadMetadata2.getLocked()) {
             z2 = true;
         }
-        tuples2Arr[6] = Tuples.to("thread_locked", Boolean.valueOf(z2));
+        pairArr[6] = C12116o.m10073to("thread_locked", Boolean.valueOf(z2));
         ThreadMetadata threadMetadata3 = channel.getThreadMetadata();
-        tuples2Arr[7] = Tuples.to("thread_auto_archive_duration_minutes", threadMetadata3 != null ? Integer.valueOf(threadMetadata3.getAutoArchiveDuration()) : null);
-        tuples2Arr[8] = Tuples.to("thread_approximate_creation_date", Long.valueOf((channel.getId() >>> 22) + SnowflakeUtils.DISCORD_EPOCH));
-        return Maps6.mapOf(tuples2Arr);
+        pairArr[7] = C12116o.m10073to("thread_auto_archive_duration_minutes", threadMetadata3 != null ? Integer.valueOf(threadMetadata3.getAutoArchiveDuration()) : null);
+        pairArr[8] = C12116o.m10073to("thread_approximate_creation_date", Long.valueOf((channel.getId() >>> 22) + SnowflakeUtils.DISCORD_EPOCH));
+        return C12136h0.mapOf(pairArr);
     }
 
     private final Map<String, Object> guildPropertiesMap(long guildId, int guildSize, Collection<Channel> guildChannels, int numGuildRoles, int guildMemberNumRoles, long guildPermissions, boolean isVip) {
         int i;
-        Tuples2[] tuples2Arr = new Tuples2[9];
+        Pair[] pairArr = new Pair[9];
         int i2 = 0;
-        tuples2Arr[0] = Tuples.to(ModelAuditLogEntry.CHANGE_KEY_GUILD_ID, Long.valueOf(guildId));
-        tuples2Arr[1] = Tuples.to("guild_size_total", Integer.valueOf(guildSize));
-        tuples2Arr[2] = Tuples.to("guild_num_channels", Integer.valueOf(guildChannels.size()));
+        pairArr[0] = C12116o.m10073to(ModelAuditLogEntry.CHANGE_KEY_GUILD_ID, Long.valueOf(guildId));
+        pairArr[1] = C12116o.m10073to("guild_size_total", Integer.valueOf(guildSize));
+        pairArr[2] = C12116o.m10073to("guild_num_channels", Integer.valueOf(guildChannels.size()));
         if (guildChannels.isEmpty()) {
             i = 0;
         } else {
             Iterator<T> it = guildChannels.iterator();
             i = 0;
             while (it.hasNext()) {
-                if (ChannelUtils.v((Channel) it.next()) && (i = i + 1) < 0) {
-                    Collections2.throwCountOverflow();
+                if (ChannelUtils.m7698v((Channel) it.next()) && (i = i + 1) < 0) {
+                    C12147n.throwCountOverflow();
                 }
             }
         }
-        tuples2Arr[3] = Tuples.to("guild_num_text_channels", Integer.valueOf(i));
+        pairArr[3] = C12116o.m10073to("guild_num_text_channels", Integer.valueOf(i));
         if (!guildChannels.isEmpty()) {
             Iterator<T> it2 = guildChannels.iterator();
             while (it2.hasNext()) {
-                if (ChannelUtils.w((Channel) it2.next()) && (i2 = i2 + 1) < 0) {
-                    Collections2.throwCountOverflow();
+                if (ChannelUtils.m7699w((Channel) it2.next()) && (i2 = i2 + 1) < 0) {
+                    C12147n.throwCountOverflow();
                 }
             }
         }
-        tuples2Arr[4] = Tuples.to("guild_num_voice_channels", Integer.valueOf(i2));
-        tuples2Arr[5] = Tuples.to("guild_num_roles", Integer.valueOf(numGuildRoles));
-        tuples2Arr[6] = Tuples.to("guild_member_num_roles", Integer.valueOf(guildMemberNumRoles));
-        tuples2Arr[7] = Tuples.to("guild_member_perms", Long.valueOf(guildPermissions));
-        tuples2Arr[8] = Tuples.to("guild_is_vip", Boolean.valueOf(isVip));
-        return Maps6.mutableMapOf(tuples2Arr);
+        pairArr[4] = C12116o.m10073to("guild_num_voice_channels", Integer.valueOf(i2));
+        pairArr[5] = C12116o.m10073to("guild_num_roles", Integer.valueOf(numGuildRoles));
+        pairArr[6] = C12116o.m10073to("guild_member_num_roles", Integer.valueOf(guildMemberNumRoles));
+        pairArr[7] = C12116o.m10073to("guild_member_perms", Long.valueOf(guildPermissions));
+        pairArr[8] = C12116o.m10073to("guild_is_vip", Boolean.valueOf(isVip));
+        return C12136h0.mutableMapOf(pairArr);
     }
 
-    @Store3
-    private final void handleVideoInputUpdate(DeviceDescription4 selectedVideoInputDevice, boolean isScreenSharing) {
+    @StoreThread
+    private final void handleVideoInputUpdate(VideoInputDeviceDescription selectedVideoInputDevice, boolean isScreenSharing) {
         Channel channel = this.selectedVoiceChannel;
         if (channel != null) {
             Map<Long, VoiceState> mapEmptyMap = this.stores.getVoiceStates().get().get(Long.valueOf(channel.getGuildId()));
             if (mapEmptyMap == null) {
-                mapEmptyMap = Maps6.emptyMap();
+                mapEmptyMap = C12136h0.emptyMap();
             }
             Map<Long, VoiceState> map = mapEmptyMap;
             long id2 = this.stores.getUsers().getMe().getId();
@@ -938,7 +938,7 @@ public final class StoreAnalytics extends Store {
         if (this.hasTrackedAppUiShown.getAndSet(true)) {
             return;
         }
-        this.dispatcher.schedule(new AnonymousClass1(screenViewed));
+        this.dispatcher.schedule(new C56831(screenViewed));
     }
 
     public static /* synthetic */ void onUserSettingsPaneViewed$default(StoreAnalytics storeAnalytics, String str, String str2, int i, Object obj) {
@@ -1015,7 +1015,7 @@ public final class StoreAnalytics extends Store {
     }
 
     public final void ackMessage(long channelId) {
-        this.dispatcher.schedule(new AnonymousClass1(channelId));
+        this.dispatcher.schedule(new C56751(channelId));
     }
 
     public final void appLandingViewed() {
@@ -1023,38 +1023,38 @@ public final class StoreAnalytics extends Store {
     }
 
     public final void appUiViewed(Class<? extends AppComponent> screen) {
-        Intrinsics3.checkNotNullParameter(screen, "screen");
+        C12238m.checkNotNullParameter(screen, "screen");
         PublishSubject<ScreenViewed> publishSubject = this.screenViewedSubject;
-        publishSubject.k.onNext(new ScreenViewed(screen, this.clock.currentTimeMillis()));
+        publishSubject.f27650k.onNext(new ScreenViewed(screen, this.clock.currentTimeMillis()));
     }
 
     public final void deepLinkReceived(Intent intent, RouteHandlers.AnalyticsMetadata metadata) {
-        Intrinsics3.checkNotNullParameter(intent, "intent");
-        Intrinsics3.checkNotNullParameter(metadata, "metadata");
+        C12238m.checkNotNullParameter(intent, "intent");
+        C12238m.checkNotNullParameter(metadata, "metadata");
         Long channelId = metadata.getChannelId();
         Map<String, ? extends Object> guildAndChannelSnapshotAnalyticsProperties = channelId != null ? getGuildAndChannelSnapshotAnalyticsProperties(channelId.longValue()) : null;
         if (guildAndChannelSnapshotAnalyticsProperties == null) {
-            guildAndChannelSnapshotAnalyticsProperties = Maps6.emptyMap();
+            guildAndChannelSnapshotAnalyticsProperties = C12136h0.emptyMap();
         }
         AnalyticsTracker.INSTANCE.deepLinkReceived(intent, metadata, guildAndChannelSnapshotAnalyticsProperties);
     }
 
     public final void emojiAutocompleteUpsellInlineViewed() {
-        AnalyticsTracker.premiumUpsellViewed$default(AnalyticsTracker.INSTANCE, AnalyticsTracker.PremiumUpsellType.EmojiAutocompleteInline, null, Maps6.emptyMap(), null, 8, null);
+        AnalyticsTracker.premiumUpsellViewed$default(AnalyticsTracker.INSTANCE, AnalyticsTracker.PremiumUpsellType.EmojiAutocompleteInline, null, C12136h0.emptyMap(), null, 8, null);
     }
 
     public final void emojiAutocompleteUpsellModalViewed() {
-        AnalyticsTracker.premiumUpsellViewed$default(AnalyticsTracker.INSTANCE, AnalyticsTracker.PremiumUpsellType.EmojiAutocompleteModal, null, Maps6.emptyMap(), null, 8, null);
+        AnalyticsTracker.premiumUpsellViewed$default(AnalyticsTracker.INSTANCE, AnalyticsTracker.PremiumUpsellType.EmojiAutocompleteModal, null, C12136h0.emptyMap(), null, 8, null);
     }
 
     public final void emojiPickerUpsellHeaderViewed(EmojiPickerContextType emojiPickerContextType) {
-        Intrinsics3.checkNotNullParameter(emojiPickerContextType, "emojiPickerContextType");
+        C12238m.checkNotNullParameter(emojiPickerContextType, "emojiPickerContextType");
         emojiPickerUpsellViewed$default(this, AnalyticsTracker.PremiumUpsellType.EmojiPickerHeaderViewed, emojiPickerContextType, null, 4, null);
     }
 
     public final void emojiPickerUpsellLockedItemClicked(EmojiPickerContextType emojiPickerContextType, boolean isAnimated) {
-        Intrinsics3.checkNotNullParameter(emojiPickerContextType, "emojiPickerContextType");
-        emojiPickerUpsellViewed(AnalyticsTracker.PremiumUpsellType.EmojiPickerLockedItemClicked, emojiPickerContextType, Maps6.mapOf(Tuples.to("is_animated", Boolean.valueOf(isAnimated)), Tuples.to("is_external", Boolean.TRUE)));
+        C12238m.checkNotNullParameter(emojiPickerContextType, "emojiPickerContextType");
+        emojiPickerUpsellViewed(AnalyticsTracker.PremiumUpsellType.EmojiPickerLockedItemClicked, emojiPickerContextType, C12136h0.mapOf(C12116o.m10073to("is_animated", Boolean.valueOf(isAnimated)), C12116o.m10073to("is_external", Boolean.TRUE)));
     }
 
     public final Traits.Location getEmojiPickerUpsellLocation() {
@@ -1062,13 +1062,13 @@ public final class StoreAnalytics extends Store {
         return new Traits.Location((channel == null || channel.getGuildId() != 0) ? Traits.Location.Page.GUILD_CHANNEL : "DM Channel", Traits.Location.Section.EMOJI_PICKER_POPOUT, null, null, null, 28, null);
     }
 
-    @Store3
+    @StoreThread
     public final void handleAuthToken(String authToken) {
         this.authToken = authToken;
         updateTrackingData();
     }
 
-    @Store3
+    @StoreThread
     public final void handleConnected(boolean connected) {
         if (connected) {
             return;
@@ -1077,36 +1077,36 @@ public final class StoreAnalytics extends Store {
         updateTrackingData();
     }
 
-    @Store3
+    @StoreThread
     public final void handleConnectionOpen(ModelPayload payload) {
-        Intrinsics3.checkNotNullParameter(payload, "payload");
+        C12238m.checkNotNullParameter(payload, "payload");
         this.analyticsToken = payload.getAnalyticsToken();
         updateTrackingData();
     }
 
-    @Store3
+    @StoreThread
     public final void handleFingerprint(String fingerprint) {
         this.fingerprint = fingerprint;
         updateTrackingData();
     }
 
-    @Store3
+    @StoreThread
     public final void handleIsScreenSharingChanged(boolean isScreenSharing) {
         handleVideoInputUpdate(this.stores.getMediaEngine().getSelectedVideoInputDevice(), isScreenSharing);
     }
 
-    @Store3
+    @StoreThread
     public final void handlePreLogout() {
         SharedPreferences.Editor editorEdit = getPrefsSessionDurable().edit();
-        Intrinsics3.checkNotNullExpressionValue(editorEdit, "editor");
+        C12238m.checkNotNullExpressionValue(editorEdit, "editor");
         editorEdit.putLong("CACHE_KEY_LOGOUT_TS", this.clock.currentTimeMillis());
         editorEdit.apply();
     }
 
-    @Store3
+    @StoreThread
     public final void handleUserSpeaking(Set<Long> speakingUsers) {
         Channel channel;
-        Intrinsics3.checkNotNullParameter(speakingUsers, "speakingUsers");
+        C12238m.checkNotNullParameter(speakingUsers, "speakingUsers");
         String str = this.inputMode;
         if (str == null || (channel = this.selectedVoiceChannel) == null) {
             return;
@@ -1117,92 +1117,92 @@ public final class StoreAnalytics extends Store {
         analyticsTracker.userListening(id2, speakingUsers, str, channel);
     }
 
-    @Store3
-    public final void handleVideoInputDeviceSelected(DeviceDescription4 videoInputDevice) {
+    @StoreThread
+    public final void handleVideoInputDeviceSelected(VideoInputDeviceDescription videoInputDevice) {
         handleVideoInputUpdate(videoInputDevice, this.stores.getApplicationStreaming().isScreenSharing());
     }
 
     @Override // com.discord.stores.Store
     public void init(Context context) {
-        Intrinsics3.checkNotNullParameter(context, "context");
+        C12238m.checkNotNullParameter(context, "context");
         super.init(context);
-        ObservableExtensionsKt.appSubscribe(ObservableExtensionsKt.computationBuffered(this.stores.getMediaSettings().getInputMode()), (Class<?>) StoreAnalytics.class, (58 & 2) != 0 ? null : null, (Function1<? super Subscription, Unit>) ((58 & 4) != 0 ? null : null), (Function1<? super Error, Unit>) ((58 & 8) != 0 ? null : null), (Function0<Unit>) ((58 & 16) != 0 ? ObservableExtensionsKt.AnonymousClass1.INSTANCE : null), (Function0<Unit>) ((58 & 32) != 0 ? ObservableExtensionsKt.AnonymousClass2.INSTANCE : null), new AnonymousClass1());
-        ObservableExtensionsKt.appSubscribe(ObservableExtensionsKt.computationBuffered(this.stores.getVoiceChannelSelected().observeSelectedChannel()), (Class<?>) StoreAnalytics.class, (58 & 2) != 0 ? null : null, (Function1<? super Subscription, Unit>) ((58 & 4) != 0 ? null : null), (Function1<? super Error, Unit>) ((58 & 8) != 0 ? null : null), (Function0<Unit>) ((58 & 16) != 0 ? ObservableExtensionsKt.AnonymousClass1.INSTANCE : null), (Function0<Unit>) ((58 & 32) != 0 ? ObservableExtensionsKt.AnonymousClass2.INSTANCE : null), new AnonymousClass2());
-        Observable observableZ = this.screenViewedSubject.Y(new Func1<ScreenViewed, Observable<? extends ScreenViewed>>() { // from class: com.discord.stores.StoreAnalytics.init.3
-            @Override // j0.k.Func1
+        ObservableExtensionsKt.appSubscribe(ObservableExtensionsKt.computationBuffered(this.stores.getMediaSettings().getInputMode()), (Class<?>) StoreAnalytics.class, (58 & 2) != 0 ? null : null, (Function1<? super Subscription, Unit>) ((58 & 4) != 0 ? null : null), (Function1<? super Error, Unit>) ((58 & 8) != 0 ? null : null), (Function0<Unit>) ((58 & 16) != 0 ? ObservableExtensionsKt.C68791.INSTANCE : null), (Function0<Unit>) ((58 & 32) != 0 ? ObservableExtensionsKt.C68802.INSTANCE : null), new C56761());
+        ObservableExtensionsKt.appSubscribe(ObservableExtensionsKt.computationBuffered(this.stores.getVoiceChannelSelected().observeSelectedChannel()), (Class<?>) StoreAnalytics.class, (58 & 2) != 0 ? null : null, (Function1<? super Subscription, Unit>) ((58 & 4) != 0 ? null : null), (Function1<? super Error, Unit>) ((58 & 8) != 0 ? null : null), (Function0<Unit>) ((58 & 16) != 0 ? ObservableExtensionsKt.C68791.INSTANCE : null), (Function0<Unit>) ((58 & 32) != 0 ? ObservableExtensionsKt.C68802.INSTANCE : null), new C56772());
+        Observable observableM11119z = this.screenViewedSubject.m11099Y(new InterfaceC12589b<ScreenViewed, Observable<? extends ScreenViewed>>() { // from class: com.discord.stores.StoreAnalytics.init.3
+            @Override // p637j0.p641k.InterfaceC12589b
             public final Observable<? extends ScreenViewed> call(final ScreenViewed screenViewed) {
-                return Intrinsics3.areEqual(screenViewed.getScreen(), WidgetHome.class) ? Observable.d0(2L, TimeUnit.SECONDS).G(new Func1<Long, ScreenViewed>() { // from class: com.discord.stores.StoreAnalytics.init.3.1
-                    @Override // j0.k.Func1
+                return C12238m.areEqual(screenViewed.getScreen(), WidgetHome.class) ? Observable.m11068d0(2L, TimeUnit.SECONDS).m11083G(new InterfaceC12589b<Long, ScreenViewed>() { // from class: com.discord.stores.StoreAnalytics.init.3.1
+                    @Override // p637j0.p641k.InterfaceC12589b
                     public final ScreenViewed call(Long l) {
                         return screenViewed;
                     }
-                }) : new ScalarSynchronousObservable(screenViewed);
+                }) : new C12721k(screenViewed);
             }
-        }).z();
-        Intrinsics3.checkNotNullExpressionValue(observableZ, "screenViewedSubject\n    …       }\n        .first()");
-        ObservableExtensionsKt.appSubscribe(observableZ, (Class<?>) StoreAnalytics.class, (58 & 2) != 0 ? null : null, (Function1<? super Subscription, Unit>) ((58 & 4) != 0 ? null : null), (Function1<? super Error, Unit>) ((58 & 8) != 0 ? null : null), (Function0<Unit>) ((58 & 16) != 0 ? ObservableExtensionsKt.AnonymousClass1.INSTANCE : null), (Function0<Unit>) ((58 & 32) != 0 ? ObservableExtensionsKt.AnonymousClass2.INSTANCE : null), new AnonymousClass4(this));
+        }).m11119z();
+        C12238m.checkNotNullExpressionValue(observableM11119z, "screenViewedSubject\n    …       }\n        .first()");
+        ObservableExtensionsKt.appSubscribe(observableM11119z, (Class<?>) StoreAnalytics.class, (58 & 2) != 0 ? null : null, (Function1<? super Subscription, Unit>) ((58 & 4) != 0 ? null : null), (Function1<? super Error, Unit>) ((58 & 8) != 0 ? null : null), (Function0<Unit>) ((58 & 16) != 0 ? ObservableExtensionsKt.C68791.INSTANCE : null), (Function0<Unit>) ((58 & 32) != 0 ? ObservableExtensionsKt.C68802.INSTANCE : null), new C56794(this));
     }
 
     public final void inviteSent(ModelInvite invite, Message message, String location) {
         GuildScheduledEvent guildScheduledEvent;
         Channel channel;
         com.discord.api.guild.Guild guild;
-        Intrinsics3.checkNotNullParameter(message, "message");
-        Intrinsics3.checkNotNullParameter(location, ModelAuditLogEntry.CHANGE_KEY_LOCATION);
-        Tuples2[] tuples2Arr = new Tuples2[5];
-        tuples2Arr[0] = Tuples.to(ModelAuditLogEntry.CHANGE_KEY_LOCATION, location);
-        tuples2Arr[1] = Tuples.to("message_id", Long.valueOf(message.getId()));
+        C12238m.checkNotNullParameter(message, "message");
+        C12238m.checkNotNullParameter(location, ModelAuditLogEntry.CHANGE_KEY_LOCATION);
+        Pair[] pairArr = new Pair[5];
+        pairArr[0] = C12116o.m10073to(ModelAuditLogEntry.CHANGE_KEY_LOCATION, location);
+        pairArr[1] = C12116o.m10073to("message_id", Long.valueOf(message.getId()));
         Long lValueOf = null;
-        tuples2Arr[2] = Tuples.to("invite_guild_id", (invite == null || (guild = invite.guild) == null) ? null : Long.valueOf(guild.getId()));
-        tuples2Arr[3] = Tuples.to("invite_channel_id", (invite == null || (channel = invite.getChannel()) == null) ? null : Long.valueOf(channel.getId()));
+        pairArr[2] = C12116o.m10073to("invite_guild_id", (invite == null || (guild = invite.guild) == null) ? null : Long.valueOf(guild.getId()));
+        pairArr[3] = C12116o.m10073to("invite_channel_id", (invite == null || (channel = invite.getChannel()) == null) ? null : Long.valueOf(channel.getId()));
         if (invite != null && (guildScheduledEvent = invite.getGuildScheduledEvent()) != null) {
             lValueOf = Long.valueOf(guildScheduledEvent.getId());
         }
-        tuples2Arr[4] = Tuples.to("invite_guild_scheduled_event_id", lValueOf);
-        AnalyticsTracker.INSTANCE.inviteSent(invite, Maps6.plus(Maps6.mapOf(tuples2Arr), getGuildAndChannelSnapshotAnalyticsProperties(message.getChannelId())));
+        pairArr[4] = C12116o.m10073to("invite_guild_scheduled_event_id", lValueOf);
+        AnalyticsTracker.INSTANCE.inviteSent(invite, C12136h0.plus(C12136h0.mapOf(pairArr), getGuildAndChannelSnapshotAnalyticsProperties(message.getChannelId())));
     }
 
     public final void inviteSuggestionOpened(long guildId, List<Channel> channelSuggestions, List<? extends User> userSuggestions) {
-        Intrinsics3.checkNotNullParameter(channelSuggestions, "channelSuggestions");
-        Intrinsics3.checkNotNullParameter(userSuggestions, "userSuggestions");
+        C12238m.checkNotNullParameter(channelSuggestions, "channelSuggestions");
+        C12238m.checkNotNullParameter(userSuggestions, "userSuggestions");
         AnalyticsTracker.INSTANCE.inviteSuggestionOpened(guildId, channelSuggestions, userSuggestions);
     }
 
     public final void onGuildSettingsPaneViewed(String pane, long guildId) {
-        Intrinsics3.checkNotNullParameter(pane, "pane");
-        this.dispatcher.schedule(new AnonymousClass1(guildId, pane));
+        C12238m.checkNotNullParameter(pane, "pane");
+        this.dispatcher.schedule(new C56801(guildId, pane));
     }
 
     public final void onNotificationSettingsUpdated(ModelNotificationSettings notifSettings, Long channelId) {
-        Intrinsics3.checkNotNullParameter(notifSettings, "notifSettings");
-        this.dispatcher.schedule(new AnonymousClass1(channelId, notifSettings));
+        C12238m.checkNotNullParameter(notifSettings, "notifSettings");
+        this.dispatcher.schedule(new C56811(channelId, notifSettings));
     }
 
     public final void onOverlayVoiceEvent(boolean isActive) {
-        this.dispatcher.schedule(new AnonymousClass1(isActive));
+        this.dispatcher.schedule(new C56821(isActive));
     }
 
     public final void onThreadNotificationSettingsUpdated(long channelId, long parentChannelId, int flags, int oldFlags) {
-        this.dispatcher.schedule(new AnonymousClass1(channelId, parentChannelId, oldFlags, flags));
+        this.dispatcher.schedule(new C56841(channelId, parentChannelId, oldFlags, flags));
     }
 
     public final void onUserSettingsPaneViewed(String pane, String locationSection) {
-        Intrinsics3.checkNotNullParameter(pane, "pane");
-        AnalyticsTracker.INSTANCE.settingsPaneViewed("user", pane, locationSection != null ? MapsJVM.mapOf(Tuples.to("location_section", locationSection)) : null);
+        C12238m.checkNotNullParameter(pane, "pane");
+        AnalyticsTracker.INSTANCE.settingsPaneViewed("user", pane, locationSection != null ? C12134g0.mapOf(C12116o.m10073to("location_section", locationSection)) : null);
     }
 
     public final void openCustomEmojiPopout(Channel channel, long emojiId, boolean isPremium, boolean joinedSourceGuild, boolean sourceGuildPrivate) {
-        Intrinsics3.checkNotNullParameter(channel, "channel");
-        AnalyticsTracker.INSTANCE.openCustomEmojiPopout(channel.getGuildId(), emojiId, isPremium, joinedSourceGuild, sourceGuildPrivate, CollectionExtensions.filterNonNullValues(getChannelSnapshotAnalyticsProperties$default(this, channel, false, 2, (Object) null)));
+        C12238m.checkNotNullParameter(channel, "channel");
+        AnalyticsTracker.INSTANCE.openCustomEmojiPopout(channel.getGuildId(), emojiId, isPremium, joinedSourceGuild, sourceGuildPrivate, CollectionExtensionsKt.filterNonNullValues(getChannelSnapshotAnalyticsProperties$default(this, channel, false, 2, (Object) null)));
     }
 
     public final void openUnicodeEmojiPopout(Channel channel) {
-        Intrinsics3.checkNotNullParameter(channel, "channel");
-        AnalyticsTracker.INSTANCE.openUnicodeEmojiPopout(channel.getGuildId(), CollectionExtensions.filterNonNullValues(getChannelSnapshotAnalyticsProperties$default(this, channel, false, 2, (Object) null)));
+        C12238m.checkNotNullParameter(channel, "channel");
+        AnalyticsTracker.INSTANCE.openUnicodeEmojiPopout(channel.getGuildId(), CollectionExtensionsKt.filterNonNullValues(getChannelSnapshotAnalyticsProperties$default(this, channel, false, 2, (Object) null)));
     }
 
     public final void streamQualityIndicatorViewed(boolean hasPremiumStreamResolution, Boolean hasPremiumStreamFps) {
-        AnalyticsTracker.premiumUpsellViewed$default(AnalyticsTracker.INSTANCE, AnalyticsTracker.PremiumUpsellType.StreamQualityIndicator, null, CollectionExtensions.filterNonNullValues(Maps6.mapOf(Tuples.to("has_premium_stream_fps", hasPremiumStreamFps), Tuples.to("has_premium_stream_resolution", Boolean.valueOf(hasPremiumStreamResolution)))), null, 8, null);
+        AnalyticsTracker.premiumUpsellViewed$default(AnalyticsTracker.INSTANCE, AnalyticsTracker.PremiumUpsellType.StreamQualityIndicator, null, CollectionExtensionsKt.filterNonNullValues(C12136h0.mapOf(C12116o.m10073to("has_premium_stream_fps", hasPremiumStreamFps), C12116o.m10073to("has_premium_stream_resolution", Boolean.valueOf(hasPremiumStreamResolution)))), null, 8, null);
     }
 
     public final void trackApplicationCommandBrowserJump(long targetApplicationId) {
@@ -1222,46 +1222,46 @@ public final class StoreAnalytics extends Store {
     }
 
     public final void trackApplicationCommandValidationFailure(long applicationId, long commandId, String argumentType, boolean isRequired) {
-        Intrinsics3.checkNotNullParameter(argumentType, "argumentType");
+        C12238m.checkNotNullParameter(argumentType, "argumentType");
         AnalyticsTracker.INSTANCE.applicationCommandValidationFailure(applicationId, commandId, argumentType, isRequired);
     }
 
     public final void trackAutocompleteOpen(long channelId, String autocompleteType, int numEmojiResults, int numStickerResults) {
-        Intrinsics3.checkNotNullParameter(autocompleteType, "autocompleteType");
-        AnalyticsTracker.INSTANCE.autocompleteOpen(CollectionExtensions.filterNonNullValues(getGuildAndChannelSnapshotAnalyticsProperties(channelId)), autocompleteType, numEmojiResults, numStickerResults);
+        C12238m.checkNotNullParameter(autocompleteType, "autocompleteType");
+        AnalyticsTracker.INSTANCE.autocompleteOpen(CollectionExtensionsKt.filterNonNullValues(getGuildAndChannelSnapshotAnalyticsProperties(channelId)), autocompleteType, numEmojiResults, numStickerResults);
     }
 
     public final void trackAutocompleteSelect(long channelId, String autocompleteType, int numEmojiResults, int numStickerResults, String selectionType, String selection, Long stickerId) {
-        Intrinsics3.checkNotNullParameter(autocompleteType, "autocompleteType");
-        AnalyticsTracker.INSTANCE.autocompleteSelect(CollectionExtensions.filterNonNullValues(getGuildAndChannelSnapshotAnalyticsProperties(channelId)), autocompleteType, numEmojiResults, numStickerResults, selectionType, selection, stickerId);
+        C12238m.checkNotNullParameter(autocompleteType, "autocompleteType");
+        AnalyticsTracker.INSTANCE.autocompleteSelect(CollectionExtensionsKt.filterNonNullValues(getGuildAndChannelSnapshotAnalyticsProperties(channelId)), autocompleteType, numEmojiResults, numStickerResults, selectionType, selection, stickerId);
     }
 
     public final void trackCallReportProblem(PendingFeedback.CallFeedback pendingCallFeedback) {
-        Intrinsics3.checkNotNullParameter(pendingCallFeedback, "pendingCallFeedback");
-        this.dispatcher.schedule(new AnonymousClass1(pendingCallFeedback));
+        C12238m.checkNotNullParameter(pendingCallFeedback, "pendingCallFeedback");
+        this.dispatcher.schedule(new C56851(pendingCallFeedback));
     }
 
-    @Store3
-    public final void trackChannelOpened(long channelId, StoreChannelsSelected2 channelView, StoreChannelsSelected3 analyticsLocation) {
-        Intrinsics3.checkNotNullParameter(channelView, "channelView");
+    @StoreThread
+    public final void trackChannelOpened(long channelId, ChannelAnalyticsViewType channelView, SelectedChannelAnalyticsLocation analyticsLocation) {
+        C12238m.checkNotNullParameter(channelView, "channelView");
         Channel channelFindChannelByIdInternal$app_productionGoogleRelease = this.stores.getChannels().findChannelByIdInternal$app_productionGoogleRelease(channelId);
         if (channelFindChannelByIdInternal$app_productionGoogleRelease != null) {
-            AnalyticsTracker.INSTANCE.channelOpened(channelId, new StoreAnalytics2(channelFindChannelByIdInternal$app_productionGoogleRelease, this, channelId, channelView, analyticsLocation));
+            AnalyticsTracker.INSTANCE.channelOpened(channelId, new StoreAnalytics$trackChannelOpened$$inlined$let$lambda$1(channelFindChannelByIdInternal$app_productionGoogleRelease, this, channelId, channelView, analyticsLocation));
         }
     }
 
     public final void trackChatInputComponentViewed(String type) {
-        Intrinsics3.checkNotNullParameter(type, "type");
+        C12238m.checkNotNullParameter(type, "type");
         AnalyticsTracker.INSTANCE.chatInputComponentViewed(type);
     }
 
-    public final void trackFailedMessageResolved(int numAttachments, int maxAttachmentSize, int totalAttachmentSize, boolean hasImage, boolean hasVideo, StoreMessages2 resolutionType, long initialAttemptTimestamp, int numRetries, long channelId) {
-        Intrinsics3.checkNotNullParameter(resolutionType, "resolutionType");
+    public final void trackFailedMessageResolved(int numAttachments, int maxAttachmentSize, int totalAttachmentSize, boolean hasImage, boolean hasVideo, FailedMessageResolutionType resolutionType, long initialAttemptTimestamp, int numRetries, long channelId) {
+        C12238m.checkNotNullParameter(resolutionType, "resolutionType");
         AnalyticsTracker.INSTANCE.failedMessageResolved(numAttachments, maxAttachmentSize, totalAttachmentSize, hasImage, hasVideo, resolutionType, initialAttemptTimestamp, numRetries, getGuildAndChannelSnapshotAnalyticsProperties(channelId));
     }
 
-    public final void trackFileUploadAlertViewed(SendUtils2 alertType, int numAttachments, int maxAttachmentSize, int totalAttachmentSize, boolean hasImage, boolean hasVideo, boolean isPremium) {
-        Intrinsics3.checkNotNullParameter(alertType, "alertType");
+    public final void trackFileUploadAlertViewed(FileUploadAlertType alertType, int numAttachments, int maxAttachmentSize, int totalAttachmentSize, boolean hasImage, boolean hasVideo, boolean isPremium) {
+        C12238m.checkNotNullParameter(alertType, "alertType");
         AnalyticsTracker.INSTANCE.fileUploadAlertViewed(alertType, numAttachments, maxAttachmentSize, totalAttachmentSize, hasImage, hasVideo, isPremium, getSnapshotAnalyticsProperties());
     }
 
@@ -1269,7 +1269,7 @@ public final class StoreAnalytics extends Store {
         AnalyticsTracker.INSTANCE.openGuildProfileSheet(guildId);
     }
 
-    @Store3
+    @StoreThread
     public final void trackGuildViewed(long guildId) {
         boolean zContains;
         GuildMember guildMember;
@@ -1281,74 +1281,74 @@ public final class StoreAnalytics extends Store {
             try {
                 zContains = guild.getFeatures().contains(GuildFeature.PREVIEW_ENABLED);
             } catch (Exception e) {
-                AppLog.g.e("Guild is missing feature set", e, MapsJVM.mapOf(Tuples.to(ModelAuditLogEntry.CHANGE_KEY_GUILD_ID, String.valueOf(guild.getId()))));
+                AppLog.f14950g.mo8364e("Guild is missing feature set", e, C12134g0.mapOf(C12116o.m10073to(ModelAuditLogEntry.CHANGE_KEY_GUILD_ID, String.valueOf(guild.getId()))));
                 zContains = false;
             }
-            AnalyticsTracker.INSTANCE.guildViewed(guildId, new AnonymousClass1(Maps6.plus(getGuildAnalyticsPropertiesInternal(guildId), Maps6.mapOf(Tuples.to("is_pending", Boolean.valueOf(pending)), Tuples.to("preview_enabled", Boolean.valueOf(zContains))))));
+            AnalyticsTracker.INSTANCE.guildViewed(guildId, new C56861(C12136h0.plus(getGuildAnalyticsPropertiesInternal(guildId), C12136h0.mapOf(C12116o.m10073to("is_pending", Boolean.valueOf(pending)), C12116o.m10073to("preview_enabled", Boolean.valueOf(zContains))))));
         }
     }
 
     public final void trackMediaSessionJoined(Map<String, Object> properties) {
-        Intrinsics3.checkNotNullParameter(properties, "properties");
-        this.dispatcher.schedule(new AnonymousClass1(properties));
+        C12238m.checkNotNullParameter(properties, "properties");
+        this.dispatcher.schedule(new C56871(properties));
     }
 
     public final void trackOpenGiftAcceptModal(String giftCode, String location, long channelId) {
-        Intrinsics3.checkNotNullParameter(giftCode, "giftCode");
-        Intrinsics3.checkNotNullParameter(location, ModelAuditLogEntry.CHANGE_KEY_LOCATION);
-        this.dispatcher.schedule(new AnonymousClass1(giftCode, channelId, location));
+        C12238m.checkNotNullParameter(giftCode, "giftCode");
+        C12238m.checkNotNullParameter(location, ModelAuditLogEntry.CHANGE_KEY_LOCATION);
+        this.dispatcher.schedule(new C56881(giftCode, channelId, location));
     }
 
     public final void trackSearchResultSelected(SearchType searchType, int totalResultsCount, Traits.Location locationTrait, Traits.Source sourceTrait) {
-        Intrinsics3.checkNotNullParameter(searchType, "searchType");
+        C12238m.checkNotNullParameter(searchType, "searchType");
         AnalyticsTracker.INSTANCE.searchResultSelected(searchType, locationTrait, sourceTrait, totalResultsCount, getSnapshotAnalyticsProperties());
     }
 
     public final void trackSearchResultViewed(SearchType searchType, int totalResultsCount, Integer lockedResultsCount, Traits.Location locationTrait, boolean throttle) {
-        Intrinsics3.checkNotNullParameter(searchType, "searchType");
+        C12238m.checkNotNullParameter(searchType, "searchType");
         AnalyticsTracker.INSTANCE.searchResultViewed(searchType, totalResultsCount, lockedResultsCount, locationTrait, getSnapshotAnalyticsProperties(), throttle);
     }
 
     public final void trackSearchResultsEmpty(SearchType searchType, Traits.Location locationTrait, boolean throttle) {
-        Intrinsics3.checkNotNullParameter(searchType, "searchType");
+        C12238m.checkNotNullParameter(searchType, "searchType");
         AnalyticsTracker.INSTANCE.searchResultsEmpty(searchType, locationTrait, getSnapshotAnalyticsProperties(), throttle);
     }
 
     public final void trackSearchStarted(SearchType searchType, Traits.Location locationTrait, boolean throttle) {
-        Intrinsics3.checkNotNullParameter(searchType, "searchType");
+        C12238m.checkNotNullParameter(searchType, "searchType");
         AnalyticsTracker.INSTANCE.searchStart(searchType, locationTrait, getSnapshotAnalyticsProperties(), throttle);
     }
 
     public final void trackShowCallFeedbackSheet(long channelId) {
-        this.dispatcher.schedule(new AnonymousClass1(channelId));
+        this.dispatcher.schedule(new C56891(channelId));
     }
 
     public final void trackStreamReportProblem(PendingFeedback.StreamFeedback pendingStreamFeedback) {
-        Intrinsics3.checkNotNullParameter(pendingStreamFeedback, "pendingStreamFeedback");
+        C12238m.checkNotNullParameter(pendingStreamFeedback, "pendingStreamFeedback");
         AnalyticsTracker.INSTANCE.reportStreamProblem(pendingStreamFeedback.getStream(), pendingStreamFeedback.getFeedbackRating(), getStreamFeedbackReasonFromIssue(pendingStreamFeedback.getIssue()), pendingStreamFeedback.getMediaSessionId(), pendingStreamFeedback.getIssueDetails());
     }
 
-    @Store3
-    public final void trackTextInVoiceOpened(long channelId, StoreChannelsSelected3 analyticsLocation) {
+    @StoreThread
+    public final void trackTextInVoiceOpened(long channelId, SelectedChannelAnalyticsLocation analyticsLocation) {
         Channel channelFindChannelByIdInternal$app_productionGoogleRelease = this.stores.getChannels().findChannelByIdInternal$app_productionGoogleRelease(channelId);
         if (channelFindChannelByIdInternal$app_productionGoogleRelease != null) {
-            AnalyticsTracker.INSTANCE.textInVoiceOpened(channelId, new StoreAnalytics3(channelFindChannelByIdInternal$app_productionGoogleRelease, this, channelId, analyticsLocation));
+            AnalyticsTracker.INSTANCE.textInVoiceOpened(channelId, new StoreAnalytics$trackTextInVoiceOpened$$inlined$let$lambda$1(channelFindChannelByIdInternal$app_productionGoogleRelease, this, channelId, analyticsLocation));
         }
     }
 
     public final void trackThreadBrowserTabChanged(long channelId, String tabType) {
-        Intrinsics3.checkNotNullParameter(tabType, "tabType");
+        C12238m.checkNotNullParameter(tabType, "tabType");
         AnalyticsTracker.INSTANCE.threadBrowserTabChanged(getGuildAndChannelSnapshotAnalyticsProperties(channelId), tabType);
     }
 
     public final void trackVideoLayoutToggled(String videoLayout, long meId, Channel channel) {
-        Intrinsics3.checkNotNullParameter(videoLayout, "videoLayout");
+        C12238m.checkNotNullParameter(videoLayout, "videoLayout");
         AnalyticsTracker.INSTANCE.videoLayoutToggled(videoLayout, meId, channel);
     }
 
-    @Store3
+    @StoreThread
     public final void trackVideoStreamEnded(Map<String, Object> properties) {
-        Intrinsics3.checkNotNullParameter(properties, "properties");
+        C12238m.checkNotNullParameter(properties, "properties");
         Object obj = properties.get("sender_user_id");
         if (!(obj instanceof Long)) {
             obj = null;
@@ -1374,25 +1374,25 @@ public final class StoreAnalytics extends Store {
     }
 
     public final void trackVoiceAudioOutputModeSelected(long channelId, DiscordAudioManager.DeviceTypes fromAudioOutputMode, DiscordAudioManager.DeviceTypes toAudioOutputMode) {
-        Intrinsics3.checkNotNullParameter(fromAudioOutputMode, "fromAudioOutputMode");
-        Intrinsics3.checkNotNullParameter(toAudioOutputMode, "toAudioOutputMode");
-        this.dispatcher.schedule(new AnonymousClass1(channelId, fromAudioOutputMode, toAudioOutputMode));
+        C12238m.checkNotNullParameter(fromAudioOutputMode, "fromAudioOutputMode");
+        C12238m.checkNotNullParameter(toAudioOutputMode, "toAudioOutputMode");
+        this.dispatcher.schedule(new C56901(channelId, fromAudioOutputMode, toAudioOutputMode));
     }
 
     public final void trackVoiceConnectionFailure(Map<String, Object> properties) {
-        Intrinsics3.checkNotNullParameter(properties, "properties");
-        this.dispatcher.schedule(new AnonymousClass1(properties));
+        C12238m.checkNotNullParameter(properties, "properties");
+        this.dispatcher.schedule(new C56911(properties));
     }
 
     public final void trackVoiceConnectionSuccess(Map<String, Object> properties) {
-        Intrinsics3.checkNotNullParameter(properties, "properties");
-        this.dispatcher.schedule(new AnonymousClass1(properties));
+        C12238m.checkNotNullParameter(properties, "properties");
+        this.dispatcher.schedule(new C56921(properties));
     }
 
-    @Store3
+    @StoreThread
     public final void trackVoiceDisconnect(Map<String, Object> properties) {
-        Intrinsics3.checkNotNullParameter(properties, "properties");
-        this.dispatcher.schedule(new AnonymousClass1(properties));
+        C12238m.checkNotNullParameter(properties, "properties");
+        this.dispatcher.schedule(new C56931(properties));
     }
 
     public static /* synthetic */ Map getChannelSnapshotAnalyticsProperties$default(StoreAnalytics storeAnalytics, Channel channel, boolean z2, int i, Object obj) {
@@ -1407,45 +1407,45 @@ public final class StoreAnalytics extends Store {
         List<Long> roles;
         int approximateMemberCount = this.stores.getGuildMemberCounts().getApproximateMemberCount(guild.getId());
         Collection<Channel> collectionValues = this.stores.getChannels().getChannelsForGuild(guild.getId()).values();
-        Map map = (Map) outline.e(guild, this.stores.getGuilds().getRoles());
+        Map map = (Map) C1643a.m847e(guild, this.stores.getGuilds().getRoles());
         int size = map != null ? map.size() : 0;
         long id2 = this.stores.getUsers().getMeSnapshot().getId();
-        Map map2 = (Map) outline.e(guild, this.stores.getGuilds().getMembers());
+        Map map2 = (Map) C1643a.m847e(guild, this.stores.getGuilds().getMembers());
         int size2 = (map2 == null || (guildMember = (GuildMember) map2.get(Long.valueOf(id2))) == null || (roles = guildMember.getRoles()) == null) ? 0 : roles.size();
-        Long l = (Long) outline.e(guild, this.stores.getPermissions().getGuildPermissions());
+        Long l = (Long) C1643a.m847e(guild, this.stores.getPermissions().getGuildPermissions());
         return guildPropertiesMap(guild.getId(), approximateMemberCount, collectionValues, size, size2, l != null ? l.longValue() : 0L, guild.getFeatures().contains(GuildFeature.VIP_REGIONS));
     }
 
     private final Map<String, Object> getChannelSnapshotAnalyticsProperties(Channel channel, boolean includeNsfw) {
         PermissionOverwrite permissionOverwrite;
         Object next;
-        Long l = (Long) outline.d(channel, this.stores.getPermissions().getPermissionsByChannel());
-        List<PermissionOverwrite> listV = channel.v();
-        if (listV != null) {
-            Iterator<T> it = listV.iterator();
+        Long l = (Long) C1643a.m845d(channel, this.stores.getPermissions().getPermissionsByChannel());
+        List<PermissionOverwrite> listM7655v = channel.m7655v();
+        if (listM7655v != null) {
+            Iterator<T> it = listM7655v.iterator();
             do {
                 if (!it.hasNext()) {
                     next = null;
                     break;
                 }
                 next = it.next();
-            } while (!(((PermissionOverwrite) next).e() == channel.getGuildId()));
+            } while (!(((PermissionOverwrite) next).m8131e() == channel.getGuildId()));
             permissionOverwrite = (PermissionOverwrite) next;
         } else {
             permissionOverwrite = null;
         }
-        return Maps6.plus(Maps6.plus(AnalyticsUtils.INSTANCE.getProperties$app_productionGoogleRelease(channel), Maps6.mapOf(Tuples.to("channel_member_perms", l), Tuples.to("channel_hidden", permissionOverwrite != null ? Boolean.valueOf(PermissionOverwriteUtils.denies(permissionOverwrite, Permission.VIEW_CHANNEL)) : null))), includeNsfw ? MapsJVM.mapOf(Tuples.to("channel_is_nsfw", Boolean.valueOf(channel.getNsfw()))) : Maps6.emptyMap());
+        return C12136h0.plus(C12136h0.plus(AnalyticsUtils.INSTANCE.getProperties$app_productionGoogleRelease(channel), C12136h0.mapOf(C12116o.m10073to("channel_member_perms", l), C12116o.m10073to("channel_hidden", permissionOverwrite != null ? Boolean.valueOf(PermissionOverwriteUtilsKt.denies(permissionOverwrite, Permission.VIEW_CHANNEL)) : null))), includeNsfw ? C12134g0.mapOf(C12116o.m10073to("channel_is_nsfw", Boolean.valueOf(channel.getNsfw()))) : C12136h0.emptyMap());
     }
 
     public final void inviteSent(GuildInvite invite, Channel channel, Message message, String location) {
-        Intrinsics3.checkNotNullParameter(message, "message");
-        Intrinsics3.checkNotNullParameter(location, ModelAuditLogEntry.CHANGE_KEY_LOCATION);
-        Tuples2[] tuples2Arr = new Tuples2[5];
-        tuples2Arr[0] = Tuples.to(ModelAuditLogEntry.CHANGE_KEY_LOCATION, location);
-        tuples2Arr[1] = Tuples.to("message_id", Long.valueOf(message.getId()));
-        tuples2Arr[2] = Tuples.to("invite_guild_id", invite != null ? invite.getGuildId() : null);
-        tuples2Arr[3] = Tuples.to("invite_channel_id", invite != null ? invite.getChannelId() : null);
-        tuples2Arr[4] = Tuples.to("invite_guild_scheduled_event_id", invite != null ? invite.getGuildScheduledEventId() : null);
-        AnalyticsTracker.INSTANCE.inviteSent(invite, channel, Maps6.plus(Maps6.mapOf(tuples2Arr), getGuildAndChannelSnapshotAnalyticsProperties(message.getChannelId())));
+        C12238m.checkNotNullParameter(message, "message");
+        C12238m.checkNotNullParameter(location, ModelAuditLogEntry.CHANGE_KEY_LOCATION);
+        Pair[] pairArr = new Pair[5];
+        pairArr[0] = C12116o.m10073to(ModelAuditLogEntry.CHANGE_KEY_LOCATION, location);
+        pairArr[1] = C12116o.m10073to("message_id", Long.valueOf(message.getId()));
+        pairArr[2] = C12116o.m10073to("invite_guild_id", invite != null ? invite.getGuildId() : null);
+        pairArr[3] = C12116o.m10073to("invite_channel_id", invite != null ? invite.getChannelId() : null);
+        pairArr[4] = C12116o.m10073to("invite_guild_scheduled_event_id", invite != null ? invite.getGuildScheduledEventId() : null);
+        AnalyticsTracker.INSTANCE.inviteSent(invite, channel, C12136h0.plus(C12136h0.mapOf(pairArr), getGuildAndChannelSnapshotAnalyticsProperties(message.getChannelId())));
     }
 }

@@ -13,33 +13,37 @@ import com.google.android.material.button.MaterialButton;
 /* JADX INFO: loaded from: classes.dex */
 public final class WidgetDonutBetaPopupBinding implements ViewBinding {
 
+    /* JADX INFO: renamed from: a */
     @NonNull
-    public final ConstraintLayout a;
+    public final ConstraintLayout f16485a;
 
-    /* JADX INFO: renamed from: b, reason: collision with root package name */
+    /* JADX INFO: renamed from: b */
     @NonNull
-    public final LinkifiedTextView f2368b;
+    public final LinkifiedTextView f16486b;
 
+    /* JADX INFO: renamed from: c */
     @NonNull
-    public final ImageView c;
+    public final ImageView f16487c;
 
+    /* JADX INFO: renamed from: d */
     @NonNull
-    public final MaterialButton d;
+    public final MaterialButton f16488d;
 
+    /* JADX INFO: renamed from: e */
     @NonNull
-    public final MaterialButton e;
+    public final MaterialButton f16489e;
 
     public WidgetDonutBetaPopupBinding(@NonNull ConstraintLayout constraintLayout, @NonNull LinearLayout linearLayout, @NonNull LinkifiedTextView linkifiedTextView, @NonNull ImageView imageView, @NonNull MaterialButton materialButton, @NonNull MaterialButton materialButton2, @NonNull TextView textView) {
-        this.a = constraintLayout;
-        this.f2368b = linkifiedTextView;
-        this.c = imageView;
-        this.d = materialButton;
-        this.e = materialButton2;
+        this.f16485a = constraintLayout;
+        this.f16486b = linkifiedTextView;
+        this.f16487c = imageView;
+        this.f16488d = materialButton;
+        this.f16489e = materialButton2;
     }
 
     @Override // androidx.viewbinding.ViewBinding
     @NonNull
     public View getRoot() {
-        return this.a;
+        return this.f16485a;
     }
 }

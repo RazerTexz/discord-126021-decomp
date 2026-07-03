@@ -7,92 +7,105 @@ import android.os.Handler;
 import android.os.Looper;
 import android.util.AttributeSet;
 import android.util.Log;
-import b.i.a.f.e.o.f;
-import b.i.e.BarcodeFormat;
-import b.i.e.BinaryBitmap;
-import b.i.e.DecodeHintType;
-import b.i.e.InvertedLuminanceSource;
-import b.i.e.MultiFormatReader;
-import b.i.e.PlanarYUVLuminanceSource;
-import b.i.e.n.HybridBinarizer;
 import com.google.zxing.NotFoundException;
 import com.google.zxing.ReaderException;
 import com.google.zxing.Result;
-import e0.a.a.a.BarcodeScannerView;
-import e0.a.a.a.CameraPreview2;
-import e0.a.a.a.ViewFinderView;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.EnumMap;
 import java.util.List;
+import p007b.p225i.p226a.p288f.p299e.p308o.C3404f;
+import p007b.p225i.p414e.C4948c;
+import p007b.p225i.p414e.C4950e;
+import p007b.p225i.p414e.C4952g;
+import p007b.p225i.p414e.C4953h;
+import p007b.p225i.p414e.EnumC4946a;
+import p007b.p225i.p414e.EnumC4949d;
+import p007b.p225i.p414e.p418n.C4969h;
+import p596e0.p597a.p598a.p599a.AbstractC12253a;
+import p596e0.p597a.p598a.p599a.C12259g;
+import p596e0.p597a.p598a.p599a.SurfaceHolderCallbackC12256d;
 
 /* JADX INFO: loaded from: classes3.dex */
-public class ZXingScannerView extends BarcodeScannerView {
-    public static final List<BarcodeFormat> D;
-    public MultiFormatReader E;
-    public List<BarcodeFormat> F;
-    public b G;
+public class ZXingScannerView extends AbstractC12253a {
 
-    public class a implements Runnable {
-        public final /* synthetic */ Result j;
+    /* JADX INFO: renamed from: D */
+    public static final List<EnumC4946a> f27495D;
 
-        public a(Result result) {
-            this.j = result;
+    /* JADX INFO: renamed from: E */
+    public C4952g f27496E;
+
+    /* JADX INFO: renamed from: F */
+    public List<EnumC4946a> f27497F;
+
+    /* JADX INFO: renamed from: G */
+    public InterfaceC12927b f27498G;
+
+    /* JADX INFO: renamed from: me.dm7.barcodescanner.zxing.ZXingScannerView$a */
+    public class RunnableC12926a implements Runnable {
+
+        /* JADX INFO: renamed from: j */
+        public final /* synthetic */ Result f27499j;
+
+        public RunnableC12926a(Result result) {
+            this.f27499j = result;
         }
 
         @Override // java.lang.Runnable
         public void run() {
             ZXingScannerView zXingScannerView = ZXingScannerView.this;
-            b bVar = zXingScannerView.G;
-            zXingScannerView.G = null;
-            CameraPreview2 cameraPreview2 = zXingScannerView.k;
-            if (cameraPreview2 != null) {
-                cameraPreview2.e();
+            InterfaceC12927b interfaceC12927b = zXingScannerView.f27498G;
+            zXingScannerView.f27498G = null;
+            SurfaceHolderCallbackC12256d surfaceHolderCallbackC12256d = zXingScannerView.f25300k;
+            if (surfaceHolderCallbackC12256d != null) {
+                surfaceHolderCallbackC12256d.m10099e();
             }
-            if (bVar != null) {
-                bVar.handleResult(this.j);
+            if (interfaceC12927b != null) {
+                interfaceC12927b.handleResult(this.f27499j);
             }
         }
     }
 
-    public interface b {
+    /* JADX INFO: renamed from: me.dm7.barcodescanner.zxing.ZXingScannerView$b */
+    public interface InterfaceC12927b {
         void handleResult(Result result);
     }
 
     static {
         ArrayList arrayList = new ArrayList();
-        D = arrayList;
-        arrayList.add(BarcodeFormat.AZTEC);
-        arrayList.add(BarcodeFormat.CODABAR);
-        arrayList.add(BarcodeFormat.CODE_39);
-        arrayList.add(BarcodeFormat.CODE_93);
-        arrayList.add(BarcodeFormat.CODE_128);
-        arrayList.add(BarcodeFormat.DATA_MATRIX);
-        arrayList.add(BarcodeFormat.EAN_8);
-        arrayList.add(BarcodeFormat.EAN_13);
-        arrayList.add(BarcodeFormat.ITF);
-        arrayList.add(BarcodeFormat.MAXICODE);
-        arrayList.add(BarcodeFormat.PDF_417);
-        arrayList.add(BarcodeFormat.QR_CODE);
-        arrayList.add(BarcodeFormat.RSS_14);
-        arrayList.add(BarcodeFormat.RSS_EXPANDED);
-        arrayList.add(BarcodeFormat.UPC_A);
-        arrayList.add(BarcodeFormat.UPC_E);
-        arrayList.add(BarcodeFormat.UPC_EAN_EXTENSION);
+        f27495D = arrayList;
+        arrayList.add(EnumC4946a.AZTEC);
+        arrayList.add(EnumC4946a.CODABAR);
+        arrayList.add(EnumC4946a.CODE_39);
+        arrayList.add(EnumC4946a.CODE_93);
+        arrayList.add(EnumC4946a.CODE_128);
+        arrayList.add(EnumC4946a.DATA_MATRIX);
+        arrayList.add(EnumC4946a.EAN_8);
+        arrayList.add(EnumC4946a.EAN_13);
+        arrayList.add(EnumC4946a.ITF);
+        arrayList.add(EnumC4946a.MAXICODE);
+        arrayList.add(EnumC4946a.PDF_417);
+        arrayList.add(EnumC4946a.QR_CODE);
+        arrayList.add(EnumC4946a.RSS_14);
+        arrayList.add(EnumC4946a.RSS_EXPANDED);
+        arrayList.add(EnumC4946a.UPC_A);
+        arrayList.add(EnumC4946a.UPC_E);
+        arrayList.add(EnumC4946a.UPC_EAN_EXTENSION);
     }
 
     public ZXingScannerView(Context context, AttributeSet attributeSet) {
         super(context, attributeSet);
-        c();
+        m10953c();
     }
 
-    public PlanarYUVLuminanceSource b(byte[] bArr, int i, int i2) {
+    /* JADX INFO: renamed from: b */
+    public C4953h m10952b(byte[] bArr, int i, int i2) {
         Rect rect;
         synchronized (this) {
-            if (this.m == null) {
-                Rect framingRect = ((ViewFinderView) this.l).getFramingRect();
-                int width = this.l.getWidth();
-                int height = this.l.getHeight();
+            if (this.f25302m == null) {
+                Rect framingRect = ((C12259g) this.f25301l).getFramingRect();
+                int width = this.f25301l.getWidth();
+                int height = this.f25301l.getHeight();
                 if (framingRect == null || width == 0 || height == 0) {
                     rect = null;
                 } else {
@@ -105,48 +118,49 @@ public class ZXingScannerView extends BarcodeScannerView {
                         rect2.top = (rect2.top * i2) / height;
                         rect2.bottom = (rect2.bottom * i2) / height;
                     }
-                    this.m = rect2;
-                    rect = this.m;
+                    this.f25302m = rect2;
+                    rect = this.f25302m;
                 }
             } else {
-                rect = this.m;
+                rect = this.f25302m;
             }
         }
         if (rect == null) {
             return null;
         }
         try {
-            return new PlanarYUVLuminanceSource(bArr, i, i2, rect.left, rect.top, rect.width(), rect.height(), false);
+            return new C4953h(bArr, i, i2, rect.left, rect.top, rect.width(), rect.height(), false);
         } catch (Exception unused) {
             return null;
         }
     }
 
-    public final void c() {
-        EnumMap enumMap = new EnumMap(DecodeHintType.class);
-        enumMap.put(DecodeHintType.POSSIBLE_FORMATS, getFormats());
-        MultiFormatReader multiFormatReader = new MultiFormatReader();
-        this.E = multiFormatReader;
-        multiFormatReader.c(enumMap);
+    /* JADX INFO: renamed from: c */
+    public final void m10953c() {
+        EnumMap enumMap = new EnumMap(EnumC4949d.class);
+        enumMap.put(EnumC4949d.POSSIBLE_FORMATS, getFormats());
+        C4952g c4952g = new C4952g();
+        this.f27496E = c4952g;
+        c4952g.m6921c(enumMap);
     }
 
-    public Collection<BarcodeFormat> getFormats() {
-        List<BarcodeFormat> list = this.F;
-        return list == null ? D : list;
+    public Collection<EnumC4946a> getFormats() {
+        List<EnumC4946a> list = this.f27497F;
+        return list == null ? f27495D : list;
     }
 
     @Override // android.hardware.Camera.PreviewCallback
     public void onPreviewFrame(byte[] bArr, Camera camera) {
         byte[] bArr2;
-        Result resultB;
-        if (this.G == null) {
+        Result resultM6920b;
+        if (this.f27498G == null) {
             return;
         }
         try {
             Camera.Size previewSize = camera.getParameters().getPreviewSize();
             int i = previewSize.width;
             int i2 = previewSize.height;
-            if (f.q0(getContext()) != 1) {
+            if (C3404f.m4332q0(getContext()) != 1) {
                 bArr2 = bArr;
                 int i3 = i;
                 i = i2;
@@ -188,46 +202,46 @@ public class ZXingScannerView extends BarcodeScannerView {
                     i2 = i12;
                 }
             }
-            PlanarYUVLuminanceSource planarYUVLuminanceSourceB = b(bArr2, i2, i);
-            Result resultB2 = null;
-            if (planarYUVLuminanceSourceB != null) {
-                BinaryBitmap binaryBitmap = new BinaryBitmap(new HybridBinarizer(planarYUVLuminanceSourceB));
+            C4953h c4953hM10952b = m10952b(bArr2, i2, i);
+            Result resultM6920b2 = null;
+            if (c4953hM10952b != null) {
+                C4948c c4948c = new C4948c(new C4969h(c4953hM10952b));
                 try {
-                    MultiFormatReader multiFormatReader = this.E;
-                    if (multiFormatReader.f1824b == null) {
-                        multiFormatReader.c(null);
+                    C4952g c4952g = this.f27496E;
+                    if (c4952g.f13189b == null) {
+                        c4952g.m6921c(null);
                     }
-                    resultB = multiFormatReader.b(binaryBitmap);
-                    this.E.reset();
+                    resultM6920b = c4952g.m6920b(c4948c);
+                    this.f27496E.reset();
                 } catch (ReaderException | ArrayIndexOutOfBoundsException | NullPointerException unused) {
-                    this.E.reset();
-                    resultB = null;
+                    this.f27496E.reset();
+                    resultM6920b = null;
                 } catch (Throwable th) {
-                    this.E.reset();
+                    this.f27496E.reset();
                     throw th;
                 }
-                if (resultB == null) {
-                    BinaryBitmap binaryBitmap2 = new BinaryBitmap(new HybridBinarizer(new InvertedLuminanceSource(planarYUVLuminanceSourceB)));
+                if (resultM6920b == null) {
+                    C4948c c4948c2 = new C4948c(new C4969h(new C4950e(c4953hM10952b)));
                     try {
-                        MultiFormatReader multiFormatReader2 = this.E;
-                        if (multiFormatReader2.f1824b == null) {
-                            multiFormatReader2.c(null);
+                        C4952g c4952g2 = this.f27496E;
+                        if (c4952g2.f13189b == null) {
+                            c4952g2.m6921c(null);
                         }
-                        resultB2 = multiFormatReader2.b(binaryBitmap2);
-                        this.E.reset();
+                        resultM6920b2 = c4952g2.m6920b(c4948c2);
+                        this.f27496E.reset();
                     } catch (NotFoundException unused2) {
-                        this.E.reset();
-                        resultB2 = resultB;
+                        this.f27496E.reset();
+                        resultM6920b2 = resultM6920b;
                     } catch (Throwable th2) {
-                        this.E.reset();
+                        this.f27496E.reset();
                         throw th2;
                     }
                 } else {
-                    resultB2 = resultB;
+                    resultM6920b2 = resultM6920b;
                 }
             }
-            if (resultB2 != null) {
-                new Handler(Looper.getMainLooper()).post(new a(resultB2));
+            if (resultM6920b2 != null) {
+                new Handler(Looper.getMainLooper()).post(new RunnableC12926a(resultM6920b2));
             } else {
                 camera.setOneShotPreviewCallback(this);
             }
@@ -236,12 +250,12 @@ public class ZXingScannerView extends BarcodeScannerView {
         }
     }
 
-    public void setFormats(List<BarcodeFormat> list) {
-        this.F = list;
-        c();
+    public void setFormats(List<EnumC4946a> list) {
+        this.f27497F = list;
+        m10953c();
     }
 
-    public void setResultHandler(b bVar) {
-        this.G = bVar;
+    public void setResultHandler(InterfaceC12927b interfaceC12927b) {
+        this.f27498G = interfaceC12927b;
     }
 }

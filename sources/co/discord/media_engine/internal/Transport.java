@@ -1,10 +1,10 @@
 package co.discord.media_engine.internal;
 
-import a0.a.a.b;
-import b.d.b.a.outline;
 import co.discord.media_engine.ReceiverReport;
-import d0.z.d.Intrinsics3;
 import java.util.Arrays;
+import p001a0.p002a.p003a.C0002b;
+import p007b.p100d.p104b.p105a.C1643a;
+import p507d0.p592z.p594d.C12238m;
 
 /* JADX INFO: compiled from: NativeStatistics.kt */
 /* JADX INFO: loaded from: classes.dex */
@@ -18,7 +18,7 @@ public final /* data */ class Transport {
     private final int sendBandwidth;
 
     public Transport(long j, int i, long j2, int i2, int i3, String str, ReceiverReport[] receiverReportArr) {
-        Intrinsics3.checkNotNullParameter(str, "localAddress");
+        C12238m.checkNotNullParameter(str, "localAddress");
         this.decryptionFailures = j;
         this.maxPaddingBitrate = i;
         this.pacerDelay = j2;
@@ -64,7 +64,7 @@ public final /* data */ class Transport {
     }
 
     public final Transport copy(long decryptionFailures, int maxPaddingBitrate, long pacerDelay, int rtt, int sendBandwidth, String localAddress, ReceiverReport[] receiverReports) {
-        Intrinsics3.checkNotNullParameter(localAddress, "localAddress");
+        C12238m.checkNotNullParameter(localAddress, "localAddress");
         return new Transport(decryptionFailures, maxPaddingBitrate, pacerDelay, rtt, sendBandwidth, localAddress, receiverReports);
     }
 
@@ -76,7 +76,7 @@ public final /* data */ class Transport {
             return false;
         }
         Transport transport = (Transport) other;
-        return this.decryptionFailures == transport.decryptionFailures && this.maxPaddingBitrate == transport.maxPaddingBitrate && this.pacerDelay == transport.pacerDelay && this.rtt == transport.rtt && this.sendBandwidth == transport.sendBandwidth && Intrinsics3.areEqual(this.localAddress, transport.localAddress) && Intrinsics3.areEqual(this.receiverReports, transport.receiverReports);
+        return this.decryptionFailures == transport.decryptionFailures && this.maxPaddingBitrate == transport.maxPaddingBitrate && this.pacerDelay == transport.pacerDelay && this.rtt == transport.rtt && this.sendBandwidth == transport.sendBandwidth && C12238m.areEqual(this.localAddress, transport.localAddress) && C12238m.areEqual(this.receiverReports, transport.receiverReports);
     }
 
     public final long getDecryptionFailures() {
@@ -108,29 +108,29 @@ public final /* data */ class Transport {
     }
 
     public int hashCode() {
-        int iA = (((((b.a(this.pacerDelay) + (((b.a(this.decryptionFailures) * 31) + this.maxPaddingBitrate) * 31)) * 31) + this.rtt) * 31) + this.sendBandwidth) * 31;
+        int iM3a = (((((C0002b.m3a(this.pacerDelay) + (((C0002b.m3a(this.decryptionFailures) * 31) + this.maxPaddingBitrate) * 31)) * 31) + this.rtt) * 31) + this.sendBandwidth) * 31;
         String str = this.localAddress;
-        int iHashCode = (iA + (str != null ? str.hashCode() : 0)) * 31;
+        int iHashCode = (iM3a + (str != null ? str.hashCode() : 0)) * 31;
         ReceiverReport[] receiverReportArr = this.receiverReports;
         return iHashCode + (receiverReportArr != null ? Arrays.hashCode(receiverReportArr) : 0);
     }
 
     public String toString() {
-        StringBuilder sbU = outline.U("Transport(decryptionFailures=");
-        sbU.append(this.decryptionFailures);
-        sbU.append(", maxPaddingBitrate=");
-        sbU.append(this.maxPaddingBitrate);
-        sbU.append(", pacerDelay=");
-        sbU.append(this.pacerDelay);
-        sbU.append(", rtt=");
-        sbU.append(this.rtt);
-        sbU.append(", sendBandwidth=");
-        sbU.append(this.sendBandwidth);
-        sbU.append(", localAddress=");
-        sbU.append(this.localAddress);
-        sbU.append(", receiverReports=");
-        sbU.append(Arrays.toString(this.receiverReports));
-        sbU.append(")");
-        return sbU.toString();
+        StringBuilder sbM833U = C1643a.m833U("Transport(decryptionFailures=");
+        sbM833U.append(this.decryptionFailures);
+        sbM833U.append(", maxPaddingBitrate=");
+        sbM833U.append(this.maxPaddingBitrate);
+        sbM833U.append(", pacerDelay=");
+        sbM833U.append(this.pacerDelay);
+        sbM833U.append(", rtt=");
+        sbM833U.append(this.rtt);
+        sbM833U.append(", sendBandwidth=");
+        sbM833U.append(this.sendBandwidth);
+        sbM833U.append(", localAddress=");
+        sbM833U.append(this.localAddress);
+        sbM833U.append(", receiverReports=");
+        sbM833U.append(Arrays.toString(this.receiverReports));
+        sbM833U.append(")");
+        return sbM833U.toString();
     }
 }

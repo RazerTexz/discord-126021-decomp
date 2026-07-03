@@ -1,14 +1,14 @@
 package com.discord.analytics.generated.events;
 
-import b.d.b.a.outline;
 import com.discord.analytics.generated.traits.TrackBase;
-import com.discord.analytics.generated.traits.TrackBase2;
+import com.discord.analytics.generated.traits.TrackBaseReceiver;
 import com.discord.api.science.AnalyticsSchema;
-import d0.z.d.Intrinsics3;
+import p007b.p100d.p104b.p105a.C1643a;
+import p507d0.p592z.p594d.C12238m;
 
 /* JADX INFO: compiled from: TrackNativeEchoCancellationConfigured.kt */
 /* JADX INFO: loaded from: classes.dex */
-public final /* data */ class TrackNativeEchoCancellationConfigured implements AnalyticsSchema, TrackBase2 {
+public final /* data */ class TrackNativeEchoCancellationConfigured implements AnalyticsSchema, TrackBaseReceiver {
     private TrackBase trackBase;
     private final Boolean builtinAecSupportedJava = null;
     private final Boolean builtinAecSupportedNative = null;
@@ -35,7 +35,7 @@ public final /* data */ class TrackNativeEchoCancellationConfigured implements A
             return false;
         }
         TrackNativeEchoCancellationConfigured trackNativeEchoCancellationConfigured = (TrackNativeEchoCancellationConfigured) other;
-        return Intrinsics3.areEqual(this.builtinAecSupportedJava, trackNativeEchoCancellationConfigured.builtinAecSupportedJava) && Intrinsics3.areEqual(this.builtinAecSupportedNative, trackNativeEchoCancellationConfigured.builtinAecSupportedNative) && Intrinsics3.areEqual(this.builtinAecRequested, trackNativeEchoCancellationConfigured.builtinAecRequested) && Intrinsics3.areEqual(this.builtinAecEnabled, trackNativeEchoCancellationConfigured.builtinAecEnabled) && Intrinsics3.areEqual(this.aecEnabledInSettings, trackNativeEchoCancellationConfigured.aecEnabledInSettings) && Intrinsics3.areEqual(this.aecEnabledInNativeConfig, trackNativeEchoCancellationConfigured.aecEnabledInNativeConfig) && Intrinsics3.areEqual(this.aecMobileMode, trackNativeEchoCancellationConfigured.aecMobileMode) && Intrinsics3.areEqual(this.aecEnabledByDefault, trackNativeEchoCancellationConfigured.aecEnabledByDefault) && Intrinsics3.areEqual(this.aecMobileModeByDefault, trackNativeEchoCancellationConfigured.aecMobileModeByDefault);
+        return C12238m.areEqual(this.builtinAecSupportedJava, trackNativeEchoCancellationConfigured.builtinAecSupportedJava) && C12238m.areEqual(this.builtinAecSupportedNative, trackNativeEchoCancellationConfigured.builtinAecSupportedNative) && C12238m.areEqual(this.builtinAecRequested, trackNativeEchoCancellationConfigured.builtinAecRequested) && C12238m.areEqual(this.builtinAecEnabled, trackNativeEchoCancellationConfigured.builtinAecEnabled) && C12238m.areEqual(this.aecEnabledInSettings, trackNativeEchoCancellationConfigured.aecEnabledInSettings) && C12238m.areEqual(this.aecEnabledInNativeConfig, trackNativeEchoCancellationConfigured.aecEnabledInNativeConfig) && C12238m.areEqual(this.aecMobileMode, trackNativeEchoCancellationConfigured.aecMobileMode) && C12238m.areEqual(this.aecEnabledByDefault, trackNativeEchoCancellationConfigured.aecEnabledByDefault) && C12238m.areEqual(this.aecMobileModeByDefault, trackNativeEchoCancellationConfigured.aecMobileModeByDefault);
     }
 
     public int hashCode() {
@@ -60,23 +60,23 @@ public final /* data */ class TrackNativeEchoCancellationConfigured implements A
     }
 
     public String toString() {
-        StringBuilder sbU = outline.U("TrackNativeEchoCancellationConfigured(builtinAecSupportedJava=");
-        sbU.append(this.builtinAecSupportedJava);
-        sbU.append(", builtinAecSupportedNative=");
-        sbU.append(this.builtinAecSupportedNative);
-        sbU.append(", builtinAecRequested=");
-        sbU.append(this.builtinAecRequested);
-        sbU.append(", builtinAecEnabled=");
-        sbU.append(this.builtinAecEnabled);
-        sbU.append(", aecEnabledInSettings=");
-        sbU.append(this.aecEnabledInSettings);
-        sbU.append(", aecEnabledInNativeConfig=");
-        sbU.append(this.aecEnabledInNativeConfig);
-        sbU.append(", aecMobileMode=");
-        sbU.append(this.aecMobileMode);
-        sbU.append(", aecEnabledByDefault=");
-        sbU.append(this.aecEnabledByDefault);
-        sbU.append(", aecMobileModeByDefault=");
-        return outline.D(sbU, this.aecMobileModeByDefault, ")");
+        StringBuilder sbM833U = C1643a.m833U("TrackNativeEchoCancellationConfigured(builtinAecSupportedJava=");
+        sbM833U.append(this.builtinAecSupportedJava);
+        sbM833U.append(", builtinAecSupportedNative=");
+        sbM833U.append(this.builtinAecSupportedNative);
+        sbM833U.append(", builtinAecRequested=");
+        sbM833U.append(this.builtinAecRequested);
+        sbM833U.append(", builtinAecEnabled=");
+        sbM833U.append(this.builtinAecEnabled);
+        sbM833U.append(", aecEnabledInSettings=");
+        sbM833U.append(this.aecEnabledInSettings);
+        sbM833U.append(", aecEnabledInNativeConfig=");
+        sbM833U.append(this.aecEnabledInNativeConfig);
+        sbM833U.append(", aecMobileMode=");
+        sbM833U.append(this.aecMobileMode);
+        sbM833U.append(", aecEnabledByDefault=");
+        sbM833U.append(this.aecEnabledByDefault);
+        sbM833U.append(", aecMobileModeByDefault=");
+        return C1643a.m816D(sbM833U, this.aecMobileModeByDefault, ")");
     }
 }

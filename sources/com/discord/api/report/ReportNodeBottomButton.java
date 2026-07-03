@@ -1,7 +1,7 @@
 package com.discord.api.report;
 
-import b.d.b.a.outline;
 import kotlin.jvm.internal.DefaultConstructorMarker;
+import p007b.p100d.p104b.p105a.C1643a;
 
 /* JADX INFO: compiled from: InAppReportsMenu.kt */
 /* JADX INFO: loaded from: classes.dex */
@@ -52,7 +52,7 @@ public abstract class ReportNodeBottomButton {
         }
 
         public String toString() {
-            return outline.B(outline.U("Next(target="), this.target, ")");
+            return C1643a.m814B(C1643a.m833U("Next(target="), this.target, ")");
         }
     }
 

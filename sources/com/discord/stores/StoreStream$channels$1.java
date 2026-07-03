@@ -1,13 +1,13 @@
 package com.discord.stores;
 
-import d0.z.d.Lambda;
 import java.util.Map;
 import kotlin.jvm.functions.Function1;
-import rx.Observable;
+import p507d0.p592z.p594d.AbstractC12240o;
+import p658rx.Observable;
 
 /* JADX INFO: compiled from: StoreStream.kt */
 /* JADX INFO: loaded from: classes2.dex */
-public final class StoreStream$channels$1 extends Lambda implements Function1<Long, Observable<Map<Long, ? extends Long>>> {
+public final class StoreStream$channels$1 extends AbstractC12240o implements Function1<Long, Observable<Map<Long, ? extends Long>>> {
     public final /* synthetic */ StoreStream this$0;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */

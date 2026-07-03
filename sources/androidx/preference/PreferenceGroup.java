@@ -61,10 +61,10 @@ public abstract class PreferenceGroup extends Preference {
             }
         };
         this.mPreferences = new ArrayList();
-        TypedArray typedArrayObtainStyledAttributes = context.obtainStyledAttributes(attributeSet, R.styleable.PreferenceGroup, i, i2);
-        int i3 = R.styleable.PreferenceGroup_orderingFromXml;
+        TypedArray typedArrayObtainStyledAttributes = context.obtainStyledAttributes(attributeSet, C0525R.styleable.PreferenceGroup, i, i2);
+        int i3 = C0525R.styleable.PreferenceGroup_orderingFromXml;
         this.mOrderingAsAdded = TypedArrayUtils.getBoolean(typedArrayObtainStyledAttributes, i3, i3, true);
-        int i4 = R.styleable.PreferenceGroup_initialExpandedChildrenCount;
+        int i4 = C0525R.styleable.PreferenceGroup_initialExpandedChildrenCount;
         if (typedArrayObtainStyledAttributes.hasValue(i4)) {
             setInitialExpandedChildrenCount(TypedArrayUtils.getInt(typedArrayObtainStyledAttributes, i4, i4, Integer.MAX_VALUE));
         }

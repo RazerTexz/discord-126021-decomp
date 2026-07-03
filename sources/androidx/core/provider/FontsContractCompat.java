@@ -89,7 +89,7 @@ public class FontsContractCompat {
 
         @RestrictTo({RestrictTo.Scope.LIBRARY_GROUP_PREFIX})
         @Deprecated
-        public FontInfo(@NonNull Uri uri, @IntRange(from = 0) int i, @IntRange(from = 1, to = StoreConnectivity.DELAY_NOMINAL) int i2, boolean z2, int i3) {
+        public FontInfo(@NonNull Uri uri, @IntRange(from = 0) int i, @IntRange(from = 1, m76to = StoreConnectivity.DELAY_NOMINAL) int i2, boolean z2, int i3) {
             this.mUri = (Uri) Preconditions.checkNotNull(uri);
             this.mTtcIndex = i;
             this.mWeight = i2;
@@ -97,7 +97,7 @@ public class FontsContractCompat {
             this.mResultCode = i3;
         }
 
-        public static FontInfo create(@NonNull Uri uri, @IntRange(from = 0) int i, @IntRange(from = 1, to = StoreConnectivity.DELAY_NOMINAL) int i2, boolean z2, int i3) {
+        public static FontInfo create(@NonNull Uri uri, @IntRange(from = 0) int i, @IntRange(from = 1, m76to = StoreConnectivity.DELAY_NOMINAL) int i2, boolean z2, int i3) {
             return new FontInfo(uri, i, i2, z2, i3);
         }
 
@@ -115,7 +115,7 @@ public class FontsContractCompat {
             return this.mUri;
         }
 
-        @IntRange(from = 1, to = StoreConnectivity.DELAY_NOMINAL)
+        @IntRange(from = 1, m76to = StoreConnectivity.DELAY_NOMINAL)
         public int getWeight() {
             return this.mWeight;
         }

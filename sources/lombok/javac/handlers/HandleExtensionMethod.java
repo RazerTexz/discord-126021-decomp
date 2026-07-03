@@ -27,7 +27,7 @@ public class HandleExtensionMethod extends JavacAnnotationHandler<ExtensionMetho
     public void handle(AnnotationValues<ExtensionMethod> annotation, JCTree.JCAnnotation source, JavacNode annotationNode) {
         HandlerUtil.handleExperimentalFlagUsage(annotationNode, ConfigurationKeys.EXTENSION_METHOD_FLAG_USAGE, "@ExtensionMethod");
         JavacHandlerUtil.deleteAnnotationIfNeccessary(annotationNode, (Class<? extends Annotation>) ExtensionMethod.class);
-        JavacNode typeNode = annotationNode.up();
+        JavacNode typeNode = annotationNode.m10925up();
         boolean isClassOrEnum = JavacHandlerUtil.isClassOrEnum(typeNode);
         if (!isClassOrEnum) {
             annotationNode.addError("@ExtensionMethod can only be used on a class or an enum");
@@ -101,7 +101,7 @@ public class HandleExtensionMethod extends JavacAnnotationHandler<ExtensionMetho
         }
 
         public void replace() {
-            this.annotationNode.up().get().accept(this, (Object) null);
+            this.annotationNode.m10925up().get().accept(this, (Object) null);
         }
 
         public Void visitMethodInvocation(MethodInvocationTree tree, Void p) {

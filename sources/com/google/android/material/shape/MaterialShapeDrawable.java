@@ -30,7 +30,7 @@ import androidx.annotation.RestrictTo;
 import androidx.annotation.StyleRes;
 import androidx.core.graphics.drawable.TintAwareDrawable;
 import androidx.core.util.ObjectsCompat;
-import com.google.android.material.R;
+import com.google.android.material.C10817R;
 import com.google.android.material.color.MaterialColors;
 import com.google.android.material.elevation.ElevationOverlayProvider;
 import com.google.android.material.shadow.ShadowRenderer;
@@ -51,9 +51,9 @@ public class MaterialShapeDrawable extends Drawable implements TintAwareDrawable
     private static final String TAG = MaterialShapeDrawable.class.getSimpleName();
     private static final Paint clearPaint = new Paint(1);
     private final BitSet containsIncompatibleShadowOp;
-    private final ShapePath.d[] cornerShadowOperation;
-    private c drawableState;
-    private final ShapePath.d[] edgeShadowOperation;
+    private final ShapePath.AbstractC10974d[] cornerShadowOperation;
+    private C10967c drawableState;
+    private final ShapePath.AbstractC10974d[] edgeShadowOperation;
     private final Paint fillPaint;
     private final RectF insetRectF;
     private final Matrix matrix;
@@ -85,8 +85,9 @@ public class MaterialShapeDrawable extends Drawable implements TintAwareDrawable
     public @interface CompatibilityShadowMode {
     }
 
-    public class a implements ShapeAppearancePathProvider.PathListener {
-        public a() {
+    /* JADX INFO: renamed from: com.google.android.material.shape.MaterialShapeDrawable$a */
+    public class C10965a implements ShapeAppearancePathProvider.PathListener {
+        public C10965a() {
         }
 
         @Override // com.google.android.material.shape.ShapeAppearancePathProvider.PathListener
@@ -102,22 +103,25 @@ public class MaterialShapeDrawable extends Drawable implements TintAwareDrawable
         }
     }
 
-    public class b implements ShapeAppearanceModel.CornerSizeUnaryOperator {
-        public final /* synthetic */ float a;
+    /* JADX INFO: renamed from: com.google.android.material.shape.MaterialShapeDrawable$b */
+    public class C10966b implements ShapeAppearanceModel.CornerSizeUnaryOperator {
 
-        public b(MaterialShapeDrawable materialShapeDrawable, float f) {
-            this.a = f;
+        /* JADX INFO: renamed from: a */
+        public final /* synthetic */ float f21069a;
+
+        public C10966b(MaterialShapeDrawable materialShapeDrawable, float f) {
+            this.f21069a = f;
         }
 
         @Override // com.google.android.material.shape.ShapeAppearanceModel.CornerSizeUnaryOperator
         @NonNull
         public CornerSize apply(@NonNull CornerSize cornerSize) {
-            return cornerSize instanceof RelativeCornerSize ? cornerSize : new AdjustedCornerSize(this.a, cornerSize);
+            return cornerSize instanceof RelativeCornerSize ? cornerSize : new AdjustedCornerSize(this.f21069a, cornerSize);
         }
     }
 
-    public /* synthetic */ MaterialShapeDrawable(c cVar, a aVar) {
-        this(cVar);
+    public /* synthetic */ MaterialShapeDrawable(C10967c c10967c, C10965a c10965a) {
+        this(c10967c);
     }
 
     @Nullable
@@ -132,10 +136,10 @@ public class MaterialShapeDrawable extends Drawable implements TintAwareDrawable
 
     private void calculatePath(@NonNull RectF rectF, @NonNull Path path) {
         calculatePathForSize(rectF, path);
-        if (this.drawableState.j != 1.0f) {
+        if (this.drawableState.f21079j != 1.0f) {
             this.matrix.reset();
             Matrix matrix = this.matrix;
-            float f = this.drawableState.j;
+            float f = this.drawableState.f21079j;
             matrix.setScale(f, f, rectF.width() / 2.0f, rectF.height() / 2.0f);
             path.transform(this.matrix);
         }
@@ -143,9 +147,9 @@ public class MaterialShapeDrawable extends Drawable implements TintAwareDrawable
     }
 
     private void calculateStrokePath() {
-        ShapeAppearanceModel shapeAppearanceModelWithTransformedCornerSizes = getShapeAppearanceModel().withTransformedCornerSizes(new b(this, -getStrokeInsetLength()));
+        ShapeAppearanceModel shapeAppearanceModelWithTransformedCornerSizes = getShapeAppearanceModel().withTransformedCornerSizes(new C10966b(this, -getStrokeInsetLength()));
         this.strokeShapeAppearance = shapeAppearanceModelWithTransformedCornerSizes;
-        this.pathProvider.calculatePath(shapeAppearanceModelWithTransformedCornerSizes, this.drawableState.k, getBoundsInsetByStroke(), this.pathInsetByStroke);
+        this.pathProvider.calculatePath(shapeAppearanceModelWithTransformedCornerSizes, this.drawableState.f21080k, getBoundsInsetByStroke(), this.pathInsetByStroke);
     }
 
     @NonNull
@@ -171,16 +175,16 @@ public class MaterialShapeDrawable extends Drawable implements TintAwareDrawable
         if (this.containsIncompatibleShadowOp.cardinality() > 0) {
             Log.w(TAG, "Compatibility shadow requested but can't be drawn for all operations in this shape.");
         }
-        if (this.drawableState.f3054s != 0) {
+        if (this.drawableState.f21088s != 0) {
             canvas.drawPath(this.path, this.shadowRenderer.getShadowPaint());
         }
         for (int i = 0; i < 4; i++) {
-            ShapePath.d dVar = this.cornerShadowOperation[i];
+            ShapePath.AbstractC10974d abstractC10974d = this.cornerShadowOperation[i];
             ShadowRenderer shadowRenderer = this.shadowRenderer;
-            int i2 = this.drawableState.r;
-            Matrix matrix = ShapePath.d.a;
-            dVar.a(matrix, shadowRenderer, i2, canvas);
-            this.edgeShadowOperation[i].a(matrix, this.shadowRenderer, this.drawableState.r, canvas);
+            int i2 = this.drawableState.f21087r;
+            Matrix matrix = ShapePath.AbstractC10974d.f21106a;
+            abstractC10974d.mo9146a(matrix, shadowRenderer, i2, canvas);
+            this.edgeShadowOperation[i].mo9146a(matrix, this.shadowRenderer, this.drawableState.f21087r, canvas);
         }
         if (this.shadowBitmapDrawingEnable) {
             int shadowOffsetX = getShadowOffsetX();
@@ -192,7 +196,7 @@ public class MaterialShapeDrawable extends Drawable implements TintAwareDrawable
     }
 
     private void drawFillShape(@NonNull Canvas canvas) {
-        drawShape(canvas, this.fillPaint, this.path, this.drawableState.a, getBoundsAsRectF());
+        drawShape(canvas, this.fillPaint, this.path, this.drawableState.f21070a, getBoundsAsRectF());
     }
 
     private void drawStrokeShape(@NonNull Canvas canvas) {
@@ -215,18 +219,18 @@ public class MaterialShapeDrawable extends Drawable implements TintAwareDrawable
     }
 
     private boolean hasCompatShadow() {
-        c cVar = this.drawableState;
-        int i = cVar.q;
-        return i != 1 && cVar.r > 0 && (i == 2 || requiresCompatShadow());
+        C10967c c10967c = this.drawableState;
+        int i = c10967c.f21086q;
+        return i != 1 && c10967c.f21087r > 0 && (i == 2 || requiresCompatShadow());
     }
 
     private boolean hasFill() {
-        Paint.Style style = this.drawableState.v;
+        Paint.Style style = this.drawableState.f21091v;
         return style == Paint.Style.FILL_AND_STROKE || style == Paint.Style.FILL;
     }
 
     private boolean hasStroke() {
-        Paint.Style style = this.drawableState.v;
+        Paint.Style style = this.drawableState.f21091v;
         return (style == Paint.Style.FILL_AND_STROKE || style == Paint.Style.STROKE) && this.strokePaint.getStrokeWidth() > 0.0f;
     }
 
@@ -248,10 +252,10 @@ public class MaterialShapeDrawable extends Drawable implements TintAwareDrawable
             if (iWidth < 0 || iHeight < 0) {
                 throw new IllegalStateException("Invalid shadow bounds. Check that the treatments result in a valid path.");
             }
-            Bitmap bitmapCreateBitmap = Bitmap.createBitmap((this.drawableState.r * 2) + ((int) this.pathBounds.width()) + iWidth, (this.drawableState.r * 2) + ((int) this.pathBounds.height()) + iHeight, Bitmap.Config.ARGB_8888);
+            Bitmap bitmapCreateBitmap = Bitmap.createBitmap((this.drawableState.f21087r * 2) + ((int) this.pathBounds.width()) + iWidth, (this.drawableState.f21087r * 2) + ((int) this.pathBounds.height()) + iHeight, Bitmap.Config.ARGB_8888);
             Canvas canvas2 = new Canvas(bitmapCreateBitmap);
-            float f = (getBounds().left - this.drawableState.r) - iWidth;
-            float f2 = (getBounds().top - this.drawableState.r) - iHeight;
+            float f = (getBounds().left - this.drawableState.f21087r) - iWidth;
+            float f2 = (getBounds().top - this.drawableState.f21087r) - iHeight;
             canvas2.translate(-f, -f2);
             drawCompatShadow(canvas2);
             canvas.drawBitmap(bitmapCreateBitmap, f, f2, (Paint) null);
@@ -274,13 +278,13 @@ public class MaterialShapeDrawable extends Drawable implements TintAwareDrawable
         int colorForState;
         int color2;
         int colorForState2;
-        if (this.drawableState.d == null || color2 == (colorForState2 = this.drawableState.d.getColorForState(iArr, (color2 = this.fillPaint.getColor())))) {
+        if (this.drawableState.f21073d == null || color2 == (colorForState2 = this.drawableState.f21073d.getColorForState(iArr, (color2 = this.fillPaint.getColor())))) {
             z2 = false;
         } else {
             this.fillPaint.setColor(colorForState2);
             z2 = true;
         }
-        if (this.drawableState.e == null || color == (colorForState = this.drawableState.e.getColorForState(iArr, (color = this.strokePaint.getColor())))) {
+        if (this.drawableState.f21074e == null || color == (colorForState = this.drawableState.f21074e.getColorForState(iArr, (color = this.strokePaint.getColor())))) {
             return z2;
         }
         this.strokePaint.setColor(colorForState);
@@ -290,21 +294,21 @@ public class MaterialShapeDrawable extends Drawable implements TintAwareDrawable
     private boolean updateTintFilter() {
         PorterDuffColorFilter porterDuffColorFilter = this.tintFilter;
         PorterDuffColorFilter porterDuffColorFilter2 = this.strokeTintFilter;
-        c cVar = this.drawableState;
-        this.tintFilter = calculateTintFilter(cVar.g, cVar.h, this.fillPaint, true);
-        c cVar2 = this.drawableState;
-        this.strokeTintFilter = calculateTintFilter(cVar2.f, cVar2.h, this.strokePaint, false);
-        c cVar3 = this.drawableState;
-        if (cVar3.u) {
-            this.shadowRenderer.setShadowColor(cVar3.g.getColorForState(getState(), 0));
+        C10967c c10967c = this.drawableState;
+        this.tintFilter = calculateTintFilter(c10967c.f21076g, c10967c.f21077h, this.fillPaint, true);
+        C10967c c10967c2 = this.drawableState;
+        this.strokeTintFilter = calculateTintFilter(c10967c2.f21075f, c10967c2.f21077h, this.strokePaint, false);
+        C10967c c10967c3 = this.drawableState;
+        if (c10967c3.f21090u) {
+            this.shadowRenderer.setShadowColor(c10967c3.f21076g.getColorForState(getState(), 0));
         }
         return (ObjectsCompat.equals(porterDuffColorFilter, this.tintFilter) && ObjectsCompat.equals(porterDuffColorFilter2, this.strokeTintFilter)) ? false : true;
     }
 
     private void updateZ() {
         float z2 = getZ();
-        this.drawableState.r = (int) Math.ceil(0.75f * z2);
-        this.drawableState.f3054s = (int) Math.ceil(z2 * 0.25f);
+        this.drawableState.f21087r = (int) Math.ceil(0.75f * z2);
+        this.drawableState.f21088s = (int) Math.ceil(z2 * 0.25f);
         updateTintFilter();
         invalidateSelfIgnoreShape();
     }
@@ -312,15 +316,15 @@ public class MaterialShapeDrawable extends Drawable implements TintAwareDrawable
     @RestrictTo({RestrictTo.Scope.LIBRARY_GROUP})
     public final void calculatePathForSize(@NonNull RectF rectF, @NonNull Path path) {
         ShapeAppearancePathProvider shapeAppearancePathProvider = this.pathProvider;
-        c cVar = this.drawableState;
-        shapeAppearancePathProvider.calculatePath(cVar.a, cVar.k, rectF, this.pathShadowListener, path);
+        C10967c c10967c = this.drawableState;
+        shapeAppearancePathProvider.calculatePath(c10967c.f21070a, c10967c.f21080k, rectF, this.pathShadowListener, path);
     }
 
     @ColorInt
     @RestrictTo({RestrictTo.Scope.LIBRARY_GROUP})
     public int compositeElevationOverlayIfNeeded(@ColorInt int i) {
         float parentAbsoluteElevation = getParentAbsoluteElevation() + getZ();
-        ElevationOverlayProvider elevationOverlayProvider = this.drawableState.f3053b;
+        ElevationOverlayProvider elevationOverlayProvider = this.drawableState.f21071b;
         return elevationOverlayProvider != null ? elevationOverlayProvider.compositeOverlayIfNeeded(i, parentAbsoluteElevation) : i;
     }
 
@@ -328,11 +332,11 @@ public class MaterialShapeDrawable extends Drawable implements TintAwareDrawable
     public void draw(@NonNull Canvas canvas) {
         this.fillPaint.setColorFilter(this.tintFilter);
         int alpha = this.fillPaint.getAlpha();
-        this.fillPaint.setAlpha(modulateAlpha(alpha, this.drawableState.m));
+        this.fillPaint.setAlpha(modulateAlpha(alpha, this.drawableState.f21082m));
         this.strokePaint.setColorFilter(this.strokeTintFilter);
-        this.strokePaint.setStrokeWidth(this.drawableState.l);
+        this.strokePaint.setStrokeWidth(this.drawableState.f21081l);
         int alpha2 = this.strokePaint.getAlpha();
-        this.strokePaint.setAlpha(modulateAlpha(alpha2, this.drawableState.m));
+        this.strokePaint.setAlpha(modulateAlpha(alpha2, this.drawableState.f21082m));
         if (this.pathDirty) {
             calculateStrokePath();
             calculatePath(getBoundsAsRectF(), this.path);
@@ -351,15 +355,15 @@ public class MaterialShapeDrawable extends Drawable implements TintAwareDrawable
 
     @RestrictTo({RestrictTo.Scope.LIBRARY_GROUP})
     public void drawShape(@NonNull Canvas canvas, @NonNull Paint paint, @NonNull Path path, @NonNull RectF rectF) {
-        drawShape(canvas, paint, path, this.drawableState.a, rectF);
+        drawShape(canvas, paint, path, this.drawableState.f21070a, rectF);
     }
 
     public float getBottomLeftCornerResolvedSize() {
-        return this.drawableState.a.getBottomLeftCornerSize().getCornerSize(getBoundsAsRectF());
+        return this.drawableState.f21070a.getBottomLeftCornerSize().getCornerSize(getBoundsAsRectF());
     }
 
     public float getBottomRightCornerResolvedSize() {
-        return this.drawableState.a.getBottomRightCornerSize().getCornerSize(getBoundsAsRectF());
+        return this.drawableState.f21070a.getBottomRightCornerSize().getCornerSize(getBoundsAsRectF());
     }
 
     @NonNull
@@ -375,16 +379,16 @@ public class MaterialShapeDrawable extends Drawable implements TintAwareDrawable
     }
 
     public float getElevation() {
-        return this.drawableState.o;
+        return this.drawableState.f21084o;
     }
 
     @Nullable
     public ColorStateList getFillColor() {
-        return this.drawableState.d;
+        return this.drawableState.f21073d;
     }
 
     public float getInterpolation() {
-        return this.drawableState.k;
+        return this.drawableState.f21080k;
     }
 
     @Override // android.graphics.drawable.Drawable
@@ -395,11 +399,11 @@ public class MaterialShapeDrawable extends Drawable implements TintAwareDrawable
     @Override // android.graphics.drawable.Drawable
     @TargetApi(21)
     public void getOutline(@NonNull Outline outline) {
-        if (this.drawableState.q == 2) {
+        if (this.drawableState.f21086q == 2) {
             return;
         }
         if (isRoundRect()) {
-            outline.setRoundRect(getBounds(), getTopLeftCornerResolvedSize() * this.drawableState.k);
+            outline.setRoundRect(getBounds(), getTopLeftCornerResolvedSize() * this.drawableState.f21080k);
             return;
         }
         calculatePath(getBoundsAsRectF(), this.path);
@@ -413,7 +417,7 @@ public class MaterialShapeDrawable extends Drawable implements TintAwareDrawable
 
     @Override // android.graphics.drawable.Drawable
     public boolean getPadding(@NonNull Rect rect) {
-        Rect rect2 = this.drawableState.i;
+        Rect rect2 = this.drawableState.f21078i;
         if (rect2 == null) {
             return super.getPadding(rect);
         }
@@ -422,11 +426,11 @@ public class MaterialShapeDrawable extends Drawable implements TintAwareDrawable
     }
 
     public Paint.Style getPaintStyle() {
-        return this.drawableState.v;
+        return this.drawableState.f21091v;
     }
 
     public float getParentAbsoluteElevation() {
-        return this.drawableState.n;
+        return this.drawableState.f21083n;
     }
 
     @Deprecated
@@ -435,15 +439,15 @@ public class MaterialShapeDrawable extends Drawable implements TintAwareDrawable
     }
 
     public float getScale() {
-        return this.drawableState.j;
+        return this.drawableState.f21079j;
     }
 
     public int getShadowCompatRotation() {
-        return this.drawableState.t;
+        return this.drawableState.f21089t;
     }
 
     public int getShadowCompatibilityMode() {
-        return this.drawableState.q;
+        return this.drawableState.f21086q;
     }
 
     @Deprecated
@@ -452,28 +456,28 @@ public class MaterialShapeDrawable extends Drawable implements TintAwareDrawable
     }
 
     public int getShadowOffsetX() {
-        c cVar = this.drawableState;
-        return (int) (Math.sin(Math.toRadians(cVar.t)) * ((double) cVar.f3054s));
+        C10967c c10967c = this.drawableState;
+        return (int) (Math.sin(Math.toRadians(c10967c.f21089t)) * ((double) c10967c.f21088s));
     }
 
     public int getShadowOffsetY() {
-        c cVar = this.drawableState;
-        return (int) (Math.cos(Math.toRadians(cVar.t)) * ((double) cVar.f3054s));
+        C10967c c10967c = this.drawableState;
+        return (int) (Math.cos(Math.toRadians(c10967c.f21089t)) * ((double) c10967c.f21088s));
     }
 
     public int getShadowRadius() {
-        return this.drawableState.r;
+        return this.drawableState.f21087r;
     }
 
     @RestrictTo({RestrictTo.Scope.LIBRARY_GROUP})
     public int getShadowVerticalOffset() {
-        return this.drawableState.f3054s;
+        return this.drawableState.f21088s;
     }
 
     @Override // com.google.android.material.shape.Shapeable
     @NonNull
     public ShapeAppearanceModel getShapeAppearanceModel() {
-        return this.drawableState.a;
+        return this.drawableState.f21070a;
     }
 
     @Nullable
@@ -488,33 +492,33 @@ public class MaterialShapeDrawable extends Drawable implements TintAwareDrawable
 
     @Nullable
     public ColorStateList getStrokeColor() {
-        return this.drawableState.e;
+        return this.drawableState.f21074e;
     }
 
     @Nullable
     public ColorStateList getStrokeTintList() {
-        return this.drawableState.f;
+        return this.drawableState.f21075f;
     }
 
     public float getStrokeWidth() {
-        return this.drawableState.l;
+        return this.drawableState.f21081l;
     }
 
     @Nullable
     public ColorStateList getTintList() {
-        return this.drawableState.g;
+        return this.drawableState.f21076g;
     }
 
     public float getTopLeftCornerResolvedSize() {
-        return this.drawableState.a.getTopLeftCornerSize().getCornerSize(getBoundsAsRectF());
+        return this.drawableState.f21070a.getTopLeftCornerSize().getCornerSize(getBoundsAsRectF());
     }
 
     public float getTopRightCornerResolvedSize() {
-        return this.drawableState.a.getTopRightCornerSize().getCornerSize(getBoundsAsRectF());
+        return this.drawableState.f21070a.getTopRightCornerSize().getCornerSize(getBoundsAsRectF());
     }
 
     public float getTranslationZ() {
-        return this.drawableState.p;
+        return this.drawableState.f21085p;
     }
 
     @Override // android.graphics.drawable.Drawable
@@ -531,7 +535,7 @@ public class MaterialShapeDrawable extends Drawable implements TintAwareDrawable
     }
 
     public void initializeElevationOverlay(Context context) {
-        this.drawableState.f3053b = new ElevationOverlayProvider(context);
+        this.drawableState.f21071b = new ElevationOverlayProvider(context);
         updateZ();
     }
 
@@ -542,12 +546,12 @@ public class MaterialShapeDrawable extends Drawable implements TintAwareDrawable
     }
 
     public boolean isElevationOverlayEnabled() {
-        ElevationOverlayProvider elevationOverlayProvider = this.drawableState.f3053b;
+        ElevationOverlayProvider elevationOverlayProvider = this.drawableState.f21071b;
         return elevationOverlayProvider != null && elevationOverlayProvider.isThemeElevationOverlayEnabled();
     }
 
     public boolean isElevationOverlayInitialized() {
-        return this.drawableState.f3053b != null;
+        return this.drawableState.f21071b != null;
     }
 
     public boolean isPointInTransparentRegion(int i, int i2) {
@@ -556,12 +560,12 @@ public class MaterialShapeDrawable extends Drawable implements TintAwareDrawable
 
     @RestrictTo({RestrictTo.Scope.LIBRARY_GROUP})
     public boolean isRoundRect() {
-        return this.drawableState.a.isRoundRect(getBoundsAsRectF());
+        return this.drawableState.f21070a.isRoundRect(getBoundsAsRectF());
     }
 
     @Deprecated
     public boolean isShadowEnabled() {
-        int i = this.drawableState.q;
+        int i = this.drawableState.f21086q;
         return i == 0 || i == 2;
     }
 
@@ -571,13 +575,13 @@ public class MaterialShapeDrawable extends Drawable implements TintAwareDrawable
         ColorStateList colorStateList2;
         ColorStateList colorStateList3;
         ColorStateList colorStateList4;
-        return super.isStateful() || ((colorStateList = this.drawableState.g) != null && colorStateList.isStateful()) || (((colorStateList2 = this.drawableState.f) != null && colorStateList2.isStateful()) || (((colorStateList3 = this.drawableState.e) != null && colorStateList3.isStateful()) || ((colorStateList4 = this.drawableState.d) != null && colorStateList4.isStateful())));
+        return super.isStateful() || ((colorStateList = this.drawableState.f21076g) != null && colorStateList.isStateful()) || (((colorStateList2 = this.drawableState.f21075f) != null && colorStateList2.isStateful()) || (((colorStateList3 = this.drawableState.f21074e) != null && colorStateList3.isStateful()) || ((colorStateList4 = this.drawableState.f21073d) != null && colorStateList4.isStateful())));
     }
 
     @Override // android.graphics.drawable.Drawable
     @NonNull
     public Drawable mutate() {
-        this.drawableState = new c(this.drawableState);
+        this.drawableState = new C10967c(this.drawableState);
         return this;
     }
 
@@ -601,22 +605,22 @@ public class MaterialShapeDrawable extends Drawable implements TintAwareDrawable
     }
 
     @Override // android.graphics.drawable.Drawable
-    public void setAlpha(@IntRange(from = 0, to = 255) int i) {
-        c cVar = this.drawableState;
-        if (cVar.m != i) {
-            cVar.m = i;
+    public void setAlpha(@IntRange(from = 0, m76to = 255) int i) {
+        C10967c c10967c = this.drawableState;
+        if (c10967c.f21082m != i) {
+            c10967c.f21082m = i;
             invalidateSelfIgnoreShape();
         }
     }
 
     @Override // android.graphics.drawable.Drawable
     public void setColorFilter(@Nullable ColorFilter colorFilter) {
-        this.drawableState.c = colorFilter;
+        this.drawableState.f21072c = colorFilter;
         invalidateSelfIgnoreShape();
     }
 
     public void setCornerSize(float f) {
-        setShapeAppearanceModel(this.drawableState.a.withCornerSize(f));
+        setShapeAppearanceModel(this.drawableState.f21070a.withCornerSize(f));
     }
 
     @RestrictTo({RestrictTo.Scope.LIBRARY_GROUP})
@@ -625,56 +629,56 @@ public class MaterialShapeDrawable extends Drawable implements TintAwareDrawable
     }
 
     public void setElevation(float f) {
-        c cVar = this.drawableState;
-        if (cVar.o != f) {
-            cVar.o = f;
+        C10967c c10967c = this.drawableState;
+        if (c10967c.f21084o != f) {
+            c10967c.f21084o = f;
             updateZ();
         }
     }
 
     public void setFillColor(@Nullable ColorStateList colorStateList) {
-        c cVar = this.drawableState;
-        if (cVar.d != colorStateList) {
-            cVar.d = colorStateList;
+        C10967c c10967c = this.drawableState;
+        if (c10967c.f21073d != colorStateList) {
+            c10967c.f21073d = colorStateList;
             onStateChange(getState());
         }
     }
 
     public void setInterpolation(float f) {
-        c cVar = this.drawableState;
-        if (cVar.k != f) {
-            cVar.k = f;
+        C10967c c10967c = this.drawableState;
+        if (c10967c.f21080k != f) {
+            c10967c.f21080k = f;
             this.pathDirty = true;
             invalidateSelf();
         }
     }
 
     public void setPadding(int i, int i2, int i3, int i4) {
-        c cVar = this.drawableState;
-        if (cVar.i == null) {
-            cVar.i = new Rect();
+        C10967c c10967c = this.drawableState;
+        if (c10967c.f21078i == null) {
+            c10967c.f21078i = new Rect();
         }
-        this.drawableState.i.set(i, i2, i3, i4);
+        this.drawableState.f21078i.set(i, i2, i3, i4);
         invalidateSelf();
     }
 
     public void setPaintStyle(Paint.Style style) {
-        this.drawableState.v = style;
+        this.drawableState.f21091v = style;
         invalidateSelfIgnoreShape();
     }
 
     public void setParentAbsoluteElevation(float f) {
-        c cVar = this.drawableState;
-        if (cVar.n != f) {
-            cVar.n = f;
+        C10967c c10967c = this.drawableState;
+        if (c10967c.f21083n != f) {
+            c10967c.f21083n = f;
             updateZ();
         }
     }
 
     public void setScale(float f) {
-        c cVar = this.drawableState;
-        if (cVar.j != f) {
-            cVar.j = f;
+        C10967c c10967c = this.drawableState;
+        if (c10967c.f21079j != f) {
+            c10967c.f21079j = f;
             invalidateSelf();
         }
     }
@@ -686,22 +690,22 @@ public class MaterialShapeDrawable extends Drawable implements TintAwareDrawable
 
     public void setShadowColor(int i) {
         this.shadowRenderer.setShadowColor(i);
-        this.drawableState.u = false;
+        this.drawableState.f21090u = false;
         invalidateSelfIgnoreShape();
     }
 
     public void setShadowCompatRotation(int i) {
-        c cVar = this.drawableState;
-        if (cVar.t != i) {
-            cVar.t = i;
+        C10967c c10967c = this.drawableState;
+        if (c10967c.f21089t != i) {
+            c10967c.f21089t = i;
             invalidateSelfIgnoreShape();
         }
     }
 
     public void setShadowCompatibilityMode(int i) {
-        c cVar = this.drawableState;
-        if (cVar.q != i) {
-            cVar.q = i;
+        C10967c c10967c = this.drawableState;
+        if (c10967c.f21086q != i) {
+            c10967c.f21086q = i;
             invalidateSelfIgnoreShape();
         }
     }
@@ -718,21 +722,21 @@ public class MaterialShapeDrawable extends Drawable implements TintAwareDrawable
 
     @Deprecated
     public void setShadowRadius(int i) {
-        this.drawableState.r = i;
+        this.drawableState.f21087r = i;
     }
 
     @RestrictTo({RestrictTo.Scope.LIBRARY_GROUP})
     public void setShadowVerticalOffset(int i) {
-        c cVar = this.drawableState;
-        if (cVar.f3054s != i) {
-            cVar.f3054s = i;
+        C10967c c10967c = this.drawableState;
+        if (c10967c.f21088s != i) {
+            c10967c.f21088s = i;
             invalidateSelfIgnoreShape();
         }
     }
 
     @Override // com.google.android.material.shape.Shapeable
     public void setShapeAppearanceModel(@NonNull ShapeAppearanceModel shapeAppearanceModel) {
-        this.drawableState.a = shapeAppearanceModel;
+        this.drawableState.f21070a = shapeAppearanceModel;
         invalidateSelf();
     }
 
@@ -747,21 +751,21 @@ public class MaterialShapeDrawable extends Drawable implements TintAwareDrawable
     }
 
     public void setStrokeColor(@Nullable ColorStateList colorStateList) {
-        c cVar = this.drawableState;
-        if (cVar.e != colorStateList) {
-            cVar.e = colorStateList;
+        C10967c c10967c = this.drawableState;
+        if (c10967c.f21074e != colorStateList) {
+            c10967c.f21074e = colorStateList;
             onStateChange(getState());
         }
     }
 
     public void setStrokeTint(ColorStateList colorStateList) {
-        this.drawableState.f = colorStateList;
+        this.drawableState.f21075f = colorStateList;
         updateTintFilter();
         invalidateSelfIgnoreShape();
     }
 
     public void setStrokeWidth(float f) {
-        this.drawableState.l = f;
+        this.drawableState.f21081l = f;
         invalidateSelf();
     }
 
@@ -772,33 +776,33 @@ public class MaterialShapeDrawable extends Drawable implements TintAwareDrawable
 
     @Override // android.graphics.drawable.Drawable, androidx.core.graphics.drawable.TintAwareDrawable
     public void setTintList(@Nullable ColorStateList colorStateList) {
-        this.drawableState.g = colorStateList;
+        this.drawableState.f21076g = colorStateList;
         updateTintFilter();
         invalidateSelfIgnoreShape();
     }
 
     @Override // android.graphics.drawable.Drawable, androidx.core.graphics.drawable.TintAwareDrawable
     public void setTintMode(@Nullable PorterDuff.Mode mode) {
-        c cVar = this.drawableState;
-        if (cVar.h != mode) {
-            cVar.h = mode;
+        C10967c c10967c = this.drawableState;
+        if (c10967c.f21077h != mode) {
+            c10967c.f21077h = mode;
             updateTintFilter();
             invalidateSelfIgnoreShape();
         }
     }
 
     public void setTranslationZ(float f) {
-        c cVar = this.drawableState;
-        if (cVar.p != f) {
-            cVar.p = f;
+        C10967c c10967c = this.drawableState;
+        if (c10967c.f21085p != f) {
+            c10967c.f21085p = f;
             updateZ();
         }
     }
 
     public void setUseTintColorForShadow(boolean z2) {
-        c cVar = this.drawableState;
-        if (cVar.u != z2) {
-            cVar.u = z2;
+        C10967c c10967c = this.drawableState;
+        if (c10967c.f21090u != z2) {
+            c10967c.f21090u = z2;
             invalidateSelf();
         }
     }
@@ -813,7 +817,7 @@ public class MaterialShapeDrawable extends Drawable implements TintAwareDrawable
 
     @NonNull
     public static MaterialShapeDrawable createWithElevationOverlay(Context context, float f) {
-        int color = MaterialColors.getColor(context, R.attr.colorSurface, MaterialShapeDrawable.class.getSimpleName());
+        int color = MaterialColors.getColor(context, C10817R.attr.colorSurface, MaterialShapeDrawable.class.getSimpleName());
         MaterialShapeDrawable materialShapeDrawable = new MaterialShapeDrawable();
         materialShapeDrawable.initializeElevationOverlay(context);
         materialShapeDrawable.setFillColor(ColorStateList.valueOf(color));
@@ -825,13 +829,13 @@ public class MaterialShapeDrawable extends Drawable implements TintAwareDrawable
         if (!shapeAppearanceModel.isRoundRect(rectF)) {
             canvas.drawPath(path, paint);
         } else {
-            float cornerSize = shapeAppearanceModel.getTopRightCornerSize().getCornerSize(rectF) * this.drawableState.k;
+            float cornerSize = shapeAppearanceModel.getTopRightCornerSize().getCornerSize(rectF) * this.drawableState.f21080k;
             canvas.drawRoundRect(rectF, cornerSize, cornerSize, paint);
         }
     }
 
     public void setCornerSize(@NonNull CornerSize cornerSize) {
-        setShapeAppearanceModel(this.drawableState.a.withCornerSize(cornerSize));
+        setShapeAppearanceModel(this.drawableState.f21070a.withCornerSize(cornerSize));
     }
 
     public MaterialShapeDrawable(@NonNull Context context, @Nullable AttributeSet attributeSet, @AttrRes int i, @StyleRes int i2) {
@@ -853,12 +857,12 @@ public class MaterialShapeDrawable extends Drawable implements TintAwareDrawable
     }
 
     public MaterialShapeDrawable(@NonNull ShapeAppearanceModel shapeAppearanceModel) {
-        this(new c(shapeAppearanceModel, null));
+        this(new C10967c(shapeAppearanceModel, null));
     }
 
-    private MaterialShapeDrawable(@NonNull c cVar) {
-        this.cornerShadowOperation = new ShapePath.d[4];
-        this.edgeShadowOperation = new ShapePath.d[4];
+    private MaterialShapeDrawable(@NonNull C10967c c10967c) {
+        this.cornerShadowOperation = new ShapePath.AbstractC10974d[4];
+        this.edgeShadowOperation = new ShapePath.AbstractC10974d[4];
         this.containsIncompatibleShadowOp = new BitSet(8);
         this.matrix = new Matrix();
         this.path = new Path();
@@ -875,7 +879,7 @@ public class MaterialShapeDrawable extends Drawable implements TintAwareDrawable
         this.pathProvider = Looper.getMainLooper().getThread() == Thread.currentThread() ? ShapeAppearancePathProvider.getInstance() : new ShapeAppearancePathProvider();
         this.pathBounds = new RectF();
         this.shadowBitmapDrawingEnable = true;
-        this.drawableState = cVar;
+        this.drawableState = c10967c;
         paint2.setStyle(Paint.Style.STROKE);
         paint.setStyle(Paint.Style.FILL);
         Paint paint3 = clearPaint;
@@ -883,75 +887,108 @@ public class MaterialShapeDrawable extends Drawable implements TintAwareDrawable
         paint3.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.DST_OUT));
         updateTintFilter();
         updateColorsForState(getState());
-        this.pathShadowListener = new a();
+        this.pathShadowListener = new C10965a();
     }
 
-    public static final class c extends Drawable.ConstantState {
+    /* JADX INFO: renamed from: com.google.android.material.shape.MaterialShapeDrawable$c */
+    public static final class C10967c extends Drawable.ConstantState {
 
+        /* JADX INFO: renamed from: a */
         @NonNull
-        public ShapeAppearanceModel a;
+        public ShapeAppearanceModel f21070a;
 
-        /* JADX INFO: renamed from: b, reason: collision with root package name */
+        /* JADX INFO: renamed from: b */
         @Nullable
-        public ElevationOverlayProvider f3053b;
+        public ElevationOverlayProvider f21071b;
 
+        /* JADX INFO: renamed from: c */
         @Nullable
-        public ColorFilter c;
+        public ColorFilter f21072c;
 
+        /* JADX INFO: renamed from: d */
         @Nullable
-        public ColorStateList d;
+        public ColorStateList f21073d;
 
+        /* JADX INFO: renamed from: e */
         @Nullable
-        public ColorStateList e;
+        public ColorStateList f21074e;
 
+        /* JADX INFO: renamed from: f */
         @Nullable
-        public ColorStateList f;
+        public ColorStateList f21075f;
 
+        /* JADX INFO: renamed from: g */
         @Nullable
-        public ColorStateList g;
+        public ColorStateList f21076g;
 
+        /* JADX INFO: renamed from: h */
         @Nullable
-        public PorterDuff.Mode h;
+        public PorterDuff.Mode f21077h;
 
+        /* JADX INFO: renamed from: i */
         @Nullable
-        public Rect i;
-        public float j;
-        public float k;
-        public float l;
-        public int m;
-        public float n;
-        public float o;
-        public float p;
-        public int q;
-        public int r;
+        public Rect f21078i;
 
-        /* JADX INFO: renamed from: s, reason: collision with root package name */
-        public int f3054s;
-        public int t;
-        public boolean u;
-        public Paint.Style v;
+        /* JADX INFO: renamed from: j */
+        public float f21079j;
 
-        public c(ShapeAppearanceModel shapeAppearanceModel, ElevationOverlayProvider elevationOverlayProvider) {
-            this.d = null;
-            this.e = null;
-            this.f = null;
-            this.g = null;
-            this.h = PorterDuff.Mode.SRC_IN;
-            this.i = null;
-            this.j = 1.0f;
-            this.k = 1.0f;
-            this.m = 255;
-            this.n = 0.0f;
-            this.o = 0.0f;
-            this.p = 0.0f;
-            this.q = 0;
-            this.r = 0;
-            this.f3054s = 0;
-            this.t = 0;
-            this.u = false;
-            this.v = Paint.Style.FILL_AND_STROKE;
-            this.a = shapeAppearanceModel;
-            this.f3053b = null;
+        /* JADX INFO: renamed from: k */
+        public float f21080k;
+
+        /* JADX INFO: renamed from: l */
+        public float f21081l;
+
+        /* JADX INFO: renamed from: m */
+        public int f21082m;
+
+        /* JADX INFO: renamed from: n */
+        public float f21083n;
+
+        /* JADX INFO: renamed from: o */
+        public float f21084o;
+
+        /* JADX INFO: renamed from: p */
+        public float f21085p;
+
+        /* JADX INFO: renamed from: q */
+        public int f21086q;
+
+        /* JADX INFO: renamed from: r */
+        public int f21087r;
+
+        /* JADX INFO: renamed from: s */
+        public int f21088s;
+
+        /* JADX INFO: renamed from: t */
+        public int f21089t;
+
+        /* JADX INFO: renamed from: u */
+        public boolean f21090u;
+
+        /* JADX INFO: renamed from: v */
+        public Paint.Style f21091v;
+
+        public C10967c(ShapeAppearanceModel shapeAppearanceModel, ElevationOverlayProvider elevationOverlayProvider) {
+            this.f21073d = null;
+            this.f21074e = null;
+            this.f21075f = null;
+            this.f21076g = null;
+            this.f21077h = PorterDuff.Mode.SRC_IN;
+            this.f21078i = null;
+            this.f21079j = 1.0f;
+            this.f21080k = 1.0f;
+            this.f21082m = 255;
+            this.f21083n = 0.0f;
+            this.f21084o = 0.0f;
+            this.f21085p = 0.0f;
+            this.f21086q = 0;
+            this.f21087r = 0;
+            this.f21088s = 0;
+            this.f21089t = 0;
+            this.f21090u = false;
+            this.f21091v = Paint.Style.FILL_AND_STROKE;
+            this.f21070a = shapeAppearanceModel;
+            this.f21071b = null;
         }
 
         @Override // android.graphics.drawable.Drawable.ConstantState
@@ -967,48 +1004,48 @@ public class MaterialShapeDrawable extends Drawable implements TintAwareDrawable
             return materialShapeDrawable;
         }
 
-        public c(@NonNull c cVar) {
-            this.d = null;
-            this.e = null;
-            this.f = null;
-            this.g = null;
-            this.h = PorterDuff.Mode.SRC_IN;
-            this.i = null;
-            this.j = 1.0f;
-            this.k = 1.0f;
-            this.m = 255;
-            this.n = 0.0f;
-            this.o = 0.0f;
-            this.p = 0.0f;
-            this.q = 0;
-            this.r = 0;
-            this.f3054s = 0;
-            this.t = 0;
-            this.u = false;
-            this.v = Paint.Style.FILL_AND_STROKE;
-            this.a = cVar.a;
-            this.f3053b = cVar.f3053b;
-            this.l = cVar.l;
-            this.c = cVar.c;
-            this.d = cVar.d;
-            this.e = cVar.e;
-            this.h = cVar.h;
-            this.g = cVar.g;
-            this.m = cVar.m;
-            this.j = cVar.j;
-            this.f3054s = cVar.f3054s;
-            this.q = cVar.q;
-            this.u = cVar.u;
-            this.k = cVar.k;
-            this.n = cVar.n;
-            this.o = cVar.o;
-            this.p = cVar.p;
-            this.r = cVar.r;
-            this.t = cVar.t;
-            this.f = cVar.f;
-            this.v = cVar.v;
-            if (cVar.i != null) {
-                this.i = new Rect(cVar.i);
+        public C10967c(@NonNull C10967c c10967c) {
+            this.f21073d = null;
+            this.f21074e = null;
+            this.f21075f = null;
+            this.f21076g = null;
+            this.f21077h = PorterDuff.Mode.SRC_IN;
+            this.f21078i = null;
+            this.f21079j = 1.0f;
+            this.f21080k = 1.0f;
+            this.f21082m = 255;
+            this.f21083n = 0.0f;
+            this.f21084o = 0.0f;
+            this.f21085p = 0.0f;
+            this.f21086q = 0;
+            this.f21087r = 0;
+            this.f21088s = 0;
+            this.f21089t = 0;
+            this.f21090u = false;
+            this.f21091v = Paint.Style.FILL_AND_STROKE;
+            this.f21070a = c10967c.f21070a;
+            this.f21071b = c10967c.f21071b;
+            this.f21081l = c10967c.f21081l;
+            this.f21072c = c10967c.f21072c;
+            this.f21073d = c10967c.f21073d;
+            this.f21074e = c10967c.f21074e;
+            this.f21077h = c10967c.f21077h;
+            this.f21076g = c10967c.f21076g;
+            this.f21082m = c10967c.f21082m;
+            this.f21079j = c10967c.f21079j;
+            this.f21088s = c10967c.f21088s;
+            this.f21086q = c10967c.f21086q;
+            this.f21090u = c10967c.f21090u;
+            this.f21080k = c10967c.f21080k;
+            this.f21083n = c10967c.f21083n;
+            this.f21084o = c10967c.f21084o;
+            this.f21085p = c10967c.f21085p;
+            this.f21087r = c10967c.f21087r;
+            this.f21089t = c10967c.f21089t;
+            this.f21075f = c10967c.f21075f;
+            this.f21091v = c10967c.f21091v;
+            if (c10967c.f21078i != null) {
+                this.f21078i = new Rect(c10967c.f21078i);
             }
         }
     }

@@ -1,14 +1,14 @@
 package com.discord.analytics.generated.events;
 
-import b.d.b.a.outline;
 import com.discord.analytics.generated.traits.TrackBase;
-import com.discord.analytics.generated.traits.TrackBase2;
+import com.discord.analytics.generated.traits.TrackBaseReceiver;
 import com.discord.api.science.AnalyticsSchema;
-import d0.z.d.Intrinsics3;
+import p007b.p100d.p104b.p105a.C1643a;
+import p507d0.p592z.p594d.C12238m;
 
 /* JADX INFO: compiled from: TrackFriendSyncPerformed.kt */
 /* JADX INFO: loaded from: classes.dex */
-public final /* data */ class TrackFriendSyncPerformed implements AnalyticsSchema, TrackBase2 {
+public final /* data */ class TrackFriendSyncPerformed implements AnalyticsSchema, TrackBaseReceiver {
     private TrackBase trackBase;
     private final Boolean isBackgroundSync = null;
     private final CharSequence platformType = null;
@@ -37,7 +37,7 @@ public final /* data */ class TrackFriendSyncPerformed implements AnalyticsSchem
             return false;
         }
         TrackFriendSyncPerformed trackFriendSyncPerformed = (TrackFriendSyncPerformed) other;
-        return Intrinsics3.areEqual(this.isBackgroundSync, trackFriendSyncPerformed.isBackgroundSync) && Intrinsics3.areEqual(this.platformType, trackFriendSyncPerformed.platformType) && Intrinsics3.areEqual(this.numExternalFriendsAdded, trackFriendSyncPerformed.numExternalFriendsAdded) && Intrinsics3.areEqual(this.numExternalFriendsRemoved, trackFriendSyncPerformed.numExternalFriendsRemoved) && Intrinsics3.areEqual(this.numSuggestionsMutual, trackFriendSyncPerformed.numSuggestionsMutual) && Intrinsics3.areEqual(this.numReverseSuggestionsMutual, trackFriendSyncPerformed.numReverseSuggestionsMutual) && Intrinsics3.areEqual(this.numSuggestionsNonmutual, trackFriendSyncPerformed.numSuggestionsNonmutual) && Intrinsics3.areEqual(this.numReverseSuggestionsNonmutual, trackFriendSyncPerformed.numReverseSuggestionsNonmutual) && Intrinsics3.areEqual(this.uploadedContactsLength, trackFriendSyncPerformed.uploadedContactsLength) && Intrinsics3.areEqual(this.externalFriendListLength, trackFriendSyncPerformed.externalFriendListLength) && Intrinsics3.areEqual(this.friendSyncEnabled, trackFriendSyncPerformed.friendSyncEnabled);
+        return C12238m.areEqual(this.isBackgroundSync, trackFriendSyncPerformed.isBackgroundSync) && C12238m.areEqual(this.platformType, trackFriendSyncPerformed.platformType) && C12238m.areEqual(this.numExternalFriendsAdded, trackFriendSyncPerformed.numExternalFriendsAdded) && C12238m.areEqual(this.numExternalFriendsRemoved, trackFriendSyncPerformed.numExternalFriendsRemoved) && C12238m.areEqual(this.numSuggestionsMutual, trackFriendSyncPerformed.numSuggestionsMutual) && C12238m.areEqual(this.numReverseSuggestionsMutual, trackFriendSyncPerformed.numReverseSuggestionsMutual) && C12238m.areEqual(this.numSuggestionsNonmutual, trackFriendSyncPerformed.numSuggestionsNonmutual) && C12238m.areEqual(this.numReverseSuggestionsNonmutual, trackFriendSyncPerformed.numReverseSuggestionsNonmutual) && C12238m.areEqual(this.uploadedContactsLength, trackFriendSyncPerformed.uploadedContactsLength) && C12238m.areEqual(this.externalFriendListLength, trackFriendSyncPerformed.externalFriendListLength) && C12238m.areEqual(this.friendSyncEnabled, trackFriendSyncPerformed.friendSyncEnabled);
     }
 
     public int hashCode() {
@@ -66,27 +66,27 @@ public final /* data */ class TrackFriendSyncPerformed implements AnalyticsSchem
     }
 
     public String toString() {
-        StringBuilder sbU = outline.U("TrackFriendSyncPerformed(isBackgroundSync=");
-        sbU.append(this.isBackgroundSync);
-        sbU.append(", platformType=");
-        sbU.append(this.platformType);
-        sbU.append(", numExternalFriendsAdded=");
-        sbU.append(this.numExternalFriendsAdded);
-        sbU.append(", numExternalFriendsRemoved=");
-        sbU.append(this.numExternalFriendsRemoved);
-        sbU.append(", numSuggestionsMutual=");
-        sbU.append(this.numSuggestionsMutual);
-        sbU.append(", numReverseSuggestionsMutual=");
-        sbU.append(this.numReverseSuggestionsMutual);
-        sbU.append(", numSuggestionsNonmutual=");
-        sbU.append(this.numSuggestionsNonmutual);
-        sbU.append(", numReverseSuggestionsNonmutual=");
-        sbU.append(this.numReverseSuggestionsNonmutual);
-        sbU.append(", uploadedContactsLength=");
-        sbU.append(this.uploadedContactsLength);
-        sbU.append(", externalFriendListLength=");
-        sbU.append(this.externalFriendListLength);
-        sbU.append(", friendSyncEnabled=");
-        return outline.D(sbU, this.friendSyncEnabled, ")");
+        StringBuilder sbM833U = C1643a.m833U("TrackFriendSyncPerformed(isBackgroundSync=");
+        sbM833U.append(this.isBackgroundSync);
+        sbM833U.append(", platformType=");
+        sbM833U.append(this.platformType);
+        sbM833U.append(", numExternalFriendsAdded=");
+        sbM833U.append(this.numExternalFriendsAdded);
+        sbM833U.append(", numExternalFriendsRemoved=");
+        sbM833U.append(this.numExternalFriendsRemoved);
+        sbM833U.append(", numSuggestionsMutual=");
+        sbM833U.append(this.numSuggestionsMutual);
+        sbM833U.append(", numReverseSuggestionsMutual=");
+        sbM833U.append(this.numReverseSuggestionsMutual);
+        sbM833U.append(", numSuggestionsNonmutual=");
+        sbM833U.append(this.numSuggestionsNonmutual);
+        sbM833U.append(", numReverseSuggestionsNonmutual=");
+        sbM833U.append(this.numReverseSuggestionsNonmutual);
+        sbM833U.append(", uploadedContactsLength=");
+        sbM833U.append(this.uploadedContactsLength);
+        sbM833U.append(", externalFriendListLength=");
+        sbM833U.append(this.externalFriendListLength);
+        sbM833U.append(", friendSyncEnabled=");
+        return C1643a.m816D(sbM833U, this.friendSyncEnabled, ")");
     }
 }

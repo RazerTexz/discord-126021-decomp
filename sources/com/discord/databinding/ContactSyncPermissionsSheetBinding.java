@@ -11,33 +11,37 @@ import com.discord.views.CheckedSetting;
 /* JADX INFO: loaded from: classes.dex */
 public final class ContactSyncPermissionsSheetBinding implements ViewBinding {
 
+    /* JADX INFO: renamed from: a */
     @NonNull
-    public final ConstraintLayout a;
+    public final ConstraintLayout f15025a;
 
-    /* JADX INFO: renamed from: b, reason: collision with root package name */
+    /* JADX INFO: renamed from: b */
     @NonNull
-    public final CheckedSetting f2092b;
+    public final CheckedSetting f15026b;
 
+    /* JADX INFO: renamed from: c */
     @NonNull
-    public final CheckedSetting c;
+    public final CheckedSetting f15027c;
 
+    /* JADX INFO: renamed from: d */
     @NonNull
-    public final LinkifiedTextView d;
+    public final LinkifiedTextView f15028d;
 
+    /* JADX INFO: renamed from: e */
     @NonNull
-    public final CheckedSetting e;
+    public final CheckedSetting f15029e;
 
     public ContactSyncPermissionsSheetBinding(@NonNull ConstraintLayout constraintLayout, @NonNull CheckedSetting checkedSetting, @NonNull TextView textView, @NonNull TextView textView2, @NonNull CheckedSetting checkedSetting2, @NonNull LinkifiedTextView linkifiedTextView, @NonNull CheckedSetting checkedSetting3, @NonNull TextView textView3) {
-        this.a = constraintLayout;
-        this.f2092b = checkedSetting;
-        this.c = checkedSetting2;
-        this.d = linkifiedTextView;
-        this.e = checkedSetting3;
+        this.f15025a = constraintLayout;
+        this.f15026b = checkedSetting;
+        this.f15027c = checkedSetting2;
+        this.f15028d = linkifiedTextView;
+        this.f15029e = checkedSetting3;
     }
 
     @Override // androidx.viewbinding.ViewBinding
     @NonNull
     public View getRoot() {
-        return this.a;
+        return this.f15025a;
     }
 }

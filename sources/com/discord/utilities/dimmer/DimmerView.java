@@ -5,8 +5,8 @@ import android.util.AttributeSet;
 import android.widget.ProgressBar;
 import android.widget.RelativeLayout;
 import com.discord.utilities.view.extensions.ViewExtensions;
-import d0.z.d.Intrinsics3;
 import kotlin.jvm.internal.DefaultConstructorMarker;
+import p507d0.p592z.p594d.C12238m;
 
 /* JADX INFO: compiled from: DimmerView.kt */
 /* JADX INFO: loaded from: classes2.dex */
@@ -51,7 +51,7 @@ public final class DimmerView extends RelativeLayout {
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public DimmerView(Context context, AttributeSet attributeSet, int i) {
         super(context, attributeSet, i);
-        Intrinsics3.checkNotNullParameter(context, "context");
+        C12238m.checkNotNullParameter(context, "context");
         ProgressBar progressBar = new ProgressBar(context);
         this.dimmerProgressBar = progressBar;
         progressBar.setVisibility(8);

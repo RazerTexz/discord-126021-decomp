@@ -1,16 +1,16 @@
 package com.discord.analytics.generated.events;
 
-import b.d.b.a.outline;
 import com.discord.analytics.generated.traits.TrackBase;
-import com.discord.analytics.generated.traits.TrackBase2;
+import com.discord.analytics.generated.traits.TrackBaseReceiver;
 import com.discord.analytics.generated.traits.TrackSourceMetadata;
-import com.discord.analytics.generated.traits.TrackSourceMetadata2;
+import com.discord.analytics.generated.traits.TrackSourceMetadataReceiver;
 import com.discord.api.science.AnalyticsSchema;
-import d0.z.d.Intrinsics3;
+import p007b.p100d.p104b.p105a.C1643a;
+import p507d0.p592z.p594d.C12238m;
 
 /* JADX INFO: compiled from: TrackAgeGateSubmitted.kt */
 /* JADX INFO: loaded from: classes.dex */
-public final /* data */ class TrackAgeGateSubmitted implements AnalyticsSchema, TrackBase2, TrackSourceMetadata2 {
+public final /* data */ class TrackAgeGateSubmitted implements AnalyticsSchema, TrackBaseReceiver, TrackSourceMetadataReceiver {
     private final transient String analyticsSchemaTypeName;
     private final Long dob;
     private final Long dobDay;
@@ -33,7 +33,8 @@ public final /* data */ class TrackAgeGateSubmitted implements AnalyticsSchema, 
         return this.analyticsSchemaTypeName;
     }
 
-    public void e(TrackSourceMetadata trackSourceMetadata) {
+    /* JADX INFO: renamed from: e */
+    public void m7509e(TrackSourceMetadata trackSourceMetadata) {
         this.trackSourceMetadata = trackSourceMetadata;
     }
 
@@ -45,7 +46,7 @@ public final /* data */ class TrackAgeGateSubmitted implements AnalyticsSchema, 
             return false;
         }
         TrackAgeGateSubmitted trackAgeGateSubmitted = (TrackAgeGateSubmitted) other;
-        return Intrinsics3.areEqual(this.dob, trackAgeGateSubmitted.dob) && Intrinsics3.areEqual(this.dobDay, trackAgeGateSubmitted.dobDay) && Intrinsics3.areEqual(this.dobMonth, trackAgeGateSubmitted.dobMonth) && Intrinsics3.areEqual(this.dobYear, trackAgeGateSubmitted.dobYear);
+        return C12238m.areEqual(this.dob, trackAgeGateSubmitted.dob) && C12238m.areEqual(this.dobDay, trackAgeGateSubmitted.dobDay) && C12238m.areEqual(this.dobMonth, trackAgeGateSubmitted.dobMonth) && C12238m.areEqual(this.dobYear, trackAgeGateSubmitted.dobYear);
     }
 
     public int hashCode() {
@@ -60,14 +61,14 @@ public final /* data */ class TrackAgeGateSubmitted implements AnalyticsSchema, 
     }
 
     public String toString() {
-        StringBuilder sbU = outline.U("TrackAgeGateSubmitted(dob=");
-        sbU.append(this.dob);
-        sbU.append(", dobDay=");
-        sbU.append(this.dobDay);
-        sbU.append(", dobMonth=");
-        sbU.append(this.dobMonth);
-        sbU.append(", dobYear=");
-        return outline.G(sbU, this.dobYear, ")");
+        StringBuilder sbM833U = C1643a.m833U("TrackAgeGateSubmitted(dob=");
+        sbM833U.append(this.dob);
+        sbM833U.append(", dobDay=");
+        sbM833U.append(this.dobDay);
+        sbM833U.append(", dobMonth=");
+        sbM833U.append(this.dobMonth);
+        sbM833U.append(", dobYear=");
+        return C1643a.m819G(sbM833U, this.dobYear, ")");
     }
 
     public TrackAgeGateSubmitted(Long l, Long l2, Long l3, Long l4) {

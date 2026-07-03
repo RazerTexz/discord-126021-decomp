@@ -1,14 +1,14 @@
 package com.discord.analytics.generated.events;
 
 import com.discord.analytics.generated.traits.TrackBase;
-import com.discord.analytics.generated.traits.TrackBase2;
+import com.discord.analytics.generated.traits.TrackBaseReceiver;
 import com.discord.analytics.generated.traits.TrackLocationMetadata;
-import com.discord.analytics.generated.traits.TrackLocationMetadata2;
+import com.discord.analytics.generated.traits.TrackLocationMetadataReceiver;
 import com.discord.api.science.AnalyticsSchema;
 
 /* JADX INFO: compiled from: TrackMultiAccountSwitchAttempt.kt */
 /* JADX INFO: loaded from: classes.dex */
-public final class TrackMultiAccountSwitchAttempt implements AnalyticsSchema, TrackBase2, TrackLocationMetadata2 {
+public final class TrackMultiAccountSwitchAttempt implements AnalyticsSchema, TrackBaseReceiver, TrackLocationMetadataReceiver {
     private final transient String analyticsSchemaTypeName = "multi_account_switch_attempt";
     private TrackBase trackBase;
     private TrackLocationMetadata trackLocationMetadata;

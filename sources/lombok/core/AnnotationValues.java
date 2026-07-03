@@ -60,11 +60,13 @@ public class AnnotationValues<A extends Annotation> {
         this.ast = ast;
     }
 
-    public static <A extends Annotation> AnnotationValues<A> of(Class<A> type) {
+    /* JADX INFO: renamed from: of */
+    public static <A extends Annotation> AnnotationValues<A> m10916of(Class<A> type) {
         return new AnnotationValues<>(type, Collections.emptyMap(), null);
     }
 
-    public static <A extends Annotation> AnnotationValues<A> of(Class<A> type, LombokNode<?, ?, ?> ast) {
+    /* JADX INFO: renamed from: of */
+    public static <A extends Annotation> AnnotationValues<A> m10917of(Class<A> type, LombokNode<?, ?, ?> ast) {
         return new AnnotationValues<>(type, Collections.emptyMap(), ast);
     }
 
@@ -355,9 +357,9 @@ public class AnnotationValues<A extends Annotation> {
     private String toFQ(String typeName) {
         String fqn;
         String prefix = typeName.indexOf(46) > -1 ? typeName.substring(0, typeName.indexOf(46)) : typeName;
-        LombokNode<?, ?, ?> lombokNodeUp = this.ast;
+        LombokNode<?, ?, ?> lombokNodeM10925up = this.ast;
         while (true) {
-            LombokNode<?, ?, ?> n = lombokNodeUp;
+            LombokNode<?, ?, ?> n = lombokNodeM10925up;
             if (n == null) {
                 break;
             }
@@ -365,7 +367,7 @@ public class AnnotationValues<A extends Annotation> {
                 String simpleName = n.getName();
                 if (prefix.equals(simpleName)) {
                     List<String> outerNames = new ArrayList<>();
-                    LombokNode<?, ?, ?> n2 = n.up();
+                    LombokNode<?, ?, ?> n2 = n.m10925up();
                     if (n2 != null && n2.getKind() != AST.Kind.COMPILATION_UNIT) {
                         if (n2.getKind() != AST.Kind.TYPE) {
                             break;
@@ -388,7 +390,7 @@ public class AnnotationValues<A extends Annotation> {
                     return result.toString();
                 }
             }
-            lombokNodeUp = n.up();
+            lombokNodeM10925up = n.m10925up();
         }
         if (prefix.equals(typeName) && (fqn = this.ast.getImportList().getFullyQualifiedNameForSimpleName(typeName)) != null) {
             return fqn;

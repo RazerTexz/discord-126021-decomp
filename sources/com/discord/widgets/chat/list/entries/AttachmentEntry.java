@@ -1,11 +1,11 @@
 package com.discord.widgets.chat.list.entries;
 
-import a0.a.a.b;
-import b.d.b.a.outline;
 import com.discord.api.message.attachment.MessageAttachment;
 import com.discord.models.message.Message;
 import com.discord.stores.StoreMessageState;
-import d0.z.d.Intrinsics3;
+import p001a0.p002a.p003a.C0002b;
+import p007b.p100d.p104b.p105a.C1643a;
+import p507d0.p592z.p594d.C12238m;
 
 /* JADX INFO: compiled from: AttachmentEntry.kt */
 /* JADX INFO: loaded from: classes2.dex */
@@ -23,8 +23,8 @@ public final /* data */ class AttachmentEntry extends ChatListEntry {
     private final int type;
 
     public AttachmentEntry(int i, long j, Message message, StoreMessageState.State state, MessageAttachment messageAttachment, boolean z2, boolean z3, boolean z4, boolean z5) {
-        Intrinsics3.checkNotNullParameter(message, "message");
-        Intrinsics3.checkNotNullParameter(messageAttachment, "attachment");
+        C12238m.checkNotNullParameter(message, "message");
+        C12238m.checkNotNullParameter(messageAttachment, "attachment");
         this.embedIndex = i;
         this.guildId = j;
         this.message = message;
@@ -87,8 +87,8 @@ public final /* data */ class AttachmentEntry extends ChatListEntry {
     }
 
     public final AttachmentEntry copy(int embedIndex, long guildId, Message message, StoreMessageState.State messageState, MessageAttachment attachment, boolean isBlockedExpanded, boolean allowAnimatedEmojis, boolean autoPlayGifs, boolean isThreadStarterMessage) {
-        Intrinsics3.checkNotNullParameter(message, "message");
-        Intrinsics3.checkNotNullParameter(attachment, "attachment");
+        C12238m.checkNotNullParameter(message, "message");
+        C12238m.checkNotNullParameter(attachment, "attachment");
         return new AttachmentEntry(embedIndex, guildId, message, messageState, attachment, isBlockedExpanded, allowAnimatedEmojis, autoPlayGifs, isThreadStarterMessage);
     }
 
@@ -100,7 +100,7 @@ public final /* data */ class AttachmentEntry extends ChatListEntry {
             return false;
         }
         AttachmentEntry attachmentEntry = (AttachmentEntry) other;
-        return this.embedIndex == attachmentEntry.embedIndex && this.guildId == attachmentEntry.guildId && Intrinsics3.areEqual(this.message, attachmentEntry.message) && Intrinsics3.areEqual(this.messageState, attachmentEntry.messageState) && Intrinsics3.areEqual(this.attachment, attachmentEntry.attachment) && this.isBlockedExpanded == attachmentEntry.isBlockedExpanded && this.allowAnimatedEmojis == attachmentEntry.allowAnimatedEmojis && this.autoPlayGifs == attachmentEntry.autoPlayGifs && this.isThreadStarterMessage == attachmentEntry.isThreadStarterMessage;
+        return this.embedIndex == attachmentEntry.embedIndex && this.guildId == attachmentEntry.guildId && C12238m.areEqual(this.message, attachmentEntry.message) && C12238m.areEqual(this.messageState, attachmentEntry.messageState) && C12238m.areEqual(this.attachment, attachmentEntry.attachment) && this.isBlockedExpanded == attachmentEntry.isBlockedExpanded && this.allowAnimatedEmojis == attachmentEntry.allowAnimatedEmojis && this.autoPlayGifs == attachmentEntry.autoPlayGifs && this.isThreadStarterMessage == attachmentEntry.isThreadStarterMessage;
     }
 
     public final boolean getAllowAnimatedEmojis() {
@@ -159,9 +159,9 @@ public final /* data */ class AttachmentEntry extends ChatListEntry {
     /* JADX WARN: Type inference failed for: r2v3, types: [int] */
     /* JADX WARN: Type inference failed for: r2v4 */
     public int hashCode() {
-        int iA = (b.a(this.guildId) + (this.embedIndex * 31)) * 31;
+        int iM3a = (C0002b.m3a(this.guildId) + (this.embedIndex * 31)) * 31;
         Message message = this.message;
-        int iHashCode = (iA + (message != null ? message.hashCode() : 0)) * 31;
+        int iHashCode = (iM3a + (message != null ? message.hashCode() : 0)) * 31;
         StoreMessageState.State state = this.messageState;
         int iHashCode2 = (iHashCode + (state != null ? state.hashCode() : 0)) * 31;
         MessageAttachment messageAttachment = this.attachment;
@@ -202,23 +202,23 @@ public final /* data */ class AttachmentEntry extends ChatListEntry {
     }
 
     public String toString() {
-        StringBuilder sbU = outline.U("AttachmentEntry(embedIndex=");
-        sbU.append(this.embedIndex);
-        sbU.append(", guildId=");
-        sbU.append(this.guildId);
-        sbU.append(", message=");
-        sbU.append(this.message);
-        sbU.append(", messageState=");
-        sbU.append(this.messageState);
-        sbU.append(", attachment=");
-        sbU.append(this.attachment);
-        sbU.append(", isBlockedExpanded=");
-        sbU.append(this.isBlockedExpanded);
-        sbU.append(", allowAnimatedEmojis=");
-        sbU.append(this.allowAnimatedEmojis);
-        sbU.append(", autoPlayGifs=");
-        sbU.append(this.autoPlayGifs);
-        sbU.append(", isThreadStarterMessage=");
-        return outline.O(sbU, this.isThreadStarterMessage, ")");
+        StringBuilder sbM833U = C1643a.m833U("AttachmentEntry(embedIndex=");
+        sbM833U.append(this.embedIndex);
+        sbM833U.append(", guildId=");
+        sbM833U.append(this.guildId);
+        sbM833U.append(", message=");
+        sbM833U.append(this.message);
+        sbM833U.append(", messageState=");
+        sbM833U.append(this.messageState);
+        sbM833U.append(", attachment=");
+        sbM833U.append(this.attachment);
+        sbM833U.append(", isBlockedExpanded=");
+        sbM833U.append(this.isBlockedExpanded);
+        sbM833U.append(", allowAnimatedEmojis=");
+        sbM833U.append(this.allowAnimatedEmojis);
+        sbM833U.append(", autoPlayGifs=");
+        sbM833U.append(this.autoPlayGifs);
+        sbM833U.append(", isThreadStarterMessage=");
+        return C1643a.m827O(sbM833U, this.isThreadStarterMessage, ")");
     }
 }

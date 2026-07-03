@@ -1,14 +1,14 @@
 package com.discord.analytics.generated.events;
 
-import b.d.b.a.outline;
 import com.discord.analytics.generated.traits.TrackBase;
-import com.discord.analytics.generated.traits.TrackBase2;
+import com.discord.analytics.generated.traits.TrackBaseReceiver;
 import com.discord.api.science.AnalyticsSchema;
-import d0.z.d.Intrinsics3;
+import p007b.p100d.p104b.p105a.C1643a;
+import p507d0.p592z.p594d.C12238m;
 
 /* JADX INFO: compiled from: TrackGuildDefaultDmsUpdated.kt */
 /* JADX INFO: loaded from: classes.dex */
-public final /* data */ class TrackGuildDefaultDmsUpdated implements AnalyticsSchema, TrackBase2 {
+public final /* data */ class TrackGuildDefaultDmsUpdated implements AnalyticsSchema, TrackBaseReceiver {
     private TrackBase trackBase;
     private final Boolean defaultGuildsRestricted = null;
     private final Boolean appliedToExistingGuilds = null;
@@ -28,7 +28,7 @@ public final /* data */ class TrackGuildDefaultDmsUpdated implements AnalyticsSc
             return false;
         }
         TrackGuildDefaultDmsUpdated trackGuildDefaultDmsUpdated = (TrackGuildDefaultDmsUpdated) other;
-        return Intrinsics3.areEqual(this.defaultGuildsRestricted, trackGuildDefaultDmsUpdated.defaultGuildsRestricted) && Intrinsics3.areEqual(this.appliedToExistingGuilds, trackGuildDefaultDmsUpdated.appliedToExistingGuilds);
+        return C12238m.areEqual(this.defaultGuildsRestricted, trackGuildDefaultDmsUpdated.defaultGuildsRestricted) && C12238m.areEqual(this.appliedToExistingGuilds, trackGuildDefaultDmsUpdated.appliedToExistingGuilds);
     }
 
     public int hashCode() {
@@ -39,9 +39,9 @@ public final /* data */ class TrackGuildDefaultDmsUpdated implements AnalyticsSc
     }
 
     public String toString() {
-        StringBuilder sbU = outline.U("TrackGuildDefaultDmsUpdated(defaultGuildsRestricted=");
-        sbU.append(this.defaultGuildsRestricted);
-        sbU.append(", appliedToExistingGuilds=");
-        return outline.D(sbU, this.appliedToExistingGuilds, ")");
+        StringBuilder sbM833U = C1643a.m833U("TrackGuildDefaultDmsUpdated(defaultGuildsRestricted=");
+        sbM833U.append(this.defaultGuildsRestricted);
+        sbM833U.append(", appliedToExistingGuilds=");
+        return C1643a.m816D(sbM833U, this.appliedToExistingGuilds, ")");
     }
 }

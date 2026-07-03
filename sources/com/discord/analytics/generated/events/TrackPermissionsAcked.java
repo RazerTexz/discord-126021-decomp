@@ -1,14 +1,14 @@
 package com.discord.analytics.generated.events;
 
-import b.d.b.a.outline;
 import com.discord.analytics.generated.traits.TrackBase;
-import com.discord.analytics.generated.traits.TrackBase2;
+import com.discord.analytics.generated.traits.TrackBaseReceiver;
 import com.discord.api.science.AnalyticsSchema;
-import d0.z.d.Intrinsics3;
+import p007b.p100d.p104b.p105a.C1643a;
+import p507d0.p592z.p594d.C12238m;
 
 /* JADX INFO: compiled from: TrackPermissionsAcked.kt */
 /* JADX INFO: loaded from: classes.dex */
-public final /* data */ class TrackPermissionsAcked implements AnalyticsSchema, TrackBase2 {
+public final /* data */ class TrackPermissionsAcked implements AnalyticsSchema, TrackBaseReceiver {
     private TrackBase trackBase;
     private final CharSequence type = null;
     private final CharSequence action = null;
@@ -29,7 +29,7 @@ public final /* data */ class TrackPermissionsAcked implements AnalyticsSchema, 
             return false;
         }
         TrackPermissionsAcked trackPermissionsAcked = (TrackPermissionsAcked) other;
-        return Intrinsics3.areEqual(this.type, trackPermissionsAcked.type) && Intrinsics3.areEqual(this.action, trackPermissionsAcked.action) && Intrinsics3.areEqual(this.previousAction, trackPermissionsAcked.previousAction);
+        return C12238m.areEqual(this.type, trackPermissionsAcked.type) && C12238m.areEqual(this.action, trackPermissionsAcked.action) && C12238m.areEqual(this.previousAction, trackPermissionsAcked.previousAction);
     }
 
     public int hashCode() {
@@ -42,11 +42,11 @@ public final /* data */ class TrackPermissionsAcked implements AnalyticsSchema, 
     }
 
     public String toString() {
-        StringBuilder sbU = outline.U("TrackPermissionsAcked(type=");
-        sbU.append(this.type);
-        sbU.append(", action=");
-        sbU.append(this.action);
-        sbU.append(", previousAction=");
-        return outline.E(sbU, this.previousAction, ")");
+        StringBuilder sbM833U = C1643a.m833U("TrackPermissionsAcked(type=");
+        sbM833U.append(this.type);
+        sbM833U.append(", action=");
+        sbM833U.append(this.action);
+        sbM833U.append(", previousAction=");
+        return C1643a.m817E(sbM833U, this.previousAction, ")");
     }
 }

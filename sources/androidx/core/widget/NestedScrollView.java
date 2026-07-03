@@ -29,6 +29,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.annotation.RestrictTo;
 import androidx.constraintlayout.solver.widgets.analyzer.BasicMeasure;
+import androidx.core.C0205R;
 import androidx.core.view.AccessibilityDelegateCompat;
 import androidx.core.view.NestedScrollingChild3;
 import androidx.core.view.NestedScrollingChildHelper;
@@ -38,8 +39,8 @@ import androidx.core.view.ScrollingView;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.accessibility.AccessibilityNodeInfoCompat;
 import androidx.core.view.accessibility.AccessibilityRecordCompat;
-import b.d.b.a.outline;
 import java.util.ArrayList;
+import p007b.p100d.p104b.p105a.C1643a;
 
 /* JADX INFO: loaded from: classes.dex */
 public class NestedScrollView extends FrameLayout implements NestedScrollingParent3, NestedScrollingChild3, ScrollingView {
@@ -167,10 +168,10 @@ public class NestedScrollView extends FrameLayout implements NestedScrollingPare
 
         @NonNull
         public String toString() {
-            StringBuilder sbU = outline.U("HorizontalScrollView.SavedState{");
-            sbU.append(Integer.toHexString(System.identityHashCode(this)));
-            sbU.append(" scrollPosition=");
-            return outline.B(sbU, this.scrollPosition, "}");
+            StringBuilder sbM833U = C1643a.m833U("HorizontalScrollView.SavedState{");
+            sbM833U.append(Integer.toHexString(System.identityHashCode(this)));
+            sbM833U.append(" scrollPosition=");
+            return C1643a.m814B(sbM833U, this.scrollPosition, "}");
         }
 
         @Override // android.view.View.BaseSavedState, android.view.AbsSavedState, android.os.Parcelable
@@ -1074,10 +1075,10 @@ public class NestedScrollView extends FrameLayout implements NestedScrollingPare
             } else if (actionMasked == 2) {
                 int iFindPointerIndex = motionEvent.findPointerIndex(this.mActivePointerId);
                 if (iFindPointerIndex == -1) {
-                    StringBuilder sbU = outline.U("Invalid pointerId=");
-                    sbU.append(this.mActivePointerId);
-                    sbU.append(" in onTouchEvent");
-                    Log.e(TAG, sbU.toString());
+                    StringBuilder sbM833U = C1643a.m833U("Invalid pointerId=");
+                    sbM833U.append(this.mActivePointerId);
+                    sbM833U.append(" in onTouchEvent");
+                    Log.e(TAG, sbM833U.toString());
                 } else {
                     int y2 = (int) motionEvent.getY(iFindPointerIndex);
                     int i2 = this.mLastMotionY - y2;
@@ -1366,7 +1367,7 @@ public class NestedScrollView extends FrameLayout implements NestedScrollingPare
     }
 
     public NestedScrollView(@NonNull Context context, @Nullable AttributeSet attributeSet) {
-        this(context, attributeSet, androidx.core.R.attr.nestedScrollViewStyle);
+        this(context, attributeSet, C0205R.attr.nestedScrollViewStyle);
     }
 
     @Override // android.view.View, androidx.core.view.NestedScrollingChild

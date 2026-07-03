@@ -10,7 +10,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.FrameLayout;
 import androidx.annotation.RestrictTo;
-import androidx.appcompat.R;
+import androidx.appcompat.C0051R;
 import androidx.core.view.ViewCompat;
 import org.objectweb.asm.Opcodes;
 
@@ -83,8 +83,8 @@ public class ActionBarContainer extends FrameLayout {
     @Override // android.view.View
     public void onFinishInflate() {
         super.onFinishInflate();
-        this.mActionBarView = findViewById(R.id.action_bar);
-        this.mContextView = findViewById(R.id.action_context_bar);
+        this.mActionBarView = findViewById(C0051R.id.action_bar);
+        this.mContextView = findViewById(C0051R.id.action_context_bar);
     }
 
     @Override // android.view.View
@@ -304,14 +304,14 @@ public class ActionBarContainer extends FrameLayout {
     public ActionBarContainer(Context context, AttributeSet attributeSet) {
         super(context, attributeSet);
         ViewCompat.setBackground(this, new ActionBarBackgroundDrawable(this));
-        TypedArray typedArrayObtainStyledAttributes = context.obtainStyledAttributes(attributeSet, R.styleable.ActionBar);
-        this.mBackground = typedArrayObtainStyledAttributes.getDrawable(R.styleable.ActionBar_background);
-        this.mStackedBackground = typedArrayObtainStyledAttributes.getDrawable(R.styleable.ActionBar_backgroundStacked);
-        this.mHeight = typedArrayObtainStyledAttributes.getDimensionPixelSize(R.styleable.ActionBar_height, -1);
+        TypedArray typedArrayObtainStyledAttributes = context.obtainStyledAttributes(attributeSet, C0051R.styleable.ActionBar);
+        this.mBackground = typedArrayObtainStyledAttributes.getDrawable(C0051R.styleable.ActionBar_background);
+        this.mStackedBackground = typedArrayObtainStyledAttributes.getDrawable(C0051R.styleable.ActionBar_backgroundStacked);
+        this.mHeight = typedArrayObtainStyledAttributes.getDimensionPixelSize(C0051R.styleable.ActionBar_height, -1);
         boolean z2 = true;
-        if (getId() == R.id.split_action_bar) {
+        if (getId() == C0051R.id.split_action_bar) {
             this.mIsSplit = true;
-            this.mSplitBackground = typedArrayObtainStyledAttributes.getDrawable(R.styleable.ActionBar_backgroundSplit);
+            this.mSplitBackground = typedArrayObtainStyledAttributes.getDrawable(C0051R.styleable.ActionBar_backgroundSplit);
         }
         typedArrayObtainStyledAttributes.recycle();
         if (!this.mIsSplit ? this.mBackground != null || this.mStackedBackground != null : this.mSplitBackground != null) {

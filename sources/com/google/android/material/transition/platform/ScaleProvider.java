@@ -21,23 +21,28 @@ public final class ScaleProvider implements VisibilityAnimatorProvider {
     private float outgoingStartScale;
     private boolean scaleOnDisappear;
 
-    public static class a extends AnimatorListenerAdapter {
-        public final /* synthetic */ View a;
+    /* JADX INFO: renamed from: com.google.android.material.transition.platform.ScaleProvider$a */
+    public static class C11062a extends AnimatorListenerAdapter {
 
-        /* JADX INFO: renamed from: b, reason: collision with root package name */
-        public final /* synthetic */ float f3106b;
-        public final /* synthetic */ float c;
+        /* JADX INFO: renamed from: a */
+        public final /* synthetic */ View f21396a;
 
-        public a(View view, float f, float f2) {
-            this.a = view;
-            this.f3106b = f;
-            this.c = f2;
+        /* JADX INFO: renamed from: b */
+        public final /* synthetic */ float f21397b;
+
+        /* JADX INFO: renamed from: c */
+        public final /* synthetic */ float f21398c;
+
+        public C11062a(View view, float f, float f2) {
+            this.f21396a = view;
+            this.f21397b = f;
+            this.f21398c = f2;
         }
 
         @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
         public void onAnimationEnd(Animator animator) {
-            this.a.setScaleX(this.f3106b);
-            this.a.setScaleY(this.c);
+            this.f21396a.setScaleX(this.f21397b);
+            this.f21396a.setScaleY(this.f21398c);
         }
     }
 
@@ -49,7 +54,7 @@ public final class ScaleProvider implements VisibilityAnimatorProvider {
         float scaleX = view.getScaleX();
         float scaleY = view.getScaleY();
         ObjectAnimator objectAnimatorOfPropertyValuesHolder = ObjectAnimator.ofPropertyValuesHolder(view, PropertyValuesHolder.ofFloat((Property<?, Float>) View.SCALE_X, scaleX * f, scaleX * f2), PropertyValuesHolder.ofFloat((Property<?, Float>) View.SCALE_Y, f * scaleY, f2 * scaleY));
-        objectAnimatorOfPropertyValuesHolder.addListener(new a(view, scaleX, scaleY));
+        objectAnimatorOfPropertyValuesHolder.addListener(new C11062a(view, scaleX, scaleY));
         return objectAnimatorOfPropertyValuesHolder;
     }
 

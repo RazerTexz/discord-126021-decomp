@@ -1,14 +1,14 @@
 package com.discord.analytics.generated.events;
 
-import b.d.b.a.outline;
 import com.discord.analytics.generated.traits.TrackBase;
-import com.discord.analytics.generated.traits.TrackBase2;
+import com.discord.analytics.generated.traits.TrackBaseReceiver;
 import com.discord.api.science.AnalyticsSchema;
-import d0.z.d.Intrinsics3;
+import p007b.p100d.p104b.p105a.C1643a;
+import p507d0.p592z.p594d.C12238m;
 
 /* JADX INFO: compiled from: TrackActivityUpdated.kt */
 /* JADX INFO: loaded from: classes.dex */
-public final /* data */ class TrackActivityUpdated implements AnalyticsSchema, TrackBase2 {
+public final /* data */ class TrackActivityUpdated implements AnalyticsSchema, TrackBaseReceiver {
     private TrackBase trackBase;
     private final Long applicationId = null;
     private final Boolean hasMatchSecret = null;
@@ -38,7 +38,7 @@ public final /* data */ class TrackActivityUpdated implements AnalyticsSchema, T
             return false;
         }
         TrackActivityUpdated trackActivityUpdated = (TrackActivityUpdated) other;
-        return Intrinsics3.areEqual(this.applicationId, trackActivityUpdated.applicationId) && Intrinsics3.areEqual(this.hasMatchSecret, trackActivityUpdated.hasMatchSecret) && Intrinsics3.areEqual(this.hasSpectateSecret, trackActivityUpdated.hasSpectateSecret) && Intrinsics3.areEqual(this.hasJoinSecret, trackActivityUpdated.hasJoinSecret) && Intrinsics3.areEqual(this.hasImages, trackActivityUpdated.hasImages) && Intrinsics3.areEqual(this.partyMax, trackActivityUpdated.partyMax) && Intrinsics3.areEqual(this.partyId, trackActivityUpdated.partyId) && Intrinsics3.areEqual(this.platform, trackActivityUpdated.platform) && Intrinsics3.areEqual(this.partyPlatform, trackActivityUpdated.partyPlatform) && Intrinsics3.areEqual(this.trackId, trackActivityUpdated.trackId) && Intrinsics3.areEqual(this.type, trackActivityUpdated.type) && Intrinsics3.areEqual(this.activitySessionId, trackActivityUpdated.activitySessionId);
+        return C12238m.areEqual(this.applicationId, trackActivityUpdated.applicationId) && C12238m.areEqual(this.hasMatchSecret, trackActivityUpdated.hasMatchSecret) && C12238m.areEqual(this.hasSpectateSecret, trackActivityUpdated.hasSpectateSecret) && C12238m.areEqual(this.hasJoinSecret, trackActivityUpdated.hasJoinSecret) && C12238m.areEqual(this.hasImages, trackActivityUpdated.hasImages) && C12238m.areEqual(this.partyMax, trackActivityUpdated.partyMax) && C12238m.areEqual(this.partyId, trackActivityUpdated.partyId) && C12238m.areEqual(this.platform, trackActivityUpdated.platform) && C12238m.areEqual(this.partyPlatform, trackActivityUpdated.partyPlatform) && C12238m.areEqual(this.trackId, trackActivityUpdated.trackId) && C12238m.areEqual(this.type, trackActivityUpdated.type) && C12238m.areEqual(this.activitySessionId, trackActivityUpdated.activitySessionId);
     }
 
     public int hashCode() {
@@ -69,29 +69,29 @@ public final /* data */ class TrackActivityUpdated implements AnalyticsSchema, T
     }
 
     public String toString() {
-        StringBuilder sbU = outline.U("TrackActivityUpdated(applicationId=");
-        sbU.append(this.applicationId);
-        sbU.append(", hasMatchSecret=");
-        sbU.append(this.hasMatchSecret);
-        sbU.append(", hasSpectateSecret=");
-        sbU.append(this.hasSpectateSecret);
-        sbU.append(", hasJoinSecret=");
-        sbU.append(this.hasJoinSecret);
-        sbU.append(", hasImages=");
-        sbU.append(this.hasImages);
-        sbU.append(", partyMax=");
-        sbU.append(this.partyMax);
-        sbU.append(", partyId=");
-        sbU.append(this.partyId);
-        sbU.append(", platform=");
-        sbU.append(this.platform);
-        sbU.append(", partyPlatform=");
-        sbU.append(this.partyPlatform);
-        sbU.append(", trackId=");
-        sbU.append(this.trackId);
-        sbU.append(", type=");
-        sbU.append(this.type);
-        sbU.append(", activitySessionId=");
-        return outline.E(sbU, this.activitySessionId, ")");
+        StringBuilder sbM833U = C1643a.m833U("TrackActivityUpdated(applicationId=");
+        sbM833U.append(this.applicationId);
+        sbM833U.append(", hasMatchSecret=");
+        sbM833U.append(this.hasMatchSecret);
+        sbM833U.append(", hasSpectateSecret=");
+        sbM833U.append(this.hasSpectateSecret);
+        sbM833U.append(", hasJoinSecret=");
+        sbM833U.append(this.hasJoinSecret);
+        sbM833U.append(", hasImages=");
+        sbM833U.append(this.hasImages);
+        sbM833U.append(", partyMax=");
+        sbM833U.append(this.partyMax);
+        sbM833U.append(", partyId=");
+        sbM833U.append(this.partyId);
+        sbM833U.append(", platform=");
+        sbM833U.append(this.platform);
+        sbM833U.append(", partyPlatform=");
+        sbM833U.append(this.partyPlatform);
+        sbM833U.append(", trackId=");
+        sbM833U.append(this.trackId);
+        sbM833U.append(", type=");
+        sbM833U.append(this.type);
+        sbM833U.append(", activitySessionId=");
+        return C1643a.m817E(sbM833U, this.activitySessionId, ")");
     }
 }

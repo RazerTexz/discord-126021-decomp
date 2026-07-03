@@ -1,15 +1,6 @@
 package com.facebook.common.references;
 
 import android.graphics.Bitmap;
-import b.c.a.a0.AnimatableValueParser;
-import b.f.d.d.Closeables;
-import b.f.d.e.FLog;
-import b.f.d.h.DefaultCloseableReference;
-import b.f.d.h.FinalizerCloseableReference;
-import b.f.d.h.HasBitmap;
-import b.f.d.h.NoOpCloseableReference;
-import b.f.d.h.RefCountCloseableReference;
-import b.f.d.h.ResourceReleaser;
 import java.io.Closeable;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -17,122 +8,162 @@ import java.util.Collection;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Objects;
+import p007b.p085c.p086a.p087a0.C1460d;
+import p007b.p109f.p115d.p119d.C1678a;
+import p007b.p109f.p115d.p120e.C1691a;
+import p007b.p109f.p115d.p123h.C1704a;
+import p007b.p109f.p115d.p123h.C1705b;
+import p007b.p109f.p115d.p123h.C1707d;
+import p007b.p109f.p115d.p123h.C1708e;
+import p007b.p109f.p115d.p123h.InterfaceC1706c;
+import p007b.p109f.p115d.p123h.InterfaceC1709f;
 
 /* JADX INFO: loaded from: classes.dex */
 public abstract class CloseableReference<T> implements Cloneable, Closeable {
-    public static Class<CloseableReference> j = CloseableReference.class;
-    public static int k = 0;
-    public static final ResourceReleaser<Closeable> l = new a();
-    public static final c m = new b();
-    public boolean n = false;
-    public final SharedReference<T> o;
-    public final c p;
-    public final Throwable q;
 
-    public static class a implements ResourceReleaser<Closeable> {
-        @Override // b.f.d.h.ResourceReleaser
+    /* JADX INFO: renamed from: j */
+    public static Class<CloseableReference> f19438j = CloseableReference.class;
+
+    /* JADX INFO: renamed from: k */
+    public static int f19439k = 0;
+
+    /* JADX INFO: renamed from: l */
+    public static final InterfaceC1709f<Closeable> f19440l = new C10635a();
+
+    /* JADX INFO: renamed from: m */
+    public static final InterfaceC10637c f19441m = new C10636b();
+
+    /* JADX INFO: renamed from: n */
+    public boolean f19442n = false;
+
+    /* JADX INFO: renamed from: o */
+    public final SharedReference<T> f19443o;
+
+    /* JADX INFO: renamed from: p */
+    public final InterfaceC10637c f19444p;
+
+    /* JADX INFO: renamed from: q */
+    public final Throwable f19445q;
+
+    /* JADX INFO: renamed from: com.facebook.common.references.CloseableReference$a */
+    public static class C10635a implements InterfaceC1709f<Closeable> {
+        @Override // p007b.p109f.p115d.p123h.InterfaceC1709f
         public void release(Closeable closeable) {
             try {
-                Closeables.a(closeable, true);
+                C1678a.m965a(closeable, true);
             } catch (IOException unused) {
             }
         }
     }
 
-    public static class b implements c {
-        @Override // com.facebook.common.references.CloseableReference.c
-        public void a(SharedReference<Object> sharedReference, Throwable th) {
-            Object objC = sharedReference.c();
-            Class<CloseableReference> cls = CloseableReference.j;
-            Class<CloseableReference> cls2 = CloseableReference.j;
+    /* JADX INFO: renamed from: com.facebook.common.references.CloseableReference$b */
+    public static class C10636b implements InterfaceC10637c {
+        @Override // com.facebook.common.references.CloseableReference.InterfaceC10637c
+        /* JADX INFO: renamed from: a */
+        public void mo1252a(SharedReference<Object> sharedReference, Throwable th) {
+            Object objM8646c = sharedReference.m8646c();
+            Class<CloseableReference> cls = CloseableReference.f19438j;
+            Class<CloseableReference> cls2 = CloseableReference.f19438j;
             Object[] objArr = new Object[3];
             objArr[0] = Integer.valueOf(System.identityHashCode(this));
             objArr[1] = Integer.valueOf(System.identityHashCode(sharedReference));
-            objArr[2] = objC == null ? null : objC.getClass().getName();
-            FLog.m(cls2, "Finalized without closing: %x %x (type = %s)", objArr);
+            objArr[2] = objM8646c == null ? null : objM8646c.getClass().getName();
+            C1691a.m985m(cls2, "Finalized without closing: %x %x (type = %s)", objArr);
         }
 
-        @Override // com.facebook.common.references.CloseableReference.c
-        public boolean b() {
+        @Override // com.facebook.common.references.CloseableReference.InterfaceC10637c
+        /* JADX INFO: renamed from: b */
+        public boolean mo1253b() {
             return false;
         }
     }
 
-    public interface c {
-        void a(SharedReference<Object> sharedReference, Throwable th);
+    /* JADX INFO: renamed from: com.facebook.common.references.CloseableReference$c */
+    public interface InterfaceC10637c {
+        /* JADX INFO: renamed from: a */
+        void mo1252a(SharedReference<Object> sharedReference, Throwable th);
 
-        boolean b();
+        /* JADX INFO: renamed from: b */
+        boolean mo1253b();
     }
 
-    public CloseableReference(SharedReference<T> sharedReference, c cVar, Throwable th) {
+    public CloseableReference(SharedReference<T> sharedReference, InterfaceC10637c interfaceC10637c, Throwable th) {
         Objects.requireNonNull(sharedReference);
-        this.o = sharedReference;
+        this.f19443o = sharedReference;
         synchronized (sharedReference) {
-            sharedReference.b();
-            sharedReference.c++;
+            sharedReference.m8645b();
+            sharedReference.f19448c++;
         }
-        this.p = cVar;
-        this.q = th;
+        this.f19444p = interfaceC10637c;
+        this.f19445q = th;
     }
 
     /* JADX WARN: Incorrect types in method signature: <T::Ljava/io/Closeable;>(TT;)Lcom/facebook/common/references/CloseableReference<TT;>; */
-    public static CloseableReference A(Closeable closeable) {
-        return D(closeable, l);
+    /* JADX INFO: renamed from: A */
+    public static CloseableReference m8632A(Closeable closeable) {
+        return m8633D(closeable, f19440l);
     }
 
-    public static <T> CloseableReference<T> D(T t, ResourceReleaser<T> resourceReleaser) {
-        return H(t, resourceReleaser, m);
+    /* JADX INFO: renamed from: D */
+    public static <T> CloseableReference<T> m8633D(T t, InterfaceC1709f<T> interfaceC1709f) {
+        return m8634H(t, interfaceC1709f, f19441m);
     }
 
-    public static <T> CloseableReference<T> H(T t, ResourceReleaser<T> resourceReleaser, c cVar) {
+    /* JADX INFO: renamed from: H */
+    public static <T> CloseableReference<T> m8634H(T t, InterfaceC1709f<T> interfaceC1709f, InterfaceC10637c interfaceC10637c) {
         if (t == null) {
             return null;
         }
-        return I(t, resourceReleaser, cVar, cVar.b() ? new Throwable() : null);
+        return m8635I(t, interfaceC1709f, interfaceC10637c, interfaceC10637c.mo1253b() ? new Throwable() : null);
     }
 
-    public static <T> CloseableReference<T> I(T t, ResourceReleaser<T> resourceReleaser, c cVar, Throwable th) {
-        if ((t instanceof Bitmap) || (t instanceof HasBitmap)) {
-            int i = k;
+    /* JADX INFO: renamed from: I */
+    public static <T> CloseableReference<T> m8635I(T t, InterfaceC1709f<T> interfaceC1709f, InterfaceC10637c interfaceC10637c, Throwable th) {
+        if ((t instanceof Bitmap) || (t instanceof InterfaceC1706c)) {
+            int i = f19439k;
             if (i == 1) {
-                return new FinalizerCloseableReference(t, resourceReleaser, cVar, th);
+                return new C1705b(t, interfaceC1709f, interfaceC10637c, th);
             }
             if (i == 2) {
-                return new RefCountCloseableReference(t, resourceReleaser, cVar, th);
+                return new C1708e(t, interfaceC1709f, interfaceC10637c, th);
             }
             if (i == 3) {
-                return new NoOpCloseableReference(t, resourceReleaser, cVar, th);
+                return new C1707d(t, interfaceC1709f, interfaceC10637c, th);
             }
         }
-        return new DefaultCloseableReference(t, resourceReleaser, cVar, th);
+        return new C1704a(t, interfaceC1709f, interfaceC10637c, th);
     }
 
-    public static <T> CloseableReference<T> n(CloseableReference<T> closeableReference) {
+    /* JADX INFO: renamed from: n */
+    public static <T> CloseableReference<T> m8636n(CloseableReference<T> closeableReference) {
         if (closeableReference != null) {
-            return closeableReference.f();
+            return closeableReference.m8641f();
         }
         return null;
     }
 
-    public static <T> List<CloseableReference<T>> q(Collection<CloseableReference<T>> collection) {
+    /* JADX INFO: renamed from: q */
+    public static <T> List<CloseableReference<T>> m8637q(Collection<CloseableReference<T>> collection) {
         if (collection == null) {
             return null;
         }
         ArrayList arrayList = new ArrayList(collection.size());
         Iterator<CloseableReference<T>> it = collection.iterator();
         while (it.hasNext()) {
-            arrayList.add(n(it.next()));
+            arrayList.add(m8636n(it.next()));
         }
         return arrayList;
     }
 
-    public static void s(CloseableReference<?> closeableReference) {
+    /* JADX INFO: renamed from: s */
+    public static void m8638s(CloseableReference<?> closeableReference) {
         if (closeableReference != null) {
             closeableReference.close();
         }
     }
 
-    public static void t(Iterable<? extends CloseableReference<?>> iterable) {
+    /* JADX INFO: renamed from: t */
+    public static void m8639t(Iterable<? extends CloseableReference<?>> iterable) {
         if (iterable != null) {
             for (CloseableReference<?> closeableReference : iterable) {
                 if (closeableReference != null) {
@@ -142,8 +173,9 @@ public abstract class CloseableReference<T> implements Cloneable, Closeable {
         }
     }
 
-    public static boolean y(CloseableReference<?> closeableReference) {
-        return closeableReference != null && closeableReference.x();
+    /* JADX INFO: renamed from: y */
+    public static boolean m8640y(CloseableReference<?> closeableReference) {
+        return closeableReference != null && closeableReference.m8643x();
     }
 
     @Override // 
@@ -152,36 +184,39 @@ public abstract class CloseableReference<T> implements Cloneable, Closeable {
 
     public void close() {
         synchronized (this) {
-            if (this.n) {
+            if (this.f19442n) {
                 return;
             }
-            this.n = true;
-            this.o.a();
+            this.f19442n = true;
+            this.f19443o.m8644a();
         }
     }
 
-    public synchronized CloseableReference<T> f() {
-        if (!x()) {
+    /* JADX INFO: renamed from: f */
+    public synchronized CloseableReference<T> m8641f() {
+        if (!m8643x()) {
             return null;
         }
         return clone();
     }
 
-    public synchronized T u() {
-        T tC;
-        AnimatableValueParser.B(!this.n);
-        tC = this.o.c();
-        Objects.requireNonNull(tC);
-        return tC;
+    /* JADX INFO: renamed from: u */
+    public synchronized T m8642u() {
+        T tM8646c;
+        C1460d.m419B(!this.f19442n);
+        tM8646c = this.f19443o.m8646c();
+        Objects.requireNonNull(tM8646c);
+        return tM8646c;
     }
 
-    public synchronized boolean x() {
-        return !this.n;
+    /* JADX INFO: renamed from: x */
+    public synchronized boolean m8643x() {
+        return !this.f19442n;
     }
 
-    public CloseableReference(T t, ResourceReleaser<T> resourceReleaser, c cVar, Throwable th) {
-        this.o = new SharedReference<>(t, resourceReleaser);
-        this.p = cVar;
-        this.q = th;
+    public CloseableReference(T t, InterfaceC1709f<T> interfaceC1709f, InterfaceC10637c interfaceC10637c, Throwable th) {
+        this.f19443o = new SharedReference<>(t, interfaceC1709f);
+        this.f19444p = interfaceC10637c;
+        this.f19445q = th;
     }
 }

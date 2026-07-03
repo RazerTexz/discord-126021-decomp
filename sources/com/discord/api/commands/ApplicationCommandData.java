@@ -1,23 +1,23 @@
 package com.discord.api.commands;
 
-import b.d.b.a.outline;
 import com.discord.models.domain.ModelAuditLogEntry;
-import d0.z.d.Intrinsics3;
 import java.util.List;
+import p007b.p100d.p104b.p105a.C1643a;
+import p507d0.p592z.p594d.C12238m;
 
 /* JADX INFO: compiled from: ApplicationCommandData.kt */
 /* JADX INFO: loaded from: classes.dex */
 public final /* data */ class ApplicationCommandData {
-    private final List<ApplicationCommandData2> attachments;
+    private final List<ApplicationCommandAttachment> attachments;
     private final String guildId;
     private final String id;
     private final String name;
-    private final List<ApplicationCommandData3> options;
+    private final List<ApplicationCommandValue> options;
     private final String version;
 
-    public ApplicationCommandData(String str, String str2, String str3, String str4, List<ApplicationCommandData3> list, List<ApplicationCommandData2> list2) {
-        Intrinsics3.checkNotNullParameter(str3, ModelAuditLogEntry.CHANGE_KEY_ID);
-        Intrinsics3.checkNotNullParameter(str4, ModelAuditLogEntry.CHANGE_KEY_NAME);
+    public ApplicationCommandData(String str, String str2, String str3, String str4, List<ApplicationCommandValue> list, List<ApplicationCommandAttachment> list2) {
+        C12238m.checkNotNullParameter(str3, ModelAuditLogEntry.CHANGE_KEY_ID);
+        C12238m.checkNotNullParameter(str4, ModelAuditLogEntry.CHANGE_KEY_NAME);
         this.version = str;
         this.guildId = str2;
         this.id = str3;
@@ -31,7 +31,8 @@ public final /* data */ class ApplicationCommandData {
         return this.name;
     }
 
-    public final List<ApplicationCommandData3> b() {
+    /* JADX INFO: renamed from: b */
+    public final List<ApplicationCommandValue> m7725b() {
         return this.options;
     }
 
@@ -43,7 +44,7 @@ public final /* data */ class ApplicationCommandData {
             return false;
         }
         ApplicationCommandData applicationCommandData = (ApplicationCommandData) other;
-        return Intrinsics3.areEqual(this.version, applicationCommandData.version) && Intrinsics3.areEqual(this.guildId, applicationCommandData.guildId) && Intrinsics3.areEqual(this.id, applicationCommandData.id) && Intrinsics3.areEqual(this.name, applicationCommandData.name) && Intrinsics3.areEqual(this.options, applicationCommandData.options) && Intrinsics3.areEqual(this.attachments, applicationCommandData.attachments);
+        return C12238m.areEqual(this.version, applicationCommandData.version) && C12238m.areEqual(this.guildId, applicationCommandData.guildId) && C12238m.areEqual(this.id, applicationCommandData.id) && C12238m.areEqual(this.name, applicationCommandData.name) && C12238m.areEqual(this.options, applicationCommandData.options) && C12238m.areEqual(this.attachments, applicationCommandData.attachments);
     }
 
     public int hashCode() {
@@ -55,24 +56,24 @@ public final /* data */ class ApplicationCommandData {
         int iHashCode3 = (iHashCode2 + (str3 != null ? str3.hashCode() : 0)) * 31;
         String str4 = this.name;
         int iHashCode4 = (iHashCode3 + (str4 != null ? str4.hashCode() : 0)) * 31;
-        List<ApplicationCommandData3> list = this.options;
+        List<ApplicationCommandValue> list = this.options;
         int iHashCode5 = (iHashCode4 + (list != null ? list.hashCode() : 0)) * 31;
-        List<ApplicationCommandData2> list2 = this.attachments;
+        List<ApplicationCommandAttachment> list2 = this.attachments;
         return iHashCode5 + (list2 != null ? list2.hashCode() : 0);
     }
 
     public String toString() {
-        StringBuilder sbU = outline.U("ApplicationCommandData(version=");
-        sbU.append(this.version);
-        sbU.append(", guildId=");
-        sbU.append(this.guildId);
-        sbU.append(", id=");
-        sbU.append(this.id);
-        sbU.append(", name=");
-        sbU.append(this.name);
-        sbU.append(", options=");
-        sbU.append(this.options);
-        sbU.append(", attachments=");
-        return outline.L(sbU, this.attachments, ")");
+        StringBuilder sbM833U = C1643a.m833U("ApplicationCommandData(version=");
+        sbM833U.append(this.version);
+        sbM833U.append(", guildId=");
+        sbM833U.append(this.guildId);
+        sbM833U.append(", id=");
+        sbM833U.append(this.id);
+        sbM833U.append(", name=");
+        sbM833U.append(this.name);
+        sbM833U.append(", options=");
+        sbM833U.append(this.options);
+        sbM833U.append(", attachments=");
+        return C1643a.m824L(sbM833U, this.attachments, ")");
     }
 }

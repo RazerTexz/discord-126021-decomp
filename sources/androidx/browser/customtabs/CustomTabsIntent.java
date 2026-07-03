@@ -19,10 +19,10 @@ import androidx.browser.customtabs.CustomTabsSession;
 import androidx.core.app.ActivityOptionsCompat;
 import androidx.core.app.BundleCompat;
 import androidx.core.content.ContextCompat;
-import b.d.b.a.outline;
 import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
 import java.util.ArrayList;
+import p007b.p100d.p104b.p105a.C1643a;
 
 /* JADX INFO: loaded from: classes.dex */
 public final class CustomTabsIntent {
@@ -97,7 +97,7 @@ public final class CustomTabsIntent {
     public static CustomTabColorSchemeParams getColorSchemeParams(@NonNull Intent intent, int i) {
         Bundle bundle;
         if (i < 0 || i > 2 || i == 0) {
-            throw new IllegalArgumentException(outline.q("Invalid colorScheme: ", i));
+            throw new IllegalArgumentException(C1643a.m871q("Invalid colorScheme: ", i));
         }
         Bundle extras = intent.getExtras();
         if (extras == null) {
@@ -266,7 +266,7 @@ public final class CustomTabsIntent {
         @NonNull
         public Builder setColorSchemeParams(int i, @NonNull CustomTabColorSchemeParams customTabColorSchemeParams) {
             if (i < 0 || i > 2 || i == 0) {
-                throw new IllegalArgumentException(outline.q("Invalid colorScheme: ", i));
+                throw new IllegalArgumentException(C1643a.m871q("Invalid colorScheme: ", i));
             }
             if (this.mColorSchemeParamBundles == null) {
                 this.mColorSchemeParamBundles = new SparseArray<>();

@@ -1,17 +1,17 @@
 package com.discord.analytics.generated.events;
 
-import b.d.b.a.outline;
 import com.discord.analytics.generated.traits.TrackBase;
-import com.discord.analytics.generated.traits.TrackBase2;
+import com.discord.analytics.generated.traits.TrackBaseReceiver;
 import com.discord.analytics.generated.traits.TrackGuild;
-import com.discord.analytics.generated.traits.TrackGuild2;
+import com.discord.analytics.generated.traits.TrackGuildReceiver;
 import com.discord.api.science.AnalyticsSchema;
-import d0.z.d.Intrinsics3;
 import java.util.List;
+import p007b.p100d.p104b.p105a.C1643a;
+import p507d0.p592z.p594d.C12238m;
 
 /* JADX INFO: compiled from: TrackFeedLoaded.kt */
 /* JADX INFO: loaded from: classes.dex */
-public final /* data */ class TrackFeedLoaded implements AnalyticsSchema, TrackBase2, TrackGuild2 {
+public final /* data */ class TrackFeedLoaded implements AnalyticsSchema, TrackBaseReceiver, TrackGuildReceiver {
     private TrackBase trackBase;
     private TrackGuild trackGuild;
     private final CharSequence loadId = null;
@@ -23,14 +23,15 @@ public final /* data */ class TrackFeedLoaded implements AnalyticsSchema, TrackB
     private final CharSequence startHomeSessionId = null;
     private final transient String analyticsSchemaTypeName = "feed_loaded";
 
-    @Override // com.discord.analytics.generated.traits.TrackGuild2
+    @Override // com.discord.analytics.generated.traits.TrackGuildReceiver
     /* JADX INFO: renamed from: a, reason: from getter */
     public TrackGuild getTrackGuild() {
         return this.trackGuild;
     }
 
-    @Override // com.discord.analytics.generated.traits.TrackGuild2
-    public void c(TrackGuild trackGuild) {
+    @Override // com.discord.analytics.generated.traits.TrackGuildReceiver
+    /* JADX INFO: renamed from: c */
+    public void mo7508c(TrackGuild trackGuild) {
         this.trackGuild = trackGuild;
     }
 
@@ -48,7 +49,7 @@ public final /* data */ class TrackFeedLoaded implements AnalyticsSchema, TrackB
             return false;
         }
         TrackFeedLoaded trackFeedLoaded = (TrackFeedLoaded) other;
-        return Intrinsics3.areEqual(this.loadId, trackFeedLoaded.loadId) && Intrinsics3.areEqual(this.feedItemIds, trackFeedLoaded.feedItemIds) && Intrinsics3.areEqual(this.unreadFeedItemIds, trackFeedLoaded.unreadFeedItemIds) && Intrinsics3.areEqual(this.readFeedItemIds, trackFeedLoaded.readFeedItemIds) && Intrinsics3.areEqual(this.loadTimeMillis, trackFeedLoaded.loadTimeMillis) && Intrinsics3.areEqual(this.homeSessionId, trackFeedLoaded.homeSessionId) && Intrinsics3.areEqual(this.startHomeSessionId, trackFeedLoaded.startHomeSessionId);
+        return C12238m.areEqual(this.loadId, trackFeedLoaded.loadId) && C12238m.areEqual(this.feedItemIds, trackFeedLoaded.feedItemIds) && C12238m.areEqual(this.unreadFeedItemIds, trackFeedLoaded.unreadFeedItemIds) && C12238m.areEqual(this.readFeedItemIds, trackFeedLoaded.readFeedItemIds) && C12238m.areEqual(this.loadTimeMillis, trackFeedLoaded.loadTimeMillis) && C12238m.areEqual(this.homeSessionId, trackFeedLoaded.homeSessionId) && C12238m.areEqual(this.startHomeSessionId, trackFeedLoaded.startHomeSessionId);
     }
 
     public int hashCode() {
@@ -69,19 +70,19 @@ public final /* data */ class TrackFeedLoaded implements AnalyticsSchema, TrackB
     }
 
     public String toString() {
-        StringBuilder sbU = outline.U("TrackFeedLoaded(loadId=");
-        sbU.append(this.loadId);
-        sbU.append(", feedItemIds=");
-        sbU.append(this.feedItemIds);
-        sbU.append(", unreadFeedItemIds=");
-        sbU.append(this.unreadFeedItemIds);
-        sbU.append(", readFeedItemIds=");
-        sbU.append(this.readFeedItemIds);
-        sbU.append(", loadTimeMillis=");
-        sbU.append(this.loadTimeMillis);
-        sbU.append(", homeSessionId=");
-        sbU.append(this.homeSessionId);
-        sbU.append(", startHomeSessionId=");
-        return outline.E(sbU, this.startHomeSessionId, ")");
+        StringBuilder sbM833U = C1643a.m833U("TrackFeedLoaded(loadId=");
+        sbM833U.append(this.loadId);
+        sbM833U.append(", feedItemIds=");
+        sbM833U.append(this.feedItemIds);
+        sbM833U.append(", unreadFeedItemIds=");
+        sbM833U.append(this.unreadFeedItemIds);
+        sbM833U.append(", readFeedItemIds=");
+        sbM833U.append(this.readFeedItemIds);
+        sbM833U.append(", loadTimeMillis=");
+        sbM833U.append(this.loadTimeMillis);
+        sbM833U.append(", homeSessionId=");
+        sbM833U.append(this.homeSessionId);
+        sbM833U.append(", startHomeSessionId=");
+        return C1643a.m817E(sbM833U, this.startHomeSessionId, ")");
     }
 }

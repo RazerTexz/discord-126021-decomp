@@ -16,7 +16,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.annotation.RestrictTo;
 import androidx.annotation.XmlRes;
-import androidx.core.R;
+import androidx.core.C0205R;
 import androidx.core.view.ViewCompat;
 import java.io.IOException;
 import org.xmlpull.v1.XmlPullParser;
@@ -85,7 +85,7 @@ public final class ColorStateListInflaterCompat {
     }
 
     @ColorInt
-    private static int modulateColorAlpha(@ColorInt int i, @FloatRange(from = 0.0d, to = 1.0d) float f) {
+    private static int modulateColorAlpha(@ColorInt int i, @FloatRange(from = 0.0d, m75to = 1.0d) float f) {
         return (i & ViewCompat.MEASURED_SIZE_MASK) | (Math.round(Color.alpha(i) * f) << 24);
     }
 
@@ -107,24 +107,24 @@ public final class ColorStateListInflaterCompat {
                 break;
             }
             if (next == 2 && depth <= depth2 && xmlPullParser.getName().equals("item")) {
-                TypedArray typedArrayObtainAttributes = obtainAttributes(resources, theme, attributeSet, R.styleable.ColorStateListItem);
-                int i3 = R.styleable.ColorStateListItem_android_color;
+                TypedArray typedArrayObtainAttributes = obtainAttributes(resources, theme, attributeSet, C0205R.styleable.ColorStateListItem);
+                int i3 = C0205R.styleable.ColorStateListItem_android_color;
                 int resourceId = typedArrayObtainAttributes.getResourceId(i3, -1);
                 if (resourceId != -1 && !isColorInt(resources, resourceId)) {
                     try {
                         color = createFromXml(resources, resources.getXml(resourceId), theme).getDefaultColor();
                     } catch (Exception unused) {
-                        color = typedArrayObtainAttributes.getColor(R.styleable.ColorStateListItem_android_color, -65281);
+                        color = typedArrayObtainAttributes.getColor(C0205R.styleable.ColorStateListItem_android_color, -65281);
                     }
                 } else {
                     color = typedArrayObtainAttributes.getColor(i3, -65281);
                 }
                 float f = 1.0f;
-                int i4 = R.styleable.ColorStateListItem_android_alpha;
+                int i4 = C0205R.styleable.ColorStateListItem_android_alpha;
                 if (typedArrayObtainAttributes.hasValue(i4)) {
                     f = typedArrayObtainAttributes.getFloat(i4, 1.0f);
                 } else {
-                    int i5 = R.styleable.ColorStateListItem_alpha;
+                    int i5 = C0205R.styleable.ColorStateListItem_alpha;
                     if (typedArrayObtainAttributes.hasValue(i5)) {
                         f = typedArrayObtainAttributes.getFloat(i5, 1.0f);
                     }
@@ -135,7 +135,7 @@ public final class ColorStateListInflaterCompat {
                 int i6 = 0;
                 for (int i7 = 0; i7 < attributeCount; i7++) {
                     int attributeNameResource = attributeSet.getAttributeNameResource(i7);
-                    if (attributeNameResource != 16843173 && attributeNameResource != 16843551 && attributeNameResource != R.attr.alpha) {
+                    if (attributeNameResource != 16843173 && attributeNameResource != 16843551 && attributeNameResource != C0205R.attr.alpha) {
                         int i8 = i6 + 1;
                         if (!attributeSet.getAttributeBooleanValue(i7, false)) {
                             attributeNameResource = -attributeNameResource;

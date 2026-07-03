@@ -1,6 +1,5 @@
 package com.discord.widgets.home;
 
-import b.d.b.a.outline;
 import com.discord.api.channel.Channel;
 import com.discord.api.channel.ChannelUtils;
 import com.discord.api.user.NsfwAllowance;
@@ -12,20 +11,21 @@ import com.discord.stores.StoreChannelsSelected;
 import com.discord.stores.StoreStream;
 import com.discord.stores.StoreThreadsActive;
 import com.discord.stores.StoreUser;
-import com.discord.utilities.rx.ObservableExtensionsKt;
-import com.discord.utilities.rx.ObservableWithLeadingEdgeThrottle;
+import com.discord.utilities.p501rx.ObservableExtensionsKt;
+import com.discord.utilities.p501rx.ObservableWithLeadingEdgeThrottle;
 import com.discord.widgets.chat.list.CreateThreadsFeatureFlag;
-import d0.Tuples;
-import d0.z.d.Intrinsics3;
-import j0.k.Func1;
-import j0.l.e.ScalarSynchronousObservable;
 import java.util.Map;
 import java.util.concurrent.TimeUnit;
-import kotlin.Tuples2;
+import kotlin.Pair;
 import kotlin.jvm.internal.DefaultConstructorMarker;
-import rx.Observable;
-import rx.functions.Func2;
-import rx.functions.Func8;
+import p007b.p100d.p104b.p105a.C1643a;
+import p507d0.C12116o;
+import p507d0.p592z.p594d.C12238m;
+import p637j0.p641k.InterfaceC12589b;
+import p637j0.p642l.p647e.C12721k;
+import p658rx.Observable;
+import p658rx.functions.Func2;
+import p658rx.functions.Func8;
 
 /* JADX INFO: compiled from: WidgetHomeModel.kt */
 /* JADX INFO: loaded from: classes2.dex */
@@ -53,23 +53,23 @@ public final /* data */ class WidgetHomeModel {
 
         public final Observable<WidgetHomeModel> get() {
             StoreStream.Companion companion = StoreStream.INSTANCE;
-            Observable observableY = Observable.j(companion.getGuildSelected().observeSelectedGuildId(), companion.getChannelsSelected().observeResolvedSelectedChannel(), new Func2<Long, StoreChannelsSelected.ResolvedSelectedChannel, Tuples2<? extends Long, ? extends StoreChannelsSelected.ResolvedSelectedChannel>>() { // from class: com.discord.widgets.home.WidgetHomeModel$Companion$get$1
-                @Override // rx.functions.Func2
-                public final Tuples2<Long, StoreChannelsSelected.ResolvedSelectedChannel> call(Long l, StoreChannelsSelected.ResolvedSelectedChannel resolvedSelectedChannel) {
-                    return Tuples.to(l, resolvedSelectedChannel);
+            Observable observableM11099Y = Observable.m11076j(companion.getGuildSelected().observeSelectedGuildId(), companion.getChannelsSelected().observeResolvedSelectedChannel(), new Func2<Long, StoreChannelsSelected.ResolvedSelectedChannel, Pair<? extends Long, ? extends StoreChannelsSelected.ResolvedSelectedChannel>>() { // from class: com.discord.widgets.home.WidgetHomeModel$Companion$get$1
+                @Override // p658rx.functions.Func2
+                public final Pair<Long, StoreChannelsSelected.ResolvedSelectedChannel> call(Long l, StoreChannelsSelected.ResolvedSelectedChannel resolvedSelectedChannel) {
+                    return C12116o.m10073to(l, resolvedSelectedChannel);
                 }
-            }).Y(new Func1<Tuples2<? extends Long, ? extends StoreChannelsSelected.ResolvedSelectedChannel>, Observable<? extends WidgetHomeModel>>() { // from class: com.discord.widgets.home.WidgetHomeModel$Companion$get$2
-                @Override // j0.k.Func1
-                public /* bridge */ /* synthetic */ Observable<? extends WidgetHomeModel> call(Tuples2<? extends Long, ? extends StoreChannelsSelected.ResolvedSelectedChannel> tuples2) {
-                    return call2((Tuples2<Long, ? extends StoreChannelsSelected.ResolvedSelectedChannel>) tuples2);
+            }).m11099Y(new InterfaceC12589b<Pair<? extends Long, ? extends StoreChannelsSelected.ResolvedSelectedChannel>, Observable<? extends WidgetHomeModel>>() { // from class: com.discord.widgets.home.WidgetHomeModel$Companion$get$2
+                @Override // p637j0.p641k.InterfaceC12589b
+                public /* bridge */ /* synthetic */ Observable<? extends WidgetHomeModel> call(Pair<? extends Long, ? extends StoreChannelsSelected.ResolvedSelectedChannel> pair) {
+                    return call2((Pair<Long, ? extends StoreChannelsSelected.ResolvedSelectedChannel>) pair);
                 }
 
                 /* JADX INFO: renamed from: call, reason: avoid collision after fix types in other method */
-                public final Observable<? extends WidgetHomeModel> call2(Tuples2<Long, ? extends StoreChannelsSelected.ResolvedSelectedChannel> tuples2) {
+                public final Observable<? extends WidgetHomeModel> call2(Pair<Long, ? extends StoreChannelsSelected.ResolvedSelectedChannel> pair) {
                     Long lValueOf;
                     long id2;
-                    Long lComponent1 = tuples2.component1();
-                    final StoreChannelsSelected.ResolvedSelectedChannel resolvedSelectedChannelComponent2 = tuples2.component2();
+                    Long lComponent1 = pair.component1();
+                    final StoreChannelsSelected.ResolvedSelectedChannel resolvedSelectedChannelComponent2 = pair.component2();
                     final Channel maybeChannel = resolvedSelectedChannelComponent2.getMaybeChannel();
                     StoreStream.Companion companion2 = StoreStream.INSTANCE;
                     Observable observableObserveMe$default = StoreUser.observeMe$default(companion2.getUsers(), false, 1, null);
@@ -78,16 +78,16 @@ public final /* data */ class WidgetHomeModel {
                     Observable<Integer> observableObserveTotalMentions = companion2.getMentions().observeTotalMentions();
                     Observable<Map<Long, Integer>> observableObserve = companion2.getUserRelationships().observe();
                     StoreThreadsActive threadsActive = companion2.getThreadsActive();
-                    Intrinsics3.checkNotNullExpressionValue(lComponent1, "selectedGuildId");
+                    C12238m.checkNotNullExpressionValue(lComponent1, "selectedGuildId");
                     long jLongValue = lComponent1.longValue();
-                    if (maybeChannel == null || !ChannelUtils.H(maybeChannel)) {
+                    if (maybeChannel == null || !ChannelUtils.m7673H(maybeChannel)) {
                         if (maybeChannel != null) {
                             id2 = maybeChannel.getId();
                         } else {
                             lValueOf = null;
                         }
                         return ObservableWithLeadingEdgeThrottle.combineLatest(observableObserveMe$default, observableObserveAllPresences, observableObserveSelectedChannel, observableObserveTotalMentions, observableObserve, threadsActive.observeActiveThreadsForChannel(jLongValue, lValueOf), WidgetHomeModel.INSTANCE.getParentChannelObservable(maybeChannel), new CreateThreadsFeatureFlag(null, null, 3, null).observeEnabled(lComponent1.longValue()), new Func8<MeUser, Map<Long, ? extends Presence>, Channel, Integer, Map<Long, ? extends Integer>, Map<Long, ? extends Channel>, Channel, Boolean, WidgetHomeModel>() { // from class: com.discord.widgets.home.WidgetHomeModel$Companion$get$2.1
-                            @Override // rx.functions.Func8
+                            @Override // p658rx.functions.Func8
                             public /* bridge */ /* synthetic */ WidgetHomeModel call(MeUser meUser, Map<Long, ? extends Presence> map, Channel channel, Integer num, Map<Long, ? extends Integer> map2, Map<Long, ? extends Channel> map3, Channel channel2, Boolean bool) {
                                 return call2(meUser, (Map<Long, Presence>) map, channel, num, (Map<Long, Integer>) map2, (Map<Long, Channel>) map3, channel2, bool);
                             }
@@ -96,13 +96,13 @@ public final /* data */ class WidgetHomeModel {
                             /* JADX INFO: renamed from: call, reason: avoid collision after fix types in other method */
                             public final WidgetHomeModel call2(MeUser meUser, Map<Long, Presence> map, Channel channel, Integer num, Map<Long, Integer> map2, Map<Long, Channel> map3, Channel channel2, Boolean bool) {
                                 boolean z2;
-                                User userA;
-                                User userA2;
+                                User userM7677a;
+                                User userM7677a2;
                                 Channel channel3 = maybeChannel;
-                                if (channel3 != null && ChannelUtils.B(channel3)) {
+                                if (channel3 != null && ChannelUtils.m7667B(channel3)) {
                                     Long lValueOf2 = channel != null ? Long.valueOf(channel.getId()) : null;
                                     Channel channel4 = maybeChannel;
-                                    if (Intrinsics3.areEqual(lValueOf2, channel4 != null ? Long.valueOf(channel4.getId()) : null)) {
+                                    if (C12238m.areEqual(lValueOf2, channel4 != null ? Long.valueOf(channel4.getId()) : null)) {
                                         z2 = true;
                                     } else {
                                         z2 = false;
@@ -111,17 +111,17 @@ public final /* data */ class WidgetHomeModel {
                                     z2 = false;
                                 }
                                 StoreChannelsSelected.ResolvedSelectedChannel resolvedSelectedChannel = resolvedSelectedChannelComponent2;
-                                Intrinsics3.checkNotNullExpressionValue(resolvedSelectedChannel, "selectedChannel");
+                                C12238m.checkNotNullExpressionValue(resolvedSelectedChannel, "selectedChannel");
                                 Channel channel5 = maybeChannel;
-                                Presence presence = (channel5 == null || (userA2 = ChannelUtils.a(channel5)) == null) ? null : (Presence) outline.f(userA2, map);
-                                Intrinsics3.checkNotNullExpressionValue(num, "unreadCount");
+                                Presence presence = (channel5 == null || (userM7677a2 = ChannelUtils.m7677a(channel5)) == null) ? null : (Presence) C1643a.m849f(userM7677a2, map);
+                                C12238m.checkNotNullExpressionValue(num, "unreadCount");
                                 int iIntValue = num.intValue();
-                                Intrinsics3.checkNotNullExpressionValue(map2, "userRelationships");
+                                C12238m.checkNotNullExpressionValue(map2, "userRelationships");
                                 Channel channel6 = maybeChannel;
-                                boolean zIsType = ModelUserRelationship.isType(map2.get((channel6 == null || (userA = ChannelUtils.a(channel6)) == null) ? null : Long.valueOf(userA.getId())), 1);
+                                boolean zIsType = ModelUserRelationship.isType(map2.get((channel6 == null || (userM7677a = ChannelUtils.m7677a(channel6)) == null) ? null : Long.valueOf(userM7677a.getId())), 1);
                                 NsfwAllowance nsfwAllowance = meUser != null ? meUser.getNsfwAllowance() : null;
                                 int size = map3.size();
-                                Intrinsics3.checkNotNullExpressionValue(bool, "threadExperimentEnabled");
+                                C12238m.checkNotNullExpressionValue(bool, "threadExperimentEnabled");
                                 return new WidgetHomeModel(resolvedSelectedChannel, channel, channel2, presence, iIntValue, zIsType, z2, nsfwAllowance, size, bool.booleanValue());
                             }
                         }, 350L, TimeUnit.MILLISECONDS);
@@ -129,7 +129,7 @@ public final /* data */ class WidgetHomeModel {
                     id2 = maybeChannel.getParentId();
                     lValueOf = Long.valueOf(id2);
                     return ObservableWithLeadingEdgeThrottle.combineLatest(observableObserveMe$default, observableObserveAllPresences, observableObserveSelectedChannel, observableObserveTotalMentions, observableObserve, threadsActive.observeActiveThreadsForChannel(jLongValue, lValueOf), WidgetHomeModel.INSTANCE.getParentChannelObservable(maybeChannel), new CreateThreadsFeatureFlag(null, null, 3, null).observeEnabled(lComponent1.longValue()), new Func8<MeUser, Map<Long, ? extends Presence>, Channel, Integer, Map<Long, ? extends Integer>, Map<Long, ? extends Channel>, Channel, Boolean, WidgetHomeModel>() { // from class: com.discord.widgets.home.WidgetHomeModel$Companion$get$2.1
-                        @Override // rx.functions.Func8
+                        @Override // p658rx.functions.Func8
                         public /* bridge */ /* synthetic */ WidgetHomeModel call(MeUser meUser, Map<Long, ? extends Presence> map, Channel channel, Integer num, Map<Long, ? extends Integer> map2, Map<Long, ? extends Channel> map3, Channel channel2, Boolean bool) {
                             return call2(meUser, (Map<Long, Presence>) map, channel, num, (Map<Long, Integer>) map2, (Map<Long, Channel>) map3, channel2, bool);
                         }
@@ -138,13 +138,13 @@ public final /* data */ class WidgetHomeModel {
                         /* JADX INFO: renamed from: call, reason: avoid collision after fix types in other method */
                         public final WidgetHomeModel call2(MeUser meUser, Map<Long, Presence> map, Channel channel, Integer num, Map<Long, Integer> map2, Map<Long, Channel> map3, Channel channel2, Boolean bool) {
                             boolean z2;
-                            User userA;
-                            User userA2;
+                            User userM7677a;
+                            User userM7677a2;
                             Channel channel3 = maybeChannel;
-                            if (channel3 != null && ChannelUtils.B(channel3)) {
+                            if (channel3 != null && ChannelUtils.m7667B(channel3)) {
                                 Long lValueOf2 = channel != null ? Long.valueOf(channel.getId()) : null;
                                 Channel channel4 = maybeChannel;
-                                if (Intrinsics3.areEqual(lValueOf2, channel4 != null ? Long.valueOf(channel4.getId()) : null)) {
+                                if (C12238m.areEqual(lValueOf2, channel4 != null ? Long.valueOf(channel4.getId()) : null)) {
                                     z2 = true;
                                 } else {
                                     z2 = false;
@@ -153,43 +153,43 @@ public final /* data */ class WidgetHomeModel {
                                 z2 = false;
                             }
                             StoreChannelsSelected.ResolvedSelectedChannel resolvedSelectedChannel = resolvedSelectedChannelComponent2;
-                            Intrinsics3.checkNotNullExpressionValue(resolvedSelectedChannel, "selectedChannel");
+                            C12238m.checkNotNullExpressionValue(resolvedSelectedChannel, "selectedChannel");
                             Channel channel5 = maybeChannel;
-                            Presence presence = (channel5 == null || (userA2 = ChannelUtils.a(channel5)) == null) ? null : (Presence) outline.f(userA2, map);
-                            Intrinsics3.checkNotNullExpressionValue(num, "unreadCount");
+                            Presence presence = (channel5 == null || (userM7677a2 = ChannelUtils.m7677a(channel5)) == null) ? null : (Presence) C1643a.m849f(userM7677a2, map);
+                            C12238m.checkNotNullExpressionValue(num, "unreadCount");
                             int iIntValue = num.intValue();
-                            Intrinsics3.checkNotNullExpressionValue(map2, "userRelationships");
+                            C12238m.checkNotNullExpressionValue(map2, "userRelationships");
                             Channel channel6 = maybeChannel;
-                            boolean zIsType = ModelUserRelationship.isType(map2.get((channel6 == null || (userA = ChannelUtils.a(channel6)) == null) ? null : Long.valueOf(userA.getId())), 1);
+                            boolean zIsType = ModelUserRelationship.isType(map2.get((channel6 == null || (userM7677a = ChannelUtils.m7677a(channel6)) == null) ? null : Long.valueOf(userM7677a.getId())), 1);
                             NsfwAllowance nsfwAllowance = meUser != null ? meUser.getNsfwAllowance() : null;
                             int size = map3.size();
-                            Intrinsics3.checkNotNullExpressionValue(bool, "threadExperimentEnabled");
+                            C12238m.checkNotNullExpressionValue(bool, "threadExperimentEnabled");
                             return new WidgetHomeModel(resolvedSelectedChannel, channel, channel2, presence, iIntValue, zIsType, z2, nsfwAllowance, size, bool.booleanValue());
                         }
                     }, 350L, TimeUnit.MILLISECONDS);
                 }
             });
-            Intrinsics3.checkNotNullExpressionValue(observableY, "Observable.combineLatest…            )\n          }");
-            Observable<WidgetHomeModel> observableR = ObservableExtensionsKt.computationLatest(observableY).r();
-            Intrinsics3.checkNotNullExpressionValue(observableR, "Observable.combineLatest…  .distinctUntilChanged()");
-            return observableR;
+            C12238m.checkNotNullExpressionValue(observableM11099Y, "Observable.combineLatest…            )\n          }");
+            Observable<WidgetHomeModel> observableM11112r = ObservableExtensionsKt.computationLatest(observableM11099Y).m11112r();
+            C12238m.checkNotNullExpressionValue(observableM11112r, "Observable.combineLatest…  .distinctUntilChanged()");
+            return observableM11112r;
         }
 
         public final Observable<Boolean> getInitialized() {
-            Observable<Boolean> observableQ = StoreStream.INSTANCE.isInitializedObservable().q(150L, TimeUnit.MILLISECONDS);
-            Intrinsics3.checkNotNullExpressionValue(observableQ, "StoreStream\n          .i…0, TimeUnit.MILLISECONDS)");
-            return observableQ;
+            Observable<Boolean> observableM11111q = StoreStream.INSTANCE.isInitializedObservable().m11111q(150L, TimeUnit.MILLISECONDS);
+            C12238m.checkNotNullExpressionValue(observableM11111q, "StoreStream\n          .i…0, TimeUnit.MILLISECONDS)");
+            return observableM11111q;
         }
 
         public final Observable<Channel> getParentChannelObservable(Channel channel) {
-            if (channel == null || ChannelUtils.H(channel)) {
+            if (channel == null || ChannelUtils.m7673H(channel)) {
                 if ((channel != null ? Long.valueOf(channel.getParentId()) : null) != null) {
                     return StoreStream.INSTANCE.getChannels().observeChannel(channel.getParentId());
                 }
             }
-            ScalarSynchronousObservable scalarSynchronousObservable = new ScalarSynchronousObservable(null);
-            Intrinsics3.checkNotNullExpressionValue(scalarSynchronousObservable, "Observable.just(null)");
-            return scalarSynchronousObservable;
+            C12721k c12721k = new C12721k(null);
+            C12238m.checkNotNullExpressionValue(c12721k, "Observable.just(null)");
+            return c12721k;
         }
 
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
@@ -198,7 +198,7 @@ public final /* data */ class WidgetHomeModel {
     }
 
     public WidgetHomeModel(StoreChannelsSelected.ResolvedSelectedChannel resolvedSelectedChannel, Channel channel, Channel channel2, Presence presence, int i, boolean z2, boolean z3, NsfwAllowance nsfwAllowance, int i2, boolean z4) {
-        Intrinsics3.checkNotNullParameter(resolvedSelectedChannel, "selectedChannel");
+        C12238m.checkNotNullParameter(resolvedSelectedChannel, "selectedChannel");
         this.selectedChannel = resolvedSelectedChannel;
         this.selectedVoiceChannel = channel;
         this.parentChannel = channel2;
@@ -265,7 +265,7 @@ public final /* data */ class WidgetHomeModel {
     }
 
     public final WidgetHomeModel copy(StoreChannelsSelected.ResolvedSelectedChannel selectedChannel, Channel selectedVoiceChannel, Channel parentChannel, Presence dmPresence, int unreadCount, boolean isFriend, boolean isCallConnected, NsfwAllowance nsfwAllowed, int threadCount, boolean threadExperimentEnabled) {
-        Intrinsics3.checkNotNullParameter(selectedChannel, "selectedChannel");
+        C12238m.checkNotNullParameter(selectedChannel, "selectedChannel");
         return new WidgetHomeModel(selectedChannel, selectedVoiceChannel, parentChannel, dmPresence, unreadCount, isFriend, isCallConnected, nsfwAllowed, threadCount, threadExperimentEnabled);
     }
 
@@ -277,7 +277,7 @@ public final /* data */ class WidgetHomeModel {
             return false;
         }
         WidgetHomeModel widgetHomeModel = (WidgetHomeModel) other;
-        return Intrinsics3.areEqual(this.selectedChannel, widgetHomeModel.selectedChannel) && Intrinsics3.areEqual(this.selectedVoiceChannel, widgetHomeModel.selectedVoiceChannel) && Intrinsics3.areEqual(this.parentChannel, widgetHomeModel.parentChannel) && Intrinsics3.areEqual(this.dmPresence, widgetHomeModel.dmPresence) && this.unreadCount == widgetHomeModel.unreadCount && this.isFriend == widgetHomeModel.isFriend && this.isCallConnected == widgetHomeModel.isCallConnected && Intrinsics3.areEqual(this.nsfwAllowed, widgetHomeModel.nsfwAllowed) && this.threadCount == widgetHomeModel.threadCount && this.threadExperimentEnabled == widgetHomeModel.threadExperimentEnabled;
+        return C12238m.areEqual(this.selectedChannel, widgetHomeModel.selectedChannel) && C12238m.areEqual(this.selectedVoiceChannel, widgetHomeModel.selectedVoiceChannel) && C12238m.areEqual(this.parentChannel, widgetHomeModel.parentChannel) && C12238m.areEqual(this.dmPresence, widgetHomeModel.dmPresence) && this.unreadCount == widgetHomeModel.unreadCount && this.isFriend == widgetHomeModel.isFriend && this.isCallConnected == widgetHomeModel.isCallConnected && C12238m.areEqual(this.nsfwAllowed, widgetHomeModel.nsfwAllowed) && this.threadCount == widgetHomeModel.threadCount && this.threadExperimentEnabled == widgetHomeModel.threadExperimentEnabled;
     }
 
     public final Channel getChannel() {
@@ -377,25 +377,25 @@ public final /* data */ class WidgetHomeModel {
     }
 
     public String toString() {
-        StringBuilder sbU = outline.U("WidgetHomeModel(selectedChannel=");
-        sbU.append(this.selectedChannel);
-        sbU.append(", selectedVoiceChannel=");
-        sbU.append(this.selectedVoiceChannel);
-        sbU.append(", parentChannel=");
-        sbU.append(this.parentChannel);
-        sbU.append(", dmPresence=");
-        sbU.append(this.dmPresence);
-        sbU.append(", unreadCount=");
-        sbU.append(this.unreadCount);
-        sbU.append(", isFriend=");
-        sbU.append(this.isFriend);
-        sbU.append(", isCallConnected=");
-        sbU.append(this.isCallConnected);
-        sbU.append(", nsfwAllowed=");
-        sbU.append(this.nsfwAllowed);
-        sbU.append(", threadCount=");
-        sbU.append(this.threadCount);
-        sbU.append(", threadExperimentEnabled=");
-        return outline.O(sbU, this.threadExperimentEnabled, ")");
+        StringBuilder sbM833U = C1643a.m833U("WidgetHomeModel(selectedChannel=");
+        sbM833U.append(this.selectedChannel);
+        sbM833U.append(", selectedVoiceChannel=");
+        sbM833U.append(this.selectedVoiceChannel);
+        sbM833U.append(", parentChannel=");
+        sbM833U.append(this.parentChannel);
+        sbM833U.append(", dmPresence=");
+        sbM833U.append(this.dmPresence);
+        sbM833U.append(", unreadCount=");
+        sbM833U.append(this.unreadCount);
+        sbM833U.append(", isFriend=");
+        sbM833U.append(this.isFriend);
+        sbM833U.append(", isCallConnected=");
+        sbM833U.append(this.isCallConnected);
+        sbM833U.append(", nsfwAllowed=");
+        sbM833U.append(this.nsfwAllowed);
+        sbM833U.append(", threadCount=");
+        sbM833U.append(this.threadCount);
+        sbM833U.append(", threadExperimentEnabled=");
+        return C1643a.m827O(sbM833U, this.threadExperimentEnabled, ")");
     }
 }

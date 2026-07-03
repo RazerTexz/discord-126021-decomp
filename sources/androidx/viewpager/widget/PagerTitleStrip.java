@@ -205,7 +205,7 @@ public class PagerTitleStrip extends ViewGroup {
         requestLayout();
     }
 
-    public void setNonPrimaryAlpha(@FloatRange(from = 0.0d, to = 1.0d) float f) {
+    public void setNonPrimaryAlpha(@FloatRange(from = 0.0d, m75to = 1.0d) float f) {
         int i = ((int) (f * 255.0f)) & 255;
         this.mNonPrimaryAlpha = i;
         int i2 = (i << 24) | (this.mTextColor & ViewCompat.MEASURED_SIZE_MASK);

@@ -1,7 +1,7 @@
 package com.discord.analytics.generated.traits;
 
-import b.d.b.a.outline;
-import d0.z.d.Intrinsics3;
+import p007b.p100d.p104b.p105a.C1643a;
+import p507d0.p592z.p594d.C12238m;
 
 /* JADX INFO: compiled from: TrackImpressionMetadata.kt */
 /* JADX INFO: loaded from: classes.dex */
@@ -34,7 +34,7 @@ public final /* data */ class TrackImpressionMetadata {
             return false;
         }
         TrackImpressionMetadata trackImpressionMetadata = (TrackImpressionMetadata) other;
-        return Intrinsics3.areEqual(this.sequenceId, trackImpressionMetadata.sequenceId) && Intrinsics3.areEqual(this.impressionName, trackImpressionMetadata.impressionName) && Intrinsics3.areEqual(this.impressionType, trackImpressionMetadata.impressionType) && Intrinsics3.areEqual(this.impressionGroup, trackImpressionMetadata.impressionGroup);
+        return C12238m.areEqual(this.sequenceId, trackImpressionMetadata.sequenceId) && C12238m.areEqual(this.impressionName, trackImpressionMetadata.impressionName) && C12238m.areEqual(this.impressionType, trackImpressionMetadata.impressionType) && C12238m.areEqual(this.impressionGroup, trackImpressionMetadata.impressionGroup);
     }
 
     public int hashCode() {
@@ -49,13 +49,13 @@ public final /* data */ class TrackImpressionMetadata {
     }
 
     public String toString() {
-        StringBuilder sbU = outline.U("TrackImpressionMetadata(sequenceId=");
-        sbU.append(this.sequenceId);
-        sbU.append(", impressionName=");
-        sbU.append(this.impressionName);
-        sbU.append(", impressionType=");
-        sbU.append(this.impressionType);
-        sbU.append(", impressionGroup=");
-        return outline.E(sbU, this.impressionGroup, ")");
+        StringBuilder sbM833U = C1643a.m833U("TrackImpressionMetadata(sequenceId=");
+        sbM833U.append(this.sequenceId);
+        sbM833U.append(", impressionName=");
+        sbM833U.append(this.impressionName);
+        sbM833U.append(", impressionType=");
+        sbM833U.append(this.impressionType);
+        sbM833U.append(", impressionGroup=");
+        return C1643a.m817E(sbM833U, this.impressionGroup, ")");
     }
 }

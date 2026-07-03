@@ -1,12 +1,12 @@
 package com.discord.analytics.generated.events;
 
 import com.discord.analytics.generated.traits.TrackBase;
-import com.discord.analytics.generated.traits.TrackBase2;
+import com.discord.analytics.generated.traits.TrackBaseReceiver;
 import com.discord.api.science.AnalyticsSchema;
 
 /* JADX INFO: compiled from: TrackAccountDeleted.kt */
 /* JADX INFO: loaded from: classes.dex */
-public final class TrackAccountDeleted implements AnalyticsSchema, TrackBase2 {
+public final class TrackAccountDeleted implements AnalyticsSchema, TrackBaseReceiver {
     private final transient String analyticsSchemaTypeName = "account_deleted";
     private TrackBase trackBase;
 

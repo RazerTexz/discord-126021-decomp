@@ -7,7 +7,7 @@ import android.util.AttributeSet;
 import android.view.View;
 import android.widget.ImageView;
 import androidx.annotation.RestrictTo;
-import androidx.preference.R;
+import androidx.preference.C0525R;
 
 /* JADX INFO: loaded from: classes.dex */
 @SuppressLint({"AppCompatCustomView"})
@@ -71,9 +71,9 @@ public class PreferenceImageView extends ImageView {
         super(context, attributeSet, i);
         this.mMaxWidth = Integer.MAX_VALUE;
         this.mMaxHeight = Integer.MAX_VALUE;
-        TypedArray typedArrayObtainStyledAttributes = context.obtainStyledAttributes(attributeSet, R.styleable.PreferenceImageView, i, 0);
-        setMaxWidth(typedArrayObtainStyledAttributes.getDimensionPixelSize(R.styleable.PreferenceImageView_maxWidth, Integer.MAX_VALUE));
-        setMaxHeight(typedArrayObtainStyledAttributes.getDimensionPixelSize(R.styleable.PreferenceImageView_maxHeight, Integer.MAX_VALUE));
+        TypedArray typedArrayObtainStyledAttributes = context.obtainStyledAttributes(attributeSet, C0525R.styleable.PreferenceImageView, i, 0);
+        setMaxWidth(typedArrayObtainStyledAttributes.getDimensionPixelSize(C0525R.styleable.PreferenceImageView_maxWidth, Integer.MAX_VALUE));
+        setMaxHeight(typedArrayObtainStyledAttributes.getDimensionPixelSize(C0525R.styleable.PreferenceImageView_maxHeight, Integer.MAX_VALUE));
         typedArrayObtainStyledAttributes.recycle();
     }
 }

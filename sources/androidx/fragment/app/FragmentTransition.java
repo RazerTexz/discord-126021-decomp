@@ -56,18 +56,18 @@ public class FragmentTransition {
     /* JADX WARN: Code duplicated, block: B:66:0x0084  */
     /* JADX WARN: Code duplicated, block: B:70:0x008c  */
     /* JADX WARN: Code duplicated, block: B:71:0x008e  */
-    private static void addToFirstInLastOut(BackStackRecord backStackRecord, FragmentTransaction.Op op, SparseArray<FragmentContainerTransition> sparseArray, boolean z2, boolean z3) {
+    private static void addToFirstInLastOut(BackStackRecord backStackRecord, FragmentTransaction.C0394Op c0394Op, SparseArray<FragmentContainerTransition> sparseArray, boolean z2, boolean z3) {
         int i;
         boolean z4;
         boolean z5;
         boolean z6;
         View view;
         boolean z7;
-        Fragment fragment = op.mFragment;
+        Fragment fragment = c0394Op.mFragment;
         if (fragment == null || (i = fragment.mContainerId) == 0) {
             return;
         }
-        int i2 = z2 ? INVERSE_OPS[op.mCmd] : op.mCmd;
+        int i2 = z2 ? INVERSE_OPS[c0394Op.mCmd] : c0394Op.mCmd;
         boolean z8 = false;
         boolean z9 = true;
         if (i2 == 1) {

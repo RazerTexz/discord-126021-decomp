@@ -9,7 +9,7 @@ import com.discord.stores.StorePermissions;
 import com.discord.stores.StoreUser;
 import com.discord.widgets.guild_role_subscriptions.GuildRoleSubscriptionsFeatureFlag;
 import com.discord.widgets.servers.creator_monetization_eligibility.CreatorMonetizationCountryAllowlist;
-import d0.z.d.Intrinsics3;
+import p507d0.p592z.p594d.C12238m;
 
 /* JADX INFO: compiled from: GuildRoleSubscriptionOnboardingUpsellManager.kt */
 /* JADX INFO: loaded from: classes2.dex */
@@ -22,11 +22,11 @@ public final class GuildRoleSubscriptionOnboardingUpsellManager {
     private final StoreUser storeUser;
 
     public GuildRoleSubscriptionOnboardingUpsellManager(SharedPreferences sharedPreferences, StorePermissions storePermissions, StoreUser storeUser, StoreExperiments storeExperiments, StoreGuilds storeGuilds) {
-        Intrinsics3.checkNotNullParameter(sharedPreferences, "sharedPreferences");
-        Intrinsics3.checkNotNullParameter(storePermissions, "storePermissions");
-        Intrinsics3.checkNotNullParameter(storeUser, "storeUser");
-        Intrinsics3.checkNotNullParameter(storeExperiments, "storeExperiments");
-        Intrinsics3.checkNotNullParameter(storeGuilds, "storeGuilds");
+        C12238m.checkNotNullParameter(sharedPreferences, "sharedPreferences");
+        C12238m.checkNotNullParameter(storePermissions, "storePermissions");
+        C12238m.checkNotNullParameter(storeUser, "storeUser");
+        C12238m.checkNotNullParameter(storeExperiments, "storeExperiments");
+        C12238m.checkNotNullParameter(storeGuilds, "storeGuilds");
         this.sharedPreferences = sharedPreferences;
         this.storePermissions = storePermissions;
         this.storeUser = storeUser;
@@ -39,13 +39,13 @@ public final class GuildRoleSubscriptionOnboardingUpsellManager {
     }
 
     public final boolean canShow(Guild guild) {
-        Intrinsics3.checkNotNullParameter(guild, "guild");
+        C12238m.checkNotNullParameter(guild, "guild");
         return (hasBeenShown() || guild.hasFeature(GuildFeature.CREATOR_MONETIZABLE) || guild.hasFeature(GuildFeature.CREATOR_MONETIZABLE_DISABLED) || !this.featureFlag.canGuildSeeGuildRoleSubscriptionSettings(guild.getId(), this.countryAllowlist)) ? false : true;
     }
 
     public final void setHasBeenShown() {
         SharedPreferences.Editor editorEdit = this.sharedPreferences.edit();
-        Intrinsics3.checkNotNullExpressionValue(editorEdit, "editor");
+        C12238m.checkNotNullExpressionValue(editorEdit, "editor");
         editorEdit.putBoolean(SHOWN_CACHE_KEY, true);
         editorEdit.apply();
     }

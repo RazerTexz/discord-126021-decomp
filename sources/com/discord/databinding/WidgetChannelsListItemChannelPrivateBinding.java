@@ -12,41 +12,47 @@ import com.facebook.drawee.view.SimpleDraweeView;
 /* JADX INFO: loaded from: classes.dex */
 public final class WidgetChannelsListItemChannelPrivateBinding implements ViewBinding {
 
+    /* JADX INFO: renamed from: a */
     @NonNull
-    public final RelativeLayout a;
+    public final RelativeLayout f16017a;
 
-    /* JADX INFO: renamed from: b, reason: collision with root package name */
+    /* JADX INFO: renamed from: b */
     @NonNull
-    public final StatusView f2288b;
+    public final StatusView f16018b;
 
+    /* JADX INFO: renamed from: c */
     @NonNull
-    public final SimpleDraweeView c;
+    public final SimpleDraweeView f16019c;
 
+    /* JADX INFO: renamed from: d */
     @NonNull
-    public final SimpleDraweeSpanTextView d;
+    public final SimpleDraweeSpanTextView f16020d;
 
+    /* JADX INFO: renamed from: e */
     @NonNull
-    public final TextView e;
+    public final TextView f16021e;
 
+    /* JADX INFO: renamed from: f */
     @NonNull
-    public final TextView f;
+    public final TextView f16022f;
 
+    /* JADX INFO: renamed from: g */
     @NonNull
-    public final TextView g;
+    public final TextView f16023g;
 
     public WidgetChannelsListItemChannelPrivateBinding(@NonNull RelativeLayout relativeLayout, @NonNull StatusView statusView, @NonNull SimpleDraweeView simpleDraweeView, @NonNull SimpleDraweeSpanTextView simpleDraweeSpanTextView, @NonNull TextView textView, @NonNull TextView textView2, @NonNull TextView textView3) {
-        this.a = relativeLayout;
-        this.f2288b = statusView;
-        this.c = simpleDraweeView;
-        this.d = simpleDraweeSpanTextView;
-        this.e = textView;
-        this.f = textView2;
-        this.g = textView3;
+        this.f16017a = relativeLayout;
+        this.f16018b = statusView;
+        this.f16019c = simpleDraweeView;
+        this.f16020d = simpleDraweeSpanTextView;
+        this.f16021e = textView;
+        this.f16022f = textView2;
+        this.f16023g = textView3;
     }
 
     @Override // androidx.viewbinding.ViewBinding
     @NonNull
     public View getRoot() {
-        return this.a;
+        return this.f16017a;
     }
 }

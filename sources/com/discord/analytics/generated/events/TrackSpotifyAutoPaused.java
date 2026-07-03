@@ -1,12 +1,12 @@
 package com.discord.analytics.generated.events;
 
 import com.discord.analytics.generated.traits.TrackBase;
-import com.discord.analytics.generated.traits.TrackBase2;
+import com.discord.analytics.generated.traits.TrackBaseReceiver;
 import com.discord.api.science.AnalyticsSchema;
 
 /* JADX INFO: compiled from: TrackSpotifyAutoPaused.kt */
 /* JADX INFO: loaded from: classes.dex */
-public final class TrackSpotifyAutoPaused implements AnalyticsSchema, TrackBase2 {
+public final class TrackSpotifyAutoPaused implements AnalyticsSchema, TrackBaseReceiver {
     private final transient String analyticsSchemaTypeName = "spotify_auto_paused";
     private TrackBase trackBase;
 

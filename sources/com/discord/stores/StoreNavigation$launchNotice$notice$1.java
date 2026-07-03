@@ -1,13 +1,13 @@
 package com.discord.stores;
 
 import androidx.fragment.app.FragmentActivity;
-import d0.z.d.Intrinsics3;
-import d0.z.d.Lambda;
 import kotlin.jvm.functions.Function1;
+import p507d0.p592z.p594d.AbstractC12240o;
+import p507d0.p592z.p594d.C12238m;
 
 /* JADX INFO: compiled from: StoreNavigation.kt */
 /* JADX INFO: loaded from: classes2.dex */
-public final class StoreNavigation$launchNotice$notice$1 extends Lambda implements Function1<FragmentActivity, Boolean> {
+public final class StoreNavigation$launchNotice$notice$1 extends AbstractC12240o implements Function1<FragmentActivity, Boolean> {
     public final /* synthetic */ String $noticeName;
     public final /* synthetic */ Function1 $showAction;
 
@@ -25,7 +25,7 @@ public final class StoreNavigation$launchNotice$notice$1 extends Lambda implemen
 
     /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
     public final boolean invoke2(FragmentActivity fragmentActivity) {
-        Intrinsics3.checkNotNullParameter(fragmentActivity, "it");
+        C12238m.checkNotNullParameter(fragmentActivity, "it");
         StoreNotices.markSeen$default(StoreStream.INSTANCE.getNotices(), this.$noticeName, 0L, 2, null);
         return ((Boolean) this.$showAction.invoke(fragmentActivity)).booleanValue();
     }

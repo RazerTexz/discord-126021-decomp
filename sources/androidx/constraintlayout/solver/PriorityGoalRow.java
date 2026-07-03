@@ -1,9 +1,9 @@
 package androidx.constraintlayout.solver;
 
 import androidx.constraintlayout.solver.ArrayRow;
-import b.d.b.a.outline;
 import java.util.Arrays;
 import java.util.Comparator;
+import p007b.p100d.p104b.p105a.C1643a;
 
 /* JADX INFO: loaded from: classes.dex */
 public class PriorityGoalRow extends ArrayRow {
@@ -69,7 +69,7 @@ public class PriorityGoalRow extends ArrayRow {
 
         @Override // java.lang.Comparable
         public int compareTo(Object obj) {
-            return this.variable.f30id - ((SolverVariable) obj).f30id;
+            return this.variable.f110id - ((SolverVariable) obj).f110id;
         }
 
         public void init(SolverVariable solverVariable) {
@@ -119,15 +119,15 @@ public class PriorityGoalRow extends ArrayRow {
             String string = "[ ";
             if (this.variable != null) {
                 for (int i = 0; i < 9; i++) {
-                    StringBuilder sbU = outline.U(string);
-                    sbU.append(this.variable.goalStrengthVector[i]);
-                    sbU.append(" ");
-                    string = sbU.toString();
+                    StringBuilder sbM833U = C1643a.m833U(string);
+                    sbM833U.append(this.variable.goalStrengthVector[i]);
+                    sbM833U.append(" ");
+                    string = sbM833U.toString();
                 }
             }
-            StringBuilder sbX = outline.X(string, "] ");
-            sbX.append(this.variable);
-            return sbX.toString();
+            StringBuilder sbM836X = C1643a.m836X(string, "] ");
+            sbM836X.append(this.variable);
+            return sbM836X.toString();
         }
     }
 
@@ -155,7 +155,7 @@ public class PriorityGoalRow extends ArrayRow {
         solverVariableArr3[i3] = solverVariable;
         int i4 = i3 + 1;
         this.numGoals = i4;
-        if (i4 > 1 && solverVariableArr3[i4 - 1].f30id > solverVariable.f30id) {
+        if (i4 > 1 && solverVariableArr3[i4 - 1].f110id > solverVariable.f110id) {
             int i5 = 0;
             while (true) {
                 i = this.numGoals;
@@ -168,7 +168,7 @@ public class PriorityGoalRow extends ArrayRow {
             Arrays.sort(this.sortArray, 0, i, new Comparator<SolverVariable>() { // from class: androidx.constraintlayout.solver.PriorityGoalRow.1
                 @Override // java.util.Comparator
                 public int compare(SolverVariable solverVariable2, SolverVariable solverVariable3) {
-                    return solverVariable2.f30id - solverVariable3.f30id;
+                    return solverVariable2.f110id - solverVariable3.f110id;
                 }
             });
             for (int i6 = 0; i6 < this.numGoals; i6++) {
@@ -222,7 +222,7 @@ public class PriorityGoalRow extends ArrayRow {
         int i = -1;
         for (int i2 = 0; i2 < this.numGoals; i2++) {
             SolverVariable solverVariable = this.arrayGoals[i2];
-            if (!zArr[solverVariable.f30id]) {
+            if (!zArr[solverVariable.f110id]) {
                 this.accessor.init(solverVariable);
                 if (i == -1) {
                     if (this.accessor.isNegative()) {
@@ -246,10 +246,10 @@ public class PriorityGoalRow extends ArrayRow {
 
     @Override // androidx.constraintlayout.solver.ArrayRow
     public String toString() {
-        StringBuilder sbX = outline.X("", " goal -> (");
-        sbX.append(this.constantValue);
-        sbX.append(") : ");
-        String string = sbX.toString();
+        StringBuilder sbM836X = C1643a.m836X("", " goal -> (");
+        sbM836X.append(this.constantValue);
+        sbM836X.append(") : ");
+        String string = sbM836X.toString();
         for (int i = 0; i < this.numGoals; i++) {
             this.accessor.init(this.arrayGoals[i]);
             string = string + this.accessor + " ";

@@ -1,13 +1,10 @@
 package com.discord.widgets.user.usersheet;
 
-import a0.a.a.b;
 import android.content.Context;
 import androidx.annotation.MainThread;
 import androidx.annotation.StringRes;
 import androidx.core.app.NotificationCompat;
-import b.a.d.AppViewModel;
-import b.d.b.a.outline;
-import com.discord.R;
+import com.discord.C5419R;
 import com.discord.api.activity.ActivityMetadata;
 import com.discord.api.channel.Channel;
 import com.discord.api.channel.ChannelUtils;
@@ -44,11 +41,11 @@ import com.discord.utilities.dimen.DimenUtils;
 import com.discord.utilities.error.Error;
 import com.discord.utilities.guilds.RoleUtils;
 import com.discord.utilities.icon.IconUtils;
+import com.discord.utilities.p501rx.ObservableExtensionsKt;
+import com.discord.utilities.permissions.ManageUserContext;
 import com.discord.utilities.permissions.PermissionUtils;
-import com.discord.utilities.permissions.PermissionsContexts3;
 import com.discord.utilities.rest.RestAPI;
 import com.discord.utilities.rest.RestAPIAbortMessages;
-import com.discord.utilities.rx.ObservableExtensionsKt;
 import com.discord.utilities.streams.StreamContext;
 import com.discord.utilities.textprocessing.DiscordParser;
 import com.discord.utilities.textprocessing.MessageParseState;
@@ -57,8 +54,8 @@ import com.discord.utilities.textprocessing.MessageRenderContext;
 import com.discord.utilities.textprocessing.node.SpoilerNode;
 import com.discord.utilities.uri.UriHandler;
 import com.discord.utilities.voice.PerceptualVolumeUtils;
-import com.discord.widgets.captcha.WidgetCaptcha4;
 import com.discord.widgets.captcha.WidgetCaptchaBottomSheet;
+import com.discord.widgets.captcha.WidgetCaptchaKt;
 import com.discord.widgets.stage.StageChannelAPI;
 import com.discord.widgets.stage.StageRoles;
 import com.discord.widgets.stage.usersheet.UserProfileStageActionsView;
@@ -67,12 +64,6 @@ import com.discord.widgets.user.profile.UserProfileAdminView;
 import com.discord.widgets.user.profile.UserProfileConnectionsView;
 import com.discord.widgets.user.usersheet.UserProfileVoiceSettingsView;
 import com.discord.widgets.user.usersheet.WidgetUserSheet;
-import d0.g0.StringsJVM;
-import d0.t.Collections2;
-import d0.t.Iterables2;
-import d0.t._Collections;
-import d0.z.d.Intrinsics3;
-import d0.z.d.Lambda;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.LinkedHashSet;
@@ -85,13 +76,22 @@ import kotlin.jvm.functions.Function1;
 import kotlin.jvm.functions.Function2;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import org.objectweb.asm.Opcodes;
-import rx.Observable;
-import rx.Subscription;
-import rx.subjects.PublishSubject;
+import p001a0.p002a.p003a.C0002b;
+import p007b.p008a.p018d.AbstractC0859d0;
+import p007b.p100d.p104b.p105a.C1643a;
+import p507d0.p579g0.C12103t;
+import p507d0.p580t.C12147n;
+import p507d0.p580t.C12149o;
+import p507d0.p580t.C12163u;
+import p507d0.p592z.p594d.AbstractC12240o;
+import p507d0.p592z.p594d.C12238m;
+import p658rx.Observable;
+import p658rx.Subscription;
+import p658rx.subjects.PublishSubject;
 
 /* JADX INFO: compiled from: WidgetUserSheetViewModel.kt */
 /* JADX INFO: loaded from: classes.dex */
-public final class WidgetUserSheetViewModel extends AppViewModel<ViewState> {
+public final class WidgetUserSheetViewModel extends AbstractC0859d0<ViewState> {
     public static final String LOCATION = "User Profile";
     private final Parser<MessageRenderContext, Node<MessageRenderContext>, MessageParseState> bioParser;
     private final long channelId;
@@ -113,17 +113,17 @@ public final class WidgetUserSheetViewModel extends AppViewModel<ViewState> {
     private final WidgetUserSheet.StreamPreviewClickBehavior streamPreviewClickBehavior;
     private final long userId;
 
-    /* JADX INFO: renamed from: com.discord.widgets.user.usersheet.WidgetUserSheetViewModel$1, reason: invalid class name */
+    /* JADX INFO: renamed from: com.discord.widgets.user.usersheet.WidgetUserSheetViewModel$1 */
     /* JADX INFO: compiled from: WidgetUserSheetViewModel.kt */
-    public static final class AnonymousClass1 extends Lambda implements Function1<StoreState, Unit> {
-        public AnonymousClass1() {
+    public static final class C103801 extends AbstractC12240o implements Function1<StoreState, Unit> {
+        public C103801() {
             super(1);
         }
 
         @Override // kotlin.jvm.functions.Function1
         public /* bridge */ /* synthetic */ Unit invoke(StoreState storeState) {
             invoke2(storeState);
-            return Unit.a;
+            return Unit.f27425a;
         }
 
         /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
@@ -153,7 +153,7 @@ public final class WidgetUserSheetViewModel extends AppViewModel<ViewState> {
             /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
             public LaunchBanUser(String str, long j, long j2) {
                 super(null);
-                Intrinsics3.checkNotNullParameter(str, "username");
+                C12238m.checkNotNullParameter(str, "username");
                 this.username = str;
                 this.guildId = j;
                 this.userId = j2;
@@ -189,7 +189,7 @@ public final class WidgetUserSheetViewModel extends AppViewModel<ViewState> {
             }
 
             public final LaunchBanUser copy(String username, long guildId, long userId) {
-                Intrinsics3.checkNotNullParameter(username, "username");
+                C12238m.checkNotNullParameter(username, "username");
                 return new LaunchBanUser(username, guildId, userId);
             }
 
@@ -201,7 +201,7 @@ public final class WidgetUserSheetViewModel extends AppViewModel<ViewState> {
                     return false;
                 }
                 LaunchBanUser launchBanUser = (LaunchBanUser) other;
-                return Intrinsics3.areEqual(this.username, launchBanUser.username) && this.guildId == launchBanUser.guildId && this.userId == launchBanUser.userId;
+                return C12238m.areEqual(this.username, launchBanUser.username) && this.guildId == launchBanUser.guildId && this.userId == launchBanUser.userId;
             }
 
             public final long getGuildId() {
@@ -218,16 +218,16 @@ public final class WidgetUserSheetViewModel extends AppViewModel<ViewState> {
 
             public int hashCode() {
                 String str = this.username;
-                return b.a(this.userId) + ((b.a(this.guildId) + ((str != null ? str.hashCode() : 0) * 31)) * 31);
+                return C0002b.m3a(this.userId) + ((C0002b.m3a(this.guildId) + ((str != null ? str.hashCode() : 0) * 31)) * 31);
             }
 
             public String toString() {
-                StringBuilder sbU = outline.U("LaunchBanUser(username=");
-                sbU.append(this.username);
-                sbU.append(", guildId=");
-                sbU.append(this.guildId);
-                sbU.append(", userId=");
-                return outline.C(sbU, this.userId, ")");
+                StringBuilder sbM833U = C1643a.m833U("LaunchBanUser(username=");
+                sbM833U.append(this.username);
+                sbM833U.append(", guildId=");
+                sbM833U.append(this.guildId);
+                sbM833U.append(", userId=");
+                return C1643a.m815C(sbM833U, this.userId, ")");
             }
         }
 
@@ -286,14 +286,14 @@ public final class WidgetUserSheetViewModel extends AppViewModel<ViewState> {
             }
 
             public int hashCode() {
-                return b.a(this.guildId) + (b.a(this.userId) * 31);
+                return C0002b.m3a(this.guildId) + (C0002b.m3a(this.userId) * 31);
             }
 
             public String toString() {
-                StringBuilder sbU = outline.U("LaunchDisableCommunication(userId=");
-                sbU.append(this.userId);
-                sbU.append(", guildId=");
-                return outline.C(sbU, this.guildId, ")");
+                StringBuilder sbM833U = C1643a.m833U("LaunchDisableCommunication(userId=");
+                sbM833U.append(this.userId);
+                sbM833U.append(", guildId=");
+                return C1643a.m815C(sbM833U, this.guildId, ")");
             }
         }
 
@@ -352,14 +352,14 @@ public final class WidgetUserSheetViewModel extends AppViewModel<ViewState> {
             }
 
             public int hashCode() {
-                return b.a(this.userId) + (b.a(this.guildId) * 31);
+                return C0002b.m3a(this.userId) + (C0002b.m3a(this.guildId) * 31);
             }
 
             public String toString() {
-                StringBuilder sbU = outline.U("LaunchEditMember(guildId=");
-                sbU.append(this.guildId);
-                sbU.append(", userId=");
-                return outline.C(sbU, this.userId, ")");
+                StringBuilder sbM833U = C1643a.m833U("LaunchEditMember(guildId=");
+                sbM833U.append(this.guildId);
+                sbM833U.append(", userId=");
+                return C1643a.m815C(sbM833U, this.userId, ")");
             }
         }
 
@@ -418,14 +418,14 @@ public final class WidgetUserSheetViewModel extends AppViewModel<ViewState> {
             }
 
             public int hashCode() {
-                return b.a(this.guildId) + (b.a(this.userId) * 31);
+                return C0002b.m3a(this.guildId) + (C0002b.m3a(this.userId) * 31);
             }
 
             public String toString() {
-                StringBuilder sbU = outline.U("LaunchEnableCommunication(userId=");
-                sbU.append(this.userId);
-                sbU.append(", guildId=");
-                return outline.C(sbU, this.guildId, ")");
+                StringBuilder sbM833U = C1643a.m833U("LaunchEnableCommunication(userId=");
+                sbM833U.append(this.userId);
+                sbM833U.append(", guildId=");
+                return C1643a.m815C(sbM833U, this.guildId, ")");
             }
         }
 
@@ -438,7 +438,7 @@ public final class WidgetUserSheetViewModel extends AppViewModel<ViewState> {
             /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
             public LaunchKickUser(String str, long j, long j2) {
                 super(null);
-                Intrinsics3.checkNotNullParameter(str, "username");
+                C12238m.checkNotNullParameter(str, "username");
                 this.username = str;
                 this.guildId = j;
                 this.userId = j2;
@@ -474,7 +474,7 @@ public final class WidgetUserSheetViewModel extends AppViewModel<ViewState> {
             }
 
             public final LaunchKickUser copy(String username, long guildId, long userId) {
-                Intrinsics3.checkNotNullParameter(username, "username");
+                C12238m.checkNotNullParameter(username, "username");
                 return new LaunchKickUser(username, guildId, userId);
             }
 
@@ -486,7 +486,7 @@ public final class WidgetUserSheetViewModel extends AppViewModel<ViewState> {
                     return false;
                 }
                 LaunchKickUser launchKickUser = (LaunchKickUser) other;
-                return Intrinsics3.areEqual(this.username, launchKickUser.username) && this.guildId == launchKickUser.guildId && this.userId == launchKickUser.userId;
+                return C12238m.areEqual(this.username, launchKickUser.username) && this.guildId == launchKickUser.guildId && this.userId == launchKickUser.userId;
             }
 
             public final long getGuildId() {
@@ -503,16 +503,16 @@ public final class WidgetUserSheetViewModel extends AppViewModel<ViewState> {
 
             public int hashCode() {
                 String str = this.username;
-                return b.a(this.userId) + ((b.a(this.guildId) + ((str != null ? str.hashCode() : 0) * 31)) * 31);
+                return C0002b.m3a(this.userId) + ((C0002b.m3a(this.guildId) + ((str != null ? str.hashCode() : 0) * 31)) * 31);
             }
 
             public String toString() {
-                StringBuilder sbU = outline.U("LaunchKickUser(username=");
-                sbU.append(this.username);
-                sbU.append(", guildId=");
-                sbU.append(this.guildId);
-                sbU.append(", userId=");
-                return outline.C(sbU, this.userId, ")");
+                StringBuilder sbM833U = C1643a.m833U("LaunchKickUser(username=");
+                sbM833U.append(this.username);
+                sbM833U.append(", guildId=");
+                sbM833U.append(this.guildId);
+                sbM833U.append(", userId=");
+                return C1643a.m815C(sbM833U, this.userId, ")");
             }
         }
 
@@ -553,11 +553,11 @@ public final class WidgetUserSheetViewModel extends AppViewModel<ViewState> {
             }
 
             public int hashCode() {
-                return b.a(this.guildId);
+                return C0002b.m3a(this.guildId);
             }
 
             public String toString() {
-                return outline.C(outline.U("LaunchMoveUser(guildId="), this.guildId, ")");
+                return C1643a.m815C(C1643a.m833U("LaunchMoveUser(guildId="), this.guildId, ")");
             }
         }
 
@@ -568,7 +568,7 @@ public final class WidgetUserSheetViewModel extends AppViewModel<ViewState> {
             /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
             public LaunchSpectate(ModelApplicationStream modelApplicationStream) {
                 super(null);
-                Intrinsics3.checkNotNullParameter(modelApplicationStream, "stream");
+                C12238m.checkNotNullParameter(modelApplicationStream, "stream");
                 this.stream = modelApplicationStream;
             }
 
@@ -585,13 +585,13 @@ public final class WidgetUserSheetViewModel extends AppViewModel<ViewState> {
             }
 
             public final LaunchSpectate copy(ModelApplicationStream stream) {
-                Intrinsics3.checkNotNullParameter(stream, "stream");
+                C12238m.checkNotNullParameter(stream, "stream");
                 return new LaunchSpectate(stream);
             }
 
             public boolean equals(Object other) {
                 if (this != other) {
-                    return (other instanceof LaunchSpectate) && Intrinsics3.areEqual(this.stream, ((LaunchSpectate) other).stream);
+                    return (other instanceof LaunchSpectate) && C12238m.areEqual(this.stream, ((LaunchSpectate) other).stream);
                 }
                 return true;
             }
@@ -609,10 +609,10 @@ public final class WidgetUserSheetViewModel extends AppViewModel<ViewState> {
             }
 
             public String toString() {
-                StringBuilder sbU = outline.U("LaunchSpectate(stream=");
-                sbU.append(this.stream);
-                sbU.append(")");
-                return sbU.toString();
+                StringBuilder sbM833U = C1643a.m833U("LaunchSpectate(stream=");
+                sbM833U.append(this.stream);
+                sbM833U.append(")");
+                return sbM833U.toString();
             }
         }
 
@@ -653,11 +653,11 @@ public final class WidgetUserSheetViewModel extends AppViewModel<ViewState> {
             }
 
             public int hashCode() {
-                return b.a(this.channelId);
+                return C0002b.m3a(this.channelId);
             }
 
             public String toString() {
-                return outline.C(outline.U("LaunchVideoCall(channelId="), this.channelId, ")");
+                return C1643a.m815C(C1643a.m833U("LaunchVideoCall(channelId="), this.channelId, ")");
             }
         }
 
@@ -698,11 +698,11 @@ public final class WidgetUserSheetViewModel extends AppViewModel<ViewState> {
             }
 
             public int hashCode() {
-                return b.a(this.channelId);
+                return C0002b.m3a(this.channelId);
             }
 
             public String toString() {
-                return outline.C(outline.U("LaunchVoiceCall(channelId="), this.channelId, ")");
+                return C1643a.m815C(C1643a.m833U("LaunchVoiceCall(channelId="), this.channelId, ")");
             }
         }
 
@@ -713,7 +713,7 @@ public final class WidgetUserSheetViewModel extends AppViewModel<ViewState> {
             /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
             public RequestPermissionsForSpectateStream(ModelApplicationStream modelApplicationStream) {
                 super(null);
-                Intrinsics3.checkNotNullParameter(modelApplicationStream, "stream");
+                C12238m.checkNotNullParameter(modelApplicationStream, "stream");
                 this.stream = modelApplicationStream;
             }
 
@@ -730,13 +730,13 @@ public final class WidgetUserSheetViewModel extends AppViewModel<ViewState> {
             }
 
             public final RequestPermissionsForSpectateStream copy(ModelApplicationStream stream) {
-                Intrinsics3.checkNotNullParameter(stream, "stream");
+                C12238m.checkNotNullParameter(stream, "stream");
                 return new RequestPermissionsForSpectateStream(stream);
             }
 
             public boolean equals(Object other) {
                 if (this != other) {
-                    return (other instanceof RequestPermissionsForSpectateStream) && Intrinsics3.areEqual(this.stream, ((RequestPermissionsForSpectateStream) other).stream);
+                    return (other instanceof RequestPermissionsForSpectateStream) && C12238m.areEqual(this.stream, ((RequestPermissionsForSpectateStream) other).stream);
                 }
                 return true;
             }
@@ -754,10 +754,10 @@ public final class WidgetUserSheetViewModel extends AppViewModel<ViewState> {
             }
 
             public String toString() {
-                StringBuilder sbU = outline.U("RequestPermissionsForSpectateStream(stream=");
-                sbU.append(this.stream);
-                sbU.append(")");
-                return sbU.toString();
+                StringBuilder sbM833U = C1643a.m833U("RequestPermissionsForSpectateStream(stream=");
+                sbM833U.append(this.stream);
+                sbM833U.append(")");
+                return sbM833U.toString();
             }
         }
 
@@ -769,7 +769,7 @@ public final class WidgetUserSheetViewModel extends AppViewModel<ViewState> {
             /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
             public ShowFriendRequestErrorToast(int i, String str) {
                 super(null);
-                Intrinsics3.checkNotNullParameter(str, "username");
+                C12238m.checkNotNullParameter(str, "username");
                 this.abortCode = i;
                 this.username = str;
             }
@@ -795,7 +795,7 @@ public final class WidgetUserSheetViewModel extends AppViewModel<ViewState> {
             }
 
             public final ShowFriendRequestErrorToast copy(int abortCode, String username) {
-                Intrinsics3.checkNotNullParameter(username, "username");
+                C12238m.checkNotNullParameter(username, "username");
                 return new ShowFriendRequestErrorToast(abortCode, username);
             }
 
@@ -807,7 +807,7 @@ public final class WidgetUserSheetViewModel extends AppViewModel<ViewState> {
                     return false;
                 }
                 ShowFriendRequestErrorToast showFriendRequestErrorToast = (ShowFriendRequestErrorToast) other;
-                return this.abortCode == showFriendRequestErrorToast.abortCode && Intrinsics3.areEqual(this.username, showFriendRequestErrorToast.username);
+                return this.abortCode == showFriendRequestErrorToast.abortCode && C12238m.areEqual(this.username, showFriendRequestErrorToast.username);
             }
 
             public final int getAbortCode() {
@@ -825,10 +825,10 @@ public final class WidgetUserSheetViewModel extends AppViewModel<ViewState> {
             }
 
             public String toString() {
-                StringBuilder sbU = outline.U("ShowFriendRequestErrorToast(abortCode=");
-                sbU.append(this.abortCode);
-                sbU.append(", username=");
-                return outline.J(sbU, this.username, ")");
+                StringBuilder sbM833U = C1643a.m833U("ShowFriendRequestErrorToast(abortCode=");
+                sbM833U.append(this.abortCode);
+                sbM833U.append(", username=");
+                return C1643a.m822J(sbM833U, this.username, ")");
             }
         }
 
@@ -873,7 +873,7 @@ public final class WidgetUserSheetViewModel extends AppViewModel<ViewState> {
             }
 
             public String toString() {
-                return outline.B(outline.U("ShowToast(stringRes="), this.stringRes, ")");
+                return C1643a.m814B(C1643a.m833U("ShowToast(stringRes="), this.stringRes, ")");
             }
         }
 
@@ -1058,16 +1058,16 @@ public final class WidgetUserSheetViewModel extends AppViewModel<ViewState> {
         }
 
         /* JADX INFO: renamed from: copy-U9gTzXU, reason: not valid java name */
-        public final StoreState m58copyU9gTzXU(User user, MeUser me2, Channel channel, Map<Long, GuildMember> computedMembers, Map<Long, GuildRole> guildRoles, Map<Long, VoiceState> mySelectedVoiceChannelVoiceStates, Map<Long, VoiceState> currentChannelVoiceStates, boolean muted, boolean selfMuted, boolean selfDeafened, float outputVolume, ModelRichPresence richPresence, Guild guild, Long permissions, StreamContext streamContext, UserProfile userProfile, Integer userRelationshipType, StoreUserNotes.UserNoteState userNoteFetchState, Channel stageChannel, StageRoles userStageRoles, StageRequestToSpeakState userRequestToSpeakState, StageRoles myStageRoles, boolean canDisableCommunication) {
-            Intrinsics3.checkNotNullParameter(user, "user");
-            Intrinsics3.checkNotNullParameter(me2, "me");
-            Intrinsics3.checkNotNullParameter(computedMembers, "computedMembers");
-            Intrinsics3.checkNotNullParameter(guildRoles, "guildRoles");
-            Intrinsics3.checkNotNullParameter(mySelectedVoiceChannelVoiceStates, "mySelectedVoiceChannelVoiceStates");
-            Intrinsics3.checkNotNullParameter(currentChannelVoiceStates, "currentChannelVoiceStates");
-            Intrinsics3.checkNotNullParameter(userProfile, "userProfile");
-            Intrinsics3.checkNotNullParameter(userNoteFetchState, "userNoteFetchState");
-            Intrinsics3.checkNotNullParameter(userRequestToSpeakState, "userRequestToSpeakState");
+        public final StoreState m11435copyU9gTzXU(User user, MeUser me2, Channel channel, Map<Long, GuildMember> computedMembers, Map<Long, GuildRole> guildRoles, Map<Long, VoiceState> mySelectedVoiceChannelVoiceStates, Map<Long, VoiceState> currentChannelVoiceStates, boolean muted, boolean selfMuted, boolean selfDeafened, float outputVolume, ModelRichPresence richPresence, Guild guild, Long permissions, StreamContext streamContext, UserProfile userProfile, Integer userRelationshipType, StoreUserNotes.UserNoteState userNoteFetchState, Channel stageChannel, StageRoles userStageRoles, StageRequestToSpeakState userRequestToSpeakState, StageRoles myStageRoles, boolean canDisableCommunication) {
+            C12238m.checkNotNullParameter(user, "user");
+            C12238m.checkNotNullParameter(me2, "me");
+            C12238m.checkNotNullParameter(computedMembers, "computedMembers");
+            C12238m.checkNotNullParameter(guildRoles, "guildRoles");
+            C12238m.checkNotNullParameter(mySelectedVoiceChannelVoiceStates, "mySelectedVoiceChannelVoiceStates");
+            C12238m.checkNotNullParameter(currentChannelVoiceStates, "currentChannelVoiceStates");
+            C12238m.checkNotNullParameter(userProfile, "userProfile");
+            C12238m.checkNotNullParameter(userNoteFetchState, "userNoteFetchState");
+            C12238m.checkNotNullParameter(userRequestToSpeakState, "userRequestToSpeakState");
             return new StoreState(user, me2, channel, computedMembers, guildRoles, mySelectedVoiceChannelVoiceStates, currentChannelVoiceStates, muted, selfMuted, selfDeafened, outputVolume, richPresence, guild, permissions, streamContext, userProfile, userRelationshipType, userNoteFetchState, stageChannel, userStageRoles, userRequestToSpeakState, myStageRoles, canDisableCommunication);
         }
 
@@ -1079,7 +1079,7 @@ public final class WidgetUserSheetViewModel extends AppViewModel<ViewState> {
                 return false;
             }
             StoreState storeState = (StoreState) other;
-            return Intrinsics3.areEqual(this.user, storeState.user) && Intrinsics3.areEqual(this.me, storeState.me) && Intrinsics3.areEqual(this.channel, storeState.channel) && Intrinsics3.areEqual(this.computedMembers, storeState.computedMembers) && Intrinsics3.areEqual(this.guildRoles, storeState.guildRoles) && Intrinsics3.areEqual(this.mySelectedVoiceChannelVoiceStates, storeState.mySelectedVoiceChannelVoiceStates) && Intrinsics3.areEqual(this.currentChannelVoiceStates, storeState.currentChannelVoiceStates) && this.muted == storeState.muted && this.selfMuted == storeState.selfMuted && this.selfDeafened == storeState.selfDeafened && Float.compare(this.outputVolume, storeState.outputVolume) == 0 && Intrinsics3.areEqual(this.richPresence, storeState.richPresence) && Intrinsics3.areEqual(this.guild, storeState.guild) && Intrinsics3.areEqual(this.permissions, storeState.permissions) && Intrinsics3.areEqual(this.streamContext, storeState.streamContext) && Intrinsics3.areEqual(this.userProfile, storeState.userProfile) && Intrinsics3.areEqual(this.userRelationshipType, storeState.userRelationshipType) && Intrinsics3.areEqual(this.userNoteFetchState, storeState.userNoteFetchState) && Intrinsics3.areEqual(this.stageChannel, storeState.stageChannel) && Intrinsics3.areEqual(this.userStageRoles, storeState.userStageRoles) && Intrinsics3.areEqual(this.userRequestToSpeakState, storeState.userRequestToSpeakState) && Intrinsics3.areEqual(this.myStageRoles, storeState.myStageRoles) && this.canDisableCommunication == storeState.canDisableCommunication;
+            return C12238m.areEqual(this.user, storeState.user) && C12238m.areEqual(this.me, storeState.me) && C12238m.areEqual(this.channel, storeState.channel) && C12238m.areEqual(this.computedMembers, storeState.computedMembers) && C12238m.areEqual(this.guildRoles, storeState.guildRoles) && C12238m.areEqual(this.mySelectedVoiceChannelVoiceStates, storeState.mySelectedVoiceChannelVoiceStates) && C12238m.areEqual(this.currentChannelVoiceStates, storeState.currentChannelVoiceStates) && this.muted == storeState.muted && this.selfMuted == storeState.selfMuted && this.selfDeafened == storeState.selfDeafened && Float.compare(this.outputVolume, storeState.outputVolume) == 0 && C12238m.areEqual(this.richPresence, storeState.richPresence) && C12238m.areEqual(this.guild, storeState.guild) && C12238m.areEqual(this.permissions, storeState.permissions) && C12238m.areEqual(this.streamContext, storeState.streamContext) && C12238m.areEqual(this.userProfile, storeState.userProfile) && C12238m.areEqual(this.userRelationshipType, storeState.userRelationshipType) && C12238m.areEqual(this.userNoteFetchState, storeState.userNoteFetchState) && C12238m.areEqual(this.stageChannel, storeState.stageChannel) && C12238m.areEqual(this.userStageRoles, storeState.userStageRoles) && C12238m.areEqual(this.userRequestToSpeakState, storeState.userRequestToSpeakState) && C12238m.areEqual(this.myStageRoles, storeState.myStageRoles) && this.canDisableCommunication == storeState.canDisableCommunication;
         }
 
         public final boolean getCanDisableCommunication() {
@@ -1119,7 +1119,7 @@ public final class WidgetUserSheetViewModel extends AppViewModel<ViewState> {
         }
 
         /* JADX INFO: renamed from: getMyStageRoles-twRsX-0, reason: not valid java name */
-        public final StageRoles m59getMyStageRolestwRsX0() {
+        public final StageRoles m11436getMyStageRolestwRsX0() {
             return this.myStageRoles;
         }
 
@@ -1172,7 +1172,7 @@ public final class WidgetUserSheetViewModel extends AppViewModel<ViewState> {
         }
 
         /* JADX INFO: renamed from: getUserStageRoles-twRsX-0, reason: not valid java name */
-        public final StageRoles m60getUserStageRolestwRsX0() {
+        public final StageRoles m11437getUserStageRolestwRsX0() {
             return this.userStageRoles;
         }
 
@@ -1251,52 +1251,52 @@ public final class WidgetUserSheetViewModel extends AppViewModel<ViewState> {
         }
 
         public String toString() {
-            StringBuilder sbU = outline.U("StoreState(user=");
-            sbU.append(this.user);
-            sbU.append(", me=");
-            sbU.append(this.me);
-            sbU.append(", channel=");
-            sbU.append(this.channel);
-            sbU.append(", computedMembers=");
-            sbU.append(this.computedMembers);
-            sbU.append(", guildRoles=");
-            sbU.append(this.guildRoles);
-            sbU.append(", mySelectedVoiceChannelVoiceStates=");
-            sbU.append(this.mySelectedVoiceChannelVoiceStates);
-            sbU.append(", currentChannelVoiceStates=");
-            sbU.append(this.currentChannelVoiceStates);
-            sbU.append(", muted=");
-            sbU.append(this.muted);
-            sbU.append(", selfMuted=");
-            sbU.append(this.selfMuted);
-            sbU.append(", selfDeafened=");
-            sbU.append(this.selfDeafened);
-            sbU.append(", outputVolume=");
-            sbU.append(this.outputVolume);
-            sbU.append(", richPresence=");
-            sbU.append(this.richPresence);
-            sbU.append(", guild=");
-            sbU.append(this.guild);
-            sbU.append(", permissions=");
-            sbU.append(this.permissions);
-            sbU.append(", streamContext=");
-            sbU.append(this.streamContext);
-            sbU.append(", userProfile=");
-            sbU.append(this.userProfile);
-            sbU.append(", userRelationshipType=");
-            sbU.append(this.userRelationshipType);
-            sbU.append(", userNoteFetchState=");
-            sbU.append(this.userNoteFetchState);
-            sbU.append(", stageChannel=");
-            sbU.append(this.stageChannel);
-            sbU.append(", userStageRoles=");
-            sbU.append(this.userStageRoles);
-            sbU.append(", userRequestToSpeakState=");
-            sbU.append(this.userRequestToSpeakState);
-            sbU.append(", myStageRoles=");
-            sbU.append(this.myStageRoles);
-            sbU.append(", canDisableCommunication=");
-            return outline.O(sbU, this.canDisableCommunication, ")");
+            StringBuilder sbM833U = C1643a.m833U("StoreState(user=");
+            sbM833U.append(this.user);
+            sbM833U.append(", me=");
+            sbM833U.append(this.me);
+            sbM833U.append(", channel=");
+            sbM833U.append(this.channel);
+            sbM833U.append(", computedMembers=");
+            sbM833U.append(this.computedMembers);
+            sbM833U.append(", guildRoles=");
+            sbM833U.append(this.guildRoles);
+            sbM833U.append(", mySelectedVoiceChannelVoiceStates=");
+            sbM833U.append(this.mySelectedVoiceChannelVoiceStates);
+            sbM833U.append(", currentChannelVoiceStates=");
+            sbM833U.append(this.currentChannelVoiceStates);
+            sbM833U.append(", muted=");
+            sbM833U.append(this.muted);
+            sbM833U.append(", selfMuted=");
+            sbM833U.append(this.selfMuted);
+            sbM833U.append(", selfDeafened=");
+            sbM833U.append(this.selfDeafened);
+            sbM833U.append(", outputVolume=");
+            sbM833U.append(this.outputVolume);
+            sbM833U.append(", richPresence=");
+            sbM833U.append(this.richPresence);
+            sbM833U.append(", guild=");
+            sbM833U.append(this.guild);
+            sbM833U.append(", permissions=");
+            sbM833U.append(this.permissions);
+            sbM833U.append(", streamContext=");
+            sbM833U.append(this.streamContext);
+            sbM833U.append(", userProfile=");
+            sbM833U.append(this.userProfile);
+            sbM833U.append(", userRelationshipType=");
+            sbM833U.append(this.userRelationshipType);
+            sbM833U.append(", userNoteFetchState=");
+            sbM833U.append(this.userNoteFetchState);
+            sbM833U.append(", stageChannel=");
+            sbM833U.append(this.stageChannel);
+            sbM833U.append(", userStageRoles=");
+            sbM833U.append(this.userStageRoles);
+            sbM833U.append(", userRequestToSpeakState=");
+            sbM833U.append(this.userRequestToSpeakState);
+            sbM833U.append(", myStageRoles=");
+            sbM833U.append(this.myStageRoles);
+            sbM833U.append(", canDisableCommunication=");
+            return C1643a.m827O(sbM833U, this.canDisableCommunication, ")");
         }
 
         public /* synthetic */ StoreState(User user, MeUser meUser, Channel channel, Map map, Map map2, Map map3, Map map4, boolean z2, boolean z3, boolean z4, float f, ModelRichPresence modelRichPresence, Guild guild, Long l, StreamContext streamContext, UserProfile userProfile, Integer num, StoreUserNotes.UserNoteState userNoteState, Channel channel2, StageRoles stageRoles, StageRequestToSpeakState stageRequestToSpeakState, StageRoles stageRoles2, boolean z5, DefaultConstructorMarker defaultConstructorMarker) {
@@ -1343,12 +1343,12 @@ public final class WidgetUserSheetViewModel extends AppViewModel<ViewState> {
             public Loaded(User user, boolean z2, boolean z3, UserProfileVoiceSettingsView.ViewState viewState, VoiceState voiceState, ModelRichPresence modelRichPresence, String str, List<GuildRole> list, UserProfileAdminView.ViewState viewState2, UserProfileStageActionsView.ViewState viewState3, Channel channel, StreamContext streamContext, String str2, String str3, int i, UserProfileConnectionsView.ViewState viewState4, StoreUserNotes.UserNoteState userNoteState, String str4, boolean z4, List<Node<MessageRenderContext>> list2, boolean z5, Long l, GuildMember guildMember, UserProfile userProfile) {
                 String avatar;
                 super(0 == true ? 1 : 0);
-                Intrinsics3.checkNotNullParameter(user, "user");
-                Intrinsics3.checkNotNullParameter(viewState, "voiceSettingsViewState");
-                Intrinsics3.checkNotNullParameter(list, "roleItems");
-                Intrinsics3.checkNotNullParameter(viewState3, "stageViewState");
-                Intrinsics3.checkNotNullParameter(viewState4, "connectionsViewState");
-                Intrinsics3.checkNotNullParameter(userNoteState, "userNoteFetchState");
+                C12238m.checkNotNullParameter(user, "user");
+                C12238m.checkNotNullParameter(viewState, "voiceSettingsViewState");
+                C12238m.checkNotNullParameter(list, "roleItems");
+                C12238m.checkNotNullParameter(viewState3, "stageViewState");
+                C12238m.checkNotNullParameter(viewState4, "connectionsViewState");
+                C12238m.checkNotNullParameter(userNoteState, "userNoteFetchState");
                 this.user = user;
                 this.isMe = z2;
                 this.showVoiceSettings = z3;
@@ -1504,12 +1504,12 @@ public final class WidgetUserSheetViewModel extends AppViewModel<ViewState> {
             }
 
             public final Loaded copy(User user, boolean isMe, boolean showVoiceSettings, UserProfileVoiceSettingsView.ViewState voiceSettingsViewState, VoiceState channelVoiceState, ModelRichPresence richPresence, String guildSectionHeaderText, List<GuildRole> roleItems, UserProfileAdminView.ViewState adminViewState, UserProfileStageActionsView.ViewState stageViewState, Channel channel, StreamContext streamContext, String guildName, String guildIcon, int userRelationshipType, UserProfileConnectionsView.ViewState connectionsViewState, StoreUserNotes.UserNoteState userNoteFetchState, String userNote, boolean userInSameVoiceChannel, List<Node<MessageRenderContext>> bioAst, boolean profileLoaded, Long guildId, GuildMember guildMember, UserProfile userProfile) {
-                Intrinsics3.checkNotNullParameter(user, "user");
-                Intrinsics3.checkNotNullParameter(voiceSettingsViewState, "voiceSettingsViewState");
-                Intrinsics3.checkNotNullParameter(roleItems, "roleItems");
-                Intrinsics3.checkNotNullParameter(stageViewState, "stageViewState");
-                Intrinsics3.checkNotNullParameter(connectionsViewState, "connectionsViewState");
-                Intrinsics3.checkNotNullParameter(userNoteFetchState, "userNoteFetchState");
+                C12238m.checkNotNullParameter(user, "user");
+                C12238m.checkNotNullParameter(voiceSettingsViewState, "voiceSettingsViewState");
+                C12238m.checkNotNullParameter(roleItems, "roleItems");
+                C12238m.checkNotNullParameter(stageViewState, "stageViewState");
+                C12238m.checkNotNullParameter(connectionsViewState, "connectionsViewState");
+                C12238m.checkNotNullParameter(userNoteFetchState, "userNoteFetchState");
                 return new Loaded(user, isMe, showVoiceSettings, voiceSettingsViewState, channelVoiceState, richPresence, guildSectionHeaderText, roleItems, adminViewState, stageViewState, channel, streamContext, guildName, guildIcon, userRelationshipType, connectionsViewState, userNoteFetchState, userNote, userInSameVoiceChannel, bioAst, profileLoaded, guildId, guildMember, userProfile);
             }
 
@@ -1521,7 +1521,7 @@ public final class WidgetUserSheetViewModel extends AppViewModel<ViewState> {
                     return false;
                 }
                 Loaded loaded = (Loaded) other;
-                return Intrinsics3.areEqual(this.user, loaded.user) && this.isMe == loaded.isMe && this.showVoiceSettings == loaded.showVoiceSettings && Intrinsics3.areEqual(this.voiceSettingsViewState, loaded.voiceSettingsViewState) && Intrinsics3.areEqual(this.channelVoiceState, loaded.channelVoiceState) && Intrinsics3.areEqual(this.richPresence, loaded.richPresence) && Intrinsics3.areEqual(this.guildSectionHeaderText, loaded.guildSectionHeaderText) && Intrinsics3.areEqual(this.roleItems, loaded.roleItems) && Intrinsics3.areEqual(this.adminViewState, loaded.adminViewState) && Intrinsics3.areEqual(this.stageViewState, loaded.stageViewState) && Intrinsics3.areEqual(this.channel, loaded.channel) && Intrinsics3.areEqual(this.streamContext, loaded.streamContext) && Intrinsics3.areEqual(this.guildName, loaded.guildName) && Intrinsics3.areEqual(this.guildIcon, loaded.guildIcon) && this.userRelationshipType == loaded.userRelationshipType && Intrinsics3.areEqual(this.connectionsViewState, loaded.connectionsViewState) && Intrinsics3.areEqual(this.userNoteFetchState, loaded.userNoteFetchState) && Intrinsics3.areEqual(this.userNote, loaded.userNote) && this.userInSameVoiceChannel == loaded.userInSameVoiceChannel && Intrinsics3.areEqual(this.bioAst, loaded.bioAst) && this.profileLoaded == loaded.profileLoaded && Intrinsics3.areEqual(this.guildId, loaded.guildId) && Intrinsics3.areEqual(this.guildMember, loaded.guildMember) && Intrinsics3.areEqual(this.userProfile, loaded.userProfile);
+                return C12238m.areEqual(this.user, loaded.user) && this.isMe == loaded.isMe && this.showVoiceSettings == loaded.showVoiceSettings && C12238m.areEqual(this.voiceSettingsViewState, loaded.voiceSettingsViewState) && C12238m.areEqual(this.channelVoiceState, loaded.channelVoiceState) && C12238m.areEqual(this.richPresence, loaded.richPresence) && C12238m.areEqual(this.guildSectionHeaderText, loaded.guildSectionHeaderText) && C12238m.areEqual(this.roleItems, loaded.roleItems) && C12238m.areEqual(this.adminViewState, loaded.adminViewState) && C12238m.areEqual(this.stageViewState, loaded.stageViewState) && C12238m.areEqual(this.channel, loaded.channel) && C12238m.areEqual(this.streamContext, loaded.streamContext) && C12238m.areEqual(this.guildName, loaded.guildName) && C12238m.areEqual(this.guildIcon, loaded.guildIcon) && this.userRelationshipType == loaded.userRelationshipType && C12238m.areEqual(this.connectionsViewState, loaded.connectionsViewState) && C12238m.areEqual(this.userNoteFetchState, loaded.userNoteFetchState) && C12238m.areEqual(this.userNote, loaded.userNote) && this.userInSameVoiceChannel == loaded.userInSameVoiceChannel && C12238m.areEqual(this.bioAst, loaded.bioAst) && this.profileLoaded == loaded.profileLoaded && C12238m.areEqual(this.guildId, loaded.guildId) && C12238m.areEqual(this.guildMember, loaded.guildMember) && C12238m.areEqual(this.userProfile, loaded.userProfile);
             }
 
             public final UserProfileAdminView.ViewState getAdminViewState() {
@@ -1725,56 +1725,56 @@ public final class WidgetUserSheetViewModel extends AppViewModel<ViewState> {
             }
 
             public String toString() {
-                StringBuilder sbU = outline.U("Loaded(user=");
-                sbU.append(this.user);
-                sbU.append(", isMe=");
-                sbU.append(this.isMe);
-                sbU.append(", showVoiceSettings=");
-                sbU.append(this.showVoiceSettings);
-                sbU.append(", voiceSettingsViewState=");
-                sbU.append(this.voiceSettingsViewState);
-                sbU.append(", channelVoiceState=");
-                sbU.append(this.channelVoiceState);
-                sbU.append(", richPresence=");
-                sbU.append(this.richPresence);
-                sbU.append(", guildSectionHeaderText=");
-                sbU.append(this.guildSectionHeaderText);
-                sbU.append(", roleItems=");
-                sbU.append(this.roleItems);
-                sbU.append(", adminViewState=");
-                sbU.append(this.adminViewState);
-                sbU.append(", stageViewState=");
-                sbU.append(this.stageViewState);
-                sbU.append(", channel=");
-                sbU.append(this.channel);
-                sbU.append(", streamContext=");
-                sbU.append(this.streamContext);
-                sbU.append(", guildName=");
-                sbU.append(this.guildName);
-                sbU.append(", guildIcon=");
-                sbU.append(this.guildIcon);
-                sbU.append(", userRelationshipType=");
-                sbU.append(this.userRelationshipType);
-                sbU.append(", connectionsViewState=");
-                sbU.append(this.connectionsViewState);
-                sbU.append(", userNoteFetchState=");
-                sbU.append(this.userNoteFetchState);
-                sbU.append(", userNote=");
-                sbU.append(this.userNote);
-                sbU.append(", userInSameVoiceChannel=");
-                sbU.append(this.userInSameVoiceChannel);
-                sbU.append(", bioAst=");
-                sbU.append(this.bioAst);
-                sbU.append(", profileLoaded=");
-                sbU.append(this.profileLoaded);
-                sbU.append(", guildId=");
-                sbU.append(this.guildId);
-                sbU.append(", guildMember=");
-                sbU.append(this.guildMember);
-                sbU.append(", userProfile=");
-                sbU.append(this.userProfile);
-                sbU.append(")");
-                return sbU.toString();
+                StringBuilder sbM833U = C1643a.m833U("Loaded(user=");
+                sbM833U.append(this.user);
+                sbM833U.append(", isMe=");
+                sbM833U.append(this.isMe);
+                sbM833U.append(", showVoiceSettings=");
+                sbM833U.append(this.showVoiceSettings);
+                sbM833U.append(", voiceSettingsViewState=");
+                sbM833U.append(this.voiceSettingsViewState);
+                sbM833U.append(", channelVoiceState=");
+                sbM833U.append(this.channelVoiceState);
+                sbM833U.append(", richPresence=");
+                sbM833U.append(this.richPresence);
+                sbM833U.append(", guildSectionHeaderText=");
+                sbM833U.append(this.guildSectionHeaderText);
+                sbM833U.append(", roleItems=");
+                sbM833U.append(this.roleItems);
+                sbM833U.append(", adminViewState=");
+                sbM833U.append(this.adminViewState);
+                sbM833U.append(", stageViewState=");
+                sbM833U.append(this.stageViewState);
+                sbM833U.append(", channel=");
+                sbM833U.append(this.channel);
+                sbM833U.append(", streamContext=");
+                sbM833U.append(this.streamContext);
+                sbM833U.append(", guildName=");
+                sbM833U.append(this.guildName);
+                sbM833U.append(", guildIcon=");
+                sbM833U.append(this.guildIcon);
+                sbM833U.append(", userRelationshipType=");
+                sbM833U.append(this.userRelationshipType);
+                sbM833U.append(", connectionsViewState=");
+                sbM833U.append(this.connectionsViewState);
+                sbM833U.append(", userNoteFetchState=");
+                sbM833U.append(this.userNoteFetchState);
+                sbM833U.append(", userNote=");
+                sbM833U.append(this.userNote);
+                sbM833U.append(", userInSameVoiceChannel=");
+                sbM833U.append(this.userInSameVoiceChannel);
+                sbM833U.append(", bioAst=");
+                sbM833U.append(this.bioAst);
+                sbM833U.append(", profileLoaded=");
+                sbM833U.append(this.profileLoaded);
+                sbM833U.append(", guildId=");
+                sbM833U.append(this.guildId);
+                sbM833U.append(", guildMember=");
+                sbM833U.append(this.guildMember);
+                sbM833U.append(", userProfile=");
+                sbM833U.append(this.userProfile);
+                sbM833U.append(")");
+                return sbM833U.toString();
             }
         }
 
@@ -1812,13 +1812,13 @@ public final class WidgetUserSheetViewModel extends AppViewModel<ViewState> {
         }
     }
 
-    /* JADX INFO: renamed from: com.discord.widgets.user.usersheet.WidgetUserSheetViewModel$addRelationship$1, reason: invalid class name */
+    /* JADX INFO: renamed from: com.discord.widgets.user.usersheet.WidgetUserSheetViewModel$addRelationship$1 */
     /* JADX INFO: compiled from: WidgetUserSheetViewModel.kt */
-    public static final class AnonymousClass1 extends Lambda implements Function1<Void, Unit> {
+    public static final class C103811 extends AbstractC12240o implements Function1<Void, Unit> {
         public final /* synthetic */ int $successMessageStringRes;
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-        public AnonymousClass1(int i) {
+        public C103811(int i) {
             super(1);
             this.$successMessageStringRes = i;
         }
@@ -1826,7 +1826,7 @@ public final class WidgetUserSheetViewModel extends AppViewModel<ViewState> {
         @Override // kotlin.jvm.functions.Function1
         public /* bridge */ /* synthetic */ Unit invoke(Void r1) {
             invoke2(r1);
-            return Unit.a;
+            return Unit.f27425a;
         }
 
         /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
@@ -1835,37 +1835,37 @@ public final class WidgetUserSheetViewModel extends AppViewModel<ViewState> {
         }
     }
 
-    /* JADX INFO: renamed from: com.discord.widgets.user.usersheet.WidgetUserSheetViewModel$addRelationship$2, reason: invalid class name */
+    /* JADX INFO: renamed from: com.discord.widgets.user.usersheet.WidgetUserSheetViewModel$addRelationship$2 */
     /* JADX INFO: compiled from: WidgetUserSheetViewModel.kt */
-    public static final class AnonymousClass2 extends Lambda implements Function1<Error, Unit> {
+    public static final class C103822 extends AbstractC12240o implements Function1<Error, Unit> {
         public final /* synthetic */ int $successMessageStringRes;
         public final /* synthetic */ Integer $type;
         public final /* synthetic */ String $username;
 
         /* JADX INFO: renamed from: com.discord.widgets.user.usersheet.WidgetUserSheetViewModel$addRelationship$2$1, reason: invalid class name */
         /* JADX INFO: compiled from: WidgetUserSheetViewModel.kt */
-        public static final class AnonymousClass1 extends Lambda implements Function0<Unit> {
+        public static final class AnonymousClass1 extends AbstractC12240o implements Function0<Unit> {
             public final /* synthetic */ Error $error;
 
             /* JADX INFO: renamed from: com.discord.widgets.user.usersheet.WidgetUserSheetViewModel$addRelationship$2$1$1, reason: invalid class name and collision with other inner class name */
             /* JADX INFO: compiled from: WidgetUserSheetViewModel.kt */
-            public static final class C03541 extends Lambda implements Function2<AppFragment, CaptchaHelper.CaptchaPayload, Unit> {
-                public C03541() {
+            public static final class C132951 extends AbstractC12240o implements Function2<AppFragment, CaptchaHelper.CaptchaPayload, Unit> {
+                public C132951() {
                     super(2);
                 }
 
                 @Override // kotlin.jvm.functions.Function2
                 public /* bridge */ /* synthetic */ Unit invoke(AppFragment appFragment, CaptchaHelper.CaptchaPayload captchaPayload) {
                     invoke2(appFragment, captchaPayload);
-                    return Unit.a;
+                    return Unit.f27425a;
                 }
 
                 /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
                 public final void invoke2(AppFragment appFragment, CaptchaHelper.CaptchaPayload captchaPayload) {
-                    Intrinsics3.checkNotNullParameter(appFragment, "<anonymous parameter 0>");
-                    Intrinsics3.checkNotNullParameter(captchaPayload, "captchaPayload");
-                    AnonymousClass2 anonymousClass2 = AnonymousClass2.this;
-                    WidgetUserSheetViewModel.this.addRelationship(anonymousClass2.$type, anonymousClass2.$username, anonymousClass2.$successMessageStringRes, captchaPayload);
+                    C12238m.checkNotNullParameter(appFragment, "<anonymous parameter 0>");
+                    C12238m.checkNotNullParameter(captchaPayload, "captchaPayload");
+                    C103822 c103822 = C103822.this;
+                    WidgetUserSheetViewModel.this.addRelationship(c103822.$type, c103822.$username, c103822.$successMessageStringRes, captchaPayload);
                 }
             }
 
@@ -1878,26 +1878,26 @@ public final class WidgetUserSheetViewModel extends AppViewModel<ViewState> {
             @Override // kotlin.jvm.functions.Function0
             public /* bridge */ /* synthetic */ Unit invoke() {
                 invoke2();
-                return Unit.a;
+                return Unit.f27425a;
             }
 
             /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
             public final void invoke2() {
-                if (WidgetCaptcha4.isCaptchaError(this.$error)) {
-                    WidgetCaptchaBottomSheet.Companion.enqueue$default(WidgetCaptchaBottomSheet.INSTANCE, "Add Friend Captcha", new C03541(), null, CaptchaErrorBody.INSTANCE.createFromError(this.$error), 4, null);
+                if (WidgetCaptchaKt.isCaptchaError(this.$error)) {
+                    WidgetCaptchaBottomSheet.Companion.enqueue$default(WidgetCaptchaBottomSheet.INSTANCE, "Add Friend Captcha", new C132951(), null, CaptchaErrorBody.INSTANCE.createFromError(this.$error), 4, null);
                     return;
                 }
                 WidgetUserSheetViewModel widgetUserSheetViewModel = WidgetUserSheetViewModel.this;
                 Error.Response response = this.$error.getResponse();
-                Intrinsics3.checkNotNullExpressionValue(response, "error.response");
-                widgetUserSheetViewModel.emitShowFriendRequestAbortToast(response.getCode(), AnonymousClass2.this.$username);
+                C12238m.checkNotNullExpressionValue(response, "error.response");
+                widgetUserSheetViewModel.emitShowFriendRequestAbortToast(response.getCode(), C103822.this.$username);
             }
         }
 
-        /* JADX INFO: renamed from: com.discord.widgets.user.usersheet.WidgetUserSheetViewModel$addRelationship$2$2, reason: invalid class name and collision with other inner class name */
+        /* JADX INFO: renamed from: com.discord.widgets.user.usersheet.WidgetUserSheetViewModel$addRelationship$2$2, reason: invalid class name */
         /* JADX INFO: compiled from: WidgetUserSheetViewModel.kt */
-        public static final class C03552 extends Lambda implements Function0<Boolean> {
-            public C03552() {
+        public static final class AnonymousClass2 extends AbstractC12240o implements Function0<Boolean> {
+            public AnonymousClass2() {
                 super(0);
             }
 
@@ -1908,13 +1908,13 @@ public final class WidgetUserSheetViewModel extends AppViewModel<ViewState> {
 
             /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
             public final boolean invoke2() {
-                WidgetUserSheetViewModel.this.emitShowToastEvent(R.string.default_failure_to_perform_action_message);
+                WidgetUserSheetViewModel.this.emitShowToastEvent(C5419R.string.default_failure_to_perform_action_message);
                 return false;
             }
         }
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-        public AnonymousClass2(Integer num, String str, int i) {
+        public C103822(Integer num, String str, int i) {
             super(1);
             this.$type = num;
             this.$username = str;
@@ -1924,68 +1924,68 @@ public final class WidgetUserSheetViewModel extends AppViewModel<ViewState> {
         @Override // kotlin.jvm.functions.Function1
         public /* bridge */ /* synthetic */ Unit invoke(Error error) {
             invoke2(error);
-            return Unit.a;
+            return Unit.f27425a;
         }
 
         /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
         public final void invoke2(Error error) {
-            Intrinsics3.checkNotNullParameter(error, "error");
-            RestAPIAbortMessages.INSTANCE.handleAbortCodeOrDefault(error, new AnonymousClass1(error), new C03552());
+            C12238m.checkNotNullParameter(error, "error");
+            RestAPIAbortMessages.INSTANCE.handleAbortCodeOrDefault(error, new AnonymousClass1(error), new AnonymousClass2());
         }
     }
 
-    /* JADX INFO: renamed from: com.discord.widgets.user.usersheet.WidgetUserSheetViewModel$disconnectUser$1, reason: invalid class name */
+    /* JADX INFO: renamed from: com.discord.widgets.user.usersheet.WidgetUserSheetViewModel$disconnectUser$1 */
     /* JADX INFO: compiled from: WidgetUserSheetViewModel.kt */
-    public static final class AnonymousClass1 extends Lambda implements Function1<Void, Unit> {
-        public AnonymousClass1() {
+    public static final class C103831 extends AbstractC12240o implements Function1<Void, Unit> {
+        public C103831() {
             super(1);
         }
 
         @Override // kotlin.jvm.functions.Function1
         public /* bridge */ /* synthetic */ Unit invoke(Void r1) {
             invoke2(r1);
-            return Unit.a;
+            return Unit.f27425a;
         }
 
         /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
         public final void invoke2(Void r2) {
-            WidgetUserSheetViewModel.this.emitShowToastEvent(R.string.disconnect_user_success);
+            WidgetUserSheetViewModel.this.emitShowToastEvent(C5419R.string.disconnect_user_success);
         }
     }
 
-    /* JADX INFO: renamed from: com.discord.widgets.user.usersheet.WidgetUserSheetViewModel$disconnectUser$2, reason: invalid class name */
+    /* JADX INFO: renamed from: com.discord.widgets.user.usersheet.WidgetUserSheetViewModel$disconnectUser$2 */
     /* JADX INFO: compiled from: WidgetUserSheetViewModel.kt */
-    public static final class AnonymousClass2 extends Lambda implements Function1<Error, Unit> {
-        public AnonymousClass2() {
+    public static final class C103842 extends AbstractC12240o implements Function1<Error, Unit> {
+        public C103842() {
             super(1);
         }
 
         @Override // kotlin.jvm.functions.Function1
         public /* bridge */ /* synthetic */ Unit invoke(Error error) {
             invoke2(error);
-            return Unit.a;
+            return Unit.f27425a;
         }
 
         /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
         public final void invoke2(Error error) {
-            Intrinsics3.checkNotNullParameter(error, "it");
-            WidgetUserSheetViewModel.this.emitShowToastEvent(R.string.default_failure_to_perform_action_message);
+            C12238m.checkNotNullParameter(error, "it");
+            WidgetUserSheetViewModel.this.emitShowToastEvent(C5419R.string.default_failure_to_perform_action_message);
         }
     }
 
-    /* JADX INFO: renamed from: com.discord.widgets.user.usersheet.WidgetUserSheetViewModel$guildDeafenUser$1, reason: invalid class name */
+    /* JADX INFO: renamed from: com.discord.widgets.user.usersheet.WidgetUserSheetViewModel$guildDeafenUser$1 */
     /* JADX INFO: compiled from: WidgetUserSheetViewModel.kt */
-    public static final class AnonymousClass1 extends Lambda implements Function1<Void, Unit> {
-        public static final AnonymousClass1 INSTANCE = new AnonymousClass1();
+    public static final class C103851 extends AbstractC12240o implements Function1<Void, Unit> {
+        public static final C103851 INSTANCE = new C103851();
 
-        public AnonymousClass1() {
+        public C103851() {
             super(1);
         }
 
         @Override // kotlin.jvm.functions.Function1
         public /* bridge */ /* synthetic */ Unit invoke(Void r1) {
             invoke2(r1);
-            return Unit.a;
+            return Unit.f27425a;
         }
 
         /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
@@ -1993,39 +1993,39 @@ public final class WidgetUserSheetViewModel extends AppViewModel<ViewState> {
         }
     }
 
-    /* JADX INFO: renamed from: com.discord.widgets.user.usersheet.WidgetUserSheetViewModel$guildDeafenUser$2, reason: invalid class name */
+    /* JADX INFO: renamed from: com.discord.widgets.user.usersheet.WidgetUserSheetViewModel$guildDeafenUser$2 */
     /* JADX INFO: compiled from: WidgetUserSheetViewModel.kt */
-    public static final class AnonymousClass2 extends Lambda implements Function1<Error, Unit> {
-        public AnonymousClass2() {
+    public static final class C103862 extends AbstractC12240o implements Function1<Error, Unit> {
+        public C103862() {
             super(1);
         }
 
         @Override // kotlin.jvm.functions.Function1
         public /* bridge */ /* synthetic */ Unit invoke(Error error) {
             invoke2(error);
-            return Unit.a;
+            return Unit.f27425a;
         }
 
         /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
         public final void invoke2(Error error) {
-            Intrinsics3.checkNotNullParameter(error, "it");
-            WidgetUserSheetViewModel.this.emitShowToastEvent(R.string.default_failure_to_perform_action_message);
+            C12238m.checkNotNullParameter(error, "it");
+            WidgetUserSheetViewModel.this.emitShowToastEvent(C5419R.string.default_failure_to_perform_action_message);
         }
     }
 
-    /* JADX INFO: renamed from: com.discord.widgets.user.usersheet.WidgetUserSheetViewModel$guildMuteUser$1, reason: invalid class name */
+    /* JADX INFO: renamed from: com.discord.widgets.user.usersheet.WidgetUserSheetViewModel$guildMuteUser$1 */
     /* JADX INFO: compiled from: WidgetUserSheetViewModel.kt */
-    public static final class AnonymousClass1 extends Lambda implements Function1<Void, Unit> {
-        public static final AnonymousClass1 INSTANCE = new AnonymousClass1();
+    public static final class C103871 extends AbstractC12240o implements Function1<Void, Unit> {
+        public static final C103871 INSTANCE = new C103871();
 
-        public AnonymousClass1() {
+        public C103871() {
             super(1);
         }
 
         @Override // kotlin.jvm.functions.Function1
         public /* bridge */ /* synthetic */ Unit invoke(Void r1) {
             invoke2(r1);
-            return Unit.a;
+            return Unit.f27425a;
         }
 
         /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
@@ -2033,37 +2033,37 @@ public final class WidgetUserSheetViewModel extends AppViewModel<ViewState> {
         }
     }
 
-    /* JADX INFO: renamed from: com.discord.widgets.user.usersheet.WidgetUserSheetViewModel$guildMuteUser$2, reason: invalid class name */
+    /* JADX INFO: renamed from: com.discord.widgets.user.usersheet.WidgetUserSheetViewModel$guildMuteUser$2 */
     /* JADX INFO: compiled from: WidgetUserSheetViewModel.kt */
-    public static final class AnonymousClass2 extends Lambda implements Function1<Error, Unit> {
-        public AnonymousClass2() {
+    public static final class C103882 extends AbstractC12240o implements Function1<Error, Unit> {
+        public C103882() {
             super(1);
         }
 
         @Override // kotlin.jvm.functions.Function1
         public /* bridge */ /* synthetic */ Unit invoke(Error error) {
             invoke2(error);
-            return Unit.a;
+            return Unit.f27425a;
         }
 
         /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
         public final void invoke2(Error error) {
-            Intrinsics3.checkNotNullParameter(error, "it");
-            WidgetUserSheetViewModel.this.emitShowToastEvent(R.string.default_failure_to_perform_action_message);
+            C12238m.checkNotNullParameter(error, "it");
+            WidgetUserSheetViewModel.this.emitShowToastEvent(C5419R.string.default_failure_to_perform_action_message);
         }
     }
 
-    /* JADX INFO: renamed from: com.discord.widgets.user.usersheet.WidgetUserSheetViewModel$inviteUserToSpeak$1, reason: invalid class name */
+    /* JADX INFO: renamed from: com.discord.widgets.user.usersheet.WidgetUserSheetViewModel$inviteUserToSpeak$1 */
     /* JADX INFO: compiled from: WidgetUserSheetViewModel.kt */
-    public static final class AnonymousClass1 extends Lambda implements Function1<Void, Unit> {
-        public AnonymousClass1() {
+    public static final class C103891 extends AbstractC12240o implements Function1<Void, Unit> {
+        public C103891() {
             super(1);
         }
 
         @Override // kotlin.jvm.functions.Function1
         public /* bridge */ /* synthetic */ Unit invoke(Void r1) {
             invoke2(r1);
-            return Unit.a;
+            return Unit.f27425a;
         }
 
         /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
@@ -2076,23 +2076,23 @@ public final class WidgetUserSheetViewModel extends AppViewModel<ViewState> {
             if (loaded != null) {
                 WidgetUserSheetViewModel widgetUserSheetViewModel = WidgetUserSheetViewModel.this;
                 UserProfileStageActionsView.ViewState stageViewState = loaded.getStageViewState();
-                widgetUserSheetViewModel.updateViewState(ViewState.Loaded.copy$default(loaded, null, false, false, null, null, null, null, null, null, stageViewState.m53copyam1GJgw((Opcodes.LAND & 1) != 0 ? stageViewState.isMe : false, (Opcodes.LAND & 2) != 0 ? stageViewState.channel : null, (Opcodes.LAND & 4) != 0 ? stageViewState.userStageRole : null, (Opcodes.LAND & 8) != 0 ? stageViewState.userRequestToSpeakState : null, (Opcodes.LAND & 16) != 0 ? stageViewState.userInSameVoiceChannel : false, (Opcodes.LAND & 32) != 0 ? stageViewState.canMuteMembers : false, (Opcodes.LAND & 64) != 0 ? stageViewState.isUpdatingSuppressed : false, (Opcodes.LAND & 128) != 0 ? stageViewState.isInvitingToSpeak : false), null, null, null, null, 0, null, null, null, false, null, false, null, null, null, 16776703, null));
+                widgetUserSheetViewModel.updateViewState(ViewState.Loaded.copy$default(loaded, null, false, false, null, null, null, null, null, null, stageViewState.m11430copyam1GJgw((Opcodes.LAND & 1) != 0 ? stageViewState.isMe : false, (Opcodes.LAND & 2) != 0 ? stageViewState.channel : null, (Opcodes.LAND & 4) != 0 ? stageViewState.userStageRole : null, (Opcodes.LAND & 8) != 0 ? stageViewState.userRequestToSpeakState : null, (Opcodes.LAND & 16) != 0 ? stageViewState.userInSameVoiceChannel : false, (Opcodes.LAND & 32) != 0 ? stageViewState.canMuteMembers : false, (Opcodes.LAND & 64) != 0 ? stageViewState.isUpdatingSuppressed : false, (Opcodes.LAND & 128) != 0 ? stageViewState.isInvitingToSpeak : false), null, null, null, null, 0, null, null, null, false, null, false, null, null, null, 16776703, null));
                 WidgetUserSheetViewModel.this.emitDismissSheetEvent();
             }
         }
     }
 
-    /* JADX INFO: renamed from: com.discord.widgets.user.usersheet.WidgetUserSheetViewModel$kickUser$1, reason: invalid class name */
+    /* JADX INFO: renamed from: com.discord.widgets.user.usersheet.WidgetUserSheetViewModel$kickUser$1 */
     /* JADX INFO: compiled from: WidgetUserSheetViewModel.kt */
-    public static final class AnonymousClass1 extends Lambda implements Function1<Void, Unit> {
-        public AnonymousClass1() {
+    public static final class C103901 extends AbstractC12240o implements Function1<Void, Unit> {
+        public C103901() {
             super(1);
         }
 
         @Override // kotlin.jvm.functions.Function1
         public /* bridge */ /* synthetic */ Unit invoke(Void r1) {
             invoke2(r1);
-            return Unit.a;
+            return Unit.f27425a;
         }
 
         /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
@@ -2101,133 +2101,133 @@ public final class WidgetUserSheetViewModel extends AppViewModel<ViewState> {
         }
     }
 
-    /* JADX INFO: renamed from: com.discord.widgets.user.usersheet.WidgetUserSheetViewModel$launchVideoCall$1, reason: invalid class name */
+    /* JADX INFO: renamed from: com.discord.widgets.user.usersheet.WidgetUserSheetViewModel$launchVideoCall$1 */
     /* JADX INFO: compiled from: WidgetUserSheetViewModel.kt */
-    public static final class AnonymousClass1 extends Lambda implements Function1<Channel, Unit> {
-        public AnonymousClass1() {
+    public static final class C103911 extends AbstractC12240o implements Function1<Channel, Unit> {
+        public C103911() {
             super(1);
         }
 
         @Override // kotlin.jvm.functions.Function1
         public /* bridge */ /* synthetic */ Unit invoke(Channel channel) {
             invoke2(channel);
-            return Unit.a;
+            return Unit.f27425a;
         }
 
         /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
         public final void invoke2(Channel channel) {
-            Intrinsics3.checkNotNullParameter(channel, "channel");
+            C12238m.checkNotNullParameter(channel, "channel");
             WidgetUserSheetViewModel.this.emitLaunchVideoCallEvent(channel.getId());
         }
     }
 
-    /* JADX INFO: renamed from: com.discord.widgets.user.usersheet.WidgetUserSheetViewModel$launchVideoCall$2, reason: invalid class name */
+    /* JADX INFO: renamed from: com.discord.widgets.user.usersheet.WidgetUserSheetViewModel$launchVideoCall$2 */
     /* JADX INFO: compiled from: WidgetUserSheetViewModel.kt */
-    public static final class AnonymousClass2 extends Lambda implements Function1<Error, Unit> {
-        public AnonymousClass2() {
+    public static final class C103922 extends AbstractC12240o implements Function1<Error, Unit> {
+        public C103922() {
             super(1);
         }
 
         @Override // kotlin.jvm.functions.Function1
         public /* bridge */ /* synthetic */ Unit invoke(Error error) {
             invoke2(error);
-            return Unit.a;
+            return Unit.f27425a;
         }
 
         /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
         public final void invoke2(Error error) {
-            Intrinsics3.checkNotNullParameter(error, "it");
-            WidgetUserSheetViewModel.this.emitShowToastEvent(R.string.default_failure_to_perform_action_message);
+            C12238m.checkNotNullParameter(error, "it");
+            WidgetUserSheetViewModel.this.emitShowToastEvent(C5419R.string.default_failure_to_perform_action_message);
         }
     }
 
-    /* JADX INFO: renamed from: com.discord.widgets.user.usersheet.WidgetUserSheetViewModel$launchVoiceCall$1, reason: invalid class name */
+    /* JADX INFO: renamed from: com.discord.widgets.user.usersheet.WidgetUserSheetViewModel$launchVoiceCall$1 */
     /* JADX INFO: compiled from: WidgetUserSheetViewModel.kt */
-    public static final class AnonymousClass1 extends Lambda implements Function1<Channel, Unit> {
-        public AnonymousClass1() {
+    public static final class C103931 extends AbstractC12240o implements Function1<Channel, Unit> {
+        public C103931() {
             super(1);
         }
 
         @Override // kotlin.jvm.functions.Function1
         public /* bridge */ /* synthetic */ Unit invoke(Channel channel) {
             invoke2(channel);
-            return Unit.a;
+            return Unit.f27425a;
         }
 
         /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
         public final void invoke2(Channel channel) {
-            Intrinsics3.checkNotNullParameter(channel, "channel");
+            C12238m.checkNotNullParameter(channel, "channel");
             WidgetUserSheetViewModel.this.emitLaunchVoiceCallEvent(channel.getId());
         }
     }
 
-    /* JADX INFO: renamed from: com.discord.widgets.user.usersheet.WidgetUserSheetViewModel$launchVoiceCall$2, reason: invalid class name */
+    /* JADX INFO: renamed from: com.discord.widgets.user.usersheet.WidgetUserSheetViewModel$launchVoiceCall$2 */
     /* JADX INFO: compiled from: WidgetUserSheetViewModel.kt */
-    public static final class AnonymousClass2 extends Lambda implements Function1<Error, Unit> {
-        public AnonymousClass2() {
+    public static final class C103942 extends AbstractC12240o implements Function1<Error, Unit> {
+        public C103942() {
             super(1);
         }
 
         @Override // kotlin.jvm.functions.Function1
         public /* bridge */ /* synthetic */ Unit invoke(Error error) {
             invoke2(error);
-            return Unit.a;
+            return Unit.f27425a;
         }
 
         /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
         public final void invoke2(Error error) {
-            Intrinsics3.checkNotNullParameter(error, "it");
-            WidgetUserSheetViewModel.this.emitShowToastEvent(R.string.default_failure_to_perform_action_message);
+            C12238m.checkNotNullParameter(error, "it");
+            WidgetUserSheetViewModel.this.emitShowToastEvent(C5419R.string.default_failure_to_perform_action_message);
         }
     }
 
-    /* JADX INFO: renamed from: com.discord.widgets.user.usersheet.WidgetUserSheetViewModel$moveUserToChannel$1, reason: invalid class name */
+    /* JADX INFO: renamed from: com.discord.widgets.user.usersheet.WidgetUserSheetViewModel$moveUserToChannel$1 */
     /* JADX INFO: compiled from: WidgetUserSheetViewModel.kt */
-    public static final class AnonymousClass1 extends Lambda implements Function1<Void, Unit> {
-        public AnonymousClass1() {
+    public static final class C103951 extends AbstractC12240o implements Function1<Void, Unit> {
+        public C103951() {
             super(1);
         }
 
         @Override // kotlin.jvm.functions.Function1
         public /* bridge */ /* synthetic */ Unit invoke(Void r1) {
             invoke2(r1);
-            return Unit.a;
+            return Unit.f27425a;
         }
 
         /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
         public final void invoke2(Void r2) {
-            WidgetUserSheetViewModel.this.emitShowToastEvent(R.string.move_to_success);
+            WidgetUserSheetViewModel.this.emitShowToastEvent(C5419R.string.move_to_success);
         }
     }
 
-    /* JADX INFO: renamed from: com.discord.widgets.user.usersheet.WidgetUserSheetViewModel$moveUserToChannel$2, reason: invalid class name */
+    /* JADX INFO: renamed from: com.discord.widgets.user.usersheet.WidgetUserSheetViewModel$moveUserToChannel$2 */
     /* JADX INFO: compiled from: WidgetUserSheetViewModel.kt */
-    public static final class AnonymousClass2 extends Lambda implements Function1<Error, Unit> {
-        public AnonymousClass2() {
+    public static final class C103962 extends AbstractC12240o implements Function1<Error, Unit> {
+        public C103962() {
             super(1);
         }
 
         @Override // kotlin.jvm.functions.Function1
         public /* bridge */ /* synthetic */ Unit invoke(Error error) {
             invoke2(error);
-            return Unit.a;
+            return Unit.f27425a;
         }
 
         /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
         public final void invoke2(Error error) {
-            Intrinsics3.checkNotNullParameter(error, "it");
-            WidgetUserSheetViewModel.this.emitShowToastEvent(R.string.default_failure_to_perform_action_message);
+            C12238m.checkNotNullParameter(error, "it");
+            WidgetUserSheetViewModel.this.emitShowToastEvent(C5419R.string.default_failure_to_perform_action_message);
         }
     }
 
-    /* JADX INFO: renamed from: com.discord.widgets.user.usersheet.WidgetUserSheetViewModel$onActivityCustomButtonClicked$1, reason: invalid class name */
+    /* JADX INFO: renamed from: com.discord.widgets.user.usersheet.WidgetUserSheetViewModel$onActivityCustomButtonClicked$1 */
     /* JADX INFO: compiled from: WidgetUserSheetViewModel.kt */
-    public static final class AnonymousClass1 extends Lambda implements Function1<ActivityMetadata, Unit> {
+    public static final class C103971 extends AbstractC12240o implements Function1<ActivityMetadata, Unit> {
         public final /* synthetic */ Context $applicationContext;
         public final /* synthetic */ int $buttonIndex;
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-        public AnonymousClass1(int i, Context context) {
+        public C103971(int i, Context context) {
             super(1);
             this.$buttonIndex = i;
             this.$applicationContext = context;
@@ -2236,27 +2236,27 @@ public final class WidgetUserSheetViewModel extends AppViewModel<ViewState> {
         @Override // kotlin.jvm.functions.Function1
         public /* bridge */ /* synthetic */ Unit invoke(ActivityMetadata activityMetadata) {
             invoke2(activityMetadata);
-            return Unit.a;
+            return Unit.f27425a;
         }
 
         /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
         public final void invoke2(ActivityMetadata activityMetadata) {
-            List<String> listB;
+            List<String> listM7557b;
             String str;
-            if (activityMetadata == null || (listB = activityMetadata.b()) == null || (str = (String) _Collections.getOrNull(listB, this.$buttonIndex)) == null) {
+            if (activityMetadata == null || (listM7557b = activityMetadata.m7557b()) == null || (str = (String) C12163u.getOrNull(listM7557b, this.$buttonIndex)) == null) {
                 return;
             }
             UriHandler.handleOrUntrusted(this.$applicationContext, str, "");
         }
     }
 
-    /* JADX INFO: renamed from: com.discord.widgets.user.usersheet.WidgetUserSheetViewModel$removeRelationship$1, reason: invalid class name */
+    /* JADX INFO: renamed from: com.discord.widgets.user.usersheet.WidgetUserSheetViewModel$removeRelationship$1 */
     /* JADX INFO: compiled from: WidgetUserSheetViewModel.kt */
-    public static final class AnonymousClass1 extends Lambda implements Function1<Void, Unit> {
+    public static final class C103981 extends AbstractC12240o implements Function1<Void, Unit> {
         public final /* synthetic */ int $successMessageStringRes;
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-        public AnonymousClass1(int i) {
+        public C103981(int i) {
             super(1);
             this.$successMessageStringRes = i;
         }
@@ -2264,7 +2264,7 @@ public final class WidgetUserSheetViewModel extends AppViewModel<ViewState> {
         @Override // kotlin.jvm.functions.Function1
         public /* bridge */ /* synthetic */ Unit invoke(Void r1) {
             invoke2(r1);
-            return Unit.a;
+            return Unit.f27425a;
         }
 
         /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
@@ -2273,37 +2273,37 @@ public final class WidgetUserSheetViewModel extends AppViewModel<ViewState> {
         }
     }
 
-    /* JADX INFO: renamed from: com.discord.widgets.user.usersheet.WidgetUserSheetViewModel$removeRelationship$2, reason: invalid class name */
+    /* JADX INFO: renamed from: com.discord.widgets.user.usersheet.WidgetUserSheetViewModel$removeRelationship$2 */
     /* JADX INFO: compiled from: WidgetUserSheetViewModel.kt */
-    public static final class AnonymousClass2 extends Lambda implements Function1<Error, Unit> {
-        public AnonymousClass2() {
+    public static final class C103992 extends AbstractC12240o implements Function1<Error, Unit> {
+        public C103992() {
             super(1);
         }
 
         @Override // kotlin.jvm.functions.Function1
         public /* bridge */ /* synthetic */ Unit invoke(Error error) {
             invoke2(error);
-            return Unit.a;
+            return Unit.f27425a;
         }
 
         /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
         public final void invoke2(Error error) {
-            Intrinsics3.checkNotNullParameter(error, "it");
-            WidgetUserSheetViewModel.this.emitShowToastEvent(R.string.default_failure_to_perform_action_message);
+            C12238m.checkNotNullParameter(error, "it");
+            WidgetUserSheetViewModel.this.emitShowToastEvent(C5419R.string.default_failure_to_perform_action_message);
         }
     }
 
-    /* JADX INFO: renamed from: com.discord.widgets.user.usersheet.WidgetUserSheetViewModel$setUserSuppressedInChannel$1, reason: invalid class name */
+    /* JADX INFO: renamed from: com.discord.widgets.user.usersheet.WidgetUserSheetViewModel$setUserSuppressedInChannel$1 */
     /* JADX INFO: compiled from: WidgetUserSheetViewModel.kt */
-    public static final class AnonymousClass1 extends Lambda implements Function1<Void, Unit> {
-        public AnonymousClass1() {
+    public static final class C104001 extends AbstractC12240o implements Function1<Void, Unit> {
+        public C104001() {
             super(1);
         }
 
         @Override // kotlin.jvm.functions.Function1
         public /* bridge */ /* synthetic */ Unit invoke(Void r1) {
             invoke2(r1);
-            return Unit.a;
+            return Unit.f27425a;
         }
 
         /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
@@ -2316,7 +2316,7 @@ public final class WidgetUserSheetViewModel extends AppViewModel<ViewState> {
             if (loaded != null) {
                 WidgetUserSheetViewModel widgetUserSheetViewModel = WidgetUserSheetViewModel.this;
                 UserProfileStageActionsView.ViewState stageViewState = loaded.getStageViewState();
-                widgetUserSheetViewModel.updateViewState(ViewState.Loaded.copy$default(loaded, null, false, false, null, null, null, null, null, null, stageViewState.m53copyam1GJgw((Opcodes.LAND & 1) != 0 ? stageViewState.isMe : false, (Opcodes.LAND & 2) != 0 ? stageViewState.channel : null, (Opcodes.LAND & 4) != 0 ? stageViewState.userStageRole : null, (Opcodes.LAND & 8) != 0 ? stageViewState.userRequestToSpeakState : null, (Opcodes.LAND & 16) != 0 ? stageViewState.userInSameVoiceChannel : false, (Opcodes.LAND & 32) != 0 ? stageViewState.canMuteMembers : false, (Opcodes.LAND & 64) != 0 ? stageViewState.isUpdatingSuppressed : false, (Opcodes.LAND & 128) != 0 ? stageViewState.isInvitingToSpeak : false), null, null, null, null, 0, null, null, null, false, null, false, null, null, null, 16776703, null));
+                widgetUserSheetViewModel.updateViewState(ViewState.Loaded.copy$default(loaded, null, false, false, null, null, null, null, null, null, stageViewState.m11430copyam1GJgw((Opcodes.LAND & 1) != 0 ? stageViewState.isMe : false, (Opcodes.LAND & 2) != 0 ? stageViewState.channel : null, (Opcodes.LAND & 4) != 0 ? stageViewState.userStageRole : null, (Opcodes.LAND & 8) != 0 ? stageViewState.userRequestToSpeakState : null, (Opcodes.LAND & 16) != 0 ? stageViewState.userInSameVoiceChannel : false, (Opcodes.LAND & 32) != 0 ? stageViewState.canMuteMembers : false, (Opcodes.LAND & 64) != 0 ? stageViewState.isUpdatingSuppressed : false, (Opcodes.LAND & 128) != 0 ? stageViewState.isInvitingToSpeak : false), null, null, null, null, 0, null, null, null, false, null, false, null, null, null, 16776703, null));
                 WidgetUserSheetViewModel.this.emitDismissSheetEvent();
             }
         }
@@ -2337,34 +2337,34 @@ public final class WidgetUserSheetViewModel extends AppViewModel<ViewState> {
         widgetUserSheetViewModel.addRelationship(num, str, i, captchaPayload);
     }
 
-    private final UserProfileAdminView.ViewState createAdminViewState(Channel channel, boolean isChannelOwner, boolean isMe, PermissionsContexts3 manageUserContext, VoiceState channelVoiceState, boolean canDisableCommunication, boolean isCommunicationDisabled) {
+    private final UserProfileAdminView.ViewState createAdminViewState(Channel channel, boolean isChannelOwner, boolean isMe, ManageUserContext manageUserContext, VoiceState channelVoiceState, boolean canDisableCommunication, boolean isCommunicationDisabled) {
         boolean z2;
         if (channel == null) {
             return null;
         }
         boolean z3 = manageUserContext != null && (manageUserContext.getCanChangeNickname() || manageUserContext.getCanManageRoles());
-        boolean z4 = !ChannelUtils.z(channel) ? manageUserContext == null || !manageUserContext.getCanKick() : ChannelUtils.y(channel) || !isChannelOwner || isMe;
+        boolean z4 = !ChannelUtils.m7702z(channel) ? manageUserContext == null || !manageUserContext.getCanKick() : ChannelUtils.m7701y(channel) || !isChannelOwner || isMe;
         boolean z5 = canDisableCommunication && manageUserContext != null && manageUserContext.getCanDisableCommunication() && !isMe;
-        boolean z6 = ChannelUtils.z(channel);
-        boolean z7 = manageUserContext != null && manageUserContext.getCanBan();
-        boolean z8 = (channelVoiceState == null || manageUserContext == null || !manageUserContext.getCanMute() || ChannelUtils.D(channel)) ? false : true;
-        boolean z9 = channelVoiceState != null && channelVoiceState.getMute();
-        boolean z10 = (channelVoiceState == null || manageUserContext == null || !manageUserContext.getCanDeafen()) ? false : true;
-        boolean z11 = channelVoiceState != null && channelVoiceState.getDeaf();
-        boolean z12 = (channelVoiceState == null || manageUserContext == null || !manageUserContext.getCanMove()) ? false : true;
-        Boolean[] boolArr = {Boolean.valueOf(z3), Boolean.valueOf(z4), Boolean.valueOf(z7), Boolean.valueOf(z5), Boolean.valueOf(z8), Boolean.valueOf(z10), Boolean.valueOf(z12)};
+        boolean zM7702z = ChannelUtils.m7702z(channel);
+        boolean z6 = manageUserContext != null && manageUserContext.getCanBan();
+        boolean z7 = (channelVoiceState == null || manageUserContext == null || !manageUserContext.getCanMute() || ChannelUtils.m7669D(channel)) ? false : true;
+        boolean z8 = channelVoiceState != null && channelVoiceState.getMute();
+        boolean z9 = (channelVoiceState == null || manageUserContext == null || !manageUserContext.getCanDeafen()) ? false : true;
+        boolean z10 = channelVoiceState != null && channelVoiceState.getDeaf();
+        boolean z11 = (channelVoiceState == null || manageUserContext == null || !manageUserContext.getCanMove()) ? false : true;
+        Boolean[] boolArr = {Boolean.valueOf(z3), Boolean.valueOf(z4), Boolean.valueOf(z6), Boolean.valueOf(z5), Boolean.valueOf(z7), Boolean.valueOf(z9), Boolean.valueOf(z11)};
         for (int i = 0; i < 7; i++) {
             if (boolArr[i].booleanValue()) {
                 z2 = true;
-                return new UserProfileAdminView.ViewState(z3, z4, z5, z6, z7, z8, z9, z10, z11, z12, z2, isMe, isCommunicationDisabled);
+                return new UserProfileAdminView.ViewState(z3, z4, z5, zM7702z, z6, z7, z8, z9, z10, z11, z2, isMe, isCommunicationDisabled);
             }
         }
         z2 = false;
-        return new UserProfileAdminView.ViewState(z3, z4, z5, z6, z7, z8, z9, z10, z11, z12, z2, isMe, isCommunicationDisabled);
+        return new UserProfileAdminView.ViewState(z3, z4, z5, zM7702z, z6, z7, z8, z9, z10, z11, z2, isMe, isCommunicationDisabled);
     }
 
     private final List<Node<MessageRenderContext>> createAndProcessBioAstFromText(String bio) {
-        if (bio == null || StringsJVM.isBlank(bio)) {
+        if (bio == null || C12103t.isBlank(bio)) {
             return null;
         }
         List<Node<MessageRenderContext>> listGenerateAst = generateAst(bio);
@@ -2373,9 +2373,9 @@ public final class WidgetUserSheetViewModel extends AppViewModel<ViewState> {
     }
 
     private final UserProfileConnectionsView.ViewState createConnectionsViewState(UserProfile userProfile, boolean isMe, boolean isSystemUser) {
-        List<ConnectedAccount> listB = userProfile.b();
-        ArrayList arrayList = new ArrayList(Iterables2.collectionSizeOrDefault(listB, 10));
-        Iterator<T> it = listB.iterator();
+        List<ConnectedAccount> listM8306b = userProfile.m8306b();
+        ArrayList arrayList = new ArrayList(C12149o.collectionSizeOrDefault(listM8306b, 10));
+        Iterator<T> it = listM8306b.iterator();
         while (it.hasNext()) {
             arrayList.add(new UserProfileConnectionsView.ConnectedAccountItem((ConnectedAccount) it.next()));
         }
@@ -2400,37 +2400,37 @@ public final class WidgetUserSheetViewModel extends AppViewModel<ViewState> {
 
     private final void emitDismissSheetEvent() {
         PublishSubject<Event> publishSubject = this.eventSubject;
-        publishSubject.k.onNext(Event.DismissSheet.INSTANCE);
+        publishSubject.f27650k.onNext(Event.DismissSheet.INSTANCE);
     }
 
     private final void emitLaunchSpectateEvent(ModelApplicationStream stream) {
         PublishSubject<Event> publishSubject = this.eventSubject;
-        publishSubject.k.onNext(new Event.LaunchSpectate(stream));
+        publishSubject.f27650k.onNext(new Event.LaunchSpectate(stream));
     }
 
     private final void emitLaunchVideoCallEvent(long channelId) {
         PublishSubject<Event> publishSubject = this.eventSubject;
-        publishSubject.k.onNext(new Event.LaunchVideoCall(channelId));
+        publishSubject.f27650k.onNext(new Event.LaunchVideoCall(channelId));
     }
 
     private final void emitLaunchVoiceCallEvent(long channelId) {
         PublishSubject<Event> publishSubject = this.eventSubject;
-        publishSubject.k.onNext(new Event.LaunchVoiceCall(channelId));
+        publishSubject.f27650k.onNext(new Event.LaunchVoiceCall(channelId));
     }
 
     private final void emitRequestStreamPermissionsEvent(ModelApplicationStream stream) {
         PublishSubject<Event> publishSubject = this.eventSubject;
-        publishSubject.k.onNext(new Event.RequestPermissionsForSpectateStream(stream));
+        publishSubject.f27650k.onNext(new Event.RequestPermissionsForSpectateStream(stream));
     }
 
     private final void emitShowFriendRequestAbortToast(int abortCode, String username) {
         PublishSubject<Event> publishSubject = this.eventSubject;
-        publishSubject.k.onNext(new Event.ShowFriendRequestErrorToast(abortCode, username));
+        publishSubject.f27650k.onNext(new Event.ShowFriendRequestErrorToast(abortCode, username));
     }
 
     private final void emitShowToastEvent(@StringRes int stringRes) {
         PublishSubject<Event> publishSubject = this.eventSubject;
-        publishSubject.k.onNext(new Event.ShowToast(stringRes));
+        publishSubject.f27650k.onNext(new Event.ShowToast(stringRes));
     }
 
     private final List<Node<MessageRenderContext>> generateAst(CharSequence text) {
@@ -2442,7 +2442,7 @@ public final class WidgetUserSheetViewModel extends AppViewModel<ViewState> {
     /* JADX WARN: Code duplicated, block: B:88:0x01f9  */
     private final void handleStoreState(StoreState storeState) {
         List listEmptyList;
-        String strC;
+        String strM7679c;
         Float fValueOf;
         boolean z2;
         User user;
@@ -2453,7 +2453,7 @@ public final class WidgetUserSheetViewModel extends AppViewModel<ViewState> {
         String name;
         List<Long> roles;
         if (storeState == null) {
-            this.eventSubject.k.onNext(Event.UserNotFound.INSTANCE);
+            this.eventSubject.f27650k.onNext(Event.UserNotFound.INSTANCE);
             return;
         }
         User user2 = storeState.getUser();
@@ -2465,10 +2465,10 @@ public final class WidgetUserSheetViewModel extends AppViewModel<ViewState> {
         boolean z3 = false;
         boolean z4 = me2.getId() == user2.getId();
         boolean isSystemUser = user2.getIsSystemUser();
-        GuildMember guildMember = (GuildMember) outline.f(user2, computedMembers);
+        GuildMember guildMember = (GuildMember) C1643a.m849f(user2, computedMembers);
         GuildMember guildMember2 = computedMembers.get(Long.valueOf(me2.getId()));
         if (guildMember == null || (roles = guildMember.getRoles()) == null) {
-            listEmptyList = Collections2.emptyList();
+            listEmptyList = C12147n.emptyList();
         } else {
             ArrayList arrayList = new ArrayList();
             Iterator<T> it = roles.iterator();
@@ -2478,37 +2478,37 @@ public final class WidgetUserSheetViewModel extends AppViewModel<ViewState> {
                     arrayList.add(guildRole);
                 }
             }
-            listEmptyList = _Collections.sortedWith(arrayList, RoleUtils.getROLE_COMPARATOR());
+            listEmptyList = C12163u.sortedWith(arrayList, RoleUtils.getROLE_COMPARATOR());
             if (listEmptyList == null) {
-                listEmptyList = Collections2.emptyList();
+                listEmptyList = C12147n.emptyList();
             }
         }
         List list = listEmptyList;
-        PermissionsContexts3 permissionsContexts3From = (guildMember == null || guildMember2 == null || guild == null) ? null : PermissionsContexts3.INSTANCE.from(guild, me2, user2, guildMember2.getRoles(), guildMember.getRoles(), storeState.getPermissions(), guildRoles);
+        ManageUserContext manageUserContextFrom = (guildMember == null || guildMember2 == null || guild == null) ? null : ManageUserContext.INSTANCE.from(guild, me2, user2, guildMember2.getRoles(), guildMember.getRoles(), storeState.getPermissions(), guildRoles);
         boolean zIsCommunicationDisabled = guildMember != null ? guildMember.isCommunicationDisabled() : false;
         boolean z5 = channel != null && channel.getOwnerId() == me2.getId();
         int type = ModelUserRelationship.getType(storeState.getUserRelationshipType());
-        VoiceState voiceState = (VoiceState) outline.f(user2, storeState.getMySelectedVoiceChannelVoiceStates());
+        VoiceState voiceState = (VoiceState) C1643a.m849f(user2, storeState.getMySelectedVoiceChannelVoiceStates());
         VoiceState voiceState2 = storeState.getMySelectedVoiceChannelVoiceStates().get(Long.valueOf(me2.getId()));
         boolean zIsInSameVoiceChannel = isInSameVoiceChannel(voiceState2, voiceState);
         boolean z6 = this.isVoiceContext || zIsInSameVoiceChannel;
         boolean selfMuted = z4 ? storeState.getSelfMuted() : storeState.getMuted();
         Boolean boolValueOf = z4 ? Boolean.valueOf(storeState.getSelfDeafened()) : null;
         if (z4) {
-            strC = null;
+            strM7679c = null;
             fValueOf = null;
         } else {
-            strC = null;
+            strM7679c = null;
             fValueOf = Float.valueOf(PerceptualVolumeUtils.amplitudeToPerceptual$default(PerceptualVolumeUtils.INSTANCE, storeState.getOutputVolume(), 0.0f, 2, null));
         }
         UserProfileVoiceSettingsView.ViewState viewState = new UserProfileVoiceSettingsView.ViewState(selfMuted, boolValueOf, fValueOf);
-        VoiceState voiceState3 = (VoiceState) outline.f(user2, storeState.getCurrentChannelVoiceStates());
-        if (channel != null && ChannelUtils.z(channel)) {
-            strC = ChannelUtils.c(channel);
+        VoiceState voiceState3 = (VoiceState) C1643a.m849f(user2, storeState.getCurrentChannelVoiceStates());
+        if (channel != null && ChannelUtils.m7702z(channel)) {
+            strM7679c = ChannelUtils.m7679c(channel);
         }
-        String str = (guild == null || (name = guild.getName()) == null) ? strC : name;
+        String str = (guild == null || (name = guild.getName()) == null) ? strM7679c : name;
         boolean z7 = z4;
-        UserProfileAdminView.ViewState viewStateCreateAdminViewState = createAdminViewState(channel, z5, z4, permissionsContexts3From, voiceState3, storeState.getCanDisableCommunication(), zIsCommunicationDisabled);
+        UserProfileAdminView.ViewState viewStateCreateAdminViewState = createAdminViewState(channel, z5, z4, manageUserContextFrom, voiceState3, storeState.getCanDisableCommunication(), zIsCommunicationDisabled);
         UserProfile userProfile = storeState.getUserProfile();
         UserProfileConnectionsView.ViewState viewStateCreateConnectionsViewState = createConnectionsViewState(userProfile, z7, isSystemUser);
         StreamContext streamContext = storeState.getStreamContext();
@@ -2517,7 +2517,7 @@ public final class WidgetUserSheetViewModel extends AppViewModel<ViewState> {
             this.storeApplicationStreamPreviews.fetchStreamPreviewIfNotFetching(streamContext);
             this.fetchedPreviews.add(encodedStreamKey);
         }
-        UserProfileStageActionsView.ViewState viewState2 = new UserProfileStageActionsView.ViewState(z7, storeState.getStageChannel(), storeState.m60getUserStageRolestwRsX0(), storeState.getUserRequestToSpeakState(), isInSameVoiceChannel(voiceState2, voiceState), PermissionUtils.can(Permission.MUTE_MEMBERS, storeState.getPermissions()), false, false, Opcodes.CHECKCAST, null);
+        UserProfileStageActionsView.ViewState viewState2 = new UserProfileStageActionsView.ViewState(z7, storeState.getStageChannel(), storeState.m11437getUserStageRolestwRsX0(), storeState.getUserRequestToSpeakState(), isInSameVoiceChannel(voiceState2, voiceState), PermissionUtils.can(Permission.MUTE_MEMBERS, storeState.getPermissions()), false, false, Opcodes.CHECKCAST, null);
         Long l = this.guildId;
         if (l == null || (l != null && l.longValue() == 0)) {
             z2 = true;
@@ -2528,7 +2528,7 @@ public final class WidgetUserSheetViewModel extends AppViewModel<ViewState> {
                 z2 = false;
             }
         }
-        boolean z8 = (Intrinsics3.areEqual(userProfile, StoreUserProfile.INSTANCE.getEMPTY_PROFILE()) ^ true) && z2;
+        boolean z8 = (C12238m.areEqual(userProfile, StoreUserProfile.INSTANCE.getEMPTY_PROFILE()) ^ true) && z2;
         if (z8) {
             if (user2 instanceof MeUser) {
                 userMerge = MeUser.INSTANCE.merge((MeUser) user2, userProfile.getUser());
@@ -2541,7 +2541,7 @@ public final class WidgetUserSheetViewModel extends AppViewModel<ViewState> {
         } else {
             user = user2;
         }
-        List<Node<MessageRenderContext>> listCreateAndProcessBioAstFromText = (guildMember == null || (bio = guildMember.getBio()) == null || !(StringsJVM.isBlank(bio) ^ true)) ? null : createAndProcessBioAstFromText(bio);
+        List<Node<MessageRenderContext>> listCreateAndProcessBioAstFromText = (guildMember == null || (bio = guildMember.getBio()) == null || !(C12103t.isBlank(bio) ^ true)) ? null : createAndProcessBioAstFromText(bio);
         if (listCreateAndProcessBioAstFromText == null) {
             String bio2 = user.getBio();
             listCreateAndProcessBioAstFromText = bio2 != null ? createAndProcessBioAstFromText(bio2) : null;
@@ -2579,12 +2579,12 @@ public final class WidgetUserSheetViewModel extends AppViewModel<ViewState> {
         if (channelId == null || channelId2 == null) {
             return false;
         }
-        return Intrinsics3.areEqual(channelId, channelId2);
+        return C12238m.areEqual(channelId, channelId2);
     }
 
     public final void addRelationship(Integer type, String username, @StringRes int successMessageStringRes, CaptchaHelper.CaptchaPayload captchaPayload) {
-        Intrinsics3.checkNotNullParameter(username, "username");
-        ObservableExtensionsKt.appSubscribe(ObservableExtensionsKt.ui$default(ObservableExtensionsKt.restSubscribeOn$default(this.restAPI.addRelationship("User Profile", this.userId, type, this.friendToken, captchaPayload), false, 1, null), this, null, 2, null), (Class<?>) WidgetUserSheetViewModel.class, (58 & 2) != 0 ? null : null, (Function1<? super Subscription, Unit>) ((58 & 4) != 0 ? null : null), (Function1<? super Error, Unit>) ((58 & 8) != 0 ? null : new AnonymousClass2(type, username, successMessageStringRes)), (Function0<Unit>) ((58 & 16) != 0 ? ObservableExtensionsKt.AnonymousClass1.INSTANCE : null), (Function0<Unit>) ((58 & 32) != 0 ? ObservableExtensionsKt.AnonymousClass2.INSTANCE : null), new AnonymousClass1(successMessageStringRes));
+        C12238m.checkNotNullParameter(username, "username");
+        ObservableExtensionsKt.appSubscribe(ObservableExtensionsKt.ui$default(ObservableExtensionsKt.restSubscribeOn$default(this.restAPI.addRelationship("User Profile", this.userId, type, this.friendToken, captchaPayload), false, 1, null), this, null, 2, null), (Class<?>) WidgetUserSheetViewModel.class, (58 & 2) != 0 ? null : null, (Function1<? super Subscription, Unit>) ((58 & 4) != 0 ? null : null), (Function1<? super Error, Unit>) ((58 & 8) != 0 ? null : new C103822(type, username, successMessageStringRes)), (Function0<Unit>) ((58 & 16) != 0 ? ObservableExtensionsKt.C68791.INSTANCE : null), (Function0<Unit>) ((58 & 32) != 0 ? ObservableExtensionsKt.C68802.INSTANCE : null), new C103811(successMessageStringRes));
     }
 
     public final void banUser() {
@@ -2598,7 +2598,7 @@ public final class WidgetUserSheetViewModel extends AppViewModel<ViewState> {
             return;
         }
         User user = loaded.getUser();
-        this.eventSubject.k.onNext(new Event.LaunchBanUser(user.getUsername(), channel.getGuildId(), user.getId()));
+        this.eventSubject.f27650k.onNext(new Event.LaunchBanUser(user.getUsername(), channel.getGuildId(), user.getId()));
     }
 
     public final void disableCommunication() {
@@ -2614,9 +2614,9 @@ public final class WidgetUserSheetViewModel extends AppViewModel<ViewState> {
         User user = loaded.getUser();
         GuildMember guildMember = loaded.getGuildMember();
         if (guildMember != null ? guildMember.isCommunicationDisabled() : false) {
-            this.eventSubject.k.onNext(new Event.LaunchEnableCommunication(user.getId(), channel.getGuildId()));
+            this.eventSubject.f27650k.onNext(new Event.LaunchEnableCommunication(user.getId(), channel.getGuildId()));
         } else {
-            this.eventSubject.k.onNext(new Event.LaunchDisableCommunication(user.getId(), channel.getGuildId()));
+            this.eventSubject.f27650k.onNext(new Event.LaunchDisableCommunication(user.getId(), channel.getGuildId()));
         }
     }
 
@@ -2634,7 +2634,7 @@ public final class WidgetUserSheetViewModel extends AppViewModel<ViewState> {
                 channel = loaded.getChannel();
             }
             if (channel != null) {
-                ObservableExtensionsKt.appSubscribe(ObservableExtensionsKt.ui$default(ObservableExtensionsKt.restSubscribeOn$default(this.restAPISerializeNulls.disconnectGuildMember(channel.getGuildId(), loaded.getUser().getId(), new RestAPIParams.GuildMemberDisconnect(l, 1, objArr == true ? 1 : 0)), false, 1, null), this, null, 2, null), (Class<?>) WidgetUserSheetViewModel.class, (58 & 2) != 0 ? null : null, (Function1<? super Subscription, Unit>) ((58 & 4) != 0 ? null : null), (Function1<? super Error, Unit>) ((58 & 8) != 0 ? null : new AnonymousClass2()), (Function0<Unit>) ((58 & 16) != 0 ? ObservableExtensionsKt.AnonymousClass1.INSTANCE : null), (Function0<Unit>) ((58 & 32) != 0 ? ObservableExtensionsKt.AnonymousClass2.INSTANCE : null), new AnonymousClass1());
+                ObservableExtensionsKt.appSubscribe(ObservableExtensionsKt.ui$default(ObservableExtensionsKt.restSubscribeOn$default(this.restAPISerializeNulls.disconnectGuildMember(channel.getGuildId(), loaded.getUser().getId(), new RestAPIParams.GuildMemberDisconnect(l, 1, objArr == true ? 1 : 0)), false, 1, null), this, null, 2, null), (Class<?>) WidgetUserSheetViewModel.class, (58 & 2) != 0 ? null : null, (Function1<? super Subscription, Unit>) ((58 & 4) != 0 ? null : null), (Function1<? super Error, Unit>) ((58 & 8) != 0 ? null : new C103842()), (Function0<Unit>) ((58 & 16) != 0 ? ObservableExtensionsKt.C68791.INSTANCE : null), (Function0<Unit>) ((58 & 32) != 0 ? ObservableExtensionsKt.C68802.INSTANCE : null), new C103831());
             }
         }
     }
@@ -2649,7 +2649,7 @@ public final class WidgetUserSheetViewModel extends AppViewModel<ViewState> {
         if (loaded == null || (channel = loaded.getChannel()) == null) {
             return;
         }
-        this.eventSubject.k.onNext(new Event.LaunchEditMember(channel.getGuildId(), this.userId));
+        this.eventSubject.f27650k.onNext(new Event.LaunchEditMember(channel.getGuildId(), this.userId));
     }
 
     public final boolean getOpenPopoutLogged() {
@@ -2669,7 +2669,7 @@ public final class WidgetUserSheetViewModel extends AppViewModel<ViewState> {
             if (channel == null || adminViewState == null) {
                 return;
             }
-            ObservableExtensionsKt.appSubscribe(ObservableExtensionsKt.ui$default(ObservableExtensionsKt.restSubscribeOn$default(this.restAPI.changeGuildMember(channel.getGuildId(), user.getId(), RestAPIParams.GuildMember.INSTANCE.createWithDeaf(!adminViewState.isServerDeafened())), false, 1, null), this, null, 2, null), (Class<?>) WidgetUserSheetViewModel.class, (58 & 2) != 0 ? null : null, (Function1<? super Subscription, Unit>) ((58 & 4) != 0 ? null : null), (Function1<? super Error, Unit>) ((58 & 8) != 0 ? null : new AnonymousClass2()), (Function0<Unit>) ((58 & 16) != 0 ? ObservableExtensionsKt.AnonymousClass1.INSTANCE : null), (Function0<Unit>) ((58 & 32) != 0 ? ObservableExtensionsKt.AnonymousClass2.INSTANCE : null), AnonymousClass1.INSTANCE);
+            ObservableExtensionsKt.appSubscribe(ObservableExtensionsKt.ui$default(ObservableExtensionsKt.restSubscribeOn$default(this.restAPI.changeGuildMember(channel.getGuildId(), user.getId(), RestAPIParams.GuildMember.INSTANCE.createWithDeaf(!adminViewState.isServerDeafened())), false, 1, null), this, null, 2, null), (Class<?>) WidgetUserSheetViewModel.class, (58 & 2) != 0 ? null : null, (Function1<? super Subscription, Unit>) ((58 & 4) != 0 ? null : null), (Function1<? super Error, Unit>) ((58 & 8) != 0 ? null : new C103862()), (Function0<Unit>) ((58 & 16) != 0 ? ObservableExtensionsKt.C68791.INSTANCE : null), (Function0<Unit>) ((58 & 32) != 0 ? ObservableExtensionsKt.C68802.INSTANCE : null), C103851.INSTANCE);
         }
     }
 
@@ -2683,7 +2683,7 @@ public final class WidgetUserSheetViewModel extends AppViewModel<ViewState> {
         if (loaded == null || (channel = loaded.getChannel()) == null) {
             return;
         }
-        this.eventSubject.k.onNext(new Event.LaunchMoveUser(channel.getGuildId()));
+        this.eventSubject.f27650k.onNext(new Event.LaunchMoveUser(channel.getGuildId()));
     }
 
     public final void guildMuteUser() {
@@ -2699,7 +2699,7 @@ public final class WidgetUserSheetViewModel extends AppViewModel<ViewState> {
             if (channel == null || adminViewState == null) {
                 return;
             }
-            ObservableExtensionsKt.appSubscribe(ObservableExtensionsKt.ui$default(ObservableExtensionsKt.restSubscribeOn$default(this.restAPI.changeGuildMember(channel.getGuildId(), user.getId(), RestAPIParams.GuildMember.INSTANCE.createWithMute(!loaded.getAdminViewState().isServerMuted())), false, 1, null), this, null, 2, null), (Class<?>) WidgetUserSheetViewModel.class, (58 & 2) != 0 ? null : null, (Function1<? super Subscription, Unit>) ((58 & 4) != 0 ? null : null), (Function1<? super Error, Unit>) ((58 & 8) != 0 ? null : new AnonymousClass2()), (Function0<Unit>) ((58 & 16) != 0 ? ObservableExtensionsKt.AnonymousClass1.INSTANCE : null), (Function0<Unit>) ((58 & 32) != 0 ? ObservableExtensionsKt.AnonymousClass2.INSTANCE : null), AnonymousClass1.INSTANCE);
+            ObservableExtensionsKt.appSubscribe(ObservableExtensionsKt.ui$default(ObservableExtensionsKt.restSubscribeOn$default(this.restAPI.changeGuildMember(channel.getGuildId(), user.getId(), RestAPIParams.GuildMember.INSTANCE.createWithMute(!loaded.getAdminViewState().isServerMuted())), false, 1, null), this, null, 2, null), (Class<?>) WidgetUserSheetViewModel.class, (58 & 2) != 0 ? null : null, (Function1<? super Subscription, Unit>) ((58 & 4) != 0 ? null : null), (Function1<? super Error, Unit>) ((58 & 8) != 0 ? null : new C103882()), (Function0<Unit>) ((58 & 16) != 0 ? ObservableExtensionsKt.C68791.INSTANCE : null), (Function0<Unit>) ((58 & 32) != 0 ? ObservableExtensionsKt.C68802.INSTANCE : null), C103871.INSTANCE);
         }
     }
 
@@ -2708,19 +2708,19 @@ public final class WidgetUserSheetViewModel extends AppViewModel<ViewState> {
         StoreState storeState;
         UserProfile userProfile;
         com.discord.api.user.User user;
-        NullSerializable<String> nullSerializableD;
-        String strA;
-        Intrinsics3.checkNotNullParameter(spoilerNode, "spoilerNode");
+        NullSerializable<String> nullSerializableM8291d;
+        String strMo8429a;
+        C12238m.checkNotNullParameter(spoilerNode, "spoilerNode");
         ViewState viewState = getViewState();
         if (!(viewState instanceof ViewState.Loaded)) {
             viewState = null;
         }
         ViewState.Loaded loaded = (ViewState.Loaded) viewState;
-        if (loaded == null || (storeState = this.mostRecentStoreState) == null || (userProfile = storeState.getUserProfile()) == null || (user = userProfile.getUser()) == null || (nullSerializableD = user.d()) == null || (strA = nullSerializableD.a()) == null) {
+        if (loaded == null || (storeState = this.mostRecentStoreState) == null || (userProfile = storeState.getUserProfile()) == null || (user = userProfile.getUser()) == null || (nullSerializableM8291d = user.m8291d()) == null || (strMo8429a = nullSerializableM8291d.mo8429a()) == null) {
             return;
         }
         this.revealedBioIndices.add(Integer.valueOf(spoilerNode.getId()));
-        updateViewState(ViewState.Loaded.copy$default(loaded, null, false, false, null, null, null, null, null, null, null, null, null, null, null, 0, null, null, null, false, createAndProcessBioAstFromText(strA), false, null, null, null, 16252927, null));
+        updateViewState(ViewState.Loaded.copy$default(loaded, null, false, false, null, null, null, null, null, null, null, null, null, null, null, 0, null, null, null, false, createAndProcessBioAstFromText(strMo8429a), false, null, null, null, 16252927, null));
     }
 
     public final void inviteUserToSpeak() {
@@ -2735,8 +2735,8 @@ public final class WidgetUserSheetViewModel extends AppViewModel<ViewState> {
         }
         long id2 = loaded.getUser().getId();
         UserProfileStageActionsView.ViewState stageViewState = loaded.getStageViewState();
-        updateViewState(ViewState.Loaded.copy$default(loaded, null, false, false, null, null, null, null, null, null, stageViewState.m53copyam1GJgw((Opcodes.LAND & 1) != 0 ? stageViewState.isMe : false, (Opcodes.LAND & 2) != 0 ? stageViewState.channel : null, (Opcodes.LAND & 4) != 0 ? stageViewState.userStageRole : null, (Opcodes.LAND & 8) != 0 ? stageViewState.userRequestToSpeakState : null, (Opcodes.LAND & 16) != 0 ? stageViewState.userInSameVoiceChannel : false, (Opcodes.LAND & 32) != 0 ? stageViewState.canMuteMembers : false, (Opcodes.LAND & 64) != 0 ? stageViewState.isUpdatingSuppressed : false, (Opcodes.LAND & 128) != 0 ? stageViewState.isInvitingToSpeak : true), null, null, null, null, 0, null, null, null, false, null, false, null, null, null, 16776703, null));
-        ObservableExtensionsKt.appSubscribe(ObservableExtensionsKt.ui$default(ObservableExtensionsKt.restSubscribeOn$default(StageChannelAPI.setUserSuppressedInChannel$default(StageChannelAPI.INSTANCE, channel, id2, false, 0L, 8, null), false, 1, null), this, null, 2, null), (Class<?>) WidgetUserSheetViewModel.class, (58 & 2) != 0 ? null : null, (Function1<? super Subscription, Unit>) ((58 & 4) != 0 ? null : null), (Function1<? super Error, Unit>) ((58 & 8) != 0 ? null : null), (Function0<Unit>) ((58 & 16) != 0 ? ObservableExtensionsKt.AnonymousClass1.INSTANCE : null), (Function0<Unit>) ((58 & 32) != 0 ? ObservableExtensionsKt.AnonymousClass2.INSTANCE : null), new AnonymousClass1());
+        updateViewState(ViewState.Loaded.copy$default(loaded, null, false, false, null, null, null, null, null, null, stageViewState.m11430copyam1GJgw((Opcodes.LAND & 1) != 0 ? stageViewState.isMe : false, (Opcodes.LAND & 2) != 0 ? stageViewState.channel : null, (Opcodes.LAND & 4) != 0 ? stageViewState.userStageRole : null, (Opcodes.LAND & 8) != 0 ? stageViewState.userRequestToSpeakState : null, (Opcodes.LAND & 16) != 0 ? stageViewState.userInSameVoiceChannel : false, (Opcodes.LAND & 32) != 0 ? stageViewState.canMuteMembers : false, (Opcodes.LAND & 64) != 0 ? stageViewState.isUpdatingSuppressed : false, (Opcodes.LAND & 128) != 0 ? stageViewState.isInvitingToSpeak : true), null, null, null, null, 0, null, null, null, false, null, false, null, null, null, 16776703, null));
+        ObservableExtensionsKt.appSubscribe(ObservableExtensionsKt.ui$default(ObservableExtensionsKt.restSubscribeOn$default(StageChannelAPI.setUserSuppressedInChannel$default(StageChannelAPI.INSTANCE, channel, id2, false, 0L, 8, null), false, 1, null), this, null, 2, null), (Class<?>) WidgetUserSheetViewModel.class, (58 & 2) != 0 ? null : null, (Function1<? super Subscription, Unit>) ((58 & 4) != 0 ? null : null), (Function1<? super Error, Unit>) ((58 & 8) != 0 ? null : null), (Function0<Unit>) ((58 & 16) != 0 ? ObservableExtensionsKt.C68791.INSTANCE : null), (Function0<Unit>) ((58 & 32) != 0 ? ObservableExtensionsKt.C68802.INSTANCE : null), new C103891());
     }
 
     public final void kickUser() {
@@ -2750,19 +2750,19 @@ public final class WidgetUserSheetViewModel extends AppViewModel<ViewState> {
             return;
         }
         User user = loaded.getUser();
-        if (ChannelUtils.z(channel)) {
-            ObservableExtensionsKt.appSubscribe(ObservableExtensionsKt.ui$default(ObservableExtensionsKt.takeSingleUntilTimeout$default(ObservableExtensionsKt.restSubscribeOn$default(RestAPI.INSTANCE.getApi().removeChannelRecipient(channel.getId(), user.getId()), false, 1, null), 0L, false, 1, null), this, null, 2, null), (117 & 1) != 0 ? null : null, "REST: remove group member", (Function1<? super Subscription, Unit>) ((117 & 4) != 0 ? null : null), new AnonymousClass1(), (Function1<? super Error, Unit>) ((117 & 16) != 0 ? null : null), (Function0<Unit>) ((117 & 32) != 0 ? ObservableExtensionsKt.AnonymousClass3.INSTANCE : null), (Function0<Unit>) ((117 & 64) != 0 ? ObservableExtensionsKt.AnonymousClass4.INSTANCE : null));
+        if (ChannelUtils.m7702z(channel)) {
+            ObservableExtensionsKt.appSubscribe(ObservableExtensionsKt.ui$default(ObservableExtensionsKt.takeSingleUntilTimeout$default(ObservableExtensionsKt.restSubscribeOn$default(RestAPI.INSTANCE.getApi().removeChannelRecipient(channel.getId(), user.getId()), false, 1, null), 0L, false, 1, null), this, null, 2, null), (117 & 1) != 0 ? null : null, "REST: remove group member", (Function1<? super Subscription, Unit>) ((117 & 4) != 0 ? null : null), new C103901(), (Function1<? super Error, Unit>) ((117 & 16) != 0 ? null : null), (Function0<Unit>) ((117 & 32) != 0 ? ObservableExtensionsKt.C68813.INSTANCE : null), (Function0<Unit>) ((117 & 64) != 0 ? ObservableExtensionsKt.C68824.INSTANCE : null));
         } else {
-            this.eventSubject.k.onNext(new Event.LaunchKickUser(user.getUsername(), channel.getGuildId(), user.getId()));
+            this.eventSubject.f27650k.onNext(new Event.LaunchKickUser(user.getUsername(), channel.getGuildId(), user.getId()));
         }
     }
 
     public final void launchVideoCall() {
-        ObservableExtensionsKt.appSubscribe(ObservableExtensionsKt.ui$default(ObservableExtensionsKt.restSubscribeOn$default(createPrivateChannelWithUser(this.userId), false, 1, null), this, null, 2, null), (Class<?>) WidgetUserSheetViewModel.class, (58 & 2) != 0 ? null : null, (Function1<? super Subscription, Unit>) ((58 & 4) != 0 ? null : null), (Function1<? super Error, Unit>) ((58 & 8) != 0 ? null : new AnonymousClass2()), (Function0<Unit>) ((58 & 16) != 0 ? ObservableExtensionsKt.AnonymousClass1.INSTANCE : null), (Function0<Unit>) ((58 & 32) != 0 ? ObservableExtensionsKt.AnonymousClass2.INSTANCE : null), new AnonymousClass1());
+        ObservableExtensionsKt.appSubscribe(ObservableExtensionsKt.ui$default(ObservableExtensionsKt.restSubscribeOn$default(createPrivateChannelWithUser(this.userId), false, 1, null), this, null, 2, null), (Class<?>) WidgetUserSheetViewModel.class, (58 & 2) != 0 ? null : null, (Function1<? super Subscription, Unit>) ((58 & 4) != 0 ? null : null), (Function1<? super Error, Unit>) ((58 & 8) != 0 ? null : new C103922()), (Function0<Unit>) ((58 & 16) != 0 ? ObservableExtensionsKt.C68791.INSTANCE : null), (Function0<Unit>) ((58 & 32) != 0 ? ObservableExtensionsKt.C68802.INSTANCE : null), new C103911());
     }
 
     public final void launchVoiceCall() {
-        ObservableExtensionsKt.appSubscribe(ObservableExtensionsKt.ui$default(ObservableExtensionsKt.restSubscribeOn$default(createPrivateChannelWithUser(this.userId), false, 1, null), this, null, 2, null), (Class<?>) WidgetUserSheetViewModel.class, (58 & 2) != 0 ? null : null, (Function1<? super Subscription, Unit>) ((58 & 4) != 0 ? null : null), (Function1<? super Error, Unit>) ((58 & 8) != 0 ? null : new AnonymousClass2()), (Function0<Unit>) ((58 & 16) != 0 ? ObservableExtensionsKt.AnonymousClass1.INSTANCE : null), (Function0<Unit>) ((58 & 32) != 0 ? ObservableExtensionsKt.AnonymousClass2.INSTANCE : null), new AnonymousClass1());
+        ObservableExtensionsKt.appSubscribe(ObservableExtensionsKt.ui$default(ObservableExtensionsKt.restSubscribeOn$default(createPrivateChannelWithUser(this.userId), false, 1, null), this, null, 2, null), (Class<?>) WidgetUserSheetViewModel.class, (58 & 2) != 0 ? null : null, (Function1<? super Subscription, Unit>) ((58 & 4) != 0 ? null : null), (Function1<? super Error, Unit>) ((58 & 8) != 0 ? null : new C103942()), (Function0<Unit>) ((58 & 16) != 0 ? ObservableExtensionsKt.C68791.INSTANCE : null), (Function0<Unit>) ((58 & 32) != 0 ? ObservableExtensionsKt.C68802.INSTANCE : null), new C103931());
     }
 
     public final void moveUserToChannel(long channelId) {
@@ -2775,26 +2775,26 @@ public final class WidgetUserSheetViewModel extends AppViewModel<ViewState> {
             Channel channel = loaded.getChannel();
             User user = loaded.getUser();
             if (channel != null) {
-                ObservableExtensionsKt.appSubscribe(ObservableExtensionsKt.ui$default(ObservableExtensionsKt.restSubscribeOn$default(this.restAPI.changeGuildMember(channel.getGuildId(), user.getId(), RestAPIParams.GuildMember.INSTANCE.createWithChannelId(channelId)), false, 1, null), this, null, 2, null), (Class<?>) WidgetUserSheetViewModel.class, (58 & 2) != 0 ? null : null, (Function1<? super Subscription, Unit>) ((58 & 4) != 0 ? null : null), (Function1<? super Error, Unit>) ((58 & 8) != 0 ? null : new AnonymousClass2()), (Function0<Unit>) ((58 & 16) != 0 ? ObservableExtensionsKt.AnonymousClass1.INSTANCE : null), (Function0<Unit>) ((58 & 32) != 0 ? ObservableExtensionsKt.AnonymousClass2.INSTANCE : null), new AnonymousClass1());
+                ObservableExtensionsKt.appSubscribe(ObservableExtensionsKt.ui$default(ObservableExtensionsKt.restSubscribeOn$default(this.restAPI.changeGuildMember(channel.getGuildId(), user.getId(), RestAPIParams.GuildMember.INSTANCE.createWithChannelId(channelId)), false, 1, null), this, null, 2, null), (Class<?>) WidgetUserSheetViewModel.class, (58 & 2) != 0 ? null : null, (Function1<? super Subscription, Unit>) ((58 & 4) != 0 ? null : null), (Function1<? super Error, Unit>) ((58 & 8) != 0 ? null : new C103962()), (Function0<Unit>) ((58 & 16) != 0 ? ObservableExtensionsKt.C68791.INSTANCE : null), (Function0<Unit>) ((58 & 32) != 0 ? ObservableExtensionsKt.C68802.INSTANCE : null), new C103951());
             }
         }
     }
 
     public final Observable<Event> observeEvents() {
         PublishSubject<Event> publishSubject = this.eventSubject;
-        Intrinsics3.checkNotNullExpressionValue(publishSubject, "eventSubject");
+        C12238m.checkNotNullExpressionValue(publishSubject, "eventSubject");
         return publishSubject;
     }
 
     public final void onActivityCustomButtonClicked(Context applicationContext, long userId, String sessionId, long applicationId, int buttonIndex) {
-        Intrinsics3.checkNotNullParameter(applicationContext, "applicationContext");
-        Intrinsics3.checkNotNullParameter(sessionId, "sessionId");
-        ObservableExtensionsKt.appSubscribe(ObservableExtensionsKt.ui$default(ObservableExtensionsKt.restSubscribeOn$default(this.restAPI.getActivityMetadata(userId, sessionId, applicationId), false, 1, null), this, null, 2, null), (117 & 1) != 0 ? null : null, "REST: Custom Button GetActivityMetadata", (Function1<? super Subscription, Unit>) ((117 & 4) != 0 ? null : null), new AnonymousClass1(buttonIndex, applicationContext), (Function1<? super Error, Unit>) ((117 & 16) != 0 ? null : null), (Function0<Unit>) ((117 & 32) != 0 ? ObservableExtensionsKt.AnonymousClass3.INSTANCE : null), (Function0<Unit>) ((117 & 64) != 0 ? ObservableExtensionsKt.AnonymousClass4.INSTANCE : null));
+        C12238m.checkNotNullParameter(applicationContext, "applicationContext");
+        C12238m.checkNotNullParameter(sessionId, "sessionId");
+        ObservableExtensionsKt.appSubscribe(ObservableExtensionsKt.ui$default(ObservableExtensionsKt.restSubscribeOn$default(this.restAPI.getActivityMetadata(userId, sessionId, applicationId), false, 1, null), this, null, 2, null), (117 & 1) != 0 ? null : null, "REST: Custom Button GetActivityMetadata", (Function1<? super Subscription, Unit>) ((117 & 4) != 0 ? null : null), new C103971(buttonIndex, applicationContext), (Function1<? super Error, Unit>) ((117 & 16) != 0 ? null : null), (Function0<Unit>) ((117 & 32) != 0 ? ObservableExtensionsKt.C68813.INSTANCE : null), (Function0<Unit>) ((117 & 64) != 0 ? ObservableExtensionsKt.C68824.INSTANCE : null));
     }
 
     @MainThread
     public final void onSpectatePermissionsGranted(ModelApplicationStream stream) {
-        Intrinsics3.checkNotNullParameter(stream, "stream");
+        C12238m.checkNotNullParameter(stream, "stream");
         StoreApplicationStreaming.targetStream$default(this.storeApplicationStreaming, stream.getEncodedStreamKey(), false, 2, null);
         int iOrdinal = this.streamPreviewClickBehavior.ordinal();
         if (iOrdinal == 0) {
@@ -2808,20 +2808,20 @@ public final class WidgetUserSheetViewModel extends AppViewModel<ViewState> {
     }
 
     public final void onStreamPreviewClicked(StreamContext streamContext) {
-        Intrinsics3.checkNotNullParameter(streamContext, "streamContext");
+        C12238m.checkNotNullParameter(streamContext, "streamContext");
         if (streamContext.getJoinability() == StreamContext.Joinability.MISSING_PERMISSIONS) {
-            emitShowToastEvent(R.string.channel_locked);
+            emitShowToastEvent(C5419R.string.channel_locked);
         } else {
             emitRequestStreamPermissionsEvent(streamContext.getStream());
         }
     }
 
     public final void removeRelationship(@StringRes int successMessageStringRes) {
-        ObservableExtensionsKt.appSubscribe(ObservableExtensionsKt.ui$default(ObservableExtensionsKt.restSubscribeOn$default(this.restAPI.removeRelationship("User Profile", this.userId), false, 1, null), this, null, 2, null), (Class<?>) WidgetUserSheetViewModel.class, (58 & 2) != 0 ? null : null, (Function1<? super Subscription, Unit>) ((58 & 4) != 0 ? null : null), (Function1<? super Error, Unit>) ((58 & 8) != 0 ? null : new AnonymousClass2()), (Function0<Unit>) ((58 & 16) != 0 ? ObservableExtensionsKt.AnonymousClass1.INSTANCE : null), (Function0<Unit>) ((58 & 32) != 0 ? ObservableExtensionsKt.AnonymousClass2.INSTANCE : null), new AnonymousClass1(successMessageStringRes));
+        ObservableExtensionsKt.appSubscribe(ObservableExtensionsKt.ui$default(ObservableExtensionsKt.restSubscribeOn$default(this.restAPI.removeRelationship("User Profile", this.userId), false, 1, null), this, null, 2, null), (Class<?>) WidgetUserSheetViewModel.class, (58 & 2) != 0 ? null : null, (Function1<? super Subscription, Unit>) ((58 & 4) != 0 ? null : null), (Function1<? super Error, Unit>) ((58 & 8) != 0 ? null : new C103992()), (Function0<Unit>) ((58 & 16) != 0 ? ObservableExtensionsKt.C68791.INSTANCE : null), (Function0<Unit>) ((58 & 32) != 0 ? ObservableExtensionsKt.C68802.INSTANCE : null), new C103981(successMessageStringRes));
     }
 
     public final void saveUserNote(Context context, String noteText) {
-        Intrinsics3.checkNotNullParameter(noteText, "noteText");
+        C12238m.checkNotNullParameter(noteText, "noteText");
         ViewState viewState = getViewState();
         if (!(viewState instanceof ViewState.Loaded)) {
             viewState = null;
@@ -2829,7 +2829,7 @@ public final class WidgetUserSheetViewModel extends AppViewModel<ViewState> {
         ViewState.Loaded loaded = (ViewState.Loaded) viewState;
         if (loaded != null) {
             boolean z2 = true;
-            if ((!(loaded.getUserNoteFetchState() instanceof StoreUserNotes.UserNoteState.Empty) || !(!Intrinsics3.areEqual(noteText, ""))) && (!(loaded.getUserNoteFetchState() instanceof StoreUserNotes.UserNoteState.Loaded) || !(!Intrinsics3.areEqual(((StoreUserNotes.UserNoteState.Loaded) loaded.getUserNoteFetchState()).getNote().getNote(), noteText)))) {
+            if ((!(loaded.getUserNoteFetchState() instanceof StoreUserNotes.UserNoteState.Empty) || !(!C12238m.areEqual(noteText, ""))) && (!(loaded.getUserNoteFetchState() instanceof StoreUserNotes.UserNoteState.Loaded) || !(!C12238m.areEqual(((StoreUserNotes.UserNoteState.Loaded) loaded.getUserNoteFetchState()).getNote().getNote(), noteText)))) {
                 z2 = false;
             }
             if (z2) {
@@ -2858,8 +2858,8 @@ public final class WidgetUserSheetViewModel extends AppViewModel<ViewState> {
         }
         long id2 = loaded.getUser().getId();
         UserProfileStageActionsView.ViewState stageViewState = loaded.getStageViewState();
-        updateViewState(ViewState.Loaded.copy$default(loaded, null, false, false, null, null, null, null, null, null, stageViewState.m53copyam1GJgw((Opcodes.LAND & 1) != 0 ? stageViewState.isMe : false, (Opcodes.LAND & 2) != 0 ? stageViewState.channel : null, (Opcodes.LAND & 4) != 0 ? stageViewState.userStageRole : null, (Opcodes.LAND & 8) != 0 ? stageViewState.userRequestToSpeakState : null, (Opcodes.LAND & 16) != 0 ? stageViewState.userInSameVoiceChannel : false, (Opcodes.LAND & 32) != 0 ? stageViewState.canMuteMembers : false, (Opcodes.LAND & 64) != 0 ? stageViewState.isUpdatingSuppressed : true, (Opcodes.LAND & 128) != 0 ? stageViewState.isInvitingToSpeak : false), null, null, null, null, 0, null, null, null, false, null, false, null, null, null, 16776703, null));
-        ObservableExtensionsKt.appSubscribe(ObservableExtensionsKt.ui$default(ObservableExtensionsKt.restSubscribeOn$default(StageChannelAPI.setUserSuppressedInChannel$default(StageChannelAPI.INSTANCE, channel, id2, isSuppressed, 0L, 8, null), false, 1, null), this, null, 2, null), (Class<?>) WidgetUserSheetViewModel.class, (58 & 2) != 0 ? null : null, (Function1<? super Subscription, Unit>) ((58 & 4) != 0 ? null : null), (Function1<? super Error, Unit>) ((58 & 8) != 0 ? null : null), (Function0<Unit>) ((58 & 16) != 0 ? ObservableExtensionsKt.AnonymousClass1.INSTANCE : null), (Function0<Unit>) ((58 & 32) != 0 ? ObservableExtensionsKt.AnonymousClass2.INSTANCE : null), new AnonymousClass1());
+        updateViewState(ViewState.Loaded.copy$default(loaded, null, false, false, null, null, null, null, null, null, stageViewState.m11430copyam1GJgw((Opcodes.LAND & 1) != 0 ? stageViewState.isMe : false, (Opcodes.LAND & 2) != 0 ? stageViewState.channel : null, (Opcodes.LAND & 4) != 0 ? stageViewState.userStageRole : null, (Opcodes.LAND & 8) != 0 ? stageViewState.userRequestToSpeakState : null, (Opcodes.LAND & 16) != 0 ? stageViewState.userInSameVoiceChannel : false, (Opcodes.LAND & 32) != 0 ? stageViewState.canMuteMembers : false, (Opcodes.LAND & 64) != 0 ? stageViewState.isUpdatingSuppressed : true, (Opcodes.LAND & 128) != 0 ? stageViewState.isInvitingToSpeak : false), null, null, null, null, 0, null, null, null, false, null, false, null, null, null, 16776703, null));
+        ObservableExtensionsKt.appSubscribe(ObservableExtensionsKt.ui$default(ObservableExtensionsKt.restSubscribeOn$default(StageChannelAPI.setUserSuppressedInChannel$default(StageChannelAPI.INSTANCE, channel, id2, isSuppressed, 0L, 8, null), false, 1, null), this, null, 2, null), (Class<?>) WidgetUserSheetViewModel.class, (58 & 2) != 0 ? null : null, (Function1<? super Subscription, Unit>) ((58 & 4) != 0 ? null : null), (Function1<? super Error, Unit>) ((58 & 8) != 0 ? null : null), (Function0<Unit>) ((58 & 16) != 0 ? ObservableExtensionsKt.C68791.INSTANCE : null), (Function0<Unit>) ((58 & 32) != 0 ? ObservableExtensionsKt.C68802.INSTANCE : null), new C104001());
     }
 
     public final void toggleDeafen(boolean isChecked) {
@@ -2868,7 +2868,7 @@ public final class WidgetUserSheetViewModel extends AppViewModel<ViewState> {
             viewState = null;
         }
         ViewState.Loaded loaded = (ViewState.Loaded) viewState;
-        if (loaded != null && loaded.isMe() && (!Intrinsics3.areEqual(loaded.getVoiceSettingsViewState().isDeafened(), Boolean.valueOf(isChecked)))) {
+        if (loaded != null && loaded.isMe() && (!C12238m.areEqual(loaded.getVoiceSettingsViewState().isDeafened(), Boolean.valueOf(isChecked)))) {
             this.storeMediaSettings.toggleSelfDeafened();
         }
     }
@@ -2890,22 +2890,22 @@ public final class WidgetUserSheetViewModel extends AppViewModel<ViewState> {
         if (selfMuteFailure == null || selfMuteFailure.ordinal() != 0) {
             return;
         }
-        emitShowToastEvent(R.string.vad_permission_small);
+        emitShowToastEvent(C5419R.string.vad_permission_small);
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public WidgetUserSheetViewModel(long j, long j2, Long l, String str, boolean z2, Observable<StoreState> observable, WidgetUserSheet.StreamPreviewClickBehavior streamPreviewClickBehavior, StoreMediaSettings storeMediaSettings, StoreApplicationStreaming storeApplicationStreaming, StoreUserNotes storeUserNotes, StoreUserProfile storeUserProfile, RestAPI restAPI, RestAPI restAPI2, StoreApplicationStreamPreviews storeApplicationStreamPreviews, Parser<MessageRenderContext, Node<MessageRenderContext>, MessageParseState> parser) {
         super(ViewState.Uninitialized.INSTANCE);
-        Intrinsics3.checkNotNullParameter(observable, "storeObservable");
-        Intrinsics3.checkNotNullParameter(streamPreviewClickBehavior, "streamPreviewClickBehavior");
-        Intrinsics3.checkNotNullParameter(storeMediaSettings, "storeMediaSettings");
-        Intrinsics3.checkNotNullParameter(storeApplicationStreaming, "storeApplicationStreaming");
-        Intrinsics3.checkNotNullParameter(storeUserNotes, "storeUserNotes");
-        Intrinsics3.checkNotNullParameter(storeUserProfile, "storeUserProfile");
-        Intrinsics3.checkNotNullParameter(restAPI, "restAPI");
-        Intrinsics3.checkNotNullParameter(restAPI2, "restAPISerializeNulls");
-        Intrinsics3.checkNotNullParameter(storeApplicationStreamPreviews, "storeApplicationStreamPreviews");
-        Intrinsics3.checkNotNullParameter(parser, "bioParser");
+        C12238m.checkNotNullParameter(observable, "storeObservable");
+        C12238m.checkNotNullParameter(streamPreviewClickBehavior, "streamPreviewClickBehavior");
+        C12238m.checkNotNullParameter(storeMediaSettings, "storeMediaSettings");
+        C12238m.checkNotNullParameter(storeApplicationStreaming, "storeApplicationStreaming");
+        C12238m.checkNotNullParameter(storeUserNotes, "storeUserNotes");
+        C12238m.checkNotNullParameter(storeUserProfile, "storeUserProfile");
+        C12238m.checkNotNullParameter(restAPI, "restAPI");
+        C12238m.checkNotNullParameter(restAPI2, "restAPISerializeNulls");
+        C12238m.checkNotNullParameter(storeApplicationStreamPreviews, "storeApplicationStreamPreviews");
+        C12238m.checkNotNullParameter(parser, "bioParser");
         this.userId = j;
         this.channelId = j2;
         this.guildId = l;
@@ -2920,10 +2920,10 @@ public final class WidgetUserSheetViewModel extends AppViewModel<ViewState> {
         this.restAPISerializeNulls = restAPI2;
         this.storeApplicationStreamPreviews = storeApplicationStreamPreviews;
         this.bioParser = parser;
-        this.eventSubject = PublishSubject.k0();
+        this.eventSubject = PublishSubject.m11133k0();
         this.fetchedPreviews = new LinkedHashSet();
         this.revealedBioIndices = new LinkedHashSet();
-        ObservableExtensionsKt.appSubscribe(ObservableExtensionsKt.ui$default(ObservableExtensionsKt.computationLatest(observable), this, null, 2, null), (Class<?>) WidgetUserSheetViewModel.class, (58 & 2) != 0 ? null : null, (Function1<? super Subscription, Unit>) ((58 & 4) != 0 ? null : null), (Function1<? super Error, Unit>) ((58 & 8) != 0 ? null : null), (Function0<Unit>) ((58 & 16) != 0 ? ObservableExtensionsKt.AnonymousClass1.INSTANCE : null), (Function0<Unit>) ((58 & 32) != 0 ? ObservableExtensionsKt.AnonymousClass2.INSTANCE : null), new AnonymousClass1());
+        ObservableExtensionsKt.appSubscribe(ObservableExtensionsKt.ui$default(ObservableExtensionsKt.computationLatest(observable), this, null, 2, null), (Class<?>) WidgetUserSheetViewModel.class, (58 & 2) != 0 ? null : null, (Function1<? super Subscription, Unit>) ((58 & 4) != 0 ? null : null), (Function1<? super Error, Unit>) ((58 & 8) != 0 ? null : null), (Function0<Unit>) ((58 & 16) != 0 ? ObservableExtensionsKt.C68791.INSTANCE : null), (Function0<Unit>) ((58 & 32) != 0 ? ObservableExtensionsKt.C68802.INSTANCE : null), new C103801());
         storeUserNotes.loadNote(j);
         storeUserProfile.fetchProfile(j, (12 & 2) != 0 ? null : l, (12 & 4) != 0 ? false : false, (12 & 8) != 0 ? null : null);
     }

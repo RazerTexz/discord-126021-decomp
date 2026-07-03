@@ -13,41 +13,47 @@ import com.discord.views.LoadingButton;
 /* JADX INFO: loaded from: classes.dex */
 public final class WidgetTosReportViolationBinding implements ViewBinding {
 
+    /* JADX INFO: renamed from: a */
     @NonNull
-    public final CoordinatorLayout a;
+    public final CoordinatorLayout f18301a;
 
-    /* JADX INFO: renamed from: b, reason: collision with root package name */
+    /* JADX INFO: renamed from: b */
     @NonNull
-    public final LoadingButton f2675b;
+    public final LoadingButton f18302b;
 
+    /* JADX INFO: renamed from: c */
     @NonNull
-    public final TextView c;
+    public final TextView f18303c;
 
+    /* JADX INFO: renamed from: d */
     @NonNull
-    public final LinearLayout d;
+    public final LinearLayout f18304d;
 
+    /* JADX INFO: renamed from: e */
     @NonNull
-    public final TextView e;
+    public final TextView f18305e;
 
+    /* JADX INFO: renamed from: f */
     @NonNull
-    public final ProgressBar f;
+    public final ProgressBar f18306f;
 
+    /* JADX INFO: renamed from: g */
     @NonNull
-    public final LinkifiedTextView g;
+    public final LinkifiedTextView f18307g;
 
     public WidgetTosReportViolationBinding(@NonNull CoordinatorLayout coordinatorLayout, @NonNull LoadingButton loadingButton, @NonNull TextView textView, @NonNull LinearLayout linearLayout, @NonNull TextView textView2, @NonNull ProgressBar progressBar, @NonNull LinkifiedTextView linkifiedTextView) {
-        this.a = coordinatorLayout;
-        this.f2675b = loadingButton;
-        this.c = textView;
-        this.d = linearLayout;
-        this.e = textView2;
-        this.f = progressBar;
-        this.g = linkifiedTextView;
+        this.f18301a = coordinatorLayout;
+        this.f18302b = loadingButton;
+        this.f18303c = textView;
+        this.f18304d = linearLayout;
+        this.f18305e = textView2;
+        this.f18306f = progressBar;
+        this.f18307g = linkifiedTextView;
     }
 
     @Override // androidx.viewbinding.ViewBinding
     @NonNull
     public View getRoot() {
-        return this.a;
+        return this.f18301a;
     }
 }

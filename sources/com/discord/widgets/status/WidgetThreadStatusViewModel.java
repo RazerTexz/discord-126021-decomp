@@ -1,7 +1,5 @@
 package com.discord.widgets.status;
 
-import b.a.d.AppViewModel;
-import b.d.b.a.outline;
 import com.discord.api.channel.Channel;
 import com.discord.api.channel.ChannelUtils;
 import com.discord.api.thread.ThreadMetadata;
@@ -14,28 +12,30 @@ import com.discord.stores.StorePermissions;
 import com.discord.stores.StoreStream;
 import com.discord.stores.StoreThreadsActiveJoined;
 import com.discord.utilities.error.Error;
+import com.discord.utilities.p501rx.ObservableExtensionsKt;
 import com.discord.utilities.rest.RestAPI;
-import com.discord.utilities.rx.ObservableExtensionsKt;
 import com.discord.utilities.threads.ThreadUtils;
 import com.discord.widgets.forums.ForumUtils;
 import com.discord.widgets.status.WidgetThreadStatus;
 import com.discord.widgets.status.WidgetThreadStatusViewModel;
-import d0.z.d.Intrinsics3;
-import d0.z.d.Lambda;
-import j0.k.Func1;
 import java.util.Map;
 import kotlin.Unit;
 import kotlin.jvm.functions.Function0;
 import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.DefaultConstructorMarker;
-import rx.Observable;
-import rx.Subscription;
-import rx.functions.Func4;
-import rx.subjects.PublishSubject;
+import p007b.p008a.p018d.AbstractC0859d0;
+import p007b.p100d.p104b.p105a.C1643a;
+import p507d0.p592z.p594d.AbstractC12240o;
+import p507d0.p592z.p594d.C12238m;
+import p637j0.p641k.InterfaceC12589b;
+import p658rx.Observable;
+import p658rx.Subscription;
+import p658rx.functions.Func4;
+import p658rx.subjects.PublishSubject;
 
 /* JADX INFO: compiled from: WidgetThreadStatusViewModel.kt */
 /* JADX INFO: loaded from: classes2.dex */
-public final class WidgetThreadStatusViewModel extends AppViewModel<ViewState> {
+public final class WidgetThreadStatusViewModel extends AbstractC0859d0<ViewState> {
 
     /* JADX INFO: renamed from: Companion, reason: from kotlin metadata */
     public static final Companion INSTANCE = new Companion(null);
@@ -43,22 +43,22 @@ public final class WidgetThreadStatusViewModel extends AppViewModel<ViewState> {
     private final PublishSubject<WidgetThreadStatus.Event> eventSubject;
     private final Observable<StoreState> storeStateObservable;
 
-    /* JADX INFO: renamed from: com.discord.widgets.status.WidgetThreadStatusViewModel$1, reason: invalid class name */
+    /* JADX INFO: renamed from: com.discord.widgets.status.WidgetThreadStatusViewModel$1 */
     /* JADX INFO: compiled from: WidgetThreadStatusViewModel.kt */
-    public static final class AnonymousClass1 extends Lambda implements Function1<StoreState, Unit> {
-        public AnonymousClass1() {
+    public static final class C101151 extends AbstractC12240o implements Function1<StoreState, Unit> {
+        public C101151() {
             super(1);
         }
 
         @Override // kotlin.jvm.functions.Function1
         public /* bridge */ /* synthetic */ Unit invoke(StoreState storeState) {
             invoke2(storeState);
-            return Unit.a;
+            return Unit.f27425a;
         }
 
         /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
         public final void invoke2(StoreState storeState) {
-            Intrinsics3.checkNotNullParameter(storeState, "storeState");
+            C12238m.checkNotNullParameter(storeState, "storeState");
             WidgetThreadStatusViewModel.this.handleStoreState(storeState);
         }
     }
@@ -69,13 +69,13 @@ public final class WidgetThreadStatusViewModel extends AppViewModel<ViewState> {
         }
 
         private final Observable<StoreState> observeStoreState(final StoreThreadsActiveJoined storeThreadsActiveJoined, StoreChannelsSelected storeChannelsSelected, final StoreChannels storeChannels, final StorePermissions storePermissions, final StoreExperiments storeExperiments) {
-            Observable<R> observableG = storeChannelsSelected.observeSelectedChannel().y(ObservableExtensionsKt.AnonymousClass1.INSTANCE).G(ObservableExtensionsKt.AnonymousClass2.INSTANCE);
-            Intrinsics3.checkNotNullExpressionValue(observableG, "filter { it != null }.map { it!! }");
-            Observable<StoreState> observableY = observableG.Y(new Func1<Channel, Observable<? extends StoreState>>() { // from class: com.discord.widgets.status.WidgetThreadStatusViewModel$Companion$observeStoreState$1
-                @Override // j0.k.Func1
+            Observable<R> observableM11083G = storeChannelsSelected.observeSelectedChannel().m11118y(ObservableExtensionsKt.C68871.INSTANCE).m11083G(ObservableExtensionsKt.C68882.INSTANCE);
+            C12238m.checkNotNullExpressionValue(observableM11083G, "filter { it != null }.map { it!! }");
+            Observable<StoreState> observableM11099Y = observableM11083G.m11099Y(new InterfaceC12589b<Channel, Observable<? extends StoreState>>() { // from class: com.discord.widgets.status.WidgetThreadStatusViewModel$Companion$observeStoreState$1
+                @Override // p637j0.p641k.InterfaceC12589b
                 public final Observable<? extends WidgetThreadStatusViewModel.StoreState> call(final Channel channel) {
-                    return Observable.h(storeThreadsActiveJoined.observeActiveJoinedThreadsForGuild(channel.getGuildId()), storePermissions.observePermissionsForChannel(channel.getId()), storeChannels.observeChannel(channel.getParentId()), ForumUtils.observeCanAccessRedesignedForumChannels$default(ForumUtils.INSTANCE, channel.getGuildId(), storeExperiments, null, 4, null), new Func4<Map<Long, ? extends Map<Long, ? extends StoreThreadsActiveJoined.ActiveJoinedThread>>, Long, Channel, Boolean, WidgetThreadStatusViewModel.StoreState>() { // from class: com.discord.widgets.status.WidgetThreadStatusViewModel$Companion$observeStoreState$1.1
-                        @Override // rx.functions.Func4
+                    return Observable.m11073h(storeThreadsActiveJoined.observeActiveJoinedThreadsForGuild(channel.getGuildId()), storePermissions.observePermissionsForChannel(channel.getId()), storeChannels.observeChannel(channel.getParentId()), ForumUtils.observeCanAccessRedesignedForumChannels$default(ForumUtils.INSTANCE, channel.getGuildId(), storeExperiments, null, 4, null), new Func4<Map<Long, ? extends Map<Long, ? extends StoreThreadsActiveJoined.ActiveJoinedThread>>, Long, Channel, Boolean, WidgetThreadStatusViewModel.StoreState>() { // from class: com.discord.widgets.status.WidgetThreadStatusViewModel$Companion$observeStoreState$1.1
+                        @Override // p658rx.functions.Func4
                         public /* bridge */ /* synthetic */ WidgetThreadStatusViewModel.StoreState call(Map<Long, ? extends Map<Long, ? extends StoreThreadsActiveJoined.ActiveJoinedThread>> map, Long l, Channel channel2, Boolean bool) {
                             return call2((Map<Long, ? extends Map<Long, StoreThreadsActiveJoined.ActiveJoinedThread>>) map, l, channel2, bool);
                         }
@@ -84,19 +84,19 @@ public final class WidgetThreadStatusViewModel extends AppViewModel<ViewState> {
                         public final WidgetThreadStatusViewModel.StoreState call2(Map<Long, ? extends Map<Long, StoreThreadsActiveJoined.ActiveJoinedThread>> map, Long l, Channel channel2, Boolean bool) {
                             ThreadUtils threadUtils = ThreadUtils.INSTANCE;
                             Channel channel3 = channel;
-                            Intrinsics3.checkNotNullExpressionValue(channel3, "selectedChannel");
+                            C12238m.checkNotNullExpressionValue(channel3, "selectedChannel");
                             boolean zCanUnarchiveThread = threadUtils.canUnarchiveThread(channel3, l);
                             boolean zIsThreadModerator = threadUtils.isThreadModerator(Long.valueOf(l != null ? l.longValue() : 0L));
-                            Intrinsics3.checkNotNullExpressionValue(map, "activeJoinedThreads");
+                            C12238m.checkNotNullExpressionValue(map, "activeJoinedThreads");
                             Channel channel4 = channel;
-                            Intrinsics3.checkNotNullExpressionValue(bool, "canAccessRedesignedForumChannels");
+                            C12238m.checkNotNullExpressionValue(bool, "canAccessRedesignedForumChannels");
                             return new WidgetThreadStatusViewModel.StoreState(map, channel4, channel2, zCanUnarchiveThread, zIsThreadModerator, bool.booleanValue());
                         }
-                    }).r();
+                    }).m11112r();
                 }
             });
-            Intrinsics3.checkNotNullExpressionValue(observableY, "storeChannelsSelected.ob…ntilChanged()\n          }");
-            return observableY;
+            C12238m.checkNotNullExpressionValue(observableM11099Y, "storeChannelsSelected.ob…ntilChanged()\n          }");
+            return observableM11099Y;
         }
 
         public static /* synthetic */ Observable observeStoreState$default(Companion companion, StoreThreadsActiveJoined storeThreadsActiveJoined, StoreChannelsSelected storeChannelsSelected, StoreChannels storeChannels, StorePermissions storePermissions, StoreExperiments storeExperiments, int i, Object obj) {
@@ -203,10 +203,10 @@ public final class WidgetThreadStatusViewModel extends AppViewModel<ViewState> {
             }
 
             public String toString() {
-                StringBuilder sbU = outline.U("Archived(isLocked=");
-                sbU.append(this.isLocked);
-                sbU.append(", canArchive=");
-                return outline.O(sbU, this.canArchive, ")");
+                StringBuilder sbM833U = C1643a.m833U("Archived(isLocked=");
+                sbM833U.append(this.isLocked);
+                sbM833U.append(", canArchive=");
+                return C1643a.m827O(sbM833U, this.canArchive, ")");
             }
         }
 
@@ -247,7 +247,7 @@ public final class WidgetThreadStatusViewModel extends AppViewModel<ViewState> {
 
         /* JADX WARN: Multi-variable type inference failed */
         public StoreState(Map<Long, ? extends Map<Long, StoreThreadsActiveJoined.ActiveJoinedThread>> map, Channel channel, Channel channel2, boolean z2, boolean z3, boolean z4) {
-            Intrinsics3.checkNotNullParameter(map, "activeJoinedThreads");
+            C12238m.checkNotNullParameter(map, "activeJoinedThreads");
             this.activeJoinedThreads = map;
             this.selectedChannel = channel;
             this.parentChannel = channel2;
@@ -313,7 +313,7 @@ public final class WidgetThreadStatusViewModel extends AppViewModel<ViewState> {
         }
 
         public final StoreState copy(Map<Long, ? extends Map<Long, StoreThreadsActiveJoined.ActiveJoinedThread>> activeJoinedThreads, Channel selectedChannel, Channel parentChannel, boolean canArchive, boolean isModerator, boolean canAccessRedesignedForumChannels) {
-            Intrinsics3.checkNotNullParameter(activeJoinedThreads, "activeJoinedThreads");
+            C12238m.checkNotNullParameter(activeJoinedThreads, "activeJoinedThreads");
             return new StoreState(activeJoinedThreads, selectedChannel, parentChannel, canArchive, isModerator, canAccessRedesignedForumChannels);
         }
 
@@ -325,7 +325,7 @@ public final class WidgetThreadStatusViewModel extends AppViewModel<ViewState> {
                 return false;
             }
             StoreState storeState = (StoreState) other;
-            return Intrinsics3.areEqual(this.activeJoinedThreads, storeState.activeJoinedThreads) && Intrinsics3.areEqual(this.selectedChannel, storeState.selectedChannel) && Intrinsics3.areEqual(this.parentChannel, storeState.parentChannel) && this.canArchive == storeState.canArchive && this.isModerator == storeState.isModerator && this.canAccessRedesignedForumChannels == storeState.canAccessRedesignedForumChannels;
+            return C12238m.areEqual(this.activeJoinedThreads, storeState.activeJoinedThreads) && C12238m.areEqual(this.selectedChannel, storeState.selectedChannel) && C12238m.areEqual(this.parentChannel, storeState.parentChannel) && this.canArchive == storeState.canArchive && this.isModerator == storeState.isModerator && this.canAccessRedesignedForumChannels == storeState.canAccessRedesignedForumChannels;
         }
 
         public final Map<Long, Map<Long, StoreThreadsActiveJoined.ActiveJoinedThread>> getActiveJoinedThreads() {
@@ -389,18 +389,18 @@ public final class WidgetThreadStatusViewModel extends AppViewModel<ViewState> {
         }
 
         public String toString() {
-            StringBuilder sbU = outline.U("StoreState(activeJoinedThreads=");
-            sbU.append(this.activeJoinedThreads);
-            sbU.append(", selectedChannel=");
-            sbU.append(this.selectedChannel);
-            sbU.append(", parentChannel=");
-            sbU.append(this.parentChannel);
-            sbU.append(", canArchive=");
-            sbU.append(this.canArchive);
-            sbU.append(", isModerator=");
-            sbU.append(this.isModerator);
-            sbU.append(", canAccessRedesignedForumChannels=");
-            return outline.O(sbU, this.canAccessRedesignedForumChannels, ")");
+            StringBuilder sbM833U = C1643a.m833U("StoreState(activeJoinedThreads=");
+            sbM833U.append(this.activeJoinedThreads);
+            sbM833U.append(", selectedChannel=");
+            sbM833U.append(this.selectedChannel);
+            sbM833U.append(", parentChannel=");
+            sbM833U.append(this.parentChannel);
+            sbM833U.append(", canArchive=");
+            sbM833U.append(this.canArchive);
+            sbM833U.append(", isModerator=");
+            sbM833U.append(this.isModerator);
+            sbM833U.append(", canAccessRedesignedForumChannels=");
+            return C1643a.m827O(sbM833U, this.canAccessRedesignedForumChannels, ")");
         }
     }
 
@@ -410,7 +410,7 @@ public final class WidgetThreadStatusViewModel extends AppViewModel<ViewState> {
         private final Status threadStatus;
 
         public ViewState(Status status, boolean z2) {
-            Intrinsics3.checkNotNullParameter(status, "threadStatus");
+            C12238m.checkNotNullParameter(status, "threadStatus");
             this.threadStatus = status;
             this.isLoading = z2;
         }
@@ -436,7 +436,7 @@ public final class WidgetThreadStatusViewModel extends AppViewModel<ViewState> {
         }
 
         public final ViewState copy(Status threadStatus, boolean isLoading) {
-            Intrinsics3.checkNotNullParameter(threadStatus, "threadStatus");
+            C12238m.checkNotNullParameter(threadStatus, "threadStatus");
             return new ViewState(threadStatus, isLoading);
         }
 
@@ -448,7 +448,7 @@ public final class WidgetThreadStatusViewModel extends AppViewModel<ViewState> {
                 return false;
             }
             ViewState viewState = (ViewState) other;
-            return Intrinsics3.areEqual(this.threadStatus, viewState.threadStatus) && this.isLoading == viewState.isLoading;
+            return C12238m.areEqual(this.threadStatus, viewState.threadStatus) && this.isLoading == viewState.isLoading;
         }
 
         public final Status getThreadStatus() {
@@ -476,10 +476,10 @@ public final class WidgetThreadStatusViewModel extends AppViewModel<ViewState> {
         }
 
         public String toString() {
-            StringBuilder sbU = outline.U("ViewState(threadStatus=");
-            sbU.append(this.threadStatus);
-            sbU.append(", isLoading=");
-            return outline.O(sbU, this.isLoading, ")");
+            StringBuilder sbM833U = C1643a.m833U("ViewState(threadStatus=");
+            sbM833U.append(this.threadStatus);
+            sbM833U.append(", isLoading=");
+            return C1643a.m827O(sbM833U, this.isLoading, ")");
         }
 
         public /* synthetic */ ViewState(Status status, boolean z2, int i, DefaultConstructorMarker defaultConstructorMarker) {
@@ -498,7 +498,7 @@ public final class WidgetThreadStatusViewModel extends AppViewModel<ViewState> {
 
     private final void emitError(int code) {
         PublishSubject<WidgetThreadStatus.Event> publishSubject = this.eventSubject;
-        publishSubject.k.onNext(new WidgetThreadStatus.Event.Error(code));
+        publishSubject.f27650k.onNext(new WidgetThreadStatus.Event.Error(code));
     }
 
     private final void handleStoreState(StoreState storeState) {
@@ -516,9 +516,9 @@ public final class WidgetThreadStatusViewModel extends AppViewModel<ViewState> {
         }
         boolean z2 = false;
         boolean z3 = activeJoinedThread != null;
-        if (selectedChannel == null || !ChannelUtils.H(selectedChannel)) {
+        if (selectedChannel == null || !ChannelUtils.m7673H(selectedChannel)) {
             archived = Status.Hide.INSTANCE;
-        } else if (parentChannel != null && ChannelUtils.q(parentChannel) && storeState.getCanAccessRedesignedForumChannels()) {
+        } else if (parentChannel != null && ChannelUtils.m7693q(parentChannel) && storeState.getCanAccessRedesignedForumChannels()) {
             archived = Status.Hide.INSTANCE;
         } else {
             ThreadMetadata threadMetadata = selectedChannel.getThreadMetadata();
@@ -552,7 +552,7 @@ public final class WidgetThreadStatusViewModel extends AppViewModel<ViewState> {
 
     public final Observable<WidgetThreadStatus.Event> observeEvents() {
         PublishSubject<WidgetThreadStatus.Event> publishSubject = this.eventSubject;
-        Intrinsics3.checkNotNullExpressionValue(publishSubject, "eventSubject");
+        C12238m.checkNotNullExpressionValue(publishSubject, "eventSubject");
         return publishSubject;
     }
 
@@ -562,7 +562,7 @@ public final class WidgetThreadStatusViewModel extends AppViewModel<ViewState> {
             if (storeState.getSelectedChannel() == null) {
                 return;
             }
-            ObservableExtensionsKt.appSubscribe(ObservableExtensionsKt.ui$default(ObservableExtensionsKt.restSubscribeOn$default(RestAPI.INSTANCE.getApi().joinThread(storeState.getSelectedChannel().getId(), "Banner", new RestAPIParams.EmptyBody()), false, 1, null), this, null, 2, null), (Class<?>) WidgetThreadStatusViewModel.class, (58 & 2) != 0 ? null : null, (Function1<? super Subscription, Unit>) ((58 & 4) != 0 ? null : null), (Function1<? super Error, Unit>) ((58 & 8) != 0 ? null : new WidgetThreadStatusViewModel3(this)), (Function0<Unit>) ((58 & 16) != 0 ? ObservableExtensionsKt.AnonymousClass1.INSTANCE : null), (Function0<Unit>) ((58 & 32) != 0 ? ObservableExtensionsKt.AnonymousClass2.INSTANCE : new WidgetThreadStatusViewModel4(this)), WidgetThreadStatusViewModel5.INSTANCE);
+            ObservableExtensionsKt.appSubscribe(ObservableExtensionsKt.ui$default(ObservableExtensionsKt.restSubscribeOn$default(RestAPI.INSTANCE.getApi().joinThread(storeState.getSelectedChannel().getId(), "Banner", new RestAPIParams.EmptyBody()), false, 1, null), this, null, 2, null), (Class<?>) WidgetThreadStatusViewModel.class, (58 & 2) != 0 ? null : null, (Function1<? super Subscription, Unit>) ((58 & 4) != 0 ? null : null), (Function1<? super Error, Unit>) ((58 & 8) != 0 ? null : new WidgetThreadStatusViewModel$onJoinTapped$$inlined$let$lambda$1(this)), (Function0<Unit>) ((58 & 16) != 0 ? ObservableExtensionsKt.C68791.INSTANCE : null), (Function0<Unit>) ((58 & 32) != 0 ? ObservableExtensionsKt.C68802.INSTANCE : new WidgetThreadStatusViewModel$onJoinTapped$$inlined$let$lambda$2(this)), WidgetThreadStatusViewModel$onJoinTapped$1$2.INSTANCE);
         }
         updateViewLoading(true);
     }
@@ -576,18 +576,18 @@ public final class WidgetThreadStatusViewModel extends AppViewModel<ViewState> {
             RestAPI api = RestAPI.INSTANCE.getApi();
             long id2 = storeState.getSelectedChannel().getId();
             Boolean bool = Boolean.FALSE;
-            ObservableExtensionsKt.appSubscribe(ObservableExtensionsKt.ui$default(ObservableExtensionsKt.restSubscribeOn$default(api.editThread(id2, new RestAPIParams.ThreadSettings(bool, storeState.isModerator() ? bool : null, null, 4, null)), false, 1, null), this, null, 2, null), (Class<?>) WidgetThreadStatusViewModel.class, (58 & 2) != 0 ? null : null, (Function1<? super Subscription, Unit>) ((58 & 4) != 0 ? null : null), (Function1<? super Error, Unit>) ((58 & 8) != 0 ? null : new WidgetThreadStatusViewModel6(this)), (Function0<Unit>) ((58 & 16) != 0 ? ObservableExtensionsKt.AnonymousClass1.INSTANCE : null), (Function0<Unit>) ((58 & 32) != 0 ? ObservableExtensionsKt.AnonymousClass2.INSTANCE : new WidgetThreadStatusViewModel7(this)), WidgetThreadStatusViewModel8.INSTANCE);
+            ObservableExtensionsKt.appSubscribe(ObservableExtensionsKt.ui$default(ObservableExtensionsKt.restSubscribeOn$default(api.editThread(id2, new RestAPIParams.ThreadSettings(bool, storeState.isModerator() ? bool : null, null, 4, null)), false, 1, null), this, null, 2, null), (Class<?>) WidgetThreadStatusViewModel.class, (58 & 2) != 0 ? null : null, (Function1<? super Subscription, Unit>) ((58 & 4) != 0 ? null : null), (Function1<? super Error, Unit>) ((58 & 8) != 0 ? null : new C10117x32a829cc(this)), (Function0<Unit>) ((58 & 16) != 0 ? ObservableExtensionsKt.C68791.INSTANCE : null), (Function0<Unit>) ((58 & 32) != 0 ? ObservableExtensionsKt.C68802.INSTANCE : new C10118x32a829cd(this)), WidgetThreadStatusViewModel$onUnarchiveTapped$1$2.INSTANCE);
         }
         updateViewLoading(true);
     }
 
     /* JADX WARN: Illegal instructions before constructor call */
     public WidgetThreadStatusViewModel(Observable<StoreState> observable) {
-        Intrinsics3.checkNotNullParameter(observable, "storeStateObservable");
+        C12238m.checkNotNullParameter(observable, "storeStateObservable");
         DefaultConstructorMarker defaultConstructorMarker = null;
         super(defaultConstructorMarker, 1, defaultConstructorMarker);
         this.storeStateObservable = observable;
-        this.eventSubject = PublishSubject.k0();
-        ObservableExtensionsKt.appSubscribe(ObservableExtensionsKt.ui$default(observable, this, null, 2, null), (Class<?>) WidgetThreadStatusViewModel.class, (58 & 2) != 0 ? null : null, (Function1<? super Subscription, Unit>) ((58 & 4) != 0 ? null : null), (Function1<? super Error, Unit>) ((58 & 8) != 0 ? null : null), (Function0<Unit>) ((58 & 16) != 0 ? ObservableExtensionsKt.AnonymousClass1.INSTANCE : null), (Function0<Unit>) ((58 & 32) != 0 ? ObservableExtensionsKt.AnonymousClass2.INSTANCE : null), new AnonymousClass1());
+        this.eventSubject = PublishSubject.m11133k0();
+        ObservableExtensionsKt.appSubscribe(ObservableExtensionsKt.ui$default(observable, this, null, 2, null), (Class<?>) WidgetThreadStatusViewModel.class, (58 & 2) != 0 ? null : null, (Function1<? super Subscription, Unit>) ((58 & 4) != 0 ? null : null), (Function1<? super Error, Unit>) ((58 & 8) != 0 ? null : null), (Function0<Unit>) ((58 & 16) != 0 ? ObservableExtensionsKt.C68791.INSTANCE : null), (Function0<Unit>) ((58 & 32) != 0 ? ObservableExtensionsKt.C68802.INSTANCE : null), new C101151());
     }
 }

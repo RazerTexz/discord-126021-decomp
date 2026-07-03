@@ -117,20 +117,20 @@ public class EclipseNode extends LombokNode<EclipseAST, EclipseNode, ASTNode> {
                     visitor.endVisitMethod(this, (AbstractMethodDeclaration) get());
                     return;
                 case 6:
-                    switch ($SWITCH_TABLE$lombok$core$AST$Kind()[up().getKind().ordinal()]) {
+                    switch ($SWITCH_TABLE$lombok$core$AST$Kind()[m10925up().getKind().ordinal()]) {
                         case 2:
-                            visitor.visitAnnotationOnType((TypeDeclaration) up().get(), this, (Annotation) get());
+                            visitor.visitAnnotationOnType((TypeDeclaration) m10925up().get(), this, (Annotation) get());
                             return;
                         case 3:
-                            visitor.visitAnnotationOnField((FieldDeclaration) up().get(), this, (Annotation) get());
+                            visitor.visitAnnotationOnField((FieldDeclaration) m10925up().get(), this, (Annotation) get());
                             return;
                         case 4:
                         case 6:
                         case 9:
                         default:
-                            throw new AssertionError("Annotation not expected as child of a " + up().getKind());
+                            throw new AssertionError("Annotation not expected as child of a " + m10925up().getKind());
                         case 5:
-                            visitor.visitAnnotationOnMethod((AbstractMethodDeclaration) up().get(), this, (Annotation) get());
+                            visitor.visitAnnotationOnMethod((AbstractMethodDeclaration) m10925up().get(), this, (Annotation) get());
                             return;
                         case 7:
                             visitor.visitAnnotationOnMethodArgument((Argument) ((EclipseNode) this.parent).get(), (AbstractMethodDeclaration) ((EclipseNode) this.parent).directUp().get(), this, (Annotation) get());
@@ -143,7 +143,7 @@ public class EclipseNode extends LombokNode<EclipseAST, EclipseNode, ASTNode> {
                             return;
                     }
                 case 7:
-                    AbstractMethodDeclaration method = (AbstractMethodDeclaration) up().get();
+                    AbstractMethodDeclaration method = (AbstractMethodDeclaration) m10925up().get();
                     visitor.visitMethodArgument(this, (Argument) get(), method);
                     this.ast.traverseChildren(visitor, this);
                     visitor.endVisitMethodArgument(this, (Argument) get(), method);

@@ -43,7 +43,9 @@ import org.eclipse.jdt.internal.compiler.lookup.TypeConstants;
 public class HandleToString extends EclipseAnnotationHandler<ToString> {
     private static final Set<String> BUILT_IN_TYPES = Collections.unmodifiableSet(new HashSet(Arrays.asList("byte", "short", "int", Constants.LONG, "char", "boolean", "double", "float")));
     private static /* synthetic */ int[] $SWITCH_TABLE$lombok$core$configuration$CallSuperType;
-    private static /* synthetic */ int[] $SWITCH_TABLE$lombok$eclipse$handlers$EclipseHandlerUtil$MemberExistsResult;
+
+    /* JADX INFO: renamed from: $SWITCH_TABLE$lombok$eclipse$handlers$EclipseHandlerUtil$MemberExistsResult */
+    private static /* synthetic */ int[] f27475xb87c1847;
 
     static /* synthetic */ int[] $SWITCH_TABLE$lombok$core$configuration$CallSuperType() {
         int[] iArr = $SWITCH_TABLE$lombok$core$configuration$CallSuperType;
@@ -67,8 +69,9 @@ public class HandleToString extends EclipseAnnotationHandler<ToString> {
         return iArr2;
     }
 
-    static /* synthetic */ int[] $SWITCH_TABLE$lombok$eclipse$handlers$EclipseHandlerUtil$MemberExistsResult() {
-        int[] iArr = $SWITCH_TABLE$lombok$eclipse$handlers$EclipseHandlerUtil$MemberExistsResult;
+    /* JADX INFO: renamed from: $SWITCH_TABLE$lombok$eclipse$handlers$EclipseHandlerUtil$MemberExistsResult */
+    static /* synthetic */ int[] m10935xb87c1847() {
+        int[] iArr = f27475xb87c1847;
         if (iArr != null) {
             return iArr;
         }
@@ -85,7 +88,7 @@ public class HandleToString extends EclipseAnnotationHandler<ToString> {
             iArr2[EclipseHandlerUtil.MemberExistsResult.NOT_EXISTS.ordinal()] = 1;
         } catch (NoSuchFieldError unused3) {
         }
-        $SWITCH_TABLE$lombok$eclipse$handlers$EclipseHandlerUtil$MemberExistsResult = iArr2;
+        f27475xb87c1847 = iArr2;
         return iArr2;
     }
 
@@ -93,7 +96,7 @@ public class HandleToString extends EclipseAnnotationHandler<ToString> {
     public void handle(AnnotationValues<ToString> annotation, Annotation ast, EclipseNode annotationNode) {
         HandlerUtil.handleFlagUsage(annotationNode, ConfigurationKeys.TO_STRING_FLAG_USAGE, "@ToString");
         ToString ann = annotation.getInstance();
-        List<InclusionExclusionUtils.Included<EclipseNode, ToString.Include>> members = InclusionExclusionUtils.handleToStringMarking(annotationNode.up(), annotation, annotationNode);
+        List<InclusionExclusionUtils.Included<EclipseNode, ToString.Include>> members = InclusionExclusionUtils.handleToStringMarking(annotationNode.m10925up(), annotation, annotationNode);
         if (members == null) {
             return;
         }
@@ -106,7 +109,7 @@ public class HandleToString extends EclipseAnnotationHandler<ToString> {
         HandlerUtil.FieldAccess fieldAccess = doNotUseGetters ? HandlerUtil.FieldAccess.PREFER_FIELD : HandlerUtil.FieldAccess.GETTER;
         Boolean fieldNamesConfiguration = (Boolean) annotationNode.getAst().readConfiguration(ConfigurationKeys.TO_STRING_INCLUDE_FIELD_NAMES);
         boolean includeFieldNames = (annotation.isExplicit("includeFieldNames") || fieldNamesConfiguration == null) ? ann.includeFieldNames() : fieldNamesConfiguration.booleanValue();
-        generateToString(annotationNode.up(), annotationNode, members, includeFieldNames, callSuper, true, fieldAccess);
+        generateToString(annotationNode.m10925up(), annotationNode, members, includeFieldNames, callSuper, true, fieldAccess);
     }
 
     public void generateToStringForType(EclipseNode typeNode, EclipseNode errorNode) {
@@ -133,7 +136,7 @@ public class HandleToString extends EclipseAnnotationHandler<ToString> {
             errorNode.addError("@ToString is only supported on a class or enum.");
             return;
         }
-        switch ($SWITCH_TABLE$lombok$eclipse$handlers$EclipseHandlerUtil$MemberExistsResult()[EclipseHandlerUtil.methodExists("toString", typeNode, 0).ordinal()]) {
+        switch (m10935xb87c1847()[EclipseHandlerUtil.methodExists("toString", typeNode, 0).ordinal()]) {
             case 1:
                 if (callSuper == null) {
                     if (EclipseHandlerUtil.isDirectDescendantOfObject(typeNode)) {
@@ -326,12 +329,12 @@ public class HandleToString extends EclipseAnnotationHandler<ToString> {
 
     public static String getTypeName(EclipseNode type) {
         String typeName = getSingleTypeName(type);
-        EclipseNode eclipseNodeUp = type.up();
+        EclipseNode eclipseNodeUp = type.m10925up();
         while (true) {
             EclipseNode upType = eclipseNodeUp;
             if (upType.getKind() == AST.Kind.TYPE) {
                 typeName = String.valueOf(getSingleTypeName(upType)) + "." + typeName;
-                eclipseNodeUp = upType.up();
+                eclipseNodeUp = upType.m10925up();
             } else {
                 return typeName;
             }

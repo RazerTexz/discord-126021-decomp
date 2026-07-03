@@ -1,14 +1,14 @@
 package com.discord.analytics.generated.events;
 
-import b.d.b.a.outline;
 import com.discord.analytics.generated.traits.TrackBase;
-import com.discord.analytics.generated.traits.TrackBase2;
+import com.discord.analytics.generated.traits.TrackBaseReceiver;
 import com.discord.api.science.AnalyticsSchema;
-import d0.z.d.Intrinsics3;
+import p007b.p100d.p104b.p105a.C1643a;
+import p507d0.p592z.p594d.C12238m;
 
 /* JADX INFO: compiled from: TrackMediaSessionJoined.kt */
 /* JADX INFO: loaded from: classes.dex */
-public final /* data */ class TrackMediaSessionJoined implements AnalyticsSchema, TrackBase2 {
+public final /* data */ class TrackMediaSessionJoined implements AnalyticsSchema, TrackBaseReceiver {
     private TrackBase trackBase;
     private final Long channelId = null;
     private final Long guildId = null;
@@ -35,7 +35,7 @@ public final /* data */ class TrackMediaSessionJoined implements AnalyticsSchema
             return false;
         }
         TrackMediaSessionJoined trackMediaSessionJoined = (TrackMediaSessionJoined) other;
-        return Intrinsics3.areEqual(this.channelId, trackMediaSessionJoined.channelId) && Intrinsics3.areEqual(this.guildId, trackMediaSessionJoined.guildId) && Intrinsics3.areEqual(this.rtcConnectionId, trackMediaSessionJoined.rtcConnectionId) && Intrinsics3.areEqual(this.context, trackMediaSessionJoined.context) && Intrinsics3.areEqual(this.mediaSessionId, trackMediaSessionJoined.mediaSessionId) && Intrinsics3.areEqual(this.parentMediaSessionId, trackMediaSessionJoined.parentMediaSessionId) && Intrinsics3.areEqual(this.channelType, trackMediaSessionJoined.channelType) && Intrinsics3.areEqual(this.voiceBackendVersion, trackMediaSessionJoined.voiceBackendVersion) && Intrinsics3.areEqual(this.rtcWorkerBackendVersion, trackMediaSessionJoined.rtcWorkerBackendVersion);
+        return C12238m.areEqual(this.channelId, trackMediaSessionJoined.channelId) && C12238m.areEqual(this.guildId, trackMediaSessionJoined.guildId) && C12238m.areEqual(this.rtcConnectionId, trackMediaSessionJoined.rtcConnectionId) && C12238m.areEqual(this.context, trackMediaSessionJoined.context) && C12238m.areEqual(this.mediaSessionId, trackMediaSessionJoined.mediaSessionId) && C12238m.areEqual(this.parentMediaSessionId, trackMediaSessionJoined.parentMediaSessionId) && C12238m.areEqual(this.channelType, trackMediaSessionJoined.channelType) && C12238m.areEqual(this.voiceBackendVersion, trackMediaSessionJoined.voiceBackendVersion) && C12238m.areEqual(this.rtcWorkerBackendVersion, trackMediaSessionJoined.rtcWorkerBackendVersion);
     }
 
     public int hashCode() {
@@ -60,23 +60,23 @@ public final /* data */ class TrackMediaSessionJoined implements AnalyticsSchema
     }
 
     public String toString() {
-        StringBuilder sbU = outline.U("TrackMediaSessionJoined(channelId=");
-        sbU.append(this.channelId);
-        sbU.append(", guildId=");
-        sbU.append(this.guildId);
-        sbU.append(", rtcConnectionId=");
-        sbU.append(this.rtcConnectionId);
-        sbU.append(", context=");
-        sbU.append(this.context);
-        sbU.append(", mediaSessionId=");
-        sbU.append(this.mediaSessionId);
-        sbU.append(", parentMediaSessionId=");
-        sbU.append(this.parentMediaSessionId);
-        sbU.append(", channelType=");
-        sbU.append(this.channelType);
-        sbU.append(", voiceBackendVersion=");
-        sbU.append(this.voiceBackendVersion);
-        sbU.append(", rtcWorkerBackendVersion=");
-        return outline.E(sbU, this.rtcWorkerBackendVersion, ")");
+        StringBuilder sbM833U = C1643a.m833U("TrackMediaSessionJoined(channelId=");
+        sbM833U.append(this.channelId);
+        sbM833U.append(", guildId=");
+        sbM833U.append(this.guildId);
+        sbM833U.append(", rtcConnectionId=");
+        sbM833U.append(this.rtcConnectionId);
+        sbM833U.append(", context=");
+        sbM833U.append(this.context);
+        sbM833U.append(", mediaSessionId=");
+        sbM833U.append(this.mediaSessionId);
+        sbM833U.append(", parentMediaSessionId=");
+        sbM833U.append(this.parentMediaSessionId);
+        sbM833U.append(", channelType=");
+        sbM833U.append(this.channelType);
+        sbM833U.append(", voiceBackendVersion=");
+        sbM833U.append(this.voiceBackendVersion);
+        sbM833U.append(", rtcWorkerBackendVersion=");
+        return C1643a.m817E(sbM833U, this.rtcWorkerBackendVersion, ")");
     }
 }

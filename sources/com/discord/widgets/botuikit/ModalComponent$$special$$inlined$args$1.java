@@ -2,15 +2,15 @@ package com.discord.widgets.botuikit;
 
 import android.os.Bundle;
 import android.os.Parcelable;
-import b.d.b.a.outline;
 import com.discord.app.AppFragment;
 import com.discord.widgets.botuikit.ModalComponent;
-import d0.z.d.Lambda;
 import kotlin.jvm.functions.Function0;
+import p007b.p100d.p104b.p105a.C1643a;
+import p507d0.p592z.p594d.AbstractC12240o;
 
 /* JADX INFO: compiled from: ArgUtils.kt */
 /* JADX INFO: loaded from: classes2.dex */
-public final class ModalComponent$$special$$inlined$args$1 extends Lambda implements Function0<ModalComponent.Options> {
+public final class ModalComponent$$special$$inlined$args$1 extends AbstractC12240o implements Function0<ModalComponent.Options> {
     public final /* synthetic */ String $argsKey;
     public final /* synthetic */ AppFragment $this_args;
 
@@ -38,8 +38,8 @@ public final class ModalComponent$$special$$inlined$args$1 extends Lambda implem
             return options2;
         }
         options2 = parcelableExtra;
-        StringBuilder sbU = outline.U("Missing args for class type ");
-        outline.l0(ModalComponent.Options.class, sbU, " + key ");
-        throw new IllegalStateException(outline.H(sbU, this.$argsKey, '!'));
+        StringBuilder sbM833U = C1643a.m833U("Missing args for class type ");
+        C1643a.m862l0(ModalComponent.Options.class, sbM833U, " + key ");
+        throw new IllegalStateException(C1643a.m820H(sbM833U, this.$argsKey, '!'));
     }
 }

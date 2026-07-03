@@ -1,7 +1,7 @@
 package com.discord.analytics.generated.traits;
 
-import b.d.b.a.outline;
-import d0.z.d.Intrinsics3;
+import p007b.p100d.p104b.p105a.C1643a;
+import p507d0.p592z.p594d.C12238m;
 
 /* JADX INFO: compiled from: TrackNetworkInformation.kt */
 /* JADX INFO: loaded from: classes.dex */
@@ -18,7 +18,7 @@ public final /* data */ class TrackNetworkInformation {
             return false;
         }
         TrackNetworkInformation trackNetworkInformation = (TrackNetworkInformation) other;
-        return Intrinsics3.areEqual(this.connectionType, trackNetworkInformation.connectionType) && Intrinsics3.areEqual(this.effectiveConnectionSpeed, trackNetworkInformation.effectiveConnectionSpeed) && Intrinsics3.areEqual(this.serviceProvider, trackNetworkInformation.serviceProvider);
+        return C12238m.areEqual(this.connectionType, trackNetworkInformation.connectionType) && C12238m.areEqual(this.effectiveConnectionSpeed, trackNetworkInformation.effectiveConnectionSpeed) && C12238m.areEqual(this.serviceProvider, trackNetworkInformation.serviceProvider);
     }
 
     public int hashCode() {
@@ -31,11 +31,11 @@ public final /* data */ class TrackNetworkInformation {
     }
 
     public String toString() {
-        StringBuilder sbU = outline.U("TrackNetworkInformation(connectionType=");
-        sbU.append(this.connectionType);
-        sbU.append(", effectiveConnectionSpeed=");
-        sbU.append(this.effectiveConnectionSpeed);
-        sbU.append(", serviceProvider=");
-        return outline.E(sbU, this.serviceProvider, ")");
+        StringBuilder sbM833U = C1643a.m833U("TrackNetworkInformation(connectionType=");
+        sbM833U.append(this.connectionType);
+        sbM833U.append(", effectiveConnectionSpeed=");
+        sbM833U.append(this.effectiveConnectionSpeed);
+        sbM833U.append(", serviceProvider=");
+        return C1643a.m817E(sbM833U, this.serviceProvider, ")");
     }
 }

@@ -1,5 +1,6 @@
 package com.google.android.material.slider;
 
+import android.R;
 import android.content.Context;
 import android.content.res.ColorStateList;
 import android.content.res.TypedArray;
@@ -12,7 +13,7 @@ import androidx.annotation.Dimension;
 import androidx.annotation.IntRange;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import com.google.android.material.R;
+import com.google.android.material.C10817R;
 
 /* JADX INFO: loaded from: classes3.dex */
 public class Slider extends BaseSlider<Slider, OnChangeListener, OnSliderTouchListener> {
@@ -354,12 +355,12 @@ public class Slider extends BaseSlider<Slider, OnChangeListener, OnSliderTouchLi
     }
 
     public Slider(@NonNull Context context, @Nullable AttributeSet attributeSet) {
-        this(context, attributeSet, R.attr.sliderStyle);
+        this(context, attributeSet, C10817R.attr.sliderStyle);
     }
 
     public Slider(@NonNull Context context, @Nullable AttributeSet attributeSet, int i) {
         super(context, attributeSet, i);
-        TypedArray typedArrayObtainStyledAttributes = context.obtainStyledAttributes(attributeSet, new int[]{android.R.attr.value});
+        TypedArray typedArrayObtainStyledAttributes = context.obtainStyledAttributes(attributeSet, new int[]{R.attr.value});
         if (typedArrayObtainStyledAttributes.hasValue(0)) {
             setValue(typedArrayObtainStyledAttributes.getFloat(0, 0.0f));
         }

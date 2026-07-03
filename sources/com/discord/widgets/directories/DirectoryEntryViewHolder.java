@@ -3,11 +3,11 @@ package com.discord.widgets.directories;
 import android.view.View;
 import com.discord.api.directory.DirectoryEntryGuild;
 import com.discord.databinding.DirectoryEntryListItemBinding;
-import com.discord.utilities.guilds.GuildUtils;
+import com.discord.utilities.guilds.GuildUtilsKt;
 import com.discord.utilities.icon.IconUtils;
 import com.discord.views.directories.ServerDiscoveryItem;
 import com.discord.widgets.directories.DirectoryChannelItem;
-import d0.z.d.Intrinsics3;
+import p507d0.p592z.p594d.C12238m;
 
 /* JADX INFO: compiled from: WidgetDirectoryEntryViewHolder.kt */
 /* JADX INFO: loaded from: classes2.dex */
@@ -16,9 +16,9 @@ public final class DirectoryEntryViewHolder extends DirectoryChannelViewHolder {
 
     /* JADX WARN: Illegal instructions before constructor call */
     public DirectoryEntryViewHolder(DirectoryEntryListItemBinding directoryEntryListItemBinding) {
-        Intrinsics3.checkNotNullParameter(directoryEntryListItemBinding, "viewBinding");
-        ServerDiscoveryItem serverDiscoveryItem = directoryEntryListItemBinding.a;
-        Intrinsics3.checkNotNullExpressionValue(serverDiscoveryItem, "viewBinding.root");
+        C12238m.checkNotNullParameter(directoryEntryListItemBinding, "viewBinding");
+        ServerDiscoveryItem serverDiscoveryItem = directoryEntryListItemBinding.f15042a;
+        C12238m.checkNotNullExpressionValue(serverDiscoveryItem, "viewBinding.root");
         super(serverDiscoveryItem);
         this.viewBinding = directoryEntryListItemBinding;
     }
@@ -26,8 +26,8 @@ public final class DirectoryEntryViewHolder extends DirectoryChannelViewHolder {
     @Override // com.discord.widgets.directories.DirectoryChannelViewHolder
     public void bind(DirectoryChannelItem item, final DirectoryChannelItemClickInterface listener) {
         final DirectoryEntryData directoryEntryData;
-        Intrinsics3.checkNotNullParameter(item, "item");
-        Intrinsics3.checkNotNullParameter(listener, "listener");
+        C12238m.checkNotNullParameter(item, "item");
+        C12238m.checkNotNullParameter(listener, "listener");
         if (!(item instanceof DirectoryChannelItem.DirectoryItem)) {
             item = null;
         }
@@ -36,7 +36,7 @@ public final class DirectoryEntryViewHolder extends DirectoryChannelViewHolder {
             return;
         }
         final DirectoryEntryGuild entry = directoryEntryData.getEntry();
-        ServerDiscoveryItem serverDiscoveryItem = this.viewBinding.f2096b;
+        ServerDiscoveryItem serverDiscoveryItem = this.viewBinding.f15043b;
         serverDiscoveryItem.setTitle(entry.getGuild().getName());
         serverDiscoveryItem.setDescription(entry.getDescription());
         Integer approximateMemberCount = entry.getGuild().getApproximateMemberCount();
@@ -44,9 +44,9 @@ public final class DirectoryEntryViewHolder extends DirectoryChannelViewHolder {
         Integer approximatePresenceCount = entry.getGuild().getApproximatePresenceCount();
         serverDiscoveryItem.setOnline(approximatePresenceCount != null ? approximatePresenceCount.intValue() : 0);
         String forGuild$default = IconUtils.getForGuild$default(Long.valueOf(entry.getGuild().getId()), entry.getGuild().getIcon(), null, false, null, 28, null);
-        String strComputeShortName = GuildUtils.computeShortName(entry.getGuild().getName());
-        Intrinsics3.checkNotNullParameter(strComputeShortName, "fallbackText");
-        serverDiscoveryItem.binding.f.a(forGuild$default, strComputeShortName);
+        String strComputeShortName = GuildUtilsKt.computeShortName(entry.getGuild().getName());
+        C12238m.checkNotNullParameter(strComputeShortName, "fallbackText");
+        serverDiscoveryItem.binding.f872f.m8545a(forGuild$default, strComputeShortName);
         if (directoryEntryData.getHasJoinedGuild()) {
             serverDiscoveryItem.setJoinButtonOnClickListener(null);
             serverDiscoveryItem.setJoinedButtonOnClickListener(new View.OnClickListener() { // from class: com.discord.widgets.directories.DirectoryEntryViewHolder$bind$$inlined$apply$lambda$2

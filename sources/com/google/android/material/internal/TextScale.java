@@ -17,18 +17,21 @@ import java.util.Map;
 public class TextScale extends Transition {
     private static final String PROPNAME_SCALE = "android:textscale:scale";
 
-    public class a implements ValueAnimator.AnimatorUpdateListener {
-        public final /* synthetic */ TextView a;
+    /* JADX INFO: renamed from: com.google.android.material.internal.TextScale$a */
+    public class C10947a implements ValueAnimator.AnimatorUpdateListener {
 
-        public a(TextScale textScale, TextView textView) {
-            this.a = textView;
+        /* JADX INFO: renamed from: a */
+        public final /* synthetic */ TextView f21046a;
+
+        public C10947a(TextScale textScale, TextView textView) {
+            this.f21046a = textView;
         }
 
         @Override // android.animation.ValueAnimator.AnimatorUpdateListener
         public void onAnimationUpdate(@NonNull ValueAnimator valueAnimator) {
             float fFloatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-            this.a.setScaleX(fFloatValue);
-            this.a.setScaleY(fFloatValue);
+            this.f21046a.setScaleX(fFloatValue);
+            this.f21046a.setScaleY(fFloatValue);
         }
     }
 
@@ -67,7 +70,7 @@ public class TextScale extends Transition {
             return null;
         }
         ValueAnimator valueAnimatorOfFloat = ValueAnimator.ofFloat(fFloatValue, fFloatValue2);
-        valueAnimatorOfFloat.addUpdateListener(new a(this, textView));
+        valueAnimatorOfFloat.addUpdateListener(new C10947a(this, textView));
         return valueAnimatorOfFloat;
     }
 }

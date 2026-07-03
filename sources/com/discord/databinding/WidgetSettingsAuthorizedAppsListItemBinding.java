@@ -12,49 +12,57 @@ import com.google.android.material.card.MaterialCardView;
 /* JADX INFO: loaded from: classes.dex */
 public final class WidgetSettingsAuthorizedAppsListItemBinding implements ViewBinding {
 
+    /* JADX INFO: renamed from: a */
     @NonNull
-    public final MaterialCardView a;
+    public final MaterialCardView f17863a;
 
-    /* JADX INFO: renamed from: b, reason: collision with root package name */
+    /* JADX INFO: renamed from: b */
     @NonNull
-    public final AppCompatImageView f2604b;
+    public final AppCompatImageView f17864b;
 
+    /* JADX INFO: renamed from: c */
     @NonNull
-    public final TextView c;
+    public final TextView f17865c;
 
+    /* JADX INFO: renamed from: d */
     @NonNull
-    public final TextView d;
+    public final TextView f17866d;
 
+    /* JADX INFO: renamed from: e */
     @NonNull
-    public final SimpleDraweeView e;
+    public final SimpleDraweeView f17867e;
 
+    /* JADX INFO: renamed from: f */
     @NonNull
-    public final MaterialCardView f;
+    public final MaterialCardView f17868f;
 
+    /* JADX INFO: renamed from: g */
     @NonNull
-    public final TextView g;
+    public final TextView f17869g;
 
+    /* JADX INFO: renamed from: h */
     @NonNull
-    public final TextView h;
+    public final TextView f17870h;
 
+    /* JADX INFO: renamed from: i */
     @NonNull
-    public final RecyclerView i;
+    public final RecyclerView f17871i;
 
     public WidgetSettingsAuthorizedAppsListItemBinding(@NonNull MaterialCardView materialCardView, @NonNull AppCompatImageView appCompatImageView, @NonNull TextView textView, @NonNull TextView textView2, @NonNull SimpleDraweeView simpleDraweeView, @NonNull MaterialCardView materialCardView2, @NonNull TextView textView3, @NonNull TextView textView4, @NonNull RecyclerView recyclerView) {
-        this.a = materialCardView;
-        this.f2604b = appCompatImageView;
-        this.c = textView;
-        this.d = textView2;
-        this.e = simpleDraweeView;
-        this.f = materialCardView2;
-        this.g = textView3;
-        this.h = textView4;
-        this.i = recyclerView;
+        this.f17863a = materialCardView;
+        this.f17864b = appCompatImageView;
+        this.f17865c = textView;
+        this.f17866d = textView2;
+        this.f17867e = simpleDraweeView;
+        this.f17868f = materialCardView2;
+        this.f17869g = textView3;
+        this.f17870h = textView4;
+        this.f17871i = recyclerView;
     }
 
     @Override // androidx.viewbinding.ViewBinding
     @NonNull
     public View getRoot() {
-        return this.a;
+        return this.f17863a;
     }
 }

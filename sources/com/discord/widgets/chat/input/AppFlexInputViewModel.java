@@ -4,16 +4,12 @@ import android.view.View;
 import androidx.annotation.MainThread;
 import androidx.appcompat.widget.ActivityChooserModel;
 import androidx.fragment.app.FragmentActivity;
-import b.a.d.AppViewModel;
-import b.b.a.h.FlexInputEvent;
-import b.d.b.a.outline;
-import b.i.a.f.e.o.f;
-import com.discord.R;
+import com.discord.C5419R;
 import com.discord.api.channel.Channel;
 import com.discord.api.channel.ChannelUtils;
 import com.discord.api.permission.Permission;
 import com.discord.api.sticker.Sticker;
-import com.discord.app.AppPermissions2;
+import com.discord.app.AppPermissionsRequests;
 import com.discord.panels.PanelState;
 import com.discord.stores.StoreAnalytics;
 import com.discord.stores.StoreChannelsSelected;
@@ -25,27 +21,17 @@ import com.discord.utilities.analytics.ChatInputComponentTypes;
 import com.discord.utilities.analytics.Traits;
 import com.discord.utilities.channel.ChannelSelector;
 import com.discord.utilities.error.Error;
+import com.discord.utilities.p501rx.ObservableExtensionsKt;
 import com.discord.utilities.permissions.PermissionUtils;
-import com.discord.utilities.rx.ObservableExtensionsKt;
 import com.discord.utilities.stickers.StickerUtils;
 import com.discord.widgets.chat.input.AppFlexInputViewModel;
 import com.discord.widgets.home.WidgetHome;
 import com.discord.widgets.settings.premium.WidgetSettingsGifting;
+import com.lytefast.flexinput.FlexInputAttachmentListener;
 import com.lytefast.flexinput.FlexInputListener;
-import com.lytefast.flexinput.FlexInputListener2;
 import com.lytefast.flexinput.model.Attachment;
 import com.lytefast.flexinput.viewmodel.FlexInputState;
 import com.lytefast.flexinput.viewmodel.FlexInputViewModel;
-import d0.t.Collections2;
-import d0.t.CollectionsJVM;
-import d0.t.Sets5;
-import d0.t._Collections;
-import d0.z.d.FunctionReferenceImpl;
-import d0.z.d.Intrinsics3;
-import d0.z.d.Lambda;
-import d0.z.d.Reflection2;
-import d0.z.d.TypeIntrinsics;
-import j0.k.Func1;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
@@ -54,43 +40,57 @@ import kotlin.Unit;
 import kotlin.jvm.functions.Function0;
 import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.DefaultConstructorMarker;
-import rx.Observable;
-import rx.Subscription;
-import rx.functions.Func6;
-import rx.subjects.PublishSubject;
+import p007b.p008a.p018d.AbstractC0859d0;
+import p007b.p076b.p077a.p083h.AbstractC1451a;
+import p007b.p100d.p104b.p105a.C1643a;
+import p007b.p225i.p226a.p288f.p299e.p308o.C3404f;
+import p507d0.p580t.C12145m;
+import p507d0.p580t.C12147n;
+import p507d0.p580t.C12148n0;
+import p507d0.p580t.C12163u;
+import p507d0.p592z.p594d.AbstractC12240o;
+import p507d0.p592z.p594d.C12216a0;
+import p507d0.p592z.p594d.C12224e0;
+import p507d0.p592z.p594d.C12236k;
+import p507d0.p592z.p594d.C12238m;
+import p637j0.p641k.InterfaceC12589b;
+import p658rx.Observable;
+import p658rx.Subscription;
+import p658rx.functions.Func6;
+import p658rx.subjects.PublishSubject;
 
 /* JADX INFO: compiled from: AppFlexInputViewModel.kt */
 /* JADX INFO: loaded from: classes2.dex */
-public final class AppFlexInputViewModel extends AppViewModel<FlexInputState> implements FlexInputViewModel {
+public final class AppFlexInputViewModel extends AbstractC0859d0<FlexInputState> implements FlexInputViewModel {
     private static final String CHAT_GIFTING_NOTICE = "CHAT_GIFTING_NOTICE";
 
     /* JADX INFO: renamed from: Companion, reason: from kotlin metadata */
     public static final Companion INSTANCE = new Companion(null);
     private boolean attachmentView;
-    private PublishSubject<FlexInputEvent> eventSubject;
-    private final AppPermissions2 permissionRequests;
-    private FlexInputListener2 singleAttachmentSelectedListener;
+    private PublishSubject<AbstractC1451a> eventSubject;
+    private final AppPermissionsRequests permissionRequests;
+    private FlexInputAttachmentListener singleAttachmentSelectedListener;
     private boolean singleSelectMode;
     private final StoreAnalytics storeAnalytics;
     private final StoreExpressionSuggestions storeExpressionSuggestions;
     private final StoreStickers storeStickers;
 
-    /* JADX INFO: renamed from: com.discord.widgets.chat.input.AppFlexInputViewModel$1, reason: invalid class name */
+    /* JADX INFO: renamed from: com.discord.widgets.chat.input.AppFlexInputViewModel$1 */
     /* JADX INFO: compiled from: AppFlexInputViewModel.kt */
-    public static final /* synthetic */ class AnonymousClass1 extends FunctionReferenceImpl implements Function1<StoreState, Unit> {
-        public AnonymousClass1(AppFlexInputViewModel appFlexInputViewModel) {
+    public static final /* synthetic */ class C76771 extends C12236k implements Function1<StoreState, Unit> {
+        public C76771(AppFlexInputViewModel appFlexInputViewModel) {
             super(1, appFlexInputViewModel, AppFlexInputViewModel.class, "handleStoreState", "handleStoreState(Lcom/discord/widgets/chat/input/AppFlexInputViewModel$StoreState;)V", 0);
         }
 
         @Override // kotlin.jvm.functions.Function1
         public /* bridge */ /* synthetic */ Unit invoke(StoreState storeState) {
             invoke2(storeState);
-            return Unit.a;
+            return Unit.f27425a;
         }
 
         /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
         public final void invoke2(StoreState storeState) {
-            Intrinsics3.checkNotNullParameter(storeState, "p1");
+            C12238m.checkNotNullParameter(storeState, "p1");
             ((AppFlexInputViewModel) this.receiver).handleStoreState(storeState);
         }
     }
@@ -101,22 +101,22 @@ public final class AppFlexInputViewModel extends AppViewModel<FlexInputState> im
         }
 
         private final Observable<StoreState> observeStores() {
-            Observable observableY = StoreStream.INSTANCE.getChannelsSelected().observeResolvedSelectedChannel().Y(new Func1<StoreChannelsSelected.ResolvedSelectedChannel, Observable<? extends StoreState>>() { // from class: com.discord.widgets.chat.input.AppFlexInputViewModel$Companion$observeStores$1
-                @Override // j0.k.Func1
+            Observable observableM11099Y = StoreStream.INSTANCE.getChannelsSelected().observeResolvedSelectedChannel().m11099Y(new InterfaceC12589b<StoreChannelsSelected.ResolvedSelectedChannel, Observable<? extends StoreState>>() { // from class: com.discord.widgets.chat.input.AppFlexInputViewModel$Companion$observeStores$1
+                @Override // p637j0.p641k.InterfaceC12589b
                 public final Observable<? extends AppFlexInputViewModel.StoreState> call(final StoreChannelsSelected.ResolvedSelectedChannel resolvedSelectedChannel) {
                     final Channel channelOrParent = resolvedSelectedChannel.getChannelOrParent();
                     StoreStream.Companion companion = StoreStream.INSTANCE;
-                    return Observable.f(companion.getNavigation().observeLeftPanelState(), companion.getNavigation().observeRightPanelState(), companion.getPermissions().observePermissionsForChannel(channelOrParent != null ? channelOrParent.getId() : 0L), companion.getNotices().getNotices(), companion.getUserSettings().observeIsStickerSuggestionsEnabled(), companion.getExpressionSuggestions().observeSuggestionsEnabled(), new Func6<PanelState, PanelState, Long, StoreNotices.Notice, Boolean, Boolean, AppFlexInputViewModel.StoreState>() { // from class: com.discord.widgets.chat.input.AppFlexInputViewModel$Companion$observeStores$1.1
+                    return Observable.m11071f(companion.getNavigation().observeLeftPanelState(), companion.getNavigation().observeRightPanelState(), companion.getPermissions().observePermissionsForChannel(channelOrParent != null ? channelOrParent.getId() : 0L), companion.getNotices().getNotices(), companion.getUserSettings().observeIsStickerSuggestionsEnabled(), companion.getExpressionSuggestions().observeSuggestionsEnabled(), new Func6<PanelState, PanelState, Long, StoreNotices.Notice, Boolean, Boolean, AppFlexInputViewModel.StoreState>() { // from class: com.discord.widgets.chat.input.AppFlexInputViewModel$Companion$observeStores$1.1
                         /* JADX WARN: Code duplicated, block: B:7:0x0028  */
-                        @Override // rx.functions.Func6
+                        @Override // p658rx.functions.Func6
                         public final AppFlexInputViewModel.StoreState call(PanelState panelState, PanelState panelState2, Long l, StoreNotices.Notice notice, Boolean bool, Boolean bool2) {
                             boolean z2;
-                            Intrinsics3.checkNotNullExpressionValue(panelState, "leftPanelState");
-                            Intrinsics3.checkNotNullExpressionValue(panelState2, "rightPanelState");
+                            C12238m.checkNotNullExpressionValue(panelState, "leftPanelState");
+                            C12238m.checkNotNullExpressionValue(panelState2, "rightPanelState");
                             Channel channel = channelOrParent;
-                            Intrinsics3.checkNotNullExpressionValue(bool, "stickerSuggestionsEnabled");
+                            C12238m.checkNotNullExpressionValue(bool, "stickerSuggestionsEnabled");
                             if (bool.booleanValue()) {
-                                Intrinsics3.checkNotNullExpressionValue(bool2, "expressionSuggestionsEnabled");
+                                C12238m.checkNotNullExpressionValue(bool2, "expressionSuggestionsEnabled");
                                 if (bool2.booleanValue()) {
                                     z2 = true;
                                 } else {
@@ -130,8 +130,8 @@ public final class AppFlexInputViewModel extends AppViewModel<FlexInputState> im
                     });
                 }
             });
-            Intrinsics3.checkNotNullExpressionValue(observableY, "StoreStream\n          .g…            }\n          }");
-            return observableY;
+            C12238m.checkNotNullExpressionValue(observableM11099Y, "StoreStream\n          .g…            }\n          }");
+            return observableM11099Y;
         }
 
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
@@ -150,8 +150,8 @@ public final class AppFlexInputViewModel extends AppViewModel<FlexInputState> im
         private final boolean stickerSuggestionsEnabled;
 
         public StoreState(PanelState panelState, PanelState panelState2, Channel channel, Long l, StoreNotices.Notice notice, boolean z2, boolean z3) {
-            Intrinsics3.checkNotNullParameter(panelState, "leftPanelState");
-            Intrinsics3.checkNotNullParameter(panelState2, "rightPanelState");
+            C12238m.checkNotNullParameter(panelState, "leftPanelState");
+            C12238m.checkNotNullParameter(panelState2, "rightPanelState");
             this.leftPanelState = panelState;
             this.rightPanelState = panelState2;
             this.selectedChannel = channel;
@@ -227,8 +227,8 @@ public final class AppFlexInputViewModel extends AppViewModel<FlexInputState> im
         }
 
         public final StoreState copy(PanelState leftPanelState, PanelState rightPanelState, Channel selectedChannel, Long channelPermission, StoreNotices.Notice notice, boolean stickerSuggestionsEnabled, boolean isThreadCreation) {
-            Intrinsics3.checkNotNullParameter(leftPanelState, "leftPanelState");
-            Intrinsics3.checkNotNullParameter(rightPanelState, "rightPanelState");
+            C12238m.checkNotNullParameter(leftPanelState, "leftPanelState");
+            C12238m.checkNotNullParameter(rightPanelState, "rightPanelState");
             return new StoreState(leftPanelState, rightPanelState, selectedChannel, channelPermission, notice, stickerSuggestionsEnabled, isThreadCreation);
         }
 
@@ -240,7 +240,7 @@ public final class AppFlexInputViewModel extends AppViewModel<FlexInputState> im
                 return false;
             }
             StoreState storeState = (StoreState) other;
-            return Intrinsics3.areEqual(this.leftPanelState, storeState.leftPanelState) && Intrinsics3.areEqual(this.rightPanelState, storeState.rightPanelState) && Intrinsics3.areEqual(this.selectedChannel, storeState.selectedChannel) && Intrinsics3.areEqual(this.channelPermission, storeState.channelPermission) && Intrinsics3.areEqual(this.notice, storeState.notice) && this.stickerSuggestionsEnabled == storeState.stickerSuggestionsEnabled && this.isThreadCreation == storeState.isThreadCreation;
+            return C12238m.areEqual(this.leftPanelState, storeState.leftPanelState) && C12238m.areEqual(this.rightPanelState, storeState.rightPanelState) && C12238m.areEqual(this.selectedChannel, storeState.selectedChannel) && C12238m.areEqual(this.channelPermission, storeState.channelPermission) && C12238m.areEqual(this.notice, storeState.notice) && this.stickerSuggestionsEnabled == storeState.stickerSuggestionsEnabled && this.isThreadCreation == storeState.isThreadCreation;
         }
 
         public final Long getChannelPermission() {
@@ -302,46 +302,46 @@ public final class AppFlexInputViewModel extends AppViewModel<FlexInputState> im
         }
 
         public String toString() {
-            StringBuilder sbU = outline.U("StoreState(leftPanelState=");
-            sbU.append(this.leftPanelState);
-            sbU.append(", rightPanelState=");
-            sbU.append(this.rightPanelState);
-            sbU.append(", selectedChannel=");
-            sbU.append(this.selectedChannel);
-            sbU.append(", channelPermission=");
-            sbU.append(this.channelPermission);
-            sbU.append(", notice=");
-            sbU.append(this.notice);
-            sbU.append(", stickerSuggestionsEnabled=");
-            sbU.append(this.stickerSuggestionsEnabled);
-            sbU.append(", isThreadCreation=");
-            return outline.O(sbU, this.isThreadCreation, ")");
+            StringBuilder sbM833U = C1643a.m833U("StoreState(leftPanelState=");
+            sbM833U.append(this.leftPanelState);
+            sbM833U.append(", rightPanelState=");
+            sbM833U.append(this.rightPanelState);
+            sbM833U.append(", selectedChannel=");
+            sbM833U.append(this.selectedChannel);
+            sbM833U.append(", channelPermission=");
+            sbM833U.append(this.channelPermission);
+            sbM833U.append(", notice=");
+            sbM833U.append(this.notice);
+            sbM833U.append(", stickerSuggestionsEnabled=");
+            sbM833U.append(this.stickerSuggestionsEnabled);
+            sbM833U.append(", isThreadCreation=");
+            return C1643a.m827O(sbM833U, this.isThreadCreation, ")");
         }
     }
 
-    /* JADX INFO: renamed from: com.discord.widgets.chat.input.AppFlexInputViewModel$getMatchingStickers$1, reason: invalid class name */
+    /* JADX INFO: renamed from: com.discord.widgets.chat.input.AppFlexInputViewModel$getMatchingStickers$1 */
     /* JADX INFO: compiled from: AppFlexInputViewModel.kt */
-    public static final class AnonymousClass1 extends Lambda implements Function1<String, Set<? extends Sticker>> {
-        public static final AnonymousClass1 INSTANCE = new AnonymousClass1();
+    public static final class C76791 extends AbstractC12240o implements Function1<String, Set<? extends Sticker>> {
+        public static final C76791 INSTANCE = new C76791();
 
-        public AnonymousClass1() {
+        public C76791() {
             super(1);
         }
 
         @Override // kotlin.jvm.functions.Function1
         public final Set<Sticker> invoke(String str) {
-            Intrinsics3.checkNotNullParameter(str, "inputText");
+            C12238m.checkNotNullParameter(str, "inputText");
             StickerUtils stickerUtils = StickerUtils.INSTANCE;
             return StickerUtils.findStickerMatches$default(stickerUtils, str, StickerUtils.getStickersForAutocomplete$default(stickerUtils, null, null, null, null, null, 31, null), false, 4, null);
         }
     }
 
-    /* JADX INFO: renamed from: com.discord.widgets.chat.input.AppFlexInputViewModel$onGiftButtonClicked$1, reason: invalid class name */
+    /* JADX INFO: renamed from: com.discord.widgets.chat.input.AppFlexInputViewModel$onGiftButtonClicked$1 */
     /* JADX INFO: compiled from: AppFlexInputViewModel.kt */
-    public static final class AnonymousClass1 extends Lambda implements Function1<FragmentActivity, Boolean> {
-        public static final AnonymousClass1 INSTANCE = new AnonymousClass1();
+    public static final class C76801 extends AbstractC12240o implements Function1<FragmentActivity, Boolean> {
+        public static final C76801 INSTANCE = new C76801();
 
-        public AnonymousClass1() {
+        public C76801() {
             super(1);
         }
 
@@ -352,7 +352,7 @@ public final class AppFlexInputViewModel extends AppViewModel<FlexInputState> im
 
         /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
         public final boolean invoke2(FragmentActivity fragmentActivity) {
-            Intrinsics3.checkNotNullParameter(fragmentActivity, ActivityChooserModel.ATTRIBUTE_ACTIVITY);
+            C12238m.checkNotNullParameter(fragmentActivity, ActivityChooserModel.ATTRIBUTE_ACTIVITY);
             StoreStream.Companion companion = StoreStream.INSTANCE;
             Channel channelFindChannelById = companion.getChannels().findChannelById(companion.getChannelsSelected().getId());
             WidgetSettingsGifting.INSTANCE.launch(fragmentActivity, new Traits.Location((channelFindChannelById == null || channelFindChannelById.getGuildId() != 0) ? Traits.Location.Page.GUILD_CHANNEL : "DM Channel", Traits.Location.Section.CHANNEL_TEXT_AREA, "Button Icon", "gift", null, 16, null));
@@ -361,17 +361,17 @@ public final class AppFlexInputViewModel extends AppViewModel<FlexInputState> im
         }
     }
 
-    /* JADX INFO: renamed from: com.discord.widgets.chat.input.AppFlexInputViewModel$onSendButtonClicked$1, reason: invalid class name */
+    /* JADX INFO: renamed from: com.discord.widgets.chat.input.AppFlexInputViewModel$onSendButtonClicked$1 */
     /* JADX INFO: compiled from: AppFlexInputViewModel.kt */
-    public static final class AnonymousClass1 extends Lambda implements Function1<Boolean, Unit> {
-        public AnonymousClass1() {
+    public static final class C76811 extends AbstractC12240o implements Function1<Boolean, Unit> {
+        public C76811() {
             super(1);
         }
 
         @Override // kotlin.jvm.functions.Function1
         public /* bridge */ /* synthetic */ Unit invoke(Boolean bool) {
             invoke(bool.booleanValue());
-            return Unit.a;
+            return Unit.f27425a;
         }
 
         public final void invoke(boolean z2) {
@@ -381,8 +381,8 @@ public final class AppFlexInputViewModel extends AppViewModel<FlexInputState> im
         }
     }
 
-    public /* synthetic */ AppFlexInputViewModel(AppPermissions2 appPermissions2, FlexInputState flexInputState, Observable observable, StoreStickers storeStickers, StoreAnalytics storeAnalytics, StoreExpressionSuggestions storeExpressionSuggestions, int i, DefaultConstructorMarker defaultConstructorMarker) {
-        this(appPermissions2, (i & 2) != 0 ? new FlexInputState(null, false, null, false, false, null, false, false, false, false, false, null, null, 8191) : flexInputState, (i & 4) != 0 ? INSTANCE.observeStores() : observable, (i & 8) != 0 ? StoreStream.INSTANCE.getStickers() : storeStickers, (i & 16) != 0 ? StoreStream.INSTANCE.getAnalytics() : storeAnalytics, (i & 32) != 0 ? StoreStream.INSTANCE.getExpressionSuggestions() : storeExpressionSuggestions);
+    public /* synthetic */ AppFlexInputViewModel(AppPermissionsRequests appPermissionsRequests, FlexInputState flexInputState, Observable observable, StoreStickers storeStickers, StoreAnalytics storeAnalytics, StoreExpressionSuggestions storeExpressionSuggestions, int i, DefaultConstructorMarker defaultConstructorMarker) {
+        this(appPermissionsRequests, (i & 2) != 0 ? new FlexInputState(null, false, null, false, false, null, false, false, false, false, false, null, null, 8191) : flexInputState, (i & 4) != 0 ? INSTANCE.observeStores() : observable, (i & 8) != 0 ? StoreStream.INSTANCE.getStickers() : storeStickers, (i & 16) != 0 ? StoreStream.INSTANCE.getAnalytics() : storeAnalytics, (i & 32) != 0 ? StoreStream.INSTANCE.getExpressionSuggestions() : storeExpressionSuggestions);
     }
 
     public static /* synthetic */ void clean$default(AppFlexInputViewModel appFlexInputViewModel, boolean z2, int i, Object obj) {
@@ -400,8 +400,8 @@ public final class AppFlexInputViewModel extends AppViewModel<FlexInputState> im
         Channel selectedChannel = storeState.getSelectedChannel();
         Long channelPermission = storeState.getChannelPermission();
         PanelState leftPanelState = storeState.getLeftPanelState();
-        PanelState.a aVar = PanelState.a.a;
-        boolean z4 = (Intrinsics3.areEqual(leftPanelState, aVar) ^ true) || (Intrinsics3.areEqual(storeState.getRightPanelState(), aVar) ^ true);
+        PanelState.C5578a c5578a = PanelState.C5578a.f18640a;
+        boolean z4 = (C12238m.areEqual(leftPanelState, c5578a) ^ true) || (C12238m.areEqual(storeState.getRightPanelState(), c5578a) ^ true);
         boolean z5 = (storeState.getNotice() == null || storeState.getNotice().isInAppNotification() || storeState.getNotice().isPopup()) ? false : true;
         if (selectedChannel == null) {
             zCan = false;
@@ -414,7 +414,7 @@ public final class AppFlexInputViewModel extends AppViewModel<FlexInputState> im
         } else {
             z2 = zCan;
         }
-        boolean z6 = selectedChannel != null && (ChannelUtils.B(selectedChannel) || PermissionUtils.can(Permission.ATTACH_FILES, channelPermission));
+        boolean z6 = selectedChannel != null && (ChannelUtils.m7667B(selectedChannel) || PermissionUtils.can(Permission.ATTACH_FILES, channelPermission));
         boolean z7 = flexInputStateRequireViewState.showExpressionTray;
         if (z5 || z4) {
             hideKeyboard();
@@ -422,25 +422,25 @@ public final class AppFlexInputViewModel extends AppViewModel<FlexInputState> im
         } else {
             z3 = z7;
         }
-        updateViewState(FlexInputState.a(flexInputStateRequireViewState, null, false, null, false, false, null, z2, z6, z3, false, storeState.getStickerSuggestionsEnabled(), selectedChannel != null ? Long.valueOf(selectedChannel.getId()) : null, selectedChannel != null ? Long.valueOf(selectedChannel.getGuildId()) : null, 575));
+        updateViewState(FlexInputState.m9302a(flexInputStateRequireViewState, null, false, null, false, false, null, z2, z6, z3, false, storeState.getStickerSuggestionsEnabled(), selectedChannel != null ? Long.valueOf(selectedChannel.getId()) : null, selectedChannel != null ? Long.valueOf(selectedChannel.getGuildId()) : null, 575));
     }
 
     private final void showKeyboard() {
-        PublishSubject<FlexInputEvent> publishSubject = this.eventSubject;
-        publishSubject.k.onNext(FlexInputEvent.c.a);
+        PublishSubject<AbstractC1451a> publishSubject = this.eventSubject;
+        publishSubject.f27650k.onNext(AbstractC1451a.c.f2204a);
     }
 
     @MainThread
     public final void clean(boolean clearText) {
         FlexInputState viewState = getViewState();
         if (viewState != null) {
-            updateViewState(FlexInputState.a(viewState, clearText ? "" : viewState.inputText, true, Collections2.emptyList(), false, false, null, false, false, false, false, false, null, null, 8152));
+            updateViewState(FlexInputState.m9302a(viewState, clearText ? "" : viewState.inputText, true, C12147n.emptyList(), false, false, null, false, false, false, false, false, null, null, 8152));
         }
     }
 
     public final void focus() {
-        PublishSubject<FlexInputEvent> publishSubject = this.eventSubject;
-        publishSubject.k.onNext(FlexInputEvent.a.a);
+        PublishSubject<AbstractC1451a> publishSubject = this.eventSubject;
+        publishSubject.f27650k.onNext(AbstractC1451a.a.f2202a);
     }
 
     public final boolean getAttachmentView() {
@@ -448,13 +448,13 @@ public final class AppFlexInputViewModel extends AppViewModel<FlexInputState> im
     }
 
     public final List<Sticker> getMatchingStickers(String inputText) {
-        Intrinsics3.checkNotNullParameter(inputText, "inputText");
-        AnonymousClass1 anonymousClass1 = AnonymousClass1.INSTANCE;
+        C12238m.checkNotNullParameter(inputText, "inputText");
+        C76791 c76791 = C76791.INSTANCE;
         int length = inputText.length();
-        return _Collections.toList(3 <= length && 50 >= length ? anonymousClass1.invoke(inputText) : Sets5.emptySet());
+        return C12163u.toList(3 <= length && 50 >= length ? c76791.invoke(inputText) : C12148n0.emptySet());
     }
 
-    public final FlexInputListener2 getSingleAttachmentSelectedListener() {
+    public final FlexInputAttachmentListener getSingleAttachmentSelectedListener() {
         return this.singleAttachmentSelectedListener;
     }
 
@@ -474,13 +474,13 @@ public final class AppFlexInputViewModel extends AppViewModel<FlexInputState> im
         if (viewState == null || !viewState.showExpressionTray) {
             return false;
         }
-        updateViewState(FlexInputState.a(viewState, null, false, null, false, false, null, false, false, false, false, false, null, null, 7935));
+        updateViewState(FlexInputState.m9302a(viewState, null, false, null, false, false, null, false, false, false, false, false, null, null, 7935));
         return true;
     }
 
     public final void hideKeyboard() {
-        PublishSubject<FlexInputEvent> publishSubject = this.eventSubject;
-        publishSubject.k.onNext(FlexInputEvent.b.a);
+        PublishSubject<AbstractC1451a> publishSubject = this.eventSubject;
+        publishSubject.f27650k.onNext(AbstractC1451a.b.f2203a);
     }
 
     public boolean isAttachmentViewEnabled() {
@@ -494,9 +494,9 @@ public final class AppFlexInputViewModel extends AppViewModel<FlexInputState> im
 
     @Override // com.lytefast.flexinput.viewmodel.FlexInputViewModel
     @MainThread
-    public Observable<FlexInputEvent> observeEvents() {
-        PublishSubject<FlexInputEvent> publishSubject = this.eventSubject;
-        Intrinsics3.checkNotNullExpressionValue(publishSubject, "eventSubject");
+    public Observable<AbstractC1451a> observeEvents() {
+        PublishSubject<AbstractC1451a> publishSubject = this.eventSubject;
+        C12238m.checkNotNullExpressionValue(publishSubject, "eventSubject");
         return publishSubject;
     }
 
@@ -509,8 +509,8 @@ public final class AppFlexInputViewModel extends AppViewModel<FlexInputState> im
     @Override // com.lytefast.flexinput.viewmodel.FlexInputViewModel
     @MainThread
     public void onAttachmentsUpdated(List<? extends Attachment<? extends Object>> attachments) {
-        Intrinsics3.checkNotNullParameter(attachments, "attachments");
-        updateViewState(FlexInputState.a(requireViewState(), null, false, new ArrayList(attachments), false, false, null, false, false, false, false, false, null, null, 8187));
+        C12238m.checkNotNullParameter(attachments, "attachments");
+        updateViewState(FlexInputState.m9302a(requireViewState(), null, false, new ArrayList(attachments), false, false, null, false, false, false, false, false, null, null, 8187));
     }
 
     @Override // com.lytefast.flexinput.viewmodel.FlexInputViewModel
@@ -519,13 +519,13 @@ public final class AppFlexInputViewModel extends AppViewModel<FlexInputState> im
         if (showKeyboard) {
             showKeyboard();
         }
-        updateViewState(FlexInputState.a(requireViewState(), null, false, null, false, false, null, false, false, false, false, false, null, null, 8159));
+        updateViewState(FlexInputState.m9302a(requireViewState(), null, false, null, false, false, null, false, false, false, false, false, null, null, 8159));
     }
 
     @Override // com.lytefast.flexinput.viewmodel.FlexInputViewModel
     @MainThread
     public void onContentDialogPageChanged(int index) {
-        updateViewState(FlexInputState.a(requireViewState(), null, false, null, false, false, Integer.valueOf(index), false, false, false, false, false, null, null, 8159));
+        updateViewState(FlexInputState.m9302a(requireViewState(), null, false, null, false, false, Integer.valueOf(index), false, false, false, false, false, null, null, 8159));
         if (index == 0) {
             this.storeAnalytics.trackChatInputComponentViewed(ChatInputComponentTypes.MEDIA_PICKER);
         } else if (index == 1) {
@@ -555,7 +555,7 @@ public final class AppFlexInputViewModel extends AppViewModel<FlexInputState> im
     @Override // com.lytefast.flexinput.viewmodel.FlexInputViewModel
     @MainThread
     public void onExpandButtonClicked() {
-        updateViewState(FlexInputState.a(requireViewState(), null, true, null, false, false, null, false, false, false, false, false, null, null, 8189));
+        updateViewState(FlexInputState.m9302a(requireViewState(), null, true, null, false, false, null, false, false, false, false, false, null, null, 8189));
     }
 
     @Override // com.lytefast.flexinput.viewmodel.FlexInputViewModel
@@ -567,7 +567,7 @@ public final class AppFlexInputViewModel extends AppViewModel<FlexInputState> im
         } else {
             hideKeyboard();
         }
-        updateViewState(FlexInputState.a(flexInputStateRequireViewState, null, false, null, false, false, null, false, false, !flexInputStateRequireViewState.showExpressionTray, false, false, null, null, 7935));
+        updateViewState(FlexInputState.m9302a(flexInputStateRequireViewState, null, false, null, false, false, null, false, false, !flexInputStateRequireViewState.showExpressionTray, false, false, null, null, 7935));
     }
 
     @Override // com.lytefast.flexinput.viewmodel.FlexInputViewModel
@@ -582,10 +582,10 @@ public final class AppFlexInputViewModel extends AppViewModel<FlexInputState> im
         FlexInputState flexInputStateRequireViewState = requireViewState();
         if (flexInputStateRequireViewState.ableToAttachFiles) {
             hideKeyboard();
-            updateViewState(FlexInputState.a(flexInputStateRequireViewState, null, false, null, false, false, 0, false, false, false, false, false, null, null, 7903));
+            updateViewState(FlexInputState.m9302a(flexInputStateRequireViewState, null, false, null, false, false, 0, false, false, false, false, false, null, null, 7903));
         } else {
-            PublishSubject<FlexInputEvent> publishSubject = this.eventSubject;
-            publishSubject.k.onNext(new FlexInputEvent.e(R.string.cannot_attach_files));
+            PublishSubject<AbstractC1451a> publishSubject = this.eventSubject;
+            publishSubject.f27650k.onNext(new AbstractC1451a.e(C5419R.string.cannot_attach_files));
         }
     }
 
@@ -593,14 +593,14 @@ public final class AppFlexInputViewModel extends AppViewModel<FlexInputState> im
     @MainThread
     public void onGiftButtonClicked() {
         hideKeyboard();
-        StoreStream.INSTANCE.getNotices().requestToShow(new StoreNotices.Notice(CHAT_GIFTING_NOTICE, null, 0L, 0, false, CollectionsJVM.listOf(Reflection2.getOrCreateKotlinClass(WidgetHome.class)), 0L, false, 0L, AnonymousClass1.INSTANCE, 150, null));
+        StoreStream.INSTANCE.getNotices().requestToShow(new StoreNotices.Notice(CHAT_GIFTING_NOTICE, null, 0L, 0, false, C12145m.listOf(C12216a0.getOrCreateKotlinClass(WidgetHome.class)), 0L, false, 0L, C76801.INSTANCE, 150, null));
     }
 
     @Override // com.lytefast.flexinput.viewmodel.FlexInputViewModel
     @MainThread
     public void onInputTextAppended(String appendText) {
-        Intrinsics3.checkNotNullParameter(appendText, "appendText");
-        f.P0(this, outline.J(new StringBuilder(), requireViewState().inputText, appendText), null, 2, null);
+        C12238m.checkNotNullParameter(appendText, "appendText");
+        C3404f.m4235P0(this, C1643a.m822J(new StringBuilder(), requireViewState().inputText, appendText), null, 2, null);
     }
 
     /* JADX WARN: Code duplicated, block: B:21:0x0049  */
@@ -608,14 +608,14 @@ public final class AppFlexInputViewModel extends AppViewModel<FlexInputState> im
     @MainThread
     public void onInputTextChanged(String inputText, Boolean focused) {
         boolean z2;
-        Intrinsics3.checkNotNullParameter(inputText, "inputText");
+        C12238m.checkNotNullParameter(inputText, "inputText");
         FlexInputState flexInputStateRequireViewState = requireViewState();
-        if (Intrinsics3.areEqual(inputText, flexInputStateRequireViewState.inputText) || !flexInputStateRequireViewState.ableToSendMessages) {
+        if (C12238m.areEqual(inputText, flexInputStateRequireViewState.inputText) || !flexInputStateRequireViewState.ableToSendMessages) {
             return;
         }
-        if (Intrinsics3.areEqual(focused, Boolean.TRUE)) {
+        if (C12238m.areEqual(focused, Boolean.TRUE)) {
             showKeyboard();
-        } else if (Intrinsics3.areEqual(focused, Boolean.FALSE)) {
+        } else if (C12238m.areEqual(focused, Boolean.FALSE)) {
             hideKeyboard();
         }
         if (flexInputStateRequireViewState.showExpandedButtons) {
@@ -633,14 +633,14 @@ public final class AppFlexInputViewModel extends AppViewModel<FlexInputState> im
         if (inputText.length() == 0) {
             this.storeExpressionSuggestions.setExpressionSuggestionsEnabled(true);
         }
-        updateViewState(FlexInputState.a(flexInputStateRequireViewState, inputText, z2, null, false, false, null, false, false, false, false, false, null, null, 8188));
+        updateViewState(FlexInputState.m9302a(flexInputStateRequireViewState, inputText, z2, null, false, false, null, false, false, false, false, false, null, null, 8188));
     }
 
     @Override // com.lytefast.flexinput.viewmodel.FlexInputViewModel
     @MainThread
     public boolean onInputTextClicked() {
         showKeyboard();
-        updateViewState(FlexInputState.a(requireViewState(), null, false, null, false, false, null, false, false, false, false, false, null, null, 7935));
+        updateViewState(FlexInputState.m9302a(requireViewState(), null, false, null, false, false, null, false, false, false, false, false, null, null, 7935));
         return false;
     }
 
@@ -651,7 +651,7 @@ public final class AppFlexInputViewModel extends AppViewModel<FlexInputState> im
         if (viewState == null || inputListener == null) {
             return;
         }
-        inputListener.onSend(viewState.inputText, viewState.attachments, new AnonymousClass1());
+        inputListener.onSend(viewState.inputText, viewState.attachments, new C76811());
     }
 
     @MainThread
@@ -661,10 +661,10 @@ public final class AppFlexInputViewModel extends AppViewModel<FlexInputState> im
 
     @Override // com.lytefast.flexinput.viewmodel.FlexInputViewModel
     public void onSingleAttachmentSelected(Attachment<? extends Object> attachment) {
-        Intrinsics3.checkNotNullParameter(attachment, "attachment");
-        FlexInputListener2 flexInputListener2 = this.singleAttachmentSelectedListener;
-        if (flexInputListener2 != null) {
-            flexInputListener2.onAttachmentSelected(attachment);
+        C12238m.checkNotNullParameter(attachment, "attachment");
+        FlexInputAttachmentListener flexInputAttachmentListener = this.singleAttachmentSelectedListener;
+        if (flexInputAttachmentListener != null) {
+            flexInputAttachmentListener.onAttachmentSelected(attachment);
         }
     }
 
@@ -672,7 +672,7 @@ public final class AppFlexInputViewModel extends AppViewModel<FlexInputState> im
     public final void onStickerSuggestionSent(boolean shouldClearInput) {
         FlexInputState viewState = getViewState();
         if (viewState != null) {
-            updateViewState(FlexInputState.a(viewState, shouldClearInput ? "" : viewState.inputText, true, Collections2.emptyList(), false, false, null, false, false, false, false, false, null, null, 8152));
+            updateViewState(FlexInputState.m9302a(viewState, shouldClearInput ? "" : viewState.inputText, true, C12147n.emptyList(), false, false, null, false, false, false, false, false, null, null, 8152));
             if (shouldClearInput) {
                 hideKeyboard();
             } else {
@@ -684,21 +684,21 @@ public final class AppFlexInputViewModel extends AppViewModel<FlexInputState> im
     @Override // com.lytefast.flexinput.viewmodel.FlexInputViewModel
     @MainThread
     public boolean onToolTipButtonLongPressed(View button) {
-        Intrinsics3.checkNotNullParameter(button, "button");
-        PublishSubject<FlexInputEvent> publishSubject = this.eventSubject;
-        publishSubject.k.onNext(new FlexInputEvent.d(button.getContentDescription().toString()));
+        C12238m.checkNotNullParameter(button, "button");
+        PublishSubject<AbstractC1451a> publishSubject = this.eventSubject;
+        publishSubject.f27650k.onNext(new AbstractC1451a.d(button.getContentDescription().toString()));
         return true;
     }
 
     public void removeAttachment(Attachment<?> attachment) {
         List<? extends Attachment<? extends Object>> mutableList;
         List<Attachment<Object>> list;
-        Intrinsics3.checkNotNullParameter(attachment, "attachment");
+        C12238m.checkNotNullParameter(attachment, "attachment");
         FlexInputState viewState = getViewState();
-        if (viewState == null || (list = viewState.attachments) == null || (mutableList = _Collections.toMutableList((Collection) list)) == null) {
+        if (viewState == null || (list = viewState.attachments) == null || (mutableList = C12163u.toMutableList((Collection) list)) == null) {
             mutableList = null;
         } else {
-            TypeIntrinsics.asMutableCollection(mutableList).remove(attachment);
+            C12224e0.asMutableCollection(mutableList).remove(attachment);
         }
         if (mutableList != null) {
             onAttachmentsUpdated(mutableList);
@@ -707,12 +707,12 @@ public final class AppFlexInputViewModel extends AppViewModel<FlexInputState> im
 
     @Override // com.lytefast.flexinput.viewmodel.FlexInputViewModel
     public void requestMediaPermissions(Function0<Unit> onSuccess) {
-        Intrinsics3.checkNotNullParameter(onSuccess, "onSuccess");
+        C12238m.checkNotNullParameter(onSuccess, "onSuccess");
         this.permissionRequests.requestMedia(onSuccess);
     }
 
-    public void setAttachmentSelectedListener(FlexInputListener2 attachmentListener) {
-        Intrinsics3.checkNotNullParameter(attachmentListener, "attachmentListener");
+    public void setAttachmentSelectedListener(FlexInputAttachmentListener attachmentListener) {
+        C12238m.checkNotNullParameter(attachmentListener, "attachmentListener");
         this.singleAttachmentSelectedListener = attachmentListener;
     }
 
@@ -728,7 +728,7 @@ public final class AppFlexInputViewModel extends AppViewModel<FlexInputState> im
             if (viewState2 == null) {
                 viewState2 = new FlexInputState(null, false, null, false, false, null, false, false, false, false, false, null, null, 8191);
             }
-            updateViewState(FlexInputState.a(viewState2, null, false, null, enabled, false, null, false, false, false, false, false, null, null, 8183));
+            updateViewState(FlexInputState.m9302a(viewState2, null, false, null, enabled, false, null, false, false, false, false, false, null, null, 8183));
         }
     }
 
@@ -740,16 +740,16 @@ public final class AppFlexInputViewModel extends AppViewModel<FlexInputState> im
             if (viewState2 == null) {
                 viewState2 = new FlexInputState(null, false, null, false, false, null, false, false, false, false, false, null, null, 8191);
             }
-            updateViewState(FlexInputState.a(viewState2, null, false, null, false, singleSelect, null, false, false, false, false, false, null, null, 8175));
+            updateViewState(FlexInputState.m9302a(viewState2, null, false, null, false, singleSelect, null, false, false, false, false, false, null, null, 8175));
         }
     }
 
     public void setShowExpressionTrayButtonBadge(boolean showBadge) {
-        updateViewState(FlexInputState.a(requireViewState(), null, false, null, false, false, null, false, false, false, showBadge, false, null, null, 7679));
+        updateViewState(FlexInputState.m9302a(requireViewState(), null, false, null, false, false, null, false, false, false, showBadge, false, null, null, 7679));
     }
 
-    public final void setSingleAttachmentSelectedListener(FlexInputListener2 flexInputListener2) {
-        this.singleAttachmentSelectedListener = flexInputListener2;
+    public final void setSingleAttachmentSelectedListener(FlexInputAttachmentListener flexInputAttachmentListener) {
+        this.singleAttachmentSelectedListener = flexInputAttachmentListener;
     }
 
     public final void setSingleSelectMode(boolean z2) {
@@ -762,32 +762,32 @@ public final class AppFlexInputViewModel extends AppViewModel<FlexInputState> im
         if (viewState == null || viewState.showExpressionTray) {
             return false;
         }
-        updateViewState(FlexInputState.a(viewState, null, false, null, false, false, null, false, false, true, false, false, null, null, 7935));
+        updateViewState(FlexInputState.m9302a(viewState, null, false, null, false, false, null, false, false, true, false, false, null, null, 7935));
         return true;
     }
 
     public final void showKeyboardAndHideExpressionTray() {
-        updateViewState(FlexInputState.a(requireViewState(), null, false, null, false, false, null, false, false, false, false, false, null, null, 7935));
+        updateViewState(FlexInputState.m9302a(requireViewState(), null, false, null, false, false, null, false, false, false, false, false, null, null, 7935));
         showKeyboard();
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public AppFlexInputViewModel(AppPermissions2 appPermissions2, FlexInputState flexInputState, Observable<StoreState> observable, StoreStickers storeStickers, StoreAnalytics storeAnalytics, StoreExpressionSuggestions storeExpressionSuggestions) {
+    public AppFlexInputViewModel(AppPermissionsRequests appPermissionsRequests, FlexInputState flexInputState, Observable<StoreState> observable, StoreStickers storeStickers, StoreAnalytics storeAnalytics, StoreExpressionSuggestions storeExpressionSuggestions) {
         super(flexInputState);
-        Intrinsics3.checkNotNullParameter(appPermissions2, "permissionRequests");
-        Intrinsics3.checkNotNullParameter(flexInputState, "initialViewState");
-        Intrinsics3.checkNotNullParameter(observable, "storeObservable");
-        Intrinsics3.checkNotNullParameter(storeStickers, "storeStickers");
-        Intrinsics3.checkNotNullParameter(storeAnalytics, "storeAnalytics");
-        Intrinsics3.checkNotNullParameter(storeExpressionSuggestions, "storeExpressionSuggestions");
-        this.permissionRequests = appPermissions2;
+        C12238m.checkNotNullParameter(appPermissionsRequests, "permissionRequests");
+        C12238m.checkNotNullParameter(flexInputState, "initialViewState");
+        C12238m.checkNotNullParameter(observable, "storeObservable");
+        C12238m.checkNotNullParameter(storeStickers, "storeStickers");
+        C12238m.checkNotNullParameter(storeAnalytics, "storeAnalytics");
+        C12238m.checkNotNullParameter(storeExpressionSuggestions, "storeExpressionSuggestions");
+        this.permissionRequests = appPermissionsRequests;
         this.storeStickers = storeStickers;
         this.storeAnalytics = storeAnalytics;
         this.storeExpressionSuggestions = storeExpressionSuggestions;
-        this.eventSubject = PublishSubject.k0();
-        Observable observableR = ObservableExtensionsKt.computationLatest(observable).r();
-        Intrinsics3.checkNotNullExpressionValue(observableR, "storeObservable\n        …  .distinctUntilChanged()");
-        ObservableExtensionsKt.appSubscribe(ObservableExtensionsKt.ui$default(observableR, this, null, 2, null), (Class<?>) AppFlexInputViewModel.class, (58 & 2) != 0 ? null : null, (Function1<? super Subscription, Unit>) ((58 & 4) != 0 ? null : null), (Function1<? super Error, Unit>) ((58 & 8) != 0 ? null : null), (Function0<Unit>) ((58 & 16) != 0 ? ObservableExtensionsKt.AnonymousClass1.INSTANCE : null), (Function0<Unit>) ((58 & 32) != 0 ? ObservableExtensionsKt.AnonymousClass2.INSTANCE : null), new AnonymousClass1(this));
+        this.eventSubject = PublishSubject.m11133k0();
+        Observable observableM11112r = ObservableExtensionsKt.computationLatest(observable).m11112r();
+        C12238m.checkNotNullExpressionValue(observableM11112r, "storeObservable\n        …  .distinctUntilChanged()");
+        ObservableExtensionsKt.appSubscribe(ObservableExtensionsKt.ui$default(observableM11112r, this, null, 2, null), (Class<?>) AppFlexInputViewModel.class, (58 & 2) != 0 ? null : null, (Function1<? super Subscription, Unit>) ((58 & 4) != 0 ? null : null), (Function1<? super Error, Unit>) ((58 & 8) != 0 ? null : null), (Function0<Unit>) ((58 & 16) != 0 ? ObservableExtensionsKt.C68791.INSTANCE : null), (Function0<Unit>) ((58 & 32) != 0 ? ObservableExtensionsKt.C68802.INSTANCE : null), new C76771(this));
         this.attachmentView = true;
     }
 }

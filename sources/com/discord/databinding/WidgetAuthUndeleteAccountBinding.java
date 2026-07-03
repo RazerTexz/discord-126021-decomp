@@ -10,29 +10,32 @@ import com.google.android.material.button.MaterialButton;
 /* JADX INFO: loaded from: classes.dex */
 public final class WidgetAuthUndeleteAccountBinding implements ViewBinding {
 
+    /* JADX INFO: renamed from: a */
     @NonNull
-    public final CoordinatorLayout a;
+    public final CoordinatorLayout f15719a;
 
-    /* JADX INFO: renamed from: b, reason: collision with root package name */
+    /* JADX INFO: renamed from: b */
     @NonNull
-    public final MaterialButton f2239b;
+    public final MaterialButton f15720b;
 
+    /* JADX INFO: renamed from: c */
     @NonNull
-    public final MaterialButton c;
+    public final MaterialButton f15721c;
 
+    /* JADX INFO: renamed from: d */
     @NonNull
-    public final ScreenTitleView d;
+    public final ScreenTitleView f15722d;
 
     public WidgetAuthUndeleteAccountBinding(@NonNull CoordinatorLayout coordinatorLayout, @NonNull MaterialButton materialButton, @NonNull MaterialButton materialButton2, @NonNull ScreenTitleView screenTitleView) {
-        this.a = coordinatorLayout;
-        this.f2239b = materialButton;
-        this.c = materialButton2;
-        this.d = screenTitleView;
+        this.f15719a = coordinatorLayout;
+        this.f15720b = materialButton;
+        this.f15721c = materialButton2;
+        this.f15722d = screenTitleView;
     }
 
     @Override // androidx.viewbinding.ViewBinding
     @NonNull
     public View getRoot() {
-        return this.a;
+        return this.f15719a;
     }
 }

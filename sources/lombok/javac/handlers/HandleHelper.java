@@ -48,7 +48,7 @@ public class HandleHelper extends JavacAnnotationHandler<Helper> {
         String n;
         HandlerUtil.handleExperimentalFlagUsage(annotationNode, ConfigurationKeys.HELPER_FLAG_USAGE, "@Helper");
         JavacHandlerUtil.deleteAnnotationIfNeccessary(annotationNode, (Class<? extends Annotation>) Helper.class);
-        JavacNode annotatedType = annotationNode.up();
+        JavacNode annotatedType = annotationNode.m10925up();
         JavacNode containingBlock = annotatedType == null ? null : annotatedType.directUp();
         List<JCTree.JCStatement> origStatements = getStatementsFromJcNode(containingBlock == null ? null : containingBlock.get());
         if (annotatedType == null || annotatedType.getKind() != AST.Kind.TYPE || origStatements == null) {

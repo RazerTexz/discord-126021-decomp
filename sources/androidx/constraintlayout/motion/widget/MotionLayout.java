@@ -32,20 +32,20 @@ import androidx.constraintlayout.solver.widgets.Helper;
 import androidx.constraintlayout.solver.widgets.HelperWidget;
 import androidx.constraintlayout.solver.widgets.VirtualLayout;
 import androidx.constraintlayout.widget.Barrier;
+import androidx.constraintlayout.widget.C0201R;
 import androidx.constraintlayout.widget.ConstraintHelper;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.constraintlayout.widget.ConstraintLayoutStates;
 import androidx.constraintlayout.widget.ConstraintSet;
 import androidx.constraintlayout.widget.Constraints;
-import androidx.constraintlayout.widget.R;
 import androidx.constraintlayout.widget.StateSet;
 import androidx.core.view.NestedScrollingParent3;
 import androidx.core.view.ViewCompat;
 import androidx.exifinterface.media.ExifInterface;
-import b.d.b.a.outline;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Iterator;
+import p007b.p100d.p104b.p105a.C1643a;
 
 /* JADX INFO: loaded from: classes.dex */
 public class MotionLayout extends ConstraintLayout implements NestedScrollingParent3 {
@@ -133,28 +133,30 @@ public class MotionLayout extends ConstraintLayout implements NestedScrollingPar
     public boolean mUndergoingMotion;
     public int mWidthMeasureMode;
 
-    /* JADX INFO: renamed from: androidx.constraintlayout.motion.widget.MotionLayout$2, reason: invalid class name */
-    public static /* synthetic */ class AnonymousClass2 {
-        public static final /* synthetic */ int[] $SwitchMap$androidx$constraintlayout$motion$widget$MotionLayout$TransitionState;
+    /* JADX INFO: renamed from: androidx.constraintlayout.motion.widget.MotionLayout$2 */
+    public static /* synthetic */ class C01782 {
+
+        /* JADX INFO: renamed from: $SwitchMap$androidx$constraintlayout$motion$widget$MotionLayout$TransitionState */
+        public static final /* synthetic */ int[] f106xabc7e4ac;
 
         static {
             TransitionState.values();
             int[] iArr = new int[4];
-            $SwitchMap$androidx$constraintlayout$motion$widget$MotionLayout$TransitionState = iArr;
+            f106xabc7e4ac = iArr;
             try {
                 iArr[TransitionState.UNDEFINED.ordinal()] = 1;
             } catch (NoSuchFieldError unused) {
             }
             try {
-                $SwitchMap$androidx$constraintlayout$motion$widget$MotionLayout$TransitionState[TransitionState.SETUP.ordinal()] = 2;
+                f106xabc7e4ac[TransitionState.SETUP.ordinal()] = 2;
             } catch (NoSuchFieldError unused2) {
             }
             try {
-                $SwitchMap$androidx$constraintlayout$motion$widget$MotionLayout$TransitionState[TransitionState.MOVING.ordinal()] = 3;
+                f106xabc7e4ac[TransitionState.MOVING.ordinal()] = 3;
             } catch (NoSuchFieldError unused3) {
             }
             try {
-                $SwitchMap$androidx$constraintlayout$motion$widget$MotionLayout$TransitionState[TransitionState.FINISHED.ordinal()] = 4;
+                f106xabc7e4ac[TransitionState.FINISHED.ordinal()] = 4;
             } catch (NoSuchFieldError unused4) {
             }
         }
@@ -308,15 +310,15 @@ public class MotionLayout extends ConstraintLayout implements NestedScrollingPar
             float fMax = Math.max(f4, f6);
             float fMin2 = f - Math.min(f3, f5);
             float fMax2 = Math.max(f4, f6) - f2;
-            StringBuilder sbU = outline.U("");
-            sbU.append(((int) (((double) ((fMin2 * 100.0f) / Math.abs(f5 - f3))) + 0.5d)) / 100.0f);
-            String string = sbU.toString();
+            StringBuilder sbM833U = C1643a.m833U("");
+            sbM833U.append(((int) (((double) ((fMin2 * 100.0f) / Math.abs(f5 - f3))) + 0.5d)) / 100.0f);
+            String string = sbM833U.toString();
             getTextBounds(string, this.mTextPaint);
             canvas.drawText(string, ((fMin2 / 2.0f) - (this.mBounds.width() / 2)) + fMin, f2 - 20.0f, this.mTextPaint);
             canvas.drawLine(f, f2, Math.min(f3, f5), f2, this.mPaintGraph);
-            StringBuilder sbU2 = outline.U("");
-            sbU2.append(((int) (((double) ((fMax2 * 100.0f) / Math.abs(f6 - f4))) + 0.5d)) / 100.0f);
-            String string2 = sbU2.toString();
+            StringBuilder sbM833U2 = C1643a.m833U("");
+            sbM833U2.append(((int) (((double) ((fMax2 * 100.0f) / Math.abs(f6 - f4))) + 0.5d)) / 100.0f);
+            String string2 = sbM833U2.toString();
             getTextBounds(string2, this.mTextPaint);
             canvas.drawText(string2, f + 5.0f, fMax - ((fMax2 / 2.0f) - (this.mBounds.height() / 2)), this.mTextPaint);
             canvas.drawLine(f, f2, f, Math.max(f4, f6), this.mPaintGraph);
@@ -343,24 +345,24 @@ public class MotionLayout extends ConstraintLayout implements NestedScrollingPar
             path.moveTo(f, f2);
             path.lineTo(f10, f11);
             float fHypot2 = (float) Math.hypot(f10 - f, f11 - f2);
-            StringBuilder sbU = outline.U("");
-            sbU.append(((int) ((fHypot2 * 100.0f) / fHypot)) / 100.0f);
-            String string = sbU.toString();
+            StringBuilder sbM833U = C1643a.m833U("");
+            sbM833U.append(((int) ((fHypot2 * 100.0f) / fHypot)) / 100.0f);
+            String string = sbM833U.toString();
             getTextBounds(string, this.mTextPaint);
             canvas.drawTextOnPath(string, path, (fHypot2 / 2.0f) - (this.mBounds.width() / 2), -20.0f, this.mTextPaint);
             canvas.drawLine(f, f2, f10, f11, this.mPaintGraph);
         }
 
         private void drawPathScreenTicks(Canvas canvas, float f, float f2, int i, int i2) {
-            StringBuilder sbU = outline.U("");
-            sbU.append(((int) (((double) (((f - (i / 2)) * 100.0f) / (MotionLayout.this.getWidth() - i))) + 0.5d)) / 100.0f);
-            String string = sbU.toString();
+            StringBuilder sbM833U = C1643a.m833U("");
+            sbM833U.append(((int) (((double) (((f - (i / 2)) * 100.0f) / (MotionLayout.this.getWidth() - i))) + 0.5d)) / 100.0f);
+            String string = sbM833U.toString();
             getTextBounds(string, this.mTextPaint);
             canvas.drawText(string, ((f / 2.0f) - (this.mBounds.width() / 2)) + 0.0f, f2 - 20.0f, this.mTextPaint);
             canvas.drawLine(f, f2, Math.min(0.0f, 1.0f), f2, this.mPaintGraph);
-            StringBuilder sbU2 = outline.U("");
-            sbU2.append(((int) (((double) (((f2 - (i2 / 2)) * 100.0f) / (MotionLayout.this.getHeight() - i2))) + 0.5d)) / 100.0f);
-            String string2 = sbU2.toString();
+            StringBuilder sbM833U2 = C1643a.m833U("");
+            sbM833U2.append(((int) (((double) (((f2 - (i2 / 2)) * 100.0f) / (MotionLayout.this.getHeight() - i2))) + 0.5d)) / 100.0f);
+            String string2 = sbM833U2.toString();
             getTextBounds(string2, this.mTextPaint);
             canvas.drawText(string2, f + 5.0f, 0.0f - ((f2 / 2.0f) - (this.mBounds.height() / 2)), this.mTextPaint);
             canvas.drawLine(f, f2, f, Math.max(0.0f, 1.0f), this.mPaintGraph);
@@ -543,30 +545,30 @@ public class MotionLayout extends ConstraintLayout implements NestedScrollingPar
 
         private void debugLayout(String str, ConstraintWidgetContainer constraintWidgetContainer) {
             View view = (View) constraintWidgetContainer.getCompanionWidget();
-            StringBuilder sbX = outline.X(str, " ");
-            sbX.append(Debug.getName(view));
-            String string = sbX.toString();
+            StringBuilder sbM836X = C1643a.m836X(str, " ");
+            sbM836X.append(Debug.getName(view));
+            String string = sbM836X.toString();
             Log.v(MotionLayout.TAG, string + "  ========= " + constraintWidgetContainer);
             int size = constraintWidgetContainer.getChildren().size();
             for (int i = 0; i < size; i++) {
                 String str2 = string + "[" + i + "] ";
                 ConstraintWidget constraintWidget = constraintWidgetContainer.getChildren().get(i);
-                StringBuilder sbU = outline.U("");
-                sbU.append(constraintWidget.mTop.mTarget != null ? ExifInterface.GPS_DIRECTION_TRUE : "_");
-                StringBuilder sbU2 = outline.U(sbU.toString());
-                sbU2.append(constraintWidget.mBottom.mTarget != null ? "B" : "_");
-                StringBuilder sbU3 = outline.U(sbU2.toString());
-                sbU3.append(constraintWidget.mLeft.mTarget != null ? "L" : "_");
-                StringBuilder sbU4 = outline.U(sbU3.toString());
-                sbU4.append(constraintWidget.mRight.mTarget != null ? "R" : "_");
-                String string2 = sbU4.toString();
+                StringBuilder sbM833U = C1643a.m833U("");
+                sbM833U.append(constraintWidget.mTop.mTarget != null ? ExifInterface.GPS_DIRECTION_TRUE : "_");
+                StringBuilder sbM833U2 = C1643a.m833U(sbM833U.toString());
+                sbM833U2.append(constraintWidget.mBottom.mTarget != null ? "B" : "_");
+                StringBuilder sbM833U3 = C1643a.m833U(sbM833U2.toString());
+                sbM833U3.append(constraintWidget.mLeft.mTarget != null ? "L" : "_");
+                StringBuilder sbM833U4 = C1643a.m833U(sbM833U3.toString());
+                sbM833U4.append(constraintWidget.mRight.mTarget != null ? "R" : "_");
+                String string2 = sbM833U4.toString();
                 View view2 = (View) constraintWidget.getCompanionWidget();
                 String name = Debug.getName(view2);
                 if (view2 instanceof TextView) {
-                    StringBuilder sbX2 = outline.X(name, "(");
-                    sbX2.append((Object) ((TextView) view2).getText());
-                    sbX2.append(")");
-                    name = sbX2.toString();
+                    StringBuilder sbM836X2 = C1643a.m836X(name, "(");
+                    sbM836X2.append((Object) ((TextView) view2).getText());
+                    sbM836X2.append(")");
+                    name = sbM836X2.toString();
                 }
                 Log.v(MotionLayout.TAG, str2 + "  " + name + " " + constraintWidget + " " + string2);
             }
@@ -574,73 +576,73 @@ public class MotionLayout extends ConstraintLayout implements NestedScrollingPar
         }
 
         private void debugLayoutParam(String str, ConstraintLayout.LayoutParams layoutParams) {
-            StringBuilder sbU = outline.U(" ");
-            sbU.append(layoutParams.startToStart != -1 ? "SS" : "__");
-            StringBuilder sbU2 = outline.U(sbU.toString());
-            sbU2.append(layoutParams.startToEnd != -1 ? "|SE" : "|__");
-            StringBuilder sbU3 = outline.U(sbU2.toString());
-            sbU3.append(layoutParams.endToStart != -1 ? "|ES" : "|__");
-            StringBuilder sbU4 = outline.U(sbU3.toString());
-            sbU4.append(layoutParams.endToEnd != -1 ? "|EE" : "|__");
-            StringBuilder sbU5 = outline.U(sbU4.toString());
-            sbU5.append(layoutParams.leftToLeft != -1 ? "|LL" : "|__");
-            StringBuilder sbU6 = outline.U(sbU5.toString());
-            sbU6.append(layoutParams.leftToRight != -1 ? "|LR" : "|__");
-            StringBuilder sbU7 = outline.U(sbU6.toString());
-            sbU7.append(layoutParams.rightToLeft != -1 ? "|RL" : "|__");
-            StringBuilder sbU8 = outline.U(sbU7.toString());
-            sbU8.append(layoutParams.rightToRight != -1 ? "|RR" : "|__");
-            StringBuilder sbU9 = outline.U(sbU8.toString());
-            sbU9.append(layoutParams.topToTop != -1 ? "|TT" : "|__");
-            StringBuilder sbU10 = outline.U(sbU9.toString());
-            sbU10.append(layoutParams.topToBottom != -1 ? "|TB" : "|__");
-            StringBuilder sbU11 = outline.U(sbU10.toString());
-            sbU11.append(layoutParams.bottomToTop != -1 ? "|BT" : "|__");
-            StringBuilder sbU12 = outline.U(sbU11.toString());
-            sbU12.append(layoutParams.bottomToBottom != -1 ? "|BB" : "|__");
-            Log.v(MotionLayout.TAG, str + sbU12.toString());
+            StringBuilder sbM833U = C1643a.m833U(" ");
+            sbM833U.append(layoutParams.startToStart != -1 ? "SS" : "__");
+            StringBuilder sbM833U2 = C1643a.m833U(sbM833U.toString());
+            sbM833U2.append(layoutParams.startToEnd != -1 ? "|SE" : "|__");
+            StringBuilder sbM833U3 = C1643a.m833U(sbM833U2.toString());
+            sbM833U3.append(layoutParams.endToStart != -1 ? "|ES" : "|__");
+            StringBuilder sbM833U4 = C1643a.m833U(sbM833U3.toString());
+            sbM833U4.append(layoutParams.endToEnd != -1 ? "|EE" : "|__");
+            StringBuilder sbM833U5 = C1643a.m833U(sbM833U4.toString());
+            sbM833U5.append(layoutParams.leftToLeft != -1 ? "|LL" : "|__");
+            StringBuilder sbM833U6 = C1643a.m833U(sbM833U5.toString());
+            sbM833U6.append(layoutParams.leftToRight != -1 ? "|LR" : "|__");
+            StringBuilder sbM833U7 = C1643a.m833U(sbM833U6.toString());
+            sbM833U7.append(layoutParams.rightToLeft != -1 ? "|RL" : "|__");
+            StringBuilder sbM833U8 = C1643a.m833U(sbM833U7.toString());
+            sbM833U8.append(layoutParams.rightToRight != -1 ? "|RR" : "|__");
+            StringBuilder sbM833U9 = C1643a.m833U(sbM833U8.toString());
+            sbM833U9.append(layoutParams.topToTop != -1 ? "|TT" : "|__");
+            StringBuilder sbM833U10 = C1643a.m833U(sbM833U9.toString());
+            sbM833U10.append(layoutParams.topToBottom != -1 ? "|TB" : "|__");
+            StringBuilder sbM833U11 = C1643a.m833U(sbM833U10.toString());
+            sbM833U11.append(layoutParams.bottomToTop != -1 ? "|BT" : "|__");
+            StringBuilder sbM833U12 = C1643a.m833U(sbM833U11.toString());
+            sbM833U12.append(layoutParams.bottomToBottom != -1 ? "|BB" : "|__");
+            Log.v(MotionLayout.TAG, str + sbM833U12.toString());
         }
 
         private void debugWidget(String str, ConstraintWidget constraintWidget) {
             String string;
             String string2;
             String string3;
-            StringBuilder sbU = outline.U(" ");
+            StringBuilder sbM833U = C1643a.m833U(" ");
             String string4 = "__";
             if (constraintWidget.mTop.mTarget != null) {
-                StringBuilder sbU2 = outline.U(ExifInterface.GPS_DIRECTION_TRUE);
-                sbU2.append(constraintWidget.mTop.mTarget.mType == ConstraintAnchor.Type.TOP ? ExifInterface.GPS_DIRECTION_TRUE : "B");
-                string = sbU2.toString();
+                StringBuilder sbM833U2 = C1643a.m833U(ExifInterface.GPS_DIRECTION_TRUE);
+                sbM833U2.append(constraintWidget.mTop.mTarget.mType == ConstraintAnchor.Type.TOP ? ExifInterface.GPS_DIRECTION_TRUE : "B");
+                string = sbM833U2.toString();
             } else {
                 string = "__";
             }
-            sbU.append(string);
-            StringBuilder sbU3 = outline.U(sbU.toString());
+            sbM833U.append(string);
+            StringBuilder sbM833U3 = C1643a.m833U(sbM833U.toString());
             if (constraintWidget.mBottom.mTarget != null) {
-                StringBuilder sbU4 = outline.U("B");
-                sbU4.append(constraintWidget.mBottom.mTarget.mType == ConstraintAnchor.Type.TOP ? ExifInterface.GPS_DIRECTION_TRUE : "B");
-                string2 = sbU4.toString();
+                StringBuilder sbM833U4 = C1643a.m833U("B");
+                sbM833U4.append(constraintWidget.mBottom.mTarget.mType == ConstraintAnchor.Type.TOP ? ExifInterface.GPS_DIRECTION_TRUE : "B");
+                string2 = sbM833U4.toString();
             } else {
                 string2 = "__";
             }
-            sbU3.append(string2);
-            StringBuilder sbU5 = outline.U(sbU3.toString());
+            sbM833U3.append(string2);
+            StringBuilder sbM833U5 = C1643a.m833U(sbM833U3.toString());
             if (constraintWidget.mLeft.mTarget != null) {
-                StringBuilder sbU6 = outline.U("L");
-                sbU6.append(constraintWidget.mLeft.mTarget.mType == ConstraintAnchor.Type.LEFT ? "L" : "R");
-                string3 = sbU6.toString();
+                StringBuilder sbM833U6 = C1643a.m833U("L");
+                sbM833U6.append(constraintWidget.mLeft.mTarget.mType == ConstraintAnchor.Type.LEFT ? "L" : "R");
+                string3 = sbM833U6.toString();
             } else {
                 string3 = "__";
             }
-            sbU5.append(string3);
-            StringBuilder sbU7 = outline.U(sbU5.toString());
+            sbM833U5.append(string3);
+            StringBuilder sbM833U7 = C1643a.m833U(sbM833U5.toString());
             if (constraintWidget.mRight.mTarget != null) {
-                StringBuilder sbU8 = outline.U("R");
-                sbU8.append(constraintWidget.mRight.mTarget.mType == ConstraintAnchor.Type.LEFT ? "L" : "R");
-                string4 = sbU8.toString();
+                StringBuilder sbM833U8 = C1643a.m833U("R");
+                sbM833U8.append(constraintWidget.mRight.mTarget.mType == ConstraintAnchor.Type.LEFT ? "L" : "R");
+                string4 = sbM833U8.toString();
             }
-            sbU7.append(string4);
-            Log.v(MotionLayout.TAG, str + sbU7.toString() + " ---  " + constraintWidget);
+            sbM833U7.append(string4);
+            Log.v(MotionLayout.TAG, str + sbM833U7.toString() + " ---  " + constraintWidget);
         }
 
         /* JADX WARN: Multi-variable type inference failed */
@@ -1081,18 +1083,18 @@ public class MotionLayout extends ConstraintLayout implements NestedScrollingPar
     private void debugPos() {
         for (int i = 0; i < getChildCount(); i++) {
             View childAt = getChildAt(i);
-            StringBuilder sbU = outline.U(" ");
-            sbU.append(Debug.getLocation());
-            sbU.append(" ");
-            sbU.append(Debug.getName(this));
-            sbU.append(" ");
-            sbU.append(Debug.getName(getContext(), this.mCurrentState));
-            sbU.append(" ");
-            sbU.append(Debug.getName(childAt));
-            sbU.append(childAt.getLeft());
-            sbU.append(" ");
-            sbU.append(childAt.getTop());
-            Log.v(TAG, sbU.toString());
+            StringBuilder sbM833U = C1643a.m833U(" ");
+            sbM833U.append(Debug.getLocation());
+            sbM833U.append(" ");
+            sbM833U.append(Debug.getName(this));
+            sbM833U.append(" ");
+            sbM833U.append(Debug.getName(getContext(), this.mCurrentState));
+            sbM833U.append(" ");
+            sbM833U.append(Debug.getName(childAt));
+            sbM833U.append(childAt.getLeft());
+            sbM833U.append(" ");
+            sbM833U.append(childAt.getTop());
+            Log.v(TAG, sbM833U.toString());
         }
     }
 
@@ -1207,25 +1209,25 @@ public class MotionLayout extends ConstraintLayout implements NestedScrollingPar
         MotionScene motionScene;
         IS_IN_EDIT_MODE = isInEditMode();
         if (attributeSet != null) {
-            TypedArray typedArrayObtainStyledAttributes = getContext().obtainStyledAttributes(attributeSet, R.styleable.MotionLayout);
+            TypedArray typedArrayObtainStyledAttributes = getContext().obtainStyledAttributes(attributeSet, C0201R.styleable.MotionLayout);
             int indexCount = typedArrayObtainStyledAttributes.getIndexCount();
             boolean z2 = true;
             for (int i = 0; i < indexCount; i++) {
                 int index = typedArrayObtainStyledAttributes.getIndex(i);
-                if (index == R.styleable.MotionLayout_layoutDescription) {
+                if (index == C0201R.styleable.MotionLayout_layoutDescription) {
                     this.mScene = new MotionScene(getContext(), this, typedArrayObtainStyledAttributes.getResourceId(index, -1));
-                } else if (index == R.styleable.MotionLayout_currentState) {
+                } else if (index == C0201R.styleable.MotionLayout_currentState) {
                     this.mCurrentState = typedArrayObtainStyledAttributes.getResourceId(index, -1);
-                } else if (index == R.styleable.MotionLayout_motionProgress) {
+                } else if (index == C0201R.styleable.MotionLayout_motionProgress) {
                     this.mTransitionGoalPosition = typedArrayObtainStyledAttributes.getFloat(index, 0.0f);
                     this.mInTransition = true;
-                } else if (index == R.styleable.MotionLayout_applyMotionScene) {
+                } else if (index == C0201R.styleable.MotionLayout_applyMotionScene) {
                     z2 = typedArrayObtainStyledAttributes.getBoolean(index, z2);
-                } else if (index == R.styleable.MotionLayout_showPaths) {
+                } else if (index == C0201R.styleable.MotionLayout_showPaths) {
                     if (this.mDebugPath == 0) {
                         this.mDebugPath = typedArrayObtainStyledAttributes.getBoolean(index, false) ? 2 : 0;
                     }
-                } else if (index == R.styleable.MotionLayout_motionDebug) {
+                } else if (index == C0201R.styleable.MotionLayout_motionDebug) {
                     this.mDebugPath = typedArrayObtainStyledAttributes.getInt(index, 0);
                 }
             }
@@ -1428,14 +1430,14 @@ public class MotionLayout extends ConstraintLayout implements NestedScrollingPar
             Paint paint = new Paint();
             paint.setTextSize(42.0f);
             float progress = ((int) (getProgress() * 1000.0f)) / 10.0f;
-            StringBuilder sbU = outline.U(this.mLastFps + " fps " + Debug.getState(this, this.mBeginState) + " -> ");
-            sbU.append(Debug.getState(this, this.mEndState));
-            sbU.append(" (progress: ");
-            sbU.append(progress);
-            sbU.append(" ) state=");
+            StringBuilder sbM833U = C1643a.m833U(this.mLastFps + " fps " + Debug.getState(this, this.mBeginState) + " -> ");
+            sbM833U.append(Debug.getState(this, this.mEndState));
+            sbM833U.append(" (progress: ");
+            sbM833U.append(progress);
+            sbM833U.append(" ) state=");
             int i = this.mCurrentState;
-            sbU.append(i == -1 ? "undefined" : Debug.getState(this, i));
-            String string = sbU.toString();
+            sbM833U.append(i == -1 ? "undefined" : Debug.getState(this, i));
+            String string = sbM833U.toString();
             paint.setColor(ViewCompat.MEASURED_STATE_MASK);
             canvas.drawText(string, 11.0f, getHeight() - 29, paint);
             paint.setColor(-7864184);
@@ -1664,7 +1666,7 @@ public class MotionLayout extends ConstraintLayout implements NestedScrollingPar
             this.lastY = y2;
             return;
         }
-        Log.w(TAG, "WARNING could not find view id " + (viewById == null ? outline.q("", i) : viewById.getContext().getResources().getResourceName(i)));
+        Log.w(TAG, "WARNING could not find view id " + (viewById == null ? C1643a.m871q("", i) : viewById.getContext().getResources().getResourceName(i)));
     }
 
     public ConstraintSet getConstraintSet(int i) {
@@ -2374,16 +2376,16 @@ public class MotionLayout extends ConstraintLayout implements NestedScrollingPar
 
     public static class MyTracker implements MotionTracker {
 
-        /* JADX INFO: renamed from: me, reason: collision with root package name */
-        private static MyTracker f27me = new MyTracker();
+        /* JADX INFO: renamed from: me */
+        private static MyTracker f107me = new MyTracker();
         public VelocityTracker tracker;
 
         private MyTracker() {
         }
 
         public static MyTracker obtain() {
-            f27me.tracker = VelocityTracker.obtain();
-            return f27me;
+            f107me.tracker = VelocityTracker.obtain();
+            return f107me;
         }
 
         @Override // androidx.constraintlayout.motion.widget.MotionLayout.MotionTracker
@@ -2644,15 +2646,15 @@ public class MotionLayout extends ConstraintLayout implements NestedScrollingPar
             View childAt = getChildAt(i2);
             int id2 = childAt.getId();
             if (id2 == -1) {
-                StringBuilder sbY = outline.Y("CHECK: ", name, " ALL VIEWS SHOULD HAVE ID's ");
-                sbY.append(childAt.getClass().getName());
-                sbY.append(" does not!");
-                Log.w(TAG, sbY.toString());
+                StringBuilder sbM837Y = C1643a.m837Y("CHECK: ", name, " ALL VIEWS SHOULD HAVE ID's ");
+                sbM837Y.append(childAt.getClass().getName());
+                sbM837Y.append(" does not!");
+                Log.w(TAG, sbM837Y.toString());
             }
             if (constraintSet.getConstraint(id2) == null) {
-                StringBuilder sbY2 = outline.Y("CHECK: ", name, " NO CONSTRAINTS for ");
-                sbY2.append(Debug.getName(childAt));
-                Log.w(TAG, sbY2.toString());
+                StringBuilder sbM837Y2 = C1643a.m837Y("CHECK: ", name, " NO CONSTRAINTS for ");
+                sbM837Y2.append(Debug.getName(childAt));
+                Log.w(TAG, sbM837Y2.toString());
             }
         }
         int[] knownIds = constraintSet.getKnownIds();
@@ -2744,9 +2746,9 @@ public class MotionLayout extends ConstraintLayout implements NestedScrollingPar
     }
 
     private void checkStructure(MotionScene.Transition transition) {
-        StringBuilder sbU = outline.U("CHECK: transition = ");
-        sbU.append(transition.debugString(getContext()));
-        Log.v(TAG, sbU.toString());
+        StringBuilder sbM833U = C1643a.m833U("CHECK: transition = ");
+        sbM833U.append(transition.debugString(getContext()));
+        Log.v(TAG, sbM833U.toString());
         Log.v(TAG, "CHECK: transition.setDuration = " + transition.getDuration());
         if (transition.getStartConstraintSetId() == transition.getEndConstraintSetId()) {
             Log.e(TAG, "CHECK: start and end constraint set should not be the same!");

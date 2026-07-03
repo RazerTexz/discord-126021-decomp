@@ -33,11 +33,11 @@ public interface CameraVideoCapturer extends VideoCapturer {
             Runnable runnable = new Runnable() { // from class: org.webrtc.CameraVideoCapturer.CameraStatistics.1
                 @Override // java.lang.Runnable
                 public void run() {
-                    Logging.d(CameraStatistics.TAG, "Camera fps: " + Math.round((CameraStatistics.this.frameCount * 1000.0f) / 2000.0f) + ".");
+                    Logging.m11027d(CameraStatistics.TAG, "Camera fps: " + Math.round((CameraStatistics.this.frameCount * 1000.0f) / 2000.0f) + ".");
                     if (CameraStatistics.this.frameCount == 0) {
                         CameraStatistics.access$104(CameraStatistics.this);
                         if (CameraStatistics.this.freezePeriodCount * 2000 >= 4000 && CameraStatistics.this.eventsHandler != null) {
-                            Logging.e(CameraStatistics.TAG, "Camera freezed.");
+                            Logging.m11028e(CameraStatistics.TAG, "Camera freezed.");
                             if (CameraStatistics.this.surfaceTextureHelper.isTextureInUse()) {
                                 CameraStatistics.this.eventsHandler.onCameraFreezed("Camera failure. Client must return video buffers.");
                                 return;

@@ -13,53 +13,62 @@ import com.google.android.material.button.MaterialButton;
 /* JADX INFO: loaded from: classes.dex */
 public final class VoiceUserListItemUserBinding implements ViewBinding {
 
+    /* JADX INFO: renamed from: a */
     @NonNull
-    public final LinearLayout a;
+    public final LinearLayout f15624a;
 
-    /* JADX INFO: renamed from: b, reason: collision with root package name */
+    /* JADX INFO: renamed from: b */
     @NonNull
-    public final ImageView f2222b;
+    public final ImageView f15625b;
 
+    /* JADX INFO: renamed from: c */
     @NonNull
-    public final TextView c;
+    public final TextView f15626c;
 
+    /* JADX INFO: renamed from: d */
     @NonNull
-    public final ImageView d;
+    public final ImageView f15627d;
 
+    /* JADX INFO: renamed from: e */
     @NonNull
-    public final ImageView e;
+    public final ImageView f15628e;
 
+    /* JADX INFO: renamed from: f */
     @NonNull
-    public final MaterialButton f;
+    public final MaterialButton f15629f;
 
+    /* JADX INFO: renamed from: g */
     @NonNull
-    public final VoiceUserView g;
+    public final VoiceUserView f15630g;
 
+    /* JADX INFO: renamed from: h */
     @NonNull
-    public final TextView h;
+    public final TextView f15631h;
 
+    /* JADX INFO: renamed from: i */
     @NonNull
-    public final StreamPreviewView i;
+    public final StreamPreviewView f15632i;
 
+    /* JADX INFO: renamed from: j */
     @NonNull
-    public final ImageView j;
+    public final ImageView f15633j;
 
     public VoiceUserListItemUserBinding(@NonNull LinearLayout linearLayout, @NonNull ImageView imageView, @NonNull TextView textView, @NonNull ImageView imageView2, @NonNull ImageView imageView3, @NonNull MaterialButton materialButton, @NonNull VoiceUserView voiceUserView, @NonNull TextView textView2, @NonNull StreamPreviewView streamPreviewView, @NonNull ImageView imageView4) {
-        this.a = linearLayout;
-        this.f2222b = imageView;
-        this.c = textView;
-        this.d = imageView2;
-        this.e = imageView3;
-        this.f = materialButton;
-        this.g = voiceUserView;
-        this.h = textView2;
-        this.i = streamPreviewView;
-        this.j = imageView4;
+        this.f15624a = linearLayout;
+        this.f15625b = imageView;
+        this.f15626c = textView;
+        this.f15627d = imageView2;
+        this.f15628e = imageView3;
+        this.f15629f = materialButton;
+        this.f15630g = voiceUserView;
+        this.f15631h = textView2;
+        this.f15632i = streamPreviewView;
+        this.f15633j = imageView4;
     }
 
     @Override // androidx.viewbinding.ViewBinding
     @NonNull
     public View getRoot() {
-        return this.a;
+        return this.f15624a;
     }
 }

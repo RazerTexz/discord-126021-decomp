@@ -1,31 +1,31 @@
 package com.discord.widgets.guilds.leave;
 
 import androidx.annotation.MainThread;
-import b.a.d.AppViewModel;
-import b.d.b.a.outline;
 import com.discord.models.guild.Guild;
 import com.discord.stores.StoreGuilds;
 import com.discord.stores.StoreLurking;
 import com.discord.stores.StoreStream;
 import com.discord.utilities.error.Error;
+import com.discord.utilities.p501rx.ObservableExtensionsKt;
 import com.discord.utilities.rest.RestAPI;
-import com.discord.utilities.rx.ObservableExtensionsKt;
 import com.discord.widgets.guilds.leave.LeaveGuildDialogViewModel;
-import d0.z.d.FunctionReferenceImpl;
-import d0.z.d.Intrinsics3;
-import d0.z.d.Lambda;
 import kotlin.Unit;
 import kotlin.jvm.functions.Function0;
 import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.DefaultConstructorMarker;
-import rx.Observable;
-import rx.Subscription;
-import rx.functions.Func2;
-import rx.subjects.PublishSubject;
+import p007b.p008a.p018d.AbstractC0859d0;
+import p007b.p100d.p104b.p105a.C1643a;
+import p507d0.p592z.p594d.AbstractC12240o;
+import p507d0.p592z.p594d.C12236k;
+import p507d0.p592z.p594d.C12238m;
+import p658rx.Observable;
+import p658rx.Subscription;
+import p658rx.functions.Func2;
+import p658rx.subjects.PublishSubject;
 
 /* JADX INFO: compiled from: LeaveGuildDialogViewModel.kt */
 /* JADX INFO: loaded from: classes2.dex */
-public final class LeaveGuildDialogViewModel extends AppViewModel<ViewState> {
+public final class LeaveGuildDialogViewModel extends AbstractC0859d0<ViewState> {
 
     /* JADX INFO: renamed from: Companion, reason: from kotlin metadata */
     public static final Companion INSTANCE = new Companion(null);
@@ -34,22 +34,22 @@ public final class LeaveGuildDialogViewModel extends AppViewModel<ViewState> {
     private final StoreLurking lurkingStore;
     private final RestAPI restAPI;
 
-    /* JADX INFO: renamed from: com.discord.widgets.guilds.leave.LeaveGuildDialogViewModel$1, reason: invalid class name */
+    /* JADX INFO: renamed from: com.discord.widgets.guilds.leave.LeaveGuildDialogViewModel$1 */
     /* JADX INFO: compiled from: LeaveGuildDialogViewModel.kt */
-    public static final /* synthetic */ class AnonymousClass1 extends FunctionReferenceImpl implements Function1<StoreState, Unit> {
-        public AnonymousClass1(LeaveGuildDialogViewModel leaveGuildDialogViewModel) {
+    public static final /* synthetic */ class C87251 extends C12236k implements Function1<StoreState, Unit> {
+        public C87251(LeaveGuildDialogViewModel leaveGuildDialogViewModel) {
             super(1, leaveGuildDialogViewModel, LeaveGuildDialogViewModel.class, "handleStoreState", "handleStoreState(Lcom/discord/widgets/guilds/leave/LeaveGuildDialogViewModel$StoreState;)V", 0);
         }
 
         @Override // kotlin.jvm.functions.Function1
         public /* bridge */ /* synthetic */ Unit invoke(StoreState storeState) {
             invoke2(storeState);
-            return Unit.a;
+            return Unit.f27425a;
         }
 
         /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
         public final void invoke2(StoreState storeState) {
-            Intrinsics3.checkNotNullParameter(storeState, "p1");
+            C12238m.checkNotNullParameter(storeState, "p1");
             ((LeaveGuildDialogViewModel) this.receiver).handleStoreState(storeState);
         }
     }
@@ -60,18 +60,18 @@ public final class LeaveGuildDialogViewModel extends AppViewModel<ViewState> {
         }
 
         private final Observable<StoreState> observeStoreState(long guildId, StoreGuilds guildStore, StoreLurking lurkingStore) {
-            Observable<StoreState> observableJ = Observable.j(guildStore.observeGuild(guildId), lurkingStore.isLurkingObs(guildId), new Func2<Guild, Boolean, StoreState>() { // from class: com.discord.widgets.guilds.leave.LeaveGuildDialogViewModel$Companion$observeStoreState$1
-                @Override // rx.functions.Func2
+            Observable<StoreState> observableM11076j = Observable.m11076j(guildStore.observeGuild(guildId), lurkingStore.isLurkingObs(guildId), new Func2<Guild, Boolean, StoreState>() { // from class: com.discord.widgets.guilds.leave.LeaveGuildDialogViewModel$Companion$observeStoreState$1
+                @Override // p658rx.functions.Func2
                 public final LeaveGuildDialogViewModel.StoreState call(Guild guild, Boolean bool) {
                     if (guild == null) {
                         return LeaveGuildDialogViewModel.StoreState.Invalid.INSTANCE;
                     }
-                    Intrinsics3.checkNotNullExpressionValue(bool, "isLurking");
+                    C12238m.checkNotNullExpressionValue(bool, "isLurking");
                     return new LeaveGuildDialogViewModel.StoreState.Valid(guild, bool.booleanValue());
                 }
             });
-            Intrinsics3.checkNotNullExpressionValue(observableJ, "Observable.combineLatest…urking)\n        }\n      }");
-            return observableJ;
+            C12238m.checkNotNullExpressionValue(observableM11076j, "Observable.combineLatest…urking)\n        }\n      }");
+            return observableM11076j;
         }
 
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
@@ -119,7 +119,7 @@ public final class LeaveGuildDialogViewModel extends AppViewModel<ViewState> {
             /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
             public Valid(Guild guild, boolean z2) {
                 super(null);
-                Intrinsics3.checkNotNullParameter(guild, "guild");
+                C12238m.checkNotNullParameter(guild, "guild");
                 this.guild = guild;
                 this.isLurking = z2;
             }
@@ -145,7 +145,7 @@ public final class LeaveGuildDialogViewModel extends AppViewModel<ViewState> {
             }
 
             public final Valid copy(Guild guild, boolean isLurking) {
-                Intrinsics3.checkNotNullParameter(guild, "guild");
+                C12238m.checkNotNullParameter(guild, "guild");
                 return new Valid(guild, isLurking);
             }
 
@@ -157,7 +157,7 @@ public final class LeaveGuildDialogViewModel extends AppViewModel<ViewState> {
                     return false;
                 }
                 Valid valid = (Valid) other;
-                return Intrinsics3.areEqual(this.guild, valid.guild) && this.isLurking == valid.isLurking;
+                return C12238m.areEqual(this.guild, valid.guild) && this.isLurking == valid.isLurking;
             }
 
             public final Guild getGuild() {
@@ -185,10 +185,10 @@ public final class LeaveGuildDialogViewModel extends AppViewModel<ViewState> {
             }
 
             public String toString() {
-                StringBuilder sbU = outline.U("Valid(guild=");
-                sbU.append(this.guild);
-                sbU.append(", isLurking=");
-                return outline.O(sbU, this.isLurking, ")");
+                StringBuilder sbM833U = C1643a.m833U("Valid(guild=");
+                sbM833U.append(this.guild);
+                sbM833U.append(", isLurking=");
+                return C1643a.m827O(sbM833U, this.isLurking, ")");
             }
         }
 
@@ -221,7 +221,7 @@ public final class LeaveGuildDialogViewModel extends AppViewModel<ViewState> {
             /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
             public Valid(Guild guild, boolean z2, boolean z3) {
                 super(null);
-                Intrinsics3.checkNotNullParameter(guild, "guild");
+                C12238m.checkNotNullParameter(guild, "guild");
                 this.guild = guild;
                 this.isLoading = z2;
                 this.isLurking = z3;
@@ -256,7 +256,7 @@ public final class LeaveGuildDialogViewModel extends AppViewModel<ViewState> {
             }
 
             public final Valid copy(Guild guild, boolean isLoading, boolean isLurking) {
-                Intrinsics3.checkNotNullParameter(guild, "guild");
+                C12238m.checkNotNullParameter(guild, "guild");
                 return new Valid(guild, isLoading, isLurking);
             }
 
@@ -268,7 +268,7 @@ public final class LeaveGuildDialogViewModel extends AppViewModel<ViewState> {
                     return false;
                 }
                 Valid valid = (Valid) other;
-                return Intrinsics3.areEqual(this.guild, valid.guild) && this.isLoading == valid.isLoading && this.isLurking == valid.isLurking;
+                return C12238m.areEqual(this.guild, valid.guild) && this.isLoading == valid.isLoading && this.isLurking == valid.isLurking;
             }
 
             public final Guild getGuild() {
@@ -306,12 +306,12 @@ public final class LeaveGuildDialogViewModel extends AppViewModel<ViewState> {
             }
 
             public String toString() {
-                StringBuilder sbU = outline.U("Valid(guild=");
-                sbU.append(this.guild);
-                sbU.append(", isLoading=");
-                sbU.append(this.isLoading);
-                sbU.append(", isLurking=");
-                return outline.O(sbU, this.isLurking, ")");
+                StringBuilder sbM833U = C1643a.m833U("Valid(guild=");
+                sbM833U.append(this.guild);
+                sbM833U.append(", isLoading=");
+                sbM833U.append(this.isLoading);
+                sbM833U.append(", isLurking=");
+                return C1643a.m827O(sbM833U, this.isLurking, ")");
             }
         }
 
@@ -323,17 +323,17 @@ public final class LeaveGuildDialogViewModel extends AppViewModel<ViewState> {
         }
     }
 
-    /* JADX INFO: renamed from: com.discord.widgets.guilds.leave.LeaveGuildDialogViewModel$leaveGuild$1, reason: invalid class name */
+    /* JADX INFO: renamed from: com.discord.widgets.guilds.leave.LeaveGuildDialogViewModel$leaveGuild$1 */
     /* JADX INFO: compiled from: LeaveGuildDialogViewModel.kt */
-    public static final class AnonymousClass1 extends Lambda implements Function0<Unit> {
-        public AnonymousClass1() {
+    public static final class C87261 extends AbstractC12240o implements Function0<Unit> {
+        public C87261() {
             super(0);
         }
 
         @Override // kotlin.jvm.functions.Function0
         public /* bridge */ /* synthetic */ Unit invoke() {
             invoke2();
-            return Unit.a;
+            return Unit.f27425a;
         }
 
         /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
@@ -342,17 +342,17 @@ public final class LeaveGuildDialogViewModel extends AppViewModel<ViewState> {
         }
     }
 
-    /* JADX INFO: renamed from: com.discord.widgets.guilds.leave.LeaveGuildDialogViewModel$leaveGuild$2, reason: invalid class name */
+    /* JADX INFO: renamed from: com.discord.widgets.guilds.leave.LeaveGuildDialogViewModel$leaveGuild$2 */
     /* JADX INFO: compiled from: LeaveGuildDialogViewModel.kt */
-    public static final class AnonymousClass2 extends Lambda implements Function0<Unit> {
-        public AnonymousClass2() {
+    public static final class C87272 extends AbstractC12240o implements Function0<Unit> {
+        public C87272() {
             super(0);
         }
 
         @Override // kotlin.jvm.functions.Function0
         public /* bridge */ /* synthetic */ Unit invoke() {
             invoke2();
-            return Unit.a;
+            return Unit.f27425a;
         }
 
         /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
@@ -361,17 +361,17 @@ public final class LeaveGuildDialogViewModel extends AppViewModel<ViewState> {
         }
     }
 
-    /* JADX INFO: renamed from: com.discord.widgets.guilds.leave.LeaveGuildDialogViewModel$leaveGuild$3, reason: invalid class name */
+    /* JADX INFO: renamed from: com.discord.widgets.guilds.leave.LeaveGuildDialogViewModel$leaveGuild$3 */
     /* JADX INFO: compiled from: LeaveGuildDialogViewModel.kt */
-    public static final class AnonymousClass3 extends Lambda implements Function1<Void, Unit> {
-        public AnonymousClass3() {
+    public static final class C87283 extends AbstractC12240o implements Function1<Void, Unit> {
+        public C87283() {
             super(1);
         }
 
         @Override // kotlin.jvm.functions.Function1
         public /* bridge */ /* synthetic */ Unit invoke(Void r1) {
             invoke2(r1);
-            return Unit.a;
+            return Unit.f27425a;
         }
 
         /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
@@ -380,22 +380,22 @@ public final class LeaveGuildDialogViewModel extends AppViewModel<ViewState> {
         }
     }
 
-    /* JADX INFO: renamed from: com.discord.widgets.guilds.leave.LeaveGuildDialogViewModel$leaveGuild$4, reason: invalid class name */
+    /* JADX INFO: renamed from: com.discord.widgets.guilds.leave.LeaveGuildDialogViewModel$leaveGuild$4 */
     /* JADX INFO: compiled from: LeaveGuildDialogViewModel.kt */
-    public static final class AnonymousClass4 extends Lambda implements Function1<Error, Unit> {
-        public AnonymousClass4() {
+    public static final class C87294 extends AbstractC12240o implements Function1<Error, Unit> {
+        public C87294() {
             super(1);
         }
 
         @Override // kotlin.jvm.functions.Function1
         public /* bridge */ /* synthetic */ Unit invoke(Error error) {
             invoke2(error);
-            return Unit.a;
+            return Unit.f27425a;
         }
 
         /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
         public final void invoke2(Error error) {
-            Intrinsics3.checkNotNullParameter(error, "it");
+            C12238m.checkNotNullParameter(error, "it");
             LeaveGuildDialogViewModel.this.onLeaveFailed();
         }
     }
@@ -418,7 +418,7 @@ public final class LeaveGuildDialogViewModel extends AppViewModel<ViewState> {
         if (storeState instanceof StoreState.Valid) {
             StoreState.Valid valid2 = (StoreState.Valid) storeState;
             updateViewState(new ViewState.Valid(valid2.getGuild(), zIsLoading, valid2.isLurking()));
-        } else if (Intrinsics3.areEqual(storeState, StoreState.Invalid.INSTANCE)) {
+        } else if (C12238m.areEqual(storeState, StoreState.Invalid.INSTANCE)) {
             updateViewState(ViewState.Invalid.INSTANCE);
         }
     }
@@ -438,7 +438,7 @@ public final class LeaveGuildDialogViewModel extends AppViewModel<ViewState> {
     @MainThread
     private final void onLeaveSucceeded() {
         PublishSubject<Event> publishSubject = this.eventSubject;
-        publishSubject.k.onNext(Event.Dismiss.INSTANCE);
+        publishSubject.f27650k.onNext(Event.Dismiss.INSTANCE);
     }
 
     @MainThread
@@ -451,29 +451,29 @@ public final class LeaveGuildDialogViewModel extends AppViewModel<ViewState> {
         if (valid != null) {
             updateViewState(ViewState.Valid.copy$default(valid, null, true, false, 5, null));
             if (valid.isLurking()) {
-                this.lurkingStore.stopLurking(valid.getGuild().getId(), new AnonymousClass1(), new AnonymousClass2());
+                this.lurkingStore.stopLurking(valid.getGuild().getId(), new C87261(), new C87272());
             } else {
-                ObservableExtensionsKt.appSubscribe(ObservableExtensionsKt.ui$default(ObservableExtensionsKt.restSubscribeOn$default(this.restAPI.leaveGuild(this.guildId), false, 1, null), this, null, 2, null), (Class<?>) LeaveGuildDialogViewModel.class, (58 & 2) != 0 ? null : null, (Function1<? super Subscription, Unit>) ((58 & 4) != 0 ? null : null), (Function1<? super Error, Unit>) ((58 & 8) != 0 ? null : new AnonymousClass4()), (Function0<Unit>) ((58 & 16) != 0 ? ObservableExtensionsKt.AnonymousClass1.INSTANCE : null), (Function0<Unit>) ((58 & 32) != 0 ? ObservableExtensionsKt.AnonymousClass2.INSTANCE : null), new AnonymousClass3());
+                ObservableExtensionsKt.appSubscribe(ObservableExtensionsKt.ui$default(ObservableExtensionsKt.restSubscribeOn$default(this.restAPI.leaveGuild(this.guildId), false, 1, null), this, null, 2, null), (Class<?>) LeaveGuildDialogViewModel.class, (58 & 2) != 0 ? null : null, (Function1<? super Subscription, Unit>) ((58 & 4) != 0 ? null : null), (Function1<? super Error, Unit>) ((58 & 8) != 0 ? null : new C87294()), (Function0<Unit>) ((58 & 16) != 0 ? ObservableExtensionsKt.C68791.INSTANCE : null), (Function0<Unit>) ((58 & 32) != 0 ? ObservableExtensionsKt.C68802.INSTANCE : null), new C87283());
             }
         }
     }
 
     public final Observable<Event> observeEvents() {
         PublishSubject<Event> publishSubject = this.eventSubject;
-        Intrinsics3.checkNotNullExpressionValue(publishSubject, "eventSubject");
+        C12238m.checkNotNullExpressionValue(publishSubject, "eventSubject");
         return publishSubject;
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public LeaveGuildDialogViewModel(long j, RestAPI restAPI, StoreLurking storeLurking, Observable<StoreState> observable) {
         super(null);
-        Intrinsics3.checkNotNullParameter(restAPI, "restAPI");
-        Intrinsics3.checkNotNullParameter(storeLurking, "lurkingStore");
-        Intrinsics3.checkNotNullParameter(observable, "storeStateObservable");
+        C12238m.checkNotNullParameter(restAPI, "restAPI");
+        C12238m.checkNotNullParameter(storeLurking, "lurkingStore");
+        C12238m.checkNotNullParameter(observable, "storeStateObservable");
         this.guildId = j;
         this.restAPI = restAPI;
         this.lurkingStore = storeLurking;
-        this.eventSubject = PublishSubject.k0();
-        ObservableExtensionsKt.appSubscribe(ObservableExtensionsKt.ui$default(observable, this, null, 2, null), (Class<?>) LeaveGuildDialogViewModel.class, (58 & 2) != 0 ? null : null, (Function1<? super Subscription, Unit>) ((58 & 4) != 0 ? null : null), (Function1<? super Error, Unit>) ((58 & 8) != 0 ? null : null), (Function0<Unit>) ((58 & 16) != 0 ? ObservableExtensionsKt.AnonymousClass1.INSTANCE : null), (Function0<Unit>) ((58 & 32) != 0 ? ObservableExtensionsKt.AnonymousClass2.INSTANCE : null), new AnonymousClass1(this));
+        this.eventSubject = PublishSubject.m11133k0();
+        ObservableExtensionsKt.appSubscribe(ObservableExtensionsKt.ui$default(observable, this, null, 2, null), (Class<?>) LeaveGuildDialogViewModel.class, (58 & 2) != 0 ? null : null, (Function1<? super Subscription, Unit>) ((58 & 4) != 0 ? null : null), (Function1<? super Error, Unit>) ((58 & 8) != 0 ? null : null), (Function0<Unit>) ((58 & 16) != 0 ? ObservableExtensionsKt.C68791.INSTANCE : null), (Function0<Unit>) ((58 & 32) != 0 ? ObservableExtensionsKt.C68802.INSTANCE : null), new C87251(this));
     }
 }

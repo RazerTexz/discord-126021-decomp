@@ -6,7 +6,7 @@
     app:cardBackgroundColor="@color/transparent"
     app:cardCornerRadius="8dp"
     app:cardElevation="0dp">
-    <com.google.android.exoplayer2.ui.PlayerView
+    <com.google.android.exoplayer2.p505ui.PlayerView
         android:layout_gravity="center"
         android:id="@+id/inline_media_player_view"
         android:layout_width="match_parent"

@@ -1,17 +1,17 @@
 package com.discord.analytics.generated.events;
 
-import b.d.b.a.outline;
 import com.discord.analytics.generated.traits.TrackBase;
-import com.discord.analytics.generated.traits.TrackBase2;
+import com.discord.analytics.generated.traits.TrackBaseReceiver;
 import com.discord.analytics.generated.traits.TrackLocationMetadata;
-import com.discord.analytics.generated.traits.TrackLocationMetadata2;
+import com.discord.analytics.generated.traits.TrackLocationMetadataReceiver;
 import com.discord.api.science.AnalyticsSchema;
-import d0.z.d.Intrinsics3;
 import java.util.List;
+import p007b.p100d.p104b.p105a.C1643a;
+import p507d0.p592z.p594d.C12238m;
 
 /* JADX INFO: compiled from: TrackAfExited.kt */
 /* JADX INFO: loaded from: classes.dex */
-public final /* data */ class TrackAfExited implements AnalyticsSchema, TrackBase2, TrackLocationMetadata2 {
+public final /* data */ class TrackAfExited implements AnalyticsSchema, TrackBaseReceiver, TrackLocationMetadataReceiver {
     private TrackBase trackBase;
     private TrackLocationMetadata trackLocationMetadata;
     private final CharSequence loadId = null;
@@ -43,7 +43,7 @@ public final /* data */ class TrackAfExited implements AnalyticsSchema, TrackBas
             return false;
         }
         TrackAfExited trackAfExited = (TrackAfExited) other;
-        return Intrinsics3.areEqual(this.loadId, trackAfExited.loadId) && Intrinsics3.areEqual(this.gameIdsViewed, trackAfExited.gameIdsViewed) && Intrinsics3.areEqual(this.storeApplicationIdsViewed, trackAfExited.storeApplicationIdsViewed) && Intrinsics3.areEqual(this.storeSkuIdsViewed, trackAfExited.storeSkuIdsViewed) && Intrinsics3.areEqual(this.numGamesViewed, trackAfExited.numGamesViewed) && Intrinsics3.areEqual(this.numCardsViewed, trackAfExited.numCardsViewed) && Intrinsics3.areEqual(this.secondsSpent, trackAfExited.secondsSpent) && Intrinsics3.areEqual(this.feedLayout, trackAfExited.feedLayout) && Intrinsics3.areEqual(this.windowWidth, trackAfExited.windowWidth) && Intrinsics3.areEqual(this.windowHeight, trackAfExited.windowHeight) && Intrinsics3.areEqual(this.subscribedGames, trackAfExited.subscribedGames) && Intrinsics3.areEqual(this.numCardsTotal, trackAfExited.numCardsTotal) && Intrinsics3.areEqual(this.newsIdsViewed, trackAfExited.newsIdsViewed);
+        return C12238m.areEqual(this.loadId, trackAfExited.loadId) && C12238m.areEqual(this.gameIdsViewed, trackAfExited.gameIdsViewed) && C12238m.areEqual(this.storeApplicationIdsViewed, trackAfExited.storeApplicationIdsViewed) && C12238m.areEqual(this.storeSkuIdsViewed, trackAfExited.storeSkuIdsViewed) && C12238m.areEqual(this.numGamesViewed, trackAfExited.numGamesViewed) && C12238m.areEqual(this.numCardsViewed, trackAfExited.numCardsViewed) && C12238m.areEqual(this.secondsSpent, trackAfExited.secondsSpent) && C12238m.areEqual(this.feedLayout, trackAfExited.feedLayout) && C12238m.areEqual(this.windowWidth, trackAfExited.windowWidth) && C12238m.areEqual(this.windowHeight, trackAfExited.windowHeight) && C12238m.areEqual(this.subscribedGames, trackAfExited.subscribedGames) && C12238m.areEqual(this.numCardsTotal, trackAfExited.numCardsTotal) && C12238m.areEqual(this.newsIdsViewed, trackAfExited.newsIdsViewed);
     }
 
     public int hashCode() {
@@ -76,31 +76,31 @@ public final /* data */ class TrackAfExited implements AnalyticsSchema, TrackBas
     }
 
     public String toString() {
-        StringBuilder sbU = outline.U("TrackAfExited(loadId=");
-        sbU.append(this.loadId);
-        sbU.append(", gameIdsViewed=");
-        sbU.append(this.gameIdsViewed);
-        sbU.append(", storeApplicationIdsViewed=");
-        sbU.append(this.storeApplicationIdsViewed);
-        sbU.append(", storeSkuIdsViewed=");
-        sbU.append(this.storeSkuIdsViewed);
-        sbU.append(", numGamesViewed=");
-        sbU.append(this.numGamesViewed);
-        sbU.append(", numCardsViewed=");
-        sbU.append(this.numCardsViewed);
-        sbU.append(", secondsSpent=");
-        sbU.append(this.secondsSpent);
-        sbU.append(", feedLayout=");
-        sbU.append(this.feedLayout);
-        sbU.append(", windowWidth=");
-        sbU.append(this.windowWidth);
-        sbU.append(", windowHeight=");
-        sbU.append(this.windowHeight);
-        sbU.append(", subscribedGames=");
-        sbU.append(this.subscribedGames);
-        sbU.append(", numCardsTotal=");
-        sbU.append(this.numCardsTotal);
-        sbU.append(", newsIdsViewed=");
-        return outline.L(sbU, this.newsIdsViewed, ")");
+        StringBuilder sbM833U = C1643a.m833U("TrackAfExited(loadId=");
+        sbM833U.append(this.loadId);
+        sbM833U.append(", gameIdsViewed=");
+        sbM833U.append(this.gameIdsViewed);
+        sbM833U.append(", storeApplicationIdsViewed=");
+        sbM833U.append(this.storeApplicationIdsViewed);
+        sbM833U.append(", storeSkuIdsViewed=");
+        sbM833U.append(this.storeSkuIdsViewed);
+        sbM833U.append(", numGamesViewed=");
+        sbM833U.append(this.numGamesViewed);
+        sbM833U.append(", numCardsViewed=");
+        sbM833U.append(this.numCardsViewed);
+        sbM833U.append(", secondsSpent=");
+        sbM833U.append(this.secondsSpent);
+        sbM833U.append(", feedLayout=");
+        sbM833U.append(this.feedLayout);
+        sbM833U.append(", windowWidth=");
+        sbM833U.append(this.windowWidth);
+        sbM833U.append(", windowHeight=");
+        sbM833U.append(this.windowHeight);
+        sbM833U.append(", subscribedGames=");
+        sbM833U.append(this.subscribedGames);
+        sbM833U.append(", numCardsTotal=");
+        sbM833U.append(this.numCardsTotal);
+        sbM833U.append(", newsIdsViewed=");
+        return C1643a.m824L(sbM833U, this.newsIdsViewed, ")");
     }
 }

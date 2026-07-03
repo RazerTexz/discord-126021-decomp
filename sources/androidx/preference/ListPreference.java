@@ -36,22 +36,22 @@ public class ListPreference extends DialogPreference {
 
         @Override // androidx.preference.Preference.SummaryProvider
         public CharSequence provideSummary(ListPreference listPreference) {
-            return TextUtils.isEmpty(listPreference.getEntry()) ? listPreference.getContext().getString(R.string.not_set) : listPreference.getEntry();
+            return TextUtils.isEmpty(listPreference.getEntry()) ? listPreference.getContext().getString(C0525R.string.not_set) : listPreference.getEntry();
         }
     }
 
     public ListPreference(Context context, AttributeSet attributeSet, int i, int i2) {
         super(context, attributeSet, i, i2);
-        TypedArray typedArrayObtainStyledAttributes = context.obtainStyledAttributes(attributeSet, R.styleable.ListPreference, i, i2);
-        this.mEntries = TypedArrayUtils.getTextArray(typedArrayObtainStyledAttributes, R.styleable.ListPreference_entries, R.styleable.ListPreference_android_entries);
-        this.mEntryValues = TypedArrayUtils.getTextArray(typedArrayObtainStyledAttributes, R.styleable.ListPreference_entryValues, R.styleable.ListPreference_android_entryValues);
-        int i3 = R.styleable.ListPreference_useSimpleSummaryProvider;
+        TypedArray typedArrayObtainStyledAttributes = context.obtainStyledAttributes(attributeSet, C0525R.styleable.ListPreference, i, i2);
+        this.mEntries = TypedArrayUtils.getTextArray(typedArrayObtainStyledAttributes, C0525R.styleable.ListPreference_entries, C0525R.styleable.ListPreference_android_entries);
+        this.mEntryValues = TypedArrayUtils.getTextArray(typedArrayObtainStyledAttributes, C0525R.styleable.ListPreference_entryValues, C0525R.styleable.ListPreference_android_entryValues);
+        int i3 = C0525R.styleable.ListPreference_useSimpleSummaryProvider;
         if (TypedArrayUtils.getBoolean(typedArrayObtainStyledAttributes, i3, i3, false)) {
             setSummaryProvider(SimpleSummaryProvider.getInstance());
         }
         typedArrayObtainStyledAttributes.recycle();
-        TypedArray typedArrayObtainStyledAttributes2 = context.obtainStyledAttributes(attributeSet, R.styleable.Preference, i, i2);
-        this.mSummary = TypedArrayUtils.getString(typedArrayObtainStyledAttributes2, R.styleable.Preference_summary, R.styleable.Preference_android_summary);
+        TypedArray typedArrayObtainStyledAttributes2 = context.obtainStyledAttributes(attributeSet, C0525R.styleable.Preference, i, i2);
+        this.mSummary = TypedArrayUtils.getString(typedArrayObtainStyledAttributes2, C0525R.styleable.Preference_summary, C0525R.styleable.Preference_android_summary);
         typedArrayObtainStyledAttributes2.recycle();
     }
 
@@ -234,7 +234,7 @@ public class ListPreference extends DialogPreference {
     }
 
     public ListPreference(Context context, AttributeSet attributeSet) {
-        this(context, attributeSet, TypedArrayUtils.getAttr(context, R.attr.dialogPreferenceStyle, android.R.attr.dialogPreferenceStyle));
+        this(context, attributeSet, TypedArrayUtils.getAttr(context, C0525R.attr.dialogPreferenceStyle, android.R.attr.dialogPreferenceStyle));
     }
 
     public ListPreference(Context context) {

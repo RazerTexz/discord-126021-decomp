@@ -1,33 +1,40 @@
 package kotlin.reflect.jvm.internal.impl.utils;
 
-import d0.e0.p.d.m0.p.exceptionUtils;
+import p507d0.p513e0.p514p.p515d.p517m0.p576p.C12035c;
 
 /* JADX INFO: loaded from: classes3.dex */
 public class WrappedValues {
-    public static final Object a = new a();
+
+    /* JADX INFO: renamed from: a */
+    public static final Object f27450a = new C12795a();
 
     public static class WrappedProcessCanceledException extends RuntimeException {
     }
 
-    public static class a {
+    /* JADX INFO: renamed from: kotlin.reflect.jvm.internal.impl.utils.WrappedValues$a */
+    public static class C12795a {
         public String toString() {
             return "NULL_VALUE";
         }
     }
 
-    public static final class b {
-        public final Throwable a;
+    /* JADX INFO: renamed from: kotlin.reflect.jvm.internal.impl.utils.WrappedValues$b */
+    public static final class C12796b {
 
-        public b(Throwable th, a aVar) {
+        /* JADX INFO: renamed from: a */
+        public final Throwable f27451a;
+
+        public C12796b(Throwable th, C12795a c12795a) {
             if (th != null) {
-                this.a = th;
+                this.f27451a = th;
             } else {
-                a(0);
+                m10899a(0);
                 throw null;
             }
         }
 
-        public static /* synthetic */ void a(int i) {
+        /* JADX INFO: renamed from: a */
+        public static /* synthetic */ void m10899a(int i) {
             String str = i != 1 ? "Argument for @NotNull parameter '%s' of %s.%s must not be null" : "@NotNull method %s.%s must not return null";
             Object[] objArr = new Object[i != 1 ? 3 : 2];
             if (i != 1) {
@@ -50,20 +57,21 @@ public class WrappedValues {
         }
 
         public Throwable getThrowable() {
-            Throwable th = this.a;
+            Throwable th = this.f27451a;
             if (th != null) {
                 return th;
             }
-            a(1);
+            m10899a(1);
             throw null;
         }
 
         public String toString() {
-            return this.a.toString();
+            return this.f27451a.toString();
         }
     }
 
-    public static /* synthetic */ void a(int i) {
+    /* JADX INFO: renamed from: a */
+    public static /* synthetic */ void m10898a(int i) {
         String str = (i == 1 || i == 2) ? "@NotNull method %s.%s must not return null" : "Argument for @NotNull parameter '%s' of %s.%s must not be null";
         Object[] objArr = new Object[(i == 1 || i == 2) ? 2 : 3];
         if (i == 1 || i == 2) {
@@ -95,14 +103,14 @@ public class WrappedValues {
     }
 
     public static <V> Object escapeNull(V v) {
-        return v == null ? a : v;
+        return v == null ? f27450a : v;
     }
 
     public static Object escapeThrowable(Throwable th) {
         if (th != null) {
-            return new b(th, null);
+            return new C12796b(th, null);
         }
-        a(3);
+        m10898a(3);
         throw null;
     }
 
@@ -110,17 +118,17 @@ public class WrappedValues {
         if (obj != null) {
             return (V) unescapeNull(unescapeThrowable(obj));
         }
-        a(4);
+        m10898a(4);
         throw null;
     }
 
     /* JADX WARN: Multi-variable type inference failed */
     public static <V> V unescapeNull(Object obj) {
         if (obj == 0) {
-            a(0);
+            m10898a(0);
             throw null;
         }
-        if (obj == a) {
+        if (obj == f27450a) {
             return null;
         }
         return obj;
@@ -128,8 +136,8 @@ public class WrappedValues {
 
     /* JADX WARN: Multi-variable type inference failed */
     public static <V> V unescapeThrowable(Object obj) {
-        if (obj instanceof b) {
-            throw exceptionUtils.rethrow(((b) obj).getThrowable());
+        if (obj instanceof C12796b) {
+            throw C12035c.rethrow(((C12796b) obj).getThrowable());
         }
         return obj;
     }

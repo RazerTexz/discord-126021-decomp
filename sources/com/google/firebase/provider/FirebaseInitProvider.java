@@ -9,14 +9,14 @@ import android.net.Uri;
 import android.util.Log;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import b.c.a.a0.AnimatableValueParser;
-import b.i.c.FirebaseApp2;
+import p007b.p085c.p086a.p087a0.C1460d;
+import p007b.p225i.p361c.C4542c;
 
 /* JADX INFO: loaded from: classes3.dex */
 public class FirebaseInitProvider extends ContentProvider {
     @Override // android.content.ContentProvider
     public void attachInfo(@NonNull Context context, @NonNull ProviderInfo providerInfo) {
-        AnimatableValueParser.z(providerInfo, "FirebaseInitProvider ProviderInfo cannot be null.");
+        C1460d.m595z(providerInfo, "FirebaseInitProvider ProviderInfo cannot be null.");
         if ("com.google.firebase.firebaseinitprovider".equals(providerInfo.authority)) {
             throw new IllegalStateException("Incorrect provider authority in manifest. Most likely due to a missing applicationId variable in application's build.gradle.");
         }
@@ -42,7 +42,7 @@ public class FirebaseInitProvider extends ContentProvider {
 
     @Override // android.content.ContentProvider
     public boolean onCreate() {
-        if (FirebaseApp2.e(getContext()) == null) {
+        if (C4542c.m6328e(getContext()) == null) {
             Log.i("FirebaseInitProvider", "FirebaseApp initialization unsuccessful");
             return false;
         }

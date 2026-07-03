@@ -7,72 +7,80 @@ import android.widget.ImageView;
 import android.widget.ProgressBar;
 import androidx.annotation.NonNull;
 import androidx.viewbinding.ViewBinding;
-import com.discord.R;
+import com.discord.C5419R;
 import com.facebook.drawee.view.SimpleDraweeView;
-import com.google.android.exoplayer2.ui.PlayerView;
+import com.google.android.exoplayer2.p505ui.PlayerView;
 
 /* JADX INFO: loaded from: classes.dex */
 public final class InlineMediaViewBinding implements ViewBinding {
 
+    /* JADX INFO: renamed from: a */
     @NonNull
-    public final View a;
+    public final View f15166a;
 
-    /* JADX INFO: renamed from: b, reason: collision with root package name */
+    /* JADX INFO: renamed from: b */
     @NonNull
-    public final ImageView f2126b;
+    public final ImageView f15167b;
 
+    /* JADX INFO: renamed from: c */
     @NonNull
-    public final SimpleDraweeView c;
+    public final SimpleDraweeView f15168c;
 
+    /* JADX INFO: renamed from: d */
     @NonNull
-    public final ProgressBar d;
+    public final ProgressBar f15169d;
 
+    /* JADX INFO: renamed from: e */
     @NonNull
-    public final ImageView e;
+    public final ImageView f15170e;
 
+    /* JADX INFO: renamed from: f */
     @NonNull
-    public final PlayerView f;
+    public final PlayerView f15171f;
 
+    /* JADX INFO: renamed from: g */
     @NonNull
-    public final ImageView g;
+    public final ImageView f15172g;
 
+    /* JADX INFO: renamed from: h */
     @NonNull
-    public final View h;
+    public final View f15173h;
 
     public InlineMediaViewBinding(@NonNull View view, @NonNull ImageView imageView, @NonNull SimpleDraweeView simpleDraweeView, @NonNull ProgressBar progressBar, @NonNull ImageView imageView2, @NonNull PlayerView playerView, @NonNull ImageView imageView3, @NonNull View view2) {
-        this.a = view;
-        this.f2126b = imageView;
-        this.c = simpleDraweeView;
-        this.d = progressBar;
-        this.e = imageView2;
-        this.f = playerView;
-        this.g = imageView3;
-        this.h = view2;
+        this.f15166a = view;
+        this.f15167b = imageView;
+        this.f15168c = simpleDraweeView;
+        this.f15169d = progressBar;
+        this.f15170e = imageView2;
+        this.f15171f = playerView;
+        this.f15172g = imageView3;
+        this.f15173h = view2;
     }
 
     @NonNull
-    public static InlineMediaViewBinding a(@NonNull LayoutInflater layoutInflater, @NonNull ViewGroup viewGroup) {
-        layoutInflater.inflate(R.layout.inline_media_view, viewGroup);
-        int i = R.id.inline_media_gif_indicator;
-        ImageView imageView = (ImageView) viewGroup.findViewById(R.id.inline_media_gif_indicator);
+    /* JADX INFO: renamed from: a */
+    public static InlineMediaViewBinding m8388a(@NonNull LayoutInflater layoutInflater, @NonNull ViewGroup viewGroup) {
+        layoutInflater.inflate(C5419R.layout.inline_media_view, viewGroup);
+        int i = C5419R.id.inline_media_gif_indicator;
+        ImageView imageView = (ImageView) viewGroup.findViewById(C5419R.id.inline_media_gif_indicator);
         if (imageView != null) {
-            i = R.id.inline_media_image_preview;
-            SimpleDraweeView simpleDraweeView = (SimpleDraweeView) viewGroup.findViewById(R.id.inline_media_image_preview);
+            i = C5419R.id.inline_media_image_preview;
+            SimpleDraweeView simpleDraweeView = (SimpleDraweeView) viewGroup.findViewById(C5419R.id.inline_media_image_preview);
             if (simpleDraweeView != null) {
-                i = R.id.inline_media_loading_indicator;
-                ProgressBar progressBar = (ProgressBar) viewGroup.findViewById(R.id.inline_media_loading_indicator);
+                i = C5419R.id.inline_media_loading_indicator;
+                ProgressBar progressBar = (ProgressBar) viewGroup.findViewById(C5419R.id.inline_media_loading_indicator);
                 if (progressBar != null) {
-                    i = R.id.inline_media_play_button;
-                    ImageView imageView2 = (ImageView) viewGroup.findViewById(R.id.inline_media_play_button);
+                    i = C5419R.id.inline_media_play_button;
+                    ImageView imageView2 = (ImageView) viewGroup.findViewById(C5419R.id.inline_media_play_button);
                     if (imageView2 != null) {
-                        i = R.id.inline_media_player_view;
-                        PlayerView playerView = (PlayerView) viewGroup.findViewById(R.id.inline_media_player_view);
+                        i = C5419R.id.inline_media_player_view;
+                        PlayerView playerView = (PlayerView) viewGroup.findViewById(C5419R.id.inline_media_player_view);
                         if (playerView != null) {
-                            i = R.id.inline_media_volume_toggle;
-                            ImageView imageView3 = (ImageView) viewGroup.findViewById(R.id.inline_media_volume_toggle);
+                            i = C5419R.id.inline_media_volume_toggle;
+                            ImageView imageView3 = (ImageView) viewGroup.findViewById(C5419R.id.inline_media_volume_toggle);
                             if (imageView3 != null) {
-                                i = R.id.opacity_shim;
-                                View viewFindViewById = viewGroup.findViewById(R.id.opacity_shim);
+                                i = C5419R.id.opacity_shim;
+                                View viewFindViewById = viewGroup.findViewById(C5419R.id.opacity_shim);
                                 if (viewFindViewById != null) {
                                     return new InlineMediaViewBinding(viewGroup, imageView, simpleDraweeView, progressBar, imageView2, playerView, imageView3, viewFindViewById);
                                 }
@@ -88,6 +96,6 @@ public final class InlineMediaViewBinding implements ViewBinding {
     @Override // androidx.viewbinding.ViewBinding
     @NonNull
     public View getRoot() {
-        return this.a;
+        return this.f15166a;
     }
 }

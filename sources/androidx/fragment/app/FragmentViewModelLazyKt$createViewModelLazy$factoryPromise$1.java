@@ -1,12 +1,12 @@
 package androidx.fragment.app;
 
 import androidx.view.ViewModelProvider;
-import d0.z.d.Lambda;
 import kotlin.jvm.functions.Function0;
+import p507d0.p592z.p594d.AbstractC12240o;
 
 /* JADX INFO: compiled from: FragmentViewModelLazy.kt */
 /* JADX INFO: loaded from: classes.dex */
-public final class FragmentViewModelLazyKt$createViewModelLazy$factoryPromise$1 extends Lambda implements Function0<ViewModelProvider.Factory> {
+public final class FragmentViewModelLazyKt$createViewModelLazy$factoryPromise$1 extends AbstractC12240o implements Function0<ViewModelProvider.Factory> {
     public final /* synthetic */ Fragment $this_createViewModelLazy;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */

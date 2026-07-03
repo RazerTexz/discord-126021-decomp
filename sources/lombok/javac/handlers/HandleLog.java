@@ -30,7 +30,9 @@ import lombok.javac.handlers.JavacHandlerUtil;
 public class HandleLog {
     private static final IdentifierName LOG = IdentifierName.valueOf("log");
     private static /* synthetic */ int[] $SWITCH_TABLE$lombok$core$AST$Kind;
-    private static /* synthetic */ int[] $SWITCH_TABLE$lombok$core$configuration$LogDeclaration$LogFactoryParameter;
+
+    /* JADX INFO: renamed from: $SWITCH_TABLE$lombok$core$configuration$LogDeclaration$LogFactoryParameter */
+    private static /* synthetic */ int[] f27486xeb5c83f5;
 
     static /* synthetic */ int[] $SWITCH_TABLE$lombok$core$AST$Kind() {
         int[] iArr = $SWITCH_TABLE$lombok$core$AST$Kind;
@@ -82,8 +84,9 @@ public class HandleLog {
         return iArr2;
     }
 
-    static /* synthetic */ int[] $SWITCH_TABLE$lombok$core$configuration$LogDeclaration$LogFactoryParameter() {
-        int[] iArr = $SWITCH_TABLE$lombok$core$configuration$LogDeclaration$LogFactoryParameter;
+    /* JADX INFO: renamed from: $SWITCH_TABLE$lombok$core$configuration$LogDeclaration$LogFactoryParameter */
+    static /* synthetic */ int[] m10944xeb5c83f5() {
+        int[] iArr = f27486xeb5c83f5;
         if (iArr != null) {
             return iArr;
         }
@@ -104,7 +107,7 @@ public class HandleLog {
             iArr2[LogDeclaration.LogFactoryParameter.TYPE.ordinal()] = 1;
         } catch (NoSuchFieldError unused4) {
         }
-        $SWITCH_TABLE$lombok$core$configuration$LogDeclaration$LogFactoryParameter = iArr2;
+        f27486xeb5c83f5 = iArr2;
         return iArr2;
     }
 
@@ -114,7 +117,7 @@ public class HandleLog {
 
     public static void processAnnotation(LoggingFramework framework, AnnotationValues<?> annotation, JavacNode annotationNode) {
         JavacHandlerUtil.deleteAnnotationIfNeccessary(annotationNode, framework.getAnnotationClass());
-        JavacNode typeNode = annotationNode.up();
+        JavacNode typeNode = annotationNode.m10925up();
         switch ($SWITCH_TABLE$lombok$core$AST$Kind()[typeNode.getKind().ordinal()]) {
             case 2:
                 IdentifierName logFieldName = (IdentifierName) annotationNode.getAst().readConfiguration(ConfigurationKeys.LOG_ANY_FIELD_NAME);
@@ -175,7 +178,7 @@ public class HandleLog {
         JavacTreeMaker maker = typeNode.getTreeMaker();
         for (int i = 0; i < parameters.size(); i++) {
             LogDeclaration.LogFactoryParameter parameter = parameters.get(i);
-            switch ($SWITCH_TABLE$lombok$core$configuration$LogDeclaration$LogFactoryParameter()[parameter.ordinal()]) {
+            switch (m10944xeb5c83f5()[parameter.ordinal()]) {
                 case 1:
                     jCExpressionArr[i] = loggingType;
                     break;

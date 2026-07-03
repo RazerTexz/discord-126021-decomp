@@ -1,18 +1,18 @@
 package com.discord.models.domain;
 
-import b.d.b.a.outline;
 import com.discord.models.domain.premium.SubscriptionPlanType;
 import com.discord.utilities.time.TimeUtils;
-import d0.z.d.Intrinsics3;
 import java.util.Collection;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Set;
 import kotlin.jvm.internal.DefaultConstructorMarker;
+import p007b.p100d.p104b.p105a.C1643a;
+import p507d0.p592z.p594d.C12238m;
 
 /* JADX INFO: compiled from: ModelSubscription.kt */
 /* JADX INFO: loaded from: classes.dex */
-public final /* data */ class ModelSubscription extends ModelSubscription2 {
+public final /* data */ class ModelSubscription extends HasSubscriptionItems {
     private final String canceledAt;
     private final String createdAt;
     private final String currentPeriodEnd;
@@ -53,7 +53,7 @@ public final /* data */ class ModelSubscription extends ModelSubscription2 {
                 PaymentGateway[] paymentGatewayArrValues = PaymentGateway.values();
                 for (int i = 0; i < 5; i++) {
                     paymentGateway = paymentGatewayArrValues[i];
-                    if (Intrinsics3.areEqual(paymentGateway.getIntRepresentation(), paymentGatewayInt)) {
+                    if (C12238m.areEqual(paymentGateway.getIntRepresentation(), paymentGatewayInt)) {
                         if (paymentGateway != null) {
                             return paymentGateway;
                         }
@@ -111,14 +111,14 @@ public final /* data */ class ModelSubscription extends ModelSubscription2 {
                         if (status != null) {
                             return status;
                         }
-                        throw new IllegalArgumentException(outline.q("unsupported subscription status: ", statusInt));
+                        throw new IllegalArgumentException(C1643a.m871q("unsupported subscription status: ", statusInt));
                     }
                 }
                 status = null;
                 if (status != null) {
                     return status;
                 }
-                throw new IllegalArgumentException(outline.q("unsupported subscription status: ", statusInt));
+                throw new IllegalArgumentException(C1643a.m871q("unsupported subscription status: ", statusInt));
             }
 
             public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
@@ -202,10 +202,10 @@ public final /* data */ class ModelSubscription extends ModelSubscription2 {
         }
 
         public String toString() {
-            StringBuilder sbU = outline.U("SubscriptionAdditionalPlan(planId=");
-            sbU.append(this.planId);
-            sbU.append(", quantity=");
-            return outline.B(sbU, this.quantity, ")");
+            StringBuilder sbM833U = C1643a.m833U("SubscriptionAdditionalPlan(planId=");
+            sbM833U.append(this.planId);
+            sbM833U.append(", quantity=");
+            return C1643a.m814B(sbM833U, this.quantity, ")");
         }
     }
 
@@ -286,22 +286,22 @@ public final /* data */ class ModelSubscription extends ModelSubscription2 {
         }
 
         public String toString() {
-            StringBuilder sbU = outline.U("SubscriptionItem(id=");
-            sbU.append(this.id);
-            sbU.append(", planId=");
-            sbU.append(this.planId);
-            sbU.append(", quantity=");
-            return outline.B(sbU, this.quantity, ")");
+            StringBuilder sbM833U = C1643a.m833U("SubscriptionItem(id=");
+            sbM833U.append(this.id);
+            sbM833U.append(", planId=");
+            sbM833U.append(this.planId);
+            sbM833U.append(", quantity=");
+            return C1643a.m814B(sbM833U, this.quantity, ")");
         }
     }
 
     /* JADX INFO: compiled from: ModelSubscription.kt */
-    public static final /* data */ class SubscriptionRenewalMutations extends ModelSubscription2 {
+    public static final /* data */ class SubscriptionRenewalMutations extends HasSubscriptionItems {
         private final List<SubscriptionItem> items;
         private final String paymentGatewayPlanId;
 
         public SubscriptionRenewalMutations(List<SubscriptionItem> list, String str) {
-            Intrinsics3.checkNotNullParameter(list, "items");
+            C12238m.checkNotNullParameter(list, "items");
             this.items = list;
             this.paymentGatewayPlanId = str;
         }
@@ -327,7 +327,7 @@ public final /* data */ class ModelSubscription extends ModelSubscription2 {
         }
 
         public final SubscriptionRenewalMutations copy(List<SubscriptionItem> items, String paymentGatewayPlanId) {
-            Intrinsics3.checkNotNullParameter(items, "items");
+            C12238m.checkNotNullParameter(items, "items");
             return new SubscriptionRenewalMutations(items, paymentGatewayPlanId);
         }
 
@@ -339,10 +339,10 @@ public final /* data */ class ModelSubscription extends ModelSubscription2 {
                 return false;
             }
             SubscriptionRenewalMutations subscriptionRenewalMutations = (SubscriptionRenewalMutations) other;
-            return Intrinsics3.areEqual(getItems(), subscriptionRenewalMutations.getItems()) && Intrinsics3.areEqual(this.paymentGatewayPlanId, subscriptionRenewalMutations.paymentGatewayPlanId);
+            return C12238m.areEqual(getItems(), subscriptionRenewalMutations.getItems()) && C12238m.areEqual(this.paymentGatewayPlanId, subscriptionRenewalMutations.paymentGatewayPlanId);
         }
 
-        @Override // com.discord.models.domain.ModelSubscription2
+        @Override // com.discord.models.domain.HasSubscriptionItems
         public List<SubscriptionItem> getItems() {
             return this.items;
         }
@@ -359,10 +359,10 @@ public final /* data */ class ModelSubscription extends ModelSubscription2 {
         }
 
         public String toString() {
-            StringBuilder sbU = outline.U("SubscriptionRenewalMutations(items=");
-            sbU.append(getItems());
-            sbU.append(", paymentGatewayPlanId=");
-            return outline.J(sbU, this.paymentGatewayPlanId, ")");
+            StringBuilder sbM833U = C1643a.m833U("SubscriptionRenewalMutations(items=");
+            sbM833U.append(getItems());
+            sbM833U.append(", paymentGatewayPlanId=");
+            return C1643a.m822J(sbM833U, this.paymentGatewayPlanId, ")");
         }
     }
 
@@ -387,7 +387,7 @@ public final /* data */ class ModelSubscription extends ModelSubscription2 {
                 if (typeInt == 2) {
                     return Type.GUILD;
                 }
-                throw new IllegalArgumentException(outline.q("unsupported subscription type: ", typeInt));
+                throw new IllegalArgumentException(C1643a.m871q("unsupported subscription type: ", typeInt));
             }
 
             public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
@@ -397,11 +397,11 @@ public final /* data */ class ModelSubscription extends ModelSubscription2 {
     }
 
     public ModelSubscription(String str, String str2, String str3, String str4, String str5, String str6, Integer num, String str7, String str8, SubscriptionRenewalMutations subscriptionRenewalMutations, List<SubscriptionItem> list, String str9, int i, int i2) {
-        Intrinsics3.checkNotNullParameter(str, ModelAuditLogEntry.CHANGE_KEY_ID);
-        Intrinsics3.checkNotNullParameter(str2, "createdAt");
-        Intrinsics3.checkNotNullParameter(str4, "currentPeriodStart");
-        Intrinsics3.checkNotNullParameter(str5, "currentPeriodEnd");
-        Intrinsics3.checkNotNullParameter(list, "items");
+        C12238m.checkNotNullParameter(str, ModelAuditLogEntry.CHANGE_KEY_ID);
+        C12238m.checkNotNullParameter(str2, "createdAt");
+        C12238m.checkNotNullParameter(str4, "currentPeriodStart");
+        C12238m.checkNotNullParameter(str5, "currentPeriodEnd");
+        C12238m.checkNotNullParameter(list, "items");
         this.id = str;
         this.createdAt = str2;
         this.canceledAt = str3;
@@ -488,11 +488,11 @@ public final /* data */ class ModelSubscription extends ModelSubscription2 {
     }
 
     public final ModelSubscription copy(String id2, String createdAt, String canceledAt, String currentPeriodStart, String currentPeriodEnd, String paymentSourceId, Integer paymentGateway, String trialId, String trialEndsAt, SubscriptionRenewalMutations renewalMutations, List<SubscriptionItem> items, String paymentGatewayPlanId, int status, int type) {
-        Intrinsics3.checkNotNullParameter(id2, ModelAuditLogEntry.CHANGE_KEY_ID);
-        Intrinsics3.checkNotNullParameter(createdAt, "createdAt");
-        Intrinsics3.checkNotNullParameter(currentPeriodStart, "currentPeriodStart");
-        Intrinsics3.checkNotNullParameter(currentPeriodEnd, "currentPeriodEnd");
-        Intrinsics3.checkNotNullParameter(items, "items");
+        C12238m.checkNotNullParameter(id2, ModelAuditLogEntry.CHANGE_KEY_ID);
+        C12238m.checkNotNullParameter(createdAt, "createdAt");
+        C12238m.checkNotNullParameter(currentPeriodStart, "currentPeriodStart");
+        C12238m.checkNotNullParameter(currentPeriodEnd, "currentPeriodEnd");
+        C12238m.checkNotNullParameter(items, "items");
         return new ModelSubscription(id2, createdAt, canceledAt, currentPeriodStart, currentPeriodEnd, paymentSourceId, paymentGateway, trialId, trialEndsAt, renewalMutations, items, paymentGatewayPlanId, status, type);
     }
 
@@ -504,7 +504,7 @@ public final /* data */ class ModelSubscription extends ModelSubscription2 {
             return false;
         }
         ModelSubscription modelSubscription = (ModelSubscription) other;
-        return Intrinsics3.areEqual(this.id, modelSubscription.id) && Intrinsics3.areEqual(this.createdAt, modelSubscription.createdAt) && Intrinsics3.areEqual(this.canceledAt, modelSubscription.canceledAt) && Intrinsics3.areEqual(this.currentPeriodStart, modelSubscription.currentPeriodStart) && Intrinsics3.areEqual(this.currentPeriodEnd, modelSubscription.currentPeriodEnd) && Intrinsics3.areEqual(this.paymentSourceId, modelSubscription.paymentSourceId) && Intrinsics3.areEqual(this.paymentGateway, modelSubscription.paymentGateway) && Intrinsics3.areEqual(this.trialId, modelSubscription.trialId) && Intrinsics3.areEqual(this.trialEndsAt, modelSubscription.trialEndsAt) && Intrinsics3.areEqual(this.renewalMutations, modelSubscription.renewalMutations) && Intrinsics3.areEqual(getItems(), modelSubscription.getItems()) && Intrinsics3.areEqual(this.paymentGatewayPlanId, modelSubscription.paymentGatewayPlanId) && this.status == modelSubscription.status && this.type == modelSubscription.type;
+        return C12238m.areEqual(this.id, modelSubscription.id) && C12238m.areEqual(this.createdAt, modelSubscription.createdAt) && C12238m.areEqual(this.canceledAt, modelSubscription.canceledAt) && C12238m.areEqual(this.currentPeriodStart, modelSubscription.currentPeriodStart) && C12238m.areEqual(this.currentPeriodEnd, modelSubscription.currentPeriodEnd) && C12238m.areEqual(this.paymentSourceId, modelSubscription.paymentSourceId) && C12238m.areEqual(this.paymentGateway, modelSubscription.paymentGateway) && C12238m.areEqual(this.trialId, modelSubscription.trialId) && C12238m.areEqual(this.trialEndsAt, modelSubscription.trialEndsAt) && C12238m.areEqual(this.renewalMutations, modelSubscription.renewalMutations) && C12238m.areEqual(getItems(), modelSubscription.getItems()) && C12238m.areEqual(this.paymentGatewayPlanId, modelSubscription.paymentGatewayPlanId) && this.status == modelSubscription.status && this.type == modelSubscription.type;
     }
 
     public final long getAccountHoldEstimatedExpirationTimestamp() {
@@ -531,7 +531,7 @@ public final /* data */ class ModelSubscription extends ModelSubscription2 {
         return this.id;
     }
 
-    @Override // com.discord.models.domain.ModelSubscription2
+    @Override // com.discord.models.domain.HasSubscriptionItems
     public List<SubscriptionItem> getItems() {
         return this.items;
     }
@@ -573,7 +573,7 @@ public final /* data */ class ModelSubscription extends ModelSubscription2 {
     }
 
     public final boolean hasAnyOfPlans(Set<Long> planIds) {
-        Intrinsics3.checkNotNullParameter(planIds, "planIds");
+        C12238m.checkNotNullParameter(planIds, "planIds");
         List<SubscriptionItem> items = getItems();
         if ((items instanceof Collection) && items.isEmpty()) {
             return false;
@@ -644,33 +644,33 @@ public final /* data */ class ModelSubscription extends ModelSubscription2 {
     }
 
     public String toString() {
-        StringBuilder sbU = outline.U("ModelSubscription(id=");
-        sbU.append(this.id);
-        sbU.append(", createdAt=");
-        sbU.append(this.createdAt);
-        sbU.append(", canceledAt=");
-        sbU.append(this.canceledAt);
-        sbU.append(", currentPeriodStart=");
-        sbU.append(this.currentPeriodStart);
-        sbU.append(", currentPeriodEnd=");
-        sbU.append(this.currentPeriodEnd);
-        sbU.append(", paymentSourceId=");
-        sbU.append(this.paymentSourceId);
-        sbU.append(", paymentGateway=");
-        sbU.append(this.paymentGateway);
-        sbU.append(", trialId=");
-        sbU.append(this.trialId);
-        sbU.append(", trialEndsAt=");
-        sbU.append(this.trialEndsAt);
-        sbU.append(", renewalMutations=");
-        sbU.append(this.renewalMutations);
-        sbU.append(", items=");
-        sbU.append(getItems());
-        sbU.append(", paymentGatewayPlanId=");
-        sbU.append(this.paymentGatewayPlanId);
-        sbU.append(", status=");
-        sbU.append(this.status);
-        sbU.append(", type=");
-        return outline.B(sbU, this.type, ")");
+        StringBuilder sbM833U = C1643a.m833U("ModelSubscription(id=");
+        sbM833U.append(this.id);
+        sbM833U.append(", createdAt=");
+        sbM833U.append(this.createdAt);
+        sbM833U.append(", canceledAt=");
+        sbM833U.append(this.canceledAt);
+        sbM833U.append(", currentPeriodStart=");
+        sbM833U.append(this.currentPeriodStart);
+        sbM833U.append(", currentPeriodEnd=");
+        sbM833U.append(this.currentPeriodEnd);
+        sbM833U.append(", paymentSourceId=");
+        sbM833U.append(this.paymentSourceId);
+        sbM833U.append(", paymentGateway=");
+        sbM833U.append(this.paymentGateway);
+        sbM833U.append(", trialId=");
+        sbM833U.append(this.trialId);
+        sbM833U.append(", trialEndsAt=");
+        sbM833U.append(this.trialEndsAt);
+        sbM833U.append(", renewalMutations=");
+        sbM833U.append(this.renewalMutations);
+        sbM833U.append(", items=");
+        sbM833U.append(getItems());
+        sbM833U.append(", paymentGatewayPlanId=");
+        sbM833U.append(this.paymentGatewayPlanId);
+        sbM833U.append(", status=");
+        sbM833U.append(this.status);
+        sbM833U.append(", type=");
+        return C1643a.m814B(sbM833U, this.type, ")");
     }
 }

@@ -11,25 +11,27 @@ import com.discord.views.segmentedcontrol.SegmentedControlContainer;
 /* JADX INFO: loaded from: classes.dex */
 public final class WidgetChannelSettingsPermissionsOverviewBinding implements ViewBinding {
 
+    /* JADX INFO: renamed from: a */
     @NonNull
-    public final CoordinatorLayout a;
+    public final CoordinatorLayout f15955a;
 
-    /* JADX INFO: renamed from: b, reason: collision with root package name */
+    /* JADX INFO: renamed from: b */
     @NonNull
-    public final AppViewFlipper f2279b;
+    public final AppViewFlipper f15956b;
 
+    /* JADX INFO: renamed from: c */
     @NonNull
-    public final SegmentedControlContainer c;
+    public final SegmentedControlContainer f15957c;
 
     public WidgetChannelSettingsPermissionsOverviewBinding(@NonNull CoordinatorLayout coordinatorLayout, @NonNull FragmentContainerView fragmentContainerView, @NonNull AppViewFlipper appViewFlipper, @NonNull SegmentedControlContainer segmentedControlContainer, @NonNull FragmentContainerView fragmentContainerView2) {
-        this.a = coordinatorLayout;
-        this.f2279b = appViewFlipper;
-        this.c = segmentedControlContainer;
+        this.f15955a = coordinatorLayout;
+        this.f15956b = appViewFlipper;
+        this.f15957c = segmentedControlContainer;
     }
 
     @Override // androidx.viewbinding.ViewBinding
     @NonNull
     public View getRoot() {
-        return this.a;
+        return this.f15955a;
     }
 }

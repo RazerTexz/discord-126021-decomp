@@ -1,14 +1,14 @@
 package com.discord.analytics.generated.events;
 
-import b.d.b.a.outline;
 import com.discord.analytics.generated.traits.TrackBase;
-import com.discord.analytics.generated.traits.TrackBase2;
+import com.discord.analytics.generated.traits.TrackBaseReceiver;
 import com.discord.api.science.AnalyticsSchema;
-import d0.z.d.Intrinsics3;
+import p007b.p100d.p104b.p105a.C1643a;
+import p507d0.p592z.p594d.C12238m;
 
 /* JADX INFO: compiled from: TrackSmsMessageStatusChanged.kt */
 /* JADX INFO: loaded from: classes.dex */
-public final /* data */ class TrackSmsMessageStatusChanged implements AnalyticsSchema, TrackBase2 {
+public final /* data */ class TrackSmsMessageStatusChanged implements AnalyticsSchema, TrackBaseReceiver {
     private TrackBase trackBase;
     private final CharSequence messageStatus = null;
     private final CharSequence phoneNumber = null;
@@ -33,7 +33,7 @@ public final /* data */ class TrackSmsMessageStatusChanged implements AnalyticsS
             return false;
         }
         TrackSmsMessageStatusChanged trackSmsMessageStatusChanged = (TrackSmsMessageStatusChanged) other;
-        return Intrinsics3.areEqual(this.messageStatus, trackSmsMessageStatusChanged.messageStatus) && Intrinsics3.areEqual(this.phoneNumber, trackSmsMessageStatusChanged.phoneNumber) && Intrinsics3.areEqual(this.carrierName, trackSmsMessageStatusChanged.carrierName) && Intrinsics3.areEqual(this.messageId, trackSmsMessageStatusChanged.messageId) && Intrinsics3.areEqual(this.accountId, trackSmsMessageStatusChanged.accountId) && Intrinsics3.areEqual(this.errorCode, trackSmsMessageStatusChanged.errorCode) && Intrinsics3.areEqual(this.phoneCountry, trackSmsMessageStatusChanged.phoneCountry);
+        return C12238m.areEqual(this.messageStatus, trackSmsMessageStatusChanged.messageStatus) && C12238m.areEqual(this.phoneNumber, trackSmsMessageStatusChanged.phoneNumber) && C12238m.areEqual(this.carrierName, trackSmsMessageStatusChanged.carrierName) && C12238m.areEqual(this.messageId, trackSmsMessageStatusChanged.messageId) && C12238m.areEqual(this.accountId, trackSmsMessageStatusChanged.accountId) && C12238m.areEqual(this.errorCode, trackSmsMessageStatusChanged.errorCode) && C12238m.areEqual(this.phoneCountry, trackSmsMessageStatusChanged.phoneCountry);
     }
 
     public int hashCode() {
@@ -54,19 +54,19 @@ public final /* data */ class TrackSmsMessageStatusChanged implements AnalyticsS
     }
 
     public String toString() {
-        StringBuilder sbU = outline.U("TrackSmsMessageStatusChanged(messageStatus=");
-        sbU.append(this.messageStatus);
-        sbU.append(", phoneNumber=");
-        sbU.append(this.phoneNumber);
-        sbU.append(", carrierName=");
-        sbU.append(this.carrierName);
-        sbU.append(", messageId=");
-        sbU.append(this.messageId);
-        sbU.append(", accountId=");
-        sbU.append(this.accountId);
-        sbU.append(", errorCode=");
-        sbU.append(this.errorCode);
-        sbU.append(", phoneCountry=");
-        return outline.E(sbU, this.phoneCountry, ")");
+        StringBuilder sbM833U = C1643a.m833U("TrackSmsMessageStatusChanged(messageStatus=");
+        sbM833U.append(this.messageStatus);
+        sbM833U.append(", phoneNumber=");
+        sbM833U.append(this.phoneNumber);
+        sbM833U.append(", carrierName=");
+        sbM833U.append(this.carrierName);
+        sbM833U.append(", messageId=");
+        sbM833U.append(this.messageId);
+        sbM833U.append(", accountId=");
+        sbM833U.append(this.accountId);
+        sbM833U.append(", errorCode=");
+        sbM833U.append(this.errorCode);
+        sbM833U.append(", phoneCountry=");
+        return C1643a.m817E(sbM833U, this.phoneCountry, ")");
     }
 }

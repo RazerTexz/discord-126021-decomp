@@ -1,6 +1,5 @@
 package com.discord.widgets.auth;
 
-import a0.a.a.b;
 import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
@@ -15,14 +14,7 @@ import androidx.core.app.NotificationCompat;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentViewModelLazyKt;
 import androidx.recyclerview.widget.RecyclerView;
-import b.a.d.AppScreen2;
-import b.a.d.AppToast;
-import b.a.d.AppViewModel;
-import b.a.d.AppViewModelDelegates3;
-import b.a.d.AppViewModelDelegates5;
-import b.a.k.FormatUtils;
-import b.d.b.a.outline;
-import com.discord.R;
+import com.discord.C5419R;
 import com.discord.api.application.Application;
 import com.discord.api.auth.OAuthScope;
 import com.discord.api.auth.OAuthScopeTypeAdapter;
@@ -44,31 +36,17 @@ import com.discord.utilities.error.Error;
 import com.discord.utilities.icon.IconUtils;
 import com.discord.utilities.images.MGImages;
 import com.discord.utilities.logging.Logger;
+import com.discord.utilities.p501rx.ObservableExtensionsKt;
 import com.discord.utilities.rest.RestAPI;
-import com.discord.utilities.rx.ObservableExtensionsKt;
 import com.discord.utilities.time.TimeUtils;
 import com.discord.utilities.view.validators.ValidationManager;
 import com.discord.utilities.viewbinding.FragmentViewBindingDelegate;
-import com.discord.utilities.viewbinding.FragmentViewBindingDelegate3;
+import com.discord.utilities.viewbinding.FragmentViewBindingDelegateKt;
 import com.discord.utilities.views.SimpleRecyclerAdapter;
 import com.discord.views.OAuthPermissionViews;
 import com.discord.widgets.auth.WidgetAuthCaptcha;
 import com.facebook.drawee.view.SimpleDraweeView;
 import com.google.android.material.button.MaterialButton;
-import d0.LazyJVM;
-import d0.Tuples;
-import d0.c0.Random;
-import d0.g0.Strings4;
-import d0.g0.StringsJVM;
-import d0.t.Collections2;
-import d0.t.CollectionsJVM;
-import d0.t.Iterables2;
-import d0.t.Maps6;
-import d0.t.MapsJVM;
-import d0.t._Collections;
-import d0.z.d.Intrinsics3;
-import d0.z.d.Lambda;
-import d0.z.d.Reflection2;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Iterator;
@@ -81,14 +59,36 @@ import kotlin.jvm.functions.Function0;
 import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.reflect.KProperty;
-import rx.Observable;
-import rx.Subscription;
-import rx.functions.Func0;
+import p001a0.p002a.p003a.C0002b;
+import p007b.p008a.p018d.AbstractC0859d0;
+import p007b.p008a.p018d.C0865g0;
+import p007b.p008a.p018d.C0869i0;
+import p007b.p008a.p018d.C0870j;
+import p007b.p008a.p018d.C0876m;
+import p007b.p008a.p027k.C1107b;
+import p007b.p100d.p104b.p105a.C1643a;
+import p507d0.C12083g;
+import p507d0.C12116o;
+import p507d0.p510c0.AbstractC11216c;
+import p507d0.p579g0.C12103t;
+import p507d0.p579g0.C12106w;
+import p507d0.p580t.C12134g0;
+import p507d0.p580t.C12136h0;
+import p507d0.p580t.C12145m;
+import p507d0.p580t.C12147n;
+import p507d0.p580t.C12149o;
+import p507d0.p580t.C12163u;
+import p507d0.p592z.p594d.AbstractC12240o;
+import p507d0.p592z.p594d.C12216a0;
+import p507d0.p592z.p594d.C12238m;
+import p658rx.Observable;
+import p658rx.Subscription;
+import p658rx.functions.Func0;
 
 /* JADX INFO: compiled from: WidgetOauth2Authorize.kt */
 /* JADX INFO: loaded from: classes2.dex */
 public class WidgetOauth2Authorize extends AppFragment {
-    public static final /* synthetic */ KProperty[] $$delegatedProperties = {outline.d0(WidgetOauth2Authorize.class, "binding", "getBinding()Lcom/discord/databinding/WidgetOauthAuthorizeBinding;", 0)};
+    public static final /* synthetic */ KProperty[] $$delegatedProperties = {C1643a.m846d0(WidgetOauth2Authorize.class, "binding", "getBinding()Lcom/discord/databinding/WidgetOauthAuthorizeBinding;", 0)};
 
     /* JADX INFO: renamed from: Companion, reason: from kotlin metadata */
     public static final Companion INSTANCE = new Companion(null);
@@ -131,37 +131,37 @@ public class WidgetOauth2Authorize extends AppFragment {
         }
 
         private final OAuth2Authorize createOauthAuthorize(Uri requestUrl) {
-            WidgetOauth2Authorize2 widgetOauth2Authorize2 = WidgetOauth2Authorize2.INSTANCE;
-            long j = Long.parseLong(widgetOauth2Authorize2.invoke(requestUrl, WidgetOauth2Authorize.QUERY_PARAM_CLIENT_ID));
+            WidgetOauth2Authorize$Companion$createOauthAuthorize$1 widgetOauth2Authorize$Companion$createOauthAuthorize$1 = WidgetOauth2Authorize$Companion$createOauthAuthorize$1.INSTANCE;
+            long j = Long.parseLong(widgetOauth2Authorize$Companion$createOauthAuthorize$1.invoke(requestUrl, WidgetOauth2Authorize.QUERY_PARAM_CLIENT_ID));
             String queryParameter = requestUrl.getQueryParameter(WidgetOauth2Authorize.QUERY_PARAM_REDIRECT);
-            return new OAuth2Authorize(j, requestUrl.getQueryParameter(WidgetOauth2Authorize.QUERY_PARAM_STATE), requestUrl.getQueryParameter(WidgetOauth2Authorize.QUERY_PARAM_RESPONSE_TYPE), queryParameter, null, widgetOauth2Authorize2.invoke(requestUrl, WidgetOauth2Authorize.QUERY_PARAM_SCOPE), requestUrl.getQueryParameter("permissions"), requestUrl.getQueryParameter(WidgetOauth2Authorize.QUERY_PARAM_CODE_CHALLENGE), requestUrl.getQueryParameter(WidgetOauth2Authorize.QUERY_PARAM_CODE_CHALLENGE_METHOD), requestUrl.getQueryParameter(WidgetOauth2Authorize.QUERY_INTERNAL_REFERRER), 16, null);
+            return new OAuth2Authorize(j, requestUrl.getQueryParameter(WidgetOauth2Authorize.QUERY_PARAM_STATE), requestUrl.getQueryParameter(WidgetOauth2Authorize.QUERY_PARAM_RESPONSE_TYPE), queryParameter, null, widgetOauth2Authorize$Companion$createOauthAuthorize$1.invoke(requestUrl, WidgetOauth2Authorize.QUERY_PARAM_SCOPE), requestUrl.getQueryParameter("permissions"), requestUrl.getQueryParameter(WidgetOauth2Authorize.QUERY_PARAM_CODE_CHALLENGE), requestUrl.getQueryParameter(WidgetOauth2Authorize.QUERY_PARAM_CODE_CHALLENGE_METHOD), requestUrl.getQueryParameter(WidgetOauth2Authorize.QUERY_INTERNAL_REFERRER), 16, null);
         }
 
         private final void handleError(Context context, Exception e, Function0<Unit> onComplete) {
-            String string = FormatUtils.b(context, R.string.oauth2_request_missing_param, new Object[]{e.getMessage()}, (4 & 4) != 0 ? FormatUtils.b.j : null).toString();
-            AppLog.g.w(string, e);
-            AppToast.h(context, string, 1, null, 8);
+            String string = C1107b.m210b(context, C5419R.string.oauth2_request_missing_param, new Object[]{e.getMessage()}, (4 & 4) != 0 ? C1107b.b.f1491j : null).toString();
+            AppLog.f14950g.mo8370w(string, e);
+            C0876m.m170h(context, string, 1, null, 8);
             onComplete.invoke();
         }
 
         /* JADX WARN: Multi-variable type inference failed */
         public static /* synthetic */ void handleError$default(Companion companion, Context context, Exception exc, Function0 function0, int i, Object obj) {
             if ((i & 4) != 0) {
-                function0 = WidgetOauth2Authorize3.INSTANCE;
+                function0 = WidgetOauth2Authorize$Companion$handleError$1.INSTANCE;
             }
             companion.handleError(context, exc, function0);
         }
 
         public final String getNoticeName(long clientId) {
-            return outline.t("OAUTH_REQUEST:", clientId);
+            return C1643a.m877t("OAUTH_REQUEST:", clientId);
         }
 
         /* JADX WARN: Code duplicated, block: B:18:0x0048  */
         public final void launch(Context context, Uri requestUri) {
             OAuth2Authorize oAuth2AuthorizeCreateOauthAuthorize;
             boolean z2;
-            Intrinsics3.checkNotNullParameter(context, "context");
-            Intrinsics3.checkNotNullParameter(requestUri, "requestUri");
+            C12238m.checkNotNullParameter(context, "context");
+            C12238m.checkNotNullParameter(requestUri, "requestUri");
             try {
                 oAuth2AuthorizeCreateOauthAuthorize = createOauthAuthorize(requestUri);
             } catch (Exception e) {
@@ -171,10 +171,10 @@ public class WidgetOauth2Authorize extends AppFragment {
             if (oAuth2AuthorizeCreateOauthAuthorize != null) {
                 long clientId = oAuth2AuthorizeCreateOauthAuthorize.getClientId();
                 AnalyticsTracker.INSTANCE.oauth2AuthorizedViewed(clientId);
-                if (Intrinsics3.areEqual(String.valueOf(clientId), "591317049637339146")) {
-                    z2 = Build.VERSION.SDK_INT >= 28 && StringsJVM.equals(Build.MANUFACTURER, "samsung", true);
+                if (C12238m.areEqual(String.valueOf(clientId), "591317049637339146")) {
+                    z2 = Build.VERSION.SDK_INT >= 28 && C12103t.equals(Build.MANUFACTURER, "samsung", true);
                 }
-                AppScreen2.d(context, z2 ? WidgetOauth2AuthorizeSamsung.class : WidgetOauth2Authorize.class, createLaunchIntent(requestUri, oAuth2AuthorizeCreateOauthAuthorize));
+                C0870j.m156d(context, z2 ? WidgetOauth2AuthorizeSamsung.class : WidgetOauth2Authorize.class, createLaunchIntent(requestUri, oAuth2AuthorizeCreateOauthAuthorize));
             }
         }
 
@@ -197,8 +197,8 @@ public class WidgetOauth2Authorize extends AppFragment {
         private final String state;
 
         public OAuth2Authorize(long j, String str, String str2, String str3, String str4, String str5, String str6, String str7, String str8, String str9) {
-            Intrinsics3.checkNotNullParameter(str4, "prompt");
-            Intrinsics3.checkNotNullParameter(str5, WidgetOauth2Authorize.QUERY_PARAM_SCOPE);
+            C12238m.checkNotNullParameter(str4, "prompt");
+            C12238m.checkNotNullParameter(str5, WidgetOauth2Authorize.QUERY_PARAM_SCOPE);
             this.clientId = j;
             this.state = str;
             this.responseType = str2;
@@ -212,12 +212,12 @@ public class WidgetOauth2Authorize extends AppFragment {
         }
 
         private final boolean getHasBotPermission() {
-            List<String> listSplit$default = Strings4.split$default((CharSequence) this.scope, new String[]{" "}, false, 0, 6, (Object) null);
+            List<String> listSplit$default = C12106w.split$default((CharSequence) this.scope, new String[]{" "}, false, 0, 6, (Object) null);
             if ((listSplit$default instanceof Collection) && listSplit$default.isEmpty()) {
                 return false;
             }
             for (String str : listSplit$default) {
-                if (StringsJVM.equals(str, OAuthScope.Bot.INSTANCE.getScopeName(), true) || StringsJVM.equals(str, OAuthScope.WebhookIncoming.INSTANCE.getScopeName(), true)) {
+                if (C12103t.equals(str, OAuthScope.Bot.INSTANCE.getScopeName(), true) || C12103t.equals(str, OAuthScope.WebhookIncoming.INSTANCE.getScopeName(), true)) {
                     return true;
                 }
             }
@@ -285,8 +285,8 @@ public class WidgetOauth2Authorize extends AppFragment {
         }
 
         public final OAuth2Authorize copy(long clientId, String state, String responseType, String redirectUrl, String prompt, String scope, String permissions, String codeChallenge, String codeChallengeMethod, String internalReferrer) {
-            Intrinsics3.checkNotNullParameter(prompt, "prompt");
-            Intrinsics3.checkNotNullParameter(scope, WidgetOauth2Authorize.QUERY_PARAM_SCOPE);
+            C12238m.checkNotNullParameter(prompt, "prompt");
+            C12238m.checkNotNullParameter(scope, WidgetOauth2Authorize.QUERY_PARAM_SCOPE);
             return new OAuth2Authorize(clientId, state, responseType, redirectUrl, prompt, scope, permissions, codeChallenge, codeChallengeMethod, internalReferrer);
         }
 
@@ -298,7 +298,7 @@ public class WidgetOauth2Authorize extends AppFragment {
                 return false;
             }
             OAuth2Authorize oAuth2Authorize = (OAuth2Authorize) other;
-            return this.clientId == oAuth2Authorize.clientId && Intrinsics3.areEqual(this.state, oAuth2Authorize.state) && Intrinsics3.areEqual(this.responseType, oAuth2Authorize.responseType) && Intrinsics3.areEqual(this.redirectUrl, oAuth2Authorize.redirectUrl) && Intrinsics3.areEqual(this.prompt, oAuth2Authorize.prompt) && Intrinsics3.areEqual(this.scope, oAuth2Authorize.scope) && Intrinsics3.areEqual(this.permissions, oAuth2Authorize.permissions) && Intrinsics3.areEqual(this.codeChallenge, oAuth2Authorize.codeChallenge) && Intrinsics3.areEqual(this.codeChallengeMethod, oAuth2Authorize.codeChallengeMethod) && Intrinsics3.areEqual(this.internalReferrer, oAuth2Authorize.internalReferrer);
+            return this.clientId == oAuth2Authorize.clientId && C12238m.areEqual(this.state, oAuth2Authorize.state) && C12238m.areEqual(this.responseType, oAuth2Authorize.responseType) && C12238m.areEqual(this.redirectUrl, oAuth2Authorize.redirectUrl) && C12238m.areEqual(this.prompt, oAuth2Authorize.prompt) && C12238m.areEqual(this.scope, oAuth2Authorize.scope) && C12238m.areEqual(this.permissions, oAuth2Authorize.permissions) && C12238m.areEqual(this.codeChallenge, oAuth2Authorize.codeChallenge) && C12238m.areEqual(this.codeChallengeMethod, oAuth2Authorize.codeChallengeMethod) && C12238m.areEqual(this.internalReferrer, oAuth2Authorize.internalReferrer);
         }
 
         public final Observable<RestAPIParams.OAuth2Authorize.ResponseGet> get() {
@@ -346,9 +346,9 @@ public class WidgetOauth2Authorize extends AppFragment {
         }
 
         public int hashCode() {
-            int iA = b.a(this.clientId) * 31;
+            int iM3a = C0002b.m3a(this.clientId) * 31;
             String str = this.state;
-            int iHashCode = (iA + (str != null ? str.hashCode() : 0)) * 31;
+            int iHashCode = (iM3a + (str != null ? str.hashCode() : 0)) * 31;
             String str2 = this.responseType;
             int iHashCode2 = (iHashCode + (str2 != null ? str2.hashCode() : 0)) * 31;
             String str3 = this.redirectUrl;
@@ -372,30 +372,30 @@ public class WidgetOauth2Authorize extends AppFragment {
         }
 
         public final Observable<RestAPIParams.OAuth2Authorize.ResponsePost> post(String captchaKey, String captchaRqtoken) {
-            return RestAPI.INSTANCE.getApi().postOauth2Authorize(String.valueOf(this.clientId), this.state, this.responseType, this.redirectUrl, this.prompt, this.scope, this.permissions, this.codeChallenge, this.codeChallengeMethod, Maps6.plus(Maps6.plus(MapsJVM.mapOf(Tuples.to("authorize", "true")), captchaKey != null ? MapsJVM.mapOf(Tuples.to(CaptchaHelper.CAPTCHA_KEY, captchaKey)) : Maps6.emptyMap()), captchaRqtoken != null ? MapsJVM.mapOf(Tuples.to("captcha_rqtoken", captchaRqtoken)) : Maps6.emptyMap()));
+            return RestAPI.INSTANCE.getApi().postOauth2Authorize(String.valueOf(this.clientId), this.state, this.responseType, this.redirectUrl, this.prompt, this.scope, this.permissions, this.codeChallenge, this.codeChallengeMethod, C12136h0.plus(C12136h0.plus(C12134g0.mapOf(C12116o.m10073to("authorize", "true")), captchaKey != null ? C12134g0.mapOf(C12116o.m10073to(CaptchaHelper.CAPTCHA_KEY, captchaKey)) : C12136h0.emptyMap()), captchaRqtoken != null ? C12134g0.mapOf(C12116o.m10073to("captcha_rqtoken", captchaRqtoken)) : C12136h0.emptyMap()));
         }
 
         public String toString() {
-            StringBuilder sbU = outline.U("OAuth2Authorize(clientId=");
-            sbU.append(this.clientId);
-            sbU.append(", state=");
-            sbU.append(this.state);
-            sbU.append(", responseType=");
-            sbU.append(this.responseType);
-            sbU.append(", redirectUrl=");
-            sbU.append(this.redirectUrl);
-            sbU.append(", prompt=");
-            sbU.append(this.prompt);
-            sbU.append(", scope=");
-            sbU.append(this.scope);
-            sbU.append(", permissions=");
-            sbU.append(this.permissions);
-            sbU.append(", codeChallenge=");
-            sbU.append(this.codeChallenge);
-            sbU.append(", codeChallengeMethod=");
-            sbU.append(this.codeChallengeMethod);
-            sbU.append(", internalReferrer=");
-            return outline.J(sbU, this.internalReferrer, ")");
+            StringBuilder sbM833U = C1643a.m833U("OAuth2Authorize(clientId=");
+            sbM833U.append(this.clientId);
+            sbM833U.append(", state=");
+            sbM833U.append(this.state);
+            sbM833U.append(", responseType=");
+            sbM833U.append(this.responseType);
+            sbM833U.append(", redirectUrl=");
+            sbM833U.append(this.redirectUrl);
+            sbM833U.append(", prompt=");
+            sbM833U.append(this.prompt);
+            sbM833U.append(", scope=");
+            sbM833U.append(this.scope);
+            sbM833U.append(", permissions=");
+            sbM833U.append(this.permissions);
+            sbM833U.append(", codeChallenge=");
+            sbM833U.append(this.codeChallenge);
+            sbM833U.append(", codeChallengeMethod=");
+            sbM833U.append(this.codeChallengeMethod);
+            sbM833U.append(", internalReferrer=");
+            return C1643a.m822J(sbM833U, this.internalReferrer, ")");
         }
 
         public /* synthetic */ OAuth2Authorize(long j, String str, String str2, String str3, String str4, String str5, String str6, String str7, String str8, String str9, int i, DefaultConstructorMarker defaultConstructorMarker) {
@@ -404,7 +404,7 @@ public class WidgetOauth2Authorize extends AppFragment {
     }
 
     /* JADX INFO: compiled from: WidgetOauth2Authorize.kt */
-    public static final class OAuth2ViewModel extends AppViewModel<Unit> {
+    public static final class OAuth2ViewModel extends AbstractC0859d0<Unit> {
         public OAuth2Authorize oauthAuthorize;
         private RestAPIParams.OAuth2Authorize.ResponseGet oauthGetResponse;
 
@@ -415,7 +415,7 @@ public class WidgetOauth2Authorize extends AppFragment {
         public final OAuth2Authorize getOauthAuthorize() {
             OAuth2Authorize oAuth2Authorize = this.oauthAuthorize;
             if (oAuth2Authorize == null) {
-                Intrinsics3.throwUninitializedPropertyAccessException("oauthAuthorize");
+                C12238m.throwUninitializedPropertyAccessException("oauthAuthorize");
             }
             return oAuth2Authorize;
         }
@@ -425,7 +425,7 @@ public class WidgetOauth2Authorize extends AppFragment {
         }
 
         public final void setOauthAuthorize(OAuth2Authorize oAuth2Authorize) {
-            Intrinsics3.checkNotNullParameter(oAuth2Authorize, "<set-?>");
+            C12238m.checkNotNullParameter(oAuth2Authorize, "<set-?>");
             this.oauthAuthorize = oAuth2Authorize;
         }
 
@@ -440,26 +440,26 @@ public class WidgetOauth2Authorize extends AppFragment {
 
         /* JADX WARN: Illegal instructions before constructor call */
         public OAuthPermissionViewHolder(OauthTokenPermissionDetailedListItemBinding oauthTokenPermissionDetailedListItemBinding) {
-            Intrinsics3.checkNotNullParameter(oauthTokenPermissionDetailedListItemBinding, "binding");
-            ConstraintLayout constraintLayout = oauthTokenPermissionDetailedListItemBinding.a;
-            Intrinsics3.checkNotNullExpressionValue(constraintLayout, "binding.root");
+            C12238m.checkNotNullParameter(oauthTokenPermissionDetailedListItemBinding, "binding");
+            ConstraintLayout constraintLayout = oauthTokenPermissionDetailedListItemBinding.f15201a;
+            C12238m.checkNotNullExpressionValue(constraintLayout, "binding.root");
             super(constraintLayout);
             this.binding = oauthTokenPermissionDetailedListItemBinding;
         }
 
         @Override // com.discord.utilities.views.SimpleRecyclerAdapter.ViewHolder
         public void bind(PermissionModel data) {
-            Intrinsics3.checkNotNullParameter(data, "data");
+            C12238m.checkNotNullParameter(data, "data");
             if (data.getScope() != null) {
-                this.binding.f2133b.setImageResource(R.drawable.ic_check_circle_green_24dp);
-                TextView textView = this.binding.c;
-                Intrinsics3.checkNotNullExpressionValue(textView, "binding.oauthTokenPermissionDetailedName");
-                OAuthPermissionViews.a(textView, data.getScope());
+                this.binding.f15202b.setImageResource(C5419R.drawable.ic_check_circle_green_24dp);
+                TextView textView = this.binding.f15203c;
+                C12238m.checkNotNullExpressionValue(textView, "binding.oauthTokenPermissionDetailedName");
+                OAuthPermissionViews.m8548a(textView, data.getScope());
                 return;
             }
             if (data.getFakeText() != null) {
-                this.binding.f2133b.setImageResource(R.drawable.ic_close_circle_grey_24dp);
-                this.binding.c.setText(data.getFakeText().intValue());
+                this.binding.f15202b.setImageResource(C5419R.drawable.ic_close_circle_grey_24dp);
+                this.binding.f15203c.setText(data.getFakeText().intValue());
             }
         }
     }
@@ -483,54 +483,54 @@ public class WidgetOauth2Authorize extends AppFragment {
         }
     }
 
-    /* JADX INFO: renamed from: com.discord.widgets.auth.WidgetOauth2Authorize$authorizeApplication$1, reason: invalid class name */
+    /* JADX INFO: renamed from: com.discord.widgets.auth.WidgetOauth2Authorize$authorizeApplication$1 */
     /* JADX INFO: compiled from: WidgetOauth2Authorize.kt */
-    public static final class AnonymousClass1 extends Lambda implements Function1<Error, Unit> {
-        public AnonymousClass1() {
+    public static final class C72411 extends AbstractC12240o implements Function1<Error, Unit> {
+        public C72411() {
             super(1);
         }
 
         @Override // kotlin.jvm.functions.Function1
         public /* bridge */ /* synthetic */ Unit invoke(Error error) {
             invoke2(error);
-            return Unit.a;
+            return Unit.f27425a;
         }
 
         /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
         public final void invoke2(Error error) {
-            Intrinsics3.checkNotNullParameter(error, "error");
+            C12238m.checkNotNullParameter(error, "error");
             WidgetAuthCaptcha.Companion companion = WidgetAuthCaptcha.INSTANCE;
             Context contextRequireContext = WidgetOauth2Authorize.this.requireContext();
             ActivityResultLauncher<Intent> captchaLauncher = WidgetOauth2Authorize.this.getCaptchaLauncher();
             ValidationManager validationManager = WidgetOauth2Authorize.this.getValidationManager();
             Error.Response response = error.getResponse();
-            Intrinsics3.checkNotNullExpressionValue(response, "error.response");
+            C12238m.checkNotNullExpressionValue(response, "error.response");
             Map<String, List<String>> messages = response.getMessages();
-            Intrinsics3.checkNotNullExpressionValue(messages, "error.response.messages");
-            companion.processErrorsForCaptcha(contextRequireContext, captchaLauncher, _Collections.toMutableList((Collection) validationManager.setErrors(messages)), error);
+            C12238m.checkNotNullExpressionValue(messages, "error.response.messages");
+            companion.processErrorsForCaptcha(contextRequireContext, captchaLauncher, C12163u.toMutableList((Collection) validationManager.setErrors(messages)), error);
         }
     }
 
-    /* JADX INFO: renamed from: com.discord.widgets.auth.WidgetOauth2Authorize$authorizeApplication$2, reason: invalid class name */
+    /* JADX INFO: renamed from: com.discord.widgets.auth.WidgetOauth2Authorize$authorizeApplication$2 */
     /* JADX INFO: compiled from: WidgetOauth2Authorize.kt */
-    public static final class AnonymousClass2 extends Lambda implements Function1<RestAPIParams.OAuth2Authorize.ResponsePost, Unit> {
-        public AnonymousClass2() {
+    public static final class C72422 extends AbstractC12240o implements Function1<RestAPIParams.OAuth2Authorize.ResponsePost, Unit> {
+        public C72422() {
             super(1);
         }
 
         @Override // kotlin.jvm.functions.Function1
         public /* bridge */ /* synthetic */ Unit invoke(RestAPIParams.OAuth2Authorize.ResponsePost responsePost) throws Exception {
             invoke2(responsePost);
-            return Unit.a;
+            return Unit.f27425a;
         }
 
         /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
         public final void invoke2(RestAPIParams.OAuth2Authorize.ResponsePost responsePost) throws Exception {
-            Intrinsics3.checkNotNullParameter(responsePost, "it");
+            C12238m.checkNotNullParameter(responsePost, "it");
             Uri uri = Uri.parse(responsePost.getLocation());
-            Logger.d$default(AppLog.g, "Redirect OAuth flow to: " + uri, null, 2, null);
+            Logger.d$default(AppLog.f14950g, "Redirect OAuth flow to: " + uri, null, 2, null);
             Intent intentAddFlags = new Intent("android.intent.action.VIEW", uri).addFlags(268435456);
-            Intrinsics3.checkNotNullExpressionValue(intentAddFlags, "Intent(Intent.ACTION_VIE…t.FLAG_ACTIVITY_NEW_TASK)");
+            C12238m.checkNotNullExpressionValue(intentAddFlags, "Intent(Intent.ACTION_VIE…t.FLAG_ACTIVITY_NEW_TASK)");
             AppActivity appActivity = WidgetOauth2Authorize.this.getAppActivity();
             if (appActivity != null) {
                 appActivity.startActivity(intentAddFlags);
@@ -546,37 +546,37 @@ public class WidgetOauth2Authorize extends AppFragment {
         }
     }
 
-    /* JADX INFO: renamed from: com.discord.widgets.auth.WidgetOauth2Authorize$configureSecurityNoticeUI$1, reason: invalid class name */
+    /* JADX INFO: renamed from: com.discord.widgets.auth.WidgetOauth2Authorize$configureSecurityNoticeUI$1 */
     /* JADX INFO: compiled from: WidgetOauth2Authorize.kt */
-    public static final class AnonymousClass1 extends Lambda implements Function1<RenderContext, Unit> {
-        public AnonymousClass1() {
+    public static final class C72441 extends AbstractC12240o implements Function1<RenderContext, Unit> {
+        public C72441() {
             super(1);
         }
 
         @Override // kotlin.jvm.functions.Function1
         public /* bridge */ /* synthetic */ Unit invoke(RenderContext renderContext) {
             invoke2(renderContext);
-            return Unit.a;
+            return Unit.f27425a;
         }
 
         /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
         public final void invoke2(RenderContext renderContext) {
-            Intrinsics3.checkNotNullParameter(renderContext, "$receiver");
-            renderContext.boldColor = Integer.valueOf(ColorCompat.getThemedColor(WidgetOauth2Authorize.this.requireContext(), R.attr.colorHeaderPrimary));
+            C12238m.checkNotNullParameter(renderContext, "$receiver");
+            renderContext.boldColor = Integer.valueOf(ColorCompat.getThemedColor(WidgetOauth2Authorize.this.requireContext(), C5419R.attr.colorHeaderPrimary));
         }
     }
 
-    /* JADX INFO: renamed from: com.discord.widgets.auth.WidgetOauth2Authorize$onViewBound$1, reason: invalid class name */
+    /* JADX INFO: renamed from: com.discord.widgets.auth.WidgetOauth2Authorize$onViewBound$1 */
     /* JADX INFO: compiled from: WidgetOauth2Authorize.kt */
-    public static final class AnonymousClass1 extends Lambda implements Function0<Unit> {
-        public AnonymousClass1() {
+    public static final class C72461 extends AbstractC12240o implements Function0<Unit> {
+        public C72461() {
             super(0);
         }
 
         @Override // kotlin.jvm.functions.Function0
         public /* bridge */ /* synthetic */ Unit invoke() {
             invoke2();
-            return Unit.a;
+            return Unit.f27425a;
         }
 
         /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
@@ -592,33 +592,33 @@ public class WidgetOauth2Authorize extends AppFragment {
         }
     }
 
-    /* JADX INFO: renamed from: com.discord.widgets.auth.WidgetOauth2Authorize$onViewBoundOrOnResume$1, reason: invalid class name */
+    /* JADX INFO: renamed from: com.discord.widgets.auth.WidgetOauth2Authorize$onViewBoundOrOnResume$1 */
     /* JADX INFO: compiled from: WidgetOauth2Authorize.kt */
-    public static final class AnonymousClass1 extends Lambda implements Function1<Error, Unit> {
-        public AnonymousClass1() {
+    public static final class C72481 extends AbstractC12240o implements Function1<Error, Unit> {
+        public C72481() {
             super(1);
         }
 
         @Override // kotlin.jvm.functions.Function1
         public /* bridge */ /* synthetic */ Unit invoke(Error error) throws Exception {
             invoke2(error);
-            return Unit.a;
+            return Unit.f27425a;
         }
 
         /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
         public final void invoke2(Error error) throws Exception {
-            Intrinsics3.checkNotNullParameter(error, "error");
+            C12238m.checkNotNullParameter(error, "error");
             Error.Response response = error.getResponse();
-            Intrinsics3.checkNotNullExpressionValue(response, "error.response");
+            C12238m.checkNotNullExpressionValue(response, "error.response");
             Map<String, List<String>> messages = response.getMessages();
-            Intrinsics3.checkNotNullExpressionValue(messages, "it");
+            C12238m.checkNotNullExpressionValue(messages, "it");
             if (!(!messages.isEmpty())) {
                 messages = null;
             }
             if (messages == null) {
                 Error.Response response2 = error.getResponse();
-                Intrinsics3.checkNotNullExpressionValue(response2, "error.response");
-                messages = MapsJVM.mapOf(Tuples.to(WidgetOauth2Authorize.ROOT_ERROR_KEY, CollectionsJVM.listOf(response2.getMessage())));
+                C12238m.checkNotNullExpressionValue(response2, "error.response");
+                messages = C12134g0.mapOf(C12116o.m10073to(WidgetOauth2Authorize.ROOT_ERROR_KEY, C12145m.listOf(response2.getMessage())));
             }
             error.setShowErrorToasts(!WidgetOauth2Authorize.this.getValidationManager().setErrors(messages).isEmpty());
             AppActivity appActivity = WidgetOauth2Authorize.this.getAppActivity();
@@ -628,63 +628,63 @@ public class WidgetOauth2Authorize extends AppFragment {
         }
     }
 
-    /* JADX INFO: renamed from: com.discord.widgets.auth.WidgetOauth2Authorize$onViewBoundOrOnResume$2, reason: invalid class name */
+    /* JADX INFO: renamed from: com.discord.widgets.auth.WidgetOauth2Authorize$onViewBoundOrOnResume$2 */
     /* JADX INFO: compiled from: WidgetOauth2Authorize.kt */
-    public static final class AnonymousClass2 extends Lambda implements Function1<RestAPIParams.OAuth2Authorize.ResponseGet, Unit> {
-        public AnonymousClass2() {
+    public static final class C72492 extends AbstractC12240o implements Function1<RestAPIParams.OAuth2Authorize.ResponseGet, Unit> {
+        public C72492() {
             super(1);
         }
 
         @Override // kotlin.jvm.functions.Function1
         public /* bridge */ /* synthetic */ Unit invoke(RestAPIParams.OAuth2Authorize.ResponseGet responseGet) {
             invoke2(responseGet);
-            return Unit.a;
+            return Unit.f27425a;
         }
 
         /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
         public final void invoke2(RestAPIParams.OAuth2Authorize.ResponseGet responseGet) {
-            Intrinsics3.checkNotNullParameter(responseGet, "response");
+            C12238m.checkNotNullParameter(responseGet, "response");
             WidgetOauth2Authorize.this.getOauth2ViewModel().setOauthGetResponse(responseGet);
             WidgetOauth2Authorize.this.configureUI(responseGet);
         }
     }
 
     public WidgetOauth2Authorize() {
-        super(R.layout.widget_oauth_authorize);
-        this.binding = FragmentViewBindingDelegate3.viewBinding$default(this, WidgetOauth2Authorize5.INSTANCE, null, 2, null);
-        this.captchaLauncher = WidgetAuthCaptcha.INSTANCE.registerForResult(this, new WidgetOauth2Authorize6(this));
-        WidgetOauth2Authorize7 widgetOauth2Authorize7 = WidgetOauth2Authorize7.INSTANCE;
-        AppViewModelDelegates3 appViewModelDelegates3 = new AppViewModelDelegates3(this);
-        this.oauth2ViewModel = FragmentViewModelLazyKt.createViewModelLazy(this, Reflection2.getOrCreateKotlinClass(OAuth2ViewModel.class), new WidgetOauth2Authorize$appViewModels$$inlined$viewModels$1(appViewModelDelegates3), new AppViewModelDelegates5(widgetOauth2Authorize7));
-        this.validationManager = LazyJVM.lazy(new WidgetOauth2Authorize9(this));
-        this.adapter = new SimpleRecyclerAdapter<>(null, WidgetOauth2Authorize4.INSTANCE, 1, null);
+        super(C5419R.layout.widget_oauth_authorize);
+        this.binding = FragmentViewBindingDelegateKt.viewBinding$default(this, WidgetOauth2Authorize$binding$2.INSTANCE, null, 2, null);
+        this.captchaLauncher = WidgetAuthCaptcha.INSTANCE.registerForResult(this, new WidgetOauth2Authorize$captchaLauncher$1(this));
+        WidgetOauth2Authorize$oauth2ViewModel$2 widgetOauth2Authorize$oauth2ViewModel$2 = WidgetOauth2Authorize$oauth2ViewModel$2.INSTANCE;
+        C0865g0 c0865g0 = new C0865g0(this);
+        this.oauth2ViewModel = FragmentViewModelLazyKt.createViewModelLazy(this, C12216a0.getOrCreateKotlinClass(OAuth2ViewModel.class), new WidgetOauth2Authorize$appViewModels$$inlined$viewModels$1(c0865g0), new C0869i0(widgetOauth2Authorize$oauth2ViewModel$2));
+        this.validationManager = C12083g.lazy(new WidgetOauth2Authorize$validationManager$2(this));
+        this.adapter = new SimpleRecyclerAdapter<>(null, WidgetOauth2Authorize$adapter$1.INSTANCE, 1, null);
     }
 
     private final void authorizeApplication(CaptchaHelper.CaptchaPayload captchaPayload) {
-        ObservableExtensionsKt.appSubscribe(ObservableExtensionsKt.ui$default(ObservableExtensionsKt.restSubscribeOn$default(getOauth2ViewModel().getOauthAuthorize().post(captchaPayload != null ? captchaPayload.getCaptchaKey() : null, captchaPayload != null ? captchaPayload.getCaptchaRqtoken() : null), false, 1, null), this, null, 2, null), (Class<?>) getClass(), (58 & 2) != 0 ? null : null, (Function1<? super Subscription, Unit>) ((58 & 4) != 0 ? null : null), (Function1<? super Error, Unit>) ((58 & 8) != 0 ? null : new AnonymousClass1()), (Function0<Unit>) ((58 & 16) != 0 ? ObservableExtensionsKt.AnonymousClass1.INSTANCE : null), (Function0<Unit>) ((58 & 32) != 0 ? ObservableExtensionsKt.AnonymousClass2.INSTANCE : null), new AnonymousClass2());
+        ObservableExtensionsKt.appSubscribe(ObservableExtensionsKt.ui$default(ObservableExtensionsKt.restSubscribeOn$default(getOauth2ViewModel().getOauthAuthorize().post(captchaPayload != null ? captchaPayload.getCaptchaKey() : null, captchaPayload != null ? captchaPayload.getCaptchaRqtoken() : null), false, 1, null), this, null, 2, null), (Class<?>) getClass(), (58 & 2) != 0 ? null : null, (Function1<? super Subscription, Unit>) ((58 & 4) != 0 ? null : null), (Function1<? super Error, Unit>) ((58 & 8) != 0 ? null : new C72411()), (Function0<Unit>) ((58 & 16) != 0 ? ObservableExtensionsKt.C68791.INSTANCE : null), (Function0<Unit>) ((58 & 32) != 0 ? ObservableExtensionsKt.C68802.INSTANCE : null), new C72422());
     }
 
     private final void configureAgeNoticeUI(long clientId) {
         long snowflake = TimeUtils.parseSnowflake(Long.valueOf(clientId));
-        TextView textView = getBinding().f2506b;
-        Intrinsics3.checkNotNullExpressionValue(textView, "binding.oauthAuthorizeAgeNotice");
-        FormatUtils.m(textView, R.string.oauth2_details_creation_date, new Object[]{DateUtils.formatDateTime(requireContext(), snowflake, 65536)}, (4 & 4) != 0 ? FormatUtils.g.j : null);
+        TextView textView = getBinding().f17330b;
+        C12238m.checkNotNullExpressionValue(textView, "binding.oauthAuthorizeAgeNotice");
+        C1107b.m221m(textView, C5419R.string.oauth2_details_creation_date, new Object[]{DateUtils.formatDateTime(requireContext(), snowflake, 65536)}, (4 & 4) != 0 ? C1107b.g.f1495j : null);
     }
 
     private final void configureNotSupportedUI(final Uri uri) {
-        LinearLayout linearLayout = getBinding().j;
-        Intrinsics3.checkNotNullExpressionValue(linearLayout, "binding.oauthAuthorizeNotSupported");
+        LinearLayout linearLayout = getBinding().f17338j;
+        C12238m.checkNotNullExpressionValue(linearLayout, "binding.oauthAuthorizeNotSupported");
         linearLayout.setVisibility(0);
-        LinearLayout linearLayout2 = getBinding().h;
-        Intrinsics3.checkNotNullExpressionValue(linearLayout2, "binding.oauthAuthorizeLoading");
+        LinearLayout linearLayout2 = getBinding().f17336h;
+        C12238m.checkNotNullExpressionValue(linearLayout2, "binding.oauthAuthorizeLoading");
         linearLayout2.setVisibility(8);
-        LinearLayout linearLayout3 = getBinding().e;
-        Intrinsics3.checkNotNullExpressionValue(linearLayout3, "binding.oauthAuthorizeContent");
+        LinearLayout linearLayout3 = getBinding().f17333e;
+        C12238m.checkNotNullExpressionValue(linearLayout3, "binding.oauthAuthorizeContent");
         linearLayout3.setVisibility(8);
-        getBinding().n.setOnClickListener(new View.OnClickListener() { // from class: com.discord.widgets.auth.WidgetOauth2Authorize.configureNotSupportedUI.1
+        getBinding().f17342n.setOnClickListener(new View.OnClickListener() { // from class: com.discord.widgets.auth.WidgetOauth2Authorize.configureNotSupportedUI.1
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) throws Exception {
-                AppToast.c(outline.x(view, "it", "it.context"), String.valueOf(uri), 0, 4);
+                C0876m.m165c(C1643a.m885x(view, "it", "it.context"), String.valueOf(uri), 0, 4);
                 AppActivity appActivity = WidgetOauth2Authorize.this.getAppActivity();
                 if (appActivity != null) {
                     appActivity.onBackPressed();
@@ -694,33 +694,33 @@ public class WidgetOauth2Authorize extends AppFragment {
     }
 
     private final void configureSecurityNoticeUI(List<String> scopeNames) {
-        int i = scopeNames.contains(OAuthScope.MessagesRead.INSTANCE.getScopeName()) ? R.string.oauth2_can_read_notice : R.string.oauth2_cannot_read_send_notice;
-        TextView textView = getBinding().m;
-        Intrinsics3.checkNotNullExpressionValue(textView, "binding.oauthAuthorizeSecurityNotice");
-        FormatUtils.m(textView, i, new Object[0], new AnonymousClass1());
+        int i = scopeNames.contains(OAuthScope.MessagesRead.INSTANCE.getScopeName()) ? C5419R.string.oauth2_can_read_notice : C5419R.string.oauth2_cannot_read_send_notice;
+        TextView textView = getBinding().f17341m;
+        C12238m.checkNotNullExpressionValue(textView, "binding.oauthAuthorizeSecurityNotice");
+        C1107b.m221m(textView, i, new Object[0], new C72441());
     }
 
     public static /* synthetic */ void getCaptchaLauncher$annotations() {
     }
 
     private final int getRandomFakeScopeText() {
-        switch (Random.k.nextInt(8)) {
+        switch (AbstractC11216c.f22272k.nextInt(8)) {
             case 0:
-                return R.string.oauth2_fake_scope_1;
+                return C5419R.string.oauth2_fake_scope_1;
             case 1:
-                return R.string.oauth2_fake_scope_2;
+                return C5419R.string.oauth2_fake_scope_2;
             case 2:
-                return R.string.oauth2_fake_scope_3;
+                return C5419R.string.oauth2_fake_scope_3;
             case 3:
-                return R.string.oauth2_fake_scope_4;
+                return C5419R.string.oauth2_fake_scope_4;
             case 4:
-                return R.string.oauth2_fake_scope_5;
+                return C5419R.string.oauth2_fake_scope_5;
             case 5:
-                return R.string.oauth2_fake_scope_6;
+                return C5419R.string.oauth2_fake_scope_6;
             case 6:
-                return R.string.oauth2_fake_scope_7;
+                return C5419R.string.oauth2_fake_scope_7;
             default:
-                return R.string.oauth2_fake_scope_8;
+                return C5419R.string.oauth2_fake_scope_8;
         }
     }
 
@@ -729,13 +729,13 @@ public class WidgetOauth2Authorize extends AppFragment {
     }
 
     private final void onUnknownScope(OAuthPermissionViews.InvalidScopeException e) {
-        AppLog appLog = AppLog.g;
-        StringBuilder sbU = outline.U("invalid scope ");
-        sbU.append(e.getScope());
-        sbU.append(" in ");
-        sbU.append(getClass().getSimpleName());
-        Logger.e$default(appLog, sbU.toString(), e, null, 4, null);
-        AppToast.h(requireContext(), FormatUtils.b(requireContext(), R.string.oauth2_request_invalid_scope, new Object[]{e.getScope()}, (4 & 4) != 0 ? FormatUtils.b.j : null), 1, null, 8);
+        AppLog appLog = AppLog.f14950g;
+        StringBuilder sbM833U = C1643a.m833U("invalid scope ");
+        sbM833U.append(e.getScope());
+        sbM833U.append(" in ");
+        sbM833U.append(getClass().getSimpleName());
+        Logger.e$default(appLog, sbM833U.toString(), e, null, 4, null);
+        C0876m.m170h(requireContext(), C1107b.m210b(requireContext(), C5419R.string.oauth2_request_invalid_scope, new Object[]{e.getScope()}, (4 & 4) != 0 ? C1107b.b.f1491j : null), 1, null, 8);
         AppActivity appActivity = getAppActivity();
         if (appActivity != null) {
             appActivity.setResult(0);
@@ -744,49 +744,49 @@ public class WidgetOauth2Authorize extends AppFragment {
     }
 
     public void configureUI(RestAPIParams.OAuth2Authorize.ResponseGet data) {
-        Intrinsics3.checkNotNullParameter(data, "data");
-        LinearLayout linearLayout = getBinding().j;
-        Intrinsics3.checkNotNullExpressionValue(linearLayout, "binding.oauthAuthorizeNotSupported");
+        C12238m.checkNotNullParameter(data, "data");
+        LinearLayout linearLayout = getBinding().f17338j;
+        C12238m.checkNotNullExpressionValue(linearLayout, "binding.oauthAuthorizeNotSupported");
         linearLayout.setVisibility(8);
-        LinearLayout linearLayout2 = getBinding().h;
-        Intrinsics3.checkNotNullExpressionValue(linearLayout2, "binding.oauthAuthorizeLoading");
+        LinearLayout linearLayout2 = getBinding().f17336h;
+        C12238m.checkNotNullExpressionValue(linearLayout2, "binding.oauthAuthorizeLoading");
         linearLayout2.setVisibility(8);
-        LinearLayout linearLayout3 = getBinding().e;
-        Intrinsics3.checkNotNullExpressionValue(linearLayout3, "binding.oauthAuthorizeContent");
+        LinearLayout linearLayout3 = getBinding().f17333e;
+        C12238m.checkNotNullExpressionValue(linearLayout3, "binding.oauthAuthorizeContent");
         linearLayout3.setVisibility(0);
         User user = data.getUser();
-        SimpleDraweeView simpleDraweeView = getBinding().p;
-        Intrinsics3.checkNotNullExpressionValue(simpleDraweeView, "binding.oauthAuthorizeUserIcon");
+        SimpleDraweeView simpleDraweeView = getBinding().f17344p;
+        C12238m.checkNotNullExpressionValue(simpleDraweeView, "binding.oauthAuthorizeUserIcon");
         Long lValueOf = Long.valueOf(user.getId());
-        NullSerializable<String> nullSerializableA = user.a();
-        MGImages.setImage$default(simpleDraweeView, IconUtils.getForUser$default(lValueOf, nullSerializableA != null ? nullSerializableA.a() : null, null, false, null, 28, null), 0, 0, false, null, null, 124, null);
+        NullSerializable<String> nullSerializableM8288a = user.m8288a();
+        MGImages.setImage$default(simpleDraweeView, IconUtils.getForUser$default(lValueOf, nullSerializableM8288a != null ? nullSerializableM8288a.mo8429a() : null, null, false, null, 28, null), 0, 0, false, null, null, 124, null);
         Application application = data.getApplication();
-        TextView textView = getBinding().d;
-        Intrinsics3.checkNotNullExpressionValue(textView, "binding.oauthAuthorizeApplicationName");
+        TextView textView = getBinding().f17332d;
+        C12238m.checkNotNullExpressionValue(textView, "binding.oauthAuthorizeApplicationName");
         textView.setText(application.getName());
-        TextView textView2 = getBinding().k;
-        Intrinsics3.checkNotNullExpressionValue(textView2, "binding.oauthAuthorizePermissionsLabelTv");
-        FormatUtils.m(textView2, R.string.oauth2_scopes_label, new Object[]{application.getName()}, (4 & 4) != 0 ? FormatUtils.g.j : null);
-        SimpleDraweeView simpleDraweeView2 = getBinding().c;
-        Intrinsics3.checkNotNullExpressionValue(simpleDraweeView2, "binding.oauthAuthorizeApplicationIcon");
+        TextView textView2 = getBinding().f17339k;
+        C12238m.checkNotNullExpressionValue(textView2, "binding.oauthAuthorizePermissionsLabelTv");
+        C1107b.m221m(textView2, C5419R.string.oauth2_scopes_label, new Object[]{application.getName()}, (4 & 4) != 0 ? C1107b.g.f1495j : null);
+        SimpleDraweeView simpleDraweeView2 = getBinding().f17331c;
+        C12238m.checkNotNullExpressionValue(simpleDraweeView2, "binding.oauthAuthorizeApplicationIcon");
         String icon = application.getIcon();
         MGImages.setImage$default(simpleDraweeView2, icon != null ? IconUtils.getApplicationIcon$default(application.getId(), icon, 0, 4, (Object) null) : null, 0, 0, false, null, null, 124, null);
         try {
-            List listSplit$default = Strings4.split$default((CharSequence) getOauth2ViewModel().getOauthAuthorize().getScope(), new String[]{" "}, false, 0, 6, (Object) null);
+            List listSplit$default = C12106w.split$default((CharSequence) getOauth2ViewModel().getOauthAuthorize().getScope(), new String[]{" "}, false, 0, 6, (Object) null);
             ArrayList<String> arrayList = new ArrayList();
             for (Object obj : listSplit$default) {
                 if (((String) obj).length() > 0) {
                     arrayList.add(obj);
                 }
             }
-            ArrayList arrayList2 = new ArrayList(Iterables2.collectionSizeOrDefault(arrayList, 10));
+            ArrayList arrayList2 = new ArrayList(C12149o.collectionSizeOrDefault(arrayList, 10));
             for (String str : arrayList) {
                 Objects.requireNonNull(OAuthScopeTypeAdapter.INSTANCE);
                 arrayList2.add(new PermissionModel((OAuthScope) OAuthScopeTypeAdapter.nameToScopeMap.get(str), null));
             }
-            List mutableList = _Collections.toMutableList((Collection) arrayList2);
-            this.adapter.setData(_Collections.plus((Collection) mutableList, (Iterable) (mutableList.isEmpty() ^ true ? CollectionsJVM.listOf(new PermissionModel(null, Integer.valueOf(getRandomFakeScopeText()))) : Collections2.emptyList())));
-            getBinding().g.setOnClickListener(new View.OnClickListener() { // from class: com.discord.widgets.auth.WidgetOauth2Authorize.configureUI.3
+            List mutableList = C12163u.toMutableList((Collection) arrayList2);
+            this.adapter.setData(C12163u.plus((Collection) mutableList, (Iterable) (mutableList.isEmpty() ^ true ? C12145m.listOf(new PermissionModel(null, Integer.valueOf(getRandomFakeScopeText()))) : C12147n.emptyList())));
+            getBinding().f17335g.setOnClickListener(new View.OnClickListener() { // from class: com.discord.widgets.auth.WidgetOauth2Authorize.configureUI.3
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
                     WidgetOauth2Authorize.this.authorizeApplication(null);
@@ -798,7 +798,7 @@ public class WidgetOauth2Authorize extends AppFragment {
     }
 
     public OAuth2Authorize createOauthAuthorize(Uri requestUrl) {
-        Intrinsics3.checkNotNullParameter(requestUrl, "requestUrl");
+        C12238m.checkNotNullParameter(requestUrl, "requestUrl");
         return INSTANCE.createOauthAuthorize(requestUrl);
     }
 
@@ -816,10 +816,10 @@ public class WidgetOauth2Authorize extends AppFragment {
 
     @Override // com.discord.app.AppFragment
     public void onViewBound(View view) {
-        Intrinsics3.checkNotNullParameter(view, "view");
+        C12238m.checkNotNullParameter(view, "view");
         super.onViewBound(view);
-        RecyclerView recyclerView = getBinding().l;
-        Intrinsics3.checkNotNullExpressionValue(recyclerView, "binding.oauthAuthorizePermissionsList");
+        RecyclerView recyclerView = getBinding().f17340l;
+        C12238m.checkNotNullExpressionValue(recyclerView, "binding.oauthAuthorizePermissionsList");
         recyclerView.setAdapter(this.adapter);
         Uri uri = (Uri) getMostRecentIntent().getParcelableExtra(INTENT_PARAM_URI);
         if (uri == null) {
@@ -827,9 +827,9 @@ public class WidgetOauth2Authorize extends AppFragment {
         }
         try {
             OAuth2ViewModel oauth2ViewModel = getOauth2ViewModel();
-            Intrinsics3.checkNotNullExpressionValue(uri, "requestUrl");
+            C12238m.checkNotNullExpressionValue(uri, "requestUrl");
             oauth2ViewModel.setOauthAuthorize(createOauthAuthorize(uri));
-            Iterator it = Collections2.listOf((Object[]) new MaterialButton[]{getBinding().f, getBinding().i, getBinding().o}).iterator();
+            Iterator it = C12147n.listOf((Object[]) new MaterialButton[]{getBinding().f17334f, getBinding().f17337i, getBinding().f17343o}).iterator();
             while (it.hasNext()) {
                 ((MaterialButton) it.next()).setOnClickListener(new View.OnClickListener() { // from class: com.discord.widgets.auth.WidgetOauth2Authorize$onViewBound$$inlined$forEach$lambda$1
                     @Override // android.view.View.OnClickListener
@@ -842,7 +842,7 @@ public class WidgetOauth2Authorize extends AppFragment {
                 });
             }
             AppFragment.setOnBackPressed$default(this, new Func0<Boolean>() { // from class: com.discord.widgets.auth.WidgetOauth2Authorize.onViewBound.3
-                @Override // rx.functions.Func0, java.util.concurrent.Callable
+                @Override // p658rx.functions.Func0, java.util.concurrent.Callable
                 public final Boolean call() {
                     AppActivity appActivity = WidgetOauth2Authorize.this.getAppActivity();
                     if (appActivity != null) {
@@ -852,10 +852,10 @@ public class WidgetOauth2Authorize extends AppFragment {
                 }
             }, 0, 2, null);
             configureAgeNoticeUI(getOauth2ViewModel().getOauthAuthorize().getClientId());
-            configureSecurityNoticeUI(Strings4.split$default((CharSequence) getOauth2ViewModel().getOauthAuthorize().getScope(), new String[]{" "}, false, 0, 6, (Object) null));
+            configureSecurityNoticeUI(C12106w.split$default((CharSequence) getOauth2ViewModel().getOauthAuthorize().getScope(), new String[]{" "}, false, 0, 6, (Object) null));
             StoreNotices.markSeen$default(StoreStream.INSTANCE.getNotices(), INSTANCE.getNoticeName(getOauth2ViewModel().getOauthAuthorize().getClientId()), 0L, 2, null);
         } catch (IllegalArgumentException e) {
-            INSTANCE.handleError(requireContext(), e, new AnonymousClass1());
+            INSTANCE.handleError(requireContext(), e, new C72461());
         }
     }
 
@@ -869,7 +869,7 @@ public class WidgetOauth2Authorize extends AppFragment {
                 if (uri == null) {
                     uri = Uri.EMPTY;
                 }
-                Intrinsics3.checkNotNullExpressionValue(uri, "requestUrl");
+                C12238m.checkNotNullExpressionValue(uri, "requestUrl");
                 configureNotSupportedUI(uri);
                 return;
             }
@@ -878,16 +878,16 @@ public class WidgetOauth2Authorize extends AppFragment {
                 configureUI(oauthGetResponse);
                 return;
             }
-            LinearLayout linearLayout = getBinding().j;
-            Intrinsics3.checkNotNullExpressionValue(linearLayout, "binding.oauthAuthorizeNotSupported");
+            LinearLayout linearLayout = getBinding().f17338j;
+            C12238m.checkNotNullExpressionValue(linearLayout, "binding.oauthAuthorizeNotSupported");
             linearLayout.setVisibility(8);
-            LinearLayout linearLayout2 = getBinding().e;
-            Intrinsics3.checkNotNullExpressionValue(linearLayout2, "binding.oauthAuthorizeContent");
+            LinearLayout linearLayout2 = getBinding().f17333e;
+            C12238m.checkNotNullExpressionValue(linearLayout2, "binding.oauthAuthorizeContent");
             linearLayout2.setVisibility(8);
-            LinearLayout linearLayout3 = getBinding().h;
-            Intrinsics3.checkNotNullExpressionValue(linearLayout3, "binding.oauthAuthorizeLoading");
+            LinearLayout linearLayout3 = getBinding().f17336h;
+            C12238m.checkNotNullExpressionValue(linearLayout3, "binding.oauthAuthorizeLoading");
             linearLayout3.setVisibility(0);
-            ObservableExtensionsKt.appSubscribe(ObservableExtensionsKt.ui$default(ObservableExtensionsKt.restSubscribeOn$default(getOauth2ViewModel().getOauthAuthorize().get(), false, 1, null), this, null, 2, null), (Class<?>) getClass(), (58 & 2) != 0 ? null : requireContext(), (Function1<? super Subscription, Unit>) ((58 & 4) != 0 ? null : null), (Function1<? super Error, Unit>) ((58 & 8) != 0 ? null : new AnonymousClass1()), (Function0<Unit>) ((58 & 16) != 0 ? ObservableExtensionsKt.AnonymousClass1.INSTANCE : null), (Function0<Unit>) ((58 & 32) != 0 ? ObservableExtensionsKt.AnonymousClass2.INSTANCE : null), new AnonymousClass2());
+            ObservableExtensionsKt.appSubscribe(ObservableExtensionsKt.ui$default(ObservableExtensionsKt.restSubscribeOn$default(getOauth2ViewModel().getOauthAuthorize().get(), false, 1, null), this, null, 2, null), (Class<?>) getClass(), (58 & 2) != 0 ? null : requireContext(), (Function1<? super Subscription, Unit>) ((58 & 4) != 0 ? null : null), (Function1<? super Error, Unit>) ((58 & 8) != 0 ? null : new C72481()), (Function0<Unit>) ((58 & 16) != 0 ? ObservableExtensionsKt.C68791.INSTANCE : null), (Function0<Unit>) ((58 & 32) != 0 ? ObservableExtensionsKt.C68802.INSTANCE : null), new C72492());
         }
     }
 }

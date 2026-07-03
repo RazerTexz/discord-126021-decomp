@@ -83,15 +83,15 @@ public class ExitFromMethodEarlyScript extends MethodLevelPatchScript {
         public void visitCode() {
             if (ExitFromMethodEarlyScript.this.decisionWrapper != null) {
                 if (ExitFromMethodEarlyScript.this.requests.contains(StackRequest.THIS)) {
-                    this.logistics.generateLoadOpcodeForThis(this.mv);
+                    this.logistics.generateLoadOpcodeForThis(this.f27600mv);
                 }
                 for (StackRequest param : StackRequest.PARAMS_IN_ORDER) {
                     if (ExitFromMethodEarlyScript.this.requests.contains(param)) {
-                        this.logistics.generateLoadOpcodeForParam(param.getParamPos(), this.mv);
+                        this.logistics.generateLoadOpcodeForParam(param.getParamPos(), this.f27600mv);
                     }
                 }
                 if (ExitFromMethodEarlyScript.this.insert) {
-                    ExitFromMethodEarlyScript.insertMethod(ExitFromMethodEarlyScript.this.decisionWrapper, this.mv);
+                    ExitFromMethodEarlyScript.insertMethod(ExitFromMethodEarlyScript.this.decisionWrapper, this.f27600mv);
                 } else {
                     super.visitMethodInsn(Opcodes.INVOKESTATIC, ExitFromMethodEarlyScript.this.transplant ? this.ownClassSpec : ExitFromMethodEarlyScript.this.decisionWrapper.getClassSpec(), ExitFromMethodEarlyScript.this.decisionWrapper.getMethodName(), ExitFromMethodEarlyScript.this.decisionWrapper.getMethodDescriptor(), false);
                 }
@@ -100,32 +100,32 @@ public class ExitFromMethodEarlyScript extends MethodLevelPatchScript {
                     return;
                 }
                 Label label0 = new Label();
-                this.mv.visitJumpInsn(153, label0);
+                this.f27600mv.visitJumpInsn(153, label0);
                 if (this.logistics.getReturnOpcode() != 177) {
                     if (ExitFromMethodEarlyScript.this.requests.contains(StackRequest.THIS)) {
-                        this.logistics.generateLoadOpcodeForThis(this.mv);
+                        this.logistics.generateLoadOpcodeForThis(this.f27600mv);
                     }
                     for (StackRequest param2 : StackRequest.PARAMS_IN_ORDER) {
                         if (ExitFromMethodEarlyScript.this.requests.contains(param2)) {
-                            this.logistics.generateLoadOpcodeForParam(param2.getParamPos(), this.mv);
+                            this.logistics.generateLoadOpcodeForParam(param2.getParamPos(), this.f27600mv);
                         }
                     }
                     if (ExitFromMethodEarlyScript.this.insert) {
-                        ExitFromMethodEarlyScript.insertMethod(ExitFromMethodEarlyScript.this.valueWrapper, this.mv);
+                        ExitFromMethodEarlyScript.insertMethod(ExitFromMethodEarlyScript.this.valueWrapper, this.f27600mv);
                     } else {
                         super.visitMethodInsn(Opcodes.INVOKESTATIC, ExitFromMethodEarlyScript.this.transplant ? this.ownClassSpec : ExitFromMethodEarlyScript.this.valueWrapper.getClassSpec(), ExitFromMethodEarlyScript.this.valueWrapper.getMethodName(), ExitFromMethodEarlyScript.this.valueWrapper.getMethodDescriptor(), false);
                     }
-                    this.logistics.generateReturnOpcode(this.mv);
+                    this.logistics.generateReturnOpcode(this.f27600mv);
                 } else {
-                    this.mv.visitInsn(Opcodes.RETURN);
+                    this.f27600mv.visitInsn(Opcodes.RETURN);
                 }
-                this.mv.visitLabel(label0);
-                this.mv.visitFrame(3, 0, null, 0, null);
+                this.f27600mv.visitLabel(label0);
+                this.f27600mv.visitFrame(3, 0, null, 0, null);
                 super.visitCode();
                 return;
             }
             if (this.logistics.getReturnOpcode() == 177) {
-                this.mv.visitInsn(Opcodes.RETURN);
+                this.f27600mv.visitInsn(Opcodes.RETURN);
             } else {
                 insertValueWrapperCall();
             }
@@ -133,19 +133,19 @@ public class ExitFromMethodEarlyScript extends MethodLevelPatchScript {
 
         private void insertValueWrapperCall() {
             if (ExitFromMethodEarlyScript.this.requests.contains(StackRequest.THIS)) {
-                this.logistics.generateLoadOpcodeForThis(this.mv);
+                this.logistics.generateLoadOpcodeForThis(this.f27600mv);
             }
             for (StackRequest param : StackRequest.PARAMS_IN_ORDER) {
                 if (ExitFromMethodEarlyScript.this.requests.contains(param)) {
-                    this.logistics.generateLoadOpcodeForParam(param.getParamPos(), this.mv);
+                    this.logistics.generateLoadOpcodeForParam(param.getParamPos(), this.f27600mv);
                 }
             }
             if (ExitFromMethodEarlyScript.this.insert) {
-                ExitFromMethodEarlyScript.insertMethod(ExitFromMethodEarlyScript.this.valueWrapper, this.mv);
+                ExitFromMethodEarlyScript.insertMethod(ExitFromMethodEarlyScript.this.valueWrapper, this.f27600mv);
             } else {
                 super.visitMethodInsn(Opcodes.INVOKESTATIC, ExitFromMethodEarlyScript.this.transplant ? this.ownClassSpec : ExitFromMethodEarlyScript.this.valueWrapper.getClassSpec(), ExitFromMethodEarlyScript.this.valueWrapper.getMethodName(), ExitFromMethodEarlyScript.this.valueWrapper.getMethodDescriptor(), false);
             }
-            this.logistics.generateReturnOpcode(this.mv);
+            this.logistics.generateReturnOpcode(this.f27600mv);
         }
     }
 }

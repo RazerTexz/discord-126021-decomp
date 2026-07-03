@@ -1,14 +1,14 @@
 package com.discord.analytics.generated.events;
 
-import b.d.b.a.outline;
 import com.discord.analytics.generated.traits.TrackBase;
-import com.discord.analytics.generated.traits.TrackBase2;
+import com.discord.analytics.generated.traits.TrackBaseReceiver;
 import com.discord.api.science.AnalyticsSchema;
-import d0.z.d.Intrinsics3;
+import p007b.p100d.p104b.p105a.C1643a;
+import p507d0.p592z.p594d.C12238m;
 
 /* JADX INFO: compiled from: TrackPremiumGuildSubscriptionRemoved.kt */
 /* JADX INFO: loaded from: classes.dex */
-public final /* data */ class TrackPremiumGuildSubscriptionRemoved implements AnalyticsSchema, TrackBase2 {
+public final /* data */ class TrackPremiumGuildSubscriptionRemoved implements AnalyticsSchema, TrackBaseReceiver {
     private TrackBase trackBase;
     private final Long guildId = null;
     private final Long premiumGuildSubscriptionId = null;
@@ -32,7 +32,7 @@ public final /* data */ class TrackPremiumGuildSubscriptionRemoved implements An
             return false;
         }
         TrackPremiumGuildSubscriptionRemoved trackPremiumGuildSubscriptionRemoved = (TrackPremiumGuildSubscriptionRemoved) other;
-        return Intrinsics3.areEqual(this.guildId, trackPremiumGuildSubscriptionRemoved.guildId) && Intrinsics3.areEqual(this.premiumGuildSubscriptionId, trackPremiumGuildSubscriptionRemoved.premiumGuildSubscriptionId) && Intrinsics3.areEqual(this.currentTier, trackPremiumGuildSubscriptionRemoved.currentTier) && Intrinsics3.areEqual(this.previousTier, trackPremiumGuildSubscriptionRemoved.previousTier) && Intrinsics3.areEqual(this.premiumSubscriptionCount, trackPremiumGuildSubscriptionRemoved.premiumSubscriptionCount) && Intrinsics3.areEqual(this.tierLost, trackPremiumGuildSubscriptionRemoved.tierLost);
+        return C12238m.areEqual(this.guildId, trackPremiumGuildSubscriptionRemoved.guildId) && C12238m.areEqual(this.premiumGuildSubscriptionId, trackPremiumGuildSubscriptionRemoved.premiumGuildSubscriptionId) && C12238m.areEqual(this.currentTier, trackPremiumGuildSubscriptionRemoved.currentTier) && C12238m.areEqual(this.previousTier, trackPremiumGuildSubscriptionRemoved.previousTier) && C12238m.areEqual(this.premiumSubscriptionCount, trackPremiumGuildSubscriptionRemoved.premiumSubscriptionCount) && C12238m.areEqual(this.tierLost, trackPremiumGuildSubscriptionRemoved.tierLost);
     }
 
     public int hashCode() {
@@ -51,17 +51,17 @@ public final /* data */ class TrackPremiumGuildSubscriptionRemoved implements An
     }
 
     public String toString() {
-        StringBuilder sbU = outline.U("TrackPremiumGuildSubscriptionRemoved(guildId=");
-        sbU.append(this.guildId);
-        sbU.append(", premiumGuildSubscriptionId=");
-        sbU.append(this.premiumGuildSubscriptionId);
-        sbU.append(", currentTier=");
-        sbU.append(this.currentTier);
-        sbU.append(", previousTier=");
-        sbU.append(this.previousTier);
-        sbU.append(", premiumSubscriptionCount=");
-        sbU.append(this.premiumSubscriptionCount);
-        sbU.append(", tierLost=");
-        return outline.G(sbU, this.tierLost, ")");
+        StringBuilder sbM833U = C1643a.m833U("TrackPremiumGuildSubscriptionRemoved(guildId=");
+        sbM833U.append(this.guildId);
+        sbM833U.append(", premiumGuildSubscriptionId=");
+        sbM833U.append(this.premiumGuildSubscriptionId);
+        sbM833U.append(", currentTier=");
+        sbM833U.append(this.currentTier);
+        sbM833U.append(", previousTier=");
+        sbM833U.append(this.previousTier);
+        sbM833U.append(", premiumSubscriptionCount=");
+        sbM833U.append(this.premiumSubscriptionCount);
+        sbM833U.append(", tierLost=");
+        return C1643a.m819G(sbM833U, this.tierLost, ")");
     }
 }

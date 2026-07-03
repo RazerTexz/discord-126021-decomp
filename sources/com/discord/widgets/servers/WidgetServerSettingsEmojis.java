@@ -15,16 +15,12 @@ import androidx.exifinterface.media.ExifInterface;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.recyclerview.widget.RecyclerView;
-import b.a.d.AppScreen2;
-import b.a.d.o;
-import b.a.k.FormatUtils;
-import b.d.b.a.outline;
-import com.discord.R;
+import com.discord.C5419R;
 import com.discord.api.permission.Permission;
 import com.discord.app.AppActivity;
 import com.discord.app.AppFragment;
-import com.discord.app.AppLogger2;
 import com.discord.app.AppViewFlipper;
+import com.discord.app.LoggingConfig;
 import com.discord.databinding.WidgetServerSettingsEmojisBinding;
 import com.discord.databinding.WidgetServerSettingsEmojisHeaderBinding;
 import com.discord.databinding.WidgetServerSettingsEmojisItemBinding;
@@ -44,7 +40,7 @@ import com.discord.stores.StoreGuilds;
 import com.discord.stores.StoreStream;
 import com.discord.stores.StoreUser;
 import com.discord.stores.updates.ObservationDeck;
-import com.discord.stores.updates.ObservationDeck4;
+import com.discord.stores.updates.ObservationDeckProvider;
 import com.discord.utilities.error.Error;
 import com.discord.utilities.icon.IconUtils;
 import com.discord.utilities.images.MGImages;
@@ -52,28 +48,20 @@ import com.discord.utilities.mg_recycler.MGRecyclerAdapter;
 import com.discord.utilities.mg_recycler.MGRecyclerAdapterSimple;
 import com.discord.utilities.mg_recycler.MGRecyclerDataPayload;
 import com.discord.utilities.mg_recycler.MGRecyclerViewHolder;
+import com.discord.utilities.p501rx.ObservableExtensionsKt;
 import com.discord.utilities.permissions.PermissionUtils;
 import com.discord.utilities.premium.PremiumUtils;
-import com.discord.utilities.resources.StringResourceUtils;
+import com.discord.utilities.resources.StringResourceUtilsKt;
 import com.discord.utilities.rest.RestAPI;
-import com.discord.utilities.rx.ObservableExtensionsKt;
 import com.discord.utilities.user.UserUtils;
-import com.discord.utilities.view.extensions.ImageViewExtensions;
+import com.discord.utilities.view.extensions.ImageViewExtensionsKt;
 import com.discord.utilities.view.extensions.ViewExtensions;
 import com.discord.utilities.viewbinding.FragmentViewBindingDelegate;
-import com.discord.utilities.viewbinding.FragmentViewBindingDelegate3;
+import com.discord.utilities.viewbinding.FragmentViewBindingDelegateKt;
 import com.discord.widgets.servers.WidgetServerSettingsEmojis;
 import com.discord.widgets.servers.WidgetServerSettingsEmojisEdit;
 import com.facebook.drawee.view.SimpleDraweeView;
 import com.google.android.material.button.MaterialButton;
-import d0.g0.StringsJVM;
-import d0.t.CollectionsJVM;
-import d0.t.Iterables2;
-import d0.t._Collections;
-import d0.z.d.Intrinsics3;
-import d0.z.d.Lambda;
-import j0.k.Func1;
-import j0.l.e.ScalarSynchronousObservable;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Iterator;
@@ -85,16 +73,28 @@ import kotlin.jvm.functions.Function1;
 import kotlin.jvm.functions.Function2;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.reflect.KProperty;
-import rx.Observable;
-import rx.Subscription;
-import rx.functions.Action0;
-import rx.functions.Action1;
-import rx.functions.Func3;
+import p007b.p008a.p018d.C0870j;
+import p007b.p008a.p018d.C0879o;
+import p007b.p008a.p027k.C1107b;
+import p007b.p100d.p104b.p105a.C1643a;
+import p507d0.p579g0.C12103t;
+import p507d0.p580t.C12145m;
+import p507d0.p580t.C12149o;
+import p507d0.p580t.C12163u;
+import p507d0.p592z.p594d.AbstractC12240o;
+import p507d0.p592z.p594d.C12238m;
+import p637j0.p641k.InterfaceC12589b;
+import p637j0.p642l.p647e.C12721k;
+import p658rx.Observable;
+import p658rx.Subscription;
+import p658rx.functions.Action0;
+import p658rx.functions.Action1;
+import p658rx.functions.Func3;
 
 /* JADX INFO: compiled from: WidgetServerSettingsEmojis.kt */
 /* JADX INFO: loaded from: classes2.dex */
 public final class WidgetServerSettingsEmojis extends AppFragment {
-    public static final /* synthetic */ KProperty[] $$delegatedProperties = {outline.d0(WidgetServerSettingsEmojis.class, "binding", "getBinding()Lcom/discord/databinding/WidgetServerSettingsEmojisBinding;", 0)};
+    public static final /* synthetic */ KProperty[] $$delegatedProperties = {C1643a.m846d0(WidgetServerSettingsEmojis.class, "binding", "getBinding()Lcom/discord/databinding/WidgetServerSettingsEmojisBinding;", 0)};
 
     /* JADX INFO: renamed from: Companion, reason: from kotlin metadata */
     public static final Companion INSTANCE = new Companion(null);
@@ -106,7 +106,7 @@ public final class WidgetServerSettingsEmojis extends AppFragment {
     /* JADX INFO: renamed from: binding$delegate, reason: from kotlin metadata */
     private final FragmentViewBindingDelegate binding;
     private long guildId;
-    private final AppLogger2 loggingConfig;
+    private final LoggingConfig loggingConfig;
     private Action1<String> uploadEmojiAction;
 
     /* JADX INFO: compiled from: WidgetServerSettingsEmojis.kt */
@@ -118,13 +118,13 @@ public final class WidgetServerSettingsEmojis extends AppFragment {
         public static final class EmojiEmptyViewHolder extends MGRecyclerViewHolder<Adapter, Item> {
             /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
             public EmojiEmptyViewHolder(Adapter adapter) {
-                super(R.layout.widget_server_settings_emojis_empty, adapter);
-                Intrinsics3.checkNotNullParameter(adapter, "adapter");
+                super(C5419R.layout.widget_server_settings_emojis_empty, adapter);
+                C12238m.checkNotNullParameter(adapter, "adapter");
             }
 
             @Override // com.discord.utilities.mg_recycler.MGRecyclerViewHolder
             public void onConfigure(int position, Item data) {
-                Intrinsics3.checkNotNullParameter(data, "data");
+                C12238m.checkNotNullParameter(data, "data");
             }
         }
 
@@ -134,17 +134,17 @@ public final class WidgetServerSettingsEmojis extends AppFragment {
 
             /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
             public EmojiHeaderViewHolder(Adapter adapter) {
-                super(R.layout.widget_server_settings_emojis_header, adapter);
-                Intrinsics3.checkNotNullParameter(adapter, "adapter");
+                super(C5419R.layout.widget_server_settings_emojis_header, adapter);
+                C12238m.checkNotNullParameter(adapter, "adapter");
                 View view = this.itemView;
-                int i = R.id.widget_server_settings_emojis_upload;
-                MaterialButton materialButton = (MaterialButton) view.findViewById(R.id.widget_server_settings_emojis_upload);
+                int i = C5419R.id.widget_server_settings_emojis_upload;
+                MaterialButton materialButton = (MaterialButton) view.findViewById(C5419R.id.widget_server_settings_emojis_upload);
                 if (materialButton != null) {
-                    i = R.id.widget_server_settings_emojis_upload_description;
-                    TextView textView = (TextView) view.findViewById(R.id.widget_server_settings_emojis_upload_description);
+                    i = C5419R.id.widget_server_settings_emojis_upload_description;
+                    TextView textView = (TextView) view.findViewById(C5419R.id.widget_server_settings_emojis_upload_description);
                     if (textView != null) {
                         WidgetServerSettingsEmojisHeaderBinding widgetServerSettingsEmojisHeaderBinding = new WidgetServerSettingsEmojisHeaderBinding((LinearLayout) view, materialButton, textView);
-                        Intrinsics3.checkNotNullExpressionValue(widgetServerSettingsEmojisHeaderBinding, "WidgetServerSettingsEmoj…derBinding.bind(itemView)");
+                        C12238m.checkNotNullExpressionValue(widgetServerSettingsEmojisHeaderBinding, "WidgetServerSettingsEmoj…derBinding.bind(itemView)");
                         this.binding = widgetServerSettingsEmojisHeaderBinding;
                         return;
                     }
@@ -158,11 +158,11 @@ public final class WidgetServerSettingsEmojis extends AppFragment {
 
             @Override // com.discord.utilities.mg_recycler.MGRecyclerViewHolder
             public void onConfigure(int position, Item data) {
-                Intrinsics3.checkNotNullParameter(data, "data");
-                TextView textView = this.binding.c;
-                Intrinsics3.checkNotNullExpressionValue(textView, "binding.widgetServerSett…gsEmojisUploadDescription");
-                textView.setText(FormatUtils.b(outline.x(this.itemView, "itemView", "itemView.context"), R.string.guild_settings_emoji_upload_to_server_message, new Object[]{String.valueOf(((Item.EmojiHeader) data).getEmojiMax()), String.valueOf(256)}, (4 & 4) != 0 ? FormatUtils.b.j : null));
-                this.binding.f2564b.setOnClickListener(new View.OnClickListener() { // from class: com.discord.widgets.servers.WidgetServerSettingsEmojis$Adapter$EmojiHeaderViewHolder$onConfigure$1
+                C12238m.checkNotNullParameter(data, "data");
+                TextView textView = this.binding.f17645c;
+                C12238m.checkNotNullExpressionValue(textView, "binding.widgetServerSett…gsEmojisUploadDescription");
+                textView.setText(C1107b.m210b(C1643a.m885x(this.itemView, "itemView", "itemView.context"), C5419R.string.guild_settings_emoji_upload_to_server_message, new Object[]{String.valueOf(((Item.EmojiHeader) data).getEmojiMax()), String.valueOf(256)}, (4 & 4) != 0 ? C1107b.b.f1491j : null));
+                this.binding.f17644b.setOnClickListener(new View.OnClickListener() { // from class: com.discord.widgets.servers.WidgetServerSettingsEmojis$Adapter$EmojiHeaderViewHolder$onConfigure$1
                     @Override // android.view.View.OnClickListener
                     public final void onClick(View view) {
                         WidgetServerSettingsEmojis.Adapter.EmojiHeaderViewHolder.access$getAdapter$p(this.this$0).getOnUploadEmoji().invoke();
@@ -177,30 +177,30 @@ public final class WidgetServerSettingsEmojis extends AppFragment {
 
             /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
             public EmojiItemViewHolder(Adapter adapter) {
-                super(R.layout.widget_server_settings_emojis_item, adapter);
-                Intrinsics3.checkNotNullParameter(adapter, "adapter");
+                super(C5419R.layout.widget_server_settings_emojis_item, adapter);
+                C12238m.checkNotNullParameter(adapter, "adapter");
                 View view = this.itemView;
-                int i = R.id.server_settings_emojis_avatar;
-                SimpleDraweeView simpleDraweeView = (SimpleDraweeView) view.findViewById(R.id.server_settings_emojis_avatar);
+                int i = C5419R.id.server_settings_emojis_avatar;
+                SimpleDraweeView simpleDraweeView = (SimpleDraweeView) view.findViewById(C5419R.id.server_settings_emojis_avatar);
                 if (simpleDraweeView != null) {
                     ConstraintLayout constraintLayout = (ConstraintLayout) view;
-                    i = R.id.server_settings_emojis_name;
-                    TextView textView = (TextView) view.findViewById(R.id.server_settings_emojis_name);
+                    i = C5419R.id.server_settings_emojis_name;
+                    TextView textView = (TextView) view.findViewById(C5419R.id.server_settings_emojis_name);
                     if (textView != null) {
-                        i = R.id.server_settings_emojis_nickname;
-                        TextView textView2 = (TextView) view.findViewById(R.id.server_settings_emojis_nickname);
+                        i = C5419R.id.server_settings_emojis_nickname;
+                        TextView textView2 = (TextView) view.findViewById(C5419R.id.server_settings_emojis_nickname);
                         if (textView2 != null) {
-                            i = R.id.server_settings_emojis_overflow;
-                            ImageView imageView = (ImageView) view.findViewById(R.id.server_settings_emojis_overflow);
+                            i = C5419R.id.server_settings_emojis_overflow;
+                            ImageView imageView = (ImageView) view.findViewById(C5419R.id.server_settings_emojis_overflow);
                             if (imageView != null) {
-                                i = R.id.server_settings_emojis_username;
-                                TextView textView3 = (TextView) view.findViewById(R.id.server_settings_emojis_username);
+                                i = C5419R.id.server_settings_emojis_username;
+                                TextView textView3 = (TextView) view.findViewById(C5419R.id.server_settings_emojis_username);
                                 if (textView3 != null) {
-                                    i = R.id.server_settings_emojis_username_avatar;
-                                    SimpleDraweeView simpleDraweeView2 = (SimpleDraweeView) view.findViewById(R.id.server_settings_emojis_username_avatar);
+                                    i = C5419R.id.server_settings_emojis_username_avatar;
+                                    SimpleDraweeView simpleDraweeView2 = (SimpleDraweeView) view.findViewById(C5419R.id.server_settings_emojis_username_avatar);
                                     if (simpleDraweeView2 != null) {
                                         WidgetServerSettingsEmojisItemBinding widgetServerSettingsEmojisItemBinding = new WidgetServerSettingsEmojisItemBinding(constraintLayout, simpleDraweeView, constraintLayout, textView, textView2, imageView, textView3, simpleDraweeView2);
-                                        Intrinsics3.checkNotNullExpressionValue(widgetServerSettingsEmojisItemBinding, "WidgetServerSettingsEmoj…temBinding.bind(itemView)");
+                                        C12238m.checkNotNullExpressionValue(widgetServerSettingsEmojisItemBinding, "WidgetServerSettingsEmoj…temBinding.bind(itemView)");
                                         this.binding = widgetServerSettingsEmojisItemBinding;
                                         return;
                                     }
@@ -218,38 +218,38 @@ public final class WidgetServerSettingsEmojis extends AppFragment {
 
             @Override // com.discord.utilities.mg_recycler.MGRecyclerViewHolder
             public void onConfigure(int position, final Item data) {
-                Intrinsics3.checkNotNullParameter(data, "data");
+                C12238m.checkNotNullParameter(data, "data");
                 super.onConfigure(position, data);
                 Item.EmojiItem emojiItem = (Item.EmojiItem) data;
-                TextView textView = this.binding.d;
-                Intrinsics3.checkNotNullExpressionValue(textView, "binding.serverSettingsEmojisName");
+                TextView textView = this.binding.f17649d;
+                C12238m.checkNotNullExpressionValue(textView, "binding.serverSettingsEmojisName");
                 textView.setText(emojiItem.getEmoji().getName());
-                TextView textView2 = this.binding.f;
-                Intrinsics3.checkNotNullExpressionValue(textView2, "binding.serverSettingsEmojisUsername");
+                TextView textView2 = this.binding.f17651f;
+                C12238m.checkNotNullExpressionValue(textView2, "binding.serverSettingsEmojisUsername");
                 textView2.setText(UserUtils.getUserNameWithDiscriminator$default(UserUtils.INSTANCE, emojiItem.getUser(), null, null, 3, null));
                 GuildMember guildMember = emojiItem.getGuildMember();
                 String nick = guildMember != null ? guildMember.getNick() : null;
-                TextView textView3 = this.binding.e;
-                Intrinsics3.checkNotNullExpressionValue(textView3, "binding.serverSettingsEmojisNickname");
+                TextView textView3 = this.binding.f17650e;
+                C12238m.checkNotNullExpressionValue(textView3, "binding.serverSettingsEmojisNickname");
                 ViewExtensions.setTextAndVisibilityBy(textView3, nick);
-                SimpleDraweeView simpleDraweeView = this.binding.g;
-                Intrinsics3.checkNotNullExpressionValue(simpleDraweeView, "binding.serverSettingsEmojisUsernameAvatar");
-                IconUtils.setIcon$default(simpleDraweeView, new CoreUser(emojiItem.getEmoji().getUser()), R.dimen.avatar_size_standard, null, null, guildMember, 24, null);
+                SimpleDraweeView simpleDraweeView = this.binding.f17652g;
+                C12238m.checkNotNullExpressionValue(simpleDraweeView, "binding.serverSettingsEmojisUsernameAvatar");
+                IconUtils.setIcon$default(simpleDraweeView, new CoreUser(emojiItem.getEmoji().getUser()), C5419R.dimen.avatar_size_standard, null, null, guildMember, 24, null);
                 String imageUri = ModelEmojiCustom.getImageUri(emojiItem.getEmoji().getId(), emojiItem.getEmoji().getAnimated(), 64);
-                SimpleDraweeView simpleDraweeView2 = this.binding.f2565b;
-                Intrinsics3.checkNotNullExpressionValue(simpleDraweeView2, "binding.serverSettingsEmojisAvatar");
-                MGImages.setImage$default(simpleDraweeView2, imageUri, R.dimen.emoji_size, R.dimen.emoji_size, true, null, null, 96, null);
-                SimpleDraweeView simpleDraweeView3 = this.binding.f2565b;
-                Intrinsics3.checkNotNullExpressionValue(simpleDraweeView3, "binding.serverSettingsEmojisAvatar");
-                ImageViewExtensions.setGrayscale(simpleDraweeView3, !emojiItem.getEmoji().getAvailable());
-                SimpleDraweeView simpleDraweeView4 = this.binding.f2565b;
-                Intrinsics3.checkNotNullExpressionValue(simpleDraweeView4, "binding.serverSettingsEmojisAvatar");
+                SimpleDraweeView simpleDraweeView2 = this.binding.f17647b;
+                C12238m.checkNotNullExpressionValue(simpleDraweeView2, "binding.serverSettingsEmojisAvatar");
+                MGImages.setImage$default(simpleDraweeView2, imageUri, C5419R.dimen.emoji_size, C5419R.dimen.emoji_size, true, null, null, 96, null);
+                SimpleDraweeView simpleDraweeView3 = this.binding.f17647b;
+                C12238m.checkNotNullExpressionValue(simpleDraweeView3, "binding.serverSettingsEmojisAvatar");
+                ImageViewExtensionsKt.setGrayscale(simpleDraweeView3, !emojiItem.getEmoji().getAvailable());
+                SimpleDraweeView simpleDraweeView4 = this.binding.f17647b;
+                C12238m.checkNotNullExpressionValue(simpleDraweeView4, "binding.serverSettingsEmojisAvatar");
                 simpleDraweeView4.setImageAlpha(emojiItem.getEmoji().getAvailable() ? 255 : 100);
-                this.binding.c.setOnClickListener(new View.OnClickListener() { // from class: com.discord.widgets.servers.WidgetServerSettingsEmojis$Adapter$EmojiItemViewHolder$onConfigure$1
+                this.binding.f17648c.setOnClickListener(new View.OnClickListener() { // from class: com.discord.widgets.servers.WidgetServerSettingsEmojis$Adapter$EmojiItemViewHolder$onConfigure$1
                     @Override // android.view.View.OnClickListener
                     public final void onClick(View view) {
                         Function2<View, ModelEmojiGuild, Unit> onEmojiItemClicked = WidgetServerSettingsEmojis.Adapter.EmojiItemViewHolder.access$getAdapter$p(this.this$0).getOnEmojiItemClicked();
-                        Intrinsics3.checkNotNullExpressionValue(view, "it");
+                        C12238m.checkNotNullExpressionValue(view, "it");
                         onEmojiItemClicked.invoke(view, ((WidgetServerSettingsEmojis.Item.EmojiItem) data).getEmoji());
                     }
                 });
@@ -262,41 +262,41 @@ public final class WidgetServerSettingsEmojis extends AppFragment {
 
             /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
             public EmojiSectionViewHolder(Adapter adapter) {
-                super(R.layout.widget_server_settings_emojis_section, adapter);
-                Intrinsics3.checkNotNullParameter(adapter, "adapter");
+                super(C5419R.layout.widget_server_settings_emojis_section, adapter);
+                C12238m.checkNotNullParameter(adapter, "adapter");
                 View view = this.itemView;
-                TextView textView = (TextView) view.findViewById(R.id.widget_server_settings_emojis_section);
+                TextView textView = (TextView) view.findViewById(C5419R.id.widget_server_settings_emojis_section);
                 if (textView == null) {
-                    throw new NullPointerException("Missing required view with ID: ".concat(view.getResources().getResourceName(R.id.widget_server_settings_emojis_section)));
+                    throw new NullPointerException("Missing required view with ID: ".concat(view.getResources().getResourceName(C5419R.id.widget_server_settings_emojis_section)));
                 }
                 WidgetServerSettingsEmojisSectionBinding widgetServerSettingsEmojisSectionBinding = new WidgetServerSettingsEmojisSectionBinding((LinearLayout) view, textView);
-                Intrinsics3.checkNotNullExpressionValue(widgetServerSettingsEmojisSectionBinding, "WidgetServerSettingsEmoj…ionBinding.bind(itemView)");
+                C12238m.checkNotNullExpressionValue(widgetServerSettingsEmojisSectionBinding, "WidgetServerSettingsEmoj…ionBinding.bind(itemView)");
                 this.binding = widgetServerSettingsEmojisSectionBinding;
             }
 
             @Override // com.discord.utilities.mg_recycler.MGRecyclerViewHolder
             public void onConfigure(int position, Item data) {
-                Intrinsics3.checkNotNullParameter(data, "data");
+                C12238m.checkNotNullParameter(data, "data");
                 super.onConfigure(position, data);
                 Item.EmojiSection emojiSection = (Item.EmojiSection) data;
                 int emojiMax = emojiSection.getEmojiMax() - emojiSection.getEmojiLength();
                 View view = this.itemView;
-                Intrinsics3.checkNotNullExpressionValue(view, "itemView");
+                C12238m.checkNotNullExpressionValue(view, "itemView");
                 Context context = view.getContext();
-                Intrinsics3.checkNotNullExpressionValue(context, "itemView.context");
+                C12238m.checkNotNullExpressionValue(context, "itemView.context");
                 Resources resources = context.getResources();
-                Intrinsics3.checkNotNullExpressionValue(resources, "itemView.context.resources");
-                CharSequence charSequenceB = FormatUtils.b(outline.x(this.itemView, "itemView", "itemView.context"), R.string.emoji_slots_available, new Object[]{StringResourceUtils.getQuantityString(resources, outline.x(this.itemView, "itemView", "itemView.context"), R.plurals.emoji_slots_available_count, emojiMax, Integer.valueOf(emojiMax))}, (4 & 4) != 0 ? FormatUtils.b.j : null);
-                TextView textView = this.binding.f2566b;
-                Intrinsics3.checkNotNullExpressionValue(textView, "binding.widgetServerSettingsEmojisSection");
-                textView.setText(FormatUtils.b(outline.x(this.itemView, "itemView", "itemView.context"), R.string.emoji_section, new Object[]{FormatUtils.b(outline.x(this.itemView, "itemView", "itemView.context"), emojiSection.getTitleId(), new Object[0], (4 & 4) != 0 ? FormatUtils.b.j : null), charSequenceB}, (4 & 4) != 0 ? FormatUtils.b.j : null));
+                C12238m.checkNotNullExpressionValue(resources, "itemView.context.resources");
+                CharSequence charSequenceM210b = C1107b.m210b(C1643a.m885x(this.itemView, "itemView", "itemView.context"), C5419R.string.emoji_slots_available, new Object[]{StringResourceUtilsKt.getQuantityString(resources, C1643a.m885x(this.itemView, "itemView", "itemView.context"), C5419R.plurals.emoji_slots_available_count, emojiMax, Integer.valueOf(emojiMax))}, (4 & 4) != 0 ? C1107b.b.f1491j : null);
+                TextView textView = this.binding.f17654b;
+                C12238m.checkNotNullExpressionValue(textView, "binding.widgetServerSettingsEmojisSection");
+                textView.setText(C1107b.m210b(C1643a.m885x(this.itemView, "itemView", "itemView.context"), C5419R.string.emoji_section, new Object[]{C1107b.m210b(C1643a.m885x(this.itemView, "itemView", "itemView.context"), emojiSection.getTitleId(), new Object[0], (4 & 4) != 0 ? C1107b.b.f1491j : null), charSequenceM210b}, (4 & 4) != 0 ? C1107b.b.f1491j : null));
             }
         }
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
         public Adapter(RecyclerView recyclerView) {
             super(recyclerView, false, 2, null);
-            Intrinsics3.checkNotNullParameter(recyclerView, "recycler");
+            C12238m.checkNotNullParameter(recyclerView, "recycler");
             this.onUploadEmoji = WidgetServerSettingsEmojis$Adapter$onUploadEmoji$1.INSTANCE;
             this.onEmojiItemClicked = WidgetServerSettingsEmojis$Adapter$onEmojiItemClicked$1.INSTANCE;
         }
@@ -310,18 +310,18 @@ public final class WidgetServerSettingsEmojis extends AppFragment {
         }
 
         public final void setOnEmojiItemClicked(Function2<? super View, ? super ModelEmojiGuild, Unit> function2) {
-            Intrinsics3.checkNotNullParameter(function2, "<set-?>");
+            C12238m.checkNotNullParameter(function2, "<set-?>");
             this.onEmojiItemClicked = function2;
         }
 
         public final void setOnUploadEmoji(Function0<Unit> function0) {
-            Intrinsics3.checkNotNullParameter(function0, "<set-?>");
+            C12238m.checkNotNullParameter(function0, "<set-?>");
             this.onUploadEmoji = function0;
         }
 
         @Override // androidx.recyclerview.widget.RecyclerView.Adapter
         public MGRecyclerViewHolder<Adapter, Item> onCreateViewHolder(ViewGroup parent, int viewType) {
-            Intrinsics3.checkNotNullParameter(parent, "parent");
+            C12238m.checkNotNullParameter(parent, "parent");
             if (viewType == 0) {
                 return new EmojiItemViewHolder(this);
             }
@@ -344,9 +344,9 @@ public final class WidgetServerSettingsEmojis extends AppFragment {
         }
 
         public final void create(Context context, long guildId) {
-            Intrinsics3.checkNotNullParameter(context, "context");
+            C12238m.checkNotNullParameter(context, "context");
             StoreStream.INSTANCE.getAnalytics().onGuildSettingsPaneViewed("EMOJIS", guildId);
-            AppScreen2.d(context, WidgetServerSettingsEmojis.class, new Intent().putExtra("INTENT_EXTRA_GUILD_ID", guildId));
+            C0870j.m156d(context, WidgetServerSettingsEmojis.class, new Intent().putExtra("INTENT_EXTRA_GUILD_ID", guildId));
         }
 
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
@@ -437,7 +437,7 @@ public final class WidgetServerSettingsEmojis extends AppFragment {
             }
 
             public String toString() {
-                return outline.B(outline.U("EmojiHeader(emojiMax="), this.emojiMax, ")");
+                return C1643a.m814B(C1643a.m833U("EmojiHeader(emojiMax="), this.emojiMax, ")");
             }
         }
 
@@ -458,8 +458,8 @@ public final class WidgetServerSettingsEmojis extends AppFragment {
                 }
 
                 public final EmojiItem from(ModelEmojiGuild emoji, Map<Long, GuildMember> guildMembers) {
-                    Intrinsics3.checkNotNullParameter(emoji, "emoji");
-                    Intrinsics3.checkNotNullParameter(guildMembers, "guildMembers");
+                    C12238m.checkNotNullParameter(emoji, "emoji");
+                    C12238m.checkNotNullParameter(guildMembers, "guildMembers");
                     CoreUser coreUser = new CoreUser(emoji.getUser());
                     return new EmojiItem(emoji, coreUser, guildMembers.get(Long.valueOf(coreUser.getId())));
                 }
@@ -472,8 +472,8 @@ public final class WidgetServerSettingsEmojis extends AppFragment {
             /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
             public EmojiItem(ModelEmojiGuild modelEmojiGuild, User user, GuildMember guildMember) {
                 super(null);
-                Intrinsics3.checkNotNullParameter(modelEmojiGuild, "emoji");
-                Intrinsics3.checkNotNullParameter(user, "user");
+                C12238m.checkNotNullParameter(modelEmojiGuild, "emoji");
+                C12238m.checkNotNullParameter(user, "user");
                 this.emoji = modelEmojiGuild;
                 this.user = user;
                 this.guildMember = guildMember;
@@ -509,8 +509,8 @@ public final class WidgetServerSettingsEmojis extends AppFragment {
             }
 
             public final EmojiItem copy(ModelEmojiGuild emoji, User user, GuildMember guildMember) {
-                Intrinsics3.checkNotNullParameter(emoji, "emoji");
-                Intrinsics3.checkNotNullParameter(user, "user");
+                C12238m.checkNotNullParameter(emoji, "emoji");
+                C12238m.checkNotNullParameter(user, "user");
                 return new EmojiItem(emoji, user, guildMember);
             }
 
@@ -522,7 +522,7 @@ public final class WidgetServerSettingsEmojis extends AppFragment {
                     return false;
                 }
                 EmojiItem emojiItem = (EmojiItem) other;
-                return Intrinsics3.areEqual(this.emoji, emojiItem.emoji) && Intrinsics3.areEqual(this.user, emojiItem.user) && Intrinsics3.areEqual(this.guildMember, emojiItem.guildMember);
+                return C12238m.areEqual(this.emoji, emojiItem.emoji) && C12238m.areEqual(this.user, emojiItem.user) && C12238m.areEqual(this.guildMember, emojiItem.guildMember);
             }
 
             public final ModelEmojiGuild getEmoji() {
@@ -557,14 +557,14 @@ public final class WidgetServerSettingsEmojis extends AppFragment {
             }
 
             public String toString() {
-                StringBuilder sbU = outline.U("EmojiItem(emoji=");
-                sbU.append(this.emoji);
-                sbU.append(", user=");
-                sbU.append(this.user);
-                sbU.append(", guildMember=");
-                sbU.append(this.guildMember);
-                sbU.append(")");
-                return sbU.toString();
+                StringBuilder sbM833U = C1643a.m833U("EmojiItem(emoji=");
+                sbM833U.append(this.emoji);
+                sbM833U.append(", user=");
+                sbM833U.append(this.user);
+                sbM833U.append(", guildMember=");
+                sbM833U.append(this.guildMember);
+                sbM833U.append(")");
+                return sbM833U.toString();
             }
         }
 
@@ -655,12 +655,12 @@ public final class WidgetServerSettingsEmojis extends AppFragment {
             }
 
             public String toString() {
-                StringBuilder sbU = outline.U("EmojiSection(emojiMax=");
-                sbU.append(this.emojiMax);
-                sbU.append(", emojiLength=");
-                sbU.append(this.emojiLength);
-                sbU.append(", titleId=");
-                return outline.B(sbU, this.titleId, ")");
+                StringBuilder sbM833U = C1643a.m833U("EmojiSection(emojiMax=");
+                sbM833U.append(this.emojiMax);
+                sbM833U.append(", emojiLength=");
+                sbM833U.append(this.emojiLength);
+                sbM833U.append(", titleId=");
+                return C1643a.m814B(sbM833U, this.titleId, ")");
             }
         }
 
@@ -688,8 +688,8 @@ public final class WidgetServerSettingsEmojis extends AppFragment {
 
             private final Observable<Permission> canManageEmojisAndStickers(long guildId) {
                 StoreStream.Companion companion = StoreStream.INSTANCE;
-                Observable observableI = Observable.i(companion.getPermissions().observePermissionsForGuild(guildId), companion.getGuilds().observeGuild(guildId), StoreUser.observeMe$default(companion.getUsers(), false, 1, null), new Func3<Long, Guild, MeUser, Permission>() { // from class: com.discord.widgets.servers.WidgetServerSettingsEmojis$Model$Companion$canManageEmojisAndStickers$1
-                    @Override // rx.functions.Func3
+                Observable observableM11075i = Observable.m11075i(companion.getPermissions().observePermissionsForGuild(guildId), companion.getGuilds().observeGuild(guildId), StoreUser.observeMe$default(companion.getUsers(), false, 1, null), new Func3<Long, Guild, MeUser, Permission>() { // from class: com.discord.widgets.servers.WidgetServerSettingsEmojis$Model$Companion$canManageEmojisAndStickers$1
+                    @Override // p658rx.functions.Func3
                     public final WidgetServerSettingsEmojis.Model.Permission call(Long l, Guild guild, MeUser meUser) {
                         if (guild == null || l == null) {
                             return null;
@@ -697,8 +697,8 @@ public final class WidgetServerSettingsEmojis extends AppFragment {
                         return new WidgetServerSettingsEmojis.Model.Permission(PermissionUtils.canAndIsElevated(Permission.MANAGE_EMOJIS_AND_STICKERS, l, meUser.getMfaEnabled(), guild.getMfaLevel()), guild);
                     }
                 });
-                Intrinsics3.checkNotNullExpressionValue(observableI, "Observable.combineLatest…ld)\n          }\n        }");
-                return ObservableExtensionsKt.computationBuffered(observableI);
+                C12238m.checkNotNullExpressionValue(observableM11075i, "Observable.combineLatest…ld)\n          }\n        }");
+                return ObservableExtensionsKt.computationBuffered(observableM11075i);
             }
 
             private final Model create(Guild guild, List<ModelEmojiGuild> emojis, Map<Long, GuildMember> guildMembers) {
@@ -713,39 +713,39 @@ public final class WidgetServerSettingsEmojis extends AppFragment {
                         arrayList.add(obj);
                     }
                 }
-                ArrayList arrayList2 = new ArrayList(Iterables2.collectionSizeOrDefault(arrayList, 10));
+                ArrayList arrayList2 = new ArrayList(C12149o.collectionSizeOrDefault(arrayList, 10));
                 Iterator it = arrayList.iterator();
                 while (it.hasNext()) {
                     arrayList2.add(Item.EmojiItem.INSTANCE.from((ModelEmojiGuild) it.next(), guildMembers));
                 }
-                List listReversed = _Collections.reversed(arrayList2);
+                List listReversed = C12163u.reversed(arrayList2);
                 ArrayList arrayList3 = new ArrayList();
                 for (Object obj2 : emojis) {
                     if (((ModelEmojiGuild) obj2).getAnimated()) {
                         arrayList3.add(obj2);
                     }
                 }
-                ArrayList arrayList4 = new ArrayList(Iterables2.collectionSizeOrDefault(arrayList3, 10));
+                ArrayList arrayList4 = new ArrayList(C12149o.collectionSizeOrDefault(arrayList3, 10));
                 Iterator it2 = arrayList3.iterator();
                 while (it2.hasNext()) {
                     arrayList4.add(Item.EmojiItem.INSTANCE.from((ModelEmojiGuild) it2.next(), guildMembers));
                 }
-                List listReversed2 = _Collections.reversed(arrayList4);
-                Item.EmojiSection emojiSection = new Item.EmojiSection(guildEmojiMaxCount, listReversed.size(), R.string.emoji);
-                Item.EmojiSection emojiSection2 = new Item.EmojiSection(guildEmojiMaxCount, listReversed2.size(), R.string.animated_emoji);
-                ArrayList arrayList5 = new ArrayList(CollectionsJVM.listOf(emojiHeader));
+                List listReversed2 = C12163u.reversed(arrayList4);
+                Item.EmojiSection emojiSection = new Item.EmojiSection(guildEmojiMaxCount, listReversed.size(), C5419R.string.emoji);
+                Item.EmojiSection emojiSection2 = new Item.EmojiSection(guildEmojiMaxCount, listReversed2.size(), C5419R.string.animated_emoji);
+                ArrayList arrayList5 = new ArrayList(C12145m.listOf(emojiHeader));
                 if (!listReversed.isEmpty()) {
-                    arrayList5.addAll(_Collections.plus((Collection) CollectionsJVM.listOf(emojiSection), (Iterable) listReversed));
+                    arrayList5.addAll(C12163u.plus((Collection) C12145m.listOf(emojiSection), (Iterable) listReversed));
                 }
                 if (!listReversed2.isEmpty()) {
-                    arrayList5.addAll(_Collections.plus((Collection) CollectionsJVM.listOf(emojiSection2), (Iterable) listReversed2));
+                    arrayList5.addAll(C12163u.plus((Collection) C12145m.listOf(emojiSection2), (Iterable) listReversed2));
                 }
                 if (listReversed.isEmpty() && listReversed2.isEmpty()) {
-                    arrayList5.addAll(CollectionsJVM.listOf(Item.EmojiEmpty.INSTANCE));
+                    arrayList5.addAll(C12145m.listOf(Item.EmojiEmpty.INSTANCE));
                 }
-                StringBuilder sbU = outline.U("emoji_");
-                sbU.append(emojis.size() + 1);
-                return new Model(guild, arrayList5, sbU.toString());
+                StringBuilder sbM833U = C1643a.m833U("emoji_");
+                sbM833U.append(emojis.size() + 1);
+                return new Model(guild, arrayList5, sbM833U.toString());
             }
 
             private final Observable<Model> getGuildEmojis(Guild guild) {
@@ -753,25 +753,25 @@ public final class WidgetServerSettingsEmojis extends AppFragment {
                 final StoreEmojiGuild guildEmojis = companion.getGuildEmojis();
                 StoreGuilds guilds = companion.getGuilds();
                 final long id2 = guild.getId();
-                Observable observableV = ObservationDeck.connectRx$default(ObservationDeck4.get(), new ObservationDeck.UpdateSource[]{guildEmojis, guilds}, false, null, null, new WidgetServerSettingsEmojis$Model$Companion$getGuildEmojis$1(guild, guildEmojis, guilds), 14, null).v(new Action0() { // from class: com.discord.widgets.servers.WidgetServerSettingsEmojis$Model$Companion$getGuildEmojis$2
-                    @Override // rx.functions.Action0
+                Observable observableM11116v = ObservationDeck.connectRx$default(ObservationDeckProvider.get(), new ObservationDeck.UpdateSource[]{guildEmojis, guilds}, false, null, null, new WidgetServerSettingsEmojis$Model$Companion$getGuildEmojis$1(guild, guildEmojis, guilds), 14, null).m11116v(new Action0() { // from class: com.discord.widgets.servers.WidgetServerSettingsEmojis$Model$Companion$getGuildEmojis$2
+                    @Override // p658rx.functions.Action0
                     public final void call() {
                         guildEmojis.fetchGuildEmoji(id2);
                     }
                 });
-                Intrinsics3.checkNotNullExpressionValue(observableV, "ObservationDeckProvider.…etchGuildEmoji(guildId) }");
-                return ObservableExtensionsKt.computationBuffered(observableV);
+                C12238m.checkNotNullExpressionValue(observableM11116v, "ObservationDeckProvider.…etchGuildEmoji(guildId) }");
+                return ObservableExtensionsKt.computationBuffered(observableM11116v);
             }
 
             public final Observable<Model> get(long guildId) {
-                Observable observableY = canManageEmojisAndStickers(guildId).Y(new Func1<Permission, Observable<? extends Model>>() { // from class: com.discord.widgets.servers.WidgetServerSettingsEmojis$Model$Companion$get$1
-                    @Override // j0.k.Func1
+                Observable observableM11099Y = canManageEmojisAndStickers(guildId).m11099Y(new InterfaceC12589b<Permission, Observable<? extends Model>>() { // from class: com.discord.widgets.servers.WidgetServerSettingsEmojis$Model$Companion$get$1
+                    @Override // p637j0.p641k.InterfaceC12589b
                     public final Observable<? extends WidgetServerSettingsEmojis.Model> call(WidgetServerSettingsEmojis.Model.Permission permission) {
-                        return (permission == null || !permission.getCanManage()) ? new ScalarSynchronousObservable(null) : WidgetServerSettingsEmojis.Model.INSTANCE.getGuildEmojis(permission.getGuild());
+                        return (permission == null || !permission.getCanManage()) ? new C12721k(null) : WidgetServerSettingsEmojis.Model.INSTANCE.getGuildEmojis(permission.getGuild());
                     }
                 });
-                Intrinsics3.checkNotNullExpressionValue(observableY, "canManageEmojisAndSticke…          }\n            }");
-                return observableY;
+                C12238m.checkNotNullExpressionValue(observableM11099Y, "canManageEmojisAndSticke…          }\n            }");
+                return observableM11099Y;
             }
 
             public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
@@ -785,7 +785,7 @@ public final class WidgetServerSettingsEmojis extends AppFragment {
             private final Guild guild;
 
             public Permission(boolean z2, Guild guild) {
-                Intrinsics3.checkNotNullParameter(guild, "guild");
+                C12238m.checkNotNullParameter(guild, "guild");
                 this.canManage = z2;
                 this.guild = guild;
             }
@@ -811,7 +811,7 @@ public final class WidgetServerSettingsEmojis extends AppFragment {
             }
 
             public final Permission copy(boolean canManage, Guild guild) {
-                Intrinsics3.checkNotNullParameter(guild, "guild");
+                C12238m.checkNotNullParameter(guild, "guild");
                 return new Permission(canManage, guild);
             }
 
@@ -823,7 +823,7 @@ public final class WidgetServerSettingsEmojis extends AppFragment {
                     return false;
                 }
                 Permission permission = (Permission) other;
-                return this.canManage == permission.canManage && Intrinsics3.areEqual(this.guild, permission.guild);
+                return this.canManage == permission.canManage && C12238m.areEqual(this.guild, permission.guild);
             }
 
             public final boolean getCanManage() {
@@ -850,18 +850,18 @@ public final class WidgetServerSettingsEmojis extends AppFragment {
             }
 
             public String toString() {
-                StringBuilder sbU = outline.U("Permission(canManage=");
-                sbU.append(this.canManage);
-                sbU.append(", guild=");
-                sbU.append(this.guild);
-                sbU.append(")");
-                return sbU.toString();
+                StringBuilder sbM833U = C1643a.m833U("Permission(canManage=");
+                sbM833U.append(this.canManage);
+                sbM833U.append(", guild=");
+                sbM833U.append(this.guild);
+                sbM833U.append(")");
+                return sbM833U.toString();
             }
         }
 
         /* JADX WARN: Multi-variable type inference failed */
         public Model(Guild guild, List<? extends Item> list, String str) {
-            Intrinsics3.checkNotNullParameter(guild, "guild");
+            C12238m.checkNotNullParameter(guild, "guild");
             this.guild = guild;
             this.items = list;
             this.defaultName = str;
@@ -896,7 +896,7 @@ public final class WidgetServerSettingsEmojis extends AppFragment {
         }
 
         public final Model copy(Guild guild, List<? extends Item> items, String defaultName) {
-            Intrinsics3.checkNotNullParameter(guild, "guild");
+            C12238m.checkNotNullParameter(guild, "guild");
             return new Model(guild, items, defaultName);
         }
 
@@ -908,7 +908,7 @@ public final class WidgetServerSettingsEmojis extends AppFragment {
                 return false;
             }
             Model model = (Model) other;
-            return Intrinsics3.areEqual(this.guild, model.guild) && Intrinsics3.areEqual(this.items, model.items) && Intrinsics3.areEqual(this.defaultName, model.defaultName);
+            return C12238m.areEqual(this.guild, model.guild) && C12238m.areEqual(this.items, model.items) && C12238m.areEqual(this.defaultName, model.defaultName);
         }
 
         public final String getDefaultName() {
@@ -933,26 +933,26 @@ public final class WidgetServerSettingsEmojis extends AppFragment {
         }
 
         public String toString() {
-            StringBuilder sbU = outline.U("Model(guild=");
-            sbU.append(this.guild);
-            sbU.append(", items=");
-            sbU.append(this.items);
-            sbU.append(", defaultName=");
-            return outline.J(sbU, this.defaultName, ")");
+            StringBuilder sbM833U = C1643a.m833U("Model(guild=");
+            sbM833U.append(this.guild);
+            sbM833U.append(", items=");
+            sbM833U.append(this.items);
+            sbM833U.append(", defaultName=");
+            return C1643a.m822J(sbM833U, this.defaultName, ")");
         }
     }
 
-    /* JADX INFO: renamed from: com.discord.widgets.servers.WidgetServerSettingsEmojis$configureUI$2, reason: invalid class name */
+    /* JADX INFO: renamed from: com.discord.widgets.servers.WidgetServerSettingsEmojis$configureUI$2 */
     /* JADX INFO: compiled from: WidgetServerSettingsEmojis.kt */
-    public static final class AnonymousClass2 extends Lambda implements Function0<Unit> {
-        public AnonymousClass2() {
+    public static final class C92512 extends AbstractC12240o implements Function0<Unit> {
+        public C92512() {
             super(0);
         }
 
         @Override // kotlin.jvm.functions.Function0
         public /* bridge */ /* synthetic */ Unit invoke() {
             invoke2();
-            return Unit.a;
+            return Unit.f27425a;
         }
 
         /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
@@ -961,38 +961,38 @@ public final class WidgetServerSettingsEmojis extends AppFragment {
         }
     }
 
-    /* JADX INFO: renamed from: com.discord.widgets.servers.WidgetServerSettingsEmojis$configureUI$3, reason: invalid class name */
+    /* JADX INFO: renamed from: com.discord.widgets.servers.WidgetServerSettingsEmojis$configureUI$3 */
     /* JADX INFO: compiled from: WidgetServerSettingsEmojis.kt */
-    public static final class AnonymousClass3 extends Lambda implements Function2<View, ModelEmojiGuild, Unit> {
-        public AnonymousClass3() {
+    public static final class C92523 extends AbstractC12240o implements Function2<View, ModelEmojiGuild, Unit> {
+        public C92523() {
             super(2);
         }
 
         @Override // kotlin.jvm.functions.Function2
         public /* bridge */ /* synthetic */ Unit invoke(View view, ModelEmojiGuild modelEmojiGuild) {
             invoke2(view, modelEmojiGuild);
-            return Unit.a;
+            return Unit.f27425a;
         }
 
         /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
         public final void invoke2(View view, ModelEmojiGuild modelEmojiGuild) {
-            Intrinsics3.checkNotNullParameter(view, "view");
-            Intrinsics3.checkNotNullParameter(modelEmojiGuild, "emoji");
+            C12238m.checkNotNullParameter(view, "view");
+            C12238m.checkNotNullParameter(modelEmojiGuild, "emoji");
             WidgetServerSettingsEmojis.this.launchEditScreen(view, modelEmojiGuild);
         }
     }
 
-    /* JADX INFO: renamed from: com.discord.widgets.servers.WidgetServerSettingsEmojis$onViewBoundOrOnResume$1, reason: invalid class name */
+    /* JADX INFO: renamed from: com.discord.widgets.servers.WidgetServerSettingsEmojis$onViewBoundOrOnResume$1 */
     /* JADX INFO: compiled from: WidgetServerSettingsEmojis.kt */
-    public static final class AnonymousClass1 extends Lambda implements Function1<Model, Unit> {
-        public AnonymousClass1() {
+    public static final class C92531 extends AbstractC12240o implements Function1<Model, Unit> {
+        public C92531() {
             super(1);
         }
 
         @Override // kotlin.jvm.functions.Function1
         public /* bridge */ /* synthetic */ Unit invoke(Model model) throws Exception {
             invoke2(model);
-            return Unit.a;
+            return Unit.f27425a;
         }
 
         /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
@@ -1002,14 +1002,14 @@ public final class WidgetServerSettingsEmojis extends AppFragment {
     }
 
     public WidgetServerSettingsEmojis() {
-        super(R.layout.widget_server_settings_emojis);
-        this.binding = FragmentViewBindingDelegate3.viewBinding$default(this, WidgetServerSettingsEmojis$binding$2.INSTANCE, null, 2, null);
+        super(C5419R.layout.widget_server_settings_emojis);
+        this.binding = FragmentViewBindingDelegateKt.viewBinding$default(this, WidgetServerSettingsEmojis$binding$2.INSTANCE, null, 2, null);
         this.guildId = -1L;
-        this.loggingConfig = new AppLogger2(false, null, WidgetServerSettingsEmojis$loggingConfig$1.INSTANCE, 3);
+        this.loggingConfig = new LoggingConfig(false, null, WidgetServerSettingsEmojis$loggingConfig$1.INSTANCE, 3);
     }
 
     private final void configureToolbar(String guildName) {
-        setActionBarTitle(R.string.emoji);
+        setActionBarTitle(C5419R.string.emoji);
         setActionBarSubtitle(guildName);
     }
 
@@ -1028,36 +1028,36 @@ public final class WidgetServerSettingsEmojis extends AppFragment {
             return;
         }
         String defaultName = model.getDefaultName();
-        if (defaultName == null || StringsJVM.isBlank(defaultName)) {
+        if (defaultName == null || C12103t.isBlank(defaultName)) {
             return;
         }
-        AppViewFlipper appViewFlipper = getBinding().c;
-        Intrinsics3.checkNotNullExpressionValue(appViewFlipper, "binding.widgetServerSettingsEmojisViewFlipper");
+        AppViewFlipper appViewFlipper = getBinding().f17639c;
+        C12238m.checkNotNullExpressionValue(appViewFlipper, "binding.widgetServerSettingsEmojisViewFlipper");
         appViewFlipper.setDisplayedChild(1);
         this.uploadEmojiAction = new Action1<String>() { // from class: com.discord.widgets.servers.WidgetServerSettingsEmojis.configureUI.1
-            @Override // rx.functions.Action1
+            @Override // p658rx.functions.Action1
             public final void call(String str) {
                 WidgetServerSettingsEmojis widgetServerSettingsEmojis = WidgetServerSettingsEmojis.this;
                 String defaultName2 = model.getDefaultName();
-                Intrinsics3.checkNotNullExpressionValue(str, "dataUrl");
+                C12238m.checkNotNullExpressionValue(str, "dataUrl");
                 widgetServerSettingsEmojis.uploadEmoji(defaultName2, str);
             }
         };
         Adapter adapter = this.adapter;
         if (adapter == null) {
-            Intrinsics3.throwUninitializedPropertyAccessException("adapter");
+            C12238m.throwUninitializedPropertyAccessException("adapter");
         }
         adapter.setData(model.getItems());
         Adapter adapter2 = this.adapter;
         if (adapter2 == null) {
-            Intrinsics3.throwUninitializedPropertyAccessException("adapter");
+            C12238m.throwUninitializedPropertyAccessException("adapter");
         }
-        adapter2.setOnUploadEmoji(new AnonymousClass2());
+        adapter2.setOnUploadEmoji(new C92512());
         Adapter adapter3 = this.adapter;
         if (adapter3 == null) {
-            Intrinsics3.throwUninitializedPropertyAccessException("adapter");
+            C12238m.throwUninitializedPropertyAccessException("adapter");
         }
-        adapter3.setOnEmojiItemClicked(new AnonymousClass3());
+        adapter3.setOnEmojiItemClicked(new C92523());
     }
 
     private final WidgetServerSettingsEmojisBinding getBinding() {
@@ -1067,37 +1067,37 @@ public final class WidgetServerSettingsEmojis extends AppFragment {
     private final void launchEditScreen(View v, ModelEmojiGuild emoji) {
         WidgetServerSettingsEmojisEdit.Companion companion = WidgetServerSettingsEmojisEdit.INSTANCE;
         Context context = v.getContext();
-        Intrinsics3.checkNotNullExpressionValue(context, "v.context");
+        C12238m.checkNotNullExpressionValue(context, "v.context");
         companion.create(context, this.guildId, emoji.getId(), emoji.getName());
     }
 
     private final void uploadEmoji(String name, String imageBase64) {
-        ObservableExtensionsKt.ui$default(ObservableExtensionsKt.restSubscribeOn$default(RestAPI.INSTANCE.getApi().postGuildEmoji(this.guildId, new RestAPIParams.PostGuildEmoji(name, imageBase64)), false, 1, null), this, null, 2, null).k(o.i(new Action1<ModelEmojiGuild>() { // from class: com.discord.widgets.servers.WidgetServerSettingsEmojis.uploadEmoji.1
-            @Override // rx.functions.Action1
+        ObservableExtensionsKt.ui$default(ObservableExtensionsKt.restSubscribeOn$default(RestAPI.INSTANCE.getApi().postGuildEmoji(this.guildId, new RestAPIParams.PostGuildEmoji(name, imageBase64)), false, 1, null), this, null, 2, null).m11108k(C0879o.m182i(new Action1<ModelEmojiGuild>() { // from class: com.discord.widgets.servers.WidgetServerSettingsEmojis.uploadEmoji.1
+            @Override // p658rx.functions.Action1
             public final void call(ModelEmojiGuild modelEmojiGuild) {
             }
         }, this));
     }
 
-    @Override // com.discord.app.AppFragment, com.discord.app.AppLogger.a
-    public AppLogger2 getLoggingConfig() {
+    @Override // com.discord.app.AppFragment, com.discord.app.AppLogger.InterfaceC5455a
+    public LoggingConfig getLoggingConfig() {
         return this.loggingConfig;
     }
 
     @Override // com.discord.app.AppFragment
     public void onImageChosen(Uri uri, String mimeType) {
-        Intrinsics3.checkNotNullParameter(uri, NotificationCompat.MessagingStyle.Message.KEY_DATA_URI);
-        Intrinsics3.checkNotNullParameter(mimeType, "mimeType");
+        C12238m.checkNotNullParameter(uri, NotificationCompat.MessagingStyle.Message.KEY_DATA_URI);
+        C12238m.checkNotNullParameter(mimeType, "mimeType");
         super.onImageChosen(uri, mimeType);
         FragmentManager parentFragmentManager = getParentFragmentManager();
-        Intrinsics3.checkNotNullExpressionValue(parentFragmentManager, "parentFragmentManager");
+        C12238m.checkNotNullExpressionValue(parentFragmentManager, "parentFragmentManager");
         MGImages.prepareImageUpload(uri, mimeType, parentFragmentManager, this, this.uploadEmojiAction, ImageUploadDialog.PreviewType.EMOJI);
     }
 
     @Override // com.discord.app.AppFragment
     public void onImageCropped(Uri uri, String mimeType) {
-        Intrinsics3.checkNotNullParameter(uri, NotificationCompat.MessagingStyle.Message.KEY_DATA_URI);
-        Intrinsics3.checkNotNullParameter(mimeType, "mimeType");
+        C12238m.checkNotNullParameter(uri, NotificationCompat.MessagingStyle.Message.KEY_DATA_URI);
+        C12238m.checkNotNullParameter(mimeType, "mimeType");
         super.onImageCropped(uri, mimeType);
         MGImages.requestDataUrl(getContext(), uri, mimeType, this.uploadEmojiAction);
     }
@@ -1110,13 +1110,13 @@ public final class WidgetServerSettingsEmojis extends AppFragment {
 
     @Override // com.discord.app.AppFragment
     public void onViewBound(View view) {
-        Intrinsics3.checkNotNullParameter(view, "view");
+        C12238m.checkNotNullParameter(view, "view");
         super.onViewBound(view);
         AppFragment.setActionBarDisplayHomeAsUpEnabled$default(this, false, 1, null);
         this.guildId = getMostRecentIntent().getLongExtra("INTENT_EXTRA_GUILD_ID", -1L);
         MGRecyclerAdapter.Companion companion = MGRecyclerAdapter.INSTANCE;
-        RecyclerView recyclerView = getBinding().f2562b;
-        Intrinsics3.checkNotNullExpressionValue(recyclerView, "binding.widgetServerSettingsEmojisRecycler");
+        RecyclerView recyclerView = getBinding().f17638b;
+        C12238m.checkNotNullExpressionValue(recyclerView, "binding.widgetServerSettingsEmojisRecycler");
         this.adapter = (Adapter) companion.configure(new Adapter(recyclerView));
     }
 
@@ -1124,6 +1124,6 @@ public final class WidgetServerSettingsEmojis extends AppFragment {
     public void onViewBoundOrOnResume() {
         super.onViewBoundOrOnResume();
         StoreStream.INSTANCE.getGuildEmojis().activate(this.guildId);
-        ObservableExtensionsKt.appSubscribe(ObservableExtensionsKt.ui$default(Model.INSTANCE.get(this.guildId), this, null, 2, null), (Class<?>) WidgetServerSettingsEmojis.class, (58 & 2) != 0 ? null : null, (Function1<? super Subscription, Unit>) ((58 & 4) != 0 ? null : null), (Function1<? super Error, Unit>) ((58 & 8) != 0 ? null : null), (Function0<Unit>) ((58 & 16) != 0 ? ObservableExtensionsKt.AnonymousClass1.INSTANCE : null), (Function0<Unit>) ((58 & 32) != 0 ? ObservableExtensionsKt.AnonymousClass2.INSTANCE : null), new AnonymousClass1());
+        ObservableExtensionsKt.appSubscribe(ObservableExtensionsKt.ui$default(Model.INSTANCE.get(this.guildId), this, null, 2, null), (Class<?>) WidgetServerSettingsEmojis.class, (58 & 2) != 0 ? null : null, (Function1<? super Subscription, Unit>) ((58 & 4) != 0 ? null : null), (Function1<? super Error, Unit>) ((58 & 8) != 0 ? null : null), (Function0<Unit>) ((58 & 16) != 0 ? ObservableExtensionsKt.C68791.INSTANCE : null), (Function0<Unit>) ((58 & 32) != 0 ? ObservableExtensionsKt.C68802.INSTANCE : null), new C92531());
     }
 }

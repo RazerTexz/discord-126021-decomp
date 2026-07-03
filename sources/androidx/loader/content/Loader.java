@@ -7,9 +7,9 @@ import androidx.annotation.MainThread;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.core.util.DebugUtils;
-import b.d.b.a.outline;
 import java.io.FileDescriptor;
 import java.io.PrintWriter;
+import p007b.p100d.p104b.p105a.C1643a;
 
 /* JADX INFO: loaded from: classes.dex */
 public class Loader<D> {
@@ -233,7 +233,7 @@ public class Loader<D> {
         StringBuilder sb = new StringBuilder(64);
         DebugUtils.buildShortClassTag(this, sb);
         sb.append(" id=");
-        return outline.B(sb, this.mId, "}");
+        return C1643a.m814B(sb, this.mId, "}");
     }
 
     @MainThread

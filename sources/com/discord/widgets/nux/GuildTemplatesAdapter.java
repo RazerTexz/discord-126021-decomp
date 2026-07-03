@@ -5,35 +5,35 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 import androidx.recyclerview.widget.RecyclerView;
-import b.d.b.a.outline;
-import com.discord.R;
+import com.discord.C5419R;
 import com.discord.databinding.NuxGuildTemplateCardViewHolderBinding;
 import com.discord.databinding.NuxGuildTemplateTextViewHolderBinding;
 import com.discord.models.domain.ModelAuditLogEntry;
-import com.discord.widgets.nux.GuildTemplatesAdapter2;
+import com.discord.widgets.nux.GuildTemplateViewType;
 import com.google.android.material.card.MaterialCardView;
-import d0.t.Collections2;
-import d0.t._Collections;
-import d0.z.d.Intrinsics3;
 import java.util.Collection;
 import java.util.List;
 import java.util.Objects;
+import p007b.p100d.p104b.p105a.C1643a;
+import p507d0.p580t.C12147n;
+import p507d0.p580t.C12163u;
+import p507d0.p592z.p594d.C12238m;
 
 /* JADX INFO: compiled from: GuildTemplatesAdapter.kt */
 /* JADX INFO: loaded from: classes2.dex */
 public final class GuildTemplatesAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
     private final Callbacks callbacks;
-    private List<? extends GuildTemplatesAdapter2> items;
+    private List<? extends GuildTemplateViewType> items;
 
     /* JADX INFO: compiled from: GuildTemplatesAdapter.kt */
     public interface Callbacks {
-        void onTemplateClick(GuildTemplates guildTemplate);
+        void onTemplateClick(GuildTemplate guildTemplate);
     }
 
     public GuildTemplatesAdapter(Callbacks callbacks) {
-        Intrinsics3.checkNotNullParameter(callbacks, "callbacks");
+        C12238m.checkNotNullParameter(callbacks, "callbacks");
         this.callbacks = callbacks;
-        this.items = Collections2.emptyList();
+        this.items = C12147n.emptyList();
     }
 
     public final Callbacks getCallbacks() {
@@ -50,53 +50,53 @@ public final class GuildTemplatesAdapter extends RecyclerView.Adapter<RecyclerVi
         return this.items.get(position).getViewType();
     }
 
-    public final List<GuildTemplatesAdapter2> getItems() {
+    public final List<GuildTemplateViewType> getItems() {
         return this.items;
     }
 
     @Override // androidx.recyclerview.widget.RecyclerView.Adapter
     public void onBindViewHolder(RecyclerView.ViewHolder holder, int position) {
-        Intrinsics3.checkNotNullParameter(holder, "holder");
-        GuildTemplatesAdapter2 guildTemplatesAdapter2 = this.items.get(position);
-        if (guildTemplatesAdapter2 instanceof GuildTemplatesAdapter2.Template) {
-            if (!(holder instanceof GuildTemplateViewHolders)) {
+        C12238m.checkNotNullParameter(holder, "holder");
+        GuildTemplateViewType guildTemplateViewType = this.items.get(position);
+        if (guildTemplateViewType instanceof GuildTemplateViewType.Template) {
+            if (!(holder instanceof GuildTemplateCardViewHolder)) {
                 holder = null;
             }
-            GuildTemplateViewHolders guildTemplateViewHolders = (GuildTemplateViewHolders) holder;
-            if (guildTemplateViewHolders != null) {
-                guildTemplateViewHolders.bind(((GuildTemplatesAdapter2.Template) guildTemplatesAdapter2).getGuildTemplate());
+            GuildTemplateCardViewHolder guildTemplateCardViewHolder = (GuildTemplateCardViewHolder) holder;
+            if (guildTemplateCardViewHolder != null) {
+                guildTemplateCardViewHolder.bind(((GuildTemplateViewType.Template) guildTemplateViewType).getGuildTemplate());
             }
         }
     }
 
     @Override // androidx.recyclerview.widget.RecyclerView.Adapter
     public RecyclerView.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        Intrinsics3.checkNotNullParameter(parent, "parent");
-        GuildTemplatesAdapter2.Companion companion = GuildTemplatesAdapter2.INSTANCE;
+        C12238m.checkNotNullParameter(parent, "parent");
+        GuildTemplateViewType.Companion companion = GuildTemplateViewType.INSTANCE;
         if (viewType == companion.getTEXT()) {
-            View viewInflate = LayoutInflater.from(parent.getContext()).inflate(R.layout.nux_guild_template_text_view_holder, parent, false);
+            View viewInflate = LayoutInflater.from(parent.getContext()).inflate(C5419R.layout.nux_guild_template_text_view_holder, parent, false);
             Objects.requireNonNull(viewInflate, "rootView");
             NuxGuildTemplateTextViewHolderBinding nuxGuildTemplateTextViewHolderBinding = new NuxGuildTemplateTextViewHolderBinding((TextView) viewInflate);
-            Intrinsics3.checkNotNullExpressionValue(nuxGuildTemplateTextViewHolderBinding, "NuxGuildTemplateTextView…          false\n        )");
-            return new GuildTemplateViewHolders2(nuxGuildTemplateTextViewHolderBinding);
+            C12238m.checkNotNullExpressionValue(nuxGuildTemplateTextViewHolderBinding, "NuxGuildTemplateTextView…          false\n        )");
+            return new GuildTemplateTextViewHolder(nuxGuildTemplateTextViewHolderBinding);
         }
         if (viewType != companion.getTEMPLATE()) {
-            throw new IllegalStateException(outline.q("Missing view type for ", viewType));
+            throw new IllegalStateException(C1643a.m871q("Missing view type for ", viewType));
         }
-        View viewInflate2 = LayoutInflater.from(parent.getContext()).inflate(R.layout.nux_guild_template_card_view_holder, parent, false);
+        View viewInflate2 = LayoutInflater.from(parent.getContext()).inflate(C5419R.layout.nux_guild_template_card_view_holder, parent, false);
         MaterialCardView materialCardView = (MaterialCardView) viewInflate2;
-        TextView textView = (TextView) viewInflate2.findViewById(R.id.nux_guild_template_text);
+        TextView textView = (TextView) viewInflate2.findViewById(C5419R.id.nux_guild_template_text);
         if (textView == null) {
-            throw new NullPointerException("Missing required view with ID: ".concat(viewInflate2.getResources().getResourceName(R.id.nux_guild_template_text)));
+            throw new NullPointerException("Missing required view with ID: ".concat(viewInflate2.getResources().getResourceName(C5419R.id.nux_guild_template_text)));
         }
         NuxGuildTemplateCardViewHolderBinding nuxGuildTemplateCardViewHolderBinding = new NuxGuildTemplateCardViewHolderBinding((MaterialCardView) viewInflate2, materialCardView, textView);
-        Intrinsics3.checkNotNullExpressionValue(nuxGuildTemplateCardViewHolderBinding, "NuxGuildTemplateCardView…          false\n        )");
-        return new GuildTemplateViewHolders(nuxGuildTemplateCardViewHolderBinding, this.callbacks);
+        C12238m.checkNotNullExpressionValue(nuxGuildTemplateCardViewHolderBinding, "NuxGuildTemplateCardView…          false\n        )");
+        return new GuildTemplateCardViewHolder(nuxGuildTemplateCardViewHolderBinding, this.callbacks);
     }
 
-    public final void setItems(List<? extends GuildTemplatesAdapter2> list) {
-        Intrinsics3.checkNotNullParameter(list, "value");
-        this.items = _Collections.plus((Collection) Collections2.listOf((Object[]) new GuildTemplatesAdapter2[]{new GuildTemplatesAdapter2.Template(GuildTemplates.CreateMyOwn), GuildTemplatesAdapter2.Text.INSTANCE}), (Iterable) list);
+    public final void setItems(List<? extends GuildTemplateViewType> list) {
+        C12238m.checkNotNullParameter(list, "value");
+        this.items = C12163u.plus((Collection) C12147n.listOf((Object[]) new GuildTemplateViewType[]{new GuildTemplateViewType.Template(GuildTemplate.CreateMyOwn), GuildTemplateViewType.Text.INSTANCE}), (Iterable) list);
         notifyDataSetChanged();
     }
 }

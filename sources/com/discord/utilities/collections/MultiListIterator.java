@@ -1,21 +1,21 @@
 package com.discord.utilities.collections;
 
 import androidx.exifinterface.media.ExifInterface;
-import d0.z.d.Intrinsics3;
-import d0.z.d.g0.KMarkers;
 import java.util.Iterator;
 import java.util.List;
+import p507d0.p592z.p594d.C12238m;
+import p507d0.p592z.p594d.p595g0.InterfaceC12228a;
 
 /* JADX INFO: compiled from: MultiListIterator.kt */
 /* JADX INFO: loaded from: classes2.dex */
-public final class MultiListIterator<T> implements Iterator<T>, KMarkers {
+public final class MultiListIterator<T> implements Iterator<T>, InterfaceC12228a {
     private Iterator<? extends T> curIterator;
     private int listIndex;
     private final List<T>[] lists;
 
     /* JADX WARN: Multi-variable type inference failed */
     public MultiListIterator(List<? extends T>... listArr) {
-        Intrinsics3.checkNotNullParameter(listArr, "lists");
+        C12238m.checkNotNullParameter(listArr, "lists");
         this.lists = listArr;
         this.curIterator = listArr[this.listIndex].iterator();
     }

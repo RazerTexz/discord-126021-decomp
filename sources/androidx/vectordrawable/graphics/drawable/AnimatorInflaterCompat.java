@@ -24,12 +24,12 @@ import androidx.annotation.AnimatorRes;
 import androidx.annotation.RestrictTo;
 import androidx.core.content.res.TypedArrayUtils;
 import androidx.core.graphics.PathParser;
-import b.d.b.a.outline;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Iterator;
 import org.xmlpull.v1.XmlPullParser;
 import org.xmlpull.v1.XmlPullParserException;
+import p007b.p100d.p104b.p105a.C1643a;
 
 /* JADX INFO: loaded from: classes.dex */
 @RestrictTo({RestrictTo.Scope.LIBRARY_GROUP_PREFIX})
@@ -99,15 +99,15 @@ public class AnimatorInflaterCompat {
         int length = objArr.length;
         for (int i = 0; i < length; i++) {
             Keyframe keyframe = (Keyframe) objArr[i];
-            StringBuilder sbV = outline.V("Keyframe ", i, ": fraction ");
+            StringBuilder sbM834V = C1643a.m834V("Keyframe ", i, ": fraction ");
             Object value = "null";
-            sbV.append(keyframe.getFraction() < 0.0f ? "null" : Float.valueOf(keyframe.getFraction()));
-            sbV.append(", , value : ");
+            sbM834V.append(keyframe.getFraction() < 0.0f ? "null" : Float.valueOf(keyframe.getFraction()));
+            sbM834V.append(", , value : ");
             if (keyframe.hasValue()) {
                 value = keyframe.getValue();
             }
-            sbV.append(value);
-            Log.d(TAG, sbV.toString());
+            sbM834V.append(value);
+            Log.d(TAG, sbM834V.toString());
         }
     }
 
@@ -479,9 +479,9 @@ public class AnimatorInflaterCompat {
                         animatorLoadAnimator = animatorSet2;
                     } else {
                         if (!name.equals("propertyValuesHolder")) {
-                            StringBuilder sbU = outline.U("Unknown animator name: ");
-                            sbU.append(xmlPullParser.getName());
-                            throw new RuntimeException(sbU.toString());
+                            StringBuilder sbM833U = C1643a.m833U("Unknown animator name: ");
+                            sbM833U.append(xmlPullParser.getName());
+                            throw new RuntimeException(sbM833U.toString());
                         }
                         PropertyValuesHolder[] propertyValuesHolderArrLoadValues = loadValues(context, resources, theme, xmlPullParser, Xml.asAttributeSet(xmlPullParser));
                         if (propertyValuesHolderArrLoadValues != null && (animatorLoadAnimator instanceof ValueAnimator)) {

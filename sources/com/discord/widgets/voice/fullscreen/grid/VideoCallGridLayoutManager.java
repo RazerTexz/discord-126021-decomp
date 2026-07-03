@@ -2,10 +2,10 @@ package com.discord.widgets.voice.fullscreen.grid;
 
 import android.content.Context;
 import androidx.recyclerview.widget.RecyclerView;
-import d0.z.d.Intrinsics3;
 import kotlin.Unit;
 import kotlin.jvm.functions.Function0;
 import kotlin.jvm.functions.Function2;
+import p507d0.p592z.p594d.C12238m;
 
 /* JADX INFO: compiled from: VideoCallGridLayoutManager.kt */
 /* JADX INFO: loaded from: classes.dex */
@@ -18,8 +18,8 @@ public final class VideoCallGridLayoutManager extends ResizingGridLayoutManager 
     /* JADX WARN: Multi-variable type inference failed */
     public VideoCallGridLayoutManager(Function0<Integer> function0, int i, Function2<? super VideoCallGridLayoutManager, ? super RecyclerView.State, Unit> function2, int i2, Context context) {
         super(context, i, i2);
-        Intrinsics3.checkNotNullParameter(function0, "recyclerviewSizeProvider");
-        Intrinsics3.checkNotNullParameter(context, "context");
+        C12238m.checkNotNullParameter(function0, "recyclerviewSizeProvider");
+        C12238m.checkNotNullParameter(context, "context");
         this.recyclerviewSizeProvider = function0;
         this.spanCount = i;
         this.onLayoutCompletedEvent = function2;
@@ -27,8 +27,8 @@ public final class VideoCallGridLayoutManager extends ResizingGridLayoutManager 
 
     @Override // androidx.recyclerview.widget.LinearLayoutManager
     public void calculateExtraLayoutSpace(RecyclerView.State state, int[] extraLayoutSpace) {
-        Intrinsics3.checkNotNullParameter(state, "state");
-        Intrinsics3.checkNotNullParameter(extraLayoutSpace, "extraLayoutSpace");
+        C12238m.checkNotNullParameter(state, "state");
+        C12238m.checkNotNullParameter(extraLayoutSpace, "extraLayoutSpace");
         int iIntValue = this.recyclerviewSizeProvider.invoke().intValue();
         if (iIntValue <= 0) {
             super.calculateExtraLayoutSpace(state, extraLayoutSpace);

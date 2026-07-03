@@ -6,8 +6,8 @@ import android.content.res.TypedArray;
 import android.graphics.Path;
 import android.util.AttributeSet;
 import androidx.core.content.res.TypedArrayUtils;
-import b.d.b.a.outline;
 import org.xmlpull.v1.XmlPullParser;
+import p007b.p100d.p104b.p105a.C1643a;
 
 /* JADX INFO: loaded from: classes.dex */
 public class ArcMotion extends PathMotion {
@@ -51,8 +51,8 @@ public class ArcMotion extends PathMotion {
 
     @Override // androidx.transition.PathMotion
     public Path getPath(float f, float f2, float f3, float f4) {
-        float fA;
-        float fA2;
+        float fM839a;
+        float fM839a2;
         float f5;
         Path path = new Path();
         path.moveTo(f, f2);
@@ -66,27 +66,27 @@ public class ArcMotion extends PathMotion {
         if (Math.abs(f6) < Math.abs(f7)) {
             float fAbs = Math.abs(f8 / (f7 * 2.0f));
             if (z2) {
-                fA2 = fAbs + f4;
-                fA = f3;
+                fM839a2 = fAbs + f4;
+                fM839a = f3;
             } else {
-                fA2 = fAbs + f2;
-                fA = f;
+                fM839a2 = fAbs + f2;
+                fM839a = f;
             }
             f5 = this.mMinimumVerticalTangent;
         } else {
             float f12 = f8 / (f6 * 2.0f);
             if (z2) {
-                fA2 = f2;
-                fA = f12 + f;
+                fM839a2 = f2;
+                fM839a = f12 + f;
             } else {
-                fA = f3 - f12;
-                fA2 = f4;
+                fM839a = f3 - f12;
+                fM839a2 = f4;
             }
             f5 = this.mMinimumHorizontalTangent;
         }
         float f13 = f11 * f5 * f5;
-        float f14 = f9 - fA;
-        float f15 = f10 - fA2;
+        float f14 = f9 - fM839a;
+        float f15 = f10 - fM839a2;
         float f16 = (f15 * f15) + (f14 * f14);
         float f17 = this.mMaximumTangent;
         float f18 = f11 * f17 * f17;
@@ -95,10 +95,10 @@ public class ArcMotion extends PathMotion {
         }
         if (f13 != 0.0f) {
             float fSqrt = (float) Math.sqrt(f13 / f16);
-            fA = outline.a(fA, f9, fSqrt, f9);
-            fA2 = outline.a(fA2, f10, fSqrt, f10);
+            fM839a = C1643a.m839a(fM839a, f9, fSqrt, f9);
+            fM839a2 = C1643a.m839a(fM839a2, f10, fSqrt, f10);
         }
-        path.cubicTo((f + fA) / 2.0f, (f2 + fA2) / 2.0f, (fA + f3) / 2.0f, (fA2 + f4) / 2.0f, f3, f4);
+        path.cubicTo((f + fM839a) / 2.0f, (f2 + fM839a2) / 2.0f, (fM839a + f3) / 2.0f, (fM839a2 + f4) / 2.0f, f3, f4);
         return path;
     }
 

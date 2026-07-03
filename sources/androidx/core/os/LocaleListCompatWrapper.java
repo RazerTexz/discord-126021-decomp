@@ -4,13 +4,13 @@ import androidx.annotation.IntRange;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.annotation.VisibleForTesting;
-import b.d.b.a.outline;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
 import java.util.HashSet;
 import java.util.Iterator;
 import java.util.Locale;
+import p007b.p100d.p104b.p105a.C1643a;
 
 /* JADX INFO: loaded from: classes.dex */
 public final class LocaleListCompatWrapper implements LocaleListInterface {
@@ -35,7 +35,7 @@ public final class LocaleListCompatWrapper implements LocaleListInterface {
         for (int i = 0; i < localeArr.length; i++) {
             Locale locale = localeArr[i];
             if (locale == null) {
-                throw new NullPointerException(outline.r("list[", i, "] is null"));
+                throw new NullPointerException(C1643a.m873r("list[", i, "] is null"));
             }
             if (!hashSet.contains(locale)) {
                 Locale locale2 = (Locale) locale.clone();
@@ -119,7 +119,7 @@ public final class LocaleListCompatWrapper implements LocaleListInterface {
         return LOCALE_EN_XA.equals(locale) || LOCALE_AR_XB.equals(locale);
     }
 
-    @IntRange(from = 0, to = 1)
+    @IntRange(from = 0, m76to = 1)
     private static int matchScore(Locale locale, Locale locale2) {
         if (locale.equals(locale2)) {
             return 1;
@@ -236,17 +236,17 @@ public final class LocaleListCompatWrapper implements LocaleListInterface {
     }
 
     public String toString() {
-        StringBuilder sbU = outline.U("[");
+        StringBuilder sbM833U = C1643a.m833U("[");
         int i = 0;
         while (true) {
             Locale[] localeArr = this.mList;
             if (i >= localeArr.length) {
-                sbU.append("]");
-                return sbU.toString();
+                sbM833U.append("]");
+                return sbM833U.toString();
             }
-            sbU.append(localeArr[i]);
+            sbM833U.append(localeArr[i]);
             if (i < this.mList.length - 1) {
-                sbU.append(',');
+                sbM833U.append(',');
             }
             i++;
         }

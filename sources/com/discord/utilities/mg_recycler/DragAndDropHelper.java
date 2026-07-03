@@ -2,8 +2,8 @@ package com.discord.utilities.mg_recycler;
 
 import androidx.recyclerview.widget.ItemTouchHelper;
 import androidx.recyclerview.widget.RecyclerView;
-import d0.z.d.Intrinsics3;
 import kotlin.jvm.internal.DefaultConstructorMarker;
+import p507d0.p592z.p594d.C12238m;
 
 /* JADX INFO: compiled from: DragAndDropHelper.kt */
 /* JADX INFO: loaded from: classes2.dex */
@@ -39,8 +39,8 @@ public final class DragAndDropHelper extends ItemTouchHelper.Callback {
     /* JADX WARN: Multi-variable type inference failed */
     @Override // androidx.recyclerview.widget.ItemTouchHelper.Callback
     public void clearView(RecyclerView recyclerView, RecyclerView.ViewHolder viewHolder) {
-        Intrinsics3.checkNotNullParameter(recyclerView, "recyclerView");
-        Intrinsics3.checkNotNullParameter(viewHolder, "viewHolder");
+        C12238m.checkNotNullParameter(recyclerView, "recyclerView");
+        C12238m.checkNotNullParameter(viewHolder, "viewHolder");
         super.clearView(recyclerView, viewHolder);
         ((DraggableViewHolder) viewHolder).onDragStateChanged(false);
         this.adapter.onDrop();
@@ -49,14 +49,14 @@ public final class DragAndDropHelper extends ItemTouchHelper.Callback {
     /* JADX WARN: Multi-variable type inference failed */
     @Override // androidx.recyclerview.widget.ItemTouchHelper.Callback
     public int getMovementFlags(RecyclerView recyclerView, RecyclerView.ViewHolder viewHolder) {
-        Intrinsics3.checkNotNullParameter(recyclerView, "recyclerView");
-        Intrinsics3.checkNotNullParameter(viewHolder, "viewHolder");
+        C12238m.checkNotNullParameter(recyclerView, "recyclerView");
+        C12238m.checkNotNullParameter(viewHolder, "viewHolder");
         return ItemTouchHelper.Callback.makeMovementFlags((viewHolder instanceof DraggableViewHolder) && ((DraggableViewHolder) viewHolder).canDrag() ? 3 : 0, 0);
     }
 
     @Override // androidx.recyclerview.widget.ItemTouchHelper.Callback
     public int interpolateOutOfBoundsScroll(RecyclerView recyclerView, int viewSize, int viewSizeOutOfBounds, int totalSize, long msSinceStartScroll) {
-        Intrinsics3.checkNotNullParameter(recyclerView, "recyclerView");
+        C12238m.checkNotNullParameter(recyclerView, "recyclerView");
         return this.dragScrollSpeed * ((int) Math.signum(viewSizeOutOfBounds));
     }
 
@@ -72,9 +72,9 @@ public final class DragAndDropHelper extends ItemTouchHelper.Callback {
 
     @Override // androidx.recyclerview.widget.ItemTouchHelper.Callback
     public boolean onMove(RecyclerView recyclerView, RecyclerView.ViewHolder source, RecyclerView.ViewHolder target) {
-        Intrinsics3.checkNotNullParameter(recyclerView, "recyclerView");
-        Intrinsics3.checkNotNullParameter(source, "source");
-        Intrinsics3.checkNotNullParameter(target, "target");
+        C12238m.checkNotNullParameter(recyclerView, "recyclerView");
+        C12238m.checkNotNullParameter(source, "source");
+        C12238m.checkNotNullParameter(target, "target");
         if (!this.adapter.isValidMove(source.getAdapterPosition(), target.getAdapterPosition())) {
             return false;
         }
@@ -87,7 +87,7 @@ public final class DragAndDropHelper extends ItemTouchHelper.Callback {
     public void onSelectedChanged(RecyclerView.ViewHolder viewHolder, int actionState) {
         if (actionState == 2) {
             DraggableViewHolder draggableViewHolder = (DraggableViewHolder) viewHolder;
-            Intrinsics3.checkNotNull(draggableViewHolder);
+            C12238m.checkNotNull(draggableViewHolder);
             draggableViewHolder.onDragStateChanged(true);
         }
         super.onSelectedChanged(viewHolder, actionState);
@@ -95,11 +95,11 @@ public final class DragAndDropHelper extends ItemTouchHelper.Callback {
 
     @Override // androidx.recyclerview.widget.ItemTouchHelper.Callback
     public void onSwiped(RecyclerView.ViewHolder viewHolder, int i) {
-        Intrinsics3.checkNotNullParameter(viewHolder, "viewHolder");
+        C12238m.checkNotNullParameter(viewHolder, "viewHolder");
     }
 
     public DragAndDropHelper(Adapter adapter, int i) {
-        Intrinsics3.checkNotNullParameter(adapter, "adapter");
+        C12238m.checkNotNullParameter(adapter, "adapter");
         this.adapter = adapter;
         this.dragScrollSpeed = i;
     }

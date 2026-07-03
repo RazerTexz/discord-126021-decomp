@@ -1,21 +1,21 @@
 package com.discord.widgets.chat.input.models;
 
-import b.d.b.a.outline;
 import com.discord.widgets.chat.input.autocomplete.Autocompletable;
-import d0.z.d.Intrinsics3;
 import java.util.Map;
-import kotlin.ranges.Ranges2;
+import kotlin.ranges.IntRange;
+import p007b.p100d.p104b.p105a.C1643a;
+import p507d0.p592z.p594d.C12238m;
 
 /* JADX INFO: compiled from: ChatInputMentionsMap.kt */
 /* JADX INFO: loaded from: classes2.dex */
 public final /* data */ class ChatInputMentionsMap {
     private final CharSequence input;
-    private final Map<Ranges2, Autocompletable> mentions;
+    private final Map<IntRange, Autocompletable> mentions;
 
     /* JADX WARN: Multi-variable type inference failed */
-    public ChatInputMentionsMap(CharSequence charSequence, Map<Ranges2, ? extends Autocompletable> map) {
-        Intrinsics3.checkNotNullParameter(charSequence, "input");
-        Intrinsics3.checkNotNullParameter(map, "mentions");
+    public ChatInputMentionsMap(CharSequence charSequence, Map<IntRange, ? extends Autocompletable> map) {
+        C12238m.checkNotNullParameter(charSequence, "input");
+        C12238m.checkNotNullParameter(map, "mentions");
         this.input = charSequence;
         this.mentions = map;
     }
@@ -36,13 +36,13 @@ public final /* data */ class ChatInputMentionsMap {
         return this.input;
     }
 
-    public final Map<Ranges2, Autocompletable> component2() {
+    public final Map<IntRange, Autocompletable> component2() {
         return this.mentions;
     }
 
-    public final ChatInputMentionsMap copy(CharSequence input, Map<Ranges2, ? extends Autocompletable> mentions) {
-        Intrinsics3.checkNotNullParameter(input, "input");
-        Intrinsics3.checkNotNullParameter(mentions, "mentions");
+    public final ChatInputMentionsMap copy(CharSequence input, Map<IntRange, ? extends Autocompletable> mentions) {
+        C12238m.checkNotNullParameter(input, "input");
+        C12238m.checkNotNullParameter(mentions, "mentions");
         return new ChatInputMentionsMap(input, mentions);
     }
 
@@ -54,28 +54,28 @@ public final /* data */ class ChatInputMentionsMap {
             return false;
         }
         ChatInputMentionsMap chatInputMentionsMap = (ChatInputMentionsMap) other;
-        return Intrinsics3.areEqual(this.input, chatInputMentionsMap.input) && Intrinsics3.areEqual(this.mentions, chatInputMentionsMap.mentions);
+        return C12238m.areEqual(this.input, chatInputMentionsMap.input) && C12238m.areEqual(this.mentions, chatInputMentionsMap.mentions);
     }
 
     public final CharSequence getInput() {
         return this.input;
     }
 
-    public final Map<Ranges2, Autocompletable> getMentions() {
+    public final Map<IntRange, Autocompletable> getMentions() {
         return this.mentions;
     }
 
     public int hashCode() {
         CharSequence charSequence = this.input;
         int iHashCode = (charSequence != null ? charSequence.hashCode() : 0) * 31;
-        Map<Ranges2, Autocompletable> map = this.mentions;
+        Map<IntRange, Autocompletable> map = this.mentions;
         return iHashCode + (map != null ? map.hashCode() : 0);
     }
 
     public String toString() {
-        StringBuilder sbU = outline.U("ChatInputMentionsMap(input=");
-        sbU.append(this.input);
-        sbU.append(", mentions=");
-        return outline.M(sbU, this.mentions, ")");
+        StringBuilder sbM833U = C1643a.m833U("ChatInputMentionsMap(input=");
+        sbM833U.append(this.input);
+        sbM833U.append(", mentions=");
+        return C1643a.m825M(sbM833U, this.mentions, ")");
     }
 }

@@ -4,7 +4,7 @@ import android.content.Context;
 import android.content.SharedPreferences;
 import androidx.annotation.NonNull;
 import androidx.annotation.RestrictTo;
-import androidx.sqlite.db.SupportSQLiteDatabase;
+import androidx.sqlite.p006db.SupportSQLiteDatabase;
 import androidx.work.impl.WorkDatabase;
 import androidx.work.impl.WorkDatabaseMigrations;
 import androidx.work.impl.model.Preference;

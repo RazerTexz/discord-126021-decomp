@@ -49,7 +49,7 @@ public class EclipseJavaUtilListSingularizer extends EclipseJavaUtilListSetSingu
 
     @Override // lombok.eclipse.handlers.EclipseSingularsRecipes.EclipseSingularizer
     public LombokImmutableList<String> getSupportedTypes() {
-        return LombokImmutableList.of("java.util.List", "java.util.Collection", "java.lang.Iterable");
+        return LombokImmutableList.m10921of("java.util.List", "java.util.Collection", "java.lang.Iterable");
     }
 
     @Override // lombok.eclipse.handlers.EclipseSingularsRecipes.EclipseSingularizer

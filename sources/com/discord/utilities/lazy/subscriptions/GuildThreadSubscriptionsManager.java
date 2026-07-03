@@ -2,9 +2,6 @@ package com.discord.utilities.lazy.subscriptions;
 
 import android.util.LruCache;
 import com.discord.models.domain.ModelAuditLogEntry;
-import d0.t.Collections2;
-import d0.t._Collections;
-import d0.z.d.Intrinsics3;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
@@ -12,6 +9,9 @@ import java.util.Map;
 import java.util.Set;
 import kotlin.Unit;
 import kotlin.jvm.functions.Function2;
+import p507d0.p580t.C12147n;
+import p507d0.p580t.C12163u;
+import p507d0.p592z.p594d.C12238m;
 
 /* JADX INFO: compiled from: GuildThreadSubscriptionsManager.kt */
 /* JADX INFO: loaded from: classes2.dex */
@@ -21,7 +21,7 @@ public final class GuildThreadSubscriptionsManager {
 
     /* JADX WARN: Multi-variable type inference failed */
     public GuildThreadSubscriptionsManager(Function2<? super Long, ? super List<Long>, Unit> function2) {
-        Intrinsics3.checkNotNullParameter(function2, "changeHandler");
+        C12238m.checkNotNullParameter(function2, "changeHandler");
         this.changeHandler = function2;
         this.subscriptions = new HashMap<>();
     }
@@ -31,7 +31,7 @@ public final class GuildThreadSubscriptionsManager {
         Set<Long> setKeySet;
         List<Long> list;
         LruCache<Long, Long> lruCache = this.subscriptions.get(Long.valueOf(guildId));
-        return (lruCache == null || (mapSnapshot = lruCache.snapshot()) == null || (setKeySet = mapSnapshot.keySet()) == null || (list = _Collections.toList(setKeySet)) == null) ? Collections2.emptyList() : list;
+        return (lruCache == null || (mapSnapshot = lruCache.snapshot()) == null || (setKeySet = mapSnapshot.keySet()) == null || (list = C12163u.toList(setKeySet)) == null) ? C12147n.emptyList() : list;
     }
 
     public final void remove(long guildId) {
@@ -43,7 +43,7 @@ public final class GuildThreadSubscriptionsManager {
     }
 
     public final void retainAll(List<Long> guildIds) {
-        Intrinsics3.checkNotNullParameter(guildIds, "guildIds");
+        C12238m.checkNotNullParameter(guildIds, "guildIds");
         Iterator<Map.Entry<Long, LruCache<Long, Long>>> it = this.subscriptions.entrySet().iterator();
         while (it.hasNext()) {
             if (!guildIds.contains(Long.valueOf(it.next().getKey().longValue()))) {
@@ -62,6 +62,6 @@ public final class GuildThreadSubscriptionsManager {
         }
         lruCache.put(Long.valueOf(channelId), Long.valueOf(channelId));
         this.subscriptions.put(Long.valueOf(guildId), lruCache);
-        this.changeHandler.invoke(Long.valueOf(guildId), _Collections.toList(lruCache.snapshot().keySet()));
+        this.changeHandler.invoke(Long.valueOf(guildId), C12163u.toList(lruCache.snapshot().keySet()));
     }
 }

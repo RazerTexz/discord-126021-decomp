@@ -1,30 +1,30 @@
 package com.discord.widgets.guild_role_subscriptions.tier.create;
 
-import b.a.d.AppViewModel;
-import b.d.b.a.outline;
 import com.discord.models.domain.ModelAuditLogEntry;
 import com.discord.stores.StoreChannels;
 import com.discord.stores.StoreStream;
 import com.discord.stores.updates.ObservationDeck;
-import com.discord.stores.updates.ObservationDeck4;
+import com.discord.stores.updates.ObservationDeckProvider;
 import com.discord.utilities.error.Error;
-import com.discord.utilities.rx.ObservableExtensionsKt;
+import com.discord.utilities.p501rx.ObservableExtensionsKt;
 import com.discord.widgets.guild_role_subscriptions.tier.GuildRoleSubscriptionTierAdapterItem;
-import com.discord.widgets.guild_role_subscriptions.tier.GuildRoleSubscriptionTierListItemGenerator;
+import com.discord.widgets.guild_role_subscriptions.tier.GuildRoleSubscriptionTierListItemGeneratorKt;
 import com.discord.widgets.guild_role_subscriptions.tier.model.GuildRoleSubscriptionTier;
-import d0.z.d.Intrinsics3;
-import d0.z.d.Lambda;
 import java.util.List;
 import kotlin.Unit;
 import kotlin.jvm.functions.Function0;
 import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.DefaultConstructorMarker;
-import rx.Observable;
-import rx.Subscription;
+import p007b.p008a.p018d.AbstractC0859d0;
+import p007b.p100d.p104b.p105a.C1643a;
+import p507d0.p592z.p594d.AbstractC12240o;
+import p507d0.p592z.p594d.C12238m;
+import p658rx.Observable;
+import p658rx.Subscription;
 
 /* JADX INFO: compiled from: GuildRoleSubscriptionReviewViewModel.kt */
 /* JADX INFO: loaded from: classes2.dex */
-public final class GuildRoleSubscriptionReviewViewModel extends AppViewModel<ViewState> {
+public final class GuildRoleSubscriptionReviewViewModel extends AbstractC0859d0<ViewState> {
 
     /* JADX INFO: renamed from: Companion, reason: from kotlin metadata */
     public static final Companion INSTANCE = new Companion(null);
@@ -34,23 +34,23 @@ public final class GuildRoleSubscriptionReviewViewModel extends AppViewModel<Vie
     private String planCoverImage;
     private String planDescription;
 
-    /* JADX INFO: renamed from: com.discord.widgets.guild_role_subscriptions.tier.create.GuildRoleSubscriptionReviewViewModel$1, reason: invalid class name */
+    /* JADX INFO: renamed from: com.discord.widgets.guild_role_subscriptions.tier.create.GuildRoleSubscriptionReviewViewModel$1 */
     /* JADX INFO: compiled from: GuildRoleSubscriptionReviewViewModel.kt */
-    public static final class AnonymousClass1 extends Lambda implements Function1<StoreState, Unit> {
-        public AnonymousClass1() {
+    public static final class C84801 extends AbstractC12240o implements Function1<StoreState, Unit> {
+        public C84801() {
             super(1);
         }
 
         @Override // kotlin.jvm.functions.Function1
         public /* bridge */ /* synthetic */ Unit invoke(StoreState storeState) {
             invoke2(storeState);
-            return Unit.a;
+            return Unit.f27425a;
         }
 
         /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
         public final void invoke2(StoreState storeState) {
             GuildRoleSubscriptionReviewViewModel guildRoleSubscriptionReviewViewModel = GuildRoleSubscriptionReviewViewModel.this;
-            Intrinsics3.checkNotNullExpressionValue(storeState, "storeState");
+            C12238m.checkNotNullExpressionValue(storeState, "storeState");
             guildRoleSubscriptionReviewViewModel.handleStoreState(storeState);
         }
     }
@@ -61,7 +61,7 @@ public final class GuildRoleSubscriptionReviewViewModel extends AppViewModel<Vie
         }
 
         private final Observable<StoreState> observeStoreState(long guildId, ObservationDeck observationDeck, StoreChannels storeChannels) {
-            return ObservationDeck.connectRx$default(observationDeck, new ObservationDeck.UpdateSource[]{storeChannels}, false, null, null, new GuildRoleSubscriptionReviewViewModel2(storeChannels, guildId), 14, null);
+            return ObservationDeck.connectRx$default(observationDeck, new ObservationDeck.UpdateSource[]{storeChannels}, false, null, null, new C8481x336f3da3(storeChannels, guildId), 14, null);
         }
 
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
@@ -109,7 +109,7 @@ public final class GuildRoleSubscriptionReviewViewModel extends AppViewModel<Vie
         }
 
         public String toString() {
-            return outline.B(outline.U("StoreState(guildChannelCount="), this.guildChannelCount, ")");
+            return C1643a.m814B(C1643a.m833U("StoreState(guildChannelCount="), this.guildChannelCount, ")");
         }
     }
 
@@ -119,7 +119,7 @@ public final class GuildRoleSubscriptionReviewViewModel extends AppViewModel<Vie
 
         /* JADX WARN: Multi-variable type inference failed */
         public ViewState(List<? extends GuildRoleSubscriptionTierAdapterItem> list) {
-            Intrinsics3.checkNotNullParameter(list, "items");
+            C12238m.checkNotNullParameter(list, "items");
             this.items = list;
         }
 
@@ -136,13 +136,13 @@ public final class GuildRoleSubscriptionReviewViewModel extends AppViewModel<Vie
         }
 
         public final ViewState copy(List<? extends GuildRoleSubscriptionTierAdapterItem> items) {
-            Intrinsics3.checkNotNullParameter(items, "items");
+            C12238m.checkNotNullParameter(items, "items");
             return new ViewState(items);
         }
 
         public boolean equals(Object other) {
             if (this != other) {
-                return (other instanceof ViewState) && Intrinsics3.areEqual(this.items, ((ViewState) other).items);
+                return (other instanceof ViewState) && C12238m.areEqual(this.items, ((ViewState) other).items);
             }
             return true;
         }
@@ -160,14 +160,14 @@ public final class GuildRoleSubscriptionReviewViewModel extends AppViewModel<Vie
         }
 
         public String toString() {
-            return outline.L(outline.U("ViewState(items="), this.items, ")");
+            return C1643a.m824L(C1643a.m833U("ViewState(items="), this.items, ")");
         }
     }
 
     /* JADX WARN: Illegal instructions before constructor call */
     public /* synthetic */ GuildRoleSubscriptionReviewViewModel(long j, StoreChannels storeChannels, ObservationDeck observationDeck, Observable observable, int i, DefaultConstructorMarker defaultConstructorMarker) {
         StoreChannels channels = (i & 2) != 0 ? StoreStream.INSTANCE.getChannels() : storeChannels;
-        ObservationDeck observationDeck2 = (i & 4) != 0 ? ObservationDeck4.get() : observationDeck;
+        ObservationDeck observationDeck2 = (i & 4) != 0 ? ObservationDeckProvider.get() : observationDeck;
         this(j, channels, observationDeck2, (i & 8) != 0 ? INSTANCE.observeStoreState(j, observationDeck2, channels) : observable);
     }
 
@@ -177,19 +177,19 @@ public final class GuildRoleSubscriptionReviewViewModel extends AppViewModel<Vie
     }
 
     private final void updateList() {
-        updateViewState(new ViewState(GuildRoleSubscriptionTierListItemGenerator.generateGuildRoleSubscriptionReviewListItems(this.guildRoleSubscriptionTier, this.isFullServerGating, this.guildChannelCount, this.planDescription, this.planCoverImage)));
+        updateViewState(new ViewState(GuildRoleSubscriptionTierListItemGeneratorKt.generateGuildRoleSubscriptionReviewListItems(this.guildRoleSubscriptionTier, this.isFullServerGating, this.guildChannelCount, this.planDescription, this.planCoverImage)));
     }
 
     public final void updatePlanDetails(String description, String coverImage) {
-        Intrinsics3.checkNotNullParameter(description, ModelAuditLogEntry.CHANGE_KEY_DESCRIPTION);
-        Intrinsics3.checkNotNullParameter(coverImage, "coverImage");
+        C12238m.checkNotNullParameter(description, ModelAuditLogEntry.CHANGE_KEY_DESCRIPTION);
+        C12238m.checkNotNullParameter(coverImage, "coverImage");
         this.planDescription = description;
         this.planCoverImage = coverImage;
         updateList();
     }
 
     public final void updateTier(GuildRoleSubscriptionTier guildRoleSubscriptionTier, Boolean isFullServerGating) {
-        Intrinsics3.checkNotNullParameter(guildRoleSubscriptionTier, "guildRoleSubscriptionTier");
+        C12238m.checkNotNullParameter(guildRoleSubscriptionTier, "guildRoleSubscriptionTier");
         this.guildRoleSubscriptionTier = guildRoleSubscriptionTier;
         this.isFullServerGating = isFullServerGating;
         updateList();
@@ -198,11 +198,11 @@ public final class GuildRoleSubscriptionReviewViewModel extends AppViewModel<Vie
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public GuildRoleSubscriptionReviewViewModel(long j, StoreChannels storeChannels, ObservationDeck observationDeck, Observable<StoreState> observable) {
         super(null, 1, null);
-        Intrinsics3.checkNotNullParameter(storeChannels, "storeChannels");
-        Intrinsics3.checkNotNullParameter(observationDeck, "observationDeck");
-        Intrinsics3.checkNotNullParameter(observable, "storeStateObservable");
-        Observable<StoreState> observableR = observable.r();
-        Intrinsics3.checkNotNullExpressionValue(observableR, "storeStateObservable\n   …  .distinctUntilChanged()");
-        ObservableExtensionsKt.appSubscribe(ObservableExtensionsKt.ui$default(ObservableExtensionsKt.computationLatest(observableR), this, null, 2, null), (Class<?>) GuildRoleSubscriptionReviewViewModel.class, (58 & 2) != 0 ? null : null, (Function1<? super Subscription, Unit>) ((58 & 4) != 0 ? null : null), (Function1<? super Error, Unit>) ((58 & 8) != 0 ? null : null), (Function0<Unit>) ((58 & 16) != 0 ? ObservableExtensionsKt.AnonymousClass1.INSTANCE : null), (Function0<Unit>) ((58 & 32) != 0 ? ObservableExtensionsKt.AnonymousClass2.INSTANCE : null), new AnonymousClass1());
+        C12238m.checkNotNullParameter(storeChannels, "storeChannels");
+        C12238m.checkNotNullParameter(observationDeck, "observationDeck");
+        C12238m.checkNotNullParameter(observable, "storeStateObservable");
+        Observable<StoreState> observableM11112r = observable.m11112r();
+        C12238m.checkNotNullExpressionValue(observableM11112r, "storeStateObservable\n   …  .distinctUntilChanged()");
+        ObservableExtensionsKt.appSubscribe(ObservableExtensionsKt.ui$default(ObservableExtensionsKt.computationLatest(observableM11112r), this, null, 2, null), (Class<?>) GuildRoleSubscriptionReviewViewModel.class, (58 & 2) != 0 ? null : null, (Function1<? super Subscription, Unit>) ((58 & 4) != 0 ? null : null), (Function1<? super Error, Unit>) ((58 & 8) != 0 ? null : null), (Function0<Unit>) ((58 & 16) != 0 ? ObservableExtensionsKt.C68791.INSTANCE : null), (Function0<Unit>) ((58 & 32) != 0 ? ObservableExtensionsKt.C68802.INSTANCE : null), new C84801());
     }
 }

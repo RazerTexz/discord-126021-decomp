@@ -1,17 +1,17 @@
 package com.discord.widgets.guilds.invite;
 
-import a0.a.a.b;
-import b.d.b.a.outline;
 import com.discord.api.channel.Channel;
 import com.discord.api.guild.Guild;
 import com.discord.api.guildscheduledevent.GuildScheduledEvent;
 import com.discord.api.user.User;
 import com.discord.models.domain.ModelInvite;
 import com.discord.models.invite.InviteUtils;
-import d0.z.d.Intrinsics3;
 import java.io.Serializable;
 import kotlin.NoWhenBranchMatchedException;
 import kotlin.jvm.internal.DefaultConstructorMarker;
+import p001a0.p002a.p003a.C0002b;
+import p007b.p100d.p104b.p105a.C1643a;
+import p507d0.p592z.p594d.C12238m;
 
 /* JADX INFO: compiled from: GuildInvite.kt */
 /* JADX INFO: loaded from: classes2.dex */
@@ -34,19 +34,19 @@ public final /* data */ class GuildInvite implements Serializable {
 
         public final GuildInvite createFromModelInvite(ModelInvite invite) {
             boolean zAreEqual;
-            Intrinsics3.checkNotNullParameter(invite, "invite");
+            C12238m.checkNotNullParameter(invite, "invite");
             GuildScheduledEvent guildScheduledEvent = invite.getGuildScheduledEvent();
             Long lValueOf = null;
             if ((guildScheduledEvent != null ? guildScheduledEvent.getChannelId() : null) != null) {
                 GuildScheduledEvent guildScheduledEvent2 = invite.getGuildScheduledEvent();
                 Long channelId = guildScheduledEvent2 != null ? guildScheduledEvent2.getChannelId() : null;
                 Channel channel = invite.getChannel();
-                zAreEqual = Intrinsics3.areEqual(channelId, channel != null ? Long.valueOf(channel.getId()) : null);
+                zAreEqual = C12238m.areEqual(channelId, channel != null ? Long.valueOf(channel.getId()) : null);
             } else {
                 zAreEqual = true;
             }
             String str = invite.code;
-            Intrinsics3.checkNotNullExpressionValue(str, "invite.code");
+            C12238m.checkNotNullExpressionValue(str, "invite.code");
             Guild guild = invite.guild;
             Long lValueOf2 = guild != null ? Long.valueOf(guild.getId()) : null;
             Channel channel2 = invite.getChannel();
@@ -72,7 +72,7 @@ public final /* data */ class GuildInvite implements Serializable {
     }
 
     public GuildInvite(String str, Long l, Long l2, Long l3, boolean z2, long j, Long l4) {
-        Intrinsics3.checkNotNullParameter(str, "inviteCode");
+        C12238m.checkNotNullParameter(str, "inviteCode");
         this.inviteCode = str;
         this.guildId = l;
         this.channelId = l2;
@@ -118,7 +118,7 @@ public final /* data */ class GuildInvite implements Serializable {
     }
 
     public final GuildInvite copy(String inviteCode, Long guildId, Long channelId, Long inviterId, boolean isStaticInvite, long expirationTimeMs, Long guildScheduledEventId) {
-        Intrinsics3.checkNotNullParameter(inviteCode, "inviteCode");
+        C12238m.checkNotNullParameter(inviteCode, "inviteCode");
         return new GuildInvite(inviteCode, guildId, channelId, inviterId, isStaticInvite, expirationTimeMs, guildScheduledEventId);
     }
 
@@ -130,7 +130,7 @@ public final /* data */ class GuildInvite implements Serializable {
             return false;
         }
         GuildInvite guildInvite = (GuildInvite) other;
-        return Intrinsics3.areEqual(this.inviteCode, guildInvite.inviteCode) && Intrinsics3.areEqual(this.guildId, guildInvite.guildId) && Intrinsics3.areEqual(this.channelId, guildInvite.channelId) && Intrinsics3.areEqual(this.inviterId, guildInvite.inviterId) && this.isStaticInvite == guildInvite.isStaticInvite && this.expirationTimeMs == guildInvite.expirationTimeMs && Intrinsics3.areEqual(this.guildScheduledEventId, guildInvite.guildScheduledEventId);
+        return C12238m.areEqual(this.inviteCode, guildInvite.inviteCode) && C12238m.areEqual(this.guildId, guildInvite.guildId) && C12238m.areEqual(this.channelId, guildInvite.channelId) && C12238m.areEqual(this.inviterId, guildInvite.inviterId) && this.isStaticInvite == guildInvite.isStaticInvite && this.expirationTimeMs == guildInvite.expirationTimeMs && C12238m.areEqual(this.guildScheduledEventId, guildInvite.guildScheduledEventId);
     }
 
     public final Long getChannelId() {
@@ -176,9 +176,9 @@ public final /* data */ class GuildInvite implements Serializable {
         if (z2) {
             r2 = 1;
         }
-        int iA = (b.a(this.expirationTimeMs) + ((iHashCode4 + r2) * 31)) * 31;
+        int iM3a = (C0002b.m3a(this.expirationTimeMs) + ((iHashCode4 + r2) * 31)) * 31;
         Long l4 = this.guildScheduledEventId;
-        return iA + (l4 != null ? l4.hashCode() : 0);
+        return iM3a + (l4 != null ? l4.hashCode() : 0);
     }
 
     public final boolean isStaticInvite() {
@@ -190,19 +190,19 @@ public final /* data */ class GuildInvite implements Serializable {
     }
 
     public String toString() {
-        StringBuilder sbU = outline.U("GuildInvite(inviteCode=");
-        sbU.append(this.inviteCode);
-        sbU.append(", guildId=");
-        sbU.append(this.guildId);
-        sbU.append(", channelId=");
-        sbU.append(this.channelId);
-        sbU.append(", inviterId=");
-        sbU.append(this.inviterId);
-        sbU.append(", isStaticInvite=");
-        sbU.append(this.isStaticInvite);
-        sbU.append(", expirationTimeMs=");
-        sbU.append(this.expirationTimeMs);
-        sbU.append(", guildScheduledEventId=");
-        return outline.G(sbU, this.guildScheduledEventId, ")");
+        StringBuilder sbM833U = C1643a.m833U("GuildInvite(inviteCode=");
+        sbM833U.append(this.inviteCode);
+        sbM833U.append(", guildId=");
+        sbM833U.append(this.guildId);
+        sbM833U.append(", channelId=");
+        sbM833U.append(this.channelId);
+        sbM833U.append(", inviterId=");
+        sbM833U.append(this.inviterId);
+        sbM833U.append(", isStaticInvite=");
+        sbM833U.append(this.isStaticInvite);
+        sbM833U.append(", expirationTimeMs=");
+        sbM833U.append(this.expirationTimeMs);
+        sbM833U.append(", guildScheduledEventId=");
+        return C1643a.m819G(sbM833U, this.guildScheduledEventId, ")");
     }
 }

@@ -11,29 +11,32 @@ import com.discord.views.sticker.StickerView;
 /* JADX INFO: loaded from: classes.dex */
 public final class WidgetChatListAdapterItemStickerGreetCompactBinding implements ViewBinding {
 
+    /* JADX INFO: renamed from: a */
     @NonNull
-    public final ConstraintLayout a;
+    public final ConstraintLayout f16302a;
 
-    /* JADX INFO: renamed from: b, reason: collision with root package name */
+    /* JADX INFO: renamed from: b */
     @NonNull
-    public final StickerView f2336b;
+    public final StickerView f16303b;
 
+    /* JADX INFO: renamed from: c */
     @NonNull
-    public final TextView c;
+    public final TextView f16304c;
 
+    /* JADX INFO: renamed from: d */
     @NonNull
-    public final LinearLayout d;
+    public final LinearLayout f16305d;
 
     public WidgetChatListAdapterItemStickerGreetCompactBinding(@NonNull ConstraintLayout constraintLayout, @NonNull StickerView stickerView, @NonNull TextView textView, @NonNull LinearLayout linearLayout) {
-        this.a = constraintLayout;
-        this.f2336b = stickerView;
-        this.c = textView;
-        this.d = linearLayout;
+        this.f16302a = constraintLayout;
+        this.f16303b = stickerView;
+        this.f16304c = textView;
+        this.f16305d = linearLayout;
     }
 
     @Override // androidx.viewbinding.ViewBinding
     @NonNull
     public View getRoot() {
-        return this.a;
+        return this.f16302a;
     }
 }

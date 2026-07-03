@@ -11,37 +11,42 @@ import com.google.android.material.textfield.TextInputLayout;
 /* JADX INFO: loaded from: classes.dex */
 public final class WidgetKickUserBinding implements ViewBinding {
 
+    /* JADX INFO: renamed from: a */
     @NonNull
-    public final LinearLayout a;
+    public final LinearLayout f17209a;
 
-    /* JADX INFO: renamed from: b, reason: collision with root package name */
+    /* JADX INFO: renamed from: b */
     @NonNull
-    public final TextView f2481b;
+    public final TextView f17210b;
 
+    /* JADX INFO: renamed from: c */
     @NonNull
-    public final MaterialButton c;
+    public final MaterialButton f17211c;
 
+    /* JADX INFO: renamed from: d */
     @NonNull
-    public final MaterialButton d;
+    public final MaterialButton f17212d;
 
+    /* JADX INFO: renamed from: e */
     @NonNull
-    public final TextInputLayout e;
+    public final TextInputLayout f17213e;
 
+    /* JADX INFO: renamed from: f */
     @NonNull
-    public final TextView f;
+    public final TextView f17214f;
 
     public WidgetKickUserBinding(@NonNull LinearLayout linearLayout, @NonNull TextView textView, @NonNull MaterialButton materialButton, @NonNull MaterialButton materialButton2, @NonNull TextInputLayout textInputLayout, @NonNull TextView textView2) {
-        this.a = linearLayout;
-        this.f2481b = textView;
-        this.c = materialButton;
-        this.d = materialButton2;
-        this.e = textInputLayout;
-        this.f = textView2;
+        this.f17209a = linearLayout;
+        this.f17210b = textView;
+        this.f17211c = materialButton;
+        this.f17212d = materialButton2;
+        this.f17213e = textInputLayout;
+        this.f17214f = textView2;
     }
 
     @Override // androidx.viewbinding.ViewBinding
     @NonNull
     public View getRoot() {
-        return this.a;
+        return this.f17209a;
     }
 }

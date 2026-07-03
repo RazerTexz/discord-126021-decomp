@@ -1,7 +1,5 @@
 package com.discord.widgets.voice.sheet;
 
-import b.a.d.AppViewModel;
-import b.d.b.a.outline;
 import com.discord.api.channel.Channel;
 import com.discord.api.channel.ChannelUtils;
 import com.discord.models.guild.Guild;
@@ -9,25 +7,27 @@ import com.discord.stores.StoreMediaSettings;
 import com.discord.stores.StoreStageChannels;
 import com.discord.stores.StoreStream;
 import com.discord.utilities.error.Error;
-import com.discord.utilities.rx.ObservableExtensionsKt;
+import com.discord.utilities.p501rx.ObservableExtensionsKt;
 import com.discord.widgets.stage.StageRoles;
 import com.discord.widgets.voice.model.CallModel;
 import com.discord.widgets.voice.sheet.WidgetVoiceSettingsBottomSheet;
 import com.discord.widgets.voice.sheet.WidgetVoiceSettingsBottomSheetViewModel;
-import d0.z.d.Intrinsics3;
-import d0.z.d.Lambda;
-import j0.k.Func1;
-import j0.l.e.ScalarSynchronousObservable;
 import kotlin.Unit;
 import kotlin.jvm.functions.Function0;
 import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.DefaultConstructorMarker;
-import rx.Observable;
-import rx.Subscription;
+import p007b.p008a.p018d.AbstractC0859d0;
+import p007b.p100d.p104b.p105a.C1643a;
+import p507d0.p592z.p594d.AbstractC12240o;
+import p507d0.p592z.p594d.C12238m;
+import p637j0.p641k.InterfaceC12589b;
+import p637j0.p642l.p647e.C12721k;
+import p658rx.Observable;
+import p658rx.Subscription;
 
 /* JADX INFO: compiled from: WidgetVoiceSettingsBottomSheetViewModel.kt */
 /* JADX INFO: loaded from: classes.dex */
-public final class WidgetVoiceSettingsBottomSheetViewModel extends AppViewModel<ViewState> {
+public final class WidgetVoiceSettingsBottomSheetViewModel extends AbstractC0859d0<ViewState> {
 
     /* JADX INFO: renamed from: Companion, reason: from kotlin metadata */
     public static final Companion INSTANCE = new Companion(null);
@@ -36,22 +36,22 @@ public final class WidgetVoiceSettingsBottomSheetViewModel extends AppViewModel<
     private final StoreStageChannels stageChannelsStore;
     private final Observable<StoreState> storeObservable;
 
-    /* JADX INFO: renamed from: com.discord.widgets.voice.sheet.WidgetVoiceSettingsBottomSheetViewModel$1, reason: invalid class name */
+    /* JADX INFO: renamed from: com.discord.widgets.voice.sheet.WidgetVoiceSettingsBottomSheetViewModel$1 */
     /* JADX INFO: compiled from: WidgetVoiceSettingsBottomSheetViewModel.kt */
-    public static final class AnonymousClass1 extends Lambda implements Function1<StoreState, Unit> {
-        public AnonymousClass1() {
+    public static final class C106151 extends AbstractC12240o implements Function1<StoreState, Unit> {
+        public C106151() {
             super(1);
         }
 
         @Override // kotlin.jvm.functions.Function1
         public /* bridge */ /* synthetic */ Unit invoke(StoreState storeState) {
             invoke2(storeState);
-            return Unit.a;
+            return Unit.f27425a;
         }
 
         /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
         public final void invoke2(StoreState storeState) {
-            Intrinsics3.checkNotNullParameter(storeState, "storeState");
+            C12238m.checkNotNullParameter(storeState, "storeState");
             WidgetVoiceSettingsBottomSheetViewModel.this.handleStoreState(storeState);
         }
     }
@@ -62,19 +62,19 @@ public final class WidgetVoiceSettingsBottomSheetViewModel extends AppViewModel<
         }
 
         private final Observable<StoreState> observeStoreState(final long channelId, final StoreStageChannels stageChannelsStore) {
-            Observable<StoreState> observableY = ObservableExtensionsKt.computationLatest(CallModel.INSTANCE.get(channelId)).r().Y(new Func1<CallModel, Observable<? extends StoreState>>() { // from class: com.discord.widgets.voice.sheet.WidgetVoiceSettingsBottomSheetViewModel$Companion$observeStoreState$1
-                @Override // j0.k.Func1
+            Observable<StoreState> observableM11099Y = ObservableExtensionsKt.computationLatest(CallModel.INSTANCE.get(channelId)).m11112r().m11099Y(new InterfaceC12589b<CallModel, Observable<? extends StoreState>>() { // from class: com.discord.widgets.voice.sheet.WidgetVoiceSettingsBottomSheetViewModel$Companion$observeStoreState$1
+                @Override // p637j0.p641k.InterfaceC12589b
                 public final Observable<? extends WidgetVoiceSettingsBottomSheetViewModel.StoreState> call(final CallModel callModel) {
-                    return callModel == null ? new ScalarSynchronousObservable(WidgetVoiceSettingsBottomSheetViewModel.StoreState.Invalid.INSTANCE) : stageChannelsStore.observeMyRoles(channelId).G(new Func1<StageRoles, WidgetVoiceSettingsBottomSheetViewModel.StoreState.Valid>() { // from class: com.discord.widgets.voice.sheet.WidgetVoiceSettingsBottomSheetViewModel$Companion$observeStoreState$1.1
-                        @Override // j0.k.Func1
+                    return callModel == null ? new C12721k(WidgetVoiceSettingsBottomSheetViewModel.StoreState.Invalid.INSTANCE) : stageChannelsStore.observeMyRoles(channelId).m11083G(new InterfaceC12589b<StageRoles, WidgetVoiceSettingsBottomSheetViewModel.StoreState.Valid>() { // from class: com.discord.widgets.voice.sheet.WidgetVoiceSettingsBottomSheetViewModel$Companion$observeStoreState$1.1
+                        @Override // p637j0.p641k.InterfaceC12589b
                         public final WidgetVoiceSettingsBottomSheetViewModel.StoreState.Valid call(StageRoles stageRoles) {
                             return new WidgetVoiceSettingsBottomSheetViewModel.StoreState.Valid(callModel, stageRoles, null);
                         }
                     });
                 }
             });
-            Intrinsics3.checkNotNullExpressionValue(observableY, "CallModel.get(channelId)…          }\n            }");
-            return observableY;
+            C12238m.checkNotNullExpressionValue(observableM11099Y, "CallModel.get(channelId)…          }\n            }");
+            return observableM11099Y;
         }
 
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
@@ -104,14 +104,14 @@ public final class WidgetVoiceSettingsBottomSheetViewModel extends AppViewModel<
             }
 
             /* JADX INFO: renamed from: copy-FZvHQiQ$default, reason: not valid java name */
-            public static /* synthetic */ Valid m73copyFZvHQiQ$default(Valid valid, CallModel callModel, StageRoles stageRoles, int i, Object obj) {
+            public static /* synthetic */ Valid m11450copyFZvHQiQ$default(Valid valid, CallModel callModel, StageRoles stageRoles, int i, Object obj) {
                 if ((i & 1) != 0) {
                     callModel = valid.callModel;
                 }
                 if ((i & 2) != 0) {
                     stageRoles = valid.myStageRoles;
                 }
-                return valid.m75copyFZvHQiQ(callModel, stageRoles);
+                return valid.m11452copyFZvHQiQ(callModel, stageRoles);
             }
 
             /* JADX INFO: renamed from: component1, reason: from getter */
@@ -125,8 +125,8 @@ public final class WidgetVoiceSettingsBottomSheetViewModel extends AppViewModel<
             }
 
             /* JADX INFO: renamed from: copy-FZvHQiQ, reason: not valid java name */
-            public final Valid m75copyFZvHQiQ(CallModel callModel, StageRoles myStageRoles) {
-                Intrinsics3.checkNotNullParameter(callModel, "callModel");
+            public final Valid m11452copyFZvHQiQ(CallModel callModel, StageRoles myStageRoles) {
+                C12238m.checkNotNullParameter(callModel, "callModel");
                 return new Valid(callModel, myStageRoles);
             }
 
@@ -138,7 +138,7 @@ public final class WidgetVoiceSettingsBottomSheetViewModel extends AppViewModel<
                     return false;
                 }
                 Valid valid = (Valid) other;
-                return Intrinsics3.areEqual(this.callModel, valid.callModel) && Intrinsics3.areEqual(this.myStageRoles, valid.myStageRoles);
+                return C12238m.areEqual(this.callModel, valid.callModel) && C12238m.areEqual(this.myStageRoles, valid.myStageRoles);
             }
 
             public final CallModel getCallModel() {
@@ -146,7 +146,7 @@ public final class WidgetVoiceSettingsBottomSheetViewModel extends AppViewModel<
             }
 
             /* JADX INFO: renamed from: getMyStageRoles-twRsX-0, reason: not valid java name */
-            public final StageRoles m76getMyStageRolestwRsX0() {
+            public final StageRoles m11453getMyStageRolestwRsX0() {
                 return this.myStageRoles;
             }
 
@@ -158,12 +158,12 @@ public final class WidgetVoiceSettingsBottomSheetViewModel extends AppViewModel<
             }
 
             public String toString() {
-                StringBuilder sbU = outline.U("Valid(callModel=");
-                sbU.append(this.callModel);
-                sbU.append(", myStageRoles=");
-                sbU.append(this.myStageRoles);
-                sbU.append(")");
-                return sbU.toString();
+                StringBuilder sbM833U = C1643a.m833U("Valid(callModel=");
+                sbM833U.append(this.callModel);
+                sbM833U.append(", myStageRoles=");
+                sbM833U.append(this.myStageRoles);
+                sbM833U.append(")");
+                return sbM833U.toString();
             }
 
             private Valid(CallModel callModel, StageRoles stageRoles) {
@@ -193,7 +193,7 @@ public final class WidgetVoiceSettingsBottomSheetViewModel extends AppViewModel<
         private final boolean showVoiceParticipantsToggle;
 
         public ViewState(Channel channel, boolean z2, boolean z3, boolean z4, boolean z5, boolean z6, boolean z7, Guild guild) {
-            Intrinsics3.checkNotNullParameter(channel, "channel");
+            C12238m.checkNotNullParameter(channel, "channel");
             this.channel = channel;
             this.showVoiceParticipants = z2;
             this.showVoiceParticipantsToggle = z3;
@@ -237,7 +237,7 @@ public final class WidgetVoiceSettingsBottomSheetViewModel extends AppViewModel<
         }
 
         public final ViewState copy(Channel channel, boolean showVoiceParticipants, boolean showVoiceParticipantsToggle, boolean showInviteItem, boolean noiseCancellationEnabled, boolean showStageSettings, boolean showReportItem, Guild guild) {
-            Intrinsics3.checkNotNullParameter(channel, "channel");
+            C12238m.checkNotNullParameter(channel, "channel");
             return new ViewState(channel, showVoiceParticipants, showVoiceParticipantsToggle, showInviteItem, noiseCancellationEnabled, showStageSettings, showReportItem, guild);
         }
 
@@ -249,7 +249,7 @@ public final class WidgetVoiceSettingsBottomSheetViewModel extends AppViewModel<
                 return false;
             }
             ViewState viewState = (ViewState) other;
-            return Intrinsics3.areEqual(getChannel(), viewState.getChannel()) && getShowVoiceParticipants() == viewState.getShowVoiceParticipants() && getShowVoiceParticipantsToggle() == viewState.getShowVoiceParticipantsToggle() && getShowInviteItem() == viewState.getShowInviteItem() && getNoiseCancellationEnabled() == viewState.getNoiseCancellationEnabled() && getShowStageSettings() == viewState.getShowStageSettings() && getShowReportItem() == viewState.getShowReportItem() && Intrinsics3.areEqual(getGuild(), viewState.getGuild());
+            return C12238m.areEqual(getChannel(), viewState.getChannel()) && getShowVoiceParticipants() == viewState.getShowVoiceParticipants() && getShowVoiceParticipantsToggle() == viewState.getShowVoiceParticipantsToggle() && getShowInviteItem() == viewState.getShowInviteItem() && getNoiseCancellationEnabled() == viewState.getNoiseCancellationEnabled() && getShowStageSettings() == viewState.getShowStageSettings() && getShowReportItem() == viewState.getShowReportItem() && C12238m.areEqual(getGuild(), viewState.getGuild());
         }
 
         @Override // com.discord.widgets.voice.sheet.WidgetVoiceSettingsBottomSheet.ViewState
@@ -332,24 +332,24 @@ public final class WidgetVoiceSettingsBottomSheetViewModel extends AppViewModel<
         }
 
         public String toString() {
-            StringBuilder sbU = outline.U("ViewState(channel=");
-            sbU.append(getChannel());
-            sbU.append(", showVoiceParticipants=");
-            sbU.append(getShowVoiceParticipants());
-            sbU.append(", showVoiceParticipantsToggle=");
-            sbU.append(getShowVoiceParticipantsToggle());
-            sbU.append(", showInviteItem=");
-            sbU.append(getShowInviteItem());
-            sbU.append(", noiseCancellationEnabled=");
-            sbU.append(getNoiseCancellationEnabled());
-            sbU.append(", showStageSettings=");
-            sbU.append(getShowStageSettings());
-            sbU.append(", showReportItem=");
-            sbU.append(getShowReportItem());
-            sbU.append(", guild=");
-            sbU.append(getGuild());
-            sbU.append(")");
-            return sbU.toString();
+            StringBuilder sbM833U = C1643a.m833U("ViewState(channel=");
+            sbM833U.append(getChannel());
+            sbM833U.append(", showVoiceParticipants=");
+            sbM833U.append(getShowVoiceParticipants());
+            sbM833U.append(", showVoiceParticipantsToggle=");
+            sbM833U.append(getShowVoiceParticipantsToggle());
+            sbM833U.append(", showInviteItem=");
+            sbM833U.append(getShowInviteItem());
+            sbM833U.append(", noiseCancellationEnabled=");
+            sbM833U.append(getNoiseCancellationEnabled());
+            sbM833U.append(", showStageSettings=");
+            sbM833U.append(getShowStageSettings());
+            sbM833U.append(", showReportItem=");
+            sbM833U.append(getShowReportItem());
+            sbM833U.append(", guild=");
+            sbM833U.append(getGuild());
+            sbM833U.append(")");
+            return sbM833U.toString();
         }
     }
 
@@ -363,12 +363,12 @@ public final class WidgetVoiceSettingsBottomSheetViewModel extends AppViewModel<
         if (storeState instanceof StoreState.Valid) {
             StoreState.Valid valid = (StoreState.Valid) storeState;
             boolean z2 = valid.getCallModel().getIsVideoCall() || valid.getCallModel().getActiveStream() != null;
-            boolean zD = ChannelUtils.D(valid.getCallModel().getChannel());
-            boolean z3 = valid.getCallModel().canInvite() && !zD;
-            boolean zD2 = ChannelUtils.D(valid.getCallModel().getChannel());
+            boolean zM7669D = ChannelUtils.m7669D(valid.getCallModel().getChannel());
+            boolean z3 = valid.getCallModel().canInvite() && !zM7669D;
+            boolean zM7669D2 = ChannelUtils.m7669D(valid.getCallModel().getChannel());
             boolean z4 = valid.getCallModel().getVoiceSettings().getNoiseProcessing() == StoreMediaSettings.NoiseProcessing.Cancellation;
-            StageRoles stageRolesM76getMyStageRolestwRsX0 = valid.m76getMyStageRolestwRsX0();
-            updateViewState(new ViewState(valid.getCallModel().getChannel(), !valid.getCallModel().getVoiceSettings().getVoiceParticipantsHidden(), z2, z3, z4, zD && (stageRolesM76getMyStageRolestwRsX0 != null && StageRoles.m32isModeratorimpl(stageRolesM76getMyStageRolestwRsX0.m35unboximpl())), zD2, valid.getCallModel().getGuild()));
+            StageRoles stageRolesM11453getMyStageRolestwRsX0 = valid.m11453getMyStageRolestwRsX0();
+            updateViewState(new ViewState(valid.getCallModel().getChannel(), !valid.getCallModel().getVoiceSettings().getVoiceParticipantsHidden(), z2, z3, z4, zM7669D && (stageRolesM11453getMyStageRolestwRsX0 != null && StageRoles.m11409isModeratorimpl(stageRolesM11453getMyStageRolestwRsX0.m11412unboximpl())), zM7669D2, valid.getCallModel().getGuild()));
         }
     }
 
@@ -394,13 +394,13 @@ public final class WidgetVoiceSettingsBottomSheetViewModel extends AppViewModel<
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public WidgetVoiceSettingsBottomSheetViewModel(long j, StoreStageChannels storeStageChannels, Observable<StoreState> observable, StoreMediaSettings storeMediaSettings) {
         super(null, 1, null);
-        Intrinsics3.checkNotNullParameter(storeStageChannels, "stageChannelsStore");
-        Intrinsics3.checkNotNullParameter(observable, "storeObservable");
-        Intrinsics3.checkNotNullParameter(storeMediaSettings, "mediaSettingsStore");
+        C12238m.checkNotNullParameter(storeStageChannels, "stageChannelsStore");
+        C12238m.checkNotNullParameter(observable, "storeObservable");
+        C12238m.checkNotNullParameter(storeMediaSettings, "mediaSettingsStore");
         this.channelId = j;
         this.stageChannelsStore = storeStageChannels;
         this.storeObservable = observable;
         this.mediaSettingsStore = storeMediaSettings;
-        ObservableExtensionsKt.appSubscribe(ObservableExtensionsKt.ui$default(ObservableExtensionsKt.computationLatest(observable), this, null, 2, null), (Class<?>) WidgetVoiceSettingsBottomSheetViewModel.class, (58 & 2) != 0 ? null : null, (Function1<? super Subscription, Unit>) ((58 & 4) != 0 ? null : null), (Function1<? super Error, Unit>) ((58 & 8) != 0 ? null : null), (Function0<Unit>) ((58 & 16) != 0 ? ObservableExtensionsKt.AnonymousClass1.INSTANCE : null), (Function0<Unit>) ((58 & 32) != 0 ? ObservableExtensionsKt.AnonymousClass2.INSTANCE : null), new AnonymousClass1());
+        ObservableExtensionsKt.appSubscribe(ObservableExtensionsKt.ui$default(ObservableExtensionsKt.computationLatest(observable), this, null, 2, null), (Class<?>) WidgetVoiceSettingsBottomSheetViewModel.class, (58 & 2) != 0 ? null : null, (Function1<? super Subscription, Unit>) ((58 & 4) != 0 ? null : null), (Function1<? super Error, Unit>) ((58 & 8) != 0 ? null : null), (Function0<Unit>) ((58 & 16) != 0 ? ObservableExtensionsKt.C68791.INSTANCE : null), (Function0<Unit>) ((58 & 32) != 0 ? ObservableExtensionsKt.C68802.INSTANCE : null), new C106151());
     }
 }

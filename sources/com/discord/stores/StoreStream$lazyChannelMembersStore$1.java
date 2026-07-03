@@ -1,12 +1,12 @@
 package com.discord.stores;
 
 import com.discord.api.channel.Channel;
-import d0.z.d.FunctionReferenceImpl;
 import kotlin.jvm.functions.Function1;
+import p507d0.p592z.p594d.C12236k;
 
 /* JADX INFO: compiled from: StoreStream.kt */
 /* JADX INFO: loaded from: classes2.dex */
-public final /* synthetic */ class StoreStream$lazyChannelMembersStore$1 extends FunctionReferenceImpl implements Function1<Long, Channel> {
+public final /* synthetic */ class StoreStream$lazyChannelMembersStore$1 extends C12236k implements Function1<Long, Channel> {
     public StoreStream$lazyChannelMembersStore$1(StoreChannels storeChannels) {
         super(1, storeChannels, StoreChannels.class, "getChannel", "getChannel(J)Lcom/discord/api/channel/Channel;", 0);
     }

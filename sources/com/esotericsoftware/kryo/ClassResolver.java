@@ -1,7 +1,7 @@
 package com.esotericsoftware.kryo;
 
-import com.esotericsoftware.kryo.io.Input;
-import com.esotericsoftware.kryo.io.Output;
+import com.esotericsoftware.kryo.p502io.Input;
+import com.esotericsoftware.kryo.p502io.Output;
 
 /* JADX INFO: loaded from: classes.dex */
 public interface ClassResolver {

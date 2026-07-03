@@ -5,21 +5,23 @@ public interface Predicate<T> {
 
     /* JADX INFO: renamed from: org.webrtc.Predicate$-CC, reason: invalid class name */
     public final /* synthetic */ class CC {
-        public static Predicate a(final Predicate _this, final Predicate predicate) {
+        /* JADX INFO: renamed from: a */
+        public static Predicate m11035a(final Predicate _this, final Predicate predicate) {
             return new Predicate<T>() { // from class: org.webrtc.Predicate.2
                 @Override // org.webrtc.Predicate
                 public /* synthetic */ Predicate and(Predicate predicate2) {
-                    return CC.a(this, predicate2);
+                    return CC.m11035a(this, predicate2);
                 }
 
                 @Override // org.webrtc.Predicate
                 public /* synthetic */ Predicate negate() {
-                    return CC.b(this);
+                    return CC.m11036b(this);
                 }
 
                 @Override // org.webrtc.Predicate
-                public /* synthetic */ Predicate or(Predicate predicate2) {
-                    return CC.c(this, predicate2);
+                /* JADX INFO: renamed from: or */
+                public /* synthetic */ Predicate mo11025or(Predicate predicate2) {
+                    return CC.m11037c(this, predicate2);
                 }
 
                 @Override // org.webrtc.Predicate
@@ -29,21 +31,23 @@ public interface Predicate<T> {
             };
         }
 
-        public static Predicate b(final Predicate _this) {
+        /* JADX INFO: renamed from: b */
+        public static Predicate m11036b(final Predicate _this) {
             return new Predicate<T>() { // from class: org.webrtc.Predicate.3
                 @Override // org.webrtc.Predicate
                 public /* synthetic */ Predicate and(Predicate predicate) {
-                    return CC.a(this, predicate);
+                    return CC.m11035a(this, predicate);
                 }
 
                 @Override // org.webrtc.Predicate
                 public /* synthetic */ Predicate negate() {
-                    return CC.b(this);
+                    return CC.m11036b(this);
                 }
 
                 @Override // org.webrtc.Predicate
-                public /* synthetic */ Predicate or(Predicate predicate) {
-                    return CC.c(this, predicate);
+                /* JADX INFO: renamed from: or */
+                public /* synthetic */ Predicate mo11025or(Predicate predicate) {
+                    return CC.m11037c(this, predicate);
                 }
 
                 @Override // org.webrtc.Predicate
@@ -53,21 +57,23 @@ public interface Predicate<T> {
             };
         }
 
-        public static Predicate c(final Predicate _this, final Predicate predicate) {
+        /* JADX INFO: renamed from: c */
+        public static Predicate m11037c(final Predicate _this, final Predicate predicate) {
             return new Predicate<T>() { // from class: org.webrtc.Predicate.1
                 @Override // org.webrtc.Predicate
                 public /* synthetic */ Predicate and(Predicate predicate2) {
-                    return CC.a(this, predicate2);
+                    return CC.m11035a(this, predicate2);
                 }
 
                 @Override // org.webrtc.Predicate
                 public /* synthetic */ Predicate negate() {
-                    return CC.b(this);
+                    return CC.m11036b(this);
                 }
 
                 @Override // org.webrtc.Predicate
-                public /* synthetic */ Predicate or(Predicate predicate2) {
-                    return CC.c(this, predicate2);
+                /* JADX INFO: renamed from: or */
+                public /* synthetic */ Predicate mo11025or(Predicate predicate2) {
+                    return CC.m11037c(this, predicate2);
                 }
 
                 @Override // org.webrtc.Predicate
@@ -82,7 +88,8 @@ public interface Predicate<T> {
 
     Predicate<T> negate();
 
-    Predicate<T> or(Predicate<? super T> predicate);
+    /* JADX INFO: renamed from: or */
+    Predicate<T> mo11025or(Predicate<? super T> predicate);
 
     boolean test(T t);
 }

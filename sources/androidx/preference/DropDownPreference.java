@@ -57,7 +57,7 @@ public class DropDownPreference extends ListPreference {
 
     @Override // androidx.preference.Preference
     public void onBindViewHolder(PreferenceViewHolder preferenceViewHolder) {
-        Spinner spinner = (Spinner) preferenceViewHolder.itemView.findViewById(R.id.spinner);
+        Spinner spinner = (Spinner) preferenceViewHolder.itemView.findViewById(C0525R.id.spinner);
         this.mSpinner = spinner;
         spinner.setAdapter((SpinnerAdapter) this.mAdapter);
         this.mSpinner.setOnItemSelectedListener(this.mItemSelectedListener);
@@ -82,7 +82,7 @@ public class DropDownPreference extends ListPreference {
     }
 
     public DropDownPreference(Context context, AttributeSet attributeSet) {
-        this(context, attributeSet, R.attr.dropdownPreferenceStyle);
+        this(context, attributeSet, C0525R.attr.dropdownPreferenceStyle);
     }
 
     public DropDownPreference(Context context, AttributeSet attributeSet, int i) {

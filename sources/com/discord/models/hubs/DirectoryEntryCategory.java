@@ -2,11 +2,11 @@ package com.discord.models.hubs;
 
 import android.content.Context;
 import androidx.annotation.StringRes;
-import com.discord.R;
-import d0.z.d.Intrinsics3;
+import com.discord.C5419R;
 import java.util.Iterator;
 import java.util.List;
 import kotlin.jvm.internal.DefaultConstructorMarker;
+import p507d0.p592z.p594d.C12238m;
 
 /* JADX WARN: Enum visitor error
 jadx.core.utils.exceptions.JadxRuntimeException: Init of enum field 'Class' uses external variables
@@ -60,7 +60,7 @@ public final class DirectoryEntryCategory {
         }
 
         public final List<DirectoryEntryCategory> getCategories(boolean isHQDirectoryChannel) {
-            return isHQDirectoryChannel ? DirectoryEntryCategory2.HQ_DIRECTORY_CATEGORIES : DirectoryEntryCategory2.HUB_CATEGORIES;
+            return isHQDirectoryChannel ? DirectoryEntryCategoryKt.HQ_DIRECTORY_CATEGORIES : DirectoryEntryCategoryKt.HUB_CATEGORIES;
         }
 
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
@@ -69,30 +69,30 @@ public final class DirectoryEntryCategory {
     }
 
     static {
-        DirectoryEntryCategory directoryEntryCategory = new DirectoryEntryCategory("Home", 0, -1, R.string.directory_category_all, 70);
+        DirectoryEntryCategory directoryEntryCategory = new DirectoryEntryCategory("Home", 0, -1, C5419R.string.directory_category_all, 70);
         Home = directoryEntryCategory;
-        DirectoryEntryCategory directoryEntryCategory2 = new DirectoryEntryCategory("Uncategorized", 1, 0, R.string.uncategorized, 0, 4, null);
+        DirectoryEntryCategory directoryEntryCategory2 = new DirectoryEntryCategory("Uncategorized", 1, 0, C5419R.string.uncategorized, 0, 4, null);
         Uncategorized = directoryEntryCategory2;
-        DirectoryEntryCategory directoryEntryCategory3 = new DirectoryEntryCategory("SchoolClub", 2, 1, R.string.directory_category_school_club, 100);
+        DirectoryEntryCategory directoryEntryCategory3 = new DirectoryEntryCategory("SchoolClub", 2, 1, C5419R.string.directory_category_school_club, 100);
         SchoolClub = directoryEntryCategory3;
         int i = 4;
         DefaultConstructorMarker defaultConstructorMarker = null;
-        DirectoryEntryCategory directoryEntryCategory4 = new DirectoryEntryCategory("Class", 3, 2, R.string.directory_category_class, 0, i, defaultConstructorMarker);
+        DirectoryEntryCategory directoryEntryCategory4 = new DirectoryEntryCategory("Class", 3, 2, C5419R.string.directory_category_class, 0, i, defaultConstructorMarker);
         Class = directoryEntryCategory4;
-        DirectoryEntryCategory directoryEntryCategory5 = new DirectoryEntryCategory("StudySocial", 4, 3, R.string.directory_category_study_social, 50);
+        DirectoryEntryCategory directoryEntryCategory5 = new DirectoryEntryCategory("StudySocial", 4, 3, C5419R.string.directory_category_study_social, 50);
         StudySocial = directoryEntryCategory5;
         int i2 = 0;
-        DirectoryEntryCategory directoryEntryCategory6 = new DirectoryEntryCategory("SubjectMajor", 5, 4, R.string.directory_category_subject_major, i2, i, defaultConstructorMarker);
+        DirectoryEntryCategory directoryEntryCategory6 = new DirectoryEntryCategory("SubjectMajor", 5, 4, C5419R.string.directory_category_subject_major, i2, i, defaultConstructorMarker);
         SubjectMajor = directoryEntryCategory6;
-        DirectoryEntryCategory directoryEntryCategory7 = new DirectoryEntryCategory("Misc", 6, 5, R.string.directory_category_miscellaneous, i2, i, defaultConstructorMarker);
+        DirectoryEntryCategory directoryEntryCategory7 = new DirectoryEntryCategory("Misc", 6, 5, C5419R.string.directory_category_miscellaneous, i2, i, defaultConstructorMarker);
         Misc = directoryEntryCategory7;
-        DirectoryEntryCategory directoryEntryCategory8 = new DirectoryEntryCategory("HQSocial", 7, 1, R.string.directory_category_internal_1, i2, i, defaultConstructorMarker);
+        DirectoryEntryCategory directoryEntryCategory8 = new DirectoryEntryCategory("HQSocial", 7, 1, C5419R.string.directory_category_internal_1, i2, i, defaultConstructorMarker);
         HQSocial = directoryEntryCategory8;
-        DirectoryEntryCategory directoryEntryCategory9 = new DirectoryEntryCategory("HQErgs", 8, 2, R.string.directory_category_internal_2, i2, i, defaultConstructorMarker);
+        DirectoryEntryCategory directoryEntryCategory9 = new DirectoryEntryCategory("HQErgs", 8, 2, C5419R.string.directory_category_internal_2, i2, i, defaultConstructorMarker);
         HQErgs = directoryEntryCategory9;
-        DirectoryEntryCategory directoryEntryCategory10 = new DirectoryEntryCategory("HQMisc", 9, 3, R.string.directory_category_internal_3, i2, i, defaultConstructorMarker);
+        DirectoryEntryCategory directoryEntryCategory10 = new DirectoryEntryCategory("HQMisc", 9, 3, C5419R.string.directory_category_internal_3, i2, i, defaultConstructorMarker);
         HQMisc = directoryEntryCategory10;
-        DirectoryEntryCategory directoryEntryCategory11 = new DirectoryEntryCategory("HQArchives", 10, 5, R.string.directory_category_internal_5, i2, i, defaultConstructorMarker);
+        DirectoryEntryCategory directoryEntryCategory11 = new DirectoryEntryCategory("HQArchives", 10, 5, C5419R.string.directory_category_internal_5, i2, i, defaultConstructorMarker);
         HQArchives = directoryEntryCategory11;
         $VALUES = new DirectoryEntryCategory[]{directoryEntryCategory, directoryEntryCategory2, directoryEntryCategory3, directoryEntryCategory4, directoryEntryCategory5, directoryEntryCategory6, directoryEntryCategory7, directoryEntryCategory8, directoryEntryCategory9, directoryEntryCategory10, directoryEntryCategory11};
         INSTANCE = new Companion(null);
@@ -122,9 +122,9 @@ public final class DirectoryEntryCategory {
     }
 
     public final String getTitle(Context context) {
-        Intrinsics3.checkNotNullParameter(context, "context");
+        C12238m.checkNotNullParameter(context, "context");
         String string = context.getString(this.titleRes);
-        Intrinsics3.checkNotNullExpressionValue(string, "context.getString(titleRes)");
+        C12238m.checkNotNullExpressionValue(string, "context.getString(titleRes)");
         return string;
     }
 

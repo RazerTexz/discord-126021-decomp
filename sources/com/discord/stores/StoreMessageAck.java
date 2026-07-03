@@ -1,8 +1,6 @@
 package com.discord.stores;
 
-import a0.a.a.b;
 import android.content.Context;
-import b.d.b.a.outline;
 import com.discord.api.channel.Channel;
 import com.discord.api.channel.ChannelUtils;
 import com.discord.api.guild.Guild;
@@ -19,24 +17,13 @@ import com.discord.stores.StoreMessagesLoader;
 import com.discord.stores.StoreThreadsActiveJoined;
 import com.discord.stores.updates.ObservationDeck;
 import com.discord.utilities.SnowflakeUtils;
-import com.discord.utilities.collections.CollectionExtensions;
+import com.discord.utilities.collections.CollectionExtensionsKt;
 import com.discord.utilities.error.Error;
 import com.discord.utilities.message.MessageUtils;
+import com.discord.utilities.p501rx.ObservableExtensionsKt;
 import com.discord.utilities.persister.Persister;
 import com.discord.utilities.rest.RestAPI;
-import com.discord.utilities.rx.ObservableExtensionsKt;
 import com.discord.utilities.threads.ThreadUtils;
-import d0.Tuples;
-import d0.d0._Ranges;
-import d0.t.Iterables2;
-import d0.t.MapsJVM;
-import d0.t.Sets5;
-import d0.t._Sets;
-import d0.z.d.FunctionReferenceImpl;
-import d0.z.d.Intrinsics3;
-import d0.z.d.Lambda;
-import j0.k.Func1;
-import j0.l.e.ScalarSynchronousObservable;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Iterator;
@@ -45,18 +32,31 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 import java.util.concurrent.TimeUnit;
-import kotlin.Tuples2;
+import kotlin.Pair;
 import kotlin.Unit;
 import kotlin.jvm.functions.Function0;
 import kotlin.jvm.functions.Function1;
 import kotlin.jvm.functions.Function2;
 import kotlin.jvm.internal.DefaultConstructorMarker;
-import rx.Observable;
-import rx.Subscription;
-import rx.functions.Action1;
-import rx.functions.Func2;
-import rx.functions.Func3;
-import rx.functions.Func4;
+import p001a0.p002a.p003a.C0002b;
+import p007b.p100d.p104b.p105a.C1643a;
+import p507d0.C12116o;
+import p507d0.p512d0.C11226f;
+import p507d0.p580t.C12134g0;
+import p507d0.p580t.C12148n0;
+import p507d0.p580t.C12149o;
+import p507d0.p580t.C12150o0;
+import p507d0.p592z.p594d.AbstractC12240o;
+import p507d0.p592z.p594d.C12236k;
+import p507d0.p592z.p594d.C12238m;
+import p637j0.p641k.InterfaceC12589b;
+import p637j0.p642l.p647e.C12721k;
+import p658rx.Observable;
+import p658rx.Subscription;
+import p658rx.functions.Action1;
+import p658rx.functions.Func2;
+import p658rx.functions.Func3;
+import p658rx.functions.Func4;
 
 /* JADX INFO: compiled from: StoreMessageAck.kt */
 /* JADX INFO: loaded from: classes2.dex */
@@ -146,13 +146,13 @@ public final class StoreMessageAck extends StoreV2 {
         /* JADX WARN: Type inference failed for: r2v1, types: [int] */
         /* JADX WARN: Type inference failed for: r2v2 */
         public int hashCode() {
-            int iA = b.a(this.messageId) * 31;
+            int iM3a = C0002b.m3a(this.messageId) * 31;
             boolean z2 = this.viewed;
             ?? r1 = z2;
             if (z2) {
                 r1 = 1;
             }
-            int i = (iA + r1) * 31;
+            int i = (iM3a + r1) * 31;
             boolean z3 = this.isLockedAck;
             return i + (z3 ? 1 : z3);
         }
@@ -162,12 +162,12 @@ public final class StoreMessageAck extends StoreV2 {
         }
 
         public String toString() {
-            StringBuilder sbU = outline.U("Ack(messageId=");
-            sbU.append(this.messageId);
-            sbU.append(", viewed=");
-            sbU.append(this.viewed);
-            sbU.append(", isLockedAck=");
-            return outline.O(sbU, this.isLockedAck, ")");
+            StringBuilder sbM833U = C1643a.m833U("Ack(messageId=");
+            sbM833U.append(this.messageId);
+            sbM833U.append(", viewed=");
+            sbM833U.append(this.viewed);
+            sbM833U.append(", isLockedAck=");
+            return C1643a.m827O(sbM833U, this.isLockedAck, ")");
         }
 
         public Ack(ModelReadState modelReadState, boolean z2, boolean z3) {
@@ -235,7 +235,7 @@ public final class StoreMessageAck extends StoreV2 {
                 }
 
                 public String toString() {
-                    return outline.O(outline.U("Thread(canAckThread="), this.canAckThread, ")");
+                    return C1643a.m827O(C1643a.m833U("Thread(canAckThread="), this.canAckThread, ")");
                 }
             }
 
@@ -291,7 +291,7 @@ public final class StoreMessageAck extends StoreV2 {
         }
 
         public PendingAck(long j, Ack ack) {
-            Intrinsics3.checkNotNullParameter(ack, "ack");
+            C12238m.checkNotNullParameter(ack, "ack");
             this.channelId = j;
             this.ack = ack;
         }
@@ -317,7 +317,7 @@ public final class StoreMessageAck extends StoreV2 {
         }
 
         public final PendingAck copy(long channelId, Ack ack) {
-            Intrinsics3.checkNotNullParameter(ack, "ack");
+            C12238m.checkNotNullParameter(ack, "ack");
             return new PendingAck(channelId, ack);
         }
 
@@ -329,7 +329,7 @@ public final class StoreMessageAck extends StoreV2 {
                 return false;
             }
             PendingAck pendingAck = (PendingAck) other;
-            return this.channelId == pendingAck.channelId && Intrinsics3.areEqual(this.ack, pendingAck.ack);
+            return this.channelId == pendingAck.channelId && C12238m.areEqual(this.ack, pendingAck.ack);
         }
 
         public final Ack getAck() {
@@ -341,30 +341,30 @@ public final class StoreMessageAck extends StoreV2 {
         }
 
         public int hashCode() {
-            int iA = b.a(this.channelId) * 31;
+            int iM3a = C0002b.m3a(this.channelId) * 31;
             Ack ack = this.ack;
-            return iA + (ack != null ? ack.hashCode() : 0);
+            return iM3a + (ack != null ? ack.hashCode() : 0);
         }
 
         public String toString() {
-            StringBuilder sbU = outline.U("PendingAck(channelId=");
-            sbU.append(this.channelId);
-            sbU.append(", ack=");
-            sbU.append(this.ack);
-            sbU.append(")");
-            return sbU.toString();
+            StringBuilder sbM833U = C1643a.m833U("PendingAck(channelId=");
+            sbM833U.append(this.channelId);
+            sbM833U.append(", ack=");
+            sbM833U.append(this.ack);
+            sbM833U.append(")");
+            return sbM833U.toString();
         }
     }
 
-    /* JADX INFO: renamed from: com.discord.stores.StoreMessageAck$ack$1, reason: invalid class name */
+    /* JADX INFO: renamed from: com.discord.stores.StoreMessageAck$ack$1 */
     /* JADX INFO: compiled from: StoreMessageAck.kt */
-    public static final class AnonymousClass1 extends Lambda implements Function0<Unit> {
+    public static final class C61971 extends AbstractC12240o implements Function0<Unit> {
         public final /* synthetic */ long $channelId;
         public final /* synthetic */ boolean $clearLock;
         public final /* synthetic */ boolean $isLockedAck;
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-        public AnonymousClass1(long j, boolean z2, boolean z3) {
+        public C61971(long j, boolean z2, boolean z3) {
             super(0);
             this.$channelId = j;
             this.$isLockedAck = z2;
@@ -374,7 +374,7 @@ public final class StoreMessageAck extends StoreV2 {
         @Override // kotlin.jvm.functions.Function0
         public /* bridge */ /* synthetic */ Unit invoke() {
             invoke2();
-            return Unit.a;
+            return Unit.f27425a;
         }
 
         /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
@@ -393,13 +393,13 @@ public final class StoreMessageAck extends StoreV2 {
         }
     }
 
-    /* JADX INFO: renamed from: com.discord.stores.StoreMessageAck$getPendingAck$1, reason: invalid class name */
+    /* JADX INFO: renamed from: com.discord.stores.StoreMessageAck$getPendingAck$1 */
     /* JADX INFO: compiled from: StoreMessageAck.kt */
-    public static final class AnonymousClass1 extends Lambda implements Function2<Ack, Long, Boolean> {
+    public static final class C61981 extends AbstractC12240o implements Function2<Ack, Long, Boolean> {
         public final /* synthetic */ boolean $clearLock;
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-        public AnonymousClass1(boolean z2) {
+        public C61981(boolean z2) {
             super(2);
             this.$clearLock = z2;
         }
@@ -419,33 +419,33 @@ public final class StoreMessageAck extends StoreV2 {
         }
     }
 
-    /* JADX INFO: renamed from: com.discord.stores.StoreMessageAck$handleConnectionOpen$3, reason: invalid class name */
+    /* JADX INFO: renamed from: com.discord.stores.StoreMessageAck$handleConnectionOpen$3 */
     /* JADX INFO: compiled from: StoreMessageAck.kt */
-    public static final class AnonymousClass3 extends Lambda implements Function1<Subscription, Unit> {
-        public AnonymousClass3() {
+    public static final class C62003 extends AbstractC12240o implements Function1<Subscription, Unit> {
+        public C62003() {
             super(1);
         }
 
         @Override // kotlin.jvm.functions.Function1
         public /* bridge */ /* synthetic */ Unit invoke(Subscription subscription) {
             invoke2(subscription);
-            return Unit.a;
+            return Unit.f27425a;
         }
 
         /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
         public final void invoke2(Subscription subscription) {
-            Intrinsics3.checkNotNullParameter(subscription, "it");
+            C12238m.checkNotNullParameter(subscription, "it");
             StoreMessageAck.this.threadSyncSubscription = subscription;
         }
     }
 
-    /* JADX INFO: renamed from: com.discord.stores.StoreMessageAck$handleConnectionOpen$4, reason: invalid class name */
+    /* JADX INFO: renamed from: com.discord.stores.StoreMessageAck$handleConnectionOpen$4 */
     /* JADX INFO: compiled from: StoreMessageAck.kt */
-    public static final class AnonymousClass4 extends Lambda implements Function1<Tuples2<? extends Set<? extends Long>, ? extends Set<? extends Long>>, Unit> {
+    public static final class C62014 extends AbstractC12240o implements Function1<Pair<? extends Set<? extends Long>, ? extends Set<? extends Long>>, Unit> {
 
         /* JADX INFO: renamed from: com.discord.stores.StoreMessageAck$handleConnectionOpen$4$1, reason: invalid class name */
         /* JADX INFO: compiled from: StoreMessageAck.kt */
-        public static final class AnonymousClass1 extends Lambda implements Function0<Unit> {
+        public static final class AnonymousClass1 extends AbstractC12240o implements Function0<Unit> {
             public final /* synthetic */ Set $newThreadIds;
             public final /* synthetic */ Set $oldThreadIds;
 
@@ -459,7 +459,7 @@ public final class StoreMessageAck extends StoreV2 {
             @Override // kotlin.jvm.functions.Function0
             public /* bridge */ /* synthetic */ Unit invoke() {
                 invoke2();
-                return Unit.a;
+                return Unit.f27425a;
             }
 
             /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
@@ -468,32 +468,32 @@ public final class StoreMessageAck extends StoreV2 {
             }
         }
 
-        public AnonymousClass4() {
+        public C62014() {
             super(1);
         }
 
         @Override // kotlin.jvm.functions.Function1
-        public /* bridge */ /* synthetic */ Unit invoke(Tuples2<? extends Set<? extends Long>, ? extends Set<? extends Long>> tuples2) {
-            invoke2((Tuples2<? extends Set<Long>, ? extends Set<Long>>) tuples2);
-            return Unit.a;
+        public /* bridge */ /* synthetic */ Unit invoke(Pair<? extends Set<? extends Long>, ? extends Set<? extends Long>> pair) {
+            invoke2((Pair<? extends Set<Long>, ? extends Set<Long>>) pair);
+            return Unit.f27425a;
         }
 
         /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
-        public final void invoke2(Tuples2<? extends Set<Long>, ? extends Set<Long>> tuples2) {
-            Intrinsics3.checkNotNullParameter(tuples2, "<name for destructuring parameter 0>");
-            StoreMessageAck.this.dispatcher.schedule(new AnonymousClass1(tuples2.component1(), tuples2.component2()));
+        public final void invoke2(Pair<? extends Set<Long>, ? extends Set<Long>> pair) {
+            C12238m.checkNotNullParameter(pair, "<name for destructuring parameter 0>");
+            StoreMessageAck.this.dispatcher.schedule(new AnonymousClass1(pair.component1(), pair.component2()));
         }
     }
 
-    /* JADX INFO: renamed from: com.discord.stores.StoreMessageAck$markUnread$3, reason: invalid class name */
+    /* JADX INFO: renamed from: com.discord.stores.StoreMessageAck$markUnread$3 */
     /* JADX INFO: compiled from: StoreMessageAck.kt */
-    public static final class AnonymousClass3 extends Lambda implements Function1<Tuples2<? extends List<? extends Message>, ? extends Companion.ThreadAckState>, Unit> {
+    public static final class C62053 extends AbstractC12240o implements Function1<Pair<? extends List<? extends Message>, ? extends Companion.ThreadAckState>, Unit> {
         public final /* synthetic */ long $channelId;
         public final /* synthetic */ long $messageId;
 
         /* JADX INFO: renamed from: com.discord.stores.StoreMessageAck$markUnread$3$1, reason: invalid class name */
         /* JADX INFO: compiled from: StoreMessageAck.kt */
-        public static final class AnonymousClass1 extends Lambda implements Function0<Unit> {
+        public static final class AnonymousClass1 extends AbstractC12240o implements Function0<Unit> {
             public final /* synthetic */ List $channelMessages;
 
             /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -505,25 +505,25 @@ public final class StoreMessageAck extends StoreV2 {
             @Override // kotlin.jvm.functions.Function0
             public /* bridge */ /* synthetic */ Unit invoke() {
                 invoke2();
-                return Unit.a;
+                return Unit.f27425a;
             }
 
             /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
             public final void invoke2() {
                 Object obj;
                 List list = this.$channelMessages;
-                ArrayList arrayListA0 = outline.a0(list, "channelMessages");
+                ArrayList arrayListM840a0 = C1643a.m840a0(list, "channelMessages");
                 Iterator it = list.iterator();
                 while (true) {
                     if (!it.hasNext()) {
                         break;
                     }
                     Object next = it.next();
-                    if (((Message) next).getId() < AnonymousClass3.this.$messageId) {
-                        arrayListA0.add(next);
+                    if (((Message) next).getId() < C62053.this.$messageId) {
+                        arrayListM840a0.add(next);
                     }
                 }
-                Iterator it2 = arrayListA0.iterator();
+                Iterator it2 = arrayListM840a0.iterator();
                 if (it2.hasNext()) {
                     Object next2 = it2.next();
                     if (it2.hasNext()) {
@@ -543,50 +543,50 @@ public final class StoreMessageAck extends StoreV2 {
                 }
                 Message message = (Message) obj;
                 List list2 = this.$channelMessages;
-                ArrayList arrayListA1 = outline.a0(list2, "channelMessages");
+                ArrayList arrayListM840a1 = C1643a.m840a0(list2, "channelMessages");
                 for (Object obj2 : list2) {
-                    if (((Message) obj2).getId() >= AnonymousClass3.this.$messageId) {
-                        arrayListA1.add(obj2);
+                    if (((Message) obj2).getId() >= C62053.this.$messageId) {
+                        arrayListM840a1.add(obj2);
                     }
                 }
-                Ack ack = new Ack(message != null ? message.getId() : (((AnonymousClass3.this.$messageId >>> 22) - 1) - SnowflakeUtils.DISCORD_EPOCH) << 22, false, true);
-                AnonymousClass3 anonymousClass3 = AnonymousClass3.this;
-                StoreMessageAck.this.updateAcks(anonymousClass3.$channelId, ack);
-                int iProcessMarkUnread$app_productionGoogleRelease = StoreStream.INSTANCE.getMentions().processMarkUnread$app_productionGoogleRelease(AnonymousClass3.this.$channelId, arrayListA1);
+                Ack ack = new Ack(message != null ? message.getId() : (((C62053.this.$messageId >>> 22) - 1) - SnowflakeUtils.DISCORD_EPOCH) << 22, false, true);
+                C62053 c62053 = C62053.this;
+                StoreMessageAck.this.updateAcks(c62053.$channelId, ack);
+                int iProcessMarkUnread$app_productionGoogleRelease = StoreStream.INSTANCE.getMentions().processMarkUnread$app_productionGoogleRelease(C62053.this.$channelId, arrayListM840a1);
                 StoreMessageAck storeMessageAck = StoreMessageAck.this;
-                ScalarSynchronousObservable scalarSynchronousObservable = new ScalarSynchronousObservable(new PendingAck(AnonymousClass3.this.$channelId, ack));
-                Intrinsics3.checkNotNullExpressionValue(scalarSynchronousObservable, "Observable.just(PendingAck(channelId, ack))");
-                storeMessageAck.postPendingAck(scalarSynchronousObservable, iProcessMarkUnread$app_productionGoogleRelease);
+                C12721k c12721k = new C12721k(new PendingAck(C62053.this.$channelId, ack));
+                C12238m.checkNotNullExpressionValue(c12721k, "Observable.just(PendingAck(channelId, ack))");
+                storeMessageAck.postPendingAck(c12721k, iProcessMarkUnread$app_productionGoogleRelease);
             }
         }
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-        public AnonymousClass3(long j, long j2) {
+        public C62053(long j, long j2) {
             super(1);
             this.$messageId = j;
             this.$channelId = j2;
         }
 
         @Override // kotlin.jvm.functions.Function1
-        public /* bridge */ /* synthetic */ Unit invoke(Tuples2<? extends List<? extends Message>, ? extends Companion.ThreadAckState> tuples2) {
-            invoke2((Tuples2<? extends List<Message>, ? extends Companion.ThreadAckState>) tuples2);
-            return Unit.a;
+        public /* bridge */ /* synthetic */ Unit invoke(Pair<? extends List<? extends Message>, ? extends Companion.ThreadAckState> pair) {
+            invoke2((Pair<? extends List<Message>, ? extends Companion.ThreadAckState>) pair);
+            return Unit.f27425a;
         }
 
         /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
-        public final void invoke2(Tuples2<? extends List<Message>, ? extends Companion.ThreadAckState> tuples2) {
-            List<Message> listComponent1 = tuples2.component1();
-            if (StoreMessageAck.INSTANCE.isThreadAndUnableToAck(tuples2.component2())) {
+        public final void invoke2(Pair<? extends List<Message>, ? extends Companion.ThreadAckState> pair) {
+            List<Message> listComponent1 = pair.component1();
+            if (StoreMessageAck.INSTANCE.isThreadAndUnableToAck(pair.component2())) {
                 return;
             }
             StoreMessageAck.this.dispatcher.schedule(new AnonymousClass1(listComponent1));
         }
     }
 
-    /* JADX INFO: renamed from: com.discord.stores.StoreMessageAck$observeAll$1, reason: invalid class name */
+    /* JADX INFO: renamed from: com.discord.stores.StoreMessageAck$observeAll$1 */
     /* JADX INFO: compiled from: StoreMessageAck.kt */
-    public static final class AnonymousClass1 extends Lambda implements Function0<Map<Long, ? extends Ack>> {
-        public AnonymousClass1() {
+    public static final class C62081 extends AbstractC12240o implements Function0<Map<Long, ? extends Ack>> {
+        public C62081() {
             super(0);
         }
 
@@ -596,13 +596,13 @@ public final class StoreMessageAck extends StoreV2 {
         }
     }
 
-    /* JADX INFO: renamed from: com.discord.stores.StoreMessageAck$observeForChannel$1, reason: invalid class name */
+    /* JADX INFO: renamed from: com.discord.stores.StoreMessageAck$observeForChannel$1 */
     /* JADX INFO: compiled from: StoreMessageAck.kt */
-    public static final class AnonymousClass1 extends Lambda implements Function0<Ack> {
+    public static final class C62091 extends AbstractC12240o implements Function0<Ack> {
         public final /* synthetic */ long $channelId;
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-        public AnonymousClass1(long j) {
+        public C62091(long j) {
             super(0);
             this.$channelId = j;
         }
@@ -614,13 +614,13 @@ public final class StoreMessageAck extends StoreV2 {
         }
     }
 
-    /* JADX INFO: renamed from: com.discord.stores.StoreMessageAck$observeThreadAckState$1, reason: invalid class name */
+    /* JADX INFO: renamed from: com.discord.stores.StoreMessageAck$observeThreadAckState$1 */
     /* JADX INFO: compiled from: StoreMessageAck.kt */
-    public static final class AnonymousClass1 extends Lambda implements Function0<Companion.ThreadAckState> {
+    public static final class C62101 extends AbstractC12240o implements Function0<Companion.ThreadAckState> {
         public final /* synthetic */ long $channelId;
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-        public AnonymousClass1(long j) {
+        public C62101(long j) {
             super(0);
             this.$channelId = j;
         }
@@ -633,19 +633,19 @@ public final class StoreMessageAck extends StoreV2 {
         }
     }
 
-    /* JADX INFO: renamed from: com.discord.stores.StoreMessageAck$postPendingAck$1, reason: invalid class name */
+    /* JADX INFO: renamed from: com.discord.stores.StoreMessageAck$postPendingAck$1 */
     /* JADX INFO: compiled from: StoreMessageAck.kt */
-    public static final class AnonymousClass1 extends Lambda implements Function1<PendingAck, Unit> {
+    public static final class C62111 extends AbstractC12240o implements Function1<PendingAck, Unit> {
         public final /* synthetic */ int $mentionCount;
 
-        /* JADX INFO: renamed from: com.discord.stores.StoreMessageAck$postPendingAck$1$1, reason: invalid class name and collision with other inner class name */
+        /* JADX INFO: renamed from: com.discord.stores.StoreMessageAck$postPendingAck$1$1, reason: invalid class name */
         /* JADX INFO: compiled from: StoreMessageAck.kt */
-        public static final class C01521 extends Lambda implements Function0<Unit> {
+        public static final class AnonymousClass1 extends AbstractC12240o implements Function0<Unit> {
             public final /* synthetic */ Ack $ack;
             public final /* synthetic */ long $channelId;
 
             /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-            public C01521(long j, Ack ack) {
+            public AnonymousClass1(long j, Ack ack) {
                 super(0);
                 this.$channelId = j;
                 this.$ack = ack;
@@ -654,7 +654,7 @@ public final class StoreMessageAck extends StoreV2 {
             @Override // kotlin.jvm.functions.Function0
             public /* bridge */ /* synthetic */ Unit invoke() {
                 invoke2();
-                return Unit.a;
+                return Unit.f27425a;
             }
 
             /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
@@ -665,7 +665,7 @@ public final class StoreMessageAck extends StoreV2 {
 
         /* JADX INFO: renamed from: com.discord.stores.StoreMessageAck$postPendingAck$1$3, reason: invalid class name */
         /* JADX INFO: compiled from: StoreMessageAck.kt */
-        public static final class AnonymousClass3 extends Lambda implements Function1<Void, Unit> {
+        public static final class AnonymousClass3 extends AbstractC12240o implements Function1<Void, Unit> {
             public static final AnonymousClass3 INSTANCE = new AnonymousClass3();
 
             public AnonymousClass3() {
@@ -675,7 +675,7 @@ public final class StoreMessageAck extends StoreV2 {
             @Override // kotlin.jvm.functions.Function1
             public /* bridge */ /* synthetic */ Unit invoke(Void r1) {
                 invoke2(r1);
-                return Unit.a;
+                return Unit.f27425a;
             }
 
             /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
@@ -684,7 +684,7 @@ public final class StoreMessageAck extends StoreV2 {
         }
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-        public AnonymousClass1(int i) {
+        public C62111(int i) {
             super(1);
             this.$mentionCount = i;
         }
@@ -692,55 +692,55 @@ public final class StoreMessageAck extends StoreV2 {
         @Override // kotlin.jvm.functions.Function1
         public /* bridge */ /* synthetic */ Unit invoke(PendingAck pendingAck) {
             invoke2(pendingAck);
-            return Unit.a;
+            return Unit.f27425a;
         }
 
         /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
         public final void invoke2(PendingAck pendingAck) {
-            Intrinsics3.checkNotNullParameter(pendingAck, "pendingAck");
+            C12238m.checkNotNullParameter(pendingAck, "pendingAck");
             final long channelId = pendingAck.getChannelId();
             Ack ack = pendingAck.getAck();
-            StoreMessageAck.this.dispatcher.schedule(new C01521(channelId, ack));
-            Observable observableU = ObservableExtensionsKt.restSubscribeOn$default(StoreMessageAck.this.restAPI.postChannelMessagesAck(channelId, Long.valueOf(ack.getMessageId()), new RestAPIParams.ChannelMessagesAck(Boolean.valueOf(ack.isLockedAck()), Integer.valueOf(this.$mentionCount))), false, 1, null).u(new Action1<Void>() { // from class: com.discord.stores.StoreMessageAck.postPendingAck.1.2
-                @Override // rx.functions.Action1
+            StoreMessageAck.this.dispatcher.schedule(new AnonymousClass1(channelId, ack));
+            Observable observableM11115u = ObservableExtensionsKt.restSubscribeOn$default(StoreMessageAck.this.restAPI.postChannelMessagesAck(channelId, Long.valueOf(ack.getMessageId()), new RestAPIParams.ChannelMessagesAck(Boolean.valueOf(ack.isLockedAck()), Integer.valueOf(this.$mentionCount))), false, 1, null).m11115u(new Action1<Void>() { // from class: com.discord.stores.StoreMessageAck.postPendingAck.1.2
+                @Override // p658rx.functions.Action1
                 public final void call(Void r3) {
                     StoreStream.INSTANCE.getAnalytics().ackMessage(channelId);
                 }
             });
-            Intrinsics3.checkNotNullExpressionValue(observableU, "restAPI\n          .postC…).ackMessage(channelId) }");
-            ObservableExtensionsKt.appSubscribe(observableU, (117 & 1) != 0 ? null : null, "REST: ack", (Function1<? super Subscription, Unit>) ((117 & 4) != 0 ? null : null), AnonymousClass3.INSTANCE, (Function1<? super Error, Unit>) ((117 & 16) != 0 ? null : null), (Function0<Unit>) ((117 & 32) != 0 ? ObservableExtensionsKt.AnonymousClass3.INSTANCE : null), (Function0<Unit>) ((117 & 64) != 0 ? ObservableExtensionsKt.AnonymousClass4.INSTANCE : null));
+            C12238m.checkNotNullExpressionValue(observableM11115u, "restAPI\n          .postC…).ackMessage(channelId) }");
+            ObservableExtensionsKt.appSubscribe(observableM11115u, (117 & 1) != 0 ? null : null, "REST: ack", (Function1<? super Subscription, Unit>) ((117 & 4) != 0 ? null : null), AnonymousClass3.INSTANCE, (Function1<? super Error, Unit>) ((117 & 16) != 0 ? null : null), (Function0<Unit>) ((117 & 32) != 0 ? ObservableExtensionsKt.C68813.INSTANCE : null), (Function0<Unit>) ((117 & 64) != 0 ? ObservableExtensionsKt.C68824.INSTANCE : null));
         }
     }
 
-    /* JADX INFO: renamed from: com.discord.stores.StoreMessageAck$postPendingAck$3, reason: invalid class name */
+    /* JADX INFO: renamed from: com.discord.stores.StoreMessageAck$postPendingAck$3 */
     /* JADX INFO: compiled from: StoreMessageAck.kt */
-    public static final /* synthetic */ class AnonymousClass3 extends FunctionReferenceImpl implements Function1<PendingAck, Unit> {
-        public final /* synthetic */ AnonymousClass1 $postChannelMessagesAck$1;
+    public static final /* synthetic */ class C62133 extends C12236k implements Function1<PendingAck, Unit> {
+        public final /* synthetic */ C62111 $postChannelMessagesAck$1;
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-        public AnonymousClass3(AnonymousClass1 anonymousClass1) {
+        public C62133(C62111 c62111) {
             super(1, null, "postChannelMessagesAck", "invoke(Lcom/discord/stores/StoreMessageAck$PendingAck;)V", 0);
-            this.$postChannelMessagesAck$1 = anonymousClass1;
+            this.$postChannelMessagesAck$1 = c62111;
         }
 
         @Override // kotlin.jvm.functions.Function1
         public /* bridge */ /* synthetic */ Unit invoke(PendingAck pendingAck) {
             invoke2(pendingAck);
-            return Unit.a;
+            return Unit.f27425a;
         }
 
         /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
         public final void invoke2(PendingAck pendingAck) {
-            Intrinsics3.checkNotNullParameter(pendingAck, "p1");
+            C12238m.checkNotNullParameter(pendingAck, "p1");
             this.$postChannelMessagesAck$1.invoke2(pendingAck);
         }
     }
 
     public StoreMessageAck(StoreStream storeStream, ObservationDeck observationDeck, Dispatcher dispatcher, RestAPI restAPI) {
-        Intrinsics3.checkNotNullParameter(storeStream, "stream");
-        Intrinsics3.checkNotNullParameter(observationDeck, "observationDeck");
-        Intrinsics3.checkNotNullParameter(dispatcher, "dispatcher");
-        Intrinsics3.checkNotNullParameter(restAPI, "restAPI");
+        C12238m.checkNotNullParameter(storeStream, "stream");
+        C12238m.checkNotNullParameter(observationDeck, "observationDeck");
+        C12238m.checkNotNullParameter(dispatcher, "dispatcher");
+        C12238m.checkNotNullParameter(restAPI, "restAPI");
         this.stream = storeStream;
         this.observationDeck = observationDeck;
         this.dispatcher = dispatcher;
@@ -759,36 +759,36 @@ public final class StoreMessageAck extends StoreV2 {
     }
 
     private final Observable<PendingAck> getPendingAck(Observable<Long> observable, final boolean z2, boolean z3) {
-        final AnonymousClass1 anonymousClass1 = new AnonymousClass1(z3);
-        Observable observableY = observable.Y(new Func1<Long, Observable<? extends PendingAck>>() { // from class: com.discord.stores.StoreMessageAck.getPendingAck.2
-            @Override // j0.k.Func1
+        final C61981 c61981 = new C61981(z3);
+        Observable observableM11099Y = observable.m11099Y(new InterfaceC12589b<Long, Observable<? extends PendingAck>>() { // from class: com.discord.stores.StoreMessageAck.getPendingAck.2
+            @Override // p637j0.p641k.InterfaceC12589b
             public final Observable<? extends PendingAck> call(final Long l) {
                 if (l.longValue() <= 0) {
-                    return new ScalarSynchronousObservable(PendingAck.INSTANCE.getEMPTY());
+                    return new C12721k(PendingAck.INSTANCE.getEMPTY());
                 }
                 StoreMessageAck messageAck = StoreMessageAck.this.stream.getMessageAck();
-                Intrinsics3.checkNotNullExpressionValue(l, "channelId");
-                return Observable.i(messageAck.observeForChannel(l.longValue()), StoreMessageAck.this.stream.getMessagesMostRecent().observeRecentMessageIds(l.longValue()), StoreMessageAck.this.observeThreadAckState(l.longValue()), new Func3<Ack, Long, Companion.ThreadAckState, PendingAck>() { // from class: com.discord.stores.StoreMessageAck.getPendingAck.2.1
+                C12238m.checkNotNullExpressionValue(l, "channelId");
+                return Observable.m11075i(messageAck.observeForChannel(l.longValue()), StoreMessageAck.this.stream.getMessagesMostRecent().observeRecentMessageIds(l.longValue()), StoreMessageAck.this.observeThreadAckState(l.longValue()), new Func3<Ack, Long, Companion.ThreadAckState, PendingAck>() { // from class: com.discord.stores.StoreMessageAck.getPendingAck.2.1
                     /* JADX WARN: Code restructure failed: missing block: B:13:0x002a, code lost:
                     
                         if (r8.invoke(r6, r7.longValue()) != false) goto L14;
                      */
-                    @Override // rx.functions.Func3
+                    @Override // p658rx.functions.Func3
                     /*
                         Code decompiled incorrectly, please refer to instructions dump.
                     */
                     public final PendingAck call(Ack ack, Long l2, Companion.ThreadAckState threadAckState) {
                         Companion companion = StoreMessageAck.INSTANCE;
                         if (companion.isNonThreadChannel(threadAckState) || companion.isThreadAndAbleToAck(threadAckState)) {
-                            AnonymousClass2 anonymousClass2 = AnonymousClass2.this;
+                            C61992 c61992 = C61992.this;
                             if (!z2) {
-                                AnonymousClass1 anonymousClass3 = anonymousClass1;
-                                Intrinsics3.checkNotNullExpressionValue(l2, "mostRecentMessageId");
+                                C61981 c61982 = c61981;
+                                C12238m.checkNotNullExpressionValue(l2, "mostRecentMessageId");
                             }
                             Long l3 = l;
-                            Intrinsics3.checkNotNullExpressionValue(l3, "channelId");
+                            C12238m.checkNotNullExpressionValue(l3, "channelId");
                             long jLongValue = l3.longValue();
-                            Intrinsics3.checkNotNullExpressionValue(l2, "mostRecentMessageId");
+                            C12238m.checkNotNullExpressionValue(l2, "mostRecentMessageId");
                             return new PendingAck(jLongValue, new Ack(l2.longValue(), true, z2));
                         }
                         return PendingAck.INSTANCE.getEMPTY();
@@ -796,17 +796,17 @@ public final class StoreMessageAck extends StoreV2 {
                 });
             }
         });
-        Intrinsics3.checkNotNullExpressionValue(observableY, "switchMap { channelId ->…gAck.EMPTY)\n      }\n    }");
-        return observableY;
+        C12238m.checkNotNullExpressionValue(observableM11099Y, "switchMap { channelId ->…gAck.EMPTY)\n      }\n    }");
+        return observableM11099Y;
     }
 
-    @Store3
+    @StoreThread
     private final Companion.ThreadAckState getThreadAckStateInternal(long channelId, Map<Long, StoreThreadsActiveJoined.ActiveJoinedThread> activeAndJoinedThreads, Map<Long, Channel> activeForumThreads, StoreChannels storeChannels) {
         Channel channel = storeChannels.getChannel(channelId);
         if (channel == null) {
             return null;
         }
-        if (ChannelUtils.H(channel)) {
+        if (ChannelUtils.m7673H(channel)) {
             return (activeAndJoinedThreads.containsKey(Long.valueOf(channelId)) || activeForumThreads.containsKey(Long.valueOf(channelId))) ? new Companion.ThreadAckState.Thread(true) : new Companion.ThreadAckState.Thread(false);
         }
         return Companion.ThreadAckState.NotThread.INSTANCE;
@@ -820,55 +820,55 @@ public final class StoreMessageAck extends StoreV2 {
     }
 
     private final void internalAck(Channel channel, boolean isLockedAck, boolean clearLock) {
-        ScalarSynchronousObservable scalarSynchronousObservable = new ScalarSynchronousObservable(Long.valueOf(channel.getId()));
-        Intrinsics3.checkNotNullExpressionValue(scalarSynchronousObservable, "Observable.just(channel.id)");
-        postPendingAck$default(this, ObservableExtensionsKt.takeSingleUntilTimeout$default(getPendingAck(scalarSynchronousObservable, isLockedAck, clearLock), 0L, false, 1, null), 0, 1, null);
+        C12721k c12721k = new C12721k(Long.valueOf(channel.getId()));
+        C12238m.checkNotNullExpressionValue(c12721k, "Observable.just(channel.id)");
+        postPendingAck$default(this, ObservableExtensionsKt.takeSingleUntilTimeout$default(getPendingAck(c12721k, isLockedAck, clearLock), 0L, false, 1, null), 0, 1, null);
     }
 
-    private final Observable<Tuples2<Set<Long>, Set<Long>>> observeActiveThreadIdsWithPrevious() {
-        Observable observableJ = Observable.j(this.stream.getThreadsActiveJoined().observeAllActiveJoinedThreadsById(), this.stream.getThreadsActive().observeAllActiveForumThreadsById(), new Func2<Map<Long, ? extends StoreThreadsActiveJoined.ActiveJoinedThread>, Map<Long, ? extends Channel>, Set<? extends Long>>() { // from class: com.discord.stores.StoreMessageAck.observeActiveThreadIdsWithPrevious.1
-            @Override // rx.functions.Func2
+    private final Observable<Pair<Set<Long>, Set<Long>>> observeActiveThreadIdsWithPrevious() {
+        Observable observableM11076j = Observable.m11076j(this.stream.getThreadsActiveJoined().observeAllActiveJoinedThreadsById(), this.stream.getThreadsActive().observeAllActiveForumThreadsById(), new Func2<Map<Long, ? extends StoreThreadsActiveJoined.ActiveJoinedThread>, Map<Long, ? extends Channel>, Set<? extends Long>>() { // from class: com.discord.stores.StoreMessageAck.observeActiveThreadIdsWithPrevious.1
+            @Override // p658rx.functions.Func2
             public /* bridge */ /* synthetic */ Set<? extends Long> call(Map<Long, ? extends StoreThreadsActiveJoined.ActiveJoinedThread> map, Map<Long, ? extends Channel> map2) {
                 return call2((Map<Long, StoreThreadsActiveJoined.ActiveJoinedThread>) map, (Map<Long, Channel>) map2);
             }
 
             /* JADX INFO: renamed from: call, reason: avoid collision after fix types in other method */
             public final Set<Long> call2(Map<Long, StoreThreadsActiveJoined.ActiveJoinedThread> map, Map<Long, Channel> map2) {
-                return _Sets.plus((Set) map.keySet(), (Iterable) map2.keySet());
+                return C12150o0.plus((Set) map.keySet(), (Iterable) map2.keySet());
             }
         });
-        Intrinsics3.checkNotNullExpressionValue(observableJ, "Observable.combineLatest…veForumThreads.keys\n    }");
-        Observable<Tuples2<Set<Long>, Set<Long>>> observableQ = ObservableExtensionsKt.leadingEdgeThrottle(observableJ, 1L, TimeUnit.SECONDS).r().Q(new Tuples2(Sets5.emptySet(), Sets5.emptySet()), new Func2<Tuples2<? extends Set<? extends Long>, ? extends Set<? extends Long>>, Set<? extends Long>, Tuples2<? extends Set<? extends Long>, ? extends Set<? extends Long>>>() { // from class: com.discord.stores.StoreMessageAck.observeActiveThreadIdsWithPrevious.2
-            @Override // rx.functions.Func2
-            public /* bridge */ /* synthetic */ Tuples2<? extends Set<? extends Long>, ? extends Set<? extends Long>> call(Tuples2<? extends Set<? extends Long>, ? extends Set<? extends Long>> tuples2, Set<? extends Long> set) {
-                return call2((Tuples2<? extends Set<Long>, ? extends Set<Long>>) tuples2, (Set<Long>) set);
+        C12238m.checkNotNullExpressionValue(observableM11076j, "Observable.combineLatest…veForumThreads.keys\n    }");
+        Observable<Pair<Set<Long>, Set<Long>>> observableM11091Q = ObservableExtensionsKt.leadingEdgeThrottle(observableM11076j, 1L, TimeUnit.SECONDS).m11112r().m11091Q(new Pair(C12148n0.emptySet(), C12148n0.emptySet()), new Func2<Pair<? extends Set<? extends Long>, ? extends Set<? extends Long>>, Set<? extends Long>, Pair<? extends Set<? extends Long>, ? extends Set<? extends Long>>>() { // from class: com.discord.stores.StoreMessageAck.observeActiveThreadIdsWithPrevious.2
+            @Override // p658rx.functions.Func2
+            public /* bridge */ /* synthetic */ Pair<? extends Set<? extends Long>, ? extends Set<? extends Long>> call(Pair<? extends Set<? extends Long>, ? extends Set<? extends Long>> pair, Set<? extends Long> set) {
+                return call2((Pair<? extends Set<Long>, ? extends Set<Long>>) pair, (Set<Long>) set);
             }
 
             /* JADX INFO: renamed from: call, reason: avoid collision after fix types in other method */
-            public final Tuples2<Set<Long>, Set<Long>> call2(Tuples2<? extends Set<Long>, ? extends Set<Long>> tuples2, Set<Long> set) {
-                return new Tuples2<>(tuples2.getSecond(), set);
+            public final Pair<Set<Long>, Set<Long>> call2(Pair<? extends Set<Long>, ? extends Set<Long>> pair, Set<Long> set) {
+                return new Pair<>(pair.getSecond(), set);
             }
         });
-        Intrinsics3.checkNotNullExpressionValue(observableQ, "Observable.combineLatest…ond, threadIds)\n        }");
-        return observableQ;
+        C12238m.checkNotNullExpressionValue(observableM11091Q, "Observable.combineLatest…ond, threadIds)\n        }");
+        return observableM11091Q;
     }
 
     private final Observable<Companion.ThreadAckState> observeThreadAckState(long channelId) {
-        Observable<Companion.ThreadAckState> observableR = ObservationDeck.connectRx$default(this.observationDeck, new ObservationDeck.UpdateSource[]{this.stream.getThreadsActiveJoined(), this.stream.getThreadsActive()}, false, null, null, new AnonymousClass1(channelId), 14, null).r();
-        Intrinsics3.checkNotNullExpressionValue(observableR, "observationDeck.connectR…  .distinctUntilChanged()");
-        return observableR;
+        Observable<Companion.ThreadAckState> observableM11112r = ObservationDeck.connectRx$default(this.observationDeck, new ObservationDeck.UpdateSource[]{this.stream.getThreadsActiveJoined(), this.stream.getThreadsActive()}, false, null, null, new C62101(channelId), 14, null).m11112r();
+        C12238m.checkNotNullExpressionValue(observableM11112r, "observationDeck.connectR…  .distinctUntilChanged()");
+        return observableM11112r;
     }
 
     private final void postPendingAck(Observable<PendingAck> observable, int i) {
-        AnonymousClass1 anonymousClass1 = new AnonymousClass1(i);
-        Observable<PendingAck> observableY = observable.y(new Func1<PendingAck, Boolean>() { // from class: com.discord.stores.StoreMessageAck.postPendingAck.2
-            @Override // j0.k.Func1
+        C62111 c62111 = new C62111(i);
+        Observable<PendingAck> observableM11118y = observable.m11118y(new InterfaceC12589b<PendingAck, Boolean>() { // from class: com.discord.stores.StoreMessageAck.postPendingAck.2
+            @Override // p637j0.p641k.InterfaceC12589b
             public final Boolean call(PendingAck pendingAck) {
-                return Boolean.valueOf(!Intrinsics3.areEqual(pendingAck, PendingAck.INSTANCE.getEMPTY()));
+                return Boolean.valueOf(!C12238m.areEqual(pendingAck, PendingAck.INSTANCE.getEMPTY()));
             }
         });
-        Intrinsics3.checkNotNullExpressionValue(observableY, "filter { it != PendingAck.EMPTY }");
-        ObservableExtensionsKt.appSubscribe(ObservableExtensionsKt.computationLatest(observableY), (Class<?>) observable.getClass(), (58 & 2) != 0 ? null : null, (Function1<? super Subscription, Unit>) ((58 & 4) != 0 ? null : null), (Function1<? super Error, Unit>) ((58 & 8) != 0 ? null : null), (Function0<Unit>) ((58 & 16) != 0 ? ObservableExtensionsKt.AnonymousClass1.INSTANCE : null), (Function0<Unit>) ((58 & 32) != 0 ? ObservableExtensionsKt.AnonymousClass2.INSTANCE : null), new AnonymousClass3(anonymousClass1));
+        C12238m.checkNotNullExpressionValue(observableM11118y, "filter { it != PendingAck.EMPTY }");
+        ObservableExtensionsKt.appSubscribe(ObservableExtensionsKt.computationLatest(observableM11118y), (Class<?>) observable.getClass(), (58 & 2) != 0 ? null : null, (Function1<? super Subscription, Unit>) ((58 & 4) != 0 ? null : null), (Function1<? super Error, Unit>) ((58 & 8) != 0 ? null : null), (Function0<Unit>) ((58 & 16) != 0 ? ObservableExtensionsKt.C68791.INSTANCE : null), (Function0<Unit>) ((58 & 32) != 0 ? ObservableExtensionsKt.C68802.INSTANCE : null), new C62133(c62111));
     }
 
     public static /* synthetic */ void postPendingAck$default(StoreMessageAck storeMessageAck, Observable observable, int i, int i2, Object obj) {
@@ -878,7 +878,7 @@ public final class StoreMessageAck extends StoreV2 {
         storeMessageAck.postPendingAck(observable, i);
     }
 
-    @Store3
+    @StoreThread
     private final void pruneAcks() {
         if (!this.stream.getGuilds().getUnavailableGuildsInternal$app_productionGoogleRelease().isEmpty()) {
             return;
@@ -896,7 +896,7 @@ public final class StoreMessageAck extends StoreV2 {
         }
     }
 
-    @Store3
+    @StoreThread
     private final void updateAcks(long channelId, Ack ackNewer) {
         if (INSTANCE.isThreadAndUnableToAck(getThreadAckStateInternal$default(this, channelId, this.stream.getThreadsActiveJoined().getActiveJoinedThreadsInternal$app_productionGoogleRelease(), this.stream.getThreadsActive().getAllForumThreadsByIdInternal$app_productionGoogleRelease(), null, 8, null))) {
             return;
@@ -908,12 +908,12 @@ public final class StoreMessageAck extends StoreV2 {
         }
     }
 
-    @Store3
+    @StoreThread
     private final void updateThreadAcks(Set<Long> oldThreadIds, Set<Long> newThreadIds) {
         Channel channel;
         UtcDateTime joinTimestamp;
         if (this.stream.getGuilds().getUnavailableGuildsInternal$app_productionGoogleRelease().isEmpty()) {
-            Iterator it = _Sets.minus((Set) oldThreadIds, (Iterable) newThreadIds).iterator();
+            Iterator it = C12150o0.minus((Set) oldThreadIds, (Iterable) newThreadIds).iterator();
             while (it.hasNext()) {
                 long jLongValue = ((Number) it.next()).longValue();
                 if (this.acks.containsKey(Long.valueOf(jLongValue)) && this.acks.remove(Long.valueOf(jLongValue)) != null) {
@@ -924,7 +924,7 @@ public final class StoreMessageAck extends StoreV2 {
         Map<Long, Long> guildsJoinedAtInternal$app_productionGoogleRelease = this.stream.getGuilds().getGuildsJoinedAtInternal$app_productionGoogleRelease();
         Map<Long, StoreThreadsActiveJoined.ActiveJoinedThread> activeJoinedThreadsInternal$app_productionGoogleRelease = this.stream.getThreadsActiveJoined().getActiveJoinedThreadsInternal$app_productionGoogleRelease();
         Map<Long, Channel> allForumThreadsByIdInternal$app_productionGoogleRelease = this.stream.getThreadsActive().getAllForumThreadsByIdInternal$app_productionGoogleRelease();
-        Iterator it2 = _Sets.minus((Set) newThreadIds, (Iterable) oldThreadIds).iterator();
+        Iterator it2 = C12150o0.minus((Set) newThreadIds, (Iterable) oldThreadIds).iterator();
         while (it2.hasNext()) {
             long jLongValue2 = ((Number) it2.next()).longValue();
             if (!this.acks.containsKey(Long.valueOf(jLongValue2))) {
@@ -935,7 +935,7 @@ public final class StoreMessageAck extends StoreV2 {
                     }
                     Channel channel2 = channel;
                     if (channel2 != null) {
-                        this.acks.put(Long.valueOf(jLongValue2), new Ack((ThreadUtils.getThreadAckMessageTimestamp$default(ThreadUtils.INSTANCE, channel2, (Long) outline.c(channel2, guildsJoinedAtInternal$app_productionGoogleRelease), (activeJoinedThread == null || (joinTimestamp = activeJoinedThread.getJoinTimestamp()) == null) ? null : Long.valueOf(joinTimestamp.getDateTimeMillis()), null, 4, null) - SnowflakeUtils.DISCORD_EPOCH) << 22, false, false));
+                        this.acks.put(Long.valueOf(jLongValue2), new Ack((ThreadUtils.getThreadAckMessageTimestamp$default(ThreadUtils.INSTANCE, channel2, (Long) C1643a.m843c(channel2, guildsJoinedAtInternal$app_productionGoogleRelease), (activeJoinedThread == null || (joinTimestamp = activeJoinedThread.getJoinTimestamp()) == null) ? null : Long.valueOf(joinTimestamp.getDateTimeMillis()), null, 4, null) - SnowflakeUtils.DISCORD_EPOCH) << 22, false, false));
                         markChanged();
                     }
                 }
@@ -944,14 +944,14 @@ public final class StoreMessageAck extends StoreV2 {
     }
 
     public final void ack(long channelId, boolean isLockedAck, boolean clearLock) {
-        this.dispatcher.schedule(new AnonymousClass1(channelId, isLockedAck, clearLock));
+        this.dispatcher.schedule(new C61971(channelId, isLockedAck, clearLock));
     }
 
     public final Map<Long, Ack> getAll() {
         return this.acksSnapshot;
     }
 
-    @Store3
+    @StoreThread
     public final Map<Long, Ack> getAllInternal() {
         return this.acks;
     }
@@ -960,7 +960,7 @@ public final class StoreMessageAck extends StoreV2 {
         return getAll().get(Long.valueOf(channelId));
     }
 
-    @Store3
+    @StoreThread
     public final void handleChannelSelected() {
         for (Map.Entry<Long, Ack> entry : this.acks.entrySet()) {
             this.acks.put(Long.valueOf(entry.getKey().longValue()), Ack.copy$default(entry.getValue(), 0L, false, false, 3, null));
@@ -969,34 +969,34 @@ public final class StoreMessageAck extends StoreV2 {
     }
 
     /* JADX WARN: Code duplicated, block: B:29:0x00cc  */
-    @Store3
+    @StoreThread
     public final void handleConnectionOpen(ModelPayload payload) {
         long dateTimeMillis;
         Object next;
         UtcDateTime joinedAt;
-        Intrinsics3.checkNotNullParameter(payload, "payload");
+        C12238m.checkNotNullParameter(payload, "payload");
         ModelPayload.VersionedReadStates readState = payload.getReadState();
-        Intrinsics3.checkNotNullExpressionValue(readState, "payload.readState");
+        C12238m.checkNotNullExpressionValue(readState, "payload.readState");
         if (!readState.isPartial()) {
             this.acks.clear();
         }
         Map<Long, Ack> map = this.acks;
         ModelPayload.VersionedReadStates readState2 = payload.getReadState();
-        Intrinsics3.checkNotNullExpressionValue(readState2, "payload.readState");
+        C12238m.checkNotNullExpressionValue(readState2, "payload.readState");
         List<ModelReadState> entries = readState2.getEntries();
-        Intrinsics3.checkNotNullExpressionValue(entries, "payload.readState.entries");
-        LinkedHashMap linkedHashMap = new LinkedHashMap(_Ranges.coerceAtLeast(MapsJVM.mapCapacity(Iterables2.collectionSizeOrDefault(entries, 10)), 16));
+        C12238m.checkNotNullExpressionValue(entries, "payload.readState.entries");
+        LinkedHashMap linkedHashMap = new LinkedHashMap(C11226f.coerceAtLeast(C12134g0.mapCapacity(C12149o.collectionSizeOrDefault(entries, 10)), 16));
         for (ModelReadState modelReadState : entries) {
-            Tuples2 tuples2 = Tuples.to(Long.valueOf(modelReadState.getChannelId()), new Ack(modelReadState, false, false));
-            linkedHashMap.put(tuples2.getFirst(), tuples2.getSecond());
+            Pair pairM10073to = C12116o.m10073to(Long.valueOf(modelReadState.getChannelId()), new Ack(modelReadState, false, false));
+            linkedHashMap.put(pairM10073to.getFirst(), pairM10073to.getSecond());
         }
         map.putAll(linkedHashMap);
         List<Guild> guilds = payload.getGuilds();
-        Intrinsics3.checkNotNullExpressionValue(guilds, "payload.guilds");
+        C12238m.checkNotNullExpressionValue(guilds, "payload.guilds");
         for (Guild guild : guilds) {
-            List<GuildMember> listV = guild.v();
-            if (listV != null) {
-                Iterator<T> it = listV.iterator();
+            List<GuildMember> listM7875v = guild.m7875v();
+            if (listM7875v != null) {
+                Iterator<T> it = listM7875v.iterator();
                 do {
                     if (!it.hasNext()) {
                         next = null;
@@ -1013,13 +1013,13 @@ public final class StoreMessageAck extends StoreV2 {
             } else {
                 dateTimeMillis = 0;
             }
-            List<Channel> listG = guild.g();
-            if (listG != null) {
+            List<Channel> listM7860g = guild.m7860g();
+            if (listM7860g != null) {
                 ArrayList arrayList = new ArrayList();
-                for (Object obj : listG) {
+                for (Object obj : listM7860g) {
                     Channel channel = (Channel) obj;
-                    Intrinsics3.checkNotNullParameter(channel, "$this$isTextyOrVoiceChannel");
-                    if ((ChannelUtils.v(channel) || ChannelUtils.J(channel)) && !this.acks.containsKey(Long.valueOf(channel.getId()))) {
+                    C12238m.checkNotNullParameter(channel, "$this$isTextyOrVoiceChannel");
+                    if ((ChannelUtils.m7698v(channel) || ChannelUtils.m7675J(channel)) && !this.acks.containsKey(Long.valueOf(channel.getId()))) {
                         arrayList.add(obj);
                     }
                 }
@@ -1039,24 +1039,24 @@ public final class StoreMessageAck extends StoreV2 {
         if (subscription != null) {
             subscription.unsubscribe();
         }
-        ObservableExtensionsKt.appSubscribe(ObservableExtensionsKt.computationLatest(observeActiveThreadIdsWithPrevious()), (Class<?>) StoreMessageAck.class, (58 & 2) != 0 ? null : null, (Function1<? super Subscription, Unit>) ((58 & 4) != 0 ? null : new AnonymousClass3()), (Function1<? super Error, Unit>) ((58 & 8) != 0 ? null : null), (Function0<Unit>) ((58 & 16) != 0 ? ObservableExtensionsKt.AnonymousClass1.INSTANCE : null), (Function0<Unit>) ((58 & 32) != 0 ? ObservableExtensionsKt.AnonymousClass2.INSTANCE : null), new AnonymousClass4());
+        ObservableExtensionsKt.appSubscribe(ObservableExtensionsKt.computationLatest(observeActiveThreadIdsWithPrevious()), (Class<?>) StoreMessageAck.class, (58 & 2) != 0 ? null : null, (Function1<? super Subscription, Unit>) ((58 & 4) != 0 ? null : new C62003()), (Function1<? super Error, Unit>) ((58 & 8) != 0 ? null : null), (Function0<Unit>) ((58 & 16) != 0 ? ObservableExtensionsKt.C68791.INSTANCE : null), (Function0<Unit>) ((58 & 32) != 0 ? ObservableExtensionsKt.C68802.INSTANCE : null), new C62014());
         markChanged();
     }
 
-    @Store3
+    @StoreThread
     public final void handleGuildCreate() {
         pruneAcks();
     }
 
-    @Store3
+    @StoreThread
     public final void handleMessageAck(ModelReadState readState) {
-        Intrinsics3.checkNotNullParameter(readState, "readState");
+        C12238m.checkNotNullParameter(readState, "readState");
         updateAcks(readState.getChannelId(), new Ack(readState, false, false));
     }
 
-    @Store3
+    @StoreThread
     public final void handleMessageCreate(com.discord.api.message.Message message) {
-        Intrinsics3.checkNotNullParameter(message, "message");
+        C12238m.checkNotNullParameter(message, "message");
         User author = message.getAuthor();
         if (author == null || author.getId() != this.stream.getUsers().getMe().getId()) {
             return;
@@ -1064,7 +1064,7 @@ public final class StoreMessageAck extends StoreV2 {
         updateAcks(message.getChannelId(), new Ack(message.getId(), false, false));
     }
 
-    @Store3
+    @StoreThread
     public final void handlePreLogout() {
         Subscription subscription = this.threadSyncSubscription;
         if (subscription != null) {
@@ -1073,35 +1073,35 @@ public final class StoreMessageAck extends StoreV2 {
         this.threadSyncSubscription = null;
     }
 
-    @Store3
+    @StoreThread
     public final void handleThreadCreateOrUpdate(Channel channel) {
         Channel channelFindChannelById;
-        Intrinsics3.checkNotNullParameter(channel, "channel");
+        C12238m.checkNotNullParameter(channel, "channel");
         boolean z2 = channel.getOwnerId() == this.stream.getUsers().getMe().getId();
-        if (ChannelUtils.H(channel) && !ChannelUtils.j(channel) && z2 && (channelFindChannelById = this.stream.getChannels().findChannelById(channel.getParentId())) != null && ChannelUtils.q(channelFindChannelById)) {
+        if (ChannelUtils.m7673H(channel) && !ChannelUtils.m7686j(channel) && z2 && (channelFindChannelById = this.stream.getChannels().findChannelById(channel.getParentId())) != null && ChannelUtils.m7693q(channelFindChannelById)) {
             updateAcks(channelFindChannelById.getId(), new Ack(channel.getId(), false, false));
         }
     }
 
     @Override // com.discord.stores.Store
     public void init(Context context) {
-        Intrinsics3.checkNotNullParameter(context, "context");
+        C12238m.checkNotNullParameter(context, "context");
         super.init(context);
-        Observable<R> observableY = StoreStream.INSTANCE.getChannelsSelected().observeResolvedSelectedChannel().r().Y(new Func1<StoreChannelsSelected.ResolvedSelectedChannel, Observable<? extends Long>>() { // from class: com.discord.stores.StoreMessageAck.init.1
-            @Override // j0.k.Func1
+        Observable<R> observableM11099Y = StoreStream.INSTANCE.getChannelsSelected().observeResolvedSelectedChannel().m11112r().m11099Y(new InterfaceC12589b<StoreChannelsSelected.ResolvedSelectedChannel, Observable<? extends Long>>() { // from class: com.discord.stores.StoreMessageAck.init.1
+            @Override // p637j0.p641k.InterfaceC12589b
             public final Observable<? extends Long> call(final StoreChannelsSelected.ResolvedSelectedChannel resolvedSelectedChannel) {
-                return Observable.h(StoreMessageAck.this.stream.getMessages().getAllDetached().p(50L, TimeUnit.MILLISECONDS), StoreMessageAck.this.stream.getMessagesLoader().getMessagesLoadedState(resolvedSelectedChannel.getId()).G(new Func1<StoreMessagesLoader.ChannelLoadedState, Boolean>() { // from class: com.discord.stores.StoreMessageAck.init.1.1
-                    @Override // j0.k.Func1
+                return Observable.m11073h(StoreMessageAck.this.stream.getMessages().getAllDetached().m11110p(50L, TimeUnit.MILLISECONDS), StoreMessageAck.this.stream.getMessagesLoader().getMessagesLoadedState(resolvedSelectedChannel.getId()).m11083G(new InterfaceC12589b<StoreMessagesLoader.ChannelLoadedState, Boolean>() { // from class: com.discord.stores.StoreMessageAck.init.1.1
+                    @Override // p637j0.p641k.InterfaceC12589b
                     public final Boolean call(StoreMessagesLoader.ChannelLoadedState channelLoadedState) {
                         return Boolean.valueOf(channelLoadedState.isInitialMessagesLoaded() && !channelLoadedState.isLoadingMessages());
                     }
-                }).r(), StoreMessageAck.this.stream.getChat().observeInteractionState().y(new Func1<StoreChat.InteractionState, Boolean>() { // from class: com.discord.stores.StoreMessageAck.init.1.2
-                    @Override // j0.k.Func1
+                }).m11112r(), StoreMessageAck.this.stream.getChat().observeInteractionState().m11118y(new InterfaceC12589b<StoreChat.InteractionState, Boolean>() { // from class: com.discord.stores.StoreMessageAck.init.1.2
+                    @Override // p637j0.p641k.InterfaceC12589b
                     public final Boolean call(StoreChat.InteractionState interactionState) {
                         return Boolean.valueOf(interactionState.getChannelId() == resolvedSelectedChannel.getId());
                     }
                 }), StoreMessageAck.this.stream.getMessageAck().observeForChannel(resolvedSelectedChannel.getId()), new Func4<Set<? extends Long>, Boolean, StoreChat.InteractionState, Ack, Long>() { // from class: com.discord.stores.StoreMessageAck.init.1.3
-                    @Override // rx.functions.Func4
+                    @Override // p658rx.functions.Func4
                     public /* bridge */ /* synthetic */ Long call(Set<? extends Long> set, Boolean bool, StoreChat.InteractionState interactionState, Ack ack) {
                         return call2((Set<Long>) set, bool, interactionState, ack);
                     }
@@ -1111,9 +1111,9 @@ public final class StoreMessageAck extends StoreV2 {
                     public final Long call2(Set<Long> set, Boolean bool, StoreChat.InteractionState interactionState, Ack ack) {
                         long channelId;
                         Channel maybeChannel = resolvedSelectedChannel.getMaybeChannel();
-                        boolean z2 = maybeChannel != null && ChannelUtils.o(maybeChannel);
+                        boolean z2 = maybeChannel != null && ChannelUtils.m7691o(maybeChannel);
                         if (interactionState.isAtBottomIgnoringTouch()) {
-                            Intrinsics3.checkNotNullExpressionValue(bool, "isLoadingSettled");
+                            C12238m.checkNotNullExpressionValue(bool, "isLoadingSettled");
                             if (!bool.booleanValue() || set.contains(Long.valueOf(interactionState.getChannelId())) || z2 || (ack != null && ack.isLockedAck())) {
                                 channelId = 0;
                             } else {
@@ -1127,55 +1127,55 @@ public final class StoreMessageAck extends StoreV2 {
                 });
             }
         });
-        Intrinsics3.checkNotNullExpressionValue(observableY, "StoreStream\n        .get… 0L\n          }\n        }");
-        Observable<Long> observableP = ObservableExtensionsKt.computationLatest(observableY).p(500L, TimeUnit.MILLISECONDS);
-        Intrinsics3.checkNotNullExpressionValue(observableP, "StoreStream\n        .get…0, TimeUnit.MILLISECONDS)");
-        postPendingAck$default(this, getPendingAck(observableP, false, false), 0, 1, null);
+        C12238m.checkNotNullExpressionValue(observableM11099Y, "StoreStream\n        .get… 0L\n          }\n        }");
+        Observable<Long> observableM11110p = ObservableExtensionsKt.computationLatest(observableM11099Y).m11110p(500L, TimeUnit.MILLISECONDS);
+        C12238m.checkNotNullExpressionValue(observableM11110p, "StoreStream\n        .get…0, TimeUnit.MILLISECONDS)");
+        postPendingAck$default(this, getPendingAck(observableM11110p, false, false), 0, 1, null);
     }
 
     public final void markUnread(long channelId, long messageId) {
-        Observable observableJ = Observable.j(this.stream.getMessages().observeMessagesForChannel(channelId).y(new Func1<List<? extends Message>, Boolean>() { // from class: com.discord.stores.StoreMessageAck.markUnread.1
-            @Override // j0.k.Func1
+        Observable observableM11076j = Observable.m11076j(this.stream.getMessages().observeMessagesForChannel(channelId).m11118y(new InterfaceC12589b<List<? extends Message>, Boolean>() { // from class: com.discord.stores.StoreMessageAck.markUnread.1
+            @Override // p637j0.p641k.InterfaceC12589b
             public /* bridge */ /* synthetic */ Boolean call(List<? extends Message> list) {
                 return call2((List<Message>) list);
             }
 
             /* JADX INFO: renamed from: call, reason: avoid collision after fix types in other method */
             public final Boolean call2(List<Message> list) {
-                Intrinsics3.checkNotNullExpressionValue(list, "it");
+                C12238m.checkNotNullExpressionValue(list, "it");
                 return Boolean.valueOf(!list.isEmpty());
             }
-        }), observeThreadAckState(channelId), new Func2<List<? extends Message>, Companion.ThreadAckState, Tuples2<? extends List<? extends Message>, ? extends Companion.ThreadAckState>>() { // from class: com.discord.stores.StoreMessageAck.markUnread.2
-            @Override // rx.functions.Func2
-            public /* bridge */ /* synthetic */ Tuples2<? extends List<? extends Message>, ? extends Companion.ThreadAckState> call(List<? extends Message> list, Companion.ThreadAckState threadAckState) {
+        }), observeThreadAckState(channelId), new Func2<List<? extends Message>, Companion.ThreadAckState, Pair<? extends List<? extends Message>, ? extends Companion.ThreadAckState>>() { // from class: com.discord.stores.StoreMessageAck.markUnread.2
+            @Override // p658rx.functions.Func2
+            public /* bridge */ /* synthetic */ Pair<? extends List<? extends Message>, ? extends Companion.ThreadAckState> call(List<? extends Message> list, Companion.ThreadAckState threadAckState) {
                 return call2((List<Message>) list, threadAckState);
             }
 
             /* JADX INFO: renamed from: call, reason: avoid collision after fix types in other method */
-            public final Tuples2<List<Message>, Companion.ThreadAckState> call2(List<Message> list, Companion.ThreadAckState threadAckState) {
-                return new Tuples2<>(list, threadAckState);
+            public final Pair<List<Message>, Companion.ThreadAckState> call2(List<Message> list, Companion.ThreadAckState threadAckState) {
+                return new Pair<>(list, threadAckState);
             }
         });
-        Intrinsics3.checkNotNullExpressionValue(observableJ, "Observable\n        .comb…lMessages, threadState) }");
-        ObservableExtensionsKt.appSubscribe(ObservableExtensionsKt.takeSingleUntilTimeout(observableJ, 10L, false), (Class<?>) StoreMessageAck.class, (58 & 2) != 0 ? null : null, (Function1<? super Subscription, Unit>) ((58 & 4) != 0 ? null : null), (Function1<? super Error, Unit>) ((58 & 8) != 0 ? null : null), (Function0<Unit>) ((58 & 16) != 0 ? ObservableExtensionsKt.AnonymousClass1.INSTANCE : null), (Function0<Unit>) ((58 & 32) != 0 ? ObservableExtensionsKt.AnonymousClass2.INSTANCE : null), new AnonymousClass3(messageId, channelId));
+        C12238m.checkNotNullExpressionValue(observableM11076j, "Observable\n        .comb…lMessages, threadState) }");
+        ObservableExtensionsKt.appSubscribe(ObservableExtensionsKt.takeSingleUntilTimeout(observableM11076j, 10L, false), (Class<?>) StoreMessageAck.class, (58 & 2) != 0 ? null : null, (Function1<? super Subscription, Unit>) ((58 & 4) != 0 ? null : null), (Function1<? super Error, Unit>) ((58 & 8) != 0 ? null : null), (Function0<Unit>) ((58 & 16) != 0 ? ObservableExtensionsKt.C68791.INSTANCE : null), (Function0<Unit>) ((58 & 32) != 0 ? ObservableExtensionsKt.C68802.INSTANCE : null), new C62053(messageId, channelId));
     }
 
     public final Observable<Map<Long, Ack>> observeAll() {
-        Observable<Map<Long, Ack>> observableR = ObservationDeck.connectRx$default(this.observationDeck, new ObservationDeck.UpdateSource[]{this}, false, null, null, new AnonymousClass1(), 14, null).r();
-        Intrinsics3.checkNotNullExpressionValue(observableR, "observationDeck.connectR…  .distinctUntilChanged()");
-        return observableR;
+        Observable<Map<Long, Ack>> observableM11112r = ObservationDeck.connectRx$default(this.observationDeck, new ObservationDeck.UpdateSource[]{this}, false, null, null, new C62081(), 14, null).m11112r();
+        C12238m.checkNotNullExpressionValue(observableM11112r, "observationDeck.connectR…  .distinctUntilChanged()");
+        return observableM11112r;
     }
 
     public final Observable<Ack> observeForChannel(long channelId) {
-        Observable<Ack> observableR = ObservationDeck.connectRx$default(this.observationDeck, new ObservationDeck.UpdateSource[]{this}, false, null, null, new AnonymousClass1(channelId), 14, null).r();
-        Intrinsics3.checkNotNullExpressionValue(observableR, "observationDeck.connectR…  .distinctUntilChanged()");
-        return observableR;
+        Observable<Ack> observableM11112r = ObservationDeck.connectRx$default(this.observationDeck, new ObservationDeck.UpdateSource[]{this}, false, null, null, new C62091(channelId), 14, null).m11112r();
+        C12238m.checkNotNullExpressionValue(observableM11112r, "observationDeck.connectR…  .distinctUntilChanged()");
+        return observableM11112r;
     }
 
     @Override // com.discord.stores.StoreV2
     public void snapshotData() {
         super.snapshotData();
-        HashMap mapSnapshot$default = CollectionExtensions.snapshot$default(this.acks, 0, 0.0f, 3, null);
+        HashMap mapSnapshot$default = CollectionExtensionsKt.snapshot$default(this.acks, 0, 0.0f, 3, null);
         this.acksSnapshot = mapSnapshot$default;
         Persister.set$default(this.acksPersister, mapSnapshot$default, false, 2, null);
     }

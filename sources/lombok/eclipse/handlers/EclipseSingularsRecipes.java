@@ -56,7 +56,7 @@ public class EclipseSingularsRecipes {
     /* JADX INFO: loaded from: app.apk:lombok/eclipse/handlers/EclipseSingularsRecipes$StatementMaker.SCL.lombok */
     public interface StatementMaker {
         /* JADX INFO: renamed from: make */
-        Statement mo186make();
+        Statement mo11563make();
     }
 
     /* JADX INFO: loaded from: app.apk:lombok/eclipse/handlers/EclipseSingularsRecipes$TypeReferenceMaker.SCL.lombok */
@@ -306,7 +306,7 @@ public class EclipseSingularsRecipes {
             StatementMaker returnStatementMaker = new StatementMaker() { // from class: lombok.eclipse.handlers.EclipseSingularsRecipes.EclipseSingularizer.2
                 @Override // lombok.eclipse.handlers.EclipseSingularsRecipes.StatementMaker
                 /* JADX INFO: renamed from: make, reason: merged with bridge method [inline-methods] */
-                public ReturnStatement mo186make() {
+                public ReturnStatement mo11563make() {
                     if (job.oldChain) {
                         return new ReturnStatement(new ThisReference(0, 0), 0, 0);
                     }

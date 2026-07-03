@@ -1,18 +1,18 @@
 package com.discord.analytics.generated.events;
 
-import b.d.b.a.outline;
 import com.discord.analytics.generated.traits.TrackBase;
-import com.discord.analytics.generated.traits.TrackBase2;
+import com.discord.analytics.generated.traits.TrackBaseReceiver;
 import com.discord.analytics.generated.traits.TrackChannel;
-import com.discord.analytics.generated.traits.TrackChannel2;
+import com.discord.analytics.generated.traits.TrackChannelReceiver;
 import com.discord.analytics.generated.traits.TrackGuild;
-import com.discord.analytics.generated.traits.TrackGuild2;
+import com.discord.analytics.generated.traits.TrackGuildReceiver;
 import com.discord.api.science.AnalyticsSchema;
-import d0.z.d.Intrinsics3;
+import p007b.p100d.p104b.p105a.C1643a;
+import p507d0.p592z.p594d.C12238m;
 
 /* JADX INFO: compiled from: TrackStartSpeaking.kt */
 /* JADX INFO: loaded from: classes.dex */
-public final /* data */ class TrackStartSpeaking implements AnalyticsSchema, TrackBase2, TrackGuild2, TrackChannel2 {
+public final /* data */ class TrackStartSpeaking implements AnalyticsSchema, TrackBaseReceiver, TrackGuildReceiver, TrackChannelReceiver {
     private TrackBase trackBase;
     private TrackChannel trackChannel;
     private TrackGuild trackGuild;
@@ -33,14 +33,15 @@ public final /* data */ class TrackStartSpeaking implements AnalyticsSchema, Tra
     private final Long voiceStateCount = null;
     private final transient String analyticsSchemaTypeName = "start_speaking";
 
-    @Override // com.discord.analytics.generated.traits.TrackGuild2
+    @Override // com.discord.analytics.generated.traits.TrackGuildReceiver
     /* JADX INFO: renamed from: a, reason: from getter */
     public TrackGuild getTrackGuild() {
         return this.trackGuild;
     }
 
-    @Override // com.discord.analytics.generated.traits.TrackGuild2
-    public void c(TrackGuild trackGuild) {
+    @Override // com.discord.analytics.generated.traits.TrackGuildReceiver
+    /* JADX INFO: renamed from: c */
+    public void mo7508c(TrackGuild trackGuild) {
         this.trackGuild = trackGuild;
     }
 
@@ -58,7 +59,7 @@ public final /* data */ class TrackStartSpeaking implements AnalyticsSchema, Tra
             return false;
         }
         TrackStartSpeaking trackStartSpeaking = (TrackStartSpeaking) other;
-        return Intrinsics3.areEqual(this.channel, trackStartSpeaking.channel) && Intrinsics3.areEqual(this.mode, trackStartSpeaking.mode) && Intrinsics3.areEqual(this.priority, trackStartSpeaking.priority) && Intrinsics3.areEqual(this.server, trackStartSpeaking.server) && Intrinsics3.areEqual(this.gamePlatform, trackStartSpeaking.gamePlatform) && Intrinsics3.areEqual(this.gameName, trackStartSpeaking.gameName) && Intrinsics3.areEqual(this.gameExeName, trackStartSpeaking.gameExeName) && Intrinsics3.areEqual(this.gameId, trackStartSpeaking.gameId) && Intrinsics3.areEqual(this.mediaSessionId, trackStartSpeaking.mediaSessionId) && Intrinsics3.areEqual(this.rtcConnectionId, trackStartSpeaking.rtcConnectionId) && Intrinsics3.areEqual(this.packetsSent, trackStartSpeaking.packetsSent) && Intrinsics3.areEqual(this.packetsSentLost, trackStartSpeaking.packetsSentLost) && Intrinsics3.areEqual(this.packetsReceived, trackStartSpeaking.packetsReceived) && Intrinsics3.areEqual(this.packetsReceivedLost, trackStartSpeaking.packetsReceivedLost) && Intrinsics3.areEqual(this.voiceStateCount, trackStartSpeaking.voiceStateCount);
+        return C12238m.areEqual(this.channel, trackStartSpeaking.channel) && C12238m.areEqual(this.mode, trackStartSpeaking.mode) && C12238m.areEqual(this.priority, trackStartSpeaking.priority) && C12238m.areEqual(this.server, trackStartSpeaking.server) && C12238m.areEqual(this.gamePlatform, trackStartSpeaking.gamePlatform) && C12238m.areEqual(this.gameName, trackStartSpeaking.gameName) && C12238m.areEqual(this.gameExeName, trackStartSpeaking.gameExeName) && C12238m.areEqual(this.gameId, trackStartSpeaking.gameId) && C12238m.areEqual(this.mediaSessionId, trackStartSpeaking.mediaSessionId) && C12238m.areEqual(this.rtcConnectionId, trackStartSpeaking.rtcConnectionId) && C12238m.areEqual(this.packetsSent, trackStartSpeaking.packetsSent) && C12238m.areEqual(this.packetsSentLost, trackStartSpeaking.packetsSentLost) && C12238m.areEqual(this.packetsReceived, trackStartSpeaking.packetsReceived) && C12238m.areEqual(this.packetsReceivedLost, trackStartSpeaking.packetsReceivedLost) && C12238m.areEqual(this.voiceStateCount, trackStartSpeaking.voiceStateCount);
     }
 
     public int hashCode() {
@@ -95,35 +96,35 @@ public final /* data */ class TrackStartSpeaking implements AnalyticsSchema, Tra
     }
 
     public String toString() {
-        StringBuilder sbU = outline.U("TrackStartSpeaking(channel=");
-        sbU.append(this.channel);
-        sbU.append(", mode=");
-        sbU.append(this.mode);
-        sbU.append(", priority=");
-        sbU.append(this.priority);
-        sbU.append(", server=");
-        sbU.append(this.server);
-        sbU.append(", gamePlatform=");
-        sbU.append(this.gamePlatform);
-        sbU.append(", gameName=");
-        sbU.append(this.gameName);
-        sbU.append(", gameExeName=");
-        sbU.append(this.gameExeName);
-        sbU.append(", gameId=");
-        sbU.append(this.gameId);
-        sbU.append(", mediaSessionId=");
-        sbU.append(this.mediaSessionId);
-        sbU.append(", rtcConnectionId=");
-        sbU.append(this.rtcConnectionId);
-        sbU.append(", packetsSent=");
-        sbU.append(this.packetsSent);
-        sbU.append(", packetsSentLost=");
-        sbU.append(this.packetsSentLost);
-        sbU.append(", packetsReceived=");
-        sbU.append(this.packetsReceived);
-        sbU.append(", packetsReceivedLost=");
-        sbU.append(this.packetsReceivedLost);
-        sbU.append(", voiceStateCount=");
-        return outline.G(sbU, this.voiceStateCount, ")");
+        StringBuilder sbM833U = C1643a.m833U("TrackStartSpeaking(channel=");
+        sbM833U.append(this.channel);
+        sbM833U.append(", mode=");
+        sbM833U.append(this.mode);
+        sbM833U.append(", priority=");
+        sbM833U.append(this.priority);
+        sbM833U.append(", server=");
+        sbM833U.append(this.server);
+        sbM833U.append(", gamePlatform=");
+        sbM833U.append(this.gamePlatform);
+        sbM833U.append(", gameName=");
+        sbM833U.append(this.gameName);
+        sbM833U.append(", gameExeName=");
+        sbM833U.append(this.gameExeName);
+        sbM833U.append(", gameId=");
+        sbM833U.append(this.gameId);
+        sbM833U.append(", mediaSessionId=");
+        sbM833U.append(this.mediaSessionId);
+        sbM833U.append(", rtcConnectionId=");
+        sbM833U.append(this.rtcConnectionId);
+        sbM833U.append(", packetsSent=");
+        sbM833U.append(this.packetsSent);
+        sbM833U.append(", packetsSentLost=");
+        sbM833U.append(this.packetsSentLost);
+        sbM833U.append(", packetsReceived=");
+        sbM833U.append(this.packetsReceived);
+        sbM833U.append(", packetsReceivedLost=");
+        sbM833U.append(this.packetsReceivedLost);
+        sbM833U.append(", voiceStateCount=");
+        return C1643a.m819G(sbM833U, this.voiceStateCount, ")");
     }
 }

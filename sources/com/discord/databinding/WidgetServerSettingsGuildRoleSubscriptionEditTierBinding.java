@@ -17,45 +17,52 @@ import com.google.android.material.tabs.TabLayout;
 /* JADX INFO: loaded from: classes.dex */
 public final class WidgetServerSettingsGuildRoleSubscriptionEditTierBinding implements ViewBinding {
 
+    /* JADX INFO: renamed from: a */
     @NonNull
-    public final ConstraintLayout a;
+    public final ConstraintLayout f17660a;
 
-    /* JADX INFO: renamed from: b, reason: collision with root package name */
+    /* JADX INFO: renamed from: b */
     @NonNull
-    public final MaterialButton f2569b;
+    public final MaterialButton f17661b;
 
+    /* JADX INFO: renamed from: c */
     @NonNull
-    public final Group c;
+    public final Group f17662c;
 
+    /* JADX INFO: renamed from: d */
     @NonNull
-    public final TabLayout d;
+    public final TabLayout f17663d;
 
+    /* JADX INFO: renamed from: e */
     @NonNull
-    public final ViewPager2 e;
+    public final ViewPager2 f17664e;
 
+    /* JADX INFO: renamed from: f */
     @NonNull
-    public final MaterialButton f;
+    public final MaterialButton f17665f;
 
+    /* JADX INFO: renamed from: g */
     @NonNull
-    public final FloatingActionButton g;
+    public final FloatingActionButton f17666g;
 
+    /* JADX INFO: renamed from: h */
     @NonNull
-    public final AppViewFlipper h;
+    public final AppViewFlipper f17667h;
 
     public WidgetServerSettingsGuildRoleSubscriptionEditTierBinding(@NonNull ConstraintLayout constraintLayout, @NonNull MaterialButton materialButton, @NonNull TextView textView, @NonNull Group group, @NonNull TabLayout tabLayout, @NonNull ViewPager2 viewPager2, @NonNull Barrier barrier, @NonNull AppBarLayout appBarLayout, @NonNull MaterialButton materialButton2, @NonNull FloatingActionButton floatingActionButton, @NonNull AppViewFlipper appViewFlipper) {
-        this.a = constraintLayout;
-        this.f2569b = materialButton;
-        this.c = group;
-        this.d = tabLayout;
-        this.e = viewPager2;
-        this.f = materialButton2;
-        this.g = floatingActionButton;
-        this.h = appViewFlipper;
+        this.f17660a = constraintLayout;
+        this.f17661b = materialButton;
+        this.f17662c = group;
+        this.f17663d = tabLayout;
+        this.f17664e = viewPager2;
+        this.f17665f = materialButton2;
+        this.f17666g = floatingActionButton;
+        this.f17667h = appViewFlipper;
     }
 
     @Override // androidx.viewbinding.ViewBinding
     @NonNull
     public View getRoot() {
-        return this.a;
+        return this.f17660a;
     }
 }

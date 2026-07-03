@@ -1,18 +1,18 @@
 package com.discord.analytics.generated.events;
 
-import b.d.b.a.outline;
 import com.discord.analytics.generated.traits.TrackBase;
-import com.discord.analytics.generated.traits.TrackBase2;
+import com.discord.analytics.generated.traits.TrackBaseReceiver;
 import com.discord.analytics.generated.traits.TrackGuild;
-import com.discord.analytics.generated.traits.TrackGuild2;
+import com.discord.analytics.generated.traits.TrackGuildReceiver;
 import com.discord.api.science.AnalyticsSchema;
 import com.discord.models.domain.ModelAuditLogEntry;
-import d0.z.d.Intrinsics3;
 import java.util.List;
+import p007b.p100d.p104b.p105a.C1643a;
+import p507d0.p592z.p594d.C12238m;
 
 /* JADX INFO: compiled from: TrackRoleSubscriptionListingCreated.kt */
 /* JADX INFO: loaded from: classes.dex */
-public final /* data */ class TrackRoleSubscriptionListingCreated implements AnalyticsSchema, TrackBase2, TrackGuild2 {
+public final /* data */ class TrackRoleSubscriptionListingCreated implements AnalyticsSchema, TrackBaseReceiver, TrackGuildReceiver {
     private TrackBase trackBase;
     private TrackGuild trackGuild;
     private final Long roleSubscriptionListingId = null;
@@ -25,14 +25,15 @@ public final /* data */ class TrackRoleSubscriptionListingCreated implements Ana
     private final Long priceTier = null;
     private final transient String analyticsSchemaTypeName = "role_subscription_listing_created";
 
-    @Override // com.discord.analytics.generated.traits.TrackGuild2
+    @Override // com.discord.analytics.generated.traits.TrackGuildReceiver
     /* JADX INFO: renamed from: a, reason: from getter */
     public TrackGuild getTrackGuild() {
         return this.trackGuild;
     }
 
-    @Override // com.discord.analytics.generated.traits.TrackGuild2
-    public void c(TrackGuild trackGuild) {
+    @Override // com.discord.analytics.generated.traits.TrackGuildReceiver
+    /* JADX INFO: renamed from: c */
+    public void mo7508c(TrackGuild trackGuild) {
         this.trackGuild = trackGuild;
     }
 
@@ -50,7 +51,7 @@ public final /* data */ class TrackRoleSubscriptionListingCreated implements Ana
             return false;
         }
         TrackRoleSubscriptionListingCreated trackRoleSubscriptionListingCreated = (TrackRoleSubscriptionListingCreated) other;
-        return Intrinsics3.areEqual(this.roleSubscriptionListingId, trackRoleSubscriptionListingCreated.roleSubscriptionListingId) && Intrinsics3.areEqual(this.name, trackRoleSubscriptionListingCreated.name) && Intrinsics3.areEqual(this.roleSubscriptionGroupListingId, trackRoleSubscriptionListingCreated.roleSubscriptionGroupListingId) && Intrinsics3.areEqual(this.published, trackRoleSubscriptionListingCreated.published) && Intrinsics3.areEqual(this.channelBenefitIds, trackRoleSubscriptionListingCreated.channelBenefitIds) && Intrinsics3.areEqual(this.roleId, trackRoleSubscriptionListingCreated.roleId) && Intrinsics3.areEqual(this.intangibleBenefitNames, trackRoleSubscriptionListingCreated.intangibleBenefitNames) && Intrinsics3.areEqual(this.priceTier, trackRoleSubscriptionListingCreated.priceTier);
+        return C12238m.areEqual(this.roleSubscriptionListingId, trackRoleSubscriptionListingCreated.roleSubscriptionListingId) && C12238m.areEqual(this.name, trackRoleSubscriptionListingCreated.name) && C12238m.areEqual(this.roleSubscriptionGroupListingId, trackRoleSubscriptionListingCreated.roleSubscriptionGroupListingId) && C12238m.areEqual(this.published, trackRoleSubscriptionListingCreated.published) && C12238m.areEqual(this.channelBenefitIds, trackRoleSubscriptionListingCreated.channelBenefitIds) && C12238m.areEqual(this.roleId, trackRoleSubscriptionListingCreated.roleId) && C12238m.areEqual(this.intangibleBenefitNames, trackRoleSubscriptionListingCreated.intangibleBenefitNames) && C12238m.areEqual(this.priceTier, trackRoleSubscriptionListingCreated.priceTier);
     }
 
     public int hashCode() {
@@ -73,21 +74,21 @@ public final /* data */ class TrackRoleSubscriptionListingCreated implements Ana
     }
 
     public String toString() {
-        StringBuilder sbU = outline.U("TrackRoleSubscriptionListingCreated(roleSubscriptionListingId=");
-        sbU.append(this.roleSubscriptionListingId);
-        sbU.append(", name=");
-        sbU.append(this.name);
-        sbU.append(", roleSubscriptionGroupListingId=");
-        sbU.append(this.roleSubscriptionGroupListingId);
-        sbU.append(", published=");
-        sbU.append(this.published);
-        sbU.append(", channelBenefitIds=");
-        sbU.append(this.channelBenefitIds);
-        sbU.append(", roleId=");
-        sbU.append(this.roleId);
-        sbU.append(", intangibleBenefitNames=");
-        sbU.append(this.intangibleBenefitNames);
-        sbU.append(", priceTier=");
-        return outline.G(sbU, this.priceTier, ")");
+        StringBuilder sbM833U = C1643a.m833U("TrackRoleSubscriptionListingCreated(roleSubscriptionListingId=");
+        sbM833U.append(this.roleSubscriptionListingId);
+        sbM833U.append(", name=");
+        sbM833U.append(this.name);
+        sbM833U.append(", roleSubscriptionGroupListingId=");
+        sbM833U.append(this.roleSubscriptionGroupListingId);
+        sbM833U.append(", published=");
+        sbM833U.append(this.published);
+        sbM833U.append(", channelBenefitIds=");
+        sbM833U.append(this.channelBenefitIds);
+        sbM833U.append(", roleId=");
+        sbM833U.append(this.roleId);
+        sbM833U.append(", intangibleBenefitNames=");
+        sbM833U.append(this.intangibleBenefitNames);
+        sbM833U.append(", priceTier=");
+        return C1643a.m819G(sbM833U, this.priceTier, ")");
     }
 }

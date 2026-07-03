@@ -7,17 +7,20 @@ import android.os.Parcel;
 import android.os.Parcelable;
 import android.util.Log;
 import androidx.annotation.Nullable;
-import b.i.a.f.d.d;
 import java.util.Objects;
+import p007b.p225i.p226a.p288f.p298d.C3229d;
 
 /* JADX INFO: compiled from: com.google.android.gms:play-services-cloud-messaging@@16.0.0 */
 /* JADX INFO: loaded from: classes3.dex */
 public class zza implements Parcelable {
-    public static final Parcelable.Creator<zza> CREATOR = new d();
-    public Messenger j;
+    public static final Parcelable.Creator<zza> CREATOR = new C3229d();
 
+    /* JADX INFO: renamed from: j */
+    public Messenger f20471j;
+
+    /* JADX INFO: renamed from: com.google.android.gms.cloudmessaging.zza$a */
     /* JADX INFO: compiled from: com.google.android.gms:play-services-cloud-messaging@@16.0.0 */
-    public static final class a extends ClassLoader {
+    public static final class C10798a extends ClassLoader {
         @Override // java.lang.ClassLoader
         public final Class<?> loadClass(String str, boolean z2) throws ClassNotFoundException {
             if (!"com.google.android.gms.iid.MessengerCompat".equals(str)) {
@@ -32,11 +35,12 @@ public class zza implements Parcelable {
     }
 
     public zza(IBinder iBinder) {
-        this.j = new Messenger(iBinder);
+        this.f20471j = new Messenger(iBinder);
     }
 
-    public final IBinder a() {
-        Messenger messenger = this.j;
+    /* JADX INFO: renamed from: a */
+    public final IBinder m9017a() {
+        Messenger messenger = this.f20471j;
         Objects.requireNonNull(messenger);
         return messenger.getBinder();
     }
@@ -51,19 +55,19 @@ public class zza implements Parcelable {
             return false;
         }
         try {
-            return a().equals(((zza) obj).a());
+            return m9017a().equals(((zza) obj).m9017a());
         } catch (ClassCastException unused) {
             return false;
         }
     }
 
     public int hashCode() {
-        return a().hashCode();
+        return m9017a().hashCode();
     }
 
     @Override // android.os.Parcelable
     public void writeToParcel(Parcel parcel, int i) {
-        Messenger messenger = this.j;
+        Messenger messenger = this.f20471j;
         Objects.requireNonNull(messenger);
         parcel.writeStrongBinder(messenger.getBinder());
     }

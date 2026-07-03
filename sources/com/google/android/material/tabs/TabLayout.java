@@ -1,5 +1,6 @@
 package com.google.android.material.tabs;
 
+import android.R;
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
 import android.animation.ValueAnimator;
@@ -42,6 +43,7 @@ import androidx.annotation.Nullable;
 import androidx.annotation.RequiresApi;
 import androidx.annotation.RestrictTo;
 import androidx.annotation.StringRes;
+import androidx.appcompat.C0051R;
 import androidx.appcompat.content.res.AppCompatResources;
 import androidx.appcompat.widget.TooltipCompat;
 import androidx.constraintlayout.solver.widgets.analyzer.BasicMeasure;
@@ -55,9 +57,7 @@ import androidx.core.view.accessibility.AccessibilityNodeInfoCompat;
 import androidx.core.widget.TextViewCompat;
 import androidx.viewpager.widget.PagerAdapter;
 import androidx.viewpager.widget.ViewPager;
-import b.i.a.g.i.ElasticTabIndicatorInterpolator;
-import b.i.a.g.i.TabIndicatorInterpolator;
-import com.google.android.material.R;
+import com.google.android.material.C10817R;
 import com.google.android.material.animation.AnimationUtils;
 import com.google.android.material.badge.BadgeDrawable;
 import com.google.android.material.badge.BadgeUtils;
@@ -74,6 +74,8 @@ import java.lang.ref.WeakReference;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.Objects;
+import p007b.p225i.p226a.p341g.p350i.C4428a;
+import p007b.p225i.p226a.p341g.p350i.C4429b;
 
 /* JADX INFO: loaded from: classes3.dex */
 @ViewPager.DecorView
@@ -110,7 +112,7 @@ public class TabLayout extends HorizontalScrollView {
 
     @Dimension(unit = 0)
     private static final int TAB_MIN_WIDTH_MARGIN = 56;
-    private b adapterChangeListener;
+    private C11007b adapterChangeListener;
     private int contentInsetStart;
 
     @Nullable
@@ -136,7 +138,7 @@ public class TabLayout extends HorizontalScrollView {
     private boolean setupViewPagerImplicitly;
 
     @NonNull
-    public final d slidingTabIndicator;
+    public final C11009d slidingTabIndicator;
     public final int tabBackgroundResId;
     public int tabGravity;
     public ColorStateList tabIconTint;
@@ -145,7 +147,7 @@ public class TabLayout extends HorizontalScrollView {
     public int tabIndicatorAnimationMode;
     public boolean tabIndicatorFullWidth;
     public int tabIndicatorGravity;
-    private TabIndicatorInterpolator tabIndicatorInterpolator;
+    private C4429b tabIndicatorInterpolator;
     public int tabMaxWidth;
     public int tabPaddingBottom;
     public int tabPaddingEnd;
@@ -166,7 +168,7 @@ public class TabLayout extends HorizontalScrollView {
 
     @Nullable
     public ViewPager viewPager;
-    private static final int DEF_STYLE_RES = R.style.Widget_Design_TabLayout;
+    private static final int DEF_STYLE_RES = C10817R.style.Widget_Design_TabLayout;
     private static final Pools.Pool<Tab> tabPool = new Pools.SynchronizedPool(16);
 
     @Deprecated
@@ -270,17 +272,20 @@ public class TabLayout extends HorizontalScrollView {
         private Tab tab;
         private TextView textView;
 
-        public class a implements View.OnLayoutChangeListener {
-            public final /* synthetic */ View j;
+        /* JADX INFO: renamed from: com.google.android.material.tabs.TabLayout$TabView$a */
+        public class ViewOnLayoutChangeListenerC11005a implements View.OnLayoutChangeListener {
 
-            public a(View view) {
-                this.j = view;
+            /* JADX INFO: renamed from: j */
+            public final /* synthetic */ View f21149j;
+
+            public ViewOnLayoutChangeListenerC11005a(View view) {
+                this.f21149j = view;
             }
 
             @Override // android.view.View.OnLayoutChangeListener
             public void onLayoutChange(View view, int i, int i2, int i3, int i4, int i5, int i6, int i7, int i8) {
-                if (this.j.getVisibility() == 0) {
-                    TabView.this.tryUpdateBadgeDrawableBounds(this.j);
+                if (this.f21149j.getVisibility() == 0) {
+                    TabView.this.tryUpdateBadgeDrawableBounds(this.f21149j);
                 }
             }
         }
@@ -300,7 +305,7 @@ public class TabLayout extends HorizontalScrollView {
             if (view == null) {
                 return;
             }
-            view.addOnLayoutChangeListener(new a(view));
+            view.addOnLayoutChangeListener(new ViewOnLayoutChangeListenerC11005a(view));
         }
 
         private float approximateLineWidth(@NonNull Layout layout, int i, float f) {
@@ -371,7 +376,7 @@ public class TabLayout extends HorizontalScrollView {
             } else {
                 viewGroup = this;
             }
-            ImageView imageView = (ImageView) LayoutInflater.from(getContext()).inflate(R.layout.design_layout_tab_icon, viewGroup, false);
+            ImageView imageView = (ImageView) LayoutInflater.from(getContext()).inflate(C10817R.layout.design_layout_tab_icon, viewGroup, false);
             this.iconView = imageView;
             viewGroup.addView(imageView, 0);
         }
@@ -385,7 +390,7 @@ public class TabLayout extends HorizontalScrollView {
             } else {
                 viewGroup = this;
             }
-            TextView textView = (TextView) LayoutInflater.from(getContext()).inflate(R.layout.design_layout_tab_text, viewGroup, false);
+            TextView textView = (TextView) LayoutInflater.from(getContext()).inflate(C10817R.layout.design_layout_tab_text, viewGroup, false);
             this.textView = textView;
             viewGroup.addView(textView);
         }
@@ -608,7 +613,7 @@ public class TabLayout extends HorizontalScrollView {
                 accessibilityNodeInfoCompatWrap.setClickable(false);
                 accessibilityNodeInfoCompatWrap.removeAction(AccessibilityNodeInfoCompat.AccessibilityActionCompat.ACTION_CLICK);
             }
-            accessibilityNodeInfoCompatWrap.setRoleDescription(getResources().getString(R.string.item_view_role_description));
+            accessibilityNodeInfoCompatWrap.setRoleDescription(getResources().getString(C10817R.string.item_view_role_description));
         }
 
         @Override // android.widget.LinearLayout, android.view.View
@@ -716,12 +721,12 @@ public class TabLayout extends HorizontalScrollView {
                     imageView.setVisibility(8);
                     this.iconView.setImageDrawable(null);
                 }
-                TextView textView2 = (TextView) customView.findViewById(android.R.id.text1);
+                TextView textView2 = (TextView) customView.findViewById(R.id.text1);
                 this.customTextView = textView2;
                 if (textView2 != null) {
                     this.defaultMaxLines = TextViewCompat.getMaxLines(textView2);
                 }
-                this.customIconView = (ImageView) customView.findViewById(android.R.id.icon);
+                this.customIconView = (ImageView) customView.findViewById(R.id.icon);
             } else {
                 View view = this.customView;
                 if (view != null) {
@@ -802,8 +807,9 @@ public class TabLayout extends HorizontalScrollView {
         }
     }
 
-    public class a implements ValueAnimator.AnimatorUpdateListener {
-        public a() {
+    /* JADX INFO: renamed from: com.google.android.material.tabs.TabLayout$a */
+    public class C11006a implements ValueAnimator.AnimatorUpdateListener {
+        public C11006a() {
         }
 
         @Override // android.animation.ValueAnimator.AnimatorUpdateListener
@@ -812,23 +818,27 @@ public class TabLayout extends HorizontalScrollView {
         }
     }
 
-    public class b implements ViewPager.OnAdapterChangeListener {
-        public boolean a;
+    /* JADX INFO: renamed from: com.google.android.material.tabs.TabLayout$b */
+    public class C11007b implements ViewPager.OnAdapterChangeListener {
 
-        public b() {
+        /* JADX INFO: renamed from: a */
+        public boolean f21152a;
+
+        public C11007b() {
         }
 
         @Override // androidx.viewpager.widget.ViewPager.OnAdapterChangeListener
         public void onAdapterChanged(@NonNull ViewPager viewPager, @Nullable PagerAdapter pagerAdapter, @Nullable PagerAdapter pagerAdapter2) {
             TabLayout tabLayout = TabLayout.this;
             if (tabLayout.viewPager == viewPager) {
-                tabLayout.setPagerAdapter(pagerAdapter2, this.a);
+                tabLayout.setPagerAdapter(pagerAdapter2, this.f21152a);
             }
         }
     }
 
-    public class c extends DataSetObserver {
-        public c() {
+    /* JADX INFO: renamed from: com.google.android.material.tabs.TabLayout$c */
+    public class C11008c extends DataSetObserver {
+        public C11008c() {
         }
 
         @Override // android.database.DataSetObserver
@@ -842,75 +852,93 @@ public class TabLayout extends HorizontalScrollView {
         }
     }
 
-    public class d extends LinearLayout {
-        public ValueAnimator j;
-        public int k;
-        public float l;
-        public int m;
+    /* JADX INFO: renamed from: com.google.android.material.tabs.TabLayout$d */
+    public class C11009d extends LinearLayout {
 
+        /* JADX INFO: renamed from: j */
+        public ValueAnimator f21155j;
+
+        /* JADX INFO: renamed from: k */
+        public int f21156k;
+
+        /* JADX INFO: renamed from: l */
+        public float f21157l;
+
+        /* JADX INFO: renamed from: m */
+        public int f21158m;
+
+        /* JADX INFO: renamed from: com.google.android.material.tabs.TabLayout$d$a */
         public class a implements ValueAnimator.AnimatorUpdateListener {
-            public final /* synthetic */ View a;
 
-            /* JADX INFO: renamed from: b, reason: collision with root package name */
-            public final /* synthetic */ View f3069b;
+            /* JADX INFO: renamed from: a */
+            public final /* synthetic */ View f21160a;
+
+            /* JADX INFO: renamed from: b */
+            public final /* synthetic */ View f21161b;
 
             public a(View view, View view2) {
-                this.a = view;
-                this.f3069b = view2;
+                this.f21160a = view;
+                this.f21161b = view2;
             }
 
             @Override // android.animation.ValueAnimator.AnimatorUpdateListener
             public void onAnimationUpdate(@NonNull ValueAnimator valueAnimator) {
-                d.this.c(this.a, this.f3069b, valueAnimator.getAnimatedFraction());
+                C11009d.this.m9150c(this.f21160a, this.f21161b, valueAnimator.getAnimatedFraction());
             }
         }
 
+        /* JADX INFO: renamed from: com.google.android.material.tabs.TabLayout$d$b */
         public class b extends AnimatorListenerAdapter {
-            public final /* synthetic */ int a;
+
+            /* JADX INFO: renamed from: a */
+            public final /* synthetic */ int f21163a;
 
             public b(int i) {
-                this.a = i;
+                this.f21163a = i;
             }
 
             @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
             public void onAnimationEnd(Animator animator) {
-                d.this.k = this.a;
+                C11009d.this.f21156k = this.f21163a;
             }
 
             @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
             public void onAnimationStart(Animator animator) {
-                d.this.k = this.a;
+                C11009d.this.f21156k = this.f21163a;
             }
         }
 
-        public d(Context context) {
+        public C11009d(Context context) {
             super(context);
-            this.k = -1;
-            this.m = -1;
+            this.f21156k = -1;
+            this.f21158m = -1;
             setWillNotDraw(false);
         }
 
-        public final void a() {
-            View childAt = getChildAt(this.k);
-            TabIndicatorInterpolator tabIndicatorInterpolator = TabLayout.this.tabIndicatorInterpolator;
+        /* JADX INFO: renamed from: a */
+        public final void m9148a() {
+            View childAt = getChildAt(this.f21156k);
+            C4429b c4429b = TabLayout.this.tabIndicatorInterpolator;
             TabLayout tabLayout = TabLayout.this;
             Drawable drawable = tabLayout.tabSelectedIndicator;
-            Objects.requireNonNull(tabIndicatorInterpolator);
-            RectF rectFA = TabIndicatorInterpolator.a(tabLayout, childAt);
-            drawable.setBounds((int) rectFA.left, drawable.getBounds().top, (int) rectFA.right, drawable.getBounds().bottom);
+            Objects.requireNonNull(c4429b);
+            RectF rectFM6145a = C4429b.m6145a(tabLayout, childAt);
+            drawable.setBounds((int) rectFM6145a.left, drawable.getBounds().top, (int) rectFM6145a.right, drawable.getBounds().bottom);
         }
 
-        public void b(int i) {
+        /* JADX INFO: renamed from: b */
+        public void m9149b(int i) {
             Rect bounds = TabLayout.this.tabSelectedIndicator.getBounds();
             TabLayout.this.tabSelectedIndicator.setBounds(bounds.left, 0, bounds.right, i);
             requestLayout();
         }
 
-        public final void c(View view, View view2, float f) {
+        /* JADX INFO: renamed from: c */
+        public final void m9150c(View view, View view2, float f) {
             if (view != null && view.getWidth() > 0) {
-                TabIndicatorInterpolator tabIndicatorInterpolator = TabLayout.this.tabIndicatorInterpolator;
+                C4429b c4429b = TabLayout.this.tabIndicatorInterpolator;
                 TabLayout tabLayout = TabLayout.this;
-                tabIndicatorInterpolator.b(tabLayout, view, view2, f, tabLayout.tabSelectedIndicator);
+                c4429b.mo6144b(tabLayout, view, view2, f, tabLayout.tabSelectedIndicator);
             } else {
                 Drawable drawable = TabLayout.this.tabSelectedIndicator;
                 drawable.setBounds(-1, drawable.getBounds().top, -1, TabLayout.this.tabSelectedIndicator.getBounds().bottom);
@@ -918,21 +946,22 @@ public class TabLayout extends HorizontalScrollView {
             ViewCompat.postInvalidateOnAnimation(this);
         }
 
-        public final void d(boolean z2, int i, int i2) {
-            View childAt = getChildAt(this.k);
+        /* JADX INFO: renamed from: d */
+        public final void m9151d(boolean z2, int i, int i2) {
+            View childAt = getChildAt(this.f21156k);
             View childAt2 = getChildAt(i);
             if (childAt2 == null) {
-                a();
+                m9148a();
                 return;
             }
             a aVar = new a(childAt, childAt2);
             if (!z2) {
-                this.j.removeAllUpdateListeners();
-                this.j.addUpdateListener(aVar);
+                this.f21155j.removeAllUpdateListeners();
+                this.f21155j.addUpdateListener(aVar);
                 return;
             }
             ValueAnimator valueAnimator = new ValueAnimator();
-            this.j = valueAnimator;
+            this.f21155j = valueAnimator;
             valueAnimator.setInterpolator(AnimationUtils.FAST_OUT_SLOW_IN_INTERPOLATOR);
             valueAnimator.setDuration(i2);
             valueAnimator.setFloatValues(0.0f, 1.0f);
@@ -979,11 +1008,11 @@ public class TabLayout extends HorizontalScrollView {
         @Override // android.widget.LinearLayout, android.view.ViewGroup, android.view.View
         public void onLayout(boolean z2, int i, int i2, int i3, int i4) {
             super.onLayout(z2, i, i2, i3, i4);
-            ValueAnimator valueAnimator = this.j;
+            ValueAnimator valueAnimator = this.f21155j;
             if (valueAnimator == null || !valueAnimator.isRunning()) {
-                a();
+                m9148a();
             } else {
-                d(false, this.k, -1);
+                m9151d(false, this.f21156k, -1);
             }
         }
 
@@ -1032,11 +1061,11 @@ public class TabLayout extends HorizontalScrollView {
         @Override // android.widget.LinearLayout, android.view.View
         public void onRtlPropertiesChanged(int i) {
             super.onRtlPropertiesChanged(i);
-            if (Build.VERSION.SDK_INT >= 23 || this.m == i) {
+            if (Build.VERSION.SDK_INT >= 23 || this.f21158m == i) {
                 return;
             }
             requestLayout();
-            this.m = i;
+            this.f21158m = i;
         }
     }
 
@@ -1084,15 +1113,15 @@ public class TabLayout extends HorizontalScrollView {
             return;
         }
         if (getWindowToken() != null && ViewCompat.isLaidOut(this)) {
-            d dVar = this.slidingTabIndicator;
-            int childCount = dVar.getChildCount();
+            C11009d c11009d = this.slidingTabIndicator;
+            int childCount = c11009d.getChildCount();
             int i2 = 0;
             while (true) {
                 if (i2 >= childCount) {
                     z2 = false;
                     break;
                 } else {
-                    if (dVar.getChildAt(i2).getWidth() <= 0) {
+                    if (c11009d.getChildAt(i2).getWidth() <= 0) {
                         z2 = true;
                         break;
                     }
@@ -1107,13 +1136,13 @@ public class TabLayout extends HorizontalScrollView {
                     this.scrollAnimator.setIntValues(scrollX, iCalculateScrollXForTab);
                     this.scrollAnimator.start();
                 }
-                d dVar2 = this.slidingTabIndicator;
+                C11009d c11009d2 = this.slidingTabIndicator;
                 int i3 = this.tabIndicatorAnimationDuration;
-                ValueAnimator valueAnimator = dVar2.j;
+                ValueAnimator valueAnimator = c11009d2.f21155j;
                 if (valueAnimator != null && valueAnimator.isRunning()) {
-                    dVar2.j.cancel();
+                    c11009d2.f21155j.cancel();
                 }
-                dVar2.d(true, i, i3);
+                c11009d2.m9151d(true, i, i3);
                 return;
             }
         }
@@ -1230,7 +1259,7 @@ public class TabLayout extends HorizontalScrollView {
             this.scrollAnimator = valueAnimator;
             valueAnimator.setInterpolator(AnimationUtils.FAST_OUT_SLOW_IN_INTERPOLATOR);
             this.scrollAnimator.setDuration(this.tabIndicatorAnimationDuration);
-            this.scrollAnimator.addUpdateListener(new a());
+            this.scrollAnimator.addUpdateListener(new C11006a());
         }
     }
 
@@ -1407,8 +1436,8 @@ public class TabLayout extends HorizontalScrollView {
         Tab tabCreateTabFromPool = createTabFromPool();
         tabCreateTabFromPool.parent = this;
         tabCreateTabFromPool.view = createTabView(tabCreateTabFromPool);
-        if (tabCreateTabFromPool.f3067id != -1) {
-            tabCreateTabFromPool.view.setId(tabCreateTabFromPool.f3067id);
+        if (tabCreateTabFromPool.f21148id != -1) {
+            tabCreateTabFromPool.view.setId(tabCreateTabFromPool.f21148id);
         }
         return tabCreateTabFromPool;
     }
@@ -1602,7 +1631,7 @@ public class TabLayout extends HorizontalScrollView {
         this.pagerAdapter = pagerAdapter;
         if (z2 && pagerAdapter != null) {
             if (this.pagerAdapterObserver == null) {
-                this.pagerAdapterObserver = new c();
+                this.pagerAdapterObserver = new C11008c();
             }
             pagerAdapter.registerDataSetObserver(this.pagerAdapterObserver);
         }
@@ -1640,7 +1669,7 @@ public class TabLayout extends HorizontalScrollView {
 
     @Deprecated
     public void setSelectedTabIndicatorHeight(int i) {
-        this.slidingTabIndicator.b(i);
+        this.slidingTabIndicator.m9149b(i);
     }
 
     public void setTabGravity(int i) {
@@ -1664,10 +1693,10 @@ public class TabLayout extends HorizontalScrollView {
     public void setTabIndicatorAnimationMode(int i) {
         this.tabIndicatorAnimationMode = i;
         if (i == 0) {
-            this.tabIndicatorInterpolator = new TabIndicatorInterpolator();
+            this.tabIndicatorInterpolator = new C4429b();
         } else {
             if (i == 1) {
-                this.tabIndicatorInterpolator = new ElasticTabIndicatorInterpolator();
+                this.tabIndicatorInterpolator = new C4428a();
                 return;
             }
             throw new IllegalArgumentException(i + " is not a valid TabIndicatorAnimationMode");
@@ -1778,8 +1807,8 @@ public class TabLayout extends HorizontalScrollView {
         @LabelVisibility
         private int labelVisibilityMode = 1;
 
-        /* JADX INFO: renamed from: id, reason: collision with root package name */
-        private int f3067id = -1;
+        /* JADX INFO: renamed from: id */
+        private int f21148id = -1;
 
         @Nullable
         public BadgeDrawable getBadge() {
@@ -1806,7 +1835,7 @@ public class TabLayout extends HorizontalScrollView {
         }
 
         public int getId() {
-            return this.f3067id;
+            return this.f21148id;
         }
 
         @NonNull
@@ -1850,7 +1879,7 @@ public class TabLayout extends HorizontalScrollView {
             this.view = null;
             this.tag = null;
             this.icon = null;
-            this.f3067id = -1;
+            this.f21148id = -1;
             this.text = null;
             this.contentDesc = null;
             this.position = -1;
@@ -1897,7 +1926,7 @@ public class TabLayout extends HorizontalScrollView {
 
         @NonNull
         public Tab setId(int i) {
-            this.f3067id = i;
+            this.f21148id = i;
             TabView tabView = this.view;
             if (tabView != null) {
                 tabView.setId(i);
@@ -1978,7 +2007,7 @@ public class TabLayout extends HorizontalScrollView {
     }
 
     public TabLayout(@NonNull Context context, @Nullable AttributeSet attributeSet) {
-        this(context, attributeSet, R.attr.tabStyle);
+        this(context, attributeSet, C10817R.attr.tabStyle);
     }
 
     @Deprecated
@@ -2056,14 +2085,14 @@ public class TabLayout extends HorizontalScrollView {
             return;
         }
         if (z3) {
-            d dVar = this.slidingTabIndicator;
-            ValueAnimator valueAnimator = dVar.j;
+            C11009d c11009d = this.slidingTabIndicator;
+            ValueAnimator valueAnimator = c11009d.f21155j;
             if (valueAnimator != null && valueAnimator.isRunning()) {
-                dVar.j.cancel();
+                c11009d.f21155j.cancel();
             }
-            dVar.k = i;
-            dVar.l = f;
-            dVar.c(dVar.getChildAt(i), dVar.getChildAt(dVar.k + 1), dVar.l);
+            c11009d.f21156k = i;
+            c11009d.f21157l = f;
+            c11009d.m9150c(c11009d.getChildAt(i), c11009d.getChildAt(c11009d.f21156k + 1), c11009d.f21157l);
         }
         ValueAnimator valueAnimator2 = this.scrollAnimator;
         if (valueAnimator2 != null && valueAnimator2.isRunning()) {
@@ -2091,11 +2120,11 @@ public class TabLayout extends HorizontalScrollView {
         this.tabViewPool = new Pools.SimplePool(12);
         Context context2 = getContext();
         setHorizontalScrollBarEnabled(false);
-        d dVar = new d(context2);
-        this.slidingTabIndicator = dVar;
-        super.addView(dVar, 0, new FrameLayout.LayoutParams(-2, -1));
-        int[] iArr = R.styleable.TabLayout;
-        int i3 = R.styleable.TabLayout_tabTextAppearance;
+        C11009d c11009d = new C11009d(context2);
+        this.slidingTabIndicator = c11009d;
+        super.addView(c11009d, 0, new FrameLayout.LayoutParams(-2, -1));
+        int[] iArr = C10817R.styleable.TabLayout;
+        int i3 = C10817R.styleable.TabLayout_tabTextAppearance;
         TypedArray typedArrayObtainStyledAttributes = ThemeEnforcement.obtainStyledAttributes(context2, attributeSet, iArr, i, i2, i3);
         if (getBackground() instanceof ColorDrawable) {
             ColorDrawable colorDrawable = (ColorDrawable) getBackground();
@@ -2105,52 +2134,52 @@ public class TabLayout extends HorizontalScrollView {
             materialShapeDrawable.setElevation(ViewCompat.getElevation(this));
             ViewCompat.setBackground(this, materialShapeDrawable);
         }
-        setSelectedTabIndicator(MaterialResources.getDrawable(context2, typedArrayObtainStyledAttributes, R.styleable.TabLayout_tabIndicator));
-        setSelectedTabIndicatorColor(typedArrayObtainStyledAttributes.getColor(R.styleable.TabLayout_tabIndicatorColor, 0));
-        dVar.b(typedArrayObtainStyledAttributes.getDimensionPixelSize(R.styleable.TabLayout_tabIndicatorHeight, -1));
-        setSelectedTabIndicatorGravity(typedArrayObtainStyledAttributes.getInt(R.styleable.TabLayout_tabIndicatorGravity, 0));
-        setTabIndicatorFullWidth(typedArrayObtainStyledAttributes.getBoolean(R.styleable.TabLayout_tabIndicatorFullWidth, true));
-        setTabIndicatorAnimationMode(typedArrayObtainStyledAttributes.getInt(R.styleable.TabLayout_tabIndicatorAnimationMode, 0));
-        int dimensionPixelSize = typedArrayObtainStyledAttributes.getDimensionPixelSize(R.styleable.TabLayout_tabPadding, 0);
+        setSelectedTabIndicator(MaterialResources.getDrawable(context2, typedArrayObtainStyledAttributes, C10817R.styleable.TabLayout_tabIndicator));
+        setSelectedTabIndicatorColor(typedArrayObtainStyledAttributes.getColor(C10817R.styleable.TabLayout_tabIndicatorColor, 0));
+        c11009d.m9149b(typedArrayObtainStyledAttributes.getDimensionPixelSize(C10817R.styleable.TabLayout_tabIndicatorHeight, -1));
+        setSelectedTabIndicatorGravity(typedArrayObtainStyledAttributes.getInt(C10817R.styleable.TabLayout_tabIndicatorGravity, 0));
+        setTabIndicatorFullWidth(typedArrayObtainStyledAttributes.getBoolean(C10817R.styleable.TabLayout_tabIndicatorFullWidth, true));
+        setTabIndicatorAnimationMode(typedArrayObtainStyledAttributes.getInt(C10817R.styleable.TabLayout_tabIndicatorAnimationMode, 0));
+        int dimensionPixelSize = typedArrayObtainStyledAttributes.getDimensionPixelSize(C10817R.styleable.TabLayout_tabPadding, 0);
         this.tabPaddingBottom = dimensionPixelSize;
         this.tabPaddingEnd = dimensionPixelSize;
         this.tabPaddingTop = dimensionPixelSize;
         this.tabPaddingStart = dimensionPixelSize;
-        this.tabPaddingStart = typedArrayObtainStyledAttributes.getDimensionPixelSize(R.styleable.TabLayout_tabPaddingStart, dimensionPixelSize);
-        this.tabPaddingTop = typedArrayObtainStyledAttributes.getDimensionPixelSize(R.styleable.TabLayout_tabPaddingTop, this.tabPaddingTop);
-        this.tabPaddingEnd = typedArrayObtainStyledAttributes.getDimensionPixelSize(R.styleable.TabLayout_tabPaddingEnd, this.tabPaddingEnd);
-        this.tabPaddingBottom = typedArrayObtainStyledAttributes.getDimensionPixelSize(R.styleable.TabLayout_tabPaddingBottom, this.tabPaddingBottom);
-        int resourceId = typedArrayObtainStyledAttributes.getResourceId(i3, R.style.TextAppearance_Design_Tab);
+        this.tabPaddingStart = typedArrayObtainStyledAttributes.getDimensionPixelSize(C10817R.styleable.TabLayout_tabPaddingStart, dimensionPixelSize);
+        this.tabPaddingTop = typedArrayObtainStyledAttributes.getDimensionPixelSize(C10817R.styleable.TabLayout_tabPaddingTop, this.tabPaddingTop);
+        this.tabPaddingEnd = typedArrayObtainStyledAttributes.getDimensionPixelSize(C10817R.styleable.TabLayout_tabPaddingEnd, this.tabPaddingEnd);
+        this.tabPaddingBottom = typedArrayObtainStyledAttributes.getDimensionPixelSize(C10817R.styleable.TabLayout_tabPaddingBottom, this.tabPaddingBottom);
+        int resourceId = typedArrayObtainStyledAttributes.getResourceId(i3, C10817R.style.TextAppearance_Design_Tab);
         this.tabTextAppearance = resourceId;
-        TypedArray typedArrayObtainStyledAttributes2 = context2.obtainStyledAttributes(resourceId, androidx.appcompat.R.styleable.TextAppearance);
+        TypedArray typedArrayObtainStyledAttributes2 = context2.obtainStyledAttributes(resourceId, C0051R.styleable.TextAppearance);
         try {
-            this.tabTextSize = typedArrayObtainStyledAttributes2.getDimensionPixelSize(androidx.appcompat.R.styleable.TextAppearance_android_textSize, 0);
-            this.tabTextColors = MaterialResources.getColorStateList(context2, typedArrayObtainStyledAttributes2, androidx.appcompat.R.styleable.TextAppearance_android_textColor);
+            this.tabTextSize = typedArrayObtainStyledAttributes2.getDimensionPixelSize(C0051R.styleable.TextAppearance_android_textSize, 0);
+            this.tabTextColors = MaterialResources.getColorStateList(context2, typedArrayObtainStyledAttributes2, C0051R.styleable.TextAppearance_android_textColor);
             typedArrayObtainStyledAttributes2.recycle();
-            int i4 = R.styleable.TabLayout_tabTextColor;
+            int i4 = C10817R.styleable.TabLayout_tabTextColor;
             if (typedArrayObtainStyledAttributes.hasValue(i4)) {
                 this.tabTextColors = MaterialResources.getColorStateList(context2, typedArrayObtainStyledAttributes, i4);
             }
-            int i5 = R.styleable.TabLayout_tabSelectedTextColor;
+            int i5 = C10817R.styleable.TabLayout_tabSelectedTextColor;
             if (typedArrayObtainStyledAttributes.hasValue(i5)) {
                 this.tabTextColors = createColorStateList(this.tabTextColors.getDefaultColor(), typedArrayObtainStyledAttributes.getColor(i5, 0));
             }
-            this.tabIconTint = MaterialResources.getColorStateList(context2, typedArrayObtainStyledAttributes, R.styleable.TabLayout_tabIconTint);
-            this.tabIconTintMode = ViewUtils.parseTintMode(typedArrayObtainStyledAttributes.getInt(R.styleable.TabLayout_tabIconTintMode, -1), null);
-            this.tabRippleColorStateList = MaterialResources.getColorStateList(context2, typedArrayObtainStyledAttributes, R.styleable.TabLayout_tabRippleColor);
-            this.tabIndicatorAnimationDuration = typedArrayObtainStyledAttributes.getInt(R.styleable.TabLayout_tabIndicatorAnimationDuration, ANIMATION_DURATION);
-            this.requestedTabMinWidth = typedArrayObtainStyledAttributes.getDimensionPixelSize(R.styleable.TabLayout_tabMinWidth, -1);
-            this.requestedTabMaxWidth = typedArrayObtainStyledAttributes.getDimensionPixelSize(R.styleable.TabLayout_tabMaxWidth, -1);
-            this.tabBackgroundResId = typedArrayObtainStyledAttributes.getResourceId(R.styleable.TabLayout_tabBackground, 0);
-            this.contentInsetStart = typedArrayObtainStyledAttributes.getDimensionPixelSize(R.styleable.TabLayout_tabContentStart, 0);
-            this.mode = typedArrayObtainStyledAttributes.getInt(R.styleable.TabLayout_tabMode, 1);
-            this.tabGravity = typedArrayObtainStyledAttributes.getInt(R.styleable.TabLayout_tabGravity, 0);
-            this.inlineLabel = typedArrayObtainStyledAttributes.getBoolean(R.styleable.TabLayout_tabInlineLabel, false);
-            this.unboundedRipple = typedArrayObtainStyledAttributes.getBoolean(R.styleable.TabLayout_tabUnboundedRipple, false);
+            this.tabIconTint = MaterialResources.getColorStateList(context2, typedArrayObtainStyledAttributes, C10817R.styleable.TabLayout_tabIconTint);
+            this.tabIconTintMode = ViewUtils.parseTintMode(typedArrayObtainStyledAttributes.getInt(C10817R.styleable.TabLayout_tabIconTintMode, -1), null);
+            this.tabRippleColorStateList = MaterialResources.getColorStateList(context2, typedArrayObtainStyledAttributes, C10817R.styleable.TabLayout_tabRippleColor);
+            this.tabIndicatorAnimationDuration = typedArrayObtainStyledAttributes.getInt(C10817R.styleable.TabLayout_tabIndicatorAnimationDuration, ANIMATION_DURATION);
+            this.requestedTabMinWidth = typedArrayObtainStyledAttributes.getDimensionPixelSize(C10817R.styleable.TabLayout_tabMinWidth, -1);
+            this.requestedTabMaxWidth = typedArrayObtainStyledAttributes.getDimensionPixelSize(C10817R.styleable.TabLayout_tabMaxWidth, -1);
+            this.tabBackgroundResId = typedArrayObtainStyledAttributes.getResourceId(C10817R.styleable.TabLayout_tabBackground, 0);
+            this.contentInsetStart = typedArrayObtainStyledAttributes.getDimensionPixelSize(C10817R.styleable.TabLayout_tabContentStart, 0);
+            this.mode = typedArrayObtainStyledAttributes.getInt(C10817R.styleable.TabLayout_tabMode, 1);
+            this.tabGravity = typedArrayObtainStyledAttributes.getInt(C10817R.styleable.TabLayout_tabGravity, 0);
+            this.inlineLabel = typedArrayObtainStyledAttributes.getBoolean(C10817R.styleable.TabLayout_tabInlineLabel, false);
+            this.unboundedRipple = typedArrayObtainStyledAttributes.getBoolean(C10817R.styleable.TabLayout_tabUnboundedRipple, false);
             typedArrayObtainStyledAttributes.recycle();
             Resources resources = getResources();
-            this.tabTextMultiLineSize = resources.getDimensionPixelSize(R.dimen.design_tab_text_size_2line);
-            this.scrollableTabMinWidth = resources.getDimensionPixelSize(R.dimen.design_tab_scrollable_min_width);
+            this.tabTextMultiLineSize = resources.getDimensionPixelSize(C10817R.dimen.design_tab_text_size_2line);
+            this.scrollableTabMinWidth = resources.getDimensionPixelSize(C10817R.dimen.design_tab_scrollable_min_width);
             applyModeAndGravity();
         } catch (Throwable th) {
             typedArrayObtainStyledAttributes2.recycle();
@@ -2165,9 +2194,9 @@ public class TabLayout extends HorizontalScrollView {
             if (tabLayoutOnPageChangeListener != null) {
                 viewPager2.removeOnPageChangeListener(tabLayoutOnPageChangeListener);
             }
-            b bVar = this.adapterChangeListener;
-            if (bVar != null) {
-                this.viewPager.removeOnAdapterChangeListener(bVar);
+            C11007b c11007b = this.adapterChangeListener;
+            if (c11007b != null) {
+                this.viewPager.removeOnAdapterChangeListener(c11007b);
             }
         }
         BaseOnTabSelectedListener baseOnTabSelectedListener = this.currentVpSelectedListener;
@@ -2190,11 +2219,11 @@ public class TabLayout extends HorizontalScrollView {
                 setPagerAdapter(adapter, z2);
             }
             if (this.adapterChangeListener == null) {
-                this.adapterChangeListener = new b();
+                this.adapterChangeListener = new C11007b();
             }
-            b bVar2 = this.adapterChangeListener;
-            bVar2.a = z2;
-            viewPager.addOnAdapterChangeListener(bVar2);
+            C11007b c11007b2 = this.adapterChangeListener;
+            c11007b2.f21152a = z2;
+            viewPager.addOnAdapterChangeListener(c11007b2);
             setScrollPosition(viewPager.getCurrentItem(), 0.0f, true);
         } else {
             this.viewPager = null;

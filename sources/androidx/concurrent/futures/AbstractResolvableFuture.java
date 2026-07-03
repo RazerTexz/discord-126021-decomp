@@ -3,8 +3,6 @@ package androidx.concurrent.futures;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.annotation.RestrictTo;
-import b.d.b.a.outline;
-import b.i.b.d.a.ListenableFuture8;
 import java.util.Locale;
 import java.util.Objects;
 import java.util.concurrent.CancellationException;
@@ -18,10 +16,12 @@ import java.util.concurrent.atomic.AtomicReferenceFieldUpdater;
 import java.util.concurrent.locks.LockSupport;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import p007b.p100d.p104b.p105a.C1643a;
+import p007b.p225i.p355b.p359d.p360a.InterfaceFutureC4539a;
 
 /* JADX INFO: loaded from: classes.dex */
 @RestrictTo({RestrictTo.Scope.LIBRARY_GROUP_PREFIX})
-public abstract class AbstractResolvableFuture<V> implements ListenableFuture8<V> {
+public abstract class AbstractResolvableFuture<V> implements InterfaceFutureC4539a<V> {
     public static final AtomicHelper ATOMIC_HELPER;
     private static final Object NULL;
     private static final long SPIN_THRESHOLD_NANOS = 1000;
@@ -147,12 +147,12 @@ public abstract class AbstractResolvableFuture<V> implements ListenableFuture8<V
     }
 
     public static final class SetFuture<V> implements Runnable {
-        public final ListenableFuture8<? extends V> future;
+        public final InterfaceFutureC4539a<? extends V> future;
         public final AbstractResolvableFuture<V> owner;
 
-        public SetFuture(AbstractResolvableFuture<V> abstractResolvableFuture, ListenableFuture8<? extends V> listenableFuture8) {
+        public SetFuture(AbstractResolvableFuture<V> abstractResolvableFuture, InterfaceFutureC4539a<? extends V> interfaceFutureC4539a) {
             this.owner = abstractResolvableFuture;
-            this.future = listenableFuture8;
+            this.future = interfaceFutureC4539a;
         }
 
         @Override // java.lang.Runnable
@@ -366,9 +366,9 @@ public abstract class AbstractResolvableFuture<V> implements ListenableFuture8<V
         return obj;
     }
 
-    public static Object getFutureValue(ListenableFuture8<?> listenableFuture8) {
-        if (listenableFuture8 instanceof AbstractResolvableFuture) {
-            Object obj = ((AbstractResolvableFuture) listenableFuture8).value;
+    public static Object getFutureValue(InterfaceFutureC4539a<?> interfaceFutureC4539a) {
+        if (interfaceFutureC4539a instanceof AbstractResolvableFuture) {
+            Object obj = ((AbstractResolvableFuture) interfaceFutureC4539a).value;
             if (!(obj instanceof Cancellation)) {
                 return obj;
             }
@@ -378,18 +378,18 @@ public abstract class AbstractResolvableFuture<V> implements ListenableFuture8<V
             }
             return obj;
         }
-        boolean zIsCancelled = listenableFuture8.isCancelled();
+        boolean zIsCancelled = interfaceFutureC4539a.isCancelled();
         if ((!GENERATE_CANCELLATION_CAUSES) && zIsCancelled) {
             return Cancellation.CAUSELESS_CANCELLED;
         }
         try {
-            Object uninterruptibly = getUninterruptibly(listenableFuture8);
+            Object uninterruptibly = getUninterruptibly(interfaceFutureC4539a);
             return uninterruptibly == null ? NULL : uninterruptibly;
         } catch (CancellationException e) {
             if (zIsCancelled) {
                 return new Cancellation(false, e);
             }
-            return new Failure(new IllegalArgumentException("get() threw CancellationException, despite reporting isCancelled() == false: " + listenableFuture8, e));
+            return new Failure(new IllegalArgumentException("get() threw CancellationException, despite reporting isCancelled() == false: " + interfaceFutureC4539a, e));
         } catch (ExecutionException e2) {
             return new Failure(e2.getCause());
         } catch (Throwable th) {
@@ -458,7 +458,7 @@ public abstract class AbstractResolvableFuture<V> implements ListenableFuture8<V
         return obj == this ? "this future" : String.valueOf(obj);
     }
 
-    @Override // b.i.b.d.a.ListenableFuture8
+    @Override // p007b.p225i.p355b.p359d.p360a.InterfaceFutureC4539a
     public final void addListener(Runnable runnable, Executor executor) {
         checkNotNull(runnable);
         checkNotNull(executor);
@@ -503,12 +503,12 @@ public abstract class AbstractResolvableFuture<V> implements ListenableFuture8<V
                 if (!(obj instanceof SetFuture)) {
                     return true;
                 }
-                ListenableFuture8<? extends V> listenableFuture8 = ((SetFuture) obj).future;
-                if (!(listenableFuture8 instanceof AbstractResolvableFuture)) {
-                    listenableFuture8.cancel(z2);
+                InterfaceFutureC4539a<? extends V> interfaceFutureC4539a = ((SetFuture) obj).future;
+                if (!(interfaceFutureC4539a instanceof AbstractResolvableFuture)) {
+                    interfaceFutureC4539a.cancel(z2);
                     return true;
                 }
-                abstractResolvableFuture = (AbstractResolvableFuture) listenableFuture8;
+                abstractResolvableFuture = (AbstractResolvableFuture) interfaceFutureC4539a;
                 obj = abstractResolvableFuture.value;
                 if (!(obj == null) && !(obj instanceof SetFuture)) {
                     return true;
@@ -577,29 +577,29 @@ public abstract class AbstractResolvableFuture<V> implements ListenableFuture8<V
         String string2 = timeUnit.toString();
         Locale locale = Locale.ROOT;
         String lowerCase = string2.toLowerCase(locale);
-        String strW = "Waited " + j + " " + timeUnit.toString().toLowerCase(locale);
+        String strM883w = "Waited " + j + " " + timeUnit.toString().toLowerCase(locale);
         if (nanos + 1000 < 0) {
-            String strW2 = outline.w(strW, " (plus ");
+            String strM883w2 = C1643a.m883w(strM883w, " (plus ");
             long j2 = -nanos;
             long jConvert = timeUnit.convert(j2, TimeUnit.NANOSECONDS);
             long nanos2 = j2 - timeUnit.toNanos(jConvert);
             boolean z2 = jConvert == 0 || nanos2 > 1000;
             if (jConvert > 0) {
-                String strW3 = strW2 + jConvert + " " + lowerCase;
+                String strM883w3 = strM883w2 + jConvert + " " + lowerCase;
                 if (z2) {
-                    strW3 = outline.w(strW3, ",");
+                    strM883w3 = C1643a.m883w(strM883w3, ",");
                 }
-                strW2 = outline.w(strW3, " ");
+                strM883w2 = C1643a.m883w(strM883w3, " ");
             }
             if (z2) {
-                strW2 = strW2 + nanos2 + " nanoseconds ";
+                strM883w2 = strM883w2 + nanos2 + " nanoseconds ";
             }
-            strW = outline.w(strW2, "delay)");
+            strM883w = C1643a.m883w(strM883w2, "delay)");
         }
         if (isDone()) {
-            throw new TimeoutException(outline.w(strW, " but future completed as timeout expired"));
+            throw new TimeoutException(C1643a.m883w(strM883w, " but future completed as timeout expired"));
         }
-        throw new TimeoutException(outline.y(strW, " for ", string));
+        throw new TimeoutException(C1643a.m886y(strM883w, " for ", string));
     }
 
     public void interruptTask() {
@@ -627,15 +627,15 @@ public abstract class AbstractResolvableFuture<V> implements ListenableFuture8<V
     public String pendingToString() {
         Object obj = this.value;
         if (obj instanceof SetFuture) {
-            return outline.J(outline.U("setFuture=["), userObjectToString(((SetFuture) obj).future), "]");
+            return C1643a.m822J(C1643a.m833U("setFuture=["), userObjectToString(((SetFuture) obj).future), "]");
         }
         if (!(this instanceof ScheduledFuture)) {
             return null;
         }
-        StringBuilder sbU = outline.U("remaining delay=[");
-        sbU.append(((ScheduledFuture) this).getDelay(TimeUnit.MILLISECONDS));
-        sbU.append(" ms]");
-        return sbU.toString();
+        StringBuilder sbM833U = C1643a.m833U("remaining delay=[");
+        sbM833U.append(((ScheduledFuture) this).getDelay(TimeUnit.MILLISECONDS));
+        sbM833U.append(" ms]");
+        return sbM833U.toString();
     }
 
     /* JADX WARN: Type inference fix 'apply assigned field type' failed
@@ -667,22 +667,22 @@ public abstract class AbstractResolvableFuture<V> implements ListenableFuture8<V
         return true;
     }
 
-    public boolean setFuture(ListenableFuture8<? extends V> listenableFuture8) {
+    public boolean setFuture(InterfaceFutureC4539a<? extends V> interfaceFutureC4539a) {
         Failure failure;
-        checkNotNull(listenableFuture8);
+        checkNotNull(interfaceFutureC4539a);
         Object obj = this.value;
         if (obj == null) {
-            if (listenableFuture8.isDone()) {
-                if (!ATOMIC_HELPER.casValue(this, null, getFutureValue(listenableFuture8))) {
+            if (interfaceFutureC4539a.isDone()) {
+                if (!ATOMIC_HELPER.casValue(this, null, getFutureValue(interfaceFutureC4539a))) {
                     return false;
                 }
                 complete(this);
                 return true;
             }
-            SetFuture setFuture = new SetFuture(this, listenableFuture8);
+            SetFuture setFuture = new SetFuture(this, interfaceFutureC4539a);
             if (ATOMIC_HELPER.casValue(this, null, setFuture)) {
                 try {
-                    listenableFuture8.addListener(setFuture, DirectExecutor.INSTANCE);
+                    interfaceFutureC4539a.addListener(setFuture, DirectExecutor.INSTANCE);
                 } catch (Throwable th) {
                     try {
                         failure = new Failure(th);
@@ -696,7 +696,7 @@ public abstract class AbstractResolvableFuture<V> implements ListenableFuture8<V
             obj = this.value;
         }
         if (obj instanceof Cancellation) {
-            listenableFuture8.cancel(((Cancellation) obj).wasInterrupted);
+            interfaceFutureC4539a.cancel(((Cancellation) obj).wasInterrupted);
         }
         return false;
     }
@@ -714,9 +714,9 @@ public abstract class AbstractResolvableFuture<V> implements ListenableFuture8<V
             try {
                 string = pendingToString();
             } catch (RuntimeException e) {
-                StringBuilder sbU = outline.U("Exception thrown from implementation: ");
-                sbU.append(e.getClass());
-                string = sbU.toString();
+                StringBuilder sbM833U = C1643a.m833U("Exception thrown from implementation: ");
+                sbM833U.append(e.getClass());
+                string = sbM833U.toString();
             }
             if (string != null && !string.isEmpty()) {
                 sb.append("PENDING, info=[");

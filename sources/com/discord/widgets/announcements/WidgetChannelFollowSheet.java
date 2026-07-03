@@ -1,6 +1,5 @@
 package com.discord.widgets.announcements;
 
-import a0.a.a.b;
 import android.content.Context;
 import android.os.Bundle;
 import android.view.View;
@@ -8,10 +7,7 @@ import android.widget.TextView;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentViewModelLazyKt;
-import b.a.d.AppViewModelDelegates3;
-import b.a.d.AppViewModelDelegates5;
-import b.d.b.a.outline;
-import com.discord.R;
+import com.discord.C5419R;
 import com.discord.api.channel.Channel;
 import com.discord.api.channel.ChannelUtils;
 import com.discord.app.AppBottomSheet;
@@ -22,20 +18,15 @@ import com.discord.utilities.color.ColorCompat;
 import com.discord.utilities.error.Error;
 import com.discord.utilities.icon.IconUtils;
 import com.discord.utilities.images.MGImages;
-import com.discord.utilities.rx.ObservableExtensionsKt;
+import com.discord.utilities.p501rx.ObservableExtensionsKt;
 import com.discord.utilities.viewbinding.FragmentViewBindingDelegate;
-import com.discord.utilities.viewbinding.FragmentViewBindingDelegate3;
+import com.discord.utilities.viewbinding.FragmentViewBindingDelegateKt;
 import com.discord.widgets.announcements.WidgetChannelFollowSheetViewModel;
 import com.discord.widgets.announcements.WidgetChannelFollowSuccessDialog;
 import com.discord.widgets.channels.WidgetChannelSelector;
 import com.discord.widgets.guilds.WidgetGuildSelector;
 import com.facebook.drawee.view.SimpleDraweeView;
 import com.google.android.material.button.MaterialButton;
-import d0.z.d.FunctionReferenceImpl;
-import d0.z.d.Intrinsics3;
-import d0.z.d.Lambda;
-import d0.z.d.Reflection2;
-import j0.k.Func1;
 import java.util.Objects;
 import java.util.Set;
 import kotlin.Lazy;
@@ -45,13 +36,22 @@ import kotlin.jvm.functions.Function1;
 import kotlin.jvm.functions.Function2;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.reflect.KProperty;
-import rx.Observable;
-import rx.Subscription;
+import p001a0.p002a.p003a.C0002b;
+import p007b.p008a.p018d.C0865g0;
+import p007b.p008a.p018d.C0869i0;
+import p007b.p100d.p104b.p105a.C1643a;
+import p507d0.p592z.p594d.AbstractC12240o;
+import p507d0.p592z.p594d.C12216a0;
+import p507d0.p592z.p594d.C12236k;
+import p507d0.p592z.p594d.C12238m;
+import p637j0.p641k.InterfaceC12589b;
+import p658rx.Observable;
+import p658rx.Subscription;
 
 /* JADX INFO: compiled from: WidgetChannelFollowSheet.kt */
 /* JADX INFO: loaded from: classes2.dex */
 public final class WidgetChannelFollowSheet extends AppBottomSheet {
-    public static final /* synthetic */ KProperty[] $$delegatedProperties = {outline.d0(WidgetChannelFollowSheet.class, "binding", "getBinding()Lcom/discord/databinding/WidgetChannelFollowSheetBinding;", 0)};
+    public static final /* synthetic */ KProperty[] $$delegatedProperties = {C1643a.m846d0(WidgetChannelFollowSheet.class, "binding", "getBinding()Lcom/discord/databinding/WidgetChannelFollowSheetBinding;", 0)};
 
     /* JADX INFO: renamed from: Companion, reason: from kotlin metadata */
     public static final Companion INSTANCE = new Companion(null);
@@ -71,7 +71,7 @@ public final class WidgetChannelFollowSheet extends AppBottomSheet {
         private final long selectedGuildId;
 
         public ChannelFollowChannelFilterFunction(long j, Set<Long> set) {
-            Intrinsics3.checkNotNullParameter(set, "channelIds");
+            C12238m.checkNotNullParameter(set, "channelIds");
             this.selectedGuildId = j;
             this.channelIds = set;
         }
@@ -97,7 +97,7 @@ public final class WidgetChannelFollowSheet extends AppBottomSheet {
         }
 
         public final ChannelFollowChannelFilterFunction copy(long selectedGuildId, Set<Long> channelIds) {
-            Intrinsics3.checkNotNullParameter(channelIds, "channelIds");
+            C12238m.checkNotNullParameter(channelIds, "channelIds");
             return new ChannelFollowChannelFilterFunction(selectedGuildId, channelIds);
         }
 
@@ -109,26 +109,26 @@ public final class WidgetChannelFollowSheet extends AppBottomSheet {
                 return false;
             }
             ChannelFollowChannelFilterFunction channelFollowChannelFilterFunction = (ChannelFollowChannelFilterFunction) other;
-            return this.selectedGuildId == channelFollowChannelFilterFunction.selectedGuildId && Intrinsics3.areEqual(this.channelIds, channelFollowChannelFilterFunction.channelIds);
+            return this.selectedGuildId == channelFollowChannelFilterFunction.selectedGuildId && C12238m.areEqual(this.channelIds, channelFollowChannelFilterFunction.channelIds);
         }
 
         public int hashCode() {
-            int iA = b.a(this.selectedGuildId) * 31;
+            int iM3a = C0002b.m3a(this.selectedGuildId) * 31;
             Set<Long> set = this.channelIds;
-            return iA + (set != null ? set.hashCode() : 0);
+            return iM3a + (set != null ? set.hashCode() : 0);
         }
 
         @Override // com.discord.widgets.channels.WidgetChannelSelector.FilterFunction
         public boolean includeChannel(Channel channel) {
-            Intrinsics3.checkNotNullParameter(channel, "channel");
+            C12238m.checkNotNullParameter(channel, "channel");
             return this.channelIds.contains(Long.valueOf(channel.getId())) && channel.getGuildId() == this.selectedGuildId;
         }
 
         public String toString() {
-            StringBuilder sbU = outline.U("ChannelFollowChannelFilterFunction(selectedGuildId=");
-            sbU.append(this.selectedGuildId);
-            sbU.append(", channelIds=");
-            return outline.N(sbU, this.channelIds, ")");
+            StringBuilder sbM833U = C1643a.m833U("ChannelFollowChannelFilterFunction(selectedGuildId=");
+            sbM833U.append(this.selectedGuildId);
+            sbM833U.append(", channelIds=");
+            return C1643a.m826N(sbM833U, this.channelIds, ")");
         }
     }
 
@@ -138,11 +138,11 @@ public final class WidgetChannelFollowSheet extends AppBottomSheet {
         }
 
         public final void show(FragmentManager fragmentManager, long channelId, long guildId) {
-            Intrinsics3.checkNotNullParameter(fragmentManager, "fragmentManager");
+            C12238m.checkNotNullParameter(fragmentManager, "fragmentManager");
             WidgetChannelFollowSheet widgetChannelFollowSheet = new WidgetChannelFollowSheet();
-            Bundle bundleT = outline.T("com.discord.intent.extra.EXTRA_CHANNEL_ID", channelId);
-            bundleT.putLong("com.discord.intent.extra.EXTRA_GUILD_ID", guildId);
-            widgetChannelFollowSheet.setArguments(bundleT);
+            Bundle bundleM832T = C1643a.m832T("com.discord.intent.extra.EXTRA_CHANNEL_ID", channelId);
+            bundleM832T.putLong("com.discord.intent.extra.EXTRA_GUILD_ID", guildId);
+            widgetChannelFollowSheet.setArguments(bundleM832T);
             widgetChannelFollowSheet.show(fragmentManager, WidgetChannelFollowSheet.class.getName());
         }
 
@@ -151,95 +151,95 @@ public final class WidgetChannelFollowSheet extends AppBottomSheet {
         }
     }
 
-    /* JADX INFO: renamed from: com.discord.widgets.announcements.WidgetChannelFollowSheet$onCreate$1, reason: invalid class name */
+    /* JADX INFO: renamed from: com.discord.widgets.announcements.WidgetChannelFollowSheet$onCreate$1 */
     /* JADX INFO: compiled from: WidgetChannelFollowSheet.kt */
-    public static final class AnonymousClass1 extends Lambda implements Function2<Long, String, Unit> {
-        public AnonymousClass1() {
+    public static final class C71411 extends AbstractC12240o implements Function2<Long, String, Unit> {
+        public C71411() {
             super(2);
         }
 
         @Override // kotlin.jvm.functions.Function2
         public /* bridge */ /* synthetic */ Unit invoke(Long l, String str) {
             invoke(l.longValue(), str);
-            return Unit.a;
+            return Unit.f27425a;
         }
 
         public final void invoke(long j, String str) {
-            Intrinsics3.checkNotNullParameter(str, "<anonymous parameter 1>");
+            C12238m.checkNotNullParameter(str, "<anonymous parameter 1>");
             WidgetChannelFollowSheet.this.getViewModel().selectChannel(j);
         }
     }
 
-    /* JADX INFO: renamed from: com.discord.widgets.announcements.WidgetChannelFollowSheet$onCreate$2, reason: invalid class name */
+    /* JADX INFO: renamed from: com.discord.widgets.announcements.WidgetChannelFollowSheet$onCreate$2 */
     /* JADX INFO: compiled from: WidgetChannelFollowSheet.kt */
-    public static final class AnonymousClass2 extends Lambda implements Function2<Long, String, Unit> {
-        public AnonymousClass2() {
+    public static final class C71422 extends AbstractC12240o implements Function2<Long, String, Unit> {
+        public C71422() {
             super(2);
         }
 
         @Override // kotlin.jvm.functions.Function2
         public /* bridge */ /* synthetic */ Unit invoke(Long l, String str) {
             invoke(l.longValue(), str);
-            return Unit.a;
+            return Unit.f27425a;
         }
 
         public final void invoke(long j, String str) {
-            Intrinsics3.checkNotNullParameter(str, "<anonymous parameter 1>");
+            C12238m.checkNotNullParameter(str, "<anonymous parameter 1>");
             WidgetChannelFollowSheet.this.getViewModel().selectGuild(j);
             WidgetChannelFollowSheet.this.getViewModel().selectChannel(0L);
         }
     }
 
-    /* JADX INFO: renamed from: com.discord.widgets.announcements.WidgetChannelFollowSheet$onResume$1, reason: invalid class name */
+    /* JADX INFO: renamed from: com.discord.widgets.announcements.WidgetChannelFollowSheet$onResume$1 */
     /* JADX INFO: compiled from: WidgetChannelFollowSheet.kt */
-    public static final /* synthetic */ class AnonymousClass1 extends FunctionReferenceImpl implements Function1<WidgetChannelFollowSheetViewModel.ViewState.Loaded, Unit> {
-        public AnonymousClass1(WidgetChannelFollowSheet widgetChannelFollowSheet) {
+    public static final /* synthetic */ class C71431 extends C12236k implements Function1<WidgetChannelFollowSheetViewModel.ViewState.Loaded, Unit> {
+        public C71431(WidgetChannelFollowSheet widgetChannelFollowSheet) {
             super(1, widgetChannelFollowSheet, WidgetChannelFollowSheet.class, "configureUI", "configureUI(Lcom/discord/widgets/announcements/WidgetChannelFollowSheetViewModel$ViewState$Loaded;)V", 0);
         }
 
         @Override // kotlin.jvm.functions.Function1
         public /* bridge */ /* synthetic */ Unit invoke(WidgetChannelFollowSheetViewModel.ViewState.Loaded loaded) {
             invoke2(loaded);
-            return Unit.a;
+            return Unit.f27425a;
         }
 
         /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
         public final void invoke2(WidgetChannelFollowSheetViewModel.ViewState.Loaded loaded) {
-            Intrinsics3.checkNotNullParameter(loaded, "p1");
+            C12238m.checkNotNullParameter(loaded, "p1");
             ((WidgetChannelFollowSheet) this.receiver).configureUI(loaded);
         }
     }
 
-    /* JADX INFO: renamed from: com.discord.widgets.announcements.WidgetChannelFollowSheet$onResume$2, reason: invalid class name */
+    /* JADX INFO: renamed from: com.discord.widgets.announcements.WidgetChannelFollowSheet$onResume$2 */
     /* JADX INFO: compiled from: WidgetChannelFollowSheet.kt */
-    public static final class AnonymousClass2 extends Lambda implements Function1<WidgetChannelFollowSheetViewModel.Event, Unit> {
-        public AnonymousClass2() {
+    public static final class C71442 extends AbstractC12240o implements Function1<WidgetChannelFollowSheetViewModel.Event, Unit> {
+        public C71442() {
             super(1);
         }
 
         @Override // kotlin.jvm.functions.Function1
         public /* bridge */ /* synthetic */ Unit invoke(WidgetChannelFollowSheetViewModel.Event event) {
             invoke2(event);
-            return Unit.a;
+            return Unit.f27425a;
         }
 
         /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
         public final void invoke2(WidgetChannelFollowSheetViewModel.Event event) {
-            Intrinsics3.checkNotNullParameter(event, "it");
+            C12238m.checkNotNullParameter(event, "it");
             WidgetChannelFollowSheet.this.dismiss();
             WidgetChannelFollowSuccessDialog.Companion companion = WidgetChannelFollowSuccessDialog.INSTANCE;
             FragmentManager parentFragmentManager = WidgetChannelFollowSheet.this.getParentFragmentManager();
-            Intrinsics3.checkNotNullExpressionValue(parentFragmentManager, "parentFragmentManager");
+            C12238m.checkNotNullExpressionValue(parentFragmentManager, "parentFragmentManager");
             companion.show(parentFragmentManager);
         }
     }
 
     public WidgetChannelFollowSheet() {
         super(false, 1, null);
-        this.binding = FragmentViewBindingDelegate3.viewBinding$default(this, WidgetChannelFollowSheet2.INSTANCE, null, 2, null);
-        WidgetChannelFollowSheet3 widgetChannelFollowSheet3 = new WidgetChannelFollowSheet3(this);
-        AppViewModelDelegates3 appViewModelDelegates3 = new AppViewModelDelegates3(this);
-        this.viewModel = FragmentViewModelLazyKt.createViewModelLazy(this, Reflection2.getOrCreateKotlinClass(WidgetChannelFollowSheetViewModel.class), new WidgetChannelFollowSheet$appViewModels$$inlined$viewModels$1(appViewModelDelegates3), new AppViewModelDelegates5(widgetChannelFollowSheet3));
+        this.binding = FragmentViewBindingDelegateKt.viewBinding$default(this, WidgetChannelFollowSheet$binding$2.INSTANCE, null, 2, null);
+        WidgetChannelFollowSheet$viewModel$2 widgetChannelFollowSheet$viewModel$2 = new WidgetChannelFollowSheet$viewModel$2(this);
+        C0865g0 c0865g0 = new C0865g0(this);
+        this.viewModel = FragmentViewModelLazyKt.createViewModelLazy(this, C12216a0.getOrCreateKotlinClass(WidgetChannelFollowSheetViewModel.class), new WidgetChannelFollowSheet$appViewModels$$inlined$viewModels$1(c0865g0), new C0869i0(widgetChannelFollowSheet$viewModel$2));
     }
 
     private final void configureChannelSelector(final WidgetChannelFollowSheetViewModel.ViewState.Loaded viewState) {
@@ -247,97 +247,97 @@ public final class WidgetChannelFollowSheet extends AppBottomSheet {
         final Guild selectedGuild = viewState.getSelectedGuild();
         final Channel selectedChannel = viewState.getSelectedChannel();
         if (selectedGuild != null) {
-            getBinding().e.setOnClickListener(new View.OnClickListener() { // from class: com.discord.widgets.announcements.WidgetChannelFollowSheet.configureChannelSelector.1
+            getBinding().f15835e.setOnClickListener(new View.OnClickListener() { // from class: com.discord.widgets.announcements.WidgetChannelFollowSheet.configureChannelSelector.1
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
-                    WidgetChannelSelector.INSTANCE.launch(WidgetChannelFollowSheet.this, selectedGuild.getId(), WidgetChannelFollowSheet.REQUEST_KEY_CHANNEL_FOLLOW, false, R.string.none, new ChannelFollowChannelFilterFunction(selectedGuild.getId(), viewState.getAvailableChannels()));
+                    WidgetChannelSelector.INSTANCE.launch(WidgetChannelFollowSheet.this, selectedGuild.getId(), WidgetChannelFollowSheet.REQUEST_KEY_CHANNEL_FOLLOW, false, C5419R.string.none, new ChannelFollowChannelFilterFunction(selectedGuild.getId(), viewState.getAvailableChannels()));
                 }
             });
         }
         if (selectedChannel != null) {
-            i = R.attr.colorInteractiveActive;
-            TextView textView = getBinding().g;
-            Intrinsics3.checkNotNullExpressionValue(textView, "binding.channelFollowSelectedChannelName");
+            i = C5419R.attr.colorInteractiveActive;
+            TextView textView = getBinding().f15837g;
+            C12238m.checkNotNullExpressionValue(textView, "binding.channelFollowSelectedChannelName");
             Context contextRequireContext = requireContext();
-            Intrinsics3.checkNotNullExpressionValue(contextRequireContext, "requireContext()");
-            textView.setText(ChannelUtils.e(selectedChannel, contextRequireContext, false, 2));
-            MaterialButton materialButton = getBinding().i;
-            Intrinsics3.checkNotNullExpressionValue(materialButton, "binding.createChannelFollowerButton");
+            C12238m.checkNotNullExpressionValue(contextRequireContext, "requireContext()");
+            textView.setText(ChannelUtils.m7681e(selectedChannel, contextRequireContext, false, 2));
+            MaterialButton materialButton = getBinding().f15839i;
+            C12238m.checkNotNullExpressionValue(materialButton, "binding.createChannelFollowerButton");
             materialButton.setEnabled(true);
-            getBinding().i.setOnClickListener(new View.OnClickListener() { // from class: com.discord.widgets.announcements.WidgetChannelFollowSheet.configureChannelSelector.2
+            getBinding().f15839i.setOnClickListener(new View.OnClickListener() { // from class: com.discord.widgets.announcements.WidgetChannelFollowSheet.configureChannelSelector.2
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
                     WidgetChannelFollowSheet.this.getViewModel().followChannel(selectedChannel.getId());
                 }
             });
         } else {
-            i = R.attr.colorInteractiveNormal;
-            TextView textView2 = getBinding().g;
-            Intrinsics3.checkNotNullExpressionValue(textView2, "binding.channelFollowSelectedChannelName");
-            textView2.setText(getString(R.string.select));
-            MaterialButton materialButton2 = getBinding().i;
-            Intrinsics3.checkNotNullExpressionValue(materialButton2, "binding.createChannelFollowerButton");
+            i = C5419R.attr.colorInteractiveNormal;
+            TextView textView2 = getBinding().f15837g;
+            C12238m.checkNotNullExpressionValue(textView2, "binding.channelFollowSelectedChannelName");
+            textView2.setText(getString(C5419R.string.select));
+            MaterialButton materialButton2 = getBinding().f15839i;
+            C12238m.checkNotNullExpressionValue(materialButton2, "binding.createChannelFollowerButton");
             materialButton2.setEnabled(false);
         }
-        TextView textView3 = getBinding().g;
-        TextView textView4 = getBinding().h;
-        Intrinsics3.checkNotNullExpressionValue(textView4, "binding.channelFollowSelectedGuildName");
+        TextView textView3 = getBinding().f15837g;
+        TextView textView4 = getBinding().f15838h;
+        C12238m.checkNotNullExpressionValue(textView4, "binding.channelFollowSelectedGuildName");
         textView3.setTextColor(ColorCompat.getThemedColor(textView4, i));
     }
 
     private final void configureGuildSelector(final WidgetChannelFollowSheetViewModel.ViewState.Loaded viewState) {
         String string;
-        getBinding().f.setOnClickListener(new View.OnClickListener() { // from class: com.discord.widgets.announcements.WidgetChannelFollowSheet.configureGuildSelector.1
+        getBinding().f15836f.setOnClickListener(new View.OnClickListener() { // from class: com.discord.widgets.announcements.WidgetChannelFollowSheet.configureGuildSelector.1
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
                 WidgetGuildSelector.Companion.launch$default(WidgetGuildSelector.INSTANCE, WidgetChannelFollowSheet.this, null, false, 0, new WidgetGuildSelector.GuildFilterFunction(viewState.getAvailableGuilds()), 14, null);
             }
         });
         Guild selectedGuild = viewState.getSelectedGuild();
-        TextView textView = getBinding().h;
-        Intrinsics3.checkNotNullExpressionValue(textView, "binding.channelFollowSelectedGuildName");
+        TextView textView = getBinding().f15838h;
+        C12238m.checkNotNullExpressionValue(textView, "binding.channelFollowSelectedGuildName");
         if (selectedGuild == null || (string = selectedGuild.getName()) == null) {
-            string = getString(R.string.select);
+            string = getString(C5419R.string.select);
         }
         textView.setText(string);
-        int i = selectedGuild != null ? R.attr.colorInteractiveActive : R.attr.colorInteractiveNormal;
-        TextView textView2 = getBinding().h;
-        TextView textView3 = getBinding().h;
-        Intrinsics3.checkNotNullExpressionValue(textView3, "binding.channelFollowSelectedGuildName");
+        int i = selectedGuild != null ? C5419R.attr.colorInteractiveActive : C5419R.attr.colorInteractiveNormal;
+        TextView textView2 = getBinding().f15838h;
+        TextView textView3 = getBinding().f15838h;
+        C12238m.checkNotNullExpressionValue(textView3, "binding.channelFollowSelectedGuildName");
         textView2.setTextColor(ColorCompat.getThemedColor(textView3, i));
     }
 
     private final void configureUI(WidgetChannelFollowSheetViewModel.ViewState.Loaded viewState) {
-        SimpleDraweeView simpleDraweeView = getBinding().d;
-        Intrinsics3.checkNotNullExpressionValue(simpleDraweeView, "binding.channelFollowGuildIcon");
+        SimpleDraweeView simpleDraweeView = getBinding().f15834d;
+        C12238m.checkNotNullExpressionValue(simpleDraweeView, "binding.channelFollowGuildIcon");
         MGImages.setImage$default(simpleDraweeView, IconUtils.getForGuild$default(viewState.getSourceGuild(), null, false, null, 14, null), 0, 0, false, null, null, 124, null);
         Channel sourceChannel = viewState.getSourceChannel();
         if (sourceChannel != null) {
-            TextView textView = getBinding().f2255b;
-            Intrinsics3.checkNotNullExpressionValue(textView, "binding.channelFollowChannelName");
+            TextView textView = getBinding().f15832b;
+            C12238m.checkNotNullExpressionValue(textView, "binding.channelFollowChannelName");
             Context contextRequireContext = requireContext();
-            Intrinsics3.checkNotNullExpressionValue(contextRequireContext, "requireContext()");
-            textView.setText(ChannelUtils.d(sourceChannel, contextRequireContext, false));
+            C12238m.checkNotNullExpressionValue(contextRequireContext, "requireContext()");
+            textView.setText(ChannelUtils.m7680d(sourceChannel, contextRequireContext, false));
         }
         if (viewState.getAvailableGuilds().isEmpty()) {
-            AppViewFlipper appViewFlipper = getBinding().j;
-            Intrinsics3.checkNotNullExpressionValue(appViewFlipper, "binding.followSheetViewFlipper");
+            AppViewFlipper appViewFlipper = getBinding().f15840j;
+            C12238m.checkNotNullExpressionValue(appViewFlipper, "binding.followSheetViewFlipper");
             appViewFlipper.setDisplayedChild(1);
         } else {
-            AppViewFlipper appViewFlipper2 = getBinding().j;
-            Intrinsics3.checkNotNullExpressionValue(appViewFlipper2, "binding.followSheetViewFlipper");
+            AppViewFlipper appViewFlipper2 = getBinding().f15840j;
+            C12238m.checkNotNullExpressionValue(appViewFlipper2, "binding.followSheetViewFlipper");
             appViewFlipper2.setDisplayedChild(0);
             configureGuildSelector(viewState);
             configureChannelSelector(viewState);
         }
         if (viewState.getErrorTextRes() == null) {
-            TextView textView2 = getBinding().c;
-            Intrinsics3.checkNotNullExpressionValue(textView2, "binding.channelFollowErrorText");
+            TextView textView2 = getBinding().f15833c;
+            C12238m.checkNotNullExpressionValue(textView2, "binding.channelFollowErrorText");
             textView2.setVisibility(8);
         } else {
-            getBinding().c.setText(viewState.getErrorTextRes().intValue());
-            TextView textView3 = getBinding().c;
-            Intrinsics3.checkNotNullExpressionValue(textView3, "binding.channelFollowErrorText");
+            getBinding().f15833c.setText(viewState.getErrorTextRes().intValue());
+            TextView textView3 = getBinding().f15833c;
+            C12238m.checkNotNullExpressionValue(textView3, "binding.channelFollowErrorText");
             textView3.setVisibility(0);
         }
     }
@@ -356,36 +356,36 @@ public final class WidgetChannelFollowSheet extends AppBottomSheet {
 
     @Override // com.discord.app.AppBottomSheet
     public int getContentViewResId() {
-        return R.layout.widget_channel_follow_sheet;
+        return C5419R.layout.widget_channel_follow_sheet;
     }
 
     @Override // com.discord.app.AppBottomSheet, androidx.fragment.app.DialogFragment, androidx.fragment.app.Fragment
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        WidgetChannelSelector.INSTANCE.registerForResult(this, REQUEST_KEY_CHANNEL_FOLLOW, true, new AnonymousClass1());
-        WidgetGuildSelector.Companion.registerForResult$default(WidgetGuildSelector.INSTANCE, this, null, true, new AnonymousClass2(), 2, null);
+        WidgetChannelSelector.INSTANCE.registerForResult(this, REQUEST_KEY_CHANNEL_FOLLOW, true, new C71411());
+        WidgetGuildSelector.Companion.registerForResult$default(WidgetGuildSelector.INSTANCE, this, null, true, new C71422(), 2, null);
     }
 
     @Override // com.discord.app.AppBottomSheet, androidx.fragment.app.Fragment
     public void onResume() {
         super.onResume();
-        Observable<WidgetChannelFollowSheetViewModel.ViewState> observableR = getViewModel().observeViewState().r();
-        Intrinsics3.checkNotNullExpressionValue(observableR, "viewModel\n        .obser…  .distinctUntilChanged()");
-        Observable<R> observableG = observableR.y(new Func1<Object, Boolean>() { // from class: com.discord.widgets.announcements.WidgetChannelFollowSheet$onResume$$inlined$filterIs$1
+        Observable<WidgetChannelFollowSheetViewModel.ViewState> observableM11112r = getViewModel().observeViewState().m11112r();
+        C12238m.checkNotNullExpressionValue(observableM11112r, "viewModel\n        .obser…  .distinctUntilChanged()");
+        Observable<R> observableM11083G = observableM11112r.m11118y(new InterfaceC12589b<Object, Boolean>() { // from class: com.discord.widgets.announcements.WidgetChannelFollowSheet$onResume$$inlined$filterIs$1
             /* JADX WARN: Can't rename method to resolve collision */
-            @Override // j0.k.Func1
+            @Override // p637j0.p641k.InterfaceC12589b
             public final Boolean call(Object obj) {
                 return Boolean.valueOf(obj instanceof WidgetChannelFollowSheetViewModel.ViewState.Loaded);
             }
-        }).G(new Func1<Object, T>() { // from class: com.discord.widgets.announcements.WidgetChannelFollowSheet$onResume$$inlined$filterIs$2
-            @Override // j0.k.Func1
+        }).m11083G(new InterfaceC12589b<Object, T>() { // from class: com.discord.widgets.announcements.WidgetChannelFollowSheet$onResume$$inlined$filterIs$2
+            @Override // p637j0.p641k.InterfaceC12589b
             public final T call(Object obj) {
                 Objects.requireNonNull(obj, "null cannot be cast to non-null type com.discord.widgets.announcements.WidgetChannelFollowSheetViewModel.ViewState.Loaded");
                 return (T) ((WidgetChannelFollowSheetViewModel.ViewState.Loaded) obj);
             }
         });
-        Intrinsics3.checkNotNullExpressionValue(observableG, "filter { it is T }.map { it as T }");
-        ObservableExtensionsKt.appSubscribe(ObservableExtensionsKt.bindToComponentLifecycle$default(observableG, this, null, 2, null), (Class<?>) WidgetChannelFollowSheet.class, (58 & 2) != 0 ? null : null, (Function1<? super Subscription, Unit>) ((58 & 4) != 0 ? null : null), (Function1<? super Error, Unit>) ((58 & 8) != 0 ? null : null), (Function0<Unit>) ((58 & 16) != 0 ? ObservableExtensionsKt.AnonymousClass1.INSTANCE : null), (Function0<Unit>) ((58 & 32) != 0 ? ObservableExtensionsKt.AnonymousClass2.INSTANCE : null), new AnonymousClass1(this));
-        ObservableExtensionsKt.appSubscribe(ObservableExtensionsKt.bindToComponentLifecycle$default(getViewModel().observeEvents(), this, null, 2, null), (Class<?>) WidgetChannelFollowSheet.class, (58 & 2) != 0 ? null : null, (Function1<? super Subscription, Unit>) ((58 & 4) != 0 ? null : null), (Function1<? super Error, Unit>) ((58 & 8) != 0 ? null : null), (Function0<Unit>) ((58 & 16) != 0 ? ObservableExtensionsKt.AnonymousClass1.INSTANCE : null), (Function0<Unit>) ((58 & 32) != 0 ? ObservableExtensionsKt.AnonymousClass2.INSTANCE : null), new AnonymousClass2());
+        C12238m.checkNotNullExpressionValue(observableM11083G, "filter { it is T }.map { it as T }");
+        ObservableExtensionsKt.appSubscribe(ObservableExtensionsKt.bindToComponentLifecycle$default(observableM11083G, this, null, 2, null), (Class<?>) WidgetChannelFollowSheet.class, (58 & 2) != 0 ? null : null, (Function1<? super Subscription, Unit>) ((58 & 4) != 0 ? null : null), (Function1<? super Error, Unit>) ((58 & 8) != 0 ? null : null), (Function0<Unit>) ((58 & 16) != 0 ? ObservableExtensionsKt.C68791.INSTANCE : null), (Function0<Unit>) ((58 & 32) != 0 ? ObservableExtensionsKt.C68802.INSTANCE : null), new C71431(this));
+        ObservableExtensionsKt.appSubscribe(ObservableExtensionsKt.bindToComponentLifecycle$default(getViewModel().observeEvents(), this, null, 2, null), (Class<?>) WidgetChannelFollowSheet.class, (58 & 2) != 0 ? null : null, (Function1<? super Subscription, Unit>) ((58 & 4) != 0 ? null : null), (Function1<? super Error, Unit>) ((58 & 8) != 0 ? null : null), (Function0<Unit>) ((58 & 16) != 0 ? ObservableExtensionsKt.C68791.INSTANCE : null), (Function0<Unit>) ((58 & 32) != 0 ? ObservableExtensionsKt.C68802.INSTANCE : null), new C71442());
     }
 }

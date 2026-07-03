@@ -1,9 +1,5 @@
 package com.discord.utilities.textprocessing;
 
-import b.a.t.b.a.TextNode;
-import b.a.t.b.c.NodeProcessor;
-import b.c.a.a0.AnimatableValueParser;
-import b.d.b.a.outline;
 import com.discord.api.message.embed.MessageEmbed;
 import com.discord.simpleast.code.CodeNode;
 import com.discord.simpleast.core.node.Node;
@@ -16,20 +12,24 @@ import com.discord.utilities.textprocessing.node.EmojiNode;
 import com.discord.utilities.textprocessing.node.SpoilerNode;
 import com.discord.utilities.textprocessing.node.Spoilerable;
 import com.discord.utilities.textprocessing.node.UrlNode;
-import d0.g0.StringsJVM;
-import d0.t._Collections;
-import d0.z.d.Intrinsics3;
-import d0.z.d.TypeIntrinsics;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Objects;
 import kotlin.jvm.internal.DefaultConstructorMarker;
+import p007b.p008a.p050t.p052b.p053a.C1298a;
+import p007b.p008a.p050t.p052b.p055c.InterfaceC1307a;
+import p007b.p085c.p086a.p087a0.C1460d;
+import p007b.p100d.p104b.p105a.C1643a;
+import p507d0.p579g0.C12103t;
+import p507d0.p580t.C12163u;
+import p507d0.p592z.p594d.C12224e0;
+import p507d0.p592z.p594d.C12238m;
 
 /* JADX INFO: compiled from: MessagePreprocessor.kt */
 /* JADX INFO: loaded from: classes2.dex */
-public final class MessagePreprocessor implements NodeProcessor {
+public final class MessagePreprocessor implements InterfaceC1307a {
     private static final int MAX_JUMBO_EMOJI_COUNT = 27;
     private int customEmojiCount;
     private final List<MessageEmbed> embeds;
@@ -84,7 +84,7 @@ public final class MessagePreprocessor implements NodeProcessor {
         }
 
         public String toString() {
-            return outline.B(outline.U("ConstrainState(limit="), this.limit, ")");
+            return C1643a.m814B(C1643a.m833U("ConstrainState(limit="), this.limit, ")");
         }
     }
 
@@ -99,7 +99,7 @@ public final class MessagePreprocessor implements NodeProcessor {
     private final <R extends BasicRenderContext> void constrainAST(Collection<? extends Node<R>> nodes) {
         if (this.maxNodes != null) {
             Objects.requireNonNull(nodes, "null cannot be cast to non-null type kotlin.collections.MutableCollection<com.discord.simpleast.core.node.Node<R>>");
-            constrainAST(TypeIntrinsics.asMutableCollection(nodes), new ConstrainState(this.maxNodes.intValue()));
+            constrainAST(C12224e0.asMutableCollection(nodes), new ConstrainState(this.maxNodes.intValue()));
         }
     }
 
@@ -135,19 +135,19 @@ public final class MessagePreprocessor implements NodeProcessor {
 
     private final <R extends BasicRenderContext> void processQuoteChildren(Collection<? extends Node<R>> ast) {
         Objects.requireNonNull(ast, "null cannot be cast to non-null type kotlin.collections.MutableCollection<com.discord.simpleast.core.node.Node<R>>");
-        mergeConsecutiveQuoteNodes(TypeIntrinsics.asMutableCollection(ast));
-        NodeProcessor nodeProcessor = new NodeProcessor() { // from class: com.discord.utilities.textprocessing.MessagePreprocessor.processQuoteChildren.1
-            @Override // b.a.t.b.c.NodeProcessor
+        mergeConsecutiveQuoteNodes(C12224e0.asMutableCollection(ast));
+        InterfaceC1307a interfaceC1307a = new InterfaceC1307a() { // from class: com.discord.utilities.textprocessing.MessagePreprocessor.processQuoteChildren.1
+            @Override // p007b.p008a.p050t.p052b.p055c.InterfaceC1307a
             public final void processNode(Node<Object> node) {
                 Collection<Node<Object>> children = node.getChildren();
                 if (children != null) {
-                    MessagePreprocessor.this.mergeConsecutiveQuoteNodes(TypeIntrinsics.asMutableCollection(children));
+                    MessagePreprocessor.this.mergeConsecutiveQuoteNodes(C12224e0.asMutableCollection(children));
                 }
             }
         };
         Iterator<? extends Node<R>> it = ast.iterator();
         while (it.hasNext()) {
-            AnimatableValueParser.k2(it.next(), nodeProcessor);
+            C1460d.m538k2(it.next(), interfaceC1307a);
         }
     }
 
@@ -165,9 +165,9 @@ public final class MessagePreprocessor implements NodeProcessor {
             }
             Iterator it = arrayList.iterator();
             while (it.hasNext()) {
-                AnimatableValueParser.i2(((SpoilerNode) it.next()).getChildren(), new NodeProcessor() { // from class: com.discord.utilities.textprocessing.MessagePreprocessor$processSpoilerChildren$3$1
+                C1460d.m530i2(((SpoilerNode) it.next()).getChildren(), new InterfaceC1307a() { // from class: com.discord.utilities.textprocessing.MessagePreprocessor$processSpoilerChildren$3$1
                     /* JADX WARN: Multi-variable type inference failed */
-                    @Override // b.a.t.b.c.NodeProcessor
+                    @Override // p007b.p008a.p050t.p052b.p055c.InterfaceC1307a
                     public final void processNode(Node<Object> node) {
                         if (node instanceof Spoilerable) {
                             ((Spoilerable) node).setRevealed(false);
@@ -181,7 +181,7 @@ public final class MessagePreprocessor implements NodeProcessor {
     private final void stripSimpleEmbedLink(Collection<Node<MessageRenderContext>> nodes) {
         List<MessageEmbed> list;
         if (nodes.size() == 1 && (list = this.embeds) != null && list.size() == 1) {
-            Node node = (Node) _Collections.elementAt(nodes, 0);
+            Node node = (Node) C12163u.elementAt(nodes, 0);
             MessageEmbed messageEmbed = this.embeds.get(0);
             if ((node instanceof UrlNode) && EmbedResourceUtils.INSTANCE.isSimpleEmbed(messageEmbed)) {
                 nodes.clear();
@@ -208,12 +208,12 @@ public final class MessagePreprocessor implements NodeProcessor {
     }
 
     public final <R extends BasicRenderContext> void process(Collection<? extends Node<R>> ast) {
-        Intrinsics3.checkNotNullParameter(ast, "ast");
-        stripSimpleEmbedLink(TypeIntrinsics.asMutableCollection(ast));
-        AnimatableValueParser.i2(ast, this);
+        C12238m.checkNotNullParameter(ast, "ast");
+        stripSimpleEmbedLink(C12224e0.asMutableCollection(ast));
+        C1460d.m530i2(ast, this);
         if (this.shouldJumboify) {
-            AnimatableValueParser.i2(ast, new NodeProcessor() { // from class: com.discord.utilities.textprocessing.MessagePreprocessor.process.1
-                @Override // b.a.t.b.c.NodeProcessor
+            C1460d.m530i2(ast, new InterfaceC1307a() { // from class: com.discord.utilities.textprocessing.MessagePreprocessor.process.1
+                @Override // p007b.p008a.p050t.p052b.p055c.InterfaceC1307a
                 public final void processNode(Node<Object> node) {
                     if (node instanceof EmojiNode) {
                         ((EmojiNode) node).setJumbo(true);
@@ -229,11 +229,11 @@ public final class MessagePreprocessor implements NodeProcessor {
     /* JADX WARN: Code duplicated, block: B:12:0x001f  */
     /* JADX WARN: Code duplicated, block: B:18:0x0034  */
     /* JADX WARN: Code duplicated, block: B:9:0x0019  */
-    @Override // b.a.t.b.c.NodeProcessor
+    @Override // p007b.p008a.p050t.p052b.p055c.InterfaceC1307a
     public void processNode(Node<?> node) {
         boolean z2;
         boolean zIsBlank;
-        Intrinsics3.checkNotNullParameter(node, "node");
+        C12238m.checkNotNullParameter(node, "node");
         if (this.shouldJumboify) {
             if (node instanceof EmojiNode) {
                 int i = this.customEmojiCount + 1;
@@ -245,8 +245,8 @@ public final class MessagePreprocessor implements NodeProcessor {
                 }
             } else if (node instanceof StyleNode) {
                 zIsBlank = true;
-            } else if (node instanceof TextNode) {
-                zIsBlank = StringsJVM.isBlank(((TextNode) node).getContent());
+            } else if (node instanceof C1298a) {
+                zIsBlank = C12103t.isBlank(((C1298a) node).getContent());
             } else {
                 zIsBlank = false;
             }
@@ -292,7 +292,7 @@ public final class MessagePreprocessor implements NodeProcessor {
         Iterator<Node<R>> it = nodes.iterator();
         while (it.hasNext()) {
             Node<R> next = it.next();
-            if (!Intrinsics3.areEqual(next.getClass(), TextNode.class)) {
+            if (!C12238m.areEqual(next.getClass(), C1298a.class)) {
                 state.setLimit(state.getLimit() - 1);
             }
             if (state.getLimit() <= 0) {
@@ -300,7 +300,7 @@ public final class MessagePreprocessor implements NodeProcessor {
             } else if (next.hasChildren()) {
                 Collection<Node<R>> children = next.getChildren();
                 Objects.requireNonNull(children, "null cannot be cast to non-null type kotlin.collections.MutableCollection<com.discord.simpleast.core.node.Node<R>>");
-                constrainAST(TypeIntrinsics.asMutableCollection(children), state);
+                constrainAST(C12224e0.asMutableCollection(children), state);
                 if (!next.hasChildren()) {
                     it.remove();
                 }

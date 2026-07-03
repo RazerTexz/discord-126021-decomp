@@ -1,14 +1,14 @@
 package com.discord.analytics.generated.events;
 
-import b.d.b.a.outline;
 import com.discord.analytics.generated.traits.TrackBase;
-import com.discord.analytics.generated.traits.TrackBase2;
+import com.discord.analytics.generated.traits.TrackBaseReceiver;
 import com.discord.api.science.AnalyticsSchema;
-import d0.z.d.Intrinsics3;
+import p007b.p100d.p104b.p105a.C1643a;
+import p507d0.p592z.p594d.C12238m;
 
 /* JADX INFO: compiled from: TrackGuildCreationIntentSelected.kt */
 /* JADX INFO: loaded from: classes.dex */
-public final /* data */ class TrackGuildCreationIntentSelected implements AnalyticsSchema, TrackBase2 {
+public final /* data */ class TrackGuildCreationIntentSelected implements AnalyticsSchema, TrackBaseReceiver {
     private TrackBase trackBase;
     private final Boolean isCommunity = null;
     private final Boolean skipped = null;
@@ -28,7 +28,7 @@ public final /* data */ class TrackGuildCreationIntentSelected implements Analyt
             return false;
         }
         TrackGuildCreationIntentSelected trackGuildCreationIntentSelected = (TrackGuildCreationIntentSelected) other;
-        return Intrinsics3.areEqual(this.isCommunity, trackGuildCreationIntentSelected.isCommunity) && Intrinsics3.areEqual(this.skipped, trackGuildCreationIntentSelected.skipped);
+        return C12238m.areEqual(this.isCommunity, trackGuildCreationIntentSelected.isCommunity) && C12238m.areEqual(this.skipped, trackGuildCreationIntentSelected.skipped);
     }
 
     public int hashCode() {
@@ -39,9 +39,9 @@ public final /* data */ class TrackGuildCreationIntentSelected implements Analyt
     }
 
     public String toString() {
-        StringBuilder sbU = outline.U("TrackGuildCreationIntentSelected(isCommunity=");
-        sbU.append(this.isCommunity);
-        sbU.append(", skipped=");
-        return outline.D(sbU, this.skipped, ")");
+        StringBuilder sbM833U = C1643a.m833U("TrackGuildCreationIntentSelected(isCommunity=");
+        sbM833U.append(this.isCommunity);
+        sbM833U.append(", skipped=");
+        return C1643a.m816D(sbM833U, this.skipped, ")");
     }
 }

@@ -1,12 +1,12 @@
 package com.discord.widgets.settings.profile;
 
 import com.discord.utilities.intent.IntentUtilsKt;
-import d0.z.d.Lambda;
 import kotlin.jvm.functions.Function0;
+import p507d0.p592z.p594d.AbstractC12240o;
 
 /* JADX INFO: compiled from: WidgetEditUserOrGuildMemberProfile.kt */
 /* JADX INFO: loaded from: classes2.dex */
-public final class WidgetEditUserOrGuildMemberProfile$guildId$2 extends Lambda implements Function0<Long> {
+public final class WidgetEditUserOrGuildMemberProfile$guildId$2 extends AbstractC12240o implements Function0<Long> {
     public final /* synthetic */ WidgetEditUserOrGuildMemberProfile this$0;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */

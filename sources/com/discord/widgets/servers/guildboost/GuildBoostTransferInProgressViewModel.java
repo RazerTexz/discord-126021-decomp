@@ -1,8 +1,6 @@
 package com.discord.widgets.servers.guildboost;
 
 import androidx.annotation.MainThread;
-import b.a.d.AppViewModel;
-import b.d.b.a.outline;
 import com.discord.models.domain.ModelAppliedGuildBoost;
 import com.discord.models.domain.ModelGuildBoostSlot;
 import com.discord.models.guild.Guild;
@@ -10,12 +8,8 @@ import com.discord.restapi.RestAPIParams;
 import com.discord.stores.StoreGuildBoost;
 import com.discord.stores.StoreStream;
 import com.discord.utilities.error.Error;
+import com.discord.utilities.p501rx.ObservableExtensionsKt;
 import com.discord.utilities.rest.RestAPI;
-import com.discord.utilities.rx.ObservableExtensionsKt;
-import d0.t.CollectionsJVM;
-import d0.z.d.Intrinsics3;
-import d0.z.d.Lambda;
-import j0.k.Func1;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
@@ -23,13 +17,19 @@ import kotlin.Unit;
 import kotlin.jvm.functions.Function0;
 import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.DefaultConstructorMarker;
-import rx.Observable;
-import rx.Subscription;
-import rx.functions.Func3;
+import p007b.p008a.p018d.AbstractC0859d0;
+import p007b.p100d.p104b.p105a.C1643a;
+import p507d0.p580t.C12145m;
+import p507d0.p592z.p594d.AbstractC12240o;
+import p507d0.p592z.p594d.C12238m;
+import p637j0.p641k.InterfaceC12589b;
+import p658rx.Observable;
+import p658rx.Subscription;
+import p658rx.functions.Func3;
 
 /* JADX INFO: compiled from: GuildBoostTransferInProgressViewModel.kt */
 /* JADX INFO: loaded from: classes2.dex */
-public final class GuildBoostTransferInProgressViewModel extends AppViewModel<ViewState> {
+public final class GuildBoostTransferInProgressViewModel extends AbstractC0859d0<ViewState> {
     private final long boostId;
     private Subscription guildBoostingSubscription;
     private final long previousGuildId;
@@ -38,22 +38,22 @@ public final class GuildBoostTransferInProgressViewModel extends AppViewModel<Vi
     private final StoreGuildBoost storeGuildBoost;
     private final long targetGuildId;
 
-    /* JADX INFO: renamed from: com.discord.widgets.servers.guildboost.GuildBoostTransferInProgressViewModel$2, reason: invalid class name */
+    /* JADX INFO: renamed from: com.discord.widgets.servers.guildboost.GuildBoostTransferInProgressViewModel$2 */
     /* JADX INFO: compiled from: GuildBoostTransferInProgressViewModel.kt */
-    public static final class AnonymousClass2 extends Lambda implements Function1<StoreState, Unit> {
-        public AnonymousClass2() {
+    public static final class C95012 extends AbstractC12240o implements Function1<StoreState, Unit> {
+        public C95012() {
             super(1);
         }
 
         @Override // kotlin.jvm.functions.Function1
         public /* bridge */ /* synthetic */ Unit invoke(StoreState storeState) {
             invoke2(storeState);
-            return Unit.a;
+            return Unit.f27425a;
         }
 
         /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
         public final void invoke2(StoreState storeState) {
-            Intrinsics3.checkNotNullParameter(storeState, "storeState");
+            C12238m.checkNotNullParameter(storeState, "storeState");
             GuildBoostTransferInProgressViewModel.this.handleStoreState(storeState);
         }
     }
@@ -65,7 +65,7 @@ public final class GuildBoostTransferInProgressViewModel extends AppViewModel<Vi
         private final Guild targetGuild;
 
         public StoreState(Guild guild, Guild guild2, StoreGuildBoost.State state) {
-            Intrinsics3.checkNotNullParameter(state, "guildBoostState");
+            C12238m.checkNotNullParameter(state, "guildBoostState");
             this.previousGuild = guild;
             this.targetGuild = guild2;
             this.guildBoostState = state;
@@ -100,7 +100,7 @@ public final class GuildBoostTransferInProgressViewModel extends AppViewModel<Vi
         }
 
         public final StoreState copy(Guild previousGuild, Guild targetGuild, StoreGuildBoost.State guildBoostState) {
-            Intrinsics3.checkNotNullParameter(guildBoostState, "guildBoostState");
+            C12238m.checkNotNullParameter(guildBoostState, "guildBoostState");
             return new StoreState(previousGuild, targetGuild, guildBoostState);
         }
 
@@ -112,7 +112,7 @@ public final class GuildBoostTransferInProgressViewModel extends AppViewModel<Vi
                 return false;
             }
             StoreState storeState = (StoreState) other;
-            return Intrinsics3.areEqual(this.previousGuild, storeState.previousGuild) && Intrinsics3.areEqual(this.targetGuild, storeState.targetGuild) && Intrinsics3.areEqual(this.guildBoostState, storeState.guildBoostState);
+            return C12238m.areEqual(this.previousGuild, storeState.previousGuild) && C12238m.areEqual(this.targetGuild, storeState.targetGuild) && C12238m.areEqual(this.guildBoostState, storeState.guildBoostState);
         }
 
         public final StoreGuildBoost.State getGuildBoostState() {
@@ -137,14 +137,14 @@ public final class GuildBoostTransferInProgressViewModel extends AppViewModel<Vi
         }
 
         public String toString() {
-            StringBuilder sbU = outline.U("StoreState(previousGuild=");
-            sbU.append(this.previousGuild);
-            sbU.append(", targetGuild=");
-            sbU.append(this.targetGuild);
-            sbU.append(", guildBoostState=");
-            sbU.append(this.guildBoostState);
-            sbU.append(")");
-            return sbU.toString();
+            StringBuilder sbM833U = C1643a.m833U("StoreState(previousGuild=");
+            sbM833U.append(this.previousGuild);
+            sbM833U.append(", targetGuild=");
+            sbM833U.append(this.targetGuild);
+            sbM833U.append(", guildBoostState=");
+            sbM833U.append(this.guildBoostState);
+            sbM833U.append(")");
+            return sbM833U.toString();
         }
     }
 
@@ -186,7 +186,7 @@ public final class GuildBoostTransferInProgressViewModel extends AppViewModel<Vi
             /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
             public PostTransfer(Guild guild, int i) {
                 super(null);
-                Intrinsics3.checkNotNullParameter(guild, "targetGuild");
+                C12238m.checkNotNullParameter(guild, "targetGuild");
                 this.targetGuild = guild;
                 this.targetGuildSubscriptionCount = i;
             }
@@ -212,7 +212,7 @@ public final class GuildBoostTransferInProgressViewModel extends AppViewModel<Vi
             }
 
             public final PostTransfer copy(Guild targetGuild, int targetGuildSubscriptionCount) {
-                Intrinsics3.checkNotNullParameter(targetGuild, "targetGuild");
+                C12238m.checkNotNullParameter(targetGuild, "targetGuild");
                 return new PostTransfer(targetGuild, targetGuildSubscriptionCount);
             }
 
@@ -224,7 +224,7 @@ public final class GuildBoostTransferInProgressViewModel extends AppViewModel<Vi
                     return false;
                 }
                 PostTransfer postTransfer = (PostTransfer) other;
-                return Intrinsics3.areEqual(this.targetGuild, postTransfer.targetGuild) && this.targetGuildSubscriptionCount == postTransfer.targetGuildSubscriptionCount;
+                return C12238m.areEqual(this.targetGuild, postTransfer.targetGuild) && this.targetGuildSubscriptionCount == postTransfer.targetGuildSubscriptionCount;
             }
 
             public final Guild getTargetGuild() {
@@ -241,10 +241,10 @@ public final class GuildBoostTransferInProgressViewModel extends AppViewModel<Vi
             }
 
             public String toString() {
-                StringBuilder sbU = outline.U("PostTransfer(targetGuild=");
-                sbU.append(this.targetGuild);
-                sbU.append(", targetGuildSubscriptionCount=");
-                return outline.B(sbU, this.targetGuildSubscriptionCount, ")");
+                StringBuilder sbM833U = C1643a.m833U("PostTransfer(targetGuild=");
+                sbM833U.append(this.targetGuild);
+                sbM833U.append(", targetGuildSubscriptionCount=");
+                return C1643a.m814B(sbM833U, this.targetGuildSubscriptionCount, ")");
             }
         }
 
@@ -258,8 +258,8 @@ public final class GuildBoostTransferInProgressViewModel extends AppViewModel<Vi
             /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
             public PreTransfer(Guild guild, Guild guild2, int i, boolean z2) {
                 super(null);
-                Intrinsics3.checkNotNullParameter(guild, "previousGuild");
-                Intrinsics3.checkNotNullParameter(guild2, "targetGuild");
+                C12238m.checkNotNullParameter(guild, "previousGuild");
+                C12238m.checkNotNullParameter(guild2, "targetGuild");
                 this.previousGuild = guild;
                 this.targetGuild = guild2;
                 this.targetGuildSubscriptionCount = i;
@@ -303,8 +303,8 @@ public final class GuildBoostTransferInProgressViewModel extends AppViewModel<Vi
             }
 
             public final PreTransfer copy(Guild previousGuild, Guild targetGuild, int targetGuildSubscriptionCount, boolean isTransferInProgress) {
-                Intrinsics3.checkNotNullParameter(previousGuild, "previousGuild");
-                Intrinsics3.checkNotNullParameter(targetGuild, "targetGuild");
+                C12238m.checkNotNullParameter(previousGuild, "previousGuild");
+                C12238m.checkNotNullParameter(targetGuild, "targetGuild");
                 return new PreTransfer(previousGuild, targetGuild, targetGuildSubscriptionCount, isTransferInProgress);
             }
 
@@ -316,7 +316,7 @@ public final class GuildBoostTransferInProgressViewModel extends AppViewModel<Vi
                     return false;
                 }
                 PreTransfer preTransfer = (PreTransfer) other;
-                return Intrinsics3.areEqual(this.previousGuild, preTransfer.previousGuild) && Intrinsics3.areEqual(this.targetGuild, preTransfer.targetGuild) && this.targetGuildSubscriptionCount == preTransfer.targetGuildSubscriptionCount && this.isTransferInProgress == preTransfer.isTransferInProgress;
+                return C12238m.areEqual(this.previousGuild, preTransfer.previousGuild) && C12238m.areEqual(this.targetGuild, preTransfer.targetGuild) && this.targetGuildSubscriptionCount == preTransfer.targetGuildSubscriptionCount && this.isTransferInProgress == preTransfer.isTransferInProgress;
             }
 
             public final Guild getPreviousGuild() {
@@ -354,14 +354,14 @@ public final class GuildBoostTransferInProgressViewModel extends AppViewModel<Vi
             }
 
             public String toString() {
-                StringBuilder sbU = outline.U("PreTransfer(previousGuild=");
-                sbU.append(this.previousGuild);
-                sbU.append(", targetGuild=");
-                sbU.append(this.targetGuild);
-                sbU.append(", targetGuildSubscriptionCount=");
-                sbU.append(this.targetGuildSubscriptionCount);
-                sbU.append(", isTransferInProgress=");
-                return outline.O(sbU, this.isTransferInProgress, ")");
+                StringBuilder sbM833U = C1643a.m833U("PreTransfer(previousGuild=");
+                sbM833U.append(this.previousGuild);
+                sbM833U.append(", targetGuild=");
+                sbM833U.append(this.targetGuild);
+                sbM833U.append(", targetGuildSubscriptionCount=");
+                sbM833U.append(this.targetGuildSubscriptionCount);
+                sbM833U.append(", isTransferInProgress=");
+                return C1643a.m827O(sbM833U, this.isTransferInProgress, ")");
             }
         }
 
@@ -373,37 +373,37 @@ public final class GuildBoostTransferInProgressViewModel extends AppViewModel<Vi
         }
     }
 
-    /* JADX INFO: renamed from: com.discord.widgets.servers.guildboost.GuildBoostTransferInProgressViewModel$transferGuildBoost$2, reason: invalid class name */
+    /* JADX INFO: renamed from: com.discord.widgets.servers.guildboost.GuildBoostTransferInProgressViewModel$transferGuildBoost$2 */
     /* JADX INFO: compiled from: GuildBoostTransferInProgressViewModel.kt */
-    public static final class AnonymousClass2 extends Lambda implements Function1<Error, Unit> {
-        public AnonymousClass2() {
+    public static final class C95032 extends AbstractC12240o implements Function1<Error, Unit> {
+        public C95032() {
             super(1);
         }
 
         @Override // kotlin.jvm.functions.Function1
         public /* bridge */ /* synthetic */ Unit invoke(Error error) {
             invoke2(error);
-            return Unit.a;
+            return Unit.f27425a;
         }
 
         /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
         public final void invoke2(Error error) {
-            Intrinsics3.checkNotNullParameter(error, "it");
+            C12238m.checkNotNullParameter(error, "it");
             GuildBoostTransferInProgressViewModel.this.handleGuildBoostingError();
         }
     }
 
-    /* JADX INFO: renamed from: com.discord.widgets.servers.guildboost.GuildBoostTransferInProgressViewModel$transferGuildBoost$3, reason: invalid class name */
+    /* JADX INFO: renamed from: com.discord.widgets.servers.guildboost.GuildBoostTransferInProgressViewModel$transferGuildBoost$3 */
     /* JADX INFO: compiled from: GuildBoostTransferInProgressViewModel.kt */
-    public static final class AnonymousClass3 extends Lambda implements Function1<List<? extends ModelAppliedGuildBoost>, Unit> {
-        public AnonymousClass3() {
+    public static final class C95043 extends AbstractC12240o implements Function1<List<? extends ModelAppliedGuildBoost>, Unit> {
+        public C95043() {
             super(1);
         }
 
         @Override // kotlin.jvm.functions.Function1
         public /* bridge */ /* synthetic */ Unit invoke(List<? extends ModelAppliedGuildBoost> list) {
             invoke2((List<ModelAppliedGuildBoost>) list);
-            return Unit.a;
+            return Unit.f27425a;
         }
 
         /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
@@ -419,15 +419,15 @@ public final class GuildBoostTransferInProgressViewModel extends AppViewModel<Vi
         StoreGuildBoost guildBoosts = (i & 32) != 0 ? StoreStream.INSTANCE.getGuildBoosts() : storeGuildBoost;
         if ((i & 64) != 0) {
             StoreStream.Companion companion = StoreStream.INSTANCE;
-            Observable observableI = Observable.i(companion.getGuilds().observeGuild(j3), companion.getGuilds().observeGuild(j4), StoreGuildBoost.observeGuildBoostState$default(companion.getGuildBoosts(), null, 1, null), new Func3<Guild, Guild, StoreGuildBoost.State, StoreState>() { // from class: com.discord.widgets.servers.guildboost.GuildBoostTransferInProgressViewModel.1
-                @Override // rx.functions.Func3
+            Observable observableM11075i = Observable.m11075i(companion.getGuilds().observeGuild(j3), companion.getGuilds().observeGuild(j4), StoreGuildBoost.observeGuildBoostState$default(companion.getGuildBoosts(), null, 1, null), new Func3<Guild, Guild, StoreGuildBoost.State, StoreState>() { // from class: com.discord.widgets.servers.guildboost.GuildBoostTransferInProgressViewModel.1
+                @Override // p658rx.functions.Func3
                 public final StoreState call(Guild guild, Guild guild2, StoreGuildBoost.State state) {
-                    Intrinsics3.checkNotNullExpressionValue(state, "guildBoostState");
+                    C12238m.checkNotNullExpressionValue(state, "guildBoostState");
                     return new StoreState(guild, guild2, state);
                 }
             });
-            Intrinsics3.checkNotNullExpressionValue(observableI, "Observable.combineLatest…guildBoostState\n    )\n  }");
-            observable2 = observableI;
+            C12238m.checkNotNullExpressionValue(observableM11075i, "Observable.combineLatest…guildBoostState\n    )\n  }");
+            observable2 = observableM11075i;
         } else {
             observable2 = observable;
         }
@@ -506,7 +506,7 @@ public final class GuildBoostTransferInProgressViewModel extends AppViewModel<Vi
         return this.targetGuildId;
     }
 
-    @Override // b.a.d.AppViewModel, androidx.view.ViewModel
+    @Override // p007b.p008a.p018d.AbstractC0859d0, androidx.view.ViewModel
     public void onCleared() {
         Subscription subscription = this.guildBoostingSubscription;
         if (subscription != null) {
@@ -518,28 +518,28 @@ public final class GuildBoostTransferInProgressViewModel extends AppViewModel<Vi
     @MainThread
     public final void transferGuildBoost() {
         handleGuildBoostingStarted();
-        Observable<R> observableA = this.restAPI.unsubscribeToGuild(this.previousGuildId, this.boostId).A(new Func1<Void, Observable<? extends List<? extends ModelAppliedGuildBoost>>>() { // from class: com.discord.widgets.servers.guildboost.GuildBoostTransferInProgressViewModel.transferGuildBoost.1
-            @Override // j0.k.Func1
+        Observable<R> observableM11082A = this.restAPI.unsubscribeToGuild(this.previousGuildId, this.boostId).m11082A(new InterfaceC12589b<Void, Observable<? extends List<? extends ModelAppliedGuildBoost>>>() { // from class: com.discord.widgets.servers.guildboost.GuildBoostTransferInProgressViewModel.transferGuildBoost.1
+            @Override // p637j0.p641k.InterfaceC12589b
             public final Observable<? extends List<ModelAppliedGuildBoost>> call(Void r6) {
-                return GuildBoostTransferInProgressViewModel.this.getRestAPI().subscribeToGuild(GuildBoostTransferInProgressViewModel.this.getTargetGuildId(), new RestAPIParams.GuildBoosting(CollectionsJVM.listOf(Long.valueOf(GuildBoostTransferInProgressViewModel.this.getSlotId()))));
+                return GuildBoostTransferInProgressViewModel.this.getRestAPI().subscribeToGuild(GuildBoostTransferInProgressViewModel.this.getTargetGuildId(), new RestAPIParams.GuildBoosting(C12145m.listOf(Long.valueOf(GuildBoostTransferInProgressViewModel.this.getSlotId()))));
             }
         });
-        Intrinsics3.checkNotNullExpressionValue(observableA, "restAPI\n        .unsubsc…              )\n        }");
-        ObservableExtensionsKt.appSubscribe(ObservableExtensionsKt.ui$default(ObservableExtensionsKt.restSubscribeOn$default(observableA, false, 1, null), this, null, 2, null), (Class<?>) GuildBoostTransferInProgressViewModel.class, (58 & 2) != 0 ? null : null, (Function1<? super Subscription, Unit>) ((58 & 4) != 0 ? null : null), (Function1<? super Error, Unit>) ((58 & 8) != 0 ? null : new AnonymousClass2()), (Function0<Unit>) ((58 & 16) != 0 ? ObservableExtensionsKt.AnonymousClass1.INSTANCE : null), (Function0<Unit>) ((58 & 32) != 0 ? ObservableExtensionsKt.AnonymousClass2.INSTANCE : null), new AnonymousClass3());
+        C12238m.checkNotNullExpressionValue(observableM11082A, "restAPI\n        .unsubsc…              )\n        }");
+        ObservableExtensionsKt.appSubscribe(ObservableExtensionsKt.ui$default(ObservableExtensionsKt.restSubscribeOn$default(observableM11082A, false, 1, null), this, null, 2, null), (Class<?>) GuildBoostTransferInProgressViewModel.class, (58 & 2) != 0 ? null : null, (Function1<? super Subscription, Unit>) ((58 & 4) != 0 ? null : null), (Function1<? super Error, Unit>) ((58 & 8) != 0 ? null : new C95032()), (Function0<Unit>) ((58 & 16) != 0 ? ObservableExtensionsKt.C68791.INSTANCE : null), (Function0<Unit>) ((58 & 32) != 0 ? ObservableExtensionsKt.C68802.INSTANCE : null), new C95043());
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public GuildBoostTransferInProgressViewModel(long j, long j2, long j3, long j4, RestAPI restAPI, StoreGuildBoost storeGuildBoost, Observable<StoreState> observable) {
         super(ViewState.Loading.INSTANCE);
-        Intrinsics3.checkNotNullParameter(restAPI, "restAPI");
-        Intrinsics3.checkNotNullParameter(storeGuildBoost, "storeGuildBoost");
-        Intrinsics3.checkNotNullParameter(observable, "storeObservable");
+        C12238m.checkNotNullParameter(restAPI, "restAPI");
+        C12238m.checkNotNullParameter(storeGuildBoost, "storeGuildBoost");
+        C12238m.checkNotNullParameter(observable, "storeObservable");
         this.slotId = j;
         this.boostId = j2;
         this.previousGuildId = j3;
         this.targetGuildId = j4;
         this.restAPI = restAPI;
         this.storeGuildBoost = storeGuildBoost;
-        ObservableExtensionsKt.appSubscribe(ObservableExtensionsKt.ui$default(ObservableExtensionsKt.computationLatest(observable), this, null, 2, null), (Class<?>) GuildBoostTransferInProgressViewModel.class, (58 & 2) != 0 ? null : null, (Function1<? super Subscription, Unit>) ((58 & 4) != 0 ? null : null), (Function1<? super Error, Unit>) ((58 & 8) != 0 ? null : null), (Function0<Unit>) ((58 & 16) != 0 ? ObservableExtensionsKt.AnonymousClass1.INSTANCE : null), (Function0<Unit>) ((58 & 32) != 0 ? ObservableExtensionsKt.AnonymousClass2.INSTANCE : null), new AnonymousClass2());
+        ObservableExtensionsKt.appSubscribe(ObservableExtensionsKt.ui$default(ObservableExtensionsKt.computationLatest(observable), this, null, 2, null), (Class<?>) GuildBoostTransferInProgressViewModel.class, (58 & 2) != 0 ? null : null, (Function1<? super Subscription, Unit>) ((58 & 4) != 0 ? null : null), (Function1<? super Error, Unit>) ((58 & 8) != 0 ? null : null), (Function0<Unit>) ((58 & 16) != 0 ? ObservableExtensionsKt.C68791.INSTANCE : null), (Function0<Unit>) ((58 & 32) != 0 ? ObservableExtensionsKt.C68802.INSTANCE : null), new C95012());
     }
 }

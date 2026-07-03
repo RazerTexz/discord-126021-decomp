@@ -17,10 +17,10 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.annotation.RestrictTo;
 import androidx.annotation.XmlRes;
-import b.d.b.a.outline;
 import java.io.IOException;
 import java.lang.reflect.InvocationTargetException;
 import org.xmlpull.v1.XmlPullParserException;
+import p007b.p100d.p104b.p105a.C1643a;
 
 /* JADX INFO: loaded from: classes3.dex */
 @RestrictTo({RestrictTo.Scope.LIBRARY_GROUP})
@@ -47,9 +47,9 @@ public final class DrawableUtils {
             }
             throw new XmlPullParserException("Must have a <" + ((Object) charSequence) + "> start tag");
         } catch (IOException | XmlPullParserException e) {
-            StringBuilder sbU = outline.U("Can't load badge resource ID #0x");
-            sbU.append(Integer.toHexString(i));
-            Resources.NotFoundException notFoundException = new Resources.NotFoundException(sbU.toString());
+            StringBuilder sbM833U = C1643a.m833U("Can't load badge resource ID #0x");
+            sbM833U.append(Integer.toHexString(i));
+            Resources.NotFoundException notFoundException = new Resources.NotFoundException(sbM833U.toString());
             notFoundException.initCause(e);
             throw notFoundException;
         }

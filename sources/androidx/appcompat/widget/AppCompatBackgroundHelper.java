@@ -9,7 +9,7 @@ import android.util.AttributeSet;
 import android.view.View;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import androidx.appcompat.R;
+import androidx.appcompat.C0051R;
 import androidx.core.view.ViewCompat;
 
 /* JADX INFO: loaded from: classes.dex */
@@ -94,12 +94,12 @@ public class AppCompatBackgroundHelper {
 
     public void loadFromAttributes(@Nullable AttributeSet attributeSet, int i) {
         Context context = this.mView.getContext();
-        int[] iArr = R.styleable.ViewBackgroundHelper;
+        int[] iArr = C0051R.styleable.ViewBackgroundHelper;
         TintTypedArray tintTypedArrayObtainStyledAttributes = TintTypedArray.obtainStyledAttributes(context, attributeSet, iArr, i, 0);
         View view = this.mView;
         ViewCompat.saveAttributeDataForStyleable(view, view.getContext(), iArr, attributeSet, tintTypedArrayObtainStyledAttributes.getWrappedTypeArray(), i, 0);
         try {
-            int i2 = R.styleable.ViewBackgroundHelper_android_background;
+            int i2 = C0051R.styleable.ViewBackgroundHelper_android_background;
             if (tintTypedArrayObtainStyledAttributes.hasValue(i2)) {
                 this.mBackgroundResId = tintTypedArrayObtainStyledAttributes.getResourceId(i2, -1);
                 ColorStateList tintList = this.mDrawableManager.getTintList(this.mView.getContext(), this.mBackgroundResId);
@@ -107,11 +107,11 @@ public class AppCompatBackgroundHelper {
                     setInternalBackgroundTint(tintList);
                 }
             }
-            int i3 = R.styleable.ViewBackgroundHelper_backgroundTint;
+            int i3 = C0051R.styleable.ViewBackgroundHelper_backgroundTint;
             if (tintTypedArrayObtainStyledAttributes.hasValue(i3)) {
                 ViewCompat.setBackgroundTintList(this.mView, tintTypedArrayObtainStyledAttributes.getColorStateList(i3));
             }
-            int i4 = R.styleable.ViewBackgroundHelper_backgroundTintMode;
+            int i4 = C0051R.styleable.ViewBackgroundHelper_backgroundTintMode;
             if (tintTypedArrayObtainStyledAttributes.hasValue(i4)) {
                 ViewCompat.setBackgroundTintMode(this.mView, DrawableUtils.parseTintMode(tintTypedArrayObtainStyledAttributes.getInt(i4, -1), null));
             }

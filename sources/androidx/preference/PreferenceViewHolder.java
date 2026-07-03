@@ -19,7 +19,7 @@ public class PreferenceViewHolder extends RecyclerView.ViewHolder {
         sparseArray.put(android.R.id.title, view.findViewById(android.R.id.title));
         sparseArray.put(android.R.id.summary, view.findViewById(android.R.id.summary));
         sparseArray.put(android.R.id.icon, view.findViewById(android.R.id.icon));
-        int i = R.id.icon_frame;
+        int i = C0525R.id.icon_frame;
         sparseArray.put(i, view.findViewById(i));
         sparseArray.put(16908350, view.findViewById(16908350));
     }

@@ -1,11 +1,11 @@
 package com.discord.widgets.guilds.invite;
 
-import b.d.b.a.outline;
 import com.discord.api.channel.Channel;
 import com.discord.models.user.User;
 import com.discord.utilities.mg_recycler.MGRecyclerDataPayload;
-import d0.z.d.Intrinsics3;
 import kotlin.jvm.internal.DefaultConstructorMarker;
+import p007b.p100d.p104b.p105a.C1643a;
+import p507d0.p592z.p594d.C12238m;
 
 /* JADX INFO: compiled from: InviteSuggestionItem.kt */
 /* JADX INFO: loaded from: classes2.dex */
@@ -26,13 +26,13 @@ public abstract class InviteSuggestionItem implements MGRecyclerDataPayload {
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
         public ChannelItem(Channel channel, boolean z2) {
             super(null);
-            Intrinsics3.checkNotNullParameter(channel, "channel");
+            C12238m.checkNotNullParameter(channel, "channel");
             this.channel = channel;
             this.hasSent = z2;
             this.type = 1;
-            StringBuilder sbU = outline.U("c");
-            sbU.append(String.valueOf(channel.getId()));
-            this.key = sbU.toString();
+            StringBuilder sbM833U = C1643a.m833U("c");
+            sbM833U.append(String.valueOf(channel.getId()));
+            this.key = sbM833U.toString();
         }
 
         public static /* synthetic */ ChannelItem copy$default(ChannelItem channelItem, Channel channel, boolean z2, int i, Object obj) {
@@ -56,7 +56,7 @@ public abstract class InviteSuggestionItem implements MGRecyclerDataPayload {
         }
 
         public final ChannelItem copy(Channel channel, boolean hasSent) {
-            Intrinsics3.checkNotNullParameter(channel, "channel");
+            C12238m.checkNotNullParameter(channel, "channel");
             return new ChannelItem(channel, hasSent);
         }
 
@@ -68,7 +68,7 @@ public abstract class InviteSuggestionItem implements MGRecyclerDataPayload {
                 return false;
             }
             ChannelItem channelItem = (ChannelItem) other;
-            return Intrinsics3.areEqual(this.channel, channelItem.channel) && this.hasSent == channelItem.hasSent;
+            return C12238m.areEqual(this.channel, channelItem.channel) && this.hasSent == channelItem.hasSent;
         }
 
         public final Channel getChannel() {
@@ -111,10 +111,10 @@ public abstract class InviteSuggestionItem implements MGRecyclerDataPayload {
         }
 
         public String toString() {
-            StringBuilder sbU = outline.U("ChannelItem(channel=");
-            sbU.append(this.channel);
-            sbU.append(", hasSent=");
-            return outline.O(sbU, this.hasSent, ")");
+            StringBuilder sbM833U = C1643a.m833U("ChannelItem(channel=");
+            sbM833U.append(this.channel);
+            sbM833U.append(", hasSent=");
+            return C1643a.m827O(sbM833U, this.hasSent, ")");
         }
     }
 
@@ -150,12 +150,12 @@ public abstract class InviteSuggestionItem implements MGRecyclerDataPayload {
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
         public UserItem(User user, boolean z2) {
             super(null);
-            Intrinsics3.checkNotNullParameter(user, "user");
+            C12238m.checkNotNullParameter(user, "user");
             this.user = user;
             this.hasSent = z2;
-            StringBuilder sbU = outline.U("u");
-            sbU.append(String.valueOf(user.getId()));
-            this.key = sbU.toString();
+            StringBuilder sbM833U = C1643a.m833U("u");
+            sbM833U.append(String.valueOf(user.getId()));
+            this.key = sbM833U.toString();
         }
 
         public static /* synthetic */ UserItem copy$default(UserItem userItem, User user, boolean z2, int i, Object obj) {
@@ -179,7 +179,7 @@ public abstract class InviteSuggestionItem implements MGRecyclerDataPayload {
         }
 
         public final UserItem copy(User user, boolean hasSent) {
-            Intrinsics3.checkNotNullParameter(user, "user");
+            C12238m.checkNotNullParameter(user, "user");
             return new UserItem(user, hasSent);
         }
 
@@ -191,7 +191,7 @@ public abstract class InviteSuggestionItem implements MGRecyclerDataPayload {
                 return false;
             }
             UserItem userItem = (UserItem) other;
-            return Intrinsics3.areEqual(this.user, userItem.user) && this.hasSent == userItem.hasSent;
+            return C12238m.areEqual(this.user, userItem.user) && this.hasSent == userItem.hasSent;
         }
 
         public final boolean getHasSent() {
@@ -234,10 +234,10 @@ public abstract class InviteSuggestionItem implements MGRecyclerDataPayload {
         }
 
         public String toString() {
-            StringBuilder sbU = outline.U("UserItem(user=");
-            sbU.append(this.user);
-            sbU.append(", hasSent=");
-            return outline.O(sbU, this.hasSent, ")");
+            StringBuilder sbM833U = C1643a.m833U("UserItem(user=");
+            sbM833U.append(this.user);
+            sbM833U.append(", hasSent=");
+            return C1643a.m827O(sbM833U, this.hasSent, ")");
         }
     }
 

@@ -1,11 +1,11 @@
 package com.discord.widgets.settings.connections;
 
-import d0.z.d.Lambda;
 import kotlin.jvm.functions.Function0;
+import p507d0.p592z.p594d.AbstractC12240o;
 
 /* JADX INFO: compiled from: WidgetSettingsUserConnections.kt */
 /* JADX INFO: loaded from: classes2.dex */
-public final class WidgetSettingsUserConnections$viewModel$2 extends Lambda implements Function0<WidgetSettingsUserConnectionsViewModel> {
+public final class WidgetSettingsUserConnections$viewModel$2 extends AbstractC12240o implements Function0<WidgetSettingsUserConnectionsViewModel> {
     public static final WidgetSettingsUserConnections$viewModel$2 INSTANCE = new WidgetSettingsUserConnections$viewModel$2();
 
     public WidgetSettingsUserConnections$viewModel$2() {

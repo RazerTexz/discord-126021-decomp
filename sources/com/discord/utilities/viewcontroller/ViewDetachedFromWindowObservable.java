@@ -1,10 +1,10 @@
 package com.discord.utilities.viewcontroller;
 
 import android.view.View;
-import d0.z.d.Intrinsics3;
 import kotlin.Unit;
-import rx.Observable;
-import rx.subjects.BehaviorSubject;
+import p507d0.p592z.p594d.C12238m;
+import p658rx.Observable;
+import p658rx.subjects.BehaviorSubject;
 
 /* JADX INFO: compiled from: ViewDetachedFromWindowObservable.kt */
 /* JADX INFO: loaded from: classes2.dex */
@@ -12,14 +12,14 @@ public final class ViewDetachedFromWindowObservable implements View.OnAttachStat
     private final BehaviorSubject<Unit> onDetachSubject;
 
     public ViewDetachedFromWindowObservable(View view) {
-        Intrinsics3.checkNotNullParameter(view, "view");
-        this.onDetachSubject = BehaviorSubject.k0();
+        C12238m.checkNotNullParameter(view, "view");
+        this.onDetachSubject = BehaviorSubject.m11129k0();
         view.addOnAttachStateChangeListener(this);
     }
 
     public final Observable<Unit> observe() {
         BehaviorSubject<Unit> behaviorSubject = this.onDetachSubject;
-        Intrinsics3.checkNotNullExpressionValue(behaviorSubject, "onDetachSubject");
+        C12238m.checkNotNullExpressionValue(behaviorSubject, "onDetachSubject");
         return behaviorSubject;
     }
 
@@ -29,6 +29,6 @@ public final class ViewDetachedFromWindowObservable implements View.OnAttachStat
 
     @Override // android.view.View.OnAttachStateChangeListener
     public void onViewDetachedFromWindow(View v) {
-        this.onDetachSubject.onNext(Unit.a);
+        this.onDetachSubject.onNext(Unit.f27425a);
     }
 }

@@ -1,7 +1,7 @@
 package com.discord.api.voice.server;
 
-import b.d.b.a.outline;
-import d0.z.d.Intrinsics3;
+import p007b.p100d.p104b.p105a.C1643a;
+import p507d0.p592z.p594d.C12238m;
 
 /* JADX INFO: compiled from: VoiceServer.kt */
 /* JADX INFO: loaded from: classes.dex */
@@ -39,7 +39,7 @@ public final /* data */ class VoiceServer {
             return false;
         }
         VoiceServer voiceServer = (VoiceServer) other;
-        return Intrinsics3.areEqual(this.guildId, voiceServer.guildId) && Intrinsics3.areEqual(this.channelId, voiceServer.channelId) && Intrinsics3.areEqual(this.endpoint, voiceServer.endpoint) && Intrinsics3.areEqual(this.token, voiceServer.token);
+        return C12238m.areEqual(this.guildId, voiceServer.guildId) && C12238m.areEqual(this.channelId, voiceServer.channelId) && C12238m.areEqual(this.endpoint, voiceServer.endpoint) && C12238m.areEqual(this.token, voiceServer.token);
     }
 
     public int hashCode() {
@@ -54,13 +54,13 @@ public final /* data */ class VoiceServer {
     }
 
     public String toString() {
-        StringBuilder sbU = outline.U("VoiceServer(guildId=");
-        sbU.append(this.guildId);
-        sbU.append(", channelId=");
-        sbU.append(this.channelId);
-        sbU.append(", endpoint=");
-        sbU.append(this.endpoint);
-        sbU.append(", token=");
-        return outline.J(sbU, this.token, ")");
+        StringBuilder sbM833U = C1643a.m833U("VoiceServer(guildId=");
+        sbM833U.append(this.guildId);
+        sbM833U.append(", channelId=");
+        sbM833U.append(this.channelId);
+        sbM833U.append(", endpoint=");
+        sbM833U.append(this.endpoint);
+        sbM833U.append(", token=");
+        return C1643a.m822J(sbM833U, this.token, ")");
     }
 }

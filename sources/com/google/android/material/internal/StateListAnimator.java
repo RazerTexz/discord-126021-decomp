@@ -12,17 +12,18 @@ import java.util.ArrayList;
 /* JADX INFO: loaded from: classes3.dex */
 @RestrictTo({RestrictTo.Scope.LIBRARY_GROUP})
 public final class StateListAnimator {
-    private final ArrayList<b> tuples = new ArrayList<>();
+    private final ArrayList<C10945b> tuples = new ArrayList<>();
 
     @Nullable
-    private b lastMatch = null;
+    private C10945b lastMatch = null;
 
     @Nullable
     public ValueAnimator runningAnimator = null;
-    private final Animator.AnimatorListener animationListener = new a();
+    private final Animator.AnimatorListener animationListener = new C10944a();
 
-    public class a extends AnimatorListenerAdapter {
-        public a() {
+    /* JADX INFO: renamed from: com.google.android.material.internal.StateListAnimator$a */
+    public class C10944a extends AnimatorListenerAdapter {
+        public C10944a() {
         }
 
         @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
@@ -34,15 +35,18 @@ public final class StateListAnimator {
         }
     }
 
-    public static class b {
-        public final int[] a;
+    /* JADX INFO: renamed from: com.google.android.material.internal.StateListAnimator$b */
+    public static class C10945b {
 
-        /* JADX INFO: renamed from: b, reason: collision with root package name */
-        public final ValueAnimator f3047b;
+        /* JADX INFO: renamed from: a */
+        public final int[] f21043a;
 
-        public b(int[] iArr, ValueAnimator valueAnimator) {
-            this.a = iArr;
-            this.f3047b = valueAnimator;
+        /* JADX INFO: renamed from: b */
+        public final ValueAnimator f21044b;
+
+        public C10945b(int[] iArr, ValueAnimator valueAnimator) {
+            this.f21043a = iArr;
+            this.f21044b = valueAnimator;
         }
     }
 
@@ -54,16 +58,16 @@ public final class StateListAnimator {
         }
     }
 
-    private void start(@NonNull b bVar) {
-        ValueAnimator valueAnimator = bVar.f3047b;
+    private void start(@NonNull C10945b c10945b) {
+        ValueAnimator valueAnimator = c10945b.f21044b;
         this.runningAnimator = valueAnimator;
         valueAnimator.start();
     }
 
     public void addState(int[] iArr, ValueAnimator valueAnimator) {
-        b bVar = new b(iArr, valueAnimator);
+        C10945b c10945b = new C10945b(iArr, valueAnimator);
         valueAnimator.addListener(this.animationListener);
-        this.tuples.add(bVar);
+        this.tuples.add(c10945b);
     }
 
     public void jumpToCurrentState() {
@@ -75,31 +79,31 @@ public final class StateListAnimator {
     }
 
     public void setState(int[] iArr) {
-        b bVar;
+        C10945b c10945b;
         int size = this.tuples.size();
         int i = 0;
         while (true) {
             if (i >= size) {
-                bVar = null;
+                c10945b = null;
                 break;
             }
-            bVar = this.tuples.get(i);
-            if (StateSet.stateSetMatches(bVar.a, iArr)) {
+            c10945b = this.tuples.get(i);
+            if (StateSet.stateSetMatches(c10945b.f21043a, iArr)) {
                 break;
             } else {
                 i++;
             }
         }
-        b bVar2 = this.lastMatch;
-        if (bVar == bVar2) {
+        C10945b c10945b2 = this.lastMatch;
+        if (c10945b == c10945b2) {
             return;
         }
-        if (bVar2 != null) {
+        if (c10945b2 != null) {
             cancel();
         }
-        this.lastMatch = bVar;
-        if (bVar != null) {
-            start(bVar);
+        this.lastMatch = c10945b;
+        if (c10945b != null) {
+            start(c10945b);
         }
     }
 }

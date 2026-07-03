@@ -1,8 +1,8 @@
 package com.discord.api.guildscheduledevent;
 
-import b.d.b.a.outline;
 import com.discord.api.user.User;
-import d0.z.d.Intrinsics3;
+import p007b.p100d.p104b.p105a.C1643a;
+import p507d0.p592z.p594d.C12238m;
 
 /* JADX INFO: compiled from: GuildScheduledEventMeUser.kt */
 /* JADX INFO: loaded from: classes.dex */
@@ -25,7 +25,7 @@ public final /* data */ class GuildScheduledEventMeUser {
             return false;
         }
         GuildScheduledEventMeUser guildScheduledEventMeUser = (GuildScheduledEventMeUser) other;
-        return this.userId == guildScheduledEventMeUser.userId && this.guildScheduledEventId == guildScheduledEventMeUser.guildScheduledEventId && Intrinsics3.areEqual(this.user, guildScheduledEventMeUser.user) && Intrinsics3.areEqual(this.guildScheduledEvent, guildScheduledEventMeUser.guildScheduledEvent);
+        return this.userId == guildScheduledEventMeUser.userId && this.guildScheduledEventId == guildScheduledEventMeUser.guildScheduledEventId && C12238m.areEqual(this.user, guildScheduledEventMeUser.user) && C12238m.areEqual(this.guildScheduledEvent, guildScheduledEventMeUser.guildScheduledEvent);
     }
 
     public int hashCode() {
@@ -39,15 +39,15 @@ public final /* data */ class GuildScheduledEventMeUser {
     }
 
     public String toString() {
-        StringBuilder sbU = outline.U("GuildScheduledEventMeUser(userId=");
-        sbU.append(this.userId);
-        sbU.append(", guildScheduledEventId=");
-        sbU.append(this.guildScheduledEventId);
-        sbU.append(", user=");
-        sbU.append(this.user);
-        sbU.append(", guildScheduledEvent=");
-        sbU.append(this.guildScheduledEvent);
-        sbU.append(")");
-        return sbU.toString();
+        StringBuilder sbM833U = C1643a.m833U("GuildScheduledEventMeUser(userId=");
+        sbM833U.append(this.userId);
+        sbM833U.append(", guildScheduledEventId=");
+        sbM833U.append(this.guildScheduledEventId);
+        sbM833U.append(", user=");
+        sbM833U.append(this.user);
+        sbM833U.append(", guildScheduledEvent=");
+        sbM833U.append(this.guildScheduledEvent);
+        sbM833U.append(")");
+        return sbM833U.toString();
     }
 }

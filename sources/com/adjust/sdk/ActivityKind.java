@@ -18,8 +18,8 @@ public enum ActivityKind {
     DISABLE_THIRD_PARTY_SHARING,
     SUBSCRIPTION;
 
-    /* JADX INFO: renamed from: com.adjust.sdk.ActivityKind$1, reason: invalid class name */
-    public static /* synthetic */ class AnonymousClass1 {
+    /* JADX INFO: renamed from: com.adjust.sdk.ActivityKind$1 */
+    public static /* synthetic */ class C53601 {
         public static final /* synthetic */ int[] $SwitchMap$com$adjust$sdk$ActivityKind;
 
         static {

@@ -1,13 +1,13 @@
 package com.discord.widgets.guilds.invite;
 
-import d0.z.d.Intrinsics3;
-import d0.z.d.Lambda;
 import kotlin.Unit;
 import kotlin.jvm.functions.Function1;
+import p507d0.p592z.p594d.AbstractC12240o;
+import p507d0.p592z.p594d.C12238m;
 
 /* JADX INFO: compiled from: WidgetGuildInviteShareSheet.kt */
 /* JADX INFO: loaded from: classes2.dex */
-public final class WidgetGuildInviteShareSheet$guildInviteSettingsLauncher$1 extends Lambda implements Function1<GuildInvite, Unit> {
+public final class WidgetGuildInviteShareSheet$guildInviteSettingsLauncher$1 extends AbstractC12240o implements Function1<GuildInvite, Unit> {
     public final /* synthetic */ WidgetGuildInviteShareSheet this$0;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -19,12 +19,12 @@ public final class WidgetGuildInviteShareSheet$guildInviteSettingsLauncher$1 ext
     @Override // kotlin.jvm.functions.Function1
     public /* bridge */ /* synthetic */ Unit invoke(GuildInvite guildInvite) {
         invoke2(guildInvite);
-        return Unit.a;
+        return Unit.f27425a;
     }
 
     /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
     public final void invoke2(GuildInvite guildInvite) {
-        Intrinsics3.checkNotNullParameter(guildInvite, "guildInvite");
+        C12238m.checkNotNullParameter(guildInvite, "guildInvite");
         this.this$0.getViewModel().updateInvite(guildInvite);
     }
 }

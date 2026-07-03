@@ -7,9 +7,6 @@ import android.text.TextUtils;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.core.app.NotificationCompat;
-import b.c.a.a0.AnimatableValueParser;
-import b.d.b.a.outline;
-import b.i.a.f.c.a.f.d;
 import com.discord.models.domain.ModelAuditLogEntry;
 import com.google.android.gms.common.api.Scope;
 import com.google.android.gms.common.internal.ReflectedParcelable;
@@ -21,60 +18,80 @@ import java.util.Set;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
+import p007b.p085c.p086a.p087a0.C1460d;
+import p007b.p100d.p104b.p105a.C1643a;
+import p007b.p225i.p226a.p288f.p292c.p293a.p296f.C3219d;
 
 /* JADX INFO: compiled from: com.google.android.gms:play-services-base@@17.3.0 */
 /* JADX INFO: loaded from: classes3.dex */
 public class GoogleSignInAccount extends AbstractSafeParcelable implements ReflectedParcelable {
-    public static final Parcelable.Creator<GoogleSignInAccount> CREATOR = new d();
-    public final int j;
+    public static final Parcelable.Creator<GoogleSignInAccount> CREATOR = new C3219d();
 
+    /* JADX INFO: renamed from: j */
+    public final int f20416j;
+
+    /* JADX INFO: renamed from: k */
     @Nullable
-    public String k;
+    public String f20417k;
 
+    /* JADX INFO: renamed from: l */
     @Nullable
-    public String l;
+    public String f20418l;
 
+    /* JADX INFO: renamed from: m */
     @Nullable
-    public String m;
+    public String f20419m;
 
+    /* JADX INFO: renamed from: n */
     @Nullable
-    public String n;
+    public String f20420n;
 
+    /* JADX INFO: renamed from: o */
     @Nullable
-    public Uri o;
+    public Uri f20421o;
 
+    /* JADX INFO: renamed from: p */
     @Nullable
-    public String p;
-    public long q;
-    public String r;
+    public String f20422p;
 
-    /* JADX INFO: renamed from: s, reason: collision with root package name */
-    public List<Scope> f2996s;
+    /* JADX INFO: renamed from: q */
+    public long f20423q;
 
+    /* JADX INFO: renamed from: r */
+    public String f20424r;
+
+    /* JADX INFO: renamed from: s */
+    public List<Scope> f20425s;
+
+    /* JADX INFO: renamed from: t */
     @Nullable
-    public String t;
+    public String f20426t;
 
+    /* JADX INFO: renamed from: u */
     @Nullable
-    public String u;
-    public Set<Scope> v = new HashSet();
+    public String f20427u;
+
+    /* JADX INFO: renamed from: v */
+    public Set<Scope> f20428v = new HashSet();
 
     public GoogleSignInAccount(int i, @Nullable String str, @Nullable String str2, @Nullable String str3, @Nullable String str4, @Nullable Uri uri, @Nullable String str5, long j, String str6, List<Scope> list, @Nullable String str7, @Nullable String str8) {
-        this.j = i;
-        this.k = str;
-        this.l = str2;
-        this.m = str3;
-        this.n = str4;
-        this.o = uri;
-        this.p = str5;
-        this.q = j;
-        this.r = str6;
-        this.f2996s = list;
-        this.t = str7;
-        this.u = str8;
+        this.f20416j = i;
+        this.f20417k = str;
+        this.f20418l = str2;
+        this.f20419m = str3;
+        this.f20420n = str4;
+        this.f20421o = uri;
+        this.f20422p = str5;
+        this.f20423q = j;
+        this.f20424r = str6;
+        this.f20425s = list;
+        this.f20426t = str7;
+        this.f20427u = str8;
     }
 
     @Nullable
-    public static GoogleSignInAccount x0(@Nullable String str) throws JSONException {
+    /* JADX INFO: renamed from: x0 */
+    public static GoogleSignInAccount m9010x0(@Nullable String str) throws JSONException {
         if (TextUtils.isEmpty(str)) {
             return null;
         }
@@ -100,9 +117,9 @@ public class GoogleSignInAccount extends AbstractSafeParcelable implements Refle
             lValueOf = Long.valueOf(System.currentTimeMillis() / 1000);
         }
         long jLongValue = lValueOf.longValue();
-        AnimatableValueParser.w(string);
+        C1460d.m583w(string);
         GoogleSignInAccount googleSignInAccount = new GoogleSignInAccount(3, strOptString2, strOptString3, strOptString4, strOptString5, uri, null, jLongValue, string, new ArrayList(hashSet), strOptString6, strOptString7);
-        googleSignInAccount.p = jSONObject.has("serverAuthCode") ? jSONObject.optString("serverAuthCode") : null;
+        googleSignInAccount.f20422p = jSONObject.has("serverAuthCode") ? jSONObject.optString("serverAuthCode") : null;
         return googleSignInAccount;
     }
 
@@ -117,39 +134,40 @@ public class GoogleSignInAccount extends AbstractSafeParcelable implements Refle
             return false;
         }
         GoogleSignInAccount googleSignInAccount = (GoogleSignInAccount) obj;
-        return googleSignInAccount.r.equals(this.r) && googleSignInAccount.w0().equals(w0());
+        return googleSignInAccount.f20424r.equals(this.f20424r) && googleSignInAccount.m9011w0().equals(m9011w0());
     }
 
     public int hashCode() {
-        return w0().hashCode() + outline.m(this.r, 527, 31);
+        return m9011w0().hashCode() + C1643a.m863m(this.f20424r, 527, 31);
     }
 
     @NonNull
-    public Set<Scope> w0() {
-        HashSet hashSet = new HashSet(this.f2996s);
-        hashSet.addAll(this.v);
+    /* JADX INFO: renamed from: w0 */
+    public Set<Scope> m9011w0() {
+        HashSet hashSet = new HashSet(this.f20425s);
+        hashSet.addAll(this.f20428v);
         return hashSet;
     }
 
     @Override // android.os.Parcelable
     public void writeToParcel(Parcel parcel, int i) {
-        int iY2 = AnimatableValueParser.y2(parcel, 20293);
-        int i2 = this.j;
+        int iM594y2 = C1460d.m594y2(parcel, 20293);
+        int i2 = this.f20416j;
         parcel.writeInt(262145);
         parcel.writeInt(i2);
-        AnimatableValueParser.t2(parcel, 2, this.k, false);
-        AnimatableValueParser.t2(parcel, 3, this.l, false);
-        AnimatableValueParser.t2(parcel, 4, this.m, false);
-        AnimatableValueParser.t2(parcel, 5, this.n, false);
-        AnimatableValueParser.s2(parcel, 6, this.o, i, false);
-        AnimatableValueParser.t2(parcel, 7, this.p, false);
-        long j = this.q;
+        C1460d.m574t2(parcel, 2, this.f20417k, false);
+        C1460d.m574t2(parcel, 3, this.f20418l, false);
+        C1460d.m574t2(parcel, 4, this.f20419m, false);
+        C1460d.m574t2(parcel, 5, this.f20420n, false);
+        C1460d.m570s2(parcel, 6, this.f20421o, i, false);
+        C1460d.m574t2(parcel, 7, this.f20422p, false);
+        long j = this.f20423q;
         parcel.writeInt(524296);
         parcel.writeLong(j);
-        AnimatableValueParser.t2(parcel, 9, this.r, false);
-        AnimatableValueParser.w2(parcel, 10, this.f2996s, false);
-        AnimatableValueParser.t2(parcel, 11, this.t, false);
-        AnimatableValueParser.t2(parcel, 12, this.u, false);
-        AnimatableValueParser.A2(parcel, iY2);
+        C1460d.m574t2(parcel, 9, this.f20424r, false);
+        C1460d.m586w2(parcel, 10, this.f20425s, false);
+        C1460d.m574t2(parcel, 11, this.f20426t, false);
+        C1460d.m574t2(parcel, 12, this.f20427u, false);
+        C1460d.m418A2(parcel, iM594y2);
     }
 }

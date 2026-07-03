@@ -12,33 +12,37 @@ import com.google.android.material.textfield.TextInputLayout;
 /* JADX INFO: loaded from: classes.dex */
 public final class WidgetFriendsAddByIdBinding implements ViewBinding {
 
+    /* JADX INFO: renamed from: a */
     @NonNull
-    public final NestedScrollView a;
+    public final NestedScrollView f16652a;
 
-    /* JADX INFO: renamed from: b, reason: collision with root package name */
+    /* JADX INFO: renamed from: b */
     @NonNull
-    public final TextView f2391b;
+    public final TextView f16653b;
 
+    /* JADX INFO: renamed from: c */
     @NonNull
-    public final LinearLayout c;
+    public final LinearLayout f16654c;
 
+    /* JADX INFO: renamed from: d */
     @NonNull
-    public final MaterialButton d;
+    public final MaterialButton f16655d;
 
+    /* JADX INFO: renamed from: e */
     @NonNull
-    public final TextInputLayout e;
+    public final TextInputLayout f16656e;
 
     public WidgetFriendsAddByIdBinding(@NonNull NestedScrollView nestedScrollView, @NonNull TextView textView, @NonNull LinearLayout linearLayout, @NonNull MaterialButton materialButton, @NonNull TextInputLayout textInputLayout) {
-        this.a = nestedScrollView;
-        this.f2391b = textView;
-        this.c = linearLayout;
-        this.d = materialButton;
-        this.e = textInputLayout;
+        this.f16652a = nestedScrollView;
+        this.f16653b = textView;
+        this.f16654c = linearLayout;
+        this.f16655d = materialButton;
+        this.f16656e = textInputLayout;
     }
 
     @Override // androidx.viewbinding.ViewBinding
     @NonNull
     public View getRoot() {
-        return this.a;
+        return this.f16652a;
     }
 }

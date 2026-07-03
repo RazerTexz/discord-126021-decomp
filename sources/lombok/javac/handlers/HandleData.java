@@ -24,7 +24,7 @@ public class HandleData extends JavacAnnotationHandler<Data> {
     public void handle(AnnotationValues<Data> annotation, JCTree.JCAnnotation ast, JavacNode annotationNode) {
         HandlerUtil.handleFlagUsage(annotationNode, ConfigurationKeys.DATA_FLAG_USAGE, "@Data");
         JavacHandlerUtil.deleteAnnotationIfNeccessary(annotationNode, (Class<? extends Annotation>) Data.class);
-        JavacNode typeNode = annotationNode.up();
+        JavacNode typeNode = annotationNode.m10925up();
         boolean notAClass = !JavacHandlerUtil.isClass(typeNode);
         if (notAClass) {
             annotationNode.addError("@Data is only supported on a class.");

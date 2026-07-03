@@ -6,7 +6,7 @@ import android.view.MenuItem;
 import android.view.SubMenu;
 import android.view.View;
 import androidx.annotation.RestrictTo;
-import b.d.b.a.outline;
+import p007b.p100d.p104b.p105a.C1643a;
 
 /* JADX INFO: loaded from: classes.dex */
 public abstract class ActionProvider {
@@ -77,10 +77,10 @@ public abstract class ActionProvider {
 
     public void setVisibilityListener(VisibilityListener visibilityListener) {
         if (this.mVisibilityListener != null && visibilityListener != null) {
-            StringBuilder sbU = outline.U("setVisibilityListener: Setting a new ActionProvider.VisibilityListener when one is already set. Are you reusing this ");
-            sbU.append(getClass().getSimpleName());
-            sbU.append(" instance while it is still in use somewhere else?");
-            Log.w(TAG, sbU.toString());
+            StringBuilder sbM833U = C1643a.m833U("setVisibilityListener: Setting a new ActionProvider.VisibilityListener when one is already set. Are you reusing this ");
+            sbM833U.append(getClass().getSimpleName());
+            sbM833U.append(" instance while it is still in use somewhere else?");
+            Log.w(TAG, sbM833U.toString());
         }
         this.mVisibilityListener = visibilityListener;
     }

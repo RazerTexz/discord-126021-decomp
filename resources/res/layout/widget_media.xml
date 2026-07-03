@@ -3,7 +3,7 @@
     android:id="@+id/media_container"
     android:background="?attr/primary_900"
     style="@style/UiKit.ViewGroup.Page">
-    <com.google.android.exoplayer2.ui.PlayerView
+    <com.google.android.exoplayer2.p505ui.PlayerView
         android:layout_gravity="center"
         android:id="@+id/media_player_view"
         android:layout_width="match_parent"
@@ -11,7 +11,7 @@
         app:resize_mode="fit"
         app:surface_type="texture_view"
         app:use_controller="false"/>
-    <com.google.android.exoplayer2.ui.PlayerControlView
+    <com.google.android.exoplayer2.p505ui.PlayerControlView
         android:layout_gravity="bottom"
         android:id="@+id/media_player_control_view"
         android:layout_width="match_parent"

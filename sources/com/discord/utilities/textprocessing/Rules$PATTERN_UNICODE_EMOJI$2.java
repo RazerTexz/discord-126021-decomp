@@ -1,13 +1,13 @@
 package com.discord.utilities.textprocessing;
 
-import b.d.b.a.outline;
-import d0.z.d.Lambda;
 import java.util.regex.Pattern;
 import kotlin.jvm.functions.Function0;
+import p007b.p100d.p104b.p105a.C1643a;
+import p507d0.p592z.p594d.AbstractC12240o;
 
 /* JADX INFO: compiled from: Rules.kt */
 /* JADX INFO: loaded from: classes2.dex */
-public final class Rules$PATTERN_UNICODE_EMOJI$2 extends Lambda implements Function0<Pattern> {
+public final class Rules$PATTERN_UNICODE_EMOJI$2 extends AbstractC12240o implements Function0<Pattern> {
     public static final Rules$PATTERN_UNICODE_EMOJI$2 INSTANCE = new Rules$PATTERN_UNICODE_EMOJI$2();
 
     public Rules$PATTERN_UNICODE_EMOJI$2() {
@@ -16,9 +16,9 @@ public final class Rules$PATTERN_UNICODE_EMOJI$2 extends Lambda implements Funct
 
     @Override // kotlin.jvm.functions.Function0
     public final Pattern invoke() {
-        StringBuilder sbU = outline.U("^(");
-        sbU.append(Rules.access$getEmojiDataProvider$p(Rules.INSTANCE).getUnicodeEmojisPattern().pattern());
-        sbU.append(')');
-        return Pattern.compile(sbU.toString());
+        StringBuilder sbM833U = C1643a.m833U("^(");
+        sbM833U.append(Rules.access$getEmojiDataProvider$p(Rules.INSTANCE).getUnicodeEmojisPattern().pattern());
+        sbM833U.append(')');
+        return Pattern.compile(sbM833U.toString());
     }
 }

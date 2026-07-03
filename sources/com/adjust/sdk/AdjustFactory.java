@@ -1,7 +1,6 @@
 package com.adjust.sdk;
 
 import android.content.Context;
-import b.d.b.a.outline;
 import com.adjust.sdk.UtilNetworking;
 import com.discord.stores.StoreGuildScheduledEvents;
 import java.io.IOException;
@@ -18,6 +17,7 @@ import javax.net.ssl.SSLContext;
 import javax.net.ssl.SSLSession;
 import javax.net.ssl.TrustManager;
 import javax.net.ssl.X509TrustManager;
+import p007b.p100d.p104b.p105a.C1643a;
 
 /* JADX INFO: loaded from: classes.dex */
 public class AdjustFactory {
@@ -58,7 +58,7 @@ public class AdjustFactory {
             String hexString = Integer.toHexString(b2);
             int length = hexString.length();
             if (length == 1) {
-                hexString = outline.w("0", hexString);
+                hexString = C1643a.m883w("0", hexString);
             }
             if (length > 2) {
                 hexString = hexString.substring(length - 2, length);

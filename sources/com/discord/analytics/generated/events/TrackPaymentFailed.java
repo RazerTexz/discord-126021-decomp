@@ -1,14 +1,14 @@
 package com.discord.analytics.generated.events;
 
-import b.d.b.a.outline;
 import com.discord.analytics.generated.traits.TrackBase;
-import com.discord.analytics.generated.traits.TrackBase2;
+import com.discord.analytics.generated.traits.TrackBaseReceiver;
 import com.discord.api.science.AnalyticsSchema;
-import d0.z.d.Intrinsics3;
+import p007b.p100d.p104b.p105a.C1643a;
+import p507d0.p592z.p594d.C12238m;
 
 /* JADX INFO: compiled from: TrackPaymentFailed.kt */
 /* JADX INFO: loaded from: classes.dex */
-public final /* data */ class TrackPaymentFailed implements AnalyticsSchema, TrackBase2 {
+public final /* data */ class TrackPaymentFailed implements AnalyticsSchema, TrackBaseReceiver {
     private TrackBase trackBase;
     private final CharSequence failureReason = null;
     private final Long paymentId = null;
@@ -54,7 +54,7 @@ public final /* data */ class TrackPaymentFailed implements AnalyticsSchema, Tra
             return false;
         }
         TrackPaymentFailed trackPaymentFailed = (TrackPaymentFailed) other;
-        return Intrinsics3.areEqual(this.failureReason, trackPaymentFailed.failureReason) && Intrinsics3.areEqual(this.paymentId, trackPaymentFailed.paymentId) && Intrinsics3.areEqual(this.createdAt, trackPaymentFailed.createdAt) && Intrinsics3.areEqual(this.paymentType, trackPaymentFailed.paymentType) && Intrinsics3.areEqual(this.paymentGateway, trackPaymentFailed.paymentGateway) && Intrinsics3.areEqual(this.price, trackPaymentFailed.price) && Intrinsics3.areEqual(this.currency, trackPaymentFailed.currency) && Intrinsics3.areEqual(this.amount, trackPaymentFailed.amount) && Intrinsics3.areEqual(this.amountRefunded, trackPaymentFailed.amountRefunded) && Intrinsics3.areEqual(this.tax, trackPaymentFailed.tax) && Intrinsics3.areEqual(this.taxInclusive, trackPaymentFailed.taxInclusive) && Intrinsics3.areEqual(this.skuId, trackPaymentFailed.skuId) && Intrinsics3.areEqual(this.skuType, trackPaymentFailed.skuType) && Intrinsics3.areEqual(this.skuSubscriptionPlanId, trackPaymentFailed.skuSubscriptionPlanId) && Intrinsics3.areEqual(this.subscriptionId, trackPaymentFailed.subscriptionId) && Intrinsics3.areEqual(this.subscriptionType, trackPaymentFailed.subscriptionType) && Intrinsics3.areEqual(this.subscriptionPaymentGatewayPlanId, trackPaymentFailed.subscriptionPaymentGatewayPlanId) && Intrinsics3.areEqual(this.subscriptionPlanId, trackPaymentFailed.subscriptionPlanId) && Intrinsics3.areEqual(this.subscriptionCreatedAt, trackPaymentFailed.subscriptionCreatedAt) && Intrinsics3.areEqual(this.subscriptionCurrentPeriodStart, trackPaymentFailed.subscriptionCurrentPeriodStart) && Intrinsics3.areEqual(this.subscriptionCurrentPeriodEnd, trackPaymentFailed.subscriptionCurrentPeriodEnd) && Intrinsics3.areEqual(this.paymentSourceId, trackPaymentFailed.paymentSourceId) && Intrinsics3.areEqual(this.paymentSourceCountry, trackPaymentFailed.paymentSourceCountry) && Intrinsics3.areEqual(this.failureMessage, trackPaymentFailed.failureMessage) && Intrinsics3.areEqual(this.isGift, trackPaymentFailed.isGift) && Intrinsics3.areEqual(this.failureCode, trackPaymentFailed.failureCode) && Intrinsics3.areEqual(this.failureSubCode, trackPaymentFailed.failureSubCode) && Intrinsics3.areEqual(this.captured, trackPaymentFailed.captured);
+        return C12238m.areEqual(this.failureReason, trackPaymentFailed.failureReason) && C12238m.areEqual(this.paymentId, trackPaymentFailed.paymentId) && C12238m.areEqual(this.createdAt, trackPaymentFailed.createdAt) && C12238m.areEqual(this.paymentType, trackPaymentFailed.paymentType) && C12238m.areEqual(this.paymentGateway, trackPaymentFailed.paymentGateway) && C12238m.areEqual(this.price, trackPaymentFailed.price) && C12238m.areEqual(this.currency, trackPaymentFailed.currency) && C12238m.areEqual(this.amount, trackPaymentFailed.amount) && C12238m.areEqual(this.amountRefunded, trackPaymentFailed.amountRefunded) && C12238m.areEqual(this.tax, trackPaymentFailed.tax) && C12238m.areEqual(this.taxInclusive, trackPaymentFailed.taxInclusive) && C12238m.areEqual(this.skuId, trackPaymentFailed.skuId) && C12238m.areEqual(this.skuType, trackPaymentFailed.skuType) && C12238m.areEqual(this.skuSubscriptionPlanId, trackPaymentFailed.skuSubscriptionPlanId) && C12238m.areEqual(this.subscriptionId, trackPaymentFailed.subscriptionId) && C12238m.areEqual(this.subscriptionType, trackPaymentFailed.subscriptionType) && C12238m.areEqual(this.subscriptionPaymentGatewayPlanId, trackPaymentFailed.subscriptionPaymentGatewayPlanId) && C12238m.areEqual(this.subscriptionPlanId, trackPaymentFailed.subscriptionPlanId) && C12238m.areEqual(this.subscriptionCreatedAt, trackPaymentFailed.subscriptionCreatedAt) && C12238m.areEqual(this.subscriptionCurrentPeriodStart, trackPaymentFailed.subscriptionCurrentPeriodStart) && C12238m.areEqual(this.subscriptionCurrentPeriodEnd, trackPaymentFailed.subscriptionCurrentPeriodEnd) && C12238m.areEqual(this.paymentSourceId, trackPaymentFailed.paymentSourceId) && C12238m.areEqual(this.paymentSourceCountry, trackPaymentFailed.paymentSourceCountry) && C12238m.areEqual(this.failureMessage, trackPaymentFailed.failureMessage) && C12238m.areEqual(this.isGift, trackPaymentFailed.isGift) && C12238m.areEqual(this.failureCode, trackPaymentFailed.failureCode) && C12238m.areEqual(this.failureSubCode, trackPaymentFailed.failureSubCode) && C12238m.areEqual(this.captured, trackPaymentFailed.captured);
     }
 
     public int hashCode() {
@@ -117,61 +117,61 @@ public final /* data */ class TrackPaymentFailed implements AnalyticsSchema, Tra
     }
 
     public String toString() {
-        StringBuilder sbU = outline.U("TrackPaymentFailed(failureReason=");
-        sbU.append(this.failureReason);
-        sbU.append(", paymentId=");
-        sbU.append(this.paymentId);
-        sbU.append(", createdAt=");
-        sbU.append(this.createdAt);
-        sbU.append(", paymentType=");
-        sbU.append(this.paymentType);
-        sbU.append(", paymentGateway=");
-        sbU.append(this.paymentGateway);
-        sbU.append(", price=");
-        sbU.append(this.price);
-        sbU.append(", currency=");
-        sbU.append(this.currency);
-        sbU.append(", amount=");
-        sbU.append(this.amount);
-        sbU.append(", amountRefunded=");
-        sbU.append(this.amountRefunded);
-        sbU.append(", tax=");
-        sbU.append(this.tax);
-        sbU.append(", taxInclusive=");
-        sbU.append(this.taxInclusive);
-        sbU.append(", skuId=");
-        sbU.append(this.skuId);
-        sbU.append(", skuType=");
-        sbU.append(this.skuType);
-        sbU.append(", skuSubscriptionPlanId=");
-        sbU.append(this.skuSubscriptionPlanId);
-        sbU.append(", subscriptionId=");
-        sbU.append(this.subscriptionId);
-        sbU.append(", subscriptionType=");
-        sbU.append(this.subscriptionType);
-        sbU.append(", subscriptionPaymentGatewayPlanId=");
-        sbU.append(this.subscriptionPaymentGatewayPlanId);
-        sbU.append(", subscriptionPlanId=");
-        sbU.append(this.subscriptionPlanId);
-        sbU.append(", subscriptionCreatedAt=");
-        sbU.append(this.subscriptionCreatedAt);
-        sbU.append(", subscriptionCurrentPeriodStart=");
-        sbU.append(this.subscriptionCurrentPeriodStart);
-        sbU.append(", subscriptionCurrentPeriodEnd=");
-        sbU.append(this.subscriptionCurrentPeriodEnd);
-        sbU.append(", paymentSourceId=");
-        sbU.append(this.paymentSourceId);
-        sbU.append(", paymentSourceCountry=");
-        sbU.append(this.paymentSourceCountry);
-        sbU.append(", failureMessage=");
-        sbU.append(this.failureMessage);
-        sbU.append(", isGift=");
-        sbU.append(this.isGift);
-        sbU.append(", failureCode=");
-        sbU.append(this.failureCode);
-        sbU.append(", failureSubCode=");
-        sbU.append(this.failureSubCode);
-        sbU.append(", captured=");
-        return outline.D(sbU, this.captured, ")");
+        StringBuilder sbM833U = C1643a.m833U("TrackPaymentFailed(failureReason=");
+        sbM833U.append(this.failureReason);
+        sbM833U.append(", paymentId=");
+        sbM833U.append(this.paymentId);
+        sbM833U.append(", createdAt=");
+        sbM833U.append(this.createdAt);
+        sbM833U.append(", paymentType=");
+        sbM833U.append(this.paymentType);
+        sbM833U.append(", paymentGateway=");
+        sbM833U.append(this.paymentGateway);
+        sbM833U.append(", price=");
+        sbM833U.append(this.price);
+        sbM833U.append(", currency=");
+        sbM833U.append(this.currency);
+        sbM833U.append(", amount=");
+        sbM833U.append(this.amount);
+        sbM833U.append(", amountRefunded=");
+        sbM833U.append(this.amountRefunded);
+        sbM833U.append(", tax=");
+        sbM833U.append(this.tax);
+        sbM833U.append(", taxInclusive=");
+        sbM833U.append(this.taxInclusive);
+        sbM833U.append(", skuId=");
+        sbM833U.append(this.skuId);
+        sbM833U.append(", skuType=");
+        sbM833U.append(this.skuType);
+        sbM833U.append(", skuSubscriptionPlanId=");
+        sbM833U.append(this.skuSubscriptionPlanId);
+        sbM833U.append(", subscriptionId=");
+        sbM833U.append(this.subscriptionId);
+        sbM833U.append(", subscriptionType=");
+        sbM833U.append(this.subscriptionType);
+        sbM833U.append(", subscriptionPaymentGatewayPlanId=");
+        sbM833U.append(this.subscriptionPaymentGatewayPlanId);
+        sbM833U.append(", subscriptionPlanId=");
+        sbM833U.append(this.subscriptionPlanId);
+        sbM833U.append(", subscriptionCreatedAt=");
+        sbM833U.append(this.subscriptionCreatedAt);
+        sbM833U.append(", subscriptionCurrentPeriodStart=");
+        sbM833U.append(this.subscriptionCurrentPeriodStart);
+        sbM833U.append(", subscriptionCurrentPeriodEnd=");
+        sbM833U.append(this.subscriptionCurrentPeriodEnd);
+        sbM833U.append(", paymentSourceId=");
+        sbM833U.append(this.paymentSourceId);
+        sbM833U.append(", paymentSourceCountry=");
+        sbM833U.append(this.paymentSourceCountry);
+        sbM833U.append(", failureMessage=");
+        sbM833U.append(this.failureMessage);
+        sbM833U.append(", isGift=");
+        sbM833U.append(this.isGift);
+        sbM833U.append(", failureCode=");
+        sbM833U.append(this.failureCode);
+        sbM833U.append(", failureSubCode=");
+        sbM833U.append(this.failureSubCode);
+        sbM833U.append(", captured=");
+        return C1643a.m816D(sbM833U, this.captured, ")");
     }
 }

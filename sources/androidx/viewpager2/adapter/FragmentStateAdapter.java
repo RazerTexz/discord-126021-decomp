@@ -24,8 +24,8 @@ import androidx.view.Lifecycle;
 import androidx.view.LifecycleEventObserver;
 import androidx.view.LifecycleOwner;
 import androidx.viewpager2.widget.ViewPager2;
-import b.d.b.a.outline;
 import java.util.Iterator;
+import p007b.p100d.p104b.p105a.C1643a;
 
 /* JADX INFO: loaded from: classes.dex */
 public abstract class FragmentStateAdapter extends RecyclerView.Adapter<FragmentViewHolder> implements StatefulAdapter {
@@ -173,7 +173,7 @@ public abstract class FragmentStateAdapter extends RecyclerView.Adapter<Fragment
 
     @NonNull
     private static String createKey(@NonNull String str, long j) {
-        return outline.t(str, j);
+        return C1643a.m877t(str, j);
     }
 
     private void ensureFragment(int i) {
@@ -395,9 +395,9 @@ public abstract class FragmentStateAdapter extends RecyclerView.Adapter<Fragment
             } else {
                 scheduleViewAttach(fragment, container);
                 FragmentTransaction fragmentTransactionBeginTransaction = this.mFragmentManager.beginTransaction();
-                StringBuilder sbU = outline.U("f");
-                sbU.append(fragmentViewHolder.getItemId());
-                fragmentTransactionBeginTransaction.add(fragment, sbU.toString()).setMaxLifecycle(fragment, Lifecycle.State.STARTED).commitNow();
+                StringBuilder sbM833U = C1643a.m833U("f");
+                sbM833U.append(fragmentViewHolder.getItemId());
+                fragmentTransactionBeginTransaction.add(fragment, sbM833U.toString()).setMaxLifecycle(fragment, Lifecycle.State.STARTED).commitNow();
                 this.mFragmentMaxLifecycleEnforcer.updateFragmentMaxLifecycle(false);
             }
         }
@@ -417,7 +417,7 @@ public abstract class FragmentStateAdapter extends RecyclerView.Adapter<Fragment
                 this.mFragments.put(parseIdFromKey(str, KEY_PREFIX_FRAGMENT), this.mFragmentManager.getFragment(bundle, str));
             } else {
                 if (!isValidKey(str, KEY_PREFIX_STATE)) {
-                    throw new IllegalArgumentException(outline.w("Unexpected key in savedState: ", str));
+                    throw new IllegalArgumentException(C1643a.m883w("Unexpected key in savedState: ", str));
                 }
                 long idFromKey = parseIdFromKey(str, KEY_PREFIX_STATE);
                 Fragment.SavedState savedState = (Fragment.SavedState) bundle.getParcelable(str);

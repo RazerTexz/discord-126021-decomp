@@ -8,23 +8,23 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.view.animation.LinearInterpolator;
 import androidx.core.view.ViewCompat;
-import b.p.a.Alert2;
-import b.p.a.Alerter;
-import b.p.a.Alerter3;
 import com.discord.api.sticker.Sticker;
 import com.discord.app.AppComponent;
 import com.discord.models.domain.ModelAuditLogEntry;
 import com.discord.stores.StoreNotices;
 import com.discord.stores.StoreStream;
-import d0.e0.KClass;
-import d0.z.d.Intrinsics3;
-import d0.z.d.Lambda;
 import java.lang.ref.WeakReference;
 import java.util.List;
 import java.util.Objects;
 import kotlin.Unit;
 import kotlin.jvm.functions.Function0;
 import kotlin.jvm.functions.Function1;
+import p007b.p483p.p484a.C5279i;
+import p007b.p483p.p484a.RunnableC5277g;
+import p007b.p483p.p484a.ViewOnClickListenerC5272b;
+import p507d0.p513e0.InterfaceC11230c;
+import p507d0.p592z.p594d.AbstractC12240o;
+import p507d0.p592z.p594d.C12238m;
 
 /* JADX INFO: compiled from: NoticePopup.kt */
 /* JADX INFO: loaded from: classes2.dex */
@@ -32,24 +32,24 @@ public final class NoticePopup {
     private static final int DEFAULT_AUTO_DISMISS_PERIOD_SECONDS = 5;
     public static final NoticePopup INSTANCE = new NoticePopup();
 
-    /* JADX INFO: renamed from: com.discord.widgets.notice.NoticePopup$enqueue$1, reason: invalid class name */
+    /* JADX INFO: renamed from: com.discord.widgets.notice.NoticePopup$enqueue$1 */
     /* JADX INFO: compiled from: NoticePopup.kt */
-    public static final class AnonymousClass1 extends Lambda implements Function1<View, Unit> {
-        public static final AnonymousClass1 INSTANCE = new AnonymousClass1();
+    public static final class C90901 extends AbstractC12240o implements Function1<View, Unit> {
+        public static final C90901 INSTANCE = new C90901();
 
-        public AnonymousClass1() {
+        public C90901() {
             super(1);
         }
 
         @Override // kotlin.jvm.functions.Function1
         public /* bridge */ /* synthetic */ Unit invoke(View view) {
             invoke2(view);
-            return Unit.a;
+            return Unit.f27425a;
         }
 
         /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
         public final void invoke2(View view) {
-            Intrinsics3.checkNotNullParameter(view, "it");
+            C12238m.checkNotNullParameter(view, "it");
         }
     }
 
@@ -67,23 +67,23 @@ public final class NoticePopup {
 
     private final void dismiss(String name) {
         ViewGroup viewGroup;
-        Alert2 alert2;
-        WeakReference<ViewGroup> weakReference = Alerter3.a;
+        ViewOnClickListenerC5272b viewOnClickListenerC5272b;
+        WeakReference<ViewGroup> weakReference = C5279i.f14367a;
         if (weakReference != null && (viewGroup = weakReference.get()) != null) {
-            Intrinsics3.checkNotNullExpressionValue(viewGroup, "it");
+            C12238m.checkNotNullExpressionValue(viewGroup, "it");
             int childCount = viewGroup.getChildCount();
             if (childCount >= 0) {
                 int i = 0;
                 while (true) {
-                    if (viewGroup.getChildAt(i) instanceof Alert2) {
+                    if (viewGroup.getChildAt(i) instanceof ViewOnClickListenerC5272b) {
                         View childAt = viewGroup.getChildAt(i);
                         Objects.requireNonNull(childAt, "null cannot be cast to non-null type com.tapadoo.alerter.Alert");
-                        alert2 = (Alert2) childAt;
+                        viewOnClickListenerC5272b = (ViewOnClickListenerC5272b) childAt;
                     } else {
-                        alert2 = null;
+                        viewOnClickListenerC5272b = null;
                     }
-                    if (alert2 != null && alert2.getWindowToken() != null) {
-                        ViewCompat.animate(alert2).alpha(0.0f).withEndAction(new Alerter(alert2));
+                    if (viewOnClickListenerC5272b != null && viewOnClickListenerC5272b.getWindowToken() != null) {
+                        ViewCompat.animate(viewOnClickListenerC5272b).alpha(0.0f).withEndAction(new RunnableC5277g(viewOnClickListenerC5272b));
                     }
                     if (i == childCount) {
                         break;
@@ -122,7 +122,7 @@ public final class NoticePopup {
             public void onAnimationStart(Animator animation) {
             }
         };
-        Intrinsics3.checkNotNullExpressionValue(valueAnimatorOfInt, "animator");
+        C12238m.checkNotNullExpressionValue(valueAnimatorOfInt, "animator");
         valueAnimatorOfInt.setInterpolator(new LinearInterpolator());
         valueAnimatorOfInt.setDuration(((long) autoDismissPeriodSecs.intValue()) * 1000);
         valueAnimatorOfInt.addListener(animatorListener);
@@ -130,11 +130,11 @@ public final class NoticePopup {
         return valueAnimatorOfInt;
     }
 
-    public final void enqueue(String noticeName, CharSequence noticeTitle, CharSequence noticeSubtitle, CharSequence noticeBody, Drawable noticeBodyBackgroundDrawable, String noticeBodyImageUrl, Drawable noticeBodyImageDrawable, List<Sticker> noticeStickers, String noticeIconUrl, Integer noticeIconResId, Drawable noticeIconTopRight, Integer noticeAutoDismissPeriodSecs, List<? extends KClass<? extends AppComponent>> validScreens, Function1<? super View, Unit> onClickTopRightIcon, Function1<? super View, Unit> onClick) {
-        Intrinsics3.checkNotNullParameter(noticeName, "noticeName");
-        Intrinsics3.checkNotNullParameter(validScreens, "validScreens");
-        Intrinsics3.checkNotNullParameter(onClickTopRightIcon, "onClickTopRightIcon");
-        Intrinsics3.checkNotNullParameter(onClick, "onClick");
-        StoreStream.INSTANCE.getNotices().requestToShow(new StoreNotices.Notice(noticeName, null, 0L, 1, false, validScreens, 1000L, false, 0L, new NoticePopup2(onClick, noticeName, noticeAutoDismissPeriodSecs, noticeIconUrl, noticeIconResId, noticeBodyImageUrl, noticeBodyImageDrawable, noticeBodyBackgroundDrawable, noticeTitle, noticeSubtitle, noticeBody, noticeIconTopRight, noticeStickers, onClickTopRightIcon), 150, null));
+    public final void enqueue(String noticeName, CharSequence noticeTitle, CharSequence noticeSubtitle, CharSequence noticeBody, Drawable noticeBodyBackgroundDrawable, String noticeBodyImageUrl, Drawable noticeBodyImageDrawable, List<Sticker> noticeStickers, String noticeIconUrl, Integer noticeIconResId, Drawable noticeIconTopRight, Integer noticeAutoDismissPeriodSecs, List<? extends InterfaceC11230c<? extends AppComponent>> validScreens, Function1<? super View, Unit> onClickTopRightIcon, Function1<? super View, Unit> onClick) {
+        C12238m.checkNotNullParameter(noticeName, "noticeName");
+        C12238m.checkNotNullParameter(validScreens, "validScreens");
+        C12238m.checkNotNullParameter(onClickTopRightIcon, "onClickTopRightIcon");
+        C12238m.checkNotNullParameter(onClick, "onClick");
+        StoreStream.INSTANCE.getNotices().requestToShow(new StoreNotices.Notice(noticeName, null, 0L, 1, false, validScreens, 1000L, false, 0L, new NoticePopup$enqueue$notice$1(onClick, noticeName, noticeAutoDismissPeriodSecs, noticeIconUrl, noticeIconResId, noticeBodyImageUrl, noticeBodyImageDrawable, noticeBodyBackgroundDrawable, noticeTitle, noticeSubtitle, noticeBody, noticeIconTopRight, noticeStickers, onClickTopRightIcon), 150, null));
     }
 }

@@ -1,9 +1,9 @@
 package com.discord.api.activity;
 
-import b.d.b.a.outline;
 import com.discord.models.domain.ModelAuditLogEntry;
-import d0.z.d.Intrinsics3;
 import java.util.List;
+import p007b.p100d.p104b.p105a.C1643a;
+import p507d0.p592z.p594d.C12238m;
 
 /* JADX INFO: compiled from: ActivityParty.kt */
 /* JADX INFO: loaded from: classes.dex */
@@ -21,7 +21,8 @@ public final /* data */ class ActivityParty {
         return this.id;
     }
 
-    public final List<Long> b() {
+    /* JADX INFO: renamed from: b */
+    public final List<Long> m7559b() {
         return this.size;
     }
 
@@ -33,7 +34,7 @@ public final /* data */ class ActivityParty {
             return false;
         }
         ActivityParty activityParty = (ActivityParty) other;
-        return Intrinsics3.areEqual(this.id, activityParty.id) && Intrinsics3.areEqual(this.size, activityParty.size);
+        return C12238m.areEqual(this.id, activityParty.id) && C12238m.areEqual(this.size, activityParty.size);
     }
 
     public int hashCode() {
@@ -44,9 +45,9 @@ public final /* data */ class ActivityParty {
     }
 
     public String toString() {
-        StringBuilder sbU = outline.U("ActivityParty(id=");
-        sbU.append(this.id);
-        sbU.append(", size=");
-        return outline.L(sbU, this.size, ")");
+        StringBuilder sbM833U = C1643a.m833U("ActivityParty(id=");
+        sbM833U.append(this.id);
+        sbM833U.append(", size=");
+        return C1643a.m824L(sbM833U, this.size, ")");
     }
 }

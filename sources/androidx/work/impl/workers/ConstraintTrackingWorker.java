@@ -16,9 +16,9 @@ import androidx.work.impl.constraints.WorkConstraintsTracker;
 import androidx.work.impl.model.WorkSpec;
 import androidx.work.impl.utils.futures.SettableFuture;
 import androidx.work.impl.utils.taskexecutor.TaskExecutor;
-import b.i.b.d.a.ListenableFuture8;
 import java.util.Collections;
 import java.util.List;
+import p007b.p225i.p355b.p359d.p360a.InterfaceFutureC4539a;
 
 /* JADX INFO: loaded from: classes.dex */
 @RestrictTo({RestrictTo.Scope.LIBRARY_GROUP})
@@ -126,15 +126,15 @@ public class ConstraintTrackingWorker extends ListenableWorker implements WorkCo
         }
         Logger.get().debug(TAG, String.format("Constraints met for delegate %s", string), new Throwable[0]);
         try {
-            final ListenableFuture8<ListenableWorker.Result> listenableFuture8StartWork = this.mDelegate.startWork();
-            listenableFuture8StartWork.addListener(new Runnable() { // from class: androidx.work.impl.workers.ConstraintTrackingWorker.2
+            final InterfaceFutureC4539a<ListenableWorker.Result> interfaceFutureC4539aStartWork = this.mDelegate.startWork();
+            interfaceFutureC4539aStartWork.addListener(new Runnable() { // from class: androidx.work.impl.workers.ConstraintTrackingWorker.2
                 @Override // java.lang.Runnable
                 public void run() {
                     synchronized (ConstraintTrackingWorker.this.mLock) {
                         if (ConstraintTrackingWorker.this.mAreConstraintsUnmet) {
                             ConstraintTrackingWorker.this.setFutureRetry();
                         } else {
-                            ConstraintTrackingWorker.this.mFuture.setFuture(listenableFuture8StartWork);
+                            ConstraintTrackingWorker.this.mFuture.setFuture(interfaceFutureC4539aStartWork);
                         }
                     }
                 }
@@ -156,7 +156,7 @@ public class ConstraintTrackingWorker extends ListenableWorker implements WorkCo
 
     @Override // androidx.work.ListenableWorker
     @NonNull
-    public ListenableFuture8<ListenableWorker.Result> startWork() {
+    public InterfaceFutureC4539a<ListenableWorker.Result> startWork() {
         getBackgroundExecutor().execute(new Runnable() { // from class: androidx.work.impl.workers.ConstraintTrackingWorker.1
             @Override // java.lang.Runnable
             public void run() {

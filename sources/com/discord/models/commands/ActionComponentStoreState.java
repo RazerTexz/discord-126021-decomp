@@ -1,12 +1,12 @@
 package com.discord.models.commands;
 
-import b.d.b.a.outline;
 import com.discord.stores.StoreApplicationInteractions;
-import d0.z.d.Intrinsics3;
+import p007b.p100d.p104b.p105a.C1643a;
+import p507d0.p592z.p594d.C12238m;
 
 /* JADX INFO: compiled from: ActionComponentStoreState.kt */
 /* JADX INFO: loaded from: classes.dex */
-public final /* data */ class ActionComponentStoreState extends ActionComponentStoreState2 {
+public final /* data */ class ActionComponentStoreState extends ComponentState {
     private final boolean disabled;
     private final StoreApplicationInteractions.InteractionSendState.Failed failed;
     private final boolean loading;
@@ -58,7 +58,7 @@ public final /* data */ class ActionComponentStoreState extends ActionComponentS
             return false;
         }
         ActionComponentStoreState actionComponentStoreState = (ActionComponentStoreState) other;
-        return this.loading == actionComponentStoreState.loading && Intrinsics3.areEqual(this.failed, actionComponentStoreState.failed) && this.disabled == actionComponentStoreState.disabled;
+        return this.loading == actionComponentStoreState.loading && C12238m.areEqual(this.failed, actionComponentStoreState.failed) && this.disabled == actionComponentStoreState.disabled;
     }
 
     public final boolean getDisabled() {
@@ -95,11 +95,11 @@ public final /* data */ class ActionComponentStoreState extends ActionComponentS
     }
 
     public String toString() {
-        StringBuilder sbU = outline.U("ActionComponentStoreState(loading=");
-        sbU.append(this.loading);
-        sbU.append(", failed=");
-        sbU.append(this.failed);
-        sbU.append(", disabled=");
-        return outline.O(sbU, this.disabled, ")");
+        StringBuilder sbM833U = C1643a.m833U("ActionComponentStoreState(loading=");
+        sbM833U.append(this.loading);
+        sbM833U.append(", failed=");
+        sbM833U.append(this.failed);
+        sbM833U.append(", disabled=");
+        return C1643a.m827O(sbM833U, this.disabled, ")");
     }
 }

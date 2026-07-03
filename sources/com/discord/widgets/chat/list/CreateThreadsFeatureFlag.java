@@ -6,14 +6,14 @@ import com.discord.models.guild.Guild;
 import com.discord.stores.StoreExperiments;
 import com.discord.stores.StoreGuilds;
 import com.discord.stores.StoreStream;
-import d0.LazyJVM;
-import d0.z.d.FunctionReferenceImpl;
-import d0.z.d.Intrinsics3;
 import kotlin.Lazy;
 import kotlin.jvm.functions.Function3;
 import kotlin.jvm.internal.DefaultConstructorMarker;
-import rx.Observable;
-import rx.functions.Func3;
+import p507d0.C12083g;
+import p507d0.p592z.p594d.C12236k;
+import p507d0.p592z.p594d.C12238m;
+import p658rx.Observable;
+import p658rx.functions.Func3;
 
 /* JADX INFO: compiled from: CreateThreadsFeatureFlag.kt */
 /* JADX INFO: loaded from: classes2.dex */
@@ -21,7 +21,7 @@ public final class CreateThreadsFeatureFlag {
 
     /* JADX INFO: renamed from: Companion, reason: from kotlin metadata */
     public static final Companion INSTANCE = new Companion(null);
-    private static final Lazy INSTANCE$delegate = LazyJVM.lazy(CreateThreadsFeatureFlag2.INSTANCE);
+    private static final Lazy INSTANCE$delegate = C12083g.lazy(CreateThreadsFeatureFlag$Companion$INSTANCE$2.INSTANCE);
     private final StoreExperiments storeExperiments;
     private final StoreGuilds storeGuilds;
 
@@ -51,10 +51,10 @@ public final class CreateThreadsFeatureFlag {
         }
     }
 
-    /* JADX INFO: renamed from: com.discord.widgets.chat.list.CreateThreadsFeatureFlag$observeEnabled$1, reason: invalid class name */
+    /* JADX INFO: renamed from: com.discord.widgets.chat.list.CreateThreadsFeatureFlag$observeEnabled$1 */
     /* JADX INFO: compiled from: CreateThreadsFeatureFlag.kt */
-    public static final /* synthetic */ class AnonymousClass1 extends FunctionReferenceImpl implements Function3<Experiment, Experiment, Guild, Boolean> {
-        public AnonymousClass1(Companion companion) {
+    public static final /* synthetic */ class C79321 extends C12236k implements Function3<Experiment, Experiment, Guild, Boolean> {
+        public C79321(Companion companion) {
             super(3, companion, Companion.class, "computeIsEnabled", "computeIsEnabled(Lcom/discord/models/experiments/domain/Experiment;Lcom/discord/models/experiments/domain/Experiment;Lcom/discord/models/guild/Guild;)Z", 0);
         }
 
@@ -75,8 +75,8 @@ public final class CreateThreadsFeatureFlag {
     }
 
     public CreateThreadsFeatureFlag(StoreExperiments storeExperiments, StoreGuilds storeGuilds) {
-        Intrinsics3.checkNotNullParameter(storeExperiments, "storeExperiments");
-        Intrinsics3.checkNotNullParameter(storeGuilds, "storeGuilds");
+        C12238m.checkNotNullParameter(storeExperiments, "storeExperiments");
+        C12238m.checkNotNullParameter(storeGuilds, "storeGuilds");
         this.storeExperiments = storeExperiments;
         this.storeGuilds = storeGuilds;
     }
@@ -89,15 +89,15 @@ public final class CreateThreadsFeatureFlag {
         Observable<Experiment> observableObserveGuildExperiment = this.storeExperiments.observeGuildExperiment("2020-09_threads", guildId, true);
         Observable<Experiment> observableObserveGuildExperiment2 = this.storeExperiments.observeGuildExperiment("2021-06_threads_rollout", guildId, false);
         Observable<Guild> observableObserveGuild = this.storeGuilds.observeGuild(guildId);
-        final AnonymousClass1 anonymousClass1 = new AnonymousClass1(INSTANCE);
-        Observable<Boolean> observableI = Observable.i(observableObserveGuildExperiment, observableObserveGuildExperiment2, observableObserveGuild, new Func3() { // from class: com.discord.widgets.chat.list.CreateThreadsFeatureFlag$sam$rx_functions_Func3$0
-            @Override // rx.functions.Func3
+        final C79321 c79321 = new C79321(INSTANCE);
+        Observable<Boolean> observableM11075i = Observable.m11075i(observableObserveGuildExperiment, observableObserveGuildExperiment2, observableObserveGuild, new Func3() { // from class: com.discord.widgets.chat.list.CreateThreadsFeatureFlag$sam$rx_functions_Func3$0
+            @Override // p658rx.functions.Func3
             public final /* synthetic */ Object call(Object obj, Object obj2, Object obj3) {
-                return anonymousClass1.invoke(obj, obj2, obj3);
+                return c79321.invoke(obj, obj2, obj3);
             }
         });
-        Intrinsics3.checkNotNullExpressionValue(observableI, "Observable.combineLatest… ::computeIsEnabled\n    )");
-        return observableI;
+        C12238m.checkNotNullExpressionValue(observableM11075i, "Observable.combineLatest… ::computeIsEnabled\n    )");
+        return observableM11075i;
     }
 
     public /* synthetic */ CreateThreadsFeatureFlag(StoreExperiments storeExperiments, StoreGuilds storeGuilds, int i, DefaultConstructorMarker defaultConstructorMarker) {

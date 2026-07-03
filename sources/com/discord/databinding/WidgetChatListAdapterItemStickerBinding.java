@@ -9,21 +9,22 @@ import com.discord.views.sticker.StickerView;
 /* JADX INFO: loaded from: classes.dex */
 public final class WidgetChatListAdapterItemStickerBinding implements ViewBinding {
 
+    /* JADX INFO: renamed from: a */
     @NonNull
-    public final FrameLayout a;
+    public final FrameLayout f16297a;
 
-    /* JADX INFO: renamed from: b, reason: collision with root package name */
+    /* JADX INFO: renamed from: b */
     @NonNull
-    public final StickerView f2334b;
+    public final StickerView f16298b;
 
     public WidgetChatListAdapterItemStickerBinding(@NonNull FrameLayout frameLayout, @NonNull StickerView stickerView) {
-        this.a = frameLayout;
-        this.f2334b = stickerView;
+        this.f16297a = frameLayout;
+        this.f16298b = stickerView;
     }
 
     @Override // androidx.viewbinding.ViewBinding
     @NonNull
     public View getRoot() {
-        return this.a;
+        return this.f16297a;
     }
 }

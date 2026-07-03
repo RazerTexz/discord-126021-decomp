@@ -1,6 +1,5 @@
 package com.discord.utilities.rest;
 
-import a0.a.a.b;
 import android.content.ContentResolver;
 import android.content.Context;
 import android.graphics.Bitmap;
@@ -8,10 +7,7 @@ import android.net.Uri;
 import androidx.annotation.MainThread;
 import androidx.annotation.VisibleForTesting;
 import androidx.exifinterface.media.ExifInterface;
-import b.a.d.AppToast;
-import b.d.b.a.outline;
-import b.i.a.f.e.o.f;
-import com.discord.R;
+import com.discord.C5419R;
 import com.discord.app.AppFragment;
 import com.discord.models.commands.ApplicationCommandLocalSendData;
 import com.discord.models.domain.ModelAuditLogEntry;
@@ -19,38 +15,20 @@ import com.discord.restapi.RestAPIParams;
 import com.discord.restapi.utils.CountingRequestBody;
 import com.discord.stores.StoreApplicationCommandsKt;
 import com.discord.stores.StoreStream;
-import com.discord.utilities.attachments.AttachmentUtils;
+import com.discord.utilities.attachments.AttachmentUtilsKt;
 import com.discord.utilities.captcha.CaptchaErrorBody;
 import com.discord.utilities.captcha.CaptchaHelper;
 import com.discord.utilities.error.Error;
-import com.discord.utilities.messagesend.MessageQueue4;
+import com.discord.utilities.messagesend.MessageResult;
 import com.discord.widgets.captcha.WidgetCaptchaBottomSheet;
 import com.lytefast.flexinput.model.Attachment;
-import d0.Result3;
-import d0.Tuples;
-import d0.f0.SequenceBuilder2;
-import d0.f0.SequenceBuilder3;
-import d0.f0._Sequences2;
-import d0.g0.Strings4;
-import d0.t.Collections2;
-import d0.t.Iterables2;
-import d0.t._Collections;
-import d0.w.h.Intrinsics2;
-import d0.w.i.a.ContinuationImpl5;
-import d0.w.i.a.ContinuationImpl6;
-import d0.w.i.a.DebugMetadata;
-import d0.w.i.a.boxing;
-import d0.z.d.Intrinsics3;
-import d0.z.d.Lambda;
-import j0.k.Func1;
-import j0.l.e.ScalarSynchronousObservable;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Objects;
-import kotlin.Tuples2;
+import kotlin.Pair;
 import kotlin.Unit;
 import kotlin.coroutines.Continuation;
 import kotlin.jvm.functions.Function0;
@@ -62,12 +40,34 @@ import kotlinx.coroutines.CoroutineDispatcher;
 import kotlinx.coroutines.CoroutineScope;
 import okhttp3.MultipartBody;
 import okhttp3.RequestBody;
-import rx.Emitter;
-import rx.Observable;
-import rx.functions.Action1;
-import s.a.CoroutineScope2;
-import s.a.Dispatchers;
-import s.a.a.MainDispatchers;
+import p001a0.p002a.p003a.C0002b;
+import p007b.p008a.p018d.C0876m;
+import p007b.p100d.p104b.p105a.C1643a;
+import p007b.p225i.p226a.p288f.p299e.p308o.C3404f;
+import p507d0.C12113l;
+import p507d0.C12116o;
+import p507d0.p578f0.AbstractC12072k;
+import p507d0.p578f0.C12073l;
+import p507d0.p578f0.C12078q;
+import p507d0.p579g0.C12106w;
+import p507d0.p580t.C12147n;
+import p507d0.p580t.C12149o;
+import p507d0.p580t.C12163u;
+import p507d0.p584w.p585h.C12183c;
+import p507d0.p584w.p586i.p587a.AbstractC12193j;
+import p507d0.p584w.p586i.p587a.AbstractC12194k;
+import p507d0.p584w.p586i.p587a.C12185b;
+import p507d0.p584w.p586i.p587a.InterfaceC12188e;
+import p507d0.p592z.p594d.AbstractC12240o;
+import p507d0.p592z.p594d.C12238m;
+import p637j0.p641k.InterfaceC12589b;
+import p637j0.p642l.p647e.C12721k;
+import p658rx.Emitter;
+import p658rx.Observable;
+import p658rx.functions.Action1;
+import p659s.p660a.C13124k0;
+import p659s.p660a.C13163x0;
+import p659s.p660a.p661a.C13031n;
 
 /* JADX INFO: compiled from: SendUtils.kt */
 /* JADX INFO: loaded from: classes2.dex */
@@ -86,10 +86,10 @@ public final class SendUtils {
         private final MultipartBody.Part part;
 
         public FileUpload(String str, long j, MultipartBody.Part part, String str2, Observable<Long> observable) {
-            Intrinsics3.checkNotNullParameter(str, ModelAuditLogEntry.CHANGE_KEY_NAME);
-            Intrinsics3.checkNotNullParameter(part, "part");
-            Intrinsics3.checkNotNullParameter(str2, "mimeType");
-            Intrinsics3.checkNotNullParameter(observable, "bytesWrittenObservable");
+            C12238m.checkNotNullParameter(str, ModelAuditLogEntry.CHANGE_KEY_NAME);
+            C12238m.checkNotNullParameter(part, "part");
+            C12238m.checkNotNullParameter(str2, "mimeType");
+            C12238m.checkNotNullParameter(observable, "bytesWrittenObservable");
             this.name = str;
             this.contentLength = j;
             this.part = part;
@@ -145,10 +145,10 @@ public final class SendUtils {
         }
 
         public final FileUpload copy(String name, long contentLength, MultipartBody.Part part, String mimeType, Observable<Long> bytesWrittenObservable) {
-            Intrinsics3.checkNotNullParameter(name, ModelAuditLogEntry.CHANGE_KEY_NAME);
-            Intrinsics3.checkNotNullParameter(part, "part");
-            Intrinsics3.checkNotNullParameter(mimeType, "mimeType");
-            Intrinsics3.checkNotNullParameter(bytesWrittenObservable, "bytesWrittenObservable");
+            C12238m.checkNotNullParameter(name, ModelAuditLogEntry.CHANGE_KEY_NAME);
+            C12238m.checkNotNullParameter(part, "part");
+            C12238m.checkNotNullParameter(mimeType, "mimeType");
+            C12238m.checkNotNullParameter(bytesWrittenObservable, "bytesWrittenObservable");
             return new FileUpload(name, contentLength, part, mimeType, bytesWrittenObservable);
         }
 
@@ -160,7 +160,7 @@ public final class SendUtils {
                 return false;
             }
             FileUpload fileUpload = (FileUpload) other;
-            return Intrinsics3.areEqual(this.name, fileUpload.name) && this.contentLength == fileUpload.contentLength && Intrinsics3.areEqual(this.part, fileUpload.part) && Intrinsics3.areEqual(this.mimeType, fileUpload.mimeType) && Intrinsics3.areEqual(this.bytesWrittenObservable, fileUpload.bytesWrittenObservable);
+            return C12238m.areEqual(this.name, fileUpload.name) && this.contentLength == fileUpload.contentLength && C12238m.areEqual(this.part, fileUpload.part) && C12238m.areEqual(this.mimeType, fileUpload.mimeType) && C12238m.areEqual(this.bytesWrittenObservable, fileUpload.bytesWrittenObservable);
         }
 
         public final Observable<Long> getBytesWrittenObservable() {
@@ -185,9 +185,9 @@ public final class SendUtils {
 
         public int hashCode() {
             String str = this.name;
-            int iA = (b.a(this.contentLength) + ((str != null ? str.hashCode() : 0) * 31)) * 31;
+            int iM3a = (C0002b.m3a(this.contentLength) + ((str != null ? str.hashCode() : 0) * 31)) * 31;
             MultipartBody.Part part = this.part;
-            int iHashCode = (iA + (part != null ? part.hashCode() : 0)) * 31;
+            int iHashCode = (iM3a + (part != null ? part.hashCode() : 0)) * 31;
             String str2 = this.mimeType;
             int iHashCode2 = (iHashCode + (str2 != null ? str2.hashCode() : 0)) * 31;
             Observable<Long> observable = this.bytesWrittenObservable;
@@ -195,18 +195,18 @@ public final class SendUtils {
         }
 
         public String toString() {
-            StringBuilder sbU = outline.U("FileUpload(name=");
-            sbU.append(this.name);
-            sbU.append(", contentLength=");
-            sbU.append(this.contentLength);
-            sbU.append(", part=");
-            sbU.append(this.part);
-            sbU.append(", mimeType=");
-            sbU.append(this.mimeType);
-            sbU.append(", bytesWrittenObservable=");
-            sbU.append(this.bytesWrittenObservable);
-            sbU.append(")");
-            return sbU.toString();
+            StringBuilder sbM833U = C1643a.m833U("FileUpload(name=");
+            sbM833U.append(this.name);
+            sbM833U.append(", contentLength=");
+            sbM833U.append(this.contentLength);
+            sbM833U.append(", part=");
+            sbM833U.append(this.part);
+            sbM833U.append(", mimeType=");
+            sbM833U.append(this.mimeType);
+            sbM833U.append(", bytesWrittenObservable=");
+            sbM833U.append(this.bytesWrittenObservable);
+            sbM833U.append(")");
+            return sbM833U.toString();
         }
     }
 
@@ -266,7 +266,7 @@ public final class SendUtils {
                     return false;
                 }
                 Preprocessing preprocessing = (Preprocessing) other;
-                return this.numFiles == preprocessing.numFiles && Intrinsics3.areEqual(this.name, preprocessing.name) && Intrinsics3.areEqual(this.mimeType, preprocessing.mimeType);
+                return this.numFiles == preprocessing.numFiles && C12238m.areEqual(this.name, preprocessing.name) && C12238m.areEqual(this.mimeType, preprocessing.mimeType);
             }
 
             public final String getMimeType() {
@@ -290,12 +290,12 @@ public final class SendUtils {
             }
 
             public String toString() {
-                StringBuilder sbU = outline.U("Preprocessing(numFiles=");
-                sbU.append(this.numFiles);
-                sbU.append(", name=");
-                sbU.append(this.name);
-                sbU.append(", mimeType=");
-                return outline.J(sbU, this.mimeType, ")");
+                StringBuilder sbM833U = C1643a.m833U("Preprocessing(numFiles=");
+                sbM833U.append(this.numFiles);
+                sbM833U.append(", name=");
+                sbM833U.append(this.name);
+                sbM833U.append(", mimeType=");
+                return C1643a.m822J(sbM833U, this.mimeType, ")");
             }
         }
 
@@ -307,8 +307,8 @@ public final class SendUtils {
             /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
             public ReadyToSend(RestAPIParams.Message message, List<FileUpload> list) {
                 super(null);
-                Intrinsics3.checkNotNullParameter(message, "message");
-                Intrinsics3.checkNotNullParameter(list, "uploads");
+                C12238m.checkNotNullParameter(message, "message");
+                C12238m.checkNotNullParameter(list, "uploads");
                 this.message = message;
                 this.uploads = list;
             }
@@ -334,8 +334,8 @@ public final class SendUtils {
             }
 
             public final ReadyToSend copy(RestAPIParams.Message message, List<FileUpload> uploads) {
-                Intrinsics3.checkNotNullParameter(message, "message");
-                Intrinsics3.checkNotNullParameter(uploads, "uploads");
+                C12238m.checkNotNullParameter(message, "message");
+                C12238m.checkNotNullParameter(uploads, "uploads");
                 return new ReadyToSend(message, uploads);
             }
 
@@ -347,7 +347,7 @@ public final class SendUtils {
                     return false;
                 }
                 ReadyToSend readyToSend = (ReadyToSend) other;
-                return Intrinsics3.areEqual(this.message, readyToSend.message) && Intrinsics3.areEqual(this.uploads, readyToSend.uploads);
+                return C12238m.areEqual(this.message, readyToSend.message) && C12238m.areEqual(this.uploads, readyToSend.uploads);
             }
 
             public final RestAPIParams.Message getMessage() {
@@ -366,10 +366,10 @@ public final class SendUtils {
             }
 
             public String toString() {
-                StringBuilder sbU = outline.U("ReadyToSend(message=");
-                sbU.append(this.message);
-                sbU.append(", uploads=");
-                return outline.L(sbU, this.uploads, ")");
+                StringBuilder sbM833U = C1643a.m833U("ReadyToSend(message=");
+                sbM833U.append(this.message);
+                sbM833U.append(", uploads=");
+                return C1643a.m824L(sbM833U, this.uploads, ")");
             }
         }
 
@@ -381,8 +381,8 @@ public final class SendUtils {
             /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
             public ReadyToSendCommand(ApplicationCommandLocalSendData applicationCommandLocalSendData, List<FileUpload> list) {
                 super(null);
-                Intrinsics3.checkNotNullParameter(applicationCommandLocalSendData, "command");
-                Intrinsics3.checkNotNullParameter(list, "uploads");
+                C12238m.checkNotNullParameter(applicationCommandLocalSendData, "command");
+                C12238m.checkNotNullParameter(list, "uploads");
                 this.command = applicationCommandLocalSendData;
                 this.uploads = list;
             }
@@ -408,8 +408,8 @@ public final class SendUtils {
             }
 
             public final ReadyToSendCommand copy(ApplicationCommandLocalSendData command, List<FileUpload> uploads) {
-                Intrinsics3.checkNotNullParameter(command, "command");
-                Intrinsics3.checkNotNullParameter(uploads, "uploads");
+                C12238m.checkNotNullParameter(command, "command");
+                C12238m.checkNotNullParameter(uploads, "uploads");
                 return new ReadyToSendCommand(command, uploads);
             }
 
@@ -421,7 +421,7 @@ public final class SendUtils {
                     return false;
                 }
                 ReadyToSendCommand readyToSendCommand = (ReadyToSendCommand) other;
-                return Intrinsics3.areEqual(this.command, readyToSendCommand.command) && Intrinsics3.areEqual(this.uploads, readyToSendCommand.uploads);
+                return C12238m.areEqual(this.command, readyToSendCommand.command) && C12238m.areEqual(this.uploads, readyToSendCommand.uploads);
             }
 
             public final ApplicationCommandLocalSendData getCommand() {
@@ -440,10 +440,10 @@ public final class SendUtils {
             }
 
             public String toString() {
-                StringBuilder sbU = outline.U("ReadyToSendCommand(command=");
-                sbU.append(this.command);
-                sbU.append(", uploads=");
-                return outline.L(sbU, this.uploads, ")");
+                StringBuilder sbM833U = C1643a.m833U("ReadyToSendCommand(command=");
+                sbM833U.append(this.command);
+                sbM833U.append(", uploads=");
+                return C1643a.m824L(sbM833U, this.uploads, ")");
             }
         }
 
@@ -455,10 +455,10 @@ public final class SendUtils {
         }
     }
 
-    /* JADX INFO: renamed from: com.discord.utilities.rest.SendUtils$compressImageAttachments$1, reason: invalid class name */
+    /* JADX INFO: renamed from: com.discord.utilities.rest.SendUtils$compressImageAttachments$1 */
     /* JADX INFO: compiled from: SendUtils.kt */
-    @DebugMetadata(c = "com.discord.utilities.rest.SendUtils$compressImageAttachments$1", f = "SendUtils.kt", l = {323}, m = "invokeSuspend")
-    public static final class AnonymousClass1 extends ContinuationImpl6 implements Function2<CoroutineScope, Continuation<? super Unit>, Object> {
+    @InterfaceC12188e(m10084c = "com.discord.utilities.rest.SendUtils$compressImageAttachments$1", m10085f = "SendUtils.kt", m10086l = {323}, m10087m = "invokeSuspend")
+    public static final class C68611 extends AbstractC12194k implements Function2<CoroutineScope, Continuation<? super Unit>, Object> {
         public final /* synthetic */ List $attachments;
         public final /* synthetic */ Context $context;
         public final /* synthetic */ Function1 $onCompressed;
@@ -469,22 +469,22 @@ public final class SendUtils {
         public int label;
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-        public AnonymousClass1(List list, Context context, Function1 function1, Continuation continuation) {
+        public C68611(List list, Context context, Function1 function1, Continuation continuation) {
             super(2, continuation);
             this.$attachments = list;
             this.$context = context;
             this.$onCompressed = function1;
         }
 
-        @Override // d0.w.i.a.ContinuationImpl
+        @Override // p507d0.p584w.p586i.p587a.AbstractC12184a
         public final Continuation<Unit> create(Object obj, Continuation<?> continuation) {
-            Intrinsics3.checkNotNullParameter(continuation, "completion");
-            return new AnonymousClass1(this.$attachments, this.$context, this.$onCompressed, continuation);
+            C12238m.checkNotNullParameter(continuation, "completion");
+            return new C68611(this.$attachments, this.$context, this.$onCompressed, continuation);
         }
 
         @Override // kotlin.jvm.functions.Function2
         public final Object invoke(CoroutineScope coroutineScope, Continuation<? super Unit> continuation) {
-            return ((AnonymousClass1) create(coroutineScope, continuation)).invokeSuspend(Unit.a);
+            return ((C68611) create(coroutineScope, continuation)).invokeSuspend(Unit.f27425a);
         }
 
         /* JADX WARN: Code duplicated, block: B:14:0x004d  */
@@ -498,23 +498,23 @@ public final class SendUtils {
             	at jadx.core.utils.ErrorsCounter.error(ErrorsCounter.java:31)
             	at jadx.core.dex.attributes.nodes.NotificationAttrNode.addError(NotificationAttrNode.java:19)
             */
-        @Override // d0.w.i.a.ContinuationImpl
+        @Override // p507d0.p584w.p586i.p587a.AbstractC12184a
         public final java.lang.Object invokeSuspend(java.lang.Object r13) {
             /*
                 Method dump skipped, instruction units count: 217
                 To view this dump add '--comments-level debug' option
             */
-            throw new UnsupportedOperationException("Method not decompiled: com.discord.utilities.rest.SendUtils.AnonymousClass1.invokeSuspend(java.lang.Object):java.lang.Object");
+            throw new UnsupportedOperationException("Method not decompiled: com.discord.utilities.rest.SendUtils.C68611.invokeSuspend(java.lang.Object):java.lang.Object");
         }
     }
 
-    /* JADX INFO: renamed from: com.discord.utilities.rest.SendUtils$handleCaptchaRequired$1, reason: invalid class name */
+    /* JADX INFO: renamed from: com.discord.utilities.rest.SendUtils$handleCaptchaRequired$1 */
     /* JADX INFO: compiled from: SendUtils.kt */
-    public static final class AnonymousClass1 extends Lambda implements Function2<AppFragment, CaptchaHelper.CaptchaPayload, Unit> {
-        public final /* synthetic */ MessageQueue4.CaptchaRequired $messageResult;
+    public static final class C68651 extends AbstractC12240o implements Function2<AppFragment, CaptchaHelper.CaptchaPayload, Unit> {
+        public final /* synthetic */ MessageResult.CaptchaRequired $messageResult;
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-        public AnonymousClass1(MessageQueue4.CaptchaRequired captchaRequired) {
+        public C68651(MessageResult.CaptchaRequired captchaRequired) {
             super(2);
             this.$messageResult = captchaRequired;
         }
@@ -522,24 +522,24 @@ public final class SendUtils {
         @Override // kotlin.jvm.functions.Function2
         public /* bridge */ /* synthetic */ Unit invoke(AppFragment appFragment, CaptchaHelper.CaptchaPayload captchaPayload) {
             invoke2(appFragment, captchaPayload);
-            return Unit.a;
+            return Unit.f27425a;
         }
 
         /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
         public final void invoke2(AppFragment appFragment, CaptchaHelper.CaptchaPayload captchaPayload) {
-            Intrinsics3.checkNotNullParameter(appFragment, "<anonymous parameter 0>");
-            Intrinsics3.checkNotNullParameter(captchaPayload, "captchaPayload");
+            C12238m.checkNotNullParameter(appFragment, "<anonymous parameter 0>");
+            C12238m.checkNotNullParameter(captchaPayload, "captchaPayload");
             StoreStream.INSTANCE.getMessages().resendMessageWithCaptcha(this.$messageResult.getChannelId(), this.$messageResult.getNonce(), captchaPayload);
         }
     }
 
-    /* JADX INFO: renamed from: com.discord.utilities.rest.SendUtils$handleCaptchaRequired$2, reason: invalid class name */
+    /* JADX INFO: renamed from: com.discord.utilities.rest.SendUtils$handleCaptchaRequired$2 */
     /* JADX INFO: compiled from: SendUtils.kt */
-    public static final class AnonymousClass2 extends Lambda implements Function0<Unit> {
-        public final /* synthetic */ MessageQueue4.CaptchaRequired $messageResult;
+    public static final class C68662 extends AbstractC12240o implements Function0<Unit> {
+        public final /* synthetic */ MessageResult.CaptchaRequired $messageResult;
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-        public AnonymousClass2(MessageQueue4.CaptchaRequired captchaRequired) {
+        public C68662(MessageResult.CaptchaRequired captchaRequired) {
             super(0);
             this.$messageResult = captchaRequired;
         }
@@ -547,7 +547,7 @@ public final class SendUtils {
         @Override // kotlin.jvm.functions.Function0
         public /* bridge */ /* synthetic */ Unit invoke() {
             invoke2();
-            return Unit.a;
+            return Unit.f27425a;
         }
 
         /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
@@ -556,10 +556,10 @@ public final class SendUtils {
         }
     }
 
-    /* JADX INFO: renamed from: com.discord.utilities.rest.SendUtils$uniqueifyNames$1, reason: invalid class name */
+    /* JADX INFO: renamed from: com.discord.utilities.rest.SendUtils$uniqueifyNames$1 */
     /* JADX INFO: compiled from: SendUtils.kt */
-    @DebugMetadata(c = "com.discord.utilities.rest.SendUtils$uniqueifyNames$1", f = "SendUtils.kt", l = {204, 206}, m = "invokeSuspend")
-    public static final class AnonymousClass1 extends ContinuationImpl5 implements Function2<SequenceBuilder2<? super Attachment<? extends Object>>, Continuation<? super Unit>, Object> {
+    @InterfaceC12188e(m10084c = "com.discord.utilities.rest.SendUtils$uniqueifyNames$1", m10085f = "SendUtils.kt", m10086l = {204, 206}, m10087m = "invokeSuspend")
+    public static final class C68671 extends AbstractC12193j implements Function2<AbstractC12072k<? super Attachment<? extends Object>>, Continuation<? super Unit>, Object> {
         public final /* synthetic */ List $attachmentParts;
         private /* synthetic */ Object L$0;
         public Object L$1;
@@ -567,36 +567,36 @@ public final class SendUtils {
         public int label;
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-        public AnonymousClass1(List list, Continuation continuation) {
+        public C68671(List list, Continuation continuation) {
             super(2, continuation);
             this.$attachmentParts = list;
         }
 
-        @Override // d0.w.i.a.ContinuationImpl
+        @Override // p507d0.p584w.p586i.p587a.AbstractC12184a
         public final Continuation<Unit> create(Object obj, Continuation<?> continuation) {
-            Intrinsics3.checkNotNullParameter(continuation, "completion");
-            AnonymousClass1 anonymousClass1 = new AnonymousClass1(this.$attachmentParts, continuation);
-            anonymousClass1.L$0 = obj;
-            return anonymousClass1;
+            C12238m.checkNotNullParameter(continuation, "completion");
+            C68671 c68671 = new C68671(this.$attachmentParts, continuation);
+            c68671.L$0 = obj;
+            return c68671;
         }
 
         @Override // kotlin.jvm.functions.Function2
-        public final Object invoke(SequenceBuilder2<? super Attachment<? extends Object>> sequenceBuilder2, Continuation<? super Unit> continuation) {
-            return ((AnonymousClass1) create(sequenceBuilder2, continuation)).invokeSuspend(Unit.a);
+        public final Object invoke(AbstractC12072k<? super Attachment<? extends Object>> abstractC12072k, Continuation<? super Unit> continuation) {
+            return ((C68671) create(abstractC12072k, continuation)).invokeSuspend(Unit.f27425a);
         }
 
-        @Override // d0.w.i.a.ContinuationImpl
+        @Override // p507d0.p584w.p586i.p587a.AbstractC12184a
         public final Object invokeSuspend(Object obj) {
-            SequenceBuilder2 sequenceBuilder2;
+            AbstractC12072k abstractC12072k;
             Map map;
             Iterator it;
-            Object coroutine_suspended = Intrinsics2.getCOROUTINE_SUSPENDED();
+            Object coroutine_suspended = C12183c.getCOROUTINE_SUSPENDED();
             int i = this.label;
             if (i == 0) {
-                Result3.throwOnFailure(obj);
-                SequenceBuilder2 sequenceBuilder3 = (SequenceBuilder2) this.L$0;
+                C12113l.throwOnFailure(obj);
+                AbstractC12072k abstractC12072k2 = (AbstractC12072k) this.L$0;
                 LinkedHashMap linkedHashMap = new LinkedHashMap();
-                sequenceBuilder2 = sequenceBuilder3;
+                abstractC12072k = abstractC12072k2;
                 map = linkedHashMap;
                 it = this.$attachmentParts.iterator();
             } else {
@@ -605,37 +605,37 @@ public final class SendUtils {
                 }
                 it = (Iterator) this.L$2;
                 map = (Map) this.L$1;
-                sequenceBuilder2 = (SequenceBuilder2) this.L$0;
-                Result3.throwOnFailure(obj);
+                abstractC12072k = (AbstractC12072k) this.L$0;
+                C12113l.throwOnFailure(obj);
             }
             while (it.hasNext()) {
                 Attachment attachment = (Attachment) it.next();
                 Object objBoxInt = map.get(attachment.getDisplayName());
                 if (objBoxInt == null) {
-                    objBoxInt = boxing.boxInt(0);
+                    objBoxInt = C12185b.boxInt(0);
                 }
                 int iIntValue = ((Number) objBoxInt).intValue();
-                map.put(attachment.getDisplayName(), boxing.boxInt(iIntValue + 1));
+                map.put(attachment.getDisplayName(), C12185b.boxInt(iIntValue + 1));
                 if (iIntValue == 0) {
-                    this.L$0 = sequenceBuilder2;
+                    this.L$0 = abstractC12072k;
                     this.L$1 = map;
                     this.L$2 = it;
                     this.label = 1;
-                    if (sequenceBuilder2.yield(attachment, this) == coroutine_suspended) {
+                    if (abstractC12072k.yield(attachment, this) == coroutine_suspended) {
                         return coroutine_suspended;
                     }
                 } else {
                     Attachment attachmentRenamedWithDuplicateCount = SendUtils.INSTANCE.renamedWithDuplicateCount(attachment, iIntValue);
-                    this.L$0 = sequenceBuilder2;
+                    this.L$0 = abstractC12072k;
                     this.L$1 = map;
                     this.L$2 = it;
                     this.label = 2;
-                    if (sequenceBuilder2.yield(attachmentRenamedWithDuplicateCount, this) == coroutine_suspended) {
+                    if (abstractC12072k.yield(attachmentRenamedWithDuplicateCount, this) == coroutine_suspended) {
                         return coroutine_suspended;
                     }
                 }
             }
-            return Unit.a;
+            return Unit.f27425a;
         }
     }
 
@@ -643,28 +643,28 @@ public final class SendUtils {
     }
 
     private final Observable<FileUpload> getPart(final Attachment<?> attachment, final ContentResolver contentResolver, final String str) {
-        return Observable.o(new Action1<Emitter<FileUpload>>() { // from class: com.discord.utilities.rest.SendUtils.getPart.1
+        return Observable.m11080o(new Action1<Emitter<FileUpload>>() { // from class: com.discord.utilities.rest.SendUtils.getPart.1
 
-            /* JADX INFO: renamed from: com.discord.utilities.rest.SendUtils$getPart$1$1, reason: invalid class name and collision with other inner class name */
+            /* JADX INFO: renamed from: com.discord.utilities.rest.SendUtils$getPart$1$1, reason: invalid class name */
             /* JADX INFO: compiled from: SendUtils.kt */
-            public static final class C02221 extends Lambda implements Function3<RequestBody, String, Bitmap.CompressFormat, FileUpload> {
-                public C02221() {
+            public static final class AnonymousClass1 extends AbstractC12240o implements Function3<RequestBody, String, Bitmap.CompressFormat, FileUpload> {
+                public AnonymousClass1() {
                     super(3);
                 }
 
                 @Override // kotlin.jvm.functions.Function3
                 public final FileUpload invoke(RequestBody requestBody, String str, Bitmap.CompressFormat compressFormat) {
-                    Intrinsics3.checkNotNullParameter(requestBody, "requestBody");
-                    Intrinsics3.checkNotNullParameter(str, "mimeType");
+                    C12238m.checkNotNullParameter(requestBody, "requestBody");
+                    C12238m.checkNotNullParameter(str, "mimeType");
                     CountingRequestBody countingRequestBody = new CountingRequestBody(requestBody, 0);
-                    String sanitizedFileName = AttachmentUtils.getSanitizedFileName(Attachment.INSTANCE.a(attachment), compressFormat);
-                    return new FileUpload(sanitizedFileName, countingRequestBody.getEstimatedContentLength(), MultipartBody.Part.b(str, sanitizedFileName, countingRequestBody), str, countingRequestBody.getBytesWrittenObservable());
+                    String sanitizedFileName = AttachmentUtilsKt.getSanitizedFileName(Attachment.INSTANCE.m9295a(attachment), compressFormat);
+                    return new FileUpload(sanitizedFileName, countingRequestBody.getEstimatedContentLength(), MultipartBody.Part.m10971b(str, sanitizedFileName, countingRequestBody), str, countingRequestBody.getBytesWrittenObservable());
                 }
             }
 
-            @Override // rx.functions.Action1
+            @Override // p658rx.functions.Action1
             public final void call(Emitter<FileUpload> emitter) {
-                emitter.onNext(new C02221().invoke((RequestBody) new AttachmentRequestBody(contentResolver, attachment), AttachmentUtils.getMimeType(attachment, contentResolver), (Bitmap.CompressFormat) null));
+                emitter.onNext(new AnonymousClass1().invoke((RequestBody) new AttachmentRequestBody(contentResolver, attachment), AttachmentUtilsKt.getMimeType(attachment, contentResolver), (Bitmap.CompressFormat) null));
                 emitter.onCompleted();
             }
         }, Emitter.BackpressureMode.BUFFER);
@@ -674,8 +674,8 @@ public final class SendUtils {
         if (fileAttachments.size() != 1) {
             return new SendPayload.Preprocessing(fileAttachments.size(), null, null);
         }
-        Attachment<?> attachment = (Attachment) _Collections.first((List) fileAttachments);
-        return new SendPayload.Preprocessing(1, Attachment.INSTANCE.a(attachment), AttachmentUtils.getMimeType(contentResolver, attachment.getUri(), attachment.getDisplayName()));
+        Attachment<?> attachment = (Attachment) C12163u.first((List) fileAttachments);
+        return new SendPayload.Preprocessing(1, Attachment.INSTANCE.m9295a(attachment), AttachmentUtilsKt.getMimeType(contentResolver, attachment.getUri(), attachment.getDisplayName()));
     }
 
     /* JADX WARN: Multi-variable type inference failed */
@@ -689,139 +689,139 @@ public final class SendUtils {
         sendUtils.handleSendError(error, context, function0, function1);
     }
 
-    private final Tuples2<String, String> splitFileExtension(String str) {
-        int iLastIndexOf$default = Strings4.lastIndexOf$default((CharSequence) str, '.', 0, false, 6, (Object) null);
+    private final Pair<String, String> splitFileExtension(String str) {
+        int iLastIndexOf$default = C12106w.lastIndexOf$default((CharSequence) str, '.', 0, false, 6, (Object) null);
         if (iLastIndexOf$default == -1) {
-            return Tuples.to(str, null);
+            return C12116o.m10073to(str, null);
         }
         Objects.requireNonNull(str, "null cannot be cast to non-null type java.lang.String");
         String strSubstring = str.substring(0, iLastIndexOf$default);
-        Intrinsics3.checkNotNullExpressionValue(strSubstring, "(this as java.lang.Strin…ing(startIndex, endIndex)");
+        C12238m.checkNotNullExpressionValue(strSubstring, "(this as java.lang.Strin…ing(startIndex, endIndex)");
         String strSubstring2 = str.substring(iLastIndexOf$default + 1);
-        Intrinsics3.checkNotNullExpressionValue(strSubstring2, "(this as java.lang.String).substring(startIndex)");
-        return Tuples.to(strSubstring, strSubstring2);
+        C12238m.checkNotNullExpressionValue(strSubstring2, "(this as java.lang.String).substring(startIndex)");
+        return C12116o.m10073to(strSubstring, strSubstring2);
     }
 
     public final void compressImageAttachments(Context context, List<? extends Attachment<?>> attachments, Function1<? super List<? extends Attachment<?>>, Unit> onCompressed) {
-        Intrinsics3.checkNotNullParameter(context, "context");
-        Intrinsics3.checkNotNullParameter(attachments, "attachments");
-        Intrinsics3.checkNotNullParameter(onCompressed, "onCompressed");
-        CoroutineScope2 coroutineScope2 = CoroutineScope2.j;
-        CoroutineDispatcher coroutineDispatcher = Dispatchers.a;
-        f.H0(coroutineScope2, MainDispatchers.f3830b, null, new AnonymousClass1(attachments, context, onCompressed, null), 2, null);
+        C12238m.checkNotNullParameter(context, "context");
+        C12238m.checkNotNullParameter(attachments, "attachments");
+        C12238m.checkNotNullParameter(onCompressed, "onCompressed");
+        C13163x0 c13163x0 = C13163x0.f27919j;
+        CoroutineDispatcher coroutineDispatcher = C13124k0.f27866a;
+        C3404f.m4211H0(c13163x0, C13031n.f27700b, null, new C68611(attachments, context, onCompressed, null), 2, null);
     }
 
     public final Observable<SendPayload> getSendCommandPayload(ContentResolver contentResolver, ApplicationCommandLocalSendData apiParamMessage, List<? extends Attachment<?>> attachments) {
-        Intrinsics3.checkNotNullParameter(contentResolver, "contentResolver");
-        Intrinsics3.checkNotNullParameter(apiParamMessage, "apiParamMessage");
+        C12238m.checkNotNullParameter(contentResolver, "contentResolver");
+        C12238m.checkNotNullParameter(apiParamMessage, "apiParamMessage");
         if (attachments == null) {
-            ScalarSynchronousObservable scalarSynchronousObservable = new ScalarSynchronousObservable(new SendPayload.ReadyToSendCommand(apiParamMessage, Collections2.emptyList()));
-            Intrinsics3.checkNotNullExpressionValue(scalarSynchronousObservable, "Observable.just(SendPayl…ramMessage, emptyList()))");
-            return scalarSynchronousObservable;
+            C12721k c12721k = new C12721k(new SendPayload.ReadyToSendCommand(apiParamMessage, C12147n.emptyList()));
+            C12238m.checkNotNullExpressionValue(c12721k, "Observable.just(SendPayl…ramMessage, emptyList()))");
+            return c12721k;
         }
         List<Attachment<?>> listUniqueifyNames = uniqueifyNames(attachments);
-        final ApplicationCommandLocalSendData applicationCommandLocalSendDataCopy = apiParamMessage.copy((1791 & 1) != 0 ? apiParamMessage.nonce : 0L, (1791 & 2) != 0 ? apiParamMessage.channelId : 0L, (1791 & 4) != 0 ? apiParamMessage.guildId : null, (1791 & 8) != 0 ? apiParamMessage.commandGuildId : null, (1791 & 16) != 0 ? apiParamMessage.application : null, (1791 & 32) != 0 ? apiParamMessage.sessionId : null, (1791 & 64) != 0 ? apiParamMessage.applicationCommandName : null, (1791 & 128) != 0 ? apiParamMessage.applicationCommandId : null, (1791 & 256) != 0 ? apiParamMessage.applicationCommandsValues : StoreApplicationCommandsKt.mapApplicationCommandValues(apiParamMessage.getApplicationCommandsValues(), new SendUtils4(listUniqueifyNames)), (1791 & 512) != 0 ? apiParamMessage.version : null, (1791 & 1024) != 0 ? apiParamMessage.interactionId : null);
+        final ApplicationCommandLocalSendData applicationCommandLocalSendDataCopy = apiParamMessage.copy((1791 & 1) != 0 ? apiParamMessage.nonce : 0L, (1791 & 2) != 0 ? apiParamMessage.channelId : 0L, (1791 & 4) != 0 ? apiParamMessage.guildId : null, (1791 & 8) != 0 ? apiParamMessage.commandGuildId : null, (1791 & 16) != 0 ? apiParamMessage.application : null, (1791 & 32) != 0 ? apiParamMessage.sessionId : null, (1791 & 64) != 0 ? apiParamMessage.applicationCommandName : null, (1791 & 128) != 0 ? apiParamMessage.applicationCommandId : null, (1791 & 256) != 0 ? apiParamMessage.applicationCommandsValues : StoreApplicationCommandsKt.mapApplicationCommandValues(apiParamMessage.getApplicationCommandsValues(), new SendUtils$getSendCommandPayload$attachmentCorrectedMessage$1(listUniqueifyNames)), (1791 & 512) != 0 ? apiParamMessage.version : null, (1791 & 1024) != 0 ? apiParamMessage.interactionId : null);
         if (!(!listUniqueifyNames.isEmpty())) {
-            ScalarSynchronousObservable scalarSynchronousObservable2 = new ScalarSynchronousObservable(new SendPayload.ReadyToSendCommand(applicationCommandLocalSendDataCopy, Collections2.emptyList()));
-            Intrinsics3.checkNotNullExpressionValue(scalarSynchronousObservable2, "Observable.just(SendPayl…tedMessage, emptyList()))");
-            return scalarSynchronousObservable2;
+            C12721k c12721k2 = new C12721k(new SendPayload.ReadyToSendCommand(applicationCommandLocalSendDataCopy, C12147n.emptyList()));
+            C12238m.checkNotNullExpressionValue(c12721k2, "Observable.just(SendPayl…tedMessage, emptyList()))");
+            return c12721k2;
         }
-        ScalarSynchronousObservable scalarSynchronousObservable3 = new ScalarSynchronousObservable(getPreprocessingFromAttachments(contentResolver, listUniqueifyNames));
-        ArrayList arrayList = new ArrayList(Iterables2.collectionSizeOrDefault(listUniqueifyNames, 10));
+        C12721k c12721k3 = new C12721k(getPreprocessingFromAttachments(contentResolver, listUniqueifyNames));
+        ArrayList arrayList = new ArrayList(C12149o.collectionSizeOrDefault(listUniqueifyNames, 10));
         int i = 0;
         for (Object obj : listUniqueifyNames) {
             int i2 = i + 1;
             if (i < 0) {
-                Collections2.throwIndexOverflow();
+                C12147n.throwIndexOverflow();
             }
             arrayList.add(INSTANCE.getPart((Attachment) obj, contentResolver, "files[" + i + ']'));
             i = i2;
         }
-        Observable<SendPayload> observableM = Observable.m(scalarSynchronousObservable3, Observable.l(arrayList).f0().G(new Func1<List<FileUpload>, SendPayload.ReadyToSendCommand>() { // from class: com.discord.utilities.rest.SendUtils.getSendCommandPayload.2
-            @Override // j0.k.Func1
+        Observable<SendPayload> observableM11079m = Observable.m11079m(c12721k3, Observable.m11078l(arrayList).m11105f0().m11083G(new InterfaceC12589b<List<FileUpload>, SendPayload.ReadyToSendCommand>() { // from class: com.discord.utilities.rest.SendUtils.getSendCommandPayload.2
+            @Override // p637j0.p641k.InterfaceC12589b
             public final SendPayload.ReadyToSendCommand call(List<FileUpload> list) {
                 ApplicationCommandLocalSendData applicationCommandLocalSendData = applicationCommandLocalSendDataCopy;
-                Intrinsics3.checkNotNullExpressionValue(list, "attachmentParts");
+                C12238m.checkNotNullExpressionValue(list, "attachmentParts");
                 return new SendPayload.ReadyToSendCommand(applicationCommandLocalSendData, list);
             }
         }));
-        Intrinsics3.checkNotNullExpressionValue(observableM, "Observable.concat(\n     …)\n              }\n      )");
-        return observableM;
+        C12238m.checkNotNullExpressionValue(observableM11079m, "Observable.concat(\n     …)\n              }\n      )");
+        return observableM11079m;
     }
 
     public final Observable<SendPayload> getSendPayload(ContentResolver contentResolver, RestAPIParams.Message apiParamMessage, List<? extends Attachment<?>> attachments) {
         final RestAPIParams.Message messageCopy = apiParamMessage;
-        Intrinsics3.checkNotNullParameter(contentResolver, "contentResolver");
-        Intrinsics3.checkNotNullParameter(messageCopy, "apiParamMessage");
+        C12238m.checkNotNullParameter(contentResolver, "contentResolver");
+        C12238m.checkNotNullParameter(messageCopy, "apiParamMessage");
         if (attachments == null) {
-            ScalarSynchronousObservable scalarSynchronousObservable = new ScalarSynchronousObservable(new SendPayload.ReadyToSend(messageCopy, Collections2.emptyList()));
-            Intrinsics3.checkNotNullExpressionValue(scalarSynchronousObservable, "Observable.just(SendPayl…ramMessage, emptyList()))");
-            return scalarSynchronousObservable;
+            C12721k c12721k = new C12721k(new SendPayload.ReadyToSend(messageCopy, C12147n.emptyList()));
+            C12238m.checkNotNullExpressionValue(c12721k, "Observable.just(SendPayl…ramMessage, emptyList()))");
+            return c12721k;
         }
-        List<Attachment<?>> listExtractLinks = AttachmentUtils.extractLinks(attachments, contentResolver);
+        List<Attachment<?>> listExtractLinks = AttachmentUtilsKt.extractLinks(attachments, contentResolver);
         String content = apiParamMessage.getContent();
         if (content == null) {
             content = "";
         }
-        String strAppendLinks = AttachmentUtils.appendLinks(content, listExtractLinks);
-        if (!Intrinsics3.areEqual(strAppendLinks, apiParamMessage.getContent())) {
+        String strAppendLinks = AttachmentUtilsKt.appendLinks(content, listExtractLinks);
+        if (!C12238m.areEqual(strAppendLinks, apiParamMessage.getContent())) {
             messageCopy = apiParamMessage.copy((510 & 1) != 0 ? apiParamMessage.content : strAppendLinks, (510 & 2) != 0 ? apiParamMessage.nonce : null, (510 & 4) != 0 ? apiParamMessage.applicationId : null, (510 & 8) != 0 ? apiParamMessage.activity : null, (510 & 16) != 0 ? apiParamMessage.stickerIds : null, (510 & 32) != 0 ? apiParamMessage.messageReference : null, (510 & 64) != 0 ? apiParamMessage.allowedMentions : null, (510 & 128) != 0 ? apiParamMessage.captchaKey : null, (510 & 256) != 0 ? apiParamMessage.captchaRqtoken : null);
         }
-        List<Attachment<?>> listUniqueifyNames = uniqueifyNames(_Collections.minus((Iterable) attachments, (Iterable) listExtractLinks));
+        List<Attachment<?>> listUniqueifyNames = uniqueifyNames(C12163u.minus((Iterable) attachments, (Iterable) listExtractLinks));
         if (!(!listUniqueifyNames.isEmpty())) {
-            ScalarSynchronousObservable scalarSynchronousObservable2 = new ScalarSynchronousObservable(new SendPayload.ReadyToSend(messageCopy, Collections2.emptyList()));
-            Intrinsics3.checkNotNullExpressionValue(scalarSynchronousObservable2, "Observable.just(SendPayl…ramMessage, emptyList()))");
-            return scalarSynchronousObservable2;
+            C12721k c12721k2 = new C12721k(new SendPayload.ReadyToSend(messageCopy, C12147n.emptyList()));
+            C12238m.checkNotNullExpressionValue(c12721k2, "Observable.just(SendPayl…ramMessage, emptyList()))");
+            return c12721k2;
         }
-        ScalarSynchronousObservable scalarSynchronousObservable3 = new ScalarSynchronousObservable(getPreprocessingFromAttachments(contentResolver, listUniqueifyNames));
-        ArrayList arrayList = new ArrayList(Iterables2.collectionSizeOrDefault(listUniqueifyNames, 10));
+        C12721k c12721k3 = new C12721k(getPreprocessingFromAttachments(contentResolver, listUniqueifyNames));
+        ArrayList arrayList = new ArrayList(C12149o.collectionSizeOrDefault(listUniqueifyNames, 10));
         int i = 0;
         for (Object obj : listUniqueifyNames) {
             int i2 = i + 1;
             if (i < 0) {
-                Collections2.throwIndexOverflow();
+                C12147n.throwIndexOverflow();
             }
-            arrayList.add(INSTANCE.getPart((Attachment) obj, contentResolver, outline.q("file", i)));
+            arrayList.add(INSTANCE.getPart((Attachment) obj, contentResolver, C1643a.m871q("file", i)));
             i = i2;
         }
-        Observable<SendPayload> observableM = Observable.m(scalarSynchronousObservable3, Observable.l(arrayList).f0().G(new Func1<List<FileUpload>, SendPayload.ReadyToSend>() { // from class: com.discord.utilities.rest.SendUtils.getSendPayload.2
-            @Override // j0.k.Func1
+        Observable<SendPayload> observableM11079m = Observable.m11079m(c12721k3, Observable.m11078l(arrayList).m11105f0().m11083G(new InterfaceC12589b<List<FileUpload>, SendPayload.ReadyToSend>() { // from class: com.discord.utilities.rest.SendUtils.getSendPayload.2
+            @Override // p637j0.p641k.InterfaceC12589b
             public final SendPayload.ReadyToSend call(List<FileUpload> list) {
                 RestAPIParams.Message message = messageCopy;
-                Intrinsics3.checkNotNullExpressionValue(list, "attachmentParts");
+                C12238m.checkNotNullExpressionValue(list, "attachmentParts");
                 return new SendPayload.ReadyToSend(message, list);
             }
         }));
-        Intrinsics3.checkNotNullExpressionValue(observableM, "Observable.concat(\n     …)\n              }\n      )");
-        return observableM;
+        C12238m.checkNotNullExpressionValue(observableM11079m, "Observable.concat(\n     …)\n              }\n      )");
+        return observableM11079m;
     }
 
-    public final void handleCaptchaRequired(MessageQueue4.CaptchaRequired messageResult) {
-        Intrinsics3.checkNotNullParameter(messageResult, "messageResult");
-        WidgetCaptchaBottomSheet.INSTANCE.enqueue("Message Captcha", new AnonymousClass1(messageResult), new AnonymousClass2(messageResult), CaptchaErrorBody.INSTANCE.createFromError(messageResult.getError()));
+    public final void handleCaptchaRequired(MessageResult.CaptchaRequired messageResult) {
+        C12238m.checkNotNullParameter(messageResult, "messageResult");
+        WidgetCaptchaBottomSheet.INSTANCE.enqueue("Message Captcha", new C68651(messageResult), new C68662(messageResult), CaptchaErrorBody.INSTANCE.createFromError(messageResult.getError()));
     }
 
     @MainThread
     public final void handleSendError(Error error, Context context, Function0<Unit> filesTooLargeCallback, Function0<Unit> failedDeliveryToRecipientCallback) {
-        Intrinsics3.checkNotNullParameter(error, "error");
-        Intrinsics3.checkNotNullParameter(context, "context");
+        C12238m.checkNotNullParameter(error, "error");
+        C12238m.checkNotNullParameter(context, "context");
         error.setShowErrorToasts(false);
         Error.Response response = error.getResponse();
-        Intrinsics3.checkNotNullExpressionValue(response, "error.response");
+        C12238m.checkNotNullExpressionValue(response, "error.response");
         Integer abortCodeMessageResId = RestAPIAbortMessages.getAbortCodeMessageResId(response.getCode());
         if (abortCodeMessageResId != null) {
-            AppToast.g(context, abortCodeMessageResId.intValue(), 0, null, 12);
+            C0876m.m169g(context, abortCodeMessageResId.intValue(), 0, null, 12);
         } else if (error.getType() == Error.Type.REQUEST_TOO_LARGE) {
             if (filesTooLargeCallback != null) {
                 filesTooLargeCallback.invoke();
             }
         } else if (error.getType() != Error.Type.FORBIDDEN_DISCORD) {
             Error.Response response2 = error.getResponse();
-            Intrinsics3.checkNotNullExpressionValue(response2, "error.response");
+            C12238m.checkNotNullExpressionValue(response2, "error.response");
             if (response2.isKnownResponse() || error.getType() == Error.Type.NETWORK) {
                 error.setShowErrorToasts(true);
             } else {
-                AppToast.g(context, R.string.network_error_bad_request, 0, null, 12);
+                C0876m.m169g(context, C5419R.string.network_error_bad_request, 0, null, 12);
             }
         } else if (failedDeliveryToRecipientCallback != null) {
             failedDeliveryToRecipientCallback.invoke();
@@ -832,12 +832,12 @@ public final class SendUtils {
     @VisibleForTesting
     public final <T> Attachment<T> renamedWithDuplicateCount(Attachment<? extends T> attachment, int i) {
         String str;
-        Intrinsics3.checkNotNullParameter(attachment, "$this$renamedWithDuplicateCount");
+        C12238m.checkNotNullParameter(attachment, "$this$renamedWithDuplicateCount");
         long id2 = attachment.getId();
         Uri uri = attachment.getUri();
-        Tuples2<String, String> tuples2SplitFileExtension = splitFileExtension(attachment.getDisplayName());
-        String strComponent1 = tuples2SplitFileExtension.component1();
-        String strComponent2 = tuples2SplitFileExtension.component2();
+        Pair<String, String> pairSplitFileExtension = splitFileExtension(attachment.getDisplayName());
+        String strComponent1 = pairSplitFileExtension.component1();
+        String strComponent2 = pairSplitFileExtension.component2();
         if (strComponent2 != null) {
             str = strComponent1 + '-' + i + '.' + strComponent2;
         } else {
@@ -848,7 +848,7 @@ public final class SendUtils {
 
     @VisibleForTesting
     public final List<Attachment<?>> uniqueifyNames(List<? extends Attachment<?>> attachmentParts) {
-        Intrinsics3.checkNotNullParameter(attachmentParts, "attachmentParts");
-        return _Sequences2.toList(SequenceBuilder3.sequence(new AnonymousClass1(attachmentParts, null)));
+        C12238m.checkNotNullParameter(attachmentParts, "attachmentParts");
+        return C12078q.toList(C12073l.sequence(new C68671(attachmentParts, null)));
     }
 }

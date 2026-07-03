@@ -10,29 +10,32 @@ import androidx.viewbinding.ViewBinding;
 /* JADX INFO: loaded from: classes.dex */
 public final class WidgetGuildsListItemProfileBinding implements ViewBinding {
 
+    /* JADX INFO: renamed from: a */
     @NonNull
-    public final RelativeLayout a;
+    public final RelativeLayout f17120a;
 
-    /* JADX INFO: renamed from: b, reason: collision with root package name */
+    /* JADX INFO: renamed from: b */
     @NonNull
-    public final ImageView f2464b;
+    public final ImageView f17121b;
 
+    /* JADX INFO: renamed from: c */
     @NonNull
-    public final FrameLayout c;
+    public final FrameLayout f17122c;
 
+    /* JADX INFO: renamed from: d */
     @NonNull
-    public final ImageView d;
+    public final ImageView f17123d;
 
     public WidgetGuildsListItemProfileBinding(@NonNull RelativeLayout relativeLayout, @NonNull ImageView imageView, @NonNull FrameLayout frameLayout, @NonNull ImageView imageView2) {
-        this.a = relativeLayout;
-        this.f2464b = imageView;
-        this.c = frameLayout;
-        this.d = imageView2;
+        this.f17120a = relativeLayout;
+        this.f17121b = imageView;
+        this.f17122c = frameLayout;
+        this.f17123d = imageView2;
     }
 
     @Override // androidx.viewbinding.ViewBinding
     @NonNull
     public View getRoot() {
-        return this.a;
+        return this.f17120a;
     }
 }

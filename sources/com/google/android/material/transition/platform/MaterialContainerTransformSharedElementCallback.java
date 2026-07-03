@@ -16,15 +16,15 @@ import androidx.annotation.RequiresApi;
 import androidx.constraintlayout.solver.widgets.analyzer.BasicMeasure;
 import androidx.core.graphics.BlendModeColorFilterCompat;
 import androidx.core.graphics.BlendModeCompat;
-import b.i.a.g.l.l.TransitionListenerAdapter3;
-import b.i.a.g.l.l.TransitionUtils5;
-import com.google.android.material.R;
+import com.google.android.material.C10817R;
 import com.google.android.material.internal.ContextUtils;
 import com.google.android.material.shape.ShapeAppearanceModel;
 import com.google.android.material.shape.Shapeable;
 import java.lang.ref.WeakReference;
 import java.util.List;
 import java.util.Map;
+import p007b.p225i.p226a.p341g.p353l.p354l.AbstractC4478i;
+import p007b.p225i.p226a.p341g.p353l.p354l.C4480k;
 
 /* JADX INFO: loaded from: classes3.dex */
 @RequiresApi(21)
@@ -59,53 +59,62 @@ public class MaterialContainerTransformSharedElementCallback extends SharedEleme
         }
     }
 
-    public class a extends TransitionListenerAdapter3 {
-        public final /* synthetic */ Window a;
+    /* JADX INFO: renamed from: com.google.android.material.transition.platform.MaterialContainerTransformSharedElementCallback$a */
+    public class C11059a extends AbstractC4478i {
 
-        public a(MaterialContainerTransformSharedElementCallback materialContainerTransformSharedElementCallback, Window window) {
-            this.a = window;
+        /* JADX INFO: renamed from: a */
+        public final /* synthetic */ Window f21390a;
+
+        public C11059a(MaterialContainerTransformSharedElementCallback materialContainerTransformSharedElementCallback, Window window) {
+            this.f21390a = window;
         }
 
-        @Override // b.i.a.g.l.l.TransitionListenerAdapter3, android.transition.Transition.TransitionListener
+        @Override // p007b.p225i.p226a.p341g.p353l.p354l.AbstractC4478i, android.transition.Transition.TransitionListener
         public void onTransitionEnd(Transition transition) {
-            MaterialContainerTransformSharedElementCallback.restoreWindowBackground(this.a);
+            MaterialContainerTransformSharedElementCallback.restoreWindowBackground(this.f21390a);
         }
 
-        @Override // b.i.a.g.l.l.TransitionListenerAdapter3, android.transition.Transition.TransitionListener
+        @Override // p007b.p225i.p226a.p341g.p353l.p354l.AbstractC4478i, android.transition.Transition.TransitionListener
         public void onTransitionStart(Transition transition) {
-            MaterialContainerTransformSharedElementCallback.removeWindowBackground(this.a);
+            MaterialContainerTransformSharedElementCallback.removeWindowBackground(this.f21390a);
         }
     }
 
-    public class b extends TransitionListenerAdapter3 {
-        public final /* synthetic */ Activity a;
+    /* JADX INFO: renamed from: com.google.android.material.transition.platform.MaterialContainerTransformSharedElementCallback$b */
+    public class C11060b extends AbstractC4478i {
 
-        public b(MaterialContainerTransformSharedElementCallback materialContainerTransformSharedElementCallback, Activity activity) {
-            this.a = activity;
+        /* JADX INFO: renamed from: a */
+        public final /* synthetic */ Activity f21391a;
+
+        public C11060b(MaterialContainerTransformSharedElementCallback materialContainerTransformSharedElementCallback, Activity activity) {
+            this.f21391a = activity;
         }
 
-        @Override // b.i.a.g.l.l.TransitionListenerAdapter3, android.transition.Transition.TransitionListener
+        @Override // p007b.p225i.p226a.p341g.p353l.p354l.AbstractC4478i, android.transition.Transition.TransitionListener
         public void onTransitionEnd(Transition transition) {
             View view;
             if (MaterialContainerTransformSharedElementCallback.capturedSharedElement != null && (view = (View) MaterialContainerTransformSharedElementCallback.capturedSharedElement.get()) != null) {
                 view.setAlpha(1.0f);
                 WeakReference unused = MaterialContainerTransformSharedElementCallback.capturedSharedElement = null;
             }
-            this.a.finish();
-            this.a.overridePendingTransition(0, 0);
+            this.f21391a.finish();
+            this.f21391a.overridePendingTransition(0, 0);
         }
     }
 
-    public class c extends TransitionListenerAdapter3 {
-        public final /* synthetic */ Window a;
+    /* JADX INFO: renamed from: com.google.android.material.transition.platform.MaterialContainerTransformSharedElementCallback$c */
+    public class C11061c extends AbstractC4478i {
 
-        public c(MaterialContainerTransformSharedElementCallback materialContainerTransformSharedElementCallback, Window window) {
-            this.a = window;
+        /* JADX INFO: renamed from: a */
+        public final /* synthetic */ Window f21392a;
+
+        public C11061c(MaterialContainerTransformSharedElementCallback materialContainerTransformSharedElementCallback, Window window) {
+            this.f21392a = window;
         }
 
-        @Override // b.i.a.g.l.l.TransitionListenerAdapter3, android.transition.Transition.TransitionListener
+        @Override // p007b.p225i.p226a.p341g.p353l.p354l.AbstractC4478i, android.transition.Transition.TransitionListener
         public void onTransitionStart(Transition transition) {
-            MaterialContainerTransformSharedElementCallback.removeWindowBackground(this.a);
+            MaterialContainerTransformSharedElementCallback.removeWindowBackground(this.f21392a);
         }
     }
 
@@ -126,7 +135,7 @@ public class MaterialContainerTransformSharedElementCallback extends SharedEleme
             }
             if (this.transparentWindowBackgroundEnabled) {
                 updateBackgroundFadeDuration(window, materialContainerTransform);
-                materialContainerTransform.addListener(new a(this, window));
+                materialContainerTransform.addListener(new C11059a(this, window));
             }
         }
     }
@@ -136,10 +145,10 @@ public class MaterialContainerTransformSharedElementCallback extends SharedEleme
         if (sharedElementReturnTransition instanceof MaterialContainerTransform) {
             MaterialContainerTransform materialContainerTransform = (MaterialContainerTransform) sharedElementReturnTransition;
             materialContainerTransform.setHoldAtEndEnabled(true);
-            materialContainerTransform.addListener(new b(this, activity));
+            materialContainerTransform.addListener(new C11060b(this, activity));
             if (this.transparentWindowBackgroundEnabled) {
                 updateBackgroundFadeDuration(window, materialContainerTransform);
-                materialContainerTransform.addListener(new c(this, window));
+                materialContainerTransform.addListener(new C11061c(this, window));
             }
         }
     }
@@ -176,7 +185,7 @@ public class MaterialContainerTransformSharedElementCallback extends SharedEleme
         ShapeAppearanceModel shapeAppearanceModelProvideShape;
         View viewOnCreateSnapshotView = super.onCreateSnapshotView(context, parcelable);
         if (viewOnCreateSnapshotView != null && (weakReference = capturedSharedElement) != null && this.shapeProvider != null && (view = weakReference.get()) != null && (shapeAppearanceModelProvideShape = this.shapeProvider.provideShape(view)) != null) {
-            viewOnCreateSnapshotView.setTag(R.id.mtrl_motion_snapshot_view, shapeAppearanceModelProvideShape);
+            viewOnCreateSnapshotView.setTag(C10817R.id.mtrl_motion_snapshot_view, shapeAppearanceModelProvideShape);
         }
         return viewOnCreateSnapshotView;
     }
@@ -200,14 +209,14 @@ public class MaterialContainerTransformSharedElementCallback extends SharedEleme
     public void onSharedElementEnd(@NonNull List<String> list, @NonNull List<View> list2, @NonNull List<View> list3) {
         if (!list2.isEmpty()) {
             View view = list2.get(0);
-            int i = R.id.mtrl_motion_snapshot_view;
+            int i = C10817R.id.mtrl_motion_snapshot_view;
             if (view.getTag(i) instanceof View) {
                 list2.get(0).setTag(i, null);
             }
         }
         if (!this.entering && !list2.isEmpty()) {
             View view2 = list2.get(0);
-            RectF rectF = TransitionUtils5.a;
+            RectF rectF = C4480k.f11937a;
             this.returnEndBounds = new Rect(view2.getLeft(), view2.getTop(), view2.getRight(), view2.getBottom());
         }
         this.entering = false;
@@ -216,7 +225,7 @@ public class MaterialContainerTransformSharedElementCallback extends SharedEleme
     @Override // android.app.SharedElementCallback
     public void onSharedElementStart(@NonNull List<String> list, @NonNull List<View> list2, @NonNull List<View> list3) {
         if (!list2.isEmpty() && !list3.isEmpty()) {
-            list2.get(0).setTag(R.id.mtrl_motion_snapshot_view, list3.get(0));
+            list2.get(0).setTag(C10817R.id.mtrl_motion_snapshot_view, list3.get(0));
         }
         if (this.entering || list2.isEmpty() || this.returnEndBounds == null) {
             return;

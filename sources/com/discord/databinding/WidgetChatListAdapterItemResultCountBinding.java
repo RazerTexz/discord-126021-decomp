@@ -8,21 +8,22 @@ import androidx.viewbinding.ViewBinding;
 /* JADX INFO: loaded from: classes.dex */
 public final class WidgetChatListAdapterItemResultCountBinding implements ViewBinding {
 
+    /* JADX INFO: renamed from: a */
     @NonNull
-    public final TextView a;
+    public final TextView f16272a;
 
-    /* JADX INFO: renamed from: b, reason: collision with root package name */
+    /* JADX INFO: renamed from: b */
     @NonNull
-    public final TextView f2330b;
+    public final TextView f16273b;
 
     public WidgetChatListAdapterItemResultCountBinding(@NonNull TextView textView, @NonNull TextView textView2) {
-        this.a = textView;
-        this.f2330b = textView2;
+        this.f16272a = textView;
+        this.f16273b = textView2;
     }
 
     @Override // androidx.viewbinding.ViewBinding
     @NonNull
     public View getRoot() {
-        return this.a;
+        return this.f16272a;
     }
 }

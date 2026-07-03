@@ -6,41 +6,45 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.viewbinding.ViewBinding;
-import com.discord.R;
+import com.discord.C5419R;
 
 /* JADX INFO: loaded from: classes.dex */
 public final class WidgetChannelsListItemDirectoryBinding implements ViewBinding {
 
+    /* JADX INFO: renamed from: a */
     @NonNull
-    public final LinearLayout a;
+    public final LinearLayout f16037a;
 
-    /* JADX INFO: renamed from: b, reason: collision with root package name */
+    /* JADX INFO: renamed from: b */
     @NonNull
-    public final ImageView f2291b;
+    public final ImageView f16038b;
 
+    /* JADX INFO: renamed from: c */
     @NonNull
-    public final TextView c;
+    public final TextView f16039c;
 
+    /* JADX INFO: renamed from: d */
     @NonNull
-    public final TextView d;
+    public final TextView f16040d;
 
     public WidgetChannelsListItemDirectoryBinding(@NonNull LinearLayout linearLayout, @NonNull ImageView imageView, @NonNull TextView textView, @NonNull TextView textView2) {
-        this.a = linearLayout;
-        this.f2291b = imageView;
-        this.c = textView;
-        this.d = textView2;
+        this.f16037a = linearLayout;
+        this.f16038b = imageView;
+        this.f16039c = textView;
+        this.f16040d = textView2;
     }
 
     @NonNull
-    public static WidgetChannelsListItemDirectoryBinding a(@NonNull View view) {
-        int i = R.id.directory_channel_icon;
-        ImageView imageView = (ImageView) view.findViewById(R.id.directory_channel_icon);
+    /* JADX INFO: renamed from: a */
+    public static WidgetChannelsListItemDirectoryBinding m8406a(@NonNull View view) {
+        int i = C5419R.id.directory_channel_icon;
+        ImageView imageView = (ImageView) view.findViewById(C5419R.id.directory_channel_icon);
         if (imageView != null) {
-            i = R.id.directory_channel_name;
-            TextView textView = (TextView) view.findViewById(R.id.directory_channel_name);
+            i = C5419R.id.directory_channel_name;
+            TextView textView = (TextView) view.findViewById(C5419R.id.directory_channel_name);
             if (textView != null) {
-                i = R.id.directory_channel_unread_count;
-                TextView textView2 = (TextView) view.findViewById(R.id.directory_channel_unread_count);
+                i = C5419R.id.directory_channel_unread_count;
+                TextView textView2 = (TextView) view.findViewById(C5419R.id.directory_channel_unread_count);
                 if (textView2 != null) {
                     return new WidgetChannelsListItemDirectoryBinding((LinearLayout) view, imageView, textView, textView2);
                 }
@@ -52,6 +56,6 @@ public final class WidgetChannelsListItemDirectoryBinding implements ViewBinding
     @Override // androidx.viewbinding.ViewBinding
     @NonNull
     public View getRoot() {
-        return this.a;
+        return this.f16037a;
     }
 }

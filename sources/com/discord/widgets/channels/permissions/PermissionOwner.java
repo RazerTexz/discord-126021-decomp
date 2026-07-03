@@ -1,11 +1,11 @@
 package com.discord.widgets.channels.permissions;
 
-import b.d.b.a.outline;
 import com.discord.api.role.GuildRole;
 import com.discord.models.user.User;
-import d0.z.d.Intrinsics3;
 import java.io.Serializable;
 import kotlin.jvm.internal.DefaultConstructorMarker;
+import p007b.p100d.p104b.p105a.C1643a;
+import p507d0.p592z.p594d.C12238m;
 
 /* JADX INFO: compiled from: PermissionOwner.kt */
 /* JADX INFO: loaded from: classes2.dex */
@@ -21,7 +21,7 @@ public abstract class PermissionOwner implements Serializable {
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
         public Member(User user, String str, boolean z2) {
             super(user.getId(), null);
-            Intrinsics3.checkNotNullParameter(user, "user");
+            C12238m.checkNotNullParameter(user, "user");
             this.user = user;
             this.nickname = str;
             this.isOwner = z2;
@@ -56,7 +56,7 @@ public abstract class PermissionOwner implements Serializable {
         }
 
         public final Member copy(User user, String nickname, boolean isOwner) {
-            Intrinsics3.checkNotNullParameter(user, "user");
+            C12238m.checkNotNullParameter(user, "user");
             return new Member(user, nickname, isOwner);
         }
 
@@ -68,7 +68,7 @@ public abstract class PermissionOwner implements Serializable {
                 return false;
             }
             Member member = (Member) other;
-            return Intrinsics3.areEqual(this.user, member.user) && Intrinsics3.areEqual(this.nickname, member.nickname) && this.isOwner == member.isOwner;
+            return C12238m.areEqual(this.user, member.user) && C12238m.areEqual(this.nickname, member.nickname) && this.isOwner == member.isOwner;
         }
 
         public final String getNickname() {
@@ -102,12 +102,12 @@ public abstract class PermissionOwner implements Serializable {
         }
 
         public String toString() {
-            StringBuilder sbU = outline.U("Member(user=");
-            sbU.append(this.user);
-            sbU.append(", nickname=");
-            sbU.append(this.nickname);
-            sbU.append(", isOwner=");
-            return outline.O(sbU, this.isOwner, ")");
+            StringBuilder sbM833U = C1643a.m833U("Member(user=");
+            sbM833U.append(this.user);
+            sbM833U.append(", nickname=");
+            sbM833U.append(this.nickname);
+            sbM833U.append(", isOwner=");
+            return C1643a.m827O(sbM833U, this.isOwner, ")");
         }
     }
 
@@ -118,7 +118,7 @@ public abstract class PermissionOwner implements Serializable {
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
         public Role(GuildRole guildRole) {
             super(guildRole.getId(), null);
-            Intrinsics3.checkNotNullParameter(guildRole, "role");
+            C12238m.checkNotNullParameter(guildRole, "role");
             this.role = guildRole;
         }
 
@@ -135,13 +135,13 @@ public abstract class PermissionOwner implements Serializable {
         }
 
         public final Role copy(GuildRole role) {
-            Intrinsics3.checkNotNullParameter(role, "role");
+            C12238m.checkNotNullParameter(role, "role");
             return new Role(role);
         }
 
         public boolean equals(Object other) {
             if (this != other) {
-                return (other instanceof Role) && Intrinsics3.areEqual(this.role, ((Role) other).role);
+                return (other instanceof Role) && C12238m.areEqual(this.role, ((Role) other).role);
             }
             return true;
         }
@@ -159,10 +159,10 @@ public abstract class PermissionOwner implements Serializable {
         }
 
         public String toString() {
-            StringBuilder sbU = outline.U("Role(role=");
-            sbU.append(this.role);
-            sbU.append(")");
-            return sbU.toString();
+            StringBuilder sbM833U = C1643a.m833U("Role(role=");
+            sbM833U.append(this.role);
+            sbM833U.append(")");
+            return sbM833U.toString();
         }
     }
 

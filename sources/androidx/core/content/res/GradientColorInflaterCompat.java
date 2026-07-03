@@ -12,7 +12,7 @@ import androidx.annotation.ColorInt;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.annotation.RestrictTo;
-import androidx.core.R;
+import androidx.core.C0205R;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
@@ -56,20 +56,20 @@ public final class GradientColorInflaterCompat {
         if (!name.equals("gradient")) {
             throw new XmlPullParserException(xmlPullParser.getPositionDescription() + ": invalid gradient color tag " + name);
         }
-        TypedArray typedArrayObtainAttributes = TypedArrayUtils.obtainAttributes(resources, theme, attributeSet, R.styleable.GradientColor);
-        float namedFloat = TypedArrayUtils.getNamedFloat(typedArrayObtainAttributes, xmlPullParser, "startX", R.styleable.GradientColor_android_startX, 0.0f);
-        float namedFloat2 = TypedArrayUtils.getNamedFloat(typedArrayObtainAttributes, xmlPullParser, "startY", R.styleable.GradientColor_android_startY, 0.0f);
-        float namedFloat3 = TypedArrayUtils.getNamedFloat(typedArrayObtainAttributes, xmlPullParser, "endX", R.styleable.GradientColor_android_endX, 0.0f);
-        float namedFloat4 = TypedArrayUtils.getNamedFloat(typedArrayObtainAttributes, xmlPullParser, "endY", R.styleable.GradientColor_android_endY, 0.0f);
-        float namedFloat5 = TypedArrayUtils.getNamedFloat(typedArrayObtainAttributes, xmlPullParser, "centerX", R.styleable.GradientColor_android_centerX, 0.0f);
-        float namedFloat6 = TypedArrayUtils.getNamedFloat(typedArrayObtainAttributes, xmlPullParser, "centerY", R.styleable.GradientColor_android_centerY, 0.0f);
-        int namedInt = TypedArrayUtils.getNamedInt(typedArrayObtainAttributes, xmlPullParser, "type", R.styleable.GradientColor_android_type, 0);
-        int namedColor = TypedArrayUtils.getNamedColor(typedArrayObtainAttributes, xmlPullParser, "startColor", R.styleable.GradientColor_android_startColor, 0);
+        TypedArray typedArrayObtainAttributes = TypedArrayUtils.obtainAttributes(resources, theme, attributeSet, C0205R.styleable.GradientColor);
+        float namedFloat = TypedArrayUtils.getNamedFloat(typedArrayObtainAttributes, xmlPullParser, "startX", C0205R.styleable.GradientColor_android_startX, 0.0f);
+        float namedFloat2 = TypedArrayUtils.getNamedFloat(typedArrayObtainAttributes, xmlPullParser, "startY", C0205R.styleable.GradientColor_android_startY, 0.0f);
+        float namedFloat3 = TypedArrayUtils.getNamedFloat(typedArrayObtainAttributes, xmlPullParser, "endX", C0205R.styleable.GradientColor_android_endX, 0.0f);
+        float namedFloat4 = TypedArrayUtils.getNamedFloat(typedArrayObtainAttributes, xmlPullParser, "endY", C0205R.styleable.GradientColor_android_endY, 0.0f);
+        float namedFloat5 = TypedArrayUtils.getNamedFloat(typedArrayObtainAttributes, xmlPullParser, "centerX", C0205R.styleable.GradientColor_android_centerX, 0.0f);
+        float namedFloat6 = TypedArrayUtils.getNamedFloat(typedArrayObtainAttributes, xmlPullParser, "centerY", C0205R.styleable.GradientColor_android_centerY, 0.0f);
+        int namedInt = TypedArrayUtils.getNamedInt(typedArrayObtainAttributes, xmlPullParser, "type", C0205R.styleable.GradientColor_android_type, 0);
+        int namedColor = TypedArrayUtils.getNamedColor(typedArrayObtainAttributes, xmlPullParser, "startColor", C0205R.styleable.GradientColor_android_startColor, 0);
         boolean zHasAttribute = TypedArrayUtils.hasAttribute(xmlPullParser, "centerColor");
-        int namedColor2 = TypedArrayUtils.getNamedColor(typedArrayObtainAttributes, xmlPullParser, "centerColor", R.styleable.GradientColor_android_centerColor, 0);
-        int namedColor3 = TypedArrayUtils.getNamedColor(typedArrayObtainAttributes, xmlPullParser, "endColor", R.styleable.GradientColor_android_endColor, 0);
-        int namedInt2 = TypedArrayUtils.getNamedInt(typedArrayObtainAttributes, xmlPullParser, "tileMode", R.styleable.GradientColor_android_tileMode, 0);
-        float namedFloat7 = TypedArrayUtils.getNamedFloat(typedArrayObtainAttributes, xmlPullParser, "gradientRadius", R.styleable.GradientColor_android_gradientRadius, 0.0f);
+        int namedColor2 = TypedArrayUtils.getNamedColor(typedArrayObtainAttributes, xmlPullParser, "centerColor", C0205R.styleable.GradientColor_android_centerColor, 0);
+        int namedColor3 = TypedArrayUtils.getNamedColor(typedArrayObtainAttributes, xmlPullParser, "endColor", C0205R.styleable.GradientColor_android_endColor, 0);
+        int namedInt2 = TypedArrayUtils.getNamedInt(typedArrayObtainAttributes, xmlPullParser, "tileMode", C0205R.styleable.GradientColor_android_tileMode, 0);
+        float namedFloat7 = TypedArrayUtils.getNamedFloat(typedArrayObtainAttributes, xmlPullParser, "gradientRadius", C0205R.styleable.GradientColor_android_gradientRadius, 0.0f);
         typedArrayObtainAttributes.recycle();
         ColorStops colorStopsCheckColors = checkColors(inflateChildElements(resources, xmlPullParser, attributeSet, theme), namedColor, namedColor3, zHasAttribute, namedColor2);
         if (namedInt != 1) {
@@ -92,10 +92,10 @@ public final class GradientColorInflaterCompat {
                 break;
             }
             if (next == 2 && depth <= depth2 && xmlPullParser.getName().equals("item")) {
-                TypedArray typedArrayObtainAttributes = TypedArrayUtils.obtainAttributes(resources, theme, attributeSet, R.styleable.GradientColorItem);
-                int i = R.styleable.GradientColorItem_android_color;
+                TypedArray typedArrayObtainAttributes = TypedArrayUtils.obtainAttributes(resources, theme, attributeSet, C0205R.styleable.GradientColorItem);
+                int i = C0205R.styleable.GradientColorItem_android_color;
                 boolean zHasValue = typedArrayObtainAttributes.hasValue(i);
-                int i2 = R.styleable.GradientColorItem_android_offset;
+                int i2 = C0205R.styleable.GradientColorItem_android_offset;
                 boolean zHasValue2 = typedArrayObtainAttributes.hasValue(i2);
                 if (!zHasValue || !zHasValue2) {
                     throw new XmlPullParserException(xmlPullParser.getPositionDescription() + ": <item> tag requires a 'color' attribute and a 'offset' attribute!");

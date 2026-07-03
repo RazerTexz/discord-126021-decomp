@@ -135,8 +135,8 @@ public class AnalyzerAdapter extends MethodVisitor {
                 Label label = new Label();
                 this.labels = new ArrayList(3);
                 this.labels.add(label);
-                if (this.mv != null) {
-                    this.mv.visitLabel(label);
+                if (this.f27600mv != null) {
+                    this.f27600mv.visitLabel(label);
                 }
             }
             Iterator<Label> it = this.labels.iterator();
@@ -299,10 +299,10 @@ public class AnalyzerAdapter extends MethodVisitor {
 
     @Override // org.objectweb.asm.MethodVisitor
     public void visitMaxs(int maxStack, int maxLocals) {
-        if (this.mv != null) {
+        if (this.f27600mv != null) {
             this.maxStack = Math.max(this.maxStack, maxStack);
             this.maxLocals = Math.max(this.maxLocals, maxLocals);
-            this.mv.visitMaxs(this.maxStack, this.maxLocals);
+            this.f27600mv.visitMaxs(this.maxStack, this.maxLocals);
         }
     }
 

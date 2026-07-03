@@ -92,8 +92,8 @@ public class ForceStopRunnable implements Runnable {
             boolean z2 = (runningWork == null || runningWork.isEmpty()) ? false : true;
             if (z2) {
                 for (WorkSpec workSpec : runningWork) {
-                    workSpecDao.setState(WorkInfo.State.ENQUEUED, workSpec.f38id);
-                    workSpecDao.markWorkSpecScheduled(workSpec.f38id, -1L);
+                    workSpecDao.setState(WorkInfo.State.ENQUEUED, workSpec.f163id);
+                    workSpecDao.markWorkSpecScheduled(workSpec.f163id, -1L);
                 }
             }
             workProgressDao.deleteAll();

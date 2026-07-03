@@ -1,7 +1,6 @@
 package com.discord.utilities.lazy.subscriptions;
 
 import com.discord.models.domain.ModelAuditLogEntry;
-import d0.z.d.Intrinsics3;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Iterator;
@@ -11,7 +10,8 @@ import java.util.Set;
 import kotlin.Unit;
 import kotlin.jvm.functions.Function0;
 import kotlin.jvm.functions.Function2;
-import kotlin.ranges.Ranges2;
+import kotlin.ranges.IntRange;
+import p507d0.p592z.p594d.C12238m;
 
 /* JADX INFO: compiled from: GuildSubscriptionsManager.kt */
 /* JADX INFO: loaded from: classes2.dex */
@@ -28,19 +28,19 @@ public final class GuildSubscriptionsManager {
 
     /* JADX WARN: Multi-variable type inference failed */
     public GuildSubscriptionsManager(Function2<? super Long, ? super GuildSubscriptions, Unit> function2) {
-        Intrinsics3.checkNotNullParameter(function2, "onChange");
+        C12238m.checkNotNullParameter(function2, "onChange");
         this.onChange = function2;
         this.typingGuilds = new HashSet<>();
         this.activityGuilds = new HashSet<>();
         this.threadGuilds = new HashSet<>();
-        this.guildChannelSubscriptionsManager = new GuildChannelSubscriptionsManager(new GuildSubscriptionsManager2(this));
-        this.guildMemberSubscriptionsManager = new GuildMemberSubscriptionsManager(new GuildSubscriptionsManager3(this), new GuildSubscriptionsManager4(this), null, 4, null);
-        this.guildThreadSubscriptionManager = new GuildThreadSubscriptionsManager(new GuildSubscriptionsManager5(this));
+        this.guildChannelSubscriptionsManager = new GuildChannelSubscriptionsManager(new GuildSubscriptionsManager$guildChannelSubscriptionsManager$1(this));
+        this.guildMemberSubscriptionsManager = new GuildMemberSubscriptionsManager(new GuildSubscriptionsManager$guildMemberSubscriptionsManager$1(this), new GuildSubscriptionsManager$guildMemberSubscriptionsManager$2(this), null, 4, null);
+        this.guildThreadSubscriptionManager = new GuildThreadSubscriptionsManager(new GuildSubscriptionsManager$guildThreadSubscriptionManager$1(this));
         this.pendingEmissions = new HashMap<>();
         this.subscribedGuilds = new HashSet<>();
     }
 
-    private final synchronized void handleChannelSubscriptionsChange(long guildId, Map<Long, ? extends List<Ranges2>> channelSubscriptions) {
+    private final synchronized void handleChannelSubscriptionsChange(long guildId, Map<Long, ? extends List<IntRange>> channelSubscriptions) {
         GuildSubscriptions guildSubscriptions;
         HashMap<Long, GuildSubscriptions> map = this.pendingEmissions;
         Long lValueOf = Long.valueOf(guildId);
@@ -125,7 +125,7 @@ public final class GuildSubscriptionsManager {
     }
 
     public final synchronized void retainAll(List<Long> guildIds) {
-        Intrinsics3.checkNotNullParameter(guildIds, "guildIds");
+        C12238m.checkNotNullParameter(guildIds, "guildIds");
         this.subscribedGuilds.retainAll(guildIds);
         Iterator<Map.Entry<Long, GuildSubscriptions>> it = this.pendingEmissions.entrySet().iterator();
         while (it.hasNext()) {
@@ -156,8 +156,8 @@ public final class GuildSubscriptionsManager {
         map.put(lValueOf, guildSubscriptions);
     }
 
-    public final synchronized void subscribeChannel(long guildId, long channelId, List<Ranges2> ranges) {
-        Intrinsics3.checkNotNullParameter(ranges, "ranges");
+    public final synchronized void subscribeChannel(long guildId, long channelId, List<IntRange> ranges) {
+        C12238m.checkNotNullParameter(ranges, "ranges");
         this.guildChannelSubscriptionsManager.subscribe(guildId, channelId, ranges);
     }
 

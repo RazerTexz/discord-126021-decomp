@@ -8,40 +8,43 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.viewbinding.ViewBinding;
-import com.discord.R;
+import com.discord.C5419R;
 import com.google.android.material.button.MaterialButton;
 
 /* JADX INFO: loaded from: classes.dex */
 public final class EmptyFriendsStateViewBinding implements ViewBinding {
 
+    /* JADX INFO: renamed from: a */
     @NonNull
-    public final View a;
+    public final View f15060a;
 
-    /* JADX INFO: renamed from: b, reason: collision with root package name */
+    /* JADX INFO: renamed from: b */
     @NonNull
-    public final MaterialButton f2103b;
+    public final MaterialButton f15061b;
 
+    /* JADX INFO: renamed from: c */
     @NonNull
-    public final TextView c;
+    public final TextView f15062c;
 
     public EmptyFriendsStateViewBinding(@NonNull View view, @NonNull MaterialButton materialButton, @Nullable ImageView imageView, @NonNull TextView textView, @NonNull TextView textView2) {
-        this.a = view;
-        this.f2103b = materialButton;
-        this.c = textView;
+        this.f15060a = view;
+        this.f15061b = materialButton;
+        this.f15062c = textView;
     }
 
     @NonNull
-    public static EmptyFriendsStateViewBinding a(@NonNull LayoutInflater layoutInflater, @NonNull ViewGroup viewGroup) {
-        layoutInflater.inflate(R.layout.empty_friends_state_view, viewGroup);
-        int i = R.id.empty_friends_state_add_friend;
-        MaterialButton materialButton = (MaterialButton) viewGroup.findViewById(R.id.empty_friends_state_add_friend);
+    /* JADX INFO: renamed from: a */
+    public static EmptyFriendsStateViewBinding m8383a(@NonNull LayoutInflater layoutInflater, @NonNull ViewGroup viewGroup) {
+        layoutInflater.inflate(C5419R.layout.empty_friends_state_view, viewGroup);
+        int i = C5419R.id.empty_friends_state_add_friend;
+        MaterialButton materialButton = (MaterialButton) viewGroup.findViewById(C5419R.id.empty_friends_state_add_friend);
         if (materialButton != null) {
-            ImageView imageView = (ImageView) viewGroup.findViewById(R.id.empty_friends_state_image);
-            i = R.id.empty_friends_state_title;
-            TextView textView = (TextView) viewGroup.findViewById(R.id.empty_friends_state_title);
+            ImageView imageView = (ImageView) viewGroup.findViewById(C5419R.id.empty_friends_state_image);
+            i = C5419R.id.empty_friends_state_title;
+            TextView textView = (TextView) viewGroup.findViewById(C5419R.id.empty_friends_state_title);
             if (textView != null) {
-                i = R.id.subtitle;
-                TextView textView2 = (TextView) viewGroup.findViewById(R.id.subtitle);
+                i = C5419R.id.subtitle;
+                TextView textView2 = (TextView) viewGroup.findViewById(C5419R.id.subtitle);
                 if (textView2 != null) {
                     return new EmptyFriendsStateViewBinding(viewGroup, materialButton, imageView, textView, textView2);
                 }
@@ -53,6 +56,6 @@ public final class EmptyFriendsStateViewBinding implements ViewBinding {
     @Override // androidx.viewbinding.ViewBinding
     @NonNull
     public View getRoot() {
-        return this.a;
+        return this.f15060a;
     }
 }

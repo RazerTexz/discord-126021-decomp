@@ -1,8 +1,8 @@
 package com.discord.api.embeddedactivities;
 
-import b.d.b.a.outline;
-import d0.z.d.Intrinsics3;
 import java.util.List;
+import p007b.p100d.p104b.p105a.C1643a;
+import p507d0.p592z.p594d.C12238m;
 
 /* JADX INFO: compiled from: EmbeddedActivityInGuild.kt */
 /* JADX INFO: loaded from: classes.dex */
@@ -21,7 +21,8 @@ public final /* data */ class EmbeddedActivityInGuild {
         return this.embeddedActivity;
     }
 
-    public final List<Long> c() {
+    /* JADX INFO: renamed from: c */
+    public final List<Long> m7804c() {
         return this.users;
     }
 
@@ -33,7 +34,7 @@ public final /* data */ class EmbeddedActivityInGuild {
             return false;
         }
         EmbeddedActivityInGuild embeddedActivityInGuild = (EmbeddedActivityInGuild) other;
-        return this.channelId == embeddedActivityInGuild.channelId && Intrinsics3.areEqual(this.embeddedActivity, embeddedActivityInGuild.embeddedActivity) && Intrinsics3.areEqual(this.users, embeddedActivityInGuild.users);
+        return this.channelId == embeddedActivityInGuild.channelId && C12238m.areEqual(this.embeddedActivity, embeddedActivityInGuild.embeddedActivity) && C12238m.areEqual(this.users, embeddedActivityInGuild.users);
     }
 
     public int hashCode() {
@@ -46,11 +47,11 @@ public final /* data */ class EmbeddedActivityInGuild {
     }
 
     public String toString() {
-        StringBuilder sbU = outline.U("EmbeddedActivityInGuild(channelId=");
-        sbU.append(this.channelId);
-        sbU.append(", embeddedActivity=");
-        sbU.append(this.embeddedActivity);
-        sbU.append(", users=");
-        return outline.L(sbU, this.users, ")");
+        StringBuilder sbM833U = C1643a.m833U("EmbeddedActivityInGuild(channelId=");
+        sbM833U.append(this.channelId);
+        sbM833U.append(", embeddedActivity=");
+        sbM833U.append(this.embeddedActivity);
+        sbM833U.append(", users=");
+        return C1643a.m824L(sbM833U, this.users, ")");
     }
 }

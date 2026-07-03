@@ -1,17 +1,17 @@
 package com.discord.widgets.user.search;
 
-import b.d.b.a.outline;
 import com.discord.models.guild.Guild;
 import com.discord.widgets.user.search.WidgetGlobalSearchModel;
-import d0.z.d.Intrinsics3;
-import d0.z.d.Lambda;
 import java.util.Iterator;
 import java.util.List;
 import kotlin.jvm.functions.Function2;
+import p007b.p100d.p104b.p105a.C1643a;
+import p507d0.p592z.p594d.AbstractC12240o;
+import p507d0.p592z.p594d.C12238m;
 
 /* JADX INFO: compiled from: WidgetGlobalSearchModel.kt */
 /* JADX INFO: loaded from: classes.dex */
-public final class WidgetGlobalSearchModel$Companion$create$3 extends Lambda implements Function2<Guild, String, WidgetGlobalSearchModel.ItemGuild> {
+public final class WidgetGlobalSearchModel$Companion$create$3 extends AbstractC12240o implements Function2<Guild, String, WidgetGlobalSearchModel.ItemGuild> {
     public final /* synthetic */ WidgetGlobalSearchModel.ChannelContext $channelContext;
     public final /* synthetic */ WidgetGlobalSearchModel.SearchContext $searchContext;
 
@@ -26,13 +26,13 @@ public final class WidgetGlobalSearchModel$Companion$create$3 extends Lambda imp
     public final WidgetGlobalSearchModel.ItemGuild invoke(Guild guild, String str) {
         int i;
         boolean z2;
-        Intrinsics3.checkNotNullParameter(guild, "$this$toItemGuild");
-        Intrinsics3.checkNotNullParameter(str, "guildFilter");
+        C12238m.checkNotNullParameter(guild, "$this$toItemGuild");
+        C12238m.checkNotNullParameter(str, "guildFilter");
         WidgetGlobalSearchModel.MatchedResult matchedResult = WidgetGlobalSearchModel.INSTANCE.toMatchedResult(guild.getName(), str);
         if (matchedResult == null) {
             return null;
         }
-        List list = (List) outline.e(guild, this.$channelContext.getGuildToChannels());
+        List list = (List) C1643a.m847e(guild, this.$channelContext.getGuildToChannels());
         if (list != null) {
             Iterator it = list.iterator();
             int iIntValue = 0;

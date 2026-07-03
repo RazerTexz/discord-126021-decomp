@@ -12,8 +12,8 @@ import lombok.javac.handlers.JavacSingularsRecipes;
 
 /* JADX INFO: loaded from: app.apk:lombok/javac/handlers/singulars/JavacGuavaMapSingularizer.SCL.lombok */
 public class JavacGuavaMapSingularizer extends JavacGuavaSingularizer {
-    private static final LombokImmutableList<String> SUFFIXES = LombokImmutableList.of("key", "value");
-    private static final LombokImmutableList<String> SUPPORTED_TYPES = LombokImmutableList.of("com.google.common.collect.ImmutableMap", "com.google.common.collect.ImmutableBiMap", "com.google.common.collect.ImmutableSortedMap");
+    private static final LombokImmutableList<String> SUFFIXES = LombokImmutableList.m10920of("key", "value");
+    private static final LombokImmutableList<String> SUPPORTED_TYPES = LombokImmutableList.m10921of("com.google.common.collect.ImmutableMap", "com.google.common.collect.ImmutableBiMap", "com.google.common.collect.ImmutableSortedMap");
 
     @Override // lombok.javac.handlers.singulars.JavacGuavaSingularizer, lombok.javac.handlers.JavacSingularsRecipes.JavacSingularizer
     public /* bridge */ /* synthetic */ List generateFields(JavacSingularsRecipes.SingularData singularData, JavacNode javacNode, JCTree jCTree) {

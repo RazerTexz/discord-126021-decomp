@@ -1,15 +1,15 @@
 package com.discord.analytics.generated.events;
 
-import b.d.b.a.outline;
 import com.discord.analytics.generated.traits.TrackBase;
-import com.discord.analytics.generated.traits.TrackBase2;
+import com.discord.analytics.generated.traits.TrackBaseReceiver;
 import com.discord.api.science.AnalyticsSchema;
-import d0.z.d.Intrinsics3;
 import java.util.List;
+import p007b.p100d.p104b.p105a.C1643a;
+import p507d0.p592z.p594d.C12238m;
 
 /* JADX INFO: compiled from: TrackVideoInputToggled.kt */
 /* JADX INFO: loaded from: classes.dex */
-public final /* data */ class TrackVideoInputToggled implements AnalyticsSchema, TrackBase2 {
+public final /* data */ class TrackVideoInputToggled implements AnalyticsSchema, TrackBaseReceiver {
     private TrackBase trackBase;
     private final Long channelId = null;
     private final Long channelType = null;
@@ -49,7 +49,7 @@ public final /* data */ class TrackVideoInputToggled implements AnalyticsSchema,
             return false;
         }
         TrackVideoInputToggled trackVideoInputToggled = (TrackVideoInputToggled) other;
-        return Intrinsics3.areEqual(this.channelId, trackVideoInputToggled.channelId) && Intrinsics3.areEqual(this.channelType, trackVideoInputToggled.channelType) && Intrinsics3.areEqual(this.guildId, trackVideoInputToggled.guildId) && Intrinsics3.areEqual(this.nonce, trackVideoInputToggled.nonce) && Intrinsics3.areEqual(this.voiceStateCount, trackVideoInputToggled.voiceStateCount) && Intrinsics3.areEqual(this.videoStreamCount, trackVideoInputToggled.videoStreamCount) && Intrinsics3.areEqual(this.videoEnabled, trackVideoInputToggled.videoEnabled) && Intrinsics3.areEqual(this.gameName, trackVideoInputToggled.gameName) && Intrinsics3.areEqual(this.gameExeName, trackVideoInputToggled.gameExeName) && Intrinsics3.areEqual(this.gameId, trackVideoInputToggled.gameId) && Intrinsics3.areEqual(this.videoInputType, trackVideoInputToggled.videoInputType) && Intrinsics3.areEqual(this.videoInputResolution, trackVideoInputToggled.videoInputResolution) && Intrinsics3.areEqual(this.videoInputFrameRate, trackVideoInputToggled.videoInputFrameRate) && Intrinsics3.areEqual(this.soundshareSession, trackVideoInputToggled.soundshareSession) && Intrinsics3.areEqual(this.shareGameName, trackVideoInputToggled.shareGameName) && Intrinsics3.areEqual(this.shareGameId, trackVideoInputToggled.shareGameId) && Intrinsics3.areEqual(this.gamePlatform, trackVideoInputToggled.gamePlatform) && Intrinsics3.areEqual(this.source, trackVideoInputToggled.source) && Intrinsics3.areEqual(this.videoToggleSource, trackVideoInputToggled.videoToggleSource) && Intrinsics3.areEqual(this.mediaSessionId, trackVideoInputToggled.mediaSessionId) && Intrinsics3.areEqual(this.enabledInputs, trackVideoInputToggled.enabledInputs) && Intrinsics3.areEqual(this.previewEnabled, trackVideoInputToggled.previewEnabled);
+        return C12238m.areEqual(this.channelId, trackVideoInputToggled.channelId) && C12238m.areEqual(this.channelType, trackVideoInputToggled.channelType) && C12238m.areEqual(this.guildId, trackVideoInputToggled.guildId) && C12238m.areEqual(this.nonce, trackVideoInputToggled.nonce) && C12238m.areEqual(this.voiceStateCount, trackVideoInputToggled.voiceStateCount) && C12238m.areEqual(this.videoStreamCount, trackVideoInputToggled.videoStreamCount) && C12238m.areEqual(this.videoEnabled, trackVideoInputToggled.videoEnabled) && C12238m.areEqual(this.gameName, trackVideoInputToggled.gameName) && C12238m.areEqual(this.gameExeName, trackVideoInputToggled.gameExeName) && C12238m.areEqual(this.gameId, trackVideoInputToggled.gameId) && C12238m.areEqual(this.videoInputType, trackVideoInputToggled.videoInputType) && C12238m.areEqual(this.videoInputResolution, trackVideoInputToggled.videoInputResolution) && C12238m.areEqual(this.videoInputFrameRate, trackVideoInputToggled.videoInputFrameRate) && C12238m.areEqual(this.soundshareSession, trackVideoInputToggled.soundshareSession) && C12238m.areEqual(this.shareGameName, trackVideoInputToggled.shareGameName) && C12238m.areEqual(this.shareGameId, trackVideoInputToggled.shareGameId) && C12238m.areEqual(this.gamePlatform, trackVideoInputToggled.gamePlatform) && C12238m.areEqual(this.source, trackVideoInputToggled.source) && C12238m.areEqual(this.videoToggleSource, trackVideoInputToggled.videoToggleSource) && C12238m.areEqual(this.mediaSessionId, trackVideoInputToggled.mediaSessionId) && C12238m.areEqual(this.enabledInputs, trackVideoInputToggled.enabledInputs) && C12238m.areEqual(this.previewEnabled, trackVideoInputToggled.previewEnabled);
     }
 
     public int hashCode() {
@@ -100,49 +100,49 @@ public final /* data */ class TrackVideoInputToggled implements AnalyticsSchema,
     }
 
     public String toString() {
-        StringBuilder sbU = outline.U("TrackVideoInputToggled(channelId=");
-        sbU.append(this.channelId);
-        sbU.append(", channelType=");
-        sbU.append(this.channelType);
-        sbU.append(", guildId=");
-        sbU.append(this.guildId);
-        sbU.append(", nonce=");
-        sbU.append(this.nonce);
-        sbU.append(", voiceStateCount=");
-        sbU.append(this.voiceStateCount);
-        sbU.append(", videoStreamCount=");
-        sbU.append(this.videoStreamCount);
-        sbU.append(", videoEnabled=");
-        sbU.append(this.videoEnabled);
-        sbU.append(", gameName=");
-        sbU.append(this.gameName);
-        sbU.append(", gameExeName=");
-        sbU.append(this.gameExeName);
-        sbU.append(", gameId=");
-        sbU.append(this.gameId);
-        sbU.append(", videoInputType=");
-        sbU.append(this.videoInputType);
-        sbU.append(", videoInputResolution=");
-        sbU.append(this.videoInputResolution);
-        sbU.append(", videoInputFrameRate=");
-        sbU.append(this.videoInputFrameRate);
-        sbU.append(", soundshareSession=");
-        sbU.append(this.soundshareSession);
-        sbU.append(", shareGameName=");
-        sbU.append(this.shareGameName);
-        sbU.append(", shareGameId=");
-        sbU.append(this.shareGameId);
-        sbU.append(", gamePlatform=");
-        sbU.append(this.gamePlatform);
-        sbU.append(", source=");
-        sbU.append(this.source);
-        sbU.append(", videoToggleSource=");
-        sbU.append(this.videoToggleSource);
-        sbU.append(", mediaSessionId=");
-        sbU.append(this.mediaSessionId);
-        sbU.append(", enabledInputs=");
-        sbU.append(this.enabledInputs);
-        sbU.append(", previewEnabled=");
-        return outline.D(sbU, this.previewEnabled, ")");
+        StringBuilder sbM833U = C1643a.m833U("TrackVideoInputToggled(channelId=");
+        sbM833U.append(this.channelId);
+        sbM833U.append(", channelType=");
+        sbM833U.append(this.channelType);
+        sbM833U.append(", guildId=");
+        sbM833U.append(this.guildId);
+        sbM833U.append(", nonce=");
+        sbM833U.append(this.nonce);
+        sbM833U.append(", voiceStateCount=");
+        sbM833U.append(this.voiceStateCount);
+        sbM833U.append(", videoStreamCount=");
+        sbM833U.append(this.videoStreamCount);
+        sbM833U.append(", videoEnabled=");
+        sbM833U.append(this.videoEnabled);
+        sbM833U.append(", gameName=");
+        sbM833U.append(this.gameName);
+        sbM833U.append(", gameExeName=");
+        sbM833U.append(this.gameExeName);
+        sbM833U.append(", gameId=");
+        sbM833U.append(this.gameId);
+        sbM833U.append(", videoInputType=");
+        sbM833U.append(this.videoInputType);
+        sbM833U.append(", videoInputResolution=");
+        sbM833U.append(this.videoInputResolution);
+        sbM833U.append(", videoInputFrameRate=");
+        sbM833U.append(this.videoInputFrameRate);
+        sbM833U.append(", soundshareSession=");
+        sbM833U.append(this.soundshareSession);
+        sbM833U.append(", shareGameName=");
+        sbM833U.append(this.shareGameName);
+        sbM833U.append(", shareGameId=");
+        sbM833U.append(this.shareGameId);
+        sbM833U.append(", gamePlatform=");
+        sbM833U.append(this.gamePlatform);
+        sbM833U.append(", source=");
+        sbM833U.append(this.source);
+        sbM833U.append(", videoToggleSource=");
+        sbM833U.append(this.videoToggleSource);
+        sbM833U.append(", mediaSessionId=");
+        sbM833U.append(this.mediaSessionId);
+        sbM833U.append(", enabledInputs=");
+        sbM833U.append(this.enabledInputs);
+        sbM833U.append(", previewEnabled=");
+        return C1643a.m816D(sbM833U, this.previewEnabled, ")");
     }
 }

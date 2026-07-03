@@ -5,7 +5,7 @@ import android.content.Intent;
 import android.os.IBinder;
 import android.util.Log;
 import androidx.annotation.Nullable;
-import b.i.a.f.c.a.f.b.q;
+import p007b.p225i.p226a.p288f.p292c.p293a.p296f.p297b.BinderC3214q;
 
 /* JADX INFO: compiled from: com.google.android.gms:play-services-auth@@19.0.0 */
 /* JADX INFO: loaded from: classes3.dex */
@@ -22,6 +22,6 @@ public final class RevocationBoundService extends Service {
             String strValueOf2 = String.valueOf(intent.getAction());
             Log.v("RevocationService", strValueOf2.length() != 0 ? "RevocationBoundService handling ".concat(strValueOf2) : new String("RevocationBoundService handling "));
         }
-        return new q(this);
+        return new BinderC3214q(this);
     }
 }

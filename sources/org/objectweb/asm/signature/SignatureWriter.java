@@ -1,6 +1,6 @@
 package org.objectweb.asm.signature;
 
-import com.discord.widgets.chat.input.MentionUtils;
+import com.discord.widgets.chat.input.MentionUtilsKt;
 import org.objectweb.asm.Opcodes;
 
 /* JADX INFO: loaded from: app.apk:org/objectweb/asm/signature/SignatureWriter.SCL.lombok */
@@ -22,7 +22,7 @@ public class SignatureWriter extends SignatureVisitor {
             this.stringBuilder.append('<');
         }
         this.stringBuilder.append(name);
-        this.stringBuilder.append(MentionUtils.EMOJIS_AND_STICKERS_CHAR);
+        this.stringBuilder.append(MentionUtilsKt.EMOJIS_AND_STICKERS_CHAR);
     }
 
     @Override // org.objectweb.asm.signature.SignatureVisitor
@@ -32,7 +32,7 @@ public class SignatureWriter extends SignatureVisitor {
 
     @Override // org.objectweb.asm.signature.SignatureVisitor
     public SignatureVisitor visitInterfaceBound() {
-        this.stringBuilder.append(MentionUtils.EMOJIS_AND_STICKERS_CHAR);
+        this.stringBuilder.append(MentionUtilsKt.EMOJIS_AND_STICKERS_CHAR);
         return this;
     }
 

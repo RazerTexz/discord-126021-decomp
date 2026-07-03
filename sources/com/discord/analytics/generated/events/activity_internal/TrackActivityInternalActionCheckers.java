@@ -1,16 +1,16 @@
 package com.discord.analytics.generated.events.activity_internal;
 
-import b.d.b.a.outline;
 import com.discord.analytics.generated.traits.TrackActivityInternalMetadata;
-import com.discord.analytics.generated.traits.TrackActivityInternalMetadata2;
+import com.discord.analytics.generated.traits.TrackActivityInternalMetadataReceiver;
 import com.discord.analytics.generated.traits.TrackBase;
-import com.discord.analytics.generated.traits.TrackBase2;
+import com.discord.analytics.generated.traits.TrackBaseReceiver;
 import com.discord.api.science.AnalyticsSchema;
-import d0.z.d.Intrinsics3;
+import p007b.p100d.p104b.p105a.C1643a;
+import p507d0.p592z.p594d.C12238m;
 
 /* JADX INFO: compiled from: TrackActivityInternalActionCheckers.kt */
 /* JADX INFO: loaded from: classes.dex */
-public final /* data */ class TrackActivityInternalActionCheckers implements AnalyticsSchema, TrackBase2, TrackActivityInternalMetadata2 {
+public final /* data */ class TrackActivityInternalActionCheckers implements AnalyticsSchema, TrackBaseReceiver, TrackActivityInternalMetadataReceiver {
     private TrackActivityInternalMetadata trackActivityInternalMetadata;
     private TrackBase trackBase;
     private final CharSequence actionName = null;
@@ -43,7 +43,7 @@ public final /* data */ class TrackActivityInternalActionCheckers implements Ana
             return false;
         }
         TrackActivityInternalActionCheckers trackActivityInternalActionCheckers = (TrackActivityInternalActionCheckers) other;
-        return Intrinsics3.areEqual(this.actionName, trackActivityInternalActionCheckers.actionName) && Intrinsics3.areEqual(this.phase, trackActivityInternalActionCheckers.phase) && Intrinsics3.areEqual(this.moveType, trackActivityInternalActionCheckers.moveType) && Intrinsics3.areEqual(this.interestingMoveType, trackActivityInternalActionCheckers.interestingMoveType) && Intrinsics3.areEqual(this.lockedGame, trackActivityInternalActionCheckers.lockedGame) && Intrinsics3.areEqual(this.timedGame, trackActivityInternalActionCheckers.timedGame) && Intrinsics3.areEqual(this.againstBot, trackActivityInternalActionCheckers.againstBot) && Intrinsics3.areEqual(this.background, trackActivityInternalActionCheckers.background) && Intrinsics3.areEqual(this.pieceSet, trackActivityInternalActionCheckers.pieceSet) && Intrinsics3.areEqual(this.numSpectators, trackActivityInternalActionCheckers.numSpectators) && Intrinsics3.areEqual(this.playerColor, trackActivityInternalActionCheckers.playerColor) && Intrinsics3.areEqual(this.lastScreen, trackActivityInternalActionCheckers.lastScreen) && Intrinsics3.areEqual(this.jumpCount, trackActivityInternalActionCheckers.jumpCount) && Intrinsics3.areEqual(this.reconnectTime, trackActivityInternalActionCheckers.reconnectTime);
+        return C12238m.areEqual(this.actionName, trackActivityInternalActionCheckers.actionName) && C12238m.areEqual(this.phase, trackActivityInternalActionCheckers.phase) && C12238m.areEqual(this.moveType, trackActivityInternalActionCheckers.moveType) && C12238m.areEqual(this.interestingMoveType, trackActivityInternalActionCheckers.interestingMoveType) && C12238m.areEqual(this.lockedGame, trackActivityInternalActionCheckers.lockedGame) && C12238m.areEqual(this.timedGame, trackActivityInternalActionCheckers.timedGame) && C12238m.areEqual(this.againstBot, trackActivityInternalActionCheckers.againstBot) && C12238m.areEqual(this.background, trackActivityInternalActionCheckers.background) && C12238m.areEqual(this.pieceSet, trackActivityInternalActionCheckers.pieceSet) && C12238m.areEqual(this.numSpectators, trackActivityInternalActionCheckers.numSpectators) && C12238m.areEqual(this.playerColor, trackActivityInternalActionCheckers.playerColor) && C12238m.areEqual(this.lastScreen, trackActivityInternalActionCheckers.lastScreen) && C12238m.areEqual(this.jumpCount, trackActivityInternalActionCheckers.jumpCount) && C12238m.areEqual(this.reconnectTime, trackActivityInternalActionCheckers.reconnectTime);
     }
 
     public int hashCode() {
@@ -78,33 +78,33 @@ public final /* data */ class TrackActivityInternalActionCheckers implements Ana
     }
 
     public String toString() {
-        StringBuilder sbU = outline.U("TrackActivityInternalActionCheckers(actionName=");
-        sbU.append(this.actionName);
-        sbU.append(", phase=");
-        sbU.append(this.phase);
-        sbU.append(", moveType=");
-        sbU.append(this.moveType);
-        sbU.append(", interestingMoveType=");
-        sbU.append(this.interestingMoveType);
-        sbU.append(", lockedGame=");
-        sbU.append(this.lockedGame);
-        sbU.append(", timedGame=");
-        sbU.append(this.timedGame);
-        sbU.append(", againstBot=");
-        sbU.append(this.againstBot);
-        sbU.append(", background=");
-        sbU.append(this.background);
-        sbU.append(", pieceSet=");
-        sbU.append(this.pieceSet);
-        sbU.append(", numSpectators=");
-        sbU.append(this.numSpectators);
-        sbU.append(", playerColor=");
-        sbU.append(this.playerColor);
-        sbU.append(", lastScreen=");
-        sbU.append(this.lastScreen);
-        sbU.append(", jumpCount=");
-        sbU.append(this.jumpCount);
-        sbU.append(", reconnectTime=");
-        return outline.G(sbU, this.reconnectTime, ")");
+        StringBuilder sbM833U = C1643a.m833U("TrackActivityInternalActionCheckers(actionName=");
+        sbM833U.append(this.actionName);
+        sbM833U.append(", phase=");
+        sbM833U.append(this.phase);
+        sbM833U.append(", moveType=");
+        sbM833U.append(this.moveType);
+        sbM833U.append(", interestingMoveType=");
+        sbM833U.append(this.interestingMoveType);
+        sbM833U.append(", lockedGame=");
+        sbM833U.append(this.lockedGame);
+        sbM833U.append(", timedGame=");
+        sbM833U.append(this.timedGame);
+        sbM833U.append(", againstBot=");
+        sbM833U.append(this.againstBot);
+        sbM833U.append(", background=");
+        sbM833U.append(this.background);
+        sbM833U.append(", pieceSet=");
+        sbM833U.append(this.pieceSet);
+        sbM833U.append(", numSpectators=");
+        sbM833U.append(this.numSpectators);
+        sbM833U.append(", playerColor=");
+        sbM833U.append(this.playerColor);
+        sbM833U.append(", lastScreen=");
+        sbM833U.append(this.lastScreen);
+        sbM833U.append(", jumpCount=");
+        sbM833U.append(this.jumpCount);
+        sbM833U.append(", reconnectTime=");
+        return C1643a.m819G(sbM833U, this.reconnectTime, ")");
     }
 }

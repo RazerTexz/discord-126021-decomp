@@ -4,41 +4,45 @@ import android.view.View;
 import androidx.annotation.NonNull;
 import androidx.coordinatorlayout.widget.CoordinatorLayout;
 import androidx.viewbinding.ViewBinding;
-import b.a.i.LayoutAgeVerifyBinding;
-import b.a.i.LayoutAgeVerifyConfirmBinding;
-import b.a.i.LayoutAgeVerifyUnderageBinding;
 import com.discord.app.AppViewFlipper;
+import p007b.p008a.p025i.C0960g0;
+import p007b.p008a.p025i.C0968h0;
+import p007b.p008a.p025i.C0975i0;
 
 /* JADX INFO: loaded from: classes.dex */
 public final class WidgetAgeVerifyBinding implements ViewBinding {
 
+    /* JADX INFO: renamed from: a */
     @NonNull
-    public final CoordinatorLayout a;
+    public final CoordinatorLayout f15643a;
 
-    /* JADX INFO: renamed from: b, reason: collision with root package name */
+    /* JADX INFO: renamed from: b */
     @NonNull
-    public final AppViewFlipper f2224b;
+    public final AppViewFlipper f15644b;
 
+    /* JADX INFO: renamed from: c */
     @NonNull
-    public final LayoutAgeVerifyConfirmBinding c;
+    public final C0968h0 f15645c;
 
+    /* JADX INFO: renamed from: d */
     @NonNull
-    public final LayoutAgeVerifyUnderageBinding d;
+    public final C0975i0 f15646d;
 
+    /* JADX INFO: renamed from: e */
     @NonNull
-    public final LayoutAgeVerifyBinding e;
+    public final C0960g0 f15647e;
 
-    public WidgetAgeVerifyBinding(@NonNull CoordinatorLayout coordinatorLayout, @NonNull AppViewFlipper appViewFlipper, @NonNull LayoutAgeVerifyConfirmBinding layoutAgeVerifyConfirmBinding, @NonNull LayoutAgeVerifyUnderageBinding layoutAgeVerifyUnderageBinding, @NonNull LayoutAgeVerifyBinding layoutAgeVerifyBinding) {
-        this.a = coordinatorLayout;
-        this.f2224b = appViewFlipper;
-        this.c = layoutAgeVerifyConfirmBinding;
-        this.d = layoutAgeVerifyUnderageBinding;
-        this.e = layoutAgeVerifyBinding;
+    public WidgetAgeVerifyBinding(@NonNull CoordinatorLayout coordinatorLayout, @NonNull AppViewFlipper appViewFlipper, @NonNull C0968h0 c0968h0, @NonNull C0975i0 c0975i0, @NonNull C0960g0 c0960g0) {
+        this.f15643a = coordinatorLayout;
+        this.f15644b = appViewFlipper;
+        this.f15645c = c0968h0;
+        this.f15646d = c0975i0;
+        this.f15647e = c0960g0;
     }
 
     @Override // androidx.viewbinding.ViewBinding
     @NonNull
     public View getRoot() {
-        return this.a;
+        return this.f15643a;
     }
 }

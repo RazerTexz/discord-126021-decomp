@@ -1,7 +1,7 @@
 package co.discord.media_engine;
 
-import b.d.b.a.outline;
-import d0.z.d.Intrinsics3;
+import p007b.p100d.p104b.p105a.C1643a;
+import p507d0.p592z.p594d.C12238m;
 
 /* JADX INFO: compiled from: StreamParameters.kt */
 /* JADX INFO: loaded from: classes.dex */
@@ -13,12 +13,12 @@ public final /* data */ class StreamParameters {
     private final String rid;
     private final int rtxSsrc;
     private final int ssrc;
-    private final StreamParameters2 type;
+    private final MediaType type;
 
-    public StreamParameters(StreamParameters2 streamParameters2, String str, int i, int i2, boolean z2, int i3, int i4, int i5) {
-        Intrinsics3.checkNotNullParameter(streamParameters2, "type");
-        Intrinsics3.checkNotNullParameter(str, "rid");
-        this.type = streamParameters2;
+    public StreamParameters(MediaType mediaType, String str, int i, int i2, boolean z2, int i3, int i4, int i5) {
+        C12238m.checkNotNullParameter(mediaType, "type");
+        C12238m.checkNotNullParameter(str, "rid");
+        this.type = mediaType;
         this.rid = str;
         this.ssrc = i;
         this.rtxSsrc = i2;
@@ -29,7 +29,7 @@ public final /* data */ class StreamParameters {
     }
 
     /* JADX INFO: renamed from: component1, reason: from getter */
-    public final StreamParameters2 getType() {
+    public final MediaType getType() {
         return this.type;
     }
 
@@ -68,9 +68,9 @@ public final /* data */ class StreamParameters {
         return this.maxPixelCount;
     }
 
-    public final StreamParameters copy(StreamParameters2 type, String rid, int ssrc, int rtxSsrc, boolean active, int maxBitrate, int quality, int maxPixelCount) {
-        Intrinsics3.checkNotNullParameter(type, "type");
-        Intrinsics3.checkNotNullParameter(rid, "rid");
+    public final StreamParameters copy(MediaType type, String rid, int ssrc, int rtxSsrc, boolean active, int maxBitrate, int quality, int maxPixelCount) {
+        C12238m.checkNotNullParameter(type, "type");
+        C12238m.checkNotNullParameter(rid, "rid");
         return new StreamParameters(type, rid, ssrc, rtxSsrc, active, maxBitrate, quality, maxPixelCount);
     }
 
@@ -82,7 +82,7 @@ public final /* data */ class StreamParameters {
             return false;
         }
         StreamParameters streamParameters = (StreamParameters) other;
-        return Intrinsics3.areEqual(this.type, streamParameters.type) && Intrinsics3.areEqual(this.rid, streamParameters.rid) && this.ssrc == streamParameters.ssrc && this.rtxSsrc == streamParameters.rtxSsrc && this.active == streamParameters.active && this.maxBitrate == streamParameters.maxBitrate && this.quality == streamParameters.quality && this.maxPixelCount == streamParameters.maxPixelCount;
+        return C12238m.areEqual(this.type, streamParameters.type) && C12238m.areEqual(this.rid, streamParameters.rid) && this.ssrc == streamParameters.ssrc && this.rtxSsrc == streamParameters.rtxSsrc && this.active == streamParameters.active && this.maxBitrate == streamParameters.maxBitrate && this.quality == streamParameters.quality && this.maxPixelCount == streamParameters.maxPixelCount;
     }
 
     public final boolean getActive() {
@@ -113,7 +113,7 @@ public final /* data */ class StreamParameters {
         return this.ssrc;
     }
 
-    public final StreamParameters2 getType() {
+    public final MediaType getType() {
         return this.type;
     }
 
@@ -123,8 +123,8 @@ public final /* data */ class StreamParameters {
     /* JADX WARN: Type inference failed for: r1v5, types: [int] */
     /* JADX WARN: Type inference failed for: r1v9 */
     public int hashCode() {
-        StreamParameters2 streamParameters2 = this.type;
-        int iHashCode = (streamParameters2 != null ? streamParameters2.hashCode() : 0) * 31;
+        MediaType mediaType = this.type;
+        int iHashCode = (mediaType != null ? mediaType.hashCode() : 0) * 31;
         String str = this.rid;
         int iHashCode2 = (((((iHashCode + (str != null ? str.hashCode() : 0)) * 31) + this.ssrc) * 31) + this.rtxSsrc) * 31;
         boolean z2 = this.active;
@@ -136,21 +136,21 @@ public final /* data */ class StreamParameters {
     }
 
     public String toString() {
-        StringBuilder sbU = outline.U("StreamParameters(type=");
-        sbU.append(this.type);
-        sbU.append(", rid=");
-        sbU.append(this.rid);
-        sbU.append(", ssrc=");
-        sbU.append(this.ssrc);
-        sbU.append(", rtxSsrc=");
-        sbU.append(this.rtxSsrc);
-        sbU.append(", active=");
-        sbU.append(this.active);
-        sbU.append(", maxBitrate=");
-        sbU.append(this.maxBitrate);
-        sbU.append(", quality=");
-        sbU.append(this.quality);
-        sbU.append(", maxPixelCount=");
-        return outline.B(sbU, this.maxPixelCount, ")");
+        StringBuilder sbM833U = C1643a.m833U("StreamParameters(type=");
+        sbM833U.append(this.type);
+        sbM833U.append(", rid=");
+        sbM833U.append(this.rid);
+        sbM833U.append(", ssrc=");
+        sbM833U.append(this.ssrc);
+        sbM833U.append(", rtxSsrc=");
+        sbM833U.append(this.rtxSsrc);
+        sbM833U.append(", active=");
+        sbM833U.append(this.active);
+        sbM833U.append(", maxBitrate=");
+        sbM833U.append(this.maxBitrate);
+        sbM833U.append(", quality=");
+        sbM833U.append(this.quality);
+        sbM833U.append(", maxPixelCount=");
+        return C1643a.m814B(sbM833U, this.maxPixelCount, ")");
     }
 }

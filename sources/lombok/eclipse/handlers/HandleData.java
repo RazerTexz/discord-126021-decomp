@@ -24,7 +24,7 @@ public class HandleData extends EclipseAnnotationHandler<Data> {
     public void handle(AnnotationValues<Data> annotation, Annotation ast, EclipseNode annotationNode) {
         HandlerUtil.handleFlagUsage(annotationNode, ConfigurationKeys.DATA_FLAG_USAGE, "@Data");
         Data ann = annotation.getInstance();
-        EclipseNode typeNode = annotationNode.up();
+        EclipseNode typeNode = annotationNode.m10925up();
         TypeDeclaration typeDecl = null;
         if (typeNode.get() instanceof TypeDeclaration) {
             typeDecl = (TypeDeclaration) typeNode.get();

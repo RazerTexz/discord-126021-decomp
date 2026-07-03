@@ -1,14 +1,14 @@
 package com.discord.analytics.generated.events;
 
-import b.d.b.a.outline;
 import com.discord.analytics.generated.traits.TrackBase;
-import com.discord.analytics.generated.traits.TrackBase2;
+import com.discord.analytics.generated.traits.TrackBaseReceiver;
 import com.discord.api.science.AnalyticsSchema;
-import d0.z.d.Intrinsics3;
+import p007b.p100d.p104b.p105a.C1643a;
+import p507d0.p592z.p594d.C12238m;
 
 /* JADX INFO: compiled from: TrackLibraryViewed.kt */
 /* JADX INFO: loaded from: classes.dex */
-public final /* data */ class TrackLibraryViewed implements AnalyticsSchema, TrackBase2 {
+public final /* data */ class TrackLibraryViewed implements AnalyticsSchema, TrackBaseReceiver {
     private TrackBase trackBase;
     private final CharSequence loadId = null;
     private final Long numApplicationsTotal = null;
@@ -36,7 +36,7 @@ public final /* data */ class TrackLibraryViewed implements AnalyticsSchema, Tra
             return false;
         }
         TrackLibraryViewed trackLibraryViewed = (TrackLibraryViewed) other;
-        return Intrinsics3.areEqual(this.loadId, trackLibraryViewed.loadId) && Intrinsics3.areEqual(this.numApplicationsTotal, trackLibraryViewed.numApplicationsTotal) && Intrinsics3.areEqual(this.numApplicationsBattlenet, trackLibraryViewed.numApplicationsBattlenet) && Intrinsics3.areEqual(this.numApplicationsDiscord, trackLibraryViewed.numApplicationsDiscord) && Intrinsics3.areEqual(this.numApplicationsSteam, trackLibraryViewed.numApplicationsSteam) && Intrinsics3.areEqual(this.numApplicationsTwitch, trackLibraryViewed.numApplicationsTwitch) && Intrinsics3.areEqual(this.numApplicationsUplay, trackLibraryViewed.numApplicationsUplay) && Intrinsics3.areEqual(this.numApplicationsOrigin, trackLibraryViewed.numApplicationsOrigin) && Intrinsics3.areEqual(this.numApplicationsGog, trackLibraryViewed.numApplicationsGog) && Intrinsics3.areEqual(this.numApplicationsEpic, trackLibraryViewed.numApplicationsEpic);
+        return C12238m.areEqual(this.loadId, trackLibraryViewed.loadId) && C12238m.areEqual(this.numApplicationsTotal, trackLibraryViewed.numApplicationsTotal) && C12238m.areEqual(this.numApplicationsBattlenet, trackLibraryViewed.numApplicationsBattlenet) && C12238m.areEqual(this.numApplicationsDiscord, trackLibraryViewed.numApplicationsDiscord) && C12238m.areEqual(this.numApplicationsSteam, trackLibraryViewed.numApplicationsSteam) && C12238m.areEqual(this.numApplicationsTwitch, trackLibraryViewed.numApplicationsTwitch) && C12238m.areEqual(this.numApplicationsUplay, trackLibraryViewed.numApplicationsUplay) && C12238m.areEqual(this.numApplicationsOrigin, trackLibraryViewed.numApplicationsOrigin) && C12238m.areEqual(this.numApplicationsGog, trackLibraryViewed.numApplicationsGog) && C12238m.areEqual(this.numApplicationsEpic, trackLibraryViewed.numApplicationsEpic);
     }
 
     public int hashCode() {
@@ -63,25 +63,25 @@ public final /* data */ class TrackLibraryViewed implements AnalyticsSchema, Tra
     }
 
     public String toString() {
-        StringBuilder sbU = outline.U("TrackLibraryViewed(loadId=");
-        sbU.append(this.loadId);
-        sbU.append(", numApplicationsTotal=");
-        sbU.append(this.numApplicationsTotal);
-        sbU.append(", numApplicationsBattlenet=");
-        sbU.append(this.numApplicationsBattlenet);
-        sbU.append(", numApplicationsDiscord=");
-        sbU.append(this.numApplicationsDiscord);
-        sbU.append(", numApplicationsSteam=");
-        sbU.append(this.numApplicationsSteam);
-        sbU.append(", numApplicationsTwitch=");
-        sbU.append(this.numApplicationsTwitch);
-        sbU.append(", numApplicationsUplay=");
-        sbU.append(this.numApplicationsUplay);
-        sbU.append(", numApplicationsOrigin=");
-        sbU.append(this.numApplicationsOrigin);
-        sbU.append(", numApplicationsGog=");
-        sbU.append(this.numApplicationsGog);
-        sbU.append(", numApplicationsEpic=");
-        return outline.G(sbU, this.numApplicationsEpic, ")");
+        StringBuilder sbM833U = C1643a.m833U("TrackLibraryViewed(loadId=");
+        sbM833U.append(this.loadId);
+        sbM833U.append(", numApplicationsTotal=");
+        sbM833U.append(this.numApplicationsTotal);
+        sbM833U.append(", numApplicationsBattlenet=");
+        sbM833U.append(this.numApplicationsBattlenet);
+        sbM833U.append(", numApplicationsDiscord=");
+        sbM833U.append(this.numApplicationsDiscord);
+        sbM833U.append(", numApplicationsSteam=");
+        sbM833U.append(this.numApplicationsSteam);
+        sbM833U.append(", numApplicationsTwitch=");
+        sbM833U.append(this.numApplicationsTwitch);
+        sbM833U.append(", numApplicationsUplay=");
+        sbM833U.append(this.numApplicationsUplay);
+        sbM833U.append(", numApplicationsOrigin=");
+        sbM833U.append(this.numApplicationsOrigin);
+        sbM833U.append(", numApplicationsGog=");
+        sbM833U.append(this.numApplicationsGog);
+        sbM833U.append(", numApplicationsEpic=");
+        return C1643a.m819G(sbM833U, this.numApplicationsEpic, ")");
     }
 }

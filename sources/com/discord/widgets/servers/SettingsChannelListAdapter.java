@@ -1,6 +1,5 @@
 package com.discord.widgets.servers;
 
-import a0.a.a.b;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
@@ -8,8 +7,7 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 import androidx.recyclerview.widget.ItemTouchHelper;
 import androidx.recyclerview.widget.RecyclerView;
-import b.d.b.a.outline;
-import com.discord.R;
+import com.discord.C5419R;
 import com.discord.api.channel.Channel;
 import com.discord.api.channel.ChannelUtils;
 import com.discord.app.AppLog;
@@ -20,16 +18,18 @@ import com.discord.utilities.logging.Logger;
 import com.discord.utilities.mg_recycler.CategoricalDragAndDropAdapter;
 import com.discord.utilities.mg_recycler.DragAndDropHelper;
 import com.discord.utilities.mg_recycler.MGRecyclerViewHolder;
-import d0.t.Collections2;
-import d0.t.Maps6;
-import d0.z.d.Intrinsics3;
-import d0.z.d.Lambda;
 import java.util.HashMap;
 import java.util.Map;
 import kotlin.Unit;
 import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.DefaultConstructorMarker;
-import rx.functions.Action1;
+import p001a0.p002a.p003a.C0002b;
+import p007b.p100d.p104b.p105a.C1643a;
+import p507d0.p580t.C12136h0;
+import p507d0.p580t.C12147n;
+import p507d0.p592z.p594d.AbstractC12240o;
+import p507d0.p592z.p594d.C12238m;
+import p658rx.functions.Action1;
 
 /* JADX INFO: compiled from: SettingsChannelListAdapter.kt */
 /* JADX INFO: loaded from: classes2.dex */
@@ -128,7 +128,7 @@ public final class SettingsChannelListAdapter extends CategoricalDragAndDropAdap
                 return false;
             }
             CategoryItem categoryItem = (CategoryItem) other;
-            return Intrinsics3.areEqual(this.name, categoryItem.name) && this.id == categoryItem.id && this.pos == categoryItem.pos && this.isDraggable == categoryItem.isDraggable && this.canManageCategory == categoryItem.canManageCategory && this.canManageChannelsOfCategory == categoryItem.canManageChannelsOfCategory;
+            return C12238m.areEqual(this.name, categoryItem.name) && this.id == categoryItem.id && this.pos == categoryItem.pos && this.isDraggable == categoryItem.isDraggable && this.canManageCategory == categoryItem.canManageCategory && this.canManageChannelsOfCategory == categoryItem.canManageChannelsOfCategory;
         }
 
         public final boolean getCanManageCategory() {
@@ -182,13 +182,13 @@ public final class SettingsChannelListAdapter extends CategoricalDragAndDropAdap
         /* JADX WARN: Type inference failed for: r2v2 */
         public int hashCode() {
             String str = this.name;
-            int iA = (((b.a(this.id) + ((str != null ? str.hashCode() : 0) * 31)) * 31) + this.pos) * 31;
+            int iM3a = (((C0002b.m3a(this.id) + ((str != null ? str.hashCode() : 0) * 31)) * 31) + this.pos) * 31;
             boolean z2 = this.isDraggable;
             ?? r0 = z2;
             if (z2) {
                 r0 = 1;
             }
-            int i = (iA + r0) * 31;
+            int i = (iM3a + r0) * 31;
             boolean z3 = this.canManageCategory;
             ?? r1 = z3;
             if (z3) {
@@ -204,18 +204,18 @@ public final class SettingsChannelListAdapter extends CategoricalDragAndDropAdap
         }
 
         public String toString() {
-            StringBuilder sbU = outline.U("CategoryItem(name=");
-            sbU.append(this.name);
-            sbU.append(", id=");
-            sbU.append(this.id);
-            sbU.append(", pos=");
-            sbU.append(this.pos);
-            sbU.append(", isDraggable=");
-            sbU.append(this.isDraggable);
-            sbU.append(", canManageCategory=");
-            sbU.append(this.canManageCategory);
-            sbU.append(", canManageChannelsOfCategory=");
-            return outline.O(sbU, this.canManageChannelsOfCategory, ")");
+            StringBuilder sbM833U = C1643a.m833U("CategoryItem(name=");
+            sbM833U.append(this.name);
+            sbM833U.append(", id=");
+            sbM833U.append(this.id);
+            sbM833U.append(", pos=");
+            sbM833U.append(this.pos);
+            sbM833U.append(", isDraggable=");
+            sbM833U.append(this.isDraggable);
+            sbM833U.append(", canManageCategory=");
+            sbM833U.append(this.canManageCategory);
+            sbM833U.append(", canManageChannelsOfCategory=");
+            return C1643a.m827O(sbM833U, this.canManageChannelsOfCategory, ")");
         }
     }
 
@@ -226,17 +226,17 @@ public final class SettingsChannelListAdapter extends CategoricalDragAndDropAdap
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
         public CategoryListItem(SettingsChannelListAdapter settingsChannelListAdapter) {
-            super(R.layout.settings_channel_list_category_item, settingsChannelListAdapter);
-            Intrinsics3.checkNotNullParameter(settingsChannelListAdapter, "adapter");
+            super(C5419R.layout.settings_channel_list_category_item, settingsChannelListAdapter);
+            C12238m.checkNotNullParameter(settingsChannelListAdapter, "adapter");
             View view = this.itemView;
-            int i = R.id.settings_channel_list_category_item_drag;
-            ImageView imageView = (ImageView) view.findViewById(R.id.settings_channel_list_category_item_drag);
+            int i = C5419R.id.settings_channel_list_category_item_drag;
+            ImageView imageView = (ImageView) view.findViewById(C5419R.id.settings_channel_list_category_item_drag);
             if (imageView != null) {
-                i = R.id.settings_channel_list_category_item_text;
-                TextView textView = (TextView) view.findViewById(R.id.settings_channel_list_category_item_text);
+                i = C5419R.id.settings_channel_list_category_item_text;
+                TextView textView = (TextView) view.findViewById(C5419R.id.settings_channel_list_category_item_text);
                 if (textView != null) {
                     SettingsChannelListCategoryItemBinding settingsChannelListCategoryItemBinding = new SettingsChannelListCategoryItemBinding((RelativeLayout) view, imageView, textView);
-                    Intrinsics3.checkNotNullExpressionValue(settingsChannelListCategoryItemBinding, "SettingsChannelListCateg…temBinding.bind(itemView)");
+                    C12238m.checkNotNullExpressionValue(settingsChannelListCategoryItemBinding, "SettingsChannelListCateg…temBinding.bind(itemView)");
                     this.binding = settingsChannelListCategoryItemBinding;
                     return;
                 }
@@ -257,7 +257,7 @@ public final class SettingsChannelListAdapter extends CategoricalDragAndDropAdap
 
         @Override // com.discord.utilities.mg_recycler.MGRecyclerViewHolder
         public void onConfigure(int position, CategoricalDragAndDropAdapter.Payload data) {
-            Intrinsics3.checkNotNullParameter(data, "data");
+            C12238m.checkNotNullParameter(data, "data");
             super.onConfigure(position, data);
             final CategoryItem categoryItem = (CategoryItem) data;
             this.categoryItem = categoryItem;
@@ -271,17 +271,17 @@ public final class SettingsChannelListAdapter extends CategoricalDragAndDropAdap
                         }
                     });
                 }
-                TextView textView = this.binding.c;
-                Intrinsics3.checkNotNullExpressionValue(textView, "binding.settingsChannelListCategoryItemText");
+                TextView textView = this.binding.f15232c;
+                C12238m.checkNotNullExpressionValue(textView, "binding.settingsChannelListCategoryItemText");
                 String name = categoryItem.getName();
                 if (name == null) {
                     View view = this.itemView;
-                    Intrinsics3.checkNotNullExpressionValue(view, "itemView");
-                    name = view.getContext().getString(R.string.uncategorized);
+                    C12238m.checkNotNullExpressionValue(view, "itemView");
+                    name = view.getContext().getString(C5419R.string.uncategorized);
                 }
                 textView.setText(name);
-                ImageView imageView = this.binding.f2140b;
-                Intrinsics3.checkNotNullExpressionValue(imageView, "binding.settingsChannelListCategoryItemDrag");
+                ImageView imageView = this.binding.f15231b;
+                C12238m.checkNotNullExpressionValue(imageView, "binding.settingsChannelListCategoryItemDrag");
                 imageView.setVisibility(getCanDrag() ? 0 : 8);
             }
         }
@@ -297,7 +297,7 @@ public final class SettingsChannelListAdapter extends CategoricalDragAndDropAdap
         private final int type;
 
         public ChannelItem(Channel channel, boolean z2, long j, boolean z3) {
-            Intrinsics3.checkNotNullParameter(channel, "channel");
+            C12238m.checkNotNullParameter(channel, "channel");
             this.channel = channel;
             this.isDraggable = z2;
             this.parentId = j;
@@ -344,7 +344,7 @@ public final class SettingsChannelListAdapter extends CategoricalDragAndDropAdap
         }
 
         public final ChannelItem copy(Channel channel, boolean isDraggable, long parentId, boolean canManageCategoryOfChannel) {
-            Intrinsics3.checkNotNullParameter(channel, "channel");
+            C12238m.checkNotNullParameter(channel, "channel");
             return new ChannelItem(channel, isDraggable, parentId, canManageCategoryOfChannel);
         }
 
@@ -356,7 +356,7 @@ public final class SettingsChannelListAdapter extends CategoricalDragAndDropAdap
                 return false;
             }
             ChannelItem channelItem = (ChannelItem) other;
-            return Intrinsics3.areEqual(this.channel, channelItem.channel) && this.isDraggable == channelItem.isDraggable && this.parentId == channelItem.parentId && this.canManageCategoryOfChannel == channelItem.canManageCategoryOfChannel;
+            return C12238m.areEqual(this.channel, channelItem.channel) && this.isDraggable == channelItem.isDraggable && this.parentId == channelItem.parentId && this.canManageCategoryOfChannel == channelItem.canManageCategoryOfChannel;
         }
 
         public final boolean getCanManageCategoryOfChannel() {
@@ -408,9 +408,9 @@ public final class SettingsChannelListAdapter extends CategoricalDragAndDropAdap
             if (z2) {
                 r1 = 1;
             }
-            int iA = (b.a(this.parentId) + ((iHashCode + r1) * 31)) * 31;
+            int iM3a = (C0002b.m3a(this.parentId) + ((iHashCode + r1) * 31)) * 31;
             boolean z3 = this.canManageCategoryOfChannel;
-            return iA + (z3 ? 1 : z3);
+            return iM3a + (z3 ? 1 : z3);
         }
 
         public final boolean isDraggable() {
@@ -418,14 +418,14 @@ public final class SettingsChannelListAdapter extends CategoricalDragAndDropAdap
         }
 
         public String toString() {
-            StringBuilder sbU = outline.U("ChannelItem(channel=");
-            sbU.append(this.channel);
-            sbU.append(", isDraggable=");
-            sbU.append(this.isDraggable);
-            sbU.append(", parentId=");
-            sbU.append(this.parentId);
-            sbU.append(", canManageCategoryOfChannel=");
-            return outline.O(sbU, this.canManageCategoryOfChannel, ")");
+            StringBuilder sbM833U = C1643a.m833U("ChannelItem(channel=");
+            sbM833U.append(this.channel);
+            sbM833U.append(", isDraggable=");
+            sbM833U.append(this.isDraggable);
+            sbM833U.append(", parentId=");
+            sbM833U.append(this.parentId);
+            sbM833U.append(", canManageCategoryOfChannel=");
+            return C1643a.m827O(sbM833U, this.canManageCategoryOfChannel, ")");
         }
     }
 
@@ -436,23 +436,23 @@ public final class SettingsChannelListAdapter extends CategoricalDragAndDropAdap
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
         public ChannelListItem(SettingsChannelListAdapter settingsChannelListAdapter) {
-            super(R.layout.settings_channel_list_item, settingsChannelListAdapter);
-            Intrinsics3.checkNotNullParameter(settingsChannelListAdapter, "adapter");
+            super(C5419R.layout.settings_channel_list_item, settingsChannelListAdapter);
+            C12238m.checkNotNullParameter(settingsChannelListAdapter, "adapter");
             View view = this.itemView;
-            int i = R.id.settings_channel_list_item_drag;
-            ImageView imageView = (ImageView) view.findViewById(R.id.settings_channel_list_item_drag);
+            int i = C5419R.id.settings_channel_list_item_drag;
+            ImageView imageView = (ImageView) view.findViewById(C5419R.id.settings_channel_list_item_drag);
             if (imageView != null) {
-                i = R.id.settings_channel_list_item_hash;
-                ImageView imageView2 = (ImageView) view.findViewById(R.id.settings_channel_list_item_hash);
+                i = C5419R.id.settings_channel_list_item_hash;
+                ImageView imageView2 = (ImageView) view.findViewById(C5419R.id.settings_channel_list_item_hash);
                 if (imageView2 != null) {
-                    i = R.id.settings_channel_list_item_name;
-                    TextView textView = (TextView) view.findViewById(R.id.settings_channel_list_item_name);
+                    i = C5419R.id.settings_channel_list_item_name;
+                    TextView textView = (TextView) view.findViewById(C5419R.id.settings_channel_list_item_name);
                     if (textView != null) {
-                        i = R.id.settings_channel_list_item_selected_overlay;
-                        View viewFindViewById = view.findViewById(R.id.settings_channel_list_item_selected_overlay);
+                        i = C5419R.id.settings_channel_list_item_selected_overlay;
+                        View viewFindViewById = view.findViewById(C5419R.id.settings_channel_list_item_selected_overlay);
                         if (viewFindViewById != null) {
                             SettingsChannelListItemBinding settingsChannelListItemBinding = new SettingsChannelListItemBinding((RelativeLayout) view, imageView, imageView2, textView, viewFindViewById);
-                            Intrinsics3.checkNotNullExpressionValue(settingsChannelListItemBinding, "SettingsChannelListItemBinding.bind(itemView)");
+                            C12238m.checkNotNullExpressionValue(settingsChannelListItemBinding, "SettingsChannelListItemBinding.bind(itemView)");
                             this.binding = settingsChannelListItemBinding;
                             return;
                         }
@@ -471,15 +471,15 @@ public final class SettingsChannelListAdapter extends CategoricalDragAndDropAdap
 
         @Override // com.discord.utilities.mg_recycler.DragAndDropHelper.DraggableViewHolder
         public void onDragStateChanged(boolean dragging) {
-            View view = this.binding.e;
-            Intrinsics3.checkNotNullExpressionValue(view, "binding.settingsChannelListItemSelectedOverlay");
+            View view = this.binding.f15237e;
+            C12238m.checkNotNullExpressionValue(view, "binding.settingsChannelListItemSelectedOverlay");
             view.setVisibility(dragging ? 0 : 8);
         }
 
         @Override // com.discord.utilities.mg_recycler.MGRecyclerViewHolder
         public void onConfigure(int position, CategoricalDragAndDropAdapter.Payload data) {
             int i;
-            Intrinsics3.checkNotNullParameter(data, "data");
+            C12238m.checkNotNullParameter(data, "data");
             super.onConfigure(position, data);
             final ChannelItem channelItem = (ChannelItem) data;
             this.channelItem = channelItem;
@@ -494,21 +494,21 @@ public final class SettingsChannelListAdapter extends CategoricalDragAndDropAdap
                         }
                     });
                 }
-                ImageView imageView = this.binding.c;
+                ImageView imageView = this.binding.f15235c;
                 int type = channelItem.getChannel().getType();
                 if (type == 2) {
-                    i = R.drawable.ic_channel_voice;
+                    i = C5419R.drawable.ic_channel_voice;
                 } else if (type != 5) {
-                    i = type != 13 ? R.drawable.ic_channel_text : R.drawable.ic_channel_stage_24dp;
+                    i = type != 13 ? C5419R.drawable.ic_channel_text : C5419R.drawable.ic_channel_stage_24dp;
                 } else {
-                    i = R.drawable.ic_channel_announcements;
+                    i = C5419R.drawable.ic_channel_announcements;
                 }
                 imageView.setImageResource(i);
-                TextView textView = this.binding.d;
-                Intrinsics3.checkNotNullExpressionValue(textView, "binding.settingsChannelListItemName");
-                textView.setText(ChannelUtils.c(channelItem.getChannel()));
-                ImageView imageView2 = this.binding.f2141b;
-                Intrinsics3.checkNotNullExpressionValue(imageView2, "binding.settingsChannelListItemDrag");
+                TextView textView = this.binding.f15236d;
+                C12238m.checkNotNullExpressionValue(textView, "binding.settingsChannelListItemName");
+                textView.setText(ChannelUtils.m7679c(channelItem.getChannel()));
+                ImageView imageView2 = this.binding.f15234b;
+                C12238m.checkNotNullExpressionValue(imageView2, "binding.settingsChannelListItemDrag");
                 imageView2.setVisibility(getCanDrag() ? 0 : 8);
             }
         }
@@ -556,7 +556,7 @@ public final class SettingsChannelListAdapter extends CategoricalDragAndDropAdap
                 return false;
             }
             UpdatedPosition updatedPosition = (UpdatedPosition) other;
-            return this.position == updatedPosition.position && Intrinsics3.areEqual(this.parentId, updatedPosition.parentId);
+            return this.position == updatedPosition.position && C12238m.areEqual(this.parentId, updatedPosition.parentId);
         }
 
         public final Long getParentId() {
@@ -574,25 +574,25 @@ public final class SettingsChannelListAdapter extends CategoricalDragAndDropAdap
         }
 
         public String toString() {
-            StringBuilder sbU = outline.U("UpdatedPosition(position=");
-            sbU.append(this.position);
-            sbU.append(", parentId=");
-            return outline.G(sbU, this.parentId, ")");
+            StringBuilder sbM833U = C1643a.m833U("UpdatedPosition(position=");
+            sbM833U.append(this.position);
+            sbM833U.append(", parentId=");
+            return C1643a.m819G(sbM833U, this.parentId, ")");
         }
     }
 
-    /* JADX INFO: renamed from: com.discord.widgets.servers.SettingsChannelListAdapter$computeChangedPositions$1, reason: invalid class name */
+    /* JADX INFO: renamed from: com.discord.widgets.servers.SettingsChannelListAdapter$computeChangedPositions$1 */
     /* JADX INFO: compiled from: SettingsChannelListAdapter.kt */
-    public static final class AnonymousClass1 extends Lambda implements Function1<CategoricalDragAndDropAdapter.Payload, Long> {
-        public static final AnonymousClass1 INSTANCE = new AnonymousClass1();
+    public static final class C91501 extends AbstractC12240o implements Function1<CategoricalDragAndDropAdapter.Payload, Long> {
+        public static final C91501 INSTANCE = new C91501();
 
-        public AnonymousClass1() {
+        public C91501() {
             super(1);
         }
 
         @Override // kotlin.jvm.functions.Function1
         public final Long invoke(CategoricalDragAndDropAdapter.Payload payload) {
-            Intrinsics3.checkNotNullParameter(payload, "item");
+            C12238m.checkNotNullParameter(payload, "item");
             int type = payload.getType();
             if (type == 0) {
                 return Long.valueOf(((ChannelItem) payload).getChannel().getId());
@@ -600,20 +600,20 @@ public final class SettingsChannelListAdapter extends CategoricalDragAndDropAdap
             if (type == 1) {
                 return Long.valueOf(((CategoryItem) payload).getId());
             }
-            AppLog appLog = AppLog.g;
-            StringBuilder sbU = outline.U("Invalid type: ");
-            sbU.append(payload.getType());
-            Logger.e$default(appLog, sbU.toString(), null, null, 6, null);
+            AppLog appLog = AppLog.f14950g;
+            StringBuilder sbM833U = C1643a.m833U("Invalid type: ");
+            sbM833U.append(payload.getType());
+            Logger.e$default(appLog, sbM833U.toString(), null, null, 6, null);
             return null;
         }
     }
 
-    /* JADX INFO: renamed from: com.discord.widgets.servers.SettingsChannelListAdapter$computeChangedPositions$2, reason: invalid class name */
+    /* JADX INFO: renamed from: com.discord.widgets.servers.SettingsChannelListAdapter$computeChangedPositions$2 */
     /* JADX INFO: compiled from: SettingsChannelListAdapter.kt */
-    public static final class AnonymousClass2 extends Lambda implements Function1<Long, Long> {
-        public static final AnonymousClass2 INSTANCE = new AnonymousClass2();
+    public static final class C91512 extends AbstractC12240o implements Function1<Long, Long> {
+        public static final C91512 INSTANCE = new C91512();
 
-        public AnonymousClass2() {
+        public C91512() {
             super(1);
         }
 
@@ -630,12 +630,12 @@ public final class SettingsChannelListAdapter extends CategoricalDragAndDropAdap
         }
     }
 
-    /* JADX INFO: renamed from: com.discord.widgets.servers.SettingsChannelListAdapter$computeChangedPositions$3, reason: invalid class name */
+    /* JADX INFO: renamed from: com.discord.widgets.servers.SettingsChannelListAdapter$computeChangedPositions$3 */
     /* JADX INFO: compiled from: SettingsChannelListAdapter.kt */
-    public static final class AnonymousClass3 extends Lambda implements Function1<CategoricalDragAndDropAdapter.Payload, Boolean> {
-        public static final AnonymousClass3 INSTANCE = new AnonymousClass3();
+    public static final class C91523 extends AbstractC12240o implements Function1<CategoricalDragAndDropAdapter.Payload, Boolean> {
+        public static final C91523 INSTANCE = new C91523();
 
-        public AnonymousClass3() {
+        public C91523() {
             super(1);
         }
 
@@ -646,7 +646,7 @@ public final class SettingsChannelListAdapter extends CategoricalDragAndDropAdap
 
         /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
         public final boolean invoke2(CategoricalDragAndDropAdapter.Payload payload) {
-            Intrinsics3.checkNotNullParameter(payload, "item");
+            C12238m.checkNotNullParameter(payload, "item");
             int type = payload.getType();
             if (type == 0) {
                 return ((ChannelItem) payload).getCanManageCategoryOfChannel();
@@ -658,13 +658,13 @@ public final class SettingsChannelListAdapter extends CategoricalDragAndDropAdap
         }
     }
 
-    /* JADX INFO: renamed from: com.discord.widgets.servers.SettingsChannelListAdapter$setPositionUpdateListener$1, reason: invalid class name */
+    /* JADX INFO: renamed from: com.discord.widgets.servers.SettingsChannelListAdapter$setPositionUpdateListener$1 */
     /* JADX INFO: compiled from: SettingsChannelListAdapter.kt */
-    public static final class AnonymousClass1 extends Lambda implements Function1<Map<Long, ? extends UpdatedPosition>, Unit> {
+    public static final class C91531 extends AbstractC12240o implements Function1<Map<Long, ? extends UpdatedPosition>, Unit> {
         public final /* synthetic */ Action1 $onPositionUpdateListener;
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-        public AnonymousClass1(Action1 action1) {
+        public C91531(Action1 action1) {
             super(1);
             this.$onPositionUpdateListener = action1;
         }
@@ -672,12 +672,12 @@ public final class SettingsChannelListAdapter extends CategoricalDragAndDropAdap
         @Override // kotlin.jvm.functions.Function1
         public /* bridge */ /* synthetic */ Unit invoke(Map<Long, ? extends UpdatedPosition> map) {
             invoke2((Map<Long, UpdatedPosition>) map);
-            return Unit.a;
+            return Unit.f27425a;
         }
 
         /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
         public final void invoke2(Map<Long, UpdatedPosition> map) {
-            Intrinsics3.checkNotNullParameter(map, "map");
+            C12238m.checkNotNullParameter(map, "map");
             this.$onPositionUpdateListener.call(map);
         }
     }
@@ -700,9 +700,9 @@ public final class SettingsChannelListAdapter extends CategoricalDragAndDropAdap
 
     @Override // com.discord.utilities.mg_recycler.CategoricalDragAndDropAdapter, com.discord.utilities.mg_recycler.DragAndDropAdapter
     public Map<String, Integer> computeChangedPositions() {
-        AnonymousClass1 anonymousClass1 = AnonymousClass1.INSTANCE;
-        AnonymousClass2 anonymousClass2 = AnonymousClass2.INSTANCE;
-        AnonymousClass3 anonymousClass3 = AnonymousClass3.INSTANCE;
+        C91501 c91501 = C91501.INSTANCE;
+        C91512 c91512 = C91512.INSTANCE;
+        C91523 c91523 = C91523.INSTANCE;
         HashMap map = new HashMap();
         HashMap map2 = new HashMap();
         int i = 0;
@@ -710,26 +710,26 @@ public final class SettingsChannelListAdapter extends CategoricalDragAndDropAdap
         for (Object obj : getDataCopy()) {
             int i2 = i + 1;
             if (i < 0) {
-                Collections2.throwIndexOverflow();
+                C12147n.throwIndexOverflow();
             }
             CategoricalDragAndDropAdapter.Payload payload = (CategoricalDragAndDropAdapter.Payload) obj;
-            Long lInvoke2 = AnonymousClass1.INSTANCE.invoke(payload);
+            Long lInvoke2 = C91501.INSTANCE.invoke(payload);
             long jLongValue = lInvoke2 != null ? lInvoke2.longValue() : 0L;
             if (payload.getType() == 1) {
-                lInvoke = AnonymousClass2.INSTANCE.invoke(jLongValue);
+                lInvoke = C91512.INSTANCE.invoke(jLongValue);
             }
-            Long lInvoke3 = payload.getType() != 0 ? null : AnonymousClass2.INSTANCE.invoke(((ChannelItem) payload).getParentId());
+            Long lInvoke3 = payload.getType() != 0 ? null : C91512.INSTANCE.invoke(((ChannelItem) payload).getParentId());
             Integer num = getOrigPositions().get(payload.getKey());
-            if ((num == null || num.intValue() != i) && AnonymousClass3.INSTANCE.invoke2(payload)) {
+            if ((num == null || num.intValue() != i) && C91523.INSTANCE.invoke2(payload)) {
                 map.put(Long.valueOf(jLongValue), Integer.valueOf(i));
-                if ((!Intrinsics3.areEqual(lInvoke3, lInvoke)) && payload.getType() == 0) {
+                if ((!C12238m.areEqual(lInvoke3, lInvoke)) && payload.getType() == 0) {
                     map2.put(Long.valueOf(jLongValue), Long.valueOf(lInvoke != null ? lInvoke.longValue() : -1L));
                 }
             }
             i = i2;
         }
         handleChangedPositions(map, map2);
-        return Maps6.emptyMap();
+        return C12136h0.emptyMap();
     }
 
     public final Function1<Long, Unit> getOnClickListener() {
@@ -754,7 +754,7 @@ public final class SettingsChannelListAdapter extends CategoricalDragAndDropAdap
 
     @Override // com.discord.utilities.mg_recycler.DragAndDropAdapter
     public void onNewPositions(Map<String, Integer> newPositions) {
-        Intrinsics3.checkNotNullParameter(newPositions, "newPositions");
+        C12238m.checkNotNullParameter(newPositions, "newPositions");
     }
 
     public final void setOnClickListener(Function1<? super Long, Unit> function1) {
@@ -762,14 +762,14 @@ public final class SettingsChannelListAdapter extends CategoricalDragAndDropAdap
     }
 
     public final void setPositionUpdateListener(Action1<Map<Long, UpdatedPosition>> onPositionUpdateListener) {
-        Intrinsics3.checkNotNullParameter(onPositionUpdateListener, "onPositionUpdateListener");
-        this.onPositionUpdateListener = new AnonymousClass1(onPositionUpdateListener);
+        C12238m.checkNotNullParameter(onPositionUpdateListener, "onPositionUpdateListener");
+        this.onPositionUpdateListener = new C91531(onPositionUpdateListener);
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public SettingsChannelListAdapter(RecyclerView recyclerView, boolean z2) {
         super(recyclerView);
-        Intrinsics3.checkNotNullParameter(recyclerView, "recycler");
+        C12238m.checkNotNullParameter(recyclerView, "recycler");
         if (z2) {
             new ItemTouchHelper(new DragAndDropHelper(this, 0, 2, null)).attachToRecyclerView(recyclerView);
         }
@@ -777,7 +777,7 @@ public final class SettingsChannelListAdapter extends CategoricalDragAndDropAdap
 
     @Override // androidx.recyclerview.widget.RecyclerView.Adapter
     public MGRecyclerViewHolder<SettingsChannelListAdapter, CategoricalDragAndDropAdapter.Payload> onCreateViewHolder(ViewGroup parent, int viewType) {
-        Intrinsics3.checkNotNullParameter(parent, "parent");
+        C12238m.checkNotNullParameter(parent, "parent");
         if (viewType == 0) {
             return new ChannelListItem(this);
         }

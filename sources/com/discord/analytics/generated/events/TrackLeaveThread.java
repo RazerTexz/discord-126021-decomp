@@ -1,16 +1,16 @@
 package com.discord.analytics.generated.events;
 
-import b.d.b.a.outline;
 import com.discord.analytics.generated.traits.TrackBase;
-import com.discord.analytics.generated.traits.TrackBase2;
+import com.discord.analytics.generated.traits.TrackBaseReceiver;
 import com.discord.analytics.generated.traits.TrackThread;
-import com.discord.analytics.generated.traits.TrackThread2;
+import com.discord.analytics.generated.traits.TrackThreadReceiver;
 import com.discord.api.science.AnalyticsSchema;
-import d0.z.d.Intrinsics3;
+import p007b.p100d.p104b.p105a.C1643a;
+import p507d0.p592z.p594d.C12238m;
 
 /* JADX INFO: compiled from: TrackLeaveThread.kt */
 /* JADX INFO: loaded from: classes.dex */
-public final /* data */ class TrackLeaveThread implements AnalyticsSchema, TrackBase2, TrackThread2 {
+public final /* data */ class TrackLeaveThread implements AnalyticsSchema, TrackBaseReceiver, TrackThreadReceiver {
     private TrackBase trackBase;
     private TrackThread trackThread;
     private final Long channelId = null;
@@ -35,7 +35,7 @@ public final /* data */ class TrackLeaveThread implements AnalyticsSchema, Track
             return false;
         }
         TrackLeaveThread trackLeaveThread = (TrackLeaveThread) other;
-        return Intrinsics3.areEqual(this.channelId, trackLeaveThread.channelId) && Intrinsics3.areEqual(this.parentId, trackLeaveThread.parentId) && Intrinsics3.areEqual(this.guildId, trackLeaveThread.guildId) && Intrinsics3.areEqual(this.channelType, trackLeaveThread.channelType) && Intrinsics3.areEqual(this.targetUserId, trackLeaveThread.targetUserId) && Intrinsics3.areEqual(this.isSelfLeave, trackLeaveThread.isSelfLeave);
+        return C12238m.areEqual(this.channelId, trackLeaveThread.channelId) && C12238m.areEqual(this.parentId, trackLeaveThread.parentId) && C12238m.areEqual(this.guildId, trackLeaveThread.guildId) && C12238m.areEqual(this.channelType, trackLeaveThread.channelType) && C12238m.areEqual(this.targetUserId, trackLeaveThread.targetUserId) && C12238m.areEqual(this.isSelfLeave, trackLeaveThread.isSelfLeave);
     }
 
     public int hashCode() {
@@ -54,17 +54,17 @@ public final /* data */ class TrackLeaveThread implements AnalyticsSchema, Track
     }
 
     public String toString() {
-        StringBuilder sbU = outline.U("TrackLeaveThread(channelId=");
-        sbU.append(this.channelId);
-        sbU.append(", parentId=");
-        sbU.append(this.parentId);
-        sbU.append(", guildId=");
-        sbU.append(this.guildId);
-        sbU.append(", channelType=");
-        sbU.append(this.channelType);
-        sbU.append(", targetUserId=");
-        sbU.append(this.targetUserId);
-        sbU.append(", isSelfLeave=");
-        return outline.D(sbU, this.isSelfLeave, ")");
+        StringBuilder sbM833U = C1643a.m833U("TrackLeaveThread(channelId=");
+        sbM833U.append(this.channelId);
+        sbM833U.append(", parentId=");
+        sbM833U.append(this.parentId);
+        sbM833U.append(", guildId=");
+        sbM833U.append(this.guildId);
+        sbM833U.append(", channelType=");
+        sbM833U.append(this.channelType);
+        sbM833U.append(", targetUserId=");
+        sbM833U.append(this.targetUserId);
+        sbM833U.append(", isSelfLeave=");
+        return C1643a.m816D(sbM833U, this.isSelfLeave, ")");
     }
 }

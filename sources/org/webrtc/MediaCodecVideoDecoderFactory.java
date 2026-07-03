@@ -4,9 +4,9 @@ import android.media.MediaCodecInfo;
 import android.media.MediaCodecList;
 import android.os.Build;
 import androidx.annotation.Nullable;
-import h0.c.VideoDecoderFactory2;
 import java.util.ArrayList;
 import org.webrtc.EglBase;
+import p617h0.p628c.C12483q0;
 
 /* JADX INFO: loaded from: classes3.dex */
 public class MediaCodecVideoDecoderFactory implements VideoDecoderFactory {
@@ -34,7 +34,7 @@ public class MediaCodecVideoDecoderFactory implements VideoDecoderFactory {
             try {
                 codecInfoAt = MediaCodecList.getCodecInfoAt(i);
             } catch (IllegalArgumentException e) {
-                Logging.e(TAG, "Cannot retrieve decoder codec info", e);
+                Logging.m11029e(TAG, "Cannot retrieve decoder codec info", e);
             }
             if (codecInfoAt != null && !codecInfoAt.isEncoder() && isSupportedCodec(codecInfoAt, videoCodecMimeType)) {
                 return codecInfoAt;
@@ -70,7 +70,7 @@ public class MediaCodecVideoDecoderFactory implements VideoDecoderFactory {
 
     @Override // org.webrtc.VideoDecoderFactory
     public /* synthetic */ VideoDecoder createDecoder(String str) {
-        return VideoDecoderFactory2.a(this, str);
+        return C12483q0.m10671a(this, str);
     }
 
     @Override // org.webrtc.VideoDecoderFactory

@@ -8,39 +8,42 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.viewbinding.ViewBinding;
-import com.discord.R;
+import com.discord.C5419R;
 import com.discord.views.permissions.ChannelPermissionOwnerView;
 
 /* JADX INFO: loaded from: classes.dex */
 public final class RemovablePermissionOwnerViewBinding implements ViewBinding {
 
+    /* JADX INFO: renamed from: a */
     @NonNull
-    public final ConstraintLayout a;
+    public final ConstraintLayout f15225a;
 
-    /* JADX INFO: renamed from: b, reason: collision with root package name */
+    /* JADX INFO: renamed from: b */
     @NonNull
-    public final ChannelPermissionOwnerView f2138b;
+    public final ChannelPermissionOwnerView f15226b;
 
+    /* JADX INFO: renamed from: c */
     @NonNull
-    public final ImageView c;
+    public final ImageView f15227c;
 
     public RemovablePermissionOwnerViewBinding(@NonNull ConstraintLayout constraintLayout, @NonNull ChannelPermissionOwnerView channelPermissionOwnerView, @NonNull ImageView imageView) {
-        this.a = constraintLayout;
-        this.f2138b = channelPermissionOwnerView;
-        this.c = imageView;
+        this.f15225a = constraintLayout;
+        this.f15226b = channelPermissionOwnerView;
+        this.f15227c = imageView;
     }
 
     @NonNull
-    public static RemovablePermissionOwnerViewBinding a(@NonNull LayoutInflater layoutInflater, @Nullable ViewGroup viewGroup, boolean z2) {
-        View viewInflate = layoutInflater.inflate(R.layout.removable_permission_owner_view, viewGroup, false);
+    /* JADX INFO: renamed from: a */
+    public static RemovablePermissionOwnerViewBinding m8389a(@NonNull LayoutInflater layoutInflater, @Nullable ViewGroup viewGroup, boolean z2) {
+        View viewInflate = layoutInflater.inflate(C5419R.layout.removable_permission_owner_view, viewGroup, false);
         if (z2) {
             viewGroup.addView(viewInflate);
         }
-        int i = R.id.permission_owner_view;
-        ChannelPermissionOwnerView channelPermissionOwnerView = (ChannelPermissionOwnerView) viewInflate.findViewById(R.id.permission_owner_view);
+        int i = C5419R.id.permission_owner_view;
+        ChannelPermissionOwnerView channelPermissionOwnerView = (ChannelPermissionOwnerView) viewInflate.findViewById(C5419R.id.permission_owner_view);
         if (channelPermissionOwnerView != null) {
-            i = R.id.remove;
-            ImageView imageView = (ImageView) viewInflate.findViewById(R.id.remove);
+            i = C5419R.id.remove;
+            ImageView imageView = (ImageView) viewInflate.findViewById(C5419R.id.remove);
             if (imageView != null) {
                 return new RemovablePermissionOwnerViewBinding((ConstraintLayout) viewInflate, channelPermissionOwnerView, imageView);
             }
@@ -51,6 +54,6 @@ public final class RemovablePermissionOwnerViewBinding implements ViewBinding {
     @Override // androidx.viewbinding.ViewBinding
     @NonNull
     public View getRoot() {
-        return this.a;
+        return this.f15225a;
     }
 }

@@ -31,7 +31,9 @@ import org.eclipse.jdt.internal.compiler.ast.TypeReference;
 /* JADX INFO: loaded from: app.apk:lombok/eclipse/handlers/HandleSetter.SCL.lombok */
 public class HandleSetter extends EclipseAnnotationHandler<Setter> {
     private static /* synthetic */ int[] $SWITCH_TABLE$lombok$core$AST$Kind;
-    private static /* synthetic */ int[] $SWITCH_TABLE$lombok$eclipse$handlers$EclipseHandlerUtil$MemberExistsResult;
+
+    /* JADX INFO: renamed from: $SWITCH_TABLE$lombok$eclipse$handlers$EclipseHandlerUtil$MemberExistsResult */
+    private static /* synthetic */ int[] f27473xb87c1847;
 
     static /* synthetic */ int[] $SWITCH_TABLE$lombok$core$AST$Kind() {
         int[] iArr = $SWITCH_TABLE$lombok$core$AST$Kind;
@@ -83,8 +85,9 @@ public class HandleSetter extends EclipseAnnotationHandler<Setter> {
         return iArr2;
     }
 
-    static /* synthetic */ int[] $SWITCH_TABLE$lombok$eclipse$handlers$EclipseHandlerUtil$MemberExistsResult() {
-        int[] iArr = $SWITCH_TABLE$lombok$eclipse$handlers$EclipseHandlerUtil$MemberExistsResult;
+    /* JADX INFO: renamed from: $SWITCH_TABLE$lombok$eclipse$handlers$EclipseHandlerUtil$MemberExistsResult */
+    static /* synthetic */ int[] m10933xb87c1847() {
+        int[] iArr = f27473xb87c1847;
         if (iArr != null) {
             return iArr;
         }
@@ -101,7 +104,7 @@ public class HandleSetter extends EclipseAnnotationHandler<Setter> {
             iArr2[EclipseHandlerUtil.MemberExistsResult.NOT_EXISTS.ordinal()] = 1;
         } catch (NoSuchFieldError unused3) {
         }
-        $SWITCH_TABLE$lombok$eclipse$handlers$EclipseHandlerUtil$MemberExistsResult = iArr2;
+        f27473xb87c1847 = iArr2;
         return iArr2;
     }
 
@@ -137,7 +140,7 @@ public class HandleSetter extends EclipseAnnotationHandler<Setter> {
     @Override // lombok.eclipse.EclipseAnnotationHandler
     public void handle(AnnotationValues<Setter> annotation, Annotation ast, EclipseNode annotationNode) {
         HandlerUtil.handleFlagUsage(annotationNode, ConfigurationKeys.SETTER_FLAG_USAGE, "@Setter");
-        EclipseNode node = annotationNode.up();
+        EclipseNode node = annotationNode.m10925up();
         AccessLevel level = annotation.getInstance().value();
         if (level == AccessLevel.NONE || node == null) {
             return;
@@ -177,7 +180,7 @@ public class HandleSetter extends EclipseAnnotationHandler<Setter> {
         }
         int modifier = EclipseHandlerUtil.toEclipseModifier(level) | (field.modifiers & 8);
         for (String altName : EclipseHandlerUtil.toAllSetterNames(fieldNode, isBoolean)) {
-            switch ($SWITCH_TABLE$lombok$eclipse$handlers$EclipseHandlerUtil$MemberExistsResult()[EclipseHandlerUtil.methodExists(altName, fieldNode, false, 1).ordinal()]) {
+            switch (m10933xb87c1847()[EclipseHandlerUtil.methodExists(altName, fieldNode, false, 1).ordinal()]) {
                 case 1:
                 default:
                     break;
@@ -192,8 +195,8 @@ public class HandleSetter extends EclipseAnnotationHandler<Setter> {
                     return;
             }
         }
-        MethodDeclaration method = createSetter(fieldNode.up().get(), false, fieldNode, setterName, null, null, shouldReturnThis, modifier, sourceNode, onMethod, onParam);
-        EclipseHandlerUtil.injectMethod(fieldNode.up(), method);
+        MethodDeclaration method = createSetter(fieldNode.m10925up().get(), false, fieldNode, setterName, null, null, shouldReturnThis, modifier, sourceNode, onMethod, onParam);
+        EclipseHandlerUtil.injectMethod(fieldNode.m10925up(), method);
     }
 
     static MethodDeclaration createSetter(TypeDeclaration parent, boolean deprecate, EclipseNode fieldNode, String name, char[] paramName, char[] booleanFieldToSet, boolean shouldReturnThis, int modifier, EclipseNode sourceNode, List<Annotation> onMethod, List<Annotation> onParam) {

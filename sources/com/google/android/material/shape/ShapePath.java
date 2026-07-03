@@ -29,7 +29,7 @@ public class ShapePath {
     @Deprecated
     public float endY;
     private final List<PathOperation> operations = new ArrayList();
-    private final List<d> shadowCompatOperations = new ArrayList();
+    private final List<AbstractC10974d> shadowCompatOperations = new ArrayList();
 
     @Deprecated
     public float startX;
@@ -202,18 +202,18 @@ public class ShapePath {
 
     public static class PathLineOperation extends PathOperation {
 
-        /* JADX INFO: renamed from: x, reason: collision with root package name */
-        private float f3056x;
+        /* JADX INFO: renamed from: x */
+        private float f21098x;
 
-        /* JADX INFO: renamed from: y, reason: collision with root package name */
-        private float f3057y;
+        /* JADX INFO: renamed from: y */
+        private float f21099y;
 
         @Override // com.google.android.material.shape.ShapePath.PathOperation
         public void applyToPath(@NonNull Matrix matrix, @NonNull Path path) {
             Matrix matrix2 = this.matrix;
             matrix.invert(matrix2);
             path.transform(matrix2);
-            path.lineTo(this.f3056x, this.f3057y);
+            path.lineTo(this.f21098x, this.f21099y);
             path.transform(matrix);
         }
     }
@@ -280,72 +280,89 @@ public class ShapePath {
         }
     }
 
-    public class a extends d {
+    /* JADX INFO: renamed from: com.google.android.material.shape.ShapePath$a */
+    public class C10971a extends AbstractC10974d {
 
-        /* JADX INFO: renamed from: b, reason: collision with root package name */
-        public final /* synthetic */ List f3058b;
-        public final /* synthetic */ Matrix c;
+        /* JADX INFO: renamed from: b */
+        public final /* synthetic */ List f21100b;
 
-        public a(ShapePath shapePath, List list, Matrix matrix) {
-            this.f3058b = list;
-            this.c = matrix;
+        /* JADX INFO: renamed from: c */
+        public final /* synthetic */ Matrix f21101c;
+
+        public C10971a(ShapePath shapePath, List list, Matrix matrix) {
+            this.f21100b = list;
+            this.f21101c = matrix;
         }
 
-        @Override // com.google.android.material.shape.ShapePath.d
-        public void a(Matrix matrix, ShadowRenderer shadowRenderer, int i, Canvas canvas) {
-            Iterator it = this.f3058b.iterator();
+        @Override // com.google.android.material.shape.ShapePath.AbstractC10974d
+        /* JADX INFO: renamed from: a */
+        public void mo9146a(Matrix matrix, ShadowRenderer shadowRenderer, int i, Canvas canvas) {
+            Iterator it = this.f21100b.iterator();
             while (it.hasNext()) {
-                ((d) it.next()).a(this.c, shadowRenderer, i, canvas);
+                ((AbstractC10974d) it.next()).mo9146a(this.f21101c, shadowRenderer, i, canvas);
             }
         }
     }
 
-    public static class b extends d {
+    /* JADX INFO: renamed from: com.google.android.material.shape.ShapePath$b */
+    public static class C10972b extends AbstractC10974d {
 
-        /* JADX INFO: renamed from: b, reason: collision with root package name */
-        public final PathArcOperation f3059b;
+        /* JADX INFO: renamed from: b */
+        public final PathArcOperation f21102b;
 
-        public b(PathArcOperation pathArcOperation) {
-            this.f3059b = pathArcOperation;
+        public C10972b(PathArcOperation pathArcOperation) {
+            this.f21102b = pathArcOperation;
         }
 
-        @Override // com.google.android.material.shape.ShapePath.d
-        public void a(Matrix matrix, @NonNull ShadowRenderer shadowRenderer, int i, @NonNull Canvas canvas) {
-            shadowRenderer.drawCornerShadow(canvas, matrix, new RectF(this.f3059b.getLeft(), this.f3059b.getTop(), this.f3059b.getRight(), this.f3059b.getBottom()), i, this.f3059b.getStartAngle(), this.f3059b.getSweepAngle());
+        @Override // com.google.android.material.shape.ShapePath.AbstractC10974d
+        /* JADX INFO: renamed from: a */
+        public void mo9146a(Matrix matrix, @NonNull ShadowRenderer shadowRenderer, int i, @NonNull Canvas canvas) {
+            shadowRenderer.drawCornerShadow(canvas, matrix, new RectF(this.f21102b.getLeft(), this.f21102b.getTop(), this.f21102b.getRight(), this.f21102b.getBottom()), i, this.f21102b.getStartAngle(), this.f21102b.getSweepAngle());
         }
     }
 
-    public static class c extends d {
+    /* JADX INFO: renamed from: com.google.android.material.shape.ShapePath$c */
+    public static class C10973c extends AbstractC10974d {
 
-        /* JADX INFO: renamed from: b, reason: collision with root package name */
-        public final PathLineOperation f3060b;
-        public final float c;
-        public final float d;
+        /* JADX INFO: renamed from: b */
+        public final PathLineOperation f21103b;
 
-        public c(PathLineOperation pathLineOperation, float f, float f2) {
-            this.f3060b = pathLineOperation;
-            this.c = f;
-            this.d = f2;
+        /* JADX INFO: renamed from: c */
+        public final float f21104c;
+
+        /* JADX INFO: renamed from: d */
+        public final float f21105d;
+
+        public C10973c(PathLineOperation pathLineOperation, float f, float f2) {
+            this.f21103b = pathLineOperation;
+            this.f21104c = f;
+            this.f21105d = f2;
         }
 
-        @Override // com.google.android.material.shape.ShapePath.d
-        public void a(Matrix matrix, @NonNull ShadowRenderer shadowRenderer, int i, @NonNull Canvas canvas) {
-            RectF rectF = new RectF(0.0f, 0.0f, (float) Math.hypot(this.f3060b.f3057y - this.d, this.f3060b.f3056x - this.c), 0.0f);
+        @Override // com.google.android.material.shape.ShapePath.AbstractC10974d
+        /* JADX INFO: renamed from: a */
+        public void mo9146a(Matrix matrix, @NonNull ShadowRenderer shadowRenderer, int i, @NonNull Canvas canvas) {
+            RectF rectF = new RectF(0.0f, 0.0f, (float) Math.hypot(this.f21103b.f21099y - this.f21105d, this.f21103b.f21098x - this.f21104c), 0.0f);
             Matrix matrix2 = new Matrix(matrix);
-            matrix2.preTranslate(this.c, this.d);
-            matrix2.preRotate(b());
+            matrix2.preTranslate(this.f21104c, this.f21105d);
+            matrix2.preRotate(m9147b());
             shadowRenderer.drawEdgeShadow(canvas, matrix2, rectF, i);
         }
 
-        public float b() {
-            return (float) Math.toDegrees(Math.atan((this.f3060b.f3057y - this.d) / (this.f3060b.f3056x - this.c)));
+        /* JADX INFO: renamed from: b */
+        public float m9147b() {
+            return (float) Math.toDegrees(Math.atan((this.f21103b.f21099y - this.f21105d) / (this.f21103b.f21098x - this.f21104c)));
         }
     }
 
-    public static abstract class d {
-        public static final Matrix a = new Matrix();
+    /* JADX INFO: renamed from: com.google.android.material.shape.ShapePath$d */
+    public static abstract class AbstractC10974d {
 
-        public abstract void a(Matrix matrix, ShadowRenderer shadowRenderer, int i, Canvas canvas);
+        /* JADX INFO: renamed from: a */
+        public static final Matrix f21106a = new Matrix();
+
+        /* JADX INFO: renamed from: a */
+        public abstract void mo9146a(Matrix matrix, ShadowRenderer shadowRenderer, int i, Canvas canvas);
     }
 
     public ShapePath() {
@@ -363,13 +380,13 @@ public class ShapePath {
         PathArcOperation pathArcOperation = new PathArcOperation(getEndX(), getEndY(), getEndX(), getEndY());
         pathArcOperation.setStartAngle(getCurrentShadowAngle());
         pathArcOperation.setSweepAngle(currentShadowAngle);
-        this.shadowCompatOperations.add(new b(pathArcOperation));
+        this.shadowCompatOperations.add(new C10972b(pathArcOperation));
         setCurrentShadowAngle(f);
     }
 
-    private void addShadowCompatOperation(d dVar, float f, float f2) {
+    private void addShadowCompatOperation(AbstractC10974d abstractC10974d, float f, float f2) {
         addConnectingShadowIfNecessary(f);
-        this.shadowCompatOperations.add(dVar);
+        this.shadowCompatOperations.add(abstractC10974d);
         setCurrentShadowAngle(f2);
     }
 
@@ -410,16 +427,16 @@ public class ShapePath {
         pathArcOperation.setStartAngle(f5);
         pathArcOperation.setSweepAngle(f6);
         this.operations.add(pathArcOperation);
-        b bVar = new b(pathArcOperation);
+        C10972b c10972b = new C10972b(pathArcOperation);
         float f7 = f5 + f6;
         boolean z2 = f6 < 0.0f;
         if (z2) {
             f5 = (f5 + 180.0f) % 360.0f;
         }
-        addShadowCompatOperation(bVar, f5, z2 ? (180.0f + f7) % 360.0f : f7);
-        double d2 = f7;
-        setEndX((((f3 - f) / 2.0f) * ((float) Math.cos(Math.toRadians(d2)))) + ((f + f3) * 0.5f));
-        setEndY((((f4 - f2) / 2.0f) * ((float) Math.sin(Math.toRadians(d2)))) + ((f2 + f4) * 0.5f));
+        addShadowCompatOperation(c10972b, f5, z2 ? (180.0f + f7) % 360.0f : f7);
+        double d = f7;
+        setEndX((((f3 - f) / 2.0f) * ((float) Math.cos(Math.toRadians(d)))) + ((f + f3) * 0.5f));
+        setEndY((((f4 - f2) / 2.0f) * ((float) Math.sin(Math.toRadians(d)))) + ((f2 + f4) * 0.5f));
     }
 
     public void applyToPath(Matrix matrix, Path path) {
@@ -434,9 +451,9 @@ public class ShapePath {
     }
 
     @NonNull
-    public d createShadowCompatOperation(Matrix matrix) {
+    public AbstractC10974d createShadowCompatOperation(Matrix matrix) {
         addConnectingShadowIfNecessary(getEndShadowAngle());
-        return new a(this, new ArrayList(this.shadowCompatOperations), new Matrix(matrix));
+        return new C10971a(this, new ArrayList(this.shadowCompatOperations), new Matrix(matrix));
     }
 
     @RequiresApi(21)
@@ -465,11 +482,11 @@ public class ShapePath {
 
     public void lineTo(float f, float f2) {
         PathLineOperation pathLineOperation = new PathLineOperation();
-        pathLineOperation.f3056x = f;
-        pathLineOperation.f3057y = f2;
+        pathLineOperation.f21098x = f;
+        pathLineOperation.f21099y = f2;
         this.operations.add(pathLineOperation);
-        c cVar = new c(pathLineOperation, getEndX(), getEndY());
-        addShadowCompatOperation(cVar, cVar.b() + ANGLE_UP, cVar.b() + ANGLE_UP);
+        C10973c c10973c = new C10973c(pathLineOperation, getEndX(), getEndY());
+        addShadowCompatOperation(c10973c, c10973c.m9147b() + ANGLE_UP, c10973c.m9147b() + ANGLE_UP);
         setEndX(f);
         setEndY(f2);
     }

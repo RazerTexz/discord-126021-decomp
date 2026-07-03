@@ -9,21 +9,22 @@ import com.google.android.material.textfield.TextInputLayout;
 /* JADX INFO: loaded from: classes.dex */
 public final class WidgetMemberVerificationTextInputItemBinding implements ViewBinding {
 
+    /* JADX INFO: renamed from: a */
     @NonNull
-    public final TextInputLayout a;
+    public final TextInputLayout f17265a;
 
-    /* JADX INFO: renamed from: b, reason: collision with root package name */
+    /* JADX INFO: renamed from: b */
     @NonNull
-    public final TextInputEditText f2495b;
+    public final TextInputEditText f17266b;
 
     public WidgetMemberVerificationTextInputItemBinding(@NonNull TextInputLayout textInputLayout, @NonNull TextInputEditText textInputEditText) {
-        this.a = textInputLayout;
-        this.f2495b = textInputEditText;
+        this.f17265a = textInputLayout;
+        this.f17266b = textInputEditText;
     }
 
     @Override // androidx.viewbinding.ViewBinding
     @NonNull
     public View getRoot() {
-        return this.a;
+        return this.f17265a;
     }
 }

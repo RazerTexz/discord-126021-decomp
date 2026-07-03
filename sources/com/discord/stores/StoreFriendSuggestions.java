@@ -6,15 +6,15 @@ import com.discord.models.domain.ModelPayload;
 import com.discord.models.friendsuggestions.FriendSuggestion;
 import com.discord.models.user.CoreUser;
 import com.discord.utilities.friendsuggestions.FriendSuggestionsFetcher;
-import d0.t.Maps6;
-import d0.t._Collections;
-import d0.z.d.Intrinsics3;
-import d0.z.d.Lambda;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import kotlin.Unit;
 import kotlin.jvm.functions.Function0;
+import p507d0.p580t.C12136h0;
+import p507d0.p580t.C12163u;
+import p507d0.p592z.p594d.AbstractC12240o;
+import p507d0.p592z.p594d.C12238m;
 
 /* JADX INFO: compiled from: StoreFriendSuggestions.kt */
 /* JADX INFO: loaded from: classes2.dex */
@@ -25,13 +25,13 @@ public final class StoreFriendSuggestions extends StoreV2 {
     private final Map<Long, FriendSuggestion> suggestions;
     private Map<Long, FriendSuggestion> suggestionsSnapshot;
 
-    /* JADX INFO: renamed from: com.discord.stores.StoreFriendSuggestions$updateFriendSuggestions$1, reason: invalid class name */
+    /* JADX INFO: renamed from: com.discord.stores.StoreFriendSuggestions$updateFriendSuggestions$1 */
     /* JADX INFO: compiled from: StoreFriendSuggestions.kt */
-    public static final class AnonymousClass1 extends Lambda implements Function0<Unit> {
+    public static final class C59411 extends AbstractC12240o implements Function0<Unit> {
         public final /* synthetic */ List $suggestions;
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-        public AnonymousClass1(List list) {
+        public C59411(List list) {
             super(0);
             this.$suggestions = list;
         }
@@ -39,7 +39,7 @@ public final class StoreFriendSuggestions extends StoreV2 {
         @Override // kotlin.jvm.functions.Function0
         public /* bridge */ /* synthetic */ Unit invoke() {
             invoke2();
-            return Unit.a;
+            return Unit.f27425a;
         }
 
         /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
@@ -49,19 +49,19 @@ public final class StoreFriendSuggestions extends StoreV2 {
     }
 
     public StoreFriendSuggestions(StoreStream storeStream, Dispatcher dispatcher, FriendSuggestionsFetcher friendSuggestionsFetcher) {
-        Intrinsics3.checkNotNullParameter(storeStream, "storeStream");
-        Intrinsics3.checkNotNullParameter(dispatcher, "dispatcher");
-        Intrinsics3.checkNotNullParameter(friendSuggestionsFetcher, "friendSuggestionsFetcher");
+        C12238m.checkNotNullParameter(storeStream, "storeStream");
+        C12238m.checkNotNullParameter(dispatcher, "dispatcher");
+        C12238m.checkNotNullParameter(friendSuggestionsFetcher, "friendSuggestionsFetcher");
         this.storeStream = storeStream;
         this.dispatcher = dispatcher;
         this.friendSuggestionsFetcher = friendSuggestionsFetcher;
         this.suggestions = new HashMap();
-        this.suggestionsSnapshot = Maps6.emptyMap();
+        this.suggestionsSnapshot = C12136h0.emptyMap();
     }
 
     private final FriendSuggestion convertApiFriendSuggestion(com.discord.api.friendsuggestions.FriendSuggestion apiFriendSuggestion) {
         CoreUser coreUser = new CoreUser(apiFriendSuggestion.getSuggestedUser());
-        FriendSuggestionReason friendSuggestionReason = (FriendSuggestionReason) _Collections.firstOrNull((List) apiFriendSuggestion.a());
+        FriendSuggestionReason friendSuggestionReason = (FriendSuggestionReason) C12163u.firstOrNull((List) apiFriendSuggestion.m7830a());
         return new FriendSuggestion(coreUser, friendSuggestionReason != null ? friendSuggestionReason.getName() : null);
     }
 
@@ -73,9 +73,9 @@ public final class StoreFriendSuggestions extends StoreV2 {
         return this.friendSuggestionsFetcher;
     }
 
-    @Store3
+    @StoreThread
     public final void handleConnectionOpen(ModelPayload readyPayload) {
-        Intrinsics3.checkNotNullParameter(readyPayload, "readyPayload");
+        C12238m.checkNotNullParameter(readyPayload, "readyPayload");
         this.suggestions.clear();
         if (readyPayload.getFriendSuggestionCount() > 0) {
             this.friendSuggestionsFetcher.maybeFetch();
@@ -83,33 +83,33 @@ public final class StoreFriendSuggestions extends StoreV2 {
         markChanged();
     }
 
-    @Store3
+    @StoreThread
     public final void handleFriendSuggestionCreate(com.discord.api.friendsuggestions.FriendSuggestion friendSuggestionCreate) {
-        Intrinsics3.checkNotNullParameter(friendSuggestionCreate, "friendSuggestionCreate");
+        C12238m.checkNotNullParameter(friendSuggestionCreate, "friendSuggestionCreate");
         CoreUser coreUser = new CoreUser(friendSuggestionCreate.getSuggestedUser());
-        FriendSuggestionReason friendSuggestionReason = (FriendSuggestionReason) _Collections.firstOrNull((List) friendSuggestionCreate.a());
+        FriendSuggestionReason friendSuggestionReason = (FriendSuggestionReason) C12163u.firstOrNull((List) friendSuggestionCreate.m7830a());
         FriendSuggestion friendSuggestion = new FriendSuggestion(coreUser, friendSuggestionReason != null ? friendSuggestionReason.getName() : null);
         this.suggestions.put(Long.valueOf(friendSuggestion.getUser().getId()), friendSuggestion);
         markChanged();
     }
 
-    @Store3
+    @StoreThread
     public final void handleFriendSuggestionDelete(FriendSuggestionDelete friendSuggestionDelete) {
-        Intrinsics3.checkNotNullParameter(friendSuggestionDelete, "friendSuggestionDelete");
+        C12238m.checkNotNullParameter(friendSuggestionDelete, "friendSuggestionDelete");
         if (this.suggestions.remove(Long.valueOf(friendSuggestionDelete.getSuggestedUserId())) != null) {
             markChanged();
         }
     }
 
-    @Store3
+    @StoreThread
     public final void handleFriendSuggestionsLoadFailure() {
         this.suggestions.clear();
         markChanged();
     }
 
-    @Store3
+    @StoreThread
     public final void handleFriendSuggestionsLoaded(List<com.discord.api.friendsuggestions.FriendSuggestion> loadedSuggestions) {
-        Intrinsics3.checkNotNullParameter(loadedSuggestions, "loadedSuggestions");
+        C12238m.checkNotNullParameter(loadedSuggestions, "loadedSuggestions");
         this.suggestions.clear();
         Map<Long, FriendSuggestion> map = this.suggestions;
         for (com.discord.api.friendsuggestions.FriendSuggestion friendSuggestion : loadedSuggestions) {
@@ -125,7 +125,7 @@ public final class StoreFriendSuggestions extends StoreV2 {
     }
 
     public final void updateFriendSuggestions(List<com.discord.api.friendsuggestions.FriendSuggestion> suggestions) {
-        Intrinsics3.checkNotNullParameter(suggestions, "suggestions");
-        this.dispatcher.schedule(new AnonymousClass1(suggestions));
+        C12238m.checkNotNullParameter(suggestions, "suggestions");
+        this.dispatcher.schedule(new C59411(suggestions));
     }
 }

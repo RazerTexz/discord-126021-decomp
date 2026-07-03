@@ -8,7 +8,7 @@ import androidx.annotation.RestrictTo;
 import androidx.interpolator.view.animation.FastOutLinearInInterpolator;
 import androidx.interpolator.view.animation.FastOutSlowInInterpolator;
 import androidx.interpolator.view.animation.LinearOutSlowInInterpolator;
-import b.d.b.a.outline;
+import p007b.p100d.p104b.p105a.C1643a;
 
 /* JADX INFO: loaded from: classes3.dex */
 @RestrictTo({RestrictTo.Scope.LIBRARY_GROUP})
@@ -20,14 +20,14 @@ public class AnimationUtils {
     public static final TimeInterpolator DECELERATE_INTERPOLATOR = new DecelerateInterpolator();
 
     public static float lerp(float f, float f2, float f3) {
-        return outline.a(f2, f, f3, f);
+        return C1643a.m839a(f2, f, f3, f);
     }
 
     public static int lerp(int i, int i2, float f) {
         return Math.round(f * (i2 - i)) + i;
     }
 
-    public static float lerp(float f, float f2, @FloatRange(from = 0.0d, to = 1.0d) float f3, @FloatRange(from = 0.0d, to = 1.0d) float f4, @FloatRange(from = 0.0d, to = 1.0d) float f5) {
+    public static float lerp(float f, float f2, @FloatRange(from = 0.0d, m75to = 1.0d) float f3, @FloatRange(from = 0.0d, m75to = 1.0d) float f4, @FloatRange(from = 0.0d, m75to = 1.0d) float f5) {
         if (f5 < f3) {
             return f;
         }

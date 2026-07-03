@@ -1,11 +1,11 @@
 package com.lytefast.flexinput.viewmodel;
 
-import b.d.b.a.outline;
 import com.lytefast.flexinput.model.Attachment;
-import d0.t.Collections2;
-import d0.z.d.Intrinsics3;
 import java.util.List;
 import java.util.Objects;
+import p007b.p100d.p104b.p105a.C1643a;
+import p507d0.p580t.C12147n;
+import p507d0.p592z.p594d.C12238m;
 
 /* JADX INFO: compiled from: FlexInputState.kt */
 /* JADX INFO: loaded from: classes3.dex */
@@ -14,7 +14,7 @@ public final /* data */ class FlexInputState {
     /* JADX INFO: renamed from: a, reason: from kotlin metadata */
     public final String inputText;
 
-    /* JADX INFO: renamed from: b, reason: collision with root package name and from kotlin metadata */
+    /* JADX INFO: renamed from: b, reason: from kotlin metadata */
     public final boolean showExpandedButtons;
 
     /* JADX INFO: renamed from: c, reason: from kotlin metadata */
@@ -56,8 +56,8 @@ public final /* data */ class FlexInputState {
 
     /* JADX WARN: Multi-variable type inference failed */
     public FlexInputState(String str, boolean z2, List<? extends Attachment<? extends Object>> list, boolean z3, boolean z4, Integer num, boolean z5, boolean z6, boolean z7, boolean z8, boolean z9, Long l, Long l2) {
-        Intrinsics3.checkNotNullParameter(str, "inputText");
-        Intrinsics3.checkNotNullParameter(list, "attachments");
+        C12238m.checkNotNullParameter(str, "inputText");
+        C12238m.checkNotNullParameter(list, "attachments");
         this.inputText = str;
         this.showExpandedButtons = z2;
         this.attachments = list;
@@ -73,7 +73,8 @@ public final /* data */ class FlexInputState {
         this.guildId = l2;
     }
 
-    public static FlexInputState a(FlexInputState flexInputState, String str, boolean z2, List list, boolean z3, boolean z4, Integer num, boolean z5, boolean z6, boolean z7, boolean z8, boolean z9, Long l, Long l2, int i) {
+    /* JADX INFO: renamed from: a */
+    public static FlexInputState m9302a(FlexInputState flexInputState, String str, boolean z2, List list, boolean z3, boolean z4, Integer num, boolean z5, boolean z6, boolean z7, boolean z8, boolean z9, Long l, Long l2, int i) {
         String str2 = (i & 1) != 0 ? flexInputState.inputText : str;
         boolean z10 = (i & 2) != 0 ? flexInputState.showExpandedButtons : z2;
         List list2 = (i & 4) != 0 ? flexInputState.attachments : list;
@@ -88,8 +89,8 @@ public final /* data */ class FlexInputState {
         Long l3 = (i & 2048) != 0 ? flexInputState.channelId : l;
         Long l4 = (i & 4096) != 0 ? flexInputState.guildId : l2;
         Objects.requireNonNull(flexInputState);
-        Intrinsics3.checkNotNullParameter(str2, "inputText");
-        Intrinsics3.checkNotNullParameter(list2, "attachments");
+        C12238m.checkNotNullParameter(str2, "inputText");
+        C12238m.checkNotNullParameter(list2, "attachments");
         return new FlexInputState(str2, z10, list2, z11, z12, num2, z13, z14, z15, z16, z17, l3, l4);
     }
 
@@ -101,7 +102,7 @@ public final /* data */ class FlexInputState {
             return false;
         }
         FlexInputState flexInputState = (FlexInputState) other;
-        return Intrinsics3.areEqual(this.inputText, flexInputState.inputText) && this.showExpandedButtons == flexInputState.showExpandedButtons && Intrinsics3.areEqual(this.attachments, flexInputState.attachments) && this.attachmentViewEnabled == flexInputState.attachmentViewEnabled && this.singleSelectMode == flexInputState.singleSelectMode && Intrinsics3.areEqual(this.showContentDialogIndex, flexInputState.showContentDialogIndex) && this.ableToSendMessages == flexInputState.ableToSendMessages && this.ableToAttachFiles == flexInputState.ableToAttachFiles && this.showExpressionTray == flexInputState.showExpressionTray && this.showExpressionTrayButtonBadge == flexInputState.showExpressionTrayButtonBadge && this.expressionSuggestionsEnabled == flexInputState.expressionSuggestionsEnabled && Intrinsics3.areEqual(this.channelId, flexInputState.channelId) && Intrinsics3.areEqual(this.guildId, flexInputState.guildId);
+        return C12238m.areEqual(this.inputText, flexInputState.inputText) && this.showExpandedButtons == flexInputState.showExpandedButtons && C12238m.areEqual(this.attachments, flexInputState.attachments) && this.attachmentViewEnabled == flexInputState.attachmentViewEnabled && this.singleSelectMode == flexInputState.singleSelectMode && C12238m.areEqual(this.showContentDialogIndex, flexInputState.showContentDialogIndex) && this.ableToSendMessages == flexInputState.ableToSendMessages && this.ableToAttachFiles == flexInputState.ableToAttachFiles && this.showExpressionTray == flexInputState.showExpressionTray && this.showExpressionTrayButtonBadge == flexInputState.showExpressionTrayButtonBadge && this.expressionSuggestionsEnabled == flexInputState.expressionSuggestionsEnabled && C12238m.areEqual(this.channelId, flexInputState.channelId) && C12238m.areEqual(this.guildId, flexInputState.guildId);
     }
 
     /* JADX WARN: Multi-variable type inference failed */
@@ -188,37 +189,37 @@ public final /* data */ class FlexInputState {
     }
 
     public String toString() {
-        StringBuilder sbU = outline.U("FlexInputState(inputText=");
-        sbU.append(this.inputText);
-        sbU.append(", showExpandedButtons=");
-        sbU.append(this.showExpandedButtons);
-        sbU.append(", attachments=");
-        sbU.append(this.attachments);
-        sbU.append(", attachmentViewEnabled=");
-        sbU.append(this.attachmentViewEnabled);
-        sbU.append(", singleSelectMode=");
-        sbU.append(this.singleSelectMode);
-        sbU.append(", showContentDialogIndex=");
-        sbU.append(this.showContentDialogIndex);
-        sbU.append(", ableToSendMessages=");
-        sbU.append(this.ableToSendMessages);
-        sbU.append(", ableToAttachFiles=");
-        sbU.append(this.ableToAttachFiles);
-        sbU.append(", showExpressionTray=");
-        sbU.append(this.showExpressionTray);
-        sbU.append(", showExpressionTrayButtonBadge=");
-        sbU.append(this.showExpressionTrayButtonBadge);
-        sbU.append(", expressionSuggestionsEnabled=");
-        sbU.append(this.expressionSuggestionsEnabled);
-        sbU.append(", channelId=");
-        sbU.append(this.channelId);
-        sbU.append(", guildId=");
-        return outline.G(sbU, this.guildId, ")");
+        StringBuilder sbM833U = C1643a.m833U("FlexInputState(inputText=");
+        sbM833U.append(this.inputText);
+        sbM833U.append(", showExpandedButtons=");
+        sbM833U.append(this.showExpandedButtons);
+        sbM833U.append(", attachments=");
+        sbM833U.append(this.attachments);
+        sbM833U.append(", attachmentViewEnabled=");
+        sbM833U.append(this.attachmentViewEnabled);
+        sbM833U.append(", singleSelectMode=");
+        sbM833U.append(this.singleSelectMode);
+        sbM833U.append(", showContentDialogIndex=");
+        sbM833U.append(this.showContentDialogIndex);
+        sbM833U.append(", ableToSendMessages=");
+        sbM833U.append(this.ableToSendMessages);
+        sbM833U.append(", ableToAttachFiles=");
+        sbM833U.append(this.ableToAttachFiles);
+        sbM833U.append(", showExpressionTray=");
+        sbM833U.append(this.showExpressionTray);
+        sbM833U.append(", showExpressionTrayButtonBadge=");
+        sbM833U.append(this.showExpressionTrayButtonBadge);
+        sbM833U.append(", expressionSuggestionsEnabled=");
+        sbM833U.append(this.expressionSuggestionsEnabled);
+        sbM833U.append(", channelId=");
+        sbM833U.append(this.channelId);
+        sbM833U.append(", guildId=");
+        return C1643a.m819G(sbM833U, this.guildId, ")");
     }
 
     /* JADX WARN: 'this' call moved to the top of the method (can break code semantics) */
     public /* synthetic */ FlexInputState(String str, boolean z2, List list, boolean z3, boolean z4, Integer num, boolean z5, boolean z6, boolean z7, boolean z8, boolean z9, Long l, Long l2, int i) {
-        this((i & 1) != 0 ? "" : null, (i & 2) != 0 ? true : z2, (i & 4) != 0 ? Collections2.emptyList() : null, (i & 8) != 0 ? true : z3, (i & 16) != 0 ? true : z4, null, (i & 64) != 0 ? true : z5, (i & 128) != 0 ? true : z6, (i & 256) != 0 ? false : z7, (i & 512) == 0 ? z8 : false, (i & 1024) == 0 ? z9 : true, null, null);
+        this((i & 1) != 0 ? "" : null, (i & 2) != 0 ? true : z2, (i & 4) != 0 ? C12147n.emptyList() : null, (i & 8) != 0 ? true : z3, (i & 16) != 0 ? true : z4, null, (i & 64) != 0 ? true : z5, (i & 128) != 0 ? true : z6, (i & 256) != 0 ? false : z7, (i & 512) == 0 ? z8 : false, (i & 1024) == 0 ? z9 : true, null, null);
         int i2 = i & 32;
         int i3 = i & 2048;
         int i4 = i & 4096;

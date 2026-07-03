@@ -1,7 +1,7 @@
 package com.franmontiel.persistentcookiejar;
 
-import f0.CookieJar2;
+import p600f0.InterfaceC12372p;
 
 /* JADX INFO: loaded from: classes3.dex */
-public interface ClearableCookieJar extends CookieJar2 {
+public interface ClearableCookieJar extends InterfaceC12372p {
 }

@@ -13,8 +13,8 @@ public abstract class Lifecycle {
     @RestrictTo({RestrictTo.Scope.LIBRARY_GROUP})
     public AtomicReference<Object> mInternalScopeRef = new AtomicReference<>();
 
-    /* JADX INFO: renamed from: androidx.lifecycle.Lifecycle$1, reason: invalid class name */
-    public static /* synthetic */ class AnonymousClass1 {
+    /* JADX INFO: renamed from: androidx.lifecycle.Lifecycle$1 */
+    public static /* synthetic */ class C04371 {
         public static final /* synthetic */ int[] $SwitchMap$androidx$lifecycle$Lifecycle$Event;
         public static final /* synthetic */ int[] $SwitchMap$androidx$lifecycle$Lifecycle$State;
 

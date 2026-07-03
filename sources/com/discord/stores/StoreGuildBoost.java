@@ -1,19 +1,11 @@
 package com.discord.stores;
 
-import b.d.b.a.outline;
 import com.discord.models.domain.ModelAppliedGuildBoost;
 import com.discord.models.domain.ModelGuildBoostSlot;
 import com.discord.stores.updates.ObservationDeck;
 import com.discord.utilities.error.Error;
+import com.discord.utilities.p501rx.ObservableExtensionsKt;
 import com.discord.utilities.rest.RestAPI;
-import com.discord.utilities.rx.ObservableExtensionsKt;
-import d0.Tuples;
-import d0.d0._Ranges;
-import d0.t.Iterables2;
-import d0.t.Maps6;
-import d0.t.MapsJVM;
-import d0.z.d.Intrinsics3;
-import d0.z.d.Lambda;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
@@ -22,8 +14,16 @@ import kotlin.Unit;
 import kotlin.jvm.functions.Function0;
 import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.DefaultConstructorMarker;
-import rx.Observable;
-import rx.Subscription;
+import p007b.p100d.p104b.p105a.C1643a;
+import p507d0.C12116o;
+import p507d0.p512d0.C11226f;
+import p507d0.p580t.C12134g0;
+import p507d0.p580t.C12136h0;
+import p507d0.p580t.C12149o;
+import p507d0.p592z.p594d.AbstractC12240o;
+import p507d0.p592z.p594d.C12238m;
+import p658rx.Observable;
+import p658rx.Subscription;
 
 /* JADX INFO: compiled from: StoreGuildBoost.kt */
 /* JADX INFO: loaded from: classes2.dex */
@@ -52,7 +52,7 @@ public final class StoreGuildBoost extends StoreV2 {
             /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
             public Loaded(Map<Long, ModelGuildBoostSlot> map) {
                 super(null);
-                Intrinsics3.checkNotNullParameter(map, "boostSlotMap");
+                C12238m.checkNotNullParameter(map, "boostSlotMap");
                 this.boostSlotMap = map;
             }
 
@@ -69,13 +69,13 @@ public final class StoreGuildBoost extends StoreV2 {
             }
 
             public final Loaded copy(Map<Long, ModelGuildBoostSlot> boostSlotMap) {
-                Intrinsics3.checkNotNullParameter(boostSlotMap, "boostSlotMap");
+                C12238m.checkNotNullParameter(boostSlotMap, "boostSlotMap");
                 return new Loaded(boostSlotMap);
             }
 
             public boolean equals(Object other) {
                 if (this != other) {
-                    return (other instanceof Loaded) && Intrinsics3.areEqual(this.boostSlotMap, ((Loaded) other).boostSlotMap);
+                    return (other instanceof Loaded) && C12238m.areEqual(this.boostSlotMap, ((Loaded) other).boostSlotMap);
                 }
                 return true;
             }
@@ -89,7 +89,7 @@ public final class StoreGuildBoost extends StoreV2 {
                     LinkedHashMap linkedHashMap = new LinkedHashMap();
                     for (Map.Entry<Long, ModelGuildBoostSlot> entry : map2.entrySet()) {
                         ModelAppliedGuildBoost premiumGuildSubscription = entry.getValue().getPremiumGuildSubscription();
-                        if (Intrinsics3.areEqual(premiumGuildSubscription != null ? Long.valueOf(premiumGuildSubscription.getGuildId()) : null, guildId)) {
+                        if (C12238m.areEqual(premiumGuildSubscription != null ? Long.valueOf(premiumGuildSubscription.getGuildId()) : null, guildId)) {
                             linkedHashMap.put(entry.getKey(), entry.getValue());
                         }
                     }
@@ -111,7 +111,7 @@ public final class StoreGuildBoost extends StoreV2 {
             }
 
             public String toString() {
-                return outline.M(outline.U("Loaded(boostSlotMap="), this.boostSlotMap, ")");
+                return C1643a.m825M(C1643a.m833U("Loaded(boostSlotMap="), this.boostSlotMap, ")");
             }
         }
 
@@ -132,17 +132,17 @@ public final class StoreGuildBoost extends StoreV2 {
         }
     }
 
-    /* JADX INFO: renamed from: com.discord.stores.StoreGuildBoost$fetchUserGuildBoostState$1, reason: invalid class name */
+    /* JADX INFO: renamed from: com.discord.stores.StoreGuildBoost$fetchUserGuildBoostState$1 */
     /* JADX INFO: compiled from: StoreGuildBoost.kt */
-    public static final class AnonymousClass1 extends Lambda implements Function0<Unit> {
-        public AnonymousClass1() {
+    public static final class C60171 extends AbstractC12240o implements Function0<Unit> {
+        public C60171() {
             super(0);
         }
 
         @Override // kotlin.jvm.functions.Function0
         public /* bridge */ /* synthetic */ Unit invoke() {
             invoke2();
-            return Unit.a;
+            return Unit.f27425a;
         }
 
         /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
@@ -151,13 +151,13 @@ public final class StoreGuildBoost extends StoreV2 {
         }
     }
 
-    /* JADX INFO: renamed from: com.discord.stores.StoreGuildBoost$fetchUserGuildBoostState$2, reason: invalid class name */
+    /* JADX INFO: renamed from: com.discord.stores.StoreGuildBoost$fetchUserGuildBoostState$2 */
     /* JADX INFO: compiled from: StoreGuildBoost.kt */
-    public static final class AnonymousClass2 extends Lambda implements Function1<Error, Unit> {
+    public static final class C60182 extends AbstractC12240o implements Function1<Error, Unit> {
 
         /* JADX INFO: renamed from: com.discord.stores.StoreGuildBoost$fetchUserGuildBoostState$2$1, reason: invalid class name */
         /* JADX INFO: compiled from: StoreGuildBoost.kt */
-        public static final class AnonymousClass1 extends Lambda implements Function0<Unit> {
+        public static final class AnonymousClass1 extends AbstractC12240o implements Function0<Unit> {
             public AnonymousClass1() {
                 super(0);
             }
@@ -165,7 +165,7 @@ public final class StoreGuildBoost extends StoreV2 {
             @Override // kotlin.jvm.functions.Function0
             public /* bridge */ /* synthetic */ Unit invoke() {
                 invoke2();
-                return Unit.a;
+                return Unit.f27425a;
             }
 
             /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
@@ -174,30 +174,30 @@ public final class StoreGuildBoost extends StoreV2 {
             }
         }
 
-        public AnonymousClass2() {
+        public C60182() {
             super(1);
         }
 
         @Override // kotlin.jvm.functions.Function1
         public /* bridge */ /* synthetic */ Unit invoke(Error error) {
             invoke2(error);
-            return Unit.a;
+            return Unit.f27425a;
         }
 
         /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
         public final void invoke2(Error error) {
-            Intrinsics3.checkNotNullParameter(error, "it");
+            C12238m.checkNotNullParameter(error, "it");
             StoreGuildBoost.this.getDispatcher().schedule(new AnonymousClass1());
         }
     }
 
-    /* JADX INFO: renamed from: com.discord.stores.StoreGuildBoost$fetchUserGuildBoostState$3, reason: invalid class name */
+    /* JADX INFO: renamed from: com.discord.stores.StoreGuildBoost$fetchUserGuildBoostState$3 */
     /* JADX INFO: compiled from: StoreGuildBoost.kt */
-    public static final class AnonymousClass3 extends Lambda implements Function1<List<? extends ModelGuildBoostSlot>, Unit> {
+    public static final class C60193 extends AbstractC12240o implements Function1<List<? extends ModelGuildBoostSlot>, Unit> {
 
         /* JADX INFO: renamed from: com.discord.stores.StoreGuildBoost$fetchUserGuildBoostState$3$1, reason: invalid class name */
         /* JADX INFO: compiled from: StoreGuildBoost.kt */
-        public static final class AnonymousClass1 extends Lambda implements Function0<Unit> {
+        public static final class AnonymousClass1 extends AbstractC12240o implements Function0<Unit> {
             public final /* synthetic */ List $subscriptionsSlots;
 
             /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -209,7 +209,7 @@ public final class StoreGuildBoost extends StoreV2 {
             @Override // kotlin.jvm.functions.Function0
             public /* bridge */ /* synthetic */ Unit invoke() {
                 invoke2();
-                return Unit.a;
+                return Unit.f27425a;
             }
 
             /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
@@ -218,30 +218,30 @@ public final class StoreGuildBoost extends StoreV2 {
             }
         }
 
-        public AnonymousClass3() {
+        public C60193() {
             super(1);
         }
 
         @Override // kotlin.jvm.functions.Function1
         public /* bridge */ /* synthetic */ Unit invoke(List<? extends ModelGuildBoostSlot> list) {
             invoke2((List<ModelGuildBoostSlot>) list);
-            return Unit.a;
+            return Unit.f27425a;
         }
 
         /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
         public final void invoke2(List<ModelGuildBoostSlot> list) {
-            Intrinsics3.checkNotNullParameter(list, "subscriptionsSlots");
+            C12238m.checkNotNullParameter(list, "subscriptionsSlots");
             StoreGuildBoost.this.getDispatcher().schedule(new AnonymousClass1(list));
         }
     }
 
-    /* JADX INFO: renamed from: com.discord.stores.StoreGuildBoost$observeGuildBoostState$1, reason: invalid class name */
+    /* JADX INFO: renamed from: com.discord.stores.StoreGuildBoost$observeGuildBoostState$1 */
     /* JADX INFO: compiled from: StoreGuildBoost.kt */
-    public static final class AnonymousClass1 extends Lambda implements Function0<State> {
+    public static final class C60201 extends AbstractC12240o implements Function0<State> {
         public final /* synthetic */ Long $guildId;
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-        public AnonymousClass1(Long l) {
+        public C60201(Long l) {
             super(0);
             this.$guildId = l;
         }
@@ -254,13 +254,13 @@ public final class StoreGuildBoost extends StoreV2 {
         }
     }
 
-    /* JADX INFO: renamed from: com.discord.stores.StoreGuildBoost$updateGuildBoostSlot$1, reason: invalid class name */
+    /* JADX INFO: renamed from: com.discord.stores.StoreGuildBoost$updateGuildBoostSlot$1 */
     /* JADX INFO: compiled from: StoreGuildBoost.kt */
-    public static final class AnonymousClass1 extends Lambda implements Function0<Unit> {
+    public static final class C60211 extends AbstractC12240o implements Function0<Unit> {
         public final /* synthetic */ ModelGuildBoostSlot $newSlot;
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-        public AnonymousClass1(ModelGuildBoostSlot modelGuildBoostSlot) {
+        public C60211(ModelGuildBoostSlot modelGuildBoostSlot) {
             super(0);
             this.$newSlot = modelGuildBoostSlot;
         }
@@ -268,14 +268,14 @@ public final class StoreGuildBoost extends StoreV2 {
         @Override // kotlin.jvm.functions.Function0
         public /* bridge */ /* synthetic */ Unit invoke() {
             invoke2();
-            return Unit.a;
+            return Unit.f27425a;
         }
 
         /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
         public final void invoke2() {
             State state = StoreGuildBoost.this.state;
             if (state instanceof State.Loaded) {
-                Map mapPlus = Maps6.plus(((State.Loaded) state).getBoostSlotMap(), Tuples.to(Long.valueOf(this.$newSlot.getId()), this.$newSlot));
+                Map mapPlus = C12136h0.plus(((State.Loaded) state).getBoostSlotMap(), C12116o.m10073to(Long.valueOf(this.$newSlot.getId()), this.$newSlot));
                 StoreGuildBoost.this.state = new State.Loaded(mapPlus);
                 StoreGuildBoost.this.markChanged();
             }
@@ -283,8 +283,8 @@ public final class StoreGuildBoost extends StoreV2 {
     }
 
     public StoreGuildBoost(Dispatcher dispatcher, ObservationDeck observationDeck) {
-        Intrinsics3.checkNotNullParameter(dispatcher, "dispatcher");
-        Intrinsics3.checkNotNullParameter(observationDeck, "observationDeck");
+        C12238m.checkNotNullParameter(dispatcher, "dispatcher");
+        C12238m.checkNotNullParameter(observationDeck, "observationDeck");
         this.dispatcher = dispatcher;
         this.observationDeck = observationDeck;
         State.Loading loading = State.Loading.INSTANCE;
@@ -307,8 +307,8 @@ public final class StoreGuildBoost extends StoreV2 {
     }
 
     public final void fetchUserGuildBoostState() {
-        this.dispatcher.schedule(new AnonymousClass1());
-        ObservableExtensionsKt.appSubscribe(ObservableExtensionsKt.restSubscribeOn$default(RestAPI.INSTANCE.getApi().getSubscriptionSlots(), false, 1, null), (Class<?>) StoreGuildBoost.class, (58 & 2) != 0 ? null : null, (Function1<? super Subscription, Unit>) ((58 & 4) != 0 ? null : null), (Function1<? super Error, Unit>) ((58 & 8) != 0 ? null : new AnonymousClass2()), (Function0<Unit>) ((58 & 16) != 0 ? ObservableExtensionsKt.AnonymousClass1.INSTANCE : null), (Function0<Unit>) ((58 & 32) != 0 ? ObservableExtensionsKt.AnonymousClass2.INSTANCE : null), new AnonymousClass3());
+        this.dispatcher.schedule(new C60171());
+        ObservableExtensionsKt.appSubscribe(ObservableExtensionsKt.restSubscribeOn$default(RestAPI.INSTANCE.getApi().getSubscriptionSlots(), false, 1, null), (Class<?>) StoreGuildBoost.class, (58 & 2) != 0 ? null : null, (Function1<? super Subscription, Unit>) ((58 & 4) != 0 ? null : null), (Function1<? super Error, Unit>) ((58 & 8) != 0 ? null : new C60182()), (Function0<Unit>) ((58 & 16) != 0 ? ObservableExtensionsKt.C68791.INSTANCE : null), (Function0<Unit>) ((58 & 32) != 0 ? ObservableExtensionsKt.C68802.INSTANCE : null), new C60193());
     }
 
     public final Dispatcher getDispatcher() {
@@ -329,16 +329,16 @@ public final class StoreGuildBoost extends StoreV2 {
         return this.stateSnapshot;
     }
 
-    @Store3
+    @StoreThread
     public final void handleFetchError() {
         this.state = State.Failure.INSTANCE;
         markChanged();
     }
 
-    @Store3
+    @StoreThread
     public final void handleFetchStateSuccess(List<ModelGuildBoostSlot> guildBoostSlots) {
-        Intrinsics3.checkNotNullParameter(guildBoostSlots, "guildBoostSlots");
-        LinkedHashMap linkedHashMap = new LinkedHashMap(_Ranges.coerceAtLeast(MapsJVM.mapCapacity(Iterables2.collectionSizeOrDefault(guildBoostSlots, 10)), 16));
+        C12238m.checkNotNullParameter(guildBoostSlots, "guildBoostSlots");
+        LinkedHashMap linkedHashMap = new LinkedHashMap(C11226f.coerceAtLeast(C12134g0.mapCapacity(C12149o.collectionSizeOrDefault(guildBoostSlots, 10)), 16));
         for (Object obj : guildBoostSlots) {
             linkedHashMap.put(Long.valueOf(((ModelGuildBoostSlot) obj).getId()), obj);
         }
@@ -346,31 +346,31 @@ public final class StoreGuildBoost extends StoreV2 {
         markChanged();
     }
 
-    @Store3
+    @StoreThread
     public final void handleFetchingState() {
         this.state = State.Loading.INSTANCE;
         markChanged();
     }
 
     public final Observable<State> observeGuildBoostState(Long guildId) {
-        return ObservationDeck.connectRx$default(this.observationDeck, new ObservationDeck.UpdateSource[]{this}, false, null, null, new AnonymousClass1(guildId), 14, null);
+        return ObservationDeck.connectRx$default(this.observationDeck, new ObservationDeck.UpdateSource[]{this}, false, null, null, new C60201(guildId), 14, null);
     }
 
     @Override // com.discord.stores.StoreV2
-    @Store3
+    @StoreThread
     public void snapshotData() {
         State loaded = this.state;
         if (!(loaded instanceof State.Loading) && !(loaded instanceof State.Failure)) {
             if (!(loaded instanceof State.Loaded)) {
                 throw new NoWhenBranchMatchedException();
             }
-            loaded = new State.Loaded(Maps6.toMap(((State.Loaded) loaded).getBoostSlotMap()));
+            loaded = new State.Loaded(C12136h0.toMap(((State.Loaded) loaded).getBoostSlotMap()));
         }
         this.stateSnapshot = loaded;
     }
 
     public final void updateGuildBoostSlot(ModelGuildBoostSlot newSlot) {
-        Intrinsics3.checkNotNullParameter(newSlot, "newSlot");
-        this.dispatcher.schedule(new AnonymousClass1(newSlot));
+        C12238m.checkNotNullParameter(newSlot, "newSlot");
+        this.dispatcher.schedule(new C60211(newSlot));
     }
 }

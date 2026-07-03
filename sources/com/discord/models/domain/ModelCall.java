@@ -2,7 +2,6 @@ package com.discord.models.domain;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import b.d.b.a.outline;
 import com.discord.api.voice.state.VoiceState;
 import com.discord.models.deserialization.gson.InboundGatewayGsonParser;
 import com.discord.models.domain.Model;
@@ -10,11 +9,14 @@ import com.discord.models.domain.ModelCall;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
+import p007b.p100d.p104b.p105a.C1643a;
 
 /* JADX INFO: loaded from: classes.dex */
 public class ModelCall implements Model {
     private static final List<Long> EMPTY_RINGING = new ArrayList();
-    public static final /* synthetic */ int j = 0;
+
+    /* JADX INFO: renamed from: j */
+    public static final /* synthetic */ int f18564j = 0;
     private long channelId;
     private long messageId;
     private String region;
@@ -62,10 +64,10 @@ public class ModelCall implements Model {
         }
 
         public String toString() {
-            StringBuilder sbU = outline.U("ModelCall.Ringable(ringable=");
-            sbU.append(isRingable());
-            sbU.append(")");
-            return sbU.toString();
+            StringBuilder sbM833U = C1643a.m833U("ModelCall.Ringable(ringable=");
+            sbM833U.append(isRingable());
+            sbM833U.append(")");
+            return sbM833U.toString();
         }
     }
 
@@ -91,7 +93,7 @@ public class ModelCall implements Model {
                     @Override // com.discord.models.domain.Model.JsonReader.ItemFactory
                     public final Object get() {
                         Model.JsonReader jsonReader2 = jsonReader;
-                        int i = ModelCall.j;
+                        int i = ModelCall.f18564j;
                         return (VoiceState) InboundGatewayGsonParser.fromJson(jsonReader2, VoiceState.class);
                     }
                 });
@@ -101,7 +103,7 @@ public class ModelCall implements Model {
                     @Override // com.discord.models.domain.Model.JsonReader.ItemFactory
                     public final Object get() {
                         Model.JsonReader jsonReader2 = jsonReader;
-                        int i = ModelCall.j;
+                        int i = ModelCall.f18564j;
                         return Long.valueOf(jsonReader2.nextLong(1L));
                     }
                 });
@@ -182,19 +184,19 @@ public class ModelCall implements Model {
     }
 
     public String toString() {
-        StringBuilder sbU = outline.U("ModelCall(channelId=");
-        sbU.append(getChannelId());
-        sbU.append(", messageId=");
-        sbU.append(getMessageId());
-        sbU.append(", region=");
-        sbU.append(getRegion());
-        sbU.append(", unavailable=");
-        sbU.append(isUnavailable());
-        sbU.append(", ringing=");
-        sbU.append(getRinging());
-        sbU.append(", voiceStates=");
-        sbU.append(getVoiceStates());
-        sbU.append(")");
-        return sbU.toString();
+        StringBuilder sbM833U = C1643a.m833U("ModelCall(channelId=");
+        sbM833U.append(getChannelId());
+        sbM833U.append(", messageId=");
+        sbM833U.append(getMessageId());
+        sbM833U.append(", region=");
+        sbM833U.append(getRegion());
+        sbM833U.append(", unavailable=");
+        sbM833U.append(isUnavailable());
+        sbM833U.append(", ringing=");
+        sbM833U.append(getRinging());
+        sbM833U.append(", voiceStates=");
+        sbM833U.append(getVoiceStates());
+        sbM833U.append(")");
+        return sbM833U.toString();
     }
 }

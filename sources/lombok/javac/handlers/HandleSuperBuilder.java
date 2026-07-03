@@ -44,10 +44,13 @@ public class HandleSuperBuilder extends JavacAnnotationHandler<SuperBuilder> {
     private static final String STATIC_FILL_VALUES_METHOD_NAME = "$fillValuesFromInstanceIntoBuilder";
     private static final String INSTANCE_VARIABLE_NAME = "instance";
     private static final String BUILDER_VARIABLE_NAME = "b";
-    private static /* synthetic */ int[] $SWITCH_TABLE$lombok$javac$handlers$JavacHandlerUtil$MemberExistsResult;
 
-    static /* synthetic */ int[] $SWITCH_TABLE$lombok$javac$handlers$JavacHandlerUtil$MemberExistsResult() {
-        int[] iArr = $SWITCH_TABLE$lombok$javac$handlers$JavacHandlerUtil$MemberExistsResult;
+    /* JADX INFO: renamed from: $SWITCH_TABLE$lombok$javac$handlers$JavacHandlerUtil$MemberExistsResult */
+    private static /* synthetic */ int[] f27488x2486df07;
+
+    /* JADX INFO: renamed from: $SWITCH_TABLE$lombok$javac$handlers$JavacHandlerUtil$MemberExistsResult */
+    static /* synthetic */ int[] m10946x2486df07() {
+        int[] iArr = f27488x2486df07;
         if (iArr != null) {
             return iArr;
         }
@@ -64,7 +67,7 @@ public class HandleSuperBuilder extends JavacAnnotationHandler<SuperBuilder> {
             iArr2[JavacHandlerUtil.MemberExistsResult.NOT_EXISTS.ordinal()] = 1;
         } catch (NoSuchFieldError unused3) {
         }
-        $SWITCH_TABLE$lombok$javac$handlers$JavacHandlerUtil$MemberExistsResult = iArr2;
+        f27488x2486df07 = iArr2;
         return iArr2;
     }
 
@@ -131,7 +134,7 @@ public class HandleSuperBuilder extends JavacAnnotationHandler<SuperBuilder> {
             generateBuilderMethod = true;
         }
         if (HandlerUtil.checkName("buildMethodName", job.buildMethodName, annotationNode)) {
-            JavacNode parent = annotationNode.up();
+            JavacNode parent = annotationNode.m10925up();
             job.builderFields = new ArrayList();
             job.typeParams = List.nil();
             List<JCTree.JCExpression> buildMethodThrownExceptions = List.nil();
@@ -342,7 +345,7 @@ public class HandleSuperBuilder extends JavacAnnotationHandler<SuperBuilder> {
                         JavacHandlerUtil.injectMethod(job.parentType, builderMethod);
                     }
                     if (job.toBuilder) {
-                        switch ($SWITCH_TABLE$lombok$javac$handlers$JavacHandlerUtil$MemberExistsResult()[JavacHandlerUtil.methodExists("toBuilder", job.parentType, 0).ordinal()]) {
+                        switch (m10946x2486df07()[JavacHandlerUtil.methodExists("toBuilder", job.parentType, 0).ordinal()]) {
                             case 1:
                                 JCTree.JCMethodDecl md3 = generateToBuilderMethod(job);
                                 if (md3 != null) {
@@ -423,7 +426,7 @@ public class HandleSuperBuilder extends JavacAnnotationHandler<SuperBuilder> {
                 JCTree.JCFieldAccess fieldInThis2 = maker.Select(maker.Ident(job.toName("this")), bfd.rawName);
                 JCTree.JCExpression parentTypeRef = JavacHandlerUtil.namePlusTypeParamsToTypeReference(maker, job.parentType, List.nil());
                 JCTree.JCAssign assignDefault = maker.Assign(fieldInThis2, maker.Apply(JavacHandlerUtil.typeParameterNames(maker, job.parentType.get().typarams), maker.Select(parentTypeRef, bfd.nameOfDefaultProvider), List.nil()));
-                statements.append(maker.If(setField, jCExpressionStatementExec, maker.Exec(assignDefault)));
+                statements.append(maker.m10940If(setField, jCExpressionStatementExec, maker.Exec(assignDefault)));
             } else {
                 statements.append(jCExpressionStatementExec);
             }
@@ -605,7 +608,7 @@ public class HandleSuperBuilder extends JavacAnnotationHandler<SuperBuilder> {
         }
         JCTree.JCModifiers modifiers = maker.Modifiers(4L, annsOnMethod.prepend(overrideAnnotation));
         Name name = job.toName(SELF_METHOD);
-        JCTree.JCExpression returnType = JavacHandlerUtil.namePlusTypeParamsToTypeReference(maker, job.builderType.up(), job.getBuilderClassName(), false, job.typeParams);
+        JCTree.JCExpression returnType = JavacHandlerUtil.namePlusTypeParamsToTypeReference(maker, job.builderType.m10925up(), job.getBuilderClassName(), false, job.typeParams);
         JCTree.JCBlock body = maker.Block(0L, List.of(maker.Return(maker.Ident(job.toName("this")))));
         return maker.MethodDef(modifiers, name, returnType, List.nil(), List.nil(), List.nil(), body, null);
     }

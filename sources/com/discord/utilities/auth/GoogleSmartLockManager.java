@@ -6,19 +6,6 @@ import android.content.Intent;
 import android.content.IntentSender;
 import android.net.Uri;
 import androidx.fragment.app.Fragment;
-import b.c.a.a0.AnimatableValueParser;
-import b.d.b.a.outline;
-import b.i.a.f.c.a.a;
-import b.i.a.f.c.a.d.b;
-import b.i.a.f.c.a.d.c;
-import b.i.a.f.c.a.d.d;
-import b.i.a.f.e.k.k;
-import b.i.a.f.e.k.s;
-import b.i.a.f.e.k.v;
-import b.i.a.f.h.c.g;
-import b.i.a.f.h.c.h;
-import b.i.a.f.h.c.i;
-import b.i.a.f.h.c.l;
 import com.discord.app.AppFragment;
 import com.discord.app.AppLog;
 import com.discord.models.domain.ModelAuditLogEntry;
@@ -29,7 +16,7 @@ import com.discord.stores.StoreUser;
 import com.discord.utilities.error.Error;
 import com.discord.utilities.icon.IconUtils;
 import com.discord.utilities.logging.Logger;
-import com.discord.utilities.rx.ObservableExtensionsKt;
+import com.discord.utilities.p501rx.ObservableExtensionsKt;
 import com.discord.utilities.user.UserUtils;
 import com.discord.widgets.settings.account.WidgetSettingsAccount;
 import com.discord.widgets.settings.account.WidgetSettingsAccountChangePassword;
@@ -41,11 +28,6 @@ import com.google.android.gms.common.api.ApiException;
 import com.google.android.gms.common.api.ResolvableApiException;
 import com.google.android.gms.tasks.Task;
 import com.google.android.gms.tasks.TaskCompletionSource;
-import d0.e0.KClass;
-import d0.t.Collections2;
-import d0.z.d.Intrinsics3;
-import d0.z.d.Lambda;
-import d0.z.d.Reflection2;
 import java.util.List;
 import java.util.Objects;
 import kotlin.Unit;
@@ -53,8 +35,31 @@ import kotlin.jvm.functions.Function0;
 import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import org.objectweb.asm.Opcodes;
-import rx.Observable;
-import rx.Subscription;
+import p007b.p085c.p086a.p087a0.C1460d;
+import p007b.p100d.p104b.p105a.C1643a;
+import p007b.p225i.p226a.p288f.p292c.p293a.C3183a;
+import p007b.p225i.p226a.p288f.p292c.p293a.p294d.C3186a;
+import p007b.p225i.p226a.p288f.p292c.p293a.p294d.C3189d;
+import p007b.p225i.p226a.p288f.p292c.p293a.p294d.InterfaceC3187b;
+import p007b.p225i.p226a.p288f.p292c.p293a.p294d.InterfaceC3188c;
+import p007b.p225i.p226a.p288f.p299e.p300h.AbstractC3268c;
+import p007b.p225i.p226a.p288f.p299e.p300h.p301j.AbstractC3284d;
+import p007b.p225i.p226a.p288f.p299e.p304k.C3363k;
+import p007b.p225i.p226a.p288f.p299e.p304k.C3379s;
+import p007b.p225i.p226a.p288f.p299e.p304k.C3385v;
+import p007b.p225i.p226a.p288f.p313h.p316c.C3458g;
+import p007b.p225i.p226a.p288f.p313h.p316c.C3459h;
+import p007b.p225i.p226a.p288f.p313h.p316c.C3460i;
+import p007b.p225i.p226a.p288f.p313h.p316c.C3462k;
+import p007b.p225i.p226a.p288f.p313h.p316c.C3463l;
+import p007b.p225i.p226a.p288f.p340n.InterfaceC4357c;
+import p507d0.p513e0.InterfaceC11230c;
+import p507d0.p580t.C12147n;
+import p507d0.p592z.p594d.AbstractC12240o;
+import p507d0.p592z.p594d.C12216a0;
+import p507d0.p592z.p594d.C12238m;
+import p658rx.Observable;
+import p658rx.Subscription;
 
 /* JADX INFO: compiled from: GoogleSmartLockManager.kt */
 /* JADX INFO: loaded from: classes2.dex */
@@ -69,7 +74,7 @@ public final class GoogleSmartLockManager {
     public static final boolean SET_DISCORD_ACCOUNT_DETAILS = true;
     public static final String SMART_LOCK_NOTICE_NAME = "smartlock_resolution_";
     private CredentialsClient credentialsClient;
-    private final List<KClass<? extends AppFragment>> resolvableFragments;
+    private final List<InterfaceC11230c<? extends AppFragment>> resolvableFragments;
     private final GoogleSmartLockRepo smartLockRepo;
 
     /* JADX INFO: compiled from: GoogleSmartLockManager.kt */
@@ -82,8 +87,8 @@ public final class GoogleSmartLockManager {
                 return;
             }
             Credential credential = (Credential) data.getParcelableExtra("com.google.android.gms.credentials.Credential");
-            String str = credential != null ? credential.j : null;
-            String str2 = credential != null ? credential.n : null;
+            String str = credential != null ? credential.f20389j : null;
+            String str2 = credential != null ? credential.f20393n : null;
             if (str == null || str2 == null) {
                 return;
             }
@@ -101,8 +106,8 @@ public final class GoogleSmartLockManager {
         private final String password;
 
         public SmartLockCredentials(String str, String str2) {
-            Intrinsics3.checkNotNullParameter(str, ModelAuditLogEntry.CHANGE_KEY_ID);
-            Intrinsics3.checkNotNullParameter(str2, WidgetSettingsAccountChangePassword.CURRENT_PASSWORD_FIELD);
+            C12238m.checkNotNullParameter(str, ModelAuditLogEntry.CHANGE_KEY_ID);
+            C12238m.checkNotNullParameter(str2, WidgetSettingsAccountChangePassword.CURRENT_PASSWORD_FIELD);
             this.id = str;
             this.password = str2;
         }
@@ -128,8 +133,8 @@ public final class GoogleSmartLockManager {
         }
 
         public final SmartLockCredentials copy(String id2, String password) {
-            Intrinsics3.checkNotNullParameter(id2, ModelAuditLogEntry.CHANGE_KEY_ID);
-            Intrinsics3.checkNotNullParameter(password, WidgetSettingsAccountChangePassword.CURRENT_PASSWORD_FIELD);
+            C12238m.checkNotNullParameter(id2, ModelAuditLogEntry.CHANGE_KEY_ID);
+            C12238m.checkNotNullParameter(password, WidgetSettingsAccountChangePassword.CURRENT_PASSWORD_FIELD);
             return new SmartLockCredentials(id2, password);
         }
 
@@ -141,7 +146,7 @@ public final class GoogleSmartLockManager {
                 return false;
             }
             SmartLockCredentials smartLockCredentials = (SmartLockCredentials) other;
-            return Intrinsics3.areEqual(this.id, smartLockCredentials.id) && Intrinsics3.areEqual(this.password, smartLockCredentials.password);
+            return C12238m.areEqual(this.id, smartLockCredentials.id) && C12238m.areEqual(this.password, smartLockCredentials.password);
         }
 
         public final String getId() {
@@ -160,21 +165,21 @@ public final class GoogleSmartLockManager {
         }
 
         public String toString() {
-            StringBuilder sbU = outline.U("SmartLockCredentials(id=");
-            sbU.append(this.id);
-            sbU.append(", password=");
-            return outline.J(sbU, this.password, ")");
+            StringBuilder sbM833U = C1643a.m833U("SmartLockCredentials(id=");
+            sbM833U.append(this.id);
+            sbM833U.append(", password=");
+            return C1643a.m822J(sbM833U, this.password, ")");
         }
     }
 
-    /* JADX INFO: renamed from: com.discord.utilities.auth.GoogleSmartLockManager$saveCredentials$1, reason: invalid class name */
+    /* JADX INFO: renamed from: com.discord.utilities.auth.GoogleSmartLockManager$saveCredentials$1 */
     /* JADX INFO: compiled from: GoogleSmartLockManager.kt */
-    public static final class AnonymousClass1 extends Lambda implements Function1<MeUser, Unit> {
+    public static final class C67001 extends AbstractC12240o implements Function1<MeUser, Unit> {
         public final /* synthetic */ String $id;
         public final /* synthetic */ String $password;
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-        public AnonymousClass1(String str, String str2) {
+        public C67001(String str, String str2) {
             super(1);
             this.$id = str;
             this.$password = str2;
@@ -183,95 +188,95 @@ public final class GoogleSmartLockManager {
         @Override // kotlin.jvm.functions.Function1
         public /* bridge */ /* synthetic */ Unit invoke(MeUser meUser) {
             invoke2(meUser);
-            return Unit.a;
+            return Unit.f27425a;
         }
 
         /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
         public final void invoke2(MeUser meUser) {
             String forUser$default = IconUtils.getForUser$default(meUser, false, null, 4, null);
-            Credential.a aVar = new Credential.a(this.$id);
-            aVar.d = this.$password;
-            Intrinsics3.checkNotNullExpressionValue(aVar, "Credential.Builder(id)\n …   .setPassword(password)");
+            Credential.C10792a c10792a = new Credential.C10792a(this.$id);
+            c10792a.f20400d = this.$password;
+            C12238m.checkNotNullExpressionValue(c10792a, "Credential.Builder(id)\n …   .setPassword(password)");
             UserUtils userUtils = UserUtils.INSTANCE;
-            Intrinsics3.checkNotNullExpressionValue(meUser, "it");
-            aVar.f2995b = UserUtils.getUserNameWithDiscriminator$default(userUtils, meUser, null, null, 3, null).toString();
-            aVar.c = Uri.parse(forUser$default);
-            Credential credentialA = aVar.a();
+            C12238m.checkNotNullExpressionValue(meUser, "it");
+            c10792a.f20398b = UserUtils.getUserNameWithDiscriminator$default(userUtils, meUser, null, null, 3, null).toString();
+            c10792a.f20399c = Uri.parse(forUser$default);
+            Credential credentialM9009a = c10792a.m9009a();
             CredentialsClient credentialsClient = GoogleSmartLockManager.this.credentialsClient;
             Objects.requireNonNull(credentialsClient);
-            c cVar = a.g;
-            b.i.a.f.e.h.c cVar2 = credentialsClient.g;
-            Objects.requireNonNull((h) cVar);
-            AnimatableValueParser.z(cVar2, "client must not be null");
-            AnimatableValueParser.z(credentialA, "credential must not be null");
-            k.a(cVar2.b(new i(cVar2, credentialA))).b(new b.i.a.f.n.c<Void>() { // from class: com.discord.utilities.auth.GoogleSmartLockManager.saveCredentials.1.1
-                @Override // b.i.a.f.n.c
+            InterfaceC3188c interfaceC3188c = C3183a.f9209g;
+            AbstractC3268c abstractC3268c = credentialsClient.f9332g;
+            Objects.requireNonNull((C3459h) interfaceC3188c);
+            C1460d.m595z(abstractC3268c, "client must not be null");
+            C1460d.m595z(credentialM9009a, "credential must not be null");
+            C3363k.m4164a(abstractC3268c.mo4049b(new C3460i(abstractC3268c, credentialM9009a))).mo6007b(new InterfaceC4357c<Void>() { // from class: com.discord.utilities.auth.GoogleSmartLockManager.saveCredentials.1.1
+                @Override // p007b.p225i.p226a.p288f.p340n.InterfaceC4357c
                 public final void onComplete(Task<Void> task) {
-                    Intrinsics3.checkNotNullExpressionValue(task, "task");
-                    if (task.p()) {
-                        Logger.i$default(AppLog.g, "Google Smart Lock", "Credentials Saved", null, 4, null);
+                    C12238m.checkNotNullExpressionValue(task, "task");
+                    if (task.mo6021p()) {
+                        Logger.i$default(AppLog.f14950g, "Google Smart Lock", "Credentials Saved", null, 4, null);
                         return;
                     }
-                    Exception excK = task.k();
-                    if (!(excK instanceof ResolvableApiException)) {
-                        AppLog.g.w("Google Smart Lock", "Exception saving credentials", excK);
+                    Exception excMo6016k = task.mo6016k();
+                    if (!(excMo6016k instanceof ResolvableApiException)) {
+                        AppLog.f14950g.mo8369w("Google Smart Lock", "Exception saving credentials", excMo6016k);
                         return;
                     }
-                    AppLog.g.w("Google Smart Lock", "Resolving Exception saving credentials", excK);
-                    AnonymousClass1 anonymousClass1 = AnonymousClass1.this;
-                    GoogleSmartLockManager.this.resolveResult((ResolvableApiException) excK, anonymousClass1.$id);
+                    AppLog.f14950g.mo8369w("Google Smart Lock", "Resolving Exception saving credentials", excMo6016k);
+                    C67001 c67001 = C67001.this;
+                    GoogleSmartLockManager.this.resolveResult((ResolvableApiException) excMo6016k, c67001.$id);
                 }
             });
         }
     }
 
     public GoogleSmartLockManager(Context context, GoogleSmartLockRepo googleSmartLockRepo) {
-        Intrinsics3.checkNotNullParameter(context, "context");
-        Intrinsics3.checkNotNullParameter(googleSmartLockRepo, "smartLockRepo");
+        C12238m.checkNotNullParameter(context, "context");
+        C12238m.checkNotNullParameter(googleSmartLockRepo, "smartLockRepo");
         this.smartLockRepo = googleSmartLockRepo;
-        this.resolvableFragments = Collections2.listOf((Object[]) new KClass[]{Reflection2.getOrCreateKotlinClass(WidgetTabsHost.class), Reflection2.getOrCreateKotlinClass(WidgetSettingsAccount.class)});
-        d.a aVar = new d.a();
-        aVar.f1333b = Boolean.TRUE;
-        CredentialsClient credentialsClient = new CredentialsClient(context, new d(aVar, null));
-        Intrinsics3.checkNotNullExpressionValue(credentialsClient, "Credentials.getClient(context, options)");
+        this.resolvableFragments = C12147n.listOf((Object[]) new InterfaceC11230c[]{C12216a0.getOrCreateKotlinClass(WidgetTabsHost.class), C12216a0.getOrCreateKotlinClass(WidgetSettingsAccount.class)});
+        C3189d.a aVar = new C3189d.a();
+        aVar.f9215b = Boolean.TRUE;
+        CredentialsClient credentialsClient = new CredentialsClient(context, new C3189d(aVar, null));
+        C12238m.checkNotNullExpressionValue(credentialsClient, "Credentials.getClient(context, options)");
         this.credentialsClient = credentialsClient;
         if (googleSmartLockRepo.getDisableAutoLogin()) {
             CredentialsClient credentialsClient2 = this.credentialsClient;
             Objects.requireNonNull(credentialsClient2);
-            c cVar = a.g;
-            b.i.a.f.e.h.c cVar2 = credentialsClient2.g;
-            Objects.requireNonNull((h) cVar);
-            AnimatableValueParser.z(cVar2, "client must not be null");
-            k.a(cVar2.b(new b.i.a.f.h.c.k(cVar2)));
+            InterfaceC3188c interfaceC3188c = C3183a.f9209g;
+            AbstractC3268c abstractC3268c = credentialsClient2.f9332g;
+            Objects.requireNonNull((C3459h) interfaceC3188c);
+            C1460d.m595z(abstractC3268c, "client must not be null");
+            C3363k.m4164a(abstractC3268c.mo4049b(new C3462k(abstractC3268c)));
         }
     }
 
     private final void resolveResult(Fragment fragment, int requestCode, ResolvableApiException rae) {
         try {
-            if (!(rae.mStatus.p != 4) || fragment.isDetached() || fragment.isRemoving()) {
+            if (!(rae.mStatus.f20495p != 4) || fragment.isDetached() || fragment.isRemoving()) {
                 return;
             }
-            PendingIntent pendingIntent = rae.mStatus.r;
-            Intrinsics3.checkNotNullExpressionValue(pendingIntent, "rae.resolution");
+            PendingIntent pendingIntent = rae.mStatus.f20497r;
+            C12238m.checkNotNullExpressionValue(pendingIntent, "rae.resolution");
             fragment.startIntentSenderForResult(pendingIntent.getIntentSender(), requestCode, null, 0, 0, 0, null);
         } catch (IntentSender.SendIntentException e) {
-            AppLog.g.w("Google Smart Lock", "Failed to send resolution.", e);
+            AppLog.f14950g.mo8369w("Google Smart Lock", "Failed to send resolution.", e);
         } catch (Exception e2) {
-            AppLog.g.w("Google Smart Lock", "Failed to resolve", e2);
+            AppLog.f14950g.mo8369w("Google Smart Lock", "Failed to resolve", e2);
         }
     }
 
     public final void deleteCredentials(String id2) {
-        Intrinsics3.checkNotNullParameter(id2, ModelAuditLogEntry.CHANGE_KEY_ID);
+        C12238m.checkNotNullParameter(id2, ModelAuditLogEntry.CHANGE_KEY_ID);
         CredentialsClient credentialsClient = this.credentialsClient;
         Credential credential = new Credential(id2, null, null, null, null, null, null, null);
         Objects.requireNonNull(credentialsClient);
-        c cVar = a.g;
-        b.i.a.f.e.h.c cVar2 = credentialsClient.g;
-        Objects.requireNonNull((h) cVar);
-        AnimatableValueParser.z(cVar2, "client must not be null");
-        AnimatableValueParser.z(credential, "credential must not be null");
-        k.a(cVar2.b(new l(cVar2, credential)));
+        InterfaceC3188c interfaceC3188c = C3183a.f9209g;
+        AbstractC3268c abstractC3268c = credentialsClient.f9332g;
+        Objects.requireNonNull((C3459h) interfaceC3188c);
+        C1460d.m595z(abstractC3268c, "client must not be null");
+        C1460d.m595z(credential, "credential must not be null");
+        C3363k.m4164a(abstractC3268c.mo4049b(new C3463l(abstractC3268c, credential)));
     }
 
     public final GoogleSmartLockRepo getSmartLockRepo() {
@@ -280,33 +285,33 @@ public final class GoogleSmartLockManager {
 
     /* JADX WARN: Type inference incomplete: some casts might be missing */
     public final void requestCredentials(final AppFragment fragment, final int requestCode) {
-        Intrinsics3.checkNotNullParameter(fragment, "fragment");
+        C12238m.checkNotNullParameter(fragment, "fragment");
         CredentialRequest credentialRequest = new CredentialRequest(4, true, new String[]{DISCORD_ACCOUNT_IDENTITY}, null, null, false, null, null, false);
         CredentialsClient credentialsClient = this.credentialsClient;
         Objects.requireNonNull(credentialsClient);
-        c cVar = a.g;
-        b.i.a.f.e.h.c cVar2 = credentialsClient.g;
-        Objects.requireNonNull((h) cVar);
-        AnimatableValueParser.z(cVar2, "client must not be null");
-        AnimatableValueParser.z(credentialRequest, "request must not be null");
-        b.i.a.f.e.h.j.d dVarA = cVar2.a(new g(cVar2, credentialRequest));
-        v vVar = new v(new b.i.a.f.c.a.d.a());
-        k.b bVar = k.a;
+        InterfaceC3188c interfaceC3188c = C3183a.f9209g;
+        AbstractC3268c abstractC3268c = credentialsClient.f9332g;
+        Objects.requireNonNull((C3459h) interfaceC3188c);
+        C1460d.m595z(abstractC3268c, "client must not be null");
+        C1460d.m595z(credentialRequest, "request must not be null");
+        AbstractC3284d abstractC3284dMo4048a = abstractC3268c.mo4048a(new C3458g(abstractC3268c, credentialRequest));
+        C3385v c3385v = new C3385v(new C3186a());
+        C3363k.b bVar = C3363k.f9531a;
         TaskCompletionSource taskCompletionSource = new TaskCompletionSource();
-        dVarA.c(new s(dVarA, taskCompletionSource, vVar, bVar));
-        taskCompletionSource.a.b((b.i.a.f.n.c<TResult>) new b.i.a.f.n.c<b.i.a.f.c.a.d.a>() { // from class: com.discord.utilities.auth.GoogleSmartLockManager.requestCredentials.1
-            @Override // b.i.a.f.n.c
-            public final void onComplete(Task<b.i.a.f.c.a.d.a> task) {
-                Intrinsics3.checkNotNullExpressionValue(task, "task");
-                if (task.p()) {
-                    b.i.a.f.c.a.d.a aVarL = task.l();
-                    Intrinsics3.checkNotNullExpressionValue(aVarL, "task.result");
-                    Credential credentialR = ((b) aVarL.a).R();
-                    String str = credentialR != null ? credentialR.j : null;
-                    b.i.a.f.c.a.d.a aVarL2 = task.l();
-                    Intrinsics3.checkNotNullExpressionValue(aVarL2, "task.result");
-                    Credential credentialR2 = ((b) aVarL2.a).R();
-                    String str2 = credentialR2 != null ? credentialR2.n : null;
+        abstractC3284dMo4048a.mo4051c(new C3379s(abstractC3284dMo4048a, taskCompletionSource, c3385v, bVar));
+        taskCompletionSource.f20845a.mo6007b((InterfaceC4357c<TResult>) new InterfaceC4357c<C3186a>() { // from class: com.discord.utilities.auth.GoogleSmartLockManager.requestCredentials.1
+            @Override // p007b.p225i.p226a.p288f.p340n.InterfaceC4357c
+            public final void onComplete(Task<C3186a> task) {
+                C12238m.checkNotNullExpressionValue(task, "task");
+                if (task.mo6021p()) {
+                    C3186a c3186aMo6017l = task.mo6017l();
+                    C12238m.checkNotNullExpressionValue(c3186aMo6017l, "task.result");
+                    Credential credentialMo3969R = ((InterfaceC3187b) c3186aMo6017l.f9340a).mo3969R();
+                    String str = credentialMo3969R != null ? credentialMo3969R.f20389j : null;
+                    C3186a c3186aMo6017l2 = task.mo6017l();
+                    C12238m.checkNotNullExpressionValue(c3186aMo6017l2, "task.result");
+                    Credential credentialMo3969R2 = ((InterfaceC3187b) c3186aMo6017l2.f9340a).mo3969R();
+                    String str2 = credentialMo3969R2 != null ? credentialMo3969R2.f20393n : null;
                     if (str == null || str2 == null) {
                         return;
                     }
@@ -314,19 +319,19 @@ public final class GoogleSmartLockManager {
                     GoogleSmartLockManager.this.getSmartLockRepo().setSmartLockLogin(str, str2);
                     return;
                 }
-                Exception excK = task.k();
-                if (!(excK instanceof ResolvableApiException)) {
-                    if (excK instanceof ApiException) {
-                        AppLog.g.w("Google Smart Lock", "API Exception requesting credentials", excK);
+                Exception excMo6016k = task.mo6016k();
+                if (!(excMo6016k instanceof ResolvableApiException)) {
+                    if (excMo6016k instanceof ApiException) {
+                        AppLog.f14950g.mo8369w("Google Smart Lock", "API Exception requesting credentials", excMo6016k);
                         return;
                     } else {
-                        AppLog.g.w("Google Smart Lock", "Exception requesting credentials", excK);
+                        AppLog.f14950g.mo8369w("Google Smart Lock", "Exception requesting credentials", excMo6016k);
                         return;
                     }
                 }
-                ResolvableApiException resolvableApiException = (ResolvableApiException) excK;
-                boolean z2 = resolvableApiException.mStatus.p != 4;
-                AppLog.g.w("Google Smart Lock", "Resolvable Exception requesting credentials", excK);
+                ResolvableApiException resolvableApiException = (ResolvableApiException) excMo6016k;
+                boolean z2 = resolvableApiException.mStatus.f20495p != 4;
+                AppLog.f14950g.mo8369w("Google Smart Lock", "Resolvable Exception requesting credentials", excMo6016k);
                 if (z2) {
                     GoogleSmartLockManager.this.resolveResult(fragment, requestCode, resolvableApiException);
                 }
@@ -335,15 +340,15 @@ public final class GoogleSmartLockManager {
     }
 
     public final void saveCredentials(String id2, String password) {
-        Intrinsics3.checkNotNullParameter(id2, ModelAuditLogEntry.CHANGE_KEY_ID);
-        Intrinsics3.checkNotNullParameter(password, WidgetSettingsAccountChangePassword.CURRENT_PASSWORD_FIELD);
-        Observable observableZ = StoreUser.observeMe$default(StoreStream.INSTANCE.getUsers(), false, 1, null).Z(1);
-        Intrinsics3.checkNotNullExpressionValue(observableZ, "StoreStream.getUsers().observeMe().take(1)");
-        ObservableExtensionsKt.appSubscribe(observableZ, (Class<?>) GoogleSmartLockManager.class, (58 & 2) != 0 ? null : null, (Function1<? super Subscription, Unit>) ((58 & 4) != 0 ? null : null), (Function1<? super Error, Unit>) ((58 & 8) != 0 ? null : null), (Function0<Unit>) ((58 & 16) != 0 ? ObservableExtensionsKt.AnonymousClass1.INSTANCE : null), (Function0<Unit>) ((58 & 32) != 0 ? ObservableExtensionsKt.AnonymousClass2.INSTANCE : null), new AnonymousClass1(id2, password));
+        C12238m.checkNotNullParameter(id2, ModelAuditLogEntry.CHANGE_KEY_ID);
+        C12238m.checkNotNullParameter(password, WidgetSettingsAccountChangePassword.CURRENT_PASSWORD_FIELD);
+        Observable observableM11100Z = StoreUser.observeMe$default(StoreStream.INSTANCE.getUsers(), false, 1, null).m11100Z(1);
+        C12238m.checkNotNullExpressionValue(observableM11100Z, "StoreStream.getUsers().observeMe().take(1)");
+        ObservableExtensionsKt.appSubscribe(observableM11100Z, (Class<?>) GoogleSmartLockManager.class, (58 & 2) != 0 ? null : null, (Function1<? super Subscription, Unit>) ((58 & 4) != 0 ? null : null), (Function1<? super Error, Unit>) ((58 & 8) != 0 ? null : null), (Function0<Unit>) ((58 & 16) != 0 ? ObservableExtensionsKt.C68791.INSTANCE : null), (Function0<Unit>) ((58 & 32) != 0 ? ObservableExtensionsKt.C68802.INSTANCE : null), new C67001(id2, password));
     }
 
     public final void updateAccountInfo(String login, String newPassword) {
-        Intrinsics3.checkNotNullParameter(newPassword, "newPassword");
+        C12238m.checkNotNullParameter(newPassword, "newPassword");
         String pendingIdChange = this.smartLockRepo.getPendingIdChange();
         if (pendingIdChange != null) {
             deleteCredentials(pendingIdChange);
@@ -359,13 +364,13 @@ public final class GoogleSmartLockManager {
 
     private final void resolveResult(ResolvableApiException rae, String id2) {
         try {
-            if (rae.mStatus.p != 4) {
-                StoreStream.INSTANCE.getNotices().requestToShow(new StoreNotices.Notice(SMART_LOCK_NOTICE_NAME + id2, null, 0L, 0, false, this.resolvableFragments, 0L, false, 0L, new GoogleSmartLockManager2(this, rae), Opcodes.I2F, null));
+            if (rae.mStatus.f20495p != 4) {
+                StoreStream.INSTANCE.getNotices().requestToShow(new StoreNotices.Notice(SMART_LOCK_NOTICE_NAME + id2, null, 0L, 0, false, this.resolvableFragments, 0L, false, 0L, new GoogleSmartLockManager$resolveResult$notice$1(this, rae), Opcodes.I2F, null));
             }
         } catch (IntentSender.SendIntentException e) {
-            AppLog.g.w("Google Smart Lock", "Failed to send resolution.", e);
+            AppLog.f14950g.mo8369w("Google Smart Lock", "Failed to send resolution.", e);
         } catch (Exception e2) {
-            AppLog.g.w("Google Smart Lock", "Failed to resolve", e2);
+            AppLog.f14950g.mo8369w("Google Smart Lock", "Failed to resolve", e2);
         }
     }
 

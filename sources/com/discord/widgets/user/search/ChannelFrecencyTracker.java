@@ -1,10 +1,10 @@
 package com.discord.widgets.user.search;
 
 import com.discord.utilities.frecency.FrecencyTracker;
-import d0.z.d.Intrinsics3;
 import java.util.Iterator;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
+import p507d0.p592z.p594d.C12238m;
 
 /* JADX INFO: compiled from: ChannelFrecencyTracker.kt */
 /* JADX INFO: loaded from: classes.dex */
@@ -18,7 +18,7 @@ public final class ChannelFrecencyTracker extends FrecencyTracker<Long> {
 
     @Override // com.discord.utilities.frecency.FrecencyTracker
     public int computeScore(List<Long> list, long j) {
-        Intrinsics3.checkNotNullParameter(list, "$this$computeScore");
+        C12238m.checkNotNullParameter(list, "$this$computeScore");
         Iterator<T> it = list.iterator();
         int iPow = 0;
         while (it.hasNext()) {

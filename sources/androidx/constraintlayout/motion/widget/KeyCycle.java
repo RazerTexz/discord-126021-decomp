@@ -5,12 +5,12 @@ import android.content.res.TypedArray;
 import android.util.AttributeSet;
 import android.util.Log;
 import android.util.SparseIntArray;
+import androidx.constraintlayout.widget.C0201R;
 import androidx.constraintlayout.widget.ConstraintAttribute;
-import androidx.constraintlayout.widget.R;
-import b.d.b.a.outline;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Iterator;
+import p007b.p100d.p104b.p105a.C1643a;
 
 /* JADX INFO: loaded from: classes.dex */
 public class KeyCycle extends Key {
@@ -62,26 +62,26 @@ public class KeyCycle extends Key {
         static {
             SparseIntArray sparseIntArray = new SparseIntArray();
             mAttrMap = sparseIntArray;
-            sparseIntArray.append(R.styleable.KeyCycle_motionTarget, 1);
-            mAttrMap.append(R.styleable.KeyCycle_framePosition, 2);
-            mAttrMap.append(R.styleable.KeyCycle_transitionEasing, 3);
-            mAttrMap.append(R.styleable.KeyCycle_curveFit, 4);
-            mAttrMap.append(R.styleable.KeyCycle_waveShape, 5);
-            mAttrMap.append(R.styleable.KeyCycle_wavePeriod, 6);
-            mAttrMap.append(R.styleable.KeyCycle_waveOffset, 7);
-            mAttrMap.append(R.styleable.KeyCycle_waveVariesBy, 8);
-            mAttrMap.append(R.styleable.KeyCycle_android_alpha, 9);
-            mAttrMap.append(R.styleable.KeyCycle_android_elevation, 10);
-            mAttrMap.append(R.styleable.KeyCycle_android_rotation, 11);
-            mAttrMap.append(R.styleable.KeyCycle_android_rotationX, 12);
-            mAttrMap.append(R.styleable.KeyCycle_android_rotationY, 13);
-            mAttrMap.append(R.styleable.KeyCycle_transitionPathRotate, 14);
-            mAttrMap.append(R.styleable.KeyCycle_android_scaleX, 15);
-            mAttrMap.append(R.styleable.KeyCycle_android_scaleY, 16);
-            mAttrMap.append(R.styleable.KeyCycle_android_translationX, 17);
-            mAttrMap.append(R.styleable.KeyCycle_android_translationY, 18);
-            mAttrMap.append(R.styleable.KeyCycle_android_translationZ, 19);
-            mAttrMap.append(R.styleable.KeyCycle_motionProgress, 20);
+            sparseIntArray.append(C0201R.styleable.KeyCycle_motionTarget, 1);
+            mAttrMap.append(C0201R.styleable.KeyCycle_framePosition, 2);
+            mAttrMap.append(C0201R.styleable.KeyCycle_transitionEasing, 3);
+            mAttrMap.append(C0201R.styleable.KeyCycle_curveFit, 4);
+            mAttrMap.append(C0201R.styleable.KeyCycle_waveShape, 5);
+            mAttrMap.append(C0201R.styleable.KeyCycle_wavePeriod, 6);
+            mAttrMap.append(C0201R.styleable.KeyCycle_waveOffset, 7);
+            mAttrMap.append(C0201R.styleable.KeyCycle_waveVariesBy, 8);
+            mAttrMap.append(C0201R.styleable.KeyCycle_android_alpha, 9);
+            mAttrMap.append(C0201R.styleable.KeyCycle_android_elevation, 10);
+            mAttrMap.append(C0201R.styleable.KeyCycle_android_rotation, 11);
+            mAttrMap.append(C0201R.styleable.KeyCycle_android_rotationX, 12);
+            mAttrMap.append(C0201R.styleable.KeyCycle_android_rotationY, 13);
+            mAttrMap.append(C0201R.styleable.KeyCycle_transitionPathRotate, 14);
+            mAttrMap.append(C0201R.styleable.KeyCycle_android_scaleX, 15);
+            mAttrMap.append(C0201R.styleable.KeyCycle_android_scaleY, 16);
+            mAttrMap.append(C0201R.styleable.KeyCycle_android_translationX, 17);
+            mAttrMap.append(C0201R.styleable.KeyCycle_android_translationY, 18);
+            mAttrMap.append(C0201R.styleable.KeyCycle_android_translationZ, 19);
+            mAttrMap.append(C0201R.styleable.KeyCycle_motionProgress, 20);
         }
 
         private Loader() {
@@ -167,11 +167,11 @@ public class KeyCycle extends Key {
                         keyCycle.mProgress = typedArray.getFloat(index, keyCycle.mProgress);
                         break;
                     default:
-                        StringBuilder sbU = outline.U("unused attribute 0x");
-                        sbU.append(Integer.toHexString(index));
-                        sbU.append("   ");
-                        sbU.append(mAttrMap.get(index));
-                        Log.e("KeyCycle", sbU.toString());
+                        StringBuilder sbM833U = C1643a.m833U("unused attribute 0x");
+                        sbM833U.append(Integer.toHexString(index));
+                        sbM833U.append("   ");
+                        sbM833U.append(mAttrMap.get(index));
+                        Log.e("KeyCycle", sbM833U.toString());
                         break;
                 }
             }
@@ -201,10 +201,10 @@ public class KeyCycle extends Key {
 
     @Override // androidx.constraintlayout.motion.widget.Key
     public void addValues(HashMap<String, SplineSet> map) {
-        StringBuilder sbU = outline.U("add ");
-        sbU.append(map.size());
-        sbU.append(" values");
-        Debug.logStack("KeyCycle", sbU.toString(), 2);
+        StringBuilder sbM833U = C1643a.m833U("add ");
+        sbM833U.append(map.size());
+        sbM833U.append(" values");
+        Debug.logStack("KeyCycle", sbM833U.toString(), 2);
         for (String str : map.keySet()) {
             SplineSet splineSet = map.get(str);
             str.hashCode();
@@ -336,7 +336,7 @@ public class KeyCycle extends Key {
 
     @Override // androidx.constraintlayout.motion.widget.Key
     public void load(Context context, AttributeSet attributeSet) {
-        Loader.read(this, context.obtainStyledAttributes(attributeSet, R.styleable.KeyCycle));
+        Loader.read(this, context.obtainStyledAttributes(attributeSet, C0201R.styleable.KeyCycle));
     }
 
     @Override // androidx.constraintlayout.motion.widget.Key

@@ -1,8 +1,6 @@
 package com.discord.widgets.guilds.invite;
 
 import androidx.annotation.MainThread;
-import b.a.d.AppViewModel;
-import b.d.b.a.outline;
 import com.discord.app.AppComponent;
 import com.discord.app.AppLog;
 import com.discord.models.domain.ModelInvite;
@@ -11,22 +9,24 @@ import com.discord.stores.StoreInviteSettings;
 import com.discord.stores.StoreStream;
 import com.discord.utilities.error.Error;
 import com.discord.utilities.logging.Logger;
-import com.discord.utilities.rx.ObservableExtensionsKt;
+import com.discord.utilities.p501rx.ObservableExtensionsKt;
 import com.discord.widgets.guilds.invite.GuildInviteViewModel;
-import d0.z.d.Intrinsics3;
-import d0.z.d.Lambda;
-import j0.k.Func1;
-import j0.l.e.ScalarSynchronousObservable;
 import kotlin.Unit;
 import kotlin.jvm.functions.Function0;
 import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.DefaultConstructorMarker;
-import rx.Observable;
-import rx.Subscription;
+import p007b.p008a.p018d.AbstractC0859d0;
+import p007b.p100d.p104b.p105a.C1643a;
+import p507d0.p592z.p594d.AbstractC12240o;
+import p507d0.p592z.p594d.C12238m;
+import p637j0.p641k.InterfaceC12589b;
+import p637j0.p642l.p647e.C12721k;
+import p658rx.Observable;
+import p658rx.Subscription;
 
 /* JADX INFO: compiled from: GuildInviteViewModel.kt */
 /* JADX INFO: loaded from: classes2.dex */
-public final class GuildInviteViewModel extends AppViewModel<ViewState> implements AppComponent {
+public final class GuildInviteViewModel extends AbstractC0859d0<ViewState> implements AppComponent {
 
     /* JADX INFO: renamed from: Companion, reason: from kotlin metadata */
     public static final Companion INSTANCE = new Companion(null);
@@ -35,22 +35,22 @@ public final class GuildInviteViewModel extends AppViewModel<ViewState> implemen
     private boolean inviteResolved;
     private final Observable<StoreState> storeStateObservable;
 
-    /* JADX INFO: renamed from: com.discord.widgets.guilds.invite.GuildInviteViewModel$1, reason: invalid class name */
+    /* JADX INFO: renamed from: com.discord.widgets.guilds.invite.GuildInviteViewModel$1 */
     /* JADX INFO: compiled from: GuildInviteViewModel.kt */
-    public static final class AnonymousClass1 extends Lambda implements Function1<StoreState, Unit> {
-        public AnonymousClass1() {
+    public static final class C86261 extends AbstractC12240o implements Function1<StoreState, Unit> {
+        public C86261() {
             super(1);
         }
 
         @Override // kotlin.jvm.functions.Function1
         public /* bridge */ /* synthetic */ Unit invoke(StoreState storeState) {
             invoke2(storeState);
-            return Unit.a;
+            return Unit.f27425a;
         }
 
         /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
         public final void invoke2(StoreState storeState) {
-            Intrinsics3.checkNotNullParameter(storeState, "storeState");
+            C12238m.checkNotNullParameter(storeState, "storeState");
             GuildInviteViewModel.this.handleStoreState(storeState);
         }
     }
@@ -62,12 +62,12 @@ public final class GuildInviteViewModel extends AppViewModel<ViewState> implemen
 
         private final Observable<StoreState> observeStoreState(StoreInstantInvites instantInvitesStore, StoreInviteSettings.InviteCode inviteCode) {
             if (inviteCode == null) {
-                ScalarSynchronousObservable scalarSynchronousObservable = new ScalarSynchronousObservable(StoreState.Invalid.INSTANCE);
-                Intrinsics3.checkNotNullExpressionValue(scalarSynchronousObservable, "Observable.just(StoreState.Invalid)");
-                return scalarSynchronousObservable;
+                C12721k c12721k = new C12721k(StoreState.Invalid.INSTANCE);
+                C12238m.checkNotNullExpressionValue(c12721k, "Observable.just(StoreState.Invalid)");
+                return c12721k;
             }
-            Observable observableG = instantInvitesStore.observeInvite(ModelInvite.getInviteStoreKey(inviteCode.getInviteCode(), inviteCode.getEventId())).G(new Func1<StoreInstantInvites.InviteState, StoreState>() { // from class: com.discord.widgets.guilds.invite.GuildInviteViewModel$Companion$observeStoreState$1
-                @Override // j0.k.Func1
+            Observable observableM11083G = instantInvitesStore.observeInvite(ModelInvite.getInviteStoreKey(inviteCode.getInviteCode(), inviteCode.getEventId())).m11083G(new InterfaceC12589b<StoreInstantInvites.InviteState, StoreState>() { // from class: com.discord.widgets.guilds.invite.GuildInviteViewModel$Companion$observeStoreState$1
+                @Override // p637j0.p641k.InterfaceC12589b
                 public final GuildInviteViewModel.StoreState call(StoreInstantInvites.InviteState inviteState) {
                     if (inviteState instanceof StoreInstantInvites.InviteState.Loading) {
                         return GuildInviteViewModel.StoreState.Loading.INSTANCE;
@@ -75,8 +75,8 @@ public final class GuildInviteViewModel extends AppViewModel<ViewState> implemen
                     return inviteState instanceof StoreInstantInvites.InviteState.Resolved ? new GuildInviteViewModel.StoreState.Loaded(((StoreInstantInvites.InviteState.Resolved) inviteState).getInvite()) : GuildInviteViewModel.StoreState.Invalid.INSTANCE;
                 }
             });
-            Intrinsics3.checkNotNullExpressionValue(observableG, "instantInvitesStore\n    …            }\n          }");
-            return observableG;
+            C12238m.checkNotNullExpressionValue(observableM11083G, "instantInvitesStore\n    …            }\n          }");
+            return observableM11083G;
         }
 
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
@@ -103,7 +103,7 @@ public final class GuildInviteViewModel extends AppViewModel<ViewState> implemen
             /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
             public Loaded(ModelInvite modelInvite) {
                 super(null);
-                Intrinsics3.checkNotNullParameter(modelInvite, "invite");
+                C12238m.checkNotNullParameter(modelInvite, "invite");
                 this.invite = modelInvite;
             }
 
@@ -120,13 +120,13 @@ public final class GuildInviteViewModel extends AppViewModel<ViewState> implemen
             }
 
             public final Loaded copy(ModelInvite invite) {
-                Intrinsics3.checkNotNullParameter(invite, "invite");
+                C12238m.checkNotNullParameter(invite, "invite");
                 return new Loaded(invite);
             }
 
             public boolean equals(Object other) {
                 if (this != other) {
-                    return (other instanceof Loaded) && Intrinsics3.areEqual(this.invite, ((Loaded) other).invite);
+                    return (other instanceof Loaded) && C12238m.areEqual(this.invite, ((Loaded) other).invite);
                 }
                 return true;
             }
@@ -144,10 +144,10 @@ public final class GuildInviteViewModel extends AppViewModel<ViewState> implemen
             }
 
             public String toString() {
-                StringBuilder sbU = outline.U("Loaded(invite=");
-                sbU.append(this.invite);
-                sbU.append(")");
-                return sbU.toString();
+                StringBuilder sbM833U = C1643a.m833U("Loaded(invite=");
+                sbM833U.append(this.invite);
+                sbM833U.append(")");
+                return sbM833U.toString();
             }
         }
 
@@ -187,7 +187,7 @@ public final class GuildInviteViewModel extends AppViewModel<ViewState> implemen
             /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
             public Loaded(ModelInvite modelInvite) {
                 super(null);
-                Intrinsics3.checkNotNullParameter(modelInvite, "invite");
+                C12238m.checkNotNullParameter(modelInvite, "invite");
                 this.invite = modelInvite;
             }
 
@@ -204,13 +204,13 @@ public final class GuildInviteViewModel extends AppViewModel<ViewState> implemen
             }
 
             public final Loaded copy(ModelInvite invite) {
-                Intrinsics3.checkNotNullParameter(invite, "invite");
+                C12238m.checkNotNullParameter(invite, "invite");
                 return new Loaded(invite);
             }
 
             public boolean equals(Object other) {
                 if (this != other) {
-                    return (other instanceof Loaded) && Intrinsics3.areEqual(this.invite, ((Loaded) other).invite);
+                    return (other instanceof Loaded) && C12238m.areEqual(this.invite, ((Loaded) other).invite);
                 }
                 return true;
             }
@@ -228,10 +228,10 @@ public final class GuildInviteViewModel extends AppViewModel<ViewState> implemen
             }
 
             public String toString() {
-                StringBuilder sbU = outline.U("Loaded(invite=");
-                sbU.append(this.invite);
-                sbU.append(")");
-                return sbU.toString();
+                StringBuilder sbM833U = C1643a.m833U("Loaded(invite=");
+                sbM833U.append(this.invite);
+                sbM833U.append(")");
+                return sbM833U.toString();
             }
         }
 
@@ -261,27 +261,27 @@ public final class GuildInviteViewModel extends AppViewModel<ViewState> implemen
         }
     }
 
-    /* JADX INFO: renamed from: com.discord.widgets.guilds.invite.GuildInviteViewModel$fetchInviteIfNotLoaded$1, reason: invalid class name */
+    /* JADX INFO: renamed from: com.discord.widgets.guilds.invite.GuildInviteViewModel$fetchInviteIfNotLoaded$1 */
     /* JADX INFO: compiled from: GuildInviteViewModel.kt */
-    public static final class AnonymousClass1 extends Lambda implements Function0<Unit> {
-        public AnonymousClass1() {
+    public static final class C86271 extends AbstractC12240o implements Function0<Unit> {
+        public C86271() {
             super(0);
         }
 
         @Override // kotlin.jvm.functions.Function0
         public /* bridge */ /* synthetic */ Unit invoke() {
             invoke2();
-            return Unit.a;
+            return Unit.f27425a;
         }
 
         /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
         public final void invoke2() {
-            AppLog appLog = AppLog.g;
-            StringBuilder sbU = outline.U("Failed to resolve invite[");
-            sbU.append(GuildInviteViewModel.this.getInviteCode().getInviteCode());
-            sbU.append("] from ");
-            sbU.append(GuildInviteViewModel.this.getInviteCode().getSource());
-            Logger.d$default(appLog, sbU.toString(), null, 2, null);
+            AppLog appLog = AppLog.f14950g;
+            StringBuilder sbM833U = C1643a.m833U("Failed to resolve invite[");
+            sbM833U.append(GuildInviteViewModel.this.getInviteCode().getInviteCode());
+            sbM833U.append("] from ");
+            sbM833U.append(GuildInviteViewModel.this.getInviteCode().getSource());
+            Logger.d$default(appLog, sbM833U.toString(), null, 2, null);
         }
     }
 
@@ -306,7 +306,7 @@ public final class GuildInviteViewModel extends AppViewModel<ViewState> implemen
         if (this.inviteCode == null) {
             return;
         }
-        StoreStream.INSTANCE.getInstantInvites().fetchInviteIfNotLoaded(this.inviteCode.getInviteCode(), this.inviteCode.getEventId(), this.inviteCode.getSource(), Boolean.valueOf(this.inviteResolved), new AnonymousClass1());
+        StoreStream.INSTANCE.getInstantInvites().fetchInviteIfNotLoaded(this.inviteCode.getInviteCode(), this.inviteCode.getEventId(), this.inviteCode.getSource(), Boolean.valueOf(this.inviteResolved), new C86271());
     }
 
     public final StoreInviteSettings.InviteCode getInviteCode() {
@@ -328,11 +328,11 @@ public final class GuildInviteViewModel extends AppViewModel<ViewState> implemen
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public GuildInviteViewModel(StoreInviteSettings.InviteCode inviteCode, StoreInstantInvites storeInstantInvites, Observable<StoreState> observable) {
         super(ViewState.Uninitialized.INSTANCE);
-        Intrinsics3.checkNotNullParameter(storeInstantInvites, "instantInvitesStore");
-        Intrinsics3.checkNotNullParameter(observable, "storeStateObservable");
+        C12238m.checkNotNullParameter(storeInstantInvites, "instantInvitesStore");
+        C12238m.checkNotNullParameter(observable, "storeStateObservable");
         this.inviteCode = inviteCode;
         this.instantInvitesStore = storeInstantInvites;
         this.storeStateObservable = observable;
-        ObservableExtensionsKt.appSubscribe(ObservableExtensionsKt.ui$default(ObservableExtensionsKt.computationLatest(observable), this, null, 2, null), (Class<?>) GuildInviteViewModel.class, (58 & 2) != 0 ? null : null, (Function1<? super Subscription, Unit>) ((58 & 4) != 0 ? null : null), (Function1<? super Error, Unit>) ((58 & 8) != 0 ? null : null), (Function0<Unit>) ((58 & 16) != 0 ? ObservableExtensionsKt.AnonymousClass1.INSTANCE : null), (Function0<Unit>) ((58 & 32) != 0 ? ObservableExtensionsKt.AnonymousClass2.INSTANCE : null), new AnonymousClass1());
+        ObservableExtensionsKt.appSubscribe(ObservableExtensionsKt.ui$default(ObservableExtensionsKt.computationLatest(observable), this, null, 2, null), (Class<?>) GuildInviteViewModel.class, (58 & 2) != 0 ? null : null, (Function1<? super Subscription, Unit>) ((58 & 4) != 0 ? null : null), (Function1<? super Error, Unit>) ((58 & 8) != 0 ? null : null), (Function0<Unit>) ((58 & 16) != 0 ? ObservableExtensionsKt.C68791.INSTANCE : null), (Function0<Unit>) ((58 & 32) != 0 ? ObservableExtensionsKt.C68802.INSTANCE : null), new C86261());
     }
 }

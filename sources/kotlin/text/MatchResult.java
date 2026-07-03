@@ -1,42 +1,46 @@
 package kotlin.text;
 
-import d0.g0.MatchResult2;
-import d0.z.d.Intrinsics3;
 import java.util.List;
-import kotlin.ranges.Ranges2;
+import kotlin.ranges.IntRange;
+import p507d0.p579g0.InterfaceC12089f;
+import p507d0.p592z.p594d.C12238m;
 
 /* JADX INFO: compiled from: MatchResult.kt */
 /* JADX INFO: loaded from: classes3.dex */
 public interface MatchResult {
 
+    /* JADX INFO: renamed from: kotlin.text.MatchResult$a */
     /* JADX INFO: compiled from: MatchResult.kt */
-    public static final class a {
-        public static b getDestructured(MatchResult matchResult) {
-            return new b(matchResult);
+    public static final class C12797a {
+        public static C12798b getDestructured(MatchResult matchResult) {
+            return new C12798b(matchResult);
         }
     }
 
+    /* JADX INFO: renamed from: kotlin.text.MatchResult$b */
     /* JADX INFO: compiled from: MatchResult.kt */
-    public static final class b {
-        public final MatchResult a;
+    public static final class C12798b {
 
-        public b(MatchResult matchResult) {
-            Intrinsics3.checkNotNullParameter(matchResult, "match");
-            this.a = matchResult;
+        /* JADX INFO: renamed from: a */
+        public final MatchResult f27452a;
+
+        public C12798b(MatchResult matchResult) {
+            C12238m.checkNotNullParameter(matchResult, "match");
+            this.f27452a = matchResult;
         }
 
         public final MatchResult getMatch() {
-            return this.a;
+            return this.f27452a;
         }
     }
 
-    b getDestructured();
+    C12798b getDestructured();
 
     List<String> getGroupValues();
 
-    MatchResult2 getGroups();
+    InterfaceC12089f getGroups();
 
-    Ranges2 getRange();
+    IntRange getRange();
 
     String getValue();
 

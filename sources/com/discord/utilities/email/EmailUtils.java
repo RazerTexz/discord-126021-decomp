@@ -1,7 +1,7 @@
 package com.discord.utilities.email;
 
-import d0.z.d.Intrinsics3;
 import kotlin.text.Regex;
+import p507d0.p592z.p594d.C12238m;
 
 /* JADX INFO: compiled from: EmailUtils.kt */
 /* JADX INFO: loaded from: classes2.dex */
@@ -13,7 +13,7 @@ public final class EmailUtils {
     }
 
     public final boolean isEmailLike(String input) {
-        Intrinsics3.checkNotNullParameter(input, "input");
+        C12238m.checkNotNullParameter(input, "input");
         return EMAIL_REGEX.matches(input);
     }
 }

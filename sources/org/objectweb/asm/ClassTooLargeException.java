@@ -1,6 +1,6 @@
 package org.objectweb.asm;
 
-import b.d.b.a.outline;
+import p007b.p100d.p104b.p105a.C1643a;
 
 /* JADX WARN: Classes with same name are omitted, all sources:
   app.apk:org/objectweb/asm/ClassTooLargeException.SCL.lombok
@@ -13,7 +13,7 @@ public final class ClassTooLargeException extends IndexOutOfBoundsException {
     private final int constantPoolCount;
 
     public ClassTooLargeException(String str, int i) {
-        super(outline.w("Class too large: ", str));
+        super(C1643a.m883w("Class too large: ", str));
         this.className = str;
         this.constantPoolCount = i;
     }

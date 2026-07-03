@@ -294,7 +294,7 @@ public abstract class PatchScript {
         public void visitEnd() {
             for (Hook transplant : this.transplants) {
                 String resourceName = AutocompleteViewModel.COMMAND_DISCOVER_TOKEN + this.transplantMapper.mapResourceName(this.classFileFormatVersion, String.valueOf(transplant.getClassSpec()) + ".class");
-                PatchScript.transplantMethod(resourceName, transplant, this.cv);
+                PatchScript.transplantMethod(resourceName, transplant, this.f27598cv);
             }
         }
 

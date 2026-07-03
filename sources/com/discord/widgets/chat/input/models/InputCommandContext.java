@@ -1,10 +1,10 @@
 package com.discord.widgets.chat.input.models;
 
-import b.d.b.a.outline;
 import com.discord.models.commands.Application;
 import com.discord.models.commands.ApplicationCommand;
-import d0.z.d.Intrinsics3;
 import kotlin.jvm.internal.DefaultConstructorMarker;
+import p007b.p100d.p104b.p105a.C1643a;
+import p507d0.p592z.p594d.C12238m;
 
 /* JADX INFO: compiled from: InputCommandContext.kt */
 /* JADX INFO: loaded from: classes2.dex */
@@ -56,7 +56,7 @@ public final /* data */ class InputCommandContext {
             return false;
         }
         InputCommandContext inputCommandContext = (InputCommandContext) other;
-        return Intrinsics3.areEqual(this.selectedApplication, inputCommandContext.selectedApplication) && Intrinsics3.areEqual(this.selectedCommand, inputCommandContext.selectedCommand);
+        return C12238m.areEqual(this.selectedApplication, inputCommandContext.selectedApplication) && C12238m.areEqual(this.selectedCommand, inputCommandContext.selectedCommand);
     }
 
     public final Application getSelectedApplication() {
@@ -80,12 +80,12 @@ public final /* data */ class InputCommandContext {
     }
 
     public String toString() {
-        StringBuilder sbU = outline.U("InputCommandContext(selectedApplication=");
-        sbU.append(this.selectedApplication);
-        sbU.append(", selectedCommand=");
-        sbU.append(this.selectedCommand);
-        sbU.append(")");
-        return sbU.toString();
+        StringBuilder sbM833U = C1643a.m833U("InputCommandContext(selectedApplication=");
+        sbM833U.append(this.selectedApplication);
+        sbM833U.append(", selectedCommand=");
+        sbM833U.append(this.selectedCommand);
+        sbM833U.append(")");
+        return sbM833U.toString();
     }
 
     public /* synthetic */ InputCommandContext(Application application, ApplicationCommand applicationCommand, int i, DefaultConstructorMarker defaultConstructorMarker) {

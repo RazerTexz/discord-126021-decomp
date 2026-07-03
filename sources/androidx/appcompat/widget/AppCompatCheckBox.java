@@ -10,7 +10,7 @@ import androidx.annotation.DrawableRes;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.annotation.RestrictTo;
-import androidx.appcompat.R;
+import androidx.appcompat.C0051R;
 import androidx.appcompat.content.res.AppCompatResources;
 import androidx.core.view.TintableBackgroundView;
 import androidx.core.widget.TintableCompoundButton;
@@ -153,7 +153,7 @@ public class AppCompatCheckBox extends CheckBox implements TintableCompoundButto
     }
 
     public AppCompatCheckBox(@NonNull Context context, @Nullable AttributeSet attributeSet) {
-        this(context, attributeSet, R.attr.checkboxStyle);
+        this(context, attributeSet, C0051R.attr.checkboxStyle);
     }
 
     public AppCompatCheckBox(@NonNull Context context, @Nullable AttributeSet attributeSet, int i) {

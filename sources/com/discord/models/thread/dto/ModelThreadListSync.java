@@ -1,6 +1,5 @@
 package com.discord.models.thread.dto;
 
-import b.d.b.a.outline;
 import com.discord.api.channel.Channel;
 import com.discord.api.message.Message;
 import com.discord.api.thread.ThreadMember;
@@ -8,14 +7,15 @@ import com.discord.models.deserialization.gson.InboundGatewayGsonParser;
 import com.discord.models.domain.Model;
 import com.discord.models.domain.ModelAuditLogEntry;
 import com.google.gson.stream.JsonToken;
-import d0.t.Collections2;
-import d0.z.d.Intrinsics3;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import kotlin.jvm.internal.Ref$LongRef;
 import kotlin.jvm.internal.Ref$ObjectRef;
-import rx.functions.Action1;
+import p007b.p100d.p104b.p105a.C1643a;
+import p507d0.p580t.C12147n;
+import p507d0.p592z.p594d.C12238m;
+import p658rx.functions.Action1;
 
 /* JADX INFO: compiled from: ModelThreadListSync.kt */
 /* JADX INFO: loaded from: classes.dex */
@@ -36,7 +36,7 @@ public final /* data */ class ModelThreadListSync {
         /* JADX WARN: Type inference failed for: r2v0, types: [T, java.util.ArrayList] */
         @Override // com.discord.models.domain.Model.Parser
         public ModelThreadListSync parse(final Model.JsonReader reader) throws IOException {
-            Intrinsics3.checkNotNullParameter(reader, "reader");
+            C12238m.checkNotNullParameter(reader, "reader");
             final Ref$LongRef ref$LongRef = new Ref$LongRef();
             ref$LongRef.element = -1L;
             final Ref$ObjectRef ref$ObjectRef = new Ref$ObjectRef();
@@ -47,7 +47,7 @@ public final /* data */ class ModelThreadListSync {
             ref$ObjectRef3.element = null;
             reader.nextObject(new Action1<String>() { // from class: com.discord.models.thread.dto.ModelThreadListSync$Parser$parse$1
                 /* JADX WARN: Failed to restore switch over string. Please report as a decompilation issue */
-                @Override // rx.functions.Action1
+                @Override // p658rx.functions.Action1
                 public final void call(String str) throws IOException {
                     if (str != null) {
                         switch (str.hashCode()) {
@@ -67,7 +67,7 @@ public final /* data */ class ModelThreadListSync {
                                 if (str.equals(ModelAuditLogEntry.CHANGE_KEY_GUILD_ID)) {
                                     Ref$LongRef ref$LongRef2 = ref$LongRef;
                                     Long lNextLongOrNull = reader.nextLongOrNull();
-                                    Intrinsics3.checkNotNull(lNextLongOrNull);
+                                    C12238m.checkNotNull(lNextLongOrNull);
                                     ref$LongRef2.element = lNextLongOrNull.longValue();
                                     return;
                                 }
@@ -76,10 +76,10 @@ public final /* data */ class ModelThreadListSync {
                                 if (str.equals("members")) {
                                     if (reader.peek() != JsonToken.BEGIN_ARRAY) {
                                         reader.nextObject(new Action1<String>() { // from class: com.discord.models.thread.dto.ModelThreadListSync$Parser$parse$1.3
-                                            @Override // rx.functions.Action1
+                                            @Override // p658rx.functions.Action1
                                             public final void call(String str2) {
                                                 ThreadMember threadMember = (ThreadMember) InboundGatewayGsonParser.fromJson(reader, ThreadMember.class);
-                                                Intrinsics3.checkNotNullExpressionValue(str2, "threadId");
+                                                C12238m.checkNotNullExpressionValue(str2, "threadId");
                                                 ((List) ref$ObjectRef2.element).add(new ThreadMember(Long.parseLong(str2), threadMember.getUserId(), threadMember.getFlags(), threadMember.getJoinTimestamp(), threadMember.getMuted(), threadMember.getMuteConfig()));
                                             }
                                         });
@@ -93,7 +93,7 @@ public final /* data */ class ModelThreadListSync {
                                             return (ThreadMember) InboundGatewayGsonParser.fromJson(reader, ThreadMember.class);
                                         }
                                     });
-                                    Intrinsics3.checkNotNullExpressionValue(t, "reader.nextList { Inboun…readMember::class.java) }");
+                                    C12238m.checkNotNullExpressionValue(t, "reader.nextList { Inboun…readMember::class.java) }");
                                     ref$ObjectRef4.element = t;
                                     return;
                                 }
@@ -118,7 +118,7 @@ public final /* data */ class ModelThreadListSync {
             long j = ref$LongRef.element;
             List listEmptyList = (List) ref$ObjectRef.element;
             if (listEmptyList == null) {
-                listEmptyList = Collections2.emptyList();
+                listEmptyList = C12147n.emptyList();
             }
             return new ModelThreadListSync(j, listEmptyList, (List) ref$ObjectRef2.element, (List) ref$ObjectRef3.element);
         }
@@ -126,7 +126,7 @@ public final /* data */ class ModelThreadListSync {
 
     /* JADX WARN: Multi-variable type inference failed */
     public ModelThreadListSync(long j, List<Channel> list, List<? extends ThreadMember> list2, List<Message> list3) {
-        Intrinsics3.checkNotNullParameter(list, "threads");
+        C12238m.checkNotNullParameter(list, "threads");
         this.guildId = j;
         this.threads = list;
         this.members = list2;
@@ -171,7 +171,7 @@ public final /* data */ class ModelThreadListSync {
     }
 
     public final ModelThreadListSync copy(long guildId, List<Channel> threads, List<? extends ThreadMember> members, List<Message> mostRecentMessages) {
-        Intrinsics3.checkNotNullParameter(threads, "threads");
+        C12238m.checkNotNullParameter(threads, "threads");
         return new ModelThreadListSync(guildId, threads, members, mostRecentMessages);
     }
 
@@ -183,7 +183,7 @@ public final /* data */ class ModelThreadListSync {
             return false;
         }
         ModelThreadListSync modelThreadListSync = (ModelThreadListSync) other;
-        return this.guildId == modelThreadListSync.guildId && Intrinsics3.areEqual(this.threads, modelThreadListSync.threads) && Intrinsics3.areEqual(this.members, modelThreadListSync.members) && Intrinsics3.areEqual(this.mostRecentMessages, modelThreadListSync.mostRecentMessages);
+        return this.guildId == modelThreadListSync.guildId && C12238m.areEqual(this.threads, modelThreadListSync.threads) && C12238m.areEqual(this.members, modelThreadListSync.members) && C12238m.areEqual(this.mostRecentMessages, modelThreadListSync.mostRecentMessages);
     }
 
     public final long getGuildId() {
@@ -214,13 +214,13 @@ public final /* data */ class ModelThreadListSync {
     }
 
     public String toString() {
-        StringBuilder sbU = outline.U("ModelThreadListSync(guildId=");
-        sbU.append(this.guildId);
-        sbU.append(", threads=");
-        sbU.append(this.threads);
-        sbU.append(", members=");
-        sbU.append(this.members);
-        sbU.append(", mostRecentMessages=");
-        return outline.L(sbU, this.mostRecentMessages, ")");
+        StringBuilder sbM833U = C1643a.m833U("ModelThreadListSync(guildId=");
+        sbM833U.append(this.guildId);
+        sbM833U.append(", threads=");
+        sbM833U.append(this.threads);
+        sbM833U.append(", members=");
+        sbM833U.append(this.members);
+        sbM833U.append(", mostRecentMessages=");
+        return C1643a.m824L(sbM833U, this.mostRecentMessages, ")");
     }
 }

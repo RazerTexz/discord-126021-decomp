@@ -10,25 +10,14 @@ import androidx.coordinatorlayout.widget.CoordinatorLayout;
 import androidx.exifinterface.media.ExifInterface;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
-import b.d.b.a.outline;
-import b.i.a.f.e.o.f;
-import com.discord.R;
+import com.discord.C5419R;
 import com.discord.databinding.WidgetChannelsListUnreadsBinding;
 import com.discord.utilities.accessibility.AccessibilityUtils;
 import com.discord.utilities.drawable.DrawableCompat;
 import com.discord.utilities.view.extensions.ViewExtensions;
-import com.discord.utilities.view.layoutparams.LayoutParamsExtensions;
-import com.discord.utilities.views.ViewCoroutineScope;
+import com.discord.utilities.view.layoutparams.LayoutParamsExtensionsKt;
+import com.discord.utilities.views.ViewCoroutineScopeKt;
 import com.google.android.material.appbar.AppBarLayout;
-import d0.LazyJVM;
-import d0.Result3;
-import d0.d0._Ranges;
-import d0.t.Collections2;
-import d0.t._Collections;
-import d0.w.h.Intrinsics2;
-import d0.w.i.a.ContinuationImpl6;
-import d0.w.i.a.DebugMetadata;
-import d0.z.d.Intrinsics3;
 import java.util.Collection;
 import java.util.List;
 import kotlin.Lazy;
@@ -37,9 +26,20 @@ import kotlin.coroutines.Continuation;
 import kotlin.jvm.functions.Function0;
 import kotlin.jvm.functions.Function2;
 import kotlin.jvm.internal.DefaultConstructorMarker;
-import kotlin.ranges.Progressions2;
-import kotlin.ranges.Ranges2;
+import kotlin.ranges.IntProgression;
+import kotlin.ranges.IntRange;
 import kotlinx.coroutines.CoroutineScope;
+import p007b.p100d.p104b.p105a.C1643a;
+import p007b.p225i.p226a.p288f.p299e.p308o.C3404f;
+import p507d0.C12083g;
+import p507d0.C12113l;
+import p507d0.p512d0.C11226f;
+import p507d0.p580t.C12147n;
+import p507d0.p580t.C12163u;
+import p507d0.p584w.p585h.C12183c;
+import p507d0.p584w.p586i.p587a.AbstractC12194k;
+import p507d0.p584w.p586i.p587a.InterfaceC12188e;
+import p507d0.p592z.p594d.C12238m;
 
 /* JADX INFO: compiled from: WidgetChannelListUnreads.kt */
 /* JADX INFO: loaded from: classes2.dex */
@@ -90,11 +90,11 @@ public final class WidgetChannelListUnreads {
             private Companion() {
             }
 
-            private final Indicator findIndicator(List<? extends Object> list, Progressions2 progressions2, boolean z2, boolean z3) {
+            private final Indicator findIndicator(List<? extends Object> list, IntProgression intProgression, boolean z2, boolean z3) {
                 int i;
-                int first = progressions2.getFirst();
-                int last = progressions2.getLast();
-                int step = progressions2.getStep();
+                int first = intProgression.getFirst();
+                int last = intProgression.getLast();
+                int step = intProgression.getStep();
                 if (step < 0 ? first < last : first > last) {
                     i = -1;
                 } else {
@@ -124,15 +124,15 @@ public final class WidgetChannelListUnreads {
                 return null;
             }
 
-            public static /* synthetic */ Model get$default(Companion companion, Ranges2 ranges2, List list, boolean z2, int i, Object obj) {
+            public static /* synthetic */ Model get$default(Companion companion, IntRange intRange, List list, boolean z2, int i, Object obj) {
                 if ((i & 4) != 0) {
                     z2 = true;
                 }
-                return companion.get(ranges2, list, z2);
+                return companion.get(intRange, list, z2);
             }
 
-            private final boolean hasUnread(List<? extends Object> list, Ranges2 ranges2) {
-                List listSlice = _Collections.slice(list, ranges2);
+            private final boolean hasUnread(List<? extends Object> list, IntRange intRange) {
+                List listSlice = C12163u.slice(list, intRange);
                 if (!(listSlice instanceof Collection) || !listSlice.isEmpty()) {
                     for (Object obj : listSlice) {
                         if (!(obj instanceof UnreadItem)) {
@@ -149,10 +149,10 @@ public final class WidgetChannelListUnreads {
 
             /* JADX WARN: Code duplicated, block: B:7:0x0017  */
             /* JADX WARN: Multi-variable type inference failed */
-            public final Model get(Ranges2 visibleRange, List<? extends Object> items, boolean unreadsEnabled) {
+            public final Model get(IntRange visibleRange, List<? extends Object> items, boolean unreadsEnabled) {
                 boolean z2;
-                Intrinsics3.checkNotNullParameter(visibleRange, "visibleRange");
-                Intrinsics3.checkNotNullParameter(items, "items");
+                C12238m.checkNotNullParameter(visibleRange, "visibleRange");
+                C12238m.checkNotNullParameter(items, "items");
                 if (unreadsEnabled) {
                     try {
                         if (hasUnread(items, visibleRange)) {
@@ -166,7 +166,7 @@ public final class WidgetChannelListUnreads {
                 } else {
                     z2 = false;
                 }
-                return new Model(findIndicator(items, _Ranges.until(0, visibleRange.getFirst()), z2, unreadsEnabled), findIndicator(items, _Ranges.downTo(Collections2.getLastIndex(items), visibleRange.getLast() + 1), z2, unreadsEnabled));
+                return new Model(findIndicator(items, C11226f.until(0, visibleRange.getFirst()), z2, unreadsEnabled), findIndicator(items, C11226f.downTo(C12147n.getLastIndex(items), visibleRange.getLast() + 1), z2, unreadsEnabled));
             }
 
             public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
@@ -232,10 +232,10 @@ public final class WidgetChannelListUnreads {
             }
 
             public String toString() {
-                StringBuilder sbU = outline.U("Indicator(type=");
-                sbU.append(this.type);
-                sbU.append(", index=");
-                return outline.B(sbU, this.index, ")");
+                StringBuilder sbM833U = C1643a.m833U("Indicator(type=");
+                sbM833U.append(this.type);
+                sbM833U.append(", index=");
+                return C1643a.m814B(sbM833U, this.index, ")");
             }
         }
 
@@ -281,7 +281,7 @@ public final class WidgetChannelListUnreads {
                 return false;
             }
             Model model = (Model) other;
-            return Intrinsics3.areEqual(this.topIndicator, model.topIndicator) && Intrinsics3.areEqual(this.bottomIndicator, model.bottomIndicator);
+            return C12238m.areEqual(this.topIndicator, model.topIndicator) && C12238m.areEqual(this.bottomIndicator, model.bottomIndicator);
         }
 
         public final Indicator getBottomIndicator() {
@@ -300,12 +300,12 @@ public final class WidgetChannelListUnreads {
         }
 
         public String toString() {
-            StringBuilder sbU = outline.U("Model(topIndicator=");
-            sbU.append(this.topIndicator);
-            sbU.append(", bottomIndicator=");
-            sbU.append(this.bottomIndicator);
-            sbU.append(")");
-            return sbU.toString();
+            StringBuilder sbM833U = C1643a.m833U("Model(topIndicator=");
+            sbM833U.append(this.topIndicator);
+            sbM833U.append(", bottomIndicator=");
+            sbM833U.append(this.bottomIndicator);
+            sbM833U.append(")");
+            return sbM833U.toString();
         }
 
         public /* synthetic */ Model(Indicator indicator, Indicator indicator2, int i, DefaultConstructorMarker defaultConstructorMarker) {
@@ -320,52 +320,52 @@ public final class WidgetChannelListUnreads {
         boolean isUnread();
     }
 
-    /* JADX INFO: renamed from: com.discord.widgets.channels.list.WidgetChannelListUnreads$onDatasetChanged$1, reason: invalid class name */
+    /* JADX INFO: renamed from: com.discord.widgets.channels.list.WidgetChannelListUnreads$onDatasetChanged$1 */
     /* JADX INFO: compiled from: WidgetChannelListUnreads.kt */
-    @DebugMetadata(c = "com.discord.widgets.channels.list.WidgetChannelListUnreads$onDatasetChanged$1", f = "WidgetChannelListUnreads.kt", l = {74}, m = "invokeSuspend")
-    public static final class AnonymousClass1 extends ContinuationImpl6 implements Function2<CoroutineScope, Continuation<? super Unit>, Object> {
+    @InterfaceC12188e(m10084c = "com.discord.widgets.channels.list.WidgetChannelListUnreads$onDatasetChanged$1", m10085f = "WidgetChannelListUnreads.kt", m10086l = {74}, m10087m = "invokeSuspend")
+    public static final class C74231 extends AbstractC12194k implements Function2<CoroutineScope, Continuation<? super Unit>, Object> {
         public int label;
 
-        public AnonymousClass1(Continuation continuation) {
+        public C74231(Continuation continuation) {
             super(2, continuation);
         }
 
-        @Override // d0.w.i.a.ContinuationImpl
+        @Override // p507d0.p584w.p586i.p587a.AbstractC12184a
         public final Continuation<Unit> create(Object obj, Continuation<?> continuation) {
-            Intrinsics3.checkNotNullParameter(continuation, "completion");
-            return WidgetChannelListUnreads.this.new AnonymousClass1(continuation);
+            C12238m.checkNotNullParameter(continuation, "completion");
+            return WidgetChannelListUnreads.this.new C74231(continuation);
         }
 
         @Override // kotlin.jvm.functions.Function2
         public final Object invoke(CoroutineScope coroutineScope, Continuation<? super Unit> continuation) {
-            return ((AnonymousClass1) create(coroutineScope, continuation)).invokeSuspend(Unit.a);
+            return ((C74231) create(coroutineScope, continuation)).invokeSuspend(Unit.f27425a);
         }
 
-        @Override // d0.w.i.a.ContinuationImpl
+        @Override // p507d0.p584w.p586i.p587a.AbstractC12184a
         public final Object invokeSuspend(Object obj) {
-            Object coroutine_suspended = Intrinsics2.getCOROUTINE_SUSPENDED();
+            Object coroutine_suspended = C12183c.getCOROUTINE_SUSPENDED();
             int i = this.label;
             if (i == 0) {
-                Result3.throwOnFailure(obj);
+                C12113l.throwOnFailure(obj);
                 this.label = 1;
-                if (f.P(50L, this) == coroutine_suspended) {
+                if (C3404f.m4234P(50L, this) == coroutine_suspended) {
                     return coroutine_suspended;
                 }
             } else {
                 if (i != 1) {
                     throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
                 }
-                Result3.throwOnFailure(obj);
+                C12113l.throwOnFailure(obj);
             }
             WidgetChannelListUnreads.this.handleVisibleRangeUpdate();
-            return Unit.a;
+            return Unit.f27425a;
         }
     }
 
     public WidgetChannelListUnreads(ViewStub viewStub, RecyclerView recyclerView, AppBarLayout appBarLayout, Function0<Integer> function0, int i, int i2, boolean z2) {
-        Intrinsics3.checkNotNullParameter(viewStub, "unreadsStub");
-        Intrinsics3.checkNotNullParameter(recyclerView, "recycler");
-        Intrinsics3.checkNotNullParameter(function0, "getItemCount");
+        C12238m.checkNotNullParameter(viewStub, "unreadsStub");
+        C12238m.checkNotNullParameter(recyclerView, "recycler");
+        C12238m.checkNotNullParameter(function0, "getItemCount");
         this.unreadsStub = viewStub;
         this.recycler = recyclerView;
         this.appBarLayout = appBarLayout;
@@ -373,12 +373,12 @@ public final class WidgetChannelListUnreads {
         this.mentionResId = i;
         this.unreadsResId = i2;
         this.unreadsEnabled = z2;
-        this.binding = LazyJVM.lazy(new WidgetChannelListUnreads2(this));
-        this.data = Collections2.emptyList();
+        this.binding = C12083g.lazy(new WidgetChannelListUnreads$binding$2(this));
+        this.data = C12147n.emptyList();
         recyclerView.addOnScrollListener(new RecyclerView.OnScrollListener() { // from class: com.discord.widgets.channels.list.WidgetChannelListUnreads.1
             @Override // androidx.recyclerview.widget.RecyclerView.OnScrollListener
             public void onScrollStateChanged(RecyclerView recyclerView2, int newState) {
-                Intrinsics3.checkNotNullParameter(recyclerView2, "recyclerView");
+                C12238m.checkNotNullParameter(recyclerView2, "recyclerView");
                 super.onScrollStateChanged(recyclerView2, newState);
                 if (newState == 0 || newState == 2) {
                     WidgetChannelListUnreads.this.handleVisibleRangeUpdate();
@@ -387,7 +387,7 @@ public final class WidgetChannelListUnreads {
 
             @Override // androidx.recyclerview.widget.RecyclerView.OnScrollListener
             public void onScrolled(RecyclerView recyclerView2, int dx, int dy) {
-                Intrinsics3.checkNotNullParameter(recyclerView2, "recyclerView");
+                C12238m.checkNotNullParameter(recyclerView2, "recyclerView");
                 super.onScrolled(recyclerView2, dx, dy);
                 if (AccessibilityUtils.INSTANCE.isReducedMotionEnabled()) {
                     WidgetChannelListUnreads.this.handleVisibleRangeUpdate();
@@ -401,7 +401,7 @@ public final class WidgetChannelListUnreads {
     }
 
     private final int getIcon(Model.Indicator indicator) {
-        return indicator.getType() != 0 ? R.drawable.drawable_button_grey : R.drawable.drawable_button_red;
+        return indicator.getType() != 0 ? C5419R.drawable.drawable_button_grey : C5419R.drawable.drawable_button_red;
     }
 
     private final int getText(Model.Indicator indicator) {
@@ -428,17 +428,17 @@ public final class WidgetChannelListUnreads {
         }
         LinearLayoutManager linearLayoutManager = (LinearLayoutManager) layoutManager;
         if (linearLayoutManager != null) {
-            Model model = Model.INSTANCE.get(new Ranges2(linearLayoutManager.findFirstVisibleItemPosition(), linearLayoutManager.findLastVisibleItemPosition()), this.data, this.unreadsEnabled);
+            Model model = Model.INSTANCE.get(new IntRange(linearLayoutManager.findFirstVisibleItemPosition(), linearLayoutManager.findLastVisibleItemPosition()), this.data, this.unreadsEnabled);
             final Model.Indicator topIndicator = model.getTopIndicator();
             if (topIndicator == null) {
                 topIndicator = model.getBottomIndicator();
             }
             final boolean z2 = model.getTopIndicator() != null;
             if (topIndicator == null && this.unreadsInitialized) {
-                ViewExtensions.fadeOut$default(getBinding().a, 150L, null, null, 6, null);
+                ViewExtensions.fadeOut$default(getBinding().f16081a, 150L, null, null, 6, null);
             } else if (topIndicator != null) {
-                ViewExtensions.fadeIn$default(getBinding().a, 150L, null, null, null, 14, null);
-                getBinding().a.setOnClickListener(new View.OnClickListener() { // from class: com.discord.widgets.channels.list.WidgetChannelListUnreads.handleVisibleRangeUpdate.1
+                ViewExtensions.fadeIn$default(getBinding().f16081a, 150L, null, null, null, 14, null);
+                getBinding().f16081a.setOnClickListener(new View.OnClickListener() { // from class: com.discord.widgets.channels.list.WidgetChannelListUnreads.handleVisibleRangeUpdate.1
                     @Override // android.view.View.OnClickListener
                     public final void onClick(View view) {
                         WidgetChannelListUnreads.this.handleClick(topIndicator, z2);
@@ -451,13 +451,13 @@ public final class WidgetChannelListUnreads {
     }
 
     private final void onConfigureView(Model.Indicator indicator, boolean indicatorUpwards) {
-        getBinding().c.setBackgroundResource(getIcon(indicator));
-        getBinding().f2300b.setText(getText(indicator));
-        TextView textView = getBinding().f2300b;
-        Intrinsics3.checkNotNullExpressionValue(textView, "binding.channelsListUnreads");
-        DrawableCompat.setCompoundDrawablesCompat$default(textView, 0, 0, indicatorUpwards ? R.drawable.ic_arrow_upward_white_16dp : R.drawable.ic_arrow_downward_white_16dp, 0, 11, (Object) null);
-        FrameLayout frameLayout = getBinding().a;
-        Intrinsics3.checkNotNullExpressionValue(frameLayout, "it");
+        getBinding().f16083c.setBackgroundResource(getIcon(indicator));
+        getBinding().f16082b.setText(getText(indicator));
+        TextView textView = getBinding().f16082b;
+        C12238m.checkNotNullExpressionValue(textView, "binding.channelsListUnreads");
+        DrawableCompat.setCompoundDrawablesCompat$default(textView, 0, 0, indicatorUpwards ? C5419R.drawable.ic_arrow_upward_white_16dp : C5419R.drawable.ic_arrow_downward_white_16dp, 0, 11, (Object) null);
+        FrameLayout frameLayout = getBinding().f16081a;
+        C12238m.checkNotNullExpressionValue(frameLayout, "it");
         ViewGroup.LayoutParams layoutParams = frameLayout.getLayoutParams();
         if (!(layoutParams instanceof ViewGroup.MarginLayoutParams)) {
             layoutParams = null;
@@ -465,7 +465,7 @@ public final class WidgetChannelListUnreads {
         ViewGroup.MarginLayoutParams marginLayoutParams = (ViewGroup.MarginLayoutParams) layoutParams;
         if (marginLayoutParams instanceof RelativeLayout.LayoutParams) {
             RelativeLayout.LayoutParams layoutParams2 = (RelativeLayout.LayoutParams) marginLayoutParams;
-            LayoutParamsExtensions.removeRuleCompat(layoutParams2, indicatorUpwards ? 8 : 6);
+            LayoutParamsExtensionsKt.removeRuleCompat(layoutParams2, indicatorUpwards ? 8 : 6);
             layoutParams2.addRule(indicatorUpwards ? 6 : 8, this.recycler.getId());
         } else {
             if (!(marginLayoutParams instanceof CoordinatorLayout.LayoutParams)) {
@@ -475,11 +475,11 @@ public final class WidgetChannelListUnreads {
             layoutParams3.anchorGravity = indicatorUpwards ? 48 : 80;
             layoutParams3.gravity = indicatorUpwards ? 80 : 48;
         }
-        FrameLayout frameLayout2 = getBinding().a;
-        Intrinsics3.checkNotNullExpressionValue(frameLayout2, "binding.root");
+        FrameLayout frameLayout2 = getBinding().f16081a;
+        C12238m.checkNotNullExpressionValue(frameLayout2, "binding.root");
         frameLayout2.setLayoutParams(marginLayoutParams);
-        FrameLayout frameLayout3 = getBinding().a;
-        Intrinsics3.checkNotNullExpressionValue(frameLayout3, "binding.root");
+        FrameLayout frameLayout3 = getBinding().f16081a;
+        C12238m.checkNotNullExpressionValue(frameLayout3, "binding.root");
         frameLayout3.setImportantForAccessibility(4);
     }
 
@@ -496,11 +496,11 @@ public final class WidgetChannelListUnreads {
     }
 
     public final void onDatasetChanged(List<? extends Object> data) {
-        Intrinsics3.checkNotNullParameter(data, "data");
+        C12238m.checkNotNullParameter(data, "data");
         this.data = data;
-        CoroutineScope coroutineScope = ViewCoroutineScope.getCoroutineScope(this.recycler);
+        CoroutineScope coroutineScope = ViewCoroutineScopeKt.getCoroutineScope(this.recycler);
         if (coroutineScope != null) {
-            f.H0(coroutineScope, null, null, new AnonymousClass1(null), 3, null);
+            C3404f.m4211H0(coroutineScope, null, null, new C74231(null), 3, null);
         }
     }
 
@@ -517,6 +517,6 @@ public final class WidgetChannelListUnreads {
     }
 
     public /* synthetic */ WidgetChannelListUnreads(ViewStub viewStub, RecyclerView recyclerView, AppBarLayout appBarLayout, Function0 function0, int i, int i2, boolean z2, int i3, DefaultConstructorMarker defaultConstructorMarker) {
-        this(viewStub, recyclerView, (i3 & 4) != 0 ? null : appBarLayout, function0, (i3 & 16) != 0 ? R.string.new_mentions : i, (i3 & 32) != 0 ? R.string.new_unreads : i2, (i3 & 64) != 0 ? true : z2);
+        this(viewStub, recyclerView, (i3 & 4) != 0 ? null : appBarLayout, function0, (i3 & 16) != 0 ? C5419R.string.new_mentions : i, (i3 & 32) != 0 ? C5419R.string.new_unreads : i2, (i3 & 64) != 0 ? true : z2);
     }
 }

@@ -1,17 +1,17 @@
 package com.discord.analytics.generated.events;
 
-import b.d.b.a.outline;
 import com.discord.analytics.generated.traits.TrackBase;
-import com.discord.analytics.generated.traits.TrackBase2;
+import com.discord.analytics.generated.traits.TrackBaseReceiver;
 import com.discord.analytics.generated.traits.TrackMarketingSite;
-import com.discord.analytics.generated.traits.TrackMarketingSite2;
+import com.discord.analytics.generated.traits.TrackMarketingSiteReceiver;
 import com.discord.api.science.AnalyticsSchema;
 import com.discord.models.domain.ModelAuditLogEntry;
-import d0.z.d.Intrinsics3;
+import p007b.p100d.p104b.p105a.C1643a;
+import p507d0.p592z.p594d.C12238m;
 
 /* JADX INFO: compiled from: TrackPressButton.kt */
 /* JADX INFO: loaded from: classes.dex */
-public final /* data */ class TrackPressButton implements AnalyticsSchema, TrackBase2, TrackMarketingSite2 {
+public final /* data */ class TrackPressButton implements AnalyticsSchema, TrackBaseReceiver, TrackMarketingSiteReceiver {
     private TrackBase trackBase;
     private TrackMarketingSite trackMarketingSite;
     private final CharSequence game = null;
@@ -32,7 +32,7 @@ public final /* data */ class TrackPressButton implements AnalyticsSchema, Track
             return false;
         }
         TrackPressButton trackPressButton = (TrackPressButton) other;
-        return Intrinsics3.areEqual(this.game, trackPressButton.game) && Intrinsics3.areEqual(this.name, trackPressButton.name);
+        return C12238m.areEqual(this.game, trackPressButton.game) && C12238m.areEqual(this.name, trackPressButton.name);
     }
 
     public int hashCode() {
@@ -43,9 +43,9 @@ public final /* data */ class TrackPressButton implements AnalyticsSchema, Track
     }
 
     public String toString() {
-        StringBuilder sbU = outline.U("TrackPressButton(game=");
-        sbU.append(this.game);
-        sbU.append(", name=");
-        return outline.E(sbU, this.name, ")");
+        StringBuilder sbM833U = C1643a.m833U("TrackPressButton(game=");
+        sbM833U.append(this.game);
+        sbM833U.append(", name=");
+        return C1643a.m817E(sbM833U, this.name, ")");
     }
 }

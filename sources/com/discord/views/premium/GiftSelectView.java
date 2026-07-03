@@ -6,12 +6,12 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.FrameLayout;
-import com.discord.R;
+import com.discord.C5419R;
 import com.discord.databinding.WidgetChoosePlanAdapterPlanItemBinding;
 import com.discord.utilities.billing.GooglePlayInAppSku;
-import d0.z.d.Intrinsics3;
 import kotlin.Unit;
 import kotlin.jvm.functions.Function1;
+import p507d0.p592z.p594d.C12238m;
 
 /* JADX INFO: compiled from: GiftSelectView.kt */
 /* JADX INFO: loaded from: classes2.dex */
@@ -29,11 +29,11 @@ public final class GiftSelectView extends FrameLayout {
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public GiftSelectView(Context context, AttributeSet attributeSet) {
         super(context, attributeSet, 0);
-        Intrinsics3.checkNotNullParameter(context, "context");
-        View viewInflate = LayoutInflater.from(context).inflate(R.layout.widget_choose_plan_adapter_plan_item, (ViewGroup) this, false);
+        C12238m.checkNotNullParameter(context, "context");
+        View viewInflate = LayoutInflater.from(context).inflate(C5419R.layout.widget_choose_plan_adapter_plan_item, (ViewGroup) this, false);
         addView(viewInflate);
-        WidgetChoosePlanAdapterPlanItemBinding widgetChoosePlanAdapterPlanItemBindingA = WidgetChoosePlanAdapterPlanItemBinding.a(viewInflate);
-        Intrinsics3.checkNotNullExpressionValue(widgetChoosePlanAdapterPlanItemBindingA, "WidgetChoosePlanAdapterP…rom(context), this, true)");
-        this.binding = widgetChoosePlanAdapterPlanItemBindingA;
+        WidgetChoosePlanAdapterPlanItemBinding widgetChoosePlanAdapterPlanItemBindingM8412a = WidgetChoosePlanAdapterPlanItemBinding.m8412a(viewInflate);
+        C12238m.checkNotNullExpressionValue(widgetChoosePlanAdapterPlanItemBindingM8412a, "WidgetChoosePlanAdapterP…rom(context), this, true)");
+        this.binding = widgetChoosePlanAdapterPlanItemBindingM8412a;
     }
 }

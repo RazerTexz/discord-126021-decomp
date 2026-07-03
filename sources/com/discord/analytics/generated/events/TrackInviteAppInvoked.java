@@ -1,14 +1,14 @@
 package com.discord.analytics.generated.events;
 
-import b.d.b.a.outline;
 import com.discord.analytics.generated.traits.TrackBase;
-import com.discord.analytics.generated.traits.TrackBase2;
+import com.discord.analytics.generated.traits.TrackBaseReceiver;
 import com.discord.api.science.AnalyticsSchema;
-import d0.z.d.Intrinsics3;
+import p007b.p100d.p104b.p105a.C1643a;
+import p507d0.p592z.p594d.C12238m;
 
 /* JADX INFO: compiled from: TrackInviteAppInvoked.kt */
 /* JADX INFO: loaded from: classes.dex */
-public final /* data */ class TrackInviteAppInvoked implements AnalyticsSchema, TrackBase2 {
+public final /* data */ class TrackInviteAppInvoked implements AnalyticsSchema, TrackBaseReceiver {
     private TrackBase trackBase;
     private final CharSequence inviteCode = null;
     private final transient String analyticsSchemaTypeName = "invite_app_invoked";
@@ -21,7 +21,7 @@ public final /* data */ class TrackInviteAppInvoked implements AnalyticsSchema, 
 
     public boolean equals(Object other) {
         if (this != other) {
-            return (other instanceof TrackInviteAppInvoked) && Intrinsics3.areEqual(this.inviteCode, ((TrackInviteAppInvoked) other).inviteCode);
+            return (other instanceof TrackInviteAppInvoked) && C12238m.areEqual(this.inviteCode, ((TrackInviteAppInvoked) other).inviteCode);
         }
         return true;
     }
@@ -35,6 +35,6 @@ public final /* data */ class TrackInviteAppInvoked implements AnalyticsSchema, 
     }
 
     public String toString() {
-        return outline.E(outline.U("TrackInviteAppInvoked(inviteCode="), this.inviteCode, ")");
+        return C1643a.m817E(C1643a.m833U("TrackInviteAppInvoked(inviteCode="), this.inviteCode, ")");
     }
 }

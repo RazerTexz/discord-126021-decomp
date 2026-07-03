@@ -1,16 +1,17 @@
 package com.discord.api.hubs;
 
-import b.d.b.a.outline;
-import d0.z.d.Intrinsics3;
 import java.util.List;
+import p007b.p100d.p104b.p105a.C1643a;
+import p507d0.p592z.p594d.C12238m;
 
 /* JADX INFO: compiled from: EmailVerification.kt */
 /* JADX INFO: loaded from: classes.dex */
 public final /* data */ class EmailVerification {
-    private final List<EmailVerification3> guildsInfo;
+    private final List<GuildInfo> guildsInfo;
     private final boolean hasMatchingGuild;
 
-    public final List<EmailVerification3> a() {
+    /* JADX INFO: renamed from: a */
+    public final List<GuildInfo> m7998a() {
         return this.guildsInfo;
     }
 
@@ -27,7 +28,7 @@ public final /* data */ class EmailVerification {
             return false;
         }
         EmailVerification emailVerification = (EmailVerification) other;
-        return Intrinsics3.areEqual(this.guildsInfo, emailVerification.guildsInfo) && this.hasMatchingGuild == emailVerification.hasMatchingGuild;
+        return C12238m.areEqual(this.guildsInfo, emailVerification.guildsInfo) && this.hasMatchingGuild == emailVerification.hasMatchingGuild;
     }
 
     /* JADX WARN: Multi-variable type inference failed */
@@ -36,7 +37,7 @@ public final /* data */ class EmailVerification {
     /* JADX WARN: Type inference failed for: r1v2 */
     /* JADX WARN: Type inference failed for: r1v3 */
     public int hashCode() {
-        List<EmailVerification3> list = this.guildsInfo;
+        List<GuildInfo> list = this.guildsInfo;
         int iHashCode = (list != null ? list.hashCode() : 0) * 31;
         boolean z2 = this.hasMatchingGuild;
         ?? r1 = z2;
@@ -47,9 +48,9 @@ public final /* data */ class EmailVerification {
     }
 
     public String toString() {
-        StringBuilder sbU = outline.U("EmailVerification(guildsInfo=");
-        sbU.append(this.guildsInfo);
-        sbU.append(", hasMatchingGuild=");
-        return outline.O(sbU, this.hasMatchingGuild, ")");
+        StringBuilder sbM833U = C1643a.m833U("EmailVerification(guildsInfo=");
+        sbM833U.append(this.guildsInfo);
+        sbM833U.append(", hasMatchingGuild=");
+        return C1643a.m827O(sbM833U, this.hasMatchingGuild, ")");
     }
 }

@@ -4,41 +4,45 @@ import android.view.View;
 import android.widget.RelativeLayout;
 import androidx.annotation.NonNull;
 import androidx.viewbinding.ViewBinding;
-import b.a.i.WidgetRemoteAuthNotFoundBinding;
-import b.a.i.WidgetRemoteAuthPendingLoginBinding;
-import b.a.i.WidgetRemoteAuthSuccessBinding;
 import com.discord.app.AppViewFlipper;
+import p007b.p008a.p025i.C1071v5;
+import p007b.p008a.p025i.C1078w5;
+import p007b.p008a.p025i.C1085x5;
 
 /* JADX INFO: loaded from: classes.dex */
 public final class WidgetRemoteAuthBinding implements ViewBinding {
 
+    /* JADX INFO: renamed from: a */
     @NonNull
-    public final RelativeLayout a;
+    public final RelativeLayout f17406a;
 
-    /* JADX INFO: renamed from: b, reason: collision with root package name */
+    /* JADX INFO: renamed from: b */
     @NonNull
-    public final WidgetRemoteAuthSuccessBinding f2519b;
+    public final C1085x5 f17407b;
 
+    /* JADX INFO: renamed from: c */
     @NonNull
-    public final WidgetRemoteAuthNotFoundBinding c;
+    public final C1071v5 f17408c;
 
+    /* JADX INFO: renamed from: d */
     @NonNull
-    public final WidgetRemoteAuthPendingLoginBinding d;
+    public final C1078w5 f17409d;
 
+    /* JADX INFO: renamed from: e */
     @NonNull
-    public final AppViewFlipper e;
+    public final AppViewFlipper f17410e;
 
-    public WidgetRemoteAuthBinding(@NonNull RelativeLayout relativeLayout, @NonNull WidgetRemoteAuthSuccessBinding widgetRemoteAuthSuccessBinding, @NonNull WidgetRemoteAuthNotFoundBinding widgetRemoteAuthNotFoundBinding, @NonNull WidgetRemoteAuthPendingLoginBinding widgetRemoteAuthPendingLoginBinding, @NonNull AppViewFlipper appViewFlipper) {
-        this.a = relativeLayout;
-        this.f2519b = widgetRemoteAuthSuccessBinding;
-        this.c = widgetRemoteAuthNotFoundBinding;
-        this.d = widgetRemoteAuthPendingLoginBinding;
-        this.e = appViewFlipper;
+    public WidgetRemoteAuthBinding(@NonNull RelativeLayout relativeLayout, @NonNull C1085x5 c1085x5, @NonNull C1071v5 c1071v5, @NonNull C1078w5 c1078w5, @NonNull AppViewFlipper appViewFlipper) {
+        this.f17406a = relativeLayout;
+        this.f17407b = c1085x5;
+        this.f17408c = c1071v5;
+        this.f17409d = c1078w5;
+        this.f17410e = appViewFlipper;
     }
 
     @Override // androidx.viewbinding.ViewBinding
     @NonNull
     public View getRoot() {
-        return this.a;
+        return this.f17406a;
     }
 }

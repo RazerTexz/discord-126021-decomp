@@ -10,7 +10,6 @@ import android.os.AsyncTask;
 import android.text.TextUtils;
 import android.util.Log;
 import android.util.Xml;
-import b.d.b.a.outline;
 import com.adjust.sdk.Constants;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
@@ -25,6 +24,7 @@ import java.util.Map;
 import org.xmlpull.v1.XmlPullParser;
 import org.xmlpull.v1.XmlPullParserException;
 import org.xmlpull.v1.XmlSerializer;
+import p007b.p100d.p104b.p105a.C1643a;
 
 /* JADX INFO: loaded from: classes.dex */
 public class ActivityChooserModel extends DataSetObservable {
@@ -81,12 +81,12 @@ public class ActivityChooserModel extends DataSetObservable {
         }
 
         public String toString() {
-            StringBuilder sbX = outline.X("[", "resolveInfo:");
-            sbX.append(this.resolveInfo.toString());
-            sbX.append("; weight:");
-            sbX.append(new BigDecimal(this.weight));
-            sbX.append("]");
-            return sbX.toString();
+            StringBuilder sbM836X = C1643a.m836X("[", "resolveInfo:");
+            sbM836X.append(this.resolveInfo.toString());
+            sbM836X.append("; weight:");
+            sbM836X.append(new BigDecimal(this.weight));
+            sbM836X.append("]");
+            return sbM836X.toString();
         }
 
         @Override // java.lang.Comparable
@@ -163,14 +163,14 @@ public class ActivityChooserModel extends DataSetObservable {
         }
 
         public String toString() {
-            StringBuilder sbX = outline.X("[", "; activity:");
-            sbX.append(this.activity);
-            sbX.append("; time:");
-            sbX.append(this.time);
-            sbX.append("; weight:");
-            sbX.append(new BigDecimal(this.weight));
-            sbX.append("]");
-            return sbX.toString();
+            StringBuilder sbM836X = C1643a.m836X("[", "; activity:");
+            sbM836X.append(this.activity);
+            sbM836X.append("; time:");
+            sbM836X.append(this.time);
+            sbM836X.append("; weight:");
+            sbM836X.append(new BigDecimal(this.weight));
+            sbM836X.append("]");
+            return sbM836X.toString();
         }
 
         public HistoricalRecord(ComponentName componentName, long j, float f) {
@@ -239,7 +239,7 @@ public class ActivityChooserModel extends DataSetObservable {
         if (TextUtils.isEmpty(str) || str.endsWith(HISTORY_FILE_EXTENSION)) {
             this.mHistoryFileName = str;
         } else {
-            this.mHistoryFileName = outline.w(str, HISTORY_FILE_EXTENSION);
+            this.mHistoryFileName = C1643a.m883w(str, HISTORY_FILE_EXTENSION);
         }
     }
 

@@ -1,15 +1,12 @@
 package com.discord.widgets.channels.permissions;
 
-import a0.a.a.b;
 import android.content.Context;
 import android.view.View;
 import android.widget.LinearLayout;
 import androidx.exifinterface.media.ExifInterface;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.RecyclerView;
-import b.a.d.AppToast;
-import b.d.b.a.outline;
-import com.discord.R;
+import com.discord.C5419R;
 import com.discord.api.channel.Channel;
 import com.discord.api.permission.Permission;
 import com.discord.api.permission.PermissionOverwrite;
@@ -25,21 +22,16 @@ import com.discord.stores.StorePermissions;
 import com.discord.stores.StoreStream;
 import com.discord.stores.StoreUser;
 import com.discord.stores.updates.ObservationDeck;
-import com.discord.stores.updates.ObservationDeck4;
+import com.discord.stores.updates.ObservationDeckProvider;
 import com.discord.utilities.error.Error;
 import com.discord.utilities.mg_recycler.MGRecyclerAdapter;
+import com.discord.utilities.p501rx.ObservableExtensionsKt;
 import com.discord.utilities.permissions.PermissionUtils;
-import com.discord.utilities.rx.ObservableExtensionsKt;
 import com.discord.utilities.viewbinding.FragmentViewBindingDelegate;
-import com.discord.utilities.viewbinding.FragmentViewBindingDelegate3;
+import com.discord.utilities.viewbinding.FragmentViewBindingDelegateKt;
 import com.discord.widgets.channels.SimpleMembersAdapter;
 import com.discord.widgets.channels.SimpleRolesAdapter;
 import com.discord.widgets.channels.permissions.WidgetChannelSettingsEditPermissions;
-import d0.t.Collections2;
-import d0.t.Iterables2;
-import d0.t._Collections;
-import d0.z.d.Intrinsics3;
-import d0.z.d.Lambda;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Iterator;
@@ -51,13 +43,21 @@ import kotlin.jvm.functions.Function0;
 import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.reflect.KProperty;
-import rx.Observable;
-import rx.Subscription;
+import p001a0.p002a.p003a.C0002b;
+import p007b.p008a.p018d.C0876m;
+import p007b.p100d.p104b.p105a.C1643a;
+import p507d0.p580t.C12147n;
+import p507d0.p580t.C12149o;
+import p507d0.p580t.C12163u;
+import p507d0.p592z.p594d.AbstractC12240o;
+import p507d0.p592z.p594d.C12238m;
+import p658rx.Observable;
+import p658rx.Subscription;
 
 /* JADX INFO: compiled from: WidgetChannelSettingsPermissionsAdvanced.kt */
 /* JADX INFO: loaded from: classes2.dex */
 public final class WidgetChannelSettingsPermissionsAdvanced extends AppFragment {
-    public static final /* synthetic */ KProperty[] $$delegatedProperties = {outline.d0(WidgetChannelSettingsPermissionsAdvanced.class, "viewBinding", "getViewBinding()Lcom/discord/databinding/WidgetChannelSettingsPermissionsAdvancedBinding;", 0)};
+    public static final /* synthetic */ KProperty[] $$delegatedProperties = {C1643a.m846d0(WidgetChannelSettingsPermissionsAdvanced.class, "viewBinding", "getViewBinding()Lcom/discord/databinding/WidgetChannelSettingsPermissionsAdvancedBinding;", 0)};
     private SimpleMembersAdapter membersAdapter;
     private SimpleRolesAdapter rolesAdapter;
 
@@ -85,20 +85,20 @@ public final class WidgetChannelSettingsPermissionsAdvanced extends AppFragment 
             }
 
             private final Collection<Long> getOverwriteIds(Channel channel, PermissionOverwrite.Type type) {
-                List<PermissionOverwrite> listV = channel.v();
-                if (listV == null) {
-                    return Collections2.emptyList();
+                List<PermissionOverwrite> listM7655v = channel.m7655v();
+                if (listM7655v == null) {
+                    return C12147n.emptyList();
                 }
                 ArrayList arrayList = new ArrayList();
-                for (Object obj : listV) {
+                for (Object obj : listM7655v) {
                     if (((PermissionOverwrite) obj).getType() == type) {
                         arrayList.add(obj);
                     }
                 }
-                ArrayList arrayList2 = new ArrayList(Iterables2.collectionSizeOrDefault(arrayList, 10));
+                ArrayList arrayList2 = new ArrayList(C12149o.collectionSizeOrDefault(arrayList, 10));
                 Iterator it = arrayList.iterator();
                 while (it.hasNext()) {
-                    arrayList2.add(Long.valueOf(((PermissionOverwrite) it.next()).e()));
+                    arrayList2.add(Long.valueOf(((PermissionOverwrite) it.next()).m8131e()));
                 }
                 return arrayList2;
             }
@@ -109,7 +109,7 @@ public final class WidgetChannelSettingsPermissionsAdvanced extends AppFragment 
                 StoreUser users = companion.getUsers();
                 StorePermissions permissions = companion.getPermissions();
                 StoreGuilds guilds = companion.getGuilds();
-                return ObservationDeck.connectRx$default(ObservationDeck4.get(), new ObservationDeck.UpdateSource[]{channels, users, permissions, guilds}, false, null, null, new WidgetChannelSettingsPermissionsAdvanced2(channels, channelId, guilds, users, permissions), 14, null);
+                return ObservationDeck.connectRx$default(ObservationDeckProvider.get(), new ObservationDeck.UpdateSource[]{channels, users, permissions, guilds}, false, null, null, new WidgetChannelSettingsPermissionsAdvanced$Model$Companion$get$1(channels, channelId, guilds, users, permissions), 14, null);
             }
 
             public final boolean isValid(MeUser me2, Guild guild, Channel channel, Long myPermissionsForChannel) {
@@ -122,11 +122,11 @@ public final class WidgetChannelSettingsPermissionsAdvanced extends AppFragment 
         }
 
         public Model(MeUser meUser, Guild guild, Channel channel, long j, Map<Long, GuildRole> map, List<SimpleMembersAdapter.MemberItem> list) {
-            Intrinsics3.checkNotNullParameter(meUser, "me");
-            Intrinsics3.checkNotNullParameter(guild, "guild");
-            Intrinsics3.checkNotNullParameter(channel, "channel");
-            Intrinsics3.checkNotNullParameter(map, "guildRoles");
-            Intrinsics3.checkNotNullParameter(list, "memberItems");
+            C12238m.checkNotNullParameter(meUser, "me");
+            C12238m.checkNotNullParameter(guild, "guild");
+            C12238m.checkNotNullParameter(channel, "channel");
+            C12238m.checkNotNullParameter(map, "guildRoles");
+            C12238m.checkNotNullParameter(list, "memberItems");
             this.me = meUser;
             this.guild = guild;
             this.channel = channel;
@@ -148,7 +148,7 @@ public final class WidgetChannelSettingsPermissionsAdvanced extends AppFragment 
                     arrayList.add(new SimpleRolesAdapter.RoleItem(guildRole));
                 }
             }
-            return _Collections.sorted(arrayList);
+            return C12163u.sorted(arrayList);
         }
 
         /* JADX WARN: Multi-variable type inference failed */
@@ -207,11 +207,11 @@ public final class WidgetChannelSettingsPermissionsAdvanced extends AppFragment 
         }
 
         public final Model copy(MeUser me2, Guild guild, Channel channel, long myPermissions, Map<Long, GuildRole> guildRoles, List<SimpleMembersAdapter.MemberItem> memberItems) {
-            Intrinsics3.checkNotNullParameter(me2, "me");
-            Intrinsics3.checkNotNullParameter(guild, "guild");
-            Intrinsics3.checkNotNullParameter(channel, "channel");
-            Intrinsics3.checkNotNullParameter(guildRoles, "guildRoles");
-            Intrinsics3.checkNotNullParameter(memberItems, "memberItems");
+            C12238m.checkNotNullParameter(me2, "me");
+            C12238m.checkNotNullParameter(guild, "guild");
+            C12238m.checkNotNullParameter(channel, "channel");
+            C12238m.checkNotNullParameter(guildRoles, "guildRoles");
+            C12238m.checkNotNullParameter(memberItems, "memberItems");
             return new Model(me2, guild, channel, myPermissions, guildRoles, memberItems);
         }
 
@@ -223,7 +223,7 @@ public final class WidgetChannelSettingsPermissionsAdvanced extends AppFragment 
                 return false;
             }
             Model model = (Model) other;
-            return Intrinsics3.areEqual(this.me, model.me) && Intrinsics3.areEqual(this.guild, model.guild) && Intrinsics3.areEqual(this.channel, model.channel) && this.myPermissions == model.myPermissions && Intrinsics3.areEqual(this.guildRoles, model.guildRoles) && Intrinsics3.areEqual(this.memberItems, model.memberItems);
+            return C12238m.areEqual(this.me, model.me) && C12238m.areEqual(this.guild, model.guild) && C12238m.areEqual(this.channel, model.channel) && this.myPermissions == model.myPermissions && C12238m.areEqual(this.guildRoles, model.guildRoles) && C12238m.areEqual(this.memberItems, model.memberItems);
         }
 
         public final boolean getCanAddRole() {
@@ -268,36 +268,36 @@ public final class WidgetChannelSettingsPermissionsAdvanced extends AppFragment 
             Guild guild = this.guild;
             int iHashCode2 = (iHashCode + (guild != null ? guild.hashCode() : 0)) * 31;
             Channel channel = this.channel;
-            int iA = (b.a(this.myPermissions) + ((iHashCode2 + (channel != null ? channel.hashCode() : 0)) * 31)) * 31;
+            int iM3a = (C0002b.m3a(this.myPermissions) + ((iHashCode2 + (channel != null ? channel.hashCode() : 0)) * 31)) * 31;
             Map<Long, GuildRole> map = this.guildRoles;
-            int iHashCode3 = (iA + (map != null ? map.hashCode() : 0)) * 31;
+            int iHashCode3 = (iM3a + (map != null ? map.hashCode() : 0)) * 31;
             List<SimpleMembersAdapter.MemberItem> list = this.memberItems;
             return iHashCode3 + (list != null ? list.hashCode() : 0);
         }
 
         public String toString() {
-            StringBuilder sbU = outline.U("Model(me=");
-            sbU.append(this.me);
-            sbU.append(", guild=");
-            sbU.append(this.guild);
-            sbU.append(", channel=");
-            sbU.append(this.channel);
-            sbU.append(", myPermissions=");
-            sbU.append(this.myPermissions);
-            sbU.append(", guildRoles=");
-            sbU.append(this.guildRoles);
-            sbU.append(", memberItems=");
-            return outline.L(sbU, this.memberItems, ")");
+            StringBuilder sbM833U = C1643a.m833U("Model(me=");
+            sbM833U.append(this.me);
+            sbM833U.append(", guild=");
+            sbM833U.append(this.guild);
+            sbM833U.append(", channel=");
+            sbM833U.append(this.channel);
+            sbM833U.append(", myPermissions=");
+            sbM833U.append(this.myPermissions);
+            sbM833U.append(", guildRoles=");
+            sbM833U.append(this.guildRoles);
+            sbM833U.append(", memberItems=");
+            return C1643a.m824L(sbM833U, this.memberItems, ")");
         }
     }
 
-    /* JADX INFO: renamed from: com.discord.widgets.channels.permissions.WidgetChannelSettingsPermissionsAdvanced$configureMembers$1, reason: invalid class name */
+    /* JADX INFO: renamed from: com.discord.widgets.channels.permissions.WidgetChannelSettingsPermissionsAdvanced$configureMembers$1 */
     /* JADX INFO: compiled from: WidgetChannelSettingsPermissionsAdvanced.kt */
-    public static final class AnonymousClass1 extends Lambda implements Function1<User, Unit> {
+    public static final class C75461 extends AbstractC12240o implements Function1<User, Unit> {
         public final /* synthetic */ Model $model;
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-        public AnonymousClass1(Model model) {
+        public C75461(Model model) {
             super(1);
             this.$model = model;
         }
@@ -305,23 +305,23 @@ public final class WidgetChannelSettingsPermissionsAdvanced extends AppFragment 
         @Override // kotlin.jvm.functions.Function1
         public /* bridge */ /* synthetic */ Unit invoke(User user) {
             invoke2(user);
-            return Unit.a;
+            return Unit.f27425a;
         }
 
         /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
         public final void invoke2(User user) {
-            Intrinsics3.checkNotNullParameter(user, "user");
+            C12238m.checkNotNullParameter(user, "user");
             WidgetChannelSettingsEditPermissions.INSTANCE.createForUser(WidgetChannelSettingsPermissionsAdvanced.this.requireContext(), this.$model.getGuild().getId(), this.$model.getChannel().getId(), user.getId());
         }
     }
 
-    /* JADX INFO: renamed from: com.discord.widgets.channels.permissions.WidgetChannelSettingsPermissionsAdvanced$configureRoles$1, reason: invalid class name */
+    /* JADX INFO: renamed from: com.discord.widgets.channels.permissions.WidgetChannelSettingsPermissionsAdvanced$configureRoles$1 */
     /* JADX INFO: compiled from: WidgetChannelSettingsPermissionsAdvanced.kt */
-    public static final class AnonymousClass1 extends Lambda implements Function1<GuildRole, Unit> {
+    public static final class C75471 extends AbstractC12240o implements Function1<GuildRole, Unit> {
         public final /* synthetic */ Model $model;
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-        public AnonymousClass1(Model model) {
+        public C75471(Model model) {
             super(1);
             this.$model = model;
         }
@@ -329,7 +329,7 @@ public final class WidgetChannelSettingsPermissionsAdvanced extends AppFragment 
         @Override // kotlin.jvm.functions.Function1
         public /* bridge */ /* synthetic */ Unit invoke(GuildRole guildRole) {
             invoke2(guildRole);
-            return Unit.a;
+            return Unit.f27425a;
         }
 
         /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
@@ -338,22 +338,22 @@ public final class WidgetChannelSettingsPermissionsAdvanced extends AppFragment 
             Context contextRequireContext = WidgetChannelSettingsPermissionsAdvanced.this.requireContext();
             long id2 = this.$model.getGuild().getId();
             long id3 = this.$model.getChannel().getId();
-            Intrinsics3.checkNotNull(guildRole);
+            C12238m.checkNotNull(guildRole);
             companion.createForRole(contextRequireContext, id2, id3, guildRole.getId());
         }
     }
 
-    /* JADX INFO: renamed from: com.discord.widgets.channels.permissions.WidgetChannelSettingsPermissionsAdvanced$onViewBoundOrOnResume$1, reason: invalid class name */
+    /* JADX INFO: renamed from: com.discord.widgets.channels.permissions.WidgetChannelSettingsPermissionsAdvanced$onViewBoundOrOnResume$1 */
     /* JADX INFO: compiled from: WidgetChannelSettingsPermissionsAdvanced.kt */
-    public static final class AnonymousClass1 extends Lambda implements Function1<Model, Unit> {
-        public AnonymousClass1() {
+    public static final class C75501 extends AbstractC12240o implements Function1<Model, Unit> {
+        public C75501() {
             super(1);
         }
 
         @Override // kotlin.jvm.functions.Function1
         public /* bridge */ /* synthetic */ Unit invoke(Model model) {
             invoke2(model);
-            return Unit.a;
+            return Unit.f27425a;
         }
 
         /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
@@ -363,41 +363,41 @@ public final class WidgetChannelSettingsPermissionsAdvanced extends AppFragment 
     }
 
     public WidgetChannelSettingsPermissionsAdvanced() {
-        super(R.layout.widget_channel_settings_permissions_advanced);
-        this.viewBinding = FragmentViewBindingDelegate3.viewBinding$default(this, WidgetChannelSettingsPermissionsAdvanced5.INSTANCE, null, 2, null);
+        super(C5419R.layout.widget_channel_settings_permissions_advanced);
+        this.viewBinding = FragmentViewBindingDelegateKt.viewBinding$default(this, WidgetChannelSettingsPermissionsAdvanced$viewBinding$2.INSTANCE, null, 2, null);
     }
 
     private final void configureMembers(Model model) {
         if (model.getMemberItems().isEmpty()) {
-            LinearLayout linearLayout = getViewBinding().d;
-            Intrinsics3.checkNotNullExpressionValue(linearLayout, "viewBinding.membersContainer");
+            LinearLayout linearLayout = getViewBinding().f15951d;
+            C12238m.checkNotNullExpressionValue(linearLayout, "viewBinding.membersContainer");
             linearLayout.setVisibility(8);
             return;
         }
         SimpleMembersAdapter simpleMembersAdapter = this.membersAdapter;
         if (simpleMembersAdapter == null) {
-            Intrinsics3.throwUninitializedPropertyAccessException("membersAdapter");
+            C12238m.throwUninitializedPropertyAccessException("membersAdapter");
         }
-        simpleMembersAdapter.setData(model.getMemberItems(), new AnonymousClass1(model));
-        LinearLayout linearLayout2 = getViewBinding().d;
-        Intrinsics3.checkNotNullExpressionValue(linearLayout2, "viewBinding.membersContainer");
+        simpleMembersAdapter.setData(model.getMemberItems(), new C75461(model));
+        LinearLayout linearLayout2 = getViewBinding().f15951d;
+        C12238m.checkNotNullExpressionValue(linearLayout2, "viewBinding.membersContainer");
         linearLayout2.setVisibility(0);
     }
 
     private final void configureRoles(Model model) {
         if (model.getRoleItems().isEmpty()) {
-            LinearLayout linearLayout = getViewBinding().f;
-            Intrinsics3.checkNotNullExpressionValue(linearLayout, "viewBinding.rolesContainer");
+            LinearLayout linearLayout = getViewBinding().f15953f;
+            C12238m.checkNotNullExpressionValue(linearLayout, "viewBinding.rolesContainer");
             linearLayout.setVisibility(8);
             return;
         }
         SimpleRolesAdapter simpleRolesAdapter = this.rolesAdapter;
         if (simpleRolesAdapter == null) {
-            Intrinsics3.throwUninitializedPropertyAccessException("rolesAdapter");
+            C12238m.throwUninitializedPropertyAccessException("rolesAdapter");
         }
-        simpleRolesAdapter.setData(model.getRoleItems(), new AnonymousClass1(model));
-        LinearLayout linearLayout2 = getViewBinding().f;
-        Intrinsics3.checkNotNullExpressionValue(linearLayout2, "viewBinding.rolesContainer");
+        simpleRolesAdapter.setData(model.getRoleItems(), new C75471(model));
+        LinearLayout linearLayout2 = getViewBinding().f15953f;
+        C12238m.checkNotNullExpressionValue(linearLayout2, "viewBinding.rolesContainer");
         linearLayout2.setVisibility(0);
     }
 
@@ -405,17 +405,17 @@ public final class WidgetChannelSettingsPermissionsAdvanced extends AppFragment 
         if (model == null || !model.getCanManage()) {
             return;
         }
-        getViewBinding().c.setOnClickListener(new View.OnClickListener() { // from class: com.discord.widgets.channels.permissions.WidgetChannelSettingsPermissionsAdvanced.configureUI.1
+        getViewBinding().f15950c.setOnClickListener(new View.OnClickListener() { // from class: com.discord.widgets.channels.permissions.WidgetChannelSettingsPermissionsAdvanced.configureUI.1
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
                 if (model.getCanAddRole()) {
                     WidgetChannelSettingsPermissionsAddRole.create(WidgetChannelSettingsPermissionsAdvanced.this.getContext(), model.getChannel().getId());
                 } else {
-                    AppToast.i(WidgetChannelSettingsPermissionsAdvanced.this, R.string.overwrite_no_role_to_add, 0, 4);
+                    C0876m.m171i(WidgetChannelSettingsPermissionsAdvanced.this, C5419R.string.overwrite_no_role_to_add, 0, 4);
                 }
             }
         });
-        getViewBinding().f2278b.setOnClickListener(new View.OnClickListener() { // from class: com.discord.widgets.channels.permissions.WidgetChannelSettingsPermissionsAdvanced.configureUI.2
+        getViewBinding().f15949b.setOnClickListener(new View.OnClickListener() { // from class: com.discord.widgets.channels.permissions.WidgetChannelSettingsPermissionsAdvanced.configureUI.2
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
                 WidgetChannelSettingsPermissionsAddMember.create(WidgetChannelSettingsPermissionsAdvanced.this.getContext(), model.getGuild().getId(), model.getChannel().getId());
@@ -431,30 +431,30 @@ public final class WidgetChannelSettingsPermissionsAdvanced extends AppFragment 
 
     @Override // com.discord.app.AppFragment
     public void onViewBound(View view) {
-        Intrinsics3.checkNotNullParameter(view, "view");
+        C12238m.checkNotNullParameter(view, "view");
         super.onViewBound(view);
         MGRecyclerAdapter.Companion companion = MGRecyclerAdapter.INSTANCE;
-        RecyclerView recyclerView = getViewBinding().g;
-        Intrinsics3.checkNotNullExpressionValue(recyclerView, "viewBinding.rolesRecycler");
+        RecyclerView recyclerView = getViewBinding().f15954g;
+        C12238m.checkNotNullExpressionValue(recyclerView, "viewBinding.rolesRecycler");
         this.rolesAdapter = (SimpleRolesAdapter) companion.configure(new SimpleRolesAdapter(recyclerView));
-        RecyclerView recyclerView2 = getViewBinding().g;
-        Intrinsics3.checkNotNullExpressionValue(recyclerView2, "viewBinding.rolesRecycler");
+        RecyclerView recyclerView2 = getViewBinding().f15954g;
+        C12238m.checkNotNullExpressionValue(recyclerView2, "viewBinding.rolesRecycler");
         recyclerView2.setNestedScrollingEnabled(false);
-        getViewBinding().g.setHasFixedSize(false);
-        RecyclerView recyclerView3 = getViewBinding().e;
-        Intrinsics3.checkNotNullExpressionValue(recyclerView3, "viewBinding.membersRecycler");
+        getViewBinding().f15954g.setHasFixedSize(false);
+        RecyclerView recyclerView3 = getViewBinding().f15952e;
+        C12238m.checkNotNullExpressionValue(recyclerView3, "viewBinding.membersRecycler");
         this.membersAdapter = (SimpleMembersAdapter) companion.configure(new SimpleMembersAdapter(recyclerView3));
-        RecyclerView recyclerView4 = getViewBinding().e;
-        Intrinsics3.checkNotNullExpressionValue(recyclerView4, "viewBinding.membersRecycler");
+        RecyclerView recyclerView4 = getViewBinding().f15952e;
+        C12238m.checkNotNullExpressionValue(recyclerView4, "viewBinding.membersRecycler");
         recyclerView4.setNestedScrollingEnabled(false);
-        getViewBinding().e.setHasFixedSize(false);
+        getViewBinding().f15952e.setHasFixedSize(false);
     }
 
     @Override // com.discord.app.AppFragment
     public void onViewBoundOrOnResume() {
         super.onViewBoundOrOnResume();
-        Observable<Model> observableR = Model.INSTANCE.get(getMostRecentIntent().getLongExtra("com.discord.intent.extra.EXTRA_CHANNEL_ID", -1L)).p(1L, TimeUnit.SECONDS).r();
-        Intrinsics3.checkNotNullExpressionValue(observableR, "Model[channelId]\n       …  .distinctUntilChanged()");
-        ObservableExtensionsKt.appSubscribe(ObservableExtensionsKt.ui$default(ObservableExtensionsKt.computationLatest(observableR), this, null, 2, null), (Class<?>) WidgetChannelSettingsPermissionsAdvanced.class, (58 & 2) != 0 ? null : null, (Function1<? super Subscription, Unit>) ((58 & 4) != 0 ? null : null), (Function1<? super Error, Unit>) ((58 & 8) != 0 ? null : null), (Function0<Unit>) ((58 & 16) != 0 ? ObservableExtensionsKt.AnonymousClass1.INSTANCE : null), (Function0<Unit>) ((58 & 32) != 0 ? ObservableExtensionsKt.AnonymousClass2.INSTANCE : null), new AnonymousClass1());
+        Observable<Model> observableM11112r = Model.INSTANCE.get(getMostRecentIntent().getLongExtra("com.discord.intent.extra.EXTRA_CHANNEL_ID", -1L)).m11110p(1L, TimeUnit.SECONDS).m11112r();
+        C12238m.checkNotNullExpressionValue(observableM11112r, "Model[channelId]\n       …  .distinctUntilChanged()");
+        ObservableExtensionsKt.appSubscribe(ObservableExtensionsKt.ui$default(ObservableExtensionsKt.computationLatest(observableM11112r), this, null, 2, null), (Class<?>) WidgetChannelSettingsPermissionsAdvanced.class, (58 & 2) != 0 ? null : null, (Function1<? super Subscription, Unit>) ((58 & 4) != 0 ? null : null), (Function1<? super Error, Unit>) ((58 & 8) != 0 ? null : null), (Function0<Unit>) ((58 & 16) != 0 ? ObservableExtensionsKt.C68791.INSTANCE : null), (Function0<Unit>) ((58 & 32) != 0 ? ObservableExtensionsKt.C68802.INSTANCE : null), new C75501());
     }
 }

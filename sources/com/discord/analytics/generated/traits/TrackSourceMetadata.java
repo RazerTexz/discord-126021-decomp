@@ -1,7 +1,7 @@
 package com.discord.analytics.generated.traits;
 
-import b.d.b.a.outline;
-import d0.z.d.Intrinsics3;
+import p007b.p100d.p104b.p105a.C1643a;
+import p507d0.p592z.p594d.C12238m;
 
 /* JADX INFO: compiled from: TrackSourceMetadata.kt */
 /* JADX INFO: loaded from: classes.dex */
@@ -36,7 +36,7 @@ public final /* data */ class TrackSourceMetadata {
             return false;
         }
         TrackSourceMetadata trackSourceMetadata = (TrackSourceMetadata) other;
-        return Intrinsics3.areEqual(this.sourcePage, trackSourceMetadata.sourcePage) && Intrinsics3.areEqual(this.sourceSection, trackSourceMetadata.sourceSection) && Intrinsics3.areEqual(this.sourceObject, trackSourceMetadata.sourceObject) && Intrinsics3.areEqual(this.sourceObjectType, trackSourceMetadata.sourceObjectType) && Intrinsics3.areEqual(this.sourcePromotionId, trackSourceMetadata.sourcePromotionId);
+        return C12238m.areEqual(this.sourcePage, trackSourceMetadata.sourcePage) && C12238m.areEqual(this.sourceSection, trackSourceMetadata.sourceSection) && C12238m.areEqual(this.sourceObject, trackSourceMetadata.sourceObject) && C12238m.areEqual(this.sourceObjectType, trackSourceMetadata.sourceObjectType) && C12238m.areEqual(this.sourcePromotionId, trackSourceMetadata.sourcePromotionId);
     }
 
     public int hashCode() {
@@ -53,15 +53,15 @@ public final /* data */ class TrackSourceMetadata {
     }
 
     public String toString() {
-        StringBuilder sbU = outline.U("TrackSourceMetadata(sourcePage=");
-        sbU.append(this.sourcePage);
-        sbU.append(", sourceSection=");
-        sbU.append(this.sourceSection);
-        sbU.append(", sourceObject=");
-        sbU.append(this.sourceObject);
-        sbU.append(", sourceObjectType=");
-        sbU.append(this.sourceObjectType);
-        sbU.append(", sourcePromotionId=");
-        return outline.G(sbU, this.sourcePromotionId, ")");
+        StringBuilder sbM833U = C1643a.m833U("TrackSourceMetadata(sourcePage=");
+        sbM833U.append(this.sourcePage);
+        sbM833U.append(", sourceSection=");
+        sbM833U.append(this.sourceSection);
+        sbM833U.append(", sourceObject=");
+        sbM833U.append(this.sourceObject);
+        sbM833U.append(", sourceObjectType=");
+        sbM833U.append(this.sourceObjectType);
+        sbM833U.append(", sourcePromotionId=");
+        return C1643a.m819G(sbM833U, this.sourcePromotionId, ")");
     }
 }

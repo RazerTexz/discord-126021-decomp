@@ -5,7 +5,7 @@ import androidx.room.EntityInsertionAdapter;
 import androidx.room.RoomDatabase;
 import androidx.room.RoomSQLiteQuery;
 import androidx.room.util.DBUtil;
-import androidx.sqlite.db.SupportSQLiteStatement;
+import androidx.sqlite.p006db.SupportSQLiteStatement;
 import java.util.ArrayList;
 import java.util.List;
 

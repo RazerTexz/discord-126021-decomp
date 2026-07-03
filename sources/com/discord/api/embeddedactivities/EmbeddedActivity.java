@@ -1,12 +1,12 @@
 package com.discord.api.embeddedactivities;
 
-import b.d.b.a.outline;
 import com.discord.api.activity.ActivityAssets;
 import com.discord.api.activity.ActivitySecrets;
 import com.discord.api.activity.ActivityTimestamps;
 import com.discord.api.activity.ActivityType;
 import com.discord.models.domain.ModelAuditLogEntry;
-import d0.z.d.Intrinsics3;
+import p007b.p100d.p104b.p105a.C1643a;
+import p507d0.p592z.p594d.C12238m;
 
 /* JADX INFO: compiled from: EmbeddedActivity.kt */
 /* JADX INFO: loaded from: classes.dex */
@@ -54,7 +54,7 @@ public final /* data */ class EmbeddedActivity {
             return false;
         }
         EmbeddedActivity embeddedActivity = (EmbeddedActivity) other;
-        return this.applicationId == embeddedActivity.applicationId && Intrinsics3.areEqual(this.assets, embeddedActivity.assets) && Intrinsics3.areEqual(this.createdAt, embeddedActivity.createdAt) && Intrinsics3.areEqual(this.details, embeddedActivity.details) && Intrinsics3.areEqual(this.name, embeddedActivity.name) && Intrinsics3.areEqual(this.secrets, embeddedActivity.secrets) && Intrinsics3.areEqual(this.state, embeddedActivity.state) && Intrinsics3.areEqual(this.timestamps, embeddedActivity.timestamps) && Intrinsics3.areEqual(this.type, embeddedActivity.type);
+        return this.applicationId == embeddedActivity.applicationId && C12238m.areEqual(this.assets, embeddedActivity.assets) && C12238m.areEqual(this.createdAt, embeddedActivity.createdAt) && C12238m.areEqual(this.details, embeddedActivity.details) && C12238m.areEqual(this.name, embeddedActivity.name) && C12238m.areEqual(this.secrets, embeddedActivity.secrets) && C12238m.areEqual(this.state, embeddedActivity.state) && C12238m.areEqual(this.timestamps, embeddedActivity.timestamps) && C12238m.areEqual(this.type, embeddedActivity.type);
     }
 
     /* JADX INFO: renamed from: f, reason: from getter */
@@ -99,25 +99,25 @@ public final /* data */ class EmbeddedActivity {
     }
 
     public String toString() {
-        StringBuilder sbU = outline.U("EmbeddedActivity(applicationId=");
-        sbU.append(this.applicationId);
-        sbU.append(", assets=");
-        sbU.append(this.assets);
-        sbU.append(", createdAt=");
-        sbU.append(this.createdAt);
-        sbU.append(", details=");
-        sbU.append(this.details);
-        sbU.append(", name=");
-        sbU.append(this.name);
-        sbU.append(", secrets=");
-        sbU.append(this.secrets);
-        sbU.append(", state=");
-        sbU.append(this.state);
-        sbU.append(", timestamps=");
-        sbU.append(this.timestamps);
-        sbU.append(", type=");
-        sbU.append(this.type);
-        sbU.append(")");
-        return sbU.toString();
+        StringBuilder sbM833U = C1643a.m833U("EmbeddedActivity(applicationId=");
+        sbM833U.append(this.applicationId);
+        sbM833U.append(", assets=");
+        sbM833U.append(this.assets);
+        sbM833U.append(", createdAt=");
+        sbM833U.append(this.createdAt);
+        sbM833U.append(", details=");
+        sbM833U.append(this.details);
+        sbM833U.append(", name=");
+        sbM833U.append(this.name);
+        sbM833U.append(", secrets=");
+        sbM833U.append(this.secrets);
+        sbM833U.append(", state=");
+        sbM833U.append(this.state);
+        sbM833U.append(", timestamps=");
+        sbM833U.append(this.timestamps);
+        sbM833U.append(", type=");
+        sbM833U.append(this.type);
+        sbM833U.append(")");
+        return sbM833U.toString();
     }
 }

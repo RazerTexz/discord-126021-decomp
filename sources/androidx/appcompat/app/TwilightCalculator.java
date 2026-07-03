@@ -3,12 +3,20 @@ package androidx.appcompat.app;
 /* JADX INFO: loaded from: classes.dex */
 public class TwilightCalculator {
     private static final float ALTIDUTE_CORRECTION_CIVIL_TWILIGHT = -0.10471976f;
-    private static final float C1 = 0.0334196f;
-    private static final float C2 = 3.49066E-4f;
-    private static final float C3 = 5.236E-6f;
+
+    /* JADX INFO: renamed from: C1 */
+    private static final float f84C1 = 0.0334196f;
+
+    /* JADX INFO: renamed from: C2 */
+    private static final float f85C2 = 3.49066E-4f;
+
+    /* JADX INFO: renamed from: C3 */
+    private static final float f86C3 = 5.236E-6f;
     public static final int DAY = 0;
     private static final float DEGREES_TO_RADIANS = 0.017453292f;
-    private static final float J0 = 9.0E-4f;
+
+    /* JADX INFO: renamed from: J0 */
+    private static final float f87J0 = 9.0E-4f;
     public static final int NIGHT = 1;
     private static final float OBLIQUITY = 0.4092797f;
     private static final long UTC_2000 = 946728000000L;
@@ -30,7 +38,7 @@ public class TwilightCalculator {
         double d3 = f2;
         double dSin = (Math.sin(f2 * 3.0f) * 5.236000106378924E-6d) + (Math.sin(2.0f * f2) * 3.4906598739326E-4d) + (Math.sin(d3) * 0.03341960161924362d) + d3 + 1.796593063d + 3.141592653589793d;
         double d4 = (-d2) / 360.0d;
-        double dSin2 = (Math.sin(2.0d * dSin) * (-0.0069d)) + (Math.sin(d3) * 0.0053d) + ((double) (Math.round(((double) (f - J0)) - d4) + J0)) + d4;
+        double dSin2 = (Math.sin(2.0d * dSin) * (-0.0069d)) + (Math.sin(d3) * 0.0053d) + ((double) (Math.round(((double) (f - f87J0)) - d4) + f87J0)) + d4;
         double dAsin = Math.asin(Math.sin(0.4092797040939331d) * Math.sin(dSin));
         double d5 = 0.01745329238474369d * d;
         double dSin3 = (Math.sin(-0.10471975803375244d) - (Math.sin(dAsin) * Math.sin(d5))) / (Math.cos(dAsin) * Math.cos(d5));

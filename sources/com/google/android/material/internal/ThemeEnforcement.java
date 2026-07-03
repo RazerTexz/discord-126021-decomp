@@ -11,16 +11,16 @@ import androidx.annotation.RestrictTo;
 import androidx.annotation.StyleRes;
 import androidx.annotation.StyleableRes;
 import androidx.appcompat.widget.TintTypedArray;
-import b.d.b.a.outline;
-import com.google.android.material.R;
+import com.google.android.material.C10817R;
+import p007b.p100d.p104b.p105a.C1643a;
 
 /* JADX INFO: loaded from: classes3.dex */
 @RestrictTo({RestrictTo.Scope.LIBRARY_GROUP})
 public final class ThemeEnforcement {
     private static final String APPCOMPAT_THEME_NAME = "Theme.AppCompat";
     private static final String MATERIAL_THEME_NAME = "Theme.MaterialComponents";
-    private static final int[] APPCOMPAT_CHECK_ATTRS = {R.attr.colorPrimary};
-    private static final int[] MATERIAL_CHECK_ATTRS = {R.attr.colorPrimaryVariant};
+    private static final int[] APPCOMPAT_CHECK_ATTRS = {C10817R.attr.colorPrimary};
+    private static final int[] MATERIAL_CHECK_ATTRS = {C10817R.attr.colorPrimaryVariant};
 
     private ThemeEnforcement() {
     }
@@ -30,12 +30,12 @@ public final class ThemeEnforcement {
     }
 
     private static void checkCompatibleTheme(@NonNull Context context, AttributeSet attributeSet, @AttrRes int i, @StyleRes int i2) {
-        TypedArray typedArrayObtainStyledAttributes = context.obtainStyledAttributes(attributeSet, R.styleable.ThemeEnforcement, i, i2);
-        boolean z2 = typedArrayObtainStyledAttributes.getBoolean(R.styleable.ThemeEnforcement_enforceMaterialTheme, false);
+        TypedArray typedArrayObtainStyledAttributes = context.obtainStyledAttributes(attributeSet, C10817R.styleable.ThemeEnforcement, i, i2);
+        boolean z2 = typedArrayObtainStyledAttributes.getBoolean(C10817R.styleable.ThemeEnforcement_enforceMaterialTheme, false);
         typedArrayObtainStyledAttributes.recycle();
         if (z2) {
             TypedValue typedValue = new TypedValue();
-            if (!context.getTheme().resolveAttribute(R.attr.isMaterialTheme, typedValue, true) || (typedValue.type == 18 && typedValue.data == 0)) {
+            if (!context.getTheme().resolveAttribute(C10817R.attr.isMaterialTheme, typedValue, true) || (typedValue.type == 18 && typedValue.data == 0)) {
                 checkMaterialTheme(context);
             }
         }
@@ -48,13 +48,13 @@ public final class ThemeEnforcement {
 
     private static void checkTextAppearance(@NonNull Context context, AttributeSet attributeSet, @NonNull @StyleableRes int[] iArr, @AttrRes int i, @StyleRes int i2, @Nullable @StyleableRes int... iArr2) {
         boolean zIsCustomTextAppearanceValid;
-        TypedArray typedArrayObtainStyledAttributes = context.obtainStyledAttributes(attributeSet, R.styleable.ThemeEnforcement, i, i2);
-        if (!typedArrayObtainStyledAttributes.getBoolean(R.styleable.ThemeEnforcement_enforceTextAppearance, false)) {
+        TypedArray typedArrayObtainStyledAttributes = context.obtainStyledAttributes(attributeSet, C10817R.styleable.ThemeEnforcement, i, i2);
+        if (!typedArrayObtainStyledAttributes.getBoolean(C10817R.styleable.ThemeEnforcement_enforceTextAppearance, false)) {
             typedArrayObtainStyledAttributes.recycle();
             return;
         }
         if (iArr2 == null || iArr2.length == 0) {
-            zIsCustomTextAppearanceValid = typedArrayObtainStyledAttributes.getResourceId(R.styleable.ThemeEnforcement_android_textAppearance, -1) != -1;
+            zIsCustomTextAppearanceValid = typedArrayObtainStyledAttributes.getResourceId(C10817R.styleable.ThemeEnforcement_android_textAppearance, -1) != -1;
         } else {
             zIsCustomTextAppearanceValid = isCustomTextAppearanceValid(context, attributeSet, iArr, i, i2, iArr2);
         }
@@ -66,7 +66,7 @@ public final class ThemeEnforcement {
 
     private static void checkTheme(@NonNull Context context, @NonNull int[] iArr, String str) {
         if (!isTheme(context, iArr)) {
-            throw new IllegalArgumentException(outline.y("The style on this component requires your app theme to be ", str, " (or a descendant)."));
+            throw new IllegalArgumentException(C1643a.m886y("The style on this component requires your app theme to be ", str, " (or a descendant)."));
         }
     }
 

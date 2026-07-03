@@ -10,7 +10,9 @@ public class ViewBoundsCheck {
     public static final int CVE_PVS_POS = 8;
     public static final int CVS_PVE_POS = 4;
     public static final int CVS_PVS_POS = 0;
-    public static final int EQ = 2;
+
+    /* JADX INFO: renamed from: EQ */
+    public static final int f155EQ = 2;
     public static final int FLAG_CVE_EQ_PVE = 8192;
     public static final int FLAG_CVE_EQ_PVS = 512;
     public static final int FLAG_CVE_GT_PVE = 4096;
@@ -23,8 +25,12 @@ public class ViewBoundsCheck {
     public static final int FLAG_CVS_GT_PVS = 1;
     public static final int FLAG_CVS_LT_PVE = 64;
     public static final int FLAG_CVS_LT_PVS = 4;
-    public static final int GT = 1;
-    public static final int LT = 4;
+
+    /* JADX INFO: renamed from: GT */
+    public static final int f156GT = 1;
+
+    /* JADX INFO: renamed from: LT */
+    public static final int f157LT = 4;
     public static final int MASK = 7;
     public BoundFlags mBoundFlags = new BoundFlags();
     public final Callback mCallback;

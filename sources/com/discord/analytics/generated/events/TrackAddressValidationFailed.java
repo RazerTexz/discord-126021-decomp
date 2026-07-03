@@ -1,14 +1,14 @@
 package com.discord.analytics.generated.events;
 
-import b.d.b.a.outline;
 import com.discord.analytics.generated.traits.TrackBase;
-import com.discord.analytics.generated.traits.TrackBase2;
+import com.discord.analytics.generated.traits.TrackBaseReceiver;
 import com.discord.api.science.AnalyticsSchema;
-import d0.z.d.Intrinsics3;
+import p007b.p100d.p104b.p105a.C1643a;
+import p507d0.p592z.p594d.C12238m;
 
 /* JADX INFO: compiled from: TrackAddressValidationFailed.kt */
 /* JADX INFO: loaded from: classes.dex */
-public final /* data */ class TrackAddressValidationFailed implements AnalyticsSchema, TrackBase2 {
+public final /* data */ class TrackAddressValidationFailed implements AnalyticsSchema, TrackBaseReceiver {
     private final CharSequence addressCountry = null;
     private final transient String analyticsSchemaTypeName = "address_validation_failed";
     private TrackBase trackBase;
@@ -21,7 +21,7 @@ public final /* data */ class TrackAddressValidationFailed implements AnalyticsS
 
     public boolean equals(Object other) {
         if (this != other) {
-            return (other instanceof TrackAddressValidationFailed) && Intrinsics3.areEqual(this.addressCountry, ((TrackAddressValidationFailed) other).addressCountry);
+            return (other instanceof TrackAddressValidationFailed) && C12238m.areEqual(this.addressCountry, ((TrackAddressValidationFailed) other).addressCountry);
         }
         return true;
     }
@@ -35,6 +35,6 @@ public final /* data */ class TrackAddressValidationFailed implements AnalyticsS
     }
 
     public String toString() {
-        return outline.E(outline.U("TrackAddressValidationFailed(addressCountry="), this.addressCountry, ")");
+        return C1643a.m817E(C1643a.m833U("TrackAddressValidationFailed(addressCountry="), this.addressCountry, ")");
     }
 }

@@ -7,9 +7,9 @@ import androidx.room.Database;
 import androidx.room.Room;
 import androidx.room.RoomDatabase;
 import androidx.room.TypeConverters;
-import androidx.sqlite.db.SupportSQLiteDatabase;
-import androidx.sqlite.db.SupportSQLiteOpenHelper;
-import androidx.sqlite.db.framework.FrameworkSQLiteOpenHelperFactory;
+import androidx.sqlite.p006db.SupportSQLiteDatabase;
+import androidx.sqlite.p006db.SupportSQLiteOpenHelper;
+import androidx.sqlite.p006db.framework.FrameworkSQLiteOpenHelperFactory;
 import androidx.work.Data;
 import androidx.work.impl.WorkDatabaseMigrations;
 import androidx.work.impl.model.Dependency;
@@ -28,9 +28,9 @@ import androidx.work.impl.model.WorkSpecDao;
 import androidx.work.impl.model.WorkTag;
 import androidx.work.impl.model.WorkTagDao;
 import androidx.work.impl.model.WorkTypeConverters;
-import b.d.b.a.outline;
 import java.util.concurrent.Executor;
 import java.util.concurrent.TimeUnit;
+import p007b.p100d.p104b.p105a.C1643a;
 
 /* JADX INFO: loaded from: classes.dex */
 @TypeConverters({Data.class, WorkTypeConverters.class})
@@ -83,10 +83,10 @@ public abstract class WorkDatabase extends RoomDatabase {
 
     @NonNull
     public static String getPruneSQL() {
-        StringBuilder sbU = outline.U(PRUNE_SQL_FORMAT_PREFIX);
-        sbU.append(getPruneDate());
-        sbU.append(PRUNE_SQL_FORMAT_SUFFIX);
-        return sbU.toString();
+        StringBuilder sbM833U = C1643a.m833U(PRUNE_SQL_FORMAT_PREFIX);
+        sbM833U.append(getPruneDate());
+        sbM833U.append(PRUNE_SQL_FORMAT_SUFFIX);
+        return sbM833U.toString();
     }
 
     @NonNull

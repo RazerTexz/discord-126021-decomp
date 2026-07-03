@@ -10,9 +10,7 @@ import androidx.core.app.NotificationCompat;
 import androidx.fragment.app.FragmentManager;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
-import b.a.k.FormatUtils;
-import b.d.b.a.outline;
-import com.discord.R;
+import com.discord.C5419R;
 import com.discord.databinding.EmojiPickerEmojiItemBinding;
 import com.discord.databinding.EmojiPickerPremiumUpsellBinding;
 import com.discord.databinding.ExpressionPickerHeaderItemBinding;
@@ -21,26 +19,28 @@ import com.discord.models.domain.emoji.Emoji;
 import com.discord.models.domain.emoji.EmojiCategory;
 import com.discord.models.guild.Guild;
 import com.discord.stores.StoreStream;
-import com.discord.utilities.KotlinExtensions;
+import com.discord.utilities.KotlinExtensionsKt;
 import com.discord.utilities.icon.IconUtils;
 import com.discord.utilities.images.MGImages;
 import com.discord.utilities.mg_recycler.MGRecyclerDataPayload;
 import com.discord.utilities.mg_recycler.MGRecyclerViewHolder;
-import com.discord.utilities.view.extensions.ImageViewExtensions;
+import com.discord.utilities.view.extensions.ImageViewExtensionsKt;
 import com.discord.utilities.view.extensions.ViewExtensions;
 import com.discord.widgets.chat.input.emoji.WidgetEmojiAdapter;
 import com.discord.widgets.chat.input.expression.WidgetExpressionPickerAdapter;
 import com.facebook.drawee.view.SimpleDraweeView;
-import d0.Result2;
-import d0.Result3;
-import d0.d0._Ranges;
-import d0.t._Collections;
-import d0.z.d.Intrinsics3;
 import java.util.Objects;
 import kotlin.NoWhenBranchMatchedException;
 import kotlin.Unit;
 import kotlin.jvm.functions.Function0;
 import kotlin.jvm.internal.DefaultConstructorMarker;
+import p007b.p008a.p027k.C1107b;
+import p007b.p100d.p104b.p105a.C1643a;
+import p507d0.C12112k;
+import p507d0.C12113l;
+import p507d0.p512d0.C11226f;
+import p507d0.p580t.C12163u;
+import p507d0.p592z.p594d.C12238m;
 
 /* JADX INFO: compiled from: WidgetEmojiAdapter.kt */
 /* JADX INFO: loaded from: classes2.dex */
@@ -63,13 +63,13 @@ public final class WidgetEmojiAdapter extends WidgetExpressionPickerAdapter {
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
         public EmojiViewHolder(WidgetEmojiAdapter widgetEmojiAdapter) {
-            super(R.layout.emoji_picker_emoji_item, widgetEmojiAdapter);
-            Intrinsics3.checkNotNullParameter(widgetEmojiAdapter, "adapter");
+            super(C5419R.layout.emoji_picker_emoji_item, widgetEmojiAdapter);
+            C12238m.checkNotNullParameter(widgetEmojiAdapter, "adapter");
             View view = this.itemView;
             Objects.requireNonNull(view, "rootView");
             SimpleDraweeView simpleDraweeView = (SimpleDraweeView) view;
             EmojiPickerEmojiItemBinding emojiPickerEmojiItemBinding = new EmojiPickerEmojiItemBinding(simpleDraweeView, simpleDraweeView);
-            Intrinsics3.checkNotNullExpressionValue(emojiPickerEmojiItemBinding, "EmojiPickerEmojiItemBinding.bind(itemView)");
+            C12238m.checkNotNullExpressionValue(emojiPickerEmojiItemBinding, "EmojiPickerEmojiItemBinding.bind(itemView)");
             this.binding = emojiPickerEmojiItemBinding;
         }
 
@@ -79,7 +79,7 @@ public final class WidgetEmojiAdapter extends WidgetExpressionPickerAdapter {
 
         @Override // com.discord.utilities.mg_recycler.MGRecyclerViewHolder
         public void onConfigure(int position, MGRecyclerDataPayload data) {
-            Intrinsics3.checkNotNullParameter(data, "data");
+            C12238m.checkNotNullParameter(data, "data");
             super.onConfigure(position, data);
             if (!(data instanceof EmojiItem)) {
                 data = null;
@@ -87,24 +87,24 @@ public final class WidgetEmojiAdapter extends WidgetExpressionPickerAdapter {
             EmojiItem emojiItem = (EmojiItem) data;
             if (emojiItem != null) {
                 final Emoji emoji = emojiItem.getEmoji();
-                int iCoerceAtMost = _Ranges.coerceAtMost(IconUtils.getMediaProxySize(((WidgetEmojiAdapter) this.adapter).emojiSizePx), 64);
+                int iCoerceAtMost = C11226f.coerceAtMost(IconUtils.getMediaProxySize(((WidgetEmojiAdapter) this.adapter).emojiSizePx), 64);
                 boolean allowEmojisToAnimate = emojiItem.getAllowEmojisToAnimate();
-                SimpleDraweeView simpleDraweeView = this.binding.f2101b;
-                Intrinsics3.checkNotNullExpressionValue(simpleDraweeView, "binding.emojiItemDraweeview");
+                SimpleDraweeView simpleDraweeView = this.binding.f15057b;
+                C12238m.checkNotNullExpressionValue(simpleDraweeView, "binding.emojiItemDraweeview");
                 String imageUri = emoji.getImageUri(allowEmojisToAnimate, iCoerceAtMost, simpleDraweeView.getContext());
-                SimpleDraweeView simpleDraweeView2 = this.binding.f2101b;
-                Intrinsics3.checkNotNullExpressionValue(simpleDraweeView2, "binding.emojiItemDraweeview");
+                SimpleDraweeView simpleDraweeView2 = this.binding.f15057b;
+                C12238m.checkNotNullExpressionValue(simpleDraweeView2, "binding.emojiItemDraweeview");
                 MGImages.setImage$default(simpleDraweeView2, imageUri, 0, 0, true, null, null, 108, null);
-                SimpleDraweeView simpleDraweeView3 = this.binding.f2101b;
-                Intrinsics3.checkNotNullExpressionValue(simpleDraweeView3, "binding.emojiItemDraweeview");
-                ImageViewExtensions.setGrayscale(simpleDraweeView3, (emoji.isUsable() && emoji.isAvailable()) ? false : true);
-                SimpleDraweeView simpleDraweeView4 = this.binding.f2101b;
-                Intrinsics3.checkNotNullExpressionValue(simpleDraweeView4, "binding.emojiItemDraweeview");
+                SimpleDraweeView simpleDraweeView3 = this.binding.f15057b;
+                C12238m.checkNotNullExpressionValue(simpleDraweeView3, "binding.emojiItemDraweeview");
+                ImageViewExtensionsKt.setGrayscale(simpleDraweeView3, (emoji.isUsable() && emoji.isAvailable()) ? false : true);
+                SimpleDraweeView simpleDraweeView4 = this.binding.f15057b;
+                C12238m.checkNotNullExpressionValue(simpleDraweeView4, "binding.emojiItemDraweeview");
                 simpleDraweeView4.setImageAlpha((emoji.isUsable() && emoji.isAvailable()) ? 255 : 100);
-                SimpleDraweeView simpleDraweeView5 = this.binding.f2101b;
-                Intrinsics3.checkNotNullExpressionValue(simpleDraweeView5, "binding.emojiItemDraweeview");
+                SimpleDraweeView simpleDraweeView5 = this.binding.f15057b;
+                C12238m.checkNotNullExpressionValue(simpleDraweeView5, "binding.emojiItemDraweeview");
                 simpleDraweeView5.setContentDescription(emoji.getFirstName());
-                this.binding.a.setOnClickListener(new View.OnClickListener() { // from class: com.discord.widgets.chat.input.emoji.WidgetEmojiAdapter$EmojiViewHolder$onConfigure$1
+                this.binding.f15056a.setOnClickListener(new View.OnClickListener() { // from class: com.discord.widgets.chat.input.emoji.WidgetEmojiAdapter$EmojiViewHolder$onConfigure$1
                     @Override // android.view.View.OnClickListener
                     public final void onClick(View view) {
                         if (emoji.isUsable() && emoji.isAvailable()) {
@@ -113,17 +113,17 @@ public final class WidgetEmojiAdapter extends WidgetExpressionPickerAdapter {
                         WidgetEmojiAdapter.EmojiViewHolder.access$getAdapter$p(this.this$0).onEmojiSelectedListener.onEmojiSelected(emoji);
                         WidgetEmojiAdapter.EmojiViewHolder emojiViewHolder = this.this$0;
                         try {
-                            Result2.a aVar = Result2.j;
-                            Result2.m97constructorimpl(Boolean.valueOf(emojiViewHolder.binding.f2101b.performHapticFeedback(3)));
+                            C12112k.a aVar = C12112k.f25169j;
+                            C12112k.m11474constructorimpl(Boolean.valueOf(emojiViewHolder.binding.f15057b.performHapticFeedback(3)));
                         } catch (Throwable th) {
-                            Result2.a aVar2 = Result2.j;
-                            Result2.m97constructorimpl(Result3.createFailure(th));
+                            C12112k.a aVar2 = C12112k.f25169j;
+                            C12112k.m11474constructorimpl(C12113l.createFailure(th));
                         }
                     }
                 });
-                SimpleDraweeView simpleDraweeView6 = this.binding.a;
-                Intrinsics3.checkNotNullExpressionValue(simpleDraweeView6, "binding.root");
-                ViewExtensions.setOnLongClickListenerConsumeClick(simpleDraweeView6, new WidgetEmojiAdapter3(this, emojiItem));
+                SimpleDraweeView simpleDraweeView6 = this.binding.f15056a;
+                C12238m.checkNotNullExpressionValue(simpleDraweeView6, "binding.root");
+                ViewExtensions.setOnLongClickListenerConsumeClick(simpleDraweeView6, new WidgetEmojiAdapter$EmojiViewHolder$onConfigure$2(this, emojiItem));
             }
         }
     }
@@ -140,8 +140,8 @@ public final class WidgetEmojiAdapter extends WidgetExpressionPickerAdapter {
             /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
             public GuildHeaderItem(String str, String str2) {
                 super(null);
-                Intrinsics3.checkNotNullParameter(str, NotificationCompat.MessagingStyle.Message.KEY_TEXT);
-                Intrinsics3.checkNotNullParameter(str2, "key");
+                C12238m.checkNotNullParameter(str, NotificationCompat.MessagingStyle.Message.KEY_TEXT);
+                C12238m.checkNotNullParameter(str2, "key");
                 this.text = str;
                 this.key = str2;
             }
@@ -166,8 +166,8 @@ public final class WidgetEmojiAdapter extends WidgetExpressionPickerAdapter {
             }
 
             public final GuildHeaderItem copy(String text, String key) {
-                Intrinsics3.checkNotNullParameter(text, NotificationCompat.MessagingStyle.Message.KEY_TEXT);
-                Intrinsics3.checkNotNullParameter(key, "key");
+                C12238m.checkNotNullParameter(text, NotificationCompat.MessagingStyle.Message.KEY_TEXT);
+                C12238m.checkNotNullParameter(key, "key");
                 return new GuildHeaderItem(text, key);
             }
 
@@ -179,7 +179,7 @@ public final class WidgetEmojiAdapter extends WidgetExpressionPickerAdapter {
                     return false;
                 }
                 GuildHeaderItem guildHeaderItem = (GuildHeaderItem) other;
-                return Intrinsics3.areEqual(this.text, guildHeaderItem.text) && Intrinsics3.areEqual(getKey(), guildHeaderItem.getKey());
+                return C12238m.areEqual(this.text, guildHeaderItem.text) && C12238m.areEqual(getKey(), guildHeaderItem.getKey());
             }
 
             @Override // com.discord.utilities.mg_recycler.MGRecyclerDataPayload, com.discord.utilities.recycler.DiffKeyProvider
@@ -199,18 +199,18 @@ public final class WidgetEmojiAdapter extends WidgetExpressionPickerAdapter {
             }
 
             public String toString() {
-                StringBuilder sbU = outline.U("GuildHeaderItem(text=");
-                sbU.append(this.text);
-                sbU.append(", key=");
-                sbU.append(getKey());
-                sbU.append(")");
-                return sbU.toString();
+                StringBuilder sbM833U = C1643a.m833U("GuildHeaderItem(text=");
+                sbM833U.append(this.text);
+                sbM833U.append(", key=");
+                sbM833U.append(getKey());
+                sbM833U.append(")");
+                return sbM833U.toString();
             }
 
             /* JADX WARN: 'this' call moved to the top of the method (can break code semantics) */
             public GuildHeaderItem(Guild guild) {
                 this(guild.getName(), String.valueOf(guild.getId()));
-                Intrinsics3.checkNotNullParameter(guild, "guild");
+                C12238m.checkNotNullParameter(guild, "guild");
             }
         }
 
@@ -222,7 +222,7 @@ public final class WidgetEmojiAdapter extends WidgetExpressionPickerAdapter {
             /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
             public StandardHeaderItem(EmojiCategory emojiCategory) {
                 super(null);
-                Intrinsics3.checkNotNullParameter(emojiCategory, "emojiCategory");
+                C12238m.checkNotNullParameter(emojiCategory, "emojiCategory");
                 this.emojiCategory = emojiCategory;
                 this.key = emojiCategory.name();
             }
@@ -240,13 +240,13 @@ public final class WidgetEmojiAdapter extends WidgetExpressionPickerAdapter {
             }
 
             public final StandardHeaderItem copy(EmojiCategory emojiCategory) {
-                Intrinsics3.checkNotNullParameter(emojiCategory, "emojiCategory");
+                C12238m.checkNotNullParameter(emojiCategory, "emojiCategory");
                 return new StandardHeaderItem(emojiCategory);
             }
 
             public boolean equals(Object other) {
                 if (this != other) {
-                    return (other instanceof StandardHeaderItem) && Intrinsics3.areEqual(this.emojiCategory, ((StandardHeaderItem) other).emojiCategory);
+                    return (other instanceof StandardHeaderItem) && C12238m.areEqual(this.emojiCategory, ((StandardHeaderItem) other).emojiCategory);
                 }
                 return true;
             }
@@ -269,10 +269,10 @@ public final class WidgetEmojiAdapter extends WidgetExpressionPickerAdapter {
             }
 
             public String toString() {
-                StringBuilder sbU = outline.U("StandardHeaderItem(emojiCategory=");
-                sbU.append(this.emojiCategory);
-                sbU.append(")");
-                return sbU.toString();
+                StringBuilder sbM833U = C1643a.m833U("StandardHeaderItem(emojiCategory=");
+                sbM833U.append(this.emojiCategory);
+                sbM833U.append(")");
+                return sbM833U.toString();
             }
         }
 
@@ -324,7 +324,7 @@ public final class WidgetEmojiAdapter extends WidgetExpressionPickerAdapter {
             }
 
             public String toString() {
-                return outline.B(outline.U("StringHeaderItem(stringRes="), this.stringRes, ")");
+                return C1643a.m814B(C1643a.m833U("StringHeaderItem(stringRes="), this.stringRes, ")");
             }
         }
 
@@ -378,30 +378,30 @@ public final class WidgetEmojiAdapter extends WidgetExpressionPickerAdapter {
 
             @StringRes
             public final int getCategoryString(EmojiCategory emojiCategory) {
-                Intrinsics3.checkNotNullParameter(emojiCategory, "emojiCategory");
+                C12238m.checkNotNullParameter(emojiCategory, "emojiCategory");
                 switch (emojiCategory) {
                     case FAVORITE:
-                        return R.string.category_favorite;
+                        return C5419R.string.category_favorite;
                     case RECENT:
-                        return R.string.emoji_category_recent;
+                        return C5419R.string.emoji_category_recent;
                     case CUSTOM:
-                        return R.string.emoji_category_custom;
+                        return C5419R.string.emoji_category_custom;
                     case PEOPLE:
-                        return R.string.emoji_category_people;
+                        return C5419R.string.emoji_category_people;
                     case NATURE:
-                        return R.string.emoji_category_nature;
+                        return C5419R.string.emoji_category_nature;
                     case FOOD:
-                        return R.string.emoji_category_food;
+                        return C5419R.string.emoji_category_food;
                     case ACTIVITY:
-                        return R.string.emoji_category_activity;
+                        return C5419R.string.emoji_category_activity;
                     case TRAVEL:
-                        return R.string.emoji_category_travel;
+                        return C5419R.string.emoji_category_travel;
                     case OBJECTS:
-                        return R.string.emoji_category_objects;
+                        return C5419R.string.emoji_category_objects;
                     case SYMBOLS:
-                        return R.string.emoji_category_symbols;
+                        return C5419R.string.emoji_category_symbols;
                     case FLAGS:
-                        return R.string.emoji_category_flags;
+                        return C5419R.string.emoji_category_flags;
                     default:
                         throw new NoWhenBranchMatchedException();
                 }
@@ -414,26 +414,26 @@ public final class WidgetEmojiAdapter extends WidgetExpressionPickerAdapter {
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
         public HeaderViewHolder(WidgetEmojiAdapter widgetEmojiAdapter) {
-            super(R.layout.expression_picker_header_item, widgetEmojiAdapter);
-            Intrinsics3.checkNotNullParameter(widgetEmojiAdapter, "adapter");
+            super(C5419R.layout.expression_picker_header_item, widgetEmojiAdapter);
+            C12238m.checkNotNullParameter(widgetEmojiAdapter, "adapter");
             View view = this.itemView;
             Objects.requireNonNull(view, "rootView");
             TextView textView = (TextView) view;
             ExpressionPickerHeaderItemBinding expressionPickerHeaderItemBinding = new ExpressionPickerHeaderItemBinding(textView, textView);
-            Intrinsics3.checkNotNullExpressionValue(expressionPickerHeaderItemBinding, "ExpressionPickerHeaderItemBinding.bind(itemView)");
+            C12238m.checkNotNullExpressionValue(expressionPickerHeaderItemBinding, "ExpressionPickerHeaderItemBinding.bind(itemView)");
             this.binding = expressionPickerHeaderItemBinding;
         }
 
         @Override // com.discord.widgets.chat.input.expression.WidgetExpressionPickerAdapter.StickyHeaderViewHolder
         public void bind(int position, MGRecyclerDataPayload data) {
-            Intrinsics3.checkNotNullParameter(data, "data");
+            C12238m.checkNotNullParameter(data, "data");
             onConfigure(position, data);
         }
 
         public final HeaderItem getBoundItem() {
             HeaderItem headerItem = this.boundItem;
             if (headerItem == null) {
-                Intrinsics3.throwUninitializedPropertyAccessException("boundItem");
+                C12238m.throwUninitializedPropertyAccessException("boundItem");
             }
             return headerItem;
         }
@@ -441,19 +441,19 @@ public final class WidgetEmojiAdapter extends WidgetExpressionPickerAdapter {
         @Override // com.discord.widgets.chat.input.expression.WidgetExpressionPickerAdapter.StickyHeaderViewHolder
         public View getItemView() {
             View view = this.itemView;
-            Intrinsics3.checkNotNullExpressionValue(view, "itemView");
+            C12238m.checkNotNullExpressionValue(view, "itemView");
             return view;
         }
 
         public final void setBoundItem(HeaderItem headerItem) {
-            Intrinsics3.checkNotNullParameter(headerItem, "<set-?>");
+            C12238m.checkNotNullParameter(headerItem, "<set-?>");
             this.boundItem = headerItem;
         }
 
         @Override // com.discord.utilities.mg_recycler.MGRecyclerViewHolder
         public void onConfigure(int position, MGRecyclerDataPayload data) {
             Unit unit;
-            Intrinsics3.checkNotNullParameter(data, "data");
+            C12238m.checkNotNullParameter(data, "data");
             super.onConfigure(position, data);
             if (!(data instanceof HeaderItem)) {
                 data = null;
@@ -462,25 +462,25 @@ public final class WidgetEmojiAdapter extends WidgetExpressionPickerAdapter {
             if (headerItem != null) {
                 this.boundItem = headerItem;
                 if (headerItem instanceof HeaderItem.StandardHeaderItem) {
-                    TextView textView = this.binding.f2105b;
-                    Intrinsics3.checkNotNullExpressionValue(textView, "binding.headerItemText");
-                    FormatUtils.m(textView, INSTANCE.getCategoryString(((HeaderItem.StandardHeaderItem) headerItem).getEmojiCategory()), new Object[0], (4 & 4) != 0 ? FormatUtils.g.j : null);
-                    unit = Unit.a;
+                    TextView textView = this.binding.f15066b;
+                    C12238m.checkNotNullExpressionValue(textView, "binding.headerItemText");
+                    C1107b.m221m(textView, INSTANCE.getCategoryString(((HeaderItem.StandardHeaderItem) headerItem).getEmojiCategory()), new Object[0], (4 & 4) != 0 ? C1107b.g.f1495j : null);
+                    unit = Unit.f27425a;
                 } else if (headerItem instanceof HeaderItem.GuildHeaderItem) {
-                    TextView textView2 = this.binding.f2105b;
-                    Intrinsics3.checkNotNullExpressionValue(textView2, "binding.headerItemText");
+                    TextView textView2 = this.binding.f15066b;
+                    C12238m.checkNotNullExpressionValue(textView2, "binding.headerItemText");
                     textView2.setText(((HeaderItem.GuildHeaderItem) headerItem).getText());
-                    unit = Unit.a;
+                    unit = Unit.f27425a;
                 } else {
                     if (!(headerItem instanceof HeaderItem.StringHeaderItem)) {
                         throw new NoWhenBranchMatchedException();
                     }
-                    TextView textView3 = this.binding.f2105b;
-                    Intrinsics3.checkNotNullExpressionValue(textView3, "binding.headerItemText");
-                    FormatUtils.m(textView3, ((HeaderItem.StringHeaderItem) headerItem).getStringRes(), new Object[0], (4 & 4) != 0 ? FormatUtils.g.j : null);
-                    unit = Unit.a;
+                    TextView textView3 = this.binding.f15066b;
+                    C12238m.checkNotNullExpressionValue(textView3, "binding.headerItemText");
+                    C1107b.m221m(textView3, ((HeaderItem.StringHeaderItem) headerItem).getStringRes(), new Object[0], (4 & 4) != 0 ? C1107b.g.f1495j : null);
+                    unit = Unit.f27425a;
                 }
-                KotlinExtensions.getExhaustive(unit);
+                KotlinExtensionsKt.getExhaustive(unit);
             }
         }
     }
@@ -491,15 +491,15 @@ public final class WidgetEmojiAdapter extends WidgetExpressionPickerAdapter {
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
         public PremiumEmojiUpsellViewHolder(final WidgetEmojiAdapter widgetEmojiAdapter) {
-            super(R.layout.emoji_picker_premium_upsell, widgetEmojiAdapter);
-            Intrinsics3.checkNotNullParameter(widgetEmojiAdapter, "adapter");
+            super(C5419R.layout.emoji_picker_premium_upsell, widgetEmojiAdapter);
+            C12238m.checkNotNullParameter(widgetEmojiAdapter, "adapter");
             View view = this.itemView;
-            TextView textView = (TextView) view.findViewById(R.id.emojiPickerPremiumCta);
+            TextView textView = (TextView) view.findViewById(C5419R.id.emojiPickerPremiumCta);
             if (textView == null) {
-                throw new NullPointerException("Missing required view with ID: ".concat(view.getResources().getResourceName(R.id.emojiPickerPremiumCta)));
+                throw new NullPointerException("Missing required view with ID: ".concat(view.getResources().getResourceName(C5419R.id.emojiPickerPremiumCta)));
             }
             EmojiPickerPremiumUpsellBinding emojiPickerPremiumUpsellBinding = new EmojiPickerPremiumUpsellBinding((LinearLayout) view, textView);
-            Intrinsics3.checkNotNullExpressionValue(emojiPickerPremiumUpsellBinding, "EmojiPickerPremiumUpsellBinding.bind(itemView)");
+            C12238m.checkNotNullExpressionValue(emojiPickerPremiumUpsellBinding, "EmojiPickerPremiumUpsellBinding.bind(itemView)");
             this.binding = emojiPickerPremiumUpsellBinding;
             textView.setOnClickListener(new View.OnClickListener() { // from class: com.discord.widgets.chat.input.emoji.WidgetEmojiAdapter.PremiumEmojiUpsellViewHolder.1
                 @Override // android.view.View.OnClickListener
@@ -518,7 +518,7 @@ public final class WidgetEmojiAdapter extends WidgetExpressionPickerAdapter {
 
         static {
             String name = UpsellItem.class.getName();
-            Intrinsics3.checkNotNullExpressionValue(name, "javaClass.name");
+            C12238m.checkNotNullExpressionValue(name, "javaClass.name");
             key = name;
         }
 
@@ -540,21 +540,21 @@ public final class WidgetEmojiAdapter extends WidgetExpressionPickerAdapter {
     /* JADX WARN: Multi-variable type inference failed */
     public WidgetEmojiAdapter(RecyclerView recyclerView, FragmentManager fragmentManager, OnEmojiSelectedListener onEmojiSelectedListener, Function0<Unit> function0, Function0<Unit> function1) {
         super(recyclerView, null, 2, 0 == true ? 1 : 0);
-        Intrinsics3.checkNotNullParameter(recyclerView, "recycler");
-        Intrinsics3.checkNotNullParameter(fragmentManager, "fragmentManager");
-        Intrinsics3.checkNotNullParameter(onEmojiSelectedListener, "onEmojiSelectedListener");
-        Intrinsics3.checkNotNullParameter(function0, "onGetPremiumCtaClicked");
-        Intrinsics3.checkNotNullParameter(function1, "hideKeyboard");
+        C12238m.checkNotNullParameter(recyclerView, "recycler");
+        C12238m.checkNotNullParameter(fragmentManager, "fragmentManager");
+        C12238m.checkNotNullParameter(onEmojiSelectedListener, "onEmojiSelectedListener");
+        C12238m.checkNotNullParameter(function0, "onGetPremiumCtaClicked");
+        C12238m.checkNotNullParameter(function1, "hideKeyboard");
         this.fragmentManager = fragmentManager;
         this.onEmojiSelectedListener = onEmojiSelectedListener;
         this.onGetPremiumCtaClicked = function0;
         this.hideKeyboard = function1;
         Context context = recyclerView.getContext();
-        Intrinsics3.checkNotNullExpressionValue(context, "recycler.context");
-        this.emojiSizePx = context.getResources().getDimensionPixelSize(R.dimen.chat_input_emoji_size);
+        C12238m.checkNotNullExpressionValue(context, "recycler.context");
+        this.emojiSizePx = context.getResources().getDimensionPixelSize(C5419R.dimen.chat_input_emoji_size);
         Context context2 = recyclerView.getContext();
-        Intrinsics3.checkNotNullExpressionValue(context2, "recycler.context");
-        this.numColumns = WidgetExpressionPickerAdapter.INSTANCE.calculateNumOfColumns(recyclerView, context2.getResources().getDimension(R.dimen.chat_input_emoji_size), 8);
+        C12238m.checkNotNullExpressionValue(context2, "recycler.context");
+        this.numColumns = WidgetExpressionPickerAdapter.INSTANCE.calculateNumOfColumns(recyclerView, context2.getResources().getDimension(C5419R.dimen.chat_input_emoji_size), 8);
         this.layoutManager = new GridLayoutManager(recyclerView.getContext(), getNumColumns());
         getLayoutManager().setSpanSizeLookup(new GridLayoutManager.SpanSizeLookup() { // from class: com.discord.widgets.chat.input.emoji.WidgetEmojiAdapter.1
             @Override // androidx.recyclerview.widget.GridLayoutManager.SpanSizeLookup
@@ -582,18 +582,18 @@ public final class WidgetEmojiAdapter extends WidgetExpressionPickerAdapter {
 
     @Override // com.discord.utilities.views.StickyHeaderItemDecoration.StickyHeaderAdapter
     public boolean isHeader(int position) {
-        return _Collections.getOrNull(getInternalData(), position) instanceof HeaderItem;
+        return C12163u.getOrNull(getInternalData(), position) instanceof HeaderItem;
     }
 
     @Override // com.discord.widgets.chat.input.expression.WidgetExpressionPickerAdapter
     public HeaderViewHolder createStickyHeaderViewHolder(WidgetExpressionPickerAdapter adapter) {
-        Intrinsics3.checkNotNullParameter(adapter, "adapter");
+        C12238m.checkNotNullParameter(adapter, "adapter");
         return new HeaderViewHolder((WidgetEmojiAdapter) adapter);
     }
 
     @Override // androidx.recyclerview.widget.RecyclerView.Adapter
     public MGRecyclerViewHolder<WidgetEmojiAdapter, MGRecyclerDataPayload> onCreateViewHolder(ViewGroup parent, int viewType) {
-        Intrinsics3.checkNotNullParameter(parent, "parent");
+        C12238m.checkNotNullParameter(parent, "parent");
         if (viewType == 0) {
             return new HeaderViewHolder(this);
         }
@@ -616,15 +616,15 @@ public final class WidgetEmojiAdapter extends WidgetExpressionPickerAdapter {
         private final int type;
 
         public EmojiItem(String str, Emoji emoji, String str2, boolean z2) {
-            Intrinsics3.checkNotNullParameter(emoji, "emoji");
-            Intrinsics3.checkNotNullParameter(str2, "emojiName");
+            C12238m.checkNotNullParameter(emoji, "emoji");
+            C12238m.checkNotNullParameter(str2, "emojiName");
             this.guildName = str;
             this.emoji = emoji;
             this.emojiName = str2;
             this.allowEmojisToAnimate = z2;
             this.type = 1;
             String uniqueId = emoji.getUniqueId();
-            Intrinsics3.checkNotNullExpressionValue(uniqueId, "emoji.uniqueId");
+            C12238m.checkNotNullExpressionValue(uniqueId, "emoji.uniqueId");
             this.key = uniqueId;
         }
 
@@ -665,8 +665,8 @@ public final class WidgetEmojiAdapter extends WidgetExpressionPickerAdapter {
         }
 
         public final EmojiItem copy(String guildName, Emoji emoji, String emojiName, boolean allowEmojisToAnimate) {
-            Intrinsics3.checkNotNullParameter(emoji, "emoji");
-            Intrinsics3.checkNotNullParameter(emojiName, "emojiName");
+            C12238m.checkNotNullParameter(emoji, "emoji");
+            C12238m.checkNotNullParameter(emojiName, "emojiName");
             return new EmojiItem(guildName, emoji, emojiName, allowEmojisToAnimate);
         }
 
@@ -678,7 +678,7 @@ public final class WidgetEmojiAdapter extends WidgetExpressionPickerAdapter {
                 return false;
             }
             EmojiItem emojiItem = (EmojiItem) other;
-            return Intrinsics3.areEqual(this.guildName, emojiItem.guildName) && Intrinsics3.areEqual(this.emoji, emojiItem.emoji) && Intrinsics3.areEqual(this.emojiName, emojiItem.emojiName) && this.allowEmojisToAnimate == emojiItem.allowEmojisToAnimate;
+            return C12238m.areEqual(this.guildName, emojiItem.guildName) && C12238m.areEqual(this.emoji, emojiItem.emoji) && C12238m.areEqual(this.emojiName, emojiItem.emojiName) && this.allowEmojisToAnimate == emojiItem.allowEmojisToAnimate;
         }
 
         public final boolean getAllowEmojisToAnimate() {
@@ -728,14 +728,14 @@ public final class WidgetEmojiAdapter extends WidgetExpressionPickerAdapter {
         }
 
         public String toString() {
-            StringBuilder sbU = outline.U("EmojiItem(guildName=");
-            sbU.append(this.guildName);
-            sbU.append(", emoji=");
-            sbU.append(this.emoji);
-            sbU.append(", emojiName=");
-            sbU.append(this.emojiName);
-            sbU.append(", allowEmojisToAnimate=");
-            return outline.O(sbU, this.allowEmojisToAnimate, ")");
+            StringBuilder sbM833U = C1643a.m833U("EmojiItem(guildName=");
+            sbM833U.append(this.guildName);
+            sbM833U.append(", emoji=");
+            sbM833U.append(this.emoji);
+            sbM833U.append(", emojiName=");
+            sbM833U.append(this.emojiName);
+            sbM833U.append(", allowEmojisToAnimate=");
+            return C1643a.m827O(sbM833U, this.allowEmojisToAnimate, ")");
         }
 
         public /* synthetic */ EmojiItem(String str, Emoji emoji, String str2, boolean z2, int i, DefaultConstructorMarker defaultConstructorMarker) {

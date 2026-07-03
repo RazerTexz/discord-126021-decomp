@@ -1,0 +1,13 @@
+package p507d0.p513e0.p514p.p515d.p517m0.p531e.p532a.p539k0;
+
+import p507d0.p513e0.p514p.p515d.p517m0.p548g.C11712a;
+import p507d0.p513e0.p514p.p515d.p517m0.p548g.C11716e;
+
+/* JADX INFO: renamed from: d0.e0.p.d.m0.e.a.k0.m */
+/* JADX INFO: compiled from: annotationArguments.kt */
+/* JADX INFO: loaded from: classes3.dex */
+public interface InterfaceC11580m extends InterfaceC11566b {
+    C11716e getEntryName();
+
+    C11712a getEnumClassId();
+}

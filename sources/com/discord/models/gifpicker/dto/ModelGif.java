@@ -1,8 +1,8 @@
 package com.discord.models.gifpicker.dto;
 
-import b.d.b.a.outline;
-import d0.z.d.Intrinsics3;
 import kotlin.jvm.internal.DefaultConstructorMarker;
+import p007b.p100d.p104b.p105a.C1643a;
+import p507d0.p592z.p594d.C12238m;
 
 /* JADX INFO: compiled from: ModelGif.kt */
 /* JADX INFO: loaded from: classes.dex */
@@ -21,7 +21,7 @@ public final /* data */ class ModelGif {
         }
 
         public final ModelGif createFromGifDto(GifDto gifDto) {
-            Intrinsics3.checkNotNullParameter(gifDto, "gifDto");
+            C12238m.checkNotNullParameter(gifDto, "gifDto");
             return new ModelGif(gifDto.getSrc(), gifDto.getUrl(), gifDto.getWidth(), gifDto.getHeight());
         }
 
@@ -31,8 +31,8 @@ public final /* data */ class ModelGif {
     }
 
     public ModelGif(String str, String str2, int i, int i2) {
-        Intrinsics3.checkNotNullParameter(str, "gifImageUrl");
-        Intrinsics3.checkNotNullParameter(str2, "tenorGifUrl");
+        C12238m.checkNotNullParameter(str, "gifImageUrl");
+        C12238m.checkNotNullParameter(str2, "tenorGifUrl");
         this.gifImageUrl = str;
         this.tenorGifUrl = str2;
         this.width = i;
@@ -76,8 +76,8 @@ public final /* data */ class ModelGif {
     }
 
     public final ModelGif copy(String gifImageUrl, String tenorGifUrl, int width, int height) {
-        Intrinsics3.checkNotNullParameter(gifImageUrl, "gifImageUrl");
-        Intrinsics3.checkNotNullParameter(tenorGifUrl, "tenorGifUrl");
+        C12238m.checkNotNullParameter(gifImageUrl, "gifImageUrl");
+        C12238m.checkNotNullParameter(tenorGifUrl, "tenorGifUrl");
         return new ModelGif(gifImageUrl, tenorGifUrl, width, height);
     }
 
@@ -89,7 +89,7 @@ public final /* data */ class ModelGif {
             return false;
         }
         ModelGif modelGif = (ModelGif) other;
-        return Intrinsics3.areEqual(this.gifImageUrl, modelGif.gifImageUrl) && Intrinsics3.areEqual(this.tenorGifUrl, modelGif.tenorGifUrl) && this.width == modelGif.width && this.height == modelGif.height;
+        return C12238m.areEqual(this.gifImageUrl, modelGif.gifImageUrl) && C12238m.areEqual(this.tenorGifUrl, modelGif.tenorGifUrl) && this.width == modelGif.width && this.height == modelGif.height;
     }
 
     public final String getGifImageUrl() {
@@ -116,13 +116,13 @@ public final /* data */ class ModelGif {
     }
 
     public String toString() {
-        StringBuilder sbU = outline.U("ModelGif(gifImageUrl=");
-        sbU.append(this.gifImageUrl);
-        sbU.append(", tenorGifUrl=");
-        sbU.append(this.tenorGifUrl);
-        sbU.append(", width=");
-        sbU.append(this.width);
-        sbU.append(", height=");
-        return outline.B(sbU, this.height, ")");
+        StringBuilder sbM833U = C1643a.m833U("ModelGif(gifImageUrl=");
+        sbM833U.append(this.gifImageUrl);
+        sbM833U.append(", tenorGifUrl=");
+        sbM833U.append(this.tenorGifUrl);
+        sbM833U.append(", width=");
+        sbM833U.append(this.width);
+        sbM833U.append(", height=");
+        return C1643a.m814B(sbM833U, this.height, ")");
     }
 }

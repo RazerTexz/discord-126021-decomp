@@ -4,10 +4,10 @@ import com.discord.stores.StoreStream;
 import com.discord.utilities.analytics.AnalyticsTracker;
 import com.discord.utilities.time.Clock;
 import com.discord.utilities.time.ClockFactory;
-import d0.t.Maps6;
-import d0.z.d.Intrinsics3;
 import java.util.Map;
 import kotlin.jvm.internal.DefaultConstructorMarker;
+import p507d0.p580t.C12136h0;
+import p507d0.p592z.p594d.C12238m;
 
 /* JADX INFO: compiled from: ContactSyncFlowAnalytics.kt */
 /* JADX INFO: loaded from: classes2.dex */
@@ -38,7 +38,7 @@ public final class ContactSyncFlowAnalytics {
         }
 
         public final void trackStart(boolean isOnboarding, Map<String, ? extends Object> additionalProps) {
-            Map<String, ? extends Object> mutableMap = Maps6.toMutableMap(additionalProps != null ? additionalProps : Maps6.emptyMap());
+            Map<String, ? extends Object> mutableMap = C12136h0.toMutableMap(additionalProps != null ? additionalProps : C12136h0.emptyMap());
             mutableMap.put("has_phone_number", Boolean.valueOf(StoreStream.INSTANCE.getUsers().getMeSnapshot().getPhoneNumber() != null));
             AnalyticsTracker analyticsTracker = AnalyticsTracker.INSTANCE;
             analyticsTracker.relationshipSyncFlow(ContactSyncFlowAnalytics.CONTACT_SYNC_FLOW_KEY, "Flow Initialized", "Landing", 0, false, false, mutableMap);
@@ -58,7 +58,7 @@ public final class ContactSyncFlowAnalytics {
     }
 
     public ContactSyncFlowAnalytics(boolean z2, Clock clock) {
-        Intrinsics3.checkNotNullParameter(clock, "clock");
+        C12238m.checkNotNullParameter(clock, "clock");
         this.isOnboarding = z2;
         this.clock = clock;
         this.lastStepTimestamp = clock.currentTimeMillis();
@@ -100,7 +100,7 @@ public final class ContactSyncFlowAnalytics {
     }
 
     public final void trackFlowStep(String toStep, boolean skip, boolean back, Map<String, ? extends Object> additionalProps) {
-        Intrinsics3.checkNotNullParameter(toStep, "toStep");
+        C12238m.checkNotNullParameter(toStep, "toStep");
         long jCurrentTimeMillis = this.clock.currentTimeMillis();
         AnalyticsTracker analyticsTracker = AnalyticsTracker.INSTANCE;
         analyticsTracker.relationshipSyncFlow(CONTACT_SYNC_FLOW_KEY, this.lastStep, toStep, (int) ((jCurrentTimeMillis - this.lastStepTimestamp) / ((long) 1000)), skip, back, additionalProps);

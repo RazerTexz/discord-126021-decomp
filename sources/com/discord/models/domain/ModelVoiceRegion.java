@@ -1,16 +1,16 @@
 package com.discord.models.domain;
 
-import b.d.b.a.outline;
 import com.discord.models.domain.Model;
 import java.io.IOException;
+import p007b.p100d.p104b.p105a.C1643a;
 
 /* JADX INFO: loaded from: classes.dex */
 public class ModelVoiceRegion implements Model {
     private boolean deprecated;
     private boolean hidden;
 
-    /* JADX INFO: renamed from: id, reason: collision with root package name */
-    private String f2736id;
+    /* JADX INFO: renamed from: id */
+    private String f18585id;
     private String name;
     private boolean optimal;
     private String sampleHostname;
@@ -31,7 +31,7 @@ public class ModelVoiceRegion implements Model {
                 this.hidden = jsonReader.nextBoolean(this.hidden);
                 break;
             case "id":
-                this.f2736id = jsonReader.nextString(this.f2736id);
+                this.f18585id = jsonReader.nextString(this.f18585id);
                 break;
             case "name":
                 this.name = jsonReader.nextString(this.name);
@@ -79,7 +79,7 @@ public class ModelVoiceRegion implements Model {
     }
 
     public String getId() {
-        return this.f2736id;
+        return this.f18585id;
     }
 
     public String getName() {
@@ -118,21 +118,21 @@ public class ModelVoiceRegion implements Model {
     }
 
     public String toString() {
-        StringBuilder sbU = outline.U("ModelVoiceRegion(id=");
-        sbU.append(getId());
-        sbU.append(", name=");
-        sbU.append(getName());
-        sbU.append(", optimal=");
-        sbU.append(isOptimal());
-        sbU.append(", samplePort=");
-        sbU.append(getSamplePort());
-        sbU.append(", sampleHostname=");
-        sbU.append(getSampleHostname());
-        sbU.append(", deprecated=");
-        sbU.append(isDeprecated());
-        sbU.append(", hidden=");
-        sbU.append(isHidden());
-        sbU.append(")");
-        return sbU.toString();
+        StringBuilder sbM833U = C1643a.m833U("ModelVoiceRegion(id=");
+        sbM833U.append(getId());
+        sbM833U.append(", name=");
+        sbM833U.append(getName());
+        sbM833U.append(", optimal=");
+        sbM833U.append(isOptimal());
+        sbM833U.append(", samplePort=");
+        sbM833U.append(getSamplePort());
+        sbM833U.append(", sampleHostname=");
+        sbM833U.append(getSampleHostname());
+        sbM833U.append(", deprecated=");
+        sbM833U.append(isDeprecated());
+        sbM833U.append(", hidden=");
+        sbM833U.append(isHidden());
+        sbM833U.append(")");
+        return sbM833U.toString();
     }
 }

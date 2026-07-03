@@ -17,9 +17,9 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.annotation.RequiresApi;
 import androidx.work.impl.background.systemalarm.CommandHandler;
-import b.d.b.a.outline;
 import java.util.ArrayList;
 import java.util.HashMap;
+import p007b.p100d.p104b.p105a.C1643a;
 
 /* JADX INFO: loaded from: classes.dex */
 @Deprecated
@@ -274,9 +274,9 @@ public abstract class JobIntentService extends Service {
                 if (this.mJobId == i) {
                     return;
                 }
-                StringBuilder sbV = outline.V("Given job ID ", i, " is different than previous ");
-                sbV.append(this.mJobId);
-                throw new IllegalArgumentException(sbV.toString());
+                StringBuilder sbM834V = C1643a.m834V("Given job ID ", i, " is different than previous ");
+                sbM834V.append(this.mJobId);
+                throw new IllegalArgumentException(sbM834V.toString());
             }
         }
 

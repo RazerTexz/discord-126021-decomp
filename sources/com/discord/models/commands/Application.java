@@ -1,11 +1,11 @@
 package com.discord.models.commands;
 
-import a0.a.a.b;
-import b.d.b.a.outline;
 import com.discord.api.user.User;
 import com.discord.models.domain.ModelAuditLogEntry;
-import d0.z.d.Intrinsics3;
 import kotlin.jvm.internal.DefaultConstructorMarker;
+import p001a0.p002a.p003a.C0002b;
+import p007b.p100d.p104b.p105a.C1643a;
+import p507d0.p592z.p594d.C12238m;
 
 /* JADX INFO: compiled from: Application.kt */
 /* JADX INFO: loaded from: classes.dex */
@@ -27,7 +27,7 @@ public final /* data */ class Application {
         }
 
         public final Application fromApiApplication(com.discord.api.application.Application apiApplication) {
-            Intrinsics3.checkNotNullParameter(apiApplication, "apiApplication");
+            C12238m.checkNotNullParameter(apiApplication, "apiApplication");
             return new Application(apiApplication.getId(), apiApplication.getName(), apiApplication.getIcon(), null, 0, null, false, 104, null);
         }
 
@@ -37,7 +37,7 @@ public final /* data */ class Application {
     }
 
     public Application(long j, String str, String str2, Integer num, int i, User user, boolean z2) {
-        Intrinsics3.checkNotNullParameter(str, ModelAuditLogEntry.CHANGE_KEY_NAME);
+        C12238m.checkNotNullParameter(str, ModelAuditLogEntry.CHANGE_KEY_NAME);
         this.id = j;
         this.name = str;
         this.icon = str2;
@@ -83,7 +83,7 @@ public final /* data */ class Application {
     }
 
     public final Application copy(long id2, String name, String icon, Integer iconRes, int commandCount, User bot, boolean builtIn) {
-        Intrinsics3.checkNotNullParameter(name, ModelAuditLogEntry.CHANGE_KEY_NAME);
+        C12238m.checkNotNullParameter(name, ModelAuditLogEntry.CHANGE_KEY_NAME);
         return new Application(id2, name, icon, iconRes, commandCount, bot, builtIn);
     }
 
@@ -95,7 +95,7 @@ public final /* data */ class Application {
             return false;
         }
         Application application = (Application) other;
-        return this.id == application.id && Intrinsics3.areEqual(this.name, application.name) && Intrinsics3.areEqual(this.icon, application.icon) && Intrinsics3.areEqual(this.iconRes, application.iconRes) && this.commandCount == application.commandCount && Intrinsics3.areEqual(this.bot, application.bot) && this.builtIn == application.builtIn;
+        return this.id == application.id && C12238m.areEqual(this.name, application.name) && C12238m.areEqual(this.icon, application.icon) && C12238m.areEqual(this.iconRes, application.iconRes) && this.commandCount == application.commandCount && C12238m.areEqual(this.bot, application.bot) && this.builtIn == application.builtIn;
     }
 
     public final User getBot() {
@@ -132,9 +132,9 @@ public final /* data */ class Application {
     /* JADX WARN: Type inference failed for: r1v13 */
     /* JADX WARN: Type inference failed for: r1v17 */
     public int hashCode() {
-        int iA = b.a(this.id) * 31;
+        int iM3a = C0002b.m3a(this.id) * 31;
         String str = this.name;
-        int iHashCode = (iA + (str != null ? str.hashCode() : 0)) * 31;
+        int iHashCode = (iM3a + (str != null ? str.hashCode() : 0)) * 31;
         String str2 = this.icon;
         int iHashCode2 = (iHashCode + (str2 != null ? str2.hashCode() : 0)) * 31;
         Integer num = this.iconRes;
@@ -150,20 +150,20 @@ public final /* data */ class Application {
     }
 
     public String toString() {
-        StringBuilder sbU = outline.U("Application(id=");
-        sbU.append(this.id);
-        sbU.append(", name=");
-        sbU.append(this.name);
-        sbU.append(", icon=");
-        sbU.append(this.icon);
-        sbU.append(", iconRes=");
-        sbU.append(this.iconRes);
-        sbU.append(", commandCount=");
-        sbU.append(this.commandCount);
-        sbU.append(", bot=");
-        sbU.append(this.bot);
-        sbU.append(", builtIn=");
-        return outline.O(sbU, this.builtIn, ")");
+        StringBuilder sbM833U = C1643a.m833U("Application(id=");
+        sbM833U.append(this.id);
+        sbM833U.append(", name=");
+        sbM833U.append(this.name);
+        sbM833U.append(", icon=");
+        sbM833U.append(this.icon);
+        sbM833U.append(", iconRes=");
+        sbM833U.append(this.iconRes);
+        sbM833U.append(", commandCount=");
+        sbM833U.append(this.commandCount);
+        sbM833U.append(", bot=");
+        sbM833U.append(this.bot);
+        sbM833U.append(", builtIn=");
+        return C1643a.m827O(sbM833U, this.builtIn, ")");
     }
 
     public /* synthetic */ Application(long j, String str, String str2, Integer num, int i, User user, boolean z2, int i2, DefaultConstructorMarker defaultConstructorMarker) {

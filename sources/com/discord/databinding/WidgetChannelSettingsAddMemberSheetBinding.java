@@ -10,29 +10,32 @@ import androidx.viewbinding.ViewBinding;
 /* JADX INFO: loaded from: classes.dex */
 public final class WidgetChannelSettingsAddMemberSheetBinding implements ViewBinding {
 
+    /* JADX INFO: renamed from: a */
     @NonNull
-    public final LinearLayout a;
+    public final LinearLayout f15904a;
 
-    /* JADX INFO: renamed from: b, reason: collision with root package name */
+    /* JADX INFO: renamed from: b */
     @NonNull
-    public final TextView f2272b;
+    public final TextView f15905b;
 
+    /* JADX INFO: renamed from: c */
     @NonNull
-    public final FragmentContainerView c;
+    public final FragmentContainerView f15906c;
 
+    /* JADX INFO: renamed from: d */
     @NonNull
-    public final TextView d;
+    public final TextView f15907d;
 
     public WidgetChannelSettingsAddMemberSheetBinding(@NonNull LinearLayout linearLayout, @NonNull TextView textView, @NonNull FragmentContainerView fragmentContainerView, @NonNull TextView textView2, @NonNull TextView textView3) {
-        this.a = linearLayout;
-        this.f2272b = textView;
-        this.c = fragmentContainerView;
-        this.d = textView2;
+        this.f15904a = linearLayout;
+        this.f15905b = textView;
+        this.f15906c = fragmentContainerView;
+        this.f15907d = textView2;
     }
 
     @Override // androidx.viewbinding.ViewBinding
     @NonNull
     public View getRoot() {
-        return this.a;
+        return this.f15904a;
     }
 }

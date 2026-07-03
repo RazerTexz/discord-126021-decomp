@@ -1,16 +1,16 @@
 package com.discord.analytics.generated.events;
 
-import b.d.b.a.outline;
 import com.discord.analytics.generated.traits.TrackBase;
-import com.discord.analytics.generated.traits.TrackBase2;
+import com.discord.analytics.generated.traits.TrackBaseReceiver;
 import com.discord.analytics.generated.traits.TrackOverlayClientMetadata;
-import com.discord.analytics.generated.traits.TrackOverlayClientMetadata2;
+import com.discord.analytics.generated.traits.TrackOverlayClientMetadataReceiver;
 import com.discord.api.science.AnalyticsSchema;
-import d0.z.d.Intrinsics3;
+import p007b.p100d.p104b.p105a.C1643a;
+import p507d0.p592z.p594d.C12238m;
 
 /* JADX INFO: compiled from: TrackNotificationViewed.kt */
 /* JADX INFO: loaded from: classes.dex */
-public final /* data */ class TrackNotificationViewed implements AnalyticsSchema, TrackBase2, TrackOverlayClientMetadata2 {
+public final /* data */ class TrackNotificationViewed implements AnalyticsSchema, TrackBaseReceiver, TrackOverlayClientMetadataReceiver {
     private TrackBase trackBase;
     private TrackOverlayClientMetadata trackOverlayClientMetadata;
     private final CharSequence notifType = null;
@@ -40,7 +40,7 @@ public final /* data */ class TrackNotificationViewed implements AnalyticsSchema
             return false;
         }
         TrackNotificationViewed trackNotificationViewed = (TrackNotificationViewed) other;
-        return Intrinsics3.areEqual(this.notifType, trackNotificationViewed.notifType) && Intrinsics3.areEqual(this.notifUserId, trackNotificationViewed.notifUserId) && Intrinsics3.areEqual(this.messageId, trackNotificationViewed.messageId) && Intrinsics3.areEqual(this.messageType, trackNotificationViewed.messageType) && Intrinsics3.areEqual(this.guildId, trackNotificationViewed.guildId) && Intrinsics3.areEqual(this.channelId, trackNotificationViewed.channelId) && Intrinsics3.areEqual(this.channelType, trackNotificationViewed.channelType) && Intrinsics3.areEqual(this.relType, trackNotificationViewed.relType) && Intrinsics3.areEqual(this.platformType, trackNotificationViewed.platformType) && Intrinsics3.areEqual(this.activityType, trackNotificationViewed.activityType) && Intrinsics3.areEqual(this.activityName, trackNotificationViewed.activityName);
+        return C12238m.areEqual(this.notifType, trackNotificationViewed.notifType) && C12238m.areEqual(this.notifUserId, trackNotificationViewed.notifUserId) && C12238m.areEqual(this.messageId, trackNotificationViewed.messageId) && C12238m.areEqual(this.messageType, trackNotificationViewed.messageType) && C12238m.areEqual(this.guildId, trackNotificationViewed.guildId) && C12238m.areEqual(this.channelId, trackNotificationViewed.channelId) && C12238m.areEqual(this.channelType, trackNotificationViewed.channelType) && C12238m.areEqual(this.relType, trackNotificationViewed.relType) && C12238m.areEqual(this.platformType, trackNotificationViewed.platformType) && C12238m.areEqual(this.activityType, trackNotificationViewed.activityType) && C12238m.areEqual(this.activityName, trackNotificationViewed.activityName);
     }
 
     public int hashCode() {
@@ -69,27 +69,27 @@ public final /* data */ class TrackNotificationViewed implements AnalyticsSchema
     }
 
     public String toString() {
-        StringBuilder sbU = outline.U("TrackNotificationViewed(notifType=");
-        sbU.append(this.notifType);
-        sbU.append(", notifUserId=");
-        sbU.append(this.notifUserId);
-        sbU.append(", messageId=");
-        sbU.append(this.messageId);
-        sbU.append(", messageType=");
-        sbU.append(this.messageType);
-        sbU.append(", guildId=");
-        sbU.append(this.guildId);
-        sbU.append(", channelId=");
-        sbU.append(this.channelId);
-        sbU.append(", channelType=");
-        sbU.append(this.channelType);
-        sbU.append(", relType=");
-        sbU.append(this.relType);
-        sbU.append(", platformType=");
-        sbU.append(this.platformType);
-        sbU.append(", activityType=");
-        sbU.append(this.activityType);
-        sbU.append(", activityName=");
-        return outline.E(sbU, this.activityName, ")");
+        StringBuilder sbM833U = C1643a.m833U("TrackNotificationViewed(notifType=");
+        sbM833U.append(this.notifType);
+        sbM833U.append(", notifUserId=");
+        sbM833U.append(this.notifUserId);
+        sbM833U.append(", messageId=");
+        sbM833U.append(this.messageId);
+        sbM833U.append(", messageType=");
+        sbM833U.append(this.messageType);
+        sbM833U.append(", guildId=");
+        sbM833U.append(this.guildId);
+        sbM833U.append(", channelId=");
+        sbM833U.append(this.channelId);
+        sbM833U.append(", channelType=");
+        sbM833U.append(this.channelType);
+        sbM833U.append(", relType=");
+        sbM833U.append(this.relType);
+        sbM833U.append(", platformType=");
+        sbM833U.append(this.platformType);
+        sbM833U.append(", activityType=");
+        sbM833U.append(this.activityType);
+        sbM833U.append(", activityName=");
+        return C1643a.m817E(sbM833U, this.activityName, ")");
     }
 }

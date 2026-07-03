@@ -7,7 +7,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import androidx.annotation.Nullable;
 import androidx.annotation.RestrictTo;
-import androidx.appcompat.R;
+import androidx.appcompat.C0051R;
 import androidx.appcompat.widget.LinearLayoutCompat;
 import androidx.constraintlayout.solver.widgets.analyzer.BasicMeasure;
 import androidx.core.view.GravityCompat;
@@ -67,12 +67,12 @@ public class AlertDialogLayout extends LinearLayoutCompat {
             View childAt = getChildAt(i3);
             if (childAt.getVisibility() != 8) {
                 int id2 = childAt.getId();
-                if (id2 == R.id.topPanel) {
+                if (id2 == C0051R.id.topPanel) {
                     view = childAt;
-                } else if (id2 == R.id.buttonPanel) {
+                } else if (id2 == C0051R.id.buttonPanel) {
                     view2 = childAt;
                 } else {
-                    if ((id2 != R.id.contentPanel && id2 != R.id.customPanel) || view3 != null) {
+                    if ((id2 != C0051R.id.contentPanel && id2 != C0051R.id.customPanel) || view3 != null) {
                         return false;
                     }
                     view3 = childAt;

@@ -3,8 +3,8 @@ package androidx.fragment.app;
 import androidx.annotation.NonNull;
 import androidx.collection.SimpleArrayMap;
 import androidx.fragment.app.Fragment;
-import b.d.b.a.outline;
 import java.lang.reflect.InvocationTargetException;
+import p007b.p100d.p104b.p105a.C1643a;
 
 /* JADX INFO: loaded from: classes.dex */
 public class FragmentFactory {
@@ -40,9 +40,9 @@ public class FragmentFactory {
         try {
             return loadClass(classLoader, str);
         } catch (ClassCastException e) {
-            throw new Fragment.InstantiationException(outline.y("Unable to instantiate fragment ", str, ": make sure class is a valid subclass of Fragment"), e);
+            throw new Fragment.InstantiationException(C1643a.m886y("Unable to instantiate fragment ", str, ": make sure class is a valid subclass of Fragment"), e);
         } catch (ClassNotFoundException e2) {
-            throw new Fragment.InstantiationException(outline.y("Unable to instantiate fragment ", str, ": make sure class name exists"), e2);
+            throw new Fragment.InstantiationException(C1643a.m886y("Unable to instantiate fragment ", str, ": make sure class name exists"), e2);
         }
     }
 
@@ -51,13 +51,13 @@ public class FragmentFactory {
         try {
             return loadFragmentClass(classLoader, str).getConstructor(new Class[0]).newInstance(new Object[0]);
         } catch (IllegalAccessException e) {
-            throw new Fragment.InstantiationException(outline.y("Unable to instantiate fragment ", str, ": make sure class name exists, is public, and has an empty constructor that is public"), e);
+            throw new Fragment.InstantiationException(C1643a.m886y("Unable to instantiate fragment ", str, ": make sure class name exists, is public, and has an empty constructor that is public"), e);
         } catch (InstantiationException e2) {
-            throw new Fragment.InstantiationException(outline.y("Unable to instantiate fragment ", str, ": make sure class name exists, is public, and has an empty constructor that is public"), e2);
+            throw new Fragment.InstantiationException(C1643a.m886y("Unable to instantiate fragment ", str, ": make sure class name exists, is public, and has an empty constructor that is public"), e2);
         } catch (NoSuchMethodException e3) {
-            throw new Fragment.InstantiationException(outline.y("Unable to instantiate fragment ", str, ": could not find Fragment constructor"), e3);
+            throw new Fragment.InstantiationException(C1643a.m886y("Unable to instantiate fragment ", str, ": could not find Fragment constructor"), e3);
         } catch (InvocationTargetException e4) {
-            throw new Fragment.InstantiationException(outline.y("Unable to instantiate fragment ", str, ": calling Fragment constructor caused an exception"), e4);
+            throw new Fragment.InstantiationException(C1643a.m886y("Unable to instantiate fragment ", str, ": calling Fragment constructor caused an exception"), e4);
         }
     }
 }

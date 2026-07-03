@@ -9,11 +9,12 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.annotation.StyleRes;
 import androidx.appcompat.view.ContextThemeWrapper;
+import com.google.android.material.C10817R;
 
 /* JADX INFO: loaded from: classes3.dex */
 public class MaterialThemeOverlay {
-    private static final int[] ANDROID_THEME_OVERLAY_ATTRS = {R.attr.theme, com.google.android.material.R.attr.theme};
-    private static final int[] MATERIAL_THEME_OVERLAY_ATTR = {com.google.android.material.R.attr.materialThemeOverlay};
+    private static final int[] ANDROID_THEME_OVERLAY_ATTRS = {R.attr.theme, C10817R.attr.theme};
+    private static final int[] MATERIAL_THEME_OVERLAY_ATTR = {C10817R.attr.materialThemeOverlay};
 
     private MaterialThemeOverlay() {
     }

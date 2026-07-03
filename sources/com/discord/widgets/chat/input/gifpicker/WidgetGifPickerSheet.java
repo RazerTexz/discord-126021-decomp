@@ -7,13 +7,13 @@ import android.view.View;
 import android.view.ViewGroup;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
-import com.discord.R;
+import com.discord.C5419R;
 import com.discord.app.AppBottomSheet;
-import d0.z.d.Intrinsics3;
-import d0.z.d.Lambda;
 import kotlin.Unit;
 import kotlin.jvm.functions.Function0;
 import kotlin.jvm.internal.DefaultConstructorMarker;
+import p507d0.p592z.p594d.AbstractC12240o;
+import p507d0.p592z.p594d.C12238m;
 
 /* JADX INFO: compiled from: WidgetGifPickerSheet.kt */
 /* JADX INFO: loaded from: classes2.dex */
@@ -43,7 +43,7 @@ public final class WidgetGifPickerSheet extends AppBottomSheet {
         }
 
         public final void show(FragmentManager fragmentManager, Function0<Unit> onGifSelected, Function0<Unit> onCancel) {
-            Intrinsics3.checkNotNullParameter(fragmentManager, "fragmentManager");
+            C12238m.checkNotNullParameter(fragmentManager, "fragmentManager");
             WidgetGifPickerSheet widgetGifPickerSheet = new WidgetGifPickerSheet();
             widgetGifPickerSheet.show(fragmentManager, WidgetGifPickerSheet.class.getSimpleName());
             widgetGifPickerSheet.setOnGifSelected(onGifSelected);
@@ -55,17 +55,17 @@ public final class WidgetGifPickerSheet extends AppBottomSheet {
         }
     }
 
-    /* JADX INFO: renamed from: com.discord.widgets.chat.input.gifpicker.WidgetGifPickerSheet$onViewCreated$1, reason: invalid class name */
+    /* JADX INFO: renamed from: com.discord.widgets.chat.input.gifpicker.WidgetGifPickerSheet$onViewCreated$1 */
     /* JADX INFO: compiled from: WidgetGifPickerSheet.kt */
-    public static final class AnonymousClass1 extends Lambda implements Function0<Unit> {
-        public AnonymousClass1() {
+    public static final class C78901 extends AbstractC12240o implements Function0<Unit> {
+        public C78901() {
             super(0);
         }
 
         @Override // kotlin.jvm.functions.Function0
         public /* bridge */ /* synthetic */ Unit invoke() {
             invoke2();
-            return Unit.a;
+            return Unit.f27425a;
         }
 
         /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
@@ -84,7 +84,7 @@ public final class WidgetGifPickerSheet extends AppBottomSheet {
     public static final /* synthetic */ View access$getContainer$p(WidgetGifPickerSheet widgetGifPickerSheet) {
         View view = widgetGifPickerSheet.container;
         if (view == null) {
-            Intrinsics3.throwUninitializedPropertyAccessException("container");
+            C12238m.throwUninitializedPropertyAccessException("container");
         }
         return view;
     }
@@ -99,16 +99,16 @@ public final class WidgetGifPickerSheet extends AppBottomSheet {
 
     @Override // com.discord.app.AppBottomSheet
     public int getContentViewResId() {
-        return R.layout.widget_gif_picker_sheet;
+        return C5419R.layout.widget_gif_picker_sheet;
     }
 
     @Override // androidx.fragment.app.DialogFragment, android.content.DialogInterface.OnCancelListener
     public void onCancel(DialogInterface dialog) {
-        Intrinsics3.checkNotNullParameter(dialog, "dialog");
+        C12238m.checkNotNullParameter(dialog, "dialog");
         super.onCancel(dialog);
         WidgetGifPickerSearch widgetGifPickerSearch = this.gifPickerFragment;
         if (widgetGifPickerSearch == null) {
-            Intrinsics3.throwUninitializedPropertyAccessException("gifPickerFragment");
+            C12238m.throwUninitializedPropertyAccessException("gifPickerFragment");
         }
         widgetGifPickerSearch.clearSearchBar();
         Function0<Unit> function0 = this.onCancel;
@@ -119,32 +119,32 @@ public final class WidgetGifPickerSheet extends AppBottomSheet {
 
     @Override // com.discord.app.AppBottomSheet, androidx.fragment.app.Fragment
     public void onViewCreated(View view, Bundle savedInstanceState) {
-        Intrinsics3.checkNotNullParameter(view, "view");
+        C12238m.checkNotNullParameter(view, "view");
         super.onViewCreated(view, savedInstanceState);
         setBottomSheetCollapsedStateDisabled();
         this.container = view;
         WidgetGifPickerSearch widgetGifPickerSearch = new WidgetGifPickerSearch();
         this.gifPickerFragment = widgetGifPickerSearch;
         if (widgetGifPickerSearch == null) {
-            Intrinsics3.throwUninitializedPropertyAccessException("gifPickerFragment");
+            C12238m.throwUninitializedPropertyAccessException("gifPickerFragment");
         }
-        widgetGifPickerSearch.setOnGifSelected(new AnonymousClass1());
+        widgetGifPickerSearch.setOnGifSelected(new C78901());
         FragmentTransaction fragmentTransactionBeginTransaction = getChildFragmentManager().beginTransaction();
         WidgetGifPickerSearch widgetGifPickerSearch2 = this.gifPickerFragment;
         if (widgetGifPickerSearch2 == null) {
-            Intrinsics3.throwUninitializedPropertyAccessException("gifPickerFragment");
+            C12238m.throwUninitializedPropertyAccessException("gifPickerFragment");
         }
         WidgetGifPickerSearch widgetGifPickerSearch3 = this.gifPickerFragment;
         if (widgetGifPickerSearch3 == null) {
-            Intrinsics3.throwUninitializedPropertyAccessException("gifPickerFragment");
+            C12238m.throwUninitializedPropertyAccessException("gifPickerFragment");
         }
-        fragmentTransactionBeginTransaction.replace(R.id.gif_search_sheet_content, widgetGifPickerSearch2, widgetGifPickerSearch3.getClass().getSimpleName()).runOnCommit(new Runnable() { // from class: com.discord.widgets.chat.input.gifpicker.WidgetGifPickerSheet.onViewCreated.2
+        fragmentTransactionBeginTransaction.replace(C5419R.id.gif_search_sheet_content, widgetGifPickerSearch2, widgetGifPickerSearch3.getClass().getSimpleName()).runOnCommit(new Runnable() { // from class: com.discord.widgets.chat.input.gifpicker.WidgetGifPickerSheet.onViewCreated.2
             @Override // java.lang.Runnable
             public final void run() {
                 ViewGroup.LayoutParams layoutParams = WidgetGifPickerSheet.access$getContainer$p(WidgetGifPickerSheet.this).getLayoutParams();
                 if (layoutParams != null) {
                     Resources resources = WidgetGifPickerSheet.this.getResources();
-                    Intrinsics3.checkNotNullExpressionValue(resources, "resources");
+                    C12238m.checkNotNullExpressionValue(resources, "resources");
                     layoutParams.height = (int) (((double) resources.getDisplayMetrics().heightPixels) * 0.9d);
                 }
             }

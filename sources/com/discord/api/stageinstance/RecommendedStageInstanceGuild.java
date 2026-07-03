@@ -1,10 +1,10 @@
 package com.discord.api.stageinstance;
 
-import b.d.b.a.outline;
 import com.discord.api.guild.GuildFeature;
 import com.discord.models.domain.ModelAuditLogEntry;
-import d0.z.d.Intrinsics3;
 import java.util.Set;
+import p007b.p100d.p104b.p105a.C1643a;
+import p507d0.p592z.p594d.C12238m;
 
 /* JADX INFO: compiled from: RecommendedStageInstanceGuild.kt */
 /* JADX INFO: loaded from: classes.dex */
@@ -22,7 +22,7 @@ public final /* data */ class RecommendedStageInstanceGuild {
             return false;
         }
         RecommendedStageInstanceGuild recommendedStageInstanceGuild = (RecommendedStageInstanceGuild) other;
-        return this.id == recommendedStageInstanceGuild.id && Intrinsics3.areEqual(this.name, recommendedStageInstanceGuild.name) && Intrinsics3.areEqual(this.icon, recommendedStageInstanceGuild.icon) && Intrinsics3.areEqual(this.features, recommendedStageInstanceGuild.features);
+        return this.id == recommendedStageInstanceGuild.id && C12238m.areEqual(this.name, recommendedStageInstanceGuild.name) && C12238m.areEqual(this.icon, recommendedStageInstanceGuild.icon) && C12238m.areEqual(this.features, recommendedStageInstanceGuild.features);
     }
 
     public int hashCode() {
@@ -37,13 +37,13 @@ public final /* data */ class RecommendedStageInstanceGuild {
     }
 
     public String toString() {
-        StringBuilder sbU = outline.U("RecommendedStageInstanceGuild(id=");
-        sbU.append(this.id);
-        sbU.append(", name=");
-        sbU.append(this.name);
-        sbU.append(", icon=");
-        sbU.append(this.icon);
-        sbU.append(", features=");
-        return outline.N(sbU, this.features, ")");
+        StringBuilder sbM833U = C1643a.m833U("RecommendedStageInstanceGuild(id=");
+        sbM833U.append(this.id);
+        sbM833U.append(", name=");
+        sbM833U.append(this.name);
+        sbM833U.append(", icon=");
+        sbM833U.append(this.icon);
+        sbM833U.append(", features=");
+        return C1643a.m826N(sbM833U, this.features, ")");
     }
 }

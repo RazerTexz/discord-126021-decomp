@@ -2,7 +2,7 @@ package androidx.recyclerview.widget;
 
 import android.view.View;
 import androidx.recyclerview.widget.RecyclerView;
-import b.d.b.a.outline;
+import p007b.p100d.p104b.p105a.C1643a;
 
 /* JADX INFO: loaded from: classes.dex */
 public class LayoutState {
@@ -33,17 +33,17 @@ public class LayoutState {
     }
 
     public String toString() {
-        StringBuilder sbU = outline.U("LayoutState{mAvailable=");
-        sbU.append(this.mAvailable);
-        sbU.append(", mCurrentPosition=");
-        sbU.append(this.mCurrentPosition);
-        sbU.append(", mItemDirection=");
-        sbU.append(this.mItemDirection);
-        sbU.append(", mLayoutDirection=");
-        sbU.append(this.mLayoutDirection);
-        sbU.append(", mStartLine=");
-        sbU.append(this.mStartLine);
-        sbU.append(", mEndLine=");
-        return outline.A(sbU, this.mEndLine, '}');
+        StringBuilder sbM833U = C1643a.m833U("LayoutState{mAvailable=");
+        sbM833U.append(this.mAvailable);
+        sbM833U.append(", mCurrentPosition=");
+        sbM833U.append(this.mCurrentPosition);
+        sbM833U.append(", mItemDirection=");
+        sbM833U.append(this.mItemDirection);
+        sbM833U.append(", mLayoutDirection=");
+        sbM833U.append(this.mLayoutDirection);
+        sbM833U.append(", mStartLine=");
+        sbM833U.append(this.mStartLine);
+        sbM833U.append(", mEndLine=");
+        return C1643a.m813A(sbM833U, this.mEndLine, '}');
     }
 }

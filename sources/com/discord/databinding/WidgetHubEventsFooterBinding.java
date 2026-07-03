@@ -9,21 +9,22 @@ import com.discord.views.LoadingButton;
 /* JADX INFO: loaded from: classes.dex */
 public final class WidgetHubEventsFooterBinding implements ViewBinding {
 
+    /* JADX INFO: renamed from: a */
     @NonNull
-    public final LinearLayout a;
+    public final LinearLayout f17181a;
 
-    /* JADX INFO: renamed from: b, reason: collision with root package name */
+    /* JADX INFO: renamed from: b */
     @NonNull
-    public final LoadingButton f2475b;
+    public final LoadingButton f17182b;
 
     public WidgetHubEventsFooterBinding(@NonNull LinearLayout linearLayout, @NonNull LoadingButton loadingButton) {
-        this.a = linearLayout;
-        this.f2475b = loadingButton;
+        this.f17181a = linearLayout;
+        this.f17182b = loadingButton;
     }
 
     @Override // androidx.viewbinding.ViewBinding
     @NonNull
     public View getRoot() {
-        return this.a;
+        return this.f17181a;
     }
 }

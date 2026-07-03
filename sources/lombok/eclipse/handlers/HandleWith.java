@@ -33,7 +33,9 @@ import org.eclipse.jdt.internal.compiler.ast.TypeReference;
 /* JADX INFO: loaded from: app.apk:lombok/eclipse/handlers/HandleWith.SCL.lombok */
 public class HandleWith extends EclipseAnnotationHandler<With> {
     private static /* synthetic */ int[] $SWITCH_TABLE$lombok$core$AST$Kind;
-    private static /* synthetic */ int[] $SWITCH_TABLE$lombok$eclipse$handlers$EclipseHandlerUtil$MemberExistsResult;
+
+    /* JADX INFO: renamed from: $SWITCH_TABLE$lombok$eclipse$handlers$EclipseHandlerUtil$MemberExistsResult */
+    private static /* synthetic */ int[] f27476xb87c1847;
 
     static /* synthetic */ int[] $SWITCH_TABLE$lombok$core$AST$Kind() {
         int[] iArr = $SWITCH_TABLE$lombok$core$AST$Kind;
@@ -85,8 +87,9 @@ public class HandleWith extends EclipseAnnotationHandler<With> {
         return iArr2;
     }
 
-    static /* synthetic */ int[] $SWITCH_TABLE$lombok$eclipse$handlers$EclipseHandlerUtil$MemberExistsResult() {
-        int[] iArr = $SWITCH_TABLE$lombok$eclipse$handlers$EclipseHandlerUtil$MemberExistsResult;
+    /* JADX INFO: renamed from: $SWITCH_TABLE$lombok$eclipse$handlers$EclipseHandlerUtil$MemberExistsResult */
+    static /* synthetic */ int[] m10936xb87c1847() {
+        int[] iArr = f27476xb87c1847;
         if (iArr != null) {
             return iArr;
         }
@@ -103,7 +106,7 @@ public class HandleWith extends EclipseAnnotationHandler<With> {
             iArr2[EclipseHandlerUtil.MemberExistsResult.NOT_EXISTS.ordinal()] = 1;
         } catch (NoSuchFieldError unused3) {
         }
-        $SWITCH_TABLE$lombok$eclipse$handlers$EclipseHandlerUtil$MemberExistsResult = iArr2;
+        f27476xb87c1847 = iArr2;
         return iArr2;
     }
 
@@ -142,7 +145,7 @@ public class HandleWith extends EclipseAnnotationHandler<With> {
     @Override // lombok.eclipse.EclipseAnnotationHandler
     public void handle(AnnotationValues<With> annotation, org.eclipse.jdt.internal.compiler.ast.Annotation ast, EclipseNode annotationNode) {
         HandlerUtil.handleFlagUsage(annotationNode, ConfigurationKeys.WITH_FLAG_USAGE, "@With");
-        EclipseNode node = annotationNode.up();
+        EclipseNode node = annotationNode.m10925up();
         AccessLevel level = annotation.getInstance().value();
         if (level == AccessLevel.NONE || node == null) {
             return;
@@ -177,7 +180,7 @@ public class HandleWith extends EclipseAnnotationHandler<With> {
             sourceNode.addError("@With is only supported on a class or a field.");
             return;
         }
-        EclipseNode typeNode = fieldNode.up();
+        EclipseNode typeNode = fieldNode.m10925up();
         boolean makeAbstract = (typeNode == null || typeNode.getKind() != AST.Kind.TYPE || (typeNode.get().modifiers & 1024) == 0) ? false : true;
         FieldDeclaration field = fieldNode.get();
         TypeReference fieldType = EclipseHandlerUtil.copyType(field.type, source);
@@ -200,7 +203,7 @@ public class HandleWith extends EclipseAnnotationHandler<With> {
             return;
         }
         for (String altName : EclipseHandlerUtil.toAllWithNames(fieldNode, isBoolean)) {
-            switch ($SWITCH_TABLE$lombok$eclipse$handlers$EclipseHandlerUtil$MemberExistsResult()[EclipseHandlerUtil.methodExists(altName, fieldNode, false, 1).ordinal()]) {
+            switch (m10936xb87c1847()[EclipseHandlerUtil.methodExists(altName, fieldNode, false, 1).ordinal()]) {
                 case 1:
                 default:
                     break;
@@ -216,8 +219,8 @@ public class HandleWith extends EclipseAnnotationHandler<With> {
             }
         }
         int modifier = EclipseHandlerUtil.toEclipseModifier(level);
-        MethodDeclaration method = createWith((TypeDeclaration) fieldNode.up().get(), fieldNode, withName, modifier, sourceNode, onMethod, onParam, makeAbstract);
-        EclipseHandlerUtil.injectMethod(fieldNode.up(), method);
+        MethodDeclaration method = createWith((TypeDeclaration) fieldNode.m10925up().get(), fieldNode, withName, modifier, sourceNode, onMethod, onParam, makeAbstract);
+        EclipseHandlerUtil.injectMethod(fieldNode.m10925up(), method);
     }
 
     public MethodDeclaration createWith(TypeDeclaration parent, EclipseNode fieldNode, String name, int modifier, EclipseNode sourceNode, List<org.eclipse.jdt.internal.compiler.ast.Annotation> onMethod, List<org.eclipse.jdt.internal.compiler.ast.Annotation> onParam, boolean makeAbstract) {
@@ -254,7 +257,7 @@ public class HandleWith extends EclipseAnnotationHandler<With> {
         org.eclipse.jdt.internal.compiler.ast.Annotation[] copyableAnnotations = EclipseHandlerUtil.findCopyableAnnotations(fieldNode);
         if (!makeAbstract) {
             List<Expression> args = new ArrayList<>();
-            for (EclipseNode child : fieldNode.up().down()) {
+            for (EclipseNode child : fieldNode.m10925up().down()) {
                 if (child.getKind() == AST.Kind.FIELD) {
                     FieldDeclaration childDecl = child.get();
                     if (childDecl.name == null || childDecl.name.length <= 0 || childDecl.name[0] != '$') {

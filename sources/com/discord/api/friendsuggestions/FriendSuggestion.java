@@ -1,9 +1,9 @@
 package com.discord.api.friendsuggestions;
 
-import b.d.b.a.outline;
 import com.discord.api.user.User;
-import d0.z.d.Intrinsics3;
 import java.util.List;
+import p007b.p100d.p104b.p105a.C1643a;
+import p507d0.p592z.p594d.C12238m;
 
 /* JADX INFO: compiled from: FriendSuggestion.kt */
 /* JADX INFO: loaded from: classes.dex */
@@ -11,7 +11,8 @@ public final /* data */ class FriendSuggestion {
     private final List<FriendSuggestionReason> reasons;
     private final User suggestedUser;
 
-    public final List<FriendSuggestionReason> a() {
+    /* JADX INFO: renamed from: a */
+    public final List<FriendSuggestionReason> m7830a() {
         return this.reasons;
     }
 
@@ -28,7 +29,7 @@ public final /* data */ class FriendSuggestion {
             return false;
         }
         FriendSuggestion friendSuggestion = (FriendSuggestion) other;
-        return Intrinsics3.areEqual(this.suggestedUser, friendSuggestion.suggestedUser) && Intrinsics3.areEqual(this.reasons, friendSuggestion.reasons);
+        return C12238m.areEqual(this.suggestedUser, friendSuggestion.suggestedUser) && C12238m.areEqual(this.reasons, friendSuggestion.reasons);
     }
 
     public int hashCode() {
@@ -39,9 +40,9 @@ public final /* data */ class FriendSuggestion {
     }
 
     public String toString() {
-        StringBuilder sbU = outline.U("FriendSuggestion(suggestedUser=");
-        sbU.append(this.suggestedUser);
-        sbU.append(", reasons=");
-        return outline.L(sbU, this.reasons, ")");
+        StringBuilder sbM833U = C1643a.m833U("FriendSuggestion(suggestedUser=");
+        sbM833U.append(this.suggestedUser);
+        sbM833U.append(", reasons=");
+        return C1643a.m824L(sbM833U, this.reasons, ")");
     }
 }

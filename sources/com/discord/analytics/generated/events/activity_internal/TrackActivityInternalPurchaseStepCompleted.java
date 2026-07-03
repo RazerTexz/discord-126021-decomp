@@ -1,16 +1,16 @@
 package com.discord.analytics.generated.events.activity_internal;
 
-import b.d.b.a.outline;
 import com.discord.analytics.generated.traits.TrackActivityInternalMetadata;
-import com.discord.analytics.generated.traits.TrackActivityInternalMetadata2;
+import com.discord.analytics.generated.traits.TrackActivityInternalMetadataReceiver;
 import com.discord.analytics.generated.traits.TrackBase;
-import com.discord.analytics.generated.traits.TrackBase2;
+import com.discord.analytics.generated.traits.TrackBaseReceiver;
 import com.discord.api.science.AnalyticsSchema;
-import d0.z.d.Intrinsics3;
+import p007b.p100d.p104b.p105a.C1643a;
+import p507d0.p592z.p594d.C12238m;
 
 /* JADX INFO: compiled from: TrackActivityInternalPurchaseStepCompleted.kt */
 /* JADX INFO: loaded from: classes.dex */
-public final /* data */ class TrackActivityInternalPurchaseStepCompleted implements AnalyticsSchema, TrackBase2, TrackActivityInternalMetadata2 {
+public final /* data */ class TrackActivityInternalPurchaseStepCompleted implements AnalyticsSchema, TrackBaseReceiver, TrackActivityInternalMetadataReceiver {
     private TrackActivityInternalMetadata trackActivityInternalMetadata;
     private TrackBase trackBase;
     private final CharSequence step = null;
@@ -36,7 +36,7 @@ public final /* data */ class TrackActivityInternalPurchaseStepCompleted impleme
             return false;
         }
         TrackActivityInternalPurchaseStepCompleted trackActivityInternalPurchaseStepCompleted = (TrackActivityInternalPurchaseStepCompleted) other;
-        return Intrinsics3.areEqual(this.step, trackActivityInternalPurchaseStepCompleted.step) && Intrinsics3.areEqual(this.nextStep, trackActivityInternalPurchaseStepCompleted.nextStep) && Intrinsics3.areEqual(this.purchaseType, trackActivityInternalPurchaseStepCompleted.purchaseType) && Intrinsics3.areEqual(this.purchaseName, trackActivityInternalPurchaseStepCompleted.purchaseName) && Intrinsics3.areEqual(this.skuId, trackActivityInternalPurchaseStepCompleted.skuId) && Intrinsics3.areEqual(this.activityDurationMs, trackActivityInternalPurchaseStepCompleted.activityDurationMs) && Intrinsics3.areEqual(this.success, trackActivityInternalPurchaseStepCompleted.success);
+        return C12238m.areEqual(this.step, trackActivityInternalPurchaseStepCompleted.step) && C12238m.areEqual(this.nextStep, trackActivityInternalPurchaseStepCompleted.nextStep) && C12238m.areEqual(this.purchaseType, trackActivityInternalPurchaseStepCompleted.purchaseType) && C12238m.areEqual(this.purchaseName, trackActivityInternalPurchaseStepCompleted.purchaseName) && C12238m.areEqual(this.skuId, trackActivityInternalPurchaseStepCompleted.skuId) && C12238m.areEqual(this.activityDurationMs, trackActivityInternalPurchaseStepCompleted.activityDurationMs) && C12238m.areEqual(this.success, trackActivityInternalPurchaseStepCompleted.success);
     }
 
     public int hashCode() {
@@ -57,19 +57,19 @@ public final /* data */ class TrackActivityInternalPurchaseStepCompleted impleme
     }
 
     public String toString() {
-        StringBuilder sbU = outline.U("TrackActivityInternalPurchaseStepCompleted(step=");
-        sbU.append(this.step);
-        sbU.append(", nextStep=");
-        sbU.append(this.nextStep);
-        sbU.append(", purchaseType=");
-        sbU.append(this.purchaseType);
-        sbU.append(", purchaseName=");
-        sbU.append(this.purchaseName);
-        sbU.append(", skuId=");
-        sbU.append(this.skuId);
-        sbU.append(", activityDurationMs=");
-        sbU.append(this.activityDurationMs);
-        sbU.append(", success=");
-        return outline.D(sbU, this.success, ")");
+        StringBuilder sbM833U = C1643a.m833U("TrackActivityInternalPurchaseStepCompleted(step=");
+        sbM833U.append(this.step);
+        sbM833U.append(", nextStep=");
+        sbM833U.append(this.nextStep);
+        sbM833U.append(", purchaseType=");
+        sbM833U.append(this.purchaseType);
+        sbM833U.append(", purchaseName=");
+        sbM833U.append(this.purchaseName);
+        sbM833U.append(", skuId=");
+        sbM833U.append(this.skuId);
+        sbM833U.append(", activityDurationMs=");
+        sbM833U.append(this.activityDurationMs);
+        sbM833U.append(", success=");
+        return C1643a.m816D(sbM833U, this.success, ")");
     }
 }

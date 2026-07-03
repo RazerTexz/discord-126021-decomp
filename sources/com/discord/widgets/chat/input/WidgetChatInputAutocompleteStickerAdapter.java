@@ -5,21 +5,21 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.discord.api.sticker.Sticker;
 import com.discord.utilities.mg_recycler.MGRecyclerAdapterSimple;
 import com.discord.utilities.mg_recycler.MGRecyclerViewHolder;
-import d0.z.d.Intrinsics3;
 import kotlin.Unit;
 import kotlin.jvm.functions.Function1;
+import p507d0.p592z.p594d.C12238m;
 
 /* JADX INFO: compiled from: WidgetChatInputAutocompleteStickerAdapter.kt */
 /* JADX INFO: loaded from: classes2.dex */
-public final class WidgetChatInputAutocompleteStickerAdapter extends MGRecyclerAdapterSimple<WidgetChatInputAutocompleteStickerAdapter2> {
+public final class WidgetChatInputAutocompleteStickerAdapter extends MGRecyclerAdapterSimple<AutocompleteStickerItem> {
     private final Function1<Sticker, Unit> onClickSticker;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     /* JADX WARN: Multi-variable type inference failed */
     public WidgetChatInputAutocompleteStickerAdapter(RecyclerView recyclerView, Function1<? super Sticker, Unit> function1) {
         super(recyclerView, false, 2, null);
-        Intrinsics3.checkNotNullParameter(recyclerView, "recycler");
-        Intrinsics3.checkNotNullParameter(function1, "onClickSticker");
+        C12238m.checkNotNullParameter(recyclerView, "recycler");
+        C12238m.checkNotNullParameter(function1, "onClickSticker");
         this.onClickSticker = function1;
     }
 
@@ -28,10 +28,10 @@ public final class WidgetChatInputAutocompleteStickerAdapter extends MGRecyclerA
     }
 
     @Override // androidx.recyclerview.widget.RecyclerView.Adapter
-    public MGRecyclerViewHolder<?, WidgetChatInputAutocompleteStickerAdapter2> onCreateViewHolder(ViewGroup parent, int viewType) {
-        Intrinsics3.checkNotNullParameter(parent, "parent");
+    public MGRecyclerViewHolder<?, AutocompleteStickerItem> onCreateViewHolder(ViewGroup parent, int viewType) {
+        C12238m.checkNotNullParameter(parent, "parent");
         if (viewType == 0) {
-            return new WidgetChatInputAutocompleteStickerAdapter3(this);
+            return new StickerViewHolder(this);
         }
         throw invalidViewTypeException(viewType);
     }

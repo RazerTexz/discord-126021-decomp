@@ -1,16 +1,16 @@
 package com.discord.analytics.generated.events;
 
-import b.d.b.a.outline;
 import com.discord.analytics.generated.traits.TrackBase;
-import com.discord.analytics.generated.traits.TrackBase2;
+import com.discord.analytics.generated.traits.TrackBaseReceiver;
 import com.discord.analytics.generated.traits.TrackGiftCodeMetadata;
-import com.discord.analytics.generated.traits.TrackGiftCodeMetadata2;
+import com.discord.analytics.generated.traits.TrackGiftCodeMetadataReceiver;
 import com.discord.api.science.AnalyticsSchema;
-import d0.z.d.Intrinsics3;
+import p007b.p100d.p104b.p105a.C1643a;
+import p507d0.p592z.p594d.C12238m;
 
 /* JADX INFO: compiled from: TrackLoginSuccessful.kt */
 /* JADX INFO: loaded from: classes.dex */
-public final /* data */ class TrackLoginSuccessful implements AnalyticsSchema, TrackBase2, TrackGiftCodeMetadata2 {
+public final /* data */ class TrackLoginSuccessful implements AnalyticsSchema, TrackBaseReceiver, TrackGiftCodeMetadataReceiver {
     private TrackBase trackBase;
     private TrackGiftCodeMetadata trackGiftCodeMetadata;
     private final CharSequence loginSource = null;
@@ -34,7 +34,7 @@ public final /* data */ class TrackLoginSuccessful implements AnalyticsSchema, T
             return false;
         }
         TrackLoginSuccessful trackLoginSuccessful = (TrackLoginSuccessful) other;
-        return Intrinsics3.areEqual(this.loginSource, trackLoginSuccessful.loginSource) && Intrinsics3.areEqual(this.source, trackLoginSuccessful.source) && Intrinsics3.areEqual(this.isNewUser, trackLoginSuccessful.isNewUser) && Intrinsics3.areEqual(this.fingerprint, trackLoginSuccessful.fingerprint) && Intrinsics3.areEqual(this.loginMethod, trackLoginSuccessful.loginMethod);
+        return C12238m.areEqual(this.loginSource, trackLoginSuccessful.loginSource) && C12238m.areEqual(this.source, trackLoginSuccessful.source) && C12238m.areEqual(this.isNewUser, trackLoginSuccessful.isNewUser) && C12238m.areEqual(this.fingerprint, trackLoginSuccessful.fingerprint) && C12238m.areEqual(this.loginMethod, trackLoginSuccessful.loginMethod);
     }
 
     public int hashCode() {
@@ -51,15 +51,15 @@ public final /* data */ class TrackLoginSuccessful implements AnalyticsSchema, T
     }
 
     public String toString() {
-        StringBuilder sbU = outline.U("TrackLoginSuccessful(loginSource=");
-        sbU.append(this.loginSource);
-        sbU.append(", source=");
-        sbU.append(this.source);
-        sbU.append(", isNewUser=");
-        sbU.append(this.isNewUser);
-        sbU.append(", fingerprint=");
-        sbU.append(this.fingerprint);
-        sbU.append(", loginMethod=");
-        return outline.E(sbU, this.loginMethod, ")");
+        StringBuilder sbM833U = C1643a.m833U("TrackLoginSuccessful(loginSource=");
+        sbM833U.append(this.loginSource);
+        sbM833U.append(", source=");
+        sbM833U.append(this.source);
+        sbM833U.append(", isNewUser=");
+        sbM833U.append(this.isNewUser);
+        sbM833U.append(", fingerprint=");
+        sbM833U.append(this.fingerprint);
+        sbM833U.append(", loginMethod=");
+        return C1643a.m817E(sbM833U, this.loginMethod, ")");
     }
 }

@@ -11,36 +11,38 @@ public class BarrierReference extends HelperReference {
     private State.Direction mDirection;
     private int mMargin;
 
-    /* JADX INFO: renamed from: androidx.constraintlayout.solver.state.helpers.BarrierReference$1, reason: invalid class name */
-    public static /* synthetic */ class AnonymousClass1 {
-        public static final /* synthetic */ int[] $SwitchMap$androidx$constraintlayout$solver$state$State$Direction;
+    /* JADX INFO: renamed from: androidx.constraintlayout.solver.state.helpers.BarrierReference$1 */
+    public static /* synthetic */ class C01861 {
+
+        /* JADX INFO: renamed from: $SwitchMap$androidx$constraintlayout$solver$state$State$Direction */
+        public static final /* synthetic */ int[] f112xf452c4aa;
 
         static {
             State.Direction.values();
             int[] iArr = new int[6];
-            $SwitchMap$androidx$constraintlayout$solver$state$State$Direction = iArr;
+            f112xf452c4aa = iArr;
             try {
                 iArr[State.Direction.LEFT.ordinal()] = 1;
             } catch (NoSuchFieldError unused) {
             }
             try {
-                $SwitchMap$androidx$constraintlayout$solver$state$State$Direction[State.Direction.START.ordinal()] = 2;
+                f112xf452c4aa[State.Direction.START.ordinal()] = 2;
             } catch (NoSuchFieldError unused2) {
             }
             try {
-                $SwitchMap$androidx$constraintlayout$solver$state$State$Direction[State.Direction.RIGHT.ordinal()] = 3;
+                f112xf452c4aa[State.Direction.RIGHT.ordinal()] = 3;
             } catch (NoSuchFieldError unused3) {
             }
             try {
-                $SwitchMap$androidx$constraintlayout$solver$state$State$Direction[State.Direction.END.ordinal()] = 4;
+                f112xf452c4aa[State.Direction.END.ordinal()] = 4;
             } catch (NoSuchFieldError unused4) {
             }
             try {
-                $SwitchMap$androidx$constraintlayout$solver$state$State$Direction[State.Direction.TOP.ordinal()] = 5;
+                f112xf452c4aa[State.Direction.TOP.ordinal()] = 5;
             } catch (NoSuchFieldError unused5) {
             }
             try {
-                $SwitchMap$androidx$constraintlayout$solver$state$State$Direction[State.Direction.BOTTOM.ordinal()] = 6;
+                f112xf452c4aa[State.Direction.BOTTOM.ordinal()] = 6;
             } catch (NoSuchFieldError unused6) {
             }
         }

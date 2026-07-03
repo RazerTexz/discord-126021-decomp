@@ -32,7 +32,7 @@ public class TranslationAnimationCreator {
             this.mStartY = i2 - Math.round(view.getTranslationY());
             this.mTerminalX = f;
             this.mTerminalY = f2;
-            int i3 = R.id.transition_position;
+            int i3 = C0658R.id.transition_position;
             int[] iArr = (int[]) view2.getTag(i3);
             this.mTransitionPosition = iArr;
             if (iArr != null) {
@@ -47,7 +47,7 @@ public class TranslationAnimationCreator {
             }
             this.mTransitionPosition[0] = Math.round(this.mMovingView.getTranslationX() + this.mStartX);
             this.mTransitionPosition[1] = Math.round(this.mMovingView.getTranslationY() + this.mStartY);
-            this.mViewInHierarchy.setTag(R.id.transition_position, this.mTransitionPosition);
+            this.mViewInHierarchy.setTag(C0658R.id.transition_position, this.mTransitionPosition);
         }
 
         @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorPauseListener
@@ -97,7 +97,7 @@ public class TranslationAnimationCreator {
         float f6;
         float translationX = view.getTranslationX();
         float translationY = view.getTranslationY();
-        int[] iArr = (int[]) transitionValues.view.getTag(R.id.transition_position);
+        int[] iArr = (int[]) transitionValues.view.getTag(C0658R.id.transition_position);
         if (iArr != null) {
             f5 = (iArr[0] - i) + translationX;
             f6 = (iArr[1] - i2) + translationY;

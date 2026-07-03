@@ -1,8 +1,8 @@
 package com.discord.api.application;
 
-import b.d.b.a.outline;
 import com.discord.models.domain.ModelAuditLogEntry;
-import d0.z.d.Intrinsics3;
+import p007b.p100d.p104b.p105a.C1643a;
+import p507d0.p592z.p594d.C12238m;
 
 /* JADX INFO: compiled from: Team.kt */
 /* JADX INFO: loaded from: classes.dex */
@@ -20,7 +20,7 @@ public final /* data */ class Team {
             return false;
         }
         Team team = (Team) other;
-        return this.id == team.id && Intrinsics3.areEqual(this.icon, team.icon) && Intrinsics3.areEqual(this.name, team.name) && this.ownerUserId == team.ownerUserId;
+        return this.id == team.id && C12238m.areEqual(this.icon, team.icon) && C12238m.areEqual(this.name, team.name) && this.ownerUserId == team.ownerUserId;
     }
 
     public int hashCode() {
@@ -35,13 +35,13 @@ public final /* data */ class Team {
     }
 
     public String toString() {
-        StringBuilder sbU = outline.U("Team(id=");
-        sbU.append(this.id);
-        sbU.append(", icon=");
-        sbU.append(this.icon);
-        sbU.append(", name=");
-        sbU.append(this.name);
-        sbU.append(", ownerUserId=");
-        return outline.C(sbU, this.ownerUserId, ")");
+        StringBuilder sbM833U = C1643a.m833U("Team(id=");
+        sbM833U.append(this.id);
+        sbM833U.append(", icon=");
+        sbM833U.append(this.icon);
+        sbM833U.append(", name=");
+        sbM833U.append(this.name);
+        sbM833U.append(", ownerUserId=");
+        return C1643a.m815C(sbM833U, this.ownerUserId, ")");
     }
 }

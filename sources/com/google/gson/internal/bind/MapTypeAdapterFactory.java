@@ -1,15 +1,5 @@
 package com.google.gson.internal.bind;
 
-import b.d.b.a.outline;
-import b.i.d.JsonArray;
-import b.i.d.JsonNull;
-import b.i.d.JsonPrimitive;
-import b.i.d.TypeAdapterFactory2;
-import b.i.d.q.C$Gson$Types;
-import b.i.d.q.JsonReaderInternalAccess;
-import b.i.d.q.ObjectConstructor;
-import b.i.d.q.g;
-import b.i.d.q.x.JsonTreeReader;
 import com.google.gson.Gson;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
@@ -27,98 +17,116 @@ import java.util.Iterator;
 import java.util.Map;
 import java.util.Objects;
 import java.util.Properties;
+import p007b.p100d.p104b.p105a.C1643a;
+import p007b.p225i.p408d.C4903g;
+import p007b.p225i.p408d.C4906j;
+import p007b.p225i.p408d.C4907k;
+import p007b.p225i.p408d.InterfaceC4911o;
+import p007b.p225i.p408d.p410q.AbstractC4931p;
+import p007b.p225i.p408d.p410q.C4916a;
+import p007b.p225i.p408d.p410q.C4922g;
+import p007b.p225i.p408d.p410q.InterfaceC4933r;
+import p007b.p225i.p408d.p410q.p411x.C4939a;
 
 /* JADX INFO: loaded from: classes3.dex */
-public final class MapTypeAdapterFactory implements TypeAdapterFactory2 {
-    public final g j;
-    public final boolean k;
+public final class MapTypeAdapterFactory implements InterfaceC4911o {
+
+    /* JADX INFO: renamed from: j */
+    public final C4922g f21519j;
+
+    /* JADX INFO: renamed from: k */
+    public final boolean f21520k;
 
     public final class Adapter<K, V> extends TypeAdapter<Map<K, V>> {
-        public final TypeAdapter<K> a;
 
-        /* JADX INFO: renamed from: b, reason: collision with root package name */
-        public final TypeAdapter<V> f3120b;
-        public final ObjectConstructor<? extends Map<K, V>> c;
+        /* JADX INFO: renamed from: a */
+        public final TypeAdapter<K> f21521a;
 
-        public Adapter(Gson gson, Type type, TypeAdapter<K> typeAdapter, Type type2, TypeAdapter<V> typeAdapter2, ObjectConstructor<? extends Map<K, V>> objectConstructor) {
-            this.a = new TypeAdapterRuntimeTypeWrapper(gson, typeAdapter, type);
-            this.f3120b = new TypeAdapterRuntimeTypeWrapper(gson, typeAdapter2, type2);
-            this.c = objectConstructor;
+        /* JADX INFO: renamed from: b */
+        public final TypeAdapter<V> f21522b;
+
+        /* JADX INFO: renamed from: c */
+        public final InterfaceC4933r<? extends Map<K, V>> f21523c;
+
+        public Adapter(Gson gson, Type type, TypeAdapter<K> typeAdapter, Type type2, TypeAdapter<V> typeAdapter2, InterfaceC4933r<? extends Map<K, V>> interfaceC4933r) {
+            this.f21521a = new TypeAdapterRuntimeTypeWrapper(gson, typeAdapter, type);
+            this.f21522b = new TypeAdapterRuntimeTypeWrapper(gson, typeAdapter2, type2);
+            this.f21523c = interfaceC4933r;
         }
 
         @Override // com.google.gson.TypeAdapter
         public Object read(JsonReader jsonReader) throws IOException {
-            JsonToken jsonTokenN = jsonReader.N();
-            if (jsonTokenN == JsonToken.NULL) {
-                jsonReader.H();
+            JsonToken jsonTokenMo6878N = jsonReader.mo6878N();
+            if (jsonTokenMo6878N == JsonToken.NULL) {
+                jsonReader.mo6876H();
                 return null;
             }
-            Map<K, V> mapA = this.c.a();
-            if (jsonTokenN == JsonToken.BEGIN_ARRAY) {
-                jsonReader.a();
-                while (jsonReader.q()) {
-                    jsonReader.a();
-                    K k = this.a.read(jsonReader);
-                    if (mapA.put(k, this.f3120b.read(jsonReader)) != null) {
-                        throw new JsonSyntaxException(outline.v("duplicate key: ", k));
+            Map<K, V> mapMo6869a = this.f21523c.mo6869a();
+            if (jsonTokenMo6878N == JsonToken.BEGIN_ARRAY) {
+                jsonReader.mo6882a();
+                while (jsonReader.mo6888q()) {
+                    jsonReader.mo6882a();
+                    K k = this.f21521a.read(jsonReader);
+                    if (mapMo6869a.put(k, this.f21522b.read(jsonReader)) != null) {
+                        throw new JsonSyntaxException(C1643a.m881v("duplicate key: ", k));
                     }
-                    jsonReader.e();
+                    jsonReader.mo6886e();
                 }
-                jsonReader.e();
+                jsonReader.mo6886e();
             } else {
-                jsonReader.b();
-                while (jsonReader.q()) {
-                    Objects.requireNonNull((JsonReader.a) JsonReaderInternalAccess.a);
-                    if (jsonReader instanceof JsonTreeReader) {
-                        JsonTreeReader jsonTreeReader = (JsonTreeReader) jsonReader;
-                        jsonTreeReader.W(JsonToken.NAME);
-                        Map.Entry entry = (Map.Entry) ((Iterator) jsonTreeReader.X()).next();
-                        jsonTreeReader.c0(entry.getValue());
-                        jsonTreeReader.c0(new JsonPrimitive((String) entry.getKey()));
+                jsonReader.mo6883b();
+                while (jsonReader.mo6888q()) {
+                    Objects.requireNonNull((JsonReader.C11149a) AbstractC4931p.f13124a);
+                    if (jsonReader instanceof C4939a) {
+                        C4939a c4939a = (C4939a) jsonReader;
+                        c4939a.m6880W(JsonToken.NAME);
+                        Map.Entry entry = (Map.Entry) ((Iterator) c4939a.m6881X()).next();
+                        c4939a.m6885c0(entry.getValue());
+                        c4939a.m6885c0(new C4907k((String) entry.getKey()));
                     } else {
-                        int iD = jsonReader.r;
-                        if (iD == 0) {
-                            iD = jsonReader.d();
+                        int iM9247d = jsonReader.f21633r;
+                        if (iM9247d == 0) {
+                            iM9247d = jsonReader.m9247d();
                         }
-                        if (iD == 13) {
-                            jsonReader.r = 9;
-                        } else if (iD == 12) {
-                            jsonReader.r = 8;
+                        if (iM9247d == 13) {
+                            jsonReader.f21633r = 9;
+                        } else if (iM9247d == 12) {
+                            jsonReader.f21633r = 8;
                         } else {
-                            if (iD != 14) {
-                                StringBuilder sbU = outline.U("Expected a name but was ");
-                                sbU.append(jsonReader.N());
-                                sbU.append(jsonReader.t());
-                                throw new IllegalStateException(sbU.toString());
+                            if (iM9247d != 14) {
+                                StringBuilder sbM833U = C1643a.m833U("Expected a name but was ");
+                                sbM833U.append(jsonReader.mo6878N());
+                                sbM833U.append(jsonReader.m9250t());
+                                throw new IllegalStateException(sbM833U.toString());
                             }
-                            jsonReader.r = 10;
+                            jsonReader.f21633r = 10;
                         }
                     }
-                    K k2 = this.a.read(jsonReader);
-                    if (mapA.put(k2, this.f3120b.read(jsonReader)) != null) {
-                        throw new JsonSyntaxException(outline.v("duplicate key: ", k2));
+                    K k2 = this.f21521a.read(jsonReader);
+                    if (mapMo6869a.put(k2, this.f21522b.read(jsonReader)) != null) {
+                        throw new JsonSyntaxException(C1643a.m881v("duplicate key: ", k2));
                     }
                 }
-                jsonReader.f();
+                jsonReader.mo6887f();
             }
-            return mapA;
+            return mapMo6869a;
         }
 
         @Override // com.google.gson.TypeAdapter
         public void write(JsonWriter jsonWriter, Object obj) throws IOException {
-            String strG;
+            String strMo6855g;
             Map map = (Map) obj;
             if (map == null) {
-                jsonWriter.s();
+                jsonWriter.mo6905s();
                 return;
             }
-            if (!MapTypeAdapterFactory.this.k) {
-                jsonWriter.c();
+            if (!MapTypeAdapterFactory.this.f21520k) {
+                jsonWriter.mo6901c();
                 for (Map.Entry<K, V> entry : map.entrySet()) {
-                    jsonWriter.n(String.valueOf(entry.getKey()));
-                    this.f3120b.write(jsonWriter, entry.getValue());
+                    jsonWriter.mo6904n(String.valueOf(entry.getKey()));
+                    this.f21522b.write(jsonWriter, entry.getValue());
                 }
-                jsonWriter.f();
+                jsonWriter.mo6903f();
                 return;
             }
             ArrayList arrayList = new ArrayList(map.size());
@@ -126,77 +134,77 @@ public final class MapTypeAdapterFactory implements TypeAdapterFactory2 {
             int i = 0;
             boolean z2 = false;
             for (Map.Entry<K, V> entry2 : map.entrySet()) {
-                JsonElement jsonTree = this.a.toJsonTree(entry2.getKey());
+                JsonElement jsonTree = this.f21521a.toJsonTree(entry2.getKey());
                 arrayList.add(jsonTree);
                 arrayList2.add(entry2.getValue());
                 Objects.requireNonNull(jsonTree);
-                z2 |= (jsonTree instanceof JsonArray) || (jsonTree instanceof JsonObject);
+                z2 |= (jsonTree instanceof C4903g) || (jsonTree instanceof JsonObject);
             }
             if (z2) {
-                jsonWriter.b();
+                jsonWriter.mo6900b();
                 int size = arrayList.size();
                 while (i < size) {
-                    jsonWriter.b();
-                    TypeAdapters.X.write(jsonWriter, (JsonElement) arrayList.get(i));
-                    this.f3120b.write(jsonWriter, (V) arrayList2.get(i));
-                    jsonWriter.e();
+                    jsonWriter.mo6900b();
+                    TypeAdapters.f21579X.write(jsonWriter, (JsonElement) arrayList.get(i));
+                    this.f21522b.write(jsonWriter, (V) arrayList2.get(i));
+                    jsonWriter.mo6902e();
                     i++;
                 }
-                jsonWriter.e();
+                jsonWriter.mo6902e();
                 return;
             }
-            jsonWriter.c();
+            jsonWriter.mo6901c();
             int size2 = arrayList.size();
             while (i < size2) {
                 JsonElement jsonElement = (JsonElement) arrayList.get(i);
                 Objects.requireNonNull(jsonElement);
-                if (jsonElement instanceof JsonPrimitive) {
-                    JsonPrimitive jsonPrimitiveE = jsonElement.e();
-                    Object obj2 = jsonPrimitiveE.a;
+                if (jsonElement instanceof C4907k) {
+                    C4907k c4907kM9213e = jsonElement.m9213e();
+                    Object obj2 = c4907kM9213e.f13107a;
                     if (obj2 instanceof Number) {
-                        strG = String.valueOf(jsonPrimitiveE.i());
+                        strMo6855g = String.valueOf(c4907kM9213e.m6859i());
                     } else if (obj2 instanceof Boolean) {
-                        strG = Boolean.toString(jsonPrimitiveE.h());
+                        strMo6855g = Boolean.toString(c4907kM9213e.m6858h());
                     } else {
                         if (!(obj2 instanceof String)) {
                             throw new AssertionError();
                         }
-                        strG = jsonPrimitiveE.g();
+                        strMo6855g = c4907kM9213e.mo6855g();
                     }
                 } else {
-                    if (!(jsonElement instanceof JsonNull)) {
+                    if (!(jsonElement instanceof C4906j)) {
                         throw new AssertionError();
                     }
-                    strG = "null";
+                    strMo6855g = "null";
                 }
-                jsonWriter.n(strG);
-                this.f3120b.write(jsonWriter, (V) arrayList2.get(i));
+                jsonWriter.mo6904n(strMo6855g);
+                this.f21522b.write(jsonWriter, (V) arrayList2.get(i));
                 i++;
             }
-            jsonWriter.f();
+            jsonWriter.mo6903f();
         }
     }
 
-    public MapTypeAdapterFactory(g gVar, boolean z2) {
-        this.j = gVar;
-        this.k = z2;
+    public MapTypeAdapterFactory(C4922g c4922g, boolean z2) {
+        this.f21519j = c4922g;
+        this.f21520k = z2;
     }
 
-    @Override // b.i.d.TypeAdapterFactory2
+    @Override // p007b.p225i.p408d.InterfaceC4911o
     public <T> TypeAdapter<T> create(Gson gson, TypeToken<T> typeToken) {
         Type[] actualTypeArguments;
         Type type = typeToken.getType();
         if (!Map.class.isAssignableFrom(typeToken.getRawType())) {
             return null;
         }
-        Class<?> clsE = C$Gson$Types.e(type);
+        Class<?> clsM6864e = C4916a.m6864e(type);
         if (type == Properties.class) {
             actualTypeArguments = new Type[]{String.class, String.class};
         } else {
-            Type typeF = C$Gson$Types.f(type, clsE, Map.class);
-            actualTypeArguments = typeF instanceof ParameterizedType ? ((ParameterizedType) typeF).getActualTypeArguments() : new Type[]{Object.class, Object.class};
+            Type typeM6865f = C4916a.m6865f(type, clsM6864e, Map.class);
+            actualTypeArguments = typeM6865f instanceof ParameterizedType ? ((ParameterizedType) typeM6865f).getActualTypeArguments() : new Type[]{Object.class, Object.class};
         }
         Type type2 = actualTypeArguments[0];
-        return new Adapter(gson, actualTypeArguments[0], (type2 == Boolean.TYPE || type2 == Boolean.class) ? TypeAdapters.f : gson.h(TypeToken.get(type2)), actualTypeArguments[1], gson.h(TypeToken.get(actualTypeArguments[1])), this.j.a(typeToken));
+        return new Adapter(gson, actualTypeArguments[0], (type2 == Boolean.TYPE || type2 == Boolean.class) ? TypeAdapters.f21587f : gson.m9204h(TypeToken.get(type2)), actualTypeArguments[1], gson.m9204h(TypeToken.get(actualTypeArguments[1])), this.f21519j.m6870a(typeToken));
     }
 }

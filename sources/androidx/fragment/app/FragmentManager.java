@@ -39,7 +39,7 @@ import androidx.annotation.RestrictTo;
 import androidx.annotation.StringRes;
 import androidx.collection.ArraySet;
 import androidx.core.os.CancellationSignal;
-import androidx.fragment.R;
+import androidx.fragment.C0344R;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentAnim;
 import androidx.fragment.app.FragmentTransaction;
@@ -49,7 +49,6 @@ import androidx.view.LifecycleEventObserver;
 import androidx.view.LifecycleOwner;
 import androidx.view.ViewModelStore;
 import androidx.view.ViewModelStoreOwner;
-import b.d.b.a.outline;
 import java.io.FileDescriptor;
 import java.io.PrintWriter;
 import java.util.ArrayDeque;
@@ -63,6 +62,7 @@ import java.util.Map;
 import java.util.Set;
 import java.util.concurrent.CopyOnWriteArrayList;
 import java.util.concurrent.atomic.AtomicInteger;
+import p007b.p100d.p104b.p105a.C1643a;
 
 /* JADX INFO: loaded from: classes.dex */
 public abstract class FragmentManager implements FragmentResultOwner {
@@ -405,7 +405,7 @@ public abstract class FragmentManager implements FragmentResultOwner {
         ViewGroup viewGroup;
         HashSet hashSet = new HashSet();
         while (i < i2) {
-            Iterator<FragmentTransaction.Op> it = arrayList.get(i).mOps.iterator();
+            Iterator<FragmentTransaction.C0394Op> it = arrayList.get(i).mOps.iterator();
             while (it.hasNext()) {
                 Fragment fragment = it.next().mFragment;
                 if (fragment != null && (viewGroup = fragment.mContainer) != null) {
@@ -608,7 +608,7 @@ public abstract class FragmentManager implements FragmentResultOwner {
             r1 = 1;
         } else if (USE_STATE_MANAGER) {
             for (int i7 = i; i7 < i2; i7++) {
-                Iterator<FragmentTransaction.Op> it = arrayList.get(i7).mOps.iterator();
+                Iterator<FragmentTransaction.C0394Op> it = arrayList.get(i7).mOps.iterator();
                 while (it.hasNext()) {
                     Fragment fragment = it.next().mFragment;
                     if (fragment != null && fragment.mFragmentManager != null) {
@@ -640,7 +640,7 @@ public abstract class FragmentManager implements FragmentResultOwner {
                     }
                     i5 = size;
                 } else {
-                    Iterator<FragmentTransaction.Op> it2 = backStackRecord2.mOps.iterator();
+                    Iterator<FragmentTransaction.C0394Op> it2 = backStackRecord2.mOps.iterator();
                     while (it2.hasNext()) {
                         Fragment fragment3 = it2.next().mFragment;
                         if (fragment3 != null) {
@@ -816,7 +816,7 @@ public abstract class FragmentManager implements FragmentResultOwner {
 
     @Nullable
     public static Fragment getViewFragment(@NonNull View view) {
-        Object tag = view.getTag(R.id.fragment_container_view_tag);
+        Object tag = view.getTag(C0344R.id.fragment_container_view_tag);
         if (tag instanceof Fragment) {
             return (Fragment) tag;
         }
@@ -929,7 +929,7 @@ public abstract class FragmentManager implements FragmentResultOwner {
         if (fragmentContainer == null || fragment.getNextAnim() <= 0) {
             return;
         }
-        int i = R.id.visible_removing_fragment_view_tag;
+        int i = C0344R.id.visible_removing_fragment_view_tag;
         if (fragmentContainer.getTag(i) == null) {
             fragmentContainer.setTag(i, fragment);
         }
@@ -1075,8 +1075,8 @@ public abstract class FragmentManager implements FragmentResultOwner {
         Object obj = this.mHost;
         if (obj instanceof ActivityResultRegistryOwner) {
             ActivityResultRegistry activityResultRegistry = ((ActivityResultRegistryOwner) obj).getActivityResultRegistry();
-            String strW = outline.w("FragmentManager:", fragment != null ? outline.J(new StringBuilder(), fragment.mWho, ":") : "");
-            this.mStartActivityForResult = activityResultRegistry.register(outline.w(strW, "StartActivityForResult"), new ActivityResultContracts.StartActivityForResult(), new ActivityResultCallback<ActivityResult>() { // from class: androidx.fragment.app.FragmentManager.9
+            String strM883w = C1643a.m883w("FragmentManager:", fragment != null ? C1643a.m822J(new StringBuilder(), fragment.mWho, ":") : "");
+            this.mStartActivityForResult = activityResultRegistry.register(C1643a.m883w(strM883w, "StartActivityForResult"), new ActivityResultContracts.StartActivityForResult(), new ActivityResultCallback<ActivityResult>() { // from class: androidx.fragment.app.FragmentManager.9
                 @Override // androidx.activity.result.ActivityResultCallback
                 public void onActivityResult(ActivityResult activityResult) {
                     LaunchedFragmentInfo launchedFragmentInfoPollFirst = FragmentManager.this.mLaunchedFragments.pollFirst();
@@ -1094,7 +1094,7 @@ public abstract class FragmentManager implements FragmentResultOwner {
                     Log.w(FragmentManager.TAG, "Activity result delivered for unknown Fragment " + str);
                 }
             });
-            this.mStartIntentSenderForResult = activityResultRegistry.register(outline.w(strW, "StartIntentSenderForResult"), new FragmentIntentSenderContract(), new ActivityResultCallback<ActivityResult>() { // from class: androidx.fragment.app.FragmentManager.10
+            this.mStartIntentSenderForResult = activityResultRegistry.register(C1643a.m883w(strM883w, "StartIntentSenderForResult"), new FragmentIntentSenderContract(), new ActivityResultCallback<ActivityResult>() { // from class: androidx.fragment.app.FragmentManager.10
                 @Override // androidx.activity.result.ActivityResultCallback
                 public void onActivityResult(ActivityResult activityResult) {
                     LaunchedFragmentInfo launchedFragmentInfoPollFirst = FragmentManager.this.mLaunchedFragments.pollFirst();
@@ -1112,7 +1112,7 @@ public abstract class FragmentManager implements FragmentResultOwner {
                     Log.w(FragmentManager.TAG, "Intent Sender result delivered for unknown Fragment " + str);
                 }
             });
-            this.mRequestPermissions = activityResultRegistry.register(outline.w(strW, "RequestPermissions"), new ActivityResultContracts.RequestMultiplePermissions(), new ActivityResultCallback<Map<String, Boolean>>() { // from class: androidx.fragment.app.FragmentManager.11
+            this.mRequestPermissions = activityResultRegistry.register(C1643a.m883w(strM883w, "RequestPermissions"), new ActivityResultContracts.RequestMultiplePermissions(), new ActivityResultCallback<Map<String, Boolean>>() { // from class: androidx.fragment.app.FragmentManager.11
                 @Override // androidx.activity.result.ActivityResultCallback
                 @SuppressLint({"SyntheticAccessor"})
                 public void onActivityResult(Map<String, Boolean> map) {
@@ -1449,7 +1449,7 @@ public abstract class FragmentManager implements FragmentResultOwner {
     public void dump(@NonNull String str, @Nullable FileDescriptor fileDescriptor, @NonNull PrintWriter printWriter, @Nullable String[] strArr) {
         int size;
         int size2;
-        String strW = outline.w(str, "    ");
+        String strM883w = C1643a.m883w(str, "    ");
         this.mFragmentStore.dump(str, fileDescriptor, printWriter, strArr);
         ArrayList<Fragment> arrayList = this.mCreatedMenus;
         if (arrayList != null && (size2 = arrayList.size()) > 0) {
@@ -1475,7 +1475,7 @@ public abstract class FragmentManager implements FragmentResultOwner {
                 printWriter.print(i2);
                 printWriter.print(": ");
                 printWriter.println(backStackRecord.toString());
-                backStackRecord.dump(strW, printWriter);
+                backStackRecord.dump(strM883w, printWriter);
             }
         }
         printWriter.print(str);
@@ -2114,7 +2114,7 @@ public abstract class FragmentManager implements FragmentResultOwner {
 
     public void putFragment(@NonNull Bundle bundle, @NonNull String str, @NonNull Fragment fragment) {
         if (fragment.mFragmentManager != this) {
-            throwException(new IllegalStateException(outline.u("Fragment ", fragment, " is not currently in the FragmentManager")));
+            throwException(new IllegalStateException(C1643a.m879u("Fragment ", fragment, " is not currently in the FragmentManager")));
         }
         bundle.putString(str, fragment.mWho);
     }
@@ -2196,11 +2196,11 @@ public abstract class FragmentManager implements FragmentResultOwner {
                 Fragment fragment = fragmentStateManager.getFragment();
                 fragment.mFragmentManager = this;
                 if (isLoggingEnabled(2)) {
-                    StringBuilder sbU = outline.U("restoreSaveState: active (");
-                    sbU.append(fragment.mWho);
-                    sbU.append("): ");
-                    sbU.append(fragment);
-                    Log.v(TAG, sbU.toString());
+                    StringBuilder sbM833U = C1643a.m833U("restoreSaveState: active (");
+                    sbM833U.append(fragment.mWho);
+                    sbM833U.append("): ");
+                    sbM833U.append(fragment);
+                    Log.v(TAG, sbM833U.toString());
                 }
                 fragmentStateManager.restoreState(this.mHost.getContext().getClassLoader());
                 this.mFragmentStore.makeActive(fragmentStateManager);
@@ -2232,11 +2232,11 @@ public abstract class FragmentManager implements FragmentResultOwner {
                 }
                 BackStackRecord backStackRecordInstantiate = backStackStateArr[i].instantiate(this);
                 if (isLoggingEnabled(2)) {
-                    StringBuilder sbV = outline.V("restoreAllState: back stack #", i, " (index ");
-                    sbV.append(backStackRecordInstantiate.mIndex);
-                    sbV.append("): ");
-                    sbV.append(backStackRecordInstantiate);
-                    Log.v(TAG, sbV.toString());
+                    StringBuilder sbM834V = C1643a.m834V("restoreAllState: back stack #", i, " (index ");
+                    sbM834V.append(backStackRecordInstantiate.mIndex);
+                    sbM834V.append("): ");
+                    sbM834V.append(backStackRecordInstantiate);
+                    Log.v(TAG, sbM834V.toString());
                     PrintWriter printWriter = new PrintWriter(new LogWriter(TAG));
                     backStackRecordInstantiate.dump("  ", printWriter, false);
                     printWriter.close();
@@ -2293,9 +2293,9 @@ public abstract class FragmentManager implements FragmentResultOwner {
             for (int i = 0; i < size; i++) {
                 backStackStateArr[i] = new BackStackState(this.mBackStack.get(i));
                 if (isLoggingEnabled(2)) {
-                    StringBuilder sbV = outline.V("saveAllState: adding back stack #", i, ": ");
-                    sbV.append(this.mBackStack.get(i));
-                    Log.v(TAG, sbV.toString());
+                    StringBuilder sbM834V = C1643a.m834V("saveAllState: adding back stack #", i, ": ");
+                    sbM834V.append(this.mBackStack.get(i));
+                    Log.v(TAG, sbM834V.toString());
                 }
             }
         }
@@ -2318,7 +2318,7 @@ public abstract class FragmentManager implements FragmentResultOwner {
     public Fragment.SavedState saveFragmentInstanceState(@NonNull Fragment fragment) {
         FragmentStateManager fragmentStateManager = this.mFragmentStore.getFragmentStateManager(fragment.mWho);
         if (fragmentStateManager == null || !fragmentStateManager.getFragment().equals(fragment)) {
-            throwException(new IllegalStateException(outline.u("Fragment ", fragment, " is not currently in the FragmentManager")));
+            throwException(new IllegalStateException(C1643a.m879u("Fragment ", fragment, " is not currently in the FragmentManager")));
         }
         return fragmentStateManager.saveInstanceState();
     }
@@ -2503,14 +2503,14 @@ public abstract class FragmentManager implements FragmentResultOwner {
             enqueueAction(new PopBackStackState(null, i, i2), false);
             return;
         }
-        throw new IllegalArgumentException(outline.q("Bad id: ", i));
+        throw new IllegalArgumentException(C1643a.m871q("Bad id: ", i));
     }
 
     public boolean popBackStackImmediate(int i, int i2) {
         if (i >= 0) {
             return popBackStackImmediate(null, i, i2);
         }
-        throw new IllegalArgumentException(outline.q("Bad id: ", i));
+        throw new IllegalArgumentException(C1643a.m871q("Bad id: ", i));
     }
 
     private boolean popBackStackImmediate(@Nullable String str, int i, int i2) {

@@ -1,15 +1,11 @@
 package com.discord.stores;
 
-import b.d.b.a.outline;
 import com.discord.models.domain.ModelEntitlement;
 import com.discord.restapi.RestAPIInterface;
 import com.discord.stores.updates.ObservationDeck;
 import com.discord.utilities.error.Error;
+import com.discord.utilities.p501rx.ObservableExtensionsKt;
 import com.discord.utilities.rest.RestAPI;
-import com.discord.utilities.rx.ObservableExtensionsKt;
-import d0.t.Maps6;
-import d0.z.d.Intrinsics3;
-import d0.z.d.Lambda;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.LinkedHashMap;
@@ -19,8 +15,12 @@ import kotlin.Unit;
 import kotlin.jvm.functions.Function0;
 import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.DefaultConstructorMarker;
-import rx.Observable;
-import rx.Subscription;
+import p007b.p100d.p104b.p105a.C1643a;
+import p507d0.p580t.C12136h0;
+import p507d0.p592z.p594d.AbstractC12240o;
+import p507d0.p592z.p594d.C12238m;
+import p658rx.Observable;
+import p658rx.Subscription;
 
 /* JADX INFO: compiled from: StoreEntitlements.kt */
 /* JADX INFO: loaded from: classes2.dex */
@@ -54,8 +54,8 @@ public final class StoreEntitlements extends StoreV2 {
             /* JADX WARN: Multi-variable type inference failed */
             public Loaded(Map<Long, ? extends List<ModelEntitlement>> map, Map<Long, ? extends List<ModelEntitlement>> map2) {
                 super(null);
-                Intrinsics3.checkNotNullParameter(map, "giftableEntitlements");
-                Intrinsics3.checkNotNullParameter(map2, "ownedEntitlements");
+                C12238m.checkNotNullParameter(map, "giftableEntitlements");
+                C12238m.checkNotNullParameter(map2, "ownedEntitlements");
                 this.giftableEntitlements = map;
                 this.ownedEntitlements = map2;
             }
@@ -80,8 +80,8 @@ public final class StoreEntitlements extends StoreV2 {
             }
 
             public final Loaded copy(Map<Long, ? extends List<ModelEntitlement>> giftableEntitlements, Map<Long, ? extends List<ModelEntitlement>> ownedEntitlements) {
-                Intrinsics3.checkNotNullParameter(giftableEntitlements, "giftableEntitlements");
-                Intrinsics3.checkNotNullParameter(ownedEntitlements, "ownedEntitlements");
+                C12238m.checkNotNullParameter(giftableEntitlements, "giftableEntitlements");
+                C12238m.checkNotNullParameter(ownedEntitlements, "ownedEntitlements");
                 return new Loaded(giftableEntitlements, ownedEntitlements);
             }
 
@@ -93,7 +93,7 @@ public final class StoreEntitlements extends StoreV2 {
                     return false;
                 }
                 Loaded loaded = (Loaded) other;
-                return Intrinsics3.areEqual(this.giftableEntitlements, loaded.giftableEntitlements) && Intrinsics3.areEqual(this.ownedEntitlements, loaded.ownedEntitlements);
+                return C12238m.areEqual(this.giftableEntitlements, loaded.giftableEntitlements) && C12238m.areEqual(this.ownedEntitlements, loaded.ownedEntitlements);
             }
 
             public final Map<Long, List<ModelEntitlement>> getGiftableEntitlements() {
@@ -112,10 +112,10 @@ public final class StoreEntitlements extends StoreV2 {
             }
 
             public String toString() {
-                StringBuilder sbU = outline.U("Loaded(giftableEntitlements=");
-                sbU.append(this.giftableEntitlements);
-                sbU.append(", ownedEntitlements=");
-                return outline.M(sbU, this.ownedEntitlements, ")");
+                StringBuilder sbM833U = C1643a.m833U("Loaded(giftableEntitlements=");
+                sbM833U.append(this.giftableEntitlements);
+                sbM833U.append(", ownedEntitlements=");
+                return C1643a.m825M(sbM833U, this.ownedEntitlements, ")");
             }
 
             @Override // com.discord.stores.StoreEntitlements.State
@@ -145,17 +145,17 @@ public final class StoreEntitlements extends StoreV2 {
         }
     }
 
-    /* JADX INFO: renamed from: com.discord.stores.StoreEntitlements$fetchMyEntitlementsForApplication$1, reason: invalid class name */
+    /* JADX INFO: renamed from: com.discord.stores.StoreEntitlements$fetchMyEntitlementsForApplication$1 */
     /* JADX INFO: compiled from: StoreEntitlements.kt */
-    public static final class AnonymousClass1 extends Lambda implements Function0<Unit> {
-        public AnonymousClass1() {
+    public static final class C59051 extends AbstractC12240o implements Function0<Unit> {
+        public C59051() {
             super(0);
         }
 
         @Override // kotlin.jvm.functions.Function0
         public /* bridge */ /* synthetic */ Unit invoke() {
             invoke2();
-            return Unit.a;
+            return Unit.f27425a;
         }
 
         /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
@@ -164,13 +164,13 @@ public final class StoreEntitlements extends StoreV2 {
         }
     }
 
-    /* JADX INFO: renamed from: com.discord.stores.StoreEntitlements$fetchMyEntitlementsForApplication$2, reason: invalid class name */
+    /* JADX INFO: renamed from: com.discord.stores.StoreEntitlements$fetchMyEntitlementsForApplication$2 */
     /* JADX INFO: compiled from: StoreEntitlements.kt */
-    public static final class AnonymousClass2 extends Lambda implements Function1<Error, Unit> {
+    public static final class C59062 extends AbstractC12240o implements Function1<Error, Unit> {
 
         /* JADX INFO: renamed from: com.discord.stores.StoreEntitlements$fetchMyEntitlementsForApplication$2$1, reason: invalid class name */
         /* JADX INFO: compiled from: StoreEntitlements.kt */
-        public static final class AnonymousClass1 extends Lambda implements Function0<Unit> {
+        public static final class AnonymousClass1 extends AbstractC12240o implements Function0<Unit> {
             public AnonymousClass1() {
                 super(0);
             }
@@ -178,7 +178,7 @@ public final class StoreEntitlements extends StoreV2 {
             @Override // kotlin.jvm.functions.Function0
             public /* bridge */ /* synthetic */ Unit invoke() {
                 invoke2();
-                return Unit.a;
+                return Unit.f27425a;
             }
 
             /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
@@ -187,31 +187,31 @@ public final class StoreEntitlements extends StoreV2 {
             }
         }
 
-        public AnonymousClass2() {
+        public C59062() {
             super(1);
         }
 
         @Override // kotlin.jvm.functions.Function1
         public /* bridge */ /* synthetic */ Unit invoke(Error error) {
             invoke2(error);
-            return Unit.a;
+            return Unit.f27425a;
         }
 
         /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
         public final void invoke2(Error error) {
-            Intrinsics3.checkNotNullParameter(error, "it");
+            C12238m.checkNotNullParameter(error, "it");
             StoreEntitlements.this.dispatcher.schedule(new AnonymousClass1());
         }
     }
 
-    /* JADX INFO: renamed from: com.discord.stores.StoreEntitlements$fetchMyEntitlementsForApplication$3, reason: invalid class name */
+    /* JADX INFO: renamed from: com.discord.stores.StoreEntitlements$fetchMyEntitlementsForApplication$3 */
     /* JADX INFO: compiled from: StoreEntitlements.kt */
-    public static final class AnonymousClass3 extends Lambda implements Function1<List<? extends ModelEntitlement>, Unit> {
+    public static final class C59073 extends AbstractC12240o implements Function1<List<? extends ModelEntitlement>, Unit> {
         public final /* synthetic */ long $applicationId;
 
         /* JADX INFO: renamed from: com.discord.stores.StoreEntitlements$fetchMyEntitlementsForApplication$3$1, reason: invalid class name */
         /* JADX INFO: compiled from: StoreEntitlements.kt */
-        public static final class AnonymousClass1 extends Lambda implements Function0<Unit> {
+        public static final class AnonymousClass1 extends AbstractC12240o implements Function0<Unit> {
             public final /* synthetic */ List $entitlements;
 
             /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -223,18 +223,18 @@ public final class StoreEntitlements extends StoreV2 {
             @Override // kotlin.jvm.functions.Function0
             public /* bridge */ /* synthetic */ Unit invoke() {
                 invoke2();
-                return Unit.a;
+                return Unit.f27425a;
             }
 
             /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
             public final void invoke2() {
-                AnonymousClass3 anonymousClass3 = AnonymousClass3.this;
-                StoreEntitlements.this.handleFetchEntitlementsSuccess(anonymousClass3.$applicationId, this.$entitlements);
+                C59073 c59073 = C59073.this;
+                StoreEntitlements.this.handleFetchEntitlementsSuccess(c59073.$applicationId, this.$entitlements);
             }
         }
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-        public AnonymousClass3(long j) {
+        public C59073(long j) {
             super(1);
             this.$applicationId = j;
         }
@@ -242,27 +242,27 @@ public final class StoreEntitlements extends StoreV2 {
         @Override // kotlin.jvm.functions.Function1
         public /* bridge */ /* synthetic */ Unit invoke(List<? extends ModelEntitlement> list) {
             invoke2((List<ModelEntitlement>) list);
-            return Unit.a;
+            return Unit.f27425a;
         }
 
         /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
         public final void invoke2(List<ModelEntitlement> list) {
-            Intrinsics3.checkNotNullParameter(list, "entitlements");
+            C12238m.checkNotNullParameter(list, "entitlements");
             StoreEntitlements.this.dispatcher.schedule(new AnonymousClass1(list));
         }
     }
 
-    /* JADX INFO: renamed from: com.discord.stores.StoreEntitlements$fetchMyGiftEntitlements$1, reason: invalid class name */
+    /* JADX INFO: renamed from: com.discord.stores.StoreEntitlements$fetchMyGiftEntitlements$1 */
     /* JADX INFO: compiled from: StoreEntitlements.kt */
-    public static final class AnonymousClass1 extends Lambda implements Function0<Unit> {
-        public AnonymousClass1() {
+    public static final class C59081 extends AbstractC12240o implements Function0<Unit> {
+        public C59081() {
             super(0);
         }
 
         @Override // kotlin.jvm.functions.Function0
         public /* bridge */ /* synthetic */ Unit invoke() {
             invoke2();
-            return Unit.a;
+            return Unit.f27425a;
         }
 
         /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
@@ -271,13 +271,13 @@ public final class StoreEntitlements extends StoreV2 {
         }
     }
 
-    /* JADX INFO: renamed from: com.discord.stores.StoreEntitlements$fetchMyGiftEntitlements$2, reason: invalid class name */
+    /* JADX INFO: renamed from: com.discord.stores.StoreEntitlements$fetchMyGiftEntitlements$2 */
     /* JADX INFO: compiled from: StoreEntitlements.kt */
-    public static final class AnonymousClass2 extends Lambda implements Function1<Error, Unit> {
+    public static final class C59092 extends AbstractC12240o implements Function1<Error, Unit> {
 
         /* JADX INFO: renamed from: com.discord.stores.StoreEntitlements$fetchMyGiftEntitlements$2$1, reason: invalid class name */
         /* JADX INFO: compiled from: StoreEntitlements.kt */
-        public static final class AnonymousClass1 extends Lambda implements Function0<Unit> {
+        public static final class AnonymousClass1 extends AbstractC12240o implements Function0<Unit> {
             public AnonymousClass1() {
                 super(0);
             }
@@ -285,7 +285,7 @@ public final class StoreEntitlements extends StoreV2 {
             @Override // kotlin.jvm.functions.Function0
             public /* bridge */ /* synthetic */ Unit invoke() {
                 invoke2();
-                return Unit.a;
+                return Unit.f27425a;
             }
 
             /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
@@ -294,30 +294,30 @@ public final class StoreEntitlements extends StoreV2 {
             }
         }
 
-        public AnonymousClass2() {
+        public C59092() {
             super(1);
         }
 
         @Override // kotlin.jvm.functions.Function1
         public /* bridge */ /* synthetic */ Unit invoke(Error error) {
             invoke2(error);
-            return Unit.a;
+            return Unit.f27425a;
         }
 
         /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
         public final void invoke2(Error error) {
-            Intrinsics3.checkNotNullParameter(error, "it");
+            C12238m.checkNotNullParameter(error, "it");
             StoreEntitlements.this.dispatcher.schedule(new AnonymousClass1());
         }
     }
 
-    /* JADX INFO: renamed from: com.discord.stores.StoreEntitlements$fetchMyGiftEntitlements$3, reason: invalid class name */
+    /* JADX INFO: renamed from: com.discord.stores.StoreEntitlements$fetchMyGiftEntitlements$3 */
     /* JADX INFO: compiled from: StoreEntitlements.kt */
-    public static final class AnonymousClass3 extends Lambda implements Function1<List<? extends ModelEntitlement>, Unit> {
+    public static final class C59103 extends AbstractC12240o implements Function1<List<? extends ModelEntitlement>, Unit> {
 
         /* JADX INFO: renamed from: com.discord.stores.StoreEntitlements$fetchMyGiftEntitlements$3$1, reason: invalid class name */
         /* JADX INFO: compiled from: StoreEntitlements.kt */
-        public static final class AnonymousClass1 extends Lambda implements Function0<Unit> {
+        public static final class AnonymousClass1 extends AbstractC12240o implements Function0<Unit> {
             public final /* synthetic */ List $entitlements;
 
             /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -329,7 +329,7 @@ public final class StoreEntitlements extends StoreV2 {
             @Override // kotlin.jvm.functions.Function0
             public /* bridge */ /* synthetic */ Unit invoke() {
                 invoke2();
-                return Unit.a;
+                return Unit.f27425a;
             }
 
             /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
@@ -338,27 +338,27 @@ public final class StoreEntitlements extends StoreV2 {
             }
         }
 
-        public AnonymousClass3() {
+        public C59103() {
             super(1);
         }
 
         @Override // kotlin.jvm.functions.Function1
         public /* bridge */ /* synthetic */ Unit invoke(List<? extends ModelEntitlement> list) {
             invoke2((List<ModelEntitlement>) list);
-            return Unit.a;
+            return Unit.f27425a;
         }
 
         /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
         public final void invoke2(List<ModelEntitlement> list) {
-            Intrinsics3.checkNotNullParameter(list, "entitlements");
+            C12238m.checkNotNullParameter(list, "entitlements");
             StoreEntitlements.this.dispatcher.schedule(new AnonymousClass1(list));
         }
     }
 
-    /* JADX INFO: renamed from: com.discord.stores.StoreEntitlements$observeEntitlementState$1, reason: invalid class name */
+    /* JADX INFO: renamed from: com.discord.stores.StoreEntitlements$observeEntitlementState$1 */
     /* JADX INFO: compiled from: StoreEntitlements.kt */
-    public static final class AnonymousClass1 extends Lambda implements Function0<State> {
-        public AnonymousClass1() {
+    public static final class C59111 extends AbstractC12240o implements Function0<State> {
+        public C59111() {
             super(0);
         }
 
@@ -374,13 +374,13 @@ public final class StoreEntitlements extends StoreV2 {
     }
 
     public final void fetchMyEntitlementsForApplication(long applicationId) {
-        this.dispatcher.schedule(new AnonymousClass1());
-        ObservableExtensionsKt.appSubscribe(ObservableExtensionsKt.restSubscribeOn$default(RestAPIInterface.DefaultImpls.getMyEntitlements$default(this.restAPI, applicationId, false, 2, null), false, 1, null), (Class<?>) StoreEntitlements.class, (58 & 2) != 0 ? null : null, (Function1<? super Subscription, Unit>) ((58 & 4) != 0 ? null : null), (Function1<? super Error, Unit>) ((58 & 8) != 0 ? null : new AnonymousClass2()), (Function0<Unit>) ((58 & 16) != 0 ? ObservableExtensionsKt.AnonymousClass1.INSTANCE : null), (Function0<Unit>) ((58 & 32) != 0 ? ObservableExtensionsKt.AnonymousClass2.INSTANCE : null), new AnonymousClass3(applicationId));
+        this.dispatcher.schedule(new C59051());
+        ObservableExtensionsKt.appSubscribe(ObservableExtensionsKt.restSubscribeOn$default(RestAPIInterface.DefaultImpls.getMyEntitlements$default(this.restAPI, applicationId, false, 2, null), false, 1, null), (Class<?>) StoreEntitlements.class, (58 & 2) != 0 ? null : null, (Function1<? super Subscription, Unit>) ((58 & 4) != 0 ? null : null), (Function1<? super Error, Unit>) ((58 & 8) != 0 ? null : new C59062()), (Function0<Unit>) ((58 & 16) != 0 ? ObservableExtensionsKt.C68791.INSTANCE : null), (Function0<Unit>) ((58 & 32) != 0 ? ObservableExtensionsKt.C68802.INSTANCE : null), new C59073(applicationId));
     }
 
     public final void fetchMyGiftEntitlements() {
-        this.dispatcher.schedule(new AnonymousClass1());
-        ObservableExtensionsKt.appSubscribe(ObservableExtensionsKt.restSubscribeOn$default(this.restAPI.getGifts(), false, 1, null), (Class<?>) StoreEntitlements.class, (58 & 2) != 0 ? null : null, (Function1<? super Subscription, Unit>) ((58 & 4) != 0 ? null : null), (Function1<? super Error, Unit>) ((58 & 8) != 0 ? null : new AnonymousClass2()), (Function0<Unit>) ((58 & 16) != 0 ? ObservableExtensionsKt.AnonymousClass1.INSTANCE : null), (Function0<Unit>) ((58 & 32) != 0 ? ObservableExtensionsKt.AnonymousClass2.INSTANCE : null), new AnonymousClass3());
+        this.dispatcher.schedule(new C59081());
+        ObservableExtensionsKt.appSubscribe(ObservableExtensionsKt.restSubscribeOn$default(this.restAPI.getGifts(), false, 1, null), (Class<?>) StoreEntitlements.class, (58 & 2) != 0 ? null : null, (Function1<? super Subscription, Unit>) ((58 & 4) != 0 ? null : null), (Function1<? super Error, Unit>) ((58 & 8) != 0 ? null : new C59092()), (Function0<Unit>) ((58 & 16) != 0 ? ObservableExtensionsKt.C68791.INSTANCE : null), (Function0<Unit>) ((58 & 32) != 0 ? ObservableExtensionsKt.C68802.INSTANCE : null), new C59103());
     }
 
     /* JADX INFO: renamed from: getEntitlementState, reason: from getter */
@@ -388,23 +388,23 @@ public final class StoreEntitlements extends StoreV2 {
         return this.stateSnapshot;
     }
 
-    @Store3
+    @StoreThread
     public final void handleFetchEntitlementsSuccess(long applicationId, List<ModelEntitlement> entitlements) {
-        Intrinsics3.checkNotNullParameter(entitlements, "entitlements");
+        C12238m.checkNotNullParameter(entitlements, "entitlements");
         this.entitlementMap.put(Long.valueOf(applicationId), entitlements);
         this.state = new State.Loaded(this.giftEntitlementMap, this.entitlementMap);
         markChanged();
     }
 
-    @Store3
+    @StoreThread
     public final void handleFetchError() {
         this.state = State.Failure.INSTANCE;
         markChanged();
     }
 
-    @Store3
+    @StoreThread
     public final void handleFetchGiftsSuccess(List<ModelEntitlement> giftEntitlements) {
-        Intrinsics3.checkNotNullParameter(giftEntitlements, "giftEntitlements");
+        C12238m.checkNotNullParameter(giftEntitlements, "giftEntitlements");
         HashMap map = new HashMap();
         for (ModelEntitlement modelEntitlement : giftEntitlements) {
             List arrayList = (List) map.get(Long.valueOf(modelEntitlement.getSkuId()));
@@ -419,31 +419,31 @@ public final class StoreEntitlements extends StoreV2 {
         markChanged();
     }
 
-    @Store3
+    @StoreThread
     public final void handleFetchingState() {
         this.state = State.Loading.INSTANCE;
         markChanged();
     }
 
     public final Observable<State> observeEntitlementState() {
-        return ObservationDeck.connectRx$default(this.observationDeck, new ObservationDeck.UpdateSource[]{this}, false, null, null, new AnonymousClass1(), 14, null);
+        return ObservationDeck.connectRx$default(this.observationDeck, new ObservationDeck.UpdateSource[]{this}, false, null, null, new C59111(), 14, null);
     }
 
     @Override // com.discord.stores.StoreV2
-    @Store3
+    @StoreThread
     public void snapshotData() {
         super.snapshotData();
         this.stateSnapshot = this.state.deepCopy();
     }
 
     public StoreEntitlements(Dispatcher dispatcher, ObservationDeck observationDeck, RestAPI restAPI) {
-        Intrinsics3.checkNotNullParameter(dispatcher, "dispatcher");
-        Intrinsics3.checkNotNullParameter(observationDeck, "observationDeck");
-        Intrinsics3.checkNotNullParameter(restAPI, "restAPI");
+        C12238m.checkNotNullParameter(dispatcher, "dispatcher");
+        C12238m.checkNotNullParameter(observationDeck, "observationDeck");
+        C12238m.checkNotNullParameter(restAPI, "restAPI");
         this.dispatcher = dispatcher;
         this.observationDeck = observationDeck;
         this.restAPI = restAPI;
-        this.giftEntitlementMap = Maps6.emptyMap();
+        this.giftEntitlementMap = C12136h0.emptyMap();
         this.entitlementMap = new LinkedHashMap();
         State.Loading loading = State.Loading.INSTANCE;
         this.state = loading;

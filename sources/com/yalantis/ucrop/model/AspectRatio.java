@@ -6,14 +6,20 @@ import androidx.annotation.Nullable;
 
 /* JADX INFO: loaded from: classes3.dex */
 public class AspectRatio implements Parcelable {
-    public static final Parcelable.Creator<AspectRatio> CREATOR = new a();
+    public static final Parcelable.Creator<AspectRatio> CREATOR = new C11202a();
 
+    /* JADX INFO: renamed from: j */
     @Nullable
-    public final String j;
-    public final float k;
-    public final float l;
+    public final String f22200j;
 
-    public static class a implements Parcelable.Creator<AspectRatio> {
+    /* JADX INFO: renamed from: k */
+    public final float f22201k;
+
+    /* JADX INFO: renamed from: l */
+    public final float f22202l;
+
+    /* JADX INFO: renamed from: com.yalantis.ucrop.model.AspectRatio$a */
+    public static class C11202a implements Parcelable.Creator<AspectRatio> {
         @Override // android.os.Parcelable.Creator
         public AspectRatio createFromParcel(Parcel parcel) {
             return new AspectRatio(parcel);
@@ -26,9 +32,9 @@ public class AspectRatio implements Parcelable {
     }
 
     public AspectRatio(@Nullable String str, float f, float f2) {
-        this.j = str;
-        this.k = f;
-        this.l = f2;
+        this.f22200j = str;
+        this.f22201k = f;
+        this.f22202l = f2;
     }
 
     @Override // android.os.Parcelable
@@ -38,14 +44,14 @@ public class AspectRatio implements Parcelable {
 
     @Override // android.os.Parcelable
     public void writeToParcel(Parcel parcel, int i) {
-        parcel.writeString(this.j);
-        parcel.writeFloat(this.k);
-        parcel.writeFloat(this.l);
+        parcel.writeString(this.f22200j);
+        parcel.writeFloat(this.f22201k);
+        parcel.writeFloat(this.f22202l);
     }
 
     public AspectRatio(Parcel parcel) {
-        this.j = parcel.readString();
-        this.k = parcel.readFloat();
-        this.l = parcel.readFloat();
+        this.f22200j = parcel.readString();
+        this.f22201k = parcel.readFloat();
+        this.f22202l = parcel.readFloat();
     }
 }

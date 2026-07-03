@@ -5,11 +5,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.discord.models.domain.emoji.Emoji;
 import com.discord.utilities.mg_recycler.MGRecyclerAdapterSimple;
 import com.discord.utilities.mg_recycler.MGRecyclerViewHolder;
-import com.discord.widgets.chat.list.actions.WidgetChatListActionsEmojisAdapter2;
-import d0.t.Collections2;
-import d0.t.Iterables2;
-import d0.t._Collections;
-import d0.z.d.Intrinsics3;
+import com.discord.widgets.chat.list.actions.EmojiItem;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Iterator;
@@ -17,33 +13,37 @@ import java.util.List;
 import kotlin.Unit;
 import kotlin.jvm.functions.Function0;
 import kotlin.jvm.functions.Function1;
+import p507d0.p580t.C12147n;
+import p507d0.p580t.C12149o;
+import p507d0.p580t.C12163u;
+import p507d0.p592z.p594d.C12238m;
 
 /* JADX INFO: compiled from: WidgetChatListActionsEmojisAdapter.kt */
 /* JADX INFO: loaded from: classes2.dex */
-public final class WidgetChatListActionsEmojisAdapter extends MGRecyclerAdapterSimple<WidgetChatListActionsEmojisAdapter2> {
+public final class WidgetChatListActionsEmojisAdapter extends MGRecyclerAdapterSimple<EmojiItem> {
     private Function1<? super Emoji, Unit> onClickEmoji;
     private Function0<Unit> onClickMoreEmojis;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public WidgetChatListActionsEmojisAdapter(RecyclerView recyclerView) {
         super(recyclerView, false, 2, null);
-        Intrinsics3.checkNotNullParameter(recyclerView, "recycler");
-        this.onClickEmoji = WidgetChatListActionsEmojisAdapter5.INSTANCE;
-        this.onClickMoreEmojis = WidgetChatListActionsEmojisAdapter6.INSTANCE;
+        C12238m.checkNotNullParameter(recyclerView, "recycler");
+        this.onClickEmoji = WidgetChatListActionsEmojisAdapter$onClickEmoji$1.INSTANCE;
+        this.onClickMoreEmojis = WidgetChatListActionsEmojisAdapter$onClickMoreEmojis$1.INSTANCE;
     }
 
-    private final List<WidgetChatListActionsEmojisAdapter2> getEmojiItems(List<? extends Emoji> emojis, int emojisToShow) {
+    private final List<EmojiItem> getEmojiItems(List<? extends Emoji> emojis, int emojisToShow) {
         if (emojis.isEmpty() || emojisToShow <= 0) {
-            return Collections2.emptyList();
+            return C12147n.emptyList();
         }
-        List listTake = _Collections.take(emojis, emojisToShow - 1);
-        ArrayList arrayList = new ArrayList(Iterables2.collectionSizeOrDefault(listTake, 10));
+        List listTake = C12163u.take(emojis, emojisToShow - 1);
+        ArrayList arrayList = new ArrayList(C12149o.collectionSizeOrDefault(listTake, 10));
         Iterator it = listTake.iterator();
         while (it.hasNext()) {
-            arrayList.add(new WidgetChatListActionsEmojisAdapter2.EmojiData((Emoji) it.next()));
+            arrayList.add(new EmojiItem.EmojiData((Emoji) it.next()));
         }
-        List<WidgetChatListActionsEmojisAdapter2> mutableList = _Collections.toMutableList((Collection) arrayList);
-        mutableList.add(WidgetChatListActionsEmojisAdapter2.MoreEmoji.INSTANCE);
+        List<EmojiItem> mutableList = C12163u.toMutableList((Collection) arrayList);
+        mutableList.add(EmojiItem.MoreEmoji.INSTANCE);
         return mutableList;
     }
 
@@ -56,28 +56,28 @@ public final class WidgetChatListActionsEmojisAdapter extends MGRecyclerAdapterS
     }
 
     public final void setData(List<? extends Emoji> emojis, int emojisToShow) {
-        Intrinsics3.checkNotNullParameter(emojis, "emojis");
+        C12238m.checkNotNullParameter(emojis, "emojis");
         setData(getEmojiItems(emojis, emojisToShow));
     }
 
     public final void setOnClickEmoji(Function1<? super Emoji, Unit> function1) {
-        Intrinsics3.checkNotNullParameter(function1, "<set-?>");
+        C12238m.checkNotNullParameter(function1, "<set-?>");
         this.onClickEmoji = function1;
     }
 
     public final void setOnClickMoreEmojis(Function0<Unit> function0) {
-        Intrinsics3.checkNotNullParameter(function0, "<set-?>");
+        C12238m.checkNotNullParameter(function0, "<set-?>");
         this.onClickMoreEmojis = function0;
     }
 
     @Override // androidx.recyclerview.widget.RecyclerView.Adapter
-    public MGRecyclerViewHolder<?, WidgetChatListActionsEmojisAdapter2> onCreateViewHolder(ViewGroup parent, int viewType) {
-        Intrinsics3.checkNotNullParameter(parent, "parent");
+    public MGRecyclerViewHolder<?, EmojiItem> onCreateViewHolder(ViewGroup parent, int viewType) {
+        C12238m.checkNotNullParameter(parent, "parent");
         if (viewType == 0) {
-            return new WidgetChatListActionsEmojisAdapter3(this);
+            return new EmojiViewHolder(this);
         }
         if (viewType == 1) {
-            return new WidgetChatListActionsEmojisAdapter4(this);
+            return new MoreEmojisViewHolder(this);
         }
         throw invalidViewTypeException(viewType);
     }

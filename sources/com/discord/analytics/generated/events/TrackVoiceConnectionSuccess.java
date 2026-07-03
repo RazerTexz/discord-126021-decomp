@@ -1,14 +1,14 @@
 package com.discord.analytics.generated.events;
 
-import b.d.b.a.outline;
 import com.discord.analytics.generated.traits.TrackBase;
-import com.discord.analytics.generated.traits.TrackBase2;
+import com.discord.analytics.generated.traits.TrackBaseReceiver;
 import com.discord.api.science.AnalyticsSchema;
-import d0.z.d.Intrinsics3;
+import p007b.p100d.p104b.p105a.C1643a;
+import p507d0.p592z.p594d.C12238m;
 
 /* JADX INFO: compiled from: TrackVoiceConnectionSuccess.kt */
 /* JADX INFO: loaded from: classes.dex */
-public final /* data */ class TrackVoiceConnectionSuccess implements AnalyticsSchema, TrackBase2 {
+public final /* data */ class TrackVoiceConnectionSuccess implements AnalyticsSchema, TrackBaseReceiver {
     private TrackBase trackBase;
     private final CharSequence hostname = null;
     private final CharSequence cloudflareBestRegion = null;
@@ -42,7 +42,7 @@ public final /* data */ class TrackVoiceConnectionSuccess implements AnalyticsSc
             return false;
         }
         TrackVoiceConnectionSuccess trackVoiceConnectionSuccess = (TrackVoiceConnectionSuccess) other;
-        return Intrinsics3.areEqual(this.hostname, trackVoiceConnectionSuccess.hostname) && Intrinsics3.areEqual(this.cloudflareBestRegion, trackVoiceConnectionSuccess.cloudflareBestRegion) && Intrinsics3.areEqual(this.port, trackVoiceConnectionSuccess.port) && Intrinsics3.areEqual(this.protocol, trackVoiceConnectionSuccess.protocol) && Intrinsics3.areEqual(this.sessionId, trackVoiceConnectionSuccess.sessionId) && Intrinsics3.areEqual(this.mediaSessionId, trackVoiceConnectionSuccess.mediaSessionId) && Intrinsics3.areEqual(this.connectTime, trackVoiceConnectionSuccess.connectTime) && Intrinsics3.areEqual(this.rtcConnectionId, trackVoiceConnectionSuccess.rtcConnectionId) && Intrinsics3.areEqual(this.channelId, trackVoiceConnectionSuccess.channelId) && Intrinsics3.areEqual(this.guildId, trackVoiceConnectionSuccess.guildId) && Intrinsics3.areEqual(this.context, trackVoiceConnectionSuccess.context) && Intrinsics3.areEqual(this.connectCount, trackVoiceConnectionSuccess.connectCount) && Intrinsics3.areEqual(this.audioSubsystem, trackVoiceConnectionSuccess.audioSubsystem) && Intrinsics3.areEqual(this.audioLayer, trackVoiceConnectionSuccess.audioLayer) && Intrinsics3.areEqual(this.voiceBackendVersion, trackVoiceConnectionSuccess.voiceBackendVersion) && Intrinsics3.areEqual(this.rtcWorkerBackendVersion, trackVoiceConnectionSuccess.rtcWorkerBackendVersion);
+        return C12238m.areEqual(this.hostname, trackVoiceConnectionSuccess.hostname) && C12238m.areEqual(this.cloudflareBestRegion, trackVoiceConnectionSuccess.cloudflareBestRegion) && C12238m.areEqual(this.port, trackVoiceConnectionSuccess.port) && C12238m.areEqual(this.protocol, trackVoiceConnectionSuccess.protocol) && C12238m.areEqual(this.sessionId, trackVoiceConnectionSuccess.sessionId) && C12238m.areEqual(this.mediaSessionId, trackVoiceConnectionSuccess.mediaSessionId) && C12238m.areEqual(this.connectTime, trackVoiceConnectionSuccess.connectTime) && C12238m.areEqual(this.rtcConnectionId, trackVoiceConnectionSuccess.rtcConnectionId) && C12238m.areEqual(this.channelId, trackVoiceConnectionSuccess.channelId) && C12238m.areEqual(this.guildId, trackVoiceConnectionSuccess.guildId) && C12238m.areEqual(this.context, trackVoiceConnectionSuccess.context) && C12238m.areEqual(this.connectCount, trackVoiceConnectionSuccess.connectCount) && C12238m.areEqual(this.audioSubsystem, trackVoiceConnectionSuccess.audioSubsystem) && C12238m.areEqual(this.audioLayer, trackVoiceConnectionSuccess.audioLayer) && C12238m.areEqual(this.voiceBackendVersion, trackVoiceConnectionSuccess.voiceBackendVersion) && C12238m.areEqual(this.rtcWorkerBackendVersion, trackVoiceConnectionSuccess.rtcWorkerBackendVersion);
     }
 
     public int hashCode() {
@@ -81,37 +81,37 @@ public final /* data */ class TrackVoiceConnectionSuccess implements AnalyticsSc
     }
 
     public String toString() {
-        StringBuilder sbU = outline.U("TrackVoiceConnectionSuccess(hostname=");
-        sbU.append(this.hostname);
-        sbU.append(", cloudflareBestRegion=");
-        sbU.append(this.cloudflareBestRegion);
-        sbU.append(", port=");
-        sbU.append(this.port);
-        sbU.append(", protocol=");
-        sbU.append(this.protocol);
-        sbU.append(", sessionId=");
-        sbU.append(this.sessionId);
-        sbU.append(", mediaSessionId=");
-        sbU.append(this.mediaSessionId);
-        sbU.append(", connectTime=");
-        sbU.append(this.connectTime);
-        sbU.append(", rtcConnectionId=");
-        sbU.append(this.rtcConnectionId);
-        sbU.append(", channelId=");
-        sbU.append(this.channelId);
-        sbU.append(", guildId=");
-        sbU.append(this.guildId);
-        sbU.append(", context=");
-        sbU.append(this.context);
-        sbU.append(", connectCount=");
-        sbU.append(this.connectCount);
-        sbU.append(", audioSubsystem=");
-        sbU.append(this.audioSubsystem);
-        sbU.append(", audioLayer=");
-        sbU.append(this.audioLayer);
-        sbU.append(", voiceBackendVersion=");
-        sbU.append(this.voiceBackendVersion);
-        sbU.append(", rtcWorkerBackendVersion=");
-        return outline.E(sbU, this.rtcWorkerBackendVersion, ")");
+        StringBuilder sbM833U = C1643a.m833U("TrackVoiceConnectionSuccess(hostname=");
+        sbM833U.append(this.hostname);
+        sbM833U.append(", cloudflareBestRegion=");
+        sbM833U.append(this.cloudflareBestRegion);
+        sbM833U.append(", port=");
+        sbM833U.append(this.port);
+        sbM833U.append(", protocol=");
+        sbM833U.append(this.protocol);
+        sbM833U.append(", sessionId=");
+        sbM833U.append(this.sessionId);
+        sbM833U.append(", mediaSessionId=");
+        sbM833U.append(this.mediaSessionId);
+        sbM833U.append(", connectTime=");
+        sbM833U.append(this.connectTime);
+        sbM833U.append(", rtcConnectionId=");
+        sbM833U.append(this.rtcConnectionId);
+        sbM833U.append(", channelId=");
+        sbM833U.append(this.channelId);
+        sbM833U.append(", guildId=");
+        sbM833U.append(this.guildId);
+        sbM833U.append(", context=");
+        sbM833U.append(this.context);
+        sbM833U.append(", connectCount=");
+        sbM833U.append(this.connectCount);
+        sbM833U.append(", audioSubsystem=");
+        sbM833U.append(this.audioSubsystem);
+        sbM833U.append(", audioLayer=");
+        sbM833U.append(this.audioLayer);
+        sbM833U.append(", voiceBackendVersion=");
+        sbM833U.append(this.voiceBackendVersion);
+        sbM833U.append(", rtcWorkerBackendVersion=");
+        return C1643a.m817E(sbM833U, this.rtcWorkerBackendVersion, ")");
     }
 }

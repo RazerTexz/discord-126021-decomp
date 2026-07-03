@@ -131,35 +131,35 @@ public class JavacNode extends LombokNode<JavacAST, JavacNode, JCTree> {
                 visitor.endVisitMethod(this, (JCTree.JCMethodDecl) get());
                 return;
             case 6:
-                switch ($SWITCH_TABLE$lombok$core$AST$Kind()[up().getKind().ordinal()]) {
+                switch ($SWITCH_TABLE$lombok$core$AST$Kind()[m10925up().getKind().ordinal()]) {
                     case 2:
-                        visitor.visitAnnotationOnType((JCTree.JCClassDecl) up().get(), this, (JCTree.JCAnnotation) get());
+                        visitor.visitAnnotationOnType((JCTree.JCClassDecl) m10925up().get(), this, (JCTree.JCAnnotation) get());
                         return;
                     case 3:
-                        visitor.visitAnnotationOnField((JCTree.JCVariableDecl) up().get(), this, (JCTree.JCAnnotation) get());
+                        visitor.visitAnnotationOnField((JCTree.JCVariableDecl) m10925up().get(), this, (JCTree.JCAnnotation) get());
                         return;
                     case 4:
                     case 6:
                     case 9:
                     default:
-                        throw new AssertionError("Annotion not expected as child of a " + up().getKind());
+                        throw new AssertionError("Annotion not expected as child of a " + m10925up().getKind());
                     case 5:
-                        visitor.visitAnnotationOnMethod((JCTree.JCMethodDecl) up().get(), this, (JCTree.JCAnnotation) get());
+                        visitor.visitAnnotationOnMethod((JCTree.JCMethodDecl) m10925up().get(), this, (JCTree.JCAnnotation) get());
                         return;
                     case 7:
-                        JCTree.JCVariableDecl argument = (JCTree.JCVariableDecl) up().get();
-                        JCTree.JCMethodDecl method = (JCTree.JCMethodDecl) up().up().get();
+                        JCTree.JCVariableDecl argument = (JCTree.JCVariableDecl) m10925up().get();
+                        JCTree.JCMethodDecl method = (JCTree.JCMethodDecl) m10925up().m10925up().get();
                         visitor.visitAnnotationOnMethodArgument(argument, method, this, (JCTree.JCAnnotation) get());
                         return;
                     case 8:
-                        visitor.visitAnnotationOnLocal((JCTree.JCVariableDecl) up().get(), this, (JCTree.JCAnnotation) get());
+                        visitor.visitAnnotationOnLocal((JCTree.JCVariableDecl) m10925up().get(), this, (JCTree.JCAnnotation) get());
                         return;
                     case 10:
-                        visitor.visitAnnotationOnTypeUse(up().get(), this, (JCTree.JCAnnotation) get());
+                        visitor.visitAnnotationOnTypeUse(m10925up().get(), this, (JCTree.JCAnnotation) get());
                         return;
                 }
             case 7:
-                JCTree.JCMethodDecl parentMethod = (JCTree.JCMethodDecl) up().get();
+                JCTree.JCMethodDecl parentMethod = (JCTree.JCMethodDecl) m10925up().get();
                 visitor.visitMethodArgument(this, (JCTree.JCVariableDecl) get(), parentMethod);
                 this.ast.traverseChildren(visitor, this);
                 visitor.endVisitMethodArgument(this, (JCTree.JCVariableDecl) get(), parentMethod);

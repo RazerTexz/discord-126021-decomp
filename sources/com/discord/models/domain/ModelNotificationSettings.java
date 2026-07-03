@@ -1,7 +1,6 @@
 package com.discord.models.domain;
 
 import androidx.recyclerview.widget.RecyclerView;
-import b.d.b.a.outline;
 import com.discord.models.domain.Model;
 import com.discord.models.domain.ModelNotificationSettings;
 import com.discord.utilities.time.Clock;
@@ -11,6 +10,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
+import p007b.p100d.p104b.p105a.C1643a;
 
 /* JADX INFO: loaded from: classes.dex */
 public class ModelNotificationSettings implements Model {
@@ -227,30 +227,30 @@ public class ModelNotificationSettings implements Model {
     }
 
     public String toString() {
-        StringBuilder sbU = outline.U("ModelNotificationSettings(suppressEveryone=");
-        sbU.append(isSuppressEveryone());
-        sbU.append(", suppressRoles=");
-        sbU.append(isSuppressRoles());
-        sbU.append(", muted=");
-        sbU.append(isMuted());
-        sbU.append(", muteConfig=");
-        sbU.append(getMuteConfig());
-        sbU.append(", derivedMute=");
-        sbU.append(this.derivedMute);
-        sbU.append(", mobilePush=");
-        sbU.append(isMobilePush());
-        sbU.append(", messageNotifications=");
-        sbU.append(getMessageNotifications());
-        sbU.append(", guildId=");
-        sbU.append(getGuildId());
-        sbU.append(", channelOverrides=");
-        sbU.append(getChannelOverrides());
-        sbU.append(", version=");
-        sbU.append(getVersion());
-        sbU.append(", notifyHighlights=");
-        sbU.append(getNotifyHighlights());
-        sbU.append(")");
-        return sbU.toString();
+        StringBuilder sbM833U = C1643a.m833U("ModelNotificationSettings(suppressEveryone=");
+        sbM833U.append(isSuppressEveryone());
+        sbM833U.append(", suppressRoles=");
+        sbM833U.append(isSuppressRoles());
+        sbM833U.append(", muted=");
+        sbM833U.append(isMuted());
+        sbM833U.append(", muteConfig=");
+        sbM833U.append(getMuteConfig());
+        sbM833U.append(", derivedMute=");
+        sbM833U.append(this.derivedMute);
+        sbM833U.append(", mobilePush=");
+        sbM833U.append(isMobilePush());
+        sbM833U.append(", messageNotifications=");
+        sbM833U.append(getMessageNotifications());
+        sbM833U.append(", guildId=");
+        sbM833U.append(getGuildId());
+        sbM833U.append(", channelOverrides=");
+        sbM833U.append(getChannelOverrides());
+        sbM833U.append(", version=");
+        sbM833U.append(getVersion());
+        sbM833U.append(", notifyHighlights=");
+        sbM833U.append(getNotifyHighlights());
+        sbM833U.append(")");
+        return sbM833U.toString();
     }
 
     public static class ChannelOverride implements Model {
@@ -372,20 +372,20 @@ public class ModelNotificationSettings implements Model {
         }
 
         public String toString() {
-            StringBuilder sbU = outline.U("ModelNotificationSettings.ChannelOverride(muted=");
-            sbU.append(isMuted());
-            sbU.append(", muteConfig=");
-            sbU.append(getMuteConfig());
-            sbU.append(", derivedMute=");
-            sbU.append(this.derivedMute);
-            sbU.append(", messageNotifications=");
-            sbU.append(getMessageNotifications());
-            sbU.append(", flags=");
-            sbU.append(getFlags());
-            sbU.append(", channelId=");
-            sbU.append(getChannelId());
-            sbU.append(")");
-            return sbU.toString();
+            StringBuilder sbM833U = C1643a.m833U("ModelNotificationSettings.ChannelOverride(muted=");
+            sbM833U.append(isMuted());
+            sbM833U.append(", muteConfig=");
+            sbM833U.append(getMuteConfig());
+            sbM833U.append(", derivedMute=");
+            sbM833U.append(this.derivedMute);
+            sbM833U.append(", messageNotifications=");
+            sbM833U.append(getMessageNotifications());
+            sbM833U.append(", flags=");
+            sbM833U.append(getFlags());
+            sbM833U.append(", channelId=");
+            sbM833U.append(getChannelId());
+            sbM833U.append(")");
+            return sbM833U.toString();
         }
 
         public ChannelOverride(boolean z2, ModelMuteConfig modelMuteConfig, boolean z3, int i, int i2, long j) {

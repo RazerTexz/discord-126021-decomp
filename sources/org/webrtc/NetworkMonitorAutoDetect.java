@@ -17,7 +17,6 @@ import android.net.wifi.p2p.WifiP2pGroup;
 import android.net.wifi.p2p.WifiP2pManager;
 import android.os.Build;
 import androidx.annotation.Nullable;
-import b.d.b.a.outline;
 import java.net.InetAddress;
 import java.net.NetworkInterface;
 import java.net.SocketException;
@@ -26,6 +25,7 @@ import java.util.Collections;
 import java.util.Iterator;
 import java.util.List;
 import org.webrtc.NetworkChangeDetector;
+import p007b.p100d.p104b.p105a.C1643a;
 
 /* JADX INFO: loaded from: classes3.dex */
 public class NetworkMonitorAutoDetect extends BroadcastReceiver implements NetworkChangeDetector {
@@ -97,42 +97,42 @@ public class NetworkMonitorAutoDetect extends BroadcastReceiver implements Netwo
 
         @Override // android.net.ConnectivityManager.NetworkCallback
         public void onAvailable(Network network) {
-            StringBuilder sbU = outline.U("Network becomes available: ");
-            sbU.append(network.toString());
-            Logging.d(NetworkMonitorAutoDetect.TAG, sbU.toString());
+            StringBuilder sbM833U = C1643a.m833U("Network becomes available: ");
+            sbM833U.append(network.toString());
+            Logging.m11027d(NetworkMonitorAutoDetect.TAG, sbM833U.toString());
             onNetworkChanged(network);
         }
 
         @Override // android.net.ConnectivityManager.NetworkCallback
         public void onCapabilitiesChanged(Network network, NetworkCapabilities networkCapabilities) {
-            StringBuilder sbU = outline.U("capabilities changed: ");
-            sbU.append(networkCapabilities.toString());
-            Logging.d(NetworkMonitorAutoDetect.TAG, sbU.toString());
+            StringBuilder sbM833U = C1643a.m833U("capabilities changed: ");
+            sbM833U.append(networkCapabilities.toString());
+            Logging.m11027d(NetworkMonitorAutoDetect.TAG, sbM833U.toString());
             onNetworkChanged(network);
         }
 
         @Override // android.net.ConnectivityManager.NetworkCallback
         public void onLinkPropertiesChanged(Network network, LinkProperties linkProperties) {
-            Logging.d(NetworkMonitorAutoDetect.TAG, "link properties changed");
+            Logging.m11027d(NetworkMonitorAutoDetect.TAG, "link properties changed");
             onNetworkChanged(network);
         }
 
         @Override // android.net.ConnectivityManager.NetworkCallback
         public void onLosing(Network network, int i) {
-            StringBuilder sbU = outline.U("Network ");
-            sbU.append(network.toString());
-            sbU.append(" is about to lose in ");
-            sbU.append(i);
-            sbU.append("ms");
-            Logging.d(NetworkMonitorAutoDetect.TAG, sbU.toString());
+            StringBuilder sbM833U = C1643a.m833U("Network ");
+            sbM833U.append(network.toString());
+            sbM833U.append(" is about to lose in ");
+            sbM833U.append(i);
+            sbM833U.append("ms");
+            Logging.m11027d(NetworkMonitorAutoDetect.TAG, sbM833U.toString());
         }
 
         @Override // android.net.ConnectivityManager.NetworkCallback
         public void onLost(Network network) {
-            StringBuilder sbU = outline.U("Network ");
-            sbU.append(network.toString());
-            sbU.append(" is disconnected");
-            Logging.d(NetworkMonitorAutoDetect.TAG, sbU.toString());
+            StringBuilder sbM833U = C1643a.m833U("Network ");
+            sbM833U.append(network.toString());
+            sbM833U.append(" is disconnected");
+            Logging.m11027d(NetworkMonitorAutoDetect.TAG, sbM833U.toString());
             NetworkMonitorAutoDetect.this.observer.onNetworkDisconnect(NetworkMonitorAutoDetect.networkToNetId(network));
         }
     }
@@ -157,14 +157,14 @@ public class NetworkMonitorAutoDetect extends BroadcastReceiver implements Netwo
                 wifiP2pManager.requestGroupInfo(wifiP2pManager.initialize(context, context.getMainLooper(), null), new WifiP2pManager.GroupInfoListener() { // from class: h0.c.q
                     @Override // android.net.wifi.p2p.WifiP2pManager.GroupInfoListener
                     public final void onGroupInfoAvailable(WifiP2pGroup wifiP2pGroup) {
-                        this.a.a(wifiP2pGroup);
+                        this.f26456a.m11034a(wifiP2pGroup);
                     }
                 });
             }
         }
 
         /* JADX INFO: renamed from: onWifiP2pGroupChange, reason: merged with bridge method [inline-methods] */
-        private void a(@Nullable WifiP2pGroup wifiP2pGroup) {
+        private void m11034a(@Nullable WifiP2pGroup wifiP2pGroup) {
             if (wifiP2pGroup == null || wifiP2pGroup.getInterface() == null) {
                 return;
             }
@@ -178,7 +178,7 @@ public class NetworkMonitorAutoDetect extends BroadcastReceiver implements Netwo
                 this.wifiP2pNetworkInfo = networkInformation;
                 this.observer.onNetworkConnect(networkInformation);
             } catch (SocketException e) {
-                Logging.e(NetworkMonitorAutoDetect.TAG, "Unable to get WifiP2p network interface", e);
+                Logging.m11029e(NetworkMonitorAutoDetect.TAG, "Unable to get WifiP2p network interface", e);
             }
         }
 
@@ -198,7 +198,7 @@ public class NetworkMonitorAutoDetect extends BroadcastReceiver implements Netwo
         @SuppressLint({"InlinedApi"})
         public void onReceive(Context context, Intent intent) {
             if ("android.net.wifi.p2p.CONNECTION_STATE_CHANGE".equals(intent.getAction())) {
-                a((WifiP2pGroup) intent.getParcelableExtra("p2pGroupInfo"));
+                m11034a((WifiP2pGroup) intent.getParcelableExtra("p2pGroupInfo"));
             } else if ("android.net.wifi.p2p.STATE_CHANGED".equals(intent.getAction())) {
                 onWifiP2pStateChange(intent.getIntExtra("wifi_p2p_state", 0));
             }
@@ -232,7 +232,7 @@ public class NetworkMonitorAutoDetect extends BroadcastReceiver implements Netwo
         try {
             this.connectivityManagerDelegate.requestMobileNetwork(networkCallback);
         } catch (SecurityException unused) {
-            Logging.w(TAG, "Unable to obtain permission to request a cellular network.");
+            Logging.m11031w(TAG, "Unable to obtain permission to request a cellular network.");
             networkCallback = null;
         }
         this.mobileNetworkCallback = networkCallback;
@@ -249,9 +249,9 @@ public class NetworkMonitorAutoDetect extends BroadcastReceiver implements Netwo
         }
         this.connectionType = connectionType;
         this.wifiSSID = wifiSSID;
-        StringBuilder sbU = outline.U("Network connectivity changed, type is: ");
-        sbU.append(this.connectionType);
-        Logging.d(TAG, sbU.toString());
+        StringBuilder sbM833U = C1643a.m833U("Network connectivity changed, type is: ");
+        sbM833U.append(this.connectionType);
+        Logging.m11027d(TAG, sbM833U.toString());
         this.observer.onConnectionTypeChanged(connectionType);
     }
 
@@ -420,36 +420,36 @@ public class NetworkMonitorAutoDetect extends BroadcastReceiver implements Netwo
             }
             LinkProperties linkProperties = connectivityManager.getLinkProperties(network);
             if (linkProperties == null) {
-                StringBuilder sbU = outline.U("Detected unknown network: ");
-                sbU.append(network.toString());
-                Logging.w(NetworkMonitorAutoDetect.TAG, sbU.toString());
+                StringBuilder sbM833U = C1643a.m833U("Detected unknown network: ");
+                sbM833U.append(network.toString());
+                Logging.m11031w(NetworkMonitorAutoDetect.TAG, sbM833U.toString());
                 return null;
             }
             if (linkProperties.getInterfaceName() == null) {
-                StringBuilder sbU2 = outline.U("Null interface name for network ");
-                sbU2.append(network.toString());
-                Logging.w(NetworkMonitorAutoDetect.TAG, sbU2.toString());
+                StringBuilder sbM833U2 = C1643a.m833U("Null interface name for network ");
+                sbM833U2.append(network.toString());
+                Logging.m11031w(NetworkMonitorAutoDetect.TAG, sbM833U2.toString());
                 return null;
             }
             NetworkState networkState = getNetworkState(network);
             NetworkChangeDetector.ConnectionType connectionType = NetworkMonitorAutoDetect.getConnectionType(networkState);
             if (connectionType == NetworkChangeDetector.ConnectionType.CONNECTION_NONE) {
-                StringBuilder sbU3 = outline.U("Network ");
-                sbU3.append(network.toString());
-                sbU3.append(" is disconnected");
-                Logging.d(NetworkMonitorAutoDetect.TAG, sbU3.toString());
+                StringBuilder sbM833U3 = C1643a.m833U("Network ");
+                sbM833U3.append(network.toString());
+                sbM833U3.append(" is disconnected");
+                Logging.m11027d(NetworkMonitorAutoDetect.TAG, sbM833U3.toString());
                 return null;
             }
             if (connectionType == NetworkChangeDetector.ConnectionType.CONNECTION_UNKNOWN || connectionType == NetworkChangeDetector.ConnectionType.CONNECTION_UNKNOWN_CELLULAR) {
-                StringBuilder sbU4 = outline.U("Network ");
-                sbU4.append(network.toString());
-                sbU4.append(" connection type is ");
-                sbU4.append(connectionType);
-                sbU4.append(" because it has type ");
-                sbU4.append(networkState.getNetworkType());
-                sbU4.append(" and subtype ");
-                sbU4.append(networkState.getNetworkSubType());
-                Logging.d(NetworkMonitorAutoDetect.TAG, sbU4.toString());
+                StringBuilder sbM833U4 = C1643a.m833U("Network ");
+                sbM833U4.append(network.toString());
+                sbM833U4.append(" connection type is ");
+                sbM833U4.append(connectionType);
+                sbM833U4.append(" because it has type ");
+                sbM833U4.append(networkState.getNetworkType());
+                sbM833U4.append(" and subtype ");
+                sbM833U4.append(networkState.getNetworkSubType());
+                Logging.m11027d(NetworkMonitorAutoDetect.TAG, sbM833U4.toString());
             }
             return new NetworkChangeDetector.NetworkInformation(linkProperties.getInterfaceName(), connectionType, NetworkMonitorAutoDetect.getUnderlyingConnectionTypeForVpn(networkState), NetworkMonitorAutoDetect.networkToNetId(network), getIPAddresses(linkProperties));
         }
@@ -526,7 +526,7 @@ public class NetworkMonitorAutoDetect extends BroadcastReceiver implements Netwo
         @SuppressLint({"NewApi"})
         public void releaseCallback(ConnectivityManager.NetworkCallback networkCallback) {
             if (supportNetworkCallback()) {
-                Logging.d(NetworkMonitorAutoDetect.TAG, "Unregister network callback");
+                Logging.m11027d(NetworkMonitorAutoDetect.TAG, "Unregister network callback");
                 this.connectivityManager.unregisterNetworkCallback(networkCallback);
             }
         }
@@ -553,9 +553,9 @@ public class NetworkMonitorAutoDetect extends BroadcastReceiver implements Netwo
             if (network != null && (connectivityManager = this.connectivityManager) != null) {
                 NetworkInfo networkInfo = connectivityManager.getNetworkInfo(network);
                 if (networkInfo == null) {
-                    StringBuilder sbU = outline.U("Couldn't retrieve information from network ");
-                    sbU.append(network.toString());
-                    Logging.w(NetworkMonitorAutoDetect.TAG, sbU.toString());
+                    StringBuilder sbM833U = C1643a.m833U("Couldn't retrieve information from network ");
+                    sbM833U.append(network.toString());
+                    Logging.m11031w(NetworkMonitorAutoDetect.TAG, sbM833U.toString());
                     return new NetworkState(false, -1, -1, -1, -1);
                 }
                 if (networkInfo.getType() != 17) {

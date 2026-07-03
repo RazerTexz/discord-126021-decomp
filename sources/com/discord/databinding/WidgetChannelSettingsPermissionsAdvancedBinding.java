@@ -11,41 +11,47 @@ import androidx.viewbinding.ViewBinding;
 /* JADX INFO: loaded from: classes.dex */
 public final class WidgetChannelSettingsPermissionsAdvancedBinding implements ViewBinding {
 
+    /* JADX INFO: renamed from: a */
     @NonNull
-    public final CoordinatorLayout a;
+    public final CoordinatorLayout f15948a;
 
-    /* JADX INFO: renamed from: b, reason: collision with root package name */
+    /* JADX INFO: renamed from: b */
     @NonNull
-    public final TextView f2278b;
+    public final TextView f15949b;
 
+    /* JADX INFO: renamed from: c */
     @NonNull
-    public final TextView c;
+    public final TextView f15950c;
 
+    /* JADX INFO: renamed from: d */
     @NonNull
-    public final LinearLayout d;
+    public final LinearLayout f15951d;
 
+    /* JADX INFO: renamed from: e */
     @NonNull
-    public final RecyclerView e;
+    public final RecyclerView f15952e;
 
+    /* JADX INFO: renamed from: f */
     @NonNull
-    public final LinearLayout f;
+    public final LinearLayout f15953f;
 
+    /* JADX INFO: renamed from: g */
     @NonNull
-    public final RecyclerView g;
+    public final RecyclerView f15954g;
 
     public WidgetChannelSettingsPermissionsAdvancedBinding(@NonNull CoordinatorLayout coordinatorLayout, @NonNull TextView textView, @NonNull TextView textView2, @NonNull LinearLayout linearLayout, @NonNull RecyclerView recyclerView, @NonNull LinearLayout linearLayout2, @NonNull RecyclerView recyclerView2) {
-        this.a = coordinatorLayout;
-        this.f2278b = textView;
-        this.c = textView2;
-        this.d = linearLayout;
-        this.e = recyclerView;
-        this.f = linearLayout2;
-        this.g = recyclerView2;
+        this.f15948a = coordinatorLayout;
+        this.f15949b = textView;
+        this.f15950c = textView2;
+        this.f15951d = linearLayout;
+        this.f15952e = recyclerView;
+        this.f15953f = linearLayout2;
+        this.f15954g = recyclerView2;
     }
 
     @Override // androidx.viewbinding.ViewBinding
     @NonNull
     public View getRoot() {
-        return this.a;
+        return this.f15948a;
     }
 }

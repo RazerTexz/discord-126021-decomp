@@ -1,18 +1,18 @@
 package com.fasterxml.jackson.core.exc;
 
-import b.d.b.a.outline;
-import b.g.a.b.JsonParser;
-import b.g.a.b.t.RequestPayload;
 import com.fasterxml.jackson.core.JsonProcessingException;
+import p007b.p100d.p104b.p105a.C1643a;
+import p007b.p195g.p196a.p198b.AbstractC2110f;
+import p007b.p195g.p196a.p198b.p204t.C2147i;
 
 /* JADX INFO: loaded from: classes3.dex */
 public abstract class StreamReadException extends JsonProcessingException {
     public static final long serialVersionUID = 1;
-    public RequestPayload _requestPayload;
+    public C2147i _requestPayload;
 
     @Override // com.fasterxml.jackson.core.JsonProcessingException
     /* JADX INFO: renamed from: d, reason: merged with bridge method [inline-methods] */
-    public JsonParser c() {
+    public AbstractC2110f mo8737c() {
         return null;
     }
 
@@ -22,8 +22,8 @@ public abstract class StreamReadException extends JsonProcessingException {
         if (this._requestPayload == null) {
             return message;
         }
-        StringBuilder sbX = outline.X(message, "\nRequest payload : ");
-        sbX.append(this._requestPayload.toString());
-        return sbX.toString();
+        StringBuilder sbM836X = C1643a.m836X(message, "\nRequest payload : ");
+        sbM836X.append(this._requestPayload.toString());
+        return sbM836X.toString();
     }
 }

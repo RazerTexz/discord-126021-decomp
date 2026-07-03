@@ -15,7 +15,8 @@ public @interface FloatRange {
 
     boolean fromInclusive() default true;
 
-    double to() default Double.POSITIVE_INFINITY;
+    /* JADX INFO: renamed from: to */
+    double m75to() default Double.POSITIVE_INFINITY;
 
     boolean toInclusive() default true;
 }

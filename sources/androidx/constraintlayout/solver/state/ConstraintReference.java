@@ -3,8 +3,8 @@ package androidx.constraintlayout.solver.state;
 import androidx.constraintlayout.solver.state.State;
 import androidx.constraintlayout.solver.widgets.ConstraintAnchor;
 import androidx.constraintlayout.solver.widgets.ConstraintWidget;
-import b.d.b.a.outline;
 import java.util.ArrayList;
+import p007b.p100d.p104b.p105a.C1643a;
 
 /* JADX INFO: loaded from: classes.dex */
 public class ConstraintReference implements Reference {
@@ -45,72 +45,74 @@ public class ConstraintReference implements Reference {
     public Object mBaselineToBaseline = null;
     public State.Constraint mLast = null;
 
-    /* JADX INFO: renamed from: androidx.constraintlayout.solver.state.ConstraintReference$1, reason: invalid class name */
-    public static /* synthetic */ class AnonymousClass1 {
-        public static final /* synthetic */ int[] $SwitchMap$androidx$constraintlayout$solver$state$State$Constraint;
+    /* JADX INFO: renamed from: androidx.constraintlayout.solver.state.ConstraintReference$1 */
+    public static /* synthetic */ class C01841 {
+
+        /* JADX INFO: renamed from: $SwitchMap$androidx$constraintlayout$solver$state$State$Constraint */
+        public static final /* synthetic */ int[] f111x7d4bfe12;
 
         static {
             State.Constraint.values();
             int[] iArr = new int[15];
-            $SwitchMap$androidx$constraintlayout$solver$state$State$Constraint = iArr;
+            f111x7d4bfe12 = iArr;
             try {
                 iArr[State.Constraint.LEFT_TO_LEFT.ordinal()] = 1;
             } catch (NoSuchFieldError unused) {
             }
             try {
-                $SwitchMap$androidx$constraintlayout$solver$state$State$Constraint[State.Constraint.LEFT_TO_RIGHT.ordinal()] = 2;
+                f111x7d4bfe12[State.Constraint.LEFT_TO_RIGHT.ordinal()] = 2;
             } catch (NoSuchFieldError unused2) {
             }
             try {
-                $SwitchMap$androidx$constraintlayout$solver$state$State$Constraint[State.Constraint.RIGHT_TO_LEFT.ordinal()] = 3;
+                f111x7d4bfe12[State.Constraint.RIGHT_TO_LEFT.ordinal()] = 3;
             } catch (NoSuchFieldError unused3) {
             }
             try {
-                $SwitchMap$androidx$constraintlayout$solver$state$State$Constraint[State.Constraint.RIGHT_TO_RIGHT.ordinal()] = 4;
+                f111x7d4bfe12[State.Constraint.RIGHT_TO_RIGHT.ordinal()] = 4;
             } catch (NoSuchFieldError unused4) {
             }
             try {
-                $SwitchMap$androidx$constraintlayout$solver$state$State$Constraint[State.Constraint.START_TO_START.ordinal()] = 5;
+                f111x7d4bfe12[State.Constraint.START_TO_START.ordinal()] = 5;
             } catch (NoSuchFieldError unused5) {
             }
             try {
-                $SwitchMap$androidx$constraintlayout$solver$state$State$Constraint[State.Constraint.START_TO_END.ordinal()] = 6;
+                f111x7d4bfe12[State.Constraint.START_TO_END.ordinal()] = 6;
             } catch (NoSuchFieldError unused6) {
             }
             try {
-                $SwitchMap$androidx$constraintlayout$solver$state$State$Constraint[State.Constraint.END_TO_START.ordinal()] = 7;
+                f111x7d4bfe12[State.Constraint.END_TO_START.ordinal()] = 7;
             } catch (NoSuchFieldError unused7) {
             }
             try {
-                $SwitchMap$androidx$constraintlayout$solver$state$State$Constraint[State.Constraint.END_TO_END.ordinal()] = 8;
+                f111x7d4bfe12[State.Constraint.END_TO_END.ordinal()] = 8;
             } catch (NoSuchFieldError unused8) {
             }
             try {
-                $SwitchMap$androidx$constraintlayout$solver$state$State$Constraint[State.Constraint.TOP_TO_TOP.ordinal()] = 9;
+                f111x7d4bfe12[State.Constraint.TOP_TO_TOP.ordinal()] = 9;
             } catch (NoSuchFieldError unused9) {
             }
             try {
-                $SwitchMap$androidx$constraintlayout$solver$state$State$Constraint[State.Constraint.TOP_TO_BOTTOM.ordinal()] = 10;
+                f111x7d4bfe12[State.Constraint.TOP_TO_BOTTOM.ordinal()] = 10;
             } catch (NoSuchFieldError unused10) {
             }
             try {
-                $SwitchMap$androidx$constraintlayout$solver$state$State$Constraint[State.Constraint.BOTTOM_TO_TOP.ordinal()] = 11;
+                f111x7d4bfe12[State.Constraint.BOTTOM_TO_TOP.ordinal()] = 11;
             } catch (NoSuchFieldError unused11) {
             }
             try {
-                $SwitchMap$androidx$constraintlayout$solver$state$State$Constraint[State.Constraint.BOTTOM_TO_BOTTOM.ordinal()] = 12;
+                f111x7d4bfe12[State.Constraint.BOTTOM_TO_BOTTOM.ordinal()] = 12;
             } catch (NoSuchFieldError unused12) {
             }
             try {
-                $SwitchMap$androidx$constraintlayout$solver$state$State$Constraint[State.Constraint.BASELINE_TO_BASELINE.ordinal()] = 13;
+                f111x7d4bfe12[State.Constraint.BASELINE_TO_BASELINE.ordinal()] = 13;
             } catch (NoSuchFieldError unused13) {
             }
             try {
-                $SwitchMap$androidx$constraintlayout$solver$state$State$Constraint[State.Constraint.CENTER_HORIZONTALLY.ordinal()] = 14;
+                f111x7d4bfe12[State.Constraint.CENTER_HORIZONTALLY.ordinal()] = 14;
             } catch (NoSuchFieldError unused14) {
             }
             try {
-                $SwitchMap$androidx$constraintlayout$solver$state$State$Constraint[State.Constraint.CENTER_VERTICALLY.ordinal()] = 15;
+                f111x7d4bfe12[State.Constraint.CENTER_VERTICALLY.ordinal()] = 15;
             } catch (NoSuchFieldError unused15) {
             }
         }
@@ -133,9 +135,9 @@ public class ConstraintReference implements Reference {
 
         @Override // java.lang.Throwable
         public String toString() {
-            StringBuilder sbU = outline.U("IncorrectConstraintException: ");
-            sbU.append(this.mErrors.toString());
-            return sbU.toString();
+            StringBuilder sbM833U = C1643a.m833U("IncorrectConstraintException: ");
+            sbM833U.append(this.mErrors.toString());
+            return sbM833U.toString();
         }
     }
 
@@ -150,7 +152,7 @@ public class ConstraintReference implements Reference {
         ConstraintWidget target = getTarget(obj);
         if (target == null) {
         }
-        int i = AnonymousClass1.$SwitchMap$androidx$constraintlayout$solver$state$State$Constraint[constraint.ordinal()];
+        int i = C01841.f111x7d4bfe12[constraint.ordinal()];
         switch (constraint) {
             case LEFT_TO_LEFT:
                 ConstraintAnchor.Type type = ConstraintAnchor.Type.LEFT;

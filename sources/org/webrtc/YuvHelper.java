@@ -1,7 +1,7 @@
 package org.webrtc;
 
-import b.d.b.a.outline;
 import java.nio.ByteBuffer;
+import p007b.p100d.p104b.p105a.C1643a;
 
 /* JADX INFO: loaded from: classes3.dex */
 public class YuvHelper {
@@ -15,9 +15,9 @@ public class YuvHelper {
         int i8 = ((i5 + 1) / 2) * i6;
         int i9 = (i8 * 2) + i7;
         if (byteBuffer4.capacity() < i9) {
-            StringBuilder sbV = outline.V("Expected destination buffer capacity to be at least ", i9, " was ");
-            sbV.append(byteBuffer4.capacity());
-            throw new IllegalArgumentException(sbV.toString());
+            StringBuilder sbM834V = C1643a.m834V("Expected destination buffer capacity to be at least ", i9, " was ");
+            sbM834V.append(byteBuffer4.capacity());
+            throw new IllegalArgumentException(sbM834V.toString());
         }
         byteBuffer4.position(0);
         ByteBuffer byteBufferSlice = byteBuffer4.slice();
@@ -37,9 +37,9 @@ public class YuvHelper {
         int i13 = i10 * i11;
         int i14 = (i13 * 2) + i12;
         if (byteBuffer4.capacity() < i14) {
-            StringBuilder sbV = outline.V("Expected destination buffer capacity to be at least ", i14, " was ");
-            sbV.append(byteBuffer4.capacity());
-            throw new IllegalArgumentException(sbV.toString());
+            StringBuilder sbM834V = C1643a.m834V("Expected destination buffer capacity to be at least ", i14, " was ");
+            sbM834V.append(byteBuffer4.capacity());
+            throw new IllegalArgumentException(sbM834V.toString());
         }
         byteBuffer4.position(0);
         ByteBuffer byteBufferSlice = byteBuffer4.slice();
@@ -54,9 +54,9 @@ public class YuvHelper {
         int i7 = i4 * i5;
         int i8 = (((i5 + 1) / 2) * i6 * 2) + i7;
         if (byteBuffer4.capacity() < i8) {
-            StringBuilder sbV = outline.V("Expected destination buffer capacity to be at least ", i8, " was ");
-            sbV.append(byteBuffer4.capacity());
-            throw new IllegalArgumentException(sbV.toString());
+            StringBuilder sbM834V = C1643a.m834V("Expected destination buffer capacity to be at least ", i8, " was ");
+            sbM834V.append(byteBuffer4.capacity());
+            throw new IllegalArgumentException(sbM834V.toString());
         }
         byteBuffer4.position(0);
         ByteBuffer byteBufferSlice = byteBuffer4.slice();

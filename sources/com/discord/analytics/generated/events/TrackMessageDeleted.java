@@ -1,20 +1,20 @@
 package com.discord.analytics.generated.events;
 
-import b.d.b.a.outline;
 import com.discord.analytics.generated.traits.TrackBase;
-import com.discord.analytics.generated.traits.TrackBase2;
+import com.discord.analytics.generated.traits.TrackBaseReceiver;
 import com.discord.analytics.generated.traits.TrackChannel;
-import com.discord.analytics.generated.traits.TrackChannel2;
+import com.discord.analytics.generated.traits.TrackChannelReceiver;
 import com.discord.analytics.generated.traits.TrackGuild;
-import com.discord.analytics.generated.traits.TrackGuild2;
+import com.discord.analytics.generated.traits.TrackGuildReceiver;
 import com.discord.api.science.AnalyticsSchema;
 import com.discord.models.domain.ModelAuditLogEntry;
-import d0.z.d.Intrinsics3;
 import java.util.List;
+import p007b.p100d.p104b.p105a.C1643a;
+import p507d0.p592z.p594d.C12238m;
 
 /* JADX INFO: compiled from: TrackMessageDeleted.kt */
 /* JADX INFO: loaded from: classes.dex */
-public final /* data */ class TrackMessageDeleted implements AnalyticsSchema, TrackBase2, TrackChannel2, TrackGuild2 {
+public final /* data */ class TrackMessageDeleted implements AnalyticsSchema, TrackBaseReceiver, TrackChannelReceiver, TrackGuildReceiver {
     private TrackBase trackBase;
     private TrackChannel trackChannel;
     private TrackGuild trackGuild;
@@ -30,14 +30,15 @@ public final /* data */ class TrackMessageDeleted implements AnalyticsSchema, Tr
     private final List<CharSequence> urls = null;
     private final transient String analyticsSchemaTypeName = "message_deleted";
 
-    @Override // com.discord.analytics.generated.traits.TrackGuild2
+    @Override // com.discord.analytics.generated.traits.TrackGuildReceiver
     /* JADX INFO: renamed from: a, reason: from getter */
     public TrackGuild getTrackGuild() {
         return this.trackGuild;
     }
 
-    @Override // com.discord.analytics.generated.traits.TrackGuild2
-    public void c(TrackGuild trackGuild) {
+    @Override // com.discord.analytics.generated.traits.TrackGuildReceiver
+    /* JADX INFO: renamed from: c */
+    public void mo7508c(TrackGuild trackGuild) {
         this.trackGuild = trackGuild;
     }
 
@@ -55,7 +56,7 @@ public final /* data */ class TrackMessageDeleted implements AnalyticsSchema, Tr
             return false;
         }
         TrackMessageDeleted trackMessageDeleted = (TrackMessageDeleted) other;
-        return Intrinsics3.areEqual(this.messageId, trackMessageDeleted.messageId) && Intrinsics3.areEqual(this.reason, trackMessageDeleted.reason) && Intrinsics3.areEqual(this.authorId, trackMessageDeleted.authorId) && Intrinsics3.areEqual(this.numUrls, trackMessageDeleted.numUrls) && Intrinsics3.areEqual(this.numAttachments, trackMessageDeleted.numAttachments) && Intrinsics3.areEqual(this.numEmbeds, trackMessageDeleted.numEmbeds) && Intrinsics3.areEqual(this.numMentions, trackMessageDeleted.numMentions) && Intrinsics3.areEqual(this.length, trackMessageDeleted.length) && Intrinsics3.areEqual(this.wordCount, trackMessageDeleted.wordCount) && Intrinsics3.areEqual(this.urls, trackMessageDeleted.urls);
+        return C12238m.areEqual(this.messageId, trackMessageDeleted.messageId) && C12238m.areEqual(this.reason, trackMessageDeleted.reason) && C12238m.areEqual(this.authorId, trackMessageDeleted.authorId) && C12238m.areEqual(this.numUrls, trackMessageDeleted.numUrls) && C12238m.areEqual(this.numAttachments, trackMessageDeleted.numAttachments) && C12238m.areEqual(this.numEmbeds, trackMessageDeleted.numEmbeds) && C12238m.areEqual(this.numMentions, trackMessageDeleted.numMentions) && C12238m.areEqual(this.length, trackMessageDeleted.length) && C12238m.areEqual(this.wordCount, trackMessageDeleted.wordCount) && C12238m.areEqual(this.urls, trackMessageDeleted.urls);
     }
 
     public int hashCode() {
@@ -82,25 +83,25 @@ public final /* data */ class TrackMessageDeleted implements AnalyticsSchema, Tr
     }
 
     public String toString() {
-        StringBuilder sbU = outline.U("TrackMessageDeleted(messageId=");
-        sbU.append(this.messageId);
-        sbU.append(", reason=");
-        sbU.append(this.reason);
-        sbU.append(", authorId=");
-        sbU.append(this.authorId);
-        sbU.append(", numUrls=");
-        sbU.append(this.numUrls);
-        sbU.append(", numAttachments=");
-        sbU.append(this.numAttachments);
-        sbU.append(", numEmbeds=");
-        sbU.append(this.numEmbeds);
-        sbU.append(", numMentions=");
-        sbU.append(this.numMentions);
-        sbU.append(", length=");
-        sbU.append(this.length);
-        sbU.append(", wordCount=");
-        sbU.append(this.wordCount);
-        sbU.append(", urls=");
-        return outline.L(sbU, this.urls, ")");
+        StringBuilder sbM833U = C1643a.m833U("TrackMessageDeleted(messageId=");
+        sbM833U.append(this.messageId);
+        sbM833U.append(", reason=");
+        sbM833U.append(this.reason);
+        sbM833U.append(", authorId=");
+        sbM833U.append(this.authorId);
+        sbM833U.append(", numUrls=");
+        sbM833U.append(this.numUrls);
+        sbM833U.append(", numAttachments=");
+        sbM833U.append(this.numAttachments);
+        sbM833U.append(", numEmbeds=");
+        sbM833U.append(this.numEmbeds);
+        sbM833U.append(", numMentions=");
+        sbM833U.append(this.numMentions);
+        sbM833U.append(", length=");
+        sbM833U.append(this.length);
+        sbM833U.append(", wordCount=");
+        sbM833U.append(this.wordCount);
+        sbM833U.append(", urls=");
+        return C1643a.m824L(sbM833U, this.urls, ")");
     }
 }

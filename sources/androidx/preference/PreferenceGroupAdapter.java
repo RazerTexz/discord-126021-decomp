@@ -274,8 +274,8 @@ public class PreferenceGroupAdapter extends RecyclerView.Adapter<PreferenceViewH
     public PreferenceViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int i) {
         PreferenceResourceDescriptor preferenceResourceDescriptor = this.mPreferenceResourceDescriptors.get(i);
         LayoutInflater layoutInflaterFrom = LayoutInflater.from(viewGroup.getContext());
-        TypedArray typedArrayObtainStyledAttributes = viewGroup.getContext().obtainStyledAttributes((AttributeSet) null, R.styleable.BackgroundStyle);
-        Drawable drawable = typedArrayObtainStyledAttributes.getDrawable(R.styleable.BackgroundStyle_android_selectableItemBackground);
+        TypedArray typedArrayObtainStyledAttributes = viewGroup.getContext().obtainStyledAttributes((AttributeSet) null, C0525R.styleable.BackgroundStyle);
+        Drawable drawable = typedArrayObtainStyledAttributes.getDrawable(C0525R.styleable.BackgroundStyle_android_selectableItemBackground);
         if (drawable == null) {
             drawable = AppCompatResources.getDrawable(viewGroup.getContext(), android.R.drawable.list_selector_background);
         }

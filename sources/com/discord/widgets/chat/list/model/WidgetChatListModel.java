@@ -1,7 +1,5 @@
 package com.discord.widgets.chat.list.model;
 
-import a0.a.a.b;
-import b.d.b.a.outline;
 import com.discord.api.channel.Channel;
 import com.discord.api.channel.ChannelUtils;
 import com.discord.api.sticker.Sticker;
@@ -23,21 +21,23 @@ import com.discord.widgets.chat.list.entries.StickerGreetCompactEntry;
 import com.discord.widgets.chat.list.entries.StickerGreetEntry;
 import com.discord.widgets.chat.list.entries.ThreadDraftFormEntry;
 import com.discord.widgets.chat.list.model.WidgetChatListModel;
-import d0.t.Sets5;
-import d0.z.d.Intrinsics3;
-import j0.k.Func1;
-import j0.l.e.ScalarSynchronousObservable;
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
-import kotlin.Tuples2;
+import kotlin.Pair;
 import kotlin.jvm.internal.DefaultConstructorMarker;
-import rx.Observable;
-import rx.functions.Func2;
-import rx.functions.Func7;
-import rx.functions.Func9;
+import p001a0.p002a.p003a.C0002b;
+import p007b.p100d.p104b.p105a.C1643a;
+import p507d0.p580t.C12148n0;
+import p507d0.p592z.p594d.C12238m;
+import p637j0.p641k.InterfaceC12589b;
+import p637j0.p642l.p647e.C12721k;
+import p658rx.Observable;
+import p658rx.functions.Func2;
+import p658rx.functions.Func7;
+import p658rx.functions.Func9;
 
 /* JADX INFO: compiled from: WidgetChatListModel.kt */
 /* JADX INFO: loaded from: classes2.dex */
@@ -77,23 +77,23 @@ public final /* data */ class WidgetChatListModel implements WidgetChatListAdapt
             }
 
             public final Observable<ChatListState> get(final long channelId) {
-                Observable observableY = StoreStream.INSTANCE.getMessages().observeIsDetached(channelId).Y(new Func1<Boolean, Observable<? extends ChatListState>>() { // from class: com.discord.widgets.chat.list.model.WidgetChatListModel$ChatListState$Companion$get$1
-                    @Override // j0.k.Func1
+                Observable observableM11099Y = StoreStream.INSTANCE.getMessages().observeIsDetached(channelId).m11099Y(new InterfaceC12589b<Boolean, Observable<? extends ChatListState>>() { // from class: com.discord.widgets.chat.list.model.WidgetChatListModel$ChatListState$Companion$get$1
+                    @Override // p637j0.p641k.InterfaceC12589b
                     public /* bridge */ /* synthetic */ Observable<? extends WidgetChatListModel.ChatListState> call(Boolean bool) {
                         return call(bool.booleanValue());
                     }
 
                     public final Observable<? extends WidgetChatListModel.ChatListState> call(boolean z2) {
-                        return z2 ? StoreStream.INSTANCE.getMessagesLoader().getMessagesLoadedState(channelId).G(new Func1<StoreMessagesLoader.ChannelLoadedState, WidgetChatListModel.ChatListState>() { // from class: com.discord.widgets.chat.list.model.WidgetChatListModel$ChatListState$Companion$get$1.1
-                            @Override // j0.k.Func1
+                        return z2 ? StoreStream.INSTANCE.getMessagesLoader().getMessagesLoadedState(channelId).m11083G(new InterfaceC12589b<StoreMessagesLoader.ChannelLoadedState, WidgetChatListModel.ChatListState>() { // from class: com.discord.widgets.chat.list.model.WidgetChatListModel$ChatListState$Companion$get$1.1
+                            @Override // p637j0.p641k.InterfaceC12589b
                             public final WidgetChatListModel.ChatListState call(StoreMessagesLoader.ChannelLoadedState channelLoadedState) {
                                 return channelLoadedState.getIsTouchedSinceLastJump() ? WidgetChatListModel.ChatListState.DETACHED : WidgetChatListModel.ChatListState.DETACHED_UNTOUCHED;
                             }
-                        }).r() : new ScalarSynchronousObservable(WidgetChatListModel.ChatListState.ATTACHED);
+                        }).m11112r() : new C12721k(WidgetChatListModel.ChatListState.ATTACHED);
                     }
                 });
-                Intrinsics3.checkNotNullExpressionValue(observableY, "StoreStream\n            …        }\n              }");
-                return observableY;
+                C12238m.checkNotNullExpressionValue(observableM11099Y, "StoreStream\n            …        }\n              }");
+                return observableM11099Y;
             }
 
             public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
@@ -111,8 +111,8 @@ public final /* data */ class WidgetChatListModel implements WidgetChatListAdapt
             Observable<WidgetChatListModelTop> observable = WidgetChatListModelTop.INSTANCE.get(channel);
             Observable<WidgetChatListModelMessages> observable2 = WidgetChatListModelMessages.INSTANCE.get(channel);
             StoreStream.Companion companion = StoreStream.INSTANCE;
-            Observable<WidgetChatListModel> observableC = Observable.c(observable, observable2, observeIsLoadingMessages(companion.getMessagesLoader(), channel.getId()), companion.getChannels().observeNames(), companion.getUsers().observeMeId(), companion.getGuilds().observeComputed(channel.getGuildId()), companion.getGuilds().observeGuild(channel.getGuildId()), companion.getUserRelationships().observe(), ChatListState.INSTANCE.get(channel.getId()), new Func9<WidgetChatListModelTop, WidgetChatListModelMessages, StoreMessagesLoader.ChannelLoadedState, Map<Long, ? extends String>, Long, Map<Long, ? extends GuildMember>, Guild, Map<Long, ? extends Integer>, ChatListState, WidgetChatListModel>() { // from class: com.discord.widgets.chat.list.model.WidgetChatListModel$Companion$getChannel$1
-                @Override // rx.functions.Func9
+            Observable<WidgetChatListModel> observableM11066c = Observable.m11066c(observable, observable2, observeIsLoadingMessages(companion.getMessagesLoader(), channel.getId()), companion.getChannels().observeNames(), companion.getUsers().observeMeId(), companion.getGuilds().observeComputed(channel.getGuildId()), companion.getGuilds().observeGuild(channel.getGuildId()), companion.getUserRelationships().observe(), ChatListState.INSTANCE.get(channel.getId()), new Func9<WidgetChatListModelTop, WidgetChatListModelMessages, StoreMessagesLoader.ChannelLoadedState, Map<Long, ? extends String>, Long, Map<Long, ? extends GuildMember>, Guild, Map<Long, ? extends Integer>, ChatListState, WidgetChatListModel>() { // from class: com.discord.widgets.chat.list.model.WidgetChatListModel$Companion$getChannel$1
+                @Override // p658rx.functions.Func9
                 public /* bridge */ /* synthetic */ WidgetChatListModel call(WidgetChatListModelTop widgetChatListModelTop, WidgetChatListModelMessages widgetChatListModelMessages, StoreMessagesLoader.ChannelLoadedState channelLoadedState, Map<Long, ? extends String> map, Long l, Map<Long, ? extends GuildMember> map2, Guild guild, Map<Long, ? extends Integer> map3, WidgetChatListModel.ChatListState chatListState) {
                     return call2(widgetChatListModelTop, widgetChatListModelMessages, channelLoadedState, (Map<Long, String>) map, l, (Map<Long, GuildMember>) map2, guild, (Map<Long, Integer>) map3, chatListState);
                 }
@@ -122,10 +122,10 @@ public final /* data */ class WidgetChatListModel implements WidgetChatListAdapt
                     ChatListEntry greetMessageItem;
                     List<Long> roles;
                     WidgetChatListModel.Companion companion2 = WidgetChatListModel.INSTANCE;
-                    Intrinsics3.checkNotNullExpressionValue(channelLoadedState, "loadingState");
-                    Intrinsics3.checkNotNullExpressionValue(widgetChatListModelMessages, "messages");
+                    C12238m.checkNotNullExpressionValue(channelLoadedState, "loadingState");
+                    C12238m.checkNotNullExpressionValue(widgetChatListModelMessages, "messages");
                     Channel channel2 = channel;
-                    Intrinsics3.checkNotNullExpressionValue(map3, "relationships");
+                    C12238m.checkNotNullExpressionValue(map3, "relationships");
                     boolean zShouldShowStickerGreet = companion2.shouldShowStickerGreet(channelLoadedState, widgetChatListModelMessages, channel2, map3);
                     int size = widgetChatListModelMessages.getItems().size() + 2;
                     if (zShouldShowStickerGreet) {
@@ -143,17 +143,17 @@ public final /* data */ class WidgetChatListModel implements WidgetChatListAdapt
                     arrayList.addAll(widgetChatListModelMessages.getItems());
                     arrayList.add(widgetChatListModelTop.getItem());
                     GuildMember guildMember = map2.get(l);
-                    Set setEmptySet = (guildMember == null || (roles = guildMember.getRoles()) == null) ? Sets5.emptySet() : new HashSet(roles);
-                    Intrinsics3.checkNotNullExpressionValue(l, "myId");
+                    Set setEmptySet = (guildMember == null || (roles = guildMember.getRoles()) == null) ? C12148n0.emptySet() : new HashSet(roles);
+                    C12238m.checkNotNullExpressionValue(l, "myId");
                     long jLongValue = l.longValue();
                     long id2 = channel.getId();
                     long guildId = channel.getGuildId();
-                    Intrinsics3.checkNotNullExpressionValue(map, "channelNames");
+                    C12238m.checkNotNullExpressionValue(map, "channelNames");
                     return new WidgetChatListModel(jLongValue, id2, guild, guildId, map, widgetChatListModelMessages.getOldestMessageId(), arrayList, setEmptySet, widgetChatListModelMessages.getNewMessagesMarkerMessageId(), widgetChatListModelMessages.getNewestKnownMessageId(), channelLoadedState.isLoadingMessages());
                 }
             });
-            Intrinsics3.checkNotNullExpressionValue(observableC, "Observable\n            .…          )\n            }");
-            return observableC;
+            C12238m.checkNotNullExpressionValue(observableM11066c, "Observable\n            .…          )\n            }");
+            return observableM11066c;
         }
 
         private final ChatListEntry getGreetMessageItem(WidgetChatListModelMessages messages, Channel channel) {
@@ -171,10 +171,10 @@ public final /* data */ class WidgetChatListModel implements WidgetChatListAdapt
                     return null;
                 }
                 if (messages.getItems().isEmpty()) {
-                    return new StickerGreetEntry(sticker, channel.getId(), ChannelUtils.c(channel), channel.getType());
+                    return new StickerGreetEntry(sticker, channel.getId(), ChannelUtils.m7679c(channel), channel.getType());
                 }
                 if (messages.getItems().size() < 25) {
-                    return new StickerGreetCompactEntry(sticker, channel.getId(), ChannelUtils.c(channel), channel.getType());
+                    return new StickerGreetCompactEntry(sticker, channel.getId(), ChannelUtils.m7679c(channel), channel.getType());
                 }
             }
             return null;
@@ -182,7 +182,7 @@ public final /* data */ class WidgetChatListModel implements WidgetChatListAdapt
 
         private final Observable<WidgetChatListModel> getThreadDraft(final Channel parentChannel, final Long parentMessageId) {
             Object obj;
-            Observable observableJ;
+            Observable observableM11076j;
             Object obj2;
             final long guildId = parentChannel.getGuildId();
             StoreStream.Companion companion = StoreStream.INSTANCE;
@@ -195,76 +195,76 @@ public final /* data */ class WidgetChatListModel implements WidgetChatListAdapt
             if (parentMessageId != null) {
                 Observable<Message> observableObserveMessagesForChannel = companion.getMessages().observeMessagesForChannel(parentChannel.getId(), parentMessageId.longValue());
                 Observable<List<ChatListEntry>> singleMessage = WidgetChatListModelMessages.INSTANCE.getSingleMessage(parentChannel, parentMessageId.longValue());
-                final WidgetChatListModel5 widgetChatListModel5 = WidgetChatListModel5.INSTANCE;
-                if (widgetChatListModel5 != null) {
-                    obj2 = widgetChatListModel5;
+                final WidgetChatListModel$Companion$getThreadDraft$1 widgetChatListModel$Companion$getThreadDraft$1 = WidgetChatListModel$Companion$getThreadDraft$1.INSTANCE;
+                if (widgetChatListModel$Companion$getThreadDraft$1 != null) {
+                    obj2 = widgetChatListModel$Companion$getThreadDraft$1;
                     obj2 = new Func2() { // from class: com.discord.widgets.chat.list.model.WidgetChatListModel$sam$rx_functions_Func2$0
-                        @Override // rx.functions.Func2
+                        @Override // p658rx.functions.Func2
                         public final /* synthetic */ Object call(Object obj3, Object obj4) {
-                            return widgetChatListModel5.invoke(obj3, obj4);
+                            return widgetChatListModel$Companion$getThreadDraft$1.invoke(obj3, obj4);
                         }
                     };
                 }
-                obj2 = widgetChatListModel5;
-                observableJ = Observable.j(observableObserveMessagesForChannel, singleMessage, (Func2) obj2);
+                obj2 = widgetChatListModel$Companion$getThreadDraft$1;
+                observableM11076j = Observable.m11076j(observableObserveMessagesForChannel, singleMessage, (Func2) obj2);
             } else {
-                ScalarSynchronousObservable scalarSynchronousObservable = new ScalarSynchronousObservable(null);
-                ScalarSynchronousObservable scalarSynchronousObservable2 = new ScalarSynchronousObservable(new ArrayList());
-                final WidgetChatListModel6 widgetChatListModel6 = WidgetChatListModel6.INSTANCE;
-                if (widgetChatListModel6 != null) {
-                    obj = widgetChatListModel6;
+                C12721k c12721k = new C12721k(null);
+                C12721k c12721k2 = new C12721k(new ArrayList());
+                final WidgetChatListModel$Companion$getThreadDraft$2 widgetChatListModel$Companion$getThreadDraft$2 = WidgetChatListModel$Companion$getThreadDraft$2.INSTANCE;
+                if (widgetChatListModel$Companion$getThreadDraft$2 != null) {
+                    obj = widgetChatListModel$Companion$getThreadDraft$2;
                     obj = new Func2() { // from class: com.discord.widgets.chat.list.model.WidgetChatListModel$sam$rx_functions_Func2$0
-                        @Override // rx.functions.Func2
+                        @Override // p658rx.functions.Func2
                         public final /* synthetic */ Object call(Object obj3, Object obj4) {
-                            return widgetChatListModel6.invoke(obj3, obj4);
+                            return widgetChatListModel$Companion$getThreadDraft$2.invoke(obj3, obj4);
                         }
                     };
                 }
-                obj = widgetChatListModel6;
-                observableJ = Observable.j(scalarSynchronousObservable, scalarSynchronousObservable2, (Func2) obj);
+                obj = widgetChatListModel$Companion$getThreadDraft$2;
+                observableM11076j = Observable.m11076j(c12721k, c12721k2, (Func2) obj);
             }
-            Observable<WidgetChatListModel> observableE = Observable.e(observableObserveNames, observableObserveMeId, observableObserveComputed, observableObserveGuild, observableObserveDraftState, observableObservePermissionsForChannel, observableJ, new Func7<Map<Long, ? extends String>, Long, Map<Long, ? extends GuildMember>, Guild, StoreThreadDraft.ThreadDraftState, Long, Tuples2<? extends Message, ? extends List<? extends ChatListEntry>>, WidgetChatListModel>() { // from class: com.discord.widgets.chat.list.model.WidgetChatListModel$Companion$getThreadDraft$3
-                @Override // rx.functions.Func7
-                public /* bridge */ /* synthetic */ WidgetChatListModel call(Map<Long, ? extends String> map, Long l, Map<Long, ? extends GuildMember> map2, Guild guild, StoreThreadDraft.ThreadDraftState threadDraftState, Long l2, Tuples2<? extends Message, ? extends List<? extends ChatListEntry>> tuples2) {
-                    return call2((Map<Long, String>) map, l, (Map<Long, GuildMember>) map2, guild, threadDraftState, l2, (Tuples2<Message, ? extends List<? extends ChatListEntry>>) tuples2);
+            Observable<WidgetChatListModel> observableM11069e = Observable.m11069e(observableObserveNames, observableObserveMeId, observableObserveComputed, observableObserveGuild, observableObserveDraftState, observableObservePermissionsForChannel, observableM11076j, new Func7<Map<Long, ? extends String>, Long, Map<Long, ? extends GuildMember>, Guild, StoreThreadDraft.ThreadDraftState, Long, Pair<? extends Message, ? extends List<? extends ChatListEntry>>, WidgetChatListModel>() { // from class: com.discord.widgets.chat.list.model.WidgetChatListModel$Companion$getThreadDraft$3
+                @Override // p658rx.functions.Func7
+                public /* bridge */ /* synthetic */ WidgetChatListModel call(Map<Long, ? extends String> map, Long l, Map<Long, ? extends GuildMember> map2, Guild guild, StoreThreadDraft.ThreadDraftState threadDraftState, Long l2, Pair<? extends Message, ? extends List<? extends ChatListEntry>> pair) {
+                    return call2((Map<Long, String>) map, l, (Map<Long, GuildMember>) map2, guild, threadDraftState, l2, (Pair<Message, ? extends List<? extends ChatListEntry>>) pair);
                 }
 
                 /* JADX INFO: renamed from: call, reason: avoid collision after fix types in other method */
-                public final WidgetChatListModel call2(Map<Long, String> map, Long l, Map<Long, GuildMember> map2, Guild guild, StoreThreadDraft.ThreadDraftState threadDraftState, Long l2, Tuples2<Message, ? extends List<? extends ChatListEntry>> tuples2) {
+                public final WidgetChatListModel call2(Map<Long, String> map, Long l, Map<Long, GuildMember> map2, Guild guild, StoreThreadDraft.ThreadDraftState threadDraftState, Long l2, Pair<Message, ? extends List<? extends ChatListEntry>> pair) {
                     List<Long> roles;
                     ArrayList arrayList = new ArrayList();
                     arrayList.add(new SpacerEntry(parentChannel.getId()));
                     if (threadDraftState.isSending()) {
                         arrayList.add(new LoadingEntry());
                     }
-                    arrayList.addAll(tuples2.getSecond());
+                    arrayList.addAll(pair.getSecond());
                     Channel channel = parentChannel;
                     Long l3 = parentMessageId;
                     long guildId2 = channel.getGuildId();
                     Integer defaultAutoArchiveDuration = parentChannel.getDefaultAutoArchiveDuration();
-                    Intrinsics3.checkNotNullExpressionValue(threadDraftState, "threadDraft");
+                    C12238m.checkNotNullExpressionValue(threadDraftState, "threadDraft");
                     ThreadUtils threadUtils = ThreadUtils.INSTANCE;
-                    arrayList.add(new ThreadDraftFormEntry(channel, l3, guildId2, guild, defaultAutoArchiveDuration, threadDraftState, ThreadUtils.canCreatePrivateThread$default(threadUtils, l2, parentChannel, guild, false, 8, null), threadUtils.canCreatePrivateThread(l2, parentChannel, guild, false), threadUtils.canCreatePublicThread(l2, parentChannel, tuples2.getFirst(), guild)));
+                    arrayList.add(new ThreadDraftFormEntry(channel, l3, guildId2, guild, defaultAutoArchiveDuration, threadDraftState, ThreadUtils.canCreatePrivateThread$default(threadUtils, l2, parentChannel, guild, false, 8, null), threadUtils.canCreatePrivateThread(l2, parentChannel, guild, false), threadUtils.canCreatePublicThread(l2, parentChannel, pair.getFirst(), guild)));
                     GuildMember guildMember = map2.get(l);
-                    Set setEmptySet = (guildMember == null || (roles = guildMember.getRoles()) == null) ? Sets5.emptySet() : new HashSet(roles);
-                    Intrinsics3.checkNotNullExpressionValue(l, "myId");
+                    Set setEmptySet = (guildMember == null || (roles = guildMember.getRoles()) == null) ? C12148n0.emptySet() : new HashSet(roles);
+                    C12238m.checkNotNullExpressionValue(l, "myId");
                     long j = guildId;
-                    Intrinsics3.checkNotNullExpressionValue(map, "channelNames");
+                    C12238m.checkNotNullExpressionValue(map, "channelNames");
                     return new WidgetChatListModel(l.longValue(), -3L, guild, j, map, 0L, arrayList, setEmptySet, 0L, 0L, false, 800, null);
                 }
             });
-            Intrinsics3.checkNotNullExpressionValue(observableE, "Observable\n          .co…            )\n          }");
-            return observableE;
+            C12238m.checkNotNullExpressionValue(observableM11069e, "Observable\n          .co…            )\n          }");
+            return observableM11069e;
         }
 
         private final Observable<StoreMessagesLoader.ChannelLoadedState> observeIsLoadingMessages(StoreMessagesLoader storeMessagesLoader, long j) {
-            return storeMessagesLoader.getMessagesLoadedState(j).r();
+            return storeMessagesLoader.getMessagesLoadedState(j).m11112r();
         }
 
         private final boolean shouldShowStickerGreet(StoreMessagesLoader.ChannelLoadedState loadingState, WidgetChatListModelMessages messages, Channel channel, Map<Long, Integer> relationships) {
-            if (loadingState.isOldestMessagesLoaded() && loadingState.isInitialMessagesLoaded() && loadingState.getNewestSentByUserMessageId() == null && messages.getNewestSentByUserMessageId() == null && messages.getItems().size() < 25 && ChannelUtils.m(channel) && !ChannelUtils.E(channel)) {
-                User userA = ChannelUtils.a(channel);
-                Integer num = relationships.get(userA != null ? Long.valueOf(userA.getId()) : null);
+            if (loadingState.isOldestMessagesLoaded() && loadingState.isInitialMessagesLoaded() && loadingState.getNewestSentByUserMessageId() == null && messages.getNewestSentByUserMessageId() == null && messages.getItems().size() < 25 && ChannelUtils.m7689m(channel) && !ChannelUtils.m7670E(channel)) {
+                User userM7677a = ChannelUtils.m7677a(channel);
+                Integer num = relationships.get(userM7677a != null ? Long.valueOf(userM7677a.getId()) : null);
                 if (num == null || num.intValue() != 2) {
                     return true;
                 }
@@ -273,22 +273,22 @@ public final /* data */ class WidgetChatListModel implements WidgetChatListAdapt
         }
 
         public final Observable<WidgetChatListModel> get() {
-            Observable observableY = StoreStream.INSTANCE.getChannelsSelected().observeResolvedSelectedChannel().Y(new Func1<StoreChannelsSelected.ResolvedSelectedChannel, Observable<? extends WidgetChatListModel>>() { // from class: com.discord.widgets.chat.list.model.WidgetChatListModel$Companion$get$1
-                @Override // j0.k.Func1
+            Observable observableM11099Y = StoreStream.INSTANCE.getChannelsSelected().observeResolvedSelectedChannel().m11099Y(new InterfaceC12589b<StoreChannelsSelected.ResolvedSelectedChannel, Observable<? extends WidgetChatListModel>>() { // from class: com.discord.widgets.chat.list.model.WidgetChatListModel$Companion$get$1
+                @Override // p637j0.p641k.InterfaceC12589b
                 public final Observable<? extends WidgetChatListModel> call(StoreChannelsSelected.ResolvedSelectedChannel resolvedSelectedChannel) {
                     if (resolvedSelectedChannel instanceof StoreChannelsSelected.ResolvedSelectedChannel.Channel) {
                         StoreChannelsSelected.ResolvedSelectedChannel.Channel channel = (StoreChannelsSelected.ResolvedSelectedChannel.Channel) resolvedSelectedChannel;
-                        return ChannelUtils.o(channel.getChannel()) ? new ScalarSynchronousObservable(null) : WidgetChatListModel.INSTANCE.getChannel(channel.getChannel());
+                        return ChannelUtils.m7691o(channel.getChannel()) ? new C12721k(null) : WidgetChatListModel.INSTANCE.getChannel(channel.getChannel());
                     }
                     if (!(resolvedSelectedChannel instanceof StoreChannelsSelected.ResolvedSelectedChannel.ThreadDraft)) {
-                        return new ScalarSynchronousObservable(null);
+                        return new C12721k(null);
                     }
                     StoreChannelsSelected.ResolvedSelectedChannel.ThreadDraft threadDraft = (StoreChannelsSelected.ResolvedSelectedChannel.ThreadDraft) resolvedSelectedChannel;
                     return WidgetChatListModel.INSTANCE.getThreadDraft(threadDraft.getParentChannel(), threadDraft.getStarterMessageId());
                 }
             });
-            Intrinsics3.checkNotNullExpressionValue(observableY, "StoreStream\n          .g…            }\n          }");
-            return observableY;
+            C12238m.checkNotNullExpressionValue(observableM11099Y, "StoreStream\n          .g…            }\n          }");
+            return observableM11099Y;
         }
 
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
@@ -298,9 +298,9 @@ public final /* data */ class WidgetChatListModel implements WidgetChatListAdapt
 
     /* JADX WARN: Multi-variable type inference failed */
     public WidgetChatListModel(long j, long j2, Guild guild, long j3, Map<Long, String> map, long j4, List<? extends ChatListEntry> list, Set<Long> set, long j5, long j6, boolean z2) {
-        Intrinsics3.checkNotNullParameter(map, "channelNames");
-        Intrinsics3.checkNotNullParameter(list, "list");
-        Intrinsics3.checkNotNullParameter(set, "myRoleIds");
+        C12238m.checkNotNullParameter(map, "channelNames");
+        C12238m.checkNotNullParameter(list, "list");
+        C12238m.checkNotNullParameter(set, "myRoleIds");
         this.userId = j;
         this.channelId = j2;
         this.guild = guild;
@@ -362,9 +362,9 @@ public final /* data */ class WidgetChatListModel implements WidgetChatListAdapt
     }
 
     public final WidgetChatListModel copy(long userId, long channelId, Guild guild, long guildId, Map<Long, String> channelNames, long oldestMessageId, List<? extends ChatListEntry> list, Set<Long> myRoleIds, long newMessagesMarkerMessageId, long newestKnownMessageId, boolean isLoadingMessages) {
-        Intrinsics3.checkNotNullParameter(channelNames, "channelNames");
-        Intrinsics3.checkNotNullParameter(list, "list");
-        Intrinsics3.checkNotNullParameter(myRoleIds, "myRoleIds");
+        C12238m.checkNotNullParameter(channelNames, "channelNames");
+        C12238m.checkNotNullParameter(list, "list");
+        C12238m.checkNotNullParameter(myRoleIds, "myRoleIds");
         return new WidgetChatListModel(userId, channelId, guild, guildId, channelNames, oldestMessageId, list, myRoleIds, newMessagesMarkerMessageId, newestKnownMessageId, isLoadingMessages);
     }
 
@@ -376,7 +376,7 @@ public final /* data */ class WidgetChatListModel implements WidgetChatListAdapt
             return false;
         }
         WidgetChatListModel widgetChatListModel = (WidgetChatListModel) other;
-        return getUserId() == widgetChatListModel.getUserId() && getChannelId() == widgetChatListModel.getChannelId() && Intrinsics3.areEqual(getGuild(), widgetChatListModel.getGuild()) && getGuildId() == widgetChatListModel.getGuildId() && Intrinsics3.areEqual(getChannelNames(), widgetChatListModel.getChannelNames()) && getOldestMessageId() == widgetChatListModel.getOldestMessageId() && Intrinsics3.areEqual(getList(), widgetChatListModel.getList()) && Intrinsics3.areEqual(getMyRoleIds(), widgetChatListModel.getMyRoleIds()) && getNewMessagesMarkerMessageId() == widgetChatListModel.getNewMessagesMarkerMessageId() && this.newestKnownMessageId == widgetChatListModel.newestKnownMessageId && this.isLoadingMessages == widgetChatListModel.isLoadingMessages;
+        return getUserId() == widgetChatListModel.getUserId() && getChannelId() == widgetChatListModel.getChannelId() && C12238m.areEqual(getGuild(), widgetChatListModel.getGuild()) && getGuildId() == widgetChatListModel.getGuildId() && C12238m.areEqual(getChannelNames(), widgetChatListModel.getChannelNames()) && getOldestMessageId() == widgetChatListModel.getOldestMessageId() && C12238m.areEqual(getList(), widgetChatListModel.getList()) && C12238m.areEqual(getMyRoleIds(), widgetChatListModel.getMyRoleIds()) && getNewMessagesMarkerMessageId() == widgetChatListModel.getNewMessagesMarkerMessageId() && this.newestKnownMessageId == widgetChatListModel.newestKnownMessageId && this.isLoadingMessages == widgetChatListModel.isLoadingMessages;
     }
 
     @Override // com.discord.widgets.chat.list.adapter.WidgetChatListAdapter.Data
@@ -434,21 +434,21 @@ public final /* data */ class WidgetChatListModel implements WidgetChatListAdapt
     /* JADX WARN: Type inference failed for: r0v23 */
     /* JADX WARN: Type inference failed for: r1v20, types: [int] */
     public int hashCode() {
-        int iA = (b.a(getChannelId()) + (b.a(getUserId()) * 31)) * 31;
+        int iM3a = (C0002b.m3a(getChannelId()) + (C0002b.m3a(getUserId()) * 31)) * 31;
         Guild guild = getGuild();
-        int iA2 = (b.a(getGuildId()) + ((iA + (guild != null ? guild.hashCode() : 0)) * 31)) * 31;
+        int iM3a2 = (C0002b.m3a(getGuildId()) + ((iM3a + (guild != null ? guild.hashCode() : 0)) * 31)) * 31;
         Map<Long, String> channelNames = getChannelNames();
-        int iA3 = (b.a(getOldestMessageId()) + ((iA2 + (channelNames != null ? channelNames.hashCode() : 0)) * 31)) * 31;
+        int iM3a3 = (C0002b.m3a(getOldestMessageId()) + ((iM3a2 + (channelNames != null ? channelNames.hashCode() : 0)) * 31)) * 31;
         List<ChatListEntry> list = getList();
-        int iHashCode = (iA3 + (list != null ? list.hashCode() : 0)) * 31;
+        int iHashCode = (iM3a3 + (list != null ? list.hashCode() : 0)) * 31;
         Set<Long> myRoleIds = getMyRoleIds();
-        int iA4 = (b.a(this.newestKnownMessageId) + ((b.a(getNewMessagesMarkerMessageId()) + ((iHashCode + (myRoleIds != null ? myRoleIds.hashCode() : 0)) * 31)) * 31)) * 31;
+        int iM3a4 = (C0002b.m3a(this.newestKnownMessageId) + ((C0002b.m3a(getNewMessagesMarkerMessageId()) + ((iHashCode + (myRoleIds != null ? myRoleIds.hashCode() : 0)) * 31)) * 31)) * 31;
         boolean z2 = this.isLoadingMessages;
         ?? r0 = z2;
         if (z2) {
             r0 = 1;
         }
-        return iA4 + r0;
+        return iM3a4 + r0;
     }
 
     public final boolean isLoadingMessages() {
@@ -462,28 +462,28 @@ public final /* data */ class WidgetChatListModel implements WidgetChatListAdapt
     }
 
     public String toString() {
-        StringBuilder sbU = outline.U("WidgetChatListModel(userId=");
-        sbU.append(getUserId());
-        sbU.append(", channelId=");
-        sbU.append(getChannelId());
-        sbU.append(", guild=");
-        sbU.append(getGuild());
-        sbU.append(", guildId=");
-        sbU.append(getGuildId());
-        sbU.append(", channelNames=");
-        sbU.append(getChannelNames());
-        sbU.append(", oldestMessageId=");
-        sbU.append(getOldestMessageId());
-        sbU.append(", list=");
-        sbU.append(getList());
-        sbU.append(", myRoleIds=");
-        sbU.append(getMyRoleIds());
-        sbU.append(", newMessagesMarkerMessageId=");
-        sbU.append(getNewMessagesMarkerMessageId());
-        sbU.append(", newestKnownMessageId=");
-        sbU.append(this.newestKnownMessageId);
-        sbU.append(", isLoadingMessages=");
-        return outline.O(sbU, this.isLoadingMessages, ")");
+        StringBuilder sbM833U = C1643a.m833U("WidgetChatListModel(userId=");
+        sbM833U.append(getUserId());
+        sbM833U.append(", channelId=");
+        sbM833U.append(getChannelId());
+        sbM833U.append(", guild=");
+        sbM833U.append(getGuild());
+        sbM833U.append(", guildId=");
+        sbM833U.append(getGuildId());
+        sbM833U.append(", channelNames=");
+        sbM833U.append(getChannelNames());
+        sbM833U.append(", oldestMessageId=");
+        sbM833U.append(getOldestMessageId());
+        sbM833U.append(", list=");
+        sbM833U.append(getList());
+        sbM833U.append(", myRoleIds=");
+        sbM833U.append(getMyRoleIds());
+        sbM833U.append(", newMessagesMarkerMessageId=");
+        sbM833U.append(getNewMessagesMarkerMessageId());
+        sbM833U.append(", newestKnownMessageId=");
+        sbM833U.append(this.newestKnownMessageId);
+        sbM833U.append(", isLoadingMessages=");
+        return C1643a.m827O(sbM833U, this.isLoadingMessages, ")");
     }
 
     public /* synthetic */ WidgetChatListModel(long j, long j2, Guild guild, long j3, Map map, long j4, List list, Set set, long j5, long j6, boolean z2, int i, DefaultConstructorMarker defaultConstructorMarker) {

@@ -7,50 +7,55 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.viewbinding.ViewBinding;
-import com.discord.R;
+import com.discord.C5419R;
 import com.google.android.material.radiobutton.MaterialRadioButton;
 
 /* JADX INFO: loaded from: classes.dex */
 public final class ViewGuildRoleSubscriptionPlanFormatRadioButtonBinding implements ViewBinding {
 
+    /* JADX INFO: renamed from: a */
     @NonNull
-    public final View a;
+    public final View f15486a;
 
-    /* JADX INFO: renamed from: b, reason: collision with root package name */
+    /* JADX INFO: renamed from: b */
     @NonNull
-    public final MaterialRadioButton f2197b;
+    public final MaterialRadioButton f15487b;
 
+    /* JADX INFO: renamed from: c */
     @NonNull
-    public final TextView c;
+    public final TextView f15488c;
 
+    /* JADX INFO: renamed from: d */
     @NonNull
-    public final TextView d;
+    public final TextView f15489d;
 
+    /* JADX INFO: renamed from: e */
     @NonNull
-    public final ImageView e;
+    public final ImageView f15490e;
 
     public ViewGuildRoleSubscriptionPlanFormatRadioButtonBinding(@NonNull View view, @NonNull MaterialRadioButton materialRadioButton, @NonNull TextView textView, @NonNull TextView textView2, @NonNull ImageView imageView) {
-        this.a = view;
-        this.f2197b = materialRadioButton;
-        this.c = textView;
-        this.d = textView2;
-        this.e = imageView;
+        this.f15486a = view;
+        this.f15487b = materialRadioButton;
+        this.f15488c = textView;
+        this.f15489d = textView2;
+        this.f15490e = imageView;
     }
 
     @NonNull
-    public static ViewGuildRoleSubscriptionPlanFormatRadioButtonBinding a(@NonNull LayoutInflater layoutInflater, @NonNull ViewGroup viewGroup) {
-        layoutInflater.inflate(R.layout.view_guild_role_subscription_plan_format_radio_button, viewGroup);
-        int i = R.id.guild_role_subscription_plan_format_button;
-        MaterialRadioButton materialRadioButton = (MaterialRadioButton) viewGroup.findViewById(R.id.guild_role_subscription_plan_format_button);
+    /* JADX INFO: renamed from: a */
+    public static ViewGuildRoleSubscriptionPlanFormatRadioButtonBinding m8398a(@NonNull LayoutInflater layoutInflater, @NonNull ViewGroup viewGroup) {
+        layoutInflater.inflate(C5419R.layout.view_guild_role_subscription_plan_format_radio_button, viewGroup);
+        int i = C5419R.id.guild_role_subscription_plan_format_button;
+        MaterialRadioButton materialRadioButton = (MaterialRadioButton) viewGroup.findViewById(C5419R.id.guild_role_subscription_plan_format_button);
         if (materialRadioButton != null) {
-            i = R.id.guild_role_subscription_plan_format_button_subtitle;
-            TextView textView = (TextView) viewGroup.findViewById(R.id.guild_role_subscription_plan_format_button_subtitle);
+            i = C5419R.id.guild_role_subscription_plan_format_button_subtitle;
+            TextView textView = (TextView) viewGroup.findViewById(C5419R.id.guild_role_subscription_plan_format_button_subtitle);
             if (textView != null) {
-                i = R.id.guild_role_subscription_plan_format_button_title;
-                TextView textView2 = (TextView) viewGroup.findViewById(R.id.guild_role_subscription_plan_format_button_title);
+                i = C5419R.id.guild_role_subscription_plan_format_button_title;
+                TextView textView2 = (TextView) viewGroup.findViewById(C5419R.id.guild_role_subscription_plan_format_button_title);
                 if (textView2 != null) {
-                    i = R.id.guild_role_subscription_plan_format_image;
-                    ImageView imageView = (ImageView) viewGroup.findViewById(R.id.guild_role_subscription_plan_format_image);
+                    i = C5419R.id.guild_role_subscription_plan_format_image;
+                    ImageView imageView = (ImageView) viewGroup.findViewById(C5419R.id.guild_role_subscription_plan_format_image);
                     if (imageView != null) {
                         return new ViewGuildRoleSubscriptionPlanFormatRadioButtonBinding(viewGroup, materialRadioButton, textView, textView2, imageView);
                     }
@@ -63,6 +68,6 @@ public final class ViewGuildRoleSubscriptionPlanFormatRadioButtonBinding impleme
     @Override // androidx.viewbinding.ViewBinding
     @NonNull
     public View getRoot() {
-        return this.a;
+        return this.f15486a;
     }
 }

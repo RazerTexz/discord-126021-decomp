@@ -1,9 +1,9 @@
 package androidx.constraintlayout.solver.widgets.analyzer;
 
-import b.d.b.a.outline;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
+import p007b.p100d.p104b.p105a.C1643a;
 
 /* JADX INFO: loaded from: classes.dex */
 public class DependencyNode implements Dependency {
@@ -54,9 +54,9 @@ public class DependencyNode implements Dependency {
     public String name() {
         String debugName = this.run.widget.getDebugName();
         Type type = this.type;
-        StringBuilder sbX = outline.X((type == Type.LEFT || type == Type.RIGHT) ? outline.w(debugName, "_HORIZONTAL") : outline.w(debugName, "_VERTICAL"), ":");
-        sbX.append(this.type.name());
-        return sbX.toString();
+        StringBuilder sbM836X = C1643a.m836X((type == Type.LEFT || type == Type.RIGHT) ? C1643a.m883w(debugName, "_HORIZONTAL") : C1643a.m883w(debugName, "_VERTICAL"), ":");
+        sbM836X.append(this.type.name());
+        return sbM836X.toString();
     }
 
     public void resolve(int i) {

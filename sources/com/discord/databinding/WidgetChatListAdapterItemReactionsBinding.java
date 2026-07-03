@@ -9,29 +9,32 @@ import com.google.android.flexbox.FlexboxLayout;
 /* JADX INFO: loaded from: classes.dex */
 public final class WidgetChatListAdapterItemReactionsBinding implements ViewBinding {
 
+    /* JADX INFO: renamed from: a */
     @NonNull
-    public final ConstraintLayout a;
+    public final ConstraintLayout f16268a;
 
-    /* JADX INFO: renamed from: b, reason: collision with root package name */
+    /* JADX INFO: renamed from: b */
     @NonNull
-    public final View f2329b;
+    public final View f16269b;
 
+    /* JADX INFO: renamed from: c */
     @NonNull
-    public final View c;
+    public final View f16270c;
 
+    /* JADX INFO: renamed from: d */
     @NonNull
-    public final FlexboxLayout d;
+    public final FlexboxLayout f16271d;
 
     public WidgetChatListAdapterItemReactionsBinding(@NonNull ConstraintLayout constraintLayout, @NonNull View view, @NonNull View view2, @NonNull FlexboxLayout flexboxLayout) {
-        this.a = constraintLayout;
-        this.f2329b = view;
-        this.c = view2;
-        this.d = flexboxLayout;
+        this.f16268a = constraintLayout;
+        this.f16269b = view;
+        this.f16270c = view2;
+        this.f16271d = flexboxLayout;
     }
 
     @Override // androidx.viewbinding.ViewBinding
     @NonNull
     public View getRoot() {
-        return this.a;
+        return this.f16268a;
     }
 }

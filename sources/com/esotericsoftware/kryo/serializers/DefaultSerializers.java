@@ -1,13 +1,12 @@
 package com.esotericsoftware.kryo.serializers;
 
-import b.d.b.a.outline;
 import com.esotericsoftware.kryo.Kryo;
 import com.esotericsoftware.kryo.KryoException;
 import com.esotericsoftware.kryo.KryoSerializable;
 import com.esotericsoftware.kryo.Registration;
 import com.esotericsoftware.kryo.Serializer;
-import com.esotericsoftware.kryo.io.Input;
-import com.esotericsoftware.kryo.io.Output;
+import com.esotericsoftware.kryo.p502io.Input;
+import com.esotericsoftware.kryo.p502io.Output;
 import com.esotericsoftware.kryo.util.Util;
 import java.lang.reflect.Constructor;
 import java.math.BigDecimal;
@@ -33,6 +32,7 @@ import java.util.Set;
 import java.util.TimeZone;
 import java.util.TreeMap;
 import java.util.TreeSet;
+import p007b.p100d.p104b.p105a.C1643a;
 
 /* JADX INFO: loaded from: classes.dex */
 public class DefaultSerializers {
@@ -477,11 +477,11 @@ public class DefaultSerializers {
                     return (Enum) objArr[i];
                 }
             }
-            StringBuilder sbU = outline.U("Invalid ordinal for enum \"");
-            sbU.append(cls.getName());
-            sbU.append("\": ");
-            sbU.append(i);
-            throw new KryoException(sbU.toString());
+            StringBuilder sbM833U = C1643a.m833U("Invalid ordinal for enum \"");
+            sbM833U.append(cls.getName());
+            sbM833U.append("\": ");
+            sbM833U.append(i);
+            throw new KryoException(sbM833U.toString());
         }
 
         @Override // com.esotericsoftware.kryo.Serializer

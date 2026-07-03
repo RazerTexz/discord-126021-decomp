@@ -12,8 +12,8 @@ import androidx.work.impl.foreground.SystemForegroundDispatcher;
 import androidx.work.impl.model.WorkSpecDao;
 import androidx.work.impl.utils.futures.SettableFuture;
 import androidx.work.impl.utils.taskexecutor.TaskExecutor;
-import b.i.b.d.a.ListenableFuture8;
 import java.util.UUID;
+import p007b.p225i.p355b.p359d.p360a.InterfaceFutureC4539a;
 
 /* JADX INFO: loaded from: classes.dex */
 @RestrictTo({RestrictTo.Scope.LIBRARY_GROUP})
@@ -30,7 +30,7 @@ public class WorkForegroundUpdater implements ForegroundUpdater {
 
     @Override // androidx.work.ForegroundUpdater
     @NonNull
-    public ListenableFuture8<Void> setForegroundAsync(@NonNull final Context context, @NonNull final UUID uuid, @NonNull final ForegroundInfo foregroundInfo) {
+    public InterfaceFutureC4539a<Void> setForegroundAsync(@NonNull final Context context, @NonNull final UUID uuid, @NonNull final ForegroundInfo foregroundInfo) {
         final SettableFuture settableFutureCreate = SettableFuture.create();
         this.mTaskExecutor.executeOnBackgroundThread(new Runnable() { // from class: androidx.work.impl.utils.WorkForegroundUpdater.1
             @Override // java.lang.Runnable

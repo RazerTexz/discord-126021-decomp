@@ -1,15 +1,15 @@
 package com.discord.analytics.generated.events;
 
-import b.d.b.a.outline;
 import com.discord.analytics.generated.traits.TrackBase;
-import com.discord.analytics.generated.traits.TrackBase2;
+import com.discord.analytics.generated.traits.TrackBaseReceiver;
 import com.discord.api.science.AnalyticsSchema;
-import d0.z.d.Intrinsics3;
 import java.util.List;
+import p007b.p100d.p104b.p105a.C1643a;
+import p507d0.p592z.p594d.C12238m;
 
 /* JADX INFO: compiled from: TrackCaptchaSolved.kt */
 /* JADX INFO: loaded from: classes.dex */
-public final /* data */ class TrackCaptchaSolved implements AnalyticsSchema, TrackBase2 {
+public final /* data */ class TrackCaptchaSolved implements AnalyticsSchema, TrackBaseReceiver {
     private TrackBase trackBase;
     private final Boolean success = null;
     private final Boolean forceBad = null;
@@ -44,7 +44,7 @@ public final /* data */ class TrackCaptchaSolved implements AnalyticsSchema, Tra
             return false;
         }
         TrackCaptchaSolved trackCaptchaSolved = (TrackCaptchaSolved) other;
-        return Intrinsics3.areEqual(this.success, trackCaptchaSolved.success) && Intrinsics3.areEqual(this.forceBad, trackCaptchaSolved.forceBad) && Intrinsics3.areEqual(this.challengeTs, trackCaptchaSolved.challengeTs) && Intrinsics3.areEqual(this.hostname, trackCaptchaSolved.hostname) && Intrinsics3.areEqual(this.scopedUid0, trackCaptchaSolved.scopedUid0) && Intrinsics3.areEqual(this.scopedUid1, trackCaptchaSolved.scopedUid1) && Intrinsics3.areEqual(this.sitekey, trackCaptchaSolved.sitekey) && Intrinsics3.areEqual(this.score, trackCaptchaSolved.score) && Intrinsics3.areEqual(this.scoreReason, trackCaptchaSolved.scoreReason) && Intrinsics3.areEqual(this.errorCodes, trackCaptchaSolved.errorCodes) && Intrinsics3.areEqual(this.userFlow, trackCaptchaSolved.userFlow) && Intrinsics3.areEqual(this.captchaService, trackCaptchaSolved.captchaService) && Intrinsics3.areEqual(this.captchaRequired, trackCaptchaSolved.captchaRequired) && Intrinsics3.areEqual(this.locationGuildId, trackCaptchaSolved.locationGuildId) && Intrinsics3.areEqual(this.locationChannelId, trackCaptchaSolved.locationChannelId) && Intrinsics3.areEqual(this.locationChannelType, trackCaptchaSolved.locationChannelType) && Intrinsics3.areEqual(this.locationMessageId, trackCaptchaSolved.locationMessageId);
+        return C12238m.areEqual(this.success, trackCaptchaSolved.success) && C12238m.areEqual(this.forceBad, trackCaptchaSolved.forceBad) && C12238m.areEqual(this.challengeTs, trackCaptchaSolved.challengeTs) && C12238m.areEqual(this.hostname, trackCaptchaSolved.hostname) && C12238m.areEqual(this.scopedUid0, trackCaptchaSolved.scopedUid0) && C12238m.areEqual(this.scopedUid1, trackCaptchaSolved.scopedUid1) && C12238m.areEqual(this.sitekey, trackCaptchaSolved.sitekey) && C12238m.areEqual(this.score, trackCaptchaSolved.score) && C12238m.areEqual(this.scoreReason, trackCaptchaSolved.scoreReason) && C12238m.areEqual(this.errorCodes, trackCaptchaSolved.errorCodes) && C12238m.areEqual(this.userFlow, trackCaptchaSolved.userFlow) && C12238m.areEqual(this.captchaService, trackCaptchaSolved.captchaService) && C12238m.areEqual(this.captchaRequired, trackCaptchaSolved.captchaRequired) && C12238m.areEqual(this.locationGuildId, trackCaptchaSolved.locationGuildId) && C12238m.areEqual(this.locationChannelId, trackCaptchaSolved.locationChannelId) && C12238m.areEqual(this.locationChannelType, trackCaptchaSolved.locationChannelType) && C12238m.areEqual(this.locationMessageId, trackCaptchaSolved.locationMessageId);
     }
 
     public int hashCode() {
@@ -85,39 +85,39 @@ public final /* data */ class TrackCaptchaSolved implements AnalyticsSchema, Tra
     }
 
     public String toString() {
-        StringBuilder sbU = outline.U("TrackCaptchaSolved(success=");
-        sbU.append(this.success);
-        sbU.append(", forceBad=");
-        sbU.append(this.forceBad);
-        sbU.append(", challengeTs=");
-        sbU.append(this.challengeTs);
-        sbU.append(", hostname=");
-        sbU.append(this.hostname);
-        sbU.append(", scopedUid0=");
-        sbU.append(this.scopedUid0);
-        sbU.append(", scopedUid1=");
-        sbU.append(this.scopedUid1);
-        sbU.append(", sitekey=");
-        sbU.append(this.sitekey);
-        sbU.append(", score=");
-        sbU.append(this.score);
-        sbU.append(", scoreReason=");
-        sbU.append(this.scoreReason);
-        sbU.append(", errorCodes=");
-        sbU.append(this.errorCodes);
-        sbU.append(", userFlow=");
-        sbU.append(this.userFlow);
-        sbU.append(", captchaService=");
-        sbU.append(this.captchaService);
-        sbU.append(", captchaRequired=");
-        sbU.append(this.captchaRequired);
-        sbU.append(", locationGuildId=");
-        sbU.append(this.locationGuildId);
-        sbU.append(", locationChannelId=");
-        sbU.append(this.locationChannelId);
-        sbU.append(", locationChannelType=");
-        sbU.append(this.locationChannelType);
-        sbU.append(", locationMessageId=");
-        return outline.G(sbU, this.locationMessageId, ")");
+        StringBuilder sbM833U = C1643a.m833U("TrackCaptchaSolved(success=");
+        sbM833U.append(this.success);
+        sbM833U.append(", forceBad=");
+        sbM833U.append(this.forceBad);
+        sbM833U.append(", challengeTs=");
+        sbM833U.append(this.challengeTs);
+        sbM833U.append(", hostname=");
+        sbM833U.append(this.hostname);
+        sbM833U.append(", scopedUid0=");
+        sbM833U.append(this.scopedUid0);
+        sbM833U.append(", scopedUid1=");
+        sbM833U.append(this.scopedUid1);
+        sbM833U.append(", sitekey=");
+        sbM833U.append(this.sitekey);
+        sbM833U.append(", score=");
+        sbM833U.append(this.score);
+        sbM833U.append(", scoreReason=");
+        sbM833U.append(this.scoreReason);
+        sbM833U.append(", errorCodes=");
+        sbM833U.append(this.errorCodes);
+        sbM833U.append(", userFlow=");
+        sbM833U.append(this.userFlow);
+        sbM833U.append(", captchaService=");
+        sbM833U.append(this.captchaService);
+        sbM833U.append(", captchaRequired=");
+        sbM833U.append(this.captchaRequired);
+        sbM833U.append(", locationGuildId=");
+        sbM833U.append(this.locationGuildId);
+        sbM833U.append(", locationChannelId=");
+        sbM833U.append(this.locationChannelId);
+        sbM833U.append(", locationChannelType=");
+        sbM833U.append(this.locationChannelType);
+        sbM833U.append(", locationMessageId=");
+        return C1643a.m819G(sbM833U, this.locationMessageId, ")");
     }
 }

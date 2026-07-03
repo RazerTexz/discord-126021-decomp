@@ -2,7 +2,7 @@ package androidx.vectordrawable.graphics.drawable;
 
 import android.animation.TypeEvaluator;
 import androidx.annotation.RestrictTo;
-import b.d.b.a.outline;
+import p007b.p100d.p104b.p105a.C1643a;
 
 /* JADX INFO: loaded from: classes.dex */
 @RestrictTo({RestrictTo.Scope.LIBRARY_GROUP_PREFIX})
@@ -25,12 +25,12 @@ public class ArgbEvaluator implements TypeEvaluator {
         float fPow4 = (float) Math.pow(((iIntValue2 >> 16) & 255) / 255.0f, 2.2d);
         float fPow5 = (float) Math.pow(((iIntValue2 >> 8) & 255) / 255.0f, 2.2d);
         float fPow6 = (float) Math.pow((iIntValue2 & 255) / 255.0f, 2.2d);
-        float fA = outline.a(f3, f2, f, f2);
-        float fA2 = outline.a(fPow4, fPow, f, fPow);
-        float fA3 = outline.a(fPow5, fPow2, f, fPow2);
-        float fA4 = outline.a(fPow6, fPow3, f, fPow3);
-        float fPow7 = ((float) Math.pow(fA2, 0.45454545454545453d)) * 255.0f;
-        float fPow8 = ((float) Math.pow(fA3, 0.45454545454545453d)) * 255.0f;
-        return Integer.valueOf(Math.round(((float) Math.pow(fA4, 0.45454545454545453d)) * 255.0f) | (Math.round(fPow7) << 16) | (Math.round(fA * 255.0f) << 24) | (Math.round(fPow8) << 8));
+        float fM839a = C1643a.m839a(f3, f2, f, f2);
+        float fM839a2 = C1643a.m839a(fPow4, fPow, f, fPow);
+        float fM839a3 = C1643a.m839a(fPow5, fPow2, f, fPow2);
+        float fM839a4 = C1643a.m839a(fPow6, fPow3, f, fPow3);
+        float fPow7 = ((float) Math.pow(fM839a2, 0.45454545454545453d)) * 255.0f;
+        float fPow8 = ((float) Math.pow(fM839a3, 0.45454545454545453d)) * 255.0f;
+        return Integer.valueOf(Math.round(((float) Math.pow(fM839a4, 0.45454545454545453d)) * 255.0f) | (Math.round(fPow7) << 16) | (Math.round(fM839a * 255.0f) << 24) | (Math.round(fPow8) << 8));
     }
 }

@@ -5,43 +5,48 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.core.widget.NestedScrollView;
 import androidx.viewbinding.ViewBinding;
-import b.a.i.ViewUserStatusPresenceBinding;
 import com.discord.widgets.user.profile.UserStatusPresenceCustomView;
+import p007b.p008a.p025i.C0948e4;
 
 /* JADX INFO: loaded from: classes.dex */
 public final class WidgetUserStatusUpdateBinding implements ViewBinding {
 
+    /* JADX INFO: renamed from: a */
     @NonNull
-    public final NestedScrollView a;
+    public final NestedScrollView f18431a;
 
-    /* JADX INFO: renamed from: b, reason: collision with root package name */
+    /* JADX INFO: renamed from: b */
     @NonNull
-    public final UserStatusPresenceCustomView f2698b;
+    public final UserStatusPresenceCustomView f18432b;
 
+    /* JADX INFO: renamed from: c */
     @NonNull
-    public final ViewUserStatusPresenceBinding c;
+    public final C0948e4 f18433c;
 
+    /* JADX INFO: renamed from: d */
     @NonNull
-    public final ViewUserStatusPresenceBinding d;
+    public final C0948e4 f18434d;
 
+    /* JADX INFO: renamed from: e */
     @NonNull
-    public final ViewUserStatusPresenceBinding e;
+    public final C0948e4 f18435e;
 
+    /* JADX INFO: renamed from: f */
     @NonNull
-    public final ViewUserStatusPresenceBinding f;
+    public final C0948e4 f18436f;
 
-    public WidgetUserStatusUpdateBinding(@NonNull NestedScrollView nestedScrollView, @NonNull TextView textView, @NonNull UserStatusPresenceCustomView userStatusPresenceCustomView, @NonNull ViewUserStatusPresenceBinding viewUserStatusPresenceBinding, @NonNull ViewUserStatusPresenceBinding viewUserStatusPresenceBinding2, @NonNull ViewUserStatusPresenceBinding viewUserStatusPresenceBinding3, @NonNull ViewUserStatusPresenceBinding viewUserStatusPresenceBinding4) {
-        this.a = nestedScrollView;
-        this.f2698b = userStatusPresenceCustomView;
-        this.c = viewUserStatusPresenceBinding;
-        this.d = viewUserStatusPresenceBinding2;
-        this.e = viewUserStatusPresenceBinding3;
-        this.f = viewUserStatusPresenceBinding4;
+    public WidgetUserStatusUpdateBinding(@NonNull NestedScrollView nestedScrollView, @NonNull TextView textView, @NonNull UserStatusPresenceCustomView userStatusPresenceCustomView, @NonNull C0948e4 c0948e4, @NonNull C0948e4 c0948e5, @NonNull C0948e4 c0948e6, @NonNull C0948e4 c0948e7) {
+        this.f18431a = nestedScrollView;
+        this.f18432b = userStatusPresenceCustomView;
+        this.f18433c = c0948e4;
+        this.f18434d = c0948e5;
+        this.f18435e = c0948e6;
+        this.f18436f = c0948e7;
     }
 
     @Override // androidx.viewbinding.ViewBinding
     @NonNull
     public View getRoot() {
-        return this.a;
+        return this.f18431a;
     }
 }

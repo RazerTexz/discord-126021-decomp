@@ -6,30 +6,34 @@ import android.widget.TextView;
 
 /* JADX INFO: loaded from: classes.dex */
 public class SimpleDraweeSpanTextView extends TextView {
-    public DraweeSpanStringBuilder j;
-    public boolean k;
+
+    /* JADX INFO: renamed from: j */
+    public DraweeSpanStringBuilder f19521j;
+
+    /* JADX INFO: renamed from: k */
+    public boolean f19522k;
 
     public SimpleDraweeSpanTextView(Context context, AttributeSet attributeSet) {
         super(context, attributeSet);
-        this.k = false;
+        this.f19522k = false;
     }
 
     @Override // android.widget.TextView, android.view.View
     public void onAttachedToWindow() {
         super.onAttachedToWindow();
-        this.k = true;
-        DraweeSpanStringBuilder draweeSpanStringBuilder = this.j;
+        this.f19522k = true;
+        DraweeSpanStringBuilder draweeSpanStringBuilder = this.f19521j;
         if (draweeSpanStringBuilder != null) {
-            draweeSpanStringBuilder.a(this);
+            draweeSpanStringBuilder.m8684a(this);
         }
     }
 
     @Override // android.view.View
     public void onDetachedFromWindow() {
-        this.k = false;
-        DraweeSpanStringBuilder draweeSpanStringBuilder = this.j;
+        this.f19522k = false;
+        DraweeSpanStringBuilder draweeSpanStringBuilder = this.f19521j;
         if (draweeSpanStringBuilder != null) {
-            draweeSpanStringBuilder.b(this);
+            draweeSpanStringBuilder.m8685b(this);
         }
         super.onDetachedFromWindow();
     }
@@ -37,19 +41,19 @@ public class SimpleDraweeSpanTextView extends TextView {
     @Override // android.view.View
     public void onFinishTemporaryDetach() {
         super.onFinishTemporaryDetach();
-        this.k = true;
-        DraweeSpanStringBuilder draweeSpanStringBuilder = this.j;
+        this.f19522k = true;
+        DraweeSpanStringBuilder draweeSpanStringBuilder = this.f19521j;
         if (draweeSpanStringBuilder != null) {
-            draweeSpanStringBuilder.a(this);
+            draweeSpanStringBuilder.m8684a(this);
         }
     }
 
     @Override // android.view.View
     public void onStartTemporaryDetach() {
-        this.k = false;
-        DraweeSpanStringBuilder draweeSpanStringBuilder = this.j;
+        this.f19522k = false;
+        DraweeSpanStringBuilder draweeSpanStringBuilder = this.f19521j;
         if (draweeSpanStringBuilder != null) {
-            draweeSpanStringBuilder.b(this);
+            draweeSpanStringBuilder.m8685b(this);
         }
         super.onStartTemporaryDetach();
     }
@@ -57,19 +61,19 @@ public class SimpleDraweeSpanTextView extends TextView {
     @Override // android.widget.TextView
     public void onTextChanged(CharSequence charSequence, int i, int i2, int i3) {
         super.onTextChanged(charSequence, i, i2, i3);
-        DraweeSpanStringBuilder draweeSpanStringBuilder = this.j;
+        DraweeSpanStringBuilder draweeSpanStringBuilder = this.f19521j;
         if (draweeSpanStringBuilder != null) {
-            draweeSpanStringBuilder.b(this);
+            draweeSpanStringBuilder.m8685b(this);
         }
-        this.j = null;
+        this.f19521j = null;
     }
 
     public void setDraweeSpanStringBuilder(DraweeSpanStringBuilder draweeSpanStringBuilder) {
         setText(draweeSpanStringBuilder, TextView.BufferType.SPANNABLE);
-        this.j = draweeSpanStringBuilder;
-        if (draweeSpanStringBuilder == null || !this.k) {
+        this.f19521j = draweeSpanStringBuilder;
+        if (draweeSpanStringBuilder == null || !this.f19522k) {
             return;
         }
-        draweeSpanStringBuilder.a(this);
+        draweeSpanStringBuilder.m8684a(this);
     }
 }

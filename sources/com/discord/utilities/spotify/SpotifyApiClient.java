@@ -5,20 +5,20 @@ import com.discord.models.domain.ModelAuditLogEntry;
 import com.discord.models.domain.ModelConnectionAccessToken;
 import com.discord.models.domain.spotify.ModelSpotifyTrack;
 import com.discord.utilities.error.Error;
+import com.discord.utilities.p501rx.ObservableExtensionsKt;
 import com.discord.utilities.platform.Platform;
 import com.discord.utilities.rest.RestAPI;
-import com.discord.utilities.rx.ObservableExtensionsKt;
 import com.discord.utilities.time.Clock;
-import d0.z.d.Intrinsics3;
-import d0.z.d.Lambda;
 import java.util.HashMap;
 import java.util.Objects;
 import kotlin.Unit;
 import kotlin.jvm.functions.Function0;
 import kotlin.jvm.functions.Function1;
-import rx.Observable;
-import rx.Subscription;
-import rx.subjects.BehaviorSubject;
+import p507d0.p592z.p594d.AbstractC12240o;
+import p507d0.p592z.p594d.C12238m;
+import p658rx.Observable;
+import p658rx.Subscription;
+import p658rx.subjects.BehaviorSubject;
 
 /* JADX INFO: compiled from: SpotifyApiClient.kt */
 /* JADX INFO: loaded from: classes2.dex */
@@ -31,13 +31,13 @@ public final class SpotifyApiClient {
     private Subscription tokenSubscription;
     private String trackIdToFetch;
 
-    /* JADX INFO: renamed from: com.discord.utilities.spotify.SpotifyApiClient$fetchSpotifyTrack$1, reason: invalid class name */
+    /* JADX INFO: renamed from: com.discord.utilities.spotify.SpotifyApiClient$fetchSpotifyTrack$1 */
     /* JADX INFO: compiled from: SpotifyApiClient.kt */
-    public static final class AnonymousClass1 extends Lambda implements Function1<Error, Unit> {
+    public static final class C69131 extends AbstractC12240o implements Function1<Error, Unit> {
         public final /* synthetic */ String $trackId;
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-        public AnonymousClass1(String str) {
+        public C69131(String str) {
             super(1);
             this.$trackId = str;
         }
@@ -45,14 +45,14 @@ public final class SpotifyApiClient {
         @Override // kotlin.jvm.functions.Function1
         public /* bridge */ /* synthetic */ Unit invoke(Error error) {
             invoke2(error);
-            return Unit.a;
+            return Unit.f27425a;
         }
 
         /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
         public final void invoke2(Error error) {
-            Intrinsics3.checkNotNullParameter(error, "it");
+            C12238m.checkNotNullParameter(error, "it");
             Error.Response response = error.getResponse();
-            Intrinsics3.checkNotNullExpressionValue(response, "it.response");
+            C12238m.checkNotNullExpressionValue(response, "it.response");
             if (response.getCode() == 401) {
                 SpotifyApiClient.this.setTrackIdToFetch(this.$trackId);
                 SpotifyApiClient.this.refreshSpotifyToken();
@@ -60,13 +60,13 @@ public final class SpotifyApiClient {
         }
     }
 
-    /* JADX INFO: renamed from: com.discord.utilities.spotify.SpotifyApiClient$fetchSpotifyTrack$2, reason: invalid class name */
+    /* JADX INFO: renamed from: com.discord.utilities.spotify.SpotifyApiClient$fetchSpotifyTrack$2 */
     /* JADX INFO: compiled from: SpotifyApiClient.kt */
-    public static final class AnonymousClass2 extends Lambda implements Function1<ModelSpotifyTrack, Unit> {
+    public static final class C69142 extends AbstractC12240o implements Function1<ModelSpotifyTrack, Unit> {
         public final /* synthetic */ String $trackId;
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-        public AnonymousClass2(String str) {
+        public C69142(String str) {
             super(1);
             this.$trackId = str;
         }
@@ -74,28 +74,28 @@ public final class SpotifyApiClient {
         @Override // kotlin.jvm.functions.Function1
         public /* bridge */ /* synthetic */ Unit invoke(ModelSpotifyTrack modelSpotifyTrack) {
             invoke2(modelSpotifyTrack);
-            return Unit.a;
+            return Unit.f27425a;
         }
 
         /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
         public final void invoke2(ModelSpotifyTrack modelSpotifyTrack) {
-            Intrinsics3.checkNotNullParameter(modelSpotifyTrack, "track");
+            C12238m.checkNotNullParameter(modelSpotifyTrack, "track");
             SpotifyApiClient.this.setCachedTrack(modelSpotifyTrack);
             SpotifyApiClient.this.spotifyTrackSubject.onNext(SpotifyApiClient.this.getCachedTrack(this.$trackId));
         }
     }
 
-    /* JADX INFO: renamed from: com.discord.utilities.spotify.SpotifyApiClient$refreshSpotifyToken$1, reason: invalid class name */
+    /* JADX INFO: renamed from: com.discord.utilities.spotify.SpotifyApiClient$refreshSpotifyToken$1 */
     /* JADX INFO: compiled from: SpotifyApiClient.kt */
-    public static final class AnonymousClass1 extends Lambda implements Function1<ModelConnectionAccessToken, Unit> {
+    public static final class C69151 extends AbstractC12240o implements Function1<ModelConnectionAccessToken, Unit> {
 
-        /* JADX INFO: renamed from: com.discord.utilities.spotify.SpotifyApiClient$refreshSpotifyToken$1$1, reason: invalid class name and collision with other inner class name */
+        /* JADX INFO: renamed from: com.discord.utilities.spotify.SpotifyApiClient$refreshSpotifyToken$1$1, reason: invalid class name */
         /* JADX INFO: compiled from: SpotifyApiClient.kt */
-        public static final class C02241 extends Lambda implements Function0<String> {
+        public static final class AnonymousClass1 extends AbstractC12240o implements Function0<String> {
             public final /* synthetic */ ModelConnectionAccessToken $spotifyToken;
 
             /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-            public C02241(ModelConnectionAccessToken modelConnectionAccessToken) {
+            public AnonymousClass1(ModelConnectionAccessToken modelConnectionAccessToken) {
                 super(0);
                 this.$spotifyToken = modelConnectionAccessToken;
             }
@@ -106,20 +106,20 @@ public final class SpotifyApiClient {
             }
         }
 
-        public AnonymousClass1() {
+        public C69151() {
             super(1);
         }
 
         @Override // kotlin.jvm.functions.Function1
         public /* bridge */ /* synthetic */ Unit invoke(ModelConnectionAccessToken modelConnectionAccessToken) {
             invoke2(modelConnectionAccessToken);
-            return Unit.a;
+            return Unit.f27425a;
         }
 
         /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
         public final void invoke2(ModelConnectionAccessToken modelConnectionAccessToken) {
-            Intrinsics3.checkNotNullParameter(modelConnectionAccessToken, "spotifyToken");
-            RestAPI.AppHeadersProvider.spotifyTokenProvider = new C02241(modelConnectionAccessToken);
+            C12238m.checkNotNullParameter(modelConnectionAccessToken, "spotifyToken");
+            RestAPI.AppHeadersProvider.spotifyTokenProvider = new AnonymousClass1(modelConnectionAccessToken);
             SpotifyApiClient spotifyApiClient = SpotifyApiClient.this;
             spotifyApiClient.setTokenExpiresAt(spotifyApiClient.clock.currentTimeMillis() + 3600000);
             String trackIdToFetch = SpotifyApiClient.this.getTrackIdToFetch();
@@ -130,31 +130,31 @@ public final class SpotifyApiClient {
         }
     }
 
-    /* JADX INFO: renamed from: com.discord.utilities.spotify.SpotifyApiClient$refreshSpotifyToken$2, reason: invalid class name */
+    /* JADX INFO: renamed from: com.discord.utilities.spotify.SpotifyApiClient$refreshSpotifyToken$2 */
     /* JADX INFO: compiled from: SpotifyApiClient.kt */
-    public static final class AnonymousClass2 extends Lambda implements Function1<Subscription, Unit> {
-        public AnonymousClass2() {
+    public static final class C69162 extends AbstractC12240o implements Function1<Subscription, Unit> {
+        public C69162() {
             super(1);
         }
 
         @Override // kotlin.jvm.functions.Function1
         public /* bridge */ /* synthetic */ Unit invoke(Subscription subscription) {
             invoke2(subscription);
-            return Unit.a;
+            return Unit.f27425a;
         }
 
         /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
         public final void invoke2(Subscription subscription) {
-            Intrinsics3.checkNotNullParameter(subscription, "it");
+            C12238m.checkNotNullParameter(subscription, "it");
             SpotifyApiClient.this.tokenSubscription = subscription;
         }
     }
 
     public SpotifyApiClient(Clock clock) {
-        Intrinsics3.checkNotNullParameter(clock, "clock");
+        C12238m.checkNotNullParameter(clock, "clock");
         this.clock = clock;
         this.spotifyTracks = new HashMap<>();
-        this.spotifyTrackSubject = BehaviorSubject.k0();
+        this.spotifyTrackSubject = BehaviorSubject.m11129k0();
     }
 
     private final synchronized ModelSpotifyTrack getCachedTrack(String trackId) {
@@ -182,8 +182,8 @@ public final class SpotifyApiClient {
             String strName = Platform.SPOTIFY.name();
             Objects.requireNonNull(strName, "null cannot be cast to non-null type java.lang.String");
             String lowerCase = strName.toLowerCase();
-            Intrinsics3.checkNotNullExpressionValue(lowerCase, "(this as java.lang.String).toLowerCase()");
-            ObservableExtensionsKt.appSubscribe(ObservableExtensionsKt.restSubscribeOn$default(api.getConnectionAccessToken(lowerCase, str), false, 1, null), (Class<?>) SpotifyApiClient.class, (58 & 2) != 0 ? null : null, (Function1<? super Subscription, Unit>) ((58 & 4) != 0 ? null : new AnonymousClass2()), (Function1<? super Error, Unit>) ((58 & 8) != 0 ? null : null), (Function0<Unit>) ((58 & 16) != 0 ? ObservableExtensionsKt.AnonymousClass1.INSTANCE : null), (Function0<Unit>) ((58 & 32) != 0 ? ObservableExtensionsKt.AnonymousClass2.INSTANCE : null), new AnonymousClass1());
+            C12238m.checkNotNullExpressionValue(lowerCase, "(this as java.lang.String).toLowerCase()");
+            ObservableExtensionsKt.appSubscribe(ObservableExtensionsKt.restSubscribeOn$default(api.getConnectionAccessToken(lowerCase, str), false, 1, null), (Class<?>) SpotifyApiClient.class, (58 & 2) != 0 ? null : null, (Function1<? super Subscription, Unit>) ((58 & 4) != 0 ? null : new C69162()), (Function1<? super Error, Unit>) ((58 & 8) != 0 ? null : null), (Function0<Unit>) ((58 & 16) != 0 ? ObservableExtensionsKt.C68791.INSTANCE : null), (Function0<Unit>) ((58 & 32) != 0 ? ObservableExtensionsKt.C68802.INSTANCE : null), new C69151());
         }
     }
 
@@ -200,7 +200,7 @@ public final class SpotifyApiClient {
     }
 
     public final void fetchSpotifyTrack(String trackId) {
-        Intrinsics3.checkNotNullParameter(trackId, "trackId");
+        C12238m.checkNotNullParameter(trackId, "trackId");
         if (getCachedTrack(trackId) != null) {
             this.spotifyTrackSubject.onNext(getCachedTrack(trackId));
             return;
@@ -210,13 +210,13 @@ public final class SpotifyApiClient {
             setTrackIdToFetch(trackId);
             refreshSpotifyToken();
         } else {
-            ObservableExtensionsKt.appSubscribe(ObservableExtensionsKt.restSubscribeOn$default(RestAPI.INSTANCE.getApiSpotify().getSpotifyTrack(trackId), false, 1, null), (Class<?>) SpotifyApiClient.class, (58 & 2) != 0 ? null : null, (Function1<? super Subscription, Unit>) ((58 & 4) != 0 ? null : null), (Function1<? super Error, Unit>) ((58 & 8) != 0 ? null : new AnonymousClass1(trackId)), (Function0<Unit>) ((58 & 16) != 0 ? ObservableExtensionsKt.AnonymousClass1.INSTANCE : null), (Function0<Unit>) ((58 & 32) != 0 ? ObservableExtensionsKt.AnonymousClass2.INSTANCE : null), new AnonymousClass2(trackId));
+            ObservableExtensionsKt.appSubscribe(ObservableExtensionsKt.restSubscribeOn$default(RestAPI.INSTANCE.getApiSpotify().getSpotifyTrack(trackId), false, 1, null), (Class<?>) SpotifyApiClient.class, (58 & 2) != 0 ? null : null, (Function1<? super Subscription, Unit>) ((58 & 4) != 0 ? null : null), (Function1<? super Error, Unit>) ((58 & 8) != 0 ? null : new C69131(trackId)), (Function0<Unit>) ((58 & 16) != 0 ? ObservableExtensionsKt.C68791.INSTANCE : null), (Function0<Unit>) ((58 & 32) != 0 ? ObservableExtensionsKt.C68802.INSTANCE : null), new C69142(trackId));
         }
     }
 
     public final Observable<ModelSpotifyTrack> getSpotifyTrack() {
         BehaviorSubject<ModelSpotifyTrack> behaviorSubject = this.spotifyTrackSubject;
-        Intrinsics3.checkNotNullExpressionValue(behaviorSubject, "spotifyTrackSubject");
+        C12238m.checkNotNullExpressionValue(behaviorSubject, "spotifyTrackSubject");
         return behaviorSubject;
     }
 

@@ -19,7 +19,9 @@ import lombok.permit.Permit;
 
 /* JADX INFO: loaded from: app.apk:lombok/javac/JavacTreeMaker.SCL.lombok */
 public class JavacTreeMaker {
-    private final TreeMaker tm;
+
+    /* JADX INFO: renamed from: tm */
+    private final TreeMaker f27479tm;
     private static final ConcurrentHashMap<FieldId<?>, Object> FIELD_CACHE = new ConcurrentHashMap<>();
     private static final Object REFLECTIVE_ITEM_NOT_FOUND = new Object[0];
     private static final Object REFLECTIVE_ITEM_MULTIPLE_FOUND = new Object[0];
@@ -45,7 +47,9 @@ public class JavacTreeMaker {
     private static final MethodId<JCTree.JCTry> TryWithResources = MethodId("Try", JCTree.JCTry.class, List.class, JCTree.JCBlock.class, List.class, JCTree.JCBlock.class);
     private static final MethodId<JCTree.JCCatch> Catch = MethodId("Catch");
     private static final MethodId<JCTree.JCConditional> Conditional = MethodId("Conditional");
-    private static final MethodId<JCTree.JCIf> If = MethodId("If");
+
+    /* JADX INFO: renamed from: If */
+    private static final MethodId<JCTree.JCIf> f27480If = MethodId("If");
     private static final MethodId<JCTree.JCExpressionStatement> Exec = MethodId("Exec");
     private static final MethodId<JCTree.JCBreak> Break11 = MethodId("Break", JCTree.JCBreak.class, Name.class);
     private static final MethodId<JCTree.JCBreak> Break12 = MethodId("Break", JCTree.JCBreak.class, JCTree.JCExpression.class);
@@ -104,15 +108,16 @@ public class JavacTreeMaker {
     }
 
     public JavacTreeMaker(TreeMaker tm) {
-        this.tm = tm;
+        this.f27479tm = tm;
     }
 
     public TreeMaker getUnderlyingTreeMaker() {
-        return this.tm;
+        return this.f27479tm;
     }
 
-    public JavacTreeMaker at(int pos) {
-        this.tm.at(pos);
+    /* JADX INFO: renamed from: at */
+    public JavacTreeMaker m10939at(int pos) {
+        this.f27479tm.at(pos);
         return this;
     }
 
@@ -464,7 +469,7 @@ public class JavacTreeMaker {
     }
 
     private <J> J invoke(MethodId<J> methodId, Object... objArr) {
-        return (J) invokeAny(this.tm, methodId, objArr);
+        return (J) invokeAny(this.f27479tm, methodId, objArr);
     }
 
     private static <J> J invokeAny(Object obj, MethodId<J> methodId, Object... objArr) {
@@ -662,8 +667,9 @@ public class JavacTreeMaker {
         return (JCTree.JCConditional) invoke(Conditional, cond, thenpart, elsepart);
     }
 
-    public JCTree.JCIf If(JCTree.JCExpression cond, JCTree.JCStatement thenpart, JCTree.JCStatement elsepart) {
-        return (JCTree.JCIf) invoke(If, cond, thenpart, elsepart);
+    /* JADX INFO: renamed from: If */
+    public JCTree.JCIf m10940If(JCTree.JCExpression cond, JCTree.JCStatement thenpart, JCTree.JCStatement elsepart) {
+        return (JCTree.JCIf) invoke(f27480If, cond, thenpart, elsepart);
     }
 
     public JCTree.JCExpressionStatement Exec(JCTree.JCExpression expr) {

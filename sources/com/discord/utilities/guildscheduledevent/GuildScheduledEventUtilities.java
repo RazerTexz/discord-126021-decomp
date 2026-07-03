@@ -2,8 +2,6 @@ package com.discord.utilities.guildscheduledevent;
 
 import android.content.Context;
 import androidx.fragment.app.Fragment;
-import b.a.d.AppToast;
-import b.d.b.a.outline;
 import com.discord.api.channel.Channel;
 import com.discord.api.channel.ChannelUtils;
 import com.discord.api.guildscheduledevent.GuildScheduledEvent;
@@ -18,14 +16,12 @@ import com.discord.stores.StoreStream;
 import com.discord.stores.StoreUser;
 import com.discord.stores.StoreVoiceParticipants;
 import com.discord.stores.updates.ObservationDeck;
-import com.discord.stores.updates.ObservationDeck4;
+import com.discord.stores.updates.ObservationDeckProvider;
 import com.discord.utilities.error.Error;
+import com.discord.utilities.p501rx.ObservableExtensionsKt;
 import com.discord.utilities.permissions.PermissionUtils;
-import com.discord.utilities.rx.ObservableExtensionsKt;
 import com.discord.widgets.guildscheduledevent.GuildScheduledEventUrlUtils;
 import com.discord.widgets.voice.model.CallModel;
-import d0.t.Maps6;
-import d0.z.d.Intrinsics3;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
@@ -34,8 +30,12 @@ import kotlin.Unit;
 import kotlin.jvm.functions.Function0;
 import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.DefaultConstructorMarker;
-import rx.Observable;
-import rx.Subscription;
+import p007b.p008a.p018d.C0876m;
+import p007b.p100d.p104b.p105a.C1643a;
+import p507d0.p580t.C12136h0;
+import p507d0.p592z.p594d.C12238m;
+import p658rx.Observable;
+import p658rx.Subscription;
 
 /* JADX INFO: compiled from: GuildScheduledEventUtilities.kt */
 /* JADX INFO: loaded from: classes2.dex */
@@ -79,7 +79,7 @@ public final class GuildScheduledEventUtilities {
             ArrayList arrayList = new ArrayList();
             for (Object obj : collectionValues) {
                 Channel channel = (Channel) obj;
-                if (GuildScheduledEventUtilities.INSTANCE.canStartEventInChannel(channel, (Long) outline.d(channel, permissionsByChannel))) {
+                if (GuildScheduledEventUtilities.INSTANCE.canStartEventInChannel(channel, (Long) C1643a.m845d(channel, permissionsByChannel))) {
                     arrayList.add(obj);
                 }
             }
@@ -105,7 +105,7 @@ public final class GuildScheduledEventUtilities {
 
         public static /* synthetic */ Observable observeCanCreateAnyEvent$default(Companion companion, long j, ObservationDeck observationDeck, StoreChannels storeChannels, StorePermissions storePermissions, int i, Object obj) {
             if ((i & 2) != 0) {
-                observationDeck = ObservationDeck4.get();
+                observationDeck = ObservationDeckProvider.get();
             }
             ObservationDeck observationDeck2 = observationDeck;
             if ((i & 4) != 0) {
@@ -119,8 +119,8 @@ public final class GuildScheduledEventUtilities {
         }
 
         public final boolean canCreateAnyEvent(long guildId, StoreChannels channelsStore, StorePermissions permissionsStore) {
-            Intrinsics3.checkNotNullParameter(channelsStore, "channelsStore");
-            Intrinsics3.checkNotNullParameter(permissionsStore, "permissionsStore");
+            C12238m.checkNotNullParameter(channelsStore, "channelsStore");
+            C12238m.checkNotNullParameter(permissionsStore, "permissionsStore");
             Long l = permissionsStore.getGuildPermissions().get(Long.valueOf(guildId));
             if (l == null) {
                 return false;
@@ -137,10 +137,10 @@ public final class GuildScheduledEventUtilities {
 
         public final boolean canShareEvent(Long channelId, long guildId, StoreChannels channelsStore, StoreGuilds guildsStore, StoreUser usersStore, StorePermissions permissionsStore) {
             GuildMember member;
-            Intrinsics3.checkNotNullParameter(channelsStore, "channelsStore");
-            Intrinsics3.checkNotNullParameter(guildsStore, "guildsStore");
-            Intrinsics3.checkNotNullParameter(usersStore, "usersStore");
-            Intrinsics3.checkNotNullParameter(permissionsStore, "permissionsStore");
+            C12238m.checkNotNullParameter(channelsStore, "channelsStore");
+            C12238m.checkNotNullParameter(guildsStore, "guildsStore");
+            C12238m.checkNotNullParameter(usersStore, "usersStore");
+            C12238m.checkNotNullParameter(permissionsStore, "permissionsStore");
             if (channelId == null) {
                 return PermissionUtils.can(1L, permissionsStore.getGuildPermissions().get(Long.valueOf(guildId)));
             }
@@ -149,16 +149,16 @@ public final class GuildScheduledEventUtilities {
                 return false;
             }
             PermissionUtils permissionUtils = PermissionUtils.INSTANCE;
-            Map<Long, GuildRole> mapEmptyMap = (Map) outline.c(channel, guildsStore.getRoles());
+            Map<Long, GuildRole> mapEmptyMap = (Map) C1643a.m843c(channel, guildsStore.getRoles());
             if (mapEmptyMap == null) {
-                mapEmptyMap = Maps6.emptyMap();
+                mapEmptyMap = C12136h0.emptyMap();
             }
             return (!permissionUtils.canEveryoneRole(Permission.VIEW_CHANNEL, channel, mapEmptyMap) || (member = guildsStore.getMember(channel.getGuildId(), usersStore.getMeSnapshot().getId())) == null || member.getPending()) ? false : true;
         }
 
         public final boolean canStartEvent(long guildId, Long channelId, StoreChannels channelsStore, StorePermissions permissionsStore) {
-            Intrinsics3.checkNotNullParameter(channelsStore, "channelsStore");
-            Intrinsics3.checkNotNullParameter(permissionsStore, "permissionsStore");
+            C12238m.checkNotNullParameter(channelsStore, "channelsStore");
+            C12238m.checkNotNullParameter(permissionsStore, "permissionsStore");
             if (channelId == null) {
                 Long l = permissionsStore.getGuildPermissions().get(Long.valueOf(guildId));
                 if (l != null) {
@@ -175,14 +175,14 @@ public final class GuildScheduledEventUtilities {
         }
 
         public final boolean canStartEventInChannel(Channel channel, Long channelPermissions) {
-            Intrinsics3.checkNotNullParameter(channel, "channel");
+            C12238m.checkNotNullParameter(channel, "channel");
             if (!PermissionUtils.can(8589935616L, channelPermissions)) {
                 return false;
             }
-            if (ChannelUtils.D(channel)) {
+            if (ChannelUtils.m7669D(channel)) {
                 return PermissionUtils.can(Permission.START_STAGE_EVENT, channelPermissions);
             }
-            if (ChannelUtils.J(channel)) {
+            if (ChannelUtils.m7675J(channel)) {
                 return PermissionUtils.can(Permission.START_VOICE_EVENT, channelPermissions);
             }
             return false;
@@ -190,17 +190,17 @@ public final class GuildScheduledEventUtilities {
 
         public final GuildScheduledEvent getGuildScheduledEventToEndForCall(CallModel callModel, Long myPermissions, StoreGuilds guildsStore) {
             GuildScheduledEvent liveEvent;
-            Intrinsics3.checkNotNullParameter(callModel, "callModel");
-            Intrinsics3.checkNotNullParameter(guildsStore, "guildsStore");
+            C12238m.checkNotNullParameter(callModel, "callModel");
+            C12238m.checkNotNullParameter(guildsStore, "guildsStore");
             Channel channel = callModel.getChannel();
             Guild guild = guildsStore.getGuild(channel.getGuildId());
-            if (guild == null || (liveEvent = GuildScheduledEventUtilities5.getLiveEvent(callModel.getGuildScheduledEvents())) == null || !canStartEventInChannel(channel, myPermissions)) {
+            if (guild == null || (liveEvent = GuildScheduledEventUtilitiesKt.getLiveEvent(callModel.getGuildScheduledEvents())) == null || !canStartEventInChannel(channel, myPermissions)) {
                 return null;
             }
-            Map map = (Map) outline.e(guild, guildsStore.getRoles());
+            Map map = (Map) C1643a.m847e(guild, guildsStore.getRoles());
             for (Map.Entry<Long, StoreVoiceParticipants.VoiceUser> entry : callModel.getParticipants().entrySet()) {
                 long jLongValue = entry.getKey().longValue();
-                if (!entry.getValue().isMe() && !canStartEventInChannel(channel, Long.valueOf(PermissionUtils.computeNonThreadPermissions(jLongValue, guild.getId(), guild.getOwnerId(), entry.getValue().getGuildMember(), map, channel.v())))) {
+                if (!entry.getValue().isMe() && !canStartEventInChannel(channel, Long.valueOf(PermissionUtils.computeNonThreadPermissions(jLongValue, guild.getId(), guild.getOwnerId(), entry.getValue().getGuildMember(), map, channel.m7655v())))) {
                     return null;
                 }
             }
@@ -215,9 +215,9 @@ public final class GuildScheduledEventUtilities {
             Channel channel = companion.getChannels().getChannel(channelId.longValue());
             if (channel != null) {
                 PermissionUtils permissionUtils = PermissionUtils.INSTANCE;
-                Map<Long, GuildRole> mapEmptyMap = (Map) outline.c(channel, companion.getGuilds().getRoles());
+                Map<Long, GuildRole> mapEmptyMap = (Map) C1643a.m843c(channel, companion.getGuilds().getRoles());
                 if (mapEmptyMap == null) {
-                    mapEmptyMap = Maps6.emptyMap();
+                    mapEmptyMap = C12136h0.emptyMap();
                 }
                 if (permissionUtils.canEveryoneRole(Permission.VIEW_CHANNEL, channel, mapEmptyMap)) {
                     return true;
@@ -227,26 +227,26 @@ public final class GuildScheduledEventUtilities {
         }
 
         public final void launchInvite(boolean canShare, Fragment fragment, long guildId, Channel channel, long guildEventId) {
-            Intrinsics3.checkNotNullParameter(fragment, "fragment");
+            C12238m.checkNotNullParameter(fragment, "fragment");
             if (canShare) {
-                Observable<Channel> observableZ = StoreStream.INSTANCE.getChannels().observeDefaultChannel(guildId).z();
-                Intrinsics3.checkNotNullExpressionValue(observableZ, "StoreStream.getChannels(…dId)\n            .first()");
-                ObservableExtensionsKt.appSubscribe(observableZ, (Class<?>) fragment.getClass(), (58 & 2) != 0 ? null : null, (Function1<? super Subscription, Unit>) ((58 & 4) != 0 ? null : null), (Function1<? super Error, Unit>) ((58 & 8) != 0 ? null : null), (Function0<Unit>) ((58 & 16) != 0 ? ObservableExtensionsKt.AnonymousClass1.INSTANCE : null), (Function0<Unit>) ((58 & 32) != 0 ? ObservableExtensionsKt.AnonymousClass2.INSTANCE : null), new GuildScheduledEventUtilities3(fragment, channel, guildEventId));
+                Observable<Channel> observableM11119z = StoreStream.INSTANCE.getChannels().observeDefaultChannel(guildId).m11119z();
+                C12238m.checkNotNullExpressionValue(observableM11119z, "StoreStream.getChannels(…dId)\n            .first()");
+                ObservableExtensionsKt.appSubscribe(observableM11119z, (Class<?>) fragment.getClass(), (58 & 2) != 0 ? null : null, (Function1<? super Subscription, Unit>) ((58 & 4) != 0 ? null : null), (Function1<? super Error, Unit>) ((58 & 8) != 0 ? null : null), (Function0<Unit>) ((58 & 16) != 0 ? ObservableExtensionsKt.C68791.INSTANCE : null), (Function0<Unit>) ((58 & 32) != 0 ? ObservableExtensionsKt.C68802.INSTANCE : null), new GuildScheduledEventUtilities$Companion$launchInvite$1(fragment, channel, guildEventId));
                 return;
             }
             Context context = fragment.getContext();
             if (context != null) {
                 CharSequence eventDetailsUrl = GuildScheduledEventUrlUtils.INSTANCE.getEventDetailsUrl(guildId, guildEventId);
-                Intrinsics3.checkNotNullExpressionValue(context, "context");
-                AppToast.c(context, eventDetailsUrl, 0, 4);
+                C12238m.checkNotNullExpressionValue(context, "context");
+                C0876m.m165c(context, eventDetailsUrl, 0, 4);
             }
         }
 
         public final Observable<Boolean> observeCanCreateAnyEvent(long guildId, ObservationDeck observationDeck, StoreChannels channelsStore, StorePermissions permissionsStore) {
-            Intrinsics3.checkNotNullParameter(observationDeck, "observationDeck");
-            Intrinsics3.checkNotNullParameter(channelsStore, "channelsStore");
-            Intrinsics3.checkNotNullParameter(permissionsStore, "permissionsStore");
-            return ObservationDeck.connectRx$default(observationDeck, new ObservationDeck.UpdateSource[]{channelsStore, permissionsStore}, false, null, null, new GuildScheduledEventUtilities4(guildId, channelsStore, permissionsStore), 14, null);
+            C12238m.checkNotNullParameter(observationDeck, "observationDeck");
+            C12238m.checkNotNullParameter(channelsStore, "channelsStore");
+            C12238m.checkNotNullParameter(permissionsStore, "permissionsStore");
+            return ObservationDeck.connectRx$default(observationDeck, new ObservationDeck.UpdateSource[]{channelsStore, permissionsStore}, false, null, null, new C6769x2d8a233d(guildId, channelsStore, permissionsStore), 14, null);
         }
 
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {

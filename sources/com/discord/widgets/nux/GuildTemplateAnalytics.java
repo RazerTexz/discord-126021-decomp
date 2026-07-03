@@ -1,7 +1,7 @@
 package com.discord.widgets.nux;
 
 import com.discord.utilities.analytics.AnalyticsTracker;
-import d0.z.d.Intrinsics3;
+import p507d0.p592z.p594d.C12238m;
 
 /* JADX INFO: compiled from: GuildTemplateAnalytics.kt */
 /* JADX INFO: loaded from: classes2.dex */
@@ -20,13 +20,13 @@ public final class GuildTemplateAnalytics {
     }
 
     public final void postRegistrationSkip$app_productionGoogleRelease(String fromStep) {
-        Intrinsics3.checkNotNullParameter(fromStep, "fromStep");
+        C12238m.checkNotNullParameter(fromStep, "fromStep");
         AnalyticsTracker.newUserOnboarding$default(AnalyticsTracker.INSTANCE, FLOW_TYPE_POST_REG, fromStep, STEP_FRIENDS_LIST, null, true, 8, null);
     }
 
     public final void postRegistrationTransition$app_productionGoogleRelease(String fromStep, String toStep) {
-        Intrinsics3.checkNotNullParameter(fromStep, "fromStep");
-        Intrinsics3.checkNotNullParameter(toStep, "toStep");
+        C12238m.checkNotNullParameter(fromStep, "fromStep");
+        C12238m.checkNotNullParameter(toStep, "toStep");
         AnalyticsTracker.newUserOnboarding$default(AnalyticsTracker.INSTANCE, FLOW_TYPE_POST_REG, fromStep, toStep, null, false, 24, null);
     }
 }

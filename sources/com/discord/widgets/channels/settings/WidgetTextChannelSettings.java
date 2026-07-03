@@ -14,16 +14,7 @@ import androidx.appcompat.app.AlertDialog;
 import androidx.exifinterface.media.ExifInterface;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentActivity;
-import b.a.d.AppHelpDesk;
-import b.a.d.AppScreen2;
-import b.a.d.AppToast;
-import b.a.d.o;
-import b.a.i.WidgetChannelSettingsCannotDeleteBinding;
-import b.a.i.WidgetChannelSettingsDeleteBinding;
-import b.a.k.FormatUtils;
-import b.a.y.OnSeekBarChangeListenerAdapter;
-import b.d.b.a.outline;
-import com.discord.R;
+import com.discord.C5419R;
 import com.discord.api.channel.Channel;
 import com.discord.api.channel.ChannelUtils;
 import com.discord.api.guild.GuildFeature;
@@ -38,16 +29,16 @@ import com.discord.stores.StoreStream;
 import com.discord.stores.StoreUser;
 import com.discord.stores.StoreUserGuildSettings;
 import com.discord.utilities.error.Error;
+import com.discord.utilities.p501rx.ObservableExtensionsKt;
 import com.discord.utilities.permissions.PermissionUtils;
-import com.discord.utilities.resources.DurationUtils2;
-import com.discord.utilities.resources.DurationUtils3;
+import com.discord.utilities.resources.DurationUnit;
+import com.discord.utilities.resources.DurationUtilsKt;
 import com.discord.utilities.rest.RestAPI;
-import com.discord.utilities.rx.ObservableExtensionsKt;
 import com.discord.utilities.stateful.StatefulViews;
 import com.discord.utilities.threads.ThreadUtils;
 import com.discord.utilities.view.extensions.ViewExtensions;
 import com.discord.utilities.viewbinding.FragmentViewBindingDelegate;
-import com.discord.utilities.viewbinding.FragmentViewBindingDelegate3;
+import com.discord.utilities.viewbinding.FragmentViewBindingDelegateKt;
 import com.discord.views.CheckedSetting;
 import com.discord.widgets.channels.permissions.WidgetChannelSettingsPermissionsOverview;
 import com.discord.widgets.channels.settings.WidgetTextChannelSettings;
@@ -56,13 +47,6 @@ import com.google.android.material.button.MaterialButton;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.radiobutton.MaterialRadioButton;
 import com.google.android.material.textfield.TextInputLayout;
-import d0.Tuples;
-import d0.t.Collections2;
-import d0.t.Maps6;
-import d0.z.d.Intrinsics3;
-import d0.z.d.Lambda;
-import j0.k.Func1;
-import j0.l.e.ScalarSynchronousObservable;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
@@ -71,11 +55,27 @@ import kotlin.jvm.functions.Function0;
 import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.reflect.KProperty;
-import rx.Observable;
-import rx.Subscription;
-import rx.functions.Action1;
-import rx.functions.Action2;
-import rx.functions.Func3;
+import p007b.p008a.p018d.C0862f;
+import p007b.p008a.p018d.C0870j;
+import p007b.p008a.p018d.C0876m;
+import p007b.p008a.p018d.C0879o;
+import p007b.p008a.p025i.C1042r4;
+import p007b.p008a.p025i.C1049s4;
+import p007b.p008a.p027k.C1107b;
+import p007b.p008a.p062y.C1337j;
+import p007b.p100d.p104b.p105a.C1643a;
+import p507d0.C12116o;
+import p507d0.p580t.C12136h0;
+import p507d0.p580t.C12147n;
+import p507d0.p592z.p594d.AbstractC12240o;
+import p507d0.p592z.p594d.C12238m;
+import p637j0.p641k.InterfaceC12589b;
+import p637j0.p642l.p647e.C12721k;
+import p658rx.Observable;
+import p658rx.Subscription;
+import p658rx.functions.Action1;
+import p658rx.functions.Action2;
+import p658rx.functions.Func3;
 
 /* JADX INFO: compiled from: WidgetTextChannelSettings.kt */
 /* JADX INFO: loaded from: classes2.dex */
@@ -87,11 +87,11 @@ public final class WidgetTextChannelSettings extends AppFragment {
     /* JADX INFO: renamed from: binding$delegate, reason: from kotlin metadata */
     private final FragmentViewBindingDelegate binding;
     private final StatefulViews state;
-    public static final /* synthetic */ KProperty[] $$delegatedProperties = {outline.d0(WidgetTextChannelSettings.class, "binding", "getBinding()Lcom/discord/databinding/WidgetTextChannelSettingsBinding;", 0)};
+    public static final /* synthetic */ KProperty[] $$delegatedProperties = {C1643a.m846d0(WidgetTextChannelSettings.class, "binding", "getBinding()Lcom/discord/databinding/WidgetTextChannelSettingsBinding;", 0)};
 
     /* JADX INFO: renamed from: Companion, reason: from kotlin metadata */
     public static final Companion INSTANCE = new Companion(null);
-    private static final List<Integer> SLOWMODE_COOLDOWN_VALUES = Collections2.listOf((Object[]) new Integer[]{0, 5, 10, 15, 30, 60, 120, 300, 600, 900, Integer.valueOf(ModelInvite.Settings.HALF_HOUR), 3600, 7200, Integer.valueOf(ModelInvite.Settings.SIX_HOURS)});
+    private static final List<Integer> SLOWMODE_COOLDOWN_VALUES = C12147n.listOf((Object[]) new Integer[]{0, 5, 10, 15, 30, 60, 120, 300, 600, 900, Integer.valueOf(ModelInvite.Settings.HALF_HOUR), 3600, 7200, Integer.valueOf(ModelInvite.Settings.SIX_HOURS)});
 
     /* JADX INFO: compiled from: WidgetTextChannelSettings.kt */
     public static final class Companion {
@@ -100,7 +100,7 @@ public final class WidgetTextChannelSettings extends AppFragment {
 
         public static /* synthetic */ void setDurationSecondsLabel$default(Companion companion, TextView textView, int i, Context context, int i2, int i3, Object obj) {
             if ((i3 & 8) != 0) {
-                i2 = R.string.form_label_slowmode_off;
+                i2 = C5419R.string.form_label_slowmode_off;
             }
             companion.setDurationSecondsLabel(textView, i, context, i2);
         }
@@ -110,29 +110,29 @@ public final class WidgetTextChannelSettings extends AppFragment {
         }
 
         public final void launch(long channelId, Context context) {
-            Intrinsics3.checkNotNullParameter(context, "context");
+            C12238m.checkNotNullParameter(context, "context");
             Intent intentPutExtra = new Intent().putExtra("com.discord.intent.extra.EXTRA_CHANNEL_ID", channelId);
-            Intrinsics3.checkNotNullExpressionValue(intentPutExtra, "Intent()\n          .putE…RA_CHANNEL_ID, channelId)");
-            AppScreen2.d(context, WidgetTextChannelSettings.class, intentPutExtra);
+            C12238m.checkNotNullExpressionValue(intentPutExtra, "Intent()\n          .putE…RA_CHANNEL_ID, channelId)");
+            C0870j.m156d(context, WidgetTextChannelSettings.class, intentPutExtra);
         }
 
         public final void setDurationSecondsLabel(TextView textView, int seconds, Context context, int zeroLabel) {
-            Intrinsics3.checkNotNullParameter(textView, "textView");
-            Intrinsics3.checkNotNullParameter(context, "context");
+            C12238m.checkNotNullParameter(textView, "textView");
+            C12238m.checkNotNullParameter(context, "context");
             if (seconds == 0) {
                 textView.setText(context.getString(zeroLabel));
                 return;
             }
             if (1 <= seconds && 60 > seconds) {
-                DurationUtils3.setDurationText(textView, DurationUtils2.SECONDS, seconds);
+                DurationUtilsKt.setDurationText(textView, DurationUnit.SECONDS, seconds);
                 return;
             }
             if (60 <= seconds && 3600 > seconds) {
-                DurationUtils3.setDurationText(textView, DurationUtils2.MINS, seconds / 60);
+                DurationUtilsKt.setDurationText(textView, DurationUnit.MINS, seconds / 60);
             } else if (3600 <= seconds && 86400 > seconds) {
-                DurationUtils3.setDurationText(textView, DurationUtils2.HOURS, seconds / 3600);
+                DurationUtilsKt.setDurationText(textView, DurationUnit.HOURS, seconds / 3600);
             } else {
-                DurationUtils3.setDurationText(textView, DurationUtils2.DAYS, seconds / 86400);
+                DurationUtilsKt.setDurationText(textView, DurationUnit.DAYS, seconds / 86400);
             }
         }
 
@@ -161,15 +161,15 @@ public final class WidgetTextChannelSettings extends AppFragment {
             }
 
             public final Observable<Model> get(final long channelId) {
-                Observable<R> observableY = StoreStream.INSTANCE.getChannels().observeChannel(channelId).Y(new Func1<Channel, Observable<? extends Model>>() { // from class: com.discord.widgets.channels.settings.WidgetTextChannelSettings$Model$Companion$get$1
-                    @Override // j0.k.Func1
+                Observable<R> observableM11099Y = StoreStream.INSTANCE.getChannels().observeChannel(channelId).m11099Y(new InterfaceC12589b<Channel, Observable<? extends Model>>() { // from class: com.discord.widgets.channels.settings.WidgetTextChannelSettings$Model$Companion$get$1
+                    @Override // p637j0.p641k.InterfaceC12589b
                     public final Observable<? extends WidgetTextChannelSettings.Model> call(final Channel channel) {
-                        if (channel == null || ChannelUtils.H(channel)) {
-                            return new ScalarSynchronousObservable(null);
+                        if (channel == null || ChannelUtils.m7673H(channel)) {
+                            return new C12721k(null);
                         }
                         StoreStream.Companion companion = StoreStream.INSTANCE;
-                        return Observable.i(companion.getGuilds().observeGuild(channel.getGuildId()), StoreUser.observeMe$default(companion.getUsers(), false, 1, null), companion.getPermissions().observePermissionsForChannel(channelId), new Func3<Guild, MeUser, Long, WidgetTextChannelSettings.Model>() { // from class: com.discord.widgets.channels.settings.WidgetTextChannelSettings$Model$Companion$get$1.1
-                            @Override // rx.functions.Func3
+                        return Observable.m11075i(companion.getGuilds().observeGuild(channel.getGuildId()), StoreUser.observeMe$default(companion.getUsers(), false, 1, null), companion.getPermissions().observePermissionsForChannel(channelId), new Func3<Guild, MeUser, Long, WidgetTextChannelSettings.Model>() { // from class: com.discord.widgets.channels.settings.WidgetTextChannelSettings$Model$Companion$get$1.1
+                            @Override // p658rx.functions.Func3
                             public final WidgetTextChannelSettings.Model call(Guild guild, MeUser meUser, Long l) {
                                 Long publicUpdatesChannelId;
                                 Long rulesChannelId;
@@ -185,10 +185,10 @@ public final class WidgetTextChannelSettings extends AppFragment {
                         });
                     }
                 });
-                Intrinsics3.checkNotNullExpressionValue(observableY, "StoreStream\n            …        }\n              }");
-                Observable<Model> observableR = ObservableExtensionsKt.computationLatest(observableY).r();
-                Intrinsics3.checkNotNullExpressionValue(observableR, "StoreStream\n            …  .distinctUntilChanged()");
-                return observableR;
+                C12238m.checkNotNullExpressionValue(observableM11099Y, "StoreStream\n            …        }\n              }");
+                Observable<Model> observableM11112r = ObservableExtensionsKt.computationLatest(observableM11099Y).m11112r();
+                C12238m.checkNotNullExpressionValue(observableM11112r, "StoreStream\n            …  .distinctUntilChanged()");
+                return observableM11112r;
             }
 
             public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
@@ -197,8 +197,8 @@ public final class WidgetTextChannelSettings extends AppFragment {
         }
 
         public Model(Guild guild, Channel channel, boolean z2, boolean z3, boolean z4, boolean z5, boolean z6, boolean z7) {
-            Intrinsics3.checkNotNullParameter(guild, "guild");
-            Intrinsics3.checkNotNullParameter(channel, "channel");
+            C12238m.checkNotNullParameter(guild, "guild");
+            C12238m.checkNotNullParameter(channel, "channel");
             this.guild = guild;
             this.channel = channel;
             this.canManageChannel = z2;
@@ -250,8 +250,8 @@ public final class WidgetTextChannelSettings extends AppFragment {
         }
 
         public final Model copy(Guild guild, Channel channel, boolean canManageChannel, boolean canManagePermissions, boolean isPinsEnabled, boolean isPublicGuildRulesChannel, boolean isPublicGuildUpdatesChannel, boolean isCommunityGuild) {
-            Intrinsics3.checkNotNullParameter(guild, "guild");
-            Intrinsics3.checkNotNullParameter(channel, "channel");
+            C12238m.checkNotNullParameter(guild, "guild");
+            C12238m.checkNotNullParameter(channel, "channel");
             return new Model(guild, channel, canManageChannel, canManagePermissions, isPinsEnabled, isPublicGuildRulesChannel, isPublicGuildUpdatesChannel, isCommunityGuild);
         }
 
@@ -263,7 +263,7 @@ public final class WidgetTextChannelSettings extends AppFragment {
                 return false;
             }
             Model model = (Model) other;
-            return Intrinsics3.areEqual(this.guild, model.guild) && Intrinsics3.areEqual(this.channel, model.channel) && this.canManageChannel == model.canManageChannel && this.canManagePermissions == model.canManagePermissions && this.isPinsEnabled == model.isPinsEnabled && this.isPublicGuildRulesChannel == model.isPublicGuildRulesChannel && this.isPublicGuildUpdatesChannel == model.isPublicGuildUpdatesChannel && this.isCommunityGuild == model.isCommunityGuild;
+            return C12238m.areEqual(this.guild, model.guild) && C12238m.areEqual(this.channel, model.channel) && this.canManageChannel == model.canManageChannel && this.canManagePermissions == model.canManagePermissions && this.isPinsEnabled == model.isPinsEnabled && this.isPublicGuildRulesChannel == model.isPublicGuildRulesChannel && this.isPublicGuildUpdatesChannel == model.isPublicGuildUpdatesChannel && this.isCommunityGuild == model.isCommunityGuild;
         }
 
         public final boolean getCanManageChannel() {
@@ -363,36 +363,36 @@ public final class WidgetTextChannelSettings extends AppFragment {
         }
 
         public String toString() {
-            StringBuilder sbU = outline.U("Model(guild=");
-            sbU.append(this.guild);
-            sbU.append(", channel=");
-            sbU.append(this.channel);
-            sbU.append(", canManageChannel=");
-            sbU.append(this.canManageChannel);
-            sbU.append(", canManagePermissions=");
-            sbU.append(this.canManagePermissions);
-            sbU.append(", isPinsEnabled=");
-            sbU.append(this.isPinsEnabled);
-            sbU.append(", isPublicGuildRulesChannel=");
-            sbU.append(this.isPublicGuildRulesChannel);
-            sbU.append(", isPublicGuildUpdatesChannel=");
-            sbU.append(this.isPublicGuildUpdatesChannel);
-            sbU.append(", isCommunityGuild=");
-            return outline.O(sbU, this.isCommunityGuild, ")");
+            StringBuilder sbM833U = C1643a.m833U("Model(guild=");
+            sbM833U.append(this.guild);
+            sbM833U.append(", channel=");
+            sbM833U.append(this.channel);
+            sbM833U.append(", canManageChannel=");
+            sbM833U.append(this.canManageChannel);
+            sbM833U.append(", canManagePermissions=");
+            sbM833U.append(this.canManagePermissions);
+            sbM833U.append(", isPinsEnabled=");
+            sbM833U.append(this.isPinsEnabled);
+            sbM833U.append(", isPublicGuildRulesChannel=");
+            sbM833U.append(this.isPublicGuildRulesChannel);
+            sbM833U.append(", isPublicGuildUpdatesChannel=");
+            sbM833U.append(this.isPublicGuildUpdatesChannel);
+            sbM833U.append(", isCommunityGuild=");
+            return C1643a.m827O(sbM833U, this.isCommunityGuild, ")");
         }
     }
 
-    /* JADX INFO: renamed from: com.discord.widgets.channels.settings.WidgetTextChannelSettings$onViewBoundOrOnResume$1, reason: invalid class name */
+    /* JADX INFO: renamed from: com.discord.widgets.channels.settings.WidgetTextChannelSettings$onViewBoundOrOnResume$1 */
     /* JADX INFO: compiled from: WidgetTextChannelSettings.kt */
-    public static final class AnonymousClass1 extends Lambda implements Function1<Model, Unit> {
-        public AnonymousClass1() {
+    public static final class C76071 extends AbstractC12240o implements Function1<Model, Unit> {
+        public C76071() {
             super(1);
         }
 
         @Override // kotlin.jvm.functions.Function1
         public /* bridge */ /* synthetic */ Unit invoke(Model model) {
             invoke2(model);
-            return Unit.a;
+            return Unit.f27425a;
         }
 
         /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
@@ -401,50 +401,50 @@ public final class WidgetTextChannelSettings extends AppFragment {
         }
     }
 
-    /* JADX INFO: renamed from: com.discord.widgets.channels.settings.WidgetTextChannelSettings$saveChannel$1, reason: invalid class name */
+    /* JADX INFO: renamed from: com.discord.widgets.channels.settings.WidgetTextChannelSettings$saveChannel$1 */
     /* JADX INFO: compiled from: WidgetTextChannelSettings.kt */
-    public static final class AnonymousClass1 extends Lambda implements Function1<Channel, Unit> {
-        public AnonymousClass1() {
+    public static final class C76081 extends AbstractC12240o implements Function1<Channel, Unit> {
+        public C76081() {
             super(1);
         }
 
         @Override // kotlin.jvm.functions.Function1
         public /* bridge */ /* synthetic */ Unit invoke(Channel channel) {
             invoke2(channel);
-            return Unit.a;
+            return Unit.f27425a;
         }
 
         /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
         public final void invoke2(Channel channel) {
             Context context = WidgetTextChannelSettings.this.getContext();
-            Intrinsics3.checkNotNullExpressionValue(channel, "it");
-            AppToast.g(context, ChannelUtils.k(channel) ? R.string.category_settings_have_been_updated : R.string.channel_settings_have_been_updated, 0, null, 12);
+            C12238m.checkNotNullExpressionValue(channel, "it");
+            C0876m.m169g(context, ChannelUtils.m7687k(channel) ? C5419R.string.category_settings_have_been_updated : C5419R.string.channel_settings_have_been_updated, 0, null, 12);
         }
     }
 
     public WidgetTextChannelSettings() {
-        super(R.layout.widget_text_channel_settings);
-        this.binding = FragmentViewBindingDelegate3.viewBinding$default(this, WidgetTextChannelSettings3.INSTANCE, null, 2, null);
-        this.state = new StatefulViews(R.id.channel_settings_edit_name, R.id.channel_settings_edit_topic, R.id.channel_settings_slow_mode_cooldown_slider, R.id.duration_selector, R.id.channel_settings_announcement);
+        super(C5419R.layout.widget_text_channel_settings);
+        this.binding = FragmentViewBindingDelegateKt.viewBinding$default(this, WidgetTextChannelSettings$binding$2.INSTANCE, null, 2, null);
+        this.state = new StatefulViews(C5419R.id.channel_settings_edit_name, C5419R.id.channel_settings_edit_topic, C5419R.id.channel_settings_slow_mode_cooldown_slider, C5419R.id.duration_selector, C5419R.id.channel_settings_announcement);
     }
 
     private final void cannotDeleteWarn(boolean isPublicGuildRulesChannel) {
-        View viewInflate = LayoutInflater.from(getContext()).inflate(R.layout.widget_channel_settings_cannot_delete, (ViewGroup) null, false);
-        int i = R.id.channel_settings_cannot_delete_body;
-        TextView textView = (TextView) viewInflate.findViewById(R.id.channel_settings_cannot_delete_body);
+        View viewInflate = LayoutInflater.from(getContext()).inflate(C5419R.layout.widget_channel_settings_cannot_delete, (ViewGroup) null, false);
+        int i = C5419R.id.channel_settings_cannot_delete_body;
+        TextView textView = (TextView) viewInflate.findViewById(C5419R.id.channel_settings_cannot_delete_body);
         if (textView != null) {
-            i = R.id.channel_settings_cannot_delete_confirm;
-            MaterialButton materialButton = (MaterialButton) viewInflate.findViewById(R.id.channel_settings_cannot_delete_confirm);
+            i = C5419R.id.channel_settings_cannot_delete_confirm;
+            MaterialButton materialButton = (MaterialButton) viewInflate.findViewById(C5419R.id.channel_settings_cannot_delete_confirm);
             if (materialButton != null) {
-                i = R.id.channel_settings_cannot_delete_title;
-                TextView textView2 = (TextView) viewInflate.findViewById(R.id.channel_settings_cannot_delete_title);
+                i = C5419R.id.channel_settings_cannot_delete_title;
+                TextView textView2 = (TextView) viewInflate.findViewById(C5419R.id.channel_settings_cannot_delete_title);
                 if (textView2 != null) {
                     LinearLayout linearLayout = (LinearLayout) viewInflate;
-                    Intrinsics3.checkNotNullExpressionValue(new WidgetChannelSettingsCannotDeleteBinding(linearLayout, textView, materialButton, textView2), "WidgetChannelSettingsCan…om(context), null, false)");
-                    Intrinsics3.checkNotNullExpressionValue(linearLayout, "binding.root");
+                    C12238m.checkNotNullExpressionValue(new C1042r4(linearLayout, textView, materialButton, textView2), "WidgetChannelSettingsCan…om(context), null, false)");
+                    C12238m.checkNotNullExpressionValue(linearLayout, "binding.root");
                     final AlertDialog alertDialogCreate = new AlertDialog.Builder(linearLayout.getContext()).setView(linearLayout).create();
-                    Intrinsics3.checkNotNullExpressionValue(alertDialogCreate, "AlertDialog.Builder(bind…ew(binding.root).create()");
-                    textView.setText(isPublicGuildRulesChannel ? R.string.delete_rules_channel_body : R.string.delete_updates_channel_body);
+                    C12238m.checkNotNullExpressionValue(alertDialogCreate, "AlertDialog.Builder(bind…ew(binding.root).create()");
+                    textView.setText(isPublicGuildRulesChannel ? C5419R.string.delete_rules_channel_body : C5419R.string.delete_updates_channel_body);
                     materialButton.setOnClickListener(new View.OnClickListener() { // from class: com.discord.widgets.channels.settings.WidgetTextChannelSettings.cannotDeleteWarn.1
                         @Override // android.view.View.OnClickListener
                         public final void onClick(View view) {
@@ -461,159 +461,159 @@ public final class WidgetTextChannelSettings extends AppFragment {
 
     private final void configureUI(final Model model) {
         if (model == null) {
-            FragmentActivity fragmentActivityE = e();
-            if (fragmentActivityE != null) {
-                fragmentActivityE.finish();
+            FragmentActivity fragmentActivityM95e = m95e();
+            if (fragmentActivityM95e != null) {
+                fragmentActivityM95e.finish();
                 return;
             }
             return;
         }
         AppFragment.setActionBarDisplayHomeAsUpEnabled$default(this, false, 1, null);
-        setActionBarTitle(ChannelUtils.F(model.getChannel()) ? R.string.channel_settings : R.string.category_settings);
-        setActionBarSubtitle(ChannelUtils.e(model.getChannel(), requireContext(), false, 2));
-        setActionBarOptionsMenu(ChannelUtils.F(model.getChannel()) ? R.menu.menu_text_channel_settings : R.menu.menu_category_settings, new Action2<MenuItem, Context>() { // from class: com.discord.widgets.channels.settings.WidgetTextChannelSettings.configureUI.1
-            @Override // rx.functions.Action2
+        setActionBarTitle(ChannelUtils.m7671F(model.getChannel()) ? C5419R.string.channel_settings : C5419R.string.category_settings);
+        setActionBarSubtitle(ChannelUtils.m7681e(model.getChannel(), requireContext(), false, 2));
+        setActionBarOptionsMenu(ChannelUtils.m7671F(model.getChannel()) ? C5419R.menu.menu_text_channel_settings : C5419R.menu.menu_category_settings, new Action2<MenuItem, Context>() { // from class: com.discord.widgets.channels.settings.WidgetTextChannelSettings.configureUI.1
+            @Override // p658rx.functions.Action2
             public final void call(MenuItem menuItem, Context context) {
-                Intrinsics3.checkNotNullExpressionValue(menuItem, "menuItem");
+                C12238m.checkNotNullExpressionValue(menuItem, "menuItem");
                 switch (menuItem.getItemId()) {
-                    case R.id.menu_channel_settings_delete /* 2131364369 */:
+                    case C5419R.id.menu_channel_settings_delete /* 2131364369 */:
                         if (model.isPublicGuildRulesChannel() || model.isPublicGuildUpdatesChannel()) {
                             WidgetTextChannelSettings.this.cannotDeleteWarn(model.isPublicGuildRulesChannel());
                         } else {
                             WidgetTextChannelSettings.this.confirmDelete(model.getChannel());
                         }
                         break;
-                    case R.id.menu_channel_settings_reset /* 2131364370 */:
+                    case C5419R.id.menu_channel_settings_reset /* 2131364370 */:
                         StoreUserGuildSettings userGuildSettings = StoreStream.INSTANCE.getUserGuildSettings();
-                        Intrinsics3.checkNotNullExpressionValue(context, "context");
+                        C12238m.checkNotNullExpressionValue(context, "context");
                         userGuildSettings.setChannelNotificationsDefault(context, model.getChannel());
                         break;
                 }
             }
         }, new Action1<Menu>() { // from class: com.discord.widgets.channels.settings.WidgetTextChannelSettings.configureUI.2
-            @Override // rx.functions.Action1
+            @Override // p658rx.functions.Action1
             public final void call(Menu menu) {
-                MenuItem menuItemFindItem = menu.findItem(R.id.menu_channel_settings_delete);
-                Intrinsics3.checkNotNullExpressionValue(menuItemFindItem, "it.findItem(R.id.menu_channel_settings_delete)");
+                MenuItem menuItemFindItem = menu.findItem(C5419R.id.menu_channel_settings_delete);
+                C12238m.checkNotNullExpressionValue(menuItemFindItem, "it.findItem(R.id.menu_channel_settings_delete)");
                 menuItemFindItem.setVisible(model.getCanManageChannel());
             }
         });
-        TextInputLayout textInputLayout = getBinding().c;
-        Intrinsics3.checkNotNullExpressionValue(textInputLayout, "binding.channelSettingsEditName");
+        TextInputLayout textInputLayout = getBinding().f18229c;
+        C12238m.checkNotNullExpressionValue(textInputLayout, "binding.channelSettingsEditName");
         StatefulViews statefulViews = this.state;
-        TextInputLayout textInputLayout2 = getBinding().c;
-        Intrinsics3.checkNotNullExpressionValue(textInputLayout2, "binding.channelSettingsEditName");
-        ViewExtensions.setText(textInputLayout, (CharSequence) statefulViews.get(textInputLayout2.getId(), ChannelUtils.c(model.getChannel())));
-        getBinding().c.setHint(ChannelUtils.F(model.getChannel()) ? R.string.form_label_channel_name : R.string.category_name);
-        TextInputLayout textInputLayout3 = getBinding().d;
-        Intrinsics3.checkNotNullExpressionValue(textInputLayout3, "binding.channelSettingsEditTopic");
+        TextInputLayout textInputLayout2 = getBinding().f18229c;
+        C12238m.checkNotNullExpressionValue(textInputLayout2, "binding.channelSettingsEditName");
+        ViewExtensions.setText(textInputLayout, (CharSequence) statefulViews.get(textInputLayout2.getId(), ChannelUtils.m7679c(model.getChannel())));
+        getBinding().f18229c.setHint(ChannelUtils.m7671F(model.getChannel()) ? C5419R.string.form_label_channel_name : C5419R.string.category_name);
+        TextInputLayout textInputLayout3 = getBinding().f18230d;
+        C12238m.checkNotNullExpressionValue(textInputLayout3, "binding.channelSettingsEditTopic");
         StatefulViews statefulViews2 = this.state;
-        TextInputLayout textInputLayout4 = getBinding().d;
-        Intrinsics3.checkNotNullExpressionValue(textInputLayout4, "binding.channelSettingsEditTopic");
+        TextInputLayout textInputLayout4 = getBinding().f18230d;
+        C12238m.checkNotNullExpressionValue(textInputLayout4, "binding.channelSettingsEditTopic");
         int id2 = textInputLayout4.getId();
         String topic = model.getChannel().getTopic();
         if (topic == null) {
             topic = "";
         }
         ViewExtensions.setText(textInputLayout3, (CharSequence) statefulViews2.get(id2, topic));
-        TextInputLayout textInputLayout5 = getBinding().d;
-        Intrinsics3.checkNotNullExpressionValue(textInputLayout5, "binding.channelSettingsEditTopic");
-        textInputLayout5.setVisibility(ChannelUtils.F(model.getChannel()) ? 0 : 8);
-        LinearLayout linearLayout = getBinding().e;
-        Intrinsics3.checkNotNullExpressionValue(linearLayout, "binding.channelSettingsEditWrap");
+        TextInputLayout textInputLayout5 = getBinding().f18230d;
+        C12238m.checkNotNullExpressionValue(textInputLayout5, "binding.channelSettingsEditTopic");
+        textInputLayout5.setVisibility(ChannelUtils.m7671F(model.getChannel()) ? 0 : 8);
+        LinearLayout linearLayout = getBinding().f18231e;
+        C12238m.checkNotNullExpressionValue(linearLayout, "binding.channelSettingsEditWrap");
         linearLayout.setVisibility(model.getCanManageChannel() ? 0 : 8);
-        getBinding().k.setOnClickListener(new View.OnClickListener() { // from class: com.discord.widgets.channels.settings.WidgetTextChannelSettings.configureUI.3
+        getBinding().f18237k.setOnClickListener(new View.OnClickListener() { // from class: com.discord.widgets.channels.settings.WidgetTextChannelSettings.configureUI.3
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
                 WidgetTextChannelSettings widgetTextChannelSettings = WidgetTextChannelSettings.this;
                 long id3 = model.getChannel().getId();
                 StatefulViews statefulViews3 = WidgetTextChannelSettings.this.state;
-                TextInputLayout textInputLayout6 = WidgetTextChannelSettings.this.getBinding().c;
-                Intrinsics3.checkNotNullExpressionValue(textInputLayout6, "binding.channelSettingsEditName");
+                TextInputLayout textInputLayout6 = WidgetTextChannelSettings.this.getBinding().f18229c;
+                C12238m.checkNotNullExpressionValue(textInputLayout6, "binding.channelSettingsEditName");
                 String str = (String) statefulViews3.getIfChanged(textInputLayout6.getId());
                 StatefulViews statefulViews4 = WidgetTextChannelSettings.this.state;
-                TextInputLayout textInputLayout7 = WidgetTextChannelSettings.this.getBinding().d;
-                Intrinsics3.checkNotNullExpressionValue(textInputLayout7, "binding.channelSettingsEditTopic");
+                TextInputLayout textInputLayout7 = WidgetTextChannelSettings.this.getBinding().f18230d;
+                C12238m.checkNotNullExpressionValue(textInputLayout7, "binding.channelSettingsEditTopic");
                 String str2 = (String) statefulViews4.getIfChanged(textInputLayout7.getId());
                 StatefulViews statefulViews5 = WidgetTextChannelSettings.this.state;
-                SeekBar seekBar = WidgetTextChannelSettings.this.getBinding().q;
-                Intrinsics3.checkNotNullExpressionValue(seekBar, "binding.channelSettingsSlowModeCooldownSlider");
-                WidgetTextChannelSettings.saveChannel$default(widgetTextChannelSettings, id3, str, null, str2, null, (Integer) statefulViews5.getIfChanged(seekBar.getId()), (Integer) WidgetTextChannelSettings.this.state.getIfChanged(R.id.duration_selector), 20, null);
+                SeekBar seekBar = WidgetTextChannelSettings.this.getBinding().f18243q;
+                C12238m.checkNotNullExpressionValue(seekBar, "binding.channelSettingsSlowModeCooldownSlider");
+                WidgetTextChannelSettings.saveChannel$default(widgetTextChannelSettings, id3, str, null, str2, null, (Integer) statefulViews5.getIfChanged(seekBar.getId()), (Integer) WidgetTextChannelSettings.this.state.getIfChanged(C5419R.id.duration_selector), 20, null);
             }
         });
-        this.state.configureSaveActionView(getBinding().k);
-        LinearLayout linearLayout2 = getBinding().i;
-        Intrinsics3.checkNotNullExpressionValue(linearLayout2, "binding.channelSettingsPinnedMessagesContainer");
-        linearLayout2.setVisibility(ChannelUtils.F(model.getChannel()) ? 0 : 8);
-        TextView textView = getBinding().h;
-        Intrinsics3.checkNotNullExpressionValue(textView, "binding.channelSettingsPinnedMessages");
+        this.state.configureSaveActionView(getBinding().f18237k);
+        LinearLayout linearLayout2 = getBinding().f18235i;
+        C12238m.checkNotNullExpressionValue(linearLayout2, "binding.channelSettingsPinnedMessagesContainer");
+        linearLayout2.setVisibility(ChannelUtils.m7671F(model.getChannel()) ? 0 : 8);
+        TextView textView = getBinding().f18234h;
+        C12238m.checkNotNullExpressionValue(textView, "binding.channelSettingsPinnedMessages");
         textView.setEnabled(model.isPinsEnabled());
-        getBinding().h.setOnClickListener(new View.OnClickListener() { // from class: com.discord.widgets.channels.settings.WidgetTextChannelSettings.configureUI.5
+        getBinding().f18234h.setOnClickListener(new View.OnClickListener() { // from class: com.discord.widgets.channels.settings.WidgetTextChannelSettings.configureUI.5
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                WidgetChannelPinnedMessages.INSTANCE.show(outline.x(view, "it", "it.context"), model.getChannel().getId());
+                WidgetChannelPinnedMessages.INSTANCE.show(C1643a.m885x(view, "it", "it.context"), model.getChannel().getId());
             }
         });
-        View view = getBinding().j;
-        Intrinsics3.checkNotNullExpressionValue(view, "binding.channelSettingsP…edMessagesDisabledOverlay");
+        View view = getBinding().f18236j;
+        C12238m.checkNotNullExpressionValue(view, "binding.channelSettingsP…edMessagesDisabledOverlay");
         view.setVisibility(model.isPinsEnabled() ^ true ? 0 : 8);
-        getBinding().j.setOnClickListener(new View.OnClickListener() { // from class: com.discord.widgets.channels.settings.WidgetTextChannelSettings.configureUI.6
+        getBinding().f18236j.setOnClickListener(new View.OnClickListener() { // from class: com.discord.widgets.channels.settings.WidgetTextChannelSettings.configureUI.6
             @Override // android.view.View.OnClickListener
             public final void onClick(View view2) {
-                Intrinsics3.checkNotNullExpressionValue(view2, "it");
-                AppToast.g(view2.getContext(), R.string.pins_disabled_nsfw, 0, null, 12);
+                C12238m.checkNotNullExpressionValue(view2, "it");
+                C0876m.m169g(view2.getContext(), C5419R.string.pins_disabled_nsfw, 0, null, 12);
             }
         });
-        TextView textView2 = getBinding().g;
-        Intrinsics3.checkNotNullExpressionValue(textView2, "binding.channelSettingsPermissions");
+        TextView textView2 = getBinding().f18233g;
+        C12238m.checkNotNullExpressionValue(textView2, "binding.channelSettingsPermissions");
         textView2.setVisibility(model.getCanManagePermissions() ? 0 : 8);
-        getBinding().g.setOnClickListener(new View.OnClickListener() { // from class: com.discord.widgets.channels.settings.WidgetTextChannelSettings.configureUI.7
+        getBinding().f18233g.setOnClickListener(new View.OnClickListener() { // from class: com.discord.widgets.channels.settings.WidgetTextChannelSettings.configureUI.7
             @Override // android.view.View.OnClickListener
             public final void onClick(View view2) {
-                WidgetChannelSettingsPermissionsOverview.INSTANCE.launch(outline.x(view2, "it", "it.context"), model.getChannel().getId());
+                WidgetChannelSettingsPermissionsOverview.INSTANCE.launch(C1643a.m885x(view2, "it", "it.context"), model.getChannel().getId());
             }
         });
-        CheckedSetting checkedSetting = getBinding().f2665b;
-        Intrinsics3.checkNotNullExpressionValue(checkedSetting, "binding.channelSettingsAnnouncement");
-        checkedSetting.setVisibility((ChannelUtils.u(model.getChannel()) || ChannelUtils.i(model.getChannel())) && model.getCanManageChannel() && model.isCommunityGuild() && !model.isPublicGuildRulesChannel() && !model.isPublicGuildUpdatesChannel() ? 0 : 8);
-        getBinding().f2665b.g(ChannelUtils.i(model.getChannel()), false);
-        CheckedSetting checkedSetting2 = getBinding().f2665b;
+        CheckedSetting checkedSetting = getBinding().f18228b;
+        C12238m.checkNotNullExpressionValue(checkedSetting, "binding.channelSettingsAnnouncement");
+        checkedSetting.setVisibility((ChannelUtils.m7697u(model.getChannel()) || ChannelUtils.m7685i(model.getChannel())) && model.getCanManageChannel() && model.isCommunityGuild() && !model.isPublicGuildRulesChannel() && !model.isPublicGuildUpdatesChannel() ? 0 : 8);
+        getBinding().f18228b.m8529g(ChannelUtils.m7685i(model.getChannel()), false);
+        CheckedSetting checkedSetting2 = getBinding().f18228b;
         Context context = getContext();
-        checkedSetting2.h(context != null ? FormatUtils.b(context, R.string.form_help_news_android, new Object[]{AppHelpDesk.a.a(360032008192L, null)}, (4 & 4) != 0 ? FormatUtils.b.j : null) : null, true);
-        getBinding().f2665b.e(new View.OnClickListener() { // from class: com.discord.widgets.channels.settings.WidgetTextChannelSettings.configureUI.8
+        checkedSetting2.m8530h(context != null ? C1107b.m210b(context, C5419R.string.form_help_news_android, new Object[]{C0862f.f507a.m149a(360032008192L, null)}, (4 & 4) != 0 ? C1107b.b.f1491j : null) : null, true);
+        getBinding().f18228b.m8527e(new View.OnClickListener() { // from class: com.discord.widgets.channels.settings.WidgetTextChannelSettings.configureUI.8
             @Override // android.view.View.OnClickListener
             public final void onClick(View view2) {
-                if (ChannelUtils.i(model.getChannel())) {
+                if (ChannelUtils.m7685i(model.getChannel())) {
                     WidgetTextChannelSettings.saveChannel$default(WidgetTextChannelSettings.this, model.getChannel().getId(), null, 0, null, null, null, null, 122, null);
                 } else {
                     WidgetTextChannelSettings.saveChannel$default(WidgetTextChannelSettings.this, model.getChannel().getId(), null, 5, null, null, null, null, 122, null);
                 }
             }
         });
-        LinearLayout linearLayout3 = getBinding().o;
-        Intrinsics3.checkNotNullExpressionValue(linearLayout3, "binding.channelSettingsSectionUserManagement");
+        LinearLayout linearLayout3 = getBinding().f18241o;
+        C12238m.checkNotNullExpressionValue(linearLayout3, "binding.channelSettingsSectionUserManagement");
         linearLayout3.setVisibility(model.getCanManageChannel() || model.getCanManagePermissions() ? 0 : 8);
-        LinearLayout linearLayout4 = getBinding().m;
-        Intrinsics3.checkNotNullExpressionValue(linearLayout4, "binding.channelSettingsSectionPrivacySafety");
-        linearLayout4.setVisibility(model.getCanManageChannel() && ChannelUtils.F(model.getChannel()) ? 0 : 8);
-        CheckedSetting checkedSetting3 = getBinding().f;
-        Intrinsics3.checkNotNullExpressionValue(checkedSetting3, "binding.channelSettingsNsfw");
+        LinearLayout linearLayout4 = getBinding().f18239m;
+        C12238m.checkNotNullExpressionValue(linearLayout4, "binding.channelSettingsSectionPrivacySafety");
+        linearLayout4.setVisibility(model.getCanManageChannel() && ChannelUtils.m7671F(model.getChannel()) ? 0 : 8);
+        CheckedSetting checkedSetting3 = getBinding().f18232f;
+        C12238m.checkNotNullExpressionValue(checkedSetting3, "binding.channelSettingsNsfw");
         checkedSetting3.setVisibility(model.getCanManageChannel() ? 0 : 8);
-        getBinding().f.g(model.getChannel().getNsfw(), false);
-        getBinding().f.e(new View.OnClickListener() { // from class: com.discord.widgets.channels.settings.WidgetTextChannelSettings.configureUI.9
+        getBinding().f18232f.m8529g(model.getChannel().getNsfw(), false);
+        getBinding().f18232f.m8527e(new View.OnClickListener() { // from class: com.discord.widgets.channels.settings.WidgetTextChannelSettings.configureUI.9
             @Override // android.view.View.OnClickListener
             public final void onClick(View view2) {
                 WidgetTextChannelSettings widgetTextChannelSettings = WidgetTextChannelSettings.this;
                 long id3 = model.getChannel().getId();
-                CheckedSetting checkedSetting4 = WidgetTextChannelSettings.this.getBinding().f;
-                Intrinsics3.checkNotNullExpressionValue(checkedSetting4, "binding.channelSettingsNsfw");
+                CheckedSetting checkedSetting4 = WidgetTextChannelSettings.this.getBinding().f18232f;
+                C12238m.checkNotNullExpressionValue(checkedSetting4, "binding.channelSettingsNsfw");
                 WidgetTextChannelSettings.saveChannel$default(widgetTextChannelSettings, id3, null, null, null, Boolean.valueOf(!checkedSetting4.isChecked()), null, null, 110, null);
             }
         });
-        LinearLayout linearLayout5 = getBinding().n;
-        Intrinsics3.checkNotNullExpressionValue(linearLayout5, "binding.channelSettingsSectionSlowMode");
-        linearLayout5.setVisibility(model.getCanManageChannel() && ChannelUtils.F(model.getChannel()) && !ChannelUtils.i(model.getChannel()) ? 0 : 8);
-        int iIntValue = ((Number) this.state.get(R.id.channel_settings_slow_mode_cooldown_slider, Integer.valueOf(model.getChannel().getRateLimitPerUser()))).intValue();
+        LinearLayout linearLayout5 = getBinding().f18240n;
+        C12238m.checkNotNullExpressionValue(linearLayout5, "binding.channelSettingsSectionSlowMode");
+        linearLayout5.setVisibility(model.getCanManageChannel() && ChannelUtils.m7671F(model.getChannel()) && !ChannelUtils.m7685i(model.getChannel()) ? 0 : 8);
+        int iIntValue = ((Number) this.state.get(C5419R.id.channel_settings_slow_mode_cooldown_slider, Integer.valueOf(model.getChannel().getRateLimitPerUser()))).intValue();
         setSlowmodeLabel(iIntValue);
         Iterator<Integer> it = SLOWMODE_COOLDOWN_VALUES.iterator();
         int i = 0;
@@ -629,51 +629,51 @@ public final class WidgetTextChannelSettings extends AppFragment {
                 }
             }
         }
-        SeekBar seekBar = getBinding().q;
-        Intrinsics3.checkNotNullExpressionValue(seekBar, "binding.channelSettingsSlowModeCooldownSlider");
+        SeekBar seekBar = getBinding().f18243q;
+        C12238m.checkNotNullExpressionValue(seekBar, "binding.channelSettingsSlowModeCooldownSlider");
         seekBar.setProgress(i);
-        this.state.configureSaveActionView(getBinding().k);
-        SeekBar seekBar2 = getBinding().q;
-        Intrinsics3.checkNotNullExpressionValue(seekBar2, "binding.channelSettingsSlowModeCooldownSlider");
-        TextView textView3 = getBinding().p;
-        Intrinsics3.checkNotNullExpressionValue(textView3, "binding.channelSettingsSlowModeCooldownLabel");
+        this.state.configureSaveActionView(getBinding().f18237k);
+        SeekBar seekBar2 = getBinding().f18243q;
+        C12238m.checkNotNullExpressionValue(seekBar2, "binding.channelSettingsSlowModeCooldownSlider");
+        TextView textView3 = getBinding().f18242p;
+        C12238m.checkNotNullExpressionValue(textView3, "binding.channelSettingsSlowModeCooldownLabel");
         seekBar2.setContentDescription(textView3.getText());
-        LinearLayout linearLayout6 = getBinding().l;
-        Intrinsics3.checkNotNullExpressionValue(linearLayout6, "binding.channelSettingsS…efaultAutoArchiveDuration");
-        linearLayout6.setVisibility(model.getCanManageChannel() && ChannelUtils.I(model.getChannel()) && ThreadUtils.INSTANCE.isThreadsEnabled(model.getGuild().getId()) ? 0 : 8);
-        Integer num = (Integer) this.state.get(R.id.duration_selector, model.getChannel().getDefaultAutoArchiveDuration());
+        LinearLayout linearLayout6 = getBinding().f18238l;
+        C12238m.checkNotNullExpressionValue(linearLayout6, "binding.channelSettingsS…efaultAutoArchiveDuration");
+        linearLayout6.setVisibility(model.getCanManageChannel() && ChannelUtils.m7674I(model.getChannel()) && ThreadUtils.INSTANCE.isThreadsEnabled(model.getGuild().getId()) ? 0 : 8);
+        Integer num = (Integer) this.state.get(C5419R.id.duration_selector, model.getChannel().getDefaultAutoArchiveDuration());
         int iIntValue2 = num != null ? num.intValue() : 1440;
-        this.state.configureSaveActionView(getBinding().k);
-        final Map<MaterialRadioButton, Integer> mapMapOf = Maps6.mapOf(Tuples.to(getBinding().r.e, 60), Tuples.to(getBinding().r.k, 1440), Tuples.to(getBinding().r.i, Integer.valueOf(ThreadUtils.ThreadArchiveDurations.THREE_DAYS_IN_MINUTES)), Tuples.to(getBinding().r.g, Integer.valueOf(ThreadUtils.ThreadArchiveDurations.SEVEN_DAYS_IN_MINUTES)));
-        getBinding().r.d.setOnClickListener(new View.OnClickListener() { // from class: com.discord.widgets.channels.settings.WidgetTextChannelSettings.configureUI.10
+        this.state.configureSaveActionView(getBinding().f18237k);
+        final Map<MaterialRadioButton, Integer> mapMapOf = C12136h0.mapOf(C12116o.m10073to(getBinding().f18244r.f18256e, 60), C12116o.m10073to(getBinding().f18244r.f18262k, 1440), C12116o.m10073to(getBinding().f18244r.f18260i, Integer.valueOf(ThreadUtils.ThreadArchiveDurations.THREE_DAYS_IN_MINUTES)), C12116o.m10073to(getBinding().f18244r.f18258g, Integer.valueOf(ThreadUtils.ThreadArchiveDurations.SEVEN_DAYS_IN_MINUTES)));
+        getBinding().f18244r.f18255d.setOnClickListener(new View.OnClickListener() { // from class: com.discord.widgets.channels.settings.WidgetTextChannelSettings.configureUI.10
             @Override // android.view.View.OnClickListener
             public final void onClick(View view2) {
-                WidgetTextChannelSettings.this.state.put(R.id.duration_selector, 60);
-                WidgetTextChannelSettings.this.state.configureSaveActionView(WidgetTextChannelSettings.this.getBinding().k);
+                WidgetTextChannelSettings.this.state.put(C5419R.id.duration_selector, 60);
+                WidgetTextChannelSettings.this.state.configureSaveActionView(WidgetTextChannelSettings.this.getBinding().f18237k);
                 WidgetTextChannelSettings.this.updateRadioState(mapMapOf, 60);
             }
         });
-        getBinding().r.j.setOnClickListener(new View.OnClickListener() { // from class: com.discord.widgets.channels.settings.WidgetTextChannelSettings.configureUI.11
+        getBinding().f18244r.f18261j.setOnClickListener(new View.OnClickListener() { // from class: com.discord.widgets.channels.settings.WidgetTextChannelSettings.configureUI.11
             @Override // android.view.View.OnClickListener
             public final void onClick(View view2) {
-                WidgetTextChannelSettings.this.state.put(R.id.duration_selector, 1440);
-                WidgetTextChannelSettings.this.state.configureSaveActionView(WidgetTextChannelSettings.this.getBinding().k);
+                WidgetTextChannelSettings.this.state.put(C5419R.id.duration_selector, 1440);
+                WidgetTextChannelSettings.this.state.configureSaveActionView(WidgetTextChannelSettings.this.getBinding().f18237k);
                 WidgetTextChannelSettings.this.updateRadioState(mapMapOf, 1440);
             }
         });
-        getBinding().r.h.setOnClickListener(new View.OnClickListener() { // from class: com.discord.widgets.channels.settings.WidgetTextChannelSettings.configureUI.12
+        getBinding().f18244r.f18259h.setOnClickListener(new View.OnClickListener() { // from class: com.discord.widgets.channels.settings.WidgetTextChannelSettings.configureUI.12
             @Override // android.view.View.OnClickListener
             public final void onClick(View view2) {
-                WidgetTextChannelSettings.this.state.put(R.id.duration_selector, Integer.valueOf(ThreadUtils.ThreadArchiveDurations.THREE_DAYS_IN_MINUTES));
-                WidgetTextChannelSettings.this.state.configureSaveActionView(WidgetTextChannelSettings.this.getBinding().k);
+                WidgetTextChannelSettings.this.state.put(C5419R.id.duration_selector, Integer.valueOf(ThreadUtils.ThreadArchiveDurations.THREE_DAYS_IN_MINUTES));
+                WidgetTextChannelSettings.this.state.configureSaveActionView(WidgetTextChannelSettings.this.getBinding().f18237k);
                 WidgetTextChannelSettings.this.updateRadioState(mapMapOf, ThreadUtils.ThreadArchiveDurations.THREE_DAYS_IN_MINUTES);
             }
         });
-        getBinding().r.f.setOnClickListener(new View.OnClickListener() { // from class: com.discord.widgets.channels.settings.WidgetTextChannelSettings.configureUI.13
+        getBinding().f18244r.f18257f.setOnClickListener(new View.OnClickListener() { // from class: com.discord.widgets.channels.settings.WidgetTextChannelSettings.configureUI.13
             @Override // android.view.View.OnClickListener
             public final void onClick(View view2) {
-                WidgetTextChannelSettings.this.state.put(R.id.duration_selector, Integer.valueOf(ThreadUtils.ThreadArchiveDurations.SEVEN_DAYS_IN_MINUTES));
-                WidgetTextChannelSettings.this.state.configureSaveActionView(WidgetTextChannelSettings.this.getBinding().k);
+                WidgetTextChannelSettings.this.state.put(C5419R.id.duration_selector, Integer.valueOf(ThreadUtils.ThreadArchiveDurations.SEVEN_DAYS_IN_MINUTES));
+                WidgetTextChannelSettings.this.state.configureSaveActionView(WidgetTextChannelSettings.this.getBinding().f18237k);
                 WidgetTextChannelSettings.this.updateRadioState(mapMapOf, ThreadUtils.ThreadArchiveDurations.SEVEN_DAYS_IN_MINUTES);
             }
         });
@@ -681,40 +681,40 @@ public final class WidgetTextChannelSettings extends AppFragment {
     }
 
     private final void confirmDelete(final Channel channel) {
-        WidgetChannelSettingsDeleteBinding widgetChannelSettingsDeleteBindingA = WidgetChannelSettingsDeleteBinding.a(LayoutInflater.from(getContext()), null, false);
-        Intrinsics3.checkNotNullExpressionValue(widgetChannelSettingsDeleteBindingA, "WidgetChannelSettingsDel…om(context), null, false)");
-        LinearLayout linearLayout = widgetChannelSettingsDeleteBindingA.a;
-        Intrinsics3.checkNotNullExpressionValue(linearLayout, "binding.root");
-        final AlertDialog alertDialogCreate = new AlertDialog.Builder(linearLayout.getContext()).setView(widgetChannelSettingsDeleteBindingA.a).create();
-        Intrinsics3.checkNotNullExpressionValue(alertDialogCreate, "AlertDialog.Builder(bind…ew(binding.root).create()");
-        widgetChannelSettingsDeleteBindingA.e.setText(ChannelUtils.F(channel) ? R.string.delete_channel : R.string.delete_category);
-        widgetChannelSettingsDeleteBindingA.c.setOnClickListener(new View.OnClickListener() { // from class: com.discord.widgets.channels.settings.WidgetTextChannelSettings.confirmDelete.1
+        C1049s4 c1049s4M206a = C1049s4.m206a(LayoutInflater.from(getContext()), null, false);
+        C12238m.checkNotNullExpressionValue(c1049s4M206a, "WidgetChannelSettingsDel…om(context), null, false)");
+        LinearLayout linearLayout = c1049s4M206a.f1214a;
+        C12238m.checkNotNullExpressionValue(linearLayout, "binding.root");
+        final AlertDialog alertDialogCreate = new AlertDialog.Builder(linearLayout.getContext()).setView(c1049s4M206a.f1214a).create();
+        C12238m.checkNotNullExpressionValue(alertDialogCreate, "AlertDialog.Builder(bind…ew(binding.root).create()");
+        c1049s4M206a.f1218e.setText(ChannelUtils.m7671F(channel) ? C5419R.string.delete_channel : C5419R.string.delete_category);
+        c1049s4M206a.f1216c.setOnClickListener(new View.OnClickListener() { // from class: com.discord.widgets.channels.settings.WidgetTextChannelSettings.confirmDelete.1
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
                 alertDialogCreate.dismiss();
             }
         });
-        widgetChannelSettingsDeleteBindingA.d.setOnClickListener(new View.OnClickListener() { // from class: com.discord.widgets.channels.settings.WidgetTextChannelSettings.confirmDelete.2
+        c1049s4M206a.f1217d.setOnClickListener(new View.OnClickListener() { // from class: com.discord.widgets.channels.settings.WidgetTextChannelSettings.confirmDelete.2
 
-            /* JADX INFO: renamed from: com.discord.widgets.channels.settings.WidgetTextChannelSettings$confirmDelete$2$2, reason: invalid class name and collision with other inner class name */
+            /* JADX INFO: renamed from: com.discord.widgets.channels.settings.WidgetTextChannelSettings$confirmDelete$2$2, reason: invalid class name */
             /* JADX INFO: compiled from: WidgetTextChannelSettings.kt */
-            public static final class C02502 extends Lambda implements Function1<Channel, Unit> {
-                public C02502() {
+            public static final class AnonymousClass2 extends AbstractC12240o implements Function1<Channel, Unit> {
+                public AnonymousClass2() {
                     super(1);
                 }
 
                 @Override // kotlin.jvm.functions.Function1
                 public /* bridge */ /* synthetic */ Unit invoke(Channel channel) {
                     invoke2(channel);
-                    return Unit.a;
+                    return Unit.f27425a;
                 }
 
                 /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
                 public final void invoke2(Channel channel) {
-                    Intrinsics3.checkNotNullParameter(channel, "channel");
-                    Integer numB = ChannelUtils.b(channel);
-                    if (numB != null) {
-                        AppToast.i(WidgetTextChannelSettings.this, numB.intValue(), 0, 4);
+                    C12238m.checkNotNullParameter(channel, "channel");
+                    Integer numM7678b = ChannelUtils.m7678b(channel);
+                    if (numM7678b != null) {
+                        C0876m.m171i(WidgetTextChannelSettings.this, numM7678b.intValue(), 0, 4);
                     }
                 }
             }
@@ -722,13 +722,13 @@ public final class WidgetTextChannelSettings extends AppFragment {
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
                 Observable observableUi$default = ObservableExtensionsKt.ui$default(ObservableExtensionsKt.restSubscribeOn$default(RestAPI.INSTANCE.getApi().deleteChannel(channel.getId()), false, 1, null), WidgetTextChannelSettings.this, null, 2, null);
-                Intrinsics3.checkNotNullExpressionValue(view, "v");
-                ObservableExtensionsKt.appSubscribe(observableUi$default, (117 & 1) != 0 ? null : view.getContext(), "javaClass", (Function1<? super Subscription, Unit>) ((117 & 4) != 0 ? null : null), new C02502(), (Function1<? super Error, Unit>) ((117 & 16) != 0 ? null : null), (Function0<Unit>) ((117 & 32) != 0 ? ObservableExtensionsKt.AnonymousClass3.INSTANCE : null), (Function0<Unit>) ((117 & 64) != 0 ? ObservableExtensionsKt.AnonymousClass4.INSTANCE : null));
+                C12238m.checkNotNullExpressionValue(view, "v");
+                ObservableExtensionsKt.appSubscribe(observableUi$default, (117 & 1) != 0 ? null : view.getContext(), "javaClass", (Function1<? super Subscription, Unit>) ((117 & 4) != 0 ? null : null), new AnonymousClass2(), (Function1<? super Error, Unit>) ((117 & 16) != 0 ? null : null), (Function0<Unit>) ((117 & 32) != 0 ? ObservableExtensionsKt.C68813.INSTANCE : null), (Function0<Unit>) ((117 & 64) != 0 ? ObservableExtensionsKt.C68824.INSTANCE : null));
             }
         });
-        TextView textView = widgetChannelSettingsDeleteBindingA.f199b;
-        Intrinsics3.checkNotNullExpressionValue(textView, "binding.channelSettingsDeleteBody");
-        FormatUtils.m(textView, R.string.delete_channel_body, new Object[]{ChannelUtils.e(channel, requireContext(), false, 2)}, (4 & 4) != 0 ? FormatUtils.g.j : null);
+        TextView textView = c1049s4M206a.f1215b;
+        C12238m.checkNotNullExpressionValue(textView, "binding.channelSettingsDeleteBody");
+        C1107b.m221m(textView, C5419R.string.delete_channel_body, new Object[]{ChannelUtils.m7681e(channel, requireContext(), false, 2)}, (4 & 4) != 0 ? C1107b.g.f1495j : null);
         alertDialogCreate.show();
     }
 
@@ -741,7 +741,7 @@ public final class WidgetTextChannelSettings extends AppFragment {
     }
 
     private final void saveChannel(long id2, String name, Integer type, String topic, Boolean nsfw, Integer rateLimit, Integer defaultAutoArchiveDuration) {
-        ObservableExtensionsKt.ui$default(RestAPI.INSTANCE.getApi().editTextChannel(id2, name, type, topic, nsfw, rateLimit, defaultAutoArchiveDuration), this, null, 2, null).k(o.a.g(getContext(), new AnonymousClass1(), null));
+        ObservableExtensionsKt.ui$default(RestAPI.INSTANCE.getApi().editTextChannel(id2, name, type, topic, nsfw, rateLimit, defaultAutoArchiveDuration), this, null, 2, null).m11108k(C0879o.f566a.m184g(getContext(), new C76081(), null));
     }
 
     public static /* synthetic */ void saveChannel$default(WidgetTextChannelSettings widgetTextChannelSettings, long j, String str, Integer num, String str2, Boolean bool, Integer num2, Integer num3, int i, Object obj) {
@@ -750,9 +750,9 @@ public final class WidgetTextChannelSettings extends AppFragment {
 
     private final void setSlowmodeLabel(int cooldownSecs) {
         Companion companion = INSTANCE;
-        TextView textView = getBinding().p;
-        Intrinsics3.checkNotNullExpressionValue(textView, "binding.channelSettingsSlowModeCooldownLabel");
-        companion.setDurationSecondsLabel(textView, cooldownSecs, requireContext(), R.string.form_label_slowmode_off);
+        TextView textView = getBinding().f18242p;
+        C12238m.checkNotNullExpressionValue(textView, "binding.channelSettingsSlowModeCooldownLabel");
+        companion.setDurationSecondsLabel(textView, cooldownSecs, requireContext(), C5419R.string.form_label_slowmode_off);
     }
 
     private final void updateRadioState(Map<MaterialRadioButton, Integer> durationMap, int newDuration) {
@@ -763,48 +763,48 @@ public final class WidgetTextChannelSettings extends AppFragment {
 
     @Override // com.discord.app.AppFragment
     public void onViewBound(View view) {
-        Intrinsics3.checkNotNullParameter(view, "view");
+        C12238m.checkNotNullParameter(view, "view");
         super.onViewBound(view);
         setRetainInstance(true);
         this.state.setupUnsavedChangesConfirmation(this);
         StatefulViews statefulViews = this.state;
-        TextInputLayout textInputLayout = getBinding().d;
-        Intrinsics3.checkNotNullExpressionValue(textInputLayout, "binding.channelSettingsEditTopic");
+        TextInputLayout textInputLayout = getBinding().f18230d;
+        C12238m.checkNotNullExpressionValue(textInputLayout, "binding.channelSettingsEditTopic");
         statefulViews.addOptionalFields(textInputLayout);
         StatefulViews statefulViews2 = this.state;
-        FloatingActionButton floatingActionButton = getBinding().k;
-        TextInputLayout textInputLayout2 = getBinding().c;
-        Intrinsics3.checkNotNullExpressionValue(textInputLayout2, "binding.channelSettingsEditName");
-        TextInputLayout textInputLayout3 = getBinding().d;
-        Intrinsics3.checkNotNullExpressionValue(textInputLayout3, "binding.channelSettingsEditTopic");
+        FloatingActionButton floatingActionButton = getBinding().f18237k;
+        TextInputLayout textInputLayout2 = getBinding().f18229c;
+        C12238m.checkNotNullExpressionValue(textInputLayout2, "binding.channelSettingsEditName");
+        TextInputLayout textInputLayout3 = getBinding().f18230d;
+        C12238m.checkNotNullExpressionValue(textInputLayout3, "binding.channelSettingsEditTopic");
         statefulViews2.setupTextWatcherWithSaveAction(this, floatingActionButton, textInputLayout2, textInputLayout3);
-        SeekBar seekBar = getBinding().q;
-        Intrinsics3.checkNotNullExpressionValue(seekBar, "binding.channelSettingsSlowModeCooldownSlider");
-        seekBar.setMax(Collections2.getLastIndex(SLOWMODE_COOLDOWN_VALUES));
-        getBinding().q.setOnSeekBarChangeListener(new OnSeekBarChangeListenerAdapter() { // from class: com.discord.widgets.channels.settings.WidgetTextChannelSettings.onViewBound.1
-            @Override // b.a.y.OnSeekBarChangeListenerAdapter, android.widget.SeekBar.OnSeekBarChangeListener
+        SeekBar seekBar = getBinding().f18243q;
+        C12238m.checkNotNullExpressionValue(seekBar, "binding.channelSettingsSlowModeCooldownSlider");
+        seekBar.setMax(C12147n.getLastIndex(SLOWMODE_COOLDOWN_VALUES));
+        getBinding().f18243q.setOnSeekBarChangeListener(new C1337j() { // from class: com.discord.widgets.channels.settings.WidgetTextChannelSettings.onViewBound.1
+            @Override // p007b.p008a.p062y.C1337j, android.widget.SeekBar.OnSeekBarChangeListener
             public void onProgressChanged(SeekBar seekBar2, int progress, boolean fromUser) {
-                Intrinsics3.checkNotNullParameter(seekBar2, "seekBar");
+                C12238m.checkNotNullParameter(seekBar2, "seekBar");
                 super.onProgressChanged(seekBar2, progress, fromUser);
                 if (fromUser) {
                     int iIntValue = WidgetTextChannelSettings.INSTANCE.getSLOWMODE_COOLDOWN_VALUES().get(progress).intValue();
                     WidgetTextChannelSettings.this.setSlowmodeLabel(iIntValue);
-                    WidgetTextChannelSettings.this.state.put(R.id.channel_settings_slow_mode_cooldown_slider, Integer.valueOf(iIntValue));
-                    WidgetTextChannelSettings.this.state.configureSaveActionView(WidgetTextChannelSettings.this.getBinding().k);
-                    TextView textView = WidgetTextChannelSettings.this.getBinding().p;
-                    Intrinsics3.checkNotNullExpressionValue(textView, "binding.channelSettingsSlowModeCooldownLabel");
+                    WidgetTextChannelSettings.this.state.put(C5419R.id.channel_settings_slow_mode_cooldown_slider, Integer.valueOf(iIntValue));
+                    WidgetTextChannelSettings.this.state.configureSaveActionView(WidgetTextChannelSettings.this.getBinding().f18237k);
+                    TextView textView = WidgetTextChannelSettings.this.getBinding().f18242p;
+                    C12238m.checkNotNullExpressionValue(textView, "binding.channelSettingsSlowModeCooldownLabel");
                     seekBar2.setContentDescription(textView.getText());
                 }
             }
         });
-        TextInputLayout textInputLayout4 = getBinding().d;
-        Intrinsics3.checkNotNullExpressionValue(textInputLayout4, "binding.channelSettingsEditTopic");
+        TextInputLayout textInputLayout4 = getBinding().f18230d;
+        C12238m.checkNotNullExpressionValue(textInputLayout4, "binding.channelSettingsEditTopic");
         ViewExtensions.interceptScrollWhenInsideScrollable(textInputLayout4);
     }
 
     @Override // com.discord.app.AppFragment
     public void onViewBoundOrOnResume() {
         super.onViewBoundOrOnResume();
-        ObservableExtensionsKt.appSubscribe(ObservableExtensionsKt.ui$default(Model.INSTANCE.get(getMostRecentIntent().getLongExtra("com.discord.intent.extra.EXTRA_CHANNEL_ID", -1L)), this, null, 2, null), (Class<?>) WidgetTextChannelSettings.class, (58 & 2) != 0 ? null : null, (Function1<? super Subscription, Unit>) ((58 & 4) != 0 ? null : null), (Function1<? super Error, Unit>) ((58 & 8) != 0 ? null : null), (Function0<Unit>) ((58 & 16) != 0 ? ObservableExtensionsKt.AnonymousClass1.INSTANCE : null), (Function0<Unit>) ((58 & 32) != 0 ? ObservableExtensionsKt.AnonymousClass2.INSTANCE : null), new AnonymousClass1());
+        ObservableExtensionsKt.appSubscribe(ObservableExtensionsKt.ui$default(Model.INSTANCE.get(getMostRecentIntent().getLongExtra("com.discord.intent.extra.EXTRA_CHANNEL_ID", -1L)), this, null, 2, null), (Class<?>) WidgetTextChannelSettings.class, (58 & 2) != 0 ? null : null, (Function1<? super Subscription, Unit>) ((58 & 4) != 0 ? null : null), (Function1<? super Error, Unit>) ((58 & 8) != 0 ? null : null), (Function0<Unit>) ((58 & 16) != 0 ? ObservableExtensionsKt.C68791.INSTANCE : null), (Function0<Unit>) ((58 & 32) != 0 ? ObservableExtensionsKt.C68802.INSTANCE : null), new C76071());
     }
 }

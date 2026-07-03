@@ -12,33 +12,37 @@ import com.facebook.drawee.view.SimpleDraweeView;
 /* JADX INFO: loaded from: classes.dex */
 public final class WidgetStageChannelAudienceBinding implements ViewBinding {
 
+    /* JADX INFO: renamed from: a */
     @NonNull
-    public final ConstraintLayout a;
+    public final ConstraintLayout f18132a;
 
-    /* JADX INFO: renamed from: b, reason: collision with root package name */
+    /* JADX INFO: renamed from: b */
     @NonNull
-    public final SimpleDraweeView f2649b;
+    public final SimpleDraweeView f18133b;
 
+    /* JADX INFO: renamed from: c */
     @NonNull
-    public final CutoutView c;
+    public final CutoutView f18134c;
 
+    /* JADX INFO: renamed from: d */
     @NonNull
-    public final TextView d;
+    public final TextView f18135d;
 
+    /* JADX INFO: renamed from: e */
     @NonNull
-    public final ImageView e;
+    public final ImageView f18136e;
 
     public WidgetStageChannelAudienceBinding(@NonNull ConstraintLayout constraintLayout, @NonNull ConstraintLayout constraintLayout2, @NonNull SimpleDraweeView simpleDraweeView, @NonNull CutoutView cutoutView, @NonNull TextView textView, @NonNull ImageView imageView) {
-        this.a = constraintLayout;
-        this.f2649b = simpleDraweeView;
-        this.c = cutoutView;
-        this.d = textView;
-        this.e = imageView;
+        this.f18132a = constraintLayout;
+        this.f18133b = simpleDraweeView;
+        this.f18134c = cutoutView;
+        this.f18135d = textView;
+        this.f18136e = imageView;
     }
 
     @Override // androidx.viewbinding.ViewBinding
     @NonNull
     public View getRoot() {
-        return this.a;
+        return this.f18132a;
     }
 }

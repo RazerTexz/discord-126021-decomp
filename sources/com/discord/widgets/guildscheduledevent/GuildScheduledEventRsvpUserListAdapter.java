@@ -6,7 +6,7 @@ import android.view.ViewGroup;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 import androidx.recyclerview.widget.RecyclerView;
-import com.discord.R;
+import com.discord.C5419R;
 import com.discord.databinding.GuildScheduledEventRsvpUserListAdapterItemBinding;
 import com.discord.models.domain.ModelAuditLogEntry;
 import com.discord.utilities.icon.IconUtils;
@@ -17,9 +17,9 @@ import com.discord.utilities.user.UserUtils;
 import com.discord.views.StatusView;
 import com.discord.widgets.guildscheduledevent.GuildScheduledEventRsvpUserListItem;
 import com.facebook.drawee.view.SimpleDraweeView;
-import d0.z.d.Intrinsics3;
 import kotlin.Unit;
 import kotlin.jvm.functions.Function1;
+import p507d0.p592z.p594d.C12238m;
 
 /* JADX INFO: compiled from: GuildScheduledEventRsvpUserListAdapter.kt */
 /* JADX INFO: loaded from: classes2.dex */
@@ -31,22 +31,22 @@ public final class GuildScheduledEventRsvpUserListAdapter extends MGRecyclerAdap
         private final GuildScheduledEventRsvpUserListAdapterItemBinding binding;
 
         public UserViewHolder() {
-            super(R.layout.guild_scheduled_event_rsvp_user_list_adapter_item, GuildScheduledEventRsvpUserListAdapter.this);
+            super(C5419R.layout.guild_scheduled_event_rsvp_user_list_adapter_item, GuildScheduledEventRsvpUserListAdapter.this);
             View view = this.itemView;
-            int i = R.id.user_profile_adapter_item_avatar;
-            SimpleDraweeView simpleDraweeView = (SimpleDraweeView) view.findViewById(R.id.user_profile_adapter_item_avatar);
+            int i = C5419R.id.user_profile_adapter_item_avatar;
+            SimpleDraweeView simpleDraweeView = (SimpleDraweeView) view.findViewById(C5419R.id.user_profile_adapter_item_avatar);
             if (simpleDraweeView != null) {
-                i = R.id.user_profile_adapter_item_discriminator;
-                TextView textView = (TextView) view.findViewById(R.id.user_profile_adapter_item_discriminator);
+                i = C5419R.id.user_profile_adapter_item_discriminator;
+                TextView textView = (TextView) view.findViewById(C5419R.id.user_profile_adapter_item_discriminator);
                 if (textView != null) {
-                    i = R.id.user_profile_adapter_item_status;
-                    StatusView statusView = (StatusView) view.findViewById(R.id.user_profile_adapter_item_status);
+                    i = C5419R.id.user_profile_adapter_item_status;
+                    StatusView statusView = (StatusView) view.findViewById(C5419R.id.user_profile_adapter_item_status);
                     if (statusView != null) {
-                        i = R.id.user_profile_adapter_item_user_name;
-                        TextView textView2 = (TextView) view.findViewById(R.id.user_profile_adapter_item_user_name);
+                        i = C5419R.id.user_profile_adapter_item_user_name;
+                        TextView textView2 = (TextView) view.findViewById(C5419R.id.user_profile_adapter_item_user_name);
                         if (textView2 != null) {
                             GuildScheduledEventRsvpUserListAdapterItemBinding guildScheduledEventRsvpUserListAdapterItemBinding = new GuildScheduledEventRsvpUserListAdapterItemBinding((RelativeLayout) view, simpleDraweeView, textView, statusView, textView2);
-                            Intrinsics3.checkNotNullExpressionValue(guildScheduledEventRsvpUserListAdapterItemBinding, "GuildScheduledEventRsvpU…temBinding.bind(itemView)");
+                            C12238m.checkNotNullExpressionValue(guildScheduledEventRsvpUserListAdapterItemBinding, "GuildScheduledEventRsvpU…temBinding.bind(itemView)");
                             this.binding = guildScheduledEventRsvpUserListAdapterItemBinding;
                             return;
                         }
@@ -63,7 +63,7 @@ public final class GuildScheduledEventRsvpUserListAdapter extends MGRecyclerAdap
         @Override // com.discord.utilities.mg_recycler.MGRecyclerViewHolder
         @SuppressLint({"SetTextI18n"})
         public void onConfigure(int position, GuildScheduledEventRsvpUserListItem data) {
-            Intrinsics3.checkNotNullParameter(data, "data");
+            C12238m.checkNotNullParameter(data, "data");
             super.onConfigure(position, data);
             final GuildScheduledEventRsvpUserListItem.RsvpUser rsvpUser = (GuildScheduledEventRsvpUserListItem.RsvpUser) data;
             this.itemView.setOnClickListener(new View.OnClickListener() { // from class: com.discord.widgets.guildscheduledevent.GuildScheduledEventRsvpUserListAdapter$UserViewHolder$onConfigure$1
@@ -72,19 +72,19 @@ public final class GuildScheduledEventRsvpUserListAdapter extends MGRecyclerAdap
                     GuildScheduledEventRsvpUserListAdapter.this.onItemClick.invoke(Long.valueOf(rsvpUser.getUserId()));
                 }
             });
-            TextView textView = this.binding.d;
-            Intrinsics3.checkNotNullExpressionValue(textView, "binding.userProfileAdapterItemUserName");
+            TextView textView = this.binding.f15155d;
+            C12238m.checkNotNullExpressionValue(textView, "binding.userProfileAdapterItemUserName");
             textView.setText(rsvpUser.getDisplayName());
             if (rsvpUser.getNickname() == null) {
-                TextView textView2 = this.binding.c;
-                Intrinsics3.checkNotNullExpressionValue(textView2, "binding.userProfileAdapterItemDiscriminator");
+                TextView textView2 = this.binding.f15154c;
+                C12238m.checkNotNullExpressionValue(textView2, "binding.userProfileAdapterItemDiscriminator");
                 textView2.setText(UserUtils.INSTANCE.padDiscriminator(rsvpUser.getDiscriminator()));
             }
             String forGuildMember = rsvpUser.getGuildAvatar() != null ? IconUtils.INSTANCE.getForGuildMember(rsvpUser.getGuildAvatar(), rsvpUser.getGuildId(), rsvpUser.getUserId(), (24 & 8) != 0 ? null : null, (24 & 16) != 0 ? false : false) : IconUtils.getForUser$default(Long.valueOf(rsvpUser.getUserId()), rsvpUser.getUserAvatar(), null, false, null, 28, null);
             if (forGuildMember != null) {
-                SimpleDraweeView simpleDraweeView = this.binding.f2122b;
-                Intrinsics3.checkNotNullExpressionValue(simpleDraweeView, "binding.userProfileAdapterItemAvatar");
-                IconUtils.setIcon$default(simpleDraweeView, forGuildMember, R.dimen.avatar_size_standard, (Function1) null, (MGImages.ChangeDetector) null, 24, (Object) null);
+                SimpleDraweeView simpleDraweeView = this.binding.f15153b;
+                C12238m.checkNotNullExpressionValue(simpleDraweeView, "binding.userProfileAdapterItemAvatar");
+                IconUtils.setIcon$default(simpleDraweeView, forGuildMember, C5419R.dimen.avatar_size_standard, (Function1) null, (MGImages.ChangeDetector) null, 24, (Object) null);
             }
         }
     }
@@ -93,14 +93,14 @@ public final class GuildScheduledEventRsvpUserListAdapter extends MGRecyclerAdap
     /* JADX WARN: Multi-variable type inference failed */
     public GuildScheduledEventRsvpUserListAdapter(RecyclerView recyclerView, Function1<? super Long, Unit> function1) {
         super(recyclerView, false, 2, null);
-        Intrinsics3.checkNotNullParameter(recyclerView, "recyclerView");
-        Intrinsics3.checkNotNullParameter(function1, "onItemClick");
+        C12238m.checkNotNullParameter(recyclerView, "recyclerView");
+        C12238m.checkNotNullParameter(function1, "onItemClick");
         this.onItemClick = function1;
     }
 
     @Override // androidx.recyclerview.widget.RecyclerView.Adapter
     public MGRecyclerViewHolder<?, GuildScheduledEventRsvpUserListItem> onCreateViewHolder(ViewGroup parent, int viewType) {
-        Intrinsics3.checkNotNullParameter(parent, "parent");
+        C12238m.checkNotNullParameter(parent, "parent");
         if (viewType == 0) {
             return new UserViewHolder();
         }

@@ -7,7 +7,6 @@ import android.os.Message;
 import android.os.Process;
 import android.util.Log;
 import androidx.annotation.RestrictTo;
-import b.d.b.a.outline;
 import java.util.concurrent.BlockingQueue;
 import java.util.concurrent.Callable;
 import java.util.concurrent.CancellationException;
@@ -21,6 +20,7 @@ import java.util.concurrent.TimeUnit;
 import java.util.concurrent.TimeoutException;
 import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.concurrent.atomic.AtomicInteger;
+import p007b.p100d.p104b.p105a.C1643a;
 
 /* JADX INFO: loaded from: classes.dex */
 public abstract class ModernAsyncTask<Params, Progress, Result> {
@@ -41,8 +41,8 @@ public abstract class ModernAsyncTask<Params, Progress, Result> {
     public final AtomicBoolean mCancelled = new AtomicBoolean();
     public final AtomicBoolean mTaskInvoked = new AtomicBoolean();
 
-    /* JADX INFO: renamed from: androidx.loader.content.ModernAsyncTask$4, reason: invalid class name */
-    public static /* synthetic */ class AnonymousClass4 {
+    /* JADX INFO: renamed from: androidx.loader.content.ModernAsyncTask$4 */
+    public static /* synthetic */ class C04734 {
         public static final /* synthetic */ int[] $SwitchMap$androidx$loader$content$ModernAsyncTask$Status;
 
         static {
@@ -117,9 +117,9 @@ public abstract class ModernAsyncTask<Params, Progress, Result> {
 
             @Override // java.util.concurrent.ThreadFactory
             public Thread newThread(Runnable runnable) {
-                StringBuilder sbU = outline.U("ModernAsyncTask #");
-                sbU.append(this.mCount.getAndIncrement());
-                return new Thread(runnable, sbU.toString());
+                StringBuilder sbM833U = C1643a.m833U("ModernAsyncTask #");
+                sbM833U.append(this.mCount.getAndIncrement());
+                return new Thread(runnable, sbM833U.toString());
             }
         };
         sThreadFactory = threadFactory;

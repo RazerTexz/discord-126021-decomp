@@ -1,14 +1,14 @@
 package com.discord.analytics.generated.events;
 
-import b.d.b.a.outline;
 import com.discord.analytics.generated.traits.TrackBase;
-import com.discord.analytics.generated.traits.TrackBase2;
+import com.discord.analytics.generated.traits.TrackBaseReceiver;
 import com.discord.api.science.AnalyticsSchema;
-import d0.z.d.Intrinsics3;
+import p007b.p100d.p104b.p105a.C1643a;
+import p507d0.p592z.p594d.C12238m;
 
 /* JADX INFO: compiled from: TrackVideohookInitialized.kt */
 /* JADX INFO: loaded from: classes.dex */
-public final /* data */ class TrackVideohookInitialized implements AnalyticsSchema, TrackBase2 {
+public final /* data */ class TrackVideohookInitialized implements AnalyticsSchema, TrackBaseReceiver {
     private TrackBase trackBase;
     private final Long backend = null;
     private final Long format = null;
@@ -35,7 +35,7 @@ public final /* data */ class TrackVideohookInitialized implements AnalyticsSche
             return false;
         }
         TrackVideohookInitialized trackVideohookInitialized = (TrackVideohookInitialized) other;
-        return Intrinsics3.areEqual(this.backend, trackVideohookInitialized.backend) && Intrinsics3.areEqual(this.format, trackVideohookInitialized.format) && Intrinsics3.areEqual(this.framebufferFormat, trackVideohookInitialized.framebufferFormat) && Intrinsics3.areEqual(this.sampleCount, trackVideohookInitialized.sampleCount) && Intrinsics3.areEqual(this.success, trackVideohookInitialized.success) && Intrinsics3.areEqual(this.reinitialization, trackVideohookInitialized.reinitialization) && Intrinsics3.areEqual(this.soundshareSession, trackVideohookInitialized.soundshareSession) && Intrinsics3.areEqual(this.shareGameName, trackVideohookInitialized.shareGameName) && Intrinsics3.areEqual(this.shareGameId, trackVideohookInitialized.shareGameId);
+        return C12238m.areEqual(this.backend, trackVideohookInitialized.backend) && C12238m.areEqual(this.format, trackVideohookInitialized.format) && C12238m.areEqual(this.framebufferFormat, trackVideohookInitialized.framebufferFormat) && C12238m.areEqual(this.sampleCount, trackVideohookInitialized.sampleCount) && C12238m.areEqual(this.success, trackVideohookInitialized.success) && C12238m.areEqual(this.reinitialization, trackVideohookInitialized.reinitialization) && C12238m.areEqual(this.soundshareSession, trackVideohookInitialized.soundshareSession) && C12238m.areEqual(this.shareGameName, trackVideohookInitialized.shareGameName) && C12238m.areEqual(this.shareGameId, trackVideohookInitialized.shareGameId);
     }
 
     public int hashCode() {
@@ -60,23 +60,23 @@ public final /* data */ class TrackVideohookInitialized implements AnalyticsSche
     }
 
     public String toString() {
-        StringBuilder sbU = outline.U("TrackVideohookInitialized(backend=");
-        sbU.append(this.backend);
-        sbU.append(", format=");
-        sbU.append(this.format);
-        sbU.append(", framebufferFormat=");
-        sbU.append(this.framebufferFormat);
-        sbU.append(", sampleCount=");
-        sbU.append(this.sampleCount);
-        sbU.append(", success=");
-        sbU.append(this.success);
-        sbU.append(", reinitialization=");
-        sbU.append(this.reinitialization);
-        sbU.append(", soundshareSession=");
-        sbU.append(this.soundshareSession);
-        sbU.append(", shareGameName=");
-        sbU.append(this.shareGameName);
-        sbU.append(", shareGameId=");
-        return outline.G(sbU, this.shareGameId, ")");
+        StringBuilder sbM833U = C1643a.m833U("TrackVideohookInitialized(backend=");
+        sbM833U.append(this.backend);
+        sbM833U.append(", format=");
+        sbM833U.append(this.format);
+        sbM833U.append(", framebufferFormat=");
+        sbM833U.append(this.framebufferFormat);
+        sbM833U.append(", sampleCount=");
+        sbM833U.append(this.sampleCount);
+        sbM833U.append(", success=");
+        sbM833U.append(this.success);
+        sbM833U.append(", reinitialization=");
+        sbM833U.append(this.reinitialization);
+        sbM833U.append(", soundshareSession=");
+        sbM833U.append(this.soundshareSession);
+        sbM833U.append(", shareGameName=");
+        sbM833U.append(this.shareGameName);
+        sbM833U.append(", shareGameId=");
+        return C1643a.m819G(sbM833U, this.shareGameId, ")");
     }
 }

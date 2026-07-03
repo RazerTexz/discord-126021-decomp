@@ -11,29 +11,32 @@ import com.google.android.material.textfield.TextInputLayout;
 /* JADX INFO: loaded from: classes.dex */
 public final class WidgetServerSettingsSecurityDialogBinding implements ViewBinding {
 
+    /* JADX INFO: renamed from: a */
     @NonNull
-    public final LinearLayout a;
+    public final LinearLayout f17755a;
 
-    /* JADX INFO: renamed from: b, reason: collision with root package name */
+    /* JADX INFO: renamed from: b */
     @NonNull
-    public final MaterialButton f2587b;
+    public final MaterialButton f17756b;
 
+    /* JADX INFO: renamed from: c */
     @NonNull
-    public final MaterialButton c;
+    public final MaterialButton f17757c;
 
+    /* JADX INFO: renamed from: d */
     @NonNull
-    public final TextInputLayout d;
+    public final TextInputLayout f17758d;
 
     public WidgetServerSettingsSecurityDialogBinding(@NonNull LinearLayout linearLayout, @NonNull TextView textView, @NonNull MaterialButton materialButton, @NonNull MaterialButton materialButton2, @NonNull TextInputLayout textInputLayout) {
-        this.a = linearLayout;
-        this.f2587b = materialButton;
-        this.c = materialButton2;
-        this.d = textInputLayout;
+        this.f17755a = linearLayout;
+        this.f17756b = materialButton;
+        this.f17757c = materialButton2;
+        this.f17758d = textInputLayout;
     }
 
     @Override // androidx.viewbinding.ViewBinding
     @NonNull
     public View getRoot() {
-        return this.a;
+        return this.f17755a;
     }
 }

@@ -10,12 +10,7 @@ import android.widget.TextView;
 import androidx.annotation.LayoutRes;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.RecyclerView;
-import b.a.d.AppScreen2;
-import b.a.d.AppToast;
-import b.a.d.o;
-import b.a.k.FormatUtils;
-import b.d.b.a.outline;
-import com.discord.R;
+import com.discord.C5419R;
 import com.discord.api.auth.mfa.BackupCode;
 import com.discord.api.auth.mfa.GetBackupCodesResponse;
 import com.discord.api.auth.mfa.GetBackupCodesSendVerificationKeyRequestBody;
@@ -33,15 +28,12 @@ import com.discord.utilities.mg_recycler.MGRecyclerAdapter;
 import com.discord.utilities.mg_recycler.MGRecyclerAdapterSimple;
 import com.discord.utilities.mg_recycler.MGRecyclerDataPayload;
 import com.discord.utilities.mg_recycler.MGRecyclerViewHolder;
+import com.discord.utilities.p501rx.ObservableExtensionsKt;
 import com.discord.utilities.rest.RestAPI;
-import com.discord.utilities.rx.ObservableExtensionsKt;
 import com.discord.utilities.viewbinding.FragmentViewBindingDelegate;
-import com.discord.utilities.viewbinding.FragmentViewBindingDelegate3;
+import com.discord.utilities.viewbinding.FragmentViewBindingDelegateKt;
 import com.discord.widgets.notice.WidgetNoticeDialog;
 import com.discord.widgets.settings.account.WidgetSettingsAccountBackupCodes;
-import d0.t.Iterables2;
-import d0.z.d.Intrinsics3;
-import d0.z.d.Lambda;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
@@ -50,12 +42,20 @@ import kotlin.Unit;
 import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.reflect.KProperty;
-import rx.functions.Action1;
+import p007b.p008a.p018d.C0870j;
+import p007b.p008a.p018d.C0876m;
+import p007b.p008a.p018d.C0879o;
+import p007b.p008a.p027k.C1107b;
+import p007b.p100d.p104b.p105a.C1643a;
+import p507d0.p580t.C12149o;
+import p507d0.p592z.p594d.AbstractC12240o;
+import p507d0.p592z.p594d.C12238m;
+import p658rx.functions.Action1;
 
 /* JADX INFO: compiled from: WidgetSettingsAccountBackupCodes.kt */
 /* JADX INFO: loaded from: classes2.dex */
 public final class WidgetSettingsAccountBackupCodes extends AppFragment {
-    public static final /* synthetic */ KProperty[] $$delegatedProperties = {outline.d0(WidgetSettingsAccountBackupCodes.class, "binding", "getBinding()Lcom/discord/databinding/WidgetSettingsAccountBackupCodesBinding;", 0)};
+    public static final /* synthetic */ KProperty[] $$delegatedProperties = {C1643a.m846d0(WidgetSettingsAccountBackupCodes.class, "binding", "getBinding()Lcom/discord/databinding/WidgetSettingsAccountBackupCodesBinding;", 0)};
 
     /* JADX INFO: renamed from: Companion, reason: from kotlin metadata */
     public static final Companion INSTANCE = new Companion(null);
@@ -78,21 +78,21 @@ public final class WidgetSettingsAccountBackupCodes extends AppFragment {
             /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
             public BackupCodeHeaderViewHolder(@LayoutRes int i, Adapter adapter) {
                 super(i, adapter);
-                Intrinsics3.checkNotNullParameter(adapter, "adapter");
+                C12238m.checkNotNullParameter(adapter, "adapter");
                 View view = this.itemView;
                 Objects.requireNonNull(view, "rootView");
                 TextView textView = (TextView) view;
                 WidgetSettingsItemBackupCodeHeaderBinding widgetSettingsItemBackupCodeHeaderBinding = new WidgetSettingsItemBackupCodeHeaderBinding(textView, textView);
-                Intrinsics3.checkNotNullExpressionValue(widgetSettingsItemBackupCodeHeaderBinding, "WidgetSettingsItemBackup…derBinding.bind(itemView)");
+                C12238m.checkNotNullExpressionValue(widgetSettingsItemBackupCodeHeaderBinding, "WidgetSettingsItemBackup…derBinding.bind(itemView)");
                 this.binding = widgetSettingsItemBackupCodeHeaderBinding;
             }
 
             @Override // com.discord.utilities.mg_recycler.MGRecyclerViewHolder
             public void onConfigure(int position, MGRecyclerDataPayload data) {
-                Intrinsics3.checkNotNullParameter(data, "data");
+                C12238m.checkNotNullParameter(data, "data");
                 super.onConfigure(position, data);
-                TextView textView = this.binding.f2624b;
-                Intrinsics3.checkNotNullExpressionValue(textView, "binding.itemHeader");
+                TextView textView = this.binding.f17978b;
+                C12238m.checkNotNullExpressionValue(textView, "binding.itemHeader");
                 textView.setText(((BackupCodeItemHeader) data).getHeaderText());
             }
         }
@@ -104,46 +104,46 @@ public final class WidgetSettingsAccountBackupCodes extends AppFragment {
             /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
             public BackupCodeViewHolder(@LayoutRes int i, Adapter adapter) {
                 super(i, adapter);
-                Intrinsics3.checkNotNullParameter(adapter, "adapter");
+                C12238m.checkNotNullParameter(adapter, "adapter");
                 View view = this.itemView;
                 Objects.requireNonNull(view, "rootView");
                 TextView textView = (TextView) view;
                 WidgetSettingsItemBackupCodeBinding widgetSettingsItemBackupCodeBinding = new WidgetSettingsItemBackupCodeBinding(textView, textView);
-                Intrinsics3.checkNotNullExpressionValue(widgetSettingsItemBackupCodeBinding, "WidgetSettingsItemBackupCodeBinding.bind(itemView)");
+                C12238m.checkNotNullExpressionValue(widgetSettingsItemBackupCodeBinding, "WidgetSettingsItemBackupCodeBinding.bind(itemView)");
                 this.binding = widgetSettingsItemBackupCodeBinding;
             }
 
             @Override // com.discord.utilities.mg_recycler.MGRecyclerViewHolder
             public void onConfigure(int position, final MGRecyclerDataPayload data) {
-                Intrinsics3.checkNotNullParameter(data, "data");
+                C12238m.checkNotNullParameter(data, "data");
                 super.onConfigure(position, data);
                 BackupCodeItem backupCodeItem = (BackupCodeItem) data;
-                TextView textView = this.binding.f2623b;
-                Intrinsics3.checkNotNullExpressionValue(textView, "binding.itemBackupCodeTv");
+                TextView textView = this.binding.f17976b;
+                C12238m.checkNotNullExpressionValue(textView, "binding.itemBackupCodeTv");
                 String code = backupCodeItem.getBackupCode().getCode();
                 Objects.requireNonNull(code, "null cannot be cast to non-null type java.lang.String");
                 String strSubstring = code.substring(0, 4);
-                Intrinsics3.checkNotNullExpressionValue(strSubstring, "(this as java.lang.Strin…ing(startIndex, endIndex)");
+                C12238m.checkNotNullExpressionValue(strSubstring, "(this as java.lang.Strin…ing(startIndex, endIndex)");
                 String code2 = backupCodeItem.getBackupCode().getCode();
                 Objects.requireNonNull(code2, "null cannot be cast to non-null type java.lang.String");
                 String strSubstring2 = code2.substring(4);
-                Intrinsics3.checkNotNullExpressionValue(strSubstring2, "(this as java.lang.String).substring(startIndex)");
-                FormatUtils.m(textView, R.string.backup_codes_dash, new Object[]{strSubstring, strSubstring2}, (4 & 4) != 0 ? FormatUtils.g.j : null);
+                C12238m.checkNotNullExpressionValue(strSubstring2, "(this as java.lang.String).substring(startIndex)");
+                C1107b.m221m(textView, C5419R.string.backup_codes_dash, new Object[]{strSubstring, strSubstring2}, (4 & 4) != 0 ? C1107b.g.f1495j : null);
                 if (backupCodeItem.getBackupCode().getConsumed()) {
-                    this.binding.f2623b.setCompoundDrawablesWithIntrinsicBounds(0, 0, R.drawable.ic_check_brand_24dp, 0);
-                    this.binding.f2623b.setOnClickListener(null);
+                    this.binding.f17976b.setCompoundDrawablesWithIntrinsicBounds(0, 0, C5419R.drawable.ic_check_brand_24dp, 0);
+                    this.binding.f17976b.setOnClickListener(null);
                 } else {
-                    this.binding.f2623b.setCompoundDrawablesWithIntrinsicBounds(0, 0, 0, 0);
-                    this.binding.f2623b.setOnClickListener(new View.OnClickListener() { // from class: com.discord.widgets.settings.account.WidgetSettingsAccountBackupCodes$Adapter$BackupCodeViewHolder$onConfigure$1
+                    this.binding.f17976b.setCompoundDrawablesWithIntrinsicBounds(0, 0, 0, 0);
+                    this.binding.f17976b.setOnClickListener(new View.OnClickListener() { // from class: com.discord.widgets.settings.account.WidgetSettingsAccountBackupCodes$Adapter$BackupCodeViewHolder$onConfigure$1
                         @Override // android.view.View.OnClickListener
                         public final void onClick(View view) {
-                            Intrinsics3.checkNotNullExpressionValue(view, "it");
+                            C12238m.checkNotNullExpressionValue(view, "it");
                             ClipboardManager clipboardManager = (ClipboardManager) view.getContext().getSystemService("clipboard");
                             ClipData clipDataNewPlainText = ClipData.newPlainText("backup code", ((WidgetSettingsAccountBackupCodes.BackupCodeItem) data).getBackupCode().getCode());
                             if (clipboardManager != null) {
                                 clipboardManager.setPrimaryClip(clipDataNewPlainText);
                             }
-                            AppToast.g(view.getContext(), R.string.copied_text, 0, null, 12);
+                            C0876m.m169g(view.getContext(), C5419R.string.copied_text, 0, null, 12);
                         }
                     });
                 }
@@ -153,16 +153,16 @@ public final class WidgetSettingsAccountBackupCodes extends AppFragment {
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
         public Adapter(RecyclerView recyclerView) {
             super(recyclerView, false, 2, null);
-            Intrinsics3.checkNotNullParameter(recyclerView, "recyclerView");
+            C12238m.checkNotNullParameter(recyclerView, "recyclerView");
         }
 
         @Override // androidx.recyclerview.widget.RecyclerView.Adapter
         public MGRecyclerViewHolder<Adapter, MGRecyclerDataPayload> onCreateViewHolder(ViewGroup parent, int viewType) {
-            Intrinsics3.checkNotNullParameter(parent, "parent");
+            C12238m.checkNotNullParameter(parent, "parent");
             if (viewType != 0) {
-                return viewType != 1 ? new MGRecyclerViewHolder<>(0, this) : new BackupCodeViewHolder(R.layout.widget_settings_item_backup_code, this);
+                return viewType != 1 ? new MGRecyclerViewHolder<>(0, this) : new BackupCodeViewHolder(C5419R.layout.widget_settings_item_backup_code, this);
             }
-            return new BackupCodeHeaderViewHolder(R.layout.widget_settings_item_backup_code_header, this);
+            return new BackupCodeHeaderViewHolder(C5419R.layout.widget_settings_item_backup_code_header, this);
         }
     }
 
@@ -173,7 +173,7 @@ public final class WidgetSettingsAccountBackupCodes extends AppFragment {
         private final int type;
 
         public BackupCodeItem(BackupCode backupCode) {
-            Intrinsics3.checkNotNullParameter(backupCode, "backupCode");
+            C12238m.checkNotNullParameter(backupCode, "backupCode");
             this.backupCode = backupCode;
             this.type = 1;
             this.key = backupCode.getCode();
@@ -192,13 +192,13 @@ public final class WidgetSettingsAccountBackupCodes extends AppFragment {
         }
 
         public final BackupCodeItem copy(BackupCode backupCode) {
-            Intrinsics3.checkNotNullParameter(backupCode, "backupCode");
+            C12238m.checkNotNullParameter(backupCode, "backupCode");
             return new BackupCodeItem(backupCode);
         }
 
         public boolean equals(Object other) {
             if (this != other) {
-                return (other instanceof BackupCodeItem) && Intrinsics3.areEqual(this.backupCode, ((BackupCodeItem) other).backupCode);
+                return (other instanceof BackupCodeItem) && C12238m.areEqual(this.backupCode, ((BackupCodeItem) other).backupCode);
             }
             return true;
         }
@@ -226,10 +226,10 @@ public final class WidgetSettingsAccountBackupCodes extends AppFragment {
         }
 
         public String toString() {
-            StringBuilder sbU = outline.U("BackupCodeItem(backupCode=");
-            sbU.append(this.backupCode);
-            sbU.append(")");
-            return sbU.toString();
+            StringBuilder sbM833U = C1643a.m833U("BackupCodeItem(backupCode=");
+            sbM833U.append(this.backupCode);
+            sbM833U.append(")");
+            return sbM833U.toString();
         }
     }
 
@@ -240,7 +240,7 @@ public final class WidgetSettingsAccountBackupCodes extends AppFragment {
         private final int type;
 
         public BackupCodeItemHeader(CharSequence charSequence) {
-            Intrinsics3.checkNotNullParameter(charSequence, "headerText");
+            C12238m.checkNotNullParameter(charSequence, "headerText");
             this.headerText = charSequence;
             this.key = charSequence.toString();
         }
@@ -258,13 +258,13 @@ public final class WidgetSettingsAccountBackupCodes extends AppFragment {
         }
 
         public final BackupCodeItemHeader copy(CharSequence headerText) {
-            Intrinsics3.checkNotNullParameter(headerText, "headerText");
+            C12238m.checkNotNullParameter(headerText, "headerText");
             return new BackupCodeItemHeader(headerText);
         }
 
         public boolean equals(Object other) {
             if (this != other) {
-                return (other instanceof BackupCodeItemHeader) && Intrinsics3.areEqual(this.headerText, ((BackupCodeItemHeader) other).headerText);
+                return (other instanceof BackupCodeItemHeader) && C12238m.areEqual(this.headerText, ((BackupCodeItemHeader) other).headerText);
             }
             return true;
         }
@@ -292,7 +292,7 @@ public final class WidgetSettingsAccountBackupCodes extends AppFragment {
         }
 
         public String toString() {
-            return outline.E(outline.U("BackupCodeItemHeader(headerText="), this.headerText, ")");
+            return C1643a.m817E(C1643a.m833U("BackupCodeItemHeader(headerText="), this.headerText, ")");
         }
     }
 
@@ -302,8 +302,8 @@ public final class WidgetSettingsAccountBackupCodes extends AppFragment {
         }
 
         public final void launch(Context context) {
-            Intrinsics3.checkNotNullParameter(context, "context");
-            AppScreen2.d(context, WidgetSettingsAccountBackupCodes.class, new Intent());
+            C12238m.checkNotNullParameter(context, "context");
+            C0870j.m156d(context, WidgetSettingsAccountBackupCodes.class, new Intent());
         }
 
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
@@ -311,38 +311,38 @@ public final class WidgetSettingsAccountBackupCodes extends AppFragment {
         }
     }
 
-    /* JADX INFO: renamed from: com.discord.widgets.settings.account.WidgetSettingsAccountBackupCodes$getBackupCodes$1, reason: invalid class name */
+    /* JADX INFO: renamed from: com.discord.widgets.settings.account.WidgetSettingsAccountBackupCodes$getBackupCodes$1 */
     /* JADX INFO: compiled from: WidgetSettingsAccountBackupCodes.kt */
-    public static final class AnonymousClass1 extends Lambda implements Function1<GetBackupCodesResponse, Unit> {
-        public AnonymousClass1() {
+    public static final class C97341 extends AbstractC12240o implements Function1<GetBackupCodesResponse, Unit> {
+        public C97341() {
             super(1);
         }
 
         @Override // kotlin.jvm.functions.Function1
         public /* bridge */ /* synthetic */ Unit invoke(GetBackupCodesResponse getBackupCodesResponse) {
             invoke2(getBackupCodesResponse);
-            return Unit.a;
+            return Unit.f27425a;
         }
 
         /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
         public final void invoke2(GetBackupCodesResponse getBackupCodesResponse) {
-            List<BackupCode> listA = getBackupCodesResponse.a();
+            List<BackupCode> listM7590a = getBackupCodesResponse.m7590a();
             ArrayList arrayList = new ArrayList();
-            for (Object obj : listA) {
+            for (Object obj : listM7590a) {
                 if (!((BackupCode) obj).getConsumed()) {
                     arrayList.add(obj);
                 }
             }
             ArrayList arrayList2 = new ArrayList();
-            for (Object obj2 : listA) {
+            for (Object obj2 : listM7590a) {
                 if (((BackupCode) obj2).getConsumed()) {
                     arrayList2.add(obj2);
                 }
             }
             ArrayList arrayList3 = new ArrayList();
             if (!arrayList.isEmpty()) {
-                arrayList3.add(new BackupCodeItemHeader(FormatUtils.b(WidgetSettingsAccountBackupCodes.this.requireContext(), R.string.user_settings_available_codes, new Object[0], (4 & 4) != 0 ? FormatUtils.b.j : null)));
-                ArrayList arrayList4 = new ArrayList(Iterables2.collectionSizeOrDefault(arrayList, 10));
+                arrayList3.add(new BackupCodeItemHeader(C1107b.m210b(WidgetSettingsAccountBackupCodes.this.requireContext(), C5419R.string.user_settings_available_codes, new Object[0], (4 & 4) != 0 ? C1107b.b.f1491j : null)));
+                ArrayList arrayList4 = new ArrayList(C12149o.collectionSizeOrDefault(arrayList, 10));
                 Iterator it = arrayList.iterator();
                 while (it.hasNext()) {
                     arrayList4.add(new BackupCodeItem((BackupCode) it.next()));
@@ -350,8 +350,8 @@ public final class WidgetSettingsAccountBackupCodes extends AppFragment {
                 arrayList3.addAll(arrayList4);
             }
             if (!arrayList2.isEmpty()) {
-                arrayList3.add(new BackupCodeItemHeader(FormatUtils.b(WidgetSettingsAccountBackupCodes.this.requireContext(), R.string.user_settings_used_backup_codes, new Object[0], (4 & 4) != 0 ? FormatUtils.b.j : null)));
-                ArrayList arrayList5 = new ArrayList(Iterables2.collectionSizeOrDefault(arrayList2, 10));
+                arrayList3.add(new BackupCodeItemHeader(C1107b.m210b(WidgetSettingsAccountBackupCodes.this.requireContext(), C5419R.string.user_settings_used_backup_codes, new Object[0], (4 & 4) != 0 ? C1107b.b.f1491j : null)));
+                ArrayList arrayList5 = new ArrayList(C12149o.collectionSizeOrDefault(arrayList2, 10));
                 Iterator it2 = arrayList2.iterator();
                 while (it2.hasNext()) {
                     arrayList5.add(new BackupCodeItem((BackupCode) it2.next()));
@@ -362,17 +362,17 @@ public final class WidgetSettingsAccountBackupCodes extends AppFragment {
         }
     }
 
-    /* JADX INFO: renamed from: com.discord.widgets.settings.account.WidgetSettingsAccountBackupCodes$sendVerificationKey$1, reason: invalid class name */
+    /* JADX INFO: renamed from: com.discord.widgets.settings.account.WidgetSettingsAccountBackupCodes$sendVerificationKey$1 */
     /* JADX INFO: compiled from: WidgetSettingsAccountBackupCodes.kt */
-    public static final class AnonymousClass1 extends Lambda implements Function1<GetBackupCodesSendVerificationKeyResponse, Unit> {
-        public AnonymousClass1() {
+    public static final class C97361 extends AbstractC12240o implements Function1<GetBackupCodesSendVerificationKeyResponse, Unit> {
+        public C97361() {
             super(1);
         }
 
         @Override // kotlin.jvm.functions.Function1
         public /* bridge */ /* synthetic */ Unit invoke(GetBackupCodesSendVerificationKeyResponse getBackupCodesSendVerificationKeyResponse) {
             invoke2(getBackupCodesSendVerificationKeyResponse);
-            return Unit.a;
+            return Unit.f27425a;
         }
 
         /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
@@ -384,8 +384,8 @@ public final class WidgetSettingsAccountBackupCodes extends AppFragment {
     }
 
     public WidgetSettingsAccountBackupCodes() {
-        super(R.layout.widget_settings_account_backup_codes);
-        this.binding = FragmentViewBindingDelegate3.viewBinding$default(this, WidgetSettingsAccountBackupCodes3.INSTANCE, null, 2, null);
+        super(C5419R.layout.widget_settings_account_backup_codes);
+        this.binding = FragmentViewBindingDelegateKt.viewBinding$default(this, WidgetSettingsAccountBackupCodes$binding$2.INSTANCE, null, 2, null);
         this.password = "";
         this.nonce = "";
         this.regenerateNonce = "";
@@ -395,13 +395,13 @@ public final class WidgetSettingsAccountBackupCodes extends AppFragment {
     private final void configureUI(List<? extends MGRecyclerDataPayload> data) {
         Adapter adapter = this.backupCodesAdapter;
         if (adapter == null) {
-            Intrinsics3.throwUninitializedPropertyAccessException("backupCodesAdapter");
+            C12238m.throwUninitializedPropertyAccessException("backupCodesAdapter");
         }
         adapter.setData(data);
     }
 
     private final void getBackupCodes(boolean regenerate) {
-        ObservableExtensionsKt.restSubscribeOn$default(ObservableExtensionsKt.withDimmer(ObservableExtensionsKt.ui$default(RestAPI.INSTANCE.getApi().getBackupCodesVerification(new GetBackupCodesVerificationRequestBody(this.verificationKey, regenerate ? this.regenerateNonce : this.nonce, regenerate)), this, null, 2, null), getBinding().f2590b, 100L), false, 1, null).k(o.a.g(getContext(), new AnonymousClass1(), null));
+        ObservableExtensionsKt.restSubscribeOn$default(ObservableExtensionsKt.withDimmer(ObservableExtensionsKt.ui$default(RestAPI.INSTANCE.getApi().getBackupCodesVerification(new GetBackupCodesVerificationRequestBody(this.verificationKey, regenerate ? this.regenerateNonce : this.nonce, regenerate)), this, null, 2, null), getBinding().f17781b, 100L), false, 1, null).m11108k(C0879o.f566a.m184g(getContext(), new C97341(), null));
     }
 
     public static /* synthetic */ void getBackupCodes$default(WidgetSettingsAccountBackupCodes widgetSettingsAccountBackupCodes, boolean z2, int i, Object obj) {
@@ -416,8 +416,8 @@ public final class WidgetSettingsAccountBackupCodes extends AppFragment {
     }
 
     private final void sendVerificationKey() {
-        ObservableExtensionsKt.restSubscribeOn$default(ObservableExtensionsKt.ui$default(RestAPI.INSTANCE.getApi().getBackupCodesSendVerificationKey(new GetBackupCodesSendVerificationKeyRequestBody(this.password)), this, null, 2, null), false, 1, null).k(o.a.g(getContext(), new AnonymousClass1(), new Action1<Error>() { // from class: com.discord.widgets.settings.account.WidgetSettingsAccountBackupCodes.sendVerificationKey.2
-            @Override // rx.functions.Action1
+        ObservableExtensionsKt.restSubscribeOn$default(ObservableExtensionsKt.ui$default(RestAPI.INSTANCE.getApi().getBackupCodesSendVerificationKey(new GetBackupCodesSendVerificationKeyRequestBody(this.password)), this, null, 2, null), false, 1, null).m11108k(C0879o.f566a.m184g(getContext(), new C97361(), new Action1<Error>() { // from class: com.discord.widgets.settings.account.WidgetSettingsAccountBackupCodes.sendVerificationKey.2
+            @Override // p658rx.functions.Action1
             public final void call(Error error) {
                 WidgetSettingsAccountBackupCodes.this.showPasswordModal();
             }
@@ -428,45 +428,45 @@ public final class WidgetSettingsAccountBackupCodes extends AppFragment {
         AppActivity appActivity = getAppActivity();
         if (appActivity != null) {
             WidgetNoticeDialog.Companion companion = WidgetNoticeDialog.INSTANCE;
-            CharSequence charSequenceB = FormatUtils.b(requireContext(), R.string.user_settings_enter_password_view_codes, new Object[0], (4 & 4) != 0 ? FormatUtils.b.j : null);
-            CharSequence charSequenceB2 = FormatUtils.b(requireContext(), R.string.form_label_password, new Object[0], (4 & 4) != 0 ? FormatUtils.b.j : null);
-            companion.showInputModal(appActivity, FormatUtils.b(requireContext(), R.string.two_fa_backup_codes_label, new Object[0], (4 & 4) != 0 ? FormatUtils.b.j : null), charSequenceB, charSequenceB2, new WidgetSettingsAccountBackupCodes4(this), (640 & 32) != 0 ? null : new WidgetSettingsAccountBackupCodes5(this), (640 & 64) != 0 ? null : Boolean.FALSE, (640 & 128) != 0 ? StoreNotices.InputDialog.Type.PASSWORD : null, (640 & 256) != 0 ? null : FormatUtils.b(requireContext(), R.string.two_fa_backup_codes_next_action, new Object[0], (4 & 4) != 0 ? FormatUtils.b.j : null), (640 & 512) != 0 ? false : false);
+            CharSequence charSequenceM210b = C1107b.m210b(requireContext(), C5419R.string.user_settings_enter_password_view_codes, new Object[0], (4 & 4) != 0 ? C1107b.b.f1491j : null);
+            CharSequence charSequenceM210b2 = C1107b.m210b(requireContext(), C5419R.string.form_label_password, new Object[0], (4 & 4) != 0 ? C1107b.b.f1491j : null);
+            companion.showInputModal(appActivity, C1107b.m210b(requireContext(), C5419R.string.two_fa_backup_codes_label, new Object[0], (4 & 4) != 0 ? C1107b.b.f1491j : null), charSequenceM210b, charSequenceM210b2, new C9738x1d9e6125(this), (640 & 32) != 0 ? null : new C9739x1d9e6126(this), (640 & 64) != 0 ? null : Boolean.FALSE, (640 & 128) != 0 ? StoreNotices.InputDialog.Type.PASSWORD : null, (640 & 256) != 0 ? null : C1107b.m210b(requireContext(), C5419R.string.two_fa_backup_codes_next_action, new Object[0], (4 & 4) != 0 ? C1107b.b.f1491j : null), (640 & 512) != 0 ? false : false);
         }
     }
 
     private final void showVerificationKeyModal() {
         AppActivity appActivity = getAppActivity();
         if (appActivity != null) {
-            WidgetNoticeDialog.INSTANCE.showInputModal(appActivity, FormatUtils.b(requireContext(), R.string.two_fa_confirm_view_backup_codes_label, new Object[0], (4 & 4) != 0 ? FormatUtils.b.j : null), FormatUtils.b(requireContext(), R.string.two_fa_confirm_view_backup_codes_body, new Object[0], (4 & 4) != 0 ? FormatUtils.b.j : null), FormatUtils.b(requireContext(), R.string.two_fa_confirm_view_backup_codes_input_label, new Object[0], (4 & 4) != 0 ? FormatUtils.b.j : null), new WidgetSettingsAccountBackupCodes6(this), (640 & 32) != 0 ? null : new WidgetSettingsAccountBackupCodes7(this), (640 & 64) != 0 ? null : Boolean.FALSE, (640 & 128) != 0 ? StoreNotices.InputDialog.Type.PASSWORD : StoreNotices.InputDialog.Type.TEXT_NO_SUGGESTIONS, (640 & 256) != 0 ? null : null, (640 & 512) != 0 ? false : true);
+            WidgetNoticeDialog.INSTANCE.showInputModal(appActivity, C1107b.m210b(requireContext(), C5419R.string.two_fa_confirm_view_backup_codes_label, new Object[0], (4 & 4) != 0 ? C1107b.b.f1491j : null), C1107b.m210b(requireContext(), C5419R.string.two_fa_confirm_view_backup_codes_body, new Object[0], (4 & 4) != 0 ? C1107b.b.f1491j : null), C1107b.m210b(requireContext(), C5419R.string.two_fa_confirm_view_backup_codes_input_label, new Object[0], (4 & 4) != 0 ? C1107b.b.f1491j : null), new C9740x16392ec2(this), (640 & 32) != 0 ? null : new C9741x16392ec3(this), (640 & 64) != 0 ? null : Boolean.FALSE, (640 & 128) != 0 ? StoreNotices.InputDialog.Type.PASSWORD : StoreNotices.InputDialog.Type.TEXT_NO_SUGGESTIONS, (640 & 256) != 0 ? null : null, (640 & 512) != 0 ? false : true);
         }
     }
 
     @Override // com.discord.app.AppFragment
     public void onViewBound(View view) {
-        Intrinsics3.checkNotNullParameter(view, "view");
+        C12238m.checkNotNullParameter(view, "view");
         super.onViewBound(view);
-        setActionBarSubtitle(R.string.user_settings);
-        setActionBarTitle(R.string.two_fa_backup_codes_label);
+        setActionBarSubtitle(C5419R.string.user_settings);
+        setActionBarTitle(C5419R.string.two_fa_backup_codes_label);
         AppFragment.setActionBarDisplayHomeAsUpEnabled$default(this, false, 1, null);
-        TextView textView = getBinding().d;
-        Intrinsics3.checkNotNullExpressionValue(textView, "binding.settingsBackupCodesInfo");
-        FormatUtils.m(textView, R.string.two_fa_backup_codes_body, new Object[0], (4 & 4) != 0 ? FormatUtils.g.j : null);
-        RecyclerView recyclerView = getBinding().e;
-        Intrinsics3.checkNotNullExpressionValue(recyclerView, "binding.settingsBackupCodesRv");
+        TextView textView = getBinding().f17783d;
+        C12238m.checkNotNullExpressionValue(textView, "binding.settingsBackupCodesInfo");
+        C1107b.m221m(textView, C5419R.string.two_fa_backup_codes_body, new Object[0], (4 & 4) != 0 ? C1107b.g.f1495j : null);
+        RecyclerView recyclerView = getBinding().f17784e;
+        C12238m.checkNotNullExpressionValue(recyclerView, "binding.settingsBackupCodesRv");
         this.backupCodesAdapter = new Adapter(recyclerView);
-        if (e() != null) {
+        if (m95e() != null) {
             MGRecyclerAdapter.Companion companion = MGRecyclerAdapter.INSTANCE;
-            RecyclerView recyclerView2 = getBinding().e;
-            Intrinsics3.checkNotNullExpressionValue(recyclerView2, "binding.settingsBackupCodesRv");
+            RecyclerView recyclerView2 = getBinding().f17784e;
+            C12238m.checkNotNullExpressionValue(recyclerView2, "binding.settingsBackupCodesRv");
             this.backupCodesAdapter = (Adapter) companion.configure(new Adapter(recyclerView2));
         }
-        getBinding().c.setOnClickListener(new View.OnClickListener() { // from class: com.discord.widgets.settings.account.WidgetSettingsAccountBackupCodes.onViewBound.2
+        getBinding().f17782c.setOnClickListener(new View.OnClickListener() { // from class: com.discord.widgets.settings.account.WidgetSettingsAccountBackupCodes.onViewBound.2
             @Override // android.view.View.OnClickListener
             public final void onClick(View view2) {
                 WidgetSettingsAccountBackupCodes.this.getBackupCodes(true);
             }
         });
-        getBinding().f2590b.setDimmed(true, true);
+        getBinding().f17781b.setDimmed(true, true);
         showPasswordModal();
     }
 }

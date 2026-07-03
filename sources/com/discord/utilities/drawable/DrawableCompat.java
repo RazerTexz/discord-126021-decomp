@@ -11,8 +11,8 @@ import androidx.annotation.ColorInt;
 import androidx.annotation.DrawableRes;
 import androidx.appcompat.content.res.AppCompatResources;
 import androidx.core.widget.TextViewCompat;
-import com.discord.utilities.color.ColorCompat2;
-import d0.z.d.Intrinsics3;
+import com.discord.utilities.color.ColorCompatKt;
+import p507d0.p592z.p594d.C12238m;
 
 /* JADX INFO: compiled from: DrawableCompat.kt */
 /* JADX INFO: loaded from: classes2.dex */
@@ -29,10 +29,10 @@ public final class DrawableCompat {
     }
 
     public static final Drawable getDrawable(Context context, @DrawableRes int i, @ColorInt int i2, boolean z2) {
-        Intrinsics3.checkNotNullParameter(context, "$this$getDrawable");
+        C12238m.checkNotNullParameter(context, "$this$getDrawable");
         Drawable drawable = AppCompatResources.getDrawable(context, i);
         if (drawable != null) {
-            ColorCompat2.setTint(drawable, i2, z2);
+            ColorCompatKt.setTint(drawable, i2, z2);
         }
         return drawable;
     }
@@ -49,9 +49,9 @@ public final class DrawableCompat {
     }
 
     public static final int getThemedDrawableRes(Context context, @AttrRes int i, int i2) {
-        Intrinsics3.checkNotNullParameter(context, "$this$getThemedDrawableRes");
+        C12238m.checkNotNullParameter(context, "$this$getThemedDrawableRes");
         TypedArray typedArrayObtainStyledAttributes = context.obtainStyledAttributes(new int[]{i});
-        Intrinsics3.checkNotNullExpressionValue(typedArrayObtainStyledAttributes, "obtainStyledAttributes(intArrayOf(attrResId))");
+        C12238m.checkNotNullExpressionValue(typedArrayObtainStyledAttributes, "obtainStyledAttributes(intArrayOf(attrResId))");
         int resourceId = typedArrayObtainStyledAttributes.getResourceId(0, i2);
         typedArrayObtainStyledAttributes.recycle();
         return resourceId;
@@ -70,7 +70,7 @@ public final class DrawableCompat {
     }
 
     public static final void setCompoundDrawablesCompat(TextView textView, @DrawableRes int i, @DrawableRes int i2, @DrawableRes int i3, @DrawableRes int i4) {
-        Intrinsics3.checkNotNullParameter(textView, "$this$setCompoundDrawablesCompat");
+        C12238m.checkNotNullParameter(textView, "$this$setCompoundDrawablesCompat");
         TextViewCompat.setCompoundDrawablesRelativeWithIntrinsicBounds(textView, i, i2, i3, i4);
         applyCompoundDrawablesTint(textView);
     }
@@ -116,14 +116,14 @@ public final class DrawableCompat {
 
     @DrawableRes
     public static final int getThemedDrawableRes(View view, @AttrRes int i, int i2) {
-        Intrinsics3.checkNotNullParameter(view, "$this$getThemedDrawableRes");
+        C12238m.checkNotNullParameter(view, "$this$getThemedDrawableRes");
         Context context = view.getContext();
-        Intrinsics3.checkNotNullExpressionValue(context, "context");
+        C12238m.checkNotNullExpressionValue(context, "context");
         return getThemedDrawableRes(context, i, i2);
     }
 
     public static final void setCompoundDrawablesCompat(TextView textView, Drawable drawable, Drawable drawable2, Drawable drawable3, Drawable drawable4) {
-        Intrinsics3.checkNotNullParameter(textView, "$this$setCompoundDrawablesCompat");
+        C12238m.checkNotNullParameter(textView, "$this$setCompoundDrawablesCompat");
         TextViewCompat.setCompoundDrawablesRelativeWithIntrinsicBounds(textView, drawable, drawable2, drawable3, drawable4);
         applyCompoundDrawablesTint(textView);
     }

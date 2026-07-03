@@ -8,7 +8,7 @@ import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 import com.discord.utilities.display.DisplayUtils;
 import com.google.android.material.appbar.AppBarLayout;
-import d0.z.d.Intrinsics3;
+import p507d0.p592z.p594d.C12238m;
 
 /* JADX INFO: compiled from: AppScrollingNestedViewBehavior.kt */
 /* JADX INFO: loaded from: classes.dex */
@@ -16,18 +16,18 @@ public final class AppScrollingNestedViewBehavior extends AppBarLayout.Scrolling
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public AppScrollingNestedViewBehavior(Context context, AttributeSet attributeSet) {
         super(context, attributeSet);
-        Intrinsics3.checkNotNullParameter(context, "context");
-        Intrinsics3.checkNotNullParameter(attributeSet, "attrs");
+        C12238m.checkNotNullParameter(context, "context");
+        C12238m.checkNotNullParameter(attributeSet, "attrs");
     }
 
     @Override // androidx.coordinatorlayout.widget.CoordinatorLayout.Behavior
     public WindowInsetsCompat onApplyWindowInsets(CoordinatorLayout coordinatorLayout, View child, WindowInsetsCompat insets) {
-        Intrinsics3.checkNotNullParameter(coordinatorLayout, "coordinatorLayout");
-        Intrinsics3.checkNotNullParameter(child, "child");
-        Intrinsics3.checkNotNullParameter(insets, "insets");
+        C12238m.checkNotNullParameter(coordinatorLayout, "coordinatorLayout");
+        C12238m.checkNotNullParameter(child, "child");
+        C12238m.checkNotNullParameter(insets, "insets");
         ViewCompat.setOnApplyWindowInsetsListener(child, DisplayUtils.getNO_OP_WINDOW_INSETS_LISTENER());
         WindowInsetsCompat windowInsetsCompatOnApplyWindowInsets = DisplayUtils.getNO_OP_WINDOW_INSETS_LISTENER().onApplyWindowInsets(child, insets);
-        Intrinsics3.checkNotNullExpressionValue(windowInsetsCompatOnApplyWindowInsets, "NO_OP_WINDOW_INSETS_LIST…ndowInsets(child, insets)");
+        C12238m.checkNotNullExpressionValue(windowInsetsCompatOnApplyWindowInsets, "NO_OP_WINDOW_INSETS_LIST…ndowInsets(child, insets)");
         return windowInsetsCompatOnApplyWindowInsets;
     }
 }

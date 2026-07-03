@@ -9,9 +9,8 @@ import android.util.Xml;
 import androidx.annotation.AnyThread;
 import androidx.annotation.WorkerThread;
 import androidx.collection.ArrayMap;
-import androidx.core.content.pm.ShortcutInfoCompat;
+import androidx.core.content.p004pm.ShortcutInfoCompat;
 import androidx.core.util.AtomicFile;
-import b.d.b.a.outline;
 import java.io.BufferedOutputStream;
 import java.io.File;
 import java.io.FileInputStream;
@@ -24,6 +23,7 @@ import java.util.List;
 import java.util.Map;
 import org.xmlpull.v1.XmlPullParser;
 import org.xmlpull.v1.XmlSerializer;
+import p007b.p100d.p104b.p105a.C1643a;
 
 /* JADX INFO: loaded from: classes.dex */
 public class ShortcutsInfoSerialization {
@@ -219,13 +219,13 @@ public class ShortcutsInfoSerialization {
             } catch (Exception e) {
                 e = e;
                 fileOutputStream = fileOutputStreamStartWrite;
-                StringBuilder sbU = outline.U("Failed to write to file ");
-                sbU.append(atomicFile.getBaseFile());
-                Log.e("ShortcutInfoCompatSaver", sbU.toString(), e);
+                StringBuilder sbM833U = C1643a.m833U("Failed to write to file ");
+                sbM833U.append(atomicFile.getBaseFile());
+                Log.e("ShortcutInfoCompatSaver", sbM833U.toString(), e);
                 atomicFile.failWrite(fileOutputStream);
-                StringBuilder sbU2 = outline.U("Failed to write to file ");
-                sbU2.append(atomicFile.getBaseFile());
-                throw new RuntimeException(sbU2.toString(), e);
+                StringBuilder sbM833U2 = C1643a.m833U("Failed to write to file ");
+                sbM833U2.append(atomicFile.getBaseFile());
+                throw new RuntimeException(sbM833U2.toString(), e);
             }
         } catch (Exception e2) {
             e = e2;

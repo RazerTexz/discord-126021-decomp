@@ -10,7 +10,8 @@ public class CameraException extends RuntimeException {
         this.reason = i;
     }
 
-    public boolean a() {
+    /* JADX INFO: renamed from: a */
+    public boolean m9303a() {
         int i = this.reason;
         return i == 1 || i == 2 || i == 3;
     }

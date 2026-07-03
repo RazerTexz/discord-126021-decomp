@@ -11,29 +11,32 @@ import com.google.android.material.card.MaterialCardView;
 /* JADX INFO: loaded from: classes.dex */
 public final class NotificationHighlightsSettingsViewBinding implements ViewBinding {
 
+    /* JADX INFO: renamed from: a */
     @NonNull
-    public final LinearLayout a;
+    public final LinearLayout f15189a;
 
-    /* JADX INFO: renamed from: b, reason: collision with root package name */
+    /* JADX INFO: renamed from: b */
     @NonNull
-    public final TextView f2130b;
+    public final TextView f15190b;
 
+    /* JADX INFO: renamed from: c */
     @NonNull
-    public final CheckedSetting c;
+    public final CheckedSetting f15191c;
 
+    /* JADX INFO: renamed from: d */
     @NonNull
-    public final MaterialCardView d;
+    public final MaterialCardView f15192d;
 
     public NotificationHighlightsSettingsViewBinding(@NonNull LinearLayout linearLayout, @NonNull TextView textView, @NonNull CheckedSetting checkedSetting, @NonNull MaterialCardView materialCardView) {
-        this.a = linearLayout;
-        this.f2130b = textView;
-        this.c = checkedSetting;
-        this.d = materialCardView;
+        this.f15189a = linearLayout;
+        this.f15190b = textView;
+        this.f15191c = checkedSetting;
+        this.f15192d = materialCardView;
     }
 
     @Override // androidx.viewbinding.ViewBinding
     @NonNull
     public View getRoot() {
-        return this.a;
+        return this.f15189a;
     }
 }

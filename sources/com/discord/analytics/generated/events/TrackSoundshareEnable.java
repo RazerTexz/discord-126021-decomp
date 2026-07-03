@@ -1,14 +1,14 @@
 package com.discord.analytics.generated.events;
 
-import b.d.b.a.outline;
 import com.discord.analytics.generated.traits.TrackBase;
-import com.discord.analytics.generated.traits.TrackBase2;
+import com.discord.analytics.generated.traits.TrackBaseReceiver;
 import com.discord.api.science.AnalyticsSchema;
-import d0.z.d.Intrinsics3;
+import p007b.p100d.p104b.p105a.C1643a;
+import p507d0.p592z.p594d.C12238m;
 
 /* JADX INFO: compiled from: TrackSoundshareEnable.kt */
 /* JADX INFO: loaded from: classes.dex */
-public final /* data */ class TrackSoundshareEnable implements AnalyticsSchema, TrackBase2 {
+public final /* data */ class TrackSoundshareEnable implements AnalyticsSchema, TrackBaseReceiver {
     private TrackBase trackBase;
     private final Long statusCode = null;
     private final CharSequence message = null;
@@ -28,7 +28,7 @@ public final /* data */ class TrackSoundshareEnable implements AnalyticsSchema, 
             return false;
         }
         TrackSoundshareEnable trackSoundshareEnable = (TrackSoundshareEnable) other;
-        return Intrinsics3.areEqual(this.statusCode, trackSoundshareEnable.statusCode) && Intrinsics3.areEqual(this.message, trackSoundshareEnable.message);
+        return C12238m.areEqual(this.statusCode, trackSoundshareEnable.statusCode) && C12238m.areEqual(this.message, trackSoundshareEnable.message);
     }
 
     public int hashCode() {
@@ -39,9 +39,9 @@ public final /* data */ class TrackSoundshareEnable implements AnalyticsSchema, 
     }
 
     public String toString() {
-        StringBuilder sbU = outline.U("TrackSoundshareEnable(statusCode=");
-        sbU.append(this.statusCode);
-        sbU.append(", message=");
-        return outline.E(sbU, this.message, ")");
+        StringBuilder sbM833U = C1643a.m833U("TrackSoundshareEnable(statusCode=");
+        sbM833U.append(this.statusCode);
+        sbM833U.append(", message=");
+        return C1643a.m817E(sbM833U, this.message, ")");
     }
 }

@@ -1,22 +1,9 @@
 package com.discord.rtcconnection;
 
-import b.a.q.MediaEngineExecutorService;
-import b.a.q.MediaSinkWantsLadder3;
-import b.a.q.MediaSinkWantsManager3;
-import b.a.q.MediaSinkWantsManager8;
-import b.a.q.m0.Codec2;
-import b.d.b.a.outline;
 import co.discord.media_engine.StreamParameters;
 import com.discord.rtcconnection.KrispOveruseDetector;
 import com.discord.rtcconnection.mediaengine.MediaEngineConnection;
 import com.discord.utilities.logging.Logger;
-import d0.Tuples;
-import d0.t.Collections2;
-import d0.t.Maps6;
-import d0.t.MapsJVM;
-import d0.t._Collections;
-import d0.z.d.Intrinsics3;
-import d0.z.d.Lambda;
 import java.util.Collection;
 import java.util.Iterator;
 import java.util.LinkedHashMap;
@@ -30,25 +17,61 @@ import java.util.concurrent.Future;
 import kotlin.Unit;
 import kotlin.jvm.functions.Function0;
 import kotlin.jvm.internal.DefaultConstructorMarker;
-import rx.subjects.BehaviorSubject;
+import p001a0.p002a.p003a.C0002b;
+import p007b.p008a.p041q.C1196e;
+import p007b.p008a.p041q.C1202h;
+import p007b.p008a.p041q.ExecutorServiceC1192c;
+import p007b.p008a.p041q.RunnableC1220m;
+import p007b.p008a.p041q.p044m0.C1221a;
+import p007b.p100d.p104b.p105a.C1643a;
+import p507d0.C12116o;
+import p507d0.p580t.C12134g0;
+import p507d0.p580t.C12136h0;
+import p507d0.p580t.C12147n;
+import p507d0.p580t.C12163u;
+import p507d0.p592z.p594d.AbstractC12240o;
+import p507d0.p592z.p594d.C12238m;
+import p658rx.subjects.BehaviorSubject;
 
 /* JADX INFO: compiled from: MediaSinkWantsManager.kt */
 /* JADX INFO: loaded from: classes.dex */
-public final class MediaSinkWantsManager implements MediaEngineConnection.d {
-    public final Map<Long, Long> a;
+public final class MediaSinkWantsManager implements MediaEngineConnection.InterfaceC5648d {
 
-    /* JADX INFO: renamed from: b, reason: collision with root package name */
-    public final Map<Long, List<b>> f2771b;
-    public final Set<Long> c;
-    public MediaEngineConnection d;
-    public Long e;
-    public final BehaviorSubject<Map<String, MediaSinkWantsManager9>> f;
-    public Map<String, ? extends MediaSinkWantsManager9> g;
-    public final long h;
-    public final MediaEngineExecutorService i;
-    public final MediaSinkWantsLadder3 j;
-    public final Logger k;
-    public final a l;
+    /* JADX INFO: renamed from: a */
+    public final Map<Long, Long> f18742a;
+
+    /* JADX INFO: renamed from: b */
+    public final Map<Long, List<C5603b>> f18743b;
+
+    /* JADX INFO: renamed from: c */
+    public final Set<Long> f18744c;
+
+    /* JADX INFO: renamed from: d */
+    public MediaEngineConnection f18745d;
+
+    /* JADX INFO: renamed from: e */
+    public Long f18746e;
+
+    /* JADX INFO: renamed from: f */
+    public final BehaviorSubject<Map<String, EncodeQuality>> f18747f;
+
+    /* JADX INFO: renamed from: g */
+    public Map<String, ? extends EncodeQuality> f18748g;
+
+    /* JADX INFO: renamed from: h */
+    public final long f18749h;
+
+    /* JADX INFO: renamed from: i */
+    public final ExecutorServiceC1192c f18750i;
+
+    /* JADX INFO: renamed from: j */
+    public final C1196e f18751j;
+
+    /* JADX INFO: renamed from: k */
+    public final Logger f18752k;
+
+    /* JADX INFO: renamed from: l */
+    public final InterfaceC5602a f18753l;
 
     /* JADX INFO: compiled from: MediaSinkWantsManager.kt */
     public enum VideoQualityMode {
@@ -66,7 +89,8 @@ public final class MediaSinkWantsManager implements MediaEngineConnection.d {
             public Companion(DefaultConstructorMarker defaultConstructorMarker) {
             }
 
-            public final VideoQualityMode a(Integer num) {
+            /* JADX INFO: renamed from: a */
+            public final VideoQualityMode m8457a(Integer num) {
                 if (num != null && num.intValue() == 1) {
                     return VideoQualityMode.AUTO;
                 }
@@ -83,63 +107,71 @@ public final class MediaSinkWantsManager implements MediaEngineConnection.d {
         }
     }
 
+    /* JADX INFO: renamed from: com.discord.rtcconnection.MediaSinkWantsManager$a */
     /* JADX INFO: compiled from: MediaSinkWantsManager.kt */
-    public interface a {
-        void a(long j, long j2, long j3, VideoMetadata videoMetadata);
+    public interface InterfaceC5602a {
+        /* JADX INFO: renamed from: a */
+        void mo8458a(long j, long j2, long j3, VideoMetadata videoMetadata);
     }
 
+    /* JADX INFO: renamed from: com.discord.rtcconnection.MediaSinkWantsManager$b */
     /* JADX INFO: compiled from: MediaSinkWantsManager.kt */
-    public static final class b {
-        public final MediaSinkWantsManager9 a;
+    public static final class C5603b {
 
-        /* JADX INFO: renamed from: b, reason: collision with root package name */
-        public final long f2772b;
-        public final VideoMetadata c;
+        /* JADX INFO: renamed from: a */
+        public final EncodeQuality f18754a;
 
-        public b(MediaSinkWantsManager9 mediaSinkWantsManager9, long j, VideoMetadata videoMetadata) {
-            Intrinsics3.checkNotNullParameter(mediaSinkWantsManager9, "encodeQuality");
-            this.a = mediaSinkWantsManager9;
-            this.f2772b = j;
-            this.c = videoMetadata;
+        /* JADX INFO: renamed from: b */
+        public final long f18755b;
+
+        /* JADX INFO: renamed from: c */
+        public final VideoMetadata f18756c;
+
+        public C5603b(EncodeQuality encodeQuality, long j, VideoMetadata videoMetadata) {
+            C12238m.checkNotNullParameter(encodeQuality, "encodeQuality");
+            this.f18754a = encodeQuality;
+            this.f18755b = j;
+            this.f18756c = videoMetadata;
         }
 
         public boolean equals(Object obj) {
             if (this == obj) {
                 return true;
             }
-            if (!(obj instanceof b)) {
+            if (!(obj instanceof C5603b)) {
                 return false;
             }
-            b bVar = (b) obj;
-            return Intrinsics3.areEqual(this.a, bVar.a) && this.f2772b == bVar.f2772b && Intrinsics3.areEqual(this.c, bVar.c);
+            C5603b c5603b = (C5603b) obj;
+            return C12238m.areEqual(this.f18754a, c5603b.f18754a) && this.f18755b == c5603b.f18755b && C12238m.areEqual(this.f18756c, c5603b.f18756c);
         }
 
         public int hashCode() {
-            MediaSinkWantsManager9 mediaSinkWantsManager9 = this.a;
-            int iA = (a0.a.a.b.a(this.f2772b) + ((mediaSinkWantsManager9 != null ? mediaSinkWantsManager9.hashCode() : 0) * 31)) * 31;
-            VideoMetadata videoMetadata = this.c;
-            return iA + (videoMetadata != null ? videoMetadata.hashCode() : 0);
+            EncodeQuality encodeQuality = this.f18754a;
+            int iM3a = (C0002b.m3a(this.f18755b) + ((encodeQuality != null ? encodeQuality.hashCode() : 0) * 31)) * 31;
+            VideoMetadata videoMetadata = this.f18756c;
+            return iM3a + (videoMetadata != null ? videoMetadata.hashCode() : 0);
         }
 
         public String toString() {
-            StringBuilder sbU = outline.U("VideoStreamDescriptor(encodeQuality=");
-            sbU.append(this.a);
-            sbU.append(", ssrc=");
-            sbU.append(this.f2772b);
-            sbU.append(", metadata=");
-            sbU.append(this.c);
-            sbU.append(")");
-            return sbU.toString();
+            StringBuilder sbM833U = C1643a.m833U("VideoStreamDescriptor(encodeQuality=");
+            sbM833U.append(this.f18754a);
+            sbM833U.append(", ssrc=");
+            sbM833U.append(this.f18755b);
+            sbM833U.append(", metadata=");
+            sbM833U.append(this.f18756c);
+            sbM833U.append(")");
+            return sbM833U.toString();
         }
     }
 
+    /* JADX INFO: renamed from: com.discord.rtcconnection.MediaSinkWantsManager$c */
     /* JADX INFO: compiled from: MediaSinkWantsManager.kt */
-    public static final class c extends Lambda implements Function0<Unit> {
+    public static final class C5604c extends AbstractC12240o implements Function0<Unit> {
         public final /* synthetic */ Long $ssrc;
         public final /* synthetic */ long $userId;
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-        public c(Long l, long j) {
+        public C5604c(Long l, long j) {
             super(0);
             this.$ssrc = l;
             this.$userId = j;
@@ -148,48 +180,52 @@ public final class MediaSinkWantsManager implements MediaEngineConnection.d {
         @Override // kotlin.jvm.functions.Function0
         public Unit invoke() {
             if (this.$ssrc != null) {
-                MediaSinkWantsManager.this.a.put(Long.valueOf(this.$userId), this.$ssrc);
+                MediaSinkWantsManager.this.f18742a.put(Long.valueOf(this.$userId), this.$ssrc);
             } else {
-                MediaSinkWantsManager.this.a.remove(Long.valueOf(this.$userId));
+                MediaSinkWantsManager.this.f18742a.remove(Long.valueOf(this.$userId));
             }
-            MediaSinkWantsManager.e(MediaSinkWantsManager.this, null, 1);
-            return Unit.a;
+            MediaSinkWantsManager.m8452e(MediaSinkWantsManager.this, null, 1);
+            return Unit.f27425a;
         }
     }
 
-    public MediaSinkWantsManager(long j, MediaEngineExecutorService mediaEngineExecutorService, MediaSinkWantsLadder3 mediaSinkWantsLadder3, Logger logger, a aVar) {
-        Intrinsics3.checkNotNullParameter(mediaEngineExecutorService, "mediaEngineThreadExecutor");
-        Intrinsics3.checkNotNullParameter(mediaSinkWantsLadder3, "ladder");
-        Intrinsics3.checkNotNullParameter(logger, "logger");
-        Intrinsics3.checkNotNullParameter(aVar, "listener");
-        this.h = j;
-        this.i = mediaEngineExecutorService;
-        this.j = mediaSinkWantsLadder3;
-        this.k = logger;
-        this.l = aVar;
-        this.a = new LinkedHashMap();
-        this.f2771b = new LinkedHashMap();
+    public MediaSinkWantsManager(long j, ExecutorServiceC1192c executorServiceC1192c, C1196e c1196e, Logger logger, InterfaceC5602a interfaceC5602a) {
+        C12238m.checkNotNullParameter(executorServiceC1192c, "mediaEngineThreadExecutor");
+        C12238m.checkNotNullParameter(c1196e, "ladder");
+        C12238m.checkNotNullParameter(logger, "logger");
+        C12238m.checkNotNullParameter(interfaceC5602a, "listener");
+        this.f18749h = j;
+        this.f18750i = executorServiceC1192c;
+        this.f18751j = c1196e;
+        this.f18752k = logger;
+        this.f18753l = interfaceC5602a;
+        this.f18742a = new LinkedHashMap();
+        this.f18743b = new LinkedHashMap();
         new LinkedHashMap();
-        this.c = new LinkedHashSet();
-        this.f = BehaviorSubject.l0(MapsJVM.mapOf(Tuples.to("any", MediaSinkWantsManager9.Hundred)));
-        this.g = Maps6.emptyMap();
+        this.f18744c = new LinkedHashSet();
+        this.f18747f = BehaviorSubject.m11130l0(C12134g0.mapOf(C12116o.m10073to("any", EncodeQuality.Hundred)));
+        this.f18748g = C12136h0.emptyMap();
     }
 
-    public static /* synthetic */ void e(MediaSinkWantsManager mediaSinkWantsManager, List list, int i) {
-        mediaSinkWantsManager.d((i & 1) != 0 ? Collections2.emptyList() : null);
+    /* JADX INFO: renamed from: e */
+    public static /* synthetic */ void m8452e(MediaSinkWantsManager mediaSinkWantsManager, List list, int i) {
+        mediaSinkWantsManager.m8456d((i & 1) != 0 ? C12147n.emptyList() : null);
     }
 
-    public final void a(String str) {
-        Logger.w$default(this.k, "MediaSinkWantsManager", str, null, 4, null);
+    /* JADX INFO: renamed from: a */
+    public final void m8453a(String str) {
+        Logger.w$default(this.f18752k, "MediaSinkWantsManager", str, null, 4, null);
     }
 
-    public final Future<?> b(Function0<Unit> function0) {
-        MediaEngineExecutorService mediaEngineExecutorService = this.i;
-        return mediaEngineExecutorService.l.submit(new MediaSinkWantsManager8(function0));
+    /* JADX INFO: renamed from: b */
+    public final Future<?> m8454b(Function0<Unit> function0) {
+        ExecutorServiceC1192c executorServiceC1192c = this.f18750i;
+        return executorServiceC1192c.f1609l.submit(new RunnableC1220m(function0));
     }
 
-    public final Future<?> c(long j, Long l) {
-        return b(new c(l, j));
+    /* JADX INFO: renamed from: c */
+    public final Future<?> m8455c(long j, Long l) {
+        return m8454b(new C5604c(l, j));
     }
 
     /* JADX WARN: Code duplicated, block: B:147:0x0173 A[SYNTHETIC] */
@@ -198,205 +234,206 @@ public final class MediaSinkWantsManager implements MediaEngineConnection.d {
     /* JADX WARN: Code duplicated, block: B:80:0x014a  */
     /* JADX WARN: Code duplicated, block: B:82:0x0151  */
     /* JADX WARN: Code duplicated, block: B:85:0x015b  */
-    public final void d(List<String> list) {
+    /* JADX INFO: renamed from: d */
+    public final void m8456d(List<String> list) {
         int i;
-        MediaSinkWantsLadder3.c cVarPrevious;
-        MediaSinkWantsManager9 mediaSinkWantsManager9;
+        C1196e.c cVarPrevious;
+        EncodeQuality encodeQuality;
         long j;
-        MediaSinkWantsManager9 mediaSinkWantsManager10;
-        MediaEngineConnection mediaEngineConnection = this.d;
+        EncodeQuality encodeQuality2;
+        MediaEngineConnection mediaEngineConnection = this.f18745d;
         if (mediaEngineConnection != null) {
-            MediaSinkWantsLadder3 mediaSinkWantsLadder3 = this.j;
+            C1196e c1196e = this.f18751j;
             int i2 = 1;
             if (mediaEngineConnection != null) {
-                Set<Long> set = this.c;
+                Set<Long> set = this.f18744c;
                 if ((set instanceof Collection) && set.isEmpty()) {
                     i = 0;
                 } else {
                     Iterator<T> it = set.iterator();
                     i = 0;
                     while (it.hasNext()) {
-                        if ((!mediaEngineConnection.g(((Number) it.next()).longValue())) && (i = i + 1) < 0) {
-                            Collections2.throwCountOverflow();
+                        if ((!mediaEngineConnection.mo301g(((Number) it.next()).longValue())) && (i = i + 1) < 0) {
+                            C12147n.throwCountOverflow();
                         }
                     }
                 }
             } else {
                 i = 0;
             }
-            Objects.requireNonNull(mediaSinkWantsLadder3);
+            Objects.requireNonNull(c1196e);
             if (i < 0) {
-                mediaSinkWantsManager9 = MediaSinkWantsManager9.Hundred;
+                encodeQuality = EncodeQuality.Hundred;
             } else {
-                List<MediaSinkWantsLadder3.c> list2 = mediaSinkWantsLadder3.d;
-                ListIterator<MediaSinkWantsLadder3.c> listIterator = list2.listIterator(list2.size());
+                List<C1196e.c> list2 = c1196e.f1616d;
+                ListIterator<C1196e.c> listIterator = list2.listIterator(list2.size());
                 do {
                     if (!listIterator.hasPrevious()) {
                         cVarPrevious = null;
                         break;
                     }
                     cVarPrevious = listIterator.previous();
-                } while (!(cVarPrevious.f259b * i <= mediaSinkWantsLadder3.f257b));
-                MediaSinkWantsLadder3.c cVar = cVarPrevious;
+                } while (!(cVarPrevious.f1623b * i <= c1196e.f1614b));
+                C1196e.c cVar = cVarPrevious;
                 if (cVar == null) {
-                    cVar = (MediaSinkWantsLadder3.c) _Collections.first((List) mediaSinkWantsLadder3.d);
+                    cVar = (C1196e.c) C12163u.first((List) c1196e.f1616d);
                 }
-                mediaSinkWantsManager9 = cVar.c;
+                encodeQuality = cVar.f1624c;
             }
-            Map<String, MediaSinkWantsManager9> mapMutableMapOf = Maps6.mutableMapOf(Tuples.to("any", mediaSinkWantsManager9));
-            Iterator<Map.Entry<Long, List<b>>> it2 = this.f2771b.entrySet().iterator();
+            Map<String, EncodeQuality> mapMutableMapOf = C12136h0.mutableMapOf(C12116o.m10073to("any", encodeQuality));
+            Iterator<Map.Entry<Long, List<C5603b>>> it2 = this.f18743b.entrySet().iterator();
             while (it2.hasNext()) {
-                Map.Entry<Long, List<b>> next = it2.next();
+                Map.Entry<Long, List<C5603b>> next = it2.next();
                 long jLongValue = next.getKey().longValue();
-                List<b> value = next.getValue();
-                b bVar = (b) _Collections.firstOrNull((List) value);
-                if (bVar != null) {
-                    Long l = this.e;
+                List<C5603b> value = next.getValue();
+                C5603b c5603b = (C5603b) C12163u.firstOrNull((List) value);
+                if (c5603b != null) {
+                    Long l = this.f18746e;
                     if (l != null) {
-                        long j2 = this.h;
+                        long j2 = this.f18749h;
                         if (l != null && l.longValue() == j2) {
                             if (value.size() > 1) {
-                                for (b bVar2 : value) {
-                                    if (bVar2.a == MediaSinkWantsManager9.Hundred) {
-                                        mapMutableMapOf.put(String.valueOf(bVar2.f2772b), MediaSinkWantsManager9.Zero);
+                                for (C5603b c5603b2 : value) {
+                                    if (c5603b2.f18754a == EncodeQuality.Hundred) {
+                                        mapMutableMapOf.put(String.valueOf(c5603b2.f18755b), EncodeQuality.Zero);
                                     } else {
-                                        bVar = bVar2;
+                                        c5603b = c5603b2;
                                     }
                                 }
                             }
                         } else if (value.size() > i2) {
-                            Long l2 = this.e;
+                            Long l2 = this.f18746e;
                             if (l2 != null && jLongValue == l2.longValue()) {
-                                for (b bVar3 : value) {
-                                    MediaSinkWantsManager9 mediaSinkWantsManager11 = bVar3.a;
-                                    MediaSinkWantsManager9 mediaSinkWantsManager12 = MediaSinkWantsManager9.Hundred;
-                                    if (mediaSinkWantsManager11 == mediaSinkWantsManager12) {
-                                        mapMutableMapOf.put(String.valueOf(bVar3.f2772b), mediaSinkWantsManager12);
-                                        bVar = bVar3;
+                                for (C5603b c5603b3 : value) {
+                                    EncodeQuality encodeQuality3 = c5603b3.f18754a;
+                                    EncodeQuality encodeQuality4 = EncodeQuality.Hundred;
+                                    if (encodeQuality3 == encodeQuality4) {
+                                        mapMutableMapOf.put(String.valueOf(c5603b3.f18755b), encodeQuality4);
+                                        c5603b = c5603b3;
                                     } else {
-                                        mapMutableMapOf.put(String.valueOf(bVar3.f2772b), MediaSinkWantsManager9.Zero);
+                                        mapMutableMapOf.put(String.valueOf(c5603b3.f18755b), EncodeQuality.Zero);
                                     }
                                 }
                             } else {
-                                for (b bVar4 : value) {
-                                    if (bVar4.a == MediaSinkWantsManager9.Hundred) {
-                                        mapMutableMapOf.put(String.valueOf(bVar4.f2772b), MediaSinkWantsManager9.Zero);
+                                for (C5603b c5603b4 : value) {
+                                    if (c5603b4.f18754a == EncodeQuality.Hundred) {
+                                        mapMutableMapOf.put(String.valueOf(c5603b4.f18755b), EncodeQuality.Zero);
                                     } else {
-                                        bVar = bVar4;
+                                        c5603b = c5603b4;
                                     }
                                 }
                             }
                         } else {
-                            Long l3 = this.e;
-                            if (l3 != null && jLongValue == l3.longValue() && mediaSinkWantsManager9 != (mediaSinkWantsManager10 = MediaSinkWantsManager9.Hundred)) {
-                                mapMutableMapOf.put(String.valueOf(bVar.f2772b), mediaSinkWantsManager10);
+                            Long l3 = this.f18746e;
+                            if (l3 != null && jLongValue == l3.longValue() && encodeQuality != (encodeQuality2 = EncodeQuality.Hundred)) {
+                                mapMutableMapOf.put(String.valueOf(c5603b.f18755b), encodeQuality2);
                             }
                         }
                     } else if (value.size() > 1) {
                         while (r3.hasNext()) {
-                            if (bVar2.a == MediaSinkWantsManager9.Hundred) {
-                                mapMutableMapOf.put(String.valueOf(bVar2.f2772b), MediaSinkWantsManager9.Zero);
+                            if (c5603b2.f18754a == EncodeQuality.Hundred) {
+                                mapMutableMapOf.put(String.valueOf(c5603b2.f18755b), EncodeQuality.Zero);
                             } else {
-                                bVar = bVar2;
+                                c5603b = c5603b2;
                             }
                         }
                     }
-                    if (mediaEngineConnection.g(jLongValue) || mediaEngineConnection.p(jLongValue)) {
-                        Iterator<b> it3 = value.iterator();
+                    if (mediaEngineConnection.mo301g(jLongValue) || mediaEngineConnection.mo310p(jLongValue)) {
+                        Iterator<C5603b> it3 = value.iterator();
                         while (it3.hasNext()) {
-                            mapMutableMapOf.put(String.valueOf(it3.next().f2772b), MediaSinkWantsManager9.Zero);
+                            mapMutableMapOf.put(String.valueOf(it3.next().f18755b), EncodeQuality.Zero);
                         }
                     }
                     if (list.contains(String.valueOf(jLongValue))) {
-                        Long l4 = this.a.get(Long.valueOf(jLongValue));
+                        Long l4 = this.f18742a.get(Long.valueOf(jLongValue));
                         if (l4 != null) {
                             j = jLongValue;
-                            this.l.a(jLongValue, l4.longValue(), bVar.f2772b, bVar.c);
+                            this.f18753l.mo8458a(jLongValue, l4.longValue(), c5603b.f18755b, c5603b.f18756c);
                         } else {
                             j = jLongValue;
-                            a("Missing audioSsrc for user " + j + ", can't update video ssrc!");
+                            m8453a("Missing audioSsrc for user " + j + ", can't update video ssrc!");
                         }
                     } else {
                         j = jLongValue;
                     }
-                    MediaSinkWantsManager9 mediaSinkWantsManager13 = this.g.get(String.valueOf(bVar.f2772b));
-                    MediaSinkWantsManager9 mediaSinkWantsManager14 = MediaSinkWantsManager9.Zero;
-                    if (mediaSinkWantsManager13 == mediaSinkWantsManager14 && mapMutableMapOf.get(String.valueOf(bVar.f2772b)) != mediaSinkWantsManager14) {
-                        mediaEngineConnection.i(j, false);
+                    EncodeQuality encodeQuality5 = this.f18748g.get(String.valueOf(c5603b.f18755b));
+                    EncodeQuality encodeQuality6 = EncodeQuality.Zero;
+                    if (encodeQuality5 == encodeQuality6 && mapMutableMapOf.get(String.valueOf(c5603b.f18755b)) != encodeQuality6) {
+                        mediaEngineConnection.mo303i(j, false);
                     }
-                    if (mediaSinkWantsManager13 != mediaSinkWantsManager14 && mapMutableMapOf.get(String.valueOf(bVar.f2772b)) == mediaSinkWantsManager14) {
-                        mediaEngineConnection.i(j, true);
+                    if (encodeQuality5 != encodeQuality6 && mapMutableMapOf.get(String.valueOf(c5603b.f18755b)) == encodeQuality6) {
+                        mediaEngineConnection.mo303i(j, true);
                     }
                     it2 = it2;
                 }
                 i2 = 1;
             }
-            for (Map.Entry<Long, Long> entry : this.a.entrySet()) {
+            for (Map.Entry<Long, Long> entry : this.f18742a.entrySet()) {
                 long jLongValue2 = entry.getKey().longValue();
                 long jLongValue3 = entry.getValue().longValue();
-                if (mediaEngineConnection.u(jLongValue2)) {
-                    mapMutableMapOf.put(String.valueOf(jLongValue3), MediaSinkWantsManager9.Zero);
+                if (mediaEngineConnection.mo315u(jLongValue2)) {
+                    mapMutableMapOf.put(String.valueOf(jLongValue3), EncodeQuality.Zero);
                 }
             }
-            this.g = mapMutableMapOf;
-            this.f.onNext(mapMutableMapOf);
+            this.f18748g = mapMutableMapOf;
+            this.f18747f.onNext(mapMutableMapOf);
         }
     }
 
-    @Override // com.discord.rtcconnection.mediaengine.MediaEngineConnection.d
-    public void onConnected(MediaEngineConnection mediaEngineConnection, MediaEngineConnection.TransportInfo transportInfo, List<Codec2> list) {
-        Intrinsics3.checkNotNullParameter(mediaEngineConnection, "connection");
-        Intrinsics3.checkNotNullParameter(transportInfo, "transportInfo");
-        Intrinsics3.checkNotNullParameter(list, "supportedVideoCodecs");
+    @Override // com.discord.rtcconnection.mediaengine.MediaEngineConnection.InterfaceC5648d
+    public void onConnected(MediaEngineConnection mediaEngineConnection, MediaEngineConnection.TransportInfo transportInfo, List<C1221a> list) {
+        C12238m.checkNotNullParameter(mediaEngineConnection, "connection");
+        C12238m.checkNotNullParameter(transportInfo, "transportInfo");
+        C12238m.checkNotNullParameter(list, "supportedVideoCodecs");
     }
 
-    @Override // com.discord.rtcconnection.mediaengine.MediaEngineConnection.d
+    @Override // com.discord.rtcconnection.mediaengine.MediaEngineConnection.InterfaceC5648d
     public void onConnectionStateChange(MediaEngineConnection mediaEngineConnection, MediaEngineConnection.ConnectionState connectionState) {
-        Intrinsics3.checkNotNullParameter(mediaEngineConnection, "connection");
-        Intrinsics3.checkNotNullParameter(connectionState, "connectionState");
+        C12238m.checkNotNullParameter(mediaEngineConnection, "connection");
+        C12238m.checkNotNullParameter(connectionState, "connectionState");
     }
 
-    @Override // com.discord.rtcconnection.mediaengine.MediaEngineConnection.d
+    @Override // com.discord.rtcconnection.mediaengine.MediaEngineConnection.InterfaceC5648d
     public void onDestroy(MediaEngineConnection mediaEngineConnection) {
-        Intrinsics3.checkNotNullParameter(mediaEngineConnection, "connection");
+        C12238m.checkNotNullParameter(mediaEngineConnection, "connection");
     }
 
-    @Override // com.discord.rtcconnection.mediaengine.MediaEngineConnection.d
+    @Override // com.discord.rtcconnection.mediaengine.MediaEngineConnection.InterfaceC5648d
     public void onError(MediaEngineConnection mediaEngineConnection, MediaEngineConnection.FailedConnectionException failedConnectionException) {
-        Intrinsics3.checkNotNullParameter(mediaEngineConnection, "connection");
-        Intrinsics3.checkNotNullParameter(failedConnectionException, "exception");
+        C12238m.checkNotNullParameter(mediaEngineConnection, "connection");
+        C12238m.checkNotNullParameter(failedConnectionException, "exception");
     }
 
-    @Override // com.discord.rtcconnection.mediaengine.MediaEngineConnection.d
+    @Override // com.discord.rtcconnection.mediaengine.MediaEngineConnection.InterfaceC5648d
     public void onKrispStatus(MediaEngineConnection mediaEngineConnection, KrispOveruseDetector.Status status) {
-        Intrinsics3.checkNotNullParameter(mediaEngineConnection, "connection");
-        Intrinsics3.checkNotNullParameter(status, "status");
+        C12238m.checkNotNullParameter(mediaEngineConnection, "connection");
+        C12238m.checkNotNullParameter(status, "status");
     }
 
-    @Override // com.discord.rtcconnection.mediaengine.MediaEngineConnection.d
+    @Override // com.discord.rtcconnection.mediaengine.MediaEngineConnection.InterfaceC5648d
     public void onLocalMute(long j, boolean z2) {
-        b(new MediaSinkWantsManager3(this));
+        m8454b(new C1202h(this));
     }
 
-    @Override // com.discord.rtcconnection.mediaengine.MediaEngineConnection.d
+    @Override // com.discord.rtcconnection.mediaengine.MediaEngineConnection.InterfaceC5648d
     public void onLocalVideoOffScreen(long j, boolean z2) {
-        b(new MediaSinkWantsManager3(this));
+        m8454b(new C1202h(this));
     }
 
-    @Override // com.discord.rtcconnection.mediaengine.MediaEngineConnection.d
+    @Override // com.discord.rtcconnection.mediaengine.MediaEngineConnection.InterfaceC5648d
     public void onSpeaking(long j, int i, boolean z2) {
     }
 
-    @Override // com.discord.rtcconnection.mediaengine.MediaEngineConnection.d
+    @Override // com.discord.rtcconnection.mediaengine.MediaEngineConnection.InterfaceC5648d
     public void onTargetBitrate(int i) {
     }
 
-    @Override // com.discord.rtcconnection.mediaengine.MediaEngineConnection.d
+    @Override // com.discord.rtcconnection.mediaengine.MediaEngineConnection.InterfaceC5648d
     public void onTargetFrameRate(int i) {
     }
 
-    @Override // com.discord.rtcconnection.mediaengine.MediaEngineConnection.d
+    @Override // com.discord.rtcconnection.mediaengine.MediaEngineConnection.InterfaceC5648d
     public void onVideo(long j, Integer num, int i, int i2, int i3, StreamParameters[] streamParametersArr) {
-        Intrinsics3.checkNotNullParameter(streamParametersArr, "streams");
+        C12238m.checkNotNullParameter(streamParametersArr, "streams");
     }
 }

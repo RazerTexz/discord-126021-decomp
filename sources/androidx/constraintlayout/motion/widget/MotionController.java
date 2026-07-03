@@ -16,7 +16,6 @@ import androidx.constraintlayout.solver.widgets.analyzer.BasicMeasure;
 import androidx.constraintlayout.widget.ConstraintAttribute;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.constraintlayout.widget.ConstraintSet;
-import b.d.b.a.outline;
 import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -24,6 +23,7 @@ import java.util.Collections;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Iterator;
+import p007b.p100d.p104b.p105a.C1643a;
 
 /* JADX INFO: loaded from: classes.dex */
 public class MotionController {
@@ -169,10 +169,10 @@ public class MotionController {
     private void insertKey(MotionPaths motionPaths) {
         int iBinarySearch = Collections.binarySearch(this.mMotionPaths, motionPaths);
         if (iBinarySearch == 0) {
-            StringBuilder sbU = outline.U(" KeyPath positon \"");
-            sbU.append(motionPaths.position);
-            sbU.append("\" outside of range");
-            Log.e(TAG, sbU.toString());
+            StringBuilder sbM833U = C1643a.m833U(" KeyPath positon \"");
+            sbM833U.append(motionPaths.position);
+            sbM833U.append("\" outside of range");
+            Log.e(TAG, sbM833U.toString());
         }
         this.mMotionPaths.add((-iBinarySearch) - 1, motionPaths);
     }
@@ -433,10 +433,10 @@ public class MotionController {
         int i = 0;
         if (curveFitArr == null) {
             MotionPaths motionPaths = this.mEndMotionPath;
-            float f4 = motionPaths.f28x;
+            float f4 = motionPaths.f108x;
             MotionPaths motionPaths2 = this.mStartMotionPath;
-            float f5 = f4 - motionPaths2.f28x;
-            float f6 = motionPaths.f29y - motionPaths2.f29y;
+            float f5 = f4 - motionPaths2.f108x;
+            float f6 = motionPaths.f109y - motionPaths2.f109y;
             float f7 = motionPaths.width - motionPaths2.width;
             float f8 = (motionPaths.height - motionPaths2.height) + f6;
             fArr[0] = ((f7 + f5) * f2) + ((1.0f - f2) * f5);
@@ -478,11 +478,11 @@ public class MotionController {
     }
 
     public float getFinalX() {
-        return this.mEndMotionPath.f28x;
+        return this.mEndMotionPath.f108x;
     }
 
     public float getFinalY() {
-        return this.mEndMotionPath.f29y;
+        return this.mEndMotionPath.f109y;
     }
 
     public MotionPaths getKeyFrame(int i) {
@@ -528,12 +528,12 @@ public class MotionController {
 
     public float getKeyFrameParameter(int i, float f, float f2) {
         MotionPaths motionPaths = this.mEndMotionPath;
-        float f3 = motionPaths.f28x;
+        float f3 = motionPaths.f108x;
         MotionPaths motionPaths2 = this.mStartMotionPath;
-        float f4 = motionPaths2.f28x;
+        float f4 = motionPaths2.f108x;
         float f5 = f3 - f4;
-        float f6 = motionPaths.f29y;
-        float f7 = motionPaths2.f29y;
+        float f6 = motionPaths.f109y;
+        float f7 = motionPaths2.f109y;
         float f8 = f6 - f7;
         float f9 = (motionPaths2.width / 2.0f) + f4;
         float f10 = (motionPaths2.height / 2.0f) + f7;
@@ -571,17 +571,17 @@ public class MotionController {
     public KeyPositionBase getPositionKeyframe(int i, int i2, float f, float f2) {
         RectF rectF = new RectF();
         MotionPaths motionPaths = this.mStartMotionPath;
-        float f3 = motionPaths.f28x;
+        float f3 = motionPaths.f108x;
         rectF.left = f3;
-        float f4 = motionPaths.f29y;
+        float f4 = motionPaths.f109y;
         rectF.top = f4;
         rectF.right = f3 + motionPaths.width;
         rectF.bottom = f4 + motionPaths.height;
         RectF rectF2 = new RectF();
         MotionPaths motionPaths2 = this.mEndMotionPath;
-        float f5 = motionPaths2.f28x;
+        float f5 = motionPaths2.f108x;
         rectF2.left = f5;
-        float f6 = motionPaths2.f29y;
+        float f6 = motionPaths2.f109y;
         rectF2.top = f6;
         rectF2.right = f5 + motionPaths2.width;
         rectF2.bottom = f6 + motionPaths2.height;
@@ -641,11 +641,11 @@ public class MotionController {
         int i3 = 0;
         if (this.mSpline == null) {
             MotionPaths motionPaths = this.mEndMotionPath;
-            float f4 = motionPaths.f28x;
+            float f4 = motionPaths.f108x;
             MotionPaths motionPaths2 = this.mStartMotionPath;
-            float f5 = f4 - motionPaths2.f28x;
+            float f5 = f4 - motionPaths2.f108x;
             KeyCycleOscillator keyCycleOscillator6 = keyCycleOscillator5;
-            float f6 = motionPaths.f29y - motionPaths2.f29y;
+            float f6 = motionPaths.f109y - motionPaths2.f109y;
             KeyCycleOscillator keyCycleOscillator7 = keyCycleOscillator4;
             float f7 = motionPaths.width - motionPaths2.width;
             float f8 = (motionPaths.height - motionPaths2.height) + f6;
@@ -679,11 +679,11 @@ public class MotionController {
     }
 
     public float getStartX() {
-        return this.mStartMotionPath.f28x;
+        return this.mStartMotionPath.f108x;
     }
 
     public float getStartY() {
-        return this.mStartMotionPath.f29y;
+        return this.mStartMotionPath.f109y;
     }
 
     public int getkeyFramePositions(int[] iArr, float[] fArr) {
@@ -787,28 +787,28 @@ public class MotionController {
             }
         } else {
             MotionPaths motionPaths = this.mStartMotionPath;
-            float f2 = motionPaths.f28x;
+            float f2 = motionPaths.f108x;
             MotionPaths motionPaths2 = this.mEndMotionPath;
-            float fA = outline.a(motionPaths2.f28x, f2, adjustedPosition, f2);
-            float f3 = motionPaths.f29y;
-            float fA2 = outline.a(motionPaths2.f29y, f3, adjustedPosition, f3);
+            float fM839a = C1643a.m839a(motionPaths2.f108x, f2, adjustedPosition, f2);
+            float f3 = motionPaths.f109y;
+            float fM839a2 = C1643a.m839a(motionPaths2.f109y, f3, adjustedPosition, f3);
             float f4 = motionPaths.width;
             float f5 = motionPaths2.width;
-            float fA3 = outline.a(f5, f4, adjustedPosition, f4);
+            float fM839a3 = C1643a.m839a(f5, f4, adjustedPosition, f4);
             float f6 = motionPaths.height;
             float f7 = motionPaths2.height;
-            float f8 = fA + 0.5f;
+            float f8 = fM839a + 0.5f;
             int i3 = (int) f8;
-            float f9 = fA2 + 0.5f;
+            float f9 = fM839a2 + 0.5f;
             int i4 = (int) f9;
-            int i5 = (int) (f8 + fA3);
-            int iA = (int) (f9 + outline.a(f7, f6, adjustedPosition, f6));
+            int i5 = (int) (f8 + fM839a3);
+            int iM839a = (int) (f9 + C1643a.m839a(f7, f6, adjustedPosition, f6));
             int i6 = i5 - i3;
-            int i7 = iA - i4;
+            int i7 = iM839a - i4;
             if (f5 != f4 || f7 != f6) {
                 view.measure(View.MeasureSpec.makeMeasureSpec(i6, BasicMeasure.EXACTLY), View.MeasureSpec.makeMeasureSpec(i7, BasicMeasure.EXACTLY));
             }
-            view.layout(i3, i4, i5, iA);
+            view.layout(i3, i4, i5, iM839a);
         }
         HashMap<String, KeyCycleOscillator> map4 = this.mCycleMap;
         if (map4 != null) {
@@ -831,17 +831,17 @@ public class MotionController {
     public void positionKeyframe(View view, KeyPositionBase keyPositionBase, float f, float f2, String[] strArr, float[] fArr) {
         RectF rectF = new RectF();
         MotionPaths motionPaths = this.mStartMotionPath;
-        float f3 = motionPaths.f28x;
+        float f3 = motionPaths.f108x;
         rectF.left = f3;
-        float f4 = motionPaths.f29y;
+        float f4 = motionPaths.f109y;
         rectF.top = f4;
         rectF.right = f3 + motionPaths.width;
         rectF.bottom = f4 + motionPaths.height;
         RectF rectF2 = new RectF();
         MotionPaths motionPaths2 = this.mEndMotionPath;
-        float f5 = motionPaths2.f28x;
+        float f5 = motionPaths2.f108x;
         rectF2.left = f5;
-        float f6 = motionPaths2.f29y;
+        float f6 = motionPaths2.f109y;
         rectF2.top = f6;
         rectF2.right = f5 + motionPaths2.width;
         rectF2.bottom = f6 + motionPaths2.height;
@@ -1096,11 +1096,11 @@ public class MotionController {
                 break;
             }
             if (iArr3[i15] < MotionPaths.names.length) {
-                String strJ = outline.J(new StringBuilder(), MotionPaths.names[this.mInterpolateVariables[i15]], " [");
+                String strM822J = C1643a.m822J(new StringBuilder(), MotionPaths.names[this.mInterpolateVariables[i15]], " [");
                 for (int i16 = 0; i16 < size; i16++) {
-                    StringBuilder sbU = outline.U(strJ);
-                    sbU.append(dArr[i16][i15]);
-                    strJ = sbU.toString();
+                    StringBuilder sbM833U = C1643a.m833U(strM822J);
+                    sbM833U.append(dArr[i16][i15]);
+                    strM822J = sbM833U.toString();
                 }
             }
             i15++;
@@ -1147,8 +1147,8 @@ public class MotionController {
             for (int i20 = 0; i20 < size; i20++) {
                 iArr5[i20] = motionPathsArr[i20].mPathMotionArc;
                 dArr5[i20] = motionPathsArr[i20].time;
-                dArr6[i20][0] = motionPathsArr[i20].f28x;
-                dArr6[i20][1] = motionPathsArr[i20].f29y;
+                dArr6[i20][0] = motionPathsArr[i20].f108x;
+                dArr6[i20][1] = motionPathsArr[i20].f109y;
             }
             this.mArcSpline = CurveFit.getArc(iArr5, dArr5, dArr6);
         }
@@ -1178,14 +1178,14 @@ public class MotionController {
     }
 
     public String toString() {
-        StringBuilder sbU = outline.U(" start: x: ");
-        sbU.append(this.mStartMotionPath.f28x);
-        sbU.append(" y: ");
-        sbU.append(this.mStartMotionPath.f29y);
-        sbU.append(" end: x: ");
-        sbU.append(this.mEndMotionPath.f28x);
-        sbU.append(" y: ");
-        sbU.append(this.mEndMotionPath.f29y);
-        return sbU.toString();
+        StringBuilder sbM833U = C1643a.m833U(" start: x: ");
+        sbM833U.append(this.mStartMotionPath.f108x);
+        sbM833U.append(" y: ");
+        sbM833U.append(this.mStartMotionPath.f109y);
+        sbM833U.append(" end: x: ");
+        sbM833U.append(this.mEndMotionPath.f108x);
+        sbM833U.append(" y: ");
+        sbM833U.append(this.mEndMotionPath.f109y);
+        return sbM833U.toString();
     }
 }

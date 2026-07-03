@@ -1,18 +1,18 @@
 package com.discord.analytics.generated.events;
 
 import com.discord.analytics.generated.traits.TrackBase;
-import com.discord.analytics.generated.traits.TrackBase2;
+import com.discord.analytics.generated.traits.TrackBaseReceiver;
 import com.discord.analytics.generated.traits.TrackDispatchBase;
-import com.discord.analytics.generated.traits.TrackDispatchBase2;
+import com.discord.analytics.generated.traits.TrackDispatchBaseReceiver;
 import com.discord.analytics.generated.traits.TrackDispatchPatch;
-import com.discord.analytics.generated.traits.TrackDispatchPatch2;
+import com.discord.analytics.generated.traits.TrackDispatchPatchReceiver;
 import com.discord.analytics.generated.traits.TrackDispatchStats;
-import com.discord.analytics.generated.traits.TrackDispatchStats2;
+import com.discord.analytics.generated.traits.TrackDispatchStatsReceiver;
 import com.discord.api.science.AnalyticsSchema;
 
 /* JADX INFO: compiled from: TrackGlPatchPaused.kt */
 /* JADX INFO: loaded from: classes.dex */
-public final class TrackGlPatchPaused implements AnalyticsSchema, TrackBase2, TrackDispatchBase2, TrackDispatchPatch2, TrackDispatchStats2 {
+public final class TrackGlPatchPaused implements AnalyticsSchema, TrackBaseReceiver, TrackDispatchBaseReceiver, TrackDispatchPatchReceiver, TrackDispatchStatsReceiver {
     private final transient String analyticsSchemaTypeName = "gl_patch_paused";
     private TrackBase trackBase;
     private TrackDispatchBase trackDispatchBase;

@@ -1,17 +1,17 @@
 package com.discord.analytics.generated.events;
 
-import b.d.b.a.outline;
 import com.discord.analytics.generated.traits.TrackBase;
-import com.discord.analytics.generated.traits.TrackBase2;
+import com.discord.analytics.generated.traits.TrackBaseReceiver;
 import com.discord.analytics.generated.traits.TrackGuildLfgGroup;
-import com.discord.analytics.generated.traits.TrackGuildLfgGroup2;
+import com.discord.analytics.generated.traits.TrackGuildLfgGroupReceiver;
 import com.discord.api.science.AnalyticsSchema;
-import d0.z.d.Intrinsics3;
 import java.util.List;
+import p007b.p100d.p104b.p105a.C1643a;
+import p507d0.p592z.p594d.C12238m;
 
 /* JADX INFO: compiled from: TrackRemoveChannelRecipient.kt */
 /* JADX INFO: loaded from: classes.dex */
-public final /* data */ class TrackRemoveChannelRecipient implements AnalyticsSchema, TrackBase2, TrackGuildLfgGroup2 {
+public final /* data */ class TrackRemoveChannelRecipient implements AnalyticsSchema, TrackBaseReceiver, TrackGuildLfgGroupReceiver {
     private TrackBase trackBase;
     private TrackGuildLfgGroup trackGuildLfgGroup;
     private final Long channelId = null;
@@ -36,7 +36,7 @@ public final /* data */ class TrackRemoveChannelRecipient implements AnalyticsSc
             return false;
         }
         TrackRemoveChannelRecipient trackRemoveChannelRecipient = (TrackRemoveChannelRecipient) other;
-        return Intrinsics3.areEqual(this.channelId, trackRemoveChannelRecipient.channelId) && Intrinsics3.areEqual(this.channelType, trackRemoveChannelRecipient.channelType) && Intrinsics3.areEqual(this.owner, trackRemoveChannelRecipient.owner) && Intrinsics3.areEqual(this.recipientId, trackRemoveChannelRecipient.recipientId) && Intrinsics3.areEqual(this.recipientIds, trackRemoveChannelRecipient.recipientIds) && Intrinsics3.areEqual(this.removeType, trackRemoveChannelRecipient.removeType);
+        return C12238m.areEqual(this.channelId, trackRemoveChannelRecipient.channelId) && C12238m.areEqual(this.channelType, trackRemoveChannelRecipient.channelType) && C12238m.areEqual(this.owner, trackRemoveChannelRecipient.owner) && C12238m.areEqual(this.recipientId, trackRemoveChannelRecipient.recipientId) && C12238m.areEqual(this.recipientIds, trackRemoveChannelRecipient.recipientIds) && C12238m.areEqual(this.removeType, trackRemoveChannelRecipient.removeType);
     }
 
     public int hashCode() {
@@ -55,17 +55,17 @@ public final /* data */ class TrackRemoveChannelRecipient implements AnalyticsSc
     }
 
     public String toString() {
-        StringBuilder sbU = outline.U("TrackRemoveChannelRecipient(channelId=");
-        sbU.append(this.channelId);
-        sbU.append(", channelType=");
-        sbU.append(this.channelType);
-        sbU.append(", owner=");
-        sbU.append(this.owner);
-        sbU.append(", recipientId=");
-        sbU.append(this.recipientId);
-        sbU.append(", recipientIds=");
-        sbU.append(this.recipientIds);
-        sbU.append(", removeType=");
-        return outline.E(sbU, this.removeType, ")");
+        StringBuilder sbM833U = C1643a.m833U("TrackRemoveChannelRecipient(channelId=");
+        sbM833U.append(this.channelId);
+        sbM833U.append(", channelType=");
+        sbM833U.append(this.channelType);
+        sbM833U.append(", owner=");
+        sbM833U.append(this.owner);
+        sbM833U.append(", recipientId=");
+        sbM833U.append(this.recipientId);
+        sbM833U.append(", recipientIds=");
+        sbM833U.append(this.recipientIds);
+        sbM833U.append(", removeType=");
+        return C1643a.m817E(sbM833U, this.removeType, ")");
     }
 }

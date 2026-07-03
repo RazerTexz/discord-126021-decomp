@@ -13,37 +13,42 @@ import com.google.android.material.textfield.TextInputLayout;
 /* JADX INFO: loaded from: classes.dex */
 public final class WidgetSettingsAccountEmailEditBinding implements ViewBinding {
 
+    /* JADX INFO: renamed from: a */
     @NonNull
-    public final CoordinatorLayout a;
+    public final CoordinatorLayout f17834a;
 
-    /* JADX INFO: renamed from: b, reason: collision with root package name */
+    /* JADX INFO: renamed from: b */
     @NonNull
-    public final DimmerView f2599b;
+    public final DimmerView f17835b;
 
+    /* JADX INFO: renamed from: c */
     @NonNull
-    public final LinkifiedTextView c;
+    public final LinkifiedTextView f17836c;
 
+    /* JADX INFO: renamed from: d */
     @NonNull
-    public final TextInputLayout d;
+    public final TextInputLayout f17837d;
 
+    /* JADX INFO: renamed from: e */
     @NonNull
-    public final Button e;
+    public final Button f17838e;
 
+    /* JADX INFO: renamed from: f */
     @NonNull
-    public final FloatingActionButton f;
+    public final FloatingActionButton f17839f;
 
     public WidgetSettingsAccountEmailEditBinding(@NonNull CoordinatorLayout coordinatorLayout, @NonNull DimmerView dimmerView, @NonNull LinkifiedTextView linkifiedTextView, @NonNull TextInputLayout textInputLayout, @NonNull Button button, @NonNull FloatingActionButton floatingActionButton) {
-        this.a = coordinatorLayout;
-        this.f2599b = dimmerView;
-        this.c = linkifiedTextView;
-        this.d = textInputLayout;
-        this.e = button;
-        this.f = floatingActionButton;
+        this.f17834a = coordinatorLayout;
+        this.f17835b = dimmerView;
+        this.f17836c = linkifiedTextView;
+        this.f17837d = textInputLayout;
+        this.f17838e = button;
+        this.f17839f = floatingActionButton;
     }
 
     @Override // androidx.viewbinding.ViewBinding
     @NonNull
     public View getRoot() {
-        return this.a;
+        return this.f17834a;
     }
 }

@@ -8,38 +8,38 @@ import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.TextView;
 import androidx.constraintlayout.widget.ConstraintLayout;
-import b.a.i.ViewServerDiscoveryHeaderBinding;
-import com.discord.R;
+import com.discord.C5419R;
 import com.discord.models.domain.ModelAuditLogEntry;
-import d0.z.d.Intrinsics3;
+import p007b.p008a.p025i.C0955f3;
+import p507d0.p592z.p594d.C12238m;
 
 /* JADX INFO: compiled from: ServerDiscoveryHeader.kt */
 /* JADX INFO: loaded from: classes2.dex */
 public final class ServerDiscoveryHeader extends ConstraintLayout {
 
     /* JADX INFO: renamed from: j, reason: from kotlin metadata */
-    public final ViewServerDiscoveryHeaderBinding binding;
+    public final C0955f3 binding;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public ServerDiscoveryHeader(Context context, AttributeSet attributeSet) {
         super(context, attributeSet, 0);
-        Intrinsics3.checkNotNullParameter(context, "context");
-        LayoutInflater.from(context).inflate(R.layout.view_server_discovery_header, this);
-        int i = R.id.server_discovery_header_description;
-        TextView textView = (TextView) findViewById(R.id.server_discovery_header_description);
+        C12238m.checkNotNullParameter(context, "context");
+        LayoutInflater.from(context).inflate(C5419R.layout.view_server_discovery_header, this);
+        int i = C5419R.id.server_discovery_header_description;
+        TextView textView = (TextView) findViewById(C5419R.id.server_discovery_header_description);
         if (textView != null) {
-            i = R.id.server_discovery_header_image;
-            ImageView imageView = (ImageView) findViewById(R.id.server_discovery_header_image);
+            i = C5419R.id.server_discovery_header_image;
+            ImageView imageView = (ImageView) findViewById(C5419R.id.server_discovery_header_image);
             if (imageView != null) {
-                i = R.id.server_discovery_header_search_layout;
-                FrameLayout frameLayout = (FrameLayout) findViewById(R.id.server_discovery_header_search_layout);
+                i = C5419R.id.server_discovery_header_search_layout;
+                FrameLayout frameLayout = (FrameLayout) findViewById(C5419R.id.server_discovery_header_search_layout);
                 if (frameLayout != null) {
-                    i = R.id.server_discovery_header_title;
-                    TextView textView2 = (TextView) findViewById(R.id.server_discovery_header_title);
+                    i = C5419R.id.server_discovery_header_title;
+                    TextView textView2 = (TextView) findViewById(C5419R.id.server_discovery_header_title);
                     if (textView2 != null) {
-                        ViewServerDiscoveryHeaderBinding viewServerDiscoveryHeaderBinding = new ViewServerDiscoveryHeaderBinding(this, textView, imageView, frameLayout, textView2);
-                        Intrinsics3.checkNotNullExpressionValue(viewServerDiscoveryHeaderBinding, "ViewServerDiscoveryHeade…ater.from(context), this)");
-                        this.binding = viewServerDiscoveryHeaderBinding;
+                        C0955f3 c0955f3 = new C0955f3(this, textView, imageView, frameLayout, textView2);
+                        C12238m.checkNotNullExpressionValue(c0955f3, "ViewServerDiscoveryHeade…ater.from(context), this)");
+                        this.binding = c0955f3;
                         return;
                     }
                 }
@@ -49,18 +49,18 @@ public final class ServerDiscoveryHeader extends ConstraintLayout {
     }
 
     public final void setButtonOnClickListener(View.OnClickListener listener) {
-        this.binding.c.setOnClickListener(listener);
+        this.binding.f843c.setOnClickListener(listener);
     }
 
     public final void setDescription(CharSequence description) {
-        TextView textView = this.binding.f112b;
-        Intrinsics3.checkNotNullExpressionValue(textView, "binding.serverDiscoveryHeaderDescription");
+        TextView textView = this.binding.f842b;
+        C12238m.checkNotNullExpressionValue(textView, "binding.serverDiscoveryHeaderDescription");
         textView.setText(description);
     }
 
     public final void setTitle(CharSequence title) {
-        TextView textView = this.binding.d;
-        Intrinsics3.checkNotNullExpressionValue(textView, "binding.serverDiscoveryHeaderTitle");
+        TextView textView = this.binding.f844d;
+        C12238m.checkNotNullExpressionValue(textView, "binding.serverDiscoveryHeaderTitle");
         textView.setText(title);
     }
 }

@@ -11,21 +11,22 @@ import com.google.android.material.tabs.TabLayout;
 /* JADX INFO: loaded from: classes.dex */
 public final class WidgetFriendsAddBinding implements ViewBinding {
 
+    /* JADX INFO: renamed from: a */
     @NonNull
-    public final CoordinatorLayout a;
+    public final CoordinatorLayout f16650a;
 
-    /* JADX INFO: renamed from: b, reason: collision with root package name */
+    /* JADX INFO: renamed from: b */
     @NonNull
-    public final SimplePager f2390b;
+    public final SimplePager f16651b;
 
     public WidgetFriendsAddBinding(@NonNull CoordinatorLayout coordinatorLayout, @NonNull TabLayout tabLayout, @NonNull AppBarLayout appBarLayout, @NonNull SimplePager simplePager) {
-        this.a = coordinatorLayout;
-        this.f2390b = simplePager;
+        this.f16650a = coordinatorLayout;
+        this.f16651b = simplePager;
     }
 
     @Override // androidx.viewbinding.ViewBinding
     @NonNull
     public View getRoot() {
-        return this.a;
+        return this.f16650a;
     }
 }

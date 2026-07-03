@@ -34,9 +34,9 @@ import androidx.core.view.ViewCompat;
 import androidx.core.view.accessibility.AccessibilityNodeInfoCompat;
 import androidx.customview.view.AbsSavedState;
 import androidx.customview.widget.ViewDragHelper;
-import b.d.b.a.outline;
 import java.util.ArrayList;
 import java.util.List;
+import p007b.p100d.p104b.p105a.C1643a;
 
 /* JADX INFO: loaded from: classes.dex */
 public class DrawerLayout extends ViewGroup {
@@ -1101,13 +1101,13 @@ public class DrawerLayout extends ViewGroup {
                     int drawerViewAbsoluteGravity = getDrawerViewAbsoluteGravity(childAt) & 7;
                     boolean z5 = drawerViewAbsoluteGravity == 3;
                     if ((z5 && z3) || (!z5 && z4)) {
-                        StringBuilder sbU = outline.U("Child drawer has absolute gravity ");
-                        sbU.append(gravityToString(drawerViewAbsoluteGravity));
-                        sbU.append(" but this ");
-                        sbU.append(TAG);
-                        sbU.append(" already has a ");
-                        sbU.append("drawer view along that edge");
-                        throw new IllegalStateException(sbU.toString());
+                        StringBuilder sbM833U = C1643a.m833U("Child drawer has absolute gravity ");
+                        sbM833U.append(gravityToString(drawerViewAbsoluteGravity));
+                        sbM833U.append(" but this ");
+                        sbM833U.append(TAG);
+                        sbM833U.append(" already has a ");
+                        sbM833U.append("drawer view along that edge");
+                        throw new IllegalStateException(sbM833U.toString());
                     }
                     if (z5) {
                         z3 = true;
@@ -1667,9 +1667,9 @@ public class DrawerLayout extends ViewGroup {
         if (viewFindDrawerWithGravity != null) {
             closeDrawer(viewFindDrawerWithGravity, z2);
         } else {
-            StringBuilder sbU = outline.U("No drawer view found with gravity ");
-            sbU.append(gravityToString(i));
-            throw new IllegalArgumentException(sbU.toString());
+            StringBuilder sbM833U = C1643a.m833U("No drawer view found with gravity ");
+            sbM833U.append(gravityToString(i));
+            throw new IllegalArgumentException(sbM833U.toString());
         }
     }
 
@@ -1682,9 +1682,9 @@ public class DrawerLayout extends ViewGroup {
         if (viewFindDrawerWithGravity != null) {
             openDrawer(viewFindDrawerWithGravity, z2);
         } else {
-            StringBuilder sbU = outline.U("No drawer view found with gravity ");
-            sbU.append(gravityToString(i));
-            throw new IllegalArgumentException(sbU.toString());
+            StringBuilder sbM833U = C1643a.m833U("No drawer view found with gravity ");
+            sbM833U.append(gravityToString(i));
+            throw new IllegalArgumentException(sbM833U.toString());
         }
     }
 }

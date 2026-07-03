@@ -15,11 +15,11 @@ import lombok.javac.JavacNode;
 public class HandleBuilderDefault extends JavacAnnotationHandler<Builder.Default> {
     @Override // lombok.javac.JavacAnnotationHandler
     public void handle(AnnotationValues<Builder.Default> annotation, JCTree.JCAnnotation ast, JavacNode annotationNode) {
-        JavacNode annotatedField = annotationNode.up();
+        JavacNode annotatedField = annotationNode.m10925up();
         if (annotatedField.getKind() != AST.Kind.FIELD) {
             return;
         }
-        JavacNode classWithAnnotatedField = annotatedField.up();
+        JavacNode classWithAnnotatedField = annotatedField.m10925up();
         if (!JavacHandlerUtil.hasAnnotation((Class<? extends Annotation>) Builder.class, classWithAnnotatedField) && !JavacHandlerUtil.hasAnnotation("lombok.experimental.Builder", classWithAnnotatedField) && !JavacHandlerUtil.hasAnnotation((Class<? extends Annotation>) SuperBuilder.class, classWithAnnotatedField)) {
             annotationNode.addWarning("@Builder.Default requires @Builder or @SuperBuilder on the class for it to mean anything.");
             JavacHandlerUtil.deleteAnnotationIfNeccessary(annotationNode, (Class<? extends Annotation>) Builder.Default.class);

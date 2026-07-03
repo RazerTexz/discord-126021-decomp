@@ -1,15 +1,15 @@
 package com.discord.analytics.generated.events;
 
-import b.d.b.a.outline;
 import com.discord.analytics.generated.traits.TrackBase;
-import com.discord.analytics.generated.traits.TrackBase2;
+import com.discord.analytics.generated.traits.TrackBaseReceiver;
 import com.discord.api.science.AnalyticsSchema;
 import com.discord.models.domain.ModelAuditLogEntry;
-import d0.z.d.Intrinsics3;
+import p007b.p100d.p104b.p105a.C1643a;
+import p507d0.p592z.p594d.C12238m;
 
 /* JADX INFO: compiled from: TrackCreateSticker.kt */
 /* JADX INFO: loaded from: classes.dex */
-public final /* data */ class TrackCreateSticker implements AnalyticsSchema, TrackBase2 {
+public final /* data */ class TrackCreateSticker implements AnalyticsSchema, TrackBaseReceiver {
     private TrackBase trackBase;
     private final Long id = null;
     private final Long guildId = null;
@@ -30,7 +30,7 @@ public final /* data */ class TrackCreateSticker implements AnalyticsSchema, Tra
             return false;
         }
         TrackCreateSticker trackCreateSticker = (TrackCreateSticker) other;
-        return Intrinsics3.areEqual(this.id, trackCreateSticker.id) && Intrinsics3.areEqual(this.guildId, trackCreateSticker.guildId) && Intrinsics3.areEqual(this.formatType, trackCreateSticker.formatType);
+        return C12238m.areEqual(this.id, trackCreateSticker.id) && C12238m.areEqual(this.guildId, trackCreateSticker.guildId) && C12238m.areEqual(this.formatType, trackCreateSticker.formatType);
     }
 
     public int hashCode() {
@@ -43,11 +43,11 @@ public final /* data */ class TrackCreateSticker implements AnalyticsSchema, Tra
     }
 
     public String toString() {
-        StringBuilder sbU = outline.U("TrackCreateSticker(id=");
-        sbU.append(this.id);
-        sbU.append(", guildId=");
-        sbU.append(this.guildId);
-        sbU.append(", formatType=");
-        return outline.G(sbU, this.formatType, ")");
+        StringBuilder sbM833U = C1643a.m833U("TrackCreateSticker(id=");
+        sbM833U.append(this.id);
+        sbM833U.append(", guildId=");
+        sbM833U.append(this.guildId);
+        sbM833U.append(", formatType=");
+        return C1643a.m819G(sbM833U, this.formatType, ")");
     }
 }

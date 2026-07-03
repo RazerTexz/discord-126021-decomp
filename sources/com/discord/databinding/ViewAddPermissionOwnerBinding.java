@@ -7,34 +7,36 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.viewbinding.ViewBinding;
-import com.discord.R;
+import com.discord.C5419R;
 
 /* JADX INFO: loaded from: classes.dex */
 public final class ViewAddPermissionOwnerBinding implements ViewBinding {
 
+    /* JADX INFO: renamed from: a */
     @NonNull
-    public final View a;
+    public final View f15365a;
 
-    /* JADX INFO: renamed from: b, reason: collision with root package name */
+    /* JADX INFO: renamed from: b */
     @NonNull
-    public final TextView f2170b;
+    public final TextView f15366b;
 
     public ViewAddPermissionOwnerBinding(@NonNull View view, @NonNull ImageView imageView, @NonNull TextView textView, @NonNull ImageView imageView2) {
-        this.a = view;
-        this.f2170b = textView;
+        this.f15365a = view;
+        this.f15366b = textView;
     }
 
     @NonNull
-    public static ViewAddPermissionOwnerBinding a(@NonNull LayoutInflater layoutInflater, @NonNull ViewGroup viewGroup) {
-        layoutInflater.inflate(R.layout.view_add_permission_owner, viewGroup);
-        int i = R.id.add_icon;
-        ImageView imageView = (ImageView) viewGroup.findViewById(R.id.add_icon);
+    /* JADX INFO: renamed from: a */
+    public static ViewAddPermissionOwnerBinding m8391a(@NonNull LayoutInflater layoutInflater, @NonNull ViewGroup viewGroup) {
+        layoutInflater.inflate(C5419R.layout.view_add_permission_owner, viewGroup);
+        int i = C5419R.id.add_icon;
+        ImageView imageView = (ImageView) viewGroup.findViewById(C5419R.id.add_icon);
         if (imageView != null) {
-            i = R.id.label;
-            TextView textView = (TextView) viewGroup.findViewById(R.id.label);
+            i = C5419R.id.label;
+            TextView textView = (TextView) viewGroup.findViewById(C5419R.id.label);
             if (textView != null) {
-                i = R.id.more_arrow;
-                ImageView imageView2 = (ImageView) viewGroup.findViewById(R.id.more_arrow);
+                i = C5419R.id.more_arrow;
+                ImageView imageView2 = (ImageView) viewGroup.findViewById(C5419R.id.more_arrow);
                 if (imageView2 != null) {
                     return new ViewAddPermissionOwnerBinding(viewGroup, imageView, textView, imageView2);
                 }
@@ -46,6 +48,6 @@ public final class ViewAddPermissionOwnerBinding implements ViewBinding {
     @Override // androidx.viewbinding.ViewBinding
     @NonNull
     public View getRoot() {
-        return this.a;
+        return this.f15365a;
     }
 }

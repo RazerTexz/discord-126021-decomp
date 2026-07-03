@@ -19,13 +19,13 @@ public abstract class VirtualLayout extends ConstraintHelper {
     public void init(AttributeSet attributeSet) {
         super.init(attributeSet);
         if (attributeSet != null) {
-            TypedArray typedArrayObtainStyledAttributes = getContext().obtainStyledAttributes(attributeSet, R.styleable.ConstraintLayout_Layout);
+            TypedArray typedArrayObtainStyledAttributes = getContext().obtainStyledAttributes(attributeSet, C0201R.styleable.ConstraintLayout_Layout);
             int indexCount = typedArrayObtainStyledAttributes.getIndexCount();
             for (int i = 0; i < indexCount; i++) {
                 int index = typedArrayObtainStyledAttributes.getIndex(i);
-                if (index == R.styleable.ConstraintLayout_Layout_android_visibility) {
+                if (index == C0201R.styleable.ConstraintLayout_Layout_android_visibility) {
                     this.mApplyVisibilityOnAttach = true;
-                } else if (index == R.styleable.ConstraintLayout_Layout_android_elevation) {
+                } else if (index == C0201R.styleable.ConstraintLayout_Layout_android_elevation) {
                     this.mApplyElevationOnAttach = true;
                 }
             }

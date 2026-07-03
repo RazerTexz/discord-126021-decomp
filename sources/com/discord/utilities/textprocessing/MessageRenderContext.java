@@ -1,10 +1,7 @@
 package com.discord.utilities.textprocessing;
 
-import a0.a.a.b;
 import android.content.Context;
-import b.a.d.AppToast;
-import b.d.b.a.outline;
-import com.discord.R;
+import com.discord.C5419R;
 import com.discord.api.role.GuildRole;
 import com.discord.utilities.color.ColorCompat;
 import com.discord.utilities.textprocessing.node.BasicRenderContext;
@@ -17,13 +14,16 @@ import com.discord.utilities.textprocessing.node.UrlNode;
 import com.discord.utilities.textprocessing.node.UserMentionNode;
 import com.discord.utilities.uri.UriHandler;
 import com.discord.widgets.emoji.WidgetEmojiSheet;
-import d0.z.d.Intrinsics3;
-import d0.z.d.Lambda;
 import java.util.Map;
 import kotlin.Unit;
 import kotlin.jvm.functions.Function1;
 import kotlin.jvm.functions.Function3;
 import kotlin.jvm.internal.DefaultConstructorMarker;
+import p001a0.p002a.p003a.C0002b;
+import p007b.p008a.p018d.C0876m;
+import p007b.p100d.p104b.p105a.C1643a;
+import p507d0.p592z.p594d.AbstractC12240o;
+import p507d0.p592z.p594d.C12238m;
 
 /* JADX INFO: compiled from: MessageRenderContext.kt */
 /* JADX INFO: loaded from: classes2.dex */
@@ -43,47 +43,47 @@ public final /* data */ class MessageRenderContext implements BasicRenderContext
     private final Function1<Long, Unit> userMentionOnClick;
     private final Map<Long, String> userNames;
 
-    /* JADX INFO: renamed from: com.discord.utilities.textprocessing.MessageRenderContext$1, reason: invalid class name */
+    /* JADX INFO: renamed from: com.discord.utilities.textprocessing.MessageRenderContext$1 */
     /* JADX INFO: compiled from: MessageRenderContext.kt */
-    public static final class AnonymousClass1 extends Lambda implements Function3<Context, String, String, Unit> {
-        public static final AnonymousClass1 INSTANCE = new AnonymousClass1();
+    public static final class C69461 extends AbstractC12240o implements Function3<Context, String, String, Unit> {
+        public static final C69461 INSTANCE = new C69461();
 
-        public AnonymousClass1() {
+        public C69461() {
             super(3);
         }
 
         @Override // kotlin.jvm.functions.Function3
         public /* bridge */ /* synthetic */ Unit invoke(Context context, String str, String str2) {
             invoke2(context, str, str2);
-            return Unit.a;
+            return Unit.f27425a;
         }
 
         /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
         public final void invoke2(Context context, String str, String str2) {
-            Intrinsics3.checkNotNullParameter(context, "clickContext");
-            Intrinsics3.checkNotNullParameter(str, "url");
+            C12238m.checkNotNullParameter(context, "clickContext");
+            C12238m.checkNotNullParameter(str, "url");
             UriHandler.handleOrUntrusted(context, str, str2);
         }
     }
 
-    /* JADX INFO: renamed from: com.discord.utilities.textprocessing.MessageRenderContext$2, reason: invalid class name */
+    /* JADX INFO: renamed from: com.discord.utilities.textprocessing.MessageRenderContext$2 */
     /* JADX INFO: compiled from: MessageRenderContext.kt */
-    public static final class AnonymousClass2 extends Lambda implements Function1<String, Unit> {
-        public static final AnonymousClass2 INSTANCE = new AnonymousClass2();
+    public static final class C69472 extends AbstractC12240o implements Function1<String, Unit> {
+        public static final C69472 INSTANCE = new C69472();
 
-        public AnonymousClass2() {
+        public C69472() {
             super(1);
         }
 
         @Override // kotlin.jvm.functions.Function1
         public /* bridge */ /* synthetic */ Unit invoke(String str) {
             invoke2(str);
-            return Unit.a;
+            return Unit.f27425a;
         }
 
         /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
         public final void invoke2(String str) {
-            Intrinsics3.checkNotNullParameter(str, "it");
+            C12238m.checkNotNullParameter(str, "it");
         }
     }
 
@@ -133,9 +133,9 @@ public final /* data */ class MessageRenderContext implements BasicRenderContext
 
     /* JADX WARN: Multi-variable type inference failed */
     public MessageRenderContext(Context context, long j, boolean z2, Map<Long, String> map, Map<Long, String> map2, Map<Long, GuildRole> map3, int i, Function3<? super Context, ? super String, ? super String, Unit> function3, Function1<? super String, Unit> function1, int i2, int i3, Function1<? super SpoilerNode<?>, Unit> function2, Function1<? super Long, Unit> function4, Function1<? super Long, Unit> function5) {
-        Intrinsics3.checkNotNullParameter(context, "context");
-        Intrinsics3.checkNotNullParameter(function3, "onClickUrl");
-        Intrinsics3.checkNotNullParameter(function1, "onLongPressUrl");
+        C12238m.checkNotNullParameter(context, "context");
+        C12238m.checkNotNullParameter(function3, "onClickUrl");
+        C12238m.checkNotNullParameter(function1, "onLongPressUrl");
         this.context = context;
         this.myId = j;
         this.isAnimationEnabled = z2;
@@ -209,9 +209,9 @@ public final /* data */ class MessageRenderContext implements BasicRenderContext
     }
 
     public final MessageRenderContext copy(Context context, long myId, boolean isAnimationEnabled, Map<Long, String> userNames, Map<Long, String> channelNames, Map<Long, GuildRole> roles, int linkColorAttrResId, Function3<? super Context, ? super String, ? super String, Unit> onClickUrl, Function1<? super String, Unit> onLongPressUrl, int spoilerColorRes, int spoilerRevealedColorRes, Function1<? super SpoilerNode<?>, Unit> spoilerOnClick, Function1<? super Long, Unit> userMentionOnClick, Function1<? super Long, Unit> channelMentionOnClick) {
-        Intrinsics3.checkNotNullParameter(context, "context");
-        Intrinsics3.checkNotNullParameter(onClickUrl, "onClickUrl");
-        Intrinsics3.checkNotNullParameter(onLongPressUrl, "onLongPressUrl");
+        C12238m.checkNotNullParameter(context, "context");
+        C12238m.checkNotNullParameter(onClickUrl, "onClickUrl");
+        C12238m.checkNotNullParameter(onLongPressUrl, "onLongPressUrl");
         return new MessageRenderContext(context, myId, isAnimationEnabled, userNames, channelNames, roles, linkColorAttrResId, onClickUrl, onLongPressUrl, spoilerColorRes, spoilerRevealedColorRes, spoilerOnClick, userMentionOnClick, channelMentionOnClick);
     }
 
@@ -223,7 +223,7 @@ public final /* data */ class MessageRenderContext implements BasicRenderContext
             return false;
         }
         MessageRenderContext messageRenderContext = (MessageRenderContext) other;
-        return Intrinsics3.areEqual(getContext(), messageRenderContext.getContext()) && getMyId() == messageRenderContext.getMyId() && getIsAnimationEnabled() == messageRenderContext.getIsAnimationEnabled() && Intrinsics3.areEqual(getUserNames(), messageRenderContext.getUserNames()) && Intrinsics3.areEqual(getChannelNames(), messageRenderContext.getChannelNames()) && Intrinsics3.areEqual(getRoles(), messageRenderContext.getRoles()) && getLinkColorAttrResId() == messageRenderContext.getLinkColorAttrResId() && Intrinsics3.areEqual(getOnClickUrl(), messageRenderContext.getOnClickUrl()) && Intrinsics3.areEqual(getOnLongPressUrl(), messageRenderContext.getOnLongPressUrl()) && getSpoilerColorRes() == messageRenderContext.getSpoilerColorRes() && getSpoilerRevealedColorRes() == messageRenderContext.getSpoilerRevealedColorRes() && Intrinsics3.areEqual(getSpoilerOnClick(), messageRenderContext.getSpoilerOnClick()) && Intrinsics3.areEqual(getUserMentionOnClick(), messageRenderContext.getUserMentionOnClick()) && Intrinsics3.areEqual(getChannelMentionOnClick(), messageRenderContext.getChannelMentionOnClick());
+        return C12238m.areEqual(getContext(), messageRenderContext.getContext()) && getMyId() == messageRenderContext.getMyId() && getIsAnimationEnabled() == messageRenderContext.getIsAnimationEnabled() && C12238m.areEqual(getUserNames(), messageRenderContext.getUserNames()) && C12238m.areEqual(getChannelNames(), messageRenderContext.getChannelNames()) && C12238m.areEqual(getRoles(), messageRenderContext.getRoles()) && getLinkColorAttrResId() == messageRenderContext.getLinkColorAttrResId() && C12238m.areEqual(getOnClickUrl(), messageRenderContext.getOnClickUrl()) && C12238m.areEqual(getOnLongPressUrl(), messageRenderContext.getOnLongPressUrl()) && getSpoilerColorRes() == messageRenderContext.getSpoilerColorRes() && getSpoilerRevealedColorRes() == messageRenderContext.getSpoilerRevealedColorRes() && C12238m.areEqual(getSpoilerOnClick(), messageRenderContext.getSpoilerOnClick()) && C12238m.areEqual(getUserMentionOnClick(), messageRenderContext.getUserMentionOnClick()) && C12238m.areEqual(getChannelMentionOnClick(), messageRenderContext.getChannelMentionOnClick());
     }
 
     @Override // com.discord.utilities.textprocessing.node.ChannelMentionNode.RenderContext
@@ -293,13 +293,13 @@ public final /* data */ class MessageRenderContext implements BasicRenderContext
 
     public int hashCode() {
         Context context = getContext();
-        int iA = (b.a(getMyId()) + ((context != null ? context.hashCode() : 0) * 31)) * 31;
+        int iM3a = (C0002b.m3a(getMyId()) + ((context != null ? context.hashCode() : 0) * 31)) * 31;
         boolean isAnimationEnabled = getIsAnimationEnabled();
         int i = isAnimationEnabled;
         if (isAnimationEnabled) {
             i = 1;
         }
-        int i2 = (iA + i) * 31;
+        int i2 = (iM3a + i) * 31;
         Map<Long, String> userNames = getUserNames();
         int iHashCode = (i2 + (userNames != null ? userNames.hashCode() : 0)) * 31;
         Map<Long, String> channelNames = getChannelNames();
@@ -326,50 +326,50 @@ public final /* data */ class MessageRenderContext implements BasicRenderContext
 
     @Override // com.discord.utilities.textprocessing.node.EmojiNode.RenderContext
     public void onEmojiClicked(EmojiNode.EmojiIdAndType emojiIdAndType) {
-        Intrinsics3.checkNotNullParameter(emojiIdAndType, "emojiIdAndType");
+        C12238m.checkNotNullParameter(emojiIdAndType, "emojiIdAndType");
         WidgetEmojiSheet.INSTANCE.enqueueNotice(emojiIdAndType);
     }
 
     @Override // com.discord.utilities.textprocessing.node.TimestampNode.RenderContext
     public void onTimestampClicked(CharSequence full) {
-        Intrinsics3.checkNotNullParameter(full, "full");
-        AppToast.h(getContext(), full, 0, null, 12);
+        C12238m.checkNotNullParameter(full, "full");
+        C0876m.m170h(getContext(), full, 0, null, 12);
     }
 
     public String toString() {
-        StringBuilder sbU = outline.U("MessageRenderContext(context=");
-        sbU.append(getContext());
-        sbU.append(", myId=");
-        sbU.append(getMyId());
-        sbU.append(", isAnimationEnabled=");
-        sbU.append(getIsAnimationEnabled());
-        sbU.append(", userNames=");
-        sbU.append(getUserNames());
-        sbU.append(", channelNames=");
-        sbU.append(getChannelNames());
-        sbU.append(", roles=");
-        sbU.append(getRoles());
-        sbU.append(", linkColorAttrResId=");
-        sbU.append(getLinkColorAttrResId());
-        sbU.append(", onClickUrl=");
-        sbU.append(getOnClickUrl());
-        sbU.append(", onLongPressUrl=");
-        sbU.append(getOnLongPressUrl());
-        sbU.append(", spoilerColorRes=");
-        sbU.append(getSpoilerColorRes());
-        sbU.append(", spoilerRevealedColorRes=");
-        sbU.append(getSpoilerRevealedColorRes());
-        sbU.append(", spoilerOnClick=");
-        sbU.append(getSpoilerOnClick());
-        sbU.append(", userMentionOnClick=");
-        sbU.append(getUserMentionOnClick());
-        sbU.append(", channelMentionOnClick=");
-        sbU.append(getChannelMentionOnClick());
-        sbU.append(")");
-        return sbU.toString();
+        StringBuilder sbM833U = C1643a.m833U("MessageRenderContext(context=");
+        sbM833U.append(getContext());
+        sbM833U.append(", myId=");
+        sbM833U.append(getMyId());
+        sbM833U.append(", isAnimationEnabled=");
+        sbM833U.append(getIsAnimationEnabled());
+        sbM833U.append(", userNames=");
+        sbM833U.append(getUserNames());
+        sbM833U.append(", channelNames=");
+        sbM833U.append(getChannelNames());
+        sbM833U.append(", roles=");
+        sbM833U.append(getRoles());
+        sbM833U.append(", linkColorAttrResId=");
+        sbM833U.append(getLinkColorAttrResId());
+        sbM833U.append(", onClickUrl=");
+        sbM833U.append(getOnClickUrl());
+        sbM833U.append(", onLongPressUrl=");
+        sbM833U.append(getOnLongPressUrl());
+        sbM833U.append(", spoilerColorRes=");
+        sbM833U.append(getSpoilerColorRes());
+        sbM833U.append(", spoilerRevealedColorRes=");
+        sbM833U.append(getSpoilerRevealedColorRes());
+        sbM833U.append(", spoilerOnClick=");
+        sbM833U.append(getSpoilerOnClick());
+        sbM833U.append(", userMentionOnClick=");
+        sbM833U.append(getUserMentionOnClick());
+        sbM833U.append(", channelMentionOnClick=");
+        sbM833U.append(getChannelMentionOnClick());
+        sbM833U.append(")");
+        return sbM833U.toString();
     }
 
     public /* synthetic */ MessageRenderContext(Context context, long j, boolean z2, Map map, Map map2, Map map3, int i, Function3 function3, Function1 function1, int i2, int i3, Function1 function2, Function1 function4, Function1 function5, int i4, DefaultConstructorMarker defaultConstructorMarker) {
-        this(context, j, z2, (i4 & 8) != 0 ? null : map, (i4 & 16) != 0 ? null : map2, (i4 & 32) != 0 ? null : map3, (i4 & 64) != 0 ? R.attr.colorTextLink : i, (i4 & 128) != 0 ? AnonymousClass1.INSTANCE : function3, (i4 & 256) != 0 ? AnonymousClass2.INSTANCE : function1, (i4 & 512) != 0 ? ColorCompat.getThemedColor(context, R.attr.theme_chat_spoiler_bg) : i2, (i4 & 1024) != 0 ? ColorCompat.getThemedColor(context, R.attr.theme_chat_spoiler_bg_visible) : i3, (i4 & 2048) != 0 ? null : function2, (i4 & 4096) != 0 ? null : function4, (i4 & 8192) != 0 ? null : function5);
+        this(context, j, z2, (i4 & 8) != 0 ? null : map, (i4 & 16) != 0 ? null : map2, (i4 & 32) != 0 ? null : map3, (i4 & 64) != 0 ? C5419R.attr.colorTextLink : i, (i4 & 128) != 0 ? C69461.INSTANCE : function3, (i4 & 256) != 0 ? C69472.INSTANCE : function1, (i4 & 512) != 0 ? ColorCompat.getThemedColor(context, C5419R.attr.theme_chat_spoiler_bg) : i2, (i4 & 1024) != 0 ? ColorCompat.getThemedColor(context, C5419R.attr.theme_chat_spoiler_bg_visible) : i3, (i4 & 2048) != 0 ? null : function2, (i4 & 4096) != 0 ? null : function4, (i4 & 8192) != 0 ? null : function5);
     }
 }

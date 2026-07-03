@@ -1,13 +1,13 @@
 package com.discord.models.domain;
 
-import b.d.b.a.outline;
 import com.discord.models.domain.Model;
-import d0.z.d.Intrinsics3;
 import java.io.IOException;
 import java.util.List;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Ref$ObjectRef;
-import rx.functions.Action1;
+import p007b.p100d.p104b.p105a.C1643a;
+import p507d0.p592z.p594d.C12238m;
+import p658rx.functions.Action1;
 
 /* JADX INFO: compiled from: ModelGuildFolder.kt */
 /* JADX INFO: loaded from: classes.dex */
@@ -28,8 +28,8 @@ public final /* data */ class ModelGuildFolder {
         /* JADX WARN: Multi-variable type inference failed */
         @Override // com.discord.models.domain.Model.Parser
         public ModelGuildFolder parse(final Model.JsonReader reader) throws IOException {
-            final Ref$ObjectRef ref$ObjectRefC0 = outline.c0(reader, "reader");
-            ref$ObjectRefC0.element = null;
+            final Ref$ObjectRef ref$ObjectRefM844c0 = C1643a.m844c0(reader, "reader");
+            ref$ObjectRefM844c0.element = null;
             final Ref$ObjectRef ref$ObjectRef = new Ref$ObjectRef();
             ref$ObjectRef.element = null;
             final Ref$ObjectRef ref$ObjectRef2 = new Ref$ObjectRef();
@@ -37,7 +37,7 @@ public final /* data */ class ModelGuildFolder {
             final Ref$ObjectRef ref$ObjectRef3 = new Ref$ObjectRef();
             ref$ObjectRef3.element = null;
             reader.nextObject(new Action1<String>() { // from class: com.discord.models.domain.ModelGuildFolder$Parser$parse$1
-                @Override // rx.functions.Action1
+                @Override // p658rx.functions.Action1
                 public final void call(String str) throws IOException {
                     if (str != null) {
                         int iHashCode = str.hashCode();
@@ -53,7 +53,7 @@ public final /* data */ class ModelGuildFolder {
                                     return;
                                 }
                             } else if (str.equals(ModelAuditLogEntry.CHANGE_KEY_ID)) {
-                                ref$ObjectRefC0.element = (T) reader.nextLongOrNull();
+                                ref$ObjectRefM844c0.element = (T) reader.nextLongOrNull();
                                 return;
                             }
                         } else if (str.equals("guild_ids")) {
@@ -70,15 +70,15 @@ public final /* data */ class ModelGuildFolder {
                     reader.skipValue();
                 }
             });
-            Long l = (Long) ref$ObjectRefC0.element;
+            Long l = (Long) ref$ObjectRefM844c0.element;
             List list = (List) ref$ObjectRef.element;
-            Intrinsics3.checkNotNull(list);
+            C12238m.checkNotNull(list);
             return new ModelGuildFolder(l, list, (Integer) ref$ObjectRef2.element, (String) ref$ObjectRef3.element);
         }
     }
 
     public ModelGuildFolder(Long l, List<Long> list, Integer num, String str) {
-        Intrinsics3.checkNotNullParameter(list, "guildIds");
+        C12238m.checkNotNullParameter(list, "guildIds");
         this.id = l;
         this.guildIds = list;
         this.color = num;
@@ -122,7 +122,7 @@ public final /* data */ class ModelGuildFolder {
     }
 
     public final ModelGuildFolder copy(Long id2, List<Long> guildIds, Integer color, String name) {
-        Intrinsics3.checkNotNullParameter(guildIds, "guildIds");
+        C12238m.checkNotNullParameter(guildIds, "guildIds");
         return new ModelGuildFolder(id2, guildIds, color, name);
     }
 
@@ -134,7 +134,7 @@ public final /* data */ class ModelGuildFolder {
             return false;
         }
         ModelGuildFolder modelGuildFolder = (ModelGuildFolder) other;
-        return Intrinsics3.areEqual(this.id, modelGuildFolder.id) && Intrinsics3.areEqual(this.guildIds, modelGuildFolder.guildIds) && Intrinsics3.areEqual(this.color, modelGuildFolder.color) && Intrinsics3.areEqual(this.name, modelGuildFolder.name);
+        return C12238m.areEqual(this.id, modelGuildFolder.id) && C12238m.areEqual(this.guildIds, modelGuildFolder.guildIds) && C12238m.areEqual(this.color, modelGuildFolder.color) && C12238m.areEqual(this.name, modelGuildFolder.name);
     }
 
     public final Integer getColor() {
@@ -165,14 +165,14 @@ public final /* data */ class ModelGuildFolder {
     }
 
     public String toString() {
-        StringBuilder sbU = outline.U("ModelGuildFolder(id=");
-        sbU.append(this.id);
-        sbU.append(", guildIds=");
-        sbU.append(this.guildIds);
-        sbU.append(", color=");
-        sbU.append(this.color);
-        sbU.append(", name=");
-        return outline.J(sbU, this.name, ")");
+        StringBuilder sbM833U = C1643a.m833U("ModelGuildFolder(id=");
+        sbM833U.append(this.id);
+        sbM833U.append(", guildIds=");
+        sbM833U.append(this.guildIds);
+        sbM833U.append(", color=");
+        sbM833U.append(this.color);
+        sbM833U.append(", name=");
+        return C1643a.m822J(sbM833U, this.name, ")");
     }
 
     public /* synthetic */ ModelGuildFolder(Long l, List list, Integer num, String str, int i, DefaultConstructorMarker defaultConstructorMarker) {

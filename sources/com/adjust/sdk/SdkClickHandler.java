@@ -1,6 +1,5 @@
 package com.adjust.sdk;
 
-import b.d.b.a.outline;
 import com.adjust.sdk.scheduler.SingleThreadCachedScheduler;
 import com.adjust.sdk.scheduler.ThreadScheduler;
 import java.io.IOException;
@@ -11,6 +10,7 @@ import java.util.ArrayList;
 import java.util.List;
 import org.json.JSONArray;
 import org.json.JSONException;
+import p007b.p100d.p104b.p105a.C1643a;
 
 /* JADX INFO: loaded from: classes.dex */
 public class SdkClickHandler implements ISdkClickHandler {
@@ -101,14 +101,14 @@ public class SdkClickHandler implements ISdkClickHandler {
         }
         String baseUrl = AdjustFactory.getBaseUrl();
         if (this.basePath != null) {
-            StringBuilder sbU = outline.U(baseUrl);
-            sbU.append(this.basePath);
-            baseUrl = sbU.toString();
+            StringBuilder sbM833U = C1643a.m833U(baseUrl);
+            sbM833U.append(this.basePath);
+            baseUrl = sbM833U.toString();
         }
-        StringBuilder sbU2 = outline.U(baseUrl);
-        sbU2.append(activityPackage.getPath());
+        StringBuilder sbM833U2 = C1643a.m833U(baseUrl);
+        sbM833U2.append(activityPackage.getPath());
         try {
-            SdkClickResponseData sdkClickResponseData = (SdkClickResponseData) UtilNetworking.createPOSTHttpsURLConnection(sbU2.toString(), activityPackage, this.packageQueue.size() - 1);
+            SdkClickResponseData sdkClickResponseData = (SdkClickResponseData) UtilNetworking.createPOSTHttpsURLConnection(sbM833U2.toString(), activityPackage, this.packageQueue.size() - 1);
             if (sdkClickResponseData.jsonResponse == null) {
                 retrySendingI(activityPackage);
                 return;

@@ -3,25 +3,30 @@ package com.google.android.exoplayer2.metadata.icy;
 import android.os.Parcel;
 import android.os.Parcelable;
 import androidx.annotation.Nullable;
-import b.i.a.c.Format2;
-import b.i.a.c.MediaMetadata;
-import b.i.a.c.z2.Metadata2;
 import com.google.android.exoplayer2.metadata.Metadata;
 import java.util.Arrays;
 import java.util.Objects;
+import p007b.p225i.p226a.p242c.C2811j1;
+import p007b.p225i.p226a.p242c.C2835p1;
+import p007b.p225i.p226a.p242c.p279z2.C3155a;
 
 /* JADX INFO: loaded from: classes3.dex */
 public final class IcyInfo implements Metadata.Entry {
-    public static final Parcelable.Creator<IcyInfo> CREATOR = new a();
-    public final byte[] j;
+    public static final Parcelable.Creator<IcyInfo> CREATOR = new C10725a();
 
+    /* JADX INFO: renamed from: j */
+    public final byte[] f19963j;
+
+    /* JADX INFO: renamed from: k */
     @Nullable
-    public final String k;
+    public final String f19964k;
 
+    /* JADX INFO: renamed from: l */
     @Nullable
-    public final String l;
+    public final String f19965l;
 
-    public class a implements Parcelable.Creator<IcyInfo> {
+    /* JADX INFO: renamed from: com.google.android.exoplayer2.metadata.icy.IcyInfo$a */
+    public class C10725a implements Parcelable.Creator<IcyInfo> {
         @Override // android.os.Parcelable.Creator
         public IcyInfo createFromParcel(Parcel parcel) {
             return new IcyInfo(parcel);
@@ -34,9 +39,9 @@ public final class IcyInfo implements Metadata.Entry {
     }
 
     public IcyInfo(byte[] bArr, @Nullable String str, @Nullable String str2) {
-        this.j = bArr;
-        this.k = str;
-        this.l = str2;
+        this.f19963j = bArr;
+        this.f19964k = str;
+        this.f19965l = str2;
     }
 
     @Override // android.os.Parcelable
@@ -51,47 +56,50 @@ public final class IcyInfo implements Metadata.Entry {
         if (obj == null || IcyInfo.class != obj.getClass()) {
             return false;
         }
-        return Arrays.equals(this.j, ((IcyInfo) obj).j);
+        return Arrays.equals(this.f19963j, ((IcyInfo) obj).f19963j);
     }
 
     public int hashCode() {
-        return Arrays.hashCode(this.j);
+        return Arrays.hashCode(this.f19963j);
     }
 
     @Override // com.google.android.exoplayer2.metadata.Metadata.Entry
-    public void n(MediaMetadata.b bVar) {
-        String str = this.k;
+    /* JADX INFO: renamed from: n */
+    public void mo8878n(C2835p1.b bVar) {
+        String str = this.f19964k;
         if (str != null) {
-            bVar.a = str;
+            bVar.f7407a = str;
         }
     }
 
     @Override // com.google.android.exoplayer2.metadata.Metadata.Entry
-    public /* synthetic */ byte[] o0() {
-        return Metadata2.a(this);
+    /* JADX INFO: renamed from: o0 */
+    public /* synthetic */ byte[] mo8879o0() {
+        return C3155a.m3892a(this);
     }
 
     public String toString() {
-        return String.format("ICY: title=\"%s\", url=\"%s\", rawMetadata.length=\"%s\"", this.k, this.l, Integer.valueOf(this.j.length));
+        return String.format("ICY: title=\"%s\", url=\"%s\", rawMetadata.length=\"%s\"", this.f19964k, this.f19965l, Integer.valueOf(this.f19963j.length));
     }
 
     @Override // android.os.Parcelable
     public void writeToParcel(Parcel parcel, int i) {
-        parcel.writeByteArray(this.j);
-        parcel.writeString(this.k);
-        parcel.writeString(this.l);
+        parcel.writeByteArray(this.f19963j);
+        parcel.writeString(this.f19964k);
+        parcel.writeString(this.f19965l);
     }
 
     @Override // com.google.android.exoplayer2.metadata.Metadata.Entry
-    public /* synthetic */ Format2 y() {
-        return Metadata2.b(this);
+    /* JADX INFO: renamed from: y */
+    public /* synthetic */ C2811j1 mo8880y() {
+        return C3155a.m3893b(this);
     }
 
     public IcyInfo(Parcel parcel) {
         byte[] bArrCreateByteArray = parcel.createByteArray();
         Objects.requireNonNull(bArrCreateByteArray);
-        this.j = bArrCreateByteArray;
-        this.k = parcel.readString();
-        this.l = parcel.readString();
+        this.f19963j = bArrCreateByteArray;
+        this.f19964k = parcel.readString();
+        this.f19965l = parcel.readString();
     }
 }

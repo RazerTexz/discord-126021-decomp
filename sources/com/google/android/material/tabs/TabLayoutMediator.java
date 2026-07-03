@@ -16,7 +16,7 @@ public final class TabLayoutMediator {
     private final boolean autoRefresh;
 
     @Nullable
-    private b onPageChangeCallback;
+    private C11011b onPageChangeCallback;
 
     @Nullable
     private TabLayout.OnTabSelectedListener onTabSelectedListener;
@@ -36,8 +36,9 @@ public final class TabLayoutMediator {
         void onConfigureTab(@NonNull TabLayout.Tab tab, int i);
     }
 
-    public class a extends RecyclerView.AdapterDataObserver {
-        public a() {
+    /* JADX INFO: renamed from: com.google.android.material.tabs.TabLayoutMediator$a */
+    public class C11010a extends RecyclerView.AdapterDataObserver {
+        public C11010a() {
         }
 
         @Override // androidx.recyclerview.widget.RecyclerView.AdapterDataObserver
@@ -71,54 +72,61 @@ public final class TabLayoutMediator {
         }
     }
 
-    public static class b extends ViewPager2.OnPageChangeCallback {
+    /* JADX INFO: renamed from: com.google.android.material.tabs.TabLayoutMediator$b */
+    public static class C11011b extends ViewPager2.OnPageChangeCallback {
 
+        /* JADX INFO: renamed from: a */
         @NonNull
-        public final WeakReference<TabLayout> a;
-        public int c = 0;
+        public final WeakReference<TabLayout> f21166a;
 
-        /* JADX INFO: renamed from: b, reason: collision with root package name */
-        public int f3071b = 0;
+        /* JADX INFO: renamed from: c */
+        public int f21168c = 0;
 
-        public b(TabLayout tabLayout) {
-            this.a = new WeakReference<>(tabLayout);
+        /* JADX INFO: renamed from: b */
+        public int f21167b = 0;
+
+        public C11011b(TabLayout tabLayout) {
+            this.f21166a = new WeakReference<>(tabLayout);
         }
 
         @Override // androidx.viewpager2.widget.ViewPager2.OnPageChangeCallback
         public void onPageScrollStateChanged(int i) {
-            this.f3071b = this.c;
-            this.c = i;
+            this.f21167b = this.f21168c;
+            this.f21168c = i;
         }
 
         @Override // androidx.viewpager2.widget.ViewPager2.OnPageChangeCallback
         public void onPageScrolled(int i, float f, int i2) {
-            TabLayout tabLayout = this.a.get();
+            TabLayout tabLayout = this.f21166a.get();
             if (tabLayout != null) {
-                int i3 = this.c;
-                tabLayout.setScrollPosition(i, f, i3 != 2 || this.f3071b == 1, (i3 == 2 && this.f3071b == 0) ? false : true);
+                int i3 = this.f21168c;
+                tabLayout.setScrollPosition(i, f, i3 != 2 || this.f21167b == 1, (i3 == 2 && this.f21167b == 0) ? false : true);
             }
         }
 
         @Override // androidx.viewpager2.widget.ViewPager2.OnPageChangeCallback
         public void onPageSelected(int i) {
-            TabLayout tabLayout = this.a.get();
+            TabLayout tabLayout = this.f21166a.get();
             if (tabLayout == null || tabLayout.getSelectedTabPosition() == i || i >= tabLayout.getTabCount()) {
                 return;
             }
-            int i2 = this.c;
-            tabLayout.selectTab(tabLayout.getTabAt(i), i2 == 0 || (i2 == 2 && this.f3071b == 0));
+            int i2 = this.f21168c;
+            tabLayout.selectTab(tabLayout.getTabAt(i), i2 == 0 || (i2 == 2 && this.f21167b == 0));
         }
     }
 
-    public static class c implements TabLayout.OnTabSelectedListener {
-        public final ViewPager2 a;
+    /* JADX INFO: renamed from: com.google.android.material.tabs.TabLayoutMediator$c */
+    public static class C11012c implements TabLayout.OnTabSelectedListener {
 
-        /* JADX INFO: renamed from: b, reason: collision with root package name */
-        public final boolean f3072b;
+        /* JADX INFO: renamed from: a */
+        public final ViewPager2 f21169a;
 
-        public c(ViewPager2 viewPager2, boolean z2) {
-            this.a = viewPager2;
-            this.f3072b = z2;
+        /* JADX INFO: renamed from: b */
+        public final boolean f21170b;
+
+        public C11012c(ViewPager2 viewPager2, boolean z2) {
+            this.f21169a = viewPager2;
+            this.f21170b = z2;
         }
 
         @Override // com.google.android.material.tabs.TabLayout.BaseOnTabSelectedListener
@@ -127,7 +135,7 @@ public final class TabLayoutMediator {
 
         @Override // com.google.android.material.tabs.TabLayout.BaseOnTabSelectedListener
         public void onTabSelected(@NonNull TabLayout.Tab tab) {
-            this.a.setCurrentItem(tab.getPosition(), this.f3072b);
+            this.f21169a.setCurrentItem(tab.getPosition(), this.f21170b);
         }
 
         @Override // com.google.android.material.tabs.TabLayout.BaseOnTabSelectedListener
@@ -149,16 +157,16 @@ public final class TabLayoutMediator {
             throw new IllegalStateException("TabLayoutMediator attached before ViewPager2 has an adapter");
         }
         this.attached = true;
-        b bVar = new b(this.tabLayout);
-        this.onPageChangeCallback = bVar;
-        this.viewPager.registerOnPageChangeCallback(bVar);
-        c cVar = new c(this.viewPager, this.smoothScroll);
-        this.onTabSelectedListener = cVar;
-        this.tabLayout.addOnTabSelectedListener((TabLayout.OnTabSelectedListener) cVar);
+        C11011b c11011b = new C11011b(this.tabLayout);
+        this.onPageChangeCallback = c11011b;
+        this.viewPager.registerOnPageChangeCallback(c11011b);
+        C11012c c11012c = new C11012c(this.viewPager, this.smoothScroll);
+        this.onTabSelectedListener = c11012c;
+        this.tabLayout.addOnTabSelectedListener((TabLayout.OnTabSelectedListener) c11012c);
         if (this.autoRefresh) {
-            a aVar = new a();
-            this.pagerAdapterObserver = aVar;
-            this.adapter.registerAdapterDataObserver(aVar);
+            C11010a c11010a = new C11010a();
+            this.pagerAdapterObserver = c11010a;
+            this.adapter.registerAdapterDataObserver(c11010a);
         }
         populateTabsFromPagerAdapter();
         this.tabLayout.setScrollPosition(this.viewPager.getCurrentItem(), 0.0f, true);

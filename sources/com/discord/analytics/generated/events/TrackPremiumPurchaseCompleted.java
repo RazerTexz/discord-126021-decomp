@@ -1,14 +1,14 @@
 package com.discord.analytics.generated.events;
 
-import b.d.b.a.outline;
 import com.discord.analytics.generated.traits.TrackBase;
-import com.discord.analytics.generated.traits.TrackBase2;
+import com.discord.analytics.generated.traits.TrackBaseReceiver;
 import com.discord.api.science.AnalyticsSchema;
-import d0.z.d.Intrinsics3;
+import p007b.p100d.p104b.p105a.C1643a;
+import p507d0.p592z.p594d.C12238m;
 
 /* JADX INFO: compiled from: TrackPremiumPurchaseCompleted.kt */
 /* JADX INFO: loaded from: classes.dex */
-public final /* data */ class TrackPremiumPurchaseCompleted implements AnalyticsSchema, TrackBase2 {
+public final /* data */ class TrackPremiumPurchaseCompleted implements AnalyticsSchema, TrackBaseReceiver {
     private TrackBase trackBase;
     private final Boolean success = null;
     private final CharSequence errorCode = null;
@@ -30,7 +30,7 @@ public final /* data */ class TrackPremiumPurchaseCompleted implements Analytics
             return false;
         }
         TrackPremiumPurchaseCompleted trackPremiumPurchaseCompleted = (TrackPremiumPurchaseCompleted) other;
-        return Intrinsics3.areEqual(this.success, trackPremiumPurchaseCompleted.success) && Intrinsics3.areEqual(this.errorCode, trackPremiumPurchaseCompleted.errorCode) && Intrinsics3.areEqual(this.plan, trackPremiumPurchaseCompleted.plan) && Intrinsics3.areEqual(this.paymentGateway, trackPremiumPurchaseCompleted.paymentGateway);
+        return C12238m.areEqual(this.success, trackPremiumPurchaseCompleted.success) && C12238m.areEqual(this.errorCode, trackPremiumPurchaseCompleted.errorCode) && C12238m.areEqual(this.plan, trackPremiumPurchaseCompleted.plan) && C12238m.areEqual(this.paymentGateway, trackPremiumPurchaseCompleted.paymentGateway);
     }
 
     public int hashCode() {
@@ -45,13 +45,13 @@ public final /* data */ class TrackPremiumPurchaseCompleted implements Analytics
     }
 
     public String toString() {
-        StringBuilder sbU = outline.U("TrackPremiumPurchaseCompleted(success=");
-        sbU.append(this.success);
-        sbU.append(", errorCode=");
-        sbU.append(this.errorCode);
-        sbU.append(", plan=");
-        sbU.append(this.plan);
-        sbU.append(", paymentGateway=");
-        return outline.E(sbU, this.paymentGateway, ")");
+        StringBuilder sbM833U = C1643a.m833U("TrackPremiumPurchaseCompleted(success=");
+        sbM833U.append(this.success);
+        sbM833U.append(", errorCode=");
+        sbM833U.append(this.errorCode);
+        sbM833U.append(", plan=");
+        sbM833U.append(this.plan);
+        sbM833U.append(", paymentGateway=");
+        return C1643a.m817E(sbM833U, this.paymentGateway, ")");
     }
 }

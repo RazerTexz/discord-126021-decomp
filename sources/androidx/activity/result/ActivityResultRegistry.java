@@ -12,12 +12,12 @@ import androidx.core.app.ActivityOptionsCompat;
 import androidx.view.Lifecycle;
 import androidx.view.LifecycleEventObserver;
 import androidx.view.LifecycleOwner;
-import b.d.b.a.outline;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map;
 import java.util.Random;
+import p007b.p100d.p104b.p105a.C1643a;
 
 /* JADX INFO: loaded from: classes.dex */
 public abstract class ActivityResultRegistry {
@@ -207,15 +207,15 @@ public abstract class ActivityResultRegistry {
         }
         this.mKeyToCallback.remove(str);
         if (this.mParsedPendingResults.containsKey(str)) {
-            StringBuilder sbY = outline.Y("Dropping pending result for request ", str, ": ");
-            sbY.append(this.mParsedPendingResults.get(str));
-            Log.w(LOG_TAG, sbY.toString());
+            StringBuilder sbM837Y = C1643a.m837Y("Dropping pending result for request ", str, ": ");
+            sbM837Y.append(this.mParsedPendingResults.get(str));
+            Log.w(LOG_TAG, sbM837Y.toString());
             this.mParsedPendingResults.remove(str);
         }
         if (this.mPendingResults.containsKey(str)) {
-            StringBuilder sbY2 = outline.Y("Dropping pending result for request ", str, ": ");
-            sbY2.append(this.mPendingResults.getParcelable(str));
-            Log.w(LOG_TAG, sbY2.toString());
+            StringBuilder sbM837Y2 = C1643a.m837Y("Dropping pending result for request ", str, ": ");
+            sbM837Y2.append(this.mPendingResults.getParcelable(str));
+            Log.w(LOG_TAG, sbM837Y2.toString());
             this.mPendingResults.remove(str);
         }
         LifecycleContainer lifecycleContainer = this.mKeyToLifecycleContainers.get(str);

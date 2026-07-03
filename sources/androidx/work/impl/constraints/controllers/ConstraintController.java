@@ -55,7 +55,7 @@ public abstract class ConstraintController<T> implements ConstraintListener<T> {
         this.mMatchingWorkSpecIds.clear();
         for (WorkSpec workSpec : iterable) {
             if (hasConstraint(workSpec)) {
-                this.mMatchingWorkSpecIds.add(workSpec.f38id);
+                this.mMatchingWorkSpecIds.add(workSpec.f163id);
             }
         }
         if (this.mMatchingWorkSpecIds.isEmpty()) {

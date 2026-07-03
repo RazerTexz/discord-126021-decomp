@@ -13,57 +13,67 @@ import com.discord.widgets.servers.NotificationMuteSettingsView;
 /* JADX INFO: loaded from: classes.dex */
 public final class WidgetChannelNotificationSettingsBinding implements ViewBinding {
 
+    /* JADX INFO: renamed from: a */
     @NonNull
-    public final CoordinatorLayout a;
+    public final CoordinatorLayout f15870a;
 
-    /* JADX INFO: renamed from: b, reason: collision with root package name */
+    /* JADX INFO: renamed from: b */
     @NonNull
-    public final LinearLayout f2262b;
+    public final LinearLayout f15871b;
 
+    /* JADX INFO: renamed from: c */
     @NonNull
-    public final LinearLayout c;
+    public final LinearLayout f15872c;
 
+    /* JADX INFO: renamed from: d */
     @NonNull
-    public final CheckedSetting d;
+    public final CheckedSetting f15873d;
 
+    /* JADX INFO: renamed from: e */
     @NonNull
-    public final TextView e;
+    public final TextView f15874e;
 
+    /* JADX INFO: renamed from: f */
     @NonNull
-    public final CheckedSetting f;
+    public final CheckedSetting f15875f;
 
+    /* JADX INFO: renamed from: g */
     @NonNull
-    public final CheckedSetting g;
+    public final CheckedSetting f15876g;
 
+    /* JADX INFO: renamed from: h */
     @NonNull
-    public final CheckedSetting h;
+    public final CheckedSetting f15877h;
 
+    /* JADX INFO: renamed from: i */
     @NonNull
-    public final TextView i;
+    public final TextView f15878i;
 
+    /* JADX INFO: renamed from: j */
     @NonNull
-    public final View j;
+    public final View f15879j;
 
+    /* JADX INFO: renamed from: k */
     @NonNull
-    public final NotificationMuteSettingsView k;
+    public final NotificationMuteSettingsView f15880k;
 
     public WidgetChannelNotificationSettingsBinding(@NonNull CoordinatorLayout coordinatorLayout, @NonNull LinearLayout linearLayout, @NonNull LinearLayout linearLayout2, @NonNull LinearLayout linearLayout3, @NonNull CheckedSetting checkedSetting, @NonNull TextView textView, @NonNull CheckedSetting checkedSetting2, @NonNull CheckedSetting checkedSetting3, @NonNull CheckedSetting checkedSetting4, @NonNull TextView textView2, @NonNull View view, @NonNull NotificationMuteSettingsView notificationMuteSettingsView, @NonNull NestedScrollView nestedScrollView) {
-        this.a = coordinatorLayout;
-        this.f2262b = linearLayout;
-        this.c = linearLayout3;
-        this.d = checkedSetting;
-        this.e = textView;
-        this.f = checkedSetting2;
-        this.g = checkedSetting3;
-        this.h = checkedSetting4;
-        this.i = textView2;
-        this.j = view;
-        this.k = notificationMuteSettingsView;
+        this.f15870a = coordinatorLayout;
+        this.f15871b = linearLayout;
+        this.f15872c = linearLayout3;
+        this.f15873d = checkedSetting;
+        this.f15874e = textView;
+        this.f15875f = checkedSetting2;
+        this.f15876g = checkedSetting3;
+        this.f15877h = checkedSetting4;
+        this.f15878i = textView2;
+        this.f15879j = view;
+        this.f15880k = notificationMuteSettingsView;
     }
 
     @Override // androidx.viewbinding.ViewBinding
     @NonNull
     public View getRoot() {
-        return this.a;
+        return this.f15870a;
     }
 }

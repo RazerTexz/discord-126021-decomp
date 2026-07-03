@@ -11,29 +11,32 @@ import com.facebook.drawee.view.SimpleDraweeView;
 /* JADX INFO: loaded from: classes.dex */
 public final class GuildScheduledEventRsvpUserListAdapterItemBinding implements ViewBinding {
 
+    /* JADX INFO: renamed from: a */
     @NonNull
-    public final RelativeLayout a;
+    public final RelativeLayout f15152a;
 
-    /* JADX INFO: renamed from: b, reason: collision with root package name */
+    /* JADX INFO: renamed from: b */
     @NonNull
-    public final SimpleDraweeView f2122b;
+    public final SimpleDraweeView f15153b;
 
+    /* JADX INFO: renamed from: c */
     @NonNull
-    public final TextView c;
+    public final TextView f15154c;
 
+    /* JADX INFO: renamed from: d */
     @NonNull
-    public final TextView d;
+    public final TextView f15155d;
 
     public GuildScheduledEventRsvpUserListAdapterItemBinding(@NonNull RelativeLayout relativeLayout, @NonNull SimpleDraweeView simpleDraweeView, @NonNull TextView textView, @NonNull StatusView statusView, @NonNull TextView textView2) {
-        this.a = relativeLayout;
-        this.f2122b = simpleDraweeView;
-        this.c = textView;
-        this.d = textView2;
+        this.f15152a = relativeLayout;
+        this.f15153b = simpleDraweeView;
+        this.f15154c = textView;
+        this.f15155d = textView2;
     }
 
     @Override // androidx.viewbinding.ViewBinding
     @NonNull
     public View getRoot() {
-        return this.a;
+        return this.f15152a;
     }
 }

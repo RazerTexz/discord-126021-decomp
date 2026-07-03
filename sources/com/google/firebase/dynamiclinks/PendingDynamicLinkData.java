@@ -5,12 +5,14 @@ import com.google.firebase.dynamiclinks.internal.DynamicLinkData;
 /* JADX INFO: compiled from: com.google.firebase:firebase-dynamic-links@@19.1.1 */
 /* JADX INFO: loaded from: classes3.dex */
 public class PendingDynamicLinkData {
-    public final DynamicLinkData a;
+
+    /* JADX INFO: renamed from: a */
+    public final DynamicLinkData f21421a;
 
     public PendingDynamicLinkData(DynamicLinkData dynamicLinkData) {
-        if (dynamicLinkData.m == 0) {
-            dynamicLinkData.m = System.currentTimeMillis();
+        if (dynamicLinkData.f21425m == 0) {
+            dynamicLinkData.f21425m = System.currentTimeMillis();
         }
-        this.a = dynamicLinkData;
+        this.f21421a = dynamicLinkData;
     }
 }

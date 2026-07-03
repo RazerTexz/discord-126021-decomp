@@ -13,7 +13,7 @@ import android.graphics.RectF;
 import android.graphics.Shader;
 import android.graphics.drawable.Drawable;
 import androidx.annotation.Nullable;
-import androidx.cardview.R;
+import androidx.cardview.C0159R;
 
 /* JADX INFO: loaded from: classes.dex */
 public class RoundRectDrawableWithShadow extends Drawable {
@@ -42,9 +42,9 @@ public class RoundRectDrawableWithShadow extends Drawable {
     }
 
     public RoundRectDrawableWithShadow(Resources resources, ColorStateList colorStateList, float f, float f2, float f3) {
-        this.mShadowStartColor = resources.getColor(R.color.cardview_shadow_start_color);
-        this.mShadowEndColor = resources.getColor(R.color.cardview_shadow_end_color);
-        this.mInsetShadow = resources.getDimensionPixelSize(R.dimen.cardview_compat_inset_shadow);
+        this.mShadowStartColor = resources.getColor(C0159R.color.cardview_shadow_start_color);
+        this.mShadowEndColor = resources.getColor(C0159R.color.cardview_shadow_end_color);
+        this.mInsetShadow = resources.getDimensionPixelSize(C0159R.dimen.cardview_compat_inset_shadow);
         setBackground(colorStateList);
         Paint paint = new Paint(5);
         this.mCornerShadowPaint = paint;

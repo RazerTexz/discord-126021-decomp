@@ -2,8 +2,6 @@ package com.discord.stores;
 
 import android.content.Context;
 import androidx.core.app.NotificationCompat;
-import b.c.a.a0.AnimatableValueParser;
-import b.d.b.a.outline;
 import com.discord.api.channel.Channel;
 import com.discord.api.channel.ChannelUtils;
 import com.discord.api.stageinstance.StageInstance;
@@ -19,18 +17,9 @@ import com.discord.stores.StoreMediaSettings;
 import com.discord.stores.StoreStream;
 import com.discord.stores.StoreVideoStreams;
 import com.discord.utilities.error.Error;
-import com.discord.utilities.rx.ObservableExtensionsKt;
+import com.discord.utilities.p501rx.ObservableExtensionsKt;
 import com.discord.utilities.streams.StreamContext;
 import com.discord.utilities.streams.StreamContextService;
-import d0.Tuples;
-import d0.t.Collections2;
-import d0.t.Iterables2;
-import d0.t.Maps6;
-import d0.t._Collections;
-import d0.z.d.Intrinsics3;
-import d0.z.d.Lambda;
-import j0.k.Func1;
-import j0.l.e.ScalarSynchronousObservable;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Iterator;
@@ -39,17 +28,28 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 import java.util.concurrent.TimeUnit;
-import kotlin.Tuples2;
+import kotlin.Pair;
 import kotlin.Unit;
 import kotlin.jvm.functions.Function0;
 import kotlin.jvm.functions.Function1;
-import rx.Observable;
-import rx.Subscription;
-import rx.functions.Action1;
-import rx.functions.Func2;
-import rx.functions.Func7;
-import rx.functions.FuncN;
-import rx.subjects.BehaviorSubject;
+import p007b.p085c.p086a.p087a0.C1460d;
+import p007b.p100d.p104b.p105a.C1643a;
+import p507d0.C12116o;
+import p507d0.p580t.C12136h0;
+import p507d0.p580t.C12147n;
+import p507d0.p580t.C12149o;
+import p507d0.p580t.C12163u;
+import p507d0.p592z.p594d.AbstractC12240o;
+import p507d0.p592z.p594d.C12238m;
+import p637j0.p641k.InterfaceC12589b;
+import p637j0.p642l.p647e.C12721k;
+import p658rx.Observable;
+import p658rx.Subscription;
+import p658rx.functions.Action1;
+import p658rx.functions.Func2;
+import p658rx.functions.Func7;
+import p658rx.functions.FuncN;
+import p658rx.subjects.BehaviorSubject;
 
 /* JADX INFO: compiled from: StoreVoiceParticipants.kt */
 /* JADX INFO: loaded from: classes2.dex */
@@ -89,7 +89,7 @@ public final class StoreVoiceParticipants extends Store {
         public VoiceUser(User user, VoiceState voiceState, boolean z2, StoreVideoStreams.UserStreams userStreams, boolean z3, GuildMember guildMember, String str, StreamContext streamContext, boolean z4, StoreMediaSettings.VoiceConfiguration voiceConfiguration, boolean z5) {
             boolean selfMute;
             boolean selfDeaf;
-            Intrinsics3.checkNotNullParameter(user, "user");
+            C12238m.checkNotNullParameter(user, "user");
             this.user = user;
             this.voiceState = voiceState;
             this.isRinging = z2;
@@ -136,8 +136,8 @@ public final class StoreVoiceParticipants extends Store {
             }
             this.isSelfDeafened = selfDeaf;
             this.isDeafened = deaf || selfDeaf;
-            this.isRequestingToSpeak = AnimatableValueParser.y0(voiceState).getIsRequestingToSpeak();
-            this.isInvitedToSpeak = AnimatableValueParser.y0(voiceState) == StageRequestToSpeakState.REQUESTED_TO_SPEAK_AND_AWAITING_USER_ACK;
+            this.isRequestingToSpeak = C1460d.m592y0(voiceState).getIsRequestingToSpeak();
+            this.isInvitedToSpeak = C1460d.m592y0(voiceState) == StageRequestToSpeakState.REQUESTED_TO_SPEAK_AND_AWAITING_USER_ACK;
         }
 
         /* JADX INFO: renamed from: component10, reason: from getter */
@@ -196,7 +196,7 @@ public final class StoreVoiceParticipants extends Store {
         }
 
         public final VoiceUser copy(User user, VoiceState voiceState, boolean isRinging, StoreVideoStreams.UserStreams streams, boolean isMe, GuildMember guildMember, String watchingStream, StreamContext streamContext, boolean isBooster, StoreMediaSettings.VoiceConfiguration voiceConfiguration, boolean _isSpeaking) {
-            Intrinsics3.checkNotNullParameter(user, "user");
+            C12238m.checkNotNullParameter(user, "user");
             return new VoiceUser(user, voiceState, isRinging, streams, isMe, guildMember, watchingStream, streamContext, isBooster, voiceConfiguration, _isSpeaking);
         }
 
@@ -208,7 +208,7 @@ public final class StoreVoiceParticipants extends Store {
                 return false;
             }
             VoiceUser voiceUser = (VoiceUser) other;
-            return Intrinsics3.areEqual(this.user, voiceUser.user) && Intrinsics3.areEqual(this.voiceState, voiceUser.voiceState) && this.isRinging == voiceUser.isRinging && Intrinsics3.areEqual(this.streams, voiceUser.streams) && this.isMe == voiceUser.isMe && Intrinsics3.areEqual(this.guildMember, voiceUser.guildMember) && Intrinsics3.areEqual(this.watchingStream, voiceUser.watchingStream) && Intrinsics3.areEqual(this.streamContext, voiceUser.streamContext) && this.isBooster == voiceUser.isBooster && Intrinsics3.areEqual(this.voiceConfiguration, voiceUser.voiceConfiguration) && this._isSpeaking == voiceUser._isSpeaking;
+            return C12238m.areEqual(this.user, voiceUser.user) && C12238m.areEqual(this.voiceState, voiceUser.voiceState) && this.isRinging == voiceUser.isRinging && C12238m.areEqual(this.streams, voiceUser.streams) && this.isMe == voiceUser.isMe && C12238m.areEqual(this.guildMember, voiceUser.guildMember) && C12238m.areEqual(this.watchingStream, voiceUser.watchingStream) && C12238m.areEqual(this.streamContext, voiceUser.streamContext) && this.isBooster == voiceUser.isBooster && C12238m.areEqual(this.voiceConfiguration, voiceUser.voiceConfiguration) && this._isSpeaking == voiceUser._isSpeaking;
         }
 
         public final ModelApplicationStream getApplicationStream() {
@@ -350,48 +350,48 @@ public final class StoreVoiceParticipants extends Store {
         }
 
         public String toString() {
-            StringBuilder sbU = outline.U("VoiceUser(user=");
-            sbU.append(this.user);
-            sbU.append(", voiceState=");
-            sbU.append(this.voiceState);
-            sbU.append(", isRinging=");
-            sbU.append(this.isRinging);
-            sbU.append(", streams=");
-            sbU.append(this.streams);
-            sbU.append(", isMe=");
-            sbU.append(this.isMe);
-            sbU.append(", guildMember=");
-            sbU.append(this.guildMember);
-            sbU.append(", watchingStream=");
-            sbU.append(this.watchingStream);
-            sbU.append(", streamContext=");
-            sbU.append(this.streamContext);
-            sbU.append(", isBooster=");
-            sbU.append(this.isBooster);
-            sbU.append(", voiceConfiguration=");
-            sbU.append(this.voiceConfiguration);
-            sbU.append(", _isSpeaking=");
-            return outline.O(sbU, this._isSpeaking, ")");
+            StringBuilder sbM833U = C1643a.m833U("VoiceUser(user=");
+            sbM833U.append(this.user);
+            sbM833U.append(", voiceState=");
+            sbM833U.append(this.voiceState);
+            sbM833U.append(", isRinging=");
+            sbM833U.append(this.isRinging);
+            sbM833U.append(", streams=");
+            sbM833U.append(this.streams);
+            sbM833U.append(", isMe=");
+            sbM833U.append(this.isMe);
+            sbM833U.append(", guildMember=");
+            sbM833U.append(this.guildMember);
+            sbM833U.append(", watchingStream=");
+            sbM833U.append(this.watchingStream);
+            sbM833U.append(", streamContext=");
+            sbM833U.append(this.streamContext);
+            sbM833U.append(", isBooster=");
+            sbM833U.append(this.isBooster);
+            sbM833U.append(", voiceConfiguration=");
+            sbM833U.append(this.voiceConfiguration);
+            sbM833U.append(", _isSpeaking=");
+            return C1643a.m827O(sbM833U, this._isSpeaking, ")");
         }
     }
 
-    /* JADX INFO: renamed from: com.discord.stores.StoreVoiceParticipants$get$1, reason: invalid class name */
+    /* JADX INFO: renamed from: com.discord.stores.StoreVoiceParticipants$get$1 */
     /* JADX INFO: compiled from: StoreVoiceParticipants.kt */
-    public static final class AnonymousClass1<T, R> implements Func1<Channel, Observable<? extends Map<Long, ? extends VoiceUser>>> {
+    public static final class C66231<T, R> implements InterfaceC12589b<Channel, Observable<? extends Map<Long, ? extends VoiceUser>>> {
         public final /* synthetic */ long $channelId;
 
-        /* JADX INFO: renamed from: com.discord.stores.StoreVoiceParticipants$get$1$1, reason: invalid class name and collision with other inner class name */
+        /* JADX INFO: renamed from: com.discord.stores.StoreVoiceParticipants$get$1$1, reason: invalid class name */
         /* JADX INFO: compiled from: StoreVoiceParticipants.kt */
-        public static final class C01941<T, R> implements Func1<Map<Long, ? extends VoiceState>, Observable<? extends Map<Long, ? extends VoiceUser>>> {
+        public static final class AnonymousClass1<T, R> implements InterfaceC12589b<Map<Long, ? extends VoiceState>, Observable<? extends Map<Long, ? extends VoiceUser>>> {
             public final /* synthetic */ Channel $channel;
             public final /* synthetic */ long $guildId;
 
-            public C01941(Channel channel, long j) {
+            public AnonymousClass1(Channel channel, long j) {
                 this.$channel = channel;
                 this.$guildId = j;
             }
 
-            @Override // j0.k.Func1
+            @Override // p637j0.p641k.InterfaceC12589b
             public /* bridge */ /* synthetic */ Observable<? extends Map<Long, ? extends VoiceUser>> call(Map<Long, ? extends VoiceState> map) {
                 return call2((Map<Long, VoiceState>) map);
             }
@@ -401,36 +401,36 @@ public final class StoreVoiceParticipants extends Store {
                 Observable observableObserveMe$default = StoreUser.observeMe$default(StoreVoiceParticipants.this.getStream().getUsers(), false, 1, null);
                 StoreVoiceParticipants storeVoiceParticipants = StoreVoiceParticipants.this;
                 Channel channel = this.$channel;
-                Intrinsics3.checkNotNullExpressionValue(map, "voiceStates");
-                return Observable.j(observableObserveMe$default, storeVoiceParticipants.getOtherVoiceUsers(channel, map), new Func2<MeUser, Collection<? extends User>, Tuples2<? extends MeUser, ? extends Collection<? extends User>>>() { // from class: com.discord.stores.StoreVoiceParticipants.get.1.1.1
-                    @Override // rx.functions.Func2
-                    public final Tuples2<MeUser, Collection<User>> call(MeUser meUser, Collection<? extends User> collection) {
-                        return Tuples.to(meUser, collection);
+                C12238m.checkNotNullExpressionValue(map, "voiceStates");
+                return Observable.m11076j(observableObserveMe$default, storeVoiceParticipants.getOtherVoiceUsers(channel, map), new Func2<MeUser, Collection<? extends User>, Pair<? extends MeUser, ? extends Collection<? extends User>>>() { // from class: com.discord.stores.StoreVoiceParticipants.get.1.1.1
+                    @Override // p658rx.functions.Func2
+                    public final Pair<MeUser, Collection<User>> call(MeUser meUser, Collection<? extends User> collection) {
+                        return C12116o.m10073to(meUser, collection);
                     }
-                }).Y(new Func1<Tuples2<? extends MeUser, ? extends Collection<? extends User>>, Observable<? extends Map<Long, ? extends VoiceUser>>>() { // from class: com.discord.stores.StoreVoiceParticipants.get.1.1.2
-                    @Override // j0.k.Func1
-                    public /* bridge */ /* synthetic */ Observable<? extends Map<Long, ? extends VoiceUser>> call(Tuples2<? extends MeUser, ? extends Collection<? extends User>> tuples2) {
-                        return call2((Tuples2<MeUser, ? extends Collection<? extends User>>) tuples2);
+                }).m11099Y(new InterfaceC12589b<Pair<? extends MeUser, ? extends Collection<? extends User>>, Observable<? extends Map<Long, ? extends VoiceUser>>>() { // from class: com.discord.stores.StoreVoiceParticipants.get.1.1.2
+                    @Override // p637j0.p641k.InterfaceC12589b
+                    public /* bridge */ /* synthetic */ Observable<? extends Map<Long, ? extends VoiceUser>> call(Pair<? extends MeUser, ? extends Collection<? extends User>> pair) {
+                        return call2((Pair<MeUser, ? extends Collection<? extends User>>) pair);
                     }
 
                     /* JADX INFO: renamed from: call, reason: avoid collision after fix types in other method */
-                    public final Observable<? extends Map<Long, VoiceUser>> call2(Tuples2<MeUser, ? extends Collection<? extends User>> tuples2) {
-                        final MeUser meUserComponent1 = tuples2.component1();
-                        final Collection<? extends User> collectionComponent2 = tuples2.component2();
-                        Intrinsics3.checkNotNullExpressionValue(collectionComponent2, "otherUsers");
-                        ArrayList arrayList = new ArrayList(Iterables2.collectionSizeOrDefault(collectionComponent2, 10));
+                    public final Observable<? extends Map<Long, VoiceUser>> call2(Pair<MeUser, ? extends Collection<? extends User>> pair) {
+                        final MeUser meUserComponent1 = pair.component1();
+                        final Collection<? extends User> collectionComponent2 = pair.component2();
+                        C12238m.checkNotNullExpressionValue(collectionComponent2, "otherUsers");
+                        ArrayList arrayList = new ArrayList(C12149o.collectionSizeOrDefault(collectionComponent2, 10));
                         Iterator<T> it = collectionComponent2.iterator();
                         while (it.hasNext()) {
                             arrayList.add(Long.valueOf(((User) it.next()).getId()));
                         }
-                        return Observable.e(ObservableExtensionsKt.leadingEdgeThrottle(StoreVoiceParticipants.this.getStream().getVoiceSpeaking().observeSpeakingUsers(), 250L, TimeUnit.MILLISECONDS), StoreVoiceParticipants.this.getStream().getCalls().get(AnonymousClass1.this.$channelId).G(new Func1<ModelCall, List<? extends Long>>() { // from class: com.discord.stores.StoreVoiceParticipants.get.1.1.2.1
-                            @Override // j0.k.Func1
+                        return Observable.m11069e(ObservableExtensionsKt.leadingEdgeThrottle(StoreVoiceParticipants.this.getStream().getVoiceSpeaking().observeSpeakingUsers(), 250L, TimeUnit.MILLISECONDS), StoreVoiceParticipants.this.getStream().getCalls().get(C66231.this.$channelId).m11083G(new InterfaceC12589b<ModelCall, List<? extends Long>>() { // from class: com.discord.stores.StoreVoiceParticipants.get.1.1.2.1
+                            @Override // p637j0.p641k.InterfaceC12589b
                             public final List<Long> call(ModelCall modelCall) {
                                 List<Long> ringing;
-                                return (modelCall == null || (ringing = modelCall.getRinging()) == null) ? Collections2.emptyList() : ringing;
+                                return (modelCall == null || (ringing = modelCall.getRinging()) == null) ? C12147n.emptyList() : ringing;
                             }
-                        }), StoreVoiceParticipants.this.getStream().getVideoStreams().observeUserStreams(), ObservableExtensionsKt.leadingEdgeThrottle(StoreVoiceParticipants.this.getStream().getGuilds().observeComputed(C01941.this.$guildId), 1L, TimeUnit.SECONDS), StoreVoiceParticipants.this.getStream().getApplicationStreaming().observeStreamSpectators(), StoreVoiceParticipants.this.getStream().getMediaSettings().getVoiceConfig(), StoreVoiceParticipants.this.getStreamContextsForUsers(_Collections.plus((Collection<? extends Long>) arrayList, Long.valueOf(meUserComponent1.getId()))), new Func7<Set<? extends Long>, List<? extends Long>, Map<Long, ? extends StoreVideoStreams.UserStreams>, Map<Long, ? extends GuildMember>, Map<String, ? extends List<? extends Long>>, StoreMediaSettings.VoiceConfiguration, Map<Long, ? extends StreamContext>, Map<Long, ? extends VoiceUser>>() { // from class: com.discord.stores.StoreVoiceParticipants.get.1.1.2.2
-                            @Override // rx.functions.Func7
+                        }), StoreVoiceParticipants.this.getStream().getVideoStreams().observeUserStreams(), ObservableExtensionsKt.leadingEdgeThrottle(StoreVoiceParticipants.this.getStream().getGuilds().observeComputed(AnonymousClass1.this.$guildId), 1L, TimeUnit.SECONDS), StoreVoiceParticipants.this.getStream().getApplicationStreaming().observeStreamSpectators(), StoreVoiceParticipants.this.getStream().getMediaSettings().getVoiceConfig(), StoreVoiceParticipants.this.getStreamContextsForUsers(C12163u.plus((Collection<? extends Long>) arrayList, Long.valueOf(meUserComponent1.getId()))), new Func7<Set<? extends Long>, List<? extends Long>, Map<Long, ? extends StoreVideoStreams.UserStreams>, Map<Long, ? extends GuildMember>, Map<String, ? extends List<? extends Long>>, StoreMediaSettings.VoiceConfiguration, Map<Long, ? extends StreamContext>, Map<Long, ? extends VoiceUser>>() { // from class: com.discord.stores.StoreVoiceParticipants.get.1.1.2.2
+                            @Override // p658rx.functions.Func7
                             public /* bridge */ /* synthetic */ Map<Long, ? extends VoiceUser> call(Set<? extends Long> set, List<? extends Long> list, Map<Long, ? extends StoreVideoStreams.UserStreams> map2, Map<Long, ? extends GuildMember> map3, Map<String, ? extends List<? extends Long>> map4, StoreMediaSettings.VoiceConfiguration voiceConfiguration, Map<Long, ? extends StreamContext> map5) {
                                 return call2((Set<Long>) set, (List<Long>) list, (Map<Long, StoreVideoStreams.UserStreams>) map2, (Map<Long, GuildMember>) map3, (Map<String, ? extends List<Long>>) map4, voiceConfiguration, (Map<Long, StreamContext>) map5);
                             }
@@ -439,18 +439,18 @@ public final class StoreVoiceParticipants extends Store {
                             public final Map<Long, VoiceUser> call2(Set<Long> set, List<Long> list, Map<Long, StoreVideoStreams.UserStreams> map2, Map<Long, GuildMember> map3, Map<String, ? extends List<Long>> map4, StoreMediaSettings.VoiceConfiguration voiceConfiguration, Map<Long, StreamContext> map5) {
                                 StoreVoiceParticipants storeVoiceParticipants2 = StoreVoiceParticipants.this;
                                 MeUser meUser = meUserComponent1;
-                                Intrinsics3.checkNotNullExpressionValue(meUser, "meUser");
+                                C12238m.checkNotNullExpressionValue(meUser, "meUser");
                                 Collection collection = collectionComponent2;
-                                Intrinsics3.checkNotNullExpressionValue(collection, "otherUsers");
+                                C12238m.checkNotNullExpressionValue(collection, "otherUsers");
                                 Map map6 = map;
-                                Intrinsics3.checkNotNullExpressionValue(map6, "voiceStates");
-                                Intrinsics3.checkNotNullExpressionValue(set, "speakingUsers");
-                                Intrinsics3.checkNotNullExpressionValue(list, "ringingUsers");
-                                Intrinsics3.checkNotNullExpressionValue(map2, "videoStreams");
-                                Intrinsics3.checkNotNullExpressionValue(map3, "guildMembers");
-                                Intrinsics3.checkNotNullExpressionValue(map4, "streamSpectators");
-                                Intrinsics3.checkNotNullExpressionValue(voiceConfiguration, "voiceConfig");
-                                Intrinsics3.checkNotNullExpressionValue(map5, "streamContexts");
+                                C12238m.checkNotNullExpressionValue(map6, "voiceStates");
+                                C12238m.checkNotNullExpressionValue(set, "speakingUsers");
+                                C12238m.checkNotNullExpressionValue(list, "ringingUsers");
+                                C12238m.checkNotNullExpressionValue(map2, "videoStreams");
+                                C12238m.checkNotNullExpressionValue(map3, "guildMembers");
+                                C12238m.checkNotNullExpressionValue(map4, "streamSpectators");
+                                C12238m.checkNotNullExpressionValue(voiceConfiguration, "voiceConfig");
+                                C12238m.checkNotNullExpressionValue(map5, "streamContexts");
                                 return storeVoiceParticipants2.create(meUser, collection, map6, set, list, map2, map3, map4, voiceConfiguration, map5);
                             }
                         });
@@ -459,35 +459,35 @@ public final class StoreVoiceParticipants extends Store {
             }
         }
 
-        public AnonymousClass1(long j) {
+        public C66231(long j) {
             this.$channelId = j;
         }
 
-        @Override // j0.k.Func1
+        @Override // p637j0.p641k.InterfaceC12589b
         public final Observable<? extends Map<Long, VoiceUser>> call(Channel channel) {
             if (channel == null) {
-                return new ScalarSynchronousObservable(Maps6.emptyMap());
+                return new C12721k(C12136h0.emptyMap());
             }
-            long guildId = ChannelUtils.B(channel) ? 0L : channel.getGuildId();
-            return StoreVoiceParticipants.this.getStream().getVoiceStates().observe(guildId, channel.getId()).Y(new C01941(channel, guildId));
+            long guildId = ChannelUtils.m7667B(channel) ? 0L : channel.getGuildId();
+            return StoreVoiceParticipants.this.getStream().getVoiceStates().observe(guildId, channel.getId()).m11099Y(new AnonymousClass1(channel, guildId));
         }
     }
 
-    /* JADX INFO: renamed from: com.discord.stores.StoreVoiceParticipants$getOtherVoiceUsers$1, reason: invalid class name */
+    /* JADX INFO: renamed from: com.discord.stores.StoreVoiceParticipants$getOtherVoiceUsers$1 */
     /* JADX INFO: compiled from: StoreVoiceParticipants.kt */
-    public static final class AnonymousClass1<T, R> implements Func1<Long, Observable<? extends Collection<? extends User>>> {
+    public static final class C66241<T, R> implements InterfaceC12589b<Long, Observable<? extends Collection<? extends User>>> {
         public final /* synthetic */ Channel $channel;
         public final /* synthetic */ Map $voiceStates;
 
-        public AnonymousClass1(Channel channel, Map map) {
+        public C66241(Channel channel, Map map) {
             this.$channel = channel;
             this.$voiceStates = map;
         }
 
-        @Override // j0.k.Func1
+        @Override // p637j0.p641k.InterfaceC12589b
         public final Observable<? extends Collection<User>> call(final Long l) {
-            return StoreStream.INSTANCE.getGuilds().observeComputed(this.$channel.getGuildId()).G(new Func1<Map<Long, ? extends GuildMember>, Set<? extends Long>>() { // from class: com.discord.stores.StoreVoiceParticipants.getOtherVoiceUsers.1.1
-                @Override // j0.k.Func1
+            return StoreStream.INSTANCE.getGuilds().observeComputed(this.$channel.getGuildId()).m11083G(new InterfaceC12589b<Map<Long, ? extends GuildMember>, Set<? extends Long>>() { // from class: com.discord.stores.StoreVoiceParticipants.getOtherVoiceUsers.1.1
+                @Override // p637j0.p641k.InterfaceC12589b
                 public /* bridge */ /* synthetic */ Set<? extends Long> call(Map<Long, ? extends GuildMember> map) {
                     return call2((Map<Long, GuildMember>) map);
                 }
@@ -496,27 +496,27 @@ public final class StoreVoiceParticipants extends Store {
                 public final Set<Long> call2(Map<Long, GuildMember> map) {
                     return map.keySet();
                 }
-            }).G(new Func1<Set<? extends Long>, List<? extends Long>>() { // from class: com.discord.stores.StoreVoiceParticipants.getOtherVoiceUsers.1.2
-                @Override // j0.k.Func1
+            }).m11083G(new InterfaceC12589b<Set<? extends Long>, List<? extends Long>>() { // from class: com.discord.stores.StoreVoiceParticipants.getOtherVoiceUsers.1.2
+                @Override // p637j0.p641k.InterfaceC12589b
                 public /* bridge */ /* synthetic */ List<? extends Long> call(Set<? extends Long> set) {
                     return call2((Set<Long>) set);
                 }
 
                 /* JADX INFO: renamed from: call, reason: avoid collision after fix types in other method */
                 public final List<Long> call2(Set<Long> set) {
-                    Intrinsics3.checkNotNullExpressionValue(set, "memberIds");
+                    C12238m.checkNotNullExpressionValue(set, "memberIds");
                     ArrayList arrayList = new ArrayList();
                     for (T t : set) {
                         long jLongValue = ((Number) t).longValue();
                         Long l2 = l;
-                        if ((l2 == null || jLongValue != l2.longValue()) && AnonymousClass1.this.$voiceStates.containsKey(Long.valueOf(jLongValue))) {
+                        if ((l2 == null || jLongValue != l2.longValue()) && C66241.this.$voiceStates.containsKey(Long.valueOf(jLongValue))) {
                             arrayList.add(t);
                         }
                     }
                     return arrayList;
                 }
-            }).Y(new Func1<List<? extends Long>, Observable<? extends Collection<? extends User>>>() { // from class: com.discord.stores.StoreVoiceParticipants.getOtherVoiceUsers.1.3
-                @Override // j0.k.Func1
+            }).m11099Y(new InterfaceC12589b<List<? extends Long>, Observable<? extends Collection<? extends User>>>() { // from class: com.discord.stores.StoreVoiceParticipants.getOtherVoiceUsers.1.3
+                @Override // p637j0.p641k.InterfaceC12589b
                 public /* bridge */ /* synthetic */ Observable<? extends Collection<? extends User>> call(List<? extends Long> list) {
                     return call2((List<Long>) list);
                 }
@@ -524,27 +524,27 @@ public final class StoreVoiceParticipants extends Store {
                 /* JADX INFO: renamed from: call, reason: avoid collision after fix types in other method */
                 public final Observable<? extends Collection<User>> call2(List<Long> list) {
                     StoreUser users = StoreStream.INSTANCE.getUsers();
-                    Intrinsics3.checkNotNullExpressionValue(list, "otherMemberIds");
-                    return users.observeUsers(list).u(new Action1<Map<Long, ? extends User>>() { // from class: com.discord.stores.StoreVoiceParticipants.getOtherVoiceUsers.1.3.1
-                        @Override // rx.functions.Action1
+                    C12238m.checkNotNullExpressionValue(list, "otherMemberIds");
+                    return users.observeUsers(list).m11115u(new Action1<Map<Long, ? extends User>>() { // from class: com.discord.stores.StoreVoiceParticipants.getOtherVoiceUsers.1.3.1
+                        @Override // p658rx.functions.Action1
                         public final void call(Map<Long, ? extends User> map) {
                             StoreStream.Companion companion = StoreStream.INSTANCE;
-                            StageInstance stageInstanceForChannel = companion.getStageInstances().getStageInstanceForChannel(AnonymousClass1.this.$channel.getId());
+                            StageInstance stageInstanceForChannel = companion.getStageInstances().getStageInstanceForChannel(C66241.this.$channel.getId());
                             if ((stageInstanceForChannel != null ? stageInstanceForChannel.getPrivacyLevel() : null) == StageInstancePrivacyLevel.PUBLIC) {
                                 StoreGuildMemberRequester guildMemberRequester = companion.getGuildMemberRequester();
-                                Iterator it = AnonymousClass1.this.$voiceStates.keySet().iterator();
+                                Iterator it = C66241.this.$voiceStates.keySet().iterator();
                                 while (it.hasNext()) {
                                     long jLongValue = ((Number) it.next()).longValue();
-                                    Intrinsics3.checkNotNullExpressionValue(map, "otherUsers");
+                                    C12238m.checkNotNullExpressionValue(map, "otherUsers");
                                     if (!map.containsKey(Long.valueOf(jLongValue))) {
-                                        guildMemberRequester.queueRequest(AnonymousClass1.this.$channel.getGuildId(), jLongValue);
+                                        guildMemberRequester.queueRequest(C66241.this.$channel.getGuildId(), jLongValue);
                                     }
                                 }
                                 guildMemberRequester.performQueuedRequests();
                             }
                         }
-                    }).G(new Func1<Map<Long, ? extends User>, Collection<? extends User>>() { // from class: com.discord.stores.StoreVoiceParticipants.getOtherVoiceUsers.1.3.2
-                        @Override // j0.k.Func1
+                    }).m11083G(new InterfaceC12589b<Map<Long, ? extends User>, Collection<? extends User>>() { // from class: com.discord.stores.StoreVoiceParticipants.getOtherVoiceUsers.1.3.2
+                        @Override // p637j0.p641k.InterfaceC12589b
                         public final Collection<User> call(Map<Long, ? extends User> map) {
                             return map.values();
                         }
@@ -554,17 +554,17 @@ public final class StoreVoiceParticipants extends Store {
         }
     }
 
-    /* JADX INFO: renamed from: com.discord.stores.StoreVoiceParticipants$init$1, reason: invalid class name */
+    /* JADX INFO: renamed from: com.discord.stores.StoreVoiceParticipants$init$1 */
     /* JADX INFO: compiled from: StoreVoiceParticipants.kt */
-    public static final class AnonymousClass1 extends Lambda implements Function1<Long, Unit> {
-        public AnonymousClass1() {
+    public static final class C66261 extends AbstractC12240o implements Function1<Long, Unit> {
+        public C66261() {
             super(1);
         }
 
         @Override // kotlin.jvm.functions.Function1
         public /* bridge */ /* synthetic */ Unit invoke(Long l) {
             invoke(l.longValue());
-            return Unit.a;
+            return Unit.f27425a;
         }
 
         public final void invoke(long j) {
@@ -573,9 +573,9 @@ public final class StoreVoiceParticipants extends Store {
     }
 
     public StoreVoiceParticipants(StoreStream storeStream) {
-        Intrinsics3.checkNotNullParameter(storeStream, "stream");
+        C12238m.checkNotNullParameter(storeStream, "stream");
         this.stream = storeStream;
-        this.selectedParticipantSubject = BehaviorSubject.l0(0L);
+        this.selectedParticipantSubject = BehaviorSubject.m11130l0(0L);
     }
 
     private final Map<Long, VoiceUser> create(MeUser meUser, Collection<? extends User> otherUsers, Map<Long, VoiceState> voiceStates, Set<Long> speakingUsers, Collection<Long> ringingUsers, Map<Long, StoreVideoStreams.UserStreams> videoStreams, Map<Long, GuildMember> guildMembers, Map<String, ? extends List<Long>> streamSpectators, StoreMediaSettings.VoiceConfiguration voiceConfiguration, Map<Long, StreamContext> streamContexts) {
@@ -591,14 +591,14 @@ public final class StoreVoiceParticipants extends Store {
         while (it.hasNext()) {
             arrayList.add((String) ((Map.Entry) it.next()).getKey());
         }
-        String str = (String) _Collections.firstOrNull((List) arrayList);
+        String str = (String) C12163u.firstOrNull((List) arrayList);
         VoiceState voiceState = voiceStates.get(Long.valueOf(meUser.getId()));
         boolean zContains = ringingUsers.contains(Long.valueOf(meUser.getId()));
         StoreVideoStreams.UserStreams userStreams = videoStreams.get(Long.valueOf(meUser.getId()));
         GuildMember guildMember = guildMembers.get(Long.valueOf(meUser.getId()));
         GuildMember guildMember2 = guildMembers.get(Long.valueOf(meUser.getId()));
         linkedHashMap.put(Long.valueOf(meUser.getId()), new VoiceUser(meUser, voiceState, zContains, userStreams, true, guildMember, str, null, (guildMember2 != null ? guildMember2.getPremiumSince() : null) != null, voiceConfiguration, speakingUsers.contains(Long.valueOf(meUser.getId()))));
-        ArrayList<VoiceUser> arrayList2 = new ArrayList(Iterables2.collectionSizeOrDefault(otherUsers, 10));
+        ArrayList<VoiceUser> arrayList2 = new ArrayList(C12149o.collectionSizeOrDefault(otherUsers, 10));
         for (User user : otherUsers) {
             LinkedHashMap linkedHashMap3 = new LinkedHashMap();
             for (Map.Entry<String, ? extends List<Long>> entry2 : streamSpectators.entrySet()) {
@@ -611,13 +611,13 @@ public final class StoreVoiceParticipants extends Store {
             while (it2.hasNext()) {
                 arrayList3.add((String) ((Map.Entry) it2.next()).getKey());
             }
-            String str2 = (String) _Collections.firstOrNull((List) arrayList3);
-            VoiceState voiceState2 = (VoiceState) outline.f(user, voiceStates);
+            String str2 = (String) C12163u.firstOrNull((List) arrayList3);
+            VoiceState voiceState2 = (VoiceState) C1643a.m849f(user, voiceStates);
             boolean zContains2 = ringingUsers.contains(Long.valueOf(user.getId()));
-            StoreVideoStreams.UserStreams userStreams2 = (StoreVideoStreams.UserStreams) outline.f(user, videoStreams);
-            GuildMember guildMember3 = (GuildMember) outline.f(user, guildMembers);
-            StreamContext streamContext = (StreamContext) outline.f(user, streamContexts);
-            GuildMember guildMember4 = (GuildMember) outline.f(user, guildMembers);
+            StoreVideoStreams.UserStreams userStreams2 = (StoreVideoStreams.UserStreams) C1643a.m849f(user, videoStreams);
+            GuildMember guildMember3 = (GuildMember) C1643a.m849f(user, guildMembers);
+            StreamContext streamContext = (StreamContext) C1643a.m849f(user, streamContexts);
+            GuildMember guildMember4 = (GuildMember) C1643a.m849f(user, guildMembers);
             arrayList2.add(new VoiceUser(user, voiceState2, zContains2, userStreams2, false, guildMember3, str2, streamContext, (guildMember4 != null ? guildMember4.getPremiumSince() : null) != null, voiceConfiguration, speakingUsers.contains(Long.valueOf(user.getId()))));
         }
         for (VoiceUser voiceUser : arrayList2) {
@@ -627,35 +627,35 @@ public final class StoreVoiceParticipants extends Store {
     }
 
     private final Observable<Collection<User>> getOtherVoiceUsers(Channel channel, Map<Long, VoiceState> voiceStates) {
-        if (ChannelUtils.B(channel)) {
-            ScalarSynchronousObservable scalarSynchronousObservable = new ScalarSynchronousObservable(ChannelUtils.g(channel));
-            Intrinsics3.checkNotNullExpressionValue(scalarSynchronousObservable, "Observable.just(channel.getRecipients())");
-            return scalarSynchronousObservable;
+        if (ChannelUtils.m7667B(channel)) {
+            C12721k c12721k = new C12721k(ChannelUtils.m7683g(channel));
+            C12238m.checkNotNullExpressionValue(c12721k, "Observable.just(channel.getRecipients())");
+            return c12721k;
         }
-        if (ChannelUtils.w(channel)) {
-            Observable observableY = StoreStream.INSTANCE.getUsers().observeMeId().Y(new AnonymousClass1(channel, voiceStates));
-            Intrinsics3.checkNotNullExpressionValue(observableY, "StoreStream\n            …          }\n            }");
-            return observableY;
+        if (ChannelUtils.m7699w(channel)) {
+            Observable observableM11099Y = StoreStream.INSTANCE.getUsers().observeMeId().m11099Y(new C66241(channel, voiceStates));
+            C12238m.checkNotNullExpressionValue(observableM11099Y, "StoreStream\n            …          }\n            }");
+            return observableM11099Y;
         }
-        ScalarSynchronousObservable scalarSynchronousObservable2 = new ScalarSynchronousObservable(Collections2.emptyList());
-        Intrinsics3.checkNotNullExpressionValue(scalarSynchronousObservable2, "Observable.just(emptyList())");
-        return scalarSynchronousObservable2;
+        C12721k c12721k2 = new C12721k(C12147n.emptyList());
+        C12238m.checkNotNullExpressionValue(c12721k2, "Observable.just(emptyList())");
+        return c12721k2;
     }
 
     private final Observable<Map<Long, StreamContext>> getStreamContextsForUsers(final List<Long> userIds) {
-        ArrayList arrayList = new ArrayList(Iterables2.collectionSizeOrDefault(userIds, 10));
+        ArrayList arrayList = new ArrayList(C12149o.collectionSizeOrDefault(userIds, 10));
         for (Iterator it = userIds.iterator(); it.hasNext(); it = it) {
             arrayList.add(new StreamContextService(null, null, null, null, null, null, null, null, 255, null).getForUser(((Number) it.next()).longValue(), true));
         }
-        Observable<Map<Long, StreamContext>> observableB = Observable.b(arrayList, new FuncN<Map<Long, ? extends StreamContext>>() { // from class: com.discord.stores.StoreVoiceParticipants.getStreamContextsForUsers.1
-            @Override // rx.functions.FuncN
+        Observable<Map<Long, StreamContext>> observableM11065b = Observable.m11065b(arrayList, new FuncN<Map<Long, ? extends StreamContext>>() { // from class: com.discord.stores.StoreVoiceParticipants.getStreamContextsForUsers.1
+            @Override // p658rx.functions.FuncN
             public final Map<Long, ? extends StreamContext> call(Object[] objArr) {
                 LinkedHashMap linkedHashMap = new LinkedHashMap();
                 int i = 0;
                 for (Object obj : userIds) {
                     int i2 = i + 1;
                     if (i < 0) {
-                        Collections2.throwIndexOverflow();
+                        C12147n.throwIndexOverflow();
                     }
                     linkedHashMap.put(Long.valueOf(((Number) obj).longValue()), (StreamContext) objArr[i]);
                     i = i2;
@@ -663,16 +663,16 @@ public final class StoreVoiceParticipants extends Store {
                 return linkedHashMap;
             }
         });
-        Intrinsics3.checkNotNullExpressionValue(observableB, "Observable\n        .comb…}\n          map\n        }");
-        return observableB;
+        C12238m.checkNotNullExpressionValue(observableM11065b, "Observable\n        .comb…}\n          map\n        }");
+        return observableM11065b;
     }
 
     public final Observable<Map<Long, VoiceUser>> get(long channelId) {
-        Observable<R> observableY = StoreStream.INSTANCE.getChannels().observeChannel(channelId).Y(new AnonymousClass1(channelId));
-        Intrinsics3.checkNotNullExpressionValue(observableY, "StoreStream\n        .get…  }\n          }\n        }");
-        Observable<Map<Long, VoiceUser>> observableR = ObservableExtensionsKt.computationLatest(observableY).r();
-        Intrinsics3.checkNotNullExpressionValue(observableR, "StoreStream\n        .get…  .distinctUntilChanged()");
-        return observableR;
+        Observable<R> observableM11099Y = StoreStream.INSTANCE.getChannels().observeChannel(channelId).m11099Y(new C66231(channelId));
+        C12238m.checkNotNullExpressionValue(observableM11099Y, "StoreStream\n        .get…  }\n          }\n        }");
+        Observable<Map<Long, VoiceUser>> observableM11112r = ObservableExtensionsKt.computationLatest(observableM11099Y).m11112r();
+        C12238m.checkNotNullExpressionValue(observableM11112r, "StoreStream\n        .get…  .distinctUntilChanged()");
+        return observableM11112r;
     }
 
     public final StoreStream getStream() {
@@ -681,9 +681,9 @@ public final class StoreVoiceParticipants extends Store {
 
     @Override // com.discord.stores.Store
     public void init(Context context) {
-        Intrinsics3.checkNotNullParameter(context, "context");
+        C12238m.checkNotNullParameter(context, "context");
         super.init(context);
-        ObservableExtensionsKt.appSubscribe(this.stream.getVoiceChannelSelected().observeSelectedVoiceChannelId(), (Class<?>) StoreVoiceParticipants.class, (58 & 2) != 0 ? null : null, (Function1<? super Subscription, Unit>) ((58 & 4) != 0 ? null : null), (Function1<? super Error, Unit>) ((58 & 8) != 0 ? null : null), (Function0<Unit>) ((58 & 16) != 0 ? ObservableExtensionsKt.AnonymousClass1.INSTANCE : null), (Function0<Unit>) ((58 & 32) != 0 ? ObservableExtensionsKt.AnonymousClass2.INSTANCE : null), new AnonymousClass1());
+        ObservableExtensionsKt.appSubscribe(this.stream.getVoiceChannelSelected().observeSelectedVoiceChannelId(), (Class<?>) StoreVoiceParticipants.class, (58 & 2) != 0 ? null : null, (Function1<? super Subscription, Unit>) ((58 & 4) != 0 ? null : null), (Function1<? super Error, Unit>) ((58 & 8) != 0 ? null : null), (Function0<Unit>) ((58 & 16) != 0 ? ObservableExtensionsKt.C68791.INSTANCE : null), (Function0<Unit>) ((58 & 32) != 0 ? ObservableExtensionsKt.C68802.INSTANCE : null), new C66261());
     }
 
     public final void selectParticipant(Long userId) {

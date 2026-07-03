@@ -1,7 +1,7 @@
 package com.discord.analytics.generated.traits;
 
-import b.d.b.a.outline;
-import d0.z.d.Intrinsics3;
+import p007b.p100d.p104b.p105a.C1643a;
+import p507d0.p592z.p594d.C12238m;
 
 /* JADX INFO: compiled from: TrackEmail.kt */
 /* JADX INFO: loaded from: classes.dex */
@@ -20,7 +20,7 @@ public final /* data */ class TrackEmail {
             return false;
         }
         TrackEmail trackEmail = (TrackEmail) other;
-        return Intrinsics3.areEqual(this.emailType, trackEmail.emailType) && Intrinsics3.areEqual(this.subjectType, trackEmail.subjectType) && Intrinsics3.areEqual(this.emailId, trackEmail.emailId) && Intrinsics3.areEqual(this.category, trackEmail.category) && Intrinsics3.areEqual(this.version, trackEmail.version);
+        return C12238m.areEqual(this.emailType, trackEmail.emailType) && C12238m.areEqual(this.subjectType, trackEmail.subjectType) && C12238m.areEqual(this.emailId, trackEmail.emailId) && C12238m.areEqual(this.category, trackEmail.category) && C12238m.areEqual(this.version, trackEmail.version);
     }
 
     public int hashCode() {
@@ -37,15 +37,15 @@ public final /* data */ class TrackEmail {
     }
 
     public String toString() {
-        StringBuilder sbU = outline.U("TrackEmail(emailType=");
-        sbU.append(this.emailType);
-        sbU.append(", subjectType=");
-        sbU.append(this.subjectType);
-        sbU.append(", emailId=");
-        sbU.append(this.emailId);
-        sbU.append(", category=");
-        sbU.append(this.category);
-        sbU.append(", version=");
-        return outline.E(sbU, this.version, ")");
+        StringBuilder sbM833U = C1643a.m833U("TrackEmail(emailType=");
+        sbM833U.append(this.emailType);
+        sbM833U.append(", subjectType=");
+        sbM833U.append(this.subjectType);
+        sbM833U.append(", emailId=");
+        sbM833U.append(this.emailId);
+        sbM833U.append(", category=");
+        sbM833U.append(this.category);
+        sbM833U.append(", version=");
+        return C1643a.m817E(sbM833U, this.version, ")");
     }
 }

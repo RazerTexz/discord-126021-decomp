@@ -1,7 +1,7 @@
 package com.discord.analytics.generated.traits;
 
-import b.d.b.a.outline;
-import d0.z.d.Intrinsics3;
+import p007b.p100d.p104b.p105a.C1643a;
+import p507d0.p592z.p594d.C12238m;
 
 /* JADX INFO: compiled from: TrackCreatorMonetizationEnableRequest.kt */
 /* JADX INFO: loaded from: classes.dex */
@@ -21,7 +21,7 @@ public final /* data */ class TrackCreatorMonetizationEnableRequest {
             return false;
         }
         TrackCreatorMonetizationEnableRequest trackCreatorMonetizationEnableRequest = (TrackCreatorMonetizationEnableRequest) other;
-        return Intrinsics3.areEqual(this.creatorMonetizationEnableRequestId, trackCreatorMonetizationEnableRequest.creatorMonetizationEnableRequestId) && Intrinsics3.areEqual(this.state, trackCreatorMonetizationEnableRequest.state) && Intrinsics3.areEqual(this.actionedReason, trackCreatorMonetizationEnableRequest.actionedReason) && Intrinsics3.areEqual(this.actionedNote, trackCreatorMonetizationEnableRequest.actionedNote) && Intrinsics3.areEqual(this.actionedAt, trackCreatorMonetizationEnableRequest.actionedAt) && Intrinsics3.areEqual(this.termsAckedAt, trackCreatorMonetizationEnableRequest.termsAckedAt);
+        return C12238m.areEqual(this.creatorMonetizationEnableRequestId, trackCreatorMonetizationEnableRequest.creatorMonetizationEnableRequestId) && C12238m.areEqual(this.state, trackCreatorMonetizationEnableRequest.state) && C12238m.areEqual(this.actionedReason, trackCreatorMonetizationEnableRequest.actionedReason) && C12238m.areEqual(this.actionedNote, trackCreatorMonetizationEnableRequest.actionedNote) && C12238m.areEqual(this.actionedAt, trackCreatorMonetizationEnableRequest.actionedAt) && C12238m.areEqual(this.termsAckedAt, trackCreatorMonetizationEnableRequest.termsAckedAt);
     }
 
     public int hashCode() {
@@ -40,17 +40,17 @@ public final /* data */ class TrackCreatorMonetizationEnableRequest {
     }
 
     public String toString() {
-        StringBuilder sbU = outline.U("TrackCreatorMonetizationEnableRequest(creatorMonetizationEnableRequestId=");
-        sbU.append(this.creatorMonetizationEnableRequestId);
-        sbU.append(", state=");
-        sbU.append(this.state);
-        sbU.append(", actionedReason=");
-        sbU.append(this.actionedReason);
-        sbU.append(", actionedNote=");
-        sbU.append(this.actionedNote);
-        sbU.append(", actionedAt=");
-        sbU.append(this.actionedAt);
-        sbU.append(", termsAckedAt=");
-        return outline.G(sbU, this.termsAckedAt, ")");
+        StringBuilder sbM833U = C1643a.m833U("TrackCreatorMonetizationEnableRequest(creatorMonetizationEnableRequestId=");
+        sbM833U.append(this.creatorMonetizationEnableRequestId);
+        sbM833U.append(", state=");
+        sbM833U.append(this.state);
+        sbM833U.append(", actionedReason=");
+        sbM833U.append(this.actionedReason);
+        sbM833U.append(", actionedNote=");
+        sbM833U.append(this.actionedNote);
+        sbM833U.append(", actionedAt=");
+        sbM833U.append(this.actionedAt);
+        sbM833U.append(", termsAckedAt=");
+        return C1643a.m819G(sbM833U, this.termsAckedAt, ")");
     }
 }

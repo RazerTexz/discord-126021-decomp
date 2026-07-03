@@ -18,9 +18,9 @@ public final class ExpandButton extends Preference {
     }
 
     private void initLayout() {
-        setLayoutResource(R.layout.expand_button);
-        setIcon(R.drawable.ic_arrow_down_24dp);
-        setTitle(R.string.expand_button_title);
+        setLayoutResource(C0525R.layout.expand_button);
+        setIcon(C0525R.drawable.ic_arrow_down_24dp);
+        setTitle(C0525R.string.expand_button_title);
         setOrder(RoomDatabase.MAX_BIND_PARAMETER_CNT);
     }
 
@@ -38,7 +38,7 @@ public final class ExpandButton extends Preference {
                     arrayList.add((PreferenceGroup) preference);
                 }
             } else if (!TextUtils.isEmpty(title)) {
-                string = string == null ? title : getContext().getString(R.string.summary_collapsed_preference_list, string, title);
+                string = string == null ? title : getContext().getString(C0525R.string.summary_collapsed_preference_list, string, title);
             }
         }
         setSummary(string);

@@ -1,26 +1,26 @@
 package com.discord.models.botuikit;
 
-import b.d.b.a.outline;
-import com.discord.api.botuikit.Component6;
-import d0.z.d.Intrinsics3;
+import com.discord.api.botuikit.ComponentType;
 import java.util.List;
 import kotlin.jvm.internal.DefaultConstructorMarker;
+import p007b.p100d.p104b.p105a.C1643a;
+import p507d0.p592z.p594d.C12238m;
 
 /* JADX INFO: compiled from: ActionRowMessageComponent.kt */
 /* JADX INFO: loaded from: classes.dex */
-public final /* data */ class ActionRowMessageComponent extends MessageComponent3 {
+public final /* data */ class ActionRowMessageComponent extends LayoutMessageComponent {
     private final List<MessageComponent> components;
     private final int index;
-    private final Component6 type;
+    private final ComponentType type;
 
-    public /* synthetic */ ActionRowMessageComponent(Component6 component6, int i, List list, int i2, DefaultConstructorMarker defaultConstructorMarker) {
-        this(component6, (i2 & 2) != 0 ? 0 : i, list);
+    public /* synthetic */ ActionRowMessageComponent(ComponentType componentType, int i, List list, int i2, DefaultConstructorMarker defaultConstructorMarker) {
+        this(componentType, (i2 & 2) != 0 ? 0 : i, list);
     }
 
     /* JADX WARN: Multi-variable type inference failed */
-    public static /* synthetic */ ActionRowMessageComponent copy$default(ActionRowMessageComponent actionRowMessageComponent, Component6 component6, int i, List list, int i2, Object obj) {
+    public static /* synthetic */ ActionRowMessageComponent copy$default(ActionRowMessageComponent actionRowMessageComponent, ComponentType componentType, int i, List list, int i2, Object obj) {
         if ((i2 & 1) != 0) {
-            component6 = actionRowMessageComponent.getType();
+            componentType = actionRowMessageComponent.getType();
         }
         if ((i2 & 2) != 0) {
             i = actionRowMessageComponent.getIndex();
@@ -28,10 +28,10 @@ public final /* data */ class ActionRowMessageComponent extends MessageComponent
         if ((i2 & 4) != 0) {
             list = actionRowMessageComponent.components;
         }
-        return actionRowMessageComponent.copy(component6, i, list);
+        return actionRowMessageComponent.copy(componentType, i, list);
     }
 
-    public final Component6 component1() {
+    public final ComponentType component1() {
         return getType();
     }
 
@@ -43,9 +43,9 @@ public final /* data */ class ActionRowMessageComponent extends MessageComponent
         return this.components;
     }
 
-    public final ActionRowMessageComponent copy(Component6 type, int index, List<? extends MessageComponent> components) {
-        Intrinsics3.checkNotNullParameter(type, "type");
-        Intrinsics3.checkNotNullParameter(components, "components");
+    public final ActionRowMessageComponent copy(ComponentType type, int index, List<? extends MessageComponent> components) {
+        C12238m.checkNotNullParameter(type, "type");
+        C12238m.checkNotNullParameter(components, "components");
         return new ActionRowMessageComponent(type, index, components);
     }
 
@@ -57,10 +57,10 @@ public final /* data */ class ActionRowMessageComponent extends MessageComponent
             return false;
         }
         ActionRowMessageComponent actionRowMessageComponent = (ActionRowMessageComponent) other;
-        return Intrinsics3.areEqual(getType(), actionRowMessageComponent.getType()) && getIndex() == actionRowMessageComponent.getIndex() && Intrinsics3.areEqual(this.components, actionRowMessageComponent.components);
+        return C12238m.areEqual(getType(), actionRowMessageComponent.getType()) && getIndex() == actionRowMessageComponent.getIndex() && C12238m.areEqual(this.components, actionRowMessageComponent.components);
     }
 
-    @Override // com.discord.models.botuikit.MessageComponent3
+    @Override // com.discord.models.botuikit.LayoutMessageComponent
     public List<MessageComponent> getChildren() {
         return this.components;
     }
@@ -75,31 +75,31 @@ public final /* data */ class ActionRowMessageComponent extends MessageComponent
     }
 
     @Override // com.discord.models.botuikit.MessageComponent
-    public Component6 getType() {
+    public ComponentType getType() {
         return this.type;
     }
 
     public int hashCode() {
-        Component6 type = getType();
+        ComponentType type = getType();
         int index = (getIndex() + ((type != null ? type.hashCode() : 0) * 31)) * 31;
         List<MessageComponent> list = this.components;
         return index + (list != null ? list.hashCode() : 0);
     }
 
     public String toString() {
-        StringBuilder sbU = outline.U("ActionRowMessageComponent(type=");
-        sbU.append(getType());
-        sbU.append(", index=");
-        sbU.append(getIndex());
-        sbU.append(", components=");
-        return outline.L(sbU, this.components, ")");
+        StringBuilder sbM833U = C1643a.m833U("ActionRowMessageComponent(type=");
+        sbM833U.append(getType());
+        sbM833U.append(", index=");
+        sbM833U.append(getIndex());
+        sbM833U.append(", components=");
+        return C1643a.m824L(sbM833U, this.components, ")");
     }
 
     /* JADX WARN: Multi-variable type inference failed */
-    public ActionRowMessageComponent(Component6 component6, int i, List<? extends MessageComponent> list) {
-        Intrinsics3.checkNotNullParameter(component6, "type");
-        Intrinsics3.checkNotNullParameter(list, "components");
-        this.type = component6;
+    public ActionRowMessageComponent(ComponentType componentType, int i, List<? extends MessageComponent> list) {
+        C12238m.checkNotNullParameter(componentType, "type");
+        C12238m.checkNotNullParameter(list, "components");
+        this.type = componentType;
         this.index = i;
         this.components = list;
     }

@@ -2,13 +2,13 @@ package com.discord.stores;
 
 import com.discord.stores.StoreRtcConnection;
 import com.discord.stores.updates.ObservationDeck;
-import d0.z.d.Intrinsics3;
-import d0.z.d.Lambda;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 import kotlin.jvm.functions.Function0;
-import rx.Observable;
+import p507d0.p592z.p594d.AbstractC12240o;
+import p507d0.p592z.p594d.C12238m;
+import p658rx.Observable;
 
 /* JADX INFO: compiled from: StoreVoiceSpeaking.kt */
 /* JADX INFO: loaded from: classes2.dex */
@@ -17,10 +17,10 @@ public final class StoreVoiceSpeaking extends StoreV2 {
     private final HashSet<Long> speakingUsers;
     private Set<Long> speakingUsersSnapshot;
 
-    /* JADX INFO: renamed from: com.discord.stores.StoreVoiceSpeaking$observeSpeakingUsers$1, reason: invalid class name */
+    /* JADX INFO: renamed from: com.discord.stores.StoreVoiceSpeaking$observeSpeakingUsers$1 */
     /* JADX INFO: compiled from: StoreVoiceSpeaking.kt */
-    public static final class AnonymousClass1 extends Lambda implements Function0<Set<? extends Long>> {
-        public AnonymousClass1() {
+    public static final class C66271 extends AbstractC12240o implements Function0<Set<? extends Long>> {
+        public C66271() {
             super(0);
         }
 
@@ -31,7 +31,7 @@ public final class StoreVoiceSpeaking extends StoreV2 {
     }
 
     public StoreVoiceSpeaking(ObservationDeck observationDeck) {
-        Intrinsics3.checkNotNullParameter(observationDeck, "observationDeck");
+        C12238m.checkNotNullParameter(observationDeck, "observationDeck");
         this.observationDeck = observationDeck;
         this.speakingUsers = new HashSet<>();
         this.speakingUsersSnapshot = new HashSet();
@@ -41,9 +41,9 @@ public final class StoreVoiceSpeaking extends StoreV2 {
         return this.speakingUsersSnapshot;
     }
 
-    @Store3
+    @StoreThread
     public final void handleSpeakingUpdates(List<StoreRtcConnection.SpeakingUserUpdate> speakingList) {
-        Intrinsics3.checkNotNullParameter(speakingList, "speakingList");
+        C12238m.checkNotNullParameter(speakingList, "speakingList");
         boolean z2 = false;
         for (StoreRtcConnection.SpeakingUserUpdate speakingUserUpdate : speakingList) {
             long userId = speakingUserUpdate.getUserId();
@@ -57,7 +57,7 @@ public final class StoreVoiceSpeaking extends StoreV2 {
         }
     }
 
-    @Store3
+    @StoreThread
     public final void handleVoiceChannelSelected(long voiceChannelId) {
         if (voiceChannelId > 0) {
             return;
@@ -67,9 +67,9 @@ public final class StoreVoiceSpeaking extends StoreV2 {
     }
 
     public final Observable<Set<Long>> observeSpeakingUsers() {
-        Observable<Set<Long>> observableR = ObservationDeck.connectRx$default(this.observationDeck, new ObservationDeck.UpdateSource[]{this}, false, null, null, new AnonymousClass1(), 14, null).r();
-        Intrinsics3.checkNotNullExpressionValue(observableR, "observationDeck\n        …  .distinctUntilChanged()");
-        return observableR;
+        Observable<Set<Long>> observableM11112r = ObservationDeck.connectRx$default(this.observationDeck, new ObservationDeck.UpdateSource[]{this}, false, null, null, new C66271(), 14, null).m11112r();
+        C12238m.checkNotNullExpressionValue(observableM11112r, "observationDeck\n        …  .distinctUntilChanged()");
+        return observableM11112r;
     }
 
     @Override // com.discord.stores.StoreV2

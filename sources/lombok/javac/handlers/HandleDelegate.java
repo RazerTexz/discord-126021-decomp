@@ -59,10 +59,10 @@ public class HandleDelegate extends JavacAnnotationHandler<Delegate> {
         Type delegateType;
         HandlerUtil.handleExperimentalFlagUsage(annotationNode, ConfigurationKeys.DELEGATE_FLAG_USAGE, "@Delegate");
         JavacHandlerUtil.deleteAnnotationIfNeccessary(annotationNode, (Class<? extends Annotation>) Delegate.class, (Class<? extends Annotation>) lombok.Delegate.class);
-        Name delegateName = annotationNode.toName(annotationNode.up().getName());
+        Name delegateName = annotationNode.toName(annotationNode.m10925up().getName());
         JavacResolution reso = new JavacResolution(annotationNode.getContext());
-        JCTree.JCVariableDecl jCVariableDecl = (JCTree) annotationNode.up().get();
-        if (annotationNode.up().getKind() == AST.Kind.FIELD) {
+        JCTree.JCVariableDecl jCVariableDecl = (JCTree) annotationNode.m10925up().get();
+        if (annotationNode.m10925up().getKind() == AST.Kind.FIELD) {
             if ((jCVariableDecl.mods.flags & 8) != 0) {
                 annotationNode.addError(LEGALITY_OF_DELEGATE);
                 return;
@@ -70,10 +70,10 @@ public class HandleDelegate extends JavacAnnotationHandler<Delegate> {
             delegateReceiver = DelegateReceiver.FIELD;
             Type delegateType2 = ((JCTree) jCVariableDecl).type;
             if (delegateType2 == null) {
-                reso.resolveClassMember(annotationNode.up());
+                reso.resolveClassMember(annotationNode.m10925up());
             }
             delegateType = ((JCTree) jCVariableDecl).type;
-        } else if (annotationNode.up().getKind() == AST.Kind.METHOD) {
+        } else if (annotationNode.m10925up().getKind() == AST.Kind.METHOD) {
             if (!(jCVariableDecl instanceof JCTree.JCMethodDecl)) {
                 annotationNode.addError(LEGALITY_OF_DELEGATE);
                 return;
@@ -86,7 +86,7 @@ public class HandleDelegate extends JavacAnnotationHandler<Delegate> {
             delegateReceiver = DelegateReceiver.METHOD;
             Type delegateType3 = methodDecl.restype.type;
             if (delegateType3 == null) {
-                reso.resolveClassMember(annotationNode.up());
+                reso.resolveClassMember(annotationNode.m10925up());
             }
             delegateType = methodDecl.restype.type;
         } else {
@@ -172,7 +172,7 @@ public class HandleDelegate extends JavacAnnotationHandler<Delegate> {
         try {
             toAdd.add(createDelegateMethod(sig, annotation, delegateName, delegateReceiver));
             for (JCTree.JCMethodDecl method : toAdd) {
-                JavacHandlerUtil.injectMethod(annotation.up().up(), method);
+                JavacHandlerUtil.injectMethod(annotation.m10925up().m10925up(), method);
             }
         } catch (JavacResolution.TypeNotConvertibleException e) {
             annotation.addError("Can't create delegate method for " + sig.name + ": " + e.getMessage());
@@ -200,7 +200,7 @@ public class HandleDelegate extends JavacAnnotationHandler<Delegate> {
                     }
                 }
             }
-            javacNodeUp = enclosingType.up();
+            javacNodeUp = enclosingType.m10925up();
         }
         Set<String> usedInMethodSig = new HashSet<>();
         Iterator it = sig.elem.getTypeParameters().iterator();

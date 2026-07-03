@@ -1,31 +1,32 @@
 package com.facebook.imagepipeline.memory;
 
 import android.annotation.TargetApi;
-import b.f.d.d.DoNotStrip;
-import b.f.d.g.MemoryTrimmableRegistry;
-import b.f.j.l.AshmemMemoryChunk;
-import b.f.j.l.MemoryChunk;
-import b.f.j.l.MemoryChunkPool;
-import b.f.j.l.PoolParams;
-import b.f.j.l.PoolStatsTracker;
+import p007b.p109f.p115d.p119d.InterfaceC1680c;
+import p007b.p109f.p115d.p122g.InterfaceC1696c;
+import p007b.p109f.p161j.p177l.AbstractC1947s;
+import p007b.p109f.p161j.p177l.C1929a;
+import p007b.p109f.p161j.p177l.C1953y;
+import p007b.p109f.p161j.p177l.InterfaceC1946r;
+import p007b.p109f.p161j.p177l.InterfaceC1954z;
 
 /* JADX INFO: loaded from: classes3.dex */
-@DoNotStrip
+@InterfaceC1680c
 @TargetApi(27)
-public class AshmemMemoryChunkPool extends MemoryChunkPool {
-    @DoNotStrip
-    public AshmemMemoryChunkPool(MemoryTrimmableRegistry memoryTrimmableRegistry, PoolParams poolParams, PoolStatsTracker poolStatsTracker) {
-        super(memoryTrimmableRegistry, poolParams, poolStatsTracker);
+public class AshmemMemoryChunkPool extends AbstractC1947s {
+    @InterfaceC1680c
+    public AshmemMemoryChunkPool(InterfaceC1696c interfaceC1696c, C1953y c1953y, InterfaceC1954z interfaceC1954z) {
+        super(interfaceC1696c, c1953y, interfaceC1954z);
     }
 
-    @Override // b.f.j.l.MemoryChunkPool, com.facebook.imagepipeline.memory.BasePool
-    public MemoryChunk e(int i) {
-        return new AshmemMemoryChunk(i);
+    @Override // p007b.p109f.p161j.p177l.AbstractC1947s, com.facebook.imagepipeline.memory.BasePool
+    /* JADX INFO: renamed from: e */
+    public InterfaceC1946r mo1382e(int i) {
+        return new C1929a(i);
     }
 
-    @Override // b.f.j.l.MemoryChunkPool
+    @Override // p007b.p109f.p161j.p177l.AbstractC1947s
     /* JADX INFO: renamed from: s */
-    public MemoryChunk e(int i) {
-        return new AshmemMemoryChunk(i);
+    public InterfaceC1946r mo1382e(int i) {
+        return new C1929a(i);
     }
 }

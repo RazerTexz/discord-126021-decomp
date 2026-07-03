@@ -40,16 +40,16 @@ public class HandleCleanup extends EclipseAnnotationHandler<Cleanup> {
             annotationNode.addError("cleanupName cannot be the empty string.");
             return;
         }
-        if (annotationNode.up().getKind() != AST.Kind.LOCAL) {
+        if (annotationNode.m10925up().getKind() != AST.Kind.LOCAL) {
             annotationNode.addError("@Cleanup is legal only on local variable declarations.");
             return;
         }
-        Statement statement = (LocalDeclaration) annotationNode.up().get();
+        Statement statement = (LocalDeclaration) annotationNode.m10925up().get();
         if (((LocalDeclaration) statement).initialization == null) {
             annotationNode.addError("@Cleanup variable declarations need to be initialized.");
             return;
         }
-        EclipseNode ancestor = annotationNode.up().directUp();
+        EclipseNode ancestor = annotationNode.m10925up().directUp();
         AbstractMethodDeclaration abstractMethodDeclaration = (ASTNode) ancestor.get();
         if (abstractMethodDeclaration instanceof AbstractMethodDeclaration) {
             isSwitch = false;

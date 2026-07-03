@@ -10,25 +10,27 @@ import com.google.android.material.textfield.TextInputLayout;
 /* JADX INFO: loaded from: classes.dex */
 public final class WidgetServerNotificationOverrideSelectorBinding implements ViewBinding {
 
+    /* JADX INFO: renamed from: a */
     @NonNull
-    public final CoordinatorLayout a;
+    public final CoordinatorLayout f17486a;
 
-    /* JADX INFO: renamed from: b, reason: collision with root package name */
+    /* JADX INFO: renamed from: b */
     @NonNull
-    public final RecyclerView f2537b;
+    public final RecyclerView f17487b;
 
+    /* JADX INFO: renamed from: c */
     @NonNull
-    public final TextInputLayout c;
+    public final TextInputLayout f17488c;
 
     public WidgetServerNotificationOverrideSelectorBinding(@NonNull CoordinatorLayout coordinatorLayout, @NonNull RecyclerView recyclerView, @NonNull TextInputLayout textInputLayout) {
-        this.a = coordinatorLayout;
-        this.f2537b = recyclerView;
-        this.c = textInputLayout;
+        this.f17486a = coordinatorLayout;
+        this.f17487b = recyclerView;
+        this.f17488c = textInputLayout;
     }
 
     @Override // androidx.viewbinding.ViewBinding
     @NonNull
     public View getRoot() {
-        return this.a;
+        return this.f17486a;
     }
 }

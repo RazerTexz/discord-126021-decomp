@@ -27,7 +27,7 @@ public class HandleValue extends JavacAnnotationHandler<Value> {
     public void handle(AnnotationValues<Value> annotation, JCTree.JCAnnotation ast, JavacNode annotationNode) {
         HandlerUtil.handleFlagUsage(annotationNode, ConfigurationKeys.VALUE_FLAG_USAGE, "@Value");
         JavacHandlerUtil.deleteAnnotationIfNeccessary(annotationNode, (Class<? extends Annotation>) Value.class, "lombok.experimental.Value");
-        JavacNode typeNode = annotationNode.up();
+        JavacNode typeNode = annotationNode.m10925up();
         boolean notAClass = !JavacHandlerUtil.isClass(typeNode);
         if (notAClass) {
             annotationNode.addError("@Value is only supported on a class.");

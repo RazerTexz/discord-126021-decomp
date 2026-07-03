@@ -1,14 +1,14 @@
 package com.discord.analytics.generated.events;
 
-import b.d.b.a.outline;
 import com.discord.analytics.generated.traits.TrackBase;
-import com.discord.analytics.generated.traits.TrackBase2;
+import com.discord.analytics.generated.traits.TrackBaseReceiver;
 import com.discord.api.science.AnalyticsSchema;
-import d0.z.d.Intrinsics3;
+import p007b.p100d.p104b.p105a.C1643a;
+import p507d0.p592z.p594d.C12238m;
 
 /* JADX INFO: compiled from: TrackSpotifyListenAlongStarted.kt */
 /* JADX INFO: loaded from: classes.dex */
-public final /* data */ class TrackSpotifyListenAlongStarted implements AnalyticsSchema, TrackBase2 {
+public final /* data */ class TrackSpotifyListenAlongStarted implements AnalyticsSchema, TrackBaseReceiver {
     private TrackBase trackBase;
     private final CharSequence partyId = null;
     private final Long otherUserId = null;
@@ -28,7 +28,7 @@ public final /* data */ class TrackSpotifyListenAlongStarted implements Analytic
             return false;
         }
         TrackSpotifyListenAlongStarted trackSpotifyListenAlongStarted = (TrackSpotifyListenAlongStarted) other;
-        return Intrinsics3.areEqual(this.partyId, trackSpotifyListenAlongStarted.partyId) && Intrinsics3.areEqual(this.otherUserId, trackSpotifyListenAlongStarted.otherUserId);
+        return C12238m.areEqual(this.partyId, trackSpotifyListenAlongStarted.partyId) && C12238m.areEqual(this.otherUserId, trackSpotifyListenAlongStarted.otherUserId);
     }
 
     public int hashCode() {
@@ -39,9 +39,9 @@ public final /* data */ class TrackSpotifyListenAlongStarted implements Analytic
     }
 
     public String toString() {
-        StringBuilder sbU = outline.U("TrackSpotifyListenAlongStarted(partyId=");
-        sbU.append(this.partyId);
-        sbU.append(", otherUserId=");
-        return outline.G(sbU, this.otherUserId, ")");
+        StringBuilder sbM833U = C1643a.m833U("TrackSpotifyListenAlongStarted(partyId=");
+        sbM833U.append(this.partyId);
+        sbM833U.append(", otherUserId=");
+        return C1643a.m819G(sbM833U, this.otherUserId, ")");
     }
 }

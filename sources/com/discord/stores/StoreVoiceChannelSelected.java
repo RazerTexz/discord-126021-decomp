@@ -1,6 +1,5 @@
 package com.discord.stores;
 
-import b.d.b.a.outline;
 import com.discord.api.channel.Channel;
 import com.discord.api.channel.ChannelUtils;
 import com.discord.api.guild.GuildMaxVideoChannelUsers;
@@ -14,30 +13,31 @@ import com.discord.models.member.GuildMember;
 import com.discord.models.user.MeUser;
 import com.discord.rtcconnection.RtcConnection;
 import com.discord.stores.updates.ObservationDeck;
-import com.discord.stores.updates.ObservationDeck4;
-import com.discord.utilities.guildmember.GuildMemberUtils;
+import com.discord.stores.updates.ObservationDeckProvider;
+import com.discord.utilities.guildmember.GuildMemberUtilsKt;
 import com.discord.utilities.media.AppSound;
 import com.discord.utilities.media.AppSoundManager;
 import com.discord.utilities.time.Clock;
 import com.discord.utilities.user.UserUtils;
+import com.discord.utilities.voice.VoiceChannelJoinability;
 import com.discord.utilities.voice.VoiceChannelJoinabilityUtils;
-import com.discord.utilities.voice.VoiceChannelJoinabilityUtils2;
-import d0.t.Maps6;
-import d0.z.d.FunctionReferenceImpl;
-import d0.z.d.Intrinsics3;
-import d0.z.d.Lambda;
 import java.util.Collection;
 import java.util.Map;
 import kotlin.NoWhenBranchMatchedException;
 import kotlin.Unit;
 import kotlin.jvm.functions.Function0;
 import kotlin.jvm.internal.DefaultConstructorMarker;
-import rx.Observable;
-import rx.subjects.PublishSubject;
+import p007b.p100d.p104b.p105a.C1643a;
+import p507d0.p580t.C12136h0;
+import p507d0.p592z.p594d.AbstractC12240o;
+import p507d0.p592z.p594d.C12236k;
+import p507d0.p592z.p594d.C12238m;
+import p658rx.Observable;
+import p658rx.subjects.PublishSubject;
 
 /* JADX INFO: compiled from: StoreVoiceChannelSelected.kt */
 /* JADX INFO: loaded from: classes2.dex */
-public final class StoreVoiceChannelSelected extends StoreV2 implements Store2 {
+public final class StoreVoiceChannelSelected extends StoreV2 implements DispatchHandler {
     public static final long VOICE_CHANNEL_ID_NONE = 0;
     private final Clock clock;
     private final Dispatcher dispatcher;
@@ -66,27 +66,27 @@ public final class StoreVoiceChannelSelected extends StoreV2 implements Store2 {
         public static final /* synthetic */ int[] $EnumSwitchMapping$2;
 
         static {
-            VoiceChannelJoinabilityUtils2.values();
+            VoiceChannelJoinability.values();
             int[] iArr = new int[5];
             $EnumSwitchMapping$0 = iArr;
-            VoiceChannelJoinabilityUtils2 voiceChannelJoinabilityUtils2 = VoiceChannelJoinabilityUtils2.CAN_JOIN;
-            iArr[voiceChannelJoinabilityUtils2.ordinal()] = 1;
-            VoiceChannelJoinabilityUtils2 voiceChannelJoinabilityUtils3 = VoiceChannelJoinabilityUtils2.PERMISSIONS_MISSING;
-            iArr[voiceChannelJoinabilityUtils3.ordinal()] = 2;
-            VoiceChannelJoinabilityUtils2 voiceChannelJoinabilityUtils4 = VoiceChannelJoinabilityUtils2.CHANNEL_FULL;
-            iArr[voiceChannelJoinabilityUtils4.ordinal()] = 3;
-            VoiceChannelJoinabilityUtils2 voiceChannelJoinabilityUtils5 = VoiceChannelJoinabilityUtils2.GUILD_VIDEO_AT_CAPACITY;
-            iArr[voiceChannelJoinabilityUtils5.ordinal()] = 4;
-            VoiceChannelJoinabilityUtils2 voiceChannelJoinabilityUtils6 = VoiceChannelJoinabilityUtils2.CHANNEL_DOES_NOT_EXIST;
-            iArr[voiceChannelJoinabilityUtils6.ordinal()] = 5;
-            VoiceChannelJoinabilityUtils2.values();
+            VoiceChannelJoinability voiceChannelJoinability = VoiceChannelJoinability.CAN_JOIN;
+            iArr[voiceChannelJoinability.ordinal()] = 1;
+            VoiceChannelJoinability voiceChannelJoinability2 = VoiceChannelJoinability.PERMISSIONS_MISSING;
+            iArr[voiceChannelJoinability2.ordinal()] = 2;
+            VoiceChannelJoinability voiceChannelJoinability3 = VoiceChannelJoinability.CHANNEL_FULL;
+            iArr[voiceChannelJoinability3.ordinal()] = 3;
+            VoiceChannelJoinability voiceChannelJoinability4 = VoiceChannelJoinability.GUILD_VIDEO_AT_CAPACITY;
+            iArr[voiceChannelJoinability4.ordinal()] = 4;
+            VoiceChannelJoinability voiceChannelJoinability5 = VoiceChannelJoinability.CHANNEL_DOES_NOT_EXIST;
+            iArr[voiceChannelJoinability5.ordinal()] = 5;
+            VoiceChannelJoinability.values();
             int[] iArr2 = new int[5];
             $EnumSwitchMapping$1 = iArr2;
-            iArr2[voiceChannelJoinabilityUtils3.ordinal()] = 1;
-            iArr2[voiceChannelJoinabilityUtils5.ordinal()] = 2;
-            iArr2[voiceChannelJoinabilityUtils4.ordinal()] = 3;
-            iArr2[voiceChannelJoinabilityUtils6.ordinal()] = 4;
-            iArr2[voiceChannelJoinabilityUtils2.ordinal()] = 5;
+            iArr2[voiceChannelJoinability2.ordinal()] = 1;
+            iArr2[voiceChannelJoinability4.ordinal()] = 2;
+            iArr2[voiceChannelJoinability3.ordinal()] = 3;
+            iArr2[voiceChannelJoinability5.ordinal()] = 4;
+            iArr2[voiceChannelJoinability.ordinal()] = 5;
             GuildVerificationLevel.values();
             int[] iArr3 = new int[5];
             $EnumSwitchMapping$2 = iArr3;
@@ -98,17 +98,17 @@ public final class StoreVoiceChannelSelected extends StoreV2 implements Store2 {
         }
     }
 
-    /* JADX INFO: renamed from: com.discord.stores.StoreVoiceChannelSelected$clear$1, reason: invalid class name */
+    /* JADX INFO: renamed from: com.discord.stores.StoreVoiceChannelSelected$clear$1 */
     /* JADX INFO: compiled from: StoreVoiceChannelSelected.kt */
-    public static final /* synthetic */ class AnonymousClass1 extends FunctionReferenceImpl implements Function0<Unit> {
-        public AnonymousClass1(StoreVoiceChannelSelected storeVoiceChannelSelected) {
+    public static final /* synthetic */ class C66181 extends C12236k implements Function0<Unit> {
+        public C66181(StoreVoiceChannelSelected storeVoiceChannelSelected) {
             super(0, storeVoiceChannelSelected, StoreVoiceChannelSelected.class, "clearInternal", "clearInternal()V", 0);
         }
 
         @Override // kotlin.jvm.functions.Function0
         public /* bridge */ /* synthetic */ Unit invoke() {
             invoke2();
-            return Unit.a;
+            return Unit.f27425a;
         }
 
         /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
@@ -117,10 +117,10 @@ public final class StoreVoiceChannelSelected extends StoreV2 implements Store2 {
         }
     }
 
-    /* JADX INFO: renamed from: com.discord.stores.StoreVoiceChannelSelected$observeSelectedChannel$1, reason: invalid class name */
+    /* JADX INFO: renamed from: com.discord.stores.StoreVoiceChannelSelected$observeSelectedChannel$1 */
     /* JADX INFO: compiled from: StoreVoiceChannelSelected.kt */
-    public static final class AnonymousClass1 extends Lambda implements Function0<Channel> {
-        public AnonymousClass1() {
+    public static final class C66191 extends AbstractC12240o implements Function0<Channel> {
+        public C66191() {
             super(0);
         }
 
@@ -131,10 +131,10 @@ public final class StoreVoiceChannelSelected extends StoreV2 implements Store2 {
         }
     }
 
-    /* JADX INFO: renamed from: com.discord.stores.StoreVoiceChannelSelected$observeSelectedVoiceChannelId$1, reason: invalid class name */
+    /* JADX INFO: renamed from: com.discord.stores.StoreVoiceChannelSelected$observeSelectedVoiceChannelId$1 */
     /* JADX INFO: compiled from: StoreVoiceChannelSelected.kt */
-    public static final class AnonymousClass1 extends Lambda implements Function0<Long> {
-        public AnonymousClass1() {
+    public static final class C66201 extends AbstractC12240o implements Function0<Long> {
+        public C66201() {
             super(0);
         }
 
@@ -149,10 +149,10 @@ public final class StoreVoiceChannelSelected extends StoreV2 implements Store2 {
         }
     }
 
-    /* JADX INFO: renamed from: com.discord.stores.StoreVoiceChannelSelected$observeTimeSelectedMs$1, reason: invalid class name */
+    /* JADX INFO: renamed from: com.discord.stores.StoreVoiceChannelSelected$observeTimeSelectedMs$1 */
     /* JADX INFO: compiled from: StoreVoiceChannelSelected.kt */
-    public static final class AnonymousClass1 extends Lambda implements Function0<Long> {
-        public AnonymousClass1() {
+    public static final class C66211 extends AbstractC12240o implements Function0<Long> {
+        public C66211() {
             super(0);
         }
 
@@ -167,14 +167,14 @@ public final class StoreVoiceChannelSelected extends StoreV2 implements Store2 {
         }
     }
 
-    /* JADX INFO: renamed from: com.discord.stores.StoreVoiceChannelSelected$selectVoiceChannel$1, reason: invalid class name */
+    /* JADX INFO: renamed from: com.discord.stores.StoreVoiceChannelSelected$selectVoiceChannel$1 */
     /* JADX INFO: compiled from: StoreVoiceChannelSelected.kt */
-    public static final class AnonymousClass1 extends Lambda implements Function0<Unit> {
+    public static final class C66221 extends AbstractC12240o implements Function0<Unit> {
         public final /* synthetic */ long $channelId;
         public final /* synthetic */ PublishSubject $resultSubject;
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-        public AnonymousClass1(long j, PublishSubject publishSubject) {
+        public C66221(long j, PublishSubject publishSubject) {
             super(0);
             this.$channelId = j;
             this.$resultSubject = publishSubject;
@@ -183,32 +183,32 @@ public final class StoreVoiceChannelSelected extends StoreV2 implements Store2 {
         @Override // kotlin.jvm.functions.Function0
         public /* bridge */ /* synthetic */ Unit invoke() {
             invoke2();
-            return Unit.a;
+            return Unit.f27425a;
         }
 
         /* JADX WARN: Type inference incomplete: some casts might be missing */
         /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
         public final void invoke2() {
-            this.$resultSubject.k.onNext((T) StoreVoiceChannelSelected.this.selectVoiceChannelInternal(this.$channelId, false));
-            this.$resultSubject.k.onCompleted();
+            this.$resultSubject.f27650k.onNext((T) StoreVoiceChannelSelected.this.selectVoiceChannelInternal(this.$channelId, false));
+            this.$resultSubject.f27650k.onCompleted();
         }
     }
 
     public /* synthetic */ StoreVoiceChannelSelected(StoreStream storeStream, Dispatcher dispatcher, Clock clock, ObservationDeck observationDeck, int i, DefaultConstructorMarker defaultConstructorMarker) {
-        this(storeStream, dispatcher, clock, (i & 8) != 0 ? ObservationDeck4.get() : observationDeck);
+        this(storeStream, dispatcher, clock, (i & 8) != 0 ? ObservationDeckProvider.get() : observationDeck);
     }
 
-    @Store3
+    @StoreThread
     private final void clearInternal() {
         Channel channel = StoreStream.INSTANCE.getChannels().getChannel(this.selectedVoiceChannelId);
-        if (channel != null && ChannelUtils.K(channel)) {
+        if (channel != null && ChannelUtils.m7676K(channel)) {
             AppSoundManager.Provider.INSTANCE.get().play(AppSound.INSTANCE.getSOUND_USER_LEFT());
         }
         selectVoiceChannelInternal(0L, false);
     }
 
-    @Store3
-    private final VoiceChannelJoinabilityUtils2 getJoinability(long channelId) {
+    @StoreThread
+    private final VoiceChannelJoinability getJoinability(long channelId) {
         GuildMaxVideoChannelUsers maxVideoChannelUsers;
         StoreChannels channels = this.stream.getChannels();
         StoreGuilds guilds = this.stream.getGuilds();
@@ -217,15 +217,15 @@ public final class StoreVoiceChannelSelected extends StoreV2 implements Store2 {
         StoreStageInstances stageInstances = this.stream.getStageInstances();
         Channel channelFindChannelByIdInternal$app_productionGoogleRelease = channels.findChannelByIdInternal$app_productionGoogleRelease(channelId);
         if (channelFindChannelByIdInternal$app_productionGoogleRelease == null) {
-            return VoiceChannelJoinabilityUtils2.CHANNEL_DOES_NOT_EXIST;
+            return VoiceChannelJoinability.CHANNEL_DOES_NOT_EXIST;
         }
         StageInstance stageInstanceForChannelInternal = stageInstances.getStageInstanceForChannelInternal(channelId);
-        Map mapEmptyMap = (Map) outline.c(channelFindChannelByIdInternal$app_productionGoogleRelease, voiceStates.get());
+        Map mapEmptyMap = (Map) C1643a.m843c(channelFindChannelByIdInternal$app_productionGoogleRelease, voiceStates.get());
         if (mapEmptyMap == null) {
-            mapEmptyMap = Maps6.emptyMap();
+            mapEmptyMap = C12136h0.emptyMap();
         }
         Long l = permissions.getPermissionsByChannel().get(Long.valueOf(channelId));
-        Guild guild = (Guild) outline.c(channelFindChannelByIdInternal$app_productionGoogleRelease, guilds.getGuilds());
+        Guild guild = (Guild) C1643a.m843c(channelFindChannelByIdInternal$app_productionGoogleRelease, guilds.getGuilds());
         GuildVerificationLevel verificationLevelTriggered = guild != null ? getVerificationLevelTriggered(guild) : GuildVerificationLevel.NONE;
         VoiceChannelJoinabilityUtils voiceChannelJoinabilityUtils = VoiceChannelJoinabilityUtils.INSTANCE;
         Collection<VoiceState> collectionValues = mapEmptyMap.values();
@@ -235,19 +235,19 @@ public final class StoreVoiceChannelSelected extends StoreV2 implements Store2 {
         return voiceChannelJoinabilityUtils.computeJoinability(channelFindChannelByIdInternal$app_productionGoogleRelease, collectionValues, l, maxVideoChannelUsers, verificationLevelTriggered, Long.valueOf(this.selectedVoiceChannelId), stageInstanceForChannelInternal);
     }
 
-    @Store3
+    @StoreThread
     private final GuildVerificationLevel getVerificationLevelTriggered(Guild guild) {
         StoreGuilds guilds = this.stream.getGuilds();
         StoreUser users = this.stream.getUsers();
         GuildVerificationLevel verificationLevel = guild.getVerificationLevel();
-        Map map = (Map) outline.e(guild, guilds.getMembers());
+        Map map = (Map) C1643a.m847e(guild, guilds.getMembers());
         MeUser meSnapshot = users.getMeSnapshot();
         GuildMember guildMember = map != null ? (GuildMember) map.get(Long.valueOf(meSnapshot.getId())) : null;
         boolean zIsOwner = guild.isOwner(meSnapshot.getId());
         boolean z2 = guildMember != null && (guildMember.getRoles().isEmpty() ^ true);
         UserUtils userUtils = UserUtils.INSTANCE;
         boolean hasPhone = userUtils.getHasPhone(meSnapshot);
-        Long l = (Long) outline.e(guild, guilds.getGuildsJoinedAt());
+        Long l = (Long) C1643a.m847e(guild, guilds.getGuildsJoinedAt());
         if (zIsOwner || z2 || hasPhone) {
             return GuildVerificationLevel.NONE;
         }
@@ -261,7 +261,7 @@ public final class StoreVoiceChannelSelected extends StoreV2 implements Store2 {
                     if (iOrdinal == 4) {
                         return GuildVerificationLevel.HIGH;
                     }
-                } else if (l != null && !GuildMemberUtils.isGuildMemberOldEnough(l.longValue())) {
+                } else if (l != null && !GuildMemberUtilsKt.isGuildMemberOldEnough(l.longValue())) {
                     return GuildVerificationLevel.HIGH;
                 }
             } else if (!userUtils.isAccountOldEnough(meSnapshot, this.clock)) {
@@ -274,7 +274,7 @@ public final class StoreVoiceChannelSelected extends StoreV2 implements Store2 {
     }
 
     /* JADX WARN: Code duplicated, block: B:20:0x0038  */
-    @Store3
+    @StoreThread
     private final JoinVoiceChannelResult selectVoiceChannelInternal(long selectedVoiceChannelId, boolean forceMoved) {
         boolean z2;
         Channel channel;
@@ -286,7 +286,7 @@ public final class StoreVoiceChannelSelected extends StoreV2 implements Store2 {
         if (selectedVoiceChannelId == this.selectedVoiceChannelId) {
             return JoinVoiceChannelResult.ALREADY_CONNECTED;
         }
-        VoiceChannelJoinabilityUtils2 joinability = getJoinability(selectedVoiceChannelId);
+        VoiceChannelJoinability joinability = getJoinability(selectedVoiceChannelId);
         int iOrdinal = joinability.ordinal();
         if (iOrdinal == 0) {
             z2 = true;
@@ -304,7 +304,7 @@ public final class StoreVoiceChannelSelected extends StoreV2 implements Store2 {
         }
         long j = this.selectedVoiceChannelId;
         if (z2) {
-            if (!forceMoved && (channel = StoreStream.INSTANCE.getChannels().getChannel(selectedVoiceChannelId)) != null && ChannelUtils.K(channel)) {
+            if (!forceMoved && (channel = StoreStream.INSTANCE.getChannels().getChannel(selectedVoiceChannelId)) != null && ChannelUtils.m7676K(channel)) {
                 AppSoundManager.Provider.INSTANCE.get().play(AppSound.INSTANCE.getSOUND_USER_JOINED());
             }
             this.selectedVoiceChannelId = selectedVoiceChannelId;
@@ -339,7 +339,7 @@ public final class StoreVoiceChannelSelected extends StoreV2 implements Store2 {
         throw new NoWhenBranchMatchedException();
     }
 
-    @Store3
+    @StoreThread
     private final void validateSelectedVoiceChannel() {
         long j = this.selectedVoiceChannelId;
         if (j == 0) {
@@ -354,7 +354,7 @@ public final class StoreVoiceChannelSelected extends StoreV2 implements Store2 {
     }
 
     public final void clear() {
-        this.dispatcher.schedule(new AnonymousClass1(this));
+        this.dispatcher.schedule(new C66181(this));
     }
 
     public final long getLastSelectedVoiceChannelId() {
@@ -373,26 +373,26 @@ public final class StoreVoiceChannelSelected extends StoreV2 implements Store2 {
         return this.timeSelectedMs;
     }
 
-    @Store3
+    @StoreThread
     public final void handleAuthToken(String authToken) {
         if (authToken == null) {
             clearInternal();
         }
     }
 
-    @Store3
+    @StoreThread
     public final void handleChannelOrThreadCreateOrUpdate() {
         validateSelectedVoiceChannel();
     }
 
-    @Store3
+    @StoreThread
     public final void handleChannelOrThreadDelete() {
         validateSelectedVoiceChannel();
     }
 
-    @Store3
+    @StoreThread
     public final void handleConnectionOpen(ModelPayload payload) {
-        Intrinsics3.checkNotNullParameter(payload, "payload");
+        C12238m.checkNotNullParameter(payload, "payload");
         this.sessionId = payload.getSessionId();
         Long l = this.preselectedVoiceChannelId;
         if (l != null) {
@@ -400,33 +400,33 @@ public final class StoreVoiceChannelSelected extends StoreV2 implements Store2 {
         }
     }
 
-    @Store3
+    @StoreThread
     public final void handleGuildMemberAdd(com.discord.api.guildmember.GuildMember member) {
-        Intrinsics3.checkNotNullParameter(member, "member");
+        C12238m.checkNotNullParameter(member, "member");
         if (member.getUser().getId() == this.stream.getUsers().getMe().getId()) {
             validateSelectedVoiceChannel();
         }
     }
 
-    @Store3
+    @StoreThread
     public final void handleGuildRemove() {
         validateSelectedVoiceChannel();
     }
 
-    @Store3
+    @StoreThread
     public final void handleGuildRoleCreateOrUpdate() {
         validateSelectedVoiceChannel();
     }
 
-    @Store3
+    @StoreThread
     public final void handleGuildRoleRemove() {
         validateSelectedVoiceChannel();
     }
 
-    @Store3
+    @StoreThread
     public final void handleRtcConnectionStateChanged(RtcConnection.State state) {
-        Intrinsics3.checkNotNullParameter(state, "state");
-        if (state instanceof RtcConnection.State.f) {
+        C12238m.checkNotNullParameter(state, "state");
+        if (state instanceof RtcConnection.State.C5612f) {
             Channel channelFindChannelByIdInternal$app_productionGoogleRelease = this.stream.getChannels().findChannelByIdInternal$app_productionGoogleRelease(this.selectedVoiceChannelId);
             Guild guild = this.stream.getGuilds().getGuildsInternal$app_productionGoogleRelease().get(channelFindChannelByIdInternal$app_productionGoogleRelease != null ? Long.valueOf(channelFindChannelByIdInternal$app_productionGoogleRelease.getGuildId()) : null);
             if (guild != null) {
@@ -440,21 +440,21 @@ public final class StoreVoiceChannelSelected extends StoreV2 implements Store2 {
         }
     }
 
-    @Store3
+    @StoreThread
     public final void handleStreamTargeted(String streamKey) {
-        Intrinsics3.checkNotNullParameter(streamKey, "streamKey");
+        C12238m.checkNotNullParameter(streamKey, "streamKey");
         selectVoiceChannelInternal(ModelApplicationStream.INSTANCE.decodeStreamKey(streamKey).getChannelId(), false);
     }
 
-    @Store3
+    @StoreThread
     public final void handleVoiceStateUpdates(VoiceState voiceState) {
         Channel channelFindChannelByIdInternal$app_productionGoogleRelease;
-        Intrinsics3.checkNotNullParameter(voiceState, "voiceState");
+        C12238m.checkNotNullParameter(voiceState, "voiceState");
         if (this.stream.getUsers().getMe().getId() == voiceState.getUserId() && (channelFindChannelByIdInternal$app_productionGoogleRelease = this.stream.getChannels().findChannelByIdInternal$app_productionGoogleRelease(this.selectedVoiceChannelId)) != null && channelFindChannelByIdInternal$app_productionGoogleRelease.getGuildId() == voiceState.getGuildId()) {
             Long channelId = voiceState.getChannelId();
             long j = this.selectedVoiceChannelId;
-            if ((channelId != null && channelId.longValue() == j) || !Intrinsics3.areEqual(voiceState.getSessionId(), this.sessionId)) {
-                if (!Intrinsics3.areEqual(voiceState.getSessionId(), this.sessionId)) {
+            if ((channelId != null && channelId.longValue() == j) || !C12238m.areEqual(voiceState.getSessionId(), this.sessionId)) {
+                if (!C12238m.areEqual(voiceState.getSessionId(), this.sessionId)) {
                     clearInternal();
                 }
             } else if (channelId == null) {
@@ -467,40 +467,40 @@ public final class StoreVoiceChannelSelected extends StoreV2 implements Store2 {
     }
 
     public final Observable<Channel> observeSelectedChannel() {
-        return ObservationDeck.connectRx$default(this.observationDeck, new ObservationDeck.UpdateSource[]{this, this.stream.getChannels()}, false, null, null, new AnonymousClass1(), 14, null);
+        return ObservationDeck.connectRx$default(this.observationDeck, new ObservationDeck.UpdateSource[]{this, this.stream.getChannels()}, false, null, null, new C66191(), 14, null);
     }
 
     public final Observable<Long> observeSelectedVoiceChannelId() {
-        return ObservationDeck.connectRx$default(this.observationDeck, new ObservationDeck.UpdateSource[]{this}, false, null, null, new AnonymousClass1(), 14, null);
+        return ObservationDeck.connectRx$default(this.observationDeck, new ObservationDeck.UpdateSource[]{this}, false, null, null, new C66201(), 14, null);
     }
 
     public final Observable<Long> observeTimeSelectedMs() {
-        return ObservationDeck.connectRx$default(this.observationDeck, new ObservationDeck.UpdateSource[]{this}, false, null, null, new AnonymousClass1(), 14, null);
+        return ObservationDeck.connectRx$default(this.observationDeck, new ObservationDeck.UpdateSource[]{this}, false, null, null, new C66211(), 14, null);
     }
 
     public final Observable<JoinVoiceChannelResult> selectVoiceChannel(long channelId) {
         Channel channel = this.stream.getChannels().getChannel(channelId);
-        if (channel != null && ChannelUtils.D(channel)) {
+        if (channel != null && ChannelUtils.m7669D(channel)) {
             StoreStream.INSTANCE.getMediaEngine().setAudioInputEnabled(false);
         }
-        PublishSubject publishSubjectK0 = PublishSubject.k0();
-        this.dispatcher.schedule(new AnonymousClass1(channelId, publishSubjectK0));
-        Intrinsics3.checkNotNullExpressionValue(publishSubjectK0, "resultSubject");
-        return publishSubjectK0;
+        PublishSubject publishSubjectM11133k0 = PublishSubject.m11133k0();
+        this.dispatcher.schedule(new C66221(channelId, publishSubjectM11133k0));
+        C12238m.checkNotNullExpressionValue(publishSubjectM11133k0, "resultSubject");
+        return publishSubjectM11133k0;
     }
 
     @Override // com.discord.stores.StoreV2
-    @Store3
+    @StoreThread
     public void snapshotData() {
         super.snapshotData();
         this.timeSelectedMs = this.selectedVoiceChannelId > 0 ? this.clock.currentTimeMillis() : 0L;
     }
 
     public StoreVoiceChannelSelected(StoreStream storeStream, Dispatcher dispatcher, Clock clock, ObservationDeck observationDeck) {
-        Intrinsics3.checkNotNullParameter(storeStream, "stream");
-        Intrinsics3.checkNotNullParameter(dispatcher, "dispatcher");
-        Intrinsics3.checkNotNullParameter(clock, "clock");
-        Intrinsics3.checkNotNullParameter(observationDeck, "observationDeck");
+        C12238m.checkNotNullParameter(storeStream, "stream");
+        C12238m.checkNotNullParameter(dispatcher, "dispatcher");
+        C12238m.checkNotNullParameter(clock, "clock");
+        C12238m.checkNotNullParameter(observationDeck, "observationDeck");
         this.stream = storeStream;
         this.dispatcher = dispatcher;
         this.clock = clock;

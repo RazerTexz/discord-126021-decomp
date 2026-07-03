@@ -1,29 +1,29 @@
 package com.discord.widgets.user;
 
 import com.discord.widgets.user.WidgetUserMentions;
-import d0.z.d.Intrinsics3;
-import d0.z.d.Lambda;
 import kotlin.Unit;
 import kotlin.jvm.functions.Function0;
 import kotlin.jvm.functions.Function1;
+import p507d0.p592z.p594d.AbstractC12240o;
+import p507d0.p592z.p594d.C12238m;
 
 /* JADX INFO: compiled from: WidgetUserMentions.kt */
 /* JADX INFO: loaded from: classes.dex */
-public final class WidgetUserMentions$Model$MessageLoader$handleLoadError$1 extends Lambda implements Function0<Unit> {
+public final class WidgetUserMentions$Model$MessageLoader$handleLoadError$1 extends AbstractC12240o implements Function0<Unit> {
     public final /* synthetic */ WidgetUserMentions.Model.MessageLoader this$0;
 
-    /* JADX INFO: renamed from: com.discord.widgets.user.WidgetUserMentions$Model$MessageLoader$handleLoadError$1$1, reason: invalid class name */
+    /* JADX INFO: renamed from: com.discord.widgets.user.WidgetUserMentions$Model$MessageLoader$handleLoadError$1$1 */
     /* JADX INFO: compiled from: WidgetUserMentions.kt */
-    public static final class AnonymousClass1 extends Lambda implements Function1<WidgetUserMentions.Model.MessageLoader.LoadingState, WidgetUserMentions.Model.MessageLoader.LoadingState> {
-        public static final AnonymousClass1 INSTANCE = new AnonymousClass1();
+    public static final class C102081 extends AbstractC12240o implements Function1<WidgetUserMentions.Model.MessageLoader.LoadingState, WidgetUserMentions.Model.MessageLoader.LoadingState> {
+        public static final C102081 INSTANCE = new C102081();
 
-        public AnonymousClass1() {
+        public C102081() {
             super(1);
         }
 
         @Override // kotlin.jvm.functions.Function1
         public final WidgetUserMentions.Model.MessageLoader.LoadingState invoke(WidgetUserMentions.Model.MessageLoader.LoadingState loadingState) {
-            Intrinsics3.checkNotNullParameter(loadingState, "it");
+            C12238m.checkNotNullParameter(loadingState, "it");
             return WidgetUserMentions.Model.MessageLoader.LoadingState.copy$default(loadingState, false, false, null, 6, null);
         }
     }
@@ -37,11 +37,11 @@ public final class WidgetUserMentions$Model$MessageLoader$handleLoadError$1 exte
     @Override // kotlin.jvm.functions.Function0
     public /* bridge */ /* synthetic */ Unit invoke() {
         invoke2();
-        return Unit.a;
+        return Unit.f27425a;
     }
 
     /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
     public final void invoke2() {
-        this.this$0.tryLoad(AnonymousClass1.INSTANCE);
+        this.this$0.tryLoad(C102081.INSTANCE);
     }
 }

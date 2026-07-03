@@ -25,7 +25,7 @@ import androidx.constraintlayout.motion.widget.Key;
 import androidx.coordinatorlayout.widget.CoordinatorLayout;
 import androidx.core.view.ViewCompat;
 import com.discord.models.domain.ModelAuditLogEntry;
-import com.google.android.material.R;
+import com.google.android.material.C10817R;
 import com.google.android.material.animation.AnimationUtils;
 import com.google.android.material.animation.AnimatorSetCompat;
 import com.google.android.material.animation.ArgbEvaluatorCompat;
@@ -59,86 +59,100 @@ public abstract class FabTransformationBehavior extends ExpandableTransformation
         public MotionSpec timings;
     }
 
-    public class a extends AnimatorListenerAdapter {
-        public final /* synthetic */ boolean a;
+    /* JADX INFO: renamed from: com.google.android.material.transformation.FabTransformationBehavior$a */
+    public class C11035a extends AnimatorListenerAdapter {
 
-        /* JADX INFO: renamed from: b, reason: collision with root package name */
-        public final /* synthetic */ View f3078b;
-        public final /* synthetic */ View c;
+        /* JADX INFO: renamed from: a */
+        public final /* synthetic */ boolean f21243a;
 
-        public a(FabTransformationBehavior fabTransformationBehavior, boolean z2, View view, View view2) {
-            this.a = z2;
-            this.f3078b = view;
-            this.c = view2;
+        /* JADX INFO: renamed from: b */
+        public final /* synthetic */ View f21244b;
+
+        /* JADX INFO: renamed from: c */
+        public final /* synthetic */ View f21245c;
+
+        public C11035a(FabTransformationBehavior fabTransformationBehavior, boolean z2, View view, View view2) {
+            this.f21243a = z2;
+            this.f21244b = view;
+            this.f21245c = view2;
         }
 
         @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
         public void onAnimationEnd(Animator animator) {
-            if (this.a) {
+            if (this.f21243a) {
                 return;
             }
-            this.f3078b.setVisibility(4);
-            this.c.setAlpha(1.0f);
-            this.c.setVisibility(0);
+            this.f21244b.setVisibility(4);
+            this.f21245c.setAlpha(1.0f);
+            this.f21245c.setVisibility(0);
         }
 
         @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
         public void onAnimationStart(Animator animator) {
-            if (this.a) {
-                this.f3078b.setVisibility(0);
-                this.c.setAlpha(0.0f);
-                this.c.setVisibility(4);
+            if (this.f21243a) {
+                this.f21244b.setVisibility(0);
+                this.f21245c.setAlpha(0.0f);
+                this.f21245c.setVisibility(4);
             }
         }
     }
 
-    public class b implements ValueAnimator.AnimatorUpdateListener {
-        public final /* synthetic */ View a;
+    /* JADX INFO: renamed from: com.google.android.material.transformation.FabTransformationBehavior$b */
+    public class C11036b implements ValueAnimator.AnimatorUpdateListener {
 
-        public b(FabTransformationBehavior fabTransformationBehavior, View view) {
-            this.a = view;
+        /* JADX INFO: renamed from: a */
+        public final /* synthetic */ View f21246a;
+
+        public C11036b(FabTransformationBehavior fabTransformationBehavior, View view) {
+            this.f21246a = view;
         }
 
         @Override // android.animation.ValueAnimator.AnimatorUpdateListener
         public void onAnimationUpdate(ValueAnimator valueAnimator) {
-            this.a.invalidate();
+            this.f21246a.invalidate();
         }
     }
 
-    public class c extends AnimatorListenerAdapter {
-        public final /* synthetic */ CircularRevealWidget a;
+    /* JADX INFO: renamed from: com.google.android.material.transformation.FabTransformationBehavior$c */
+    public class C11037c extends AnimatorListenerAdapter {
 
-        /* JADX INFO: renamed from: b, reason: collision with root package name */
-        public final /* synthetic */ Drawable f3079b;
+        /* JADX INFO: renamed from: a */
+        public final /* synthetic */ CircularRevealWidget f21247a;
 
-        public c(FabTransformationBehavior fabTransformationBehavior, CircularRevealWidget circularRevealWidget, Drawable drawable) {
-            this.a = circularRevealWidget;
-            this.f3079b = drawable;
+        /* JADX INFO: renamed from: b */
+        public final /* synthetic */ Drawable f21248b;
+
+        public C11037c(FabTransformationBehavior fabTransformationBehavior, CircularRevealWidget circularRevealWidget, Drawable drawable) {
+            this.f21247a = circularRevealWidget;
+            this.f21248b = drawable;
         }
 
         @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
         public void onAnimationEnd(Animator animator) {
-            this.a.setCircularRevealOverlayDrawable(null);
+            this.f21247a.setCircularRevealOverlayDrawable(null);
         }
 
         @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
         public void onAnimationStart(Animator animator) {
-            this.a.setCircularRevealOverlayDrawable(this.f3079b);
+            this.f21247a.setCircularRevealOverlayDrawable(this.f21248b);
         }
     }
 
-    public class d extends AnimatorListenerAdapter {
-        public final /* synthetic */ CircularRevealWidget a;
+    /* JADX INFO: renamed from: com.google.android.material.transformation.FabTransformationBehavior$d */
+    public class C11038d extends AnimatorListenerAdapter {
 
-        public d(FabTransformationBehavior fabTransformationBehavior, CircularRevealWidget circularRevealWidget) {
-            this.a = circularRevealWidget;
+        /* JADX INFO: renamed from: a */
+        public final /* synthetic */ CircularRevealWidget f21249a;
+
+        public C11038d(FabTransformationBehavior fabTransformationBehavior, CircularRevealWidget circularRevealWidget) {
+            this.f21249a = circularRevealWidget;
         }
 
         @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
         public void onAnimationEnd(Animator animator) {
-            CircularRevealWidget.RevealInfo revealInfo = this.a.getRevealInfo();
+            CircularRevealWidget.RevealInfo revealInfo = this.f21249a.getRevealInfo();
             revealInfo.radius = Float.MAX_VALUE;
-            this.a.setRevealInfo(revealInfo);
+            this.f21249a.setRevealInfo(revealInfo);
         }
     }
 
@@ -151,7 +165,7 @@ public abstract class FabTransformationBehavior extends ExpandableTransformation
 
     @Nullable
     private ViewGroup calculateChildContentContainer(@NonNull View view) {
-        View viewFindViewById = view.findViewById(R.id.mtrl_child_content_container);
+        View viewFindViewById = view.findViewById(C10817R.id.mtrl_child_content_container);
         if (viewFindViewById != null) {
             return toViewGroupOrNull(viewFindViewById);
         }
@@ -386,7 +400,7 @@ public abstract class FabTransformationBehavior extends ExpandableTransformation
                     fWidth = circularRevealWidget.getRevealInfo().radius;
                 }
                 animatorCreateCircularReveal = CircularRevealCompat.createCircularReveal(circularRevealWidget, fCalculateRevealCenterX, fCalculateRevealCenterY, MathUtils.distanceToFurthestCorner(fCalculateRevealCenterX, fCalculateRevealCenterY, 0.0f, 0.0f, f, f2));
-                animatorCreateCircularReveal.addListener(new d(this, circularRevealWidget));
+                animatorCreateCircularReveal.addListener(new C11038d(this, circularRevealWidget));
                 createPreFillRadialExpansion(view2, timing.getDelay(), (int) fCalculateRevealCenterX, (int) fCalculateRevealCenterY, fWidth, list);
             } else {
                 float f3 = circularRevealWidget.getRevealInfo().radius;
@@ -421,10 +435,10 @@ public abstract class FabTransformationBehavior extends ExpandableTransformation
             } else {
                 objectAnimatorOfInt = ObjectAnimator.ofInt(drawable, DrawableAlphaProperty.DRAWABLE_ALPHA_COMPAT, 255);
             }
-            objectAnimatorOfInt.addUpdateListener(new b(this, view2));
+            objectAnimatorOfInt.addUpdateListener(new C11036b(this, view2));
             fabTransformationSpec.timings.getTiming("iconFade").apply(objectAnimatorOfInt);
             list.add(objectAnimatorOfInt);
-            list2.add(new c(this, circularRevealWidget, drawable));
+            list2.add(new C11037c(this, circularRevealWidget, drawable));
         }
     }
 
@@ -532,7 +546,7 @@ public abstract class FabTransformationBehavior extends ExpandableTransformation
         createChildrenFadeAnimation(view, view2, z2, z3, fabTransformationSpecOnCreateMotionSpec, arrayList, arrayList2);
         AnimatorSet animatorSet = new AnimatorSet();
         AnimatorSetCompat.playTogether(animatorSet, arrayList);
-        animatorSet.addListener(new a(this, z2, view2, view));
+        animatorSet.addListener(new C11035a(this, z2, view2, view));
         int size = arrayList2.size();
         for (int i = 0; i < size; i++) {
             animatorSet.addListener((Animator.AnimatorListener) arrayList2.get(i));

@@ -1,7 +1,7 @@
 package com.discord.models.domain;
 
-import b.d.b.a.outline;
-import d0.z.d.Intrinsics3;
+import p007b.p100d.p104b.p105a.C1643a;
+import p507d0.p592z.p594d.C12238m;
 
 /* JADX INFO: compiled from: ModelApplicationStreamPreview.kt */
 /* JADX INFO: loaded from: classes.dex */
@@ -9,7 +9,7 @@ public final /* data */ class ModelApplicationStreamPreview {
     private final String url;
 
     public ModelApplicationStreamPreview(String str) {
-        Intrinsics3.checkNotNullParameter(str, "url");
+        C12238m.checkNotNullParameter(str, "url");
         this.url = str;
     }
 
@@ -26,13 +26,13 @@ public final /* data */ class ModelApplicationStreamPreview {
     }
 
     public final ModelApplicationStreamPreview copy(String url) {
-        Intrinsics3.checkNotNullParameter(url, "url");
+        C12238m.checkNotNullParameter(url, "url");
         return new ModelApplicationStreamPreview(url);
     }
 
     public boolean equals(Object other) {
         if (this != other) {
-            return (other instanceof ModelApplicationStreamPreview) && Intrinsics3.areEqual(this.url, ((ModelApplicationStreamPreview) other).url);
+            return (other instanceof ModelApplicationStreamPreview) && C12238m.areEqual(this.url, ((ModelApplicationStreamPreview) other).url);
         }
         return true;
     }
@@ -50,6 +50,6 @@ public final /* data */ class ModelApplicationStreamPreview {
     }
 
     public String toString() {
-        return outline.J(outline.U("ModelApplicationStreamPreview(url="), this.url, ")");
+        return C1643a.m822J(C1643a.m833U("ModelApplicationStreamPreview(url="), this.url, ")");
     }
 }

@@ -1,9 +1,9 @@
 package org.webrtc;
 
-import b.d.b.a.outline;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
+import p007b.p100d.p104b.p105a.C1643a;
 
 /* JADX INFO: loaded from: classes3.dex */
 public class MediaStream {
@@ -44,7 +44,7 @@ public class MediaStream {
                 return;
             }
         }
-        Logging.e(TAG, "Couldn't not find track");
+        Logging.m11028e(TAG, "Couldn't not find track");
     }
 
     @CalledByNative
@@ -122,14 +122,14 @@ public class MediaStream {
     }
 
     public String toString() {
-        StringBuilder sbU = outline.U("[");
-        sbU.append(getId());
-        sbU.append(":A=");
-        sbU.append(this.audioTracks.size());
-        sbU.append(":V=");
-        sbU.append(this.videoTracks.size());
-        sbU.append("]");
-        return sbU.toString();
+        StringBuilder sbM833U = C1643a.m833U("[");
+        sbM833U.append(getId());
+        sbM833U.append(":A=");
+        sbM833U.append(this.audioTracks.size());
+        sbM833U.append(":V=");
+        sbM833U.append(this.videoTracks.size());
+        sbM833U.append("]");
+        return sbM833U.toString();
     }
 
     public boolean addTrack(VideoTrack videoTrack) {

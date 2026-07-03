@@ -1,9 +1,9 @@
 package com.discord.rtcconnection;
 
-import a0.a.a.b;
-import b.d.b.a.outline;
-import com.discord.rtcconnection.socket.io.Payloads;
-import d0.z.d.Intrinsics3;
+import com.discord.rtcconnection.socket.p499io.Payloads;
+import p001a0.p002a.p003a.C0002b;
+import p007b.p100d.p104b.p105a.C1643a;
+import p507d0.p592z.p594d.C12238m;
 
 /* JADX INFO: compiled from: VideoMetadata.kt */
 /* JADX INFO: loaded from: classes.dex */
@@ -12,7 +12,7 @@ public final /* data */ class VideoMetadata {
     /* JADX INFO: renamed from: a, reason: from kotlin metadata */
     public final long userID;
 
-    /* JADX INFO: renamed from: b, reason: collision with root package name and from kotlin metadata */
+    /* JADX INFO: renamed from: b, reason: from kotlin metadata */
     public final int maxWidth;
 
     /* JADX INFO: renamed from: c, reason: from kotlin metadata */
@@ -25,7 +25,7 @@ public final /* data */ class VideoMetadata {
     public final Payloads.ResolutionType type;
 
     public VideoMetadata(long j, int i, int i2, Integer num, Payloads.ResolutionType resolutionType) {
-        Intrinsics3.checkNotNullParameter(resolutionType, "type");
+        C12238m.checkNotNullParameter(resolutionType, "type");
         this.userID = j;
         this.maxWidth = i;
         this.maxHeight = i2;
@@ -41,29 +41,29 @@ public final /* data */ class VideoMetadata {
             return false;
         }
         VideoMetadata videoMetadata = (VideoMetadata) other;
-        return this.userID == videoMetadata.userID && this.maxWidth == videoMetadata.maxWidth && this.maxHeight == videoMetadata.maxHeight && Intrinsics3.areEqual(this.maxFrameRate, videoMetadata.maxFrameRate) && Intrinsics3.areEqual(this.type, videoMetadata.type);
+        return this.userID == videoMetadata.userID && this.maxWidth == videoMetadata.maxWidth && this.maxHeight == videoMetadata.maxHeight && C12238m.areEqual(this.maxFrameRate, videoMetadata.maxFrameRate) && C12238m.areEqual(this.type, videoMetadata.type);
     }
 
     public int hashCode() {
-        int iA = ((((b.a(this.userID) * 31) + this.maxWidth) * 31) + this.maxHeight) * 31;
+        int iM3a = ((((C0002b.m3a(this.userID) * 31) + this.maxWidth) * 31) + this.maxHeight) * 31;
         Integer num = this.maxFrameRate;
-        int iHashCode = (iA + (num != null ? num.hashCode() : 0)) * 31;
+        int iHashCode = (iM3a + (num != null ? num.hashCode() : 0)) * 31;
         Payloads.ResolutionType resolutionType = this.type;
         return iHashCode + (resolutionType != null ? resolutionType.hashCode() : 0);
     }
 
     public String toString() {
-        StringBuilder sbU = outline.U("VideoMetadata(userID=");
-        sbU.append(this.userID);
-        sbU.append(", maxWidth=");
-        sbU.append(this.maxWidth);
-        sbU.append(", maxHeight=");
-        sbU.append(this.maxHeight);
-        sbU.append(", maxFrameRate=");
-        sbU.append(this.maxFrameRate);
-        sbU.append(", type=");
-        sbU.append(this.type);
-        sbU.append(")");
-        return sbU.toString();
+        StringBuilder sbM833U = C1643a.m833U("VideoMetadata(userID=");
+        sbM833U.append(this.userID);
+        sbM833U.append(", maxWidth=");
+        sbM833U.append(this.maxWidth);
+        sbM833U.append(", maxHeight=");
+        sbM833U.append(this.maxHeight);
+        sbM833U.append(", maxFrameRate=");
+        sbM833U.append(this.maxFrameRate);
+        sbM833U.append(", type=");
+        sbM833U.append(this.type);
+        sbM833U.append(")");
+        return sbM833U.toString();
     }
 }

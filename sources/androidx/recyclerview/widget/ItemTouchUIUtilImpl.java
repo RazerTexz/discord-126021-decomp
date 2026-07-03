@@ -3,7 +3,7 @@ package androidx.recyclerview.widget;
 import android.graphics.Canvas;
 import android.view.View;
 import androidx.core.view.ViewCompat;
-import androidx.recyclerview.R;
+import androidx.recyclerview.C0534R;
 
 /* JADX INFO: loaded from: classes.dex */
 public class ItemTouchUIUtilImpl implements ItemTouchUIUtil {
@@ -26,7 +26,7 @@ public class ItemTouchUIUtilImpl implements ItemTouchUIUtil {
 
     @Override // androidx.recyclerview.widget.ItemTouchUIUtil
     public void clearView(View view) {
-        int i = R.id.item_touch_helper_previous_elevation;
+        int i = C0534R.id.item_touch_helper_previous_elevation;
         Object tag = view.getTag(i);
         if (tag instanceof Float) {
             ViewCompat.setElevation(view, ((Float) tag).floatValue());
@@ -39,7 +39,7 @@ public class ItemTouchUIUtilImpl implements ItemTouchUIUtil {
     @Override // androidx.recyclerview.widget.ItemTouchUIUtil
     public void onDraw(Canvas canvas, RecyclerView recyclerView, View view, float f, float f2, int i, boolean z2) {
         if (z2) {
-            int i2 = R.id.item_touch_helper_previous_elevation;
+            int i2 = C0534R.id.item_touch_helper_previous_elevation;
             if (view.getTag(i2) == null) {
                 Float fValueOf = Float.valueOf(ViewCompat.getElevation(view));
                 ViewCompat.setElevation(view, findMaxElevation(recyclerView, view) + 1.0f);

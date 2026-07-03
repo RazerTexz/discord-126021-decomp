@@ -5,8 +5,8 @@ import android.animation.ObjectAnimator;
 import android.util.Property;
 import android.view.View;
 import android.view.animation.AccelerateDecelerateInterpolator;
-import d0.z.d.Intrinsics3;
 import kotlin.jvm.functions.Function0;
+import p507d0.p592z.p594d.C12238m;
 
 /* JADX INFO: compiled from: RingAnimator.kt */
 /* JADX INFO: loaded from: classes2.dex */
@@ -17,8 +17,8 @@ public final class RingAnimator {
     private final View view;
 
     public RingAnimator(View view, Function0<Boolean> function0) {
-        Intrinsics3.checkNotNullParameter(view, "view");
-        Intrinsics3.checkNotNullParameter(function0, "ringingPredicate");
+        C12238m.checkNotNullParameter(view, "view");
+        C12238m.checkNotNullParameter(function0, "ringingPredicate");
         this.view = view;
         this.ringingPredicate = function0;
         ObjectAnimator objectAnimatorOfFloat = ObjectAnimator.ofFloat(view, (Property<View, Float>) View.ALPHA, 1.0f, 0.1f);
@@ -29,24 +29,24 @@ public final class RingAnimator {
         objectAnimatorOfFloat.addListener(new Animator.AnimatorListener() { // from class: com.discord.utilities.anim.RingAnimator$$special$$inlined$apply$lambda$1
             @Override // android.animation.Animator.AnimatorListener
             public void onAnimationCancel(Animator animator) {
-                Intrinsics3.checkNotNullParameter(animator, "animator");
+                C12238m.checkNotNullParameter(animator, "animator");
             }
 
             @Override // android.animation.Animator.AnimatorListener
             public void onAnimationEnd(Animator animator) {
-                Intrinsics3.checkNotNullParameter(animator, "animator");
+                C12238m.checkNotNullParameter(animator, "animator");
                 this.this$0.isAnimating = false;
                 this.this$0.onUpdate();
             }
 
             @Override // android.animation.Animator.AnimatorListener
             public void onAnimationRepeat(Animator animator) {
-                Intrinsics3.checkNotNullParameter(animator, "animator");
+                C12238m.checkNotNullParameter(animator, "animator");
             }
 
             @Override // android.animation.Animator.AnimatorListener
             public void onAnimationStart(Animator animator) {
-                Intrinsics3.checkNotNullParameter(animator, "animator");
+                C12238m.checkNotNullParameter(animator, "animator");
             }
         });
         this.fadeAnim = objectAnimatorOfFloat;
@@ -68,7 +68,7 @@ public final class RingAnimator {
             }
             this.fadeAnim.cancel();
             ObjectAnimator objectAnimator = this.fadeAnim;
-            Intrinsics3.checkNotNullExpressionValue(objectAnimator, "fadeAnim");
+            C12238m.checkNotNullExpressionValue(objectAnimator, "fadeAnim");
             objectAnimator.setDuration(0L);
         }
     }

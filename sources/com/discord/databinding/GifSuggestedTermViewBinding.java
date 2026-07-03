@@ -10,25 +10,27 @@ import com.google.android.flexbox.FlexboxLayout;
 /* JADX INFO: loaded from: classes.dex */
 public final class GifSuggestedTermViewBinding implements ViewBinding {
 
+    /* JADX INFO: renamed from: a */
     @NonNull
-    public final LinearLayout a;
+    public final LinearLayout f15105a;
 
-    /* JADX INFO: renamed from: b, reason: collision with root package name */
+    /* JADX INFO: renamed from: b */
     @NonNull
-    public final FlexboxLayout f2113b;
+    public final FlexboxLayout f15106b;
 
+    /* JADX INFO: renamed from: c */
     @NonNull
-    public final TextView c;
+    public final TextView f15107c;
 
     public GifSuggestedTermViewBinding(@NonNull LinearLayout linearLayout, @NonNull LinearLayout linearLayout2, @NonNull FlexboxLayout flexboxLayout, @NonNull TextView textView) {
-        this.a = linearLayout;
-        this.f2113b = flexboxLayout;
-        this.c = textView;
+        this.f15105a = linearLayout;
+        this.f15106b = flexboxLayout;
+        this.f15107c = textView;
     }
 
     @Override // androidx.viewbinding.ViewBinding
     @NonNull
     public View getRoot() {
-        return this.a;
+        return this.f15105a;
     }
 }

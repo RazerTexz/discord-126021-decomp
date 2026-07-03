@@ -12,8 +12,8 @@ import androidx.annotation.NonNull;
 import androidx.annotation.RequiresApi;
 import androidx.core.util.ObjectsCompat;
 import androidx.media.AudioAttributesCompat;
-import b.d.b.a.outline;
 import java.util.Objects;
+import p007b.p100d.p104b.p105a.C1643a;
 
 /* JADX INFO: loaded from: classes.dex */
 public class AudioFocusRequestCompat {
@@ -69,7 +69,7 @@ public class AudioFocusRequestCompat {
         @NonNull
         public Builder setFocusGain(int i) {
             if (!isValidFocusGain(i)) {
-                throw new IllegalArgumentException(outline.q("Illegal audio focus gain type ", i));
+                throw new IllegalArgumentException(C1643a.m871q("Illegal audio focus gain type ", i));
             }
             this.mFocusGain = i;
             return this;

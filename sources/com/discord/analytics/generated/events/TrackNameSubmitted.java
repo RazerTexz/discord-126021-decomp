@@ -1,14 +1,14 @@
 package com.discord.analytics.generated.events;
 
-import b.d.b.a.outline;
 import com.discord.analytics.generated.traits.TrackBase;
-import com.discord.analytics.generated.traits.TrackBase2;
+import com.discord.analytics.generated.traits.TrackBaseReceiver;
 import com.discord.api.science.AnalyticsSchema;
-import d0.z.d.Intrinsics3;
+import p007b.p100d.p104b.p105a.C1643a;
+import p507d0.p592z.p594d.C12238m;
 
 /* JADX INFO: compiled from: TrackNameSubmitted.kt */
 /* JADX INFO: loaded from: classes.dex */
-public final /* data */ class TrackNameSubmitted implements AnalyticsSchema, TrackBase2 {
+public final /* data */ class TrackNameSubmitted implements AnalyticsSchema, TrackBaseReceiver {
     private TrackBase trackBase;
     private final Long numWords = null;
     private final Long numChars = null;
@@ -28,7 +28,7 @@ public final /* data */ class TrackNameSubmitted implements AnalyticsSchema, Tra
             return false;
         }
         TrackNameSubmitted trackNameSubmitted = (TrackNameSubmitted) other;
-        return Intrinsics3.areEqual(this.numWords, trackNameSubmitted.numWords) && Intrinsics3.areEqual(this.numChars, trackNameSubmitted.numChars);
+        return C12238m.areEqual(this.numWords, trackNameSubmitted.numWords) && C12238m.areEqual(this.numChars, trackNameSubmitted.numChars);
     }
 
     public int hashCode() {
@@ -39,9 +39,9 @@ public final /* data */ class TrackNameSubmitted implements AnalyticsSchema, Tra
     }
 
     public String toString() {
-        StringBuilder sbU = outline.U("TrackNameSubmitted(numWords=");
-        sbU.append(this.numWords);
-        sbU.append(", numChars=");
-        return outline.G(sbU, this.numChars, ")");
+        StringBuilder sbM833U = C1643a.m833U("TrackNameSubmitted(numWords=");
+        sbM833U.append(this.numWords);
+        sbM833U.append(", numChars=");
+        return C1643a.m819G(sbM833U, this.numChars, ")");
     }
 }

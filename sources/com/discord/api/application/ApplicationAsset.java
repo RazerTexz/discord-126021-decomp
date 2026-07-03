@@ -1,8 +1,8 @@
 package com.discord.api.application;
 
-import b.d.b.a.outline;
 import com.discord.models.domain.ModelAuditLogEntry;
-import d0.z.d.Intrinsics3;
+import p007b.p100d.p104b.p105a.C1643a;
+import p507d0.p592z.p594d.C12238m;
 
 /* JADX INFO: compiled from: ApplicationAsset.kt */
 /* JADX INFO: loaded from: classes.dex */
@@ -29,7 +29,7 @@ public final /* data */ class ApplicationAsset {
             return false;
         }
         ApplicationAsset applicationAsset = (ApplicationAsset) other;
-        return this.id == applicationAsset.id && this.type == applicationAsset.type && Intrinsics3.areEqual(this.name, applicationAsset.name);
+        return this.id == applicationAsset.id && this.type == applicationAsset.type && C12238m.areEqual(this.name, applicationAsset.name);
     }
 
     public int hashCode() {
@@ -40,11 +40,11 @@ public final /* data */ class ApplicationAsset {
     }
 
     public String toString() {
-        StringBuilder sbU = outline.U("ApplicationAsset(id=");
-        sbU.append(this.id);
-        sbU.append(", type=");
-        sbU.append(this.type);
-        sbU.append(", name=");
-        return outline.J(sbU, this.name, ")");
+        StringBuilder sbM833U = C1643a.m833U("ApplicationAsset(id=");
+        sbM833U.append(this.id);
+        sbM833U.append(", type=");
+        sbM833U.append(this.type);
+        sbM833U.append(", name=");
+        return C1643a.m822J(sbM833U, this.name, ")");
     }
 }

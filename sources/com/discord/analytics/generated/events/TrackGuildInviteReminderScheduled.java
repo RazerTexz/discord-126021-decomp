@@ -1,14 +1,14 @@
 package com.discord.analytics.generated.events;
 
-import b.d.b.a.outline;
 import com.discord.analytics.generated.traits.TrackBase;
-import com.discord.analytics.generated.traits.TrackBase2;
+import com.discord.analytics.generated.traits.TrackBaseReceiver;
 import com.discord.api.science.AnalyticsSchema;
-import d0.z.d.Intrinsics3;
+import p007b.p100d.p104b.p105a.C1643a;
+import p507d0.p592z.p594d.C12238m;
 
 /* JADX INFO: compiled from: TrackGuildInviteReminderScheduled.kt */
 /* JADX INFO: loaded from: classes.dex */
-public final /* data */ class TrackGuildInviteReminderScheduled implements AnalyticsSchema, TrackBase2 {
+public final /* data */ class TrackGuildInviteReminderScheduled implements AnalyticsSchema, TrackBaseReceiver {
     private TrackBase trackBase;
     private final Long guildId = null;
     private final transient String analyticsSchemaTypeName = "guild_invite_reminder_scheduled";
@@ -21,7 +21,7 @@ public final /* data */ class TrackGuildInviteReminderScheduled implements Analy
 
     public boolean equals(Object other) {
         if (this != other) {
-            return (other instanceof TrackGuildInviteReminderScheduled) && Intrinsics3.areEqual(this.guildId, ((TrackGuildInviteReminderScheduled) other).guildId);
+            return (other instanceof TrackGuildInviteReminderScheduled) && C12238m.areEqual(this.guildId, ((TrackGuildInviteReminderScheduled) other).guildId);
         }
         return true;
     }
@@ -35,6 +35,6 @@ public final /* data */ class TrackGuildInviteReminderScheduled implements Analy
     }
 
     public String toString() {
-        return outline.G(outline.U("TrackGuildInviteReminderScheduled(guildId="), this.guildId, ")");
+        return C1643a.m819G(C1643a.m833U("TrackGuildInviteReminderScheduled(guildId="), this.guildId, ")");
     }
 }

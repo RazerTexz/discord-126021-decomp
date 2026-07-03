@@ -1,14 +1,14 @@
 package com.discord.analytics.generated.events;
 
-import b.d.b.a.outline;
 import com.discord.analytics.generated.traits.TrackBase;
-import com.discord.analytics.generated.traits.TrackBase2;
+import com.discord.analytics.generated.traits.TrackBaseReceiver;
 import com.discord.api.science.AnalyticsSchema;
-import d0.z.d.Intrinsics3;
+import p007b.p100d.p104b.p105a.C1643a;
+import p507d0.p592z.p594d.C12238m;
 
 /* JADX INFO: compiled from: TrackSubscriptionCodeUsed.kt */
 /* JADX INFO: loaded from: classes.dex */
-public final /* data */ class TrackSubscriptionCodeUsed implements AnalyticsSchema, TrackBase2 {
+public final /* data */ class TrackSubscriptionCodeUsed implements AnalyticsSchema, TrackBaseReceiver {
     private TrackBase trackBase;
     private final CharSequence couponCode = null;
     private final CharSequence source = null;
@@ -30,7 +30,7 @@ public final /* data */ class TrackSubscriptionCodeUsed implements AnalyticsSche
             return false;
         }
         TrackSubscriptionCodeUsed trackSubscriptionCodeUsed = (TrackSubscriptionCodeUsed) other;
-        return Intrinsics3.areEqual(this.couponCode, trackSubscriptionCodeUsed.couponCode) && Intrinsics3.areEqual(this.source, trackSubscriptionCodeUsed.source) && Intrinsics3.areEqual(this.subscriptionType, trackSubscriptionCodeUsed.subscriptionType) && Intrinsics3.areEqual(this.currentPeriodEnd, trackSubscriptionCodeUsed.currentPeriodEnd);
+        return C12238m.areEqual(this.couponCode, trackSubscriptionCodeUsed.couponCode) && C12238m.areEqual(this.source, trackSubscriptionCodeUsed.source) && C12238m.areEqual(this.subscriptionType, trackSubscriptionCodeUsed.subscriptionType) && C12238m.areEqual(this.currentPeriodEnd, trackSubscriptionCodeUsed.currentPeriodEnd);
     }
 
     public int hashCode() {
@@ -45,13 +45,13 @@ public final /* data */ class TrackSubscriptionCodeUsed implements AnalyticsSche
     }
 
     public String toString() {
-        StringBuilder sbU = outline.U("TrackSubscriptionCodeUsed(couponCode=");
-        sbU.append(this.couponCode);
-        sbU.append(", source=");
-        sbU.append(this.source);
-        sbU.append(", subscriptionType=");
-        sbU.append(this.subscriptionType);
-        sbU.append(", currentPeriodEnd=");
-        return outline.G(sbU, this.currentPeriodEnd, ")");
+        StringBuilder sbM833U = C1643a.m833U("TrackSubscriptionCodeUsed(couponCode=");
+        sbM833U.append(this.couponCode);
+        sbM833U.append(", source=");
+        sbM833U.append(this.source);
+        sbM833U.append(", subscriptionType=");
+        sbM833U.append(this.subscriptionType);
+        sbM833U.append(", currentPeriodEnd=");
+        return C1643a.m819G(sbM833U, this.currentPeriodEnd, ")");
     }
 }

@@ -1,20 +1,20 @@
 package com.discord.analytics.generated.events;
 
-import b.d.b.a.outline;
 import com.discord.analytics.generated.traits.TrackBase;
-import com.discord.analytics.generated.traits.TrackBase2;
+import com.discord.analytics.generated.traits.TrackBaseReceiver;
 import com.discord.analytics.generated.traits.TrackChannel;
-import com.discord.analytics.generated.traits.TrackChannel2;
+import com.discord.analytics.generated.traits.TrackChannelReceiver;
 import com.discord.analytics.generated.traits.TrackGuild;
-import com.discord.analytics.generated.traits.TrackGuild2;
+import com.discord.analytics.generated.traits.TrackGuildReceiver;
 import com.discord.analytics.generated.traits.TrackLocationMetadata;
-import com.discord.analytics.generated.traits.TrackLocationMetadata2;
+import com.discord.analytics.generated.traits.TrackLocationMetadataReceiver;
 import com.discord.api.science.AnalyticsSchema;
-import d0.z.d.Intrinsics3;
+import p007b.p100d.p104b.p105a.C1643a;
+import p507d0.p592z.p594d.C12238m;
 
 /* JADX INFO: compiled from: TrackSearchStarted.kt */
 /* JADX INFO: loaded from: classes.dex */
-public final /* data */ class TrackSearchStarted implements AnalyticsSchema, TrackBase2, TrackLocationMetadata2, TrackGuild2, TrackChannel2 {
+public final /* data */ class TrackSearchStarted implements AnalyticsSchema, TrackBaseReceiver, TrackLocationMetadataReceiver, TrackGuildReceiver, TrackChannelReceiver {
     private final transient String analyticsSchemaTypeName;
     private final Long categoryId;
     private final CharSequence loadId;
@@ -28,14 +28,15 @@ public final /* data */ class TrackSearchStarted implements AnalyticsSchema, Tra
     private TrackGuild trackGuild;
     private TrackLocationMetadata trackLocationMetadata;
 
-    @Override // com.discord.analytics.generated.traits.TrackGuild2
+    @Override // com.discord.analytics.generated.traits.TrackGuildReceiver
     /* JADX INFO: renamed from: a, reason: from getter */
     public TrackGuild getTrackGuild() {
         return this.trackGuild;
     }
 
-    @Override // com.discord.analytics.generated.traits.TrackGuild2
-    public void c(TrackGuild trackGuild) {
+    @Override // com.discord.analytics.generated.traits.TrackGuildReceiver
+    /* JADX INFO: renamed from: c */
+    public void mo7508c(TrackGuild trackGuild) {
         this.trackGuild = trackGuild;
     }
 
@@ -53,7 +54,7 @@ public final /* data */ class TrackSearchStarted implements AnalyticsSchema, Tra
             return false;
         }
         TrackSearchStarted trackSearchStarted = (TrackSearchStarted) other;
-        return Intrinsics3.areEqual(this.searchType, trackSearchStarted.searchType) && Intrinsics3.areEqual(this.loadId, trackSearchStarted.loadId) && Intrinsics3.areEqual(this.prevSearchId, trackSearchStarted.prevSearchId) && this.modifiers == trackSearchStarted.modifiers && Intrinsics3.areEqual(this.numModifiers, trackSearchStarted.numModifiers) && Intrinsics3.areEqual(this.previewEnabled, trackSearchStarted.previewEnabled) && Intrinsics3.areEqual(this.categoryId, trackSearchStarted.categoryId);
+        return C12238m.areEqual(this.searchType, trackSearchStarted.searchType) && C12238m.areEqual(this.loadId, trackSearchStarted.loadId) && C12238m.areEqual(this.prevSearchId, trackSearchStarted.prevSearchId) && this.modifiers == trackSearchStarted.modifiers && C12238m.areEqual(this.numModifiers, trackSearchStarted.numModifiers) && C12238m.areEqual(this.previewEnabled, trackSearchStarted.previewEnabled) && C12238m.areEqual(this.categoryId, trackSearchStarted.categoryId);
     }
 
     public int hashCode() {
@@ -74,19 +75,19 @@ public final /* data */ class TrackSearchStarted implements AnalyticsSchema, Tra
     }
 
     public String toString() {
-        StringBuilder sbU = outline.U("TrackSearchStarted(searchType=");
-        sbU.append(this.searchType);
-        sbU.append(", loadId=");
-        sbU.append(this.loadId);
-        sbU.append(", prevSearchId=");
-        sbU.append(this.prevSearchId);
-        sbU.append(", modifiers=");
-        sbU.append(this.modifiers);
-        sbU.append(", numModifiers=");
-        sbU.append(this.numModifiers);
-        sbU.append(", previewEnabled=");
-        sbU.append(this.previewEnabled);
-        sbU.append(", categoryId=");
-        return outline.G(sbU, this.categoryId, ")");
+        StringBuilder sbM833U = C1643a.m833U("TrackSearchStarted(searchType=");
+        sbM833U.append(this.searchType);
+        sbM833U.append(", loadId=");
+        sbM833U.append(this.loadId);
+        sbM833U.append(", prevSearchId=");
+        sbM833U.append(this.prevSearchId);
+        sbM833U.append(", modifiers=");
+        sbM833U.append(this.modifiers);
+        sbM833U.append(", numModifiers=");
+        sbM833U.append(this.numModifiers);
+        sbM833U.append(", previewEnabled=");
+        sbM833U.append(this.previewEnabled);
+        sbM833U.append(", categoryId=");
+        return C1643a.m819G(sbM833U, this.categoryId, ")");
     }
 }

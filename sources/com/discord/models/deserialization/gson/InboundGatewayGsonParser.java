@@ -1,13 +1,13 @@
 package com.discord.models.deserialization.gson;
 
 import androidx.exifinterface.media.ExifInterface;
-import b.a.b.TypeAdapterRegistrar;
-import b.i.d.FieldNamingPolicy;
-import b.i.d.GsonBuilder;
 import com.discord.models.domain.Model;
 import com.google.gson.Gson;
 import com.google.gson.stream.JsonReader;
-import d0.z.d.Intrinsics3;
+import p007b.p008a.p017b.C0850a;
+import p007b.p225i.p408d.C4901e;
+import p007b.p225i.p408d.EnumC4899c;
+import p507d0.p592z.p594d.C12238m;
 
 /* JADX INFO: compiled from: InboundGatewayGsonParser.kt */
 /* JADX INFO: loaded from: classes.dex */
@@ -16,29 +16,29 @@ public final class InboundGatewayGsonParser {
     private static final Gson gatewayGsonInstance;
 
     static {
-        GsonBuilder gsonBuilder = new GsonBuilder();
-        gsonBuilder.a = gsonBuilder.a.j(8);
-        gsonBuilder.c = FieldNamingPolicy.m;
-        Intrinsics3.checkNotNullExpressionValue(gsonBuilder, "GsonBuilder()\n          …ER_CASE_WITH_UNDERSCORES)");
-        TypeAdapterRegistrar.a(gsonBuilder);
-        gatewayGsonInstance = gsonBuilder.a();
+        C4901e c4901e = new C4901e();
+        c4901e.f13095a = c4901e.f13095a.m9222j(8);
+        c4901e.f13097c = EnumC4899c.f13091m;
+        C12238m.checkNotNullExpressionValue(c4901e, "GsonBuilder()\n          …ER_CASE_WITH_UNDERSCORES)");
+        C0850a.m147a(c4901e);
+        gatewayGsonInstance = c4901e.m6851a();
     }
 
     private InboundGatewayGsonParser() {
     }
 
     public static final <T> T fromJson(Model.JsonReader reader, Class<T> clazz) {
-        Intrinsics3.checkNotNullParameter(reader, "reader");
-        Intrinsics3.checkNotNullParameter(clazz, "clazz");
-        JsonReader jsonReader = reader.in;
-        Intrinsics3.checkNotNullExpressionValue(jsonReader, "reader.`in`");
+        C12238m.checkNotNullParameter(reader, "reader");
+        C12238m.checkNotNullParameter(clazz, "clazz");
+        JsonReader jsonReader = reader.f18559in;
+        C12238m.checkNotNullExpressionValue(jsonReader, "reader.`in`");
         return (T) fromJson(jsonReader, clazz);
     }
 
     public static final <T> String toJson(T source) {
-        String strM = gatewayGsonInstance.m(source);
-        Intrinsics3.checkNotNullExpressionValue(strM, "gatewayGsonInstance.toJson(source)");
-        return strM;
+        String strM9209m = gatewayGsonInstance.m9209m(source);
+        C12238m.checkNotNullExpressionValue(strM9209m, "gatewayGsonInstance.toJson(source)");
+        return strM9209m;
     }
 
     public final Gson getGatewayGsonInstance() {
@@ -46,8 +46,8 @@ public final class InboundGatewayGsonParser {
     }
 
     public static final <T> T fromJson(JsonReader reader, Class<T> clazz) {
-        Intrinsics3.checkNotNullParameter(reader, "reader");
-        Intrinsics3.checkNotNullParameter(clazz, "clazz");
-        return (T) gatewayGsonInstance.d(reader, clazz);
+        C12238m.checkNotNullParameter(reader, "reader");
+        C12238m.checkNotNullParameter(clazz, "clazz");
+        return (T) gatewayGsonInstance.m9200d(reader, clazz);
     }
 }

@@ -1,14 +1,14 @@
 package com.discord.analytics.generated.events;
 
-import b.d.b.a.outline;
 import com.discord.analytics.generated.traits.TrackBase;
-import com.discord.analytics.generated.traits.TrackBase2;
+import com.discord.analytics.generated.traits.TrackBaseReceiver;
 import com.discord.api.science.AnalyticsSchema;
-import d0.z.d.Intrinsics3;
+import p007b.p100d.p104b.p105a.C1643a;
+import p507d0.p592z.p594d.C12238m;
 
 /* JADX INFO: compiled from: TrackSubscriptionPaymentSourceUpdated.kt */
 /* JADX INFO: loaded from: classes.dex */
-public final /* data */ class TrackSubscriptionPaymentSourceUpdated implements AnalyticsSchema, TrackBase2 {
+public final /* data */ class TrackSubscriptionPaymentSourceUpdated implements AnalyticsSchema, TrackBaseReceiver {
     private TrackBase trackBase;
     private final Long subscriptionId = null;
     private final Long subscriptionType = null;
@@ -39,7 +39,7 @@ public final /* data */ class TrackSubscriptionPaymentSourceUpdated implements A
             return false;
         }
         TrackSubscriptionPaymentSourceUpdated trackSubscriptionPaymentSourceUpdated = (TrackSubscriptionPaymentSourceUpdated) other;
-        return Intrinsics3.areEqual(this.subscriptionId, trackSubscriptionPaymentSourceUpdated.subscriptionId) && Intrinsics3.areEqual(this.subscriptionType, trackSubscriptionPaymentSourceUpdated.subscriptionType) && Intrinsics3.areEqual(this.paymentGatewayPlanId, trackSubscriptionPaymentSourceUpdated.paymentGatewayPlanId) && Intrinsics3.areEqual(this.planId, trackSubscriptionPaymentSourceUpdated.planId) && Intrinsics3.areEqual(this.paymentGateway, trackSubscriptionPaymentSourceUpdated.paymentGateway) && Intrinsics3.areEqual(this.previousPaymentSourceId, trackSubscriptionPaymentSourceUpdated.previousPaymentSourceId) && Intrinsics3.areEqual(this.previousPaymentSourceGateway, trackSubscriptionPaymentSourceUpdated.previousPaymentSourceGateway) && Intrinsics3.areEqual(this.previousPaymentSourceCountry, trackSubscriptionPaymentSourceUpdated.previousPaymentSourceCountry) && Intrinsics3.areEqual(this.paymentSourceId, trackSubscriptionPaymentSourceUpdated.paymentSourceId) && Intrinsics3.areEqual(this.paymentSourceGateway, trackSubscriptionPaymentSourceUpdated.paymentSourceGateway) && Intrinsics3.areEqual(this.paymentSourceCountry, trackSubscriptionPaymentSourceUpdated.paymentSourceCountry) && Intrinsics3.areEqual(this.currentPeriodStart, trackSubscriptionPaymentSourceUpdated.currentPeriodStart) && Intrinsics3.areEqual(this.currentPeriodEnd, trackSubscriptionPaymentSourceUpdated.currentPeriodEnd);
+        return C12238m.areEqual(this.subscriptionId, trackSubscriptionPaymentSourceUpdated.subscriptionId) && C12238m.areEqual(this.subscriptionType, trackSubscriptionPaymentSourceUpdated.subscriptionType) && C12238m.areEqual(this.paymentGatewayPlanId, trackSubscriptionPaymentSourceUpdated.paymentGatewayPlanId) && C12238m.areEqual(this.planId, trackSubscriptionPaymentSourceUpdated.planId) && C12238m.areEqual(this.paymentGateway, trackSubscriptionPaymentSourceUpdated.paymentGateway) && C12238m.areEqual(this.previousPaymentSourceId, trackSubscriptionPaymentSourceUpdated.previousPaymentSourceId) && C12238m.areEqual(this.previousPaymentSourceGateway, trackSubscriptionPaymentSourceUpdated.previousPaymentSourceGateway) && C12238m.areEqual(this.previousPaymentSourceCountry, trackSubscriptionPaymentSourceUpdated.previousPaymentSourceCountry) && C12238m.areEqual(this.paymentSourceId, trackSubscriptionPaymentSourceUpdated.paymentSourceId) && C12238m.areEqual(this.paymentSourceGateway, trackSubscriptionPaymentSourceUpdated.paymentSourceGateway) && C12238m.areEqual(this.paymentSourceCountry, trackSubscriptionPaymentSourceUpdated.paymentSourceCountry) && C12238m.areEqual(this.currentPeriodStart, trackSubscriptionPaymentSourceUpdated.currentPeriodStart) && C12238m.areEqual(this.currentPeriodEnd, trackSubscriptionPaymentSourceUpdated.currentPeriodEnd);
     }
 
     public int hashCode() {
@@ -72,31 +72,31 @@ public final /* data */ class TrackSubscriptionPaymentSourceUpdated implements A
     }
 
     public String toString() {
-        StringBuilder sbU = outline.U("TrackSubscriptionPaymentSourceUpdated(subscriptionId=");
-        sbU.append(this.subscriptionId);
-        sbU.append(", subscriptionType=");
-        sbU.append(this.subscriptionType);
-        sbU.append(", paymentGatewayPlanId=");
-        sbU.append(this.paymentGatewayPlanId);
-        sbU.append(", planId=");
-        sbU.append(this.planId);
-        sbU.append(", paymentGateway=");
-        sbU.append(this.paymentGateway);
-        sbU.append(", previousPaymentSourceId=");
-        sbU.append(this.previousPaymentSourceId);
-        sbU.append(", previousPaymentSourceGateway=");
-        sbU.append(this.previousPaymentSourceGateway);
-        sbU.append(", previousPaymentSourceCountry=");
-        sbU.append(this.previousPaymentSourceCountry);
-        sbU.append(", paymentSourceId=");
-        sbU.append(this.paymentSourceId);
-        sbU.append(", paymentSourceGateway=");
-        sbU.append(this.paymentSourceGateway);
-        sbU.append(", paymentSourceCountry=");
-        sbU.append(this.paymentSourceCountry);
-        sbU.append(", currentPeriodStart=");
-        sbU.append(this.currentPeriodStart);
-        sbU.append(", currentPeriodEnd=");
-        return outline.G(sbU, this.currentPeriodEnd, ")");
+        StringBuilder sbM833U = C1643a.m833U("TrackSubscriptionPaymentSourceUpdated(subscriptionId=");
+        sbM833U.append(this.subscriptionId);
+        sbM833U.append(", subscriptionType=");
+        sbM833U.append(this.subscriptionType);
+        sbM833U.append(", paymentGatewayPlanId=");
+        sbM833U.append(this.paymentGatewayPlanId);
+        sbM833U.append(", planId=");
+        sbM833U.append(this.planId);
+        sbM833U.append(", paymentGateway=");
+        sbM833U.append(this.paymentGateway);
+        sbM833U.append(", previousPaymentSourceId=");
+        sbM833U.append(this.previousPaymentSourceId);
+        sbM833U.append(", previousPaymentSourceGateway=");
+        sbM833U.append(this.previousPaymentSourceGateway);
+        sbM833U.append(", previousPaymentSourceCountry=");
+        sbM833U.append(this.previousPaymentSourceCountry);
+        sbM833U.append(", paymentSourceId=");
+        sbM833U.append(this.paymentSourceId);
+        sbM833U.append(", paymentSourceGateway=");
+        sbM833U.append(this.paymentSourceGateway);
+        sbM833U.append(", paymentSourceCountry=");
+        sbM833U.append(this.paymentSourceCountry);
+        sbM833U.append(", currentPeriodStart=");
+        sbM833U.append(this.currentPeriodStart);
+        sbM833U.append(", currentPeriodEnd=");
+        return C1643a.m819G(sbM833U, this.currentPeriodEnd, ")");
     }
 }

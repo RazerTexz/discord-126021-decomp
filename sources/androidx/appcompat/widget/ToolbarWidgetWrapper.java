@@ -1,5 +1,6 @@
 package androidx.appcompat.widget;
 
+import android.R;
 import android.content.Context;
 import android.graphics.drawable.Drawable;
 import android.os.Parcelable;
@@ -16,7 +17,7 @@ import android.widget.AdapterView;
 import android.widget.Spinner;
 import android.widget.SpinnerAdapter;
 import androidx.annotation.RestrictTo;
-import androidx.appcompat.R;
+import androidx.appcompat.C0051R;
 import androidx.appcompat.content.res.AppCompatResources;
 import androidx.appcompat.view.menu.ActionMenuItem;
 import androidx.appcompat.view.menu.MenuBuilder;
@@ -25,8 +26,8 @@ import androidx.appcompat.widget.Toolbar;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.ViewPropertyAnimatorCompat;
 import androidx.core.view.ViewPropertyAnimatorListenerAdapter;
-import b.d.b.a.outline;
 import com.google.android.material.badge.BadgeDrawable;
+import p007b.p100d.p104b.p105a.C1643a;
 
 /* JADX INFO: loaded from: classes.dex */
 @RestrictTo({RestrictTo.Scope.LIBRARY_GROUP_PREFIX})
@@ -54,7 +55,7 @@ public class ToolbarWidgetWrapper implements DecorToolbar {
     public Window.Callback mWindowCallback;
 
     public ToolbarWidgetWrapper(Toolbar toolbar, boolean z2) {
-        this(toolbar, z2, R.string.abc_action_bar_up_description, R.drawable.abc_ic_ab_back_material);
+        this(toolbar, z2, C0051R.string.abc_action_bar_up_description, C0051R.drawable.abc_ic_ab_back_material);
     }
 
     private int detectDisplayOptions() {
@@ -67,7 +68,7 @@ public class ToolbarWidgetWrapper implements DecorToolbar {
 
     private void ensureSpinner() {
         if (this.mSpinner == null) {
-            this.mSpinner = new AppCompatSpinner(getContext(), null, R.attr.actionDropDownStyle);
+            this.mSpinner = new AppCompatSpinner(getContext(), null, C0051R.attr.actionDropDownStyle);
             this.mSpinner.setLayoutParams(new Toolbar.LayoutParams(-2, -2, 8388627));
         }
     }
@@ -398,7 +399,7 @@ public class ToolbarWidgetWrapper implements DecorToolbar {
         if (this.mActionMenuPresenter == null) {
             ActionMenuPresenter actionMenuPresenter = new ActionMenuPresenter(this.mToolbar.getContext());
             this.mActionMenuPresenter = actionMenuPresenter;
-            actionMenuPresenter.setId(R.id.action_menu_presenter);
+            actionMenuPresenter.setId(C0051R.id.action_menu_presenter);
         }
         this.mActionMenuPresenter.setCallback(callback);
         this.mToolbar.setMenu((MenuBuilder) menu, this.mActionMenuPresenter);
@@ -454,7 +455,7 @@ public class ToolbarWidgetWrapper implements DecorToolbar {
                     this.mToolbar.addView(this.mSpinner, 0);
                 } else {
                     if (i != 2) {
-                        throw new IllegalArgumentException(outline.q("Invalid navigation mode ", i));
+                        throw new IllegalArgumentException(C1643a.m871q("Invalid navigation mode ", i));
                     }
                     View view2 = this.mTabView;
                     if (view2 != null) {
@@ -540,56 +541,56 @@ public class ToolbarWidgetWrapper implements DecorToolbar {
         this.mSubtitle = toolbar.getSubtitle();
         this.mTitleSet = this.mTitle != null;
         this.mNavIcon = toolbar.getNavigationIcon();
-        TintTypedArray tintTypedArrayObtainStyledAttributes = TintTypedArray.obtainStyledAttributes(toolbar.getContext(), null, R.styleable.ActionBar, R.attr.actionBarStyle, 0);
-        this.mDefaultNavigationIcon = tintTypedArrayObtainStyledAttributes.getDrawable(R.styleable.ActionBar_homeAsUpIndicator);
+        TintTypedArray tintTypedArrayObtainStyledAttributes = TintTypedArray.obtainStyledAttributes(toolbar.getContext(), null, C0051R.styleable.ActionBar, C0051R.attr.actionBarStyle, 0);
+        this.mDefaultNavigationIcon = tintTypedArrayObtainStyledAttributes.getDrawable(C0051R.styleable.ActionBar_homeAsUpIndicator);
         if (z2) {
-            CharSequence text = tintTypedArrayObtainStyledAttributes.getText(R.styleable.ActionBar_title);
+            CharSequence text = tintTypedArrayObtainStyledAttributes.getText(C0051R.styleable.ActionBar_title);
             if (!TextUtils.isEmpty(text)) {
                 setTitle(text);
             }
-            CharSequence text2 = tintTypedArrayObtainStyledAttributes.getText(R.styleable.ActionBar_subtitle);
+            CharSequence text2 = tintTypedArrayObtainStyledAttributes.getText(C0051R.styleable.ActionBar_subtitle);
             if (!TextUtils.isEmpty(text2)) {
                 setSubtitle(text2);
             }
-            Drawable drawable2 = tintTypedArrayObtainStyledAttributes.getDrawable(R.styleable.ActionBar_logo);
+            Drawable drawable2 = tintTypedArrayObtainStyledAttributes.getDrawable(C0051R.styleable.ActionBar_logo);
             if (drawable2 != null) {
                 setLogo(drawable2);
             }
-            Drawable drawable3 = tintTypedArrayObtainStyledAttributes.getDrawable(R.styleable.ActionBar_icon);
+            Drawable drawable3 = tintTypedArrayObtainStyledAttributes.getDrawable(C0051R.styleable.ActionBar_icon);
             if (drawable3 != null) {
                 setIcon(drawable3);
             }
             if (this.mNavIcon == null && (drawable = this.mDefaultNavigationIcon) != null) {
                 setNavigationIcon(drawable);
             }
-            setDisplayOptions(tintTypedArrayObtainStyledAttributes.getInt(R.styleable.ActionBar_displayOptions, 0));
-            int resourceId = tintTypedArrayObtainStyledAttributes.getResourceId(R.styleable.ActionBar_customNavigationLayout, 0);
+            setDisplayOptions(tintTypedArrayObtainStyledAttributes.getInt(C0051R.styleable.ActionBar_displayOptions, 0));
+            int resourceId = tintTypedArrayObtainStyledAttributes.getResourceId(C0051R.styleable.ActionBar_customNavigationLayout, 0);
             if (resourceId != 0) {
                 setCustomView(LayoutInflater.from(this.mToolbar.getContext()).inflate(resourceId, (ViewGroup) this.mToolbar, false));
                 setDisplayOptions(this.mDisplayOpts | 16);
             }
-            int layoutDimension = tintTypedArrayObtainStyledAttributes.getLayoutDimension(R.styleable.ActionBar_height, 0);
+            int layoutDimension = tintTypedArrayObtainStyledAttributes.getLayoutDimension(C0051R.styleable.ActionBar_height, 0);
             if (layoutDimension > 0) {
                 ViewGroup.LayoutParams layoutParams = this.mToolbar.getLayoutParams();
                 layoutParams.height = layoutDimension;
                 this.mToolbar.setLayoutParams(layoutParams);
             }
-            int dimensionPixelOffset = tintTypedArrayObtainStyledAttributes.getDimensionPixelOffset(R.styleable.ActionBar_contentInsetStart, -1);
-            int dimensionPixelOffset2 = tintTypedArrayObtainStyledAttributes.getDimensionPixelOffset(R.styleable.ActionBar_contentInsetEnd, -1);
+            int dimensionPixelOffset = tintTypedArrayObtainStyledAttributes.getDimensionPixelOffset(C0051R.styleable.ActionBar_contentInsetStart, -1);
+            int dimensionPixelOffset2 = tintTypedArrayObtainStyledAttributes.getDimensionPixelOffset(C0051R.styleable.ActionBar_contentInsetEnd, -1);
             if (dimensionPixelOffset >= 0 || dimensionPixelOffset2 >= 0) {
                 this.mToolbar.setContentInsetsRelative(Math.max(dimensionPixelOffset, 0), Math.max(dimensionPixelOffset2, 0));
             }
-            int resourceId2 = tintTypedArrayObtainStyledAttributes.getResourceId(R.styleable.ActionBar_titleTextStyle, 0);
+            int resourceId2 = tintTypedArrayObtainStyledAttributes.getResourceId(C0051R.styleable.ActionBar_titleTextStyle, 0);
             if (resourceId2 != 0) {
                 Toolbar toolbar2 = this.mToolbar;
                 toolbar2.setTitleTextAppearance(toolbar2.getContext(), resourceId2);
             }
-            int resourceId3 = tintTypedArrayObtainStyledAttributes.getResourceId(R.styleable.ActionBar_subtitleTextStyle, 0);
+            int resourceId3 = tintTypedArrayObtainStyledAttributes.getResourceId(C0051R.styleable.ActionBar_subtitleTextStyle, 0);
             if (resourceId3 != 0) {
                 Toolbar toolbar3 = this.mToolbar;
                 toolbar3.setSubtitleTextAppearance(toolbar3.getContext(), resourceId3);
             }
-            int resourceId4 = tintTypedArrayObtainStyledAttributes.getResourceId(R.styleable.ActionBar_popupTheme, 0);
+            int resourceId4 = tintTypedArrayObtainStyledAttributes.getResourceId(C0051R.styleable.ActionBar_popupTheme, 0);
             if (resourceId4 != 0) {
                 this.mToolbar.setPopupTheme(resourceId4);
             }
@@ -603,7 +604,7 @@ public class ToolbarWidgetWrapper implements DecorToolbar {
             public final ActionMenuItem mNavItem;
 
             {
-                this.mNavItem = new ActionMenuItem(ToolbarWidgetWrapper.this.mToolbar.getContext(), 0, android.R.id.home, 0, 0, ToolbarWidgetWrapper.this.mTitle);
+                this.mNavItem = new ActionMenuItem(ToolbarWidgetWrapper.this.mToolbar.getContext(), 0, R.id.home, 0, 0, ToolbarWidgetWrapper.this.mTitle);
             }
 
             @Override // android.view.View.OnClickListener

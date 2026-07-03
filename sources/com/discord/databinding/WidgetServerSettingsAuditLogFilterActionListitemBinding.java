@@ -11,29 +11,32 @@ import com.discord.views.CheckedSetting;
 /* JADX INFO: loaded from: classes.dex */
 public final class WidgetServerSettingsAuditLogFilterActionListitemBinding implements ViewBinding {
 
+    /* JADX INFO: renamed from: a */
     @NonNull
-    public final LinearLayout a;
+    public final LinearLayout f17512a;
 
-    /* JADX INFO: renamed from: b, reason: collision with root package name */
+    /* JADX INFO: renamed from: b */
     @NonNull
-    public final CheckedSetting f2540b;
+    public final CheckedSetting f17513b;
 
+    /* JADX INFO: renamed from: c */
     @NonNull
-    public final ImageView c;
+    public final ImageView f17514c;
 
+    /* JADX INFO: renamed from: d */
     @NonNull
-    public final ImageView d;
+    public final ImageView f17515d;
 
     public WidgetServerSettingsAuditLogFilterActionListitemBinding(@NonNull LinearLayout linearLayout, @NonNull CheckedSetting checkedSetting, @NonNull ImageView imageView, @NonNull FrameLayout frameLayout, @NonNull ImageView imageView2) {
-        this.a = linearLayout;
-        this.f2540b = checkedSetting;
-        this.c = imageView;
-        this.d = imageView2;
+        this.f17512a = linearLayout;
+        this.f17513b = checkedSetting;
+        this.f17514c = imageView;
+        this.f17515d = imageView2;
     }
 
     @Override // androidx.viewbinding.ViewBinding
     @NonNull
     public View getRoot() {
-        return this.a;
+        return this.f17512a;
     }
 }

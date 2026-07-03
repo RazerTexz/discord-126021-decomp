@@ -1,23 +1,8 @@
 package com.discord.utilities.systemlog;
 
 import androidx.core.app.NotificationCompat;
-import b.d.b.a.outline;
 import com.adjust.sdk.Constants;
-import com.discord.utilities.debug.DebugPrintable3;
-import d0.f0._Sequences2;
-import d0.g0.Charsets2;
-import d0.g0.Regex5;
-import d0.g0.StringBuilderJVM;
-import d0.g0.Strings4;
-import d0.g0.StringsJVM;
-import d0.t.Sets5;
-import d0.t._Arrays;
-import d0.z.d.Intrinsics3;
-import d0.z.d.Lambda;
-import j0.k.Func1;
-import j0.l.a.EmptyObservableHolder;
-import j0.l.e.ScalarSynchronousObservable;
-import j0.p.Schedulers2;
+import com.discord.utilities.debug.DebugPrintableCollection;
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.InputStream;
@@ -40,7 +25,22 @@ import kotlin.jvm.functions.Function1;
 import kotlin.sequences.Sequence;
 import kotlin.text.MatchResult;
 import kotlin.text.Regex;
-import rx.Observable;
+import p007b.p100d.p104b.p105a.C1643a;
+import p507d0.p578f0.C12078q;
+import p507d0.p579g0.C12086c;
+import p507d0.p579g0.C12099p;
+import p507d0.p579g0.C12103t;
+import p507d0.p579g0.C12106w;
+import p507d0.p579g0.EnumC12092i;
+import p507d0.p580t.C12141k;
+import p507d0.p580t.C12148n0;
+import p507d0.p592z.p594d.AbstractC12240o;
+import p507d0.p592z.p594d.C12238m;
+import p637j0.p641k.InterfaceC12589b;
+import p637j0.p642l.p643a.EnumC12606c;
+import p637j0.p642l.p647e.C12721k;
+import p637j0.p653p.C12781a;
+import p658rx.Observable;
 
 /* JADX INFO: compiled from: SystemLogUtils.kt */
 /* JADX INFO: loaded from: classes2.dex */
@@ -49,7 +49,7 @@ public final class SystemLogUtils {
     private static final int maxLogSize = 2500000;
     private static final Regex regexExtractTombstone;
     public static final SystemLogUtils INSTANCE = new SystemLogUtils();
-    private static final DebugPrintable3 debugPrintables = new DebugPrintable3();
+    private static final DebugPrintableCollection debugPrintables = new DebugPrintableCollection();
     private static final SystemLogCapture systemLogCapture = new SystemLogCapture();
 
     /* JADX INFO: compiled from: SystemLogUtils.kt */
@@ -62,11 +62,11 @@ public final class SystemLogUtils {
         private final String textHash;
 
         public Tombstone(String str, String str2, String str3, String str4, String str5, String str6) {
-            Intrinsics3.checkNotNullParameter(str, NotificationCompat.MessagingStyle.Message.KEY_TEXT);
-            Intrinsics3.checkNotNullParameter(str3, "groupBy");
-            Intrinsics3.checkNotNullParameter(str4, "origin");
-            Intrinsics3.checkNotNullParameter(str5, "groupHash");
-            Intrinsics3.checkNotNullParameter(str6, "textHash");
+            C12238m.checkNotNullParameter(str, NotificationCompat.MessagingStyle.Message.KEY_TEXT);
+            C12238m.checkNotNullParameter(str3, "groupBy");
+            C12238m.checkNotNullParameter(str4, "origin");
+            C12238m.checkNotNullParameter(str5, "groupHash");
+            C12238m.checkNotNullParameter(str6, "textHash");
             this.text = str;
             this.cause = str2;
             this.groupBy = str3;
@@ -132,11 +132,11 @@ public final class SystemLogUtils {
         }
 
         public final Tombstone copy(String text, String cause, String groupBy, String origin, String groupHash, String textHash) {
-            Intrinsics3.checkNotNullParameter(text, NotificationCompat.MessagingStyle.Message.KEY_TEXT);
-            Intrinsics3.checkNotNullParameter(groupBy, "groupBy");
-            Intrinsics3.checkNotNullParameter(origin, "origin");
-            Intrinsics3.checkNotNullParameter(groupHash, "groupHash");
-            Intrinsics3.checkNotNullParameter(textHash, "textHash");
+            C12238m.checkNotNullParameter(text, NotificationCompat.MessagingStyle.Message.KEY_TEXT);
+            C12238m.checkNotNullParameter(groupBy, "groupBy");
+            C12238m.checkNotNullParameter(origin, "origin");
+            C12238m.checkNotNullParameter(groupHash, "groupHash");
+            C12238m.checkNotNullParameter(textHash, "textHash");
             return new Tombstone(text, cause, groupBy, origin, groupHash, textHash);
         }
 
@@ -148,7 +148,7 @@ public final class SystemLogUtils {
                 return false;
             }
             Tombstone tombstone = (Tombstone) other;
-            return Intrinsics3.areEqual(this.text, tombstone.text) && Intrinsics3.areEqual(this.cause, tombstone.cause) && Intrinsics3.areEqual(this.groupBy, tombstone.groupBy) && Intrinsics3.areEqual(this.origin, tombstone.origin) && Intrinsics3.areEqual(this.groupHash, tombstone.groupHash) && Intrinsics3.areEqual(this.textHash, tombstone.textHash);
+            return C12238m.areEqual(this.text, tombstone.text) && C12238m.areEqual(this.cause, tombstone.cause) && C12238m.areEqual(this.groupBy, tombstone.groupBy) && C12238m.areEqual(this.origin, tombstone.origin) && C12238m.areEqual(this.groupHash, tombstone.groupHash) && C12238m.areEqual(this.textHash, tombstone.textHash);
         }
 
         public final String getCause() {
@@ -191,27 +191,27 @@ public final class SystemLogUtils {
         }
 
         public String toString() {
-            StringBuilder sbU = outline.U("Tombstone(text=");
-            sbU.append(this.text);
-            sbU.append(", cause=");
-            sbU.append(this.cause);
-            sbU.append(", groupBy=");
-            sbU.append(this.groupBy);
-            sbU.append(", origin=");
-            sbU.append(this.origin);
-            sbU.append(", groupHash=");
-            sbU.append(this.groupHash);
-            sbU.append(", textHash=");
-            return outline.J(sbU, this.textHash, ")");
+            StringBuilder sbM833U = C1643a.m833U("Tombstone(text=");
+            sbM833U.append(this.text);
+            sbM833U.append(", cause=");
+            sbM833U.append(this.cause);
+            sbM833U.append(", groupBy=");
+            sbM833U.append(this.groupBy);
+            sbM833U.append(", origin=");
+            sbM833U.append(this.origin);
+            sbM833U.append(", groupHash=");
+            sbM833U.append(this.groupHash);
+            sbM833U.append(", textHash=");
+            return C1643a.m822J(sbM833U, this.textHash, ")");
         }
     }
 
-    /* JADX INFO: renamed from: com.discord.utilities.systemlog.SystemLogUtils$hashString$1, reason: invalid class name */
+    /* JADX INFO: renamed from: com.discord.utilities.systemlog.SystemLogUtils$hashString$1 */
     /* JADX INFO: compiled from: SystemLogUtils.kt */
-    public static final class AnonymousClass1 extends Lambda implements Function1<Byte, CharSequence> {
-        public static final AnonymousClass1 INSTANCE = new AnonymousClass1();
+    public static final class C69381 extends AbstractC12240o implements Function1<Byte, CharSequence> {
+        public static final C69381 INSTANCE = new C69381();
 
-        public AnonymousClass1() {
+        public C69381() {
             super(1);
         }
 
@@ -221,15 +221,15 @@ public final class SystemLogUtils {
         }
 
         public final CharSequence invoke(byte b2) {
-            return outline.P(new Object[]{Byte.valueOf(b2)}, 1, "%02X", "java.lang.String.format(this, *args)");
+            return C1643a.m828P(new Object[]{Byte.valueOf(b2)}, 1, "%02X", "java.lang.String.format(this, *args)");
         }
     }
 
     static {
-        StringBuilder sbU = outline.U("(?:^(?:[^\\s]+\\s+){4}F\\s+DEBUG\\s+:\\s(.+))|(^.+(\\[");
-        sbU.append(Regex.INSTANCE.escape("libdiscord_version"));
-        sbU.append("\\].+))");
-        regexExtractTombstone = new Regex(sbU.toString());
+        StringBuilder sbM833U = C1643a.m833U("(?:^(?:[^\\s]+\\s+){4}F\\s+DEBUG\\s+:\\s(.+))|(^.+(\\[");
+        sbM833U.append(Regex.INSTANCE.escape("libdiscord_version"));
+        sbM833U.append("\\].+))");
+        regexExtractTombstone = new Regex(sbM833U.toString());
     }
 
     private SystemLogUtils() {
@@ -237,13 +237,13 @@ public final class SystemLogUtils {
 
     private final String hashString(String input) throws NoSuchAlgorithmException {
         MessageDigest messageDigest = MessageDigest.getInstance(Constants.SHA1);
-        Charset charset = Charsets2.a;
+        Charset charset = C12086c.f25136a;
         Objects.requireNonNull(input, "null cannot be cast to non-null type java.lang.String");
         byte[] bytes = input.getBytes(charset);
-        Intrinsics3.checkNotNullExpressionValue(bytes, "(this as java.lang.String).getBytes(charset)");
+        C12238m.checkNotNullExpressionValue(bytes, "(this as java.lang.String).getBytes(charset)");
         byte[] bArrDigest = messageDigest.digest(bytes);
-        Intrinsics3.checkNotNullExpressionValue(bArrDigest, "bytes");
-        return _Arrays.joinToString$default(bArrDigest, "", (CharSequence) null, (CharSequence) null, 0, (CharSequence) null, AnonymousClass1.INSTANCE, 30, (Object) null);
+        C12238m.checkNotNullExpressionValue(bArrDigest, "bytes");
+        return C12141k.joinToString$default(bArrDigest, "", (CharSequence) null, (CharSequence) null, 0, (CharSequence) null, C69381.INSTANCE, 30, (Object) null);
     }
 
     private final void waitFor(Process process) throws InterruptedException {
@@ -263,29 +263,29 @@ public final class SystemLogUtils {
         debugPrintables.debugPrint(sb);
         systemLogCapture.appendOutput(sb);
         String string = sb.toString();
-        Intrinsics3.checkNotNullExpressionValue(string, "sb.toString()");
+        C12238m.checkNotNullExpressionValue(string, "sb.toString()");
         return string;
     }
 
     public final Observable<Tombstone> fetchLastTombstone() {
-        Observable observableA = fetch(regexExtractTombstone).A(new Func1<LinkedList<String>, Observable<? extends Tombstone>>() { // from class: com.discord.utilities.systemlog.SystemLogUtils.fetchLastTombstone.1
-            @Override // j0.k.Func1
+        Observable observableM11082A = fetch(regexExtractTombstone).m11082A(new InterfaceC12589b<LinkedList<String>, Observable<? extends Tombstone>>() { // from class: com.discord.utilities.systemlog.SystemLogUtils.fetchLastTombstone.1
+            @Override // p637j0.p641k.InterfaceC12589b
             public final Observable<? extends Tombstone> call(LinkedList<String> linkedList) {
                 SystemLogUtils systemLogUtils = SystemLogUtils.INSTANCE;
-                Intrinsics3.checkNotNullExpressionValue(linkedList, "crashes");
+                C12238m.checkNotNullExpressionValue(linkedList, "crashes");
                 Tombstone tombstoneFetchLastTombstone$app_productionGoogleRelease = systemLogUtils.fetchLastTombstone$app_productionGoogleRelease(linkedList);
-                return tombstoneFetchLastTombstone$app_productionGoogleRelease == null ? EmptyObservableHolder.k : new ScalarSynchronousObservable(tombstoneFetchLastTombstone$app_productionGoogleRelease);
+                return tombstoneFetchLastTombstone$app_productionGoogleRelease == null ? EnumC12606c.f26751k : new C12721k(tombstoneFetchLastTombstone$app_productionGoogleRelease);
             }
         });
-        Intrinsics3.checkNotNullExpressionValue(observableA, "fetch(regexExtractTombst…ble.just(tombstone)\n    }");
-        return observableA;
+        C12238m.checkNotNullExpressionValue(observableM11082A, "fetch(regexExtractTombst…ble.just(tombstone)\n    }");
+        return observableM11082A;
     }
 
     public final Tombstone fetchLastTombstone$app_productionGoogleRelease(Collection<String> crashes) {
         String str;
         List<String> groupValues;
         Object next;
-        Intrinsics3.checkNotNullParameter(crashes, "crashes");
+        C12238m.checkNotNullParameter(crashes, "crashes");
         String str2 = null;
         if (crashes.isEmpty()) {
             return null;
@@ -294,40 +294,40 @@ public final class SystemLogUtils {
         String str3 = null;
         String str4 = null;
         for (String str5 : crashes) {
-            if (Strings4.contains$default((CharSequence) str5, (CharSequence) "libdiscord_version", false, 2, (Object) null)) {
+            if (C12106w.contains$default((CharSequence) str5, (CharSequence) "libdiscord_version", false, 2, (Object) null)) {
                 str3 = str5;
             } else {
-                if (Strings4.contains$default((CharSequence) str5, (CharSequence) "*** *** *** *** *** *** *** *** *** *** *** *** *** *** *** ***", false, 2, (Object) null)) {
-                    StringBuilderJVM.clear(sb);
+                if (C12106w.contains$default((CharSequence) str5, (CharSequence) "*** *** *** *** *** *** *** *** *** *** *** *** *** *** *** ***", false, 2, (Object) null)) {
+                    C12099p.clear(sb);
                     str4 = str3;
                 }
                 sb.append(str5);
-                Intrinsics3.checkNotNullExpressionValue(sb, "append(value)");
+                C12238m.checkNotNullExpressionValue(sb, "append(value)");
                 sb.append('\n');
-                Intrinsics3.checkNotNullExpressionValue(sb, "append('\\n')");
+                C12238m.checkNotNullExpressionValue(sb, "append('\\n')");
             }
         }
-        if (!StringsJVM.isBlank(sb)) {
+        if (!C12103t.isBlank(sb)) {
             sb.append('\n');
-            Intrinsics3.checkNotNullExpressionValue(sb, "append('\\n')");
+            C12238m.checkNotNullExpressionValue(sb, "append('\\n')");
             sb.append("Tombstone's libdiscord_version: ");
             if (str4 == null) {
                 str4 = "Unknown libdiscord_version";
             }
             sb.append(str4);
-            Intrinsics3.checkNotNullExpressionValue(sb, "append(value)");
+            C12238m.checkNotNullExpressionValue(sb, "append(value)");
             sb.append('\n');
-            Intrinsics3.checkNotNullExpressionValue(sb, "append('\\n')");
+            C12238m.checkNotNullExpressionValue(sb, "append('\\n')");
         }
         String string = sb.toString();
-        Intrinsics3.checkNotNullExpressionValue(string, "StringBuilder().also { s…\n      }\n    }.toString()");
-        if (StringsJVM.isBlank(string)) {
+        C12238m.checkNotNullExpressionValue(string, "StringBuilder().also { s…\n      }\n    }.toString()");
+        if (C12103t.isBlank(string)) {
             return null;
         }
-        Regex5 regex5 = Regex5.MULTILINE;
-        Regex regex = new Regex("^Cause: (.+)$", regex5);
-        Sequence map = _Sequences2.map(Regex.findAll$default(new Regex("^\\s+#\\d+ pc .+/(.+? .+?)\\+?[+)]", regex5), string, 0, 2, null), new SystemLogUtils2(new Regex("classes\\d+.dex")));
-        HashSet hashSetHashSetOf = Sets5.hashSetOf("libc.so (abort", "libart.so (art::Runtime::Abort(char const*", "libbase.so (android::base::LogMessage::~LogMessage(");
+        EnumC12092i enumC12092i = EnumC12092i.MULTILINE;
+        Regex regex = new Regex("^Cause: (.+)$", enumC12092i);
+        Sequence map = C12078q.map(Regex.findAll$default(new Regex("^\\s+#\\d+ pc .+/(.+? .+?)\\+?[+)]", enumC12092i), string, 0, 2, null), new SystemLogUtils$fetchLastTombstone$extractedGroups$1(new Regex("classes\\d+.dex")));
+        HashSet hashSetHashSetOf = C12148n0.hashSetOf("libc.so (abort", "libart.so (art::Runtime::Abort(char const*", "libbase.so (android::base::LogMessage::~LogMessage(");
         try {
             Iterator it = map.iterator();
             do {
@@ -340,7 +340,7 @@ public final class SystemLogUtils {
         } catch (NoSuchElementException unused) {
             str = "Unknown";
         }
-        String strJoinToString$default = _Sequences2.joinToString$default(map, "\n", null, null, 0, null, null, 62, null);
+        String strJoinToString$default = C12078q.joinToString$default(map, "\n", null, null, 0, null, null, 62, null);
         MatchResult matchResultFind$default = Regex.find$default(regex, string, 0, 2, null);
         if (matchResultFind$default != null && (groupValues = matchResultFind$default.getGroupValues()) != null) {
             str2 = groupValues.get(1);
@@ -348,7 +348,7 @@ public final class SystemLogUtils {
         return new Tombstone(string, str2, strJoinToString$default, str, hashString(strJoinToString$default), hashString(string));
     }
 
-    public final DebugPrintable3 getDebugPrintables$app_productionGoogleRelease() {
+    public final DebugPrintableCollection getDebugPrintables$app_productionGoogleRelease() {
         return debugPrintables;
     }
 
@@ -362,8 +362,8 @@ public final class SystemLogUtils {
 
     public final void processLogs$app_productionGoogleRelease(BufferedReader reader, LinkedList<String> output, Regex filter) {
         String strPrevious;
-        Intrinsics3.checkNotNullParameter(reader, "reader");
-        Intrinsics3.checkNotNullParameter(output, "output");
+        C12238m.checkNotNullParameter(reader, "reader");
+        C12238m.checkNotNullParameter(output, "output");
         int i = 0;
         while (true) {
             try {
@@ -387,7 +387,7 @@ public final class SystemLogUtils {
                         continue;
                     }
                 }
-                if (!StringsJVM.isBlank(line) && !Strings4.contains$default((CharSequence) line, (CharSequence) "Accessing hidden method", false, 2, (Object) null)) {
+                if (!C12103t.isBlank(line) && !C12106w.contains$default((CharSequence) line, (CharSequence) "Accessing hidden method", false, 2, (Object) null)) {
                     int length = line.length() + 1 + i;
                     try {
                         output.add(line);
@@ -420,11 +420,11 @@ public final class SystemLogUtils {
             if (z2) {
                 linkedList.add("Unable to locate '/system/bin/logcat'");
             }
-            ScalarSynchronousObservable scalarSynchronousObservable = new ScalarSynchronousObservable(linkedList);
-            Intrinsics3.checkNotNullExpressionValue(scalarSynchronousObservable, "Observable.just(output)");
-            return scalarSynchronousObservable;
+            C12721k c12721k = new C12721k(linkedList);
+            C12238m.checkNotNullExpressionValue(c12721k, "Observable.just(output)");
+            return c12721k;
         }
-        Observable<LinkedList<String>> observableX = Observable.D(new Callable<LinkedList<String>>() { // from class: com.discord.utilities.systemlog.SystemLogUtils.fetch.1
+        Observable<LinkedList<String>> observableM11098X = Observable.m11060D(new Callable<LinkedList<String>>() { // from class: com.discord.utilities.systemlog.SystemLogUtils.fetch.1
             @Override // java.util.concurrent.Callable
             public final LinkedList<String> call() {
                 Process processStart = null;
@@ -432,11 +432,11 @@ public final class SystemLogUtils {
                     try {
                         processStart = new ProcessBuilder(SystemLogUtils.logcatPath, "-d").redirectErrorStream(true).start();
                         SystemLogUtils systemLogUtils = SystemLogUtils.INSTANCE;
-                        Intrinsics3.checkNotNullExpressionValue(processStart, "logcatProcess");
+                        C12238m.checkNotNullExpressionValue(processStart, "logcatProcess");
                         systemLogUtils.waitFor(processStart);
                         InputStream inputStream = processStart.getInputStream();
-                        Intrinsics3.checkNotNullExpressionValue(inputStream, "logcatProcess.inputStream");
-                        Reader inputStreamReader = new InputStreamReader(inputStream, Charsets2.a);
+                        C12238m.checkNotNullExpressionValue(inputStream, "logcatProcess.inputStream");
+                        Reader inputStreamReader = new InputStreamReader(inputStream, C12086c.f25136a);
                         BufferedReader bufferedReader = inputStreamReader instanceof BufferedReader ? (BufferedReader) inputStreamReader : new BufferedReader(inputStreamReader, 8192);
                         systemLogUtils.processLogs$app_productionGoogleRelease(bufferedReader, linkedList, filter);
                         bufferedReader.close();
@@ -445,7 +445,7 @@ public final class SystemLogUtils {
                         if (z2) {
                             linkedList.add("Exception getting system logs '" + e + '\'');
                             StackTraceElement[] stackTrace = e.getStackTrace();
-                            Intrinsics3.checkNotNullExpressionValue(stackTrace, "e.stackTrace");
+                            C12238m.checkNotNullExpressionValue(stackTrace, "e.stackTrace");
                             for (StackTraceElement stackTraceElement : stackTrace) {
                                 linkedList.add("    " + stackTraceElement);
                             }
@@ -463,8 +463,8 @@ public final class SystemLogUtils {
                     throw th;
                 }
             }
-        }).X(Schedulers2.b().d);
-        Intrinsics3.checkNotNullExpressionValue(observableX, "Observable.fromCallable …n(Schedulers.newThread())");
-        return observableX;
+        }).m11098X(C12781a.m10874b().f27396d);
+        C12238m.checkNotNullExpressionValue(observableM11098X, "Observable.fromCallable …n(Schedulers.newThread())");
+        return observableM11098X;
     }
 }

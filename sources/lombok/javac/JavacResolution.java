@@ -198,7 +198,7 @@ public class JavacResolution {
                 break;
             }
             stack.push(n.get());
-            javacNodeUp = n.up();
+            javacNodeUp = n.m10925up();
         }
         this.messageSuppressor.disableLoggers();
         try {
@@ -279,7 +279,7 @@ public class JavacResolution {
                 break;
             }
             stack.push(n.get());
-            javacNodeUp = n.up();
+            javacNodeUp = n.m10925up();
         }
         this.messageSuppressor.disableLoggers();
         try {

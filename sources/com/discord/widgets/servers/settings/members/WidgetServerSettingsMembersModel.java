@@ -1,6 +1,5 @@
 package com.discord.widgets.servers.settings.members;
 
-import b.d.b.a.outline;
 import com.discord.api.role.GuildRole;
 import com.discord.models.guild.Guild;
 import com.discord.models.member.GuildMember;
@@ -10,15 +9,10 @@ import com.discord.stores.StoreStream;
 import com.discord.stores.StoreUser;
 import com.discord.utilities.guilds.RoleUtils;
 import com.discord.utilities.mg_recycler.MGRecyclerDataPayload;
+import com.discord.utilities.p501rx.ObservableExtensionsKt;
+import com.discord.utilities.permissions.ManageUserContext;
 import com.discord.utilities.permissions.PermissionUtils;
-import com.discord.utilities.permissions.PermissionsContexts3;
-import com.discord.utilities.rx.ObservableExtensionsKt;
 import com.discord.widgets.servers.settings.members.WidgetServerSettingsMembersModel;
-import d0.g0.StringNumberConversions;
-import d0.g0.Strings4;
-import d0.g0.StringsJVM;
-import d0.z.d.Intrinsics3;
-import j0.k.Func1;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
@@ -29,8 +23,14 @@ import java.util.Map;
 import java.util.TreeSet;
 import java.util.concurrent.TimeUnit;
 import kotlin.jvm.internal.DefaultConstructorMarker;
-import rx.Observable;
-import rx.functions.Func7;
+import p007b.p100d.p104b.p105a.C1643a;
+import p507d0.p579g0.C12102s;
+import p507d0.p579g0.C12103t;
+import p507d0.p579g0.C12106w;
+import p507d0.p592z.p594d.C12238m;
+import p637j0.p641k.InterfaceC12589b;
+import p658rx.Observable;
+import p658rx.functions.Func7;
 
 /* JADX INFO: compiled from: WidgetServerSettingsMembersModel.kt */
 /* JADX INFO: loaded from: classes2.dex */
@@ -56,9 +56,9 @@ public final /* data */ class WidgetServerSettingsMembersModel {
             return new Comparator<MemberItem>() { // from class: com.discord.widgets.servers.settings.members.WidgetServerSettingsMembersModel$Companion$sortMembersComparator$1
                 @Override // java.util.Comparator
                 public final int compare(WidgetServerSettingsMembersModel.MemberItem memberItem, WidgetServerSettingsMembersModel.MemberItem memberItem2) {
-                    Intrinsics3.checkNotNullParameter(memberItem, "member1");
-                    Intrinsics3.checkNotNullParameter(memberItem2, "member2");
-                    int iCompareTo = StringsJVM.compareTo(memberItem.getUserDisplayName(), memberItem2.getUserDisplayName(), true);
+                    C12238m.checkNotNullParameter(memberItem, "member1");
+                    C12238m.checkNotNullParameter(memberItem2, "member2");
+                    int iCompareTo = C12103t.compareTo(memberItem.getUserDisplayName(), memberItem2.getUserDisplayName(), true);
                     return iCompareTo != 0 ? iCompareTo : (memberItem.getUser().getId() > memberItem2.getUser().getId() ? 1 : (memberItem.getUser().getId() == memberItem2.getUser().getId() ? 0 : -1));
                 }
             };
@@ -75,10 +75,10 @@ public final /* data */ class WidgetServerSettingsMembersModel {
         }
 
         public final Observable<WidgetServerSettingsMembersModel> get(final long guildId, final Observable<String> filterPublisher, final Observable<Long> roleFilterPublisher) {
-            Intrinsics3.checkNotNullParameter(filterPublisher, "filterPublisher");
-            Intrinsics3.checkNotNullParameter(roleFilterPublisher, "roleFilterPublisher");
-            Observable<R> observableY = StoreStream.INSTANCE.getGuilds().observeComputed(guildId).Y(new Func1<Map<Long, ? extends GuildMember>, Observable<? extends WidgetServerSettingsMembersModel>>() { // from class: com.discord.widgets.servers.settings.members.WidgetServerSettingsMembersModel$Companion$get$1
-                @Override // j0.k.Func1
+            C12238m.checkNotNullParameter(filterPublisher, "filterPublisher");
+            C12238m.checkNotNullParameter(roleFilterPublisher, "roleFilterPublisher");
+            Observable<R> observableM11099Y = StoreStream.INSTANCE.getGuilds().observeComputed(guildId).m11099Y(new InterfaceC12589b<Map<Long, ? extends GuildMember>, Observable<? extends WidgetServerSettingsMembersModel>>() { // from class: com.discord.widgets.servers.settings.members.WidgetServerSettingsMembersModel$Companion$get$1
+                @Override // p637j0.p641k.InterfaceC12589b
                 public /* bridge */ /* synthetic */ Observable<? extends WidgetServerSettingsMembersModel> call(Map<Long, ? extends GuildMember> map) {
                     return call2((Map<Long, GuildMember>) map);
                 }
@@ -86,8 +86,8 @@ public final /* data */ class WidgetServerSettingsMembersModel {
                 /* JADX INFO: renamed from: call, reason: avoid collision after fix types in other method */
                 public final Observable<? extends WidgetServerSettingsMembersModel> call2(final Map<Long, GuildMember> map) {
                     StoreStream.Companion companion = StoreStream.INSTANCE;
-                    return Observable.e(companion.getGuilds().observeGuild(guildId), companion.getPermissions().observePermissionsForGuild(guildId), StoreUser.observeMe$default(companion.getUsers(), false, 1, null), companion.getUsers().observeUsers(map.keySet()), companion.getGuilds().observeRoles(guildId), filterPublisher.p(300L, TimeUnit.MILLISECONDS), roleFilterPublisher, new Func7<Guild, Long, MeUser, Map<Long, ? extends User>, Map<Long, ? extends GuildRole>, String, Long, WidgetServerSettingsMembersModel>() { // from class: com.discord.widgets.servers.settings.members.WidgetServerSettingsMembersModel$Companion$get$1.1
-                        @Override // rx.functions.Func7
+                    return Observable.m11069e(companion.getGuilds().observeGuild(guildId), companion.getPermissions().observePermissionsForGuild(guildId), StoreUser.observeMe$default(companion.getUsers(), false, 1, null), companion.getUsers().observeUsers(map.keySet()), companion.getGuilds().observeRoles(guildId), filterPublisher.m11110p(300L, TimeUnit.MILLISECONDS), roleFilterPublisher, new Func7<Guild, Long, MeUser, Map<Long, ? extends User>, Map<Long, ? extends GuildRole>, String, Long, WidgetServerSettingsMembersModel>() { // from class: com.discord.widgets.servers.settings.members.WidgetServerSettingsMembersModel$Companion$get$1.1
+                        @Override // p658rx.functions.Func7
                         public /* bridge */ /* synthetic */ WidgetServerSettingsMembersModel call(Guild guild, Long l, MeUser meUser, Map<Long, ? extends User> map2, Map<Long, ? extends GuildRole> map3, String str, Long l2) {
                             return call2(guild, l, meUser, map2, (Map<Long, GuildRole>) map3, str, l2);
                         }
@@ -97,28 +97,28 @@ public final /* data */ class WidgetServerSettingsMembersModel {
                         public final WidgetServerSettingsMembersModel call2(Guild guild, Long l, MeUser meUser, Map<Long, ? extends User> map2, Map<Long, GuildRole> map3, String str, Long l2) {
                             TreeSet treeSet;
                             String nick;
-                            AnonymousClass1<T1, T2, T3, T4, T5, T6, T7, R> anonymousClass1 = this;
+                            C95951<T1, T2, T3, T4, T5, T6, T7, R> c95951 = this;
                             GuildMember guildMember = (GuildMember) map.get(Long.valueOf(meUser.getId()));
                             if (guild == null || l == null || guildMember == null) {
                                 return null;
                             }
                             TreeSet treeSet2 = new TreeSet(WidgetServerSettingsMembersModel.INSTANCE.sortMembersComparator());
                             for (User user : map2.values()) {
-                                GuildMember guildMember2 = (GuildMember) outline.f(user, map);
+                                GuildMember guildMember2 = (GuildMember) C1643a.m849f(user, map);
                                 if (guildMember2 != null) {
                                     long id2 = guild.getId();
                                     if ((l2 != 0 && l2.longValue() == id2) || guildMember2.getRoles().contains(l2)) {
                                         long id3 = user.getId();
-                                        Intrinsics3.checkNotNullExpressionValue(str, "filter");
-                                        Long longOrNull = StringNumberConversions.toLongOrNull(str);
-                                        if ((longOrNull != null && id3 == longOrNull.longValue()) || Strings4.contains((CharSequence) user.getUsername(), (CharSequence) str, true) || ((nick = guildMember2.getNick()) != null && Strings4.contains((CharSequence) nick, (CharSequence) str, true))) {
-                                            PermissionsContexts3.Companion companion2 = PermissionsContexts3.INSTANCE;
-                                            Intrinsics3.checkNotNullExpressionValue(meUser, "me");
+                                        C12238m.checkNotNullExpressionValue(str, "filter");
+                                        Long longOrNull = C12102s.toLongOrNull(str);
+                                        if ((longOrNull != null && id3 == longOrNull.longValue()) || C12106w.contains((CharSequence) user.getUsername(), (CharSequence) str, true) || ((nick = guildMember2.getNick()) != null && C12106w.contains((CharSequence) nick, (CharSequence) str, true))) {
+                                            ManageUserContext.Companion companion2 = ManageUserContext.INSTANCE;
+                                            C12238m.checkNotNullExpressionValue(meUser, "me");
                                             List<Long> roles = guildMember.getRoles();
                                             List<Long> roles2 = guildMember2.getRoles();
-                                            Intrinsics3.checkNotNullExpressionValue(map3, "roles");
+                                            C12238m.checkNotNullExpressionValue(map3, "roles");
                                             treeSet = treeSet2;
-                                            PermissionsContexts3 permissionsContexts3From = companion2.from(guild, meUser, user, roles, roles2, l, map3);
+                                            ManageUserContext manageUserContextFrom = companion2.from(guild, meUser, user, roles, roles2, l, map3);
                                             String nickOrUsername = GuildMember.INSTANCE.getNickOrUsername(guildMember2, user);
                                             List<Long> roles3 = guildMember2.getRoles();
                                             ArrayList arrayList = new ArrayList();
@@ -129,7 +129,7 @@ public final /* data */ class WidgetServerSettingsMembersModel {
                                                     arrayList.add(guildRole);
                                                 }
                                             }
-                                            treeSet.add(new WidgetServerSettingsMembersModel.MemberItem(user, nickOrUsername, arrayList, permissionsContexts3From.canManage(), guildMember2));
+                                            treeSet.add(new WidgetServerSettingsMembersModel.MemberItem(user, nickOrUsername, arrayList, manageUserContextFrom.canManage(), guildMember2));
                                         } else {
                                             treeSet = treeSet2;
                                         }
@@ -139,24 +139,24 @@ public final /* data */ class WidgetServerSettingsMembersModel {
                                 } else {
                                     treeSet = treeSet2;
                                 }
-                                anonymousClass1 = this;
+                                c95951 = this;
                                 treeSet2 = treeSet;
                             }
                             WidgetServerSettingsMembersModel.Companion companion3 = WidgetServerSettingsMembersModel.INSTANCE;
-                            Intrinsics3.checkNotNullExpressionValue(map3, "roles");
+                            C12238m.checkNotNullExpressionValue(map3, "roles");
                             Map mapSortRoles = companion3.sortRoles(map3);
                             ArrayList arrayList2 = new ArrayList(treeSet2);
                             GuildRole highestRole = RoleUtils.getHighestRole(map3, guildMember);
-                            Intrinsics3.checkNotNullExpressionValue(meUser, "me");
+                            C12238m.checkNotNullExpressionValue(meUser, "me");
                             return new WidgetServerSettingsMembersModel(guild, mapSortRoles, arrayList2, highestRole, meUser, guild.isOwner(meUser.getId()) || PermissionUtils.canAndIsElevated(2L, l, meUser.getMfaEnabled(), guild.getMfaLevel()), PermissionUtils.canManageGuildMembers(guild.isOwner(meUser.getId()), meUser.getMfaEnabled(), guild.getMfaLevel(), l));
                         }
                     });
                 }
             });
-            Intrinsics3.checkNotNullExpressionValue(observableY, "StoreStream\n            …          }\n            }");
-            Observable<WidgetServerSettingsMembersModel> observableR = ObservableExtensionsKt.computationLatest(observableY).r();
-            Intrinsics3.checkNotNullExpressionValue(observableR, "StoreStream\n            …  .distinctUntilChanged()");
-            return observableR;
+            C12238m.checkNotNullExpressionValue(observableM11099Y, "StoreStream\n            …          }\n            }");
+            Observable<WidgetServerSettingsMembersModel> observableM11112r = ObservableExtensionsKt.computationLatest(observableM11099Y).m11112r();
+            C12238m.checkNotNullExpressionValue(observableM11112r, "StoreStream\n            …  .distinctUntilChanged()");
+            return observableM11112r;
         }
 
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
@@ -175,10 +175,10 @@ public final /* data */ class WidgetServerSettingsMembersModel {
         private final String userDisplayName;
 
         public MemberItem(User user, String str, List<GuildRole> list, boolean z2, GuildMember guildMember) {
-            Intrinsics3.checkNotNullParameter(user, "user");
-            Intrinsics3.checkNotNullParameter(str, "userDisplayName");
-            Intrinsics3.checkNotNullParameter(list, "roles");
-            Intrinsics3.checkNotNullParameter(guildMember, "guildMember");
+            C12238m.checkNotNullParameter(user, "user");
+            C12238m.checkNotNullParameter(str, "userDisplayName");
+            C12238m.checkNotNullParameter(list, "roles");
+            C12238m.checkNotNullParameter(guildMember, "guildMember");
             this.user = user;
             this.userDisplayName = str;
             this.roles = list;
@@ -236,10 +236,10 @@ public final /* data */ class WidgetServerSettingsMembersModel {
         }
 
         public final MemberItem copy(User user, String userDisplayName, List<GuildRole> roles, boolean isManagable, GuildMember guildMember) {
-            Intrinsics3.checkNotNullParameter(user, "user");
-            Intrinsics3.checkNotNullParameter(userDisplayName, "userDisplayName");
-            Intrinsics3.checkNotNullParameter(roles, "roles");
-            Intrinsics3.checkNotNullParameter(guildMember, "guildMember");
+            C12238m.checkNotNullParameter(user, "user");
+            C12238m.checkNotNullParameter(userDisplayName, "userDisplayName");
+            C12238m.checkNotNullParameter(roles, "roles");
+            C12238m.checkNotNullParameter(guildMember, "guildMember");
             return new MemberItem(user, userDisplayName, roles, isManagable, guildMember);
         }
 
@@ -251,7 +251,7 @@ public final /* data */ class WidgetServerSettingsMembersModel {
                 return false;
             }
             MemberItem memberItem = (MemberItem) other;
-            return Intrinsics3.areEqual(this.user, memberItem.user) && Intrinsics3.areEqual(this.userDisplayName, memberItem.userDisplayName) && Intrinsics3.areEqual(this.roles, memberItem.roles) && this.isManagable == memberItem.isManagable && Intrinsics3.areEqual(this.guildMember, memberItem.guildMember);
+            return C12238m.areEqual(this.user, memberItem.user) && C12238m.areEqual(this.userDisplayName, memberItem.userDisplayName) && C12238m.areEqual(this.roles, memberItem.roles) && this.isManagable == memberItem.isManagable && C12238m.areEqual(this.guildMember, memberItem.guildMember);
         }
 
         public final GuildMember getGuildMember() {
@@ -307,26 +307,26 @@ public final /* data */ class WidgetServerSettingsMembersModel {
         }
 
         public String toString() {
-            StringBuilder sbU = outline.U("MemberItem(user=");
-            sbU.append(this.user);
-            sbU.append(", userDisplayName=");
-            sbU.append(this.userDisplayName);
-            sbU.append(", roles=");
-            sbU.append(this.roles);
-            sbU.append(", isManagable=");
-            sbU.append(this.isManagable);
-            sbU.append(", guildMember=");
-            sbU.append(this.guildMember);
-            sbU.append(")");
-            return sbU.toString();
+            StringBuilder sbM833U = C1643a.m833U("MemberItem(user=");
+            sbM833U.append(this.user);
+            sbM833U.append(", userDisplayName=");
+            sbM833U.append(this.userDisplayName);
+            sbM833U.append(", roles=");
+            sbM833U.append(this.roles);
+            sbM833U.append(", isManagable=");
+            sbM833U.append(this.isManagable);
+            sbM833U.append(", guildMember=");
+            sbM833U.append(this.guildMember);
+            sbM833U.append(")");
+            return sbM833U.toString();
         }
     }
 
     public WidgetServerSettingsMembersModel(Guild guild, Map<Long, GuildRole> map, List<MemberItem> list, GuildRole guildRole, MeUser meUser, boolean z2, boolean z3) {
-        Intrinsics3.checkNotNullParameter(guild, "guild");
-        Intrinsics3.checkNotNullParameter(map, "roles");
-        Intrinsics3.checkNotNullParameter(list, "memberItems");
-        Intrinsics3.checkNotNullParameter(meUser, "meUser");
+        C12238m.checkNotNullParameter(guild, "guild");
+        C12238m.checkNotNullParameter(map, "roles");
+        C12238m.checkNotNullParameter(list, "memberItems");
+        C12238m.checkNotNullParameter(meUser, "meUser");
         this.guild = guild;
         this.roles = map;
         this.memberItems = list;
@@ -401,10 +401,10 @@ public final /* data */ class WidgetServerSettingsMembersModel {
     }
 
     public final WidgetServerSettingsMembersModel copy(Guild guild, Map<Long, GuildRole> roles, List<MemberItem> memberItems, GuildRole myHighestRole, MeUser meUser, boolean canKick, boolean canManageMembers) {
-        Intrinsics3.checkNotNullParameter(guild, "guild");
-        Intrinsics3.checkNotNullParameter(roles, "roles");
-        Intrinsics3.checkNotNullParameter(memberItems, "memberItems");
-        Intrinsics3.checkNotNullParameter(meUser, "meUser");
+        C12238m.checkNotNullParameter(guild, "guild");
+        C12238m.checkNotNullParameter(roles, "roles");
+        C12238m.checkNotNullParameter(memberItems, "memberItems");
+        C12238m.checkNotNullParameter(meUser, "meUser");
         return new WidgetServerSettingsMembersModel(guild, roles, memberItems, myHighestRole, meUser, canKick, canManageMembers);
     }
 
@@ -416,7 +416,7 @@ public final /* data */ class WidgetServerSettingsMembersModel {
             return false;
         }
         WidgetServerSettingsMembersModel widgetServerSettingsMembersModel = (WidgetServerSettingsMembersModel) other;
-        return Intrinsics3.areEqual(this.guild, widgetServerSettingsMembersModel.guild) && Intrinsics3.areEqual(this.roles, widgetServerSettingsMembersModel.roles) && Intrinsics3.areEqual(this.memberItems, widgetServerSettingsMembersModel.memberItems) && Intrinsics3.areEqual(this.myHighestRole, widgetServerSettingsMembersModel.myHighestRole) && Intrinsics3.areEqual(this.meUser, widgetServerSettingsMembersModel.meUser) && this.canKick == widgetServerSettingsMembersModel.canKick && this.canManageMembers == widgetServerSettingsMembersModel.canManageMembers;
+        return C12238m.areEqual(this.guild, widgetServerSettingsMembersModel.guild) && C12238m.areEqual(this.roles, widgetServerSettingsMembersModel.roles) && C12238m.areEqual(this.memberItems, widgetServerSettingsMembersModel.memberItems) && C12238m.areEqual(this.myHighestRole, widgetServerSettingsMembersModel.myHighestRole) && C12238m.areEqual(this.meUser, widgetServerSettingsMembersModel.meUser) && this.canKick == widgetServerSettingsMembersModel.canKick && this.canManageMembers == widgetServerSettingsMembersModel.canManageMembers;
     }
 
     public final boolean getCanKick() {
@@ -478,19 +478,19 @@ public final /* data */ class WidgetServerSettingsMembersModel {
     }
 
     public String toString() {
-        StringBuilder sbU = outline.U("WidgetServerSettingsMembersModel(guild=");
-        sbU.append(this.guild);
-        sbU.append(", roles=");
-        sbU.append(this.roles);
-        sbU.append(", memberItems=");
-        sbU.append(this.memberItems);
-        sbU.append(", myHighestRole=");
-        sbU.append(this.myHighestRole);
-        sbU.append(", meUser=");
-        sbU.append(this.meUser);
-        sbU.append(", canKick=");
-        sbU.append(this.canKick);
-        sbU.append(", canManageMembers=");
-        return outline.O(sbU, this.canManageMembers, ")");
+        StringBuilder sbM833U = C1643a.m833U("WidgetServerSettingsMembersModel(guild=");
+        sbM833U.append(this.guild);
+        sbM833U.append(", roles=");
+        sbM833U.append(this.roles);
+        sbM833U.append(", memberItems=");
+        sbM833U.append(this.memberItems);
+        sbM833U.append(", myHighestRole=");
+        sbM833U.append(this.myHighestRole);
+        sbM833U.append(", meUser=");
+        sbM833U.append(this.meUser);
+        sbM833U.append(", canKick=");
+        sbM833U.append(this.canKick);
+        sbM833U.append(", canManageMembers=");
+        return C1643a.m827O(sbM833U, this.canManageMembers, ")");
     }
 }

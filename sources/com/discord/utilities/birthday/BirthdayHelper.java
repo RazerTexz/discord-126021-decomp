@@ -1,8 +1,8 @@
 package com.discord.utilities.birthday;
 
 import com.discord.utilities.time.ClockFactory;
-import d0.z.d.Intrinsics3;
 import java.util.Calendar;
+import p507d0.p592z.p594d.C12238m;
 
 /* JADX INFO: compiled from: BirthdayHelper.kt */
 /* JADX INFO: loaded from: classes2.dex */
@@ -23,9 +23,9 @@ public final class BirthdayHelper {
         long jCurrentTimeMillis = ClockFactory.get().currentTimeMillis();
         Calendar calendar = Calendar.getInstance();
         Calendar calendar2 = Calendar.getInstance();
-        Intrinsics3.checkNotNullExpressionValue(calendar, "nowCalendar");
+        C12238m.checkNotNullExpressionValue(calendar, "nowCalendar");
         calendar.setTimeInMillis(jCurrentTimeMillis);
-        Intrinsics3.checkNotNullExpressionValue(calendar2, "dobCalendar");
+        C12238m.checkNotNullExpressionValue(calendar2, "dobCalendar");
         calendar2.setTimeInMillis(dateOfBirth);
         return (calendar2.get(2) > calendar.get(2) || (calendar2.get(2) == calendar.get(2) && calendar2.get(5) > calendar.get(5))) ? (calendar.get(1) - calendar2.get(1)) - 1 : calendar.get(1) - calendar2.get(1);
     }
@@ -37,7 +37,7 @@ public final class BirthdayHelper {
     public final long subtractYearsFromToday(int years) {
         long jCurrentTimeMillis = ClockFactory.get().currentTimeMillis();
         Calendar calendar = Calendar.getInstance();
-        Intrinsics3.checkNotNullExpressionValue(calendar, "calendar");
+        C12238m.checkNotNullExpressionValue(calendar, "calendar");
         calendar.setTimeInMillis(jCurrentTimeMillis);
         calendar.set(1, calendar.get(1) - years);
         return calendar.getTimeInMillis();

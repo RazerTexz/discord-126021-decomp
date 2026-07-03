@@ -1,9 +1,9 @@
 package com.discord.api.activity;
 
-import b.d.b.a.outline;
 import com.discord.models.domain.ModelAuditLogEntry;
-import d0.z.d.Intrinsics3;
 import java.util.List;
+import p007b.p100d.p104b.p105a.C1643a;
+import p507d0.p592z.p594d.C12238m;
 
 /* JADX INFO: compiled from: Activity.kt */
 /* JADX INFO: loaded from: classes.dex */
@@ -28,8 +28,8 @@ public final /* data */ class Activity {
     private final String url;
 
     public Activity(String str, ActivityType activityType, String str2, long j, ActivityTimestamps activityTimestamps, Long l, String str3, String str4, ActivityEmoji activityEmoji, ActivityParty activityParty, ActivityAssets activityAssets, Integer num, String str5, String str6, ActivityMetadata activityMetadata, ActivityPlatform activityPlatform, List<? extends ActivityPlatform> list, List<String> list2) {
-        Intrinsics3.checkNotNullParameter(str, ModelAuditLogEntry.CHANGE_KEY_NAME);
-        Intrinsics3.checkNotNullParameter(activityType, "type");
+        C12238m.checkNotNullParameter(str, ModelAuditLogEntry.CHANGE_KEY_NAME);
+        C12238m.checkNotNullParameter(activityType, "type");
         this.name = str;
         this.type = activityType;
         this.url = null;
@@ -60,7 +60,8 @@ public final /* data */ class Activity {
         return this.assets;
     }
 
-    public final List<String> c() {
+    /* JADX INFO: renamed from: c */
+    public final List<String> m7534c() {
         return this.buttons;
     }
 
@@ -82,7 +83,7 @@ public final /* data */ class Activity {
             return false;
         }
         Activity activity = (Activity) other;
-        return Intrinsics3.areEqual(this.name, activity.name) && Intrinsics3.areEqual(this.type, activity.type) && Intrinsics3.areEqual(this.url, activity.url) && this.createdAt == activity.createdAt && Intrinsics3.areEqual(this.timestamps, activity.timestamps) && Intrinsics3.areEqual(this.applicationId, activity.applicationId) && Intrinsics3.areEqual(this.details, activity.details) && Intrinsics3.areEqual(this.state, activity.state) && Intrinsics3.areEqual(this.emoji, activity.emoji) && Intrinsics3.areEqual(this.party, activity.party) && Intrinsics3.areEqual(this.assets, activity.assets) && Intrinsics3.areEqual(this.flags, activity.flags) && Intrinsics3.areEqual(this.syncId, activity.syncId) && Intrinsics3.areEqual(this.sessionId, activity.sessionId) && Intrinsics3.areEqual(this.metadata, activity.metadata) && Intrinsics3.areEqual(this.platform, activity.platform) && Intrinsics3.areEqual(this.supportedPlatforms, activity.supportedPlatforms) && Intrinsics3.areEqual(this.buttons, activity.buttons);
+        return C12238m.areEqual(this.name, activity.name) && C12238m.areEqual(this.type, activity.type) && C12238m.areEqual(this.url, activity.url) && this.createdAt == activity.createdAt && C12238m.areEqual(this.timestamps, activity.timestamps) && C12238m.areEqual(this.applicationId, activity.applicationId) && C12238m.areEqual(this.details, activity.details) && C12238m.areEqual(this.state, activity.state) && C12238m.areEqual(this.emoji, activity.emoji) && C12238m.areEqual(this.party, activity.party) && C12238m.areEqual(this.assets, activity.assets) && C12238m.areEqual(this.flags, activity.flags) && C12238m.areEqual(this.syncId, activity.syncId) && C12238m.areEqual(this.sessionId, activity.sessionId) && C12238m.areEqual(this.metadata, activity.metadata) && C12238m.areEqual(this.platform, activity.platform) && C12238m.areEqual(this.supportedPlatforms, activity.supportedPlatforms) && C12238m.areEqual(this.buttons, activity.buttons);
     }
 
     /* JADX INFO: renamed from: f, reason: from getter */
@@ -159,7 +160,8 @@ public final /* data */ class Activity {
         return this.state;
     }
 
-    public final List<ActivityPlatform> m() {
+    /* JADX INFO: renamed from: m */
+    public final List<ActivityPlatform> m7544m() {
         return this.supportedPlatforms;
     }
 
@@ -179,41 +181,41 @@ public final /* data */ class Activity {
     }
 
     public String toString() {
-        StringBuilder sbU = outline.U("Activity(name=");
-        sbU.append(this.name);
-        sbU.append(", type=");
-        sbU.append(this.type);
-        sbU.append(", url=");
-        sbU.append(this.url);
-        sbU.append(", createdAt=");
-        sbU.append(this.createdAt);
-        sbU.append(", timestamps=");
-        sbU.append(this.timestamps);
-        sbU.append(", applicationId=");
-        sbU.append(this.applicationId);
-        sbU.append(", details=");
-        sbU.append(this.details);
-        sbU.append(", state=");
-        sbU.append(this.state);
-        sbU.append(", emoji=");
-        sbU.append(this.emoji);
-        sbU.append(", party=");
-        sbU.append(this.party);
-        sbU.append(", assets=");
-        sbU.append(this.assets);
-        sbU.append(", flags=");
-        sbU.append(this.flags);
-        sbU.append(", syncId=");
-        sbU.append(this.syncId);
-        sbU.append(", sessionId=");
-        sbU.append(this.sessionId);
-        sbU.append(", metadata=");
-        sbU.append(this.metadata);
-        sbU.append(", platform=");
-        sbU.append(this.platform);
-        sbU.append(", supportedPlatforms=");
-        sbU.append(this.supportedPlatforms);
-        sbU.append(", buttons=");
-        return outline.L(sbU, this.buttons, ")");
+        StringBuilder sbM833U = C1643a.m833U("Activity(name=");
+        sbM833U.append(this.name);
+        sbM833U.append(", type=");
+        sbM833U.append(this.type);
+        sbM833U.append(", url=");
+        sbM833U.append(this.url);
+        sbM833U.append(", createdAt=");
+        sbM833U.append(this.createdAt);
+        sbM833U.append(", timestamps=");
+        sbM833U.append(this.timestamps);
+        sbM833U.append(", applicationId=");
+        sbM833U.append(this.applicationId);
+        sbM833U.append(", details=");
+        sbM833U.append(this.details);
+        sbM833U.append(", state=");
+        sbM833U.append(this.state);
+        sbM833U.append(", emoji=");
+        sbM833U.append(this.emoji);
+        sbM833U.append(", party=");
+        sbM833U.append(this.party);
+        sbM833U.append(", assets=");
+        sbM833U.append(this.assets);
+        sbM833U.append(", flags=");
+        sbM833U.append(this.flags);
+        sbM833U.append(", syncId=");
+        sbM833U.append(this.syncId);
+        sbM833U.append(", sessionId=");
+        sbM833U.append(this.sessionId);
+        sbM833U.append(", metadata=");
+        sbM833U.append(this.metadata);
+        sbM833U.append(", platform=");
+        sbM833U.append(this.platform);
+        sbM833U.append(", supportedPlatforms=");
+        sbM833U.append(this.supportedPlatforms);
+        sbM833U.append(", buttons=");
+        return C1643a.m824L(sbM833U, this.buttons, ")");
     }
 }

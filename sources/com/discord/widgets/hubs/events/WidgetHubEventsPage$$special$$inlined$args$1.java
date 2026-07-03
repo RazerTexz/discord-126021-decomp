@@ -1,14 +1,14 @@
 package com.discord.widgets.hubs.events;
 
 import android.os.Bundle;
-import b.d.b.a.outline;
 import com.discord.app.AppBottomSheet;
-import d0.z.d.Lambda;
 import kotlin.jvm.functions.Function0;
+import p007b.p100d.p104b.p105a.C1643a;
+import p507d0.p592z.p594d.AbstractC12240o;
 
 /* JADX INFO: compiled from: ArgUtils.kt */
 /* JADX INFO: loaded from: classes2.dex */
-public final class WidgetHubEventsPage$$special$$inlined$args$1 extends Lambda implements Function0<WidgetHubEventsPage2> {
+public final class WidgetHubEventsPage$$special$$inlined$args$1 extends AbstractC12240o implements Function0<HubEventsArgs> {
     public final /* synthetic */ String $argsKey;
     public final /* synthetic */ AppBottomSheet $this_args;
 
@@ -21,15 +21,15 @@ public final class WidgetHubEventsPage$$special$$inlined$args$1 extends Lambda i
 
     /* JADX WARN: Can't rename method to resolve collision */
     @Override // kotlin.jvm.functions.Function0
-    public final WidgetHubEventsPage2 invoke() {
+    public final HubEventsArgs invoke() {
         Bundle arguments = this.$this_args.getArguments();
         Object obj = arguments != null ? arguments.get(this.$argsKey) : null;
-        WidgetHubEventsPage2 widgetHubEventsPage2 = (WidgetHubEventsPage2) (obj instanceof WidgetHubEventsPage2 ? obj : null);
-        if (widgetHubEventsPage2 != null) {
-            return widgetHubEventsPage2;
+        HubEventsArgs hubEventsArgs = (HubEventsArgs) (obj instanceof HubEventsArgs ? obj : null);
+        if (hubEventsArgs != null) {
+            return hubEventsArgs;
         }
-        StringBuilder sbU = outline.U("Missing args for class type ");
-        outline.l0(WidgetHubEventsPage2.class, sbU, " + key ");
-        throw new IllegalStateException(outline.H(sbU, this.$argsKey, '!'));
+        StringBuilder sbM833U = C1643a.m833U("Missing args for class type ");
+        C1643a.m862l0(HubEventsArgs.class, sbM833U, " + key ");
+        throw new IllegalStateException(C1643a.m820H(sbM833U, this.$argsKey, '!'));
     }
 }

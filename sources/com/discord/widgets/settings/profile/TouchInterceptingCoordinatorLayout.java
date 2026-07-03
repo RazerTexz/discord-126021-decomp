@@ -4,9 +4,9 @@ import android.content.Context;
 import android.util.AttributeSet;
 import android.view.MotionEvent;
 import androidx.coordinatorlayout.widget.CoordinatorLayout;
-import d0.z.d.Intrinsics3;
 import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.DefaultConstructorMarker;
+import p507d0.p592z.p594d.C12238m;
 
 /* JADX INFO: compiled from: TouchInterceptingCoordinatorLayout.kt */
 /* JADX INFO: loaded from: classes2.dex */
@@ -16,7 +16,7 @@ public final class TouchInterceptingCoordinatorLayout extends CoordinatorLayout 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public TouchInterceptingCoordinatorLayout(Context context) {
         super(context);
-        Intrinsics3.checkNotNullParameter(context, "context");
+        C12238m.checkNotNullParameter(context, "context");
     }
 
     public final Function1<MotionEvent, Boolean> getOnInterceptTouchEvent() {
@@ -36,7 +36,7 @@ public final class TouchInterceptingCoordinatorLayout extends CoordinatorLayout 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public TouchInterceptingCoordinatorLayout(Context context, AttributeSet attributeSet) {
         super(context, attributeSet);
-        Intrinsics3.checkNotNullParameter(context, "context");
+        C12238m.checkNotNullParameter(context, "context");
     }
 
     public /* synthetic */ TouchInterceptingCoordinatorLayout(Context context, AttributeSet attributeSet, int i, DefaultConstructorMarker defaultConstructorMarker) {
@@ -46,7 +46,7 @@ public final class TouchInterceptingCoordinatorLayout extends CoordinatorLayout 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public TouchInterceptingCoordinatorLayout(Context context, AttributeSet attributeSet, int i) {
         super(context, attributeSet, i);
-        Intrinsics3.checkNotNullParameter(context, "context");
+        C12238m.checkNotNullParameter(context, "context");
     }
 
     public /* synthetic */ TouchInterceptingCoordinatorLayout(Context context, AttributeSet attributeSet, int i, int i2, DefaultConstructorMarker defaultConstructorMarker) {

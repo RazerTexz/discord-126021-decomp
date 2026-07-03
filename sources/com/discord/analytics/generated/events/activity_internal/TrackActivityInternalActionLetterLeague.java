@@ -1,16 +1,16 @@
 package com.discord.analytics.generated.events.activity_internal;
 
-import b.d.b.a.outline;
 import com.discord.analytics.generated.traits.TrackActivityInternalMetadata;
-import com.discord.analytics.generated.traits.TrackActivityInternalMetadata2;
+import com.discord.analytics.generated.traits.TrackActivityInternalMetadataReceiver;
 import com.discord.analytics.generated.traits.TrackBase;
-import com.discord.analytics.generated.traits.TrackBase2;
+import com.discord.analytics.generated.traits.TrackBaseReceiver;
 import com.discord.api.science.AnalyticsSchema;
-import d0.z.d.Intrinsics3;
+import p007b.p100d.p104b.p105a.C1643a;
+import p507d0.p592z.p594d.C12238m;
 
 /* JADX INFO: compiled from: TrackActivityInternalActionLetterLeague.kt */
 /* JADX INFO: loaded from: classes.dex */
-public final /* data */ class TrackActivityInternalActionLetterLeague implements AnalyticsSchema, TrackBase2, TrackActivityInternalMetadata2 {
+public final /* data */ class TrackActivityInternalActionLetterLeague implements AnalyticsSchema, TrackBaseReceiver, TrackActivityInternalMetadataReceiver {
     private TrackActivityInternalMetadata trackActivityInternalMetadata;
     private TrackBase trackBase;
     private final CharSequence actionName = null;
@@ -39,7 +39,7 @@ public final /* data */ class TrackActivityInternalActionLetterLeague implements
             return false;
         }
         TrackActivityInternalActionLetterLeague trackActivityInternalActionLetterLeague = (TrackActivityInternalActionLetterLeague) other;
-        return Intrinsics3.areEqual(this.actionName, trackActivityInternalActionLetterLeague.actionName) && Intrinsics3.areEqual(this.bag, trackActivityInternalActionLetterLeague.bag) && Intrinsics3.areEqual(this.scoringMode, trackActivityInternalActionLetterLeague.scoringMode) && Intrinsics3.areEqual(this.numPlayers, trackActivityInternalActionLetterLeague.numPlayers) && Intrinsics3.areEqual(this.numSpectators, trackActivityInternalActionLetterLeague.numSpectators) && Intrinsics3.areEqual(this.phase, trackActivityInternalActionLetterLeague.phase) && Intrinsics3.areEqual(this.durationS, trackActivityInternalActionLetterLeague.durationS) && Intrinsics3.areEqual(this.score, trackActivityInternalActionLetterLeague.score) && Intrinsics3.areEqual(this.turnType, trackActivityInternalActionLetterLeague.turnType) && Intrinsics3.areEqual(this.word, trackActivityInternalActionLetterLeague.word);
+        return C12238m.areEqual(this.actionName, trackActivityInternalActionLetterLeague.actionName) && C12238m.areEqual(this.bag, trackActivityInternalActionLetterLeague.bag) && C12238m.areEqual(this.scoringMode, trackActivityInternalActionLetterLeague.scoringMode) && C12238m.areEqual(this.numPlayers, trackActivityInternalActionLetterLeague.numPlayers) && C12238m.areEqual(this.numSpectators, trackActivityInternalActionLetterLeague.numSpectators) && C12238m.areEqual(this.phase, trackActivityInternalActionLetterLeague.phase) && C12238m.areEqual(this.durationS, trackActivityInternalActionLetterLeague.durationS) && C12238m.areEqual(this.score, trackActivityInternalActionLetterLeague.score) && C12238m.areEqual(this.turnType, trackActivityInternalActionLetterLeague.turnType) && C12238m.areEqual(this.word, trackActivityInternalActionLetterLeague.word);
     }
 
     public int hashCode() {
@@ -66,25 +66,25 @@ public final /* data */ class TrackActivityInternalActionLetterLeague implements
     }
 
     public String toString() {
-        StringBuilder sbU = outline.U("TrackActivityInternalActionLetterLeague(actionName=");
-        sbU.append(this.actionName);
-        sbU.append(", bag=");
-        sbU.append(this.bag);
-        sbU.append(", scoringMode=");
-        sbU.append(this.scoringMode);
-        sbU.append(", numPlayers=");
-        sbU.append(this.numPlayers);
-        sbU.append(", numSpectators=");
-        sbU.append(this.numSpectators);
-        sbU.append(", phase=");
-        sbU.append(this.phase);
-        sbU.append(", durationS=");
-        sbU.append(this.durationS);
-        sbU.append(", score=");
-        sbU.append(this.score);
-        sbU.append(", turnType=");
-        sbU.append(this.turnType);
-        sbU.append(", word=");
-        return outline.E(sbU, this.word, ")");
+        StringBuilder sbM833U = C1643a.m833U("TrackActivityInternalActionLetterLeague(actionName=");
+        sbM833U.append(this.actionName);
+        sbM833U.append(", bag=");
+        sbM833U.append(this.bag);
+        sbM833U.append(", scoringMode=");
+        sbM833U.append(this.scoringMode);
+        sbM833U.append(", numPlayers=");
+        sbM833U.append(this.numPlayers);
+        sbM833U.append(", numSpectators=");
+        sbM833U.append(this.numSpectators);
+        sbM833U.append(", phase=");
+        sbM833U.append(this.phase);
+        sbM833U.append(", durationS=");
+        sbM833U.append(this.durationS);
+        sbM833U.append(", score=");
+        sbM833U.append(this.score);
+        sbM833U.append(", turnType=");
+        sbM833U.append(this.turnType);
+        sbM833U.append(", word=");
+        return C1643a.m817E(sbM833U, this.word, ")");
     }
 }

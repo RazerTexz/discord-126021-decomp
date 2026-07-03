@@ -40,7 +40,6 @@ import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 import androidx.core.view.accessibility.AccessibilityNodeInfoCompat;
 import androidx.customview.view.AbsSavedState;
-import b.d.b.a.outline;
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Inherited;
 import java.lang.annotation.Retention;
@@ -50,6 +49,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
+import p007b.p100d.p104b.p105a.C1643a;
 
 /* JADX INFO: loaded from: classes.dex */
 public class ViewPager extends ViewGroup {
@@ -272,10 +272,10 @@ public class ViewPager extends ViewGroup {
         }
 
         public String toString() {
-            StringBuilder sbU = outline.U("FragmentPager.SavedState{");
-            sbU.append(Integer.toHexString(System.identityHashCode(this)));
-            sbU.append(" position=");
-            return outline.B(sbU, this.position, "}");
+            StringBuilder sbM833U = C1643a.m833U("FragmentPager.SavedState{");
+            sbM833U.append(Integer.toHexString(System.identityHashCode(this)));
+            sbM833U.append(" position=");
+            return C1643a.m814B(sbM833U, this.position, "}");
         }
 
         @Override // androidx.customview.view.AbsSavedState, android.os.Parcelable
@@ -937,9 +937,9 @@ public class ViewPager extends ViewGroup {
                     sb.append(" => ");
                     sb.append(parent2.getClass().getSimpleName());
                 }
-                StringBuilder sbU = outline.U("arrowScroll tried to find focus based on non-child current focused view ");
-                sbU.append(sb.toString());
-                Log.e(TAG, sbU.toString());
+                StringBuilder sbM833U = C1643a.m833U("arrowScroll tried to find focus based on non-child current focused view ");
+                sbM833U.append(sb.toString());
+                Log.e(TAG, sbM833U.toString());
                 viewFindFocus = null;
             }
         }
@@ -2184,17 +2184,17 @@ public class ViewPager extends ViewGroup {
             } catch (Resources.NotFoundException unused) {
                 hexString = Integer.toHexString(getId());
             }
-            StringBuilder sbU = outline.U("The application's PagerAdapter changed the adapter's contents without calling PagerAdapter#notifyDataSetChanged! Expected adapter item count: ");
-            sbU.append(this.mExpectedAdapterCount);
-            sbU.append(", found: ");
-            sbU.append(count);
-            sbU.append(" Pager id: ");
-            sbU.append(hexString);
-            sbU.append(" Pager class: ");
-            sbU.append(getClass());
-            sbU.append(" Problematic adapter: ");
-            sbU.append(this.mAdapter.getClass());
-            throw new IllegalStateException(sbU.toString());
+            StringBuilder sbM833U = C1643a.m833U("The application's PagerAdapter changed the adapter's contents without calling PagerAdapter#notifyDataSetChanged! Expected adapter item count: ");
+            sbM833U.append(this.mExpectedAdapterCount);
+            sbM833U.append(", found: ");
+            sbM833U.append(count);
+            sbM833U.append(" Pager id: ");
+            sbM833U.append(hexString);
+            sbM833U.append(" Pager class: ");
+            sbM833U.append(getClass());
+            sbM833U.append(" Problematic adapter: ");
+            sbM833U.append(this.mAdapter.getClass());
+            throw new IllegalStateException(sbM833U.toString());
         }
         int i4 = 0;
         while (true) {

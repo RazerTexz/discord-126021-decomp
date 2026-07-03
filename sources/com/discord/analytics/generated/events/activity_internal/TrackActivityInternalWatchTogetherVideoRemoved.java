@@ -1,16 +1,16 @@
 package com.discord.analytics.generated.events.activity_internal;
 
-import b.d.b.a.outline;
 import com.discord.analytics.generated.traits.TrackActivityInternalMetadata;
-import com.discord.analytics.generated.traits.TrackActivityInternalMetadata2;
+import com.discord.analytics.generated.traits.TrackActivityInternalMetadataReceiver;
 import com.discord.analytics.generated.traits.TrackBase;
-import com.discord.analytics.generated.traits.TrackBase2;
+import com.discord.analytics.generated.traits.TrackBaseReceiver;
 import com.discord.api.science.AnalyticsSchema;
-import d0.z.d.Intrinsics3;
+import p007b.p100d.p104b.p105a.C1643a;
+import p507d0.p592z.p594d.C12238m;
 
 /* JADX INFO: compiled from: TrackActivityInternalWatchTogetherVideoRemoved.kt */
 /* JADX INFO: loaded from: classes.dex */
-public final /* data */ class TrackActivityInternalWatchTogetherVideoRemoved implements AnalyticsSchema, TrackBase2, TrackActivityInternalMetadata2 {
+public final /* data */ class TrackActivityInternalWatchTogetherVideoRemoved implements AnalyticsSchema, TrackBaseReceiver, TrackActivityInternalMetadataReceiver {
     private TrackActivityInternalMetadata trackActivityInternalMetadata;
     private TrackBase trackBase;
     private final Boolean isHost = null;
@@ -31,7 +31,7 @@ public final /* data */ class TrackActivityInternalWatchTogetherVideoRemoved imp
             return false;
         }
         TrackActivityInternalWatchTogetherVideoRemoved trackActivityInternalWatchTogetherVideoRemoved = (TrackActivityInternalWatchTogetherVideoRemoved) other;
-        return Intrinsics3.areEqual(this.isHost, trackActivityInternalWatchTogetherVideoRemoved.isHost) && Intrinsics3.areEqual(this.isHostMode, trackActivityInternalWatchTogetherVideoRemoved.isHostMode);
+        return C12238m.areEqual(this.isHost, trackActivityInternalWatchTogetherVideoRemoved.isHost) && C12238m.areEqual(this.isHostMode, trackActivityInternalWatchTogetherVideoRemoved.isHostMode);
     }
 
     public int hashCode() {
@@ -42,9 +42,9 @@ public final /* data */ class TrackActivityInternalWatchTogetherVideoRemoved imp
     }
 
     public String toString() {
-        StringBuilder sbU = outline.U("TrackActivityInternalWatchTogetherVideoRemoved(isHost=");
-        sbU.append(this.isHost);
-        sbU.append(", isHostMode=");
-        return outline.D(sbU, this.isHostMode, ")");
+        StringBuilder sbM833U = C1643a.m833U("TrackActivityInternalWatchTogetherVideoRemoved(isHost=");
+        sbM833U.append(this.isHost);
+        sbM833U.append(", isHostMode=");
+        return C1643a.m816D(sbM833U, this.isHostMode, ")");
     }
 }

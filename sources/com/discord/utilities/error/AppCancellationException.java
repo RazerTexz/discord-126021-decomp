@@ -1,8 +1,8 @@
 package com.discord.utilities.error;
 
-import b.d.b.a.outline;
-import d0.z.d.Intrinsics3;
 import java.util.concurrent.CancellationException;
+import p007b.p100d.p104b.p105a.C1643a;
+import p507d0.p592z.p594d.C12238m;
 
 /* JADX INFO: compiled from: AppCancellationException.kt */
 /* JADX INFO: loaded from: classes2.dex */
@@ -12,7 +12,7 @@ public final /* data */ class AppCancellationException extends CancellationExcep
     private final String message;
 
     public AppCancellationException(String str, Throwable th, Error error) {
-        Intrinsics3.checkNotNullParameter(error, "error");
+        C12238m.checkNotNullParameter(error, "error");
         this.message = str;
         this.cause = th;
         this.error = error;
@@ -45,7 +45,7 @@ public final /* data */ class AppCancellationException extends CancellationExcep
     }
 
     public final AppCancellationException copy(String message, Throwable cause, Error error) {
-        Intrinsics3.checkNotNullParameter(error, "error");
+        C12238m.checkNotNullParameter(error, "error");
         return new AppCancellationException(message, cause, error);
     }
 
@@ -57,7 +57,7 @@ public final /* data */ class AppCancellationException extends CancellationExcep
             return false;
         }
         AppCancellationException appCancellationException = (AppCancellationException) other;
-        return Intrinsics3.areEqual(getMessage(), appCancellationException.getMessage()) && Intrinsics3.areEqual(getCause(), appCancellationException.getCause()) && Intrinsics3.areEqual(this.error, appCancellationException.error);
+        return C12238m.areEqual(getMessage(), appCancellationException.getMessage()) && C12238m.areEqual(getCause(), appCancellationException.getCause()) && C12238m.areEqual(this.error, appCancellationException.error);
     }
 
     @Override // java.lang.Throwable
@@ -85,13 +85,13 @@ public final /* data */ class AppCancellationException extends CancellationExcep
 
     @Override // java.lang.Throwable
     public String toString() {
-        StringBuilder sbU = outline.U("AppCancellationException(message=");
-        sbU.append(getMessage());
-        sbU.append(", cause=");
-        sbU.append(getCause());
-        sbU.append(", error=");
-        sbU.append(this.error);
-        sbU.append(")");
-        return sbU.toString();
+        StringBuilder sbM833U = C1643a.m833U("AppCancellationException(message=");
+        sbM833U.append(getMessage());
+        sbM833U.append(", cause=");
+        sbM833U.append(getCause());
+        sbM833U.append(", error=");
+        sbM833U.append(this.error);
+        sbM833U.append(")");
+        return sbM833U.toString();
     }
 }

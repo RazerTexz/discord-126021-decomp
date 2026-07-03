@@ -88,7 +88,7 @@ public abstract class WorkRequest {
             this.mId = UUID.randomUUID();
             WorkSpec workSpec = new WorkSpec(this.mWorkSpec);
             this.mWorkSpec = workSpec;
-            workSpec.f38id = this.mId.toString();
+            workSpec.f163id = this.mId.toString();
             return w;
         }
 

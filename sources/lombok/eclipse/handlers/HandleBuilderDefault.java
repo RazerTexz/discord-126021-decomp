@@ -14,11 +14,11 @@ import org.eclipse.jdt.internal.compiler.ast.Annotation;
 public class HandleBuilderDefault extends EclipseAnnotationHandler<Builder.Default> {
     @Override // lombok.eclipse.EclipseAnnotationHandler
     public void handle(AnnotationValues<Builder.Default> annotation, Annotation ast, EclipseNode annotationNode) {
-        EclipseNode annotatedField = annotationNode.up();
+        EclipseNode annotatedField = annotationNode.m10925up();
         if (annotatedField.getKind() != AST.Kind.FIELD) {
             return;
         }
-        EclipseNode classWithAnnotatedField = annotatedField.up();
+        EclipseNode classWithAnnotatedField = annotatedField.m10925up();
         if (!EclipseHandlerUtil.hasAnnotation((Class<? extends java.lang.annotation.Annotation>) Builder.class, classWithAnnotatedField) && !EclipseHandlerUtil.hasAnnotation("lombok.experimental.Builder", classWithAnnotatedField) && !EclipseHandlerUtil.hasAnnotation((Class<? extends java.lang.annotation.Annotation>) SuperBuilder.class, classWithAnnotatedField)) {
             annotationNode.addWarning("@Builder.Default requires @Builder or @SuperBuilder on the class for it to mean anything.");
         }

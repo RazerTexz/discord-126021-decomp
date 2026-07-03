@@ -1,8 +1,8 @@
 package androidx.work.impl.utils;
 
 import androidx.annotation.NonNull;
-import androidx.sqlite.db.SimpleSQLiteQuery;
-import androidx.sqlite.db.SupportSQLiteQuery;
+import androidx.sqlite.p006db.SimpleSQLiteQuery;
+import androidx.sqlite.p006db.SupportSQLiteQuery;
 import androidx.work.WorkInfo;
 import androidx.work.WorkQuery;
 import androidx.work.impl.model.WorkTypeConverters;

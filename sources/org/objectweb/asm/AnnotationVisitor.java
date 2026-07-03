@@ -3,7 +3,9 @@ package org.objectweb.asm;
 /* JADX INFO: loaded from: app.apk:org/objectweb/asm/AnnotationVisitor.SCL.lombok */
 public abstract class AnnotationVisitor {
     protected final int api;
-    protected AnnotationVisitor av;
+
+    /* JADX INFO: renamed from: av */
+    protected AnnotationVisitor f27596av;
 
     public AnnotationVisitor(int api) {
         this(api, null);
@@ -17,38 +19,38 @@ public abstract class AnnotationVisitor {
             Constants.checkAsmExperimental(this);
         }
         this.api = api;
-        this.av = annotationVisitor;
+        this.f27596av = annotationVisitor;
     }
 
     public void visit(String name, Object value) {
-        if (this.av != null) {
-            this.av.visit(name, value);
+        if (this.f27596av != null) {
+            this.f27596av.visit(name, value);
         }
     }
 
     public void visitEnum(String name, String descriptor, String value) {
-        if (this.av != null) {
-            this.av.visitEnum(name, descriptor, value);
+        if (this.f27596av != null) {
+            this.f27596av.visitEnum(name, descriptor, value);
         }
     }
 
     public AnnotationVisitor visitAnnotation(String name, String descriptor) {
-        if (this.av != null) {
-            return this.av.visitAnnotation(name, descriptor);
+        if (this.f27596av != null) {
+            return this.f27596av.visitAnnotation(name, descriptor);
         }
         return null;
     }
 
     public AnnotationVisitor visitArray(String name) {
-        if (this.av != null) {
-            return this.av.visitArray(name);
+        if (this.f27596av != null) {
+            return this.f27596av.visitArray(name);
         }
         return null;
     }
 
     public void visitEnd() {
-        if (this.av != null) {
-            this.av.visitEnd();
+        if (this.f27596av != null) {
+            this.f27596av.visitEnd();
         }
     }
 }

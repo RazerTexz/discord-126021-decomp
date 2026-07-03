@@ -1,18 +1,18 @@
 package com.discord.analytics.generated.events;
 
-import b.d.b.a.outline;
 import com.discord.analytics.generated.traits.TrackBase;
-import com.discord.analytics.generated.traits.TrackBase2;
+import com.discord.analytics.generated.traits.TrackBaseReceiver;
 import com.discord.analytics.generated.traits.TrackChannel;
-import com.discord.analytics.generated.traits.TrackChannel2;
+import com.discord.analytics.generated.traits.TrackChannelReceiver;
 import com.discord.analytics.generated.traits.TrackGuild;
-import com.discord.analytics.generated.traits.TrackGuild2;
+import com.discord.analytics.generated.traits.TrackGuildReceiver;
 import com.discord.api.science.AnalyticsSchema;
-import d0.z.d.Intrinsics3;
+import p007b.p100d.p104b.p105a.C1643a;
+import p507d0.p592z.p594d.C12238m;
 
 /* JADX INFO: compiled from: TrackRoleSubscriptionPurchaseSystemMessageClicked.kt */
 /* JADX INFO: loaded from: classes.dex */
-public final /* data */ class TrackRoleSubscriptionPurchaseSystemMessageClicked implements AnalyticsSchema, TrackBase2, TrackGuild2, TrackChannel2 {
+public final /* data */ class TrackRoleSubscriptionPurchaseSystemMessageClicked implements AnalyticsSchema, TrackBaseReceiver, TrackGuildReceiver, TrackChannelReceiver {
     private final transient String analyticsSchemaTypeName;
     private final Long messageId;
     private final Long roleSubscriptionListingId;
@@ -26,14 +26,15 @@ public final /* data */ class TrackRoleSubscriptionPurchaseSystemMessageClicked 
         this.analyticsSchemaTypeName = "role_subscription_purchase_system_message_clicked";
     }
 
-    @Override // com.discord.analytics.generated.traits.TrackGuild2
+    @Override // com.discord.analytics.generated.traits.TrackGuildReceiver
     /* JADX INFO: renamed from: a, reason: from getter */
     public TrackGuild getTrackGuild() {
         return this.trackGuild;
     }
 
-    @Override // com.discord.analytics.generated.traits.TrackGuild2
-    public void c(TrackGuild trackGuild) {
+    @Override // com.discord.analytics.generated.traits.TrackGuildReceiver
+    /* JADX INFO: renamed from: c */
+    public void mo7508c(TrackGuild trackGuild) {
         this.trackGuild = trackGuild;
     }
 
@@ -43,7 +44,8 @@ public final /* data */ class TrackRoleSubscriptionPurchaseSystemMessageClicked 
         return this.analyticsSchemaTypeName;
     }
 
-    public void e(TrackBase trackBase) {
+    /* JADX INFO: renamed from: e */
+    public void m7512e(TrackBase trackBase) {
         this.trackBase = trackBase;
     }
 
@@ -55,10 +57,11 @@ public final /* data */ class TrackRoleSubscriptionPurchaseSystemMessageClicked 
             return false;
         }
         TrackRoleSubscriptionPurchaseSystemMessageClicked trackRoleSubscriptionPurchaseSystemMessageClicked = (TrackRoleSubscriptionPurchaseSystemMessageClicked) other;
-        return Intrinsics3.areEqual(this.messageId, trackRoleSubscriptionPurchaseSystemMessageClicked.messageId) && Intrinsics3.areEqual(this.roleSubscriptionListingId, trackRoleSubscriptionPurchaseSystemMessageClicked.roleSubscriptionListingId);
+        return C12238m.areEqual(this.messageId, trackRoleSubscriptionPurchaseSystemMessageClicked.messageId) && C12238m.areEqual(this.roleSubscriptionListingId, trackRoleSubscriptionPurchaseSystemMessageClicked.roleSubscriptionListingId);
     }
 
-    public void f(TrackChannel trackChannel) {
+    /* JADX INFO: renamed from: f */
+    public void m7513f(TrackChannel trackChannel) {
         this.trackChannel = trackChannel;
     }
 
@@ -70,10 +73,10 @@ public final /* data */ class TrackRoleSubscriptionPurchaseSystemMessageClicked 
     }
 
     public String toString() {
-        StringBuilder sbU = outline.U("TrackRoleSubscriptionPurchaseSystemMessageClicked(messageId=");
-        sbU.append(this.messageId);
-        sbU.append(", roleSubscriptionListingId=");
-        return outline.G(sbU, this.roleSubscriptionListingId, ")");
+        StringBuilder sbM833U = C1643a.m833U("TrackRoleSubscriptionPurchaseSystemMessageClicked(messageId=");
+        sbM833U.append(this.messageId);
+        sbM833U.append(", roleSubscriptionListingId=");
+        return C1643a.m819G(sbM833U, this.roleSubscriptionListingId, ")");
     }
 
     public TrackRoleSubscriptionPurchaseSystemMessageClicked(Long l, Long l2) {

@@ -1,7 +1,7 @@
 package androidx.room;
 
 import androidx.annotation.RestrictTo;
-import androidx.sqlite.db.SupportSQLiteStatement;
+import androidx.sqlite.p006db.SupportSQLiteStatement;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Iterator;

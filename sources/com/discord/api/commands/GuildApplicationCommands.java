@@ -11,11 +11,13 @@ public final class GuildApplicationCommands {
     private final String nonce;
     private final long updatedAt;
 
-    public final List<ApplicationCommand> a() {
+    /* JADX INFO: renamed from: a */
+    public final List<ApplicationCommand> m7746a() {
         return this.applicationCommands;
     }
 
-    public final List<Application> b() {
+    /* JADX INFO: renamed from: b */
+    public final List<Application> m7747b() {
         return this.applications;
     }
 

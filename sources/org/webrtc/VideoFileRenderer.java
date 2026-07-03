@@ -2,7 +2,6 @@ package org.webrtc;
 
 import android.os.Handler;
 import android.os.HandlerThread;
-import h0.c.EglBase2;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.nio.ByteBuffer;
@@ -10,6 +9,7 @@ import java.nio.charset.Charset;
 import java.util.concurrent.CountDownLatch;
 import org.webrtc.EglBase;
 import org.webrtc.VideoFrame;
+import p617h0.p628c.C12477n0;
 
 /* JADX INFO: loaded from: classes3.dex */
 public class VideoFileRenderer implements VideoSink {
@@ -53,7 +53,7 @@ public class VideoFileRenderer implements VideoSink {
         ThreadUtils.invokeAtFrontUninterruptibly(handler, new Runnable() { // from class: org.webrtc.VideoFileRenderer.1
             @Override // java.lang.Runnable
             public void run() {
-                VideoFileRenderer.this.eglBase = EglBase2.b(context, EglBase.CONFIG_PIXEL_BUFFER);
+                VideoFileRenderer.this.eglBase = C12477n0.m10663b(context, EglBase.CONFIG_PIXEL_BUFFER);
                 VideoFileRenderer.this.eglBase.createDummyPbufferSurface();
                 VideoFileRenderer.this.eglBase.makeCurrent();
                 VideoFileRenderer.this.yuvConverter = new YuvConverter();
@@ -62,7 +62,7 @@ public class VideoFileRenderer implements VideoSink {
     }
 
     /* JADX INFO: renamed from: renderFrameOnRenderThread, reason: merged with bridge method [inline-methods] */
-    private void a(final VideoFrame videoFrame) {
+    private void m11049a(final VideoFrame videoFrame) {
         VideoFrame.Buffer buffer = videoFrame.getBuffer();
         int i = videoFrame.getRotation() % 180 == 0 ? this.outputFileWidth : this.outputFileHeight;
         int i2 = videoFrame.getRotation() % 180 == 0 ? this.outputFileHeight : this.outputFileWidth;
@@ -82,29 +82,32 @@ public class VideoFileRenderer implements VideoSink {
         this.fileThreadHandler.post(new Runnable() { // from class: h0.c.g0
             @Override // java.lang.Runnable
             public final void run() {
-                this.j.d(i420, videoFrame);
+                this.f26430j.m11052d(i420, videoFrame);
             }
         });
     }
 
-    public /* synthetic */ void b(CountDownLatch countDownLatch) {
+    /* JADX INFO: renamed from: b */
+    public /* synthetic */ void m11050b(CountDownLatch countDownLatch) {
         this.yuvConverter.release();
         this.eglBase.release();
         this.renderThread.quit();
         countDownLatch.countDown();
     }
 
-    public /* synthetic */ void c() {
+    /* JADX INFO: renamed from: c */
+    public /* synthetic */ void m11051c() {
         try {
             this.videoOutFile.close();
-            Logging.d(TAG, "Video written to disk as " + this.outputFileName + ". The number of frames is " + this.frameCount + " and the dimensions of the frames are " + this.outputFileWidth + "x" + this.outputFileHeight + ".");
+            Logging.m11027d(TAG, "Video written to disk as " + this.outputFileName + ". The number of frames is " + this.frameCount + " and the dimensions of the frames are " + this.outputFileWidth + "x" + this.outputFileHeight + ".");
             this.fileThread.quit();
         } catch (IOException e) {
             throw new RuntimeException("Error closing output file", e);
         }
     }
 
-    public /* synthetic */ void d(VideoFrame.I420Buffer i420Buffer, VideoFrame videoFrame) {
+    /* JADX INFO: renamed from: d */
+    public /* synthetic */ void m11052d(VideoFrame.I420Buffer i420Buffer, VideoFrame videoFrame) {
         YuvHelper.I420Rotate(i420Buffer.getDataY(), i420Buffer.getStrideY(), i420Buffer.getDataU(), i420Buffer.getStrideU(), i420Buffer.getDataV(), i420Buffer.getStrideV(), this.outputFrameBuffer, i420Buffer.getWidth(), i420Buffer.getHeight(), videoFrame.getRotation());
         i420Buffer.release();
         try {
@@ -122,7 +125,7 @@ public class VideoFileRenderer implements VideoSink {
         this.renderThreadHandler.post(new Runnable() { // from class: h0.c.e0
             @Override // java.lang.Runnable
             public final void run() {
-                this.j.a(videoFrame);
+                this.f26418j.m11049a(videoFrame);
             }
         });
     }
@@ -132,21 +135,21 @@ public class VideoFileRenderer implements VideoSink {
         this.renderThreadHandler.post(new Runnable() { // from class: h0.c.f0
             @Override // java.lang.Runnable
             public final void run() {
-                this.j.b(countDownLatch);
+                this.f26425j.m11050b(countDownLatch);
             }
         });
         ThreadUtils.awaitUninterruptibly(countDownLatch);
         this.fileThreadHandler.post(new Runnable() { // from class: h0.c.d0
             @Override // java.lang.Runnable
             public final void run() {
-                this.j.c();
+                this.f26415j.m11051c();
             }
         });
         try {
             this.fileThread.join();
         } catch (InterruptedException e) {
             Thread.currentThread().interrupt();
-            Logging.e(TAG, "Interrupted while waiting for the write to disk to complete.", e);
+            Logging.m11029e(TAG, "Interrupted while waiting for the write to disk to complete.", e);
         }
     }
 }

@@ -1,22 +1,22 @@
 package com.discord.widgets.settings;
 
 import android.view.View;
-import b.i.a.f.e.o.f;
 import com.discord.utilities.view.extensions.ViewExtensions;
-import d0.Result3;
-import d0.w.h.Intrinsics2;
-import d0.w.i.a.ContinuationImpl6;
-import d0.w.i.a.DebugMetadata;
-import d0.z.d.Intrinsics3;
 import kotlin.Unit;
 import kotlin.coroutines.Continuation;
 import kotlin.jvm.functions.Function2;
 import kotlinx.coroutines.CoroutineScope;
+import p007b.p225i.p226a.p288f.p299e.p308o.C3404f;
+import p507d0.C12113l;
+import p507d0.p584w.p585h.C12183c;
+import p507d0.p584w.p586i.p587a.AbstractC12194k;
+import p507d0.p584w.p586i.p587a.InterfaceC12188e;
+import p507d0.p592z.p594d.C12238m;
 
 /* JADX INFO: compiled from: WidgetSettingsVoice.kt */
 /* JADX INFO: loaded from: classes2.dex */
-@DebugMetadata(c = "com.discord.widgets.settings.WidgetSettingsVoice$onViewBound$3$1", f = "WidgetSettingsVoice.kt", l = {112}, m = "invokeSuspend")
-public final class WidgetSettingsVoice$onViewBound$3$1 extends ContinuationImpl6 implements Function2<CoroutineScope, Continuation<? super Unit>, Object> {
+@InterfaceC12188e(m10084c = "com.discord.widgets.settings.WidgetSettingsVoice$onViewBound$3$1", m10085f = "WidgetSettingsVoice.kt", m10086l = {112}, m10087m = "invokeSuspend")
+public final class WidgetSettingsVoice$onViewBound$3$1 extends AbstractC12194k implements Function2<CoroutineScope, Continuation<? super Unit>, Object> {
     public final /* synthetic */ View $target;
     public int label;
 
@@ -26,36 +26,36 @@ public final class WidgetSettingsVoice$onViewBound$3$1 extends ContinuationImpl6
         this.$target = view;
     }
 
-    @Override // d0.w.i.a.ContinuationImpl
+    @Override // p507d0.p584w.p586i.p587a.AbstractC12184a
     public final Continuation<Unit> create(Object obj, Continuation<?> continuation) {
-        Intrinsics3.checkNotNullParameter(continuation, "completion");
+        C12238m.checkNotNullParameter(continuation, "completion");
         return new WidgetSettingsVoice$onViewBound$3$1(this.$target, continuation);
     }
 
     @Override // kotlin.jvm.functions.Function2
     public final Object invoke(CoroutineScope coroutineScope, Continuation<? super Unit> continuation) {
-        return ((WidgetSettingsVoice$onViewBound$3$1) create(coroutineScope, continuation)).invokeSuspend(Unit.a);
+        return ((WidgetSettingsVoice$onViewBound$3$1) create(coroutineScope, continuation)).invokeSuspend(Unit.f27425a);
     }
 
-    @Override // d0.w.i.a.ContinuationImpl
+    @Override // p507d0.p584w.p586i.p587a.AbstractC12184a
     public final Object invokeSuspend(Object obj) {
-        Object coroutine_suspended = Intrinsics2.getCOROUTINE_SUSPENDED();
+        Object coroutine_suspended = C12183c.getCOROUTINE_SUSPENDED();
         int i = this.label;
         if (i == 0) {
-            Result3.throwOnFailure(obj);
+            C12113l.throwOnFailure(obj);
             this.label = 1;
-            if (f.P(1000L, this) == coroutine_suspended) {
+            if (C3404f.m4234P(1000L, this) == coroutine_suspended) {
                 return coroutine_suspended;
             }
         } else {
             if (i != 1) {
                 throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
             }
-            Result3.throwOnFailure(obj);
+            C12113l.throwOnFailure(obj);
         }
         View view = this.$target;
-        Intrinsics3.checkNotNullExpressionValue(view, "target");
+        C12238m.checkNotNullExpressionValue(view, "target");
         ViewExtensions.hintWithRipple$default(view, 0L, 1, null);
-        return Unit.a;
+        return Unit.f27425a;
     }
 }

@@ -4,43 +4,47 @@ import android.view.View;
 import androidx.annotation.NonNull;
 import androidx.core.widget.NestedScrollView;
 import androidx.viewbinding.ViewBinding;
-import com.discord.R;
+import com.discord.C5419R;
 import com.discord.views.ScreenTitleView;
 import com.google.android.material.button.MaterialButton;
 
 /* JADX INFO: loaded from: classes.dex */
 public final class WidgetEndStageBottomSheetBinding implements ViewBinding {
 
+    /* JADX INFO: renamed from: a */
     @NonNull
-    public final NestedScrollView a;
+    public final NestedScrollView f16598a;
 
-    /* JADX INFO: renamed from: b, reason: collision with root package name */
+    /* JADX INFO: renamed from: b */
     @NonNull
-    public final MaterialButton f2382b;
+    public final MaterialButton f16599b;
 
+    /* JADX INFO: renamed from: c */
     @NonNull
-    public final MaterialButton c;
+    public final MaterialButton f16600c;
 
+    /* JADX INFO: renamed from: d */
     @NonNull
-    public final ScreenTitleView d;
+    public final ScreenTitleView f16601d;
 
     public WidgetEndStageBottomSheetBinding(@NonNull NestedScrollView nestedScrollView, @NonNull MaterialButton materialButton, @NonNull MaterialButton materialButton2, @NonNull ScreenTitleView screenTitleView) {
-        this.a = nestedScrollView;
-        this.f2382b = materialButton;
-        this.c = materialButton2;
-        this.d = screenTitleView;
+        this.f16598a = nestedScrollView;
+        this.f16599b = materialButton;
+        this.f16600c = materialButton2;
+        this.f16601d = screenTitleView;
     }
 
     @NonNull
-    public static WidgetEndStageBottomSheetBinding a(@NonNull View view) {
-        int i = R.id.cancel;
-        MaterialButton materialButton = (MaterialButton) view.findViewById(R.id.cancel);
+    /* JADX INFO: renamed from: a */
+    public static WidgetEndStageBottomSheetBinding m8413a(@NonNull View view) {
+        int i = C5419R.id.cancel;
+        MaterialButton materialButton = (MaterialButton) view.findViewById(C5419R.id.cancel);
         if (materialButton != null) {
-            i = R.id.confirm;
-            MaterialButton materialButton2 = (MaterialButton) view.findViewById(R.id.confirm);
+            i = C5419R.id.confirm;
+            MaterialButton materialButton2 = (MaterialButton) view.findViewById(C5419R.id.confirm);
             if (materialButton2 != null) {
-                i = R.id.title;
-                ScreenTitleView screenTitleView = (ScreenTitleView) view.findViewById(R.id.title);
+                i = C5419R.id.title;
+                ScreenTitleView screenTitleView = (ScreenTitleView) view.findViewById(C5419R.id.title);
                 if (screenTitleView != null) {
                     return new WidgetEndStageBottomSheetBinding((NestedScrollView) view, materialButton, materialButton2, screenTitleView);
                 }
@@ -52,6 +56,6 @@ public final class WidgetEndStageBottomSheetBinding implements ViewBinding {
     @Override // androidx.viewbinding.ViewBinding
     @NonNull
     public View getRoot() {
-        return this.a;
+        return this.f16598a;
     }
 }

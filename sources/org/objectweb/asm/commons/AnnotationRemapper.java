@@ -32,7 +32,7 @@ public class AnnotationRemapper extends AnnotationVisitor {
         if (annotationVisitor == null) {
             return null;
         }
-        return annotationVisitor == this.av ? this : createAnnotationRemapper(annotationVisitor);
+        return annotationVisitor == this.f27596av ? this : createAnnotationRemapper(annotationVisitor);
     }
 
     @Override // org.objectweb.asm.AnnotationVisitor
@@ -41,7 +41,7 @@ public class AnnotationRemapper extends AnnotationVisitor {
         if (annotationVisitor == null) {
             return null;
         }
-        return annotationVisitor == this.av ? this : createAnnotationRemapper(annotationVisitor);
+        return annotationVisitor == this.f27596av ? this : createAnnotationRemapper(annotationVisitor);
     }
 
     protected AnnotationVisitor createAnnotationRemapper(AnnotationVisitor annotationVisitor) {

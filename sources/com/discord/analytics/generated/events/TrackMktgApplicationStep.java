@@ -1,16 +1,16 @@
 package com.discord.analytics.generated.events;
 
-import b.d.b.a.outline;
 import com.discord.analytics.generated.traits.TrackBase;
-import com.discord.analytics.generated.traits.TrackBase2;
+import com.discord.analytics.generated.traits.TrackBaseReceiver;
 import com.discord.analytics.generated.traits.TrackMarketingSite;
-import com.discord.analytics.generated.traits.TrackMarketingSite2;
+import com.discord.analytics.generated.traits.TrackMarketingSiteReceiver;
 import com.discord.api.science.AnalyticsSchema;
-import d0.z.d.Intrinsics3;
+import p007b.p100d.p104b.p105a.C1643a;
+import p507d0.p592z.p594d.C12238m;
 
 /* JADX INFO: compiled from: TrackMktgApplicationStep.kt */
 /* JADX INFO: loaded from: classes.dex */
-public final /* data */ class TrackMktgApplicationStep implements AnalyticsSchema, TrackBase2, TrackMarketingSite2 {
+public final /* data */ class TrackMktgApplicationStep implements AnalyticsSchema, TrackBaseReceiver, TrackMarketingSiteReceiver {
     private TrackBase trackBase;
     private TrackMarketingSite trackMarketingSite;
     private final CharSequence applicationType = null;
@@ -32,7 +32,7 @@ public final /* data */ class TrackMktgApplicationStep implements AnalyticsSchem
             return false;
         }
         TrackMktgApplicationStep trackMktgApplicationStep = (TrackMktgApplicationStep) other;
-        return Intrinsics3.areEqual(this.applicationType, trackMktgApplicationStep.applicationType) && Intrinsics3.areEqual(this.pageName, trackMktgApplicationStep.pageName) && Intrinsics3.areEqual(this.step, trackMktgApplicationStep.step);
+        return C12238m.areEqual(this.applicationType, trackMktgApplicationStep.applicationType) && C12238m.areEqual(this.pageName, trackMktgApplicationStep.pageName) && C12238m.areEqual(this.step, trackMktgApplicationStep.step);
     }
 
     public int hashCode() {
@@ -45,11 +45,11 @@ public final /* data */ class TrackMktgApplicationStep implements AnalyticsSchem
     }
 
     public String toString() {
-        StringBuilder sbU = outline.U("TrackMktgApplicationStep(applicationType=");
-        sbU.append(this.applicationType);
-        sbU.append(", pageName=");
-        sbU.append(this.pageName);
-        sbU.append(", step=");
-        return outline.E(sbU, this.step, ")");
+        StringBuilder sbM833U = C1643a.m833U("TrackMktgApplicationStep(applicationType=");
+        sbM833U.append(this.applicationType);
+        sbM833U.append(", pageName=");
+        sbM833U.append(this.pageName);
+        sbM833U.append(", step=");
+        return C1643a.m817E(sbM833U, this.step, ")");
     }
 }

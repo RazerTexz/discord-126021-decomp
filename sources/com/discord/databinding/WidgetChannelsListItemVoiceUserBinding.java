@@ -12,41 +12,47 @@ import com.facebook.drawee.view.SimpleDraweeView;
 /* JADX INFO: loaded from: classes.dex */
 public final class WidgetChannelsListItemVoiceUserBinding implements ViewBinding {
 
+    /* JADX INFO: renamed from: a */
     @NonNull
-    public final RelativeLayout a;
+    public final RelativeLayout f16074a;
 
-    /* JADX INFO: renamed from: b, reason: collision with root package name */
+    /* JADX INFO: renamed from: b */
     @NonNull
-    public final SimpleDraweeView f2299b;
+    public final SimpleDraweeView f16075b;
 
+    /* JADX INFO: renamed from: c */
     @NonNull
-    public final ImageView c;
+    public final ImageView f16076c;
 
+    /* JADX INFO: renamed from: d */
     @NonNull
-    public final ImageView d;
+    public final ImageView f16077d;
 
+    /* JADX INFO: renamed from: e */
     @NonNull
-    public final TextView e;
+    public final TextView f16078e;
 
+    /* JADX INFO: renamed from: f */
     @NonNull
-    public final ImageView f;
+    public final ImageView f16079f;
 
+    /* JADX INFO: renamed from: g */
     @NonNull
-    public final TextView g;
+    public final TextView f16080g;
 
     public WidgetChannelsListItemVoiceUserBinding(@NonNull RelativeLayout relativeLayout, @NonNull SimpleDraweeView simpleDraweeView, @NonNull ImageView imageView, @NonNull ImageView imageView2, @NonNull TextView textView, @NonNull ImageView imageView3, @NonNull TextView textView2, @NonNull LinearLayout linearLayout) {
-        this.a = relativeLayout;
-        this.f2299b = simpleDraweeView;
-        this.c = imageView;
-        this.d = imageView2;
-        this.e = textView;
-        this.f = imageView3;
-        this.g = textView2;
+        this.f16074a = relativeLayout;
+        this.f16075b = simpleDraweeView;
+        this.f16076c = imageView;
+        this.f16077d = imageView2;
+        this.f16078e = textView;
+        this.f16079f = imageView3;
+        this.f16080g = textView2;
     }
 
     @Override // androidx.viewbinding.ViewBinding
     @NonNull
     public View getRoot() {
-        return this.a;
+        return this.f16074a;
     }
 }

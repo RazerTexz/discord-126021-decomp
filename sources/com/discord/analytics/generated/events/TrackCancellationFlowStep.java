@@ -1,18 +1,18 @@
 package com.discord.analytics.generated.events;
 
-import b.d.b.a.outline;
 import com.discord.analytics.generated.traits.TrackBase;
-import com.discord.analytics.generated.traits.TrackBase2;
+import com.discord.analytics.generated.traits.TrackBaseReceiver;
 import com.discord.analytics.generated.traits.TrackLocationMetadata;
-import com.discord.analytics.generated.traits.TrackLocationMetadata2;
+import com.discord.analytics.generated.traits.TrackLocationMetadataReceiver;
 import com.discord.analytics.generated.traits.TrackSubscriptionMetadata;
-import com.discord.analytics.generated.traits.TrackSubscriptionMetadata2;
+import com.discord.analytics.generated.traits.TrackSubscriptionMetadataReceiver;
 import com.discord.api.science.AnalyticsSchema;
-import d0.z.d.Intrinsics3;
+import p007b.p100d.p104b.p105a.C1643a;
+import p507d0.p592z.p594d.C12238m;
 
 /* JADX INFO: compiled from: TrackCancellationFlowStep.kt */
 /* JADX INFO: loaded from: classes.dex */
-public final /* data */ class TrackCancellationFlowStep implements AnalyticsSchema, TrackBase2, TrackLocationMetadata2, TrackSubscriptionMetadata2 {
+public final /* data */ class TrackCancellationFlowStep implements AnalyticsSchema, TrackBaseReceiver, TrackLocationMetadataReceiver, TrackSubscriptionMetadataReceiver {
     private TrackBase trackBase;
     private TrackLocationMetadata trackLocationMetadata;
     private TrackSubscriptionMetadata trackSubscriptionMetadata;
@@ -37,7 +37,7 @@ public final /* data */ class TrackCancellationFlowStep implements AnalyticsSche
             return false;
         }
         TrackCancellationFlowStep trackCancellationFlowStep = (TrackCancellationFlowStep) other;
-        return Intrinsics3.areEqual(this.toStep, trackCancellationFlowStep.toStep) && Intrinsics3.areEqual(this.fromStep, trackCancellationFlowStep.fromStep) && Intrinsics3.areEqual(this.stepDurationMs, trackCancellationFlowStep.stepDurationMs) && Intrinsics3.areEqual(this.flowDurationMs, trackCancellationFlowStep.flowDurationMs) && Intrinsics3.areEqual(this.subscriptionId, trackCancellationFlowStep.subscriptionId);
+        return C12238m.areEqual(this.toStep, trackCancellationFlowStep.toStep) && C12238m.areEqual(this.fromStep, trackCancellationFlowStep.fromStep) && C12238m.areEqual(this.stepDurationMs, trackCancellationFlowStep.stepDurationMs) && C12238m.areEqual(this.flowDurationMs, trackCancellationFlowStep.flowDurationMs) && C12238m.areEqual(this.subscriptionId, trackCancellationFlowStep.subscriptionId);
     }
 
     public int hashCode() {
@@ -54,15 +54,15 @@ public final /* data */ class TrackCancellationFlowStep implements AnalyticsSche
     }
 
     public String toString() {
-        StringBuilder sbU = outline.U("TrackCancellationFlowStep(toStep=");
-        sbU.append(this.toStep);
-        sbU.append(", fromStep=");
-        sbU.append(this.fromStep);
-        sbU.append(", stepDurationMs=");
-        sbU.append(this.stepDurationMs);
-        sbU.append(", flowDurationMs=");
-        sbU.append(this.flowDurationMs);
-        sbU.append(", subscriptionId=");
-        return outline.G(sbU, this.subscriptionId, ")");
+        StringBuilder sbM833U = C1643a.m833U("TrackCancellationFlowStep(toStep=");
+        sbM833U.append(this.toStep);
+        sbM833U.append(", fromStep=");
+        sbM833U.append(this.fromStep);
+        sbM833U.append(", stepDurationMs=");
+        sbM833U.append(this.stepDurationMs);
+        sbM833U.append(", flowDurationMs=");
+        sbM833U.append(this.flowDurationMs);
+        sbM833U.append(", subscriptionId=");
+        return C1643a.m819G(sbM833U, this.subscriptionId, ")");
     }
 }

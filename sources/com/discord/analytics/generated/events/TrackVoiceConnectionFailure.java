@@ -1,14 +1,14 @@
 package com.discord.analytics.generated.events;
 
-import b.d.b.a.outline;
 import com.discord.analytics.generated.traits.TrackBase;
-import com.discord.analytics.generated.traits.TrackBase2;
+import com.discord.analytics.generated.traits.TrackBaseReceiver;
 import com.discord.api.science.AnalyticsSchema;
-import d0.z.d.Intrinsics3;
+import p007b.p100d.p104b.p105a.C1643a;
+import p507d0.p592z.p594d.C12238m;
 
 /* JADX INFO: compiled from: TrackVoiceConnectionFailure.kt */
 /* JADX INFO: loaded from: classes.dex */
-public final /* data */ class TrackVoiceConnectionFailure implements AnalyticsSchema, TrackBase2 {
+public final /* data */ class TrackVoiceConnectionFailure implements AnalyticsSchema, TrackBaseReceiver {
     private TrackBase trackBase;
     private final CharSequence error = null;
     private final CharSequence hostname = null;
@@ -40,7 +40,7 @@ public final /* data */ class TrackVoiceConnectionFailure implements AnalyticsSc
             return false;
         }
         TrackVoiceConnectionFailure trackVoiceConnectionFailure = (TrackVoiceConnectionFailure) other;
-        return Intrinsics3.areEqual(this.error, trackVoiceConnectionFailure.error) && Intrinsics3.areEqual(this.hostname, trackVoiceConnectionFailure.hostname) && Intrinsics3.areEqual(this.cloudflareBestRegion, trackVoiceConnectionFailure.cloudflareBestRegion) && Intrinsics3.areEqual(this.port, trackVoiceConnectionFailure.port) && Intrinsics3.areEqual(this.protocol, trackVoiceConnectionFailure.protocol) && Intrinsics3.areEqual(this.sessionId, trackVoiceConnectionFailure.sessionId) && Intrinsics3.areEqual(this.mediaSessionId, trackVoiceConnectionFailure.mediaSessionId) && Intrinsics3.areEqual(this.context, trackVoiceConnectionFailure.context) && Intrinsics3.areEqual(this.rtcConnectionId, trackVoiceConnectionFailure.rtcConnectionId) && Intrinsics3.areEqual(this.channelId, trackVoiceConnectionFailure.channelId) && Intrinsics3.areEqual(this.guildId, trackVoiceConnectionFailure.guildId) && Intrinsics3.areEqual(this.connectCount, trackVoiceConnectionFailure.connectCount) && Intrinsics3.areEqual(this.voiceBackendVersion, trackVoiceConnectionFailure.voiceBackendVersion) && Intrinsics3.areEqual(this.rtcWorkerBackendVersion, trackVoiceConnectionFailure.rtcWorkerBackendVersion);
+        return C12238m.areEqual(this.error, trackVoiceConnectionFailure.error) && C12238m.areEqual(this.hostname, trackVoiceConnectionFailure.hostname) && C12238m.areEqual(this.cloudflareBestRegion, trackVoiceConnectionFailure.cloudflareBestRegion) && C12238m.areEqual(this.port, trackVoiceConnectionFailure.port) && C12238m.areEqual(this.protocol, trackVoiceConnectionFailure.protocol) && C12238m.areEqual(this.sessionId, trackVoiceConnectionFailure.sessionId) && C12238m.areEqual(this.mediaSessionId, trackVoiceConnectionFailure.mediaSessionId) && C12238m.areEqual(this.context, trackVoiceConnectionFailure.context) && C12238m.areEqual(this.rtcConnectionId, trackVoiceConnectionFailure.rtcConnectionId) && C12238m.areEqual(this.channelId, trackVoiceConnectionFailure.channelId) && C12238m.areEqual(this.guildId, trackVoiceConnectionFailure.guildId) && C12238m.areEqual(this.connectCount, trackVoiceConnectionFailure.connectCount) && C12238m.areEqual(this.voiceBackendVersion, trackVoiceConnectionFailure.voiceBackendVersion) && C12238m.areEqual(this.rtcWorkerBackendVersion, trackVoiceConnectionFailure.rtcWorkerBackendVersion);
     }
 
     public int hashCode() {
@@ -75,33 +75,33 @@ public final /* data */ class TrackVoiceConnectionFailure implements AnalyticsSc
     }
 
     public String toString() {
-        StringBuilder sbU = outline.U("TrackVoiceConnectionFailure(error=");
-        sbU.append(this.error);
-        sbU.append(", hostname=");
-        sbU.append(this.hostname);
-        sbU.append(", cloudflareBestRegion=");
-        sbU.append(this.cloudflareBestRegion);
-        sbU.append(", port=");
-        sbU.append(this.port);
-        sbU.append(", protocol=");
-        sbU.append(this.protocol);
-        sbU.append(", sessionId=");
-        sbU.append(this.sessionId);
-        sbU.append(", mediaSessionId=");
-        sbU.append(this.mediaSessionId);
-        sbU.append(", context=");
-        sbU.append(this.context);
-        sbU.append(", rtcConnectionId=");
-        sbU.append(this.rtcConnectionId);
-        sbU.append(", channelId=");
-        sbU.append(this.channelId);
-        sbU.append(", guildId=");
-        sbU.append(this.guildId);
-        sbU.append(", connectCount=");
-        sbU.append(this.connectCount);
-        sbU.append(", voiceBackendVersion=");
-        sbU.append(this.voiceBackendVersion);
-        sbU.append(", rtcWorkerBackendVersion=");
-        return outline.E(sbU, this.rtcWorkerBackendVersion, ")");
+        StringBuilder sbM833U = C1643a.m833U("TrackVoiceConnectionFailure(error=");
+        sbM833U.append(this.error);
+        sbM833U.append(", hostname=");
+        sbM833U.append(this.hostname);
+        sbM833U.append(", cloudflareBestRegion=");
+        sbM833U.append(this.cloudflareBestRegion);
+        sbM833U.append(", port=");
+        sbM833U.append(this.port);
+        sbM833U.append(", protocol=");
+        sbM833U.append(this.protocol);
+        sbM833U.append(", sessionId=");
+        sbM833U.append(this.sessionId);
+        sbM833U.append(", mediaSessionId=");
+        sbM833U.append(this.mediaSessionId);
+        sbM833U.append(", context=");
+        sbM833U.append(this.context);
+        sbM833U.append(", rtcConnectionId=");
+        sbM833U.append(this.rtcConnectionId);
+        sbM833U.append(", channelId=");
+        sbM833U.append(this.channelId);
+        sbM833U.append(", guildId=");
+        sbM833U.append(this.guildId);
+        sbM833U.append(", connectCount=");
+        sbM833U.append(this.connectCount);
+        sbM833U.append(", voiceBackendVersion=");
+        sbM833U.append(this.voiceBackendVersion);
+        sbM833U.append(", rtcWorkerBackendVersion=");
+        return C1643a.m817E(sbM833U, this.rtcWorkerBackendVersion, ")");
     }
 }

@@ -343,7 +343,7 @@ public class InstallerGUI {
             public void actionPerformed(ActionEvent event) {
                 final List<Pattern> exeNames = Installer.getIdeExecutableNames();
                 String file = null;
-                if (OsUtils.getOS() == OsUtils.OS.MAC_OS_X) {
+                if (OsUtils.getOS() == OsUtils.EnumC12884OS.MAC_OS_X) {
                     FileDialog chooser = new FileDialog(InstallerGUI.this.appWindow);
                     chooser.setMode(0);
                     chooser.setFilenameFilter(new FilenameFilter() { // from class: lombok.installer.InstallerGUI.6.1
@@ -786,17 +786,17 @@ public class InstallerGUI {
                 if (iArr != null) {
                     return iArr;
                 }
-                int[] iArr2 = new int[OsUtils.OS.valuesCustom().length];
+                int[] iArr2 = new int[OsUtils.EnumC12884OS.valuesCustom().length];
                 try {
-                    iArr2[OsUtils.OS.MAC_OS_X.ordinal()] = 1;
+                    iArr2[OsUtils.EnumC12884OS.MAC_OS_X.ordinal()] = 1;
                 } catch (NoSuchFieldError unused) {
                 }
                 try {
-                    iArr2[OsUtils.OS.UNIX.ordinal()] = 3;
+                    iArr2[OsUtils.EnumC12884OS.UNIX.ordinal()] = 3;
                 } catch (NoSuchFieldError unused2) {
                 }
                 try {
-                    iArr2[OsUtils.OS.WINDOWS.ordinal()] = 2;
+                    iArr2[OsUtils.EnumC12884OS.WINDOWS.ordinal()] = 2;
                 } catch (NoSuchFieldError unused3) {
                 }
                 $SWITCH_TABLE$lombok$installer$OsUtils$OS = iArr2;
@@ -834,9 +834,9 @@ public class InstallerGUI {
 
     public void show() {
         this.appWindow.setVisible(true);
-        if (OsUtils.getOS() == OsUtils.OS.MAC_OS_X) {
+        if (OsUtils.getOS() == OsUtils.EnumC12884OS.MAC_OS_X) {
             try {
-                AppleNativeLook.go();
+                AppleNativeLook.m10938go();
             } catch (Throwable unused) {
             }
         }

@@ -19,13 +19,13 @@ public class GhostViewHolder extends FrameLayout {
         super(viewGroup.getContext());
         setClipChildren(false);
         this.mParent = viewGroup;
-        viewGroup.setTag(R.id.ghost_view_holder, this);
+        viewGroup.setTag(C0658R.id.ghost_view_holder, this);
         ViewGroupUtils.getOverlay(this.mParent).add(this);
         this.mAttached = true;
     }
 
     public static GhostViewHolder getHolder(@NonNull ViewGroup viewGroup) {
-        return (GhostViewHolder) viewGroup.getTag(R.id.ghost_view_holder);
+        return (GhostViewHolder) viewGroup.getTag(C0658R.id.ghost_view_holder);
     }
 
     private int getInsertIndex(ArrayList<View> arrayList) {
@@ -91,7 +91,7 @@ public class GhostViewHolder extends FrameLayout {
     public void onViewRemoved(View view) {
         super.onViewRemoved(view);
         if ((getChildCount() == 1 && getChildAt(0) == view) || getChildCount() == 0) {
-            this.mParent.setTag(R.id.ghost_view_holder, null);
+            this.mParent.setTag(C0658R.id.ghost_view_holder, null);
             ViewGroupUtils.getOverlay(this.mParent).remove(this);
             this.mAttached = false;
         }

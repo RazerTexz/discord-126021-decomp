@@ -1,7 +1,7 @@
 package com.discord.widgets.chat.list.entries;
 
-import a0.a.a.b;
-import b.d.b.a.outline;
+import p001a0.p002a.p003a.C0002b;
+import p007b.p100d.p104b.p105a.C1643a;
 
 /* JADX INFO: compiled from: ThreadStarterDividerEntry.kt */
 /* JADX INFO: loaded from: classes2.dex */
@@ -74,13 +74,13 @@ public final /* data */ class ThreadStarterDividerEntry extends ChatListEntry {
     }
 
     public int hashCode() {
-        return b.a(this.messageId) + (b.a(this.channelId) * 31);
+        return C0002b.m3a(this.messageId) + (C0002b.m3a(this.channelId) * 31);
     }
 
     public String toString() {
-        StringBuilder sbU = outline.U("ThreadStarterDividerEntry(channelId=");
-        sbU.append(this.channelId);
-        sbU.append(", messageId=");
-        return outline.C(sbU, this.messageId, ")");
+        StringBuilder sbM833U = C1643a.m833U("ThreadStarterDividerEntry(channelId=");
+        sbM833U.append(this.channelId);
+        sbM833U.append(", messageId=");
+        return C1643a.m815C(sbM833U, this.messageId, ")");
     }
 }

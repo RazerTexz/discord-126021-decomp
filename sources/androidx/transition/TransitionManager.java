@@ -106,14 +106,14 @@ public class TransitionManager {
             return;
         }
         sPendingTransitions.add(sceneRoot);
-        Transition transitionMo5clone = transition.mo5clone();
-        transitionMo5clone.setSceneRoot(sceneRoot);
+        Transition transitionMo11382clone = transition.mo11382clone();
+        transitionMo11382clone.setSceneRoot(sceneRoot);
         if (currentScene != null && currentScene.isCreatedFromLayoutResource()) {
-            transitionMo5clone.setCanRemoveViews(true);
+            transitionMo11382clone.setCanRemoveViews(true);
         }
-        sceneChangeSetup(sceneRoot, transitionMo5clone);
+        sceneChangeSetup(sceneRoot, transitionMo11382clone);
         scene.enter();
-        sceneChangeRunTransition(sceneRoot, transitionMo5clone);
+        sceneChangeRunTransition(sceneRoot, transitionMo11382clone);
     }
 
     public static void endTransitions(ViewGroup viewGroup) {
@@ -151,7 +151,8 @@ public class TransitionManager {
         return transition2 != null ? transition2 : sDefaultTransition;
     }
 
-    public static void go(@NonNull Scene scene) {
+    /* JADX INFO: renamed from: go */
+    public static void m96go(@NonNull Scene scene) {
         changeScene(scene, sDefaultTransition);
     }
 
@@ -197,13 +198,14 @@ public class TransitionManager {
         if (transition == null) {
             transition = sDefaultTransition;
         }
-        Transition transitionMo5clone = transition.mo5clone();
-        sceneChangeSetup(viewGroup, transitionMo5clone);
+        Transition transitionMo11382clone = transition.mo11382clone();
+        sceneChangeSetup(viewGroup, transitionMo11382clone);
         Scene.setCurrentScene(viewGroup, null);
-        sceneChangeRunTransition(viewGroup, transitionMo5clone);
+        sceneChangeRunTransition(viewGroup, transitionMo11382clone);
     }
 
-    public static void go(@NonNull Scene scene, @Nullable Transition transition) {
+    /* JADX INFO: renamed from: go */
+    public static void m97go(@NonNull Scene scene, @Nullable Transition transition) {
         changeScene(scene, transition);
     }
 

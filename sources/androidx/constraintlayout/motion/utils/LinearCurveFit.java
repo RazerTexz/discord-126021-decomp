@@ -3,16 +3,20 @@ package androidx.constraintlayout.motion.utils;
 /* JADX INFO: loaded from: classes.dex */
 public class LinearCurveFit extends CurveFit {
     private static final String TAG = "LinearCurveFit";
-    private double[] mT;
+
+    /* JADX INFO: renamed from: mT */
+    private double[] f100mT;
     private double mTotalLength;
-    private double[][] mY;
+
+    /* JADX INFO: renamed from: mY */
+    private double[][] f101mY;
 
     public LinearCurveFit(double[] dArr, double[][] dArr2) {
         this.mTotalLength = Double.NaN;
         int length = dArr.length;
         int length2 = dArr2[0].length;
-        this.mT = dArr;
-        this.mY = dArr2;
+        this.f100mT = dArr;
+        this.f101mY = dArr2;
         if (length2 > 2) {
             double d = 0.0d;
             double d2 = 0.0d;
@@ -35,7 +39,7 @@ public class LinearCurveFit extends CurveFit {
         if (Double.isNaN(this.mTotalLength)) {
             return 0.0d;
         }
-        double[] dArr = this.mT;
+        double[] dArr = this.f100mT;
         int length = dArr.length;
         if (d <= dArr[0]) {
             return 0.0d;
@@ -49,20 +53,20 @@ public class LinearCurveFit extends CurveFit {
         double d3 = 0.0d;
         int i2 = 0;
         while (i2 < i) {
-            double[][] dArr2 = this.mY;
+            double[][] dArr2 = this.f101mY;
             double d4 = dArr2[i2][0];
             double d5 = dArr2[i2][1];
             if (i2 > 0) {
                 dHypot += Math.hypot(d4 - d2, d5 - d3);
             }
-            double[] dArr3 = this.mT;
+            double[] dArr3 = this.f100mT;
             if (d == dArr3[i2]) {
                 return dHypot;
             }
             int i3 = i2 + 1;
             if (d < dArr3[i3]) {
                 double d6 = (d - dArr3[i2]) / (dArr3[i3] - dArr3[i2]);
-                double[][] dArr4 = this.mY;
+                double[][] dArr4 = this.f101mY;
                 double d7 = dArr4[i2][0];
                 double d8 = dArr4[i3][0];
                 double d9 = 1.0d - d6;
@@ -77,37 +81,37 @@ public class LinearCurveFit extends CurveFit {
 
     @Override // androidx.constraintlayout.motion.utils.CurveFit
     public void getPos(double d, double[] dArr) {
-        double[] dArr2 = this.mT;
+        double[] dArr2 = this.f100mT;
         int length = dArr2.length;
         int i = 0;
-        int length2 = this.mY[0].length;
+        int length2 = this.f101mY[0].length;
         if (d <= dArr2[0]) {
             for (int i2 = 0; i2 < length2; i2++) {
-                dArr[i2] = this.mY[0][i2];
+                dArr[i2] = this.f101mY[0][i2];
             }
             return;
         }
         int i3 = length - 1;
         if (d >= dArr2[i3]) {
             while (i < length2) {
-                dArr[i] = this.mY[i3][i];
+                dArr[i] = this.f101mY[i3][i];
                 i++;
             }
             return;
         }
         int i4 = 0;
         while (i4 < i3) {
-            if (d == this.mT[i4]) {
+            if (d == this.f100mT[i4]) {
                 for (int i5 = 0; i5 < length2; i5++) {
-                    dArr[i5] = this.mY[i4][i5];
+                    dArr[i5] = this.f101mY[i4][i5];
                 }
             }
-            double[] dArr3 = this.mT;
+            double[] dArr3 = this.f100mT;
             int i6 = i4 + 1;
             if (d < dArr3[i6]) {
                 double d2 = (d - dArr3[i4]) / (dArr3[i6] - dArr3[i4]);
                 while (i < length2) {
-                    double[][] dArr4 = this.mY;
+                    double[][] dArr4 = this.f101mY;
                     dArr[i] = (dArr4[i6][i] * d2) + ((1.0d - d2) * dArr4[i4][i]);
                     i++;
                 }
@@ -119,9 +123,9 @@ public class LinearCurveFit extends CurveFit {
 
     @Override // androidx.constraintlayout.motion.utils.CurveFit
     public void getSlope(double d, double[] dArr) {
-        double[] dArr2 = this.mT;
+        double[] dArr2 = this.f100mT;
         int length = dArr2.length;
-        int length2 = this.mY[0].length;
+        int length2 = this.f101mY[0].length;
         if (d <= dArr2[0]) {
             d = dArr2[0];
         } else {
@@ -132,13 +136,13 @@ public class LinearCurveFit extends CurveFit {
         }
         int i2 = 0;
         while (i2 < length - 1) {
-            double[] dArr3 = this.mT;
+            double[] dArr3 = this.f100mT;
             int i3 = i2 + 1;
             if (d <= dArr3[i3]) {
                 double d2 = dArr3[i3] - dArr3[i2];
                 double d3 = dArr3[i2];
                 for (int i4 = 0; i4 < length2; i4++) {
-                    double[][] dArr4 = this.mY;
+                    double[][] dArr4 = this.f101mY;
                     dArr[i4] = (dArr4[i3][i4] - dArr4[i2][i4]) / d2;
                 }
                 return;
@@ -149,12 +153,12 @@ public class LinearCurveFit extends CurveFit {
 
     @Override // androidx.constraintlayout.motion.utils.CurveFit
     public double[] getTimePoints() {
-        return this.mT;
+        return this.f100mT;
     }
 
     @Override // androidx.constraintlayout.motion.utils.CurveFit
     public double getSlope(double d, int i) {
-        double[] dArr = this.mT;
+        double[] dArr = this.f100mT;
         int length = dArr.length;
         int i2 = 0;
         if (d < dArr[0]) {
@@ -166,12 +170,12 @@ public class LinearCurveFit extends CurveFit {
             }
         }
         while (i2 < length - 1) {
-            double[] dArr2 = this.mT;
+            double[] dArr2 = this.f100mT;
             int i4 = i2 + 1;
             if (d <= dArr2[i4]) {
                 double d2 = dArr2[i4] - dArr2[i2];
                 double d3 = dArr2[i2];
-                double[][] dArr3 = this.mY;
+                double[][] dArr3 = this.f101mY;
                 return (dArr3[i4][i] - dArr3[i2][i]) / d2;
             }
             i2 = i4;
@@ -181,37 +185,37 @@ public class LinearCurveFit extends CurveFit {
 
     @Override // androidx.constraintlayout.motion.utils.CurveFit
     public void getPos(double d, float[] fArr) {
-        double[] dArr = this.mT;
+        double[] dArr = this.f100mT;
         int length = dArr.length;
         int i = 0;
-        int length2 = this.mY[0].length;
+        int length2 = this.f101mY[0].length;
         if (d <= dArr[0]) {
             for (int i2 = 0; i2 < length2; i2++) {
-                fArr[i2] = (float) this.mY[0][i2];
+                fArr[i2] = (float) this.f101mY[0][i2];
             }
             return;
         }
         int i3 = length - 1;
         if (d >= dArr[i3]) {
             while (i < length2) {
-                fArr[i] = (float) this.mY[i3][i];
+                fArr[i] = (float) this.f101mY[i3][i];
                 i++;
             }
             return;
         }
         int i4 = 0;
         while (i4 < i3) {
-            if (d == this.mT[i4]) {
+            if (d == this.f100mT[i4]) {
                 for (int i5 = 0; i5 < length2; i5++) {
-                    fArr[i5] = (float) this.mY[i4][i5];
+                    fArr[i5] = (float) this.f101mY[i4][i5];
                 }
             }
-            double[] dArr2 = this.mT;
+            double[] dArr2 = this.f100mT;
             int i6 = i4 + 1;
             if (d < dArr2[i6]) {
                 double d2 = (d - dArr2[i4]) / (dArr2[i6] - dArr2[i4]);
                 while (i < length2) {
-                    double[][] dArr3 = this.mY;
+                    double[][] dArr3 = this.f101mY;
                     fArr[i] = (float) ((dArr3[i6][i] * d2) + ((1.0d - d2) * dArr3[i4][i]));
                     i++;
                 }
@@ -223,25 +227,25 @@ public class LinearCurveFit extends CurveFit {
 
     @Override // androidx.constraintlayout.motion.utils.CurveFit
     public double getPos(double d, int i) {
-        double[] dArr = this.mT;
+        double[] dArr = this.f100mT;
         int length = dArr.length;
         int i2 = 0;
         if (d <= dArr[0]) {
-            return this.mY[0][i];
+            return this.f101mY[0][i];
         }
         int i3 = length - 1;
         if (d >= dArr[i3]) {
-            return this.mY[i3][i];
+            return this.f101mY[i3][i];
         }
         while (i2 < i3) {
-            double[] dArr2 = this.mT;
+            double[] dArr2 = this.f100mT;
             if (d == dArr2[i2]) {
-                return this.mY[i2][i];
+                return this.f101mY[i2][i];
             }
             int i4 = i2 + 1;
             if (d < dArr2[i4]) {
                 double d2 = (d - dArr2[i2]) / (dArr2[i4] - dArr2[i2]);
-                double[][] dArr3 = this.mY;
+                double[][] dArr3 = this.f101mY;
                 return (dArr3[i4][i] * d2) + ((1.0d - d2) * dArr3[i2][i]);
             }
             i2 = i4;

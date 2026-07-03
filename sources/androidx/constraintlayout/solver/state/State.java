@@ -9,9 +9,9 @@ import androidx.constraintlayout.solver.state.helpers.VerticalChainReference;
 import androidx.constraintlayout.solver.widgets.ConstraintWidget;
 import androidx.constraintlayout.solver.widgets.ConstraintWidgetContainer;
 import androidx.constraintlayout.solver.widgets.HelperWidget;
-import b.d.b.a.outline;
 import java.util.HashMap;
 import java.util.Iterator;
+import p007b.p100d.p104b.p105a.C1643a;
 
 /* JADX INFO: loaded from: classes.dex */
 public class State {
@@ -25,8 +25,8 @@ public class State {
     public HashMap<Object, Reference> mReferences = new HashMap<>();
     public HashMap<Object, HelperReference> mHelperReferences = new HashMap<>();
 
-    /* JADX INFO: renamed from: androidx.constraintlayout.solver.state.State$1, reason: invalid class name */
-    public static /* synthetic */ class AnonymousClass1 {
+    /* JADX INFO: renamed from: androidx.constraintlayout.solver.state.State$1 */
+    public static /* synthetic */ class C01851 {
         public static final /* synthetic */ int[] $SwitchMap$androidx$constraintlayout$solver$state$State$Helper;
 
         static {
@@ -107,10 +107,10 @@ public class State {
     }
 
     private String createHelperKey() {
-        StringBuilder sbU = outline.U("__HELPER_KEY_");
+        StringBuilder sbM833U = C1643a.m833U("__HELPER_KEY_");
         int i = this.numHelpers;
         this.numHelpers = i + 1;
-        return outline.B(sbU, i, "__");
+        return C1643a.m814B(sbM833U, i, "__");
     }
 
     public void apply(ConstraintWidgetContainer constraintWidgetContainer) {

@@ -13,49 +13,57 @@ import com.google.android.material.button.MaterialButton;
 /* JADX INFO: loaded from: classes.dex */
 public final class ViewGiftEntitlementListItemBinding implements ViewBinding {
 
+    /* JADX INFO: renamed from: a */
     @NonNull
-    public final FrameLayout a;
+    public final FrameLayout f15425a;
 
-    /* JADX INFO: renamed from: b, reason: collision with root package name */
+    /* JADX INFO: renamed from: b */
     @NonNull
-    public final TextView f2186b;
+    public final TextView f15426b;
 
+    /* JADX INFO: renamed from: c */
     @NonNull
-    public final RelativeLayout c;
+    public final RelativeLayout f15427c;
 
+    /* JADX INFO: renamed from: d */
     @NonNull
-    public final FrameLayout d;
+    public final FrameLayout f15428d;
 
+    /* JADX INFO: renamed from: e */
     @NonNull
-    public final MaterialButton e;
+    public final MaterialButton f15429e;
 
+    /* JADX INFO: renamed from: f */
     @NonNull
-    public final View f;
+    public final View f15430f;
 
+    /* JADX INFO: renamed from: g */
     @NonNull
-    public final AppViewFlipper g;
+    public final AppViewFlipper f15431g;
 
+    /* JADX INFO: renamed from: h */
     @NonNull
-    public final MaterialButton h;
+    public final MaterialButton f15432h;
 
+    /* JADX INFO: renamed from: i */
     @NonNull
-    public final LinkifiedTextView i;
+    public final LinkifiedTextView f15433i;
 
     public ViewGiftEntitlementListItemBinding(@NonNull FrameLayout frameLayout, @NonNull TextView textView, @NonNull RelativeLayout relativeLayout, @NonNull FrameLayout frameLayout2, @NonNull MaterialButton materialButton, @NonNull View view, @NonNull AppViewFlipper appViewFlipper, @NonNull MaterialButton materialButton2, @NonNull LinkifiedTextView linkifiedTextView) {
-        this.a = frameLayout;
-        this.f2186b = textView;
-        this.c = relativeLayout;
-        this.d = frameLayout2;
-        this.e = materialButton;
-        this.f = view;
-        this.g = appViewFlipper;
-        this.h = materialButton2;
-        this.i = linkifiedTextView;
+        this.f15425a = frameLayout;
+        this.f15426b = textView;
+        this.f15427c = relativeLayout;
+        this.f15428d = frameLayout2;
+        this.f15429e = materialButton;
+        this.f15430f = view;
+        this.f15431g = appViewFlipper;
+        this.f15432h = materialButton2;
+        this.f15433i = linkifiedTextView;
     }
 
     @Override // androidx.viewbinding.ViewBinding
     @NonNull
     public View getRoot() {
-        return this.a;
+        return this.f15425a;
     }
 }

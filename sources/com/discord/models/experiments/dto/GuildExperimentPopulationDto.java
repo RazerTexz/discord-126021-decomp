@@ -1,14 +1,14 @@
 package com.discord.models.experiments.dto;
 
-import b.d.b.a.outline;
 import com.discord.models.domain.Model;
 import com.discord.models.experiments.dto.GuildExperimentBucketDto;
 import com.discord.models.experiments.dto.GuildExperimentFilter;
-import d0.t.Collections2;
-import d0.z.d.Intrinsics3;
 import java.io.IOException;
 import java.util.List;
 import kotlin.jvm.internal.Ref$ObjectRef;
+import p007b.p100d.p104b.p105a.C1643a;
+import p507d0.p580t.C12147n;
+import p507d0.p592z.p594d.C12238m;
 
 /* JADX INFO: compiled from: GuildExperimentDto.kt */
 /* JADX INFO: loaded from: classes.dex */
@@ -24,15 +24,15 @@ public final /* data */ class GuildExperimentPopulationDto {
         }
 
         public final GuildExperimentPopulationDto parse(final Model.JsonReader jsonReader) throws IOException {
-            final Ref$ObjectRef ref$ObjectRefC0 = outline.c0(jsonReader, "jsonReader");
-            ref$ObjectRefC0.element = null;
+            final Ref$ObjectRef ref$ObjectRefM844c0 = C1643a.m844c0(jsonReader, "jsonReader");
+            ref$ObjectRefM844c0.element = null;
             final Ref$ObjectRef ref$ObjectRef = new Ref$ObjectRef();
             ref$ObjectRef.element = null;
             jsonReader.nextListIndexed(new Runnable() { // from class: com.discord.models.experiments.dto.GuildExperimentPopulationDto$Parser$parse$1
                 /* JADX WARN: Type inference failed for: r1v1, types: [T, java.util.List] */
                 @Override // java.lang.Runnable
                 public final void run() {
-                    ref$ObjectRefC0.element = jsonReader.nextList(new Model.JsonReader.ItemFactory<GuildExperimentBucketDto>() { // from class: com.discord.models.experiments.dto.GuildExperimentPopulationDto$Parser$parse$1.1
+                    ref$ObjectRefM844c0.element = jsonReader.nextList(new Model.JsonReader.ItemFactory<GuildExperimentBucketDto>() { // from class: com.discord.models.experiments.dto.GuildExperimentPopulationDto$Parser$parse$1.1
                         /* JADX WARN: Can't rename method to resolve collision */
                         @Override // com.discord.models.domain.Model.JsonReader.ItemFactory
                         public final GuildExperimentBucketDto get() {
@@ -47,11 +47,11 @@ public final /* data */ class GuildExperimentPopulationDto {
                     ref$ObjectRef.element = GuildExperimentFilter.Parser.INSTANCE.parseFilters(jsonReader);
                 }
             });
-            List list = (List) ref$ObjectRefC0.element;
-            Intrinsics3.checkNotNull(list);
+            List list = (List) ref$ObjectRefM844c0.element;
+            C12238m.checkNotNull(list);
             List listEmptyList = (List) ref$ObjectRef.element;
             if (listEmptyList == null) {
-                listEmptyList = Collections2.emptyList();
+                listEmptyList = C12147n.emptyList();
             }
             return new GuildExperimentPopulationDto(list, listEmptyList);
         }
@@ -59,8 +59,8 @@ public final /* data */ class GuildExperimentPopulationDto {
 
     /* JADX WARN: Multi-variable type inference failed */
     public GuildExperimentPopulationDto(List<GuildExperimentBucketDto> list, List<? extends GuildExperimentFilter> list2) {
-        Intrinsics3.checkNotNullParameter(list, "buckets");
-        Intrinsics3.checkNotNullParameter(list2, "filters");
+        C12238m.checkNotNullParameter(list, "buckets");
+        C12238m.checkNotNullParameter(list2, "filters");
         this.buckets = list;
         this.filters = list2;
     }
@@ -85,8 +85,8 @@ public final /* data */ class GuildExperimentPopulationDto {
     }
 
     public final GuildExperimentPopulationDto copy(List<GuildExperimentBucketDto> buckets, List<? extends GuildExperimentFilter> filters) {
-        Intrinsics3.checkNotNullParameter(buckets, "buckets");
-        Intrinsics3.checkNotNullParameter(filters, "filters");
+        C12238m.checkNotNullParameter(buckets, "buckets");
+        C12238m.checkNotNullParameter(filters, "filters");
         return new GuildExperimentPopulationDto(buckets, filters);
     }
 
@@ -98,7 +98,7 @@ public final /* data */ class GuildExperimentPopulationDto {
             return false;
         }
         GuildExperimentPopulationDto guildExperimentPopulationDto = (GuildExperimentPopulationDto) other;
-        return Intrinsics3.areEqual(this.buckets, guildExperimentPopulationDto.buckets) && Intrinsics3.areEqual(this.filters, guildExperimentPopulationDto.filters);
+        return C12238m.areEqual(this.buckets, guildExperimentPopulationDto.buckets) && C12238m.areEqual(this.filters, guildExperimentPopulationDto.filters);
     }
 
     public final List<GuildExperimentBucketDto> getBuckets() {
@@ -117,9 +117,9 @@ public final /* data */ class GuildExperimentPopulationDto {
     }
 
     public String toString() {
-        StringBuilder sbU = outline.U("GuildExperimentPopulationDto(buckets=");
-        sbU.append(this.buckets);
-        sbU.append(", filters=");
-        return outline.L(sbU, this.filters, ")");
+        StringBuilder sbM833U = C1643a.m833U("GuildExperimentPopulationDto(buckets=");
+        sbM833U.append(this.buckets);
+        sbM833U.append(", filters=");
+        return C1643a.m824L(sbM833U, this.filters, ")");
     }
 }

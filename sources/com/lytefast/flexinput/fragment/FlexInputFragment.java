@@ -22,37 +22,16 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewpager.widget.ViewPager;
-import b.b.a.FlexInputCoordinator;
-import b.b.a.FlexInputExpressionTrayStateChangeListener;
-import b.b.a.a.AddContentDialogFragment;
-import b.b.a.a.g;
-import b.b.a.a.h;
-import b.b.a.a.i;
-import b.b.a.a.j;
-import b.b.a.a.k;
-import b.b.a.a.l;
-import b.b.a.a.m;
-import b.b.a.a.n;
-import b.b.a.a.o;
-import b.b.a.a.p;
-import b.b.a.d.AddContentPagerAdapter;
-import b.b.a.d.AddContentPagerAdapter2;
-import b.b.a.d.AddContentPagerAdapter3;
-import b.b.a.d.AddContentPagerAdapter4;
-import b.b.a.e.FlexInputWidgetBinding;
-import b.b.a.f.KeyboardManager;
-import b.b.a.h.FlexInputEvent;
-import b.d.b.a.outline;
 import com.discord.utilities.dimen.DimenUtils;
 import com.discord.utilities.display.DisplayUtils;
 import com.discord.utilities.drawable.DrawableCompat;
 import com.discord.utilities.view.extensions.ViewExtensions;
 import com.discord.utilities.view.text.TextWatcher;
-import com.discord.utilities.view.text.TextWatcher4;
+import com.discord.utilities.view.text.TextWatcherKt;
 import com.discord.utilities.viewbinding.FragmentViewBindingDelegate;
-import com.discord.utilities.viewbinding.FragmentViewBindingDelegate3;
+import com.discord.utilities.viewbinding.FragmentViewBindingDelegateKt;
+import com.lytefast.flexinput.C11170R;
 import com.lytefast.flexinput.FlexInputListener;
-import com.lytefast.flexinput.R;
 import com.lytefast.flexinput.adapters.AttachmentPreviewAdapter;
 import com.lytefast.flexinput.managers.FileManager;
 import com.lytefast.flexinput.model.Attachment;
@@ -61,11 +40,6 @@ import com.lytefast.flexinput.utils.SelectionCoordinator;
 import com.lytefast.flexinput.viewmodel.FlexInputState;
 import com.lytefast.flexinput.viewmodel.FlexInputViewModel;
 import com.lytefast.flexinput.widget.FlexEditText;
-import d0.g0.Strings4;
-import d0.t.Collections2;
-import d0.z.d.FunctionReferenceImpl;
-import d0.z.d.Intrinsics3;
-import d0.z.d.Lambda;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
@@ -74,19 +48,52 @@ import kotlin.Unit;
 import kotlin.jvm.functions.Function0;
 import kotlin.jvm.functions.Function1;
 import kotlin.reflect.KProperty;
-import rx.Subscription;
+import p000.ViewOnClickListenerC12411h;
+import p007b.p076b.p077a.InterfaceC1429b;
+import p007b.p076b.p077a.InterfaceC1430c;
+import p007b.p076b.p077a.p078a.C1413a;
+import p007b.p076b.p077a.p078a.C1418f;
+import p007b.p076b.p077a.p078a.C1420h;
+import p007b.p076b.p077a.p078a.C1422j;
+import p007b.p076b.p077a.p078a.C1423k;
+import p007b.p076b.p077a.p078a.C1424l;
+import p007b.p076b.p077a.p078a.C1425m;
+import p007b.p076b.p077a.p078a.C1426n;
+import p007b.p076b.p077a.p078a.C1427o;
+import p007b.p076b.p077a.p078a.C1428p;
+import p007b.p076b.p077a.p078a.DialogInterfaceOnDismissListenerC1419g;
+import p007b.p076b.p077a.p078a.ViewOnLongClickListenerC1421i;
+import p007b.p076b.p077a.p079d.C1431a;
+import p007b.p076b.p077a.p079d.C1432b;
+import p007b.p076b.p077a.p079d.C1433c;
+import p007b.p076b.p077a.p079d.C1434d;
+import p007b.p076b.p077a.p080e.C1444a;
+import p007b.p076b.p077a.p081f.InterfaceC1447a;
+import p007b.p076b.p077a.p083h.AbstractC1451a;
+import p007b.p100d.p104b.p105a.C1643a;
+import p007b.p225i.p226a.p288f.p299e.p308o.C3404f;
+import p507d0.p579g0.C12106w;
+import p507d0.p580t.C12147n;
+import p507d0.p592z.p594d.AbstractC12240o;
+import p507d0.p592z.p594d.C12236k;
+import p507d0.p592z.p594d.C12238m;
+import p658rx.Subscription;
 
 /* JADX INFO: compiled from: FlexInputFragment.kt */
 /* JADX INFO: loaded from: classes3.dex */
-public class FlexInputFragment extends Fragment implements FlexInputCoordinator<Object> {
-    public static final /* synthetic */ KProperty[] j = {outline.d0(FlexInputFragment.class, "binding", "getBinding()Lcom/lytefast/flexinput/databinding/FlexInputWidgetBinding;", 0)};
-    public static final String k = FlexInputFragment.class.getName();
+public class FlexInputFragment extends Fragment implements InterfaceC1429b<Object> {
+
+    /* JADX INFO: renamed from: j */
+    public static final /* synthetic */ KProperty[] f22054j = {C1643a.m846d0(FlexInputFragment.class, "binding", "getBinding()Lcom/lytefast/flexinput/databinding/FlexInputWidgetBinding;", 0)};
+
+    /* JADX INFO: renamed from: k */
+    public static final String f22055k = FlexInputFragment.class.getName();
 
     /* JADX INFO: renamed from: m, reason: from kotlin metadata */
     public FlexEditText inputEt;
 
     /* JADX INFO: renamed from: n, reason: from kotlin metadata */
-    public KeyboardManager keyboardManager;
+    public InterfaceC1447a keyboardManager;
 
     /* JADX INFO: renamed from: o, reason: from kotlin metadata */
     public FlexInputListener inputListener;
@@ -96,9 +103,11 @@ public class FlexInputFragment extends Fragment implements FlexInputCoordinator<
 
     /* JADX INFO: renamed from: q, reason: from kotlin metadata */
     public AttachmentPreviewAdapter<Attachment<Object>> attachmentPreviewAdapter;
-    public AddContentPagerAdapter4.a[] r;
 
-    /* JADX INFO: renamed from: s, reason: collision with root package name and from kotlin metadata */
+    /* JADX INFO: renamed from: r */
+    public C1434d.a[] f22062r;
+
+    /* JADX INFO: renamed from: s, reason: from kotlin metadata */
     public FlexInputViewModel viewModel;
 
     /* JADX INFO: renamed from: t, reason: from kotlin metadata */
@@ -111,30 +120,35 @@ public class FlexInputFragment extends Fragment implements FlexInputCoordinator<
     public Subscription showExpressionKeyboardSubscription;
 
     /* JADX INFO: renamed from: l, reason: from kotlin metadata */
-    public final FragmentViewBindingDelegate binding = FragmentViewBindingDelegate3.viewBinding$default(this, c.j, null, 2, null);
+    public final FragmentViewBindingDelegate binding = FragmentViewBindingDelegateKt.viewBinding$default(this, C11183c.f22072j, null, 2, null);
 
     /* JADX INFO: renamed from: w, reason: from kotlin metadata */
     public final List<Function0<Unit>> onViewCreatedUpdates = new ArrayList();
 
-    /* JADX INFO: renamed from: x, reason: collision with root package name and from kotlin metadata */
+    /* JADX INFO: renamed from: x, reason: from kotlin metadata */
     public List<Function0<Unit>> onContentPagesInitializedUpdates = new ArrayList();
 
+    /* JADX INFO: renamed from: com.lytefast.flexinput.fragment.FlexInputFragment$a */
     /* JADX INFO: compiled from: java-style lambda group */
     /* JADX INFO: loaded from: classes.dex */
-    public static final class a implements View.OnClickListener {
-        public final /* synthetic */ int j;
-        public final /* synthetic */ Object k;
+    public static final class ViewOnClickListenerC11181a implements View.OnClickListener {
 
-        public a(int i, Object obj) {
-            this.j = i;
-            this.k = obj;
+        /* JADX INFO: renamed from: j */
+        public final /* synthetic */ int f22069j;
+
+        /* JADX INFO: renamed from: k */
+        public final /* synthetic */ Object f22070k;
+
+        public ViewOnClickListenerC11181a(int i, Object obj) {
+            this.f22069j = i;
+            this.f22070k = obj;
         }
 
         @Override // android.view.View.OnClickListener
         public final void onClick(View view) {
-            int i = this.j;
+            int i = this.f22069j;
             if (i == 0) {
-                FlexInputViewModel flexInputViewModel = ((FlexInputFragment) this.k).viewModel;
+                FlexInputViewModel flexInputViewModel = ((FlexInputFragment) this.f22070k).viewModel;
                 if (flexInputViewModel != null) {
                     flexInputViewModel.onInputTextClicked();
                     return;
@@ -144,106 +158,112 @@ public class FlexInputFragment extends Fragment implements FlexInputCoordinator<
             if (i != 1) {
                 throw null;
             }
-            AttachmentPreviewAdapter<Attachment<Object>> attachmentPreviewAdapter = ((FlexInputFragment) this.k).attachmentPreviewAdapter;
+            AttachmentPreviewAdapter<Attachment<Object>> attachmentPreviewAdapter = ((FlexInputFragment) this.f22070k).attachmentPreviewAdapter;
             if (attachmentPreviewAdapter == null) {
-                Intrinsics3.throwUninitializedPropertyAccessException("attachmentPreviewAdapter");
+                C12238m.throwUninitializedPropertyAccessException("attachmentPreviewAdapter");
             }
             attachmentPreviewAdapter.selectionAggregator.clear();
             attachmentPreviewAdapter.notifyDataSetChanged();
-            FlexInputViewModel flexInputViewModel2 = ((FlexInputFragment) this.k).viewModel;
+            FlexInputViewModel flexInputViewModel2 = ((FlexInputFragment) this.f22070k).viewModel;
             if (flexInputViewModel2 != null) {
-                flexInputViewModel2.onAttachmentsUpdated(Collections2.emptyList());
+                flexInputViewModel2.onAttachmentsUpdated(C12147n.emptyList());
             }
         }
     }
 
+    /* JADX INFO: renamed from: com.lytefast.flexinput.fragment.FlexInputFragment$b */
     /* JADX INFO: compiled from: FlexInputFragment.kt */
-    public static final class b implements Runnable {
-        public final /* synthetic */ DialogFragment j;
+    public static final class RunnableC11182b implements Runnable {
 
-        public b(DialogFragment dialogFragment) {
-            this.j = dialogFragment;
+        /* JADX INFO: renamed from: j */
+        public final /* synthetic */ DialogFragment f22071j;
+
+        public RunnableC11182b(DialogFragment dialogFragment) {
+            this.f22071j = dialogFragment;
         }
 
         @Override // java.lang.Runnable
         public final void run() {
-            DialogFragment dialogFragment = this.j;
-            if (dialogFragment == null || !dialogFragment.isAdded() || this.j.isRemoving() || this.j.isDetached()) {
+            DialogFragment dialogFragment = this.f22071j;
+            if (dialogFragment == null || !dialogFragment.isAdded() || this.f22071j.isRemoving() || this.f22071j.isDetached()) {
                 return;
             }
             try {
-                this.j.dismiss();
+                this.f22071j.dismiss();
             } catch (IllegalStateException e) {
-                Log.w(FlexInputFragment.k, "could not dismiss add content dialog", e);
+                Log.w(FlexInputFragment.f22055k, "could not dismiss add content dialog", e);
             }
         }
     }
 
+    /* JADX INFO: renamed from: com.lytefast.flexinput.fragment.FlexInputFragment$c */
     /* JADX INFO: compiled from: FlexInputFragment.kt */
-    public static final /* synthetic */ class c extends FunctionReferenceImpl implements Function1<View, FlexInputWidgetBinding> {
-        public static final c j = new c();
+    public static final /* synthetic */ class C11183c extends C12236k implements Function1<View, C1444a> {
 
-        public c() {
-            super(1, FlexInputWidgetBinding.class, "bind", "bind(Landroid/view/View;)Lcom/lytefast/flexinput/databinding/FlexInputWidgetBinding;", 0);
+        /* JADX INFO: renamed from: j */
+        public static final C11183c f22072j = new C11183c();
+
+        public C11183c() {
+            super(1, C1444a.class, "bind", "bind(Landroid/view/View;)Lcom/lytefast/flexinput/databinding/FlexInputWidgetBinding;", 0);
         }
 
         @Override // kotlin.jvm.functions.Function1
-        public FlexInputWidgetBinding invoke(View view) {
+        public C1444a invoke(View view) {
             View view2 = view;
-            Intrinsics3.checkNotNullParameter(view2, "p1");
-            int i = R.f.attachment_clear_btn;
+            C12238m.checkNotNullParameter(view2, "p1");
+            int i = C11170R.f.attachment_clear_btn;
             AppCompatImageButton appCompatImageButton = (AppCompatImageButton) view2.findViewById(i);
             if (appCompatImageButton != null) {
-                i = R.f.attachment_preview_container;
+                i = C11170R.f.attachment_preview_container;
                 LinearLayout linearLayout = (LinearLayout) view2.findViewById(i);
                 if (linearLayout != null) {
-                    i = R.f.attachment_preview_list;
+                    i = C11170R.f.attachment_preview_list;
                     RecyclerView recyclerView = (RecyclerView) view2.findViewById(i);
                     if (recyclerView != null) {
-                        i = R.f.cannot_send_text;
+                        i = C11170R.f.cannot_send_text;
                         TextView textView = (TextView) view2.findViewById(i);
                         if (textView != null) {
                             LinearLayout linearLayout2 = (LinearLayout) view2;
-                            i = R.f.default_window_insets_handler;
+                            i = C11170R.f.default_window_insets_handler;
                             FrameLayout frameLayout = (FrameLayout) view2.findViewById(i);
                             if (frameLayout != null) {
-                                i = R.f.expand_btn;
+                                i = C11170R.f.expand_btn;
                                 AppCompatImageButton appCompatImageButton2 = (AppCompatImageButton) view2.findViewById(i);
                                 if (appCompatImageButton2 != null) {
-                                    i = R.f.expression_btn;
+                                    i = C11170R.f.expression_btn;
                                     AppCompatImageButton appCompatImageButton3 = (AppCompatImageButton) view2.findViewById(i);
                                     if (appCompatImageButton3 != null) {
-                                        i = R.f.expression_btn_badge;
+                                        i = C11170R.f.expression_btn_badge;
                                         ImageView imageView = (ImageView) view2.findViewById(i);
                                         if (imageView != null) {
-                                            i = R.f.expression_btn_container;
+                                            i = C11170R.f.expression_btn_container;
                                             FrameLayout frameLayout2 = (FrameLayout) view2.findViewById(i);
                                             if (frameLayout2 != null) {
-                                                i = R.f.expression_tray_container;
+                                                i = C11170R.f.expression_tray_container;
                                                 FrameLayout frameLayout3 = (FrameLayout) view2.findViewById(i);
                                                 if (frameLayout3 != null) {
-                                                    i = R.f.gallery_btn;
+                                                    i = C11170R.f.gallery_btn;
                                                     AppCompatImageButton appCompatImageButton4 = (AppCompatImageButton) view2.findViewById(i);
                                                     if (appCompatImageButton4 != null) {
-                                                        i = R.f.gift_btn;
+                                                        i = C11170R.f.gift_btn;
                                                         AppCompatImageButton appCompatImageButton5 = (AppCompatImageButton) view2.findViewById(i);
                                                         if (appCompatImageButton5 != null) {
-                                                            i = R.f.left_btns_container;
+                                                            i = C11170R.f.left_btns_container;
                                                             LinearLayout linearLayout3 = (LinearLayout) view2.findViewById(i);
                                                             if (linearLayout3 != null) {
-                                                                i = R.f.main_input_container;
+                                                                i = C11170R.f.main_input_container;
                                                                 LinearLayout linearLayout4 = (LinearLayout) view2.findViewById(i);
                                                                 if (linearLayout4 != null) {
-                                                                    i = R.f.send_btn_container;
+                                                                    i = C11170R.f.send_btn_container;
                                                                     FrameLayout frameLayout4 = (FrameLayout) view2.findViewById(i);
                                                                     if (frameLayout4 != null) {
-                                                                        i = R.f.send_btn_image;
+                                                                        i = C11170R.f.send_btn_image;
                                                                         ImageView imageView2 = (ImageView) view2.findViewById(i);
                                                                         if (imageView2 != null) {
-                                                                            i = R.f.text_input;
+                                                                            i = C11170R.f.text_input;
                                                                             FlexEditText flexEditText = (FlexEditText) view2.findViewById(i);
                                                                             if (flexEditText != null) {
-                                                                                return new FlexInputWidgetBinding(linearLayout2, appCompatImageButton, linearLayout, recyclerView, textView, linearLayout2, frameLayout, appCompatImageButton2, appCompatImageButton3, imageView, frameLayout2, frameLayout3, appCompatImageButton4, appCompatImageButton5, linearLayout3, linearLayout4, frameLayout4, imageView2, flexEditText);
+                                                                                return new C1444a(linearLayout2, appCompatImageButton, linearLayout, recyclerView, textView, linearLayout2, frameLayout, appCompatImageButton2, appCompatImageButton3, imageView, frameLayout2, frameLayout3, appCompatImageButton4, appCompatImageButton5, linearLayout3, linearLayout4, frameLayout4, imageView2, flexEditText);
                                                                             }
                                                                         }
                                                                     }
@@ -265,9 +285,10 @@ public class FlexInputFragment extends Fragment implements FlexInputCoordinator<
         }
     }
 
+    /* JADX INFO: renamed from: com.lytefast.flexinput.fragment.FlexInputFragment$d */
     /* JADX INFO: compiled from: FlexInputFragment.kt */
-    public static final /* synthetic */ class d extends FunctionReferenceImpl implements Function1<FlexInputState, Unit> {
-        public d(FlexInputFragment flexInputFragment) {
+    public static final /* synthetic */ class C11184d extends C12236k implements Function1<FlexInputState, Unit> {
+        public C11184d(FlexInputFragment flexInputFragment) {
             super(1, flexInputFragment, FlexInputFragment.class, "configureUI", "configureUI(Lcom/lytefast/flexinput/viewmodel/FlexInputState;)V", 0);
         }
 
@@ -276,44 +297,44 @@ public class FlexInputFragment extends Fragment implements FlexInputCoordinator<
         public Unit invoke(FlexInputState flexInputState) {
             boolean z2;
             FlexInputState flexInputState2 = flexInputState;
-            Intrinsics3.checkNotNullParameter(flexInputState2, "p1");
+            C12238m.checkNotNullParameter(flexInputState2, "p1");
             FlexInputFragment flexInputFragment = (FlexInputFragment) this.receiver;
-            KProperty[] kPropertyArr = FlexInputFragment.j;
+            KProperty[] kPropertyArr = FlexInputFragment.f22054j;
             Objects.requireNonNull(flexInputFragment);
-            j jVar = new j(flexInputFragment);
-            k kVar = new k(flexInputFragment);
-            l lVar = new l(flexInputFragment);
-            if (flexInputFragment.m()) {
+            C1422j c1422j = new C1422j(flexInputFragment);
+            C1423k c1423k = new C1423k(flexInputFragment);
+            C1424l c1424l = new C1424l(flexInputFragment);
+            if (flexInputFragment.m9294m()) {
                 FlexEditText flexEditText = flexInputFragment.inputEt;
                 if (flexEditText == null) {
-                    Intrinsics3.throwUninitializedPropertyAccessException("inputEt");
+                    C12238m.throwUninitializedPropertyAccessException("inputEt");
                 }
-                if (!Intrinsics3.areEqual(flexEditText.getEditableText().toString(), flexInputState2.inputText)) {
+                if (!C12238m.areEqual(flexEditText.getEditableText().toString(), flexInputState2.inputText)) {
                     FlexEditText flexEditText2 = flexInputFragment.inputEt;
                     if (flexEditText2 == null) {
-                        Intrinsics3.throwUninitializedPropertyAccessException("inputEt");
+                        C12238m.throwUninitializedPropertyAccessException("inputEt");
                     }
                     flexEditText2.setText(flexInputState2.inputText);
                     FlexEditText flexEditText3 = flexInputFragment.inputEt;
                     if (flexEditText3 == null) {
-                        Intrinsics3.throwUninitializedPropertyAccessException("inputEt");
+                        C12238m.throwUninitializedPropertyAccessException("inputEt");
                     }
                     flexEditText3.setSelection(flexInputState2.inputText.length());
                 }
                 boolean z3 = flexInputState2.showExpandedButtons;
-                AppCompatImageButton appCompatImageButton = flexInputFragment.j().h;
-                Intrinsics3.checkNotNullExpressionValue(appCompatImageButton, "binding.expandBtn");
+                AppCompatImageButton appCompatImageButton = flexInputFragment.m9291j().f2179h;
+                C12238m.checkNotNullExpressionValue(appCompatImageButton, "binding.expandBtn");
                 appCompatImageButton.setVisibility(!z3 ? 0 : 8);
-                AppCompatImageButton appCompatImageButton2 = flexInputFragment.j().m;
-                Intrinsics3.checkNotNullExpressionValue(appCompatImageButton2, "binding.giftBtn");
+                AppCompatImageButton appCompatImageButton2 = flexInputFragment.m9291j().f2184m;
+                C12238m.checkNotNullExpressionValue(appCompatImageButton2, "binding.giftBtn");
                 appCompatImageButton2.setVisibility(z3 ? 0 : 8);
-                AppCompatImageButton appCompatImageButton3 = flexInputFragment.j().l;
-                Intrinsics3.checkNotNullExpressionValue(appCompatImageButton3, "binding.galleryBtn");
+                AppCompatImageButton appCompatImageButton3 = flexInputFragment.m9291j().f2183l;
+                C12238m.checkNotNullExpressionValue(appCompatImageButton3, "binding.galleryBtn");
                 appCompatImageButton3.setVisibility(z3 ? 0 : 8);
                 if (flexInputState2.ableToSendMessages) {
                     String str = flexInputState2.inputText;
                     Objects.requireNonNull(str, "null cannot be cast to non-null type kotlin.CharSequence");
-                    if ((Strings4.trim(str).toString().length() > 0) || flexInputState2.attachments.size() > 0) {
+                    if ((C12106w.trim(str).toString().length() > 0) || flexInputState2.attachments.size() > 0) {
                         z2 = true;
                     } else {
                         z2 = false;
@@ -321,138 +342,141 @@ public class FlexInputFragment extends Fragment implements FlexInputCoordinator<
                 } else {
                     z2 = false;
                 }
-                ImageView imageView = flexInputFragment.j().p;
-                Intrinsics3.checkNotNullExpressionValue(imageView, "binding.sendBtnImage");
+                ImageView imageView = flexInputFragment.m9291j().f2187p;
+                C12238m.checkNotNullExpressionValue(imageView, "binding.sendBtnImage");
                 imageView.setEnabled(z2);
-                FrameLayout frameLayout = flexInputFragment.j().o;
-                Intrinsics3.checkNotNullExpressionValue(frameLayout, "binding.sendBtnContainer");
+                FrameLayout frameLayout = flexInputFragment.m9291j().f2186o;
+                C12238m.checkNotNullExpressionValue(frameLayout, "binding.sendBtnContainer");
                 frameLayout.setEnabled(z2);
                 boolean z4 = (flexInputState2.inputText.length() > 0) || flexInputState2.attachments.size() > 0;
-                FrameLayout frameLayout2 = flexInputFragment.j().o;
-                Intrinsics3.checkNotNullExpressionValue(frameLayout2, "binding.sendBtnContainer");
+                FrameLayout frameLayout2 = flexInputFragment.m9291j().f2186o;
+                C12238m.checkNotNullExpressionValue(frameLayout2, "binding.sendBtnContainer");
                 frameLayout2.setVisibility(z4 ? 0 : 8);
-                LinearLayout linearLayout = flexInputFragment.j().n;
-                Intrinsics3.checkNotNullExpressionValue(linearLayout, "binding.mainInputContainer");
+                LinearLayout linearLayout = flexInputFragment.m9291j().f2185n;
+                C12238m.checkNotNullExpressionValue(linearLayout, "binding.mainInputContainer");
                 ViewGroup.LayoutParams layoutParams = linearLayout.getLayoutParams();
                 Objects.requireNonNull(layoutParams, "null cannot be cast to non-null type android.widget.RelativeLayout.LayoutParams");
                 RelativeLayout.LayoutParams layoutParams2 = (RelativeLayout.LayoutParams) layoutParams;
                 layoutParams2.rightMargin = !z4 ? DimenUtils.dpToPixels(8) : 0;
-                LinearLayout linearLayout2 = flexInputFragment.j().n;
-                Intrinsics3.checkNotNullExpressionValue(linearLayout2, "binding.mainInputContainer");
+                LinearLayout linearLayout2 = flexInputFragment.m9291j().f2185n;
+                C12238m.checkNotNullExpressionValue(linearLayout2, "binding.mainInputContainer");
                 linearLayout2.setLayoutParams(layoutParams2);
                 if (flexInputState2.attachments.isEmpty()) {
                     AttachmentPreviewAdapter<Attachment<Object>> attachmentPreviewAdapter = flexInputFragment.attachmentPreviewAdapter;
                     if (attachmentPreviewAdapter == null) {
-                        Intrinsics3.throwUninitializedPropertyAccessException("attachmentPreviewAdapter");
+                        C12238m.throwUninitializedPropertyAccessException("attachmentPreviewAdapter");
                     }
                     attachmentPreviewAdapter.selectionAggregator.clear();
                     attachmentPreviewAdapter.notifyDataSetChanged();
                 }
-                LinearLayout linearLayout3 = flexInputFragment.j().c;
-                Intrinsics3.checkNotNullExpressionValue(linearLayout3, "binding.attachmentPreviewContainer");
+                LinearLayout linearLayout3 = flexInputFragment.m9291j().f2174c;
+                C12238m.checkNotNullExpressionValue(linearLayout3, "binding.attachmentPreviewContainer");
                 linearLayout3.setVisibility((flexInputState2.attachments.size() > 0 && flexInputState2.ableToSendMessages && flexInputState2.attachmentViewEnabled) ? 0 : 8);
-                AppCompatImageButton appCompatImageButton4 = flexInputFragment.j().l;
-                Intrinsics3.checkNotNullExpressionValue(appCompatImageButton4, "binding.galleryBtn");
+                AppCompatImageButton appCompatImageButton4 = flexInputFragment.m9291j().f2183l;
+                C12238m.checkNotNullExpressionValue(appCompatImageButton4, "binding.galleryBtn");
                 ViewExtensions.setEnabledAlpha$default(appCompatImageButton4, flexInputState2.ableToSendMessages && flexInputState2.ableToAttachFiles, 0.0f, 2, null);
-                AddContentDialogFragment addContentDialogFragment = (AddContentDialogFragment) flexInputFragment.getChildFragmentManager().findFragmentByTag("Add Content");
+                C1413a c1413a = (C1413a) flexInputFragment.getChildFragmentManager().findFragmentByTag("Add Content");
                 Integer num = flexInputState2.showContentDialogIndex;
                 if (num != null) {
-                    if (addContentDialogFragment == null) {
+                    if (c1413a == null) {
                         try {
-                            FlexInputFragment.g(jVar.this$0, num.intValue());
+                            FlexInputFragment.m9288g(c1422j.this$0, num.intValue());
                         } catch (Exception e) {
-                            Log.d(FlexInputFragment.k, "Could not open AddContentDialogFragment", e);
+                            Log.d(FlexInputFragment.f22055k, "Could not open AddContentDialogFragment", e);
                         }
                     } else {
                         int iIntValue = num.intValue();
-                        ViewPager viewPager = addContentDialogFragment.contentPager;
+                        ViewPager viewPager = c1413a.contentPager;
                         if (viewPager != null) {
                             viewPager.setCurrentItem(iIntValue);
                         }
                     }
-                } else if (addContentDialogFragment != null && addContentDialogFragment.isAdded() && !addContentDialogFragment.isDetached()) {
-                    addContentDialogFragment.dismissAllowingStateLoss();
+                } else if (c1413a != null && c1413a.isAdded() && !c1413a.isDetached()) {
+                    c1413a.dismissAllowingStateLoss();
                 }
-                TextView textView = flexInputFragment.j().e;
-                Intrinsics3.checkNotNullExpressionValue(textView, "binding.cannotSendText");
+                TextView textView = flexInputFragment.m9291j().f2176e;
+                C12238m.checkNotNullExpressionValue(textView, "binding.cannotSendText");
                 textView.setVisibility(flexInputState2.ableToSendMessages ? 8 : 0);
                 if (flexInputState2.showExpressionTray) {
-                    lVar.invoke2();
+                    c1424l.invoke2();
                 } else {
-                    kVar.invoke(flexInputState2.showExpressionTrayButtonBadge);
+                    c1423k.invoke(flexInputState2.showExpressionTrayButtonBadge);
                 }
             }
-            return Unit.a;
+            return Unit.f27425a;
         }
     }
 
+    /* JADX INFO: renamed from: com.lytefast.flexinput.fragment.FlexInputFragment$e */
     /* JADX INFO: compiled from: FlexInputFragment.kt */
-    public static final /* synthetic */ class e extends FunctionReferenceImpl implements Function1<FlexInputEvent, Unit> {
-        public e(FlexInputFragment flexInputFragment) {
+    public static final /* synthetic */ class C11185e extends C12236k implements Function1<AbstractC1451a, Unit> {
+        public C11185e(FlexInputFragment flexInputFragment) {
             super(1, flexInputFragment, FlexInputFragment.class, "handleEvent", "handleEvent(Lcom/lytefast/flexinput/viewmodel/FlexInputEvent;)V", 0);
         }
 
         @Override // kotlin.jvm.functions.Function1
-        public Unit invoke(FlexInputEvent flexInputEvent) {
-            FlexInputEvent flexInputEvent2 = flexInputEvent;
-            Intrinsics3.checkNotNullParameter(flexInputEvent2, "p1");
+        public Unit invoke(AbstractC1451a abstractC1451a) {
+            AbstractC1451a abstractC1451a2 = abstractC1451a;
+            C12238m.checkNotNullParameter(abstractC1451a2, "p1");
             FlexInputFragment flexInputFragment = (FlexInputFragment) this.receiver;
-            KProperty[] kPropertyArr = FlexInputFragment.j;
+            KProperty[] kPropertyArr = FlexInputFragment.f22054j;
             Objects.requireNonNull(flexInputFragment);
-            if (flexInputEvent2 instanceof FlexInputEvent.d) {
-                Toast.makeText(flexInputFragment.requireContext(), ((FlexInputEvent.d) flexInputEvent2).a, 0).show();
-            } else if (flexInputEvent2 instanceof FlexInputEvent.e) {
-                Toast.makeText(flexInputFragment.requireContext(), ((FlexInputEvent.e) flexInputEvent2).a, 0).show();
-            } else if (flexInputEvent2 instanceof FlexInputEvent.c) {
-                KeyboardManager keyboardManager = flexInputFragment.keyboardManager;
-                if (keyboardManager != null) {
+            if (abstractC1451a2 instanceof AbstractC1451a.d) {
+                Toast.makeText(flexInputFragment.requireContext(), ((AbstractC1451a.d) abstractC1451a2).f2205a, 0).show();
+            } else if (abstractC1451a2 instanceof AbstractC1451a.e) {
+                Toast.makeText(flexInputFragment.requireContext(), ((AbstractC1451a.e) abstractC1451a2).f2206a, 0).show();
+            } else if (abstractC1451a2 instanceof AbstractC1451a.c) {
+                InterfaceC1447a interfaceC1447a = flexInputFragment.keyboardManager;
+                if (interfaceC1447a != null) {
                     FlexEditText flexEditText = flexInputFragment.inputEt;
                     if (flexEditText == null) {
-                        Intrinsics3.throwUninitializedPropertyAccessException("inputEt");
+                        C12238m.throwUninitializedPropertyAccessException("inputEt");
                     }
-                    keyboardManager.requestDisplay(flexEditText);
+                    interfaceC1447a.requestDisplay(flexEditText);
                 }
-            } else if (flexInputEvent2 instanceof FlexInputEvent.b) {
-                KeyboardManager keyboardManager2 = flexInputFragment.keyboardManager;
-                if (keyboardManager2 != null) {
-                    keyboardManager2.requestHide();
+            } else if (abstractC1451a2 instanceof AbstractC1451a.b) {
+                InterfaceC1447a interfaceC1447a2 = flexInputFragment.keyboardManager;
+                if (interfaceC1447a2 != null) {
+                    interfaceC1447a2.requestHide();
                 }
-            } else if (flexInputEvent2 instanceof FlexInputEvent.a) {
-                flexInputFragment.j().q.performClick();
+            } else if (abstractC1451a2 instanceof AbstractC1451a.a) {
+                flexInputFragment.m9291j().f2188q.performClick();
             }
-            return Unit.a;
+            return Unit.f27425a;
         }
     }
 
+    /* JADX INFO: renamed from: com.lytefast.flexinput.fragment.FlexInputFragment$f */
     /* JADX INFO: compiled from: FlexInputFragment.kt */
-    public static final class f extends Lambda implements Function1<Editable, Unit> {
-        public f() {
+    public static final class C11186f extends AbstractC12240o implements Function1<Editable, Unit> {
+        public C11186f() {
             super(1);
         }
 
         @Override // kotlin.jvm.functions.Function1
         public Unit invoke(Editable editable) {
             Editable editable2 = editable;
-            Intrinsics3.checkNotNullParameter(editable2, "it");
+            C12238m.checkNotNullParameter(editable2, "it");
             FlexInputViewModel flexInputViewModel = FlexInputFragment.this.viewModel;
             if (flexInputViewModel != null) {
-                b.i.a.f.e.o.f.P0(flexInputViewModel, editable2.toString(), null, 2, null);
+                C3404f.m4235P0(flexInputViewModel, editable2.toString(), null, 2, null);
             }
-            return Unit.a;
+            return Unit.f27425a;
         }
     }
 
-    public static final void g(FlexInputFragment flexInputFragment, int i) {
+    /* JADX INFO: renamed from: g */
+    public static final void m9288g(FlexInputFragment flexInputFragment, int i) {
         ViewPager viewPager;
         FragmentTransaction fragmentTransactionBeginTransaction = flexInputFragment.getChildFragmentManager().beginTransaction();
-        Intrinsics3.checkNotNullExpressionValue(fragmentTransactionBeginTransaction, "childFragmentManager.beginTransaction()");
-        AddContentDialogFragment addContentDialogFragment = new AddContentDialogFragment();
-        addContentDialogFragment.show(fragmentTransactionBeginTransaction, "Add Content");
+        C12238m.checkNotNullExpressionValue(fragmentTransactionBeginTransaction, "childFragmentManager.beginTransaction()");
+        C1413a c1413a = new C1413a();
+        c1413a.show(fragmentTransactionBeginTransaction, "Add Content");
         flexInputFragment.getChildFragmentManager().executePendingTransactions();
-        if (addContentDialogFragment.getDialog() == null) {
+        if (c1413a.getDialog() == null) {
             return;
         }
-        ViewPager viewPager2 = addContentDialogFragment.contentPager;
+        ViewPager viewPager2 = c1413a.contentPager;
         if (viewPager2 != null) {
             viewPager2.setCurrentItem(i);
         }
@@ -460,77 +484,80 @@ public class FlexInputFragment extends Fragment implements FlexInputCoordinator<
         if (flexInputViewModel != null) {
             flexInputViewModel.onContentDialogPageChanged(i);
         }
-        b.b.a.a.f fVar = new b.b.a.a.f(flexInputFragment);
-        Intrinsics3.checkNotNullParameter(fVar, "listener");
-        ViewPager.OnPageChangeListener onPageChangeListener = addContentDialogFragment.onPageChangeListener;
-        if (onPageChangeListener != null && (viewPager = addContentDialogFragment.contentPager) != null) {
+        C1418f c1418f = new C1418f(flexInputFragment);
+        C12238m.checkNotNullParameter(c1418f, "listener");
+        ViewPager.OnPageChangeListener onPageChangeListener = c1413a.onPageChangeListener;
+        if (onPageChangeListener != null && (viewPager = c1413a.contentPager) != null) {
             viewPager.removeOnPageChangeListener(onPageChangeListener);
         }
-        addContentDialogFragment.onPageChangeListener = fVar;
-        ViewPager viewPager3 = addContentDialogFragment.contentPager;
+        c1413a.onPageChangeListener = c1418f;
+        ViewPager viewPager3 = c1413a.contentPager;
         if (viewPager3 != null) {
-            viewPager3.addOnPageChangeListener(fVar);
+            viewPager3.addOnPageChangeListener(c1418f);
         }
-        Dialog dialog = addContentDialogFragment.getDialog();
+        Dialog dialog = c1413a.getDialog();
         if (dialog != null) {
-            dialog.setOnDismissListener(new g(flexInputFragment));
+            dialog.setOnDismissListener(new DialogInterfaceOnDismissListenerC1419g(flexInputFragment));
         }
-        h hVar = new h(flexInputFragment);
-        Intrinsics3.checkNotNullParameter(hVar, "onKeyboardSelectedListener");
-        addContentDialogFragment.onKeyboardSelectedListener = hVar;
+        C1420h c1420h = new C1420h(flexInputFragment);
+        C12238m.checkNotNullParameter(c1420h, "onKeyboardSelectedListener");
+        c1413a.onKeyboardSelectedListener = c1420h;
     }
 
-    public static final void h(FlexInputFragment flexInputFragment, boolean z2) {
+    /* JADX INFO: renamed from: h */
+    public static final void m9289h(FlexInputFragment flexInputFragment, boolean z2) {
         Object obj;
-        Fragment fragmentFindFragmentById = flexInputFragment.getChildFragmentManager().findFragmentById(R.f.expression_tray_container);
+        Fragment fragmentFindFragmentById = flexInputFragment.getChildFragmentManager().findFragmentById(C11170R.f.expression_tray_container);
         if (fragmentFindFragmentById != null && fragmentFindFragmentById.isAdded() && fragmentFindFragmentById.isResumed()) {
-            if (!(fragmentFindFragmentById instanceof FlexInputExpressionTrayStateChangeListener)) {
+            if (!(fragmentFindFragmentById instanceof InterfaceC1430c)) {
                 obj = fragmentFindFragmentById;
                 obj = null;
             }
             obj = fragmentFindFragmentById;
-            FlexInputExpressionTrayStateChangeListener flexInputExpressionTrayStateChangeListener = (FlexInputExpressionTrayStateChangeListener) obj;
-            if (flexInputExpressionTrayStateChangeListener != null) {
-                flexInputExpressionTrayStateChangeListener.isShown(z2);
+            InterfaceC1430c interfaceC1430c = (InterfaceC1430c) obj;
+            if (interfaceC1430c != null) {
+                interfaceC1430c.isShown(z2);
             }
         }
     }
 
-    @Override // b.b.a.FlexInputCoordinator
-    public SelectionAggregator<Attachment<Object>> b() {
+    @Override // p007b.p076b.p077a.InterfaceC1429b
+    /* JADX INFO: renamed from: b */
+    public SelectionAggregator<Attachment<Object>> mo396b() {
         AttachmentPreviewAdapter<Attachment<Object>> attachmentPreviewAdapter = this.attachmentPreviewAdapter;
         if (attachmentPreviewAdapter == null) {
-            Intrinsics3.throwUninitializedPropertyAccessException("attachmentPreviewAdapter");
+            C12238m.throwUninitializedPropertyAccessException("attachmentPreviewAdapter");
         }
         return attachmentPreviewAdapter.selectionAggregator;
     }
 
     /* JADX WARN: Multi-variable type inference failed */
-    @Override // b.b.a.FlexInputCoordinator
-    public void f(Attachment<? extends Object> attachment) {
-        Intrinsics3.checkNotNullParameter(attachment, "attachment");
+    @Override // p007b.p076b.p077a.InterfaceC1429b
+    /* JADX INFO: renamed from: f */
+    public void mo397f(Attachment<? extends Object> attachment) {
+        C12238m.checkNotNullParameter(attachment, "attachment");
         DialogFragment dialogFragment = (DialogFragment) getChildFragmentManager().findFragmentByTag("Add Content");
         SelectionCoordinator<T, ?> selectionCoordinator = new SelectionCoordinator<>(null, null, 3);
-        b().registerSelectionCoordinator(selectionCoordinator);
-        selectionCoordinator.c(attachment, 0);
+        mo396b().registerSelectionCoordinator(selectionCoordinator);
+        selectionCoordinator.m9300c(attachment, 0);
         selectionCoordinator.itemSelectionListener.unregister();
         FlexInputViewModel flexInputViewModel = this.viewModel;
         if (flexInputViewModel != null) {
-            flexInputViewModel.onAttachmentsUpdated(b().getAttachments());
+            flexInputViewModel.onAttachmentsUpdated(mo396b().getAttachments());
         }
-        j().d.post(new b(dialogFragment));
+        m9291j().f2175d.post(new RunnableC11182b(dialogFragment));
     }
 
-    @Override // b.b.a.FlexInputCoordinator
+    @Override // p007b.p076b.p077a.InterfaceC1429b
     public FileManager getFileManager() {
         FileManager fileManager = this.fileManager;
         if (fileManager == null) {
-            Intrinsics3.throwUninitializedPropertyAccessException("fileManager");
+            C12238m.throwUninitializedPropertyAccessException("fileManager");
         }
         return fileManager;
     }
 
-    @Override // b.b.a.FlexInputCoordinator
+    @Override // p007b.p076b.p077a.InterfaceC1429b
     public boolean hasMediaPermissions() {
         FlexInputViewModel flexInputViewModel = this.viewModel;
         if (flexInputViewModel != null) {
@@ -539,47 +566,52 @@ public class FlexInputFragment extends Fragment implements FlexInputCoordinator<
         return false;
     }
 
-    public final void i(Function0<Unit> onViewCreatedUpdate) {
-        Intrinsics3.checkNotNullParameter(onViewCreatedUpdate, "onViewCreatedUpdate");
+    /* JADX INFO: renamed from: i */
+    public final void m9290i(Function0<Unit> onViewCreatedUpdate) {
+        C12238m.checkNotNullParameter(onViewCreatedUpdate, "onViewCreatedUpdate");
         try {
-            LinearLayout linearLayout = j().f;
+            LinearLayout linearLayout = m9291j().f2177f;
             onViewCreatedUpdate.invoke();
         } catch (IllegalStateException unused) {
             this.onViewCreatedUpdates.add(onViewCreatedUpdate);
         }
     }
 
-    public final FlexInputWidgetBinding j() {
-        return (FlexInputWidgetBinding) this.binding.getValue((Fragment) this, j[0]);
+    /* JADX INFO: renamed from: j */
+    public final C1444a m9291j() {
+        return (C1444a) this.binding.getValue((Fragment) this, f22054j[0]);
     }
 
-    public final AddContentPagerAdapter4.a[] k() {
-        AddContentPagerAdapter4.a[] aVarArr = this.r;
+    /* JADX INFO: renamed from: k */
+    public final C1434d.a[] m9292k() {
+        C1434d.a[] aVarArr = this.f22062r;
         if (aVarArr == null) {
-            Intrinsics3.throwUninitializedPropertyAccessException("pageSuppliers");
+            C12238m.throwUninitializedPropertyAccessException("pageSuppliers");
         }
         if (aVarArr.length == 0) {
             Context contextRequireContext = requireContext();
-            Intrinsics3.checkNotNullExpressionValue(contextRequireContext, "requireContext()");
-            Intrinsics3.checkNotNullParameter(contextRequireContext, "context");
-            return new AddContentPagerAdapter4.a[]{new AddContentPagerAdapter(contextRequireContext, DrawableCompat.getThemedDrawableRes$default(contextRequireContext, R.b.ic_flex_input_image, 0, 2, (Object) null), R.h.attachment_media), new AddContentPagerAdapter2(contextRequireContext, DrawableCompat.getThemedDrawableRes$default(contextRequireContext, R.b.ic_flex_input_file, 0, 2, (Object) null), R.h.attachment_files), new AddContentPagerAdapter3(contextRequireContext, DrawableCompat.getThemedDrawableRes$default(contextRequireContext, R.b.ic_flex_input_add_a_photo, 0, 2, (Object) null), R.h.camera)};
+            C12238m.checkNotNullExpressionValue(contextRequireContext, "requireContext()");
+            C12238m.checkNotNullParameter(contextRequireContext, "context");
+            return new C1434d.a[]{new C1431a(contextRequireContext, DrawableCompat.getThemedDrawableRes$default(contextRequireContext, C11170R.b.ic_flex_input_image, 0, 2, (Object) null), C11170R.h.attachment_media), new C1432b(contextRequireContext, DrawableCompat.getThemedDrawableRes$default(contextRequireContext, C11170R.b.ic_flex_input_file, 0, 2, (Object) null), C11170R.h.attachment_files), new C1433c(contextRequireContext, DrawableCompat.getThemedDrawableRes$default(contextRequireContext, C11170R.b.ic_flex_input_add_a_photo, 0, 2, (Object) null), C11170R.h.camera)};
         }
-        AddContentPagerAdapter4.a[] aVarArr2 = this.r;
+        C1434d.a[] aVarArr2 = this.f22062r;
         if (aVarArr2 == null) {
-            Intrinsics3.throwUninitializedPropertyAccessException("pageSuppliers");
+            C12238m.throwUninitializedPropertyAccessException("pageSuppliers");
         }
         return aVarArr2;
     }
 
-    public final FlexEditText l() {
+    /* JADX INFO: renamed from: l */
+    public final FlexEditText m9293l() {
         FlexEditText flexEditText = this.inputEt;
         if (flexEditText == null) {
-            Intrinsics3.throwUninitializedPropertyAccessException("inputEt");
+            C12238m.throwUninitializedPropertyAccessException("inputEt");
         }
         return flexEditText;
     }
 
-    public final boolean m() {
+    /* JADX INFO: renamed from: m */
+    public final boolean m9294m() {
         View view;
         if (!isAdded() || isHidden() || (view = getView()) == null) {
             return false;
@@ -589,10 +621,10 @@ public class FlexInputFragment extends Fragment implements FlexInputCoordinator<
 
     @Override // androidx.fragment.app.Fragment
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        Intrinsics3.checkNotNullParameter(inflater, "inflater");
-        View viewInflate = inflater.inflate(R.g.flex_input_widget, container, false);
-        View viewFindViewById = viewInflate.findViewById(R.f.text_input);
-        Intrinsics3.checkNotNullExpressionValue(viewFindViewById, "root.findViewById(R.id.text_input)");
+        C12238m.checkNotNullParameter(inflater, "inflater");
+        View viewInflate = inflater.inflate(C11170R.g.flex_input_widget, container, false);
+        View viewFindViewById = viewInflate.findViewById(C11170R.f.text_input);
+        C12238m.checkNotNullExpressionValue(viewFindViewById, "root.findViewById(R.id.text_input)");
         this.inputEt = (FlexEditText) viewFindViewById;
         return viewInflate;
     }
@@ -629,22 +661,22 @@ public class FlexInputFragment extends Fragment implements FlexInputCoordinator<
         super.onResume();
         FlexInputViewModel flexInputViewModel = this.viewModel;
         if (flexInputViewModel != null) {
-            this.stateSubscription = flexInputViewModel.observeState().r().V(new n(new d(this)));
+            this.stateSubscription = flexInputViewModel.observeState().m11112r().m11096V(new C1426n(new C11184d(this)));
             FlexInputViewModel flexInputViewModel2 = this.viewModel;
             if (flexInputViewModel2 != null) {
-                this.eventSubscription = flexInputViewModel2.observeEvents().V(new n(new e(this)));
+                this.eventSubscription = flexInputViewModel2.observeEvents().m11096V(new C1426n(new C11185e(this)));
             }
         }
     }
 
     @Override // androidx.fragment.app.Fragment
     public void onSaveInstanceState(Bundle outState) {
-        Intrinsics3.checkNotNullParameter(outState, "outState");
+        C12238m.checkNotNullParameter(outState, "outState");
         super.onSaveInstanceState(outState);
-        outState.putParcelableArrayList("FlexInput.ATTACHMENTS", b().getAttachments());
+        outState.putParcelableArrayList("FlexInput.ATTACHMENTS", mo396b().getAttachments());
         FlexEditText flexEditText = this.inputEt;
         if (flexEditText == null) {
-            Intrinsics3.throwUninitializedPropertyAccessException("inputEt");
+            C12238m.throwUninitializedPropertyAccessException("inputEt");
         }
         outState.putString("FlexInput.TEXT", String.valueOf(flexEditText.getText()));
     }
@@ -653,75 +685,75 @@ public class FlexInputFragment extends Fragment implements FlexInputCoordinator<
     @Override // androidx.fragment.app.Fragment
     public void onViewCreated(View view, Bundle savedInstanceState) {
         FlexInputViewModel flexInputViewModel;
-        Intrinsics3.checkNotNullParameter(view, "view");
+        C12238m.checkNotNullParameter(view, "view");
         AttachmentPreviewAdapter<Attachment<Object>> attachmentPreviewAdapter = new AttachmentPreviewAdapter<>(false, null, null, 7);
-        attachmentPreviewAdapter.selectionAggregator.addItemSelectionListener(new m(this));
+        attachmentPreviewAdapter.selectionAggregator.addItemSelectionListener(new C1425m(this));
         this.attachmentPreviewAdapter = attachmentPreviewAdapter;
         FlexEditText flexEditText = this.inputEt;
         if (flexEditText == null) {
-            Intrinsics3.throwUninitializedPropertyAccessException("inputEt");
+            C12238m.throwUninitializedPropertyAccessException("inputEt");
         }
-        TextWatcher4.addBindedTextWatcher(flexEditText, this, new f());
+        TextWatcherKt.addBindedTextWatcher(flexEditText, this, new C11186f());
         FlexEditText flexEditText2 = this.inputEt;
         if (flexEditText2 == null) {
-            Intrinsics3.throwUninitializedPropertyAccessException("inputEt");
+            C12238m.throwUninitializedPropertyAccessException("inputEt");
         }
-        flexEditText2.setOnClickListener(new a(0, this));
-        j().f322b.setOnClickListener(new a(1, this));
-        FlexInputWidgetBinding flexInputWidgetBindingJ = j();
-        j().i.setOnClickListener(new defpackage.h(0, this));
-        j().o.setOnClickListener(new defpackage.h(1, this));
-        flexInputWidgetBindingJ.l.setOnClickListener(new defpackage.h(2, this));
-        flexInputWidgetBindingJ.m.setOnClickListener(new defpackage.h(3, this));
-        flexInputWidgetBindingJ.h.setOnClickListener(new defpackage.h(4, this));
-        AppCompatImageButton appCompatImageButton = flexInputWidgetBindingJ.f322b;
-        Intrinsics3.checkNotNullExpressionValue(appCompatImageButton, "attachmentClearBtn");
-        AppCompatImageButton appCompatImageButton2 = flexInputWidgetBindingJ.l;
-        Intrinsics3.checkNotNullExpressionValue(appCompatImageButton2, "galleryBtn");
-        AppCompatImageButton appCompatImageButton3 = flexInputWidgetBindingJ.m;
-        Intrinsics3.checkNotNullExpressionValue(appCompatImageButton3, "giftBtn");
-        AppCompatImageButton appCompatImageButton4 = flexInputWidgetBindingJ.i;
-        Intrinsics3.checkNotNullExpressionValue(appCompatImageButton4, "expressionBtn");
-        FrameLayout frameLayout = flexInputWidgetBindingJ.o;
-        Intrinsics3.checkNotNullExpressionValue(frameLayout, "sendBtnContainer");
-        AppCompatImageButton appCompatImageButton5 = flexInputWidgetBindingJ.h;
-        Intrinsics3.checkNotNullExpressionValue(appCompatImageButton5, "expandBtn");
-        Iterator it = Collections2.listOf((Object[]) new View[]{appCompatImageButton, appCompatImageButton2, appCompatImageButton3, appCompatImageButton4, frameLayout, appCompatImageButton5}).iterator();
+        flexEditText2.setOnClickListener(new ViewOnClickListenerC11181a(0, this));
+        m9291j().f2173b.setOnClickListener(new ViewOnClickListenerC11181a(1, this));
+        C1444a c1444aM9291j = m9291j();
+        m9291j().f2180i.setOnClickListener(new ViewOnClickListenerC12411h(0, this));
+        m9291j().f2186o.setOnClickListener(new ViewOnClickListenerC12411h(1, this));
+        c1444aM9291j.f2183l.setOnClickListener(new ViewOnClickListenerC12411h(2, this));
+        c1444aM9291j.f2184m.setOnClickListener(new ViewOnClickListenerC12411h(3, this));
+        c1444aM9291j.f2179h.setOnClickListener(new ViewOnClickListenerC12411h(4, this));
+        AppCompatImageButton appCompatImageButton = c1444aM9291j.f2173b;
+        C12238m.checkNotNullExpressionValue(appCompatImageButton, "attachmentClearBtn");
+        AppCompatImageButton appCompatImageButton2 = c1444aM9291j.f2183l;
+        C12238m.checkNotNullExpressionValue(appCompatImageButton2, "galleryBtn");
+        AppCompatImageButton appCompatImageButton3 = c1444aM9291j.f2184m;
+        C12238m.checkNotNullExpressionValue(appCompatImageButton3, "giftBtn");
+        AppCompatImageButton appCompatImageButton4 = c1444aM9291j.f2180i;
+        C12238m.checkNotNullExpressionValue(appCompatImageButton4, "expressionBtn");
+        FrameLayout frameLayout = c1444aM9291j.f2186o;
+        C12238m.checkNotNullExpressionValue(frameLayout, "sendBtnContainer");
+        AppCompatImageButton appCompatImageButton5 = c1444aM9291j.f2179h;
+        C12238m.checkNotNullExpressionValue(appCompatImageButton5, "expandBtn");
+        Iterator it = C12147n.listOf((Object[]) new View[]{appCompatImageButton, appCompatImageButton2, appCompatImageButton3, appCompatImageButton4, frameLayout, appCompatImageButton5}).iterator();
         while (it.hasNext()) {
-            ((View) it.next()).setOnLongClickListener(new i(this));
+            ((View) it.next()).setOnLongClickListener(new ViewOnLongClickListenerC1421i(this));
         }
-        FrameLayout frameLayout2 = j().k;
-        Intrinsics3.checkNotNullExpressionValue(frameLayout2, "binding.expressionTrayContainer");
+        FrameLayout frameLayout2 = m9291j().f2182k;
+        C12238m.checkNotNullExpressionValue(frameLayout2, "binding.expressionTrayContainer");
         ViewGroup.LayoutParams layoutParams = frameLayout2.getLayoutParams();
         Objects.requireNonNull(layoutParams, "null cannot be cast to non-null type android.widget.LinearLayout.LayoutParams");
         LinearLayout.LayoutParams layoutParams2 = (LinearLayout.LayoutParams) layoutParams;
-        FrameLayout frameLayout3 = j().k;
-        Intrinsics3.checkNotNullExpressionValue(frameLayout3, "binding.expressionTrayContainer");
+        FrameLayout frameLayout3 = m9291j().f2182k;
+        C12238m.checkNotNullExpressionValue(frameLayout3, "binding.expressionTrayContainer");
         Context context = frameLayout3.getContext();
-        Intrinsics3.checkNotNullExpressionValue(context, "binding.expressionTrayContainer.context");
+        C12238m.checkNotNullExpressionValue(context, "binding.expressionTrayContainer.context");
         layoutParams2.height = (int) (DisplayUtils.getScreenSize(context).height() * 0.5f);
-        FrameLayout frameLayout4 = j().k;
-        Intrinsics3.checkNotNullExpressionValue(frameLayout4, "binding.expressionTrayContainer");
+        FrameLayout frameLayout4 = m9291j().f2182k;
+        C12238m.checkNotNullExpressionValue(frameLayout4, "binding.expressionTrayContainer");
         frameLayout4.setLayoutParams(layoutParams2);
         if (savedInstanceState != null) {
             ArrayList<? super Parcelable> parcelableArrayList = savedInstanceState.getParcelableArrayList("FlexInput.ATTACHMENTS");
             if (parcelableArrayList != null && parcelableArrayList.size() > 0) {
-                b().initFrom(parcelableArrayList);
+                mo396b().initFrom(parcelableArrayList);
             }
             FlexInputViewModel flexInputViewModel2 = this.viewModel;
             if (flexInputViewModel2 != null) {
-                flexInputViewModel2.onAttachmentsUpdated(b().getAttachments());
+                flexInputViewModel2.onAttachmentsUpdated(mo396b().getAttachments());
             }
             String string = savedInstanceState.getString("FlexInput.TEXT");
             if (string != null && (flexInputViewModel = this.viewModel) != null) {
                 flexInputViewModel.onInputTextChanged(string, null);
             }
         }
-        FrameLayout frameLayout5 = j().k;
-        Intrinsics3.checkNotNullExpressionValue(frameLayout5, "binding.expressionTrayContainer");
+        FrameLayout frameLayout5 = m9291j().f2182k;
+        C12238m.checkNotNullExpressionValue(frameLayout5, "binding.expressionTrayContainer");
         ViewExtensions.setForwardingWindowInsetsListener(frameLayout5);
-        ViewCompat.setOnApplyWindowInsetsListener(j().g, o.a);
-        ViewCompat.setOnApplyWindowInsetsListener(j().f, new p(this));
+        ViewCompat.setOnApplyWindowInsetsListener(m9291j().f2178g, C1427o.f2139a);
+        ViewCompat.setOnApplyWindowInsetsListener(m9291j().f2177f, new C1428p(this));
         Iterator<Function0<Unit>> it2 = this.onViewCreatedUpdates.iterator();
         while (it2.hasNext()) {
             it2.next().invoke();
@@ -729,9 +761,9 @@ public class FlexInputFragment extends Fragment implements FlexInputCoordinator<
         this.onViewCreatedUpdates.clear();
     }
 
-    @Override // b.b.a.FlexInputCoordinator
+    @Override // p007b.p076b.p077a.InterfaceC1429b
     public void requestMediaPermissions(Function0<Unit> onSuccess) {
-        Intrinsics3.checkNotNullParameter(onSuccess, "onSuccess");
+        C12238m.checkNotNullParameter(onSuccess, "onSuccess");
         FlexInputViewModel flexInputViewModel = this.viewModel;
         if (flexInputViewModel != null) {
             flexInputViewModel.requestMediaPermissions(onSuccess);

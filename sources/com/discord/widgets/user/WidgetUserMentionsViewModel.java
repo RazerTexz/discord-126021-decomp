@@ -1,13 +1,13 @@
 package com.discord.widgets.user;
 
-import b.a.d.AppViewModel;
 import com.discord.widgets.user.WidgetUserMentions;
 import kotlin.Unit;
 import kotlin.jvm.internal.DefaultConstructorMarker;
+import p007b.p008a.p018d.AbstractC0859d0;
 
 /* JADX INFO: compiled from: WidgetUserMentionsViewModel.kt */
 /* JADX INFO: loaded from: classes.dex */
-public final class WidgetUserMentionsViewModel extends AppViewModel<Unit> {
+public final class WidgetUserMentionsViewModel extends AbstractC0859d0<Unit> {
     private WidgetUserMentions.Model model;
 
     /* JADX WARN: Illegal instructions before constructor call */

@@ -1,8 +1,8 @@
 package com.discord.api.embeddedactivities;
 
-import b.d.b.a.outline;
-import d0.z.d.Intrinsics3;
 import java.util.List;
+import p007b.p100d.p104b.p105a.C1643a;
+import p507d0.p592z.p594d.C12238m;
 
 /* JADX INFO: compiled from: EmbeddedActivityInboundUpdate.kt */
 /* JADX INFO: loaded from: classes.dex */
@@ -27,7 +27,8 @@ public final /* data */ class EmbeddedActivityInboundUpdate {
         return this.guildId;
     }
 
-    public final List<Long> d() {
+    /* JADX INFO: renamed from: d */
+    public final List<Long> m7808d() {
         return this.users;
     }
 
@@ -39,7 +40,7 @@ public final /* data */ class EmbeddedActivityInboundUpdate {
             return false;
         }
         EmbeddedActivityInboundUpdate embeddedActivityInboundUpdate = (EmbeddedActivityInboundUpdate) other;
-        return this.channelId == embeddedActivityInboundUpdate.channelId && Intrinsics3.areEqual(this.embeddedActivity, embeddedActivityInboundUpdate.embeddedActivity) && this.guildId == embeddedActivityInboundUpdate.guildId && Intrinsics3.areEqual(this.users, embeddedActivityInboundUpdate.users);
+        return this.channelId == embeddedActivityInboundUpdate.channelId && C12238m.areEqual(this.embeddedActivity, embeddedActivityInboundUpdate.embeddedActivity) && this.guildId == embeddedActivityInboundUpdate.guildId && C12238m.areEqual(this.users, embeddedActivityInboundUpdate.users);
     }
 
     public int hashCode() {
@@ -54,13 +55,13 @@ public final /* data */ class EmbeddedActivityInboundUpdate {
     }
 
     public String toString() {
-        StringBuilder sbU = outline.U("EmbeddedActivityInboundUpdate(channelId=");
-        sbU.append(this.channelId);
-        sbU.append(", embeddedActivity=");
-        sbU.append(this.embeddedActivity);
-        sbU.append(", guildId=");
-        sbU.append(this.guildId);
-        sbU.append(", users=");
-        return outline.L(sbU, this.users, ")");
+        StringBuilder sbM833U = C1643a.m833U("EmbeddedActivityInboundUpdate(channelId=");
+        sbM833U.append(this.channelId);
+        sbM833U.append(", embeddedActivity=");
+        sbM833U.append(this.embeddedActivity);
+        sbM833U.append(", guildId=");
+        sbM833U.append(this.guildId);
+        sbM833U.append(", users=");
+        return C1643a.m824L(sbM833U, this.users, ")");
     }
 }

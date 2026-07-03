@@ -1,14 +1,14 @@
 package com.discord.analytics.generated.events;
 
-import b.d.b.a.outline;
 import com.discord.analytics.generated.traits.TrackBase;
-import com.discord.analytics.generated.traits.TrackBase2;
+import com.discord.analytics.generated.traits.TrackBaseReceiver;
 import com.discord.api.science.AnalyticsSchema;
-import d0.z.d.Intrinsics3;
+import p007b.p100d.p104b.p105a.C1643a;
+import p507d0.p592z.p594d.C12238m;
 
 /* JADX INFO: compiled from: TrackUpdateUserSettingsLocal.kt */
 /* JADX INFO: loaded from: classes.dex */
-public final /* data */ class TrackUpdateUserSettingsLocal implements AnalyticsSchema, TrackBase2 {
+public final /* data */ class TrackUpdateUserSettingsLocal implements AnalyticsSchema, TrackBaseReceiver {
     private TrackBase trackBase;
     private final Boolean alwaysPreviewVideo = null;
     private final Boolean showSnowsgiving2021 = null;
@@ -28,7 +28,7 @@ public final /* data */ class TrackUpdateUserSettingsLocal implements AnalyticsS
             return false;
         }
         TrackUpdateUserSettingsLocal trackUpdateUserSettingsLocal = (TrackUpdateUserSettingsLocal) other;
-        return Intrinsics3.areEqual(this.alwaysPreviewVideo, trackUpdateUserSettingsLocal.alwaysPreviewVideo) && Intrinsics3.areEqual(this.showSnowsgiving2021, trackUpdateUserSettingsLocal.showSnowsgiving2021);
+        return C12238m.areEqual(this.alwaysPreviewVideo, trackUpdateUserSettingsLocal.alwaysPreviewVideo) && C12238m.areEqual(this.showSnowsgiving2021, trackUpdateUserSettingsLocal.showSnowsgiving2021);
     }
 
     public int hashCode() {
@@ -39,9 +39,9 @@ public final /* data */ class TrackUpdateUserSettingsLocal implements AnalyticsS
     }
 
     public String toString() {
-        StringBuilder sbU = outline.U("TrackUpdateUserSettingsLocal(alwaysPreviewVideo=");
-        sbU.append(this.alwaysPreviewVideo);
-        sbU.append(", showSnowsgiving2021=");
-        return outline.D(sbU, this.showSnowsgiving2021, ")");
+        StringBuilder sbM833U = C1643a.m833U("TrackUpdateUserSettingsLocal(alwaysPreviewVideo=");
+        sbM833U.append(this.alwaysPreviewVideo);
+        sbM833U.append(", showSnowsgiving2021=");
+        return C1643a.m816D(sbM833U, this.showSnowsgiving2021, ")");
     }
 }

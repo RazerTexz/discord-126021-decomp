@@ -11,13 +11,13 @@ import androidx.annotation.MainThread;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.FragmentTransaction;
-import b.d.b.a.outline;
-import b.i.b.d.a.ListenableFuture8;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map;
 import java.util.Set;
 import java.util.concurrent.Executor;
+import p007b.p100d.p104b.p105a.C1643a;
+import p007b.p225i.p355b.p359d.p360a.InterfaceFutureC4539a;
 
 /* JADX INFO: loaded from: classes.dex */
 public final class TrustedWebActivityServiceConnectionPool {
@@ -105,24 +105,25 @@ public final class TrustedWebActivityServiceConnectionPool {
             return null;
         }
         if (z2) {
-            StringBuilder sbU = outline.U("Found ");
-            sbU.append(resolveInfoResolveService.serviceInfo.name);
-            sbU.append(" to handle request for ");
-            sbU.append(uri);
-            Log.i(TAG, sbU.toString());
+            StringBuilder sbM833U = C1643a.m833U("Found ");
+            sbM833U.append(resolveInfoResolveService.serviceInfo.name);
+            sbM833U.append(" to handle request for ");
+            sbM833U.append(uri);
+            Log.i(TAG, sbM833U.toString());
         }
         Intent intent3 = new Intent();
         intent3.setComponent(new ComponentName(str, resolveInfoResolveService.serviceInfo.name));
         return intent3;
     }
 
-    public /* synthetic */ void a(Uri uri) {
+    /* JADX INFO: renamed from: a */
+    public /* synthetic */ void m79a(Uri uri) {
         this.mConnections.remove(uri);
     }
 
     @NonNull
     @MainThread
-    public ListenableFuture8<TrustedWebActivityServiceConnection> connect(@NonNull final Uri uri, @NonNull Set<Token> set, @NonNull Executor executor) {
+    public InterfaceFutureC4539a<TrustedWebActivityServiceConnection> connect(@NonNull final Uri uri, @NonNull Set<Token> set, @NonNull Executor executor) {
         ConnectionHolder connectionHolder = this.mConnections.get(uri);
         if (connectionHolder != null) {
             return connectionHolder.getServiceWrapper();
@@ -134,7 +135,7 @@ public final class TrustedWebActivityServiceConnectionPool {
         ConnectionHolder connectionHolder2 = new ConnectionHolder(new Runnable() { // from class: y.a.b.c
             @Override // java.lang.Runnable
             public final void run() {
-                this.j.a(uri);
+                this.f27954j.m79a(uri);
             }
         });
         this.mConnections.put(uri, connectionHolder2);

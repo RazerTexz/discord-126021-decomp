@@ -1,14 +1,14 @@
 package com.discord.utilities.search.suggestion.entries;
 
-import b.d.b.a.outline;
 import com.discord.utilities.search.query.FilterType;
 import com.discord.utilities.search.strings.SearchStringProvider;
 import com.discord.utilities.search.suggestion.entries.SearchSuggestion;
-import com.discord.widgets.chat.input.MentionUtils;
-import d0.g0.Strings4;
-import d0.z.d.Intrinsics3;
+import com.discord.widgets.chat.input.MentionUtilsKt;
 import kotlin.NoWhenBranchMatchedException;
 import kotlin.jvm.internal.DefaultConstructorMarker;
+import p007b.p100d.p104b.p105a.C1643a;
+import p507d0.p579g0.C12106w;
+import p507d0.p592z.p594d.C12238m;
 
 /* JADX INFO: compiled from: FilterSuggestion.kt */
 /* JADX INFO: loaded from: classes2.dex */
@@ -52,14 +52,14 @@ public final /* data */ class FilterSuggestion implements SearchSuggestion {
                 }
                 fromFilterString = searchStringProvider.getInFilterString();
             }
-            return fromFilterString + MentionUtils.EMOJIS_AND_STICKERS_CHAR;
+            return fromFilterString + MentionUtilsKt.EMOJIS_AND_STICKERS_CHAR;
         }
 
         public final boolean canComplete(CharSequence currentInput, FilterType filterType, SearchStringProvider searchStringProvider) {
-            Intrinsics3.checkNotNullParameter(currentInput, "currentInput");
-            Intrinsics3.checkNotNullParameter(filterType, "filterType");
-            Intrinsics3.checkNotNullParameter(searchStringProvider, "searchStringProvider");
-            return Strings4.contains$default((CharSequence) getStringRepresentation(filterType, searchStringProvider), currentInput, false, 2, (Object) null);
+            C12238m.checkNotNullParameter(currentInput, "currentInput");
+            C12238m.checkNotNullParameter(filterType, "filterType");
+            C12238m.checkNotNullParameter(searchStringProvider, "searchStringProvider");
+            return C12106w.contains$default((CharSequence) getStringRepresentation(filterType, searchStringProvider), currentInput, false, 2, (Object) null);
         }
 
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
@@ -68,7 +68,7 @@ public final /* data */ class FilterSuggestion implements SearchSuggestion {
     }
 
     public FilterSuggestion(FilterType filterType) {
-        Intrinsics3.checkNotNullParameter(filterType, "filterType");
+        C12238m.checkNotNullParameter(filterType, "filterType");
         this.filterType = filterType;
         this.category = SearchSuggestion.Category.FILTER;
     }
@@ -86,13 +86,13 @@ public final /* data */ class FilterSuggestion implements SearchSuggestion {
     }
 
     public final FilterSuggestion copy(FilterType filterType) {
-        Intrinsics3.checkNotNullParameter(filterType, "filterType");
+        C12238m.checkNotNullParameter(filterType, "filterType");
         return new FilterSuggestion(filterType);
     }
 
     public boolean equals(Object other) {
         if (this != other) {
-            return (other instanceof FilterSuggestion) && Intrinsics3.areEqual(this.filterType, ((FilterSuggestion) other).filterType);
+            return (other instanceof FilterSuggestion) && C12238m.areEqual(this.filterType, ((FilterSuggestion) other).filterType);
         }
         return true;
     }
@@ -115,9 +115,9 @@ public final /* data */ class FilterSuggestion implements SearchSuggestion {
     }
 
     public String toString() {
-        StringBuilder sbU = outline.U("FilterSuggestion(filterType=");
-        sbU.append(this.filterType);
-        sbU.append(")");
-        return sbU.toString();
+        StringBuilder sbM833U = C1643a.m833U("FilterSuggestion(filterType=");
+        sbM833U.append(this.filterType);
+        sbM833U.append(")");
+        return sbM833U.toString();
     }
 }

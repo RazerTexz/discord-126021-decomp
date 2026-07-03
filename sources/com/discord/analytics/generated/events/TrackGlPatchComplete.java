@@ -1,18 +1,18 @@
 package com.discord.analytics.generated.events;
 
-import b.d.b.a.outline;
 import com.discord.analytics.generated.traits.TrackBase;
-import com.discord.analytics.generated.traits.TrackBase2;
+import com.discord.analytics.generated.traits.TrackBaseReceiver;
 import com.discord.analytics.generated.traits.TrackDispatchBase;
-import com.discord.analytics.generated.traits.TrackDispatchBase2;
+import com.discord.analytics.generated.traits.TrackDispatchBaseReceiver;
 import com.discord.analytics.generated.traits.TrackDispatchPatch;
-import com.discord.analytics.generated.traits.TrackDispatchPatch2;
+import com.discord.analytics.generated.traits.TrackDispatchPatchReceiver;
 import com.discord.api.science.AnalyticsSchema;
-import d0.z.d.Intrinsics3;
+import p007b.p100d.p104b.p105a.C1643a;
+import p507d0.p592z.p594d.C12238m;
 
 /* JADX INFO: compiled from: TrackGlPatchComplete.kt */
 /* JADX INFO: loaded from: classes.dex */
-public final /* data */ class TrackGlPatchComplete implements AnalyticsSchema, TrackBase2, TrackDispatchBase2, TrackDispatchPatch2 {
+public final /* data */ class TrackGlPatchComplete implements AnalyticsSchema, TrackBaseReceiver, TrackDispatchBaseReceiver, TrackDispatchPatchReceiver {
     private TrackBase trackBase;
     private TrackDispatchBase trackDispatchBase;
     private TrackDispatchPatch trackDispatchPatch;
@@ -27,7 +27,7 @@ public final /* data */ class TrackGlPatchComplete implements AnalyticsSchema, T
 
     public boolean equals(Object other) {
         if (this != other) {
-            return (other instanceof TrackGlPatchComplete) && Intrinsics3.areEqual(this.bytesDownloaded, ((TrackGlPatchComplete) other).bytesDownloaded);
+            return (other instanceof TrackGlPatchComplete) && C12238m.areEqual(this.bytesDownloaded, ((TrackGlPatchComplete) other).bytesDownloaded);
         }
         return true;
     }
@@ -41,6 +41,6 @@ public final /* data */ class TrackGlPatchComplete implements AnalyticsSchema, T
     }
 
     public String toString() {
-        return outline.G(outline.U("TrackGlPatchComplete(bytesDownloaded="), this.bytesDownloaded, ")");
+        return C1643a.m819G(C1643a.m833U("TrackGlPatchComplete(bytesDownloaded="), this.bytesDownloaded, ")");
     }
 }

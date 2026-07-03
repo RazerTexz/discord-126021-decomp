@@ -2,12 +2,12 @@ package com.discord.utilities.views.viewstub;
 
 import android.view.View;
 import android.view.ViewStub;
-import d0.Lazy5;
-import d0.LazyJVM;
-import d0.z.d.Intrinsics3;
 import kotlin.Lazy;
 import kotlin.jvm.functions.Function0;
 import kotlin.jvm.internal.DefaultConstructorMarker;
+import p507d0.C12083g;
+import p507d0.EnumC12110i;
+import p507d0.p592z.p594d.C12238m;
 
 /* JADX INFO: compiled from: LazyViewStubDelegate.kt */
 /* JADX INFO: loaded from: classes2.dex */
@@ -27,8 +27,8 @@ public final class LazyViewStubDelegate {
         }
 
         public final Lazy<LazyViewStubDelegate> lazyViewStub(Function0<ViewStub> getViewStub) {
-            Intrinsics3.checkNotNullParameter(getViewStub, "getViewStub");
-            return LazyJVM.lazy(Lazy5.NONE, new LazyViewStubDelegate2(getViewStub));
+            C12238m.checkNotNullParameter(getViewStub, "getViewStub");
+            return C12083g.lazy(EnumC12110i.NONE, new LazyViewStubDelegate$Companion$lazyViewStub$1(getViewStub));
         }
 
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
@@ -37,7 +37,7 @@ public final class LazyViewStubDelegate {
     }
 
     private LazyViewStubDelegate(ViewStub viewStub) {
-        Lazy<View> lazy = LazyJVM.lazy(Lazy5.NONE, new LazyViewStubDelegate3(this, viewStub));
+        Lazy<View> lazy = C12083g.lazy(EnumC12110i.NONE, new LazyViewStubDelegate$viewField$1(this, viewStub));
         this.viewField = lazy;
         this.view = lazy;
     }
@@ -48,7 +48,7 @@ public final class LazyViewStubDelegate {
 
     public final View getForceInitializedView() {
         View view = getView();
-        Intrinsics3.checkNotNullExpressionValue(view, "view");
+        C12238m.checkNotNullExpressionValue(view, "view");
         return view;
     }
 
@@ -62,7 +62,7 @@ public final class LazyViewStubDelegate {
     public final boolean isVisible() {
         if (this.viewField.isInitialized()) {
             View view = getView();
-            Intrinsics3.checkNotNullExpressionValue(view, "view");
+            C12238m.checkNotNullExpressionValue(view, "view");
             if (view.getVisibility() == 0) {
                 return true;
             }
@@ -81,7 +81,7 @@ public final class LazyViewStubDelegate {
     public final void setVisible(boolean z2) {
         if (z2 || this.viewField.isInitialized()) {
             View view = getView();
-            Intrinsics3.checkNotNullExpressionValue(view, "view");
+            C12238m.checkNotNullExpressionValue(view, "view");
             view.setVisibility(z2 ? 0 : 8);
         }
     }

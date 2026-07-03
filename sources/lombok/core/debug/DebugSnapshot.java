@@ -16,8 +16,8 @@ public class DebugSnapshot implements Comparable<DebugSnapshot> {
     private final Object[] params;
     private final WeakReference<CompilationUnitDeclaration> owner;
 
-    /* JADX INFO: renamed from: id, reason: collision with root package name */
-    private final long f3807id = counter.getAndIncrement();
+    /* JADX INFO: renamed from: id */
+    private final long f27466id = counter.getAndIncrement();
     private final long when = System.currentTimeMillis();
 
     public DebugSnapshot(CompilationUnitDeclaration owner, int stackHiding, String message, Object... params) {
@@ -79,6 +79,6 @@ public class DebugSnapshot implements Comparable<DebugSnapshot> {
 
     @Override // java.lang.Comparable
     public int compareTo(DebugSnapshot o) {
-        return Long.valueOf(this.f3807id).compareTo(Long.valueOf(o.f3807id));
+        return Long.valueOf(this.f27466id).compareTo(Long.valueOf(o.f27466id));
     }
 }

@@ -1,7 +1,7 @@
 package com.discord.widgets.servers.member_verification.form_fields;
 
-import b.d.b.a.outline;
-import d0.z.d.Intrinsics3;
+import p007b.p100d.p104b.p105a.C1643a;
+import p507d0.p592z.p594d.C12238m;
 
 /* JADX INFO: compiled from: MemberVerificationItemParagraph.kt */
 /* JADX INFO: loaded from: classes2.dex */
@@ -52,7 +52,7 @@ public final /* data */ class MemberVerificationItemParagraph implements MemberV
             return false;
         }
         MemberVerificationItemParagraph memberVerificationItemParagraph = (MemberVerificationItemParagraph) other;
-        return this.fieldIndex == memberVerificationItemParagraph.fieldIndex && Intrinsics3.areEqual(this.response, memberVerificationItemParagraph.response);
+        return this.fieldIndex == memberVerificationItemParagraph.fieldIndex && C12238m.areEqual(this.response, memberVerificationItemParagraph.response);
     }
 
     public final int getFieldIndex() {
@@ -80,9 +80,9 @@ public final /* data */ class MemberVerificationItemParagraph implements MemberV
     }
 
     public String toString() {
-        StringBuilder sbU = outline.U("MemberVerificationItemParagraph(fieldIndex=");
-        sbU.append(this.fieldIndex);
-        sbU.append(", response=");
-        return outline.J(sbU, this.response, ")");
+        StringBuilder sbM833U = C1643a.m833U("MemberVerificationItemParagraph(fieldIndex=");
+        sbM833U.append(this.fieldIndex);
+        sbM833U.append(", response=");
+        return C1643a.m822J(sbM833U, this.response, ")");
     }
 }

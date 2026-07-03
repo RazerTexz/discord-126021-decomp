@@ -1,6 +1,6 @@
 package org.objectweb.asm.tree.analysis;
 
-import com.discord.widgets.chat.input.MentionUtils;
+import com.discord.widgets.chat.input.MentionUtilsKt;
 import java.util.List;
 import org.objectweb.asm.Opcodes;
 import org.objectweb.asm.Type;
@@ -223,7 +223,7 @@ public class SimpleVerifier extends BasicVerifier {
     protected Class<?> getClass(Type type) {
         try {
             if (type.getSort() == 9) {
-                return Class.forName(type.getDescriptor().replace(MentionUtils.SLASH_CHAR, '.'), false, this.loader);
+                return Class.forName(type.getDescriptor().replace(MentionUtilsKt.SLASH_CHAR, '.'), false, this.loader);
             }
             return Class.forName(type.getClassName(), false, this.loader);
         } catch (ClassNotFoundException e) {

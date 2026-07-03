@@ -27,7 +27,7 @@ public class HandlePrintAST extends JavacAnnotationHandler<PrintAST> {
             }
         }
         try {
-            annotationNode.up().traverse(new JavacASTVisitor.Printer(((PrintAST) annotation.getInstance()).printContent(), stream));
+            annotationNode.m10925up().traverse(new JavacASTVisitor.Printer(((PrintAST) annotation.getInstance()).printContent(), stream));
             if (stream != System.out) {
                 try {
                     stream.close();

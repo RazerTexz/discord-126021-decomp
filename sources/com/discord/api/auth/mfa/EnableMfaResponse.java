@@ -1,8 +1,8 @@
 package com.discord.api.auth.mfa;
 
-import b.d.b.a.outline;
-import d0.z.d.Intrinsics3;
 import java.util.List;
+import p007b.p100d.p104b.p105a.C1643a;
+import p507d0.p592z.p594d.C12238m;
 
 /* JADX INFO: compiled from: EnableMfaResponse.kt */
 /* JADX INFO: loaded from: classes.dex */
@@ -23,7 +23,7 @@ public final /* data */ class EnableMfaResponse {
             return false;
         }
         EnableMfaResponse enableMfaResponse = (EnableMfaResponse) other;
-        return Intrinsics3.areEqual(this.token, enableMfaResponse.token) && Intrinsics3.areEqual(this.backupCodes, enableMfaResponse.backupCodes);
+        return C12238m.areEqual(this.token, enableMfaResponse.token) && C12238m.areEqual(this.backupCodes, enableMfaResponse.backupCodes);
     }
 
     public int hashCode() {
@@ -34,9 +34,9 @@ public final /* data */ class EnableMfaResponse {
     }
 
     public String toString() {
-        StringBuilder sbU = outline.U("EnableMfaResponse(token=");
-        sbU.append(this.token);
-        sbU.append(", backupCodes=");
-        return outline.L(sbU, this.backupCodes, ")");
+        StringBuilder sbM833U = C1643a.m833U("EnableMfaResponse(token=");
+        sbM833U.append(this.token);
+        sbM833U.append(", backupCodes=");
+        return C1643a.m824L(sbM833U, this.backupCodes, ")");
     }
 }

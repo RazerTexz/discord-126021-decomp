@@ -12,12 +12,12 @@ import androidx.annotation.Nullable;
 import androidx.annotation.RequiresApi;
 import androidx.annotation.RestrictTo;
 import androidx.work.impl.utils.taskexecutor.TaskExecutor;
-import b.d.b.a.outline;
-import b.i.b.d.a.ListenableFuture8;
 import java.util.List;
 import java.util.Set;
 import java.util.UUID;
 import java.util.concurrent.Executor;
+import p007b.p100d.p104b.p105a.C1643a;
+import p007b.p225i.p355b.p359d.p360a.InterfaceFutureC4539a;
 
 /* JADX INFO: loaded from: classes.dex */
 public abstract class ListenableWorker {
@@ -62,10 +62,10 @@ public abstract class ListenableWorker {
             }
 
             public String toString() {
-                StringBuilder sbU = outline.U("Failure {mOutputData=");
-                sbU.append(this.mOutputData);
-                sbU.append('}');
-                return sbU.toString();
+                StringBuilder sbM833U = C1643a.m833U("Failure {mOutputData=");
+                sbM833U.append(this.mOutputData);
+                sbM833U.append('}');
+                return sbM833U.toString();
             }
 
             public Failure(@NonNull Data data) {
@@ -120,10 +120,10 @@ public abstract class ListenableWorker {
             }
 
             public String toString() {
-                StringBuilder sbU = outline.U("Success {mOutputData=");
-                sbU.append(this.mOutputData);
-                sbU.append('}');
-                return sbU.toString();
+                StringBuilder sbM833U = C1643a.m833U("Success {mOutputData=");
+                sbM833U.append(this.mOutputData);
+                sbM833U.append('}');
+                return sbM833U.toString();
             }
 
             public Success(@NonNull Data data) {
@@ -253,13 +253,13 @@ public abstract class ListenableWorker {
     }
 
     @NonNull
-    public final ListenableFuture8<Void> setForegroundAsync(@NonNull ForegroundInfo foregroundInfo) {
+    public final InterfaceFutureC4539a<Void> setForegroundAsync(@NonNull ForegroundInfo foregroundInfo) {
         this.mRunInForeground = true;
         return this.mWorkerParams.getForegroundUpdater().setForegroundAsync(getApplicationContext(), getId(), foregroundInfo);
     }
 
     @NonNull
-    public final ListenableFuture8<Void> setProgressAsync(@NonNull Data data) {
+    public final InterfaceFutureC4539a<Void> setProgressAsync(@NonNull Data data) {
         return this.mWorkerParams.getProgressUpdater().updateProgress(getApplicationContext(), getId(), data);
     }
 
@@ -270,7 +270,7 @@ public abstract class ListenableWorker {
 
     @NonNull
     @MainThread
-    public abstract ListenableFuture8<Result> startWork();
+    public abstract InterfaceFutureC4539a<Result> startWork();
 
     @RestrictTo({RestrictTo.Scope.LIBRARY_GROUP})
     public final void stop() {

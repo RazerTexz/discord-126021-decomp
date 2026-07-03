@@ -1,14 +1,14 @@
 package com.discord.analytics.generated.events;
 
-import b.d.b.a.outline;
 import com.discord.analytics.generated.traits.TrackBase;
-import com.discord.analytics.generated.traits.TrackBase2;
+import com.discord.analytics.generated.traits.TrackBaseReceiver;
 import com.discord.api.science.AnalyticsSchema;
-import d0.z.d.Intrinsics3;
+import p007b.p100d.p104b.p105a.C1643a;
+import p507d0.p592z.p594d.C12238m;
 
 /* JADX INFO: compiled from: TrackSubscriptionLazySyncUserPerks.kt */
 /* JADX INFO: loaded from: classes.dex */
-public final /* data */ class TrackSubscriptionLazySyncUserPerks implements AnalyticsSchema, TrackBase2 {
+public final /* data */ class TrackSubscriptionLazySyncUserPerks implements AnalyticsSchema, TrackBaseReceiver {
     private TrackBase trackBase;
     private final Long subscriptionId = null;
     private final Long subscriptionPlanId = null;
@@ -38,7 +38,7 @@ public final /* data */ class TrackSubscriptionLazySyncUserPerks implements Anal
             return false;
         }
         TrackSubscriptionLazySyncUserPerks trackSubscriptionLazySyncUserPerks = (TrackSubscriptionLazySyncUserPerks) other;
-        return Intrinsics3.areEqual(this.subscriptionId, trackSubscriptionLazySyncUserPerks.subscriptionId) && Intrinsics3.areEqual(this.subscriptionPlanId, trackSubscriptionLazySyncUserPerks.subscriptionPlanId) && Intrinsics3.areEqual(this.paymentGateway, trackSubscriptionLazySyncUserPerks.paymentGateway) && Intrinsics3.areEqual(this.paymentGatewayPlanId, trackSubscriptionLazySyncUserPerks.paymentGatewayPlanId) && Intrinsics3.areEqual(this.currentPeriodStart, trackSubscriptionLazySyncUserPerks.currentPeriodStart) && Intrinsics3.areEqual(this.currentPeriodEnd, trackSubscriptionLazySyncUserPerks.currentPeriodEnd) && Intrinsics3.areEqual(this.premiumTypeMismatch, trackSubscriptionLazySyncUserPerks.premiumTypeMismatch) && Intrinsics3.areEqual(this.premiumUntilMismatch, trackSubscriptionLazySyncUserPerks.premiumUntilMismatch) && Intrinsics3.areEqual(this.originalPremiumType, trackSubscriptionLazySyncUserPerks.originalPremiumType) && Intrinsics3.areEqual(this.originalPremiumUntil, trackSubscriptionLazySyncUserPerks.originalPremiumUntil) && Intrinsics3.areEqual(this.newPremiumType, trackSubscriptionLazySyncUserPerks.newPremiumType) && Intrinsics3.areEqual(this.newPremiumUntil, trackSubscriptionLazySyncUserPerks.newPremiumUntil);
+        return C12238m.areEqual(this.subscriptionId, trackSubscriptionLazySyncUserPerks.subscriptionId) && C12238m.areEqual(this.subscriptionPlanId, trackSubscriptionLazySyncUserPerks.subscriptionPlanId) && C12238m.areEqual(this.paymentGateway, trackSubscriptionLazySyncUserPerks.paymentGateway) && C12238m.areEqual(this.paymentGatewayPlanId, trackSubscriptionLazySyncUserPerks.paymentGatewayPlanId) && C12238m.areEqual(this.currentPeriodStart, trackSubscriptionLazySyncUserPerks.currentPeriodStart) && C12238m.areEqual(this.currentPeriodEnd, trackSubscriptionLazySyncUserPerks.currentPeriodEnd) && C12238m.areEqual(this.premiumTypeMismatch, trackSubscriptionLazySyncUserPerks.premiumTypeMismatch) && C12238m.areEqual(this.premiumUntilMismatch, trackSubscriptionLazySyncUserPerks.premiumUntilMismatch) && C12238m.areEqual(this.originalPremiumType, trackSubscriptionLazySyncUserPerks.originalPremiumType) && C12238m.areEqual(this.originalPremiumUntil, trackSubscriptionLazySyncUserPerks.originalPremiumUntil) && C12238m.areEqual(this.newPremiumType, trackSubscriptionLazySyncUserPerks.newPremiumType) && C12238m.areEqual(this.newPremiumUntil, trackSubscriptionLazySyncUserPerks.newPremiumUntil);
     }
 
     public int hashCode() {
@@ -69,29 +69,29 @@ public final /* data */ class TrackSubscriptionLazySyncUserPerks implements Anal
     }
 
     public String toString() {
-        StringBuilder sbU = outline.U("TrackSubscriptionLazySyncUserPerks(subscriptionId=");
-        sbU.append(this.subscriptionId);
-        sbU.append(", subscriptionPlanId=");
-        sbU.append(this.subscriptionPlanId);
-        sbU.append(", paymentGateway=");
-        sbU.append(this.paymentGateway);
-        sbU.append(", paymentGatewayPlanId=");
-        sbU.append(this.paymentGatewayPlanId);
-        sbU.append(", currentPeriodStart=");
-        sbU.append(this.currentPeriodStart);
-        sbU.append(", currentPeriodEnd=");
-        sbU.append(this.currentPeriodEnd);
-        sbU.append(", premiumTypeMismatch=");
-        sbU.append(this.premiumTypeMismatch);
-        sbU.append(", premiumUntilMismatch=");
-        sbU.append(this.premiumUntilMismatch);
-        sbU.append(", originalPremiumType=");
-        sbU.append(this.originalPremiumType);
-        sbU.append(", originalPremiumUntil=");
-        sbU.append(this.originalPremiumUntil);
-        sbU.append(", newPremiumType=");
-        sbU.append(this.newPremiumType);
-        sbU.append(", newPremiumUntil=");
-        return outline.G(sbU, this.newPremiumUntil, ")");
+        StringBuilder sbM833U = C1643a.m833U("TrackSubscriptionLazySyncUserPerks(subscriptionId=");
+        sbM833U.append(this.subscriptionId);
+        sbM833U.append(", subscriptionPlanId=");
+        sbM833U.append(this.subscriptionPlanId);
+        sbM833U.append(", paymentGateway=");
+        sbM833U.append(this.paymentGateway);
+        sbM833U.append(", paymentGatewayPlanId=");
+        sbM833U.append(this.paymentGatewayPlanId);
+        sbM833U.append(", currentPeriodStart=");
+        sbM833U.append(this.currentPeriodStart);
+        sbM833U.append(", currentPeriodEnd=");
+        sbM833U.append(this.currentPeriodEnd);
+        sbM833U.append(", premiumTypeMismatch=");
+        sbM833U.append(this.premiumTypeMismatch);
+        sbM833U.append(", premiumUntilMismatch=");
+        sbM833U.append(this.premiumUntilMismatch);
+        sbM833U.append(", originalPremiumType=");
+        sbM833U.append(this.originalPremiumType);
+        sbM833U.append(", originalPremiumUntil=");
+        sbM833U.append(this.originalPremiumUntil);
+        sbM833U.append(", newPremiumType=");
+        sbM833U.append(this.newPremiumType);
+        sbM833U.append(", newPremiumUntil=");
+        return C1643a.m819G(sbM833U, this.newPremiumUntil, ")");
     }
 }

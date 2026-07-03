@@ -1,7 +1,7 @@
 package com.discord.api.message;
 
-import b.d.b.a.outline;
-import d0.z.d.Intrinsics3;
+import p007b.p100d.p104b.p105a.C1643a;
+import p507d0.p592z.p594d.C12238m;
 
 /* JADX INFO: compiled from: MessageReference.kt */
 /* JADX INFO: loaded from: classes.dex */
@@ -39,7 +39,7 @@ public final /* data */ class MessageReference {
             return false;
         }
         MessageReference messageReference = (MessageReference) other;
-        return Intrinsics3.areEqual(this.guildId, messageReference.guildId) && Intrinsics3.areEqual(this.channelId, messageReference.channelId) && Intrinsics3.areEqual(this.messageId, messageReference.messageId);
+        return C12238m.areEqual(this.guildId, messageReference.guildId) && C12238m.areEqual(this.channelId, messageReference.channelId) && C12238m.areEqual(this.messageId, messageReference.messageId);
     }
 
     public int hashCode() {
@@ -52,11 +52,11 @@ public final /* data */ class MessageReference {
     }
 
     public String toString() {
-        StringBuilder sbU = outline.U("MessageReference(guildId=");
-        sbU.append(this.guildId);
-        sbU.append(", channelId=");
-        sbU.append(this.channelId);
-        sbU.append(", messageId=");
-        return outline.G(sbU, this.messageId, ")");
+        StringBuilder sbM833U = C1643a.m833U("MessageReference(guildId=");
+        sbM833U.append(this.guildId);
+        sbM833U.append(", channelId=");
+        sbM833U.append(this.channelId);
+        sbM833U.append(", messageId=");
+        return C1643a.m819G(sbM833U, this.messageId, ")");
     }
 }

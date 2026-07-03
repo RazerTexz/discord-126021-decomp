@@ -18,7 +18,7 @@ import lombok.javac.handlers.JavacSingularsRecipes;
 public class JavacJavaUtilMapSingularizer extends JavacJavaUtilSingularizer {
     @Override // lombok.javac.handlers.JavacSingularsRecipes.JavacSingularizer
     public LombokImmutableList<String> getSupportedTypes() {
-        return LombokImmutableList.of("java.util.Map", "java.util.SortedMap", "java.util.NavigableMap");
+        return LombokImmutableList.m10921of("java.util.Map", "java.util.SortedMap", "java.util.NavigableMap");
     }
 
     @Override // lombok.javac.handlers.JavacSingularsRecipes.JavacSingularizer
@@ -73,7 +73,7 @@ public class JavacJavaUtilMapSingularizer extends JavacJavaUtilSingularizer {
         JCTree.JCExpressionStatement jCExpressionStatementExec2 = maker.Exec(maker.Apply(jceBlank, thisDotValueFieldDotClear, jceBlank));
         JCTree.JCBinary jCBinaryBinary = maker.Binary(Javac.CTC_NOT_EQUAL, thisDotKeyField, maker.Literal(Javac.CTC_BOT, null));
         JCTree.JCBlock clearCalls = maker.Block(0L, com.sun.tools.javac.util.List.of(jCExpressionStatementExec, jCExpressionStatementExec2));
-        return maker.If(jCBinaryBinary, clearCalls, null);
+        return maker.m10940If(jCBinaryBinary, clearCalls, null);
     }
 
     @Override // lombok.javac.handlers.JavacSingularsRecipes.JavacSingularizer

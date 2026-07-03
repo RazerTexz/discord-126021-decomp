@@ -5,29 +5,29 @@ import com.discord.restapi.RestAPIParams;
 import com.discord.stores.StoreGooglePlayPurchases;
 import com.discord.stores.StoreStream;
 import com.discord.utilities.error.Error;
+import com.discord.utilities.p501rx.ObservableExtensionsKt;
 import com.discord.utilities.rest.RestAPI;
-import com.discord.utilities.rx.ObservableExtensionsKt;
-import d0.z.d.Intrinsics3;
-import d0.z.d.Lambda;
 import java.util.ArrayList;
 import java.util.List;
 import kotlin.Unit;
 import kotlin.jvm.functions.Function0;
 import kotlin.jvm.functions.Function1;
-import rx.Subscription;
+import p507d0.p592z.p594d.AbstractC12240o;
+import p507d0.p592z.p594d.C12238m;
+import p658rx.Subscription;
 
 /* JADX INFO: compiled from: BillingUtils.kt */
 /* JADX INFO: loaded from: classes2.dex */
 public final class BillingUtils {
     public static final BillingUtils INSTANCE = new BillingUtils();
 
-    /* JADX INFO: renamed from: com.discord.utilities.billing.BillingUtils$createPendingPurchaseMetadata$1, reason: invalid class name */
+    /* JADX INFO: renamed from: com.discord.utilities.billing.BillingUtils$createPendingPurchaseMetadata$1 */
     /* JADX INFO: compiled from: BillingUtils.kt */
-    public static final class AnonymousClass1 extends Lambda implements Function1<Unit, Unit> {
+    public static final class C67021 extends AbstractC12240o implements Function1<Unit, Unit> {
         public final /* synthetic */ Function0 $onSuccess;
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-        public AnonymousClass1(Function0 function0) {
+        public C67021(Function0 function0) {
             super(1);
             this.$onSuccess = function0;
         }
@@ -35,7 +35,7 @@ public final class BillingUtils {
         @Override // kotlin.jvm.functions.Function1
         public /* bridge */ /* synthetic */ Unit invoke(Unit unit) {
             invoke2(unit);
-            return Unit.a;
+            return Unit.f27425a;
         }
 
         /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
@@ -44,13 +44,13 @@ public final class BillingUtils {
         }
     }
 
-    /* JADX INFO: renamed from: com.discord.utilities.billing.BillingUtils$createPendingPurchaseMetadata$2, reason: invalid class name */
+    /* JADX INFO: renamed from: com.discord.utilities.billing.BillingUtils$createPendingPurchaseMetadata$2 */
     /* JADX INFO: compiled from: BillingUtils.kt */
-    public static final class AnonymousClass2 extends Lambda implements Function1<Error, Unit> {
+    public static final class C67032 extends AbstractC12240o implements Function1<Error, Unit> {
         public final /* synthetic */ Function0 $onFailure;
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-        public AnonymousClass2(Function0 function0) {
+        public C67032(Function0 function0) {
             super(1);
             this.$onFailure = function0;
         }
@@ -58,24 +58,24 @@ public final class BillingUtils {
         @Override // kotlin.jvm.functions.Function1
         public /* bridge */ /* synthetic */ Unit invoke(Error error) {
             invoke2(error);
-            return Unit.a;
+            return Unit.f27425a;
         }
 
         /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
         public final void invoke2(Error error) {
-            Intrinsics3.checkNotNullParameter(error, "it");
+            C12238m.checkNotNullParameter(error, "it");
             this.$onFailure.invoke();
         }
     }
 
-    /* JADX INFO: renamed from: com.discord.utilities.billing.BillingUtils$verifyPurchase$1, reason: invalid class name */
+    /* JADX INFO: renamed from: com.discord.utilities.billing.BillingUtils$verifyPurchase$1 */
     /* JADX INFO: compiled from: BillingUtils.kt */
-    public static final class AnonymousClass1 extends Lambda implements Function1<RestAPIParams.VerifyPurchaseResponse, Unit> {
+    public static final class C67041 extends AbstractC12240o implements Function1<RestAPIParams.VerifyPurchaseResponse, Unit> {
         public final /* synthetic */ Purchase $purchase;
         public final /* synthetic */ String $sku;
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-        public AnonymousClass1(Purchase purchase, String str) {
+        public C67041(Purchase purchase, String str) {
             super(1);
             this.$purchase = purchase;
             this.$sku = str;
@@ -84,27 +84,27 @@ public final class BillingUtils {
         @Override // kotlin.jvm.functions.Function1
         public /* bridge */ /* synthetic */ Unit invoke(RestAPIParams.VerifyPurchaseResponse verifyPurchaseResponse) {
             invoke2(verifyPurchaseResponse);
-            return Unit.a;
+            return Unit.f27425a;
         }
 
         /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
         public final void invoke2(RestAPIParams.VerifyPurchaseResponse verifyPurchaseResponse) {
             StoreStream.INSTANCE.getGooglePlayPurchases().onVerificationSuccess(new StoreGooglePlayPurchases.VerificationResult(this.$purchase, verifyPurchaseResponse));
-            GooglePlayInAppSku inAppSku = GooglePlayInAppSku3.INSTANCE.getInAppSku(this.$sku);
+            GooglePlayInAppSku inAppSku = GooglePlayInAppSkus.INSTANCE.getInAppSku(this.$sku);
             if (inAppSku != null) {
                 GooglePlayBillingManager.INSTANCE.consumePurchase(this.$purchase, inAppSku.getType(), verifyPurchaseResponse != null ? Long.valueOf(verifyPurchaseResponse.getVerifiedSkuId()) : null);
             }
         }
     }
 
-    /* JADX INFO: renamed from: com.discord.utilities.billing.BillingUtils$verifyPurchase$2, reason: invalid class name */
+    /* JADX INFO: renamed from: com.discord.utilities.billing.BillingUtils$verifyPurchase$2 */
     /* JADX INFO: compiled from: BillingUtils.kt */
-    public static final class AnonymousClass2 extends Lambda implements Function1<Error, Unit> {
+    public static final class C67052 extends AbstractC12240o implements Function1<Error, Unit> {
         public final /* synthetic */ Purchase $purchase;
         public final /* synthetic */ String $sku;
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-        public AnonymousClass2(Purchase purchase, String str) {
+        public C67052(Purchase purchase, String str) {
             super(1);
             this.$purchase = purchase;
             this.$sku = str;
@@ -113,12 +113,12 @@ public final class BillingUtils {
         @Override // kotlin.jvm.functions.Function1
         public /* bridge */ /* synthetic */ Unit invoke(Error error) {
             invoke2(error);
-            return Unit.a;
+            return Unit.f27425a;
         }
 
         /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
         public final void invoke2(Error error) {
-            Intrinsics3.checkNotNullParameter(error, "it");
+            C12238m.checkNotNullParameter(error, "it");
             StoreStream.Companion companion = StoreStream.INSTANCE;
             companion.getGooglePlayPurchases().onVerificationFailure(new StoreGooglePlayPurchases.VerificationResult(this.$purchase, null));
             companion.getGooglePlayPurchases().trackPaymentFlowFailed(this.$sku);
@@ -133,27 +133,27 @@ public final class BillingUtils {
         String str2;
         StoreStream.Companion companion = StoreStream.INSTANCE;
         long id2 = companion.getUsers().getMeSnapshot().getId();
-        if (GooglePlayInAppSku3.INSTANCE.isInAppSku(sku)) {
+        if (GooglePlayInAppSkus.INSTANCE.isInAppSku(sku)) {
             str2 = sku;
             str = null;
         } else {
             str = sku;
             str2 = null;
         }
-        String strA = purchase.a();
-        Intrinsics3.checkNotNullExpressionValue(strA, "purchase.purchaseToken");
-        String strOptString = purchase.c.optString("packageName");
-        Intrinsics3.checkNotNullExpressionValue(strOptString, "purchase.packageName");
-        RestAPIParams.VerifyPurchaseTokenBody verifyPurchaseTokenBody = new RestAPIParams.VerifyPurchaseTokenBody(strA, id2, strOptString, str, str2);
+        String strM7497a = purchase.m7497a();
+        C12238m.checkNotNullExpressionValue(strM7497a, "purchase.purchaseToken");
+        String strOptString = purchase.f14563c.optString("packageName");
+        C12238m.checkNotNullExpressionValue(strOptString, "purchase.packageName");
+        RestAPIParams.VerifyPurchaseTokenBody verifyPurchaseTokenBody = new RestAPIParams.VerifyPurchaseTokenBody(strM7497a, id2, strOptString, str, str2);
         companion.getGooglePlayPurchases().onVerificationStart();
-        ObservableExtensionsKt.appSubscribe(ObservableExtensionsKt.restSubscribeOn$default(RestAPI.INSTANCE.getApi().verifyPurchaseToken(verifyPurchaseTokenBody), false, 1, null), (Class<?>) BillingUtils.class, (58 & 2) != 0 ? null : null, (Function1<? super Subscription, Unit>) ((58 & 4) != 0 ? null : null), (Function1<? super Error, Unit>) ((58 & 8) != 0 ? null : new AnonymousClass2(purchase, sku)), (Function0<Unit>) ((58 & 16) != 0 ? ObservableExtensionsKt.AnonymousClass1.INSTANCE : null), (Function0<Unit>) ((58 & 32) != 0 ? ObservableExtensionsKt.AnonymousClass2.INSTANCE : null), new AnonymousClass1(purchase, sku));
+        ObservableExtensionsKt.appSubscribe(ObservableExtensionsKt.restSubscribeOn$default(RestAPI.INSTANCE.getApi().verifyPurchaseToken(verifyPurchaseTokenBody), false, 1, null), (Class<?>) BillingUtils.class, (58 & 2) != 0 ? null : null, (Function1<? super Subscription, Unit>) ((58 & 4) != 0 ? null : null), (Function1<? super Error, Unit>) ((58 & 8) != 0 ? null : new C67052(purchase, sku)), (Function0<Unit>) ((58 & 16) != 0 ? ObservableExtensionsKt.C68791.INSTANCE : null), (Function0<Unit>) ((58 & 32) != 0 ? ObservableExtensionsKt.C68802.INSTANCE : null), new C67041(purchase, sku));
     }
 
     public final void createPendingPurchaseMetadata(String paymentGatewaySkuId, long skuId, Function0<Unit> onSuccess, Function0<Unit> onFailure) {
-        Intrinsics3.checkNotNullParameter(paymentGatewaySkuId, "paymentGatewaySkuId");
-        Intrinsics3.checkNotNullParameter(onSuccess, "onSuccess");
-        Intrinsics3.checkNotNullParameter(onFailure, "onFailure");
-        ObservableExtensionsKt.appSubscribe(ObservableExtensionsKt.restSubscribeOn$default(RestAPI.INSTANCE.getApi().createPurchaseMetadata(new RestAPIParams.PurchaseMetadataBody(skuId, paymentGatewaySkuId)), false, 1, null), (Class<?>) BillingUtils.class, (58 & 2) != 0 ? null : null, (Function1<? super Subscription, Unit>) ((58 & 4) != 0 ? null : null), (Function1<? super Error, Unit>) ((58 & 8) != 0 ? null : new AnonymousClass2(onFailure)), (Function0<Unit>) ((58 & 16) != 0 ? ObservableExtensionsKt.AnonymousClass1.INSTANCE : null), (Function0<Unit>) ((58 & 32) != 0 ? ObservableExtensionsKt.AnonymousClass2.INSTANCE : null), new AnonymousClass1(onSuccess));
+        C12238m.checkNotNullParameter(paymentGatewaySkuId, "paymentGatewaySkuId");
+        C12238m.checkNotNullParameter(onSuccess, "onSuccess");
+        C12238m.checkNotNullParameter(onFailure, "onFailure");
+        ObservableExtensionsKt.appSubscribe(ObservableExtensionsKt.restSubscribeOn$default(RestAPI.INSTANCE.getApi().createPurchaseMetadata(new RestAPIParams.PurchaseMetadataBody(skuId, paymentGatewaySkuId)), false, 1, null), (Class<?>) BillingUtils.class, (58 & 2) != 0 ? null : null, (Function1<? super Subscription, Unit>) ((58 & 4) != 0 ? null : null), (Function1<? super Error, Unit>) ((58 & 8) != 0 ? null : new C67032(onFailure)), (Function0<Unit>) ((58 & 16) != 0 ? ObservableExtensionsKt.C68791.INSTANCE : null), (Function0<Unit>) ((58 & 32) != 0 ? ObservableExtensionsKt.C68802.INSTANCE : null), new C67021(onSuccess));
     }
 
     public final long microToMinor(long amount) {
@@ -163,12 +163,12 @@ public final class BillingUtils {
     public final void verifyPurchases(List<? extends Purchase> purchases) {
         if (purchases != null) {
             for (Purchase purchase : purchases) {
-                if ((purchase.c.optInt("purchaseState", 1) != 4 ? (char) 1 : (char) 2) == 1 && !purchase.c()) {
-                    ArrayList<String> arrayListB = purchase.b();
-                    Intrinsics3.checkNotNullExpressionValue(arrayListB, "purchase.skus");
-                    for (String str : arrayListB) {
+                if ((purchase.f14563c.optInt("purchaseState", 1) != 4 ? (char) 1 : (char) 2) == 1 && !purchase.m7499c()) {
+                    ArrayList<String> arrayListM7498b = purchase.m7498b();
+                    C12238m.checkNotNullExpressionValue(arrayListM7498b, "purchase.skus");
+                    for (String str : arrayListM7498b) {
                         BillingUtils billingUtils = INSTANCE;
-                        Intrinsics3.checkNotNullExpressionValue(str, "sku");
+                        C12238m.checkNotNullExpressionValue(str, "sku");
                         billingUtils.verifyPurchase(purchase, str);
                     }
                 }

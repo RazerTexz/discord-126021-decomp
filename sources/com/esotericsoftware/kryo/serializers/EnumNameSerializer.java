@@ -1,11 +1,11 @@
 package com.esotericsoftware.kryo.serializers;
 
-import b.d.b.a.outline;
 import com.esotericsoftware.kryo.Kryo;
 import com.esotericsoftware.kryo.KryoException;
 import com.esotericsoftware.kryo.Serializer;
-import com.esotericsoftware.kryo.io.Input;
-import com.esotericsoftware.kryo.io.Output;
+import com.esotericsoftware.kryo.p502io.Input;
+import com.esotericsoftware.kryo.p502io.Output;
+import p007b.p100d.p104b.p105a.C1643a;
 
 /* JADX INFO: loaded from: classes.dex */
 public class EnumNameSerializer extends Serializer<Enum> {
@@ -25,11 +25,11 @@ public class EnumNameSerializer extends Serializer<Enum> {
         try {
             return Enum.valueOf(this.enumType, str);
         } catch (IllegalArgumentException e) {
-            StringBuilder sbU = outline.U("Invalid name for enum \"");
-            sbU.append(this.enumType.getName());
-            sbU.append("\": ");
-            sbU.append(str);
-            throw new KryoException(sbU.toString(), e);
+            StringBuilder sbM833U = C1643a.m833U("Invalid name for enum \"");
+            sbM833U.append(this.enumType.getName());
+            sbM833U.append("\": ");
+            sbM833U.append(str);
+            throw new KryoException(sbM833U.toString(), e);
         }
     }
 

@@ -1,0 +1,28 @@
+package com.discord.widgets.guild_role_subscriptions.tier.create;
+
+import androidx.view.ViewModelStore;
+import androidx.view.ViewModelStoreOwner;
+import kotlin.jvm.functions.Function0;
+import p507d0.p592z.p594d.AbstractC12240o;
+import p507d0.p592z.p594d.C12238m;
+
+/* JADX INFO: renamed from: com.discord.widgets.guild_role_subscriptions.tier.create.WidgetGuildRoleSubscriptionReview$appViewModels$$inlined$viewModels$1 */
+/* JADX INFO: compiled from: FragmentViewModelLazy.kt */
+/* JADX INFO: loaded from: classes2.dex */
+public final class C8495x384a615b extends AbstractC12240o implements Function0<ViewModelStore> {
+    public final /* synthetic */ Function0 $ownerProducer;
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public C8495x384a615b(Function0 function0) {
+        super(0);
+        this.$ownerProducer = function0;
+    }
+
+    /* JADX WARN: Can't rename method to resolve collision */
+    @Override // kotlin.jvm.functions.Function0
+    public final ViewModelStore invoke() {
+        ViewModelStore viewModelStore = ((ViewModelStoreOwner) this.$ownerProducer.invoke()).getViewModelStore();
+        C12238m.checkNotNullExpressionValue(viewModelStore, "ownerProducer().viewModelStore");
+        return viewModelStore;
+    }
+}

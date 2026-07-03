@@ -69,7 +69,7 @@ public class CreateLombokRuntimeApp extends LombokApp {
 
     @Override // lombok.core.LombokApp
     public int runApp(List<String> rawArgs) throws Exception {
-        CmdReader<CmdArgs> reader = CmdReader.of(CmdArgs.class);
+        CmdReader<CmdArgs> reader = CmdReader.m9327of(CmdArgs.class);
         try {
             CmdArgs args = reader.make((String[]) rawArgs.toArray(new String[0]));
             if (args.help) {

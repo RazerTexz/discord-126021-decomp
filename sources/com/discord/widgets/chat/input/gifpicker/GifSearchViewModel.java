@@ -1,9 +1,7 @@
 package com.discord.widgets.chat.input.gifpicker;
 
 import android.content.Context;
-import b.a.d.AppViewModel;
-import b.d.b.a.outline;
-import com.discord.R;
+import com.discord.C5419R;
 import com.discord.models.gifpicker.dto.ModelGif;
 import com.discord.stores.StoreAnalytics;
 import com.discord.stores.StoreGifPicker;
@@ -11,21 +9,12 @@ import com.discord.stores.StoreStream;
 import com.discord.utilities.analytics.SearchType;
 import com.discord.utilities.analytics.Traits;
 import com.discord.utilities.error.Error;
+import com.discord.utilities.p501rx.LeadingEdgeThrottle;
+import com.discord.utilities.p501rx.ObservableExtensionsKt;
 import com.discord.utilities.recycler.DiffKeyProvider;
-import com.discord.utilities.rx.LeadingEdgeThrottle;
-import com.discord.utilities.rx.ObservableExtensionsKt;
 import com.discord.widgets.chat.MessageManager;
 import com.discord.widgets.chat.input.gifpicker.GifAdapterItem;
 import com.discord.widgets.chat.input.gifpicker.GifSearchViewModel;
-import d0.LazyJVM;
-import d0.t.Collections2;
-import d0.t.Iterables2;
-import d0.z.d.Intrinsics3;
-import d0.z.d.Lambda;
-import j0.k.Func1;
-import j0.l.a.OnSubscribeLift;
-import j0.l.e.ScalarSynchronousObservable;
-import j0.p.Schedulers2;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
@@ -35,15 +24,26 @@ import kotlin.Unit;
 import kotlin.jvm.functions.Function0;
 import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.DefaultConstructorMarker;
-import rx.Observable;
-import rx.Subscription;
-import rx.functions.Action1;
-import rx.functions.Func2;
-import rx.subjects.BehaviorSubject;
+import p007b.p008a.p018d.AbstractC0859d0;
+import p007b.p100d.p104b.p105a.C1643a;
+import p507d0.C12083g;
+import p507d0.p580t.C12147n;
+import p507d0.p580t.C12149o;
+import p507d0.p592z.p594d.AbstractC12240o;
+import p507d0.p592z.p594d.C12238m;
+import p637j0.p641k.InterfaceC12589b;
+import p637j0.p642l.p643a.C12666r;
+import p637j0.p642l.p647e.C12721k;
+import p637j0.p653p.C12781a;
+import p658rx.Observable;
+import p658rx.Subscription;
+import p658rx.functions.Action1;
+import p658rx.functions.Func2;
+import p658rx.subjects.BehaviorSubject;
 
 /* JADX INFO: compiled from: GifSearchViewModel.kt */
 /* JADX INFO: loaded from: classes2.dex */
-public final class GifSearchViewModel extends AppViewModel<ViewState> {
+public final class GifSearchViewModel extends AbstractC0859d0<ViewState> {
 
     /* JADX INFO: renamed from: Companion, reason: from kotlin metadata */
     public static final Companion INSTANCE = new Companion(null);
@@ -52,22 +52,22 @@ public final class GifSearchViewModel extends AppViewModel<ViewState> {
     private final StoreAnalytics storeAnalytics;
     private final StoreGifPicker storeGifPicker;
 
-    /* JADX INFO: renamed from: com.discord.widgets.chat.input.gifpicker.GifSearchViewModel$1, reason: invalid class name */
+    /* JADX INFO: renamed from: com.discord.widgets.chat.input.gifpicker.GifSearchViewModel$1 */
     /* JADX INFO: compiled from: GifSearchViewModel.kt */
-    public static final class AnonymousClass1 extends Lambda implements Function1<StoreState, Unit> {
-        public AnonymousClass1() {
+    public static final class C78711 extends AbstractC12240o implements Function1<StoreState, Unit> {
+        public C78711() {
             super(1);
         }
 
         @Override // kotlin.jvm.functions.Function1
         public /* bridge */ /* synthetic */ Unit invoke(StoreState storeState) {
             invoke2(storeState);
-            return Unit.a;
+            return Unit.f27425a;
         }
 
         /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
         public final void invoke2(StoreState storeState) {
-            Intrinsics3.checkNotNullParameter(storeState, "storeState");
+            C12238m.checkNotNullParameter(storeState, "storeState");
             GifSearchViewModel.this.handleStoreState(storeState);
         }
     }
@@ -78,18 +78,18 @@ public final class GifSearchViewModel extends AppViewModel<ViewState> {
         }
 
         private final Observable<StoreState> observeQueryState(BehaviorSubject<String> searchSubject, final StoreAnalytics storeAnalytics, final StoreGifPicker storeGifPicker, final List<String> trendingSearchTerms) {
-            Observable<String> observableR = searchSubject.J(Schedulers2.c()).r();
-            Observable<StoreState> observableY = Observable.h0(new OnSubscribeLift(observableR.j, new LeadingEdgeThrottle(1000L, TimeUnit.MILLISECONDS, Schedulers2.c()))).u(new Action1<String>() { // from class: com.discord.widgets.chat.input.gifpicker.GifSearchViewModel$Companion$observeQueryState$1
-                @Override // rx.functions.Action1
+            Observable<String> observableM11112r = searchSubject.m11084J(C12781a.m10875c()).m11112r();
+            Observable<StoreState> observableM11099Y = Observable.m11074h0(new C12666r(observableM11112r.f27640j, new LeadingEdgeThrottle(1000L, TimeUnit.MILLISECONDS, C12781a.m10875c()))).m11115u(new Action1<String>() { // from class: com.discord.widgets.chat.input.gifpicker.GifSearchViewModel$Companion$observeQueryState$1
+                @Override // p658rx.functions.Action1
                 public final void call(String str) {
                     StoreAnalytics.trackSearchStarted$default(storeAnalytics, SearchType.GIF, null, false, 6, null);
                 }
-            }).Y(new Func1<String, Observable<? extends StoreState>>() { // from class: com.discord.widgets.chat.input.gifpicker.GifSearchViewModel$Companion$observeQueryState$2
-                @Override // j0.k.Func1
+            }).m11099Y(new InterfaceC12589b<String, Observable<? extends StoreState>>() { // from class: com.discord.widgets.chat.input.gifpicker.GifSearchViewModel$Companion$observeQueryState$2
+                @Override // p637j0.p641k.InterfaceC12589b
                 public final Observable<? extends GifSearchViewModel.StoreState> call(final String str) {
-                    Intrinsics3.checkNotNullExpressionValue(str, "query");
-                    return str.length() == 0 ? new ScalarSynchronousObservable(new GifSearchViewModel.StoreState.TrendingSearchTermsResults(trendingSearchTerms)) : Observable.j(storeGifPicker.observeGifsForSearchQuery(str).y(new Func1<List<? extends ModelGif>, Boolean>() { // from class: com.discord.widgets.chat.input.gifpicker.GifSearchViewModel$Companion$observeQueryState$2.1
-                        @Override // j0.k.Func1
+                    C12238m.checkNotNullExpressionValue(str, "query");
+                    return str.length() == 0 ? new C12721k(new GifSearchViewModel.StoreState.TrendingSearchTermsResults(trendingSearchTerms)) : Observable.m11076j(storeGifPicker.observeGifsForSearchQuery(str).m11118y(new InterfaceC12589b<List<? extends ModelGif>, Boolean>() { // from class: com.discord.widgets.chat.input.gifpicker.GifSearchViewModel$Companion$observeQueryState$2.1
+                        @Override // p637j0.p641k.InterfaceC12589b
                         public /* bridge */ /* synthetic */ Boolean call(List<? extends ModelGif> list) {
                             return call2((List<ModelGif>) list);
                         }
@@ -99,27 +99,27 @@ public final class GifSearchViewModel extends AppViewModel<ViewState> {
                             return Boolean.valueOf(list != StoreGifPicker.INSTANCE.getSearchResultsLoadingList());
                         }
                     }), storeGifPicker.observeSuggestedSearchTerms(str), new Func2<List<? extends ModelGif>, List<? extends String>, GifSearchViewModel.StoreState.SearchResults>() { // from class: com.discord.widgets.chat.input.gifpicker.GifSearchViewModel$Companion$observeQueryState$2.2
-                        @Override // rx.functions.Func2
+                        @Override // p658rx.functions.Func2
                         public /* bridge */ /* synthetic */ GifSearchViewModel.StoreState.SearchResults call(List<? extends ModelGif> list, List<? extends String> list2) {
                             return call2((List<ModelGif>) list, (List<String>) list2);
                         }
 
                         /* JADX INFO: renamed from: call, reason: avoid collision after fix types in other method */
                         public final GifSearchViewModel.StoreState.SearchResults call2(List<ModelGif> list, List<String> list2) {
-                            Intrinsics3.checkNotNullExpressionValue(list, "gifResults");
-                            Intrinsics3.checkNotNullExpressionValue(list2, "searchTerms");
+                            C12238m.checkNotNullExpressionValue(list, "gifResults");
+                            C12238m.checkNotNullExpressionValue(list2, "searchTerms");
                             return new GifSearchViewModel.StoreState.SearchResults(list, list2, trendingSearchTerms, str);
                         }
                     });
                 }
             });
-            Intrinsics3.checkNotNullExpressionValue(observableY, "searchSubject\n          …          }\n            }");
-            return observableY;
+            C12238m.checkNotNullExpressionValue(observableM11099Y, "searchSubject\n          …          }\n            }");
+            return observableM11099Y;
         }
 
         private final Observable<StoreState> observeStoreState(final BehaviorSubject<String> searchSubject, final StoreAnalytics storeAnalytics, final StoreGifPicker storeGifPicker) {
-            Observable observableY = storeGifPicker.observeGifTrendingSearchTerms().Y(new Func1<List<? extends String>, Observable<? extends StoreState>>() { // from class: com.discord.widgets.chat.input.gifpicker.GifSearchViewModel$Companion$observeStoreState$1
-                @Override // j0.k.Func1
+            Observable observableM11099Y = storeGifPicker.observeGifTrendingSearchTerms().m11099Y(new InterfaceC12589b<List<? extends String>, Observable<? extends StoreState>>() { // from class: com.discord.widgets.chat.input.gifpicker.GifSearchViewModel$Companion$observeStoreState$1
+                @Override // p637j0.p641k.InterfaceC12589b
                 public /* bridge */ /* synthetic */ Observable<? extends GifSearchViewModel.StoreState> call(List<? extends String> list) {
                     return call2((List<String>) list);
                 }
@@ -130,12 +130,12 @@ public final class GifSearchViewModel extends AppViewModel<ViewState> {
                     BehaviorSubject behaviorSubject = searchSubject;
                     StoreAnalytics storeAnalytics2 = storeAnalytics;
                     StoreGifPicker storeGifPicker2 = storeGifPicker;
-                    Intrinsics3.checkNotNullExpressionValue(list, "terms");
+                    C12238m.checkNotNullExpressionValue(list, "terms");
                     return companion.observeQueryState(behaviorSubject, storeAnalytics2, storeGifPicker2, list);
                 }
             });
-            Intrinsics3.checkNotNullExpressionValue(observableY, "storeGifPicker.observeGi…fPicker, terms)\n        }");
-            return observableY;
+            C12238m.checkNotNullExpressionValue(observableM11099Y, "storeGifPicker.observeGi…fPicker, terms)\n        }");
+            return observableM11099Y;
         }
 
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
@@ -157,9 +157,9 @@ public final class GifSearchViewModel extends AppViewModel<ViewState> {
             /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
             public SearchResults(List<ModelGif> list, List<String> list2, List<String> list3, String str) {
                 super(list3, null);
-                Intrinsics3.checkNotNullParameter(list, "gifs");
-                Intrinsics3.checkNotNullParameter(list2, "suggested");
-                Intrinsics3.checkNotNullParameter(list3, "trending");
+                C12238m.checkNotNullParameter(list, "gifs");
+                C12238m.checkNotNullParameter(list2, "suggested");
+                C12238m.checkNotNullParameter(list3, "trending");
                 this.gifs = list;
                 this.suggested = list2;
                 this.trending = list3;
@@ -201,9 +201,9 @@ public final class GifSearchViewModel extends AppViewModel<ViewState> {
             }
 
             public final SearchResults copy(List<ModelGif> gifs, List<String> suggested, List<String> trending, String searchQuery) {
-                Intrinsics3.checkNotNullParameter(gifs, "gifs");
-                Intrinsics3.checkNotNullParameter(suggested, "suggested");
-                Intrinsics3.checkNotNullParameter(trending, "trending");
+                C12238m.checkNotNullParameter(gifs, "gifs");
+                C12238m.checkNotNullParameter(suggested, "suggested");
+                C12238m.checkNotNullParameter(trending, "trending");
                 return new SearchResults(gifs, suggested, trending, searchQuery);
             }
 
@@ -215,7 +215,7 @@ public final class GifSearchViewModel extends AppViewModel<ViewState> {
                     return false;
                 }
                 SearchResults searchResults = (SearchResults) other;
-                return Intrinsics3.areEqual(this.gifs, searchResults.gifs) && Intrinsics3.areEqual(this.suggested, searchResults.suggested) && Intrinsics3.areEqual(this.trending, searchResults.trending) && Intrinsics3.areEqual(this.searchQuery, searchResults.searchQuery);
+                return C12238m.areEqual(this.gifs, searchResults.gifs) && C12238m.areEqual(this.suggested, searchResults.suggested) && C12238m.areEqual(this.trending, searchResults.trending) && C12238m.areEqual(this.searchQuery, searchResults.searchQuery);
             }
 
             public final List<ModelGif> getGifs() {
@@ -246,14 +246,14 @@ public final class GifSearchViewModel extends AppViewModel<ViewState> {
             }
 
             public String toString() {
-                StringBuilder sbU = outline.U("SearchResults(gifs=");
-                sbU.append(this.gifs);
-                sbU.append(", suggested=");
-                sbU.append(this.suggested);
-                sbU.append(", trending=");
-                sbU.append(this.trending);
-                sbU.append(", searchQuery=");
-                return outline.J(sbU, this.searchQuery, ")");
+                StringBuilder sbM833U = C1643a.m833U("SearchResults(gifs=");
+                sbM833U.append(this.gifs);
+                sbM833U.append(", suggested=");
+                sbM833U.append(this.suggested);
+                sbM833U.append(", trending=");
+                sbM833U.append(this.trending);
+                sbM833U.append(", searchQuery=");
+                return C1643a.m822J(sbM833U, this.searchQuery, ")");
             }
         }
 
@@ -264,7 +264,7 @@ public final class GifSearchViewModel extends AppViewModel<ViewState> {
             /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
             public TrendingSearchTermsResults(List<String> list) {
                 super(list, null);
-                Intrinsics3.checkNotNullParameter(list, "trending");
+                C12238m.checkNotNullParameter(list, "trending");
                 this.trending = list;
             }
 
@@ -281,13 +281,13 @@ public final class GifSearchViewModel extends AppViewModel<ViewState> {
             }
 
             public final TrendingSearchTermsResults copy(List<String> trending) {
-                Intrinsics3.checkNotNullParameter(trending, "trending");
+                C12238m.checkNotNullParameter(trending, "trending");
                 return new TrendingSearchTermsResults(trending);
             }
 
             public boolean equals(Object other) {
                 if (this != other) {
-                    return (other instanceof TrendingSearchTermsResults) && Intrinsics3.areEqual(this.trending, ((TrendingSearchTermsResults) other).trending);
+                    return (other instanceof TrendingSearchTermsResults) && C12238m.areEqual(this.trending, ((TrendingSearchTermsResults) other).trending);
                 }
                 return true;
             }
@@ -305,7 +305,7 @@ public final class GifSearchViewModel extends AppViewModel<ViewState> {
             }
 
             public String toString() {
-                return outline.L(outline.U("TrendingSearchTermsResults(trending="), this.trending, ")");
+                return C1643a.m824L(C1643a.m833U("TrendingSearchTermsResults(trending="), this.trending, ")");
             }
         }
 
@@ -336,9 +336,9 @@ public final class GifSearchViewModel extends AppViewModel<ViewState> {
             /* JADX WARN: Multi-variable type inference failed */
             public Loaded(List<? extends GifAdapterItem> list) {
                 super(null);
-                Intrinsics3.checkNotNullParameter(list, "adapterItems");
+                C12238m.checkNotNullParameter(list, "adapterItems");
                 this.adapterItems = list;
-                this.gifCount = LazyJVM.lazy(new GifSearchViewModel5(this));
+                this.gifCount = C12083g.lazy(new GifSearchViewModel$ViewState$Loaded$gifCount$2(this));
             }
 
             /* JADX WARN: Multi-variable type inference failed */
@@ -354,13 +354,13 @@ public final class GifSearchViewModel extends AppViewModel<ViewState> {
             }
 
             public final Loaded copy(List<? extends GifAdapterItem> adapterItems) {
-                Intrinsics3.checkNotNullParameter(adapterItems, "adapterItems");
+                C12238m.checkNotNullParameter(adapterItems, "adapterItems");
                 return new Loaded(adapterItems);
             }
 
             public boolean equals(Object other) {
                 if (this != other) {
-                    return (other instanceof Loaded) && Intrinsics3.areEqual(this.adapterItems, ((Loaded) other).adapterItems);
+                    return (other instanceof Loaded) && C12238m.areEqual(this.adapterItems, ((Loaded) other).adapterItems);
                 }
                 return true;
             }
@@ -382,7 +382,7 @@ public final class GifSearchViewModel extends AppViewModel<ViewState> {
             }
 
             public String toString() {
-                return outline.L(outline.U("Loaded(adapterItems="), this.adapterItems, ")");
+                return C1643a.m824L(C1643a.m833U("Loaded(adapterItems="), this.adapterItems, ")");
             }
         }
 
@@ -405,16 +405,16 @@ public final class GifSearchViewModel extends AppViewModel<ViewState> {
 
     /* JADX WARN: Illegal instructions before constructor call */
     public /* synthetic */ GifSearchViewModel(Context context, BehaviorSubject behaviorSubject, StoreGifPicker storeGifPicker, StoreAnalytics storeAnalytics, MessageManager messageManager, Observable observable, int i, DefaultConstructorMarker defaultConstructorMarker) {
-        BehaviorSubject behaviorSubjectL0;
+        BehaviorSubject behaviorSubjectM11130l0;
         if ((i & 2) != 0) {
-            behaviorSubjectL0 = BehaviorSubject.l0("");
-            Intrinsics3.checkNotNullExpressionValue(behaviorSubjectL0, "BehaviorSubject.create(\"\")");
+            behaviorSubjectM11130l0 = BehaviorSubject.m11130l0("");
+            C12238m.checkNotNullExpressionValue(behaviorSubjectM11130l0, "BehaviorSubject.create(\"\")");
         } else {
-            behaviorSubjectL0 = behaviorSubject;
+            behaviorSubjectM11130l0 = behaviorSubject;
         }
         StoreGifPicker gifPicker = (i & 4) != 0 ? StoreStream.INSTANCE.getGifPicker() : storeGifPicker;
         StoreAnalytics analytics = (i & 8) != 0 ? StoreStream.INSTANCE.getAnalytics() : storeAnalytics;
-        this(context, behaviorSubjectL0, gifPicker, analytics, (i & 16) != 0 ? new MessageManager(context, null, null, null, null, null, null, null, null, 510, null) : messageManager, (i & 32) != 0 ? INSTANCE.observeStoreState(behaviorSubjectL0, analytics, gifPicker) : observable);
+        this(context, behaviorSubjectM11130l0, gifPicker, analytics, (i & 16) != 0 ? new MessageManager(context, null, null, null, null, null, null, null, null, 510, null) : messageManager, (i & 32) != 0 ? INSTANCE.observeStoreState(behaviorSubjectM11130l0, analytics, gifPicker) : observable);
     }
 
     private final void handleStoreState(StoreState storeState) {
@@ -425,7 +425,7 @@ public final class GifSearchViewModel extends AppViewModel<ViewState> {
         if (z2) {
             StoreState.SearchResults searchResults = (StoreState.SearchResults) storeState;
             List<ModelGif> gifs = searchResults.getGifs();
-            ArrayList arrayList2 = new ArrayList(Iterables2.collectionSizeOrDefault(gifs, 10));
+            ArrayList arrayList2 = new ArrayList(C12149o.collectionSizeOrDefault(gifs, 10));
             Iterator<T> it = gifs.iterator();
             while (it.hasNext()) {
                 arrayList2.add(new GifAdapterItem.GifItem((ModelGif) it.next(), searchResults.getSearchQuery()));
@@ -434,19 +434,19 @@ public final class GifSearchViewModel extends AppViewModel<ViewState> {
             List<String> suggested = searchResults.getSuggested();
             boolean z3 = arrayList.size() > 0;
             boolean z4 = searchResults.getSuggested().size() > 0;
-            String strN0 = this.searchSubject.n0();
-            Intrinsics3.checkNotNullExpressionValue(strN0, "searchSubject.value");
-            boolean z5 = strN0.length() > 0;
+            String strM11132n0 = this.searchSubject.m11132n0();
+            C12238m.checkNotNullExpressionValue(strM11132n0, "searchSubject.value");
+            boolean z5 = strM11132n0.length() > 0;
             if (z3) {
-                suggestedTermsEmptyResults = new GifAdapterItem.SuggestedTermsItem.SuggestedTermsNonEmptyResults(suggested, R.string.gif_picker_related_search);
+                suggestedTermsEmptyResults = new GifAdapterItem.SuggestedTermsItem.SuggestedTermsNonEmptyResults(suggested, C5419R.string.gif_picker_related_search);
             } else if (!z5 || z4) {
-                suggestedTermsEmptyResults = (z5 && z4) ? new GifAdapterItem.SuggestedTermsItem.SuggestedTermsEmptyResults(suggested, R.string.no_gif_search_results_with_related_search) : new GifAdapterItem.SuggestedTermsItem.SuggestedTermsEmptyResults(suggested, R.string.gif_picker_enter_search);
+                suggestedTermsEmptyResults = (z5 && z4) ? new GifAdapterItem.SuggestedTermsItem.SuggestedTermsEmptyResults(suggested, C5419R.string.no_gif_search_results_with_related_search) : new GifAdapterItem.SuggestedTermsItem.SuggestedTermsEmptyResults(suggested, C5419R.string.gif_picker_enter_search);
             } else {
-                suggestedTermsEmptyResults = new GifAdapterItem.SuggestedTermsItem.SuggestedTermsEmptyResults(suggested, R.string.no_gif_search_results_without_related_search);
+                suggestedTermsEmptyResults = new GifAdapterItem.SuggestedTermsItem.SuggestedTermsEmptyResults(suggested, C5419R.string.no_gif_search_results_without_related_search);
             }
             arrayList.add(suggestedTermsEmptyResults);
         } else if (storeState instanceof StoreState.TrendingSearchTermsResults) {
-            arrayList.add(new GifAdapterItem.SuggestedTermsItem.SuggestedTermsEmptyResults(trendingSearchTerms, R.string.gif_picker_enter_search));
+            arrayList.add(new GifAdapterItem.SuggestedTermsItem.SuggestedTermsEmptyResults(trendingSearchTerms, C5419R.string.gif_picker_enter_search));
         }
         ViewState.Loaded loaded = new ViewState.Loaded(arrayList);
         if (z2) {
@@ -456,7 +456,7 @@ public final class GifSearchViewModel extends AppViewModel<ViewState> {
     }
 
     public final void selectGif(GifAdapterItem.GifItem gifItem) {
-        Intrinsics3.checkNotNullParameter(gifItem, "gifItem");
+        C12238m.checkNotNullParameter(gifItem, "gifItem");
         ViewState viewState = getViewState();
         if (!(viewState instanceof ViewState.Loaded)) {
             viewState = null;
@@ -466,12 +466,12 @@ public final class GifSearchViewModel extends AppViewModel<ViewState> {
             StoreAnalytics.trackSearchResultSelected$default(this.storeAnalytics, SearchType.GIF, loaded.getGifCount(), null, new Traits.Source(null, null, Traits.Source.Obj.GIF_PICKER, null, null, 27, null), 4, null);
         }
         MessageManager messageManager = this.messageManager;
-        messageManager.sendMessage((510 & 1) != 0 ? "" : gifItem.getGif().getTenorGifUrl(), (510 & 2) != 0 ? null : null, (510 & 4) != 0 ? null : null, (510 & 8) != 0 ? null : null, (510 & 16) != 0 ? Collections2.emptyList() : null, (510 & 32) != 0, (510 & 64) != 0 ? null : null, (510 & 128) == 0 ? null : null, (510 & 256) != 0 ? messageManager.defaultMessageResultHandler : null);
+        messageManager.sendMessage((510 & 1) != 0 ? "" : gifItem.getGif().getTenorGifUrl(), (510 & 2) != 0 ? null : null, (510 & 4) != 0 ? null : null, (510 & 8) != 0 ? null : null, (510 & 16) != 0 ? C12147n.emptyList() : null, (510 & 32) != 0, (510 & 64) != 0 ? null : null, (510 & 128) == 0 ? null : null, (510 & 256) != 0 ? messageManager.defaultMessageResultHandler : null);
     }
 
     public final void setSearchText(String searchText) {
-        Intrinsics3.checkNotNullParameter(searchText, "searchText");
-        if (!Intrinsics3.areEqual(this.searchSubject.n0(), searchText)) {
+        C12238m.checkNotNullParameter(searchText, "searchText");
+        if (!C12238m.areEqual(this.searchSubject.m11132n0(), searchText)) {
             if (searchText.length() > 0) {
                 updateViewState(ViewState.LoadingSearchResults.INSTANCE);
             }
@@ -482,16 +482,16 @@ public final class GifSearchViewModel extends AppViewModel<ViewState> {
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public GifSearchViewModel(Context context, BehaviorSubject<String> behaviorSubject, StoreGifPicker storeGifPicker, StoreAnalytics storeAnalytics, MessageManager messageManager, Observable<StoreState> observable) {
         super(null);
-        Intrinsics3.checkNotNullParameter(context, "context");
-        Intrinsics3.checkNotNullParameter(behaviorSubject, "searchSubject");
-        Intrinsics3.checkNotNullParameter(storeGifPicker, "storeGifPicker");
-        Intrinsics3.checkNotNullParameter(storeAnalytics, "storeAnalytics");
-        Intrinsics3.checkNotNullParameter(messageManager, "messageManager");
-        Intrinsics3.checkNotNullParameter(observable, "storeStateObservable");
+        C12238m.checkNotNullParameter(context, "context");
+        C12238m.checkNotNullParameter(behaviorSubject, "searchSubject");
+        C12238m.checkNotNullParameter(storeGifPicker, "storeGifPicker");
+        C12238m.checkNotNullParameter(storeAnalytics, "storeAnalytics");
+        C12238m.checkNotNullParameter(messageManager, "messageManager");
+        C12238m.checkNotNullParameter(observable, "storeStateObservable");
         this.searchSubject = behaviorSubject;
         this.storeGifPicker = storeGifPicker;
         this.storeAnalytics = storeAnalytics;
         this.messageManager = messageManager;
-        ObservableExtensionsKt.appSubscribe(ObservableExtensionsKt.ui$default(observable, this, null, 2, null), (Class<?>) GifSearchViewModel.class, (58 & 2) != 0 ? null : null, (Function1<? super Subscription, Unit>) ((58 & 4) != 0 ? null : null), (Function1<? super Error, Unit>) ((58 & 8) != 0 ? null : null), (Function0<Unit>) ((58 & 16) != 0 ? ObservableExtensionsKt.AnonymousClass1.INSTANCE : null), (Function0<Unit>) ((58 & 32) != 0 ? ObservableExtensionsKt.AnonymousClass2.INSTANCE : null), new AnonymousClass1());
+        ObservableExtensionsKt.appSubscribe(ObservableExtensionsKt.ui$default(observable, this, null, 2, null), (Class<?>) GifSearchViewModel.class, (58 & 2) != 0 ? null : null, (Function1<? super Subscription, Unit>) ((58 & 4) != 0 ? null : null), (Function1<? super Error, Unit>) ((58 & 8) != 0 ? null : null), (Function0<Unit>) ((58 & 16) != 0 ? ObservableExtensionsKt.C68791.INSTANCE : null), (Function0<Unit>) ((58 & 32) != 0 ? ObservableExtensionsKt.C68802.INSTANCE : null), new C78711());
     }
 }

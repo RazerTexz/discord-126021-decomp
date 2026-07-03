@@ -6,22 +6,15 @@ import android.content.Context;
 import androidx.appcompat.widget.ActivityChooserModel;
 import androidx.exifinterface.media.ExifInterface;
 import androidx.recyclerview.widget.RecyclerView;
-import b.d.b.a.outline;
 import com.discord.models.domain.ModelAuditLogEntry;
 import com.discord.utilities.error.Error;
-import com.discord.utilities.rx.ObservableExtensionsKt;
+import com.discord.utilities.p501rx.ObservableExtensionsKt;
 import com.discord.utilities.time.Clock;
 import com.discord.utilities.time.TimeElapsed;
-import com.discord.widgets.chat.input.MentionUtils;
+import com.discord.widgets.chat.input.MentionUtilsKt;
 import com.esotericsoftware.kryo.Kryo;
-import com.esotericsoftware.kryo.io.Input;
-import com.esotericsoftware.kryo.io.Output;
-import d0.t.Collections2;
-import d0.y.Closeable;
-import d0.z.d.Intrinsics3;
-import d0.z.d.Lambda;
-import j0.k.Func1;
-import j0.l.e.ScalarSynchronousObservable;
+import com.esotericsoftware.kryo.p502io.Input;
+import com.esotericsoftware.kryo.p502io.Output;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
@@ -35,11 +28,18 @@ import kotlin.jvm.functions.Function0;
 import kotlin.jvm.functions.Function1;
 import kotlin.jvm.functions.Function3;
 import kotlin.jvm.internal.DefaultConstructorMarker;
-import rx.Observable;
-import rx.Subscription;
-import rx.subjects.BehaviorSubject;
-import rx.subjects.SerializedSubject;
-import rx.subjects.Subject;
+import p007b.p100d.p104b.p105a.C1643a;
+import p507d0.p580t.C12147n;
+import p507d0.p591y.C12201b;
+import p507d0.p592z.p594d.AbstractC12240o;
+import p507d0.p592z.p594d.C12238m;
+import p637j0.p641k.InterfaceC12589b;
+import p637j0.p642l.p647e.C12721k;
+import p658rx.Observable;
+import p658rx.Subscription;
+import p658rx.subjects.BehaviorSubject;
+import p658rx.subjects.SerializedSubject;
+import p658rx.subjects.Subject;
 
 /* JADX INFO: compiled from: Persister.kt */
 /* JADX INFO: loaded from: classes2.dex */
@@ -59,9 +59,9 @@ public final class Persister<T> {
 
     /* JADX INFO: renamed from: Companion, reason: from kotlin metadata */
     public static final Companion INSTANCE = new Companion(null);
-    private static Function3<? super Integer, ? super String, ? super Exception, Unit> logger = Persister6.INSTANCE;
-    private static Function1<? super Kryo, Unit> kryoConfig = Persister4.INSTANCE;
-    private static final Persister5 kryos = new ThreadLocal<Kryo>() { // from class: com.discord.utilities.persister.Persister$Companion$kryos$1
+    private static Function3<? super Integer, ? super String, ? super Exception, Unit> logger = Persister$Companion$logger$1.INSTANCE;
+    private static Function1<? super Kryo, Unit> kryoConfig = Persister$Companion$kryoConfig$1.INSTANCE;
+    private static final Persister$Companion$kryos$1 kryos = new ThreadLocal<Kryo>() { // from class: com.discord.utilities.persister.Persister$Companion$kryos$1
         /* JADX WARN: Can't rename method to resolve collision */
         @Override // java.lang.ThreadLocal
         public Kryo initialValue() {
@@ -80,7 +80,7 @@ public final class Persister<T> {
         private final long availableBytes() {
             Context context = Persister.context;
             if (context == null) {
-                Intrinsics3.throwUninitializedPropertyAccessException("context");
+                C12238m.throwUninitializedPropertyAccessException("context");
             }
             Object systemService = context.getSystemService(ActivityChooserModel.ATTRIBUTE_ACTIVITY);
             if (!(systemService instanceof ActivityManager)) {
@@ -98,9 +98,9 @@ public final class Persister<T> {
         private final void persistAll() {
             Iterator<T> it = Persister.preferences.iterator();
             while (it.hasNext()) {
-                ScalarSynchronousObservable scalarSynchronousObservable = new ScalarSynchronousObservable(((WeakReference) it.next()).get());
-                Intrinsics3.checkNotNullExpressionValue(scalarSynchronousObservable, "Observable\n          .just(weakPreference.get())");
-                ObservableExtensionsKt.appSubscribe(ObservableExtensionsKt.computationBuffered(scalarSynchronousObservable), (Class<?>) Persister.class, (58 & 2) != 0 ? null : null, (Function1<? super Subscription, Unit>) ((58 & 4) != 0 ? null : null), (Function1<? super Error, Unit>) ((58 & 8) != 0 ? null : null), (Function0<Unit>) ((58 & 16) != 0 ? ObservableExtensionsKt.AnonymousClass1.INSTANCE : null), (Function0<Unit>) ((58 & 32) != 0 ? ObservableExtensionsKt.AnonymousClass2.INSTANCE : null), Persister7.INSTANCE);
+                C12721k c12721k = new C12721k(((WeakReference) it.next()).get());
+                C12238m.checkNotNullExpressionValue(c12721k, "Observable\n          .just(weakPreference.get())");
+                ObservableExtensionsKt.appSubscribe(ObservableExtensionsKt.computationBuffered(c12721k), (Class<?>) Persister.class, (58 & 2) != 0 ? null : null, (Function1<? super Subscription, Unit>) ((58 & 4) != 0 ? null : null), (Function1<? super Error, Unit>) ((58 & 8) != 0 ? null : null), (Function0<Unit>) ((58 & 16) != 0 ? ObservableExtensionsKt.C68791.INSTANCE : null), (Function0<Unit>) ((58 & 32) != 0 ? ObservableExtensionsKt.C68802.INSTANCE : null), Persister$Companion$persistAll$1$1.INSTANCE);
             }
         }
 
@@ -113,9 +113,9 @@ public final class Persister<T> {
         }
 
         public final void init(Context context, Clock clock, Observable<Boolean> persistenceStrategy) {
-            Intrinsics3.checkNotNullParameter(context, "context");
-            Intrinsics3.checkNotNullParameter(clock, "clock");
-            Intrinsics3.checkNotNullParameter(persistenceStrategy, "persistenceStrategy");
+            C12238m.checkNotNullParameter(context, "context");
+            C12238m.checkNotNullParameter(clock, "clock");
+            C12238m.checkNotNullParameter(persistenceStrategy, "persistenceStrategy");
             if (Persister.initialized) {
                 return;
             }
@@ -123,20 +123,20 @@ public final class Persister<T> {
             Persister.context = context;
             Persister.clock = clock;
             Persister.preferencesPreloader = new Preloader(clock);
-            Observable<Boolean> observableY = persistenceStrategy.y(new Func1<Boolean, Boolean>() { // from class: com.discord.utilities.persister.Persister$Companion$init$1
-                @Override // j0.k.Func1
+            Observable<Boolean> observableM11118y = persistenceStrategy.m11118y(new InterfaceC12589b<Boolean, Boolean>() { // from class: com.discord.utilities.persister.Persister$Companion$init$1
+                @Override // p637j0.p641k.InterfaceC12589b
                 public final Boolean call(Boolean bool) {
                     return bool;
                 }
             });
-            Intrinsics3.checkNotNullExpressionValue(observableY, "persistenceStrategy\n    …er { persist -> persist }");
-            ObservableExtensionsKt.appSubscribe(ObservableExtensionsKt.computationBuffered(observableY), (Class<?>) Persister.class, (58 & 2) != 0 ? null : null, (Function1<? super Subscription, Unit>) ((58 & 4) != 0 ? null : null), (Function1<? super Error, Unit>) ((58 & 8) != 0 ? null : null), (Function0<Unit>) ((58 & 16) != 0 ? ObservableExtensionsKt.AnonymousClass1.INSTANCE : null), (Function0<Unit>) ((58 & 32) != 0 ? ObservableExtensionsKt.AnonymousClass2.INSTANCE : null), Persister3.INSTANCE);
+            C12238m.checkNotNullExpressionValue(observableM11118y, "persistenceStrategy\n    …er { persist -> persist }");
+            ObservableExtensionsKt.appSubscribe(ObservableExtensionsKt.computationBuffered(observableM11118y), (Class<?>) Persister.class, (58 & 2) != 0 ? null : null, (Function1<? super Subscription, Unit>) ((58 & 4) != 0 ? null : null), (Function1<? super Error, Unit>) ((58 & 8) != 0 ? null : null), (Function0<Unit>) ((58 & 16) != 0 ? ObservableExtensionsKt.C68791.INSTANCE : null), (Function0<Unit>) ((58 & 32) != 0 ? ObservableExtensionsKt.C68802.INSTANCE : null), Persister$Companion$init$2.INSTANCE);
         }
 
         public final Observable<Boolean> isPreloaded() {
             Preloader preloader = Persister.preferencesPreloader;
             if (preloader == null) {
-                Intrinsics3.throwUninitializedPropertyAccessException("preferencesPreloader");
+                C12238m.throwUninitializedPropertyAccessException("preferencesPreloader");
             }
             return preloader.isPreloaded();
         }
@@ -152,12 +152,12 @@ public final class Persister<T> {
         }
 
         public final void setKryoConfig(Function1<? super Kryo, Unit> function1) {
-            Intrinsics3.checkNotNullParameter(function1, "<set-?>");
+            C12238m.checkNotNullParameter(function1, "<set-?>");
             Persister.kryoConfig = function1;
         }
 
         public final void setLogger(Function3<? super Integer, ? super String, ? super Exception, Unit> function3) {
-            Intrinsics3.checkNotNullParameter(function3, "<set-?>");
+            C12238m.checkNotNullParameter(function3, "<set-?>");
             Persister.logger = function3;
         }
 
@@ -172,17 +172,17 @@ public final class Persister<T> {
         private final SerializedSubject<Persister<?>, Persister<?>> preloadSubject;
         private final TimeElapsed preloadTime;
 
-        /* JADX INFO: renamed from: com.discord.utilities.persister.Persister$Preloader$2, reason: invalid class name */
+        /* JADX INFO: renamed from: com.discord.utilities.persister.Persister$Preloader$2 */
         /* JADX INFO: compiled from: Persister.kt */
-        public static final class AnonymousClass2 extends Lambda implements Function1<Persister<?>, Unit> {
-            public AnonymousClass2() {
+        public static final class C68312 extends AbstractC12240o implements Function1<Persister<?>, Unit> {
+            public C68312() {
                 super(1);
             }
 
             @Override // kotlin.jvm.functions.Function1
             public /* bridge */ /* synthetic */ Unit invoke(Persister<?> persister) {
                 invoke2(persister);
-                return Unit.a;
+                return Unit.f27425a;
             }
 
             /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
@@ -194,19 +194,19 @@ public final class Persister<T> {
         }
 
         public Preloader(Clock clock) {
-            Intrinsics3.checkNotNullParameter(clock, "clock");
+            C12238m.checkNotNullParameter(clock, "clock");
             this.preloadTime = new TimeElapsed(clock, 0L, 2, null);
-            SerializedSubject<Persister<?>, Persister<?>> serializedSubject = new SerializedSubject<>(BehaviorSubject.k0());
+            SerializedSubject<Persister<?>, Persister<?>> serializedSubject = new SerializedSubject<>(BehaviorSubject.m11129k0());
             this.preloadSubject = serializedSubject;
-            this.preloadCacheKeys = Collections2.mutableListOf("STORE_USER_RELATIONSHIPS_V9", "STORE_CHANNELS_V26", "STORE_GUILDS_V34");
-            Observable<Persister<?>> observableB0 = serializedSubject.b0(new Func1<Persister<?>, Boolean>() { // from class: com.discord.utilities.persister.Persister.Preloader.1
-                @Override // j0.k.Func1
+            this.preloadCacheKeys = C12147n.mutableListOf("STORE_USER_RELATIONSHIPS_V9", "STORE_CHANNELS_V26", "STORE_GUILDS_V34");
+            Observable<Persister<?>> observableM11103b0 = serializedSubject.m11103b0(new InterfaceC12589b<Persister<?>, Boolean>() { // from class: com.discord.utilities.persister.Persister.Preloader.1
+                @Override // p637j0.p641k.InterfaceC12589b
                 public final Boolean call(Persister<?> persister) {
                     return Boolean.valueOf(persister == null);
                 }
             });
-            Intrinsics3.checkNotNullExpressionValue(observableB0, "preloadSubject\n          .takeUntil { it == null }");
-            ObservableExtensionsKt.appSubscribe(ObservableExtensionsKt.computationBuffered(observableB0), (Class<?>) Preloader.class, (58 & 2) != 0 ? null : null, (Function1<? super Subscription, Unit>) ((58 & 4) != 0 ? null : null), (Function1<? super Error, Unit>) ((58 & 8) != 0 ? null : null), (Function0<Unit>) ((58 & 16) != 0 ? ObservableExtensionsKt.AnonymousClass1.INSTANCE : null), (Function0<Unit>) ((58 & 32) != 0 ? ObservableExtensionsKt.AnonymousClass2.INSTANCE : null), new AnonymousClass2());
+            C12238m.checkNotNullExpressionValue(observableM11103b0, "preloadSubject\n          .takeUntil { it == null }");
+            ObservableExtensionsKt.appSubscribe(ObservableExtensionsKt.computationBuffered(observableM11103b0), (Class<?>) Preloader.class, (58 & 2) != 0 ? null : null, (Function1<? super Subscription, Unit>) ((58 & 4) != 0 ? null : null), (Function1<? super Error, Unit>) ((58 & 8) != 0 ? null : null), (Function0<Unit>) ((58 & 16) != 0 ? ObservableExtensionsKt.C68791.INSTANCE : null), (Function0<Unit>) ((58 & 32) != 0 ? ObservableExtensionsKt.C68802.INSTANCE : null), new C68312());
         }
 
         private final synchronized <T> void handlePreload(Persister<T> persister) {
@@ -215,41 +215,41 @@ public final class Persister<T> {
                 persister.get();
             }
             if (this.preloadCacheKeys.isEmpty()) {
-                this.preloadSubject.k.onNext(null);
+                this.preloadSubject.f27653k.onNext(null);
                 Persister.INSTANCE.getLogger().invoke(4, "Preloaded preferences in " + this.preloadTime.getSeconds() + " seconds.", null);
             }
         }
 
         public final Observable<Boolean> isPreloaded() {
-            Observable<Boolean> observableR = this.preloadSubject.G(new Func1<Persister<?>, Boolean>() { // from class: com.discord.utilities.persister.Persister$Preloader$isPreloaded$1
-                @Override // j0.k.Func1
+            Observable<Boolean> observableM11112r = this.preloadSubject.m11083G(new InterfaceC12589b<Persister<?>, Boolean>() { // from class: com.discord.utilities.persister.Persister$Preloader$isPreloaded$1
+                @Override // p637j0.p641k.InterfaceC12589b
                 public final Boolean call(Persister<?> persister) {
                     return Boolean.valueOf(persister == null);
                 }
-            }).r();
-            Intrinsics3.checkNotNullExpressionValue(observableR, "preloadSubject\n         …  .distinctUntilChanged()");
-            return observableR;
+            }).m11112r();
+            C12238m.checkNotNullExpressionValue(observableM11112r, "preloadSubject\n         …  .distinctUntilChanged()");
+            return observableM11112r;
         }
 
         public final synchronized <T> void preload(Persister<T> preference) {
-            Intrinsics3.checkNotNullParameter(preference, "preference");
+            C12238m.checkNotNullParameter(preference, "preference");
             if (this.preloadCacheKeys.contains(preference.getKey())) {
-                this.preloadSubject.k.onNext(preference);
+                this.preloadSubject.f27653k.onNext(preference);
             }
         }
     }
 
-    /* JADX INFO: renamed from: com.discord.utilities.persister.Persister$getObservable$1, reason: invalid class name */
+    /* JADX INFO: renamed from: com.discord.utilities.persister.Persister$getObservable$1 */
     /* JADX INFO: compiled from: Persister.kt */
-    public static final class AnonymousClass1 extends Lambda implements Function0<Subject<T, T>> {
+    public static final class C68321 extends AbstractC12240o implements Function0<Subject<T, T>> {
 
-        /* JADX INFO: renamed from: com.discord.utilities.persister.Persister$getObservable$1$1, reason: invalid class name and collision with other inner class name */
+        /* JADX INFO: renamed from: com.discord.utilities.persister.Persister$getObservable$1$1, reason: invalid class name */
         /* JADX INFO: compiled from: Persister.kt */
-        public static final class C02201 extends Lambda implements Function1 {
+        public static final class AnonymousClass1 extends AbstractC12240o implements Function1 {
             public final /* synthetic */ SerializedSubject $subject;
 
             /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-            public C02201(SerializedSubject serializedSubject) {
+            public AnonymousClass1(SerializedSubject serializedSubject) {
                 super(1);
                 this.$subject = serializedSubject;
             }
@@ -257,31 +257,31 @@ public final class Persister<T> {
             @Override // kotlin.jvm.functions.Function1
             public /* bridge */ /* synthetic */ Object invoke(Object obj) {
                 invoke((Void) obj);
-                return Unit.a;
+                return Unit.f27425a;
             }
 
             public final void invoke(Void r2) {
-                this.$subject.k.onNext((T) Persister.this.get());
+                this.$subject.f27653k.onNext((T) Persister.this.get());
             }
         }
 
-        public AnonymousClass1() {
+        public C68321() {
             super(0);
         }
 
         @Override // kotlin.jvm.functions.Function0
         public final Subject<T, T> invoke() {
-            SerializedSubject serializedSubject = new SerializedSubject(BehaviorSubject.k0());
-            ScalarSynchronousObservable scalarSynchronousObservable = new ScalarSynchronousObservable(null);
-            Intrinsics3.checkNotNullExpressionValue(scalarSynchronousObservable, "Observable\n          .just(null)");
-            ObservableExtensionsKt.appSubscribe(ObservableExtensionsKt.computationBuffered(scalarSynchronousObservable), (Class<?>) Persister.this.getClass(), (58 & 2) != 0 ? null : null, (Function1<? super Subscription, Unit>) ((58 & 4) != 0 ? null : null), (Function1<? super Error, Unit>) ((58 & 8) != 0 ? null : null), (Function0<Unit>) ((58 & 16) != 0 ? ObservableExtensionsKt.AnonymousClass1.INSTANCE : null), (Function0<Unit>) ((58 & 32) != 0 ? ObservableExtensionsKt.AnonymousClass2.INSTANCE : null), new C02201(serializedSubject));
+            SerializedSubject serializedSubject = new SerializedSubject(BehaviorSubject.m11129k0());
+            C12721k c12721k = new C12721k(null);
+            C12238m.checkNotNullExpressionValue(c12721k, "Observable\n          .just(null)");
+            ObservableExtensionsKt.appSubscribe(ObservableExtensionsKt.computationBuffered(c12721k), (Class<?>) Persister.this.getClass(), (58 & 2) != 0 ? null : null, (Function1<? super Subscription, Unit>) ((58 & 4) != 0 ? null : null), (Function1<? super Error, Unit>) ((58 & 8) != 0 ? null : null), (Function0<Unit>) ((58 & 16) != 0 ? ObservableExtensionsKt.C68791.INSTANCE : null), (Function0<Unit>) ((58 & 32) != 0 ? ObservableExtensionsKt.C68802.INSTANCE : null), new AnonymousClass1(serializedSubject));
             return serializedSubject;
         }
     }
 
     public Persister(String str, T t) {
-        Intrinsics3.checkNotNullParameter(str, "key");
-        Intrinsics3.checkNotNullParameter(t, "defaultValue");
+        C12238m.checkNotNullParameter(str, "key");
+        C12238m.checkNotNullParameter(t, "defaultValue");
         this.key = str;
         this.defaultValue = t;
         this.value = t;
@@ -289,7 +289,7 @@ public final class Persister<T> {
         preferences.add(new WeakReference<>(this));
         Preloader preloader = preferencesPreloader;
         if (preloader == null) {
-            Intrinsics3.throwUninitializedPropertyAccessException("preferencesPreloader");
+            C12238m.throwUninitializedPropertyAccessException("preferencesPreloader");
         }
         preloader.preload(this);
     }
@@ -312,10 +312,10 @@ public final class Persister<T> {
         StringBuilder sb = new StringBuilder();
         Context context2 = context;
         if (context2 == null) {
-            Intrinsics3.throwUninitializedPropertyAccessException("context");
+            C12238m.throwUninitializedPropertyAccessException("context");
         }
         sb.append(context2.getFilesDir());
-        sb.append(MentionUtils.SLASH_CHAR);
+        sb.append(MentionUtilsKt.SLASH_CHAR);
         sb.append(this.key);
         return new File(sb.toString());
     }
@@ -331,10 +331,10 @@ public final class Persister<T> {
     private final FileOutputStream getFileOutput() throws FileNotFoundException {
         Context context2 = context;
         if (context2 == null) {
-            Intrinsics3.throwUninitializedPropertyAccessException("context");
+            C12238m.throwUninitializedPropertyAccessException("context");
         }
         FileOutputStream fileOutputStreamOpenFileOutput = context2.openFileOutput(this.key, 0);
-        Intrinsics3.checkNotNullExpressionValue(fileOutputStreamOpenFileOutput, "context.openFileOutput(key, Context.MODE_PRIVATE)");
+        C12238m.checkNotNullExpressionValue(fileOutputStreamOpenFileOutput, "context.openFileOutput(key, Context.MODE_PRIVATE)");
         return fileOutputStreamOpenFileOutput;
     }
 
@@ -358,13 +358,13 @@ public final class Persister<T> {
                             sb2.append('\"');
                             sb.append(sb2.toString());
                             String string = sb.toString();
-                            Intrinsics3.checkNotNullExpressionValue(string, "StringBuilder()\n        …              .toString()");
+                            C12238m.checkNotNullExpressionValue(string, "StringBuilder()\n        …              .toString()");
                             logger.invoke(6, "Unable to cast deserialized preference " + this.key + '.', new Exception(string));
                         }
                     } else {
                         t = this.value;
                     }
-                    Closeable.closeFinally(fileInputStream, null);
+                    C12201b.closeFinally(fileInputStream, null);
                     if (t != null) {
                         return (T) t;
                     }
@@ -372,14 +372,14 @@ public final class Persister<T> {
                     try {
                         throw th;
                     } catch (Throwable th2) {
-                        Closeable.closeFinally(fileInputStream, th);
+                        C12201b.closeFinally(fileInputStream, th);
                         throw th2;
                     }
                 }
             }
             return this.value;
         } catch (Exception e) {
-            logger.invoke(5, outline.H(outline.U("Unable to deserialize preference "), this.key, '.'), new Exception(this.key, e));
+            logger.invoke(5, C1643a.m820H(C1643a.m833U("Unable to deserialize preference "), this.key, '.'), new Exception(this.key, e));
             return this.value;
         }
     }
@@ -401,12 +401,12 @@ public final class Persister<T> {
                     if (kryo != null) {
                         kryo.writeClassAndObject(output, this.value);
                     }
-                    Closeable.closeFinally(output, null);
+                    C12201b.closeFinally(output, null);
                 } catch (Throwable th) {
                     try {
                         throw th;
                     } catch (Throwable th2) {
-                        Closeable.closeFinally(output, th);
+                        C12201b.closeFinally(output, th);
                         throw th2;
                     }
                 }
@@ -448,7 +448,7 @@ public final class Persister<T> {
     }
 
     public final synchronized T getAndSet(boolean persist, Function1<? super T, ? extends T> setter) {
-        Intrinsics3.checkNotNullParameter(setter, "setter");
+        C12238m.checkNotNullParameter(setter, "setter");
         return set(setter.invoke(get()), persist);
     }
 
@@ -458,10 +458,10 @@ public final class Persister<T> {
 
     public final synchronized Observable<T> getObservable() {
         Subject<T, T> subjectInvoke;
-        AnonymousClass1 anonymousClass1 = new AnonymousClass1();
+        C68321 c68321 = new C68321();
         subjectInvoke = this.valueSubject;
         if (subjectInvoke == null) {
-            subjectInvoke = anonymousClass1.invoke();
+            subjectInvoke = c68321.invoke();
             this.valueSubject = subjectInvoke;
         }
         return subjectInvoke;
@@ -473,7 +473,7 @@ public final class Persister<T> {
 
     public final synchronized T set(T newValue, boolean persist) {
         T t;
-        Intrinsics3.checkNotNullParameter(newValue, "newValue");
+        C12238m.checkNotNullParameter(newValue, "newValue");
         this.valueDirty = true;
         this.valueUnset = false;
         t = this.value;

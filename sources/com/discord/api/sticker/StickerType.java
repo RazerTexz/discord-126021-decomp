@@ -21,7 +21,8 @@ public enum StickerType {
 
         /* JADX WARN: Code duplicated, block: B:15:0x001e  */
         /* JADX WARN: Code duplicated, block: B:19:? A[RETURN, SYNTHETIC] */
-        public final StickerType a(int i) {
+        /* JADX INFO: renamed from: a */
+        public final StickerType m8244a(int i) {
             StickerType stickerType;
             StickerType[] stickerTypeArrValues = StickerType.values();
             for (int i2 = 0; i2 < 3; i2++) {

@@ -8,15 +8,15 @@ import androidx.annotation.RequiresApi;
 import androidx.room.util.CopyLock;
 import androidx.room.util.DBUtil;
 import androidx.room.util.FileUtil;
-import androidx.sqlite.db.SupportSQLiteDatabase;
-import androidx.sqlite.db.SupportSQLiteOpenHelper;
-import b.d.b.a.outline;
+import androidx.sqlite.p006db.SupportSQLiteDatabase;
+import androidx.sqlite.p006db.SupportSQLiteOpenHelper;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.nio.channels.Channels;
 import java.nio.channels.ReadableByteChannel;
+import p007b.p100d.p104b.p105a.C1643a;
 
 /* JADX INFO: loaded from: classes.dex */
 public class SQLiteCopyOpenHelper implements SupportSQLiteOpenHelper {
@@ -61,19 +61,19 @@ public class SQLiteCopyOpenHelper implements SupportSQLiteOpenHelper {
         FileUtil.copy(channel, new FileOutputStream(fileCreateTempFile).getChannel());
         File parentFile = file.getParentFile();
         if (parentFile != null && !parentFile.exists() && !parentFile.mkdirs()) {
-            StringBuilder sbU = outline.U("Failed to create directories for ");
-            sbU.append(file.getAbsolutePath());
-            throw new IOException(sbU.toString());
+            StringBuilder sbM833U = C1643a.m833U("Failed to create directories for ");
+            sbM833U.append(file.getAbsolutePath());
+            throw new IOException(sbM833U.toString());
         }
         if (fileCreateTempFile.renameTo(file)) {
             return;
         }
-        StringBuilder sbU2 = outline.U("Failed to move intermediate file (");
-        sbU2.append(fileCreateTempFile.getAbsolutePath());
-        sbU2.append(") to destination (");
-        sbU2.append(file.getAbsolutePath());
-        sbU2.append(").");
-        throw new IOException(sbU2.toString());
+        StringBuilder sbM833U2 = C1643a.m833U("Failed to move intermediate file (");
+        sbM833U2.append(fileCreateTempFile.getAbsolutePath());
+        sbM833U2.append(") to destination (");
+        sbM833U2.append(file.getAbsolutePath());
+        sbM833U2.append(").");
+        throw new IOException(sbM833U2.toString());
     }
 
     private void verifyDatabaseFile() {
@@ -131,18 +131,18 @@ public class SQLiteCopyOpenHelper implements SupportSQLiteOpenHelper {
         throw th;
     }
 
-    @Override // androidx.sqlite.db.SupportSQLiteOpenHelper, java.io.Closeable, java.lang.AutoCloseable
+    @Override // androidx.sqlite.p006db.SupportSQLiteOpenHelper, java.io.Closeable, java.lang.AutoCloseable
     public synchronized void close() {
         this.mDelegate.close();
         this.mVerified = false;
     }
 
-    @Override // androidx.sqlite.db.SupportSQLiteOpenHelper
+    @Override // androidx.sqlite.p006db.SupportSQLiteOpenHelper
     public String getDatabaseName() {
         return this.mDelegate.getDatabaseName();
     }
 
-    @Override // androidx.sqlite.db.SupportSQLiteOpenHelper
+    @Override // androidx.sqlite.p006db.SupportSQLiteOpenHelper
     public synchronized SupportSQLiteDatabase getReadableDatabase() {
         if (!this.mVerified) {
             verifyDatabaseFile();
@@ -151,7 +151,7 @@ public class SQLiteCopyOpenHelper implements SupportSQLiteOpenHelper {
         return this.mDelegate.getReadableDatabase();
     }
 
-    @Override // androidx.sqlite.db.SupportSQLiteOpenHelper
+    @Override // androidx.sqlite.p006db.SupportSQLiteOpenHelper
     public synchronized SupportSQLiteDatabase getWritableDatabase() {
         if (!this.mVerified) {
             verifyDatabaseFile();
@@ -164,7 +164,7 @@ public class SQLiteCopyOpenHelper implements SupportSQLiteOpenHelper {
         this.mDatabaseConfiguration = databaseConfiguration;
     }
 
-    @Override // androidx.sqlite.db.SupportSQLiteOpenHelper
+    @Override // androidx.sqlite.p006db.SupportSQLiteOpenHelper
     @RequiresApi(api = 16)
     public void setWriteAheadLoggingEnabled(boolean z2) {
         this.mDelegate.setWriteAheadLoggingEnabled(z2);

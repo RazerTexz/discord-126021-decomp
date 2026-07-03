@@ -11,7 +11,7 @@ import android.graphics.drawable.shapes.OvalShape;
 import android.view.animation.Animation;
 import android.widget.ImageView;
 import androidx.core.view.ViewCompat;
-import androidx.swiperefreshlayout.R;
+import androidx.swiperefreshlayout.C0621R;
 
 /* JADX INFO: loaded from: classes.dex */
 public class CircleImageView extends ImageView {
@@ -65,8 +65,8 @@ public class CircleImageView extends ImageView {
         int i = (int) (Y_OFFSET * f);
         int i2 = (int) (0.0f * f);
         this.mShadowRadius = (int) (SHADOW_RADIUS * f);
-        TypedArray typedArrayObtainStyledAttributes = getContext().obtainStyledAttributes(R.styleable.SwipeRefreshLayout);
-        this.mBackgroundColor = typedArrayObtainStyledAttributes.getColor(R.styleable.SwipeRefreshLayout_swipeRefreshLayoutProgressSpinnerBackgroundColor, DEFAULT_BACKGROUND_COLOR);
+        TypedArray typedArrayObtainStyledAttributes = getContext().obtainStyledAttributes(C0621R.styleable.SwipeRefreshLayout);
+        this.mBackgroundColor = typedArrayObtainStyledAttributes.getColor(C0621R.styleable.f158xaa980688, DEFAULT_BACKGROUND_COLOR);
         typedArrayObtainStyledAttributes.recycle();
         if (elevationSupported()) {
             shapeDrawable = new ShapeDrawable(new OvalShape());

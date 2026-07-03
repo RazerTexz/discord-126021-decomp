@@ -3,7 +3,9 @@ package org.objectweb.asm;
 /* JADX INFO: loaded from: app.apk:org/objectweb/asm/ModuleVisitor.SCL.lombok */
 public abstract class ModuleVisitor {
     protected final int api;
-    protected ModuleVisitor mv;
+
+    /* JADX INFO: renamed from: mv */
+    protected ModuleVisitor f27602mv;
 
     public ModuleVisitor(int api) {
         this(api, null);
@@ -17,54 +19,54 @@ public abstract class ModuleVisitor {
             Constants.checkAsmExperimental(this);
         }
         this.api = api;
-        this.mv = moduleVisitor;
+        this.f27602mv = moduleVisitor;
     }
 
     public void visitMainClass(String mainClass) {
-        if (this.mv != null) {
-            this.mv.visitMainClass(mainClass);
+        if (this.f27602mv != null) {
+            this.f27602mv.visitMainClass(mainClass);
         }
     }
 
     public void visitPackage(String packaze) {
-        if (this.mv != null) {
-            this.mv.visitPackage(packaze);
+        if (this.f27602mv != null) {
+            this.f27602mv.visitPackage(packaze);
         }
     }
 
     public void visitRequire(String module, int access, String version) {
-        if (this.mv != null) {
-            this.mv.visitRequire(module, access, version);
+        if (this.f27602mv != null) {
+            this.f27602mv.visitRequire(module, access, version);
         }
     }
 
     public void visitExport(String packaze, int access, String... modules) {
-        if (this.mv != null) {
-            this.mv.visitExport(packaze, access, modules);
+        if (this.f27602mv != null) {
+            this.f27602mv.visitExport(packaze, access, modules);
         }
     }
 
     public void visitOpen(String packaze, int access, String... modules) {
-        if (this.mv != null) {
-            this.mv.visitOpen(packaze, access, modules);
+        if (this.f27602mv != null) {
+            this.f27602mv.visitOpen(packaze, access, modules);
         }
     }
 
     public void visitUse(String service) {
-        if (this.mv != null) {
-            this.mv.visitUse(service);
+        if (this.f27602mv != null) {
+            this.f27602mv.visitUse(service);
         }
     }
 
     public void visitProvide(String service, String... providers) {
-        if (this.mv != null) {
-            this.mv.visitProvide(service, providers);
+        if (this.f27602mv != null) {
+            this.f27602mv.visitProvide(service, providers);
         }
     }
 
     public void visitEnd() {
-        if (this.mv != null) {
-            this.mv.visitEnd();
+        if (this.f27602mv != null) {
+            this.f27602mv.visitEnd();
         }
     }
 }

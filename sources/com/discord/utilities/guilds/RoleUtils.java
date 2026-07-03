@@ -3,14 +3,12 @@ package com.discord.utilities.guilds;
 import android.content.Context;
 import androidx.annotation.ColorInt;
 import androidx.core.view.ViewCompat;
-import com.discord.R;
+import com.discord.C5419R;
 import com.discord.api.role.GuildRole;
 import com.discord.api.role.GuildRoleTags;
 import com.discord.models.member.GuildMember;
 import com.discord.utilities.color.ColorCompat;
 import com.discord.utilities.time.TimeUtils;
-import d0.g0.StringsJVM;
-import d0.z.d.Intrinsics3;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Comparator;
@@ -18,6 +16,8 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 import java.util.regex.Pattern;
+import p507d0.p579g0.C12103t;
+import p507d0.p592z.p594d.C12238m;
 
 /* JADX INFO: compiled from: RoleUtils.kt */
 /* JADX INFO: loaded from: classes2.dex */
@@ -47,7 +47,7 @@ public final class RoleUtils {
     }
 
     public static final GuildRole getHighestHoistedRole(Map<Long, GuildRole> guildRoles, GuildMember member) {
-        Intrinsics3.checkNotNullParameter(guildRoles, "guildRoles");
+        C12238m.checkNotNullParameter(guildRoles, "guildRoles");
         if (member == null) {
             return null;
         }
@@ -63,7 +63,7 @@ public final class RoleUtils {
     }
 
     public static final GuildRole getHighestRole(Map<Long, GuildRole> guildRoles, GuildMember member) {
-        Intrinsics3.checkNotNullParameter(guildRoles, "guildRoles");
+        C12238m.checkNotNullParameter(guildRoles, "guildRoles");
         if (member == null) {
             return null;
         }
@@ -98,10 +98,10 @@ public final class RoleUtils {
 
     @ColorInt
     public static final int getRoleColor(GuildRole guildRole, Context context, @ColorInt Integer num) {
-        Intrinsics3.checkNotNullParameter(guildRole, "$this$getRoleColor");
-        Intrinsics3.checkNotNullParameter(context, "context");
+        C12238m.checkNotNullParameter(guildRole, "$this$getRoleColor");
+        C12238m.checkNotNullParameter(context, "context");
         if (isDefaultColor(guildRole)) {
-            return num != null ? num.intValue() : ColorCompat.getColor(context, R.color.primary_300);
+            return num != null ? num.intValue() : ColorCompat.getColor(context, C5419R.color.primary_300);
         }
         return getOpaqueColor(guildRole);
     }
@@ -114,21 +114,21 @@ public final class RoleUtils {
     }
 
     public static final boolean hasSubscriptionListingId(GuildRole guildRole) {
-        Intrinsics3.checkNotNullParameter(guildRole, "$this$hasSubscriptionListingId");
+        C12238m.checkNotNullParameter(guildRole, "$this$hasSubscriptionListingId");
         GuildRoleTags tags = guildRole.getTags();
         String subscriptionListingId = tags != null ? tags.getSubscriptionListingId() : null;
-        return !(subscriptionListingId == null || StringsJVM.isBlank(subscriptionListingId));
+        return !(subscriptionListingId == null || C12103t.isBlank(subscriptionListingId));
     }
 
     public static final boolean isDefaultColor(GuildRole guildRole) {
-        Intrinsics3.checkNotNullParameter(guildRole, "$this$isDefaultColor");
+        C12238m.checkNotNullParameter(guildRole, "$this$isDefaultColor");
         return guildRole.getColor() == 0;
     }
 
     public static final boolean isSubscriptionRolePurchasableOrHasSubscribers(GuildRole guildRole) {
         GuildRoleTags tags;
-        Intrinsics3.checkNotNullParameter(guildRole, "$this$isSubscriptionRolePurchasableOrHasSubscribers");
-        return hasSubscriptionListingId(guildRole) && (tags = guildRole.getTags()) != null && tags.b();
+        C12238m.checkNotNullParameter(guildRole, "$this$isSubscriptionRolePurchasableOrHasSubscribers");
+        return hasSubscriptionListingId(guildRole) && (tags = guildRole.getTags()) != null && tags.m8210b();
     }
 
     public static final boolean rankEquals(GuildRole role1, GuildRole role2) {
@@ -140,7 +140,7 @@ public final class RoleUtils {
     }
 
     public static final GuildRole getHighestRole(Map<Long, GuildRole> guildRoles, Collection<Long> roleIds) {
-        Intrinsics3.checkNotNullParameter(guildRoles, "guildRoles");
+        C12238m.checkNotNullParameter(guildRoles, "guildRoles");
         GuildRole guildRole = null;
         if (roleIds == null) {
             return null;

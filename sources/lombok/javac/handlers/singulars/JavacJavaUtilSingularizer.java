@@ -59,7 +59,7 @@ abstract class JavacJavaUtilSingularizer extends JavacSingularsRecipes.JavacSing
         } else {
             jCBlockBlock = jCBlockExec;
         }
-        return maker.If(jCBinaryBinary, jCBlockBlock, null);
+        return maker.m10940If(jCBinaryBinary, jCBlockBlock, null);
     }
 
     protected List<JCTree.JCStatement> createJavaUtilSimpleCreationAndFillStatements(JavacTreeMaker maker, JavacSingularsRecipes.SingularData data, JavacNode builderType, boolean mapMode, boolean defineVar, boolean addInitialCapacityArg, boolean nullGuard, String targetType, JCTree source, String builderVariable) {
@@ -90,7 +90,7 @@ abstract class JavacJavaUtilSingularizer extends JavacSingularsRecipes.JavacSing
             jCForLoopExec = maker.Exec(maker.Apply(jceBlank, maker.Select(maker.Ident(data.getPluralName()), builderType.toName("addAll")), List.of(maker.Select(maker.Ident(thisName), data.getPluralName()))));
         }
         if (nullGuard) {
-            jCForLoopExec = maker.If(maker.Binary(Javac.CTC_NOT_EQUAL, maker.Select(maker.Ident(thisName), mapMode ? builderType.toName(data.getPluralName() + "$key") : data.getPluralName()), maker.Literal(Javac.CTC_BOT, null)), jCForLoopExec, null);
+            jCForLoopExec = maker.m10940If(maker.Binary(Javac.CTC_NOT_EQUAL, maker.Select(maker.Ident(thisName), mapMode ? builderType.toName(data.getPluralName() + "$key") : data.getPluralName()), maker.Literal(Javac.CTC_BOT, null)), jCForLoopExec, null);
         }
         return List.of(jCVariableDeclExec, jCForLoopExec, maker.Exec(maker.Assign(maker.Ident(data.getPluralName()), maker.Apply(jceBlank, JavacHandlerUtil.chainDots(builderType, "java", "util", "Collections", "unmodifiable" + data.getTargetSimpleType()), List.of(maker.Ident(data.getPluralName()))))));
     }

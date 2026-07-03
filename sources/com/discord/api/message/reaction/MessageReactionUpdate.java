@@ -1,7 +1,7 @@
 package com.discord.api.message.reaction;
 
-import b.d.b.a.outline;
-import d0.z.d.Intrinsics3;
+import p007b.p100d.p104b.p105a.C1643a;
+import p507d0.p592z.p594d.C12238m;
 
 /* JADX INFO: compiled from: MessageReactionUpdate.kt */
 /* JADX INFO: loaded from: classes.dex */
@@ -12,7 +12,7 @@ public final /* data */ class MessageReactionUpdate {
     private final long userId;
 
     public MessageReactionUpdate(long j, long j2, long j3, MessageReactionEmoji messageReactionEmoji) {
-        Intrinsics3.checkNotNullParameter(messageReactionEmoji, "emoji");
+        C12238m.checkNotNullParameter(messageReactionEmoji, "emoji");
         this.userId = j;
         this.channelId = j2;
         this.messageId = j3;
@@ -47,7 +47,7 @@ public final /* data */ class MessageReactionUpdate {
             return false;
         }
         MessageReactionUpdate messageReactionUpdate = (MessageReactionUpdate) other;
-        return this.userId == messageReactionUpdate.userId && this.channelId == messageReactionUpdate.channelId && this.messageId == messageReactionUpdate.messageId && Intrinsics3.areEqual(this.emoji, messageReactionUpdate.emoji);
+        return this.userId == messageReactionUpdate.userId && this.channelId == messageReactionUpdate.channelId && this.messageId == messageReactionUpdate.messageId && C12238m.areEqual(this.emoji, messageReactionUpdate.emoji);
     }
 
     public int hashCode() {
@@ -61,15 +61,15 @@ public final /* data */ class MessageReactionUpdate {
     }
 
     public String toString() {
-        StringBuilder sbU = outline.U("MessageReactionUpdate(userId=");
-        sbU.append(this.userId);
-        sbU.append(", channelId=");
-        sbU.append(this.channelId);
-        sbU.append(", messageId=");
-        sbU.append(this.messageId);
-        sbU.append(", emoji=");
-        sbU.append(this.emoji);
-        sbU.append(")");
-        return sbU.toString();
+        StringBuilder sbM833U = C1643a.m833U("MessageReactionUpdate(userId=");
+        sbM833U.append(this.userId);
+        sbM833U.append(", channelId=");
+        sbM833U.append(this.channelId);
+        sbM833U.append(", messageId=");
+        sbM833U.append(this.messageId);
+        sbM833U.append(", emoji=");
+        sbM833U.append(this.emoji);
+        sbM833U.append(")");
+        return sbM833U.toString();
     }
 }

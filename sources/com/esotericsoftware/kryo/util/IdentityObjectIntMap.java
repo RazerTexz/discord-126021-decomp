@@ -1,6 +1,6 @@
 package com.esotericsoftware.kryo.util;
 
-import b.d.b.a.outline;
+import p007b.p100d.p104b.p105a.C1643a;
 
 /* JADX INFO: loaded from: classes.dex */
 public class IdentityObjectIntMap<K> {
@@ -592,7 +592,7 @@ public class IdentityObjectIntMap<K> {
 
     public void shrink(int i) {
         if (i < 0) {
-            throw new IllegalArgumentException(outline.q("maximumCapacity must be >= 0: ", i));
+            throw new IllegalArgumentException(C1643a.m871q("maximumCapacity must be >= 0: ", i));
         }
         int i2 = this.size;
         if (i2 > i) {
@@ -670,9 +670,9 @@ public class IdentityObjectIntMap<K> {
                 }
                 throw new IllegalArgumentException("loadFactor must be > 0: " + f);
             }
-            throw new IllegalArgumentException(outline.q("initialCapacity is too large: ", i));
+            throw new IllegalArgumentException(C1643a.m871q("initialCapacity is too large: ", i));
         }
-        throw new IllegalArgumentException(outline.q("initialCapacity must be >= 0: ", i));
+        throw new IllegalArgumentException(C1643a.m871q("initialCapacity must be >= 0: ", i));
     }
 
     public void clear() {

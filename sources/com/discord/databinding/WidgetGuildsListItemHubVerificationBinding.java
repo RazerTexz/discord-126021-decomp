@@ -9,21 +9,22 @@ import com.discord.tooltips.SparkleView;
 /* JADX INFO: loaded from: classes.dex */
 public final class WidgetGuildsListItemHubVerificationBinding implements ViewBinding {
 
+    /* JADX INFO: renamed from: a */
     @NonNull
-    public final FrameLayout a;
+    public final FrameLayout f17118a;
 
-    /* JADX INFO: renamed from: b, reason: collision with root package name */
+    /* JADX INFO: renamed from: b */
     @NonNull
-    public final SparkleView f2463b;
+    public final SparkleView f17119b;
 
     public WidgetGuildsListItemHubVerificationBinding(@NonNull FrameLayout frameLayout, @NonNull SparkleView sparkleView) {
-        this.a = frameLayout;
-        this.f2463b = sparkleView;
+        this.f17118a = frameLayout;
+        this.f17119b = sparkleView;
     }
 
     @Override // androidx.viewbinding.ViewBinding
     @NonNull
     public View getRoot() {
-        return this.a;
+        return this.f17118a;
     }
 }

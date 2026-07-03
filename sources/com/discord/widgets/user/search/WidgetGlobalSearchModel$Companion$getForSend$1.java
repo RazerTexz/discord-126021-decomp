@@ -1,18 +1,18 @@
 package com.discord.widgets.user.search;
 
-import b.d.b.a.outline;
 import com.discord.api.channel.Channel;
 import com.discord.api.channel.ChannelUtils;
 import com.discord.models.domain.ModelAuditLogEntry;
 import com.discord.utilities.permissions.PermissionUtils;
-import d0.z.d.Intrinsics3;
-import d0.z.d.Lambda;
 import java.util.Map;
 import kotlin.jvm.functions.Function2;
+import p007b.p100d.p104b.p105a.C1643a;
+import p507d0.p592z.p594d.AbstractC12240o;
+import p507d0.p592z.p594d.C12238m;
 
 /* JADX INFO: compiled from: WidgetGlobalSearchModel.kt */
 /* JADX INFO: loaded from: classes.dex */
-public final class WidgetGlobalSearchModel$Companion$getForSend$1 extends Lambda implements Function2<Channel, Map<Long, ? extends Long>, Boolean> {
+public final class WidgetGlobalSearchModel$Companion$getForSend$1 extends AbstractC12240o implements Function2<Channel, Map<Long, ? extends Long>, Boolean> {
     public static final WidgetGlobalSearchModel$Companion$getForSend$1 INSTANCE = new WidgetGlobalSearchModel$Companion$getForSend$1();
 
     public WidgetGlobalSearchModel$Companion$getForSend$1() {
@@ -26,15 +26,15 @@ public final class WidgetGlobalSearchModel$Companion$getForSend$1 extends Lambda
 
     /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
     public final boolean invoke2(Channel channel, Map<Long, Long> map) {
-        Intrinsics3.checkNotNullParameter(channel, "channel");
-        Intrinsics3.checkNotNullParameter(map, ModelAuditLogEntry.CHANGE_KEY_PERMISSIONS);
-        if (ChannelUtils.G(channel)) {
+        C12238m.checkNotNullParameter(channel, "channel");
+        C12238m.checkNotNullParameter(map, ModelAuditLogEntry.CHANGE_KEY_PERMISSIONS);
+        if (ChannelUtils.m7672G(channel)) {
             PermissionUtils permissionUtils = PermissionUtils.INSTANCE;
-            Object objD = outline.d(channel, map);
-            if (objD == null) {
-                objD = 0L;
+            Object objM845d = C1643a.m845d(channel, map);
+            if (objM845d == null) {
+                objM845d = 0L;
             }
-            if (permissionUtils.hasAccessWrite(channel, (Long) objD)) {
+            if (permissionUtils.hasAccessWrite(channel, (Long) objM845d)) {
                 return true;
             }
         }

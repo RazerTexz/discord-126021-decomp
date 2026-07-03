@@ -8,10 +8,10 @@ import android.os.Trace;
 import androidx.annotation.IntRange;
 import com.discord.models.domain.ModelAuditLogEntry;
 import com.linecorp.apng.decoder.ApngException;
-import d0.t._Arrays;
-import d0.z.d.Intrinsics3;
 import java.io.InputStream;
 import kotlin.jvm.internal.DefaultConstructorMarker;
+import p507d0.p580t.C12141k;
+import p507d0.p592z.p594d.C12238m;
 
 /* JADX INFO: compiled from: Apng.kt */
 /* JADX INFO: loaded from: classes3.dex */
@@ -23,8 +23,8 @@ public final class Apng {
     /* JADX INFO: renamed from: a, reason: from kotlin metadata */
     public final Bitmap bitmap;
 
-    /* JADX INFO: renamed from: b, reason: collision with root package name and from kotlin metadata */
-    @IntRange(from = 0, to = 2147483647L)
+    /* JADX INFO: renamed from: b, reason: from kotlin metadata */
+    @IntRange(from = 0, m76to = 2147483647L)
     public final int duration;
 
     /* JADX INFO: renamed from: c, reason: from kotlin metadata */
@@ -55,7 +55,7 @@ public final class Apng {
 
         /* JADX WARN: Multi-variable type inference failed */
         public final Apng copy(Apng apng) throws ApngException {
-            Intrinsics3.checkNotNullParameter(apng, "apng");
+            C12238m.checkNotNullParameter(apng, "apng");
             DecodeResult decodeResult = new DecodeResult();
             Trace.beginSection("Apng#copy");
             try {
@@ -81,7 +81,7 @@ public final class Apng {
 
         /* JADX WARN: Multi-variable type inference failed */
         public final Apng decode(InputStream stream) throws ApngException {
-            Intrinsics3.checkNotNullParameter(stream, "stream");
+            C12238m.checkNotNullParameter(stream, "stream");
             DecodeResult decodeResult = new DecodeResult();
             Trace.beginSection("Apng#decode");
             try {
@@ -106,7 +106,7 @@ public final class Apng {
         }
 
         public final boolean isApng(InputStream stream) throws ApngException {
-            Intrinsics3.checkNotNullParameter(stream, "stream");
+            C12238m.checkNotNullParameter(stream, "stream");
             try {
                 return ApngDecoderJni.isApng(stream);
             } catch (Throwable th) {
@@ -160,7 +160,7 @@ public final class Apng {
         }
 
         public final void setFrameDurations(int[] iArr) {
-            Intrinsics3.checkNotNullParameter(iArr, "<set-?>");
+            C12238m.checkNotNullParameter(iArr, "<set-?>");
             this.frameDurations = iArr;
         }
 
@@ -177,8 +177,8 @@ public final class Apng {
         }
     }
 
-    public Apng(int i, int i2, int i3, @IntRange(from = 1, to = 2147483647L) int i4, int[] iArr, @IntRange(from = 0, to = 2147483647L) int i5, @IntRange(from = 0, to = 2147483647L) long j) {
-        Intrinsics3.checkNotNullParameter(iArr, "frameDurations");
+    public Apng(int i, int i2, int i3, @IntRange(from = 1, m76to = 2147483647L) int i4, int[] iArr, @IntRange(from = 0, m76to = 2147483647L) int i5, @IntRange(from = 0, m76to = 2147483647L) long j) {
+        C12238m.checkNotNullParameter(iArr, "frameDurations");
         this.id = i;
         this.width = i2;
         this.height = i3;
@@ -187,12 +187,12 @@ public final class Apng {
         this.loopCount = i5;
         this.allFrameByteCount = j;
         Bitmap bitmapCreateBitmap = Bitmap.createBitmap(i2, i3, Bitmap.Config.ARGB_8888);
-        Intrinsics3.checkNotNullExpressionValue(bitmapCreateBitmap, "Bitmap.createBitmap(widt… Bitmap.Config.ARGB_8888)");
+        C12238m.checkNotNullExpressionValue(bitmapCreateBitmap, "Bitmap.createBitmap(widt… Bitmap.Config.ARGB_8888)");
         this.bitmap = bitmapCreateBitmap;
         Trace.beginSection("Apng#draw");
         ApngDecoderJni.draw(i, 0, bitmapCreateBitmap);
         Trace.endSection();
-        this.duration = _Arrays.sum(iArr);
+        this.duration = C12141k.sum(iArr);
     }
 
     public final Apng copy() {
@@ -200,9 +200,9 @@ public final class Apng {
     }
 
     public final void drawWithIndex(int frameIndex, Canvas canvas, Rect src, Rect dst, Paint paint) {
-        Intrinsics3.checkNotNullParameter(canvas, "canvas");
-        Intrinsics3.checkNotNullParameter(dst, "dst");
-        Intrinsics3.checkNotNullParameter(paint, "paint");
+        C12238m.checkNotNullParameter(canvas, "canvas");
+        C12238m.checkNotNullParameter(dst, "dst");
+        C12238m.checkNotNullParameter(paint, "paint");
         Trace.beginSection("Apng#draw");
         ApngDecoderJni.draw(this.id, frameIndex, this.bitmap);
         Trace.endSection();
@@ -223,7 +223,7 @@ public final class Apng {
 
     public final Bitmap.Config getConfig() {
         Bitmap.Config config = this.bitmap.getConfig();
-        Intrinsics3.checkNotNullExpressionValue(config, "bitmap.config");
+        C12238m.checkNotNullExpressionValue(config, "bitmap.config");
         return config;
     }
 

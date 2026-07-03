@@ -1,6 +1,6 @@
 package com.discord.widgets.chat.list.entries;
 
-import b.d.b.a.outline;
+import p007b.p100d.p104b.p105a.C1643a;
 
 /* JADX INFO: compiled from: SearchResultCountEntry.kt */
 /* JADX INFO: loaded from: classes2.dex */
@@ -55,6 +55,6 @@ public final /* data */ class SearchResultCountEntry extends ChatListEntry {
     }
 
     public String toString() {
-        return outline.B(outline.U("SearchResultCountEntry(totalResults="), this.totalResults, ")");
+        return C1643a.m814B(C1643a.m833U("SearchResultCountEntry(totalResults="), this.totalResults, ")");
     }
 }

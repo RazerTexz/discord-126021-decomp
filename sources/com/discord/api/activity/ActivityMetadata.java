@@ -1,8 +1,8 @@
 package com.discord.api.activity;
 
-import b.d.b.a.outline;
-import d0.z.d.Intrinsics3;
 import java.util.List;
+import p007b.p100d.p104b.p105a.C1643a;
+import p507d0.p592z.p594d.C12238m;
 
 /* JADX INFO: compiled from: ActivityMetadata.kt */
 /* JADX INFO: loaded from: classes.dex */
@@ -17,7 +17,8 @@ public final /* data */ class ActivityMetadata {
         return this.albumId;
     }
 
-    public final List<String> b() {
+    /* JADX INFO: renamed from: b */
+    public final List<String> m7557b() {
         return this.buttonUrls;
     }
 
@@ -29,7 +30,7 @@ public final /* data */ class ActivityMetadata {
             return false;
         }
         ActivityMetadata activityMetadata = (ActivityMetadata) other;
-        return Intrinsics3.areEqual(this.contextUri, activityMetadata.contextUri) && Intrinsics3.areEqual(this.albumId, activityMetadata.albumId) && Intrinsics3.areEqual(this.artistIds, activityMetadata.artistIds) && Intrinsics3.areEqual(this.buttonUrls, activityMetadata.buttonUrls);
+        return C12238m.areEqual(this.contextUri, activityMetadata.contextUri) && C12238m.areEqual(this.albumId, activityMetadata.albumId) && C12238m.areEqual(this.artistIds, activityMetadata.artistIds) && C12238m.areEqual(this.buttonUrls, activityMetadata.buttonUrls);
     }
 
     public int hashCode() {
@@ -44,13 +45,13 @@ public final /* data */ class ActivityMetadata {
     }
 
     public String toString() {
-        StringBuilder sbU = outline.U("ActivityMetadata(contextUri=");
-        sbU.append(this.contextUri);
-        sbU.append(", albumId=");
-        sbU.append(this.albumId);
-        sbU.append(", artistIds=");
-        sbU.append(this.artistIds);
-        sbU.append(", buttonUrls=");
-        return outline.L(sbU, this.buttonUrls, ")");
+        StringBuilder sbM833U = C1643a.m833U("ActivityMetadata(contextUri=");
+        sbM833U.append(this.contextUri);
+        sbM833U.append(", albumId=");
+        sbM833U.append(this.albumId);
+        sbM833U.append(", artistIds=");
+        sbM833U.append(this.artistIds);
+        sbM833U.append(", buttonUrls=");
+        return C1643a.m824L(sbM833U, this.buttonUrls, ")");
     }
 }

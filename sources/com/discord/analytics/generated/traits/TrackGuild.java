@@ -1,7 +1,7 @@
 package com.discord.analytics.generated.traits;
 
-import b.d.b.a.outline;
-import d0.z.d.Intrinsics3;
+import p007b.p100d.p104b.p105a.C1643a;
+import p507d0.p592z.p594d.C12238m;
 
 /* JADX INFO: compiled from: TrackGuild.kt */
 /* JADX INFO: loaded from: classes.dex */
@@ -38,7 +38,8 @@ public final /* data */ class TrackGuild {
         this.isOwner = bool3;
     }
 
-    public static TrackGuild a(TrackGuild trackGuild, Long l, Long l2, Long l3, Long l4, Long l5, Long l6, Long l7, Long l8, Boolean bool, Boolean bool2, Long l9, Boolean bool3, int i) {
+    /* JADX INFO: renamed from: a */
+    public static TrackGuild m7530a(TrackGuild trackGuild, Long l, Long l2, Long l3, Long l4, Long l5, Long l6, Long l7, Long l8, Boolean bool, Boolean bool2, Long l9, Boolean bool3, int i) {
         return new TrackGuild((i & 1) != 0 ? trackGuild.guildId : null, (i & 2) != 0 ? trackGuild.guildSizeTotal : null, (i & 4) != 0 ? trackGuild.guildMemberNumRoles : null, (i & 8) != 0 ? trackGuild.guildMemberPerms : null, (i & 16) != 0 ? trackGuild.guildNumChannels : null, (i & 32) != 0 ? trackGuild.guildNumTextChannels : null, (i & 64) != 0 ? trackGuild.guildNumVoiceChannels : null, (i & 128) != 0 ? trackGuild.guildNumRoles : null, (i & 256) != 0 ? trackGuild.guildIsVip : null, (i & 512) != 0 ? trackGuild.isMember : bool2, (i & 1024) != 0 ? trackGuild.numVoiceChannelsActive : null, (i & 2048) != 0 ? trackGuild.isOwner : bool3);
     }
 
@@ -55,7 +56,7 @@ public final /* data */ class TrackGuild {
             return false;
         }
         TrackGuild trackGuild = (TrackGuild) other;
-        return Intrinsics3.areEqual(this.guildId, trackGuild.guildId) && Intrinsics3.areEqual(this.guildSizeTotal, trackGuild.guildSizeTotal) && Intrinsics3.areEqual(this.guildMemberNumRoles, trackGuild.guildMemberNumRoles) && Intrinsics3.areEqual(this.guildMemberPerms, trackGuild.guildMemberPerms) && Intrinsics3.areEqual(this.guildNumChannels, trackGuild.guildNumChannels) && Intrinsics3.areEqual(this.guildNumTextChannels, trackGuild.guildNumTextChannels) && Intrinsics3.areEqual(this.guildNumVoiceChannels, trackGuild.guildNumVoiceChannels) && Intrinsics3.areEqual(this.guildNumRoles, trackGuild.guildNumRoles) && Intrinsics3.areEqual(this.guildIsVip, trackGuild.guildIsVip) && Intrinsics3.areEqual(this.isMember, trackGuild.isMember) && Intrinsics3.areEqual(this.numVoiceChannelsActive, trackGuild.numVoiceChannelsActive) && Intrinsics3.areEqual(this.isOwner, trackGuild.isOwner);
+        return C12238m.areEqual(this.guildId, trackGuild.guildId) && C12238m.areEqual(this.guildSizeTotal, trackGuild.guildSizeTotal) && C12238m.areEqual(this.guildMemberNumRoles, trackGuild.guildMemberNumRoles) && C12238m.areEqual(this.guildMemberPerms, trackGuild.guildMemberPerms) && C12238m.areEqual(this.guildNumChannels, trackGuild.guildNumChannels) && C12238m.areEqual(this.guildNumTextChannels, trackGuild.guildNumTextChannels) && C12238m.areEqual(this.guildNumVoiceChannels, trackGuild.guildNumVoiceChannels) && C12238m.areEqual(this.guildNumRoles, trackGuild.guildNumRoles) && C12238m.areEqual(this.guildIsVip, trackGuild.guildIsVip) && C12238m.areEqual(this.isMember, trackGuild.isMember) && C12238m.areEqual(this.numVoiceChannelsActive, trackGuild.numVoiceChannelsActive) && C12238m.areEqual(this.isOwner, trackGuild.isOwner);
     }
 
     public int hashCode() {
@@ -86,30 +87,30 @@ public final /* data */ class TrackGuild {
     }
 
     public String toString() {
-        StringBuilder sbU = outline.U("TrackGuild(guildId=");
-        sbU.append(this.guildId);
-        sbU.append(", guildSizeTotal=");
-        sbU.append(this.guildSizeTotal);
-        sbU.append(", guildMemberNumRoles=");
-        sbU.append(this.guildMemberNumRoles);
-        sbU.append(", guildMemberPerms=");
-        sbU.append(this.guildMemberPerms);
-        sbU.append(", guildNumChannels=");
-        sbU.append(this.guildNumChannels);
-        sbU.append(", guildNumTextChannels=");
-        sbU.append(this.guildNumTextChannels);
-        sbU.append(", guildNumVoiceChannels=");
-        sbU.append(this.guildNumVoiceChannels);
-        sbU.append(", guildNumRoles=");
-        sbU.append(this.guildNumRoles);
-        sbU.append(", guildIsVip=");
-        sbU.append(this.guildIsVip);
-        sbU.append(", isMember=");
-        sbU.append(this.isMember);
-        sbU.append(", numVoiceChannelsActive=");
-        sbU.append(this.numVoiceChannelsActive);
-        sbU.append(", isOwner=");
-        return outline.D(sbU, this.isOwner, ")");
+        StringBuilder sbM833U = C1643a.m833U("TrackGuild(guildId=");
+        sbM833U.append(this.guildId);
+        sbM833U.append(", guildSizeTotal=");
+        sbM833U.append(this.guildSizeTotal);
+        sbM833U.append(", guildMemberNumRoles=");
+        sbM833U.append(this.guildMemberNumRoles);
+        sbM833U.append(", guildMemberPerms=");
+        sbM833U.append(this.guildMemberPerms);
+        sbM833U.append(", guildNumChannels=");
+        sbM833U.append(this.guildNumChannels);
+        sbM833U.append(", guildNumTextChannels=");
+        sbM833U.append(this.guildNumTextChannels);
+        sbM833U.append(", guildNumVoiceChannels=");
+        sbM833U.append(this.guildNumVoiceChannels);
+        sbM833U.append(", guildNumRoles=");
+        sbM833U.append(this.guildNumRoles);
+        sbM833U.append(", guildIsVip=");
+        sbM833U.append(this.guildIsVip);
+        sbM833U.append(", isMember=");
+        sbM833U.append(this.isMember);
+        sbM833U.append(", numVoiceChannelsActive=");
+        sbM833U.append(this.numVoiceChannelsActive);
+        sbM833U.append(", isOwner=");
+        return C1643a.m816D(sbM833U, this.isOwner, ")");
     }
 
     /* JADX WARN: 'this' call moved to the top of the method (can break code semantics) */

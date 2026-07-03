@@ -1,13 +1,13 @@
 package com.discord.api.guildmember;
 
-import b.d.b.a.outline;
 import com.discord.api.presence.Presence;
 import com.discord.api.user.User;
 import com.discord.api.utcdatetime.UtcDateTime;
 import com.discord.models.domain.ModelAuditLogEntry;
-import d0.z.d.Intrinsics3;
 import java.util.List;
 import java.util.Objects;
+import p007b.p100d.p104b.p105a.C1643a;
+import p507d0.p592z.p594d.C12238m;
 
 /* JADX INFO: compiled from: GuildMember.kt */
 /* JADX INFO: loaded from: classes.dex */
@@ -27,8 +27,8 @@ public final /* data */ class GuildMember {
     private final Long userId;
 
     public GuildMember(long j, User user, List<Long> list, String str, String str2, UtcDateTime utcDateTime, boolean z2, Presence presence, Long l, String str3, String str4, String str5, UtcDateTime utcDateTime2) {
-        Intrinsics3.checkNotNullParameter(user, "user");
-        Intrinsics3.checkNotNullParameter(list, "roles");
+        C12238m.checkNotNullParameter(user, "user");
+        C12238m.checkNotNullParameter(list, "roles");
         this.guildId = j;
         this.user = user;
         this.roles = list;
@@ -44,7 +44,8 @@ public final /* data */ class GuildMember {
         this.communicationDisabledUntil = utcDateTime2;
     }
 
-    public static GuildMember a(GuildMember guildMember, long j, User user, List list, String str, String str2, UtcDateTime utcDateTime, boolean z2, Presence presence, Long l, String str3, String str4, String str5, UtcDateTime utcDateTime2, int i) {
+    /* JADX INFO: renamed from: a */
+    public static GuildMember m7915a(GuildMember guildMember, long j, User user, List list, String str, String str2, UtcDateTime utcDateTime, boolean z2, Presence presence, Long l, String str3, String str4, String str5, UtcDateTime utcDateTime2, int i) {
         long j2 = (i & 1) != 0 ? guildMember.guildId : j;
         User user2 = (i & 2) != 0 ? guildMember.user : user;
         List<Long> list2 = (i & 4) != 0 ? guildMember.roles : null;
@@ -59,8 +60,8 @@ public final /* data */ class GuildMember {
         String str10 = (i & 2048) != 0 ? guildMember.banner : str5;
         UtcDateTime utcDateTime4 = (i & 4096) != 0 ? guildMember.communicationDisabledUntil : null;
         Objects.requireNonNull(guildMember);
-        Intrinsics3.checkNotNullParameter(user2, "user");
-        Intrinsics3.checkNotNullParameter(list2, "roles");
+        C12238m.checkNotNullParameter(user2, "user");
+        C12238m.checkNotNullParameter(list2, "roles");
         return new GuildMember(j2, user2, list2, str6, str7, utcDateTime3, z3, presence2, l2, str8, str9, str10, utcDateTime4);
     }
 
@@ -92,7 +93,7 @@ public final /* data */ class GuildMember {
             return false;
         }
         GuildMember guildMember = (GuildMember) other;
-        return this.guildId == guildMember.guildId && Intrinsics3.areEqual(this.user, guildMember.user) && Intrinsics3.areEqual(this.roles, guildMember.roles) && Intrinsics3.areEqual(this.nick, guildMember.nick) && Intrinsics3.areEqual(this.premiumSince, guildMember.premiumSince) && Intrinsics3.areEqual(this.joinedAt, guildMember.joinedAt) && this.pending == guildMember.pending && Intrinsics3.areEqual(this.presence, guildMember.presence) && Intrinsics3.areEqual(this.userId, guildMember.userId) && Intrinsics3.areEqual(this.avatar, guildMember.avatar) && Intrinsics3.areEqual(this.bio, guildMember.bio) && Intrinsics3.areEqual(this.banner, guildMember.banner) && Intrinsics3.areEqual(this.communicationDisabledUntil, guildMember.communicationDisabledUntil);
+        return this.guildId == guildMember.guildId && C12238m.areEqual(this.user, guildMember.user) && C12238m.areEqual(this.roles, guildMember.roles) && C12238m.areEqual(this.nick, guildMember.nick) && C12238m.areEqual(this.premiumSince, guildMember.premiumSince) && C12238m.areEqual(this.joinedAt, guildMember.joinedAt) && this.pending == guildMember.pending && C12238m.areEqual(this.presence, guildMember.presence) && C12238m.areEqual(this.userId, guildMember.userId) && C12238m.areEqual(this.avatar, guildMember.avatar) && C12238m.areEqual(this.bio, guildMember.bio) && C12238m.areEqual(this.banner, guildMember.banner) && C12238m.areEqual(this.communicationDisabledUntil, guildMember.communicationDisabledUntil);
     }
 
     /* JADX INFO: renamed from: f, reason: from getter */
@@ -163,7 +164,8 @@ public final /* data */ class GuildMember {
         return this.presence;
     }
 
-    public final List<Long> l() {
+    /* JADX INFO: renamed from: l */
+    public final List<Long> m7926l() {
         return this.roles;
     }
 
@@ -178,34 +180,34 @@ public final /* data */ class GuildMember {
     }
 
     public String toString() {
-        StringBuilder sbU = outline.U("GuildMember(guildId=");
-        sbU.append(this.guildId);
-        sbU.append(", user=");
-        sbU.append(this.user);
-        sbU.append(", roles=");
-        sbU.append(this.roles);
-        sbU.append(", nick=");
-        sbU.append(this.nick);
-        sbU.append(", premiumSince=");
-        sbU.append(this.premiumSince);
-        sbU.append(", joinedAt=");
-        sbU.append(this.joinedAt);
-        sbU.append(", pending=");
-        sbU.append(this.pending);
-        sbU.append(", presence=");
-        sbU.append(this.presence);
-        sbU.append(", userId=");
-        sbU.append(this.userId);
-        sbU.append(", avatar=");
-        sbU.append(this.avatar);
-        sbU.append(", bio=");
-        sbU.append(this.bio);
-        sbU.append(", banner=");
-        sbU.append(this.banner);
-        sbU.append(", communicationDisabledUntil=");
-        sbU.append(this.communicationDisabledUntil);
-        sbU.append(")");
-        return sbU.toString();
+        StringBuilder sbM833U = C1643a.m833U("GuildMember(guildId=");
+        sbM833U.append(this.guildId);
+        sbM833U.append(", user=");
+        sbM833U.append(this.user);
+        sbM833U.append(", roles=");
+        sbM833U.append(this.roles);
+        sbM833U.append(", nick=");
+        sbM833U.append(this.nick);
+        sbM833U.append(", premiumSince=");
+        sbM833U.append(this.premiumSince);
+        sbM833U.append(", joinedAt=");
+        sbM833U.append(this.joinedAt);
+        sbM833U.append(", pending=");
+        sbM833U.append(this.pending);
+        sbM833U.append(", presence=");
+        sbM833U.append(this.presence);
+        sbM833U.append(", userId=");
+        sbM833U.append(this.userId);
+        sbM833U.append(", avatar=");
+        sbM833U.append(this.avatar);
+        sbM833U.append(", bio=");
+        sbM833U.append(this.bio);
+        sbM833U.append(", banner=");
+        sbM833U.append(this.banner);
+        sbM833U.append(", communicationDisabledUntil=");
+        sbM833U.append(this.communicationDisabledUntil);
+        sbM833U.append(")");
+        return sbM833U.toString();
     }
 
     /* JADX WARN: 'this' call moved to the top of the method (can break code semantics) */

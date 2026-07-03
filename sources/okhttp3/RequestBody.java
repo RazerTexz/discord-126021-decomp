@@ -1,10 +1,5 @@
 package okhttp3;
 
-import d0.g0.Charsets2;
-import d0.z.d.Intrinsics3;
-import f0.RequestBody2;
-import f0.RequestBody3;
-import f0.e0.Util7;
 import java.io.File;
 import java.io.IOException;
 import java.nio.charset.Charset;
@@ -14,6 +9,11 @@ import kotlin.jvm.internal.DefaultConstructorMarker;
 import okhttp3.MediaType;
 import okio.BufferedSink;
 import okio.ByteString;
+import p507d0.p579g0.C12086c;
+import p507d0.p592z.p594d.C12238m;
+import p600f0.C12262a0;
+import p600f0.C12382z;
+import p600f0.p601e0.C12272c;
 
 /* JADX INFO: compiled from: RequestBody.kt */
 /* JADX INFO: loaded from: classes3.dex */
@@ -25,43 +25,51 @@ public abstract class RequestBody {
     /* JADX INFO: compiled from: RequestBody.kt */
     public static final class Companion {
 
+        /* JADX INFO: renamed from: okhttp3.RequestBody$Companion$a */
         /* JADX INFO: compiled from: RequestBody.kt */
-        public static final class a extends RequestBody {
-            public final /* synthetic */ byte[] a;
+        public static final class C12936a extends RequestBody {
 
-            /* JADX INFO: renamed from: b, reason: collision with root package name */
-            public final /* synthetic */ MediaType f3814b;
-            public final /* synthetic */ int c;
-            public final /* synthetic */ int d;
+            /* JADX INFO: renamed from: a */
+            public final /* synthetic */ byte[] f27548a;
 
-            public a(byte[] bArr, MediaType mediaType, int i, int i2) {
-                this.a = bArr;
-                this.f3814b = mediaType;
-                this.c = i;
-                this.d = i2;
+            /* JADX INFO: renamed from: b */
+            public final /* synthetic */ MediaType f27549b;
+
+            /* JADX INFO: renamed from: c */
+            public final /* synthetic */ int f27550c;
+
+            /* JADX INFO: renamed from: d */
+            public final /* synthetic */ int f27551d;
+
+            public C12936a(byte[] bArr, MediaType mediaType, int i, int i2) {
+                this.f27548a = bArr;
+                this.f27549b = mediaType;
+                this.f27550c = i;
+                this.f27551d = i2;
             }
 
             @Override // okhttp3.RequestBody
             public long contentLength() {
-                return this.c;
+                return this.f27550c;
             }
 
             @Override // okhttp3.RequestBody
             public MediaType contentType() {
-                return this.f3814b;
+                return this.f27549b;
             }
 
             @Override // okhttp3.RequestBody
             public void writeTo(BufferedSink bufferedSink) throws IOException {
-                Intrinsics3.checkParameterIsNotNull(bufferedSink, "sink");
-                bufferedSink.write(this.a, this.d, this.c);
+                C12238m.checkParameterIsNotNull(bufferedSink, "sink");
+                bufferedSink.write(this.f27548a, this.f27551d, this.f27550c);
             }
         }
 
         public Companion() {
         }
 
-        public static RequestBody c(Companion companion, MediaType mediaType, byte[] bArr, int i, int i2, int i3) {
+        /* JADX INFO: renamed from: c */
+        public static RequestBody m10985c(Companion companion, MediaType mediaType, byte[] bArr, int i, int i2, int i3) {
             if ((i3 & 4) != 0) {
                 i = 0;
             }
@@ -69,11 +77,12 @@ public abstract class RequestBody {
                 i2 = bArr.length;
             }
             Objects.requireNonNull(companion);
-            Intrinsics3.checkParameterIsNotNull(bArr, "content");
-            return companion.b(bArr, mediaType, i, i2);
+            C12238m.checkParameterIsNotNull(bArr, "content");
+            return companion.m10988b(bArr, mediaType, i, i2);
         }
 
-        public static /* synthetic */ RequestBody d(Companion companion, byte[] bArr, MediaType mediaType, int i, int i2, int i3) {
+        /* JADX INFO: renamed from: d */
+        public static /* synthetic */ RequestBody m10986d(Companion companion, byte[] bArr, MediaType mediaType, int i, int i2, int i3) {
             if ((i3 & 1) != 0) {
                 mediaType = null;
             }
@@ -83,31 +92,33 @@ public abstract class RequestBody {
             if ((i3 & 4) != 0) {
                 i2 = bArr.length;
             }
-            return companion.b(bArr, mediaType, i, i2);
+            return companion.m10988b(bArr, mediaType, i, i2);
         }
 
-        public final RequestBody a(String str, MediaType mediaType) {
-            Intrinsics3.checkParameterIsNotNull(str, "$this$toRequestBody");
-            Charset charset = Charsets2.a;
+        /* JADX INFO: renamed from: a */
+        public final RequestBody m10987a(String str, MediaType mediaType) {
+            C12238m.checkParameterIsNotNull(str, "$this$toRequestBody");
+            Charset charset = C12086c.f25136a;
             if (mediaType != null) {
-                Pattern pattern = MediaType.a;
-                Charset charsetA = mediaType.a(null);
-                if (charsetA == null) {
-                    MediaType.Companion aVar = MediaType.INSTANCE;
-                    mediaType = MediaType.Companion.b(mediaType + "; charset=utf-8");
+                Pattern pattern = MediaType.f27514a;
+                Charset charsetM10966a = mediaType.m10966a(null);
+                if (charsetM10966a == null) {
+                    MediaType.Companion c12932a = MediaType.INSTANCE;
+                    mediaType = MediaType.Companion.m10968b(mediaType + "; charset=utf-8");
                 } else {
-                    charset = charsetA;
+                    charset = charsetM10966a;
                 }
             }
             byte[] bytes = str.getBytes(charset);
-            Intrinsics3.checkExpressionValueIsNotNull(bytes, "(this as java.lang.String).getBytes(charset)");
-            return b(bytes, mediaType, 0, bytes.length);
+            C12238m.checkExpressionValueIsNotNull(bytes, "(this as java.lang.String).getBytes(charset)");
+            return m10988b(bytes, mediaType, 0, bytes.length);
         }
 
-        public final RequestBody b(byte[] bArr, MediaType mediaType, int i, int i2) {
-            Intrinsics3.checkParameterIsNotNull(bArr, "$this$toRequestBody");
-            Util7.c(bArr.length, i, i2);
-            return new a(bArr, mediaType, i2, i);
+        /* JADX INFO: renamed from: b */
+        public final RequestBody m10988b(byte[] bArr, MediaType mediaType, int i, int i2) {
+            C12238m.checkParameterIsNotNull(bArr, "$this$toRequestBody");
+            C12272c.m10122c(bArr.length, i, i2);
+            return new C12936a(bArr, mediaType, i2, i);
         }
 
         public Companion(DefaultConstructorMarker defaultConstructorMarker) {
@@ -116,36 +127,36 @@ public abstract class RequestBody {
 
     public static final RequestBody create(File file, MediaType mediaType) {
         Objects.requireNonNull(INSTANCE);
-        Intrinsics3.checkParameterIsNotNull(file, "$this$asRequestBody");
-        return new RequestBody3(file, mediaType);
+        C12238m.checkParameterIsNotNull(file, "$this$asRequestBody");
+        return new C12382z(file, mediaType);
     }
 
     public static final RequestBody create(String str, MediaType mediaType) {
-        return INSTANCE.a(str, mediaType);
+        return INSTANCE.m10987a(str, mediaType);
     }
 
     public static final RequestBody create(MediaType mediaType, byte[] bArr) {
-        return Companion.c(INSTANCE, mediaType, bArr, 0, 0, 12);
+        return Companion.m10985c(INSTANCE, mediaType, bArr, 0, 0, 12);
     }
 
     public static final RequestBody create(MediaType mediaType, byte[] bArr, int i) {
-        return Companion.c(INSTANCE, mediaType, bArr, i, 0, 8);
+        return Companion.m10985c(INSTANCE, mediaType, bArr, i, 0, 8);
     }
 
     public static final RequestBody create(byte[] bArr) {
-        return Companion.d(INSTANCE, bArr, null, 0, 0, 7);
+        return Companion.m10986d(INSTANCE, bArr, null, 0, 0, 7);
     }
 
     public static final RequestBody create(byte[] bArr, MediaType mediaType) {
-        return Companion.d(INSTANCE, bArr, mediaType, 0, 0, 6);
+        return Companion.m10986d(INSTANCE, bArr, mediaType, 0, 0, 6);
     }
 
     public static final RequestBody create(byte[] bArr, MediaType mediaType, int i) {
-        return Companion.d(INSTANCE, bArr, mediaType, i, 0, 4);
+        return Companion.m10986d(INSTANCE, bArr, mediaType, i, 0, 4);
     }
 
     public static final RequestBody create(byte[] bArr, MediaType mediaType, int i, int i2) {
-        return INSTANCE.b(bArr, mediaType, i, i2);
+        return INSTANCE.m10988b(bArr, mediaType, i, i2);
     }
 
     public long contentLength() throws IOException {
@@ -166,35 +177,35 @@ public abstract class RequestBody {
 
     public static final RequestBody create(MediaType mediaType, File file) {
         Objects.requireNonNull(INSTANCE);
-        Intrinsics3.checkParameterIsNotNull(file, "file");
-        Intrinsics3.checkParameterIsNotNull(file, "$this$asRequestBody");
-        return new RequestBody3(file, mediaType);
+        C12238m.checkParameterIsNotNull(file, "file");
+        C12238m.checkParameterIsNotNull(file, "$this$asRequestBody");
+        return new C12382z(file, mediaType);
     }
 
     public static final RequestBody create(MediaType mediaType, String str) {
         Companion companion = INSTANCE;
         Objects.requireNonNull(companion);
-        Intrinsics3.checkParameterIsNotNull(str, "content");
-        return companion.a(str, mediaType);
+        C12238m.checkParameterIsNotNull(str, "content");
+        return companion.m10987a(str, mediaType);
     }
 
     public static final RequestBody create(MediaType mediaType, ByteString byteString) {
         Objects.requireNonNull(INSTANCE);
-        Intrinsics3.checkParameterIsNotNull(byteString, "content");
-        Intrinsics3.checkParameterIsNotNull(byteString, "$this$toRequestBody");
-        return new RequestBody2(byteString, mediaType);
+        C12238m.checkParameterIsNotNull(byteString, "content");
+        C12238m.checkParameterIsNotNull(byteString, "$this$toRequestBody");
+        return new C12262a0(byteString, mediaType);
     }
 
     public static final RequestBody create(MediaType mediaType, byte[] bArr, int i, int i2) {
         Companion companion = INSTANCE;
         Objects.requireNonNull(companion);
-        Intrinsics3.checkParameterIsNotNull(bArr, "content");
-        return companion.b(bArr, mediaType, i, i2);
+        C12238m.checkParameterIsNotNull(bArr, "content");
+        return companion.m10988b(bArr, mediaType, i, i2);
     }
 
     public static final RequestBody create(ByteString byteString, MediaType mediaType) {
         Objects.requireNonNull(INSTANCE);
-        Intrinsics3.checkParameterIsNotNull(byteString, "$this$toRequestBody");
-        return new RequestBody2(byteString, mediaType);
+        C12238m.checkParameterIsNotNull(byteString, "$this$toRequestBody");
+        return new C12262a0(byteString, mediaType);
     }
 }

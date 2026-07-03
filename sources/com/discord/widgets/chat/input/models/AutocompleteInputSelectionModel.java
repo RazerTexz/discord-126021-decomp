@@ -1,17 +1,17 @@
 package com.discord.widgets.chat.input.models;
 
-import b.d.b.a.outline;
 import com.discord.api.sticker.Sticker;
 import com.discord.models.commands.ApplicationCommandOption;
-import com.discord.widgets.chat.AutocompleteUtils2;
+import com.discord.widgets.chat.AutocompleteTypes;
 import com.discord.widgets.chat.input.autocomplete.Autocompletable;
 import com.discord.widgets.chat.input.autocomplete.EmojiAutocompletable;
 import com.discord.widgets.chat.input.autocomplete.LeadingIdentifier;
-import d0.z.d.Intrinsics3;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+import p007b.p100d.p104b.p105a.C1643a;
+import p507d0.p592z.p594d.C12238m;
 
 /* JADX INFO: compiled from: AutocompleteInputSelectionModel.kt */
 /* JADX INFO: loaded from: classes2.dex */
@@ -38,10 +38,10 @@ public final /* data */ class AutocompleteInputSelectionModel {
 
     /* JADX WARN: Multi-variable type inference failed */
     public AutocompleteInputSelectionModel(MentionToken mentionToken, Map<LeadingIdentifier, ? extends List<? extends Autocompletable>> map, InputSelectionModel inputSelectionModel, Set<ApplicationCommandOption> set, List<Sticker> list) {
-        Intrinsics3.checkNotNullParameter(map, "filteredAutocompletables");
-        Intrinsics3.checkNotNullParameter(inputSelectionModel, "inputSelectionModel");
-        Intrinsics3.checkNotNullParameter(set, "showErrorsForOptions");
-        Intrinsics3.checkNotNullParameter(list, "stickerMatches");
+        C12238m.checkNotNullParameter(map, "filteredAutocompletables");
+        C12238m.checkNotNullParameter(inputSelectionModel, "inputSelectionModel");
+        C12238m.checkNotNullParameter(set, "showErrorsForOptions");
+        C12238m.checkNotNullParameter(list, "stickerMatches");
         this.autocompleteToken = mentionToken;
         this.filteredAutocompletables = map;
         this.inputSelectionModel = inputSelectionModel;
@@ -95,10 +95,10 @@ public final /* data */ class AutocompleteInputSelectionModel {
     }
 
     public final AutocompleteInputSelectionModel copy(MentionToken autocompleteToken, Map<LeadingIdentifier, ? extends List<? extends Autocompletable>> filteredAutocompletables, InputSelectionModel inputSelectionModel, Set<ApplicationCommandOption> showErrorsForOptions, List<Sticker> stickerMatches) {
-        Intrinsics3.checkNotNullParameter(filteredAutocompletables, "filteredAutocompletables");
-        Intrinsics3.checkNotNullParameter(inputSelectionModel, "inputSelectionModel");
-        Intrinsics3.checkNotNullParameter(showErrorsForOptions, "showErrorsForOptions");
-        Intrinsics3.checkNotNullParameter(stickerMatches, "stickerMatches");
+        C12238m.checkNotNullParameter(filteredAutocompletables, "filteredAutocompletables");
+        C12238m.checkNotNullParameter(inputSelectionModel, "inputSelectionModel");
+        C12238m.checkNotNullParameter(showErrorsForOptions, "showErrorsForOptions");
+        C12238m.checkNotNullParameter(stickerMatches, "stickerMatches");
         return new AutocompleteInputSelectionModel(autocompleteToken, filteredAutocompletables, inputSelectionModel, showErrorsForOptions, stickerMatches);
     }
 
@@ -110,7 +110,7 @@ public final /* data */ class AutocompleteInputSelectionModel {
             return false;
         }
         AutocompleteInputSelectionModel autocompleteInputSelectionModel = (AutocompleteInputSelectionModel) other;
-        return Intrinsics3.areEqual(this.autocompleteToken, autocompleteInputSelectionModel.autocompleteToken) && Intrinsics3.areEqual(this.filteredAutocompletables, autocompleteInputSelectionModel.filteredAutocompletables) && Intrinsics3.areEqual(this.inputSelectionModel, autocompleteInputSelectionModel.inputSelectionModel) && Intrinsics3.areEqual(this.showErrorsForOptions, autocompleteInputSelectionModel.showErrorsForOptions) && Intrinsics3.areEqual(this.stickerMatches, autocompleteInputSelectionModel.stickerMatches);
+        return C12238m.areEqual(this.autocompleteToken, autocompleteInputSelectionModel.autocompleteToken) && C12238m.areEqual(this.filteredAutocompletables, autocompleteInputSelectionModel.filteredAutocompletables) && C12238m.areEqual(this.inputSelectionModel, autocompleteInputSelectionModel.inputSelectionModel) && C12238m.areEqual(this.showErrorsForOptions, autocompleteInputSelectionModel.showErrorsForOptions) && C12238m.areEqual(this.stickerMatches, autocompleteInputSelectionModel.stickerMatches);
     }
 
     public final MentionToken getAutocompleteToken() {
@@ -123,16 +123,16 @@ public final /* data */ class AutocompleteInputSelectionModel {
         if (leadingIdentifier != null) {
             int iOrdinal = leadingIdentifier.ordinal();
             if (iOrdinal == 0) {
-                return AutocompleteUtils2.COMMANDS;
+                return AutocompleteTypes.COMMANDS;
             }
             if (iOrdinal == 1) {
-                return AutocompleteUtils2.EMOJIS_AND_STICKERS;
+                return AutocompleteTypes.EMOJIS_AND_STICKERS;
             }
             if (iOrdinal == 2) {
-                return AutocompleteUtils2.CHANNELS;
+                return AutocompleteTypes.CHANNELS;
             }
             if (iOrdinal == 3) {
-                return AutocompleteUtils2.MENTIONS;
+                return AutocompleteTypes.MENTIONS;
             }
         }
         return "CHOICE";
@@ -186,15 +186,15 @@ public final /* data */ class AutocompleteInputSelectionModel {
     }
 
     public String toString() {
-        StringBuilder sbU = outline.U("AutocompleteInputSelectionModel(autocompleteToken=");
-        sbU.append(this.autocompleteToken);
-        sbU.append(", filteredAutocompletables=");
-        sbU.append(this.filteredAutocompletables);
-        sbU.append(", inputSelectionModel=");
-        sbU.append(this.inputSelectionModel);
-        sbU.append(", showErrorsForOptions=");
-        sbU.append(this.showErrorsForOptions);
-        sbU.append(", stickerMatches=");
-        return outline.L(sbU, this.stickerMatches, ")");
+        StringBuilder sbM833U = C1643a.m833U("AutocompleteInputSelectionModel(autocompleteToken=");
+        sbM833U.append(this.autocompleteToken);
+        sbM833U.append(", filteredAutocompletables=");
+        sbM833U.append(this.filteredAutocompletables);
+        sbM833U.append(", inputSelectionModel=");
+        sbM833U.append(this.inputSelectionModel);
+        sbM833U.append(", showErrorsForOptions=");
+        sbM833U.append(this.showErrorsForOptions);
+        sbM833U.append(", stickerMatches=");
+        return C1643a.m824L(sbM833U, this.stickerMatches, ")");
     }
 }

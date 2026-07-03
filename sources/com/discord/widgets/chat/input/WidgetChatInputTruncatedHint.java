@@ -3,12 +3,12 @@ package com.discord.widgets.chat.input;
 import android.text.Editable;
 import android.text.TextUtils;
 import com.discord.app.AppFragment;
-import com.discord.utilities.view.text.TextWatcher4;
+import com.discord.utilities.view.text.TextWatcherKt;
 import com.lytefast.flexinput.widget.FlexEditText;
-import d0.z.d.Intrinsics3;
-import d0.z.d.Lambda;
 import kotlin.Unit;
 import kotlin.jvm.functions.Function1;
+import p507d0.p592z.p594d.AbstractC12240o;
+import p507d0.p592z.p594d.C12238m;
 
 /* JADX INFO: compiled from: WidgetChatInputTruncatedHint.kt */
 /* JADX INFO: loaded from: classes2.dex */
@@ -18,17 +18,17 @@ public final class WidgetChatInputTruncatedHint {
     private boolean hintIsTruncated;
     private int previousMaxLines;
 
-    /* JADX INFO: renamed from: com.discord.widgets.chat.input.WidgetChatInputTruncatedHint$1, reason: invalid class name */
+    /* JADX INFO: renamed from: com.discord.widgets.chat.input.WidgetChatInputTruncatedHint$1 */
     /* JADX INFO: compiled from: WidgetChatInputTruncatedHint.kt */
-    public static final class AnonymousClass1 extends Lambda implements Function1<Integer, Unit> {
-        public AnonymousClass1() {
+    public static final class C77551 extends AbstractC12240o implements Function1<Integer, Unit> {
+        public C77551() {
             super(1);
         }
 
         @Override // kotlin.jvm.functions.Function1
         public /* bridge */ /* synthetic */ Unit invoke(Integer num) {
             invoke(num.intValue());
-            return Unit.a;
+            return Unit.f27425a;
         }
 
         public final void invoke(int i) {
@@ -39,31 +39,31 @@ public final class WidgetChatInputTruncatedHint {
         }
     }
 
-    /* JADX INFO: renamed from: com.discord.widgets.chat.input.WidgetChatInputTruncatedHint$addBindedTextWatcher$1, reason: invalid class name */
+    /* JADX INFO: renamed from: com.discord.widgets.chat.input.WidgetChatInputTruncatedHint$addBindedTextWatcher$1 */
     /* JADX INFO: compiled from: WidgetChatInputTruncatedHint.kt */
-    public static final class AnonymousClass1 extends Lambda implements Function1<Editable, Unit> {
-        public AnonymousClass1() {
+    public static final class C77561 extends AbstractC12240o implements Function1<Editable, Unit> {
+        public C77561() {
             super(1);
         }
 
         @Override // kotlin.jvm.functions.Function1
         public /* bridge */ /* synthetic */ Unit invoke(Editable editable) {
             invoke2(editable);
-            return Unit.a;
+            return Unit.f27425a;
         }
 
         /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
         public final void invoke2(Editable editable) {
-            Intrinsics3.checkNotNullParameter(editable, "it");
+            C12238m.checkNotNullParameter(editable, "it");
             WidgetChatInputTruncatedHint.this.syncHint();
         }
     }
 
     public WidgetChatInputTruncatedHint(FlexEditText flexEditText) {
-        Intrinsics3.checkNotNullParameter(flexEditText, "editText");
+        C12238m.checkNotNullParameter(flexEditText, "editText");
         this.editText = flexEditText;
         this.previousMaxLines = flexEditText.getMaxLines();
-        flexEditText.setOnMaxLinesChangedListener(new AnonymousClass1());
+        flexEditText.setOnMaxLinesChangedListener(new C77551());
     }
 
     private final void syncHint() {
@@ -81,8 +81,8 @@ public final class WidgetChatInputTruncatedHint {
     }
 
     public final void addBindedTextWatcher(AppFragment fragment) {
-        Intrinsics3.checkNotNullParameter(fragment, "fragment");
-        TextWatcher4.addBindedTextWatcher(this.editText, fragment, new AnonymousClass1());
+        C12238m.checkNotNullParameter(fragment, "fragment");
+        TextWatcherKt.addBindedTextWatcher(this.editText, fragment, new C77561());
     }
 
     public final FlexEditText getEditText() {
@@ -90,7 +90,7 @@ public final class WidgetChatInputTruncatedHint {
     }
 
     public final void setHint(CharSequence hint) {
-        Intrinsics3.checkNotNullParameter(hint, "hint");
+        C12238m.checkNotNullParameter(hint, "hint");
         this.hint = hint;
         syncHint();
     }

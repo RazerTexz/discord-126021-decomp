@@ -5,8 +5,8 @@ import android.os.Build;
 import android.view.View;
 import android.view.WindowInsets;
 import android.view.WindowInsetsAnimation;
-import d0.z.d.Intrinsics3;
 import java.util.List;
+import p507d0.p592z.p594d.C12238m;
 
 /* JADX INFO: compiled from: SmoothKeyboardReactionHelper.kt */
 /* JADX INFO: loaded from: classes2.dex */
@@ -21,21 +21,21 @@ public final class SmoothKeyboardReactionHelper {
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
         public Callback(View view) {
             super(0);
-            Intrinsics3.checkNotNullParameter(view, "view");
+            C12238m.checkNotNullParameter(view, "view");
             this.view = view;
         }
 
         @Override // android.view.WindowInsetsAnimation.Callback
         public WindowInsets onProgress(WindowInsets insets, List<WindowInsetsAnimation> runningAnimations) {
-            Intrinsics3.checkNotNullParameter(insets, "insets");
-            Intrinsics3.checkNotNullParameter(runningAnimations, "runningAnimations");
+            C12238m.checkNotNullParameter(insets, "insets");
+            C12238m.checkNotNullParameter(runningAnimations, "runningAnimations");
             return insets;
         }
 
         @Override // android.view.WindowInsetsAnimation.Callback
         public WindowInsetsAnimation.Bounds onStart(WindowInsetsAnimation animation, WindowInsetsAnimation.Bounds bounds) {
-            Intrinsics3.checkNotNullParameter(animation, "animation");
-            Intrinsics3.checkNotNullParameter(bounds, "bounds");
+            C12238m.checkNotNullParameter(animation, "animation");
+            C12238m.checkNotNullParameter(bounds, "bounds");
             if (this.view.getRootWindowInsets().isVisible(WindowInsets.Type.ime())) {
                 this.view.setTranslationY(bounds.getUpperBound().bottom);
             } else {
@@ -43,7 +43,7 @@ public final class SmoothKeyboardReactionHelper {
             }
             this.view.animate().setDuration(animation.getDurationMillis()).setInterpolator(animation.getInterpolator()).translationY(0.0f);
             WindowInsetsAnimation.Bounds boundsOnStart = super.onStart(animation, bounds);
-            Intrinsics3.checkNotNullExpressionValue(boundsOnStart, "super.onStart(animation, bounds)");
+            C12238m.checkNotNullExpressionValue(boundsOnStart, "super.onStart(animation, bounds)");
             return boundsOnStart;
         }
     }
@@ -52,7 +52,7 @@ public final class SmoothKeyboardReactionHelper {
     }
 
     public final void install(View view) {
-        Intrinsics3.checkNotNullParameter(view, "view");
+        C12238m.checkNotNullParameter(view, "view");
         if (Build.VERSION.SDK_INT >= 30) {
             view.setWindowInsetsAnimationCallback(new Callback(view));
         }

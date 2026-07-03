@@ -1,9 +1,6 @@
 package com.discord.widgets.chat.input.sticker;
 
-import a0.a.a.b;
 import androidx.annotation.MainThread;
-import b.a.d.AppViewModel;
-import b.d.b.a.outline;
 import com.discord.api.channel.Channel;
 import com.discord.api.channel.ChannelUtils;
 import com.discord.api.permission.Permission;
@@ -26,25 +23,17 @@ import com.discord.stores.StoreUser;
 import com.discord.stores.StoreUserSettings;
 import com.discord.utilities.error.Error;
 import com.discord.utilities.mg_recycler.MGRecyclerDataPayload;
+import com.discord.utilities.p501rx.ObservableCombineLatestOverloadsKt;
+import com.discord.utilities.p501rx.ObservableExtensionsKt;
 import com.discord.utilities.permissions.PermissionUtils;
-import com.discord.utilities.rx.ObservableCombineLatestOverloads2;
-import com.discord.utilities.rx.ObservableExtensionsKt;
 import com.discord.utilities.stickers.StickerUtils;
 import com.discord.utilities.user.UserUtils;
 import com.discord.widgets.chat.MessageManager;
 import com.discord.widgets.chat.input.expression.ExpressionTrayTab;
-import com.discord.widgets.chat.input.sticker.StickerAdapterItems2;
-import com.discord.widgets.chat.input.sticker.StickerAdapterItems3;
+import com.discord.widgets.chat.input.sticker.HeaderType;
 import com.discord.widgets.chat.input.sticker.StickerCategoryItem;
+import com.discord.widgets.chat.input.sticker.StickerItem;
 import com.discord.widgets.chat.input.sticker.StickerPickerViewModel;
-import d0.g0.Strings4;
-import d0.t.Collections2;
-import d0.t.CollectionsJVM;
-import d0.t.Maps6;
-import d0.t._Collections;
-import d0.z.d.Intrinsics3;
-import d0.z.d.Lambda;
-import j0.k.Func1;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Iterator;
@@ -54,20 +43,31 @@ import java.util.List;
 import java.util.Locale;
 import java.util.Map;
 import java.util.Objects;
-import kotlin.Tuples2;
+import kotlin.Pair;
 import kotlin.Unit;
 import kotlin.jvm.functions.Function0;
 import kotlin.jvm.functions.Function1;
 import kotlin.jvm.functions.Function11;
 import kotlin.jvm.internal.DefaultConstructorMarker;
-import rx.Observable;
-import rx.Subscription;
-import rx.subjects.BehaviorSubject;
-import rx.subjects.PublishSubject;
+import p001a0.p002a.p003a.C0002b;
+import p007b.p008a.p018d.AbstractC0859d0;
+import p007b.p100d.p104b.p105a.C1643a;
+import p507d0.p579g0.C12106w;
+import p507d0.p580t.C12136h0;
+import p507d0.p580t.C12145m;
+import p507d0.p580t.C12147n;
+import p507d0.p580t.C12163u;
+import p507d0.p592z.p594d.AbstractC12240o;
+import p507d0.p592z.p594d.C12238m;
+import p637j0.p641k.InterfaceC12589b;
+import p658rx.Observable;
+import p658rx.Subscription;
+import p658rx.subjects.BehaviorSubject;
+import p658rx.subjects.PublishSubject;
 
 /* JADX INFO: compiled from: StickerPickerViewModel.kt */
 /* JADX INFO: loaded from: classes2.dex */
-public class StickerPickerViewModel extends AppViewModel<ViewState> {
+public class StickerPickerViewModel extends AbstractC0859d0<ViewState> {
 
     /* JADX INFO: renamed from: Companion, reason: from kotlin metadata */
     public static final Companion INSTANCE = new Companion(null);
@@ -85,23 +85,23 @@ public class StickerPickerViewModel extends AppViewModel<ViewState> {
     private final StoreStickers stickersStore;
     private final StoreUser userStore;
 
-    /* JADX INFO: renamed from: com.discord.widgets.chat.input.sticker.StickerPickerViewModel$1, reason: invalid class name */
+    /* JADX INFO: renamed from: com.discord.widgets.chat.input.sticker.StickerPickerViewModel$1 */
     /* JADX INFO: compiled from: StickerPickerViewModel.kt */
-    public static final class AnonymousClass1 extends Lambda implements Function1<StoreState, Unit> {
-        public AnonymousClass1() {
+    public static final class C78941 extends AbstractC12240o implements Function1<StoreState, Unit> {
+        public C78941() {
             super(1);
         }
 
         @Override // kotlin.jvm.functions.Function1
         public /* bridge */ /* synthetic */ Unit invoke(StoreState storeState) {
             invoke2(storeState);
-            return Unit.a;
+            return Unit.f27425a;
         }
 
         /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
         public final void invoke2(StoreState storeState) {
             StickerPickerViewModel stickerPickerViewModel = StickerPickerViewModel.this;
-            Intrinsics3.checkNotNullExpressionValue(storeState, "storeState");
+            C12238m.checkNotNullExpressionValue(storeState, "storeState");
             stickerPickerViewModel.handleStoreState(storeState);
         }
     }
@@ -117,61 +117,61 @@ public class StickerPickerViewModel extends AppViewModel<ViewState> {
                 String name = sticker.getName();
                 Objects.requireNonNull(name, "null cannot be cast to non-null type java.lang.String");
                 String lowerCase = name.toLowerCase(locale);
-                Intrinsics3.checkNotNullExpressionValue(lowerCase, "(this as java.lang.String).toLowerCase(locale)");
-                if (!Strings4.contains$default((CharSequence) lowerCase, (CharSequence) searchInputLower, false, 2, (Object) null)) {
+                C12238m.checkNotNullExpressionValue(lowerCase, "(this as java.lang.String).toLowerCase(locale)");
+                if (!C12106w.contains$default((CharSequence) lowerCase, (CharSequence) searchInputLower, false, 2, (Object) null)) {
                     String tags = sticker.getTags();
                     Objects.requireNonNull(tags, "null cannot be cast to non-null type java.lang.String");
                     String lowerCase2 = tags.toLowerCase(locale);
-                    Intrinsics3.checkNotNullExpressionValue(lowerCase2, "(this as java.lang.String).toLowerCase(locale)");
-                    if (Strings4.contains$default((CharSequence) lowerCase2, (CharSequence) searchInputLower, false, 2, (Object) null)) {
+                    C12238m.checkNotNullExpressionValue(lowerCase2, "(this as java.lang.String).toLowerCase(locale)");
+                    if (C12106w.contains$default((CharSequence) lowerCase2, (CharSequence) searchInputLower, false, 2, (Object) null)) {
                     }
                 }
-                arrayList.add(new StickerAdapterItems3(sticker, stickerAnimationSettings, StickerAdapterItems3.Mode.OWNED, StickerUtils.INSTANCE.getStickerSendability(sticker, meUser, currentChannel, Long.valueOf(currentChannelPermissions))));
+                arrayList.add(new StickerItem(sticker, stickerAnimationSettings, StickerItem.Mode.OWNED, StickerUtils.INSTANCE.getStickerSendability(sticker, meUser, currentChannel, Long.valueOf(currentChannelPermissions))));
             }
             if ((searchInputLower.length() > 0) && arrayList.isEmpty()) {
-                return Collections2.emptyList();
+                return C12147n.emptyList();
             }
-            arrayList.add(0, new StickerAdapterItems(new StickerAdapterItems2.GuildItem(guild)));
+            arrayList.add(0, new HeaderItem(new HeaderType.GuildItem(guild)));
             return arrayList;
         }
 
         private final List<MGRecyclerDataPayload> buildStickerListItems(ModelStickerPack stickerPack, String searchInputLower, int stickerAnimationSettings, Locale locale, MeUser meUser) {
             ArrayList arrayList = new ArrayList();
             if (stickerPack.getStickers().isEmpty()) {
-                return Collections2.emptyList();
+                return C12147n.emptyList();
             }
             for (Sticker sticker : stickerPack.getStickers()) {
                 String name = sticker.getName();
                 Objects.requireNonNull(name, "null cannot be cast to non-null type java.lang.String");
                 String lowerCase = name.toLowerCase(locale);
-                Intrinsics3.checkNotNullExpressionValue(lowerCase, "(this as java.lang.String).toLowerCase(locale)");
-                if (!Strings4.contains$default((CharSequence) lowerCase, (CharSequence) searchInputLower, false, 2, (Object) null)) {
+                C12238m.checkNotNullExpressionValue(lowerCase, "(this as java.lang.String).toLowerCase(locale)");
+                if (!C12106w.contains$default((CharSequence) lowerCase, (CharSequence) searchInputLower, false, 2, (Object) null)) {
                     String tags = sticker.getTags();
                     Objects.requireNonNull(tags, "null cannot be cast to non-null type java.lang.String");
                     String lowerCase2 = tags.toLowerCase(locale);
-                    Intrinsics3.checkNotNullExpressionValue(lowerCase2, "(this as java.lang.String).toLowerCase(locale)");
-                    if (Strings4.contains$default((CharSequence) lowerCase2, (CharSequence) searchInputLower, false, 2, (Object) null)) {
+                    C12238m.checkNotNullExpressionValue(lowerCase2, "(this as java.lang.String).toLowerCase(locale)");
+                    if (C12106w.contains$default((CharSequence) lowerCase2, (CharSequence) searchInputLower, false, 2, (Object) null)) {
                     }
                 }
-                arrayList.add(new StickerAdapterItems3(sticker, stickerAnimationSettings, StickerAdapterItems3.Mode.OWNED, StickerUtils.getStickerSendability$default(StickerUtils.INSTANCE, sticker, meUser, null, null, 12, null)));
+                arrayList.add(new StickerItem(sticker, stickerAnimationSettings, StickerItem.Mode.OWNED, StickerUtils.getStickerSendability$default(StickerUtils.INSTANCE, sticker, meUser, null, null, 12, null)));
             }
             if ((searchInputLower.length() > 0) && arrayList.isEmpty()) {
-                return Collections2.emptyList();
+                return C12147n.emptyList();
             }
-            arrayList.add(0, new StickerAdapterItems(new StickerAdapterItems2.PackItem(stickerPack)));
+            arrayList.add(0, new HeaderItem(new HeaderType.PackItem(stickerPack)));
             return arrayList;
         }
 
         private final Observable<StoreState> observeStoreState(final BehaviorSubject<String> searchSubject, final BehaviorSubject<Long> selectedPackIdSubject, final StoreGuildsSorted storeGuildsSorted, final StoreGuildStickers storeGuildStickers, final StoreStickers storeStickers, final StoreUserSettings storeUserSettings, final StoreUser storeUser, final StoreExpressionPickerNavigation storeExpressionPickerNavigation, StoreChannelsSelected storeChannelSelected, final StorePermissions storePermissions, final StoreSlowMode storeSlowMode, final StoreGuilds storeGuilds) {
-            Observable observableY = storeChannelSelected.observeResolvedSelectedChannel().Y(new Func1<StoreChannelsSelected.ResolvedSelectedChannel, Observable<? extends StoreState>>() { // from class: com.discord.widgets.chat.input.sticker.StickerPickerViewModel$Companion$observeStoreState$1
+            Observable observableM11099Y = storeChannelSelected.observeResolvedSelectedChannel().m11099Y(new InterfaceC12589b<StoreChannelsSelected.ResolvedSelectedChannel, Observable<? extends StoreState>>() { // from class: com.discord.widgets.chat.input.sticker.StickerPickerViewModel$Companion$observeStoreState$1
 
-                /* JADX INFO: renamed from: com.discord.widgets.chat.input.sticker.StickerPickerViewModel$Companion$observeStoreState$1$2, reason: invalid class name */
+                /* JADX INFO: renamed from: com.discord.widgets.chat.input.sticker.StickerPickerViewModel$Companion$observeStoreState$1$2 */
                 /* JADX INFO: compiled from: StickerPickerViewModel.kt */
-                public static final class AnonymousClass2 extends Lambda implements Function11<LinkedHashMap<Long, Guild>, Map<Long, ? extends Map<Long, ? extends Sticker>>, List<? extends ModelStickerPack>, List<? extends Long>, String, Integer, Long, MeUser, ExpressionTrayTab, Map<Long, ? extends Long>, Integer, StickerPickerViewModel.StoreState.Loaded> {
+                public static final class C78962 extends AbstractC12240o implements Function11<LinkedHashMap<Long, Guild>, Map<Long, ? extends Map<Long, ? extends Sticker>>, List<? extends ModelStickerPack>, List<? extends Long>, String, Integer, Long, MeUser, ExpressionTrayTab, Map<Long, ? extends Long>, Integer, StickerPickerViewModel.StoreState.Loaded> {
                     public final /* synthetic */ Channel $channel;
 
                     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-                    public AnonymousClass2(Channel channel) {
+                    public C78962(Channel channel) {
                         super(11);
                         this.$channel = channel;
                     }
@@ -182,14 +182,14 @@ public class StickerPickerViewModel extends AppViewModel<ViewState> {
                     }
 
                     public final StickerPickerViewModel.StoreState.Loaded invoke(LinkedHashMap<Long, Guild> linkedHashMap, Map<Long, ? extends Map<Long, Sticker>> map, List<ModelStickerPack> list, List<Long> list2, String str, int i, Long l, MeUser meUser, ExpressionTrayTab expressionTrayTab, Map<Long, Long> map2, int i2) {
-                        Intrinsics3.checkNotNullParameter(map, "guildStickers");
-                        Intrinsics3.checkNotNullParameter(list, "enabledStickerPacks");
-                        Intrinsics3.checkNotNullParameter(list2, "frequentlyUsedStickerIds");
-                        Intrinsics3.checkNotNullParameter(meUser, "meUser");
-                        Intrinsics3.checkNotNullParameter(expressionTrayTab, "selectedExpressionPickerTab");
-                        Intrinsics3.checkNotNullParameter(map2, "allChannelPermissions");
-                        Intrinsics3.checkNotNullExpressionValue(linkedHashMap, "allGuilds");
-                        Intrinsics3.checkNotNullExpressionValue(str, "searchInputString");
+                        C12238m.checkNotNullParameter(map, "guildStickers");
+                        C12238m.checkNotNullParameter(list, "enabledStickerPacks");
+                        C12238m.checkNotNullParameter(list2, "frequentlyUsedStickerIds");
+                        C12238m.checkNotNullParameter(meUser, "meUser");
+                        C12238m.checkNotNullParameter(expressionTrayTab, "selectedExpressionPickerTab");
+                        C12238m.checkNotNullParameter(map2, "allChannelPermissions");
+                        C12238m.checkNotNullExpressionValue(linkedHashMap, "allGuilds");
+                        C12238m.checkNotNullExpressionValue(str, "searchInputString");
                         boolean z2 = expressionTrayTab == ExpressionTrayTab.STICKER;
                         Channel channel = this.$channel;
                         Long l2 = map2.get(Long.valueOf(channel != null ? channel.getId() : 0L));
@@ -198,7 +198,7 @@ public class StickerPickerViewModel extends AppViewModel<ViewState> {
                 }
 
                 /* JADX WARN: Code duplicated, block: B:7:0x0016  */
-                @Override // j0.k.Func1
+                @Override // p637j0.p641k.InterfaceC12589b
                 public final Observable<? extends StickerPickerViewModel.StoreState> call(StoreChannelsSelected.ResolvedSelectedChannel resolvedSelectedChannel) {
                     final Guild guild;
                     Channel channelOrParent = resolvedSelectedChannel.getChannelOrParent();
@@ -210,33 +210,33 @@ public class StickerPickerViewModel extends AppViewModel<ViewState> {
                     } else {
                         guild = null;
                     }
-                    Observable<R> observableR = storeGuildsSorted.observeOrderedGuilds().G(new Func1<LinkedHashMap<Long, Guild>, LinkedHashMap<Long, Guild>>() { // from class: com.discord.widgets.chat.input.sticker.StickerPickerViewModel$Companion$observeStoreState$1.1
-                        @Override // j0.k.Func1
+                    Observable<R> observableM11112r = storeGuildsSorted.observeOrderedGuilds().m11083G(new InterfaceC12589b<LinkedHashMap<Long, Guild>, LinkedHashMap<Long, Guild>>() { // from class: com.discord.widgets.chat.input.sticker.StickerPickerViewModel$Companion$observeStoreState$1.1
+                        @Override // p637j0.p641k.InterfaceC12589b
                         public final LinkedHashMap<Long, Guild> call(LinkedHashMap<Long, Guild> linkedHashMap) {
                             LinkedHashMap<Long, Guild> linkedHashMap2 = new LinkedHashMap<>();
                             Guild guild2 = guild;
                             if (guild2 != null) {
                                 linkedHashMap2.put(Long.valueOf(guild2.getId()), guild);
                             }
-                            Intrinsics3.checkNotNullExpressionValue(linkedHashMap, "allGuilds");
+                            C12238m.checkNotNullExpressionValue(linkedHashMap, "allGuilds");
                             LinkedHashMap linkedHashMap3 = new LinkedHashMap();
                             for (Map.Entry<Long, Guild> entry : linkedHashMap.entrySet()) {
                                 Long key = entry.getKey();
                                 Guild guild3 = guild;
-                                if (!Intrinsics3.areEqual(key, guild3 != null ? Long.valueOf(guild3.getId()) : null)) {
+                                if (!C12238m.areEqual(key, guild3 != null ? Long.valueOf(guild3.getId()) : null)) {
                                     linkedHashMap3.put(entry.getKey(), entry.getValue());
                                 }
                             }
                             linkedHashMap2.putAll(linkedHashMap3);
                             return linkedHashMap2;
                         }
-                    }).r();
-                    Intrinsics3.checkNotNullExpressionValue(observableR, "storeGuildsSorted.observ… }.distinctUntilChanged()");
-                    return ObservableCombineLatestOverloads2.combineLatest(observableR, storeGuildStickers.observeGuildStickers(), storeStickers.observeEnabledStickerPacks(), storeStickers.observeFrequentlyUsedStickerIds(), searchSubject, StoreUserSettings.observeStickerAnimationSettings$default(storeUserSettings, false, 1, null), selectedPackIdSubject, StoreUser.observeMe$default(storeUser, false, 1, null), storeExpressionPickerNavigation.observeSelectedTab(), storePermissions.observePermissionsForAllChannels(), storeSlowMode.observeCooldownSecs(Long.valueOf(resolvedSelectedChannel.getId()), StoreSlowMode.Type.MessageSend.INSTANCE), new AnonymousClass2(channelOrParent));
+                    }).m11112r();
+                    C12238m.checkNotNullExpressionValue(observableM11112r, "storeGuildsSorted.observ… }.distinctUntilChanged()");
+                    return ObservableCombineLatestOverloadsKt.combineLatest(observableM11112r, storeGuildStickers.observeGuildStickers(), storeStickers.observeEnabledStickerPacks(), storeStickers.observeFrequentlyUsedStickerIds(), searchSubject, StoreUserSettings.observeStickerAnimationSettings$default(storeUserSettings, false, 1, null), selectedPackIdSubject, StoreUser.observeMe$default(storeUser, false, 1, null), storeExpressionPickerNavigation.observeSelectedTab(), storePermissions.observePermissionsForAllChannels(), storeSlowMode.observeCooldownSecs(Long.valueOf(resolvedSelectedChannel.getId()), StoreSlowMode.Type.MessageSend.INSTANCE), new C78962(channelOrParent));
                 }
             });
-            Intrinsics3.checkNotNullExpressionValue(observableY, "storeChannelSelected.obs…      )\n        }\n      }");
-            return observableY;
+            C12238m.checkNotNullExpressionValue(observableM11099Y, "storeChannelSelected.obs…      )\n        }\n      }");
+            return observableM11099Y;
         }
 
         public static /* synthetic */ Observable observeStoreState$default(Companion companion, BehaviorSubject behaviorSubject, BehaviorSubject behaviorSubject2, StoreGuildsSorted storeGuildsSorted, StoreGuildStickers storeGuildStickers, StoreStickers storeStickers, StoreUserSettings storeUserSettings, StoreUser storeUser, StoreExpressionPickerNavigation storeExpressionPickerNavigation, StoreChannelsSelected storeChannelsSelected, StorePermissions storePermissions, StoreSlowMode storeSlowMode, StoreGuilds storeGuilds, int i, Object obj) {
@@ -292,7 +292,7 @@ public class StickerPickerViewModel extends AppViewModel<ViewState> {
             }
 
             public String toString() {
-                return outline.B(outline.U("ScrollToStickerItemPosition(position="), this.position, ")");
+                return C1643a.m814B(C1643a.m833U("ScrollToStickerItemPosition(position="), this.position, ")");
             }
         }
 
@@ -344,12 +344,12 @@ public class StickerPickerViewModel extends AppViewModel<ViewState> {
             /* JADX WARN: Multi-variable type inference failed */
             public Loaded(LinkedHashMap<Long, Guild> linkedHashMap, Map<Long, ? extends Map<Long, Sticker>> map, List<ModelStickerPack> list, List<Long> list2, String str, int i, Long l, MeUser meUser, boolean z2, Channel channel, long j, boolean z3) {
                 super(null);
-                Intrinsics3.checkNotNullParameter(linkedHashMap, "allGuilds");
-                Intrinsics3.checkNotNullParameter(map, "guildStickers");
-                Intrinsics3.checkNotNullParameter(list, "enabledStickerPacks");
-                Intrinsics3.checkNotNullParameter(list2, "frequentlyUsedStickerIds");
-                Intrinsics3.checkNotNullParameter(str, "searchInputStringUpper");
-                Intrinsics3.checkNotNullParameter(meUser, "meUser");
+                C12238m.checkNotNullParameter(linkedHashMap, "allGuilds");
+                C12238m.checkNotNullParameter(map, "guildStickers");
+                C12238m.checkNotNullParameter(list, "enabledStickerPacks");
+                C12238m.checkNotNullParameter(list2, "frequentlyUsedStickerIds");
+                C12238m.checkNotNullParameter(str, "searchInputStringUpper");
+                C12238m.checkNotNullParameter(meUser, "meUser");
                 this.allGuilds = linkedHashMap;
                 this.guildStickers = map;
                 this.enabledStickerPacks = list;
@@ -366,7 +366,7 @@ public class StickerPickerViewModel extends AppViewModel<ViewState> {
 
             public final boolean canUseExternalStickersInCurrentChannel(long externalStickerGuildId) {
                 Channel channel = this.currentChannel;
-                if ((channel != null && ChannelUtils.B(channel)) || PermissionUtils.can(Permission.USE_EXTERNAL_STICKERS, Long.valueOf(this.currentChannelPermissions))) {
+                if ((channel != null && ChannelUtils.m7667B(channel)) || PermissionUtils.can(Permission.USE_EXTERNAL_STICKERS, Long.valueOf(this.currentChannelPermissions))) {
                     return true;
                 }
                 Channel channel2 = this.currentChannel;
@@ -430,12 +430,12 @@ public class StickerPickerViewModel extends AppViewModel<ViewState> {
             }
 
             public final Loaded copy(LinkedHashMap<Long, Guild> allGuilds, Map<Long, ? extends Map<Long, Sticker>> guildStickers, List<ModelStickerPack> enabledStickerPacks, List<Long> frequentlyUsedStickerIds, String searchInputStringUpper, int stickerAnimationSettings, Long selectedCategoryId, MeUser meUser, boolean isStickersSelectedTab, Channel currentChannel, long currentChannelPermissions, boolean isOnCooldown) {
-                Intrinsics3.checkNotNullParameter(allGuilds, "allGuilds");
-                Intrinsics3.checkNotNullParameter(guildStickers, "guildStickers");
-                Intrinsics3.checkNotNullParameter(enabledStickerPacks, "enabledStickerPacks");
-                Intrinsics3.checkNotNullParameter(frequentlyUsedStickerIds, "frequentlyUsedStickerIds");
-                Intrinsics3.checkNotNullParameter(searchInputStringUpper, "searchInputStringUpper");
-                Intrinsics3.checkNotNullParameter(meUser, "meUser");
+                C12238m.checkNotNullParameter(allGuilds, "allGuilds");
+                C12238m.checkNotNullParameter(guildStickers, "guildStickers");
+                C12238m.checkNotNullParameter(enabledStickerPacks, "enabledStickerPacks");
+                C12238m.checkNotNullParameter(frequentlyUsedStickerIds, "frequentlyUsedStickerIds");
+                C12238m.checkNotNullParameter(searchInputStringUpper, "searchInputStringUpper");
+                C12238m.checkNotNullParameter(meUser, "meUser");
                 return new Loaded(allGuilds, guildStickers, enabledStickerPacks, frequentlyUsedStickerIds, searchInputStringUpper, stickerAnimationSettings, selectedCategoryId, meUser, isStickersSelectedTab, currentChannel, currentChannelPermissions, isOnCooldown);
             }
 
@@ -447,7 +447,7 @@ public class StickerPickerViewModel extends AppViewModel<ViewState> {
                     return false;
                 }
                 Loaded loaded = (Loaded) other;
-                return Intrinsics3.areEqual(this.allGuilds, loaded.allGuilds) && Intrinsics3.areEqual(this.guildStickers, loaded.guildStickers) && Intrinsics3.areEqual(this.enabledStickerPacks, loaded.enabledStickerPacks) && Intrinsics3.areEqual(this.frequentlyUsedStickerIds, loaded.frequentlyUsedStickerIds) && Intrinsics3.areEqual(this.searchInputStringUpper, loaded.searchInputStringUpper) && this.stickerAnimationSettings == loaded.stickerAnimationSettings && Intrinsics3.areEqual(this.selectedCategoryId, loaded.selectedCategoryId) && Intrinsics3.areEqual(this.meUser, loaded.meUser) && this.isStickersSelectedTab == loaded.isStickersSelectedTab && Intrinsics3.areEqual(this.currentChannel, loaded.currentChannel) && this.currentChannelPermissions == loaded.currentChannelPermissions && this.isOnCooldown == loaded.isOnCooldown;
+                return C12238m.areEqual(this.allGuilds, loaded.allGuilds) && C12238m.areEqual(this.guildStickers, loaded.guildStickers) && C12238m.areEqual(this.enabledStickerPacks, loaded.enabledStickerPacks) && C12238m.areEqual(this.frequentlyUsedStickerIds, loaded.frequentlyUsedStickerIds) && C12238m.areEqual(this.searchInputStringUpper, loaded.searchInputStringUpper) && this.stickerAnimationSettings == loaded.stickerAnimationSettings && C12238m.areEqual(this.selectedCategoryId, loaded.selectedCategoryId) && C12238m.areEqual(this.meUser, loaded.meUser) && this.isStickersSelectedTab == loaded.isStickersSelectedTab && C12238m.areEqual(this.currentChannel, loaded.currentChannel) && this.currentChannelPermissions == loaded.currentChannelPermissions && this.isOnCooldown == loaded.isOnCooldown;
             }
 
             public final LinkedHashMap<Long, Guild> getAllGuilds() {
@@ -520,9 +520,9 @@ public class StickerPickerViewModel extends AppViewModel<ViewState> {
                 }
                 int i = (iHashCode7 + r2) * 31;
                 Channel channel = this.currentChannel;
-                int iA = (b.a(this.currentChannelPermissions) + ((i + (channel != null ? channel.hashCode() : 0)) * 31)) * 31;
+                int iM3a = (C0002b.m3a(this.currentChannelPermissions) + ((i + (channel != null ? channel.hashCode() : 0)) * 31)) * 31;
                 boolean z3 = this.isOnCooldown;
-                return iA + (z3 ? 1 : z3);
+                return iM3a + (z3 ? 1 : z3);
             }
 
             public final boolean isOnCooldown() {
@@ -534,30 +534,30 @@ public class StickerPickerViewModel extends AppViewModel<ViewState> {
             }
 
             public String toString() {
-                StringBuilder sbU = outline.U("Loaded(allGuilds=");
-                sbU.append(this.allGuilds);
-                sbU.append(", guildStickers=");
-                sbU.append(this.guildStickers);
-                sbU.append(", enabledStickerPacks=");
-                sbU.append(this.enabledStickerPacks);
-                sbU.append(", frequentlyUsedStickerIds=");
-                sbU.append(this.frequentlyUsedStickerIds);
-                sbU.append(", searchInputStringUpper=");
-                sbU.append(this.searchInputStringUpper);
-                sbU.append(", stickerAnimationSettings=");
-                sbU.append(this.stickerAnimationSettings);
-                sbU.append(", selectedCategoryId=");
-                sbU.append(this.selectedCategoryId);
-                sbU.append(", meUser=");
-                sbU.append(this.meUser);
-                sbU.append(", isStickersSelectedTab=");
-                sbU.append(this.isStickersSelectedTab);
-                sbU.append(", currentChannel=");
-                sbU.append(this.currentChannel);
-                sbU.append(", currentChannelPermissions=");
-                sbU.append(this.currentChannelPermissions);
-                sbU.append(", isOnCooldown=");
-                return outline.O(sbU, this.isOnCooldown, ")");
+                StringBuilder sbM833U = C1643a.m833U("Loaded(allGuilds=");
+                sbM833U.append(this.allGuilds);
+                sbM833U.append(", guildStickers=");
+                sbM833U.append(this.guildStickers);
+                sbM833U.append(", enabledStickerPacks=");
+                sbM833U.append(this.enabledStickerPacks);
+                sbM833U.append(", frequentlyUsedStickerIds=");
+                sbM833U.append(this.frequentlyUsedStickerIds);
+                sbM833U.append(", searchInputStringUpper=");
+                sbM833U.append(this.searchInputStringUpper);
+                sbM833U.append(", stickerAnimationSettings=");
+                sbM833U.append(this.stickerAnimationSettings);
+                sbM833U.append(", selectedCategoryId=");
+                sbM833U.append(this.selectedCategoryId);
+                sbM833U.append(", meUser=");
+                sbM833U.append(this.meUser);
+                sbM833U.append(", isStickersSelectedTab=");
+                sbM833U.append(this.isStickersSelectedTab);
+                sbM833U.append(", currentChannel=");
+                sbM833U.append(this.currentChannel);
+                sbM833U.append(", currentChannelPermissions=");
+                sbM833U.append(this.currentChannelPermissions);
+                sbM833U.append(", isOnCooldown=");
+                return C1643a.m827O(sbM833U, this.isOnCooldown, ")");
             }
         }
 
@@ -590,7 +590,7 @@ public class StickerPickerViewModel extends AppViewModel<ViewState> {
             /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
             public EmptyNonPremium(List<Sticker> list, boolean z2) {
                 super("", null);
-                Intrinsics3.checkNotNullParameter(list, "emptyStateStickers");
+                C12238m.checkNotNullParameter(list, "emptyStateStickers");
                 this.emptyStateStickers = list;
                 this.isStickersSelectedTab = z2;
             }
@@ -616,7 +616,7 @@ public class StickerPickerViewModel extends AppViewModel<ViewState> {
             }
 
             public final EmptyNonPremium copy(List<Sticker> emptyStateStickers, boolean isStickersSelectedTab) {
-                Intrinsics3.checkNotNullParameter(emptyStateStickers, "emptyStateStickers");
+                C12238m.checkNotNullParameter(emptyStateStickers, "emptyStateStickers");
                 return new EmptyNonPremium(emptyStateStickers, isStickersSelectedTab);
             }
 
@@ -628,7 +628,7 @@ public class StickerPickerViewModel extends AppViewModel<ViewState> {
                     return false;
                 }
                 EmptyNonPremium emptyNonPremium = (EmptyNonPremium) other;
-                return Intrinsics3.areEqual(this.emptyStateStickers, emptyNonPremium.emptyStateStickers) && this.isStickersSelectedTab == emptyNonPremium.isStickersSelectedTab;
+                return C12238m.areEqual(this.emptyStateStickers, emptyNonPremium.emptyStateStickers) && this.isStickersSelectedTab == emptyNonPremium.isStickersSelectedTab;
             }
 
             public final List<Sticker> getEmptyStateStickers() {
@@ -656,10 +656,10 @@ public class StickerPickerViewModel extends AppViewModel<ViewState> {
             }
 
             public String toString() {
-                StringBuilder sbU = outline.U("EmptyNonPremium(emptyStateStickers=");
-                sbU.append(this.emptyStateStickers);
-                sbU.append(", isStickersSelectedTab=");
-                return outline.O(sbU, this.isStickersSelectedTab, ")");
+                StringBuilder sbM833U = C1643a.m833U("EmptyNonPremium(emptyStateStickers=");
+                sbM833U.append(this.emptyStateStickers);
+                sbM833U.append(", isStickersSelectedTab=");
+                return C1643a.m827O(sbM833U, this.isStickersSelectedTab, ")");
             }
         }
 
@@ -672,8 +672,8 @@ public class StickerPickerViewModel extends AppViewModel<ViewState> {
             /* JADX WARN: Multi-variable type inference failed */
             public EmptySearchResults(String str, List<? extends StickerCategoryItem> list) {
                 super(str, null);
-                Intrinsics3.checkNotNullParameter(str, "searchQuery");
-                Intrinsics3.checkNotNullParameter(list, "categoryItems");
+                C12238m.checkNotNullParameter(str, "searchQuery");
+                C12238m.checkNotNullParameter(list, "categoryItems");
                 this.searchQuery = str;
                 this.categoryItems = list;
             }
@@ -698,8 +698,8 @@ public class StickerPickerViewModel extends AppViewModel<ViewState> {
             }
 
             public final EmptySearchResults copy(String searchQuery, List<? extends StickerCategoryItem> categoryItems) {
-                Intrinsics3.checkNotNullParameter(searchQuery, "searchQuery");
-                Intrinsics3.checkNotNullParameter(categoryItems, "categoryItems");
+                C12238m.checkNotNullParameter(searchQuery, "searchQuery");
+                C12238m.checkNotNullParameter(categoryItems, "categoryItems");
                 return new EmptySearchResults(searchQuery, categoryItems);
             }
 
@@ -711,7 +711,7 @@ public class StickerPickerViewModel extends AppViewModel<ViewState> {
                     return false;
                 }
                 EmptySearchResults emptySearchResults = (EmptySearchResults) other;
-                return Intrinsics3.areEqual(getSearchQuery(), emptySearchResults.getSearchQuery()) && Intrinsics3.areEqual(this.categoryItems, emptySearchResults.categoryItems);
+                return C12238m.areEqual(getSearchQuery(), emptySearchResults.getSearchQuery()) && C12238m.areEqual(this.categoryItems, emptySearchResults.categoryItems);
             }
 
             public final List<StickerCategoryItem> getCategoryItems() {
@@ -731,10 +731,10 @@ public class StickerPickerViewModel extends AppViewModel<ViewState> {
             }
 
             public String toString() {
-                StringBuilder sbU = outline.U("EmptySearchResults(searchQuery=");
-                sbU.append(getSearchQuery());
-                sbU.append(", categoryItems=");
-                return outline.L(sbU, this.categoryItems, ")");
+                StringBuilder sbM833U = C1643a.m833U("EmptySearchResults(searchQuery=");
+                sbM833U.append(getSearchQuery());
+                sbM833U.append(", categoryItems=");
+                return C1643a.m824L(sbM833U, this.categoryItems, ")");
             }
         }
 
@@ -750,9 +750,9 @@ public class StickerPickerViewModel extends AppViewModel<ViewState> {
             /* JADX WARN: Multi-variable type inference failed */
             public Stickers(String str, List<? extends MGRecyclerDataPayload> list, List<? extends StickerCategoryItem> list2, boolean z2, boolean z3) {
                 super(str, null);
-                Intrinsics3.checkNotNullParameter(str, "searchQuery");
-                Intrinsics3.checkNotNullParameter(list, "stickerItems");
-                Intrinsics3.checkNotNullParameter(list2, "categoryItems");
+                C12238m.checkNotNullParameter(str, "searchQuery");
+                C12238m.checkNotNullParameter(list, "stickerItems");
+                C12238m.checkNotNullParameter(list2, "categoryItems");
                 this.searchQuery = str;
                 this.stickerItems = list;
                 this.categoryItems = list2;
@@ -806,9 +806,9 @@ public class StickerPickerViewModel extends AppViewModel<ViewState> {
             }
 
             public final Stickers copy(String searchQuery, List<? extends MGRecyclerDataPayload> stickerItems, List<? extends StickerCategoryItem> categoryItems, boolean isStickersSelectedTab, boolean isOnCooldown) {
-                Intrinsics3.checkNotNullParameter(searchQuery, "searchQuery");
-                Intrinsics3.checkNotNullParameter(stickerItems, "stickerItems");
-                Intrinsics3.checkNotNullParameter(categoryItems, "categoryItems");
+                C12238m.checkNotNullParameter(searchQuery, "searchQuery");
+                C12238m.checkNotNullParameter(stickerItems, "stickerItems");
+                C12238m.checkNotNullParameter(categoryItems, "categoryItems");
                 return new Stickers(searchQuery, stickerItems, categoryItems, isStickersSelectedTab, isOnCooldown);
             }
 
@@ -820,7 +820,7 @@ public class StickerPickerViewModel extends AppViewModel<ViewState> {
                     return false;
                 }
                 Stickers stickers = (Stickers) other;
-                return Intrinsics3.areEqual(getSearchQuery(), stickers.getSearchQuery()) && Intrinsics3.areEqual(this.stickerItems, stickers.stickerItems) && Intrinsics3.areEqual(this.categoryItems, stickers.categoryItems) && this.isStickersSelectedTab == stickers.isStickersSelectedTab && this.isOnCooldown == stickers.isOnCooldown;
+                return C12238m.areEqual(getSearchQuery(), stickers.getSearchQuery()) && C12238m.areEqual(this.stickerItems, stickers.stickerItems) && C12238m.areEqual(this.categoryItems, stickers.categoryItems) && this.isStickersSelectedTab == stickers.isStickersSelectedTab && this.isOnCooldown == stickers.isOnCooldown;
             }
 
             public final List<StickerCategoryItem> getCategoryItems() {
@@ -871,16 +871,16 @@ public class StickerPickerViewModel extends AppViewModel<ViewState> {
             }
 
             public String toString() {
-                StringBuilder sbU = outline.U("Stickers(searchQuery=");
-                sbU.append(getSearchQuery());
-                sbU.append(", stickerItems=");
-                sbU.append(this.stickerItems);
-                sbU.append(", categoryItems=");
-                sbU.append(this.categoryItems);
-                sbU.append(", isStickersSelectedTab=");
-                sbU.append(this.isStickersSelectedTab);
-                sbU.append(", isOnCooldown=");
-                return outline.O(sbU, this.isOnCooldown, ")");
+                StringBuilder sbM833U = C1643a.m833U("Stickers(searchQuery=");
+                sbM833U.append(getSearchQuery());
+                sbM833U.append(", stickerItems=");
+                sbM833U.append(this.stickerItems);
+                sbM833U.append(", categoryItems=");
+                sbM833U.append(this.categoryItems);
+                sbM833U.append(", isStickersSelectedTab=");
+                sbM833U.append(this.isStickersSelectedTab);
+                sbM833U.append(", isOnCooldown=");
+                return C1643a.m827O(sbM833U, this.isOnCooldown, ")");
             }
         }
 
@@ -899,21 +899,21 @@ public class StickerPickerViewModel extends AppViewModel<ViewState> {
 
     /* JADX WARN: Illegal instructions before constructor call */
     public /* synthetic */ StickerPickerViewModel(BehaviorSubject behaviorSubject, BehaviorSubject behaviorSubject2, Locale locale, MessageManager messageManager, StoreStickers storeStickers, long j, StoreChannels storeChannels, StoreChannelsSelected storeChannelsSelected, StorePermissions storePermissions, StoreUser storeUser, Observable observable, int i, DefaultConstructorMarker defaultConstructorMarker) {
-        BehaviorSubject behaviorSubjectL0;
-        BehaviorSubject behaviorSubjectL1;
+        BehaviorSubject behaviorSubjectM11130l0;
+        BehaviorSubject behaviorSubjectM11130l1;
         if ((i & 1) != 0) {
-            behaviorSubjectL0 = BehaviorSubject.l0("");
-            Intrinsics3.checkNotNullExpressionValue(behaviorSubjectL0, "BehaviorSubject.create(\"\")");
+            behaviorSubjectM11130l0 = BehaviorSubject.m11130l0("");
+            C12238m.checkNotNullExpressionValue(behaviorSubjectM11130l0, "BehaviorSubject.create(\"\")");
         } else {
-            behaviorSubjectL0 = behaviorSubject;
+            behaviorSubjectM11130l0 = behaviorSubject;
         }
         if ((i & 2) != 0) {
-            behaviorSubjectL1 = BehaviorSubject.l0(null);
-            Intrinsics3.checkNotNullExpressionValue(behaviorSubjectL1, "BehaviorSubject.create(null as Long?)");
+            behaviorSubjectM11130l1 = BehaviorSubject.m11130l0(null);
+            C12238m.checkNotNullExpressionValue(behaviorSubjectM11130l1, "BehaviorSubject.create(null as Long?)");
         } else {
-            behaviorSubjectL1 = behaviorSubject2;
+            behaviorSubjectM11130l1 = behaviorSubject2;
         }
-        this(behaviorSubjectL0, behaviorSubjectL1, locale, messageManager, (i & 16) != 0 ? StoreStream.INSTANCE.getStickers() : storeStickers, j, (i & 64) != 0 ? StoreStream.INSTANCE.getChannels() : storeChannels, (i & 128) != 0 ? StoreStream.INSTANCE.getChannelsSelected() : storeChannelsSelected, (i & 256) != 0 ? StoreStream.INSTANCE.getPermissions() : storePermissions, (i & 512) != 0 ? StoreStream.INSTANCE.getUsers() : storeUser, (i & 1024) != 0 ? Companion.observeStoreState$default(INSTANCE, behaviorSubjectL0, behaviorSubjectL1, null, null, null, null, null, null, null, null, null, null, 4092, null) : observable);
+        this(behaviorSubjectM11130l0, behaviorSubjectM11130l1, locale, messageManager, (i & 16) != 0 ? StoreStream.INSTANCE.getStickers() : storeStickers, j, (i & 64) != 0 ? StoreStream.INSTANCE.getChannels() : storeChannels, (i & 128) != 0 ? StoreStream.INSTANCE.getChannelsSelected() : storeChannelsSelected, (i & 256) != 0 ? StoreStream.INSTANCE.getPermissions() : storePermissions, (i & 512) != 0 ? StoreStream.INSTANCE.getUsers() : storeUser, (i & 1024) != 0 ? Companion.observeStoreState$default(INSTANCE, behaviorSubjectM11130l0, behaviorSubjectM11130l1, null, null, null, null, null, null, null, null, null, null, 4092, null) : observable);
     }
 
     private final List<StickerCategoryItem> createCategoryItems(StoreState.Loaded storeState, List<? extends MGRecyclerDataPayload> listItems, List<Sticker> frequentlyUsedStickers) {
@@ -926,7 +926,7 @@ public class StickerPickerViewModel extends AppViewModel<ViewState> {
         LinkedHashSet linkedHashSet = new LinkedHashSet();
         LinkedHashSet linkedHashSet2 = new LinkedHashSet();
         if ((!UserUtils.INSTANCE.getCanUsePremiumStickers(storeState.getMeUser()) && storeState.getGuildStickers().isEmpty()) || storeState.getEnabledStickerPacks().isEmpty()) {
-            return Collections2.emptyList();
+            return C12147n.emptyList();
         }
         if (listItems == null) {
             linkedHashSet.add(-1L);
@@ -936,8 +936,8 @@ public class StickerPickerViewModel extends AppViewModel<ViewState> {
             }
         } else {
             for (MGRecyclerDataPayload mGRecyclerDataPayload : listItems) {
-                if (mGRecyclerDataPayload instanceof StickerAdapterItems3) {
-                    Sticker sticker = ((StickerAdapterItems3) mGRecyclerDataPayload).getSticker();
+                if (mGRecyclerDataPayload instanceof StickerItem) {
+                    Sticker sticker = ((StickerItem) mGRecyclerDataPayload).getSticker();
                     if (!(frequentlyUsedStickers instanceof Collection) || !frequentlyUsedStickers.isEmpty()) {
                         Iterator<T> it2 = frequentlyUsedStickers.iterator();
                         while (true) {
@@ -973,7 +973,7 @@ public class StickerPickerViewModel extends AppViewModel<ViewState> {
         if (!frequentlyUsedStickers.isEmpty()) {
             size = frequentlyUsedStickers.size() + 1 + 0;
             if (linkedHashSet.contains(-1L)) {
-                arrayList.add(new StickerCategoryItem.RecentItem(selectedCategoryId != null && selectedCategoryId.longValue() == -1, new Tuples2(0, Integer.valueOf(size))));
+                arrayList.add(new StickerCategoryItem.RecentItem(selectedCategoryId != null && selectedCategoryId.longValue() == -1, new Pair(0, Integer.valueOf(size))));
             }
         } else {
             size = 0;
@@ -982,12 +982,12 @@ public class StickerPickerViewModel extends AppViewModel<ViewState> {
             long jLongValue = entry.getKey().longValue();
             Guild value = entry.getValue();
             Map<Long, Sticker> map = storeState.getGuildStickers().get(Long.valueOf(jLongValue));
-            if (map != null && (collectionValues = map.values()) != null && (list = _Collections.toList(collectionValues)) != null) {
+            if (map != null && (collectionValues = map.values()) != null && (list = C12163u.toList(collectionValues)) != null) {
                 boolean z3 = selectedCategoryId != null && selectedCategoryId.longValue() == value.getId();
                 if (storeState.canUseExternalStickersInCurrentChannel(jLongValue)) {
                     int size2 = list.size() + 1 + size;
                     if (linkedHashSet2.contains(Long.valueOf(jLongValue))) {
-                        arrayList.add(new StickerCategoryItem.GuildItem(value, list, new Tuples2(Integer.valueOf(size), Integer.valueOf(size2)), z3));
+                        arrayList.add(new StickerCategoryItem.GuildItem(value, list, new Pair(Integer.valueOf(size), Integer.valueOf(size2)), z3));
                     }
                     size = size2;
                 }
@@ -998,7 +998,7 @@ public class StickerPickerViewModel extends AppViewModel<ViewState> {
                 boolean z4 = selectedCategoryId != null && selectedCategoryId.longValue() == modelStickerPack.getId();
                 int size3 = modelStickerPack.getStickers().size() + 1 + size;
                 if (linkedHashSet.contains(Long.valueOf(modelStickerPack.getId()))) {
-                    arrayList.add(new StickerCategoryItem.PackItem(modelStickerPack, new Tuples2(Integer.valueOf(size), Integer.valueOf(size3)), z4));
+                    arrayList.add(new StickerCategoryItem.PackItem(modelStickerPack, new Pair(Integer.valueOf(size), Integer.valueOf(size3)), z4));
                 }
                 size = size3;
             }
@@ -1020,7 +1020,7 @@ public class StickerPickerViewModel extends AppViewModel<ViewState> {
                 linkedHashMap.put(Long.valueOf(sticker2.getId()), sticker2);
             }
         }
-        return Maps6.toMap(linkedHashMap);
+        return C12136h0.toMap(linkedHashMap);
     }
 
     @MainThread
@@ -1047,7 +1047,7 @@ public class StickerPickerViewModel extends AppViewModel<ViewState> {
         Objects.requireNonNull(searchInputStringUpper, "null cannot be cast to non-null type java.lang.String");
         String lowerCase = searchInputStringUpper.toLowerCase(locale);
         String str = "(this as java.lang.String).toLowerCase(locale)";
-        Intrinsics3.checkNotNullExpressionValue(lowerCase, "(this as java.lang.String).toLowerCase(locale)");
+        C12238m.checkNotNullExpressionValue(lowerCase, "(this as java.lang.String).toLowerCase(locale)");
         List<Long> frequentlyUsedStickerIds = storeState.getFrequentlyUsedStickerIds();
         ArrayList arrayList = new ArrayList();
         Iterator<T> it = frequentlyUsedStickerIds.iterator();
@@ -1077,17 +1077,17 @@ public class StickerPickerViewModel extends AppViewModel<ViewState> {
                 Locale locale2 = this.locale;
                 Objects.requireNonNull(name, "null cannot be cast to non-null type java.lang.String");
                 String lowerCase2 = name.toLowerCase(locale2);
-                Intrinsics3.checkNotNullExpressionValue(lowerCase2, str);
-                if (Strings4.contains$default(lowerCase2, lowerCase, z2, i, (Object) null)) {
-                    arrayList3.add(new StickerAdapterItems3(sticker2, stickerAnimationSettings, StickerAdapterItems3.Mode.OWNED, StickerUtils.INSTANCE.getStickerSendability(sticker2, storeState.getMeUser(), storeState.getCurrentChannel(), Long.valueOf(storeState.getCurrentChannelPermissions()))));
+                C12238m.checkNotNullExpressionValue(lowerCase2, str);
+                if (C12106w.contains$default(lowerCase2, lowerCase, z2, i, (Object) null)) {
+                    arrayList3.add(new StickerItem(sticker2, stickerAnimationSettings, StickerItem.Mode.OWNED, StickerUtils.INSTANCE.getStickerSendability(sticker2, storeState.getMeUser(), storeState.getCurrentChannel(), Long.valueOf(storeState.getCurrentChannelPermissions()))));
                 } else {
                     String tags = sticker2.getTags();
                     Locale locale3 = this.locale;
                     Objects.requireNonNull(tags, "null cannot be cast to non-null type java.lang.String");
                     String lowerCase3 = tags.toLowerCase(locale3);
-                    Intrinsics3.checkNotNullExpressionValue(lowerCase3, str);
-                    if (Strings4.contains$default(lowerCase3, lowerCase, z2, i, (Object) null)) {
-                        arrayList3.add(new StickerAdapterItems3(sticker2, stickerAnimationSettings, StickerAdapterItems3.Mode.OWNED, StickerUtils.INSTANCE.getStickerSendability(sticker2, storeState.getMeUser(), storeState.getCurrentChannel(), Long.valueOf(storeState.getCurrentChannelPermissions()))));
+                    C12238m.checkNotNullExpressionValue(lowerCase3, str);
+                    if (C12106w.contains$default(lowerCase3, lowerCase, z2, i, (Object) null)) {
+                        arrayList3.add(new StickerItem(sticker2, stickerAnimationSettings, StickerItem.Mode.OWNED, StickerUtils.INSTANCE.getStickerSendability(sticker2, storeState.getMeUser(), storeState.getCurrentChannel(), Long.valueOf(storeState.getCurrentChannelPermissions()))));
                     }
                 }
                 str = str;
@@ -1095,14 +1095,14 @@ public class StickerPickerViewModel extends AppViewModel<ViewState> {
                 z2 = false;
             }
             if (!arrayList3.isEmpty()) {
-                arrayList3.add(0, new StickerAdapterItems(StickerAdapterItems2.Recent.INSTANCE));
+                arrayList3.add(0, new HeaderItem(HeaderType.Recent.INSTANCE));
             }
         }
         for (Map.Entry<Long, Guild> entry : storeState.getAllGuilds().entrySet()) {
             long jLongValue = entry.getKey().longValue();
             Guild value = entry.getValue();
             Map<Long, Sticker> map = storeState.getGuildStickers().get(Long.valueOf(jLongValue));
-            if (map == null || (collectionValues = map.values()) == null || (list2 = _Collections.toList(collectionValues)) == null || !storeState.canUseExternalStickersInCurrentChannel(jLongValue)) {
+            if (map == null || (collectionValues = map.values()) == null || (list2 = C12163u.toList(collectionValues)) == null || !storeState.canUseExternalStickersInCurrentChannel(jLongValue)) {
                 list = arrayList3;
             } else {
                 list = arrayList3;
@@ -1119,7 +1119,7 @@ public class StickerPickerViewModel extends AppViewModel<ViewState> {
         }
         List<StickerCategoryItem> listCreateCategoryItems = createCategoryItems(storeState, list3, arrayList2);
         if (!UserUtils.INSTANCE.getCanUsePremiumStickers(storeState.getMeUser()) && storeState.getGuildStickers().isEmpty()) {
-            updateViewState(new ViewState.EmptyNonPremium(Collections2.listOfNotNull((Object[]) new Sticker[]{this.stickersStore.getStickers().get(781323769960202280L), this.stickersStore.getStickers().get(809209266556764241L), this.stickersStore.getStickers().get(818597810047680532L), this.stickersStore.getStickers().get(819129296374595614L)}), storeState.isStickersSelectedTab()));
+            updateViewState(new ViewState.EmptyNonPremium(C12147n.listOfNotNull((Object[]) new Sticker[]{this.stickersStore.getStickers().get(781323769960202280L), this.stickersStore.getStickers().get(809209266556764241L), this.stickersStore.getStickers().get(818597810047680532L), this.stickersStore.getStickers().get(819129296374595614L)}), storeState.isStickersSelectedTab()));
             return;
         }
         if (list3.isEmpty()) {
@@ -1138,25 +1138,25 @@ public class StickerPickerViewModel extends AppViewModel<ViewState> {
     public final boolean onStickerSelected(Sticker sticker) {
         long id2;
         Channel channelFindChannelById;
-        Intrinsics3.checkNotNullParameter(sticker, "sticker");
+        C12238m.checkNotNullParameter(sticker, "sticker");
         if ((getViewState() instanceof ViewState.Stickers) && (channelFindChannelById = this.channelStore.findChannelById((id2 = this.channelSelectedStore.getId()))) != null) {
             Long l = this.permissionStore.getPermissionsByChannel().get(Long.valueOf(id2));
             boolean zHasAccessWrite = PermissionUtils.INSTANCE.hasAccessWrite(channelFindChannelById, l);
             StickerUtils.StickerSendability stickerSendability = StickerUtils.INSTANCE.getStickerSendability(sticker, this.userStore.getMeSnapshot(), channelFindChannelById, l);
             if (stickerSendability == StickerUtils.StickerSendability.SENDABLE_WITH_PREMIUM) {
-                this.eventSubject.k.onNext(Event.ShowStickerPremiumUpsell.INSTANCE);
+                this.eventSubject.f27650k.onNext(Event.ShowStickerPremiumUpsell.INSTANCE);
                 return false;
             }
             ViewState viewState = getViewState();
             Objects.requireNonNull(viewState, "null cannot be cast to non-null type com.discord.widgets.chat.input.sticker.StickerPickerViewModel.ViewState.Stickers");
             if (((ViewState.Stickers) viewState).isOnCooldown()) {
-                this.eventSubject.k.onNext(Event.SlowMode.INSTANCE);
+                this.eventSubject.f27650k.onNext(Event.SlowMode.INSTANCE);
                 return false;
             }
             if (zHasAccessWrite && stickerSendability == StickerUtils.StickerSendability.SENDABLE) {
                 this.stickersStore.onStickerUsed(sticker);
                 MessageManager messageManager = this.messageManager;
-                messageManager.sendMessage((510 & 1) != 0 ? "" : null, (510 & 2) != 0 ? null : null, (510 & 4) != 0 ? null : null, (510 & 8) != 0 ? null : null, (510 & 16) != 0 ? Collections2.emptyList() : CollectionsJVM.listOf(sticker), (510 & 32) != 0, (510 & 64) != 0 ? null : null, (510 & 128) == 0 ? null : null, (510 & 256) != 0 ? messageManager.defaultMessageResultHandler : null);
+                messageManager.sendMessage((510 & 1) != 0 ? "" : null, (510 & 2) != 0 ? null : null, (510 & 4) != 0 ? null : null, (510 & 8) != 0 ? null : null, (510 & 16) != 0 ? C12147n.emptyList() : C12145m.listOf(sticker), (510 & 32) != 0, (510 & 64) != 0 ? null : null, (510 & 128) == 0 ? null : null, (510 & 256) != 0 ? messageManager.defaultMessageResultHandler : null);
                 this.searchSubject.onNext("");
                 return true;
             }
@@ -1178,20 +1178,20 @@ public class StickerPickerViewModel extends AppViewModel<ViewState> {
         int i = 0;
         for (int i2 = 0; i2 < size; i2++) {
             MGRecyclerDataPayload mGRecyclerDataPayload = stickers.getStickerItems().get(i2);
-            if (mGRecyclerDataPayload instanceof StickerAdapterItems) {
-                StickerAdapterItems stickerAdapterItems = (StickerAdapterItems) mGRecyclerDataPayload;
-                if ((stickerAdapterItems.getHeaderType() instanceof StickerAdapterItems2.PackItem) && ((StickerAdapterItems2.PackItem) stickerAdapterItems.getHeaderType()).getPack().getId() == packId.longValue()) {
+            if (mGRecyclerDataPayload instanceof HeaderItem) {
+                HeaderItem headerItem = (HeaderItem) mGRecyclerDataPayload;
+                if ((headerItem.getHeaderType() instanceof HeaderType.PackItem) && ((HeaderType.PackItem) headerItem.getHeaderType()).getPack().getId() == packId.longValue()) {
                     i = i2;
                     break;
                 }
             }
         }
         PublishSubject<Event> publishSubject = this.eventSubject;
-        publishSubject.k.onNext(new Event.ScrollToStickerItemPosition(i));
+        publishSubject.f27650k.onNext(new Event.ScrollToStickerItemPosition(i));
     }
 
     public final void setSearchText(String searchText) {
-        Intrinsics3.checkNotNullParameter(searchText, "searchText");
+        C12238m.checkNotNullParameter(searchText, "searchText");
         this.searchSubject.onNext(searchText);
     }
 
@@ -1206,16 +1206,16 @@ public class StickerPickerViewModel extends AppViewModel<ViewState> {
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public StickerPickerViewModel(BehaviorSubject<String> behaviorSubject, BehaviorSubject<Long> behaviorSubject2, Locale locale, MessageManager messageManager, StoreStickers storeStickers, long j, StoreChannels storeChannels, StoreChannelsSelected storeChannelsSelected, StorePermissions storePermissions, StoreUser storeUser, Observable<StoreState> observable) {
         super(null);
-        Intrinsics3.checkNotNullParameter(behaviorSubject, "searchSubject");
-        Intrinsics3.checkNotNullParameter(behaviorSubject2, "selectedCategoryIdSubject");
-        Intrinsics3.checkNotNullParameter(locale, "locale");
-        Intrinsics3.checkNotNullParameter(messageManager, "messageManager");
-        Intrinsics3.checkNotNullParameter(storeStickers, "stickersStore");
-        Intrinsics3.checkNotNullParameter(storeChannels, "channelStore");
-        Intrinsics3.checkNotNullParameter(storeChannelsSelected, "channelSelectedStore");
-        Intrinsics3.checkNotNullParameter(storePermissions, "permissionStore");
-        Intrinsics3.checkNotNullParameter(storeUser, "userStore");
-        Intrinsics3.checkNotNullParameter(observable, "storeStateObservable");
+        C12238m.checkNotNullParameter(behaviorSubject, "searchSubject");
+        C12238m.checkNotNullParameter(behaviorSubject2, "selectedCategoryIdSubject");
+        C12238m.checkNotNullParameter(locale, "locale");
+        C12238m.checkNotNullParameter(messageManager, "messageManager");
+        C12238m.checkNotNullParameter(storeStickers, "stickersStore");
+        C12238m.checkNotNullParameter(storeChannels, "channelStore");
+        C12238m.checkNotNullParameter(storeChannelsSelected, "channelSelectedStore");
+        C12238m.checkNotNullParameter(storePermissions, "permissionStore");
+        C12238m.checkNotNullParameter(storeUser, "userStore");
+        C12238m.checkNotNullParameter(observable, "storeStateObservable");
         this.searchSubject = behaviorSubject;
         this.selectedCategoryIdSubject = behaviorSubject2;
         this.locale = locale;
@@ -1226,13 +1226,13 @@ public class StickerPickerViewModel extends AppViewModel<ViewState> {
         this.channelSelectedStore = storeChannelsSelected;
         this.permissionStore = storePermissions;
         this.userStore = storeUser;
-        PublishSubject<Event> publishSubjectK0 = PublishSubject.k0();
-        Intrinsics3.checkNotNullExpressionValue(publishSubjectK0, "PublishSubject.create()");
-        this.eventSubject = publishSubjectK0;
+        PublishSubject<Event> publishSubjectM11133k0 = PublishSubject.m11133k0();
+        C12238m.checkNotNullExpressionValue(publishSubjectM11133k0, "PublishSubject.create()");
+        this.eventSubject = publishSubjectM11133k0;
         this.stickerCountToDisplayForStore = 4;
         storeStickers.fetchEnabledStickerDirectory();
-        Observable observableR = ObservableExtensionsKt.ui$default(ObservableExtensionsKt.computationLatest(observable), this, null, 2, null).r();
-        Intrinsics3.checkNotNullExpressionValue(observableR, "storeStateObservable\n   …  .distinctUntilChanged()");
-        ObservableExtensionsKt.appSubscribe(observableR, (Class<?>) getClass(), (58 & 2) != 0 ? null : null, (Function1<? super Subscription, Unit>) ((58 & 4) != 0 ? null : null), (Function1<? super Error, Unit>) ((58 & 8) != 0 ? null : null), (Function0<Unit>) ((58 & 16) != 0 ? ObservableExtensionsKt.AnonymousClass1.INSTANCE : null), (Function0<Unit>) ((58 & 32) != 0 ? ObservableExtensionsKt.AnonymousClass2.INSTANCE : null), new AnonymousClass1());
+        Observable observableM11112r = ObservableExtensionsKt.ui$default(ObservableExtensionsKt.computationLatest(observable), this, null, 2, null).m11112r();
+        C12238m.checkNotNullExpressionValue(observableM11112r, "storeStateObservable\n   …  .distinctUntilChanged()");
+        ObservableExtensionsKt.appSubscribe(observableM11112r, (Class<?>) getClass(), (58 & 2) != 0 ? null : null, (Function1<? super Subscription, Unit>) ((58 & 4) != 0 ? null : null), (Function1<? super Error, Unit>) ((58 & 8) != 0 ? null : null), (Function0<Unit>) ((58 & 16) != 0 ? ObservableExtensionsKt.C68791.INSTANCE : null), (Function0<Unit>) ((58 & 32) != 0 ? ObservableExtensionsKt.C68802.INSTANCE : null), new C78941());
     }
 }

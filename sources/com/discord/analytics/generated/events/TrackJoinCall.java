@@ -1,15 +1,15 @@
 package com.discord.analytics.generated.events;
 
-import b.d.b.a.outline;
 import com.discord.analytics.generated.traits.TrackBase;
-import com.discord.analytics.generated.traits.TrackBase2;
+import com.discord.analytics.generated.traits.TrackBaseReceiver;
 import com.discord.api.science.AnalyticsSchema;
-import d0.z.d.Intrinsics3;
 import java.util.List;
+import p007b.p100d.p104b.p105a.C1643a;
+import p507d0.p592z.p594d.C12238m;
 
 /* JADX INFO: compiled from: TrackJoinCall.kt */
 /* JADX INFO: loaded from: classes.dex */
-public final /* data */ class TrackJoinCall implements AnalyticsSchema, TrackBase2 {
+public final /* data */ class TrackJoinCall implements AnalyticsSchema, TrackBaseReceiver {
     private TrackBase trackBase;
     private final Long channelId = null;
     private final Long channelType = null;
@@ -32,7 +32,7 @@ public final /* data */ class TrackJoinCall implements AnalyticsSchema, TrackBas
             return false;
         }
         TrackJoinCall trackJoinCall = (TrackJoinCall) other;
-        return Intrinsics3.areEqual(this.channelId, trackJoinCall.channelId) && Intrinsics3.areEqual(this.channelType, trackJoinCall.channelType) && Intrinsics3.areEqual(this.messageId, trackJoinCall.messageId) && Intrinsics3.areEqual(this.recipientIds, trackJoinCall.recipientIds) && Intrinsics3.areEqual(this.participantIds, trackJoinCall.participantIds);
+        return C12238m.areEqual(this.channelId, trackJoinCall.channelId) && C12238m.areEqual(this.channelType, trackJoinCall.channelType) && C12238m.areEqual(this.messageId, trackJoinCall.messageId) && C12238m.areEqual(this.recipientIds, trackJoinCall.recipientIds) && C12238m.areEqual(this.participantIds, trackJoinCall.participantIds);
     }
 
     public int hashCode() {
@@ -49,15 +49,15 @@ public final /* data */ class TrackJoinCall implements AnalyticsSchema, TrackBas
     }
 
     public String toString() {
-        StringBuilder sbU = outline.U("TrackJoinCall(channelId=");
-        sbU.append(this.channelId);
-        sbU.append(", channelType=");
-        sbU.append(this.channelType);
-        sbU.append(", messageId=");
-        sbU.append(this.messageId);
-        sbU.append(", recipientIds=");
-        sbU.append(this.recipientIds);
-        sbU.append(", participantIds=");
-        return outline.L(sbU, this.participantIds, ")");
+        StringBuilder sbM833U = C1643a.m833U("TrackJoinCall(channelId=");
+        sbM833U.append(this.channelId);
+        sbM833U.append(", channelType=");
+        sbM833U.append(this.channelType);
+        sbM833U.append(", messageId=");
+        sbM833U.append(this.messageId);
+        sbM833U.append(", recipientIds=");
+        sbM833U.append(this.recipientIds);
+        sbM833U.append(", participantIds=");
+        return C1643a.m824L(sbM833U, this.participantIds, ")");
     }
 }

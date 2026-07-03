@@ -1,8 +1,8 @@
 package com.discord.analytics.generated.traits;
 
-import b.d.b.a.outline;
-import d0.z.d.Intrinsics3;
 import java.util.List;
+import p007b.p100d.p104b.p105a.C1643a;
+import p507d0.p592z.p594d.C12238m;
 
 /* JADX INFO: compiled from: TrackDispatchBase.kt */
 /* JADX INFO: loaded from: classes.dex */
@@ -21,7 +21,7 @@ public final /* data */ class TrackDispatchBase {
             return false;
         }
         TrackDispatchBase trackDispatchBase = (TrackDispatchBase) other;
-        return Intrinsics3.areEqual(this.applicationId, trackDispatchBase.applicationId) && Intrinsics3.areEqual(this.branchId, trackDispatchBase.branchId) && Intrinsics3.areEqual(this.buildId, trackDispatchBase.buildId) && Intrinsics3.areEqual(this.manifestIds, trackDispatchBase.manifestIds) && Intrinsics3.areEqual(this.nonce, trackDispatchBase.nonce);
+        return C12238m.areEqual(this.applicationId, trackDispatchBase.applicationId) && C12238m.areEqual(this.branchId, trackDispatchBase.branchId) && C12238m.areEqual(this.buildId, trackDispatchBase.buildId) && C12238m.areEqual(this.manifestIds, trackDispatchBase.manifestIds) && C12238m.areEqual(this.nonce, trackDispatchBase.nonce);
     }
 
     public int hashCode() {
@@ -38,15 +38,15 @@ public final /* data */ class TrackDispatchBase {
     }
 
     public String toString() {
-        StringBuilder sbU = outline.U("TrackDispatchBase(applicationId=");
-        sbU.append(this.applicationId);
-        sbU.append(", branchId=");
-        sbU.append(this.branchId);
-        sbU.append(", buildId=");
-        sbU.append(this.buildId);
-        sbU.append(", manifestIds=");
-        sbU.append(this.manifestIds);
-        sbU.append(", nonce=");
-        return outline.E(sbU, this.nonce, ")");
+        StringBuilder sbM833U = C1643a.m833U("TrackDispatchBase(applicationId=");
+        sbM833U.append(this.applicationId);
+        sbM833U.append(", branchId=");
+        sbM833U.append(this.branchId);
+        sbM833U.append(", buildId=");
+        sbM833U.append(this.buildId);
+        sbM833U.append(", manifestIds=");
+        sbM833U.append(this.manifestIds);
+        sbM833U.append(", nonce=");
+        return C1643a.m817E(sbM833U, this.nonce, ")");
     }
 }

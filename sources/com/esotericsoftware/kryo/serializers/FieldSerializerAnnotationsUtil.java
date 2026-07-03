@@ -1,6 +1,5 @@
 package com.esotericsoftware.kryo.serializers;
 
-import b.d.b.a.outline;
 import com.esotericsoftware.kryo.Serializer;
 import com.esotericsoftware.kryo.factories.ReflectionSerializerFactory;
 import com.esotericsoftware.kryo.serializers.CollectionSerializer;
@@ -9,6 +8,7 @@ import com.esotericsoftware.kryo.serializers.MapSerializer;
 import java.lang.reflect.Field;
 import java.util.Collection;
 import java.util.Map;
+import p007b.p100d.p104b.p105a.C1643a;
 
 /* JADX INFO: loaded from: classes.dex */
 public final class FieldSerializerAnnotationsUtil {
@@ -28,21 +28,21 @@ public final class FieldSerializerAnnotationsUtil {
             }
             if (field.isAnnotationPresent(CollectionSerializer.BindCollection.class)) {
                 if (fields[i].serializer != null) {
-                    StringBuilder sbU = outline.U("CollectionSerialier.Bind cannot be used with field ");
-                    sbU.append(fields[i].getField().getDeclaringClass().getName());
-                    sbU.append(".");
-                    sbU.append(fields[i].getField().getName());
-                    sbU.append(", because it has a serializer already.");
-                    throw new RuntimeException(sbU.toString());
+                    StringBuilder sbM833U = C1643a.m833U("CollectionSerialier.Bind cannot be used with field ");
+                    sbM833U.append(fields[i].getField().getDeclaringClass().getName());
+                    sbM833U.append(".");
+                    sbM833U.append(fields[i].getField().getName());
+                    sbM833U.append(", because it has a serializer already.");
+                    throw new RuntimeException(sbM833U.toString());
                 }
                 CollectionSerializer.BindCollection bindCollection = (CollectionSerializer.BindCollection) field.getAnnotation(CollectionSerializer.BindCollection.class);
                 if (!Collection.class.isAssignableFrom(fields[i].field.getType())) {
-                    StringBuilder sbU2 = outline.U("CollectionSerialier.Bind should be used only with fields implementing java.util.Collection, but field ");
-                    sbU2.append(fields[i].getField().getDeclaringClass().getName());
-                    sbU2.append(".");
-                    sbU2.append(fields[i].getField().getName());
-                    sbU2.append(" does not implement it.");
-                    throw new RuntimeException(sbU2.toString());
+                    StringBuilder sbM833U2 = C1643a.m833U("CollectionSerialier.Bind should be used only with fields implementing java.util.Collection, but field ");
+                    sbM833U2.append(fields[i].getField().getDeclaringClass().getName());
+                    sbM833U2.append(".");
+                    sbM833U2.append(fields[i].getField().getName());
+                    sbM833U2.append(" does not implement it.");
+                    throw new RuntimeException(sbM833U2.toString());
                 }
                 Class<? extends Serializer> clsElementSerializer = bindCollection.elementSerializer();
                 if (clsElementSerializer == Serializer.class) {
@@ -61,21 +61,21 @@ public final class FieldSerializerAnnotationsUtil {
             }
             if (field.isAnnotationPresent(MapSerializer.BindMap.class)) {
                 if (fields[i].serializer != null) {
-                    StringBuilder sbU3 = outline.U("MapSerialier.Bind cannot be used with field ");
-                    sbU3.append(fields[i].getField().getDeclaringClass().getName());
-                    sbU3.append(".");
-                    sbU3.append(fields[i].getField().getName());
-                    sbU3.append(", because it has a serializer already.");
-                    throw new RuntimeException(sbU3.toString());
+                    StringBuilder sbM833U3 = C1643a.m833U("MapSerialier.Bind cannot be used with field ");
+                    sbM833U3.append(fields[i].getField().getDeclaringClass().getName());
+                    sbM833U3.append(".");
+                    sbM833U3.append(fields[i].getField().getName());
+                    sbM833U3.append(", because it has a serializer already.");
+                    throw new RuntimeException(sbM833U3.toString());
                 }
                 MapSerializer.BindMap bindMap = (MapSerializer.BindMap) field.getAnnotation(MapSerializer.BindMap.class);
                 if (!Map.class.isAssignableFrom(fields[i].field.getType())) {
-                    StringBuilder sbU4 = outline.U("MapSerialier.Bind should be used only with fields implementing java.util.Map, but field ");
-                    sbU4.append(fields[i].getField().getDeclaringClass().getName());
-                    sbU4.append(".");
-                    sbU4.append(fields[i].getField().getName());
-                    sbU4.append(" does not implement it.");
-                    throw new RuntimeException(sbU4.toString());
+                    StringBuilder sbM833U4 = C1643a.m833U("MapSerialier.Bind should be used only with fields implementing java.util.Map, but field ");
+                    sbM833U4.append(fields[i].getField().getDeclaringClass().getName());
+                    sbM833U4.append(".");
+                    sbM833U4.append(fields[i].getField().getName());
+                    sbM833U4.append(" does not implement it.");
+                    throw new RuntimeException(sbM833U4.toString());
                 }
                 Class<? extends Serializer> clsValueSerializer = bindMap.valueSerializer();
                 Class<? extends Serializer> clsKeySerializer = bindMap.keySerializer();

@@ -10,8 +10,8 @@ import android.view.View;
 import android.view.WindowManager;
 import androidx.core.view.OnApplyWindowInsetsListener;
 import androidx.core.view.WindowInsetsCompat;
-import d0.z.d.Intrinsics3;
 import java.util.Objects;
+import p507d0.p592z.p594d.C12238m;
 
 /* JADX INFO: compiled from: DisplayUtils.kt */
 /* JADX INFO: loaded from: classes2.dex */
@@ -24,7 +24,7 @@ public final class DisplayUtils {
     };
 
     public static final void drawUnderSystemBars(View view) {
-        Intrinsics3.checkNotNullParameter(view, "view");
+        C12238m.checkNotNullParameter(view, "view");
         view.setFitsSystemWindows(true);
         view.setSystemUiVisibility(view.getSystemUiVisibility() | 1792);
     }
@@ -33,14 +33,14 @@ public final class DisplayUtils {
     private static final Display getDisplayCompat(Context context) {
         if (Build.VERSION.SDK_INT >= 30) {
             Display display = context.getDisplay();
-            Intrinsics3.checkNotNull(display);
-            Intrinsics3.checkNotNullExpressionValue(display, "display!!");
+            C12238m.checkNotNull(display);
+            C12238m.checkNotNullExpressionValue(display, "display!!");
             return display;
         }
         Object systemService = context.getSystemService("window");
         Objects.requireNonNull(systemService, "null cannot be cast to non-null type android.view.WindowManager");
         Display defaultDisplay = ((WindowManager) systemService).getDefaultDisplay();
-        Intrinsics3.checkNotNullExpressionValue(defaultDisplay, "(getSystemService(Contex…owManager).defaultDisplay");
+        C12238m.checkNotNullExpressionValue(defaultDisplay, "(getSystemService(Contex…owManager).defaultDisplay");
         return defaultDisplay;
     }
 
@@ -49,7 +49,7 @@ public final class DisplayUtils {
     }
 
     public static final int getNavigationBarHeight(Resources resources) {
-        Intrinsics3.checkNotNullParameter(resources, "resources");
+        C12238m.checkNotNullParameter(resources, "resources");
         int identifier = resources.getIdentifier("navigation_bar_height", "dimen", "android");
         if (identifier > 0) {
             return resources.getDimensionPixelSize(identifier);
@@ -58,22 +58,22 @@ public final class DisplayUtils {
     }
 
     public static final float getScreenRefreshRate(Context context) {
-        Intrinsics3.checkNotNullParameter(context, "context");
+        C12238m.checkNotNullParameter(context, "context");
         return getDisplayCompat(context).getRefreshRate();
     }
 
     public static final Rect getScreenSize(Context context) {
-        Intrinsics3.checkNotNullParameter(context, "context");
+        C12238m.checkNotNullParameter(context, "context");
         Resources resources = context.getResources();
-        Intrinsics3.checkNotNullExpressionValue(resources, "context.resources");
+        C12238m.checkNotNullExpressionValue(resources, "context.resources");
         int i = resources.getDisplayMetrics().widthPixels;
         Resources resources2 = context.getResources();
-        Intrinsics3.checkNotNullExpressionValue(resources2, "context.resources");
+        C12238m.checkNotNullExpressionValue(resources2, "context.resources");
         return new Rect(0, 0, i, resources2.getDisplayMetrics().heightPixels);
     }
 
     public static final int getStatusBarHeight(Resources resources) {
-        Intrinsics3.checkNotNullParameter(resources, "resources");
+        C12238m.checkNotNullParameter(resources, "resources");
         int identifier = resources.getIdentifier("status_bar_height", "dimen", "android");
         if (identifier > 0) {
             return resources.getDimensionPixelSize(identifier);
@@ -82,13 +82,13 @@ public final class DisplayUtils {
     }
 
     public static final boolean hasNavigationBar(Resources resources) {
-        Intrinsics3.checkNotNullParameter(resources, "resources");
+        C12238m.checkNotNullParameter(resources, "resources");
         int identifier = resources.getIdentifier("config_showNavigationBar", "bool", "android");
         return identifier > 0 && resources.getBoolean(identifier);
     }
 
     public static final boolean isGestureNavigationEnabled(Resources resources) {
-        Intrinsics3.checkNotNullParameter(resources, "resources");
+        C12238m.checkNotNullParameter(resources, "resources");
         if (Build.VERSION.SDK_INT < 29) {
             return false;
         }
@@ -98,8 +98,8 @@ public final class DisplayUtils {
     }
 
     public static final Rect resizeToFit(Rect rect, Rect rect2) {
-        Intrinsics3.checkNotNullParameter(rect, "in");
-        Intrinsics3.checkNotNullParameter(rect2, "bounds");
+        C12238m.checkNotNullParameter(rect, "in");
+        C12238m.checkNotNullParameter(rect2, "bounds");
         int iWidth = rect.width();
         int iHeight = rect.height();
         if (iWidth > rect2.width()) {
@@ -114,8 +114,8 @@ public final class DisplayUtils {
     }
 
     public static final Rect resizeToFitScreen(Context context, Rect rect) {
-        Intrinsics3.checkNotNullParameter(context, "context");
-        Intrinsics3.checkNotNullParameter(rect, "in");
+        C12238m.checkNotNullParameter(context, "context");
+        C12238m.checkNotNullParameter(rect, "in");
         return resizeToFit(rect, getScreenSize(context));
     }
 }

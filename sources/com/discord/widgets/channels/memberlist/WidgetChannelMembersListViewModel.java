@@ -1,8 +1,6 @@
 package com.discord.widgets.channels.memberlist;
 
 import androidx.annotation.MainThread;
-import b.a.d.AppViewModel;
-import b.d.b.a.outline;
 import com.discord.api.channel.Channel;
 import com.discord.api.channel.ChannelUtils;
 import com.discord.api.role.GuildRole;
@@ -31,15 +29,12 @@ import com.discord.stores.StoreUserPresence;
 import com.discord.stores.StoreUserRelationships;
 import com.discord.utilities.error.Error;
 import com.discord.utilities.lazy.memberlist.ChannelMemberList;
+import com.discord.utilities.p501rx.ObservableExtensionsKt;
 import com.discord.utilities.permissions.PermissionUtils;
 import com.discord.utilities.rest.RestAPI;
-import com.discord.utilities.rx.ObservableExtensionsKt;
 import com.discord.widgets.channels.memberlist.PrivateChannelMemberListService;
 import com.discord.widgets.channels.memberlist.WidgetChannelMembersListViewModel;
 import com.discord.widgets.channels.memberlist.adapter.ChannelMembersListAdapter;
-import d0.z.d.Intrinsics3;
-import d0.z.d.Lambda;
-import j0.k.Func1;
 import java.util.Map;
 import java.util.Set;
 import kotlin.NoWhenBranchMatchedException;
@@ -47,17 +42,22 @@ import kotlin.Unit;
 import kotlin.jvm.functions.Function0;
 import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.DefaultConstructorMarker;
-import kotlin.ranges.Ranges2;
-import rx.Observable;
-import rx.Subscription;
-import rx.functions.Func2;
-import rx.functions.Func5;
-import rx.functions.Func9;
-import rx.subjects.PublishSubject;
+import kotlin.ranges.IntRange;
+import p007b.p008a.p018d.AbstractC0859d0;
+import p007b.p100d.p104b.p105a.C1643a;
+import p507d0.p592z.p594d.AbstractC12240o;
+import p507d0.p592z.p594d.C12238m;
+import p637j0.p641k.InterfaceC12589b;
+import p658rx.Observable;
+import p658rx.Subscription;
+import p658rx.functions.Func2;
+import p658rx.functions.Func5;
+import p658rx.functions.Func9;
+import p658rx.subjects.PublishSubject;
 
 /* JADX INFO: compiled from: WidgetChannelMembersListViewModel.kt */
 /* JADX INFO: loaded from: classes2.dex */
-public final class WidgetChannelMembersListViewModel extends AppViewModel<ViewState> {
+public final class WidgetChannelMembersListViewModel extends AbstractC0859d0<ViewState> {
 
     /* JADX INFO: renamed from: Companion, reason: from kotlin metadata */
     public static final Companion INSTANCE = new Companion(null);
@@ -66,22 +66,22 @@ public final class WidgetChannelMembersListViewModel extends AppViewModel<ViewSt
     private final StoreEmojiCustom storeCustomEmojis;
     private final StoreGuilds storeGuilds;
 
-    /* JADX INFO: renamed from: com.discord.widgets.channels.memberlist.WidgetChannelMembersListViewModel$2, reason: invalid class name */
+    /* JADX INFO: renamed from: com.discord.widgets.channels.memberlist.WidgetChannelMembersListViewModel$2 */
     /* JADX INFO: compiled from: WidgetChannelMembersListViewModel.kt */
-    public static final class AnonymousClass2 extends Lambda implements Function1<StoreState, Unit> {
-        public AnonymousClass2() {
+    public static final class C74952 extends AbstractC12240o implements Function1<StoreState, Unit> {
+        public C74952() {
             super(1);
         }
 
         @Override // kotlin.jvm.functions.Function1
         public /* bridge */ /* synthetic */ Unit invoke(StoreState storeState) {
             invoke2(storeState);
-            return Unit.a;
+            return Unit.f27425a;
         }
 
         /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
         public final void invoke2(StoreState storeState) {
-            Intrinsics3.checkNotNullParameter(storeState, "storeState");
+            C12238m.checkNotNullParameter(storeState, "storeState");
             WidgetChannelMembersListViewModel.this.handleStoreState(storeState);
         }
     }
@@ -92,110 +92,110 @@ public final class WidgetChannelMembersListViewModel extends AppViewModel<ViewSt
         }
 
         private final Observable<StoreState> observeStoreState(final StoreGuilds storeGuilds, final StoreChannelMembers storeChannelMembers, final StoreThreadMembers storeThreadMembers, StoreChannelsSelected storeChannelsSelected, StoreNavigation storeNavigation, final PrivateChannelMemberListService privateChannelMemberListService, final StorePermissions storePermissions, final StoreUserRelationships storeUserRelationships, final StoreChannels storeChannels, final StoreUser storeUser, final StoreUserPresence storePresence, final StoreApplicationStreaming storeApplicationStreaming, final StoreThreadsJoined storeThreadsJoined) {
-            final Observable<R> observableG = storeNavigation.observeRightPanelState().G(new Func1<PanelState, Boolean>() { // from class: com.discord.widgets.channels.memberlist.WidgetChannelMembersListViewModel$Companion$observeStoreState$isPanelOpenObservable$1
-                @Override // j0.k.Func1
+            final Observable<R> observableM11083G = storeNavigation.observeRightPanelState().m11083G(new InterfaceC12589b<PanelState, Boolean>() { // from class: com.discord.widgets.channels.memberlist.WidgetChannelMembersListViewModel$Companion$observeStoreState$isPanelOpenObservable$1
+                @Override // p637j0.p641k.InterfaceC12589b
                 public final Boolean call(PanelState panelState) {
-                    return Boolean.valueOf(Intrinsics3.areEqual(panelState, PanelState.c.a));
+                    return Boolean.valueOf(C12238m.areEqual(panelState, PanelState.C5580c.f18642a));
                 }
             });
-            Observable observableY = storeChannelsSelected.observeSelectedChannel().Y(new Func1<Channel, Observable<? extends StoreState>>() { // from class: com.discord.widgets.channels.memberlist.WidgetChannelMembersListViewModel$Companion$observeStoreState$1
-                @Override // j0.k.Func1
+            Observable observableM11099Y = storeChannelsSelected.observeSelectedChannel().m11099Y(new InterfaceC12589b<Channel, Observable<? extends StoreState>>() { // from class: com.discord.widgets.channels.memberlist.WidgetChannelMembersListViewModel$Companion$observeStoreState$1
+                @Override // p637j0.p641k.InterfaceC12589b
                 public final Observable<? extends WidgetChannelMembersListViewModel.StoreState> call(final Channel channel) {
                     if (channel == null) {
-                        return observableG.G(new Func1<Boolean, WidgetChannelMembersListViewModel.StoreState.None>() { // from class: com.discord.widgets.channels.memberlist.WidgetChannelMembersListViewModel$Companion$observeStoreState$1.1
-                            @Override // j0.k.Func1
+                        return observableM11083G.m11083G(new InterfaceC12589b<Boolean, WidgetChannelMembersListViewModel.StoreState.None>() { // from class: com.discord.widgets.channels.memberlist.WidgetChannelMembersListViewModel$Companion$observeStoreState$1.1
+                            @Override // p637j0.p641k.InterfaceC12589b
                             public final WidgetChannelMembersListViewModel.StoreState.None call(Boolean bool) {
-                                Intrinsics3.checkNotNullExpressionValue(bool, "isPanelOpen");
+                                C12238m.checkNotNullExpressionValue(bool, "isPanelOpen");
                                 return new WidgetChannelMembersListViewModel.StoreState.None(bool.booleanValue());
                             }
                         });
                     }
-                    if (ChannelUtils.B(channel)) {
-                        return Observable.j(privateChannelMemberListService.observeStateForGroupDm(channel), observableG, new Func2<PrivateChannelMemberListService.State, Boolean, WidgetChannelMembersListViewModel.StoreState.Private>() { // from class: com.discord.widgets.channels.memberlist.WidgetChannelMembersListViewModel$Companion$observeStoreState$1.2
-                            @Override // rx.functions.Func2
+                    if (ChannelUtils.m7667B(channel)) {
+                        return Observable.m11076j(privateChannelMemberListService.observeStateForGroupDm(channel), observableM11083G, new Func2<PrivateChannelMemberListService.State, Boolean, WidgetChannelMembersListViewModel.StoreState.Private>() { // from class: com.discord.widgets.channels.memberlist.WidgetChannelMembersListViewModel$Companion$observeStoreState$1.2
+                            @Override // p658rx.functions.Func2
                             public final WidgetChannelMembersListViewModel.StoreState.Private call(PrivateChannelMemberListService.State state, Boolean bool) {
-                                Intrinsics3.checkNotNullExpressionValue(bool, "isPanelOpen");
+                                C12238m.checkNotNullExpressionValue(bool, "isPanelOpen");
                                 return new WidgetChannelMembersListViewModel.StoreState.Private(bool.booleanValue(), state.getChannel(), state.getUsers(), state.getPresences(), state.getApplicationStreams(), storeUserRelationships.getRelationships());
                             }
                         });
                     }
-                    return ChannelUtils.H(channel) ? storeChannels.observeChannel(channel.getParentId()).Y(new Func1<Channel, Observable<? extends WidgetChannelMembersListViewModel.StoreState>>() { // from class: com.discord.widgets.channels.memberlist.WidgetChannelMembersListViewModel$Companion$observeStoreState$1.3
-                        @Override // j0.k.Func1
+                    return ChannelUtils.m7673H(channel) ? storeChannels.observeChannel(channel.getParentId()).m11099Y(new InterfaceC12589b<Channel, Observable<? extends WidgetChannelMembersListViewModel.StoreState>>() { // from class: com.discord.widgets.channels.memberlist.WidgetChannelMembersListViewModel$Companion$observeStoreState$1.3
+                        @Override // p637j0.p641k.InterfaceC12589b
                         public final Observable<? extends WidgetChannelMembersListViewModel.StoreState> call(final Channel channel2) {
                             if (channel2 == null) {
-                                return observableG.G(new Func1<Boolean, WidgetChannelMembersListViewModel.StoreState.None>() { // from class: com.discord.widgets.channels.memberlist.WidgetChannelMembersListViewModel.Companion.observeStoreState.1.3.1
-                                    @Override // j0.k.Func1
+                                return observableM11083G.m11083G(new InterfaceC12589b<Boolean, WidgetChannelMembersListViewModel.StoreState.None>() { // from class: com.discord.widgets.channels.memberlist.WidgetChannelMembersListViewModel.Companion.observeStoreState.1.3.1
+                                    @Override // p637j0.p641k.InterfaceC12589b
                                     public final WidgetChannelMembersListViewModel.StoreState.None call(Boolean bool) {
-                                        Intrinsics3.checkNotNullExpressionValue(bool, "isPanelOpen");
+                                        C12238m.checkNotNullExpressionValue(bool, "isPanelOpen");
                                         return new WidgetChannelMembersListViewModel.StoreState.None(bool.booleanValue());
                                     }
                                 });
                             }
-                            if (!ChannelUtils.i(channel2)) {
+                            if (!ChannelUtils.m7685i(channel2)) {
                                 Observable<Set<Long>> observableObserveThreadMembers = storeThreadMembers.observeThreadMembers(channel.getId());
-                                WidgetChannelMembersListViewModel2 widgetChannelMembersListViewModel2 = WidgetChannelMembersListViewModel2.this;
-                                return Observable.c(observableObserveThreadMembers, observableG, storeGuilds.observeRoles(channel.getGuildId()), storeGuilds.observeGuildMembers(channel.getGuildId()), storeGuilds.observeGuild(channel.getGuildId()), storeUser.observeAllUsers(), storePresence.observeAllPresences(), storeApplicationStreaming.observeStreamsByUser(), storeThreadsJoined.observeJoinedThread(channel.getId()), new Func9<Set<? extends Long>, Boolean, Map<Long, ? extends GuildRole>, Map<Long, ? extends GuildMember>, Guild, Map<Long, ? extends User>, Map<Long, ? extends Presence>, Map<Long, ? extends ModelApplicationStream>, StoreThreadsJoined.JoinedThread, WidgetChannelMembersListViewModel.StoreState.Thread>() { // from class: com.discord.widgets.channels.memberlist.WidgetChannelMembersListViewModel.Companion.observeStoreState.1.3.3
-                                    @Override // rx.functions.Func9
+                                WidgetChannelMembersListViewModel$Companion$observeStoreState$1 widgetChannelMembersListViewModel$Companion$observeStoreState$1 = WidgetChannelMembersListViewModel$Companion$observeStoreState$1.this;
+                                return Observable.m11066c(observableObserveThreadMembers, observableM11083G, storeGuilds.observeRoles(channel.getGuildId()), storeGuilds.observeGuildMembers(channel.getGuildId()), storeGuilds.observeGuild(channel.getGuildId()), storeUser.observeAllUsers(), storePresence.observeAllPresences(), storeApplicationStreaming.observeStreamsByUser(), storeThreadsJoined.observeJoinedThread(channel.getId()), new Func9<Set<? extends Long>, Boolean, Map<Long, ? extends GuildRole>, Map<Long, ? extends GuildMember>, Guild, Map<Long, ? extends User>, Map<Long, ? extends Presence>, Map<Long, ? extends ModelApplicationStream>, StoreThreadsJoined.JoinedThread, WidgetChannelMembersListViewModel.StoreState.Thread>() { // from class: com.discord.widgets.channels.memberlist.WidgetChannelMembersListViewModel.Companion.observeStoreState.1.3.3
+                                    @Override // p658rx.functions.Func9
                                     public /* bridge */ /* synthetic */ WidgetChannelMembersListViewModel.StoreState.Thread call(Set<? extends Long> set, Boolean bool, Map<Long, ? extends GuildRole> map, Map<Long, ? extends GuildMember> map2, Guild guild, Map<Long, ? extends User> map3, Map<Long, ? extends Presence> map4, Map<Long, ? extends ModelApplicationStream> map5, StoreThreadsJoined.JoinedThread joinedThread) {
                                         return call2((Set<Long>) set, bool, (Map<Long, GuildRole>) map, (Map<Long, GuildMember>) map2, guild, map3, (Map<Long, Presence>) map4, map5, joinedThread);
                                     }
 
                                     /* JADX INFO: renamed from: call, reason: avoid collision after fix types in other method */
                                     public final WidgetChannelMembersListViewModel.StoreState.Thread call2(Set<Long> set, Boolean bool, Map<Long, GuildRole> map, Map<Long, GuildMember> map2, Guild guild, Map<Long, ? extends User> map3, Map<Long, Presence> map4, Map<Long, ? extends ModelApplicationStream> map5, StoreThreadsJoined.JoinedThread joinedThread) {
-                                        Intrinsics3.checkNotNullExpressionValue(bool, "isPanelOpen");
+                                        C12238m.checkNotNullExpressionValue(bool, "isPanelOpen");
                                         boolean zBooleanValue = bool.booleanValue();
                                         Channel channel3 = channel;
                                         Channel channel4 = channel2;
-                                        Intrinsics3.checkNotNullExpressionValue(map, "roles");
-                                        Intrinsics3.checkNotNullExpressionValue(map2, "guildMembers");
-                                        Intrinsics3.checkNotNullExpressionValue(map3, "users");
-                                        Intrinsics3.checkNotNullExpressionValue(map4, "presences");
-                                        Intrinsics3.checkNotNullExpressionValue(map5, "streams");
-                                        Intrinsics3.checkNotNullExpressionValue(set, "threadMembers");
+                                        C12238m.checkNotNullExpressionValue(map, "roles");
+                                        C12238m.checkNotNullExpressionValue(map2, "guildMembers");
+                                        C12238m.checkNotNullExpressionValue(map3, "users");
+                                        C12238m.checkNotNullExpressionValue(map4, "presences");
+                                        C12238m.checkNotNullExpressionValue(map5, "streams");
+                                        C12238m.checkNotNullExpressionValue(set, "threadMembers");
                                         return new WidgetChannelMembersListViewModel.StoreState.Thread(zBooleanValue, channel3, channel4, guild, map, map2, map3, map4, map5, set, joinedThread);
                                     }
                                 });
                             }
                             Observable<Long> observableObservePermissionsForChannel = storePermissions.observePermissionsForChannel(channel2.getId());
                             Observable<ChannelMemberList> observableObserveChannelMemberList = storeChannelMembers.observeChannelMemberList(channel2.getGuildId(), channel2.getId());
-                            WidgetChannelMembersListViewModel2 widgetChannelMembersListViewModel3 = WidgetChannelMembersListViewModel2.this;
-                            return Observable.g(observableObservePermissionsForChannel, observableObserveChannelMemberList, observableG, storeGuilds.observeRoles(channel.getGuildId()), storeGuilds.observeGuild(channel.getGuildId()), new Func5<Long, ChannelMemberList, Boolean, Map<Long, ? extends GuildRole>, Guild, WidgetChannelMembersListViewModel.StoreState.Guild>() { // from class: com.discord.widgets.channels.memberlist.WidgetChannelMembersListViewModel.Companion.observeStoreState.1.3.2
-                                @Override // rx.functions.Func5
+                            WidgetChannelMembersListViewModel$Companion$observeStoreState$1 widgetChannelMembersListViewModel$Companion$observeStoreState$2 = WidgetChannelMembersListViewModel$Companion$observeStoreState$1.this;
+                            return Observable.m11072g(observableObservePermissionsForChannel, observableObserveChannelMemberList, observableM11083G, storeGuilds.observeRoles(channel.getGuildId()), storeGuilds.observeGuild(channel.getGuildId()), new Func5<Long, ChannelMemberList, Boolean, Map<Long, ? extends GuildRole>, Guild, WidgetChannelMembersListViewModel.StoreState.Guild>() { // from class: com.discord.widgets.channels.memberlist.WidgetChannelMembersListViewModel.Companion.observeStoreState.1.3.2
+                                @Override // p658rx.functions.Func5
                                 public /* bridge */ /* synthetic */ WidgetChannelMembersListViewModel.StoreState.Guild call(Long l, ChannelMemberList channelMemberList, Boolean bool, Map<Long, ? extends GuildRole> map, Guild guild) {
                                     return call2(l, channelMemberList, bool, (Map<Long, GuildRole>) map, guild);
                                 }
 
                                 /* JADX INFO: renamed from: call, reason: avoid collision after fix types in other method */
                                 public final WidgetChannelMembersListViewModel.StoreState.Guild call2(Long l, ChannelMemberList channelMemberList, Boolean bool, Map<Long, GuildRole> map, Guild guild) {
-                                    Intrinsics3.checkNotNullExpressionValue(bool, "isPanelOpen");
+                                    C12238m.checkNotNullExpressionValue(bool, "isPanelOpen");
                                     boolean zBooleanValue = bool.booleanValue();
                                     Channel channel3 = channel2;
-                                    Intrinsics3.checkNotNullExpressionValue(channelMemberList, "channelMemberList");
-                                    Intrinsics3.checkNotNullExpressionValue(map, "roles");
+                                    C12238m.checkNotNullExpressionValue(channelMemberList, "channelMemberList");
+                                    C12238m.checkNotNullExpressionValue(map, "roles");
                                     return new WidgetChannelMembersListViewModel.StoreState.Guild(zBooleanValue, channel3, guild, channelMemberList, l, map);
                                 }
                             });
                         }
-                    }) : Observable.g(storeGuilds.observeGuild(channel.getGuildId()), storeGuilds.observeRoles(channel.getGuildId()), storePermissions.observePermissionsForChannel(channel.getId()), storeChannelMembers.observeChannelMemberList(channel.getGuildId(), channel.getId()), observableG, new Func5<Guild, Map<Long, ? extends GuildRole>, Long, ChannelMemberList, Boolean, WidgetChannelMembersListViewModel.StoreState.Guild>() { // from class: com.discord.widgets.channels.memberlist.WidgetChannelMembersListViewModel$Companion$observeStoreState$1.4
-                        @Override // rx.functions.Func5
+                    }) : Observable.m11072g(storeGuilds.observeGuild(channel.getGuildId()), storeGuilds.observeRoles(channel.getGuildId()), storePermissions.observePermissionsForChannel(channel.getId()), storeChannelMembers.observeChannelMemberList(channel.getGuildId(), channel.getId()), observableM11083G, new Func5<Guild, Map<Long, ? extends GuildRole>, Long, ChannelMemberList, Boolean, WidgetChannelMembersListViewModel.StoreState.Guild>() { // from class: com.discord.widgets.channels.memberlist.WidgetChannelMembersListViewModel$Companion$observeStoreState$1.4
+                        @Override // p658rx.functions.Func5
                         public /* bridge */ /* synthetic */ WidgetChannelMembersListViewModel.StoreState.Guild call(Guild guild, Map<Long, ? extends GuildRole> map, Long l, ChannelMemberList channelMemberList, Boolean bool) {
                             return call2(guild, (Map<Long, GuildRole>) map, l, channelMemberList, bool);
                         }
 
                         /* JADX INFO: renamed from: call, reason: avoid collision after fix types in other method */
                         public final WidgetChannelMembersListViewModel.StoreState.Guild call2(Guild guild, Map<Long, GuildRole> map, Long l, ChannelMemberList channelMemberList, Boolean bool) {
-                            Intrinsics3.checkNotNullExpressionValue(bool, "isPanelOpen");
+                            C12238m.checkNotNullExpressionValue(bool, "isPanelOpen");
                             boolean zBooleanValue = bool.booleanValue();
                             Channel channel2 = channel;
-                            Intrinsics3.checkNotNullExpressionValue(channelMemberList, "channelMemberList");
-                            Intrinsics3.checkNotNullExpressionValue(map, "guildRoles");
+                            C12238m.checkNotNullExpressionValue(channelMemberList, "channelMemberList");
+                            C12238m.checkNotNullExpressionValue(map, "guildRoles");
                             return new WidgetChannelMembersListViewModel.StoreState.Guild(zBooleanValue, channel2, guild, channelMemberList, l, map);
                         }
                     });
                 }
             });
-            Intrinsics3.checkNotNullExpressionValue(observableY, "storeChannelsSelected\n  …            }\n          }");
-            return observableY;
+            C12238m.checkNotNullExpressionValue(observableM11099Y, "storeChannelsSelected\n  …            }\n          }");
+            return observableM11099Y;
         }
 
         public static /* synthetic */ Observable observeStoreState$default(Companion companion, StoreGuilds storeGuilds, StoreChannelMembers storeChannelMembers, StoreThreadMembers storeThreadMembers, StoreChannelsSelected storeChannelsSelected, StoreNavigation storeNavigation, PrivateChannelMemberListService privateChannelMemberListService, StorePermissions storePermissions, StoreUserRelationships storeUserRelationships, StoreChannels storeChannels, StoreUser storeUser, StoreUserPresence storeUserPresence, StoreApplicationStreaming storeApplicationStreaming, StoreThreadsJoined storeThreadsJoined, int i, Object obj) {
@@ -251,7 +251,7 @@ public final class WidgetChannelMembersListViewModel extends AppViewModel<ViewSt
             }
 
             public String toString() {
-                return outline.B(outline.U("Error(code="), this.code, ")");
+                return C1643a.m814B(C1643a.m833U("Error(code="), this.code, ")");
             }
         }
 
@@ -283,7 +283,7 @@ public final class WidgetChannelMembersListViewModel extends AppViewModel<ViewSt
 
     /* JADX INFO: compiled from: WidgetChannelMembersListViewModel.kt */
     public interface GuildChannelSubscriber {
-        void subscribeToChannelRange(Channel channel, Ranges2 range);
+        void subscribeToChannelRange(Channel channel, IntRange range);
 
         void subscribeToThread(Channel channel);
     }
@@ -356,9 +356,9 @@ public final class WidgetChannelMembersListViewModel extends AppViewModel<ViewSt
             /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
             public Guild(boolean z2, Channel channel, com.discord.models.guild.Guild guild, ChannelMemberList channelMemberList, Long l, Map<Long, GuildRole> map) {
                 super(z2, channel, null);
-                Intrinsics3.checkNotNullParameter(channel, "channel");
-                Intrinsics3.checkNotNullParameter(channelMemberList, "channelMembers");
-                Intrinsics3.checkNotNullParameter(map, "guildRoles");
+                C12238m.checkNotNullParameter(channel, "channel");
+                C12238m.checkNotNullParameter(channelMemberList, "channelMembers");
+                C12238m.checkNotNullParameter(map, "guildRoles");
                 this.isPanelOpen = z2;
                 this.channel = channel;
                 this.guild = guild;
@@ -422,9 +422,9 @@ public final class WidgetChannelMembersListViewModel extends AppViewModel<ViewSt
             }
 
             public final Guild copy(boolean isPanelOpen, Channel channel, com.discord.models.guild.Guild guild, ChannelMemberList channelMembers, Long channelPermissions, Map<Long, GuildRole> guildRoles) {
-                Intrinsics3.checkNotNullParameter(channel, "channel");
-                Intrinsics3.checkNotNullParameter(channelMembers, "channelMembers");
-                Intrinsics3.checkNotNullParameter(guildRoles, "guildRoles");
+                C12238m.checkNotNullParameter(channel, "channel");
+                C12238m.checkNotNullParameter(channelMembers, "channelMembers");
+                C12238m.checkNotNullParameter(guildRoles, "guildRoles");
                 return new Guild(isPanelOpen, channel, guild, channelMembers, channelPermissions, guildRoles);
             }
 
@@ -436,7 +436,7 @@ public final class WidgetChannelMembersListViewModel extends AppViewModel<ViewSt
                     return false;
                 }
                 Guild guild = (Guild) other;
-                return getIsPanelOpen() == guild.getIsPanelOpen() && Intrinsics3.areEqual(getChannel(), guild.getChannel()) && Intrinsics3.areEqual(this.guild, guild.guild) && Intrinsics3.areEqual(this.channelMembers, guild.channelMembers) && Intrinsics3.areEqual(this.channelPermissions, guild.channelPermissions) && Intrinsics3.areEqual(this.guildRoles, guild.guildRoles);
+                return getIsPanelOpen() == guild.getIsPanelOpen() && C12238m.areEqual(getChannel(), guild.getChannel()) && C12238m.areEqual(this.guild, guild.guild) && C12238m.areEqual(this.channelMembers, guild.channelMembers) && C12238m.areEqual(this.channelPermissions, guild.channelPermissions) && C12238m.areEqual(this.guildRoles, guild.guildRoles);
             }
 
             @Override // com.discord.widgets.channels.memberlist.WidgetChannelMembersListViewModel.StoreState
@@ -486,18 +486,18 @@ public final class WidgetChannelMembersListViewModel extends AppViewModel<ViewSt
             }
 
             public String toString() {
-                StringBuilder sbU = outline.U("Guild(isPanelOpen=");
-                sbU.append(getIsPanelOpen());
-                sbU.append(", channel=");
-                sbU.append(getChannel());
-                sbU.append(", guild=");
-                sbU.append(this.guild);
-                sbU.append(", channelMembers=");
-                sbU.append(this.channelMembers);
-                sbU.append(", channelPermissions=");
-                sbU.append(this.channelPermissions);
-                sbU.append(", guildRoles=");
-                return outline.M(sbU, this.guildRoles, ")");
+                StringBuilder sbM833U = C1643a.m833U("Guild(isPanelOpen=");
+                sbM833U.append(getIsPanelOpen());
+                sbM833U.append(", channel=");
+                sbM833U.append(getChannel());
+                sbM833U.append(", guild=");
+                sbM833U.append(this.guild);
+                sbM833U.append(", channelMembers=");
+                sbM833U.append(this.channelMembers);
+                sbM833U.append(", channelPermissions=");
+                sbM833U.append(this.channelPermissions);
+                sbM833U.append(", guildRoles=");
+                return C1643a.m825M(sbM833U, this.guildRoles, ")");
             }
         }
 
@@ -548,10 +548,10 @@ public final class WidgetChannelMembersListViewModel extends AppViewModel<ViewSt
             }
 
             public String toString() {
-                StringBuilder sbU = outline.U("None(isPanelOpen=");
-                sbU.append(getIsPanelOpen());
-                sbU.append(")");
-                return sbU.toString();
+                StringBuilder sbM833U = C1643a.m833U("None(isPanelOpen=");
+                sbM833U.append(getIsPanelOpen());
+                sbM833U.append(")");
+                return sbM833U.toString();
             }
         }
 
@@ -568,11 +568,11 @@ public final class WidgetChannelMembersListViewModel extends AppViewModel<ViewSt
             /* JADX WARN: Multi-variable type inference failed */
             public Private(boolean z2, Channel channel, Map<Long, ? extends User> map, Map<Long, Presence> map2, Map<Long, ? extends ModelApplicationStream> map3, Map<Long, Integer> map4) {
                 super(z2, channel, null);
-                Intrinsics3.checkNotNullParameter(channel, "channel");
-                Intrinsics3.checkNotNullParameter(map, "users");
-                Intrinsics3.checkNotNullParameter(map2, "presences");
-                Intrinsics3.checkNotNullParameter(map3, "applicationStreams");
-                Intrinsics3.checkNotNullParameter(map4, "relationships");
+                C12238m.checkNotNullParameter(channel, "channel");
+                C12238m.checkNotNullParameter(map, "users");
+                C12238m.checkNotNullParameter(map2, "presences");
+                C12238m.checkNotNullParameter(map3, "applicationStreams");
+                C12238m.checkNotNullParameter(map4, "relationships");
                 this.isPanelOpen = z2;
                 this.channel = channel;
                 this.users = map;
@@ -633,11 +633,11 @@ public final class WidgetChannelMembersListViewModel extends AppViewModel<ViewSt
             }
 
             public final Private copy(boolean isPanelOpen, Channel channel, Map<Long, ? extends User> users, Map<Long, Presence> presences, Map<Long, ? extends ModelApplicationStream> applicationStreams, Map<Long, Integer> relationships) {
-                Intrinsics3.checkNotNullParameter(channel, "channel");
-                Intrinsics3.checkNotNullParameter(users, "users");
-                Intrinsics3.checkNotNullParameter(presences, "presences");
-                Intrinsics3.checkNotNullParameter(applicationStreams, "applicationStreams");
-                Intrinsics3.checkNotNullParameter(relationships, "relationships");
+                C12238m.checkNotNullParameter(channel, "channel");
+                C12238m.checkNotNullParameter(users, "users");
+                C12238m.checkNotNullParameter(presences, "presences");
+                C12238m.checkNotNullParameter(applicationStreams, "applicationStreams");
+                C12238m.checkNotNullParameter(relationships, "relationships");
                 return new Private(isPanelOpen, channel, users, presences, applicationStreams, relationships);
             }
 
@@ -649,7 +649,7 @@ public final class WidgetChannelMembersListViewModel extends AppViewModel<ViewSt
                     return false;
                 }
                 Private r3 = (Private) other;
-                return getIsPanelOpen() == r3.getIsPanelOpen() && Intrinsics3.areEqual(getChannel(), r3.getChannel()) && Intrinsics3.areEqual(this.users, r3.users) && Intrinsics3.areEqual(this.presences, r3.presences) && Intrinsics3.areEqual(this.applicationStreams, r3.applicationStreams) && Intrinsics3.areEqual(this.relationships, r3.relationships);
+                return getIsPanelOpen() == r3.getIsPanelOpen() && C12238m.areEqual(getChannel(), r3.getChannel()) && C12238m.areEqual(this.users, r3.users) && C12238m.areEqual(this.presences, r3.presences) && C12238m.areEqual(this.applicationStreams, r3.applicationStreams) && C12238m.areEqual(this.relationships, r3.relationships);
             }
 
             public final Map<Long, ModelApplicationStream> getApplicationStreams() {
@@ -699,18 +699,18 @@ public final class WidgetChannelMembersListViewModel extends AppViewModel<ViewSt
             }
 
             public String toString() {
-                StringBuilder sbU = outline.U("Private(isPanelOpen=");
-                sbU.append(getIsPanelOpen());
-                sbU.append(", channel=");
-                sbU.append(getChannel());
-                sbU.append(", users=");
-                sbU.append(this.users);
-                sbU.append(", presences=");
-                sbU.append(this.presences);
-                sbU.append(", applicationStreams=");
-                sbU.append(this.applicationStreams);
-                sbU.append(", relationships=");
-                return outline.M(sbU, this.relationships, ")");
+                StringBuilder sbM833U = C1643a.m833U("Private(isPanelOpen=");
+                sbM833U.append(getIsPanelOpen());
+                sbM833U.append(", channel=");
+                sbM833U.append(getChannel());
+                sbM833U.append(", users=");
+                sbM833U.append(this.users);
+                sbM833U.append(", presences=");
+                sbM833U.append(this.presences);
+                sbM833U.append(", applicationStreams=");
+                sbM833U.append(this.applicationStreams);
+                sbM833U.append(", relationships=");
+                return C1643a.m825M(sbM833U, this.relationships, ")");
             }
         }
 
@@ -732,13 +732,13 @@ public final class WidgetChannelMembersListViewModel extends AppViewModel<ViewSt
             /* JADX WARN: Multi-variable type inference failed */
             public Thread(boolean z2, Channel channel, Channel channel2, com.discord.models.guild.Guild guild, Map<Long, GuildRole> map, Map<Long, GuildMember> map2, Map<Long, ? extends User> map3, Map<Long, Presence> map4, Map<Long, ? extends ModelApplicationStream> map5, Set<Long> set, StoreThreadsJoined.JoinedThread joinedThread) {
                 super(z2, channel, null);
-                Intrinsics3.checkNotNullParameter(channel, "channel");
-                Intrinsics3.checkNotNullParameter(map, "roles");
-                Intrinsics3.checkNotNullParameter(map2, "guildMembers");
-                Intrinsics3.checkNotNullParameter(map3, "users");
-                Intrinsics3.checkNotNullParameter(map4, "presences");
-                Intrinsics3.checkNotNullParameter(map5, "streams");
-                Intrinsics3.checkNotNullParameter(set, "threadMembers");
+                C12238m.checkNotNullParameter(channel, "channel");
+                C12238m.checkNotNullParameter(map, "roles");
+                C12238m.checkNotNullParameter(map2, "guildMembers");
+                C12238m.checkNotNullParameter(map3, "users");
+                C12238m.checkNotNullParameter(map4, "presences");
+                C12238m.checkNotNullParameter(map5, "streams");
+                C12238m.checkNotNullParameter(set, "threadMembers");
                 this.isPanelOpen = z2;
                 this.channel = channel;
                 this.parentChannel = channel2;
@@ -800,13 +800,13 @@ public final class WidgetChannelMembersListViewModel extends AppViewModel<ViewSt
             }
 
             public final Thread copy(boolean isPanelOpen, Channel channel, Channel parentChannel, com.discord.models.guild.Guild guild, Map<Long, GuildRole> roles, Map<Long, GuildMember> guildMembers, Map<Long, ? extends User> users, Map<Long, Presence> presences, Map<Long, ? extends ModelApplicationStream> streams, Set<Long> threadMembers, StoreThreadsJoined.JoinedThread joinedThread) {
-                Intrinsics3.checkNotNullParameter(channel, "channel");
-                Intrinsics3.checkNotNullParameter(roles, "roles");
-                Intrinsics3.checkNotNullParameter(guildMembers, "guildMembers");
-                Intrinsics3.checkNotNullParameter(users, "users");
-                Intrinsics3.checkNotNullParameter(presences, "presences");
-                Intrinsics3.checkNotNullParameter(streams, "streams");
-                Intrinsics3.checkNotNullParameter(threadMembers, "threadMembers");
+                C12238m.checkNotNullParameter(channel, "channel");
+                C12238m.checkNotNullParameter(roles, "roles");
+                C12238m.checkNotNullParameter(guildMembers, "guildMembers");
+                C12238m.checkNotNullParameter(users, "users");
+                C12238m.checkNotNullParameter(presences, "presences");
+                C12238m.checkNotNullParameter(streams, "streams");
+                C12238m.checkNotNullParameter(threadMembers, "threadMembers");
                 return new Thread(isPanelOpen, channel, parentChannel, guild, roles, guildMembers, users, presences, streams, threadMembers, joinedThread);
             }
 
@@ -818,7 +818,7 @@ public final class WidgetChannelMembersListViewModel extends AppViewModel<ViewSt
                     return false;
                 }
                 Thread thread = (Thread) other;
-                return getIsPanelOpen() == thread.getIsPanelOpen() && Intrinsics3.areEqual(getChannel(), thread.getChannel()) && Intrinsics3.areEqual(this.parentChannel, thread.parentChannel) && Intrinsics3.areEqual(this.guild, thread.guild) && Intrinsics3.areEqual(this.roles, thread.roles) && Intrinsics3.areEqual(this.guildMembers, thread.guildMembers) && Intrinsics3.areEqual(this.users, thread.users) && Intrinsics3.areEqual(this.presences, thread.presences) && Intrinsics3.areEqual(this.streams, thread.streams) && Intrinsics3.areEqual(this.threadMembers, thread.threadMembers) && Intrinsics3.areEqual(this.joinedThread, thread.joinedThread);
+                return getIsPanelOpen() == thread.getIsPanelOpen() && C12238m.areEqual(getChannel(), thread.getChannel()) && C12238m.areEqual(this.parentChannel, thread.parentChannel) && C12238m.areEqual(this.guild, thread.guild) && C12238m.areEqual(this.roles, thread.roles) && C12238m.areEqual(this.guildMembers, thread.guildMembers) && C12238m.areEqual(this.users, thread.users) && C12238m.areEqual(this.presences, thread.presences) && C12238m.areEqual(this.streams, thread.streams) && C12238m.areEqual(this.threadMembers, thread.threadMembers) && C12238m.areEqual(this.joinedThread, thread.joinedThread);
             }
 
             @Override // com.discord.widgets.channels.memberlist.WidgetChannelMembersListViewModel.StoreState
@@ -898,30 +898,30 @@ public final class WidgetChannelMembersListViewModel extends AppViewModel<ViewSt
             }
 
             public String toString() {
-                StringBuilder sbU = outline.U("Thread(isPanelOpen=");
-                sbU.append(getIsPanelOpen());
-                sbU.append(", channel=");
-                sbU.append(getChannel());
-                sbU.append(", parentChannel=");
-                sbU.append(this.parentChannel);
-                sbU.append(", guild=");
-                sbU.append(this.guild);
-                sbU.append(", roles=");
-                sbU.append(this.roles);
-                sbU.append(", guildMembers=");
-                sbU.append(this.guildMembers);
-                sbU.append(", users=");
-                sbU.append(this.users);
-                sbU.append(", presences=");
-                sbU.append(this.presences);
-                sbU.append(", streams=");
-                sbU.append(this.streams);
-                sbU.append(", threadMembers=");
-                sbU.append(this.threadMembers);
-                sbU.append(", joinedThread=");
-                sbU.append(this.joinedThread);
-                sbU.append(")");
-                return sbU.toString();
+                StringBuilder sbM833U = C1643a.m833U("Thread(isPanelOpen=");
+                sbM833U.append(getIsPanelOpen());
+                sbM833U.append(", channel=");
+                sbM833U.append(getChannel());
+                sbM833U.append(", parentChannel=");
+                sbM833U.append(this.parentChannel);
+                sbM833U.append(", guild=");
+                sbM833U.append(this.guild);
+                sbM833U.append(", roles=");
+                sbM833U.append(this.roles);
+                sbM833U.append(", guildMembers=");
+                sbM833U.append(this.guildMembers);
+                sbM833U.append(", users=");
+                sbM833U.append(this.users);
+                sbM833U.append(", presences=");
+                sbM833U.append(this.presences);
+                sbM833U.append(", streams=");
+                sbM833U.append(this.streams);
+                sbM833U.append(", threadMembers=");
+                sbM833U.append(this.threadMembers);
+                sbM833U.append(", joinedThread=");
+                sbM833U.append(this.joinedThread);
+                sbM833U.append(")");
+                return sbM833U.toString();
             }
         }
 
@@ -967,7 +967,7 @@ public final class WidgetChannelMembersListViewModel extends AppViewModel<ViewSt
             /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
             public Loaded(MemberList memberList, boolean z2, Channel channel, boolean z3) {
                 super(memberList.getListId(), null);
-                Intrinsics3.checkNotNullParameter(memberList, "listItems");
+                C12238m.checkNotNullParameter(memberList, "listItems");
                 this.listItems = memberList;
                 this.isOpen = z2;
                 this.channel = channel;
@@ -1011,7 +1011,7 @@ public final class WidgetChannelMembersListViewModel extends AppViewModel<ViewSt
             }
 
             public final Loaded copy(MemberList listItems, boolean isOpen, Channel channel, boolean isThreadJoined) {
-                Intrinsics3.checkNotNullParameter(listItems, "listItems");
+                C12238m.checkNotNullParameter(listItems, "listItems");
                 return new Loaded(listItems, isOpen, channel, isThreadJoined);
             }
 
@@ -1023,7 +1023,7 @@ public final class WidgetChannelMembersListViewModel extends AppViewModel<ViewSt
                     return false;
                 }
                 Loaded loaded = (Loaded) other;
-                return Intrinsics3.areEqual(this.listItems, loaded.listItems) && this.isOpen == loaded.isOpen && Intrinsics3.areEqual(this.channel, loaded.channel) && this.isThreadJoined == loaded.isThreadJoined;
+                return C12238m.areEqual(this.listItems, loaded.listItems) && this.isOpen == loaded.isOpen && C12238m.areEqual(this.channel, loaded.channel) && this.isThreadJoined == loaded.isThreadJoined;
             }
 
             public final Channel getChannel() {
@@ -1067,14 +1067,14 @@ public final class WidgetChannelMembersListViewModel extends AppViewModel<ViewSt
             }
 
             public String toString() {
-                StringBuilder sbU = outline.U("Loaded(listItems=");
-                sbU.append(this.listItems);
-                sbU.append(", isOpen=");
-                sbU.append(this.isOpen);
-                sbU.append(", channel=");
-                sbU.append(this.channel);
-                sbU.append(", isThreadJoined=");
-                return outline.O(sbU, this.isThreadJoined, ")");
+                StringBuilder sbM833U = C1643a.m833U("Loaded(listItems=");
+                sbM833U.append(this.listItems);
+                sbM833U.append(", isOpen=");
+                sbM833U.append(this.isOpen);
+                sbM833U.append(", channel=");
+                sbM833U.append(this.channel);
+                sbM833U.append(", isThreadJoined=");
+                return C1643a.m827O(sbM833U, this.isThreadJoined, ")");
             }
         }
 
@@ -1091,43 +1091,43 @@ public final class WidgetChannelMembersListViewModel extends AppViewModel<ViewSt
         }
     }
 
-    /* JADX INFO: renamed from: com.discord.widgets.channels.memberlist.WidgetChannelMembersListViewModel$onThreadJoinLeaveClicked$1, reason: invalid class name */
+    /* JADX INFO: renamed from: com.discord.widgets.channels.memberlist.WidgetChannelMembersListViewModel$onThreadJoinLeaveClicked$1 */
     /* JADX INFO: compiled from: WidgetChannelMembersListViewModel.kt */
-    public static final class AnonymousClass1 extends Lambda implements Function1<Error, Unit> {
-        public AnonymousClass1() {
+    public static final class C75011 extends AbstractC12240o implements Function1<Error, Unit> {
+        public C75011() {
             super(1);
         }
 
         @Override // kotlin.jvm.functions.Function1
         public /* bridge */ /* synthetic */ Unit invoke(Error error) {
             invoke2(error);
-            return Unit.a;
+            return Unit.f27425a;
         }
 
         /* JADX WARN: Type inference incomplete: some casts might be missing */
         /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
         public final void invoke2(Error error) {
-            Intrinsics3.checkNotNullParameter(error, "error");
+            C12238m.checkNotNullParameter(error, "error");
             PublishSubject publishSubject = WidgetChannelMembersListViewModel.this.eventSubject;
             Error.Response response = error.getResponse();
-            Intrinsics3.checkNotNullExpressionValue(response, "error.response");
-            publishSubject.k.onNext((T) new Event.Error(response.getCode()));
+            C12238m.checkNotNullExpressionValue(response, "error.response");
+            publishSubject.f27650k.onNext((T) new Event.Error(response.getCode()));
         }
     }
 
-    /* JADX INFO: renamed from: com.discord.widgets.channels.memberlist.WidgetChannelMembersListViewModel$onThreadJoinLeaveClicked$2, reason: invalid class name */
+    /* JADX INFO: renamed from: com.discord.widgets.channels.memberlist.WidgetChannelMembersListViewModel$onThreadJoinLeaveClicked$2 */
     /* JADX INFO: compiled from: WidgetChannelMembersListViewModel.kt */
-    public static final class AnonymousClass2 extends Lambda implements Function1<Void, Unit> {
-        public static final AnonymousClass2 INSTANCE = new AnonymousClass2();
+    public static final class C75022 extends AbstractC12240o implements Function1<Void, Unit> {
+        public static final C75022 INSTANCE = new C75022();
 
-        public AnonymousClass2() {
+        public C75022() {
             super(1);
         }
 
         @Override // kotlin.jvm.functions.Function1
         public /* bridge */ /* synthetic */ Unit invoke(Void r1) {
             invoke2(r1);
-            return Unit.a;
+            return Unit.f27425a;
         }
 
         /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
@@ -1135,43 +1135,43 @@ public final class WidgetChannelMembersListViewModel extends AppViewModel<ViewSt
         }
     }
 
-    /* JADX INFO: renamed from: com.discord.widgets.channels.memberlist.WidgetChannelMembersListViewModel$onThreadJoinLeaveClicked$3, reason: invalid class name */
+    /* JADX INFO: renamed from: com.discord.widgets.channels.memberlist.WidgetChannelMembersListViewModel$onThreadJoinLeaveClicked$3 */
     /* JADX INFO: compiled from: WidgetChannelMembersListViewModel.kt */
-    public static final class AnonymousClass3 extends Lambda implements Function1<Error, Unit> {
-        public AnonymousClass3() {
+    public static final class C75033 extends AbstractC12240o implements Function1<Error, Unit> {
+        public C75033() {
             super(1);
         }
 
         @Override // kotlin.jvm.functions.Function1
         public /* bridge */ /* synthetic */ Unit invoke(Error error) {
             invoke2(error);
-            return Unit.a;
+            return Unit.f27425a;
         }
 
         /* JADX WARN: Type inference incomplete: some casts might be missing */
         /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
         public final void invoke2(Error error) {
-            Intrinsics3.checkNotNullParameter(error, "error");
+            C12238m.checkNotNullParameter(error, "error");
             PublishSubject publishSubject = WidgetChannelMembersListViewModel.this.eventSubject;
             Error.Response response = error.getResponse();
-            Intrinsics3.checkNotNullExpressionValue(response, "error.response");
-            publishSubject.k.onNext((T) new Event.Error(response.getCode()));
+            C12238m.checkNotNullExpressionValue(response, "error.response");
+            publishSubject.f27650k.onNext((T) new Event.Error(response.getCode()));
         }
     }
 
-    /* JADX INFO: renamed from: com.discord.widgets.channels.memberlist.WidgetChannelMembersListViewModel$onThreadJoinLeaveClicked$4, reason: invalid class name */
+    /* JADX INFO: renamed from: com.discord.widgets.channels.memberlist.WidgetChannelMembersListViewModel$onThreadJoinLeaveClicked$4 */
     /* JADX INFO: compiled from: WidgetChannelMembersListViewModel.kt */
-    public static final class AnonymousClass4 extends Lambda implements Function1<Void, Unit> {
-        public static final AnonymousClass4 INSTANCE = new AnonymousClass4();
+    public static final class C75044 extends AbstractC12240o implements Function1<Void, Unit> {
+        public static final C75044 INSTANCE = new C75044();
 
-        public AnonymousClass4() {
+        public C75044() {
             super(1);
         }
 
         @Override // kotlin.jvm.functions.Function1
         public /* bridge */ /* synthetic */ Unit invoke(Void r1) {
             invoke2(r1);
-            return Unit.a;
+            return Unit.f27425a;
         }
 
         /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
@@ -1189,15 +1189,15 @@ public final class WidgetChannelMembersListViewModel extends AppViewModel<ViewSt
         StoreEmojiCustom storeEmojiCustom2;
         GuildChannelSubscriber guildChannelSubscriber2 = (i & 1) != 0 ? new GuildChannelSubscriber() { // from class: com.discord.widgets.channels.memberlist.WidgetChannelMembersListViewModel.1
             @Override // com.discord.widgets.channels.memberlist.WidgetChannelMembersListViewModel.GuildChannelSubscriber
-            public void subscribeToChannelRange(Channel channel, Ranges2 range) {
-                Intrinsics3.checkNotNullParameter(channel, "channel");
-                Intrinsics3.checkNotNullParameter(range, "range");
+            public void subscribeToChannelRange(Channel channel, IntRange range) {
+                C12238m.checkNotNullParameter(channel, "channel");
+                C12238m.checkNotNullParameter(range, "range");
                 StoreStream.INSTANCE.getGuildSubscriptions().subscribeChannelRange(channel.getGuildId(), channel.getId(), range);
             }
 
             @Override // com.discord.widgets.channels.memberlist.WidgetChannelMembersListViewModel.GuildChannelSubscriber
             public void subscribeToThread(Channel channel) {
-                Intrinsics3.checkNotNullParameter(channel, "channel");
+                C12238m.checkNotNullParameter(channel, "channel");
                 StoreStream.INSTANCE.getGuildSubscriptions().subscribeThread(channel.getGuildId(), channel.getId());
             }
         } : guildChannelSubscriber;
@@ -1223,18 +1223,18 @@ public final class WidgetChannelMembersListViewModel extends AppViewModel<ViewSt
         boolean z2 = false;
         if (storeState instanceof StoreState.Guild) {
             StoreState.Guild guild = (StoreState.Guild) storeState;
-            memberListGenerateThreadMemberListItems = GuildMemberListItemGenerator.generateGuildMemberListItems(guild.getChannelMembers(), guild.getGuild(), guild.getChannel(), guild.getGuildRoles(), PermissionUtils.can(1L, guild.getChannelPermissions()), false, this.storeGuilds, this.storeCustomEmojis);
+            memberListGenerateThreadMemberListItems = GuildMemberListItemGeneratorKt.generateGuildMemberListItems(guild.getChannelMembers(), guild.getGuild(), guild.getChannel(), guild.getGuildRoles(), PermissionUtils.can(1L, guild.getChannelPermissions()), false, this.storeGuilds, this.storeCustomEmojis);
         } else if (storeState instanceof StoreState.Private) {
             StoreState.Private r0 = (StoreState.Private) storeState;
             Map<Long, Integer> relationships = r0.getRelationships();
-            User userA = ChannelUtils.a(r0.getChannel());
-            memberListGenerateThreadMemberListItems = PrivateChannelMemberListItemGenerator.generateGroupDmMemberListItems(r0.getChannel(), r0.getUsers(), r0.getPresences(), r0.getApplicationStreams(), ChannelUtils.p(r0.getChannel()) || ModelUserRelationship.isType(relationships.get(userA != null ? Long.valueOf(userA.getId()) : null), 1));
+            User userM7677a = ChannelUtils.m7677a(r0.getChannel());
+            memberListGenerateThreadMemberListItems = PrivateChannelMemberListItemGeneratorKt.generateGroupDmMemberListItems(r0.getChannel(), r0.getUsers(), r0.getPresences(), r0.getApplicationStreams(), ChannelUtils.m7692p(r0.getChannel()) || ModelUserRelationship.isType(relationships.get(userM7677a != null ? Long.valueOf(userM7677a.getId()) : null), 1));
         } else {
             if (!(storeState instanceof StoreState.Thread)) {
                 throw new NoWhenBranchMatchedException();
             }
             StoreState.Thread thread = (StoreState.Thread) storeState;
-            memberListGenerateThreadMemberListItems = ThreadMemberListItemGenerator.generateThreadMemberListItems(thread.getChannel(), thread.getRoles(), thread.getGuild(), thread.getGuildMembers(), thread.getUsers(), thread.getPresences(), thread.getStreams(), thread.getThreadMembers(), thread.getJoinedThread(), this.storeGuilds, this.storeCustomEmojis);
+            memberListGenerateThreadMemberListItems = ThreadMemberListItemGeneratorKt.generateThreadMemberListItems(thread.getChannel(), thread.getRoles(), thread.getGuild(), thread.getGuildMembers(), thread.getUsers(), thread.getPresences(), thread.getStreams(), thread.getThreadMembers(), thread.getJoinedThread(), this.storeGuilds, this.storeCustomEmojis);
         }
         ViewState viewState = getViewState();
         boolean isPanelOpen = storeState.getIsPanelOpen();
@@ -1249,28 +1249,28 @@ public final class WidgetChannelMembersListViewModel extends AppViewModel<ViewSt
 
     public final Observable<Event> observeEvents() {
         PublishSubject<Event> publishSubject = this.eventSubject;
-        Intrinsics3.checkNotNullExpressionValue(publishSubject, "eventSubject");
+        C12238m.checkNotNullExpressionValue(publishSubject, "eventSubject");
         return publishSubject;
     }
 
     public final void onThreadJoinLeaveClicked(long channelId, boolean isThreadJoined) {
         if (isThreadJoined) {
-            ObservableExtensionsKt.appSubscribe(ObservableExtensionsKt.ui$default(ObservableExtensionsKt.restSubscribeOn$default(RestAPI.INSTANCE.getApi().leaveThread(channelId, "Thread Member List"), false, 1, null), this, null, 2, null), (Class<?>) WidgetChannelMembersListViewModel.class, (58 & 2) != 0 ? null : null, (Function1<? super Subscription, Unit>) ((58 & 4) != 0 ? null : null), (Function1<? super Error, Unit>) ((58 & 8) != 0 ? null : new AnonymousClass1()), (Function0<Unit>) ((58 & 16) != 0 ? ObservableExtensionsKt.AnonymousClass1.INSTANCE : null), (Function0<Unit>) ((58 & 32) != 0 ? ObservableExtensionsKt.AnonymousClass2.INSTANCE : null), AnonymousClass2.INSTANCE);
+            ObservableExtensionsKt.appSubscribe(ObservableExtensionsKt.ui$default(ObservableExtensionsKt.restSubscribeOn$default(RestAPI.INSTANCE.getApi().leaveThread(channelId, "Thread Member List"), false, 1, null), this, null, 2, null), (Class<?>) WidgetChannelMembersListViewModel.class, (58 & 2) != 0 ? null : null, (Function1<? super Subscription, Unit>) ((58 & 4) != 0 ? null : null), (Function1<? super Error, Unit>) ((58 & 8) != 0 ? null : new C75011()), (Function0<Unit>) ((58 & 16) != 0 ? ObservableExtensionsKt.C68791.INSTANCE : null), (Function0<Unit>) ((58 & 32) != 0 ? ObservableExtensionsKt.C68802.INSTANCE : null), C75022.INSTANCE);
             StoreNavigation.setNavigationPanelAction$default(StoreStream.INSTANCE.getNavigation(), StoreNavigation.PanelAction.CLOSE, null, 2, null);
             return;
         }
-        ObservableExtensionsKt.appSubscribe(ObservableExtensionsKt.restSubscribeOn$default(RestAPI.INSTANCE.getApi().joinThread(channelId, "Thread Member List", new RestAPIParams.EmptyBody()), false, 1, null), (Class<?>) WidgetChannelMembersListViewModel.class, (58 & 2) != 0 ? null : null, (Function1<? super Subscription, Unit>) ((58 & 4) != 0 ? null : null), (Function1<? super Error, Unit>) ((58 & 8) != 0 ? null : new AnonymousClass3()), (Function0<Unit>) ((58 & 16) != 0 ? ObservableExtensionsKt.AnonymousClass1.INSTANCE : null), (Function0<Unit>) ((58 & 32) != 0 ? ObservableExtensionsKt.AnonymousClass2.INSTANCE : null), AnonymousClass4.INSTANCE);
+        ObservableExtensionsKt.appSubscribe(ObservableExtensionsKt.restSubscribeOn$default(RestAPI.INSTANCE.getApi().joinThread(channelId, "Thread Member List", new RestAPIParams.EmptyBody()), false, 1, null), (Class<?>) WidgetChannelMembersListViewModel.class, (58 & 2) != 0 ? null : null, (Function1<? super Subscription, Unit>) ((58 & 4) != 0 ? null : null), (Function1<? super Error, Unit>) ((58 & 8) != 0 ? null : new C75033()), (Function0<Unit>) ((58 & 16) != 0 ? ObservableExtensionsKt.C68791.INSTANCE : null), (Function0<Unit>) ((58 & 32) != 0 ? ObservableExtensionsKt.C68802.INSTANCE : null), C75044.INSTANCE);
         StoreNavigation.setNavigationPanelAction$default(StoreStream.INSTANCE.getNavigation(), StoreNavigation.PanelAction.CLOSE, null, 2, null);
     }
 
     public final void updateSubscriptions(ViewState prevViewState, ViewState.Loaded newViewState, StoreState storeState) {
-        Intrinsics3.checkNotNullParameter(newViewState, "newViewState");
-        Intrinsics3.checkNotNullParameter(storeState, "storeState");
-        boolean z2 = (Intrinsics3.areEqual(prevViewState != null ? prevViewState.getListId() : null, newViewState.getListId()) ^ true) && storeState.getIsPanelOpen();
+        C12238m.checkNotNullParameter(newViewState, "newViewState");
+        C12238m.checkNotNullParameter(storeState, "storeState");
+        boolean z2 = (C12238m.areEqual(prevViewState != null ? prevViewState.getListId() : null, newViewState.getListId()) ^ true) && storeState.getIsPanelOpen();
         Channel channel = newViewState.getChannel();
-        if (channel != null && ChannelUtils.H(channel)) {
+        if (channel != null && ChannelUtils.m7673H(channel)) {
             if (z2) {
-                this.eventSubject.k.onNext(Event.ScrollToTop.INSTANCE);
+                this.eventSubject.f27650k.onNext(Event.ScrollToTop.INSTANCE);
                 updateSubscriptionsForThread(newViewState.getChannel());
                 return;
             } else {
@@ -1282,16 +1282,16 @@ public final class WidgetChannelMembersListViewModel extends AppViewModel<ViewSt
             }
         }
         if (z2) {
-            this.eventSubject.k.onNext(Event.ScrollToTop.INSTANCE);
-            updateSubscriptionsForChannel(new Ranges2(0, 99));
+            this.eventSubject.f27650k.onNext(Event.ScrollToTop.INSTANCE);
+            updateSubscriptionsForChannel(new IntRange(0, 99));
         } else if ((prevViewState instanceof ViewState.Loaded) && !((ViewState.Loaded) prevViewState).isOpen() && newViewState.isOpen()) {
-            this.eventSubject.k.onNext(Event.UpdateRanges.INSTANCE);
+            this.eventSubject.f27650k.onNext(Event.UpdateRanges.INSTANCE);
         }
     }
 
     @MainThread
-    public final void updateSubscriptionsForChannel(Ranges2 range) {
-        Intrinsics3.checkNotNullParameter(range, "range");
+    public final void updateSubscriptionsForChannel(IntRange range) {
+        C12238m.checkNotNullParameter(range, "range");
         ViewState viewState = getViewState();
         if (!(viewState instanceof ViewState.Loaded)) {
             viewState = null;
@@ -1304,10 +1304,10 @@ public final class WidgetChannelMembersListViewModel extends AppViewModel<ViewSt
     }
 
     public final void updateSubscriptionsForThread(Channel channel) {
-        if (channel == null || ChannelUtils.j(channel)) {
+        if (channel == null || ChannelUtils.m7686j(channel)) {
             return;
         }
-        Intrinsics3.checkNotNullParameter(channel, "$this$isAnnouncementThread");
+        C12238m.checkNotNullParameter(channel, "$this$isAnnouncementThread");
         if (channel.getType() == 10) {
             return;
         }
@@ -1317,14 +1317,14 @@ public final class WidgetChannelMembersListViewModel extends AppViewModel<ViewSt
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public WidgetChannelMembersListViewModel(GuildChannelSubscriber guildChannelSubscriber, StoreGuilds storeGuilds, StoreEmojiCustom storeEmojiCustom, Observable<StoreState> observable) {
         super(ViewState.Empty.INSTANCE);
-        Intrinsics3.checkNotNullParameter(guildChannelSubscriber, "guildChannelSubscriber");
-        Intrinsics3.checkNotNullParameter(storeGuilds, "storeGuilds");
-        Intrinsics3.checkNotNullParameter(storeEmojiCustom, "storeCustomEmojis");
-        Intrinsics3.checkNotNullParameter(observable, "storeStateObservable");
+        C12238m.checkNotNullParameter(guildChannelSubscriber, "guildChannelSubscriber");
+        C12238m.checkNotNullParameter(storeGuilds, "storeGuilds");
+        C12238m.checkNotNullParameter(storeEmojiCustom, "storeCustomEmojis");
+        C12238m.checkNotNullParameter(observable, "storeStateObservable");
         this.guildChannelSubscriber = guildChannelSubscriber;
         this.storeGuilds = storeGuilds;
         this.storeCustomEmojis = storeEmojiCustom;
-        this.eventSubject = PublishSubject.k0();
-        ObservableExtensionsKt.appSubscribe(ObservableExtensionsKt.ui$default(ObservableExtensionsKt.computationLatest(observable), this, null, 2, null), (Class<?>) WidgetChannelMembersListViewModel.class, (58 & 2) != 0 ? null : null, (Function1<? super Subscription, Unit>) ((58 & 4) != 0 ? null : null), (Function1<? super Error, Unit>) ((58 & 8) != 0 ? null : null), (Function0<Unit>) ((58 & 16) != 0 ? ObservableExtensionsKt.AnonymousClass1.INSTANCE : null), (Function0<Unit>) ((58 & 32) != 0 ? ObservableExtensionsKt.AnonymousClass2.INSTANCE : null), new AnonymousClass2());
+        this.eventSubject = PublishSubject.m11133k0();
+        ObservableExtensionsKt.appSubscribe(ObservableExtensionsKt.ui$default(ObservableExtensionsKt.computationLatest(observable), this, null, 2, null), (Class<?>) WidgetChannelMembersListViewModel.class, (58 & 2) != 0 ? null : null, (Function1<? super Subscription, Unit>) ((58 & 4) != 0 ? null : null), (Function1<? super Error, Unit>) ((58 & 8) != 0 ? null : null), (Function0<Unit>) ((58 & 16) != 0 ? ObservableExtensionsKt.C68791.INSTANCE : null), (Function0<Unit>) ((58 & 32) != 0 ? ObservableExtensionsKt.C68802.INSTANCE : null), new C74952());
     }
 }

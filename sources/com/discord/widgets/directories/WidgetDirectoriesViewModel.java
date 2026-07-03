@@ -1,8 +1,6 @@
 package com.discord.widgets.directories;
 
 import android.content.Context;
-import b.a.d.AppViewModel;
-import b.d.b.a.outline;
 import com.discord.api.channel.Channel;
 import com.discord.api.channel.ChannelUtils;
 import com.discord.api.directory.DirectoryEntryGuild;
@@ -18,74 +16,76 @@ import com.discord.stores.StorePermissions;
 import com.discord.stores.StoreReadStates;
 import com.discord.stores.StoreStream;
 import com.discord.stores.updates.ObservationDeck;
-import com.discord.stores.updates.ObservationDeck4;
+import com.discord.stores.updates.ObservationDeckProvider;
+import com.discord.stores.utilities.Default;
 import com.discord.stores.utilities.RestCallState;
-import com.discord.stores.utilities.RestCallState2;
 import com.discord.utilities.directories.DirectoryUtils;
 import com.discord.utilities.error.Error;
+import com.discord.utilities.p501rx.ObservableExtensionsKt;
 import com.discord.utilities.rest.RestAPI;
-import com.discord.utilities.rx.ObservableExtensionsKt;
-import com.discord.widgets.guilds.join.GuildJoinHelper;
-import d0.LazyJVM;
-import d0.Tuples;
-import d0.t.Sets5;
-import d0.z.d.FunctionReferenceImpl;
-import d0.z.d.Intrinsics3;
-import d0.z.d.Lambda;
-import j0.k.Func1;
+import com.discord.widgets.guilds.join.GuildJoinHelperKt;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
 import kotlin.Lazy;
-import kotlin.Tuples2;
+import kotlin.Pair;
 import kotlin.Unit;
 import kotlin.jvm.functions.Function0;
 import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import org.objectweb.asm.Opcodes;
-import rx.Observable;
-import rx.Subscription;
+import p007b.p008a.p018d.AbstractC0859d0;
+import p007b.p100d.p104b.p105a.C1643a;
+import p507d0.C12083g;
+import p507d0.C12116o;
+import p507d0.p580t.C12148n0;
+import p507d0.p592z.p594d.AbstractC12240o;
+import p507d0.p592z.p594d.C12236k;
+import p507d0.p592z.p594d.C12238m;
+import p637j0.p641k.InterfaceC12589b;
+import p658rx.Observable;
+import p658rx.Subscription;
 
 /* JADX INFO: compiled from: WidgetDirectoriesViewModel.kt */
 /* JADX INFO: loaded from: classes2.dex */
-public final class WidgetDirectoriesViewModel extends AppViewModel<ViewState> {
+public final class WidgetDirectoriesViewModel extends AbstractC0859d0<ViewState> {
 
     /* JADX INFO: renamed from: Companion, reason: from kotlin metadata */
     public static final Companion INSTANCE = new Companion(null);
     private final StoreDirectories directoriesStore;
     private final RestAPI restAPI;
 
-    /* JADX INFO: renamed from: com.discord.widgets.directories.WidgetDirectoriesViewModel$2, reason: invalid class name */
+    /* JADX INFO: renamed from: com.discord.widgets.directories.WidgetDirectoriesViewModel$2 */
     /* JADX INFO: compiled from: WidgetDirectoriesViewModel.kt */
-    public static final /* synthetic */ class AnonymousClass2 extends FunctionReferenceImpl implements Function1<ViewState, Unit> {
-        public AnonymousClass2(WidgetDirectoriesViewModel widgetDirectoriesViewModel) {
+    public static final /* synthetic */ class C82812 extends C12236k implements Function1<ViewState, Unit> {
+        public C82812(WidgetDirectoriesViewModel widgetDirectoriesViewModel) {
             super(1, widgetDirectoriesViewModel, WidgetDirectoriesViewModel.class, "updateViewState", "updateViewState(Ljava/lang/Object;)V", 0);
         }
 
         @Override // kotlin.jvm.functions.Function1
         public /* bridge */ /* synthetic */ Unit invoke(ViewState viewState) {
             invoke2(viewState);
-            return Unit.a;
+            return Unit.f27425a;
         }
 
         /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
         public final void invoke2(ViewState viewState) {
-            Intrinsics3.checkNotNullParameter(viewState, "p1");
+            C12238m.checkNotNullParameter(viewState, "p1");
             ((WidgetDirectoriesViewModel) this.receiver).updateViewState(viewState);
         }
     }
 
-    /* JADX INFO: renamed from: com.discord.widgets.directories.WidgetDirectoriesViewModel$4, reason: invalid class name */
+    /* JADX INFO: renamed from: com.discord.widgets.directories.WidgetDirectoriesViewModel$4 */
     /* JADX INFO: compiled from: WidgetDirectoriesViewModel.kt */
-    public static final class AnonymousClass4 extends Lambda implements Function1<Channel, Unit> {
-        public AnonymousClass4() {
+    public static final class C82834 extends AbstractC12240o implements Function1<Channel, Unit> {
+        public C82834() {
             super(1);
         }
 
         @Override // kotlin.jvm.functions.Function1
         public /* bridge */ /* synthetic */ Unit invoke(Channel channel) {
             invoke2(channel);
-            return Unit.a;
+            return Unit.f27425a;
         }
 
         /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
@@ -96,13 +96,13 @@ public final class WidgetDirectoriesViewModel extends AppViewModel<ViewState> {
         }
     }
 
-    /* JADX INFO: renamed from: com.discord.widgets.directories.WidgetDirectoriesViewModel$6, reason: invalid class name */
+    /* JADX INFO: renamed from: com.discord.widgets.directories.WidgetDirectoriesViewModel$6 */
     /* JADX INFO: compiled from: WidgetDirectoriesViewModel.kt */
-    public static final class AnonymousClass6 extends Lambda implements Function1<Long, Unit> {
+    public static final class C82856 extends AbstractC12240o implements Function1<Long, Unit> {
         public final /* synthetic */ StoreReadStates $readStatesStore;
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-        public AnonymousClass6(StoreReadStates storeReadStates) {
+        public C82856(StoreReadStates storeReadStates) {
             super(1);
             this.$readStatesStore = storeReadStates;
         }
@@ -110,7 +110,7 @@ public final class WidgetDirectoriesViewModel extends AppViewModel<ViewState> {
         @Override // kotlin.jvm.functions.Function1
         public /* bridge */ /* synthetic */ Unit invoke(Long l) {
             invoke2(l);
-            return Unit.a;
+            return Unit.f27425a;
         }
 
         /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
@@ -125,7 +125,7 @@ public final class WidgetDirectoriesViewModel extends AppViewModel<ViewState> {
         }
 
         private final Observable<ViewState> observeStores(ObservationDeck observationDeck, StoreGuilds guildsStore, StoreGuildSelected guildSelectedStore, StoreChannelsSelected channelsSelectedStore, StoreDirectories directoriesStore, StorePermissions permissionsStore) {
-            return ObservationDeck.connectRx$default(observationDeck, new ObservationDeck.UpdateSource[]{guildsStore, guildSelectedStore, directoriesStore, channelsSelectedStore, permissionsStore}, false, null, null, new WidgetDirectoriesViewModel2(channelsSelectedStore, guildSelectedStore, guildsStore, permissionsStore, directoriesStore), 14, null);
+            return ObservationDeck.connectRx$default(observationDeck, new ObservationDeck.UpdateSource[]{guildsStore, guildSelectedStore, directoriesStore, channelsSelectedStore, permissionsStore}, false, null, null, new WidgetDirectoriesViewModel$Companion$observeStores$1(channelsSelectedStore, guildSelectedStore, guildsStore, permissionsStore, directoriesStore), 14, null);
         }
 
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
@@ -133,24 +133,24 @@ public final class WidgetDirectoriesViewModel extends AppViewModel<ViewState> {
         }
     }
 
-    /* JADX INFO: renamed from: com.discord.widgets.directories.WidgetDirectoriesViewModel$joinGuild$1, reason: invalid class name */
+    /* JADX INFO: renamed from: com.discord.widgets.directories.WidgetDirectoriesViewModel$joinGuild$1 */
     /* JADX INFO: compiled from: WidgetDirectoriesViewModel.kt */
-    public static final class AnonymousClass1 extends Lambda implements Function1<Guild, Unit> {
-        public static final AnonymousClass1 INSTANCE = new AnonymousClass1();
+    public static final class C82861 extends AbstractC12240o implements Function1<Guild, Unit> {
+        public static final C82861 INSTANCE = new C82861();
 
-        public AnonymousClass1() {
+        public C82861() {
             super(1);
         }
 
         @Override // kotlin.jvm.functions.Function1
         public /* bridge */ /* synthetic */ Unit invoke(Guild guild) {
             invoke2(guild);
-            return Unit.a;
+            return Unit.f27425a;
         }
 
         /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
         public final void invoke2(Guild guild) {
-            Intrinsics3.checkNotNullParameter(guild, "it");
+            C12238m.checkNotNullParameter(guild, "it");
         }
     }
 
@@ -168,7 +168,7 @@ public final class WidgetDirectoriesViewModel extends AppViewModel<ViewState> {
         RestAPI api = (i & 16) != 0 ? RestAPI.INSTANCE.getApi() : restAPI;
         if ((i & 32) != 0) {
             Companion companion = INSTANCE;
-            ObservationDeck observationDeck = ObservationDeck4.get();
+            ObservationDeck observationDeck = ObservationDeckProvider.get();
             StoreStream.Companion companion2 = StoreStream.INSTANCE;
             observableObserveStores = companion.observeStores(observationDeck, companion2.getGuilds(), companion2.getGuildSelected(), companion2.getChannelsSelected(), companion2.getDirectories(), companion2.getPermissions());
         } else {
@@ -189,8 +189,8 @@ public final class WidgetDirectoriesViewModel extends AppViewModel<ViewState> {
     }
 
     public final void joinGuild(Context context, long id2, long directoryChannelId) {
-        Intrinsics3.checkNotNullParameter(context, "context");
-        GuildJoinHelper.joinGuild(context, id2, false, (944 & 8) != 0 ? null : null, (944 & 16) != 0 ? null : Long.valueOf(directoryChannelId), (944 & 32) != 0 ? null : this.restAPI.jsonObjectOf(Tuples.to("source", DirectoryUtils.JOIN_GUILD_SOURCE)), WidgetDirectoriesViewModel.class, (944 & 128) != 0 ? null : null, (944 & 256) != 0 ? null : null, (944 & 512) != 0 ? null : null, AnonymousClass1.INSTANCE);
+        C12238m.checkNotNullParameter(context, "context");
+        GuildJoinHelperKt.joinGuild(context, id2, false, (944 & 8) != 0 ? null : null, (944 & 16) != 0 ? null : Long.valueOf(directoryChannelId), (944 & 32) != 0 ? null : this.restAPI.jsonObjectOf(C12116o.m10073to("source", DirectoryUtils.JOIN_GUILD_SOURCE)), WidgetDirectoriesViewModel.class, (944 & 128) != 0 ? null : null, (944 & 256) != 0 ? null : null, (944 & 512) != 0 ? null : null, C82861.INSTANCE);
     }
 
     public final void removeGuild(long id2, long directoryChannelId) {
@@ -222,10 +222,10 @@ public final class WidgetDirectoriesViewModel extends AppViewModel<ViewState> {
 
         /* JADX WARN: Multi-variable type inference failed */
         public ViewState(com.discord.models.guild.Guild guild, Channel channel, Set<Long> set, Set<Long> set2, boolean z2, RestCallState<? extends List<DirectoryEntryGuild>> restCallState, RestCallState<? extends Map<Integer, Integer>> restCallState2) {
-            Intrinsics3.checkNotNullParameter(set, "joinedGuildIds");
-            Intrinsics3.checkNotNullParameter(set2, "adminGuildIds");
-            Intrinsics3.checkNotNullParameter(restCallState, "directories");
-            Intrinsics3.checkNotNullParameter(restCallState2, "tabs");
+            C12238m.checkNotNullParameter(set, "joinedGuildIds");
+            C12238m.checkNotNullParameter(set2, "adminGuildIds");
+            C12238m.checkNotNullParameter(restCallState, "directories");
+            C12238m.checkNotNullParameter(restCallState2, "tabs");
             this.guild = guild;
             this.channel = channel;
             this.joinedGuildIds = set;
@@ -233,9 +233,9 @@ public final class WidgetDirectoriesViewModel extends AppViewModel<ViewState> {
             this.hasAddGuildPermissions = z2;
             this.directories = restCallState;
             this.tabs = restCallState2;
-            this.allDirectoryEntryData = LazyJVM.lazy(new WidgetDirectoriesViewModel3(this));
-            this.directoryEntryData = LazyJVM.lazy(new WidgetDirectoriesViewModel4(this));
-            this.mappedTabs = LazyJVM.lazy(new WidgetDirectoriesViewModel5(this));
+            this.allDirectoryEntryData = C12083g.lazy(new WidgetDirectoriesViewModel$ViewState$allDirectoryEntryData$2(this));
+            this.directoryEntryData = C12083g.lazy(new WidgetDirectoriesViewModel$ViewState$directoryEntryData$2(this));
+            this.mappedTabs = C12083g.lazy(new WidgetDirectoriesViewModel$ViewState$mappedTabs$2(this));
         }
 
         /* JADX WARN: Multi-variable type inference failed */
@@ -301,10 +301,10 @@ public final class WidgetDirectoriesViewModel extends AppViewModel<ViewState> {
         }
 
         public final ViewState copy(com.discord.models.guild.Guild guild, Channel channel, Set<Long> joinedGuildIds, Set<Long> adminGuildIds, boolean hasAddGuildPermissions, RestCallState<? extends List<DirectoryEntryGuild>> directories, RestCallState<? extends Map<Integer, Integer>> tabs) {
-            Intrinsics3.checkNotNullParameter(joinedGuildIds, "joinedGuildIds");
-            Intrinsics3.checkNotNullParameter(adminGuildIds, "adminGuildIds");
-            Intrinsics3.checkNotNullParameter(directories, "directories");
-            Intrinsics3.checkNotNullParameter(tabs, "tabs");
+            C12238m.checkNotNullParameter(joinedGuildIds, "joinedGuildIds");
+            C12238m.checkNotNullParameter(adminGuildIds, "adminGuildIds");
+            C12238m.checkNotNullParameter(directories, "directories");
+            C12238m.checkNotNullParameter(tabs, "tabs");
             return new ViewState(guild, channel, joinedGuildIds, adminGuildIds, hasAddGuildPermissions, directories, tabs);
         }
 
@@ -316,7 +316,7 @@ public final class WidgetDirectoriesViewModel extends AppViewModel<ViewState> {
                 return false;
             }
             ViewState viewState = (ViewState) other;
-            return Intrinsics3.areEqual(this.guild, viewState.guild) && Intrinsics3.areEqual(this.channel, viewState.channel) && Intrinsics3.areEqual(this.joinedGuildIds, viewState.joinedGuildIds) && Intrinsics3.areEqual(this.adminGuildIds, viewState.adminGuildIds) && this.hasAddGuildPermissions == viewState.hasAddGuildPermissions && Intrinsics3.areEqual(this.directories, viewState.directories) && Intrinsics3.areEqual(this.tabs, viewState.tabs);
+            return C12238m.areEqual(this.guild, viewState.guild) && C12238m.areEqual(this.channel, viewState.channel) && C12238m.areEqual(this.joinedGuildIds, viewState.joinedGuildIds) && C12238m.areEqual(this.adminGuildIds, viewState.adminGuildIds) && this.hasAddGuildPermissions == viewState.hasAddGuildPermissions && C12238m.areEqual(this.directories, viewState.directories) && C12238m.areEqual(this.tabs, viewState.tabs);
         }
 
         public final Set<Long> getAdminGuildIds() {
@@ -351,7 +351,7 @@ public final class WidgetDirectoriesViewModel extends AppViewModel<ViewState> {
             return this.joinedGuildIds;
         }
 
-        public final List<Tuples2<DirectoryEntryCategory, Integer>> getMappedTabs() {
+        public final List<Pair<DirectoryEntryCategory, Integer>> getMappedTabs() {
             return (List) this.mappedTabs.getValue();
         }
 
@@ -386,71 +386,71 @@ public final class WidgetDirectoriesViewModel extends AppViewModel<ViewState> {
         }
 
         public String toString() {
-            StringBuilder sbU = outline.U("ViewState(guild=");
-            sbU.append(this.guild);
-            sbU.append(", channel=");
-            sbU.append(this.channel);
-            sbU.append(", joinedGuildIds=");
-            sbU.append(this.joinedGuildIds);
-            sbU.append(", adminGuildIds=");
-            sbU.append(this.adminGuildIds);
-            sbU.append(", hasAddGuildPermissions=");
-            sbU.append(this.hasAddGuildPermissions);
-            sbU.append(", directories=");
-            sbU.append(this.directories);
-            sbU.append(", tabs=");
-            sbU.append(this.tabs);
-            sbU.append(")");
-            return sbU.toString();
+            StringBuilder sbM833U = C1643a.m833U("ViewState(guild=");
+            sbM833U.append(this.guild);
+            sbM833U.append(", channel=");
+            sbM833U.append(this.channel);
+            sbM833U.append(", joinedGuildIds=");
+            sbM833U.append(this.joinedGuildIds);
+            sbM833U.append(", adminGuildIds=");
+            sbM833U.append(this.adminGuildIds);
+            sbM833U.append(", hasAddGuildPermissions=");
+            sbM833U.append(this.hasAddGuildPermissions);
+            sbM833U.append(", directories=");
+            sbM833U.append(this.directories);
+            sbM833U.append(", tabs=");
+            sbM833U.append(this.tabs);
+            sbM833U.append(")");
+            return sbM833U.toString();
         }
 
         public /* synthetic */ ViewState(com.discord.models.guild.Guild guild, Channel channel, Set set, Set set2, boolean z2, RestCallState restCallState, RestCallState restCallState2, int i, DefaultConstructorMarker defaultConstructorMarker) {
-            this((i & 1) != 0 ? null : guild, (i & 2) == 0 ? channel : null, (i & 4) != 0 ? Sets5.emptySet() : set, (i & 8) != 0 ? Sets5.emptySet() : set2, (i & 16) != 0 ? true : z2, (i & 32) != 0 ? RestCallState2.INSTANCE : restCallState, (i & 64) != 0 ? RestCallState2.INSTANCE : restCallState2);
+            this((i & 1) != 0 ? null : guild, (i & 2) == 0 ? channel : null, (i & 4) != 0 ? C12148n0.emptySet() : set, (i & 8) != 0 ? C12148n0.emptySet() : set2, (i & 16) != 0 ? true : z2, (i & 32) != 0 ? Default.INSTANCE : restCallState, (i & 64) != 0 ? Default.INSTANCE : restCallState2);
         }
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public WidgetDirectoriesViewModel(StoreDirectories storeDirectories, StoreChannelsSelected storeChannelsSelected, final StoreChannels storeChannels, StoreReadStates storeReadStates, RestAPI restAPI, Observable<ViewState> observable) {
         super(null);
-        Intrinsics3.checkNotNullParameter(storeDirectories, "directoriesStore");
-        Intrinsics3.checkNotNullParameter(storeChannelsSelected, "channelsSelectedStore");
-        Intrinsics3.checkNotNullParameter(storeChannels, "channelsStore");
-        Intrinsics3.checkNotNullParameter(storeReadStates, "readStatesStore");
-        Intrinsics3.checkNotNullParameter(restAPI, "restAPI");
-        Intrinsics3.checkNotNullParameter(observable, "storeObservable");
+        C12238m.checkNotNullParameter(storeDirectories, "directoriesStore");
+        C12238m.checkNotNullParameter(storeChannelsSelected, "channelsSelectedStore");
+        C12238m.checkNotNullParameter(storeChannels, "channelsStore");
+        C12238m.checkNotNullParameter(storeReadStates, "readStatesStore");
+        C12238m.checkNotNullParameter(restAPI, "restAPI");
+        C12238m.checkNotNullParameter(observable, "storeObservable");
         this.directoriesStore = storeDirectories;
         this.restAPI = restAPI;
-        Observable observableY = ObservableExtensionsKt.computationLatest(observable).y(new Func1<ViewState, Boolean>() { // from class: com.discord.widgets.directories.WidgetDirectoriesViewModel.1
-            @Override // j0.k.Func1
+        Observable observableM11118y = ObservableExtensionsKt.computationLatest(observable).m11118y(new InterfaceC12589b<ViewState, Boolean>() { // from class: com.discord.widgets.directories.WidgetDirectoriesViewModel.1
+            @Override // p637j0.p641k.InterfaceC12589b
             public final Boolean call(ViewState viewState) {
                 Channel channel = viewState.getChannel();
-                return Boolean.valueOf(channel != null && ChannelUtils.o(channel));
+                return Boolean.valueOf(channel != null && ChannelUtils.m7691o(channel));
             }
         });
-        Intrinsics3.checkNotNullExpressionValue(observableY, "storeObservable\n        …?.isDirectory() == true }");
-        ObservableExtensionsKt.appSubscribe(ObservableExtensionsKt.ui$default(observableY, this, null, 2, null), (Class<?>) WidgetDirectoriesViewModel.class, (58 & 2) != 0 ? null : null, (Function1<? super Subscription, Unit>) ((58 & 4) != 0 ? null : null), (Function1<? super Error, Unit>) ((58 & 8) != 0 ? null : null), (Function0<Unit>) ((58 & 16) != 0 ? ObservableExtensionsKt.AnonymousClass1.INSTANCE : null), (Function0<Unit>) ((58 & 32) != 0 ? ObservableExtensionsKt.AnonymousClass2.INSTANCE : null), new AnonymousClass2(this));
-        Observable<Channel> observableR = storeChannelsSelected.observeSelectedChannel().r();
-        Intrinsics3.checkNotNullExpressionValue(observableR, "channelsSelectedStore\n  …  .distinctUntilChanged()");
-        Observable<R> observableG = observableR.y(ObservableExtensionsKt.AnonymousClass1.INSTANCE).G(ObservableExtensionsKt.AnonymousClass2.INSTANCE);
-        Intrinsics3.checkNotNullExpressionValue(observableG, "filter { it != null }.map { it!! }");
-        Observable observableY2 = observableG.y(new Func1<Channel, Boolean>() { // from class: com.discord.widgets.directories.WidgetDirectoriesViewModel.3
-            @Override // j0.k.Func1
+        C12238m.checkNotNullExpressionValue(observableM11118y, "storeObservable\n        …?.isDirectory() == true }");
+        ObservableExtensionsKt.appSubscribe(ObservableExtensionsKt.ui$default(observableM11118y, this, null, 2, null), (Class<?>) WidgetDirectoriesViewModel.class, (58 & 2) != 0 ? null : null, (Function1<? super Subscription, Unit>) ((58 & 4) != 0 ? null : null), (Function1<? super Error, Unit>) ((58 & 8) != 0 ? null : null), (Function0<Unit>) ((58 & 16) != 0 ? ObservableExtensionsKt.C68791.INSTANCE : null), (Function0<Unit>) ((58 & 32) != 0 ? ObservableExtensionsKt.C68802.INSTANCE : null), new C82812(this));
+        Observable<Channel> observableM11112r = storeChannelsSelected.observeSelectedChannel().m11112r();
+        C12238m.checkNotNullExpressionValue(observableM11112r, "channelsSelectedStore\n  …  .distinctUntilChanged()");
+        Observable<R> observableM11083G = observableM11112r.m11118y(ObservableExtensionsKt.C68871.INSTANCE).m11083G(ObservableExtensionsKt.C68882.INSTANCE);
+        C12238m.checkNotNullExpressionValue(observableM11083G, "filter { it != null }.map { it!! }");
+        Observable observableM11118y2 = observableM11083G.m11118y(new InterfaceC12589b<Channel, Boolean>() { // from class: com.discord.widgets.directories.WidgetDirectoriesViewModel.3
+            @Override // p637j0.p641k.InterfaceC12589b
             public final Boolean call(Channel channel) {
-                return Boolean.valueOf(channel != null && ChannelUtils.o(channel));
+                return Boolean.valueOf(channel != null && ChannelUtils.m7691o(channel));
             }
         });
-        Intrinsics3.checkNotNullExpressionValue(observableY2, "channelsSelectedStore\n  …?.isDirectory() == true }");
-        ObservableExtensionsKt.appSubscribe(observableY2, (Class<?>) WidgetDirectoriesViewModel.class, (58 & 2) != 0 ? null : null, (Function1<? super Subscription, Unit>) ((58 & 4) != 0 ? null : null), (Function1<? super Error, Unit>) ((58 & 8) != 0 ? null : null), (Function0<Unit>) ((58 & 16) != 0 ? ObservableExtensionsKt.AnonymousClass1.INSTANCE : null), (Function0<Unit>) ((58 & 32) != 0 ? ObservableExtensionsKt.AnonymousClass2.INSTANCE : null), new AnonymousClass4());
-        Observable<Long> observableY3 = storeChannelsSelected.observePreviousId().r().y(new Func1<Long, Boolean>() { // from class: com.discord.widgets.directories.WidgetDirectoriesViewModel.5
-            @Override // j0.k.Func1
+        C12238m.checkNotNullExpressionValue(observableM11118y2, "channelsSelectedStore\n  …?.isDirectory() == true }");
+        ObservableExtensionsKt.appSubscribe(observableM11118y2, (Class<?>) WidgetDirectoriesViewModel.class, (58 & 2) != 0 ? null : null, (Function1<? super Subscription, Unit>) ((58 & 4) != 0 ? null : null), (Function1<? super Error, Unit>) ((58 & 8) != 0 ? null : null), (Function0<Unit>) ((58 & 16) != 0 ? ObservableExtensionsKt.C68791.INSTANCE : null), (Function0<Unit>) ((58 & 32) != 0 ? ObservableExtensionsKt.C68802.INSTANCE : null), new C82834());
+        Observable<Long> observableM11118y3 = storeChannelsSelected.observePreviousId().m11112r().m11118y(new InterfaceC12589b<Long, Boolean>() { // from class: com.discord.widgets.directories.WidgetDirectoriesViewModel.5
+            @Override // p637j0.p641k.InterfaceC12589b
             public final Boolean call(Long l) {
                 StoreChannels storeChannels2 = storeChannels;
-                Intrinsics3.checkNotNullExpressionValue(l, ModelAuditLogEntry.CHANGE_KEY_ID);
+                C12238m.checkNotNullExpressionValue(l, ModelAuditLogEntry.CHANGE_KEY_ID);
                 Channel channelFindChannelById = storeChannels2.findChannelById(l.longValue());
-                return Boolean.valueOf(channelFindChannelById != null && ChannelUtils.o(channelFindChannelById));
+                return Boolean.valueOf(channelFindChannelById != null && ChannelUtils.m7691o(channelFindChannelById));
             }
         });
-        Intrinsics3.checkNotNullExpressionValue(observableY3, "channelsSelectedStore.ob…?.isDirectory() == true }");
-        ObservableExtensionsKt.appSubscribe(observableY3, (Class<?>) WidgetDirectoriesViewModel.class, (58 & 2) != 0 ? null : null, (Function1<? super Subscription, Unit>) ((58 & 4) != 0 ? null : null), (Function1<? super Error, Unit>) ((58 & 8) != 0 ? null : null), (Function0<Unit>) ((58 & 16) != 0 ? ObservableExtensionsKt.AnonymousClass1.INSTANCE : null), (Function0<Unit>) ((58 & 32) != 0 ? ObservableExtensionsKt.AnonymousClass2.INSTANCE : null), new AnonymousClass6(storeReadStates));
+        C12238m.checkNotNullExpressionValue(observableM11118y3, "channelsSelectedStore.ob…?.isDirectory() == true }");
+        ObservableExtensionsKt.appSubscribe(observableM11118y3, (Class<?>) WidgetDirectoriesViewModel.class, (58 & 2) != 0 ? null : null, (Function1<? super Subscription, Unit>) ((58 & 4) != 0 ? null : null), (Function1<? super Error, Unit>) ((58 & 8) != 0 ? null : null), (Function0<Unit>) ((58 & 16) != 0 ? ObservableExtensionsKt.C68791.INSTANCE : null), (Function0<Unit>) ((58 & 32) != 0 ? ObservableExtensionsKt.C68802.INSTANCE : null), new C82856(storeReadStates));
     }
 }

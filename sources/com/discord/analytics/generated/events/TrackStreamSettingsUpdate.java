@@ -1,14 +1,14 @@
 package com.discord.analytics.generated.events;
 
-import b.d.b.a.outline;
 import com.discord.analytics.generated.traits.TrackBase;
-import com.discord.analytics.generated.traits.TrackBase2;
+import com.discord.analytics.generated.traits.TrackBaseReceiver;
 import com.discord.api.science.AnalyticsSchema;
-import d0.z.d.Intrinsics3;
+import p007b.p100d.p104b.p105a.C1643a;
+import p507d0.p592z.p594d.C12238m;
 
 /* JADX INFO: compiled from: TrackStreamSettingsUpdate.kt */
 /* JADX INFO: loaded from: classes.dex */
-public final /* data */ class TrackStreamSettingsUpdate implements AnalyticsSchema, TrackBase2 {
+public final /* data */ class TrackStreamSettingsUpdate implements AnalyticsSchema, TrackBaseReceiver {
     private TrackBase trackBase;
     private final Long userPremiumTier = null;
     private final Long guildPremiumTier = null;
@@ -33,7 +33,7 @@ public final /* data */ class TrackStreamSettingsUpdate implements AnalyticsSche
             return false;
         }
         TrackStreamSettingsUpdate trackStreamSettingsUpdate = (TrackStreamSettingsUpdate) other;
-        return Intrinsics3.areEqual(this.userPremiumTier, trackStreamSettingsUpdate.userPremiumTier) && Intrinsics3.areEqual(this.guildPremiumTier, trackStreamSettingsUpdate.guildPremiumTier) && Intrinsics3.areEqual(this.streamQualityUserPremiumTier, trackStreamSettingsUpdate.streamQualityUserPremiumTier) && Intrinsics3.areEqual(this.streamQualityGuildPremiumTier, trackStreamSettingsUpdate.streamQualityGuildPremiumTier) && Intrinsics3.areEqual(this.streamQualityPreset, trackStreamSettingsUpdate.streamQualityPreset) && Intrinsics3.areEqual(this.streamQualityResolution, trackStreamSettingsUpdate.streamQualityResolution) && Intrinsics3.areEqual(this.streamQualityFrameRate, trackStreamSettingsUpdate.streamQualityFrameRate);
+        return C12238m.areEqual(this.userPremiumTier, trackStreamSettingsUpdate.userPremiumTier) && C12238m.areEqual(this.guildPremiumTier, trackStreamSettingsUpdate.guildPremiumTier) && C12238m.areEqual(this.streamQualityUserPremiumTier, trackStreamSettingsUpdate.streamQualityUserPremiumTier) && C12238m.areEqual(this.streamQualityGuildPremiumTier, trackStreamSettingsUpdate.streamQualityGuildPremiumTier) && C12238m.areEqual(this.streamQualityPreset, trackStreamSettingsUpdate.streamQualityPreset) && C12238m.areEqual(this.streamQualityResolution, trackStreamSettingsUpdate.streamQualityResolution) && C12238m.areEqual(this.streamQualityFrameRate, trackStreamSettingsUpdate.streamQualityFrameRate);
     }
 
     public int hashCode() {
@@ -54,19 +54,19 @@ public final /* data */ class TrackStreamSettingsUpdate implements AnalyticsSche
     }
 
     public String toString() {
-        StringBuilder sbU = outline.U("TrackStreamSettingsUpdate(userPremiumTier=");
-        sbU.append(this.userPremiumTier);
-        sbU.append(", guildPremiumTier=");
-        sbU.append(this.guildPremiumTier);
-        sbU.append(", streamQualityUserPremiumTier=");
-        sbU.append(this.streamQualityUserPremiumTier);
-        sbU.append(", streamQualityGuildPremiumTier=");
-        sbU.append(this.streamQualityGuildPremiumTier);
-        sbU.append(", streamQualityPreset=");
-        sbU.append(this.streamQualityPreset);
-        sbU.append(", streamQualityResolution=");
-        sbU.append(this.streamQualityResolution);
-        sbU.append(", streamQualityFrameRate=");
-        return outline.G(sbU, this.streamQualityFrameRate, ")");
+        StringBuilder sbM833U = C1643a.m833U("TrackStreamSettingsUpdate(userPremiumTier=");
+        sbM833U.append(this.userPremiumTier);
+        sbM833U.append(", guildPremiumTier=");
+        sbM833U.append(this.guildPremiumTier);
+        sbM833U.append(", streamQualityUserPremiumTier=");
+        sbM833U.append(this.streamQualityUserPremiumTier);
+        sbM833U.append(", streamQualityGuildPremiumTier=");
+        sbM833U.append(this.streamQualityGuildPremiumTier);
+        sbM833U.append(", streamQualityPreset=");
+        sbM833U.append(this.streamQualityPreset);
+        sbM833U.append(", streamQualityResolution=");
+        sbM833U.append(this.streamQualityResolution);
+        sbM833U.append(", streamQualityFrameRate=");
+        return C1643a.m819G(sbM833U, this.streamQualityFrameRate, ")");
     }
 }

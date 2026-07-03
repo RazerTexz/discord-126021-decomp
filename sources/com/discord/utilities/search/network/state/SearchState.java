@@ -1,13 +1,13 @@
 package com.discord.utilities.search.network.state;
 
-import b.d.b.a.outline;
 import com.discord.api.channel.Channel;
 import com.discord.api.thread.ThreadMember;
 import com.discord.models.message.Message;
 import com.discord.utilities.search.network.SearchQuery;
-import d0.z.d.Intrinsics3;
 import java.util.List;
 import kotlin.jvm.internal.DefaultConstructorMarker;
+import p007b.p100d.p104b.p105a.C1643a;
+import p507d0.p592z.p594d.C12238m;
 
 /* JADX INFO: compiled from: SearchState.kt */
 /* JADX INFO: loaded from: classes2.dex */
@@ -22,7 +22,7 @@ public final /* data */ class SearchState {
 
     /* JADX WARN: Multi-variable type inference failed */
     public SearchState(QueryFetchState queryFetchState, SearchQuery searchQuery, List<Channel> list, List<? extends ThreadMember> list2, List<Message> list3, boolean z2, int i) {
-        Intrinsics3.checkNotNullParameter(queryFetchState, "queryFetchState");
+        C12238m.checkNotNullParameter(queryFetchState, "queryFetchState");
         this.queryFetchState = queryFetchState;
         this.searchQuery = searchQuery;
         this.threads = list;
@@ -96,7 +96,7 @@ public final /* data */ class SearchState {
     }
 
     public final SearchState copy(QueryFetchState queryFetchState, SearchQuery searchQuery, List<Channel> threads, List<? extends ThreadMember> threadMembers, List<Message> hits, boolean hasMore, int totalResults) {
-        Intrinsics3.checkNotNullParameter(queryFetchState, "queryFetchState");
+        C12238m.checkNotNullParameter(queryFetchState, "queryFetchState");
         return new SearchState(queryFetchState, searchQuery, threads, threadMembers, hits, hasMore, totalResults);
     }
 
@@ -108,7 +108,7 @@ public final /* data */ class SearchState {
             return false;
         }
         SearchState searchState = (SearchState) other;
-        return Intrinsics3.areEqual(this.queryFetchState, searchState.queryFetchState) && Intrinsics3.areEqual(this.searchQuery, searchState.searchQuery) && Intrinsics3.areEqual(this.threads, searchState.threads) && Intrinsics3.areEqual(this.threadMembers, searchState.threadMembers) && Intrinsics3.areEqual(this.hits, searchState.hits) && this.hasMore == searchState.hasMore && this.totalResults == searchState.totalResults;
+        return C12238m.areEqual(this.queryFetchState, searchState.queryFetchState) && C12238m.areEqual(this.searchQuery, searchState.searchQuery) && C12238m.areEqual(this.threads, searchState.threads) && C12238m.areEqual(this.threadMembers, searchState.threadMembers) && C12238m.areEqual(this.hits, searchState.hits) && this.hasMore == searchState.hasMore && this.totalResults == searchState.totalResults;
     }
 
     public final boolean getHasMore() {
@@ -164,20 +164,20 @@ public final /* data */ class SearchState {
     }
 
     public String toString() {
-        StringBuilder sbU = outline.U("SearchState(queryFetchState=");
-        sbU.append(this.queryFetchState);
-        sbU.append(", searchQuery=");
-        sbU.append(this.searchQuery);
-        sbU.append(", threads=");
-        sbU.append(this.threads);
-        sbU.append(", threadMembers=");
-        sbU.append(this.threadMembers);
-        sbU.append(", hits=");
-        sbU.append(this.hits);
-        sbU.append(", hasMore=");
-        sbU.append(this.hasMore);
-        sbU.append(", totalResults=");
-        return outline.B(sbU, this.totalResults, ")");
+        StringBuilder sbM833U = C1643a.m833U("SearchState(queryFetchState=");
+        sbM833U.append(this.queryFetchState);
+        sbM833U.append(", searchQuery=");
+        sbM833U.append(this.searchQuery);
+        sbM833U.append(", threads=");
+        sbM833U.append(this.threads);
+        sbM833U.append(", threadMembers=");
+        sbM833U.append(this.threadMembers);
+        sbM833U.append(", hits=");
+        sbM833U.append(this.hits);
+        sbM833U.append(", hasMore=");
+        sbM833U.append(this.hasMore);
+        sbM833U.append(", totalResults=");
+        return C1643a.m814B(sbM833U, this.totalResults, ")");
     }
 
     public /* synthetic */ SearchState(QueryFetchState queryFetchState, SearchQuery searchQuery, List list, List list2, List list3, boolean z2, int i, int i2, DefaultConstructorMarker defaultConstructorMarker) {

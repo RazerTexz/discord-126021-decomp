@@ -17,11 +17,10 @@ import androidx.constraintlayout.motion.widget.Debug;
 import androidx.constraintlayout.motion.widget.MotionScene;
 import androidx.constraintlayout.solver.widgets.ConstraintWidget;
 import androidx.constraintlayout.solver.widgets.HelperWidget;
+import androidx.constraintlayout.widget.C0201R;
 import androidx.constraintlayout.widget.ConstraintAttribute;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.constraintlayout.widget.Constraints;
-import androidx.constraintlayout.widget.R;
-import b.d.b.a.outline;
 import com.discord.models.domain.ModelAuditLogEntry;
 import java.io.IOException;
 import java.lang.reflect.Field;
@@ -33,6 +32,7 @@ import java.util.HashSet;
 import java.util.Set;
 import org.xmlpull.v1.XmlPullParser;
 import org.xmlpull.v1.XmlPullParserException;
+import p007b.p100d.p104b.p105a.C1643a;
 
 /* JADX INFO: loaded from: classes.dex */
 public class ConstraintSet {
@@ -245,9 +245,9 @@ public class ConstraintSet {
             if (constraintAttribute2.getType() == attributeType) {
                 return constraintAttribute2;
             }
-            StringBuilder sbU = outline.U("ConstraintAttribute is already a ");
-            sbU.append(constraintAttribute2.getType().name());
-            throw new IllegalArgumentException(sbU.toString());
+            StringBuilder sbM833U = C1643a.m833U("ConstraintAttribute is already a ");
+            sbM833U.append(constraintAttribute2.getType().name());
+            throw new IllegalArgumentException(sbM833U.toString());
         }
 
         private void setColorValue(String str, int i) {
@@ -328,7 +328,7 @@ public class ConstraintSet {
         }
 
         /* JADX INFO: renamed from: clone, reason: merged with bridge method [inline-methods] */
-        public Constraint m2clone() {
+        public Constraint m11379clone() {
             Constraint constraint = new Constraint();
             constraint.layout.copyFrom(this.layout);
             constraint.motion.copyFrom(this.motion);
@@ -477,61 +477,61 @@ public class ConstraintSet {
         static {
             SparseIntArray sparseIntArray = new SparseIntArray();
             mapToConstant = sparseIntArray;
-            sparseIntArray.append(R.styleable.Layout_layout_constraintLeft_toLeftOf, 24);
-            mapToConstant.append(R.styleable.Layout_layout_constraintLeft_toRightOf, 25);
-            mapToConstant.append(R.styleable.Layout_layout_constraintRight_toLeftOf, 28);
-            mapToConstant.append(R.styleable.Layout_layout_constraintRight_toRightOf, 29);
-            mapToConstant.append(R.styleable.Layout_layout_constraintTop_toTopOf, 35);
-            mapToConstant.append(R.styleable.Layout_layout_constraintTop_toBottomOf, 34);
-            mapToConstant.append(R.styleable.Layout_layout_constraintBottom_toTopOf, 4);
-            mapToConstant.append(R.styleable.Layout_layout_constraintBottom_toBottomOf, 3);
-            mapToConstant.append(R.styleable.Layout_layout_constraintBaseline_toBaselineOf, 1);
-            mapToConstant.append(R.styleable.Layout_layout_editor_absoluteX, 6);
-            mapToConstant.append(R.styleable.Layout_layout_editor_absoluteY, 7);
-            mapToConstant.append(R.styleable.Layout_layout_constraintGuide_begin, 17);
-            mapToConstant.append(R.styleable.Layout_layout_constraintGuide_end, 18);
-            mapToConstant.append(R.styleable.Layout_layout_constraintGuide_percent, 19);
-            mapToConstant.append(R.styleable.Layout_android_orientation, 26);
-            mapToConstant.append(R.styleable.Layout_layout_constraintStart_toEndOf, 31);
-            mapToConstant.append(R.styleable.Layout_layout_constraintStart_toStartOf, 32);
-            mapToConstant.append(R.styleable.Layout_layout_constraintEnd_toStartOf, 10);
-            mapToConstant.append(R.styleable.Layout_layout_constraintEnd_toEndOf, 9);
-            mapToConstant.append(R.styleable.Layout_layout_goneMarginLeft, 13);
-            mapToConstant.append(R.styleable.Layout_layout_goneMarginTop, 16);
-            mapToConstant.append(R.styleable.Layout_layout_goneMarginRight, 14);
-            mapToConstant.append(R.styleable.Layout_layout_goneMarginBottom, 11);
-            mapToConstant.append(R.styleable.Layout_layout_goneMarginStart, 15);
-            mapToConstant.append(R.styleable.Layout_layout_goneMarginEnd, 12);
-            mapToConstant.append(R.styleable.Layout_layout_constraintVertical_weight, 38);
-            mapToConstant.append(R.styleable.Layout_layout_constraintHorizontal_weight, 37);
-            mapToConstant.append(R.styleable.Layout_layout_constraintHorizontal_chainStyle, 39);
-            mapToConstant.append(R.styleable.Layout_layout_constraintVertical_chainStyle, 40);
-            mapToConstant.append(R.styleable.Layout_layout_constraintHorizontal_bias, 20);
-            mapToConstant.append(R.styleable.Layout_layout_constraintVertical_bias, 36);
-            mapToConstant.append(R.styleable.Layout_layout_constraintDimensionRatio, 5);
-            mapToConstant.append(R.styleable.Layout_layout_constraintLeft_creator, 76);
-            mapToConstant.append(R.styleable.Layout_layout_constraintTop_creator, 76);
-            mapToConstant.append(R.styleable.Layout_layout_constraintRight_creator, 76);
-            mapToConstant.append(R.styleable.Layout_layout_constraintBottom_creator, 76);
-            mapToConstant.append(R.styleable.Layout_layout_constraintBaseline_creator, 76);
-            mapToConstant.append(R.styleable.Layout_android_layout_marginLeft, 23);
-            mapToConstant.append(R.styleable.Layout_android_layout_marginRight, 27);
-            mapToConstant.append(R.styleable.Layout_android_layout_marginStart, 30);
-            mapToConstant.append(R.styleable.Layout_android_layout_marginEnd, 8);
-            mapToConstant.append(R.styleable.Layout_android_layout_marginTop, 33);
-            mapToConstant.append(R.styleable.Layout_android_layout_marginBottom, 2);
-            mapToConstant.append(R.styleable.Layout_android_layout_width, 22);
-            mapToConstant.append(R.styleable.Layout_android_layout_height, 21);
-            mapToConstant.append(R.styleable.Layout_layout_constraintCircle, 61);
-            mapToConstant.append(R.styleable.Layout_layout_constraintCircleRadius, 62);
-            mapToConstant.append(R.styleable.Layout_layout_constraintCircleAngle, 63);
-            mapToConstant.append(R.styleable.Layout_layout_constraintWidth_percent, 69);
-            mapToConstant.append(R.styleable.Layout_layout_constraintHeight_percent, 70);
-            mapToConstant.append(R.styleable.Layout_chainUseRtl, 71);
-            mapToConstant.append(R.styleable.Layout_barrierDirection, 72);
-            mapToConstant.append(R.styleable.Layout_barrierMargin, 73);
-            mapToConstant.append(R.styleable.Layout_constraint_referenced_ids, 74);
-            mapToConstant.append(R.styleable.Layout_barrierAllowsGoneWidgets, 75);
+            sparseIntArray.append(C0201R.styleable.Layout_layout_constraintLeft_toLeftOf, 24);
+            mapToConstant.append(C0201R.styleable.Layout_layout_constraintLeft_toRightOf, 25);
+            mapToConstant.append(C0201R.styleable.Layout_layout_constraintRight_toLeftOf, 28);
+            mapToConstant.append(C0201R.styleable.Layout_layout_constraintRight_toRightOf, 29);
+            mapToConstant.append(C0201R.styleable.Layout_layout_constraintTop_toTopOf, 35);
+            mapToConstant.append(C0201R.styleable.Layout_layout_constraintTop_toBottomOf, 34);
+            mapToConstant.append(C0201R.styleable.Layout_layout_constraintBottom_toTopOf, 4);
+            mapToConstant.append(C0201R.styleable.Layout_layout_constraintBottom_toBottomOf, 3);
+            mapToConstant.append(C0201R.styleable.Layout_layout_constraintBaseline_toBaselineOf, 1);
+            mapToConstant.append(C0201R.styleable.Layout_layout_editor_absoluteX, 6);
+            mapToConstant.append(C0201R.styleable.Layout_layout_editor_absoluteY, 7);
+            mapToConstant.append(C0201R.styleable.Layout_layout_constraintGuide_begin, 17);
+            mapToConstant.append(C0201R.styleable.Layout_layout_constraintGuide_end, 18);
+            mapToConstant.append(C0201R.styleable.Layout_layout_constraintGuide_percent, 19);
+            mapToConstant.append(C0201R.styleable.Layout_android_orientation, 26);
+            mapToConstant.append(C0201R.styleable.Layout_layout_constraintStart_toEndOf, 31);
+            mapToConstant.append(C0201R.styleable.Layout_layout_constraintStart_toStartOf, 32);
+            mapToConstant.append(C0201R.styleable.Layout_layout_constraintEnd_toStartOf, 10);
+            mapToConstant.append(C0201R.styleable.Layout_layout_constraintEnd_toEndOf, 9);
+            mapToConstant.append(C0201R.styleable.Layout_layout_goneMarginLeft, 13);
+            mapToConstant.append(C0201R.styleable.Layout_layout_goneMarginTop, 16);
+            mapToConstant.append(C0201R.styleable.Layout_layout_goneMarginRight, 14);
+            mapToConstant.append(C0201R.styleable.Layout_layout_goneMarginBottom, 11);
+            mapToConstant.append(C0201R.styleable.Layout_layout_goneMarginStart, 15);
+            mapToConstant.append(C0201R.styleable.Layout_layout_goneMarginEnd, 12);
+            mapToConstant.append(C0201R.styleable.Layout_layout_constraintVertical_weight, 38);
+            mapToConstant.append(C0201R.styleable.Layout_layout_constraintHorizontal_weight, 37);
+            mapToConstant.append(C0201R.styleable.Layout_layout_constraintHorizontal_chainStyle, 39);
+            mapToConstant.append(C0201R.styleable.Layout_layout_constraintVertical_chainStyle, 40);
+            mapToConstant.append(C0201R.styleable.Layout_layout_constraintHorizontal_bias, 20);
+            mapToConstant.append(C0201R.styleable.Layout_layout_constraintVertical_bias, 36);
+            mapToConstant.append(C0201R.styleable.Layout_layout_constraintDimensionRatio, 5);
+            mapToConstant.append(C0201R.styleable.Layout_layout_constraintLeft_creator, 76);
+            mapToConstant.append(C0201R.styleable.Layout_layout_constraintTop_creator, 76);
+            mapToConstant.append(C0201R.styleable.Layout_layout_constraintRight_creator, 76);
+            mapToConstant.append(C0201R.styleable.Layout_layout_constraintBottom_creator, 76);
+            mapToConstant.append(C0201R.styleable.Layout_layout_constraintBaseline_creator, 76);
+            mapToConstant.append(C0201R.styleable.Layout_android_layout_marginLeft, 23);
+            mapToConstant.append(C0201R.styleable.Layout_android_layout_marginRight, 27);
+            mapToConstant.append(C0201R.styleable.Layout_android_layout_marginStart, 30);
+            mapToConstant.append(C0201R.styleable.Layout_android_layout_marginEnd, 8);
+            mapToConstant.append(C0201R.styleable.Layout_android_layout_marginTop, 33);
+            mapToConstant.append(C0201R.styleable.Layout_android_layout_marginBottom, 2);
+            mapToConstant.append(C0201R.styleable.Layout_android_layout_width, 22);
+            mapToConstant.append(C0201R.styleable.Layout_android_layout_height, 21);
+            mapToConstant.append(C0201R.styleable.Layout_layout_constraintCircle, 61);
+            mapToConstant.append(C0201R.styleable.Layout_layout_constraintCircleRadius, 62);
+            mapToConstant.append(C0201R.styleable.Layout_layout_constraintCircleAngle, 63);
+            mapToConstant.append(C0201R.styleable.Layout_layout_constraintWidth_percent, 69);
+            mapToConstant.append(C0201R.styleable.Layout_layout_constraintHeight_percent, 70);
+            mapToConstant.append(C0201R.styleable.Layout_chainUseRtl, 71);
+            mapToConstant.append(C0201R.styleable.Layout_barrierDirection, 72);
+            mapToConstant.append(C0201R.styleable.Layout_barrierMargin, 73);
+            mapToConstant.append(C0201R.styleable.Layout_constraint_referenced_ids, 74);
+            mapToConstant.append(C0201R.styleable.Layout_barrierAllowsGoneWidgets, 75);
         }
 
         public void copyFrom(Layout layout) {
@@ -641,7 +641,7 @@ public class ConstraintSet {
         }
 
         public void fillFromAttributeList(Context context, AttributeSet attributeSet) {
-            TypedArray typedArrayObtainStyledAttributes = context.obtainStyledAttributes(attributeSet, R.styleable.Layout);
+            TypedArray typedArrayObtainStyledAttributes = context.obtainStyledAttributes(attributeSet, C0201R.styleable.Layout);
             this.mApply = true;
             int indexCount = typedArrayObtainStyledAttributes.getIndexCount();
             for (int i = 0; i < indexCount; i++) {
@@ -826,21 +826,21 @@ public class ConstraintSet {
                                                     this.mBarrierAllowsGoneWidgets = typedArrayObtainStyledAttributes.getBoolean(index, this.mBarrierAllowsGoneWidgets);
                                                     break;
                                                 case 76:
-                                                    StringBuilder sbU = outline.U("unused attribute 0x");
-                                                    sbU.append(Integer.toHexString(index));
-                                                    sbU.append("   ");
-                                                    sbU.append(mapToConstant.get(index));
-                                                    Log.w(ConstraintSet.TAG, sbU.toString());
+                                                    StringBuilder sbM833U = C1643a.m833U("unused attribute 0x");
+                                                    sbM833U.append(Integer.toHexString(index));
+                                                    sbM833U.append("   ");
+                                                    sbM833U.append(mapToConstant.get(index));
+                                                    Log.w(ConstraintSet.TAG, sbM833U.toString());
                                                     break;
                                                 case 77:
                                                     this.mConstraintTag = typedArrayObtainStyledAttributes.getString(index);
                                                     break;
                                                 default:
-                                                    StringBuilder sbU2 = outline.U("Unknown attribute 0x");
-                                                    sbU2.append(Integer.toHexString(index));
-                                                    sbU2.append("   ");
-                                                    sbU2.append(mapToConstant.get(index));
-                                                    Log.w(ConstraintSet.TAG, sbU2.toString());
+                                                    StringBuilder sbM833U2 = C1643a.m833U("Unknown attribute 0x");
+                                                    sbM833U2.append(Integer.toHexString(index));
+                                                    sbM833U2.append("   ");
+                                                    sbM833U2.append(mapToConstant.get(index));
+                                                    Log.w(ConstraintSet.TAG, sbM833U2.toString());
                                                     break;
                                             }
                                             break;
@@ -876,12 +876,12 @@ public class ConstraintSet {
         static {
             SparseIntArray sparseIntArray = new SparseIntArray();
             mapToConstant = sparseIntArray;
-            sparseIntArray.append(R.styleable.Motion_motionPathRotate, 1);
-            mapToConstant.append(R.styleable.Motion_pathMotionArc, 2);
-            mapToConstant.append(R.styleable.Motion_transitionEasing, 3);
-            mapToConstant.append(R.styleable.Motion_drawPath, 4);
-            mapToConstant.append(R.styleable.Motion_animate_relativeTo, 5);
-            mapToConstant.append(R.styleable.Motion_motionStagger, 6);
+            sparseIntArray.append(C0201R.styleable.Motion_motionPathRotate, 1);
+            mapToConstant.append(C0201R.styleable.Motion_pathMotionArc, 2);
+            mapToConstant.append(C0201R.styleable.Motion_transitionEasing, 3);
+            mapToConstant.append(C0201R.styleable.Motion_drawPath, 4);
+            mapToConstant.append(C0201R.styleable.Motion_animate_relativeTo, 5);
+            mapToConstant.append(C0201R.styleable.Motion_motionStagger, 6);
         }
 
         public void copyFrom(Motion motion) {
@@ -895,7 +895,7 @@ public class ConstraintSet {
         }
 
         public void fillFromAttributeList(Context context, AttributeSet attributeSet) {
-            TypedArray typedArrayObtainStyledAttributes = context.obtainStyledAttributes(attributeSet, R.styleable.Motion);
+            TypedArray typedArrayObtainStyledAttributes = context.obtainStyledAttributes(attributeSet, C0201R.styleable.Motion);
             this.mApply = true;
             int indexCount = typedArrayObtainStyledAttributes.getIndexCount();
             for (int i = 0; i < indexCount; i++) {
@@ -945,19 +945,19 @@ public class ConstraintSet {
         }
 
         public void fillFromAttributeList(Context context, AttributeSet attributeSet) {
-            TypedArray typedArrayObtainStyledAttributes = context.obtainStyledAttributes(attributeSet, R.styleable.PropertySet);
+            TypedArray typedArrayObtainStyledAttributes = context.obtainStyledAttributes(attributeSet, C0201R.styleable.PropertySet);
             this.mApply = true;
             int indexCount = typedArrayObtainStyledAttributes.getIndexCount();
             for (int i = 0; i < indexCount; i++) {
                 int index = typedArrayObtainStyledAttributes.getIndex(i);
-                if (index == R.styleable.PropertySet_android_alpha) {
+                if (index == C0201R.styleable.PropertySet_android_alpha) {
                     this.alpha = typedArrayObtainStyledAttributes.getFloat(index, this.alpha);
-                } else if (index == R.styleable.PropertySet_android_visibility) {
+                } else if (index == C0201R.styleable.PropertySet_android_visibility) {
                     this.visibility = typedArrayObtainStyledAttributes.getInt(index, this.visibility);
                     this.visibility = ConstraintSet.VISIBILITY_FLAGS[this.visibility];
-                } else if (index == R.styleable.PropertySet_visibilityMode) {
+                } else if (index == C0201R.styleable.PropertySet_visibilityMode) {
                     this.mVisibilityMode = typedArrayObtainStyledAttributes.getInt(index, this.mVisibilityMode);
-                } else if (index == R.styleable.PropertySet_motionProgress) {
+                } else if (index == C0201R.styleable.PropertySet_motionProgress) {
                     this.mProgress = typedArrayObtainStyledAttributes.getFloat(index, this.mProgress);
                 }
             }
@@ -995,17 +995,17 @@ public class ConstraintSet {
         static {
             SparseIntArray sparseIntArray = new SparseIntArray();
             mapToConstant = sparseIntArray;
-            sparseIntArray.append(R.styleable.Transform_android_rotation, 1);
-            mapToConstant.append(R.styleable.Transform_android_rotationX, 2);
-            mapToConstant.append(R.styleable.Transform_android_rotationY, 3);
-            mapToConstant.append(R.styleable.Transform_android_scaleX, 4);
-            mapToConstant.append(R.styleable.Transform_android_scaleY, 5);
-            mapToConstant.append(R.styleable.Transform_android_transformPivotX, 6);
-            mapToConstant.append(R.styleable.Transform_android_transformPivotY, 7);
-            mapToConstant.append(R.styleable.Transform_android_translationX, 8);
-            mapToConstant.append(R.styleable.Transform_android_translationY, 9);
-            mapToConstant.append(R.styleable.Transform_android_translationZ, 10);
-            mapToConstant.append(R.styleable.Transform_android_elevation, 11);
+            sparseIntArray.append(C0201R.styleable.Transform_android_rotation, 1);
+            mapToConstant.append(C0201R.styleable.Transform_android_rotationX, 2);
+            mapToConstant.append(C0201R.styleable.Transform_android_rotationY, 3);
+            mapToConstant.append(C0201R.styleable.Transform_android_scaleX, 4);
+            mapToConstant.append(C0201R.styleable.Transform_android_scaleY, 5);
+            mapToConstant.append(C0201R.styleable.Transform_android_transformPivotX, 6);
+            mapToConstant.append(C0201R.styleable.Transform_android_transformPivotY, 7);
+            mapToConstant.append(C0201R.styleable.Transform_android_translationX, 8);
+            mapToConstant.append(C0201R.styleable.Transform_android_translationY, 9);
+            mapToConstant.append(C0201R.styleable.Transform_android_translationZ, 10);
+            mapToConstant.append(C0201R.styleable.Transform_android_elevation, 11);
         }
 
         public void copyFrom(Transform transform) {
@@ -1025,7 +1025,7 @@ public class ConstraintSet {
         }
 
         public void fillFromAttributeList(Context context, AttributeSet attributeSet) {
-            TypedArray typedArrayObtainStyledAttributes = context.obtainStyledAttributes(attributeSet, R.styleable.Transform);
+            TypedArray typedArrayObtainStyledAttributes = context.obtainStyledAttributes(attributeSet, C0201R.styleable.Transform);
             this.mApply = true;
             int indexCount = typedArrayObtainStyledAttributes.getIndexCount();
             for (int i = 0; i < indexCount; i++) {
@@ -1074,92 +1074,92 @@ public class ConstraintSet {
     static {
         SparseIntArray sparseIntArray = new SparseIntArray();
         mapToConstant = sparseIntArray;
-        sparseIntArray.append(R.styleable.Constraint_layout_constraintLeft_toLeftOf, 25);
-        mapToConstant.append(R.styleable.Constraint_layout_constraintLeft_toRightOf, 26);
-        mapToConstant.append(R.styleable.Constraint_layout_constraintRight_toLeftOf, 29);
-        mapToConstant.append(R.styleable.Constraint_layout_constraintRight_toRightOf, 30);
-        mapToConstant.append(R.styleable.Constraint_layout_constraintTop_toTopOf, 36);
-        mapToConstant.append(R.styleable.Constraint_layout_constraintTop_toBottomOf, 35);
-        mapToConstant.append(R.styleable.Constraint_layout_constraintBottom_toTopOf, 4);
-        mapToConstant.append(R.styleable.Constraint_layout_constraintBottom_toBottomOf, 3);
-        mapToConstant.append(R.styleable.Constraint_layout_constraintBaseline_toBaselineOf, 1);
-        mapToConstant.append(R.styleable.Constraint_layout_editor_absoluteX, 6);
-        mapToConstant.append(R.styleable.Constraint_layout_editor_absoluteY, 7);
-        mapToConstant.append(R.styleable.Constraint_layout_constraintGuide_begin, 17);
-        mapToConstant.append(R.styleable.Constraint_layout_constraintGuide_end, 18);
-        mapToConstant.append(R.styleable.Constraint_layout_constraintGuide_percent, 19);
-        mapToConstant.append(R.styleable.Constraint_android_orientation, 27);
-        mapToConstant.append(R.styleable.Constraint_layout_constraintStart_toEndOf, 32);
-        mapToConstant.append(R.styleable.Constraint_layout_constraintStart_toStartOf, 33);
-        mapToConstant.append(R.styleable.Constraint_layout_constraintEnd_toStartOf, 10);
-        mapToConstant.append(R.styleable.Constraint_layout_constraintEnd_toEndOf, 9);
-        mapToConstant.append(R.styleable.Constraint_layout_goneMarginLeft, 13);
-        mapToConstant.append(R.styleable.Constraint_layout_goneMarginTop, 16);
-        mapToConstant.append(R.styleable.Constraint_layout_goneMarginRight, 14);
-        mapToConstant.append(R.styleable.Constraint_layout_goneMarginBottom, 11);
-        mapToConstant.append(R.styleable.Constraint_layout_goneMarginStart, 15);
-        mapToConstant.append(R.styleable.Constraint_layout_goneMarginEnd, 12);
-        mapToConstant.append(R.styleable.Constraint_layout_constraintVertical_weight, 40);
-        mapToConstant.append(R.styleable.Constraint_layout_constraintHorizontal_weight, 39);
-        mapToConstant.append(R.styleable.Constraint_layout_constraintHorizontal_chainStyle, 41);
-        mapToConstant.append(R.styleable.Constraint_layout_constraintVertical_chainStyle, 42);
-        mapToConstant.append(R.styleable.Constraint_layout_constraintHorizontal_bias, 20);
-        mapToConstant.append(R.styleable.Constraint_layout_constraintVertical_bias, 37);
-        mapToConstant.append(R.styleable.Constraint_layout_constraintDimensionRatio, 5);
-        mapToConstant.append(R.styleable.Constraint_layout_constraintLeft_creator, 82);
-        mapToConstant.append(R.styleable.Constraint_layout_constraintTop_creator, 82);
-        mapToConstant.append(R.styleable.Constraint_layout_constraintRight_creator, 82);
-        mapToConstant.append(R.styleable.Constraint_layout_constraintBottom_creator, 82);
-        mapToConstant.append(R.styleable.Constraint_layout_constraintBaseline_creator, 82);
-        mapToConstant.append(R.styleable.Constraint_android_layout_marginLeft, 24);
-        mapToConstant.append(R.styleable.Constraint_android_layout_marginRight, 28);
-        mapToConstant.append(R.styleable.Constraint_android_layout_marginStart, 31);
-        mapToConstant.append(R.styleable.Constraint_android_layout_marginEnd, 8);
-        mapToConstant.append(R.styleable.Constraint_android_layout_marginTop, 34);
-        mapToConstant.append(R.styleable.Constraint_android_layout_marginBottom, 2);
-        mapToConstant.append(R.styleable.Constraint_android_layout_width, 23);
-        mapToConstant.append(R.styleable.Constraint_android_layout_height, 21);
-        mapToConstant.append(R.styleable.Constraint_android_visibility, 22);
-        mapToConstant.append(R.styleable.Constraint_android_alpha, 43);
-        mapToConstant.append(R.styleable.Constraint_android_elevation, 44);
-        mapToConstant.append(R.styleable.Constraint_android_rotationX, 45);
-        mapToConstant.append(R.styleable.Constraint_android_rotationY, 46);
-        mapToConstant.append(R.styleable.Constraint_android_rotation, 60);
-        mapToConstant.append(R.styleable.Constraint_android_scaleX, 47);
-        mapToConstant.append(R.styleable.Constraint_android_scaleY, 48);
-        mapToConstant.append(R.styleable.Constraint_android_transformPivotX, 49);
-        mapToConstant.append(R.styleable.Constraint_android_transformPivotY, 50);
-        mapToConstant.append(R.styleable.Constraint_android_translationX, 51);
-        mapToConstant.append(R.styleable.Constraint_android_translationY, 52);
-        mapToConstant.append(R.styleable.Constraint_android_translationZ, 53);
-        mapToConstant.append(R.styleable.Constraint_layout_constraintWidth_default, 54);
-        mapToConstant.append(R.styleable.Constraint_layout_constraintHeight_default, 55);
-        mapToConstant.append(R.styleable.Constraint_layout_constraintWidth_max, 56);
-        mapToConstant.append(R.styleable.Constraint_layout_constraintHeight_max, 57);
-        mapToConstant.append(R.styleable.Constraint_layout_constraintWidth_min, 58);
-        mapToConstant.append(R.styleable.Constraint_layout_constraintHeight_min, 59);
-        mapToConstant.append(R.styleable.Constraint_layout_constraintCircle, 61);
-        mapToConstant.append(R.styleable.Constraint_layout_constraintCircleRadius, 62);
-        mapToConstant.append(R.styleable.Constraint_layout_constraintCircleAngle, 63);
-        mapToConstant.append(R.styleable.Constraint_animate_relativeTo, 64);
-        mapToConstant.append(R.styleable.Constraint_transitionEasing, 65);
-        mapToConstant.append(R.styleable.Constraint_drawPath, 66);
-        mapToConstant.append(R.styleable.Constraint_transitionPathRotate, 67);
-        mapToConstant.append(R.styleable.Constraint_motionStagger, 79);
-        mapToConstant.append(R.styleable.Constraint_android_id, 38);
-        mapToConstant.append(R.styleable.Constraint_motionProgress, 68);
-        mapToConstant.append(R.styleable.Constraint_layout_constraintWidth_percent, 69);
-        mapToConstant.append(R.styleable.Constraint_layout_constraintHeight_percent, 70);
-        mapToConstant.append(R.styleable.Constraint_chainUseRtl, 71);
-        mapToConstant.append(R.styleable.Constraint_barrierDirection, 72);
-        mapToConstant.append(R.styleable.Constraint_barrierMargin, 73);
-        mapToConstant.append(R.styleable.Constraint_constraint_referenced_ids, 74);
-        mapToConstant.append(R.styleable.Constraint_barrierAllowsGoneWidgets, 75);
-        mapToConstant.append(R.styleable.Constraint_pathMotionArc, 76);
-        mapToConstant.append(R.styleable.Constraint_layout_constraintTag, 77);
-        mapToConstant.append(R.styleable.Constraint_visibilityMode, 78);
-        mapToConstant.append(R.styleable.Constraint_layout_constrainedWidth, 80);
-        mapToConstant.append(R.styleable.Constraint_layout_constrainedHeight, 81);
+        sparseIntArray.append(C0201R.styleable.Constraint_layout_constraintLeft_toLeftOf, 25);
+        mapToConstant.append(C0201R.styleable.Constraint_layout_constraintLeft_toRightOf, 26);
+        mapToConstant.append(C0201R.styleable.Constraint_layout_constraintRight_toLeftOf, 29);
+        mapToConstant.append(C0201R.styleable.Constraint_layout_constraintRight_toRightOf, 30);
+        mapToConstant.append(C0201R.styleable.Constraint_layout_constraintTop_toTopOf, 36);
+        mapToConstant.append(C0201R.styleable.Constraint_layout_constraintTop_toBottomOf, 35);
+        mapToConstant.append(C0201R.styleable.Constraint_layout_constraintBottom_toTopOf, 4);
+        mapToConstant.append(C0201R.styleable.Constraint_layout_constraintBottom_toBottomOf, 3);
+        mapToConstant.append(C0201R.styleable.Constraint_layout_constraintBaseline_toBaselineOf, 1);
+        mapToConstant.append(C0201R.styleable.Constraint_layout_editor_absoluteX, 6);
+        mapToConstant.append(C0201R.styleable.Constraint_layout_editor_absoluteY, 7);
+        mapToConstant.append(C0201R.styleable.Constraint_layout_constraintGuide_begin, 17);
+        mapToConstant.append(C0201R.styleable.Constraint_layout_constraintGuide_end, 18);
+        mapToConstant.append(C0201R.styleable.Constraint_layout_constraintGuide_percent, 19);
+        mapToConstant.append(C0201R.styleable.Constraint_android_orientation, 27);
+        mapToConstant.append(C0201R.styleable.Constraint_layout_constraintStart_toEndOf, 32);
+        mapToConstant.append(C0201R.styleable.Constraint_layout_constraintStart_toStartOf, 33);
+        mapToConstant.append(C0201R.styleable.Constraint_layout_constraintEnd_toStartOf, 10);
+        mapToConstant.append(C0201R.styleable.Constraint_layout_constraintEnd_toEndOf, 9);
+        mapToConstant.append(C0201R.styleable.Constraint_layout_goneMarginLeft, 13);
+        mapToConstant.append(C0201R.styleable.Constraint_layout_goneMarginTop, 16);
+        mapToConstant.append(C0201R.styleable.Constraint_layout_goneMarginRight, 14);
+        mapToConstant.append(C0201R.styleable.Constraint_layout_goneMarginBottom, 11);
+        mapToConstant.append(C0201R.styleable.Constraint_layout_goneMarginStart, 15);
+        mapToConstant.append(C0201R.styleable.Constraint_layout_goneMarginEnd, 12);
+        mapToConstant.append(C0201R.styleable.Constraint_layout_constraintVertical_weight, 40);
+        mapToConstant.append(C0201R.styleable.Constraint_layout_constraintHorizontal_weight, 39);
+        mapToConstant.append(C0201R.styleable.Constraint_layout_constraintHorizontal_chainStyle, 41);
+        mapToConstant.append(C0201R.styleable.Constraint_layout_constraintVertical_chainStyle, 42);
+        mapToConstant.append(C0201R.styleable.Constraint_layout_constraintHorizontal_bias, 20);
+        mapToConstant.append(C0201R.styleable.Constraint_layout_constraintVertical_bias, 37);
+        mapToConstant.append(C0201R.styleable.Constraint_layout_constraintDimensionRatio, 5);
+        mapToConstant.append(C0201R.styleable.Constraint_layout_constraintLeft_creator, 82);
+        mapToConstant.append(C0201R.styleable.Constraint_layout_constraintTop_creator, 82);
+        mapToConstant.append(C0201R.styleable.Constraint_layout_constraintRight_creator, 82);
+        mapToConstant.append(C0201R.styleable.Constraint_layout_constraintBottom_creator, 82);
+        mapToConstant.append(C0201R.styleable.Constraint_layout_constraintBaseline_creator, 82);
+        mapToConstant.append(C0201R.styleable.Constraint_android_layout_marginLeft, 24);
+        mapToConstant.append(C0201R.styleable.Constraint_android_layout_marginRight, 28);
+        mapToConstant.append(C0201R.styleable.Constraint_android_layout_marginStart, 31);
+        mapToConstant.append(C0201R.styleable.Constraint_android_layout_marginEnd, 8);
+        mapToConstant.append(C0201R.styleable.Constraint_android_layout_marginTop, 34);
+        mapToConstant.append(C0201R.styleable.Constraint_android_layout_marginBottom, 2);
+        mapToConstant.append(C0201R.styleable.Constraint_android_layout_width, 23);
+        mapToConstant.append(C0201R.styleable.Constraint_android_layout_height, 21);
+        mapToConstant.append(C0201R.styleable.Constraint_android_visibility, 22);
+        mapToConstant.append(C0201R.styleable.Constraint_android_alpha, 43);
+        mapToConstant.append(C0201R.styleable.Constraint_android_elevation, 44);
+        mapToConstant.append(C0201R.styleable.Constraint_android_rotationX, 45);
+        mapToConstant.append(C0201R.styleable.Constraint_android_rotationY, 46);
+        mapToConstant.append(C0201R.styleable.Constraint_android_rotation, 60);
+        mapToConstant.append(C0201R.styleable.Constraint_android_scaleX, 47);
+        mapToConstant.append(C0201R.styleable.Constraint_android_scaleY, 48);
+        mapToConstant.append(C0201R.styleable.Constraint_android_transformPivotX, 49);
+        mapToConstant.append(C0201R.styleable.Constraint_android_transformPivotY, 50);
+        mapToConstant.append(C0201R.styleable.Constraint_android_translationX, 51);
+        mapToConstant.append(C0201R.styleable.Constraint_android_translationY, 52);
+        mapToConstant.append(C0201R.styleable.Constraint_android_translationZ, 53);
+        mapToConstant.append(C0201R.styleable.Constraint_layout_constraintWidth_default, 54);
+        mapToConstant.append(C0201R.styleable.Constraint_layout_constraintHeight_default, 55);
+        mapToConstant.append(C0201R.styleable.Constraint_layout_constraintWidth_max, 56);
+        mapToConstant.append(C0201R.styleable.Constraint_layout_constraintHeight_max, 57);
+        mapToConstant.append(C0201R.styleable.Constraint_layout_constraintWidth_min, 58);
+        mapToConstant.append(C0201R.styleable.Constraint_layout_constraintHeight_min, 59);
+        mapToConstant.append(C0201R.styleable.Constraint_layout_constraintCircle, 61);
+        mapToConstant.append(C0201R.styleable.Constraint_layout_constraintCircleRadius, 62);
+        mapToConstant.append(C0201R.styleable.Constraint_layout_constraintCircleAngle, 63);
+        mapToConstant.append(C0201R.styleable.Constraint_animate_relativeTo, 64);
+        mapToConstant.append(C0201R.styleable.Constraint_transitionEasing, 65);
+        mapToConstant.append(C0201R.styleable.Constraint_drawPath, 66);
+        mapToConstant.append(C0201R.styleable.Constraint_transitionPathRotate, 67);
+        mapToConstant.append(C0201R.styleable.Constraint_motionStagger, 79);
+        mapToConstant.append(C0201R.styleable.Constraint_android_id, 38);
+        mapToConstant.append(C0201R.styleable.Constraint_motionProgress, 68);
+        mapToConstant.append(C0201R.styleable.Constraint_layout_constraintWidth_percent, 69);
+        mapToConstant.append(C0201R.styleable.Constraint_layout_constraintHeight_percent, 70);
+        mapToConstant.append(C0201R.styleable.Constraint_chainUseRtl, 71);
+        mapToConstant.append(C0201R.styleable.Constraint_barrierDirection, 72);
+        mapToConstant.append(C0201R.styleable.Constraint_barrierMargin, 73);
+        mapToConstant.append(C0201R.styleable.Constraint_constraint_referenced_ids, 74);
+        mapToConstant.append(C0201R.styleable.Constraint_barrierAllowsGoneWidgets, 75);
+        mapToConstant.append(C0201R.styleable.Constraint_pathMotionArc, 76);
+        mapToConstant.append(C0201R.styleable.Constraint_layout_constraintTag, 77);
+        mapToConstant.append(C0201R.styleable.Constraint_visibilityMode, 78);
+        mapToConstant.append(C0201R.styleable.Constraint_layout_constrainedWidth, 80);
+        mapToConstant.append(C0201R.styleable.Constraint_layout_constrainedHeight, 81);
     }
 
     private void addAttributes(ConstraintAttribute.AttributeType attributeType, String... strArr) {
@@ -1167,9 +1167,9 @@ public class ConstraintSet {
             if (this.mSavedAttributes.containsKey(strArr[i])) {
                 ConstraintAttribute constraintAttribute = this.mSavedAttributes.get(strArr[i]);
                 if (constraintAttribute.getType() != attributeType) {
-                    StringBuilder sbU = outline.U("ConstraintAttribute is already a ");
-                    sbU.append(constraintAttribute.getType().name());
-                    throw new IllegalArgumentException(sbU.toString());
+                    StringBuilder sbM833U = C1643a.m833U("ConstraintAttribute is already a ");
+                    sbM833U.append(constraintAttribute.getType().name());
+                    throw new IllegalArgumentException(sbM833U.toString());
                 }
             } else {
                 this.mSavedAttributes.put(strArr[i], new ConstraintAttribute(strArr[i], attributeType));
@@ -1188,7 +1188,7 @@ public class ConstraintSet {
         while (i < strArrSplit.length) {
             String strTrim = strArrSplit[i].trim();
             try {
-                iIntValue = R.id.class.getField(strTrim).getInt(null);
+                iIntValue = C0201R.id.class.getField(strTrim).getInt(null);
             } catch (Exception unused) {
                 iIntValue = 0;
             }
@@ -1207,7 +1207,7 @@ public class ConstraintSet {
 
     private Constraint fillFromAttributeList(Context context, AttributeSet attributeSet) {
         Constraint constraint = new Constraint();
-        TypedArray typedArrayObtainStyledAttributes = context.obtainStyledAttributes(attributeSet, R.styleable.Constraint);
+        TypedArray typedArrayObtainStyledAttributes = context.obtainStyledAttributes(attributeSet, C0201R.styleable.Constraint);
         populateConstraint(context, constraint, typedArrayObtainStyledAttributes);
         typedArrayObtainStyledAttributes.recycle();
         return constraint;
@@ -1229,7 +1229,7 @@ public class ConstraintSet {
         int indexCount = typedArray.getIndexCount();
         for (int i = 0; i < indexCount; i++) {
             int index = typedArray.getIndex(i);
-            if (index != R.styleable.Constraint_android_id && R.styleable.Constraint_android_layout_marginStart != index && R.styleable.Constraint_android_layout_marginEnd != index) {
+            if (index != C0201R.styleable.Constraint_android_id && C0201R.styleable.Constraint_android_layout_marginStart != index && C0201R.styleable.Constraint_android_layout_marginEnd != index) {
                 constraint.motion.mApply = true;
                 constraint.layout.mApply = true;
                 constraint.propertySet.mApply = true;
@@ -1559,18 +1559,18 @@ public class ConstraintSet {
                     layout53.constrainedHeight = typedArray.getBoolean(index, layout53.constrainedHeight);
                     break;
                 case 82:
-                    StringBuilder sbU = outline.U("unused attribute 0x");
-                    sbU.append(Integer.toHexString(index));
-                    sbU.append("   ");
-                    sbU.append(mapToConstant.get(index));
-                    Log.w(TAG, sbU.toString());
+                    StringBuilder sbM833U = C1643a.m833U("unused attribute 0x");
+                    sbM833U.append(Integer.toHexString(index));
+                    sbM833U.append("   ");
+                    sbM833U.append(mapToConstant.get(index));
+                    Log.w(TAG, sbM833U.toString());
                     break;
                 default:
-                    StringBuilder sbU2 = outline.U("Unknown attribute 0x");
-                    sbU2.append(Integer.toHexString(index));
-                    sbU2.append("   ");
-                    sbU2.append(mapToConstant.get(index));
-                    Log.w(TAG, sbU2.toString());
+                    StringBuilder sbM833U2 = C1643a.m833U("Unknown attribute 0x");
+                    sbM833U2.append(Integer.toHexString(index));
+                    sbM833U2.append("   ");
+                    sbM833U2.append(mapToConstant.get(index));
+                    Log.w(TAG, sbM833U2.toString());
                     break;
             }
         }
@@ -1669,9 +1669,9 @@ public class ConstraintSet {
             View childAt = constraintLayout.getChildAt(i);
             int id2 = childAt.getId();
             if (!this.mConstraints.containsKey(Integer.valueOf(id2))) {
-                StringBuilder sbU = outline.U("id unknown ");
-                sbU.append(Debug.getName(childAt));
-                Log.v(TAG, sbU.toString());
+                StringBuilder sbM833U = C1643a.m833U("id unknown ");
+                sbM833U.append(Debug.getName(childAt));
+                Log.v(TAG, sbM833U.toString());
             } else {
                 if (this.mForceId && id2 == -1) {
                     throw new RuntimeException("All children of ConstraintLayout must have ids to use ConstraintSet");
@@ -1706,9 +1706,9 @@ public class ConstraintSet {
             View childAt = constraintLayout.getChildAt(i);
             int id2 = childAt.getId();
             if (!this.mConstraints.containsKey(Integer.valueOf(id2))) {
-                StringBuilder sbU = outline.U("id unknown ");
-                sbU.append(Debug.getName(childAt));
-                Log.w(TAG, sbU.toString());
+                StringBuilder sbM833U = C1643a.m833U("id unknown ");
+                sbM833U.append(Debug.getName(childAt));
+                Log.w(TAG, sbM833U.toString());
             } else {
                 if (this.mForceId && id2 == -1) {
                     throw new RuntimeException("All children of ConstraintLayout must have ids to use ConstraintSet");
@@ -1884,7 +1884,7 @@ public class ConstraintSet {
                     layout.leftToRight = -1;
                 } else {
                     if (i4 != 2) {
-                        throw new IllegalArgumentException(outline.J(outline.U("Left to "), sideToString(i4), " undefined"));
+                        throw new IllegalArgumentException(C1643a.m822J(C1643a.m833U("Left to "), sideToString(i4), " undefined"));
                     }
                     Layout layout2 = constraint.layout;
                     layout2.leftToRight = i3;
@@ -1899,7 +1899,7 @@ public class ConstraintSet {
                     layout3.rightToRight = -1;
                 } else {
                     if (i4 != 2) {
-                        throw new IllegalArgumentException(outline.J(outline.U("right to "), sideToString(i4), " undefined"));
+                        throw new IllegalArgumentException(C1643a.m822J(C1643a.m833U("right to "), sideToString(i4), " undefined"));
                     }
                     Layout layout4 = constraint.layout;
                     layout4.rightToRight = i3;
@@ -1915,7 +1915,7 @@ public class ConstraintSet {
                     layout5.baselineToBaseline = -1;
                 } else {
                     if (i4 != 4) {
-                        throw new IllegalArgumentException(outline.J(outline.U("right to "), sideToString(i4), " undefined"));
+                        throw new IllegalArgumentException(C1643a.m822J(C1643a.m833U("right to "), sideToString(i4), " undefined"));
                     }
                     Layout layout6 = constraint.layout;
                     layout6.topToBottom = i3;
@@ -1932,7 +1932,7 @@ public class ConstraintSet {
                     layout7.baselineToBaseline = -1;
                 } else {
                     if (i4 != 3) {
-                        throw new IllegalArgumentException(outline.J(outline.U("right to "), sideToString(i4), " undefined"));
+                        throw new IllegalArgumentException(C1643a.m822J(C1643a.m833U("right to "), sideToString(i4), " undefined"));
                     }
                     Layout layout8 = constraint.layout;
                     layout8.bottomToTop = i3;
@@ -1943,7 +1943,7 @@ public class ConstraintSet {
                 return;
             case 5:
                 if (i4 != 5) {
-                    throw new IllegalArgumentException(outline.J(outline.U("right to "), sideToString(i4), " undefined"));
+                    throw new IllegalArgumentException(C1643a.m822J(C1643a.m833U("right to "), sideToString(i4), " undefined"));
                 }
                 Layout layout9 = constraint.layout;
                 layout9.baselineToBaseline = i3;
@@ -1959,7 +1959,7 @@ public class ConstraintSet {
                     layout10.startToEnd = -1;
                 } else {
                     if (i4 != 7) {
-                        throw new IllegalArgumentException(outline.J(outline.U("right to "), sideToString(i4), " undefined"));
+                        throw new IllegalArgumentException(C1643a.m822J(C1643a.m833U("right to "), sideToString(i4), " undefined"));
                     }
                     Layout layout11 = constraint.layout;
                     layout11.startToEnd = i3;
@@ -1974,7 +1974,7 @@ public class ConstraintSet {
                     layout12.endToStart = -1;
                 } else {
                     if (i4 != 6) {
-                        throw new IllegalArgumentException(outline.J(outline.U("right to "), sideToString(i4), " undefined"));
+                        throw new IllegalArgumentException(C1643a.m822J(C1643a.m833U("right to "), sideToString(i4), " undefined"));
                     }
                     Layout layout13 = constraint.layout;
                     layout13.endToStart = i3;
@@ -1986,7 +1986,7 @@ public class ConstraintSet {
                 StringBuilder sb = new StringBuilder();
                 sb.append(sideToString(i2));
                 sb.append(" to ");
-                throw new IllegalArgumentException(outline.J(sb, sideToString(i4), " unknown"));
+                throw new IllegalArgumentException(C1643a.m822J(sb, sideToString(i4), " unknown"));
         }
     }
 
@@ -2197,7 +2197,7 @@ public class ConstraintSet {
         for (int i = 0; i < strArrSplit.length; i++) {
             String[] strArrSplit2 = strArrSplit[i].split("=");
             if (strArrSplit2.length != 2) {
-                outline.r0(outline.U(" Unable to parse "), strArrSplit[i], TAG);
+                C1643a.m874r0(C1643a.m833U(" Unable to parse "), strArrSplit[i], TAG);
             } else {
                 constraint.setColorValue(strArrSplit2[0], Color.parseColor(strArrSplit2[1]));
             }
@@ -2209,7 +2209,7 @@ public class ConstraintSet {
         for (int i = 0; i < strArrSplit.length; i++) {
             String[] strArrSplit2 = strArrSplit[i].split("=");
             if (strArrSplit2.length != 2) {
-                outline.r0(outline.U(" Unable to parse "), strArrSplit[i], TAG);
+                C1643a.m874r0(C1643a.m833U(" Unable to parse "), strArrSplit[i], TAG);
             } else {
                 constraint.setFloatValue(strArrSplit2[0], Float.parseFloat(strArrSplit2[1]));
             }
@@ -2221,7 +2221,7 @@ public class ConstraintSet {
         for (int i = 0; i < strArrSplit.length; i++) {
             String[] strArrSplit2 = strArrSplit[i].split("=");
             if (strArrSplit2.length != 2) {
-                outline.r0(outline.U(" Unable to parse "), strArrSplit[i], TAG);
+                C1643a.m874r0(C1643a.m833U(" Unable to parse "), strArrSplit[i], TAG);
             } else {
                 constraint.setFloatValue(strArrSplit2[0], Integer.decode(strArrSplit2[1]).intValue());
             }
@@ -2232,7 +2232,7 @@ public class ConstraintSet {
         String[] strArrSplitString = splitString(str);
         for (int i = 0; i < strArrSplitString.length; i++) {
             String[] strArrSplit = strArrSplitString[i].split("=");
-            outline.r0(outline.U(" Unable to parse "), strArrSplitString[i], TAG);
+            C1643a.m874r0(C1643a.m833U(" Unable to parse "), strArrSplitString[i], TAG);
             constraint.setStringValue(strArrSplit[0], strArrSplit[1]);
         }
     }
@@ -2643,7 +2643,7 @@ public class ConstraintSet {
     public void clone(ConstraintSet constraintSet) {
         this.mConstraints.clear();
         for (Integer num : constraintSet.mConstraints.keySet()) {
-            this.mConstraints.put(num, constraintSet.mConstraints.get(num).m2clone());
+            this.mConstraints.put(num, constraintSet.mConstraints.get(num).m11379clone());
         }
     }
 
@@ -2913,7 +2913,7 @@ public class ConstraintSet {
                         layout2.leftToLeft = -1;
                         return;
                     }
-                    throw new IllegalArgumentException(outline.J(outline.U("left to "), sideToString(i4), " undefined"));
+                    throw new IllegalArgumentException(C1643a.m822J(C1643a.m833U("left to "), sideToString(i4), " undefined"));
                 }
             case 2:
                 if (i4 == 1) {
@@ -2928,7 +2928,7 @@ public class ConstraintSet {
                         layout4.rightToLeft = -1;
                         return;
                     }
-                    throw new IllegalArgumentException(outline.J(outline.U("right to "), sideToString(i4), " undefined"));
+                    throw new IllegalArgumentException(C1643a.m822J(C1643a.m833U("right to "), sideToString(i4), " undefined"));
                 }
             case 3:
                 if (i4 == 3) {
@@ -2945,7 +2945,7 @@ public class ConstraintSet {
                     layout6.baselineToBaseline = -1;
                     return;
                 }
-                throw new IllegalArgumentException(outline.J(outline.U("right to "), sideToString(i4), " undefined"));
+                throw new IllegalArgumentException(C1643a.m822J(C1643a.m833U("right to "), sideToString(i4), " undefined"));
             case 4:
                 if (i4 == 4) {
                     Layout layout7 = constraint.layout;
@@ -2961,7 +2961,7 @@ public class ConstraintSet {
                     layout8.baselineToBaseline = -1;
                     return;
                 }
-                throw new IllegalArgumentException(outline.J(outline.U("right to "), sideToString(i4), " undefined"));
+                throw new IllegalArgumentException(C1643a.m822J(C1643a.m833U("right to "), sideToString(i4), " undefined"));
             case 5:
                 if (i4 == 5) {
                     Layout layout9 = constraint.layout;
@@ -2972,7 +2972,7 @@ public class ConstraintSet {
                     layout9.topToBottom = -1;
                     return;
                 }
-                throw new IllegalArgumentException(outline.J(outline.U("right to "), sideToString(i4), " undefined"));
+                throw new IllegalArgumentException(C1643a.m822J(C1643a.m833U("right to "), sideToString(i4), " undefined"));
             case 6:
                 if (i4 == 6) {
                     Layout layout10 = constraint.layout;
@@ -2986,7 +2986,7 @@ public class ConstraintSet {
                         layout11.startToStart = -1;
                         return;
                     }
-                    throw new IllegalArgumentException(outline.J(outline.U("right to "), sideToString(i4), " undefined"));
+                    throw new IllegalArgumentException(C1643a.m822J(C1643a.m833U("right to "), sideToString(i4), " undefined"));
                 }
             case 7:
                 if (i4 == 7) {
@@ -3001,13 +3001,13 @@ public class ConstraintSet {
                         layout13.endToEnd = -1;
                         return;
                     }
-                    throw new IllegalArgumentException(outline.J(outline.U("right to "), sideToString(i4), " undefined"));
+                    throw new IllegalArgumentException(C1643a.m822J(C1643a.m833U("right to "), sideToString(i4), " undefined"));
                 }
             default:
                 StringBuilder sb = new StringBuilder();
                 sb.append(sideToString(i2));
                 sb.append(" to ");
-                throw new IllegalArgumentException(outline.J(sb, sideToString(i4), " unknown"));
+                throw new IllegalArgumentException(C1643a.m822J(sb, sideToString(i4), " unknown"));
         }
     }
 }

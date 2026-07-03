@@ -1,14 +1,14 @@
 package com.discord.analytics.generated.events;
 
-import b.d.b.a.outline;
 import com.discord.analytics.generated.traits.TrackBase;
-import com.discord.analytics.generated.traits.TrackBase2;
+import com.discord.analytics.generated.traits.TrackBaseReceiver;
 import com.discord.api.science.AnalyticsSchema;
-import d0.z.d.Intrinsics3;
+import p007b.p100d.p104b.p105a.C1643a;
+import p507d0.p592z.p594d.C12238m;
 
 /* JADX INFO: compiled from: TrackSmsEnqueueRequested.kt */
 /* JADX INFO: loaded from: classes.dex */
-public final /* data */ class TrackSmsEnqueueRequested implements AnalyticsSchema, TrackBase2 {
+public final /* data */ class TrackSmsEnqueueRequested implements AnalyticsSchema, TrackBaseReceiver {
     private TrackBase trackBase;
     private final CharSequence phoneNumber = null;
     private final CharSequence phoneCountry = null;
@@ -31,7 +31,7 @@ public final /* data */ class TrackSmsEnqueueRequested implements AnalyticsSchem
             return false;
         }
         TrackSmsEnqueueRequested trackSmsEnqueueRequested = (TrackSmsEnqueueRequested) other;
-        return Intrinsics3.areEqual(this.phoneNumber, trackSmsEnqueueRequested.phoneNumber) && Intrinsics3.areEqual(this.phoneCountry, trackSmsEnqueueRequested.phoneCountry) && Intrinsics3.areEqual(this.carrierName, trackSmsEnqueueRequested.carrierName) && Intrinsics3.areEqual(this.carrierType, trackSmsEnqueueRequested.carrierType) && Intrinsics3.areEqual(this.source, trackSmsEnqueueRequested.source);
+        return C12238m.areEqual(this.phoneNumber, trackSmsEnqueueRequested.phoneNumber) && C12238m.areEqual(this.phoneCountry, trackSmsEnqueueRequested.phoneCountry) && C12238m.areEqual(this.carrierName, trackSmsEnqueueRequested.carrierName) && C12238m.areEqual(this.carrierType, trackSmsEnqueueRequested.carrierType) && C12238m.areEqual(this.source, trackSmsEnqueueRequested.source);
     }
 
     public int hashCode() {
@@ -48,15 +48,15 @@ public final /* data */ class TrackSmsEnqueueRequested implements AnalyticsSchem
     }
 
     public String toString() {
-        StringBuilder sbU = outline.U("TrackSmsEnqueueRequested(phoneNumber=");
-        sbU.append(this.phoneNumber);
-        sbU.append(", phoneCountry=");
-        sbU.append(this.phoneCountry);
-        sbU.append(", carrierName=");
-        sbU.append(this.carrierName);
-        sbU.append(", carrierType=");
-        sbU.append(this.carrierType);
-        sbU.append(", source=");
-        return outline.E(sbU, this.source, ")");
+        StringBuilder sbM833U = C1643a.m833U("TrackSmsEnqueueRequested(phoneNumber=");
+        sbM833U.append(this.phoneNumber);
+        sbM833U.append(", phoneCountry=");
+        sbM833U.append(this.phoneCountry);
+        sbM833U.append(", carrierName=");
+        sbM833U.append(this.carrierName);
+        sbM833U.append(", carrierType=");
+        sbM833U.append(this.carrierType);
+        sbM833U.append(", source=");
+        return C1643a.m817E(sbM833U, this.source, ")");
     }
 }

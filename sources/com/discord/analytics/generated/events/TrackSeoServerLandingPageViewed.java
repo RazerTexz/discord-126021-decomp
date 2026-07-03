@@ -1,14 +1,14 @@
 package com.discord.analytics.generated.events;
 
-import b.d.b.a.outline;
 import com.discord.analytics.generated.traits.TrackBase;
-import com.discord.analytics.generated.traits.TrackBase2;
+import com.discord.analytics.generated.traits.TrackBaseReceiver;
 import com.discord.api.science.AnalyticsSchema;
-import d0.z.d.Intrinsics3;
+import p007b.p100d.p104b.p105a.C1643a;
+import p507d0.p592z.p594d.C12238m;
 
 /* JADX INFO: compiled from: TrackSeoServerLandingPageViewed.kt */
 /* JADX INFO: loaded from: classes.dex */
-public final /* data */ class TrackSeoServerLandingPageViewed implements AnalyticsSchema, TrackBase2 {
+public final /* data */ class TrackSeoServerLandingPageViewed implements AnalyticsSchema, TrackBaseReceiver {
     private TrackBase trackBase;
     private final Long guildId = null;
     private final CharSequence guildName = null;
@@ -29,7 +29,7 @@ public final /* data */ class TrackSeoServerLandingPageViewed implements Analyti
             return false;
         }
         TrackSeoServerLandingPageViewed trackSeoServerLandingPageViewed = (TrackSeoServerLandingPageViewed) other;
-        return Intrinsics3.areEqual(this.guildId, trackSeoServerLandingPageViewed.guildId) && Intrinsics3.areEqual(this.guildName, trackSeoServerLandingPageViewed.guildName) && Intrinsics3.areEqual(this.slug, trackSeoServerLandingPageViewed.slug);
+        return C12238m.areEqual(this.guildId, trackSeoServerLandingPageViewed.guildId) && C12238m.areEqual(this.guildName, trackSeoServerLandingPageViewed.guildName) && C12238m.areEqual(this.slug, trackSeoServerLandingPageViewed.slug);
     }
 
     public int hashCode() {
@@ -42,11 +42,11 @@ public final /* data */ class TrackSeoServerLandingPageViewed implements Analyti
     }
 
     public String toString() {
-        StringBuilder sbU = outline.U("TrackSeoServerLandingPageViewed(guildId=");
-        sbU.append(this.guildId);
-        sbU.append(", guildName=");
-        sbU.append(this.guildName);
-        sbU.append(", slug=");
-        return outline.E(sbU, this.slug, ")");
+        StringBuilder sbM833U = C1643a.m833U("TrackSeoServerLandingPageViewed(guildId=");
+        sbM833U.append(this.guildId);
+        sbM833U.append(", guildName=");
+        sbM833U.append(this.guildName);
+        sbM833U.append(", slug=");
+        return C1643a.m817E(sbM833U, this.slug, ")");
     }
 }

@@ -1,8 +1,8 @@
 package com.discord.utilities;
 
 import androidx.exifinterface.media.ExifInterface;
-import b.d.b.a.outline;
-import d0.z.d.Intrinsics3;
+import p007b.p100d.p104b.p105a.C1643a;
+import p507d0.p592z.p594d.C12238m;
 
 /* JADX INFO: compiled from: Quad.kt */
 /* JADX INFO: loaded from: classes2.dex */
@@ -64,7 +64,7 @@ public final /* data */ class Quad<A, B, C, D> {
             return false;
         }
         Quad quad = (Quad) other;
-        return Intrinsics3.areEqual(this.first, quad.first) && Intrinsics3.areEqual(this.second, quad.second) && Intrinsics3.areEqual(this.third, quad.third) && Intrinsics3.areEqual(this.fourth, quad.fourth);
+        return C12238m.areEqual(this.first, quad.first) && C12238m.areEqual(this.second, quad.second) && C12238m.areEqual(this.third, quad.third) && C12238m.areEqual(this.fourth, quad.fourth);
     }
 
     public final A getFirst() {
@@ -95,15 +95,15 @@ public final /* data */ class Quad<A, B, C, D> {
     }
 
     public String toString() {
-        StringBuilder sbQ = outline.Q('(');
-        sbQ.append(this.first);
-        sbQ.append(", ");
-        sbQ.append(this.second);
-        sbQ.append(", ");
-        sbQ.append(this.third);
-        sbQ.append(", ");
-        sbQ.append(this.fourth);
-        sbQ.append(')');
-        return sbQ.toString();
+        StringBuilder sbM829Q = C1643a.m829Q('(');
+        sbM829Q.append(this.first);
+        sbM829Q.append(", ");
+        sbM829Q.append(this.second);
+        sbM829Q.append(", ");
+        sbM829Q.append(this.third);
+        sbM829Q.append(", ");
+        sbM829Q.append(this.fourth);
+        sbM829Q.append(')');
+        return sbM829Q.toString();
     }
 }

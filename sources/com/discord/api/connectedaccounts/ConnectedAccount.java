@@ -1,9 +1,9 @@
 package com.discord.api.connectedaccounts;
 
-import b.d.b.a.outline;
 import com.discord.models.domain.ModelAuditLogEntry;
-import d0.z.d.Intrinsics3;
 import java.util.List;
+import p007b.p100d.p104b.p105a.C1643a;
+import p507d0.p592z.p594d.C12238m;
 
 /* JADX INFO: compiled from: ConnectedAccount.kt */
 /* JADX INFO: loaded from: classes.dex */
@@ -21,7 +21,7 @@ public final /* data */ class ConnectedAccount {
     private final int visibility;
 
     public ConnectedAccount() {
-        outline.q0("", ModelAuditLogEntry.CHANGE_KEY_ID, "", ModelAuditLogEntry.CHANGE_KEY_NAME, "", "type");
+        C1643a.m872q0("", ModelAuditLogEntry.CHANGE_KEY_ID, "", ModelAuditLogEntry.CHANGE_KEY_NAME, "", "type");
         this.id = "";
         this.name = "";
         this.visibility = 0;
@@ -43,7 +43,8 @@ public final /* data */ class ConnectedAccount {
         return this.id;
     }
 
-    public final List<ConnectedAccountIntegration> c() {
+    /* JADX INFO: renamed from: c */
+    public final List<ConnectedAccountIntegration> m7751c() {
         return this.integrations;
     }
 
@@ -65,7 +66,7 @@ public final /* data */ class ConnectedAccount {
             return false;
         }
         ConnectedAccount connectedAccount = (ConnectedAccount) other;
-        return Intrinsics3.areEqual(this.id, connectedAccount.id) && Intrinsics3.areEqual(this.name, connectedAccount.name) && this.visibility == connectedAccount.visibility && this.friendSync == connectedAccount.friendSync && this.showActivity == connectedAccount.showActivity && this.revoked == connectedAccount.revoked && this.verified == connectedAccount.verified && Intrinsics3.areEqual(this.integrations, connectedAccount.integrations) && Intrinsics3.areEqual(this.type, connectedAccount.type);
+        return C12238m.areEqual(this.id, connectedAccount.id) && C12238m.areEqual(this.name, connectedAccount.name) && this.visibility == connectedAccount.visibility && this.friendSync == connectedAccount.friendSync && this.showActivity == connectedAccount.showActivity && this.revoked == connectedAccount.revoked && this.verified == connectedAccount.verified && C12238m.areEqual(this.integrations, connectedAccount.integrations) && C12238m.areEqual(this.type, connectedAccount.type);
     }
 
     /* JADX INFO: renamed from: f, reason: from getter */
@@ -134,23 +135,23 @@ public final /* data */ class ConnectedAccount {
     }
 
     public String toString() {
-        StringBuilder sbU = outline.U("ConnectedAccount(id=");
-        sbU.append(this.id);
-        sbU.append(", name=");
-        sbU.append(this.name);
-        sbU.append(", visibility=");
-        sbU.append(this.visibility);
-        sbU.append(", friendSync=");
-        sbU.append(this.friendSync);
-        sbU.append(", showActivity=");
-        sbU.append(this.showActivity);
-        sbU.append(", revoked=");
-        sbU.append(this.revoked);
-        sbU.append(", verified=");
-        sbU.append(this.verified);
-        sbU.append(", integrations=");
-        sbU.append(this.integrations);
-        sbU.append(", type=");
-        return outline.J(sbU, this.type, ")");
+        StringBuilder sbM833U = C1643a.m833U("ConnectedAccount(id=");
+        sbM833U.append(this.id);
+        sbM833U.append(", name=");
+        sbM833U.append(this.name);
+        sbM833U.append(", visibility=");
+        sbM833U.append(this.visibility);
+        sbM833U.append(", friendSync=");
+        sbM833U.append(this.friendSync);
+        sbM833U.append(", showActivity=");
+        sbM833U.append(this.showActivity);
+        sbM833U.append(", revoked=");
+        sbM833U.append(this.revoked);
+        sbM833U.append(", verified=");
+        sbM833U.append(this.verified);
+        sbM833U.append(", integrations=");
+        sbM833U.append(this.integrations);
+        sbM833U.append(", type=");
+        return C1643a.m822J(sbM833U, this.type, ")");
     }
 }

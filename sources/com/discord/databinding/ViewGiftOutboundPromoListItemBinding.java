@@ -11,37 +11,42 @@ import com.google.android.material.card.MaterialCardView;
 /* JADX INFO: loaded from: classes.dex */
 public final class ViewGiftOutboundPromoListItemBinding implements ViewBinding {
 
+    /* JADX INFO: renamed from: a */
     @NonNull
-    public final MaterialCardView a;
+    public final MaterialCardView f15434a;
 
-    /* JADX INFO: renamed from: b, reason: collision with root package name */
+    /* JADX INFO: renamed from: b */
     @NonNull
-    public final MaterialButton f2187b;
+    public final MaterialButton f15435b;
 
+    /* JADX INFO: renamed from: c */
     @NonNull
-    public final TextView c;
+    public final TextView f15436c;
 
+    /* JADX INFO: renamed from: d */
     @NonNull
-    public final SimpleDraweeView d;
+    public final SimpleDraweeView f15437d;
 
+    /* JADX INFO: renamed from: e */
     @NonNull
-    public final TextView e;
+    public final TextView f15438e;
 
+    /* JADX INFO: renamed from: f */
     @NonNull
-    public final TextView f;
+    public final TextView f15439f;
 
     public ViewGiftOutboundPromoListItemBinding(@NonNull MaterialCardView materialCardView, @NonNull MaterialButton materialButton, @NonNull TextView textView, @NonNull SimpleDraweeView simpleDraweeView, @NonNull TextView textView2, @NonNull TextView textView3) {
-        this.a = materialCardView;
-        this.f2187b = materialButton;
-        this.c = textView;
-        this.d = simpleDraweeView;
-        this.e = textView2;
-        this.f = textView3;
+        this.f15434a = materialCardView;
+        this.f15435b = materialButton;
+        this.f15436c = textView;
+        this.f15437d = simpleDraweeView;
+        this.f15438e = textView2;
+        this.f15439f = textView3;
     }
 
     @Override // androidx.viewbinding.ViewBinding
     @NonNull
     public View getRoot() {
-        return this.a;
+        return this.f15434a;
     }
 }

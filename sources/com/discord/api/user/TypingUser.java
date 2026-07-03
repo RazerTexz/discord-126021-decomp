@@ -1,8 +1,8 @@
 package com.discord.api.user;
 
-import b.d.b.a.outline;
 import com.discord.api.guildmember.GuildMember;
-import d0.z.d.Intrinsics3;
+import p007b.p100d.p104b.p105a.C1643a;
+import p507d0.p592z.p594d.C12238m;
 
 /* JADX INFO: compiled from: TypingUser.kt */
 /* JADX INFO: loaded from: classes.dex */
@@ -40,7 +40,7 @@ public final /* data */ class TypingUser {
             return false;
         }
         TypingUser typingUser = (TypingUser) other;
-        return this.userId == typingUser.userId && this.guildId == typingUser.guildId && this.channelId == typingUser.channelId && Intrinsics3.areEqual(this.member, typingUser.member);
+        return this.userId == typingUser.userId && this.guildId == typingUser.guildId && this.channelId == typingUser.channelId && C12238m.areEqual(this.member, typingUser.member);
     }
 
     public int hashCode() {
@@ -54,15 +54,15 @@ public final /* data */ class TypingUser {
     }
 
     public String toString() {
-        StringBuilder sbU = outline.U("TypingUser(userId=");
-        sbU.append(this.userId);
-        sbU.append(", guildId=");
-        sbU.append(this.guildId);
-        sbU.append(", channelId=");
-        sbU.append(this.channelId);
-        sbU.append(", member=");
-        sbU.append(this.member);
-        sbU.append(")");
-        return sbU.toString();
+        StringBuilder sbM833U = C1643a.m833U("TypingUser(userId=");
+        sbM833U.append(this.userId);
+        sbM833U.append(", guildId=");
+        sbM833U.append(this.guildId);
+        sbM833U.append(", channelId=");
+        sbM833U.append(this.channelId);
+        sbM833U.append(", member=");
+        sbM833U.append(this.member);
+        sbM833U.append(")");
+        return sbM833U.toString();
     }
 }

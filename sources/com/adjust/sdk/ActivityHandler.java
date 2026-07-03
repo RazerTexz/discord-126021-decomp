@@ -7,7 +7,6 @@ import android.net.Uri;
 import android.os.Handler;
 import android.os.Process;
 import androidx.appcompat.widget.ActivityChooserModel;
-import b.d.b.a.outline;
 import com.adjust.sdk.scheduler.SingleThreadCachedScheduler;
 import com.adjust.sdk.scheduler.ThreadExecutor;
 import com.adjust.sdk.scheduler.TimerCycle;
@@ -21,6 +20,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.Properties;
 import org.json.JSONObject;
+import p007b.p100d.p104b.p105a.C1643a;
 
 /* JADX INFO: loaded from: classes.dex */
 public class ActivityHandler implements IActivityHandler {
@@ -784,10 +784,10 @@ public class ActivityHandler implements IActivityHandler {
                 return;
             }
             ILogger iLogger = this.logger;
-            StringBuilder sbU = outline.U("Deep link (");
-            sbU.append(uri.toString());
-            sbU.append(") processing skipped");
-            iLogger.debug(sbU.toString(), new Object[0]);
+            StringBuilder sbM833U = C1643a.m833U("Deep link (");
+            sbM833U.append(uri.toString());
+            sbM833U.append(") processing skipped");
+            iLogger.debug(sbM833U.toString(), new Object[0]);
         }
     }
 
@@ -1118,7 +1118,7 @@ public class ActivityHandler implements IActivityHandler {
         } else if (pausedI(true)) {
             this.logger.info(str2, new Object[0]);
         } else {
-            this.logger.info(outline.w(str2, ", except the Sdk Click Handler"), new Object[0]);
+            this.logger.info(C1643a.m883w(str2, ", except the Sdk Click Handler"), new Object[0]);
         }
         updateHandlersStatusAndSendI();
     }

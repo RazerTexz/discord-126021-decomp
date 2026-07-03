@@ -1,14 +1,14 @@
 package com.discord.analytics.generated.events;
 
-import b.d.b.a.outline;
 import com.discord.analytics.generated.traits.TrackBase;
-import com.discord.analytics.generated.traits.TrackBase2;
+import com.discord.analytics.generated.traits.TrackBaseReceiver;
 import com.discord.api.science.AnalyticsSchema;
-import d0.z.d.Intrinsics3;
+import p007b.p100d.p104b.p105a.C1643a;
+import p507d0.p592z.p594d.C12238m;
 
 /* JADX INFO: compiled from: TrackLfgBrowserExited.kt */
 /* JADX INFO: loaded from: classes.dex */
-public final /* data */ class TrackLfgBrowserExited implements AnalyticsSchema, TrackBase2 {
+public final /* data */ class TrackLfgBrowserExited implements AnalyticsSchema, TrackBaseReceiver {
     private TrackBase trackBase;
     private final Long duration = null;
     private final Long numGroups = null;
@@ -28,7 +28,7 @@ public final /* data */ class TrackLfgBrowserExited implements AnalyticsSchema, 
             return false;
         }
         TrackLfgBrowserExited trackLfgBrowserExited = (TrackLfgBrowserExited) other;
-        return Intrinsics3.areEqual(this.duration, trackLfgBrowserExited.duration) && Intrinsics3.areEqual(this.numGroups, trackLfgBrowserExited.numGroups);
+        return C12238m.areEqual(this.duration, trackLfgBrowserExited.duration) && C12238m.areEqual(this.numGroups, trackLfgBrowserExited.numGroups);
     }
 
     public int hashCode() {
@@ -39,9 +39,9 @@ public final /* data */ class TrackLfgBrowserExited implements AnalyticsSchema, 
     }
 
     public String toString() {
-        StringBuilder sbU = outline.U("TrackLfgBrowserExited(duration=");
-        sbU.append(this.duration);
-        sbU.append(", numGroups=");
-        return outline.G(sbU, this.numGroups, ")");
+        StringBuilder sbM833U = C1643a.m833U("TrackLfgBrowserExited(duration=");
+        sbM833U.append(this.duration);
+        sbM833U.append(", numGroups=");
+        return C1643a.m819G(sbM833U, this.numGroups, ")");
     }
 }

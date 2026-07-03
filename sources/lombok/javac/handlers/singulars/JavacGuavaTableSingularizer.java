@@ -12,8 +12,8 @@ import lombok.javac.handlers.JavacSingularsRecipes;
 
 /* JADX INFO: loaded from: app.apk:lombok/javac/handlers/singulars/JavacGuavaTableSingularizer.SCL.lombok */
 public class JavacGuavaTableSingularizer extends JavacGuavaSingularizer {
-    private static final LombokImmutableList<String> SUFFIXES = LombokImmutableList.of("rowKey", "columnKey", "value");
-    private static final LombokImmutableList<String> SUPPORTED_TYPES = LombokImmutableList.of("com.google.common.collect.ImmutableTable");
+    private static final LombokImmutableList<String> SUFFIXES = LombokImmutableList.m10921of("rowKey", "columnKey", "value");
+    private static final LombokImmutableList<String> SUPPORTED_TYPES = LombokImmutableList.m10919of("com.google.common.collect.ImmutableTable");
 
     @Override // lombok.javac.handlers.singulars.JavacGuavaSingularizer, lombok.javac.handlers.JavacSingularsRecipes.JavacSingularizer
     public /* bridge */ /* synthetic */ List generateFields(JavacSingularsRecipes.SingularData singularData, JavacNode javacNode, JCTree jCTree) {

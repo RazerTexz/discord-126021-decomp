@@ -7,11 +7,11 @@ import androidx.paging.PositionalDataSource;
 import androidx.room.InvalidationTracker;
 import androidx.room.RoomDatabase;
 import androidx.room.RoomSQLiteQuery;
-import androidx.sqlite.db.SupportSQLiteQuery;
-import b.d.b.a.outline;
+import androidx.sqlite.p006db.SupportSQLiteQuery;
 import java.util.Collections;
 import java.util.List;
 import java.util.Set;
+import p007b.p100d.p104b.p105a.C1643a;
 
 /* JADX INFO: loaded from: classes.dex */
 @RestrictTo({RestrictTo.Scope.LIBRARY_GROUP_PREFIX})
@@ -113,14 +113,14 @@ public abstract class LimitOffsetDataSource<T> extends PositionalDataSource<T> {
         this.mDb = roomDatabase;
         this.mSourceQuery = roomSQLiteQuery;
         this.mInTransaction = z2;
-        StringBuilder sbU = outline.U("SELECT COUNT(*) FROM ( ");
-        sbU.append(roomSQLiteQuery.getSql());
-        sbU.append(" )");
-        this.mCountQuery = sbU.toString();
-        StringBuilder sbU2 = outline.U("SELECT * FROM ( ");
-        sbU2.append(roomSQLiteQuery.getSql());
-        sbU2.append(" ) LIMIT ? OFFSET ?");
-        this.mLimitOffsetQuery = sbU2.toString();
+        StringBuilder sbM833U = C1643a.m833U("SELECT COUNT(*) FROM ( ");
+        sbM833U.append(roomSQLiteQuery.getSql());
+        sbM833U.append(" )");
+        this.mCountQuery = sbM833U.toString();
+        StringBuilder sbM833U2 = C1643a.m833U("SELECT * FROM ( ");
+        sbM833U2.append(roomSQLiteQuery.getSql());
+        sbM833U2.append(" ) LIMIT ? OFFSET ?");
+        this.mLimitOffsetQuery = sbM833U2.toString();
         InvalidationTracker.Observer observer = new InvalidationTracker.Observer(strArr) { // from class: androidx.room.paging.LimitOffsetDataSource.1
             @Override // androidx.room.InvalidationTracker.Observer
             public void onInvalidated(@NonNull Set<String> set) {

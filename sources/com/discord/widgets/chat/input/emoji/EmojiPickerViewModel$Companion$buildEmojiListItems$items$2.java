@@ -5,18 +5,18 @@ import com.discord.models.domain.emoji.Emoji;
 import com.discord.models.domain.emoji.ModelEmojiCustom;
 import com.discord.models.guild.Guild;
 import com.discord.widgets.chat.input.emoji.WidgetEmojiAdapter;
-import d0.g0.Strings4;
-import d0.z.d.Intrinsics3;
-import d0.z.d.Lambda;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Locale;
 import java.util.Objects;
 import kotlin.jvm.functions.Function1;
+import p507d0.p579g0.C12106w;
+import p507d0.p592z.p594d.AbstractC12240o;
+import p507d0.p592z.p594d.C12238m;
 
 /* JADX INFO: compiled from: EmojiPickerViewModel.kt */
 /* JADX INFO: loaded from: classes2.dex */
-public final class EmojiPickerViewModel$Companion$buildEmojiListItems$items$2 extends Lambda implements Function1<Emoji, WidgetEmojiAdapter.EmojiItem> {
+public final class EmojiPickerViewModel$Companion$buildEmojiListItems$items$2 extends AbstractC12240o implements Function1<Emoji, WidgetEmojiAdapter.EmojiItem> {
     public final /* synthetic */ boolean $allowEmojisToAnimate;
     public final /* synthetic */ Function1 $getGuild;
     public final /* synthetic */ String $searchInputLower;
@@ -34,9 +34,9 @@ public final class EmojiPickerViewModel$Companion$buildEmojiListItems$items$2 ex
         String name;
         Object next;
         String lowerCase;
-        Intrinsics3.checkNotNullParameter(emoji, "emoji");
+        C12238m.checkNotNullParameter(emoji, "emoji");
         List<String> names = emoji.getNames();
-        Intrinsics3.checkNotNullExpressionValue(names, "emoji.names");
+        C12238m.checkNotNullExpressionValue(names, "emoji.names");
         Iterator<T> it = names.iterator();
         do {
             name = null;
@@ -46,13 +46,13 @@ public final class EmojiPickerViewModel$Companion$buildEmojiListItems$items$2 ex
             }
             next = it.next();
             String str = (String) next;
-            Intrinsics3.checkNotNullExpressionValue(str, ModelAuditLogEntry.CHANGE_KEY_NAME);
+            C12238m.checkNotNullExpressionValue(str, ModelAuditLogEntry.CHANGE_KEY_NAME);
             Locale locale = Locale.getDefault();
-            Intrinsics3.checkNotNullExpressionValue(locale, "Locale.getDefault()");
+            C12238m.checkNotNullExpressionValue(locale, "Locale.getDefault()");
             Objects.requireNonNull(str, "null cannot be cast to non-null type java.lang.String");
             lowerCase = str.toLowerCase(locale);
-            Intrinsics3.checkNotNullExpressionValue(lowerCase, "(this as java.lang.String).toLowerCase(locale)");
-        } while (!Strings4.contains$default((CharSequence) lowerCase, (CharSequence) this.$searchInputLower, false, 2, (Object) null));
+            C12238m.checkNotNullExpressionValue(lowerCase, "(this as java.lang.String).toLowerCase(locale)");
+        } while (!C12106w.contains$default((CharSequence) lowerCase, (CharSequence) this.$searchInputLower, false, 2, (Object) null));
         String str2 = (String) next;
         if (str2 == null) {
             return null;

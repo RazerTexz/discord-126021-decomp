@@ -7,7 +7,7 @@ import android.content.res.Configuration;
 import android.content.res.Resources;
 import android.view.LayoutInflater;
 import androidx.annotation.StyleRes;
-import androidx.appcompat.R;
+import androidx.appcompat.C0051R;
 
 /* JADX INFO: loaded from: classes.dex */
 public class ContextThemeWrapper extends ContextWrapper {
@@ -88,7 +88,7 @@ public class ContextThemeWrapper extends ContextWrapper {
             return theme;
         }
         if (this.mThemeResource == 0) {
-            this.mThemeResource = R.style.Theme_AppCompat_Light;
+            this.mThemeResource = C0051R.style.Theme_AppCompat_Light;
         }
         initializeTheme();
         return this.mTheme;

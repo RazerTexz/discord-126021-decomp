@@ -20,90 +20,107 @@ import com.google.android.material.appbar.AppBarLayout;
 /* JADX INFO: loaded from: classes.dex */
 public final class WidgetStickerPickerBinding implements ViewBinding {
 
+    /* JADX INFO: renamed from: a */
     @NonNull
-    public final CoordinatorLayout a;
+    public final CoordinatorLayout f18188a;
 
-    /* JADX INFO: renamed from: b, reason: collision with root package name */
+    /* JADX INFO: renamed from: b */
     @NonNull
-    public final ImageView f2661b;
+    public final ImageView f18189b;
 
+    /* JADX INFO: renamed from: c */
     @NonNull
-    public final LinkifiedTextView c;
+    public final LinkifiedTextView f18190c;
 
+    /* JADX INFO: renamed from: d */
     @NonNull
-    public final StickerView d;
+    public final StickerView f18191d;
 
+    /* JADX INFO: renamed from: e */
     @NonNull
-    public final StickerView e;
+    public final StickerView f18192e;
 
+    /* JADX INFO: renamed from: f */
     @NonNull
-    public final StickerView f;
+    public final StickerView f18193f;
 
+    /* JADX INFO: renamed from: g */
     @NonNull
-    public final StickerView g;
+    public final StickerView f18194g;
 
+    /* JADX INFO: renamed from: h */
     @NonNull
-    public final LoadingButton h;
+    public final LoadingButton f18195h;
 
+    /* JADX INFO: renamed from: i */
     @NonNull
-    public final TextView i;
+    public final TextView f18196i;
 
+    /* JADX INFO: renamed from: j */
     @NonNull
-    public final TextView j;
+    public final TextView f18197j;
 
+    /* JADX INFO: renamed from: k */
     @NonNull
-    public final RecyclerView k;
+    public final RecyclerView f18198k;
 
+    /* JADX INFO: renamed from: l */
     @NonNull
-    public final AppViewFlipper l;
+    public final AppViewFlipper f18199l;
 
+    /* JADX INFO: renamed from: m */
     @NonNull
-    public final AppBarLayout m;
+    public final AppBarLayout f18200m;
 
+    /* JADX INFO: renamed from: n */
     @NonNull
-    public final ConstraintLayout n;
+    public final ConstraintLayout f18201n;
 
+    /* JADX INFO: renamed from: o */
     @NonNull
-    public final View o;
+    public final View f18202o;
 
+    /* JADX INFO: renamed from: p */
     @NonNull
-    public final RecyclerView p;
+    public final RecyclerView f18203p;
 
+    /* JADX INFO: renamed from: q */
     @NonNull
-    public final CoordinatorLayout q;
+    public final CoordinatorLayout f18204q;
 
+    /* JADX INFO: renamed from: r */
     @NonNull
-    public final SearchInputView r;
+    public final SearchInputView f18205r;
 
-    /* JADX INFO: renamed from: s, reason: collision with root package name */
+    /* JADX INFO: renamed from: s */
     @NonNull
-    public final Toolbar f2662s;
+    public final Toolbar f18206s;
 
     public WidgetStickerPickerBinding(@NonNull CoordinatorLayout coordinatorLayout, @NonNull LinearLayout linearLayout, @NonNull LinearLayout linearLayout2, @NonNull ImageView imageView, @NonNull LinkifiedTextView linkifiedTextView, @NonNull StickerView stickerView, @NonNull StickerView stickerView2, @NonNull StickerView stickerView3, @NonNull StickerView stickerView4, @NonNull LoadingButton loadingButton, @NonNull TextView textView, @NonNull TextView textView2, @NonNull TextView textView3, @NonNull TextView textView4, @NonNull RecyclerView recyclerView, @NonNull AppViewFlipper appViewFlipper, @NonNull AppBarLayout appBarLayout, @NonNull ConstraintLayout constraintLayout, @NonNull View view, @NonNull RecyclerView recyclerView2, @NonNull CoordinatorLayout coordinatorLayout2, @NonNull SearchInputView searchInputView, @NonNull Toolbar toolbar) {
-        this.a = coordinatorLayout;
-        this.f2661b = imageView;
-        this.c = linkifiedTextView;
-        this.d = stickerView;
-        this.e = stickerView2;
-        this.f = stickerView3;
-        this.g = stickerView4;
-        this.h = loadingButton;
-        this.i = textView;
-        this.j = textView3;
-        this.k = recyclerView;
-        this.l = appViewFlipper;
-        this.m = appBarLayout;
-        this.n = constraintLayout;
-        this.o = view;
-        this.p = recyclerView2;
-        this.q = coordinatorLayout2;
-        this.r = searchInputView;
-        this.f2662s = toolbar;
+        this.f18188a = coordinatorLayout;
+        this.f18189b = imageView;
+        this.f18190c = linkifiedTextView;
+        this.f18191d = stickerView;
+        this.f18192e = stickerView2;
+        this.f18193f = stickerView3;
+        this.f18194g = stickerView4;
+        this.f18195h = loadingButton;
+        this.f18196i = textView;
+        this.f18197j = textView3;
+        this.f18198k = recyclerView;
+        this.f18199l = appViewFlipper;
+        this.f18200m = appBarLayout;
+        this.f18201n = constraintLayout;
+        this.f18202o = view;
+        this.f18203p = recyclerView2;
+        this.f18204q = coordinatorLayout2;
+        this.f18205r = searchInputView;
+        this.f18206s = toolbar;
     }
 
     @Override // androidx.viewbinding.ViewBinding
     @NonNull
     public View getRoot() {
-        return this.a;
+        return this.f18188a;
     }
 }

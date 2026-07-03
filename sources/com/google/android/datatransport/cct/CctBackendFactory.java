@@ -1,16 +1,16 @@
 package com.google.android.datatransport.cct;
 
 import androidx.annotation.Keep;
-import b.i.a.b.i.CctTransportBackend3;
-import b.i.a.b.j.q.BackendFactory;
-import b.i.a.b.j.q.CreationContext;
-import b.i.a.b.j.q.TransportBackend;
+import p007b.p225i.p226a.p228b.p229i.C2417d;
+import p007b.p225i.p226a.p228b.p231j.p232q.AbstractC2457h;
+import p007b.p225i.p226a.p228b.p231j.p232q.InterfaceC2453d;
+import p007b.p225i.p226a.p228b.p231j.p232q.InterfaceC2462m;
 
 /* JADX INFO: loaded from: classes3.dex */
 @Keep
-public class CctBackendFactory implements BackendFactory {
-    @Override // b.i.a.b.j.q.BackendFactory
-    public TransportBackend create(CreationContext creationContext) {
-        return new CctTransportBackend3(creationContext.a(), creationContext.d(), creationContext.c());
+public class CctBackendFactory implements InterfaceC2453d {
+    @Override // p007b.p225i.p226a.p228b.p231j.p232q.InterfaceC2453d
+    public InterfaceC2462m create(AbstractC2457h abstractC2457h) {
+        return new C2417d(abstractC2457h.mo2366a(), abstractC2457h.mo2369d(), abstractC2457h.mo2368c());
     }
 }

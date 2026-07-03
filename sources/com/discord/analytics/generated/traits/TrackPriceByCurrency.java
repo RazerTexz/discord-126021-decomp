@@ -1,7 +1,7 @@
 package com.discord.analytics.generated.traits;
 
-import b.d.b.a.outline;
-import d0.z.d.Intrinsics3;
+import p007b.p100d.p104b.p105a.C1643a;
+import p507d0.p592z.p594d.C12238m;
 
 /* JADX INFO: compiled from: TrackPriceByCurrency.kt */
 /* JADX INFO: loaded from: classes.dex */
@@ -37,7 +37,7 @@ public final /* data */ class TrackPriceByCurrency {
             return false;
         }
         TrackPriceByCurrency trackPriceByCurrency = (TrackPriceByCurrency) other;
-        return Intrinsics3.areEqual(this.priceUsd, trackPriceByCurrency.priceUsd) && Intrinsics3.areEqual(this.priceCad, trackPriceByCurrency.priceCad) && Intrinsics3.areEqual(this.priceAud, trackPriceByCurrency.priceAud) && Intrinsics3.areEqual(this.priceEur, trackPriceByCurrency.priceEur) && Intrinsics3.areEqual(this.priceJpy, trackPriceByCurrency.priceJpy) && Intrinsics3.areEqual(this.priceRub, trackPriceByCurrency.priceRub) && Intrinsics3.areEqual(this.priceGbp, trackPriceByCurrency.priceGbp) && Intrinsics3.areEqual(this.priceNok, trackPriceByCurrency.priceNok) && Intrinsics3.areEqual(this.priceBrl, trackPriceByCurrency.priceBrl) && Intrinsics3.areEqual(this.pricePln, trackPriceByCurrency.pricePln) && Intrinsics3.areEqual(this.priceTry, trackPriceByCurrency.priceTry) && Intrinsics3.areEqual(this.regularPriceUsd, trackPriceByCurrency.regularPriceUsd) && Intrinsics3.areEqual(this.regularPriceCad, trackPriceByCurrency.regularPriceCad) && Intrinsics3.areEqual(this.regularPriceAud, trackPriceByCurrency.regularPriceAud) && Intrinsics3.areEqual(this.regularPriceEur, trackPriceByCurrency.regularPriceEur) && Intrinsics3.areEqual(this.regularPriceJpy, trackPriceByCurrency.regularPriceJpy) && Intrinsics3.areEqual(this.regularPriceRub, trackPriceByCurrency.regularPriceRub) && Intrinsics3.areEqual(this.regularPriceGbp, trackPriceByCurrency.regularPriceGbp) && Intrinsics3.areEqual(this.regularPriceNok, trackPriceByCurrency.regularPriceNok) && Intrinsics3.areEqual(this.regularPriceBrl, trackPriceByCurrency.regularPriceBrl) && Intrinsics3.areEqual(this.regularPricePln, trackPriceByCurrency.regularPricePln) && Intrinsics3.areEqual(this.regularPriceTry, trackPriceByCurrency.regularPriceTry);
+        return C12238m.areEqual(this.priceUsd, trackPriceByCurrency.priceUsd) && C12238m.areEqual(this.priceCad, trackPriceByCurrency.priceCad) && C12238m.areEqual(this.priceAud, trackPriceByCurrency.priceAud) && C12238m.areEqual(this.priceEur, trackPriceByCurrency.priceEur) && C12238m.areEqual(this.priceJpy, trackPriceByCurrency.priceJpy) && C12238m.areEqual(this.priceRub, trackPriceByCurrency.priceRub) && C12238m.areEqual(this.priceGbp, trackPriceByCurrency.priceGbp) && C12238m.areEqual(this.priceNok, trackPriceByCurrency.priceNok) && C12238m.areEqual(this.priceBrl, trackPriceByCurrency.priceBrl) && C12238m.areEqual(this.pricePln, trackPriceByCurrency.pricePln) && C12238m.areEqual(this.priceTry, trackPriceByCurrency.priceTry) && C12238m.areEqual(this.regularPriceUsd, trackPriceByCurrency.regularPriceUsd) && C12238m.areEqual(this.regularPriceCad, trackPriceByCurrency.regularPriceCad) && C12238m.areEqual(this.regularPriceAud, trackPriceByCurrency.regularPriceAud) && C12238m.areEqual(this.regularPriceEur, trackPriceByCurrency.regularPriceEur) && C12238m.areEqual(this.regularPriceJpy, trackPriceByCurrency.regularPriceJpy) && C12238m.areEqual(this.regularPriceRub, trackPriceByCurrency.regularPriceRub) && C12238m.areEqual(this.regularPriceGbp, trackPriceByCurrency.regularPriceGbp) && C12238m.areEqual(this.regularPriceNok, trackPriceByCurrency.regularPriceNok) && C12238m.areEqual(this.regularPriceBrl, trackPriceByCurrency.regularPriceBrl) && C12238m.areEqual(this.regularPricePln, trackPriceByCurrency.regularPricePln) && C12238m.areEqual(this.regularPriceTry, trackPriceByCurrency.regularPriceTry);
     }
 
     public int hashCode() {
@@ -88,49 +88,49 @@ public final /* data */ class TrackPriceByCurrency {
     }
 
     public String toString() {
-        StringBuilder sbU = outline.U("TrackPriceByCurrency(priceUsd=");
-        sbU.append(this.priceUsd);
-        sbU.append(", priceCad=");
-        sbU.append(this.priceCad);
-        sbU.append(", priceAud=");
-        sbU.append(this.priceAud);
-        sbU.append(", priceEur=");
-        sbU.append(this.priceEur);
-        sbU.append(", priceJpy=");
-        sbU.append(this.priceJpy);
-        sbU.append(", priceRub=");
-        sbU.append(this.priceRub);
-        sbU.append(", priceGbp=");
-        sbU.append(this.priceGbp);
-        sbU.append(", priceNok=");
-        sbU.append(this.priceNok);
-        sbU.append(", priceBrl=");
-        sbU.append(this.priceBrl);
-        sbU.append(", pricePln=");
-        sbU.append(this.pricePln);
-        sbU.append(", priceTry=");
-        sbU.append(this.priceTry);
-        sbU.append(", regularPriceUsd=");
-        sbU.append(this.regularPriceUsd);
-        sbU.append(", regularPriceCad=");
-        sbU.append(this.regularPriceCad);
-        sbU.append(", regularPriceAud=");
-        sbU.append(this.regularPriceAud);
-        sbU.append(", regularPriceEur=");
-        sbU.append(this.regularPriceEur);
-        sbU.append(", regularPriceJpy=");
-        sbU.append(this.regularPriceJpy);
-        sbU.append(", regularPriceRub=");
-        sbU.append(this.regularPriceRub);
-        sbU.append(", regularPriceGbp=");
-        sbU.append(this.regularPriceGbp);
-        sbU.append(", regularPriceNok=");
-        sbU.append(this.regularPriceNok);
-        sbU.append(", regularPriceBrl=");
-        sbU.append(this.regularPriceBrl);
-        sbU.append(", regularPricePln=");
-        sbU.append(this.regularPricePln);
-        sbU.append(", regularPriceTry=");
-        return outline.G(sbU, this.regularPriceTry, ")");
+        StringBuilder sbM833U = C1643a.m833U("TrackPriceByCurrency(priceUsd=");
+        sbM833U.append(this.priceUsd);
+        sbM833U.append(", priceCad=");
+        sbM833U.append(this.priceCad);
+        sbM833U.append(", priceAud=");
+        sbM833U.append(this.priceAud);
+        sbM833U.append(", priceEur=");
+        sbM833U.append(this.priceEur);
+        sbM833U.append(", priceJpy=");
+        sbM833U.append(this.priceJpy);
+        sbM833U.append(", priceRub=");
+        sbM833U.append(this.priceRub);
+        sbM833U.append(", priceGbp=");
+        sbM833U.append(this.priceGbp);
+        sbM833U.append(", priceNok=");
+        sbM833U.append(this.priceNok);
+        sbM833U.append(", priceBrl=");
+        sbM833U.append(this.priceBrl);
+        sbM833U.append(", pricePln=");
+        sbM833U.append(this.pricePln);
+        sbM833U.append(", priceTry=");
+        sbM833U.append(this.priceTry);
+        sbM833U.append(", regularPriceUsd=");
+        sbM833U.append(this.regularPriceUsd);
+        sbM833U.append(", regularPriceCad=");
+        sbM833U.append(this.regularPriceCad);
+        sbM833U.append(", regularPriceAud=");
+        sbM833U.append(this.regularPriceAud);
+        sbM833U.append(", regularPriceEur=");
+        sbM833U.append(this.regularPriceEur);
+        sbM833U.append(", regularPriceJpy=");
+        sbM833U.append(this.regularPriceJpy);
+        sbM833U.append(", regularPriceRub=");
+        sbM833U.append(this.regularPriceRub);
+        sbM833U.append(", regularPriceGbp=");
+        sbM833U.append(this.regularPriceGbp);
+        sbM833U.append(", regularPriceNok=");
+        sbM833U.append(this.regularPriceNok);
+        sbM833U.append(", regularPriceBrl=");
+        sbM833U.append(this.regularPriceBrl);
+        sbM833U.append(", regularPricePln=");
+        sbM833U.append(this.regularPricePln);
+        sbM833U.append(", regularPriceTry=");
+        return C1643a.m819G(sbM833U, this.regularPriceTry, ")");
     }
 }

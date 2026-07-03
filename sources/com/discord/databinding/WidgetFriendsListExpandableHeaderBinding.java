@@ -5,34 +5,37 @@ import android.widget.FrameLayout;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.viewbinding.ViewBinding;
-import com.discord.R;
+import com.discord.C5419R;
 
 /* JADX INFO: loaded from: classes.dex */
 public final class WidgetFriendsListExpandableHeaderBinding implements ViewBinding {
 
+    /* JADX INFO: renamed from: a */
     @NonNull
-    public final FrameLayout a;
+    public final FrameLayout f16683a;
 
-    /* JADX INFO: renamed from: b, reason: collision with root package name */
+    /* JADX INFO: renamed from: b */
     @NonNull
-    public final TextView f2398b;
+    public final TextView f16684b;
 
+    /* JADX INFO: renamed from: c */
     @NonNull
-    public final TextView c;
+    public final TextView f16685c;
 
     public WidgetFriendsListExpandableHeaderBinding(@NonNull FrameLayout frameLayout, @NonNull TextView textView, @NonNull TextView textView2) {
-        this.a = frameLayout;
-        this.f2398b = textView;
-        this.c = textView2;
+        this.f16683a = frameLayout;
+        this.f16684b = textView;
+        this.f16685c = textView2;
     }
 
     @NonNull
-    public static WidgetFriendsListExpandableHeaderBinding a(@NonNull View view) {
-        int i = R.id.friends_list_expandable_header_button;
-        TextView textView = (TextView) view.findViewById(R.id.friends_list_expandable_header_button);
+    /* JADX INFO: renamed from: a */
+    public static WidgetFriendsListExpandableHeaderBinding m8415a(@NonNull View view) {
+        int i = C5419R.id.friends_list_expandable_header_button;
+        TextView textView = (TextView) view.findViewById(C5419R.id.friends_list_expandable_header_button);
         if (textView != null) {
-            i = R.id.friends_list_pending_item_header_text;
-            TextView textView2 = (TextView) view.findViewById(R.id.friends_list_pending_item_header_text);
+            i = C5419R.id.friends_list_pending_item_header_text;
+            TextView textView2 = (TextView) view.findViewById(C5419R.id.friends_list_pending_item_header_text);
             if (textView2 != null) {
                 return new WidgetFriendsListExpandableHeaderBinding((FrameLayout) view, textView, textView2);
             }
@@ -43,6 +46,6 @@ public final class WidgetFriendsListExpandableHeaderBinding implements ViewBindi
     @Override // androidx.viewbinding.ViewBinding
     @NonNull
     public View getRoot() {
-        return this.a;
+        return this.f16683a;
     }
 }

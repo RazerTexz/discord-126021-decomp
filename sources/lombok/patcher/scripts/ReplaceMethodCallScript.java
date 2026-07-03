@@ -77,15 +77,15 @@ public class ReplaceMethodCallScript extends MethodLevelPatchScript {
         public void visitMethodInsn(int opcode, String owner, String name, String desc, boolean itf) {
             if (ReplaceMethodCallScript.this.methodToReplace.getClassSpec().equals(owner) && ReplaceMethodCallScript.this.methodToReplace.getMethodName().equals(name) && ReplaceMethodCallScript.this.methodToReplace.getMethodDescriptor().equals(desc)) {
                 if (ReplaceMethodCallScript.this.extraRequests.contains(StackRequest.THIS)) {
-                    this.logistics.generateLoadOpcodeForThis(this.mv);
+                    this.logistics.generateLoadOpcodeForThis(this.f27600mv);
                 }
                 for (StackRequest param : StackRequest.PARAMS_IN_ORDER) {
                     if (ReplaceMethodCallScript.this.extraRequests.contains(param)) {
-                        this.logistics.generateLoadOpcodeForParam(param.getParamPos(), this.mv);
+                        this.logistics.generateLoadOpcodeForParam(param.getParamPos(), this.f27600mv);
                     }
                 }
                 if (ReplaceMethodCallScript.this.insert) {
-                    ReplaceMethodCallScript.insertMethod(ReplaceMethodCallScript.this.wrapper, this.mv);
+                    ReplaceMethodCallScript.insertMethod(ReplaceMethodCallScript.this.wrapper, this.f27600mv);
                     return;
                 } else {
                     super.visitMethodInsn(Opcodes.INVOKESTATIC, ReplaceMethodCallScript.this.transplant ? this.ownClassSpec : ReplaceMethodCallScript.this.wrapper.getClassSpec(), ReplaceMethodCallScript.this.wrapper.getMethodName(), ReplaceMethodCallScript.this.wrapper.getMethodDescriptor(), itf);

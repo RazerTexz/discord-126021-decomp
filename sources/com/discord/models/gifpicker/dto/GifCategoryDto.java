@@ -1,8 +1,8 @@
 package com.discord.models.gifpicker.dto;
 
-import b.d.b.a.outline;
 import com.discord.models.domain.ModelAuditLogEntry;
-import d0.z.d.Intrinsics3;
+import p007b.p100d.p104b.p105a.C1643a;
+import p507d0.p592z.p594d.C12238m;
 
 /* JADX INFO: compiled from: GifCategoryDto.kt */
 /* JADX INFO: loaded from: classes.dex */
@@ -11,8 +11,8 @@ public final /* data */ class GifCategoryDto {
     private final String src;
 
     public GifCategoryDto(String str, String str2) {
-        Intrinsics3.checkNotNullParameter(str, ModelAuditLogEntry.CHANGE_KEY_NAME);
-        Intrinsics3.checkNotNullParameter(str2, "src");
+        C12238m.checkNotNullParameter(str, ModelAuditLogEntry.CHANGE_KEY_NAME);
+        C12238m.checkNotNullParameter(str2, "src");
         this.name = str;
         this.src = str2;
     }
@@ -38,8 +38,8 @@ public final /* data */ class GifCategoryDto {
     }
 
     public final GifCategoryDto copy(String name, String src) {
-        Intrinsics3.checkNotNullParameter(name, ModelAuditLogEntry.CHANGE_KEY_NAME);
-        Intrinsics3.checkNotNullParameter(src, "src");
+        C12238m.checkNotNullParameter(name, ModelAuditLogEntry.CHANGE_KEY_NAME);
+        C12238m.checkNotNullParameter(src, "src");
         return new GifCategoryDto(name, src);
     }
 
@@ -51,7 +51,7 @@ public final /* data */ class GifCategoryDto {
             return false;
         }
         GifCategoryDto gifCategoryDto = (GifCategoryDto) other;
-        return Intrinsics3.areEqual(this.name, gifCategoryDto.name) && Intrinsics3.areEqual(this.src, gifCategoryDto.src);
+        return C12238m.areEqual(this.name, gifCategoryDto.name) && C12238m.areEqual(this.src, gifCategoryDto.src);
     }
 
     public final String getName() {
@@ -70,9 +70,9 @@ public final /* data */ class GifCategoryDto {
     }
 
     public String toString() {
-        StringBuilder sbU = outline.U("GifCategoryDto(name=");
-        sbU.append(this.name);
-        sbU.append(", src=");
-        return outline.J(sbU, this.src, ")");
+        StringBuilder sbM833U = C1643a.m833U("GifCategoryDto(name=");
+        sbM833U.append(this.name);
+        sbM833U.append(", src=");
+        return C1643a.m822J(sbM833U, this.src, ")");
     }
 }

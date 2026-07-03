@@ -11,25 +11,27 @@ import com.google.android.material.tabs.TabLayout;
 /* JADX INFO: loaded from: classes.dex */
 public final class WidgetThreadBrowserBinding implements ViewBinding {
 
+    /* JADX INFO: renamed from: a */
     @NonNull
-    public final ConstraintLayout a;
+    public final ConstraintLayout f18272a;
 
-    /* JADX INFO: renamed from: b, reason: collision with root package name */
+    /* JADX INFO: renamed from: b */
     @NonNull
-    public final TabLayout f2670b;
+    public final TabLayout f18273b;
 
+    /* JADX INFO: renamed from: c */
     @NonNull
-    public final SimplePager c;
+    public final SimplePager f18274c;
 
     public WidgetThreadBrowserBinding(@NonNull ConstraintLayout constraintLayout, @NonNull TabLayout tabLayout, @NonNull AppBarLayout appBarLayout, @NonNull SimplePager simplePager) {
-        this.a = constraintLayout;
-        this.f2670b = tabLayout;
-        this.c = simplePager;
+        this.f18272a = constraintLayout;
+        this.f18273b = tabLayout;
+        this.f18274c = simplePager;
     }
 
     @Override // androidx.viewbinding.ViewBinding
     @NonNull
     public View getRoot() {
-        return this.a;
+        return this.f18272a;
     }
 }

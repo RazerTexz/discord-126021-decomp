@@ -18,7 +18,7 @@ public class HandleExtensionMethod extends EclipseAnnotationHandler<ExtensionMet
     public void handle(AnnotationValues<ExtensionMethod> annotation, Annotation ast, EclipseNode annotationNode) {
         HandlerUtil.handleExperimentalFlagUsage(annotationNode, ConfigurationKeys.EXTENSION_METHOD_FLAG_USAGE, "@ExtensionMethod");
         TypeDeclaration typeDecl = null;
-        EclipseNode owner = annotationNode.up();
+        EclipseNode owner = annotationNode.m10925up();
         if (owner.get() instanceof TypeDeclaration) {
             typeDecl = (TypeDeclaration) owner.get();
         }

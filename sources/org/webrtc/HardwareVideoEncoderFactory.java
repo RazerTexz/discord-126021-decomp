@@ -4,8 +4,6 @@ import android.media.MediaCodecInfo;
 import android.media.MediaCodecList;
 import android.os.Build;
 import androidx.annotation.Nullable;
-import b.a.DiscordMediaCodec;
-import h0.c.VideoEncoderFactory2;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -13,6 +11,8 @@ import java.util.Locale;
 import org.webrtc.EglBase;
 import org.webrtc.EglBase14;
 import org.webrtc.VideoEncoderFactory;
+import p007b.p008a.C0851c;
+import p617h0.p628c.C12487s0;
 
 /* JADX INFO: loaded from: classes3.dex */
 public class HardwareVideoEncoderFactory implements VideoEncoderFactory {
@@ -30,8 +30,8 @@ public class HardwareVideoEncoderFactory implements VideoEncoderFactory {
     @Nullable
     private final EglBase14.Context sharedContext;
 
-    /* JADX INFO: renamed from: org.webrtc.HardwareVideoEncoderFactory$1, reason: invalid class name */
-    public static /* synthetic */ class AnonymousClass1 {
+    /* JADX INFO: renamed from: org.webrtc.HardwareVideoEncoderFactory$1 */
+    public static /* synthetic */ class C129701 {
         public static final /* synthetic */ int[] $SwitchMap$org$webrtc$VideoCodecMimeType;
 
         static {
@@ -75,7 +75,7 @@ public class HardwareVideoEncoderFactory implements VideoEncoderFactory {
             try {
                 codecInfoAt = MediaCodecList.getCodecInfoAt(i);
             } catch (IllegalArgumentException e) {
-                Logging.e(TAG, "Cannot retrieve encoder codec info", e);
+                Logging.m11029e(TAG, "Cannot retrieve encoder codec info", e);
             }
             if (codecInfoAt != null && codecInfoAt.isEncoder() && isSupportedCodec(codecInfoAt, videoCodecMimeType)) {
                 return codecInfoAt;
@@ -130,7 +130,7 @@ public class HardwareVideoEncoderFactory implements VideoEncoderFactory {
     }
 
     private boolean isHardwareSupportedInCurrentSdkH264(MediaCodecInfo mediaCodecInfo) {
-        for (String str : DiscordMediaCodec.f56b) {
+        for (String str : C0851c.f497b) {
             if (str.equalsIgnoreCase(Build.MODEL)) {
                 return false;
             }
@@ -139,7 +139,7 @@ public class HardwareVideoEncoderFactory implements VideoEncoderFactory {
             return mediaCodecInfo.isHardwareAccelerated();
         }
         String lowerCase = mediaCodecInfo.getName().toLowerCase(Locale.ROOT);
-        for (String str2 : DiscordMediaCodec.a) {
+        for (String str2 : C0851c.f496a) {
             if (lowerCase.startsWith(str2)) {
                 return true;
             }
@@ -196,12 +196,12 @@ public class HardwareVideoEncoderFactory implements VideoEncoderFactory {
 
     @Override // org.webrtc.VideoEncoderFactory
     public /* synthetic */ VideoEncoderFactory.VideoEncoderSelector getEncoderSelector() {
-        return VideoEncoderFactory2.a(this);
+        return C12487s0.m10677a(this);
     }
 
     @Override // org.webrtc.VideoEncoderFactory
     public /* synthetic */ VideoCodecInfo[] getImplementations() {
-        return VideoEncoderFactory2.b(this);
+        return C12487s0.m10678b(this);
     }
 
     @Override // org.webrtc.VideoEncoderFactory
@@ -226,7 +226,7 @@ public class HardwareVideoEncoderFactory implements VideoEncoderFactory {
         if (context instanceof EglBase14.Context) {
             this.sharedContext = (EglBase14.Context) context;
         } else {
-            Logging.w(TAG, "No shared EglBase.Context.  Encoders will not use texture mode.");
+            Logging.m11031w(TAG, "No shared EglBase.Context.  Encoders will not use texture mode.");
             this.sharedContext = null;
         }
         this.enableIntelVp8Encoder = z2;

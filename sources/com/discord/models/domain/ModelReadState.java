@@ -1,13 +1,13 @@
 package com.discord.models.domain;
 
-import b.d.b.a.outline;
 import com.discord.models.domain.Model;
-import d0.z.d.Intrinsics3;
 import java.io.IOException;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Ref$IntRef;
 import kotlin.jvm.internal.Ref$LongRef;
-import rx.functions.Action1;
+import p007b.p100d.p104b.p105a.C1643a;
+import p507d0.p592z.p594d.C12238m;
+import p658rx.functions.Action1;
 
 /* JADX INFO: compiled from: ModelReadState.kt */
 /* JADX INFO: loaded from: classes.dex */
@@ -27,7 +27,7 @@ public final /* data */ class ModelReadState {
         /* JADX WARN: Can't rename method to resolve collision */
         @Override // com.discord.models.domain.Model.Parser
         public ModelReadState parse(final Model.JsonReader reader) throws IOException {
-            Intrinsics3.checkNotNullParameter(reader, "reader");
+            C12238m.checkNotNullParameter(reader, "reader");
             final Ref$IntRef ref$IntRef = new Ref$IntRef();
             ref$IntRef.element = 0;
             final Ref$LongRef ref$LongRef = new Ref$LongRef();
@@ -42,7 +42,7 @@ public final /* data */ class ModelReadState {
             ref$IntRef2.element = 0;
             reader.nextObject(new Action1<String>() { // from class: com.discord.models.domain.ModelReadState$Parser$parse$1
                 /* JADX WARN: Failed to restore switch over string. Please report as a decompilation issue */
-                @Override // rx.functions.Action1
+                @Override // p658rx.functions.Action1
                 public final void call(String str) throws IOException {
                     if (str != null) {
                         switch (str.hashCode()) {
@@ -185,14 +185,14 @@ public final /* data */ class ModelReadState {
     }
 
     public String toString() {
-        StringBuilder sbU = outline.U("ModelReadState(channelId=");
-        sbU.append(this.channelId);
-        sbU.append(", lastMessageId=");
-        sbU.append(this.lastMessageId);
-        sbU.append(", mentionCount=");
-        sbU.append(this.mentionCount);
-        sbU.append(", version=");
-        return outline.B(sbU, this.version, ")");
+        StringBuilder sbM833U = C1643a.m833U("ModelReadState(channelId=");
+        sbM833U.append(this.channelId);
+        sbM833U.append(", lastMessageId=");
+        sbM833U.append(this.lastMessageId);
+        sbM833U.append(", mentionCount=");
+        sbM833U.append(this.mentionCount);
+        sbM833U.append(", version=");
+        return C1643a.m814B(sbM833U, this.version, ")");
     }
 
     public /* synthetic */ ModelReadState(long j, long j2, long j3, long j4, int i, int i2, DefaultConstructorMarker defaultConstructorMarker) {

@@ -1,9 +1,7 @@
 package com.discord.widgets.stage.sheet;
 
 import androidx.annotation.MainThread;
-import b.a.d.AppViewModel;
-import b.d.b.a.outline;
-import com.discord.R;
+import com.discord.C5419R;
 import com.discord.api.channel.Channel;
 import com.discord.api.stageinstance.StageInstance;
 import com.discord.api.stageinstance.StageInstancePrivacyLevel;
@@ -12,26 +10,28 @@ import com.discord.stores.StoreChannels;
 import com.discord.stores.StoreStageInstances;
 import com.discord.stores.StoreStream;
 import com.discord.utilities.error.Error;
+import com.discord.utilities.p501rx.ObservableExtensionsKt;
 import com.discord.utilities.rest.RestAPI;
-import com.discord.utilities.rx.ObservableExtensionsKt;
 import com.discord.widgets.stage.StageChannelAPI;
 import com.discord.widgets.stage.sheet.WidgetStageStartEventBottomSheetViewModel;
-import d0.g0.Strings4;
-import d0.z.d.Intrinsics3;
-import d0.z.d.Lambda;
 import java.util.Objects;
 import kotlin.Unit;
 import kotlin.jvm.functions.Function0;
 import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.DefaultConstructorMarker;
-import rx.Observable;
-import rx.Subscription;
-import rx.functions.Func2;
-import rx.subjects.PublishSubject;
+import p007b.p008a.p018d.AbstractC0859d0;
+import p007b.p100d.p104b.p105a.C1643a;
+import p507d0.p579g0.C12106w;
+import p507d0.p592z.p594d.AbstractC12240o;
+import p507d0.p592z.p594d.C12238m;
+import p658rx.Observable;
+import p658rx.Subscription;
+import p658rx.functions.Func2;
+import p658rx.subjects.PublishSubject;
 
 /* JADX INFO: compiled from: WidgetStageStartEventBottomSheetViewModel.kt */
 /* JADX INFO: loaded from: classes2.dex */
-public final class WidgetStageStartEventBottomSheetViewModel extends AppViewModel<ViewState> {
+public final class WidgetStageStartEventBottomSheetViewModel extends AbstractC0859d0<ViewState> {
 
     /* JADX INFO: renamed from: Companion, reason: from kotlin metadata */
     public static final Companion INSTANCE = new Companion(null);
@@ -41,22 +41,22 @@ public final class WidgetStageStartEventBottomSheetViewModel extends AppViewMode
     private final StoreStageInstances stageInstanceStore;
     private StoreState storeState;
 
-    /* JADX INFO: renamed from: com.discord.widgets.stage.sheet.WidgetStageStartEventBottomSheetViewModel$1, reason: invalid class name */
+    /* JADX INFO: renamed from: com.discord.widgets.stage.sheet.WidgetStageStartEventBottomSheetViewModel$1 */
     /* JADX INFO: compiled from: WidgetStageStartEventBottomSheetViewModel.kt */
-    public static final class AnonymousClass1 extends Lambda implements Function1<StoreState, Unit> {
-        public AnonymousClass1() {
+    public static final class C100591 extends AbstractC12240o implements Function1<StoreState, Unit> {
+        public C100591() {
             super(1);
         }
 
         @Override // kotlin.jvm.functions.Function1
         public /* bridge */ /* synthetic */ Unit invoke(StoreState storeState) {
             invoke2(storeState);
-            return Unit.a;
+            return Unit.f27425a;
         }
 
         /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
         public final void invoke2(StoreState storeState) {
-            Intrinsics3.checkNotNullParameter(storeState, "storeState");
+            C12238m.checkNotNullParameter(storeState, "storeState");
             WidgetStageStartEventBottomSheetViewModel.this.handleStoreState(storeState);
         }
     }
@@ -67,17 +67,17 @@ public final class WidgetStageStartEventBottomSheetViewModel extends AppViewMode
         }
 
         private final Observable<StoreState> observeStoreState(long channelId, StoreChannels channelsStore, StoreStageInstances stageInstanceStore) {
-            Observable<R> observableG = channelsStore.observeChannel(channelId).y(ObservableExtensionsKt.AnonymousClass1.INSTANCE).G(ObservableExtensionsKt.AnonymousClass2.INSTANCE);
-            Intrinsics3.checkNotNullExpressionValue(observableG, "filter { it != null }.map { it!! }");
-            Observable<StoreState> observableJ = Observable.j(observableG, stageInstanceStore.observeStageInstanceForChannel(channelId).z(), new Func2<Channel, StageInstance, StoreState>() { // from class: com.discord.widgets.stage.sheet.WidgetStageStartEventBottomSheetViewModel$Companion$observeStoreState$1
-                @Override // rx.functions.Func2
+            Observable<R> observableM11083G = channelsStore.observeChannel(channelId).m11118y(ObservableExtensionsKt.C68871.INSTANCE).m11083G(ObservableExtensionsKt.C68882.INSTANCE);
+            C12238m.checkNotNullExpressionValue(observableM11083G, "filter { it != null }.map { it!! }");
+            Observable<StoreState> observableM11076j = Observable.m11076j(observableM11083G, stageInstanceStore.observeStageInstanceForChannel(channelId).m11119z(), new Func2<Channel, StageInstance, StoreState>() { // from class: com.discord.widgets.stage.sheet.WidgetStageStartEventBottomSheetViewModel$Companion$observeStoreState$1
+                @Override // p658rx.functions.Func2
                 public final WidgetStageStartEventBottomSheetViewModel.StoreState call(Channel channel, StageInstance stageInstance) {
-                    Intrinsics3.checkNotNullExpressionValue(channel, "channel");
+                    C12238m.checkNotNullExpressionValue(channel, "channel");
                     return new WidgetStageStartEventBottomSheetViewModel.StoreState(channel, stageInstance);
                 }
             });
-            Intrinsics3.checkNotNullExpressionValue(observableJ, "Observable.combineLatest… stageInstance)\n        }");
-            return observableJ;
+            C12238m.checkNotNullExpressionValue(observableM11076j, "Observable.combineLatest… stageInstance)\n        }");
+            return observableM11076j;
         }
 
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
@@ -129,7 +129,7 @@ public final class WidgetStageStartEventBottomSheetViewModel extends AppViewMode
             }
 
             public String toString() {
-                return outline.B(outline.U("InvalidTopic(failureMessageStringRes="), this.failureMessageStringRes, ")");
+                return C1643a.m814B(C1643a.m833U("InvalidTopic(failureMessageStringRes="), this.failureMessageStringRes, ")");
             }
         }
 
@@ -174,7 +174,7 @@ public final class WidgetStageStartEventBottomSheetViewModel extends AppViewMode
             }
 
             public String toString() {
-                return outline.B(outline.U("SetTopicFailure(failureMessageStringRes="), this.failureMessageStringRes, ")");
+                return C1643a.m814B(C1643a.m833U("SetTopicFailure(failureMessageStringRes="), this.failureMessageStringRes, ")");
             }
         }
 
@@ -185,7 +185,7 @@ public final class WidgetStageStartEventBottomSheetViewModel extends AppViewMode
             /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
             public SetTopicSuccess(Channel channel) {
                 super(null);
-                Intrinsics3.checkNotNullParameter(channel, "channel");
+                C12238m.checkNotNullParameter(channel, "channel");
                 this.channel = channel;
             }
 
@@ -202,13 +202,13 @@ public final class WidgetStageStartEventBottomSheetViewModel extends AppViewMode
             }
 
             public final SetTopicSuccess copy(Channel channel) {
-                Intrinsics3.checkNotNullParameter(channel, "channel");
+                C12238m.checkNotNullParameter(channel, "channel");
                 return new SetTopicSuccess(channel);
             }
 
             public boolean equals(Object other) {
                 if (this != other) {
-                    return (other instanceof SetTopicSuccess) && Intrinsics3.areEqual(this.channel, ((SetTopicSuccess) other).channel);
+                    return (other instanceof SetTopicSuccess) && C12238m.areEqual(this.channel, ((SetTopicSuccess) other).channel);
                 }
                 return true;
             }
@@ -226,10 +226,10 @@ public final class WidgetStageStartEventBottomSheetViewModel extends AppViewMode
             }
 
             public String toString() {
-                StringBuilder sbU = outline.U("SetTopicSuccess(channel=");
-                sbU.append(this.channel);
-                sbU.append(")");
-                return sbU.toString();
+                StringBuilder sbM833U = C1643a.m833U("SetTopicSuccess(channel=");
+                sbM833U.append(this.channel);
+                sbM833U.append(")");
+                return sbM833U.toString();
             }
         }
 
@@ -247,7 +247,7 @@ public final class WidgetStageStartEventBottomSheetViewModel extends AppViewMode
         private final StageInstance stageInstance;
 
         public StoreState(Channel channel, StageInstance stageInstance) {
-            Intrinsics3.checkNotNullParameter(channel, "channel");
+            C12238m.checkNotNullParameter(channel, "channel");
             this.channel = channel;
             this.stageInstance = stageInstance;
         }
@@ -273,7 +273,7 @@ public final class WidgetStageStartEventBottomSheetViewModel extends AppViewMode
         }
 
         public final StoreState copy(Channel channel, StageInstance stageInstance) {
-            Intrinsics3.checkNotNullParameter(channel, "channel");
+            C12238m.checkNotNullParameter(channel, "channel");
             return new StoreState(channel, stageInstance);
         }
 
@@ -285,7 +285,7 @@ public final class WidgetStageStartEventBottomSheetViewModel extends AppViewMode
                 return false;
             }
             StoreState storeState = (StoreState) other;
-            return Intrinsics3.areEqual(this.channel, storeState.channel) && Intrinsics3.areEqual(this.stageInstance, storeState.stageInstance);
+            return C12238m.areEqual(this.channel, storeState.channel) && C12238m.areEqual(this.stageInstance, storeState.stageInstance);
         }
 
         public final Channel getChannel() {
@@ -304,12 +304,12 @@ public final class WidgetStageStartEventBottomSheetViewModel extends AppViewMode
         }
 
         public String toString() {
-            StringBuilder sbU = outline.U("StoreState(channel=");
-            sbU.append(this.channel);
-            sbU.append(", stageInstance=");
-            sbU.append(this.stageInstance);
-            sbU.append(")");
-            return sbU.toString();
+            StringBuilder sbM833U = C1643a.m833U("StoreState(channel=");
+            sbM833U.append(this.channel);
+            sbM833U.append(", stageInstance=");
+            sbM833U.append(this.stageInstance);
+            sbM833U.append(")");
+            return sbM833U.toString();
         }
     }
 
@@ -334,8 +334,8 @@ public final class WidgetStageStartEventBottomSheetViewModel extends AppViewMode
             /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
             public Loaded(Channel channel, String str, StageInstance stageInstance) {
                 super(null);
-                Intrinsics3.checkNotNullParameter(channel, "channel");
-                Intrinsics3.checkNotNullParameter(str, ModelAuditLogEntry.CHANGE_KEY_TOPIC);
+                C12238m.checkNotNullParameter(channel, "channel");
+                C12238m.checkNotNullParameter(str, ModelAuditLogEntry.CHANGE_KEY_TOPIC);
                 this.channel = channel;
                 this.topic = str;
                 this.stageInstance = stageInstance;
@@ -370,8 +370,8 @@ public final class WidgetStageStartEventBottomSheetViewModel extends AppViewMode
             }
 
             public final Loaded copy(Channel channel, String topic, StageInstance stageInstance) {
-                Intrinsics3.checkNotNullParameter(channel, "channel");
-                Intrinsics3.checkNotNullParameter(topic, ModelAuditLogEntry.CHANGE_KEY_TOPIC);
+                C12238m.checkNotNullParameter(channel, "channel");
+                C12238m.checkNotNullParameter(topic, ModelAuditLogEntry.CHANGE_KEY_TOPIC);
                 return new Loaded(channel, topic, stageInstance);
             }
 
@@ -383,7 +383,7 @@ public final class WidgetStageStartEventBottomSheetViewModel extends AppViewMode
                     return false;
                 }
                 Loaded loaded = (Loaded) other;
-                return Intrinsics3.areEqual(this.channel, loaded.channel) && Intrinsics3.areEqual(this.topic, loaded.topic) && Intrinsics3.areEqual(this.stageInstance, loaded.stageInstance);
+                return C12238m.areEqual(this.channel, loaded.channel) && C12238m.areEqual(this.topic, loaded.topic) && C12238m.areEqual(this.stageInstance, loaded.stageInstance);
             }
 
             public final Channel getChannel() {
@@ -408,14 +408,14 @@ public final class WidgetStageStartEventBottomSheetViewModel extends AppViewMode
             }
 
             public String toString() {
-                StringBuilder sbU = outline.U("Loaded(channel=");
-                sbU.append(this.channel);
-                sbU.append(", topic=");
-                sbU.append(this.topic);
-                sbU.append(", stageInstance=");
-                sbU.append(this.stageInstance);
-                sbU.append(")");
-                return sbU.toString();
+                StringBuilder sbM833U = C1643a.m833U("Loaded(channel=");
+                sbM833U.append(this.channel);
+                sbM833U.append(", topic=");
+                sbM833U.append(this.topic);
+                sbM833U.append(", stageInstance=");
+                sbM833U.append(this.stageInstance);
+                sbM833U.append(")");
+                return sbM833U.toString();
             }
         }
 
@@ -427,34 +427,34 @@ public final class WidgetStageStartEventBottomSheetViewModel extends AppViewMode
         }
     }
 
-    /* JADX INFO: renamed from: com.discord.widgets.stage.sheet.WidgetStageStartEventBottomSheetViewModel$openStage$1, reason: invalid class name */
+    /* JADX INFO: renamed from: com.discord.widgets.stage.sheet.WidgetStageStartEventBottomSheetViewModel$openStage$1 */
     /* JADX INFO: compiled from: WidgetStageStartEventBottomSheetViewModel.kt */
-    public static final class AnonymousClass1 extends Lambda implements Function1<Error, Unit> {
-        public AnonymousClass1() {
+    public static final class C100611 extends AbstractC12240o implements Function1<Error, Unit> {
+        public C100611() {
             super(1);
         }
 
         @Override // kotlin.jvm.functions.Function1
         public /* bridge */ /* synthetic */ Unit invoke(Error error) {
             invoke2(error);
-            return Unit.a;
+            return Unit.f27425a;
         }
 
         /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
         public final void invoke2(Error error) {
-            Intrinsics3.checkNotNullParameter(error, "it");
+            C12238m.checkNotNullParameter(error, "it");
             WidgetStageStartEventBottomSheetViewModel.this.emitSetStatusFailureEvent();
         }
     }
 
-    /* JADX INFO: renamed from: com.discord.widgets.stage.sheet.WidgetStageStartEventBottomSheetViewModel$openStage$2, reason: invalid class name */
+    /* JADX INFO: renamed from: com.discord.widgets.stage.sheet.WidgetStageStartEventBottomSheetViewModel$openStage$2 */
     /* JADX INFO: compiled from: WidgetStageStartEventBottomSheetViewModel.kt */
-    public static final class AnonymousClass2 extends Lambda implements Function1<StageInstance, Unit> {
+    public static final class C100622 extends AbstractC12240o implements Function1<StageInstance, Unit> {
         public final /* synthetic */ boolean $microphonePermissionGranted;
         public final /* synthetic */ ViewState.Loaded $viewState;
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-        public AnonymousClass2(boolean z2, ViewState.Loaded loaded) {
+        public C100622(boolean z2, ViewState.Loaded loaded) {
             super(1);
             this.$microphonePermissionGranted = z2;
             this.$viewState = loaded;
@@ -463,12 +463,12 @@ public final class WidgetStageStartEventBottomSheetViewModel extends AppViewMode
         @Override // kotlin.jvm.functions.Function1
         public /* bridge */ /* synthetic */ Unit invoke(StageInstance stageInstance) {
             invoke2(stageInstance);
-            return Unit.a;
+            return Unit.f27425a;
         }
 
         /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
         public final void invoke2(StageInstance stageInstance) {
-            Intrinsics3.checkNotNullParameter(stageInstance, "it");
+            C12238m.checkNotNullParameter(stageInstance, "it");
             if (this.$microphonePermissionGranted) {
                 WidgetStageStartEventBottomSheetViewModel.this.setSelfSpeaker();
             }
@@ -476,33 +476,33 @@ public final class WidgetStageStartEventBottomSheetViewModel extends AppViewMode
         }
     }
 
-    /* JADX INFO: renamed from: com.discord.widgets.stage.sheet.WidgetStageStartEventBottomSheetViewModel$openStage$3, reason: invalid class name */
+    /* JADX INFO: renamed from: com.discord.widgets.stage.sheet.WidgetStageStartEventBottomSheetViewModel$openStage$3 */
     /* JADX INFO: compiled from: WidgetStageStartEventBottomSheetViewModel.kt */
-    public static final class AnonymousClass3 extends Lambda implements Function1<Error, Unit> {
-        public AnonymousClass3() {
+    public static final class C100633 extends AbstractC12240o implements Function1<Error, Unit> {
+        public C100633() {
             super(1);
         }
 
         @Override // kotlin.jvm.functions.Function1
         public /* bridge */ /* synthetic */ Unit invoke(Error error) {
             invoke2(error);
-            return Unit.a;
+            return Unit.f27425a;
         }
 
         /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
         public final void invoke2(Error error) {
-            Intrinsics3.checkNotNullParameter(error, "it");
+            C12238m.checkNotNullParameter(error, "it");
             WidgetStageStartEventBottomSheetViewModel.this.emitSetStatusFailureEvent();
         }
     }
 
-    /* JADX INFO: renamed from: com.discord.widgets.stage.sheet.WidgetStageStartEventBottomSheetViewModel$openStage$4, reason: invalid class name */
+    /* JADX INFO: renamed from: com.discord.widgets.stage.sheet.WidgetStageStartEventBottomSheetViewModel$openStage$4 */
     /* JADX INFO: compiled from: WidgetStageStartEventBottomSheetViewModel.kt */
-    public static final class AnonymousClass4 extends Lambda implements Function1<StageInstance, Unit> {
+    public static final class C100644 extends AbstractC12240o implements Function1<StageInstance, Unit> {
         public final /* synthetic */ ViewState.Loaded $viewState;
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-        public AnonymousClass4(ViewState.Loaded loaded) {
+        public C100644(ViewState.Loaded loaded) {
             super(1);
             this.$viewState = loaded;
         }
@@ -510,29 +510,29 @@ public final class WidgetStageStartEventBottomSheetViewModel extends AppViewMode
         @Override // kotlin.jvm.functions.Function1
         public /* bridge */ /* synthetic */ Unit invoke(StageInstance stageInstance) {
             invoke2(stageInstance);
-            return Unit.a;
+            return Unit.f27425a;
         }
 
         /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
         public final void invoke2(StageInstance stageInstance) {
-            Intrinsics3.checkNotNullParameter(stageInstance, "it");
+            C12238m.checkNotNullParameter(stageInstance, "it");
             WidgetStageStartEventBottomSheetViewModel.this.emitSetStatusSuccessEvent(this.$viewState.getChannel());
         }
     }
 
-    /* JADX INFO: renamed from: com.discord.widgets.stage.sheet.WidgetStageStartEventBottomSheetViewModel$setSelfSpeaker$1, reason: invalid class name */
+    /* JADX INFO: renamed from: com.discord.widgets.stage.sheet.WidgetStageStartEventBottomSheetViewModel$setSelfSpeaker$1 */
     /* JADX INFO: compiled from: WidgetStageStartEventBottomSheetViewModel.kt */
-    public static final class AnonymousClass1 extends Lambda implements Function1<Void, Unit> {
-        public static final AnonymousClass1 INSTANCE = new AnonymousClass1();
+    public static final class C100651 extends AbstractC12240o implements Function1<Void, Unit> {
+        public static final C100651 INSTANCE = new C100651();
 
-        public AnonymousClass1() {
+        public C100651() {
             super(1);
         }
 
         @Override // kotlin.jvm.functions.Function1
         public /* bridge */ /* synthetic */ Unit invoke(Void r1) {
             invoke2(r1);
-            return Unit.a;
+            return Unit.f27425a;
         }
 
         /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
@@ -540,24 +540,24 @@ public final class WidgetStageStartEventBottomSheetViewModel extends AppViewMode
         }
     }
 
-    /* JADX INFO: renamed from: com.discord.widgets.stage.sheet.WidgetStageStartEventBottomSheetViewModel$setSelfSpeaker$2, reason: invalid class name */
+    /* JADX INFO: renamed from: com.discord.widgets.stage.sheet.WidgetStageStartEventBottomSheetViewModel$setSelfSpeaker$2 */
     /* JADX INFO: compiled from: WidgetStageStartEventBottomSheetViewModel.kt */
-    public static final class AnonymousClass2 extends Lambda implements Function1<Error, Unit> {
-        public static final AnonymousClass2 INSTANCE = new AnonymousClass2();
+    public static final class C100662 extends AbstractC12240o implements Function1<Error, Unit> {
+        public static final C100662 INSTANCE = new C100662();
 
-        public AnonymousClass2() {
+        public C100662() {
             super(1);
         }
 
         @Override // kotlin.jvm.functions.Function1
         public /* bridge */ /* synthetic */ Unit invoke(Error error) {
             invoke2(error);
-            return Unit.a;
+            return Unit.f27425a;
         }
 
         /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
         public final void invoke2(Error error) {
-            Intrinsics3.checkNotNullParameter(error, "it");
+            C12238m.checkNotNullParameter(error, "it");
         }
     }
 
@@ -570,12 +570,12 @@ public final class WidgetStageStartEventBottomSheetViewModel extends AppViewMode
 
     private final void emitSetStatusFailureEvent() {
         PublishSubject<Event> publishSubject = this.eventSubject;
-        publishSubject.k.onNext(new Event.SetTopicFailure(R.string.default_failure_to_perform_action_message));
+        publishSubject.f27650k.onNext(new Event.SetTopicFailure(C5419R.string.default_failure_to_perform_action_message));
     }
 
     private final void emitSetStatusSuccessEvent(Channel channel) {
         PublishSubject<Event> publishSubject = this.eventSubject;
-        publishSubject.k.onNext(new Event.SetTopicSuccess(channel));
+        publishSubject.f27650k.onNext(new Event.SetTopicSuccess(channel));
     }
 
     @MainThread
@@ -596,12 +596,12 @@ public final class WidgetStageStartEventBottomSheetViewModel extends AppViewMode
         if (storeState == null || (channel = storeState.getChannel()) == null) {
             return;
         }
-        ObservableExtensionsKt.appSubscribe(ObservableExtensionsKt.restSubscribeOn$default(RestAPI.INSTANCE.getApiSerializeNulls().setMeSuppressed(channel, false), false, 1, null), (Class<?>) WidgetStageStartEventBottomSheetViewModel.class, (58 & 2) != 0 ? null : null, (Function1<? super Subscription, Unit>) ((58 & 4) != 0 ? null : null), (Function1<? super Error, Unit>) ((58 & 8) != 0 ? null : AnonymousClass2.INSTANCE), (Function0<Unit>) ((58 & 16) != 0 ? ObservableExtensionsKt.AnonymousClass1.INSTANCE : null), (Function0<Unit>) ((58 & 32) != 0 ? ObservableExtensionsKt.AnonymousClass2.INSTANCE : null), AnonymousClass1.INSTANCE);
+        ObservableExtensionsKt.appSubscribe(ObservableExtensionsKt.restSubscribeOn$default(RestAPI.INSTANCE.getApiSerializeNulls().setMeSuppressed(channel, false), false, 1, null), (Class<?>) WidgetStageStartEventBottomSheetViewModel.class, (58 & 2) != 0 ? null : null, (Function1<? super Subscription, Unit>) ((58 & 4) != 0 ? null : null), (Function1<? super Error, Unit>) ((58 & 8) != 0 ? null : C100662.INSTANCE), (Function0<Unit>) ((58 & 16) != 0 ? ObservableExtensionsKt.C68791.INSTANCE : null), (Function0<Unit>) ((58 & 32) != 0 ? ObservableExtensionsKt.C68802.INSTANCE : null), C100651.INSTANCE);
     }
 
     public final Observable<Event> observeEvents() {
         PublishSubject<Event> publishSubject = this.eventSubject;
-        Intrinsics3.checkNotNullExpressionValue(publishSubject, "eventSubject");
+        C12238m.checkNotNullExpressionValue(publishSubject, "eventSubject");
         return publishSubject;
     }
 
@@ -614,20 +614,20 @@ public final class WidgetStageStartEventBottomSheetViewModel extends AppViewMode
         if (loaded != null) {
             String topic = loaded.getTopic();
             Objects.requireNonNull(topic, "null cannot be cast to non-null type kotlin.CharSequence");
-            String string = Strings4.trim(topic).toString();
+            String string = C12106w.trim(topic).toString();
             String str = string.length() > 0 ? string : null;
             if (str == null) {
-                this.eventSubject.k.onNext(new Event.InvalidTopic(R.string.start_stage_channel_event_modal_topic_required));
+                this.eventSubject.f27650k.onNext(new Event.InvalidTopic(C5419R.string.start_stage_channel_event_modal_topic_required));
             } else if (loaded.getStageInstance() == null) {
-                ObservableExtensionsKt.appSubscribe(ObservableExtensionsKt.ui$default(ObservableExtensionsKt.restSubscribeOn$default(StageChannelAPI.startStageInstance$default(StageChannelAPI.INSTANCE, this.channelId, str, StageInstancePrivacyLevel.GUILD_ONLY, false, null, 16, null), false, 1, null), this, null, 2, null), (Class<?>) WidgetStageStartEventBottomSheetViewModel.class, (58 & 2) != 0 ? null : null, (Function1<? super Subscription, Unit>) ((58 & 4) != 0 ? null : null), (Function1<? super Error, Unit>) ((58 & 8) != 0 ? null : new AnonymousClass1()), (Function0<Unit>) ((58 & 16) != 0 ? ObservableExtensionsKt.AnonymousClass1.INSTANCE : null), (Function0<Unit>) ((58 & 32) != 0 ? ObservableExtensionsKt.AnonymousClass2.INSTANCE : null), new AnonymousClass2(microphonePermissionGranted, loaded));
+                ObservableExtensionsKt.appSubscribe(ObservableExtensionsKt.ui$default(ObservableExtensionsKt.restSubscribeOn$default(StageChannelAPI.startStageInstance$default(StageChannelAPI.INSTANCE, this.channelId, str, StageInstancePrivacyLevel.GUILD_ONLY, false, null, 16, null), false, 1, null), this, null, 2, null), (Class<?>) WidgetStageStartEventBottomSheetViewModel.class, (58 & 2) != 0 ? null : null, (Function1<? super Subscription, Unit>) ((58 & 4) != 0 ? null : null), (Function1<? super Error, Unit>) ((58 & 8) != 0 ? null : new C100611()), (Function0<Unit>) ((58 & 16) != 0 ? ObservableExtensionsKt.C68791.INSTANCE : null), (Function0<Unit>) ((58 & 32) != 0 ? ObservableExtensionsKt.C68802.INSTANCE : null), new C100622(microphonePermissionGranted, loaded));
             } else {
-                ObservableExtensionsKt.appSubscribe(ObservableExtensionsKt.ui$default(ObservableExtensionsKt.restSubscribeOn$default(StageChannelAPI.updateStageInstance$default(StageChannelAPI.INSTANCE, this.channelId, str, null, 4, null), false, 1, null), this, null, 2, null), (Class<?>) WidgetStageStartEventBottomSheetViewModel.class, (58 & 2) != 0 ? null : null, (Function1<? super Subscription, Unit>) ((58 & 4) != 0 ? null : null), (Function1<? super Error, Unit>) ((58 & 8) != 0 ? null : new AnonymousClass3()), (Function0<Unit>) ((58 & 16) != 0 ? ObservableExtensionsKt.AnonymousClass1.INSTANCE : null), (Function0<Unit>) ((58 & 32) != 0 ? ObservableExtensionsKt.AnonymousClass2.INSTANCE : null), new AnonymousClass4(loaded));
+                ObservableExtensionsKt.appSubscribe(ObservableExtensionsKt.ui$default(ObservableExtensionsKt.restSubscribeOn$default(StageChannelAPI.updateStageInstance$default(StageChannelAPI.INSTANCE, this.channelId, str, null, 4, null), false, 1, null), this, null, 2, null), (Class<?>) WidgetStageStartEventBottomSheetViewModel.class, (58 & 2) != 0 ? null : null, (Function1<? super Subscription, Unit>) ((58 & 4) != 0 ? null : null), (Function1<? super Error, Unit>) ((58 & 8) != 0 ? null : new C100633()), (Function0<Unit>) ((58 & 16) != 0 ? ObservableExtensionsKt.C68791.INSTANCE : null), (Function0<Unit>) ((58 & 32) != 0 ? ObservableExtensionsKt.C68802.INSTANCE : null), new C100644(loaded));
             }
         }
     }
 
     public final void setTopic(String topic) {
-        Intrinsics3.checkNotNullParameter(topic, ModelAuditLogEntry.CHANGE_KEY_TOPIC);
+        C12238m.checkNotNullParameter(topic, ModelAuditLogEntry.CHANGE_KEY_TOPIC);
         ViewState viewState = getViewState();
         if (!(viewState instanceof ViewState.Loaded)) {
             viewState = null;
@@ -641,13 +641,13 @@ public final class WidgetStageStartEventBottomSheetViewModel extends AppViewMode
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public WidgetStageStartEventBottomSheetViewModel(long j, StoreChannels storeChannels, StoreStageInstances storeStageInstances, Observable<StoreState> observable) {
         super(null, 1, null);
-        Intrinsics3.checkNotNullParameter(storeChannels, "channelsStore");
-        Intrinsics3.checkNotNullParameter(storeStageInstances, "stageInstanceStore");
-        Intrinsics3.checkNotNullParameter(observable, "storeStateObservable");
+        C12238m.checkNotNullParameter(storeChannels, "channelsStore");
+        C12238m.checkNotNullParameter(storeStageInstances, "stageInstanceStore");
+        C12238m.checkNotNullParameter(observable, "storeStateObservable");
         this.channelId = j;
         this.channelsStore = storeChannels;
         this.stageInstanceStore = storeStageInstances;
-        ObservableExtensionsKt.appSubscribe(ObservableExtensionsKt.ui$default(observable, this, null, 2, null), (Class<?>) WidgetStageStartEventBottomSheetViewModel.class, (58 & 2) != 0 ? null : null, (Function1<? super Subscription, Unit>) ((58 & 4) != 0 ? null : null), (Function1<? super Error, Unit>) ((58 & 8) != 0 ? null : null), (Function0<Unit>) ((58 & 16) != 0 ? ObservableExtensionsKt.AnonymousClass1.INSTANCE : null), (Function0<Unit>) ((58 & 32) != 0 ? ObservableExtensionsKt.AnonymousClass2.INSTANCE : null), new AnonymousClass1());
-        this.eventSubject = PublishSubject.k0();
+        ObservableExtensionsKt.appSubscribe(ObservableExtensionsKt.ui$default(observable, this, null, 2, null), (Class<?>) WidgetStageStartEventBottomSheetViewModel.class, (58 & 2) != 0 ? null : null, (Function1<? super Subscription, Unit>) ((58 & 4) != 0 ? null : null), (Function1<? super Error, Unit>) ((58 & 8) != 0 ? null : null), (Function0<Unit>) ((58 & 16) != 0 ? ObservableExtensionsKt.C68791.INSTANCE : null), (Function0<Unit>) ((58 & 32) != 0 ? ObservableExtensionsKt.C68802.INSTANCE : null), new C100591());
+        this.eventSubject = PublishSubject.m11133k0();
     }
 }

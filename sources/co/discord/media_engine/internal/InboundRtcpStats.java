@@ -1,7 +1,7 @@
 package co.discord.media_engine.internal;
 
-import a0.a.a.b;
-import b.d.b.a.outline;
+import p001a0.p002a.p003a.C0002b;
+import p007b.p100d.p104b.p105a.C1643a;
 
 /* JADX INFO: compiled from: NativeStatistics.kt */
 /* JADX INFO: loaded from: classes.dex */
@@ -81,19 +81,19 @@ public final /* data */ class InboundRtcpStats {
     }
 
     public int hashCode() {
-        return b.a(this.uniqueNackRequests) + ((b.a(this.pliPackets) + ((b.a(this.nackRequests) + ((b.a(this.nackPackets) + (b.a(this.firPackets) * 31)) * 31)) * 31)) * 31);
+        return C0002b.m3a(this.uniqueNackRequests) + ((C0002b.m3a(this.pliPackets) + ((C0002b.m3a(this.nackRequests) + ((C0002b.m3a(this.nackPackets) + (C0002b.m3a(this.firPackets) * 31)) * 31)) * 31)) * 31);
     }
 
     public String toString() {
-        StringBuilder sbU = outline.U("InboundRtcpStats(firPackets=");
-        sbU.append(this.firPackets);
-        sbU.append(", nackPackets=");
-        sbU.append(this.nackPackets);
-        sbU.append(", nackRequests=");
-        sbU.append(this.nackRequests);
-        sbU.append(", pliPackets=");
-        sbU.append(this.pliPackets);
-        sbU.append(", uniqueNackRequests=");
-        return outline.C(sbU, this.uniqueNackRequests, ")");
+        StringBuilder sbM833U = C1643a.m833U("InboundRtcpStats(firPackets=");
+        sbM833U.append(this.firPackets);
+        sbM833U.append(", nackPackets=");
+        sbM833U.append(this.nackPackets);
+        sbM833U.append(", nackRequests=");
+        sbM833U.append(this.nackRequests);
+        sbM833U.append(", pliPackets=");
+        sbM833U.append(this.pliPackets);
+        sbM833U.append(", uniqueNackRequests=");
+        return C1643a.m815C(sbM833U, this.uniqueNackRequests, ")");
     }
 }

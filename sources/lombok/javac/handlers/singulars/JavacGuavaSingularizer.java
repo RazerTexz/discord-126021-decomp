@@ -110,7 +110,7 @@ abstract class JavacGuavaSingularizer extends JavacSingularsRecipes.JavacSingula
     @Override // lombok.javac.handlers.JavacSingularsRecipes.JavacSingularizer
     protected JCTree.JCStatement createConstructBuilderVarIfNeeded(JavacTreeMaker maker, JavacSingularsRecipes.SingularData data, JavacNode builderType, JCTree source) {
         com.sun.tools.javac.util.List<JCTree.JCExpression> jceBlank = com.sun.tools.javac.util.List.nil();
-        return maker.If(maker.Binary(Javac.CTC_EQUAL, maker.Select(maker.Ident(builderType.toName("this")), data.getPluralName()), maker.Literal(Javac.CTC_BOT, null)), maker.Exec(maker.Assign(maker.Select(maker.Ident(builderType.toName("this")), data.getPluralName()), maker.Apply(jceBlank, JavacHandlerUtil.chainDots(builderType, "com", "google", "common", "collect", getSimpleTargetTypeName(data), getBuilderMethodName(data)), jceBlank))), null);
+        return maker.m10940If(maker.Binary(Javac.CTC_EQUAL, maker.Select(maker.Ident(builderType.toName("this")), data.getPluralName()), maker.Literal(Javac.CTC_BOT, null)), maker.Exec(maker.Assign(maker.Select(maker.Ident(builderType.toName("this")), data.getPluralName()), maker.Apply(jceBlank, JavacHandlerUtil.chainDots(builderType, "com", "google", "common", "collect", getSimpleTargetTypeName(data), getBuilderMethodName(data)), jceBlank))), null);
     }
 
     @Override // lombok.javac.handlers.JavacSingularsRecipes.JavacSingularizer

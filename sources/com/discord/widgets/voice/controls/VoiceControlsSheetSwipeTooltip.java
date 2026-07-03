@@ -4,7 +4,7 @@ import com.discord.tooltips.TooltipManager;
 
 /* JADX INFO: compiled from: VoiceControlsSheetSwipeTooltip.kt */
 /* JADX INFO: loaded from: classes.dex */
-public final class VoiceControlsSheetSwipeTooltip extends TooltipManager.b {
+public final class VoiceControlsSheetSwipeTooltip extends TooltipManager.C6648b {
     public static final VoiceControlsSheetSwipeTooltip INSTANCE = new VoiceControlsSheetSwipeTooltip();
 
     private VoiceControlsSheetSwipeTooltip() {

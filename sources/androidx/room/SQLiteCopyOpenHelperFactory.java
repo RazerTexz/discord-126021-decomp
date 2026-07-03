@@ -2,7 +2,7 @@ package androidx.room;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import androidx.sqlite.db.SupportSQLiteOpenHelper;
+import androidx.sqlite.p006db.SupportSQLiteOpenHelper;
 import java.io.File;
 
 /* JADX INFO: loaded from: classes.dex */

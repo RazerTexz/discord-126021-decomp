@@ -9,9 +9,10 @@ import androidx.annotation.RestrictTo;
 /* JADX INFO: loaded from: classes3.dex */
 @RestrictTo({RestrictTo.Scope.LIBRARY_GROUP})
 public class ParcelableSparseIntArray extends SparseIntArray implements Parcelable {
-    public static final Parcelable.Creator<ParcelableSparseIntArray> CREATOR = new a();
+    public static final Parcelable.Creator<ParcelableSparseIntArray> CREATOR = new C10942a();
 
-    public static class a implements Parcelable.Creator<ParcelableSparseIntArray> {
+    /* JADX INFO: renamed from: com.google.android.material.internal.ParcelableSparseIntArray$a */
+    public static class C10942a implements Parcelable.Creator<ParcelableSparseIntArray> {
         @Override // android.os.Parcelable.Creator
         @NonNull
         public ParcelableSparseIntArray createFromParcel(@NonNull Parcel parcel) {

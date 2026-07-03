@@ -14,9 +14,9 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.annotation.StyleableRes;
 import androidx.collection.SimpleArrayMap;
-import b.d.b.a.outline;
 import java.util.ArrayList;
 import java.util.List;
+import p007b.p100d.p104b.p105a.C1643a;
 
 /* JADX INFO: loaded from: classes3.dex */
 public class MotionSpec {
@@ -66,9 +66,9 @@ public class MotionSpec {
             arrayList.add(animatorLoadAnimator);
             return createSpecFromAnimators(arrayList);
         } catch (Exception e) {
-            StringBuilder sbU = outline.U("Can't load animation resource ID #0x");
-            sbU.append(Integer.toHexString(i));
-            Log.w(TAG, sbU.toString(), e);
+            StringBuilder sbM833U = C1643a.m833U("Can't load animation resource ID #0x");
+            sbM833U.append(Integer.toHexString(i));
+            Log.w(TAG, sbM833U.toString(), e);
             return null;
         }
     }
@@ -148,13 +148,13 @@ public class MotionSpec {
 
     @NonNull
     public String toString() {
-        StringBuilder sbQ = outline.Q('\n');
-        sbQ.append(getClass().getName());
-        sbQ.append('{');
-        sbQ.append(Integer.toHexString(System.identityHashCode(this)));
-        sbQ.append(" timings: ");
-        sbQ.append(this.timings);
-        sbQ.append("}\n");
-        return sbQ.toString();
+        StringBuilder sbM829Q = C1643a.m829Q('\n');
+        sbM829Q.append(getClass().getName());
+        sbM829Q.append('{');
+        sbM829Q.append(Integer.toHexString(System.identityHashCode(this)));
+        sbM829Q.append(" timings: ");
+        sbM829Q.append(this.timings);
+        sbM829Q.append("}\n");
+        return sbM829Q.toString();
     }
 }

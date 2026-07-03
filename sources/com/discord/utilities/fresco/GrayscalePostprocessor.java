@@ -5,27 +5,27 @@ import android.graphics.Canvas;
 import android.graphics.ColorMatrix;
 import android.graphics.ColorMatrixColorFilter;
 import android.graphics.Paint;
-import b.f.b.a.SimpleCacheKey;
-import b.f.j.q.BasePostprocessor;
 import com.facebook.cache.common.CacheKey;
-import d0.z.d.Intrinsics3;
+import p007b.p109f.p111b.p112a.C1656f;
+import p007b.p109f.p161j.p182q.AbstractC2025a;
+import p507d0.p592z.p594d.C12238m;
 
 /* JADX INFO: compiled from: GrayscalePostprocessor.kt */
 /* JADX INFO: loaded from: classes2.dex */
-public final class GrayscalePostprocessor extends BasePostprocessor {
-    @Override // b.f.j.q.BasePostprocessor, b.f.j.q.Postprocessor
+public final class GrayscalePostprocessor extends AbstractC2025a {
+    @Override // p007b.p109f.p161j.p182q.AbstractC2025a, p007b.p109f.p161j.p182q.InterfaceC2026b
     public String getName() {
         String simpleName = GrayscalePostprocessor.class.getSimpleName();
-        Intrinsics3.checkNotNullExpressionValue(simpleName, "javaClass.simpleName");
+        C12238m.checkNotNullExpressionValue(simpleName, "javaClass.simpleName");
         return simpleName;
     }
 
-    @Override // b.f.j.q.BasePostprocessor, b.f.j.q.Postprocessor
+    @Override // p007b.p109f.p161j.p182q.AbstractC2025a, p007b.p109f.p161j.p182q.InterfaceC2026b
     public CacheKey getPostprocessorCacheKey() {
-        return new SimpleCacheKey(getName());
+        return new C1656f(getName());
     }
 
-    @Override // b.f.j.q.BasePostprocessor
+    @Override // p007b.p109f.p161j.p182q.AbstractC2025a
     public void process(Bitmap destBitmap, Bitmap sourceBitmap) {
         super.process(destBitmap, sourceBitmap);
         if (destBitmap == null || sourceBitmap == null) {

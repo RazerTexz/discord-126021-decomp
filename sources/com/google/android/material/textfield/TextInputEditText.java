@@ -16,11 +16,11 @@ import android.view.inputmethod.InputConnection;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.widget.AppCompatEditText;
-import b.d.b.a.outline;
-import com.google.android.material.R;
+import com.google.android.material.C10817R;
 import com.google.android.material.internal.ManufacturerUtils;
 import com.google.android.material.internal.ThemeEnforcement;
 import com.google.android.material.theme.overlay.MaterialThemeOverlay;
+import p007b.p100d.p104b.p105a.C1643a;
 
 /* JADX INFO: loaded from: classes3.dex */
 public class TextInputEditText extends AppCompatEditText {
@@ -37,14 +37,14 @@ public class TextInputEditText extends AppCompatEditText {
         CharSequence hint = textInputLayout.getHint();
         boolean z2 = !TextUtils.isEmpty(text);
         boolean z3 = !TextUtils.isEmpty(hint);
-        setLabelFor(R.id.textinput_helper_text);
+        setLabelFor(C10817R.id.textinput_helper_text);
         String string = z3 ? hint.toString() : "";
         if (!z2) {
             return !TextUtils.isEmpty(string) ? string : "";
         }
         StringBuilder sb = new StringBuilder();
         sb.append((Object) text);
-        sb.append(TextUtils.isEmpty(string) ? "" : outline.w(", ", string));
+        sb.append(TextUtils.isEmpty(string) ? "" : C1643a.m883w(", ", string));
         return sb.toString();
     }
 
@@ -134,7 +134,7 @@ public class TextInputEditText extends AppCompatEditText {
         boolean zRequestRectangleOnScreen = super.requestRectangleOnScreen(rect);
         TextInputLayout textInputLayout = getTextInputLayout();
         if (textInputLayout != null && this.textInputLayoutFocusedRectEnabled) {
-            this.parentRect.set(0, textInputLayout.getHeight() - getResources().getDimensionPixelOffset(R.dimen.mtrl_edittext_rectangle_top_offset), textInputLayout.getWidth(), textInputLayout.getHeight());
+            this.parentRect.set(0, textInputLayout.getHeight() - getResources().getDimensionPixelOffset(C10817R.dimen.mtrl_edittext_rectangle_top_offset), textInputLayout.getWidth(), textInputLayout.getHeight());
             textInputLayout.requestRectangleOnScreen(this.parentRect, true);
         }
         return zRequestRectangleOnScreen;
@@ -145,14 +145,14 @@ public class TextInputEditText extends AppCompatEditText {
     }
 
     public TextInputEditText(@NonNull Context context, @Nullable AttributeSet attributeSet) {
-        this(context, attributeSet, R.attr.editTextStyle);
+        this(context, attributeSet, C10817R.attr.editTextStyle);
     }
 
     public TextInputEditText(@NonNull Context context, @Nullable AttributeSet attributeSet, int i) {
         super(MaterialThemeOverlay.wrap(context, attributeSet, i, 0), attributeSet, i);
         this.parentRect = new Rect();
-        TypedArray typedArrayObtainStyledAttributes = ThemeEnforcement.obtainStyledAttributes(context, attributeSet, R.styleable.TextInputEditText, i, R.style.Widget_Design_TextInputEditText, new int[0]);
-        setTextInputLayoutFocusedRectEnabled(typedArrayObtainStyledAttributes.getBoolean(R.styleable.TextInputEditText_textInputLayoutFocusedRectEnabled, false));
+        TypedArray typedArrayObtainStyledAttributes = ThemeEnforcement.obtainStyledAttributes(context, attributeSet, C10817R.styleable.TextInputEditText, i, C10817R.style.Widget_Design_TextInputEditText, new int[0]);
+        setTextInputLayoutFocusedRectEnabled(typedArrayObtainStyledAttributes.getBoolean(C10817R.styleable.TextInputEditText_textInputLayoutFocusedRectEnabled, false));
         typedArrayObtainStyledAttributes.recycle();
     }
 }

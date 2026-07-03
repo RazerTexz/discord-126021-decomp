@@ -70,15 +70,15 @@ public class CheckBoxPreference extends TwoStatePreference {
     public CheckBoxPreference(Context context, AttributeSet attributeSet, int i, int i2) {
         super(context, attributeSet, i, i2);
         this.mListener = new Listener();
-        TypedArray typedArrayObtainStyledAttributes = context.obtainStyledAttributes(attributeSet, R.styleable.CheckBoxPreference, i, i2);
-        setSummaryOn(TypedArrayUtils.getString(typedArrayObtainStyledAttributes, R.styleable.CheckBoxPreference_summaryOn, R.styleable.CheckBoxPreference_android_summaryOn));
-        setSummaryOff(TypedArrayUtils.getString(typedArrayObtainStyledAttributes, R.styleable.CheckBoxPreference_summaryOff, R.styleable.CheckBoxPreference_android_summaryOff));
-        setDisableDependentsState(TypedArrayUtils.getBoolean(typedArrayObtainStyledAttributes, R.styleable.CheckBoxPreference_disableDependentsState, R.styleable.CheckBoxPreference_android_disableDependentsState, false));
+        TypedArray typedArrayObtainStyledAttributes = context.obtainStyledAttributes(attributeSet, C0525R.styleable.CheckBoxPreference, i, i2);
+        setSummaryOn(TypedArrayUtils.getString(typedArrayObtainStyledAttributes, C0525R.styleable.CheckBoxPreference_summaryOn, C0525R.styleable.CheckBoxPreference_android_summaryOn));
+        setSummaryOff(TypedArrayUtils.getString(typedArrayObtainStyledAttributes, C0525R.styleable.CheckBoxPreference_summaryOff, C0525R.styleable.CheckBoxPreference_android_summaryOff));
+        setDisableDependentsState(TypedArrayUtils.getBoolean(typedArrayObtainStyledAttributes, C0525R.styleable.CheckBoxPreference_disableDependentsState, C0525R.styleable.CheckBoxPreference_android_disableDependentsState, false));
         typedArrayObtainStyledAttributes.recycle();
     }
 
     public CheckBoxPreference(Context context, AttributeSet attributeSet) {
-        this(context, attributeSet, TypedArrayUtils.getAttr(context, R.attr.checkBoxPreferenceStyle, android.R.attr.checkBoxPreferenceStyle));
+        this(context, attributeSet, TypedArrayUtils.getAttr(context, C0525R.attr.checkBoxPreferenceStyle, android.R.attr.checkBoxPreferenceStyle));
     }
 
     public CheckBoxPreference(Context context) {

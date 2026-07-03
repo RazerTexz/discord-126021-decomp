@@ -4,23 +4,23 @@ import android.view.LayoutInflater;
 import androidx.recyclerview.widget.RecyclerView;
 import com.discord.databinding.WidgetChatInputCommandApplicationHeaderItemBinding;
 import com.discord.utilities.views.StickyHeaderItemDecoration;
-import d0.z.d.Intrinsics3;
+import p507d0.p592z.p594d.C12238m;
 
 /* JADX INFO: compiled from: StickyHeaderManager.kt */
 /* JADX INFO: loaded from: classes2.dex */
 public final class StickyHeaderManager {
     private final ChatInputAutocompleteAdapter adapter;
     private final RecyclerView recyclerView;
-    private final StickyHeaderManager2 stickyHeaderHolder;
+    private final StickyHeaderHolder stickyHeaderHolder;
 
     public StickyHeaderManager(RecyclerView recyclerView, ChatInputAutocompleteAdapter chatInputAutocompleteAdapter) {
-        Intrinsics3.checkNotNullParameter(recyclerView, "recyclerView");
-        Intrinsics3.checkNotNullParameter(chatInputAutocompleteAdapter, "adapter");
+        C12238m.checkNotNullParameter(recyclerView, "recyclerView");
+        C12238m.checkNotNullParameter(chatInputAutocompleteAdapter, "adapter");
         this.recyclerView = recyclerView;
         this.adapter = chatInputAutocompleteAdapter;
-        WidgetChatInputCommandApplicationHeaderItemBinding widgetChatInputCommandApplicationHeaderItemBindingA = WidgetChatInputCommandApplicationHeaderItemBinding.a(LayoutInflater.from(recyclerView.getContext()), recyclerView, false);
-        Intrinsics3.checkNotNullExpressionValue(widgetChatInputCommandApplicationHeaderItemBindingA, "WidgetChatInputCommandAp…clerView, false\n        )");
-        this.stickyHeaderHolder = new CommandHeaderViewHolder(widgetChatInputCommandApplicationHeaderItemBindingA);
+        WidgetChatInputCommandApplicationHeaderItemBinding widgetChatInputCommandApplicationHeaderItemBindingM8407a = WidgetChatInputCommandApplicationHeaderItemBinding.m8407a(LayoutInflater.from(recyclerView.getContext()), recyclerView, false);
+        C12238m.checkNotNullExpressionValue(widgetChatInputCommandApplicationHeaderItemBindingM8407a, "WidgetChatInputCommandAp…clerView, false\n        )");
+        this.stickyHeaderHolder = new CommandHeaderViewHolder(widgetChatInputCommandApplicationHeaderItemBindingM8407a);
     }
 
     public final ChatInputAutocompleteAdapter getAdapter() {
@@ -31,12 +31,12 @@ public final class StickyHeaderManager {
         return this.recyclerView;
     }
 
-    public final StickyHeaderManager2 getStickyHeaderHolder() {
+    public final StickyHeaderHolder getStickyHeaderHolder() {
         return this.stickyHeaderHolder;
     }
 
     public final void layoutViews(RecyclerView recyclerView) {
-        Intrinsics3.checkNotNullParameter(recyclerView, "recyclerView");
+        C12238m.checkNotNullParameter(recyclerView, "recyclerView");
         StickyHeaderItemDecoration.LayoutManager.layoutHeaderView(recyclerView, this.stickyHeaderHolder.getItemView());
     }
 }

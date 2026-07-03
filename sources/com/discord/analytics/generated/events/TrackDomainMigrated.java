@@ -1,14 +1,14 @@
 package com.discord.analytics.generated.events;
 
-import b.d.b.a.outline;
 import com.discord.analytics.generated.traits.TrackBase;
-import com.discord.analytics.generated.traits.TrackBase2;
+import com.discord.analytics.generated.traits.TrackBaseReceiver;
 import com.discord.api.science.AnalyticsSchema;
-import d0.z.d.Intrinsics3;
+import p007b.p100d.p104b.p105a.C1643a;
+import p507d0.p592z.p594d.C12238m;
 
 /* JADX INFO: compiled from: TrackDomainMigrated.kt */
 /* JADX INFO: loaded from: classes.dex */
-public final /* data */ class TrackDomainMigrated implements AnalyticsSchema, TrackBase2 {
+public final /* data */ class TrackDomainMigrated implements AnalyticsSchema, TrackBaseReceiver {
     private TrackBase trackBase;
     private final Boolean success = null;
     private final Boolean hasData = null;
@@ -29,7 +29,7 @@ public final /* data */ class TrackDomainMigrated implements AnalyticsSchema, Tr
             return false;
         }
         TrackDomainMigrated trackDomainMigrated = (TrackDomainMigrated) other;
-        return Intrinsics3.areEqual(this.success, trackDomainMigrated.success) && Intrinsics3.areEqual(this.hasData, trackDomainMigrated.hasData) && Intrinsics3.areEqual(this.currentIsNewer, trackDomainMigrated.currentIsNewer);
+        return C12238m.areEqual(this.success, trackDomainMigrated.success) && C12238m.areEqual(this.hasData, trackDomainMigrated.hasData) && C12238m.areEqual(this.currentIsNewer, trackDomainMigrated.currentIsNewer);
     }
 
     public int hashCode() {
@@ -42,11 +42,11 @@ public final /* data */ class TrackDomainMigrated implements AnalyticsSchema, Tr
     }
 
     public String toString() {
-        StringBuilder sbU = outline.U("TrackDomainMigrated(success=");
-        sbU.append(this.success);
-        sbU.append(", hasData=");
-        sbU.append(this.hasData);
-        sbU.append(", currentIsNewer=");
-        return outline.D(sbU, this.currentIsNewer, ")");
+        StringBuilder sbM833U = C1643a.m833U("TrackDomainMigrated(success=");
+        sbM833U.append(this.success);
+        sbM833U.append(", hasData=");
+        sbM833U.append(this.hasData);
+        sbM833U.append(", currentIsNewer=");
+        return C1643a.m816D(sbM833U, this.currentIsNewer, ")");
     }
 }

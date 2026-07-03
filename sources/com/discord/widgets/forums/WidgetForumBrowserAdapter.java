@@ -6,8 +6,7 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.recyclerview.widget.RecyclerView;
-import b.d.b.a.outline;
-import com.discord.R;
+import com.discord.C5419R;
 import com.discord.api.channel.Channel;
 import com.discord.databinding.ForumBrowserHeaderItemBinding;
 import com.discord.databinding.ForumBrowserPostItemBinding;
@@ -18,10 +17,11 @@ import com.discord.utilities.mg_recycler.MGRecyclerViewHolder;
 import com.discord.utilities.view.extensions.ViewExtensions;
 import com.discord.widgets.forums.ForumBrowserItem;
 import com.discord.widgets.forums.WidgetForumBrowserAdapter;
-import d0.z.d.Intrinsics3;
 import java.util.Objects;
 import kotlin.Unit;
 import kotlin.jvm.functions.Function1;
+import p007b.p100d.p104b.p105a.C1643a;
+import p507d0.p592z.p594d.C12238m;
 
 /* JADX INFO: compiled from: WidgetForumBrowserAdapter.kt */
 /* JADX INFO: loaded from: classes2.dex */
@@ -36,23 +36,23 @@ public final class WidgetForumBrowserAdapter extends MGRecyclerAdapterSimple<For
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
         public HeaderItem(WidgetForumBrowserAdapter widgetForumBrowserAdapter) {
-            super(R.layout.forum_browser_header_item, widgetForumBrowserAdapter);
-            Intrinsics3.checkNotNullParameter(widgetForumBrowserAdapter, "adapter");
+            super(C5419R.layout.forum_browser_header_item, widgetForumBrowserAdapter);
+            C12238m.checkNotNullParameter(widgetForumBrowserAdapter, "adapter");
             View view = this.itemView;
-            TextView textView = (TextView) view.findViewById(R.id.header_name);
+            TextView textView = (TextView) view.findViewById(C5419R.id.header_name);
             if (textView == null) {
-                throw new NullPointerException("Missing required view with ID: ".concat(view.getResources().getResourceName(R.id.header_name)));
+                throw new NullPointerException("Missing required view with ID: ".concat(view.getResources().getResourceName(C5419R.id.header_name)));
             }
             ForumBrowserHeaderItemBinding forumBrowserHeaderItemBinding = new ForumBrowserHeaderItemBinding((ConstraintLayout) view, textView);
-            Intrinsics3.checkNotNullExpressionValue(forumBrowserHeaderItemBinding, "ForumBrowserHeaderItemBinding.bind(itemView)");
+            C12238m.checkNotNullExpressionValue(forumBrowserHeaderItemBinding, "ForumBrowserHeaderItemBinding.bind(itemView)");
             this.binding = forumBrowserHeaderItemBinding;
         }
 
         @Override // com.discord.utilities.mg_recycler.MGRecyclerViewHolder
         public void onConfigure(int position, ForumBrowserItem data) {
-            Intrinsics3.checkNotNullParameter(data, "data");
+            C12238m.checkNotNullParameter(data, "data");
             super.onConfigure(position, data);
-            this.binding.f2107b.setText(((ForumBrowserItem.HeaderItem) data).getStringResId());
+            this.binding.f15077b.setText(((ForumBrowserItem.HeaderItem) data).getStringResId());
         }
     }
 
@@ -60,8 +60,8 @@ public final class WidgetForumBrowserAdapter extends MGRecyclerAdapterSimple<For
     public static final class LoadingItem extends MGRecyclerViewHolder<WidgetForumBrowserAdapter, ForumBrowserItem> {
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
         public LoadingItem(WidgetForumBrowserAdapter widgetForumBrowserAdapter) {
-            super(R.layout.forum_browser_loading_item, widgetForumBrowserAdapter);
-            Intrinsics3.checkNotNullParameter(widgetForumBrowserAdapter, "adapter");
+            super(C5419R.layout.forum_browser_loading_item, widgetForumBrowserAdapter);
+            C12238m.checkNotNullParameter(widgetForumBrowserAdapter, "adapter");
         }
     }
 
@@ -71,13 +71,13 @@ public final class WidgetForumBrowserAdapter extends MGRecyclerAdapterSimple<For
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
         public PostItem(WidgetForumBrowserAdapter widgetForumBrowserAdapter) {
-            super(R.layout.forum_browser_post_item, widgetForumBrowserAdapter);
-            Intrinsics3.checkNotNullParameter(widgetForumBrowserAdapter, "adapter");
+            super(C5419R.layout.forum_browser_post_item, widgetForumBrowserAdapter);
+            C12238m.checkNotNullParameter(widgetForumBrowserAdapter, "adapter");
             View view = this.itemView;
             Objects.requireNonNull(view, "rootView");
             ForumBrowserPostView forumBrowserPostView = (ForumBrowserPostView) view;
             ForumBrowserPostItemBinding forumBrowserPostItemBinding = new ForumBrowserPostItemBinding(forumBrowserPostView, forumBrowserPostView);
-            Intrinsics3.checkNotNullExpressionValue(forumBrowserPostItemBinding, "ForumBrowserPostItemBinding.bind(itemView)");
+            C12238m.checkNotNullExpressionValue(forumBrowserPostItemBinding, "ForumBrowserPostItemBinding.bind(itemView)");
             this.binding = forumBrowserPostItemBinding;
         }
 
@@ -87,19 +87,19 @@ public final class WidgetForumBrowserAdapter extends MGRecyclerAdapterSimple<For
 
         @Override // com.discord.utilities.mg_recycler.MGRecyclerViewHolder
         public void onConfigure(int position, ForumBrowserItem data) {
-            Intrinsics3.checkNotNullParameter(data, "data");
+            C12238m.checkNotNullParameter(data, "data");
             super.onConfigure(position, data);
             final ForumBrowserItem.PostItem postItem = (ForumBrowserItem.PostItem) data;
-            this.binding.f2108b.configurePost(postItem.getPost());
-            this.binding.f2108b.setOnClickListener(new View.OnClickListener() { // from class: com.discord.widgets.forums.WidgetForumBrowserAdapter$PostItem$onConfigure$1
+            this.binding.f15079b.configurePost(postItem.getPost());
+            this.binding.f15079b.setOnClickListener(new View.OnClickListener() { // from class: com.discord.widgets.forums.WidgetForumBrowserAdapter$PostItem$onConfigure$1
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
                     WidgetForumBrowserAdapter.PostItem.access$getAdapter$p(this.this$0).onPostClick.invoke(postItem.getPost().getChannel());
                 }
             });
-            ForumBrowserPostView forumBrowserPostView = this.binding.f2108b;
-            Intrinsics3.checkNotNullExpressionValue(forumBrowserPostView, "binding.forumBrowserPostView");
-            ViewExtensions.setOnLongClickListenerConsumeClick(forumBrowserPostView, new WidgetForumBrowserAdapter3(this, postItem));
+            ForumBrowserPostView forumBrowserPostView = this.binding.f15079b;
+            C12238m.checkNotNullExpressionValue(forumBrowserPostView, "binding.forumBrowserPostView");
+            ViewExtensions.setOnLongClickListenerConsumeClick(forumBrowserPostView, new WidgetForumBrowserAdapter$PostItem$onConfigure$2(this, postItem));
         }
     }
 
@@ -107,18 +107,18 @@ public final class WidgetForumBrowserAdapter extends MGRecyclerAdapterSimple<For
     /* JADX WARN: Multi-variable type inference failed */
     public WidgetForumBrowserAdapter(RecyclerView recyclerView, Function1<? super Channel, Unit> function1, Function1<? super Channel, Unit> function2) {
         super(recyclerView, false, 2, null);
-        Intrinsics3.checkNotNullParameter(recyclerView, "recycler");
-        Intrinsics3.checkNotNullParameter(function1, "onPostClick");
-        Intrinsics3.checkNotNullParameter(function2, "onPostLongClick");
+        C12238m.checkNotNullParameter(recyclerView, "recycler");
+        C12238m.checkNotNullParameter(function1, "onPostClick");
+        C12238m.checkNotNullParameter(function2, "onPostLongClick");
         this.onPostClick = function1;
         this.onPostLongClick = function2;
         this.itemDecoration = new RecyclerView.ItemDecoration() { // from class: com.discord.widgets.forums.WidgetForumBrowserAdapter$itemDecoration$1
             @Override // androidx.recyclerview.widget.RecyclerView.ItemDecoration
             public void getItemOffsets(Rect outRect, View view, RecyclerView parent, RecyclerView.State state) {
-                Intrinsics3.checkNotNullParameter(outRect, "outRect");
-                Intrinsics3.checkNotNullParameter(view, "view");
-                Intrinsics3.checkNotNullParameter(parent, "parent");
-                Intrinsics3.checkNotNullParameter(state, "state");
+                C12238m.checkNotNullParameter(outRect, "outRect");
+                C12238m.checkNotNullParameter(view, "view");
+                C12238m.checkNotNullParameter(parent, "parent");
+                C12238m.checkNotNullParameter(state, "state");
                 super.getItemOffsets(outRect, view, parent, state);
                 int childAdapterPosition = parent.getChildAdapterPosition(view);
                 if (childAdapterPosition == -1) {
@@ -145,7 +145,7 @@ public final class WidgetForumBrowserAdapter extends MGRecyclerAdapterSimple<For
 
     @Override // androidx.recyclerview.widget.RecyclerView.Adapter
     public MGRecyclerViewHolder<?, ForumBrowserItem> onCreateViewHolder(ViewGroup parent, int viewType) {
-        Intrinsics3.checkNotNullParameter(parent, "parent");
+        C12238m.checkNotNullParameter(parent, "parent");
         if (viewType == 0) {
             return new HeaderItem(this);
         }
@@ -155,6 +155,6 @@ public final class WidgetForumBrowserAdapter extends MGRecyclerAdapterSimple<For
         if (viewType == 2) {
             return new LoadingItem(this);
         }
-        throw new IllegalStateException(outline.q("Invalid view type: ", viewType));
+        throw new IllegalStateException(C1643a.m871q("Invalid view type: ", viewType));
     }
 }

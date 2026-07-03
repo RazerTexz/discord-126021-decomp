@@ -1,16 +1,16 @@
 package com.discord.widgets.guildscheduledevent;
 
 import androidx.annotation.DrawableRes;
-import b.d.b.a.outline;
-import com.discord.R;
+import com.discord.C5419R;
 import com.discord.api.channel.Channel;
 import com.discord.api.guildscheduledevent.GuildScheduledEvent;
 import com.discord.api.guildscheduledevent.GuildScheduledEventEntityMetadata;
 import com.discord.api.guildscheduledevent.GuildScheduledEventEntityType;
 import com.discord.models.domain.ModelAuditLogEntry;
-import d0.z.d.Intrinsics3;
 import kotlin.NoWhenBranchMatchedException;
 import kotlin.jvm.internal.DefaultConstructorMarker;
+import p007b.p100d.p104b.p105a.C1643a;
+import p507d0.p592z.p594d.C12238m;
 
 /* JADX INFO: compiled from: GuildScheduledEventLocationInfo.kt */
 /* JADX INFO: loaded from: classes2.dex */
@@ -46,7 +46,7 @@ public abstract class GuildScheduledEventLocationInfo {
 
         public boolean equals(Object other) {
             if (this != other) {
-                return (other instanceof ChannelLocation) && Intrinsics3.areEqual(this.channel, ((ChannelLocation) other).channel);
+                return (other instanceof ChannelLocation) && C12238m.areEqual(this.channel, ((ChannelLocation) other).channel);
             }
             return true;
         }
@@ -64,10 +64,10 @@ public abstract class GuildScheduledEventLocationInfo {
         }
 
         public String toString() {
-            StringBuilder sbU = outline.U("ChannelLocation(channel=");
-            sbU.append(this.channel);
-            sbU.append(")");
-            return sbU.toString();
+            StringBuilder sbM833U = C1643a.m833U("ChannelLocation(channel=");
+            sbM833U.append(this.channel);
+            sbM833U.append(")");
+            return sbM833U.toString();
         }
     }
 
@@ -78,7 +78,7 @@ public abstract class GuildScheduledEventLocationInfo {
 
         public final GuildScheduledEventLocationInfo buildLocationInfo(GuildScheduledEvent guildScheduledEvent, Channel channel) {
             String location;
-            Intrinsics3.checkNotNullParameter(guildScheduledEvent, "guildScheduledEvent");
+            C12238m.checkNotNullParameter(guildScheduledEvent, "guildScheduledEvent");
             if (guildScheduledEvent.getEntityType() != GuildScheduledEventEntityType.EXTERNAL) {
                 return new ChannelLocation(channel);
             }
@@ -95,7 +95,7 @@ public abstract class GuildScheduledEventLocationInfo {
 
         public final GuildScheduledEventLocationInfo buildLocationInfo(GuildScheduledEventModel guildScheduledEventModel, Channel channel) {
             String location;
-            Intrinsics3.checkNotNullParameter(guildScheduledEventModel, "guildScheduledEventModel");
+            C12238m.checkNotNullParameter(guildScheduledEventModel, "guildScheduledEventModel");
             if (guildScheduledEventModel.getEntityType() == GuildScheduledEventEntityType.EXTERNAL) {
                 GuildScheduledEventEntityMetadata entityMetadata = guildScheduledEventModel.getEntityMetadata();
                 if (entityMetadata == null || (location = entityMetadata.getLocation()) == null) {
@@ -114,7 +114,7 @@ public abstract class GuildScheduledEventLocationInfo {
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
         public ExternalLocation(String str) {
             super(null);
-            Intrinsics3.checkNotNullParameter(str, ModelAuditLogEntry.CHANGE_KEY_LOCATION);
+            C12238m.checkNotNullParameter(str, ModelAuditLogEntry.CHANGE_KEY_LOCATION);
             this.location = str;
         }
 
@@ -131,13 +131,13 @@ public abstract class GuildScheduledEventLocationInfo {
         }
 
         public final ExternalLocation copy(String location) {
-            Intrinsics3.checkNotNullParameter(location, ModelAuditLogEntry.CHANGE_KEY_LOCATION);
+            C12238m.checkNotNullParameter(location, ModelAuditLogEntry.CHANGE_KEY_LOCATION);
             return new ExternalLocation(location);
         }
 
         public boolean equals(Object other) {
             if (this != other) {
-                return (other instanceof ExternalLocation) && Intrinsics3.areEqual(this.location, ((ExternalLocation) other).location);
+                return (other instanceof ExternalLocation) && C12238m.areEqual(this.location, ((ExternalLocation) other).location);
             }
             return true;
         }
@@ -155,7 +155,7 @@ public abstract class GuildScheduledEventLocationInfo {
         }
 
         public String toString() {
-            return outline.J(outline.U("ExternalLocation(location="), this.location, ")");
+            return C1643a.m822J(C1643a.m833U("ExternalLocation(location="), this.location, ")");
         }
     }
 
@@ -165,13 +165,13 @@ public abstract class GuildScheduledEventLocationInfo {
     @DrawableRes
     private final int getChannelIcon(Channel channel) {
         Integer numValueOf = channel != null ? Integer.valueOf(channel.getType()) : null;
-        return ((numValueOf != null && numValueOf.intValue() == 2) || numValueOf == null || numValueOf.intValue() != 13) ? R.drawable.ic_channel_voice : R.drawable.ic_stage_20dp;
+        return ((numValueOf != null && numValueOf.intValue() == 2) || numValueOf == null || numValueOf.intValue() != 13) ? C5419R.drawable.ic_channel_voice : C5419R.drawable.ic_stage_20dp;
     }
 
     @DrawableRes
     private final int getChannelIconSmall(Channel channel) {
         Integer numValueOf = channel != null ? Integer.valueOf(channel.getType()) : null;
-        return ((numValueOf != null && numValueOf.intValue() == 2) || numValueOf == null || numValueOf.intValue() != 13) ? R.drawable.ic_channel_voice_16dp : R.drawable.ic_channel_stage_16dp;
+        return ((numValueOf != null && numValueOf.intValue() == 2) || numValueOf == null || numValueOf.intValue() != 13) ? C5419R.drawable.ic_channel_voice_16dp : C5419R.drawable.ic_channel_stage_16dp;
     }
 
     @DrawableRes
@@ -180,7 +180,7 @@ public abstract class GuildScheduledEventLocationInfo {
             return getChannelIcon(((ChannelLocation) this).getChannel());
         }
         if (this instanceof ExternalLocation) {
-            return R.drawable.ic_location_24dp;
+            return C5419R.drawable.ic_location_24dp;
         }
         throw new NoWhenBranchMatchedException();
     }
@@ -191,7 +191,7 @@ public abstract class GuildScheduledEventLocationInfo {
             return getChannelIconSmall(((ChannelLocation) this).getChannel());
         }
         if (this instanceof ExternalLocation) {
-            return R.drawable.ic_location_16dp;
+            return C5419R.drawable.ic_location_16dp;
         }
         throw new NoWhenBranchMatchedException();
     }

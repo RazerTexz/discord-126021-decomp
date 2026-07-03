@@ -23,7 +23,7 @@ import androidx.annotation.Nullable;
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.content.res.AppCompatResources;
 import androidx.appcompat.widget.AppCompatImageView;
-import com.google.android.material.R;
+import com.google.android.material.C10817R;
 import com.google.android.material.resources.MaterialResources;
 import com.google.android.material.shape.MaterialShapeDrawable;
 import com.google.android.material.shape.ShapeAppearanceModel;
@@ -33,7 +33,7 @@ import com.google.android.material.theme.overlay.MaterialThemeOverlay;
 
 /* JADX INFO: loaded from: classes3.dex */
 public class ShapeableImageView extends AppCompatImageView implements Shapeable {
-    private static final int DEF_STYLE_RES = R.style.Widget_MaterialComponents_ShapeableImageView;
+    private static final int DEF_STYLE_RES = C10817R.style.Widget_MaterialComponents_ShapeableImageView;
     private static final int UNDEFINED_PADDING = Integer.MIN_VALUE;
     private final Paint borderPaint;
 
@@ -72,11 +72,14 @@ public class ShapeableImageView extends AppCompatImageView implements Shapeable 
     @Dimension
     private int topContentPadding;
 
+    /* JADX INFO: renamed from: com.google.android.material.imageview.ShapeableImageView$a */
     @TargetApi(21)
-    public class a extends ViewOutlineProvider {
-        public final Rect a = new Rect();
+    public class C10922a extends ViewOutlineProvider {
 
-        public a() {
+        /* JADX INFO: renamed from: a */
+        public final Rect f21023a = new Rect();
+
+        public C10922a() {
         }
 
         @Override // android.view.ViewOutlineProvider
@@ -87,8 +90,8 @@ public class ShapeableImageView extends AppCompatImageView implements Shapeable 
             if (ShapeableImageView.this.shadowDrawable == null) {
                 ShapeableImageView.this.shadowDrawable = new MaterialShapeDrawable(ShapeableImageView.this.shapeAppearanceModel);
             }
-            ShapeableImageView.this.destination.round(this.a);
-            ShapeableImageView.this.shadowDrawable.setBounds(this.a);
+            ShapeableImageView.this.destination.round(this.f21023a);
+            ShapeableImageView.this.shadowDrawable.setBounds(this.f21023a);
             ShapeableImageView.this.shadowDrawable.getOutline(outline);
         }
     }
@@ -359,26 +362,26 @@ public class ShapeableImageView extends AppCompatImageView implements Shapeable 
         this.destination = new RectF();
         this.maskRect = new RectF();
         this.maskPath = new Path();
-        TypedArray typedArrayObtainStyledAttributes = context2.obtainStyledAttributes(attributeSet, R.styleable.ShapeableImageView, i, i2);
-        this.strokeColor = MaterialResources.getColorStateList(context2, typedArrayObtainStyledAttributes, R.styleable.ShapeableImageView_strokeColor);
-        this.strokeWidth = typedArrayObtainStyledAttributes.getDimensionPixelSize(R.styleable.ShapeableImageView_strokeWidth, 0);
-        int dimensionPixelSize = typedArrayObtainStyledAttributes.getDimensionPixelSize(R.styleable.ShapeableImageView_contentPadding, 0);
+        TypedArray typedArrayObtainStyledAttributes = context2.obtainStyledAttributes(attributeSet, C10817R.styleable.ShapeableImageView, i, i2);
+        this.strokeColor = MaterialResources.getColorStateList(context2, typedArrayObtainStyledAttributes, C10817R.styleable.ShapeableImageView_strokeColor);
+        this.strokeWidth = typedArrayObtainStyledAttributes.getDimensionPixelSize(C10817R.styleable.ShapeableImageView_strokeWidth, 0);
+        int dimensionPixelSize = typedArrayObtainStyledAttributes.getDimensionPixelSize(C10817R.styleable.ShapeableImageView_contentPadding, 0);
         this.leftContentPadding = dimensionPixelSize;
         this.topContentPadding = dimensionPixelSize;
         this.rightContentPadding = dimensionPixelSize;
         this.bottomContentPadding = dimensionPixelSize;
-        this.leftContentPadding = typedArrayObtainStyledAttributes.getDimensionPixelSize(R.styleable.ShapeableImageView_contentPaddingLeft, dimensionPixelSize);
-        this.topContentPadding = typedArrayObtainStyledAttributes.getDimensionPixelSize(R.styleable.ShapeableImageView_contentPaddingTop, dimensionPixelSize);
-        this.rightContentPadding = typedArrayObtainStyledAttributes.getDimensionPixelSize(R.styleable.ShapeableImageView_contentPaddingRight, dimensionPixelSize);
-        this.bottomContentPadding = typedArrayObtainStyledAttributes.getDimensionPixelSize(R.styleable.ShapeableImageView_contentPaddingBottom, dimensionPixelSize);
-        this.startContentPadding = typedArrayObtainStyledAttributes.getDimensionPixelSize(R.styleable.ShapeableImageView_contentPaddingStart, Integer.MIN_VALUE);
-        this.endContentPadding = typedArrayObtainStyledAttributes.getDimensionPixelSize(R.styleable.ShapeableImageView_contentPaddingEnd, Integer.MIN_VALUE);
+        this.leftContentPadding = typedArrayObtainStyledAttributes.getDimensionPixelSize(C10817R.styleable.ShapeableImageView_contentPaddingLeft, dimensionPixelSize);
+        this.topContentPadding = typedArrayObtainStyledAttributes.getDimensionPixelSize(C10817R.styleable.ShapeableImageView_contentPaddingTop, dimensionPixelSize);
+        this.rightContentPadding = typedArrayObtainStyledAttributes.getDimensionPixelSize(C10817R.styleable.ShapeableImageView_contentPaddingRight, dimensionPixelSize);
+        this.bottomContentPadding = typedArrayObtainStyledAttributes.getDimensionPixelSize(C10817R.styleable.ShapeableImageView_contentPaddingBottom, dimensionPixelSize);
+        this.startContentPadding = typedArrayObtainStyledAttributes.getDimensionPixelSize(C10817R.styleable.ShapeableImageView_contentPaddingStart, Integer.MIN_VALUE);
+        this.endContentPadding = typedArrayObtainStyledAttributes.getDimensionPixelSize(C10817R.styleable.ShapeableImageView_contentPaddingEnd, Integer.MIN_VALUE);
         typedArrayObtainStyledAttributes.recycle();
         Paint paint2 = new Paint();
         this.borderPaint = paint2;
         paint2.setStyle(Paint.Style.STROKE);
         paint2.setAntiAlias(true);
         this.shapeAppearanceModel = ShapeAppearanceModel.builder(context2, attributeSet, i, i2).build();
-        setOutlineProvider(new a());
+        setOutlineProvider(new C10922a());
     }
 }

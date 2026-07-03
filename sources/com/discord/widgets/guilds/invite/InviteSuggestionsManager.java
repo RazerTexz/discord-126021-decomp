@@ -1,9 +1,8 @@
 package com.discord.widgets.guilds.invite;
 
-import b.d.b.a.outline;
 import com.discord.api.channel.Channel;
 import com.discord.api.channel.ChannelUtils;
-import com.discord.api.channel.ChannelUtils3;
+import com.discord.api.channel.ChannelUtils$getSortByMostRecent$1;
 import com.discord.models.user.User;
 import com.discord.stores.StoreChannels;
 import com.discord.stores.StoreMessagesMostRecent;
@@ -12,19 +11,20 @@ import com.discord.stores.StoreUser;
 import com.discord.stores.StoreUserAffinities;
 import com.discord.stores.StoreUserRelationships;
 import com.discord.widgets.guilds.invite.InviteSuggestion;
-import d0.t.Iterables2;
-import d0.t._Collections;
-import d0.z.d.Intrinsics3;
-import j0.k.Func1;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 import kotlin.jvm.internal.DefaultConstructorMarker;
-import rx.Observable;
-import rx.functions.Func2;
-import rx.functions.Func3;
+import p007b.p100d.p104b.p105a.C1643a;
+import p507d0.p580t.C12149o;
+import p507d0.p580t.C12163u;
+import p507d0.p592z.p594d.C12238m;
+import p637j0.p641k.InterfaceC12589b;
+import p658rx.Observable;
+import p658rx.functions.Func2;
+import p658rx.functions.Func3;
 
 /* JADX INFO: compiled from: InviteSuggestionsManager.kt */
 /* JADX INFO: loaded from: classes2.dex */
@@ -43,9 +43,9 @@ public final class InviteSuggestionsManager {
 
         /* JADX WARN: Multi-variable type inference failed */
         public UserAffinityData(List<Long> list, Map<Long, ? extends User> map, Map<Long, Integer> map2) {
-            Intrinsics3.checkNotNullParameter(list, "userIds");
-            Intrinsics3.checkNotNullParameter(map, "users");
-            Intrinsics3.checkNotNullParameter(map2, "relationships");
+            C12238m.checkNotNullParameter(list, "userIds");
+            C12238m.checkNotNullParameter(map, "users");
+            C12238m.checkNotNullParameter(map2, "relationships");
             this.userIds = list;
             this.users = map;
             this.relationships = map2;
@@ -78,9 +78,9 @@ public final class InviteSuggestionsManager {
         }
 
         public final UserAffinityData copy(List<Long> userIds, Map<Long, ? extends User> users, Map<Long, Integer> relationships) {
-            Intrinsics3.checkNotNullParameter(userIds, "userIds");
-            Intrinsics3.checkNotNullParameter(users, "users");
-            Intrinsics3.checkNotNullParameter(relationships, "relationships");
+            C12238m.checkNotNullParameter(userIds, "userIds");
+            C12238m.checkNotNullParameter(users, "users");
+            C12238m.checkNotNullParameter(relationships, "relationships");
             return new UserAffinityData(userIds, users, relationships);
         }
 
@@ -92,7 +92,7 @@ public final class InviteSuggestionsManager {
                 return false;
             }
             UserAffinityData userAffinityData = (UserAffinityData) other;
-            return Intrinsics3.areEqual(this.userIds, userAffinityData.userIds) && Intrinsics3.areEqual(this.users, userAffinityData.users) && Intrinsics3.areEqual(this.relationships, userAffinityData.relationships);
+            return C12238m.areEqual(this.userIds, userAffinityData.userIds) && C12238m.areEqual(this.users, userAffinityData.users) && C12238m.areEqual(this.relationships, userAffinityData.relationships);
         }
 
         public final Map<Long, Integer> getRelationships() {
@@ -117,12 +117,12 @@ public final class InviteSuggestionsManager {
         }
 
         public String toString() {
-            StringBuilder sbU = outline.U("UserAffinityData(userIds=");
-            sbU.append(this.userIds);
-            sbU.append(", users=");
-            sbU.append(this.users);
-            sbU.append(", relationships=");
-            return outline.M(sbU, this.relationships, ")");
+            StringBuilder sbM833U = C1643a.m833U("UserAffinityData(userIds=");
+            sbM833U.append(this.userIds);
+            sbM833U.append(", users=");
+            sbM833U.append(this.users);
+            sbM833U.append(", relationships=");
+            return C1643a.m825M(sbM833U, this.relationships, ")");
         }
     }
 
@@ -131,11 +131,11 @@ public final class InviteSuggestionsManager {
     }
 
     public InviteSuggestionsManager(StoreChannels storeChannels, StoreMessagesMostRecent storeMessagesMostRecent, StoreUserAffinities storeUserAffinities, StoreUser storeUser, StoreUserRelationships storeUserRelationships) {
-        Intrinsics3.checkNotNullParameter(storeChannels, "storeChannels");
-        Intrinsics3.checkNotNullParameter(storeMessagesMostRecent, "storeMessagesMostRecent");
-        Intrinsics3.checkNotNullParameter(storeUserAffinities, "storeUserAffinities");
-        Intrinsics3.checkNotNullParameter(storeUser, "storeUsers");
-        Intrinsics3.checkNotNullParameter(storeUserRelationships, "storeUserRelationships");
+        C12238m.checkNotNullParameter(storeChannels, "storeChannels");
+        C12238m.checkNotNullParameter(storeMessagesMostRecent, "storeMessagesMostRecent");
+        C12238m.checkNotNullParameter(storeUserAffinities, "storeUserAffinities");
+        C12238m.checkNotNullParameter(storeUser, "storeUsers");
+        C12238m.checkNotNullParameter(storeUserRelationships, "storeUserRelationships");
         this.storeChannels = storeChannels;
         this.storeMessagesMostRecent = storeMessagesMostRecent;
         this.storeUserAffinities = storeUserAffinities;
@@ -144,8 +144,8 @@ public final class InviteSuggestionsManager {
     }
 
     public final Observable<List<InviteSuggestion>> observeInviteSuggestions() {
-        Observable<List<InviteSuggestion>> observableI = Observable.i(this.storeChannels.observePrivateChannels(), this.storeMessagesMostRecent.observeRecentMessageIds().Z(1), this.storeUserAffinities.observeAffinityUserIds().Y(new Func1<List<? extends Long>, Observable<? extends UserAffinityData>>() { // from class: com.discord.widgets.guilds.invite.InviteSuggestionsManager.observeInviteSuggestions.1
-            @Override // j0.k.Func1
+        Observable<List<InviteSuggestion>> observableM11075i = Observable.m11075i(this.storeChannels.observePrivateChannels(), this.storeMessagesMostRecent.observeRecentMessageIds().m11100Z(1), this.storeUserAffinities.observeAffinityUserIds().m11099Y(new InterfaceC12589b<List<? extends Long>, Observable<? extends UserAffinityData>>() { // from class: com.discord.widgets.guilds.invite.InviteSuggestionsManager.observeInviteSuggestions.1
+            @Override // p637j0.p641k.InterfaceC12589b
             public /* bridge */ /* synthetic */ Observable<? extends UserAffinityData> call(List<? extends Long> list) {
                 return call2((List<Long>) list);
             }
@@ -153,9 +153,9 @@ public final class InviteSuggestionsManager {
             /* JADX INFO: renamed from: call, reason: avoid collision after fix types in other method */
             public final Observable<? extends UserAffinityData> call2(final List<Long> list) {
                 StoreUser storeUser = InviteSuggestionsManager.this.storeUsers;
-                Intrinsics3.checkNotNullExpressionValue(list, "affinityUserIds");
-                return Observable.j(storeUser.observeUsers(list).r(), InviteSuggestionsManager.this.storeUserRelationships.observe(list), new Func2<Map<Long, ? extends User>, Map<Long, ? extends Integer>, UserAffinityData>() { // from class: com.discord.widgets.guilds.invite.InviteSuggestionsManager.observeInviteSuggestions.1.1
-                    @Override // rx.functions.Func2
+                C12238m.checkNotNullExpressionValue(list, "affinityUserIds");
+                return Observable.m11076j(storeUser.observeUsers(list).m11112r(), InviteSuggestionsManager.this.storeUserRelationships.observe(list), new Func2<Map<Long, ? extends User>, Map<Long, ? extends Integer>, UserAffinityData>() { // from class: com.discord.widgets.guilds.invite.InviteSuggestionsManager.observeInviteSuggestions.1.1
+                    @Override // p658rx.functions.Func2
                     public /* bridge */ /* synthetic */ UserAffinityData call(Map<Long, ? extends User> map, Map<Long, ? extends Integer> map2) {
                         return call2(map, (Map<Long, Integer>) map2);
                     }
@@ -163,29 +163,29 @@ public final class InviteSuggestionsManager {
                     /* JADX INFO: renamed from: call, reason: avoid collision after fix types in other method */
                     public final UserAffinityData call2(Map<Long, ? extends User> map, Map<Long, Integer> map2) {
                         List list2 = list;
-                        Intrinsics3.checkNotNullExpressionValue(list2, "affinityUserIds");
-                        Intrinsics3.checkNotNullExpressionValue(map, "users");
-                        Intrinsics3.checkNotNullExpressionValue(map2, "relationships");
+                        C12238m.checkNotNullExpressionValue(list2, "affinityUserIds");
+                        C12238m.checkNotNullExpressionValue(map, "users");
+                        C12238m.checkNotNullExpressionValue(map2, "relationships");
                         return new UserAffinityData(list2, map, map2);
                     }
                 });
             }
         }), new Func3<Map<Long, ? extends Channel>, Map<Long, ? extends Long>, UserAffinityData, List<? extends InviteSuggestion>>() { // from class: com.discord.widgets.guilds.invite.InviteSuggestionsManager.observeInviteSuggestions.2
-            @Override // rx.functions.Func3
+            @Override // p658rx.functions.Func3
             public /* bridge */ /* synthetic */ List<? extends InviteSuggestion> call(Map<Long, ? extends Channel> map, Map<Long, ? extends Long> map2, UserAffinityData userAffinityData) {
                 return call2((Map<Long, Channel>) map, (Map<Long, Long>) map2, userAffinityData);
             }
 
             /* JADX INFO: renamed from: call, reason: avoid collision after fix types in other method */
             public final List<InviteSuggestion> call2(Map<Long, Channel> map, Map<Long, Long> map2, UserAffinityData userAffinityData) {
-                User userA;
+                User userM7677a;
                 ArrayList arrayList = new ArrayList();
                 Collection<Channel> collectionValues = map.values();
                 Channel.Companion companion = Channel.INSTANCE;
-                Intrinsics3.checkNotNullExpressionValue(map2, "mostRecentMessages");
-                Intrinsics3.checkNotNullParameter(companion, "$this$getSortByMostRecent");
-                Intrinsics3.checkNotNullParameter(map2, "mostRecentMessageIds");
-                List listSortedWith = _Collections.sortedWith(collectionValues, new ChannelUtils3(map2));
+                C12238m.checkNotNullExpressionValue(map2, "mostRecentMessages");
+                C12238m.checkNotNullParameter(companion, "$this$getSortByMostRecent");
+                C12238m.checkNotNullParameter(map2, "mostRecentMessageIds");
+                List listSortedWith = C12163u.sortedWith(collectionValues, new ChannelUtils$getSortByMostRecent$1(map2));
                 Channel channel = listSortedWith.isEmpty() ^ true ? (Channel) listSortedWith.get(0) : null;
                 if (channel != null) {
                     arrayList.add(new InviteSuggestion.ChannelItem(channel));
@@ -202,12 +202,12 @@ public final class InviteSuggestionsManager {
                 ArrayList arrayList3 = new ArrayList();
                 for (Object obj : arrayList2) {
                     User user2 = (User) obj;
-                    Integer num = (Integer) outline.f(user2, userAffinityData.getRelationships());
-                    if (!(!(channel == null || (userA = ChannelUtils.a(channel)) == null || userA.getId() != user2.getId()) || (num != null && num.intValue() == 2))) {
+                    Integer num = (Integer) C1643a.m849f(user2, userAffinityData.getRelationships());
+                    if (!(!(channel == null || (userM7677a = ChannelUtils.m7677a(channel)) == null || userM7677a.getId() != user2.getId()) || (num != null && num.intValue() == 2))) {
                         arrayList3.add(obj);
                     }
                 }
-                List listDistinct = _Collections.distinct(arrayList3);
+                List listDistinct = C12163u.distinct(arrayList3);
                 Iterator it2 = listDistinct.iterator();
                 while (it2.hasNext()) {
                     arrayList.add(new InviteSuggestion.UserSuggestion((User) it2.next()));
@@ -215,11 +215,11 @@ public final class InviteSuggestionsManager {
                 ArrayList arrayList4 = new ArrayList();
                 for (Object obj2 : listSortedWith) {
                     Channel channel2 = (Channel) obj2;
-                    if ((Intrinsics3.areEqual(channel, channel2) ^ true) && (ChannelUtils.a(channel2) == null || !_Collections.contains(listDistinct, ChannelUtils.a(channel2)))) {
+                    if ((C12238m.areEqual(channel, channel2) ^ true) && (ChannelUtils.m7677a(channel2) == null || !C12163u.contains(listDistinct, ChannelUtils.m7677a(channel2)))) {
                         arrayList4.add(obj2);
                     }
                 }
-                ArrayList arrayList5 = new ArrayList(Iterables2.collectionSizeOrDefault(arrayList4, 10));
+                ArrayList arrayList5 = new ArrayList(C12149o.collectionSizeOrDefault(arrayList4, 10));
                 Iterator it3 = arrayList4.iterator();
                 while (it3.hasNext()) {
                     arrayList5.add(Boolean.valueOf(arrayList.add(new InviteSuggestion.ChannelItem((Channel) it3.next()))));
@@ -227,8 +227,8 @@ public final class InviteSuggestionsManager {
                 return arrayList;
             }
         });
-        Intrinsics3.checkNotNullExpressionValue(observableI, "Observable.combineLatest… inviteSuggestionList\n  }");
-        return observableI;
+        C12238m.checkNotNullExpressionValue(observableM11075i, "Observable.combineLatest… inviteSuggestionList\n  }");
+        return observableM11075i;
     }
 
     public /* synthetic */ InviteSuggestionsManager(StoreChannels storeChannels, StoreMessagesMostRecent storeMessagesMostRecent, StoreUserAffinities storeUserAffinities, StoreUser storeUser, StoreUserRelationships storeUserRelationships, int i, DefaultConstructorMarker defaultConstructorMarker) {

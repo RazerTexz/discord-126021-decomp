@@ -10,25 +10,27 @@ import com.discord.app.AppViewFlipper;
 /* JADX INFO: loaded from: classes.dex */
 public final class WidgetServerSettingsEmojisBinding implements ViewBinding {
 
+    /* JADX INFO: renamed from: a */
     @NonNull
-    public final CoordinatorLayout a;
+    public final CoordinatorLayout f17637a;
 
-    /* JADX INFO: renamed from: b, reason: collision with root package name */
+    /* JADX INFO: renamed from: b */
     @NonNull
-    public final RecyclerView f2562b;
+    public final RecyclerView f17638b;
 
+    /* JADX INFO: renamed from: c */
     @NonNull
-    public final AppViewFlipper c;
+    public final AppViewFlipper f17639c;
 
     public WidgetServerSettingsEmojisBinding(@NonNull CoordinatorLayout coordinatorLayout, @NonNull RecyclerView recyclerView, @NonNull AppViewFlipper appViewFlipper) {
-        this.a = coordinatorLayout;
-        this.f2562b = recyclerView;
-        this.c = appViewFlipper;
+        this.f17637a = coordinatorLayout;
+        this.f17638b = recyclerView;
+        this.f17639c = appViewFlipper;
     }
 
     @Override // androidx.viewbinding.ViewBinding
     @NonNull
     public View getRoot() {
-        return this.a;
+        return this.f17637a;
     }
 }

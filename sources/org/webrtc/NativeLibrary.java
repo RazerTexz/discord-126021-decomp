@@ -9,12 +9,12 @@ public class NativeLibrary {
     public static class DefaultLoader implements NativeLibraryLoader {
         @Override // org.webrtc.NativeLibraryLoader
         public boolean load(String str) {
-            Logging.d(NativeLibrary.TAG, "Loading library: " + str);
+            Logging.m11027d(NativeLibrary.TAG, "Loading library: " + str);
             try {
                 System.loadLibrary(str);
                 return true;
             } catch (UnsatisfiedLinkError e) {
-                Logging.e(NativeLibrary.TAG, "Failed to load native library: " + str, e);
+                Logging.m11029e(NativeLibrary.TAG, "Failed to load native library: " + str, e);
                 return false;
             }
         }
@@ -23,10 +23,10 @@ public class NativeLibrary {
     public static void initialize(NativeLibraryLoader nativeLibraryLoader, String str) {
         synchronized (lock) {
             if (libraryLoaded) {
-                Logging.d(TAG, "Native library has already been loaded.");
+                Logging.m11027d(TAG, "Native library has already been loaded.");
                 return;
             }
-            Logging.d(TAG, "Loading native library: " + str);
+            Logging.m11027d(TAG, "Loading native library: " + str);
             libraryLoaded = nativeLibraryLoader.load(str);
         }
     }

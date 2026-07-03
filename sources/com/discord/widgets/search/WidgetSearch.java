@@ -11,10 +11,7 @@ import androidx.core.graphics.drawable.IconCompat;
 import androidx.exifinterface.media.ExifInterface;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentContainerView;
-import b.a.d.AppScreen2;
-import b.a.k.FormatUtils;
-import b.d.b.a.outline;
-import com.discord.R;
+import com.discord.C5419R;
 import com.discord.api.channel.Channel;
 import com.discord.api.channel.ChannelUtils;
 import com.discord.app.AppActivity;
@@ -24,21 +21,17 @@ import com.discord.models.guild.Guild;
 import com.discord.stores.StoreSearch;
 import com.discord.stores.StoreStream;
 import com.discord.utilities.error.Error;
-import com.discord.utilities.rx.ObservableExtensionsKt;
+import com.discord.utilities.p501rx.ObservableExtensionsKt;
 import com.discord.utilities.search.query.node.QueryNode;
 import com.discord.utilities.search.strings.ContextSearchStringProvider;
 import com.discord.utilities.textprocessing.AstRenderer;
 import com.discord.utilities.view.extensions.ViewExtensions;
 import com.discord.utilities.viewbinding.FragmentViewBindingDelegate;
-import com.discord.utilities.viewbinding.FragmentViewBindingDelegate3;
+import com.discord.utilities.viewbinding.FragmentViewBindingDelegateKt;
 import com.discord.widgets.search.WidgetSearch;
 import com.facebook.drawee.span.DraweeSpanStringBuilder;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.textfield.TextInputLayout;
-import d0.z.d.Intrinsics3;
-import d0.z.d.Lambda;
-import j0.k.Func1;
-import j0.l.e.ScalarSynchronousObservable;
 import java.util.List;
 import kotlin.Unit;
 import kotlin.jvm.functions.Function0;
@@ -46,14 +39,21 @@ import kotlin.jvm.functions.Function1;
 import kotlin.jvm.functions.Function3;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.reflect.KProperty;
-import rx.Observable;
-import rx.Subscription;
-import rx.functions.Func4;
+import p007b.p008a.p018d.C0870j;
+import p007b.p008a.p027k.C1107b;
+import p007b.p100d.p104b.p105a.C1643a;
+import p507d0.p592z.p594d.AbstractC12240o;
+import p507d0.p592z.p594d.C12238m;
+import p637j0.p641k.InterfaceC12589b;
+import p637j0.p642l.p647e.C12721k;
+import p658rx.Observable;
+import p658rx.Subscription;
+import p658rx.functions.Func4;
 
 /* JADX INFO: compiled from: WidgetSearch.kt */
 /* JADX INFO: loaded from: classes2.dex */
 public final class WidgetSearch extends AppFragment {
-    public static final /* synthetic */ KProperty[] $$delegatedProperties = {outline.d0(WidgetSearch.class, "binding", "getBinding()Lcom/discord/databinding/WidgetSearchBinding;", 0)};
+    public static final /* synthetic */ KProperty[] $$delegatedProperties = {C1643a.m846d0(WidgetSearch.class, "binding", "getBinding()Lcom/discord/databinding/WidgetSearchBinding;", 0)};
 
     /* JADX INFO: renamed from: Companion, reason: from kotlin metadata */
     public static final Companion INSTANCE = new Companion(null);
@@ -74,17 +74,17 @@ public final class WidgetSearch extends AppFragment {
 
         private final void launch(long targetId, int targetType, Context context) {
             Intent intentPutExtra = new Intent().putExtra(WidgetSearch.INTENT_EXTRA_TARGET_ID, targetId).putExtra(WidgetSearch.INTENT_EXTRA_TARGET_TYPE, targetType);
-            Intrinsics3.checkNotNullExpressionValue(intentPutExtra, "Intent()\n          .putE…_TARGET_TYPE, targetType)");
-            AppScreen2.d(context, WidgetSearch.class, intentPutExtra);
+            C12238m.checkNotNullExpressionValue(intentPutExtra, "Intent()\n          .putE…_TARGET_TYPE, targetType)");
+            C0870j.m156d(context, WidgetSearch.class, intentPutExtra);
         }
 
         public final void launchForChannel(long channelId, Context context) {
-            Intrinsics3.checkNotNullParameter(context, "context");
+            C12238m.checkNotNullParameter(context, "context");
             launch(channelId, 1, context);
         }
 
         public final void launchForGuild(long guildId, Context context) {
-            Intrinsics3.checkNotNullParameter(context, "context");
+            C12238m.checkNotNullParameter(context, "context");
             launch(guildId, 0, context);
         }
 
@@ -109,21 +109,21 @@ public final class WidgetSearch extends AppFragment {
             }
 
             public final Observable<Model> get(int targetType, long targetId) {
-                Observable<Guild> observableObserveGuild = targetType == 0 ? StoreStream.INSTANCE.getGuilds().observeGuild(targetId) : new ScalarSynchronousObservable<>(null);
-                Observable<Channel> observableObservePrivateChannel = targetType == 1 ? StoreStream.INSTANCE.getChannels().observePrivateChannel(targetId) : new ScalarSynchronousObservable<>(null);
+                Observable<Guild> observableObserveGuild = targetType == 0 ? StoreStream.INSTANCE.getGuilds().observeGuild(targetId) : new C12721k<>(null);
+                Observable<Channel> observableObservePrivateChannel = targetType == 1 ? StoreStream.INSTANCE.getChannels().observePrivateChannel(targetId) : new C12721k<>(null);
                 StoreStream.Companion companion = StoreStream.INSTANCE;
-                Observable observableH = Observable.h(observableObserveGuild, observableObservePrivateChannel, companion.getSearch().getDisplayState(), companion.getSearch().getStoreSearchInput().isInputValid(), new Func4<Guild, Channel, StoreSearch.DisplayState, Boolean, Model>() { // from class: com.discord.widgets.search.WidgetSearch$Model$Companion$get$1
-                    @Override // rx.functions.Func4
+                Observable observableM11073h = Observable.m11073h(observableObserveGuild, observableObservePrivateChannel, companion.getSearch().getDisplayState(), companion.getSearch().getStoreSearchInput().isInputValid(), new Func4<Guild, Channel, StoreSearch.DisplayState, Boolean, Model>() { // from class: com.discord.widgets.search.WidgetSearch$Model$Companion$get$1
+                    @Override // p658rx.functions.Func4
                     public final WidgetSearch.Model call(Guild guild, Channel channel, StoreSearch.DisplayState displayState, Boolean bool) {
                         if ((guild == null && channel == null) || displayState == null) {
                             return null;
                         }
-                        Intrinsics3.checkNotNullExpressionValue(bool, "isQueryValid");
+                        C12238m.checkNotNullExpressionValue(bool, "isQueryValid");
                         return new WidgetSearch.Model(guild, channel, displayState, bool.booleanValue());
                     }
                 });
-                Intrinsics3.checkNotNullExpressionValue(observableH, "Observable\n            .…          }\n            }");
-                return ObservableExtensionsKt.computationLatest(observableH);
+                C12238m.checkNotNullExpressionValue(observableM11073h, "Observable\n            .…          }\n            }");
+                return ObservableExtensionsKt.computationLatest(observableM11073h);
             }
 
             public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
@@ -186,7 +186,7 @@ public final class WidgetSearch extends AppFragment {
                 return false;
             }
             Model model = (Model) other;
-            return Intrinsics3.areEqual(this.guild, model.guild) && Intrinsics3.areEqual(this.channel, model.channel) && Intrinsics3.areEqual(this.displayState, model.displayState) && this.isQueryValid == model.isQueryValid;
+            return C12238m.areEqual(this.guild, model.guild) && C12238m.areEqual(this.channel, model.channel) && C12238m.areEqual(this.displayState, model.displayState) && this.isQueryValid == model.isQueryValid;
         }
 
         public final Channel getChannel() {
@@ -226,14 +226,14 @@ public final class WidgetSearch extends AppFragment {
         }
 
         public String toString() {
-            StringBuilder sbU = outline.U("Model(guild=");
-            sbU.append(this.guild);
-            sbU.append(", channel=");
-            sbU.append(this.channel);
-            sbU.append(", displayState=");
-            sbU.append(this.displayState);
-            sbU.append(", isQueryValid=");
-            return outline.O(sbU, this.isQueryValid, ")");
+            StringBuilder sbM833U = C1643a.m833U("Model(guild=");
+            sbM833U.append(this.guild);
+            sbM833U.append(", channel=");
+            sbM833U.append(this.channel);
+            sbM833U.append(", displayState=");
+            sbM833U.append(this.displayState);
+            sbM833U.append(", isQueryValid=");
+            return C1643a.m827O(sbM833U, this.isQueryValid, ")");
         }
     }
 
@@ -249,10 +249,10 @@ public final class WidgetSearch extends AppFragment {
         }
     }
 
-    /* JADX INFO: renamed from: com.discord.widgets.search.WidgetSearch$configureSearchInput$1, reason: invalid class name */
+    /* JADX INFO: renamed from: com.discord.widgets.search.WidgetSearch$configureSearchInput$1 */
     /* JADX INFO: compiled from: WidgetSearch.kt */
-    public static final class AnonymousClass1 extends Lambda implements Function3<TextView, Integer, KeyEvent, Boolean> {
-        public AnonymousClass1() {
+    public static final class C91261 extends AbstractC12240o implements Function3<TextView, Integer, KeyEvent, Boolean> {
+        public C91261() {
             super(3);
         }
 
@@ -262,79 +262,79 @@ public final class WidgetSearch extends AppFragment {
         }
 
         public final boolean invoke(TextView textView, int i, KeyEvent keyEvent) {
-            Intrinsics3.checkNotNullParameter(textView, "textView");
+            C12238m.checkNotNullParameter(textView, "textView");
             if (i != 2 && i != 3 && i != 6) {
                 return false;
             }
             AppFragment.hideKeyboard$default(WidgetSearch.this, null, 1, null);
             StoreSearch search = StoreStream.INSTANCE.getSearch();
-            TextInputLayout textInputLayout = WidgetSearch.this.getBinding().c;
-            Intrinsics3.checkNotNullExpressionValue(textInputLayout, "binding.widgetSearchInput");
+            TextInputLayout textInputLayout = WidgetSearch.this.getBinding().f17421c;
+            C12238m.checkNotNullExpressionValue(textInputLayout, "binding.widgetSearchInput");
             String textOrEmpty = ViewExtensions.getTextOrEmpty(textInputLayout);
             Context context = textView.getContext();
-            Intrinsics3.checkNotNullExpressionValue(context, "textView.context");
+            C12238m.checkNotNullExpressionValue(context, "textView.context");
             search.loadInitial(textOrEmpty, new ContextSearchStringProvider(context));
             return true;
         }
     }
 
-    /* JADX INFO: renamed from: com.discord.widgets.search.WidgetSearch$configureSearchInput$2, reason: invalid class name */
+    /* JADX INFO: renamed from: com.discord.widgets.search.WidgetSearch$configureSearchInput$2 */
     /* JADX INFO: compiled from: WidgetSearch.kt */
-    public static final class AnonymousClass2 extends Lambda implements Function1<Editable, Unit> {
-        public static final AnonymousClass2 INSTANCE = new AnonymousClass2();
+    public static final class C91272 extends AbstractC12240o implements Function1<Editable, Unit> {
+        public static final C91272 INSTANCE = new C91272();
 
-        public AnonymousClass2() {
+        public C91272() {
             super(1);
         }
 
         @Override // kotlin.jvm.functions.Function1
         public /* bridge */ /* synthetic */ Unit invoke(Editable editable) {
             invoke2(editable);
-            return Unit.a;
+            return Unit.f27425a;
         }
 
         /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
         public final void invoke2(Editable editable) {
-            Intrinsics3.checkNotNullParameter(editable, NotificationCompat.MessagingStyle.Message.KEY_TEXT);
+            C12238m.checkNotNullParameter(editable, NotificationCompat.MessagingStyle.Message.KEY_TEXT);
             StoreStream.INSTANCE.getSearch().getStoreSearchInput().updateInput(editable.toString());
         }
     }
 
-    /* JADX INFO: renamed from: com.discord.widgets.search.WidgetSearch$configureSearchInput$5, reason: invalid class name */
+    /* JADX INFO: renamed from: com.discord.widgets.search.WidgetSearch$configureSearchInput$5 */
     /* JADX INFO: compiled from: WidgetSearch.kt */
-    public static final class AnonymousClass5 extends Lambda implements Function1<String, Unit> {
-        public AnonymousClass5() {
+    public static final class C91305 extends AbstractC12240o implements Function1<String, Unit> {
+        public C91305() {
             super(1);
         }
 
         @Override // kotlin.jvm.functions.Function1
         public /* bridge */ /* synthetic */ Unit invoke(String str) {
             invoke2(str);
-            return Unit.a;
+            return Unit.f27425a;
         }
 
         /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
         public final void invoke2(String str) {
-            TextInputLayout textInputLayout = WidgetSearch.this.getBinding().c;
-            Intrinsics3.checkNotNullExpressionValue(textInputLayout, "binding.widgetSearchInput");
+            TextInputLayout textInputLayout = WidgetSearch.this.getBinding().f17421c;
+            C12238m.checkNotNullExpressionValue(textInputLayout, "binding.widgetSearchInput");
             ViewExtensions.setText(textInputLayout, str);
-            TextInputLayout textInputLayout2 = WidgetSearch.this.getBinding().c;
-            Intrinsics3.checkNotNullExpressionValue(textInputLayout2, "binding.widgetSearchInput");
+            TextInputLayout textInputLayout2 = WidgetSearch.this.getBinding().f17421c;
+            C12238m.checkNotNullExpressionValue(textInputLayout2, "binding.widgetSearchInput");
             ViewExtensions.setSelectionEnd(textInputLayout2);
         }
     }
 
-    /* JADX INFO: renamed from: com.discord.widgets.search.WidgetSearch$onViewBoundOrOnResume$1, reason: invalid class name */
+    /* JADX INFO: renamed from: com.discord.widgets.search.WidgetSearch$onViewBoundOrOnResume$1 */
     /* JADX INFO: compiled from: WidgetSearch.kt */
-    public static final class AnonymousClass1 extends Lambda implements Function1<Model, Unit> {
-        public AnonymousClass1() {
+    public static final class C91311 extends AbstractC12240o implements Function1<Model, Unit> {
+        public C91311() {
             super(1);
         }
 
         @Override // kotlin.jvm.functions.Function1
         public /* bridge */ /* synthetic */ Unit invoke(Model model) {
             invoke2(model);
-            return Unit.a;
+            return Unit.f27425a;
         }
 
         /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
@@ -344,37 +344,37 @@ public final class WidgetSearch extends AppFragment {
     }
 
     public WidgetSearch() {
-        super(R.layout.widget_search);
-        this.binding = FragmentViewBindingDelegate3.viewBinding$default(this, WidgetSearch3.INSTANCE, null, 2, null);
+        super(C5419R.layout.widget_search);
+        this.binding = FragmentViewBindingDelegateKt.viewBinding$default(this, WidgetSearch$binding$2.INSTANCE, null, 2, null);
         this.targetType = -1;
     }
 
     private final void configureSearchInput() {
-        TextInputLayout textInputLayout = getBinding().c;
-        Intrinsics3.checkNotNullExpressionValue(textInputLayout, "binding.widgetSearchInput");
-        ViewExtensions.setOnEditorActionListener(textInputLayout, new AnonymousClass1());
-        TextInputLayout textInputLayout2 = getBinding().c;
-        Intrinsics3.checkNotNullExpressionValue(textInputLayout2, "binding.widgetSearchInput");
-        ViewExtensions.addBindedTextWatcher(textInputLayout2, this, AnonymousClass2.INSTANCE);
-        Observable observableG = ObservableExtensionsKt.ui$default(StoreStream.INSTANCE.getSearch().getStoreSearchInput().getForcedInput(), this, null, 2, null).G(new Func1<List<? extends QueryNode>, DraweeSpanStringBuilder>() { // from class: com.discord.widgets.search.WidgetSearch.configureSearchInput.3
-            @Override // j0.k.Func1
+        TextInputLayout textInputLayout = getBinding().f17421c;
+        C12238m.checkNotNullExpressionValue(textInputLayout, "binding.widgetSearchInput");
+        ViewExtensions.setOnEditorActionListener(textInputLayout, new C91261());
+        TextInputLayout textInputLayout2 = getBinding().f17421c;
+        C12238m.checkNotNullExpressionValue(textInputLayout2, "binding.widgetSearchInput");
+        ViewExtensions.addBindedTextWatcher(textInputLayout2, this, C91272.INSTANCE);
+        Observable observableM11083G = ObservableExtensionsKt.ui$default(StoreStream.INSTANCE.getSearch().getStoreSearchInput().getForcedInput(), this, null, 2, null).m11083G(new InterfaceC12589b<List<? extends QueryNode>, DraweeSpanStringBuilder>() { // from class: com.discord.widgets.search.WidgetSearch.configureSearchInput.3
+            @Override // p637j0.p641k.InterfaceC12589b
             public final DraweeSpanStringBuilder call(List<? extends QueryNode> list) {
-                Intrinsics3.checkNotNullExpressionValue(list, "queryNodes");
+                C12238m.checkNotNullExpressionValue(list, "queryNodes");
                 return AstRenderer.render(list, WidgetSearch.this.requireContext());
             }
-        }).G(new Func1<DraweeSpanStringBuilder, String>() { // from class: com.discord.widgets.search.WidgetSearch.configureSearchInput.4
-            @Override // j0.k.Func1
+        }).m11083G(new InterfaceC12589b<DraweeSpanStringBuilder, String>() { // from class: com.discord.widgets.search.WidgetSearch.configureSearchInput.4
+            @Override // p637j0.p641k.InterfaceC12589b
             public final String call(DraweeSpanStringBuilder draweeSpanStringBuilder) {
-                Intrinsics3.checkNotNullParameter(draweeSpanStringBuilder, IconCompat.EXTRA_OBJ);
+                C12238m.checkNotNullParameter(draweeSpanStringBuilder, IconCompat.EXTRA_OBJ);
                 return draweeSpanStringBuilder.toString();
             }
         });
-        Intrinsics3.checkNotNullExpressionValue(observableG, "StoreStream\n        .get… obj.toString()\n        }");
-        ObservableExtensionsKt.appSubscribe(observableG, (Class<?>) WidgetSearch.class, (58 & 2) != 0 ? null : null, (Function1<? super Subscription, Unit>) ((58 & 4) != 0 ? null : null), (Function1<? super Error, Unit>) ((58 & 8) != 0 ? null : null), (Function0<Unit>) ((58 & 16) != 0 ? ObservableExtensionsKt.AnonymousClass1.INSTANCE : null), (Function0<Unit>) ((58 & 32) != 0 ? ObservableExtensionsKt.AnonymousClass2.INSTANCE : null), new AnonymousClass5());
+        C12238m.checkNotNullExpressionValue(observableM11083G, "StoreStream\n        .get… obj.toString()\n        }");
+        ObservableExtensionsKt.appSubscribe(observableM11083G, (Class<?>) WidgetSearch.class, (58 & 2) != 0 ? null : null, (Function1<? super Subscription, Unit>) ((58 & 4) != 0 ? null : null), (Function1<? super Error, Unit>) ((58 & 8) != 0 ? null : null), (Function0<Unit>) ((58 & 16) != 0 ? ObservableExtensionsKt.C68791.INSTANCE : null), (Function0<Unit>) ((58 & 32) != 0 ? ObservableExtensionsKt.C68802.INSTANCE : null), new C91305());
     }
 
     private final void configureUI(Model model) {
-        CharSequence charSequenceE;
+        CharSequence charSequenceM213e;
         if (model == null) {
             AppActivity appActivity = getAppActivity();
             if (appActivity != null) {
@@ -385,25 +385,25 @@ public final class WidgetSearch extends AppFragment {
         }
         int i = this.targetType;
         if (i == 0) {
-            TextInputLayout textInputLayout = getBinding().c;
-            Intrinsics3.checkNotNullExpressionValue(textInputLayout, "binding.widgetSearchInput");
+            TextInputLayout textInputLayout = getBinding().f17421c;
+            C12238m.checkNotNullExpressionValue(textInputLayout, "binding.widgetSearchInput");
             Object[] objArr = new Object[1];
             Guild guild = model.getGuild();
             objArr[0] = guild != null ? guild.getName() : null;
-            ViewExtensions.setSingleLineHint(textInputLayout, FormatUtils.e(this, R.string.search_in, objArr, (4 & 4) != 0 ? FormatUtils.a.j : null));
+            ViewExtensions.setSingleLineHint(textInputLayout, C1107b.m213e(this, C5419R.string.search_in, objArr, (4 & 4) != 0 ? C1107b.a.f1490j : null));
         } else if (i == 1) {
             Channel channel = model.getChannel();
-            String strD = channel != null ? ChannelUtils.d(channel, requireContext(), false) : null;
-            TextInputLayout textInputLayout2 = getBinding().c;
-            Intrinsics3.checkNotNullExpressionValue(textInputLayout2, "binding.widgetSearchInput");
+            String strM7680d = channel != null ? ChannelUtils.m7680d(channel, requireContext(), false) : null;
+            TextInputLayout textInputLayout2 = getBinding().f17421c;
+            C12238m.checkNotNullExpressionValue(textInputLayout2, "binding.widgetSearchInput");
             Channel channel2 = model.getChannel();
             Integer numValueOf = channel2 != null ? Integer.valueOf(channel2.getType()) : null;
             if (numValueOf != null && numValueOf.intValue() == 1) {
-                charSequenceE = FormatUtils.e(this, R.string.search_dm_with, new Object[]{strD}, (4 & 4) != 0 ? FormatUtils.a.j : null);
+                charSequenceM213e = C1107b.m213e(this, C5419R.string.search_dm_with, new Object[]{strM7680d}, (4 & 4) != 0 ? C1107b.a.f1490j : null);
             } else {
-                charSequenceE = (numValueOf != null && numValueOf.intValue() == 3) ? FormatUtils.e(this, R.string.search_in, new Object[]{strD}, (4 & 4) != 0 ? FormatUtils.a.j : null) : FormatUtils.e(this, R.string.search, new Object[0], (4 & 4) != 0 ? FormatUtils.a.j : null);
+                charSequenceM213e = (numValueOf != null && numValueOf.intValue() == 3) ? C1107b.m213e(this, C5419R.string.search_in, new Object[]{strM7680d}, (4 & 4) != 0 ? C1107b.a.f1490j : null) : C1107b.m213e(this, C5419R.string.search, new Object[0], (4 & 4) != 0 ? C1107b.a.f1490j : null);
             }
-            ViewExtensions.setSingleLineHint(textInputLayout2, charSequenceE);
+            ViewExtensions.setSingleLineHint(textInputLayout2, charSequenceM213e);
         }
         StoreSearch.DisplayState displayState = model.getDisplayState();
         if (displayState == null) {
@@ -411,28 +411,28 @@ public final class WidgetSearch extends AppFragment {
         }
         int iOrdinal = displayState.ordinal();
         if (iOrdinal == 0) {
-            FragmentContainerView fragmentContainerView = getBinding().e;
-            Intrinsics3.checkNotNullExpressionValue(fragmentContainerView, "binding.widgetSearchSuggestions");
+            FragmentContainerView fragmentContainerView = getBinding().f17423e;
+            C12238m.checkNotNullExpressionValue(fragmentContainerView, "binding.widgetSearchSuggestions");
             fragmentContainerView.setVisibility(0);
-            FragmentContainerView fragmentContainerView2 = getBinding().d;
-            Intrinsics3.checkNotNullExpressionValue(fragmentContainerView2, "binding.widgetSearchResults");
+            FragmentContainerView fragmentContainerView2 = getBinding().f17422d;
+            C12238m.checkNotNullExpressionValue(fragmentContainerView2, "binding.widgetSearchResults");
             fragmentContainerView2.setVisibility(4);
-            FloatingActionButton floatingActionButton = getBinding().f2522b;
-            Intrinsics3.checkNotNullExpressionValue(floatingActionButton, "binding.searchSendQueryFab");
+            FloatingActionButton floatingActionButton = getBinding().f17420b;
+            C12238m.checkNotNullExpressionValue(floatingActionButton, "binding.searchSendQueryFab");
             floatingActionButton.setVisibility(model.isQueryValid() ? 0 : 8);
             return;
         }
         if (iOrdinal != 1) {
             return;
         }
-        FragmentContainerView fragmentContainerView3 = getBinding().e;
-        Intrinsics3.checkNotNullExpressionValue(fragmentContainerView3, "binding.widgetSearchSuggestions");
+        FragmentContainerView fragmentContainerView3 = getBinding().f17423e;
+        C12238m.checkNotNullExpressionValue(fragmentContainerView3, "binding.widgetSearchSuggestions");
         fragmentContainerView3.setVisibility(4);
-        FragmentContainerView fragmentContainerView4 = getBinding().d;
-        Intrinsics3.checkNotNullExpressionValue(fragmentContainerView4, "binding.widgetSearchResults");
+        FragmentContainerView fragmentContainerView4 = getBinding().f17422d;
+        C12238m.checkNotNullExpressionValue(fragmentContainerView4, "binding.widgetSearchResults");
         fragmentContainerView4.setVisibility(0);
-        FloatingActionButton floatingActionButton2 = getBinding().f2522b;
-        Intrinsics3.checkNotNullExpressionValue(floatingActionButton2, "binding.searchSendQueryFab");
+        FloatingActionButton floatingActionButton2 = getBinding().f17420b;
+        C12238m.checkNotNullExpressionValue(floatingActionButton2, "binding.searchSendQueryFab");
         floatingActionButton2.setVisibility(8);
     }
 
@@ -443,8 +443,8 @@ public final class WidgetSearch extends AppFragment {
     private final void sendQuery(Context context) {
         AppFragment.hideKeyboard$default(this, null, 1, null);
         StoreSearch search = StoreStream.INSTANCE.getSearch();
-        TextInputLayout textInputLayout = getBinding().c;
-        Intrinsics3.checkNotNullExpressionValue(textInputLayout, "binding.widgetSearchInput");
+        TextInputLayout textInputLayout = getBinding().f17421c;
+        C12238m.checkNotNullExpressionValue(textInputLayout, "binding.widgetSearchInput");
         search.loadInitial(ViewExtensions.getTextOrEmpty(textInputLayout), new ContextSearchStringProvider(context));
     }
 
@@ -464,14 +464,14 @@ public final class WidgetSearch extends AppFragment {
 
     @Override // com.discord.app.AppFragment
     public void onViewBound(View view) {
-        Intrinsics3.checkNotNullParameter(view, "view");
+        C12238m.checkNotNullParameter(view, "view");
         super.onViewBound(view);
         setRetainInstance(true);
         this.targetId = getMostRecentIntent().getLongExtra(INTENT_EXTRA_TARGET_ID, 0L);
         this.targetType = getMostRecentIntent().getIntExtra(INTENT_EXTRA_TARGET_TYPE, -1);
         if (!getIsRecreated()) {
-            TextInputLayout textInputLayout = getBinding().c;
-            Intrinsics3.checkNotNullExpressionValue(textInputLayout, "binding.widgetSearchInput");
+            TextInputLayout textInputLayout = getBinding().f17421c;
+            C12238m.checkNotNullExpressionValue(textInputLayout, "binding.widgetSearchInput");
             showKeyboard(textInputLayout);
         }
         int i = this.targetType;
@@ -488,19 +488,19 @@ public final class WidgetSearch extends AppFragment {
     @Override // com.discord.app.AppFragment
     public void onViewBoundOrOnResume() {
         super.onViewBoundOrOnResume();
-        ObservableExtensionsKt.appSubscribe(ObservableExtensionsKt.ui$default(Model.INSTANCE.get(this.targetType, this.targetId), this, null, 2, null), (Class<?>) WidgetSearch.class, (58 & 2) != 0 ? null : null, (Function1<? super Subscription, Unit>) ((58 & 4) != 0 ? null : null), (Function1<? super Error, Unit>) ((58 & 8) != 0 ? null : null), (Function0<Unit>) ((58 & 16) != 0 ? ObservableExtensionsKt.AnonymousClass1.INSTANCE : null), (Function0<Unit>) ((58 & 32) != 0 ? ObservableExtensionsKt.AnonymousClass2.INSTANCE : null), new AnonymousClass1());
+        ObservableExtensionsKt.appSubscribe(ObservableExtensionsKt.ui$default(Model.INSTANCE.get(this.targetType, this.targetId), this, null, 2, null), (Class<?>) WidgetSearch.class, (58 & 2) != 0 ? null : null, (Function1<? super Subscription, Unit>) ((58 & 4) != 0 ? null : null), (Function1<? super Error, Unit>) ((58 & 8) != 0 ? null : null), (Function0<Unit>) ((58 & 16) != 0 ? ObservableExtensionsKt.C68791.INSTANCE : null), (Function0<Unit>) ((58 & 32) != 0 ? ObservableExtensionsKt.C68802.INSTANCE : null), new C91311());
         configureSearchInput();
-        getBinding().f2522b.setOnClickListener(new View.OnClickListener() { // from class: com.discord.widgets.search.WidgetSearch.onViewBoundOrOnResume.2
+        getBinding().f17420b.setOnClickListener(new View.OnClickListener() { // from class: com.discord.widgets.search.WidgetSearch.onViewBoundOrOnResume.2
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
                 WidgetSearch widgetSearch = WidgetSearch.this;
-                Intrinsics3.checkNotNullExpressionValue(view, "v");
+                C12238m.checkNotNullExpressionValue(view, "v");
                 Context context = view.getContext();
-                Intrinsics3.checkNotNullExpressionValue(context, "v.context");
+                C12238m.checkNotNullExpressionValue(context, "v.context");
                 widgetSearch.sendQuery(context);
             }
         });
-        getBinding().c.setStartIconOnClickListener(new View.OnClickListener() { // from class: com.discord.widgets.search.WidgetSearch.onViewBoundOrOnResume.3
+        getBinding().f17421c.setStartIconOnClickListener(new View.OnClickListener() { // from class: com.discord.widgets.search.WidgetSearch.onViewBoundOrOnResume.3
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
                 WidgetSearch.this.hideKeyboard(view);

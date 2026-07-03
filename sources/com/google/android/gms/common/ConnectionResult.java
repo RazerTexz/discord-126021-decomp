@@ -6,47 +6,55 @@ import android.os.Parcelable;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.annotation.RecentlyNonNull;
-import b.c.a.a0.AnimatableValueParser;
-import b.i.a.f.e.k.j;
-import b.i.a.f.e.q;
 import com.google.android.gms.common.internal.safeparcel.AbstractSafeParcelable;
 import java.util.Arrays;
+import p007b.p085c.p086a.p087a0.C1460d;
+import p007b.p225i.p226a.p288f.p299e.C3412q;
+import p007b.p225i.p226a.p288f.p299e.p304k.C3361j;
 
 /* JADX INFO: compiled from: com.google.android.gms:play-services-basement@@17.6.0 */
 /* JADX INFO: loaded from: classes3.dex */
 public final class ConnectionResult extends AbstractSafeParcelable {
     public static final int SUCCESS = 0;
-    public final int k;
-    public final int l;
 
-    @Nullable
-    public final PendingIntent m;
+    /* JADX INFO: renamed from: k */
+    public final int f20473k;
 
+    /* JADX INFO: renamed from: l */
+    public final int f20474l;
+
+    /* JADX INFO: renamed from: m */
     @Nullable
-    public final String n;
+    public final PendingIntent f20475m;
+
+    /* JADX INFO: renamed from: n */
+    @Nullable
+    public final String f20476n;
+
+    /* JADX INFO: renamed from: j */
+    @RecentlyNonNull
+    public static final ConnectionResult f20472j = new ConnectionResult(0);
 
     @RecentlyNonNull
-    public static final ConnectionResult j = new ConnectionResult(0);
-
-    @RecentlyNonNull
-    public static final Parcelable.Creator<ConnectionResult> CREATOR = new q();
+    public static final Parcelable.Creator<ConnectionResult> CREATOR = new C3412q();
 
     public ConnectionResult(int i) {
-        this.k = 1;
-        this.l = i;
-        this.m = null;
-        this.n = null;
+        this.f20473k = 1;
+        this.f20474l = i;
+        this.f20475m = null;
+        this.f20476n = null;
     }
 
     public ConnectionResult(int i, int i2, @Nullable PendingIntent pendingIntent, @Nullable String str) {
-        this.k = i;
-        this.l = i2;
-        this.m = pendingIntent;
-        this.n = str;
+        this.f20473k = i;
+        this.f20474l = i2;
+        this.f20475m = pendingIntent;
+        this.f20476n = str;
     }
 
     @NonNull
-    public static String y0(int i) {
+    /* JADX INFO: renamed from: y0 */
+    public static String m9018y0(int i) {
         if (i == 99) {
             return "UNFINISHED";
         }
@@ -124,55 +132,57 @@ public final class ConnectionResult extends AbstractSafeParcelable {
             return false;
         }
         ConnectionResult connectionResult = (ConnectionResult) obj;
-        return this.l == connectionResult.l && AnimatableValueParser.h0(this.m, connectionResult.m) && AnimatableValueParser.h0(this.n, connectionResult.n);
+        return this.f20474l == connectionResult.f20474l && C1460d.m524h0(this.f20475m, connectionResult.f20475m) && C1460d.m524h0(this.f20476n, connectionResult.f20476n);
     }
 
     public int hashCode() {
-        return Arrays.hashCode(new Object[]{Integer.valueOf(this.l), this.m, this.n});
+        return Arrays.hashCode(new Object[]{Integer.valueOf(this.f20474l), this.f20475m, this.f20476n});
     }
 
     @RecentlyNonNull
     public String toString() {
-        j jVar = new j(this);
-        jVar.a("statusCode", y0(this.l));
-        jVar.a("resolution", this.m);
-        jVar.a("message", this.n);
-        return jVar.toString();
+        C3361j c3361j = new C3361j(this);
+        c3361j.m4162a("statusCode", m9018y0(this.f20474l));
+        c3361j.m4162a("resolution", this.f20475m);
+        c3361j.m4162a("message", this.f20476n);
+        return c3361j.toString();
     }
 
-    public boolean w0() {
-        return (this.l == 0 || this.m == null) ? false : true;
+    /* JADX INFO: renamed from: w0 */
+    public boolean m9019w0() {
+        return (this.f20474l == 0 || this.f20475m == null) ? false : true;
     }
 
     @Override // android.os.Parcelable
     public void writeToParcel(@RecentlyNonNull Parcel parcel, int i) {
-        int iY2 = AnimatableValueParser.y2(parcel, 20293);
-        int i2 = this.k;
+        int iM594y2 = C1460d.m594y2(parcel, 20293);
+        int i2 = this.f20473k;
         parcel.writeInt(262145);
         parcel.writeInt(i2);
-        int i3 = this.l;
+        int i3 = this.f20474l;
         parcel.writeInt(262146);
         parcel.writeInt(i3);
-        AnimatableValueParser.s2(parcel, 3, this.m, i, false);
-        AnimatableValueParser.t2(parcel, 4, this.n, false);
-        AnimatableValueParser.A2(parcel, iY2);
+        C1460d.m570s2(parcel, 3, this.f20475m, i, false);
+        C1460d.m574t2(parcel, 4, this.f20476n, false);
+        C1460d.m418A2(parcel, iM594y2);
     }
 
-    public boolean x0() {
-        return this.l == 0;
+    /* JADX INFO: renamed from: x0 */
+    public boolean m9020x0() {
+        return this.f20474l == 0;
     }
 
     public ConnectionResult(int i, @Nullable PendingIntent pendingIntent) {
-        this.k = 1;
-        this.l = i;
-        this.m = pendingIntent;
-        this.n = null;
+        this.f20473k = 1;
+        this.f20474l = i;
+        this.f20475m = pendingIntent;
+        this.f20476n = null;
     }
 
     public ConnectionResult(int i, @Nullable PendingIntent pendingIntent, @Nullable String str) {
-        this.k = 1;
-        this.l = i;
-        this.m = null;
-        this.n = str;
+        this.f20473k = 1;
+        this.f20474l = i;
+        this.f20475m = null;
+        this.f20476n = str;
     }
 }

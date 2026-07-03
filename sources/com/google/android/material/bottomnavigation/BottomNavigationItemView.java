@@ -27,6 +27,7 @@ import androidx.core.view.PointerIconCompat;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.accessibility.AccessibilityNodeInfoCompat;
 import androidx.core.widget.TextViewCompat;
+import com.google.android.material.C10817R;
 import com.google.android.material.badge.BadgeDrawable;
 import com.google.android.material.badge.BadgeUtils;
 
@@ -62,8 +63,9 @@ public class BottomNavigationItemView extends FrameLayout implements MenuView.It
     @Nullable
     private Drawable wrappedIconDrawable;
 
-    public class a implements View.OnLayoutChangeListener {
-        public a() {
+    /* JADX INFO: renamed from: com.google.android.material.bottomnavigation.BottomNavigationItemView$a */
+    public class ViewOnLayoutChangeListenerC10846a implements View.OnLayoutChangeListener {
+        public ViewOnLayoutChangeListenerC10846a() {
         }
 
         @Override // android.view.View.OnLayoutChangeListener
@@ -210,7 +212,7 @@ public class BottomNavigationItemView extends FrameLayout implements MenuView.It
             accessibilityNodeInfoCompatWrap.setClickable(false);
             accessibilityNodeInfoCompatWrap.removeAction(AccessibilityNodeInfoCompat.AccessibilityActionCompat.ACTION_CLICK);
         }
-        accessibilityNodeInfoCompatWrap.setRoleDescription(getResources().getString(com.google.android.material.R.string.item_view_role_description));
+        accessibilityNodeInfoCompatWrap.setRoleDescription(getResources().getString(C10817R.string.item_view_role_description));
     }
 
     @Override // androidx.appcompat.view.menu.MenuView.ItemView
@@ -251,7 +253,7 @@ public class BottomNavigationItemView extends FrameLayout implements MenuView.It
                 if (z2) {
                     setViewLayoutParams(this.icon, this.defaultMargin, 49);
                     ViewGroup viewGroup = this.labelGroup;
-                    updateViewPaddingBottom(viewGroup, ((Integer) viewGroup.getTag(com.google.android.material.R.id.mtrl_view_tag_bottom_padding)).intValue());
+                    updateViewPaddingBottom(viewGroup, ((Integer) viewGroup.getTag(C10817R.id.mtrl_view_tag_bottom_padding)).intValue());
                     this.largeLabel.setVisibility(0);
                 } else {
                     setViewLayoutParams(this.icon, this.defaultMargin, 17);
@@ -261,7 +263,7 @@ public class BottomNavigationItemView extends FrameLayout implements MenuView.It
                 this.smallLabel.setVisibility(4);
             } else if (i == 1) {
                 ViewGroup viewGroup2 = this.labelGroup;
-                updateViewPaddingBottom(viewGroup2, ((Integer) viewGroup2.getTag(com.google.android.material.R.id.mtrl_view_tag_bottom_padding)).intValue());
+                updateViewPaddingBottom(viewGroup2, ((Integer) viewGroup2.getTag(C10817R.id.mtrl_view_tag_bottom_padding)).intValue());
                 if (z2) {
                     setViewLayoutParams(this.icon, (int) (this.defaultMargin + this.shiftAmount), 49);
                     setViewScaleValues(this.largeLabel, 1.0f, 1.0f, 0);
@@ -284,7 +286,7 @@ public class BottomNavigationItemView extends FrameLayout implements MenuView.It
             if (z2) {
                 setViewLayoutParams(this.icon, this.defaultMargin, 49);
                 ViewGroup viewGroup3 = this.labelGroup;
-                updateViewPaddingBottom(viewGroup3, ((Integer) viewGroup3.getTag(com.google.android.material.R.id.mtrl_view_tag_bottom_padding)).intValue());
+                updateViewPaddingBottom(viewGroup3, ((Integer) viewGroup3.getTag(C10817R.id.mtrl_view_tag_bottom_padding)).intValue());
                 this.largeLabel.setVisibility(0);
             } else {
                 setViewLayoutParams(this.icon, this.defaultMargin, 17);
@@ -294,7 +296,7 @@ public class BottomNavigationItemView extends FrameLayout implements MenuView.It
             this.smallLabel.setVisibility(4);
         } else {
             ViewGroup viewGroup4 = this.labelGroup;
-            updateViewPaddingBottom(viewGroup4, ((Integer) viewGroup4.getTag(com.google.android.material.R.id.mtrl_view_tag_bottom_padding)).intValue());
+            updateViewPaddingBottom(viewGroup4, ((Integer) viewGroup4.getTag(C10817R.id.mtrl_view_tag_bottom_padding)).intValue());
             if (z2) {
                 setViewLayoutParams(this.icon, (int) (this.defaultMargin + this.shiftAmount), 49);
                 setViewScaleValues(this.largeLabel, 1.0f, 1.0f, 0);
@@ -441,24 +443,24 @@ public class BottomNavigationItemView extends FrameLayout implements MenuView.It
         super(context, attributeSet, i);
         this.itemPosition = -1;
         Resources resources = getResources();
-        LayoutInflater.from(context).inflate(com.google.android.material.R.layout.design_bottom_navigation_item, (ViewGroup) this, true);
-        setBackgroundResource(com.google.android.material.R.drawable.design_bottom_navigation_item_background);
-        this.defaultMargin = resources.getDimensionPixelSize(com.google.android.material.R.dimen.design_bottom_navigation_margin);
-        this.icon = (ImageView) findViewById(com.google.android.material.R.id.icon);
-        ViewGroup viewGroup = (ViewGroup) findViewById(com.google.android.material.R.id.labelGroup);
+        LayoutInflater.from(context).inflate(C10817R.layout.design_bottom_navigation_item, (ViewGroup) this, true);
+        setBackgroundResource(C10817R.drawable.design_bottom_navigation_item_background);
+        this.defaultMargin = resources.getDimensionPixelSize(C10817R.dimen.design_bottom_navigation_margin);
+        this.icon = (ImageView) findViewById(C10817R.id.icon);
+        ViewGroup viewGroup = (ViewGroup) findViewById(C10817R.id.labelGroup);
         this.labelGroup = viewGroup;
-        TextView textView = (TextView) findViewById(com.google.android.material.R.id.smallLabel);
+        TextView textView = (TextView) findViewById(C10817R.id.smallLabel);
         this.smallLabel = textView;
-        TextView textView2 = (TextView) findViewById(com.google.android.material.R.id.largeLabel);
+        TextView textView2 = (TextView) findViewById(C10817R.id.largeLabel);
         this.largeLabel = textView2;
-        viewGroup.setTag(com.google.android.material.R.id.mtrl_view_tag_bottom_padding, Integer.valueOf(viewGroup.getPaddingBottom()));
+        viewGroup.setTag(C10817R.id.mtrl_view_tag_bottom_padding, Integer.valueOf(viewGroup.getPaddingBottom()));
         ViewCompat.setImportantForAccessibility(textView, 2);
         ViewCompat.setImportantForAccessibility(textView2, 2);
         setFocusable(true);
         calculateTextScaleFactors(textView.getTextSize(), textView2.getTextSize());
         ImageView imageView = this.icon;
         if (imageView != null) {
-            imageView.addOnLayoutChangeListener(new a());
+            imageView.addOnLayoutChangeListener(new ViewOnLayoutChangeListenerC10846a());
         }
     }
 

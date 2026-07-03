@@ -1,15 +1,15 @@
 package com.discord.analytics.generated.events;
 
-import b.d.b.a.outline;
 import com.discord.analytics.generated.traits.TrackBase;
-import com.discord.analytics.generated.traits.TrackBase2;
+import com.discord.analytics.generated.traits.TrackBaseReceiver;
 import com.discord.api.science.AnalyticsSchema;
-import d0.z.d.Intrinsics3;
 import java.util.List;
+import p007b.p100d.p104b.p105a.C1643a;
+import p507d0.p592z.p594d.C12238m;
 
 /* JADX INFO: compiled from: TrackDataInfraTest.kt */
 /* JADX INFO: loaded from: classes.dex */
-public final /* data */ class TrackDataInfraTest implements AnalyticsSchema, TrackBase2 {
+public final /* data */ class TrackDataInfraTest implements AnalyticsSchema, TrackBaseReceiver {
     private final transient String analyticsSchemaTypeName;
     private final CharSequence optionalStr;
     private final CharSequence pushToken;
@@ -31,7 +31,7 @@ public final /* data */ class TrackDataInfraTest implements AnalyticsSchema, Tra
             return false;
         }
         TrackDataInfraTest trackDataInfraTest = (TrackDataInfraTest) other;
-        return Intrinsics3.areEqual(this.pushToken, trackDataInfraTest.pushToken) && Intrinsics3.areEqual(this.pushTokenArr, trackDataInfraTest.pushTokenArr) && Intrinsics3.areEqual(this.requiredStr, trackDataInfraTest.requiredStr) && Intrinsics3.areEqual(this.optionalStr, trackDataInfraTest.optionalStr);
+        return C12238m.areEqual(this.pushToken, trackDataInfraTest.pushToken) && C12238m.areEqual(this.pushTokenArr, trackDataInfraTest.pushTokenArr) && C12238m.areEqual(this.requiredStr, trackDataInfraTest.requiredStr) && C12238m.areEqual(this.optionalStr, trackDataInfraTest.optionalStr);
     }
 
     public int hashCode() {
@@ -46,13 +46,13 @@ public final /* data */ class TrackDataInfraTest implements AnalyticsSchema, Tra
     }
 
     public String toString() {
-        StringBuilder sbU = outline.U("TrackDataInfraTest(pushToken=");
-        sbU.append(this.pushToken);
-        sbU.append(", pushTokenArr=");
-        sbU.append(this.pushTokenArr);
-        sbU.append(", requiredStr=");
-        sbU.append(this.requiredStr);
-        sbU.append(", optionalStr=");
-        return outline.E(sbU, this.optionalStr, ")");
+        StringBuilder sbM833U = C1643a.m833U("TrackDataInfraTest(pushToken=");
+        sbM833U.append(this.pushToken);
+        sbM833U.append(", pushTokenArr=");
+        sbM833U.append(this.pushTokenArr);
+        sbM833U.append(", requiredStr=");
+        sbM833U.append(this.requiredStr);
+        sbM833U.append(", optionalStr=");
+        return C1643a.m817E(sbM833U, this.optionalStr, ")");
     }
 }

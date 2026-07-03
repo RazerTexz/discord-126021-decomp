@@ -13,7 +13,7 @@ import androidx.annotation.RequiresApi;
 import androidx.appcompat.widget.Toolbar;
 import androidx.core.graphics.drawable.DrawableCompat;
 import androidx.core.view.ViewCompat;
-import com.google.android.material.R;
+import com.google.android.material.C10817R;
 import com.google.android.material.internal.ThemeEnforcement;
 import com.google.android.material.shape.MaterialShapeDrawable;
 import com.google.android.material.shape.MaterialShapeUtils;
@@ -21,7 +21,7 @@ import com.google.android.material.theme.overlay.MaterialThemeOverlay;
 
 /* JADX INFO: loaded from: classes3.dex */
 public class MaterialToolbar extends Toolbar {
-    private static final int DEF_STYLE_RES = R.style.Widget_MaterialComponents_Toolbar;
+    private static final int DEF_STYLE_RES = C10817R.style.Widget_MaterialComponents_Toolbar;
 
     @Nullable
     private Integer navigationIconTint;
@@ -78,7 +78,7 @@ public class MaterialToolbar extends Toolbar {
     }
 
     public MaterialToolbar(@NonNull Context context, @Nullable AttributeSet attributeSet) {
-        this(context, attributeSet, R.attr.toolbarStyle);
+        this(context, attributeSet, C10817R.attr.toolbarStyle);
     }
 
     /* JADX WARN: Illegal instructions before constructor call */
@@ -86,8 +86,8 @@ public class MaterialToolbar extends Toolbar {
         int i2 = DEF_STYLE_RES;
         super(MaterialThemeOverlay.wrap(context, attributeSet, i, i2), attributeSet, i);
         Context context2 = getContext();
-        TypedArray typedArrayObtainStyledAttributes = ThemeEnforcement.obtainStyledAttributes(context2, attributeSet, R.styleable.MaterialToolbar, i, i2, new int[0]);
-        int i3 = R.styleable.MaterialToolbar_navigationIconTint;
+        TypedArray typedArrayObtainStyledAttributes = ThemeEnforcement.obtainStyledAttributes(context2, attributeSet, C10817R.styleable.MaterialToolbar, i, i2, new int[0]);
+        int i3 = C10817R.styleable.MaterialToolbar_navigationIconTint;
         if (typedArrayObtainStyledAttributes.hasValue(i3)) {
             setNavigationIconTint(typedArrayObtainStyledAttributes.getColor(i3, -1));
         }

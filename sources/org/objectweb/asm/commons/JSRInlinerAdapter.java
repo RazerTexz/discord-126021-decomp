@@ -40,7 +40,7 @@ public class JSRInlinerAdapter extends MethodNode implements Opcodes {
         this.mainSubroutineInsns = new BitSet();
         this.subroutinesInsns = new HashMap();
         this.sharedSubroutineInsns = new BitSet();
-        this.mv = methodVisitor;
+        this.f27600mv = methodVisitor;
     }
 
     @Override // org.objectweb.asm.tree.MethodNode, org.objectweb.asm.MethodVisitor
@@ -58,8 +58,8 @@ public class JSRInlinerAdapter extends MethodNode implements Opcodes {
             findSubroutinesInsns();
             emitCode();
         }
-        if (this.mv != null) {
-            accept(this.mv);
+        if (this.f27600mv != null) {
+            accept(this.f27600mv);
         }
     }
 

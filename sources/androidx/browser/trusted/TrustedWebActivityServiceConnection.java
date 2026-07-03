@@ -10,9 +10,9 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.annotation.RequiresApi;
 import androidx.annotation.RestrictTo;
-import b.d.b.a.outline;
-import x.a.a.d.ITrustedWebActivityCallback;
-import x.a.a.d.ITrustedWebActivityService;
+import p007b.p100d.p104b.p105a.C1643a;
+import p668x.p669a.p670a.p671d.InterfaceC13179a;
+import p668x.p669a.p670a.p671d.InterfaceC13180b;
 
 /* JADX INFO: loaded from: classes.dex */
 public final class TrustedWebActivityServiceConnection {
@@ -23,7 +23,7 @@ public final class TrustedWebActivityServiceConnection {
     private static final String KEY_PLATFORM_ID = "android.support.customtabs.trusted.PLATFORM_ID";
     private static final String KEY_PLATFORM_TAG = "android.support.customtabs.trusted.PLATFORM_TAG";
     private final ComponentName mComponentName;
-    private final ITrustedWebActivityService mService;
+    private final InterfaceC13180b mService;
 
     public static class ActiveNotificationsArgs {
         public final Parcelable[] notifications;
@@ -136,24 +136,24 @@ public final class TrustedWebActivityServiceConnection {
         }
     }
 
-    public TrustedWebActivityServiceConnection(@NonNull ITrustedWebActivityService iTrustedWebActivityService, @NonNull ComponentName componentName) {
-        this.mService = iTrustedWebActivityService;
+    public TrustedWebActivityServiceConnection(@NonNull InterfaceC13180b interfaceC13180b, @NonNull ComponentName componentName) {
+        this.mService = interfaceC13180b;
         this.mComponentName = componentName;
     }
 
     public static void ensureBundleContains(Bundle bundle, String str) {
         if (!bundle.containsKey(str)) {
-            throw new IllegalArgumentException(outline.w("Bundle must contain ", str));
+            throw new IllegalArgumentException(C1643a.m883w("Bundle must contain ", str));
         }
     }
 
     @Nullable
-    private static ITrustedWebActivityCallback wrapCallback(@Nullable final TrustedWebActivityCallback trustedWebActivityCallback) {
+    private static InterfaceC13179a wrapCallback(@Nullable final TrustedWebActivityCallback trustedWebActivityCallback) {
         if (trustedWebActivityCallback == null) {
             return null;
         }
-        return new ITrustedWebActivityCallback.a() { // from class: androidx.browser.trusted.TrustedWebActivityServiceConnection.1
-            @Override // x.a.a.d.ITrustedWebActivityCallback
+        return new InterfaceC13179a.a() { // from class: androidx.browser.trusted.TrustedWebActivityServiceConnection.1
+            @Override // p668x.p669a.p670a.p671d.InterfaceC13179a
             public void onExtraCallback(String str, Bundle bundle) throws RemoteException {
                 trustedWebActivityCallback.onExtraCallback(str, bundle);
             }
@@ -195,7 +195,7 @@ public final class TrustedWebActivityServiceConnection {
 
     @Nullable
     public Bundle sendExtraCommand(@NonNull String str, @NonNull Bundle bundle, @Nullable TrustedWebActivityCallback trustedWebActivityCallback) throws RemoteException {
-        ITrustedWebActivityCallback iTrustedWebActivityCallbackWrapCallback = wrapCallback(trustedWebActivityCallback);
-        return this.mService.extraCommand(str, bundle, iTrustedWebActivityCallbackWrapCallback == null ? null : iTrustedWebActivityCallbackWrapCallback.asBinder());
+        InterfaceC13179a interfaceC13179aWrapCallback = wrapCallback(trustedWebActivityCallback);
+        return this.mService.extraCommand(str, bundle, interfaceC13179aWrapCallback == null ? null : interfaceC13179aWrapCallback.asBinder());
     }
 }

@@ -25,7 +25,9 @@ import lombok.javac.handlers.JavacHandlerUtil;
 /* JADX INFO: loaded from: app.apk:lombok/javac/handlers/HandleSetter.SCL.lombok */
 public class HandleSetter extends JavacAnnotationHandler<Setter> {
     private static /* synthetic */ int[] $SWITCH_TABLE$lombok$core$AST$Kind;
-    private static /* synthetic */ int[] $SWITCH_TABLE$lombok$javac$handlers$JavacHandlerUtil$MemberExistsResult;
+
+    /* JADX INFO: renamed from: $SWITCH_TABLE$lombok$javac$handlers$JavacHandlerUtil$MemberExistsResult */
+    private static /* synthetic */ int[] f27487x2486df07;
 
     static /* synthetic */ int[] $SWITCH_TABLE$lombok$core$AST$Kind() {
         int[] iArr = $SWITCH_TABLE$lombok$core$AST$Kind;
@@ -77,8 +79,9 @@ public class HandleSetter extends JavacAnnotationHandler<Setter> {
         return iArr2;
     }
 
-    static /* synthetic */ int[] $SWITCH_TABLE$lombok$javac$handlers$JavacHandlerUtil$MemberExistsResult() {
-        int[] iArr = $SWITCH_TABLE$lombok$javac$handlers$JavacHandlerUtil$MemberExistsResult;
+    /* JADX INFO: renamed from: $SWITCH_TABLE$lombok$javac$handlers$JavacHandlerUtil$MemberExistsResult */
+    static /* synthetic */ int[] m10945x2486df07() {
+        int[] iArr = f27487x2486df07;
         if (iArr != null) {
             return iArr;
         }
@@ -95,7 +98,7 @@ public class HandleSetter extends JavacAnnotationHandler<Setter> {
             iArr2[JavacHandlerUtil.MemberExistsResult.NOT_EXISTS.ordinal()] = 1;
         } catch (NoSuchFieldError unused3) {
         }
-        $SWITCH_TABLE$lombok$javac$handlers$JavacHandlerUtil$MemberExistsResult = iArr2;
+        f27487x2486df07 = iArr2;
         return iArr2;
     }
 
@@ -133,7 +136,7 @@ public class HandleSetter extends JavacAnnotationHandler<Setter> {
         Collection<JavacNode> fields = annotationNode.upFromAnnotationToFields();
         JavacHandlerUtil.deleteAnnotationIfNeccessary(annotationNode, (Class<? extends Annotation>) Setter.class);
         JavacHandlerUtil.deleteImportFromCompilationUnit(annotationNode, "lombok.AccessLevel");
-        JavacNode node = annotationNode.up();
+        JavacNode node = annotationNode.m10925up();
         AccessLevel level = annotation.getInstance().value();
         if (level == AccessLevel.NONE || node == null) {
             return;
@@ -173,7 +176,7 @@ public class HandleSetter extends JavacAnnotationHandler<Setter> {
             return;
         }
         for (String altName : JavacHandlerUtil.toAllSetterNames(fieldNode)) {
-            switch ($SWITCH_TABLE$lombok$javac$handlers$JavacHandlerUtil$MemberExistsResult()[JavacHandlerUtil.methodExists(altName, fieldNode, false, 1).ordinal()]) {
+            switch (m10945x2486df07()[JavacHandlerUtil.methodExists(altName, fieldNode, false, 1).ordinal()]) {
                 case 1:
                 default:
                     break;
@@ -192,12 +195,12 @@ public class HandleSetter extends JavacAnnotationHandler<Setter> {
         JCTree.JCMethodDecl createdSetter = createSetter(access, fieldNode, fieldNode.getTreeMaker(), sourceNode, onMethod, onParam);
         Type fieldType = JavacHandlerUtil.getMirrorForFieldType(fieldNode);
         if (JavacHandlerUtil.shouldReturnThis(fieldNode)) {
-            Symbol.ClassSymbol sym = fieldNode.up().get().sym;
+            Symbol.ClassSymbol sym = fieldNode.m10925up().get().sym;
             returnType = sym == null ? null : sym.type;
         } else {
             returnType = Javac.createVoidType(fieldNode.getSymbolTable(), Javac.CTC_VOID);
         }
-        JavacHandlerUtil.injectMethod(fieldNode.up(), createdSetter, fieldType == null ? null : List.of(fieldType), returnType);
+        JavacHandlerUtil.injectMethod(fieldNode.m10925up(), createdSetter, fieldType == null ? null : List.of(fieldType), returnType);
     }
 
     public static JCTree.JCMethodDecl createSetter(long access, JavacNode field, JavacTreeMaker treeMaker, JavacNode source, List<JCTree.JCAnnotation> onMethod, List<JCTree.JCAnnotation> onParam) {

@@ -3,16 +3,19 @@ package com.google.android.exoplayer2.metadata.id3;
 import android.os.Parcel;
 import android.os.Parcelable;
 import androidx.annotation.Nullable;
-import b.d.b.a.outline;
-import b.i.a.c.f3.Util2;
 import java.util.Arrays;
+import p007b.p100d.p104b.p105a.C1643a;
+import p007b.p225i.p226a.p242c.p259f3.C2738e0;
 
 /* JADX INFO: loaded from: classes3.dex */
 public final class BinaryFrame extends Id3Frame {
-    public static final Parcelable.Creator<BinaryFrame> CREATOR = new a();
-    public final byte[] k;
+    public static final Parcelable.Creator<BinaryFrame> CREATOR = new C10727a();
 
-    public class a implements Parcelable.Creator<BinaryFrame> {
+    /* JADX INFO: renamed from: k */
+    public final byte[] f19970k;
+
+    /* JADX INFO: renamed from: com.google.android.exoplayer2.metadata.id3.BinaryFrame$a */
+    public class C10727a implements Parcelable.Creator<BinaryFrame> {
         @Override // android.os.Parcelable.Creator
         public BinaryFrame createFromParcel(Parcel parcel) {
             return new BinaryFrame(parcel);
@@ -26,7 +29,7 @@ public final class BinaryFrame extends Id3Frame {
 
     public BinaryFrame(String str, byte[] bArr) {
         super(str);
-        this.k = bArr;
+        this.f19970k = bArr;
     }
 
     public boolean equals(@Nullable Object obj) {
@@ -37,24 +40,24 @@ public final class BinaryFrame extends Id3Frame {
             return false;
         }
         BinaryFrame binaryFrame = (BinaryFrame) obj;
-        return this.j.equals(binaryFrame.j) && Arrays.equals(this.k, binaryFrame.k);
+        return this.f19989j.equals(binaryFrame.f19989j) && Arrays.equals(this.f19970k, binaryFrame.f19970k);
     }
 
     public int hashCode() {
-        return Arrays.hashCode(this.k) + outline.m(this.j, 527, 31);
+        return Arrays.hashCode(this.f19970k) + C1643a.m863m(this.f19989j, 527, 31);
     }
 
     @Override // android.os.Parcelable
     public void writeToParcel(Parcel parcel, int i) {
-        parcel.writeString(this.j);
-        parcel.writeByteArray(this.k);
+        parcel.writeString(this.f19989j);
+        parcel.writeByteArray(this.f19970k);
     }
 
     /* JADX WARN: Illegal instructions before constructor call */
     public BinaryFrame(Parcel parcel) {
         String string = parcel.readString();
-        int i = Util2.a;
+        int i = C2738e0.f6708a;
         super(string);
-        this.k = parcel.createByteArray();
+        this.f19970k = parcel.createByteArray();
     }
 }

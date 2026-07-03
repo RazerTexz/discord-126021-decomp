@@ -1,9 +1,9 @@
 package com.discord.utilities.time;
 
-import d0.LazyJVM;
-import d0.z.d.Intrinsics3;
 import kotlin.Lazy;
 import kotlin.jvm.internal.DefaultConstructorMarker;
+import p507d0.C12083g;
+import p507d0.p592z.p594d.C12238m;
 
 /* JADX INFO: compiled from: TimeElapsed.kt */
 /* JADX INFO: loaded from: classes2.dex */
@@ -17,10 +17,10 @@ public final class TimeElapsed {
     private final long startTime;
 
     public TimeElapsed(Clock clock, long j) {
-        Intrinsics3.checkNotNullParameter(clock, "clock");
+        C12238m.checkNotNullParameter(clock, "clock");
         this.startTime = j;
-        this.milliseconds = LazyJVM.lazy(new TimeElapsed2(this, clock));
-        this.seconds = LazyJVM.lazy(new TimeElapsed3(this));
+        this.milliseconds = C12083g.lazy(new TimeElapsed$milliseconds$2(this, clock));
+        this.seconds = C12083g.lazy(new TimeElapsed$seconds$2(this));
     }
 
     public final long getMilliseconds() {

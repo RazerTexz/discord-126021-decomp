@@ -1,22 +1,22 @@
 package com.discord.analytics.generated.events;
 
-import b.d.b.a.outline;
 import com.discord.analytics.generated.traits.TrackBase;
-import com.discord.analytics.generated.traits.TrackBase2;
+import com.discord.analytics.generated.traits.TrackBaseReceiver;
 import com.discord.analytics.generated.traits.TrackChannel;
-import com.discord.analytics.generated.traits.TrackChannel2;
+import com.discord.analytics.generated.traits.TrackChannelReceiver;
 import com.discord.analytics.generated.traits.TrackGuild;
-import com.discord.analytics.generated.traits.TrackGuild2;
+import com.discord.analytics.generated.traits.TrackGuildReceiver;
 import com.discord.analytics.generated.traits.TrackLocationMetadata;
-import com.discord.analytics.generated.traits.TrackLocationMetadata2;
+import com.discord.analytics.generated.traits.TrackLocationMetadataReceiver;
 import com.discord.analytics.generated.traits.TrackSourceMetadata;
-import com.discord.analytics.generated.traits.TrackSourceMetadata2;
+import com.discord.analytics.generated.traits.TrackSourceMetadataReceiver;
 import com.discord.api.science.AnalyticsSchema;
-import d0.z.d.Intrinsics3;
+import p007b.p100d.p104b.p105a.C1643a;
+import p507d0.p592z.p594d.C12238m;
 
 /* JADX INFO: compiled from: TrackOpenModal.kt */
 /* JADX INFO: loaded from: classes.dex */
-public final /* data */ class TrackOpenModal implements AnalyticsSchema, TrackBase2, TrackChannel2, TrackGuild2, TrackLocationMetadata2, TrackSourceMetadata2 {
+public final /* data */ class TrackOpenModal implements AnalyticsSchema, TrackBaseReceiver, TrackChannelReceiver, TrackGuildReceiver, TrackLocationMetadataReceiver, TrackSourceMetadataReceiver {
     private final transient String analyticsSchemaTypeName;
     private final Long applicationId;
     private final CharSequence applicationName;
@@ -101,14 +101,15 @@ public final /* data */ class TrackOpenModal implements AnalyticsSchema, TrackBa
         this.analyticsSchemaTypeName = "open_modal";
     }
 
-    @Override // com.discord.analytics.generated.traits.TrackGuild2
+    @Override // com.discord.analytics.generated.traits.TrackGuildReceiver
     /* JADX INFO: renamed from: a, reason: from getter */
     public TrackGuild getTrackGuild() {
         return this.trackGuild;
     }
 
-    @Override // com.discord.analytics.generated.traits.TrackGuild2
-    public void c(TrackGuild trackGuild) {
+    @Override // com.discord.analytics.generated.traits.TrackGuildReceiver
+    /* JADX INFO: renamed from: c */
+    public void mo7508c(TrackGuild trackGuild) {
         this.trackGuild = trackGuild;
     }
 
@@ -126,7 +127,7 @@ public final /* data */ class TrackOpenModal implements AnalyticsSchema, TrackBa
             return false;
         }
         TrackOpenModal trackOpenModal = (TrackOpenModal) other;
-        return Intrinsics3.areEqual(this.source, trackOpenModal.source) && Intrinsics3.areEqual(this.type, trackOpenModal.type) && Intrinsics3.areEqual(this.otherUserId, trackOpenModal.otherUserId) && Intrinsics3.areEqual(this.applicationId, trackOpenModal.applicationId) && Intrinsics3.areEqual(this.applicationName, trackOpenModal.applicationName) && Intrinsics3.areEqual(this.isFriend, trackOpenModal.isFriend) && Intrinsics3.areEqual(this.hasImages, trackOpenModal.hasImages) && Intrinsics3.areEqual(this.partyMax, trackOpenModal.partyMax) && Intrinsics3.areEqual(this.partyId, trackOpenModal.partyId) && Intrinsics3.areEqual(this.partyPlatform, trackOpenModal.partyPlatform) && Intrinsics3.areEqual(this.gameId, trackOpenModal.gameId) && Intrinsics3.areEqual(this.gameName, trackOpenModal.gameName) && Intrinsics3.areEqual(this.gamePlatform, trackOpenModal.gamePlatform) && Intrinsics3.areEqual(this.skuId, trackOpenModal.skuId) && Intrinsics3.areEqual(this.deviceName, trackOpenModal.deviceName) && Intrinsics3.areEqual(this.profileUserStatus, trackOpenModal.profileUserStatus) && Intrinsics3.areEqual(this.loadId, trackOpenModal.loadId) && Intrinsics3.areEqual(this.numGuildPermissions, trackOpenModal.numGuildPermissions) && Intrinsics3.areEqual(this.messageContentLength, trackOpenModal.messageContentLength) && Intrinsics3.areEqual(this.promotionId, trackOpenModal.promotionId) && Intrinsics3.areEqual(this.profileHasNitroCustomization, trackOpenModal.profileHasNitroCustomization) && Intrinsics3.areEqual(this.guildEventsCount, trackOpenModal.guildEventsCount) && Intrinsics3.areEqual(this.isAdminUser, trackOpenModal.isAdminUser);
+        return C12238m.areEqual(this.source, trackOpenModal.source) && C12238m.areEqual(this.type, trackOpenModal.type) && C12238m.areEqual(this.otherUserId, trackOpenModal.otherUserId) && C12238m.areEqual(this.applicationId, trackOpenModal.applicationId) && C12238m.areEqual(this.applicationName, trackOpenModal.applicationName) && C12238m.areEqual(this.isFriend, trackOpenModal.isFriend) && C12238m.areEqual(this.hasImages, trackOpenModal.hasImages) && C12238m.areEqual(this.partyMax, trackOpenModal.partyMax) && C12238m.areEqual(this.partyId, trackOpenModal.partyId) && C12238m.areEqual(this.partyPlatform, trackOpenModal.partyPlatform) && C12238m.areEqual(this.gameId, trackOpenModal.gameId) && C12238m.areEqual(this.gameName, trackOpenModal.gameName) && C12238m.areEqual(this.gamePlatform, trackOpenModal.gamePlatform) && C12238m.areEqual(this.skuId, trackOpenModal.skuId) && C12238m.areEqual(this.deviceName, trackOpenModal.deviceName) && C12238m.areEqual(this.profileUserStatus, trackOpenModal.profileUserStatus) && C12238m.areEqual(this.loadId, trackOpenModal.loadId) && C12238m.areEqual(this.numGuildPermissions, trackOpenModal.numGuildPermissions) && C12238m.areEqual(this.messageContentLength, trackOpenModal.messageContentLength) && C12238m.areEqual(this.promotionId, trackOpenModal.promotionId) && C12238m.areEqual(this.profileHasNitroCustomization, trackOpenModal.profileHasNitroCustomization) && C12238m.areEqual(this.guildEventsCount, trackOpenModal.guildEventsCount) && C12238m.areEqual(this.isAdminUser, trackOpenModal.isAdminUser);
     }
 
     public int hashCode() {
@@ -179,51 +180,51 @@ public final /* data */ class TrackOpenModal implements AnalyticsSchema, TrackBa
     }
 
     public String toString() {
-        StringBuilder sbU = outline.U("TrackOpenModal(source=");
-        sbU.append(this.source);
-        sbU.append(", type=");
-        sbU.append(this.type);
-        sbU.append(", otherUserId=");
-        sbU.append(this.otherUserId);
-        sbU.append(", applicationId=");
-        sbU.append(this.applicationId);
-        sbU.append(", applicationName=");
-        sbU.append(this.applicationName);
-        sbU.append(", isFriend=");
-        sbU.append(this.isFriend);
-        sbU.append(", hasImages=");
-        sbU.append(this.hasImages);
-        sbU.append(", partyMax=");
-        sbU.append(this.partyMax);
-        sbU.append(", partyId=");
-        sbU.append(this.partyId);
-        sbU.append(", partyPlatform=");
-        sbU.append(this.partyPlatform);
-        sbU.append(", gameId=");
-        sbU.append(this.gameId);
-        sbU.append(", gameName=");
-        sbU.append(this.gameName);
-        sbU.append(", gamePlatform=");
-        sbU.append(this.gamePlatform);
-        sbU.append(", skuId=");
-        sbU.append(this.skuId);
-        sbU.append(", deviceName=");
-        sbU.append(this.deviceName);
-        sbU.append(", profileUserStatus=");
-        sbU.append(this.profileUserStatus);
-        sbU.append(", loadId=");
-        sbU.append(this.loadId);
-        sbU.append(", numGuildPermissions=");
-        sbU.append(this.numGuildPermissions);
-        sbU.append(", messageContentLength=");
-        sbU.append(this.messageContentLength);
-        sbU.append(", promotionId=");
-        sbU.append(this.promotionId);
-        sbU.append(", profileHasNitroCustomization=");
-        sbU.append(this.profileHasNitroCustomization);
-        sbU.append(", guildEventsCount=");
-        sbU.append(this.guildEventsCount);
-        sbU.append(", isAdminUser=");
-        return outline.D(sbU, this.isAdminUser, ")");
+        StringBuilder sbM833U = C1643a.m833U("TrackOpenModal(source=");
+        sbM833U.append(this.source);
+        sbM833U.append(", type=");
+        sbM833U.append(this.type);
+        sbM833U.append(", otherUserId=");
+        sbM833U.append(this.otherUserId);
+        sbM833U.append(", applicationId=");
+        sbM833U.append(this.applicationId);
+        sbM833U.append(", applicationName=");
+        sbM833U.append(this.applicationName);
+        sbM833U.append(", isFriend=");
+        sbM833U.append(this.isFriend);
+        sbM833U.append(", hasImages=");
+        sbM833U.append(this.hasImages);
+        sbM833U.append(", partyMax=");
+        sbM833U.append(this.partyMax);
+        sbM833U.append(", partyId=");
+        sbM833U.append(this.partyId);
+        sbM833U.append(", partyPlatform=");
+        sbM833U.append(this.partyPlatform);
+        sbM833U.append(", gameId=");
+        sbM833U.append(this.gameId);
+        sbM833U.append(", gameName=");
+        sbM833U.append(this.gameName);
+        sbM833U.append(", gamePlatform=");
+        sbM833U.append(this.gamePlatform);
+        sbM833U.append(", skuId=");
+        sbM833U.append(this.skuId);
+        sbM833U.append(", deviceName=");
+        sbM833U.append(this.deviceName);
+        sbM833U.append(", profileUserStatus=");
+        sbM833U.append(this.profileUserStatus);
+        sbM833U.append(", loadId=");
+        sbM833U.append(this.loadId);
+        sbM833U.append(", numGuildPermissions=");
+        sbM833U.append(this.numGuildPermissions);
+        sbM833U.append(", messageContentLength=");
+        sbM833U.append(this.messageContentLength);
+        sbM833U.append(", promotionId=");
+        sbM833U.append(this.promotionId);
+        sbM833U.append(", profileHasNitroCustomization=");
+        sbM833U.append(this.profileHasNitroCustomization);
+        sbM833U.append(", guildEventsCount=");
+        sbM833U.append(this.guildEventsCount);
+        sbM833U.append(", isAdminUser=");
+        return C1643a.m816D(sbM833U, this.isAdminUser, ")");
     }
 }

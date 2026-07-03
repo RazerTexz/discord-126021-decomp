@@ -1,6 +1,5 @@
 package com.discord.widgets.chat.list.adapter;
 
-import a0.a.a.b;
 import android.content.Context;
 import android.content.res.Resources;
 import android.view.LayoutInflater;
@@ -17,12 +16,7 @@ import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.core.app.NotificationCompat;
 import androidx.core.graphics.ColorUtils;
 import androidx.exifinterface.media.ExifInterface;
-import b.a.d.AppToast;
-import b.a.i.WidgetChatListAdapterItemEmbedFieldBinding;
-import b.a.t.b.c.NodeProcessor;
-import b.c.a.a0.AnimatableValueParser;
-import b.d.b.a.outline;
-import com.discord.R;
+import com.discord.C5419R;
 import com.discord.api.message.embed.EmbedAuthor;
 import com.discord.api.message.embed.EmbedField;
 import com.discord.api.message.embed.EmbedFooter;
@@ -51,14 +45,14 @@ import com.discord.utilities.embed.EmbedResourceUtils;
 import com.discord.utilities.error.Error;
 import com.discord.utilities.images.MGImages;
 import com.discord.utilities.logging.Logger;
-import com.discord.utilities.rx.ObservableExtensionsKt;
+import com.discord.utilities.p501rx.ObservableExtensionsKt;
 import com.discord.utilities.textprocessing.AstRenderer;
 import com.discord.utilities.textprocessing.DiscordParser;
 import com.discord.utilities.textprocessing.MessageParseState;
 import com.discord.utilities.textprocessing.MessagePreprocessor;
 import com.discord.utilities.textprocessing.MessageRenderContext;
+import com.discord.utilities.textprocessing.Tags;
 import com.discord.utilities.textprocessing.TagsBuilder;
-import com.discord.utilities.textprocessing.TagsBuilder2;
 import com.discord.utilities.textprocessing.node.SpoilerNode;
 import com.discord.utilities.textprocessing.node.UrlNode;
 import com.discord.utilities.time.TimeUtils;
@@ -66,7 +60,7 @@ import com.discord.utilities.uri.UriHandler;
 import com.discord.utilities.view.extensions.ViewExtensions;
 import com.discord.utilities.view.text.LinkifiedTextView;
 import com.discord.utilities.view.text.SimpleDraweeSpanTextView;
-import com.discord.widgets.chat.input.MentionUtils;
+import com.discord.widgets.chat.input.MentionUtilsKt;
 import com.discord.widgets.chat.list.FragmentLifecycleListener;
 import com.discord.widgets.chat.list.InlineMediaView;
 import com.discord.widgets.chat.list.adapter.WidgetChatListAdapter;
@@ -77,15 +71,6 @@ import com.discord.widgets.media.WidgetMedia;
 import com.facebook.drawee.span.DraweeSpanStringBuilder;
 import com.facebook.drawee.view.SimpleDraweeView;
 import com.google.android.material.card.MaterialCardView;
-import d0.a0.MathJVM;
-import d0.g0.StringNumberConversions;
-import d0.g0.Strings4;
-import d0.g0.StringsJVM;
-import d0.g0._Strings;
-import d0.t.Iterables2;
-import d0.z.d.Intrinsics3;
-import d0.z.d.Lambda;
-import j0.l.a.NeverObservableHolder;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.HashMap;
@@ -94,16 +79,31 @@ import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
-import kotlin.Tuples2;
+import kotlin.Pair;
 import kotlin.Unit;
 import kotlin.jvm.functions.Function0;
 import kotlin.jvm.functions.Function1;
 import kotlin.jvm.functions.Function2;
 import kotlin.jvm.internal.DefaultConstructorMarker;
-import rx.Observable;
-import rx.Subscription;
-import rx.functions.Func2;
-import rx.functions.Func4;
+import p001a0.p002a.p003a.C0002b;
+import p007b.p008a.p018d.C0876m;
+import p007b.p008a.p025i.C1091y4;
+import p007b.p008a.p050t.p052b.p055c.InterfaceC1307a;
+import p007b.p085c.p086a.p087a0.C1460d;
+import p007b.p100d.p104b.p105a.C1643a;
+import p507d0.p508a0.C11210a;
+import p507d0.p579g0.C12102s;
+import p507d0.p579g0.C12103t;
+import p507d0.p579g0.C12106w;
+import p507d0.p579g0.C12108y;
+import p507d0.p580t.C12149o;
+import p507d0.p592z.p594d.AbstractC12240o;
+import p507d0.p592z.p594d.C12238m;
+import p637j0.p642l.p643a.EnumC12610d;
+import p658rx.Observable;
+import p658rx.Subscription;
+import p658rx.functions.Func2;
+import p658rx.functions.Func4;
 
 /* JADX INFO: compiled from: WidgetChatListAdapterItemEmbed.kt */
 /* JADX INFO: loaded from: classes2.dex */
@@ -125,32 +125,32 @@ public final class WidgetChatListAdapterItemEmbed extends WidgetChatListItem imp
     private Subscription subscription;
     private final StoreUserSettings userSettings;
 
-    /* JADX INFO: renamed from: com.discord.widgets.chat.list.adapter.WidgetChatListAdapterItemEmbed$1, reason: invalid class name */
+    /* JADX INFO: renamed from: com.discord.widgets.chat.list.adapter.WidgetChatListAdapterItemEmbed$1 */
     /* JADX INFO: compiled from: WidgetChatListAdapterItemEmbed.kt */
-    public static final class AnonymousClass1 extends Lambda implements Function1<TextView, Unit> {
-        public static final AnonymousClass1 INSTANCE = new AnonymousClass1();
+    public static final class C80451 extends AbstractC12240o implements Function1<TextView, Unit> {
+        public static final C80451 INSTANCE = new C80451();
 
-        public AnonymousClass1() {
+        public C80451() {
             super(1);
         }
 
         @Override // kotlin.jvm.functions.Function1
         public /* bridge */ /* synthetic */ Unit invoke(TextView textView) {
             invoke2(textView);
-            return Unit.a;
+            return Unit.f27425a;
         }
 
         /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
         public final void invoke2(final TextView textView) {
-            Intrinsics3.checkNotNullParameter(textView, "$this$copyTextOnLongPress");
+            C12238m.checkNotNullParameter(textView, "$this$copyTextOnLongPress");
             textView.setOnLongClickListener(new View.OnLongClickListener() { // from class: com.discord.widgets.chat.list.adapter.WidgetChatListAdapterItemEmbed.1.1
                 @Override // android.view.View.OnLongClickListener
                 public final boolean onLongClick(View view) {
                     Context context = textView.getContext();
-                    Intrinsics3.checkNotNullExpressionValue(context, "context");
+                    C12238m.checkNotNullExpressionValue(context, "context");
                     CharSequence text = textView.getText();
-                    Intrinsics3.checkNotNullExpressionValue(text, NotificationCompat.MessagingStyle.Message.KEY_TEXT);
-                    AppToast.c(context, text, 0, 4);
+                    C12238m.checkNotNullExpressionValue(text, NotificationCompat.MessagingStyle.Message.KEY_TEXT);
+                    C0876m.m165c(context, text, 0, 4);
                     return false;
                 }
             });
@@ -167,7 +167,7 @@ public final class WidgetChatListAdapterItemEmbed extends WidgetChatListItem imp
                 view.setOnClickListener(new View.OnClickListener() { // from class: com.discord.widgets.chat.list.adapter.WidgetChatListAdapterItemEmbed$Companion$bindUrlOnClick$1
                     @Override // android.view.View.OnClickListener
                     public final void onClick(View view2) {
-                        UriHandler.handleOrUntrusted(outline.x(view2, "view", "view.context"), str, str2);
+                        UriHandler.handleOrUntrusted(C1643a.m885x(view2, "view", "view.context"), str, str2);
                     }
                 });
             } else {
@@ -181,14 +181,14 @@ public final class WidgetChatListAdapterItemEmbed extends WidgetChatListItem imp
             if (set != null) {
                 ArrayList arrayList2 = new ArrayList();
                 for (Object obj : set) {
-                    if (StringsJVM.startsWith$default((String) obj, str, false, 2, null)) {
+                    if (C12103t.startsWith$default((String) obj, str, false, 2, null)) {
                         arrayList2.add(obj);
                     }
                 }
                 arrayList = new ArrayList();
                 Iterator it = arrayList2.iterator();
                 while (it.hasNext()) {
-                    Integer intOrNull = StringNumberConversions.toIntOrNull(_Strings.drop((String) it.next(), str.length() + 1));
+                    Integer intOrNull = C12102s.toIntOrNull(C12108y.drop((String) it.next(), str.length() + 1));
                     if (intOrNull != null) {
                         arrayList.add(intOrNull);
                     }
@@ -211,15 +211,15 @@ public final class WidgetChatListAdapterItemEmbed extends WidgetChatListItem imp
                     tagsBuilder.processAst(parsedField.getParsedValue());
                 }
             }
-            TagsBuilder2 tagsBuilder2Build = tagsBuilder.build();
-            if (tagsBuilder2Build.getIsEmpty()) {
-                Observable observable = NeverObservableHolder.k;
-                Intrinsics3.checkNotNullExpressionValue(observable, "Observable.never()");
+            Tags tagsBuild = tagsBuilder.build();
+            if (tagsBuild.getIsEmpty()) {
+                Observable observable = EnumC12610d.f26760k;
+                C12238m.checkNotNullExpressionValue(observable, "Observable.never()");
                 return observable;
             }
             StoreStream.Companion companion = StoreStream.INSTANCE;
-            Observable observableH = Observable.h(companion.getUsers().observeMeId(), companion.getChannels().observeNames(tagsBuilder2Build.getChannels()), Observable.j(companion.getGuilds().observeComputed(embedEntry.getGuildId(), tagsBuilder2Build.getUsers()), companion.getUsers().observeUsernames(tagsBuilder2Build.getUsers()), new Func2<Map<Long, ? extends GuildMember>, Map<Long, ? extends String>, HashMap<Long, String>>() { // from class: com.discord.widgets.chat.list.adapter.WidgetChatListAdapterItemEmbed$Companion$getModel$1
-                @Override // rx.functions.Func2
+            Observable observableM11073h = Observable.m11073h(companion.getUsers().observeMeId(), companion.getChannels().observeNames(tagsBuild.getChannels()), Observable.m11076j(companion.getGuilds().observeComputed(embedEntry.getGuildId(), tagsBuild.getUsers()), companion.getUsers().observeUsernames(tagsBuild.getUsers()), new Func2<Map<Long, ? extends GuildMember>, Map<Long, ? extends String>, HashMap<Long, String>>() { // from class: com.discord.widgets.chat.list.adapter.WidgetChatListAdapterItemEmbed$Companion$getModel$1
+                @Override // p658rx.functions.Func2
                 public /* bridge */ /* synthetic */ HashMap<Long, String> call(Map<Long, ? extends GuildMember> map, Map<Long, ? extends String> map2) {
                     return call2((Map<Long, GuildMember>) map, (Map<Long, String>) map2);
                 }
@@ -227,7 +227,7 @@ public final class WidgetChatListAdapterItemEmbed extends WidgetChatListItem imp
                 /* JADX WARN: Multi-variable type inference failed */
                 /* JADX INFO: renamed from: call, reason: avoid collision after fix types in other method */
                 public final HashMap<Long, String> call2(Map<Long, GuildMember> map, Map<Long, String> map2) {
-                    Intrinsics3.checkNotNullExpressionValue(map, "members");
+                    C12238m.checkNotNullExpressionValue(map, "members");
                     LinkedHashMap linkedHashMap = new LinkedHashMap();
                     for (Map.Entry<Long, GuildMember> entry : map.entrySet()) {
                         if (entry.getValue().getNick() != null) {
@@ -238,13 +238,13 @@ public final class WidgetChatListAdapterItemEmbed extends WidgetChatListItem imp
                     for (Map.Entry entry2 : linkedHashMap.entrySet()) {
                         Object key = entry2.getKey();
                         String nick = ((GuildMember) entry2.getValue()).getNick();
-                        Intrinsics3.checkNotNull(nick);
+                        C12238m.checkNotNull(nick);
                         map3.put(key, nick);
                     }
                     return map3;
                 }
-            }), companion.getGuilds().observeRoles(embedEntry.getGuildId(), tagsBuilder2Build.getRoles()), new Func4<Long, Map<Long, ? extends String>, HashMap<Long, String>, Map<Long, ? extends GuildRole>, Model>() { // from class: com.discord.widgets.chat.list.adapter.WidgetChatListAdapterItemEmbed$Companion$getModel$2
-                @Override // rx.functions.Func4
+            }), companion.getGuilds().observeRoles(embedEntry.getGuildId(), tagsBuild.getRoles()), new Func4<Long, Map<Long, ? extends String>, HashMap<Long, String>, Map<Long, ? extends GuildRole>, Model>() { // from class: com.discord.widgets.chat.list.adapter.WidgetChatListAdapterItemEmbed$Companion$getModel$2
+                @Override // p658rx.functions.Func4
                 public /* bridge */ /* synthetic */ WidgetChatListAdapterItemEmbed.Model call(Long l, Map<Long, ? extends String> map, HashMap<Long, String> map2, Map<Long, ? extends GuildRole> map3) {
                     return call2(l, (Map<Long, String>) map, map2, (Map<Long, GuildRole>) map3);
                 }
@@ -254,14 +254,14 @@ public final class WidgetChatListAdapterItemEmbed extends WidgetChatListItem imp
                     EmbedEntry embedEntry2 = embedEntry;
                     Collection collection = parsedDescription;
                     List list = parsedFields;
-                    Intrinsics3.checkNotNullExpressionValue(l, "myId");
+                    C12238m.checkNotNullExpressionValue(l, "myId");
                     return new WidgetChatListAdapterItemEmbed.Model(embedEntry2, collection, list, map, map2, map3, l.longValue());
                 }
             });
-            Intrinsics3.checkNotNullExpressionValue(observableH, "Observable\n          .co… roles, myId)\n          }");
-            Observable<Model> observableR = ObservableExtensionsKt.computationLatest(observableH).r();
-            Intrinsics3.checkNotNullExpressionValue(observableR, "Observable\n          .co…  .distinctUntilChanged()");
-            return observableR;
+            C12238m.checkNotNullExpressionValue(observableM11073h, "Observable\n          .co… roles, myId)\n          }");
+            Observable<Model> observableM11112r = ObservableExtensionsKt.computationLatest(observableM11073h).m11112r();
+            C12238m.checkNotNullExpressionValue(observableM11112r, "Observable\n          .co…  .distinctUntilChanged()");
+            return observableM11112r;
         }
 
         public final Parser<MessageRenderContext, Node<MessageRenderContext>, MessageParseState> createTitlesParser() {
@@ -281,14 +281,14 @@ public final class WidgetChatListAdapterItemEmbed extends WidgetChatListItem imp
         }
     }
 
-    /* JADX INFO: renamed from: com.discord.widgets.chat.list.adapter.WidgetChatListAdapterItemEmbed$configureEmbedDescription$1, reason: invalid class name */
+    /* JADX INFO: renamed from: com.discord.widgets.chat.list.adapter.WidgetChatListAdapterItemEmbed$configureEmbedDescription$1 */
     /* JADX INFO: compiled from: WidgetChatListAdapterItemEmbed.kt */
-    public static final class AnonymousClass1 extends Lambda implements Function1<SpoilerNode<?>, Unit> {
+    public static final class C80481 extends AbstractC12240o implements Function1<SpoilerNode<?>, Unit> {
         public final /* synthetic */ int $embedIndex;
         public final /* synthetic */ long $messageId;
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-        public AnonymousClass1(long j, int i) {
+        public C80481(long j, int i) {
             super(1);
             this.$messageId = j;
             this.$embedIndex = i;
@@ -297,37 +297,37 @@ public final class WidgetChatListAdapterItemEmbed extends WidgetChatListItem imp
         @Override // kotlin.jvm.functions.Function1
         public /* bridge */ /* synthetic */ Unit invoke(SpoilerNode<?> spoilerNode) {
             invoke2(spoilerNode);
-            return Unit.a;
+            return Unit.f27425a;
         }
 
         /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
         public final void invoke2(SpoilerNode<?> spoilerNode) {
-            Intrinsics3.checkNotNullParameter(spoilerNode, "node");
+            C12238m.checkNotNullParameter(spoilerNode, "node");
             StoreMessageState messageState = StoreStream.INSTANCE.getMessageState();
             long j = this.$messageId;
             int i = this.$embedIndex;
-            StringBuilder sbU = outline.U("desc:");
-            sbU.append(spoilerNode.getId());
-            messageState.revealSpoilerEmbedData(j, i, sbU.toString());
+            StringBuilder sbM833U = C1643a.m833U("desc:");
+            sbM833U.append(spoilerNode.getId());
+            messageState.revealSpoilerEmbedData(j, i, sbM833U.toString());
         }
     }
 
-    /* JADX INFO: renamed from: com.discord.widgets.chat.list.adapter.WidgetChatListAdapterItemEmbed$configureEmbedFields$1, reason: invalid class name */
+    /* JADX INFO: renamed from: com.discord.widgets.chat.list.adapter.WidgetChatListAdapterItemEmbed$configureEmbedFields$1 */
     /* JADX INFO: compiled from: WidgetChatListAdapterItemEmbed.kt */
-    public static final class AnonymousClass1 extends Lambda implements Function2<Collection<? extends Node<MessageRenderContext>>, String, DraweeSpanStringBuilder> {
+    public static final class C80491 extends AbstractC12240o implements Function2<Collection<? extends Node<MessageRenderContext>>, String, DraweeSpanStringBuilder> {
         public final /* synthetic */ int $embedIndex;
         public final /* synthetic */ long $messageId;
         public final /* synthetic */ Model $model;
         public final /* synthetic */ MessageRenderContext $renderContext;
         public final /* synthetic */ Map $visibleSpoilerEmbedMap;
 
-        /* JADX INFO: renamed from: com.discord.widgets.chat.list.adapter.WidgetChatListAdapterItemEmbed$configureEmbedFields$1$1, reason: invalid class name and collision with other inner class name */
+        /* JADX INFO: renamed from: com.discord.widgets.chat.list.adapter.WidgetChatListAdapterItemEmbed$configureEmbedFields$1$1, reason: invalid class name */
         /* JADX INFO: compiled from: WidgetChatListAdapterItemEmbed.kt */
-        public static final class C02721 extends Lambda implements Function1<SpoilerNode<?>, Unit> {
+        public static final class AnonymousClass1 extends AbstractC12240o implements Function1<SpoilerNode<?>, Unit> {
             public final /* synthetic */ String $prefixKey;
 
             /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-            public C02721(String str) {
+            public AnonymousClass1(String str) {
                 super(1);
                 this.$prefixKey = str;
             }
@@ -335,20 +335,20 @@ public final class WidgetChatListAdapterItemEmbed extends WidgetChatListItem imp
             @Override // kotlin.jvm.functions.Function1
             public /* bridge */ /* synthetic */ Unit invoke(SpoilerNode<?> spoilerNode) {
                 invoke2(spoilerNode);
-                return Unit.a;
+                return Unit.f27425a;
             }
 
             /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
             public final void invoke2(SpoilerNode<?> spoilerNode) {
-                Intrinsics3.checkNotNullParameter(spoilerNode, "node");
+                C12238m.checkNotNullParameter(spoilerNode, "node");
                 StoreMessageState messageState = StoreStream.INSTANCE.getMessageState();
-                AnonymousClass1 anonymousClass1 = AnonymousClass1.this;
-                messageState.revealSpoilerEmbedData(anonymousClass1.$messageId, anonymousClass1.$embedIndex, this.$prefixKey + MentionUtils.EMOJIS_AND_STICKERS_CHAR + spoilerNode.getId());
+                C80491 c80491 = C80491.this;
+                messageState.revealSpoilerEmbedData(c80491.$messageId, c80491.$embedIndex, this.$prefixKey + MentionUtilsKt.EMOJIS_AND_STICKERS_CHAR + spoilerNode.getId());
             }
         }
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-        public AnonymousClass1(Model model, Map map, int i, MessageRenderContext messageRenderContext, long j) {
+        public C80491(Model model, Map map, int i, MessageRenderContext messageRenderContext, long j) {
             super(2);
             this.$model = model;
             this.$visibleSpoilerEmbedMap = map;
@@ -359,24 +359,24 @@ public final class WidgetChatListAdapterItemEmbed extends WidgetChatListItem imp
 
         @Override // kotlin.jvm.functions.Function2
         public final DraweeSpanStringBuilder invoke(Collection<? extends Node<MessageRenderContext>> collection, String str) {
-            Intrinsics3.checkNotNullParameter(collection, "$this$toDraweeSpanStringBuilder");
-            Intrinsics3.checkNotNullParameter(str, "prefixKey");
+            C12238m.checkNotNullParameter(collection, "$this$toDraweeSpanStringBuilder");
+            C12238m.checkNotNullParameter(str, "prefixKey");
             long myId = this.$model.getMyId();
             Map map = this.$visibleSpoilerEmbedMap;
             new MessagePreprocessor(myId, map != null ? WidgetChatListAdapterItemEmbed.INSTANCE.getEmbedFieldVisibleIndices(map, this.$embedIndex, str) : null, null, false, null, 28, null).process(collection);
             MessageRenderContext messageRenderContext = this.$renderContext;
-            return AstRenderer.render(collection, messageRenderContext.copy((14335 & 1) != 0 ? messageRenderContext.getContext() : null, (14335 & 2) != 0 ? messageRenderContext.getMyId() : 0L, (14335 & 4) != 0 ? messageRenderContext.getIsAnimationEnabled() : false, (14335 & 8) != 0 ? messageRenderContext.getUserNames() : null, (14335 & 16) != 0 ? messageRenderContext.getChannelNames() : null, (14335 & 32) != 0 ? messageRenderContext.getRoles() : null, (14335 & 64) != 0 ? messageRenderContext.getLinkColorAttrResId() : 0, (14335 & 128) != 0 ? messageRenderContext.getOnClickUrl() : null, (14335 & 256) != 0 ? messageRenderContext.getOnLongPressUrl() : null, (14335 & 512) != 0 ? messageRenderContext.getSpoilerColorRes() : 0, (14335 & 1024) != 0 ? messageRenderContext.getSpoilerRevealedColorRes() : 0, (14335 & 2048) != 0 ? messageRenderContext.getSpoilerOnClick() : new C02721(str), (14335 & 4096) != 0 ? messageRenderContext.getUserMentionOnClick() : null, (14335 & 8192) != 0 ? messageRenderContext.getChannelMentionOnClick() : null));
+            return AstRenderer.render(collection, messageRenderContext.copy((14335 & 1) != 0 ? messageRenderContext.getContext() : null, (14335 & 2) != 0 ? messageRenderContext.getMyId() : 0L, (14335 & 4) != 0 ? messageRenderContext.getIsAnimationEnabled() : false, (14335 & 8) != 0 ? messageRenderContext.getUserNames() : null, (14335 & 16) != 0 ? messageRenderContext.getChannelNames() : null, (14335 & 32) != 0 ? messageRenderContext.getRoles() : null, (14335 & 64) != 0 ? messageRenderContext.getLinkColorAttrResId() : 0, (14335 & 128) != 0 ? messageRenderContext.getOnClickUrl() : null, (14335 & 256) != 0 ? messageRenderContext.getOnLongPressUrl() : null, (14335 & 512) != 0 ? messageRenderContext.getSpoilerColorRes() : 0, (14335 & 1024) != 0 ? messageRenderContext.getSpoilerRevealedColorRes() : 0, (14335 & 2048) != 0 ? messageRenderContext.getSpoilerOnClick() : new AnonymousClass1(str), (14335 & 4096) != 0 ? messageRenderContext.getUserMentionOnClick() : null, (14335 & 8192) != 0 ? messageRenderContext.getChannelMentionOnClick() : null));
         }
     }
 
-    /* JADX INFO: renamed from: com.discord.widgets.chat.list.adapter.WidgetChatListAdapterItemEmbed$configureEmbedTitle$1, reason: invalid class name */
+    /* JADX INFO: renamed from: com.discord.widgets.chat.list.adapter.WidgetChatListAdapterItemEmbed$configureEmbedTitle$1 */
     /* JADX INFO: compiled from: WidgetChatListAdapterItemEmbed.kt */
-    public static final class AnonymousClass1 extends Lambda implements Function1<SpoilerNode<?>, Unit> {
+    public static final class C80511 extends AbstractC12240o implements Function1<SpoilerNode<?>, Unit> {
         public final /* synthetic */ int $embedIndex;
         public final /* synthetic */ Model $model;
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-        public AnonymousClass1(Model model, int i) {
+        public C80511(Model model, int i) {
             super(1);
             this.$model = model;
             this.$embedIndex = i;
@@ -385,74 +385,74 @@ public final class WidgetChatListAdapterItemEmbed extends WidgetChatListItem imp
         @Override // kotlin.jvm.functions.Function1
         public /* bridge */ /* synthetic */ Unit invoke(SpoilerNode<?> spoilerNode) {
             invoke2(spoilerNode);
-            return Unit.a;
+            return Unit.f27425a;
         }
 
         /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
         public final void invoke2(SpoilerNode<?> spoilerNode) {
-            Intrinsics3.checkNotNullParameter(spoilerNode, "node");
+            C12238m.checkNotNullParameter(spoilerNode, "node");
             StoreMessageState messageState = StoreStream.INSTANCE.getMessageState();
             long id2 = this.$model.getEmbedEntry().getMessage().getId();
             int i = this.$embedIndex;
-            StringBuilder sbU = outline.U("title:");
-            sbU.append(spoilerNode.getId());
-            messageState.revealSpoilerEmbedData(id2, i, sbU.toString());
+            StringBuilder sbM833U = C1643a.m833U("title:");
+            sbM833U.append(spoilerNode.getId());
+            messageState.revealSpoilerEmbedData(id2, i, sbM833U.toString());
         }
     }
 
-    /* JADX INFO: renamed from: com.discord.widgets.chat.list.adapter.WidgetChatListAdapterItemEmbed$configureUI$1, reason: invalid class name */
+    /* JADX INFO: renamed from: com.discord.widgets.chat.list.adapter.WidgetChatListAdapterItemEmbed$configureUI$1 */
     /* JADX INFO: compiled from: WidgetChatListAdapterItemEmbed.kt */
-    public static final class AnonymousClass1 extends Lambda implements Function1<ViewPropertyAnimator, Unit> {
-        public static final AnonymousClass1 INSTANCE = new AnonymousClass1();
+    public static final class C80531 extends AbstractC12240o implements Function1<ViewPropertyAnimator, Unit> {
+        public static final C80531 INSTANCE = new C80531();
 
-        public AnonymousClass1() {
+        public C80531() {
             super(1);
         }
 
         @Override // kotlin.jvm.functions.Function1
         public /* bridge */ /* synthetic */ Unit invoke(ViewPropertyAnimator viewPropertyAnimator) {
             invoke2(viewPropertyAnimator);
-            return Unit.a;
+            return Unit.f27425a;
         }
 
         /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
         public final void invoke2(ViewPropertyAnimator viewPropertyAnimator) {
-            Intrinsics3.checkNotNullParameter(viewPropertyAnimator, "$receiver");
+            C12238m.checkNotNullParameter(viewPropertyAnimator, "$receiver");
             viewPropertyAnimator.scaleX(1.0f);
             viewPropertyAnimator.scaleY(1.0f);
         }
     }
 
-    /* JADX INFO: renamed from: com.discord.widgets.chat.list.adapter.WidgetChatListAdapterItemEmbed$configureUI$2, reason: invalid class name */
+    /* JADX INFO: renamed from: com.discord.widgets.chat.list.adapter.WidgetChatListAdapterItemEmbed$configureUI$2 */
     /* JADX INFO: compiled from: WidgetChatListAdapterItemEmbed.kt */
-    public static final class AnonymousClass2 extends Lambda implements Function1<ViewPropertyAnimator, Unit> {
-        public static final AnonymousClass2 INSTANCE = new AnonymousClass2();
+    public static final class C80542 extends AbstractC12240o implements Function1<ViewPropertyAnimator, Unit> {
+        public static final C80542 INSTANCE = new C80542();
 
-        public AnonymousClass2() {
+        public C80542() {
             super(1);
         }
 
         @Override // kotlin.jvm.functions.Function1
         public /* bridge */ /* synthetic */ Unit invoke(ViewPropertyAnimator viewPropertyAnimator) {
             invoke2(viewPropertyAnimator);
-            return Unit.a;
+            return Unit.f27425a;
         }
 
         /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
         public final void invoke2(ViewPropertyAnimator viewPropertyAnimator) {
-            Intrinsics3.checkNotNullParameter(viewPropertyAnimator, "$receiver");
+            C12238m.checkNotNullParameter(viewPropertyAnimator, "$receiver");
             viewPropertyAnimator.scaleX(0.9f);
             viewPropertyAnimator.scaleY(0.9f);
         }
     }
 
-    /* JADX INFO: renamed from: com.discord.widgets.chat.list.adapter.WidgetChatListAdapterItemEmbed$onConfigure$1, reason: invalid class name */
+    /* JADX INFO: renamed from: com.discord.widgets.chat.list.adapter.WidgetChatListAdapterItemEmbed$onConfigure$1 */
     /* JADX INFO: compiled from: WidgetChatListAdapterItemEmbed.kt */
-    public static final class AnonymousClass1 extends Lambda implements Function1<View, Unit> {
+    public static final class C80561 extends AbstractC12240o implements Function1<View, Unit> {
         public final /* synthetic */ ChatListEntry $data;
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-        public AnonymousClass1(ChatListEntry chatListEntry) {
+        public C80561(ChatListEntry chatListEntry) {
             super(1);
             this.$data = chatListEntry;
         }
@@ -460,54 +460,54 @@ public final class WidgetChatListAdapterItemEmbed extends WidgetChatListItem imp
         @Override // kotlin.jvm.functions.Function1
         public /* bridge */ /* synthetic */ Unit invoke(View view) {
             invoke2(view);
-            return Unit.a;
+            return Unit.f27425a;
         }
 
         /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
         public final void invoke2(View view) {
-            Intrinsics3.checkNotNullParameter(view, "it");
+            C12238m.checkNotNullParameter(view, "it");
             WidgetChatListAdapterItemEmbed.access$getAdapter$p(WidgetChatListAdapterItemEmbed.this).getEventHandler().onMessageLongClicked(((EmbedEntry) this.$data).getMessage(), "", ((EmbedEntry) this.$data).isThreadStarterMessage());
         }
     }
 
-    /* JADX INFO: renamed from: com.discord.widgets.chat.list.adapter.WidgetChatListAdapterItemEmbed$onConfigure$3, reason: invalid class name */
+    /* JADX INFO: renamed from: com.discord.widgets.chat.list.adapter.WidgetChatListAdapterItemEmbed$onConfigure$3 */
     /* JADX INFO: compiled from: WidgetChatListAdapterItemEmbed.kt */
-    public static final class AnonymousClass3 extends Lambda implements Function1<Subscription, Unit> {
-        public AnonymousClass3() {
+    public static final class C80583 extends AbstractC12240o implements Function1<Subscription, Unit> {
+        public C80583() {
             super(1);
         }
 
         @Override // kotlin.jvm.functions.Function1
         public /* bridge */ /* synthetic */ Unit invoke(Subscription subscription) {
             invoke2(subscription);
-            return Unit.a;
+            return Unit.f27425a;
         }
 
         /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
         public final void invoke2(Subscription subscription) {
-            Intrinsics3.checkNotNullParameter(subscription, "it");
+            C12238m.checkNotNullParameter(subscription, "it");
             WidgetChatListAdapterItemEmbed.this.subscription = subscription;
         }
     }
 
-    /* JADX INFO: renamed from: com.discord.widgets.chat.list.adapter.WidgetChatListAdapterItemEmbed$onConfigure$4, reason: invalid class name */
+    /* JADX INFO: renamed from: com.discord.widgets.chat.list.adapter.WidgetChatListAdapterItemEmbed$onConfigure$4 */
     /* JADX INFO: compiled from: WidgetChatListAdapterItemEmbed.kt */
-    public static final class AnonymousClass4 extends Lambda implements Function1<Model, Unit> {
-        public AnonymousClass4() {
+    public static final class C80594 extends AbstractC12240o implements Function1<Model, Unit> {
+        public C80594() {
             super(1);
         }
 
         @Override // kotlin.jvm.functions.Function1
         public /* bridge */ /* synthetic */ Unit invoke(Model model) {
             invoke2(model);
-            return Unit.a;
+            return Unit.f27425a;
         }
 
         /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
         public final void invoke2(Model model) {
-            MessageRenderContext messageRenderContextCreateRenderContext = model.createRenderContext(outline.x(WidgetChatListAdapterItemEmbed.this.itemView, "itemView", "itemView.context"), WidgetChatListAdapterItemEmbed.access$getAdapter$p(WidgetChatListAdapterItemEmbed.this).getEventHandler());
+            MessageRenderContext messageRenderContextCreateRenderContext = model.createRenderContext(C1643a.m885x(WidgetChatListAdapterItemEmbed.this.itemView, "itemView", "itemView.context"), WidgetChatListAdapterItemEmbed.access$getAdapter$p(WidgetChatListAdapterItemEmbed.this).getEventHandler());
             WidgetChatListAdapterItemEmbed widgetChatListAdapterItemEmbed = WidgetChatListAdapterItemEmbed.this;
-            Intrinsics3.checkNotNullExpressionValue(model, "model");
+            C12238m.checkNotNullExpressionValue(model, "model");
             widgetChatListAdapterItemEmbed.configureEmbedTitle(model, messageRenderContextCreateRenderContext);
             WidgetChatListAdapterItemEmbed.this.configureEmbedDescription(model, messageRenderContextCreateRenderContext);
             WidgetChatListAdapterItemEmbed.this.configureEmbedFields(model, messageRenderContextCreateRenderContext);
@@ -524,98 +524,98 @@ public final class WidgetChatListAdapterItemEmbed extends WidgetChatListItem imp
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public WidgetChatListAdapterItemEmbed(WidgetChatListAdapter widgetChatListAdapter) {
-        super(R.layout.widget_chat_list_adapter_item_embed, widgetChatListAdapter);
-        Intrinsics3.checkNotNullParameter(widgetChatListAdapter, "adapter");
+        super(C5419R.layout.widget_chat_list_adapter_item_embed, widgetChatListAdapter);
+        C12238m.checkNotNullParameter(widgetChatListAdapter, "adapter");
         View view = this.itemView;
-        int i = R.id.chat_list_adapter_item_gutter_bg;
-        View viewFindViewById = view.findViewById(R.id.chat_list_adapter_item_gutter_bg);
+        int i = C5419R.id.chat_list_adapter_item_gutter_bg;
+        View viewFindViewById = view.findViewById(C5419R.id.chat_list_adapter_item_gutter_bg);
         if (viewFindViewById != null) {
-            i = R.id.chat_list_adapter_item_highlighted_bg;
-            View viewFindViewById2 = view.findViewById(R.id.chat_list_adapter_item_highlighted_bg);
+            i = C5419R.id.chat_list_adapter_item_highlighted_bg;
+            View viewFindViewById2 = view.findViewById(C5419R.id.chat_list_adapter_item_highlighted_bg);
             if (viewFindViewById2 != null) {
-                i = R.id.chat_list_item_embed_author_icon;
-                SimpleDraweeView simpleDraweeView = (SimpleDraweeView) view.findViewById(R.id.chat_list_item_embed_author_icon);
+                i = C5419R.id.chat_list_item_embed_author_icon;
+                SimpleDraweeView simpleDraweeView = (SimpleDraweeView) view.findViewById(C5419R.id.chat_list_item_embed_author_icon);
                 if (simpleDraweeView != null) {
-                    i = R.id.chat_list_item_embed_author_text;
-                    TextView textView = (TextView) view.findViewById(R.id.chat_list_item_embed_author_text);
+                    i = C5419R.id.chat_list_item_embed_author_text;
+                    TextView textView = (TextView) view.findViewById(C5419R.id.chat_list_item_embed_author_text);
                     if (textView != null) {
-                        i = R.id.chat_list_item_embed_barrier_data;
-                        Barrier barrier = (Barrier) view.findViewById(R.id.chat_list_item_embed_barrier_data);
+                        i = C5419R.id.chat_list_item_embed_barrier_data;
+                        Barrier barrier = (Barrier) view.findViewById(C5419R.id.chat_list_item_embed_barrier_data);
                         if (barrier != null) {
-                            i = R.id.chat_list_item_embed_barrier_header;
-                            Barrier barrier2 = (Barrier) view.findViewById(R.id.chat_list_item_embed_barrier_header);
+                            i = C5419R.id.chat_list_item_embed_barrier_header;
+                            Barrier barrier2 = (Barrier) view.findViewById(C5419R.id.chat_list_item_embed_barrier_header);
                             if (barrier2 != null) {
-                                i = R.id.chat_list_item_embed_container_card;
-                                MaterialCardView materialCardView = (MaterialCardView) view.findViewById(R.id.chat_list_item_embed_container_card);
+                                i = C5419R.id.chat_list_item_embed_container_card;
+                                MaterialCardView materialCardView = (MaterialCardView) view.findViewById(C5419R.id.chat_list_item_embed_container_card);
                                 if (materialCardView != null) {
-                                    i = R.id.chat_list_item_embed_content;
-                                    ConstraintLayout constraintLayout = (ConstraintLayout) view.findViewById(R.id.chat_list_item_embed_content);
+                                    i = C5419R.id.chat_list_item_embed_content;
+                                    ConstraintLayout constraintLayout = (ConstraintLayout) view.findViewById(C5419R.id.chat_list_item_embed_content);
                                     if (constraintLayout != null) {
-                                        i = R.id.chat_list_item_embed_description;
-                                        LinkifiedTextView linkifiedTextView = (LinkifiedTextView) view.findViewById(R.id.chat_list_item_embed_description);
+                                        i = C5419R.id.chat_list_item_embed_description;
+                                        LinkifiedTextView linkifiedTextView = (LinkifiedTextView) view.findViewById(C5419R.id.chat_list_item_embed_description);
                                         if (linkifiedTextView != null) {
-                                            i = R.id.chat_list_item_embed_divider;
-                                            View viewFindViewById3 = view.findViewById(R.id.chat_list_item_embed_divider);
+                                            i = C5419R.id.chat_list_item_embed_divider;
+                                            View viewFindViewById3 = view.findViewById(C5419R.id.chat_list_item_embed_divider);
                                             if (viewFindViewById3 != null) {
-                                                i = R.id.chat_list_item_embed_fields;
-                                                LinearLayout linearLayout = (LinearLayout) view.findViewById(R.id.chat_list_item_embed_fields);
+                                                i = C5419R.id.chat_list_item_embed_fields;
+                                                LinearLayout linearLayout = (LinearLayout) view.findViewById(C5419R.id.chat_list_item_embed_fields);
                                                 if (linearLayout != null) {
-                                                    i = R.id.chat_list_item_embed_footer_icon;
-                                                    SimpleDraweeView simpleDraweeView2 = (SimpleDraweeView) view.findViewById(R.id.chat_list_item_embed_footer_icon);
+                                                    i = C5419R.id.chat_list_item_embed_footer_icon;
+                                                    SimpleDraweeView simpleDraweeView2 = (SimpleDraweeView) view.findViewById(C5419R.id.chat_list_item_embed_footer_icon);
                                                     if (simpleDraweeView2 != null) {
-                                                        i = R.id.chat_list_item_embed_footer_text;
-                                                        TextView textView2 = (TextView) view.findViewById(R.id.chat_list_item_embed_footer_text);
+                                                        i = C5419R.id.chat_list_item_embed_footer_text;
+                                                        TextView textView2 = (TextView) view.findViewById(C5419R.id.chat_list_item_embed_footer_text);
                                                         if (textView2 != null) {
-                                                            i = R.id.chat_list_item_embed_image;
-                                                            SimpleDraweeView simpleDraweeView3 = (SimpleDraweeView) view.findViewById(R.id.chat_list_item_embed_image);
+                                                            i = C5419R.id.chat_list_item_embed_image;
+                                                            SimpleDraweeView simpleDraweeView3 = (SimpleDraweeView) view.findViewById(C5419R.id.chat_list_item_embed_image);
                                                             if (simpleDraweeView3 != null) {
-                                                                i = R.id.chat_list_item_embed_image_icons;
-                                                                ImageView imageView = (ImageView) view.findViewById(R.id.chat_list_item_embed_image_icons);
+                                                                i = C5419R.id.chat_list_item_embed_image_icons;
+                                                                ImageView imageView = (ImageView) view.findViewById(C5419R.id.chat_list_item_embed_image_icons);
                                                                 if (imageView != null) {
-                                                                    i = R.id.chat_list_item_embed_image_thumbnail;
-                                                                    SimpleDraweeView simpleDraweeView4 = (SimpleDraweeView) view.findViewById(R.id.chat_list_item_embed_image_thumbnail);
+                                                                    i = C5419R.id.chat_list_item_embed_image_thumbnail;
+                                                                    SimpleDraweeView simpleDraweeView4 = (SimpleDraweeView) view.findViewById(C5419R.id.chat_list_item_embed_image_thumbnail);
                                                                     if (simpleDraweeView4 != null) {
-                                                                        i = R.id.chat_list_item_embed_provider;
-                                                                        TextView textView3 = (TextView) view.findViewById(R.id.chat_list_item_embed_provider);
+                                                                        i = C5419R.id.chat_list_item_embed_provider;
+                                                                        TextView textView3 = (TextView) view.findViewById(C5419R.id.chat_list_item_embed_provider);
                                                                         if (textView3 != null) {
-                                                                            i = R.id.chat_list_item_embed_spoiler;
-                                                                            FrameLayout frameLayout = (FrameLayout) view.findViewById(R.id.chat_list_item_embed_spoiler);
+                                                                            i = C5419R.id.chat_list_item_embed_spoiler;
+                                                                            FrameLayout frameLayout = (FrameLayout) view.findViewById(C5419R.id.chat_list_item_embed_spoiler);
                                                                             if (frameLayout != null) {
-                                                                                i = R.id.chat_list_item_embed_title;
-                                                                                LinkifiedTextView linkifiedTextView2 = (LinkifiedTextView) view.findViewById(R.id.chat_list_item_embed_title);
+                                                                                i = C5419R.id.chat_list_item_embed_title;
+                                                                                LinkifiedTextView linkifiedTextView2 = (LinkifiedTextView) view.findViewById(C5419R.id.chat_list_item_embed_title);
                                                                                 if (linkifiedTextView2 != null) {
-                                                                                    i = R.id.embed_image_container;
-                                                                                    CardView cardView = (CardView) view.findViewById(R.id.embed_image_container);
+                                                                                    i = C5419R.id.embed_image_container;
+                                                                                    CardView cardView = (CardView) view.findViewById(C5419R.id.embed_image_container);
                                                                                     if (cardView != null) {
-                                                                                        i = R.id.embed_inline_media;
-                                                                                        InlineMediaView inlineMediaView = (InlineMediaView) view.findViewById(R.id.embed_inline_media);
+                                                                                        i = C5419R.id.embed_inline_media;
+                                                                                        InlineMediaView inlineMediaView = (InlineMediaView) view.findViewById(C5419R.id.embed_inline_media);
                                                                                         if (inlineMediaView != null) {
                                                                                             WidgetChatListAdapterItemEmbedBinding widgetChatListAdapterItemEmbedBinding = new WidgetChatListAdapterItemEmbedBinding((ConstraintLayout) view, viewFindViewById, viewFindViewById2, simpleDraweeView, textView, barrier, barrier2, materialCardView, constraintLayout, linkifiedTextView, viewFindViewById3, linearLayout, simpleDraweeView2, textView2, simpleDraweeView3, imageView, simpleDraweeView4, textView3, frameLayout, linkifiedTextView2, cardView, inlineMediaView);
-                                                                                            Intrinsics3.checkNotNullExpressionValue(widgetChatListAdapterItemEmbedBinding, "WidgetChatListAdapterIte…bedBinding.bind(itemView)");
+                                                                                            C12238m.checkNotNullExpressionValue(widgetChatListAdapterItemEmbedBinding, "WidgetChatListAdapterIte…bedBinding.bind(itemView)");
                                                                                             this.binding = widgetChatListAdapterItemEmbedBinding;
-                                                                                            AnonymousClass1 anonymousClass1 = AnonymousClass1.INSTANCE;
-                                                                                            Intrinsics3.checkNotNullExpressionValue(textView3, "binding.chatListItemEmbedProvider");
-                                                                                            anonymousClass1.invoke2(textView3);
-                                                                                            Intrinsics3.checkNotNullExpressionValue(linkifiedTextView2, "binding.chatListItemEmbedTitle");
-                                                                                            anonymousClass1.invoke2((TextView) linkifiedTextView2);
-                                                                                            Intrinsics3.checkNotNullExpressionValue(textView, "binding.chatListItemEmbedAuthorText");
-                                                                                            anonymousClass1.invoke2(textView);
-                                                                                            Intrinsics3.checkNotNullExpressionValue(linkifiedTextView, "binding.chatListItemEmbedDescription");
-                                                                                            anonymousClass1.invoke2((TextView) linkifiedTextView);
-                                                                                            Intrinsics3.checkNotNullExpressionValue(textView2, "binding.chatListItemEmbedFooterText");
-                                                                                            anonymousClass1.invoke2(textView2);
+                                                                                            C80451 c80451 = C80451.INSTANCE;
+                                                                                            C12238m.checkNotNullExpressionValue(textView3, "binding.chatListItemEmbedProvider");
+                                                                                            c80451.invoke2(textView3);
+                                                                                            C12238m.checkNotNullExpressionValue(linkifiedTextView2, "binding.chatListItemEmbedTitle");
+                                                                                            c80451.invoke2((TextView) linkifiedTextView2);
+                                                                                            C12238m.checkNotNullExpressionValue(textView, "binding.chatListItemEmbedAuthorText");
+                                                                                            c80451.invoke2(textView);
+                                                                                            C12238m.checkNotNullExpressionValue(linkifiedTextView, "binding.chatListItemEmbedDescription");
+                                                                                            c80451.invoke2((TextView) linkifiedTextView);
+                                                                                            C12238m.checkNotNullExpressionValue(textView2, "binding.chatListItemEmbedFooterText");
+                                                                                            c80451.invoke2(textView2);
                                                                                             this.userSettings = StoreStream.INSTANCE.getUserSettings();
                                                                                             View view2 = this.itemView;
-                                                                                            Intrinsics3.checkNotNullExpressionValue(view2, "itemView");
-                                                                                            this.embedTinyIconSize = (int) view2.getResources().getDimension(R.dimen.embed_tiny_icon_size);
+                                                                                            C12238m.checkNotNullExpressionValue(view2, "itemView");
+                                                                                            this.embedTinyIconSize = (int) view2.getResources().getDimension(C5419R.dimen.embed_tiny_icon_size);
                                                                                             View view3 = this.itemView;
-                                                                                            Intrinsics3.checkNotNullExpressionValue(view3, "itemView");
-                                                                                            this.embedThumbnailMaxSize = (int) view3.getResources().getDimension(R.dimen.embed_thumbnail_max_size);
+                                                                                            C12238m.checkNotNullExpressionValue(view3, "itemView");
+                                                                                            this.embedThumbnailMaxSize = (int) view3.getResources().getDimension(C5419R.dimen.embed_thumbnail_max_size);
                                                                                             EmbedResourceUtils embedResourceUtils = EmbedResourceUtils.INSTANCE;
                                                                                             View view4 = this.itemView;
-                                                                                            Intrinsics3.checkNotNullExpressionValue(view4, "itemView");
+                                                                                            C12238m.checkNotNullExpressionValue(view4, "itemView");
                                                                                             Context context = view4.getContext();
-                                                                                            Intrinsics3.checkNotNullExpressionValue(context, "itemView.context");
+                                                                                            C12238m.checkNotNullExpressionValue(context, "itemView.context");
                                                                                             this.maxEmbedImageWidth = embedResourceUtils.computeMaximumImageWidthPx(context);
                                                                                             return;
                                                                                         }
@@ -648,32 +648,32 @@ public final class WidgetChatListAdapterItemEmbed extends WidgetChatListItem imp
 
     private final void configureEmbedAuthor(EmbedAuthor author) {
         if (author != null) {
-            TextView textView = this.binding.e;
-            Intrinsics3.checkNotNullExpressionValue(textView, "binding.chatListItemEmbedAuthorText");
+            TextView textView = this.binding.f16184e;
+            C12238m.checkNotNullExpressionValue(textView, "binding.chatListItemEmbedAuthorText");
             textView.setText(author.getName());
             Companion companion = INSTANCE;
-            TextView textView2 = this.binding.e;
-            Intrinsics3.checkNotNullExpressionValue(textView2, "binding.chatListItemEmbedAuthorText");
+            TextView textView2 = this.binding.f16184e;
+            C12238m.checkNotNullExpressionValue(textView2, "binding.chatListItemEmbedAuthorText");
             companion.bindUrlOnClick(textView2, author.getUrl(), author.getName());
-            TextView textView3 = this.binding.e;
-            Intrinsics3.checkNotNullExpressionValue(textView3, "binding.chatListItemEmbedAuthorText");
+            TextView textView3 = this.binding.f16184e;
+            C12238m.checkNotNullExpressionValue(textView3, "binding.chatListItemEmbedAuthorText");
             textView3.setVisibility(0);
         } else {
-            TextView textView4 = this.binding.e;
-            Intrinsics3.checkNotNullExpressionValue(textView4, "binding.chatListItemEmbedAuthorText");
+            TextView textView4 = this.binding.f16184e;
+            C12238m.checkNotNullExpressionValue(textView4, "binding.chatListItemEmbedAuthorText");
             textView4.setVisibility(8);
         }
         if ((author != null ? author.getProxyIconUrl() : null) == null) {
-            SimpleDraweeView simpleDraweeView = this.binding.d;
-            Intrinsics3.checkNotNullExpressionValue(simpleDraweeView, "binding.chatListItemEmbedAuthorIcon");
+            SimpleDraweeView simpleDraweeView = this.binding.f16183d;
+            C12238m.checkNotNullExpressionValue(simpleDraweeView, "binding.chatListItemEmbedAuthorIcon");
             simpleDraweeView.setVisibility(8);
             return;
         }
-        SimpleDraweeView simpleDraweeView2 = this.binding.d;
-        Intrinsics3.checkNotNullExpressionValue(simpleDraweeView2, "binding.chatListItemEmbedAuthorIcon");
+        SimpleDraweeView simpleDraweeView2 = this.binding.f16183d;
+        C12238m.checkNotNullExpressionValue(simpleDraweeView2, "binding.chatListItemEmbedAuthorIcon");
         simpleDraweeView2.setVisibility(0);
-        SimpleDraweeView simpleDraweeView3 = this.binding.d;
-        Intrinsics3.checkNotNullExpressionValue(simpleDraweeView3, "binding.chatListItemEmbedAuthorIcon");
+        SimpleDraweeView simpleDraweeView3 = this.binding.f16183d;
+        C12238m.checkNotNullExpressionValue(simpleDraweeView3, "binding.chatListItemEmbedAuthorIcon");
         int i = this.embedTinyIconSize;
         configureEmbedImage$default(this, simpleDraweeView3, i, i, i, author.getProxyIconUrl(), 0, 32, null);
     }
@@ -681,8 +681,8 @@ public final class WidgetChatListAdapterItemEmbed extends WidgetChatListItem imp
     private final void configureEmbedDescription(Model model, MessageRenderContext renderContext) {
         Map<Integer, Set<String>> visibleSpoilerEmbedMap;
         if (model.getParsedDescription() == null) {
-            LinkifiedTextView linkifiedTextView = this.binding.h;
-            Intrinsics3.checkNotNullExpressionValue(linkifiedTextView, "binding.chatListItemEmbedDescription");
+            LinkifiedTextView linkifiedTextView = this.binding.f16187h;
+            C12238m.checkNotNullExpressionValue(linkifiedTextView, "binding.chatListItemEmbedDescription");
             linkifiedTextView.setVisibility(8);
             return;
         }
@@ -691,20 +691,20 @@ public final class WidgetChatListAdapterItemEmbed extends WidgetChatListItem imp
         long myId = model.getMyId();
         StoreMessageState.State messageState = model.getEmbedEntry().getMessageState();
         new MessagePreprocessor(myId, (messageState == null || (visibleSpoilerEmbedMap = messageState.getVisibleSpoilerEmbedMap()) == null) ? null : INSTANCE.getEmbedFieldVisibleIndices(visibleSpoilerEmbedMap, embedIndex, EMBED_TYPE_DESC), null, false, null, 28, null).process(model.getParsedDescription());
-        this.binding.h.setDraweeSpanStringBuilder(AstRenderer.render(model.getParsedDescription(), renderContext.copy((14335 & 1) != 0 ? renderContext.getContext() : null, (14335 & 2) != 0 ? renderContext.getMyId() : 0L, (14335 & 4) != 0 ? renderContext.getIsAnimationEnabled() : false, (14335 & 8) != 0 ? renderContext.getUserNames() : null, (14335 & 16) != 0 ? renderContext.getChannelNames() : null, (14335 & 32) != 0 ? renderContext.getRoles() : null, (14335 & 64) != 0 ? renderContext.getLinkColorAttrResId() : 0, (14335 & 128) != 0 ? renderContext.getOnClickUrl() : null, (14335 & 256) != 0 ? renderContext.getOnLongPressUrl() : null, (14335 & 512) != 0 ? renderContext.getSpoilerColorRes() : 0, (14335 & 1024) != 0 ? renderContext.getSpoilerRevealedColorRes() : 0, (14335 & 2048) != 0 ? renderContext.getSpoilerOnClick() : new AnonymousClass1(id2, embedIndex), (14335 & 4096) != 0 ? renderContext.getUserMentionOnClick() : null, (14335 & 8192) != 0 ? renderContext.getChannelMentionOnClick() : null)));
-        LinkifiedTextView linkifiedTextView2 = this.binding.h;
-        Intrinsics3.checkNotNullExpressionValue(linkifiedTextView2, "binding.chatListItemEmbedDescription");
+        this.binding.f16187h.setDraweeSpanStringBuilder(AstRenderer.render(model.getParsedDescription(), renderContext.copy((14335 & 1) != 0 ? renderContext.getContext() : null, (14335 & 2) != 0 ? renderContext.getMyId() : 0L, (14335 & 4) != 0 ? renderContext.getIsAnimationEnabled() : false, (14335 & 8) != 0 ? renderContext.getUserNames() : null, (14335 & 16) != 0 ? renderContext.getChannelNames() : null, (14335 & 32) != 0 ? renderContext.getRoles() : null, (14335 & 64) != 0 ? renderContext.getLinkColorAttrResId() : 0, (14335 & 128) != 0 ? renderContext.getOnClickUrl() : null, (14335 & 256) != 0 ? renderContext.getOnLongPressUrl() : null, (14335 & 512) != 0 ? renderContext.getSpoilerColorRes() : 0, (14335 & 1024) != 0 ? renderContext.getSpoilerRevealedColorRes() : 0, (14335 & 2048) != 0 ? renderContext.getSpoilerOnClick() : new C80481(id2, embedIndex), (14335 & 4096) != 0 ? renderContext.getUserMentionOnClick() : null, (14335 & 8192) != 0 ? renderContext.getChannelMentionOnClick() : null)));
+        LinkifiedTextView linkifiedTextView2 = this.binding.f16187h;
+        C12238m.checkNotNullExpressionValue(linkifiedTextView2, "binding.chatListItemEmbedDescription");
         linkifiedTextView2.setVisibility(0);
     }
 
     private final void configureEmbedDivider(Integer color) {
         int themedColor;
-        View view = this.binding.i;
+        View view = this.binding.f16188i;
         if (color != null) {
             themedColor = ColorUtils.setAlphaComponent(color.intValue(), 255);
         } else {
-            Intrinsics3.checkNotNullExpressionValue(view, "binding.chatListItemEmbedDivider");
-            themedColor = ColorCompat.getThemedColor(view.getContext(), R.attr.colorBackgroundModifierAccent);
+            C12238m.checkNotNullExpressionValue(view, "binding.chatListItemEmbedDivider");
+            themedColor = ColorCompat.getThemedColor(view.getContext(), C5419R.attr.colorBackgroundModifierAccent);
         }
         view.setBackgroundColor(themedColor);
     }
@@ -717,47 +717,47 @@ public final class WidgetChatListAdapterItemEmbed extends WidgetChatListItem imp
     private final void configureEmbedFields(Model model, MessageRenderContext renderContext) {
         ?? childAt;
         List<Model.ParsedField> parsedFields = model.getParsedFields();
-        this.binding.j.removeAllViews();
+        this.binding.f16189j.removeAllViews();
         if (parsedFields == null) {
-            LinearLayout linearLayout = this.binding.j;
-            Intrinsics3.checkNotNullExpressionValue(linearLayout, "binding.chatListItemEmbedFields");
+            LinearLayout linearLayout = this.binding.f16189j;
+            C12238m.checkNotNullExpressionValue(linearLayout, "binding.chatListItemEmbedFields");
             linearLayout.setVisibility(8);
             return;
         }
-        LinearLayout linearLayout2 = this.binding.j;
-        Intrinsics3.checkNotNullExpressionValue(linearLayout2, "binding.chatListItemEmbedFields");
+        LinearLayout linearLayout2 = this.binding.f16189j;
+        C12238m.checkNotNullExpressionValue(linearLayout2, "binding.chatListItemEmbedFields");
         linearLayout2.setVisibility(0);
-        LinearLayout linearLayout3 = this.binding.j;
-        Intrinsics3.checkNotNullExpressionValue(linearLayout3, "binding.chatListItemEmbedFields");
+        LinearLayout linearLayout3 = this.binding.f16189j;
+        C12238m.checkNotNullExpressionValue(linearLayout3, "binding.chatListItemEmbedFields");
         Context context = linearLayout3.getContext();
         long id2 = model.getEmbedEntry().getMessage().getId();
         int embedIndex = model.getEmbedEntry().getEmbedIndex();
         StoreMessageState.State messageState = model.getEmbedEntry().getMessageState();
-        AnonymousClass1 anonymousClass1 = new AnonymousClass1(model, messageState != null ? messageState.getVisibleSpoilerEmbedMap() : null, embedIndex, renderContext, id2);
+        C80491 c80491 = new C80491(model, messageState != null ? messageState.getVisibleSpoilerEmbedMap() : null, embedIndex, renderContext, id2);
         int size = parsedFields.size();
         for (int i = 0; i < size; i++) {
-            LinearLayout linearLayout4 = this.binding.j;
-            Intrinsics3.checkNotNullExpressionValue(linearLayout4, "binding.chatListItemEmbedFields");
+            LinearLayout linearLayout4 = this.binding.f16189j;
+            C12238m.checkNotNullExpressionValue(linearLayout4, "binding.chatListItemEmbedFields");
             int childCount = linearLayout4.getChildCount();
-            int i2 = R.id.chat_list_item_embed_field_value;
+            int i2 = C5419R.id.chat_list_item_embed_field_value;
             if (i >= childCount) {
-                View viewInflate = LayoutInflater.from(context).inflate(R.layout.widget_chat_list_adapter_item_embed_field, (ViewGroup) this.binding.j, false);
-                LinkifiedTextView linkifiedTextView = (LinkifiedTextView) viewInflate.findViewById(R.id.chat_list_item_embed_field_name);
+                View viewInflate = LayoutInflater.from(context).inflate(C5419R.layout.widget_chat_list_adapter_item_embed_field, (ViewGroup) this.binding.f16189j, false);
+                LinkifiedTextView linkifiedTextView = (LinkifiedTextView) viewInflate.findViewById(C5419R.id.chat_list_item_embed_field_name);
                 if (linkifiedTextView != null) {
-                    LinkifiedTextView linkifiedTextView2 = (LinkifiedTextView) viewInflate.findViewById(R.id.chat_list_item_embed_field_value);
+                    LinkifiedTextView linkifiedTextView2 = (LinkifiedTextView) viewInflate.findViewById(C5419R.id.chat_list_item_embed_field_value);
                     if (linkifiedTextView2 != null) {
                         childAt = (LinearLayout) viewInflate;
-                        Intrinsics3.checkNotNullExpressionValue(new WidgetChatListAdapterItemEmbedFieldBinding(childAt, linkifiedTextView, linkifiedTextView2), "WidgetChatListAdapterIte…edFields, false\n        )");
+                        C12238m.checkNotNullExpressionValue(new C1091y4(childAt, linkifiedTextView, linkifiedTextView2), "WidgetChatListAdapterIte…edFields, false\n        )");
                     }
                 } else {
-                    i2 = R.id.chat_list_item_embed_field_name;
+                    i2 = C5419R.id.chat_list_item_embed_field_name;
                 }
                 throw new NullPointerException("Missing required view with ID: ".concat(viewInflate.getResources().getResourceName(i2)));
             }
-            childAt = this.binding.j.getChildAt(i);
-            ((SimpleDraweeSpanTextView) childAt.findViewById(R.id.chat_list_item_embed_field_name)).setDraweeSpanStringBuilder(anonymousClass1.invoke((Collection<? extends Node<MessageRenderContext>>) parsedFields.get(i).getParsedName(), outline.q("f_name:", i)));
-            ((SimpleDraweeSpanTextView) childAt.findViewById(R.id.chat_list_item_embed_field_value)).setDraweeSpanStringBuilder(anonymousClass1.invoke((Collection<? extends Node<MessageRenderContext>>) parsedFields.get(i).getParsedValue(), "f_value:" + i));
-            this.binding.j.addView(childAt);
+            childAt = this.binding.f16189j.getChildAt(i);
+            ((SimpleDraweeSpanTextView) childAt.findViewById(C5419R.id.chat_list_item_embed_field_name)).setDraweeSpanStringBuilder(c80491.invoke((Collection<? extends Node<MessageRenderContext>>) parsedFields.get(i).getParsedName(), C1643a.m871q("f_name:", i)));
+            ((SimpleDraweeSpanTextView) childAt.findViewById(C5419R.id.chat_list_item_embed_field_value)).setDraweeSpanStringBuilder(c80491.invoke((Collection<? extends Node<MessageRenderContext>>) parsedFields.get(i).getParsedValue(), "f_value:" + i));
+            this.binding.f16189j.addView(childAt);
         }
     }
 
@@ -766,42 +766,42 @@ public final class WidgetChatListAdapterItemEmbed extends WidgetChatListItem imp
         EmbedResourceUtils embedResourceUtils = EmbedResourceUtils.INSTANCE;
         final RenderableEmbedMedia previewImage = embedResourceUtils.getPreviewImage(embed);
         if (previewImage == null) {
-            CardView cardView = this.binding.f2316s;
-            Intrinsics3.checkNotNullExpressionValue(cardView, "binding.embedImageContainer");
+            CardView cardView = this.binding.f16198s;
+            C12238m.checkNotNullExpressionValue(cardView, "binding.embedImageContainer");
             cardView.setVisibility(8);
             return;
         }
         boolean zShouldRenderMedia = shouldRenderMedia();
         Integer num2 = previewImage.width;
-        boolean z2 = num2 != null && MathJVM.getSign(num2.intValue()) == 1 && (num = previewImage.height) != null && MathJVM.getSign(num.intValue()) == 1;
+        boolean z2 = num2 != null && C11210a.getSign(num2.intValue()) == 1 && (num = previewImage.height) != null && C11210a.getSign(num.intValue()) == 1;
         if (zShouldRenderMedia && z2) {
-            SimpleDraweeView simpleDraweeView = this.binding.m;
-            Intrinsics3.checkNotNullExpressionValue(simpleDraweeView, "binding.chatListItemEmbedImage");
+            SimpleDraweeView simpleDraweeView = this.binding.f16192m;
+            C12238m.checkNotNullExpressionValue(simpleDraweeView, "binding.chatListItemEmbedImage");
             int i = this.maxEmbedImageWidth;
             int i2 = i / 2;
             Integer num3 = previewImage.width;
             int iIntValue = num3 != null ? num3.intValue() : 0;
             Integer num4 = previewImage.height;
             configureEmbedImage(simpleDraweeView, i, iIntValue, num4 != null ? num4.intValue() : 0, previewImage.url, i2);
-            CardView cardView2 = this.binding.f2316s;
-            Intrinsics3.checkNotNullExpressionValue(cardView2, "binding.embedImageContainer");
+            CardView cardView2 = this.binding.f16198s;
+            C12238m.checkNotNullExpressionValue(cardView2, "binding.embedImageContainer");
             cardView2.setVisibility(0);
         } else {
-            CardView cardView3 = this.binding.f2316s;
-            Intrinsics3.checkNotNullExpressionValue(cardView3, "binding.embedImageContainer");
+            CardView cardView3 = this.binding.f16198s;
+            C12238m.checkNotNullExpressionValue(cardView3, "binding.embedImageContainer");
             cardView3.setVisibility(8);
         }
-        ImageView imageView = this.binding.n;
-        Intrinsics3.checkNotNullExpressionValue(imageView, "binding.chatListItemEmbedImageIcons");
+        ImageView imageView = this.binding.f16193n;
+        C12238m.checkNotNullExpressionValue(imageView, "binding.chatListItemEmbedImageIcons");
         imageView.setVisibility(embedResourceUtils.isPlayable(embed) && zShouldRenderMedia ? 0 : 8);
-        this.binding.m.setOnClickListener(new View.OnClickListener() { // from class: com.discord.widgets.chat.list.adapter.WidgetChatListAdapterItemEmbed$configureEmbedImage$$inlined$apply$lambda$1
+        this.binding.f16192m.setOnClickListener(new View.OnClickListener() { // from class: com.discord.widgets.chat.list.adapter.WidgetChatListAdapterItemEmbed$configureEmbedImage$$inlined$apply$lambda$1
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
                 String externalOpenUrl = EmbedResourceUtils.INSTANCE.getExternalOpenUrl(embed);
                 if (externalOpenUrl != null) {
-                    UriHandler.handleOrUntrusted(outline.x(view, "view", "view.context"), externalOpenUrl, embed.getTitle());
+                    UriHandler.handleOrUntrusted(C1643a.m885x(view, "view", "view.context"), externalOpenUrl, embed.getTitle());
                 } else {
-                    WidgetMedia.INSTANCE.launch(outline.x(view, "view", "view.context"), embed);
+                    WidgetMedia.INSTANCE.launch(C1643a.m885x(view, "view", "view.context"), embed);
                 }
             }
         });
@@ -817,21 +817,21 @@ public final class WidgetChatListAdapterItemEmbed extends WidgetChatListItem imp
     private final void configureEmbedProvider(MessageEmbed embed, MessageRenderContext context) {
         EmbedProvider provider = embed.getProvider();
         if (provider == null) {
-            TextView textView = this.binding.p;
-            Intrinsics3.checkNotNullExpressionValue(textView, "binding.chatListItemEmbedProvider");
+            TextView textView = this.binding.f16195p;
+            C12238m.checkNotNullExpressionValue(textView, "binding.chatListItemEmbedProvider");
             textView.setVisibility(8);
             return;
         }
         String name = provider.getName();
-        TextView textView2 = this.binding.p;
-        Intrinsics3.checkNotNullExpressionValue(textView2, "binding.chatListItemEmbedProvider");
+        TextView textView2 = this.binding.f16195p;
+        C12238m.checkNotNullExpressionValue(textView2, "binding.chatListItemEmbedProvider");
         textView2.setText(name);
         Companion companion = INSTANCE;
-        TextView textView3 = this.binding.p;
-        Intrinsics3.checkNotNullExpressionValue(textView3, "binding.chatListItemEmbedProvider");
+        TextView textView3 = this.binding.f16195p;
+        C12238m.checkNotNullExpressionValue(textView3, "binding.chatListItemEmbedProvider");
         companion.bindUrlOnClick(textView3, provider.getUrl(), provider.getName());
-        TextView textView4 = this.binding.p;
-        Intrinsics3.checkNotNullExpressionValue(textView4, "binding.chatListItemEmbedProvider");
+        TextView textView4 = this.binding.f16195p;
+        C12238m.checkNotNullExpressionValue(textView4, "binding.chatListItemEmbedProvider");
         textView4.setVisibility(0);
     }
 
@@ -839,15 +839,15 @@ public final class WidgetChatListAdapterItemEmbed extends WidgetChatListItem imp
         boolean z2 = embed.getType() == EmbedType.LINK || embed.getType() == EmbedType.HTML || embed.getType() == EmbedType.RICH;
         EmbedThumbnail thumbnail = embed.getThumbnail();
         if (!z2 || thumbnail == null) {
-            SimpleDraweeView simpleDraweeView = this.binding.o;
-            Intrinsics3.checkNotNullExpressionValue(simpleDraweeView, "binding.chatListItemEmbedImageThumbnail");
+            SimpleDraweeView simpleDraweeView = this.binding.f16194o;
+            C12238m.checkNotNullExpressionValue(simpleDraweeView, "binding.chatListItemEmbedImageThumbnail");
             simpleDraweeView.setVisibility(8);
         } else {
-            SimpleDraweeView simpleDraweeView2 = this.binding.o;
-            Intrinsics3.checkNotNullExpressionValue(simpleDraweeView2, "binding.chatListItemEmbedImageThumbnail");
+            SimpleDraweeView simpleDraweeView2 = this.binding.f16194o;
+            C12238m.checkNotNullExpressionValue(simpleDraweeView2, "binding.chatListItemEmbedImageThumbnail");
             simpleDraweeView2.setVisibility(0);
-            SimpleDraweeView simpleDraweeView3 = this.binding.o;
-            Intrinsics3.checkNotNullExpressionValue(simpleDraweeView3, "binding.chatListItemEmbedImageThumbnail");
+            SimpleDraweeView simpleDraweeView3 = this.binding.f16194o;
+            C12238m.checkNotNullExpressionValue(simpleDraweeView3, "binding.chatListItemEmbedImageThumbnail");
             configureEmbedImage$default(this, thumbnail, simpleDraweeView3, this.embedThumbnailMaxSize, 0, 8, null);
         }
     }
@@ -858,8 +858,8 @@ public final class WidgetChatListAdapterItemEmbed extends WidgetChatListItem imp
         MessageEmbed embed = model.getEmbedEntry().getEmbed();
         String title = embed.getTitle();
         if (title == null) {
-            LinkifiedTextView linkifiedTextView = this.binding.r;
-            Intrinsics3.checkNotNullExpressionValue(linkifiedTextView, "binding.chatListItemEmbedTitle");
+            LinkifiedTextView linkifiedTextView = this.binding.f16197r;
+            C12238m.checkNotNullExpressionValue(linkifiedTextView, "binding.chatListItemEmbedTitle");
             linkifiedTextView.setVisibility(8);
             return;
         }
@@ -868,24 +868,24 @@ public final class WidgetChatListAdapterItemEmbed extends WidgetChatListItem imp
         long myId = model.getMyId();
         StoreMessageState.State messageState = model.getEmbedEntry().getMessageState();
         new MessagePreprocessor(myId, (messageState == null || (visibleSpoilerEmbedMap = messageState.getVisibleSpoilerEmbedMap()) == null) ? null : INSTANCE.getEmbedFieldVisibleIndices(visibleSpoilerEmbedMap, embedIndex, EMBED_TYPE_TITLE), null, false, null, 28, null).process(list);
-        this.binding.r.setDraweeSpanStringBuilder(AstRenderer.render(list, renderContext.copy((14335 & 1) != 0 ? renderContext.getContext() : null, (14335 & 2) != 0 ? renderContext.getMyId() : 0L, (14335 & 4) != 0 ? renderContext.getIsAnimationEnabled() : false, (14335 & 8) != 0 ? renderContext.getUserNames() : null, (14335 & 16) != 0 ? renderContext.getChannelNames() : null, (14335 & 32) != 0 ? renderContext.getRoles() : null, (14335 & 64) != 0 ? renderContext.getLinkColorAttrResId() : 0, (14335 & 128) != 0 ? renderContext.getOnClickUrl() : null, (14335 & 256) != 0 ? renderContext.getOnLongPressUrl() : null, (14335 & 512) != 0 ? renderContext.getSpoilerColorRes() : 0, (14335 & 1024) != 0 ? renderContext.getSpoilerRevealedColorRes() : 0, (14335 & 2048) != 0 ? renderContext.getSpoilerOnClick() : new AnonymousClass1(model, embedIndex), (14335 & 4096) != 0 ? renderContext.getUserMentionOnClick() : null, (14335 & 8192) != 0 ? renderContext.getChannelMentionOnClick() : null)));
-        LinkifiedTextView linkifiedTextView2 = this.binding.r;
+        this.binding.f16197r.setDraweeSpanStringBuilder(AstRenderer.render(list, renderContext.copy((14335 & 1) != 0 ? renderContext.getContext() : null, (14335 & 2) != 0 ? renderContext.getMyId() : 0L, (14335 & 4) != 0 ? renderContext.getIsAnimationEnabled() : false, (14335 & 8) != 0 ? renderContext.getUserNames() : null, (14335 & 16) != 0 ? renderContext.getChannelNames() : null, (14335 & 32) != 0 ? renderContext.getRoles() : null, (14335 & 64) != 0 ? renderContext.getLinkColorAttrResId() : 0, (14335 & 128) != 0 ? renderContext.getOnClickUrl() : null, (14335 & 256) != 0 ? renderContext.getOnLongPressUrl() : null, (14335 & 512) != 0 ? renderContext.getSpoilerColorRes() : 0, (14335 & 1024) != 0 ? renderContext.getSpoilerRevealedColorRes() : 0, (14335 & 2048) != 0 ? renderContext.getSpoilerOnClick() : new C80511(model, embedIndex), (14335 & 4096) != 0 ? renderContext.getUserMentionOnClick() : null, (14335 & 8192) != 0 ? renderContext.getChannelMentionOnClick() : null)));
+        LinkifiedTextView linkifiedTextView2 = this.binding.f16197r;
         if (embed.getUrl() != null) {
-            LinkifiedTextView linkifiedTextView3 = this.binding.r;
-            Intrinsics3.checkNotNullExpressionValue(linkifiedTextView3, "binding.chatListItemEmbedTitle");
-            themedColor = ColorCompat.getThemedColor(linkifiedTextView3, R.attr.colorTextLink);
+            LinkifiedTextView linkifiedTextView3 = this.binding.f16197r;
+            C12238m.checkNotNullExpressionValue(linkifiedTextView3, "binding.chatListItemEmbedTitle");
+            themedColor = ColorCompat.getThemedColor(linkifiedTextView3, C5419R.attr.colorTextLink);
         } else {
-            LinkifiedTextView linkifiedTextView4 = this.binding.r;
-            Intrinsics3.checkNotNullExpressionValue(linkifiedTextView4, "binding.chatListItemEmbedTitle");
-            themedColor = ColorCompat.getThemedColor(linkifiedTextView4, R.attr.primary_100);
+            LinkifiedTextView linkifiedTextView4 = this.binding.f16197r;
+            C12238m.checkNotNullExpressionValue(linkifiedTextView4, "binding.chatListItemEmbedTitle");
+            themedColor = ColorCompat.getThemedColor(linkifiedTextView4, C5419R.attr.primary_100);
         }
         linkifiedTextView2.setTextColor(themedColor);
         Companion companion = INSTANCE;
-        LinkifiedTextView linkifiedTextView5 = this.binding.r;
-        Intrinsics3.checkNotNullExpressionValue(linkifiedTextView5, "binding.chatListItemEmbedTitle");
+        LinkifiedTextView linkifiedTextView5 = this.binding.f16197r;
+        C12238m.checkNotNullExpressionValue(linkifiedTextView5, "binding.chatListItemEmbedTitle");
         companion.bindUrlOnClick(linkifiedTextView5, embed.getUrl(), embed.getTitle());
-        LinkifiedTextView linkifiedTextView6 = this.binding.r;
-        Intrinsics3.checkNotNullExpressionValue(linkifiedTextView6, "binding.chatListItemEmbedTitle");
+        LinkifiedTextView linkifiedTextView6 = this.binding.f16197r;
+        C12238m.checkNotNullExpressionValue(linkifiedTextView6, "binding.chatListItemEmbedTitle");
         linkifiedTextView6.setVisibility(0);
     }
 
@@ -893,20 +893,20 @@ public final class WidgetChatListAdapterItemEmbed extends WidgetChatListItem imp
         CharSequence text = null;
         String text2 = footer != null ? footer.getText() : null;
         if (text2 == null || text2.length() == 0) {
-            SimpleDraweeView simpleDraweeView = this.binding.k;
-            Intrinsics3.checkNotNullExpressionValue(simpleDraweeView, "binding.chatListItemEmbedFooterIcon");
+            SimpleDraweeView simpleDraweeView = this.binding.f16190k;
+            C12238m.checkNotNullExpressionValue(simpleDraweeView, "binding.chatListItemEmbedFooterIcon");
             simpleDraweeView.setVisibility(8);
         } else {
-            SimpleDraweeView simpleDraweeView2 = this.binding.k;
-            Intrinsics3.checkNotNullExpressionValue(simpleDraweeView2, "binding.chatListItemEmbedFooterIcon");
+            SimpleDraweeView simpleDraweeView2 = this.binding.f16190k;
+            C12238m.checkNotNullExpressionValue(simpleDraweeView2, "binding.chatListItemEmbedFooterIcon");
             simpleDraweeView2.setVisibility((footer != null ? footer.getProxyIconUrl() : null) != null ? 0 : 8);
-            SimpleDraweeView simpleDraweeView3 = this.binding.k;
-            Intrinsics3.checkNotNullExpressionValue(simpleDraweeView3, "binding.chatListItemEmbedFooterIcon");
+            SimpleDraweeView simpleDraweeView3 = this.binding.f16190k;
+            C12238m.checkNotNullExpressionValue(simpleDraweeView3, "binding.chatListItemEmbedFooterIcon");
             int i = this.embedTinyIconSize;
             configureEmbedImage$default(this, simpleDraweeView3, i, i, i, footer != null ? footer.getProxyIconUrl() : null, 0, 32, null);
         }
-        CharSequence readableTimeString$default = timestamp != null ? TimeUtils.toReadableTimeString$default(outline.I(this.binding.l, "binding.chatListItemEmbedFooterText", "binding.chatListItemEmbedFooterText.context"), timestamp.getDateTimeMillis(), null, 4, null) : null;
-        TextView textView = this.binding.l;
+        CharSequence readableTimeString$default = timestamp != null ? TimeUtils.toReadableTimeString$default(C1643a.m821I(this.binding.f16191l, "binding.chatListItemEmbedFooterText", "binding.chatListItemEmbedFooterText.context"), timestamp.getDateTimeMillis(), null, 4, null) : null;
+        TextView textView = this.binding.f16191l;
         if (footer != null && readableTimeString$default != null) {
             text = footer.getText() + " | " + readableTimeString$default;
         } else if (footer != null) {
@@ -916,7 +916,7 @@ public final class WidgetChatListAdapterItemEmbed extends WidgetChatListItem imp
         }
         textView.setText(text);
         CharSequence text3 = textView.getText();
-        Intrinsics3.checkNotNullExpressionValue(text3, NotificationCompat.MessagingStyle.Message.KEY_TEXT);
+        C12238m.checkNotNullExpressionValue(text3, NotificationCompat.MessagingStyle.Message.KEY_TEXT);
         textView.setVisibility(text3.length() > 0 ? 0 : 8);
     }
 
@@ -925,14 +925,14 @@ public final class WidgetChatListAdapterItemEmbed extends WidgetChatListItem imp
         RenderableEmbedMedia previewImage;
         boolean z2;
         if (!shouldRenderMedia()) {
-            InlineMediaView inlineMediaView = this.binding.t;
-            Intrinsics3.checkNotNullExpressionValue(inlineMediaView, "binding.embedInlineMedia");
+            InlineMediaView inlineMediaView = this.binding.f16199t;
+            C12238m.checkNotNullExpressionValue(inlineMediaView, "binding.embedInlineMedia");
             inlineMediaView.setVisibility(8);
             return;
         }
         EmbedVideo video = embed.getVideo();
         if (video != null) {
-            Intrinsics3.checkNotNullParameter(video, "$this$asRenderableEmbedMedia");
+            C12238m.checkNotNullParameter(video, "$this$asRenderableEmbedMedia");
             String proxyUrl = video.getProxyUrl();
             if (proxyUrl == null) {
                 proxyUrl = video.getUrl();
@@ -961,36 +961,36 @@ public final class WidgetChatListAdapterItemEmbed extends WidgetChatListItem imp
                 int iIntValue2 = num4 != null ? num4.intValue() : 0;
                 int i = this.maxEmbedImageWidth;
                 int i2 = MAX_IMAGE_VIEW_HEIGHT_PX;
-                InlineMediaView inlineMediaView2 = this.binding.t;
-                Intrinsics3.checkNotNullExpressionValue(inlineMediaView2, "binding.embedInlineMedia");
+                InlineMediaView inlineMediaView2 = this.binding.f16199t;
+                C12238m.checkNotNullExpressionValue(inlineMediaView2, "binding.embedInlineMedia");
                 Resources resources = inlineMediaView2.getResources();
-                Intrinsics3.checkNotNullExpressionValue(resources, "binding.embedInlineMedia.resources");
-                Tuples2 tuples2CalculateScaledSize = embedResourceUtils.calculateScaledSize(iIntValue, iIntValue2, i, i2, resources, (32 & 32) != 0 ? 0 : 0);
-                int iIntValue3 = ((Number) tuples2CalculateScaledSize.component1()).intValue();
-                int iIntValue4 = ((Number) tuples2CalculateScaledSize.component2()).intValue();
-                InlineMediaView inlineMediaView3 = this.binding.t;
-                Intrinsics3.checkNotNullExpressionValue(inlineMediaView3, "binding.embedInlineMedia");
+                C12238m.checkNotNullExpressionValue(resources, "binding.embedInlineMedia.resources");
+                Pair pairCalculateScaledSize = embedResourceUtils.calculateScaledSize(iIntValue, iIntValue2, i, i2, resources, (32 & 32) != 0 ? 0 : 0);
+                int iIntValue3 = ((Number) pairCalculateScaledSize.component1()).intValue();
+                int iIntValue4 = ((Number) pairCalculateScaledSize.component2()).intValue();
+                InlineMediaView inlineMediaView3 = this.binding.f16199t;
+                C12238m.checkNotNullExpressionValue(inlineMediaView3, "binding.embedInlineMedia");
                 inlineMediaView3.setVisibility(0);
-                this.binding.t.updateUIWithEmbed(embed, Integer.valueOf(iIntValue3), Integer.valueOf(iIntValue4), autoPlayGifs);
+                this.binding.f16199t.updateUIWithEmbed(embed, Integer.valueOf(iIntValue3), Integer.valueOf(iIntValue4), autoPlayGifs);
             } else {
-                InlineMediaView inlineMediaView4 = this.binding.t;
-                Intrinsics3.checkNotNullExpressionValue(inlineMediaView4, "binding.embedInlineMedia");
+                InlineMediaView inlineMediaView4 = this.binding.f16199t;
+                C12238m.checkNotNullExpressionValue(inlineMediaView4, "binding.embedInlineMedia");
                 inlineMediaView4.setVisibility(8);
             }
         } else {
-            InlineMediaView inlineMediaView5 = this.binding.t;
-            Intrinsics3.checkNotNullExpressionValue(inlineMediaView5, "binding.embedInlineMedia");
+            InlineMediaView inlineMediaView5 = this.binding.f16199t;
+            C12238m.checkNotNullExpressionValue(inlineMediaView5, "binding.embedInlineMedia");
             inlineMediaView5.setVisibility(8);
         }
-        final InlineMediaView inlineMediaView6 = this.binding.t;
+        final InlineMediaView inlineMediaView6 = this.binding.f16199t;
         inlineMediaView6.setOnClickListener(new View.OnClickListener() { // from class: com.discord.widgets.chat.list.adapter.WidgetChatListAdapterItemEmbed$configureInlineEmbed$$inlined$apply$lambda$1
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
                 WidgetMedia.Companion companion = WidgetMedia.INSTANCE;
                 InlineMediaView inlineMediaView7 = inlineMediaView6;
-                Intrinsics3.checkNotNullExpressionValue(inlineMediaView7, "this");
+                C12238m.checkNotNullExpressionValue(inlineMediaView7, "this");
                 Context context = inlineMediaView7.getContext();
-                Intrinsics3.checkNotNullExpressionValue(context, "this.context");
+                C12238m.checkNotNullExpressionValue(context, "this.context");
                 companion.launch(context, embed);
             }
         });
@@ -999,13 +999,13 @@ public final class WidgetChatListAdapterItemEmbed extends WidgetChatListItem imp
     private final void configureUI(final Model model) {
         final EmbedEntry embedEntry = model.getEmbedEntry();
         MessageEmbed embed = embedEntry.getEmbed();
-        MessageRenderContext messageRenderContextCreateRenderContext = model.createRenderContext(outline.x(this.itemView, "itemView", "itemView.context"), ((WidgetChatListAdapter) this.adapter).getEventHandler());
+        MessageRenderContext messageRenderContextCreateRenderContext = model.createRenderContext(C1643a.m885x(this.itemView, "itemView", "itemView.context"), ((WidgetChatListAdapter) this.adapter).getEventHandler());
         if (model.getIsSpoilerHidden()) {
-            ViewExtensions.fadeIn$default(this.binding.q, 50L, null, AnonymousClass1.INSTANCE, null, 10, null);
+            ViewExtensions.fadeIn$default(this.binding.f16196q, 50L, null, C80531.INSTANCE, null, 10, null);
         } else {
-            ViewExtensions.fadeOut$default(this.binding.q, 200L, AnonymousClass2.INSTANCE, null, 4, null);
+            ViewExtensions.fadeOut$default(this.binding.f16196q, 200L, C80542.INSTANCE, null, 4, null);
         }
-        this.binding.q.setOnClickListener(new View.OnClickListener() { // from class: com.discord.widgets.chat.list.adapter.WidgetChatListAdapterItemEmbed.configureUI.3
+        this.binding.f16196q.setOnClickListener(new View.OnClickListener() { // from class: com.discord.widgets.chat.list.adapter.WidgetChatListAdapterItemEmbed.configureUI.3
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
                 if (WidgetChatListAdapterItemEmbed.access$getAdapter$p(WidgetChatListAdapterItemEmbed.this).getData().getIsSpoilerClickAllowed()) {
@@ -1017,35 +1017,35 @@ public final class WidgetChatListAdapterItemEmbed extends WidgetChatListItem imp
         });
         try {
             if (EmbedResourceUtils.INSTANCE.isInlineEmbed(embed)) {
-                ConstraintLayout constraintLayout = this.binding.g;
-                Intrinsics3.checkNotNullExpressionValue(constraintLayout, "binding.chatListItemEmbedContent");
+                ConstraintLayout constraintLayout = this.binding.f16186g;
+                C12238m.checkNotNullExpressionValue(constraintLayout, "binding.chatListItemEmbedContent");
                 constraintLayout.setVisibility(8);
-                View view = this.binding.i;
-                Intrinsics3.checkNotNullExpressionValue(view, "binding.chatListItemEmbedDivider");
+                View view = this.binding.f16188i;
+                C12238m.checkNotNullExpressionValue(view, "binding.chatListItemEmbedDivider");
                 view.setVisibility(8);
-                SimpleDraweeView simpleDraweeView = this.binding.o;
-                Intrinsics3.checkNotNullExpressionValue(simpleDraweeView, "binding.chatListItemEmbedImageThumbnail");
+                SimpleDraweeView simpleDraweeView = this.binding.f16194o;
+                C12238m.checkNotNullExpressionValue(simpleDraweeView, "binding.chatListItemEmbedImageThumbnail");
                 simpleDraweeView.setVisibility(8);
-                InlineMediaView inlineMediaView = this.binding.t;
-                Intrinsics3.checkNotNullExpressionValue(inlineMediaView, "binding.embedInlineMedia");
+                InlineMediaView inlineMediaView = this.binding.f16199t;
+                C12238m.checkNotNullExpressionValue(inlineMediaView, "binding.embedInlineMedia");
                 inlineMediaView.setVisibility(0);
                 configureInlineEmbed(embed, embedEntry.getAutoPlayGifs());
-                MaterialCardView materialCardView = this.binding.f;
+                MaterialCardView materialCardView = this.binding.f16185f;
                 View view2 = this.itemView;
-                Intrinsics3.checkNotNullExpressionValue(view2, "itemView");
-                materialCardView.setCardBackgroundColor(ColorCompat.getColor(view2, R.color.transparent));
-                MaterialCardView materialCardView2 = this.binding.f;
-                Intrinsics3.checkNotNullExpressionValue(materialCardView2, "binding.chatListItemEmbedContainerCard");
+                C12238m.checkNotNullExpressionValue(view2, "itemView");
+                materialCardView.setCardBackgroundColor(ColorCompat.getColor(view2, C5419R.color.transparent));
+                MaterialCardView materialCardView2 = this.binding.f16185f;
+                C12238m.checkNotNullExpressionValue(materialCardView2, "binding.chatListItemEmbedContainerCard");
                 materialCardView2.setStrokeWidth(0);
             } else {
-                ConstraintLayout constraintLayout2 = this.binding.g;
-                Intrinsics3.checkNotNullExpressionValue(constraintLayout2, "binding.chatListItemEmbedContent");
+                ConstraintLayout constraintLayout2 = this.binding.f16186g;
+                C12238m.checkNotNullExpressionValue(constraintLayout2, "binding.chatListItemEmbedContent");
                 constraintLayout2.setVisibility(0);
-                View view3 = this.binding.i;
-                Intrinsics3.checkNotNullExpressionValue(view3, "binding.chatListItemEmbedDivider");
+                View view3 = this.binding.f16188i;
+                C12238m.checkNotNullExpressionValue(view3, "binding.chatListItemEmbedDivider");
                 view3.setVisibility(0);
-                InlineMediaView inlineMediaView2 = this.binding.t;
-                Intrinsics3.checkNotNullExpressionValue(inlineMediaView2, "binding.embedInlineMedia");
+                InlineMediaView inlineMediaView2 = this.binding.f16199t;
+                C12238m.checkNotNullExpressionValue(inlineMediaView2, "binding.embedInlineMedia");
                 inlineMediaView2.setVisibility(8);
                 configureEmbedDivider(!model.getIsSpoilerHidden() ? embed.getColor() : null);
                 configureEmbedProvider(embed, messageRenderContextCreateRenderContext);
@@ -1056,24 +1056,24 @@ public final class WidgetChatListAdapterItemEmbed extends WidgetChatListItem imp
                 configureEmbedImage(embed);
                 configureEmbedFields(model, messageRenderContextCreateRenderContext);
                 configureFooter(embed.getFooter(), embed.getTimestamp());
-                MaterialCardView materialCardView3 = this.binding.f;
+                MaterialCardView materialCardView3 = this.binding.f16185f;
                 View view4 = this.itemView;
-                Intrinsics3.checkNotNullExpressionValue(view4, "itemView");
-                materialCardView3.setCardBackgroundColor(ColorCompat.getThemedColor(view4, R.attr.colorBackgroundSecondary));
-                MaterialCardView materialCardView4 = this.binding.f;
-                Intrinsics3.checkNotNullExpressionValue(materialCardView4, "binding.chatListItemEmbedContainerCard");
-                MaterialCardView materialCardView5 = this.binding.f;
-                Intrinsics3.checkNotNullExpressionValue(materialCardView5, "binding.chatListItemEmbedContainerCard");
-                materialCardView4.setStrokeWidth(materialCardView5.getResources().getDimensionPixelSize(R.dimen.chat_embed_card_stroke_width));
+                C12238m.checkNotNullExpressionValue(view4, "itemView");
+                materialCardView3.setCardBackgroundColor(ColorCompat.getThemedColor(view4, C5419R.attr.colorBackgroundSecondary));
+                MaterialCardView materialCardView4 = this.binding.f16185f;
+                C12238m.checkNotNullExpressionValue(materialCardView4, "binding.chatListItemEmbedContainerCard");
+                MaterialCardView materialCardView5 = this.binding.f16185f;
+                C12238m.checkNotNullExpressionValue(materialCardView5, "binding.chatListItemEmbedContainerCard");
+                materialCardView4.setStrokeWidth(materialCardView5.getResources().getDimensionPixelSize(C5419R.dimen.chat_embed_card_stroke_width));
             }
             View view5 = this.itemView;
-            Intrinsics3.checkNotNullExpressionValue(view5, "itemView");
+            C12238m.checkNotNullExpressionValue(view5, "itemView");
             view5.setVisibility(0);
         } catch (Exception e) {
             View view6 = this.itemView;
-            Intrinsics3.checkNotNullExpressionValue(view6, "itemView");
+            C12238m.checkNotNullExpressionValue(view6, "itemView");
             view6.setVisibility(8);
-            Logger.e$default(AppLog.g, "Unable to render embed.", e, null, 4, null);
+            Logger.e$default(AppLog.f14950g, "Unable to render embed.", e, null, 4, null);
         }
     }
 
@@ -1081,7 +1081,7 @@ public final class WidgetChatListAdapterItemEmbed extends WidgetChatListItem imp
         if (fields == null) {
             return null;
         }
-        ArrayList arrayList = new ArrayList(Iterables2.collectionSizeOrDefault(fields, 10));
+        ArrayList arrayList = new ArrayList(C12149o.collectionSizeOrDefault(fields, 10));
         for (EmbedField embedField : fields) {
             String name = embedField.getName();
             MessageParseState.Companion companion = MessageParseState.INSTANCE;
@@ -1101,12 +1101,12 @@ public final class WidgetChatListAdapterItemEmbed extends WidgetChatListItem imp
 
     @Override // com.discord.widgets.chat.list.FragmentLifecycleListener
     public void onPause() {
-        this.binding.t.onPause();
+        this.binding.f16199t.onPause();
     }
 
     @Override // com.discord.widgets.chat.list.FragmentLifecycleListener
     public void onResume() {
-        this.binding.t.onResume();
+        this.binding.f16199t.onResume();
     }
 
     public static /* synthetic */ void configureEmbedImage$default(WidgetChatListAdapterItemEmbed widgetChatListAdapterItemEmbed, ImageView imageView, int i, int i2, int i3, String str, int i4, int i5, Object obj) {
@@ -1116,12 +1116,12 @@ public final class WidgetChatListAdapterItemEmbed extends WidgetChatListItem imp
     /* JADX WARN: Can't rename method to resolve collision */
     @Override // com.discord.widgets.chat.list.adapter.WidgetChatListItem, com.discord.utilities.mg_recycler.MGRecyclerViewHolder
     public void onConfigure(int position, final ChatListEntry data) {
-        Intrinsics3.checkNotNullParameter(data, "data");
+        C12238m.checkNotNullParameter(data, "data");
         super.onConfigure(position, data);
         EmbedEntry embedEntry = (EmbedEntry) data;
         View view = this.itemView;
-        Intrinsics3.checkNotNullExpressionValue(view, "itemView");
-        ViewExtensions.setOnLongClickListenerConsumeClick(view, new AnonymousClass1(data));
+        C12238m.checkNotNullExpressionValue(view, "itemView");
+        ViewExtensions.setOnLongClickListenerConsumeClick(view, new C80561(data));
         this.itemView.setOnClickListener(new View.OnClickListener() { // from class: com.discord.widgets.chat.list.adapter.WidgetChatListAdapterItemEmbed.onConfigure.2
             @Override // android.view.View.OnClickListener
             public final void onClick(View view2) {
@@ -1129,17 +1129,17 @@ public final class WidgetChatListAdapterItemEmbed extends WidgetChatListItem imp
             }
         });
         Message message = embedEntry.getMessage();
-        View view2 = this.binding.c;
-        Intrinsics3.checkNotNullExpressionValue(view2, "binding.chatListAdapterItemHighlightedBg");
-        View view3 = this.binding.f2315b;
-        Intrinsics3.checkNotNullExpressionValue(view3, "binding.chatListAdapterItemGutterBg");
+        View view2 = this.binding.f16182c;
+        C12238m.checkNotNullExpressionValue(view2, "binding.chatListAdapterItemHighlightedBg");
+        View view3 = this.binding.f16181b;
+        C12238m.checkNotNullExpressionValue(view3, "binding.chatListAdapterItemGutterBg");
         configureCellHighlight(message, view2, view3);
         String description = embedEntry.getEmbed().getDescription();
-        Model model = new Model(embedEntry, description != null ? Parser.parse$default(UI_THREAD_VALUES_PARSER, description, MessageParseState.INSTANCE.getInitialState(), null, 4, null) : null, parseFields(embedEntry.getEmbed().d(), UI_THREAD_TITLES_PARSER, UI_THREAD_VALUES_PARSER), null, null, null, 0L, 120, null);
+        Model model = new Model(embedEntry, description != null ? Parser.parse$default(UI_THREAD_VALUES_PARSER, description, MessageParseState.INSTANCE.getInitialState(), null, 4, null) : null, parseFields(embedEntry.getEmbed().m8101d(), UI_THREAD_TITLES_PARSER, UI_THREAD_VALUES_PARSER), null, null, null, 0L, 120, null);
         configureUI(model);
-        Observable observableZ = INSTANCE.getModel(model).Z(1);
-        Intrinsics3.checkNotNullExpressionValue(observableZ, "getModel(initialModel)\n        .take(1)");
-        ObservableExtensionsKt.appSubscribe(ObservableExtensionsKt.ui(observableZ), (Class<?>) WidgetChatListAdapterItemEmbed.class, (58 & 2) != 0 ? null : null, (Function1<? super Subscription, Unit>) ((58 & 4) != 0 ? null : new AnonymousClass3()), (Function1<? super Error, Unit>) ((58 & 8) != 0 ? null : null), (Function0<Unit>) ((58 & 16) != 0 ? ObservableExtensionsKt.AnonymousClass1.INSTANCE : null), (Function0<Unit>) ((58 & 32) != 0 ? ObservableExtensionsKt.AnonymousClass2.INSTANCE : null), new AnonymousClass4());
+        Observable observableM11100Z = INSTANCE.getModel(model).m11100Z(1);
+        C12238m.checkNotNullExpressionValue(observableM11100Z, "getModel(initialModel)\n        .take(1)");
+        ObservableExtensionsKt.appSubscribe(ObservableExtensionsKt.m8518ui(observableM11100Z), (Class<?>) WidgetChatListAdapterItemEmbed.class, (58 & 2) != 0 ? null : null, (Function1<? super Subscription, Unit>) ((58 & 4) != 0 ? null : new C80583()), (Function1<? super Error, Unit>) ((58 & 8) != 0 ? null : null), (Function0<Unit>) ((58 & 16) != 0 ? ObservableExtensionsKt.C68791.INSTANCE : null), (Function0<Unit>) ((58 & 32) != 0 ? ObservableExtensionsKt.C68802.INSTANCE : null), new C80594());
     }
 
     /* JADX INFO: compiled from: WidgetChatListAdapterItemEmbed.kt */
@@ -1162,8 +1162,8 @@ public final class WidgetChatListAdapterItemEmbed extends WidgetChatListItem imp
 
             /* JADX WARN: Multi-variable type inference failed */
             public ParsedField(Collection<? extends Node<MessageRenderContext>> collection, Collection<? extends Node<MessageRenderContext>> collection2) {
-                Intrinsics3.checkNotNullParameter(collection, "parsedName");
-                Intrinsics3.checkNotNullParameter(collection2, "parsedValue");
+                C12238m.checkNotNullParameter(collection, "parsedName");
+                C12238m.checkNotNullParameter(collection2, "parsedValue");
                 this.parsedName = collection;
                 this.parsedValue = collection2;
             }
@@ -1188,8 +1188,8 @@ public final class WidgetChatListAdapterItemEmbed extends WidgetChatListItem imp
             }
 
             public final ParsedField copy(Collection<? extends Node<MessageRenderContext>> parsedName, Collection<? extends Node<MessageRenderContext>> parsedValue) {
-                Intrinsics3.checkNotNullParameter(parsedName, "parsedName");
-                Intrinsics3.checkNotNullParameter(parsedValue, "parsedValue");
+                C12238m.checkNotNullParameter(parsedName, "parsedName");
+                C12238m.checkNotNullParameter(parsedValue, "parsedValue");
                 return new ParsedField(parsedName, parsedValue);
             }
 
@@ -1201,7 +1201,7 @@ public final class WidgetChatListAdapterItemEmbed extends WidgetChatListItem imp
                     return false;
                 }
                 ParsedField parsedField = (ParsedField) other;
-                return Intrinsics3.areEqual(this.parsedName, parsedField.parsedName) && Intrinsics3.areEqual(this.parsedValue, parsedField.parsedValue);
+                return C12238m.areEqual(this.parsedName, parsedField.parsedName) && C12238m.areEqual(this.parsedValue, parsedField.parsedValue);
             }
 
             public final Collection<Node<MessageRenderContext>> getParsedName() {
@@ -1220,12 +1220,12 @@ public final class WidgetChatListAdapterItemEmbed extends WidgetChatListItem imp
             }
 
             public String toString() {
-                StringBuilder sbU = outline.U("ParsedField(parsedName=");
-                sbU.append(this.parsedName);
-                sbU.append(", parsedValue=");
-                sbU.append(this.parsedValue);
-                sbU.append(")");
-                return sbU.toString();
+                StringBuilder sbM833U = C1643a.m833U("ParsedField(parsedName=");
+                sbM833U.append(this.parsedName);
+                sbM833U.append(", parsedValue=");
+                sbM833U.append(this.parsedValue);
+                sbM833U.append(")");
+                return sbM833U.toString();
             }
         }
 
@@ -1235,7 +1235,7 @@ public final class WidgetChatListAdapterItemEmbed extends WidgetChatListItem imp
             boolean z2;
             boolean z3;
             Set<Integer> visibleSpoilerNodeIndices;
-            Intrinsics3.checkNotNullParameter(embedEntry, "embedEntry");
+            C12238m.checkNotNullParameter(embedEntry, "embedEntry");
             this.embedEntry = embedEntry;
             this.parsedDescription = collection;
             this.parsedFields = list;
@@ -1257,24 +1257,24 @@ public final class WidgetChatListAdapterItemEmbed extends WidgetChatListItem imp
                 if (messageState == null || (visibleSpoilerNodeIndices = messageState.getVisibleSpoilerNodeIndices()) == null) {
                     z3 = false;
                 } else {
-                    ArrayList arrayList = new ArrayList(Iterables2.collectionSizeOrDefault(visibleSpoilerNodeIndices, 10));
+                    ArrayList arrayList = new ArrayList(C12149o.collectionSizeOrDefault(visibleSpoilerNodeIndices, 10));
                     Iterator<T> it = visibleSpoilerNodeIndices.iterator();
                     while (it.hasNext()) {
                         arrayList.add(this.spoilers.get(((Number) it.next()).intValue()));
                     }
                     final String url = embedEntry.getEmbed().getUrl();
                     try {
-                        AnimatableValueParser.i2(arrayList, new NodeProcessor() { // from class: com.discord.widgets.chat.list.adapter.WidgetChatListAdapterItemEmbed$Model$isEmbedUrlFoundInVisibleSpoilerNode$1$2$1
-                            @Override // b.a.t.b.c.NodeProcessor
+                        C1460d.m530i2(arrayList, new InterfaceC1307a() { // from class: com.discord.widgets.chat.list.adapter.WidgetChatListAdapterItemEmbed$Model$isEmbedUrlFoundInVisibleSpoilerNode$1$2$1
+                            @Override // p007b.p008a.p050t.p052b.p055c.InterfaceC1307a
                             public final void processNode(Node<Object> node) {
-                                if ((node instanceof UrlNode) && StringsJVM.equals(((UrlNode) node).getUrl(), url, true)) {
+                                if ((node instanceof UrlNode) && C12103t.equals(((UrlNode) node).getUrl(), url, true)) {
                                     throw new RuntimeException() { // from class: com.discord.widgets.chat.list.adapter.WidgetChatListAdapterItemEmbed$Model$isEmbedUrlFoundInVisibleSpoilerNode$1$2$MatchFoundException
                                     };
                                 }
                             }
                         });
                         z3 = false;
-                    } catch (WidgetChatListAdapterItemEmbed7 unused) {
+                    } catch (C8047x934ab9d4 unused) {
                         z3 = true;
                     }
                 }
@@ -1299,7 +1299,7 @@ public final class WidgetChatListAdapterItemEmbed extends WidgetChatListItem imp
                             z2 = false;
                             break;
                         }
-                        if (Strings4.contains$default((CharSequence) ((SpoilerNode) it.next()).getContent(), (CharSequence) "http", false, 2, (Object) null)) {
+                        if (C12106w.contains$default((CharSequence) ((SpoilerNode) it.next()).getContent(), (CharSequence) "http", false, 2, (Object) null)) {
                             z2 = true;
                             break;
                         }
@@ -1352,14 +1352,14 @@ public final class WidgetChatListAdapterItemEmbed extends WidgetChatListItem imp
         }
 
         public final Model copy(EmbedEntry embedEntry, Collection<? extends Node<MessageRenderContext>> parsedDescription, List<ParsedField> parsedFields, Map<Long, String> channelNames, Map<Long, String> userNames, Map<Long, GuildRole> roles, long myId) {
-            Intrinsics3.checkNotNullParameter(embedEntry, "embedEntry");
+            C12238m.checkNotNullParameter(embedEntry, "embedEntry");
             return new Model(embedEntry, parsedDescription, parsedFields, channelNames, userNames, roles, myId);
         }
 
         public final MessageRenderContext createRenderContext(Context androidContext, WidgetChatListAdapter.EventHandler eventHandler) {
-            Intrinsics3.checkNotNullParameter(androidContext, "androidContext");
-            Intrinsics3.checkNotNullParameter(eventHandler, "eventHandler");
-            return new MessageRenderContext(androidContext, this.myId, this.embedEntry.getAllowAnimatedEmojis(), this.userNames, this.channelNames, this.roles, 0, null, new WidgetChatListAdapterItemEmbed5(eventHandler), 0, 0, null, null, null, 16064, null);
+            C12238m.checkNotNullParameter(androidContext, "androidContext");
+            C12238m.checkNotNullParameter(eventHandler, "eventHandler");
+            return new MessageRenderContext(androidContext, this.myId, this.embedEntry.getAllowAnimatedEmojis(), this.userNames, this.channelNames, this.roles, 0, null, new WidgetChatListAdapterItemEmbed$Model$createRenderContext$1(eventHandler), 0, 0, null, null, null, 16064, null);
         }
 
         public boolean equals(Object other) {
@@ -1370,7 +1370,7 @@ public final class WidgetChatListAdapterItemEmbed extends WidgetChatListItem imp
                 return false;
             }
             Model model = (Model) other;
-            return Intrinsics3.areEqual(this.embedEntry, model.embedEntry) && Intrinsics3.areEqual(this.parsedDescription, model.parsedDescription) && Intrinsics3.areEqual(this.parsedFields, model.parsedFields) && Intrinsics3.areEqual(this.channelNames, model.channelNames) && Intrinsics3.areEqual(this.userNames, model.userNames) && Intrinsics3.areEqual(this.roles, model.roles) && this.myId == model.myId;
+            return C12238m.areEqual(this.embedEntry, model.embedEntry) && C12238m.areEqual(this.parsedDescription, model.parsedDescription) && C12238m.areEqual(this.parsedFields, model.parsedFields) && C12238m.areEqual(this.channelNames, model.channelNames) && C12238m.areEqual(this.userNames, model.userNames) && C12238m.areEqual(this.roles, model.roles) && this.myId == model.myId;
         }
 
         public final Map<Long, String> getChannelNames() {
@@ -1413,7 +1413,7 @@ public final class WidgetChatListAdapterItemEmbed extends WidgetChatListItem imp
             Map<Long, String> map2 = this.userNames;
             int iHashCode5 = (iHashCode4 + (map2 != null ? map2.hashCode() : 0)) * 31;
             Map<Long, GuildRole> map3 = this.roles;
-            return b.a(this.myId) + ((iHashCode5 + (map3 != null ? map3.hashCode() : 0)) * 31);
+            return C0002b.m3a(this.myId) + ((iHashCode5 + (map3 != null ? map3.hashCode() : 0)) * 31);
         }
 
         /* JADX INFO: renamed from: isSpoilerHidden, reason: from getter */
@@ -1422,20 +1422,20 @@ public final class WidgetChatListAdapterItemEmbed extends WidgetChatListItem imp
         }
 
         public String toString() {
-            StringBuilder sbU = outline.U("Model(embedEntry=");
-            sbU.append(this.embedEntry);
-            sbU.append(", parsedDescription=");
-            sbU.append(this.parsedDescription);
-            sbU.append(", parsedFields=");
-            sbU.append(this.parsedFields);
-            sbU.append(", channelNames=");
-            sbU.append(this.channelNames);
-            sbU.append(", userNames=");
-            sbU.append(this.userNames);
-            sbU.append(", roles=");
-            sbU.append(this.roles);
-            sbU.append(", myId=");
-            return outline.C(sbU, this.myId, ")");
+            StringBuilder sbM833U = C1643a.m833U("Model(embedEntry=");
+            sbM833U.append(this.embedEntry);
+            sbM833U.append(", parsedDescription=");
+            sbM833U.append(this.parsedDescription);
+            sbM833U.append(", parsedFields=");
+            sbM833U.append(this.parsedFields);
+            sbM833U.append(", channelNames=");
+            sbM833U.append(this.channelNames);
+            sbM833U.append(", userNames=");
+            sbM833U.append(this.userNames);
+            sbM833U.append(", roles=");
+            sbM833U.append(this.roles);
+            sbM833U.append(", myId=");
+            return C1643a.m815C(sbM833U, this.myId, ")");
         }
 
         public /* synthetic */ Model(EmbedEntry embedEntry, Collection collection, List list, Map map, Map map2, Map map3, long j, int i, DefaultConstructorMarker defaultConstructorMarker) {
@@ -1456,13 +1456,13 @@ public final class WidgetChatListAdapterItemEmbed extends WidgetChatListItem imp
         }
         view.setVisibility(0);
         EmbedResourceUtils embedResourceUtils = EmbedResourceUtils.INSTANCE;
-        InlineMediaView inlineMediaView = this.binding.t;
-        Intrinsics3.checkNotNullExpressionValue(inlineMediaView, "binding.embedInlineMedia");
+        InlineMediaView inlineMediaView = this.binding.f16199t;
+        C12238m.checkNotNullExpressionValue(inlineMediaView, "binding.embedInlineMedia");
         Resources resources = inlineMediaView.getResources();
-        Intrinsics3.checkNotNullExpressionValue(resources, "binding.embedInlineMedia.resources");
-        Tuples2<Integer, Integer> tuples2CalculateScaledSize = embedResourceUtils.calculateScaledSize(width, height, maxWidth, maxWidth, resources, minWidth);
-        int iIntValue = tuples2CalculateScaledSize.component1().intValue();
-        int iIntValue2 = tuples2CalculateScaledSize.component2().intValue();
+        C12238m.checkNotNullExpressionValue(resources, "binding.embedInlineMedia.resources");
+        Pair<Integer, Integer> pairCalculateScaledSize = embedResourceUtils.calculateScaledSize(width, height, maxWidth, maxWidth, resources, minWidth);
+        int iIntValue = pairCalculateScaledSize.component1().intValue();
+        int iIntValue2 = pairCalculateScaledSize.component2().intValue();
         ViewGroup.LayoutParams layoutParams = view.getLayoutParams();
         if (layoutParams.width != iIntValue || layoutParams.height != iIntValue2) {
             layoutParams.width = iIntValue;

@@ -1,7 +1,6 @@
 package org.webrtc;
 
 import androidx.annotation.Nullable;
-import b.d.b.a.outline;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
@@ -13,6 +12,7 @@ import java.util.Objects;
 import org.webrtc.DataChannel;
 import org.webrtc.MediaStreamTrack;
 import org.webrtc.RtpTransceiver;
+import p007b.p100d.p104b.p105a.C1643a;
 
 /* JADX INFO: loaded from: classes3.dex */
 public class PeerConnection {
@@ -244,7 +244,7 @@ public class PeerConnection {
             sb.append("] [");
             sb.append(this.tlsAlpnProtocols);
             sb.append("] [");
-            return outline.L(sb, this.tlsEllipticCurves, "]");
+            return C1643a.m824L(sb, this.tlsEllipticCurves, "]");
         }
 
         @Deprecated

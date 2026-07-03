@@ -1,6 +1,5 @@
 package com.discord.widgets.servers;
 
-import a0.a.a.b;
 import android.content.Context;
 import android.content.Intent;
 import android.text.Editable;
@@ -13,15 +12,12 @@ import androidx.exifinterface.media.ExifInterface;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.recyclerview.widget.RecyclerView;
-import b.a.d.AppScreen2;
-import b.a.k.FormatUtils;
-import b.d.b.a.outline;
-import com.discord.R;
+import com.discord.C5419R;
 import com.discord.api.user.User;
 import com.discord.app.AppActivity;
 import com.discord.app.AppFragment;
-import com.discord.app.AppLogger2;
 import com.discord.app.AppViewFlipper;
+import com.discord.app.LoggingConfig;
 import com.discord.databinding.WidgetServerSettingsBanListItemBinding;
 import com.discord.databinding.WidgetServerSettingsBansBinding;
 import com.discord.models.domain.ModelAuditLogEntry;
@@ -38,24 +34,16 @@ import com.discord.utilities.mg_recycler.MGRecyclerAdapter;
 import com.discord.utilities.mg_recycler.MGRecyclerAdapterSimple;
 import com.discord.utilities.mg_recycler.MGRecyclerDataPayload;
 import com.discord.utilities.mg_recycler.MGRecyclerViewHolder;
+import com.discord.utilities.p501rx.ObservableExtensionsKt;
 import com.discord.utilities.permissions.PermissionUtils;
 import com.discord.utilities.rest.RestAPI;
-import com.discord.utilities.rx.ObservableExtensionsKt;
 import com.discord.utilities.view.extensions.ViewExtensions;
 import com.discord.utilities.viewbinding.FragmentViewBindingDelegate;
-import com.discord.utilities.viewbinding.FragmentViewBindingDelegate3;
+import com.discord.utilities.viewbinding.FragmentViewBindingDelegateKt;
 import com.discord.widgets.notice.WidgetNoticeDialog;
 import com.discord.widgets.servers.WidgetServerSettingsBans;
 import com.facebook.drawee.view.SimpleDraweeView;
 import com.google.android.material.textfield.TextInputLayout;
-import d0.g0.Strings4;
-import d0.g0.StringsJVM;
-import d0.z.d.Intrinsics3;
-import d0.z.d.Lambda;
-import j0.k.Func1;
-import j0.l.a.OnSubscribeLift;
-import j0.l.a.OperatorToObservableSortedList;
-import j0.l.e.ScalarSynchronousObservable;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;
@@ -66,16 +54,28 @@ import kotlin.jvm.functions.Function0;
 import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.reflect.KProperty;
-import rx.Observable;
-import rx.Subscription;
-import rx.functions.Func2;
-import rx.functions.Func3;
-import rx.subjects.BehaviorSubject;
+import p001a0.p002a.p003a.C0002b;
+import p007b.p008a.p018d.C0870j;
+import p007b.p008a.p027k.C1107b;
+import p007b.p100d.p104b.p105a.C1643a;
+import p507d0.p579g0.C12103t;
+import p507d0.p579g0.C12106w;
+import p507d0.p592z.p594d.AbstractC12240o;
+import p507d0.p592z.p594d.C12238m;
+import p637j0.p641k.InterfaceC12589b;
+import p637j0.p642l.p643a.C12657o2;
+import p637j0.p642l.p643a.C12666r;
+import p637j0.p642l.p647e.C12721k;
+import p658rx.Observable;
+import p658rx.Subscription;
+import p658rx.functions.Func2;
+import p658rx.functions.Func3;
+import p658rx.subjects.BehaviorSubject;
 
 /* JADX INFO: compiled from: WidgetServerSettingsBans.kt */
 /* JADX INFO: loaded from: classes2.dex */
 public final class WidgetServerSettingsBans extends AppFragment {
-    public static final /* synthetic */ KProperty[] $$delegatedProperties = {outline.d0(WidgetServerSettingsBans.class, "binding", "getBinding()Lcom/discord/databinding/WidgetServerSettingsBansBinding;", 0)};
+    public static final /* synthetic */ KProperty[] $$delegatedProperties = {C1643a.m846d0(WidgetServerSettingsBans.class, "binding", "getBinding()Lcom/discord/databinding/WidgetServerSettingsBansBinding;", 0)};
 
     /* JADX INFO: renamed from: Companion, reason: from kotlin metadata */
     public static final Companion INSTANCE = new Companion(null);
@@ -91,7 +91,7 @@ public final class WidgetServerSettingsBans extends AppFragment {
     private AlertDialog dialog;
     private final BehaviorSubject<String> filterPublisher;
     private long guildId;
-    private final AppLogger2 loggingConfig;
+    private final LoggingConfig loggingConfig;
 
     /* JADX INFO: compiled from: WidgetServerSettingsBans.kt */
     public static final class Adapter extends MGRecyclerAdapterSimple<Model.BanItem> {
@@ -104,19 +104,19 @@ public final class WidgetServerSettingsBans extends AppFragment {
 
             /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
             public BanListItem(Adapter adapter, Adapter adapter2) {
-                super(R.layout.widget_server_settings_ban_list_item, adapter2);
-                Intrinsics3.checkNotNullParameter(adapter2, "adapter");
+                super(C5419R.layout.widget_server_settings_ban_list_item, adapter2);
+                C12238m.checkNotNullParameter(adapter2, "adapter");
                 this.this$0 = adapter;
                 View view = this.itemView;
                 RelativeLayout relativeLayout = (RelativeLayout) view;
-                int i = R.id.ban_list_item_avatar;
-                SimpleDraweeView simpleDraweeView = (SimpleDraweeView) view.findViewById(R.id.ban_list_item_avatar);
+                int i = C5419R.id.ban_list_item_avatar;
+                SimpleDraweeView simpleDraweeView = (SimpleDraweeView) view.findViewById(C5419R.id.ban_list_item_avatar);
                 if (simpleDraweeView != null) {
-                    i = R.id.ban_list_item_name;
-                    TextView textView = (TextView) view.findViewById(R.id.ban_list_item_name);
+                    i = C5419R.id.ban_list_item_name;
+                    TextView textView = (TextView) view.findViewById(C5419R.id.ban_list_item_name);
                     if (textView != null) {
                         WidgetServerSettingsBanListItemBinding widgetServerSettingsBanListItemBinding = new WidgetServerSettingsBanListItemBinding((RelativeLayout) view, relativeLayout, simpleDraweeView, textView);
-                        Intrinsics3.checkNotNullExpressionValue(widgetServerSettingsBanListItemBinding, "WidgetServerSettingsBanL…temBinding.bind(itemView)");
+                        C12238m.checkNotNullExpressionValue(widgetServerSettingsBanListItemBinding, "WidgetServerSettingsBanL…temBinding.bind(itemView)");
                         this.binding = widgetServerSettingsBanListItemBinding;
                         return;
                     }
@@ -132,21 +132,21 @@ public final class WidgetServerSettingsBans extends AppFragment {
             public void onConfigure(int position, final Model.BanItem data) {
                 User user;
                 User user2;
-                Intrinsics3.checkNotNullParameter(data, "data");
+                C12238m.checkNotNullParameter(data, "data");
                 super.onConfigure(position, data);
-                TextView textView = this.binding.d;
-                Intrinsics3.checkNotNullExpressionValue(textView, "binding.banListItemName");
+                TextView textView = this.binding.f17533d;
+                C12238m.checkNotNullExpressionValue(textView, "binding.banListItemName");
                 ModelBan ban = data.getBan();
                 CoreUser coreUser = null;
                 textView.setText((ban == null || (user2 = ban.getUser()) == null) ? null : user2.getUsername());
-                SimpleDraweeView simpleDraweeView = this.binding.c;
-                Intrinsics3.checkNotNullExpressionValue(simpleDraweeView, "binding.banListItemAvatar");
+                SimpleDraweeView simpleDraweeView = this.binding.f17532c;
+                C12238m.checkNotNullExpressionValue(simpleDraweeView, "binding.banListItemAvatar");
                 ModelBan ban2 = data.getBan();
                 if (ban2 != null && (user = ban2.getUser()) != null) {
                     coreUser = new CoreUser(user);
                 }
-                IconUtils.setIcon$default(simpleDraweeView, coreUser, R.dimen.avatar_size_standard, null, null, null, 56, null);
-                this.binding.f2543b.setOnClickListener(new View.OnClickListener() { // from class: com.discord.widgets.servers.WidgetServerSettingsBans$Adapter$BanListItem$onConfigure$2
+                IconUtils.setIcon$default(simpleDraweeView, coreUser, C5419R.dimen.avatar_size_standard, null, null, null, 56, null);
+                this.binding.f17531b.setOnClickListener(new View.OnClickListener() { // from class: com.discord.widgets.servers.WidgetServerSettingsBans$Adapter$BanListItem$onConfigure$2
                     @Override // android.view.View.OnClickListener
                     public final void onClick(View view) {
                         Function1<ModelBan, Unit> onBanSelectedListener;
@@ -163,7 +163,7 @@ public final class WidgetServerSettingsBans extends AppFragment {
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
         public Adapter(RecyclerView recyclerView) {
             super(recyclerView, false, 2, null);
-            Intrinsics3.checkNotNullParameter(recyclerView, "recycler");
+            C12238m.checkNotNullParameter(recyclerView, "recycler");
         }
 
         public final Function1<ModelBan, Unit> getOnBanSelectedListener() {
@@ -176,7 +176,7 @@ public final class WidgetServerSettingsBans extends AppFragment {
 
         @Override // androidx.recyclerview.widget.RecyclerView.Adapter
         public BanListItem onCreateViewHolder(ViewGroup parent, int viewType) {
-            Intrinsics3.checkNotNullParameter(parent, "parent");
+            C12238m.checkNotNullParameter(parent, "parent");
             if (viewType == 1) {
                 return new BanListItem(this, this);
             }
@@ -190,11 +190,11 @@ public final class WidgetServerSettingsBans extends AppFragment {
         }
 
         public final void create(Context context, long guildId) {
-            Intrinsics3.checkNotNullParameter(context, "context");
+            C12238m.checkNotNullParameter(context, "context");
             StoreStream.INSTANCE.getAnalytics().onGuildSettingsPaneViewed("BANS", guildId);
             Intent intentPutExtra = new Intent().putExtra(WidgetServerSettingsBans.INTENT_EXTRA_GUILD_ID, guildId);
-            Intrinsics3.checkNotNullExpressionValue(intentPutExtra, "Intent().putExtra(INTENT_EXTRA_GUILD_ID, guildId)");
-            AppScreen2.d(context, WidgetServerSettingsBans.class, intentPutExtra);
+            C12238m.checkNotNullExpressionValue(intentPutExtra, "Intent().putExtra(INTENT_EXTRA_GUILD_ID, guildId)");
+            C0870j.m156d(context, WidgetServerSettingsBans.class, intentPutExtra);
         }
 
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
@@ -202,13 +202,13 @@ public final class WidgetServerSettingsBans extends AppFragment {
         }
     }
 
-    /* JADX INFO: renamed from: com.discord.widgets.servers.WidgetServerSettingsBans$configureUI$1, reason: invalid class name */
+    /* JADX INFO: renamed from: com.discord.widgets.servers.WidgetServerSettingsBans$configureUI$1 */
     /* JADX INFO: compiled from: WidgetServerSettingsBans.kt */
-    public static final class AnonymousClass1 extends Lambda implements Function1<ModelBan, Unit> {
+    public static final class C91931 extends AbstractC12240o implements Function1<ModelBan, Unit> {
         public final /* synthetic */ Model $model;
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-        public AnonymousClass1(Model model) {
+        public C91931(Model model) {
             super(1);
             this.$model = model;
         }
@@ -216,47 +216,47 @@ public final class WidgetServerSettingsBans extends AppFragment {
         @Override // kotlin.jvm.functions.Function1
         public /* bridge */ /* synthetic */ Unit invoke(ModelBan modelBan) {
             invoke2(modelBan);
-            return Unit.a;
+            return Unit.f27425a;
         }
 
         /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
         public final void invoke2(ModelBan modelBan) {
-            Intrinsics3.checkNotNullParameter(modelBan, "ban");
+            C12238m.checkNotNullParameter(modelBan, "ban");
             WidgetServerSettingsBans.this.showConfirmUnbanDialog(this.$model.getGuildId(), modelBan);
         }
     }
 
-    /* JADX INFO: renamed from: com.discord.widgets.servers.WidgetServerSettingsBans$onResume$1, reason: invalid class name */
+    /* JADX INFO: renamed from: com.discord.widgets.servers.WidgetServerSettingsBans$onResume$1 */
     /* JADX INFO: compiled from: WidgetServerSettingsBans.kt */
-    public static final class AnonymousClass1 extends Lambda implements Function1<Editable, Unit> {
-        public AnonymousClass1() {
+    public static final class C91941 extends AbstractC12240o implements Function1<Editable, Unit> {
+        public C91941() {
             super(1);
         }
 
         @Override // kotlin.jvm.functions.Function1
         public /* bridge */ /* synthetic */ Unit invoke(Editable editable) {
             invoke2(editable);
-            return Unit.a;
+            return Unit.f27425a;
         }
 
         /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
         public final void invoke2(Editable editable) {
-            Intrinsics3.checkNotNullParameter(editable, "it");
+            C12238m.checkNotNullParameter(editable, "it");
             WidgetServerSettingsBans.this.filterPublisher.onNext(editable.toString());
         }
     }
 
-    /* JADX INFO: renamed from: com.discord.widgets.servers.WidgetServerSettingsBans$onResume$2, reason: invalid class name */
+    /* JADX INFO: renamed from: com.discord.widgets.servers.WidgetServerSettingsBans$onResume$2 */
     /* JADX INFO: compiled from: WidgetServerSettingsBans.kt */
-    public static final class AnonymousClass2 extends Lambda implements Function1<Model, Unit> {
-        public AnonymousClass2() {
+    public static final class C91952 extends AbstractC12240o implements Function1<Model, Unit> {
+        public C91952() {
             super(1);
         }
 
         @Override // kotlin.jvm.functions.Function1
         public /* bridge */ /* synthetic */ Unit invoke(Model model) throws Exception {
             invoke2(model);
-            return Unit.a;
+            return Unit.f27425a;
         }
 
         /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
@@ -265,25 +265,25 @@ public final class WidgetServerSettingsBans extends AppFragment {
         }
     }
 
-    /* JADX INFO: renamed from: com.discord.widgets.servers.WidgetServerSettingsBans$showConfirmUnbanDialog$1, reason: invalid class name */
+    /* JADX INFO: renamed from: com.discord.widgets.servers.WidgetServerSettingsBans$showConfirmUnbanDialog$1 */
     /* JADX INFO: compiled from: WidgetServerSettingsBans.kt */
-    public static final class AnonymousClass1 extends Lambda implements Function1<View, Unit> {
+    public static final class C91961 extends AbstractC12240o implements Function1<View, Unit> {
         public final /* synthetic */ ModelBan $ban;
         public final /* synthetic */ long $guildId;
 
-        /* JADX INFO: renamed from: com.discord.widgets.servers.WidgetServerSettingsBans$showConfirmUnbanDialog$1$1, reason: invalid class name and collision with other inner class name */
+        /* JADX INFO: renamed from: com.discord.widgets.servers.WidgetServerSettingsBans$showConfirmUnbanDialog$1$1, reason: invalid class name */
         /* JADX INFO: compiled from: WidgetServerSettingsBans.kt */
-        public static final class C03041 extends Lambda implements Function1<Void, Unit> {
-            public static final C03041 INSTANCE = new C03041();
+        public static final class AnonymousClass1 extends AbstractC12240o implements Function1<Void, Unit> {
+            public static final AnonymousClass1 INSTANCE = new AnonymousClass1();
 
-            public C03041() {
+            public AnonymousClass1() {
                 super(1);
             }
 
             @Override // kotlin.jvm.functions.Function1
             public /* bridge */ /* synthetic */ Unit invoke(Void r1) {
                 invoke2(r1);
-                return Unit.a;
+                return Unit.f27425a;
             }
 
             /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
@@ -292,7 +292,7 @@ public final class WidgetServerSettingsBans extends AppFragment {
         }
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-        public AnonymousClass1(long j, ModelBan modelBan) {
+        public C91961(long j, ModelBan modelBan) {
             super(1);
             this.$guildId = j;
             this.$ban = modelBan;
@@ -301,25 +301,25 @@ public final class WidgetServerSettingsBans extends AppFragment {
         @Override // kotlin.jvm.functions.Function1
         public /* bridge */ /* synthetic */ Unit invoke(View view) {
             invoke2(view);
-            return Unit.a;
+            return Unit.f27425a;
         }
 
         /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
         public final void invoke2(View view) {
-            Intrinsics3.checkNotNullParameter(view, "it");
-            ObservableExtensionsKt.appSubscribe(ObservableExtensionsKt.ui$default(ObservableExtensionsKt.restSubscribeOn$default(RestAPI.INSTANCE.getApi().unbanUser(this.$guildId, this.$ban.getUser().getId()), false, 1, null), WidgetServerSettingsBans.this, null, 2, null), (Class<?>) WidgetServerSettingsBans.this.getClass(), (58 & 2) != 0 ? null : null, (Function1<? super Subscription, Unit>) ((58 & 4) != 0 ? null : null), (Function1<? super Error, Unit>) ((58 & 8) != 0 ? null : null), (Function0<Unit>) ((58 & 16) != 0 ? ObservableExtensionsKt.AnonymousClass1.INSTANCE : null), (Function0<Unit>) ((58 & 32) != 0 ? ObservableExtensionsKt.AnonymousClass2.INSTANCE : null), C03041.INSTANCE);
+            C12238m.checkNotNullParameter(view, "it");
+            ObservableExtensionsKt.appSubscribe(ObservableExtensionsKt.ui$default(ObservableExtensionsKt.restSubscribeOn$default(RestAPI.INSTANCE.getApi().unbanUser(this.$guildId, this.$ban.getUser().getId()), false, 1, null), WidgetServerSettingsBans.this, null, 2, null), (Class<?>) WidgetServerSettingsBans.this.getClass(), (58 & 2) != 0 ? null : null, (Function1<? super Subscription, Unit>) ((58 & 4) != 0 ? null : null), (Function1<? super Error, Unit>) ((58 & 8) != 0 ? null : null), (Function0<Unit>) ((58 & 16) != 0 ? ObservableExtensionsKt.C68791.INSTANCE : null), (Function0<Unit>) ((58 & 32) != 0 ? ObservableExtensionsKt.C68802.INSTANCE : null), AnonymousClass1.INSTANCE);
         }
     }
 
     public WidgetServerSettingsBans() {
-        super(R.layout.widget_server_settings_bans);
-        this.binding = FragmentViewBindingDelegate3.viewBinding$default(this, WidgetServerSettingsBans6.INSTANCE, null, 2, null);
-        this.filterPublisher = BehaviorSubject.l0("");
-        this.loggingConfig = new AppLogger2(false, null, WidgetServerSettingsBans7.INSTANCE, 3);
+        super(C5419R.layout.widget_server_settings_bans);
+        this.binding = FragmentViewBindingDelegateKt.viewBinding$default(this, WidgetServerSettingsBans$binding$2.INSTANCE, null, 2, null);
+        this.filterPublisher = BehaviorSubject.m11130l0("");
+        this.loggingConfig = new LoggingConfig(false, null, WidgetServerSettingsBans$loggingConfig$1.INSTANCE, 3);
     }
 
     private final void configureToolbar(String guildName) {
-        setActionBarTitle(R.string.bans);
+        setActionBarTitle(C5419R.string.bans);
         setActionBarSubtitle(guildName);
     }
 
@@ -334,25 +334,25 @@ public final class WidgetServerSettingsBans extends AppFragment {
         }
         configureToolbar(model.getGuildName());
         if (model.isLoading()) {
-            AppViewFlipper appViewFlipper = getBinding().d;
-            Intrinsics3.checkNotNullExpressionValue(appViewFlipper, "binding.serverSettingsBansViewFlipper");
+            AppViewFlipper appViewFlipper = getBinding().f17537d;
+            C12238m.checkNotNullExpressionValue(appViewFlipper, "binding.serverSettingsBansViewFlipper");
             appViewFlipper.setDisplayedChild(0);
         } else if (model.getTotalBannedUsers() == 0) {
-            AppViewFlipper appViewFlipper2 = getBinding().d;
-            Intrinsics3.checkNotNullExpressionValue(appViewFlipper2, "binding.serverSettingsBansViewFlipper");
+            AppViewFlipper appViewFlipper2 = getBinding().f17537d;
+            C12238m.checkNotNullExpressionValue(appViewFlipper2, "binding.serverSettingsBansViewFlipper");
             appViewFlipper2.setDisplayedChild(2);
         } else if (model.getFilteredBannedUsers().isEmpty()) {
-            AppViewFlipper appViewFlipper3 = getBinding().d;
-            Intrinsics3.checkNotNullExpressionValue(appViewFlipper3, "binding.serverSettingsBansViewFlipper");
+            AppViewFlipper appViewFlipper3 = getBinding().f17537d;
+            C12238m.checkNotNullExpressionValue(appViewFlipper3, "binding.serverSettingsBansViewFlipper");
             appViewFlipper3.setDisplayedChild(3);
         } else {
-            AppViewFlipper appViewFlipper4 = getBinding().d;
-            Intrinsics3.checkNotNullExpressionValue(appViewFlipper4, "binding.serverSettingsBansViewFlipper");
+            AppViewFlipper appViewFlipper4 = getBinding().f17537d;
+            C12238m.checkNotNullExpressionValue(appViewFlipper4, "binding.serverSettingsBansViewFlipper");
             appViewFlipper4.setDisplayedChild(1);
         }
         Adapter adapter = this.adapter;
         if (adapter != null) {
-            adapter.setOnBanSelectedListener(new AnonymousClass1(model));
+            adapter.setOnBanSelectedListener(new C91931(model));
         }
         Adapter adapter2 = this.adapter;
         if (adapter2 != null) {
@@ -371,27 +371,27 @@ public final class WidgetServerSettingsBans extends AppFragment {
     private final void showConfirmUnbanDialog(long guildId, ModelBan ban) {
         String reason = ban.getReason();
         if (reason == null) {
-            reason = getString(R.string.no_ban_reason);
+            reason = getString(C5419R.string.no_ban_reason);
         }
-        Intrinsics3.checkNotNullExpressionValue(reason, "ban.reason ?: getString(R.string.no_ban_reason)");
+        C12238m.checkNotNullExpressionValue(reason, "ban.reason ?: getString(R.string.no_ban_reason)");
         StringBuilder sb = new StringBuilder();
-        String string = getString(R.string.ban_reason);
-        Intrinsics3.checkNotNullExpressionValue(string, "getString(R.string.ban_reason)");
+        String string = getString(C5419R.string.ban_reason);
+        C12238m.checkNotNullExpressionValue(string, "getString(R.string.ban_reason)");
         Locale primaryLocale = new LocaleManager().getPrimaryLocale(getContext());
         Objects.requireNonNull(string, "null cannot be cast to non-null type java.lang.String");
         String upperCase = string.toUpperCase(primaryLocale);
-        Intrinsics3.checkNotNullExpressionValue(upperCase, "(this as java.lang.String).toUpperCase(locale)");
+        C12238m.checkNotNullExpressionValue(upperCase, "(this as java.lang.String).toUpperCase(locale)");
         sb.append(upperCase);
         sb.append("\n");
         sb.append(reason);
-        WidgetNoticeDialog.Builder dialogAttrTheme = WidgetNoticeDialog.Builder.setNegativeButton$default(new WidgetNoticeDialog.Builder(requireContext()).setTitle(FormatUtils.b(requireContext(), R.string.unban_user_title, new Object[]{ban.getUser().getUsername()}, (4 & 4) != 0 ? FormatUtils.b.j : null).toString()).setMessage(sb.toString()), R.string.cancel, (Function1) null, 2, (Object) null).setPositiveButton(R.string.unban, new AnonymousClass1(guildId, ban)).setDialogAttrTheme(R.attr.notice_theme_positive_red);
+        WidgetNoticeDialog.Builder dialogAttrTheme = WidgetNoticeDialog.Builder.setNegativeButton$default(new WidgetNoticeDialog.Builder(requireContext()).setTitle(C1107b.m210b(requireContext(), C5419R.string.unban_user_title, new Object[]{ban.getUser().getUsername()}, (4 & 4) != 0 ? C1107b.b.f1491j : null).toString()).setMessage(sb.toString()), C5419R.string.cancel, (Function1) null, 2, (Object) null).setPositiveButton(C5419R.string.unban, new C91961(guildId, ban)).setDialogAttrTheme(C5419R.attr.notice_theme_positive_red);
         FragmentManager parentFragmentManager = getParentFragmentManager();
-        Intrinsics3.checkNotNullExpressionValue(parentFragmentManager, "parentFragmentManager");
+        C12238m.checkNotNullExpressionValue(parentFragmentManager, "parentFragmentManager");
         dialogAttrTheme.show(parentFragmentManager);
     }
 
-    @Override // com.discord.app.AppFragment, com.discord.app.AppLogger.a
-    public AppLogger2 getLoggingConfig() {
+    @Override // com.discord.app.AppFragment, com.discord.app.AppLogger.InterfaceC5455a
+    public LoggingConfig getLoggingConfig() {
         return this.loggingConfig;
     }
 
@@ -409,27 +409,27 @@ public final class WidgetServerSettingsBans extends AppFragment {
     public void onResume() {
         super.onResume();
         BehaviorSubject<String> behaviorSubject = this.filterPublisher;
-        TextInputLayout textInputLayout = getBinding().c;
-        Intrinsics3.checkNotNullExpressionValue(textInputLayout, "binding.serverSettingsBansSearch");
+        TextInputLayout textInputLayout = getBinding().f17536c;
+        C12238m.checkNotNullExpressionValue(textInputLayout, "binding.serverSettingsBansSearch");
         behaviorSubject.onNext(ViewExtensions.getTextOrEmpty(textInputLayout));
-        TextInputLayout textInputLayout2 = getBinding().c;
-        Intrinsics3.checkNotNullExpressionValue(textInputLayout2, "binding.serverSettingsBansSearch");
-        ViewExtensions.addBindedTextWatcher(textInputLayout2, this, new AnonymousClass1());
+        TextInputLayout textInputLayout2 = getBinding().f17536c;
+        C12238m.checkNotNullExpressionValue(textInputLayout2, "binding.serverSettingsBansSearch");
+        ViewExtensions.addBindedTextWatcher(textInputLayout2, this, new C91941());
         Model.Companion companion = Model.INSTANCE;
         long j = this.guildId;
         BehaviorSubject<String> behaviorSubject2 = this.filterPublisher;
-        Intrinsics3.checkNotNullExpressionValue(behaviorSubject2, "filterPublisher");
-        ObservableExtensionsKt.appSubscribe(ObservableExtensionsKt.ui$default(companion.get(j, behaviorSubject2), this, null, 2, null), (Class<?>) WidgetServerSettingsBans.class, (58 & 2) != 0 ? null : null, (Function1<? super Subscription, Unit>) ((58 & 4) != 0 ? null : null), (Function1<? super Error, Unit>) ((58 & 8) != 0 ? null : null), (Function0<Unit>) ((58 & 16) != 0 ? ObservableExtensionsKt.AnonymousClass1.INSTANCE : null), (Function0<Unit>) ((58 & 32) != 0 ? ObservableExtensionsKt.AnonymousClass2.INSTANCE : null), new AnonymousClass2());
+        C12238m.checkNotNullExpressionValue(behaviorSubject2, "filterPublisher");
+        ObservableExtensionsKt.appSubscribe(ObservableExtensionsKt.ui$default(companion.get(j, behaviorSubject2), this, null, 2, null), (Class<?>) WidgetServerSettingsBans.class, (58 & 2) != 0 ? null : null, (Function1<? super Subscription, Unit>) ((58 & 4) != 0 ? null : null), (Function1<? super Error, Unit>) ((58 & 8) != 0 ? null : null), (Function0<Unit>) ((58 & 16) != 0 ? ObservableExtensionsKt.C68791.INSTANCE : null), (Function0<Unit>) ((58 & 32) != 0 ? ObservableExtensionsKt.C68802.INSTANCE : null), new C91952());
     }
 
     @Override // com.discord.app.AppFragment
     public void onViewBound(View view) {
-        Intrinsics3.checkNotNullParameter(view, "view");
+        C12238m.checkNotNullParameter(view, "view");
         super.onViewBound(view);
         AppFragment.setActionBarDisplayHomeAsUpEnabled$default(this, false, 1, null);
         MGRecyclerAdapter.Companion companion = MGRecyclerAdapter.INSTANCE;
-        RecyclerView recyclerView = getBinding().f2544b;
-        Intrinsics3.checkNotNullExpressionValue(recyclerView, "binding.serverSettingsBansRecycler");
+        RecyclerView recyclerView = getBinding().f17535b;
+        C12238m.checkNotNullExpressionValue(recyclerView, "binding.serverSettingsBansRecycler");
         this.adapter = (Adapter) companion.configure(new Adapter(recyclerView));
         this.guildId = getMostRecentIntent().getLongExtra(INTENT_EXTRA_GUILD_ID, -1L);
     }
@@ -460,34 +460,34 @@ public final class WidgetServerSettingsBans extends AppFragment {
             }
 
             private final Observable<Model> getBanItems(final long guildId, final Observable<String> filterPublisher) {
-                Observable<R> observableY = StoreStream.INSTANCE.getBans().observeBans(guildId).Y(new Func1<Map<Long, ? extends ModelBan>, Observable<? extends Model>>() { // from class: com.discord.widgets.servers.WidgetServerSettingsBans$Model$Companion$getBanItems$1
-                    @Override // j0.k.Func1
+                Observable<R> observableM11099Y = StoreStream.INSTANCE.getBans().observeBans(guildId).m11099Y(new InterfaceC12589b<Map<Long, ? extends ModelBan>, Observable<? extends Model>>() { // from class: com.discord.widgets.servers.WidgetServerSettingsBans$Model$Companion$getBanItems$1
+                    @Override // p637j0.p641k.InterfaceC12589b
                     public final Observable<? extends WidgetServerSettingsBans.Model> call(final Map<Long, ? extends ModelBan> map) {
-                        return map == null ? StoreStream.INSTANCE.getGuilds().observeGuild(guildId).G(new Func1<Guild, WidgetServerSettingsBans.Model>() { // from class: com.discord.widgets.servers.WidgetServerSettingsBans$Model$Companion$getBanItems$1.1
-                            @Override // j0.k.Func1
+                        return map == null ? StoreStream.INSTANCE.getGuilds().observeGuild(guildId).m11083G(new InterfaceC12589b<Guild, WidgetServerSettingsBans.Model>() { // from class: com.discord.widgets.servers.WidgetServerSettingsBans$Model$Companion$getBanItems$1.1
+                            @Override // p637j0.p641k.InterfaceC12589b
                             public final WidgetServerSettingsBans.Model call(Guild guild) {
                                 return WidgetServerSettingsBans.Model.INSTANCE.createLoading(guild);
                             }
-                        }) : Observable.i(StoreStream.INSTANCE.getGuilds().observeGuild(guildId), new ScalarSynchronousObservable(Integer.valueOf(map.size())), filterPublisher.Y(new Func1<String, Observable<? extends List<WidgetServerSettingsBans.Model.BanItem>>>() { // from class: com.discord.widgets.servers.WidgetServerSettingsBans$Model$Companion$getBanItems$1.2
-                            @Override // j0.k.Func1
+                        }) : Observable.m11075i(StoreStream.INSTANCE.getGuilds().observeGuild(guildId), new C12721k(Integer.valueOf(map.size())), filterPublisher.m11099Y(new InterfaceC12589b<String, Observable<? extends List<WidgetServerSettingsBans.Model.BanItem>>>() { // from class: com.discord.widgets.servers.WidgetServerSettingsBans$Model$Companion$getBanItems$1.2
+                            @Override // p637j0.p641k.InterfaceC12589b
                             public final Observable<? extends List<WidgetServerSettingsBans.Model.BanItem>> call(final String str) {
-                                Observable<R> observableG = Observable.B(map.values()).y(new Func1<ModelBan, Boolean>() { // from class: com.discord.widgets.servers.WidgetServerSettingsBans.Model.Companion.getBanItems.1.2.1
-                                    @Override // j0.k.Func1
+                                Observable<R> observableM11083G = Observable.m11058B(map.values()).m11118y(new InterfaceC12589b<ModelBan, Boolean>() { // from class: com.discord.widgets.servers.WidgetServerSettingsBans.Model.Companion.getBanItems.1.2.1
+                                    @Override // p637j0.p641k.InterfaceC12589b
                                     public final Boolean call(ModelBan modelBan) {
-                                        Intrinsics3.checkNotNullExpressionValue(modelBan, "it");
+                                        C12238m.checkNotNullExpressionValue(modelBan, "it");
                                         String username = modelBan.getUser().getUsername();
                                         String str2 = str;
-                                        Intrinsics3.checkNotNullExpressionValue(str2, "filter");
-                                        return Boolean.valueOf(Strings4.contains((CharSequence) username, (CharSequence) str2, true));
+                                        C12238m.checkNotNullExpressionValue(str2, "filter");
+                                        return Boolean.valueOf(C12106w.contains((CharSequence) username, (CharSequence) str2, true));
                                     }
-                                }).G(new Func1<ModelBan, WidgetServerSettingsBans.Model.BanItem>() { // from class: com.discord.widgets.servers.WidgetServerSettingsBans.Model.Companion.getBanItems.1.2.2
-                                    @Override // j0.k.Func1
+                                }).m11083G(new InterfaceC12589b<ModelBan, WidgetServerSettingsBans.Model.BanItem>() { // from class: com.discord.widgets.servers.WidgetServerSettingsBans.Model.Companion.getBanItems.1.2.2
+                                    @Override // p637j0.p641k.InterfaceC12589b
                                     public final WidgetServerSettingsBans.Model.BanItem call(ModelBan modelBan) {
                                         return new WidgetServerSettingsBans.Model.BanItem(modelBan);
                                     }
                                 });
-                                return Observable.h0(new OnSubscribeLift(observableG.j, new OperatorToObservableSortedList(new Func2<WidgetServerSettingsBans.Model.BanItem, WidgetServerSettingsBans.Model.BanItem, Integer>() { // from class: com.discord.widgets.servers.WidgetServerSettingsBans.Model.Companion.getBanItems.1.2.3
-                                    @Override // rx.functions.Func2
+                                return Observable.m11074h0(new C12666r(observableM11083G.f27640j, new C12657o2(new Func2<WidgetServerSettingsBans.Model.BanItem, WidgetServerSettingsBans.Model.BanItem, Integer>() { // from class: com.discord.widgets.servers.WidgetServerSettingsBans.Model.Companion.getBanItems.1.2.3
+                                    @Override // p658rx.functions.Func2
                                     public final Integer call(WidgetServerSettingsBans.Model.BanItem banItem, WidgetServerSettingsBans.Model.BanItem banItem2) {
                                         User user;
                                         String username;
@@ -501,36 +501,36 @@ public final class WidgetServerSettingsBans extends AppFragment {
                                         if (ban2 == null || (user2 = ban2.getUser()) == null || (username2 = user2.getUsername()) == null) {
                                             username2 = "";
                                         }
-                                        return Integer.valueOf(StringsJVM.compareTo(username, username2, true));
+                                        return Integer.valueOf(C12103t.compareTo(username, username2, true));
                                     }
                                 }, 10)));
                             }
                         }), new Func3<Guild, Integer, List<WidgetServerSettingsBans.Model.BanItem>, WidgetServerSettingsBans.Model>() { // from class: com.discord.widgets.servers.WidgetServerSettingsBans$Model$Companion$getBanItems$1.3
-                            @Override // rx.functions.Func3
+                            @Override // p658rx.functions.Func3
                             public final WidgetServerSettingsBans.Model call(Guild guild, Integer num, List<WidgetServerSettingsBans.Model.BanItem> list) {
                                 return WidgetServerSettingsBans.Model.INSTANCE.create(guild, num, list);
                             }
                         });
                     }
                 });
-                Intrinsics3.checkNotNullExpressionValue(observableY, "StoreStream\n            …          }\n            }");
-                Observable<Model> observableR = ObservableExtensionsKt.computationLatest(observableY).r();
-                Intrinsics3.checkNotNullExpressionValue(observableR, "StoreStream\n            …  .distinctUntilChanged()");
-                return observableR;
+                C12238m.checkNotNullExpressionValue(observableM11099Y, "StoreStream\n            …          }\n            }");
+                Observable<Model> observableM11112r = ObservableExtensionsKt.computationLatest(observableM11099Y).m11112r();
+                C12238m.checkNotNullExpressionValue(observableM11112r, "StoreStream\n            …  .distinctUntilChanged()");
+                return observableM11112r;
             }
 
             private final Observable<Boolean> getCanManageBans(long guildId) {
                 StoreStream.Companion companion = StoreStream.INSTANCE;
-                Observable observableI = Observable.i(companion.getPermissions().observePermissionsForGuild(guildId), companion.getGuilds().observeGuild(guildId), StoreUser.observeMe$default(companion.getUsers(), false, 1, null), new Func3<Long, Guild, MeUser, Boolean>() { // from class: com.discord.widgets.servers.WidgetServerSettingsBans$Model$Companion$getCanManageBans$1
-                    @Override // rx.functions.Func3
+                Observable observableM11075i = Observable.m11075i(companion.getPermissions().observePermissionsForGuild(guildId), companion.getGuilds().observeGuild(guildId), StoreUser.observeMe$default(companion.getUsers(), false, 1, null), new Func3<Long, Guild, MeUser, Boolean>() { // from class: com.discord.widgets.servers.WidgetServerSettingsBans$Model$Companion$getCanManageBans$1
+                    @Override // p658rx.functions.Func3
                     public final Boolean call(Long l, Guild guild, MeUser meUser) {
                         return Boolean.valueOf((guild == null || l == null) ? false : PermissionUtils.canAndIsElevated(4L, l, meUser.getMfaEnabled(), guild.getMfaLevel()));
                     }
                 });
-                Intrinsics3.checkNotNullExpressionValue(observableI, "Observable\n             …        }\n              }");
-                Observable<Boolean> observableR = ObservableExtensionsKt.computationLatest(observableI).r();
-                Intrinsics3.checkNotNullExpressionValue(observableR, "Observable\n             …  .distinctUntilChanged()");
-                return observableR;
+                C12238m.checkNotNullExpressionValue(observableM11075i, "Observable\n             …        }\n              }");
+                Observable<Boolean> observableM11112r = ObservableExtensionsKt.computationLatest(observableM11075i).m11112r();
+                C12238m.checkNotNullExpressionValue(observableM11112r, "Observable\n             …  .distinctUntilChanged()");
+                return observableM11112r;
             }
 
             public final Model create(Guild guild, Integer totalBannedUsers, List<BanItem> filteredBannedUsers) {
@@ -541,16 +541,16 @@ public final class WidgetServerSettingsBans extends AppFragment {
             }
 
             public final Observable<Model> get(final long guildId, final Observable<String> filterPublisher) {
-                Intrinsics3.checkNotNullParameter(filterPublisher, "filterPublisher");
-                Observable observableY = getCanManageBans(guildId).Y(new Func1<Boolean, Observable<? extends Model>>() { // from class: com.discord.widgets.servers.WidgetServerSettingsBans$Model$Companion$get$1
-                    @Override // j0.k.Func1
+                C12238m.checkNotNullParameter(filterPublisher, "filterPublisher");
+                Observable observableM11099Y = getCanManageBans(guildId).m11099Y(new InterfaceC12589b<Boolean, Observable<? extends Model>>() { // from class: com.discord.widgets.servers.WidgetServerSettingsBans$Model$Companion$get$1
+                    @Override // p637j0.p641k.InterfaceC12589b
                     public final Observable<? extends WidgetServerSettingsBans.Model> call(Boolean bool) {
-                        Intrinsics3.checkNotNullExpressionValue(bool, "canManage");
-                        return bool.booleanValue() ? WidgetServerSettingsBans.Model.INSTANCE.getBanItems(guildId, filterPublisher) : new ScalarSynchronousObservable(null);
+                        C12238m.checkNotNullExpressionValue(bool, "canManage");
+                        return bool.booleanValue() ? WidgetServerSettingsBans.Model.INSTANCE.getBanItems(guildId, filterPublisher) : new C12721k(null);
                     }
                 });
-                Intrinsics3.checkNotNullExpressionValue(observableY, "getCanManageBans(guildId….just(null)\n            }");
-                return observableY;
+                C12238m.checkNotNullExpressionValue(observableM11099Y, "getCanManageBans(guildId….just(null)\n            }");
+                return observableM11099Y;
             }
 
             public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
@@ -625,7 +625,7 @@ public final class WidgetServerSettingsBans extends AppFragment {
                 return false;
             }
             Model model = (Model) other;
-            return this.totalBannedUsers == model.totalBannedUsers && Intrinsics3.areEqual(this.filteredBannedUsers, model.filteredBannedUsers) && this.guildId == model.guildId && Intrinsics3.areEqual(this.guildName, model.guildName) && this.isLoading == model.isLoading;
+            return this.totalBannedUsers == model.totalBannedUsers && C12238m.areEqual(this.filteredBannedUsers, model.filteredBannedUsers) && this.guildId == model.guildId && C12238m.areEqual(this.guildName, model.guildName) && this.isLoading == model.isLoading;
         }
 
         public final List<BanItem> getFilteredBannedUsers() {
@@ -652,9 +652,9 @@ public final class WidgetServerSettingsBans extends AppFragment {
         public int hashCode() {
             int i = this.totalBannedUsers * 31;
             List<BanItem> list = this.filteredBannedUsers;
-            int iA = (b.a(this.guildId) + ((i + (list != null ? list.hashCode() : 0)) * 31)) * 31;
+            int iM3a = (C0002b.m3a(this.guildId) + ((i + (list != null ? list.hashCode() : 0)) * 31)) * 31;
             String str = this.guildName;
-            int iHashCode = (iA + (str != null ? str.hashCode() : 0)) * 31;
+            int iHashCode = (iM3a + (str != null ? str.hashCode() : 0)) * 31;
             boolean z2 = this.isLoading;
             ?? r0 = z2;
             if (z2) {
@@ -668,16 +668,16 @@ public final class WidgetServerSettingsBans extends AppFragment {
         }
 
         public String toString() {
-            StringBuilder sbU = outline.U("Model(totalBannedUsers=");
-            sbU.append(this.totalBannedUsers);
-            sbU.append(", filteredBannedUsers=");
-            sbU.append(this.filteredBannedUsers);
-            sbU.append(", guildId=");
-            sbU.append(this.guildId);
-            sbU.append(", guildName=");
-            sbU.append(this.guildName);
-            sbU.append(", isLoading=");
-            return outline.O(sbU, this.isLoading, ")");
+            StringBuilder sbM833U = C1643a.m833U("Model(totalBannedUsers=");
+            sbM833U.append(this.totalBannedUsers);
+            sbM833U.append(", filteredBannedUsers=");
+            sbM833U.append(this.filteredBannedUsers);
+            sbM833U.append(", guildId=");
+            sbM833U.append(this.guildId);
+            sbM833U.append(", guildName=");
+            sbM833U.append(this.guildName);
+            sbM833U.append(", isLoading=");
+            return C1643a.m827O(sbM833U, this.isLoading, ")");
         }
 
         /* JADX INFO: compiled from: WidgetServerSettingsBans.kt */
@@ -716,7 +716,7 @@ public final class WidgetServerSettingsBans extends AppFragment {
 
             /* JADX WARN: Multi-variable type inference failed */
             public final BanItem create(ModelBan ban) {
-                Intrinsics3.checkNotNullParameter(ban, "ban");
+                C12238m.checkNotNullParameter(ban, "ban");
                 BanItem banItem = new BanItem(null, 1, 0 == true ? 1 : 0);
                 banItem.ban = ban;
                 return banItem;
@@ -724,7 +724,7 @@ public final class WidgetServerSettingsBans extends AppFragment {
 
             public boolean equals(Object other) {
                 if (this != other) {
-                    return (other instanceof BanItem) && Intrinsics3.areEqual(this.ban, ((BanItem) other).ban);
+                    return (other instanceof BanItem) && C12238m.areEqual(this.ban, ((BanItem) other).ban);
                 }
                 return true;
             }
@@ -756,10 +756,10 @@ public final class WidgetServerSettingsBans extends AppFragment {
             }
 
             public String toString() {
-                StringBuilder sbU = outline.U("BanItem(ban=");
-                sbU.append(this.ban);
-                sbU.append(")");
-                return sbU.toString();
+                StringBuilder sbM833U = C1643a.m833U("BanItem(ban=");
+                sbM833U.append(this.ban);
+                sbM833U.append(")");
+                return sbM833U.toString();
             }
 
             public /* synthetic */ BanItem(ModelBan modelBan, int i, DefaultConstructorMarker defaultConstructorMarker) {

@@ -4,92 +4,104 @@ import android.content.Context;
 import androidx.annotation.AnimRes;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityOptionsCompat;
-import com.discord.R;
+import com.discord.C5419R;
 import com.discord.utilities.accessibility.AccessibilityUtils;
-import d0.z.d.Intrinsics3;
+import p507d0.p592z.p594d.C12238m;
 
 /* JADX INFO: compiled from: AppTransitionActivity.kt */
 /* JADX INFO: loaded from: classes.dex */
 public abstract class AppTransitionActivity extends AppCompatActivity {
-    public static boolean j;
-    public a k = Transition.TYPE_SLIDE_POP_VERTICAL.getAnimations();
+
+    /* JADX INFO: renamed from: j */
+    public static boolean f14963j;
+
+    /* JADX INFO: renamed from: k */
+    public C5457a f14964k = Transition.TYPE_SLIDE_POP_VERTICAL.getAnimations();
 
     /* JADX INFO: compiled from: AppTransitionActivity.kt */
     public enum Transition {
-        TYPE_FADE(new a(R.anim.activity_fade_open_in, R.anim.activity_fade_open_out, R.anim.activity_fade_close_in, R.anim.activity_fade_close_out)),
-        TYPE_FADE_FAST(new a(R.anim.activity_fade_open_in_fast, R.anim.activity_fade_open_out_fast, R.anim.activity_fade_close_in_fast, R.anim.activity_fade_close_out_fast)),
-        TYPE_STANDARD(new a(R.anim.activity_standard_open_in, R.anim.activity_standard_open_out, R.anim.activity_standard_close_in, R.anim.activity_standard_close_out)),
-        TYPE_SLIDE_HORIZONTAL(new a(R.anim.activity_slide_horizontal_open_in, R.anim.activity_slide_horizontal_open_out, R.anim.activity_slide_horizontal_close_in, R.anim.activity_slide_horizontal_close_out)),
-        TYPE_SLIDE_HORIZONTAL_REVERSE(new a(R.anim.activity_slide_horizontal_close_in, R.anim.activity_slide_horizontal_close_out, R.anim.activity_slide_horizontal_open_in, R.anim.activity_slide_horizontal_open_out)),
-        TYPE_SLIDE_VERTICAL(new a(R.anim.activity_slide_vertical_open_in, R.anim.activity_slide_vertical_open_out, R.anim.activity_slide_vertical_close_in, R.anim.activity_slide_vertical_close_out)),
-        TYPE_SLIDE_VERTICAL_WITH_FADE(new a(R.anim.activity_slide_vertical_open_in, R.anim.activity_fade_open_out, R.anim.activity_fade_close_in, R.anim.activity_slide_vertical_close_out)),
-        TYPE_SLIDE_POP_VERTICAL(new a(R.anim.activity_slide_pop_vertical_open_in, R.anim.activity_slide_pop_vertical_open_out, R.anim.activity_slide_pop_vertical_close_in, R.anim.activity_slide_pop_vertical_close_out)),
-        TYPE_SLIDE_POP_HORIZONTAL(new a(R.anim.activity_slide_pop_horizontal_open_in, R.anim.activity_slide_pop_horizontal_open_out, R.anim.activity_slide_pop_horizontal_close_in, R.anim.activity_slide_pop_horizontal_close_out)),
-        TYPE_NONE(new a(0, 0, 0, 0));
+        TYPE_FADE(new C5457a(C5419R.anim.activity_fade_open_in, C5419R.anim.activity_fade_open_out, C5419R.anim.activity_fade_close_in, C5419R.anim.activity_fade_close_out)),
+        TYPE_FADE_FAST(new C5457a(C5419R.anim.activity_fade_open_in_fast, C5419R.anim.activity_fade_open_out_fast, C5419R.anim.activity_fade_close_in_fast, C5419R.anim.activity_fade_close_out_fast)),
+        TYPE_STANDARD(new C5457a(C5419R.anim.activity_standard_open_in, C5419R.anim.activity_standard_open_out, C5419R.anim.activity_standard_close_in, C5419R.anim.activity_standard_close_out)),
+        TYPE_SLIDE_HORIZONTAL(new C5457a(C5419R.anim.activity_slide_horizontal_open_in, C5419R.anim.activity_slide_horizontal_open_out, C5419R.anim.activity_slide_horizontal_close_in, C5419R.anim.activity_slide_horizontal_close_out)),
+        TYPE_SLIDE_HORIZONTAL_REVERSE(new C5457a(C5419R.anim.activity_slide_horizontal_close_in, C5419R.anim.activity_slide_horizontal_close_out, C5419R.anim.activity_slide_horizontal_open_in, C5419R.anim.activity_slide_horizontal_open_out)),
+        TYPE_SLIDE_VERTICAL(new C5457a(C5419R.anim.activity_slide_vertical_open_in, C5419R.anim.activity_slide_vertical_open_out, C5419R.anim.activity_slide_vertical_close_in, C5419R.anim.activity_slide_vertical_close_out)),
+        TYPE_SLIDE_VERTICAL_WITH_FADE(new C5457a(C5419R.anim.activity_slide_vertical_open_in, C5419R.anim.activity_fade_open_out, C5419R.anim.activity_fade_close_in, C5419R.anim.activity_slide_vertical_close_out)),
+        TYPE_SLIDE_POP_VERTICAL(new C5457a(C5419R.anim.activity_slide_pop_vertical_open_in, C5419R.anim.activity_slide_pop_vertical_open_out, C5419R.anim.activity_slide_pop_vertical_close_in, C5419R.anim.activity_slide_pop_vertical_close_out)),
+        TYPE_SLIDE_POP_HORIZONTAL(new C5457a(C5419R.anim.activity_slide_pop_horizontal_open_in, C5419R.anim.activity_slide_pop_horizontal_open_out, C5419R.anim.activity_slide_pop_horizontal_close_in, C5419R.anim.activity_slide_pop_horizontal_close_out)),
+        TYPE_NONE(new C5457a(0, 0, 0, 0));
 
-        private final a animations;
+        private final C5457a animations;
 
-        Transition(a aVar) {
-            this.animations = aVar;
+        Transition(C5457a c5457a) {
+            this.animations = c5457a;
         }
 
-        public final a getAnimations() {
+        public final C5457a getAnimations() {
             return this.animations;
         }
 
         public final ActivityOptionsCompat toActivityOptions(Context context) {
-            Intrinsics3.checkNotNullParameter(context, "context");
+            C12238m.checkNotNullParameter(context, "context");
             if ((!AccessibilityUtils.INSTANCE.isReducedMotionEnabled() ? this : null) == null) {
                 return null;
             }
-            a aVar = this.animations;
-            return ActivityOptionsCompat.makeCustomAnimation(context, aVar.a, aVar.f2082b);
+            C5457a c5457a = this.animations;
+            return ActivityOptionsCompat.makeCustomAnimation(context, c5457a.f14965a, c5457a.f14966b);
         }
     }
 
+    /* JADX INFO: renamed from: com.discord.app.AppTransitionActivity$a */
     /* JADX INFO: compiled from: AppTransitionActivity.kt */
-    public static final class a {
-        public final int a;
+    public static final class C5457a {
 
-        /* JADX INFO: renamed from: b, reason: collision with root package name */
-        public final int f2082b;
-        public final int c;
-        public final int d;
+        /* JADX INFO: renamed from: a */
+        public final int f14965a;
 
-        public a(@AnimRes int i, @AnimRes int i2, @AnimRes int i3, @AnimRes int i4) {
-            this.a = i;
-            this.f2082b = i2;
-            this.c = i3;
-            this.d = i4;
+        /* JADX INFO: renamed from: b */
+        public final int f14966b;
+
+        /* JADX INFO: renamed from: c */
+        public final int f14967c;
+
+        /* JADX INFO: renamed from: d */
+        public final int f14968d;
+
+        public C5457a(@AnimRes int i, @AnimRes int i2, @AnimRes int i3, @AnimRes int i4) {
+            this.f14965a = i;
+            this.f14966b = i2;
+            this.f14967c = i3;
+            this.f14968d = i4;
         }
     }
 
-    public final void a(boolean z2, boolean z3) {
-        a aVar;
+    /* JADX INFO: renamed from: a */
+    public final void m8373a(boolean z2, boolean z3) {
+        C5457a c5457a;
         if (z2 && z3) {
             return;
         }
-        if ((z2 || z3) && (aVar = this.k) != null) {
-            overridePendingTransition(z3 ? aVar.a : aVar.c, z3 ? aVar.f2082b : aVar.d);
+        if ((z2 || z3) && (c5457a = this.f14964k) != null) {
+            overridePendingTransition(z3 ? c5457a.f14965a : c5457a.f14967c, z3 ? c5457a.f14966b : c5457a.f14968d);
         }
     }
 
     @Override // androidx.activity.ComponentActivity, android.app.Activity
     public void onBackPressed() {
         super.onBackPressed();
-        j = true;
+        f14963j = true;
     }
 
     @Override // androidx.fragment.app.FragmentActivity, android.app.Activity
     public void onPause() {
         super.onPause();
-        a(j, false);
+        m8373a(f14963j, false);
     }
 
     @Override // androidx.fragment.app.FragmentActivity, android.app.Activity
     public void onResume() {
         super.onResume();
-        a(j, true);
-        j = false;
+        m8373a(f14963j, true);
+        f14963j = false;
     }
 }

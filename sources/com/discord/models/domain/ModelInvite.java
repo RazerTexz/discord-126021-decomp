@@ -1,7 +1,6 @@
 package com.discord.models.domain;
 
 import android.content.res.Resources;
-import b.d.b.a.outline;
 import com.discord.api.channel.Channel;
 import com.discord.api.guild.Guild;
 import com.discord.api.guildscheduledevent.GuildScheduledEvent;
@@ -9,6 +8,7 @@ import com.discord.api.user.User;
 import com.discord.utilities.time.ClockFactory;
 import com.discord.utilities.time.TimeUtils;
 import java.io.Serializable;
+import p007b.p100d.p104b.p105a.C1643a;
 
 /* JADX INFO: loaded from: classes.dex */
 public class ModelInvite implements Serializable {
@@ -111,14 +111,14 @@ public class ModelInvite implements Serializable {
         }
 
         public String toString() {
-            StringBuilder sbU = outline.U("ModelInvite.Settings(maxAge=");
-            sbU.append(getMaxAge());
-            sbU.append(", maxUses=");
-            sbU.append(getMaxUses());
-            sbU.append(", temporary=");
-            sbU.append(isTemporary());
-            sbU.append(")");
-            return sbU.toString();
+            StringBuilder sbM833U = C1643a.m833U("ModelInvite.Settings(maxAge=");
+            sbM833U.append(getMaxAge());
+            sbM833U.append(", maxUses=");
+            sbM833U.append(getMaxUses());
+            sbM833U.append(", temporary=");
+            sbM833U.append(isTemporary());
+            sbM833U.append(")");
+            return sbM833U.toString();
         }
 
         public Settings(int i) {
@@ -333,45 +333,45 @@ public class ModelInvite implements Serializable {
     public String toLink(Resources resources, String str) {
         Channel channel;
         GuildScheduledEvent guildScheduledEvent = this.guildScheduledEvent;
-        return (guildScheduledEvent == null || (channel = this.channel) == null || !guildScheduledEvent.p(channel.getId())) ? String.format(URL_FORMAT, str, this.code) : String.format(URL_FORMAT_WITH_EVENT, str, this.code, Long.valueOf(this.guildScheduledEvent.getId()));
+        return (guildScheduledEvent == null || (channel = this.channel) == null || !guildScheduledEvent.m7987p(channel.getId())) ? String.format(URL_FORMAT, str, this.code) : String.format(URL_FORMAT_WITH_EVENT, str, this.code, Long.valueOf(this.guildScheduledEvent.getId()));
     }
 
     public String toString() {
-        StringBuilder sbU = outline.U("ModelInvite(inviter=");
-        sbU.append(getInviter());
-        sbU.append(", guild=");
-        sbU.append(getGuild());
-        sbU.append(", memberVerificationForm=");
-        sbU.append(getMemberVerificationForm());
-        sbU.append(", guildScheduledEvent=");
-        sbU.append(getGuildScheduledEvent());
-        sbU.append(", channel=");
-        sbU.append(getChannel());
-        sbU.append(", createdAt=");
-        sbU.append(getCreatedAt());
-        sbU.append(", code=");
-        sbU.append(getCode());
-        sbU.append(", maxAge=");
-        sbU.append(getMaxAge());
-        sbU.append(", revoked=");
-        sbU.append(isRevoked());
-        sbU.append(", temporary=");
-        sbU.append(isTemporary());
-        sbU.append(", targetType=");
-        sbU.append(getTargetType());
-        sbU.append(", uses=");
-        sbU.append(getUses());
-        sbU.append(", maxUses=");
-        sbU.append(getMaxUses());
-        sbU.append(", approximatePresenceCount=");
-        sbU.append(getApproximatePresenceCount());
-        sbU.append(", approximateMemberCount=");
-        sbU.append(getApproximateMemberCount());
-        sbU.append(", newMember=");
-        sbU.append(isNewMember());
-        sbU.append(", isStatic=");
-        sbU.append(isStatic());
-        sbU.append(")");
-        return sbU.toString();
+        StringBuilder sbM833U = C1643a.m833U("ModelInvite(inviter=");
+        sbM833U.append(getInviter());
+        sbM833U.append(", guild=");
+        sbM833U.append(getGuild());
+        sbM833U.append(", memberVerificationForm=");
+        sbM833U.append(getMemberVerificationForm());
+        sbM833U.append(", guildScheduledEvent=");
+        sbM833U.append(getGuildScheduledEvent());
+        sbM833U.append(", channel=");
+        sbM833U.append(getChannel());
+        sbM833U.append(", createdAt=");
+        sbM833U.append(getCreatedAt());
+        sbM833U.append(", code=");
+        sbM833U.append(getCode());
+        sbM833U.append(", maxAge=");
+        sbM833U.append(getMaxAge());
+        sbM833U.append(", revoked=");
+        sbM833U.append(isRevoked());
+        sbM833U.append(", temporary=");
+        sbM833U.append(isTemporary());
+        sbM833U.append(", targetType=");
+        sbM833U.append(getTargetType());
+        sbM833U.append(", uses=");
+        sbM833U.append(getUses());
+        sbM833U.append(", maxUses=");
+        sbM833U.append(getMaxUses());
+        sbM833U.append(", approximatePresenceCount=");
+        sbM833U.append(getApproximatePresenceCount());
+        sbM833U.append(", approximateMemberCount=");
+        sbM833U.append(getApproximateMemberCount());
+        sbM833U.append(", newMember=");
+        sbM833U.append(isNewMember());
+        sbM833U.append(", isStatic=");
+        sbM833U.append(isStatic());
+        sbM833U.append(")");
+        return sbM833U.toString();
     }
 }

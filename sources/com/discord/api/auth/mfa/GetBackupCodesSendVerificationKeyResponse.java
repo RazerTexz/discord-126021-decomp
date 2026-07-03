@@ -1,7 +1,7 @@
 package com.discord.api.auth.mfa;
 
-import b.d.b.a.outline;
-import d0.z.d.Intrinsics3;
+import p007b.p100d.p104b.p105a.C1643a;
+import p507d0.p592z.p594d.C12238m;
 
 /* JADX INFO: compiled from: GetBackupCodesSendVerificationKeyResponse.kt */
 /* JADX INFO: loaded from: classes.dex */
@@ -27,7 +27,7 @@ public final /* data */ class GetBackupCodesSendVerificationKeyResponse {
             return false;
         }
         GetBackupCodesSendVerificationKeyResponse getBackupCodesSendVerificationKeyResponse = (GetBackupCodesSendVerificationKeyResponse) other;
-        return Intrinsics3.areEqual(this.nonce, getBackupCodesSendVerificationKeyResponse.nonce) && Intrinsics3.areEqual(this.regenerateNonce, getBackupCodesSendVerificationKeyResponse.regenerateNonce);
+        return C12238m.areEqual(this.nonce, getBackupCodesSendVerificationKeyResponse.nonce) && C12238m.areEqual(this.regenerateNonce, getBackupCodesSendVerificationKeyResponse.regenerateNonce);
     }
 
     public int hashCode() {
@@ -38,9 +38,9 @@ public final /* data */ class GetBackupCodesSendVerificationKeyResponse {
     }
 
     public String toString() {
-        StringBuilder sbU = outline.U("GetBackupCodesSendVerificationKeyResponse(nonce=");
-        sbU.append(this.nonce);
-        sbU.append(", regenerateNonce=");
-        return outline.J(sbU, this.regenerateNonce, ")");
+        StringBuilder sbM833U = C1643a.m833U("GetBackupCodesSendVerificationKeyResponse(nonce=");
+        sbM833U.append(this.nonce);
+        sbM833U.append(", regenerateNonce=");
+        return C1643a.m822J(sbM833U, this.regenerateNonce, ")");
     }
 }

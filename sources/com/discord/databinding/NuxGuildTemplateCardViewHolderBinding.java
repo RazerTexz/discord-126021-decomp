@@ -9,25 +9,27 @@ import com.google.android.material.card.MaterialCardView;
 /* JADX INFO: loaded from: classes.dex */
 public final class NuxGuildTemplateCardViewHolderBinding implements ViewBinding {
 
+    /* JADX INFO: renamed from: a */
     @NonNull
-    public final MaterialCardView a;
+    public final MaterialCardView f15197a;
 
-    /* JADX INFO: renamed from: b, reason: collision with root package name */
+    /* JADX INFO: renamed from: b */
     @NonNull
-    public final MaterialCardView f2132b;
+    public final MaterialCardView f15198b;
 
+    /* JADX INFO: renamed from: c */
     @NonNull
-    public final TextView c;
+    public final TextView f15199c;
 
     public NuxGuildTemplateCardViewHolderBinding(@NonNull MaterialCardView materialCardView, @NonNull MaterialCardView materialCardView2, @NonNull TextView textView) {
-        this.a = materialCardView;
-        this.f2132b = materialCardView2;
-        this.c = textView;
+        this.f15197a = materialCardView;
+        this.f15198b = materialCardView2;
+        this.f15199c = textView;
     }
 
     @Override // androidx.viewbinding.ViewBinding
     @NonNull
     public View getRoot() {
-        return this.a;
+        return this.f15197a;
     }
 }

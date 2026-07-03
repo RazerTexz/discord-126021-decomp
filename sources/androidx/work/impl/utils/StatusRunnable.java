@@ -8,9 +8,9 @@ import androidx.work.WorkQuery;
 import androidx.work.impl.WorkManagerImpl;
 import androidx.work.impl.model.WorkSpec;
 import androidx.work.impl.utils.futures.SettableFuture;
-import b.i.b.d.a.ListenableFuture8;
 import java.util.List;
 import java.util.UUID;
+import p007b.p225i.p355b.p359d.p360a.InterfaceFutureC4539a;
 
 /* JADX INFO: loaded from: classes.dex */
 @RestrictTo({RestrictTo.Scope.LIBRARY_GROUP})
@@ -73,7 +73,7 @@ public abstract class StatusRunnable<T> implements Runnable {
     }
 
     @NonNull
-    public ListenableFuture8<T> getFuture() {
+    public InterfaceFutureC4539a<T> getFuture() {
         return this.mFuture;
     }
 

@@ -14,21 +14,24 @@ import com.google.android.material.circularreveal.CircularRevealWidget;
 /* JADX INFO: loaded from: classes3.dex */
 public final class CircularRevealCompat {
 
-    public static class a extends AnimatorListenerAdapter {
-        public final /* synthetic */ CircularRevealWidget a;
+    /* JADX INFO: renamed from: com.google.android.material.circularreveal.CircularRevealCompat$a */
+    public static class C10876a extends AnimatorListenerAdapter {
 
-        public a(CircularRevealWidget circularRevealWidget) {
-            this.a = circularRevealWidget;
+        /* JADX INFO: renamed from: a */
+        public final /* synthetic */ CircularRevealWidget f20956a;
+
+        public C10876a(CircularRevealWidget circularRevealWidget) {
+            this.f20956a = circularRevealWidget;
         }
 
         @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
         public void onAnimationEnd(Animator animator) {
-            this.a.destroyCircularRevealCache();
+            this.f20956a.destroyCircularRevealCache();
         }
 
         @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
         public void onAnimationStart(Animator animator) {
-            this.a.buildCircularRevealCache();
+            this.f20956a.buildCircularRevealCache();
         }
     }
 
@@ -51,7 +54,7 @@ public final class CircularRevealCompat {
 
     @NonNull
     public static Animator.AnimatorListener createCircularRevealListener(@NonNull CircularRevealWidget circularRevealWidget) {
-        return new a(circularRevealWidget);
+        return new C10876a(circularRevealWidget);
     }
 
     /* JADX WARN: Multi-variable type inference failed */

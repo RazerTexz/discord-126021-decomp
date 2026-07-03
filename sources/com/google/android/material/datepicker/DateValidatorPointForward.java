@@ -3,16 +3,17 @@ package com.google.android.material.datepicker;
 import android.os.Parcel;
 import android.os.Parcelable;
 import androidx.annotation.NonNull;
-import b.i.a.g.d.UtcDates;
 import com.google.android.material.datepicker.CalendarConstraints;
 import java.util.Arrays;
+import p007b.p225i.p226a.p341g.p345d.C4401l;
 
 /* JADX INFO: loaded from: classes3.dex */
 public class DateValidatorPointForward implements CalendarConstraints.DateValidator {
-    public static final Parcelable.Creator<DateValidatorPointForward> CREATOR = new a();
+    public static final Parcelable.Creator<DateValidatorPointForward> CREATOR = new C10884a();
     private final long point;
 
-    public static class a implements Parcelable.Creator<DateValidatorPointForward> {
+    /* JADX INFO: renamed from: com.google.android.material.datepicker.DateValidatorPointForward$a */
+    public static class C10884a implements Parcelable.Creator<DateValidatorPointForward> {
         @Override // android.os.Parcelable.Creator
         @NonNull
         public DateValidatorPointForward createFromParcel(@NonNull Parcel parcel) {
@@ -26,7 +27,7 @@ public class DateValidatorPointForward implements CalendarConstraints.DateValida
         }
     }
 
-    public /* synthetic */ DateValidatorPointForward(long j, a aVar) {
+    public /* synthetic */ DateValidatorPointForward(long j, C10884a c10884a) {
         this(j);
     }
 
@@ -37,7 +38,7 @@ public class DateValidatorPointForward implements CalendarConstraints.DateValida
 
     @NonNull
     public static DateValidatorPointForward now() {
-        return from(UtcDates.h().getTimeInMillis());
+        return from(C4401l.m6075h().getTimeInMillis());
     }
 
     @Override // android.os.Parcelable

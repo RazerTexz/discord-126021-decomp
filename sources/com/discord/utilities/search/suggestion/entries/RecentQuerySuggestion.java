@@ -1,10 +1,10 @@
 package com.discord.utilities.search.suggestion.entries;
 
-import b.d.b.a.outline;
 import com.discord.utilities.search.query.node.QueryNode;
 import com.discord.utilities.search.suggestion.entries.SearchSuggestion;
-import d0.z.d.Intrinsics3;
 import java.util.List;
+import p007b.p100d.p104b.p105a.C1643a;
+import p507d0.p592z.p594d.C12238m;
 
 /* JADX INFO: compiled from: RecentQuerySuggestion.kt */
 /* JADX INFO: loaded from: classes2.dex */
@@ -14,7 +14,7 @@ public final /* data */ class RecentQuerySuggestion implements SearchSuggestion 
 
     /* JADX WARN: Multi-variable type inference failed */
     public RecentQuerySuggestion(List<? extends QueryNode> list) {
-        Intrinsics3.checkNotNullParameter(list, "query");
+        C12238m.checkNotNullParameter(list, "query");
         this.query = list;
         this.category = SearchSuggestion.Category.RECENT_QUERY;
     }
@@ -32,13 +32,13 @@ public final /* data */ class RecentQuerySuggestion implements SearchSuggestion 
     }
 
     public final RecentQuerySuggestion copy(List<? extends QueryNode> query) {
-        Intrinsics3.checkNotNullParameter(query, "query");
+        C12238m.checkNotNullParameter(query, "query");
         return new RecentQuerySuggestion(query);
     }
 
     public boolean equals(Object other) {
         if (this != other) {
-            return (other instanceof RecentQuerySuggestion) && Intrinsics3.areEqual(this.query, ((RecentQuerySuggestion) other).query);
+            return (other instanceof RecentQuerySuggestion) && C12238m.areEqual(this.query, ((RecentQuerySuggestion) other).query);
         }
         return true;
     }
@@ -61,6 +61,6 @@ public final /* data */ class RecentQuerySuggestion implements SearchSuggestion 
     }
 
     public String toString() {
-        return outline.L(outline.U("RecentQuerySuggestion(query="), this.query, ")");
+        return C1643a.m824L(C1643a.m833U("RecentQuerySuggestion(query="), this.query, ")");
     }
 }

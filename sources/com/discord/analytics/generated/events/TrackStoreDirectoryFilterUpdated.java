@@ -1,14 +1,14 @@
 package com.discord.analytics.generated.events;
 
-import b.d.b.a.outline;
 import com.discord.analytics.generated.traits.TrackBase;
-import com.discord.analytics.generated.traits.TrackBase2;
+import com.discord.analytics.generated.traits.TrackBaseReceiver;
 import com.discord.api.science.AnalyticsSchema;
-import d0.z.d.Intrinsics3;
+import p007b.p100d.p104b.p105a.C1643a;
+import p507d0.p592z.p594d.C12238m;
 
 /* JADX INFO: compiled from: TrackStoreDirectoryFilterUpdated.kt */
 /* JADX INFO: loaded from: classes.dex */
-public final /* data */ class TrackStoreDirectoryFilterUpdated implements AnalyticsSchema, TrackBase2 {
+public final /* data */ class TrackStoreDirectoryFilterUpdated implements AnalyticsSchema, TrackBaseReceiver {
     private TrackBase trackBase;
     private final CharSequence loadId = null;
     private final CharSequence sort = null;
@@ -28,7 +28,7 @@ public final /* data */ class TrackStoreDirectoryFilterUpdated implements Analyt
             return false;
         }
         TrackStoreDirectoryFilterUpdated trackStoreDirectoryFilterUpdated = (TrackStoreDirectoryFilterUpdated) other;
-        return Intrinsics3.areEqual(this.loadId, trackStoreDirectoryFilterUpdated.loadId) && Intrinsics3.areEqual(this.sort, trackStoreDirectoryFilterUpdated.sort);
+        return C12238m.areEqual(this.loadId, trackStoreDirectoryFilterUpdated.loadId) && C12238m.areEqual(this.sort, trackStoreDirectoryFilterUpdated.sort);
     }
 
     public int hashCode() {
@@ -39,9 +39,9 @@ public final /* data */ class TrackStoreDirectoryFilterUpdated implements Analyt
     }
 
     public String toString() {
-        StringBuilder sbU = outline.U("TrackStoreDirectoryFilterUpdated(loadId=");
-        sbU.append(this.loadId);
-        sbU.append(", sort=");
-        return outline.E(sbU, this.sort, ")");
+        StringBuilder sbM833U = C1643a.m833U("TrackStoreDirectoryFilterUpdated(loadId=");
+        sbM833U.append(this.loadId);
+        sbM833U.append(", sort=");
+        return C1643a.m817E(sbM833U, this.sort, ")");
     }
 }

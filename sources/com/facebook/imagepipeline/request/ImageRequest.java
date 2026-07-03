@@ -2,63 +2,104 @@ package com.facebook.imagepipeline.request;
 
 import android.net.Uri;
 import androidx.core.app.NotificationCompat;
-import b.c.a.a0.AnimatableValueParser;
-import b.f.d.d.Fn;
-import b.f.d.d.Objects2;
-import b.f.d.f.MediaUtils;
-import b.f.d.f.MimeTypeMapWrapper;
-import b.f.d.l.UriUtil;
-import b.f.j.d.BytesRange;
-import b.f.j.d.ImageDecodeOptions;
-import b.f.j.d.Priority2;
-import b.f.j.d.ResizeOptions;
-import b.f.j.d.RotationOptions;
-import b.f.j.k.RequestListener;
-import b.f.j.q.Postprocessor;
 import com.discord.models.domain.ModelAuditLogEntry;
 import com.facebook.cache.common.CacheKey;
 import java.io.File;
 import java.util.Arrays;
 import java.util.Locale;
 import java.util.Map;
+import p007b.p085c.p086a.p087a0.C1460d;
+import p007b.p109f.p115d.p119d.C1686i;
+import p007b.p109f.p115d.p119d.InterfaceC1681d;
+import p007b.p109f.p115d.p121f.C1692a;
+import p007b.p109f.p115d.p121f.C1693b;
+import p007b.p109f.p115d.p127l.C1717b;
+import p007b.p109f.p161j.p169d.C1880a;
+import p007b.p109f.p161j.p169d.C1881b;
+import p007b.p109f.p161j.p169d.C1884e;
+import p007b.p109f.p161j.p169d.C1885f;
+import p007b.p109f.p161j.p169d.EnumC1883d;
+import p007b.p109f.p161j.p176k.InterfaceC1928e;
+import p007b.p109f.p161j.p182q.InterfaceC2026b;
 
 /* JADX INFO: loaded from: classes3.dex */
 public class ImageRequest {
-    public static final Fn<ImageRequest, Uri> a = new a();
 
-    /* JADX INFO: renamed from: b, reason: collision with root package name */
-    public final b f2902b;
-    public final Uri c;
-    public final int d;
-    public File e;
-    public final boolean f;
-    public final boolean g;
-    public final boolean h;
-    public final ImageDecodeOptions i;
-    public final ResizeOptions j;
-    public final RotationOptions k;
-    public final BytesRange l;
-    public final Priority2 m;
-    public final c n;
-    public final int o;
-    public final boolean p;
-    public final boolean q;
-    public final Boolean r;
+    /* JADX INFO: renamed from: a */
+    public static final InterfaceC1681d<ImageRequest, Uri> f19583a = new C10665a();
 
-    /* JADX INFO: renamed from: s, reason: collision with root package name */
-    public final Postprocessor f2903s;
-    public final RequestListener t;
-    public final int u;
+    /* JADX INFO: renamed from: b */
+    public final EnumC10666b f19584b;
 
-    public static class a implements Fn<ImageRequest, Uri> {
+    /* JADX INFO: renamed from: c */
+    public final Uri f19585c;
+
+    /* JADX INFO: renamed from: d */
+    public final int f19586d;
+
+    /* JADX INFO: renamed from: e */
+    public File f19587e;
+
+    /* JADX INFO: renamed from: f */
+    public final boolean f19588f;
+
+    /* JADX INFO: renamed from: g */
+    public final boolean f19589g;
+
+    /* JADX INFO: renamed from: h */
+    public final boolean f19590h;
+
+    /* JADX INFO: renamed from: i */
+    public final C1881b f19591i;
+
+    /* JADX INFO: renamed from: j */
+    public final C1884e f19592j;
+
+    /* JADX INFO: renamed from: k */
+    public final C1885f f19593k;
+
+    /* JADX INFO: renamed from: l */
+    public final C1880a f19594l;
+
+    /* JADX INFO: renamed from: m */
+    public final EnumC1883d f19595m;
+
+    /* JADX INFO: renamed from: n */
+    public final EnumC10667c f19596n;
+
+    /* JADX INFO: renamed from: o */
+    public final int f19597o;
+
+    /* JADX INFO: renamed from: p */
+    public final boolean f19598p;
+
+    /* JADX INFO: renamed from: q */
+    public final boolean f19599q;
+
+    /* JADX INFO: renamed from: r */
+    public final Boolean f19600r;
+
+    /* JADX INFO: renamed from: s */
+    public final InterfaceC2026b f19601s;
+
+    /* JADX INFO: renamed from: t */
+    public final InterfaceC1928e f19602t;
+
+    /* JADX INFO: renamed from: u */
+    public final int f19603u;
+
+    /* JADX INFO: renamed from: com.facebook.imagepipeline.request.ImageRequest$a */
+    public static class C10665a implements InterfaceC1681d<ImageRequest, Uri> {
     }
 
-    public enum b {
+    /* JADX INFO: renamed from: com.facebook.imagepipeline.request.ImageRequest$b */
+    public enum EnumC10666b {
         SMALL,
         DEFAULT
     }
 
-    public enum c {
+    /* JADX INFO: renamed from: com.facebook.imagepipeline.request.ImageRequest$c */
+    public enum EnumC10667c {
         FULL_FETCH(1),
         DISK_CACHE(2),
         ENCODED_MEMORY_CACHE(3),
@@ -66,84 +107,88 @@ public class ImageRequest {
 
         private int mValue;
 
-        c(int i) {
+        EnumC10667c(int i) {
             this.mValue = i;
         }
 
-        public static c f(c cVar, c cVar2) {
-            return cVar.mValue > cVar2.mValue ? cVar : cVar2;
+        /* JADX INFO: renamed from: f */
+        public static EnumC10667c m8721f(EnumC10667c enumC10667c, EnumC10667c enumC10667c2) {
+            return enumC10667c.mValue > enumC10667c2.mValue ? enumC10667c : enumC10667c2;
         }
 
-        public int g() {
+        /* JADX INFO: renamed from: g */
+        public int m8722g() {
             return this.mValue;
         }
     }
 
     public ImageRequest(ImageRequestBuilder imageRequestBuilder) {
-        this.f2902b = imageRequestBuilder.g;
-        Uri uri = imageRequestBuilder.a;
-        this.c = uri;
+        this.f19584b = imageRequestBuilder.f19618g;
+        Uri uri = imageRequestBuilder.f19612a;
+        this.f19585c = uri;
         int i = -1;
         if (uri != null) {
-            if (UriUtil.e(uri)) {
+            if (C1717b.m1009e(uri)) {
                 i = 0;
-            } else if (UriUtil.d(uri)) {
+            } else if (C1717b.m1008d(uri)) {
                 String path = uri.getPath();
-                Map<String, String> map = MediaUtils.a;
+                Map<String, String> map = C1692a.f3103a;
                 int iLastIndexOf = path.lastIndexOf(46);
                 String mimeTypeFromExtension = null;
                 String strSubstring = (iLastIndexOf < 0 || iLastIndexOf == path.length() + (-1)) ? null : path.substring(iLastIndexOf + 1);
                 if (strSubstring != null) {
                     String lowerCase = strSubstring.toLowerCase(Locale.US);
-                    String str = MimeTypeMapWrapper.c.get(lowerCase);
-                    mimeTypeFromExtension = str == null ? MimeTypeMapWrapper.a.getMimeTypeFromExtension(lowerCase) : str;
+                    String str = C1693b.f3106c.get(lowerCase);
+                    mimeTypeFromExtension = str == null ? C1693b.f3104a.getMimeTypeFromExtension(lowerCase) : str;
                     if (mimeTypeFromExtension == null) {
-                        mimeTypeFromExtension = MediaUtils.a.get(lowerCase);
+                        mimeTypeFromExtension = C1692a.f3103a.get(lowerCase);
                     }
                 }
                 i = mimeTypeFromExtension != null && mimeTypeFromExtension.startsWith("video/") ? 2 : 3;
-            } else if (UriUtil.c(uri)) {
+            } else if (C1717b.m1007c(uri)) {
                 i = 4;
-            } else if (ModelAuditLogEntry.CHANGE_KEY_ASSET.equals(UriUtil.a(uri))) {
+            } else if (ModelAuditLogEntry.CHANGE_KEY_ASSET.equals(C1717b.m1005a(uri))) {
                 i = 5;
-            } else if ("res".equals(UriUtil.a(uri))) {
+            } else if ("res".equals(C1717b.m1005a(uri))) {
                 i = 6;
-            } else if ("data".equals(UriUtil.a(uri))) {
+            } else if ("data".equals(C1717b.m1005a(uri))) {
                 i = 7;
-            } else if ("android.resource".equals(UriUtil.a(uri))) {
+            } else if ("android.resource".equals(C1717b.m1005a(uri))) {
                 i = 8;
             }
         }
-        this.d = i;
-        this.f = imageRequestBuilder.h;
-        this.g = imageRequestBuilder.i;
-        this.h = imageRequestBuilder.j;
-        this.i = imageRequestBuilder.f;
-        this.j = imageRequestBuilder.d;
-        RotationOptions rotationOptions = imageRequestBuilder.e;
-        this.k = rotationOptions == null ? RotationOptions.a : rotationOptions;
-        this.l = imageRequestBuilder.o;
-        this.m = imageRequestBuilder.k;
-        this.n = imageRequestBuilder.f2904b;
-        int i2 = imageRequestBuilder.c;
-        this.o = i2;
-        this.p = (i2 & 48) == 0 && UriUtil.e(imageRequestBuilder.a);
-        this.q = (imageRequestBuilder.c & 15) == 0;
-        this.r = imageRequestBuilder.m;
-        this.f2903s = imageRequestBuilder.l;
-        this.t = imageRequestBuilder.n;
-        this.u = imageRequestBuilder.p;
+        this.f19586d = i;
+        this.f19588f = imageRequestBuilder.f19619h;
+        this.f19589g = imageRequestBuilder.f19620i;
+        this.f19590h = imageRequestBuilder.f19621j;
+        this.f19591i = imageRequestBuilder.f19617f;
+        this.f19592j = imageRequestBuilder.f19615d;
+        C1885f c1885f = imageRequestBuilder.f19616e;
+        this.f19593k = c1885f == null ? C1885f.f3721a : c1885f;
+        this.f19594l = imageRequestBuilder.f19626o;
+        this.f19595m = imageRequestBuilder.f19622k;
+        this.f19596n = imageRequestBuilder.f19613b;
+        int i2 = imageRequestBuilder.f19614c;
+        this.f19597o = i2;
+        this.f19598p = (i2 & 48) == 0 && C1717b.m1009e(imageRequestBuilder.f19612a);
+        this.f19599q = (imageRequestBuilder.f19614c & 15) == 0;
+        this.f19600r = imageRequestBuilder.f19624m;
+        this.f19601s = imageRequestBuilder.f19623l;
+        this.f19602t = imageRequestBuilder.f19625n;
+        this.f19603u = imageRequestBuilder.f19627p;
     }
 
-    public synchronized File a() {
-        if (this.e == null) {
-            this.e = new File(this.c.getPath());
+    /* JADX INFO: renamed from: a */
+    public synchronized File m8719a() {
+        if (this.f19587e == null) {
+            this.f19587e = new File(this.f19585c.getPath());
         }
-        return this.e;
+        return this.f19587e;
     }
 
-    public boolean b(int i) {
-        return (i & this.o) == 0;
+    /* JADX INFO: renamed from: b */
+    public boolean m8720b(int i) {
+        return (i & this.f19597o) == 0;
     }
 
     public boolean equals(Object obj) {
@@ -151,43 +196,43 @@ public class ImageRequest {
             return false;
         }
         ImageRequest imageRequest = (ImageRequest) obj;
-        if (this.g != imageRequest.g || this.p != imageRequest.p || this.q != imageRequest.q || !AnimatableValueParser.g0(this.c, imageRequest.c) || !AnimatableValueParser.g0(this.f2902b, imageRequest.f2902b) || !AnimatableValueParser.g0(this.e, imageRequest.e) || !AnimatableValueParser.g0(this.l, imageRequest.l) || !AnimatableValueParser.g0(this.i, imageRequest.i) || !AnimatableValueParser.g0(this.j, imageRequest.j) || !AnimatableValueParser.g0(this.m, imageRequest.m) || !AnimatableValueParser.g0(this.n, imageRequest.n) || !AnimatableValueParser.g0(Integer.valueOf(this.o), Integer.valueOf(imageRequest.o)) || !AnimatableValueParser.g0(this.r, imageRequest.r)) {
+        if (this.f19589g != imageRequest.f19589g || this.f19598p != imageRequest.f19598p || this.f19599q != imageRequest.f19599q || !C1460d.m520g0(this.f19585c, imageRequest.f19585c) || !C1460d.m520g0(this.f19584b, imageRequest.f19584b) || !C1460d.m520g0(this.f19587e, imageRequest.f19587e) || !C1460d.m520g0(this.f19594l, imageRequest.f19594l) || !C1460d.m520g0(this.f19591i, imageRequest.f19591i) || !C1460d.m520g0(this.f19592j, imageRequest.f19592j) || !C1460d.m520g0(this.f19595m, imageRequest.f19595m) || !C1460d.m520g0(this.f19596n, imageRequest.f19596n) || !C1460d.m520g0(Integer.valueOf(this.f19597o), Integer.valueOf(imageRequest.f19597o)) || !C1460d.m520g0(this.f19600r, imageRequest.f19600r)) {
             return false;
         }
-        if (!AnimatableValueParser.g0(null, null) || !AnimatableValueParser.g0(this.k, imageRequest.k) || this.h != imageRequest.h) {
+        if (!C1460d.m520g0(null, null) || !C1460d.m520g0(this.f19593k, imageRequest.f19593k) || this.f19590h != imageRequest.f19590h) {
             return false;
         }
-        Postprocessor postprocessor = this.f2903s;
-        CacheKey postprocessorCacheKey = postprocessor != null ? postprocessor.getPostprocessorCacheKey() : null;
-        Postprocessor postprocessor2 = imageRequest.f2903s;
-        return AnimatableValueParser.g0(postprocessorCacheKey, postprocessor2 != null ? postprocessor2.getPostprocessorCacheKey() : null) && this.u == imageRequest.u;
+        InterfaceC2026b interfaceC2026b = this.f19601s;
+        CacheKey postprocessorCacheKey = interfaceC2026b != null ? interfaceC2026b.getPostprocessorCacheKey() : null;
+        InterfaceC2026b interfaceC2026b2 = imageRequest.f19601s;
+        return C1460d.m520g0(postprocessorCacheKey, interfaceC2026b2 != null ? interfaceC2026b2.getPostprocessorCacheKey() : null) && this.f19603u == imageRequest.f19603u;
     }
 
     public int hashCode() {
-        Postprocessor postprocessor = this.f2903s;
-        return Arrays.hashCode(new Object[]{this.f2902b, this.c, Boolean.valueOf(this.g), this.l, this.m, this.n, Integer.valueOf(this.o), Boolean.valueOf(this.p), Boolean.valueOf(this.q), this.i, this.r, this.j, this.k, postprocessor != null ? postprocessor.getPostprocessorCacheKey() : null, null, Integer.valueOf(this.u), Boolean.valueOf(this.h)});
+        InterfaceC2026b interfaceC2026b = this.f19601s;
+        return Arrays.hashCode(new Object[]{this.f19584b, this.f19585c, Boolean.valueOf(this.f19589g), this.f19594l, this.f19595m, this.f19596n, Integer.valueOf(this.f19597o), Boolean.valueOf(this.f19598p), Boolean.valueOf(this.f19599q), this.f19591i, this.f19600r, this.f19592j, this.f19593k, interfaceC2026b != null ? interfaceC2026b.getPostprocessorCacheKey() : null, null, Integer.valueOf(this.f19603u), Boolean.valueOf(this.f19590h)});
     }
 
     public String toString() {
-        Objects2 objects2H2 = AnimatableValueParser.h2(this);
-        objects2H2.c(NotificationCompat.MessagingStyle.Message.KEY_DATA_URI, this.c);
-        objects2H2.c("cacheChoice", this.f2902b);
-        objects2H2.c("decodeOptions", this.i);
-        objects2H2.c("postprocessor", this.f2903s);
-        objects2H2.c("priority", this.m);
-        objects2H2.c("resizeOptions", this.j);
-        objects2H2.c("rotationOptions", this.k);
-        objects2H2.c("bytesRange", this.l);
-        objects2H2.c("resizingAllowedOverride", null);
-        objects2H2.b("progressiveRenderingEnabled", this.f);
-        objects2H2.b("localThumbnailPreviewsEnabled", this.g);
-        objects2H2.b("loadThumbnailOnly", this.h);
-        objects2H2.c("lowestPermittedRequestLevel", this.n);
-        objects2H2.a("cachesDisabled", this.o);
-        objects2H2.b("isDiskCacheEnabled", this.p);
-        objects2H2.b("isMemoryCacheEnabled", this.q);
-        objects2H2.c("decodePrefetches", this.r);
-        objects2H2.a("delayMs", this.u);
-        return objects2H2.toString();
+        C1686i c1686iM526h2 = C1460d.m526h2(this);
+        c1686iM526h2.m971c(NotificationCompat.MessagingStyle.Message.KEY_DATA_URI, this.f19585c);
+        c1686iM526h2.m971c("cacheChoice", this.f19584b);
+        c1686iM526h2.m971c("decodeOptions", this.f19591i);
+        c1686iM526h2.m971c("postprocessor", this.f19601s);
+        c1686iM526h2.m971c("priority", this.f19595m);
+        c1686iM526h2.m971c("resizeOptions", this.f19592j);
+        c1686iM526h2.m971c("rotationOptions", this.f19593k);
+        c1686iM526h2.m971c("bytesRange", this.f19594l);
+        c1686iM526h2.m971c("resizingAllowedOverride", null);
+        c1686iM526h2.m970b("progressiveRenderingEnabled", this.f19588f);
+        c1686iM526h2.m970b("localThumbnailPreviewsEnabled", this.f19589g);
+        c1686iM526h2.m970b("loadThumbnailOnly", this.f19590h);
+        c1686iM526h2.m971c("lowestPermittedRequestLevel", this.f19596n);
+        c1686iM526h2.m969a("cachesDisabled", this.f19597o);
+        c1686iM526h2.m970b("isDiskCacheEnabled", this.f19598p);
+        c1686iM526h2.m970b("isMemoryCacheEnabled", this.f19599q);
+        c1686iM526h2.m971c("decodePrefetches", this.f19600r);
+        c1686iM526h2.m969a("delayMs", this.f19603u);
+        return c1686iM526h2.toString();
     }
 }

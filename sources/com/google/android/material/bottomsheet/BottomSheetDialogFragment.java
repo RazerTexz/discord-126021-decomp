@@ -13,8 +13,9 @@ import com.google.android.material.bottomsheet.BottomSheetBehavior;
 public class BottomSheetDialogFragment extends AppCompatDialogFragment {
     private boolean waitingForDismissAllowingStateLoss;
 
-    public class b extends BottomSheetBehavior.BottomSheetCallback {
-        public b(a aVar) {
+    /* JADX INFO: renamed from: com.google.android.material.bottomsheet.BottomSheetDialogFragment$b */
+    public class C10864b extends BottomSheetBehavior.BottomSheetCallback {
+        public C10864b(C10863a c10863a) {
         }
 
         @Override // com.google.android.material.bottomsheet.BottomSheetBehavior.BottomSheetCallback
@@ -46,7 +47,7 @@ public class BottomSheetDialogFragment extends AppCompatDialogFragment {
         if (getDialog() instanceof BottomSheetDialog) {
             ((BottomSheetDialog) getDialog()).removeDefaultCallback();
         }
-        bottomSheetBehavior.addBottomSheetCallback(new b(null));
+        bottomSheetBehavior.addBottomSheetCallback(new C10864b(null));
         bottomSheetBehavior.setState(5);
     }
 

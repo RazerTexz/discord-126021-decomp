@@ -16,32 +16,34 @@ public abstract class WidgetRun implements Dependency {
     public DependencyNode end = new DependencyNode(this);
     public RunType mRunType = RunType.NONE;
 
-    /* JADX INFO: renamed from: androidx.constraintlayout.solver.widgets.analyzer.WidgetRun$1, reason: invalid class name */
-    public static /* synthetic */ class AnonymousClass1 {
-        public static final /* synthetic */ int[] $SwitchMap$androidx$constraintlayout$solver$widgets$ConstraintAnchor$Type;
+    /* JADX INFO: renamed from: androidx.constraintlayout.solver.widgets.analyzer.WidgetRun$1 */
+    public static /* synthetic */ class C01941 {
+
+        /* JADX INFO: renamed from: $SwitchMap$androidx$constraintlayout$solver$widgets$ConstraintAnchor$Type */
+        public static final /* synthetic */ int[] f124x4c44d048;
 
         static {
             ConstraintAnchor.Type.values();
             int[] iArr = new int[9];
-            $SwitchMap$androidx$constraintlayout$solver$widgets$ConstraintAnchor$Type = iArr;
+            f124x4c44d048 = iArr;
             try {
                 iArr[ConstraintAnchor.Type.LEFT.ordinal()] = 1;
             } catch (NoSuchFieldError unused) {
             }
             try {
-                $SwitchMap$androidx$constraintlayout$solver$widgets$ConstraintAnchor$Type[ConstraintAnchor.Type.RIGHT.ordinal()] = 2;
+                f124x4c44d048[ConstraintAnchor.Type.RIGHT.ordinal()] = 2;
             } catch (NoSuchFieldError unused2) {
             }
             try {
-                $SwitchMap$androidx$constraintlayout$solver$widgets$ConstraintAnchor$Type[ConstraintAnchor.Type.TOP.ordinal()] = 3;
+                f124x4c44d048[ConstraintAnchor.Type.TOP.ordinal()] = 3;
             } catch (NoSuchFieldError unused3) {
             }
             try {
-                $SwitchMap$androidx$constraintlayout$solver$widgets$ConstraintAnchor$Type[ConstraintAnchor.Type.BASELINE.ordinal()] = 4;
+                f124x4c44d048[ConstraintAnchor.Type.BASELINE.ordinal()] = 4;
             } catch (NoSuchFieldError unused4) {
             }
             try {
-                $SwitchMap$androidx$constraintlayout$solver$widgets$ConstraintAnchor$Type[ConstraintAnchor.Type.BOTTOM.ordinal()] = 5;
+                f124x4c44d048[ConstraintAnchor.Type.BOTTOM.ordinal()] = 5;
             } catch (NoSuchFieldError unused5) {
             }
         }

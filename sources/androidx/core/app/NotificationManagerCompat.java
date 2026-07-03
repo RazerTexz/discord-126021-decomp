@@ -25,7 +25,6 @@ import android.util.Log;
 import androidx.annotation.GuardedBy;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import b.d.b.a.outline;
 import java.lang.reflect.InvocationTargetException;
 import java.util.ArrayDeque;
 import java.util.ArrayList;
@@ -37,7 +36,8 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
-import x.a.b.a.INotificationSideChannel;
+import p007b.p100d.p104b.p105a.C1643a;
+import p668x.p669a.p672b.p673a.InterfaceC13181a;
 
 /* JADX INFO: loaded from: classes.dex */
 public final class NotificationManagerCompat {
@@ -73,22 +73,22 @@ public final class NotificationManagerCompat {
 
     public static class NotifyTask implements Task {
 
-        /* JADX INFO: renamed from: id, reason: collision with root package name */
-        public final int f35id;
+        /* JADX INFO: renamed from: id */
+        public final int f131id;
         public final Notification notif;
         public final String packageName;
         public final String tag;
 
         public NotifyTask(String str, int i, String str2, Notification notification) {
             this.packageName = str;
-            this.f35id = i;
+            this.f131id = i;
             this.tag = str2;
             this.notif = notification;
         }
 
         @Override // androidx.core.app.NotificationManagerCompat.Task
-        public void send(INotificationSideChannel iNotificationSideChannel) throws RemoteException {
-            iNotificationSideChannel.notify(this.packageName, this.f35id, this.tag, this.notif);
+        public void send(InterfaceC13181a interfaceC13181a) throws RemoteException {
+            interfaceC13181a.notify(this.packageName, this.f131id, this.tag, this.notif);
         }
 
         @NonNull
@@ -97,9 +97,9 @@ public final class NotificationManagerCompat {
             sb.append("packageName:");
             sb.append(this.packageName);
             sb.append(", id:");
-            sb.append(this.f35id);
+            sb.append(this.f131id);
             sb.append(", tag:");
-            return outline.J(sb, this.tag, "]");
+            return C1643a.m822J(sb, this.tag, "]");
         }
     }
 
@@ -126,7 +126,7 @@ public final class NotificationManagerCompat {
 
         public static class ListenerRecord {
             public final ComponentName componentName;
-            public INotificationSideChannel service;
+            public InterfaceC13181a service;
             public boolean bound = false;
             public ArrayDeque<Task> taskQueue = new ArrayDeque<>();
             public int retryCount = 0;
@@ -153,9 +153,9 @@ public final class NotificationManagerCompat {
             if (zBindService) {
                 listenerRecord.retryCount = 0;
             } else {
-                StringBuilder sbU = outline.U("Unable to bind to listener ");
-                sbU.append(listenerRecord.componentName);
-                Log.w(NotificationManagerCompat.TAG, sbU.toString());
+                StringBuilder sbM833U = C1643a.m833U("Unable to bind to listener ");
+                sbM833U.append(listenerRecord.componentName);
+                Log.w(NotificationManagerCompat.TAG, sbM833U.toString());
                 this.mContext.unbindService(this);
             }
             return listenerRecord.bound;
@@ -187,7 +187,7 @@ public final class NotificationManagerCompat {
         private void handleServiceConnected(ComponentName componentName, IBinder iBinder) {
             ListenerRecord listenerRecord = this.mRecordMap.get(componentName);
             if (listenerRecord != null) {
-                listenerRecord.service = INotificationSideChannel.a.asInterface(iBinder);
+                listenerRecord.service = InterfaceC13181a.a.asInterface(iBinder);
                 listenerRecord.retryCount = 0;
                 processListenerQueue(listenerRecord);
             }
@@ -202,12 +202,12 @@ public final class NotificationManagerCompat {
 
         private void processListenerQueue(ListenerRecord listenerRecord) {
             if (Log.isLoggable(NotificationManagerCompat.TAG, 3)) {
-                StringBuilder sbU = outline.U("Processing component ");
-                sbU.append(listenerRecord.componentName);
-                sbU.append(", ");
-                sbU.append(listenerRecord.taskQueue.size());
-                sbU.append(" queued tasks");
-                Log.d(NotificationManagerCompat.TAG, sbU.toString());
+                StringBuilder sbM833U = C1643a.m833U("Processing component ");
+                sbM833U.append(listenerRecord.componentName);
+                sbM833U.append(", ");
+                sbM833U.append(listenerRecord.taskQueue.size());
+                sbM833U.append(" queued tasks");
+                Log.d(NotificationManagerCompat.TAG, sbM833U.toString());
             }
             if (listenerRecord.taskQueue.isEmpty()) {
                 return;
@@ -229,14 +229,14 @@ public final class NotificationManagerCompat {
                     listenerRecord.taskQueue.remove();
                 } catch (DeadObjectException unused) {
                     if (Log.isLoggable(NotificationManagerCompat.TAG, 3)) {
-                        StringBuilder sbU2 = outline.U("Remote service has died: ");
-                        sbU2.append(listenerRecord.componentName);
-                        Log.d(NotificationManagerCompat.TAG, sbU2.toString());
+                        StringBuilder sbM833U2 = C1643a.m833U("Remote service has died: ");
+                        sbM833U2.append(listenerRecord.componentName);
+                        Log.d(NotificationManagerCompat.TAG, sbM833U2.toString());
                     }
                 } catch (RemoteException e) {
-                    StringBuilder sbU3 = outline.U("RemoteException communicating with ");
-                    sbU3.append(listenerRecord.componentName);
-                    Log.w(NotificationManagerCompat.TAG, sbU3.toString(), e);
+                    StringBuilder sbM833U3 = C1643a.m833U("RemoteException communicating with ");
+                    sbM833U3.append(listenerRecord.componentName);
+                    Log.w(NotificationManagerCompat.TAG, sbM833U3.toString(), e);
                 }
             }
             if (listenerRecord.taskQueue.isEmpty()) {
@@ -252,14 +252,14 @@ public final class NotificationManagerCompat {
             int i = listenerRecord.retryCount + 1;
             listenerRecord.retryCount = i;
             if (i > 6) {
-                StringBuilder sbU = outline.U("Giving up on delivering ");
-                sbU.append(listenerRecord.taskQueue.size());
-                sbU.append(" tasks to ");
-                sbU.append(listenerRecord.componentName);
-                sbU.append(" after ");
-                sbU.append(listenerRecord.retryCount);
-                sbU.append(" retries");
-                Log.w(NotificationManagerCompat.TAG, sbU.toString());
+                StringBuilder sbM833U = C1643a.m833U("Giving up on delivering ");
+                sbM833U.append(listenerRecord.taskQueue.size());
+                sbM833U.append(" tasks to ");
+                sbM833U.append(listenerRecord.componentName);
+                sbM833U.append(" after ");
+                sbM833U.append(listenerRecord.retryCount);
+                sbM833U.append(" retries");
+                Log.w(NotificationManagerCompat.TAG, sbM833U.toString());
                 listenerRecord.taskQueue.clear();
                 return;
             }
@@ -302,9 +302,9 @@ public final class NotificationManagerCompat {
                 Map.Entry<ComponentName, ListenerRecord> next = it.next();
                 if (!hashSet.contains(next.getKey())) {
                     if (Log.isLoggable(NotificationManagerCompat.TAG, 3)) {
-                        StringBuilder sbU = outline.U("Removing listener record for ");
-                        sbU.append(next.getKey());
-                        Log.d(NotificationManagerCompat.TAG, sbU.toString());
+                        StringBuilder sbM833U = C1643a.m833U("Removing listener record for ");
+                        sbM833U.append(next.getKey());
+                        Log.d(NotificationManagerCompat.TAG, sbM833U.toString());
                     }
                     ensureServiceUnbound(next.getValue());
                     it.remove();
@@ -357,7 +357,7 @@ public final class NotificationManagerCompat {
     }
 
     public interface Task {
-        void send(INotificationSideChannel iNotificationSideChannel) throws RemoteException;
+        void send(InterfaceC13181a interfaceC13181a) throws RemoteException;
     }
 
     private NotificationManagerCompat(Context context) {
@@ -652,24 +652,24 @@ public final class NotificationManagerCompat {
     public static class CancelTask implements Task {
         public final boolean all;
 
-        /* JADX INFO: renamed from: id, reason: collision with root package name */
-        public final int f34id;
+        /* JADX INFO: renamed from: id */
+        public final int f130id;
         public final String packageName;
         public final String tag;
 
         public CancelTask(String str) {
             this.packageName = str;
-            this.f34id = 0;
+            this.f130id = 0;
             this.tag = null;
             this.all = true;
         }
 
         @Override // androidx.core.app.NotificationManagerCompat.Task
-        public void send(INotificationSideChannel iNotificationSideChannel) throws RemoteException {
+        public void send(InterfaceC13181a interfaceC13181a) throws RemoteException {
             if (this.all) {
-                iNotificationSideChannel.cancelAll(this.packageName);
+                interfaceC13181a.cancelAll(this.packageName);
             } else {
-                iNotificationSideChannel.cancel(this.packageName, this.f34id, this.tag);
+                interfaceC13181a.cancel(this.packageName, this.f130id, this.tag);
             }
         }
 
@@ -679,16 +679,16 @@ public final class NotificationManagerCompat {
             sb.append("packageName:");
             sb.append(this.packageName);
             sb.append(", id:");
-            sb.append(this.f34id);
+            sb.append(this.f130id);
             sb.append(", tag:");
             sb.append(this.tag);
             sb.append(", all:");
-            return outline.O(sb, this.all, "]");
+            return C1643a.m827O(sb, this.all, "]");
         }
 
         public CancelTask(String str, int i, String str2) {
             this.packageName = str;
-            this.f34id = i;
+            this.f130id = i;
             this.tag = str2;
             this.all = false;
         }

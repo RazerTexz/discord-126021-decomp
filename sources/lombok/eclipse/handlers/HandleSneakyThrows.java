@@ -123,7 +123,7 @@ public class HandleSneakyThrows extends EclipseAnnotationHandler<SneakyThrows> {
                 exceptions.add(new DeclaredException(exceptionName, exceptionNameNodes[i]));
             }
         }
-        EclipseNode owner = annotationNode.up();
+        EclipseNode owner = annotationNode.m10925up();
         switch ($SWITCH_TABLE$lombok$core$AST$Kind()[owner.getKind().ordinal()]) {
             case 5:
                 handleMethod(annotationNode, (AbstractMethodDeclaration) owner.get(), exceptions);
@@ -158,7 +158,7 @@ public class HandleSneakyThrows extends EclipseAnnotationHandler<SneakyThrows> {
             contents = new Statement[]{buildTryCatchBlock(contents, exception, exception.node, method)};
         }
         method.statements = contents;
-        annotation.up().rebuild();
+        annotation.m10925up().rebuild();
     }
 
     public Statement buildTryCatchBlock(Statement[] contents, DeclaredException exception, ASTNode source, AbstractMethodDeclaration method) {

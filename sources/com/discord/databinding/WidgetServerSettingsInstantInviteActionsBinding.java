@@ -9,33 +9,37 @@ import androidx.viewbinding.ViewBinding;
 /* JADX INFO: loaded from: classes.dex */
 public final class WidgetServerSettingsInstantInviteActionsBinding implements ViewBinding {
 
+    /* JADX INFO: renamed from: a */
     @NonNull
-    public final NestedScrollView a;
+    public final NestedScrollView f17676a;
 
-    /* JADX INFO: renamed from: b, reason: collision with root package name */
+    /* JADX INFO: renamed from: b */
     @NonNull
-    public final TextView f2573b;
+    public final TextView f17677b;
 
+    /* JADX INFO: renamed from: c */
     @NonNull
-    public final TextView c;
+    public final TextView f17678c;
 
+    /* JADX INFO: renamed from: d */
     @NonNull
-    public final TextView d;
+    public final TextView f17679d;
 
+    /* JADX INFO: renamed from: e */
     @NonNull
-    public final TextView e;
+    public final TextView f17680e;
 
     public WidgetServerSettingsInstantInviteActionsBinding(@NonNull NestedScrollView nestedScrollView, @NonNull TextView textView, @NonNull TextView textView2, @NonNull TextView textView3, @NonNull TextView textView4) {
-        this.a = nestedScrollView;
-        this.f2573b = textView;
-        this.c = textView2;
-        this.d = textView3;
-        this.e = textView4;
+        this.f17676a = nestedScrollView;
+        this.f17677b = textView;
+        this.f17678c = textView2;
+        this.f17679d = textView3;
+        this.f17680e = textView4;
     }
 
     @Override // androidx.viewbinding.ViewBinding
     @NonNull
     public View getRoot() {
-        return this.a;
+        return this.f17676a;
     }
 }

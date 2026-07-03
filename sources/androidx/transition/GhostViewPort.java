@@ -96,7 +96,7 @@ public class GhostViewPort extends ViewGroup implements GhostView {
     }
 
     public static GhostViewPort getGhostView(View view) {
-        return (GhostViewPort) view.getTag(R.id.ghost_view);
+        return (GhostViewPort) view.getTag(C0658R.id.ghost_view);
     }
 
     public static void removeGhost(View view) {
@@ -111,7 +111,7 @@ public class GhostViewPort extends ViewGroup implements GhostView {
     }
 
     public static void setGhostView(@NonNull View view, @Nullable GhostViewPort ghostViewPort) {
-        view.setTag(R.id.ghost_view, ghostViewPort);
+        view.setTag(C0658R.id.ghost_view, ghostViewPort);
     }
 
     @Override // android.view.ViewGroup, android.view.View

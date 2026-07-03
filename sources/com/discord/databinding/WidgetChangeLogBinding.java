@@ -13,49 +13,57 @@ import com.facebook.drawee.view.SimpleDraweeView;
 /* JADX INFO: loaded from: classes.dex */
 public final class WidgetChangeLogBinding implements ViewBinding {
 
+    /* JADX INFO: renamed from: a */
     @NonNull
-    public final LinearLayout a;
+    public final LinearLayout f15811a;
 
-    /* JADX INFO: renamed from: b, reason: collision with root package name */
+    /* JADX INFO: renamed from: b */
     @NonNull
-    public final LinkifiedTextView f2253b;
+    public final LinkifiedTextView f15812b;
 
+    /* JADX INFO: renamed from: c */
     @NonNull
-    public final AppCompatImageButton c;
+    public final AppCompatImageButton f15813c;
 
+    /* JADX INFO: renamed from: d */
     @NonNull
-    public final AppCompatImageButton d;
+    public final AppCompatImageButton f15814d;
 
+    /* JADX INFO: renamed from: e */
     @NonNull
-    public final NestedScrollView e;
+    public final NestedScrollView f15815e;
 
+    /* JADX INFO: renamed from: f */
     @NonNull
-    public final SimpleDraweeView f;
+    public final SimpleDraweeView f15816f;
 
+    /* JADX INFO: renamed from: g */
     @NonNull
-    public final AppCompatImageButton g;
+    public final AppCompatImageButton f15817g;
 
+    /* JADX INFO: renamed from: h */
     @NonNull
-    public final VideoView h;
+    public final VideoView f15818h;
 
+    /* JADX INFO: renamed from: i */
     @NonNull
-    public final SimpleDraweeView i;
+    public final SimpleDraweeView f15819i;
 
     public WidgetChangeLogBinding(@NonNull LinearLayout linearLayout, @NonNull LinkifiedTextView linkifiedTextView, @NonNull LinearLayout linearLayout2, @NonNull AppCompatImageButton appCompatImageButton, @NonNull AppCompatImageButton appCompatImageButton2, @NonNull NestedScrollView nestedScrollView, @NonNull SimpleDraweeView simpleDraweeView, @NonNull AppCompatImageButton appCompatImageButton3, @NonNull VideoView videoView, @NonNull SimpleDraweeView simpleDraweeView2) {
-        this.a = linearLayout;
-        this.f2253b = linkifiedTextView;
-        this.c = appCompatImageButton;
-        this.d = appCompatImageButton2;
-        this.e = nestedScrollView;
-        this.f = simpleDraweeView;
-        this.g = appCompatImageButton3;
-        this.h = videoView;
-        this.i = simpleDraweeView2;
+        this.f15811a = linearLayout;
+        this.f15812b = linkifiedTextView;
+        this.f15813c = appCompatImageButton;
+        this.f15814d = appCompatImageButton2;
+        this.f15815e = nestedScrollView;
+        this.f15816f = simpleDraweeView;
+        this.f15817g = appCompatImageButton3;
+        this.f15818h = videoView;
+        this.f15819i = simpleDraweeView2;
     }
 
     @Override // androidx.viewbinding.ViewBinding
     @NonNull
     public View getRoot() {
-        return this.a;
+        return this.f15811a;
     }
 }

@@ -68,7 +68,9 @@ public class HandleEqualsAndHashCode extends EclipseAnnotationHandler<EqualsAndH
     private static final char[][] JAVAX_ANNOTATION_NULLABLE = Eclipse.fromQualifiedName("javax.annotation.Nullable");
     private static final char[][] ORG_ECLIPSE_JDT_ANNOTATION_NULLABLE = Eclipse.fromQualifiedName("org.eclipse.jdt.annotation.Nullable");
     private static /* synthetic */ int[] $SWITCH_TABLE$lombok$core$configuration$CallSuperType;
-    private static /* synthetic */ int[] $SWITCH_TABLE$lombok$eclipse$handlers$EclipseHandlerUtil$MemberExistsResult;
+
+    /* JADX INFO: renamed from: $SWITCH_TABLE$lombok$eclipse$handlers$EclipseHandlerUtil$MemberExistsResult */
+    private static /* synthetic */ int[] f27469xb87c1847;
 
     static /* synthetic */ int[] $SWITCH_TABLE$lombok$core$configuration$CallSuperType() {
         int[] iArr = $SWITCH_TABLE$lombok$core$configuration$CallSuperType;
@@ -92,8 +94,9 @@ public class HandleEqualsAndHashCode extends EclipseAnnotationHandler<EqualsAndH
         return iArr2;
     }
 
-    static /* synthetic */ int[] $SWITCH_TABLE$lombok$eclipse$handlers$EclipseHandlerUtil$MemberExistsResult() {
-        int[] iArr = $SWITCH_TABLE$lombok$eclipse$handlers$EclipseHandlerUtil$MemberExistsResult;
+    /* JADX INFO: renamed from: $SWITCH_TABLE$lombok$eclipse$handlers$EclipseHandlerUtil$MemberExistsResult */
+    static /* synthetic */ int[] m10930xb87c1847() {
+        int[] iArr = f27469xb87c1847;
         if (iArr != null) {
             return iArr;
         }
@@ -110,7 +113,7 @@ public class HandleEqualsAndHashCode extends EclipseAnnotationHandler<EqualsAndH
             iArr2[EclipseHandlerUtil.MemberExistsResult.NOT_EXISTS.ordinal()] = 1;
         } catch (NoSuchFieldError unused3) {
         }
-        $SWITCH_TABLE$lombok$eclipse$handlers$EclipseHandlerUtil$MemberExistsResult = iArr2;
+        f27469xb87c1847 = iArr2;
         return iArr2;
     }
 
@@ -118,7 +121,7 @@ public class HandleEqualsAndHashCode extends EclipseAnnotationHandler<EqualsAndH
     public void handle(AnnotationValues<EqualsAndHashCode> annotation, Annotation ast, EclipseNode annotationNode) {
         HandlerUtil.handleFlagUsage(annotationNode, ConfigurationKeys.EQUALS_AND_HASH_CODE_FLAG_USAGE, "@EqualsAndHashCode");
         EqualsAndHashCode ann = annotation.getInstance();
-        List<InclusionExclusionUtils.Included<EclipseNode, EqualsAndHashCode.Include>> members = InclusionExclusionUtils.handleEqualsAndHashCodeMarking(annotationNode.up(), annotation, annotationNode);
+        List<InclusionExclusionUtils.Included<EclipseNode, EqualsAndHashCode.Include>> members = InclusionExclusionUtils.handleEqualsAndHashCodeMarking(annotationNode.m10925up(), annotation, annotationNode);
         if (members == null) {
             return;
         }
@@ -131,7 +134,7 @@ public class HandleEqualsAndHashCode extends EclipseAnnotationHandler<EqualsAndH
         boolean doNotUseGetters = (annotation.isExplicit("doNotUseGetters") || doNotUseGettersConfiguration == null) ? ann.doNotUseGetters() : doNotUseGettersConfiguration.booleanValue();
         HandlerUtil.FieldAccess fieldAccess = doNotUseGetters ? HandlerUtil.FieldAccess.PREFER_FIELD : HandlerUtil.FieldAccess.GETTER;
         boolean cacheHashCode = ann.cacheStrategy() == EqualsAndHashCode.CacheStrategy.LAZY;
-        generateMethods(annotationNode.up(), annotationNode, members, callSuper, true, cacheHashCode, fieldAccess, onParam);
+        generateMethods(annotationNode.m10925up(), annotationNode, members, callSuper, true, cacheHashCode, fieldAccess, onParam);
     }
 
     public void generateEqualsAndHashCodeForType(EclipseNode typeNode, EclipseNode errorNode) {
@@ -192,7 +195,7 @@ public class HandleEqualsAndHashCode extends EclipseAnnotationHandler<EqualsAndH
         EclipseHandlerUtil.MemberExistsResult equalsExists = EclipseHandlerUtil.methodExists("equals", typeNode, 1);
         EclipseHandlerUtil.MemberExistsResult hashCodeExists = EclipseHandlerUtil.methodExists("hashCode", typeNode, 0);
         EclipseHandlerUtil.MemberExistsResult canEqualExists = EclipseHandlerUtil.methodExists("canEqual", typeNode, 1);
-        switch ($SWITCH_TABLE$lombok$eclipse$handlers$EclipseHandlerUtil$MemberExistsResult()[((EclipseHandlerUtil.MemberExistsResult) Collections.max(Arrays.asList(equalsExists, hashCodeExists))).ordinal()]) {
+        switch (m10930xb87c1847()[((EclipseHandlerUtil.MemberExistsResult) Collections.max(Arrays.asList(equalsExists, hashCodeExists))).ordinal()]) {
             case 1:
             default:
                 MethodDeclaration equalsMethod = createEquals(typeNode, members, callSuper.booleanValue(), errorNode.get(), fieldAccess, needsCanEqual, onParam);
@@ -506,7 +509,7 @@ public class HandleEqualsAndHashCode extends EclipseAnnotationHandler<EqualsAndH
             genericsCount.add(Integer.valueOf(arraySizeOf(type.get().typeParameters)));
         }
         boolean staticContext = (type.get().modifiers & 8) != 0;
-        EclipseNode tNode = type.up();
+        EclipseNode tNode = type.m10925up();
         if (!staticContext && tNode.getKind() == AST.Kind.TYPE && (tNode.get().modifiers & 512) != 0) {
             staticContext = true;
         }
@@ -518,7 +521,7 @@ public class HandleEqualsAndHashCode extends EclipseAnnotationHandler<EqualsAndH
             if (!staticContext) {
                 staticContext = (tNode.get().modifiers & 8) != 0;
             }
-            tNode = tNode.up();
+            tNode = tNode.m10925up();
             if (!staticContext && tNode.getKind() == AST.Kind.TYPE && (tNode.get().modifiers & 512) != 0) {
                 staticContext = true;
             }

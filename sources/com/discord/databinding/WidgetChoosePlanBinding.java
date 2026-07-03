@@ -12,33 +12,37 @@ import com.discord.utilities.view.text.LinkifiedTextView;
 /* JADX INFO: loaded from: classes.dex */
 public final class WidgetChoosePlanBinding implements ViewBinding {
 
+    /* JADX INFO: renamed from: a */
     @NonNull
-    public final CoordinatorLayout a;
+    public final CoordinatorLayout f16383a;
 
-    /* JADX INFO: renamed from: b, reason: collision with root package name */
+    /* JADX INFO: renamed from: b */
     @NonNull
-    public final LinearLayout f2349b;
+    public final LinearLayout f16384b;
 
+    /* JADX INFO: renamed from: c */
     @NonNull
-    public final LinkifiedTextView c;
+    public final LinkifiedTextView f16385c;
 
+    /* JADX INFO: renamed from: d */
     @NonNull
-    public final RecyclerView d;
+    public final RecyclerView f16386d;
 
+    /* JADX INFO: renamed from: e */
     @NonNull
-    public final DimmerView e;
+    public final DimmerView f16387e;
 
     public WidgetChoosePlanBinding(@NonNull CoordinatorLayout coordinatorLayout, @NonNull LinearLayout linearLayout, @NonNull LinkifiedTextView linkifiedTextView, @NonNull RecyclerView recyclerView, @NonNull DimmerView dimmerView) {
-        this.a = coordinatorLayout;
-        this.f2349b = linearLayout;
-        this.c = linkifiedTextView;
-        this.d = recyclerView;
-        this.e = dimmerView;
+        this.f16383a = coordinatorLayout;
+        this.f16384b = linearLayout;
+        this.f16385c = linkifiedTextView;
+        this.f16386d = recyclerView;
+        this.f16387e = dimmerView;
     }
 
     @Override // androidx.viewbinding.ViewBinding
     @NonNull
     public View getRoot() {
-        return this.a;
+        return this.f16383a;
     }
 }

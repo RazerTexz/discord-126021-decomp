@@ -1,7 +1,7 @@
 package com.discord.widgets.chat.list.entries;
 
 import com.discord.models.message.Message;
-import d0.z.d.Intrinsics3;
+import p507d0.p592z.p594d.C12238m;
 
 /* JADX INFO: compiled from: EphemeralMessageEntry.kt */
 /* JADX INFO: loaded from: classes2.dex */
@@ -11,7 +11,7 @@ public final class EphemeralMessageEntry extends ChatListEntry {
     private final int type;
 
     public EphemeralMessageEntry(Message message) {
-        Intrinsics3.checkNotNullParameter(message, "message");
+        C12238m.checkNotNullParameter(message, "message");
         this.message = message;
         this.type = 34;
         StringBuilder sb = new StringBuilder();

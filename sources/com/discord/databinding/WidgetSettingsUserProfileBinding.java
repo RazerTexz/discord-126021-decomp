@@ -18,73 +18,87 @@ import com.google.android.material.textfield.TextInputLayout;
 /* JADX INFO: loaded from: classes.dex */
 public final class WidgetSettingsUserProfileBinding implements ViewBinding {
 
+    /* JADX INFO: renamed from: a */
     @NonNull
-    public final TouchInterceptingCoordinatorLayout a;
+    public final TouchInterceptingCoordinatorLayout f18076a;
 
-    /* JADX INFO: renamed from: b, reason: collision with root package name */
+    /* JADX INFO: renamed from: b */
     @NonNull
-    public final CardView f2640b;
+    public final CardView f18077b;
 
+    /* JADX INFO: renamed from: c */
     @NonNull
-    public final TextInputEditText c;
+    public final TextInputEditText f18078c;
 
+    /* JADX INFO: renamed from: d */
     @NonNull
-    public final TextInputLayout d;
+    public final TextInputLayout f18079d;
 
+    /* JADX INFO: renamed from: e */
     @NonNull
-    public final TextView e;
+    public final TextView f18080e;
 
+    /* JADX INFO: renamed from: f */
     @NonNull
-    public final TextView f;
+    public final TextView f18081f;
 
+    /* JADX INFO: renamed from: g */
     @NonNull
-    public final CardView g;
+    public final CardView f18082g;
 
+    /* JADX INFO: renamed from: h */
     @NonNull
-    public final LinkifiedTextView h;
+    public final LinkifiedTextView f18083h;
 
+    /* JADX INFO: renamed from: i */
     @NonNull
-    public final DimmerView i;
+    public final DimmerView f18084i;
 
+    /* JADX INFO: renamed from: j */
     @NonNull
-    public final TextView j;
+    public final TextView f18085j;
 
+    /* JADX INFO: renamed from: k */
     @NonNull
-    public final LinearLayout k;
+    public final LinearLayout f18086k;
 
+    /* JADX INFO: renamed from: l */
     @NonNull
-    public final LinearLayout l;
+    public final LinearLayout f18087l;
 
+    /* JADX INFO: renamed from: m */
     @NonNull
-    public final FloatingActionButton m;
+    public final FloatingActionButton f18088m;
 
+    /* JADX INFO: renamed from: n */
     @NonNull
-    public final TextInputLayout n;
+    public final TextInputLayout f18089n;
 
+    /* JADX INFO: renamed from: o */
     @NonNull
-    public final UserProfileHeaderView o;
+    public final UserProfileHeaderView f18090o;
 
     public WidgetSettingsUserProfileBinding(@NonNull TouchInterceptingCoordinatorLayout touchInterceptingCoordinatorLayout, @NonNull CardView cardView, @NonNull TextInputEditText textInputEditText, @NonNull TextInputLayout textInputLayout, @NonNull TextView textView, @NonNull TextView textView2, @NonNull CardView cardView2, @NonNull LinkifiedTextView linkifiedTextView, @NonNull DimmerView dimmerView, @NonNull TextView textView3, @NonNull LinearLayout linearLayout, @NonNull LinearLayout linearLayout2, @NonNull CardView cardView3, @NonNull TextView textView4, @NonNull LinearLayout linearLayout3, @NonNull FloatingActionButton floatingActionButton, @NonNull TextInputLayout textInputLayout2, @NonNull NestedScrollView nestedScrollView, @NonNull UserProfileHeaderView userProfileHeaderView) {
-        this.a = touchInterceptingCoordinatorLayout;
-        this.f2640b = cardView;
-        this.c = textInputEditText;
-        this.d = textInputLayout;
-        this.e = textView;
-        this.f = textView2;
-        this.g = cardView2;
-        this.h = linkifiedTextView;
-        this.i = dimmerView;
-        this.j = textView3;
-        this.k = linearLayout;
-        this.l = linearLayout2;
-        this.m = floatingActionButton;
-        this.n = textInputLayout2;
-        this.o = userProfileHeaderView;
+        this.f18076a = touchInterceptingCoordinatorLayout;
+        this.f18077b = cardView;
+        this.f18078c = textInputEditText;
+        this.f18079d = textInputLayout;
+        this.f18080e = textView;
+        this.f18081f = textView2;
+        this.f18082g = cardView2;
+        this.f18083h = linkifiedTextView;
+        this.f18084i = dimmerView;
+        this.f18085j = textView3;
+        this.f18086k = linearLayout;
+        this.f18087l = linearLayout2;
+        this.f18088m = floatingActionButton;
+        this.f18089n = textInputLayout2;
+        this.f18090o = userProfileHeaderView;
     }
 
     @Override // androidx.viewbinding.ViewBinding
     @NonNull
     public View getRoot() {
-        return this.a;
+        return this.f18076a;
     }
 }

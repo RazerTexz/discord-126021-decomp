@@ -1,14 +1,5 @@
 package okio;
 
-import b.d.b.a.outline;
-import b.i.a.f.e.o.f;
-import d0.g0.Charsets2;
-import d0.g0.StringsJVM;
-import d0.t._ArraysJvm;
-import d0.z.d.Intrinsics3;
-import g0.Buffer3;
-import g0.a;
-import g0.z.ByteString4;
 import java.io.EOFException;
 import java.io.IOException;
 import java.io.ObjectInputStream;
@@ -20,6 +11,15 @@ import java.nio.charset.Charset;
 import java.security.MessageDigest;
 import java.util.Arrays;
 import kotlin.jvm.internal.DefaultConstructorMarker;
+import p007b.p100d.p104b.p105a.C1643a;
+import p007b.p225i.p226a.p288f.p299e.p308o.C3404f;
+import p507d0.p579g0.C12086c;
+import p507d0.p579g0.C12103t;
+import p507d0.p580t.C12139j;
+import p507d0.p592z.p594d.C12238m;
+import p615g0.C12384a;
+import p615g0.C12388e;
+import p615g0.p616z.C12410b;
 
 /* JADX INFO: compiled from: ByteString.kt */
 /* JADX INFO: loaded from: classes3.dex */
@@ -35,7 +35,9 @@ public class ByteString implements Serializable, Comparable<ByteString> {
 
     /* JADX INFO: renamed from: k, reason: from kotlin metadata */
     public static final Companion INSTANCE = new Companion(null);
-    public static final ByteString j = new ByteString(new byte[0]);
+
+    /* JADX INFO: renamed from: j */
+    public static final ByteString f27592j = new ByteString(new byte[0]);
 
     /* JADX INFO: renamed from: okio.ByteString$a, reason: from kotlin metadata */
     /* JADX INFO: compiled from: ByteString.kt */
@@ -43,45 +45,49 @@ public class ByteString implements Serializable, Comparable<ByteString> {
         public Companion(DefaultConstructorMarker defaultConstructorMarker) {
         }
 
-        public static ByteString d(Companion companion, byte[] bArr, int i, int i2, int i3) {
+        /* JADX INFO: renamed from: d */
+        public static ByteString m11009d(Companion companion, byte[] bArr, int i, int i2, int i3) {
             if ((i3 & 1) != 0) {
                 i = 0;
             }
             if ((i3 & 2) != 0) {
                 i2 = bArr.length;
             }
-            Intrinsics3.checkParameterIsNotNull(bArr, "$this$toByteString");
-            f.B(bArr.length, i, i2);
-            return new ByteString(_ArraysJvm.copyOfRange(bArr, i, i2 + i));
+            C12238m.checkParameterIsNotNull(bArr, "$this$toByteString");
+            C3404f.m4192B(bArr.length, i, i2);
+            return new ByteString(C12139j.copyOfRange(bArr, i, i2 + i));
         }
 
-        public final ByteString a(String str) {
-            Intrinsics3.checkParameterIsNotNull(str, "$this$decodeHex");
+        /* JADX INFO: renamed from: a */
+        public final ByteString m11010a(String str) {
+            C12238m.checkParameterIsNotNull(str, "$this$decodeHex");
             if (!(str.length() % 2 == 0)) {
-                throw new IllegalArgumentException(outline.w("Unexpected hex string: ", str).toString());
+                throw new IllegalArgumentException(C1643a.m883w("Unexpected hex string: ", str).toString());
             }
             int length = str.length() / 2;
             byte[] bArr = new byte[length];
             for (int i = 0; i < length; i++) {
                 int i2 = i * 2;
-                bArr[i] = (byte) (ByteString4.a(str.charAt(i2 + 1)) + (ByteString4.a(str.charAt(i2)) << 4));
+                bArr[i] = (byte) (C12410b.m10515a(str.charAt(i2 + 1)) + (C12410b.m10515a(str.charAt(i2)) << 4));
             }
             return new ByteString(bArr);
         }
 
-        public final ByteString b(String str, Charset charset) {
-            Intrinsics3.checkParameterIsNotNull(str, "$this$encode");
-            Intrinsics3.checkParameterIsNotNull(charset, "charset");
+        /* JADX INFO: renamed from: b */
+        public final ByteString m11011b(String str, Charset charset) {
+            C12238m.checkParameterIsNotNull(str, "$this$encode");
+            C12238m.checkParameterIsNotNull(charset, "charset");
             byte[] bytes = str.getBytes(charset);
-            Intrinsics3.checkExpressionValueIsNotNull(bytes, "(this as java.lang.String).getBytes(charset)");
+            C12238m.checkExpressionValueIsNotNull(bytes, "(this as java.lang.String).getBytes(charset)");
             return new ByteString(bytes);
         }
 
-        public final ByteString c(String str) {
-            Intrinsics3.checkParameterIsNotNull(str, "$this$encodeUtf8");
-            Intrinsics3.checkParameterIsNotNull(str, "$this$asUtf8ToByteArray");
-            byte[] bytes = str.getBytes(Charsets2.a);
-            Intrinsics3.checkExpressionValueIsNotNull(bytes, "(this as java.lang.String).getBytes(charset)");
+        /* JADX INFO: renamed from: c */
+        public final ByteString m11012c(String str) {
+            C12238m.checkParameterIsNotNull(str, "$this$encodeUtf8");
+            C12238m.checkParameterIsNotNull(str, "$this$asUtf8ToByteArray");
+            byte[] bytes = str.getBytes(C12086c.f25136a);
+            C12238m.checkExpressionValueIsNotNull(bytes, "(this as java.lang.String).getBytes(charset)");
             ByteString byteString = new ByteString(bytes);
             byteString.utf8 = str;
             return byteString;
@@ -89,15 +95,16 @@ public class ByteString implements Serializable, Comparable<ByteString> {
     }
 
     public ByteString(byte[] bArr) {
-        Intrinsics3.checkParameterIsNotNull(bArr, "data");
+        C12238m.checkParameterIsNotNull(bArr, "data");
         this.data = bArr;
     }
 
-    public static final ByteString h(String str) {
-        Intrinsics3.checkParameterIsNotNull(str, "$this$encodeUtf8");
-        Intrinsics3.checkParameterIsNotNull(str, "$this$asUtf8ToByteArray");
-        byte[] bytes = str.getBytes(Charsets2.a);
-        Intrinsics3.checkExpressionValueIsNotNull(bytes, "(this as java.lang.String).getBytes(charset)");
+    /* JADX INFO: renamed from: h */
+    public static final ByteString m11006h(String str) {
+        C12238m.checkParameterIsNotNull(str, "$this$encodeUtf8");
+        C12238m.checkParameterIsNotNull(str, "$this$asUtf8ToByteArray");
+        byte[] bytes = str.getBytes(C12086c.f25136a);
+        C12238m.checkExpressionValueIsNotNull(bytes, "(this as java.lang.String).getBytes(charset)");
         ByteString byteString = new ByteString(bytes);
         byteString.utf8 = str;
         return byteString;
@@ -105,10 +112,10 @@ public class ByteString implements Serializable, Comparable<ByteString> {
 
     private final void readObject(ObjectInputStream in) throws IllegalAccessException, NoSuchFieldException, IOException {
         int i = in.readInt();
-        Intrinsics3.checkParameterIsNotNull(in, "$this$readByteString");
+        C12238m.checkParameterIsNotNull(in, "$this$readByteString");
         int i2 = 0;
         if (!(i >= 0)) {
-            throw new IllegalArgumentException(outline.q("byteCount < 0: ", i).toString());
+            throw new IllegalArgumentException(C1643a.m871q("byteCount < 0: ", i).toString());
         }
         byte[] bArr = new byte[i];
         while (i2 < i) {
@@ -120,7 +127,7 @@ public class ByteString implements Serializable, Comparable<ByteString> {
         }
         ByteString byteString = new ByteString(bArr);
         Field declaredField = ByteString.class.getDeclaredField("data");
-        Intrinsics3.checkExpressionValueIsNotNull(declaredField, "field");
+        C12238m.checkExpressionValueIsNotNull(declaredField, "field");
         declaredField.setAccessible(true);
         declaredField.set(this, byteString.data);
     }
@@ -135,24 +142,24 @@ public class ByteString implements Serializable, Comparable<ByteString> {
     @Override // java.lang.Comparable
     public int compareTo(ByteString byteString) {
         ByteString byteString2 = byteString;
-        Intrinsics3.checkParameterIsNotNull(byteString2, "other");
-        int iJ = j();
-        int iJ2 = byteString2.j();
-        int iMin = Math.min(iJ, iJ2);
+        C12238m.checkParameterIsNotNull(byteString2, "other");
+        int iMo10502j = mo10502j();
+        int iMo10502j2 = byteString2.mo10502j();
+        int iMin = Math.min(iMo10502j, iMo10502j2);
         for (int i = 0; i < iMin; i++) {
-            int iM = m(i) & 255;
-            int iM2 = byteString2.m(i) & 255;
-            if (iM != iM2) {
-                if (iM < iM2) {
+            int iMo10505m = mo10505m(i) & 255;
+            int iMo10505m2 = byteString2.mo10505m(i) & 255;
+            if (iMo10505m != iMo10505m2) {
+                if (iMo10505m < iMo10505m2) {
                     return -1;
                 }
                 return 1;
             }
         }
-        if (iJ == iJ2) {
+        if (iMo10502j == iMo10502j2) {
             return 0;
         }
-        if (iJ < iJ2) {
+        if (iMo10502j < iMo10502j2) {
             return -1;
         }
         return 1;
@@ -164,21 +171,22 @@ public class ByteString implements Serializable, Comparable<ByteString> {
         }
         if (other instanceof ByteString) {
             ByteString byteString = (ByteString) other;
-            int iJ = byteString.j();
+            int iMo10502j = byteString.mo10502j();
             byte[] bArr = this.data;
-            if (iJ == bArr.length && byteString.o(0, bArr, 0, bArr.length)) {
+            if (iMo10502j == bArr.length && byteString.mo10507o(0, bArr, 0, bArr.length)) {
                 return true;
             }
         }
         return false;
     }
 
-    public String f() {
+    /* JADX INFO: renamed from: f */
+    public String mo10500f() {
         byte[] bArr = this.data;
-        byte[] bArr2 = a.a;
-        byte[] bArr3 = a.a;
-        Intrinsics3.checkParameterIsNotNull(bArr, "$this$encodeBase64");
-        Intrinsics3.checkParameterIsNotNull(bArr3, "map");
+        byte[] bArr2 = C12384a.f26067a;
+        byte[] bArr3 = C12384a.f26067a;
+        C12238m.checkParameterIsNotNull(bArr, "$this$encodeBase64");
+        C12238m.checkParameterIsNotNull(bArr3, "map");
         byte[] bArr4 = new byte[((bArr.length + 2) / 3) * 4];
         int length = bArr.length - (bArr.length % 3);
         int i = 0;
@@ -221,14 +229,15 @@ public class ByteString implements Serializable, Comparable<ByteString> {
             bArr4[i13] = bArr3[(b8 & 15) << 2];
             bArr4[i13 + 1] = (byte) 61;
         }
-        Intrinsics3.checkParameterIsNotNull(bArr4, "$this$toUtf8String");
-        return new String(bArr4, Charsets2.a);
+        C12238m.checkParameterIsNotNull(bArr4, "$this$toUtf8String");
+        return new String(bArr4, C12086c.f25136a);
     }
 
-    public ByteString g(String algorithm) {
-        Intrinsics3.checkParameterIsNotNull(algorithm, "algorithm");
+    /* JADX INFO: renamed from: g */
+    public ByteString mo10501g(String algorithm) {
+        C12238m.checkParameterIsNotNull(algorithm, "algorithm");
         byte[] bArrDigest = MessageDigest.getInstance(algorithm).digest(this.data);
-        Intrinsics3.checkExpressionValueIsNotNull(bArrDigest, "MessageDigest.getInstance(algorithm).digest(data)");
+        C12238m.checkExpressionValueIsNotNull(bArrDigest, "MessageDigest.getInstance(algorithm).digest(data)");
         return new ByteString(bArrDigest);
     }
 
@@ -247,17 +256,19 @@ public class ByteString implements Serializable, Comparable<ByteString> {
         return this.data;
     }
 
-    public int j() {
+    /* JADX INFO: renamed from: j */
+    public int mo10502j() {
         return this.data.length;
     }
 
-    public String k() {
+    /* JADX INFO: renamed from: k */
+    public String mo10503k() {
         byte[] bArr = this.data;
         char[] cArr = new char[bArr.length * 2];
         int i = 0;
         for (byte b2 : bArr) {
             int i2 = i + 1;
-            char[] cArr2 = ByteString4.a;
+            char[] cArr2 = C12410b.f26138a;
             cArr[i] = cArr2[(b2 >> 4) & 15];
             i = i2 + 1;
             cArr[i2] = cArr2[b2 & 15];
@@ -265,31 +276,36 @@ public class ByteString implements Serializable, Comparable<ByteString> {
         return new String(cArr);
     }
 
-    public byte[] l() {
+    /* JADX INFO: renamed from: l */
+    public byte[] mo10504l() {
         return this.data;
     }
 
-    public byte m(int pos) {
+    /* JADX INFO: renamed from: m */
+    public byte mo10505m(int pos) {
         return this.data[pos];
     }
 
-    public boolean n(int offset, ByteString other, int otherOffset, int byteCount) {
-        Intrinsics3.checkParameterIsNotNull(other, "other");
-        return other.o(otherOffset, this.data, offset, byteCount);
+    /* JADX INFO: renamed from: n */
+    public boolean mo10506n(int offset, ByteString other, int otherOffset, int byteCount) {
+        C12238m.checkParameterIsNotNull(other, "other");
+        return other.mo10507o(otherOffset, this.data, offset, byteCount);
     }
 
-    public boolean o(int offset, byte[] other, int otherOffset, int byteCount) {
-        Intrinsics3.checkParameterIsNotNull(other, "other");
+    /* JADX INFO: renamed from: o */
+    public boolean mo10507o(int offset, byte[] other, int otherOffset, int byteCount) {
+        C12238m.checkParameterIsNotNull(other, "other");
         if (offset >= 0) {
             byte[] bArr = this.data;
-            if (offset <= bArr.length - byteCount && otherOffset >= 0 && otherOffset <= other.length - byteCount && f.h(bArr, offset, other, otherOffset, byteCount)) {
+            if (offset <= bArr.length - byteCount && otherOffset >= 0 && otherOffset <= other.length - byteCount && C3404f.m4295h(bArr, offset, other, otherOffset, byteCount)) {
                 return true;
             }
         }
         return false;
     }
 
-    public ByteString p() {
+    /* JADX INFO: renamed from: p */
+    public ByteString mo10508p() {
         byte b2;
         int i = 0;
         while (true) {
@@ -301,7 +317,7 @@ public class ByteString implements Serializable, Comparable<ByteString> {
             byte b4 = (byte) 65;
             if (b3 >= b4 && b3 <= (b2 = (byte) 90)) {
                 byte[] bArrCopyOf = Arrays.copyOf(bArr, bArr.length);
-                Intrinsics3.checkExpressionValueIsNotNull(bArrCopyOf, "java.util.Arrays.copyOf(this, size)");
+                C12238m.checkExpressionValueIsNotNull(bArrCopyOf, "java.util.Arrays.copyOf(this, size)");
                 bArrCopyOf[i] = (byte) (b3 + 32);
                 for (int i2 = i + 1; i2 < bArrCopyOf.length; i2++) {
                     byte b5 = bArrCopyOf[i2];
@@ -315,28 +331,31 @@ public class ByteString implements Serializable, Comparable<ByteString> {
         }
     }
 
-    public String q() {
+    /* JADX INFO: renamed from: q */
+    public String m11008q() {
         String str = this.utf8;
         if (str != null) {
             return str;
         }
-        byte[] bArrL = l();
-        Intrinsics3.checkParameterIsNotNull(bArrL, "$this$toUtf8String");
-        String str2 = new String(bArrL, Charsets2.a);
+        byte[] bArrMo10504l = mo10504l();
+        C12238m.checkParameterIsNotNull(bArrMo10504l, "$this$toUtf8String");
+        String str2 = new String(bArrMo10504l, C12086c.f25136a);
         this.utf8 = str2;
         return str2;
     }
 
-    public void r(OutputStream out) throws IOException {
-        Intrinsics3.checkParameterIsNotNull(out, "out");
+    /* JADX INFO: renamed from: r */
+    public void mo10509r(OutputStream out) throws IOException {
+        C12238m.checkParameterIsNotNull(out, "out");
         out.write(this.data);
     }
 
-    public void s(Buffer3 buffer, int offset, int byteCount) {
-        Intrinsics3.checkParameterIsNotNull(buffer, "buffer");
-        Intrinsics3.checkParameterIsNotNull(this, "$this$commonWrite");
-        Intrinsics3.checkParameterIsNotNull(buffer, "buffer");
-        buffer.S(this.data, offset, byteCount);
+    /* JADX INFO: renamed from: s */
+    public void mo10510s(C12388e buffer, int offset, int byteCount) {
+        C12238m.checkParameterIsNotNull(buffer, "buffer");
+        C12238m.checkParameterIsNotNull(this, "$this$commonWrite");
+        C12238m.checkParameterIsNotNull(buffer, "buffer");
+        buffer.m10443S(this.data, offset, byteCount);
     }
 
     /* JADX WARN: Code duplicated, block: B:138:0x0142  */
@@ -675,34 +694,34 @@ public class ByteString implements Serializable, Comparable<ByteString> {
         }
         if (i9 == -1) {
             if (this.data.length <= 64) {
-                StringBuilder sbU = outline.U("[hex=");
-                sbU.append(k());
-                sbU.append(']');
-                return sbU.toString();
+                StringBuilder sbM833U = C1643a.m833U("[hex=");
+                sbM833U.append(mo10503k());
+                sbM833U.append(']');
+                return sbM833U.toString();
             }
-            StringBuilder sbU2 = outline.U("[size=");
-            sbU2.append(this.data.length);
-            sbU2.append(" hex=");
+            StringBuilder sbM833U2 = C1643a.m833U("[size=");
+            sbM833U2.append(this.data.length);
+            sbM833U2.append(" hex=");
             byte[] bArr2 = this.data;
             if (!(64 <= bArr2.length)) {
-                throw new IllegalArgumentException(outline.A(outline.U("endIndex > length("), this.data.length, ')').toString());
+                throw new IllegalArgumentException(C1643a.m813A(C1643a.m833U("endIndex > length("), this.data.length, ')').toString());
             }
-            sbU2.append((64 == bArr2.length ? this : new ByteString(_ArraysJvm.copyOfRange(bArr2, 0, 64))).k());
-            sbU2.append("…]");
-            return sbU2.toString();
+            sbM833U2.append((64 == bArr2.length ? this : new ByteString(C12139j.copyOfRange(bArr2, 0, 64))).mo10503k());
+            sbM833U2.append("…]");
+            return sbM833U2.toString();
         }
-        String strQ = q();
-        String strSubstring = strQ.substring(0, i9);
-        Intrinsics3.checkExpressionValueIsNotNull(strSubstring, "(this as java.lang.Strin…ing(startIndex, endIndex)");
-        String strReplace$default = StringsJVM.replace$default(StringsJVM.replace$default(StringsJVM.replace$default(strSubstring, "\\", "\\\\", false, 4, (Object) null), "\n", "\\n", false, 4, (Object) null), "\r", "\\r", false, 4, (Object) null);
-        if (i9 >= strQ.length()) {
+        String strM11008q = m11008q();
+        String strSubstring = strM11008q.substring(0, i9);
+        C12238m.checkExpressionValueIsNotNull(strSubstring, "(this as java.lang.Strin…ing(startIndex, endIndex)");
+        String strReplace$default = C12103t.replace$default(C12103t.replace$default(C12103t.replace$default(strSubstring, "\\", "\\\\", false, 4, (Object) null), "\n", "\\n", false, 4, (Object) null), "\r", "\\r", false, 4, (Object) null);
+        if (i9 >= strM11008q.length()) {
             return "[text=" + strReplace$default + ']';
         }
-        StringBuilder sbU3 = outline.U("[size=");
-        sbU3.append(this.data.length);
-        sbU3.append(" text=");
-        sbU3.append(strReplace$default);
-        sbU3.append("…]");
-        return sbU3.toString();
+        StringBuilder sbM833U3 = C1643a.m833U("[size=");
+        sbM833U3.append(this.data.length);
+        sbM833U3.append(" text=");
+        sbM833U3.append(strReplace$default);
+        sbM833U3.append("…]");
+        return sbM833U3.toString();
     }
 }

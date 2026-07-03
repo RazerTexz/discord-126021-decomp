@@ -3,9 +3,9 @@ package androidx.recyclerview.widget;
 import android.util.SparseArray;
 import android.util.SparseIntArray;
 import androidx.annotation.NonNull;
-import b.d.b.a.outline;
 import java.util.ArrayList;
 import java.util.List;
+import p007b.p100d.p104b.p105a.C1643a;
 
 /* JADX INFO: loaded from: classes.dex */
 public interface ViewTypeStorage {
@@ -34,9 +34,9 @@ public interface ViewTypeStorage {
                 if (iIndexOfKey >= 0) {
                     return this.mGlobalToLocalMapping.valueAt(iIndexOfKey);
                 }
-                StringBuilder sbV = outline.V("requested global type ", i, " does not belong to the adapter:");
-                sbV.append(this.mWrapper.adapter);
-                throw new IllegalStateException(sbV.toString());
+                StringBuilder sbM834V = C1643a.m834V("requested global type ", i, " does not belong to the adapter:");
+                sbM834V.append(this.mWrapper.adapter);
+                throw new IllegalStateException(sbM834V.toString());
             }
 
             @Override // androidx.recyclerview.widget.ViewTypeStorage.ViewTypeLookup
@@ -65,7 +65,7 @@ public interface ViewTypeStorage {
             if (nestedAdapterWrapper != null) {
                 return nestedAdapterWrapper;
             }
-            throw new IllegalArgumentException(outline.q("Cannot find the wrapper for global view type ", i));
+            throw new IllegalArgumentException(C1643a.m871q("Cannot find the wrapper for global view type ", i));
         }
 
         public int obtainViewType(NestedAdapterWrapper nestedAdapterWrapper) {
@@ -129,7 +129,7 @@ public interface ViewTypeStorage {
         public NestedAdapterWrapper getWrapperForGlobalType(int i) {
             List<NestedAdapterWrapper> list = this.mGlobalTypeToWrapper.get(i);
             if (list == null || list.isEmpty()) {
-                throw new IllegalArgumentException(outline.q("Cannot find the wrapper for global view type ", i));
+                throw new IllegalArgumentException(C1643a.m871q("Cannot find the wrapper for global view type ", i));
             }
             return list.get(0);
         }

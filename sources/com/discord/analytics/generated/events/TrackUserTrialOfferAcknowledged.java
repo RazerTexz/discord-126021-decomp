@@ -1,14 +1,14 @@
 package com.discord.analytics.generated.events;
 
-import b.d.b.a.outline;
 import com.discord.analytics.generated.traits.TrackBase;
-import com.discord.analytics.generated.traits.TrackBase2;
+import com.discord.analytics.generated.traits.TrackBaseReceiver;
 import com.discord.api.science.AnalyticsSchema;
-import d0.z.d.Intrinsics3;
+import p007b.p100d.p104b.p105a.C1643a;
+import p507d0.p592z.p594d.C12238m;
 
 /* JADX INFO: compiled from: TrackUserTrialOfferAcknowledged.kt */
 /* JADX INFO: loaded from: classes.dex */
-public final /* data */ class TrackUserTrialOfferAcknowledged implements AnalyticsSchema, TrackBase2 {
+public final /* data */ class TrackUserTrialOfferAcknowledged implements AnalyticsSchema, TrackBaseReceiver {
     private TrackBase trackBase;
     private final Long trialOfferId = null;
     private final Long trialId = null;
@@ -29,7 +29,7 @@ public final /* data */ class TrackUserTrialOfferAcknowledged implements Analyti
             return false;
         }
         TrackUserTrialOfferAcknowledged trackUserTrialOfferAcknowledged = (TrackUserTrialOfferAcknowledged) other;
-        return Intrinsics3.areEqual(this.trialOfferId, trackUserTrialOfferAcknowledged.trialOfferId) && Intrinsics3.areEqual(this.trialId, trackUserTrialOfferAcknowledged.trialId) && Intrinsics3.areEqual(this.expiresAt, trackUserTrialOfferAcknowledged.expiresAt);
+        return C12238m.areEqual(this.trialOfferId, trackUserTrialOfferAcknowledged.trialOfferId) && C12238m.areEqual(this.trialId, trackUserTrialOfferAcknowledged.trialId) && C12238m.areEqual(this.expiresAt, trackUserTrialOfferAcknowledged.expiresAt);
     }
 
     public int hashCode() {
@@ -42,11 +42,11 @@ public final /* data */ class TrackUserTrialOfferAcknowledged implements Analyti
     }
 
     public String toString() {
-        StringBuilder sbU = outline.U("TrackUserTrialOfferAcknowledged(trialOfferId=");
-        sbU.append(this.trialOfferId);
-        sbU.append(", trialId=");
-        sbU.append(this.trialId);
-        sbU.append(", expiresAt=");
-        return outline.G(sbU, this.expiresAt, ")");
+        StringBuilder sbM833U = C1643a.m833U("TrackUserTrialOfferAcknowledged(trialOfferId=");
+        sbM833U.append(this.trialOfferId);
+        sbM833U.append(", trialId=");
+        sbM833U.append(this.trialId);
+        sbM833U.append(", expiresAt=");
+        return C1643a.m819G(sbM833U, this.expiresAt, ")");
     }
 }

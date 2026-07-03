@@ -99,7 +99,7 @@ public final class Configuration {
         return this.mMaxJobSchedulerId;
     }
 
-    @IntRange(from = 20, to = StoreNotices.PROCESS_THROTTLE_MS)
+    @IntRange(from = 20, m76to = StoreNotices.PROCESS_THROTTLE_MS)
     @RestrictTo({RestrictTo.Scope.LIBRARY_GROUP})
     public int getMaxSchedulerLimit() {
         return Build.VERSION.SDK_INT == 23 ? this.mMaxSchedulerLimit / 2 : this.mMaxSchedulerLimit;

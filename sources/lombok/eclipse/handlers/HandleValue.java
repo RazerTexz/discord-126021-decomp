@@ -27,7 +27,7 @@ public class HandleValue extends EclipseAnnotationHandler<Value> {
     public void handle(AnnotationValues<Value> annotation, Annotation ast, EclipseNode annotationNode) {
         HandlerUtil.handleFlagUsage(annotationNode, ConfigurationKeys.VALUE_FLAG_USAGE, "@Value");
         Value ann = annotation.getInstance();
-        EclipseNode typeNode = annotationNode.up();
+        EclipseNode typeNode = annotationNode.m10925up();
         TypeDeclaration typeDecl = null;
         if (typeNode.get() instanceof TypeDeclaration) {
             typeDecl = (TypeDeclaration) typeNode.get();

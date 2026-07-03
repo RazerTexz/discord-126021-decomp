@@ -6,22 +6,22 @@ import android.system.ErrnoException;
 import android.system.Os;
 import android.system.OsConstants;
 import android.util.Log;
-import b.f.m.DoNotOptimize;
-import b.f.m.MinElf2;
 import java.io.FileDescriptor;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.TreeSet;
+import p007b.p109f.p190m.EnumC2056i;
+import p007b.p109f.p190m.InterfaceC2051d;
 
 /* JADX INFO: loaded from: classes3.dex */
-@DoNotOptimize
+@InterfaceC2051d
 @TargetApi(21)
 public final class SysUtil$LollipopSysdeps {
     private SysUtil$LollipopSysdeps() {
     }
 
-    @DoNotOptimize
+    @InterfaceC2051d
     public static void fallocateIfSupported(FileDescriptor fileDescriptor, long j) throws IOException {
         int i;
         try {
@@ -33,17 +33,17 @@ public final class SysUtil$LollipopSysdeps {
         }
     }
 
-    @DoNotOptimize
+    @InterfaceC2051d
     public static String[] getSupportedAbis() {
         String[] strArr = Build.SUPPORTED_ABIS;
         TreeSet treeSet = new TreeSet();
         try {
             if (is64Bit()) {
-                treeSet.add(MinElf2.AARCH64.toString());
-                treeSet.add(MinElf2.X86_64.toString());
+                treeSet.add(EnumC2056i.AARCH64.toString());
+                treeSet.add(EnumC2056i.X86_64.toString());
             } else {
-                treeSet.add(MinElf2.ARM.toString());
-                treeSet.add(MinElf2.X86.toString());
+                treeSet.add(EnumC2056i.ARM.toString());
+                treeSet.add(EnumC2056i.X86.toString());
             }
             ArrayList arrayList = new ArrayList();
             for (String str : strArr) {
@@ -58,7 +58,7 @@ public final class SysUtil$LollipopSysdeps {
         }
     }
 
-    @DoNotOptimize
+    @InterfaceC2051d
     public static boolean is64Bit() throws ErrnoException {
         return Os.readlink("/proc/self/exe").contains("64");
     }

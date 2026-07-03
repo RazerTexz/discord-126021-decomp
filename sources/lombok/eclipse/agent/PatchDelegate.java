@@ -364,7 +364,7 @@ public class PatchDelegate {
 
     private static void generateDelegateMethods(EclipseNode typeNode, List<BindingTuple> methods, DelegateReceiver delegateReceiver) {
         CompilationUnitDeclaration top = typeNode.top().get();
-        String qualifiedName = new String(CharOperation.concatWith(EclipseHandlerUtil.getQualifiedInnerName(typeNode.up(), typeNode.getName().toCharArray()), '$'));
+        String qualifiedName = new String(CharOperation.concatWith(EclipseHandlerUtil.getQualifiedInnerName(typeNode.m10925up(), typeNode.getName().toCharArray()), '$'));
         SourceType sourceType = getSourceType(top, qualifiedName);
         List<SourceMethod> delegateSourceMethods = getDelegateMethods(sourceType);
         for (BindingTuple pair : methods) {
@@ -401,7 +401,7 @@ public class PatchDelegate {
                     }
                 }
             }
-            eclipseNodeUp = enclosingType.up();
+            eclipseNodeUp = enclosingType.m10925up();
         }
         Set<String> usedInMethodSig = new HashSet<>();
         for (TypeVariableBinding var : typeVars) {

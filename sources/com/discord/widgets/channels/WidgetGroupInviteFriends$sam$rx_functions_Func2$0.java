@@ -1,7 +1,7 @@
 package com.discord.widgets.channels;
 
 import kotlin.jvm.functions.Function2;
-import rx.functions.Func2;
+import p658rx.functions.Func2;
 
 /* JADX INFO: compiled from: WidgetGroupInviteFriends.kt */
 /* JADX INFO: loaded from: classes2.dex */
@@ -12,7 +12,7 @@ public final class WidgetGroupInviteFriends$sam$rx_functions_Func2$0 implements 
         this.function = function2;
     }
 
-    @Override // rx.functions.Func2
+    @Override // p658rx.functions.Func2
     public final /* synthetic */ Object call(Object obj, Object obj2) {
         return this.function.invoke(obj, obj2);
     }

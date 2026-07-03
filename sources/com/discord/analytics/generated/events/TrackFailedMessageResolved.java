@@ -1,18 +1,18 @@
 package com.discord.analytics.generated.events;
 
-import b.d.b.a.outline;
 import com.discord.analytics.generated.traits.TrackBase;
-import com.discord.analytics.generated.traits.TrackBase2;
+import com.discord.analytics.generated.traits.TrackBaseReceiver;
 import com.discord.analytics.generated.traits.TrackChannel;
-import com.discord.analytics.generated.traits.TrackChannel2;
+import com.discord.analytics.generated.traits.TrackChannelReceiver;
 import com.discord.analytics.generated.traits.TrackGuild;
-import com.discord.analytics.generated.traits.TrackGuild2;
+import com.discord.analytics.generated.traits.TrackGuildReceiver;
 import com.discord.api.science.AnalyticsSchema;
-import d0.z.d.Intrinsics3;
+import p007b.p100d.p104b.p105a.C1643a;
+import p507d0.p592z.p594d.C12238m;
 
 /* JADX INFO: compiled from: TrackFailedMessageResolved.kt */
 /* JADX INFO: loaded from: classes.dex */
-public final /* data */ class TrackFailedMessageResolved implements AnalyticsSchema, TrackBase2, TrackGuild2, TrackChannel2 {
+public final /* data */ class TrackFailedMessageResolved implements AnalyticsSchema, TrackBaseReceiver, TrackGuildReceiver, TrackChannelReceiver {
     private TrackBase trackBase;
     private TrackChannel trackChannel;
     private TrackGuild trackGuild;
@@ -27,14 +27,15 @@ public final /* data */ class TrackFailedMessageResolved implements AnalyticsSch
     private final Boolean previewEnabled = null;
     private final transient String analyticsSchemaTypeName = "failed_message_resolved";
 
-    @Override // com.discord.analytics.generated.traits.TrackGuild2
+    @Override // com.discord.analytics.generated.traits.TrackGuildReceiver
     /* JADX INFO: renamed from: a, reason: from getter */
     public TrackGuild getTrackGuild() {
         return this.trackGuild;
     }
 
-    @Override // com.discord.analytics.generated.traits.TrackGuild2
-    public void c(TrackGuild trackGuild) {
+    @Override // com.discord.analytics.generated.traits.TrackGuildReceiver
+    /* JADX INFO: renamed from: c */
+    public void mo7508c(TrackGuild trackGuild) {
         this.trackGuild = trackGuild;
     }
 
@@ -52,7 +53,7 @@ public final /* data */ class TrackFailedMessageResolved implements AnalyticsSch
             return false;
         }
         TrackFailedMessageResolved trackFailedMessageResolved = (TrackFailedMessageResolved) other;
-        return Intrinsics3.areEqual(this.numAttachments, trackFailedMessageResolved.numAttachments) && Intrinsics3.areEqual(this.maxAttachmentSize, trackFailedMessageResolved.maxAttachmentSize) && Intrinsics3.areEqual(this.totalAttachmentSize, trackFailedMessageResolved.totalAttachmentSize) && Intrinsics3.areEqual(this.hasImage, trackFailedMessageResolved.hasImage) && Intrinsics3.areEqual(this.hasVideo, trackFailedMessageResolved.hasVideo) && Intrinsics3.areEqual(this.resolutionType, trackFailedMessageResolved.resolutionType) && Intrinsics3.areEqual(this.initialAttemptTs, trackFailedMessageResolved.initialAttemptTs) && Intrinsics3.areEqual(this.numRetries, trackFailedMessageResolved.numRetries) && Intrinsics3.areEqual(this.previewEnabled, trackFailedMessageResolved.previewEnabled);
+        return C12238m.areEqual(this.numAttachments, trackFailedMessageResolved.numAttachments) && C12238m.areEqual(this.maxAttachmentSize, trackFailedMessageResolved.maxAttachmentSize) && C12238m.areEqual(this.totalAttachmentSize, trackFailedMessageResolved.totalAttachmentSize) && C12238m.areEqual(this.hasImage, trackFailedMessageResolved.hasImage) && C12238m.areEqual(this.hasVideo, trackFailedMessageResolved.hasVideo) && C12238m.areEqual(this.resolutionType, trackFailedMessageResolved.resolutionType) && C12238m.areEqual(this.initialAttemptTs, trackFailedMessageResolved.initialAttemptTs) && C12238m.areEqual(this.numRetries, trackFailedMessageResolved.numRetries) && C12238m.areEqual(this.previewEnabled, trackFailedMessageResolved.previewEnabled);
     }
 
     public int hashCode() {
@@ -77,23 +78,23 @@ public final /* data */ class TrackFailedMessageResolved implements AnalyticsSch
     }
 
     public String toString() {
-        StringBuilder sbU = outline.U("TrackFailedMessageResolved(numAttachments=");
-        sbU.append(this.numAttachments);
-        sbU.append(", maxAttachmentSize=");
-        sbU.append(this.maxAttachmentSize);
-        sbU.append(", totalAttachmentSize=");
-        sbU.append(this.totalAttachmentSize);
-        sbU.append(", hasImage=");
-        sbU.append(this.hasImage);
-        sbU.append(", hasVideo=");
-        sbU.append(this.hasVideo);
-        sbU.append(", resolutionType=");
-        sbU.append(this.resolutionType);
-        sbU.append(", initialAttemptTs=");
-        sbU.append(this.initialAttemptTs);
-        sbU.append(", numRetries=");
-        sbU.append(this.numRetries);
-        sbU.append(", previewEnabled=");
-        return outline.D(sbU, this.previewEnabled, ")");
+        StringBuilder sbM833U = C1643a.m833U("TrackFailedMessageResolved(numAttachments=");
+        sbM833U.append(this.numAttachments);
+        sbM833U.append(", maxAttachmentSize=");
+        sbM833U.append(this.maxAttachmentSize);
+        sbM833U.append(", totalAttachmentSize=");
+        sbM833U.append(this.totalAttachmentSize);
+        sbM833U.append(", hasImage=");
+        sbM833U.append(this.hasImage);
+        sbM833U.append(", hasVideo=");
+        sbM833U.append(this.hasVideo);
+        sbM833U.append(", resolutionType=");
+        sbM833U.append(this.resolutionType);
+        sbM833U.append(", initialAttemptTs=");
+        sbM833U.append(this.initialAttemptTs);
+        sbM833U.append(", numRetries=");
+        sbM833U.append(this.numRetries);
+        sbM833U.append(", previewEnabled=");
+        return C1643a.m816D(sbM833U, this.previewEnabled, ")");
     }
 }

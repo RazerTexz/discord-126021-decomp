@@ -1,18 +1,18 @@
 package com.discord.analytics.generated.events;
 
-import b.d.b.a.outline;
 import com.discord.analytics.generated.traits.TrackBase;
-import com.discord.analytics.generated.traits.TrackBase2;
+import com.discord.analytics.generated.traits.TrackBaseReceiver;
 import com.discord.analytics.generated.traits.TrackLocationMetadata;
-import com.discord.analytics.generated.traits.TrackLocationMetadata2;
+import com.discord.analytics.generated.traits.TrackLocationMetadataReceiver;
 import com.discord.analytics.generated.traits.TrackThread;
-import com.discord.analytics.generated.traits.TrackThread2;
+import com.discord.analytics.generated.traits.TrackThreadReceiver;
 import com.discord.api.science.AnalyticsSchema;
-import d0.z.d.Intrinsics3;
+import p007b.p100d.p104b.p105a.C1643a;
+import p507d0.p592z.p594d.C12238m;
 
 /* JADX INFO: compiled from: TrackThreadNotificationSettingsUpdated.kt */
 /* JADX INFO: loaded from: classes.dex */
-public final /* data */ class TrackThreadNotificationSettingsUpdated implements AnalyticsSchema, TrackBase2, TrackThread2, TrackLocationMetadata2 {
+public final /* data */ class TrackThreadNotificationSettingsUpdated implements AnalyticsSchema, TrackBaseReceiver, TrackThreadReceiver, TrackLocationMetadataReceiver {
     private TrackBase trackBase;
     private TrackLocationMetadata trackLocationMetadata;
     private TrackThread trackThread;
@@ -45,7 +45,7 @@ public final /* data */ class TrackThreadNotificationSettingsUpdated implements 
             return false;
         }
         TrackThreadNotificationSettingsUpdated trackThreadNotificationSettingsUpdated = (TrackThreadNotificationSettingsUpdated) other;
-        return Intrinsics3.areEqual(this.channelId, trackThreadNotificationSettingsUpdated.channelId) && Intrinsics3.areEqual(this.parentId, trackThreadNotificationSettingsUpdated.parentId) && Intrinsics3.areEqual(this.guildId, trackThreadNotificationSettingsUpdated.guildId) && Intrinsics3.areEqual(this.channelType, trackThreadNotificationSettingsUpdated.channelType) && Intrinsics3.areEqual(this.hasInteractedWithThread, trackThreadNotificationSettingsUpdated.hasInteractedWithThread) && Intrinsics3.areEqual(this.parentIsMuted, trackThreadNotificationSettingsUpdated.parentIsMuted) && Intrinsics3.areEqual(this.oldThreadNotificationSetting, trackThreadNotificationSettingsUpdated.oldThreadNotificationSetting) && Intrinsics3.areEqual(this.newThreadNotificationSetting, trackThreadNotificationSettingsUpdated.newThreadNotificationSetting) && Intrinsics3.areEqual(this.parentNotificationSetting, trackThreadNotificationSettingsUpdated.parentNotificationSetting) && Intrinsics3.areEqual(this.oldThreadIsMuted, trackThreadNotificationSettingsUpdated.oldThreadIsMuted) && Intrinsics3.areEqual(this.newThreadIsMuted, trackThreadNotificationSettingsUpdated.newThreadIsMuted) && Intrinsics3.areEqual(this.oldThreadMutedUntil, trackThreadNotificationSettingsUpdated.oldThreadMutedUntil) && Intrinsics3.areEqual(this.newThreadMutedUntil, trackThreadNotificationSettingsUpdated.newThreadMutedUntil);
+        return C12238m.areEqual(this.channelId, trackThreadNotificationSettingsUpdated.channelId) && C12238m.areEqual(this.parentId, trackThreadNotificationSettingsUpdated.parentId) && C12238m.areEqual(this.guildId, trackThreadNotificationSettingsUpdated.guildId) && C12238m.areEqual(this.channelType, trackThreadNotificationSettingsUpdated.channelType) && C12238m.areEqual(this.hasInteractedWithThread, trackThreadNotificationSettingsUpdated.hasInteractedWithThread) && C12238m.areEqual(this.parentIsMuted, trackThreadNotificationSettingsUpdated.parentIsMuted) && C12238m.areEqual(this.oldThreadNotificationSetting, trackThreadNotificationSettingsUpdated.oldThreadNotificationSetting) && C12238m.areEqual(this.newThreadNotificationSetting, trackThreadNotificationSettingsUpdated.newThreadNotificationSetting) && C12238m.areEqual(this.parentNotificationSetting, trackThreadNotificationSettingsUpdated.parentNotificationSetting) && C12238m.areEqual(this.oldThreadIsMuted, trackThreadNotificationSettingsUpdated.oldThreadIsMuted) && C12238m.areEqual(this.newThreadIsMuted, trackThreadNotificationSettingsUpdated.newThreadIsMuted) && C12238m.areEqual(this.oldThreadMutedUntil, trackThreadNotificationSettingsUpdated.oldThreadMutedUntil) && C12238m.areEqual(this.newThreadMutedUntil, trackThreadNotificationSettingsUpdated.newThreadMutedUntil);
     }
 
     public int hashCode() {
@@ -78,31 +78,31 @@ public final /* data */ class TrackThreadNotificationSettingsUpdated implements 
     }
 
     public String toString() {
-        StringBuilder sbU = outline.U("TrackThreadNotificationSettingsUpdated(channelId=");
-        sbU.append(this.channelId);
-        sbU.append(", parentId=");
-        sbU.append(this.parentId);
-        sbU.append(", guildId=");
-        sbU.append(this.guildId);
-        sbU.append(", channelType=");
-        sbU.append(this.channelType);
-        sbU.append(", hasInteractedWithThread=");
-        sbU.append(this.hasInteractedWithThread);
-        sbU.append(", parentIsMuted=");
-        sbU.append(this.parentIsMuted);
-        sbU.append(", oldThreadNotificationSetting=");
-        sbU.append(this.oldThreadNotificationSetting);
-        sbU.append(", newThreadNotificationSetting=");
-        sbU.append(this.newThreadNotificationSetting);
-        sbU.append(", parentNotificationSetting=");
-        sbU.append(this.parentNotificationSetting);
-        sbU.append(", oldThreadIsMuted=");
-        sbU.append(this.oldThreadIsMuted);
-        sbU.append(", newThreadIsMuted=");
-        sbU.append(this.newThreadIsMuted);
-        sbU.append(", oldThreadMutedUntil=");
-        sbU.append(this.oldThreadMutedUntil);
-        sbU.append(", newThreadMutedUntil=");
-        return outline.G(sbU, this.newThreadMutedUntil, ")");
+        StringBuilder sbM833U = C1643a.m833U("TrackThreadNotificationSettingsUpdated(channelId=");
+        sbM833U.append(this.channelId);
+        sbM833U.append(", parentId=");
+        sbM833U.append(this.parentId);
+        sbM833U.append(", guildId=");
+        sbM833U.append(this.guildId);
+        sbM833U.append(", channelType=");
+        sbM833U.append(this.channelType);
+        sbM833U.append(", hasInteractedWithThread=");
+        sbM833U.append(this.hasInteractedWithThread);
+        sbM833U.append(", parentIsMuted=");
+        sbM833U.append(this.parentIsMuted);
+        sbM833U.append(", oldThreadNotificationSetting=");
+        sbM833U.append(this.oldThreadNotificationSetting);
+        sbM833U.append(", newThreadNotificationSetting=");
+        sbM833U.append(this.newThreadNotificationSetting);
+        sbM833U.append(", parentNotificationSetting=");
+        sbM833U.append(this.parentNotificationSetting);
+        sbM833U.append(", oldThreadIsMuted=");
+        sbM833U.append(this.oldThreadIsMuted);
+        sbM833U.append(", newThreadIsMuted=");
+        sbM833U.append(this.newThreadIsMuted);
+        sbM833U.append(", oldThreadMutedUntil=");
+        sbM833U.append(this.oldThreadMutedUntil);
+        sbM833U.append(", newThreadMutedUntil=");
+        return C1643a.m819G(sbM833U, this.newThreadMutedUntil, ")");
     }
 }

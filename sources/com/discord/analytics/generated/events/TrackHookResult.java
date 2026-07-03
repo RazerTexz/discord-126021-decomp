@@ -1,14 +1,14 @@
 package com.discord.analytics.generated.events;
 
-import b.d.b.a.outline;
 import com.discord.analytics.generated.traits.TrackBase;
-import com.discord.analytics.generated.traits.TrackBase2;
+import com.discord.analytics.generated.traits.TrackBaseReceiver;
 import com.discord.api.science.AnalyticsSchema;
-import d0.z.d.Intrinsics3;
+import p007b.p100d.p104b.p105a.C1643a;
+import p507d0.p592z.p594d.C12238m;
 
 /* JADX INFO: compiled from: TrackHookResult.kt */
 /* JADX INFO: loaded from: classes.dex */
-public final /* data */ class TrackHookResult implements AnalyticsSchema, TrackBase2 {
+public final /* data */ class TrackHookResult implements AnalyticsSchema, TrackBaseReceiver {
     private TrackBase trackBase;
     private final Boolean success = null;
     private final CharSequence error = null;
@@ -31,7 +31,7 @@ public final /* data */ class TrackHookResult implements AnalyticsSchema, TrackB
             return false;
         }
         TrackHookResult trackHookResult = (TrackHookResult) other;
-        return Intrinsics3.areEqual(this.success, trackHookResult.success) && Intrinsics3.areEqual(this.error, trackHookResult.error) && Intrinsics3.areEqual(this.gameName, trackHookResult.gameName) && Intrinsics3.areEqual(this.gameId, trackHookResult.gameId) && Intrinsics3.areEqual(this.soundshareSession, trackHookResult.soundshareSession);
+        return C12238m.areEqual(this.success, trackHookResult.success) && C12238m.areEqual(this.error, trackHookResult.error) && C12238m.areEqual(this.gameName, trackHookResult.gameName) && C12238m.areEqual(this.gameId, trackHookResult.gameId) && C12238m.areEqual(this.soundshareSession, trackHookResult.soundshareSession);
     }
 
     public int hashCode() {
@@ -48,15 +48,15 @@ public final /* data */ class TrackHookResult implements AnalyticsSchema, TrackB
     }
 
     public String toString() {
-        StringBuilder sbU = outline.U("TrackHookResult(success=");
-        sbU.append(this.success);
-        sbU.append(", error=");
-        sbU.append(this.error);
-        sbU.append(", gameName=");
-        sbU.append(this.gameName);
-        sbU.append(", gameId=");
-        sbU.append(this.gameId);
-        sbU.append(", soundshareSession=");
-        return outline.E(sbU, this.soundshareSession, ")");
+        StringBuilder sbM833U = C1643a.m833U("TrackHookResult(success=");
+        sbM833U.append(this.success);
+        sbM833U.append(", error=");
+        sbM833U.append(this.error);
+        sbM833U.append(", gameName=");
+        sbM833U.append(this.gameName);
+        sbM833U.append(", gameId=");
+        sbM833U.append(this.gameId);
+        sbM833U.append(", soundshareSession=");
+        return C1643a.m817E(sbM833U, this.soundshareSession, ")");
     }
 }

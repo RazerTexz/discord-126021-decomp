@@ -2,7 +2,7 @@ package com.discord.widgets.settings.premium;
 
 import com.discord.models.experiments.domain.Experiment;
 import com.discord.stores.StoreExperiments;
-import d0.z.d.Intrinsics3;
+import p507d0.p592z.p594d.C12238m;
 
 /* JADX INFO: compiled from: OutboundPromosPreviewFeatureFlag.kt */
 /* JADX INFO: loaded from: classes2.dex */
@@ -10,7 +10,7 @@ public final class OutboundPromosPreviewFeatureFlag {
     private final StoreExperiments storeExperiments;
 
     public OutboundPromosPreviewFeatureFlag(StoreExperiments storeExperiments) {
-        Intrinsics3.checkNotNullParameter(storeExperiments, "storeExperiments");
+        C12238m.checkNotNullParameter(storeExperiments, "storeExperiments");
         this.storeExperiments = storeExperiments;
     }
 

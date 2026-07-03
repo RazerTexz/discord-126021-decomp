@@ -1,29 +1,30 @@
 package com.discord.analytics.generated.events;
 
-import b.d.b.a.outline;
 import com.discord.analytics.generated.traits.TrackBase;
-import com.discord.analytics.generated.traits.TrackBase2;
+import com.discord.analytics.generated.traits.TrackBaseReceiver;
 import com.discord.analytics.generated.traits.TrackGuild;
-import com.discord.analytics.generated.traits.TrackGuild2;
+import com.discord.analytics.generated.traits.TrackGuildReceiver;
 import com.discord.api.science.AnalyticsSchema;
-import d0.z.d.Intrinsics3;
+import p007b.p100d.p104b.p105a.C1643a;
+import p507d0.p592z.p594d.C12238m;
 
 /* JADX INFO: compiled from: TrackGuildDiscoveryReviewAction.kt */
 /* JADX INFO: loaded from: classes.dex */
-public final /* data */ class TrackGuildDiscoveryReviewAction implements AnalyticsSchema, TrackBase2, TrackGuild2 {
+public final /* data */ class TrackGuildDiscoveryReviewAction implements AnalyticsSchema, TrackBaseReceiver, TrackGuildReceiver {
     private final CharSequence action = null;
     private final transient String analyticsSchemaTypeName = "guild_discovery_review_action";
     private TrackBase trackBase;
     private TrackGuild trackGuild;
 
-    @Override // com.discord.analytics.generated.traits.TrackGuild2
+    @Override // com.discord.analytics.generated.traits.TrackGuildReceiver
     /* JADX INFO: renamed from: a, reason: from getter */
     public TrackGuild getTrackGuild() {
         return this.trackGuild;
     }
 
-    @Override // com.discord.analytics.generated.traits.TrackGuild2
-    public void c(TrackGuild trackGuild) {
+    @Override // com.discord.analytics.generated.traits.TrackGuildReceiver
+    /* JADX INFO: renamed from: c */
+    public void mo7508c(TrackGuild trackGuild) {
         this.trackGuild = trackGuild;
     }
 
@@ -35,7 +36,7 @@ public final /* data */ class TrackGuildDiscoveryReviewAction implements Analyti
 
     public boolean equals(Object other) {
         if (this != other) {
-            return (other instanceof TrackGuildDiscoveryReviewAction) && Intrinsics3.areEqual(this.action, ((TrackGuildDiscoveryReviewAction) other).action);
+            return (other instanceof TrackGuildDiscoveryReviewAction) && C12238m.areEqual(this.action, ((TrackGuildDiscoveryReviewAction) other).action);
         }
         return true;
     }
@@ -49,6 +50,6 @@ public final /* data */ class TrackGuildDiscoveryReviewAction implements Analyti
     }
 
     public String toString() {
-        return outline.E(outline.U("TrackGuildDiscoveryReviewAction(action="), this.action, ")");
+        return C1643a.m817E(C1643a.m833U("TrackGuildDiscoveryReviewAction(action="), this.action, ")");
     }
 }

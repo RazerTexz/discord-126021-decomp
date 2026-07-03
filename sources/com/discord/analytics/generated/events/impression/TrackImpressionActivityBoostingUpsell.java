@@ -1,22 +1,22 @@
 package com.discord.analytics.generated.events.impression;
 
-import b.d.b.a.outline;
 import com.discord.analytics.generated.traits.TrackBase;
-import com.discord.analytics.generated.traits.TrackBase2;
+import com.discord.analytics.generated.traits.TrackBaseReceiver;
 import com.discord.analytics.generated.traits.TrackChannel;
-import com.discord.analytics.generated.traits.TrackChannel2;
+import com.discord.analytics.generated.traits.TrackChannelReceiver;
 import com.discord.analytics.generated.traits.TrackGuild;
-import com.discord.analytics.generated.traits.TrackGuild2;
+import com.discord.analytics.generated.traits.TrackGuildReceiver;
 import com.discord.analytics.generated.traits.TrackImpressionMetadata;
-import com.discord.analytics.generated.traits.TrackImpressionMetadata2;
+import com.discord.analytics.generated.traits.TrackImpressionMetadataReceiver;
 import com.discord.analytics.generated.traits.TrackLocationMetadata;
-import com.discord.analytics.generated.traits.TrackLocationMetadata2;
+import com.discord.analytics.generated.traits.TrackLocationMetadataReceiver;
 import com.discord.api.science.AnalyticsSchema;
-import d0.z.d.Intrinsics3;
+import p007b.p100d.p104b.p105a.C1643a;
+import p507d0.p592z.p594d.C12238m;
 
 /* JADX INFO: compiled from: TrackImpressionActivityBoostingUpsell.kt */
 /* JADX INFO: loaded from: classes.dex */
-public final /* data */ class TrackImpressionActivityBoostingUpsell implements AnalyticsSchema, TrackBase2, TrackGuild2, TrackChannel2, TrackLocationMetadata2, TrackImpressionMetadata2 {
+public final /* data */ class TrackImpressionActivityBoostingUpsell implements AnalyticsSchema, TrackBaseReceiver, TrackGuildReceiver, TrackChannelReceiver, TrackLocationMetadataReceiver, TrackImpressionMetadataReceiver {
     private TrackBase trackBase;
     private TrackChannel trackChannel;
     private TrackGuild trackGuild;
@@ -27,14 +27,15 @@ public final /* data */ class TrackImpressionActivityBoostingUpsell implements A
     private final Long tier = null;
     private final transient String analyticsSchemaTypeName = "impression_activity_boosting_upsell";
 
-    @Override // com.discord.analytics.generated.traits.TrackGuild2
+    @Override // com.discord.analytics.generated.traits.TrackGuildReceiver
     /* JADX INFO: renamed from: a, reason: from getter */
     public TrackGuild getTrackGuild() {
         return this.trackGuild;
     }
 
-    @Override // com.discord.analytics.generated.traits.TrackGuild2
-    public void c(TrackGuild trackGuild) {
+    @Override // com.discord.analytics.generated.traits.TrackGuildReceiver
+    /* JADX INFO: renamed from: c */
+    public void mo7508c(TrackGuild trackGuild) {
         this.trackGuild = trackGuild;
     }
 
@@ -52,7 +53,7 @@ public final /* data */ class TrackImpressionActivityBoostingUpsell implements A
             return false;
         }
         TrackImpressionActivityBoostingUpsell trackImpressionActivityBoostingUpsell = (TrackImpressionActivityBoostingUpsell) other;
-        return Intrinsics3.areEqual(this.applicationId, trackImpressionActivityBoostingUpsell.applicationId) && Intrinsics3.areEqual(this.sourceSection, trackImpressionActivityBoostingUpsell.sourceSection) && Intrinsics3.areEqual(this.tier, trackImpressionActivityBoostingUpsell.tier);
+        return C12238m.areEqual(this.applicationId, trackImpressionActivityBoostingUpsell.applicationId) && C12238m.areEqual(this.sourceSection, trackImpressionActivityBoostingUpsell.sourceSection) && C12238m.areEqual(this.tier, trackImpressionActivityBoostingUpsell.tier);
     }
 
     public int hashCode() {
@@ -65,11 +66,11 @@ public final /* data */ class TrackImpressionActivityBoostingUpsell implements A
     }
 
     public String toString() {
-        StringBuilder sbU = outline.U("TrackImpressionActivityBoostingUpsell(applicationId=");
-        sbU.append(this.applicationId);
-        sbU.append(", sourceSection=");
-        sbU.append(this.sourceSection);
-        sbU.append(", tier=");
-        return outline.G(sbU, this.tier, ")");
+        StringBuilder sbM833U = C1643a.m833U("TrackImpressionActivityBoostingUpsell(applicationId=");
+        sbM833U.append(this.applicationId);
+        sbM833U.append(", sourceSection=");
+        sbM833U.append(this.sourceSection);
+        sbM833U.append(", tier=");
+        return C1643a.m819G(sbM833U, this.tier, ")");
     }
 }

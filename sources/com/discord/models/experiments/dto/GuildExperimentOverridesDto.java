@@ -1,14 +1,14 @@
 package com.discord.models.experiments.dto;
 
-import b.d.b.a.outline;
 import com.discord.models.domain.Model;
-import d0.t.Collections2;
-import d0.z.d.Intrinsics3;
 import java.io.IOException;
 import java.util.List;
 import kotlin.jvm.internal.Ref$IntRef;
 import kotlin.jvm.internal.Ref$ObjectRef;
-import rx.functions.Action1;
+import p007b.p100d.p104b.p105a.C1643a;
+import p507d0.p580t.C12147n;
+import p507d0.p592z.p594d.C12238m;
+import p658rx.functions.Action1;
 
 /* JADX INFO: compiled from: GuildExperimentDto.kt */
 /* JADX INFO: loaded from: classes.dex */
@@ -25,13 +25,13 @@ public final /* data */ class GuildExperimentOverridesDto {
 
         /* JADX WARN: Type inference failed for: r2v0, types: [T, java.util.List] */
         public final GuildExperimentOverridesDto parse(final Model.JsonReader reader) throws IOException {
-            Intrinsics3.checkNotNullParameter(reader, "reader");
+            C12238m.checkNotNullParameter(reader, "reader");
             final Ref$IntRef ref$IntRef = new Ref$IntRef();
             ref$IntRef.element = -1;
             final Ref$ObjectRef ref$ObjectRef = new Ref$ObjectRef();
-            ref$ObjectRef.element = Collections2.emptyList();
+            ref$ObjectRef.element = C12147n.emptyList();
             reader.nextObject(new Action1<String>() { // from class: com.discord.models.experiments.dto.GuildExperimentOverridesDto$Parser$parse$1
-                @Override // rx.functions.Action1
+                @Override // p658rx.functions.Action1
                 public final void call(String str) {
                     if (str == null) {
                         return;
@@ -54,7 +54,7 @@ public final /* data */ class GuildExperimentOverridesDto {
                                 return Long.valueOf(reader.nextLong(-1L));
                             }
                         });
-                        Intrinsics3.checkNotNullExpressionValue(t, "reader.nextList { reader.nextLong(-1L) }");
+                        C12238m.checkNotNullExpressionValue(t, "reader.nextList { reader.nextLong(-1L) }");
                         ref$ObjectRef2.element = t;
                     }
                 }
@@ -64,7 +64,7 @@ public final /* data */ class GuildExperimentOverridesDto {
     }
 
     public GuildExperimentOverridesDto(int i, List<Long> list) {
-        Intrinsics3.checkNotNullParameter(list, "guilds");
+        C12238m.checkNotNullParameter(list, "guilds");
         this.bucket = i;
         this.guilds = list;
     }
@@ -90,7 +90,7 @@ public final /* data */ class GuildExperimentOverridesDto {
     }
 
     public final GuildExperimentOverridesDto copy(int bucket, List<Long> guilds) {
-        Intrinsics3.checkNotNullParameter(guilds, "guilds");
+        C12238m.checkNotNullParameter(guilds, "guilds");
         return new GuildExperimentOverridesDto(bucket, guilds);
     }
 
@@ -102,7 +102,7 @@ public final /* data */ class GuildExperimentOverridesDto {
             return false;
         }
         GuildExperimentOverridesDto guildExperimentOverridesDto = (GuildExperimentOverridesDto) other;
-        return this.bucket == guildExperimentOverridesDto.bucket && Intrinsics3.areEqual(this.guilds, guildExperimentOverridesDto.guilds);
+        return this.bucket == guildExperimentOverridesDto.bucket && C12238m.areEqual(this.guilds, guildExperimentOverridesDto.guilds);
     }
 
     public final int getBucket() {
@@ -120,9 +120,9 @@ public final /* data */ class GuildExperimentOverridesDto {
     }
 
     public String toString() {
-        StringBuilder sbU = outline.U("GuildExperimentOverridesDto(bucket=");
-        sbU.append(this.bucket);
-        sbU.append(", guilds=");
-        return outline.L(sbU, this.guilds, ")");
+        StringBuilder sbM833U = C1643a.m833U("GuildExperimentOverridesDto(bucket=");
+        sbM833U.append(this.bucket);
+        sbM833U.append(", guilds=");
+        return C1643a.m824L(sbM833U, this.guilds, ")");
     }
 }

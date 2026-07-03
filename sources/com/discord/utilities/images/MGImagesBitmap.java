@@ -3,25 +3,10 @@ package com.discord.utilities.images;
 import android.graphics.Bitmap;
 import android.net.Uri;
 import androidx.core.app.NotificationCompat;
-import b.c.a.a0.AnimatableValueParser;
-import b.d.b.a.outline;
-import b.f.j.e.ImagePipeline2;
-import b.f.j.e.ImagePipelineFactory;
-import b.f.j.f.BaseBitmapDataSubscriber;
-import b.f.j.j.CloseableImage;
 import com.facebook.common.references.CloseableReference;
 import com.facebook.datasource.DataSource;
 import com.facebook.imagepipeline.request.ImageRequest;
 import com.facebook.imagepipeline.request.ImageRequestBuilder;
-import d0.Tuples;
-import d0.g0.Strings4;
-import d0.g0.StringsJVM;
-import d0.t.Maps6;
-import d0.z.d.Intrinsics3;
-import d0.z.d.g0.KMarkers;
-import j0.k.Func1;
-import j0.l.a.OnSubscribeFromIterable;
-import j0.p.Schedulers2;
 import java.io.Closeable;
 import java.util.ArrayList;
 import java.util.Collection;
@@ -31,10 +16,25 @@ import java.util.Set;
 import java.util.concurrent.Executor;
 import java.util.function.BiFunction;
 import java.util.function.Function;
-import kotlin.Tuples2;
+import kotlin.Pair;
 import kotlin.jvm.internal.DefaultConstructorMarker;
-import rx.Observable;
-import rx.Subscriber;
+import p007b.p085c.p086a.p087a0.C1460d;
+import p007b.p100d.p104b.p105a.C1643a;
+import p007b.p109f.p161j.p170e.C1893h;
+import p007b.p109f.p161j.p170e.C1898m;
+import p007b.p109f.p161j.p171f.AbstractC1905c;
+import p007b.p109f.p161j.p175j.AbstractC1917c;
+import p507d0.C12116o;
+import p507d0.p579g0.C12103t;
+import p507d0.p579g0.C12106w;
+import p507d0.p580t.C12136h0;
+import p507d0.p592z.p594d.C12238m;
+import p507d0.p592z.p594d.p595g0.InterfaceC12228a;
+import p637j0.p641k.InterfaceC12589b;
+import p637j0.p642l.p643a.C12662q;
+import p637j0.p653p.C12781a;
+import p658rx.Observable;
+import p658rx.Subscriber;
 
 /* JADX INFO: compiled from: MGImagesBitmap.kt */
 /* JADX INFO: loaded from: classes2.dex */
@@ -42,12 +42,12 @@ public final class MGImagesBitmap {
     public static final MGImagesBitmap INSTANCE = new MGImagesBitmap();
 
     /* JADX INFO: compiled from: MGImagesBitmap.kt */
-    public static final class CloseableBitmaps implements Map<String, Bitmap>, Closeable, KMarkers {
+    public static final class CloseableBitmaps implements Map<String, Bitmap>, Closeable, InterfaceC12228a {
         private final boolean recycleBitmaps;
         private final Map<String, Bitmap> underlyingMap;
 
         public CloseableBitmaps(Map<String, Bitmap> map, boolean z2) {
-            Intrinsics3.checkNotNullParameter(map, "underlyingMap");
+            C12238m.checkNotNullParameter(map, "underlyingMap");
             this.underlyingMap = map;
             this.recycleBitmaps = z2;
         }
@@ -106,12 +106,12 @@ public final class MGImagesBitmap {
         }
 
         public boolean containsKey(String key) {
-            Intrinsics3.checkNotNullParameter(key, "key");
+            C12238m.checkNotNullParameter(key, "key");
             return this.underlyingMap.containsKey(key);
         }
 
         public boolean containsValue(Bitmap value) {
-            Intrinsics3.checkNotNullParameter(value, "value");
+            C12238m.checkNotNullParameter(value, "value");
             return this.underlyingMap.containsValue(value);
         }
 
@@ -129,7 +129,7 @@ public final class MGImagesBitmap {
         }
 
         public Bitmap get(String key) {
-            Intrinsics3.checkNotNullParameter(key, "key");
+            C12238m.checkNotNullParameter(key, "key");
             return this.underlyingMap.get(key);
         }
 
@@ -178,8 +178,8 @@ public final class MGImagesBitmap {
         }
 
         public final CloseableBitmaps plus(CloseableBitmaps other) {
-            Intrinsics3.checkNotNullParameter(other, "other");
-            return new CloseableBitmaps(Maps6.plus(this.underlyingMap, other.underlyingMap), this.recycleBitmaps && other.recycleBitmaps);
+            C12238m.checkNotNullParameter(other, "other");
+            return new CloseableBitmaps(C12136h0.plus(this.underlyingMap, other.underlyingMap), this.recycleBitmaps && other.recycleBitmaps);
         }
 
         /* JADX INFO: renamed from: put, reason: avoid collision after fix types in other method */
@@ -262,7 +262,7 @@ public final class MGImagesBitmap {
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
         public DecodeException(String str) {
             super("Unable to decode image: " + str + '.');
-            Intrinsics3.checkNotNullParameter(str, "imageUri");
+            C12238m.checkNotNullParameter(str, "imageUri");
         }
     }
 
@@ -271,7 +271,7 @@ public final class MGImagesBitmap {
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
         public ImageNotFoundException(String str) {
             super("404 image not found: " + str);
-            Intrinsics3.checkNotNullParameter(str, "imageUri");
+            C12238m.checkNotNullParameter(str, "imageUri");
         }
     }
 
@@ -281,7 +281,7 @@ public final class MGImagesBitmap {
         private final boolean roundAsCircle;
 
         public ImageRequest(String str, boolean z2) {
-            Intrinsics3.checkNotNullParameter(str, "imageUri");
+            C12238m.checkNotNullParameter(str, "imageUri");
             this.imageUri = str;
             this.roundAsCircle = z2;
         }
@@ -307,7 +307,7 @@ public final class MGImagesBitmap {
         }
 
         public final ImageRequest copy(String imageUri, boolean roundAsCircle) {
-            Intrinsics3.checkNotNullParameter(imageUri, "imageUri");
+            C12238m.checkNotNullParameter(imageUri, "imageUri");
             return new ImageRequest(imageUri, roundAsCircle);
         }
 
@@ -319,7 +319,7 @@ public final class MGImagesBitmap {
                 return false;
             }
             ImageRequest imageRequest = (ImageRequest) other;
-            return Intrinsics3.areEqual(this.imageUri, imageRequest.imageUri) && this.roundAsCircle == imageRequest.roundAsCircle;
+            return C12238m.areEqual(this.imageUri, imageRequest.imageUri) && this.roundAsCircle == imageRequest.roundAsCircle;
         }
 
         public final String getImageUri() {
@@ -347,10 +347,10 @@ public final class MGImagesBitmap {
         }
 
         public String toString() {
-            StringBuilder sbU = outline.U("ImageRequest(imageUri=");
-            sbU.append(this.imageUri);
-            sbU.append(", roundAsCircle=");
-            return outline.O(sbU, this.roundAsCircle, ")");
+            StringBuilder sbM833U = C1643a.m833U("ImageRequest(imageUri=");
+            sbM833U.append(this.imageUri);
+            sbM833U.append(", roundAsCircle=");
+            return C1643a.m827O(sbM833U, this.roundAsCircle, ")");
         }
     }
 
@@ -359,7 +359,7 @@ public final class MGImagesBitmap {
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
         public MissingBitmapException(String str) {
             super("Unable to decode image as bitmap: " + str);
-            Intrinsics3.checkNotNullParameter(str, "imageUri");
+            C12238m.checkNotNullParameter(str, "imageUri");
         }
     }
 
@@ -367,109 +367,109 @@ public final class MGImagesBitmap {
     }
 
     public static final Observable<CloseableBitmaps> getBitmaps(Set<ImageRequest> imageRequests) {
-        Intrinsics3.checkNotNullParameter(imageRequests, "imageRequests");
+        C12238m.checkNotNullParameter(imageRequests, "imageRequests");
         ArrayList arrayList = new ArrayList();
         for (Object obj : imageRequests) {
-            if (!StringsJVM.isBlank(((ImageRequest) obj).getImageUri())) {
+            if (!C12103t.isBlank(((ImageRequest) obj).getImageUri())) {
                 arrayList.add(obj);
             }
         }
-        Observable<CloseableBitmaps> observableX = Observable.h0(new OnSubscribeFromIterable(arrayList)).A(new Func1<ImageRequest, Observable<? extends Tuples2<? extends String, ? extends Bitmap>>>() { // from class: com.discord.utilities.images.MGImagesBitmap.getBitmaps.1
-            @Override // j0.k.Func1
-            public final Observable<? extends Tuples2<String, Bitmap>> call(final ImageRequest imageRequest) {
-                return MGImagesBitmap.INSTANCE.getBitmap(imageRequest.getImageUri(), imageRequest.getRoundAsCircle()).G(new Func1<Bitmap, Tuples2<? extends String, ? extends Bitmap>>() { // from class: com.discord.utilities.images.MGImagesBitmap.getBitmaps.1.1
-                    @Override // j0.k.Func1
-                    public final Tuples2<String, Bitmap> call(Bitmap bitmap) {
-                        return Tuples.to(imageRequest.getImageUri(), bitmap);
+        Observable<CloseableBitmaps> observableM11098X = Observable.m11074h0(new C12662q(arrayList)).m11082A(new InterfaceC12589b<ImageRequest, Observable<? extends Pair<? extends String, ? extends Bitmap>>>() { // from class: com.discord.utilities.images.MGImagesBitmap.getBitmaps.1
+            @Override // p637j0.p641k.InterfaceC12589b
+            public final Observable<? extends Pair<String, Bitmap>> call(final ImageRequest imageRequest) {
+                return MGImagesBitmap.INSTANCE.getBitmap(imageRequest.getImageUri(), imageRequest.getRoundAsCircle()).m11083G(new InterfaceC12589b<Bitmap, Pair<? extends String, ? extends Bitmap>>() { // from class: com.discord.utilities.images.MGImagesBitmap.getBitmaps.1.1
+                    @Override // p637j0.p641k.InterfaceC12589b
+                    public final Pair<String, Bitmap> call(Bitmap bitmap) {
+                        return C12116o.m10073to(imageRequest.getImageUri(), bitmap);
                     }
                 });
             }
-        }).g0(new Func1<Tuples2<? extends String, ? extends Bitmap>, String>() { // from class: com.discord.utilities.images.MGImagesBitmap.getBitmaps.2
-            @Override // j0.k.Func1
-            public /* bridge */ /* synthetic */ String call(Tuples2<? extends String, ? extends Bitmap> tuples2) {
-                return call2((Tuples2<String, Bitmap>) tuples2);
+        }).m11106g0(new InterfaceC12589b<Pair<? extends String, ? extends Bitmap>, String>() { // from class: com.discord.utilities.images.MGImagesBitmap.getBitmaps.2
+            @Override // p637j0.p641k.InterfaceC12589b
+            public /* bridge */ /* synthetic */ String call(Pair<? extends String, ? extends Bitmap> pair) {
+                return call2((Pair<String, Bitmap>) pair);
             }
 
             /* JADX INFO: renamed from: call, reason: avoid collision after fix types in other method */
-            public final String call2(Tuples2<String, Bitmap> tuples2) {
-                return tuples2.getFirst();
+            public final String call2(Pair<String, Bitmap> pair) {
+                return pair.getFirst();
             }
-        }, new Func1<Tuples2<? extends String, ? extends Bitmap>, Bitmap>() { // from class: com.discord.utilities.images.MGImagesBitmap.getBitmaps.3
-            @Override // j0.k.Func1
-            public /* bridge */ /* synthetic */ Bitmap call(Tuples2<? extends String, ? extends Bitmap> tuples2) {
-                return call2((Tuples2<String, Bitmap>) tuples2);
+        }, new InterfaceC12589b<Pair<? extends String, ? extends Bitmap>, Bitmap>() { // from class: com.discord.utilities.images.MGImagesBitmap.getBitmaps.3
+            @Override // p637j0.p641k.InterfaceC12589b
+            public /* bridge */ /* synthetic */ Bitmap call(Pair<? extends String, ? extends Bitmap> pair) {
+                return call2((Pair<String, Bitmap>) pair);
             }
 
             /* JADX INFO: renamed from: call, reason: avoid collision after fix types in other method */
-            public final Bitmap call2(Tuples2<String, Bitmap> tuples2) {
-                return tuples2.getSecond();
+            public final Bitmap call2(Pair<String, Bitmap> pair) {
+                return pair.getSecond();
             }
-        }).G(new Func1<Map<String, Bitmap>, CloseableBitmaps>() { // from class: com.discord.utilities.images.MGImagesBitmap.getBitmaps.4
-            @Override // j0.k.Func1
+        }).m11083G(new InterfaceC12589b<Map<String, Bitmap>, CloseableBitmaps>() { // from class: com.discord.utilities.images.MGImagesBitmap.getBitmaps.4
+            @Override // p637j0.p641k.InterfaceC12589b
             public final CloseableBitmaps call(Map<String, Bitmap> map) {
-                Intrinsics3.checkNotNullExpressionValue(map, "it");
+                C12238m.checkNotNullExpressionValue(map, "it");
                 return new CloseableBitmaps(map, false, 2, null);
             }
-        }).X(Schedulers2.a());
-        Intrinsics3.checkNotNullExpressionValue(observableX, "Observable\n        .from…Schedulers.computation())");
-        return observableX;
+        }).m11098X(C12781a.m10873a());
+        C12238m.checkNotNullExpressionValue(observableM11098X, "Observable\n        .from…Schedulers.computation())");
+        return observableM11098X;
     }
 
     private final boolean isValidUri(String imageUri) {
         Uri uri = Uri.parse(imageUri);
-        Intrinsics3.checkNotNullExpressionValue(uri, NotificationCompat.MessagingStyle.Message.KEY_DATA_URI);
+        C12238m.checkNotNullExpressionValue(uri, NotificationCompat.MessagingStyle.Message.KEY_DATA_URI);
         String scheme = uri.getScheme();
-        if (scheme == null || StringsJVM.isBlank(scheme)) {
+        if (scheme == null || C12103t.isBlank(scheme)) {
             return false;
         }
         String host = uri.getHost();
-        if (host == null || StringsJVM.isBlank(host)) {
+        if (host == null || C12103t.isBlank(host)) {
             return false;
         }
         String path = uri.getPath();
-        return !(path == null || StringsJVM.isBlank(path));
+        return !(path == null || C12103t.isBlank(path));
     }
 
     public final Observable<Bitmap> getBitmap(final String imageUri, boolean imageIsCircle) {
-        Intrinsics3.checkNotNullParameter(imageUri, "imageUri");
+        C12238m.checkNotNullParameter(imageUri, "imageUri");
         if (!isValidUri(imageUri)) {
-            Observable<Bitmap> observableX = Observable.x(new IllegalArgumentException(outline.w("invalid uri: ", imageUri)));
-            Intrinsics3.checkNotNullExpressionValue(observableX, "Observable.error(Illegal…invalid uri: $imageUri\"))");
-            return observableX;
+            Observable<Bitmap> observableM11081x = Observable.m11081x(new IllegalArgumentException(C1643a.m883w("invalid uri: ", imageUri)));
+            C12238m.checkNotNullExpressionValue(observableM11081x, "Observable.error(Illegal…invalid uri: $imageUri\"))");
+            return observableM11081x;
         }
-        ImagePipelineFactory imagePipelineFactory = ImagePipelineFactory.a;
-        AnimatableValueParser.y(imagePipelineFactory, "ImagePipelineFactory was not initialized!");
-        if (imagePipelineFactory.l == null) {
-            imagePipelineFactory.l = imagePipelineFactory.a();
+        C1898m c1898m = C1898m.f3788a;
+        C1460d.m591y(c1898m, "ImagePipelineFactory was not initialized!");
+        if (c1898m.f3799l == null) {
+            c1898m.f3799l = c1898m.m1295a();
         }
-        ImagePipeline2 imagePipeline2 = imagePipelineFactory.l;
+        C1893h c1893h = c1898m.f3799l;
         ImageRequestBuilder imageRequest = MGImages.getImageRequest(imageUri, 0, 0, false);
         if (imageIsCircle) {
-            imageRequest.l = new RoundAsCirclePostProcessor2(imageUri);
+            imageRequest.f19623l = new RoundAsCirclePostprocessor(imageUri);
         }
-        final DataSource<CloseableReference<CloseableImage>> dataSourceA = imagePipeline2.a(imageRequest.a(), null, ImageRequest.c.FULL_FETCH, null, null);
-        Observable<Bitmap> observableH0 = Observable.h0(new Observable.a<Bitmap>() { // from class: com.discord.utilities.images.MGImagesBitmap.getBitmap.1
-            @Override // rx.functions.Action1
+        final DataSource<CloseableReference<AbstractC1917c>> dataSourceM1262a = c1893h.m1262a(imageRequest.m8724a(), null, ImageRequest.EnumC10667c.FULL_FETCH, null, null);
+        Observable<Bitmap> observableM11074h0 = Observable.m11074h0(new Observable.InterfaceC13005a<Bitmap>() { // from class: com.discord.utilities.images.MGImagesBitmap.getBitmap.1
+            @Override // p658rx.functions.Action1
             public final void call(final Subscriber<? super Bitmap> subscriber) {
-                dataSourceA.f(new BaseBitmapDataSubscriber() { // from class: com.discord.utilities.images.MGImagesBitmap.getBitmap.1.1
-                    @Override // b.f.e.BaseDataSubscriber
-                    public void onFailureImpl(DataSource<CloseableReference<CloseableImage>> dataSource) {
+                dataSourceM1262a.mo1022f(new AbstractC1905c() { // from class: com.discord.utilities.images.MGImagesBitmap.getBitmap.1.1
+                    @Override // p007b.p109f.p129e.AbstractC1724d
+                    public void onFailureImpl(DataSource<CloseableReference<AbstractC1917c>> dataSource) {
                         String message;
-                        Intrinsics3.checkNotNullParameter(dataSource, "dataSource");
-                        Throwable thD = dataSource.d();
-                        if (thD != null && (message = thD.getMessage()) != null && Strings4.contains$default((CharSequence) message, (CharSequence) "404", false, 2, (Object) null)) {
+                        C12238m.checkNotNullParameter(dataSource, "dataSource");
+                        Throwable thMo1020d = dataSource.mo1020d();
+                        if (thMo1020d != null && (message = thMo1020d.getMessage()) != null && C12106w.contains$default((CharSequence) message, (CharSequence) "404", false, 2, (Object) null)) {
                             subscriber.onError(new ImageNotFoundException(imageUri));
                             return;
                         }
                         Subscriber subscriber2 = subscriber;
-                        Throwable thD2 = dataSource.d();
-                        if (thD2 == null) {
-                            thD2 = new DecodeException(imageUri);
+                        Throwable thMo1020d2 = dataSource.mo1020d();
+                        if (thMo1020d2 == null) {
+                            thMo1020d2 = new DecodeException(imageUri);
                         }
-                        subscriber2.onError(thD2);
+                        subscriber2.onError(thMo1020d2);
                     }
 
-                    @Override // b.f.j.f.BaseBitmapDataSubscriber
+                    @Override // p007b.p109f.p161j.p171f.AbstractC1905c
                     public void onNewResultImpl(Bitmap bitmap) {
                         if (bitmap == null) {
                             subscriber.onError(new MissingBitmapException(imageUri));
@@ -486,7 +486,7 @@ public final class MGImagesBitmap {
                 });
             }
         });
-        Intrinsics3.checkNotNullExpressionValue(observableH0, "Observable.unsafeCreate …y emits the bitmap.\n    }");
-        return observableH0;
+        C12238m.checkNotNullExpressionValue(observableM11074h0, "Observable.unsafeCreate …y emits the bitmap.\n    }");
+        return observableM11074h0;
     }
 }

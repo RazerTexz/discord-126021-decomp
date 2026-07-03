@@ -15,7 +15,8 @@ public class SparseArrayCompat<E> implements Cloneable {
         this(10);
     }
 
-    private void gc() {
+    /* JADX INFO: renamed from: gc */
+    private void m81gc() {
         int i = this.mSize;
         int[] iArr = this.mKeys;
         Object[] objArr = this.mValues;
@@ -42,7 +43,7 @@ public class SparseArrayCompat<E> implements Cloneable {
             return;
         }
         if (this.mGarbage && i2 >= this.mKeys.length) {
-            gc();
+            m81gc();
         }
         int i3 = this.mSize;
         if (i3 >= this.mKeys.length) {
@@ -91,14 +92,14 @@ public class SparseArrayCompat<E> implements Cloneable {
 
     public int indexOfKey(int i) {
         if (this.mGarbage) {
-            gc();
+            m81gc();
         }
         return ContainerHelpers.binarySearch(this.mKeys, this.mSize, i);
     }
 
     public int indexOfValue(E e) {
         if (this.mGarbage) {
-            gc();
+            m81gc();
         }
         for (int i = 0; i < this.mSize; i++) {
             if (this.mValues[i] == e) {
@@ -114,7 +115,7 @@ public class SparseArrayCompat<E> implements Cloneable {
 
     public int keyAt(int i) {
         if (this.mGarbage) {
-            gc();
+            m81gc();
         }
         return this.mKeys[i];
     }
@@ -136,7 +137,7 @@ public class SparseArrayCompat<E> implements Cloneable {
             }
         }
         if (this.mGarbage && i3 >= this.mKeys.length) {
-            gc();
+            m81gc();
             i2 = ~ContainerHelpers.binarySearch(this.mKeys, this.mSize, i);
         }
         int i4 = this.mSize;
@@ -225,14 +226,14 @@ public class SparseArrayCompat<E> implements Cloneable {
 
     public void setValueAt(int i, E e) {
         if (this.mGarbage) {
-            gc();
+            m81gc();
         }
         this.mValues[i] = e;
     }
 
     public int size() {
         if (this.mGarbage) {
-            gc();
+            m81gc();
         }
         return this.mSize;
     }
@@ -262,7 +263,7 @@ public class SparseArrayCompat<E> implements Cloneable {
 
     public E valueAt(int i) {
         if (this.mGarbage) {
-            gc();
+            m81gc();
         }
         return (E) this.mValues[i];
     }
@@ -280,7 +281,7 @@ public class SparseArrayCompat<E> implements Cloneable {
     }
 
     /* JADX INFO: renamed from: clone, reason: merged with bridge method [inline-methods] */
-    public SparseArrayCompat<E> m1clone() {
+    public SparseArrayCompat<E> m11378clone() {
         try {
             SparseArrayCompat<E> sparseArrayCompat = (SparseArrayCompat) super.clone();
             sparseArrayCompat.mKeys = (int[]) this.mKeys.clone();

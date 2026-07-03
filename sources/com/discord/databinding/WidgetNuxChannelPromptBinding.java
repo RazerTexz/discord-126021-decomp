@@ -13,41 +13,47 @@ import com.google.android.material.textfield.TextInputLayout;
 /* JADX INFO: loaded from: classes.dex */
 public final class WidgetNuxChannelPromptBinding implements ViewBinding {
 
+    /* JADX INFO: renamed from: a */
     @NonNull
-    public final RelativeLayout a;
+    public final RelativeLayout f17316a;
 
-    /* JADX INFO: renamed from: b, reason: collision with root package name */
+    /* JADX INFO: renamed from: b */
     @NonNull
-    public final LoadingButton f2504b;
+    public final LoadingButton f17317b;
 
+    /* JADX INFO: renamed from: c */
     @NonNull
-    public final SimpleDraweeView c;
+    public final SimpleDraweeView f17318c;
 
+    /* JADX INFO: renamed from: d */
     @NonNull
-    public final TextView d;
+    public final TextView f17319d;
 
+    /* JADX INFO: renamed from: e */
     @NonNull
-    public final TextView e;
+    public final TextView f17320e;
 
+    /* JADX INFO: renamed from: f */
     @NonNull
-    public final TextView f;
+    public final TextView f17321f;
 
+    /* JADX INFO: renamed from: g */
     @NonNull
-    public final TextInputLayout g;
+    public final TextInputLayout f17322g;
 
     public WidgetNuxChannelPromptBinding(@NonNull RelativeLayout relativeLayout, @NonNull LoadingButton loadingButton, @NonNull SimpleDraweeView simpleDraweeView, @NonNull TextView textView, @NonNull TextView textView2, @NonNull TextView textView3, @NonNull TextInputLayout textInputLayout, @NonNull Toolbar toolbar) {
-        this.a = relativeLayout;
-        this.f2504b = loadingButton;
-        this.c = simpleDraweeView;
-        this.d = textView;
-        this.e = textView2;
-        this.f = textView3;
-        this.g = textInputLayout;
+        this.f17316a = relativeLayout;
+        this.f17317b = loadingButton;
+        this.f17318c = simpleDraweeView;
+        this.f17319d = textView;
+        this.f17320e = textView2;
+        this.f17321f = textView3;
+        this.f17322g = textInputLayout;
     }
 
     @Override // androidx.viewbinding.ViewBinding
     @NonNull
     public View getRoot() {
-        return this.a;
+        return this.f17316a;
     }
 }

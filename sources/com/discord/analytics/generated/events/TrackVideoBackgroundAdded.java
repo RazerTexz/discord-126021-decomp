@@ -1,14 +1,14 @@
 package com.discord.analytics.generated.events;
 
-import b.d.b.a.outline;
 import com.discord.analytics.generated.traits.TrackBase;
-import com.discord.analytics.generated.traits.TrackBase2;
+import com.discord.analytics.generated.traits.TrackBaseReceiver;
 import com.discord.api.science.AnalyticsSchema;
-import d0.z.d.Intrinsics3;
+import p007b.p100d.p104b.p105a.C1643a;
+import p507d0.p592z.p594d.C12238m;
 
 /* JADX INFO: compiled from: TrackVideoBackgroundAdded.kt */
 /* JADX INFO: loaded from: classes.dex */
-public final /* data */ class TrackVideoBackgroundAdded implements AnalyticsSchema, TrackBase2 {
+public final /* data */ class TrackVideoBackgroundAdded implements AnalyticsSchema, TrackBaseReceiver {
     private TrackBase trackBase;
     private final Boolean isAnimated = null;
     private final Boolean isVideo = null;
@@ -29,7 +29,7 @@ public final /* data */ class TrackVideoBackgroundAdded implements AnalyticsSche
             return false;
         }
         TrackVideoBackgroundAdded trackVideoBackgroundAdded = (TrackVideoBackgroundAdded) other;
-        return Intrinsics3.areEqual(this.isAnimated, trackVideoBackgroundAdded.isAnimated) && Intrinsics3.areEqual(this.isVideo, trackVideoBackgroundAdded.isVideo) && Intrinsics3.areEqual(this.isFromTenor, trackVideoBackgroundAdded.isFromTenor);
+        return C12238m.areEqual(this.isAnimated, trackVideoBackgroundAdded.isAnimated) && C12238m.areEqual(this.isVideo, trackVideoBackgroundAdded.isVideo) && C12238m.areEqual(this.isFromTenor, trackVideoBackgroundAdded.isFromTenor);
     }
 
     public int hashCode() {
@@ -42,11 +42,11 @@ public final /* data */ class TrackVideoBackgroundAdded implements AnalyticsSche
     }
 
     public String toString() {
-        StringBuilder sbU = outline.U("TrackVideoBackgroundAdded(isAnimated=");
-        sbU.append(this.isAnimated);
-        sbU.append(", isVideo=");
-        sbU.append(this.isVideo);
-        sbU.append(", isFromTenor=");
-        return outline.D(sbU, this.isFromTenor, ")");
+        StringBuilder sbM833U = C1643a.m833U("TrackVideoBackgroundAdded(isAnimated=");
+        sbM833U.append(this.isAnimated);
+        sbM833U.append(", isVideo=");
+        sbM833U.append(this.isVideo);
+        sbM833U.append(", isFromTenor=");
+        return C1643a.m816D(sbM833U, this.isFromTenor, ")");
     }
 }

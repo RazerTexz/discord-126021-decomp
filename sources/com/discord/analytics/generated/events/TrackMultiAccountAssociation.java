@@ -1,15 +1,15 @@
 package com.discord.analytics.generated.events;
 
-import b.d.b.a.outline;
 import com.discord.analytics.generated.traits.TrackBase;
-import com.discord.analytics.generated.traits.TrackBase2;
+import com.discord.analytics.generated.traits.TrackBaseReceiver;
 import com.discord.api.science.AnalyticsSchema;
-import d0.z.d.Intrinsics3;
 import java.util.List;
+import p007b.p100d.p104b.p105a.C1643a;
+import p507d0.p592z.p594d.C12238m;
 
 /* JADX INFO: compiled from: TrackMultiAccountAssociation.kt */
 /* JADX INFO: loaded from: classes.dex */
-public final /* data */ class TrackMultiAccountAssociation implements AnalyticsSchema, TrackBase2 {
+public final /* data */ class TrackMultiAccountAssociation implements AnalyticsSchema, TrackBaseReceiver {
     private TrackBase trackBase;
     private final Long lastUserId = null;
     private final List<Long> linkedUserIds = null;
@@ -29,7 +29,7 @@ public final /* data */ class TrackMultiAccountAssociation implements AnalyticsS
             return false;
         }
         TrackMultiAccountAssociation trackMultiAccountAssociation = (TrackMultiAccountAssociation) other;
-        return Intrinsics3.areEqual(this.lastUserId, trackMultiAccountAssociation.lastUserId) && Intrinsics3.areEqual(this.linkedUserIds, trackMultiAccountAssociation.linkedUserIds);
+        return C12238m.areEqual(this.lastUserId, trackMultiAccountAssociation.lastUserId) && C12238m.areEqual(this.linkedUserIds, trackMultiAccountAssociation.linkedUserIds);
     }
 
     public int hashCode() {
@@ -40,9 +40,9 @@ public final /* data */ class TrackMultiAccountAssociation implements AnalyticsS
     }
 
     public String toString() {
-        StringBuilder sbU = outline.U("TrackMultiAccountAssociation(lastUserId=");
-        sbU.append(this.lastUserId);
-        sbU.append(", linkedUserIds=");
-        return outline.L(sbU, this.linkedUserIds, ")");
+        StringBuilder sbM833U = C1643a.m833U("TrackMultiAccountAssociation(lastUserId=");
+        sbM833U.append(this.lastUserId);
+        sbM833U.append(", linkedUserIds=");
+        return C1643a.m824L(sbM833U, this.linkedUserIds, ")");
     }
 }

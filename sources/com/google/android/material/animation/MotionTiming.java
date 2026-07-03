@@ -8,7 +8,7 @@ import android.view.animation.AccelerateInterpolator;
 import android.view.animation.DecelerateInterpolator;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import b.d.b.a.outline;
+import p007b.p100d.p104b.p105a.C1643a;
 
 /* JADX INFO: loaded from: classes3.dex */
 public class MotionTiming {
@@ -102,22 +102,22 @@ public class MotionTiming {
 
     @NonNull
     public String toString() {
-        StringBuilder sbQ = outline.Q('\n');
-        sbQ.append(getClass().getName());
-        sbQ.append('{');
-        sbQ.append(Integer.toHexString(System.identityHashCode(this)));
-        sbQ.append(" delay: ");
-        sbQ.append(getDelay());
-        sbQ.append(" duration: ");
-        sbQ.append(getDuration());
-        sbQ.append(" interpolator: ");
-        sbQ.append(getInterpolator().getClass());
-        sbQ.append(" repeatCount: ");
-        sbQ.append(getRepeatCount());
-        sbQ.append(" repeatMode: ");
-        sbQ.append(getRepeatMode());
-        sbQ.append("}\n");
-        return sbQ.toString();
+        StringBuilder sbM829Q = C1643a.m829Q('\n');
+        sbM829Q.append(getClass().getName());
+        sbM829Q.append('{');
+        sbM829Q.append(Integer.toHexString(System.identityHashCode(this)));
+        sbM829Q.append(" delay: ");
+        sbM829Q.append(getDelay());
+        sbM829Q.append(" duration: ");
+        sbM829Q.append(getDuration());
+        sbM829Q.append(" interpolator: ");
+        sbM829Q.append(getInterpolator().getClass());
+        sbM829Q.append(" repeatCount: ");
+        sbM829Q.append(getRepeatCount());
+        sbM829Q.append(" repeatMode: ");
+        sbM829Q.append(getRepeatMode());
+        sbM829Q.append("}\n");
+        return sbM829Q.toString();
     }
 
     public MotionTiming(long j, long j2, @NonNull TimeInterpolator timeInterpolator) {

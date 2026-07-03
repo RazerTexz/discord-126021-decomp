@@ -8,7 +8,7 @@ import com.discord.utilities.channel.ChannelSelector;
 public final class StoreChannelConversions extends StoreV2 {
     private long selectedChannelId;
 
-    @Store3
+    @StoreThread
     public final void handleChannelCreateOrUpdate(Channel channel) {
         if (channel == null) {
             return;
@@ -20,7 +20,7 @@ public final class StoreChannelConversions extends StoreV2 {
         }
     }
 
-    @Store3
+    @StoreThread
     public final void handleChannelSelected(long channelId) {
         this.selectedChannelId = channelId;
     }

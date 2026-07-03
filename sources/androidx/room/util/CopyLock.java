@@ -2,7 +2,6 @@ package androidx.room.util;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.RestrictTo;
-import b.d.b.a.outline;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
@@ -11,6 +10,7 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantLock;
+import p007b.p100d.p104b.p105a.C1643a;
 
 /* JADX INFO: loaded from: classes.dex */
 @RestrictTo({RestrictTo.Scope.LIBRARY_GROUP_PREFIX})
@@ -22,7 +22,7 @@ public class CopyLock {
     private final Lock mThreadLock;
 
     public CopyLock(@NonNull String str, @NonNull File file, boolean z2) {
-        File file2 = new File(file, outline.w(str, ".lck"));
+        File file2 = new File(file, C1643a.m883w(str, ".lck"));
         this.mCopyLockFile = file2;
         this.mThreadLock = getThreadLock(file2.getAbsolutePath());
         this.mFileLevelLock = z2;

@@ -6,17 +6,17 @@ import android.widget.ImageView;
 import androidx.annotation.DrawableRes;
 import androidx.core.content.res.ResourcesCompat;
 import androidx.recyclerview.widget.RecyclerView;
-import com.discord.R;
+import com.discord.C5419R;
 import com.discord.databinding.EmojiCategoryItemGuildBinding;
 import com.discord.databinding.EmojiCategoryItemStandardBinding;
 import com.discord.models.domain.emoji.EmojiCategory;
 import com.discord.utilities.color.ColorCompat;
-import com.discord.utilities.color.ColorCompat2;
+import com.discord.utilities.color.ColorCompatKt;
 import com.discord.widgets.chat.input.emoji.EmojiCategoryItem;
-import d0.z.d.Intrinsics3;
 import kotlin.Unit;
 import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.DefaultConstructorMarker;
+import p507d0.p592z.p594d.C12238m;
 
 /* JADX INFO: compiled from: EmojiCategoryViewHolder.kt */
 /* JADX INFO: loaded from: classes2.dex */
@@ -54,31 +54,31 @@ public abstract class EmojiCategoryViewHolder extends RecyclerView.ViewHolder {
 
         @DrawableRes
         public final int getCategoryIconResId(EmojiCategory emojiCategory) {
-            Intrinsics3.checkNotNullParameter(emojiCategory, "emojiCategory");
+            C12238m.checkNotNullParameter(emojiCategory, "emojiCategory");
             switch (emojiCategory) {
                 case FAVORITE:
-                    return R.drawable.ic_emoji_picker_category_favorites_star;
+                    return C5419R.drawable.ic_emoji_picker_category_favorites_star;
                 case RECENT:
-                    return R.drawable.ic_emoji_picker_category_recent;
+                    return C5419R.drawable.ic_emoji_picker_category_recent;
                 case CUSTOM:
                 default:
-                    return R.drawable.ic_emoji_picker_category_custom;
+                    return C5419R.drawable.ic_emoji_picker_category_custom;
                 case PEOPLE:
-                    return R.drawable.ic_emoji_picker_category_people;
+                    return C5419R.drawable.ic_emoji_picker_category_people;
                 case NATURE:
-                    return R.drawable.ic_emoji_picker_category_nature;
+                    return C5419R.drawable.ic_emoji_picker_category_nature;
                 case FOOD:
-                    return R.drawable.ic_emoji_picker_category_food;
+                    return C5419R.drawable.ic_emoji_picker_category_food;
                 case ACTIVITY:
-                    return R.drawable.ic_emoji_picker_category_activity;
+                    return C5419R.drawable.ic_emoji_picker_category_activity;
                 case TRAVEL:
-                    return R.drawable.ic_emoji_picker_category_travel;
+                    return C5419R.drawable.ic_emoji_picker_category_travel;
                 case OBJECTS:
-                    return R.drawable.ic_emoji_picker_category_objects;
+                    return C5419R.drawable.ic_emoji_picker_category_objects;
                 case SYMBOLS:
-                    return R.drawable.ic_emoji_picker_category_symbols;
+                    return C5419R.drawable.ic_emoji_picker_category_symbols;
                 case FLAGS:
-                    return R.drawable.ic_emoji_picker_category_flags;
+                    return C5419R.drawable.ic_emoji_picker_category_flags;
             }
         }
 
@@ -93,19 +93,19 @@ public abstract class EmojiCategoryViewHolder extends RecyclerView.ViewHolder {
 
         /* JADX WARN: Illegal instructions before constructor call */
         public Guild(EmojiCategoryItemGuildBinding emojiCategoryItemGuildBinding) {
-            Intrinsics3.checkNotNullParameter(emojiCategoryItemGuildBinding, "binding");
-            FrameLayout frameLayout = emojiCategoryItemGuildBinding.a;
-            Intrinsics3.checkNotNullExpressionValue(frameLayout, "binding.root");
+            C12238m.checkNotNullParameter(emojiCategoryItemGuildBinding, "binding");
+            FrameLayout frameLayout = emojiCategoryItemGuildBinding.f15050a;
+            C12238m.checkNotNullExpressionValue(frameLayout, "binding.root");
             super(frameLayout, null);
             this.binding = emojiCategoryItemGuildBinding;
         }
 
         public final void configure(final EmojiCategoryItem.GuildItem guildCategoryItem, final Function1<? super EmojiCategoryItem, Unit> onCategoryClicked) {
-            Intrinsics3.checkNotNullParameter(guildCategoryItem, "guildCategoryItem");
-            Intrinsics3.checkNotNullParameter(onCategoryClicked, "onCategoryClicked");
-            this.binding.f2099b.updateView(guildCategoryItem.getGuild());
-            View view = this.binding.c.f163b;
-            Intrinsics3.checkNotNullExpressionValue(view, "binding.overline.express…CategorySelectionOverline");
+            C12238m.checkNotNullParameter(guildCategoryItem, "guildCategoryItem");
+            C12238m.checkNotNullParameter(onCategoryClicked, "onCategoryClicked");
+            this.binding.f15051b.updateView(guildCategoryItem.getGuild());
+            View view = this.binding.f15052c.f1066b;
+            C12238m.checkNotNullExpressionValue(view, "binding.overline.express…CategorySelectionOverline");
             view.setVisibility(guildCategoryItem.getIsSelected() ? 0 : 8);
             this.itemView.setOnClickListener(new View.OnClickListener() { // from class: com.discord.widgets.chat.input.emoji.EmojiCategoryViewHolder$Guild$configure$1
                 @Override // android.view.View.OnClickListener
@@ -114,7 +114,7 @@ public abstract class EmojiCategoryViewHolder extends RecyclerView.ViewHolder {
                 }
             });
             View view2 = this.itemView;
-            Intrinsics3.checkNotNullExpressionValue(view2, "itemView");
+            C12238m.checkNotNullExpressionValue(view2, "itemView");
             view2.setContentDescription(guildCategoryItem.getGuild().getName());
         }
     }
@@ -125,44 +125,44 @@ public abstract class EmojiCategoryViewHolder extends RecyclerView.ViewHolder {
 
         /* JADX WARN: Illegal instructions before constructor call */
         public Standard(EmojiCategoryItemStandardBinding emojiCategoryItemStandardBinding) {
-            Intrinsics3.checkNotNullParameter(emojiCategoryItemStandardBinding, "binding");
-            FrameLayout frameLayout = emojiCategoryItemStandardBinding.a;
-            Intrinsics3.checkNotNullExpressionValue(frameLayout, "binding.root");
+            C12238m.checkNotNullParameter(emojiCategoryItemStandardBinding, "binding");
+            FrameLayout frameLayout = emojiCategoryItemStandardBinding.f15053a;
+            C12238m.checkNotNullExpressionValue(frameLayout, "binding.root");
             super(frameLayout, null);
             this.binding = emojiCategoryItemStandardBinding;
         }
 
         public final void configure(final EmojiCategoryItem.StandardItem standardCategoryItem, final Function1<? super EmojiCategoryItem, Unit> onCategoryClicked) {
             int themedColor;
-            Intrinsics3.checkNotNullParameter(standardCategoryItem, "standardCategoryItem");
-            Intrinsics3.checkNotNullParameter(onCategoryClicked, "onCategoryClicked");
+            C12238m.checkNotNullParameter(standardCategoryItem, "standardCategoryItem");
+            C12238m.checkNotNullParameter(onCategoryClicked, "onCategoryClicked");
             EmojiCategory emojiCategory = standardCategoryItem.getEmojiCategory();
             int categoryIconResId = EmojiCategoryViewHolder.INSTANCE.getCategoryIconResId(emojiCategory);
-            ImageView imageView = this.binding.f2100b;
+            ImageView imageView = this.binding.f15054b;
             View view = this.itemView;
-            Intrinsics3.checkNotNullExpressionValue(view, "itemView");
+            C12238m.checkNotNullExpressionValue(view, "itemView");
             imageView.setImageDrawable(ResourcesCompat.getDrawable(view.getResources(), categoryIconResId, null));
             boolean isSelected = standardCategoryItem.getIsSelected();
-            ImageView imageView2 = this.binding.f2100b;
-            Intrinsics3.checkNotNullExpressionValue(imageView2, "binding.emojiCategoryItemStandardIcon");
+            ImageView imageView2 = this.binding.f15054b;
+            C12238m.checkNotNullExpressionValue(imageView2, "binding.emojiCategoryItemStandardIcon");
             imageView2.setSelected(isSelected);
-            View view2 = this.binding.c.f163b;
-            Intrinsics3.checkNotNullExpressionValue(view2, "binding.overline.express…CategorySelectionOverline");
+            View view2 = this.binding.f15055c.f1066b;
+            C12238m.checkNotNullExpressionValue(view2, "binding.overline.express…CategorySelectionOverline");
             view2.setVisibility(isSelected ? 0 : 8);
             if (isSelected) {
-                ImageView imageView3 = this.binding.f2100b;
-                Intrinsics3.checkNotNullExpressionValue(imageView3, "binding.emojiCategoryItemStandardIcon");
-                themedColor = ColorCompat.getThemedColor(imageView3, R.attr.colorInteractiveActive);
+                ImageView imageView3 = this.binding.f15054b;
+                C12238m.checkNotNullExpressionValue(imageView3, "binding.emojiCategoryItemStandardIcon");
+                themedColor = ColorCompat.getThemedColor(imageView3, C5419R.attr.colorInteractiveActive);
             } else {
-                ImageView imageView4 = this.binding.f2100b;
-                Intrinsics3.checkNotNullExpressionValue(imageView4, "binding.emojiCategoryItemStandardIcon");
-                themedColor = ColorCompat.getThemedColor(imageView4, R.attr.colorInteractiveNormal);
+                ImageView imageView4 = this.binding.f15054b;
+                C12238m.checkNotNullExpressionValue(imageView4, "binding.emojiCategoryItemStandardIcon");
+                themedColor = ColorCompat.getThemedColor(imageView4, C5419R.attr.colorInteractiveNormal);
             }
-            ImageView imageView5 = this.binding.f2100b;
-            Intrinsics3.checkNotNullExpressionValue(imageView5, "binding.emojiCategoryItemStandardIcon");
-            ColorCompat2.tintWithColor(imageView5, themedColor);
-            ImageView imageView6 = this.binding.f2100b;
-            Intrinsics3.checkNotNullExpressionValue(imageView6, "binding.emojiCategoryItemStandardIcon");
+            ImageView imageView5 = this.binding.f15054b;
+            C12238m.checkNotNullExpressionValue(imageView5, "binding.emojiCategoryItemStandardIcon");
+            ColorCompatKt.tintWithColor(imageView5, themedColor);
+            ImageView imageView6 = this.binding.f15054b;
+            C12238m.checkNotNullExpressionValue(imageView6, "binding.emojiCategoryItemStandardIcon");
             imageView6.setAlpha(isSelected ? 1.0f : 0.5f);
             this.itemView.setOnClickListener(new View.OnClickListener() { // from class: com.discord.widgets.chat.input.emoji.EmojiCategoryViewHolder$Standard$configure$1
                 @Override // android.view.View.OnClickListener
@@ -171,7 +171,7 @@ public abstract class EmojiCategoryViewHolder extends RecyclerView.ViewHolder {
                 }
             });
             View view3 = this.itemView;
-            Intrinsics3.checkNotNullExpressionValue(view3, "itemView");
+            C12238m.checkNotNullExpressionValue(view3, "itemView");
             view3.setContentDescription(emojiCategory.name());
         }
     }

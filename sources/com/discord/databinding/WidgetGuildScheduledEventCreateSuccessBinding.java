@@ -12,33 +12,37 @@ import com.google.android.material.button.MaterialButton;
 /* JADX INFO: loaded from: classes.dex */
 public final class WidgetGuildScheduledEventCreateSuccessBinding implements ViewBinding {
 
+    /* JADX INFO: renamed from: a */
     @NonNull
-    public final ConstraintLayout a;
+    public final ConstraintLayout f16974a;
 
-    /* JADX INFO: renamed from: b, reason: collision with root package name */
+    /* JADX INFO: renamed from: b */
     @NonNull
-    public final ImageView f2442b;
+    public final ImageView f16975b;
 
+    /* JADX INFO: renamed from: c */
     @NonNull
-    public final TextView c;
+    public final TextView f16976c;
 
+    /* JADX INFO: renamed from: d */
     @NonNull
-    public final CheckedSetting d;
+    public final CheckedSetting f16977d;
 
+    /* JADX INFO: renamed from: e */
     @NonNull
-    public final MaterialButton e;
+    public final MaterialButton f16978e;
 
     public WidgetGuildScheduledEventCreateSuccessBinding(@NonNull ConstraintLayout constraintLayout, @NonNull ImageView imageView, @NonNull TextView textView, @NonNull CheckedSetting checkedSetting, @NonNull MaterialButton materialButton, @NonNull ImageView imageView2, @NonNull TextView textView2, @NonNull TextView textView3) {
-        this.a = constraintLayout;
-        this.f2442b = imageView;
-        this.c = textView;
-        this.d = checkedSetting;
-        this.e = materialButton;
+        this.f16974a = constraintLayout;
+        this.f16975b = imageView;
+        this.f16976c = textView;
+        this.f16977d = checkedSetting;
+        this.f16978e = materialButton;
     }
 
     @Override // androidx.viewbinding.ViewBinding
     @NonNull
     public View getRoot() {
-        return this.a;
+        return this.f16974a;
     }
 }

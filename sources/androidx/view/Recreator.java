@@ -7,12 +7,12 @@ import androidx.view.GenericLifecycleObserver;
 import androidx.view.Lifecycle;
 import androidx.view.LifecycleOwner;
 import androidx.view.SavedStateRegistry;
-import b.d.b.a.outline;
 import java.lang.reflect.Constructor;
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.Iterator;
 import java.util.Set;
+import p007b.p100d.p104b.p105a.C1643a;
 
 /* JADX INFO: loaded from: classes.dex */
 @SuppressLint({"RestrictedApi"})
@@ -54,16 +54,16 @@ public final class Recreator implements GenericLifecycleObserver {
                 try {
                     ((SavedStateRegistry.AutoRecreated) declaredConstructor.newInstance(new Object[0])).onRecreated(this.mOwner);
                 } catch (Exception e) {
-                    throw new RuntimeException(outline.w("Failed to instantiate ", str), e);
+                    throw new RuntimeException(C1643a.m883w("Failed to instantiate ", str), e);
                 }
             } catch (NoSuchMethodException e2) {
-                StringBuilder sbU = outline.U("Class");
-                sbU.append(clsAsSubclass.getSimpleName());
-                sbU.append(" must have default constructor in order to be automatically recreated");
-                throw new IllegalStateException(sbU.toString(), e2);
+                StringBuilder sbM833U = C1643a.m833U("Class");
+                sbM833U.append(clsAsSubclass.getSimpleName());
+                sbM833U.append(" must have default constructor in order to be automatically recreated");
+                throw new IllegalStateException(sbM833U.toString(), e2);
             }
         } catch (ClassNotFoundException e3) {
-            throw new RuntimeException(outline.y("Class ", str, " wasn't found"), e3);
+            throw new RuntimeException(C1643a.m886y("Class ", str, " wasn't found"), e3);
         }
     }
 

@@ -5,60 +5,68 @@ import android.widget.ScrollView;
 import androidx.annotation.NonNull;
 import androidx.coordinatorlayout.widget.CoordinatorLayout;
 import androidx.viewbinding.ViewBinding;
-import b.a.i.ViewServerSettingsIconNameBinding;
-import b.a.i.ViewServerSettingsNotificationsBinding;
-import b.a.i.ViewServerSettingsSystemChannelWrapBinding;
-import b.a.i.ViewServerSettingsUploadBannerBinding;
-import b.a.i.ViewServerSettingsUploadSplashBinding;
-import b.a.i.WidgetServerSettingsOverviewSectionAfkChannelBinding;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
+import p007b.p008a.p025i.C0985j3;
+import p007b.p008a.p025i.C0992k3;
+import p007b.p008a.p025i.C0999l3;
+import p007b.p008a.p025i.C1013n3;
+import p007b.p008a.p025i.C1020o3;
+import p007b.p008a.p025i.C1099z5;
 
 /* JADX INFO: loaded from: classes.dex */
 public final class WidgetServerSettingsOverviewBinding implements ViewBinding {
 
+    /* JADX INFO: renamed from: a */
     @NonNull
-    public final CoordinatorLayout a;
+    public final CoordinatorLayout f17730a;
 
-    /* JADX INFO: renamed from: b, reason: collision with root package name */
+    /* JADX INFO: renamed from: b */
     @NonNull
-    public final WidgetServerSettingsOverviewSectionAfkChannelBinding f2582b;
+    public final C1099z5 f17731b;
 
+    /* JADX INFO: renamed from: c */
     @NonNull
-    public final ViewServerSettingsIconNameBinding c;
+    public final C0985j3 f17732c;
 
+    /* JADX INFO: renamed from: d */
     @NonNull
-    public final ViewServerSettingsNotificationsBinding d;
+    public final C0992k3 f17733d;
 
+    /* JADX INFO: renamed from: e */
     @NonNull
-    public final FloatingActionButton e;
+    public final FloatingActionButton f17734e;
 
+    /* JADX INFO: renamed from: f */
     @NonNull
-    public final ScrollView f;
+    public final ScrollView f17735f;
 
+    /* JADX INFO: renamed from: g */
     @NonNull
-    public final ViewServerSettingsSystemChannelWrapBinding g;
+    public final C0999l3 f17736g;
 
+    /* JADX INFO: renamed from: h */
     @NonNull
-    public final ViewServerSettingsUploadBannerBinding h;
+    public final C1013n3 f17737h;
 
+    /* JADX INFO: renamed from: i */
     @NonNull
-    public final ViewServerSettingsUploadSplashBinding i;
+    public final C1020o3 f17738i;
 
-    public WidgetServerSettingsOverviewBinding(@NonNull CoordinatorLayout coordinatorLayout, @NonNull WidgetServerSettingsOverviewSectionAfkChannelBinding widgetServerSettingsOverviewSectionAfkChannelBinding, @NonNull ViewServerSettingsIconNameBinding viewServerSettingsIconNameBinding, @NonNull ViewServerSettingsNotificationsBinding viewServerSettingsNotificationsBinding, @NonNull FloatingActionButton floatingActionButton, @NonNull ScrollView scrollView, @NonNull ViewServerSettingsSystemChannelWrapBinding viewServerSettingsSystemChannelWrapBinding, @NonNull ViewServerSettingsUploadBannerBinding viewServerSettingsUploadBannerBinding, @NonNull ViewServerSettingsUploadSplashBinding viewServerSettingsUploadSplashBinding) {
-        this.a = coordinatorLayout;
-        this.f2582b = widgetServerSettingsOverviewSectionAfkChannelBinding;
-        this.c = viewServerSettingsIconNameBinding;
-        this.d = viewServerSettingsNotificationsBinding;
-        this.e = floatingActionButton;
-        this.f = scrollView;
-        this.g = viewServerSettingsSystemChannelWrapBinding;
-        this.h = viewServerSettingsUploadBannerBinding;
-        this.i = viewServerSettingsUploadSplashBinding;
+    public WidgetServerSettingsOverviewBinding(@NonNull CoordinatorLayout coordinatorLayout, @NonNull C1099z5 c1099z5, @NonNull C0985j3 c0985j3, @NonNull C0992k3 c0992k3, @NonNull FloatingActionButton floatingActionButton, @NonNull ScrollView scrollView, @NonNull C0999l3 c0999l3, @NonNull C1013n3 c1013n3, @NonNull C1020o3 c1020o3) {
+        this.f17730a = coordinatorLayout;
+        this.f17731b = c1099z5;
+        this.f17732c = c0985j3;
+        this.f17733d = c0992k3;
+        this.f17734e = floatingActionButton;
+        this.f17735f = scrollView;
+        this.f17736g = c0999l3;
+        this.f17737h = c1013n3;
+        this.f17738i = c1020o3;
     }
 
     @Override // androidx.viewbinding.ViewBinding
     @NonNull
     public View getRoot() {
-        return this.a;
+        return this.f17730a;
     }
 }

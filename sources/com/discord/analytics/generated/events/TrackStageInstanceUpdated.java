@@ -1,19 +1,19 @@
 package com.discord.analytics.generated.events;
 
-import b.d.b.a.outline;
 import com.discord.analytics.generated.traits.TrackBase;
-import com.discord.analytics.generated.traits.TrackBase2;
+import com.discord.analytics.generated.traits.TrackBaseReceiver;
 import com.discord.analytics.generated.traits.TrackChannel;
-import com.discord.analytics.generated.traits.TrackChannel2;
+import com.discord.analytics.generated.traits.TrackChannelReceiver;
 import com.discord.analytics.generated.traits.TrackGuild;
-import com.discord.analytics.generated.traits.TrackGuild2;
+import com.discord.analytics.generated.traits.TrackGuildReceiver;
 import com.discord.api.science.AnalyticsSchema;
 import com.discord.models.domain.ModelAuditLogEntry;
-import d0.z.d.Intrinsics3;
+import p007b.p100d.p104b.p105a.C1643a;
+import p507d0.p592z.p594d.C12238m;
 
 /* JADX INFO: compiled from: TrackStageInstanceUpdated.kt */
 /* JADX INFO: loaded from: classes.dex */
-public final /* data */ class TrackStageInstanceUpdated implements AnalyticsSchema, TrackBase2, TrackGuild2, TrackChannel2 {
+public final /* data */ class TrackStageInstanceUpdated implements AnalyticsSchema, TrackBaseReceiver, TrackGuildReceiver, TrackChannelReceiver {
     private TrackBase trackBase;
     private TrackChannel trackChannel;
     private TrackGuild trackGuild;
@@ -24,14 +24,15 @@ public final /* data */ class TrackStageInstanceUpdated implements AnalyticsSche
     private final Long guildScheduledEventId = null;
     private final transient String analyticsSchemaTypeName = "stage_instance_updated";
 
-    @Override // com.discord.analytics.generated.traits.TrackGuild2
+    @Override // com.discord.analytics.generated.traits.TrackGuildReceiver
     /* JADX INFO: renamed from: a, reason: from getter */
     public TrackGuild getTrackGuild() {
         return this.trackGuild;
     }
 
-    @Override // com.discord.analytics.generated.traits.TrackGuild2
-    public void c(TrackGuild trackGuild) {
+    @Override // com.discord.analytics.generated.traits.TrackGuildReceiver
+    /* JADX INFO: renamed from: c */
+    public void mo7508c(TrackGuild trackGuild) {
         this.trackGuild = trackGuild;
     }
 
@@ -49,7 +50,7 @@ public final /* data */ class TrackStageInstanceUpdated implements AnalyticsSche
             return false;
         }
         TrackStageInstanceUpdated trackStageInstanceUpdated = (TrackStageInstanceUpdated) other;
-        return Intrinsics3.areEqual(this.stageInstanceId, trackStageInstanceUpdated.stageInstanceId) && Intrinsics3.areEqual(this.topic, trackStageInstanceUpdated.topic) && Intrinsics3.areEqual(this.privacyLevel, trackStageInstanceUpdated.privacyLevel) && Intrinsics3.areEqual(this.updaterId, trackStageInstanceUpdated.updaterId) && Intrinsics3.areEqual(this.guildScheduledEventId, trackStageInstanceUpdated.guildScheduledEventId);
+        return C12238m.areEqual(this.stageInstanceId, trackStageInstanceUpdated.stageInstanceId) && C12238m.areEqual(this.topic, trackStageInstanceUpdated.topic) && C12238m.areEqual(this.privacyLevel, trackStageInstanceUpdated.privacyLevel) && C12238m.areEqual(this.updaterId, trackStageInstanceUpdated.updaterId) && C12238m.areEqual(this.guildScheduledEventId, trackStageInstanceUpdated.guildScheduledEventId);
     }
 
     public int hashCode() {
@@ -66,15 +67,15 @@ public final /* data */ class TrackStageInstanceUpdated implements AnalyticsSche
     }
 
     public String toString() {
-        StringBuilder sbU = outline.U("TrackStageInstanceUpdated(stageInstanceId=");
-        sbU.append(this.stageInstanceId);
-        sbU.append(", topic=");
-        sbU.append(this.topic);
-        sbU.append(", privacyLevel=");
-        sbU.append(this.privacyLevel);
-        sbU.append(", updaterId=");
-        sbU.append(this.updaterId);
-        sbU.append(", guildScheduledEventId=");
-        return outline.G(sbU, this.guildScheduledEventId, ")");
+        StringBuilder sbM833U = C1643a.m833U("TrackStageInstanceUpdated(stageInstanceId=");
+        sbM833U.append(this.stageInstanceId);
+        sbM833U.append(", topic=");
+        sbM833U.append(this.topic);
+        sbM833U.append(", privacyLevel=");
+        sbM833U.append(this.privacyLevel);
+        sbM833U.append(", updaterId=");
+        sbM833U.append(this.updaterId);
+        sbM833U.append(", guildScheduledEventId=");
+        return C1643a.m819G(sbM833U, this.guildScheduledEventId, ")");
     }
 }

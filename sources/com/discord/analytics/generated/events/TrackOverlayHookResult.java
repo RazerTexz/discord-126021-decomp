@@ -1,16 +1,16 @@
 package com.discord.analytics.generated.events;
 
-import b.d.b.a.outline;
 import com.discord.analytics.generated.traits.TrackBase;
-import com.discord.analytics.generated.traits.TrackBase2;
+import com.discord.analytics.generated.traits.TrackBaseReceiver;
 import com.discord.analytics.generated.traits.TrackOverlay;
-import com.discord.analytics.generated.traits.TrackOverlay2;
+import com.discord.analytics.generated.traits.TrackOverlayReceiver;
 import com.discord.api.science.AnalyticsSchema;
-import d0.z.d.Intrinsics3;
+import p007b.p100d.p104b.p105a.C1643a;
+import p507d0.p592z.p594d.C12238m;
 
 /* JADX INFO: compiled from: TrackOverlayHookResult.kt */
 /* JADX INFO: loaded from: classes.dex */
-public final /* data */ class TrackOverlayHookResult implements AnalyticsSchema, TrackBase2, TrackOverlay2 {
+public final /* data */ class TrackOverlayHookResult implements AnalyticsSchema, TrackBaseReceiver, TrackOverlayReceiver {
     private TrackBase trackBase;
     private TrackOverlay trackOverlay;
     private final Boolean success = null;
@@ -24,7 +24,7 @@ public final /* data */ class TrackOverlayHookResult implements AnalyticsSchema,
 
     public boolean equals(Object other) {
         if (this != other) {
-            return (other instanceof TrackOverlayHookResult) && Intrinsics3.areEqual(this.success, ((TrackOverlayHookResult) other).success);
+            return (other instanceof TrackOverlayHookResult) && C12238m.areEqual(this.success, ((TrackOverlayHookResult) other).success);
         }
         return true;
     }
@@ -38,6 +38,6 @@ public final /* data */ class TrackOverlayHookResult implements AnalyticsSchema,
     }
 
     public String toString() {
-        return outline.D(outline.U("TrackOverlayHookResult(success="), this.success, ")");
+        return C1643a.m816D(C1643a.m833U("TrackOverlayHookResult(success="), this.success, ")");
     }
 }

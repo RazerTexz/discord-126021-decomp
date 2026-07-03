@@ -29,13 +29,13 @@ public class Placeholder extends View {
         super.setVisibility(this.mEmptyVisibility);
         this.mContentId = -1;
         if (attributeSet != null) {
-            TypedArray typedArrayObtainStyledAttributes = getContext().obtainStyledAttributes(attributeSet, R.styleable.ConstraintLayout_placeholder);
+            TypedArray typedArrayObtainStyledAttributes = getContext().obtainStyledAttributes(attributeSet, C0201R.styleable.ConstraintLayout_placeholder);
             int indexCount = typedArrayObtainStyledAttributes.getIndexCount();
             for (int i = 0; i < indexCount; i++) {
                 int index = typedArrayObtainStyledAttributes.getIndex(i);
-                if (index == R.styleable.ConstraintLayout_placeholder_content) {
+                if (index == C0201R.styleable.ConstraintLayout_placeholder_content) {
                     this.mContentId = typedArrayObtainStyledAttributes.getResourceId(index, this.mContentId);
-                } else if (index == R.styleable.ConstraintLayout_placeholder_placeholder_emptyVisibility) {
+                } else if (index == C0201R.styleable.ConstraintLayout_placeholder_placeholder_emptyVisibility) {
                     this.mEmptyVisibility = typedArrayObtainStyledAttributes.getInt(index, this.mEmptyVisibility);
                 }
             }

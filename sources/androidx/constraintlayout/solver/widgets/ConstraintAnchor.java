@@ -23,48 +23,50 @@ public class ConstraintAnchor {
     public int mMargin = 0;
     public int mGoneMargin = -1;
 
-    /* JADX INFO: renamed from: androidx.constraintlayout.solver.widgets.ConstraintAnchor$1, reason: invalid class name */
-    public static /* synthetic */ class AnonymousClass1 {
-        public static final /* synthetic */ int[] $SwitchMap$androidx$constraintlayout$solver$widgets$ConstraintAnchor$Type;
+    /* JADX INFO: renamed from: androidx.constraintlayout.solver.widgets.ConstraintAnchor$1 */
+    public static /* synthetic */ class C01891 {
+
+        /* JADX INFO: renamed from: $SwitchMap$androidx$constraintlayout$solver$widgets$ConstraintAnchor$Type */
+        public static final /* synthetic */ int[] f113x4c44d048;
 
         static {
             Type.values();
             int[] iArr = new int[9];
-            $SwitchMap$androidx$constraintlayout$solver$widgets$ConstraintAnchor$Type = iArr;
+            f113x4c44d048 = iArr;
             try {
                 iArr[Type.CENTER.ordinal()] = 1;
             } catch (NoSuchFieldError unused) {
             }
             try {
-                $SwitchMap$androidx$constraintlayout$solver$widgets$ConstraintAnchor$Type[Type.LEFT.ordinal()] = 2;
+                f113x4c44d048[Type.LEFT.ordinal()] = 2;
             } catch (NoSuchFieldError unused2) {
             }
             try {
-                $SwitchMap$androidx$constraintlayout$solver$widgets$ConstraintAnchor$Type[Type.RIGHT.ordinal()] = 3;
+                f113x4c44d048[Type.RIGHT.ordinal()] = 3;
             } catch (NoSuchFieldError unused3) {
             }
             try {
-                $SwitchMap$androidx$constraintlayout$solver$widgets$ConstraintAnchor$Type[Type.TOP.ordinal()] = 4;
+                f113x4c44d048[Type.TOP.ordinal()] = 4;
             } catch (NoSuchFieldError unused4) {
             }
             try {
-                $SwitchMap$androidx$constraintlayout$solver$widgets$ConstraintAnchor$Type[Type.BOTTOM.ordinal()] = 5;
+                f113x4c44d048[Type.BOTTOM.ordinal()] = 5;
             } catch (NoSuchFieldError unused5) {
             }
             try {
-                $SwitchMap$androidx$constraintlayout$solver$widgets$ConstraintAnchor$Type[Type.BASELINE.ordinal()] = 6;
+                f113x4c44d048[Type.BASELINE.ordinal()] = 6;
             } catch (NoSuchFieldError unused6) {
             }
             try {
-                $SwitchMap$androidx$constraintlayout$solver$widgets$ConstraintAnchor$Type[Type.CENTER_X.ordinal()] = 7;
+                f113x4c44d048[Type.CENTER_X.ordinal()] = 7;
             } catch (NoSuchFieldError unused7) {
             }
             try {
-                $SwitchMap$androidx$constraintlayout$solver$widgets$ConstraintAnchor$Type[Type.CENTER_Y.ordinal()] = 8;
+                f113x4c44d048[Type.CENTER_Y.ordinal()] = 8;
             } catch (NoSuchFieldError unused8) {
             }
             try {
-                $SwitchMap$androidx$constraintlayout$solver$widgets$ConstraintAnchor$Type[Type.NONE.ordinal()] = 9;
+                f113x4c44d048[Type.NONE.ordinal()] = 9;
             } catch (NoSuchFieldError unused9) {
             }
         }

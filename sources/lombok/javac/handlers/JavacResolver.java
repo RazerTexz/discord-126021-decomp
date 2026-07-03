@@ -49,7 +49,7 @@ public enum JavacResolver {
                     if (classNode == null || !noneOf(classNode.get(), JCTree.JCBlock.class, JCTree.JCMethodDecl.class, JCTree.JCVariableDecl.class)) {
                         break;
                     }
-                    javacNodeUp = classNode.up();
+                    javacNodeUp = classNode.m10925up();
                 }
                 if (classNode != null) {
                     type = CLASS.resolveMember(classNode, expr);

@@ -9,7 +9,7 @@ import androidx.core.view.AccessibilityDelegateCompat;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.accessibility.AccessibilityNodeInfoCompat;
 import com.discord.stores.StoreStream;
-import d0.z.d.Intrinsics3;
+import p507d0.p592z.p594d.C12238m;
 
 /* JADX INFO: compiled from: AccessibilityUtils.kt */
 /* JADX INFO: loaded from: classes2.dex */
@@ -24,19 +24,19 @@ public final class AccessibilityUtils {
     }
 
     public final void sendAnnouncement(Context context, @StringRes int message) {
-        Intrinsics3.checkNotNullParameter(context, "context");
+        C12238m.checkNotNullParameter(context, "context");
         String string = context.getString(message);
-        Intrinsics3.checkNotNullExpressionValue(string, "context.getString(message)");
+        C12238m.checkNotNullExpressionValue(string, "context.getString(message)");
         sendAnnouncement(context, string);
     }
 
     public final void setViewIsHeading(View view) {
-        Intrinsics3.checkNotNullParameter(view, "view");
+        C12238m.checkNotNullParameter(view, "view");
         ViewCompat.setAccessibilityDelegate(view, new AccessibilityDelegateCompat() { // from class: com.discord.utilities.accessibility.AccessibilityUtils.setViewIsHeading.1
             @Override // androidx.core.view.AccessibilityDelegateCompat
             public void onInitializeAccessibilityNodeInfo(View host, AccessibilityNodeInfoCompat info) {
-                Intrinsics3.checkNotNullParameter(host, "host");
-                Intrinsics3.checkNotNullParameter(info, "info");
+                C12238m.checkNotNullParameter(host, "host");
+                C12238m.checkNotNullParameter(info, "info");
                 super.onInitializeAccessibilityNodeInfo(host, info);
                 info.setHeading(true);
             }
@@ -44,8 +44,8 @@ public final class AccessibilityUtils {
     }
 
     public final void sendAnnouncement(Context context, String message) {
-        Intrinsics3.checkNotNullParameter(context, "context");
-        Intrinsics3.checkNotNullParameter(message, "message");
+        C12238m.checkNotNullParameter(context, "context");
+        C12238m.checkNotNullParameter(message, "message");
         Object systemService = context.getSystemService("accessibility");
         if (!(systemService instanceof AccessibilityManager)) {
             systemService = null;
@@ -53,7 +53,7 @@ public final class AccessibilityUtils {
         AccessibilityManager accessibilityManager = (AccessibilityManager) systemService;
         if (accessibilityManager != null) {
             AccessibilityEvent accessibilityEventObtain = AccessibilityEvent.obtain();
-            Intrinsics3.checkNotNullExpressionValue(accessibilityEventObtain, "event");
+            C12238m.checkNotNullExpressionValue(accessibilityEventObtain, "event");
             accessibilityEventObtain.setEventType(16384);
             accessibilityEventObtain.getText().add(message);
             try {

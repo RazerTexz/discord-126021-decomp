@@ -3,14 +3,6 @@ package com.discord.widgets.friends;
 import android.os.IBinder;
 import android.os.RemoteException;
 import androidx.fragment.app.FragmentActivity;
-import b.c.a.a0.AnimatableValueParser;
-import b.d.b.a.outline;
-import b.i.a.f.e.h.j.k;
-import b.i.a.f.j.b.a;
-import b.i.a.f.j.b.b;
-import b.i.a.f.j.b.c;
-import b.i.a.f.j.b.e.a0;
-import b.i.a.f.j.b.e.i;
 import com.discord.models.domain.ModelAuditLogEntry;
 import com.discord.utilities.analytics.AnalyticsTracker;
 import com.discord.widgets.friends.NearbyManager;
@@ -23,16 +15,27 @@ import com.google.android.gms.nearby.messages.PublishOptions;
 import com.google.android.gms.nearby.messages.Strategy;
 import com.google.android.gms.nearby.messages.SubscribeOptions;
 import com.google.android.gms.nearby.messages.internal.zzcb;
-import d0.g0.Charsets2;
-import d0.z.d.Intrinsics3;
 import java.lang.ref.WeakReference;
 import java.nio.charset.Charset;
 import java.util.HashSet;
 import java.util.Objects;
 import java.util.Set;
 import kotlin.jvm.internal.DefaultConstructorMarker;
-import rx.Observable;
-import rx.subjects.BehaviorSubject;
+import p007b.p085c.p086a.p087a0.C1460d;
+import p007b.p100d.p104b.p105a.C1643a;
+import p007b.p225i.p226a.p288f.p299e.p300h.p301j.C3301k;
+import p007b.p225i.p226a.p288f.p313h.p326m.BinderC3933j;
+import p007b.p225i.p226a.p288f.p313h.p326m.BinderC3936m;
+import p007b.p225i.p226a.p288f.p313h.p326m.C3938o;
+import p007b.p225i.p226a.p288f.p333j.p334b.C4264a;
+import p007b.p225i.p226a.p288f.p333j.p334b.C4265b;
+import p007b.p225i.p226a.p288f.p333j.p334b.C4266c;
+import p007b.p225i.p226a.p288f.p333j.p334b.p335e.C4286i;
+import p007b.p225i.p226a.p288f.p333j.p334b.p335e.InterfaceC4269a0;
+import p507d0.p579g0.C12086c;
+import p507d0.p592z.p594d.C12238m;
+import p658rx.Observable;
+import p658rx.subjects.BehaviorSubject;
 
 /* JADX INFO: compiled from: NearbyManager.kt */
 /* JADX INFO: loaded from: classes2.dex */
@@ -46,7 +49,7 @@ public final class NearbyManager {
     private Message outboundMessage;
     private SubscribeOptions subscribeOptions;
     private final HashSet<Long> nearbyUserIds = new HashSet<>();
-    private final BehaviorSubject<NearbyState> nearbyStateSubject = BehaviorSubject.l0(NearbyState.Uninitialized.INSTANCE);
+    private final BehaviorSubject<NearbyState> nearbyStateSubject = BehaviorSubject.m11130l0(NearbyState.Uninitialized.INSTANCE);
 
     /* JADX INFO: compiled from: NearbyManager.kt */
     public static abstract class NearbyState {
@@ -58,7 +61,7 @@ public final class NearbyManager {
             /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
             public Connected(Set<Long> set) {
                 super(null);
-                Intrinsics3.checkNotNullParameter(set, "nearbyUserIds");
+                C12238m.checkNotNullParameter(set, "nearbyUserIds");
                 this.nearbyUserIds = set;
             }
 
@@ -75,13 +78,13 @@ public final class NearbyManager {
             }
 
             public final Connected copy(Set<Long> nearbyUserIds) {
-                Intrinsics3.checkNotNullParameter(nearbyUserIds, "nearbyUserIds");
+                C12238m.checkNotNullParameter(nearbyUserIds, "nearbyUserIds");
                 return new Connected(nearbyUserIds);
             }
 
             public boolean equals(Object other) {
                 if (this != other) {
-                    return (other instanceof Connected) && Intrinsics3.areEqual(this.nearbyUserIds, ((Connected) other).nearbyUserIds);
+                    return (other instanceof Connected) && C12238m.areEqual(this.nearbyUserIds, ((Connected) other).nearbyUserIds);
                 }
                 return true;
             }
@@ -99,7 +102,7 @@ public final class NearbyManager {
             }
 
             public String toString() {
-                return outline.N(outline.U("Connected(nearbyUserIds="), this.nearbyUserIds, ")");
+                return C1643a.m826N(C1643a.m833U("Connected(nearbyUserIds="), this.nearbyUserIds, ")");
             }
         }
 
@@ -144,7 +147,7 @@ public final class NearbyManager {
             }
 
             public String toString() {
-                return outline.B(outline.U("Disconnected(code="), this.code, ")");
+                return C1643a.m814B(C1643a.m833U("Disconnected(code="), this.code, ")");
             }
         }
 
@@ -166,12 +169,12 @@ public final class NearbyManager {
     }
 
     private final void buildClient(FragmentActivity fragmentActivity) {
-        a aVar = new a(new a.C0042a(), null);
-        AnimatableValueParser.z(fragmentActivity, "Activity must not be null");
-        AnimatableValueParser.z(aVar, "Options must not be null");
-        i iVar = new i(fragmentActivity, aVar);
-        final k kVarM = iVar.m(new c() { // from class: com.discord.widgets.friends.NearbyManager$buildClient$$inlined$also$lambda$1
-            @Override // b.i.a.f.j.b.c
+        C4264a c4264a = new C4264a(new C4264a.a(), null);
+        C1460d.m595z(fragmentActivity, "Activity must not be null");
+        C1460d.m595z(c4264a, "Options must not be null");
+        C4286i c4286i = new C4286i(fragmentActivity, c4264a);
+        final C3301k c3301kM5990m = c4286i.m5990m(new C4266c() { // from class: com.discord.widgets.friends.NearbyManager$buildClient$$inlined$also$lambda$1
+            @Override // p007b.p225i.p226a.p288f.p333j.p334b.C4266c
             public void onPermissionChanged(boolean permissionGranted) {
                 super.onPermissionChanged(permissionGranted);
                 if (!permissionGranted) {
@@ -182,48 +185,54 @@ public final class NearbyManager {
                 }
             }
         });
-        iVar.k(kVarM, new a0(kVarM) { // from class: b.i.a.f.j.b.e.n
-            public final b.i.a.f.e.h.j.k a;
+        c4286i.m5988k(c3301kM5990m, new InterfaceC4269a0(c3301kM5990m) { // from class: b.i.a.f.j.b.e.n
+
+            /* JADX INFO: renamed from: a */
+            public final C3301k f11427a;
 
             {
-                this.a = kVarM;
+                this.f11427a = c3301kM5990m;
             }
 
-            @Override // b.i.a.f.j.b.e.a0
-            public final void a(f fVar, b.i.a.f.e.h.j.k kVar) throws RemoteException {
-                b.i.a.f.e.h.j.k kVar2 = this.a;
-                if (!fVar.A.a(kVar2.c)) {
-                    b.i.a.f.h.m.o<k.a, IBinder> oVar = fVar.A;
-                    oVar.a.put(kVar2.c, new WeakReference<>(new b.i.a.f.h.m.m(kVar2)));
+            @Override // p007b.p225i.p226a.p288f.p333j.p334b.p335e.InterfaceC4269a0
+            /* JADX INFO: renamed from: a */
+            public final void mo5981a(C4280f c4280f, C3301k c3301k) throws RemoteException {
+                C3301k c3301k2 = this.f11427a;
+                if (!c4280f.f11408A.m5407a(c3301k2.f9430c)) {
+                    C3938o<C3301k.a, IBinder> c3938o = c4280f.f11408A;
+                    c3938o.f10465a.put(c3301k2.f9430c, new WeakReference<>(new BinderC3936m(c3301k2)));
                 }
-                zzcb zzcbVar = new zzcb(1, new b.i.a.f.h.m.j(kVar), fVar.A.b(kVar2.c), false, null, null);
-                zzcbVar.m = true;
-                ((u0) fVar.w()).s(zzcbVar);
+                zzcb zzcbVar = new zzcb(1, new BinderC3933j(c3301k), c4280f.f11408A.m5408b(c3301k2.f9430c), false, null, null);
+                zzcbVar.f20793m = true;
+                ((InterfaceC4311u0) c4280f.m4142w()).mo5996s(zzcbVar);
             }
-        }, new a0(kVarM) { // from class: b.i.a.f.j.b.e.o
-            public final b.i.a.f.e.h.j.k a;
+        }, new InterfaceC4269a0(c3301kM5990m) { // from class: b.i.a.f.j.b.e.o
+
+            /* JADX INFO: renamed from: a */
+            public final C3301k f11428a;
 
             {
-                this.a = kVarM;
+                this.f11428a = c3301kM5990m;
             }
 
-            @Override // b.i.a.f.j.b.e.a0
-            public final void a(f fVar, b.i.a.f.e.h.j.k kVar) throws RemoteException {
-                b.i.a.f.e.h.j.k kVar2 = this.a;
-                Objects.requireNonNull(fVar);
-                b.i.a.f.h.m.j jVar = new b.i.a.f.h.m.j(kVar);
-                if (!fVar.A.a(kVar2.c)) {
-                    jVar.g(new Status(0, null));
+            @Override // p007b.p225i.p226a.p288f.p333j.p334b.p335e.InterfaceC4269a0
+            /* JADX INFO: renamed from: a */
+            public final void mo5981a(C4280f c4280f, C3301k c3301k) throws RemoteException {
+                C3301k c3301k2 = this.f11428a;
+                Objects.requireNonNull(c4280f);
+                BinderC3933j binderC3933j = new BinderC3933j(c3301k);
+                if (!c4280f.f11408A.m5407a(c3301k2.f9430c)) {
+                    binderC3933j.m5406g(new Status(0, null));
                     return;
                 }
-                zzcb zzcbVar = new zzcb(1, jVar, fVar.A.b(kVar2.c), false, null, null);
-                zzcbVar.m = false;
-                ((u0) fVar.w()).s(zzcbVar);
-                b.i.a.f.h.m.o<k.a, IBinder> oVar = fVar.A;
-                oVar.a.remove(kVar2.c);
+                zzcb zzcbVar = new zzcb(1, binderC3933j, c4280f.f11408A.m5408b(c3301k2.f9430c), false, null, null);
+                zzcbVar.f20793m = false;
+                ((InterfaceC4311u0) c4280f.m4142w()).mo5996s(zzcbVar);
+                C3938o<C3301k.a, IBinder> c3938o = c4280f.f11408A;
+                c3938o.f10465a.remove(c3301k2.f9430c);
             }
         });
-        this.messagesClient = iVar;
+        this.messagesClient = c4286i;
     }
 
     private final synchronized void foundUserId(long userId) {
@@ -240,13 +249,13 @@ public final class NearbyManager {
     }
 
     private final Long parseUserId(Message message) {
-        byte[] bArr = message.l;
-        Intrinsics3.checkNotNullExpressionValue(bArr, "message.content");
-        String str = new String(bArr, Charsets2.a);
+        byte[] bArr = message.f20713l;
+        C12238m.checkNotNullExpressionValue(bArr, "message.content");
+        String str = new String(bArr, C12086c.f25136a);
         if (str.charAt(0) == 'u') {
             try {
                 String strSubstring = str.substring(2);
-                Intrinsics3.checkNotNullExpressionValue(strSubstring, "(this as java.lang.String).substring(startIndex)");
+                C12238m.checkNotNullExpressionValue(strSubstring, "(this as java.lang.String).substring(startIndex)");
                 return Long.valueOf(Long.parseLong(strSubstring));
             } catch (Throwable unused) {
             }
@@ -255,19 +264,19 @@ public final class NearbyManager {
     }
 
     private final void setupBroadcaster(long userId) {
-        this.messagePublishOptions = new PublishOptions(Strategy.j, new b() { // from class: com.discord.widgets.friends.NearbyManager.setupBroadcaster.1
-            @Override // b.i.a.f.j.b.b
+        this.messagePublishOptions = new PublishOptions(Strategy.f20727j, new C4265b() { // from class: com.discord.widgets.friends.NearbyManager.setupBroadcaster.1
+            @Override // p007b.p225i.p226a.p288f.p333j.p334b.C4265b
             public void onExpired() {
                 super.onExpired();
                 NearbyManager.this.activateNearby();
             }
         }, null);
-        String strT = outline.t("u:", userId);
-        Charset charset = Charsets2.a;
-        Objects.requireNonNull(strT, "null cannot be cast to non-null type java.lang.String");
-        byte[] bytes = strT.getBytes(charset);
-        Intrinsics3.checkNotNullExpressionValue(bytes, "(this as java.lang.String).getBytes(charset)");
-        this.outboundMessage = new Message(2, bytes, "", "", Message.j, 0L);
+        String strM877t = C1643a.m877t("u:", userId);
+        Charset charset = C12086c.f25136a;
+        Objects.requireNonNull(strM877t, "null cannot be cast to non-null type java.lang.String");
+        byte[] bytes = strM877t.getBytes(charset);
+        C12238m.checkNotNullExpressionValue(bytes, "(this as java.lang.String).getBytes(charset)");
+        this.outboundMessage = new Message(2, bytes, "", "", Message.f20711j, 0L);
     }
 
     private final void setupListener() {
@@ -292,8 +301,8 @@ public final class NearbyManager {
                 NearbyManager.this.lostUserId(userId.longValue());
             }
         };
-        Strategy strategy = Strategy.j;
-        this.subscribeOptions = new SubscribeOptions(Strategy.k, MessageFilter.j, null);
+        Strategy strategy = Strategy.f20727j;
+        this.subscribeOptions = new SubscribeOptions(Strategy.f20728k, MessageFilter.f20718j, null);
     }
 
     public final void activateNearby() {
@@ -306,12 +315,12 @@ public final class NearbyManager {
             return;
         }
         this.nearbyStateSubject.onNext(new NearbyState.Connected(new HashSet(this.nearbyUserIds)));
-        messagesClient.f(message, publishOptions);
-        messagesClient.g(messageListener, subscribeOptions);
+        messagesClient.mo5984f(message, publishOptions);
+        messagesClient.mo5985g(messageListener, subscribeOptions);
     }
 
     public final void buildClientAndPublish(FragmentActivity fragmentActivity) {
-        Intrinsics3.checkNotNullParameter(fragmentActivity, "fragmentActivity");
+        C12238m.checkNotNullParameter(fragmentActivity, "fragmentActivity");
         if (this.messagesClient == null) {
             buildClient(fragmentActivity);
         }
@@ -325,15 +334,15 @@ public final class NearbyManager {
         if (messagesClient == null || (message = this.outboundMessage) == null || (messageListener = this.messageListener) == null) {
             return;
         }
-        messagesClient.h(message);
-        messagesClient.i(messageListener);
+        messagesClient.mo5986h(message);
+        messagesClient.mo5987i(messageListener);
         this.nearbyUserIds.clear();
         this.nearbyStateSubject.onNext(NearbyState.Uninitialized.INSTANCE);
     }
 
     public final Observable<NearbyState> getState() {
         BehaviorSubject<NearbyState> behaviorSubject = this.nearbyStateSubject;
-        Intrinsics3.checkNotNullExpressionValue(behaviorSubject, "nearbyStateSubject");
+        C12238m.checkNotNullExpressionValue(behaviorSubject, "nearbyStateSubject");
         return behaviorSubject;
     }
 

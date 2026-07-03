@@ -1,6 +1,5 @@
 package com.discord.widgets.chat.list.adapter;
 
-import a0.a.a.b;
 import android.content.Context;
 import android.content.res.Resources;
 import android.util.DisplayMetrics;
@@ -10,10 +9,7 @@ import android.widget.TextView;
 import androidx.constraintlayout.widget.Barrier;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.exifinterface.media.ExifInterface;
-import b.a.d.AppScreen2;
-import b.a.k.FormatUtils;
-import b.d.b.a.outline;
-import com.discord.R;
+import com.discord.C5419R;
 import com.discord.api.channel.Channel;
 import com.discord.api.channel.ChannelUtils;
 import com.discord.api.guild.GuildFeature;
@@ -31,17 +27,17 @@ import com.discord.stores.StoreInstantInvites;
 import com.discord.stores.StoreStream;
 import com.discord.stores.StoreUser;
 import com.discord.stores.updates.ObservationDeck;
-import com.discord.stores.updates.ObservationDeck4;
+import com.discord.stores.updates.ObservationDeckProvider;
 import com.discord.utilities.SnowflakeUtils;
 import com.discord.utilities.analytics.Traits;
 import com.discord.utilities.color.ColorCompat;
 import com.discord.utilities.drawable.DrawableCompat;
 import com.discord.utilities.error.Error;
 import com.discord.utilities.features.GrowthTeamFeatures;
-import com.discord.utilities.guilds.GuildUtils;
+import com.discord.utilities.guilds.GuildUtilsKt;
 import com.discord.utilities.icon.IconUtils;
 import com.discord.utilities.images.MGImages;
-import com.discord.utilities.rx.ObservableExtensionsKt;
+import com.discord.utilities.p501rx.ObservableExtensionsKt;
 import com.discord.utilities.view.extensions.ViewExtensions;
 import com.discord.utilities.view.rounded.RoundedRelativeLayout;
 import com.discord.utilities.view.text.LinkifiedTextView;
@@ -50,24 +46,28 @@ import com.discord.widgets.chat.list.adapter.WidgetChatListAdapterItemInvite;
 import com.discord.widgets.chat.list.entries.ChatListEntry;
 import com.discord.widgets.chat.list.entries.InviteEntry;
 import com.discord.widgets.guilds.invite.WidgetGuildInviteShare;
+import com.discord.widgets.hubs.HubEmailArgs;
 import com.discord.widgets.hubs.WidgetHubEmailFlow;
-import com.discord.widgets.hubs.WidgetHubEmailViewModel2;
 import com.facebook.drawee.view.SimpleDraweeView;
 import com.google.android.material.button.MaterialButton;
-import d0.z.d.FunctionReferenceImpl;
-import d0.z.d.Intrinsics3;
-import d0.z.d.Lambda;
-import j0.k.Func1;
-import j0.l.e.ScalarSynchronousObservable;
 import java.util.List;
 import kotlin.NoWhenBranchMatchedException;
 import kotlin.Unit;
 import kotlin.jvm.functions.Function0;
 import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.DefaultConstructorMarker;
-import rx.Observable;
-import rx.Subscription;
-import rx.functions.Func2;
+import p001a0.p002a.p003a.C0002b;
+import p007b.p008a.p018d.C0870j;
+import p007b.p008a.p027k.C1107b;
+import p007b.p100d.p104b.p105a.C1643a;
+import p507d0.p592z.p594d.AbstractC12240o;
+import p507d0.p592z.p594d.C12236k;
+import p507d0.p592z.p594d.C12238m;
+import p637j0.p641k.InterfaceC12589b;
+import p637j0.p642l.p647e.C12721k;
+import p658rx.Observable;
+import p658rx.Subscription;
+import p658rx.functions.Func2;
 
 /* JADX INFO: compiled from: WidgetChatListAdapterItemInvite.kt */
 /* JADX INFO: loaded from: classes2.dex */
@@ -133,7 +133,7 @@ public final class WidgetChatListAdapterItemInvite extends WidgetChatListAdapter
                     return false;
                 }
                 Invalid invalid = (Invalid) other;
-                return Intrinsics3.areEqual(this.authorUser, invalid.authorUser) && this.meId == invalid.meId && Intrinsics3.areEqual(this.channel, invalid.channel);
+                return C12238m.areEqual(this.authorUser, invalid.authorUser) && this.meId == invalid.meId && C12238m.areEqual(this.channel, invalid.channel);
             }
 
             public final User getAuthorUser() {
@@ -150,20 +150,20 @@ public final class WidgetChatListAdapterItemInvite extends WidgetChatListAdapter
 
             public int hashCode() {
                 User user = this.authorUser;
-                int iA = (b.a(this.meId) + ((user != null ? user.hashCode() : 0) * 31)) * 31;
+                int iM3a = (C0002b.m3a(this.meId) + ((user != null ? user.hashCode() : 0) * 31)) * 31;
                 Channel channel = this.channel;
-                return iA + (channel != null ? channel.hashCode() : 0);
+                return iM3a + (channel != null ? channel.hashCode() : 0);
             }
 
             public String toString() {
-                StringBuilder sbU = outline.U("Invalid(authorUser=");
-                sbU.append(this.authorUser);
-                sbU.append(", meId=");
-                sbU.append(this.meId);
-                sbU.append(", channel=");
-                sbU.append(this.channel);
-                sbU.append(")");
-                return sbU.toString();
+                StringBuilder sbM833U = C1643a.m833U("Invalid(authorUser=");
+                sbM833U.append(this.authorUser);
+                sbM833U.append(", meId=");
+                sbM833U.append(this.meId);
+                sbM833U.append(", channel=");
+                sbM833U.append(this.channel);
+                sbM833U.append(")");
+                return sbM833U.toString();
             }
         }
 
@@ -188,7 +188,7 @@ public final class WidgetChatListAdapterItemInvite extends WidgetChatListAdapter
             /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
             public Resolved(ModelInvite modelInvite, long j, User user, boolean z2, Channel channel, boolean z3) {
                 super(null);
-                Intrinsics3.checkNotNullParameter(modelInvite, "invite");
+                C12238m.checkNotNullParameter(modelInvite, "invite");
                 this.invite = modelInvite;
                 this.meId = j;
                 this.authorUser = user;
@@ -254,7 +254,7 @@ public final class WidgetChatListAdapterItemInvite extends WidgetChatListAdapter
             }
 
             public final Resolved copy(ModelInvite invite, long meId, User authorUser, boolean isMemberOfGuild, Channel channel, boolean shouldAnimateGuildIcon) {
-                Intrinsics3.checkNotNullParameter(invite, "invite");
+                C12238m.checkNotNullParameter(invite, "invite");
                 return new Resolved(invite, meId, authorUser, isMemberOfGuild, channel, shouldAnimateGuildIcon);
             }
 
@@ -266,7 +266,7 @@ public final class WidgetChatListAdapterItemInvite extends WidgetChatListAdapter
                     return false;
                 }
                 Resolved resolved = (Resolved) other;
-                return Intrinsics3.areEqual(this.invite, resolved.invite) && this.meId == resolved.meId && Intrinsics3.areEqual(this.authorUser, resolved.authorUser) && this.isMemberOfGuild == resolved.isMemberOfGuild && Intrinsics3.areEqual(this.channel, resolved.channel) && this.shouldAnimateGuildIcon == resolved.shouldAnimateGuildIcon;
+                return C12238m.areEqual(this.invite, resolved.invite) && this.meId == resolved.meId && C12238m.areEqual(this.authorUser, resolved.authorUser) && this.isMemberOfGuild == resolved.isMemberOfGuild && C12238m.areEqual(this.channel, resolved.channel) && this.shouldAnimateGuildIcon == resolved.shouldAnimateGuildIcon;
             }
 
             public final User getAuthorUser() {
@@ -300,9 +300,9 @@ public final class WidgetChatListAdapterItemInvite extends WidgetChatListAdapter
             /* JADX WARN: Type inference failed for: r3v2 */
             public int hashCode() {
                 ModelInvite modelInvite = this.invite;
-                int iA = (b.a(this.meId) + ((modelInvite != null ? modelInvite.hashCode() : 0) * 31)) * 31;
+                int iM3a = (C0002b.m3a(this.meId) + ((modelInvite != null ? modelInvite.hashCode() : 0) * 31)) * 31;
                 User user = this.authorUser;
-                int iHashCode = (iA + (user != null ? user.hashCode() : 0)) * 31;
+                int iHashCode = (iM3a + (user != null ? user.hashCode() : 0)) * 31;
                 boolean z2 = this.isMemberOfGuild;
                 ?? r0 = z2;
                 if (z2) {
@@ -320,18 +320,18 @@ public final class WidgetChatListAdapterItemInvite extends WidgetChatListAdapter
             }
 
             public String toString() {
-                StringBuilder sbU = outline.U("Resolved(invite=");
-                sbU.append(this.invite);
-                sbU.append(", meId=");
-                sbU.append(this.meId);
-                sbU.append(", authorUser=");
-                sbU.append(this.authorUser);
-                sbU.append(", isMemberOfGuild=");
-                sbU.append(this.isMemberOfGuild);
-                sbU.append(", channel=");
-                sbU.append(this.channel);
-                sbU.append(", shouldAnimateGuildIcon=");
-                return outline.O(sbU, this.shouldAnimateGuildIcon, ")");
+                StringBuilder sbM833U = C1643a.m833U("Resolved(invite=");
+                sbM833U.append(this.invite);
+                sbM833U.append(", meId=");
+                sbM833U.append(this.meId);
+                sbM833U.append(", authorUser=");
+                sbM833U.append(this.authorUser);
+                sbM833U.append(", isMemberOfGuild=");
+                sbM833U.append(this.isMemberOfGuild);
+                sbM833U.append(", channel=");
+                sbM833U.append(this.channel);
+                sbM833U.append(", shouldAnimateGuildIcon=");
+                return C1643a.m827O(sbM833U, this.shouldAnimateGuildIcon, ")");
             }
         }
 
@@ -352,15 +352,15 @@ public final class WidgetChatListAdapterItemInvite extends WidgetChatListAdapter
 
         private final Observable<Model> getInvalidInvite(InviteEntry item) {
             StoreStream.Companion companion = StoreStream.INSTANCE;
-            Observable<Model> observableJ = Observable.j(companion.getUsers().observeMeId(), companion.getUsers().observeUser(item.getUserId()), new Func2<Long, User, Model>() { // from class: com.discord.widgets.chat.list.adapter.WidgetChatListAdapterItemInvite$ModelProvider$getInvalidInvite$1
-                @Override // rx.functions.Func2
+            Observable<Model> observableM11076j = Observable.m11076j(companion.getUsers().observeMeId(), companion.getUsers().observeUser(item.getUserId()), new Func2<Long, User, Model>() { // from class: com.discord.widgets.chat.list.adapter.WidgetChatListAdapterItemInvite$ModelProvider$getInvalidInvite$1
+                @Override // p658rx.functions.Func2
                 public final WidgetChatListAdapterItemInvite.Model call(Long l, User user) {
-                    Intrinsics3.checkNotNullExpressionValue(l, "meId");
+                    C12238m.checkNotNullExpressionValue(l, "meId");
                     return new WidgetChatListAdapterItemInvite.Model.Invalid(user, l.longValue(), null);
                 }
             });
-            Intrinsics3.checkNotNullExpressionValue(observableJ, "Observable.combineLatest…authorUser, meId, null) }");
-            return observableJ;
+            C12238m.checkNotNullExpressionValue(observableM11076j, "Observable.combineLatest…authorUser, meId, null) }");
+            return observableM11076j;
         }
 
         private final Observable<Model> observeModel(InviteEntry item, ModelInvite invite) {
@@ -369,35 +369,35 @@ public final class WidgetChatListAdapterItemInvite extends WidgetChatListAdapter
             StoreGuilds guilds = companion.getGuilds();
             StoreChannels channels = companion.getChannels();
             StoreAccessibility accessibility = companion.getAccessibility();
-            return ObservationDeck.connectRx$default(ObservationDeck4.get(), new ObservationDeck.UpdateSource[]{users, guilds, channels, accessibility}, false, null, null, new WidgetChatListAdapterItemInvite4(users, item, invite, guilds, channels, accessibility), 14, null);
+            return ObservationDeck.connectRx$default(ObservationDeckProvider.get(), new ObservationDeck.UpdateSource[]{users, guilds, channels, accessibility}, false, null, null, new WidgetChatListAdapterItemInvite$ModelProvider$observeModel$1(users, item, invite, guilds, channels, accessibility), 14, null);
         }
 
         public final Observable<Model> get(final InviteEntry item) {
-            Intrinsics3.checkNotNullParameter(item, "item");
+            C12238m.checkNotNullParameter(item, "item");
             StoreInstantInvites instantInvites = StoreStream.INSTANCE.getInstantInvites();
             String inviteCode = item.getInviteCode();
             String eventId = item.getEventId();
-            Observable observableY = instantInvites.observeInvite(ModelInvite.getInviteStoreKey(inviteCode, eventId != null ? SnowflakeUtils.INSTANCE.toSnowflake(eventId) : null)).Y(new Func1<StoreInstantInvites.InviteState, Observable<? extends Model>>() { // from class: com.discord.widgets.chat.list.adapter.WidgetChatListAdapterItemInvite$ModelProvider$get$1
-                @Override // j0.k.Func1
+            Observable observableM11099Y = instantInvites.observeInvite(ModelInvite.getInviteStoreKey(inviteCode, eventId != null ? SnowflakeUtils.INSTANCE.toSnowflake(eventId) : null)).m11099Y(new InterfaceC12589b<StoreInstantInvites.InviteState, Observable<? extends Model>>() { // from class: com.discord.widgets.chat.list.adapter.WidgetChatListAdapterItemInvite$ModelProvider$get$1
+                @Override // p637j0.p641k.InterfaceC12589b
                 public final Observable<? extends WidgetChatListAdapterItemInvite.Model> call(StoreInstantInvites.InviteState inviteState) {
                     if ((inviteState instanceof StoreInstantInvites.InviteState.Loading) || (inviteState instanceof StoreInstantInvites.InviteState.LoadFailed)) {
-                        return new ScalarSynchronousObservable(WidgetChatListAdapterItemInvite.Model.Loading.INSTANCE);
+                        return new C12721k(WidgetChatListAdapterItemInvite.Model.Loading.INSTANCE);
                     }
                     return inviteState instanceof StoreInstantInvites.InviteState.Resolved ? WidgetChatListAdapterItemInvite.ModelProvider.INSTANCE.observeModel(item, ((StoreInstantInvites.InviteState.Resolved) inviteState).getInvite()) : WidgetChatListAdapterItemInvite.ModelProvider.INSTANCE.getInvalidInvite(item);
                 }
             });
-            Intrinsics3.checkNotNullExpressionValue(observableY, "StoreStream\n        .get…tes\n          }\n        }");
-            return observableY;
+            C12238m.checkNotNullExpressionValue(observableM11099Y, "StoreStream\n        .get…tes\n          }\n        }");
+            return observableM11099Y;
         }
     }
 
-    /* JADX INFO: renamed from: com.discord.widgets.chat.list.adapter.WidgetChatListAdapterItemInvite$configureResolvedUI$4, reason: invalid class name */
+    /* JADX INFO: renamed from: com.discord.widgets.chat.list.adapter.WidgetChatListAdapterItemInvite$configureResolvedUI$4 */
     /* JADX INFO: compiled from: WidgetChatListAdapterItemInvite.kt */
-    public static final class AnonymousClass4 extends Lambda implements Function1<RenderContext, Unit> {
+    public static final class C80924 extends AbstractC12240o implements Function1<RenderContext, Unit> {
 
         /* JADX INFO: renamed from: com.discord.widgets.chat.list.adapter.WidgetChatListAdapterItemInvite$configureResolvedUI$4$1, reason: invalid class name */
         /* JADX INFO: compiled from: WidgetChatListAdapterItemInvite.kt */
-        public static final class AnonymousClass1 extends Lambda implements Function1<View, Unit> {
+        public static final class AnonymousClass1 extends AbstractC12240o implements Function1<View, Unit> {
             public AnonymousClass1() {
                 super(1);
             }
@@ -405,152 +405,152 @@ public final class WidgetChatListAdapterItemInvite extends WidgetChatListAdapter
             @Override // kotlin.jvm.functions.Function1
             public /* bridge */ /* synthetic */ Unit invoke(View view) {
                 invoke2(view);
-                return Unit.a;
+                return Unit.f27425a;
             }
 
             /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
             public final void invoke2(View view) {
-                Intrinsics3.checkNotNullParameter(view, "it");
-                WidgetChatListAdapterItemInvite.this.launchHubsEmail(new WidgetHubEmailViewModel2(null, 0, null, 7, null));
+                C12238m.checkNotNullParameter(view, "it");
+                WidgetChatListAdapterItemInvite.this.launchHubsEmail(new HubEmailArgs(null, 0, null, 7, null));
             }
         }
 
-        public AnonymousClass4() {
+        public C80924() {
             super(1);
         }
 
         @Override // kotlin.jvm.functions.Function1
         public /* bridge */ /* synthetic */ Unit invoke(RenderContext renderContext) {
             invoke2(renderContext);
-            return Unit.a;
+            return Unit.f27425a;
         }
 
         /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
         public final void invoke2(RenderContext renderContext) {
-            Intrinsics3.checkNotNullParameter(renderContext, "$receiver");
-            renderContext.b("onClick", new AnonymousClass1());
+            C12238m.checkNotNullParameter(renderContext, "$receiver");
+            renderContext.m8423b("onClick", new AnonymousClass1());
         }
     }
 
-    /* JADX INFO: renamed from: com.discord.widgets.chat.list.adapter.WidgetChatListAdapterItemInvite$onConfigure$1, reason: invalid class name */
+    /* JADX INFO: renamed from: com.discord.widgets.chat.list.adapter.WidgetChatListAdapterItemInvite$onConfigure$1 */
     /* JADX INFO: compiled from: WidgetChatListAdapterItemInvite.kt */
-    public static final /* synthetic */ class AnonymousClass1 extends FunctionReferenceImpl implements Function1<Model, Unit> {
-        public AnonymousClass1(WidgetChatListAdapterItemInvite widgetChatListAdapterItemInvite) {
+    public static final /* synthetic */ class C80931 extends C12236k implements Function1<Model, Unit> {
+        public C80931(WidgetChatListAdapterItemInvite widgetChatListAdapterItemInvite) {
             super(1, widgetChatListAdapterItemInvite, WidgetChatListAdapterItemInvite.class, "configureUI", "configureUI(Lcom/discord/widgets/chat/list/adapter/WidgetChatListAdapterItemInvite$Model;)V", 0);
         }
 
         @Override // kotlin.jvm.functions.Function1
         public /* bridge */ /* synthetic */ Unit invoke(Model model) {
             invoke2(model);
-            return Unit.a;
+            return Unit.f27425a;
         }
 
         /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
         public final void invoke2(Model model) {
-            Intrinsics3.checkNotNullParameter(model, "p1");
+            C12238m.checkNotNullParameter(model, "p1");
             ((WidgetChatListAdapterItemInvite) this.receiver).configureUI(model);
         }
     }
 
-    /* JADX INFO: renamed from: com.discord.widgets.chat.list.adapter.WidgetChatListAdapterItemInvite$onConfigure$2, reason: invalid class name */
+    /* JADX INFO: renamed from: com.discord.widgets.chat.list.adapter.WidgetChatListAdapterItemInvite$onConfigure$2 */
     /* JADX INFO: compiled from: WidgetChatListAdapterItemInvite.kt */
-    public static final class AnonymousClass2 extends Lambda implements Function1<Error, Unit> {
-        public AnonymousClass2() {
+    public static final class C80942 extends AbstractC12240o implements Function1<Error, Unit> {
+        public C80942() {
             super(1);
         }
 
         @Override // kotlin.jvm.functions.Function1
         public /* bridge */ /* synthetic */ Unit invoke(Error error) {
             invoke2(error);
-            return Unit.a;
+            return Unit.f27425a;
         }
 
         /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
         public final void invoke2(Error error) {
-            Intrinsics3.checkNotNullParameter(error, "it");
+            C12238m.checkNotNullParameter(error, "it");
             WidgetChatListAdapterItemInvite.this.configureInvalidUI(null);
         }
     }
 
-    /* JADX INFO: renamed from: com.discord.widgets.chat.list.adapter.WidgetChatListAdapterItemInvite$onConfigure$3, reason: invalid class name */
+    /* JADX INFO: renamed from: com.discord.widgets.chat.list.adapter.WidgetChatListAdapterItemInvite$onConfigure$3 */
     /* JADX INFO: compiled from: WidgetChatListAdapterItemInvite.kt */
-    public static final class AnonymousClass3 extends Lambda implements Function1<Subscription, Unit> {
-        public AnonymousClass3() {
+    public static final class C80953 extends AbstractC12240o implements Function1<Subscription, Unit> {
+        public C80953() {
             super(1);
         }
 
         @Override // kotlin.jvm.functions.Function1
         public /* bridge */ /* synthetic */ Unit invoke(Subscription subscription) {
             invoke2(subscription);
-            return Unit.a;
+            return Unit.f27425a;
         }
 
         /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
         public final void invoke2(Subscription subscription) {
-            Intrinsics3.checkNotNullParameter(subscription, "it");
+            C12238m.checkNotNullParameter(subscription, "it");
             WidgetChatListAdapterItemInvite.this.subscription = subscription;
         }
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public WidgetChatListAdapterItemInvite(WidgetChatListAdapter widgetChatListAdapter) {
-        super(R.layout.widget_chat_list_adapter_item_invite, widgetChatListAdapter);
-        Intrinsics3.checkNotNullParameter(widgetChatListAdapter, "adapter");
+        super(C5419R.layout.widget_chat_list_adapter_item_invite, widgetChatListAdapter);
+        C12238m.checkNotNullParameter(widgetChatListAdapter, "adapter");
         View view = this.itemView;
-        int i = R.id.barrier_button;
-        Barrier barrier = (Barrier) view.findViewById(R.id.barrier_button);
+        int i = C5419R.id.barrier_button;
+        Barrier barrier = (Barrier) view.findViewById(C5419R.id.barrier_button);
         if (barrier != null) {
-            i = R.id.barrier_header;
-            Barrier barrier2 = (Barrier) view.findViewById(R.id.barrier_header);
+            i = C5419R.id.barrier_header;
+            Barrier barrier2 = (Barrier) view.findViewById(C5419R.id.barrier_header);
             if (barrier2 != null) {
-                i = R.id.item_invite_button_layout;
-                FrameLayout frameLayout = (FrameLayout) view.findViewById(R.id.item_invite_button_layout);
+                i = C5419R.id.item_invite_button_layout;
+                FrameLayout frameLayout = (FrameLayout) view.findViewById(C5419R.id.item_invite_button_layout);
                 if (frameLayout != null) {
-                    i = R.id.item_invite_channel_name;
-                    TextView textView = (TextView) view.findViewById(R.id.item_invite_channel_name);
+                    i = C5419R.id.item_invite_channel_name;
+                    TextView textView = (TextView) view.findViewById(C5419R.id.item_invite_channel_name);
                     if (textView != null) {
-                        i = R.id.item_invite_header;
-                        TextView textView2 = (TextView) view.findViewById(R.id.item_invite_header);
+                        i = C5419R.id.item_invite_header;
+                        TextView textView2 = (TextView) view.findViewById(C5419R.id.item_invite_header);
                         if (textView2 != null) {
-                            i = R.id.item_invite_hub_layout;
-                            FrameLayout frameLayout2 = (FrameLayout) view.findViewById(R.id.item_invite_hub_layout);
+                            i = C5419R.id.item_invite_hub_layout;
+                            FrameLayout frameLayout2 = (FrameLayout) view.findViewById(C5419R.id.item_invite_hub_layout);
                             if (frameLayout2 != null) {
-                                i = R.id.item_invite_hub_link;
-                                LinkifiedTextView linkifiedTextView = (LinkifiedTextView) view.findViewById(R.id.item_invite_hub_link);
+                                i = C5419R.id.item_invite_hub_link;
+                                LinkifiedTextView linkifiedTextView = (LinkifiedTextView) view.findViewById(C5419R.id.item_invite_hub_link);
                                 if (linkifiedTextView != null) {
-                                    i = R.id.item_invite_image;
-                                    SimpleDraweeView simpleDraweeView = (SimpleDraweeView) view.findViewById(R.id.item_invite_image);
+                                    i = C5419R.id.item_invite_image;
+                                    SimpleDraweeView simpleDraweeView = (SimpleDraweeView) view.findViewById(C5419R.id.item_invite_image);
                                     if (simpleDraweeView != null) {
-                                        i = R.id.item_invite_image_text;
-                                        TextView textView3 = (TextView) view.findViewById(R.id.item_invite_image_text);
+                                        i = C5419R.id.item_invite_image_text;
+                                        TextView textView3 = (TextView) view.findViewById(C5419R.id.item_invite_image_text);
                                         if (textView3 != null) {
-                                            i = R.id.item_invite_join_button;
-                                            MaterialButton materialButton = (MaterialButton) view.findViewById(R.id.item_invite_join_button);
+                                            i = C5419R.id.item_invite_join_button;
+                                            MaterialButton materialButton = (MaterialButton) view.findViewById(C5419R.id.item_invite_join_button);
                                             if (materialButton != null) {
-                                                i = R.id.item_invite_joined_button;
-                                                MaterialButton materialButton2 = (MaterialButton) view.findViewById(R.id.item_invite_joined_button);
+                                                i = C5419R.id.item_invite_joined_button;
+                                                MaterialButton materialButton2 = (MaterialButton) view.findViewById(C5419R.id.item_invite_joined_button);
                                                 if (materialButton2 != null) {
-                                                    i = R.id.item_invite_loading_button;
-                                                    View viewFindViewById = view.findViewById(R.id.item_invite_loading_button);
+                                                    i = C5419R.id.item_invite_loading_button;
+                                                    View viewFindViewById = view.findViewById(C5419R.id.item_invite_loading_button);
                                                     if (viewFindViewById != null) {
-                                                        i = R.id.item_invite_member_container;
-                                                        ServerMemberCount serverMemberCount = (ServerMemberCount) view.findViewById(R.id.item_invite_member_container);
+                                                        i = C5419R.id.item_invite_member_container;
+                                                        ServerMemberCount serverMemberCount = (ServerMemberCount) view.findViewById(C5419R.id.item_invite_member_container);
                                                         if (serverMemberCount != null) {
-                                                            i = R.id.item_invite_mention_button;
-                                                            MaterialButton materialButton3 = (MaterialButton) view.findViewById(R.id.item_invite_mention_button);
+                                                            i = C5419R.id.item_invite_mention_button;
+                                                            MaterialButton materialButton3 = (MaterialButton) view.findViewById(C5419R.id.item_invite_mention_button);
                                                             if (materialButton3 != null) {
-                                                                i = R.id.item_invite_name;
-                                                                TextView textView4 = (TextView) view.findViewById(R.id.item_invite_name);
+                                                                i = C5419R.id.item_invite_name;
+                                                                TextView textView4 = (TextView) view.findViewById(C5419R.id.item_invite_name);
                                                                 if (textView4 != null) {
-                                                                    i = R.id.item_invite_splash;
-                                                                    SimpleDraweeView simpleDraweeView2 = (SimpleDraweeView) view.findViewById(R.id.item_invite_splash);
+                                                                    i = C5419R.id.item_invite_splash;
+                                                                    SimpleDraweeView simpleDraweeView2 = (SimpleDraweeView) view.findViewById(C5419R.id.item_invite_splash);
                                                                     if (simpleDraweeView2 != null) {
-                                                                        i = R.id.item_invite_splash_container;
-                                                                        RoundedRelativeLayout roundedRelativeLayout = (RoundedRelativeLayout) view.findViewById(R.id.item_invite_splash_container);
+                                                                        i = C5419R.id.item_invite_splash_container;
+                                                                        RoundedRelativeLayout roundedRelativeLayout = (RoundedRelativeLayout) view.findViewById(C5419R.id.item_invite_splash_container);
                                                                         if (roundedRelativeLayout != null) {
                                                                             ConstraintLayout constraintLayout = (ConstraintLayout) view;
                                                                             WidgetChatListAdapterItemInviteBinding widgetChatListAdapterItemInviteBinding = new WidgetChatListAdapterItemInviteBinding(constraintLayout, barrier, barrier2, frameLayout, textView, textView2, frameLayout2, linkifiedTextView, simpleDraweeView, textView3, materialButton, materialButton2, viewFindViewById, serverMemberCount, materialButton3, textView4, simpleDraweeView2, roundedRelativeLayout, constraintLayout);
-                                                                            Intrinsics3.checkNotNullExpressionValue(widgetChatListAdapterItemInviteBinding, "WidgetChatListAdapterIte…iteBinding.bind(itemView)");
+                                                                            C12238m.checkNotNullExpressionValue(widgetChatListAdapterItemInviteBinding, "WidgetChatListAdapterIte…iteBinding.bind(itemView)");
                                                                             this.binding = widgetChatListAdapterItemInviteBinding;
                                                                             return;
                                                                         }
@@ -580,35 +580,35 @@ public final class WidgetChatListAdapterItemInvite extends WidgetChatListAdapter
     public static final /* synthetic */ InviteEntry access$getItem$p(WidgetChatListAdapterItemInvite widgetChatListAdapterItemInvite) {
         InviteEntry inviteEntry = widgetChatListAdapterItemInvite.item;
         if (inviteEntry == null) {
-            Intrinsics3.throwUninitializedPropertyAccessException("item");
+            C12238m.throwUninitializedPropertyAccessException("item");
         }
         return inviteEntry;
     }
 
     private final void configureForTextChannel(boolean isGroupDM, ModelInvite invite) {
-        ServerMemberCount serverMemberCount = this.binding.k;
-        Intrinsics3.checkNotNullExpressionValue(serverMemberCount, "binding.itemInviteMemberContainer");
+        ServerMemberCount serverMemberCount = this.binding.f16248k;
+        C12238m.checkNotNullExpressionValue(serverMemberCount, "binding.itemInviteMemberContainer");
         serverMemberCount.setVisibility(invite.getChannel() != null ? 0 : 8);
-        this.binding.k.setOnline(!isGroupDM ? Integer.valueOf(invite.getApproximatePresenceCount()) : null);
-        this.binding.k.setMembers(Integer.valueOf(invite.getApproximateMemberCount()));
+        this.binding.f16248k.setOnline(!isGroupDM ? Integer.valueOf(invite.getApproximatePresenceCount()) : null);
+        this.binding.f16248k.setMembers(Integer.valueOf(invite.getApproximateMemberCount()));
     }
 
     private final void configureForVocalChannel(Channel channel, Context context) {
         int themedDrawableRes$default;
-        ServerMemberCount serverMemberCount = this.binding.k;
-        Intrinsics3.checkNotNullExpressionValue(serverMemberCount, "binding.itemInviteMemberContainer");
+        ServerMemberCount serverMemberCount = this.binding.f16248k;
+        C12238m.checkNotNullExpressionValue(serverMemberCount, "binding.itemInviteMemberContainer");
         serverMemberCount.setVisibility(8);
-        TextView textView = this.binding.f2325b;
+        TextView textView = this.binding.f16239b;
         int type = channel.getType();
         if (type != 2) {
-            themedDrawableRes$default = type != 13 ? 0 : R.drawable.ic_channel_stage_24dp;
+            themedDrawableRes$default = type != 13 ? 0 : C5419R.drawable.ic_channel_stage_24dp;
         } else {
             View view = this.itemView;
-            Intrinsics3.checkNotNullExpressionValue(view, "itemView");
-            themedDrawableRes$default = DrawableCompat.getThemedDrawableRes$default(view, R.attr.ic_volume_up, 0, 2, (Object) null);
+            C12238m.checkNotNullExpressionValue(view, "itemView");
+            themedDrawableRes$default = DrawableCompat.getThemedDrawableRes$default(view, C5419R.attr.ic_volume_up, 0, 2, (Object) null);
         }
         DrawableCompat.setCompoundDrawablesCompat$default(textView, themedDrawableRes$default, 0, 0, 0, 14, (Object) null);
-        ViewExtensions.setTextAndVisibilityBy(textView, ChannelUtils.d(channel, context, false));
+        ViewExtensions.setTextAndVisibilityBy(textView, ChannelUtils.m7680d(channel, context, false));
     }
 
     /* JADX WARN: Code duplicated, block: B:22:0x00ab  */
@@ -620,32 +620,32 @@ public final class WidgetChatListAdapterItemInvite extends WidgetChatListAdapter
     /* JADX WARN: Code duplicated, block: B:29:0x00c6  */
     /* JADX WARN: Code duplicated, block: B:30:0x00d3  */
     private final void configureInvalidUI(final Model.Invalid model) {
-        CharSequence charSequenceB;
+        CharSequence charSequenceM210b;
         User authorUser;
         Channel channel;
         User authorUser2;
         View view = this.itemView;
-        Intrinsics3.checkNotNullExpressionValue(view, "itemView");
+        C12238m.checkNotNullExpressionValue(view, "itemView");
         final Context context = view.getContext();
         Long lValueOf = null;
-        final boolean zAreEqual = Intrinsics3.areEqual((model == null || (authorUser2 = model.getAuthorUser()) == null) ? null : Long.valueOf(authorUser2.getId()), model != null ? Long.valueOf(model.getMeId()) : null);
-        TextView textView = this.binding.c;
-        Intrinsics3.checkNotNullExpressionValue(textView, "binding.itemInviteHeader");
-        FormatUtils.m(textView, zAreEqual ? R.string.invite_button_title_inviter_invalid : R.string.invite_button_title_invited_invalid, new Object[0], (4 & 4) != 0 ? FormatUtils.g.j : null);
-        TextView textView2 = this.binding.m;
-        Intrinsics3.checkNotNullExpressionValue(textView2, "binding.itemInviteName");
-        FormatUtils.m(textView2, R.string.invite_button_invalid, new Object[0], (4 & 4) != 0 ? FormatUtils.g.j : null);
-        this.binding.m.setTextColor(ColorCompat.getColor(context, R.color.status_red_500));
-        this.binding.m.setBackgroundResource(0);
-        this.binding.f.setActualImageResource(R.drawable.img_wump_trash_dark);
-        TextView textView3 = this.binding.g;
-        Intrinsics3.checkNotNullExpressionValue(textView3, "binding.itemInviteImageText");
+        final boolean zAreEqual = C12238m.areEqual((model == null || (authorUser2 = model.getAuthorUser()) == null) ? null : Long.valueOf(authorUser2.getId()), model != null ? Long.valueOf(model.getMeId()) : null);
+        TextView textView = this.binding.f16240c;
+        C12238m.checkNotNullExpressionValue(textView, "binding.itemInviteHeader");
+        C1107b.m221m(textView, zAreEqual ? C5419R.string.invite_button_title_inviter_invalid : C5419R.string.invite_button_title_invited_invalid, new Object[0], (4 & 4) != 0 ? C1107b.g.f1495j : null);
+        TextView textView2 = this.binding.f16250m;
+        C12238m.checkNotNullExpressionValue(textView2, "binding.itemInviteName");
+        C1107b.m221m(textView2, C5419R.string.invite_button_invalid, new Object[0], (4 & 4) != 0 ? C1107b.g.f1495j : null);
+        this.binding.f16250m.setTextColor(ColorCompat.getColor(context, C5419R.color.status_red_500));
+        this.binding.f16250m.setBackgroundResource(0);
+        this.binding.f16243f.setActualImageResource(C5419R.drawable.img_wump_trash_dark);
+        TextView textView3 = this.binding.f16244g;
+        C12238m.checkNotNullExpressionValue(textView3, "binding.itemInviteImageText");
         textView3.setVisibility(8);
         boolean z2 = true;
         if (!zAreEqual) {
             if ((model != null ? model.getAuthorUser() : null) != null) {
-                Intrinsics3.checkNotNullExpressionValue(context, "context");
-                charSequenceB = FormatUtils.b(context, R.string.instant_invite_ask_user_for_new_invite, new Object[]{model.getAuthorUser().getUsername()}, (4 & 4) != 0 ? FormatUtils.b.j : null);
+                C12238m.checkNotNullExpressionValue(context, "context");
+                charSequenceM210b = C1107b.m210b(context, C5419R.string.instant_invite_ask_user_for_new_invite, new Object[]{model.getAuthorUser().getUsername()}, (4 & 4) != 0 ? C1107b.b.f1491j : null);
             } else if (zAreEqual) {
                 if (model != null) {
                     authorUser = model.getAuthorUser();
@@ -653,19 +653,19 @@ public final class WidgetChatListAdapterItemInvite extends WidgetChatListAdapter
                     authorUser = null;
                 }
                 if (authorUser == null) {
-                    Intrinsics3.checkNotNullExpressionValue(context, "context");
-                    charSequenceB = FormatUtils.b(context, R.string.instant_invite_ask_for_new_invite, new Object[0], (4 & 4) != 0 ? FormatUtils.b.j : null);
+                    C12238m.checkNotNullExpressionValue(context, "context");
+                    charSequenceM210b = C1107b.m210b(context, C5419R.string.instant_invite_ask_for_new_invite, new Object[0], (4 & 4) != 0 ? C1107b.b.f1491j : null);
                 } else if (zAreEqual) {
-                    Intrinsics3.checkNotNullExpressionValue(context, "context");
-                    charSequenceB = FormatUtils.b(context, R.string.invite_button_invalid_owner, new Object[0], (4 & 4) != 0 ? FormatUtils.b.j : null);
+                    C12238m.checkNotNullExpressionValue(context, "context");
+                    charSequenceM210b = C1107b.m210b(context, C5419R.string.invite_button_invalid_owner, new Object[0], (4 & 4) != 0 ? C1107b.b.f1491j : null);
                 } else {
-                    charSequenceB = null;
+                    charSequenceM210b = null;
                 }
             } else if (zAreEqual) {
-                Intrinsics3.checkNotNullExpressionValue(context, "context");
-                charSequenceB = FormatUtils.b(context, R.string.invite_button_invalid_owner, new Object[0], (4 & 4) != 0 ? FormatUtils.b.j : null);
+                C12238m.checkNotNullExpressionValue(context, "context");
+                charSequenceM210b = C1107b.m210b(context, C5419R.string.invite_button_invalid_owner, new Object[0], (4 & 4) != 0 ? C1107b.b.f1491j : null);
             } else {
-                charSequenceB = null;
+                charSequenceM210b = null;
             }
         } else if (zAreEqual) {
             if (model != null) {
@@ -674,32 +674,32 @@ public final class WidgetChatListAdapterItemInvite extends WidgetChatListAdapter
                 authorUser = null;
             }
             if (authorUser == null) {
-                Intrinsics3.checkNotNullExpressionValue(context, "context");
-                charSequenceB = FormatUtils.b(context, R.string.instant_invite_ask_for_new_invite, new Object[0], (4 & 4) != 0 ? FormatUtils.b.j : null);
+                C12238m.checkNotNullExpressionValue(context, "context");
+                charSequenceM210b = C1107b.m210b(context, C5419R.string.instant_invite_ask_for_new_invite, new Object[0], (4 & 4) != 0 ? C1107b.b.f1491j : null);
             } else if (zAreEqual) {
-                Intrinsics3.checkNotNullExpressionValue(context, "context");
-                charSequenceB = FormatUtils.b(context, R.string.invite_button_invalid_owner, new Object[0], (4 & 4) != 0 ? FormatUtils.b.j : null);
+                C12238m.checkNotNullExpressionValue(context, "context");
+                charSequenceM210b = C1107b.m210b(context, C5419R.string.invite_button_invalid_owner, new Object[0], (4 & 4) != 0 ? C1107b.b.f1491j : null);
             } else {
-                charSequenceB = null;
+                charSequenceM210b = null;
             }
         } else if (zAreEqual) {
-            Intrinsics3.checkNotNullExpressionValue(context, "context");
-            charSequenceB = FormatUtils.b(context, R.string.invite_button_invalid_owner, new Object[0], (4 & 4) != 0 ? FormatUtils.b.j : null);
+            C12238m.checkNotNullExpressionValue(context, "context");
+            charSequenceM210b = C1107b.m210b(context, C5419R.string.invite_button_invalid_owner, new Object[0], (4 & 4) != 0 ? C1107b.b.f1491j : null);
         } else {
-            charSequenceB = null;
+            charSequenceM210b = null;
         }
-        TextView textView4 = this.binding.f2325b;
-        Intrinsics3.checkNotNullExpressionValue(textView4, "binding.itemInviteChannelName");
+        TextView textView4 = this.binding.f16239b;
+        C12238m.checkNotNullExpressionValue(textView4, "binding.itemInviteChannelName");
         textView4.setVisibility(8);
-        ServerMemberCount serverMemberCount = this.binding.k;
-        Intrinsics3.checkNotNullExpressionValue(serverMemberCount, "binding.itemInviteMemberContainer");
+        ServerMemberCount serverMemberCount = this.binding.f16248k;
+        C12238m.checkNotNullExpressionValue(serverMemberCount, "binding.itemInviteMemberContainer");
         serverMemberCount.setVisibility(0);
-        this.binding.k.setInvalidText(charSequenceB);
-        MaterialButton materialButton = this.binding.l;
-        Intrinsics3.checkNotNullExpressionValue(materialButton, "binding.itemInviteMentionButton");
-        FormatUtils.m(materialButton, zAreEqual ? R.string.create_instant_invite : R.string.mention, new Object[0], (4 & 4) != 0 ? FormatUtils.g.j : null);
-        MaterialButton materialButton2 = this.binding.l;
-        Intrinsics3.checkNotNullExpressionValue(materialButton2, "binding.itemInviteMentionButton");
+        this.binding.f16248k.setInvalidText(charSequenceM210b);
+        MaterialButton materialButton = this.binding.f16249l;
+        C12238m.checkNotNullExpressionValue(materialButton, "binding.itemInviteMentionButton");
+        C1107b.m221m(materialButton, zAreEqual ? C5419R.string.create_instant_invite : C5419R.string.mention, new Object[0], (4 & 4) != 0 ? C1107b.g.f1495j : null);
+        MaterialButton materialButton2 = this.binding.f16249l;
+        C12238m.checkNotNullExpressionValue(materialButton2, "binding.itemInviteMentionButton");
         if (zAreEqual) {
             if (model != null && (channel = model.getChannel()) != null) {
                 lValueOf = Long.valueOf(channel.getGuildId());
@@ -709,7 +709,7 @@ public final class WidgetChatListAdapterItemInvite extends WidgetChatListAdapter
             }
         }
         materialButton2.setVisibility(z2 ? 0 : 8);
-        this.binding.l.setOnClickListener(new View.OnClickListener() { // from class: com.discord.widgets.chat.list.adapter.WidgetChatListAdapterItemInvite.configureInvalidUI.1
+        this.binding.f16249l.setOnClickListener(new View.OnClickListener() { // from class: com.discord.widgets.chat.list.adapter.WidgetChatListAdapterItemInvite.configureInvalidUI.1
             @Override // android.view.View.OnClickListener
             public final void onClick(View view2) {
                 Channel channel2;
@@ -726,52 +726,52 @@ public final class WidgetChatListAdapterItemInvite extends WidgetChatListAdapter
                 long guildId = channel2.getGuildId();
                 WidgetGuildInviteShare.Companion companion = WidgetGuildInviteShare.INSTANCE;
                 Context context2 = context;
-                Intrinsics3.checkNotNullExpressionValue(context2, "context");
+                C12238m.checkNotNullExpressionValue(context2, "context");
                 companion.launch(context2, WidgetChatListAdapterItemInvite.access$getAdapter$p(WidgetChatListAdapterItemInvite.this).getFragmentManager(), guildId, (16 & 8) != 0 ? null : Long.valueOf(model.getChannel().getId()), (16 & 16) != 0 ? false : false, (16 & 32) != 0 ? null : null, (16 & 64) != 0 ? null : null, "Invite Button Embed");
             }
         });
-        MaterialButton materialButton3 = this.binding.h;
-        Intrinsics3.checkNotNullExpressionValue(materialButton3, "binding.itemInviteJoinButton");
+        MaterialButton materialButton3 = this.binding.f16245h;
+        C12238m.checkNotNullExpressionValue(materialButton3, "binding.itemInviteJoinButton");
         materialButton3.setVisibility(8);
-        MaterialButton materialButton4 = this.binding.i;
-        Intrinsics3.checkNotNullExpressionValue(materialButton4, "binding.itemInviteJoinedButton");
+        MaterialButton materialButton4 = this.binding.f16246i;
+        C12238m.checkNotNullExpressionValue(materialButton4, "binding.itemInviteJoinedButton");
         materialButton4.setVisibility(8);
-        View view2 = this.binding.j;
-        Intrinsics3.checkNotNullExpressionValue(view2, "binding.itemInviteLoadingButton");
+        View view2 = this.binding.f16247j;
+        C12238m.checkNotNullExpressionValue(view2, "binding.itemInviteLoadingButton");
         view2.setVisibility(8);
     }
 
     private final void configureLoadingUI() {
         View view = this.itemView;
-        Intrinsics3.checkNotNullExpressionValue(view, "itemView");
+        C12238m.checkNotNullExpressionValue(view, "itemView");
         Context context = view.getContext();
-        this.binding.c.setText(R.string.instant_invite_resolving);
-        TextView textView = this.binding.m;
-        Intrinsics3.checkNotNullExpressionValue(textView, "binding.itemInviteName");
+        this.binding.f16240c.setText(C5419R.string.instant_invite_resolving);
+        TextView textView = this.binding.f16250m;
+        C12238m.checkNotNullExpressionValue(textView, "binding.itemInviteName");
         textView.setText((CharSequence) null);
-        this.binding.m.setTextColor(ColorCompat.getThemedColor(context, R.attr.primary_100));
-        this.binding.m.setBackgroundResource(R.drawable.drawable_empty_text_placeholder_dark);
-        this.binding.f.setImageResource(R.drawable.drawable_empty_text_placeholder_dark);
-        TextView textView2 = this.binding.g;
-        Intrinsics3.checkNotNullExpressionValue(textView2, "binding.itemInviteImageText");
+        this.binding.f16250m.setTextColor(ColorCompat.getThemedColor(context, C5419R.attr.primary_100));
+        this.binding.f16250m.setBackgroundResource(C5419R.drawable.drawable_empty_text_placeholder_dark);
+        this.binding.f16243f.setImageResource(C5419R.drawable.drawable_empty_text_placeholder_dark);
+        TextView textView2 = this.binding.f16244g;
+        C12238m.checkNotNullExpressionValue(textView2, "binding.itemInviteImageText");
         textView2.setVisibility(8);
-        TextView textView3 = this.binding.f2325b;
-        Intrinsics3.checkNotNullExpressionValue(textView3, "binding.itemInviteChannelName");
+        TextView textView3 = this.binding.f16239b;
+        C12238m.checkNotNullExpressionValue(textView3, "binding.itemInviteChannelName");
         textView3.setVisibility(8);
-        ServerMemberCount serverMemberCount = this.binding.k;
-        Intrinsics3.checkNotNullExpressionValue(serverMemberCount, "binding.itemInviteMemberContainer");
+        ServerMemberCount serverMemberCount = this.binding.f16248k;
+        C12238m.checkNotNullExpressionValue(serverMemberCount, "binding.itemInviteMemberContainer");
         serverMemberCount.setVisibility(8);
-        MaterialButton materialButton = this.binding.l;
-        Intrinsics3.checkNotNullExpressionValue(materialButton, "binding.itemInviteMentionButton");
+        MaterialButton materialButton = this.binding.f16249l;
+        C12238m.checkNotNullExpressionValue(materialButton, "binding.itemInviteMentionButton");
         materialButton.setVisibility(8);
-        MaterialButton materialButton2 = this.binding.h;
-        Intrinsics3.checkNotNullExpressionValue(materialButton2, "binding.itemInviteJoinButton");
+        MaterialButton materialButton2 = this.binding.f16245h;
+        C12238m.checkNotNullExpressionValue(materialButton2, "binding.itemInviteJoinButton");
         materialButton2.setVisibility(8);
-        MaterialButton materialButton3 = this.binding.i;
-        Intrinsics3.checkNotNullExpressionValue(materialButton3, "binding.itemInviteJoinedButton");
+        MaterialButton materialButton3 = this.binding.f16246i;
+        C12238m.checkNotNullExpressionValue(materialButton3, "binding.itemInviteJoinedButton");
         materialButton3.setVisibility(8);
-        View view2 = this.binding.j;
-        Intrinsics3.checkNotNullExpressionValue(view2, "binding.itemInviteLoadingButton");
+        View view2 = this.binding.f16247j;
+        C12238m.checkNotNullExpressionValue(view2, "binding.itemInviteLoadingButton");
         view2.setVisibility(0);
     }
 
@@ -781,82 +781,82 @@ public final class WidgetChatListAdapterItemInvite extends WidgetChatListAdapter
     /* JADX WARN: Code duplicated, block: B:91:0x01a5  */
     private final void configureResolvedUI(Model.Resolved model) {
         Guild guild;
-        CharSequence charSequenceB;
+        CharSequence charSequenceM210b;
         String name;
         boolean z2;
         com.discord.api.guild.Guild guild2;
         String name2;
         String icon;
         Channel channel;
-        List<GuildFeature> listM;
+        List<GuildFeature> listM7866m;
         final ModelInvite invite = model.getInvite();
         long meId = model.getMeId();
         User authorUser = model.getAuthorUser();
         boolean isMemberOfGuild = model.getIsMemberOfGuild();
         Channel channel2 = model.getChannel();
         View view = this.itemView;
-        Intrinsics3.checkNotNullExpressionValue(view, "itemView");
+        C12238m.checkNotNullExpressionValue(view, "itemView");
         Context context = view.getContext();
         boolean z3 = authorUser != null && authorUser.getId() == meId;
         com.discord.api.guild.Guild guild3 = invite.guild;
         boolean z4 = (guild3 != null ? guild3.getMemberCount() : 0) < 200;
         Channel channel3 = invite.getChannel();
-        boolean z5 = channel3 != null ? ChannelUtils.z(channel3) : false;
+        boolean zM7702z = channel3 != null ? ChannelUtils.m7702z(channel3) : false;
         com.discord.api.guild.Guild guild4 = invite.guild;
-        boolean z6 = (guild4 == null || (listM = guild4.m()) == null || !listM.contains(GuildFeature.HUB)) ? false : true;
-        boolean z7 = invite.getChannel() == null && invite.guild == null && invite.getInviter() != null;
+        boolean z5 = (guild4 == null || (listM7866m = guild4.m7866m()) == null || !listM7866m.contains(GuildFeature.HUB)) ? false : true;
+        boolean z6 = invite.getChannel() == null && invite.guild == null && invite.getInviter() != null;
         com.discord.api.guild.Guild guild5 = invite.guild;
         if (guild5 != null) {
-            Intrinsics3.checkNotNullExpressionValue(guild5, "it");
+            C12238m.checkNotNullExpressionValue(guild5, "it");
             guild = new Guild(guild5);
         } else {
             guild = null;
         }
-        SimpleDraweeView simpleDraweeView = this.binding.n;
-        Intrinsics3.checkNotNullExpressionValue(simpleDraweeView, "binding.itemInviteSplash");
+        SimpleDraweeView simpleDraweeView = this.binding.f16251n;
+        C12238m.checkNotNullExpressionValue(simpleDraweeView, "binding.itemInviteSplash");
         IconUtils iconUtils = IconUtils.INSTANCE;
         View view2 = this.itemView;
-        Intrinsics3.checkNotNullExpressionValue(view2, "itemView");
+        C12238m.checkNotNullExpressionValue(view2, "itemView");
         Resources resources = view2.getResources();
-        Intrinsics3.checkNotNullExpressionValue(resources, "itemView.resources");
+        C12238m.checkNotNullExpressionValue(resources, "itemView.resources");
         DisplayMetrics displayMetrics = resources.getDisplayMetrics();
         IconUtils.setIcon$default(simpleDraweeView, iconUtils.getGuildSplashUrl(guild, displayMetrics != null ? Integer.valueOf(displayMetrics.widthPixels) : null), 0, (Function1) null, (MGImages.ChangeDetector) null, 28, (Object) null);
-        RoundedRelativeLayout roundedRelativeLayout = this.binding.o;
-        Intrinsics3.checkNotNullExpressionValue(roundedRelativeLayout, "binding.itemInviteSplashContainer");
+        RoundedRelativeLayout roundedRelativeLayout = this.binding.f16252o;
+        C12238m.checkNotNullExpressionValue(roundedRelativeLayout, "binding.itemInviteSplashContainer");
         roundedRelativeLayout.setVisibility((guild != null ? guild.getSplash() : null) != null ? 0 : 8);
-        TextView textView = this.binding.c;
-        Intrinsics3.checkNotNullExpressionValue(textView, "binding.itemInviteHeader");
-        if (z5 && z3) {
-            Intrinsics3.checkNotNullExpressionValue(context, "context");
-            charSequenceB = FormatUtils.b(context, R.string.invite_button_title_inviter_group_dm, new Object[0], (4 & 4) != 0 ? FormatUtils.b.j : null);
+        TextView textView = this.binding.f16240c;
+        C12238m.checkNotNullExpressionValue(textView, "binding.itemInviteHeader");
+        if (zM7702z && z3) {
+            C12238m.checkNotNullExpressionValue(context, "context");
+            charSequenceM210b = C1107b.m210b(context, C5419R.string.invite_button_title_inviter_group_dm, new Object[0], (4 & 4) != 0 ? C1107b.b.f1491j : null);
         } else if (z3) {
-            Intrinsics3.checkNotNullExpressionValue(context, "context");
-            charSequenceB = FormatUtils.b(context, R.string.invite_button_title_inviter, new Object[0], (4 & 4) != 0 ? FormatUtils.b.j : null);
-        } else if (z5 && !z3) {
-            Intrinsics3.checkNotNullExpressionValue(context, "context");
-            charSequenceB = FormatUtils.b(context, R.string.invite_button_title_invited_group_dm, new Object[0], (4 & 4) != 0 ? FormatUtils.b.j : null);
+            C12238m.checkNotNullExpressionValue(context, "context");
+            charSequenceM210b = C1107b.m210b(context, C5419R.string.invite_button_title_inviter, new Object[0], (4 & 4) != 0 ? C1107b.b.f1491j : null);
+        } else if (zM7702z && !z3) {
+            C12238m.checkNotNullExpressionValue(context, "context");
+            charSequenceM210b = C1107b.m210b(context, C5419R.string.invite_button_title_invited_group_dm, new Object[0], (4 & 4) != 0 ? C1107b.b.f1491j : null);
+        } else if (z5) {
+            charSequenceM210b = context.getString(C5419R.string.invite_button_title_invited_hub);
         } else if (z6) {
-            charSequenceB = context.getString(R.string.invite_button_title_invited_hub);
-        } else if (z7) {
-            Intrinsics3.checkNotNullExpressionValue(context, "context");
+            C12238m.checkNotNullExpressionValue(context, "context");
             Object[] objArr = new Object[1];
             com.discord.api.user.User inviter = invite.getInviter();
             objArr[0] = inviter != null ? inviter.getUsername() : null;
-            charSequenceB = FormatUtils.b(context, R.string.instant_invite_you_have_been_invited_to_chat, objArr, (4 & 4) != 0 ? FormatUtils.b.j : null);
+            charSequenceM210b = C1107b.m210b(context, C5419R.string.instant_invite_you_have_been_invited_to_chat, objArr, (4 & 4) != 0 ? C1107b.b.f1491j : null);
         } else if (!z4 || invite.getInviter() == null) {
-            Intrinsics3.checkNotNullExpressionValue(context, "context");
-            charSequenceB = FormatUtils.b(context, R.string.invite_button_title_invited, new Object[0], (4 & 4) != 0 ? FormatUtils.b.j : null);
+            C12238m.checkNotNullExpressionValue(context, "context");
+            charSequenceM210b = C1107b.m210b(context, C5419R.string.invite_button_title_invited, new Object[0], (4 & 4) != 0 ? C1107b.b.f1491j : null);
         } else {
-            Intrinsics3.checkNotNullExpressionValue(context, "context");
+            C12238m.checkNotNullExpressionValue(context, "context");
             Object[] objArr2 = new Object[1];
             com.discord.api.user.User inviter2 = invite.getInviter();
             objArr2[0] = inviter2 != null ? inviter2.getUsername() : null;
-            charSequenceB = FormatUtils.b(context, R.string.instant_invite_you_have_been_invited_to_join_by_user, objArr2, (4 & 4) != 0 ? FormatUtils.b.j : null);
+            charSequenceM210b = C1107b.m210b(context, C5419R.string.instant_invite_you_have_been_invited_to_join_by_user, objArr2, (4 & 4) != 0 ? C1107b.b.f1491j : null);
         }
-        textView.setText(charSequenceB);
-        TextView textView2 = this.binding.m;
-        Intrinsics3.checkNotNullExpressionValue(textView2, "binding.itemInviteName");
-        if (!z5) {
+        textView.setText(charSequenceM210b);
+        TextView textView2 = this.binding.f16250m;
+        C12238m.checkNotNullExpressionValue(textView2, "binding.itemInviteName");
+        if (!zM7702z) {
             com.discord.api.guild.Guild guild6 = invite.guild;
             if (guild6 != null) {
                 name = guild6.getName();
@@ -864,13 +864,13 @@ public final class WidgetChatListAdapterItemInvite extends WidgetChatListAdapter
                 name = null;
             }
         } else if (channel2 != null) {
-            Intrinsics3.checkNotNullExpressionValue(context, "context");
-            name = ChannelUtils.e(channel2, context, false, 2);
+            C12238m.checkNotNullExpressionValue(context, "context");
+            name = ChannelUtils.m7681e(channel2, context, false, 2);
             if (name == null) {
                 channel = invite.getChannel();
                 if (channel != null) {
-                    Intrinsics3.checkNotNullExpressionValue(context, "context");
-                    name = ChannelUtils.e(channel, context, false, 2);
+                    C12238m.checkNotNullExpressionValue(context, "context");
+                    name = ChannelUtils.m7681e(channel, context, false, 2);
                 } else {
                     name = null;
                 }
@@ -878,23 +878,23 @@ public final class WidgetChatListAdapterItemInvite extends WidgetChatListAdapter
         } else {
             channel = invite.getChannel();
             if (channel != null) {
-                Intrinsics3.checkNotNullExpressionValue(context, "context");
-                name = ChannelUtils.e(channel, context, false, 2);
+                C12238m.checkNotNullExpressionValue(context, "context");
+                name = ChannelUtils.m7681e(channel, context, false, 2);
             } else {
                 name = null;
             }
         }
         textView2.setText(name);
-        this.binding.m.setTextColor(ColorCompat.getThemedColor(context, R.attr.primary_100));
-        this.binding.m.setBackgroundResource(0);
-        if (z7) {
-            SimpleDraweeView simpleDraweeView2 = this.binding.f;
-            Intrinsics3.checkNotNullExpressionValue(simpleDraweeView2, "binding.itemInviteImage");
+        this.binding.f16250m.setTextColor(ColorCompat.getThemedColor(context, C5419R.attr.primary_100));
+        this.binding.f16250m.setBackgroundResource(0);
+        if (z6) {
+            SimpleDraweeView simpleDraweeView2 = this.binding.f16243f;
+            C12238m.checkNotNullExpressionValue(simpleDraweeView2, "binding.itemInviteImage");
             simpleDraweeView2.setVisibility(8);
-        } else if (z5) {
+        } else if (zM7702z) {
             updateIconUrlIfChanged(IconUtils.getForChannel$default(invite.getChannel(), null, 2, null));
-            TextView textView3 = this.binding.g;
-            Intrinsics3.checkNotNullExpressionValue(textView3, "binding.itemInviteImageText");
+            TextView textView3 = this.binding.f16244g;
+            C12238m.checkNotNullExpressionValue(textView3, "binding.itemInviteImageText");
             textView3.setVisibility(8);
         } else {
             String strComputeShortName = null;
@@ -912,57 +912,57 @@ public final class WidgetChatListAdapterItemInvite extends WidgetChatListAdapter
                     z2 = false;
                 }
             }
-            TextView textView4 = this.binding.g;
-            Intrinsics3.checkNotNullExpressionValue(textView4, "binding.itemInviteImageText");
+            TextView textView4 = this.binding.f16244g;
+            C12238m.checkNotNullExpressionValue(textView4, "binding.itemInviteImageText");
             if (!z2 && (guild2 = invite.guild) != null && (name2 = guild2.getName()) != null) {
-                strComputeShortName = GuildUtils.computeShortName(name2);
+                strComputeShortName = GuildUtilsKt.computeShortName(name2);
             }
             ViewExtensions.setTextAndVisibilityBy(textView4, strComputeShortName);
         }
-        if (channel2 == null || !ChannelUtils.w(channel2)) {
-            configureForTextChannel(z5, invite);
+        if (channel2 == null || !ChannelUtils.m7699w(channel2)) {
+            configureForTextChannel(zM7702z, invite);
         } else {
-            Intrinsics3.checkNotNullExpressionValue(context, "context");
+            C12238m.checkNotNullExpressionValue(context, "context");
             configureForVocalChannel(channel2, context);
         }
-        if (z5) {
+        if (zM7702z) {
             isMemberOfGuild = channel2 != null;
         }
-        boolean z8 = z6 && GrowthTeamFeatures.INSTANCE.isHubEmailConnectionEnabled();
-        View view3 = this.binding.j;
-        Intrinsics3.checkNotNullExpressionValue(view3, "binding.itemInviteLoadingButton");
+        boolean z7 = z5 && GrowthTeamFeatures.INSTANCE.isHubEmailConnectionEnabled();
+        View view3 = this.binding.f16247j;
+        C12238m.checkNotNullExpressionValue(view3, "binding.itemInviteLoadingButton");
         view3.setVisibility(8);
-        MaterialButton materialButton = this.binding.i;
-        Intrinsics3.checkNotNullExpressionValue(materialButton, "binding.itemInviteJoinedButton");
+        MaterialButton materialButton = this.binding.f16246i;
+        C12238m.checkNotNullExpressionValue(materialButton, "binding.itemInviteJoinedButton");
         materialButton.setVisibility(isMemberOfGuild ? 0 : 8);
-        MaterialButton materialButton2 = this.binding.h;
-        Intrinsics3.checkNotNullExpressionValue(materialButton2, "binding.itemInviteJoinButton");
+        MaterialButton materialButton2 = this.binding.f16245h;
+        C12238m.checkNotNullExpressionValue(materialButton2, "binding.itemInviteJoinButton");
         materialButton2.setVisibility(true ^ isMemberOfGuild ? 0 : 8);
-        MaterialButton materialButton3 = this.binding.l;
-        Intrinsics3.checkNotNullExpressionValue(materialButton3, "binding.itemInviteMentionButton");
+        MaterialButton materialButton3 = this.binding.f16249l;
+        C12238m.checkNotNullExpressionValue(materialButton3, "binding.itemInviteMentionButton");
         materialButton3.setVisibility(8);
-        this.binding.h.setOnClickListener(new View.OnClickListener() { // from class: com.discord.widgets.chat.list.adapter.WidgetChatListAdapterItemInvite.configureResolvedUI.2
+        this.binding.f16245h.setOnClickListener(new View.OnClickListener() { // from class: com.discord.widgets.chat.list.adapter.WidgetChatListAdapterItemInvite.configureResolvedUI.2
             @Override // android.view.View.OnClickListener
             public final void onClick(View view4) {
                 WidgetChatListAdapterItemInvite widgetChatListAdapterItemInvite = WidgetChatListAdapterItemInvite.this;
                 WidgetChatListAdapterItemInviteBase.joinServerOrDM$default(widgetChatListAdapterItemInvite, widgetChatListAdapterItemInvite.getClass(), invite, null, null, 12, null);
             }
         });
-        this.binding.i.setOnClickListener(new View.OnClickListener() { // from class: com.discord.widgets.chat.list.adapter.WidgetChatListAdapterItemInvite.configureResolvedUI.3
+        this.binding.f16246i.setOnClickListener(new View.OnClickListener() { // from class: com.discord.widgets.chat.list.adapter.WidgetChatListAdapterItemInvite.configureResolvedUI.3
             @Override // android.view.View.OnClickListener
             public final void onClick(View view4) {
                 WidgetChatListAdapterItemInvite widgetChatListAdapterItemInvite = WidgetChatListAdapterItemInvite.this;
                 WidgetChatListAdapterItemInviteBase.joinServerOrDM$default(widgetChatListAdapterItemInvite, widgetChatListAdapterItemInvite.getClass(), invite, null, null, 12, null);
             }
         });
-        FrameLayout frameLayout = this.binding.d;
-        Intrinsics3.checkNotNullExpressionValue(frameLayout, "binding.itemInviteHubLayout");
-        frameLayout.setVisibility(z8 ? 0 : 8);
-        if (z8) {
-            LinkifiedTextView linkifiedTextView = this.binding.e;
-            Intrinsics3.checkNotNullExpressionValue(linkifiedTextView, "binding.itemInviteHubLink");
-            Intrinsics3.checkNotNullExpressionValue(context, "context");
-            linkifiedTextView.setText(FormatUtils.b(context, R.string.hub_invite_another_school_link, new Object[0], new AnonymousClass4()));
+        FrameLayout frameLayout = this.binding.f16241d;
+        C12238m.checkNotNullExpressionValue(frameLayout, "binding.itemInviteHubLayout");
+        frameLayout.setVisibility(z7 ? 0 : 8);
+        if (z7) {
+            LinkifiedTextView linkifiedTextView = this.binding.f16242e;
+            C12238m.checkNotNullExpressionValue(linkifiedTextView, "binding.itemInviteHubLink");
+            C12238m.checkNotNullExpressionValue(context, "context");
+            linkifiedTextView.setText(C1107b.m210b(context, C5419R.string.hub_invite_another_school_link, new Object[0], new C80924()));
         }
     }
 
@@ -979,19 +979,19 @@ public final class WidgetChatListAdapterItemInvite extends WidgetChatListAdapter
         }
     }
 
-    private final void launchHubsEmail(WidgetHubEmailViewModel2 args) {
+    private final void launchHubsEmail(HubEmailArgs args) {
         View view = this.itemView;
-        Intrinsics3.checkNotNullExpressionValue(view, "itemView");
+        C12238m.checkNotNullExpressionValue(view, "itemView");
         Context context = view.getContext();
-        Intrinsics3.checkNotNullExpressionValue(context, "itemView.context");
-        AppScreen2.d(context, WidgetHubEmailFlow.class, args);
+        C12238m.checkNotNullExpressionValue(context, "itemView.context");
+        C0870j.m156d(context, WidgetHubEmailFlow.class, args);
     }
 
     private final void updateIconUrlIfChanged(String iconUrl) {
-        if (!Intrinsics3.areEqual(this.iconUrl, iconUrl)) {
-            SimpleDraweeView simpleDraweeView = this.binding.f;
-            Intrinsics3.checkNotNullExpressionValue(simpleDraweeView, "binding.itemInviteImage");
-            IconUtils.setIcon$default(simpleDraweeView, iconUrl, R.dimen.avatar_size_large, (Function1) null, (MGImages.ChangeDetector) null, 24, (Object) null);
+        if (!C12238m.areEqual(this.iconUrl, iconUrl)) {
+            SimpleDraweeView simpleDraweeView = this.binding.f16243f;
+            C12238m.checkNotNullExpressionValue(simpleDraweeView, "binding.itemInviteImage");
+            IconUtils.setIcon$default(simpleDraweeView, iconUrl, C5419R.dimen.avatar_size_large, (Function1) null, (MGImages.ChangeDetector) null, 24, (Object) null);
             this.iconUrl = iconUrl;
         }
     }
@@ -1004,26 +1004,26 @@ public final class WidgetChatListAdapterItemInvite extends WidgetChatListAdapter
     /* JADX WARN: Can't rename method to resolve collision */
     @Override // com.discord.widgets.chat.list.adapter.WidgetChatListItem, com.discord.utilities.mg_recycler.MGRecyclerViewHolder
     public void onConfigure(int position, ChatListEntry data) {
-        Intrinsics3.checkNotNullParameter(data, "data");
+        C12238m.checkNotNullParameter(data, "data");
         super.onConfigure(position, data);
         this.item = (InviteEntry) data;
         StoreInstantInvites instantInvites = StoreStream.INSTANCE.getInstantInvites();
         InviteEntry inviteEntry = this.item;
         if (inviteEntry == null) {
-            Intrinsics3.throwUninitializedPropertyAccessException("item");
+            C12238m.throwUninitializedPropertyAccessException("item");
         }
         String inviteCode = inviteEntry.getInviteCode();
         InviteEntry inviteEntry2 = this.item;
         if (inviteEntry2 == null) {
-            Intrinsics3.throwUninitializedPropertyAccessException("item");
+            C12238m.throwUninitializedPropertyAccessException("item");
         }
         String eventId = inviteEntry2.getEventId();
         instantInvites.fetchInviteIfNotLoaded(inviteCode, (24 & 2) != 0 ? null : eventId != null ? SnowflakeUtils.INSTANCE.toSnowflake(eventId) : null, (24 & 4) != 0 ? null : "Invite Button Embed", (24 & 8) != 0 ? null : null, (24 & 16) != 0 ? null : null);
         ModelProvider modelProvider = ModelProvider.INSTANCE;
         InviteEntry inviteEntry3 = this.item;
         if (inviteEntry3 == null) {
-            Intrinsics3.throwUninitializedPropertyAccessException("item");
+            C12238m.throwUninitializedPropertyAccessException("item");
         }
-        ObservableExtensionsKt.appSubscribe(ObservableExtensionsKt.ui(modelProvider.get(inviteEntry3)), (Class<?>) WidgetChatListAdapterItemInvite.class, (58 & 2) != 0 ? null : null, (Function1<? super Subscription, Unit>) ((58 & 4) != 0 ? null : new AnonymousClass3()), (Function1<? super Error, Unit>) ((58 & 8) != 0 ? null : new AnonymousClass2()), (Function0<Unit>) ((58 & 16) != 0 ? ObservableExtensionsKt.AnonymousClass1.INSTANCE : null), (Function0<Unit>) ((58 & 32) != 0 ? ObservableExtensionsKt.AnonymousClass2.INSTANCE : null), new AnonymousClass1(this));
+        ObservableExtensionsKt.appSubscribe(ObservableExtensionsKt.m8518ui(modelProvider.get(inviteEntry3)), (Class<?>) WidgetChatListAdapterItemInvite.class, (58 & 2) != 0 ? null : null, (Function1<? super Subscription, Unit>) ((58 & 4) != 0 ? null : new C80953()), (Function1<? super Error, Unit>) ((58 & 8) != 0 ? null : new C80942()), (Function0<Unit>) ((58 & 16) != 0 ? ObservableExtensionsKt.C68791.INSTANCE : null), (Function0<Unit>) ((58 & 32) != 0 ? ObservableExtensionsKt.C68802.INSTANCE : null), new C80931(this));
     }
 }

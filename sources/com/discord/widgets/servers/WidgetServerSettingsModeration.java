@@ -6,17 +6,13 @@ import android.view.View;
 import android.widget.TextView;
 import androidx.exifinterface.media.ExifInterface;
 import androidx.fragment.app.Fragment;
-import b.a.d.AppScreen2;
-import b.a.d.AppToast;
-import b.a.k.FormatUtils;
-import b.d.b.a.outline;
-import com.discord.R;
+import com.discord.C5419R;
 import com.discord.api.guild.GuildExplicitContentFilter;
 import com.discord.api.guild.GuildFeature;
 import com.discord.api.guild.GuildVerificationLevel;
 import com.discord.app.AppActivity;
 import com.discord.app.AppFragment;
-import com.discord.app.AppLogger2;
+import com.discord.app.LoggingConfig;
 import com.discord.databinding.WidgetServerSettingsModerationBinding;
 import com.discord.models.guild.Guild;
 import com.discord.models.user.MeUser;
@@ -24,19 +20,14 @@ import com.discord.restapi.RestAPIParams;
 import com.discord.stores.StoreStream;
 import com.discord.stores.StoreUser;
 import com.discord.utilities.error.Error;
+import com.discord.utilities.p501rx.ObservableExtensionsKt;
 import com.discord.utilities.permissions.PermissionUtils;
 import com.discord.utilities.rest.RestAPI;
-import com.discord.utilities.rx.ObservableExtensionsKt;
 import com.discord.utilities.viewbinding.FragmentViewBindingDelegate;
-import com.discord.utilities.viewbinding.FragmentViewBindingDelegate3;
+import com.discord.utilities.viewbinding.FragmentViewBindingDelegateKt;
 import com.discord.views.CheckedSetting;
 import com.discord.views.RadioManager;
 import com.discord.widgets.servers.WidgetServerSettingsModeration;
-import d0.LazyJVM;
-import d0.t.Collections2;
-import d0.z.d.FunctionReferenceImpl;
-import d0.z.d.Intrinsics3;
-import d0.z.d.Lambda;
 import java.util.List;
 import kotlin.Lazy;
 import kotlin.Unit;
@@ -44,14 +35,23 @@ import kotlin.jvm.functions.Function0;
 import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.reflect.KProperty;
-import rx.Observable;
-import rx.Subscription;
-import rx.functions.Func3;
+import p007b.p008a.p018d.C0870j;
+import p007b.p008a.p018d.C0876m;
+import p007b.p008a.p027k.C1107b;
+import p007b.p100d.p104b.p105a.C1643a;
+import p507d0.C12083g;
+import p507d0.p580t.C12147n;
+import p507d0.p592z.p594d.AbstractC12240o;
+import p507d0.p592z.p594d.C12236k;
+import p507d0.p592z.p594d.C12238m;
+import p658rx.Observable;
+import p658rx.Subscription;
+import p658rx.functions.Func3;
 
 /* JADX INFO: compiled from: WidgetServerSettingsModeration.kt */
 /* JADX INFO: loaded from: classes2.dex */
 public final class WidgetServerSettingsModeration extends AppFragment {
-    public static final /* synthetic */ KProperty[] $$delegatedProperties = {outline.d0(WidgetServerSettingsModeration.class, "binding", "getBinding()Lcom/discord/databinding/WidgetServerSettingsModerationBinding;", 0)};
+    public static final /* synthetic */ KProperty[] $$delegatedProperties = {C1643a.m846d0(WidgetServerSettingsModeration.class, "binding", "getBinding()Lcom/discord/databinding/WidgetServerSettingsModerationBinding;", 0)};
 
     /* JADX INFO: renamed from: Companion, reason: from kotlin metadata */
     public static final Companion INSTANCE = new Companion(null);
@@ -64,7 +64,7 @@ public final class WidgetServerSettingsModeration extends AppFragment {
 
     /* JADX INFO: renamed from: guildId$delegate, reason: from kotlin metadata */
     private final Lazy guildId;
-    private final AppLogger2 loggingConfig;
+    private final LoggingConfig loggingConfig;
     private RadioManager radioManagerExplicit;
     private RadioManager radioManagerVerification;
 
@@ -74,11 +74,11 @@ public final class WidgetServerSettingsModeration extends AppFragment {
         }
 
         public final void launch(Context context, long guildId) {
-            Intrinsics3.checkNotNullParameter(context, "context");
+            C12238m.checkNotNullParameter(context, "context");
             StoreStream.INSTANCE.getAnalytics().onGuildSettingsPaneViewed("MODERATION", guildId);
             Intent intentPutExtra = new Intent().putExtra("INTENT_EXTRA_GUILD_ID", guildId);
-            Intrinsics3.checkNotNullExpressionValue(intentPutExtra, "Intent().putExtra(INTENT_EXTRA_GUILD_ID, guildId)");
-            AppScreen2.d(context, WidgetServerSettingsModeration.class, intentPutExtra);
+            C12238m.checkNotNullExpressionValue(intentPutExtra, "Intent().putExtra(INTENT_EXTRA_GUILD_ID, guildId)");
+            C0870j.m156d(context, WidgetServerSettingsModeration.class, intentPutExtra);
         }
 
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
@@ -100,10 +100,10 @@ public final class WidgetServerSettingsModeration extends AppFragment {
 
             public final Observable<Model> get(long guildId) {
                 StoreStream.Companion companion = StoreStream.INSTANCE;
-                Observable observableI = Observable.i(companion.getGuilds().observeGuild(guildId), StoreUser.observeMe$default(companion.getUsers(), false, 1, null), companion.getPermissions().observePermissionsForGuild(guildId), new Func3<Guild, MeUser, Long, Model>() { // from class: com.discord.widgets.servers.WidgetServerSettingsModeration$Model$Companion$get$1
-                    @Override // rx.functions.Func3
+                Observable observableM11075i = Observable.m11075i(companion.getGuilds().observeGuild(guildId), StoreUser.observeMe$default(companion.getUsers(), false, 1, null), companion.getPermissions().observePermissionsForGuild(guildId), new Func3<Guild, MeUser, Long, Model>() { // from class: com.discord.widgets.servers.WidgetServerSettingsModeration$Model$Companion$get$1
+                    @Override // p658rx.functions.Func3
                     public final WidgetServerSettingsModeration.Model call(Guild guild, MeUser meUser, Long l) {
-                        Intrinsics3.checkNotNullParameter(meUser, "me");
+                        C12238m.checkNotNullParameter(meUser, "me");
                         if (guild == null) {
                             return null;
                         }
@@ -113,10 +113,10 @@ public final class WidgetServerSettingsModeration extends AppFragment {
                         return null;
                     }
                 });
-                Intrinsics3.checkNotNullExpressionValue(observableI, "Observable\n             …        }\n              }");
-                Observable<Model> observableR = ObservableExtensionsKt.computationLatest(observableI).r();
-                Intrinsics3.checkNotNullExpressionValue(observableR, "Observable\n             …  .distinctUntilChanged()");
-                return observableR;
+                C12238m.checkNotNullExpressionValue(observableM11075i, "Observable\n             …        }\n              }");
+                Observable<Model> observableM11112r = ObservableExtensionsKt.computationLatest(observableM11075i).m11112r();
+                C12238m.checkNotNullExpressionValue(observableM11112r, "Observable\n             …  .distinctUntilChanged()");
+                return observableM11112r;
             }
 
             public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
@@ -125,7 +125,7 @@ public final class WidgetServerSettingsModeration extends AppFragment {
         }
 
         public Model(Guild guild) {
-            Intrinsics3.checkNotNullParameter(guild, "guild");
+            C12238m.checkNotNullParameter(guild, "guild");
             this.guild = guild;
         }
 
@@ -142,13 +142,13 @@ public final class WidgetServerSettingsModeration extends AppFragment {
         }
 
         public final Model copy(Guild guild) {
-            Intrinsics3.checkNotNullParameter(guild, "guild");
+            C12238m.checkNotNullParameter(guild, "guild");
             return new Model(guild);
         }
 
         public boolean equals(Object other) {
             if (this != other) {
-                return (other instanceof Model) && Intrinsics3.areEqual(this.guild, ((Model) other).guild);
+                return (other instanceof Model) && C12238m.areEqual(this.guild, ((Model) other).guild);
             }
             return true;
         }
@@ -166,24 +166,24 @@ public final class WidgetServerSettingsModeration extends AppFragment {
         }
 
         public String toString() {
-            StringBuilder sbU = outline.U("Model(guild=");
-            sbU.append(this.guild);
-            sbU.append(")");
-            return sbU.toString();
+            StringBuilder sbM833U = C1643a.m833U("Model(guild=");
+            sbM833U.append(this.guild);
+            sbM833U.append(")");
+            return sbM833U.toString();
         }
     }
 
-    /* JADX INFO: renamed from: com.discord.widgets.servers.WidgetServerSettingsModeration$onViewBoundOrOnResume$1, reason: invalid class name */
+    /* JADX INFO: renamed from: com.discord.widgets.servers.WidgetServerSettingsModeration$onViewBoundOrOnResume$1 */
     /* JADX INFO: compiled from: WidgetServerSettingsModeration.kt */
-    public static final /* synthetic */ class AnonymousClass1 extends FunctionReferenceImpl implements Function1<Model, Unit> {
-        public AnonymousClass1(WidgetServerSettingsModeration widgetServerSettingsModeration) {
+    public static final /* synthetic */ class C92711 extends C12236k implements Function1<Model, Unit> {
+        public C92711(WidgetServerSettingsModeration widgetServerSettingsModeration) {
             super(1, widgetServerSettingsModeration, WidgetServerSettingsModeration.class, "configureUI", "configureUI(Lcom/discord/widgets/servers/WidgetServerSettingsModeration$Model;)V", 0);
         }
 
         @Override // kotlin.jvm.functions.Function1
         public /* bridge */ /* synthetic */ Unit invoke(Model model) {
             invoke2(model);
-            return Unit.a;
+            return Unit.f27425a;
         }
 
         /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
@@ -192,49 +192,49 @@ public final class WidgetServerSettingsModeration extends AppFragment {
         }
     }
 
-    /* JADX INFO: renamed from: com.discord.widgets.servers.WidgetServerSettingsModeration$updateGuild$1, reason: invalid class name */
+    /* JADX INFO: renamed from: com.discord.widgets.servers.WidgetServerSettingsModeration$updateGuild$1 */
     /* JADX INFO: compiled from: WidgetServerSettingsModeration.kt */
-    public static final class AnonymousClass1 extends Lambda implements Function1<com.discord.api.guild.Guild, Unit> {
-        public AnonymousClass1() {
+    public static final class C92721 extends AbstractC12240o implements Function1<com.discord.api.guild.Guild, Unit> {
+        public C92721() {
             super(1);
         }
 
         @Override // kotlin.jvm.functions.Function1
         public /* bridge */ /* synthetic */ Unit invoke(com.discord.api.guild.Guild guild) {
             invoke2(guild);
-            return Unit.a;
+            return Unit.f27425a;
         }
 
         /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
         public final void invoke2(com.discord.api.guild.Guild guild) {
-            Intrinsics3.checkNotNullParameter(guild, "it");
-            AppToast.i(WidgetServerSettingsModeration.this, R.string.server_settings_updated, 0, 4);
+            C12238m.checkNotNullParameter(guild, "it");
+            C0876m.m171i(WidgetServerSettingsModeration.this, C5419R.string.server_settings_updated, 0, 4);
         }
     }
 
     public WidgetServerSettingsModeration() {
-        super(R.layout.widget_server_settings_moderation);
-        this.binding = FragmentViewBindingDelegate3.viewBinding$default(this, WidgetServerSettingsModeration3.INSTANCE, null, 2, null);
-        this.guildId = LazyJVM.lazy(new WidgetServerSettingsModeration4(this));
-        this.loggingConfig = new AppLogger2(false, null, WidgetServerSettingsModeration5.INSTANCE, 3);
+        super(C5419R.layout.widget_server_settings_moderation);
+        this.binding = FragmentViewBindingDelegateKt.viewBinding$default(this, WidgetServerSettingsModeration$binding$2.INSTANCE, null, 2, null);
+        this.guildId = C12083g.lazy(new WidgetServerSettingsModeration$guildId$2(this));
+        this.loggingConfig = new LoggingConfig(false, null, WidgetServerSettingsModeration$loggingConfig$1.INSTANCE, 3);
     }
 
     private final void configureExplicitContentRadio(final Model model, CheckedSetting radio, final GuildExplicitContentFilter explicitContentLevel) {
         RadioManager radioManager;
         if (!model.getGuild().getFeatures().contains(GuildFeature.COMMUNITY) || explicitContentLevel.compareTo(GuildExplicitContentFilter.ALL) >= 0) {
-            radio.e(new View.OnClickListener() { // from class: com.discord.widgets.servers.WidgetServerSettingsModeration.configureExplicitContentRadio.1
+            radio.m8527e(new View.OnClickListener() { // from class: com.discord.widgets.servers.WidgetServerSettingsModeration.configureExplicitContentRadio.1
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
                     WidgetServerSettingsModeration.this.updateGuild(model.getGuild().getId(), RestAPIParams.UpdateGuild.INSTANCE.createForExplicitContentFilter(explicitContentLevel));
                 }
             });
         } else {
-            radio.b(R.string.tooltip_community_feature_disabled);
+            radio.m8525b(C5419R.string.tooltip_community_feature_disabled);
         }
         if (this.radioManagerExplicit == null || model.getGuild().getExplicitContentFilter() != explicitContentLevel || (radioManager = this.radioManagerExplicit) == null) {
             return;
         }
-        radioManager.a(radio);
+        radioManager.m8550a(radio);
     }
 
     private final void configureUI(Model model) {
@@ -260,9 +260,9 @@ public final class WidgetServerSettingsModeration extends AppFragment {
     private final void configureVerificationLevelRadio(final Model model, CheckedSetting radio, final GuildVerificationLevel verificationLevel) {
         RadioManager radioManager;
         if (model.getGuild().getFeatures().contains(GuildFeature.COMMUNITY) && verificationLevel == GuildVerificationLevel.NONE) {
-            radio.b(R.string.tooltip_community_feature_disabled);
+            radio.m8525b(C5419R.string.tooltip_community_feature_disabled);
         } else {
-            radio.e(new View.OnClickListener() { // from class: com.discord.widgets.servers.WidgetServerSettingsModeration.configureVerificationLevelRadio.1
+            radio.m8527e(new View.OnClickListener() { // from class: com.discord.widgets.servers.WidgetServerSettingsModeration.configureVerificationLevelRadio.1
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
                     WidgetServerSettingsModeration.this.updateGuild(model.getGuild().getId(), RestAPIParams.UpdateGuild.INSTANCE.createForVerificationLevel(verificationLevel));
@@ -272,7 +272,7 @@ public final class WidgetServerSettingsModeration extends AppFragment {
         if (this.radioManagerVerification == null || model.getGuild().getVerificationLevel() != verificationLevel || (radioManager = this.radioManagerVerification) == null) {
             return;
         }
-        radioManager.a(radio);
+        radioManager.m8550a(radio);
     }
 
     private final WidgetServerSettingsModerationBinding getBinding() {
@@ -280,13 +280,13 @@ public final class WidgetServerSettingsModeration extends AppFragment {
     }
 
     private final List<CheckedSetting> getExplicitContentViews() {
-        CheckedSetting checkedSetting = getBinding().f2580b;
-        Intrinsics3.checkNotNullExpressionValue(checkedSetting, "binding.serverSettingsModerationExplicit1");
-        CheckedSetting checkedSetting2 = getBinding().c;
-        Intrinsics3.checkNotNullExpressionValue(checkedSetting2, "binding.serverSettingsModerationExplicit2");
-        CheckedSetting checkedSetting3 = getBinding().d;
-        Intrinsics3.checkNotNullExpressionValue(checkedSetting3, "binding.serverSettingsModerationExplicit3");
-        return Collections2.listOf((Object[]) new CheckedSetting[]{checkedSetting, checkedSetting2, checkedSetting3});
+        CheckedSetting checkedSetting = getBinding().f17714b;
+        C12238m.checkNotNullExpressionValue(checkedSetting, "binding.serverSettingsModerationExplicit1");
+        CheckedSetting checkedSetting2 = getBinding().f17715c;
+        C12238m.checkNotNullExpressionValue(checkedSetting2, "binding.serverSettingsModerationExplicit2");
+        CheckedSetting checkedSetting3 = getBinding().f17716d;
+        C12238m.checkNotNullExpressionValue(checkedSetting3, "binding.serverSettingsModerationExplicit3");
+        return C12147n.listOf((Object[]) new CheckedSetting[]{checkedSetting, checkedSetting2, checkedSetting3});
     }
 
     private final long getGuildId() {
@@ -294,49 +294,49 @@ public final class WidgetServerSettingsModeration extends AppFragment {
     }
 
     private final List<CheckedSetting> getVerificationViews() {
-        CheckedSetting checkedSetting = getBinding().f;
-        Intrinsics3.checkNotNullExpressionValue(checkedSetting, "binding.serverSettingsModerationVerification1");
-        CheckedSetting checkedSetting2 = getBinding().g;
-        Intrinsics3.checkNotNullExpressionValue(checkedSetting2, "binding.serverSettingsModerationVerification2");
-        CheckedSetting checkedSetting3 = getBinding().h;
-        Intrinsics3.checkNotNullExpressionValue(checkedSetting3, "binding.serverSettingsModerationVerification3");
-        CheckedSetting checkedSetting4 = getBinding().i;
-        Intrinsics3.checkNotNullExpressionValue(checkedSetting4, "binding.serverSettingsModerationVerification4");
-        CheckedSetting checkedSetting5 = getBinding().j;
-        Intrinsics3.checkNotNullExpressionValue(checkedSetting5, "binding.serverSettingsModerationVerification5");
-        return Collections2.listOf((Object[]) new CheckedSetting[]{checkedSetting, checkedSetting2, checkedSetting3, checkedSetting4, checkedSetting5});
+        CheckedSetting checkedSetting = getBinding().f17718f;
+        C12238m.checkNotNullExpressionValue(checkedSetting, "binding.serverSettingsModerationVerification1");
+        CheckedSetting checkedSetting2 = getBinding().f17719g;
+        C12238m.checkNotNullExpressionValue(checkedSetting2, "binding.serverSettingsModerationVerification2");
+        CheckedSetting checkedSetting3 = getBinding().f17720h;
+        C12238m.checkNotNullExpressionValue(checkedSetting3, "binding.serverSettingsModerationVerification3");
+        CheckedSetting checkedSetting4 = getBinding().f17721i;
+        C12238m.checkNotNullExpressionValue(checkedSetting4, "binding.serverSettingsModerationVerification4");
+        CheckedSetting checkedSetting5 = getBinding().f17722j;
+        C12238m.checkNotNullExpressionValue(checkedSetting5, "binding.serverSettingsModerationVerification5");
+        return C12147n.listOf((Object[]) new CheckedSetting[]{checkedSetting, checkedSetting2, checkedSetting3, checkedSetting4, checkedSetting5});
     }
 
     private final void updateGuild(long guildId, RestAPIParams.UpdateGuild updateGuild) {
-        ObservableExtensionsKt.appSubscribe(ObservableExtensionsKt.ui$default(ObservableExtensionsKt.restSubscribeOn$default(RestAPI.INSTANCE.getApi().updateGuild(guildId, updateGuild), false, 1, null), this, null, 2, null), (Class<?>) WidgetServerSettingsModeration.class, (58 & 2) != 0 ? null : getContext(), (Function1<? super Subscription, Unit>) ((58 & 4) != 0 ? null : null), (Function1<? super Error, Unit>) ((58 & 8) != 0 ? null : null), (Function0<Unit>) ((58 & 16) != 0 ? ObservableExtensionsKt.AnonymousClass1.INSTANCE : null), (Function0<Unit>) ((58 & 32) != 0 ? ObservableExtensionsKt.AnonymousClass2.INSTANCE : null), new AnonymousClass1());
+        ObservableExtensionsKt.appSubscribe(ObservableExtensionsKt.ui$default(ObservableExtensionsKt.restSubscribeOn$default(RestAPI.INSTANCE.getApi().updateGuild(guildId, updateGuild), false, 1, null), this, null, 2, null), (Class<?>) WidgetServerSettingsModeration.class, (58 & 2) != 0 ? null : getContext(), (Function1<? super Subscription, Unit>) ((58 & 4) != 0 ? null : null), (Function1<? super Error, Unit>) ((58 & 8) != 0 ? null : null), (Function0<Unit>) ((58 & 16) != 0 ? ObservableExtensionsKt.C68791.INSTANCE : null), (Function0<Unit>) ((58 & 32) != 0 ? ObservableExtensionsKt.C68802.INSTANCE : null), new C92721());
     }
 
-    @Override // com.discord.app.AppFragment, com.discord.app.AppLogger.a
-    public AppLogger2 getLoggingConfig() {
+    @Override // com.discord.app.AppFragment, com.discord.app.AppLogger.InterfaceC5455a
+    public LoggingConfig getLoggingConfig() {
         return this.loggingConfig;
     }
 
     @Override // com.discord.app.AppFragment
     public void onViewBound(View view) {
-        Intrinsics3.checkNotNullParameter(view, "view");
+        C12238m.checkNotNullParameter(view, "view");
         super.onViewBound(view);
         AppFragment.setActionBarDisplayHomeAsUpEnabled$default(this, false, 1, null);
-        setActionBarTitle(R.string.moderation);
-        TextView textView = getBinding().k;
-        Intrinsics3.checkNotNullExpressionValue(textView, "binding.serverSettingsModerationVerificationHelp");
-        FormatUtils.m(textView, R.string.form_help_verification_level, new Object[0], (4 & 4) != 0 ? FormatUtils.g.j : null);
-        TextView textView2 = getBinding().e;
-        Intrinsics3.checkNotNullExpressionValue(textView2, "binding.serverSettingsModerationExplicitHelp");
-        FormatUtils.m(textView2, R.string.form_help_explicit_content_filter, new Object[0], (4 & 4) != 0 ? FormatUtils.g.j : null);
+        setActionBarTitle(C5419R.string.moderation);
+        TextView textView = getBinding().f17723k;
+        C12238m.checkNotNullExpressionValue(textView, "binding.serverSettingsModerationVerificationHelp");
+        C1107b.m221m(textView, C5419R.string.form_help_verification_level, new Object[0], (4 & 4) != 0 ? C1107b.g.f1495j : null);
+        TextView textView2 = getBinding().f17717e;
+        C12238m.checkNotNullExpressionValue(textView2, "binding.serverSettingsModerationExplicitHelp");
+        C1107b.m221m(textView2, C5419R.string.form_help_explicit_content_filter, new Object[0], (4 & 4) != 0 ? C1107b.g.f1495j : null);
         this.radioManagerVerification = new RadioManager(getVerificationViews());
         this.radioManagerExplicit = new RadioManager(getExplicitContentViews());
-        CheckedSetting.i(getVerificationViews().get(2), FormatUtils.e(this, R.string.verification_level_medium_criteria, new Object[]{VERIFICATION_LEVEL_MEDIUM_MINUTES}, (4 & 4) != 0 ? FormatUtils.a.j : null), false, 2);
-        CheckedSetting.i(getVerificationViews().get(3), FormatUtils.e(this, R.string.verification_level_high_criteria, new Object[]{VERIFICATION_LEVEL_HIGH_MINUTES}, (4 & 4) != 0 ? FormatUtils.a.j : null), false, 2);
+        CheckedSetting.m8524i(getVerificationViews().get(2), C1107b.m213e(this, C5419R.string.verification_level_medium_criteria, new Object[]{VERIFICATION_LEVEL_MEDIUM_MINUTES}, (4 & 4) != 0 ? C1107b.a.f1490j : null), false, 2);
+        CheckedSetting.m8524i(getVerificationViews().get(3), C1107b.m213e(this, C5419R.string.verification_level_high_criteria, new Object[]{VERIFICATION_LEVEL_HIGH_MINUTES}, (4 & 4) != 0 ? C1107b.a.f1490j : null), false, 2);
     }
 
     @Override // com.discord.app.AppFragment
     public void onViewBoundOrOnResume() {
         super.onViewBoundOrOnResume();
-        ObservableExtensionsKt.appSubscribe(ObservableExtensionsKt.ui$default(Model.INSTANCE.get(getGuildId()), this, null, 2, null), (Class<?>) WidgetServerSettingsModeration.class, (58 & 2) != 0 ? null : null, (Function1<? super Subscription, Unit>) ((58 & 4) != 0 ? null : null), (Function1<? super Error, Unit>) ((58 & 8) != 0 ? null : null), (Function0<Unit>) ((58 & 16) != 0 ? ObservableExtensionsKt.AnonymousClass1.INSTANCE : null), (Function0<Unit>) ((58 & 32) != 0 ? ObservableExtensionsKt.AnonymousClass2.INSTANCE : null), new AnonymousClass1(this));
+        ObservableExtensionsKt.appSubscribe(ObservableExtensionsKt.ui$default(Model.INSTANCE.get(getGuildId()), this, null, 2, null), (Class<?>) WidgetServerSettingsModeration.class, (58 & 2) != 0 ? null : null, (Function1<? super Subscription, Unit>) ((58 & 4) != 0 ? null : null), (Function1<? super Error, Unit>) ((58 & 8) != 0 ? null : null), (Function0<Unit>) ((58 & 16) != 0 ? ObservableExtensionsKt.C68791.INSTANCE : null), (Function0<Unit>) ((58 & 32) != 0 ? ObservableExtensionsKt.C68802.INSTANCE : null), new C92711(this));
     }
 }

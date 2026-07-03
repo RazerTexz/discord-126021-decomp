@@ -12,10 +12,8 @@ import androidx.core.app.NotificationCompat;
 import androidx.core.app.Person;
 import androidx.core.app.RemoteInput;
 import androidx.core.graphics.drawable.IconCompat;
-import b.a.k.FormatUtils;
-import b.d.b.a.outline;
 import com.adjust.sdk.Constants;
-import com.discord.R;
+import com.discord.C5419R;
 import com.discord.api.application.Application;
 import com.discord.api.channel.Channel;
 import com.discord.api.channel.ChannelUtils;
@@ -30,25 +28,15 @@ import com.discord.app.AppActivity;
 import com.discord.models.domain.ModelAuditLogEntry;
 import com.discord.nullserializable.NullSerializable;
 import com.discord.utilities.SnowflakeUtils;
-import com.discord.utilities.extensions.PendingIntentExtensions;
+import com.discord.utilities.extensions.PendingIntentExtensionsKt;
 import com.discord.utilities.icon.IconUtils;
 import com.discord.utilities.intent.IntentUtils;
 import com.discord.utilities.media.AppSound;
 import com.discord.utilities.message.MessageUtils;
 import com.discord.utilities.stickers.StickerUtils;
 import com.discord.utilities.time.Clock;
-import com.discord.widgets.chat.input.MentionUtils;
+import com.discord.widgets.chat.input.MentionUtilsKt;
 import com.discord.widgets.forums.ForumUtils;
-import d0.Tuples;
-import d0.d0._Ranges;
-import d0.g0.StringNumberConversions;
-import d0.g0.Strings4;
-import d0.g0.StringsJVM;
-import d0.t.Collections2;
-import d0.t.Iterables2;
-import d0.t.MapsJVM;
-import d0.t._Collections;
-import d0.z.d.Intrinsics3;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.HashMap;
@@ -59,8 +47,20 @@ import java.util.Map;
 import java.util.Objects;
 import java.util.Random;
 import java.util.Set;
-import kotlin.Tuples2;
+import kotlin.Pair;
 import kotlin.jvm.internal.DefaultConstructorMarker;
+import p007b.p008a.p027k.C1107b;
+import p007b.p100d.p104b.p105a.C1643a;
+import p507d0.C12116o;
+import p507d0.p512d0.C11226f;
+import p507d0.p579g0.C12102s;
+import p507d0.p579g0.C12103t;
+import p507d0.p579g0.C12106w;
+import p507d0.p580t.C12134g0;
+import p507d0.p580t.C12147n;
+import p507d0.p580t.C12149o;
+import p507d0.p580t.C12163u;
+import p507d0.p592z.p594d.C12238m;
 
 /* JADX INFO: compiled from: NotificationData.kt */
 /* JADX INFO: loaded from: classes2.dex */
@@ -118,7 +118,7 @@ public final class NotificationData {
     private final int messageType;
     private final String notificationChannel;
     private final String notificationId;
-    private final NotificationData3 notificationType;
+    private final NotificationType notificationType;
     private final Channel parentChannel;
     private final int relationshipType;
     private final String stageInstanceTopic;
@@ -160,7 +160,7 @@ public final class NotificationData {
             if (intent == null || (stringExtra = intent.getStringExtra(str)) == null) {
                 return;
             }
-            Intrinsics3.checkNotNullExpressionValue(stringExtra, "this?.getStringExtra(key) ?: return");
+            C12238m.checkNotNullExpressionValue(stringExtra, "this?.getStringExtra(key) ?: return");
             if (stringExtra.length() == 0) {
                 return;
             }
@@ -171,15 +171,15 @@ public final class NotificationData {
             if (longStringsConcatenated == null) {
                 longStringsConcatenated = "";
             }
-            List listSplit$default = Strings4.split$default((CharSequence) longStringsConcatenated, new String[]{","}, false, 0, 6, (Object) null);
-            ArrayList arrayList = new ArrayList(Iterables2.collectionSizeOrDefault(listSplit$default, 10));
+            List listSplit$default = C12106w.split$default((CharSequence) longStringsConcatenated, new String[]{","}, false, 0, 6, (Object) null);
+            ArrayList arrayList = new ArrayList(C12149o.collectionSizeOrDefault(listSplit$default, 10));
             Iterator it = listSplit$default.iterator();
             while (true) {
                 long jLongValue = -1;
                 if (!it.hasNext()) {
                     break;
                 }
-                Long longOrNull = StringNumberConversions.toLongOrNull((String) it.next());
+                Long longOrNull = C12102s.toLongOrNull((String) it.next());
                 if (longOrNull != null) {
                     jLongValue = longOrNull.longValue();
                 }
@@ -208,7 +208,7 @@ public final class NotificationData {
             copyIntIntoMap(intent, map, NotificationData.ANALYTICS_ACTIVITY_TYPE);
             copyStringIntoMap(intent, map, NotificationData.ANALYTICS_ACTIVITY_NAME);
             if (intent != null && (stringExtra = intent.getStringExtra("com.discord.intent.ORIGIN_SOURCE")) != null) {
-                map.put(NotificationData.ANALYTICS_NOTIF_IN_APP, Boolean.valueOf(StringsJVM.equals(stringExtra, "com.discord.intent.ORIGIN_NOTIF_INAPP", true)));
+                map.put(NotificationData.ANALYTICS_NOTIF_IN_APP, Boolean.valueOf(C12103t.equals(stringExtra, "com.discord.intent.ORIGIN_NOTIF_INAPP", true)));
             }
             return map;
         }
@@ -255,10 +255,10 @@ public final class NotificationData {
             iArr4[guildScheduledEventEntityType.ordinal()] = 1;
             iArr4[guildScheduledEventEntityType2.ordinal()] = 2;
             iArr4[guildScheduledEventEntityType3.ordinal()] = 3;
-            NotificationData3.values();
+            NotificationType.values();
             int[] iArr5 = new int[1];
             $EnumSwitchMapping$4 = iArr5;
-            iArr5[NotificationData3.Reminder.ordinal()] = 1;
+            iArr5[NotificationType.Reminder.ordinal()] = 1;
             GuildScheduledEventEntityType.values();
             int[] iArr6 = new int[5];
             $EnumSwitchMapping$5 = iArr6;
@@ -274,10 +274,10 @@ public final class NotificationData {
         }
     }
 
-    public NotificationData(String str, long j, MessageActivityType messageActivityType, String str2, int i, String str3, Channel channel, Channel channel2, List<Long> list, long j2, String str4, Integer num, String str5, String str6, int i2, String str7, long j3, String str8, String str9, int i3, String str10, long j4, String str11, String str12, Sticker sticker, String str13, String str14, String str15, String str16, String str17, GuildScheduledEventEntityType guildScheduledEventEntityType, Long l, NotificationData3 notificationData3, String str18, String str19, boolean z2, String str20) {
-        Intrinsics3.checkNotNullParameter(str, "type");
-        Intrinsics3.checkNotNullParameter(channel2, "channel");
-        Intrinsics3.checkNotNullParameter(list, "ackChannelIds");
+    public NotificationData(String str, long j, MessageActivityType messageActivityType, String str2, int i, String str3, Channel channel, Channel channel2, List<Long> list, long j2, String str4, Integer num, String str5, String str6, int i2, String str7, long j3, String str8, String str9, int i3, String str10, long j4, String str11, String str12, Sticker sticker, String str13, String str14, String str15, String str16, String str17, GuildScheduledEventEntityType guildScheduledEventEntityType, Long l, NotificationType notificationType, String str18, String str19, boolean z2, String str20) {
+        C12238m.checkNotNullParameter(str, "type");
+        C12238m.checkNotNullParameter(channel2, "channel");
+        C12238m.checkNotNullParameter(list, "ackChannelIds");
         this.type = str;
         this.messageId = j;
         this.messageActivityType = messageActivityType;
@@ -309,7 +309,7 @@ public final class NotificationData {
         this.stageInstanceTopic = str17;
         this.guildScheduledEventEntityType = guildScheduledEventEntityType;
         this.guildScheduledEventId = l;
-        this.notificationType = notificationData3;
+        this.notificationType = notificationType;
         this.trackingType = str18;
         this.notificationChannel = str19;
         this.expandSubtitle = z2;
@@ -327,7 +327,7 @@ public final class NotificationData {
             }
         }
         this.guildId = jLongValue;
-        if (Intrinsics3.areEqual(str, TYPE_MESSAGE_CREATE) && (channel2.getType() == 0 || channel2.getType() == 2 || channel2.getType() == 3 || channel2.getType() == 10 || channel2.getType() == 11 || channel2.getType() == 12)) {
+        if (C12238m.areEqual(str, TYPE_MESSAGE_CREATE) && (channel2.getType() == 0 || channel2.getType() == 2 || channel2.getType() == 3 || channel2.getType() == 10 || channel2.getType() == 11 || channel2.getType() == 12)) {
             z3 = true;
         }
         this.isGroupConversation = z3;
@@ -339,7 +339,7 @@ public final class NotificationData {
             str = this.type;
         }
         Intent intentPutExtra = intent.putExtra(ANALYTICS_NOTIF_TYPE, str).putExtra(ANALYTICS_NOTIF_USER_ID, this.userId).putExtra(ANALYTICS_MESSAGE_ID, this.messageId).putExtra(ANALYTICS_MESSAGE_TYPE, this.messageType).putExtra("guild_id", this.guildId).putExtra("channel_id", this.channel.getId()).putExtra(ANALYTICS_CHANNEL_TYPE, this.channel.getType()).putExtra(ANALYTICS_REL_TYPE, this.relationshipType).putExtra(ANALYTICS_ACTIVITY_TYPE, this.activityType).putExtra(ANALYTICS_ACTIVITY_NAME, this.activityName);
-        Intrinsics3.checkNotNullExpressionValue(intentPutExtra, "intent\n        .putExtra…IVITY_NAME, activityName)");
+        C12238m.checkNotNullExpressionValue(intentPutExtra, "intent\n        .putExtra…IVITY_NAME, activityName)");
         return intentPutExtra;
     }
 
@@ -436,7 +436,7 @@ public final class NotificationData {
     private final CharSequence resNameToString(Context context, String resourceName, String fallback) {
         Resources resources = context.getResources();
         int identifier = resources != null ? resources.getIdentifier(resourceName, "string", context.getPackageName()) : 0;
-        return identifier == 0 ? fallback : FormatUtils.b(context, identifier, new Object[0], (4 & 4) != 0 ? FormatUtils.b.j : null);
+        return identifier == 0 ? fallback : C1107b.m210b(context, identifier, new Object[0], (4 & 4) != 0 ? C1107b.b.f1491j : null);
     }
 
     public static /* synthetic */ CharSequence resNameToString$default(NotificationData notificationData, Context context, String str, String str2, int i, Object obj) {
@@ -448,10 +448,10 @@ public final class NotificationData {
 
     public final boolean canDisplayInApp() {
         int iOrdinal;
-        if (Intrinsics3.areEqual(this.type, TYPE_STAGE_INSTANCE_CREATE)) {
+        if (C12238m.areEqual(this.type, TYPE_STAGE_INSTANCE_CREATE)) {
             return true;
         }
-        if (!Intrinsics3.areEqual(this.type, TYPE_GUILD_SCHEDULED_EVENT_UPDATE)) {
+        if (!C12238m.areEqual(this.type, TYPE_GUILD_SCHEDULED_EVENT_UPDATE)) {
             return this.channel.getId() == -1;
         }
         GuildScheduledEventEntityType guildScheduledEventEntityType = this.guildScheduledEventEntityType;
@@ -459,38 +459,38 @@ public final class NotificationData {
     }
 
     public final NotificationData copyForDirectReply(Message message) {
-        NullSerializable<String> nullSerializableA;
-        String strA;
+        NullSerializable<String> nullSerializableM8288a;
+        String strMo8429a;
         String discriminator;
         String username;
-        Intrinsics3.checkNotNullParameter(message, "message");
+        C12238m.checkNotNullParameter(message, "message");
         long id2 = message.getId();
         MessageActivity activity = message.getActivity();
         MessageActivityType type = activity != null ? activity.getType() : null;
         Application application = message.getApplication();
         String name = application != null ? application.getName() : null;
         Integer type2 = message.getType();
-        Intrinsics3.checkNotNull(type2);
+        C12238m.checkNotNull(type2);
         int iIntValue = type2.intValue();
         String content = message.getContent();
-        Channel channelA = Channel.a(this.channel, null, 0, 0L, null, 0L, message.getChannelId(), 0L, null, null, 0, null, 0, 0, null, 0L, 0L, null, false, 0L, null, 0, null, null, null, null, null, null, null, null, null, null, null, -33);
-        List listEmptyList = Collections2.emptyList();
+        Channel channelM7629a = Channel.m7629a(this.channel, null, 0, 0L, null, 0L, message.getChannelId(), 0L, null, null, 0, null, 0, 0, null, 0L, 0L, null, false, 0L, null, 0, null, null, null, null, null, null, null, null, null, null, null, -33);
+        List listEmptyList = C12147n.emptyList();
         User author = message.getAuthor();
         long id3 = author != null ? author.getId() : 0L;
         User author2 = message.getAuthor();
         String str = (author2 == null || (username = author2.getUsername()) == null) ? "" : username;
         User author3 = message.getAuthor();
-        Integer intOrNull = (author3 == null || (discriminator = author3.getDiscriminator()) == null) ? null : StringNumberConversions.toIntOrNull(discriminator);
+        Integer intOrNull = (author3 == null || (discriminator = author3.getDiscriminator()) == null) ? null : C12102s.toIntOrNull(discriminator);
         User author4 = message.getAuthor();
-        String str2 = (author4 == null || (nullSerializableA = author4.a()) == null || (strA = nullSerializableA.a()) == null) ? "" : strA;
+        String str2 = (author4 == null || (nullSerializableM8288a = author4.m8288a()) == null || (strMo8429a = nullSerializableM8288a.mo8429a()) == null) ? "" : strMo8429a;
         GuildMember member = message.getMember();
         String avatar = member != null ? member.getAvatar() : null;
         long j = this.guildId;
         String str3 = this.guildName;
         long j2 = id3;
         String str4 = this.guildIcon;
-        List<Sticker> listB = message.B();
-        return new NotificationData(TYPE_MESSAGE_CREATE, id2, type, name, iIntValue, content, null, channelA, listEmptyList, j2, str, intOrNull, str2, avatar, -1, null, j, str3, str4, -1, null, -1L, null, null, listB != null ? (Sticker) _Collections.firstOrNull((List) listB) : null, null, null, null, null, null, null, null, null, null, null, false, null);
+        List<Sticker> listM8022B = message.m8022B();
+        return new NotificationData(TYPE_MESSAGE_CREATE, id2, type, name, iIntValue, content, null, channelM7629a, listEmptyList, j2, str, intOrNull, str2, avatar, -1, null, j, str3, str4, -1, null, -1L, null, null, listM8022B != null ? (Sticker) C12163u.firstOrNull((List) listM8022B) : null, null, null, null, null, null, null, null, null, null, null, false, null);
     }
 
     public final List<Long> getAckChannelIds() {
@@ -500,18 +500,18 @@ public final class NotificationData {
     @RequiresApi(24)
     @SuppressLint({"UnspecifiedImmutableFlag"})
     public final NotificationCompat.Action getCallAction(Context ctx, boolean isAcceptAction) {
-        Intrinsics3.checkNotNullParameter(ctx, "ctx");
-        if (!Intrinsics3.areEqual(this.type, TYPE_CALL_RING)) {
+        C12238m.checkNotNullParameter(ctx, "ctx");
+        if (!C12238m.areEqual(this.type, TYPE_CALL_RING)) {
             return null;
         }
-        PendingIntent broadcast = PendingIntent.getBroadcast(ctx, 0, addTrackingData(NotificationActions.INSTANCE.callAction(ctx, this.channel.getId(), this.messageId, isAcceptAction)), PendingIntentExtensions.immutablePendingIntentFlag$default(0, 1, null));
-        Tuples2 tuples2 = isAcceptAction ? Tuples.to(Integer.valueOf(R.string.join_call), Integer.valueOf(R.color.status_green_600)) : Tuples.to(Integer.valueOf(R.string.decline), Integer.valueOf(R.color.status_red_500));
-        int iIntValue = ((Number) tuples2.component1()).intValue();
-        int iIntValue2 = ((Number) tuples2.component2()).intValue();
-        StringBuilder sbU = outline.U("**");
-        sbU.append(FormatUtils.b(ctx, iIntValue, new Object[0], (4 & 4) != 0 ? FormatUtils.b.j : null));
-        sbU.append("**");
-        return new NotificationCompat.Action.Builder(isAcceptAction ? R.drawable.ic_call_24dp : R.drawable.ic_call_disconnect_24dp, FormatUtils.g(sbU.toString(), new Object[0], new NotificationData2(ctx, iIntValue2)), broadcast).build();
+        PendingIntent broadcast = PendingIntent.getBroadcast(ctx, 0, addTrackingData(NotificationActions.INSTANCE.callAction(ctx, this.channel.getId(), this.messageId, isAcceptAction)), PendingIntentExtensionsKt.immutablePendingIntentFlag$default(0, 1, null));
+        Pair pairM10073to = isAcceptAction ? C12116o.m10073to(Integer.valueOf(C5419R.string.join_call), Integer.valueOf(C5419R.color.status_green_600)) : C12116o.m10073to(Integer.valueOf(C5419R.string.decline), Integer.valueOf(C5419R.color.status_red_500));
+        int iIntValue = ((Number) pairM10073to.component1()).intValue();
+        int iIntValue2 = ((Number) pairM10073to.component2()).intValue();
+        StringBuilder sbM833U = C1643a.m833U("**");
+        sbM833U.append(C1107b.m210b(ctx, iIntValue, new Object[0], (4 & 4) != 0 ? C1107b.b.f1491j : null));
+        sbM833U.append("**");
+        return new NotificationCompat.Action.Builder(isAcceptAction ? C5419R.drawable.ic_call_24dp : C5419R.drawable.ic_call_disconnect_24dp, C1107b.m215g(sbM833U.toString(), new Object[0], new NotificationData$getCallAction$coloredString$1(ctx, iIntValue2)), broadcast).build();
     }
 
     public final long getChannelId() {
@@ -519,9 +519,9 @@ public final class NotificationData {
     }
 
     public final CharSequence getContent(Context context) {
-        CharSequence charSequenceG;
+        CharSequence charSequenceM215g;
         GuildScheduledEventEntityType guildScheduledEventEntityType;
-        Intrinsics3.checkNotNullParameter(context, "context");
+        C12238m.checkNotNullParameter(context, "context");
         String str = this.type;
         switch (str.hashCode()) {
             case -1502317553:
@@ -533,8 +533,8 @@ public final class NotificationData {
                     String str3 = this.subtitle;
                     return resNameToString(context, str2, str3 != null ? str3 : "");
                 }
-                charSequenceG = this.subtitle;
-                if (charSequenceG == null) {
+                charSequenceM215g = this.subtitle;
+                if (charSequenceM215g == null) {
                     return "";
                 }
                 break;
@@ -544,26 +544,26 @@ public final class NotificationData {
                 }
                 int iOrdinal = guildScheduledEventEntityType.ordinal();
                 if (iOrdinal == 1 || iOrdinal == 2) {
-                    return FormatUtils.b(context, R.string.guild_scheduled_event_stage_start_body, new Object[]{this.stageInstanceTopic, this.userUsername}, (4 & 4) != 0 ? FormatUtils.b.j : null);
+                    return C1107b.m210b(context, C5419R.string.guild_scheduled_event_stage_start_body, new Object[]{this.stageInstanceTopic, this.userUsername}, (4 & 4) != 0 ? C1107b.b.f1491j : null);
                 }
-                return iOrdinal != 3 ? "" : FormatUtils.b(context, R.string.guild_scheduled_event_external_start_body, new Object[]{this.stageInstanceTopic}, (4 & 4) != 0 ? FormatUtils.b.j : null);
+                return iOrdinal != 3 ? "" : C1107b.m210b(context, C5419R.string.guild_scheduled_event_external_start_body, new Object[]{this.stageInstanceTopic}, (4 & 4) != 0 ? C1107b.b.f1491j : null);
             case -1327124998:
                 if (!str.equals(TYPE_RELATIONSHIP_ADD)) {
                     return "";
                 }
                 int i = this.relationshipType;
                 if (i != 1) {
-                    return i != 3 ? "" : FormatUtils.b(context, R.string.notification_pending_friend_request, new Object[0], (4 & 4) != 0 ? FormatUtils.b.j : null);
+                    return i != 3 ? "" : C1107b.m210b(context, C5419R.string.notification_pending_friend_request, new Object[0], (4 & 4) != 0 ? C1107b.b.f1491j : null);
                 }
-                return FormatUtils.b(context, R.string.notification_accepted_friend_request, new Object[0], (4 & 4) != 0 ? FormatUtils.b.j : null);
+                return C1107b.m210b(context, C5419R.string.notification_accepted_friend_request, new Object[0], (4 & 4) != 0 ? C1107b.b.f1491j : null);
             case -1263316859:
-                return str.equals(TYPE_STAGE_INSTANCE_CREATE) ? FormatUtils.b(context, R.string.stage_start_push_notification_body, new Object[]{this.userUsername, this.stageInstanceTopic}, (4 & 4) != 0 ? FormatUtils.b.j : null) : "";
+                return str.equals(TYPE_STAGE_INSTANCE_CREATE) ? C1107b.m210b(context, C5419R.string.stage_start_push_notification_body, new Object[]{this.userUsername, this.stageInstanceTopic}, (4 & 4) != 0 ? C1107b.b.f1491j : null) : "";
             case -1237752112:
-                return str.equals(TYPE_APPLICATION_LIBRARY_INSTALL_COMPLETE) ? FormatUtils.b(context, R.string.game_library_notification_game_installed_body, new Object[]{this.applicationName}, (4 & 4) != 0 ? FormatUtils.b.j : null) : "";
+                return str.equals(TYPE_APPLICATION_LIBRARY_INSTALL_COMPLETE) ? C1107b.m210b(context, C5419R.string.game_library_notification_game_installed_body, new Object[]{this.applicationName}, (4 & 4) != 0 ? C1107b.b.f1491j : null) : "";
             case -437641071:
-                return str.equals(TYPE_FORUM_THREAD_CREATED) ? FormatUtils.b(context, R.string.forum_channel_thread_created_push_body_mobile, new Object[]{this.channel.getName(), this.userUsername}, (4 & 4) != 0 ? FormatUtils.b.j : null) : "";
+                return str.equals(TYPE_FORUM_THREAD_CREATED) ? C1107b.m210b(context, C5419R.string.forum_channel_thread_created_push_body_mobile, new Object[]{this.channel.getName(), this.userUsername}, (4 & 4) != 0 ? C1107b.b.f1491j : null) : "";
             case 974015250:
-                return (str.equals(TYPE_ACTIVITY_START) && this.activityType == 0) ? FormatUtils.b(context, R.string.notification_body_start_game, new Object[]{this.userUsername, this.activityName}, (4 & 4) != 0 ? FormatUtils.b.j : null) : "";
+                return (str.equals(TYPE_ACTIVITY_START) && this.activityType == 0) ? C1107b.m210b(context, C5419R.string.notification_body_start_game, new Object[]{this.userUsername, this.activityName}, (4 & 4) != 0 ? C1107b.b.f1491j : null) : "";
             case 998188116:
                 if (!str.equals(TYPE_MESSAGE_CREATE)) {
                     return "";
@@ -588,67 +588,67 @@ public final class NotificationData {
                         }
                     }
                     if (this.messageActivityType == MessageActivityType.JOIN) {
-                        return FormatUtils.b(context, R.string.notification_message_create_dm_activity_join, new Object[]{this.userUsername, this.messageApplicationName}, (4 & 4) != 0 ? FormatUtils.b.j : null);
+                        return C1107b.m210b(context, C5419R.string.notification_message_create_dm_activity_join, new Object[]{this.userUsername, this.messageApplicationName}, (4 & 4) != 0 ? C1107b.b.f1491j : null);
                     }
                     Sticker sticker = this.sticker;
                     if (sticker != null) {
-                        return FormatUtils.b(context, R.string.sticker_notification_body, new Object[]{sticker.getName()}, (4 & 4) != 0 ? FormatUtils.b.j : null);
+                        return C1107b.m210b(context, C5419R.string.sticker_notification_body, new Object[]{sticker.getName()}, (4 & 4) != 0 ? C1107b.b.f1491j : null);
                     }
                     String str4 = this.messageContent;
                     if (str4 != null) {
-                        charSequenceG = FormatUtils.g(str4, new Object[0], (2 & 2) != 0 ? FormatUtils.e.j : null);
+                        charSequenceM215g = C1107b.m215g(str4, new Object[0], (2 & 2) != 0 ? C1107b.e.f1494j : null);
                         break;
                     }
                     return null;
                 }
                 if (this.messageType == 7) {
-                    return FormatUtils.b(context, MessageUtils.INSTANCE.getSystemMessageUserJoin(context, this.messageId), new Object[]{this.userUsername}, (4 & 4) != 0 ? FormatUtils.b.j : null);
+                    return C1107b.m210b(context, MessageUtils.INSTANCE.getSystemMessageUserJoin(context, this.messageId), new Object[]{this.userUsername}, (4 & 4) != 0 ? C1107b.b.f1491j : null);
                 }
                 if (this.messageActivityType == MessageActivityType.JOIN) {
-                    return FormatUtils.b(context, R.string.notification_message_create_guild_activity_join, new Object[]{this.userUsername, this.messageApplicationName}, (4 & 4) != 0 ? FormatUtils.b.j : null);
+                    return C1107b.m210b(context, C5419R.string.notification_message_create_guild_activity_join, new Object[]{this.userUsername, this.messageApplicationName}, (4 & 4) != 0 ? C1107b.b.f1491j : null);
                 }
                 Sticker sticker2 = this.sticker;
                 if (sticker2 != null) {
-                    return FormatUtils.b(context, R.string.sticker_notification_body, new Object[]{sticker2.getName()}, (4 & 4) != 0 ? FormatUtils.b.j : null);
+                    return C1107b.m210b(context, C5419R.string.sticker_notification_body, new Object[]{sticker2.getName()}, (4 & 4) != 0 ? C1107b.b.f1491j : null);
                 }
                 String str5 = this.messageContent;
                 if (str5 != null) {
-                    charSequenceG = FormatUtils.g(str5, new Object[0], (2 & 2) != 0 ? FormatUtils.e.j : null);
+                    charSequenceM215g = C1107b.m215g(str5, new Object[0], (2 & 2) != 0 ? C1107b.e.f1494j : null);
                     break;
                 }
                 return null;
             case 1770025841:
-                return str.equals(TYPE_CALL_RING) ? FormatUtils.g(FormatUtils.b(context, R.string.overlay_friend_calling, new Object[]{outline.J(outline.U("**"), this.userUsername, "**")}, (4 & 4) != 0 ? FormatUtils.b.j : null), new Object[0], (2 & 2) != 0 ? FormatUtils.e.j : null) : "";
+                return str.equals(TYPE_CALL_RING) ? C1107b.m215g(C1107b.m210b(context, C5419R.string.overlay_friend_calling, new Object[]{C1643a.m822J(C1643a.m833U("**"), this.userUsername, "**")}, (4 & 4) != 0 ? C1107b.b.f1491j : null), new Object[0], (2 & 2) != 0 ? C1107b.e.f1494j : null) : "";
             default:
                 return "";
         }
-        return charSequenceG;
+        return charSequenceM215g;
     }
 
     @SuppressLint({"UnspecifiedImmutableFlag"})
     public final PendingIntent getContentIntent(Context context) {
-        Intrinsics3.checkNotNullParameter(context, "context");
+        C12238m.checkNotNullParameter(context, "context");
         Intent contentIntentInternal = getContentIntentInternal();
         contentIntentInternal.putExtra("com.discord.intent.ORIGIN_SOURCE", "com.discord.intent.ORIGIN_NOTIF");
         contentIntentInternal.setClass(context, AppActivity.Main.class);
-        PendingIntent activity = PendingIntent.getActivity(context, 0, addTrackingData(contentIntentInternal), PendingIntentExtensions.immutablePendingIntentFlag(134217728));
-        Intrinsics3.checkNotNullExpressionValue(activity, "PendingIntent.getActivit…LAG_UPDATE_CURRENT)\n    )");
+        PendingIntent activity = PendingIntent.getActivity(context, 0, addTrackingData(contentIntentInternal), PendingIntentExtensionsKt.immutablePendingIntentFlag(134217728));
+        C12238m.checkNotNullExpressionValue(activity, "PendingIntent.getActivit…LAG_UPDATE_CURRENT)\n    )");
         return activity;
     }
 
     @SuppressLint({"UnspecifiedImmutableFlag"})
     public final PendingIntent getContentIntentInApp(Context context) {
-        Intrinsics3.checkNotNullParameter(context, "context");
+        C12238m.checkNotNullParameter(context, "context");
         Intent contentIntentInternal = getContentIntentInternal();
         contentIntentInternal.putExtra("com.discord.intent.ORIGIN_SOURCE", "com.discord.intent.ORIGIN_NOTIF_INAPP");
         contentIntentInternal.setClass(context, AppActivity.Main.class);
-        PendingIntent activity = PendingIntent.getActivity(context, 0, addTrackingData(contentIntentInternal), PendingIntentExtensions.immutablePendingIntentFlag(134217728));
-        Intrinsics3.checkNotNullExpressionValue(activity, "PendingIntent.getActivit…LAG_UPDATE_CURRENT)\n    )");
+        PendingIntent activity = PendingIntent.getActivity(context, 0, addTrackingData(contentIntentInternal), PendingIntentExtensionsKt.immutablePendingIntentFlag(134217728));
+        C12238m.checkNotNullExpressionValue(activity, "PendingIntent.getActivit…LAG_UPDATE_CURRENT)\n    )");
         return activity;
     }
 
     public final CharSequence getConversationTitle(Context context) {
-        Intrinsics3.checkNotNullParameter(context, "context");
+        C12238m.checkNotNullParameter(context, "context");
         String str = this.type;
         if (str.hashCode() != 998188116 || !str.equals(TYPE_MESSAGE_CREATE)) {
             return null;
@@ -656,7 +656,7 @@ public final class NotificationData {
         int type = this.channel.getType();
         if (type != 0 && type != 5 && type != 2) {
             if (type == 3) {
-                return ChannelUtils.e(this.channel, context, false, 2);
+                return ChannelUtils.m7681e(this.channel, context, false, 2);
             }
             switch (type) {
                 case 10:
@@ -667,45 +667,45 @@ public final class NotificationData {
                     return null;
             }
         }
-        return FormatUtils.g(this.guildName + " _" + ChannelUtils.e(this.channel, context, false, 2) + '_', new Object[0], (2 & 2) != 0 ? FormatUtils.e.j : null);
+        return C1107b.m215g(this.guildName + " _" + ChannelUtils.m7681e(this.channel, context, false, 2) + '_', new Object[0], (2 & 2) != 0 ? C1107b.e.f1494j : null);
     }
 
     @SuppressLint({"UnspecifiedImmutableFlag"})
     public final PendingIntent getDeleteIntent(Context context) {
-        Intrinsics3.checkNotNullParameter(context, "context");
-        PendingIntent broadcast = PendingIntent.getBroadcast(context, 0, NotificationActions.INSTANCE.delete(context, this.channel.getId()), PendingIntentExtensions.immutablePendingIntentFlag(134217728));
-        Intrinsics3.checkNotNullExpressionValue(broadcast, "PendingIntent.getBroadca…LAG_UPDATE_CURRENT)\n    )");
+        C12238m.checkNotNullParameter(context, "context");
+        PendingIntent broadcast = PendingIntent.getBroadcast(context, 0, NotificationActions.INSTANCE.delete(context, this.channel.getId()), PendingIntentExtensionsKt.immutablePendingIntentFlag(134217728));
+        C12238m.checkNotNullExpressionValue(broadcast, "PendingIntent.getBroadca…LAG_UPDATE_CURRENT)\n    )");
         return broadcast;
     }
 
     @RequiresApi(24)
     @SuppressLint({"UnspecifiedImmutableFlag"})
     public final NotificationCompat.Action getDirectReplyAction(Context ctx, Set<Long> deniedChannels) {
-        Intrinsics3.checkNotNullParameter(ctx, "ctx");
-        Intrinsics3.checkNotNullParameter(deniedChannels, "deniedChannels");
-        if ((!Intrinsics3.areEqual(this.type, TYPE_MESSAGE_CREATE)) || deniedChannels.contains(Long.valueOf(this.channel.getId()))) {
+        C12238m.checkNotNullParameter(ctx, "ctx");
+        C12238m.checkNotNullParameter(deniedChannels, "deniedChannels");
+        if ((!C12238m.areEqual(this.type, TYPE_MESSAGE_CREATE)) || deniedChannels.contains(Long.valueOf(this.channel.getId()))) {
             return null;
         }
-        RemoteInput remoteInputBuild = new RemoteInput.Builder("discord_notif_text_input").setLabel(FormatUtils.b(ctx, R.string.send_message, new Object[0], (4 & 4) != 0 ? FormatUtils.b.j : null)).build();
-        Intrinsics3.checkNotNullExpressionValue(remoteInputBuild, "RemoteInput.Builder(Inte…essage))\n        .build()");
-        return new NotificationCompat.Action.Builder(R.drawable.ic_send_white_24dp, FormatUtils.b(ctx, R.string.notification_reply, new Object[0], (4 & 4) != 0 ? FormatUtils.b.j : null), PendingIntent.getBroadcast(ctx, (int) this.channel.getId(), addTrackingData(NotificationActions.INSTANCE.directReply(ctx, this.channel.getId(), getTitle(ctx))), PendingIntentExtensions.mutablePendingIntentFlag(134217728))).addRemoteInput(remoteInputBuild).setAllowGeneratedReplies(true).build();
+        RemoteInput remoteInputBuild = new RemoteInput.Builder("discord_notif_text_input").setLabel(C1107b.m210b(ctx, C5419R.string.send_message, new Object[0], (4 & 4) != 0 ? C1107b.b.f1491j : null)).build();
+        C12238m.checkNotNullExpressionValue(remoteInputBuild, "RemoteInput.Builder(Inte…essage))\n        .build()");
+        return new NotificationCompat.Action.Builder(C5419R.drawable.ic_send_white_24dp, C1107b.m210b(ctx, C5419R.string.notification_reply, new Object[0], (4 & 4) != 0 ? C1107b.b.f1491j : null), PendingIntent.getBroadcast(ctx, (int) this.channel.getId(), addTrackingData(NotificationActions.INSTANCE.directReply(ctx, this.channel.getId(), getTitle(ctx))), PendingIntentExtensionsKt.mutablePendingIntentFlag(134217728))).addRemoteInput(remoteInputBuild).setAllowGeneratedReplies(true).build();
     }
 
     @SuppressLint({"UnspecifiedImmutableFlag"})
     public final PendingIntent getFullScreenIntent(Context context) {
-        Intrinsics3.checkNotNullParameter(context, "context");
-        if (!Intrinsics3.areEqual(getNotificationCategory(), NotificationCompat.CATEGORY_CALL)) {
+        C12238m.checkNotNullParameter(context, "context");
+        if (!C12238m.areEqual(getNotificationCategory(), NotificationCompat.CATEGORY_CALL)) {
             return null;
         }
         Intent intent = new Intent(context, (Class<?>) AppActivity.IncomingCall.class);
         intent.addFlags(268435456);
-        return PendingIntent.getActivity(context, 0, addTrackingData(intent), PendingIntentExtensions.immutablePendingIntentFlag(134217728));
+        return PendingIntent.getActivity(context, 0, addTrackingData(intent), PendingIntentExtensionsKt.immutablePendingIntentFlag(134217728));
     }
 
     public final String getGroupKey() {
-        StringBuilder sbU = outline.U(GROUP_KEY_PREFIX);
-        sbU.append(this.type);
-        return sbU.toString();
+        StringBuilder sbM833U = C1643a.m833U(GROUP_KEY_PREFIX);
+        sbM833U.append(this.type);
+        return sbM833U.toString();
     }
 
     public final long getGuildId() {
@@ -824,8 +824,8 @@ public final class NotificationData {
                 if (!str.equals(TYPE_RELATIONSHIP_ADD)) {
                     return "";
                 }
-                NotificationData3 notificationData3 = this.notificationType;
-                if (notificationData3 != null && notificationData3.ordinal() == 0) {
+                NotificationType notificationType = this.notificationType;
+                if (notificationType != null && notificationType.ordinal() == 0) {
                     return this.type + this.notificationType;
                 }
                 return this.type + this.userId;
@@ -868,11 +868,11 @@ public final class NotificationData {
     @RequiresApi(24)
     @SuppressLint({"UnspecifiedImmutableFlag"})
     public final NotificationCompat.Action getMarkAsReadAction(Context ctx) {
-        Intrinsics3.checkNotNullParameter(ctx, "ctx");
-        if (!Intrinsics3.areEqual(this.type, TYPE_MESSAGE_CREATE)) {
+        C12238m.checkNotNullParameter(ctx, "ctx");
+        if (!C12238m.areEqual(this.type, TYPE_MESSAGE_CREATE)) {
             return null;
         }
-        return new NotificationCompat.Action.Builder(R.drawable.ic_check_grey_24dp, FormatUtils.b(ctx, R.string.mark_as_read, new Object[0], (4 & 4) != 0 ? FormatUtils.b.j : null), PendingIntent.getBroadcast(ctx, 0, addTrackingData(NotificationActions.INSTANCE.markAsRead(ctx, this.channel.getId(), this.messageId)), PendingIntentExtensions.immutablePendingIntentFlag$default(0, 1, null))).build();
+        return new NotificationCompat.Action.Builder(C5419R.drawable.ic_check_grey_24dp, C1107b.m210b(ctx, C5419R.string.mark_as_read, new Object[0], (4 & 4) != 0 ? C1107b.b.f1491j : null), PendingIntent.getBroadcast(ctx, 0, addTrackingData(NotificationActions.INSTANCE.markAsRead(ctx, this.channel.getId(), this.messageId)), PendingIntentExtensionsKt.immutablePendingIntentFlag$default(0, 1, null))).build();
     }
 
     public final long getMessageId() {
@@ -984,15 +984,15 @@ public final class NotificationData {
     }
 
     public final Uri getNotificationSound(Context context) {
-        Intrinsics3.checkNotNullParameter(context, "context");
+        C12238m.checkNotNullParameter(context, "context");
         String str = this.type;
         if (str.hashCode() != 1770025841 || !str.equals(TYPE_CALL_RING)) {
             return null;
         }
-        StringBuilder sbU = outline.U("android.resource://");
-        sbU.append(context.getPackageName() + MentionUtils.SLASH_CHAR + AppSound.INSTANCE.getSOUND_CALL_RINGING().getResId());
-        String string = sbU.toString();
-        Intrinsics3.checkNotNullExpressionValue(string, "StringBuilder()\n        …)\n            .toString()");
+        StringBuilder sbM833U = C1643a.m833U("android.resource://");
+        sbM833U.append(context.getPackageName() + MentionUtilsKt.SLASH_CHAR + AppSound.INSTANCE.getSOUND_CALL_RINGING().getResId());
+        String string = sbM833U.toString();
+        C12238m.checkNotNullExpressionValue(string, "StringBuilder()\n        …)\n            .toString()");
         return Uri.parse(string);
     }
 
@@ -1000,58 +1000,58 @@ public final class NotificationData {
     public final Person getSender(Context context) {
         String strReplaceAfterLast$default;
         MessageActivityType messageActivityType;
-        Intrinsics3.checkNotNullParameter(context, "context");
+        C12238m.checkNotNullParameter(context, "context");
         IconCompat iconCompatCreateWithContentUri = null;
-        CharSequence charSequenceB = (!Intrinsics3.areEqual(this.type, TYPE_MESSAGE_CREATE) || this.messageType == 7 || (messageActivityType = this.messageActivityType) == MessageActivityType.SPECTATE || messageActivityType == MessageActivityType.JOIN) ? FormatUtils.b(context, R.string.discord, new Object[0], (4 & 4) != 0 ? FormatUtils.b.j : null) : this.userUsername;
+        CharSequence charSequenceM210b = (!C12238m.areEqual(this.type, TYPE_MESSAGE_CREATE) || this.messageType == 7 || (messageActivityType = this.messageActivityType) == MessageActivityType.SPECTATE || messageActivityType == MessageActivityType.JOIN) ? C1107b.m210b(context, C5419R.string.discord, new Object[0], (4 & 4) != 0 ? C1107b.b.f1491j : null) : this.userUsername;
         String strValueOf = String.valueOf(this.userId);
         String str = this.subtitle;
-        if (str != null && charSequenceB != null) {
+        if (str != null && charSequenceM210b != null) {
             if (this.messageType != 19 || str.length() <= 11) {
-                StringBuilder sbU = outline.U("<b>");
-                sbU.append(Html.escapeHtml(charSequenceB));
-                sbU.append("</b> ");
-                sbU.append(Html.escapeHtml(this.subtitle));
-                charSequenceB = Html.fromHtml(sbU.toString());
+                StringBuilder sbM833U = C1643a.m833U("<b>");
+                sbM833U.append(Html.escapeHtml(charSequenceM210b));
+                sbM833U.append("</b> ");
+                sbM833U.append(Html.escapeHtml(this.subtitle));
+                charSequenceM210b = Html.fromHtml(sbM833U.toString());
             } else {
                 String str2 = this.subtitle;
                 Objects.requireNonNull(str2, "null cannot be cast to non-null type java.lang.String");
                 String strSubstring = str2.substring(0, 11);
-                Intrinsics3.checkNotNullExpressionValue(strSubstring, "(this as java.lang.Strin…ing(startIndex, endIndex)");
-                if (Intrinsics3.areEqual(strSubstring, REPLYING_TO_UNTRANSLATED)) {
-                    StringBuilder sbU2 = outline.U("<b>");
-                    sbU2.append(Html.escapeHtml(charSequenceB));
-                    sbU2.append("</b> ");
+                C12238m.checkNotNullExpressionValue(strSubstring, "(this as java.lang.Strin…ing(startIndex, endIndex)");
+                if (C12238m.areEqual(strSubstring, REPLYING_TO_UNTRANSLATED)) {
+                    StringBuilder sbM833U2 = C1643a.m833U("<b>");
+                    sbM833U2.append(Html.escapeHtml(charSequenceM210b));
+                    sbM833U2.append("</b> ");
                     String str3 = this.subtitle;
                     Objects.requireNonNull(str3, "null cannot be cast to non-null type java.lang.String");
                     String strSubstring2 = str3.substring(0, 11);
-                    Intrinsics3.checkNotNullExpressionValue(strSubstring2, "(this as java.lang.Strin…ing(startIndex, endIndex)");
-                    sbU2.append(Html.escapeHtml(strSubstring2));
-                    sbU2.append("<b>");
+                    C12238m.checkNotNullExpressionValue(strSubstring2, "(this as java.lang.Strin…ing(startIndex, endIndex)");
+                    sbM833U2.append(Html.escapeHtml(strSubstring2));
+                    sbM833U2.append("<b>");
                     String str4 = this.subtitle;
                     Objects.requireNonNull(str4, "null cannot be cast to non-null type java.lang.String");
                     String strSubstring3 = str4.substring(11);
-                    Intrinsics3.checkNotNullExpressionValue(strSubstring3, "(this as java.lang.String).substring(startIndex)");
-                    sbU2.append(Html.escapeHtml(strSubstring3));
-                    sbU2.append("</b>");
-                    charSequenceB = Html.fromHtml(sbU2.toString());
+                    C12238m.checkNotNullExpressionValue(strSubstring3, "(this as java.lang.String).substring(startIndex)");
+                    sbM833U2.append(Html.escapeHtml(strSubstring3));
+                    sbM833U2.append("</b>");
+                    charSequenceM210b = Html.fromHtml(sbM833U2.toString());
                 } else {
-                    StringBuilder sbU3 = outline.U("<b>");
-                    sbU3.append(Html.escapeHtml(charSequenceB));
-                    sbU3.append("</b> ");
-                    sbU3.append(Html.escapeHtml(this.subtitle));
-                    charSequenceB = Html.fromHtml(sbU3.toString());
+                    StringBuilder sbM833U3 = C1643a.m833U("<b>");
+                    sbM833U3.append(Html.escapeHtml(charSequenceM210b));
+                    sbM833U3.append("</b> ");
+                    sbM833U3.append(Html.escapeHtml(this.subtitle));
+                    charSequenceM210b = Html.fromHtml(sbM833U3.toString());
                 }
             }
-            StringBuilder sbU4 = outline.U(strValueOf);
-            sbU4.append(this.subtitle);
-            strValueOf = sbU4.toString();
+            StringBuilder sbM833U4 = C1643a.m833U(strValueOf);
+            sbM833U4.append(this.subtitle);
+            strValueOf = sbM833U4.toString();
         }
         String forUser$default = IconUtils.getForUser$default(Long.valueOf(this.userId), this.userAvatar, null, false, null, 28, null);
-        if (forUser$default != null && (strReplaceAfterLast$default = Strings4.replaceAfterLast$default(forUser$default, '.', "jpg", null, 4, null)) != null) {
+        if (forUser$default != null && (strReplaceAfterLast$default = C12106w.replaceAfterLast$default(forUser$default, '.', "jpg", null, 4, null)) != null) {
             iconCompatCreateWithContentUri = IconCompat.createWithContentUri(strReplaceAfterLast$default);
         }
-        Person personBuild = new Person.Builder().setName(charSequenceB).setKey(strValueOf).setIcon(iconCompatCreateWithContentUri).setImportant(this.relationshipType == 1).build();
-        Intrinsics3.checkNotNullExpressionValue(personBuild, "Person.Builder()\n       …_FRIEND)\n        .build()");
+        Person personBuild = new Person.Builder().setName(charSequenceM210b).setKey(strValueOf).setIcon(iconCompatCreateWithContentUri).setImportant(this.relationshipType == 1).build();
+        C12238m.checkNotNullExpressionValue(personBuild, "Person.Builder()\n       …_FRIEND)\n        .build()");
         return personBuild;
     }
 
@@ -1099,15 +1099,15 @@ public final class NotificationData {
         if (iHashCode != -1327124998) {
             if (iHashCode != 998188116) {
                 if (iHashCode == 1770025841 && str.equals(TYPE_CALL_RING)) {
-                    return R.drawable.ic_notification_call_24dp;
+                    return C5419R.drawable.ic_notification_call_24dp;
                 }
             } else if (str.equals(TYPE_MESSAGE_CREATE)) {
-                return R.drawable.ic_notification_message_24dp;
+                return C5419R.drawable.ic_notification_message_24dp;
             }
         } else if (str.equals(TYPE_RELATIONSHIP_ADD)) {
-            return R.drawable.ic_notification_friends_24dp;
+            return C5419R.drawable.ic_notification_friends_24dp;
         }
-        return R.drawable.ic_notification_24dp;
+        return C5419R.drawable.ic_notification_24dp;
     }
 
     public final Sticker getSticker() {
@@ -1117,18 +1117,18 @@ public final class NotificationData {
     @RequiresApi(24)
     @SuppressLint({"UnspecifiedImmutableFlag"})
     public final NotificationCompat.Action getTimedMute(Context ctx, Clock clock, int numMessages) {
-        Intrinsics3.checkNotNullParameter(ctx, "ctx");
-        Intrinsics3.checkNotNullParameter(clock, "clock");
-        if ((!Intrinsics3.areEqual(this.type, TYPE_MESSAGE_CREATE)) || numMessages < 2) {
+        C12238m.checkNotNullParameter(ctx, "ctx");
+        C12238m.checkNotNullParameter(clock, "clock");
+        if ((!C12238m.areEqual(this.type, TYPE_MESSAGE_CREATE)) || numMessages < 2) {
             return null;
         }
-        return new NotificationCompat.Action.Builder(R.drawable.ic_notifications_off_grey_24dp, FormatUtils.b(ctx, R.string.notification_mute_1_hour, new Object[0], (4 & 4) != 0 ? FormatUtils.b.j : null), PendingIntent.getBroadcast(ctx, 0, addTrackingData(NotificationActions.INSTANCE.timedMute(ctx, this.guildId, this.channel.getId(), clock.currentTimeMillis() + 3600000)), PendingIntentExtensions.immutablePendingIntentFlag$default(0, 1, null))).build();
+        return new NotificationCompat.Action.Builder(C5419R.drawable.ic_notifications_off_grey_24dp, C1107b.m210b(ctx, C5419R.string.notification_mute_1_hour, new Object[0], (4 & 4) != 0 ? C1107b.b.f1491j : null), PendingIntent.getBroadcast(ctx, 0, addTrackingData(NotificationActions.INSTANCE.timedMute(ctx, this.guildId, this.channel.getId(), clock.currentTimeMillis() + 3600000)), PendingIntentExtensionsKt.immutablePendingIntentFlag$default(0, 1, null))).build();
     }
 
     public final CharSequence getTitle(Context context) {
         String str;
         GuildScheduledEventEntityType guildScheduledEventEntityType;
-        Intrinsics3.checkNotNullParameter(context, "context");
+        C12238m.checkNotNullParameter(context, "context");
         String str2 = this.type;
         switch (str2.hashCode()) {
             case -1502317553:
@@ -1150,19 +1150,19 @@ public final class NotificationData {
                     return "";
                 }
                 int iOrdinal = guildScheduledEventEntityType.ordinal();
-                return (iOrdinal == 1 || iOrdinal == 2 || iOrdinal == 3) ? FormatUtils.b(context, R.string.guild_scheduled_event_stage_start_title, new Object[]{this.guildName}, (4 & 4) != 0 ? FormatUtils.b.j : null) : "";
+                return (iOrdinal == 1 || iOrdinal == 2 || iOrdinal == 3) ? C1107b.m210b(context, C5419R.string.guild_scheduled_event_stage_start_title, new Object[]{this.guildName}, (4 & 4) != 0 ? C1107b.b.f1491j : null) : "";
             case -1327124998:
                 if (!str2.equals(TYPE_RELATIONSHIP_ADD)) {
                     return "";
                 }
-                if ((this.notificationType != NotificationData3.Reminder || (str = this.title) == null) && (str = this.userUsername) == null) {
+                if ((this.notificationType != NotificationType.Reminder || (str = this.title) == null) && (str = this.userUsername) == null) {
                     return "";
                 }
                 break;
             case -1263316859:
-                return str2.equals(TYPE_STAGE_INSTANCE_CREATE) ? FormatUtils.b(context, R.string.stage_start_push_notification_title, new Object[]{this.guildName}, (4 & 4) != 0 ? FormatUtils.b.j : null) : "";
+                return str2.equals(TYPE_STAGE_INSTANCE_CREATE) ? C1107b.m210b(context, C5419R.string.stage_start_push_notification_title, new Object[]{this.guildName}, (4 & 4) != 0 ? C1107b.b.f1491j : null) : "";
             case -1237752112:
-                return str2.equals(TYPE_APPLICATION_LIBRARY_INSTALL_COMPLETE) ? FormatUtils.b(context, R.string.game_library_notification_game_installed_title, new Object[0], (4 & 4) != 0 ? FormatUtils.b.j : null) : "";
+                return str2.equals(TYPE_APPLICATION_LIBRARY_INSTALL_COMPLETE) ? C1107b.m210b(context, C5419R.string.game_library_notification_game_installed_title, new Object[0], (4 & 4) != 0 ? C1107b.b.f1491j : null) : "";
             case -437641071:
                 if (!str2.equals(TYPE_FORUM_THREAD_CREATED)) {
                     return "";
@@ -1171,9 +1171,9 @@ public final class NotificationData {
                 objArr[0] = this.guildName;
                 Channel channel = this.parentChannel;
                 objArr[1] = channel != null ? channel.getName() : null;
-                return FormatUtils.b(context, R.string.forum_channel_thread_created_push_title_mobile, objArr, (4 & 4) != 0 ? FormatUtils.b.j : null);
+                return C1107b.m210b(context, C5419R.string.forum_channel_thread_created_push_title_mobile, objArr, (4 & 4) != 0 ? C1107b.b.f1491j : null);
             case 974015250:
-                return (str2.equals(TYPE_ACTIVITY_START) && this.activityType == 0) ? FormatUtils.b(context, R.string.notification_title_start_game, new Object[0], (4 & 4) != 0 ? FormatUtils.b.j : null) : "";
+                return (str2.equals(TYPE_ACTIVITY_START) && this.activityType == 0) ? C1107b.m210b(context, C5419R.string.notification_title_start_game, new Object[0], (4 & 4) != 0 ? C1107b.b.f1491j : null) : "";
             case 998188116:
                 if (!str2.equals(TYPE_MESSAGE_CREATE)) {
                     return "";
@@ -1187,7 +1187,7 @@ public final class NotificationData {
                         }
                     } else if (type != 2) {
                         if (type == 3) {
-                            return ChannelUtils.e(this.channel, context, false, 2);
+                            return ChannelUtils.m7681e(this.channel, context, false, 2);
                         }
                         if (type != 5) {
                             switch (type) {
@@ -1201,10 +1201,10 @@ public final class NotificationData {
                         }
                     }
                 }
-                return FormatUtils.g(this.guildName + " _" + ChannelUtils.e(this.channel, context, false, 2) + '_', new Object[0], (2 & 2) != 0 ? FormatUtils.e.j : null);
+                return C1107b.m215g(this.guildName + " _" + ChannelUtils.m7681e(this.channel, context, false, 2) + '_', new Object[0], (2 & 2) != 0 ? C1107b.e.f1494j : null);
             case 1770025841:
                 if (str2.equals(TYPE_CALL_RING)) {
-                    return this.channel.getType() != 1 ? ChannelUtils.c(this.channel) : FormatUtils.b(context, R.string.incoming_call, new Object[0], (4 & 4) != 0 ? FormatUtils.b.j : null);
+                    return this.channel.getType() != 1 ? ChannelUtils.m7679c(this.channel) : C1107b.m210b(context, C5419R.string.incoming_call, new Object[0], (4 & 4) != 0 ? C1107b.b.f1491j : null);
                 }
                 return "";
             default:
@@ -1298,7 +1298,7 @@ public final class NotificationData {
         private boolean ignoreNextClearForAck;
 
         public DisplayPayload(NotificationData notificationData) {
-            Intrinsics3.checkNotNullParameter(notificationData, "data");
+            C12238m.checkNotNullParameter(notificationData, "data");
             this.data = notificationData;
             this.id = new Random().nextInt(Integer.MAX_VALUE);
             this.extras = new LinkedHashMap<>();
@@ -1309,9 +1309,9 @@ public final class NotificationData {
                 return;
             }
             Set<Map.Entry<Long, NotificationData>> setEntrySet = this.extras.entrySet();
-            Intrinsics3.checkNotNullExpressionValue(setEntrySet, "extras\n          .entries");
-            List<Map.Entry> listDrop = _Collections.drop(setEntrySet, this.extras.size() - (maxExtras / 2));
-            LinkedHashMap linkedHashMap = new LinkedHashMap(_Ranges.coerceAtLeast(MapsJVM.mapCapacity(Iterables2.collectionSizeOrDefault(listDrop, 10)), 16));
+            C12238m.checkNotNullExpressionValue(setEntrySet, "extras\n          .entries");
+            List<Map.Entry> listDrop = C12163u.drop(setEntrySet, this.extras.size() - (maxExtras / 2));
+            LinkedHashMap linkedHashMap = new LinkedHashMap(C11226f.coerceAtLeast(C12134g0.mapCapacity(C12149o.collectionSizeOrDefault(listDrop, 10)), 16));
             for (Map.Entry entry : listDrop) {
                 linkedHashMap.put((Long) entry.getKey(), (NotificationData) entry.getValue());
             }
@@ -1333,8 +1333,8 @@ public final class NotificationData {
         public final synchronized List<NotificationData> getExtras() {
             Collection<NotificationData> collectionValues;
             collectionValues = this.extras.values();
-            Intrinsics3.checkNotNullExpressionValue(collectionValues, "extras.values");
-            return _Collections.toList(collectionValues);
+            C12238m.checkNotNullExpressionValue(collectionValues, "extras.values");
+            return C12163u.toList(collectionValues);
         }
 
         public final int getId() {
@@ -1346,7 +1346,7 @@ public final class NotificationData {
         }
 
         public final void setData(NotificationData notificationData) {
-            Intrinsics3.checkNotNullParameter(notificationData, "<set-?>");
+            C12238m.checkNotNullParameter(notificationData, "<set-?>");
             this.data = notificationData;
         }
 
@@ -1355,7 +1355,7 @@ public final class NotificationData {
         }
 
         public final synchronized void update(NotificationData data, int maxExtras) {
-            Intrinsics3.checkNotNullParameter(data, "data");
+            C12238m.checkNotNullParameter(data, "data");
             this.data = data;
             trimExtrasWhenOversized(maxExtras);
             if (data.getShouldGroup()) {
@@ -1392,60 +1392,60 @@ public final class NotificationData {
         Integer intOrNull5;
         Integer intOrNull6;
         Long longOrNull8;
-        Intrinsics3.checkNotNullParameter(map, "data");
+        C12238m.checkNotNullParameter(map, "data");
         String str = map.get("type");
         String str2 = str == null ? "" : str;
         String str3 = map.get(ANALYTICS_MESSAGE_ID);
-        long jLongValue = (str3 == null || (longOrNull8 = StringNumberConversions.toLongOrNull(str3)) == null) ? -1L : longOrNull8.longValue();
+        long jLongValue = (str3 == null || (longOrNull8 = C12102s.toLongOrNull(str3)) == null) ? -1L : longOrNull8.longValue();
         String str4 = map.get("message_activity_type");
         String string2 = null;
-        MessageActivityType messageActivityTypeA = (str4 == null || (intOrNull6 = StringNumberConversions.toIntOrNull(str4)) == null) ? null : MessageActivityType.INSTANCE.a(intOrNull6);
+        MessageActivityType messageActivityTypeM8059a = (str4 == null || (intOrNull6 = C12102s.toIntOrNull(str4)) == null) ? null : MessageActivityType.INSTANCE.m8059a(intOrNull6);
         String str5 = map.get("message_application_name");
         String str6 = map.get("message_type_");
-        int iIntValue = (str6 == null || (intOrNull5 = StringNumberConversions.toIntOrNull(str6)) == null) ? -1 : intOrNull5.intValue();
+        int iIntValue = (str6 == null || (intOrNull5 = C12102s.toIntOrNull(str6)) == null) ? -1 : intOrNull5.intValue();
         String str7 = map.get("message_content");
         String str8 = map.get("guild_id");
-        long jLongValue2 = (str8 == null || (longOrNull7 = StringNumberConversions.toLongOrNull(str8)) == null) ? -1L : longOrNull7.longValue();
+        long jLongValue2 = (str8 == null || (longOrNull7 = C12102s.toLongOrNull(str8)) == null) ? -1L : longOrNull7.longValue();
         String str9 = map.get("parent_name");
         if (str9 != null) {
-            string2 = FormatUtils.g(outline.y("!!", str9, "!!"), new Object[0], (2 & 2) != 0 ? FormatUtils.e.j : null).toString();
+            string2 = C1107b.m215g(C1643a.m886y("!!", str9, "!!"), new Object[0], (2 & 2) != 0 ? C1107b.e.f1494j : null).toString();
         }
         String str10 = map.get("parent_id");
-        Channel channel = new Channel(null, -1, jLongValue2, string2, 0L, (str10 == null || (longOrNull6 = StringNumberConversions.toLongOrNull(str10)) == null) ? -1L : longOrNull6.longValue(), 0L, null, null, 0, null, 0, 0, null, 0L, 0L, null, false, 0L, null, 0, null, map.get(ModelAuditLogEntry.CHANGE_KEY_REGION_OVERRIDE), null, null, null, null, null, null, null, null, null);
+        Channel channel = new Channel(null, -1, jLongValue2, string2, 0L, (str10 == null || (longOrNull6 = C12102s.toLongOrNull(str10)) == null) ? -1L : longOrNull6.longValue(), 0L, null, null, 0, null, 0, 0, null, 0L, 0L, null, false, 0L, null, 0, null, map.get(ModelAuditLogEntry.CHANGE_KEY_REGION_OVERRIDE), null, null, null, null, null, null, null, null, null);
         String str11 = map.get(ANALYTICS_CHANNEL_TYPE);
-        int iIntValue2 = (str11 == null || (intOrNull4 = StringNumberConversions.toIntOrNull(str11)) == null) ? -1 : intOrNull4.intValue();
+        int iIntValue2 = (str11 == null || (intOrNull4 = C12102s.toIntOrNull(str11)) == null) ? -1 : intOrNull4.intValue();
         String str12 = map.get("guild_id");
-        long jLongValue3 = (str12 == null || (longOrNull5 = StringNumberConversions.toLongOrNull(str12)) == null) ? -1L : longOrNull5.longValue();
+        long jLongValue3 = (str12 == null || (longOrNull5 = C12102s.toLongOrNull(str12)) == null) ? -1L : longOrNull5.longValue();
         String str13 = map.get("channel_name");
         if (str13 != null) {
             num = null;
-            string = FormatUtils.g(outline.y("!!", str13, "!!"), new Object[0], (2 & 2) != 0 ? FormatUtils.e.j : null).toString();
+            string = C1107b.m215g(C1643a.m886y("!!", str13, "!!"), new Object[0], (2 & 2) != 0 ? C1107b.e.f1494j : null).toString();
         } else {
             num = null;
             string = null;
         }
         String str14 = map.get("channel_id");
-        Channel channel2 = new Channel(null, iIntValue2, jLongValue3, string, 0L, (str14 == null || (longOrNull4 = StringNumberConversions.toLongOrNull(str14)) == null) ? -1L : longOrNull4.longValue(), 0L, null, null, 0, null, 0, 0, map.get("channel_icon"), 0L, 0L, null, false, 0L, null, 0, null, map.get(ModelAuditLogEntry.CHANGE_KEY_REGION_OVERRIDE), null, null, null, null, null, null, null, null, null);
+        Channel channel2 = new Channel(null, iIntValue2, jLongValue3, string, 0L, (str14 == null || (longOrNull4 = C12102s.toLongOrNull(str14)) == null) ? -1L : longOrNull4.longValue(), 0L, null, null, 0, null, 0, 0, map.get("channel_icon"), 0L, 0L, null, false, 0L, null, 0, null, map.get(ModelAuditLogEntry.CHANGE_KEY_REGION_OVERRIDE), null, null, null, null, null, null, null, null, null);
         List ackChannelIds = INSTANCE.parseAckChannelIds(map.get("channel_ids"));
         String str15 = map.get("user_id");
-        long jLongValue4 = (str15 == null || (longOrNull3 = StringNumberConversions.toLongOrNull(str15)) == null) ? -1L : longOrNull3.longValue();
+        long jLongValue4 = (str15 == null || (longOrNull3 = C12102s.toLongOrNull(str15)) == null) ? -1L : longOrNull3.longValue();
         String str16 = map.get("user_username");
         String str17 = map.get("user_discriminator");
-        Integer intOrNull7 = str17 != null ? StringNumberConversions.toIntOrNull(str17) : num;
+        Integer intOrNull7 = str17 != null ? C12102s.toIntOrNull(str17) : num;
         String str18 = map.get("user_avatar");
         String str19 = map.get("user_guild_avatar");
         String str20 = map.get(ANALYTICS_REL_TYPE);
-        int iIntValue3 = (str20 == null || (intOrNull3 = StringNumberConversions.toIntOrNull(str20)) == null) ? -1 : intOrNull3.intValue();
+        int iIntValue3 = (str20 == null || (intOrNull3 = C12102s.toIntOrNull(str20)) == null) ? -1 : intOrNull3.intValue();
         String str21 = map.get(Constants.DEEPLINK);
         String str22 = map.get("guild_id");
-        long jLongValue5 = (str22 == null || (longOrNull2 = StringNumberConversions.toLongOrNull(str22)) == null) ? -1L : longOrNull2.longValue();
+        long jLongValue5 = (str22 == null || (longOrNull2 = C12102s.toLongOrNull(str22)) == null) ? -1L : longOrNull2.longValue();
         String str23 = map.get("guild_name");
         String str24 = map.get("guild_icon");
         String str25 = map.get(ANALYTICS_ACTIVITY_TYPE);
-        int iIntValue4 = (str25 == null || (intOrNull2 = StringNumberConversions.toIntOrNull(str25)) == null) ? -1 : intOrNull2.intValue();
+        int iIntValue4 = (str25 == null || (intOrNull2 = C12102s.toIntOrNull(str25)) == null) ? -1 : intOrNull2.intValue();
         String str26 = map.get(ANALYTICS_ACTIVITY_NAME);
         String str27 = map.get(ModelAuditLogEntry.CHANGE_KEY_APPLICATION_ID);
-        long jLongValue6 = (str27 == null || (longOrNull = StringNumberConversions.toLongOrNull(str27)) == null) ? -1L : longOrNull.longValue();
+        long jLongValue6 = (str27 == null || (longOrNull = C12102s.toLongOrNull(str27)) == null) ? -1L : longOrNull.longValue();
         String str28 = map.get("application_name");
         String str29 = map.get("application_icon");
         Sticker fromMessageNotificationJson = StickerUtils.INSTANCE.parseFromMessageNotificationJson(map.get("message"));
@@ -1455,14 +1455,14 @@ public final class NotificationData {
         String str33 = map.get("subtitle_resource_name");
         String str34 = map.get("stage_instance_topic");
         String str35 = map.get("guild_scheduled_event_entity_type");
-        GuildScheduledEventEntityType guildScheduledEventEntityTypeA = (str35 == null || (intOrNull = StringNumberConversions.toIntOrNull(str35)) == null) ? num : GuildScheduledEventEntityType.INSTANCE.a(intOrNull.intValue());
+        GuildScheduledEventEntityType guildScheduledEventEntityTypeM7993a = (str35 == null || (intOrNull = C12102s.toIntOrNull(str35)) == null) ? num : GuildScheduledEventEntityType.INSTANCE.m7993a(intOrNull.intValue());
         String str36 = map.get("guild_scheduled_event_id");
-        Long longOrNull9 = str36 != null ? StringNumberConversions.toLongOrNull(str36) : num;
+        Long longOrNull9 = str36 != null ? C12102s.toLongOrNull(str36) : num;
         String str37 = map.get("notification_type");
-        NotificationData3 notificationData3 = str37 != null ? NotificationData3.INSTANCE.parse(str37) : num;
+        NotificationType notificationType = str37 != null ? NotificationType.INSTANCE.parse(str37) : num;
         String str38 = map.get("tracking_type");
         String str39 = map.get("notification_channel");
         String str40 = map.get("expand_subtitle");
-        this(str2, jLongValue, messageActivityTypeA, str5, iIntValue, str7, channel, channel2, ackChannelIds, jLongValue4, str16, intOrNull7, str18, str19, iIntValue3, str21, jLongValue5, str23, str24, iIntValue4, str26, jLongValue6, str28, str29, fromMessageNotificationJson, str30, str31, str32, str33, str34, guildScheduledEventEntityTypeA, longOrNull9, notificationData3, str38, str39, str40 != null ? Boolean.parseBoolean(str40) : false, map.get("notification_id"));
+        this(str2, jLongValue, messageActivityTypeM8059a, str5, iIntValue, str7, channel, channel2, ackChannelIds, jLongValue4, str16, intOrNull7, str18, str19, iIntValue3, str21, jLongValue5, str23, str24, iIntValue4, str26, jLongValue6, str28, str29, fromMessageNotificationJson, str30, str31, str32, str33, str34, guildScheduledEventEntityTypeM7993a, longOrNull9, notificationType, str38, str39, str40 != null ? Boolean.parseBoolean(str40) : false, map.get("notification_id"));
     }
 }

@@ -1,24 +1,24 @@
 package com.discord.analytics.generated.events;
 
-import b.d.b.a.outline;
 import com.discord.analytics.generated.traits.TrackBase;
-import com.discord.analytics.generated.traits.TrackBase2;
+import com.discord.analytics.generated.traits.TrackBaseReceiver;
 import com.discord.analytics.generated.traits.TrackLocationMetadata;
-import com.discord.analytics.generated.traits.TrackLocationMetadata2;
+import com.discord.analytics.generated.traits.TrackLocationMetadataReceiver;
 import com.discord.analytics.generated.traits.TrackPaymentMetadata;
-import com.discord.analytics.generated.traits.TrackPaymentMetadata2;
+import com.discord.analytics.generated.traits.TrackPaymentMetadataReceiver;
 import com.discord.analytics.generated.traits.TrackSourceMetadata;
-import com.discord.analytics.generated.traits.TrackSourceMetadata2;
+import com.discord.analytics.generated.traits.TrackSourceMetadataReceiver;
 import com.discord.analytics.generated.traits.TrackStoreSkuMetadata;
-import com.discord.analytics.generated.traits.TrackStoreSkuMetadata2;
+import com.discord.analytics.generated.traits.TrackStoreSkuMetadataReceiver;
 import com.discord.analytics.generated.traits.TrackSubscriptionMetadata;
-import com.discord.analytics.generated.traits.TrackSubscriptionMetadata2;
+import com.discord.analytics.generated.traits.TrackSubscriptionMetadataReceiver;
 import com.discord.api.science.AnalyticsSchema;
-import d0.z.d.Intrinsics3;
+import p007b.p100d.p104b.p105a.C1643a;
+import p507d0.p592z.p594d.C12238m;
 
 /* JADX INFO: compiled from: TrackPaymentFlowStep.kt */
 /* JADX INFO: loaded from: classes.dex */
-public final /* data */ class TrackPaymentFlowStep implements AnalyticsSchema, TrackBase2, TrackLocationMetadata2, TrackStoreSkuMetadata2, TrackSubscriptionMetadata2, TrackPaymentMetadata2, TrackSourceMetadata2 {
+public final /* data */ class TrackPaymentFlowStep implements AnalyticsSchema, TrackBaseReceiver, TrackLocationMetadataReceiver, TrackStoreSkuMetadataReceiver, TrackSubscriptionMetadataReceiver, TrackPaymentMetadataReceiver, TrackSourceMetadataReceiver {
     private TrackBase trackBase;
     private TrackLocationMetadata trackLocationMetadata;
     private TrackPaymentMetadata trackPaymentMetadata;
@@ -48,7 +48,7 @@ public final /* data */ class TrackPaymentFlowStep implements AnalyticsSchema, T
             return false;
         }
         TrackPaymentFlowStep trackPaymentFlowStep = (TrackPaymentFlowStep) other;
-        return Intrinsics3.areEqual(this.toStep, trackPaymentFlowStep.toStep) && Intrinsics3.areEqual(this.fromStep, trackPaymentFlowStep.fromStep) && Intrinsics3.areEqual(this.loadId, trackPaymentFlowStep.loadId) && Intrinsics3.areEqual(this.stepDurationMs, trackPaymentFlowStep.stepDurationMs) && Intrinsics3.areEqual(this.flowDurationMs, trackPaymentFlowStep.flowDurationMs) && Intrinsics3.areEqual(this.eligibleForTrial, trackPaymentFlowStep.eligibleForTrial) && Intrinsics3.areEqual(this.guildId, trackPaymentFlowStep.guildId);
+        return C12238m.areEqual(this.toStep, trackPaymentFlowStep.toStep) && C12238m.areEqual(this.fromStep, trackPaymentFlowStep.fromStep) && C12238m.areEqual(this.loadId, trackPaymentFlowStep.loadId) && C12238m.areEqual(this.stepDurationMs, trackPaymentFlowStep.stepDurationMs) && C12238m.areEqual(this.flowDurationMs, trackPaymentFlowStep.flowDurationMs) && C12238m.areEqual(this.eligibleForTrial, trackPaymentFlowStep.eligibleForTrial) && C12238m.areEqual(this.guildId, trackPaymentFlowStep.guildId);
     }
 
     public int hashCode() {
@@ -69,19 +69,19 @@ public final /* data */ class TrackPaymentFlowStep implements AnalyticsSchema, T
     }
 
     public String toString() {
-        StringBuilder sbU = outline.U("TrackPaymentFlowStep(toStep=");
-        sbU.append(this.toStep);
-        sbU.append(", fromStep=");
-        sbU.append(this.fromStep);
-        sbU.append(", loadId=");
-        sbU.append(this.loadId);
-        sbU.append(", stepDurationMs=");
-        sbU.append(this.stepDurationMs);
-        sbU.append(", flowDurationMs=");
-        sbU.append(this.flowDurationMs);
-        sbU.append(", eligibleForTrial=");
-        sbU.append(this.eligibleForTrial);
-        sbU.append(", guildId=");
-        return outline.G(sbU, this.guildId, ")");
+        StringBuilder sbM833U = C1643a.m833U("TrackPaymentFlowStep(toStep=");
+        sbM833U.append(this.toStep);
+        sbM833U.append(", fromStep=");
+        sbM833U.append(this.fromStep);
+        sbM833U.append(", loadId=");
+        sbM833U.append(this.loadId);
+        sbM833U.append(", stepDurationMs=");
+        sbM833U.append(this.stepDurationMs);
+        sbM833U.append(", flowDurationMs=");
+        sbM833U.append(this.flowDurationMs);
+        sbM833U.append(", eligibleForTrial=");
+        sbM833U.append(this.eligibleForTrial);
+        sbM833U.append(", guildId=");
+        return C1643a.m819G(sbM833U, this.guildId, ")");
     }
 }

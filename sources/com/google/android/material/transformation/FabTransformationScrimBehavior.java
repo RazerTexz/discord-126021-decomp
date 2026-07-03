@@ -27,29 +27,32 @@ public class FabTransformationScrimBehavior extends ExpandableTransformationBeha
     private final MotionTiming collapseTiming;
     private final MotionTiming expandTiming;
 
-    public class a extends AnimatorListenerAdapter {
-        public final /* synthetic */ boolean a;
+    /* JADX INFO: renamed from: com.google.android.material.transformation.FabTransformationScrimBehavior$a */
+    public class C11039a extends AnimatorListenerAdapter {
 
-        /* JADX INFO: renamed from: b, reason: collision with root package name */
-        public final /* synthetic */ View f3080b;
+        /* JADX INFO: renamed from: a */
+        public final /* synthetic */ boolean f21250a;
 
-        public a(FabTransformationScrimBehavior fabTransformationScrimBehavior, boolean z2, View view) {
-            this.a = z2;
-            this.f3080b = view;
+        /* JADX INFO: renamed from: b */
+        public final /* synthetic */ View f21251b;
+
+        public C11039a(FabTransformationScrimBehavior fabTransformationScrimBehavior, boolean z2, View view) {
+            this.f21250a = z2;
+            this.f21251b = view;
         }
 
         @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
         public void onAnimationEnd(Animator animator) {
-            if (this.a) {
+            if (this.f21250a) {
                 return;
             }
-            this.f3080b.setVisibility(4);
+            this.f21251b.setVisibility(4);
         }
 
         @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
         public void onAnimationStart(Animator animator) {
-            if (this.a) {
-                this.f3080b.setVisibility(0);
+            if (this.f21250a) {
+                this.f21251b.setVisibility(0);
             }
         }
     }
@@ -86,7 +89,7 @@ public class FabTransformationScrimBehavior extends ExpandableTransformationBeha
         createScrimAnimation(view2, z2, z3, arrayList, new ArrayList());
         AnimatorSet animatorSet = new AnimatorSet();
         AnimatorSetCompat.playTogether(animatorSet, arrayList);
-        animatorSet.addListener(new a(this, z2, view2));
+        animatorSet.addListener(new C11039a(this, z2, view2));
         return animatorSet;
     }
 

@@ -1,10 +1,10 @@
 package com.discord.models.domain.emoji;
 
-import b.d.b.a.outline;
 import com.discord.api.user.User;
 import com.discord.models.domain.ModelAuditLogEntry;
-import d0.z.d.Intrinsics3;
 import java.util.List;
+import p007b.p100d.p104b.p105a.C1643a;
+import p507d0.p592z.p594d.C12238m;
 
 /* JADX INFO: compiled from: ModelEmojiGuild.kt */
 /* JADX INFO: loaded from: classes.dex */
@@ -19,9 +19,9 @@ public final /* data */ class ModelEmojiGuild {
     private final User user;
 
     public ModelEmojiGuild(long j, String str, boolean z2, List<Long> list, boolean z3, User user, boolean z4, boolean z5) {
-        Intrinsics3.checkNotNullParameter(str, ModelAuditLogEntry.CHANGE_KEY_NAME);
-        Intrinsics3.checkNotNullParameter(list, "roles");
-        Intrinsics3.checkNotNullParameter(user, "user");
+        C12238m.checkNotNullParameter(str, ModelAuditLogEntry.CHANGE_KEY_NAME);
+        C12238m.checkNotNullParameter(list, "roles");
+        C12238m.checkNotNullParameter(user, "user");
         this.id = j;
         this.name = str;
         this.managed = z2;
@@ -72,9 +72,9 @@ public final /* data */ class ModelEmojiGuild {
     }
 
     public final ModelEmojiGuild copy(long id2, String name, boolean managed, List<Long> roles, boolean requiredColons, User user, boolean animated, boolean available) {
-        Intrinsics3.checkNotNullParameter(name, ModelAuditLogEntry.CHANGE_KEY_NAME);
-        Intrinsics3.checkNotNullParameter(roles, "roles");
-        Intrinsics3.checkNotNullParameter(user, "user");
+        C12238m.checkNotNullParameter(name, ModelAuditLogEntry.CHANGE_KEY_NAME);
+        C12238m.checkNotNullParameter(roles, "roles");
+        C12238m.checkNotNullParameter(user, "user");
         return new ModelEmojiGuild(id2, name, managed, roles, requiredColons, user, animated, available);
     }
 
@@ -86,7 +86,7 @@ public final /* data */ class ModelEmojiGuild {
             return false;
         }
         ModelEmojiGuild modelEmojiGuild = (ModelEmojiGuild) other;
-        return this.id == modelEmojiGuild.id && Intrinsics3.areEqual(this.name, modelEmojiGuild.name) && this.managed == modelEmojiGuild.managed && Intrinsics3.areEqual(this.roles, modelEmojiGuild.roles) && this.requiredColons == modelEmojiGuild.requiredColons && Intrinsics3.areEqual(this.user, modelEmojiGuild.user) && this.animated == modelEmojiGuild.animated && this.available == modelEmojiGuild.available;
+        return this.id == modelEmojiGuild.id && C12238m.areEqual(this.name, modelEmojiGuild.name) && this.managed == modelEmojiGuild.managed && C12238m.areEqual(this.roles, modelEmojiGuild.roles) && this.requiredColons == modelEmojiGuild.requiredColons && C12238m.areEqual(this.user, modelEmojiGuild.user) && this.animated == modelEmojiGuild.animated && this.available == modelEmojiGuild.available;
     }
 
     public final boolean getAnimated() {
@@ -169,21 +169,21 @@ public final /* data */ class ModelEmojiGuild {
     }
 
     public String toString() {
-        StringBuilder sbU = outline.U("ModelEmojiGuild(id=");
-        sbU.append(this.id);
-        sbU.append(", name=");
-        sbU.append(this.name);
-        sbU.append(", managed=");
-        sbU.append(this.managed);
-        sbU.append(", roles=");
-        sbU.append(this.roles);
-        sbU.append(", requiredColons=");
-        sbU.append(this.requiredColons);
-        sbU.append(", user=");
-        sbU.append(this.user);
-        sbU.append(", animated=");
-        sbU.append(this.animated);
-        sbU.append(", available=");
-        return outline.O(sbU, this.available, ")");
+        StringBuilder sbM833U = C1643a.m833U("ModelEmojiGuild(id=");
+        sbM833U.append(this.id);
+        sbM833U.append(", name=");
+        sbM833U.append(this.name);
+        sbM833U.append(", managed=");
+        sbM833U.append(this.managed);
+        sbM833U.append(", roles=");
+        sbM833U.append(this.roles);
+        sbM833U.append(", requiredColons=");
+        sbM833U.append(this.requiredColons);
+        sbM833U.append(", user=");
+        sbM833U.append(this.user);
+        sbM833U.append(", animated=");
+        sbM833U.append(this.animated);
+        sbM833U.append(", available=");
+        return C1643a.m827O(sbM833U, this.available, ")");
     }
 }

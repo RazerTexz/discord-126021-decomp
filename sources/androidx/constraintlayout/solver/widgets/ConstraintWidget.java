@@ -12,12 +12,12 @@ import androidx.constraintlayout.solver.widgets.analyzer.HorizontalWidgetRun;
 import androidx.constraintlayout.solver.widgets.analyzer.VerticalWidgetRun;
 import androidx.constraintlayout.solver.widgets.analyzer.WidgetRun;
 import androidx.exifinterface.media.ExifInterface;
-import b.d.b.a.outline;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Iterator;
+import p007b.p100d.p104b.p105a.C1643a;
 
 /* JADX INFO: loaded from: classes.dex */
 public class ConstraintWidget {
@@ -130,8 +130,12 @@ public class ConstraintWidget {
     private int mVisibility;
     public float[] mWeight;
     public int mWidth;
-    public int mX;
-    public int mY;
+
+    /* JADX INFO: renamed from: mX */
+    public int f114mX;
+
+    /* JADX INFO: renamed from: mY */
+    public int f115mY;
     public boolean measured;
     private boolean resolvedHorizontal;
     private boolean resolvedVertical;
@@ -140,68 +144,72 @@ public class ConstraintWidget {
     public int verticalGroup;
     public VerticalWidgetRun verticalRun;
 
-    /* JADX INFO: renamed from: androidx.constraintlayout.solver.widgets.ConstraintWidget$1, reason: invalid class name */
-    public static /* synthetic */ class AnonymousClass1 {
-        public static final /* synthetic */ int[] $SwitchMap$androidx$constraintlayout$solver$widgets$ConstraintAnchor$Type;
-        public static final /* synthetic */ int[] $SwitchMap$androidx$constraintlayout$solver$widgets$ConstraintWidget$DimensionBehaviour;
+    /* JADX INFO: renamed from: androidx.constraintlayout.solver.widgets.ConstraintWidget$1 */
+    public static /* synthetic */ class C01901 {
+
+        /* JADX INFO: renamed from: $SwitchMap$androidx$constraintlayout$solver$widgets$ConstraintAnchor$Type */
+        public static final /* synthetic */ int[] f116x4c44d048;
+
+        /* JADX INFO: renamed from: $SwitchMap$androidx$constraintlayout$solver$widgets$ConstraintWidget$DimensionBehaviour */
+        public static final /* synthetic */ int[] f117xdde91696;
 
         static {
             DimensionBehaviour.values();
             int[] iArr = new int[4];
-            $SwitchMap$androidx$constraintlayout$solver$widgets$ConstraintWidget$DimensionBehaviour = iArr;
+            f117xdde91696 = iArr;
             try {
                 iArr[DimensionBehaviour.FIXED.ordinal()] = 1;
             } catch (NoSuchFieldError unused) {
             }
             try {
-                $SwitchMap$androidx$constraintlayout$solver$widgets$ConstraintWidget$DimensionBehaviour[DimensionBehaviour.WRAP_CONTENT.ordinal()] = 2;
+                f117xdde91696[DimensionBehaviour.WRAP_CONTENT.ordinal()] = 2;
             } catch (NoSuchFieldError unused2) {
             }
             try {
-                $SwitchMap$androidx$constraintlayout$solver$widgets$ConstraintWidget$DimensionBehaviour[DimensionBehaviour.MATCH_PARENT.ordinal()] = 3;
+                f117xdde91696[DimensionBehaviour.MATCH_PARENT.ordinal()] = 3;
             } catch (NoSuchFieldError unused3) {
             }
             try {
-                $SwitchMap$androidx$constraintlayout$solver$widgets$ConstraintWidget$DimensionBehaviour[DimensionBehaviour.MATCH_CONSTRAINT.ordinal()] = 4;
+                f117xdde91696[DimensionBehaviour.MATCH_CONSTRAINT.ordinal()] = 4;
             } catch (NoSuchFieldError unused4) {
             }
             ConstraintAnchor.Type.values();
             int[] iArr2 = new int[9];
-            $SwitchMap$androidx$constraintlayout$solver$widgets$ConstraintAnchor$Type = iArr2;
+            f116x4c44d048 = iArr2;
             try {
                 iArr2[ConstraintAnchor.Type.LEFT.ordinal()] = 1;
             } catch (NoSuchFieldError unused5) {
             }
             try {
-                $SwitchMap$androidx$constraintlayout$solver$widgets$ConstraintAnchor$Type[ConstraintAnchor.Type.TOP.ordinal()] = 2;
+                f116x4c44d048[ConstraintAnchor.Type.TOP.ordinal()] = 2;
             } catch (NoSuchFieldError unused6) {
             }
             try {
-                $SwitchMap$androidx$constraintlayout$solver$widgets$ConstraintAnchor$Type[ConstraintAnchor.Type.RIGHT.ordinal()] = 3;
+                f116x4c44d048[ConstraintAnchor.Type.RIGHT.ordinal()] = 3;
             } catch (NoSuchFieldError unused7) {
             }
             try {
-                $SwitchMap$androidx$constraintlayout$solver$widgets$ConstraintAnchor$Type[ConstraintAnchor.Type.BOTTOM.ordinal()] = 4;
+                f116x4c44d048[ConstraintAnchor.Type.BOTTOM.ordinal()] = 4;
             } catch (NoSuchFieldError unused8) {
             }
             try {
-                $SwitchMap$androidx$constraintlayout$solver$widgets$ConstraintAnchor$Type[ConstraintAnchor.Type.BASELINE.ordinal()] = 5;
+                f116x4c44d048[ConstraintAnchor.Type.BASELINE.ordinal()] = 5;
             } catch (NoSuchFieldError unused9) {
             }
             try {
-                $SwitchMap$androidx$constraintlayout$solver$widgets$ConstraintAnchor$Type[ConstraintAnchor.Type.CENTER.ordinal()] = 6;
+                f116x4c44d048[ConstraintAnchor.Type.CENTER.ordinal()] = 6;
             } catch (NoSuchFieldError unused10) {
             }
             try {
-                $SwitchMap$androidx$constraintlayout$solver$widgets$ConstraintAnchor$Type[ConstraintAnchor.Type.CENTER_X.ordinal()] = 7;
+                f116x4c44d048[ConstraintAnchor.Type.CENTER_X.ordinal()] = 7;
             } catch (NoSuchFieldError unused11) {
             }
             try {
-                $SwitchMap$androidx$constraintlayout$solver$widgets$ConstraintAnchor$Type[ConstraintAnchor.Type.CENTER_Y.ordinal()] = 8;
+                f116x4c44d048[ConstraintAnchor.Type.CENTER_Y.ordinal()] = 8;
             } catch (NoSuchFieldError unused12) {
             }
             try {
-                $SwitchMap$androidx$constraintlayout$solver$widgets$ConstraintAnchor$Type[ConstraintAnchor.Type.NONE.ordinal()] = 9;
+                f116x4c44d048[ConstraintAnchor.Type.NONE.ordinal()] = 9;
             } catch (NoSuchFieldError unused13) {
             }
         }
@@ -264,8 +272,8 @@ public class ConstraintWidget {
         this.mHeight = 0;
         this.mDimensionRatio = 0.0f;
         this.mDimensionRatioSide = -1;
-        this.mX = 0;
-        this.mY = 0;
+        this.f114mX = 0;
+        this.f115mY = 0;
         this.mRelX = 0;
         this.mRelY = 0;
         this.mOffsetX = 0;
@@ -1226,8 +1234,8 @@ public class ConstraintWidget {
         boolean z16 = this.resolvedHorizontal;
         if (z16 || this.resolvedVertical) {
             if (z16) {
-                linearSystem.addEquality(solverVariableCreateObjectVariable3, this.mX);
-                linearSystem.addEquality(solverVariableCreateObjectVariable4, this.mX + this.mWidth);
+                linearSystem.addEquality(solverVariableCreateObjectVariable3, this.f114mX);
+                linearSystem.addEquality(solverVariableCreateObjectVariable4, this.f114mX + this.mWidth);
                 if (z3 && (constraintWidget2 = this.mParent) != null) {
                     if (this.OPTIMIZE_WRAP_ON_RESOLVED) {
                         ConstraintWidgetContainer constraintWidgetContainer = (ConstraintWidgetContainer) constraintWidget2;
@@ -1239,10 +1247,10 @@ public class ConstraintWidget {
                 }
             }
             if (this.resolvedVertical) {
-                linearSystem.addEquality(solverVariableCreateObjectVariable5, this.mY);
-                linearSystem.addEquality(solverVariableCreateObjectVariable6, this.mY + this.mHeight);
+                linearSystem.addEquality(solverVariableCreateObjectVariable5, this.f115mY);
+                linearSystem.addEquality(solverVariableCreateObjectVariable6, this.f115mY + this.mHeight);
                 if (this.mBaseline.hasDependents()) {
-                    linearSystem.addEquality(solverVariableCreateObjectVariable7, this.mY + this.mBaselineDistance);
+                    linearSystem.addEquality(solverVariableCreateObjectVariable7, this.f115mY + this.mBaselineDistance);
                 }
                 if (z4 && (constraintWidget = this.mParent) != null) {
                     if (this.OPTIMIZE_WRAP_ON_RESOLVED) {
@@ -1457,7 +1465,7 @@ public class ConstraintWidget {
                     DimensionBehaviour dimensionBehaviour5 = dimensionBehaviourArr[0];
                     ConstraintAnchor constraintAnchor = this.mLeft;
                     ConstraintAnchor constraintAnchor2 = this.mRight;
-                    int i19 = this.mX;
+                    int i19 = this.f114mX;
                     int i20 = this.mMinWidth;
                     int i21 = this.mMaxDimension[0];
                     float f2 = this.mHorizontalBiasPercent;
@@ -1490,7 +1498,7 @@ public class ConstraintWidget {
                         DimensionBehaviour dimensionBehaviour6 = dimensionBehaviourArr[0];
                         ConstraintAnchor constraintAnchor3 = this.mLeft;
                         ConstraintAnchor constraintAnchor4 = this.mRight;
-                        int i110 = this.mX;
+                        int i110 = this.f114mX;
                         int i22 = this.mMinWidth;
                         int i23 = this.mMaxDimension[0];
                         float f3 = this.mHorizontalBiasPercent;
@@ -1579,7 +1587,7 @@ public class ConstraintWidget {
                             }
                             boolean z26 = constraintWidget3.isTerminalWidget[c2];
                             DimensionBehaviour[] dimensionBehaviourArr3 = constraintWidget3.mListDimensionBehaviors;
-                            applyConstraints(linearSystem, false, z4, z3, z26, solverVariableCreateObjectVariable9, solverVariableCreateObjectVariable8, dimensionBehaviourArr3[c2], z25, constraintWidget3.mTop, constraintWidget3.mBottom, constraintWidget3.mY, i2, constraintWidget3.mMinHeight, constraintWidget3.mMaxDimension[c2], constraintWidget3.mVerticalBiasPercent, z8, dimensionBehaviourArr3[0] == dimensionBehaviour4, z5, z6, z22, i17, i, constraintWidget3.mMatchConstraintMinHeight, constraintWidget3.mMatchConstraintMaxHeight, constraintWidget3.mMatchConstraintPercentHeight, z12);
+                            applyConstraints(linearSystem, false, z4, z3, z26, solverVariableCreateObjectVariable9, solverVariableCreateObjectVariable8, dimensionBehaviourArr3[c2], z25, constraintWidget3.mTop, constraintWidget3.mBottom, constraintWidget3.f115mY, i2, constraintWidget3.mMinHeight, constraintWidget3.mMaxDimension[c2], constraintWidget3.mVerticalBiasPercent, z8, dimensionBehaviourArr3[0] == dimensionBehaviour4, z5, z6, z22, i17, i, constraintWidget3.mMatchConstraintMinHeight, constraintWidget3.mMatchConstraintMaxHeight, constraintWidget3.mMatchConstraintPercentHeight, z12);
                         }
                         if (z7) {
                             constraintWidget4 = this;
@@ -1903,8 +1911,8 @@ public class ConstraintWidget {
         this.mHeight = constraintWidget.mHeight;
         this.mDimensionRatio = constraintWidget.mDimensionRatio;
         this.mDimensionRatioSide = constraintWidget.mDimensionRatioSide;
-        this.mX = constraintWidget.mX;
-        this.mY = constraintWidget.mY;
+        this.f114mX = constraintWidget.f114mX;
+        this.f115mY = constraintWidget.f115mY;
         this.mRelX = constraintWidget.mRelX;
         this.mRelY = constraintWidget.mRelY;
         this.mOffsetX = constraintWidget.mOffsetX;
@@ -2235,11 +2243,11 @@ public class ConstraintWidget {
     }
 
     public int getRootX() {
-        return this.mX + this.mOffsetX;
+        return this.f114mX + this.mOffsetX;
     }
 
     public int getRootY() {
-        return this.mY + this.mOffsetY;
+        return this.f115mY + this.mOffsetY;
     }
 
     public WidgetRun getRun(int i) {
@@ -2313,12 +2321,12 @@ public class ConstraintWidget {
 
     public int getX() {
         ConstraintWidget constraintWidget = this.mParent;
-        return (constraintWidget == null || !(constraintWidget instanceof ConstraintWidgetContainer)) ? this.mX : ((ConstraintWidgetContainer) constraintWidget).mPaddingLeft + this.mX;
+        return (constraintWidget == null || !(constraintWidget instanceof ConstraintWidgetContainer)) ? this.f114mX : ((ConstraintWidgetContainer) constraintWidget).mPaddingLeft + this.f114mX;
     }
 
     public int getY() {
         ConstraintWidget constraintWidget = this.mParent;
-        return (constraintWidget == null || !(constraintWidget instanceof ConstraintWidgetContainer)) ? this.mY : ((ConstraintWidgetContainer) constraintWidget).mPaddingTop + this.mY;
+        return (constraintWidget == null || !(constraintWidget instanceof ConstraintWidgetContainer)) ? this.f115mY : ((ConstraintWidgetContainer) constraintWidget).mPaddingTop + this.f115mY;
     }
 
     public boolean hasBaseline() {
@@ -2439,8 +2447,8 @@ public class ConstraintWidget {
         this.mHeight = 0;
         this.mDimensionRatio = 0.0f;
         this.mDimensionRatioSide = -1;
-        this.mX = 0;
-        this.mY = 0;
+        this.f114mX = 0;
+        this.f115mY = 0;
         this.mOffsetX = 0;
         this.mOffsetY = 0;
         this.mBaselineDistance = 0;
@@ -2681,7 +2689,7 @@ public class ConstraintWidget {
         if (this.hasBaseline) {
             int i2 = i - this.mBaselineDistance;
             int i3 = this.mHeight + i2;
-            this.mY = i2;
+            this.f115mY = i2;
             this.mTop.setFinalValue(i2);
             this.mBottom.setFinalValue(i3);
             this.mBaseline.setFinalValue(i);
@@ -2710,25 +2718,25 @@ public class ConstraintWidget {
     public void setFinalHorizontal(int i, int i2) {
         this.mLeft.setFinalValue(i);
         this.mRight.setFinalValue(i2);
-        this.mX = i;
+        this.f114mX = i;
         this.mWidth = i2 - i;
         this.resolvedHorizontal = true;
     }
 
     public void setFinalLeft(int i) {
         this.mLeft.setFinalValue(i);
-        this.mX = i;
+        this.f114mX = i;
     }
 
     public void setFinalTop(int i) {
         this.mTop.setFinalValue(i);
-        this.mY = i;
+        this.f115mY = i;
     }
 
     public void setFinalVertical(int i, int i2) {
         this.mTop.setFinalValue(i);
         this.mBottom.setFinalValue(i2);
-        this.mY = i;
+        this.f115mY = i;
         this.mHeight = i2 - i;
         if (this.hasBaseline) {
             this.mBaseline.setFinalValue(i + this.mBaselineDistance);
@@ -2741,8 +2749,8 @@ public class ConstraintWidget {
         int i6;
         int i7 = i3 - i;
         int i8 = i4 - i2;
-        this.mX = i;
-        this.mY = i2;
+        this.f114mX = i;
+        this.f115mY = i2;
         if (this.mVisibility == 8) {
             this.mWidth = 0;
             this.mHeight = 0;
@@ -2812,7 +2820,7 @@ public class ConstraintWidget {
     }
 
     public void setHorizontalDimension(int i, int i2) {
-        this.mX = i;
+        this.f114mX = i;
         int i3 = i2 - i;
         this.mWidth = i3;
         int i4 = this.mMinWidth;
@@ -2903,8 +2911,8 @@ public class ConstraintWidget {
     }
 
     public void setOrigin(int i, int i2) {
-        this.mX = i;
-        this.mY = i2;
+        this.f114mX = i;
+        this.f115mY = i2;
     }
 
     public void setParent(ConstraintWidget constraintWidget) {
@@ -2932,7 +2940,7 @@ public class ConstraintWidget {
     }
 
     public void setVerticalDimension(int i, int i2) {
-        this.mY = i;
+        this.f115mY = i;
         int i3 = i2 - i;
         this.mHeight = i3;
         int i4 = this.mMinHeight;
@@ -2980,11 +2988,11 @@ public class ConstraintWidget {
     }
 
     public void setX(int i) {
-        this.mX = i;
+        this.f114mX = i;
     }
 
     public void setY(int i) {
-        this.mY = i;
+        this.f115mY = i;
     }
 
     public void setupDimensionRatio(boolean z2, boolean z3, boolean z4, boolean z5) {
@@ -3027,16 +3035,16 @@ public class ConstraintWidget {
 
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append(this.mType != null ? outline.J(outline.U("type: "), this.mType, " ") : "");
-        sb.append(this.mDebugName != null ? outline.J(outline.U("id: "), this.mDebugName, " ") : "");
+        sb.append(this.mType != null ? C1643a.m822J(C1643a.m833U("type: "), this.mType, " ") : "");
+        sb.append(this.mDebugName != null ? C1643a.m822J(C1643a.m833U("id: "), this.mDebugName, " ") : "");
         sb.append("(");
-        sb.append(this.mX);
+        sb.append(this.f114mX);
         sb.append(", ");
-        sb.append(this.mY);
+        sb.append(this.f115mY);
         sb.append(") - (");
         sb.append(this.mWidth);
         sb.append(" x ");
-        return outline.B(sb, this.mHeight, ")");
+        return C1643a.m814B(sb, this.mHeight, ")");
     }
 
     public void updateFromRuns(boolean z2, boolean z3) {
@@ -3060,10 +3068,10 @@ public class ConstraintWidget {
         int i8 = i5 - i3;
         int i9 = i6 - i4;
         if (zIsResolved) {
-            this.mX = i3;
+            this.f114mX = i3;
         }
         if (zIsResolved2) {
-            this.mY = i4;
+            this.f115mY = i4;
         }
         if (this.mVisibility == 8) {
             this.mWidth = 0;
@@ -3339,8 +3347,8 @@ public class ConstraintWidget {
         this.mHeight = 0;
         this.mDimensionRatio = 0.0f;
         this.mDimensionRatioSide = -1;
-        this.mX = 0;
-        this.mY = 0;
+        this.f114mX = 0;
+        this.f115mY = 0;
         this.mRelX = 0;
         this.mRelY = 0;
         this.mOffsetX = 0;
@@ -3417,8 +3425,8 @@ public class ConstraintWidget {
         this.mHeight = 0;
         this.mDimensionRatio = 0.0f;
         this.mDimensionRatioSide = -1;
-        this.mX = 0;
-        this.mY = 0;
+        this.f114mX = 0;
+        this.f115mY = 0;
         this.mRelX = 0;
         this.mRelY = 0;
         this.mOffsetX = 0;
@@ -3441,8 +3449,8 @@ public class ConstraintWidget {
         this.mVerticalNextWidget = null;
         this.horizontalGroup = -1;
         this.verticalGroup = -1;
-        this.mX = i;
-        this.mY = i2;
+        this.f114mX = i;
+        this.f115mY = i2;
         this.mWidth = i3;
         this.mHeight = i4;
         addAnchors();

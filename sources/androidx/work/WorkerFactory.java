@@ -4,7 +4,7 @@ import android.content.Context;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.annotation.RestrictTo;
-import b.d.b.a.outline;
+import p007b.p100d.p104b.p105a.C1643a;
 
 /* JADX INFO: loaded from: classes.dex */
 public abstract class WorkerFactory {
@@ -34,13 +34,13 @@ public abstract class WorkerFactory {
             try {
                 clsAsSubclass = Class.forName(str).asSubclass(ListenableWorker.class);
             } catch (Throwable th) {
-                Logger.get().error(TAG, outline.w("Invalid class: ", str), th);
+                Logger.get().error(TAG, C1643a.m883w("Invalid class: ", str), th);
             }
             if (clsAsSubclass != null) {
                 try {
                     listenableWorkerCreateWorker = (ListenableWorker) clsAsSubclass.getDeclaredConstructor(Context.class, WorkerParameters.class).newInstance(context, workerParameters);
                 } catch (Throwable th2) {
-                    Logger.get().error(TAG, outline.w("Could not instantiate ", str), th2);
+                    Logger.get().error(TAG, C1643a.m883w("Could not instantiate ", str), th2);
                 }
             }
         }

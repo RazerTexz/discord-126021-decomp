@@ -25,12 +25,12 @@ public class Scene {
 
     @Nullable
     public static Scene getCurrentScene(@NonNull ViewGroup viewGroup) {
-        return (Scene) viewGroup.getTag(R.id.transition_current_scene);
+        return (Scene) viewGroup.getTag(C0658R.id.transition_current_scene);
     }
 
     @NonNull
     public static Scene getSceneForLayout(@NonNull ViewGroup viewGroup, @LayoutRes int i, @NonNull Context context) {
-        int i2 = R.id.transition_scene_layoutid_cache;
+        int i2 = C0658R.id.transition_scene_layoutid_cache;
         SparseArray sparseArray = (SparseArray) viewGroup.getTag(i2);
         if (sparseArray == null) {
             sparseArray = new SparseArray();
@@ -46,7 +46,7 @@ public class Scene {
     }
 
     public static void setCurrentScene(@NonNull ViewGroup viewGroup, @Nullable Scene scene) {
-        viewGroup.setTag(R.id.transition_current_scene, scene);
+        viewGroup.setTag(C0658R.id.transition_current_scene, scene);
     }
 
     public void enter() {

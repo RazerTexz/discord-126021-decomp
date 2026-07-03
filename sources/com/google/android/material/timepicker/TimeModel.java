@@ -3,21 +3,36 @@ package com.google.android.material.timepicker;
 import android.content.res.Resources;
 import android.os.Parcel;
 import android.os.Parcelable;
-import b.i.a.g.k.MaxInputValidator;
 import java.util.Arrays;
+import p007b.p225i.p226a.p341g.p352k.C4449d;
 
 /* JADX INFO: loaded from: classes3.dex */
 public class TimeModel implements Parcelable {
-    public static final Parcelable.Creator<TimeModel> CREATOR = new a();
-    public final MaxInputValidator j;
-    public final MaxInputValidator k;
-    public final int l;
-    public int m;
-    public int n;
-    public int o;
-    public int p;
+    public static final Parcelable.Creator<TimeModel> CREATOR = new C11027a();
 
-    public static class a implements Parcelable.Creator<TimeModel> {
+    /* JADX INFO: renamed from: j */
+    public final C4449d f21220j;
+
+    /* JADX INFO: renamed from: k */
+    public final C4449d f21221k;
+
+    /* JADX INFO: renamed from: l */
+    public final int f21222l;
+
+    /* JADX INFO: renamed from: m */
+    public int f21223m;
+
+    /* JADX INFO: renamed from: n */
+    public int f21224n;
+
+    /* JADX INFO: renamed from: o */
+    public int f21225o;
+
+    /* JADX INFO: renamed from: p */
+    public int f21226p;
+
+    /* JADX INFO: renamed from: com.google.android.material.timepicker.TimeModel$a */
+    public static class C11027a implements Parcelable.Creator<TimeModel> {
         @Override // android.os.Parcelable.Creator
         public TimeModel createFromParcel(Parcel parcel) {
             return new TimeModel(parcel.readInt(), parcel.readInt(), parcel.readInt(), parcel.readInt());
@@ -33,40 +48,44 @@ public class TimeModel implements Parcelable {
         this(0, 0, 10, 0);
     }
 
-    public static String a(Resources resources, CharSequence charSequence, String str) {
+    /* JADX INFO: renamed from: a */
+    public static String m9160a(Resources resources, CharSequence charSequence, String str) {
         return String.format(resources.getConfiguration().locale, str, Integer.valueOf(Integer.parseInt(String.valueOf(charSequence))));
     }
 
-    public int b() {
-        if (this.l == 1) {
-            return this.m % 24;
+    /* JADX INFO: renamed from: b */
+    public int m9161b() {
+        if (this.f21222l == 1) {
+            return this.f21223m % 24;
         }
-        int i = this.m;
+        int i = this.f21223m;
         if (i % 12 == 0) {
             return 12;
         }
-        return this.p == 1 ? i - 12 : i;
+        return this.f21226p == 1 ? i - 12 : i;
     }
 
-    public void c(int i) {
-        if (this.l == 1) {
-            this.m = i;
+    /* JADX INFO: renamed from: c */
+    public void m9162c(int i) {
+        if (this.f21222l == 1) {
+            this.f21223m = i;
         } else {
-            this.m = (i % 12) + (this.p != 1 ? 0 : 12);
+            this.f21223m = (i % 12) + (this.f21226p != 1 ? 0 : 12);
         }
     }
 
-    public void d(int i) {
-        if (i != this.p) {
-            this.p = i;
-            int i2 = this.m;
+    /* JADX INFO: renamed from: d */
+    public void m9163d(int i) {
+        if (i != this.f21226p) {
+            this.f21226p = i;
+            int i2 = this.f21223m;
             if (i2 < 12 && i == 1) {
-                this.m = i2 + 12;
+                this.f21223m = i2 + 12;
             } else {
                 if (i2 < 12 || i != 0) {
                     return;
                 }
-                this.m = i2 - 12;
+                this.f21223m = i2 - 12;
             }
         }
     }
@@ -84,28 +103,28 @@ public class TimeModel implements Parcelable {
             return false;
         }
         TimeModel timeModel = (TimeModel) obj;
-        return this.m == timeModel.m && this.n == timeModel.n && this.l == timeModel.l && this.o == timeModel.o;
+        return this.f21223m == timeModel.f21223m && this.f21224n == timeModel.f21224n && this.f21222l == timeModel.f21222l && this.f21225o == timeModel.f21225o;
     }
 
     public int hashCode() {
-        return Arrays.hashCode(new Object[]{Integer.valueOf(this.l), Integer.valueOf(this.m), Integer.valueOf(this.n), Integer.valueOf(this.o)});
+        return Arrays.hashCode(new Object[]{Integer.valueOf(this.f21222l), Integer.valueOf(this.f21223m), Integer.valueOf(this.f21224n), Integer.valueOf(this.f21225o)});
     }
 
     @Override // android.os.Parcelable
     public void writeToParcel(Parcel parcel, int i) {
-        parcel.writeInt(this.m);
-        parcel.writeInt(this.n);
-        parcel.writeInt(this.o);
-        parcel.writeInt(this.l);
+        parcel.writeInt(this.f21223m);
+        parcel.writeInt(this.f21224n);
+        parcel.writeInt(this.f21225o);
+        parcel.writeInt(this.f21222l);
     }
 
     public TimeModel(int i, int i2, int i3, int i4) {
-        this.m = i;
-        this.n = i2;
-        this.o = i3;
-        this.l = i4;
-        this.p = i >= 12 ? 1 : 0;
-        this.j = new MaxInputValidator(59);
-        this.k = new MaxInputValidator(i4 == 1 ? 24 : 12);
+        this.f21223m = i;
+        this.f21224n = i2;
+        this.f21225o = i3;
+        this.f21222l = i4;
+        this.f21226p = i >= 12 ? 1 : 0;
+        this.f21220j = new C4449d(59);
+        this.f21221k = new C4449d(i4 == 1 ? 24 : 12);
     }
 }

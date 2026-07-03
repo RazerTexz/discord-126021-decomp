@@ -9,21 +9,22 @@ import androidx.viewbinding.ViewBinding;
 /* JADX INFO: loaded from: classes.dex */
 public final class ViewAppcommandsOptionparamListitemBinding implements ViewBinding {
 
+    /* JADX INFO: renamed from: a */
     @NonNull
-    public final FrameLayout a;
+    public final FrameLayout f15369a;
 
-    /* JADX INFO: renamed from: b, reason: collision with root package name */
+    /* JADX INFO: renamed from: b */
     @NonNull
-    public final TextView f2172b;
+    public final TextView f15370b;
 
     public ViewAppcommandsOptionparamListitemBinding(@NonNull FrameLayout frameLayout, @NonNull TextView textView) {
-        this.a = frameLayout;
-        this.f2172b = textView;
+        this.f15369a = frameLayout;
+        this.f15370b = textView;
     }
 
     @Override // androidx.viewbinding.ViewBinding
     @NonNull
     public View getRoot() {
-        return this.a;
+        return this.f15369a;
     }
 }

@@ -1,12 +1,12 @@
 package com.discord.models.domain;
 
-import b.d.b.a.outline;
 import com.discord.models.domain.Model;
-import d0.z.d.Intrinsics3;
 import java.io.IOException;
 import kotlin.jvm.internal.Ref$LongRef;
 import kotlin.jvm.internal.Ref$ObjectRef;
-import rx.functions.Action1;
+import p007b.p100d.p104b.p105a.C1643a;
+import p507d0.p592z.p594d.C12238m;
+import p658rx.functions.Action1;
 
 /* JADX INFO: compiled from: ModelUserNote.kt */
 /* JADX INFO: loaded from: classes.dex */
@@ -30,13 +30,13 @@ public final /* data */ class ModelUserNote {
             /* JADX WARN: Multi-variable type inference failed */
             @Override // com.discord.models.domain.Model.Parser
             public Update parse(final Model.JsonReader reader) throws IOException {
-                Intrinsics3.checkNotNullParameter(reader, "reader");
+                C12238m.checkNotNullParameter(reader, "reader");
                 final Ref$LongRef ref$LongRef = new Ref$LongRef();
                 ref$LongRef.element = 0L;
                 final Ref$ObjectRef ref$ObjectRef = new Ref$ObjectRef();
                 ref$ObjectRef.element = "";
                 reader.nextObject(new Action1<String>() { // from class: com.discord.models.domain.ModelUserNote$Update$Parser$parse$1
-                    @Override // rx.functions.Action1
+                    @Override // p658rx.functions.Action1
                     public final void call(String str) throws IOException {
                         if (str != null) {
                             int iHashCode = str.hashCode();
@@ -44,7 +44,7 @@ public final /* data */ class ModelUserNote {
                                 if (iHashCode == 3387378 && str.equals("note")) {
                                     Ref$ObjectRef ref$ObjectRef2 = ref$ObjectRef;
                                     T t = (T) reader.nextString("");
-                                    Intrinsics3.checkNotNullExpressionValue(t, "reader.nextString(\"\")");
+                                    C12238m.checkNotNullExpressionValue(t, "reader.nextString(\"\")");
                                     ref$ObjectRef2.element = t;
                                     return;
                                 }
@@ -61,7 +61,7 @@ public final /* data */ class ModelUserNote {
         }
 
         public Update(long j, String str) {
-            Intrinsics3.checkNotNullParameter(str, "note");
+            C12238m.checkNotNullParameter(str, "note");
             this.id = j;
             this.note = str;
         }
@@ -87,7 +87,7 @@ public final /* data */ class ModelUserNote {
         }
 
         public final Update copy(long id2, String note) {
-            Intrinsics3.checkNotNullParameter(note, "note");
+            C12238m.checkNotNullParameter(note, "note");
             return new Update(id2, note);
         }
 
@@ -99,7 +99,7 @@ public final /* data */ class ModelUserNote {
                 return false;
             }
             Update update = (Update) other;
-            return this.id == update.id && Intrinsics3.areEqual(this.note, update.note);
+            return this.id == update.id && C12238m.areEqual(this.note, update.note);
         }
 
         public final long getId() {
@@ -118,10 +118,10 @@ public final /* data */ class ModelUserNote {
         }
 
         public String toString() {
-            StringBuilder sbU = outline.U("Update(id=");
-            sbU.append(this.id);
-            sbU.append(", note=");
-            return outline.J(sbU, this.note, ")");
+            StringBuilder sbM833U = C1643a.m833U("Update(id=");
+            sbM833U.append(this.id);
+            sbM833U.append(", note=");
+            return C1643a.m822J(sbM833U, this.note, ")");
         }
     }
 
@@ -162,7 +162,7 @@ public final /* data */ class ModelUserNote {
             return false;
         }
         ModelUserNote modelUserNote = (ModelUserNote) other;
-        return this.noteUserId == modelUserNote.noteUserId && Intrinsics3.areEqual(this.note, modelUserNote.note);
+        return this.noteUserId == modelUserNote.noteUserId && C12238m.areEqual(this.note, modelUserNote.note);
     }
 
     public final String getNote() {
@@ -181,9 +181,9 @@ public final /* data */ class ModelUserNote {
     }
 
     public String toString() {
-        StringBuilder sbU = outline.U("ModelUserNote(noteUserId=");
-        sbU.append(this.noteUserId);
-        sbU.append(", note=");
-        return outline.J(sbU, this.note, ")");
+        StringBuilder sbM833U = C1643a.m833U("ModelUserNote(noteUserId=");
+        sbM833U.append(this.noteUserId);
+        sbM833U.append(", note=");
+        return C1643a.m822J(sbM833U, this.note, ")");
     }
 }

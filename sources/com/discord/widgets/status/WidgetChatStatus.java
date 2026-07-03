@@ -1,6 +1,5 @@
 package com.discord.widgets.status;
 
-import a0.a.a.b;
 import android.content.res.Resources;
 import android.view.View;
 import android.widget.LinearLayout;
@@ -8,9 +7,7 @@ import android.widget.TextView;
 import androidx.annotation.MainThread;
 import androidx.exifinterface.media.ExifInterface;
 import androidx.fragment.app.Fragment;
-import b.a.k.FormatUtils;
-import b.d.b.a.outline;
-import com.discord.R;
+import com.discord.C5419R;
 import com.discord.app.AppFragment;
 import com.discord.databinding.WidgetChatStatusBinding;
 import com.discord.i18n.RenderContext;
@@ -18,17 +15,12 @@ import com.discord.models.application.Unread;
 import com.discord.stores.StoreMessageAck;
 import com.discord.stores.StoreStream;
 import com.discord.utilities.error.Error;
-import com.discord.utilities.resources.StringResourceUtils;
-import com.discord.utilities.rx.ObservableExtensionsKt;
-import com.discord.utilities.rx.ObservableWithLeadingEdgeThrottle;
+import com.discord.utilities.p501rx.ObservableExtensionsKt;
+import com.discord.utilities.p501rx.ObservableWithLeadingEdgeThrottle;
+import com.discord.utilities.resources.StringResourceUtilsKt;
 import com.discord.utilities.time.TimeUtils;
 import com.discord.utilities.viewbinding.FragmentViewBindingDelegate;
-import com.discord.utilities.viewbinding.FragmentViewBindingDelegate3;
-import d0.d0._Ranges;
-import d0.z.d.Intrinsics3;
-import d0.z.d.Lambda;
-import j0.k.Func1;
-import j0.l.e.ScalarSynchronousObservable;
+import com.discord.utilities.viewbinding.FragmentViewBindingDelegateKt;
 import java.util.Set;
 import java.util.concurrent.TimeUnit;
 import kotlin.Unit;
@@ -36,15 +28,23 @@ import kotlin.jvm.functions.Function0;
 import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.reflect.KProperty;
-import rx.Observable;
-import rx.Subscription;
-import rx.functions.Func2;
-import rx.functions.Func3;
+import p001a0.p002a.p003a.C0002b;
+import p007b.p008a.p027k.C1107b;
+import p007b.p100d.p104b.p105a.C1643a;
+import p507d0.p512d0.C11226f;
+import p507d0.p592z.p594d.AbstractC12240o;
+import p507d0.p592z.p594d.C12238m;
+import p637j0.p641k.InterfaceC12589b;
+import p637j0.p642l.p647e.C12721k;
+import p658rx.Observable;
+import p658rx.Subscription;
+import p658rx.functions.Func2;
+import p658rx.functions.Func3;
 
 /* JADX INFO: compiled from: WidgetChatStatus.kt */
 /* JADX INFO: loaded from: classes2.dex */
 public final class WidgetChatStatus extends AppFragment {
-    public static final /* synthetic */ KProperty[] $$delegatedProperties = {outline.d0(WidgetChatStatus.class, "binding", "getBinding()Lcom/discord/databinding/WidgetChatStatusBinding;", 0)};
+    public static final /* synthetic */ KProperty[] $$delegatedProperties = {C1643a.m846d0(WidgetChatStatus.class, "binding", "getBinding()Lcom/discord/databinding/WidgetChatStatusBinding;", 0)};
 
     /* JADX INFO: renamed from: binding$delegate, reason: from kotlin metadata */
     private final FragmentViewBindingDelegate binding;
@@ -73,47 +73,47 @@ public final class WidgetChatStatus extends AppFragment {
                 boolean z2 = isUnreadValid && unread.getCount() > 0 && marker.getChannelId() > 0;
                 long channelId = marker.getChannelId();
                 Long messageId = marker.getMessageId();
-                return new Model(z2, messageId != null ? messageId.longValue() : 0L, channelId, _Ranges.coerceIn(count, 0, i), count >= i);
+                return new Model(z2, messageId != null ? messageId.longValue() : 0L, channelId, C11226f.coerceIn(count, 0, i), count >= i);
             }
 
             public final Observable<Model> get() {
                 StoreStream.Companion companion = StoreStream.INSTANCE;
-                Observable observableR = companion.getChannelsSelected().observeId().r().Y(new Func1<Long, Observable<? extends Boolean>>() { // from class: com.discord.widgets.status.WidgetChatStatus$Model$Companion$get$isUnreadValidObs$1
-                    @Override // j0.k.Func1
+                Observable observableM11112r = companion.getChannelsSelected().observeId().m11112r().m11099Y(new InterfaceC12589b<Long, Observable<? extends Boolean>>() { // from class: com.discord.widgets.status.WidgetChatStatus$Model$Companion$get$isUnreadValidObs$1
+                    @Override // p637j0.p641k.InterfaceC12589b
                     public final Observable<? extends Boolean> call(Long l) {
                         StoreStream.Companion companion2 = StoreStream.INSTANCE;
                         StoreMessageAck messageAck = companion2.getMessageAck();
-                        Intrinsics3.checkNotNullExpressionValue(l, "selectedChannelId");
+                        C12238m.checkNotNullExpressionValue(l, "selectedChannelId");
                         Observable<StoreMessageAck.Ack> observableObserveForChannel = messageAck.observeForChannel(l.longValue());
                         TimeUnit timeUnit = TimeUnit.MILLISECONDS;
-                        return Observable.m(new ScalarSynchronousObservable(Boolean.FALSE), Observable.j(observableObserveForChannel.p(200L, timeUnit), companion2.getMessagesMostRecent().observeRecentMessageIds(l.longValue()).p(200L, timeUnit).Z(1), new Func2<StoreMessageAck.Ack, Long, Boolean>() { // from class: com.discord.widgets.status.WidgetChatStatus$Model$Companion$get$isUnreadValidObs$1$isLastAckOlderThanMostRecent$1
-                            @Override // rx.functions.Func2
+                        return Observable.m11079m(new C12721k(Boolean.FALSE), Observable.m11076j(observableObserveForChannel.m11110p(200L, timeUnit), companion2.getMessagesMostRecent().observeRecentMessageIds(l.longValue()).m11110p(200L, timeUnit).m11100Z(1), new Func2<StoreMessageAck.Ack, Long, Boolean>() { // from class: com.discord.widgets.status.WidgetChatStatus$Model$Companion$get$isUnreadValidObs$1$isLastAckOlderThanMostRecent$1
+                            @Override // p658rx.functions.Func2
                             public final Boolean call(StoreMessageAck.Ack ack, Long l2) {
                                 long messageId = ack != null ? ack.getMessageId() : 0L;
-                                Intrinsics3.checkNotNullExpressionValue(l2, "mostRecentIdSnapshot");
+                                C12238m.checkNotNullExpressionValue(l2, "mostRecentIdSnapshot");
                                 return Boolean.valueOf(messageId < l2.longValue());
                             }
-                        }).b0(new Func1<Boolean, Boolean>() { // from class: com.discord.widgets.status.WidgetChatStatus$Model$Companion$get$isUnreadValidObs$1$isLastAckOlderThanMostRecent$2
-                            @Override // j0.k.Func1
+                        }).m11103b0(new InterfaceC12589b<Boolean, Boolean>() { // from class: com.discord.widgets.status.WidgetChatStatus$Model$Companion$get$isUnreadValidObs$1$isLastAckOlderThanMostRecent$2
+                            @Override // p637j0.p641k.InterfaceC12589b
                             public final Boolean call(Boolean bool) {
-                                return Boolean.valueOf(Intrinsics3.areEqual(bool, Boolean.FALSE));
+                                return Boolean.valueOf(C12238m.areEqual(bool, Boolean.FALSE));
                             }
                         }));
                     }
-                }).r();
+                }).m11112r();
                 Observable<Set<Long>> allDetached = companion.getMessages().getAllDetached();
                 Observable<Unread> unreadMarkerForSelectedChannel = companion.getReadStates().getUnreadMarkerForSelectedChannel();
-                final WidgetChatStatus2 widgetChatStatus2 = new WidgetChatStatus2(this);
-                Observable observableCombineLatest = ObservableWithLeadingEdgeThrottle.combineLatest(observableR, allDetached, unreadMarkerForSelectedChannel, new Func3() { // from class: com.discord.widgets.status.WidgetChatStatus$sam$rx_functions_Func3$0
-                    @Override // rx.functions.Func3
+                final WidgetChatStatus$Model$Companion$get$1 widgetChatStatus$Model$Companion$get$1 = new WidgetChatStatus$Model$Companion$get$1(this);
+                Observable observableCombineLatest = ObservableWithLeadingEdgeThrottle.combineLatest(observableM11112r, allDetached, unreadMarkerForSelectedChannel, new Func3() { // from class: com.discord.widgets.status.WidgetChatStatus$sam$rx_functions_Func3$0
+                    @Override // p658rx.functions.Func3
                     public final /* synthetic */ Object call(Object obj, Object obj2, Object obj3) {
-                        return widgetChatStatus2.invoke(obj, obj2, obj3);
+                        return widgetChatStatus$Model$Companion$get$1.invoke(obj, obj2, obj3);
                     }
                 }, 500L, TimeUnit.MILLISECONDS);
-                Intrinsics3.checkNotNullExpressionValue(observableCombineLatest, "ObservableWithLeadingEdg…ILLISECONDS\n            )");
-                Observable<Model> observableR2 = ObservableExtensionsKt.computationLatest(observableCombineLatest).r();
-                Intrinsics3.checkNotNullExpressionValue(observableR2, "ObservableWithLeadingEdg…  .distinctUntilChanged()");
-                return observableR2;
+                C12238m.checkNotNullExpressionValue(observableCombineLatest, "ObservableWithLeadingEdg…ILLISECONDS\n            )");
+                Observable<Model> observableM11112r2 = ObservableExtensionsKt.computationLatest(observableCombineLatest).m11112r();
+                C12238m.checkNotNullExpressionValue(observableM11112r2, "ObservableWithLeadingEdg…  .distinctUntilChanged()");
+                return observableM11112r2;
             }
 
             public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
@@ -221,9 +221,9 @@ public final class WidgetChatStatus extends AppFragment {
             if (z2) {
                 r0 = 1;
             }
-            int iA = (((b.a(this.unreadChannelId) + ((b.a(this.unreadMessageId) + (r0 * 31)) * 31)) * 31) + this.unreadCount) * 31;
+            int iM3a = (((C0002b.m3a(this.unreadChannelId) + ((C0002b.m3a(this.unreadMessageId) + (r0 * 31)) * 31)) * 31) + this.unreadCount) * 31;
             boolean z3 = this.isUnreadEstimate;
-            return iA + (z3 ? 1 : z3);
+            return iM3a + (z3 ? 1 : z3);
         }
 
         public final boolean isUnreadEstimate() {
@@ -231,59 +231,59 @@ public final class WidgetChatStatus extends AppFragment {
         }
 
         public String toString() {
-            StringBuilder sbU = outline.U("Model(unreadVisible=");
-            sbU.append(this.unreadVisible);
-            sbU.append(", unreadMessageId=");
-            sbU.append(this.unreadMessageId);
-            sbU.append(", unreadChannelId=");
-            sbU.append(this.unreadChannelId);
-            sbU.append(", unreadCount=");
-            sbU.append(this.unreadCount);
-            sbU.append(", isUnreadEstimate=");
-            return outline.O(sbU, this.isUnreadEstimate, ")");
+            StringBuilder sbM833U = C1643a.m833U("Model(unreadVisible=");
+            sbM833U.append(this.unreadVisible);
+            sbM833U.append(", unreadMessageId=");
+            sbM833U.append(this.unreadMessageId);
+            sbM833U.append(", unreadChannelId=");
+            sbM833U.append(this.unreadChannelId);
+            sbM833U.append(", unreadCount=");
+            sbM833U.append(this.unreadCount);
+            sbM833U.append(", isUnreadEstimate=");
+            return C1643a.m827O(sbM833U, this.isUnreadEstimate, ")");
         }
     }
 
-    /* JADX INFO: renamed from: com.discord.widgets.status.WidgetChatStatus$onViewBoundOrOnResume$1, reason: invalid class name */
+    /* JADX INFO: renamed from: com.discord.widgets.status.WidgetChatStatus$onViewBoundOrOnResume$1 */
     /* JADX INFO: compiled from: WidgetChatStatus.kt */
-    public static final class AnonymousClass1 extends Lambda implements Function1<Model, Unit> {
-        public AnonymousClass1() {
+    public static final class C100831 extends AbstractC12240o implements Function1<Model, Unit> {
+        public C100831() {
             super(1);
         }
 
         @Override // kotlin.jvm.functions.Function1
         public /* bridge */ /* synthetic */ Unit invoke(Model model) {
             invoke2(model);
-            return Unit.a;
+            return Unit.f27425a;
         }
 
         /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
         public final void invoke2(Model model) {
-            Intrinsics3.checkNotNullParameter(model, "it");
+            C12238m.checkNotNullParameter(model, "it");
             WidgetChatStatus.this.configureUI(model);
         }
     }
 
     public WidgetChatStatus() {
-        super(R.layout.widget_chat_status);
-        this.binding = FragmentViewBindingDelegate3.viewBinding$default(this, WidgetChatStatus6.INSTANCE, null, 2, null);
+        super(C5419R.layout.widget_chat_status);
+        this.binding = FragmentViewBindingDelegateKt.viewBinding$default(this, WidgetChatStatus$binding$2.INSTANCE, null, 2, null);
     }
 
     @MainThread
     private final void configureUI(final Model data) {
-        LinearLayout linearLayout = getBinding().f2346b;
-        Intrinsics3.checkNotNullExpressionValue(linearLayout, "binding.chatStatusUnreadMessages");
+        LinearLayout linearLayout = getBinding().f16371b;
+        C12238m.checkNotNullExpressionValue(linearLayout, "binding.chatStatusUnreadMessages");
         linearLayout.setVisibility(data.getUnreadVisible() ? 0 : 8);
-        getBinding().f2346b.setOnClickListener(new View.OnClickListener() { // from class: com.discord.widgets.status.WidgetChatStatus.configureUI.1
+        getBinding().f16371b.setOnClickListener(new View.OnClickListener() { // from class: com.discord.widgets.status.WidgetChatStatus.configureUI.1
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
                 StoreStream.INSTANCE.getMessagesLoader().jumpToMessage(data.getUnreadChannelId(), data.getUnreadMessageId());
             }
         });
-        TextView textView = getBinding().d;
-        Intrinsics3.checkNotNullExpressionValue(textView, "binding.chatStatusUnreadMessagesText");
+        TextView textView = getBinding().f16373d;
+        C12238m.checkNotNullExpressionValue(textView, "binding.chatStatusUnreadMessagesText");
         textView.setText(getUnreadMessageText(data.isUnreadEstimate(), data.getUnreadCount(), data.getUnreadMessageId()));
-        getBinding().c.setOnClickListener(new View.OnClickListener() { // from class: com.discord.widgets.status.WidgetChatStatus.configureUI.2
+        getBinding().f16372c.setOnClickListener(new View.OnClickListener() { // from class: com.discord.widgets.status.WidgetChatStatus.configureUI.2
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
                 StoreStream.INSTANCE.getReadStates().markAsRead(Long.valueOf(data.getUnreadChannelId()));
@@ -299,31 +299,31 @@ public final class WidgetChatStatus extends AppFragment {
         String strRenderUtcDate$default = TimeUtils.renderUtcDate$default(TimeUtils.INSTANCE, TimeUtils.parseSnowflake(Long.valueOf(messageId)), requireContext(), 0, 4, null);
         if (isEstimate) {
             Resources resources = getResources();
-            Intrinsics3.checkNotNullExpressionValue(resources, "resources");
-            return FormatUtils.c(resources, R.string.new_messages_estimated, new Object[0], new AnonymousClass1(count, strRenderUtcDate$default));
+            C12238m.checkNotNullExpressionValue(resources, "resources");
+            return C1107b.m211c(resources, C5419R.string.new_messages_estimated, new Object[0], new C100811(count, strRenderUtcDate$default));
         }
         Resources resources2 = getResources();
-        Intrinsics3.checkNotNullExpressionValue(resources2, "resources");
-        CharSequence quantityString = StringResourceUtils.getQuantityString(resources2, requireContext(), R.plurals.new_messages_count, count, Integer.valueOf(count));
+        C12238m.checkNotNullExpressionValue(resources2, "resources");
+        CharSequence quantityString = StringResourceUtilsKt.getQuantityString(resources2, requireContext(), C5419R.plurals.new_messages_count, count, Integer.valueOf(count));
         Resources resources3 = getResources();
-        Intrinsics3.checkNotNullExpressionValue(resources3, "resources");
-        return FormatUtils.c(resources3, R.string.new_messages, new Object[0], new AnonymousClass2(quantityString, strRenderUtcDate$default));
+        C12238m.checkNotNullExpressionValue(resources3, "resources");
+        return C1107b.m211c(resources3, C5419R.string.new_messages, new Object[0], new C100822(quantityString, strRenderUtcDate$default));
     }
 
     @Override // com.discord.app.AppFragment
     public void onViewBoundOrOnResume() {
         super.onViewBoundOrOnResume();
-        ObservableExtensionsKt.appSubscribe(ObservableExtensionsKt.ui$default(Model.INSTANCE.get(), this, null, 2, null), (Class<?>) WidgetChatStatus.class, (58 & 2) != 0 ? null : null, (Function1<? super Subscription, Unit>) ((58 & 4) != 0 ? null : null), (Function1<? super Error, Unit>) ((58 & 8) != 0 ? null : null), (Function0<Unit>) ((58 & 16) != 0 ? ObservableExtensionsKt.AnonymousClass1.INSTANCE : null), (Function0<Unit>) ((58 & 32) != 0 ? ObservableExtensionsKt.AnonymousClass2.INSTANCE : null), new AnonymousClass1());
+        ObservableExtensionsKt.appSubscribe(ObservableExtensionsKt.ui$default(Model.INSTANCE.get(), this, null, 2, null), (Class<?>) WidgetChatStatus.class, (58 & 2) != 0 ? null : null, (Function1<? super Subscription, Unit>) ((58 & 4) != 0 ? null : null), (Function1<? super Error, Unit>) ((58 & 8) != 0 ? null : null), (Function0<Unit>) ((58 & 16) != 0 ? ObservableExtensionsKt.C68791.INSTANCE : null), (Function0<Unit>) ((58 & 32) != 0 ? ObservableExtensionsKt.C68802.INSTANCE : null), new C100831());
     }
 
-    /* JADX INFO: renamed from: com.discord.widgets.status.WidgetChatStatus$getUnreadMessageText$1, reason: invalid class name */
+    /* JADX INFO: renamed from: com.discord.widgets.status.WidgetChatStatus$getUnreadMessageText$1 */
     /* JADX INFO: compiled from: WidgetChatStatus.kt */
-    public static final class AnonymousClass1 extends Lambda implements Function1<RenderContext, Unit> {
+    public static final class C100811 extends AbstractC12240o implements Function1<RenderContext, Unit> {
         public final /* synthetic */ int $count;
         public final /* synthetic */ String $utcDateTime;
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-        public AnonymousClass1(int i, String str) {
+        public C100811(int i, String str) {
             super(1);
             this.$count = i;
             this.$utcDateTime = str;
@@ -331,7 +331,7 @@ public final class WidgetChatStatus extends AppFragment {
 
         /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
         public final void invoke2(RenderContext renderContext) {
-            Intrinsics3.checkNotNullParameter(renderContext, "$receiver");
+            C12238m.checkNotNullParameter(renderContext, "$receiver");
             renderContext.args.put("count", String.valueOf(this.$count));
             renderContext.args.put("timestamp", this.$utcDateTime);
         }
@@ -339,18 +339,18 @@ public final class WidgetChatStatus extends AppFragment {
         @Override // kotlin.jvm.functions.Function1
         public /* bridge */ /* synthetic */ Unit invoke(RenderContext renderContext) {
             invoke2(renderContext);
-            return Unit.a;
+            return Unit.f27425a;
         }
     }
 
-    /* JADX INFO: renamed from: com.discord.widgets.status.WidgetChatStatus$getUnreadMessageText$2, reason: invalid class name */
+    /* JADX INFO: renamed from: com.discord.widgets.status.WidgetChatStatus$getUnreadMessageText$2 */
     /* JADX INFO: compiled from: WidgetChatStatus.kt */
-    public static final class AnonymousClass2 extends Lambda implements Function1<RenderContext, Unit> {
+    public static final class C100822 extends AbstractC12240o implements Function1<RenderContext, Unit> {
         public final /* synthetic */ CharSequence $countPlural;
         public final /* synthetic */ String $utcDateTime;
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-        public AnonymousClass2(CharSequence charSequence, String str) {
+        public C100822(CharSequence charSequence, String str) {
             super(1);
             this.$countPlural = charSequence;
             this.$utcDateTime = str;
@@ -358,7 +358,7 @@ public final class WidgetChatStatus extends AppFragment {
 
         /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
         public final void invoke2(RenderContext renderContext) {
-            Intrinsics3.checkNotNullParameter(renderContext, "$receiver");
+            C12238m.checkNotNullParameter(renderContext, "$receiver");
             renderContext.args.put("count", this.$countPlural.toString());
             renderContext.args.put("timestamp", this.$utcDateTime);
         }
@@ -366,7 +366,7 @@ public final class WidgetChatStatus extends AppFragment {
         @Override // kotlin.jvm.functions.Function1
         public /* bridge */ /* synthetic */ Unit invoke(RenderContext renderContext) {
             invoke2(renderContext);
-            return Unit.a;
+            return Unit.f27425a;
         }
     }
 }

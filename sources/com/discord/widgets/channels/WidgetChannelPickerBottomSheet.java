@@ -3,37 +3,28 @@ package com.discord.widgets.channels;
 import android.content.DialogInterface;
 import android.os.Bundle;
 import android.view.View;
-import androidx.core.os.Bundle2;
+import androidx.core.os.BundleKt;
 import androidx.fragment.app.Fragment;
-import androidx.fragment.app.Fragment2;
+import androidx.fragment.app.FragmentKt;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentViewModelLazyKt;
 import androidx.recyclerview.widget.RecyclerView;
-import b.a.d.AppViewModelDelegates3;
-import b.a.d.AppViewModelDelegates5;
-import b.d.b.a.outline;
-import com.discord.R;
+import com.discord.C5419R;
 import com.discord.api.channel.ChannelUtils;
 import com.discord.app.AppBottomSheet;
 import com.discord.app.AppViewFlipper;
 import com.discord.databinding.WidgetChannelPickerSheetBinding;
-import com.discord.utilities.channel.GuildChannelIconUtils2;
+import com.discord.utilities.channel.GuildChannelIconUtilsKt;
 import com.discord.utilities.error.Error;
-import com.discord.utilities.rx.ObservableExtensionsKt;
+import com.discord.utilities.p501rx.ObservableExtensionsKt;
 import com.discord.utilities.viewbinding.FragmentViewBindingDelegate;
-import com.discord.utilities.viewbinding.FragmentViewBindingDelegate3;
+import com.discord.utilities.viewbinding.FragmentViewBindingDelegateKt;
 import com.discord.views.SearchInputView;
-import com.discord.widgets.channels.WidgetChannelPickerAdapter;
-import com.discord.widgets.channels.WidgetChannelPickerAdapter3;
+import com.discord.widgets.channels.ChannelPickerAdapterItem;
 import com.discord.widgets.channels.WidgetChannelPickerBottomSheet;
 import com.discord.widgets.channels.WidgetChannelPickerBottomSheetViewModel;
-import com.discord.widgets.chat.AutocompleteUtils;
-import d0.LazyJVM;
-import d0.Tuples;
-import d0.t._Arrays;
-import d0.z.d.Intrinsics3;
-import d0.z.d.Lambda;
-import d0.z.d.Reflection2;
+import com.discord.widgets.channels.WidgetchannelPickerAdapter;
+import com.discord.widgets.chat.AutocompleteSelectionTypes;
 import kotlin.Lazy;
 import kotlin.Unit;
 import kotlin.jvm.functions.Function0;
@@ -41,8 +32,17 @@ import kotlin.jvm.functions.Function1;
 import kotlin.jvm.functions.Function3;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.reflect.KProperty;
-import rx.Subscription;
-import rx.subscriptions.CompositeSubscription;
+import p007b.p008a.p018d.C0865g0;
+import p007b.p008a.p018d.C0869i0;
+import p007b.p100d.p104b.p105a.C1643a;
+import p507d0.C12083g;
+import p507d0.C12116o;
+import p507d0.p580t.C12141k;
+import p507d0.p592z.p594d.AbstractC12240o;
+import p507d0.p592z.p594d.C12216a0;
+import p507d0.p592z.p594d.C12238m;
+import p658rx.Subscription;
+import p658rx.subscriptions.CompositeSubscription;
 
 /* JADX INFO: compiled from: WidgetChannelPickerBottomSheet.kt */
 /* JADX INFO: loaded from: classes2.dex */
@@ -57,7 +57,7 @@ public final class WidgetChannelPickerBottomSheet extends AppBottomSheet {
     private static final String RESULT_EXTRA_CHANNEL_ID = "RESULT_EXTRA_CHANNEL_ID";
     private static final String RESULT_EXTRA_CHANNEL_NAME = "RESULT_EXTRA_CHANNEL_NAME";
     private static final String RESULT_EXTRA_SELECTION_TYPE = "RESULT_EXTRA_SELECTION_TYPE";
-    private WidgetChannelPickerAdapter3 adapter;
+    private WidgetchannelPickerAdapter adapter;
 
     /* JADX INFO: renamed from: binding$delegate, reason: from kotlin metadata */
     private final FragmentViewBindingDelegate binding;
@@ -67,7 +67,7 @@ public final class WidgetChannelPickerBottomSheet extends AppBottomSheet {
 
     /* JADX INFO: renamed from: hideAnnouncementChannels$delegate, reason: from kotlin metadata */
     private final Lazy hideAnnouncementChannels;
-    private final WidgetChannelPickerBottomSheet6 itemClickListener;
+    private final WidgetChannelPickerBottomSheet$itemClickListener$1 itemClickListener;
     private Function0<Unit> onCancel;
 
     /* JADX INFO: renamed from: selectedChannelId$delegate, reason: from kotlin metadata */
@@ -75,7 +75,7 @@ public final class WidgetChannelPickerBottomSheet extends AppBottomSheet {
 
     /* JADX INFO: renamed from: viewModel$delegate, reason: from kotlin metadata */
     private final Lazy viewModel;
-    public static final /* synthetic */ KProperty[] $$delegatedProperties = {outline.d0(WidgetChannelPickerBottomSheet.class, "binding", "getBinding()Lcom/discord/databinding/WidgetChannelPickerSheetBinding;", 0)};
+    public static final /* synthetic */ KProperty[] $$delegatedProperties = {C1643a.m846d0(WidgetChannelPickerBottomSheet.class, "binding", "getBinding()Lcom/discord/databinding/WidgetChannelPickerSheetBinding;", 0)};
 
     /* JADX INFO: renamed from: Companion, reason: from kotlin metadata */
     public static final Companion INSTANCE = new Companion(null);
@@ -100,8 +100,8 @@ public final class WidgetChannelPickerBottomSheet extends AppBottomSheet {
         }
 
         public final void launch(Fragment fragment, String requestKey, long guildId, Long selectedChannelId, Function0<Unit> onCancel, boolean hideAnnouncementChannels) {
-            Intrinsics3.checkNotNullParameter(fragment, "fragment");
-            Intrinsics3.checkNotNullParameter(requestKey, "requestKey");
+            C12238m.checkNotNullParameter(fragment, "fragment");
+            C12238m.checkNotNullParameter(requestKey, "requestKey");
             WidgetChannelPickerBottomSheet widgetChannelPickerBottomSheet = new WidgetChannelPickerBottomSheet();
             Bundle bundle = new Bundle();
             bundle.putString(WidgetChannelPickerBottomSheet.ARG_REQUEST_KEY, requestKey);
@@ -113,16 +113,16 @@ public final class WidgetChannelPickerBottomSheet extends AppBottomSheet {
             widgetChannelPickerBottomSheet.setArguments(bundle);
             widgetChannelPickerBottomSheet.setOnCancel(onCancel);
             FragmentManager parentFragmentManager = fragment.getParentFragmentManager();
-            Intrinsics3.checkNotNullExpressionValue(parentFragmentManager, "fragment.parentFragmentManager");
+            C12238m.checkNotNullExpressionValue(parentFragmentManager, "fragment.parentFragmentManager");
             widgetChannelPickerBottomSheet.show(parentFragmentManager, WidgetChannelPickerBottomSheet.class.getName());
         }
 
         public final void registerForResult(Fragment fragment, String requestKey, Function3<? super Long, ? super String, ? super Integer, Unit> onChannelSelected, Function0<Unit> onCreateChannelSelected) {
-            Intrinsics3.checkNotNullParameter(fragment, "fragment");
-            Intrinsics3.checkNotNullParameter(requestKey, "requestKey");
-            Intrinsics3.checkNotNullParameter(onChannelSelected, "onChannelSelected");
-            Intrinsics3.checkNotNullParameter(onCreateChannelSelected, "onCreateChannelSelected");
-            Fragment2.setFragmentResultListener(fragment, requestKey, new WidgetChannelPickerBottomSheet2(requestKey, onCreateChannelSelected, onChannelSelected));
+            C12238m.checkNotNullParameter(fragment, "fragment");
+            C12238m.checkNotNullParameter(requestKey, "requestKey");
+            C12238m.checkNotNullParameter(onChannelSelected, "onChannelSelected");
+            C12238m.checkNotNullParameter(onCreateChannelSelected, "onCreateChannelSelected");
+            FragmentKt.setFragmentResultListener(fragment, requestKey, new WidgetChannelPickerBottomSheet$Companion$registerForResult$1(requestKey, onCreateChannelSelected, onChannelSelected));
         }
 
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
@@ -146,7 +146,7 @@ public final class WidgetChannelPickerBottomSheet extends AppBottomSheet {
             }
 
             public final SelectionType fromInt(int value) {
-                SelectionType selectionType = (SelectionType) _Arrays.getOrNull(SelectionType.values(), value);
+                SelectionType selectionType = (SelectionType) C12141k.getOrNull(SelectionType.values(), value);
                 return selectionType != null ? selectionType : SelectionType.UNKNOWN;
             }
 
@@ -156,42 +156,42 @@ public final class WidgetChannelPickerBottomSheet extends AppBottomSheet {
         }
     }
 
-    /* JADX INFO: renamed from: com.discord.widgets.channels.WidgetChannelPickerBottomSheet$bindSubscriptions$1, reason: invalid class name */
+    /* JADX INFO: renamed from: com.discord.widgets.channels.WidgetChannelPickerBottomSheet$bindSubscriptions$1 */
     /* JADX INFO: compiled from: WidgetChannelPickerBottomSheet.kt */
-    public static final class AnonymousClass1 extends Lambda implements Function1<WidgetChannelPickerBottomSheetViewModel.ViewState, Unit> {
-        public AnonymousClass1() {
+    public static final class C73321 extends AbstractC12240o implements Function1<WidgetChannelPickerBottomSheetViewModel.ViewState, Unit> {
+        public C73321() {
             super(1);
         }
 
         @Override // kotlin.jvm.functions.Function1
         public /* bridge */ /* synthetic */ Unit invoke(WidgetChannelPickerBottomSheetViewModel.ViewState viewState) {
             invoke2(viewState);
-            return Unit.a;
+            return Unit.f27425a;
         }
 
         /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
         public final void invoke2(WidgetChannelPickerBottomSheetViewModel.ViewState viewState) {
-            Intrinsics3.checkNotNullParameter(viewState, "it");
+            C12238m.checkNotNullParameter(viewState, "it");
             WidgetChannelPickerBottomSheet.this.configureUI(viewState);
         }
     }
 
-    /* JADX INFO: renamed from: com.discord.widgets.channels.WidgetChannelPickerBottomSheet$onViewCreated$1, reason: invalid class name */
+    /* JADX INFO: renamed from: com.discord.widgets.channels.WidgetChannelPickerBottomSheet$onViewCreated$1 */
     /* JADX INFO: compiled from: WidgetChannelPickerBottomSheet.kt */
-    public static final class AnonymousClass1 extends Lambda implements Function1<String, Unit> {
-        public AnonymousClass1() {
+    public static final class C73331 extends AbstractC12240o implements Function1<String, Unit> {
+        public C73331() {
             super(1);
         }
 
         @Override // kotlin.jvm.functions.Function1
         public /* bridge */ /* synthetic */ Unit invoke(String str) {
             invoke2(str);
-            return Unit.a;
+            return Unit.f27425a;
         }
 
         /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
         public final void invoke2(String str) {
-            Intrinsics3.checkNotNullParameter(str, "searchQuery");
+            C12238m.checkNotNullParameter(str, "searchQuery");
             WidgetChannelPickerBottomSheet.this.getViewModel().updateSearchQuery(str);
         }
     }
@@ -199,32 +199,32 @@ public final class WidgetChannelPickerBottomSheet extends AppBottomSheet {
     /* JADX WARN: Type inference failed for: r0v13, types: [com.discord.widgets.channels.WidgetChannelPickerBottomSheet$itemClickListener$1] */
     public WidgetChannelPickerBottomSheet() {
         super(false, 1, null);
-        this.binding = FragmentViewBindingDelegate3.viewBinding$default(this, WidgetChannelPickerBottomSheet3.INSTANCE, null, 2, null);
-        this.selectedChannelId = LazyJVM.lazy(new WidgetChannelPickerBottomSheet7(this));
-        this.guildId = LazyJVM.lazy(new WidgetChannelPickerBottomSheet4(this));
-        this.hideAnnouncementChannels = LazyJVM.lazy(new WidgetChannelPickerBottomSheet5(this));
-        WidgetChannelPickerBottomSheet8 widgetChannelPickerBottomSheet8 = new WidgetChannelPickerBottomSheet8(this);
-        AppViewModelDelegates3 appViewModelDelegates3 = new AppViewModelDelegates3(this);
-        this.viewModel = FragmentViewModelLazyKt.createViewModelLazy(this, Reflection2.getOrCreateKotlinClass(WidgetChannelPickerBottomSheetViewModel.class), new WidgetChannelPickerBottomSheet$appViewModels$$inlined$viewModels$1(appViewModelDelegates3), new AppViewModelDelegates5(widgetChannelPickerBottomSheet8));
-        this.itemClickListener = new WidgetChannelPickerAdapter3.OnItemClickListener() { // from class: com.discord.widgets.channels.WidgetChannelPickerBottomSheet$itemClickListener$1
-            @Override // com.discord.widgets.channels.WidgetChannelPickerAdapter3.OnItemClickListener
-            public void onChannelItemClick(WidgetChannelPickerAdapter.ChannelItem channelItem) {
-                Intrinsics3.checkNotNullParameter(channelItem, "channelItem");
+        this.binding = FragmentViewBindingDelegateKt.viewBinding$default(this, WidgetChannelPickerBottomSheet$binding$2.INSTANCE, null, 2, null);
+        this.selectedChannelId = C12083g.lazy(new WidgetChannelPickerBottomSheet$selectedChannelId$2(this));
+        this.guildId = C12083g.lazy(new WidgetChannelPickerBottomSheet$guildId$2(this));
+        this.hideAnnouncementChannels = C12083g.lazy(new WidgetChannelPickerBottomSheet$hideAnnouncementChannels$2(this));
+        WidgetChannelPickerBottomSheet$viewModel$2 widgetChannelPickerBottomSheet$viewModel$2 = new WidgetChannelPickerBottomSheet$viewModel$2(this);
+        C0865g0 c0865g0 = new C0865g0(this);
+        this.viewModel = FragmentViewModelLazyKt.createViewModelLazy(this, C12216a0.getOrCreateKotlinClass(WidgetChannelPickerBottomSheetViewModel.class), new C7331xa50f5668(c0865g0), new C0869i0(widgetChannelPickerBottomSheet$viewModel$2));
+        this.itemClickListener = new WidgetchannelPickerAdapter.OnItemClickListener() { // from class: com.discord.widgets.channels.WidgetChannelPickerBottomSheet$itemClickListener$1
+            @Override // com.discord.widgets.channels.WidgetchannelPickerAdapter.OnItemClickListener
+            public void onChannelItemClick(ChannelPickerAdapterItem.ChannelItem channelItem) {
+                C12238m.checkNotNullParameter(channelItem, "channelItem");
                 String string = this.this$0.getArgumentsOrDefault().getString("INTENT_EXTRA_REQUEST_CODE", "");
                 WidgetChannelPickerBottomSheet widgetChannelPickerBottomSheet = this.this$0;
-                Intrinsics3.checkNotNullExpressionValue(string, "requestCode");
-                Fragment2.setFragmentResult(widgetChannelPickerBottomSheet, string, Bundle2.bundleOf(Tuples.to("RESULT_EXTRA_CHANNEL_ID", Long.valueOf(channelItem.getChannel().getId())), Tuples.to("RESULT_EXTRA_CHANNEL_NAME", ChannelUtils.c(channelItem.getChannel())), Tuples.to("RESULT_EXTRA_CHANNEL_ICON_RES_ID", Integer.valueOf(GuildChannelIconUtils2.guildChannelIcon(channelItem.getChannel()))), Tuples.to("RESULT_EXTRA_SELECTION_TYPE", Integer.valueOf(WidgetChannelPickerBottomSheet.SelectionType.CHANNEL.ordinal()))));
+                C12238m.checkNotNullExpressionValue(string, "requestCode");
+                FragmentKt.setFragmentResult(widgetChannelPickerBottomSheet, string, BundleKt.bundleOf(C12116o.m10073to("RESULT_EXTRA_CHANNEL_ID", Long.valueOf(channelItem.getChannel().getId())), C12116o.m10073to("RESULT_EXTRA_CHANNEL_NAME", ChannelUtils.m7679c(channelItem.getChannel())), C12116o.m10073to("RESULT_EXTRA_CHANNEL_ICON_RES_ID", Integer.valueOf(GuildChannelIconUtilsKt.guildChannelIcon(channelItem.getChannel()))), C12116o.m10073to("RESULT_EXTRA_SELECTION_TYPE", Integer.valueOf(WidgetChannelPickerBottomSheet.SelectionType.CHANNEL.ordinal()))));
                 this.this$0.dismiss();
             }
 
-            @Override // com.discord.widgets.channels.WidgetChannelPickerAdapter3.OnItemClickListener
+            @Override // com.discord.widgets.channels.WidgetchannelPickerAdapter.OnItemClickListener
             public void onCreateChannelClick() {
                 String string = this.this$0.getArgumentsOrDefault().getString("INTENT_EXTRA_REQUEST_CODE", "");
                 WidgetChannelPickerBottomSheet widgetChannelPickerBottomSheet = this.this$0;
-                Intrinsics3.checkNotNullExpressionValue(string, "requestCode");
+                C12238m.checkNotNullExpressionValue(string, "requestCode");
                 Bundle bundle = new Bundle();
                 bundle.putInt("RESULT_EXTRA_SELECTION_TYPE", WidgetChannelPickerBottomSheet.SelectionType.CREATE_CHANNEL.ordinal());
-                Fragment2.setFragmentResult(widgetChannelPickerBottomSheet, string, bundle);
+                FragmentKt.setFragmentResult(widgetChannelPickerBottomSheet, string, bundle);
                 this.this$0.dismiss();
             }
         };
@@ -232,26 +232,26 @@ public final class WidgetChannelPickerBottomSheet extends AppBottomSheet {
 
     private final void configureUI(WidgetChannelPickerBottomSheetViewModel.ViewState viewState) {
         if (viewState instanceof WidgetChannelPickerBottomSheetViewModel.ViewState.Loading) {
-            AppViewFlipper appViewFlipper = getBinding().f2264b;
-            Intrinsics3.checkNotNullExpressionValue(appViewFlipper, "binding.channelPickerAppFlipper");
+            AppViewFlipper appViewFlipper = getBinding().f15884b;
+            C12238m.checkNotNullExpressionValue(appViewFlipper, "binding.channelPickerAppFlipper");
             appViewFlipper.setDisplayedChild(0);
-            SearchInputView searchInputView = getBinding().d;
-            Intrinsics3.checkNotNullExpressionValue(searchInputView, "binding.channelPickerSearchInput");
+            SearchInputView searchInputView = getBinding().f15886d;
+            C12238m.checkNotNullExpressionValue(searchInputView, "binding.channelPickerSearchInput");
             searchInputView.setVisibility(8);
             return;
         }
         if (viewState instanceof WidgetChannelPickerBottomSheetViewModel.ViewState.Loaded) {
-            SearchInputView searchInputView2 = getBinding().d;
-            Intrinsics3.checkNotNullExpressionValue(searchInputView2, "binding.channelPickerSearchInput");
+            SearchInputView searchInputView2 = getBinding().f15886d;
+            C12238m.checkNotNullExpressionValue(searchInputView2, "binding.channelPickerSearchInput");
             searchInputView2.setVisibility(0);
-            AppViewFlipper appViewFlipper2 = getBinding().f2264b;
-            Intrinsics3.checkNotNullExpressionValue(appViewFlipper2, "binding.channelPickerAppFlipper");
+            AppViewFlipper appViewFlipper2 = getBinding().f15884b;
+            C12238m.checkNotNullExpressionValue(appViewFlipper2, "binding.channelPickerAppFlipper");
             appViewFlipper2.setDisplayedChild(1);
-            WidgetChannelPickerAdapter3 widgetChannelPickerAdapter3 = this.adapter;
-            if (widgetChannelPickerAdapter3 == null) {
-                Intrinsics3.throwUninitializedPropertyAccessException("adapter");
+            WidgetchannelPickerAdapter widgetchannelPickerAdapter = this.adapter;
+            if (widgetchannelPickerAdapter == null) {
+                C12238m.throwUninitializedPropertyAccessException("adapter");
             }
-            widgetChannelPickerAdapter3.setItems(((WidgetChannelPickerBottomSheetViewModel.ViewState.Loaded) viewState).getAdapterItems());
+            widgetchannelPickerAdapter.setItems(((WidgetChannelPickerBottomSheetViewModel.ViewState.Loaded) viewState).getAdapterItems());
         }
     }
 
@@ -285,19 +285,19 @@ public final class WidgetChannelPickerBottomSheet extends AppBottomSheet {
 
     @Override // com.discord.app.AppBottomSheet
     public void bindSubscriptions(CompositeSubscription compositeSubscription) {
-        Intrinsics3.checkNotNullParameter(compositeSubscription, "compositeSubscription");
+        C12238m.checkNotNullParameter(compositeSubscription, "compositeSubscription");
         super.bindSubscriptions(compositeSubscription);
-        ObservableExtensionsKt.appSubscribe(ObservableExtensionsKt.bindToComponentLifecycle$default(getViewModel().observeViewState(), this, null, 2, null), (Class<?>) WidgetChannelPickerBottomSheet.class, (58 & 2) != 0 ? null : null, (Function1<? super Subscription, Unit>) ((58 & 4) != 0 ? null : null), (Function1<? super Error, Unit>) ((58 & 8) != 0 ? null : null), (Function0<Unit>) ((58 & 16) != 0 ? ObservableExtensionsKt.AnonymousClass1.INSTANCE : null), (Function0<Unit>) ((58 & 32) != 0 ? ObservableExtensionsKt.AnonymousClass2.INSTANCE : null), new AnonymousClass1());
+        ObservableExtensionsKt.appSubscribe(ObservableExtensionsKt.bindToComponentLifecycle$default(getViewModel().observeViewState(), this, null, 2, null), (Class<?>) WidgetChannelPickerBottomSheet.class, (58 & 2) != 0 ? null : null, (Function1<? super Subscription, Unit>) ((58 & 4) != 0 ? null : null), (Function1<? super Error, Unit>) ((58 & 8) != 0 ? null : null), (Function0<Unit>) ((58 & 16) != 0 ? ObservableExtensionsKt.C68791.INSTANCE : null), (Function0<Unit>) ((58 & 32) != 0 ? ObservableExtensionsKt.C68802.INSTANCE : null), new C73321());
     }
 
     @Override // com.discord.app.AppBottomSheet
     public int getContentViewResId() {
-        return R.layout.widget_channel_picker_sheet;
+        return C5419R.layout.widget_channel_picker_sheet;
     }
 
     @Override // androidx.fragment.app.DialogFragment, android.content.DialogInterface.OnCancelListener
     public void onCancel(DialogInterface dialog) {
-        Intrinsics3.checkNotNullParameter(dialog, "dialog");
+        C12238m.checkNotNullParameter(dialog, "dialog");
         super.onCancel(dialog);
         AppBottomSheet.hideKeyboard$default(this, null, 1, null);
         Function0<Unit> function0 = this.onCancel;
@@ -308,17 +308,17 @@ public final class WidgetChannelPickerBottomSheet extends AppBottomSheet {
 
     @Override // com.discord.app.AppBottomSheet, androidx.fragment.app.Fragment
     public void onViewCreated(View view, Bundle savedInstanceState) {
-        Intrinsics3.checkNotNullParameter(view, "view");
+        C12238m.checkNotNullParameter(view, "view");
         super.onViewCreated(view, savedInstanceState);
-        this.adapter = new WidgetChannelPickerAdapter3(this.itemClickListener, this, null, 4, null);
-        RecyclerView recyclerView = getBinding().c;
-        Intrinsics3.checkNotNullExpressionValue(recyclerView, "binding.channelPickerRecycler");
-        WidgetChannelPickerAdapter3 widgetChannelPickerAdapter3 = this.adapter;
-        if (widgetChannelPickerAdapter3 == null) {
-            Intrinsics3.throwUninitializedPropertyAccessException("adapter");
+        this.adapter = new WidgetchannelPickerAdapter(this.itemClickListener, this, null, 4, null);
+        RecyclerView recyclerView = getBinding().f15885c;
+        C12238m.checkNotNullExpressionValue(recyclerView, "binding.channelPickerRecycler");
+        WidgetchannelPickerAdapter widgetchannelPickerAdapter = this.adapter;
+        if (widgetchannelPickerAdapter == null) {
+            C12238m.throwUninitializedPropertyAccessException("adapter");
         }
-        recyclerView.setAdapter(widgetChannelPickerAdapter3);
-        getBinding().d.a(this, new AnonymousClass1());
+        recyclerView.setAdapter(widgetchannelPickerAdapter);
+        getBinding().f15886d.m8553a(this, new C73331());
     }
 
     public final void setOnCancel(Function0<Unit> onCancel) {

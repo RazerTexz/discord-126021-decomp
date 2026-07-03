@@ -75,9 +75,9 @@ public class HandleUtilityClass extends JavacAnnotationHandler<UtilityClass> {
     public void handle(AnnotationValues<UtilityClass> annotation, JCTree.JCAnnotation ast, JavacNode annotationNode) {
         HandlerUtil.handleExperimentalFlagUsage(annotationNode, ConfigurationKeys.UTILITY_CLASS_FLAG_USAGE, "@UtilityClass");
         JavacHandlerUtil.deleteAnnotationIfNeccessary(annotationNode, (Class<? extends Annotation>) UtilityClass.class);
-        JavacNode typeNode = annotationNode.up();
+        JavacNode typeNode = annotationNode.m10925up();
         if (checkLegality(typeNode, annotationNode)) {
-            changeModifiersAndGenerateConstructor(annotationNode.up(), annotationNode);
+            changeModifiersAndGenerateConstructor(annotationNode.m10925up(), annotationNode);
         }
     }
 
@@ -96,7 +96,7 @@ public class HandleUtilityClass extends JavacAnnotationHandler<UtilityClass> {
         }
         JavacNode typeWalk = typeNode;
         do {
-            typeWalk = typeWalk.up();
+            typeWalk = typeWalk.m10925up();
             switch ($SWITCH_TABLE$lombok$core$AST$Kind()[typeWalk.getKind().ordinal()]) {
                 case 1:
                     return true;
@@ -108,7 +108,7 @@ public class HandleUtilityClass extends JavacAnnotationHandler<UtilityClass> {
                     return false;
             }
         } while ((typeDef.mods.flags & 25096) != 0);
-        if (typeWalk.up().getKind() == AST.Kind.COMPILATION_UNIT) {
+        if (typeWalk.m10925up().getKind() == AST.Kind.COMPILATION_UNIT) {
             return true;
         }
         errorNode.addError("@UtilityClass automatically makes the class static, however, this class cannot be made static.");
@@ -119,9 +119,9 @@ public class HandleUtilityClass extends JavacAnnotationHandler<UtilityClass> {
         JCTree.JCClassDecl classDecl = typeNode.get();
         boolean makeConstructor = true;
         classDecl.mods.flags |= 16;
-        boolean markStatic = typeNode.up().getKind() != AST.Kind.COMPILATION_UNIT;
-        if (markStatic && typeNode.up().getKind() == AST.Kind.TYPE) {
-            JCTree.JCClassDecl typeDecl = typeNode.up().get();
+        boolean markStatic = typeNode.m10925up().getKind() != AST.Kind.COMPILATION_UNIT;
+        if (markStatic && typeNode.m10925up().getKind() == AST.Kind.TYPE) {
+            JCTree.JCClassDecl typeDecl = typeNode.m10925up().get();
             if ((typeDecl.mods.flags & 8704) != 0) {
                 markStatic = false;
             }

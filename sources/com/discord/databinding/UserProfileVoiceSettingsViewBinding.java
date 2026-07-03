@@ -11,33 +11,37 @@ import com.google.android.material.switchmaterial.SwitchMaterial;
 /* JADX INFO: loaded from: classes.dex */
 public final class UserProfileVoiceSettingsViewBinding implements ViewBinding {
 
+    /* JADX INFO: renamed from: a */
     @NonNull
-    public final LinearLayout a;
+    public final LinearLayout f15355a;
 
-    /* JADX INFO: renamed from: b, reason: collision with root package name */
+    /* JADX INFO: renamed from: b */
     @NonNull
-    public final SwitchMaterial f2168b;
+    public final SwitchMaterial f15356b;
 
+    /* JADX INFO: renamed from: c */
     @NonNull
-    public final SwitchMaterial c;
+    public final SwitchMaterial f15357c;
 
+    /* JADX INFO: renamed from: d */
     @NonNull
-    public final TextView d;
+    public final TextView f15358d;
 
+    /* JADX INFO: renamed from: e */
     @NonNull
-    public final VolumeSliderView e;
+    public final VolumeSliderView f15359e;
 
     public UserProfileVoiceSettingsViewBinding(@NonNull LinearLayout linearLayout, @NonNull SwitchMaterial switchMaterial, @NonNull SwitchMaterial switchMaterial2, @NonNull TextView textView, @NonNull VolumeSliderView volumeSliderView) {
-        this.a = linearLayout;
-        this.f2168b = switchMaterial;
-        this.c = switchMaterial2;
-        this.d = textView;
-        this.e = volumeSliderView;
+        this.f15355a = linearLayout;
+        this.f15356b = switchMaterial;
+        this.f15357c = switchMaterial2;
+        this.f15358d = textView;
+        this.f15359e = volumeSliderView;
     }
 
     @Override // androidx.viewbinding.ViewBinding
     @NonNull
     public View getRoot() {
-        return this.a;
+        return this.f15355a;
     }
 }

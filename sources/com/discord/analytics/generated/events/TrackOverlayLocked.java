@@ -1,16 +1,16 @@
 package com.discord.analytics.generated.events;
 
-import b.d.b.a.outline;
 import com.discord.analytics.generated.traits.TrackBase;
-import com.discord.analytics.generated.traits.TrackBase2;
+import com.discord.analytics.generated.traits.TrackBaseReceiver;
 import com.discord.analytics.generated.traits.TrackOverlayClientMetadata;
-import com.discord.analytics.generated.traits.TrackOverlayClientMetadata2;
+import com.discord.analytics.generated.traits.TrackOverlayClientMetadataReceiver;
 import com.discord.api.science.AnalyticsSchema;
-import d0.z.d.Intrinsics3;
+import p007b.p100d.p104b.p105a.C1643a;
+import p507d0.p592z.p594d.C12238m;
 
 /* JADX INFO: compiled from: TrackOverlayLocked.kt */
 /* JADX INFO: loaded from: classes.dex */
-public final /* data */ class TrackOverlayLocked implements AnalyticsSchema, TrackBase2, TrackOverlayClientMetadata2 {
+public final /* data */ class TrackOverlayLocked implements AnalyticsSchema, TrackBaseReceiver, TrackOverlayClientMetadataReceiver {
     private TrackBase trackBase;
     private TrackOverlayClientMetadata trackOverlayClientMetadata;
     private final Long unlockedDuration = null;
@@ -24,7 +24,7 @@ public final /* data */ class TrackOverlayLocked implements AnalyticsSchema, Tra
 
     public boolean equals(Object other) {
         if (this != other) {
-            return (other instanceof TrackOverlayLocked) && Intrinsics3.areEqual(this.unlockedDuration, ((TrackOverlayLocked) other).unlockedDuration);
+            return (other instanceof TrackOverlayLocked) && C12238m.areEqual(this.unlockedDuration, ((TrackOverlayLocked) other).unlockedDuration);
         }
         return true;
     }
@@ -38,6 +38,6 @@ public final /* data */ class TrackOverlayLocked implements AnalyticsSchema, Tra
     }
 
     public String toString() {
-        return outline.G(outline.U("TrackOverlayLocked(unlockedDuration="), this.unlockedDuration, ")");
+        return C1643a.m819G(C1643a.m833U("TrackOverlayLocked(unlockedDuration="), this.unlockedDuration, ")");
     }
 }

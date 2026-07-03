@@ -22,15 +22,16 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
+import androidx.appcompat.C0051R;
 import androidx.core.content.ContextCompat;
 import androidx.cursoradapter.widget.ResourceCursorAdapter;
-import b.d.b.a.outline;
 import com.discord.widgets.chat.input.autocomplete.AutocompleteViewModel;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.List;
 import java.util.WeakHashMap;
+import p007b.p100d.p104b.p105a.C1643a;
 
 /* JADX INFO: loaded from: classes.dex */
 @SuppressLint({"RestrictedAPI"})
@@ -69,7 +70,7 @@ public class SuggestionsAdapter extends ResourceCursorAdapter implements View.On
             this.mText2 = (TextView) view.findViewById(R.id.text2);
             this.mIcon1 = (ImageView) view.findViewById(R.id.icon1);
             this.mIcon2 = (ImageView) view.findViewById(R.id.icon2);
-            this.mIconRefine = (ImageView) view.findViewById(androidx.appcompat.R.id.edit_query);
+            this.mIconRefine = (ImageView) view.findViewById(C0051R.id.edit_query);
         }
     }
 
@@ -101,7 +102,7 @@ public class SuggestionsAdapter extends ResourceCursorAdapter implements View.On
     private CharSequence formatUrl(CharSequence charSequence) {
         if (this.mUrlColor == null) {
             TypedValue typedValue = new TypedValue();
-            this.mContext.getTheme().resolveAttribute(androidx.appcompat.R.attr.textColorSearchUrl, typedValue, true);
+            this.mContext.getTheme().resolveAttribute(C0051R.attr.textColorSearchUrl, typedValue, true);
             this.mUrlColor = this.mContext.getResources().getColorStateList(typedValue.resourceId);
         }
         SpannableString spannableString = new SpannableString(charSequence);
@@ -121,9 +122,9 @@ public class SuggestionsAdapter extends ResourceCursorAdapter implements View.On
             if (drawable != null) {
                 return drawable;
             }
-            StringBuilder sbV = outline.V("Invalid icon resource ", iconResource, " for ");
-            sbV.append(componentName.flattenToShortString());
-            Log.w(LOG_TAG, sbV.toString());
+            StringBuilder sbM834V = C1643a.m834V("Invalid icon resource ", iconResource, " for ");
+            sbM834V.append(componentName.flattenToShortString());
+            Log.w(LOG_TAG, sbM834V.toString());
             return null;
         } catch (PackageManager.NameNotFoundException e) {
             Log.w(LOG_TAG, e.toString());
@@ -474,7 +475,7 @@ public class SuggestionsAdapter extends ResourceCursorAdapter implements View.On
     public View newView(Context context, Cursor cursor, ViewGroup viewGroup) {
         View viewNewView = super.newView(context, cursor, viewGroup);
         viewNewView.setTag(new ChildViewCache(viewNewView));
-        ((ImageView) viewNewView.findViewById(androidx.appcompat.R.id.edit_query)).setImageResource(this.mCommitIconResId);
+        ((ImageView) viewNewView.findViewById(C0051R.id.edit_query)).setImageResource(this.mCommitIconResId);
         return viewNewView;
     }
 

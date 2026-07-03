@@ -32,16 +32,16 @@ public class HandleCleanup extends JavacAnnotationHandler<Cleanup> {
             annotationNode.addError("cleanupName cannot be the empty string.");
             return;
         }
-        if (annotationNode.up().getKind() != AST.Kind.LOCAL) {
+        if (annotationNode.m10925up().getKind() != AST.Kind.LOCAL) {
             annotationNode.addError("@Cleanup is legal only on local variable declarations.");
             return;
         }
-        JCTree.JCStatement jCStatement = (JCTree.JCVariableDecl) annotationNode.up().get();
+        JCTree.JCStatement jCStatement = (JCTree.JCVariableDecl) annotationNode.m10925up().get();
         if (((JCTree.JCVariableDecl) jCStatement).init == null) {
             annotationNode.addError("@Cleanup variable declarations need to be initialized.");
             return;
         }
-        JavacNode ancestor = annotationNode.up().directUp();
+        JavacNode ancestor = annotationNode.m10925up().directUp();
         JCTree.JCBlock jCBlock = (JCTree) ancestor.get();
         if (jCBlock instanceof JCTree.JCBlock) {
             statements = jCBlock.stats;
@@ -76,7 +76,7 @@ public class HandleCleanup extends JavacAnnotationHandler<Cleanup> {
         List<JCTree.JCStatement> cleanupCall = List.of(maker.Exec(maker.Apply(List.nil(), cleanupMethod, List.nil())));
         JCTree.JCExpression preventNullAnalysis = preventNullAnalysis(maker, annotationNode, maker.Ident(((JCTree.JCVariableDecl) jCStatement).name));
         JCTree.JCBinary isNull = maker.Binary(Javac.CTC_NOT_EQUAL, preventNullAnalysis, maker.Literal(Javac.CTC_BOT, null));
-        JCTree.JCIf ifNotNullCleanup = maker.If(isNull, maker.Block(0L, cleanupCall), null);
+        JCTree.JCIf ifNotNullCleanup = maker.m10940If(isNull, maker.Block(0L, cleanupCall), null);
         Context context = annotationNode.getContext();
         JCTree.JCBlock finalizer = (JCTree.JCBlock) JavacHandlerUtil.recursiveSetGeneratedBy(maker.Block(0L, List.of(ifNotNullCleanup)), ast, context);
         newStatements.append(JavacHandlerUtil.setGeneratedBy(maker.Try((JCTree.JCBlock) JavacHandlerUtil.setGeneratedBy(maker.Block(0L, tryBlock.toList()), ast, context), List.nil(), finalizer), ast, context));

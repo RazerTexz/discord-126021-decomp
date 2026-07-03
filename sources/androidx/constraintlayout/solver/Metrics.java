@@ -1,7 +1,7 @@
 package androidx.constraintlayout.solver;
 
-import b.d.b.a.outline;
 import java.util.ArrayList;
+import p007b.p100d.p104b.p105a.C1643a;
 
 /* JADX INFO: loaded from: classes.dex */
 public class Metrics {
@@ -85,23 +85,23 @@ public class Metrics {
     }
 
     public String toString() {
-        StringBuilder sbU = outline.U("\n*** Metrics ***\nmeasures: ");
-        sbU.append(this.measures);
-        sbU.append("\nmeasuresWrap: ");
-        sbU.append(this.measuresWrap);
-        sbU.append("\nmeasuresWrapInfeasible: ");
-        sbU.append(this.measuresWrapInfeasible);
-        sbU.append("\ndetermineGroups: ");
-        sbU.append(this.determineGroups);
-        sbU.append("\ninfeasibleDetermineGroups: ");
-        sbU.append(this.infeasibleDetermineGroups);
-        sbU.append("\ngraphOptimizer: ");
-        sbU.append(this.graphOptimizer);
-        sbU.append("\nwidgets: ");
-        sbU.append(this.widgets);
-        sbU.append("\ngraphSolved: ");
-        sbU.append(this.graphSolved);
-        sbU.append("\nlinearSolved: ");
-        return outline.C(sbU, this.linearSolved, "\n");
+        StringBuilder sbM833U = C1643a.m833U("\n*** Metrics ***\nmeasures: ");
+        sbM833U.append(this.measures);
+        sbM833U.append("\nmeasuresWrap: ");
+        sbM833U.append(this.measuresWrap);
+        sbM833U.append("\nmeasuresWrapInfeasible: ");
+        sbM833U.append(this.measuresWrapInfeasible);
+        sbM833U.append("\ndetermineGroups: ");
+        sbM833U.append(this.determineGroups);
+        sbM833U.append("\ninfeasibleDetermineGroups: ");
+        sbM833U.append(this.infeasibleDetermineGroups);
+        sbM833U.append("\ngraphOptimizer: ");
+        sbM833U.append(this.graphOptimizer);
+        sbM833U.append("\nwidgets: ");
+        sbM833U.append(this.widgets);
+        sbM833U.append("\ngraphSolved: ");
+        sbM833U.append(this.graphSolved);
+        sbM833U.append("\nlinearSolved: ");
+        return C1643a.m815C(sbM833U, this.linearSolved, "\n");
     }
 }

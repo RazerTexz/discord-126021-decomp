@@ -8,9 +8,9 @@ import com.discord.stores.StoreUserConnections;
 import com.discord.utilities.platform.Platform;
 import com.discord.utilities.time.Clock;
 import com.discord.utilities.user.UserUtils;
-import d0.z.d.Intrinsics3;
 import java.util.Collection;
 import java.util.Iterator;
+import p507d0.p592z.p594d.C12238m;
 
 /* JADX INFO: compiled from: PlaystationUpsellManager.kt */
 /* JADX INFO: loaded from: classes2.dex */
@@ -21,9 +21,9 @@ public final class PlaystationUpsellManager {
     private final SharedPreferences sharedPreferences;
 
     public PlaystationUpsellManager(SharedPreferences sharedPreferences, StoreExperiments storeExperiments, Clock clock) {
-        Intrinsics3.checkNotNullParameter(sharedPreferences, "sharedPreferences");
-        Intrinsics3.checkNotNullParameter(storeExperiments, "experimentStore");
-        Intrinsics3.checkNotNullParameter(clock, "clock");
+        C12238m.checkNotNullParameter(sharedPreferences, "sharedPreferences");
+        C12238m.checkNotNullParameter(storeExperiments, "experimentStore");
+        C12238m.checkNotNullParameter(clock, "clock");
         this.sharedPreferences = sharedPreferences;
         this.experimentStore = storeExperiments;
         this.clock = clock;
@@ -39,7 +39,7 @@ public final class PlaystationUpsellManager {
 
     private final boolean isUserMissingPlaystationAccountIntegration(StoreUserConnections.State connectedAccountsState) {
         boolean z2;
-        if (!Intrinsics3.areEqual(connectedAccountsState, StoreUserConnections.State.Loading.INSTANCE)) {
+        if (!C12238m.areEqual(connectedAccountsState, StoreUserConnections.State.Loading.INSTANCE)) {
             if ((connectedAccountsState instanceof Collection) && connectedAccountsState.isEmpty()) {
                 z2 = true;
             } else {
@@ -59,9 +59,9 @@ public final class PlaystationUpsellManager {
     }
 
     public final boolean canShow(User user, StoreUserConnections.State connectedAccountsState) {
-        Intrinsics3.checkNotNullParameter(user, "user");
-        Intrinsics3.checkNotNullParameter(connectedAccountsState, "connectedAccountsState");
-        return isAccountOldEnough(user) && isUserMissingPlaystationAccountIntegration(connectedAccountsState) && !hasBeenShown() && PlaystationExperimentUtils.canSeePlaystationUpsells(this.experimentStore);
+        C12238m.checkNotNullParameter(user, "user");
+        C12238m.checkNotNullParameter(connectedAccountsState, "connectedAccountsState");
+        return isAccountOldEnough(user) && isUserMissingPlaystationAccountIntegration(connectedAccountsState) && !hasBeenShown() && PlaystationExperimentUtilsKt.canSeePlaystationUpsells(this.experimentStore);
     }
 
     public final void setHasBeenShown() {

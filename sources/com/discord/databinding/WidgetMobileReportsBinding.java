@@ -10,25 +10,27 @@ import androidx.viewbinding.ViewBinding;
 /* JADX INFO: loaded from: classes.dex */
 public final class WidgetMobileReportsBinding implements ViewBinding {
 
+    /* JADX INFO: renamed from: a */
     @NonNull
-    public final CoordinatorLayout a;
+    public final CoordinatorLayout f17267a;
 
-    /* JADX INFO: renamed from: b, reason: collision with root package name */
+    /* JADX INFO: renamed from: b */
     @NonNull
-    public final FrameLayout f2496b;
+    public final FrameLayout f17268b;
 
+    /* JADX INFO: renamed from: c */
     @NonNull
-    public final ProgressBar c;
+    public final ProgressBar f17269c;
 
     public WidgetMobileReportsBinding(@NonNull CoordinatorLayout coordinatorLayout, @NonNull FrameLayout frameLayout, @NonNull ProgressBar progressBar) {
-        this.a = coordinatorLayout;
-        this.f2496b = frameLayout;
-        this.c = progressBar;
+        this.f17267a = coordinatorLayout;
+        this.f17268b = frameLayout;
+        this.f17269c = progressBar;
     }
 
     @Override // androidx.viewbinding.ViewBinding
     @NonNull
     public View getRoot() {
-        return this.a;
+        return this.f17267a;
     }
 }

@@ -10,19 +10,19 @@ import android.widget.Toast;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
-import b.d.b.a.outline;
-import com.discord.R;
+import com.discord.C5419R;
 import com.discord.databinding.RemovablePermissionOwnerViewBinding;
 import com.discord.models.domain.ModelAuditLogEntry;
 import com.discord.utilities.view.extensions.ViewExtensions;
 import com.discord.widgets.channels.permissions.PermissionOwnerListView;
-import d0.t.Collections2;
-import d0.z.d.Intrinsics3;
 import java.util.List;
 import kotlin.Unit;
 import kotlin.jvm.functions.Function0;
 import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.DefaultConstructorMarker;
+import p007b.p100d.p104b.p105a.C1643a;
+import p507d0.p580t.C12147n;
+import p507d0.p592z.p594d.C12238m;
 
 /* JADX INFO: compiled from: PermissionOwnerListView.kt */
 /* JADX INFO: loaded from: classes2.dex */
@@ -31,8 +31,8 @@ public final class PermissionOwnerListView extends RecyclerView {
 
     /* JADX INFO: compiled from: PermissionOwnerListView.kt */
     public static final class Adapter extends RecyclerView.Adapter<PermissionOwnerViewHolder> {
-        private Function1<? super PermissionOwner, Unit> onRemoveClicked = PermissionOwnerListView3.INSTANCE;
-        private List<Item> data = Collections2.emptyList();
+        private Function1<? super PermissionOwner, Unit> onRemoveClicked = PermissionOwnerListView$Adapter$onRemoveClicked$1.INSTANCE;
+        private List<Item> data = C12147n.emptyList();
 
         @Override // androidx.recyclerview.widget.RecyclerView.Adapter
         public int getItemCount() {
@@ -44,28 +44,28 @@ public final class PermissionOwnerListView extends RecyclerView {
         }
 
         public final void setData(List<Item> data) {
-            Intrinsics3.checkNotNullParameter(data, "data");
+            C12238m.checkNotNullParameter(data, "data");
             this.data = data;
             notifyDataSetChanged();
         }
 
         public final void setOnRemoveClicked(Function1<? super PermissionOwner, Unit> function1) {
-            Intrinsics3.checkNotNullParameter(function1, "<set-?>");
+            C12238m.checkNotNullParameter(function1, "<set-?>");
             this.onRemoveClicked = function1;
         }
 
         @Override // androidx.recyclerview.widget.RecyclerView.Adapter
         public void onBindViewHolder(PermissionOwnerViewHolder holder, int position) {
-            Intrinsics3.checkNotNullParameter(holder, "holder");
-            holder.configure(this.data.get(position), new PermissionOwnerListView2(this, this.data.get(position)));
+            C12238m.checkNotNullParameter(holder, "holder");
+            holder.configure(this.data.get(position), new PermissionOwnerListView$Adapter$onBindViewHolder$1(this, this.data.get(position)));
         }
 
         @Override // androidx.recyclerview.widget.RecyclerView.Adapter
         public PermissionOwnerViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-            Intrinsics3.checkNotNullParameter(parent, "parent");
-            RemovablePermissionOwnerViewBinding removablePermissionOwnerViewBindingA = RemovablePermissionOwnerViewBinding.a(LayoutInflater.from(parent.getContext()), parent, false);
-            Intrinsics3.checkNotNullExpressionValue(removablePermissionOwnerViewBindingA, "RemovablePermissionOwner…,\n          false\n      )");
-            return new PermissionOwnerViewHolder(removablePermissionOwnerViewBindingA);
+            C12238m.checkNotNullParameter(parent, "parent");
+            RemovablePermissionOwnerViewBinding removablePermissionOwnerViewBindingM8389a = RemovablePermissionOwnerViewBinding.m8389a(LayoutInflater.from(parent.getContext()), parent, false);
+            C12238m.checkNotNullExpressionValue(removablePermissionOwnerViewBindingM8389a, "RemovablePermissionOwner…,\n          false\n      )");
+            return new PermissionOwnerViewHolder(removablePermissionOwnerViewBindingM8389a);
         }
     }
 
@@ -75,8 +75,8 @@ public final class PermissionOwnerListView extends RecyclerView {
         private final RemoveStatus removeStatus;
 
         public Item(PermissionOwner permissionOwner, RemoveStatus removeStatus) {
-            Intrinsics3.checkNotNullParameter(permissionOwner, "permissionOwner");
-            Intrinsics3.checkNotNullParameter(removeStatus, "removeStatus");
+            C12238m.checkNotNullParameter(permissionOwner, "permissionOwner");
+            C12238m.checkNotNullParameter(removeStatus, "removeStatus");
             this.permissionOwner = permissionOwner;
             this.removeStatus = removeStatus;
         }
@@ -102,8 +102,8 @@ public final class PermissionOwnerListView extends RecyclerView {
         }
 
         public final Item copy(PermissionOwner permissionOwner, RemoveStatus removeStatus) {
-            Intrinsics3.checkNotNullParameter(permissionOwner, "permissionOwner");
-            Intrinsics3.checkNotNullParameter(removeStatus, "removeStatus");
+            C12238m.checkNotNullParameter(permissionOwner, "permissionOwner");
+            C12238m.checkNotNullParameter(removeStatus, "removeStatus");
             return new Item(permissionOwner, removeStatus);
         }
 
@@ -115,7 +115,7 @@ public final class PermissionOwnerListView extends RecyclerView {
                 return false;
             }
             Item item = (Item) other;
-            return Intrinsics3.areEqual(this.permissionOwner, item.permissionOwner) && Intrinsics3.areEqual(this.removeStatus, item.removeStatus);
+            return C12238m.areEqual(this.permissionOwner, item.permissionOwner) && C12238m.areEqual(this.removeStatus, item.removeStatus);
         }
 
         public final PermissionOwner getPermissionOwner() {
@@ -134,12 +134,12 @@ public final class PermissionOwnerListView extends RecyclerView {
         }
 
         public String toString() {
-            StringBuilder sbU = outline.U("Item(permissionOwner=");
-            sbU.append(this.permissionOwner);
-            sbU.append(", removeStatus=");
-            sbU.append(this.removeStatus);
-            sbU.append(")");
-            return sbU.toString();
+            StringBuilder sbM833U = C1643a.m833U("Item(permissionOwner=");
+            sbM833U.append(this.permissionOwner);
+            sbM833U.append(", removeStatus=");
+            sbM833U.append(this.removeStatus);
+            sbM833U.append(")");
+            return sbM833U.toString();
         }
     }
 
@@ -161,39 +161,39 @@ public final class PermissionOwnerListView extends RecyclerView {
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
         public PermissionOwnerViewHolder(RemovablePermissionOwnerViewBinding removablePermissionOwnerViewBinding) {
-            super(removablePermissionOwnerViewBinding.a);
-            Intrinsics3.checkNotNullParameter(removablePermissionOwnerViewBinding, "binding");
+            super(removablePermissionOwnerViewBinding.f15225a);
+            C12238m.checkNotNullParameter(removablePermissionOwnerViewBinding, "binding");
             this.binding = removablePermissionOwnerViewBinding;
         }
 
         public final void configure(final Item item, final Function0<Unit> onRemoveClicked) {
-            Intrinsics3.checkNotNullParameter(item, "item");
-            Intrinsics3.checkNotNullParameter(onRemoveClicked, "onRemoveClicked");
-            this.binding.f2138b.a(item.getPermissionOwner());
-            ImageView imageView = this.binding.c;
-            Intrinsics3.checkNotNullExpressionValue(imageView, "binding.remove");
+            C12238m.checkNotNullParameter(item, "item");
+            C12238m.checkNotNullParameter(onRemoveClicked, "onRemoveClicked");
+            this.binding.f15226b.m8598a(item.getPermissionOwner());
+            ImageView imageView = this.binding.f15227c;
+            C12238m.checkNotNullExpressionValue(imageView, "binding.remove");
             ViewExtensions.setEnabledAlpha$default(imageView, item.getRemoveStatus() instanceof RemoveStatus.CanRemove, 0.0f, 2, null);
-            this.binding.c.setOnClickListener(new View.OnClickListener() { // from class: com.discord.widgets.channels.permissions.PermissionOwnerListView$PermissionOwnerViewHolder$configure$1
+            this.binding.f15227c.setOnClickListener(new View.OnClickListener() { // from class: com.discord.widgets.channels.permissions.PermissionOwnerListView$PermissionOwnerViewHolder$configure$1
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
                     PermissionOwnerListView.RemoveStatus removeStatus = item.getRemoveStatus();
-                    if (Intrinsics3.areEqual(removeStatus, PermissionOwnerListView.RemoveStatus.CanRemove.INSTANCE)) {
+                    if (C12238m.areEqual(removeStatus, PermissionOwnerListView.RemoveStatus.CanRemove.INSTANCE)) {
                         onRemoveClicked.invoke();
                         return;
                     }
-                    if (!Intrinsics3.areEqual(removeStatus, PermissionOwnerListView.RemoveStatus.IsRemoving.INSTANCE) && (removeStatus instanceof PermissionOwnerListView.RemoveStatus.CannotRemove)) {
+                    if (!C12238m.areEqual(removeStatus, PermissionOwnerListView.RemoveStatus.IsRemoving.INSTANCE) && (removeStatus instanceof PermissionOwnerListView.RemoveStatus.CannotRemove)) {
                         int iOrdinal = ((PermissionOwnerListView.RemoveStatus.CannotRemove) item.getRemoveStatus()).getReason().ordinal();
                         if (iOrdinal == 2) {
-                            ConstraintLayout constraintLayout = this.this$0.binding.a;
-                            Intrinsics3.checkNotNullExpressionValue(constraintLayout, "binding.root");
-                            Toast.makeText(constraintLayout.getContext(), R.string.channel_permissions_remove_not_overwrite, 0).show();
+                            ConstraintLayout constraintLayout = this.this$0.binding.f15225a;
+                            C12238m.checkNotNullExpressionValue(constraintLayout, "binding.root");
+                            Toast.makeText(constraintLayout.getContext(), C5419R.string.channel_permissions_remove_not_overwrite, 0).show();
                         } else {
                             if (iOrdinal != 3) {
                                 return;
                             }
-                            ConstraintLayout constraintLayout2 = this.this$0.binding.a;
-                            Intrinsics3.checkNotNullExpressionValue(constraintLayout2, "binding.root");
-                            Toast.makeText(constraintLayout2.getContext(), R.string.channel_permissions_cannot_edit_moderators, 0).show();
+                            ConstraintLayout constraintLayout2 = this.this$0.binding.f15225a;
+                            C12238m.checkNotNullExpressionValue(constraintLayout2, "binding.root");
+                            Toast.makeText(constraintLayout2.getContext(), C5419R.string.channel_permissions_cannot_edit_moderators, 0).show();
                         }
                     }
                 }
@@ -228,7 +228,7 @@ public final class PermissionOwnerListView extends RecyclerView {
             /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
             public CannotRemove(Reason reason) {
                 super(null);
-                Intrinsics3.checkNotNullParameter(reason, ModelAuditLogEntry.CHANGE_KEY_REASON);
+                C12238m.checkNotNullParameter(reason, ModelAuditLogEntry.CHANGE_KEY_REASON);
                 this.reason = reason;
             }
 
@@ -245,13 +245,13 @@ public final class PermissionOwnerListView extends RecyclerView {
             }
 
             public final CannotRemove copy(Reason reason) {
-                Intrinsics3.checkNotNullParameter(reason, ModelAuditLogEntry.CHANGE_KEY_REASON);
+                C12238m.checkNotNullParameter(reason, ModelAuditLogEntry.CHANGE_KEY_REASON);
                 return new CannotRemove(reason);
             }
 
             public boolean equals(Object other) {
                 if (this != other) {
-                    return (other instanceof CannotRemove) && Intrinsics3.areEqual(this.reason, ((CannotRemove) other).reason);
+                    return (other instanceof CannotRemove) && C12238m.areEqual(this.reason, ((CannotRemove) other).reason);
                 }
                 return true;
             }
@@ -269,10 +269,10 @@ public final class PermissionOwnerListView extends RecyclerView {
             }
 
             public String toString() {
-                StringBuilder sbU = outline.U("CannotRemove(reason=");
-                sbU.append(this.reason);
-                sbU.append(")");
-                return sbU.toString();
+                StringBuilder sbM833U = C1643a.m833U("CannotRemove(reason=");
+                sbM833U.append(this.reason);
+                sbM833U.append(")");
+                return sbM833U.toString();
             }
         }
 
@@ -296,7 +296,7 @@ public final class PermissionOwnerListView extends RecyclerView {
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public PermissionOwnerListView(Context context) {
         super(context);
-        Intrinsics3.checkNotNullParameter(context, "context");
+        C12238m.checkNotNullParameter(context, "context");
         Adapter adapter = new Adapter();
         this.adapter = adapter;
         setLayoutManager(new LinearLayoutManager(getContext(), 1, false));
@@ -304,8 +304,8 @@ public final class PermissionOwnerListView extends RecyclerView {
     }
 
     public final void setData(List<Item> permissionOwners, Function1<? super PermissionOwner, Unit> onRemoveClicked) {
-        Intrinsics3.checkNotNullParameter(permissionOwners, "permissionOwners");
-        Intrinsics3.checkNotNullParameter(onRemoveClicked, "onRemoveClicked");
+        C12238m.checkNotNullParameter(permissionOwners, "permissionOwners");
+        C12238m.checkNotNullParameter(onRemoveClicked, "onRemoveClicked");
         this.adapter.setOnRemoveClicked(onRemoveClicked);
         this.adapter.setData(permissionOwners);
     }
@@ -313,7 +313,7 @@ public final class PermissionOwnerListView extends RecyclerView {
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public PermissionOwnerListView(Context context, AttributeSet attributeSet) {
         super(context, attributeSet);
-        Intrinsics3.checkNotNullParameter(context, "context");
+        C12238m.checkNotNullParameter(context, "context");
         Adapter adapter = new Adapter();
         this.adapter = adapter;
         setLayoutManager(new LinearLayoutManager(getContext(), 1, false));
@@ -327,7 +327,7 @@ public final class PermissionOwnerListView extends RecyclerView {
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public PermissionOwnerListView(Context context, AttributeSet attributeSet, int i) {
         super(context, attributeSet, i);
-        Intrinsics3.checkNotNullParameter(context, "context");
+        C12238m.checkNotNullParameter(context, "context");
         Adapter adapter = new Adapter();
         this.adapter = adapter;
         setLayoutManager(new LinearLayoutManager(getContext(), 1, false));

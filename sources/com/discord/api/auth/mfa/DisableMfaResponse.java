@@ -1,7 +1,7 @@
 package com.discord.api.auth.mfa;
 
-import b.d.b.a.outline;
-import d0.z.d.Intrinsics3;
+import p007b.p100d.p104b.p105a.C1643a;
+import p507d0.p592z.p594d.C12238m;
 
 /* JADX INFO: compiled from: DisableMfaResponse.kt */
 /* JADX INFO: loaded from: classes.dex */
@@ -15,7 +15,7 @@ public final /* data */ class DisableMfaResponse {
 
     public boolean equals(Object other) {
         if (this != other) {
-            return (other instanceof DisableMfaResponse) && Intrinsics3.areEqual(this.token, ((DisableMfaResponse) other).token);
+            return (other instanceof DisableMfaResponse) && C12238m.areEqual(this.token, ((DisableMfaResponse) other).token);
         }
         return true;
     }
@@ -29,6 +29,6 @@ public final /* data */ class DisableMfaResponse {
     }
 
     public String toString() {
-        return outline.J(outline.U("DisableMfaResponse(token="), this.token, ")");
+        return C1643a.m822J(C1643a.m833U("DisableMfaResponse(token="), this.token, ")");
     }
 }

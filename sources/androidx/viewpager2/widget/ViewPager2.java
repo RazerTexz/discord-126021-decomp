@@ -29,6 +29,7 @@ import androidx.core.view.accessibility.AccessibilityViewCommand;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.PagerSnapHelper;
 import androidx.recyclerview.widget.RecyclerView;
+import androidx.viewpager2.C0693R;
 import androidx.viewpager2.adapter.StatefulAdapter;
 import com.google.android.material.badge.BadgeDrawable;
 import java.lang.annotation.Retention;
@@ -648,13 +649,13 @@ public final class ViewPager2 extends ViewGroup {
     }
 
     private void setOrientation(Context context, AttributeSet attributeSet) {
-        int[] iArr = androidx.viewpager2.R.styleable.ViewPager2;
+        int[] iArr = C0693R.styleable.ViewPager2;
         TypedArray typedArrayObtainStyledAttributes = context.obtainStyledAttributes(attributeSet, iArr);
         if (Build.VERSION.SDK_INT >= 29) {
             saveAttributeDataForStyleable(context, iArr, attributeSet, typedArrayObtainStyledAttributes, 0, 0);
         }
         try {
-            setOrientation(typedArrayObtainStyledAttributes.getInt(androidx.viewpager2.R.styleable.ViewPager2_android_orientation, 0));
+            setOrientation(typedArrayObtainStyledAttributes.getInt(C0693R.styleable.ViewPager2_android_orientation, 0));
         } finally {
             typedArrayObtainStyledAttributes.recycle();
         }

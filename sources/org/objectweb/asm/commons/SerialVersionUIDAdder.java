@@ -1,6 +1,6 @@
 package org.objectweb.asm.commons;
 
-import com.discord.widgets.chat.input.MentionUtils;
+import com.discord.widgets.chat.input.MentionUtilsKt;
 import java.io.ByteArrayOutputStream;
 import java.io.DataOutput;
 import java.io.DataOutputStream;
@@ -125,7 +125,7 @@ public class SerialVersionUIDAdder extends ClassVisitor {
             Throwable th = null;
             try {
                 try {
-                    dataOutputStream.writeUTF(this.name.replace(MentionUtils.SLASH_CHAR, '.'));
+                    dataOutputStream.writeUTF(this.name.replace(MentionUtilsKt.SLASH_CHAR, '.'));
                     int mods = this.access;
                     if ((mods & 512) != 0) {
                         mods = this.svuidMethods.isEmpty() ? mods & (-1025) : mods | 1024;
@@ -133,7 +133,7 @@ public class SerialVersionUIDAdder extends ClassVisitor {
                     dataOutputStream.writeInt(mods & 1553);
                     Arrays.sort(this.interfaces);
                     for (String interfaceName : this.interfaces) {
-                        dataOutputStream.writeUTF(interfaceName.replace(MentionUtils.SLASH_CHAR, '.'));
+                        dataOutputStream.writeUTF(interfaceName.replace(MentionUtilsKt.SLASH_CHAR, '.'));
                     }
                     writeItems(this.svuidFields, dataOutputStream, false);
                     if (this.hasStaticInitializer) {
@@ -215,7 +215,7 @@ public class SerialVersionUIDAdder extends ClassVisitor {
         for (Item item : items) {
             dataOutputStream.writeUTF(item.name);
             dataOutputStream.writeInt(item.access);
-            dataOutputStream.writeUTF(dotted ? item.descriptor.replace(MentionUtils.SLASH_CHAR, '.') : item.descriptor);
+            dataOutputStream.writeUTF(dotted ? item.descriptor.replace(MentionUtilsKt.SLASH_CHAR, '.') : item.descriptor);
         }
     }
 

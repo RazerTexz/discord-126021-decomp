@@ -1,9 +1,9 @@
 package androidx.constraintlayout.motion.utils;
 
 import android.util.Log;
-import b.d.b.a.outline;
 import com.discord.analytics.utils.RegistrationSteps;
 import java.util.Arrays;
+import p007b.p100d.p104b.p105a.C1643a;
 
 /* JADX INFO: loaded from: classes.dex */
 public class Easing {
@@ -37,9 +37,9 @@ public class Easing {
             case "standard":
                 return new CubicEasing(STANDARD);
             default:
-                StringBuilder sbU = outline.U("transitionEasing syntax error syntax:transitionEasing=\"cubic(1.0,0.5,0.0,0.6)\" or ");
-                sbU.append(Arrays.toString(NAMED_EASING));
-                Log.e("ConstraintSet", sbU.toString());
+                StringBuilder sbM833U = C1643a.m833U("transitionEasing syntax error syntax:transitionEasing=\"cubic(1.0,0.5,0.0,0.6)\" or ");
+                sbM833U.append(Arrays.toString(NAMED_EASING));
+                Log.e("ConstraintSet", sbM833U.toString());
                 return sDefault;
         }
     }
@@ -59,39 +59,47 @@ public class Easing {
     public static class CubicEasing extends Easing {
         private static double d_error = 1.0E-4d;
         private static double error = 0.01d;
-        public double x1;
-        public double x2;
-        public double y1;
-        public double y2;
+
+        /* JADX INFO: renamed from: x1 */
+        public double f92x1;
+
+        /* JADX INFO: renamed from: x2 */
+        public double f93x2;
+
+        /* JADX INFO: renamed from: y1 */
+        public double f94y1;
+
+        /* JADX INFO: renamed from: y2 */
+        public double f95y2;
 
         public CubicEasing(String str) {
             this.str = str;
             int iIndexOf = str.indexOf(40);
             int iIndexOf2 = str.indexOf(44, iIndexOf);
-            this.x1 = Double.parseDouble(str.substring(iIndexOf + 1, iIndexOf2).trim());
+            this.f92x1 = Double.parseDouble(str.substring(iIndexOf + 1, iIndexOf2).trim());
             int i = iIndexOf2 + 1;
             int iIndexOf3 = str.indexOf(44, i);
-            this.y1 = Double.parseDouble(str.substring(i, iIndexOf3).trim());
+            this.f94y1 = Double.parseDouble(str.substring(i, iIndexOf3).trim());
             int i2 = iIndexOf3 + 1;
             int iIndexOf4 = str.indexOf(44, i2);
-            this.x2 = Double.parseDouble(str.substring(i2, iIndexOf4).trim());
+            this.f93x2 = Double.parseDouble(str.substring(i2, iIndexOf4).trim());
             int i3 = iIndexOf4 + 1;
-            this.y2 = Double.parseDouble(str.substring(i3, str.indexOf(41, i3)).trim());
+            this.f95y2 = Double.parseDouble(str.substring(i3, str.indexOf(41, i3)).trim());
         }
 
         private double getDiffX(double d) {
             double d2 = 1.0d - d;
-            double d3 = this.x1;
+            double d3 = this.f92x1;
             double d4 = d2 * 3.0d * d2 * d3;
-            double d5 = this.x2;
+            double d5 = this.f93x2;
             return ((1.0d - d5) * 3.0d * d * d) + ((d5 - d3) * d2 * 6.0d * d) + d4;
         }
 
         private double getDiffY(double d) {
             double d2 = 1.0d - d;
-            double d3 = this.y1;
+            double d3 = this.f94y1;
             double d4 = d2 * 3.0d * d2 * d3;
-            double d5 = this.y2;
+            double d5 = this.f95y2;
             return ((1.0d - d5) * 3.0d * d * d) + ((d5 - d3) * d2 * 6.0d * d) + d4;
         }
 
@@ -100,7 +108,7 @@ public class Easing {
             double d3 = 3.0d * d2;
             double d4 = d2 * d3 * d;
             double d5 = d3 * d * d;
-            return (this.x2 * d5) + (this.x1 * d4) + (d * d * d);
+            return (this.f93x2 * d5) + (this.f92x1 * d4) + (d * d * d);
         }
 
         private double getY(double d) {
@@ -108,7 +116,7 @@ public class Easing {
             double d3 = 3.0d * d2;
             double d4 = d2 * d3 * d;
             double d5 = d3 * d * d;
-            return (this.y2 * d5) + (this.y1 * d4) + (d * d * d);
+            return (this.f95y2 * d5) + (this.f94y1 * d4) + (d * d * d);
         }
 
         @Override // androidx.constraintlayout.motion.utils.Easing
@@ -147,10 +155,10 @@ public class Easing {
         }
 
         public void setup(double d, double d2, double d3, double d4) {
-            this.x1 = d;
-            this.y1 = d2;
-            this.x2 = d3;
-            this.y2 = d4;
+            this.f92x1 = d;
+            this.f94y1 = d2;
+            this.f93x2 = d3;
+            this.f95y2 = d4;
         }
 
         public CubicEasing(double d, double d2, double d3, double d4) {

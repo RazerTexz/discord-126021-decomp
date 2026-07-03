@@ -11,29 +11,32 @@ import com.google.android.material.button.MaterialButton;
 /* JADX INFO: loaded from: classes.dex */
 public final class WidgetChatListAdapterItemGuildInviteReminderBinding implements ViewBinding {
 
+    /* JADX INFO: renamed from: a */
     @NonNull
-    public final ConstraintLayout a;
+    public final ConstraintLayout f16222a;
 
-    /* JADX INFO: renamed from: b, reason: collision with root package name */
+    /* JADX INFO: renamed from: b */
     @NonNull
-    public final MaterialButton f2321b;
+    public final MaterialButton f16223b;
 
+    /* JADX INFO: renamed from: c */
     @NonNull
-    public final TextView c;
+    public final TextView f16224c;
 
+    /* JADX INFO: renamed from: d */
     @NonNull
-    public final TextView d;
+    public final TextView f16225d;
 
     public WidgetChatListAdapterItemGuildInviteReminderBinding(@NonNull ConstraintLayout constraintLayout, @NonNull MaterialButton materialButton, @NonNull ImageView imageView, @NonNull TextView textView, @NonNull TextView textView2) {
-        this.a = constraintLayout;
-        this.f2321b = materialButton;
-        this.c = textView;
-        this.d = textView2;
+        this.f16222a = constraintLayout;
+        this.f16223b = materialButton;
+        this.f16224c = textView;
+        this.f16225d = textView2;
     }
 
     @Override // androidx.viewbinding.ViewBinding
     @NonNull
     public View getRoot() {
-        return this.a;
+        return this.f16222a;
     }
 }

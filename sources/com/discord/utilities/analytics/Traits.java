@@ -1,14 +1,14 @@
 package com.discord.utilities.analytics;
 
-import a0.a.a.b;
-import b.d.b.a.outline;
 import com.discord.models.domain.ModelAuditLogEntry;
 import com.discord.models.domain.premium.SubscriptionPlanType;
-import com.discord.widgets.chat.AutocompleteUtils;
-import d0.z.d.Intrinsics3;
+import com.discord.widgets.chat.AutocompleteSelectionTypes;
 import java.io.Serializable;
 import java.util.Map;
 import kotlin.jvm.internal.DefaultConstructorMarker;
+import p001a0.p002a.p003a.C0002b;
+import p007b.p100d.p104b.p105a.C1643a;
+import p507d0.p592z.p594d.C12238m;
 
 /* JADX INFO: compiled from: Traits.kt */
 /* JADX INFO: loaded from: classes2.dex */
@@ -162,7 +162,7 @@ public final class Traits {
                 return false;
             }
             Location location = (Location) other;
-            return Intrinsics3.areEqual(this.page, location.page) && Intrinsics3.areEqual(this.section, location.section) && Intrinsics3.areEqual(this._object, location._object) && Intrinsics3.areEqual(this.objectType, location.objectType) && Intrinsics3.areEqual(this.promotionId, location.promotionId);
+            return C12238m.areEqual(this.page, location.page) && C12238m.areEqual(this.section, location.section) && C12238m.areEqual(this._object, location._object) && C12238m.areEqual(this.objectType, location.objectType) && C12238m.areEqual(this.promotionId, location.promotionId);
         }
 
         public final String getObjectType() {
@@ -199,7 +199,7 @@ public final class Traits {
         }
 
         public final void serializeTo(Map<String, Object> properties) {
-            Intrinsics3.checkNotNullParameter(properties, "properties");
+            C12238m.checkNotNullParameter(properties, "properties");
             String str = this.page;
             if (str != null) {
                 properties.put("location_page", str);
@@ -223,16 +223,16 @@ public final class Traits {
         }
 
         public String toString() {
-            StringBuilder sbU = outline.U("Location(page=");
-            sbU.append(this.page);
-            sbU.append(", section=");
-            sbU.append(this.section);
-            sbU.append(", _object=");
-            sbU.append(this._object);
-            sbU.append(", objectType=");
-            sbU.append(this.objectType);
-            sbU.append(", promotionId=");
-            return outline.F(sbU, this.promotionId, ")");
+            StringBuilder sbM833U = C1643a.m833U("Location(page=");
+            sbM833U.append(this.page);
+            sbM833U.append(", section=");
+            sbM833U.append(this.section);
+            sbM833U.append(", _object=");
+            sbM833U.append(this._object);
+            sbM833U.append(", objectType=");
+            sbM833U.append(this.objectType);
+            sbM833U.append(", promotionId=");
+            return C1643a.m818F(sbM833U, this.promotionId, ")");
         }
 
         public /* synthetic */ Location(String str, String str2, String str3, String str4, Integer num, int i, DefaultConstructorMarker defaultConstructorMarker) {
@@ -259,8 +259,8 @@ public final class Traits {
         }
 
         public Payment(String str, int i, int i2, String str2, boolean z2) {
-            Intrinsics3.checkNotNullParameter(str, "type");
-            Intrinsics3.checkNotNullParameter(str2, "currency");
+            C12238m.checkNotNullParameter(str, "type");
+            C12238m.checkNotNullParameter(str2, "currency");
             this.type = str;
             this.price = i;
             this.regularPrice = i2;
@@ -316,8 +316,8 @@ public final class Traits {
         }
 
         public final Payment copy(String type, int price, int regularPrice, String currency, boolean isGift) {
-            Intrinsics3.checkNotNullParameter(type, "type");
-            Intrinsics3.checkNotNullParameter(currency, "currency");
+            C12238m.checkNotNullParameter(type, "type");
+            C12238m.checkNotNullParameter(currency, "currency");
             return new Payment(type, price, regularPrice, currency, isGift);
         }
 
@@ -329,7 +329,7 @@ public final class Traits {
                 return false;
             }
             Payment payment = (Payment) other;
-            return Intrinsics3.areEqual(this.type, payment.type) && this.price == payment.price && this.regularPrice == payment.regularPrice && Intrinsics3.areEqual(this.currency, payment.currency) && this.isGift == payment.isGift;
+            return C12238m.areEqual(this.type, payment.type) && this.price == payment.price && this.regularPrice == payment.regularPrice && C12238m.areEqual(this.currency, payment.currency) && this.isGift == payment.isGift;
         }
 
         public final String getCurrency() {
@@ -371,7 +371,7 @@ public final class Traits {
         }
 
         public final void serializeTo(Map<String, Object> properties) {
-            Intrinsics3.checkNotNullParameter(properties, "properties");
+            C12238m.checkNotNullParameter(properties, "properties");
             properties.put("payment_type", this.type);
             properties.put("price", Integer.valueOf(this.price));
             properties.put("regular_price", Integer.valueOf(this.regularPrice));
@@ -380,16 +380,16 @@ public final class Traits {
         }
 
         public String toString() {
-            StringBuilder sbU = outline.U("Payment(type=");
-            sbU.append(this.type);
-            sbU.append(", price=");
-            sbU.append(this.price);
-            sbU.append(", regularPrice=");
-            sbU.append(this.regularPrice);
-            sbU.append(", currency=");
-            sbU.append(this.currency);
-            sbU.append(", isGift=");
-            return outline.O(sbU, this.isGift, ")");
+            StringBuilder sbM833U = C1643a.m833U("Payment(type=");
+            sbM833U.append(this.type);
+            sbM833U.append(", price=");
+            sbM833U.append(this.price);
+            sbM833U.append(", regularPrice=");
+            sbM833U.append(this.regularPrice);
+            sbM833U.append(", currency=");
+            sbM833U.append(this.currency);
+            sbM833U.append(", isGift=");
+            return C1643a.m827O(sbM833U, this.isGift, ")");
         }
     }
 
@@ -481,7 +481,7 @@ public final class Traits {
                 return false;
             }
             Source source = (Source) other;
-            return Intrinsics3.areEqual(this.page, source.page) && Intrinsics3.areEqual(this.section, source.section) && Intrinsics3.areEqual(this._object, source._object) && Intrinsics3.areEqual(this.objectType, source.objectType) && Intrinsics3.areEqual(this.promotionId, source.promotionId);
+            return C12238m.areEqual(this.page, source.page) && C12238m.areEqual(this.section, source.section) && C12238m.areEqual(this._object, source._object) && C12238m.areEqual(this.objectType, source.objectType) && C12238m.areEqual(this.promotionId, source.promotionId);
         }
 
         public final String getObjectType() {
@@ -518,7 +518,7 @@ public final class Traits {
         }
 
         public final void serializeTo(Map<String, Object> properties) {
-            Intrinsics3.checkNotNullParameter(properties, "properties");
+            C12238m.checkNotNullParameter(properties, "properties");
             String str = this.page;
             if (str != null) {
                 properties.put("source_page", str);
@@ -542,16 +542,16 @@ public final class Traits {
         }
 
         public String toString() {
-            StringBuilder sbU = outline.U("Source(page=");
-            sbU.append(this.page);
-            sbU.append(", section=");
-            sbU.append(this.section);
-            sbU.append(", _object=");
-            sbU.append(this._object);
-            sbU.append(", objectType=");
-            sbU.append(this.objectType);
-            sbU.append(", promotionId=");
-            return outline.F(sbU, this.promotionId, ")");
+            StringBuilder sbM833U = C1643a.m833U("Source(page=");
+            sbM833U.append(this.page);
+            sbM833U.append(", section=");
+            sbM833U.append(this.section);
+            sbM833U.append(", _object=");
+            sbM833U.append(this._object);
+            sbM833U.append(", objectType=");
+            sbM833U.append(this.objectType);
+            sbM833U.append(", promotionId=");
+            return C1643a.m818F(sbM833U, this.promotionId, ")");
         }
 
         public /* synthetic */ Source(String str, String str2, String str3, String str4, Integer num, int i, DefaultConstructorMarker defaultConstructorMarker) {
@@ -567,7 +567,7 @@ public final class Traits {
         private final String storeTitle;
 
         public StoreSku(long j, int i, long j2, String str) {
-            Intrinsics3.checkNotNullParameter(str, "storeTitle");
+            C12238m.checkNotNullParameter(str, "storeTitle");
             this.skuId = j;
             this.skuType = i;
             this.applicationId = j2;
@@ -614,7 +614,7 @@ public final class Traits {
         }
 
         public final StoreSku copy(long skuId, int skuType, long applicationId, String storeTitle) {
-            Intrinsics3.checkNotNullParameter(storeTitle, "storeTitle");
+            C12238m.checkNotNullParameter(storeTitle, "storeTitle");
             return new StoreSku(skuId, skuType, applicationId, storeTitle);
         }
 
@@ -626,7 +626,7 @@ public final class Traits {
                 return false;
             }
             StoreSku storeSku = (StoreSku) other;
-            return this.skuId == storeSku.skuId && this.skuType == storeSku.skuType && this.applicationId == storeSku.applicationId && Intrinsics3.areEqual(this.storeTitle, storeSku.storeTitle);
+            return this.skuId == storeSku.skuId && this.skuType == storeSku.skuType && this.applicationId == storeSku.applicationId && C12238m.areEqual(this.storeTitle, storeSku.storeTitle);
         }
 
         public final long getApplicationId() {
@@ -646,13 +646,13 @@ public final class Traits {
         }
 
         public int hashCode() {
-            int iA = (b.a(this.applicationId) + (((b.a(this.skuId) * 31) + this.skuType) * 31)) * 31;
+            int iM3a = (C0002b.m3a(this.applicationId) + (((C0002b.m3a(this.skuId) * 31) + this.skuType) * 31)) * 31;
             String str = this.storeTitle;
-            return iA + (str != null ? str.hashCode() : 0);
+            return iM3a + (str != null ? str.hashCode() : 0);
         }
 
         public final void serializeTo(Map<String, Object> properties) {
-            Intrinsics3.checkNotNullParameter(properties, "properties");
+            C12238m.checkNotNullParameter(properties, "properties");
             properties.put("sku_id", Long.valueOf(this.skuId));
             properties.put("sku_type", Integer.valueOf(this.skuType));
             properties.put(ModelAuditLogEntry.CHANGE_KEY_APPLICATION_ID, Long.valueOf(this.applicationId));
@@ -660,14 +660,14 @@ public final class Traits {
         }
 
         public String toString() {
-            StringBuilder sbU = outline.U("StoreSku(skuId=");
-            sbU.append(this.skuId);
-            sbU.append(", skuType=");
-            sbU.append(this.skuType);
-            sbU.append(", applicationId=");
-            sbU.append(this.applicationId);
-            sbU.append(", storeTitle=");
-            return outline.J(sbU, this.storeTitle, ")");
+            StringBuilder sbM833U = C1643a.m833U("StoreSku(skuId=");
+            sbM833U.append(this.skuId);
+            sbM833U.append(", skuType=");
+            sbM833U.append(this.skuType);
+            sbM833U.append(", applicationId=");
+            sbM833U.append(this.applicationId);
+            sbM833U.append(", storeTitle=");
+            return C1643a.m822J(sbM833U, this.storeTitle, ")");
         }
     }
 
@@ -686,12 +686,12 @@ public final class Traits {
             }
 
             public final Subscription from(SubscriptionPlanType subscriptionPlanType) {
-                Intrinsics3.checkNotNullParameter(subscriptionPlanType, "subscriptionPlanType");
+                C12238m.checkNotNullParameter(subscriptionPlanType, "subscriptionPlanType");
                 return new Subscription(subscriptionPlanType.getPlanTypeString(), 1, Long.valueOf(subscriptionPlanType.getPlanId()));
             }
 
             public final Subscription withGatewayPlanId(String gatewayPlanId) {
-                Intrinsics3.checkNotNullParameter(gatewayPlanId, "gatewayPlanId");
+                C12238m.checkNotNullParameter(gatewayPlanId, "gatewayPlanId");
                 return new Subscription(gatewayPlanId, 1, null);
             }
 
@@ -746,7 +746,7 @@ public final class Traits {
                 return false;
             }
             Subscription subscription = (Subscription) other;
-            return Intrinsics3.areEqual(this.gatewayPlanId, subscription.gatewayPlanId) && Intrinsics3.areEqual(this.type, subscription.type) && Intrinsics3.areEqual(this.planId, subscription.planId);
+            return C12238m.areEqual(this.gatewayPlanId, subscription.gatewayPlanId) && C12238m.areEqual(this.type, subscription.type) && C12238m.areEqual(this.planId, subscription.planId);
         }
 
         public final String getGatewayPlanId() {
@@ -771,7 +771,7 @@ public final class Traits {
         }
 
         public final void serializeTo(Map<String, Object> properties) {
-            Intrinsics3.checkNotNullParameter(properties, "properties");
+            C12238m.checkNotNullParameter(properties, "properties");
             String str = this.gatewayPlanId;
             if (str != null) {
                 properties.put("subscription_plan_gateway_plan_id", str);
@@ -787,12 +787,12 @@ public final class Traits {
         }
 
         public String toString() {
-            StringBuilder sbU = outline.U("Subscription(gatewayPlanId=");
-            sbU.append(this.gatewayPlanId);
-            sbU.append(", type=");
-            sbU.append(this.type);
-            sbU.append(", planId=");
-            return outline.G(sbU, this.planId, ")");
+            StringBuilder sbM833U = C1643a.m833U("Subscription(gatewayPlanId=");
+            sbM833U.append(this.gatewayPlanId);
+            sbM833U.append(", type=");
+            sbM833U.append(this.type);
+            sbM833U.append(", planId=");
+            return C1643a.m819G(sbM833U, this.planId, ")");
         }
 
         public /* synthetic */ Subscription(String str, Integer num, Long l, int i, DefaultConstructorMarker defaultConstructorMarker) {

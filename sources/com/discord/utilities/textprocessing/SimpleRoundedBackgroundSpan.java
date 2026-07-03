@@ -6,14 +6,14 @@ import android.graphics.Path;
 import android.graphics.RectF;
 import android.text.style.ReplacementSpan;
 import androidx.core.app.NotificationCompat;
-import com.discord.utilities.string.StringUtils2;
-import d0.a0.MathJVM;
-import d0.g0.CharJVM;
-import d0.g0.StringsJVM;
-import d0.g0._Strings;
-import d0.z.d.Intrinsics3;
+import com.discord.utilities.string.StringUtilsKt;
 import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.DefaultConstructorMarker;
+import p507d0.p508a0.C11210a;
+import p507d0.p579g0.C12084a;
+import p507d0.p579g0.C12103t;
+import p507d0.p579g0.C12108y;
+import p507d0.p592z.p594d.C12238m;
 
 /* JADX INFO: compiled from: SimpleRoundedBackgroundSpan.kt */
 /* JADX INFO: loaded from: classes2.dex */
@@ -43,7 +43,7 @@ public class SimpleRoundedBackgroundSpan extends ReplacementSpan {
         Character orNull;
         int i = this.endIndex;
         if (end != i) {
-            return this.isTrimEnabled && i - end == 1 && text != null && (orNull = _Strings.getOrNull(text, end)) != null && CharJVM.isWhitespace(orNull.charValue());
+            return this.isTrimEnabled && i - end == 1 && text != null && (orNull = C12108y.getOrNull(text, end)) != null && C12084a.isWhitespace(orNull.charValue());
         }
         return true;
     }
@@ -54,10 +54,10 @@ public class SimpleRoundedBackgroundSpan extends ReplacementSpan {
         float f;
         int i;
         Integer num;
-        Intrinsics3.checkNotNullParameter(canvas, "canvas");
-        Intrinsics3.checkNotNullParameter(paint, "paint");
-        String strTransformOrEmpty = StringUtils2.transformOrEmpty(text != null ? text.subSequence(start, end).toString() : null, this.transformSpannedText);
-        String str = StringsJVM.isBlank(strTransformOrEmpty) ^ true ? strTransformOrEmpty : null;
+        C12238m.checkNotNullParameter(canvas, "canvas");
+        C12238m.checkNotNullParameter(paint, "paint");
+        String strTransformOrEmpty = StringUtilsKt.transformOrEmpty(text != null ? text.subSequence(start, end).toString() : null, this.transformSpannedText);
+        String str = C12103t.isBlank(strTransformOrEmpty) ^ true ? strTransformOrEmpty : null;
         if (str != null) {
             int i2 = this.edgeHorizontalPadding;
             float fMeasureText = paint.measureText(str);
@@ -99,8 +99,8 @@ public class SimpleRoundedBackgroundSpan extends ReplacementSpan {
 
     @Override // android.text.style.ReplacementSpan
     public int getSize(Paint paint, CharSequence text, int start, int end, Paint.FontMetricsInt fm) {
-        Intrinsics3.checkNotNullParameter(paint, "paint");
-        int iRoundToInt = MathJVM.roundToInt(paint.measureText(StringUtils2.transformOrEmpty(text != null ? text.subSequence(start, end).toString() : null, this.transformSpannedText)));
+        C12238m.checkNotNullParameter(paint, "paint");
+        int iRoundToInt = C11210a.roundToInt(paint.measureText(StringUtilsKt.transformOrEmpty(text != null ? text.subSequence(start, end).toString() : null, this.transformSpannedText)));
         if (start == this.startIndex) {
             iRoundToInt += this.edgeHorizontalMargin + this.edgeHorizontalPadding;
         }

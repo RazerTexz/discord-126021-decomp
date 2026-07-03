@@ -1,17 +1,17 @@
 package com.discord.analytics.generated.events;
 
-import b.d.b.a.outline;
 import com.discord.analytics.generated.traits.TrackBase;
-import com.discord.analytics.generated.traits.TrackBase2;
+import com.discord.analytics.generated.traits.TrackBaseReceiver;
 import com.discord.analytics.generated.traits.TrackGuild;
-import com.discord.analytics.generated.traits.TrackGuild2;
+import com.discord.analytics.generated.traits.TrackGuildReceiver;
 import com.discord.api.science.AnalyticsSchema;
-import d0.z.d.Intrinsics3;
 import java.util.List;
+import p007b.p100d.p104b.p105a.C1643a;
+import p507d0.p592z.p594d.C12238m;
 
 /* JADX INFO: compiled from: TrackFeedItemSeenBatch.kt */
 /* JADX INFO: loaded from: classes.dex */
-public final /* data */ class TrackFeedItemSeenBatch implements AnalyticsSchema, TrackBase2, TrackGuild2 {
+public final /* data */ class TrackFeedItemSeenBatch implements AnalyticsSchema, TrackBaseReceiver, TrackGuildReceiver {
     private TrackBase trackBase;
     private TrackGuild trackGuild;
     private final CharSequence loadId = null;
@@ -20,14 +20,15 @@ public final /* data */ class TrackFeedItemSeenBatch implements AnalyticsSchema,
     private final CharSequence homeSessionId = null;
     private final transient String analyticsSchemaTypeName = "feed_item_seen_batch";
 
-    @Override // com.discord.analytics.generated.traits.TrackGuild2
+    @Override // com.discord.analytics.generated.traits.TrackGuildReceiver
     /* JADX INFO: renamed from: a, reason: from getter */
     public TrackGuild getTrackGuild() {
         return this.trackGuild;
     }
 
-    @Override // com.discord.analytics.generated.traits.TrackGuild2
-    public void c(TrackGuild trackGuild) {
+    @Override // com.discord.analytics.generated.traits.TrackGuildReceiver
+    /* JADX INFO: renamed from: c */
+    public void mo7508c(TrackGuild trackGuild) {
         this.trackGuild = trackGuild;
     }
 
@@ -45,7 +46,7 @@ public final /* data */ class TrackFeedItemSeenBatch implements AnalyticsSchema,
             return false;
         }
         TrackFeedItemSeenBatch trackFeedItemSeenBatch = (TrackFeedItemSeenBatch) other;
-        return Intrinsics3.areEqual(this.loadId, trackFeedItemSeenBatch.loadId) && Intrinsics3.areEqual(this.feedItemIds, trackFeedItemSeenBatch.feedItemIds) && Intrinsics3.areEqual(this.additionalSeenTimeMillis, trackFeedItemSeenBatch.additionalSeenTimeMillis) && Intrinsics3.areEqual(this.homeSessionId, trackFeedItemSeenBatch.homeSessionId);
+        return C12238m.areEqual(this.loadId, trackFeedItemSeenBatch.loadId) && C12238m.areEqual(this.feedItemIds, trackFeedItemSeenBatch.feedItemIds) && C12238m.areEqual(this.additionalSeenTimeMillis, trackFeedItemSeenBatch.additionalSeenTimeMillis) && C12238m.areEqual(this.homeSessionId, trackFeedItemSeenBatch.homeSessionId);
     }
 
     public int hashCode() {
@@ -60,13 +61,13 @@ public final /* data */ class TrackFeedItemSeenBatch implements AnalyticsSchema,
     }
 
     public String toString() {
-        StringBuilder sbU = outline.U("TrackFeedItemSeenBatch(loadId=");
-        sbU.append(this.loadId);
-        sbU.append(", feedItemIds=");
-        sbU.append(this.feedItemIds);
-        sbU.append(", additionalSeenTimeMillis=");
-        sbU.append(this.additionalSeenTimeMillis);
-        sbU.append(", homeSessionId=");
-        return outline.E(sbU, this.homeSessionId, ")");
+        StringBuilder sbM833U = C1643a.m833U("TrackFeedItemSeenBatch(loadId=");
+        sbM833U.append(this.loadId);
+        sbM833U.append(", feedItemIds=");
+        sbM833U.append(this.feedItemIds);
+        sbM833U.append(", additionalSeenTimeMillis=");
+        sbM833U.append(this.additionalSeenTimeMillis);
+        sbM833U.append(", homeSessionId=");
+        return C1643a.m817E(sbM833U, this.homeSessionId, ")");
     }
 }

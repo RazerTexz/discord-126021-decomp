@@ -1,19 +1,19 @@
 package com.discord.analytics.generated.events;
 
 import androidx.core.app.NotificationCompat;
-import b.d.b.a.outline;
 import com.discord.analytics.generated.traits.TrackBase;
-import com.discord.analytics.generated.traits.TrackBase2;
+import com.discord.analytics.generated.traits.TrackBaseReceiver;
 import com.discord.analytics.generated.traits.TrackChannel;
-import com.discord.analytics.generated.traits.TrackChannel2;
+import com.discord.analytics.generated.traits.TrackChannelReceiver;
 import com.discord.analytics.generated.traits.TrackGuild;
-import com.discord.analytics.generated.traits.TrackGuild2;
+import com.discord.analytics.generated.traits.TrackGuildReceiver;
 import com.discord.api.science.AnalyticsSchema;
-import d0.z.d.Intrinsics3;
+import p007b.p100d.p104b.p105a.C1643a;
+import p507d0.p592z.p594d.C12238m;
 
 /* JADX INFO: compiled from: TrackRoleSubscriptionPurchaseSystemMessageCtaClicked.kt */
 /* JADX INFO: loaded from: classes.dex */
-public final /* data */ class TrackRoleSubscriptionPurchaseSystemMessageCtaClicked implements AnalyticsSchema, TrackBase2, TrackGuild2, TrackChannel2 {
+public final /* data */ class TrackRoleSubscriptionPurchaseSystemMessageCtaClicked implements AnalyticsSchema, TrackBaseReceiver, TrackGuildReceiver, TrackChannelReceiver {
     private final transient String analyticsSchemaTypeName;
     private final Long messageId;
     private final Long sender;
@@ -31,14 +31,15 @@ public final /* data */ class TrackRoleSubscriptionPurchaseSystemMessageCtaClick
         this.analyticsSchemaTypeName = "role_subscription_purchase_system_message_cta_clicked";
     }
 
-    @Override // com.discord.analytics.generated.traits.TrackGuild2
+    @Override // com.discord.analytics.generated.traits.TrackGuildReceiver
     /* JADX INFO: renamed from: a, reason: from getter */
     public TrackGuild getTrackGuild() {
         return this.trackGuild;
     }
 
-    @Override // com.discord.analytics.generated.traits.TrackGuild2
-    public void c(TrackGuild trackGuild) {
+    @Override // com.discord.analytics.generated.traits.TrackGuildReceiver
+    /* JADX INFO: renamed from: c */
+    public void mo7508c(TrackGuild trackGuild) {
         this.trackGuild = trackGuild;
     }
 
@@ -48,7 +49,8 @@ public final /* data */ class TrackRoleSubscriptionPurchaseSystemMessageCtaClick
         return this.analyticsSchemaTypeName;
     }
 
-    public void e(TrackChannel trackChannel) {
+    /* JADX INFO: renamed from: e */
+    public void m7514e(TrackChannel trackChannel) {
         this.trackChannel = trackChannel;
     }
 
@@ -60,7 +62,7 @@ public final /* data */ class TrackRoleSubscriptionPurchaseSystemMessageCtaClick
             return false;
         }
         TrackRoleSubscriptionPurchaseSystemMessageCtaClicked trackRoleSubscriptionPurchaseSystemMessageCtaClicked = (TrackRoleSubscriptionPurchaseSystemMessageCtaClicked) other;
-        return Intrinsics3.areEqual(this.messageId, trackRoleSubscriptionPurchaseSystemMessageCtaClicked.messageId) && Intrinsics3.areEqual(this.stickerId, trackRoleSubscriptionPurchaseSystemMessageCtaClicked.stickerId) && Intrinsics3.areEqual(this.targetUser, trackRoleSubscriptionPurchaseSystemMessageCtaClicked.targetUser) && Intrinsics3.areEqual(this.sender, trackRoleSubscriptionPurchaseSystemMessageCtaClicked.sender);
+        return C12238m.areEqual(this.messageId, trackRoleSubscriptionPurchaseSystemMessageCtaClicked.messageId) && C12238m.areEqual(this.stickerId, trackRoleSubscriptionPurchaseSystemMessageCtaClicked.stickerId) && C12238m.areEqual(this.targetUser, trackRoleSubscriptionPurchaseSystemMessageCtaClicked.targetUser) && C12238m.areEqual(this.sender, trackRoleSubscriptionPurchaseSystemMessageCtaClicked.sender);
     }
 
     public int hashCode() {
@@ -75,14 +77,14 @@ public final /* data */ class TrackRoleSubscriptionPurchaseSystemMessageCtaClick
     }
 
     public String toString() {
-        StringBuilder sbU = outline.U("TrackRoleSubscriptionPurchaseSystemMessageCtaClicked(messageId=");
-        sbU.append(this.messageId);
-        sbU.append(", stickerId=");
-        sbU.append(this.stickerId);
-        sbU.append(", targetUser=");
-        sbU.append(this.targetUser);
-        sbU.append(", sender=");
-        return outline.G(sbU, this.sender, ")");
+        StringBuilder sbM833U = C1643a.m833U("TrackRoleSubscriptionPurchaseSystemMessageCtaClicked(messageId=");
+        sbM833U.append(this.messageId);
+        sbM833U.append(", stickerId=");
+        sbM833U.append(this.stickerId);
+        sbM833U.append(", targetUser=");
+        sbM833U.append(this.targetUser);
+        sbM833U.append(", sender=");
+        return C1643a.m819G(sbM833U, this.sender, ")");
     }
 
     public TrackRoleSubscriptionPurchaseSystemMessageCtaClicked(Long l, CharSequence charSequence, Long l2, Long l3) {

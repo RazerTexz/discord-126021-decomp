@@ -1,15 +1,15 @@
 package com.discord.widgets.guilds.list;
 
-import a0.a.a.b;
-import b.d.b.a.outline;
 import com.discord.api.channel.Channel;
 import com.discord.api.guildjoinrequest.ApplicationStatus;
 import com.discord.models.domain.ModelAuditLogEntry;
 import com.discord.models.guild.Guild;
 import com.discord.widgets.channels.list.WidgetChannelListUnreads;
-import d0.z.d.Intrinsics3;
 import java.util.List;
 import kotlin.jvm.internal.DefaultConstructorMarker;
+import p001a0.p002a.p003a.C0002b;
+import p007b.p100d.p104b.p105a.C1643a;
+import p507d0.p592z.p594d.C12238m;
 
 /* JADX INFO: compiled from: GuildListItem.kt */
 /* JADX INFO: loaded from: classes2.dex */
@@ -124,7 +124,7 @@ public abstract class GuildListItem {
         }
 
         public final FolderItem copy(long folderId, Integer color, String name, boolean isOpen, List<Guild> guilds, boolean isAnyGuildSelected, boolean isAnyGuildConnectedToVoice, boolean isAnyGuildConnectedToStageChannel, int mentionCount, boolean isUnread, boolean isTargetedForFolderAddition) {
-            Intrinsics3.checkNotNullParameter(guilds, "guilds");
+            C12238m.checkNotNullParameter(guilds, "guilds");
             return new FolderItem(folderId, color, name, isOpen, guilds, isAnyGuildSelected, isAnyGuildConnectedToVoice, isAnyGuildConnectedToStageChannel, mentionCount, isUnread, isTargetedForFolderAddition);
         }
 
@@ -136,7 +136,7 @@ public abstract class GuildListItem {
                 return false;
             }
             FolderItem folderItem = (FolderItem) other;
-            return this.folderId == folderItem.folderId && Intrinsics3.areEqual(this.color, folderItem.color) && Intrinsics3.areEqual(this.name, folderItem.name) && this.isOpen == folderItem.isOpen && Intrinsics3.areEqual(this.guilds, folderItem.guilds) && this.isAnyGuildSelected == folderItem.isAnyGuildSelected && this.isAnyGuildConnectedToVoice == folderItem.isAnyGuildConnectedToVoice && this.isAnyGuildConnectedToStageChannel == folderItem.isAnyGuildConnectedToStageChannel && getMentionCount() == folderItem.getMentionCount() && getIsUnread() == folderItem.getIsUnread() && this.isTargetedForFolderAddition == folderItem.isTargetedForFolderAddition;
+            return this.folderId == folderItem.folderId && C12238m.areEqual(this.color, folderItem.color) && C12238m.areEqual(this.name, folderItem.name) && this.isOpen == folderItem.isOpen && C12238m.areEqual(this.guilds, folderItem.guilds) && this.isAnyGuildSelected == folderItem.isAnyGuildSelected && this.isAnyGuildConnectedToVoice == folderItem.isAnyGuildConnectedToVoice && this.isAnyGuildConnectedToStageChannel == folderItem.isAnyGuildConnectedToStageChannel && getMentionCount() == folderItem.getMentionCount() && getIsUnread() == folderItem.getIsUnread() && this.isTargetedForFolderAddition == folderItem.isTargetedForFolderAddition;
         }
 
         public final Integer getColor() {
@@ -182,9 +182,9 @@ public abstract class GuildListItem {
         /* JADX WARN: Type inference failed for: r3v1, types: [int] */
         /* JADX WARN: Type inference failed for: r3v2 */
         public int hashCode() {
-            int iA = b.a(this.folderId) * 31;
+            int iM3a = C0002b.m3a(this.folderId) * 31;
             Integer num = this.color;
-            int iHashCode = (iA + (num != null ? num.hashCode() : 0)) * 31;
+            int iHashCode = (iM3a + (num != null ? num.hashCode() : 0)) * 31;
             String str = this.name;
             int iHashCode2 = (iHashCode + (str != null ? str.hashCode() : 0)) * 31;
             boolean z2 = this.isOpen;
@@ -255,34 +255,34 @@ public abstract class GuildListItem {
         }
 
         public String toString() {
-            StringBuilder sbU = outline.U("FolderItem(folderId=");
-            sbU.append(this.folderId);
-            sbU.append(", color=");
-            sbU.append(this.color);
-            sbU.append(", name=");
-            sbU.append(this.name);
-            sbU.append(", isOpen=");
-            sbU.append(this.isOpen);
-            sbU.append(", guilds=");
-            sbU.append(this.guilds);
-            sbU.append(", isAnyGuildSelected=");
-            sbU.append(this.isAnyGuildSelected);
-            sbU.append(", isAnyGuildConnectedToVoice=");
-            sbU.append(this.isAnyGuildConnectedToVoice);
-            sbU.append(", isAnyGuildConnectedToStageChannel=");
-            sbU.append(this.isAnyGuildConnectedToStageChannel);
-            sbU.append(", mentionCount=");
-            sbU.append(getMentionCount());
-            sbU.append(", isUnread=");
-            sbU.append(getIsUnread());
-            sbU.append(", isTargetedForFolderAddition=");
-            return outline.O(sbU, this.isTargetedForFolderAddition, ")");
+            StringBuilder sbM833U = C1643a.m833U("FolderItem(folderId=");
+            sbM833U.append(this.folderId);
+            sbM833U.append(", color=");
+            sbM833U.append(this.color);
+            sbM833U.append(", name=");
+            sbM833U.append(this.name);
+            sbM833U.append(", isOpen=");
+            sbM833U.append(this.isOpen);
+            sbM833U.append(", guilds=");
+            sbM833U.append(this.guilds);
+            sbM833U.append(", isAnyGuildSelected=");
+            sbM833U.append(this.isAnyGuildSelected);
+            sbM833U.append(", isAnyGuildConnectedToVoice=");
+            sbM833U.append(this.isAnyGuildConnectedToVoice);
+            sbM833U.append(", isAnyGuildConnectedToStageChannel=");
+            sbM833U.append(this.isAnyGuildConnectedToStageChannel);
+            sbM833U.append(", mentionCount=");
+            sbM833U.append(getMentionCount());
+            sbM833U.append(", isUnread=");
+            sbM833U.append(getIsUnread());
+            sbM833U.append(", isTargetedForFolderAddition=");
+            return C1643a.m827O(sbM833U, this.isTargetedForFolderAddition, ")");
         }
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
         public FolderItem(long j, Integer num, String str, boolean z2, List<Guild> list, boolean z3, boolean z4, boolean z5, int i, boolean z6, boolean z7) {
             super(j, null);
-            Intrinsics3.checkNotNullParameter(list, "guilds");
+            C12238m.checkNotNullParameter(list, "guilds");
             this.folderId = j;
             this.color = num;
             this.name = str;
@@ -343,7 +343,7 @@ public abstract class GuildListItem {
         }
 
         public String toString() {
-            return outline.O(outline.U("FriendsItem(isSelected="), this.isSelected, ")");
+            return C1643a.m827O(C1643a.m833U("FriendsItem(isSelected="), this.isSelected, ")");
         }
     }
 
@@ -443,7 +443,7 @@ public abstract class GuildListItem {
         }
 
         public final GuildItem copy(Guild guild, int mentionCount, boolean isLurkingGuild, boolean isUnread, boolean isSelected, Long folderId, boolean isConnectedToVoice, boolean hasOngoingApplicationStream, boolean isTargetedForFolderCreation, Boolean isLastGuildInFolder, ApplicationStatus applicationStatus, boolean isPendingGuild, boolean hasActiveStageChannel, boolean isConnectedToStageChannel, boolean hasActiveScheduledEvent) {
-            Intrinsics3.checkNotNullParameter(guild, "guild");
+            C12238m.checkNotNullParameter(guild, "guild");
             return new GuildItem(guild, mentionCount, isLurkingGuild, isUnread, isSelected, folderId, isConnectedToVoice, hasOngoingApplicationStream, isTargetedForFolderCreation, isLastGuildInFolder, applicationStatus, isPendingGuild, hasActiveStageChannel, isConnectedToStageChannel, hasActiveScheduledEvent);
         }
 
@@ -455,7 +455,7 @@ public abstract class GuildListItem {
                 return false;
             }
             GuildItem guildItem = (GuildItem) other;
-            return Intrinsics3.areEqual(this.guild, guildItem.guild) && getMentionCount() == guildItem.getMentionCount() && this.isLurkingGuild == guildItem.isLurkingGuild && getIsUnread() == guildItem.getIsUnread() && this.isSelected == guildItem.isSelected && Intrinsics3.areEqual(this.folderId, guildItem.folderId) && this.isConnectedToVoice == guildItem.isConnectedToVoice && this.hasOngoingApplicationStream == guildItem.hasOngoingApplicationStream && this.isTargetedForFolderCreation == guildItem.isTargetedForFolderCreation && Intrinsics3.areEqual(this.isLastGuildInFolder, guildItem.isLastGuildInFolder) && Intrinsics3.areEqual(this.applicationStatus, guildItem.applicationStatus) && this.isPendingGuild == guildItem.isPendingGuild && this.hasActiveStageChannel == guildItem.hasActiveStageChannel && this.isConnectedToStageChannel == guildItem.isConnectedToStageChannel && this.hasActiveScheduledEvent == guildItem.hasActiveScheduledEvent;
+            return C12238m.areEqual(this.guild, guildItem.guild) && getMentionCount() == guildItem.getMentionCount() && this.isLurkingGuild == guildItem.isLurkingGuild && getIsUnread() == guildItem.getIsUnread() && this.isSelected == guildItem.isSelected && C12238m.areEqual(this.folderId, guildItem.folderId) && this.isConnectedToVoice == guildItem.isConnectedToVoice && this.hasOngoingApplicationStream == guildItem.hasOngoingApplicationStream && this.isTargetedForFolderCreation == guildItem.isTargetedForFolderCreation && C12238m.areEqual(this.isLastGuildInFolder, guildItem.isLastGuildInFolder) && C12238m.areEqual(this.applicationStatus, guildItem.applicationStatus) && this.isPendingGuild == guildItem.isPendingGuild && this.hasActiveStageChannel == guildItem.hasActiveStageChannel && this.isConnectedToStageChannel == guildItem.isConnectedToStageChannel && this.hasActiveScheduledEvent == guildItem.hasActiveScheduledEvent;
         }
 
         public final ApplicationStatus getApplicationStatus() {
@@ -625,42 +625,42 @@ public abstract class GuildListItem {
         }
 
         public String toString() {
-            StringBuilder sbU = outline.U("GuildItem(guild=");
-            sbU.append(this.guild);
-            sbU.append(", mentionCount=");
-            sbU.append(getMentionCount());
-            sbU.append(", isLurkingGuild=");
-            sbU.append(this.isLurkingGuild);
-            sbU.append(", isUnread=");
-            sbU.append(getIsUnread());
-            sbU.append(", isSelected=");
-            sbU.append(this.isSelected);
-            sbU.append(", folderId=");
-            sbU.append(this.folderId);
-            sbU.append(", isConnectedToVoice=");
-            sbU.append(this.isConnectedToVoice);
-            sbU.append(", hasOngoingApplicationStream=");
-            sbU.append(this.hasOngoingApplicationStream);
-            sbU.append(", isTargetedForFolderCreation=");
-            sbU.append(this.isTargetedForFolderCreation);
-            sbU.append(", isLastGuildInFolder=");
-            sbU.append(this.isLastGuildInFolder);
-            sbU.append(", applicationStatus=");
-            sbU.append(this.applicationStatus);
-            sbU.append(", isPendingGuild=");
-            sbU.append(this.isPendingGuild);
-            sbU.append(", hasActiveStageChannel=");
-            sbU.append(this.hasActiveStageChannel);
-            sbU.append(", isConnectedToStageChannel=");
-            sbU.append(this.isConnectedToStageChannel);
-            sbU.append(", hasActiveScheduledEvent=");
-            return outline.O(sbU, this.hasActiveScheduledEvent, ")");
+            StringBuilder sbM833U = C1643a.m833U("GuildItem(guild=");
+            sbM833U.append(this.guild);
+            sbM833U.append(", mentionCount=");
+            sbM833U.append(getMentionCount());
+            sbM833U.append(", isLurkingGuild=");
+            sbM833U.append(this.isLurkingGuild);
+            sbM833U.append(", isUnread=");
+            sbM833U.append(getIsUnread());
+            sbM833U.append(", isSelected=");
+            sbM833U.append(this.isSelected);
+            sbM833U.append(", folderId=");
+            sbM833U.append(this.folderId);
+            sbM833U.append(", isConnectedToVoice=");
+            sbM833U.append(this.isConnectedToVoice);
+            sbM833U.append(", hasOngoingApplicationStream=");
+            sbM833U.append(this.hasOngoingApplicationStream);
+            sbM833U.append(", isTargetedForFolderCreation=");
+            sbM833U.append(this.isTargetedForFolderCreation);
+            sbM833U.append(", isLastGuildInFolder=");
+            sbM833U.append(this.isLastGuildInFolder);
+            sbM833U.append(", applicationStatus=");
+            sbM833U.append(this.applicationStatus);
+            sbM833U.append(", isPendingGuild=");
+            sbM833U.append(this.isPendingGuild);
+            sbM833U.append(", hasActiveStageChannel=");
+            sbM833U.append(this.hasActiveStageChannel);
+            sbM833U.append(", isConnectedToStageChannel=");
+            sbM833U.append(this.isConnectedToStageChannel);
+            sbM833U.append(", hasActiveScheduledEvent=");
+            return C1643a.m827O(sbM833U, this.hasActiveScheduledEvent, ")");
         }
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
         public GuildItem(Guild guild, int i, boolean z2, boolean z3, boolean z4, Long l, boolean z5, boolean z6, boolean z7, Boolean bool, ApplicationStatus applicationStatus, boolean z8, boolean z9, boolean z10, boolean z11) {
             super(guild.getId(), null);
-            Intrinsics3.checkNotNullParameter(guild, "guild");
+            C12238m.checkNotNullParameter(guild, "guild");
             this.guild = guild;
             this.mentionCount = i;
             this.isLurkingGuild = z2;
@@ -733,7 +733,7 @@ public abstract class GuildListItem {
         }
 
         public String toString() {
-            return outline.O(outline.U("HubItem(showSparkle="), this.showSparkle, ")");
+            return C1643a.m827O(C1643a.m833U("HubItem(showSparkle="), this.showSparkle, ")");
         }
     }
 
@@ -746,7 +746,7 @@ public abstract class GuildListItem {
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
         public PrivateChannelItem(Channel channel, int i) {
             super(channel.getId(), null);
-            Intrinsics3.checkNotNullParameter(channel, "channel");
+            C12238m.checkNotNullParameter(channel, "channel");
             this.channel = channel;
             this.mentionCount = i;
         }
@@ -771,7 +771,7 @@ public abstract class GuildListItem {
         }
 
         public final PrivateChannelItem copy(Channel channel, int mentionCount) {
-            Intrinsics3.checkNotNullParameter(channel, "channel");
+            C12238m.checkNotNullParameter(channel, "channel");
             return new PrivateChannelItem(channel, mentionCount);
         }
 
@@ -783,7 +783,7 @@ public abstract class GuildListItem {
                 return false;
             }
             PrivateChannelItem privateChannelItem = (PrivateChannelItem) other;
-            return Intrinsics3.areEqual(this.channel, privateChannelItem.channel) && getMentionCount() == privateChannelItem.getMentionCount();
+            return C12238m.areEqual(this.channel, privateChannelItem.channel) && getMentionCount() == privateChannelItem.getMentionCount();
         }
 
         public final Channel getChannel() {
@@ -807,12 +807,12 @@ public abstract class GuildListItem {
         }
 
         public String toString() {
-            StringBuilder sbU = outline.U("PrivateChannelItem(channel=");
-            sbU.append(this.channel);
-            sbU.append(", mentionCount=");
-            sbU.append(getMentionCount());
-            sbU.append(")");
-            return sbU.toString();
+            StringBuilder sbM833U = C1643a.m833U("PrivateChannelItem(channel=");
+            sbM833U.append(this.channel);
+            sbM833U.append(", mentionCount=");
+            sbM833U.append(getMentionCount());
+            sbM833U.append(")");
+            return sbM833U.toString();
         }
     }
 
@@ -866,7 +866,7 @@ public abstract class GuildListItem {
         }
 
         public String toString() {
-            return outline.B(outline.U("UnavailableItem(unavailableGuildCount="), this.unavailableGuildCount, ")");
+            return C1643a.m814B(C1643a.m833U("UnavailableItem(unavailableGuildCount="), this.unavailableGuildCount, ")");
         }
     }
 

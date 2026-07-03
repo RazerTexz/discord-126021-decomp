@@ -45,10 +45,13 @@ public class HandleBuilder extends JavacAnnotationHandler<Builder> {
     static final String VALUE_PREFIX = "$value";
     static final String BUILDER_TEMP_VAR = "builder";
     static final String TO_BUILDER_NOT_SUPPORTED = "@Builder(toBuilder=true) is only supported if you return your own type.";
-    private static /* synthetic */ int[] $SWITCH_TABLE$lombok$javac$handlers$JavacHandlerUtil$MemberExistsResult;
 
-    static /* synthetic */ int[] $SWITCH_TABLE$lombok$javac$handlers$JavacHandlerUtil$MemberExistsResult() {
-        int[] iArr = $SWITCH_TABLE$lombok$javac$handlers$JavacHandlerUtil$MemberExistsResult;
+    /* JADX INFO: renamed from: $SWITCH_TABLE$lombok$javac$handlers$JavacHandlerUtil$MemberExistsResult */
+    private static /* synthetic */ int[] f27481x2486df07;
+
+    /* JADX INFO: renamed from: $SWITCH_TABLE$lombok$javac$handlers$JavacHandlerUtil$MemberExistsResult */
+    static /* synthetic */ int[] m10941x2486df07() {
+        int[] iArr = f27481x2486df07;
         if (iArr != null) {
             return iArr;
         }
@@ -65,7 +68,7 @@ public class HandleBuilder extends JavacAnnotationHandler<Builder> {
             iArr2[JavacHandlerUtil.MemberExistsResult.NOT_EXISTS.ordinal()] = 1;
         } catch (NoSuchFieldError unused3) {
         }
-        $SWITCH_TABLE$lombok$javac$handlers$JavacHandlerUtil$MemberExistsResult = iArr2;
+        f27481x2486df07 = iArr2;
         return iArr2;
     }
 
@@ -213,7 +216,7 @@ public class HandleBuilder extends JavacAnnotationHandler<Builder> {
             generateBuilderMethod = true;
         }
         if (HandlerUtil.checkName("buildMethodName", job.buildMethodName, annotationNode)) {
-            JavacNode parent = annotationNode.up();
+            JavacNode parent = annotationNode.m10925up();
             job.builderFields = new ArrayList();
             job.typeParams = List.nil();
             JavacNode fillParametersFrom = parent.get() instanceof JCTree.JCMethodDecl ? parent : null;
@@ -285,7 +288,7 @@ public class HandleBuilder extends JavacAnnotationHandler<Builder> {
                     annotationNode.addError("@Builder is not supported on constructors with constructor type parameters.");
                     return;
                 }
-                job.parentType = parent.up();
+                job.parentType = parent.m10925up();
                 JCTree.JCClassDecl td2 = job.parentType.get();
                 List<JCTree.JCTypeParameter> list2 = td2.typarams;
                 job.builderTypeParams = list2;
@@ -298,7 +301,7 @@ public class HandleBuilder extends JavacAnnotationHandler<Builder> {
                     return;
                 }
             } else if (fillParametersFrom != null) {
-                job.parentType = parent.up();
+                job.parentType = parent.m10925up();
                 JCTree.JCClassDecl td3 = job.parentType.get();
                 JCTree.JCMethodDecl jmd2 = fillParametersFrom.get();
                 job.isStatic = (jmd2.mods.flags & 8) != 0;
@@ -485,7 +488,7 @@ public class HandleBuilder extends JavacAnnotationHandler<Builder> {
                 }
             }
             if (job.toBuilder) {
-                switch ($SWITCH_TABLE$lombok$javac$handlers$JavacHandlerUtil$MemberExistsResult()[JavacHandlerUtil.methodExists(TO_BUILDER_METHOD_NAME, job.parentType, 0).ordinal()]) {
+                switch (m10941x2486df07()[JavacHandlerUtil.methodExists(TO_BUILDER_METHOD_NAME, job.parentType, 0).ordinal()]) {
                     case 1:
                         List<JCTree.JCTypeParameter> tps = job.typeParams;
                         if (typeArgsForToBuilder != null) {
@@ -621,7 +624,7 @@ public class HandleBuilder extends JavacAnnotationHandler<Builder> {
                 JCTree.JCExpression arg = tgt[0];
                 jCMethodInvocationNewClass = maker.Apply(List.nil(), maker.Select(jCMethodInvocationNewClass, setterName), List.of(arg));
             } else {
-                statements.append(maker.If(maker.Binary(Javac.CTC_NOT_EQUAL, tgt[0], maker.Literal(Javac.CTC_BOT, null)), maker.Exec(maker.Apply(List.nil(), maker.Select(maker.Ident(job.toName(BUILDER_TEMP_VAR)), setterName), List.of(tgt[1]))), null));
+                statements.append(maker.m10940If(maker.Binary(Javac.CTC_NOT_EQUAL, tgt[0], maker.Literal(Javac.CTC_BOT, null)), maker.Exec(maker.Apply(List.nil(), maker.Select(maker.Ident(job.toName(BUILDER_TEMP_VAR)), setterName), List.of(tgt[1]))), null));
             }
         }
         if (!statements.isEmpty()) {
@@ -695,7 +698,7 @@ public class HandleBuilder extends JavacAnnotationHandler<Builder> {
         JavacTreeMaker maker = job.getTreeMaker();
         ListBuffer<JCTree.JCStatement> statements = new ListBuffer<>();
         if (addCleaning) {
-            JCTree.JCIf ifUnclean = maker.If(maker.Unary(Javac.CTC_NOT, maker.Select(maker.Ident(job.toName("this")), job.toName(CLEAN_FIELD_NAME))), maker.Exec(maker.Apply(List.nil(), maker.Ident(job.toName(CLEAN_METHOD_NAME)), List.nil())), null);
+            JCTree.JCIf ifUnclean = maker.m10940If(maker.Unary(Javac.CTC_NOT, maker.Select(maker.Ident(job.toName("this")), job.toName(CLEAN_FIELD_NAME))), maker.Exec(maker.Apply(List.nil(), maker.Ident(job.toName(CLEAN_METHOD_NAME)), List.nil())), null);
             statements.append(ifUnclean);
         }
         for (BuilderFieldData bfd : job.builderFields) {
@@ -708,7 +711,7 @@ public class HandleBuilder extends JavacAnnotationHandler<Builder> {
         for (BuilderFieldData bfd2 : job.builderFields) {
             if (bfd2.nameOfSetFlag != null) {
                 statements.append(maker.VarDef(maker.Modifiers(0L), bfd2.builderFieldName, JavacHandlerUtil.cloneType(maker, bfd2.type, job.source, job.getContext()), maker.Select(maker.Ident(thisName), bfd2.builderFieldName)));
-                statements.append(maker.If(maker.Unary(Javac.CTC_NOT, maker.Select(maker.Ident(thisName), bfd2.nameOfSetFlag)), maker.Exec(maker.Assign(maker.Ident(bfd2.builderFieldName), maker.Apply(JavacHandlerUtil.typeParameterNames(maker, job.parentType.get().typarams), maker.Select(maker.Ident(job.parentType.get().name), bfd2.nameOfDefaultProvider), List.nil()))), null));
+                statements.append(maker.m10940If(maker.Unary(Javac.CTC_NOT, maker.Select(maker.Ident(thisName), bfd2.nameOfSetFlag)), maker.Exec(maker.Assign(maker.Ident(bfd2.builderFieldName), maker.Apply(JavacHandlerUtil.typeParameterNames(maker, job.parentType.get().typarams), maker.Select(maker.Ident(job.parentType.get().name), bfd2.nameOfDefaultProvider), List.nil()))), null));
             }
             if (bfd2.nameOfSetFlag != null || (bfd2.singularData != null && bfd2.singularData.getSingularizer().shadowedDuringBuild())) {
                 args.append(maker.Ident(bfd2.builderFieldName));
@@ -875,8 +878,8 @@ public class HandleBuilder extends JavacAnnotationHandler<Builder> {
             newMethod = HandleSetter.createSetter(JavacHandlerUtil.toJavacModifier(job.accessInners), deprecate, fieldNode, maker, setterName, bfd.name, bfd.nameOfSetFlag, job.oldChain, job.sourceNode, methodAnns, bfd.annotations);
         }
         JavacHandlerUtil.recursiveSetGeneratedBy(newMethod, job.source, job.getContext());
-        if (job.sourceNode.up().getKind() == AST.Kind.METHOD) {
-            copyJavadocFromParam(bfd.originalFieldNode.up(), newMethod, bfd.name.toString());
+        if (job.sourceNode.m10925up().getKind() == AST.Kind.METHOD) {
+            copyJavadocFromParam(bfd.originalFieldNode.m10925up(), newMethod, bfd.name.toString());
         } else {
             JavacHandlerUtil.copyJavadoc(bfd.originalFieldNode, newMethod, JavacHandlerUtil.CopyJavadoc.SETTER, true);
         }

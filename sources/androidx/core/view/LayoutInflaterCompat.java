@@ -6,8 +6,8 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import androidx.annotation.NonNull;
-import b.d.b.a.outline;
 import java.lang.reflect.Field;
+import p007b.p100d.p104b.p105a.C1643a;
 
 /* JADX INFO: loaded from: classes.dex */
 public final class LayoutInflaterCompat {
@@ -48,10 +48,10 @@ public final class LayoutInflaterCompat {
                 sLayoutInflaterFactory2Field = declaredField;
                 declaredField.setAccessible(true);
             } catch (NoSuchFieldException e) {
-                StringBuilder sbU = outline.U("forceSetFactory2 Could not find field 'mFactory2' on class ");
-                sbU.append(LayoutInflater.class.getName());
-                sbU.append("; inflation may have unexpected results.");
-                Log.e(TAG, sbU.toString(), e);
+                StringBuilder sbM833U = C1643a.m833U("forceSetFactory2 Could not find field 'mFactory2' on class ");
+                sbM833U.append(LayoutInflater.class.getName());
+                sbM833U.append("; inflation may have unexpected results.");
+                Log.e(TAG, sbM833U.toString(), e);
             }
             sCheckedField = true;
         }

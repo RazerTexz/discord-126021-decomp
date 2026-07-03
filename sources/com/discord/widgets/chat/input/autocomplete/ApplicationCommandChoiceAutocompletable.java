@@ -1,11 +1,11 @@
 package com.discord.widgets.chat.input.autocomplete;
 
-import b.d.b.a.outline;
 import com.discord.api.commands.CommandChoice;
-import d0.t.CollectionsJVM;
-import d0.z.d.Intrinsics3;
 import java.util.List;
 import kotlin.jvm.internal.DefaultConstructorMarker;
+import p007b.p100d.p104b.p105a.C1643a;
+import p507d0.p580t.C12145m;
+import p507d0.p592z.p594d.C12238m;
 
 /* JADX INFO: compiled from: Autocompletable.kt */
 /* JADX INFO: loaded from: classes2.dex */
@@ -39,7 +39,7 @@ public final /* data */ class ApplicationCommandChoiceAutocompletable extends Au
     }
 
     public final ApplicationCommandChoiceAutocompletable copy(CommandChoice choice, String optionName) {
-        Intrinsics3.checkNotNullParameter(choice, "choice");
+        C12238m.checkNotNullParameter(choice, "choice");
         return new ApplicationCommandChoiceAutocompletable(choice, optionName);
     }
 
@@ -51,7 +51,7 @@ public final /* data */ class ApplicationCommandChoiceAutocompletable extends Au
             return false;
         }
         ApplicationCommandChoiceAutocompletable applicationCommandChoiceAutocompletable = (ApplicationCommandChoiceAutocompletable) other;
-        return Intrinsics3.areEqual(this.choice, applicationCommandChoiceAutocompletable.choice) && Intrinsics3.areEqual(this.optionName, applicationCommandChoiceAutocompletable.optionName);
+        return C12238m.areEqual(this.choice, applicationCommandChoiceAutocompletable.choice) && C12238m.areEqual(this.optionName, applicationCommandChoiceAutocompletable.optionName);
     }
 
     public final CommandChoice getChoice() {
@@ -84,18 +84,18 @@ public final /* data */ class ApplicationCommandChoiceAutocompletable extends Au
     }
 
     public String toString() {
-        StringBuilder sbU = outline.U("ApplicationCommandChoiceAutocompletable(choice=");
-        sbU.append(this.choice);
-        sbU.append(", optionName=");
-        return outline.J(sbU, this.optionName, ")");
+        StringBuilder sbM833U = C1643a.m833U("ApplicationCommandChoiceAutocompletable(choice=");
+        sbM833U.append(this.choice);
+        sbM833U.append(", optionName=");
+        return C1643a.m822J(sbM833U, this.optionName, ")");
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public ApplicationCommandChoiceAutocompletable(CommandChoice commandChoice, String str) {
         super(null);
-        Intrinsics3.checkNotNullParameter(commandChoice, "choice");
+        C12238m.checkNotNullParameter(commandChoice, "choice");
         this.choice = commandChoice;
         this.optionName = str;
-        this.textMatchers = CollectionsJVM.listOf(commandChoice.getName());
+        this.textMatchers = C12145m.listOf(commandChoice.getName());
     }
 }

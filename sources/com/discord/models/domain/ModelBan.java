@@ -1,11 +1,11 @@
 package com.discord.models.domain;
 
 import androidx.annotation.Nullable;
-import b.d.b.a.outline;
 import com.discord.api.user.User;
 import com.discord.models.deserialization.gson.InboundGatewayGsonParser;
 import com.discord.models.domain.Model;
 import java.io.IOException;
+import p007b.p100d.p104b.p105a.C1643a;
 
 /* JADX INFO: loaded from: classes.dex */
 public class ModelBan implements Model {
@@ -82,13 +82,13 @@ public class ModelBan implements Model {
     }
 
     public String toString() {
-        StringBuilder sbU = outline.U("ModelBan(user=");
-        sbU.append(getUser());
-        sbU.append(", guildId=");
-        sbU.append(getGuildId());
-        sbU.append(", reason=");
-        sbU.append(getReason());
-        sbU.append(")");
-        return sbU.toString();
+        StringBuilder sbM833U = C1643a.m833U("ModelBan(user=");
+        sbM833U.append(getUser());
+        sbM833U.append(", guildId=");
+        sbM833U.append(getGuildId());
+        sbM833U.append(", reason=");
+        sbM833U.append(getReason());
+        sbM833U.append(")");
+        return sbM833U.toString();
     }
 }

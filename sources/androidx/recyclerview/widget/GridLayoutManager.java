@@ -11,8 +11,8 @@ import androidx.constraintlayout.solver.widgets.analyzer.BasicMeasure;
 import androidx.core.view.accessibility.AccessibilityNodeInfoCompat;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
-import b.d.b.a.outline;
 import java.util.Arrays;
+import p007b.p100d.p104b.p105a.C1643a;
 
 /* JADX INFO: loaded from: classes.dex */
 public class GridLayoutManager extends LinearLayoutManager {
@@ -594,7 +594,7 @@ public class GridLayoutManager extends LinearLayoutManager {
             int i10 = layoutState.mCurrentPosition;
             int spanSize = getSpanSize(recycler, state, i10);
             if (spanSize > this.mSpanCount) {
-                throw new IllegalArgumentException(outline.B(outline.W("Item at position ", i10, " requires ", spanSize, " spans but GridLayoutManager has only "), this.mSpanCount, " spans."));
+                throw new IllegalArgumentException(C1643a.m814B(C1643a.m835W("Item at position ", i10, " requires ", spanSize, " spans but GridLayoutManager has only "), this.mSpanCount, " spans."));
             }
             spanIndex -= spanSize;
             if (spanIndex < 0 || (next = layoutState.next(recycler)) == null) {
@@ -1078,7 +1078,7 @@ public class GridLayoutManager extends LinearLayoutManager {
         }
         this.mPendingSpanCountChange = true;
         if (i < 1) {
-            throw new IllegalArgumentException(outline.q("Span count should be at least 1. Provided ", i));
+            throw new IllegalArgumentException(C1643a.m871q("Span count should be at least 1. Provided ", i));
         }
         this.mSpanCount = i;
         this.mSpanSizeLookup.invalidateSpanIndexCache();

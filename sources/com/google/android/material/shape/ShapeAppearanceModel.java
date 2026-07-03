@@ -11,7 +11,7 @@ import androidx.annotation.Dimension;
 import androidx.annotation.NonNull;
 import androidx.annotation.RestrictTo;
 import androidx.annotation.StyleRes;
-import com.google.android.material.R;
+import com.google.android.material.C10817R;
 
 /* JADX INFO: loaded from: classes3.dex */
 public class ShapeAppearanceModel {
@@ -441,9 +441,9 @@ public class ShapeAppearanceModel {
 
     @NonNull
     public static Builder builder(@NonNull Context context, AttributeSet attributeSet, @AttrRes int i, @StyleRes int i2, @NonNull CornerSize cornerSize) {
-        TypedArray typedArrayObtainStyledAttributes = context.obtainStyledAttributes(attributeSet, R.styleable.MaterialShape, i, i2);
-        int resourceId = typedArrayObtainStyledAttributes.getResourceId(R.styleable.MaterialShape_shapeAppearance, 0);
-        int resourceId2 = typedArrayObtainStyledAttributes.getResourceId(R.styleable.MaterialShape_shapeAppearanceOverlay, 0);
+        TypedArray typedArrayObtainStyledAttributes = context.obtainStyledAttributes(attributeSet, C10817R.styleable.MaterialShape, i, i2);
+        int resourceId = typedArrayObtainStyledAttributes.getResourceId(C10817R.styleable.MaterialShape_shapeAppearance, 0);
+        int resourceId2 = typedArrayObtainStyledAttributes.getResourceId(C10817R.styleable.MaterialShape_shapeAppearanceOverlay, 0);
         typedArrayObtainStyledAttributes.recycle();
         return builder(context, resourceId, resourceId2, cornerSize);
     }
@@ -465,18 +465,18 @@ public class ShapeAppearanceModel {
             i = i2;
             context = contextThemeWrapper;
         }
-        TypedArray typedArrayObtainStyledAttributes = context.obtainStyledAttributes(i, R.styleable.ShapeAppearance);
+        TypedArray typedArrayObtainStyledAttributes = context.obtainStyledAttributes(i, C10817R.styleable.ShapeAppearance);
         try {
-            int i3 = typedArrayObtainStyledAttributes.getInt(R.styleable.ShapeAppearance_cornerFamily, 0);
-            int i4 = typedArrayObtainStyledAttributes.getInt(R.styleable.ShapeAppearance_cornerFamilyTopLeft, i3);
-            int i5 = typedArrayObtainStyledAttributes.getInt(R.styleable.ShapeAppearance_cornerFamilyTopRight, i3);
-            int i6 = typedArrayObtainStyledAttributes.getInt(R.styleable.ShapeAppearance_cornerFamilyBottomRight, i3);
-            int i7 = typedArrayObtainStyledAttributes.getInt(R.styleable.ShapeAppearance_cornerFamilyBottomLeft, i3);
-            CornerSize cornerSize2 = getCornerSize(typedArrayObtainStyledAttributes, R.styleable.ShapeAppearance_cornerSize, cornerSize);
-            CornerSize cornerSize3 = getCornerSize(typedArrayObtainStyledAttributes, R.styleable.ShapeAppearance_cornerSizeTopLeft, cornerSize2);
-            CornerSize cornerSize4 = getCornerSize(typedArrayObtainStyledAttributes, R.styleable.ShapeAppearance_cornerSizeTopRight, cornerSize2);
-            CornerSize cornerSize5 = getCornerSize(typedArrayObtainStyledAttributes, R.styleable.ShapeAppearance_cornerSizeBottomRight, cornerSize2);
-            return new Builder().setTopLeftCorner(i4, cornerSize3).setTopRightCorner(i5, cornerSize4).setBottomRightCorner(i6, cornerSize5).setBottomLeftCorner(i7, getCornerSize(typedArrayObtainStyledAttributes, R.styleable.ShapeAppearance_cornerSizeBottomLeft, cornerSize2));
+            int i3 = typedArrayObtainStyledAttributes.getInt(C10817R.styleable.ShapeAppearance_cornerFamily, 0);
+            int i4 = typedArrayObtainStyledAttributes.getInt(C10817R.styleable.ShapeAppearance_cornerFamilyTopLeft, i3);
+            int i5 = typedArrayObtainStyledAttributes.getInt(C10817R.styleable.ShapeAppearance_cornerFamilyTopRight, i3);
+            int i6 = typedArrayObtainStyledAttributes.getInt(C10817R.styleable.ShapeAppearance_cornerFamilyBottomRight, i3);
+            int i7 = typedArrayObtainStyledAttributes.getInt(C10817R.styleable.ShapeAppearance_cornerFamilyBottomLeft, i3);
+            CornerSize cornerSize2 = getCornerSize(typedArrayObtainStyledAttributes, C10817R.styleable.ShapeAppearance_cornerSize, cornerSize);
+            CornerSize cornerSize3 = getCornerSize(typedArrayObtainStyledAttributes, C10817R.styleable.ShapeAppearance_cornerSizeTopLeft, cornerSize2);
+            CornerSize cornerSize4 = getCornerSize(typedArrayObtainStyledAttributes, C10817R.styleable.ShapeAppearance_cornerSizeTopRight, cornerSize2);
+            CornerSize cornerSize5 = getCornerSize(typedArrayObtainStyledAttributes, C10817R.styleable.ShapeAppearance_cornerSizeBottomRight, cornerSize2);
+            return new Builder().setTopLeftCorner(i4, cornerSize3).setTopRightCorner(i5, cornerSize4).setBottomRightCorner(i6, cornerSize5).setBottomLeftCorner(i7, getCornerSize(typedArrayObtainStyledAttributes, C10817R.styleable.ShapeAppearance_cornerSizeBottomLeft, cornerSize2));
         } finally {
             typedArrayObtainStyledAttributes.recycle();
         }

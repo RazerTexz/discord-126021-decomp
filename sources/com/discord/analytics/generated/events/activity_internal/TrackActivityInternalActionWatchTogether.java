@@ -1,16 +1,16 @@
 package com.discord.analytics.generated.events.activity_internal;
 
-import b.d.b.a.outline;
 import com.discord.analytics.generated.traits.TrackActivityInternalMetadata;
-import com.discord.analytics.generated.traits.TrackActivityInternalMetadata2;
+import com.discord.analytics.generated.traits.TrackActivityInternalMetadataReceiver;
 import com.discord.analytics.generated.traits.TrackBase;
-import com.discord.analytics.generated.traits.TrackBase2;
+import com.discord.analytics.generated.traits.TrackBaseReceiver;
 import com.discord.api.science.AnalyticsSchema;
-import d0.z.d.Intrinsics3;
+import p007b.p100d.p104b.p105a.C1643a;
+import p507d0.p592z.p594d.C12238m;
 
 /* JADX INFO: compiled from: TrackActivityInternalActionWatchTogether.kt */
 /* JADX INFO: loaded from: classes.dex */
-public final /* data */ class TrackActivityInternalActionWatchTogether implements AnalyticsSchema, TrackBase2, TrackActivityInternalMetadata2 {
+public final /* data */ class TrackActivityInternalActionWatchTogether implements AnalyticsSchema, TrackBaseReceiver, TrackActivityInternalMetadataReceiver {
     private TrackActivityInternalMetadata trackActivityInternalMetadata;
     private TrackBase trackBase;
     private final CharSequence actionName = null;
@@ -38,7 +38,7 @@ public final /* data */ class TrackActivityInternalActionWatchTogether implement
             return false;
         }
         TrackActivityInternalActionWatchTogether trackActivityInternalActionWatchTogether = (TrackActivityInternalActionWatchTogether) other;
-        return Intrinsics3.areEqual(this.actionName, trackActivityInternalActionWatchTogether.actionName) && Intrinsics3.areEqual(this.isHost, trackActivityInternalActionWatchTogether.isHost) && Intrinsics3.areEqual(this.remoteType, trackActivityInternalActionWatchTogether.remoteType) && Intrinsics3.areEqual(this.hostType, trackActivityInternalActionWatchTogether.hostType) && Intrinsics3.areEqual(this.searchType, trackActivityInternalActionWatchTogether.searchType) && Intrinsics3.areEqual(this.via, trackActivityInternalActionWatchTogether.via) && Intrinsics3.areEqual(this.orderCurrent, trackActivityInternalActionWatchTogether.orderCurrent) && Intrinsics3.areEqual(this.orderSelected, trackActivityInternalActionWatchTogether.orderSelected) && Intrinsics3.areEqual(this.trackingId, trackActivityInternalActionWatchTogether.trackingId);
+        return C12238m.areEqual(this.actionName, trackActivityInternalActionWatchTogether.actionName) && C12238m.areEqual(this.isHost, trackActivityInternalActionWatchTogether.isHost) && C12238m.areEqual(this.remoteType, trackActivityInternalActionWatchTogether.remoteType) && C12238m.areEqual(this.hostType, trackActivityInternalActionWatchTogether.hostType) && C12238m.areEqual(this.searchType, trackActivityInternalActionWatchTogether.searchType) && C12238m.areEqual(this.via, trackActivityInternalActionWatchTogether.via) && C12238m.areEqual(this.orderCurrent, trackActivityInternalActionWatchTogether.orderCurrent) && C12238m.areEqual(this.orderSelected, trackActivityInternalActionWatchTogether.orderSelected) && C12238m.areEqual(this.trackingId, trackActivityInternalActionWatchTogether.trackingId);
     }
 
     public int hashCode() {
@@ -63,23 +63,23 @@ public final /* data */ class TrackActivityInternalActionWatchTogether implement
     }
 
     public String toString() {
-        StringBuilder sbU = outline.U("TrackActivityInternalActionWatchTogether(actionName=");
-        sbU.append(this.actionName);
-        sbU.append(", isHost=");
-        sbU.append(this.isHost);
-        sbU.append(", remoteType=");
-        sbU.append(this.remoteType);
-        sbU.append(", hostType=");
-        sbU.append(this.hostType);
-        sbU.append(", searchType=");
-        sbU.append(this.searchType);
-        sbU.append(", via=");
-        sbU.append(this.via);
-        sbU.append(", orderCurrent=");
-        sbU.append(this.orderCurrent);
-        sbU.append(", orderSelected=");
-        sbU.append(this.orderSelected);
-        sbU.append(", trackingId=");
-        return outline.E(sbU, this.trackingId, ")");
+        StringBuilder sbM833U = C1643a.m833U("TrackActivityInternalActionWatchTogether(actionName=");
+        sbM833U.append(this.actionName);
+        sbM833U.append(", isHost=");
+        sbM833U.append(this.isHost);
+        sbM833U.append(", remoteType=");
+        sbM833U.append(this.remoteType);
+        sbM833U.append(", hostType=");
+        sbM833U.append(this.hostType);
+        sbM833U.append(", searchType=");
+        sbM833U.append(this.searchType);
+        sbM833U.append(", via=");
+        sbM833U.append(this.via);
+        sbM833U.append(", orderCurrent=");
+        sbM833U.append(this.orderCurrent);
+        sbM833U.append(", orderSelected=");
+        sbM833U.append(this.orderSelected);
+        sbM833U.append(", trackingId=");
+        return C1643a.m817E(sbM833U, this.trackingId, ")");
     }
 }

@@ -9,25 +9,27 @@ import androidx.viewbinding.ViewBinding;
 /* JADX INFO: loaded from: classes.dex */
 public final class WidgetGuildsListItemGuildVerticalBinding implements ViewBinding {
 
+    /* JADX INFO: renamed from: a */
     @NonNull
-    public final RelativeLayout a;
+    public final RelativeLayout f17115a;
 
-    /* JADX INFO: renamed from: b, reason: collision with root package name */
+    /* JADX INFO: renamed from: b */
     @NonNull
-    public final ImageView f2462b;
+    public final ImageView f17116b;
 
+    /* JADX INFO: renamed from: c */
     @NonNull
-    public final ImageView c;
+    public final ImageView f17117c;
 
     public WidgetGuildsListItemGuildVerticalBinding(@NonNull RelativeLayout relativeLayout, @NonNull ImageView imageView, @NonNull ImageView imageView2) {
-        this.a = relativeLayout;
-        this.f2462b = imageView;
-        this.c = imageView2;
+        this.f17115a = relativeLayout;
+        this.f17116b = imageView;
+        this.f17117c = imageView2;
     }
 
     @Override // androidx.viewbinding.ViewBinding
     @NonNull
     public View getRoot() {
-        return this.a;
+        return this.f17115a;
     }
 }

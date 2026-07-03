@@ -1,8 +1,8 @@
 package com.discord.models.domain;
 
-import b.d.b.a.outline;
 import com.discord.utilities.time.TimeUtils;
-import d0.z.d.Intrinsics3;
+import p007b.p100d.p104b.p105a.C1643a;
+import p507d0.p592z.p594d.C12238m;
 
 /* JADX INFO: compiled from: ModelGuildBoostSlot.kt */
 /* JADX INFO: loaded from: classes.dex */
@@ -80,7 +80,7 @@ public final /* data */ class ModelGuildBoostSlot {
             return false;
         }
         ModelGuildBoostSlot modelGuildBoostSlot = (ModelGuildBoostSlot) other;
-        return Intrinsics3.areEqual(this.cooldownEndsAt, modelGuildBoostSlot.cooldownEndsAt) && this.id == modelGuildBoostSlot.id && this.subscriptionId == modelGuildBoostSlot.subscriptionId && Intrinsics3.areEqual(this.premiumGuildSubscription, modelGuildBoostSlot.premiumGuildSubscription) && this.canceled == modelGuildBoostSlot.canceled;
+        return C12238m.areEqual(this.cooldownEndsAt, modelGuildBoostSlot.cooldownEndsAt) && this.id == modelGuildBoostSlot.id && this.subscriptionId == modelGuildBoostSlot.subscriptionId && C12238m.areEqual(this.premiumGuildSubscription, modelGuildBoostSlot.premiumGuildSubscription) && this.canceled == modelGuildBoostSlot.canceled;
     }
 
     public final boolean getCanceled() {
@@ -126,15 +126,15 @@ public final /* data */ class ModelGuildBoostSlot {
     }
 
     public String toString() {
-        StringBuilder sbU = outline.U("ModelGuildBoostSlot(cooldownEndsAt=");
-        sbU.append(this.cooldownEndsAt);
-        sbU.append(", id=");
-        sbU.append(this.id);
-        sbU.append(", subscriptionId=");
-        sbU.append(this.subscriptionId);
-        sbU.append(", premiumGuildSubscription=");
-        sbU.append(this.premiumGuildSubscription);
-        sbU.append(", canceled=");
-        return outline.O(sbU, this.canceled, ")");
+        StringBuilder sbM833U = C1643a.m833U("ModelGuildBoostSlot(cooldownEndsAt=");
+        sbM833U.append(this.cooldownEndsAt);
+        sbM833U.append(", id=");
+        sbM833U.append(this.id);
+        sbM833U.append(", subscriptionId=");
+        sbM833U.append(this.subscriptionId);
+        sbM833U.append(", premiumGuildSubscription=");
+        sbM833U.append(this.premiumGuildSubscription);
+        sbM833U.append(", canceled=");
+        return C1643a.m827O(sbM833U, this.canceled, ")");
     }
 }

@@ -1001,7 +1001,7 @@ public class JavacHandlerUtil {
         JavacNode typeNode = childOfType;
         JavacTreeMaker maker = childOfType.getTreeMaker();
         while (typeNode != null && typeNode.getKind() != AST.Kind.TYPE) {
-            typeNode = typeNode.up();
+            typeNode = typeNode.m10925up();
         }
         return namePlusTypeParamsToTypeReference(maker, typeNode, typeNode.get().typarams);
     }
@@ -1029,7 +1029,7 @@ public class JavacHandlerUtil {
             }
         }
         if (prefixes == null) {
-            JavacNode javacNodeUp = field.up();
+            JavacNode javacNodeUp = field.m10925up();
             loop1: while (true) {
                 JavacNode current = javacNodeUp;
                 if (current == null) {
@@ -1045,7 +1045,7 @@ public class JavacHandlerUtil {
                         break loop1;
                     }
                 }
-                javacNodeUp = current.up();
+                javacNodeUp = current.m10925up();
             }
         }
         if (prefixes == null) {
@@ -1060,7 +1060,7 @@ public class JavacHandlerUtil {
                 return createAnnotation(Accessors.class, node);
             }
         }
-        JavacNode javacNodeUp = field.up();
+        JavacNode javacNodeUp = field.m10925up();
         while (true) {
             JavacNode current = javacNodeUp;
             if (current != null) {
@@ -1069,9 +1069,9 @@ public class JavacHandlerUtil {
                         return createAnnotation(Accessors.class, node2);
                     }
                 }
-                javacNodeUp = current.up();
+                javacNodeUp = current.m10925up();
             } else {
-                return AnnotationValues.of(Accessors.class, field);
+                return AnnotationValues.m10917of(Accessors.class, field);
             }
         }
     }
@@ -1208,7 +1208,7 @@ public class JavacHandlerUtil {
         String getterName;
         JavacNode containingType;
         JCTree.JCVariableDecl decl = field.get();
-        JavacNode typeNode = field.up();
+        JavacNode typeNode = field.m10925up();
         for (String potentialGetterName : toAllGetterNames(field)) {
             for (JavacNode potentialGetter : typeNode.down()) {
                 if (potentialGetter.getKind() == AST.Kind.METHOD) {
@@ -1229,7 +1229,7 @@ public class JavacHandlerUtil {
                 hasGetterAnnotation = true;
             }
         }
-        if (!hasGetterAnnotation && HandleGetter.fieldQualifiesForGetterGeneration(field) && (containingType = field.up()) != null) {
+        if (!hasGetterAnnotation && HandleGetter.fieldQualifiesForGetterGeneration(field) && (containingType = field.m10925up()) != null) {
             for (JavacNode child2 : containingType.down()) {
                 if (child2.getKind() == AST.Kind.ANNOTATION && annotationTypeMatches((Class<? extends Annotation>) Data.class, child2)) {
                     hasGetterAnnotation = true;
@@ -1292,9 +1292,9 @@ public class JavacHandlerUtil {
                 if ((fieldDecl.mods.flags & 8) == 0) {
                     receiver = maker.Ident(field.toName("this"));
                 } else {
-                    JavacNode containerNode = field.up();
+                    JavacNode containerNode = field.m10925up();
                     if (containerNode != null && (containerNode.get() instanceof JCTree.JCClassDecl)) {
-                        JCTree.JCClassDecl container = field.up().get();
+                        JCTree.JCClassDecl container = field.m10925up().get();
                         receiver = maker.Ident(container.name);
                     }
                 }
@@ -1317,8 +1317,8 @@ public class JavacHandlerUtil {
         JCTree.JCMethodDecl methodDecl = method.get();
         if (receiver == null && (methodDecl.mods.flags & 8) == 0) {
             receiver = maker.Ident(method.toName("this"));
-        } else if (receiver == null && (containerNode = method.up()) != null && (containerNode.get() instanceof JCTree.JCClassDecl)) {
-            JCTree.JCClassDecl container = method.up().get();
+        } else if (receiver == null && (containerNode = method.m10925up()) != null && (containerNode.get() instanceof JCTree.JCClassDecl)) {
+            JCTree.JCClassDecl container = method.m10925up().get();
             receiver = maker.Ident(container.name);
         }
         JCTree.JCMethodInvocation call = maker.Apply(List.nil(), receiver == null ? maker.Ident(methodDecl.name) : maker.Select(receiver, methodDecl.name), List.nil());
@@ -1418,7 +1418,8 @@ public class JavacHandlerUtil {
             }
         }
 
-        static boolean is(JCTree obj) {
+        /* JADX INFO: renamed from: is */
+        static boolean m10951is(JCTree obj) {
             if (obj == null) {
                 return false;
             }
@@ -1552,7 +1553,7 @@ public class JavacHandlerUtil {
                 if ((jCMethodDecl instanceof JCTree.JCMethodDecl) && (jCMethodDecl.mods.flags & Permission.CREATE_PRIVATE_THREADS) != 0) {
                     JavacNode tossMe = typeNode.getNodeFor(jCMethodDecl);
                     if (tossMe != null) {
-                        tossMe.up().removeChild(tossMe);
+                        tossMe.m10925up().removeChild(tossMe);
                     }
                     type.defs = addAllButOne(type.defs, idx);
                     ClassSymbolMembersField.remove(type.sym, jCMethodDecl.sym);
@@ -1760,7 +1761,7 @@ public class JavacHandlerUtil {
         }
         JavacTreeMaker maker = node.getTreeMaker();
         if (pos != -1) {
-            maker = maker.at(pos);
+            maker = maker.m10939at(pos);
         }
         JCTree.JCIdent jCIdentIdent = elem1 != null ? maker.Ident(node.toName(elem1)) : null;
         if (elem2 != null) {
@@ -1807,7 +1808,7 @@ public class JavacHandlerUtil {
                     }
                 }
             }
-            node = node.up();
+            node = node.m10925up();
         }
         return null;
     }
@@ -1966,7 +1967,7 @@ public class JavacHandlerUtil {
         }
         JCTree.JCExpression exType = genTypeRef(source, exceptionType.getExceptionType());
         JCTree.JCBlock throwBlock = maker.Block(0L, List.of(maker.Throw(maker.NewClass(null, List.nil(), exType, List.of(message), null))));
-        return maker.If(maker.Binary(Javac.CTC_EQUAL, maker.Ident(varName), maker.Literal(Javac.CTC_BOT, null)), throwBlock, null);
+        return maker.m10940If(maker.Binary(Javac.CTC_EQUAL, maker.Ident(varName), maker.Literal(Javac.CTC_BOT, null)), throwBlock, null);
     }
 
     public static JCTree.JCStatement generateNullCheck(JavacTreeMaker maker, JCTree.JCVariableDecl varDecl, JavacNode source) {
@@ -2113,23 +2114,23 @@ public class JavacHandlerUtil {
     }
 
     public static List<JCTree.JCAnnotation> getTypeUseAnnotations(JCTree.JCExpression from) {
-        return !JCAnnotatedTypeReflect.is(from) ? List.nil() : JCAnnotatedTypeReflect.getAnnotations(from);
+        return !JCAnnotatedTypeReflect.m10951is(from) ? List.nil() : JCAnnotatedTypeReflect.getAnnotations(from);
     }
 
     public static JCTree.JCExpression removeTypeUseAnnotations(JCTree.JCExpression from) {
-        return !JCAnnotatedTypeReflect.is(from) ? from : JCAnnotatedTypeReflect.getUnderlyingType(from);
+        return !JCAnnotatedTypeReflect.m10951is(from) ? from : JCAnnotatedTypeReflect.getUnderlyingType(from);
     }
 
     public static JCTree.JCExpression namePlusTypeParamsToTypeReference(JavacTreeMaker maker, JavacNode type, List<JCTree.JCTypeParameter> params) {
         JCTree.JCClassDecl td = type.get();
         boolean instance = (td.mods.flags & 8) == 0;
-        return namePlusTypeParamsToTypeReference(maker, type.up(), td.name, instance, params, List.nil());
+        return namePlusTypeParamsToTypeReference(maker, type.m10925up(), td.name, instance, params, List.nil());
     }
 
     public static JCTree.JCExpression namePlusTypeParamsToTypeReference(JavacTreeMaker maker, JavacNode type, List<JCTree.JCTypeParameter> params, List<JCTree.JCAnnotation> annotations) {
         JCTree.JCClassDecl td = type.get();
         boolean instance = (td.mods.flags & 8) == 0;
-        return namePlusTypeParamsToTypeReference(maker, type.up(), td.name, instance, params, annotations);
+        return namePlusTypeParamsToTypeReference(maker, type.m10925up(), td.name, instance, params, annotations);
     }
 
     public static JCTree.JCExpression namePlusTypeParamsToTypeReference(JavacTreeMaker maker, JavacNode parentType, Name typeName, boolean instance, List<JCTree.JCTypeParameter> params) {
@@ -2142,7 +2143,7 @@ public class JavacHandlerUtil {
             JCTree.JCClassDecl td = parentType.get();
             boolean outerInstance = instance && (td.mods.flags & 8) == 0;
             List<JCTree.JCTypeParameter> outerParams = instance ? td.typarams : List.nil();
-            r = namePlusTypeParamsToTypeReference(maker, parentType.up(), td.name, outerInstance, outerParams, List.nil());
+            r = namePlusTypeParamsToTypeReference(maker, parentType.m10925up(), td.name, outerInstance, outerParams, List.nil());
         }
         JCTree.JCIdent jCIdentIdent = r == null ? maker.Ident(typeName) : maker.Select(r, typeName);
         if (!annotations.isEmpty()) {
@@ -2237,7 +2238,7 @@ public class JavacHandlerUtil {
             throw new NullPointerException("node");
         }
         while (node != null && !(node.get() instanceof JCTree.JCClassDecl)) {
-            node = node.up();
+            node = node.m10925up();
         }
         return node;
     }
@@ -2308,7 +2309,7 @@ public class JavacHandlerUtil {
             }
             return maker.Wildcard(newKind, newInner);
         }
-        if (JCAnnotatedTypeReflect.is(in)) {
+        if (JCAnnotatedTypeReflect.m10951is(in)) {
             JCTree.JCExpression underlyingType = cloneType0(maker, JCAnnotatedTypeReflect.getUnderlyingType(in));
             List<JCTree.JCAnnotation> anns = copyAnnotations(JCAnnotatedTypeReflect.getAnnotations(in));
             return JCAnnotatedTypeReflect.create(anns, underlyingType);
@@ -2492,7 +2493,7 @@ public class JavacHandlerUtil {
                 mth.restype = maker.AnnotatedType(List.of(m), resType);
                 return;
             }
-            if (JCAnnotatedTypeReflect.is(resType)) {
+            if (JCAnnotatedTypeReflect.m10951is(resType)) {
                 List<JCTree.JCAnnotation> annotations = JCAnnotatedTypeReflect.getAnnotations(resType);
                 JCAnnotatedTypeReflect.setAnnotations(resType, annotations.prepend(m));
                 return;
@@ -2530,7 +2531,7 @@ public class JavacHandlerUtil {
                     return;
                 }
             }
-            if (JCAnnotatedTypeReflect.is(varType)) {
+            if (JCAnnotatedTypeReflect.m10951is(varType)) {
                 List<JCTree.JCAnnotation> annotations = JCAnnotatedTypeReflect.getAnnotations(varType);
                 JCAnnotatedTypeReflect.setAnnotations(varType, annotations.prepend(m));
                 return;

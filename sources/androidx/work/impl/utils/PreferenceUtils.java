@@ -5,7 +5,7 @@ import android.content.SharedPreferences;
 import androidx.annotation.NonNull;
 import androidx.annotation.RestrictTo;
 import androidx.arch.core.util.Function;
-import androidx.sqlite.db.SupportSQLiteDatabase;
+import androidx.sqlite.p006db.SupportSQLiteDatabase;
 import androidx.view.LiveData;
 import androidx.view.Transformations;
 import androidx.work.impl.WorkDatabase;

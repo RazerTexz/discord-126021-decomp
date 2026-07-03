@@ -1,31 +1,20 @@
 package com.discord.widgets.voice.feedback.call;
 
-import a0.a.a.b;
 import android.os.Parcel;
 import android.os.Parcelable;
 import androidx.annotation.VisibleForTesting;
-import b.a.d.AppViewModel;
-import b.d.b.a.outline;
-import com.discord.R;
+import com.discord.C5419R;
 import com.discord.models.experiments.domain.Experiment;
 import com.discord.stores.StoreAnalytics;
 import com.discord.stores.StoreExperiments;
 import com.discord.stores.StoreStream;
 import com.discord.utilities.error.Error;
-import com.discord.utilities.rx.ObservableExtensionsKt;
+import com.discord.utilities.p501rx.ObservableExtensionsKt;
 import com.discord.widgets.feedback.FeedbackSheetViewModel;
 import com.discord.widgets.voice.feedback.FeedbackIssue;
 import com.discord.widgets.voice.feedback.FeedbackRating;
 import com.discord.widgets.voice.feedback.PendingFeedback;
 import com.discord.widgets.voice.feedback.call.CallFeedbackSheetViewModel;
-import d0.Tuples;
-import d0.t.Collections2;
-import d0.t.CollectionsJVM;
-import d0.t.Maps6;
-import d0.t._Collections;
-import d0.z.d.Intrinsics3;
-import d0.z.d.Lambda;
-import j0.k.Func1;
 import java.util.Collection;
 import java.util.List;
 import java.util.Map;
@@ -34,13 +23,24 @@ import kotlin.jvm.functions.Function0;
 import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import org.objectweb.asm.Opcodes;
-import rx.Observable;
-import rx.Subscription;
-import rx.subjects.PublishSubject;
+import p001a0.p002a.p003a.C0002b;
+import p007b.p008a.p018d.AbstractC0859d0;
+import p007b.p100d.p104b.p105a.C1643a;
+import p507d0.C12116o;
+import p507d0.p580t.C12136h0;
+import p507d0.p580t.C12145m;
+import p507d0.p580t.C12147n;
+import p507d0.p580t.C12163u;
+import p507d0.p592z.p594d.AbstractC12240o;
+import p507d0.p592z.p594d.C12238m;
+import p637j0.p641k.InterfaceC12589b;
+import p658rx.Observable;
+import p658rx.Subscription;
+import p658rx.subjects.PublishSubject;
 
 /* JADX INFO: compiled from: CallFeedbackSheetViewModel.kt */
 /* JADX INFO: loaded from: classes.dex */
-public final class CallFeedbackSheetViewModel extends AppViewModel<FeedbackSheetViewModel.ViewState> implements FeedbackSheetViewModel {
+public final class CallFeedbackSheetViewModel extends AbstractC0859d0<FeedbackSheetViewModel.ViewState> implements FeedbackSheetViewModel {
 
     /* JADX INFO: renamed from: Companion, reason: from kotlin metadata */
     public static final Companion INSTANCE = new Companion(null);
@@ -55,22 +55,22 @@ public final class CallFeedbackSheetViewModel extends AppViewModel<FeedbackSheet
     private boolean submitOnDismiss;
     private boolean submitted;
 
-    /* JADX INFO: renamed from: com.discord.widgets.voice.feedback.call.CallFeedbackSheetViewModel$1, reason: invalid class name */
+    /* JADX INFO: renamed from: com.discord.widgets.voice.feedback.call.CallFeedbackSheetViewModel$1 */
     /* JADX INFO: compiled from: CallFeedbackSheetViewModel.kt */
-    public static final class AnonymousClass1 extends Lambda implements Function1<StoreState, Unit> {
-        public AnonymousClass1() {
+    public static final class C104541 extends AbstractC12240o implements Function1<StoreState, Unit> {
+        public C104541() {
             super(1);
         }
 
         @Override // kotlin.jvm.functions.Function1
         public /* bridge */ /* synthetic */ Unit invoke(StoreState storeState) {
             invoke2(storeState);
-            return Unit.a;
+            return Unit.f27425a;
         }
 
         /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
         public final void invoke2(StoreState storeState) {
-            Intrinsics3.checkNotNullParameter(storeState, "storeState");
+            C12238m.checkNotNullParameter(storeState, "storeState");
             CallFeedbackSheetViewModel.this.mostRecentStoreState = storeState;
         }
     }
@@ -85,14 +85,14 @@ public final class CallFeedbackSheetViewModel extends AppViewModel<FeedbackSheet
         }
 
         private final Observable<StoreState> observeStoreState(StoreExperiments storeExperiments) {
-            Observable observableG = storeExperiments.observeUserExperiment("2020-08_feedback_modal_helpdesk_link", true).G(new Func1<Experiment, StoreState>() { // from class: com.discord.widgets.voice.feedback.call.CallFeedbackSheetViewModel$Companion$observeStoreState$1
-                @Override // j0.k.Func1
+            Observable observableM11083G = storeExperiments.observeUserExperiment("2020-08_feedback_modal_helpdesk_link", true).m11083G(new InterfaceC12589b<Experiment, StoreState>() { // from class: com.discord.widgets.voice.feedback.call.CallFeedbackSheetViewModel$Companion$observeStoreState$1
+                @Override // p637j0.p641k.InterfaceC12589b
                 public final CallFeedbackSheetViewModel.StoreState call(Experiment experiment) {
                     return new CallFeedbackSheetViewModel.StoreState(experiment != null && experiment.getBucket() == 1);
                 }
             });
-            Intrinsics3.checkNotNullExpressionValue(observableG, "storeExperiments\n       …            )\n          }");
-            return observableG;
+            C12238m.checkNotNullExpressionValue(observableM11083G, "storeExperiments\n       …            )\n          }");
+            return observableM11083G;
         }
 
         public final List<FeedbackIssue> getISSUES_UI_OPTIONS() {
@@ -131,7 +131,7 @@ public final class CallFeedbackSheetViewModel extends AppViewModel<FeedbackSheet
             /* JADX WARN: Can't rename method to resolve collision */
             @Override // android.os.Parcelable.Creator
             public Config createFromParcel(Parcel parcel) {
-                Intrinsics3.checkNotNullParameter(parcel, "parcel");
+                C12238m.checkNotNullParameter(parcel, "parcel");
                 return new Config(parcel);
             }
 
@@ -205,7 +205,7 @@ public final class CallFeedbackSheetViewModel extends AppViewModel<FeedbackSheet
                 return false;
             }
             Config config = (Config) other;
-            return this.channelId == config.channelId && Intrinsics3.areEqual(this.rtcConnectionId, config.rtcConnectionId) && Intrinsics3.areEqual(this.mediaSessionId, config.mediaSessionId) && Intrinsics3.areEqual(this.callDurationMs, config.callDurationMs);
+            return this.channelId == config.channelId && C12238m.areEqual(this.rtcConnectionId, config.rtcConnectionId) && C12238m.areEqual(this.mediaSessionId, config.mediaSessionId) && C12238m.areEqual(this.callDurationMs, config.callDurationMs);
         }
 
         public final Long getCallDurationMs() {
@@ -225,9 +225,9 @@ public final class CallFeedbackSheetViewModel extends AppViewModel<FeedbackSheet
         }
 
         public int hashCode() {
-            int iA = b.a(this.channelId) * 31;
+            int iM3a = C0002b.m3a(this.channelId) * 31;
             String str = this.rtcConnectionId;
-            int iHashCode = (iA + (str != null ? str.hashCode() : 0)) * 31;
+            int iHashCode = (iM3a + (str != null ? str.hashCode() : 0)) * 31;
             String str2 = this.mediaSessionId;
             int iHashCode2 = (iHashCode + (str2 != null ? str2.hashCode() : 0)) * 31;
             Long l = this.callDurationMs;
@@ -235,19 +235,19 @@ public final class CallFeedbackSheetViewModel extends AppViewModel<FeedbackSheet
         }
 
         public String toString() {
-            StringBuilder sbU = outline.U("Config(channelId=");
-            sbU.append(this.channelId);
-            sbU.append(", rtcConnectionId=");
-            sbU.append(this.rtcConnectionId);
-            sbU.append(", mediaSessionId=");
-            sbU.append(this.mediaSessionId);
-            sbU.append(", callDurationMs=");
-            return outline.G(sbU, this.callDurationMs, ")");
+            StringBuilder sbM833U = C1643a.m833U("Config(channelId=");
+            sbM833U.append(this.channelId);
+            sbM833U.append(", rtcConnectionId=");
+            sbM833U.append(this.rtcConnectionId);
+            sbM833U.append(", mediaSessionId=");
+            sbM833U.append(this.mediaSessionId);
+            sbM833U.append(", callDurationMs=");
+            return C1643a.m819G(sbM833U, this.callDurationMs, ")");
         }
 
         @Override // android.os.Parcelable
         public void writeToParcel(Parcel parcel, int flags) {
-            Intrinsics3.checkNotNullParameter(parcel, "parcel");
+            C12238m.checkNotNullParameter(parcel, "parcel");
             parcel.writeLong(this.channelId);
             parcel.writeString(this.rtcConnectionId);
             parcel.writeString(this.mediaSessionId);
@@ -256,7 +256,7 @@ public final class CallFeedbackSheetViewModel extends AppViewModel<FeedbackSheet
 
         /* JADX WARN: Illegal instructions before constructor call */
         public Config(Parcel parcel) {
-            Intrinsics3.checkNotNullParameter(parcel, "parcel");
+            C12238m.checkNotNullParameter(parcel, "parcel");
             long j = parcel.readLong();
             String string = parcel.readString();
             String string2 = parcel.readString();
@@ -309,7 +309,7 @@ public final class CallFeedbackSheetViewModel extends AppViewModel<FeedbackSheet
         }
 
         public String toString() {
-            return outline.O(outline.U("StoreState(shouldShowCxLinkForIssueDetails="), this.shouldShowCxLinkForIssueDetails, ")");
+            return C1643a.m827O(C1643a.m833U("StoreState(shouldShowCxLinkForIssueDetails="), this.shouldShowCxLinkForIssueDetails, ")");
         }
     }
 
@@ -345,8 +345,8 @@ public final class CallFeedbackSheetViewModel extends AppViewModel<FeedbackSheet
         FeedbackIssue feedbackIssue7 = FeedbackIssue.BACKGROUND_NOISE_TOO_LOUD;
         FeedbackIssue feedbackIssue8 = FeedbackIssue.SPEAKERPHONE_ISSUE;
         FeedbackIssue feedbackIssue9 = FeedbackIssue.HEADSET_OR_BLUETOOTH_ISSUE;
-        ISSUES_UI_OPTIONS = Collections2.listOf((Object[]) new FeedbackIssue[]{feedbackIssue, feedbackIssue2, feedbackIssue3, feedbackIssue4, feedbackIssue5, feedbackIssue6, feedbackIssue7, feedbackIssue8, feedbackIssue9});
-        REASON_CODES = Maps6.mapOf(Tuples.to(FeedbackIssue.OTHER, 1), Tuples.to(feedbackIssue, 2), Tuples.to(feedbackIssue2, 3), Tuples.to(feedbackIssue3, 4), Tuples.to(feedbackIssue4, 5), Tuples.to(feedbackIssue5, 6), Tuples.to(feedbackIssue6, 7), Tuples.to(feedbackIssue7, 8), Tuples.to(feedbackIssue8, 9), Tuples.to(feedbackIssue9, 10));
+        ISSUES_UI_OPTIONS = C12147n.listOf((Object[]) new FeedbackIssue[]{feedbackIssue, feedbackIssue2, feedbackIssue3, feedbackIssue4, feedbackIssue5, feedbackIssue6, feedbackIssue7, feedbackIssue8, feedbackIssue9});
+        REASON_CODES = C12136h0.mapOf(C12116o.m10073to(FeedbackIssue.OTHER, 1), C12116o.m10073to(feedbackIssue, 2), C12116o.m10073to(feedbackIssue2, 3), C12116o.m10073to(feedbackIssue3, 4), C12116o.m10073to(feedbackIssue4, 5), C12116o.m10073to(feedbackIssue5, 6), C12116o.m10073to(feedbackIssue6, 7), C12116o.m10073to(feedbackIssue7, 8), C12116o.m10073to(feedbackIssue8, 9), C12116o.m10073to(feedbackIssue9, 10));
     }
 
     /* JADX WARN: Illegal instructions before constructor call */
@@ -357,22 +357,22 @@ public final class CallFeedbackSheetViewModel extends AppViewModel<FeedbackSheet
     }
 
     private final FeedbackSheetViewModel.ViewState createViewState(FeedbackRating selectedFeedbackRating, List<? extends FeedbackIssue> feedbackIssues) {
-        return new FeedbackSheetViewModel.ViewState(selectedFeedbackRating, feedbackIssues, R.string.call_feedback_sheet_title, Integer.valueOf(R.string.call_feedback_prompt), R.string.call_feedback_issue_section_header);
+        return new FeedbackSheetViewModel.ViewState(selectedFeedbackRating, feedbackIssues, C5419R.string.call_feedback_sheet_title, Integer.valueOf(C5419R.string.call_feedback_prompt), C5419R.string.call_feedback_issue_section_header);
     }
 
     private final void emitSubmittedEvent(boolean showConfirmation) {
         PublishSubject<FeedbackSheetViewModel.Event> publishSubject = this.eventSubject;
-        publishSubject.k.onNext(new FeedbackSheetViewModel.Event.Submitted(showConfirmation));
+        publishSubject.f27650k.onNext(new FeedbackSheetViewModel.Event.Submitted(showConfirmation));
     }
 
     @Override // com.discord.widgets.feedback.FeedbackSheetViewModel
     public Observable<FeedbackSheetViewModel.Event> observeEvents() {
         PublishSubject<FeedbackSheetViewModel.Event> publishSubject = this.eventSubject;
-        Intrinsics3.checkNotNullExpressionValue(publishSubject, "eventSubject");
+        C12238m.checkNotNullExpressionValue(publishSubject, "eventSubject");
         return publishSubject;
     }
 
-    @Override // b.a.d.AppViewModel, androidx.view.ViewModel
+    @Override // p007b.p008a.p018d.AbstractC0859d0, androidx.view.ViewModel
     public void onCleared() {
         super.onCleared();
         if (this.submitOnDismiss) {
@@ -389,7 +389,7 @@ public final class CallFeedbackSheetViewModel extends AppViewModel<FeedbackSheet
             this.submitOnDismiss = false;
             PublishSubject<FeedbackSheetViewModel.Event> publishSubject = this.eventSubject;
             StoreState storeState = this.mostRecentStoreState;
-            publishSubject.k.onNext(new FeedbackSheetViewModel.Event.NavigateToIssueDetails(callFeedbackCopy, storeState != null ? storeState.getShouldShowCxLinkForIssueDetails() : false));
+            publishSubject.f27650k.onNext(new FeedbackSheetViewModel.Event.NavigateToIssueDetails(callFeedbackCopy, storeState != null ? storeState.getShouldShowCxLinkForIssueDetails() : false));
             return;
         }
         int iOrdinal = requireViewState().getSelectedFeedbackRating().ordinal();
@@ -400,7 +400,7 @@ public final class CallFeedbackSheetViewModel extends AppViewModel<FeedbackSheet
 
     @Override // com.discord.widgets.feedback.FeedbackSheetViewModel
     public void selectRating(FeedbackRating feedbackRating) {
-        Intrinsics3.checkNotNullParameter(feedbackRating, "feedbackRating");
+        C12238m.checkNotNullParameter(feedbackRating, "feedbackRating");
         PendingFeedback.CallFeedback callFeedback = this.pendingCallFeedback;
         this.pendingCallFeedback = callFeedback.copy((Opcodes.IF_ICMPEQ & 1) != 0 ? callFeedback.channelId : 0L, (Opcodes.IF_ICMPEQ & 2) != 0 ? callFeedback.rtcConnectionId : null, (Opcodes.IF_ICMPEQ & 4) != 0 ? callFeedback.durationMs : null, (Opcodes.IF_ICMPEQ & 8) != 0 ? callFeedback.mediaSessionId : null, (Opcodes.IF_ICMPEQ & 16) != 0 ? callFeedback.feedbackRating : feedbackRating, (Opcodes.IF_ICMPEQ & 32) != 0 ? callFeedback.reasonCode : null, (Opcodes.IF_ICMPEQ & 64) != 0 ? callFeedback.reasonDescription : null, (Opcodes.IF_ICMPEQ & 128) != 0 ? callFeedback.issueDetails : null);
         int iOrdinal = feedbackRating.ordinal();
@@ -413,7 +413,7 @@ public final class CallFeedbackSheetViewModel extends AppViewModel<FeedbackSheet
             }
         }
         selectIssue(null, null);
-        updateViewState(createViewState(feedbackRating, Collections2.emptyList()));
+        updateViewState(createViewState(feedbackRating, C12147n.emptyList()));
         submitForm();
     }
 
@@ -430,18 +430,18 @@ public final class CallFeedbackSheetViewModel extends AppViewModel<FeedbackSheet
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public CallFeedbackSheetViewModel(Config config, StoreAnalytics storeAnalytics, StoreExperiments storeExperiments, Observable<StoreState> observable) {
-        super(new FeedbackSheetViewModel.ViewState(FeedbackRating.NO_RESPONSE, Collections2.emptyList(), R.string.call_feedback_sheet_title, Integer.valueOf(R.string.call_feedback_prompt), R.string.call_feedback_issue_section_header));
-        Intrinsics3.checkNotNullParameter(config, "config");
-        Intrinsics3.checkNotNullParameter(storeAnalytics, "storeAnalytics");
-        Intrinsics3.checkNotNullParameter(storeExperiments, "storeExperiments");
-        Intrinsics3.checkNotNullParameter(observable, "storeStateObservable");
+        super(new FeedbackSheetViewModel.ViewState(FeedbackRating.NO_RESPONSE, C12147n.emptyList(), C5419R.string.call_feedback_sheet_title, Integer.valueOf(C5419R.string.call_feedback_prompt), C5419R.string.call_feedback_issue_section_header));
+        C12238m.checkNotNullParameter(config, "config");
+        C12238m.checkNotNullParameter(storeAnalytics, "storeAnalytics");
+        C12238m.checkNotNullParameter(storeExperiments, "storeExperiments");
+        C12238m.checkNotNullParameter(observable, "storeStateObservable");
         this.storeAnalytics = storeAnalytics;
         this.storeExperiments = storeExperiments;
-        this.eventSubject = PublishSubject.k0();
+        this.eventSubject = PublishSubject.m11133k0();
         this.submitOnDismiss = true;
         this.pendingCallFeedback = new PendingFeedback.CallFeedback(config.getChannelId(), config.getRtcConnectionId(), config.getCallDurationMs(), config.getMediaSessionId(), null, null, null, null, 240, null);
-        this.issuesUiOptions = _Collections.plus((Collection<? extends FeedbackIssue>) CollectionsJVM.shuffled(ISSUES_UI_OPTIONS), FeedbackIssue.OTHER);
+        this.issuesUiOptions = C12163u.plus((Collection<? extends FeedbackIssue>) C12145m.shuffled(ISSUES_UI_OPTIONS), FeedbackIssue.OTHER);
         storeAnalytics.trackShowCallFeedbackSheet(config.getChannelId());
-        ObservableExtensionsKt.appSubscribe(ObservableExtensionsKt.ui$default(observable, this, null, 2, null), (Class<?>) CallFeedbackSheetViewModel.class, (58 & 2) != 0 ? null : null, (Function1<? super Subscription, Unit>) ((58 & 4) != 0 ? null : null), (Function1<? super Error, Unit>) ((58 & 8) != 0 ? null : null), (Function0<Unit>) ((58 & 16) != 0 ? ObservableExtensionsKt.AnonymousClass1.INSTANCE : null), (Function0<Unit>) ((58 & 32) != 0 ? ObservableExtensionsKt.AnonymousClass2.INSTANCE : null), new AnonymousClass1());
+        ObservableExtensionsKt.appSubscribe(ObservableExtensionsKt.ui$default(observable, this, null, 2, null), (Class<?>) CallFeedbackSheetViewModel.class, (58 & 2) != 0 ? null : null, (Function1<? super Subscription, Unit>) ((58 & 4) != 0 ? null : null), (Function1<? super Error, Unit>) ((58 & 8) != 0 ? null : null), (Function0<Unit>) ((58 & 16) != 0 ? ObservableExtensionsKt.C68791.INSTANCE : null), (Function0<Unit>) ((58 & 32) != 0 ? ObservableExtensionsKt.C68802.INSTANCE : null), new C104541());
     }
 }

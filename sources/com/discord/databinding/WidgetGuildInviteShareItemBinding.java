@@ -5,50 +5,55 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.viewbinding.ViewBinding;
-import com.discord.R;
+import com.discord.C5419R;
 import com.facebook.drawee.view.SimpleDraweeView;
 import com.google.android.material.button.MaterialButton;
 
 /* JADX INFO: loaded from: classes.dex */
 public final class WidgetGuildInviteShareItemBinding implements ViewBinding {
 
+    /* JADX INFO: renamed from: a */
     @NonNull
-    public final LinearLayout a;
+    public final LinearLayout f16832a;
 
-    /* JADX INFO: renamed from: b, reason: collision with root package name */
+    /* JADX INFO: renamed from: b */
     @NonNull
-    public final SimpleDraweeView f2421b;
+    public final SimpleDraweeView f16833b;
 
+    /* JADX INFO: renamed from: c */
     @NonNull
-    public final MaterialButton c;
+    public final MaterialButton f16834c;
 
+    /* JADX INFO: renamed from: d */
     @NonNull
-    public final TextView d;
+    public final TextView f16835d;
 
+    /* JADX INFO: renamed from: e */
     @NonNull
-    public final MaterialButton e;
+    public final MaterialButton f16836e;
 
     public WidgetGuildInviteShareItemBinding(@NonNull LinearLayout linearLayout, @NonNull SimpleDraweeView simpleDraweeView, @NonNull MaterialButton materialButton, @NonNull TextView textView, @NonNull MaterialButton materialButton2) {
-        this.a = linearLayout;
-        this.f2421b = simpleDraweeView;
-        this.c = materialButton;
-        this.d = textView;
-        this.e = materialButton2;
+        this.f16832a = linearLayout;
+        this.f16833b = simpleDraweeView;
+        this.f16834c = materialButton;
+        this.f16835d = textView;
+        this.f16836e = materialButton2;
     }
 
     @NonNull
-    public static WidgetGuildInviteShareItemBinding a(@NonNull View view) {
-        int i = R.id.item_icon_iv;
-        SimpleDraweeView simpleDraweeView = (SimpleDraweeView) view.findViewById(R.id.item_icon_iv);
+    /* JADX INFO: renamed from: a */
+    public static WidgetGuildInviteShareItemBinding m8417a(@NonNull View view) {
+        int i = C5419R.id.item_icon_iv;
+        SimpleDraweeView simpleDraweeView = (SimpleDraweeView) view.findViewById(C5419R.id.item_icon_iv);
         if (simpleDraweeView != null) {
-            i = R.id.item_invite_btn;
-            MaterialButton materialButton = (MaterialButton) view.findViewById(R.id.item_invite_btn);
+            i = C5419R.id.item_invite_btn;
+            MaterialButton materialButton = (MaterialButton) view.findViewById(C5419R.id.item_invite_btn);
             if (materialButton != null) {
-                i = R.id.item_name_tv;
-                TextView textView = (TextView) view.findViewById(R.id.item_name_tv);
+                i = C5419R.id.item_name_tv;
+                TextView textView = (TextView) view.findViewById(C5419R.id.item_name_tv);
                 if (textView != null) {
-                    i = R.id.item_sent;
-                    MaterialButton materialButton2 = (MaterialButton) view.findViewById(R.id.item_sent);
+                    i = C5419R.id.item_sent;
+                    MaterialButton materialButton2 = (MaterialButton) view.findViewById(C5419R.id.item_sent);
                     if (materialButton2 != null) {
                         return new WidgetGuildInviteShareItemBinding((LinearLayout) view, simpleDraweeView, materialButton, textView, materialButton2);
                     }
@@ -61,6 +66,6 @@ public final class WidgetGuildInviteShareItemBinding implements ViewBinding {
     @Override // androidx.viewbinding.ViewBinding
     @NonNull
     public View getRoot() {
-        return this.a;
+        return this.f16832a;
     }
 }

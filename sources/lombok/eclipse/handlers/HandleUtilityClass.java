@@ -86,9 +86,9 @@ public class HandleUtilityClass extends EclipseAnnotationHandler<UtilityClass> {
     @Override // lombok.eclipse.EclipseAnnotationHandler
     public void handle(AnnotationValues<UtilityClass> annotation, Annotation ast, EclipseNode annotationNode) {
         HandlerUtil.handleFlagUsage(annotationNode, ConfigurationKeys.UTILITY_CLASS_FLAG_USAGE, "@UtilityClass");
-        EclipseNode typeNode = annotationNode.up();
+        EclipseNode typeNode = annotationNode.m10925up();
         if (checkLegality(typeNode, annotationNode)) {
-            changeModifiersAndGenerateConstructor(annotationNode.up(), annotationNode);
+            changeModifiersAndGenerateConstructor(annotationNode.m10925up(), annotationNode);
         }
     }
 
@@ -106,7 +106,7 @@ public class HandleUtilityClass extends EclipseAnnotationHandler<UtilityClass> {
         }
         EclipseNode typeWalk = typeNode;
         do {
-            typeWalk = typeWalk.up();
+            typeWalk = typeWalk.m10925up();
             switch ($SWITCH_TABLE$lombok$core$AST$Kind()[typeWalk.getKind().ordinal()]) {
                 case 1:
                     return true;
@@ -117,7 +117,7 @@ public class HandleUtilityClass extends EclipseAnnotationHandler<UtilityClass> {
                     return false;
             }
         } while ((typeWalk.get().modifiers & 25096) != 0);
-        if (typeWalk.up().getKind() == AST.Kind.COMPILATION_UNIT) {
+        if (typeWalk.m10925up().getKind() == AST.Kind.COMPILATION_UNIT) {
             return true;
         }
         errorNode.addError("@UtilityClass automatically makes the class static, however, this class cannot be made static.");
@@ -130,9 +130,9 @@ public class HandleUtilityClass extends EclipseAnnotationHandler<UtilityClass> {
         classDecl.modifiers |= 16;
         boolean requiresClInit = false;
         boolean alreadyHasClinit = false;
-        boolean markStatic = typeNode.up().getKind() != AST.Kind.COMPILATION_UNIT;
-        if (markStatic && typeNode.up().getKind() == AST.Kind.TYPE) {
-            TypeDeclaration typeDecl = typeNode.up().get();
+        boolean markStatic = typeNode.m10925up().getKind() != AST.Kind.COMPILATION_UNIT;
+        if (markStatic && typeNode.m10925up().getKind() == AST.Kind.TYPE) {
+            TypeDeclaration typeDecl = typeNode.m10925up().get();
             if ((typeDecl.modifiers & 8704) != 0) {
                 markStatic = false;
             }

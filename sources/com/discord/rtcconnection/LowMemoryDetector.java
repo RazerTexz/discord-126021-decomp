@@ -5,9 +5,9 @@ import android.content.res.Configuration;
 import com.discord.rtcconnection.enums.TrimMemoryLevel;
 import com.discord.utilities.logging.Logger;
 import com.discord.utilities.logging.LoggingProvider;
-import d0.z.d.Intrinsics3;
 import java.util.Objects;
 import java.util.concurrent.atomic.AtomicBoolean;
+import p507d0.p592z.p594d.C12238m;
 
 /* JADX INFO: compiled from: LowMemoryDetector.kt */
 /* JADX INFO: loaded from: classes.dex */
@@ -18,7 +18,7 @@ public final class LowMemoryDetector implements ComponentCallbacks2 {
 
     @Override // android.content.ComponentCallbacks
     public void onConfigurationChanged(Configuration newConfig) {
-        Intrinsics3.checkNotNullParameter(newConfig, "newConfig");
+        C12238m.checkNotNullParameter(newConfig, "newConfig");
     }
 
     @Override // android.content.ComponentCallbacks

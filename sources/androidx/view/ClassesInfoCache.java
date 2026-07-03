@@ -2,13 +2,13 @@ package androidx.view;
 
 import androidx.annotation.Nullable;
 import androidx.view.Lifecycle;
-import b.d.b.a.outline;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import p007b.p100d.p104b.p105a.C1643a;
 
 /* JADX INFO: loaded from: classes.dex */
 public final class ClassesInfoCache {
@@ -166,15 +166,15 @@ public final class ClassesInfoCache {
             return;
         }
         Method method = methodReference.mMethod;
-        StringBuilder sbU = outline.U("Method ");
-        sbU.append(method.getName());
-        sbU.append(" in ");
-        sbU.append(cls.getName());
-        sbU.append(" already declared with different @OnLifecycleEvent value: previous value ");
-        sbU.append(event2);
-        sbU.append(", new value ");
-        sbU.append(event);
-        throw new IllegalArgumentException(sbU.toString());
+        StringBuilder sbM833U = C1643a.m833U("Method ");
+        sbM833U.append(method.getName());
+        sbM833U.append(" in ");
+        sbM833U.append(cls.getName());
+        sbM833U.append(" already declared with different @OnLifecycleEvent value: previous value ");
+        sbM833U.append(event2);
+        sbM833U.append(", new value ");
+        sbM833U.append(event);
+        throw new IllegalArgumentException(sbM833U.toString());
     }
 
     public CallbackInfo getInfo(Class<?> cls) {

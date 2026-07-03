@@ -1,14 +1,14 @@
 package com.discord.analytics.generated.events;
 
-import b.d.b.a.outline;
 import com.discord.analytics.generated.traits.TrackBase;
-import com.discord.analytics.generated.traits.TrackBase2;
+import com.discord.analytics.generated.traits.TrackBaseReceiver;
 import com.discord.api.science.AnalyticsSchema;
-import d0.z.d.Intrinsics3;
+import p007b.p100d.p104b.p105a.C1643a;
+import p507d0.p592z.p594d.C12238m;
 
 /* JADX INFO: compiled from: TrackPaymentSucceeded.kt */
 /* JADX INFO: loaded from: classes.dex */
-public final /* data */ class TrackPaymentSucceeded implements AnalyticsSchema, TrackBase2 {
+public final /* data */ class TrackPaymentSucceeded implements AnalyticsSchema, TrackBaseReceiver {
     private TrackBase trackBase;
     private final Long paymentId = null;
     private final Long createdAt = null;
@@ -52,7 +52,7 @@ public final /* data */ class TrackPaymentSucceeded implements AnalyticsSchema, 
             return false;
         }
         TrackPaymentSucceeded trackPaymentSucceeded = (TrackPaymentSucceeded) other;
-        return Intrinsics3.areEqual(this.paymentId, trackPaymentSucceeded.paymentId) && Intrinsics3.areEqual(this.createdAt, trackPaymentSucceeded.createdAt) && Intrinsics3.areEqual(this.paymentType, trackPaymentSucceeded.paymentType) && Intrinsics3.areEqual(this.paymentGateway, trackPaymentSucceeded.paymentGateway) && Intrinsics3.areEqual(this.price, trackPaymentSucceeded.price) && Intrinsics3.areEqual(this.currency, trackPaymentSucceeded.currency) && Intrinsics3.areEqual(this.amount, trackPaymentSucceeded.amount) && Intrinsics3.areEqual(this.amountRefunded, trackPaymentSucceeded.amountRefunded) && Intrinsics3.areEqual(this.tax, trackPaymentSucceeded.tax) && Intrinsics3.areEqual(this.taxInclusive, trackPaymentSucceeded.taxInclusive) && Intrinsics3.areEqual(this.skuId, trackPaymentSucceeded.skuId) && Intrinsics3.areEqual(this.skuType, trackPaymentSucceeded.skuType) && Intrinsics3.areEqual(this.skuSubscriptionPlanId, trackPaymentSucceeded.skuSubscriptionPlanId) && Intrinsics3.areEqual(this.subscriptionId, trackPaymentSucceeded.subscriptionId) && Intrinsics3.areEqual(this.subscriptionType, trackPaymentSucceeded.subscriptionType) && Intrinsics3.areEqual(this.subscriptionPaymentGatewayPlanId, trackPaymentSucceeded.subscriptionPaymentGatewayPlanId) && Intrinsics3.areEqual(this.subscriptionPlanId, trackPaymentSucceeded.subscriptionPlanId) && Intrinsics3.areEqual(this.subscriptionCreatedAt, trackPaymentSucceeded.subscriptionCreatedAt) && Intrinsics3.areEqual(this.subscriptionCurrentPeriodStart, trackPaymentSucceeded.subscriptionCurrentPeriodStart) && Intrinsics3.areEqual(this.subscriptionCurrentPeriodEnd, trackPaymentSucceeded.subscriptionCurrentPeriodEnd) && Intrinsics3.areEqual(this.paymentSourceId, trackPaymentSucceeded.paymentSourceId) && Intrinsics3.areEqual(this.paymentSourceCountry, trackPaymentSucceeded.paymentSourceCountry) && Intrinsics3.areEqual(this.failureMessage, trackPaymentSucceeded.failureMessage) && Intrinsics3.areEqual(this.loadId, trackPaymentSucceeded.loadId) && Intrinsics3.areEqual(this.isGift, trackPaymentSucceeded.isGift) && Intrinsics3.areEqual(this.captured, trackPaymentSucceeded.captured);
+        return C12238m.areEqual(this.paymentId, trackPaymentSucceeded.paymentId) && C12238m.areEqual(this.createdAt, trackPaymentSucceeded.createdAt) && C12238m.areEqual(this.paymentType, trackPaymentSucceeded.paymentType) && C12238m.areEqual(this.paymentGateway, trackPaymentSucceeded.paymentGateway) && C12238m.areEqual(this.price, trackPaymentSucceeded.price) && C12238m.areEqual(this.currency, trackPaymentSucceeded.currency) && C12238m.areEqual(this.amount, trackPaymentSucceeded.amount) && C12238m.areEqual(this.amountRefunded, trackPaymentSucceeded.amountRefunded) && C12238m.areEqual(this.tax, trackPaymentSucceeded.tax) && C12238m.areEqual(this.taxInclusive, trackPaymentSucceeded.taxInclusive) && C12238m.areEqual(this.skuId, trackPaymentSucceeded.skuId) && C12238m.areEqual(this.skuType, trackPaymentSucceeded.skuType) && C12238m.areEqual(this.skuSubscriptionPlanId, trackPaymentSucceeded.skuSubscriptionPlanId) && C12238m.areEqual(this.subscriptionId, trackPaymentSucceeded.subscriptionId) && C12238m.areEqual(this.subscriptionType, trackPaymentSucceeded.subscriptionType) && C12238m.areEqual(this.subscriptionPaymentGatewayPlanId, trackPaymentSucceeded.subscriptionPaymentGatewayPlanId) && C12238m.areEqual(this.subscriptionPlanId, trackPaymentSucceeded.subscriptionPlanId) && C12238m.areEqual(this.subscriptionCreatedAt, trackPaymentSucceeded.subscriptionCreatedAt) && C12238m.areEqual(this.subscriptionCurrentPeriodStart, trackPaymentSucceeded.subscriptionCurrentPeriodStart) && C12238m.areEqual(this.subscriptionCurrentPeriodEnd, trackPaymentSucceeded.subscriptionCurrentPeriodEnd) && C12238m.areEqual(this.paymentSourceId, trackPaymentSucceeded.paymentSourceId) && C12238m.areEqual(this.paymentSourceCountry, trackPaymentSucceeded.paymentSourceCountry) && C12238m.areEqual(this.failureMessage, trackPaymentSucceeded.failureMessage) && C12238m.areEqual(this.loadId, trackPaymentSucceeded.loadId) && C12238m.areEqual(this.isGift, trackPaymentSucceeded.isGift) && C12238m.areEqual(this.captured, trackPaymentSucceeded.captured);
     }
 
     public int hashCode() {
@@ -111,57 +111,57 @@ public final /* data */ class TrackPaymentSucceeded implements AnalyticsSchema, 
     }
 
     public String toString() {
-        StringBuilder sbU = outline.U("TrackPaymentSucceeded(paymentId=");
-        sbU.append(this.paymentId);
-        sbU.append(", createdAt=");
-        sbU.append(this.createdAt);
-        sbU.append(", paymentType=");
-        sbU.append(this.paymentType);
-        sbU.append(", paymentGateway=");
-        sbU.append(this.paymentGateway);
-        sbU.append(", price=");
-        sbU.append(this.price);
-        sbU.append(", currency=");
-        sbU.append(this.currency);
-        sbU.append(", amount=");
-        sbU.append(this.amount);
-        sbU.append(", amountRefunded=");
-        sbU.append(this.amountRefunded);
-        sbU.append(", tax=");
-        sbU.append(this.tax);
-        sbU.append(", taxInclusive=");
-        sbU.append(this.taxInclusive);
-        sbU.append(", skuId=");
-        sbU.append(this.skuId);
-        sbU.append(", skuType=");
-        sbU.append(this.skuType);
-        sbU.append(", skuSubscriptionPlanId=");
-        sbU.append(this.skuSubscriptionPlanId);
-        sbU.append(", subscriptionId=");
-        sbU.append(this.subscriptionId);
-        sbU.append(", subscriptionType=");
-        sbU.append(this.subscriptionType);
-        sbU.append(", subscriptionPaymentGatewayPlanId=");
-        sbU.append(this.subscriptionPaymentGatewayPlanId);
-        sbU.append(", subscriptionPlanId=");
-        sbU.append(this.subscriptionPlanId);
-        sbU.append(", subscriptionCreatedAt=");
-        sbU.append(this.subscriptionCreatedAt);
-        sbU.append(", subscriptionCurrentPeriodStart=");
-        sbU.append(this.subscriptionCurrentPeriodStart);
-        sbU.append(", subscriptionCurrentPeriodEnd=");
-        sbU.append(this.subscriptionCurrentPeriodEnd);
-        sbU.append(", paymentSourceId=");
-        sbU.append(this.paymentSourceId);
-        sbU.append(", paymentSourceCountry=");
-        sbU.append(this.paymentSourceCountry);
-        sbU.append(", failureMessage=");
-        sbU.append(this.failureMessage);
-        sbU.append(", loadId=");
-        sbU.append(this.loadId);
-        sbU.append(", isGift=");
-        sbU.append(this.isGift);
-        sbU.append(", captured=");
-        return outline.D(sbU, this.captured, ")");
+        StringBuilder sbM833U = C1643a.m833U("TrackPaymentSucceeded(paymentId=");
+        sbM833U.append(this.paymentId);
+        sbM833U.append(", createdAt=");
+        sbM833U.append(this.createdAt);
+        sbM833U.append(", paymentType=");
+        sbM833U.append(this.paymentType);
+        sbM833U.append(", paymentGateway=");
+        sbM833U.append(this.paymentGateway);
+        sbM833U.append(", price=");
+        sbM833U.append(this.price);
+        sbM833U.append(", currency=");
+        sbM833U.append(this.currency);
+        sbM833U.append(", amount=");
+        sbM833U.append(this.amount);
+        sbM833U.append(", amountRefunded=");
+        sbM833U.append(this.amountRefunded);
+        sbM833U.append(", tax=");
+        sbM833U.append(this.tax);
+        sbM833U.append(", taxInclusive=");
+        sbM833U.append(this.taxInclusive);
+        sbM833U.append(", skuId=");
+        sbM833U.append(this.skuId);
+        sbM833U.append(", skuType=");
+        sbM833U.append(this.skuType);
+        sbM833U.append(", skuSubscriptionPlanId=");
+        sbM833U.append(this.skuSubscriptionPlanId);
+        sbM833U.append(", subscriptionId=");
+        sbM833U.append(this.subscriptionId);
+        sbM833U.append(", subscriptionType=");
+        sbM833U.append(this.subscriptionType);
+        sbM833U.append(", subscriptionPaymentGatewayPlanId=");
+        sbM833U.append(this.subscriptionPaymentGatewayPlanId);
+        sbM833U.append(", subscriptionPlanId=");
+        sbM833U.append(this.subscriptionPlanId);
+        sbM833U.append(", subscriptionCreatedAt=");
+        sbM833U.append(this.subscriptionCreatedAt);
+        sbM833U.append(", subscriptionCurrentPeriodStart=");
+        sbM833U.append(this.subscriptionCurrentPeriodStart);
+        sbM833U.append(", subscriptionCurrentPeriodEnd=");
+        sbM833U.append(this.subscriptionCurrentPeriodEnd);
+        sbM833U.append(", paymentSourceId=");
+        sbM833U.append(this.paymentSourceId);
+        sbM833U.append(", paymentSourceCountry=");
+        sbM833U.append(this.paymentSourceCountry);
+        sbM833U.append(", failureMessage=");
+        sbM833U.append(this.failureMessage);
+        sbM833U.append(", loadId=");
+        sbM833U.append(this.loadId);
+        sbM833U.append(", isGift=");
+        sbM833U.append(this.isGift);
+        sbM833U.append(", captured=");
+        return C1643a.m816D(sbM833U, this.captured, ")");
     }
 }

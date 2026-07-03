@@ -3,55 +3,55 @@ package com.discord.widgets.accessibility;
 import androidx.appcompat.widget.ActivityChooserModel;
 import androidx.fragment.app.FragmentActivity;
 import androidx.fragment.app.FragmentManager;
-import b.a.a.WidgetAccessibilityDetectionDialog;
 import com.discord.app.AppComponent;
 import com.discord.stores.StoreNotices;
 import com.discord.stores.StoreStream;
 import com.discord.utilities.accessibility.AccessibilityFeatureFlags;
 import com.discord.utilities.accessibility.AccessibilityMonitor;
-import com.discord.utilities.accessibility.AccessibilityMonitor4;
+import com.discord.utilities.accessibility.AccessibilityState;
 import com.discord.utilities.error.Error;
-import com.discord.utilities.rx.ObservableExtensionsKt;
-import d0.z.d.FunctionReferenceImpl;
-import d0.z.d.Intrinsics3;
-import d0.z.d.Lambda;
+import com.discord.utilities.p501rx.ObservableExtensionsKt;
 import java.util.Objects;
 import kotlin.Unit;
 import kotlin.jvm.functions.Function0;
 import kotlin.jvm.functions.Function1;
-import rx.Subscription;
+import p007b.p008a.p009a.C0831h;
+import p507d0.p592z.p594d.AbstractC12240o;
+import p507d0.p592z.p594d.C12236k;
+import p507d0.p592z.p594d.C12238m;
+import p658rx.Subscription;
 
 /* JADX INFO: compiled from: AccessibilityDetectionNavigator.kt */
 /* JADX INFO: loaded from: classes2.dex */
 public final class AccessibilityDetectionNavigator {
     public static final AccessibilityDetectionNavigator INSTANCE = new AccessibilityDetectionNavigator();
 
-    /* JADX INFO: renamed from: com.discord.widgets.accessibility.AccessibilityDetectionNavigator$enqueueNoticeWhenEnabled$1, reason: invalid class name */
+    /* JADX INFO: renamed from: com.discord.widgets.accessibility.AccessibilityDetectionNavigator$enqueueNoticeWhenEnabled$1 */
     /* JADX INFO: compiled from: AccessibilityDetectionNavigator.kt */
-    public static final /* synthetic */ class AnonymousClass1 extends FunctionReferenceImpl implements Function1<AccessibilityMonitor4, Unit> {
-        public AnonymousClass1(AccessibilityDetectionNavigator accessibilityDetectionNavigator) {
+    public static final /* synthetic */ class C71361 extends C12236k implements Function1<AccessibilityState, Unit> {
+        public C71361(AccessibilityDetectionNavigator accessibilityDetectionNavigator) {
             super(1, accessibilityDetectionNavigator, AccessibilityDetectionNavigator.class, "showAccessibilityDetectionDialog", "showAccessibilityDetectionDialog(Lcom/discord/utilities/accessibility/AccessibilityState;)V", 0);
         }
 
         @Override // kotlin.jvm.functions.Function1
-        public /* bridge */ /* synthetic */ Unit invoke(AccessibilityMonitor4 accessibilityMonitor4) {
-            invoke2(accessibilityMonitor4);
-            return Unit.a;
+        public /* bridge */ /* synthetic */ Unit invoke(AccessibilityState accessibilityState) {
+            invoke2(accessibilityState);
+            return Unit.f27425a;
         }
 
         /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
-        public final void invoke2(AccessibilityMonitor4 accessibilityMonitor4) {
-            Intrinsics3.checkNotNullParameter(accessibilityMonitor4, "p1");
-            ((AccessibilityDetectionNavigator) this.receiver).showAccessibilityDetectionDialog(accessibilityMonitor4);
+        public final void invoke2(AccessibilityState accessibilityState) {
+            C12238m.checkNotNullParameter(accessibilityState, "p1");
+            ((AccessibilityDetectionNavigator) this.receiver).showAccessibilityDetectionDialog(accessibilityState);
         }
     }
 
-    /* JADX INFO: renamed from: com.discord.widgets.accessibility.AccessibilityDetectionNavigator$showAccessibilityDetectionDialog$1, reason: invalid class name */
+    /* JADX INFO: renamed from: com.discord.widgets.accessibility.AccessibilityDetectionNavigator$showAccessibilityDetectionDialog$1 */
     /* JADX INFO: compiled from: AccessibilityDetectionNavigator.kt */
-    public static final class AnonymousClass1 extends Lambda implements Function1<FragmentActivity, Boolean> {
-        public static final AnonymousClass1 INSTANCE = new AnonymousClass1();
+    public static final class C71371 extends AbstractC12240o implements Function1<FragmentActivity, Boolean> {
+        public static final C71371 INSTANCE = new C71371();
 
-        public AnonymousClass1() {
+        public C71371() {
             super(1);
         }
 
@@ -62,13 +62,13 @@ public final class AccessibilityDetectionNavigator {
 
         /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
         public final boolean invoke2(FragmentActivity fragmentActivity) {
-            Intrinsics3.checkNotNullParameter(fragmentActivity, ActivityChooserModel.ATTRIBUTE_ACTIVITY);
-            WidgetAccessibilityDetectionDialog.Companion companion = WidgetAccessibilityDetectionDialog.INSTANCE;
+            C12238m.checkNotNullParameter(fragmentActivity, ActivityChooserModel.ATTRIBUTE_ACTIVITY);
+            C0831h.Companion companion = C0831h.INSTANCE;
             FragmentManager supportFragmentManager = fragmentActivity.getSupportFragmentManager();
-            Intrinsics3.checkNotNullExpressionValue(supportFragmentManager, "activity.supportFragmentManager");
+            C12238m.checkNotNullExpressionValue(supportFragmentManager, "activity.supportFragmentManager");
             Objects.requireNonNull(companion);
-            Intrinsics3.checkNotNullParameter(supportFragmentManager, "fragmentManager");
-            new WidgetAccessibilityDetectionDialog().show(supportFragmentManager, "ALLOW_ACCESSIBILITY_DETECTION_DIALOG");
+            C12238m.checkNotNullParameter(supportFragmentManager, "fragmentManager");
+            new C0831h().show(supportFragmentManager, "ALLOW_ACCESSIBILITY_DETECTION_DIALOG");
             return true;
         }
     }
@@ -76,14 +76,14 @@ public final class AccessibilityDetectionNavigator {
     private AccessibilityDetectionNavigator() {
     }
 
-    private final void showAccessibilityDetectionDialog(AccessibilityMonitor4 accessibilityState) {
+    private final void showAccessibilityDetectionDialog(AccessibilityState accessibilityState) {
         if (accessibilityState.getFeatures().contains(AccessibilityFeatureFlags.SCREENREADER)) {
-            StoreStream.INSTANCE.getNotices().requestToShow(new StoreNotices.Notice("ALLOW_ACCESSIBILITY_DETECTION_DIALOG", null, 0L, 0, true, null, 0L, false, 0L, AnonymousClass1.INSTANCE, 486, null));
+            StoreStream.INSTANCE.getNotices().requestToShow(new StoreNotices.Notice("ALLOW_ACCESSIBILITY_DETECTION_DIALOG", null, 0L, 0, true, null, 0L, false, 0L, C71371.INSTANCE, 486, null));
         }
     }
 
     public final void enqueueNoticeWhenEnabled(AppComponent appComponent) {
-        Intrinsics3.checkNotNullParameter(appComponent, "appComponent");
-        ObservableExtensionsKt.appSubscribe(ObservableExtensionsKt.ui$default(AccessibilityMonitor.INSTANCE.getINSTANCE().observeAccessibilityState(), appComponent, null, 2, null), (Class<?>) AccessibilityDetectionNavigator.class, (58 & 2) != 0 ? null : null, (Function1<? super Subscription, Unit>) ((58 & 4) != 0 ? null : null), (Function1<? super Error, Unit>) ((58 & 8) != 0 ? null : null), (Function0<Unit>) ((58 & 16) != 0 ? ObservableExtensionsKt.AnonymousClass1.INSTANCE : null), (Function0<Unit>) ((58 & 32) != 0 ? ObservableExtensionsKt.AnonymousClass2.INSTANCE : null), new AnonymousClass1(this));
+        C12238m.checkNotNullParameter(appComponent, "appComponent");
+        ObservableExtensionsKt.appSubscribe(ObservableExtensionsKt.ui$default(AccessibilityMonitor.INSTANCE.getINSTANCE().observeAccessibilityState(), appComponent, null, 2, null), (Class<?>) AccessibilityDetectionNavigator.class, (58 & 2) != 0 ? null : null, (Function1<? super Subscription, Unit>) ((58 & 4) != 0 ? null : null), (Function1<? super Error, Unit>) ((58 & 8) != 0 ? null : null), (Function0<Unit>) ((58 & 16) != 0 ? ObservableExtensionsKt.C68791.INSTANCE : null), (Function0<Unit>) ((58 & 32) != 0 ? ObservableExtensionsKt.C68802.INSTANCE : null), new C71361(this));
     }
 }

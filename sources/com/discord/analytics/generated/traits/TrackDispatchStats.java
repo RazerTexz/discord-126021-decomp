@@ -1,7 +1,7 @@
 package com.discord.analytics.generated.traits;
 
-import b.d.b.a.outline;
-import d0.z.d.Intrinsics3;
+import p007b.p100d.p104b.p105a.C1643a;
+import p507d0.p592z.p594d.C12238m;
 
 /* JADX INFO: compiled from: TrackDispatchStats.kt */
 /* JADX INFO: loaded from: classes.dex */
@@ -17,7 +17,7 @@ public final /* data */ class TrackDispatchStats {
             return false;
         }
         TrackDispatchStats trackDispatchStats = (TrackDispatchStats) other;
-        return Intrinsics3.areEqual(this.stage, trackDispatchStats.stage) && Intrinsics3.areEqual(this.progressPercent, trackDispatchStats.progressPercent);
+        return C12238m.areEqual(this.stage, trackDispatchStats.stage) && C12238m.areEqual(this.progressPercent, trackDispatchStats.progressPercent);
     }
 
     public int hashCode() {
@@ -28,9 +28,9 @@ public final /* data */ class TrackDispatchStats {
     }
 
     public String toString() {
-        StringBuilder sbU = outline.U("TrackDispatchStats(stage=");
-        sbU.append(this.stage);
-        sbU.append(", progressPercent=");
-        return outline.G(sbU, this.progressPercent, ")");
+        StringBuilder sbM833U = C1643a.m833U("TrackDispatchStats(stage=");
+        sbM833U.append(this.stage);
+        sbM833U.append(", progressPercent=");
+        return C1643a.m819G(sbM833U, this.progressPercent, ")");
     }
 }

@@ -1,7 +1,7 @@
 package com.discord.api.forum;
 
-import b.d.b.a.outline;
-import d0.z.d.Intrinsics3;
+import p007b.p100d.p104b.p105a.C1643a;
+import p507d0.p592z.p594d.C12238m;
 
 /* JADX INFO: compiled from: ForumUnread.kt */
 /* JADX INFO: loaded from: classes.dex */
@@ -28,7 +28,7 @@ public final /* data */ class ForumUnread {
             return false;
         }
         ForumUnread forumUnread = (ForumUnread) other;
-        return this.threadId == forumUnread.threadId && this.missing == forumUnread.missing && Intrinsics3.areEqual(this.count, forumUnread.count);
+        return this.threadId == forumUnread.threadId && this.missing == forumUnread.missing && C12238m.areEqual(this.count, forumUnread.count);
     }
 
     /* JADX WARN: Multi-variable type inference failed */
@@ -50,11 +50,11 @@ public final /* data */ class ForumUnread {
     }
 
     public String toString() {
-        StringBuilder sbU = outline.U("ForumUnread(threadId=");
-        sbU.append(this.threadId);
-        sbU.append(", missing=");
-        sbU.append(this.missing);
-        sbU.append(", count=");
-        return outline.F(sbU, this.count, ")");
+        StringBuilder sbM833U = C1643a.m833U("ForumUnread(threadId=");
+        sbM833U.append(this.threadId);
+        sbM833U.append(", missing=");
+        sbM833U.append(this.missing);
+        sbM833U.append(", count=");
+        return C1643a.m818F(sbM833U, this.count, ")");
     }
 }

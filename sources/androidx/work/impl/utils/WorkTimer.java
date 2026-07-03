@@ -4,13 +4,13 @@ import androidx.annotation.NonNull;
 import androidx.annotation.RestrictTo;
 import androidx.annotation.VisibleForTesting;
 import androidx.work.Logger;
-import b.d.b.a.outline;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.concurrent.Executors;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.ThreadFactory;
 import java.util.concurrent.TimeUnit;
+import p007b.p100d.p104b.p105a.C1643a;
 
 /* JADX INFO: loaded from: classes.dex */
 @RestrictTo({RestrictTo.Scope.LIBRARY_GROUP})
@@ -60,9 +60,9 @@ public class WorkTimer {
             @Override // java.util.concurrent.ThreadFactory
             public Thread newThread(@NonNull Runnable runnable) {
                 Thread threadNewThread = Executors.defaultThreadFactory().newThread(runnable);
-                StringBuilder sbU = outline.U("WorkManager-WorkTimer-thread-");
-                sbU.append(this.mThreadsCreated);
-                threadNewThread.setName(sbU.toString());
+                StringBuilder sbM833U = C1643a.m833U("WorkManager-WorkTimer-thread-");
+                sbM833U.append(this.mThreadsCreated);
+                threadNewThread.setName(sbM833U.toString());
                 this.mThreadsCreated++;
                 return threadNewThread;
             }

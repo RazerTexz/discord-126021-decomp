@@ -1,18 +1,18 @@
 package com.discord.analytics.generated.events;
 
-import b.d.b.a.outline;
 import com.discord.analytics.generated.traits.TrackBase;
-import com.discord.analytics.generated.traits.TrackBase2;
+import com.discord.analytics.generated.traits.TrackBaseReceiver;
 import com.discord.analytics.generated.traits.TrackLocationMetadata;
-import com.discord.analytics.generated.traits.TrackLocationMetadata2;
+import com.discord.analytics.generated.traits.TrackLocationMetadataReceiver;
 import com.discord.analytics.generated.traits.TrackSourceMetadata;
-import com.discord.analytics.generated.traits.TrackSourceMetadata2;
+import com.discord.analytics.generated.traits.TrackSourceMetadataReceiver;
 import com.discord.api.science.AnalyticsSchema;
-import d0.z.d.Intrinsics3;
+import p007b.p100d.p104b.p105a.C1643a;
+import p507d0.p592z.p594d.C12238m;
 
 /* JADX INFO: compiled from: TrackPremiumFeatureUsage.kt */
 /* JADX INFO: loaded from: classes.dex */
-public final /* data */ class TrackPremiumFeatureUsage implements AnalyticsSchema, TrackBase2, TrackLocationMetadata2, TrackSourceMetadata2 {
+public final /* data */ class TrackPremiumFeatureUsage implements AnalyticsSchema, TrackBaseReceiver, TrackLocationMetadataReceiver, TrackSourceMetadataReceiver {
     private TrackBase trackBase;
     private TrackLocationMetadata trackLocationMetadata;
     private TrackSourceMetadata trackSourceMetadata;
@@ -39,7 +39,7 @@ public final /* data */ class TrackPremiumFeatureUsage implements AnalyticsSchem
             return false;
         }
         TrackPremiumFeatureUsage trackPremiumFeatureUsage = (TrackPremiumFeatureUsage) other;
-        return Intrinsics3.areEqual(this.featureName, trackPremiumFeatureUsage.featureName) && Intrinsics3.areEqual(this.featureTier, trackPremiumFeatureUsage.featureTier) && Intrinsics3.areEqual(this.guildId, trackPremiumFeatureUsage.guildId) && Intrinsics3.areEqual(this.rtcConnectionId, trackPremiumFeatureUsage.rtcConnectionId) && Intrinsics3.areEqual(this.mediaSessionId, trackPremiumFeatureUsage.mediaSessionId) && Intrinsics3.areEqual(this.inOverlay, trackPremiumFeatureUsage.inOverlay) && Intrinsics3.areEqual(this.applicationName, trackPremiumFeatureUsage.applicationName);
+        return C12238m.areEqual(this.featureName, trackPremiumFeatureUsage.featureName) && C12238m.areEqual(this.featureTier, trackPremiumFeatureUsage.featureTier) && C12238m.areEqual(this.guildId, trackPremiumFeatureUsage.guildId) && C12238m.areEqual(this.rtcConnectionId, trackPremiumFeatureUsage.rtcConnectionId) && C12238m.areEqual(this.mediaSessionId, trackPremiumFeatureUsage.mediaSessionId) && C12238m.areEqual(this.inOverlay, trackPremiumFeatureUsage.inOverlay) && C12238m.areEqual(this.applicationName, trackPremiumFeatureUsage.applicationName);
     }
 
     public int hashCode() {
@@ -60,19 +60,19 @@ public final /* data */ class TrackPremiumFeatureUsage implements AnalyticsSchem
     }
 
     public String toString() {
-        StringBuilder sbU = outline.U("TrackPremiumFeatureUsage(featureName=");
-        sbU.append(this.featureName);
-        sbU.append(", featureTier=");
-        sbU.append(this.featureTier);
-        sbU.append(", guildId=");
-        sbU.append(this.guildId);
-        sbU.append(", rtcConnectionId=");
-        sbU.append(this.rtcConnectionId);
-        sbU.append(", mediaSessionId=");
-        sbU.append(this.mediaSessionId);
-        sbU.append(", inOverlay=");
-        sbU.append(this.inOverlay);
-        sbU.append(", applicationName=");
-        return outline.E(sbU, this.applicationName, ")");
+        StringBuilder sbM833U = C1643a.m833U("TrackPremiumFeatureUsage(featureName=");
+        sbM833U.append(this.featureName);
+        sbM833U.append(", featureTier=");
+        sbM833U.append(this.featureTier);
+        sbM833U.append(", guildId=");
+        sbM833U.append(this.guildId);
+        sbM833U.append(", rtcConnectionId=");
+        sbM833U.append(this.rtcConnectionId);
+        sbM833U.append(", mediaSessionId=");
+        sbM833U.append(this.mediaSessionId);
+        sbM833U.append(", inOverlay=");
+        sbM833U.append(this.inOverlay);
+        sbM833U.append(", applicationName=");
+        return C1643a.m817E(sbM833U, this.applicationName, ")");
     }
 }

@@ -3,17 +3,8 @@ package com.discord.utilities.search.network;
 import com.discord.models.domain.ModelAuditLogEntry;
 import com.discord.models.domain.ModelSearchResponse;
 import com.discord.stores.StoreSearch;
+import com.discord.utilities.p501rx.ObservableExtensionsKt;
 import com.discord.utilities.rest.RestAPI;
-import com.discord.utilities.rx.ObservableExtensionsKt;
-import d0.z.d.Intrinsics3;
-import d0.z.d.Lambda;
-import j0.k.Func1;
-import j0.l.a.OnSubscribeDefer;
-import j0.l.a.OnSubscribeRedo6;
-import j0.l.c.TrampolineScheduler;
-import j0.l.e.InternalObservableUtils;
-import j0.l.e.ScalarSynchronousObservable;
-import j0.p.Schedulers2;
 import java.util.List;
 import java.util.Map;
 import java.util.concurrent.TimeUnit;
@@ -22,9 +13,18 @@ import java.util.concurrent.atomic.AtomicLong;
 import java.util.concurrent.atomic.AtomicReference;
 import kotlin.NoWhenBranchMatchedException;
 import kotlin.jvm.functions.Function1;
-import rx.Observable;
-import rx.functions.Action1;
-import rx.functions.Func0;
+import p507d0.p592z.p594d.AbstractC12240o;
+import p507d0.p592z.p594d.C12238m;
+import p637j0.p641k.InterfaceC12589b;
+import p637j0.p642l.p643a.C12634j;
+import p637j0.p642l.p643a.C12687y;
+import p637j0.p642l.p645c.C12708m;
+import p637j0.p642l.p647e.C12721k;
+import p637j0.p642l.p647e.EnumC12715e;
+import p637j0.p653p.C12781a;
+import p658rx.Observable;
+import p658rx.functions.Action1;
+import p658rx.functions.Func0;
 
 /* JADX INFO: compiled from: SearchFetcher.kt */
 /* JADX INFO: loaded from: classes2.dex */
@@ -43,18 +43,18 @@ public class SearchFetcher {
         }
     }
 
-    /* JADX INFO: renamed from: com.discord.utilities.search.network.SearchFetcher$getRestObservable$1, reason: invalid class name */
+    /* JADX INFO: renamed from: com.discord.utilities.search.network.SearchFetcher$getRestObservable$1 */
     /* JADX INFO: compiled from: SearchFetcher.kt */
-    public static final class AnonymousClass1 extends Lambda implements Function1<AtomicInteger, Integer> {
-        public static final AnonymousClass1 INSTANCE = new AnonymousClass1();
+    public static final class C69041 extends AbstractC12240o implements Function1<AtomicInteger, Integer> {
+        public static final C69041 INSTANCE = new C69041();
 
-        public AnonymousClass1() {
+        public C69041() {
             super(1);
         }
 
         @Override // kotlin.jvm.functions.Function1
         public final Integer invoke(AtomicInteger atomicInteger) {
-            Intrinsics3.checkNotNullParameter(atomicInteger, "$this$getNullIfZero");
+            C12238m.checkNotNullParameter(atomicInteger, "$this$getNullIfZero");
             int i = atomicInteger.get();
             if (i != 0) {
                 return Integer.valueOf(i);
@@ -64,15 +64,15 @@ public class SearchFetcher {
     }
 
     private final Observable<ModelSearchResponse> getRestObservable(final StoreSearch.SearchTarget searchTarget, final Long oldestMessageId, final SearchQuery searchQuery) {
-        AnonymousClass1 anonymousClass1 = AnonymousClass1.INSTANCE;
+        C69041 c69041 = C69041.INSTANCE;
         final Map<String, List<String>> params = searchQuery.getParams();
-        Observable observableA = Observable.h0(new OnSubscribeDefer(new Func0<Observable<Integer>>() { // from class: com.discord.utilities.search.network.SearchFetcher.getRestObservable.2
-            @Override // rx.functions.Func0, java.util.concurrent.Callable
+        Observable observableM11082A = Observable.m11074h0(new C12634j(new Func0<Observable<Integer>>() { // from class: com.discord.utilities.search.network.SearchFetcher.getRestObservable.2
+            @Override // p658rx.functions.Func0, java.util.concurrent.Callable
             public final Observable<Integer> call() {
-                return new ScalarSynchronousObservable(AnonymousClass1.INSTANCE.invoke(SearchFetcher.this.indexingRetryCount));
+                return new C12721k(C69041.INSTANCE.invoke(SearchFetcher.this.indexingRetryCount));
             }
-        })).A(new Func1<Integer, Observable<? extends ModelSearchResponse>>() { // from class: com.discord.utilities.search.network.SearchFetcher.getRestObservable.3
-            @Override // j0.k.Func1
+        })).m11082A(new InterfaceC12589b<Integer, Observable<? extends ModelSearchResponse>>() { // from class: com.discord.utilities.search.network.SearchFetcher.getRestObservable.3
+            @Override // p637j0.p641k.InterfaceC12589b
             public final Observable<? extends ModelSearchResponse> call(Integer num) {
                 int iOrdinal = searchTarget.getType().ordinal();
                 if (iOrdinal == 0) {
@@ -84,8 +84,8 @@ public class SearchFetcher {
                 throw new NoWhenBranchMatchedException();
             }
         });
-        Intrinsics3.checkNotNullExpressionValue(observableA, "Observable\n        .defe…  )\n          }\n        }");
-        return ObservableExtensionsKt.restSubscribeOn$default(observableA, false, 1, null);
+        C12238m.checkNotNullExpressionValue(observableM11082A, "Observable\n        .defe…  )\n          }\n        }");
+        return ObservableExtensionsKt.restSubscribeOn$default(observableM11082A, false, 1, null);
     }
 
     private final boolean isIndexing(ModelSearchResponse modelSearchResponse) {
@@ -94,41 +94,41 @@ public class SearchFetcher {
     }
 
     public Observable<ModelSearchResponse> makeQuery(StoreSearch.SearchTarget searchTarget, Long oldestMessageId, SearchQuery searchQuery) {
-        Intrinsics3.checkNotNullParameter(searchTarget, "searchTarget");
-        Intrinsics3.checkNotNullParameter(searchQuery, "searchQuery");
+        C12238m.checkNotNullParameter(searchTarget, "searchTarget");
+        C12238m.checkNotNullParameter(searchQuery, "searchQuery");
         final AtomicLong atomicLong = new AtomicLong();
-        Observable<ModelSearchResponse> observableU = getRestObservable(searchTarget, oldestMessageId, searchQuery).u(new Action1<ModelSearchResponse>() { // from class: com.discord.utilities.search.network.SearchFetcher.makeQuery.1
-            @Override // rx.functions.Action1
+        Observable<ModelSearchResponse> observableM11115u = getRestObservable(searchTarget, oldestMessageId, searchQuery).m11115u(new Action1<ModelSearchResponse>() { // from class: com.discord.utilities.search.network.SearchFetcher.makeQuery.1
+            @Override // p658rx.functions.Action1
             public final void call(ModelSearchResponse modelSearchResponse) {
                 SearchFetcher searchFetcher = SearchFetcher.this;
-                Intrinsics3.checkNotNullExpressionValue(modelSearchResponse, "searchResponse");
+                C12238m.checkNotNullExpressionValue(modelSearchResponse, "searchResponse");
                 if (searchFetcher.isIndexing(modelSearchResponse)) {
                     atomicLong.set(modelSearchResponse.getRetryMillis());
                     SearchFetcher.this.indexingRetryCount.incrementAndGet();
                 }
             }
         });
-        InternalObservableUtils.c cVar = new InternalObservableUtils.c(new Func1<Observable<? extends Void>, Observable<?>>() { // from class: com.discord.utilities.search.network.SearchFetcher.makeQuery.2
-            @Override // j0.k.Func1
+        EnumC12715e.c cVar = new EnumC12715e.c(new InterfaceC12589b<Observable<? extends Void>, Observable<?>>() { // from class: com.discord.utilities.search.network.SearchFetcher.makeQuery.2
+            @Override // p637j0.p641k.InterfaceC12589b
             public final Observable<?> call(Observable<? extends Void> observable) {
-                return observable.A(new Func1<Void, Observable<? extends Long>>() { // from class: com.discord.utilities.search.network.SearchFetcher.makeQuery.2.1
-                    @Override // j0.k.Func1
+                return observable.m11082A(new InterfaceC12589b<Void, Observable<? extends Long>>() { // from class: com.discord.utilities.search.network.SearchFetcher.makeQuery.2.1
+                    @Override // p637j0.p641k.InterfaceC12589b
                     public final Observable<? extends Long> call(Void r3) {
-                        return Observable.d0(atomicLong.get(), TimeUnit.MILLISECONDS);
+                        return Observable.m11068d0(atomicLong.get(), TimeUnit.MILLISECONDS);
                     }
                 });
             }
         });
-        AtomicReference<Schedulers2> atomicReference = Schedulers2.a;
-        Observable<ModelSearchResponse> observableB0 = Observable.h0(new OnSubscribeRedo6(observableU, cVar, false, true, TrampolineScheduler.a)).b0(new Func1<ModelSearchResponse, Boolean>() { // from class: com.discord.utilities.search.network.SearchFetcher.makeQuery.3
-            @Override // j0.k.Func1
+        AtomicReference<C12781a> atomicReference = C12781a.f27393a;
+        Observable<ModelSearchResponse> observableM11103b0 = Observable.m11074h0(new C12687y(observableM11115u, cVar, false, true, C12708m.f27250a)).m11103b0(new InterfaceC12589b<ModelSearchResponse, Boolean>() { // from class: com.discord.utilities.search.network.SearchFetcher.makeQuery.3
+            @Override // p637j0.p641k.InterfaceC12589b
             public final Boolean call(ModelSearchResponse modelSearchResponse) {
                 SearchFetcher searchFetcher = SearchFetcher.this;
-                Intrinsics3.checkNotNullExpressionValue(modelSearchResponse, "it");
+                C12238m.checkNotNullExpressionValue(modelSearchResponse, "it");
                 return Boolean.valueOf(!searchFetcher.isIndexing(modelSearchResponse));
             }
         });
-        Intrinsics3.checkNotNullExpressionValue(observableB0, "getRestObservable(search…ntil { !it.isIndexing() }");
-        return observableB0;
+        C12238m.checkNotNullExpressionValue(observableM11103b0, "getRestObservable(search…ntil { !it.isIndexing() }");
+        return observableM11103b0;
     }
 }

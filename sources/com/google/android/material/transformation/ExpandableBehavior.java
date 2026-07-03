@@ -21,25 +21,32 @@ public abstract class ExpandableBehavior extends CoordinatorLayout.Behavior<View
     private static final int STATE_UNINITIALIZED = 0;
     private int currentState;
 
-    public class a implements ViewTreeObserver.OnPreDrawListener {
-        public final /* synthetic */ View j;
-        public final /* synthetic */ int k;
-        public final /* synthetic */ ExpandableWidget l;
+    /* JADX INFO: renamed from: com.google.android.material.transformation.ExpandableBehavior$a */
+    public class ViewTreeObserverOnPreDrawListenerC11033a implements ViewTreeObserver.OnPreDrawListener {
 
-        public a(View view, int i, ExpandableWidget expandableWidget) {
-            this.j = view;
-            this.k = i;
-            this.l = expandableWidget;
+        /* JADX INFO: renamed from: j */
+        public final /* synthetic */ View f21238j;
+
+        /* JADX INFO: renamed from: k */
+        public final /* synthetic */ int f21239k;
+
+        /* JADX INFO: renamed from: l */
+        public final /* synthetic */ ExpandableWidget f21240l;
+
+        public ViewTreeObserverOnPreDrawListenerC11033a(View view, int i, ExpandableWidget expandableWidget) {
+            this.f21238j = view;
+            this.f21239k = i;
+            this.f21240l = expandableWidget;
         }
 
         /* JADX WARN: Multi-variable type inference failed */
         @Override // android.view.ViewTreeObserver.OnPreDrawListener
         public boolean onPreDraw() {
-            this.j.getViewTreeObserver().removeOnPreDrawListener(this);
-            if (ExpandableBehavior.this.currentState == this.k) {
+            this.f21238j.getViewTreeObserver().removeOnPreDrawListener(this);
+            if (ExpandableBehavior.this.currentState == this.f21239k) {
                 ExpandableBehavior expandableBehavior = ExpandableBehavior.this;
-                ExpandableWidget expandableWidget = this.l;
-                expandableBehavior.onExpandedStateChange((View) expandableWidget, this.j, expandableWidget.isExpanded(), false);
+                ExpandableWidget expandableWidget = this.f21240l;
+                expandableBehavior.onExpandedStateChange((View) expandableWidget, this.f21238j, expandableWidget.isExpanded(), false);
             }
             return false;
         }
@@ -110,7 +117,7 @@ public abstract class ExpandableBehavior extends CoordinatorLayout.Behavior<View
         }
         int i2 = expandableWidgetFindExpandableWidget.isExpanded() ? 1 : 2;
         this.currentState = i2;
-        view.getViewTreeObserver().addOnPreDrawListener(new a(view, i2, expandableWidgetFindExpandableWidget));
+        view.getViewTreeObserver().addOnPreDrawListener(new ViewTreeObserverOnPreDrawListenerC11033a(view, i2, expandableWidgetFindExpandableWidget));
         return false;
     }
 

@@ -7,10 +7,10 @@ import android.os.Looper;
 import android.util.AttributeSet;
 import android.view.SurfaceHolder;
 import android.view.SurfaceView;
-import b.d.b.a.outline;
 import org.webrtc.EglBase;
 import org.webrtc.EglRenderer;
 import org.webrtc.RendererCommon;
+import p007b.p100d.p104b.p105a.C1643a;
 
 /* JADX INFO: loaded from: classes3.dex */
 public class SurfaceViewRenderer extends SurfaceView implements SurfaceHolder.Callback, VideoSink, RendererCommon.RendererEvents {
@@ -45,7 +45,7 @@ public class SurfaceViewRenderer extends SurfaceView implements SurfaceHolder.Ca
     }
 
     private void logD(String str) {
-        Logging.d(TAG, this.resourceName + ": " + str);
+        Logging.m11027d(TAG, this.resourceName + ": " + str);
     }
 
     private void postOrRun(Runnable runnable) {
@@ -74,23 +74,23 @@ public class SurfaceViewRenderer extends SurfaceView implements SurfaceHolder.Ca
         }
         int iMin = Math.min(getWidth(), i);
         int iMin2 = Math.min(getHeight(), i2);
-        StringBuilder sbU = outline.U("updateSurfaceSize. Layout size: ");
-        sbU.append(getWidth());
-        sbU.append("x");
-        sbU.append(getHeight());
-        sbU.append(", frame size: ");
-        sbU.append(this.rotatedFrameWidth);
-        sbU.append("x");
-        sbU.append(this.rotatedFrameHeight);
-        sbU.append(", requested surface size: ");
-        sbU.append(iMin);
-        sbU.append("x");
-        sbU.append(iMin2);
-        sbU.append(", old surface size: ");
-        sbU.append(this.surfaceWidth);
-        sbU.append("x");
-        sbU.append(this.surfaceHeight);
-        logD(sbU.toString());
+        StringBuilder sbM833U = C1643a.m833U("updateSurfaceSize. Layout size: ");
+        sbM833U.append(getWidth());
+        sbM833U.append("x");
+        sbM833U.append(getHeight());
+        sbM833U.append(", frame size: ");
+        sbM833U.append(this.rotatedFrameWidth);
+        sbM833U.append("x");
+        sbM833U.append(this.rotatedFrameHeight);
+        sbM833U.append(", requested surface size: ");
+        sbM833U.append(iMin);
+        sbM833U.append("x");
+        sbM833U.append(iMin2);
+        sbM833U.append(", old surface size: ");
+        sbM833U.append(this.surfaceWidth);
+        sbM833U.append("x");
+        sbM833U.append(this.surfaceHeight);
+        logD(sbM833U.toString());
         if (iMin == this.surfaceWidth && iMin2 == this.surfaceHeight) {
             return;
         }
@@ -99,7 +99,8 @@ public class SurfaceViewRenderer extends SurfaceView implements SurfaceHolder.Ca
         getHolder().setFixedSize(iMin, iMin2);
     }
 
-    public /* synthetic */ void a(int i, int i2) {
+    /* JADX INFO: renamed from: a */
+    public /* synthetic */ void m11047a(int i, int i2) {
         this.rotatedFrameWidth = i;
         this.rotatedFrameHeight = i2;
         updateSurfaceSize();
@@ -148,7 +149,7 @@ public class SurfaceViewRenderer extends SurfaceView implements SurfaceHolder.Ca
         postOrRun(new Runnable() { // from class: h0.c.y
             @Override // java.lang.Runnable
             public final void run() {
-                this.j.a(i4, i);
+                this.f26469j.m11047a(i4, i);
             }
         });
     }
@@ -165,11 +166,11 @@ public class SurfaceViewRenderer extends SurfaceView implements SurfaceHolder.Ca
         ThreadUtils.checkIsOnMainThread();
         Point pointMeasure = this.videoLayoutMeasure.measure(i, i2, this.rotatedFrameWidth, this.rotatedFrameHeight);
         setMeasuredDimension(pointMeasure.x, pointMeasure.y);
-        StringBuilder sbU = outline.U("onMeasure(). New size: ");
-        sbU.append(pointMeasure.x);
-        sbU.append("x");
-        sbU.append(pointMeasure.y);
-        logD(sbU.toString());
+        StringBuilder sbM833U = C1643a.m833U("onMeasure(). New size: ");
+        sbM833U.append(pointMeasure.x);
+        sbM833U.append("x");
+        sbM833U.append(pointMeasure.y);
+        logD(sbM833U.toString());
     }
 
     public void pauseVideo() {

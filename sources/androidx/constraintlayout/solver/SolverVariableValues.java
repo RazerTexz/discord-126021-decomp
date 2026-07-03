@@ -1,8 +1,8 @@
 package androidx.constraintlayout.solver;
 
 import androidx.constraintlayout.solver.ArrayRow;
-import b.d.b.a.outline;
 import java.util.Arrays;
+import p007b.p100d.p104b.p105a.C1643a;
 
 /* JADX INFO: loaded from: classes.dex */
 public class SolverVariableValues implements ArrayRow.ArrayRowVariables {
@@ -31,7 +31,7 @@ public class SolverVariableValues implements ArrayRow.ArrayRowVariables {
 
     private void addToHashMap(SolverVariable solverVariable, int i) {
         int[] iArr;
-        int i2 = solverVariable.f30id % this.HASH_SIZE;
+        int i2 = solverVariable.f110id % this.HASH_SIZE;
         int[] iArr2 = this.keys;
         int i3 = iArr2[i2];
         if (i3 == -1) {
@@ -51,7 +51,7 @@ public class SolverVariableValues implements ArrayRow.ArrayRowVariables {
     }
 
     private void addVariable(int i, SolverVariable solverVariable, float f) {
-        this.variables[i] = solverVariable.f30id;
+        this.variables[i] = solverVariable.f110id;
         this.values[i] = f;
         this.previous[i] = -1;
         this.next[i] = -1;
@@ -67,9 +67,9 @@ public class SolverVariableValues implements ArrayRow.ArrayRowVariables {
                 int i2 = this.keys[i];
                 boolean z2 = false;
                 while (!z2) {
-                    StringBuilder sbX = outline.X(string, " ");
-                    sbX.append(this.variables[i2]);
-                    string = sbX.toString();
+                    StringBuilder sbM836X = C1643a.m836X(string, " ");
+                    sbM836X.append(this.variables[i2]);
+                    string = sbM836X.toString();
                     int[] iArr = this.nextKeys;
                     if (iArr[i2] != -1) {
                         i2 = iArr[i2];
@@ -131,7 +131,7 @@ public class SolverVariableValues implements ArrayRow.ArrayRowVariables {
 
     private void removeFromHashMap(SolverVariable solverVariable) {
         int[] iArr;
-        int i = solverVariable.f30id;
+        int i = solverVariable.f110id;
         int i2 = i % this.HASH_SIZE;
         int[] iArr2 = this.keys;
         int i3 = iArr2[i2];
@@ -286,7 +286,7 @@ public class SolverVariableValues implements ArrayRow.ArrayRowVariables {
     public int indexOf(SolverVariable solverVariable) {
         int[] iArr;
         if (this.mCount != 0 && solverVariable != null) {
-            int i = solverVariable.f30id;
+            int i = solverVariable.f110id;
             int i2 = this.keys[i % this.HASH_SIZE];
             if (i2 == -1) {
                 return -1;
@@ -349,7 +349,7 @@ public class SolverVariableValues implements ArrayRow.ArrayRowVariables {
         for (int i4 = 0; i4 < i; i4++) {
             int[] iArr = this.variables;
             int i5 = iArr[i2];
-            int i6 = solverVariable.f30id;
+            int i6 = solverVariable.f110id;
             if (i5 == i6) {
                 this.values[i2] = f;
                 return;
@@ -400,35 +400,35 @@ public class SolverVariableValues implements ArrayRow.ArrayRowVariables {
     }
 
     public String toString() {
-        String strW;
-        String strW2;
-        String strW3 = hashCode() + " { ";
+        String strM883w;
+        String strM883w2;
+        String strM883w3 = hashCode() + " { ";
         int i = this.mCount;
         for (int i2 = 0; i2 < i; i2++) {
             SolverVariable variable = getVariable(i2);
             if (variable != null) {
-                String str = strW3 + variable + " = " + getVariableValue(i2) + " ";
+                String str = strM883w3 + variable + " = " + getVariableValue(i2) + " ";
                 int iIndexOf = indexOf(variable);
-                String strW4 = outline.w(str, "[p: ");
+                String strM883w4 = C1643a.m883w(str, "[p: ");
                 if (this.previous[iIndexOf] != -1) {
-                    StringBuilder sbU = outline.U(strW4);
-                    sbU.append(this.mCache.mIndexedVariables[this.variables[this.previous[iIndexOf]]]);
-                    strW = sbU.toString();
+                    StringBuilder sbM833U = C1643a.m833U(strM883w4);
+                    sbM833U.append(this.mCache.mIndexedVariables[this.variables[this.previous[iIndexOf]]]);
+                    strM883w = sbM833U.toString();
                 } else {
-                    strW = outline.w(strW4, "none");
+                    strM883w = C1643a.m883w(strM883w4, "none");
                 }
-                String strW5 = outline.w(strW, ", n: ");
+                String strM883w5 = C1643a.m883w(strM883w, ", n: ");
                 if (this.next[iIndexOf] != -1) {
-                    StringBuilder sbU2 = outline.U(strW5);
-                    sbU2.append(this.mCache.mIndexedVariables[this.variables[this.next[iIndexOf]]]);
-                    strW2 = sbU2.toString();
+                    StringBuilder sbM833U2 = C1643a.m833U(strM883w5);
+                    sbM833U2.append(this.mCache.mIndexedVariables[this.variables[this.next[iIndexOf]]]);
+                    strM883w2 = sbM833U2.toString();
                 } else {
-                    strW2 = outline.w(strW5, "none");
+                    strM883w2 = C1643a.m883w(strM883w5, "none");
                 }
-                strW3 = outline.w(strW2, "]");
+                strM883w3 = C1643a.m883w(strM883w2, "]");
             }
         }
-        return outline.w(strW3, " }");
+        return C1643a.m883w(strM883w3, " }");
     }
 
     @Override // androidx.constraintlayout.solver.ArrayRow.ArrayRowVariables

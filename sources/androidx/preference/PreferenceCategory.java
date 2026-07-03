@@ -46,7 +46,7 @@ public class PreferenceCategory extends PreferenceGroup {
     }
 
     public PreferenceCategory(Context context, AttributeSet attributeSet) {
-        this(context, attributeSet, TypedArrayUtils.getAttr(context, R.attr.preferenceCategoryStyle, android.R.attr.preferenceCategoryStyle));
+        this(context, attributeSet, TypedArrayUtils.getAttr(context, C0525R.attr.preferenceCategoryStyle, android.R.attr.preferenceCategoryStyle));
     }
 
     public PreferenceCategory(Context context) {

@@ -1,9 +1,9 @@
 package androidx.constraintlayout.solver.widgets.analyzer;
 
 import androidx.constraintlayout.solver.widgets.ConstraintWidgetContainer;
-import b.d.b.a.outline;
 import java.util.ArrayList;
 import java.util.Iterator;
+import p007b.p100d.p104b.p105a.C1643a;
 
 /* JADX INFO: loaded from: classes.dex */
 public class RunGroup {
@@ -168,9 +168,9 @@ public class RunGroup {
             j = (long) ((j2 / (1.0f - biasPercent)) + (j3 / biasPercent));
         }
         float f = j;
-        long jA = ((long) ((f * biasPercent) + 0.5f)) + wrapDimension + ((long) outline.a(1.0f, biasPercent, f, 0.5f));
+        long jM839a = ((long) ((f * biasPercent) + 0.5f)) + wrapDimension + ((long) C1643a.m839a(1.0f, biasPercent, f, 0.5f));
         WidgetRun widgetRun4 = this.firstRun;
-        return (((long) widgetRun4.start.margin) + jA) - ((long) widgetRun4.end.margin);
+        return (((long) widgetRun4.start.margin) + jM839a) - ((long) widgetRun4.end.margin);
     }
 
     public void defineTerminalWidgets(boolean z2, boolean z3) {

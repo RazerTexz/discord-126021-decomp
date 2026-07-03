@@ -9,7 +9,7 @@ import androidx.room.SharedSQLiteStatement;
 import androidx.room.util.CursorUtil;
 import androidx.room.util.DBUtil;
 import androidx.room.util.StringUtil;
-import androidx.sqlite.db.SupportSQLiteStatement;
+import androidx.sqlite.p006db.SupportSQLiteStatement;
 import androidx.view.LiveData;
 import androidx.work.Constraints;
 import androidx.work.Data;
@@ -28,7 +28,9 @@ public final class WorkSpecDao_Impl implements WorkSpecDao {
     private final SharedSQLiteStatement __preparedStmtOfDelete;
     private final SharedSQLiteStatement __preparedStmtOfIncrementWorkSpecRunAttemptCount;
     private final SharedSQLiteStatement __preparedStmtOfMarkWorkSpecScheduled;
-    private final SharedSQLiteStatement __preparedStmtOfPruneFinishedWorkWithZeroDependentsIgnoringKeepForAtLeast;
+
+    /* JADX INFO: renamed from: __preparedStmtOfPruneFinishedWorkWithZeroDependentsIgnoringKeepForAtLeast */
+    private final SharedSQLiteStatement f166xd91a9514;
     private final SharedSQLiteStatement __preparedStmtOfResetScheduledState;
     private final SharedSQLiteStatement __preparedStmtOfResetWorkSpecRunAttemptCount;
     private final SharedSQLiteStatement __preparedStmtOfSetOutput;
@@ -44,7 +46,7 @@ public final class WorkSpecDao_Impl implements WorkSpecDao {
 
             @Override // androidx.room.EntityInsertionAdapter
             public void bind(SupportSQLiteStatement supportSQLiteStatement, WorkSpec workSpec) throws Throwable {
-                String str = workSpec.f38id;
+                String str = workSpec.f163id;
                 if (str == null) {
                     supportSQLiteStatement.bindNull(1);
                 } else {
@@ -154,7 +156,7 @@ public final class WorkSpecDao_Impl implements WorkSpecDao {
                 return "UPDATE workspec SET schedule_requested_at=-1 WHERE state NOT IN (2, 3, 5)";
             }
         };
-        this.__preparedStmtOfPruneFinishedWorkWithZeroDependentsIgnoringKeepForAtLeast = new SharedSQLiteStatement(roomDatabase) { // from class: androidx.work.impl.model.WorkSpecDao_Impl.9
+        this.f166xd91a9514 = new SharedSQLiteStatement(roomDatabase) { // from class: androidx.work.impl.model.WorkSpecDao_Impl.9
             @Override // androidx.room.SharedSQLiteStatement
             public String createQuery() {
                 return "DELETE FROM workspec WHERE state IN (2, 3, 5) AND (SELECT COUNT(*)=0 FROM dependency WHERE     prerequisite_id=id AND     work_spec_id NOT IN         (SELECT id FROM workspec WHERE state IN (2, 3, 5)))";
@@ -1126,7 +1128,7 @@ public final class WorkSpecDao_Impl implements WorkSpecDao {
             ArrayList arrayList = new ArrayList(cursorQuery.getCount());
             while (cursorQuery.moveToNext()) {
                 WorkSpec.IdAndState idAndState = new WorkSpec.IdAndState();
-                idAndState.f39id = cursorQuery.getString(columnIndexOrThrow);
+                idAndState.f164id = cursorQuery.getString(columnIndexOrThrow);
                 idAndState.state = WorkTypeConverters.intToState(cursorQuery.getInt(columnIndexOrThrow2));
                 arrayList.add(idAndState);
             }
@@ -1321,7 +1323,7 @@ public final class WorkSpecDao_Impl implements WorkSpecDao {
                         arrayList2 = new ArrayList<>();
                     }
                     WorkSpec.WorkInfoPojo workInfoPojo2 = new WorkSpec.WorkInfoPojo();
-                    workInfoPojo2.f40id = cursorQuery.getString(columnIndexOrThrow);
+                    workInfoPojo2.f165id = cursorQuery.getString(columnIndexOrThrow);
                     workInfoPojo2.state = WorkTypeConverters.intToState(cursorQuery.getInt(columnIndexOrThrow2));
                     workInfoPojo2.output = Data.fromByteArray(cursorQuery.getBlob(columnIndexOrThrow3));
                     workInfoPojo2.runAttemptCount = cursorQuery.getInt(columnIndexOrThrow4);
@@ -1401,7 +1403,7 @@ public final class WorkSpecDao_Impl implements WorkSpecDao {
                         arrayList3 = new ArrayList<>();
                     }
                     WorkSpec.WorkInfoPojo workInfoPojo = new WorkSpec.WorkInfoPojo();
-                    workInfoPojo.f40id = cursorQuery.getString(columnIndexOrThrow);
+                    workInfoPojo.f165id = cursorQuery.getString(columnIndexOrThrow);
                     workInfoPojo.state = WorkTypeConverters.intToState(cursorQuery.getInt(columnIndexOrThrow2));
                     workInfoPojo.output = Data.fromByteArray(cursorQuery.getBlob(columnIndexOrThrow3));
                     workInfoPojo.runAttemptCount = cursorQuery.getInt(columnIndexOrThrow4);
@@ -1472,7 +1474,7 @@ public final class WorkSpecDao_Impl implements WorkSpecDao {
                         arrayList3 = new ArrayList<>();
                     }
                     WorkSpec.WorkInfoPojo workInfoPojo = new WorkSpec.WorkInfoPojo();
-                    workInfoPojo.f40id = cursorQuery.getString(columnIndexOrThrow);
+                    workInfoPojo.f165id = cursorQuery.getString(columnIndexOrThrow);
                     workInfoPojo.state = WorkTypeConverters.intToState(cursorQuery.getInt(columnIndexOrThrow2));
                     workInfoPojo.output = Data.fromByteArray(cursorQuery.getBlob(columnIndexOrThrow3));
                     workInfoPojo.runAttemptCount = cursorQuery.getInt(columnIndexOrThrow4);
@@ -1543,7 +1545,7 @@ public final class WorkSpecDao_Impl implements WorkSpecDao {
                         arrayList3 = new ArrayList<>();
                     }
                     WorkSpec.WorkInfoPojo workInfoPojo = new WorkSpec.WorkInfoPojo();
-                    workInfoPojo.f40id = cursorQuery.getString(columnIndexOrThrow);
+                    workInfoPojo.f165id = cursorQuery.getString(columnIndexOrThrow);
                     workInfoPojo.state = WorkTypeConverters.intToState(cursorQuery.getInt(columnIndexOrThrow2));
                     workInfoPojo.output = Data.fromByteArray(cursorQuery.getBlob(columnIndexOrThrow3));
                     workInfoPojo.runAttemptCount = cursorQuery.getInt(columnIndexOrThrow4);
@@ -1630,7 +1632,7 @@ public final class WorkSpecDao_Impl implements WorkSpecDao {
                                 arrayList3 = new ArrayList();
                             }
                             WorkSpec.WorkInfoPojo workInfoPojo = new WorkSpec.WorkInfoPojo();
-                            workInfoPojo.f40id = cursorQuery.getString(columnIndexOrThrow);
+                            workInfoPojo.f165id = cursorQuery.getString(columnIndexOrThrow);
                             workInfoPojo.state = WorkTypeConverters.intToState(cursorQuery.getInt(columnIndexOrThrow2));
                             workInfoPojo.output = Data.fromByteArray(cursorQuery.getBlob(columnIndexOrThrow3));
                             workInfoPojo.runAttemptCount = cursorQuery.getInt(columnIndexOrThrow4);
@@ -1708,7 +1710,7 @@ public final class WorkSpecDao_Impl implements WorkSpecDao {
                                 arrayList3 = new ArrayList();
                             }
                             WorkSpec.WorkInfoPojo workInfoPojo = new WorkSpec.WorkInfoPojo();
-                            workInfoPojo.f40id = cursorQuery.getString(columnIndexOrThrow);
+                            workInfoPojo.f165id = cursorQuery.getString(columnIndexOrThrow);
                             workInfoPojo.state = WorkTypeConverters.intToState(cursorQuery.getInt(columnIndexOrThrow2));
                             workInfoPojo.output = Data.fromByteArray(cursorQuery.getBlob(columnIndexOrThrow3));
                             workInfoPojo.runAttemptCount = cursorQuery.getInt(columnIndexOrThrow4);
@@ -1786,7 +1788,7 @@ public final class WorkSpecDao_Impl implements WorkSpecDao {
                                 arrayList3 = new ArrayList();
                             }
                             WorkSpec.WorkInfoPojo workInfoPojo = new WorkSpec.WorkInfoPojo();
-                            workInfoPojo.f40id = cursorQuery.getString(columnIndexOrThrow);
+                            workInfoPojo.f165id = cursorQuery.getString(columnIndexOrThrow);
                             workInfoPojo.state = WorkTypeConverters.intToState(cursorQuery.getInt(columnIndexOrThrow2));
                             workInfoPojo.output = Data.fromByteArray(cursorQuery.getBlob(columnIndexOrThrow3));
                             workInfoPojo.runAttemptCount = cursorQuery.getInt(columnIndexOrThrow4);
@@ -1866,14 +1868,14 @@ public final class WorkSpecDao_Impl implements WorkSpecDao {
     @Override // androidx.work.impl.model.WorkSpecDao
     public void pruneFinishedWorkWithZeroDependentsIgnoringKeepForAtLeast() {
         this.__db.assertNotSuspendingTransaction();
-        SupportSQLiteStatement supportSQLiteStatementAcquire = this.__preparedStmtOfPruneFinishedWorkWithZeroDependentsIgnoringKeepForAtLeast.acquire();
+        SupportSQLiteStatement supportSQLiteStatementAcquire = this.f166xd91a9514.acquire();
         this.__db.beginTransaction();
         try {
             supportSQLiteStatementAcquire.executeUpdateDelete();
             this.__db.setTransactionSuccessful();
         } finally {
             this.__db.endTransaction();
-            this.__preparedStmtOfPruneFinishedWorkWithZeroDependentsIgnoringKeepForAtLeast.release(supportSQLiteStatementAcquire);
+            this.f166xd91a9514.release(supportSQLiteStatementAcquire);
         }
     }
 

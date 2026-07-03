@@ -1,12 +1,10 @@
 package com.discord.widgets.contact_sync;
 
 import androidx.annotation.MainThread;
-import b.a.d.AppViewModel;
-import b.d.b.a.outline;
 import com.discord.analytics.generated.events.network_action.TrackNetworkActionUserBulkRelationshipsUpdate;
 import com.discord.analytics.generated.events.network_action.TrackNetworkActionUserConnectionsUpdate;
 import com.discord.analytics.generated.events.network_action.TrackNetworkActionUserContactsSync;
-import com.discord.analytics.generated.traits.TrackNetworkMetadata2;
+import com.discord.analytics.generated.traits.TrackNetworkMetadataReceiver;
 import com.discord.api.connectedaccounts.ConnectedAccount;
 import com.discord.api.friendsuggestions.AllowedInSuggestionsType;
 import com.discord.api.friendsuggestions.BulkAddFriendsResponse;
@@ -23,32 +21,21 @@ import com.discord.stores.StoreStream;
 import com.discord.stores.StoreUser;
 import com.discord.stores.StoreUserConnections;
 import com.discord.stores.updates.ObservationDeck;
-import com.discord.stores.updates.ObservationDeck4;
-import com.discord.stores.utilities.RestCallState5;
+import com.discord.stores.updates.ObservationDeckProvider;
+import com.discord.stores.utilities.RestCallStateKt;
 import com.discord.utilities.analytics.AnalyticsTracker;
 import com.discord.utilities.captcha.CaptchaHelper;
 import com.discord.utilities.error.Error;
 import com.discord.utilities.features.GrowthTeamFeatures;
 import com.discord.utilities.mg_recycler.MGRecyclerAdapterSimple;
 import com.discord.utilities.mg_recycler.MGRecyclerDataPayload;
+import com.discord.utilities.p501rx.ObservableExtensionsKt;
 import com.discord.utilities.rest.RestAPI;
-import com.discord.utilities.rx.ObservableExtensionsKt;
 import com.discord.utilities.time.ClockFactory;
 import com.discord.utilities.user.UserUtils;
-import com.discord.widgets.captcha.WidgetCaptcha4;
+import com.discord.widgets.captcha.WidgetCaptchaKt;
 import com.discord.widgets.contact_sync.WidgetContactSyncViewModel;
 import com.discord.widgets.user.phone.WidgetUserPhoneManage;
-import d0.Tuples;
-import d0.g0.Strings4;
-import d0.g0.StringsJVM;
-import d0.t.Collections2;
-import d0.t.Iterables2;
-import d0.t.Maps6;
-import d0.t.MapsJVM;
-import d0.t._Collections;
-import d0.z.d.Intrinsics3;
-import d0.z.d.Lambda;
-import j0.k.Func1;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Iterator;
@@ -58,18 +45,31 @@ import java.util.Map;
 import java.util.Set;
 import java.util.concurrent.TimeUnit;
 import kotlin.NoWhenBranchMatchedException;
-import kotlin.Tuples2;
+import kotlin.Pair;
 import kotlin.Unit;
 import kotlin.jvm.functions.Function0;
 import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.DefaultConstructorMarker;
-import rx.Observable;
-import rx.Subscription;
-import rx.subjects.PublishSubject;
+import p007b.p008a.p018d.AbstractC0859d0;
+import p007b.p100d.p104b.p105a.C1643a;
+import p507d0.C12116o;
+import p507d0.p579g0.C12103t;
+import p507d0.p579g0.C12106w;
+import p507d0.p580t.C12134g0;
+import p507d0.p580t.C12136h0;
+import p507d0.p580t.C12147n;
+import p507d0.p580t.C12149o;
+import p507d0.p580t.C12163u;
+import p507d0.p592z.p594d.AbstractC12240o;
+import p507d0.p592z.p594d.C12238m;
+import p637j0.p641k.InterfaceC12589b;
+import p658rx.Observable;
+import p658rx.Subscription;
+import p658rx.subjects.PublishSubject;
 
 /* JADX INFO: compiled from: WidgetContactSyncViewModel.kt */
 /* JADX INFO: loaded from: classes2.dex */
-public final class WidgetContactSyncViewModel extends AppViewModel<ViewState> {
+public final class WidgetContactSyncViewModel extends AbstractC0859d0<ViewState> {
 
     /* JADX INFO: renamed from: Companion, reason: from kotlin metadata */
     public static final Companion INSTANCE = new Companion(null);
@@ -79,22 +79,22 @@ public final class WidgetContactSyncViewModel extends AppViewModel<ViewState> {
     private final RestAPI restAPI;
     private final ContactSyncFlowAnalytics tracker;
 
-    /* JADX INFO: renamed from: com.discord.widgets.contact_sync.WidgetContactSyncViewModel$1, reason: invalid class name */
+    /* JADX INFO: renamed from: com.discord.widgets.contact_sync.WidgetContactSyncViewModel$1 */
     /* JADX INFO: compiled from: WidgetContactSyncViewModel.kt */
-    public static final class AnonymousClass1 extends Lambda implements Function1<StoreState, Unit> {
-        public AnonymousClass1() {
+    public static final class C82451 extends AbstractC12240o implements Function1<StoreState, Unit> {
+        public C82451() {
             super(1);
         }
 
         @Override // kotlin.jvm.functions.Function1
         public /* bridge */ /* synthetic */ Unit invoke(StoreState storeState) {
             invoke2(storeState);
-            return Unit.a;
+            return Unit.f27425a;
         }
 
         /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
         public final void invoke2(StoreState storeState) {
-            Intrinsics3.checkNotNullParameter(storeState, "storeState");
+            C12238m.checkNotNullParameter(storeState, "storeState");
             WidgetContactSyncViewModel.this.handleStoreState(storeState);
         }
     }
@@ -109,8 +109,8 @@ public final class WidgetContactSyncViewModel extends AppViewModel<ViewState> {
             final StoreUser users = companion.getUsers();
             final StorePhone phone = companion.getPhone();
             final StoreUserConnections userConnections = companion.getUserConnections();
-            Observable<StoreState> observableG = ObservableExtensionsKt.leadingEdgeThrottle(ObservationDeck.connectRx$default(ObservationDeck4.get(), new ObservationDeck.UpdateSource[]{users, phone, userConnections}, false, null, null, 14, null), 1L, TimeUnit.SECONDS).G(new Func1<Unit, StoreState>() { // from class: com.discord.widgets.contact_sync.WidgetContactSyncViewModel$Companion$observeStores$1
-                @Override // j0.k.Func1
+            Observable<StoreState> observableM11083G = ObservableExtensionsKt.leadingEdgeThrottle(ObservationDeck.connectRx$default(ObservationDeckProvider.get(), new ObservationDeck.UpdateSource[]{users, phone, userConnections}, false, null, null, 14, null), 1L, TimeUnit.SECONDS).m11083G(new InterfaceC12589b<Unit, StoreState>() { // from class: com.discord.widgets.contact_sync.WidgetContactSyncViewModel$Companion$observeStores$1
+                @Override // p637j0.p641k.InterfaceC12589b
                 public final WidgetContactSyncViewModel.StoreState call(Unit unit) {
                     ConnectedAccount connectedAccountPrevious;
                     MeUser meSnapshot = users.getMeSnapshot();
@@ -119,7 +119,7 @@ public final class WidgetContactSyncViewModel extends AppViewModel<ViewState> {
                     ListIterator<ConnectedAccount> listIterator = stateSnapshot.listIterator(stateSnapshot.size());
                     while (listIterator.hasPrevious()) {
                         connectedAccountPrevious = listIterator.previous();
-                        if (Intrinsics3.areEqual(connectedAccountPrevious.getType(), "contacts")) {
+                        if (C12238m.areEqual(connectedAccountPrevious.getType(), "contacts")) {
                             return new WidgetContactSyncViewModel.StoreState(meSnapshot.getPhoneNumber(), UserUtils.getUserNameWithDiscriminator$default(UserUtils.INSTANCE, meSnapshot, null, null, 3, null).toString(), countryCode, connectedAccountPrevious);
                         }
                     }
@@ -127,8 +127,8 @@ public final class WidgetContactSyncViewModel extends AppViewModel<ViewState> {
                     return new WidgetContactSyncViewModel.StoreState(meSnapshot.getPhoneNumber(), UserUtils.getUserNameWithDiscriminator$default(UserUtils.INSTANCE, meSnapshot, null, null, 3, null).toString(), countryCode, connectedAccountPrevious);
                 }
             });
-            Intrinsics3.checkNotNullExpressionValue(observableG, "ObservationDeckProvider\n…            )\n          }");
-            return observableG;
+            C12238m.checkNotNullExpressionValue(observableM11083G, "ObservationDeckProvider\n…            )\n          }");
+            return observableM11083G;
         }
 
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
@@ -268,7 +268,7 @@ public final class WidgetContactSyncViewModel extends AppViewModel<ViewState> {
             /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
             public FriendSuggestionItem(FriendSuggestion friendSuggestion, boolean z2) {
                 super(0, null);
-                Intrinsics3.checkNotNullParameter(friendSuggestion, "suggestion");
+                C12238m.checkNotNullParameter(friendSuggestion, "suggestion");
                 this.suggestion = friendSuggestion;
                 this.selected = z2;
                 this.key = String.valueOf(friendSuggestion.getSuggestedUser().getId());
@@ -295,7 +295,7 @@ public final class WidgetContactSyncViewModel extends AppViewModel<ViewState> {
             }
 
             public final FriendSuggestionItem copy(FriendSuggestion suggestion, boolean selected) {
-                Intrinsics3.checkNotNullParameter(suggestion, "suggestion");
+                C12238m.checkNotNullParameter(suggestion, "suggestion");
                 return new FriendSuggestionItem(suggestion, selected);
             }
 
@@ -307,7 +307,7 @@ public final class WidgetContactSyncViewModel extends AppViewModel<ViewState> {
                     return false;
                 }
                 FriendSuggestionItem friendSuggestionItem = (FriendSuggestionItem) other;
-                return Intrinsics3.areEqual(this.suggestion, friendSuggestionItem.suggestion) && this.selected == friendSuggestionItem.selected;
+                return C12238m.areEqual(this.suggestion, friendSuggestionItem.suggestion) && this.selected == friendSuggestionItem.selected;
             }
 
             @Override // com.discord.utilities.mg_recycler.MGRecyclerDataPayload, com.discord.utilities.recycler.DiffKeyProvider
@@ -340,10 +340,10 @@ public final class WidgetContactSyncViewModel extends AppViewModel<ViewState> {
             }
 
             public String toString() {
-                StringBuilder sbU = outline.U("FriendSuggestionItem(suggestion=");
-                sbU.append(this.suggestion);
-                sbU.append(", selected=");
-                return outline.O(sbU, this.selected, ")");
+                StringBuilder sbM833U = C1643a.m833U("FriendSuggestionItem(suggestion=");
+                sbM833U.append(this.suggestion);
+                sbM833U.append(", selected=");
+                return C1643a.m827O(sbM833U, this.selected, ")");
             }
         }
 
@@ -369,8 +369,8 @@ public final class WidgetContactSyncViewModel extends AppViewModel<ViewState> {
         private final String username;
 
         public StoreState(String str, String str2, PhoneCountryCode phoneCountryCode, ConnectedAccount connectedAccount) {
-            Intrinsics3.checkNotNullParameter(str2, "username");
-            Intrinsics3.checkNotNullParameter(phoneCountryCode, "countryCode");
+            C12238m.checkNotNullParameter(str2, "username");
+            C12238m.checkNotNullParameter(phoneCountryCode, "countryCode");
             this.userPhone = str;
             this.username = str2;
             this.countryCode = phoneCountryCode;
@@ -414,8 +414,8 @@ public final class WidgetContactSyncViewModel extends AppViewModel<ViewState> {
         }
 
         public final StoreState copy(String userPhone, String username, PhoneCountryCode countryCode, ConnectedAccount contactsConnection) {
-            Intrinsics3.checkNotNullParameter(username, "username");
-            Intrinsics3.checkNotNullParameter(countryCode, "countryCode");
+            C12238m.checkNotNullParameter(username, "username");
+            C12238m.checkNotNullParameter(countryCode, "countryCode");
             return new StoreState(userPhone, username, countryCode, contactsConnection);
         }
 
@@ -427,7 +427,7 @@ public final class WidgetContactSyncViewModel extends AppViewModel<ViewState> {
                 return false;
             }
             StoreState storeState = (StoreState) other;
-            return Intrinsics3.areEqual(this.userPhone, storeState.userPhone) && Intrinsics3.areEqual(this.username, storeState.username) && Intrinsics3.areEqual(this.countryCode, storeState.countryCode) && Intrinsics3.areEqual(this.contactsConnection, storeState.contactsConnection);
+            return C12238m.areEqual(this.userPhone, storeState.userPhone) && C12238m.areEqual(this.username, storeState.username) && C12238m.areEqual(this.countryCode, storeState.countryCode) && C12238m.areEqual(this.contactsConnection, storeState.contactsConnection);
         }
 
         public final ConnectedAccount getContactsConnection() {
@@ -458,16 +458,16 @@ public final class WidgetContactSyncViewModel extends AppViewModel<ViewState> {
         }
 
         public String toString() {
-            StringBuilder sbU = outline.U("StoreState(userPhone=");
-            sbU.append(this.userPhone);
-            sbU.append(", username=");
-            sbU.append(this.username);
-            sbU.append(", countryCode=");
-            sbU.append(this.countryCode);
-            sbU.append(", contactsConnection=");
-            sbU.append(this.contactsConnection);
-            sbU.append(")");
-            return sbU.toString();
+            StringBuilder sbM833U = C1643a.m833U("StoreState(userPhone=");
+            sbM833U.append(this.userPhone);
+            sbM833U.append(", username=");
+            sbM833U.append(this.username);
+            sbM833U.append(", countryCode=");
+            sbM833U.append(this.countryCode);
+            sbM833U.append(", contactsConnection=");
+            sbM833U.append(this.contactsConnection);
+            sbM833U.append(")");
+            return sbM833U.toString();
         }
     }
 
@@ -544,10 +544,10 @@ public final class WidgetContactSyncViewModel extends AppViewModel<ViewState> {
         }
 
         public String toString() {
-            StringBuilder sbU = outline.U("ToolbarConfig(showBackButton=");
-            sbU.append(this.showBackButton);
-            sbU.append(", showSkip=");
-            return outline.O(sbU, this.showSkip, ")");
+            StringBuilder sbM833U = C1643a.m833U("ToolbarConfig(showBackButton=");
+            sbM833U.append(this.showBackButton);
+            sbM833U.append(", showSkip=");
+            return C1643a.m827O(sbM833U, this.showSkip, ")");
         }
     }
 
@@ -572,13 +572,13 @@ public final class WidgetContactSyncViewModel extends AppViewModel<ViewState> {
 
         /* JADX WARN: Multi-variable type inference failed */
         public ViewState(boolean z2, ContactSyncMode contactSyncMode, String str, ConnectedAccount connectedAccount, PhoneCountryCode phoneCountryCode, String str2, String str3, boolean z3, boolean z4, Views views, boolean z5, boolean z6, String str4, List<? extends Item> list, List<Long> list2, ToolbarConfig toolbarConfig) {
-            Intrinsics3.checkNotNullParameter(contactSyncMode, "mode");
-            Intrinsics3.checkNotNullParameter(phoneCountryCode, "countryCode");
-            Intrinsics3.checkNotNullParameter(str2, "username");
-            Intrinsics3.checkNotNullParameter(views, "displayedChild");
-            Intrinsics3.checkNotNullParameter(list, "friendSuggestions");
-            Intrinsics3.checkNotNullParameter(list2, "selectedFriendIds");
-            Intrinsics3.checkNotNullParameter(toolbarConfig, "toolbarConfig");
+            C12238m.checkNotNullParameter(contactSyncMode, "mode");
+            C12238m.checkNotNullParameter(phoneCountryCode, "countryCode");
+            C12238m.checkNotNullParameter(str2, "username");
+            C12238m.checkNotNullParameter(views, "displayedChild");
+            C12238m.checkNotNullParameter(list, "friendSuggestions");
+            C12238m.checkNotNullParameter(list2, "selectedFriendIds");
+            C12238m.checkNotNullParameter(toolbarConfig, "toolbarConfig");
             this.landingNextEnabled = z2;
             this.mode = contactSyncMode;
             this.phoneNumber = str;
@@ -681,13 +681,13 @@ public final class WidgetContactSyncViewModel extends AppViewModel<ViewState> {
         }
 
         public final ViewState copy(boolean landingNextEnabled, ContactSyncMode mode, String phoneNumber, ConnectedAccount existingConnection, PhoneCountryCode countryCode, String username, String name, boolean isSubmitting, boolean permissionsDenied, Views displayedChild, boolean allowPhone, boolean allowEmail, String bulkAddToken, List<? extends Item> friendSuggestions, List<Long> selectedFriendIds, ToolbarConfig toolbarConfig) {
-            Intrinsics3.checkNotNullParameter(mode, "mode");
-            Intrinsics3.checkNotNullParameter(countryCode, "countryCode");
-            Intrinsics3.checkNotNullParameter(username, "username");
-            Intrinsics3.checkNotNullParameter(displayedChild, "displayedChild");
-            Intrinsics3.checkNotNullParameter(friendSuggestions, "friendSuggestions");
-            Intrinsics3.checkNotNullParameter(selectedFriendIds, "selectedFriendIds");
-            Intrinsics3.checkNotNullParameter(toolbarConfig, "toolbarConfig");
+            C12238m.checkNotNullParameter(mode, "mode");
+            C12238m.checkNotNullParameter(countryCode, "countryCode");
+            C12238m.checkNotNullParameter(username, "username");
+            C12238m.checkNotNullParameter(displayedChild, "displayedChild");
+            C12238m.checkNotNullParameter(friendSuggestions, "friendSuggestions");
+            C12238m.checkNotNullParameter(selectedFriendIds, "selectedFriendIds");
+            C12238m.checkNotNullParameter(toolbarConfig, "toolbarConfig");
             return new ViewState(landingNextEnabled, mode, phoneNumber, existingConnection, countryCode, username, name, isSubmitting, permissionsDenied, displayedChild, allowPhone, allowEmail, bulkAddToken, friendSuggestions, selectedFriendIds, toolbarConfig);
         }
 
@@ -699,7 +699,7 @@ public final class WidgetContactSyncViewModel extends AppViewModel<ViewState> {
                 return false;
             }
             ViewState viewState = (ViewState) other;
-            return this.landingNextEnabled == viewState.landingNextEnabled && Intrinsics3.areEqual(this.mode, viewState.mode) && Intrinsics3.areEqual(this.phoneNumber, viewState.phoneNumber) && Intrinsics3.areEqual(this.existingConnection, viewState.existingConnection) && Intrinsics3.areEqual(this.countryCode, viewState.countryCode) && Intrinsics3.areEqual(this.username, viewState.username) && Intrinsics3.areEqual(this.name, viewState.name) && this.isSubmitting == viewState.isSubmitting && this.permissionsDenied == viewState.permissionsDenied && Intrinsics3.areEqual(this.displayedChild, viewState.displayedChild) && this.allowPhone == viewState.allowPhone && this.allowEmail == viewState.allowEmail && Intrinsics3.areEqual(this.bulkAddToken, viewState.bulkAddToken) && Intrinsics3.areEqual(this.friendSuggestions, viewState.friendSuggestions) && Intrinsics3.areEqual(this.selectedFriendIds, viewState.selectedFriendIds) && Intrinsics3.areEqual(this.toolbarConfig, viewState.toolbarConfig);
+            return this.landingNextEnabled == viewState.landingNextEnabled && C12238m.areEqual(this.mode, viewState.mode) && C12238m.areEqual(this.phoneNumber, viewState.phoneNumber) && C12238m.areEqual(this.existingConnection, viewState.existingConnection) && C12238m.areEqual(this.countryCode, viewState.countryCode) && C12238m.areEqual(this.username, viewState.username) && C12238m.areEqual(this.name, viewState.name) && this.isSubmitting == viewState.isSubmitting && this.permissionsDenied == viewState.permissionsDenied && C12238m.areEqual(this.displayedChild, viewState.displayedChild) && this.allowPhone == viewState.allowPhone && this.allowEmail == viewState.allowEmail && C12238m.areEqual(this.bulkAddToken, viewState.bulkAddToken) && C12238m.areEqual(this.friendSuggestions, viewState.friendSuggestions) && C12238m.areEqual(this.selectedFriendIds, viewState.selectedFriendIds) && C12238m.areEqual(this.toolbarConfig, viewState.toolbarConfig);
         }
 
         public final boolean getAllowEmail() {
@@ -835,40 +835,40 @@ public final class WidgetContactSyncViewModel extends AppViewModel<ViewState> {
         }
 
         public String toString() {
-            StringBuilder sbU = outline.U("ViewState(landingNextEnabled=");
-            sbU.append(this.landingNextEnabled);
-            sbU.append(", mode=");
-            sbU.append(this.mode);
-            sbU.append(", phoneNumber=");
-            sbU.append(this.phoneNumber);
-            sbU.append(", existingConnection=");
-            sbU.append(this.existingConnection);
-            sbU.append(", countryCode=");
-            sbU.append(this.countryCode);
-            sbU.append(", username=");
-            sbU.append(this.username);
-            sbU.append(", name=");
-            sbU.append(this.name);
-            sbU.append(", isSubmitting=");
-            sbU.append(this.isSubmitting);
-            sbU.append(", permissionsDenied=");
-            sbU.append(this.permissionsDenied);
-            sbU.append(", displayedChild=");
-            sbU.append(this.displayedChild);
-            sbU.append(", allowPhone=");
-            sbU.append(this.allowPhone);
-            sbU.append(", allowEmail=");
-            sbU.append(this.allowEmail);
-            sbU.append(", bulkAddToken=");
-            sbU.append(this.bulkAddToken);
-            sbU.append(", friendSuggestions=");
-            sbU.append(this.friendSuggestions);
-            sbU.append(", selectedFriendIds=");
-            sbU.append(this.selectedFriendIds);
-            sbU.append(", toolbarConfig=");
-            sbU.append(this.toolbarConfig);
-            sbU.append(")");
-            return sbU.toString();
+            StringBuilder sbM833U = C1643a.m833U("ViewState(landingNextEnabled=");
+            sbM833U.append(this.landingNextEnabled);
+            sbM833U.append(", mode=");
+            sbM833U.append(this.mode);
+            sbM833U.append(", phoneNumber=");
+            sbM833U.append(this.phoneNumber);
+            sbM833U.append(", existingConnection=");
+            sbM833U.append(this.existingConnection);
+            sbM833U.append(", countryCode=");
+            sbM833U.append(this.countryCode);
+            sbM833U.append(", username=");
+            sbM833U.append(this.username);
+            sbM833U.append(", name=");
+            sbM833U.append(this.name);
+            sbM833U.append(", isSubmitting=");
+            sbM833U.append(this.isSubmitting);
+            sbM833U.append(", permissionsDenied=");
+            sbM833U.append(this.permissionsDenied);
+            sbM833U.append(", displayedChild=");
+            sbM833U.append(this.displayedChild);
+            sbM833U.append(", allowPhone=");
+            sbM833U.append(this.allowPhone);
+            sbM833U.append(", allowEmail=");
+            sbM833U.append(this.allowEmail);
+            sbM833U.append(", bulkAddToken=");
+            sbM833U.append(this.bulkAddToken);
+            sbM833U.append(", friendSuggestions=");
+            sbM833U.append(this.friendSuggestions);
+            sbM833U.append(", selectedFriendIds=");
+            sbM833U.append(this.selectedFriendIds);
+            sbM833U.append(", toolbarConfig=");
+            sbM833U.append(this.toolbarConfig);
+            sbM833U.append(")");
+            return sbM833U.toString();
         }
     }
 
@@ -922,265 +922,265 @@ public final class WidgetContactSyncViewModel extends AppViewModel<ViewState> {
         }
     }
 
-    /* JADX INFO: renamed from: com.discord.widgets.contact_sync.WidgetContactSyncViewModel$onBulkAddFriends$1, reason: invalid class name */
+    /* JADX INFO: renamed from: com.discord.widgets.contact_sync.WidgetContactSyncViewModel$onBulkAddFriends$1 */
     /* JADX INFO: compiled from: WidgetContactSyncViewModel.kt */
-    public static final class AnonymousClass1 extends Lambda implements Function1<BulkAddFriendsResponse, TrackNetworkMetadata2> {
-        public static final AnonymousClass1 INSTANCE = new AnonymousClass1();
+    public static final class C82461 extends AbstractC12240o implements Function1<BulkAddFriendsResponse, TrackNetworkMetadataReceiver> {
+        public static final C82461 INSTANCE = new C82461();
 
-        public AnonymousClass1() {
+        public C82461() {
             super(1);
         }
 
         @Override // kotlin.jvm.functions.Function1
-        public final TrackNetworkMetadata2 invoke(BulkAddFriendsResponse bulkAddFriendsResponse) {
+        public final TrackNetworkMetadataReceiver invoke(BulkAddFriendsResponse bulkAddFriendsResponse) {
             return new TrackNetworkActionUserBulkRelationshipsUpdate();
         }
     }
 
-    /* JADX INFO: renamed from: com.discord.widgets.contact_sync.WidgetContactSyncViewModel$onBulkAddFriends$2, reason: invalid class name */
+    /* JADX INFO: renamed from: com.discord.widgets.contact_sync.WidgetContactSyncViewModel$onBulkAddFriends$2 */
     /* JADX INFO: compiled from: WidgetContactSyncViewModel.kt */
-    public static final class AnonymousClass2 extends Lambda implements Function1<BulkAddFriendsResponse, Unit> {
-        public AnonymousClass2() {
+    public static final class C82472 extends AbstractC12240o implements Function1<BulkAddFriendsResponse, Unit> {
+        public C82472() {
             super(1);
         }
 
         @Override // kotlin.jvm.functions.Function1
         public /* bridge */ /* synthetic */ Unit invoke(BulkAddFriendsResponse bulkAddFriendsResponse) {
             invoke2(bulkAddFriendsResponse);
-            return Unit.a;
+            return Unit.f27425a;
         }
 
         /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
         public final void invoke2(BulkAddFriendsResponse bulkAddFriendsResponse) {
-            Intrinsics3.checkNotNullParameter(bulkAddFriendsResponse, "it");
+            C12238m.checkNotNullParameter(bulkAddFriendsResponse, "it");
             WidgetContactSyncViewModel.this.handleFriendsAdded(bulkAddFriendsResponse);
         }
     }
 
-    /* JADX INFO: renamed from: com.discord.widgets.contact_sync.WidgetContactSyncViewModel$onBulkAddFriends$3, reason: invalid class name */
+    /* JADX INFO: renamed from: com.discord.widgets.contact_sync.WidgetContactSyncViewModel$onBulkAddFriends$3 */
     /* JADX INFO: compiled from: WidgetContactSyncViewModel.kt */
-    public static final class AnonymousClass3 extends Lambda implements Function1<Error, Unit> {
-        public AnonymousClass3() {
+    public static final class C82483 extends AbstractC12240o implements Function1<Error, Unit> {
+        public C82483() {
             super(1);
         }
 
         @Override // kotlin.jvm.functions.Function1
         public /* bridge */ /* synthetic */ Unit invoke(Error error) {
             invoke2(error);
-            return Unit.a;
+            return Unit.f27425a;
         }
 
         /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
         public final void invoke2(Error error) {
-            Intrinsics3.checkNotNullParameter(error, "it");
+            C12238m.checkNotNullParameter(error, "it");
             WidgetContactSyncViewModel.this.handleFriendsAddedError(error);
         }
     }
 
-    /* JADX INFO: renamed from: com.discord.widgets.contact_sync.WidgetContactSyncViewModel$onContactsFetched$1, reason: invalid class name */
+    /* JADX INFO: renamed from: com.discord.widgets.contact_sync.WidgetContactSyncViewModel$onContactsFetched$1 */
     /* JADX INFO: compiled from: WidgetContactSyncViewModel.kt */
-    public static final class AnonymousClass1 extends Lambda implements Function1<BulkFriendSuggestions, TrackNetworkMetadata2> {
-        public static final AnonymousClass1 INSTANCE = new AnonymousClass1();
+    public static final class C82491 extends AbstractC12240o implements Function1<BulkFriendSuggestions, TrackNetworkMetadataReceiver> {
+        public static final C82491 INSTANCE = new C82491();
 
-        public AnonymousClass1() {
+        public C82491() {
             super(1);
         }
 
         @Override // kotlin.jvm.functions.Function1
-        public final TrackNetworkMetadata2 invoke(BulkFriendSuggestions bulkFriendSuggestions) {
+        public final TrackNetworkMetadataReceiver invoke(BulkFriendSuggestions bulkFriendSuggestions) {
             return new TrackNetworkActionUserContactsSync();
         }
     }
 
-    /* JADX INFO: renamed from: com.discord.widgets.contact_sync.WidgetContactSyncViewModel$onContactsFetched$2, reason: invalid class name */
+    /* JADX INFO: renamed from: com.discord.widgets.contact_sync.WidgetContactSyncViewModel$onContactsFetched$2 */
     /* JADX INFO: compiled from: WidgetContactSyncViewModel.kt */
-    public static final class AnonymousClass2 extends Lambda implements Function1<BulkFriendSuggestions, Unit> {
-        public AnonymousClass2() {
+    public static final class C82502 extends AbstractC12240o implements Function1<BulkFriendSuggestions, Unit> {
+        public C82502() {
             super(1);
         }
 
         @Override // kotlin.jvm.functions.Function1
         public /* bridge */ /* synthetic */ Unit invoke(BulkFriendSuggestions bulkFriendSuggestions) {
             invoke2(bulkFriendSuggestions);
-            return Unit.a;
+            return Unit.f27425a;
         }
 
         /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
         public final void invoke2(BulkFriendSuggestions bulkFriendSuggestions) {
-            Intrinsics3.checkNotNullParameter(bulkFriendSuggestions, "it");
+            C12238m.checkNotNullParameter(bulkFriendSuggestions, "it");
             WidgetContactSyncViewModel.this.handleFriendSuggestions(bulkFriendSuggestions);
         }
     }
 
-    /* JADX INFO: renamed from: com.discord.widgets.contact_sync.WidgetContactSyncViewModel$onContactsFetched$3, reason: invalid class name */
+    /* JADX INFO: renamed from: com.discord.widgets.contact_sync.WidgetContactSyncViewModel$onContactsFetched$3 */
     /* JADX INFO: compiled from: WidgetContactSyncViewModel.kt */
-    public static final class AnonymousClass3 extends Lambda implements Function1<Error, Unit> {
-        public AnonymousClass3() {
+    public static final class C82513 extends AbstractC12240o implements Function1<Error, Unit> {
+        public C82513() {
             super(1);
         }
 
         @Override // kotlin.jvm.functions.Function1
         public /* bridge */ /* synthetic */ Unit invoke(Error error) {
             invoke2(error);
-            return Unit.a;
+            return Unit.f27425a;
         }
 
         /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
         public final void invoke2(Error error) {
-            Intrinsics3.checkNotNullParameter(error, "it");
+            C12238m.checkNotNullParameter(error, "it");
             WidgetContactSyncViewModel.this.handleUploadError(error);
         }
     }
 
-    /* JADX INFO: renamed from: com.discord.widgets.contact_sync.WidgetContactSyncViewModel$onNameSubmitted$1, reason: invalid class name */
+    /* JADX INFO: renamed from: com.discord.widgets.contact_sync.WidgetContactSyncViewModel$onNameSubmitted$1 */
     /* JADX INFO: compiled from: WidgetContactSyncViewModel.kt */
-    public static final class AnonymousClass1 extends Lambda implements Function1<ConnectedAccount, TrackNetworkMetadata2> {
+    public static final class C82521 extends AbstractC12240o implements Function1<ConnectedAccount, TrackNetworkMetadataReceiver> {
         public final /* synthetic */ String $submittingName;
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-        public AnonymousClass1(String str) {
+        public C82521(String str) {
             super(1);
             this.$submittingName = str;
         }
 
         @Override // kotlin.jvm.functions.Function1
-        public final TrackNetworkMetadata2 invoke(ConnectedAccount connectedAccount) {
+        public final TrackNetworkMetadataReceiver invoke(ConnectedAccount connectedAccount) {
             return new TrackNetworkActionUserConnectionsUpdate(this.$submittingName, Boolean.TRUE, null, null, 12);
         }
     }
 
-    /* JADX INFO: renamed from: com.discord.widgets.contact_sync.WidgetContactSyncViewModel$onNameSubmitted$2, reason: invalid class name */
+    /* JADX INFO: renamed from: com.discord.widgets.contact_sync.WidgetContactSyncViewModel$onNameSubmitted$2 */
     /* JADX INFO: compiled from: WidgetContactSyncViewModel.kt */
-    public static final class AnonymousClass2 extends Lambda implements Function1<ConnectedAccount, Unit> {
-        public AnonymousClass2() {
+    public static final class C82532 extends AbstractC12240o implements Function1<ConnectedAccount, Unit> {
+        public C82532() {
             super(1);
         }
 
         @Override // kotlin.jvm.functions.Function1
         public /* bridge */ /* synthetic */ Unit invoke(ConnectedAccount connectedAccount) {
             invoke2(connectedAccount);
-            return Unit.a;
+            return Unit.f27425a;
         }
 
         /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
         public final void invoke2(ConnectedAccount connectedAccount) {
-            Intrinsics3.checkNotNullParameter(connectedAccount, "it");
+            C12238m.checkNotNullParameter(connectedAccount, "it");
             WidgetContactSyncViewModel.this.handleContactsEnabled();
         }
     }
 
-    /* JADX INFO: renamed from: com.discord.widgets.contact_sync.WidgetContactSyncViewModel$onNameSubmitted$3, reason: invalid class name */
+    /* JADX INFO: renamed from: com.discord.widgets.contact_sync.WidgetContactSyncViewModel$onNameSubmitted$3 */
     /* JADX INFO: compiled from: WidgetContactSyncViewModel.kt */
-    public static final class AnonymousClass3 extends Lambda implements Function1<Error, Unit> {
-        public AnonymousClass3() {
+    public static final class C82543 extends AbstractC12240o implements Function1<Error, Unit> {
+        public C82543() {
             super(1);
         }
 
         @Override // kotlin.jvm.functions.Function1
         public /* bridge */ /* synthetic */ Unit invoke(Error error) {
             invoke2(error);
-            return Unit.a;
+            return Unit.f27425a;
         }
 
         /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
         public final void invoke2(Error error) {
-            Intrinsics3.checkNotNullParameter(error, "it");
+            C12238m.checkNotNullParameter(error, "it");
             WidgetContactSyncViewModel.this.handleContactsEnableError(error);
         }
     }
 
-    /* JADX INFO: renamed from: com.discord.widgets.contact_sync.WidgetContactSyncViewModel$onNameSubmitted$4, reason: invalid class name */
+    /* JADX INFO: renamed from: com.discord.widgets.contact_sync.WidgetContactSyncViewModel$onNameSubmitted$4 */
     /* JADX INFO: compiled from: WidgetContactSyncViewModel.kt */
-    public static final class AnonymousClass4 extends Lambda implements Function1<ConnectedAccount, Unit> {
-        public AnonymousClass4() {
+    public static final class C82554 extends AbstractC12240o implements Function1<ConnectedAccount, Unit> {
+        public C82554() {
             super(1);
         }
 
         @Override // kotlin.jvm.functions.Function1
         public /* bridge */ /* synthetic */ Unit invoke(ConnectedAccount connectedAccount) {
             invoke2(connectedAccount);
-            return Unit.a;
+            return Unit.f27425a;
         }
 
         /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
         public final void invoke2(ConnectedAccount connectedAccount) {
-            Intrinsics3.checkNotNullParameter(connectedAccount, "it");
+            C12238m.checkNotNullParameter(connectedAccount, "it");
             WidgetContactSyncViewModel.this.handleContactsEnabled();
         }
     }
 
-    /* JADX INFO: renamed from: com.discord.widgets.contact_sync.WidgetContactSyncViewModel$onNameSubmitted$5, reason: invalid class name */
+    /* JADX INFO: renamed from: com.discord.widgets.contact_sync.WidgetContactSyncViewModel$onNameSubmitted$5 */
     /* JADX INFO: compiled from: WidgetContactSyncViewModel.kt */
-    public static final class AnonymousClass5 extends Lambda implements Function1<Error, Unit> {
-        public AnonymousClass5() {
+    public static final class C82565 extends AbstractC12240o implements Function1<Error, Unit> {
+        public C82565() {
             super(1);
         }
 
         @Override // kotlin.jvm.functions.Function1
         public /* bridge */ /* synthetic */ Unit invoke(Error error) {
             invoke2(error);
-            return Unit.a;
+            return Unit.f27425a;
         }
 
         /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
         public final void invoke2(Error error) {
-            Intrinsics3.checkNotNullParameter(error, "it");
+            C12238m.checkNotNullParameter(error, "it");
             WidgetContactSyncViewModel.this.handleContactsEnableError(error);
         }
     }
 
-    /* JADX INFO: renamed from: com.discord.widgets.contact_sync.WidgetContactSyncViewModel$onNameSubmitted$6, reason: invalid class name */
+    /* JADX INFO: renamed from: com.discord.widgets.contact_sync.WidgetContactSyncViewModel$onNameSubmitted$6 */
     /* JADX INFO: compiled from: WidgetContactSyncViewModel.kt */
-    public static final class AnonymousClass6 extends Lambda implements Function1<ModelUserSettings, Unit> {
-        public static final AnonymousClass6 INSTANCE = new AnonymousClass6();
+    public static final class C82576 extends AbstractC12240o implements Function1<ModelUserSettings, Unit> {
+        public static final C82576 INSTANCE = new C82576();
 
-        public AnonymousClass6() {
+        public C82576() {
             super(1);
         }
 
         @Override // kotlin.jvm.functions.Function1
         public /* bridge */ /* synthetic */ Unit invoke(ModelUserSettings modelUserSettings) {
             invoke2(modelUserSettings);
-            return Unit.a;
+            return Unit.f27425a;
         }
 
         /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
         public final void invoke2(ModelUserSettings modelUserSettings) {
-            Intrinsics3.checkNotNullParameter(modelUserSettings, "it");
+            C12238m.checkNotNullParameter(modelUserSettings, "it");
         }
     }
 
-    /* JADX INFO: renamed from: com.discord.widgets.contact_sync.WidgetContactSyncViewModel$onNameSubmitted$7, reason: invalid class name */
+    /* JADX INFO: renamed from: com.discord.widgets.contact_sync.WidgetContactSyncViewModel$onNameSubmitted$7 */
     /* JADX INFO: compiled from: WidgetContactSyncViewModel.kt */
-    public static final class AnonymousClass7 extends Lambda implements Function1<Error, Unit> {
-        public AnonymousClass7() {
+    public static final class C82587 extends AbstractC12240o implements Function1<Error, Unit> {
+        public C82587() {
             super(1);
         }
 
         @Override // kotlin.jvm.functions.Function1
         public /* bridge */ /* synthetic */ Unit invoke(Error error) {
             invoke2(error);
-            return Unit.a;
+            return Unit.f27425a;
         }
 
         /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
         public final void invoke2(Error error) {
-            Intrinsics3.checkNotNullParameter(error, "it");
+            C12238m.checkNotNullParameter(error, "it");
             WidgetContactSyncViewModel.this.handleContactsEnableError(error);
         }
     }
 
-    /* JADX INFO: renamed from: com.discord.widgets.contact_sync.WidgetContactSyncViewModel$onPhoneNumberSubmitted$1, reason: invalid class name */
+    /* JADX INFO: renamed from: com.discord.widgets.contact_sync.WidgetContactSyncViewModel$onPhoneNumberSubmitted$1 */
     /* JADX INFO: compiled from: WidgetContactSyncViewModel.kt */
-    public static final class AnonymousClass1 extends Lambda implements Function1<Void, Unit> {
-        public AnonymousClass1() {
+    public static final class C82591 extends AbstractC12240o implements Function1<Void, Unit> {
+        public C82591() {
             super(1);
         }
 
         @Override // kotlin.jvm.functions.Function1
         public /* bridge */ /* synthetic */ Unit invoke(Void r1) {
             invoke2(r1);
-            return Unit.a;
+            return Unit.f27425a;
         }
 
         /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
@@ -1189,23 +1189,23 @@ public final class WidgetContactSyncViewModel extends AppViewModel<ViewState> {
         }
     }
 
-    /* JADX INFO: renamed from: com.discord.widgets.contact_sync.WidgetContactSyncViewModel$onPhoneNumberSubmitted$2, reason: invalid class name */
+    /* JADX INFO: renamed from: com.discord.widgets.contact_sync.WidgetContactSyncViewModel$onPhoneNumberSubmitted$2 */
     /* JADX INFO: compiled from: WidgetContactSyncViewModel.kt */
-    public static final class AnonymousClass2 extends Lambda implements Function1<Error, Unit> {
-        public AnonymousClass2() {
+    public static final class C82602 extends AbstractC12240o implements Function1<Error, Unit> {
+        public C82602() {
             super(1);
         }
 
         @Override // kotlin.jvm.functions.Function1
         public /* bridge */ /* synthetic */ Unit invoke(Error error) {
             invoke2(error);
-            return Unit.a;
+            return Unit.f27425a;
         }
 
         /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
         public final void invoke2(Error error) {
-            Intrinsics3.checkNotNullParameter(error, "error");
-            if (GrowthTeamFeatures.INSTANCE.isPhoneVerifyCaptchaEnabled() && WidgetCaptcha4.isCaptchaError(error)) {
+            C12238m.checkNotNullParameter(error, "error");
+            if (GrowthTeamFeatures.INSTANCE.isPhoneVerifyCaptchaEnabled() && WidgetCaptchaKt.isCaptchaError(error)) {
                 WidgetContactSyncViewModel.this.captchaLauncher.invoke(error);
             } else {
                 WidgetContactSyncViewModel.this.handlePhoneSubmittedError();
@@ -1213,17 +1213,17 @@ public final class WidgetContactSyncViewModel extends AppViewModel<ViewState> {
         }
     }
 
-    /* JADX INFO: renamed from: com.discord.widgets.contact_sync.WidgetContactSyncViewModel$onVerifyPhone$1, reason: invalid class name */
+    /* JADX INFO: renamed from: com.discord.widgets.contact_sync.WidgetContactSyncViewModel$onVerifyPhone$1 */
     /* JADX INFO: compiled from: WidgetContactSyncViewModel.kt */
-    public static final class AnonymousClass1 extends Lambda implements Function1<Void, Unit> {
-        public AnonymousClass1() {
+    public static final class C82611 extends AbstractC12240o implements Function1<Void, Unit> {
+        public C82611() {
             super(1);
         }
 
         @Override // kotlin.jvm.functions.Function1
         public /* bridge */ /* synthetic */ Unit invoke(Void r1) {
             invoke2(r1);
-            return Unit.a;
+            return Unit.f27425a;
         }
 
         /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
@@ -1232,22 +1232,22 @@ public final class WidgetContactSyncViewModel extends AppViewModel<ViewState> {
         }
     }
 
-    /* JADX INFO: renamed from: com.discord.widgets.contact_sync.WidgetContactSyncViewModel$onVerifyPhone$2, reason: invalid class name */
+    /* JADX INFO: renamed from: com.discord.widgets.contact_sync.WidgetContactSyncViewModel$onVerifyPhone$2 */
     /* JADX INFO: compiled from: WidgetContactSyncViewModel.kt */
-    public static final class AnonymousClass2 extends Lambda implements Function1<Error, Unit> {
-        public AnonymousClass2() {
+    public static final class C82622 extends AbstractC12240o implements Function1<Error, Unit> {
+        public C82622() {
             super(1);
         }
 
         @Override // kotlin.jvm.functions.Function1
         public /* bridge */ /* synthetic */ Unit invoke(Error error) {
             invoke2(error);
-            return Unit.a;
+            return Unit.f27425a;
         }
 
         /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
         public final void invoke2(Error error) {
-            Intrinsics3.checkNotNullParameter(error, "it");
+            C12238m.checkNotNullParameter(error, "it");
             WidgetContactSyncViewModel.this.handlePhoneVerifiedError(error);
         }
     }
@@ -1269,10 +1269,10 @@ public final class WidgetContactSyncViewModel extends AppViewModel<ViewState> {
     private final ToolbarConfig getLandingToolbarConfig(ContactSyncMode mode) {
         int iOrdinal = mode.ordinal();
         if (iOrdinal == 0) {
-            return WidgetContactSyncViewModel3.TOOLBAR_CONFIG_ONBOARDING;
+            return WidgetContactSyncViewModelKt.TOOLBAR_CONFIG_ONBOARDING;
         }
         if (iOrdinal == 1) {
-            return WidgetContactSyncViewModel3.TOOLBAR_CONFIG_DEFAULT;
+            return WidgetContactSyncViewModelKt.TOOLBAR_CONFIG_DEFAULT;
         }
         throw new NoWhenBranchMatchedException();
     }
@@ -1284,7 +1284,7 @@ public final class WidgetContactSyncViewModel extends AppViewModel<ViewState> {
                 StoreStream.INSTANCE.getNux().setContactSyncCompleted(true);
             }
             PublishSubject<Event> publishSubject = this.eventsSubject;
-            publishSubject.k.onNext(Event.Completed.INSTANCE);
+            publishSubject.f27650k.onNext(Event.Completed.INSTANCE);
         }
     }
 
@@ -1292,10 +1292,10 @@ public final class WidgetContactSyncViewModel extends AppViewModel<ViewState> {
     private final void handleContactsEnableError(Error error) {
         if (error.getType() == Error.Type.RATE_LIMITED) {
             PublishSubject<Event> publishSubject = this.eventsSubject;
-            publishSubject.k.onNext(Event.RateLimited.INSTANCE);
+            publishSubject.f27650k.onNext(Event.RateLimited.INSTANCE);
         } else {
             PublishSubject<Event> publishSubject2 = this.eventsSubject;
-            publishSubject2.k.onNext(Event.ContactsEnableFailed.INSTANCE);
+            publishSubject2.f27650k.onNext(Event.ContactsEnableFailed.INSTANCE);
         }
         ViewState viewState = getViewState();
         if (viewState != null) {
@@ -1309,7 +1309,7 @@ public final class WidgetContactSyncViewModel extends AppViewModel<ViewState> {
         if (viewState != null) {
             AnalyticsTracker.INSTANCE.contactSyncToggled(true, viewState.getAllowPhone(), viewState.getAllowEmail());
             PublishSubject<Event> publishSubject = this.eventsSubject;
-            publishSubject.k.onNext(Event.ContactsEnabled.INSTANCE);
+            publishSubject.f27650k.onNext(Event.ContactsEnabled.INSTANCE);
         }
     }
 
@@ -1317,32 +1317,32 @@ public final class WidgetContactSyncViewModel extends AppViewModel<ViewState> {
     private final void handleFriendSuggestions(BulkFriendSuggestions suggestions) {
         ViewState viewState = getViewState();
         if (viewState != null) {
-            if (suggestions.b().isEmpty()) {
+            if (suggestions.m7829b().isEmpty()) {
                 ContactSyncFlowAnalytics contactSyncFlowAnalytics = this.tracker;
                 Views views = Views.VIEW_SUGGESTIONS_EMPTY;
-                contactSyncFlowAnalytics.trackFlowStep(views.getTrackingStep(), false, false, MapsJVM.mapOf(Tuples.to("num_contacts_found", 0)));
+                contactSyncFlowAnalytics.trackFlowStep(views.getTrackingStep(), false, false, C12134g0.mapOf(C12116o.m10073to("num_contacts_found", 0)));
                 updateViewState(ViewState.copy$default(viewState, false, null, null, null, null, null, null, false, false, views, false, false, null, null, null, new ToolbarConfig(false, false), 32127, null));
                 return;
             }
-            StoreStream.INSTANCE.getFriendSuggestions().updateFriendSuggestions(suggestions.b());
-            List<FriendSuggestion> listB = suggestions.b();
+            StoreStream.INSTANCE.getFriendSuggestions().updateFriendSuggestions(suggestions.m7829b());
+            List<FriendSuggestion> listM7829b = suggestions.m7829b();
             ArrayList arrayList = new ArrayList();
-            Iterator<T> it = listB.iterator();
+            Iterator<T> it = listM7829b.iterator();
             while (true) {
                 boolean z2 = true;
                 if (!it.hasNext()) {
                     break;
                 }
                 Object next = it.next();
-                List<FriendSuggestionReason> listA = ((FriendSuggestion) next).a();
-                if (!(listA instanceof Collection) || !listA.isEmpty()) {
-                    Iterator<T> it2 = listA.iterator();
+                List<FriendSuggestionReason> listM7830a = ((FriendSuggestion) next).m7830a();
+                if (!(listM7830a instanceof Collection) || !listM7830a.isEmpty()) {
+                    Iterator<T> it2 = listM7830a.iterator();
                     do {
                         if (!it2.hasNext()) {
                             z2 = false;
                             break;
                         }
-                    } while (!Intrinsics3.areEqual(((FriendSuggestionReason) it2.next()).getPlatformType(), "contacts"));
+                    } while (!C12238m.areEqual(((FriendSuggestionReason) it2.next()).getPlatformType(), "contacts"));
                 } else {
                     z2 = false;
                     break;
@@ -1351,14 +1351,14 @@ public final class WidgetContactSyncViewModel extends AppViewModel<ViewState> {
                     arrayList.add(next);
                 }
             }
-            this.tracker.trackFlowStep(Views.VIEW_SUGGESTIONS.getTrackingStep(), false, false, MapsJVM.mapOf(Tuples.to("num_contacts_found", Integer.valueOf(arrayList.size()))));
+            this.tracker.trackFlowStep(Views.VIEW_SUGGESTIONS.getTrackingStep(), false, false, C12134g0.mapOf(C12116o.m10073to("num_contacts_found", Integer.valueOf(arrayList.size()))));
             String bulkAddToken = suggestions.getBulkAddToken();
-            ArrayList arrayList2 = new ArrayList(Iterables2.collectionSizeOrDefault(arrayList, 10));
+            ArrayList arrayList2 = new ArrayList(C12149o.collectionSizeOrDefault(arrayList, 10));
             Iterator it3 = arrayList.iterator();
             while (it3.hasNext()) {
                 arrayList2.add(new Item.FriendSuggestionItem((FriendSuggestion) it3.next(), true));
             }
-            ArrayList arrayList3 = new ArrayList(Iterables2.collectionSizeOrDefault(arrayList, 10));
+            ArrayList arrayList3 = new ArrayList(C12149o.collectionSizeOrDefault(arrayList, 10));
             Iterator it4 = arrayList.iterator();
             while (it4.hasNext()) {
                 arrayList3.add(Long.valueOf(((FriendSuggestion) it4.next()).getSuggestedUser().getId()));
@@ -1372,11 +1372,11 @@ public final class WidgetContactSyncViewModel extends AppViewModel<ViewState> {
         ViewState viewState = getViewState();
         if (viewState != null) {
             updateViewState(ViewState.copy$default(viewState, false, null, null, null, null, null, null, false, false, null, false, false, null, null, null, null, 65407, null));
-            this.tracker.trackEnd(false, Maps6.mapOf(Tuples.to("num_contacts_found", Integer.valueOf(viewState.getFriendSuggestions().size())), Tuples.to("num_contacts_added", Integer.valueOf(result.b().size()))));
-            if (!(!result.a().isEmpty())) {
+            this.tracker.trackEnd(false, C12136h0.mapOf(C12116o.m10073to("num_contacts_found", Integer.valueOf(viewState.getFriendSuggestions().size())), C12116o.m10073to("num_contacts_added", Integer.valueOf(result.m7827b().size()))));
+            if (!(!result.m7826a().isEmpty())) {
                 handleComplete();
             } else {
-                this.eventsSubject.k.onNext(Event.AddFriendsFailedPartial.INSTANCE);
+                this.eventsSubject.f27650k.onNext(Event.AddFriendsFailedPartial.INSTANCE);
             }
         }
     }
@@ -1386,13 +1386,13 @@ public final class WidgetContactSyncViewModel extends AppViewModel<ViewState> {
         ViewState viewState = getViewState();
         if (viewState != null) {
             updateViewState(ViewState.copy$default(viewState, false, null, null, null, null, null, null, false, false, null, false, false, null, null, null, null, 65407, null));
-            this.tracker.trackEnd(false, Maps6.mapOf(Tuples.to("num_contacts_found", Integer.valueOf(viewState.getFriendSuggestions().size())), Tuples.to("num_contacts_added", 0)));
+            this.tracker.trackEnd(false, C12136h0.mapOf(C12116o.m10073to("num_contacts_found", Integer.valueOf(viewState.getFriendSuggestions().size())), C12116o.m10073to("num_contacts_added", 0)));
             Error.Response response = error.getResponse();
-            Intrinsics3.checkNotNullExpressionValue(response, "error.response");
+            C12238m.checkNotNullExpressionValue(response, "error.response");
             Map<String, List<String>> messages = response.getMessages();
-            Intrinsics3.checkNotNullExpressionValue(messages, "error.response.messages");
+            C12238m.checkNotNullExpressionValue(messages, "error.response.messages");
             if (!messages.isEmpty()) {
-                this.eventsSubject.k.onNext(Event.AddFriendsFailed.INSTANCE);
+                this.eventsSubject.f27650k.onNext(Event.AddFriendsFailed.INSTANCE);
             }
         }
     }
@@ -1411,7 +1411,7 @@ public final class WidgetContactSyncViewModel extends AppViewModel<ViewState> {
     @MainThread
     private final void handlePhoneSubmittedError() {
         PublishSubject<Event> publishSubject = this.eventsSubject;
-        publishSubject.k.onNext(Event.PhoneInvalid.INSTANCE);
+        publishSubject.f27650k.onNext(Event.PhoneInvalid.INSTANCE);
     }
 
     @MainThread
@@ -1420,20 +1420,20 @@ public final class WidgetContactSyncViewModel extends AppViewModel<ViewState> {
         if (viewState != null) {
             updateViewState(ViewState.copy$default(viewState, false, null, null, null, null, null, null, false, false, Views.VIEW_LANDING, false, false, null, null, null, getLandingToolbarConfig(viewState.getMode()), 32255, null));
             PublishSubject<Event> publishSubject = this.eventsSubject;
-            publishSubject.k.onNext(Event.PermissionsNeeded.INSTANCE);
+            publishSubject.f27650k.onNext(Event.PermissionsNeeded.INSTANCE);
         }
     }
 
     @MainThread
     private final void handlePhoneVerifiedError(Error error) {
         Error.Response response = error.getResponse();
-        Intrinsics3.checkNotNullExpressionValue(response, "error.response");
+        C12238m.checkNotNullExpressionValue(response, "error.response");
         Map<String, List<String>> messages = response.getMessages();
-        Intrinsics3.checkNotNullExpressionValue(messages, "error.response.messages");
+        C12238m.checkNotNullExpressionValue(messages, "error.response.messages");
         if (!messages.isEmpty()) {
-            this.eventsSubject.k.onNext(Event.VerificationCodeInvalid.INSTANCE);
+            this.eventsSubject.f27650k.onNext(Event.VerificationCodeInvalid.INSTANCE);
         } else {
-            this.eventsSubject.k.onNext(Event.VerificationFailed.INSTANCE);
+            this.eventsSubject.f27650k.onNext(Event.VerificationFailed.INSTANCE);
         }
     }
 
@@ -1446,7 +1446,7 @@ public final class WidgetContactSyncViewModel extends AppViewModel<ViewState> {
             }
             this.initialized = true;
             PublishSubject<Event> publishSubject = this.eventsSubject;
-            publishSubject.k.onNext(Event.MaybeProceedFromLanding.INSTANCE);
+            publishSubject.f27650k.onNext(Event.MaybeProceedFromLanding.INSTANCE);
         }
     }
 
@@ -1457,10 +1457,10 @@ public final class WidgetContactSyncViewModel extends AppViewModel<ViewState> {
             updateViewState(ViewState.copy$default(viewState, false, null, null, null, null, null, null, false, false, Views.VIEW_LANDING, false, false, null, null, null, getLandingToolbarConfig(viewState.getMode()), 32127, null));
             if (error.getType() == Error.Type.RATE_LIMITED) {
                 PublishSubject<Event> publishSubject = this.eventsSubject;
-                publishSubject.k.onNext(Event.RateLimited.INSTANCE);
+                publishSubject.f27650k.onNext(Event.RateLimited.INSTANCE);
             } else {
                 PublishSubject<Event> publishSubject2 = this.eventsSubject;
-                publishSubject2.k.onNext(Event.UploadFailed.INSTANCE);
+                publishSubject2.f27650k.onNext(Event.UploadFailed.INSTANCE);
             }
         }
     }
@@ -1480,7 +1480,7 @@ public final class WidgetContactSyncViewModel extends AppViewModel<ViewState> {
     public final void handleToggleFriendSuggestionSelected(long userId, boolean isSelected) {
         ViewState viewState = getViewState();
         if (viewState != null) {
-            List mutableList = _Collections.toMutableList((Collection) viewState.getSelectedFriendIds());
+            List mutableList = C12163u.toMutableList((Collection) viewState.getSelectedFriendIds());
             if (isSelected) {
                 mutableList.add(Long.valueOf(userId));
             } else {
@@ -1492,7 +1492,7 @@ public final class WidgetContactSyncViewModel extends AppViewModel<ViewState> {
 
     public final Observable<Event> observeEvents() {
         PublishSubject<Event> publishSubject = this.eventsSubject;
-        Intrinsics3.checkNotNullExpressionValue(publishSubject, "eventsSubject");
+        C12238m.checkNotNullExpressionValue(publishSubject, "eventsSubject");
         return publishSubject;
     }
 
@@ -1505,27 +1505,27 @@ public final class WidgetContactSyncViewModel extends AppViewModel<ViewState> {
         }
         List<Long> selectedFriendIds = viewState.getSelectedFriendIds();
         if (selectedFriendIds.isEmpty()) {
-            this.tracker.trackEnd(false, Maps6.mapOf(Tuples.to("num_contacts_found", Integer.valueOf(viewState.getFriendSuggestions().size())), Tuples.to("num_contacts_added", 0)));
+            this.tracker.trackEnd(false, C12136h0.mapOf(C12116o.m10073to("num_contacts_found", Integer.valueOf(viewState.getFriendSuggestions().size())), C12116o.m10073to("num_contacts_added", 0)));
             handleComplete();
         } else {
             updateViewState(ViewState.copy$default(viewState, false, null, null, null, null, null, null, true, false, null, false, false, null, null, null, null, 65407, null));
-            ObservableExtensionsKt.appSubscribe(ObservableExtensionsKt.ui$default(RestCallState5.logNetworkAction(ObservableExtensionsKt.restSubscribeOn$default(this.restAPI.bulkAddRelationships(new RestAPIParams.UserBulkRelationship(selectedFriendIds, bulkAddToken)), false, 1, null), AnonymousClass1.INSTANCE), this, null, 2, null), (Class<?>) WidgetContactSyncViewModel.class, (58 & 2) != 0 ? null : null, (Function1<? super Subscription, Unit>) ((58 & 4) != 0 ? null : null), (Function1<? super Error, Unit>) ((58 & 8) != 0 ? null : new AnonymousClass3()), (Function0<Unit>) ((58 & 16) != 0 ? ObservableExtensionsKt.AnonymousClass1.INSTANCE : null), (Function0<Unit>) ((58 & 32) != 0 ? ObservableExtensionsKt.AnonymousClass2.INSTANCE : null), new AnonymousClass2());
+            ObservableExtensionsKt.appSubscribe(ObservableExtensionsKt.ui$default(RestCallStateKt.logNetworkAction(ObservableExtensionsKt.restSubscribeOn$default(this.restAPI.bulkAddRelationships(new RestAPIParams.UserBulkRelationship(selectedFriendIds, bulkAddToken)), false, 1, null), C82461.INSTANCE), this, null, 2, null), (Class<?>) WidgetContactSyncViewModel.class, (58 & 2) != 0 ? null : null, (Function1<? super Subscription, Unit>) ((58 & 4) != 0 ? null : null), (Function1<? super Error, Unit>) ((58 & 8) != 0 ? null : new C82483()), (Function0<Unit>) ((58 & 16) != 0 ? ObservableExtensionsKt.C68791.INSTANCE : null), (Function0<Unit>) ((58 & 32) != 0 ? ObservableExtensionsKt.C68802.INSTANCE : null), new C82472());
         }
     }
 
     @MainThread
     public final void onContactsFetched(Set<String> contactNumbers) {
-        Intrinsics3.checkNotNullParameter(contactNumbers, "contactNumbers");
+        C12238m.checkNotNullParameter(contactNumbers, "contactNumbers");
         ViewState viewState = getViewState();
         if (viewState != null) {
             updateViewState(ViewState.copy$default(viewState, false, null, null, null, null, null, null, true, false, null, false, false, null, null, null, null, 65407, null));
-            ArrayList arrayList = new ArrayList(Iterables2.collectionSizeOrDefault(contactNumbers, 10));
+            ArrayList arrayList = new ArrayList(C12149o.collectionSizeOrDefault(contactNumbers, 10));
             for (String str : contactNumbers) {
-                arrayList.add(new RestAPIParams.ContactEntry(str, str, MapsJVM.mapOf(new Tuples2("number", str))));
+                arrayList.add(new RestAPIParams.ContactEntry(str, str, C12134g0.mapOf(new Pair("number", str))));
             }
             RestAPIParams.UploadContacts uploadContacts = new RestAPIParams.UploadContacts(arrayList, false, AllowedInSuggestionsType.ANYONE_WITH_CONTACT_INFO);
             StoreStream.INSTANCE.getContactSync().setContactSyncUploadTimestamp(ClockFactory.get().currentTimeMillis());
-            ObservableExtensionsKt.appSubscribe(ObservableExtensionsKt.ui$default(ObservableExtensionsKt.restSubscribeOn$default(RestCallState5.logNetworkAction(this.restAPI.uploadContacts(uploadContacts), AnonymousClass1.INSTANCE), false, 1, null), this, null, 2, null), (Class<?>) WidgetContactSyncViewModel.class, (58 & 2) != 0 ? null : null, (Function1<? super Subscription, Unit>) ((58 & 4) != 0 ? null : null), (Function1<? super Error, Unit>) ((58 & 8) != 0 ? null : new AnonymousClass3()), (Function0<Unit>) ((58 & 16) != 0 ? ObservableExtensionsKt.AnonymousClass1.INSTANCE : null), (Function0<Unit>) ((58 & 32) != 0 ? ObservableExtensionsKt.AnonymousClass2.INSTANCE : null), new AnonymousClass2());
+            ObservableExtensionsKt.appSubscribe(ObservableExtensionsKt.ui$default(ObservableExtensionsKt.restSubscribeOn$default(RestCallStateKt.logNetworkAction(this.restAPI.uploadContacts(uploadContacts), C82491.INSTANCE), false, 1, null), this, null, 2, null), (Class<?>) WidgetContactSyncViewModel.class, (58 & 2) != 0 ? null : null, (Function1<? super Subscription, Unit>) ((58 & 4) != 0 ? null : null), (Function1<? super Error, Unit>) ((58 & 8) != 0 ? null : new C82513()), (Function0<Unit>) ((58 & 16) != 0 ? ObservableExtensionsKt.C68791.INSTANCE : null), (Function0<Unit>) ((58 & 32) != 0 ? ObservableExtensionsKt.C68802.INSTANCE : null), new C82502());
         }
     }
 
@@ -1535,12 +1535,12 @@ public final class WidgetContactSyncViewModel extends AppViewModel<ViewState> {
         if (viewState != null) {
             if (viewState.getPhoneNumber() != null) {
                 PublishSubject<Event> publishSubject = this.eventsSubject;
-                publishSubject.k.onNext(Event.PermissionsNeeded.INSTANCE);
+                publishSubject.f27650k.onNext(Event.PermissionsNeeded.INSTANCE);
             } else {
                 ContactSyncFlowAnalytics contactSyncFlowAnalytics = this.tracker;
                 Views views = Views.VIEW_ADD_PHONE;
                 ContactSyncFlowAnalytics.trackFlowStep$default(contactSyncFlowAnalytics, views.getTrackingStep(), false, false, null, 8, null);
-                updateViewState(ViewState.copy$default(viewState, false, null, null, null, null, null, null, false, false, views, false, false, null, null, null, WidgetContactSyncViewModel3.TOOLBAR_CONFIG_DEFAULT, 32255, null));
+                updateViewState(ViewState.copy$default(viewState, false, null, null, null, null, null, null, false, false, views, false, false, null, null, null, WidgetContactSyncViewModelKt.TOOLBAR_CONFIG_DEFAULT, 32255, null));
             }
         }
     }
@@ -1548,25 +1548,25 @@ public final class WidgetContactSyncViewModel extends AppViewModel<ViewState> {
     @MainThread
     public final void onNameSubmitted(String name) {
         MGRecyclerAdapterSimple mGRecyclerAdapterSimple;
-        Intrinsics3.checkNotNullParameter(name, ModelAuditLogEntry.CHANGE_KEY_NAME);
-        AnalyticsTracker.INSTANCE.nameSubmitted(Strings4.split$default((CharSequence) name, new String[]{" "}, false, 0, 6, (Object) null).size(), name.length());
-        String string = StringsJVM.isBlank(name) ? null : Strings4.trim(name).toString();
+        C12238m.checkNotNullParameter(name, ModelAuditLogEntry.CHANGE_KEY_NAME);
+        AnalyticsTracker.INSTANCE.nameSubmitted(C12106w.split$default((CharSequence) name, new String[]{" "}, false, 0, 6, (Object) null).size(), name.length());
+        String string = C12103t.isBlank(name) ? null : C12106w.trim(name).toString();
         ViewState viewState = getViewState();
         if (viewState != null) {
             updateViewState(ViewState.copy$default(viewState, false, null, null, null, null, null, name, false, false, null, false, false, null, null, null, null, 65471, null));
             ConnectedAccount existingConnection = viewState.getExistingConnection();
             if (existingConnection != null) {
                 mGRecyclerAdapterSimple = null;
-                ObservableExtensionsKt.appSubscribe(ObservableExtensionsKt.ui$default(RestCallState5.logNetworkAction(ObservableExtensionsKt.restSubscribeOn$default(this.restAPI.updateConnection(existingConnection.getType(), existingConnection.getId(), new RestAPIParams.ConnectedAccount(true, existingConnection.getId(), string, existingConnection.getRevoked(), existingConnection.getShowActivity(), existingConnection.getType(), existingConnection.getVerified(), existingConnection.getVisibility())), false, 1, null), new AnonymousClass1(string)), this, null, 2, null), (Class<?>) WidgetContactSyncViewModel.class, (58 & 2) != 0 ? null : null, (Function1<? super Subscription, Unit>) ((58 & 4) != 0 ? null : null), (Function1<? super Error, Unit>) ((58 & 8) != 0 ? null : new AnonymousClass3()), (Function0<Unit>) ((58 & 16) != 0 ? ObservableExtensionsKt.AnonymousClass1.INSTANCE : null), (Function0<Unit>) ((58 & 32) != 0 ? ObservableExtensionsKt.AnonymousClass2.INSTANCE : null), new AnonymousClass2());
+                ObservableExtensionsKt.appSubscribe(ObservableExtensionsKt.ui$default(RestCallStateKt.logNetworkAction(ObservableExtensionsKt.restSubscribeOn$default(this.restAPI.updateConnection(existingConnection.getType(), existingConnection.getId(), new RestAPIParams.ConnectedAccount(true, existingConnection.getId(), string, existingConnection.getRevoked(), existingConnection.getShowActivity(), existingConnection.getType(), existingConnection.getVerified(), existingConnection.getVisibility())), false, 1, null), new C82521(string)), this, null, 2, null), (Class<?>) WidgetContactSyncViewModel.class, (58 & 2) != 0 ? null : null, (Function1<? super Subscription, Unit>) ((58 & 4) != 0 ? null : null), (Function1<? super Error, Unit>) ((58 & 8) != 0 ? null : new C82543()), (Function0<Unit>) ((58 & 16) != 0 ? ObservableExtensionsKt.C68791.INSTANCE : null), (Function0<Unit>) ((58 & 32) != 0 ? ObservableExtensionsKt.C68802.INSTANCE : null), new C82532());
             } else {
                 mGRecyclerAdapterSimple = null;
-                ObservableExtensionsKt.appSubscribe(ObservableExtensionsKt.ui$default(ObservableExtensionsKt.restSubscribeOn$default(this.restAPI.createConnectionContacts(new RestAPIParams.ConnectedAccountContacts(string, true)), false, 1, null), this, null, 2, null), (Class<?>) WidgetContactSyncViewModel.class, (58 & 2) != 0 ? null : null, (Function1<? super Subscription, Unit>) ((58 & 4) != 0 ? null : null), (Function1<? super Error, Unit>) ((58 & 8) != 0 ? null : new AnonymousClass5()), (Function0<Unit>) ((58 & 16) != 0 ? ObservableExtensionsKt.AnonymousClass1.INSTANCE : null), (Function0<Unit>) ((58 & 32) != 0 ? ObservableExtensionsKt.AnonymousClass2.INSTANCE : null), new AnonymousClass4());
+                ObservableExtensionsKt.appSubscribe(ObservableExtensionsKt.ui$default(ObservableExtensionsKt.restSubscribeOn$default(this.restAPI.createConnectionContacts(new RestAPIParams.ConnectedAccountContacts(string, true)), false, 1, null), this, null, 2, null), (Class<?>) WidgetContactSyncViewModel.class, (58 & 2) != 0 ? null : null, (Function1<? super Subscription, Unit>) ((58 & 4) != 0 ? null : null), (Function1<? super Error, Unit>) ((58 & 8) != 0 ? null : new C82565()), (Function0<Unit>) ((58 & 16) != 0 ? ObservableExtensionsKt.C68791.INSTANCE : null), (Function0<Unit>) ((58 & 32) != 0 ? ObservableExtensionsKt.C68802.INSTANCE : null), new C82554());
             }
             int i = viewState.getAllowPhone() ? 2 : 0;
             if (viewState.getAllowEmail()) {
                 i |= 4;
             }
-            ObservableExtensionsKt.appSubscribe(ObservableExtensionsKt.ui$default(ObservableExtensionsKt.restSubscribeOn$default(this.restAPI.updateUserSettings(RestAPIParams.UserSettings.INSTANCE.createWithFriendDiscoveryFlags(Integer.valueOf(i))), false, 1, mGRecyclerAdapterSimple), this, mGRecyclerAdapterSimple, 2, mGRecyclerAdapterSimple), (Class<?>) WidgetContactSyncViewModel.class, (58 & 2) != 0 ? null : null, (Function1<? super Subscription, Unit>) ((58 & 4) != 0 ? null : null), (Function1<? super Error, Unit>) ((58 & 8) != 0 ? null : new AnonymousClass7()), (Function0<Unit>) ((58 & 16) != 0 ? ObservableExtensionsKt.AnonymousClass1.INSTANCE : null), (Function0<Unit>) ((58 & 32) != 0 ? ObservableExtensionsKt.AnonymousClass2.INSTANCE : null), AnonymousClass6.INSTANCE);
+            ObservableExtensionsKt.appSubscribe(ObservableExtensionsKt.ui$default(ObservableExtensionsKt.restSubscribeOn$default(this.restAPI.updateUserSettings(RestAPIParams.UserSettings.INSTANCE.createWithFriendDiscoveryFlags(Integer.valueOf(i))), false, 1, mGRecyclerAdapterSimple), this, mGRecyclerAdapterSimple, 2, mGRecyclerAdapterSimple), (Class<?>) WidgetContactSyncViewModel.class, (58 & 2) != 0 ? null : null, (Function1<? super Subscription, Unit>) ((58 & 4) != 0 ? null : null), (Function1<? super Error, Unit>) ((58 & 8) != 0 ? null : new C82587()), (Function0<Unit>) ((58 & 16) != 0 ? ObservableExtensionsKt.C68791.INSTANCE : null), (Function0<Unit>) ((58 & 32) != 0 ? ObservableExtensionsKt.C68802.INSTANCE : null), C82576.INSTANCE);
         }
     }
 
@@ -1580,7 +1580,7 @@ public final class WidgetContactSyncViewModel extends AppViewModel<ViewState> {
 
     @MainThread
     public final void onPermissionsDenied() {
-        this.tracker.trackFlowStep(Views.VIEW_LANDING.getTrackingStep(), true, false, MapsJVM.mapOf(Tuples.to("mobile_contacts_permission", "denied")));
+        this.tracker.trackFlowStep(Views.VIEW_LANDING.getTrackingStep(), true, false, C12134g0.mapOf(C12116o.m10073to("mobile_contacts_permission", "denied")));
         AnalyticsTracker.INSTANCE.permissionsAcked("contacts", false);
         ViewState viewState = getViewState();
         if (viewState != null) {
@@ -1616,14 +1616,14 @@ public final class WidgetContactSyncViewModel extends AppViewModel<ViewState> {
 
     @MainThread
     public final void onPhoneNumberSubmitted(String phoneNumber, CaptchaHelper.CaptchaPayload captchaPayload) {
-        Intrinsics3.checkNotNullParameter(phoneNumber, "phoneNumber");
-        ObservableExtensionsKt.appSubscribe(ObservableExtensionsKt.ui$default(ObservableExtensionsKt.restSubscribeOn$default(this.restAPI.userAddPhone(new RestAPIParams.Phone(phoneNumber, WidgetUserPhoneManage.Companion.Source.CONTACT_SYNC.getSource(), captchaPayload != null ? captchaPayload.getCaptchaKey() : null, captchaPayload != null ? captchaPayload.getCaptchaRqtoken() : null)), false, 1, null), this, null, 2, null), (Class<?>) WidgetContactSyncViewModel.class, (58 & 2) != 0 ? null : null, (Function1<? super Subscription, Unit>) ((58 & 4) != 0 ? null : null), (Function1<? super Error, Unit>) ((58 & 8) != 0 ? null : new AnonymousClass2()), (Function0<Unit>) ((58 & 16) != 0 ? ObservableExtensionsKt.AnonymousClass1.INSTANCE : null), (Function0<Unit>) ((58 & 32) != 0 ? ObservableExtensionsKt.AnonymousClass2.INSTANCE : null), new AnonymousClass1());
+        C12238m.checkNotNullParameter(phoneNumber, "phoneNumber");
+        ObservableExtensionsKt.appSubscribe(ObservableExtensionsKt.ui$default(ObservableExtensionsKt.restSubscribeOn$default(this.restAPI.userAddPhone(new RestAPIParams.Phone(phoneNumber, WidgetUserPhoneManage.Companion.Source.CONTACT_SYNC.getSource(), captchaPayload != null ? captchaPayload.getCaptchaKey() : null, captchaPayload != null ? captchaPayload.getCaptchaRqtoken() : null)), false, 1, null), this, null, 2, null), (Class<?>) WidgetContactSyncViewModel.class, (58 & 2) != 0 ? null : null, (Function1<? super Subscription, Unit>) ((58 & 4) != 0 ? null : null), (Function1<? super Error, Unit>) ((58 & 8) != 0 ? null : new C82602()), (Function0<Unit>) ((58 & 16) != 0 ? ObservableExtensionsKt.C68791.INSTANCE : null), (Function0<Unit>) ((58 & 32) != 0 ? ObservableExtensionsKt.C68802.INSTANCE : null), new C82591());
     }
 
     @MainThread
     public final void onVerifyPhone(String code) {
-        Intrinsics3.checkNotNullParameter(code, ModelAuditLogEntry.CHANGE_KEY_CODE);
-        ObservableExtensionsKt.appSubscribe(ObservableExtensionsKt.ui$default(ObservableExtensionsKt.restSubscribeOn$default(this.restAPI.userAddPhoneNoPassword(new RestAPIParams.VerificationCodeOnly(code)), false, 1, null), this, null, 2, null), (Class<?>) WidgetContactSyncViewModel.class, (58 & 2) != 0 ? null : null, (Function1<? super Subscription, Unit>) ((58 & 4) != 0 ? null : null), (Function1<? super Error, Unit>) ((58 & 8) != 0 ? null : new AnonymousClass2()), (Function0<Unit>) ((58 & 16) != 0 ? ObservableExtensionsKt.AnonymousClass1.INSTANCE : null), (Function0<Unit>) ((58 & 32) != 0 ? ObservableExtensionsKt.AnonymousClass2.INSTANCE : null), new AnonymousClass1());
+        C12238m.checkNotNullParameter(code, ModelAuditLogEntry.CHANGE_KEY_CODE);
+        ObservableExtensionsKt.appSubscribe(ObservableExtensionsKt.ui$default(ObservableExtensionsKt.restSubscribeOn$default(this.restAPI.userAddPhoneNoPassword(new RestAPIParams.VerificationCodeOnly(code)), false, 1, null), this, null, 2, null), (Class<?>) WidgetContactSyncViewModel.class, (58 & 2) != 0 ? null : null, (Function1<? super Subscription, Unit>) ((58 & 4) != 0 ? null : null), (Function1<? super Error, Unit>) ((58 & 8) != 0 ? null : new C82622()), (Function0<Unit>) ((58 & 16) != 0 ? ObservableExtensionsKt.C68791.INSTANCE : null), (Function0<Unit>) ((58 & 32) != 0 ? ObservableExtensionsKt.C68802.INSTANCE : null), new C82611());
     }
 
     @MainThread
@@ -1659,13 +1659,13 @@ public final class WidgetContactSyncViewModel extends AppViewModel<ViewState> {
                 return;
             }
             if (iOrdinal == 4) {
-                this.tracker.trackEnd(false, Maps6.mapOf(Tuples.to("num_contacts_found", Integer.valueOf(viewState.getFriendSuggestions().size())), Tuples.to("num_contacts_added", 0)));
+                this.tracker.trackEnd(false, C12136h0.mapOf(C12116o.m10073to("num_contacts_found", Integer.valueOf(viewState.getFriendSuggestions().size())), C12116o.m10073to("num_contacts_added", 0)));
                 handleComplete();
             } else {
                 if (iOrdinal != 5) {
                     return;
                 }
-                this.tracker.trackEnd(false, Maps6.mapOf(Tuples.to("num_contacts_found", Integer.valueOf(viewState.getFriendSuggestions().size())), Tuples.to("num_contacts_added", 0)));
+                this.tracker.trackEnd(false, C12136h0.mapOf(C12116o.m10073to("num_contacts_found", Integer.valueOf(viewState.getFriendSuggestions().size())), C12116o.m10073to("num_contacts_added", 0)));
                 handleComplete();
             }
         }
@@ -1675,30 +1675,30 @@ public final class WidgetContactSyncViewModel extends AppViewModel<ViewState> {
     /* JADX WARN: Multi-variable type inference failed */
     public WidgetContactSyncViewModel(ContactSyncMode contactSyncMode, boolean z2, boolean z3, RestAPI restAPI, Observable<StoreState> observable, ContactSyncFlowAnalytics contactSyncFlowAnalytics, boolean z4, Function1<? super Error, Unit> function1) {
         ToolbarConfig toolbarConfig;
-        Intrinsics3.checkNotNullParameter(contactSyncMode, "mode");
-        Intrinsics3.checkNotNullParameter(restAPI, "restAPI");
-        Intrinsics3.checkNotNullParameter(observable, "storeObservable");
-        Intrinsics3.checkNotNullParameter(contactSyncFlowAnalytics, "tracker");
-        Intrinsics3.checkNotNullParameter(function1, "captchaLauncher");
+        C12238m.checkNotNullParameter(contactSyncMode, "mode");
+        C12238m.checkNotNullParameter(restAPI, "restAPI");
+        C12238m.checkNotNullParameter(observable, "storeObservable");
+        C12238m.checkNotNullParameter(contactSyncFlowAnalytics, "tracker");
+        C12238m.checkNotNullParameter(function1, "captchaLauncher");
         PhoneCountryCode default_country_code = PhoneCountryCode.INSTANCE.getDEFAULT_COUNTRY_CODE();
         Views views = Views.VIEW_LANDING;
-        List listEmptyList = Collections2.emptyList();
-        List listEmptyList2 = Collections2.emptyList();
+        List listEmptyList = C12147n.emptyList();
+        List listEmptyList2 = C12147n.emptyList();
         int iOrdinal = contactSyncMode.ordinal();
         if (iOrdinal == 0) {
-            toolbarConfig = WidgetContactSyncViewModel3.TOOLBAR_CONFIG_ONBOARDING;
+            toolbarConfig = WidgetContactSyncViewModelKt.TOOLBAR_CONFIG_ONBOARDING;
         } else {
             if (iOrdinal != 1) {
                 throw new NoWhenBranchMatchedException();
             }
-            toolbarConfig = WidgetContactSyncViewModel3.TOOLBAR_CONFIG_DEFAULT;
+            toolbarConfig = WidgetContactSyncViewModelKt.TOOLBAR_CONFIG_DEFAULT;
         }
         super(new ViewState(false, contactSyncMode, null, null, default_country_code, "", null, false, false, views, z2, z3, null, listEmptyList, listEmptyList2, toolbarConfig));
         this.restAPI = restAPI;
         this.tracker = contactSyncFlowAnalytics;
         this.initialized = z4;
         this.captchaLauncher = function1;
-        this.eventsSubject = PublishSubject.k0();
-        ObservableExtensionsKt.appSubscribe(ObservableExtensionsKt.ui$default(observable, this, null, 2, null), (Class<?>) WidgetContactSyncViewModel.class, (58 & 2) != 0 ? null : null, (Function1<? super Subscription, Unit>) ((58 & 4) != 0 ? null : null), (Function1<? super Error, Unit>) ((58 & 8) != 0 ? null : null), (Function0<Unit>) ((58 & 16) != 0 ? ObservableExtensionsKt.AnonymousClass1.INSTANCE : null), (Function0<Unit>) ((58 & 32) != 0 ? ObservableExtensionsKt.AnonymousClass2.INSTANCE : null), new AnonymousClass1());
+        this.eventsSubject = PublishSubject.m11133k0();
+        ObservableExtensionsKt.appSubscribe(ObservableExtensionsKt.ui$default(observable, this, null, 2, null), (Class<?>) WidgetContactSyncViewModel.class, (58 & 2) != 0 ? null : null, (Function1<? super Subscription, Unit>) ((58 & 4) != 0 ? null : null), (Function1<? super Error, Unit>) ((58 & 8) != 0 ? null : null), (Function0<Unit>) ((58 & 16) != 0 ? ObservableExtensionsKt.C68791.INSTANCE : null), (Function0<Unit>) ((58 & 32) != 0 ? ObservableExtensionsKt.C68802.INSTANCE : null), new C82451());
     }
 }

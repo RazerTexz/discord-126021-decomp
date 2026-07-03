@@ -15,77 +15,92 @@ import com.google.android.material.card.MaterialCardView;
 /* JADX INFO: loaded from: classes.dex */
 public final class WidgetOauthAuthorizeBinding implements ViewBinding {
 
+    /* JADX INFO: renamed from: a */
     @NonNull
-    public final CoordinatorLayout a;
+    public final CoordinatorLayout f17329a;
 
-    /* JADX INFO: renamed from: b, reason: collision with root package name */
+    /* JADX INFO: renamed from: b */
     @NonNull
-    public final TextView f2506b;
+    public final TextView f17330b;
 
+    /* JADX INFO: renamed from: c */
     @NonNull
-    public final SimpleDraweeView c;
+    public final SimpleDraweeView f17331c;
 
+    /* JADX INFO: renamed from: d */
     @NonNull
-    public final TextView d;
+    public final TextView f17332d;
 
+    /* JADX INFO: renamed from: e */
     @NonNull
-    public final LinearLayout e;
+    public final LinearLayout f17333e;
 
+    /* JADX INFO: renamed from: f */
     @NonNull
-    public final MaterialButton f;
+    public final MaterialButton f17334f;
 
+    /* JADX INFO: renamed from: g */
     @NonNull
-    public final MaterialButton g;
+    public final MaterialButton f17335g;
 
+    /* JADX INFO: renamed from: h */
     @NonNull
-    public final LinearLayout h;
+    public final LinearLayout f17336h;
 
+    /* JADX INFO: renamed from: i */
     @NonNull
-    public final MaterialButton i;
+    public final MaterialButton f17337i;
 
+    /* JADX INFO: renamed from: j */
     @NonNull
-    public final LinearLayout j;
+    public final LinearLayout f17338j;
 
+    /* JADX INFO: renamed from: k */
     @NonNull
-    public final TextView k;
+    public final TextView f17339k;
 
+    /* JADX INFO: renamed from: l */
     @NonNull
-    public final RecyclerView l;
+    public final RecyclerView f17340l;
 
+    /* JADX INFO: renamed from: m */
     @NonNull
-    public final TextView m;
+    public final TextView f17341m;
 
+    /* JADX INFO: renamed from: n */
     @NonNull
-    public final MaterialButton n;
+    public final MaterialButton f17342n;
 
+    /* JADX INFO: renamed from: o */
     @NonNull
-    public final MaterialButton o;
+    public final MaterialButton f17343o;
 
+    /* JADX INFO: renamed from: p */
     @NonNull
-    public final SimpleDraweeView p;
+    public final SimpleDraweeView f17344p;
 
     public WidgetOauthAuthorizeBinding(@NonNull CoordinatorLayout coordinatorLayout, @NonNull TextView textView, @NonNull ImageView imageView, @NonNull SimpleDraweeView simpleDraweeView, @NonNull TextView textView2, @NonNull MaterialCardView materialCardView, @NonNull TextView textView3, @NonNull LinearLayout linearLayout, @NonNull MaterialButton materialButton, @NonNull MaterialButton materialButton2, @NonNull LinearLayout linearLayout2, @NonNull MaterialButton materialButton3, @NonNull ImageView imageView2, @NonNull LinearLayout linearLayout3, @NonNull TextView textView4, @NonNull RecyclerView recyclerView, @NonNull TextView textView5, @NonNull ImageView imageView3, @NonNull MaterialButton materialButton4, @NonNull MaterialButton materialButton5, @NonNull SimpleDraweeView simpleDraweeView2) {
-        this.a = coordinatorLayout;
-        this.f2506b = textView;
-        this.c = simpleDraweeView;
-        this.d = textView2;
-        this.e = linearLayout;
-        this.f = materialButton;
-        this.g = materialButton2;
-        this.h = linearLayout2;
-        this.i = materialButton3;
-        this.j = linearLayout3;
-        this.k = textView4;
-        this.l = recyclerView;
-        this.m = textView5;
-        this.n = materialButton4;
-        this.o = materialButton5;
-        this.p = simpleDraweeView2;
+        this.f17329a = coordinatorLayout;
+        this.f17330b = textView;
+        this.f17331c = simpleDraweeView;
+        this.f17332d = textView2;
+        this.f17333e = linearLayout;
+        this.f17334f = materialButton;
+        this.f17335g = materialButton2;
+        this.f17336h = linearLayout2;
+        this.f17337i = materialButton3;
+        this.f17338j = linearLayout3;
+        this.f17339k = textView4;
+        this.f17340l = recyclerView;
+        this.f17341m = textView5;
+        this.f17342n = materialButton4;
+        this.f17343o = materialButton5;
+        this.f17344p = simpleDraweeView2;
     }
 
     @Override // androidx.viewbinding.ViewBinding
     @NonNull
     public View getRoot() {
-        return this.a;
+        return this.f17329a;
     }
 }

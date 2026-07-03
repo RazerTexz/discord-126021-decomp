@@ -4,8 +4,8 @@ import androidx.constraintlayout.solver.LinearSystem;
 import androidx.constraintlayout.solver.SolverVariable;
 import androidx.constraintlayout.solver.widgets.ConstraintAnchor;
 import androidx.constraintlayout.solver.widgets.ConstraintWidget;
-import b.d.b.a.outline;
 import java.util.HashMap;
+import p007b.p100d.p104b.p105a.C1643a;
 
 /* JADX INFO: loaded from: classes.dex */
 public class Barrier extends HelperWidget {
@@ -56,13 +56,13 @@ public class Barrier extends HelperWidget {
             this.resolved = false;
             int i6 = this.mBarrierType;
             if (i6 == 0 || i6 == 1) {
-                linearSystem.addEquality(this.mLeft.mSolverVariable, this.mX);
-                linearSystem.addEquality(this.mRight.mSolverVariable, this.mX);
+                linearSystem.addEquality(this.mLeft.mSolverVariable, this.f114mX);
+                linearSystem.addEquality(this.mRight.mSolverVariable, this.f114mX);
                 return;
             } else {
                 if (i6 == 2 || i6 == 3) {
-                    linearSystem.addEquality(this.mTop.mSolverVariable, this.mY);
-                    linearSystem.addEquality(this.mBottom.mSolverVariable, this.mY);
+                    linearSystem.addEquality(this.mTop.mSolverVariable, this.f115mY);
+                    linearSystem.addEquality(this.mBottom.mSolverVariable, this.f115mY);
                     return;
                 }
                 return;
@@ -253,20 +253,20 @@ public class Barrier extends HelperWidget {
 
     @Override // androidx.constraintlayout.solver.widgets.ConstraintWidget
     public String toString() {
-        StringBuilder sbU = outline.U("[Barrier] ");
-        sbU.append(getDebugName());
-        sbU.append(" {");
-        String string = sbU.toString();
+        StringBuilder sbM833U = C1643a.m833U("[Barrier] ");
+        sbM833U.append(getDebugName());
+        sbM833U.append(" {");
+        String string = sbM833U.toString();
         for (int i = 0; i < this.mWidgetsCount; i++) {
             ConstraintWidget constraintWidget = this.mWidgets[i];
             if (i > 0) {
-                string = outline.w(string, ", ");
+                string = C1643a.m883w(string, ", ");
             }
-            StringBuilder sbU2 = outline.U(string);
-            sbU2.append(constraintWidget.getDebugName());
-            string = sbU2.toString();
+            StringBuilder sbM833U2 = C1643a.m833U(string);
+            sbM833U2.append(constraintWidget.getDebugName());
+            string = sbM833U2.toString();
         }
-        return outline.w(string, "}");
+        return C1643a.m883w(string, "}");
     }
 
     public Barrier(String str) {

@@ -11,8 +11,8 @@ public class VerticalChainReference extends ChainReference {
     private Object mTopToBottom;
     private Object mTopToTop;
 
-    /* JADX INFO: renamed from: androidx.constraintlayout.solver.state.helpers.VerticalChainReference$1, reason: invalid class name */
-    public static /* synthetic */ class AnonymousClass1 {
+    /* JADX INFO: renamed from: androidx.constraintlayout.solver.state.helpers.VerticalChainReference$1 */
+    public static /* synthetic */ class C01881 {
         public static final /* synthetic */ int[] $SwitchMap$androidx$constraintlayout$solver$state$State$Chain;
 
         static {

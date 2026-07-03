@@ -1,16 +1,16 @@
 package com.discord.analytics.generated.events;
 
-import b.d.b.a.outline;
 import com.discord.analytics.generated.traits.TrackBase;
-import com.discord.analytics.generated.traits.TrackBase2;
+import com.discord.analytics.generated.traits.TrackBaseReceiver;
 import com.discord.analytics.generated.traits.TrackEmail;
-import com.discord.analytics.generated.traits.TrackEmail2;
+import com.discord.analytics.generated.traits.TrackEmailReceiver;
 import com.discord.api.science.AnalyticsSchema;
-import d0.z.d.Intrinsics3;
+import p007b.p100d.p104b.p105a.C1643a;
+import p507d0.p592z.p594d.C12238m;
 
 /* JADX INFO: compiled from: TrackEmailClicked.kt */
 /* JADX INFO: loaded from: classes.dex */
-public final /* data */ class TrackEmailClicked implements AnalyticsSchema, TrackBase2, TrackEmail2 {
+public final /* data */ class TrackEmailClicked implements AnalyticsSchema, TrackBaseReceiver, TrackEmailReceiver {
     private TrackBase trackBase;
     private TrackEmail trackEmail;
     private final CharSequence trackingId = null;
@@ -37,7 +37,7 @@ public final /* data */ class TrackEmailClicked implements AnalyticsSchema, Trac
             return false;
         }
         TrackEmailClicked trackEmailClicked = (TrackEmailClicked) other;
-        return Intrinsics3.areEqual(this.trackingId, trackEmailClicked.trackingId) && Intrinsics3.areEqual(this.guildId, trackEmailClicked.guildId) && Intrinsics3.areEqual(this.channelId, trackEmailClicked.channelId) && Intrinsics3.areEqual(this.path, trackEmailClicked.path) && Intrinsics3.areEqual(this.actionType, trackEmailClicked.actionType) && Intrinsics3.areEqual(this.target, trackEmailClicked.target) && Intrinsics3.areEqual(this.targetGuildId, trackEmailClicked.targetGuildId) && Intrinsics3.areEqual(this.targetChannelId, trackEmailClicked.targetChannelId);
+        return C12238m.areEqual(this.trackingId, trackEmailClicked.trackingId) && C12238m.areEqual(this.guildId, trackEmailClicked.guildId) && C12238m.areEqual(this.channelId, trackEmailClicked.channelId) && C12238m.areEqual(this.path, trackEmailClicked.path) && C12238m.areEqual(this.actionType, trackEmailClicked.actionType) && C12238m.areEqual(this.target, trackEmailClicked.target) && C12238m.areEqual(this.targetGuildId, trackEmailClicked.targetGuildId) && C12238m.areEqual(this.targetChannelId, trackEmailClicked.targetChannelId);
     }
 
     public int hashCode() {
@@ -60,21 +60,21 @@ public final /* data */ class TrackEmailClicked implements AnalyticsSchema, Trac
     }
 
     public String toString() {
-        StringBuilder sbU = outline.U("TrackEmailClicked(trackingId=");
-        sbU.append(this.trackingId);
-        sbU.append(", guildId=");
-        sbU.append(this.guildId);
-        sbU.append(", channelId=");
-        sbU.append(this.channelId);
-        sbU.append(", path=");
-        sbU.append(this.path);
-        sbU.append(", actionType=");
-        sbU.append(this.actionType);
-        sbU.append(", target=");
-        sbU.append(this.target);
-        sbU.append(", targetGuildId=");
-        sbU.append(this.targetGuildId);
-        sbU.append(", targetChannelId=");
-        return outline.G(sbU, this.targetChannelId, ")");
+        StringBuilder sbM833U = C1643a.m833U("TrackEmailClicked(trackingId=");
+        sbM833U.append(this.trackingId);
+        sbM833U.append(", guildId=");
+        sbM833U.append(this.guildId);
+        sbM833U.append(", channelId=");
+        sbM833U.append(this.channelId);
+        sbM833U.append(", path=");
+        sbM833U.append(this.path);
+        sbM833U.append(", actionType=");
+        sbM833U.append(this.actionType);
+        sbM833U.append(", target=");
+        sbM833U.append(this.target);
+        sbM833U.append(", targetGuildId=");
+        sbM833U.append(this.targetGuildId);
+        sbM833U.append(", targetChannelId=");
+        return C1643a.m819G(sbM833U, this.targetChannelId, ")");
     }
 }

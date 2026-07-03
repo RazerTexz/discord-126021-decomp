@@ -27,8 +27,9 @@ public class HideBottomViewOnScrollBehavior<V extends View> extends CoordinatorL
     private int currentState;
     private int height;
 
-    public class a extends AnimatorListenerAdapter {
-        public a() {
+    /* JADX INFO: renamed from: com.google.android.material.behavior.HideBottomViewOnScrollBehavior$a */
+    public class C10830a extends AnimatorListenerAdapter {
+        public C10830a() {
         }
 
         @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
@@ -44,7 +45,7 @@ public class HideBottomViewOnScrollBehavior<V extends View> extends CoordinatorL
     }
 
     private void animateChildTo(@NonNull V v, int i, long j, TimeInterpolator timeInterpolator) {
-        this.currentAnimator = v.animate().translationY(i).setInterpolator(timeInterpolator).setDuration(j).setListener(new a());
+        this.currentAnimator = v.animate().translationY(i).setInterpolator(timeInterpolator).setDuration(j).setListener(new C10830a());
     }
 
     @Override // androidx.coordinatorlayout.widget.CoordinatorLayout.Behavior

@@ -1,11 +1,11 @@
 package com.adjust.sdk.scheduler;
 
-import b.d.b.a.outline;
 import com.adjust.sdk.AdjustFactory;
 import com.adjust.sdk.Constants;
 import java.lang.Thread;
 import java.util.concurrent.Executors;
 import java.util.concurrent.ThreadFactory;
+import p007b.p100d.p104b.p105a.C1643a;
 
 /* JADX INFO: loaded from: classes.dex */
 public class ThreadFactoryWrapper implements ThreadFactory {
@@ -19,11 +19,11 @@ public class ThreadFactoryWrapper implements ThreadFactory {
     public Thread newThread(Runnable runnable) {
         Thread threadNewThread = Executors.defaultThreadFactory().newThread(runnable);
         threadNewThread.setPriority(9);
-        StringBuilder sbU = outline.U(Constants.THREAD_PREFIX);
-        sbU.append(threadNewThread.getName());
-        sbU.append("-");
-        sbU.append(this.source);
-        threadNewThread.setName(sbU.toString());
+        StringBuilder sbM833U = C1643a.m833U(Constants.THREAD_PREFIX);
+        sbM833U.append(threadNewThread.getName());
+        sbM833U.append("-");
+        sbM833U.append(this.source);
+        threadNewThread.setName(sbM833U.toString());
         threadNewThread.setDaemon(true);
         threadNewThread.setUncaughtExceptionHandler(new Thread.UncaughtExceptionHandler() { // from class: com.adjust.sdk.scheduler.ThreadFactoryWrapper.1
             @Override // java.lang.Thread.UncaughtExceptionHandler

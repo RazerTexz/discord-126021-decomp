@@ -1,14 +1,14 @@
 package com.discord.analytics.generated.events.impression;
 
-import b.d.b.a.outline;
 import com.discord.analytics.generated.traits.TrackBase;
-import com.discord.analytics.generated.traits.TrackBase2;
+import com.discord.analytics.generated.traits.TrackBaseReceiver;
 import com.discord.api.science.AnalyticsSchema;
-import d0.z.d.Intrinsics3;
+import p007b.p100d.p104b.p105a.C1643a;
+import p507d0.p592z.p594d.C12238m;
 
 /* JADX INFO: compiled from: TrackImpressionChannelCallVideoGrid.kt */
 /* JADX INFO: loaded from: classes.dex */
-public final /* data */ class TrackImpressionChannelCallVideoGrid implements AnalyticsSchema, TrackBase2 {
+public final /* data */ class TrackImpressionChannelCallVideoGrid implements AnalyticsSchema, TrackBaseReceiver {
     private TrackBase trackBase;
     private final Long channelId = null;
     private final Long guildId = null;
@@ -32,7 +32,7 @@ public final /* data */ class TrackImpressionChannelCallVideoGrid implements Ana
             return false;
         }
         TrackImpressionChannelCallVideoGrid trackImpressionChannelCallVideoGrid = (TrackImpressionChannelCallVideoGrid) other;
-        return Intrinsics3.areEqual(this.channelId, trackImpressionChannelCallVideoGrid.channelId) && Intrinsics3.areEqual(this.guildId, trackImpressionChannelCallVideoGrid.guildId) && Intrinsics3.areEqual(this.totalParticipants, trackImpressionChannelCallVideoGrid.totalParticipants) && Intrinsics3.areEqual(this.canInvite, trackImpressionChannelCallVideoGrid.canInvite) && Intrinsics3.areEqual(this.isAfkChannel, trackImpressionChannelCallVideoGrid.isAfkChannel) && Intrinsics3.areEqual(this.channelUserLimit, trackImpressionChannelCallVideoGrid.channelUserLimit);
+        return C12238m.areEqual(this.channelId, trackImpressionChannelCallVideoGrid.channelId) && C12238m.areEqual(this.guildId, trackImpressionChannelCallVideoGrid.guildId) && C12238m.areEqual(this.totalParticipants, trackImpressionChannelCallVideoGrid.totalParticipants) && C12238m.areEqual(this.canInvite, trackImpressionChannelCallVideoGrid.canInvite) && C12238m.areEqual(this.isAfkChannel, trackImpressionChannelCallVideoGrid.isAfkChannel) && C12238m.areEqual(this.channelUserLimit, trackImpressionChannelCallVideoGrid.channelUserLimit);
     }
 
     public int hashCode() {
@@ -51,17 +51,17 @@ public final /* data */ class TrackImpressionChannelCallVideoGrid implements Ana
     }
 
     public String toString() {
-        StringBuilder sbU = outline.U("TrackImpressionChannelCallVideoGrid(channelId=");
-        sbU.append(this.channelId);
-        sbU.append(", guildId=");
-        sbU.append(this.guildId);
-        sbU.append(", totalParticipants=");
-        sbU.append(this.totalParticipants);
-        sbU.append(", canInvite=");
-        sbU.append(this.canInvite);
-        sbU.append(", isAfkChannel=");
-        sbU.append(this.isAfkChannel);
-        sbU.append(", channelUserLimit=");
-        return outline.G(sbU, this.channelUserLimit, ")");
+        StringBuilder sbM833U = C1643a.m833U("TrackImpressionChannelCallVideoGrid(channelId=");
+        sbM833U.append(this.channelId);
+        sbM833U.append(", guildId=");
+        sbM833U.append(this.guildId);
+        sbM833U.append(", totalParticipants=");
+        sbM833U.append(this.totalParticipants);
+        sbM833U.append(", canInvite=");
+        sbM833U.append(this.canInvite);
+        sbM833U.append(", isAfkChannel=");
+        sbM833U.append(this.isAfkChannel);
+        sbM833U.append(", channelUserLimit=");
+        return C1643a.m819G(sbM833U, this.channelUserLimit, ")");
     }
 }

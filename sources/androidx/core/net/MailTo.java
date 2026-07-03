@@ -4,20 +4,24 @@ import android.net.Uri;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.core.util.Preconditions;
-import b.d.b.a.outline;
 import java.util.HashMap;
 import java.util.Locale;
 import java.util.Map;
+import p007b.p100d.p104b.p105a.C1643a;
 
 /* JADX INFO: loaded from: classes.dex */
 public final class MailTo {
     private static final String BCC = "bcc";
     private static final String BODY = "body";
-    private static final String CC = "cc";
+
+    /* JADX INFO: renamed from: CC */
+    private static final String f132CC = "cc";
     private static final String MAILTO = "mailto";
     public static final String MAILTO_SCHEME = "mailto:";
     private static final String SUBJECT = "subject";
-    private static final String TO = "to";
+
+    /* JADX INFO: renamed from: TO */
+    private static final String f133TO = "to";
     private HashMap<String, String> mHeaders = new HashMap<>();
 
     private MailTo() {
@@ -58,9 +62,9 @@ public final class MailTo {
         }
         String to = mailTo.getTo();
         if (to != null) {
-            strDecode = outline.y(strDecode, ", ", to);
+            strDecode = C1643a.m886y(strDecode, ", ", to);
         }
-        mailTo.mHeaders.put(TO, strDecode);
+        mailTo.mHeaders.put(f133TO, strDecode);
         return mailTo;
     }
 
@@ -76,7 +80,7 @@ public final class MailTo {
 
     @Nullable
     public String getCc() {
-        return this.mHeaders.get(CC);
+        return this.mHeaders.get(f132CC);
     }
 
     @Nullable
@@ -91,7 +95,7 @@ public final class MailTo {
 
     @Nullable
     public String getTo() {
-        return this.mHeaders.get(TO);
+        return this.mHeaders.get(f133TO);
     }
 
     @NonNull

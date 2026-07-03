@@ -9,13 +9,13 @@ import android.widget.TextView;
 import androidx.annotation.DrawableRes;
 import androidx.annotation.StringRes;
 import androidx.cardview.widget.CardView;
-import com.discord.R;
+import com.discord.C5419R;
 import com.discord.databinding.ViewMemberVerificationBinding;
 import com.google.android.material.button.MaterialButton;
-import d0.z.d.Intrinsics3;
 import kotlin.Unit;
 import kotlin.jvm.functions.Function0;
 import kotlin.jvm.internal.DefaultConstructorMarker;
+import p507d0.p592z.p594d.C12238m;
 
 /* JADX INFO: compiled from: MemberVerificationView.kt */
 /* JADX INFO: loaded from: classes2.dex */
@@ -43,9 +43,9 @@ public final class MemberVerificationView extends CardView {
     }
 
     public final void configure(@DrawableRes int verificationImageIcon, @StringRes int verificationTitleText, boolean isVerified, final Function0<Unit> verificationCallback) {
-        this.binding.d.setImageResource(verificationImageIcon);
-        this.binding.e.setText(verificationTitleText);
-        this.binding.c.setOnClickListener(new View.OnClickListener() { // from class: com.discord.widgets.servers.member_verification.MemberVerificationView.configure.1
+        this.binding.f15510d.setImageResource(verificationImageIcon);
+        this.binding.f15511e.setText(verificationTitleText);
+        this.binding.f15509c.setOnClickListener(new View.OnClickListener() { // from class: com.discord.widgets.servers.member_verification.MemberVerificationView.configure.1
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
                 Function0 function0 = verificationCallback;
@@ -53,33 +53,33 @@ public final class MemberVerificationView extends CardView {
                 }
             }
         });
-        TextView textView = this.binding.f2201b;
-        Intrinsics3.checkNotNullExpressionValue(textView, "binding.memberVerificationVerifiedCheck");
+        TextView textView = this.binding.f15508b;
+        C12238m.checkNotNullExpressionValue(textView, "binding.memberVerificationVerifiedCheck");
         textView.setVisibility(isVerified ? 0 : 8);
-        MaterialButton materialButton = this.binding.c;
-        Intrinsics3.checkNotNullExpressionValue(materialButton, "binding.memberVerificationVerifyButton");
+        MaterialButton materialButton = this.binding.f15509c;
+        C12238m.checkNotNullExpressionValue(materialButton, "binding.memberVerificationVerifyButton");
         materialButton.setVisibility(isVerified ^ true ? 0 : 8);
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public MemberVerificationView(Context context, AttributeSet attributeSet, int i) {
         super(context, attributeSet, i);
-        Intrinsics3.checkNotNullParameter(context, "context");
-        LayoutInflater.from(context).inflate(R.layout.view_member_verification, this);
-        int i2 = R.id.member_verification_verified_check;
-        TextView textView = (TextView) findViewById(R.id.member_verification_verified_check);
+        C12238m.checkNotNullParameter(context, "context");
+        LayoutInflater.from(context).inflate(C5419R.layout.view_member_verification, this);
+        int i2 = C5419R.id.member_verification_verified_check;
+        TextView textView = (TextView) findViewById(C5419R.id.member_verification_verified_check);
         if (textView != null) {
-            i2 = R.id.member_verification_verify_button;
-            MaterialButton materialButton = (MaterialButton) findViewById(R.id.member_verification_verify_button);
+            i2 = C5419R.id.member_verification_verify_button;
+            MaterialButton materialButton = (MaterialButton) findViewById(C5419R.id.member_verification_verify_button);
             if (materialButton != null) {
-                i2 = R.id.member_verification_verify_icon;
-                ImageView imageView = (ImageView) findViewById(R.id.member_verification_verify_icon);
+                i2 = C5419R.id.member_verification_verify_icon;
+                ImageView imageView = (ImageView) findViewById(C5419R.id.member_verification_verify_icon);
                 if (imageView != null) {
-                    i2 = R.id.member_verification_verify_text;
-                    TextView textView2 = (TextView) findViewById(R.id.member_verification_verify_text);
+                    i2 = C5419R.id.member_verification_verify_text;
+                    TextView textView2 = (TextView) findViewById(C5419R.id.member_verification_verify_text);
                     if (textView2 != null) {
                         ViewMemberVerificationBinding viewMemberVerificationBinding = new ViewMemberVerificationBinding(this, textView, materialButton, imageView, textView2);
-                        Intrinsics3.checkNotNullExpressionValue(viewMemberVerificationBinding, "ViewMemberVerificationBi…ater.from(context), this)");
+                        C12238m.checkNotNullExpressionValue(viewMemberVerificationBinding, "ViewMemberVerificationBi…ater.from(context), this)");
                         this.binding = viewMemberVerificationBinding;
                         return;
                     }

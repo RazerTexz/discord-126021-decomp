@@ -7,7 +7,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.annotation.RequiresApi;
 import androidx.core.graphics.Insets;
-import b.d.b.a.outline;
+import p007b.p100d.p104b.p105a.C1643a;
 
 /* JADX INFO: loaded from: classes.dex */
 public final class WindowInsetsAnimationControllerCompat {
@@ -21,7 +21,7 @@ public final class WindowInsetsAnimationControllerCompat {
             return 0.0f;
         }
 
-        @FloatRange(from = 0.0d, to = 1.0d)
+        @FloatRange(from = 0.0d, m75to = 1.0d)
         public float getCurrentFraction() {
             return 0.0f;
         }
@@ -57,7 +57,7 @@ public final class WindowInsetsAnimationControllerCompat {
             return false;
         }
 
-        public void setInsetsAndAlpha(@Nullable Insets insets, @FloatRange(from = 0.0d, to = 1.0d) float f, @FloatRange(from = 0.0d, to = 1.0d) float f2) {
+        public void setInsetsAndAlpha(@Nullable Insets insets, @FloatRange(from = 0.0d, m75to = 1.0d) float f, @FloatRange(from = 0.0d, m75to = 1.0d) float f2) {
         }
     }
 
@@ -133,10 +133,10 @@ public final class WindowInsetsAnimationControllerCompat {
             this.mImpl = new Impl();
             return;
         }
-        StringBuilder sbU = outline.U("On API 30+, the constructor taking a ");
-        sbU.append(WindowInsetsAnimationController.class.getSimpleName());
-        sbU.append(" as parameter");
-        throw new UnsupportedOperationException(sbU.toString());
+        StringBuilder sbM833U = C1643a.m833U("On API 30+, the constructor taking a ");
+        sbM833U.append(WindowInsetsAnimationController.class.getSimpleName());
+        sbM833U.append(" as parameter");
+        throw new UnsupportedOperationException(sbM833U.toString());
     }
 
     public void finish(boolean z2) {
@@ -147,7 +147,7 @@ public final class WindowInsetsAnimationControllerCompat {
         return this.mImpl.getCurrentAlpha();
     }
 
-    @FloatRange(from = 0.0d, to = 1.0d)
+    @FloatRange(from = 0.0d, m75to = 1.0d)
     public float getCurrentFraction() {
         return this.mImpl.getCurrentFraction();
     }
@@ -183,7 +183,7 @@ public final class WindowInsetsAnimationControllerCompat {
         return (isFinished() || isCancelled()) ? false : true;
     }
 
-    public void setInsetsAndAlpha(@Nullable Insets insets, @FloatRange(from = 0.0d, to = 1.0d) float f, @FloatRange(from = 0.0d, to = 1.0d) float f2) {
+    public void setInsetsAndAlpha(@Nullable Insets insets, @FloatRange(from = 0.0d, m75to = 1.0d) float f, @FloatRange(from = 0.0d, m75to = 1.0d) float f2) {
         this.mImpl.setInsetsAndAlpha(insets, f, f2);
     }
 

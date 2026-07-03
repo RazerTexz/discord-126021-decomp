@@ -1,7 +1,7 @@
 package com.esotericsoftware.kryo.serializers;
 
-import b.e.a.Log;
 import com.esotericsoftware.kryo.serializers.FieldSerializer;
+import p007b.p106e.p107a.C1644a;
 
 /* JADX INFO: loaded from: classes.dex */
 public class FieldSerializerConfig implements Cloneable {
@@ -16,7 +16,7 @@ public class FieldSerializerConfig implements Cloneable {
     private boolean useAsm = true ^ FieldSerializer.unsafeAvailable;
 
     public FieldSerializerConfig() {
-        Log.a aVar = Log.a;
+        C1644a.a aVar = C1644a.f3007a;
     }
 
     public FieldSerializer.CachedFieldNameStrategy getCachedFieldNameStrategy() {
@@ -57,7 +57,7 @@ public class FieldSerializerConfig implements Cloneable {
 
     public void setCachedFieldNameStrategy(FieldSerializer.CachedFieldNameStrategy cachedFieldNameStrategy) {
         this.cachedFieldNameStrategy = cachedFieldNameStrategy;
-        Log.a aVar = Log.a;
+        C1644a.a aVar = C1644a.f3007a;
     }
 
     public void setCopyTransient(boolean z2) {
@@ -66,27 +66,27 @@ public class FieldSerializerConfig implements Cloneable {
 
     public void setFieldsAsAccessible(boolean z2) {
         this.setFieldsAsAccessible = z2;
-        Log.a aVar = Log.a;
+        C1644a.a aVar = C1644a.f3007a;
     }
 
     public void setFieldsCanBeNull(boolean z2) {
         this.fieldsCanBeNull = z2;
-        Log.a aVar = Log.a;
+        C1644a.a aVar = C1644a.f3007a;
     }
 
     public void setFixedFieldTypes(boolean z2) {
         this.fixedFieldTypes = z2;
-        Log.a aVar = Log.a;
+        C1644a.a aVar = C1644a.f3007a;
     }
 
     public void setIgnoreSyntheticFields(boolean z2) {
         this.ignoreSyntheticFields = z2;
-        Log.a aVar = Log.a;
+        C1644a.a aVar = C1644a.f3007a;
     }
 
     public void setOptimizedGenerics(boolean z2) {
         this.optimizedGenerics = z2;
-        Log.a aVar = Log.a;
+        C1644a.a aVar = C1644a.f3007a;
     }
 
     public void setSerializeTransient(boolean z2) {
@@ -97,14 +97,14 @@ public class FieldSerializerConfig implements Cloneable {
         this.useAsm = z2;
         if (!z2 && !FieldSerializer.unsafeAvailable) {
             this.useAsm = true;
-            Log.a aVar = Log.a;
+            C1644a.a aVar = C1644a.f3007a;
         }
-        Log.a aVar2 = Log.a;
+        C1644a.a aVar2 = C1644a.f3007a;
     }
 
     @Override // 
     /* JADX INFO: renamed from: clone, reason: merged with bridge method [inline-methods] */
-    public FieldSerializerConfig mo77clone() {
+    public FieldSerializerConfig mo11454clone() {
         try {
             return (FieldSerializerConfig) super.clone();
         } catch (CloneNotSupportedException e) {

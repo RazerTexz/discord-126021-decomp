@@ -9,8 +9,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import androidx.fragment.R;
-import b.d.b.a.outline;
+import androidx.fragment.C0344R;
+import p007b.p100d.p104b.p105a.C1643a;
 
 /* JADX INFO: loaded from: classes.dex */
 public class FragmentLayoutInflaterFactory implements LayoutInflater.Factory2 {
@@ -38,12 +38,12 @@ public class FragmentLayoutInflaterFactory implements LayoutInflater.Factory2 {
             return null;
         }
         String attributeValue = attributeSet.getAttributeValue(null, "class");
-        TypedArray typedArrayObtainStyledAttributes = context.obtainStyledAttributes(attributeSet, R.styleable.Fragment);
+        TypedArray typedArrayObtainStyledAttributes = context.obtainStyledAttributes(attributeSet, C0344R.styleable.Fragment);
         if (attributeValue == null) {
-            attributeValue = typedArrayObtainStyledAttributes.getString(R.styleable.Fragment_android_name);
+            attributeValue = typedArrayObtainStyledAttributes.getString(C0344R.styleable.Fragment_android_name);
         }
-        int resourceId = typedArrayObtainStyledAttributes.getResourceId(R.styleable.Fragment_android_id, -1);
-        String string = typedArrayObtainStyledAttributes.getString(R.styleable.Fragment_android_tag);
+        int resourceId = typedArrayObtainStyledAttributes.getResourceId(C0344R.styleable.Fragment_android_id, -1);
+        String string = typedArrayObtainStyledAttributes.getString(C0344R.styleable.Fragment_android_tag);
         typedArrayObtainStyledAttributes.recycle();
         if (attributeValue == null || !FragmentFactory.isFragmentClass(context.getClassLoader(), attributeValue)) {
             return null;
@@ -94,7 +94,7 @@ public class FragmentLayoutInflaterFactory implements LayoutInflater.Factory2 {
         fragmentStateManagerCreateOrGetFragmentStateManager.ensureInflatedView();
         View view2 = fragmentFindFragmentById.mView;
         if (view2 == null) {
-            throw new IllegalStateException(outline.y("Fragment ", attributeValue, " did not create a view."));
+            throw new IllegalStateException(C1643a.m886y("Fragment ", attributeValue, " did not create a view."));
         }
         if (resourceId != 0) {
             view2.setId(resourceId);

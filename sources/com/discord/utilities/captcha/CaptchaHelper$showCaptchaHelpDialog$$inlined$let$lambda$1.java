@@ -1,0 +1,40 @@
+package com.discord.utilities.captcha;
+
+import android.content.Intent;
+import android.net.Uri;
+import android.view.View;
+import com.discord.app.AppActivity;
+import kotlin.Unit;
+import kotlin.jvm.functions.Function0;
+import kotlin.jvm.functions.Function1;
+import p507d0.p592z.p594d.AbstractC12240o;
+import p507d0.p592z.p594d.C12238m;
+
+/* JADX INFO: compiled from: CaptchaHelper.kt */
+/* JADX INFO: loaded from: classes2.dex */
+public final class CaptchaHelper$showCaptchaHelpDialog$$inlined$let$lambda$1 extends AbstractC12240o implements Function1<View, Unit> {
+    public final /* synthetic */ AppActivity $activity$inlined;
+    public final /* synthetic */ Function0 $onOpenBrowser$inlined;
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public CaptchaHelper$showCaptchaHelpDialog$$inlined$let$lambda$1(AppActivity appActivity, Function0 function0) {
+        super(1);
+        this.$activity$inlined = appActivity;
+        this.$onOpenBrowser$inlined = function0;
+    }
+
+    @Override // kotlin.jvm.functions.Function1
+    public /* bridge */ /* synthetic */ Unit invoke(View view) {
+        invoke2(view);
+        return Unit.f27425a;
+    }
+
+    /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
+    public final void invoke2(View view) {
+        C12238m.checkNotNullParameter(view, "it");
+        view.getContext().startActivity(new Intent("android.intent.action.VIEW", Uri.parse("https://discord.com/app")));
+        Function0 function0 = this.$onOpenBrowser$inlined;
+        if (function0 != null) {
+        }
+    }
+}

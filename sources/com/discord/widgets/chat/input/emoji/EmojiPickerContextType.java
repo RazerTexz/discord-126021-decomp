@@ -1,9 +1,9 @@
 package com.discord.widgets.chat.input.emoji;
 
-import a0.a.a.b;
-import b.d.b.a.outline;
 import java.io.Serializable;
 import kotlin.jvm.internal.DefaultConstructorMarker;
+import p001a0.p002a.p003a.C0002b;
+import p007b.p100d.p104b.p105a.C1643a;
 
 /* JADX INFO: compiled from: EmojiPickerContextType.kt */
 /* JADX INFO: loaded from: classes2.dex */
@@ -64,11 +64,11 @@ public abstract class EmojiPickerContextType implements Serializable {
         }
 
         public int hashCode() {
-            return b.a(this.guildId);
+            return C0002b.m3a(this.guildId);
         }
 
         public String toString() {
-            return outline.C(outline.U("Guild(guildId="), this.guildId, ")");
+            return C1643a.m815C(C1643a.m833U("Guild(guildId="), this.guildId, ")");
         }
     }
 

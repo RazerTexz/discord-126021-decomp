@@ -16,7 +16,7 @@ import android.view.ViewOutlineProvider;
 import android.widget.ImageView;
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.widget.AppCompatImageView;
-import androidx.constraintlayout.widget.R;
+import androidx.constraintlayout.widget.C0201R;
 
 /* JADX INFO: loaded from: classes.dex */
 public class ImageFilterView extends AppCompatImageView {
@@ -32,7 +32,9 @@ public class ImageFilterView extends AppCompatImageView {
     public ViewOutlineProvider mViewOutlineProvider;
 
     public static class ImageMatrix {
-        public float[] m = new float[20];
+
+        /* JADX INFO: renamed from: m */
+        public float[] f125m = new float[20];
         public ColorMatrix mColorMatrix = new ColorMatrix();
         public ColorMatrix mTmpColorMatrix = new ColorMatrix();
         public float mBrightness = 1.0f;
@@ -41,7 +43,7 @@ public class ImageFilterView extends AppCompatImageView {
         public float mWarmth = 1.0f;
 
         private void brightness(float f) {
-            float[] fArr = this.m;
+            float[] fArr = this.f125m;
             fArr[0] = f;
             fArr[1] = 0.0f;
             fArr[2] = 0.0f;
@@ -69,7 +71,7 @@ public class ImageFilterView extends AppCompatImageView {
             float f3 = 0.2999f * f2;
             float f4 = 0.587f * f2;
             float f5 = f2 * 0.114f;
-            float[] fArr = this.m;
+            float[] fArr = this.f125m;
             fArr[0] = f3 + f;
             fArr[1] = f4;
             fArr[2] = f5;
@@ -121,7 +123,7 @@ public class ImageFilterView extends AppCompatImageView {
             float fMin4 = Math.min(255.0f, Math.max(255.0f, 0.0f));
             float fMin5 = Math.min(255.0f, Math.max(fLog3, 0.0f));
             float fMin6 = fMin3 / Math.min(255.0f, Math.max(fLog4, 0.0f));
-            float[] fArr = this.m;
+            float[] fArr = this.f125m;
             fArr[0] = fMin / fMin4;
             fArr[1] = 0.0f;
             fArr[2] = 0.0f;
@@ -151,7 +153,7 @@ public class ImageFilterView extends AppCompatImageView {
             boolean z3 = true;
             if (f != 1.0f) {
                 saturation(f);
-                this.mColorMatrix.set(this.m);
+                this.mColorMatrix.set(this.f125m);
                 z2 = true;
             } else {
                 z2 = false;
@@ -165,14 +167,14 @@ public class ImageFilterView extends AppCompatImageView {
             float f3 = this.mWarmth;
             if (f3 != 1.0f) {
                 warmth(f3);
-                this.mTmpColorMatrix.set(this.m);
+                this.mTmpColorMatrix.set(this.f125m);
                 this.mColorMatrix.postConcat(this.mTmpColorMatrix);
                 z2 = true;
             }
             float f4 = this.mBrightness;
             if (f4 != 1.0f) {
                 brightness(f4);
-                this.mTmpColorMatrix.set(this.m);
+                this.mTmpColorMatrix.set(this.f125m);
                 this.mColorMatrix.postConcat(this.mTmpColorMatrix);
             } else {
                 z3 = z2;
@@ -197,24 +199,24 @@ public class ImageFilterView extends AppCompatImageView {
 
     private void init(Context context, AttributeSet attributeSet) {
         if (attributeSet != null) {
-            TypedArray typedArrayObtainStyledAttributes = getContext().obtainStyledAttributes(attributeSet, R.styleable.ImageFilterView);
+            TypedArray typedArrayObtainStyledAttributes = getContext().obtainStyledAttributes(attributeSet, C0201R.styleable.ImageFilterView);
             int indexCount = typedArrayObtainStyledAttributes.getIndexCount();
-            Drawable drawable = typedArrayObtainStyledAttributes.getDrawable(R.styleable.ImageFilterView_altSrc);
+            Drawable drawable = typedArrayObtainStyledAttributes.getDrawable(C0201R.styleable.ImageFilterView_altSrc);
             for (int i = 0; i < indexCount; i++) {
                 int index = typedArrayObtainStyledAttributes.getIndex(i);
-                if (index == R.styleable.ImageFilterView_crossfade) {
+                if (index == C0201R.styleable.ImageFilterView_crossfade) {
                     this.mCrossfade = typedArrayObtainStyledAttributes.getFloat(index, 0.0f);
-                } else if (index == R.styleable.ImageFilterView_warmth) {
+                } else if (index == C0201R.styleable.ImageFilterView_warmth) {
                     setWarmth(typedArrayObtainStyledAttributes.getFloat(index, 0.0f));
-                } else if (index == R.styleable.ImageFilterView_saturation) {
+                } else if (index == C0201R.styleable.ImageFilterView_saturation) {
                     setSaturation(typedArrayObtainStyledAttributes.getFloat(index, 0.0f));
-                } else if (index == R.styleable.ImageFilterView_contrast) {
+                } else if (index == C0201R.styleable.ImageFilterView_contrast) {
                     setContrast(typedArrayObtainStyledAttributes.getFloat(index, 0.0f));
-                } else if (index == R.styleable.ImageFilterView_round) {
+                } else if (index == C0201R.styleable.ImageFilterView_round) {
                     setRound(typedArrayObtainStyledAttributes.getDimension(index, 0.0f));
-                } else if (index == R.styleable.ImageFilterView_roundPercent) {
+                } else if (index == C0201R.styleable.ImageFilterView_roundPercent) {
                     setRoundPercent(typedArrayObtainStyledAttributes.getFloat(index, 0.0f));
-                } else if (index == R.styleable.ImageFilterView_overlay) {
+                } else if (index == C0201R.styleable.ImageFilterView_overlay) {
                     setOverlay(typedArrayObtainStyledAttributes.getBoolean(index, this.mOverlay));
                 }
             }

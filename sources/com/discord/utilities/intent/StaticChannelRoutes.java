@@ -1,18 +1,18 @@
 package com.discord.utilities.intent;
 
-import a0.a.a.b;
 import android.net.Uri;
-import b.a.d.m0.RoutingPatterns;
-import b.d.b.a.outline;
-import d0.LazyJVM;
-import d0.g0.StringNumberConversions;
-import d0.t._Collections;
-import d0.z.d.Intrinsics3;
 import java.util.Map;
 import kotlin.Lazy;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.text.MatchResult;
 import kotlin.text.Regex;
+import p001a0.p002a.p003a.C0002b;
+import p007b.p008a.p018d.p019m0.C0877a;
+import p007b.p100d.p104b.p105a.C1643a;
+import p507d0.C12083g;
+import p507d0.p579g0.C12102s;
+import p507d0.p580t.C12163u;
+import p507d0.p592z.p594d.C12238m;
 
 /* JADX INFO: compiled from: StaticChannelRoutes.kt */
 /* JADX INFO: loaded from: classes2.dex */
@@ -23,7 +23,7 @@ public enum StaticChannelRoutes {
 
     /* JADX INFO: renamed from: Companion, reason: from kotlin metadata */
     public static final Companion INSTANCE = new Companion(null);
-    private static final Lazy routeToName$delegate = LazyJVM.lazy(StaticChannelRoutes2.INSTANCE);
+    private static final Lazy routeToName$delegate = C12083g.lazy(StaticChannelRoutes$Companion$routeToName$2.INSTANCE);
 
     /* JADX INFO: compiled from: StaticChannelRoutes.kt */
     public static final class Companion {
@@ -44,15 +44,15 @@ public enum StaticChannelRoutes {
             String path;
             StaticChannelRoutes staticChannelRoutesFromRoute;
             Long longOrNull;
-            Intrinsics3.checkNotNullParameter(uri, "$this$extractStaticRoute");
+            C12238m.checkNotNullParameter(uri, "$this$extractStaticRoute");
             if ((uri.getHost() == null || IntentUtils.INSTANCE.isHttpDomainUrl(uri)) && (path = uri.getPath()) != null) {
-                RoutingPatterns routingPatterns = RoutingPatterns.G;
-                Regex regex = RoutingPatterns.u;
-                Intrinsics3.checkNotNullExpressionValue(path, "path");
+                C0877a c0877a = C0877a.f538G;
+                Regex regex = C0877a.f559u;
+                C12238m.checkNotNullExpressionValue(path, "path");
                 MatchResult matchResultMatchEntire = regex.matchEntire(path);
-                if (matchResultMatchEntire != null && (staticChannelRoutesFromRoute = fromRoute((String) _Collections.getOrNull(matchResultMatchEntire.getGroupValues(), 2))) != null) {
-                    String str = (String) _Collections.getOrNull(matchResultMatchEntire.getGroupValues(), 1);
-                    return new WithGuild(staticChannelRoutesFromRoute, (str == null || (longOrNull = StringNumberConversions.toLongOrNull(str)) == null) ? 0L : longOrNull.longValue());
+                if (matchResultMatchEntire != null && (staticChannelRoutesFromRoute = fromRoute((String) C12163u.getOrNull(matchResultMatchEntire.getGroupValues(), 2))) != null) {
+                    String str = (String) C12163u.getOrNull(matchResultMatchEntire.getGroupValues(), 1);
+                    return new WithGuild(staticChannelRoutesFromRoute, (str == null || (longOrNull = C12102s.toLongOrNull(str)) == null) ? 0L : longOrNull.longValue());
                 }
             }
             return null;
@@ -69,7 +69,7 @@ public enum StaticChannelRoutes {
         private final StaticChannelRoutes route;
 
         public WithGuild(StaticChannelRoutes staticChannelRoutes, long j) {
-            Intrinsics3.checkNotNullParameter(staticChannelRoutes, "route");
+            C12238m.checkNotNullParameter(staticChannelRoutes, "route");
             this.route = staticChannelRoutes;
             this.guildId = j;
         }
@@ -95,7 +95,7 @@ public enum StaticChannelRoutes {
         }
 
         public final WithGuild copy(StaticChannelRoutes route, long guildId) {
-            Intrinsics3.checkNotNullParameter(route, "route");
+            C12238m.checkNotNullParameter(route, "route");
             return new WithGuild(route, guildId);
         }
 
@@ -107,7 +107,7 @@ public enum StaticChannelRoutes {
                 return false;
             }
             WithGuild withGuild = (WithGuild) other;
-            return Intrinsics3.areEqual(this.route, withGuild.route) && this.guildId == withGuild.guildId;
+            return C12238m.areEqual(this.route, withGuild.route) && this.guildId == withGuild.guildId;
         }
 
         public final long getGuildId() {
@@ -120,14 +120,14 @@ public enum StaticChannelRoutes {
 
         public int hashCode() {
             StaticChannelRoutes staticChannelRoutes = this.route;
-            return b.a(this.guildId) + ((staticChannelRoutes != null ? staticChannelRoutes.hashCode() : 0) * 31);
+            return C0002b.m3a(this.guildId) + ((staticChannelRoutes != null ? staticChannelRoutes.hashCode() : 0) * 31);
         }
 
         public String toString() {
-            StringBuilder sbU = outline.U("WithGuild(route=");
-            sbU.append(this.route);
-            sbU.append(", guildId=");
-            return outline.C(sbU, this.guildId, ")");
+            StringBuilder sbM833U = C1643a.m833U("WithGuild(route=");
+            sbM833U.append(this.route);
+            sbM833U.append(", guildId=");
+            return C1643a.m815C(sbM833U, this.guildId, ")");
         }
     }
 

@@ -8,47 +8,51 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.viewbinding.ViewBinding;
-import com.discord.R;
+import com.discord.C5419R;
 import com.discord.views.GuildView;
 import com.google.android.material.card.MaterialCardView;
 
 /* JADX INFO: loaded from: classes.dex */
 public final class DiscordHubAddServerListItemBinding implements ViewBinding {
 
+    /* JADX INFO: renamed from: a */
     @NonNull
-    public final FrameLayout a;
+    public final FrameLayout f15046a;
 
-    /* JADX INFO: renamed from: b, reason: collision with root package name */
+    /* JADX INFO: renamed from: b */
     @NonNull
-    public final GuildView f2098b;
+    public final GuildView f15047b;
 
+    /* JADX INFO: renamed from: c */
     @NonNull
-    public final MaterialCardView c;
+    public final MaterialCardView f15048c;
 
+    /* JADX INFO: renamed from: d */
     @NonNull
-    public final TextView d;
+    public final TextView f15049d;
 
     public DiscordHubAddServerListItemBinding(@NonNull FrameLayout frameLayout, @NonNull GuildView guildView, @NonNull MaterialCardView materialCardView, @NonNull TextView textView) {
-        this.a = frameLayout;
-        this.f2098b = guildView;
-        this.c = materialCardView;
-        this.d = textView;
+        this.f15046a = frameLayout;
+        this.f15047b = guildView;
+        this.f15048c = materialCardView;
+        this.f15049d = textView;
     }
 
     @NonNull
-    public static DiscordHubAddServerListItemBinding a(@NonNull LayoutInflater layoutInflater, @Nullable ViewGroup viewGroup, boolean z2) {
-        View viewInflate = layoutInflater.inflate(R.layout.discord_hub_add_server_list_item, viewGroup, false);
+    /* JADX INFO: renamed from: a */
+    public static DiscordHubAddServerListItemBinding m8382a(@NonNull LayoutInflater layoutInflater, @Nullable ViewGroup viewGroup, boolean z2) {
+        View viewInflate = layoutInflater.inflate(C5419R.layout.discord_hub_add_server_list_item, viewGroup, false);
         if (z2) {
             viewGroup.addView(viewInflate);
         }
-        int i = R.id.discord_u_add_server_list_item_image;
-        GuildView guildView = (GuildView) viewInflate.findViewById(R.id.discord_u_add_server_list_item_image);
+        int i = C5419R.id.discord_u_add_server_list_item_image;
+        GuildView guildView = (GuildView) viewInflate.findViewById(C5419R.id.discord_u_add_server_list_item_image);
         if (guildView != null) {
-            i = R.id.discord_u_add_server_list_item_layout;
-            MaterialCardView materialCardView = (MaterialCardView) viewInflate.findViewById(R.id.discord_u_add_server_list_item_layout);
+            i = C5419R.id.discord_u_add_server_list_item_layout;
+            MaterialCardView materialCardView = (MaterialCardView) viewInflate.findViewById(C5419R.id.discord_u_add_server_list_item_layout);
             if (materialCardView != null) {
-                i = R.id.discord_u_add_server_list_item_text;
-                TextView textView = (TextView) viewInflate.findViewById(R.id.discord_u_add_server_list_item_text);
+                i = C5419R.id.discord_u_add_server_list_item_text;
+                TextView textView = (TextView) viewInflate.findViewById(C5419R.id.discord_u_add_server_list_item_text);
                 if (textView != null) {
                     return new DiscordHubAddServerListItemBinding((FrameLayout) viewInflate, guildView, materialCardView, textView);
                 }
@@ -60,6 +64,6 @@ public final class DiscordHubAddServerListItemBinding implements ViewBinding {
     @Override // androidx.viewbinding.ViewBinding
     @NonNull
     public View getRoot() {
-        return this.a;
+        return this.f15046a;
     }
 }

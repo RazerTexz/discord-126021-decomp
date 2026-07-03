@@ -1,7 +1,7 @@
 package com.discord.api.message.role_subscription;
 
-import b.d.b.a.outline;
-import d0.z.d.Intrinsics3;
+import p007b.p100d.p104b.p105a.C1643a;
+import p507d0.p592z.p594d.C12238m;
 
 /* JADX INFO: compiled from: RoleSubscriptionData.kt */
 /* JADX INFO: loaded from: classes.dex */
@@ -39,7 +39,7 @@ public final /* data */ class RoleSubscriptionData {
             return false;
         }
         RoleSubscriptionData roleSubscriptionData = (RoleSubscriptionData) other;
-        return this.roleSubscriptionListingId == roleSubscriptionData.roleSubscriptionListingId && Intrinsics3.areEqual(this.tierName, roleSubscriptionData.tierName) && this.totalMonthsSubscribed == roleSubscriptionData.totalMonthsSubscribed && this.isRenewal == roleSubscriptionData.isRenewal;
+        return this.roleSubscriptionListingId == roleSubscriptionData.roleSubscriptionListingId && C12238m.areEqual(this.tierName, roleSubscriptionData.tierName) && this.totalMonthsSubscribed == roleSubscriptionData.totalMonthsSubscribed && this.isRenewal == roleSubscriptionData.isRenewal;
     }
 
     /* JADX WARN: Multi-variable type inference failed */
@@ -61,13 +61,13 @@ public final /* data */ class RoleSubscriptionData {
     }
 
     public String toString() {
-        StringBuilder sbU = outline.U("RoleSubscriptionData(roleSubscriptionListingId=");
-        sbU.append(this.roleSubscriptionListingId);
-        sbU.append(", tierName=");
-        sbU.append(this.tierName);
-        sbU.append(", totalMonthsSubscribed=");
-        sbU.append(this.totalMonthsSubscribed);
-        sbU.append(", isRenewal=");
-        return outline.O(sbU, this.isRenewal, ")");
+        StringBuilder sbM833U = C1643a.m833U("RoleSubscriptionData(roleSubscriptionListingId=");
+        sbM833U.append(this.roleSubscriptionListingId);
+        sbM833U.append(", tierName=");
+        sbM833U.append(this.tierName);
+        sbM833U.append(", totalMonthsSubscribed=");
+        sbM833U.append(this.totalMonthsSubscribed);
+        sbM833U.append(", isRenewal=");
+        return C1643a.m827O(sbM833U, this.isRenewal, ")");
     }
 }

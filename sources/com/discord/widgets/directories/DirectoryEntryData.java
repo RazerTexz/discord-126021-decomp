@@ -1,8 +1,8 @@
 package com.discord.widgets.directories;
 
-import b.d.b.a.outline;
 import com.discord.api.directory.DirectoryEntryGuild;
-import d0.z.d.Intrinsics3;
+import p007b.p100d.p104b.p105a.C1643a;
+import p507d0.p592z.p594d.C12238m;
 
 /* JADX INFO: compiled from: WidgetDirectoryEntryViewHolder.kt */
 /* JADX INFO: loaded from: classes2.dex */
@@ -12,7 +12,7 @@ public final /* data */ class DirectoryEntryData {
     private final boolean hasJoinedGuild;
 
     public DirectoryEntryData(DirectoryEntryGuild directoryEntryGuild, boolean z2, boolean z3) {
-        Intrinsics3.checkNotNullParameter(directoryEntryGuild, "entry");
+        C12238m.checkNotNullParameter(directoryEntryGuild, "entry");
         this.entry = directoryEntryGuild;
         this.hasJoinedGuild = z2;
         this.hasEditPermissions = z3;
@@ -47,7 +47,7 @@ public final /* data */ class DirectoryEntryData {
     }
 
     public final DirectoryEntryData copy(DirectoryEntryGuild entry, boolean hasJoinedGuild, boolean hasEditPermissions) {
-        Intrinsics3.checkNotNullParameter(entry, "entry");
+        C12238m.checkNotNullParameter(entry, "entry");
         return new DirectoryEntryData(entry, hasJoinedGuild, hasEditPermissions);
     }
 
@@ -59,7 +59,7 @@ public final /* data */ class DirectoryEntryData {
             return false;
         }
         DirectoryEntryData directoryEntryData = (DirectoryEntryData) other;
-        return Intrinsics3.areEqual(this.entry, directoryEntryData.entry) && this.hasJoinedGuild == directoryEntryData.hasJoinedGuild && this.hasEditPermissions == directoryEntryData.hasEditPermissions;
+        return C12238m.areEqual(this.entry, directoryEntryData.entry) && this.hasJoinedGuild == directoryEntryData.hasJoinedGuild && this.hasEditPermissions == directoryEntryData.hasEditPermissions;
     }
 
     public final DirectoryEntryGuild getEntry() {
@@ -97,11 +97,11 @@ public final /* data */ class DirectoryEntryData {
     }
 
     public String toString() {
-        StringBuilder sbU = outline.U("DirectoryEntryData(entry=");
-        sbU.append(this.entry);
-        sbU.append(", hasJoinedGuild=");
-        sbU.append(this.hasJoinedGuild);
-        sbU.append(", hasEditPermissions=");
-        return outline.O(sbU, this.hasEditPermissions, ")");
+        StringBuilder sbM833U = C1643a.m833U("DirectoryEntryData(entry=");
+        sbM833U.append(this.entry);
+        sbM833U.append(", hasJoinedGuild=");
+        sbM833U.append(this.hasJoinedGuild);
+        sbM833U.append(", hasEditPermissions=");
+        return C1643a.m827O(sbM833U, this.hasEditPermissions, ")");
     }
 }

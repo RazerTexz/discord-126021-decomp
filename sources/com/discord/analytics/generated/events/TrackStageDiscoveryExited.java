@@ -1,14 +1,14 @@
 package com.discord.analytics.generated.events;
 
-import b.d.b.a.outline;
 import com.discord.analytics.generated.traits.TrackBase;
-import com.discord.analytics.generated.traits.TrackBase2;
+import com.discord.analytics.generated.traits.TrackBaseReceiver;
 import com.discord.api.science.AnalyticsSchema;
-import d0.z.d.Intrinsics3;
+import p007b.p100d.p104b.p105a.C1643a;
+import p507d0.p592z.p594d.C12238m;
 
 /* JADX INFO: compiled from: TrackStageDiscoveryExited.kt */
 /* JADX INFO: loaded from: classes.dex */
-public final /* data */ class TrackStageDiscoveryExited implements AnalyticsSchema, TrackBase2 {
+public final /* data */ class TrackStageDiscoveryExited implements AnalyticsSchema, TrackBaseReceiver {
     private TrackBase trackBase;
     private final CharSequence loadId = null;
     private final CharSequence stageInstanceRecommendations = null;
@@ -31,7 +31,7 @@ public final /* data */ class TrackStageDiscoveryExited implements AnalyticsSche
             return false;
         }
         TrackStageDiscoveryExited trackStageDiscoveryExited = (TrackStageDiscoveryExited) other;
-        return Intrinsics3.areEqual(this.loadId, trackStageDiscoveryExited.loadId) && Intrinsics3.areEqual(this.stageInstanceRecommendations, trackStageDiscoveryExited.stageInstanceRecommendations) && Intrinsics3.areEqual(this.lastVisibleIndexAtLoad, trackStageDiscoveryExited.lastVisibleIndexAtLoad) && Intrinsics3.areEqual(this.lastVisibleIndex, trackStageDiscoveryExited.lastVisibleIndex) && Intrinsics3.areEqual(this.hasScrolled, trackStageDiscoveryExited.hasScrolled);
+        return C12238m.areEqual(this.loadId, trackStageDiscoveryExited.loadId) && C12238m.areEqual(this.stageInstanceRecommendations, trackStageDiscoveryExited.stageInstanceRecommendations) && C12238m.areEqual(this.lastVisibleIndexAtLoad, trackStageDiscoveryExited.lastVisibleIndexAtLoad) && C12238m.areEqual(this.lastVisibleIndex, trackStageDiscoveryExited.lastVisibleIndex) && C12238m.areEqual(this.hasScrolled, trackStageDiscoveryExited.hasScrolled);
     }
 
     public int hashCode() {
@@ -48,15 +48,15 @@ public final /* data */ class TrackStageDiscoveryExited implements AnalyticsSche
     }
 
     public String toString() {
-        StringBuilder sbU = outline.U("TrackStageDiscoveryExited(loadId=");
-        sbU.append(this.loadId);
-        sbU.append(", stageInstanceRecommendations=");
-        sbU.append(this.stageInstanceRecommendations);
-        sbU.append(", lastVisibleIndexAtLoad=");
-        sbU.append(this.lastVisibleIndexAtLoad);
-        sbU.append(", lastVisibleIndex=");
-        sbU.append(this.lastVisibleIndex);
-        sbU.append(", hasScrolled=");
-        return outline.D(sbU, this.hasScrolled, ")");
+        StringBuilder sbM833U = C1643a.m833U("TrackStageDiscoveryExited(loadId=");
+        sbM833U.append(this.loadId);
+        sbM833U.append(", stageInstanceRecommendations=");
+        sbM833U.append(this.stageInstanceRecommendations);
+        sbM833U.append(", lastVisibleIndexAtLoad=");
+        sbM833U.append(this.lastVisibleIndexAtLoad);
+        sbM833U.append(", lastVisibleIndex=");
+        sbM833U.append(this.lastVisibleIndex);
+        sbM833U.append(", hasScrolled=");
+        return C1643a.m816D(sbM833U, this.hasScrolled, ")");
     }
 }

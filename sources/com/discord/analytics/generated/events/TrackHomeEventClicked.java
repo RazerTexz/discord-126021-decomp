@@ -1,16 +1,16 @@
 package com.discord.analytics.generated.events;
 
-import b.d.b.a.outline;
 import com.discord.analytics.generated.traits.TrackBase;
-import com.discord.analytics.generated.traits.TrackBase2;
+import com.discord.analytics.generated.traits.TrackBaseReceiver;
 import com.discord.analytics.generated.traits.TrackGuild;
-import com.discord.analytics.generated.traits.TrackGuild2;
+import com.discord.analytics.generated.traits.TrackGuildReceiver;
 import com.discord.api.science.AnalyticsSchema;
-import d0.z.d.Intrinsics3;
+import p007b.p100d.p104b.p105a.C1643a;
+import p507d0.p592z.p594d.C12238m;
 
 /* JADX INFO: compiled from: TrackHomeEventClicked.kt */
 /* JADX INFO: loaded from: classes.dex */
-public final /* data */ class TrackHomeEventClicked implements AnalyticsSchema, TrackBase2, TrackGuild2 {
+public final /* data */ class TrackHomeEventClicked implements AnalyticsSchema, TrackBaseReceiver, TrackGuildReceiver {
     private TrackBase trackBase;
     private TrackGuild trackGuild;
     private final Long guildScheduledEventId = null;
@@ -18,14 +18,15 @@ public final /* data */ class TrackHomeEventClicked implements AnalyticsSchema, 
     private final Boolean isActive = null;
     private final transient String analyticsSchemaTypeName = "home_event_clicked";
 
-    @Override // com.discord.analytics.generated.traits.TrackGuild2
+    @Override // com.discord.analytics.generated.traits.TrackGuildReceiver
     /* JADX INFO: renamed from: a, reason: from getter */
     public TrackGuild getTrackGuild() {
         return this.trackGuild;
     }
 
-    @Override // com.discord.analytics.generated.traits.TrackGuild2
-    public void c(TrackGuild trackGuild) {
+    @Override // com.discord.analytics.generated.traits.TrackGuildReceiver
+    /* JADX INFO: renamed from: c */
+    public void mo7508c(TrackGuild trackGuild) {
         this.trackGuild = trackGuild;
     }
 
@@ -43,7 +44,7 @@ public final /* data */ class TrackHomeEventClicked implements AnalyticsSchema, 
             return false;
         }
         TrackHomeEventClicked trackHomeEventClicked = (TrackHomeEventClicked) other;
-        return Intrinsics3.areEqual(this.guildScheduledEventId, trackHomeEventClicked.guildScheduledEventId) && Intrinsics3.areEqual(this.homeSessionId, trackHomeEventClicked.homeSessionId) && Intrinsics3.areEqual(this.isActive, trackHomeEventClicked.isActive);
+        return C12238m.areEqual(this.guildScheduledEventId, trackHomeEventClicked.guildScheduledEventId) && C12238m.areEqual(this.homeSessionId, trackHomeEventClicked.homeSessionId) && C12238m.areEqual(this.isActive, trackHomeEventClicked.isActive);
     }
 
     public int hashCode() {
@@ -56,11 +57,11 @@ public final /* data */ class TrackHomeEventClicked implements AnalyticsSchema, 
     }
 
     public String toString() {
-        StringBuilder sbU = outline.U("TrackHomeEventClicked(guildScheduledEventId=");
-        sbU.append(this.guildScheduledEventId);
-        sbU.append(", homeSessionId=");
-        sbU.append(this.homeSessionId);
-        sbU.append(", isActive=");
-        return outline.D(sbU, this.isActive, ")");
+        StringBuilder sbM833U = C1643a.m833U("TrackHomeEventClicked(guildScheduledEventId=");
+        sbM833U.append(this.guildScheduledEventId);
+        sbM833U.append(", homeSessionId=");
+        sbM833U.append(this.homeSessionId);
+        sbM833U.append(", isActive=");
+        return C1643a.m816D(sbM833U, this.isActive, ")");
     }
 }

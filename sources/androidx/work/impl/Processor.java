@@ -16,7 +16,6 @@ import androidx.work.impl.foreground.SystemForegroundDispatcher;
 import androidx.work.impl.foreground.SystemForegroundService;
 import androidx.work.impl.utils.WakeLocks;
 import androidx.work.impl.utils.taskexecutor.TaskExecutor;
-import b.i.b.d.a.ListenableFuture8;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.HashSet;
@@ -25,6 +24,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 import java.util.concurrent.ExecutionException;
+import p007b.p225i.p355b.p359d.p360a.InterfaceFutureC4539a;
 
 /* JADX INFO: loaded from: classes.dex */
 @RestrictTo({RestrictTo.Scope.LIBRARY_GROUP})
@@ -51,15 +51,15 @@ public class Processor implements ExecutionListener, ForegroundProcessor {
         private ExecutionListener mExecutionListener;
 
         @NonNull
-        private ListenableFuture8<Boolean> mFuture;
+        private InterfaceFutureC4539a<Boolean> mFuture;
 
         @NonNull
         private String mWorkSpecId;
 
-        public FutureListener(@NonNull ExecutionListener executionListener, @NonNull String str, @NonNull ListenableFuture8<Boolean> listenableFuture8) {
+        public FutureListener(@NonNull ExecutionListener executionListener, @NonNull String str, @NonNull InterfaceFutureC4539a<Boolean> interfaceFutureC4539a) {
             this.mExecutionListener = executionListener;
             this.mWorkSpecId = str;
-            this.mFuture = listenableFuture8;
+            this.mFuture = interfaceFutureC4539a;
         }
 
         @Override // java.lang.Runnable
@@ -242,7 +242,7 @@ public class Processor implements ExecutionListener, ForegroundProcessor {
                 return false;
             }
             WorkerWrapper workerWrapperBuild = new WorkerWrapper.Builder(this.mAppContext, this.mConfiguration, this.mWorkTaskExecutor, this, this.mWorkDatabase, str).withSchedulers(this.mSchedulers).withRuntimeExtras(runtimeExtras).build();
-            ListenableFuture8<Boolean> future = workerWrapperBuild.getFuture();
+            InterfaceFutureC4539a<Boolean> future = workerWrapperBuild.getFuture();
             future.addListener(new FutureListener(this, str, future), this.mWorkTaskExecutor.getMainThreadExecutor());
             this.mEnqueuedWorkMap.put(str, workerWrapperBuild);
             this.mWorkTaskExecutor.getBackgroundExecutor().execute(workerWrapperBuild);

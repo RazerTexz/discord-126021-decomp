@@ -1,29 +1,29 @@
 package com.discord.widgets.chat.list;
 
-import b.a.d.AppViewModel;
-import b.d.b.a.outline;
-import com.discord.R;
+import com.discord.C5419R;
 import com.discord.models.domain.ModelChannelFollowerStats;
 import com.discord.stores.StoreChannelFollowerStats;
 import com.discord.stores.StoreStream;
 import com.discord.utilities.error.Error;
+import com.discord.utilities.p501rx.ObservableExtensionsKt;
 import com.discord.utilities.rest.RestAPI;
-import com.discord.utilities.rx.ObservableExtensionsKt;
 import com.discord.widgets.chat.list.PublishActionDialogViewModel;
-import d0.z.d.Intrinsics3;
-import d0.z.d.Lambda;
-import j0.k.Func1;
 import kotlin.Unit;
 import kotlin.jvm.functions.Function0;
 import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.DefaultConstructorMarker;
-import rx.Observable;
-import rx.Subscription;
-import rx.subjects.PublishSubject;
+import p007b.p008a.p018d.AbstractC0859d0;
+import p007b.p100d.p104b.p105a.C1643a;
+import p507d0.p592z.p594d.AbstractC12240o;
+import p507d0.p592z.p594d.C12238m;
+import p637j0.p641k.InterfaceC12589b;
+import p658rx.Observable;
+import p658rx.Subscription;
+import p658rx.subjects.PublishSubject;
 
 /* JADX INFO: compiled from: PublishActionDialogViewModel.kt */
 /* JADX INFO: loaded from: classes2.dex */
-public final class PublishActionDialogViewModel extends AppViewModel<ViewState> {
+public final class PublishActionDialogViewModel extends AbstractC0859d0<ViewState> {
 
     /* JADX INFO: renamed from: Companion, reason: from kotlin metadata */
     public static final Companion INSTANCE = new Companion(null);
@@ -32,22 +32,22 @@ public final class PublishActionDialogViewModel extends AppViewModel<ViewState> 
     private final long messageId;
     private final RestAPI restAPI;
 
-    /* JADX INFO: renamed from: com.discord.widgets.chat.list.PublishActionDialogViewModel$1, reason: invalid class name */
+    /* JADX INFO: renamed from: com.discord.widgets.chat.list.PublishActionDialogViewModel$1 */
     /* JADX INFO: compiled from: PublishActionDialogViewModel.kt */
-    public static final class AnonymousClass1 extends Lambda implements Function1<StoreState, Unit> {
-        public AnonymousClass1() {
+    public static final class C79461 extends AbstractC12240o implements Function1<StoreState, Unit> {
+        public C79461() {
             super(1);
         }
 
         @Override // kotlin.jvm.functions.Function1
         public /* bridge */ /* synthetic */ Unit invoke(StoreState storeState) {
             invoke2(storeState);
-            return Unit.a;
+            return Unit.f27425a;
         }
 
         /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
         public final void invoke2(StoreState storeState) {
-            Intrinsics3.checkNotNullParameter(storeState, "storeState");
+            C12238m.checkNotNullParameter(storeState, "storeState");
             PublishActionDialogViewModel.this.handleStoreState(storeState);
         }
     }
@@ -58,14 +58,14 @@ public final class PublishActionDialogViewModel extends AppViewModel<ViewState> 
         }
 
         private final Observable<StoreState> observeChannelFollowerStatsStoreState(long channelId, StoreChannelFollowerStats storeChannelFollowerStats) {
-            Observable<StoreState> observableR = storeChannelFollowerStats.observeChannelFollowerStats(channelId).G(new Func1<ModelChannelFollowerStats, StoreState>() { // from class: com.discord.widgets.chat.list.PublishActionDialogViewModel$Companion$observeChannelFollowerStatsStoreState$1
-                @Override // j0.k.Func1
+            Observable<StoreState> observableM11112r = storeChannelFollowerStats.observeChannelFollowerStats(channelId).m11083G(new InterfaceC12589b<ModelChannelFollowerStats, StoreState>() { // from class: com.discord.widgets.chat.list.PublishActionDialogViewModel$Companion$observeChannelFollowerStatsStoreState$1
+                @Override // p637j0.p641k.InterfaceC12589b
                 public final PublishActionDialogViewModel.StoreState call(ModelChannelFollowerStats modelChannelFollowerStats) {
                     return new PublishActionDialogViewModel.StoreState(modelChannelFollowerStats);
                 }
-            }).r();
-            Intrinsics3.checkNotNullExpressionValue(observableR, "storeChannelFollowerStat…  .distinctUntilChanged()");
-            return observableR;
+            }).m11112r();
+            C12238m.checkNotNullExpressionValue(observableM11112r, "storeChannelFollowerStat…  .distinctUntilChanged()");
+            return observableM11112r;
         }
 
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
@@ -117,7 +117,7 @@ public final class PublishActionDialogViewModel extends AppViewModel<ViewState> 
             }
 
             public String toString() {
-                return outline.B(outline.U("Failure(failureMessageStringRes="), this.failureMessageStringRes, ")");
+                return C1643a.m814B(C1643a.m833U("Failure(failureMessageStringRes="), this.failureMessageStringRes, ")");
             }
         }
 
@@ -162,7 +162,7 @@ public final class PublishActionDialogViewModel extends AppViewModel<ViewState> 
             }
 
             public String toString() {
-                return outline.B(outline.U("Success(successMessageStringRes="), this.successMessageStringRes, ")");
+                return C1643a.m814B(C1643a.m833U("Success(successMessageStringRes="), this.successMessageStringRes, ")");
             }
         }
 
@@ -197,7 +197,7 @@ public final class PublishActionDialogViewModel extends AppViewModel<ViewState> 
             /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
             public LoadedHasFollowers(ModelChannelFollowerStats modelChannelFollowerStats) {
                 super(null);
-                Intrinsics3.checkNotNullParameter(modelChannelFollowerStats, "followerStats");
+                C12238m.checkNotNullParameter(modelChannelFollowerStats, "followerStats");
                 this.followerStats = modelChannelFollowerStats;
             }
 
@@ -214,13 +214,13 @@ public final class PublishActionDialogViewModel extends AppViewModel<ViewState> 
             }
 
             public final LoadedHasFollowers copy(ModelChannelFollowerStats followerStats) {
-                Intrinsics3.checkNotNullParameter(followerStats, "followerStats");
+                C12238m.checkNotNullParameter(followerStats, "followerStats");
                 return new LoadedHasFollowers(followerStats);
             }
 
             public boolean equals(Object other) {
                 if (this != other) {
-                    return (other instanceof LoadedHasFollowers) && Intrinsics3.areEqual(this.followerStats, ((LoadedHasFollowers) other).followerStats);
+                    return (other instanceof LoadedHasFollowers) && C12238m.areEqual(this.followerStats, ((LoadedHasFollowers) other).followerStats);
                 }
                 return true;
             }
@@ -238,10 +238,10 @@ public final class PublishActionDialogViewModel extends AppViewModel<ViewState> 
             }
 
             public String toString() {
-                StringBuilder sbU = outline.U("LoadedHasFollowers(followerStats=");
-                sbU.append(this.followerStats);
-                sbU.append(")");
-                return sbU.toString();
+                StringBuilder sbM833U = C1643a.m833U("LoadedHasFollowers(followerStats=");
+                sbM833U.append(this.followerStats);
+                sbM833U.append(")");
+                return sbM833U.toString();
             }
         }
 
@@ -271,17 +271,17 @@ public final class PublishActionDialogViewModel extends AppViewModel<ViewState> 
         }
     }
 
-    /* JADX INFO: renamed from: com.discord.widgets.chat.list.PublishActionDialogViewModel$publishMessage$1, reason: invalid class name */
+    /* JADX INFO: renamed from: com.discord.widgets.chat.list.PublishActionDialogViewModel$publishMessage$1 */
     /* JADX INFO: compiled from: PublishActionDialogViewModel.kt */
-    public static final class AnonymousClass1 extends Lambda implements Function1<Void, Unit> {
-        public AnonymousClass1() {
+    public static final class C79481 extends AbstractC12240o implements Function1<Void, Unit> {
+        public C79481() {
             super(1);
         }
 
         @Override // kotlin.jvm.functions.Function1
         public /* bridge */ /* synthetic */ Unit invoke(Void r1) {
             invoke2(r1);
-            return Unit.a;
+            return Unit.f27425a;
         }
 
         /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
@@ -290,22 +290,22 @@ public final class PublishActionDialogViewModel extends AppViewModel<ViewState> 
         }
     }
 
-    /* JADX INFO: renamed from: com.discord.widgets.chat.list.PublishActionDialogViewModel$publishMessage$2, reason: invalid class name */
+    /* JADX INFO: renamed from: com.discord.widgets.chat.list.PublishActionDialogViewModel$publishMessage$2 */
     /* JADX INFO: compiled from: PublishActionDialogViewModel.kt */
-    public static final class AnonymousClass2 extends Lambda implements Function1<Error, Unit> {
-        public AnonymousClass2() {
+    public static final class C79492 extends AbstractC12240o implements Function1<Error, Unit> {
+        public C79492() {
             super(1);
         }
 
         @Override // kotlin.jvm.functions.Function1
         public /* bridge */ /* synthetic */ Unit invoke(Error error) {
             invoke2(error);
-            return Unit.a;
+            return Unit.f27425a;
         }
 
         /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
         public final void invoke2(Error error) {
-            Intrinsics3.checkNotNullParameter(error, "it");
+            C12238m.checkNotNullParameter(error, "it");
             PublishActionDialogViewModel.this.emitFailureEvent();
         }
     }
@@ -319,12 +319,12 @@ public final class PublishActionDialogViewModel extends AppViewModel<ViewState> 
 
     private final void emitFailureEvent() {
         PublishSubject<Event> publishSubject = this.eventSubject;
-        publishSubject.k.onNext(new Event.Failure(R.string.default_failure_to_perform_action_message));
+        publishSubject.f27650k.onNext(new Event.Failure(C5419R.string.default_failure_to_perform_action_message));
     }
 
     private final void emitSuccessActionEvent() {
         PublishSubject<Event> publishSubject = this.eventSubject;
-        publishSubject.k.onNext(new Event.Success(R.string.message_published));
+        publishSubject.f27650k.onNext(new Event.Success(C5419R.string.message_published));
     }
 
     private final void handleStoreState(StoreState storeState) {
@@ -340,25 +340,25 @@ public final class PublishActionDialogViewModel extends AppViewModel<ViewState> 
 
     public final Observable<Event> observeEvents() {
         PublishSubject<Event> publishSubject = this.eventSubject;
-        Intrinsics3.checkNotNullExpressionValue(publishSubject, "eventSubject");
+        C12238m.checkNotNullExpressionValue(publishSubject, "eventSubject");
         return publishSubject;
     }
 
     public final void publishMessage() {
-        ObservableExtensionsKt.appSubscribe(ObservableExtensionsKt.ui$default(ObservableExtensionsKt.restSubscribeOn$default(this.restAPI.crosspostMessage(this.channelId, Long.valueOf(this.messageId)), false, 1, null), this, null, 2, null), (Class<?>) PublishActionDialogViewModel.class, (58 & 2) != 0 ? null : null, (Function1<? super Subscription, Unit>) ((58 & 4) != 0 ? null : null), (Function1<? super Error, Unit>) ((58 & 8) != 0 ? null : new AnonymousClass2()), (Function0<Unit>) ((58 & 16) != 0 ? ObservableExtensionsKt.AnonymousClass1.INSTANCE : null), (Function0<Unit>) ((58 & 32) != 0 ? ObservableExtensionsKt.AnonymousClass2.INSTANCE : null), new AnonymousClass1());
+        ObservableExtensionsKt.appSubscribe(ObservableExtensionsKt.ui$default(ObservableExtensionsKt.restSubscribeOn$default(this.restAPI.crosspostMessage(this.channelId, Long.valueOf(this.messageId)), false, 1, null), this, null, 2, null), (Class<?>) PublishActionDialogViewModel.class, (58 & 2) != 0 ? null : null, (Function1<? super Subscription, Unit>) ((58 & 4) != 0 ? null : null), (Function1<? super Error, Unit>) ((58 & 8) != 0 ? null : new C79492()), (Function0<Unit>) ((58 & 16) != 0 ? ObservableExtensionsKt.C68791.INSTANCE : null), (Function0<Unit>) ((58 & 32) != 0 ? ObservableExtensionsKt.C68802.INSTANCE : null), new C79481());
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public PublishActionDialogViewModel(long j, long j2, RestAPI restAPI, StoreChannelFollowerStats storeChannelFollowerStats, Observable<StoreState> observable) {
         super(ViewState.Loading.INSTANCE);
-        Intrinsics3.checkNotNullParameter(restAPI, "restAPI");
-        Intrinsics3.checkNotNullParameter(storeChannelFollowerStats, "storeChannelFollowerStats");
-        Intrinsics3.checkNotNullParameter(observable, "storeObservable");
+        C12238m.checkNotNullParameter(restAPI, "restAPI");
+        C12238m.checkNotNullParameter(storeChannelFollowerStats, "storeChannelFollowerStats");
+        C12238m.checkNotNullParameter(observable, "storeObservable");
         this.messageId = j;
         this.channelId = j2;
         this.restAPI = restAPI;
-        this.eventSubject = PublishSubject.k0();
+        this.eventSubject = PublishSubject.m11133k0();
         storeChannelFollowerStats.fetchChannelFollowerStats(j2);
-        ObservableExtensionsKt.appSubscribe(ObservableExtensionsKt.ui$default(ObservableExtensionsKt.computationLatest(observable), this, null, 2, null), (Class<?>) PublishActionDialogViewModel.class, (58 & 2) != 0 ? null : null, (Function1<? super Subscription, Unit>) ((58 & 4) != 0 ? null : null), (Function1<? super Error, Unit>) ((58 & 8) != 0 ? null : null), (Function0<Unit>) ((58 & 16) != 0 ? ObservableExtensionsKt.AnonymousClass1.INSTANCE : null), (Function0<Unit>) ((58 & 32) != 0 ? ObservableExtensionsKt.AnonymousClass2.INSTANCE : null), new AnonymousClass1());
+        ObservableExtensionsKt.appSubscribe(ObservableExtensionsKt.ui$default(ObservableExtensionsKt.computationLatest(observable), this, null, 2, null), (Class<?>) PublishActionDialogViewModel.class, (58 & 2) != 0 ? null : null, (Function1<? super Subscription, Unit>) ((58 & 4) != 0 ? null : null), (Function1<? super Error, Unit>) ((58 & 8) != 0 ? null : null), (Function0<Unit>) ((58 & 16) != 0 ? ObservableExtensionsKt.C68791.INSTANCE : null), (Function0<Unit>) ((58 & 32) != 0 ? ObservableExtensionsKt.C68802.INSTANCE : null), new C79461());
     }
 }

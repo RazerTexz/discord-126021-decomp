@@ -1,15 +1,15 @@
 package com.discord.analytics.generated.events;
 
-import b.d.b.a.outline;
 import com.discord.analytics.generated.traits.TrackBase;
-import com.discord.analytics.generated.traits.TrackBase2;
+import com.discord.analytics.generated.traits.TrackBaseReceiver;
 import com.discord.api.science.AnalyticsSchema;
 import com.discord.models.domain.ModelAuditLogEntry;
-import d0.z.d.Intrinsics3;
+import p007b.p100d.p104b.p105a.C1643a;
+import p507d0.p592z.p594d.C12238m;
 
 /* JADX INFO: compiled from: TrackApplicationUpdated.kt */
 /* JADX INFO: loaded from: classes.dex */
-public final /* data */ class TrackApplicationUpdated implements AnalyticsSchema, TrackBase2 {
+public final /* data */ class TrackApplicationUpdated implements AnalyticsSchema, TrackBaseReceiver {
     private TrackBase trackBase;
     private final Long applicationId = null;
     private final Long botId = null;
@@ -38,7 +38,7 @@ public final /* data */ class TrackApplicationUpdated implements AnalyticsSchema
             return false;
         }
         TrackApplicationUpdated trackApplicationUpdated = (TrackApplicationUpdated) other;
-        return Intrinsics3.areEqual(this.applicationId, trackApplicationUpdated.applicationId) && Intrinsics3.areEqual(this.botId, trackApplicationUpdated.botId) && Intrinsics3.areEqual(this.name, trackApplicationUpdated.name) && Intrinsics3.areEqual(this.hasBot, trackApplicationUpdated.hasBot) && Intrinsics3.areEqual(this.hasRedirectUri, trackApplicationUpdated.hasRedirectUri) && Intrinsics3.areEqual(this.description, trackApplicationUpdated.description) && Intrinsics3.areEqual(this.iconHash, trackApplicationUpdated.iconHash) && Intrinsics3.areEqual(this.coverImageHash, trackApplicationUpdated.coverImageHash) && Intrinsics3.areEqual(this.linkedGuildId, trackApplicationUpdated.linkedGuildId) && Intrinsics3.areEqual(this.previousStoreState, trackApplicationUpdated.previousStoreState) && Intrinsics3.areEqual(this.currentStoreState, trackApplicationUpdated.currentStoreState);
+        return C12238m.areEqual(this.applicationId, trackApplicationUpdated.applicationId) && C12238m.areEqual(this.botId, trackApplicationUpdated.botId) && C12238m.areEqual(this.name, trackApplicationUpdated.name) && C12238m.areEqual(this.hasBot, trackApplicationUpdated.hasBot) && C12238m.areEqual(this.hasRedirectUri, trackApplicationUpdated.hasRedirectUri) && C12238m.areEqual(this.description, trackApplicationUpdated.description) && C12238m.areEqual(this.iconHash, trackApplicationUpdated.iconHash) && C12238m.areEqual(this.coverImageHash, trackApplicationUpdated.coverImageHash) && C12238m.areEqual(this.linkedGuildId, trackApplicationUpdated.linkedGuildId) && C12238m.areEqual(this.previousStoreState, trackApplicationUpdated.previousStoreState) && C12238m.areEqual(this.currentStoreState, trackApplicationUpdated.currentStoreState);
     }
 
     public int hashCode() {
@@ -67,27 +67,27 @@ public final /* data */ class TrackApplicationUpdated implements AnalyticsSchema
     }
 
     public String toString() {
-        StringBuilder sbU = outline.U("TrackApplicationUpdated(applicationId=");
-        sbU.append(this.applicationId);
-        sbU.append(", botId=");
-        sbU.append(this.botId);
-        sbU.append(", name=");
-        sbU.append(this.name);
-        sbU.append(", hasBot=");
-        sbU.append(this.hasBot);
-        sbU.append(", hasRedirectUri=");
-        sbU.append(this.hasRedirectUri);
-        sbU.append(", description=");
-        sbU.append(this.description);
-        sbU.append(", iconHash=");
-        sbU.append(this.iconHash);
-        sbU.append(", coverImageHash=");
-        sbU.append(this.coverImageHash);
-        sbU.append(", linkedGuildId=");
-        sbU.append(this.linkedGuildId);
-        sbU.append(", previousStoreState=");
-        sbU.append(this.previousStoreState);
-        sbU.append(", currentStoreState=");
-        return outline.E(sbU, this.currentStoreState, ")");
+        StringBuilder sbM833U = C1643a.m833U("TrackApplicationUpdated(applicationId=");
+        sbM833U.append(this.applicationId);
+        sbM833U.append(", botId=");
+        sbM833U.append(this.botId);
+        sbM833U.append(", name=");
+        sbM833U.append(this.name);
+        sbM833U.append(", hasBot=");
+        sbM833U.append(this.hasBot);
+        sbM833U.append(", hasRedirectUri=");
+        sbM833U.append(this.hasRedirectUri);
+        sbM833U.append(", description=");
+        sbM833U.append(this.description);
+        sbM833U.append(", iconHash=");
+        sbM833U.append(this.iconHash);
+        sbM833U.append(", coverImageHash=");
+        sbM833U.append(this.coverImageHash);
+        sbM833U.append(", linkedGuildId=");
+        sbM833U.append(this.linkedGuildId);
+        sbM833U.append(", previousStoreState=");
+        sbM833U.append(this.previousStoreState);
+        sbM833U.append(", currentStoreState=");
+        return C1643a.m817E(sbM833U, this.currentStoreState, ")");
     }
 }

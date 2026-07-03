@@ -12,41 +12,47 @@ import com.facebook.drawee.view.SimpleDraweeView;
 /* JADX INFO: loaded from: classes.dex */
 public final class ThreadBrowserThreadViewBinding implements ViewBinding {
 
+    /* JADX INFO: renamed from: a */
     @NonNull
-    public final View a;
+    public final View f15314a;
 
-    /* JADX INFO: renamed from: b, reason: collision with root package name */
+    /* JADX INFO: renamed from: b */
     @NonNull
-    public final SimpleDraweeView f2161b;
+    public final SimpleDraweeView f15315b;
 
+    /* JADX INFO: renamed from: c */
     @NonNull
-    public final ImageView c;
+    public final ImageView f15316c;
 
+    /* JADX INFO: renamed from: d */
     @NonNull
-    public final SimpleDraweeSpanTextView d;
+    public final SimpleDraweeSpanTextView f15317d;
 
+    /* JADX INFO: renamed from: e */
     @NonNull
-    public final TextView e;
+    public final TextView f15318e;
 
+    /* JADX INFO: renamed from: f */
     @NonNull
-    public final TextView f;
+    public final TextView f15319f;
 
+    /* JADX INFO: renamed from: g */
     @NonNull
-    public final TextView g;
+    public final TextView f15320g;
 
     public ThreadBrowserThreadViewBinding(@NonNull View view, @NonNull SimpleDraweeView simpleDraweeView, @NonNull ImageView imageView, @NonNull FrameLayout frameLayout, @NonNull SimpleDraweeSpanTextView simpleDraweeSpanTextView, @NonNull TextView textView, @NonNull TextView textView2, @NonNull TextView textView3) {
-        this.a = view;
-        this.f2161b = simpleDraweeView;
-        this.c = imageView;
-        this.d = simpleDraweeSpanTextView;
-        this.e = textView;
-        this.f = textView2;
-        this.g = textView3;
+        this.f15314a = view;
+        this.f15315b = simpleDraweeView;
+        this.f15316c = imageView;
+        this.f15317d = simpleDraweeSpanTextView;
+        this.f15318e = textView;
+        this.f15319f = textView2;
+        this.f15320g = textView3;
     }
 
     @Override // androidx.viewbinding.ViewBinding
     @NonNull
     public View getRoot() {
-        return this.a;
+        return this.f15314a;
     }
 }

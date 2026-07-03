@@ -11,29 +11,32 @@ import com.discord.views.CheckedSetting;
 /* JADX INFO: loaded from: classes.dex */
 public final class WidgetSettingsNotificationOsBinding implements ViewBinding {
 
+    /* JADX INFO: renamed from: a */
     @NonNull
-    public final LinearLayout a;
+    public final LinearLayout f18018a;
 
-    /* JADX INFO: renamed from: b, reason: collision with root package name */
+    /* JADX INFO: renamed from: b */
     @NonNull
-    public final CheckedSetting f2631b;
+    public final CheckedSetting f18019b;
 
+    /* JADX INFO: renamed from: c */
     @NonNull
-    public final RelativeLayout c;
+    public final RelativeLayout f18020c;
 
+    /* JADX INFO: renamed from: d */
     @NonNull
-    public final CheckedSetting d;
+    public final CheckedSetting f18021d;
 
     public WidgetSettingsNotificationOsBinding(@NonNull LinearLayout linearLayout, @NonNull CheckedSetting checkedSetting, @NonNull RelativeLayout relativeLayout, @NonNull TextView textView, @NonNull CheckedSetting checkedSetting2) {
-        this.a = linearLayout;
-        this.f2631b = checkedSetting;
-        this.c = relativeLayout;
-        this.d = checkedSetting2;
+        this.f18018a = linearLayout;
+        this.f18019b = checkedSetting;
+        this.f18020c = relativeLayout;
+        this.f18021d = checkedSetting2;
     }
 
     @Override // androidx.viewbinding.ViewBinding
     @NonNull
     public View getRoot() {
-        return this.a;
+        return this.f18018a;
     }
 }

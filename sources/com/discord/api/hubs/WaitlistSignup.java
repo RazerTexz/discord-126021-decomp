@@ -1,8 +1,8 @@
 package com.discord.api.hubs;
 
 import androidx.core.app.NotificationCompat;
-import b.d.b.a.outline;
-import d0.z.d.Intrinsics3;
+import p007b.p100d.p104b.p105a.C1643a;
+import p507d0.p592z.p594d.C12238m;
 
 /* JADX INFO: compiled from: WaitlistSignup.kt */
 /* JADX INFO: loaded from: classes.dex */
@@ -24,7 +24,7 @@ public final /* data */ class WaitlistSignup {
             return false;
         }
         WaitlistSignup waitlistSignup = (WaitlistSignup) other;
-        return Intrinsics3.areEqual(this.email, waitlistSignup.email) && Intrinsics3.areEqual(this.emailDomain, waitlistSignup.emailDomain) && Intrinsics3.areEqual(this.school, waitlistSignup.school);
+        return C12238m.areEqual(this.email, waitlistSignup.email) && C12238m.areEqual(this.emailDomain, waitlistSignup.emailDomain) && C12238m.areEqual(this.school, waitlistSignup.school);
     }
 
     public int hashCode() {
@@ -37,11 +37,11 @@ public final /* data */ class WaitlistSignup {
     }
 
     public String toString() {
-        StringBuilder sbU = outline.U("WaitlistSignup(email=");
-        sbU.append(this.email);
-        sbU.append(", emailDomain=");
-        sbU.append(this.emailDomain);
-        sbU.append(", school=");
-        return outline.J(sbU, this.school, ")");
+        StringBuilder sbM833U = C1643a.m833U("WaitlistSignup(email=");
+        sbM833U.append(this.email);
+        sbM833U.append(", emailDomain=");
+        sbM833U.append(this.emailDomain);
+        sbM833U.append(", school=");
+        return C1643a.m822J(sbM833U, this.school, ")");
     }
 }

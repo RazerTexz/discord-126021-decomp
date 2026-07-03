@@ -4,7 +4,9 @@ package org.objectweb.asm;
 public abstract class MethodVisitor {
     private static final String REQUIRES_ASM5 = "This feature requires ASM5";
     protected final int api;
-    protected MethodVisitor mv;
+
+    /* JADX INFO: renamed from: mv */
+    protected MethodVisitor f27600mv;
 
     public MethodVisitor(int api) {
         this(api, null);
@@ -18,28 +20,28 @@ public abstract class MethodVisitor {
             Constants.checkAsmExperimental(this);
         }
         this.api = api;
-        this.mv = methodVisitor;
+        this.f27600mv = methodVisitor;
     }
 
     public void visitParameter(String name, int access) {
         if (this.api < 327680) {
             throw new UnsupportedOperationException(REQUIRES_ASM5);
         }
-        if (this.mv != null) {
-            this.mv.visitParameter(name, access);
+        if (this.f27600mv != null) {
+            this.f27600mv.visitParameter(name, access);
         }
     }
 
     public AnnotationVisitor visitAnnotationDefault() {
-        if (this.mv != null) {
-            return this.mv.visitAnnotationDefault();
+        if (this.f27600mv != null) {
+            return this.f27600mv.visitAnnotationDefault();
         }
         return null;
     }
 
     public AnnotationVisitor visitAnnotation(String descriptor, boolean visible) {
-        if (this.mv != null) {
-            return this.mv.visitAnnotation(descriptor, visible);
+        if (this.f27600mv != null) {
+            return this.f27600mv.visitAnnotation(descriptor, visible);
         }
         return null;
     }
@@ -48,70 +50,70 @@ public abstract class MethodVisitor {
         if (this.api < 327680) {
             throw new UnsupportedOperationException(REQUIRES_ASM5);
         }
-        if (this.mv != null) {
-            return this.mv.visitTypeAnnotation(typeRef, typePath, descriptor, visible);
+        if (this.f27600mv != null) {
+            return this.f27600mv.visitTypeAnnotation(typeRef, typePath, descriptor, visible);
         }
         return null;
     }
 
     public void visitAnnotableParameterCount(int parameterCount, boolean visible) {
-        if (this.mv != null) {
-            this.mv.visitAnnotableParameterCount(parameterCount, visible);
+        if (this.f27600mv != null) {
+            this.f27600mv.visitAnnotableParameterCount(parameterCount, visible);
         }
     }
 
     public AnnotationVisitor visitParameterAnnotation(int parameter, String descriptor, boolean visible) {
-        if (this.mv != null) {
-            return this.mv.visitParameterAnnotation(parameter, descriptor, visible);
+        if (this.f27600mv != null) {
+            return this.f27600mv.visitParameterAnnotation(parameter, descriptor, visible);
         }
         return null;
     }
 
     public void visitAttribute(Attribute attribute) {
-        if (this.mv != null) {
-            this.mv.visitAttribute(attribute);
+        if (this.f27600mv != null) {
+            this.f27600mv.visitAttribute(attribute);
         }
     }
 
     public void visitCode() {
-        if (this.mv != null) {
-            this.mv.visitCode();
+        if (this.f27600mv != null) {
+            this.f27600mv.visitCode();
         }
     }
 
     public void visitFrame(int type, int numLocal, Object[] local, int numStack, Object[] stack) {
-        if (this.mv != null) {
-            this.mv.visitFrame(type, numLocal, local, numStack, stack);
+        if (this.f27600mv != null) {
+            this.f27600mv.visitFrame(type, numLocal, local, numStack, stack);
         }
     }
 
     public void visitInsn(int opcode) {
-        if (this.mv != null) {
-            this.mv.visitInsn(opcode);
+        if (this.f27600mv != null) {
+            this.f27600mv.visitInsn(opcode);
         }
     }
 
     public void visitIntInsn(int opcode, int operand) {
-        if (this.mv != null) {
-            this.mv.visitIntInsn(opcode, operand);
+        if (this.f27600mv != null) {
+            this.f27600mv.visitIntInsn(opcode, operand);
         }
     }
 
     public void visitVarInsn(int opcode, int var) {
-        if (this.mv != null) {
-            this.mv.visitVarInsn(opcode, var);
+        if (this.f27600mv != null) {
+            this.f27600mv.visitVarInsn(opcode, var);
         }
     }
 
     public void visitTypeInsn(int opcode, String type) {
-        if (this.mv != null) {
-            this.mv.visitTypeInsn(opcode, type);
+        if (this.f27600mv != null) {
+            this.f27600mv.visitTypeInsn(opcode, type);
         }
     }
 
     public void visitFieldInsn(int opcode, String owner, String name, String descriptor) {
-        if (this.mv != null) {
-            this.mv.visitFieldInsn(opcode, owner, name, descriptor);
+        if (this.f27600mv != null) {
+            this.f27600mv.visitFieldInsn(opcode, owner, name, descriptor);
         }
     }
 
@@ -127,8 +129,8 @@ public abstract class MethodVisitor {
                 throw new UnsupportedOperationException("INVOKESPECIAL/STATIC on interfaces requires ASM5");
             }
             visitMethodInsn(opcode, owner, name, descriptor);
-        } else if (this.mv != null) {
-            this.mv.visitMethodInsn(opcode & (-257), owner, name, descriptor, isInterface);
+        } else if (this.f27600mv != null) {
+            this.f27600mv.visitMethodInsn(opcode & (-257), owner, name, descriptor, isInterface);
         }
     }
 
@@ -136,20 +138,20 @@ public abstract class MethodVisitor {
         if (this.api < 327680) {
             throw new UnsupportedOperationException(REQUIRES_ASM5);
         }
-        if (this.mv != null) {
-            this.mv.visitInvokeDynamicInsn(name, descriptor, bootstrapMethodHandle, bootstrapMethodArguments);
+        if (this.f27600mv != null) {
+            this.f27600mv.visitInvokeDynamicInsn(name, descriptor, bootstrapMethodHandle, bootstrapMethodArguments);
         }
     }
 
     public void visitJumpInsn(int opcode, Label label) {
-        if (this.mv != null) {
-            this.mv.visitJumpInsn(opcode, label);
+        if (this.f27600mv != null) {
+            this.f27600mv.visitJumpInsn(opcode, label);
         }
     }
 
     public void visitLabel(Label label) {
-        if (this.mv != null) {
-            this.mv.visitLabel(label);
+        if (this.f27600mv != null) {
+            this.f27600mv.visitLabel(label);
         }
     }
 
@@ -160,32 +162,32 @@ public abstract class MethodVisitor {
         if (this.api < 458752 && (value instanceof ConstantDynamic)) {
             throw new UnsupportedOperationException("This feature requires ASM7");
         }
-        if (this.mv != null) {
-            this.mv.visitLdcInsn(value);
+        if (this.f27600mv != null) {
+            this.f27600mv.visitLdcInsn(value);
         }
     }
 
     public void visitIincInsn(int var, int increment) {
-        if (this.mv != null) {
-            this.mv.visitIincInsn(var, increment);
+        if (this.f27600mv != null) {
+            this.f27600mv.visitIincInsn(var, increment);
         }
     }
 
     public void visitTableSwitchInsn(int min, int max, Label dflt, Label... labels) {
-        if (this.mv != null) {
-            this.mv.visitTableSwitchInsn(min, max, dflt, labels);
+        if (this.f27600mv != null) {
+            this.f27600mv.visitTableSwitchInsn(min, max, dflt, labels);
         }
     }
 
     public void visitLookupSwitchInsn(Label dflt, int[] keys, Label[] labels) {
-        if (this.mv != null) {
-            this.mv.visitLookupSwitchInsn(dflt, keys, labels);
+        if (this.f27600mv != null) {
+            this.f27600mv.visitLookupSwitchInsn(dflt, keys, labels);
         }
     }
 
     public void visitMultiANewArrayInsn(String descriptor, int numDimensions) {
-        if (this.mv != null) {
-            this.mv.visitMultiANewArrayInsn(descriptor, numDimensions);
+        if (this.f27600mv != null) {
+            this.f27600mv.visitMultiANewArrayInsn(descriptor, numDimensions);
         }
     }
 
@@ -193,15 +195,15 @@ public abstract class MethodVisitor {
         if (this.api < 327680) {
             throw new UnsupportedOperationException(REQUIRES_ASM5);
         }
-        if (this.mv != null) {
-            return this.mv.visitInsnAnnotation(typeRef, typePath, descriptor, visible);
+        if (this.f27600mv != null) {
+            return this.f27600mv.visitInsnAnnotation(typeRef, typePath, descriptor, visible);
         }
         return null;
     }
 
     public void visitTryCatchBlock(Label start, Label end, Label handler, String type) {
-        if (this.mv != null) {
-            this.mv.visitTryCatchBlock(start, end, handler, type);
+        if (this.f27600mv != null) {
+            this.f27600mv.visitTryCatchBlock(start, end, handler, type);
         }
     }
 
@@ -209,15 +211,15 @@ public abstract class MethodVisitor {
         if (this.api < 327680) {
             throw new UnsupportedOperationException(REQUIRES_ASM5);
         }
-        if (this.mv != null) {
-            return this.mv.visitTryCatchAnnotation(typeRef, typePath, descriptor, visible);
+        if (this.f27600mv != null) {
+            return this.f27600mv.visitTryCatchAnnotation(typeRef, typePath, descriptor, visible);
         }
         return null;
     }
 
     public void visitLocalVariable(String name, String descriptor, String signature, Label start, Label end, int index) {
-        if (this.mv != null) {
-            this.mv.visitLocalVariable(name, descriptor, signature, start, end, index);
+        if (this.f27600mv != null) {
+            this.f27600mv.visitLocalVariable(name, descriptor, signature, start, end, index);
         }
     }
 
@@ -225,27 +227,27 @@ public abstract class MethodVisitor {
         if (this.api < 327680) {
             throw new UnsupportedOperationException(REQUIRES_ASM5);
         }
-        if (this.mv != null) {
-            return this.mv.visitLocalVariableAnnotation(typeRef, typePath, start, end, index, descriptor, visible);
+        if (this.f27600mv != null) {
+            return this.f27600mv.visitLocalVariableAnnotation(typeRef, typePath, start, end, index, descriptor, visible);
         }
         return null;
     }
 
     public void visitLineNumber(int line, Label start) {
-        if (this.mv != null) {
-            this.mv.visitLineNumber(line, start);
+        if (this.f27600mv != null) {
+            this.f27600mv.visitLineNumber(line, start);
         }
     }
 
     public void visitMaxs(int maxStack, int maxLocals) {
-        if (this.mv != null) {
-            this.mv.visitMaxs(maxStack, maxLocals);
+        if (this.f27600mv != null) {
+            this.f27600mv.visitMaxs(maxStack, maxLocals);
         }
     }
 
     public void visitEnd() {
-        if (this.mv != null) {
-            this.mv.visitEnd();
+        if (this.f27600mv != null) {
+            this.f27600mv.visitEnd();
         }
     }
 }

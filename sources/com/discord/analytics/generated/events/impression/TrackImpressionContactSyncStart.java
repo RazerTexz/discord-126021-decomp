@@ -1,20 +1,20 @@
 package com.discord.analytics.generated.events.impression;
 
 import com.discord.analytics.generated.traits.TrackBase;
-import com.discord.analytics.generated.traits.TrackBase2;
+import com.discord.analytics.generated.traits.TrackBaseReceiver;
 import com.discord.analytics.generated.traits.TrackChannel;
-import com.discord.analytics.generated.traits.TrackChannel2;
+import com.discord.analytics.generated.traits.TrackChannelReceiver;
 import com.discord.analytics.generated.traits.TrackGuild;
-import com.discord.analytics.generated.traits.TrackGuild2;
+import com.discord.analytics.generated.traits.TrackGuildReceiver;
 import com.discord.analytics.generated.traits.TrackImpressionMetadata;
-import com.discord.analytics.generated.traits.TrackImpressionMetadata2;
+import com.discord.analytics.generated.traits.TrackImpressionMetadataReceiver;
 import com.discord.analytics.generated.traits.TrackLocationMetadata;
-import com.discord.analytics.generated.traits.TrackLocationMetadata2;
+import com.discord.analytics.generated.traits.TrackLocationMetadataReceiver;
 import com.discord.api.science.AnalyticsSchema;
 
 /* JADX INFO: compiled from: TrackImpressionContactSyncStart.kt */
 /* JADX INFO: loaded from: classes.dex */
-public final class TrackImpressionContactSyncStart implements AnalyticsSchema, TrackBase2, TrackGuild2, TrackChannel2, TrackLocationMetadata2, TrackImpressionMetadata2 {
+public final class TrackImpressionContactSyncStart implements AnalyticsSchema, TrackBaseReceiver, TrackGuildReceiver, TrackChannelReceiver, TrackLocationMetadataReceiver, TrackImpressionMetadataReceiver {
     private final transient String analyticsSchemaTypeName = "impression_contact_sync_start";
     private TrackBase trackBase;
     private TrackChannel trackChannel;
@@ -22,14 +22,15 @@ public final class TrackImpressionContactSyncStart implements AnalyticsSchema, T
     private TrackImpressionMetadata trackImpressionMetadata;
     private TrackLocationMetadata trackLocationMetadata;
 
-    @Override // com.discord.analytics.generated.traits.TrackGuild2
+    @Override // com.discord.analytics.generated.traits.TrackGuildReceiver
     /* JADX INFO: renamed from: a, reason: from getter */
     public TrackGuild getTrackGuild() {
         return this.trackGuild;
     }
 
-    @Override // com.discord.analytics.generated.traits.TrackGuild2
-    public void c(TrackGuild trackGuild) {
+    @Override // com.discord.analytics.generated.traits.TrackGuildReceiver
+    /* JADX INFO: renamed from: c */
+    public void mo7508c(TrackGuild trackGuild) {
         this.trackGuild = trackGuild;
     }
 
@@ -39,7 +40,8 @@ public final class TrackImpressionContactSyncStart implements AnalyticsSchema, T
         return this.analyticsSchemaTypeName;
     }
 
-    public void e(TrackImpressionMetadata trackImpressionMetadata) {
+    /* JADX INFO: renamed from: e */
+    public void m7518e(TrackImpressionMetadata trackImpressionMetadata) {
         this.trackImpressionMetadata = trackImpressionMetadata;
     }
 }

@@ -1,6 +1,5 @@
 package com.discord.models.domain;
 
-import b.d.b.a.outline;
 import com.discord.api.channel.Channel;
 import com.discord.api.guildscheduledevent.GuildScheduledEvent;
 import com.discord.api.user.User;
@@ -11,6 +10,7 @@ import com.discord.models.domain.ModelGuildIntegration;
 import com.discord.models.domain.ModelWebhook;
 import java.io.IOException;
 import java.util.List;
+import p007b.p100d.p104b.p105a.C1643a;
 
 /* JADX INFO: loaded from: classes.dex */
 public class ModelAuditLog implements Model {
@@ -165,19 +165,19 @@ public class ModelAuditLog implements Model {
     }
 
     public String toString() {
-        StringBuilder sbU = outline.U("ModelAuditLog(users=");
-        sbU.append(getUsers());
-        sbU.append(", webhooks=");
-        sbU.append(getWebhooks());
-        sbU.append(", integrations=");
-        sbU.append(getIntegrations());
-        sbU.append(", auditLogEntries=");
-        sbU.append(getAuditLogEntries());
-        sbU.append(", guildScheduledEvents=");
-        sbU.append(getGuildScheduledEvents());
-        sbU.append(", threads=");
-        sbU.append(getThreads());
-        sbU.append(")");
-        return sbU.toString();
+        StringBuilder sbM833U = C1643a.m833U("ModelAuditLog(users=");
+        sbM833U.append(getUsers());
+        sbM833U.append(", webhooks=");
+        sbM833U.append(getWebhooks());
+        sbM833U.append(", integrations=");
+        sbM833U.append(getIntegrations());
+        sbM833U.append(", auditLogEntries=");
+        sbM833U.append(getAuditLogEntries());
+        sbM833U.append(", guildScheduledEvents=");
+        sbM833U.append(getGuildScheduledEvents());
+        sbM833U.append(", threads=");
+        sbM833U.append(getThreads());
+        sbM833U.append(")");
+        return sbM833U.toString();
     }
 }

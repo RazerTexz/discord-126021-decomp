@@ -1,12 +1,12 @@
 package com.discord.api.interaction;
 
-import b.d.b.a.outline;
 import com.discord.api.botuikit.Component;
 import com.discord.api.commands.Application;
 import com.discord.models.domain.ModelAuditLogEntry;
-import d0.z.d.Intrinsics3;
 import java.io.Serializable;
 import java.util.List;
+import p007b.p100d.p104b.p105a.C1643a;
+import p507d0.p592z.p594d.C12238m;
 
 /* JADX INFO: compiled from: InteractionModalCreate.kt */
 /* JADX INFO: loaded from: classes.dex */
@@ -23,7 +23,8 @@ public final /* data */ class InteractionModalCreate implements Serializable {
         return this.application;
     }
 
-    public final List<Component> b() {
+    /* JADX INFO: renamed from: b */
+    public final List<Component> m8010b() {
         return this.components;
     }
 
@@ -50,7 +51,7 @@ public final /* data */ class InteractionModalCreate implements Serializable {
             return false;
         }
         InteractionModalCreate interactionModalCreate = (InteractionModalCreate) other;
-        return this.id == interactionModalCreate.id && Intrinsics3.areEqual(this.customId, interactionModalCreate.customId) && Intrinsics3.areEqual(this.application, interactionModalCreate.application) && Intrinsics3.areEqual(this.title, interactionModalCreate.title) && Intrinsics3.areEqual(this.components, interactionModalCreate.components) && Intrinsics3.areEqual(this.nonce, interactionModalCreate.nonce);
+        return this.id == interactionModalCreate.id && C12238m.areEqual(this.customId, interactionModalCreate.customId) && C12238m.areEqual(this.application, interactionModalCreate.application) && C12238m.areEqual(this.title, interactionModalCreate.title) && C12238m.areEqual(this.components, interactionModalCreate.components) && C12238m.areEqual(this.nonce, interactionModalCreate.nonce);
     }
 
     public final long getId() {
@@ -73,17 +74,17 @@ public final /* data */ class InteractionModalCreate implements Serializable {
     }
 
     public String toString() {
-        StringBuilder sbU = outline.U("InteractionModalCreate(id=");
-        sbU.append(this.id);
-        sbU.append(", customId=");
-        sbU.append(this.customId);
-        sbU.append(", application=");
-        sbU.append(this.application);
-        sbU.append(", title=");
-        sbU.append(this.title);
-        sbU.append(", components=");
-        sbU.append(this.components);
-        sbU.append(", nonce=");
-        return outline.J(sbU, this.nonce, ")");
+        StringBuilder sbM833U = C1643a.m833U("InteractionModalCreate(id=");
+        sbM833U.append(this.id);
+        sbM833U.append(", customId=");
+        sbM833U.append(this.customId);
+        sbM833U.append(", application=");
+        sbM833U.append(this.application);
+        sbM833U.append(", title=");
+        sbM833U.append(this.title);
+        sbM833U.append(", components=");
+        sbM833U.append(this.components);
+        sbM833U.append(", nonce=");
+        return C1643a.m822J(sbM833U, this.nonce, ")");
     }
 }

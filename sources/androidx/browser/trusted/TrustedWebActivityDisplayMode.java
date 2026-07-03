@@ -8,7 +8,9 @@ public interface TrustedWebActivityDisplayMode {
     public static final String KEY_ID = "androidx.browser.trusted.displaymode.KEY_ID";
 
     public static class DefaultMode implements TrustedWebActivityDisplayMode {
-        private static final int ID = 0;
+
+        /* JADX INFO: renamed from: ID */
+        private static final int f89ID = 0;
 
         @Override // androidx.browser.trusted.TrustedWebActivityDisplayMode
         @NonNull
@@ -20,7 +22,9 @@ public interface TrustedWebActivityDisplayMode {
     }
 
     public static class ImmersiveMode implements TrustedWebActivityDisplayMode {
-        private static final int ID = 1;
+
+        /* JADX INFO: renamed from: ID */
+        private static final int f90ID = 1;
         public static final String KEY_CUTOUT_MODE = "androidx.browser.trusted.displaymode.KEY_CUTOUT_MODE";
         public static final String KEY_STICKY = "androidx.browser.trusted.displaymode.KEY_STICKY";
         private final boolean mIsSticky;

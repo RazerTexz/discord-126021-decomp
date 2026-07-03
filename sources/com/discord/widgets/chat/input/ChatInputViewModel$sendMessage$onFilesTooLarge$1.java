@@ -1,14 +1,14 @@
 package com.discord.widgets.chat.input;
 
 import com.discord.widgets.chat.input.ChatInputViewModel;
-import d0.z.d.Lambda;
 import kotlin.Unit;
 import kotlin.jvm.functions.Function0;
 import kotlin.jvm.functions.Function2;
+import p507d0.p592z.p594d.AbstractC12240o;
 
 /* JADX INFO: compiled from: ChatInputViewModel.kt */
 /* JADX INFO: loaded from: classes2.dex */
-public final class ChatInputViewModel$sendMessage$onFilesTooLarge$1 extends Lambda implements Function2<Integer, Boolean, Unit> {
+public final class ChatInputViewModel$sendMessage$onFilesTooLarge$1 extends AbstractC12240o implements Function2<Integer, Boolean, Unit> {
     public final /* synthetic */ ChatInputViewModel.AttachmentContext $attachmentsContext;
     public final /* synthetic */ Function0 $messageResendCompressedHandler;
     public final /* synthetic */ ChatInputViewModel this$0;
@@ -24,11 +24,11 @@ public final class ChatInputViewModel$sendMessage$onFilesTooLarge$1 extends Lamb
     @Override // kotlin.jvm.functions.Function2
     public /* bridge */ /* synthetic */ Unit invoke(Integer num, Boolean bool) {
         invoke(num.intValue(), bool.booleanValue());
-        return Unit.a;
+        return Unit.f27425a;
     }
 
     /* JADX WARN: Type inference incomplete: some casts might be missing */
     public final void invoke(int i, boolean z2) {
-        this.this$0.eventSubject.k.onNext((T) new ChatInputViewModel.Event.FilesTooLarge(i, this.$attachmentsContext.getCurrentFileSizeMB(), this.$attachmentsContext.getMaxAttachmentSizeMB(), z2, this.$attachmentsContext.getAttachments(), this.$attachmentsContext.getHasImage(), this.$attachmentsContext.getHasVideo(), this.$attachmentsContext.getHasGif(), this.$messageResendCompressedHandler));
+        this.this$0.eventSubject.f27650k.onNext((T) new ChatInputViewModel.Event.FilesTooLarge(i, this.$attachmentsContext.getCurrentFileSizeMB(), this.$attachmentsContext.getMaxAttachmentSizeMB(), z2, this.$attachmentsContext.getAttachments(), this.$attachmentsContext.getHasImage(), this.$attachmentsContext.getHasVideo(), this.$attachmentsContext.getHasGif(), this.$messageResendCompressedHandler));
     }
 }

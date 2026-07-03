@@ -41,7 +41,7 @@ public abstract class IdeLocation {
 
     public static String escapePath(String path) {
         StringBuilder out = new StringBuilder();
-        String legalChars = OsUtils.getOS() == OsUtils.OS.UNIX ? LEGAL_PATH_CHARS : LEGAL_PATH_CHARS_WINDOWS;
+        String legalChars = OsUtils.getOS() == OsUtils.EnumC12884OS.UNIX ? LEGAL_PATH_CHARS : LEGAL_PATH_CHARS_WINDOWS;
         for (char c : path.toCharArray()) {
             if (legalChars.indexOf(c) == -1) {
                 out.append('\\');

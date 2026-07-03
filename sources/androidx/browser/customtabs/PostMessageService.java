@@ -7,20 +7,20 @@ import android.os.IBinder;
 import android.os.RemoteException;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import x.a.a.ICustomTabsCallback;
-import x.a.a.IPostMessageService;
+import p668x.p669a.p670a.InterfaceC13176a;
+import p668x.p669a.p670a.InterfaceC13178c;
 
 /* JADX INFO: loaded from: classes.dex */
 public class PostMessageService extends Service {
-    private IPostMessageService.a mBinder = new IPostMessageService.a() { // from class: androidx.browser.customtabs.PostMessageService.1
-        @Override // x.a.a.IPostMessageService
-        public void onMessageChannelReady(@NonNull ICustomTabsCallback iCustomTabsCallback, @Nullable Bundle bundle) throws RemoteException {
-            iCustomTabsCallback.onMessageChannelReady(bundle);
+    private InterfaceC13178c.a mBinder = new InterfaceC13178c.a() { // from class: androidx.browser.customtabs.PostMessageService.1
+        @Override // p668x.p669a.p670a.InterfaceC13178c
+        public void onMessageChannelReady(@NonNull InterfaceC13176a interfaceC13176a, @Nullable Bundle bundle) throws RemoteException {
+            interfaceC13176a.onMessageChannelReady(bundle);
         }
 
-        @Override // x.a.a.IPostMessageService
-        public void onPostMessage(@NonNull ICustomTabsCallback iCustomTabsCallback, @NonNull String str, @Nullable Bundle bundle) throws RemoteException {
-            iCustomTabsCallback.onPostMessage(str, bundle);
+        @Override // p668x.p669a.p670a.InterfaceC13178c
+        public void onPostMessage(@NonNull InterfaceC13176a interfaceC13176a, @NonNull String str, @Nullable Bundle bundle) throws RemoteException {
+            interfaceC13176a.onPostMessage(str, bundle);
         }
     };
 

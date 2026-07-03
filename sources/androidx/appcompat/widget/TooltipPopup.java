@@ -14,7 +14,7 @@ import android.view.WindowManager;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.RestrictTo;
-import androidx.appcompat.R;
+import androidx.appcompat.C0051R;
 import androidx.core.view.PointerIconCompat;
 
 /* JADX INFO: loaded from: classes.dex */
@@ -36,16 +36,16 @@ public class TooltipPopup {
         this.mTmpAnchorPos = new int[2];
         this.mTmpAppPos = new int[2];
         this.mContext = context;
-        View viewInflate = LayoutInflater.from(context).inflate(R.layout.abc_tooltip, (ViewGroup) null);
+        View viewInflate = LayoutInflater.from(context).inflate(C0051R.layout.abc_tooltip, (ViewGroup) null);
         this.mContentView = viewInflate;
-        this.mMessageView = (TextView) viewInflate.findViewById(R.id.message);
+        this.mMessageView = (TextView) viewInflate.findViewById(C0051R.id.message);
         layoutParams.setTitle(getClass().getSimpleName());
         layoutParams.packageName = context.getPackageName();
         layoutParams.type = PointerIconCompat.TYPE_HAND;
         layoutParams.width = -2;
         layoutParams.height = -2;
         layoutParams.format = -3;
-        layoutParams.windowAnimations = R.style.Animation_AppCompat_Tooltip;
+        layoutParams.windowAnimations = C0051R.style.Animation_AppCompat_Tooltip;
         layoutParams.flags = 24;
     }
 
@@ -53,12 +53,12 @@ public class TooltipPopup {
         int height;
         int i3;
         layoutParams.token = view.getApplicationWindowToken();
-        int dimensionPixelOffset = this.mContext.getResources().getDimensionPixelOffset(R.dimen.tooltip_precise_anchor_threshold);
+        int dimensionPixelOffset = this.mContext.getResources().getDimensionPixelOffset(C0051R.dimen.tooltip_precise_anchor_threshold);
         if (view.getWidth() < dimensionPixelOffset) {
             i = view.getWidth() / 2;
         }
         if (view.getHeight() >= dimensionPixelOffset) {
-            int dimensionPixelOffset2 = this.mContext.getResources().getDimensionPixelOffset(R.dimen.tooltip_precise_anchor_extra_offset);
+            int dimensionPixelOffset2 = this.mContext.getResources().getDimensionPixelOffset(C0051R.dimen.tooltip_precise_anchor_extra_offset);
             height = i2 + dimensionPixelOffset2;
             i3 = i2 - dimensionPixelOffset2;
         } else {
@@ -66,7 +66,7 @@ public class TooltipPopup {
             i3 = 0;
         }
         layoutParams.gravity = 49;
-        int dimensionPixelOffset3 = this.mContext.getResources().getDimensionPixelOffset(z2 ? R.dimen.tooltip_y_offset_touch : R.dimen.tooltip_y_offset_non_touch);
+        int dimensionPixelOffset3 = this.mContext.getResources().getDimensionPixelOffset(z2 ? C0051R.dimen.tooltip_y_offset_touch : C0051R.dimen.tooltip_y_offset_non_touch);
         View appRootView = getAppRootView(view);
         if (appRootView == null) {
             Log.e(TAG, "Cannot find app view");

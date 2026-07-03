@@ -1,8 +1,8 @@
 package com.discord.models.domain.billing;
 
-import b.d.b.a.outline;
 import com.discord.models.domain.ModelAuditLogEntry;
-import d0.z.d.Intrinsics3;
+import p007b.p100d.p104b.p105a.C1643a;
+import p507d0.p592z.p594d.C12238m;
 
 /* JADX INFO: compiled from: ModelBillingAddress.kt */
 /* JADX INFO: loaded from: classes.dex */
@@ -16,13 +16,13 @@ public final /* data */ class ModelBillingAddress {
     private final String state;
 
     public ModelBillingAddress(String str, String str2, String str3, String str4, String str5, String str6, String str7) {
-        Intrinsics3.checkNotNullParameter(str, ModelAuditLogEntry.CHANGE_KEY_NAME);
-        Intrinsics3.checkNotNullParameter(str2, "line_1");
-        Intrinsics3.checkNotNullParameter(str3, "line_2");
-        Intrinsics3.checkNotNullParameter(str4, "city");
-        Intrinsics3.checkNotNullParameter(str5, "state");
-        Intrinsics3.checkNotNullParameter(str6, "country");
-        Intrinsics3.checkNotNullParameter(str7, "postalCode");
+        C12238m.checkNotNullParameter(str, ModelAuditLogEntry.CHANGE_KEY_NAME);
+        C12238m.checkNotNullParameter(str2, "line_1");
+        C12238m.checkNotNullParameter(str3, "line_2");
+        C12238m.checkNotNullParameter(str4, "city");
+        C12238m.checkNotNullParameter(str5, "state");
+        C12238m.checkNotNullParameter(str6, "country");
+        C12238m.checkNotNullParameter(str7, "postalCode");
         this.name = str;
         this.line_1 = str2;
         this.line_2 = str3;
@@ -98,13 +98,13 @@ public final /* data */ class ModelBillingAddress {
     }
 
     public final ModelBillingAddress copy(String name, String line_1, String line_2, String city, String state, String country, String postalCode) {
-        Intrinsics3.checkNotNullParameter(name, ModelAuditLogEntry.CHANGE_KEY_NAME);
-        Intrinsics3.checkNotNullParameter(line_1, "line_1");
-        Intrinsics3.checkNotNullParameter(line_2, "line_2");
-        Intrinsics3.checkNotNullParameter(city, "city");
-        Intrinsics3.checkNotNullParameter(state, "state");
-        Intrinsics3.checkNotNullParameter(country, "country");
-        Intrinsics3.checkNotNullParameter(postalCode, "postalCode");
+        C12238m.checkNotNullParameter(name, ModelAuditLogEntry.CHANGE_KEY_NAME);
+        C12238m.checkNotNullParameter(line_1, "line_1");
+        C12238m.checkNotNullParameter(line_2, "line_2");
+        C12238m.checkNotNullParameter(city, "city");
+        C12238m.checkNotNullParameter(state, "state");
+        C12238m.checkNotNullParameter(country, "country");
+        C12238m.checkNotNullParameter(postalCode, "postalCode");
         return new ModelBillingAddress(name, line_1, line_2, city, state, country, postalCode);
     }
 
@@ -116,7 +116,7 @@ public final /* data */ class ModelBillingAddress {
             return false;
         }
         ModelBillingAddress modelBillingAddress = (ModelBillingAddress) other;
-        return Intrinsics3.areEqual(this.name, modelBillingAddress.name) && Intrinsics3.areEqual(this.line_1, modelBillingAddress.line_1) && Intrinsics3.areEqual(this.line_2, modelBillingAddress.line_2) && Intrinsics3.areEqual(this.city, modelBillingAddress.city) && Intrinsics3.areEqual(this.state, modelBillingAddress.state) && Intrinsics3.areEqual(this.country, modelBillingAddress.country) && Intrinsics3.areEqual(this.postalCode, modelBillingAddress.postalCode);
+        return C12238m.areEqual(this.name, modelBillingAddress.name) && C12238m.areEqual(this.line_1, modelBillingAddress.line_1) && C12238m.areEqual(this.line_2, modelBillingAddress.line_2) && C12238m.areEqual(this.city, modelBillingAddress.city) && C12238m.areEqual(this.state, modelBillingAddress.state) && C12238m.areEqual(this.country, modelBillingAddress.country) && C12238m.areEqual(this.postalCode, modelBillingAddress.postalCode);
     }
 
     public final String getCity() {
@@ -165,19 +165,19 @@ public final /* data */ class ModelBillingAddress {
     }
 
     public String toString() {
-        StringBuilder sbU = outline.U("ModelBillingAddress(name=");
-        sbU.append(this.name);
-        sbU.append(", line_1=");
-        sbU.append(this.line_1);
-        sbU.append(", line_2=");
-        sbU.append(this.line_2);
-        sbU.append(", city=");
-        sbU.append(this.city);
-        sbU.append(", state=");
-        sbU.append(this.state);
-        sbU.append(", country=");
-        sbU.append(this.country);
-        sbU.append(", postalCode=");
-        return outline.J(sbU, this.postalCode, ")");
+        StringBuilder sbM833U = C1643a.m833U("ModelBillingAddress(name=");
+        sbM833U.append(this.name);
+        sbM833U.append(", line_1=");
+        sbM833U.append(this.line_1);
+        sbM833U.append(", line_2=");
+        sbM833U.append(this.line_2);
+        sbM833U.append(", city=");
+        sbM833U.append(this.city);
+        sbM833U.append(", state=");
+        sbM833U.append(this.state);
+        sbM833U.append(", country=");
+        sbM833U.append(this.country);
+        sbM833U.append(", postalCode=");
+        return C1643a.m822J(sbM833U, this.postalCode, ")");
     }
 }

@@ -4,16 +4,16 @@ import androidx.exifinterface.media.ExifInterface;
 import com.discord.app.AppLog;
 import com.discord.stores.updates.ObservationDeck;
 import com.discord.utilities.logging.Logger;
-import d0.t.MutableCollections;
-import d0.z.d.Intrinsics3;
 import java.util.HashSet;
 import java.util.Set;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.reflect.KProperty;
+import p507d0.p580t.C12160r;
+import p507d0.p592z.p594d.C12238m;
 
 /* JADX INFO: compiled from: StoreV2.kt */
 /* JADX INFO: loaded from: classes2.dex */
-public abstract class StoreV2 extends Store implements Store2, ObservationDeck.UpdateSource {
+public abstract class StoreV2 extends Store implements DispatchHandler, ObservationDeck.UpdateSource {
     private final Set<ObservationDeck.UpdateSource> updateSources = new HashSet();
 
     /* JADX INFO: compiled from: StoreV2.kt */
@@ -27,13 +27,13 @@ public abstract class StoreV2 extends Store implements Store2, ObservationDeck.U
         }
 
         public final T getValue(StoreV2 thisRef, KProperty<?> property) {
-            Intrinsics3.checkNotNullParameter(property, "property");
+            C12238m.checkNotNullParameter(property, "property");
             return this.value;
         }
 
         public final void setValue(StoreV2 thisRef, KProperty<?> property, T value) {
-            Intrinsics3.checkNotNullParameter(property, "property");
-            if (!Intrinsics3.areEqual(this.value, value)) {
+            C12238m.checkNotNullParameter(property, "property");
+            if (!C12238m.areEqual(this.value, value)) {
                 this.value = value;
                 ObservationDeck.UpdateSource updateSource = this.overrideUpdateSource;
                 if (updateSource != null) {
@@ -53,9 +53,9 @@ public abstract class StoreV2 extends Store implements Store2, ObservationDeck.U
 
     private final void assertStoreThread() {
         Thread threadCurrentThread = Thread.currentThread();
-        Intrinsics3.checkNotNullExpressionValue(threadCurrentThread, "Thread.currentThread()");
+        C12238m.checkNotNullExpressionValue(threadCurrentThread, "Thread.currentThread()");
         if (threadCurrentThread.getId() != StoreStream.INSTANCE.getSTORE_THREAD_ID()) {
-            Logger.e$default(AppLog.g, "markChanged() should be run from the Store Dispatcher", new IllegalStateException("Dispatch not run on store thread"), null, 4, null);
+            Logger.e$default(AppLog.f14950g, "markChanged() should be run from the Store Dispatcher", new IllegalStateException("Dispatch not run on store thread"), null, 4, null);
         }
     }
 
@@ -69,12 +69,12 @@ public abstract class StoreV2 extends Store implements Store2, ObservationDeck.U
     }
 
     public final void markUnchanged(ObservationDeck.UpdateSource updateSource) {
-        Intrinsics3.checkNotNullParameter(updateSource, "updateSource");
+        C12238m.checkNotNullParameter(updateSource, "updateSource");
         assertStoreThread();
         this.updateSources.remove(updateSource);
     }
 
-    @Override // com.discord.stores.Store2
+    @Override // com.discord.stores.DispatchHandler
     public void onDispatchEnded() {
         this.updateSources.clear();
     }
@@ -83,9 +83,9 @@ public abstract class StoreV2 extends Store implements Store2, ObservationDeck.U
     }
 
     public final void markChanged(ObservationDeck.UpdateSource... updates) {
-        Intrinsics3.checkNotNullParameter(updates, "updates");
+        C12238m.checkNotNullParameter(updates, "updates");
         assertStoreThread();
         markChanged();
-        MutableCollections.addAll(this.updateSources, updates);
+        C12160r.addAll(this.updateSources, updates);
     }
 }

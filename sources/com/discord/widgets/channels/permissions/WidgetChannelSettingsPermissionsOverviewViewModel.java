@@ -1,13 +1,13 @@
 package com.discord.widgets.channels.permissions;
 
-import b.a.d.AppViewModel;
-import b.d.b.a.outline;
-import d0.z.d.Intrinsics3;
 import java.util.List;
+import p007b.p008a.p018d.AbstractC0859d0;
+import p007b.p100d.p104b.p105a.C1643a;
+import p507d0.p592z.p594d.C12238m;
 
 /* JADX INFO: compiled from: WidgetChannelSettingsPermissionsOverviewViewModel.kt */
 /* JADX INFO: loaded from: classes2.dex */
-public final class WidgetChannelSettingsPermissionsOverviewViewModel extends AppViewModel<ViewState> {
+public final class WidgetChannelSettingsPermissionsOverviewViewModel extends AbstractC0859d0<ViewState> {
     private final long channelId;
 
     /* JADX INFO: compiled from: WidgetChannelSettingsPermissionsOverviewViewModel.kt */
@@ -23,8 +23,8 @@ public final class WidgetChannelSettingsPermissionsOverviewViewModel extends App
 
         /* JADX WARN: Multi-variable type inference failed */
         public ViewState(Tab tab, List<? extends Tab> list) {
-            Intrinsics3.checkNotNullParameter(tab, "selectedTab");
-            Intrinsics3.checkNotNullParameter(list, "availableTabs");
+            C12238m.checkNotNullParameter(tab, "selectedTab");
+            C12238m.checkNotNullParameter(list, "availableTabs");
             this.selectedTab = tab;
             this.availableTabs = list;
         }
@@ -50,8 +50,8 @@ public final class WidgetChannelSettingsPermissionsOverviewViewModel extends App
         }
 
         public final ViewState copy(Tab selectedTab, List<? extends Tab> availableTabs) {
-            Intrinsics3.checkNotNullParameter(selectedTab, "selectedTab");
-            Intrinsics3.checkNotNullParameter(availableTabs, "availableTabs");
+            C12238m.checkNotNullParameter(selectedTab, "selectedTab");
+            C12238m.checkNotNullParameter(availableTabs, "availableTabs");
             return new ViewState(selectedTab, availableTabs);
         }
 
@@ -63,7 +63,7 @@ public final class WidgetChannelSettingsPermissionsOverviewViewModel extends App
                 return false;
             }
             ViewState viewState = (ViewState) other;
-            return Intrinsics3.areEqual(this.selectedTab, viewState.selectedTab) && Intrinsics3.areEqual(this.availableTabs, viewState.availableTabs);
+            return C12238m.areEqual(this.selectedTab, viewState.selectedTab) && C12238m.areEqual(this.availableTabs, viewState.availableTabs);
         }
 
         public final List<Tab> getAvailableTabs() {
@@ -82,15 +82,15 @@ public final class WidgetChannelSettingsPermissionsOverviewViewModel extends App
         }
 
         public String toString() {
-            StringBuilder sbU = outline.U("ViewState(selectedTab=");
-            sbU.append(this.selectedTab);
-            sbU.append(", availableTabs=");
-            return outline.L(sbU, this.availableTabs, ")");
+            StringBuilder sbM833U = C1643a.m833U("ViewState(selectedTab=");
+            sbM833U.append(this.selectedTab);
+            sbM833U.append(", availableTabs=");
+            return C1643a.m824L(sbM833U, this.availableTabs, ")");
         }
     }
 
     public WidgetChannelSettingsPermissionsOverviewViewModel(long j, boolean z2) {
-        super(WidgetChannelSettingsPermissionsOverviewViewModel2.generateInitialViewState(z2));
+        super(WidgetChannelSettingsPermissionsOverviewViewModelKt.generateInitialViewState(z2));
         this.channelId = j;
     }
 
@@ -99,7 +99,7 @@ public final class WidgetChannelSettingsPermissionsOverviewViewModel extends App
     }
 
     public final void selectTab(Tab tab) {
-        Intrinsics3.checkNotNullParameter(tab, "tab");
+        C12238m.checkNotNullParameter(tab, "tab");
         updateViewState(ViewState.copy$default(requireViewState(), tab, null, 2, null));
     }
 }

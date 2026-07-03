@@ -3,21 +3,26 @@ package com.google.android.exoplayer2.metadata.mp4;
 import android.os.Parcel;
 import android.os.Parcelable;
 import androidx.annotation.Nullable;
-import b.i.a.c.Format2;
-import b.i.a.c.MediaMetadata;
-import b.i.a.c.z2.Metadata2;
 import com.google.android.exoplayer2.metadata.Metadata;
+import p007b.p225i.p226a.p242c.C2811j1;
+import p007b.p225i.p226a.p242c.C2835p1;
+import p007b.p225i.p226a.p242c.p279z2.C3155a;
 
 /* JADX INFO: loaded from: classes3.dex */
 public final class SmtaMetadataEntry implements Metadata.Entry {
-    public static final Parcelable.Creator<SmtaMetadataEntry> CREATOR = new a();
-    public final float j;
-    public final int k;
+    public static final Parcelable.Creator<SmtaMetadataEntry> CREATOR = new C10741a();
 
-    public class a implements Parcelable.Creator<SmtaMetadataEntry> {
+    /* JADX INFO: renamed from: j */
+    public final float f20017j;
+
+    /* JADX INFO: renamed from: k */
+    public final int f20018k;
+
+    /* JADX INFO: renamed from: com.google.android.exoplayer2.metadata.mp4.SmtaMetadataEntry$a */
+    public class C10741a implements Parcelable.Creator<SmtaMetadataEntry> {
         @Override // android.os.Parcelable.Creator
         public SmtaMetadataEntry createFromParcel(Parcel parcel) {
-            return new SmtaMetadataEntry(parcel, (a) null);
+            return new SmtaMetadataEntry(parcel, (C10741a) null);
         }
 
         @Override // android.os.Parcelable.Creator
@@ -27,8 +32,8 @@ public final class SmtaMetadataEntry implements Metadata.Entry {
     }
 
     public SmtaMetadataEntry(float f, int i) {
-        this.j = f;
-        this.k = i;
+        this.f20017j = f;
+        this.f20018k = i;
     }
 
     @Override // android.os.Parcelable
@@ -44,26 +49,28 @@ public final class SmtaMetadataEntry implements Metadata.Entry {
             return false;
         }
         SmtaMetadataEntry smtaMetadataEntry = (SmtaMetadataEntry) obj;
-        return this.j == smtaMetadataEntry.j && this.k == smtaMetadataEntry.k;
+        return this.f20017j == smtaMetadataEntry.f20017j && this.f20018k == smtaMetadataEntry.f20018k;
     }
 
     public int hashCode() {
-        return ((527 + Float.valueOf(this.j).hashCode()) * 31) + this.k;
+        return ((527 + Float.valueOf(this.f20017j).hashCode()) * 31) + this.f20018k;
     }
 
     @Override // com.google.android.exoplayer2.metadata.Metadata.Entry
-    public /* synthetic */ void n(MediaMetadata.b bVar) {
-        Metadata2.c(this, bVar);
+    /* JADX INFO: renamed from: n */
+    public /* synthetic */ void mo8878n(C2835p1.b bVar) {
+        C3155a.m3894c(this, bVar);
     }
 
     @Override // com.google.android.exoplayer2.metadata.Metadata.Entry
-    public /* synthetic */ byte[] o0() {
-        return Metadata2.a(this);
+    /* JADX INFO: renamed from: o0 */
+    public /* synthetic */ byte[] mo8879o0() {
+        return C3155a.m3892a(this);
     }
 
     public String toString() {
-        float f = this.j;
-        int i = this.k;
+        float f = this.f20017j;
+        int i = this.f20018k;
         StringBuilder sb = new StringBuilder(73);
         sb.append("smta: captureFrameRate=");
         sb.append(f);
@@ -74,17 +81,18 @@ public final class SmtaMetadataEntry implements Metadata.Entry {
 
     @Override // android.os.Parcelable
     public void writeToParcel(Parcel parcel, int i) {
-        parcel.writeFloat(this.j);
-        parcel.writeInt(this.k);
+        parcel.writeFloat(this.f20017j);
+        parcel.writeInt(this.f20018k);
     }
 
     @Override // com.google.android.exoplayer2.metadata.Metadata.Entry
-    public /* synthetic */ Format2 y() {
-        return Metadata2.b(this);
+    /* JADX INFO: renamed from: y */
+    public /* synthetic */ C2811j1 mo8880y() {
+        return C3155a.m3893b(this);
     }
 
-    public SmtaMetadataEntry(Parcel parcel, a aVar) {
-        this.j = parcel.readFloat();
-        this.k = parcel.readInt();
+    public SmtaMetadataEntry(Parcel parcel, C10741a c10741a) {
+        this.f20017j = parcel.readFloat();
+        this.f20018k = parcel.readInt();
     }
 }

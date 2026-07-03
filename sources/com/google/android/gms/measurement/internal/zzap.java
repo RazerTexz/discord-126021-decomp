@@ -3,55 +3,62 @@ package com.google.android.gms.measurement.internal;
 import android.os.Bundle;
 import android.os.Parcel;
 import android.os.Parcelable;
-import b.c.a.a0.AnimatableValueParser;
-import b.i.a.f.i.b.n;
-import b.i.a.f.i.b.o;
 import com.google.android.gms.common.internal.safeparcel.AbstractSafeParcelable;
 import java.util.Iterator;
+import p007b.p085c.p086a.p087a0.C1460d;
+import p007b.p225i.p226a.p288f.p330i.p332b.C4120n;
+import p007b.p225i.p226a.p288f.p330i.p332b.C4131o;
 
 /* JADX INFO: compiled from: com.google.android.gms:play-services-measurement-impl@@18.0.0 */
 /* JADX INFO: loaded from: classes3.dex */
 public final class zzap extends AbstractSafeParcelable implements Iterable<String> {
-    public static final Parcelable.Creator<zzap> CREATOR = new o();
-    public final Bundle j;
+    public static final Parcelable.Creator<zzap> CREATOR = new C4131o();
+
+    /* JADX INFO: renamed from: j */
+    public final Bundle f20665j;
 
     public zzap(Bundle bundle) {
-        this.j = bundle;
+        this.f20665j = bundle;
     }
 
-    public final String A0(String str) {
-        return this.j.getString(str);
+    /* JADX INFO: renamed from: A0 */
+    public final String m9112A0(String str) {
+        return this.f20665j.getString(str);
     }
 
     @Override // java.lang.Iterable
     public final Iterator<String> iterator() {
-        return new n(this);
+        return new C4120n(this);
     }
 
     public final String toString() {
-        return this.j.toString();
+        return this.f20665j.toString();
     }
 
-    public final Object w0(String str) {
-        return this.j.get(str);
+    /* JADX INFO: renamed from: w0 */
+    public final Object m9113w0(String str) {
+        return this.f20665j.get(str);
     }
 
     @Override // android.os.Parcelable
     public final void writeToParcel(Parcel parcel, int i) {
-        int iY2 = AnimatableValueParser.y2(parcel, 20293);
-        AnimatableValueParser.p2(parcel, 2, x0(), false);
-        AnimatableValueParser.A2(parcel, iY2);
+        int iM594y2 = C1460d.m594y2(parcel, 20293);
+        C1460d.m558p2(parcel, 2, m9114x0(), false);
+        C1460d.m418A2(parcel, iM594y2);
     }
 
-    public final Bundle x0() {
-        return new Bundle(this.j);
+    /* JADX INFO: renamed from: x0 */
+    public final Bundle m9114x0() {
+        return new Bundle(this.f20665j);
     }
 
-    public final Long y0(String str) {
-        return Long.valueOf(this.j.getLong(str));
+    /* JADX INFO: renamed from: y0 */
+    public final Long m9115y0(String str) {
+        return Long.valueOf(this.f20665j.getLong(str));
     }
 
-    public final Double z0(String str) {
-        return Double.valueOf(this.j.getDouble(str));
+    /* JADX INFO: renamed from: z0 */
+    public final Double m9116z0(String str) {
+        return Double.valueOf(this.f20665j.getDouble(str));
     }
 }

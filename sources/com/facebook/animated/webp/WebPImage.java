@@ -1,25 +1,27 @@
 package com.facebook.animated.webp;
 
 import android.graphics.Bitmap;
-import b.c.a.a0.AnimatableValueParser;
-import b.f.d.d.DoNotStrip;
-import b.f.j.a.a.AnimatedDrawableFrameInfo;
-import b.f.j.a.a.AnimatedImage;
-import b.f.j.a.a.AnimatedImageFrame;
-import b.f.j.a.b.AnimatedImageDecoder;
-import b.f.j.d.ImageDecodeOptions;
-import b.f.j.m.StaticWebpNativeLoader;
 import java.nio.ByteBuffer;
+import p007b.p085c.p086a.p087a0.C1460d;
+import p007b.p109f.p115d.p119d.InterfaceC1680c;
+import p007b.p109f.p161j.p162a.p163a.C1835b;
+import p007b.p109f.p161j.p162a.p163a.InterfaceC1836c;
+import p007b.p109f.p161j.p162a.p163a.InterfaceC1837d;
+import p007b.p109f.p161j.p162a.p164b.InterfaceC1842c;
+import p007b.p109f.p161j.p169d.C1881b;
+import p007b.p109f.p161j.p178m.C1956b;
 
 /* JADX INFO: loaded from: classes.dex */
-@DoNotStrip
-public class WebPImage implements AnimatedImage, AnimatedImageDecoder {
-    public Bitmap.Config a = null;
+@InterfaceC1680c
+public class WebPImage implements InterfaceC1836c, InterfaceC1842c {
 
-    @DoNotStrip
+    /* JADX INFO: renamed from: a */
+    public Bitmap.Config f19420a = null;
+
+    @InterfaceC1680c
     private long mNativeContext;
 
-    @DoNotStrip
+    @InterfaceC1680c
     public WebPImage() {
     }
 
@@ -47,39 +49,45 @@ public class WebPImage implements AnimatedImage, AnimatedImageDecoder {
 
     private native int nativeGetWidth();
 
-    @Override // b.f.j.a.a.AnimatedImage
-    public int a() {
+    @Override // p007b.p109f.p161j.p162a.p163a.InterfaceC1836c
+    /* JADX INFO: renamed from: a */
+    public int mo1177a() {
         return nativeGetFrameCount();
     }
 
-    @Override // b.f.j.a.a.AnimatedImage
-    public int b() {
+    @Override // p007b.p109f.p161j.p162a.p163a.InterfaceC1836c
+    /* JADX INFO: renamed from: b */
+    public int mo1178b() {
         return nativeGetLoopCount();
     }
 
-    @Override // b.f.j.a.b.AnimatedImageDecoder
-    public AnimatedImage c(ByteBuffer byteBuffer, ImageDecodeOptions imageDecodeOptions) {
-        StaticWebpNativeLoader.a();
+    @Override // p007b.p109f.p161j.p162a.p164b.InterfaceC1842c
+    /* JADX INFO: renamed from: c */
+    public InterfaceC1836c mo1192c(ByteBuffer byteBuffer, C1881b c1881b) {
+        C1956b.m1411a();
         byteBuffer.rewind();
         WebPImage webPImageNativeCreateFromDirectByteBuffer = nativeCreateFromDirectByteBuffer(byteBuffer);
-        if (imageDecodeOptions != null) {
-            webPImageNativeCreateFromDirectByteBuffer.a = imageDecodeOptions.e;
+        if (c1881b != null) {
+            webPImageNativeCreateFromDirectByteBuffer.f19420a = c1881b.f3710e;
         }
         return webPImageNativeCreateFromDirectByteBuffer;
     }
 
-    @Override // b.f.j.a.a.AnimatedImage
-    public Bitmap.Config d() {
-        return this.a;
+    @Override // p007b.p109f.p161j.p162a.p163a.InterfaceC1836c
+    /* JADX INFO: renamed from: d */
+    public Bitmap.Config mo1179d() {
+        return this.f19420a;
     }
 
-    @Override // b.f.j.a.a.AnimatedImage
-    public AnimatedImageFrame e(int i) {
+    @Override // p007b.p109f.p161j.p162a.p163a.InterfaceC1836c
+    /* JADX INFO: renamed from: e */
+    public InterfaceC1837d mo1180e(int i) {
         return nativeGetFrame(i);
     }
 
-    @Override // b.f.j.a.a.AnimatedImage
-    public boolean f() {
+    @Override // p007b.p109f.p161j.p162a.p163a.InterfaceC1836c
+    /* JADX INFO: renamed from: f */
+    public boolean mo1181f() {
         return true;
     }
 
@@ -87,48 +95,52 @@ public class WebPImage implements AnimatedImage, AnimatedImageDecoder {
         nativeFinalize();
     }
 
-    @Override // b.f.j.a.a.AnimatedImage
-    public AnimatedDrawableFrameInfo g(int i) {
+    @Override // p007b.p109f.p161j.p162a.p163a.InterfaceC1836c
+    /* JADX INFO: renamed from: g */
+    public C1835b mo1182g(int i) {
         WebPFrame webPFrameNativeGetFrame = nativeGetFrame(i);
         try {
-            return new AnimatedDrawableFrameInfo(i, webPFrameNativeGetFrame.b(), webPFrameNativeGetFrame.c(), webPFrameNativeGetFrame.getWidth(), webPFrameNativeGetFrame.getHeight(), webPFrameNativeGetFrame.d() ? 1 : 2, webPFrameNativeGetFrame.e() ? 2 : 1);
+            return new C1835b(i, webPFrameNativeGetFrame.mo1186b(), webPFrameNativeGetFrame.mo1187c(), webPFrameNativeGetFrame.getWidth(), webPFrameNativeGetFrame.getHeight(), webPFrameNativeGetFrame.m8630d() ? 1 : 2, webPFrameNativeGetFrame.m8631e() ? 2 : 1);
         } finally {
             webPFrameNativeGetFrame.dispose();
         }
     }
 
-    @Override // b.f.j.a.a.AnimatedImage
+    @Override // p007b.p109f.p161j.p162a.p163a.InterfaceC1836c
     public int getHeight() {
         return nativeGetHeight();
     }
 
-    @Override // b.f.j.a.a.AnimatedImage
+    @Override // p007b.p109f.p161j.p162a.p163a.InterfaceC1836c
     public int getWidth() {
         return nativeGetWidth();
     }
 
-    @Override // b.f.j.a.b.AnimatedImageDecoder
-    public AnimatedImage h(long j, int i, ImageDecodeOptions imageDecodeOptions) {
-        StaticWebpNativeLoader.a();
-        AnimatableValueParser.i(Boolean.valueOf(j != 0));
+    @Override // p007b.p109f.p161j.p162a.p164b.InterfaceC1842c
+    /* JADX INFO: renamed from: h */
+    public InterfaceC1836c mo1193h(long j, int i, C1881b c1881b) {
+        C1956b.m1411a();
+        C1460d.m527i(Boolean.valueOf(j != 0));
         WebPImage webPImageNativeCreateFromNativeMemory = nativeCreateFromNativeMemory(j, i);
-        if (imageDecodeOptions != null) {
-            webPImageNativeCreateFromNativeMemory.a = imageDecodeOptions.e;
+        if (c1881b != null) {
+            webPImageNativeCreateFromNativeMemory.f19420a = c1881b.f3710e;
         }
         return webPImageNativeCreateFromNativeMemory;
     }
 
-    @Override // b.f.j.a.a.AnimatedImage
-    public int[] i() {
+    @Override // p007b.p109f.p161j.p162a.p163a.InterfaceC1836c
+    /* JADX INFO: renamed from: i */
+    public int[] mo1183i() {
         return nativeGetFrameDurations();
     }
 
-    @Override // b.f.j.a.a.AnimatedImage
-    public int j() {
+    @Override // p007b.p109f.p161j.p162a.p163a.InterfaceC1836c
+    /* JADX INFO: renamed from: j */
+    public int mo1184j() {
         return nativeGetSizeInBytes();
     }
 
-    @DoNotStrip
+    @InterfaceC1680c
     public WebPImage(long j) {
         this.mNativeContext = j;
     }

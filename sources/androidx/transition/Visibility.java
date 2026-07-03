@@ -286,7 +286,7 @@ public abstract class Visibility extends Transition {
         }
         final View view3 = transitionValues.view;
         View viewCopyViewImage = transitionValues2 != null ? transitionValues2.view : null;
-        int i3 = R.id.save_overlay_view;
+        int i3 = C0658R.id.save_overlay_view;
         final View view4 = (View) view3.getTag(i3);
         if (view4 != null) {
             view2 = null;
@@ -373,7 +373,7 @@ public abstract class Visibility extends Transition {
                 addListener(new TransitionListenerAdapter() { // from class: androidx.transition.Visibility.1
                     @Override // androidx.transition.TransitionListenerAdapter, androidx.transition.Transition.TransitionListener
                     public void onTransitionEnd(@NonNull Transition transition) {
-                        view3.setTag(R.id.save_overlay_view, null);
+                        view3.setTag(C0658R.id.save_overlay_view, null);
                         ViewGroupUtils.getOverlay(viewGroup).remove(view4);
                         transition.removeListener(this);
                     }

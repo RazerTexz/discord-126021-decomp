@@ -1,17 +1,17 @@
 package com.discord.analytics.generated.events;
 
-import b.d.b.a.outline;
 import com.discord.analytics.generated.traits.TrackBase;
-import com.discord.analytics.generated.traits.TrackBase2;
+import com.discord.analytics.generated.traits.TrackBaseReceiver;
 import com.discord.analytics.generated.traits.TrackLocationMetadata;
-import com.discord.analytics.generated.traits.TrackLocationMetadata2;
+import com.discord.analytics.generated.traits.TrackLocationMetadataReceiver;
 import com.discord.api.science.AnalyticsSchema;
-import d0.z.d.Intrinsics3;
 import java.util.List;
+import p007b.p100d.p104b.p105a.C1643a;
+import p507d0.p592z.p594d.C12238m;
 
 /* JADX INFO: compiled from: TrackGuildDiscoveryViewed.kt */
 /* JADX INFO: loaded from: classes.dex */
-public final /* data */ class TrackGuildDiscoveryViewed implements AnalyticsSchema, TrackBase2, TrackLocationMetadata2 {
+public final /* data */ class TrackGuildDiscoveryViewed implements AnalyticsSchema, TrackBaseReceiver, TrackLocationMetadataReceiver {
     private TrackBase trackBase;
     private TrackLocationMetadata trackLocationMetadata;
     private final CharSequence loadId = null;
@@ -37,7 +37,7 @@ public final /* data */ class TrackGuildDiscoveryViewed implements AnalyticsSche
             return false;
         }
         TrackGuildDiscoveryViewed trackGuildDiscoveryViewed = (TrackGuildDiscoveryViewed) other;
-        return Intrinsics3.areEqual(this.loadId, trackGuildDiscoveryViewed.loadId) && Intrinsics3.areEqual(this.numGuilds, trackGuildDiscoveryViewed.numGuilds) && Intrinsics3.areEqual(this.numGuildsRecommended, trackGuildDiscoveryViewed.numGuildsRecommended) && Intrinsics3.areEqual(this.numGuildsPopular, trackGuildDiscoveryViewed.numGuildsPopular) && Intrinsics3.areEqual(this.recommendedGuildIds, trackGuildDiscoveryViewed.recommendedGuildIds) && Intrinsics3.areEqual(this.categoryId, trackGuildDiscoveryViewed.categoryId) && Intrinsics3.areEqual(this.recommendationsSource, trackGuildDiscoveryViewed.recommendationsSource);
+        return C12238m.areEqual(this.loadId, trackGuildDiscoveryViewed.loadId) && C12238m.areEqual(this.numGuilds, trackGuildDiscoveryViewed.numGuilds) && C12238m.areEqual(this.numGuildsRecommended, trackGuildDiscoveryViewed.numGuildsRecommended) && C12238m.areEqual(this.numGuildsPopular, trackGuildDiscoveryViewed.numGuildsPopular) && C12238m.areEqual(this.recommendedGuildIds, trackGuildDiscoveryViewed.recommendedGuildIds) && C12238m.areEqual(this.categoryId, trackGuildDiscoveryViewed.categoryId) && C12238m.areEqual(this.recommendationsSource, trackGuildDiscoveryViewed.recommendationsSource);
     }
 
     public int hashCode() {
@@ -58,19 +58,19 @@ public final /* data */ class TrackGuildDiscoveryViewed implements AnalyticsSche
     }
 
     public String toString() {
-        StringBuilder sbU = outline.U("TrackGuildDiscoveryViewed(loadId=");
-        sbU.append(this.loadId);
-        sbU.append(", numGuilds=");
-        sbU.append(this.numGuilds);
-        sbU.append(", numGuildsRecommended=");
-        sbU.append(this.numGuildsRecommended);
-        sbU.append(", numGuildsPopular=");
-        sbU.append(this.numGuildsPopular);
-        sbU.append(", recommendedGuildIds=");
-        sbU.append(this.recommendedGuildIds);
-        sbU.append(", categoryId=");
-        sbU.append(this.categoryId);
-        sbU.append(", recommendationsSource=");
-        return outline.E(sbU, this.recommendationsSource, ")");
+        StringBuilder sbM833U = C1643a.m833U("TrackGuildDiscoveryViewed(loadId=");
+        sbM833U.append(this.loadId);
+        sbM833U.append(", numGuilds=");
+        sbM833U.append(this.numGuilds);
+        sbM833U.append(", numGuildsRecommended=");
+        sbM833U.append(this.numGuildsRecommended);
+        sbM833U.append(", numGuildsPopular=");
+        sbM833U.append(this.numGuildsPopular);
+        sbM833U.append(", recommendedGuildIds=");
+        sbM833U.append(this.recommendedGuildIds);
+        sbM833U.append(", categoryId=");
+        sbM833U.append(this.categoryId);
+        sbM833U.append(", recommendationsSource=");
+        return C1643a.m817E(sbM833U, this.recommendationsSource, ")");
     }
 }

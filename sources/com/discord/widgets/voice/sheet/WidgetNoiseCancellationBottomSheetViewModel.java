@@ -2,19 +2,19 @@ package com.discord.widgets.voice.sheet;
 
 import androidx.annotation.MainThread;
 import androidx.annotation.StringRes;
-import b.a.d.AppViewModel;
-import b.d.b.a.outline;
-import com.discord.R;
+import com.discord.C5419R;
 import com.discord.stores.StoreMediaSettings;
 import com.discord.stores.StoreStream;
-import d0.z.d.Intrinsics3;
 import kotlin.jvm.internal.DefaultConstructorMarker;
-import rx.Observable;
-import rx.subjects.PublishSubject;
+import p007b.p008a.p018d.AbstractC0859d0;
+import p007b.p100d.p104b.p105a.C1643a;
+import p507d0.p592z.p594d.C12238m;
+import p658rx.Observable;
+import p658rx.subjects.PublishSubject;
 
 /* JADX INFO: compiled from: WidgetNoiseCancellationBottomSheetViewModel.kt */
 /* JADX INFO: loaded from: classes.dex */
-public final class WidgetNoiseCancellationBottomSheetViewModel extends AppViewModel<ViewState> {
+public final class WidgetNoiseCancellationBottomSheetViewModel extends AbstractC0859d0<ViewState> {
     private final PublishSubject<Event> eventSubject;
     private final StoreMediaSettings mediaSettingsStore;
 
@@ -62,7 +62,7 @@ public final class WidgetNoiseCancellationBottomSheetViewModel extends AppViewMo
             }
 
             public String toString() {
-                return outline.B(outline.U("ShowToast(toastResId="), this.toastResId, ")");
+                return C1643a.m814B(C1643a.m833U("ShowToast(toastResId="), this.toastResId, ")");
             }
         }
 
@@ -91,7 +91,7 @@ public final class WidgetNoiseCancellationBottomSheetViewModel extends AppViewMo
 
     public final Observable<Event> observeEvents() {
         PublishSubject<Event> publishSubject = this.eventSubject;
-        Intrinsics3.checkNotNullExpressionValue(publishSubject, "eventSubject");
+        C12238m.checkNotNullExpressionValue(publishSubject, "eventSubject");
         return publishSubject;
     }
 
@@ -99,14 +99,14 @@ public final class WidgetNoiseCancellationBottomSheetViewModel extends AppViewMo
     public final void onNoiseCancellationButtonPressed() {
         this.mediaSettingsStore.setVoiceConfiguration(StoreMediaSettings.NoiseProcessing.Cancellation);
         PublishSubject<Event> publishSubject = this.eventSubject;
-        publishSubject.k.onNext(new Event.ShowToast(R.string.noise_cancellation_on));
+        publishSubject.f27650k.onNext(new Event.ShowToast(C5419R.string.noise_cancellation_on));
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public WidgetNoiseCancellationBottomSheetViewModel(StoreMediaSettings storeMediaSettings) {
         super(null, 1, null);
-        Intrinsics3.checkNotNullParameter(storeMediaSettings, "mediaSettingsStore");
+        C12238m.checkNotNullParameter(storeMediaSettings, "mediaSettingsStore");
         this.mediaSettingsStore = storeMediaSettings;
-        this.eventSubject = PublishSubject.k0();
+        this.eventSubject = PublishSubject.m11133k0();
     }
 }

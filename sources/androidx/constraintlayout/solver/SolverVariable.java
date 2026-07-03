@@ -1,9 +1,9 @@
 package androidx.constraintlayout.solver;
 
 import androidx.exifinterface.media.ExifInterface;
-import b.d.b.a.outline;
 import java.util.Arrays;
 import java.util.HashSet;
+import p007b.p100d.p104b.p105a.C1643a;
 
 /* JADX INFO: loaded from: classes.dex */
 public class SolverVariable {
@@ -28,8 +28,8 @@ public class SolverVariable {
     public int definitionId;
     public float[] goalStrengthVector;
 
-    /* JADX INFO: renamed from: id, reason: collision with root package name */
-    public int f30id;
+    /* JADX INFO: renamed from: id */
+    public int f110id;
     public boolean inGoal;
     public HashSet<ArrayRow> inRows;
     public boolean isFinalValue;
@@ -44,8 +44,8 @@ public class SolverVariable {
     public float synonymDelta;
     public int usageInRowCount;
 
-    /* JADX INFO: renamed from: androidx.constraintlayout.solver.SolverVariable$1, reason: invalid class name */
-    public static /* synthetic */ class AnonymousClass1 {
+    /* JADX INFO: renamed from: androidx.constraintlayout.solver.SolverVariable$1 */
+    public static /* synthetic */ class C01831 {
         public static final /* synthetic */ int[] $SwitchMap$androidx$constraintlayout$solver$SolverVariable$Type;
 
         static {
@@ -84,7 +84,7 @@ public class SolverVariable {
     }
 
     public SolverVariable(String str, Type type) {
-        this.f30id = -1;
+        this.f110id = -1;
         this.definitionId = -1;
         this.strength = 0;
         this.isFinalValue = false;
@@ -103,47 +103,47 @@ public class SolverVariable {
 
     private static String getUniqueName(Type type, String str) {
         if (str != null) {
-            StringBuilder sbU = outline.U(str);
-            sbU.append(uniqueErrorId);
-            return sbU.toString();
+            StringBuilder sbM833U = C1643a.m833U(str);
+            sbM833U.append(uniqueErrorId);
+            return sbM833U.toString();
         }
         int iOrdinal = type.ordinal();
         if (iOrdinal == 0) {
-            StringBuilder sbU2 = outline.U("U");
+            StringBuilder sbM833U2 = C1643a.m833U("U");
             int i = uniqueUnrestrictedId + 1;
             uniqueUnrestrictedId = i;
-            sbU2.append(i);
-            return sbU2.toString();
+            sbM833U2.append(i);
+            return sbM833U2.toString();
         }
         if (iOrdinal == 1) {
-            StringBuilder sbU3 = outline.U("C");
+            StringBuilder sbM833U3 = C1643a.m833U("C");
             int i2 = uniqueConstantId + 1;
             uniqueConstantId = i2;
-            sbU3.append(i2);
-            return sbU3.toString();
+            sbM833U3.append(i2);
+            return sbM833U3.toString();
         }
         if (iOrdinal == 2) {
-            StringBuilder sbU4 = outline.U(ExifInterface.LATITUDE_SOUTH);
+            StringBuilder sbM833U4 = C1643a.m833U(ExifInterface.LATITUDE_SOUTH);
             int i3 = uniqueSlackId + 1;
             uniqueSlackId = i3;
-            sbU4.append(i3);
-            return sbU4.toString();
+            sbM833U4.append(i3);
+            return sbM833U4.toString();
         }
         if (iOrdinal == 3) {
-            StringBuilder sbU5 = outline.U("e");
+            StringBuilder sbM833U5 = C1643a.m833U("e");
             int i4 = uniqueErrorId + 1;
             uniqueErrorId = i4;
-            sbU5.append(i4);
-            return sbU5.toString();
+            sbM833U5.append(i4);
+            return sbM833U5.toString();
         }
         if (iOrdinal != 4) {
             throw new AssertionError(type.name());
         }
-        StringBuilder sbU6 = outline.U(ExifInterface.GPS_MEASUREMENT_INTERRUPTED);
+        StringBuilder sbM833U6 = C1643a.m833U(ExifInterface.GPS_MEASUREMENT_INTERRUPTED);
         int i5 = uniqueId + 1;
         uniqueId = i5;
-        sbU6.append(i5);
-        return sbU6.toString();
+        sbM833U6.append(i5);
+        return sbM833U6.toString();
     }
 
     public static void increaseErrorId() {
@@ -205,7 +205,7 @@ public class SolverVariable {
         this.mName = null;
         this.mType = Type.UNKNOWN;
         this.strength = 0;
-        this.f30id = -1;
+        this.f110id = -1;
         this.definitionId = -1;
         this.computedValue = 0.0f;
         this.isFinalValue = false;
@@ -242,7 +242,7 @@ public class SolverVariable {
 
     public void setSynonym(LinearSystem linearSystem, SolverVariable solverVariable, float f) {
         this.isSynonym = true;
-        this.synonym = solverVariable.f30id;
+        this.synonym = solverVariable.f110id;
         this.synonymDelta = f;
         int i = this.mClientEquationsCount;
         this.definitionId = -1;
@@ -258,14 +258,14 @@ public class SolverVariable {
     }
 
     public String strengthsToString() {
-        String strW = this + "[";
+        String strM883w = this + "[";
         int i = 0;
         boolean z2 = false;
         boolean z3 = true;
         while (i < this.strengthVector.length) {
-            StringBuilder sbU = outline.U(strW);
-            sbU.append(this.strengthVector[i]);
-            String string = sbU.toString();
+            StringBuilder sbM833U = C1643a.m833U(strM883w);
+            sbM833U.append(this.strengthVector[i]);
+            String string = sbM833U.toString();
             float[] fArr = this.strengthVector;
             if (fArr[i] > 0.0f) {
                 z2 = false;
@@ -275,24 +275,24 @@ public class SolverVariable {
             if (fArr[i] != 0.0f) {
                 z3 = false;
             }
-            strW = i < fArr.length + (-1) ? outline.w(string, ", ") : outline.w(string, "] ");
+            strM883w = i < fArr.length + (-1) ? C1643a.m883w(string, ", ") : C1643a.m883w(string, "] ");
             i++;
         }
         if (z2) {
-            strW = outline.w(strW, " (-)");
+            strM883w = C1643a.m883w(strM883w, " (-)");
         }
-        return z3 ? outline.w(strW, " (*)") : strW;
+        return z3 ? C1643a.m883w(strM883w, " (*)") : strM883w;
     }
 
     public String toString() {
         if (this.mName != null) {
-            StringBuilder sbU = outline.U("");
-            sbU.append(this.mName);
-            return sbU.toString();
+            StringBuilder sbM833U = C1643a.m833U("");
+            sbM833U.append(this.mName);
+            return sbM833U.toString();
         }
-        StringBuilder sbU2 = outline.U("");
-        sbU2.append(this.f30id);
-        return sbU2.toString();
+        StringBuilder sbM833U2 = C1643a.m833U("");
+        sbM833U2.append(this.f110id);
+        return sbM833U2.toString();
     }
 
     public final void updateReferencesWithNewDefinition(LinearSystem linearSystem, ArrayRow arrayRow) {
@@ -304,7 +304,7 @@ public class SolverVariable {
     }
 
     public SolverVariable(Type type, String str) {
-        this.f30id = -1;
+        this.f110id = -1;
         this.definitionId = -1;
         this.strength = 0;
         this.isFinalValue = false;

@@ -8,10 +8,10 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import androidx.appcompat.content.res.AppCompatResources;
 import androidx.cardview.widget.CardView;
-import com.discord.R;
+import com.discord.C5419R;
 import com.discord.databinding.ViewCommunityGetStartedHeaderBinding;
-import d0.z.d.Intrinsics3;
 import kotlin.jvm.internal.DefaultConstructorMarker;
+import p507d0.p592z.p594d.C12238m;
 
 /* JADX INFO: compiled from: CommunityGetStartedHeaderIconView.kt */
 /* JADX INFO: loaded from: classes2.dex */
@@ -31,30 +31,30 @@ public final class CommunityGetStartedHeaderIconView extends CardView {
     }
 
     private final void initAttrs(AttributeSet attrs) {
-        TypedArray typedArrayObtainStyledAttributes = getContext().obtainStyledAttributes(attrs, R.a.CommunityGetStartedHeaderIconView, 0, 0);
-        Intrinsics3.checkNotNullExpressionValue(typedArrayObtainStyledAttributes, "context.obtainStyledAttr…rtedHeaderIconView, 0, 0)");
+        TypedArray typedArrayObtainStyledAttributes = getContext().obtainStyledAttributes(attrs, C5419R.a.CommunityGetStartedHeaderIconView, 0, 0);
+        C12238m.checkNotNullExpressionValue(typedArrayObtainStyledAttributes, "context.obtainStyledAttr…rtedHeaderIconView, 0, 0)");
         int resourceId = typedArrayObtainStyledAttributes.getResourceId(0, 0);
         CharSequence text = typedArrayObtainStyledAttributes.getText(1);
         typedArrayObtainStyledAttributes.recycle();
-        this.binding.f2181b.setImageDrawable(AppCompatResources.getDrawable(getContext(), resourceId));
-        TextView textView = this.binding.c;
-        Intrinsics3.checkNotNullExpressionValue(textView, "binding.communityGetStartedHeaderIconText");
+        this.binding.f15402b.setImageDrawable(AppCompatResources.getDrawable(getContext(), resourceId));
+        TextView textView = this.binding.f15403c;
+        C12238m.checkNotNullExpressionValue(textView, "binding.communityGetStartedHeaderIconText");
         textView.setText(text);
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public CommunityGetStartedHeaderIconView(Context context, AttributeSet attributeSet, int i) {
         super(context, attributeSet, i);
-        Intrinsics3.checkNotNullParameter(context, "context");
-        LayoutInflater.from(context).inflate(R.layout.view_community_get_started_header, this);
-        int i2 = R.id.community_get_started_header_icon;
-        ImageView imageView = (ImageView) findViewById(R.id.community_get_started_header_icon);
+        C12238m.checkNotNullParameter(context, "context");
+        LayoutInflater.from(context).inflate(C5419R.layout.view_community_get_started_header, this);
+        int i2 = C5419R.id.community_get_started_header_icon;
+        ImageView imageView = (ImageView) findViewById(C5419R.id.community_get_started_header_icon);
         if (imageView != null) {
-            i2 = R.id.community_get_started_header_icon_text;
-            TextView textView = (TextView) findViewById(R.id.community_get_started_header_icon_text);
+            i2 = C5419R.id.community_get_started_header_icon_text;
+            TextView textView = (TextView) findViewById(C5419R.id.community_get_started_header_icon_text);
             if (textView != null) {
                 ViewCommunityGetStartedHeaderBinding viewCommunityGetStartedHeaderBinding = new ViewCommunityGetStartedHeaderBinding(this, imageView, textView);
-                Intrinsics3.checkNotNullExpressionValue(viewCommunityGetStartedHeaderBinding, "ViewCommunityGetStartedH…ater.from(context), this)");
+                C12238m.checkNotNullExpressionValue(viewCommunityGetStartedHeaderBinding, "ViewCommunityGetStartedH…ater.from(context), this)");
                 this.binding = viewCommunityGetStartedHeaderBinding;
                 if (attributeSet != null) {
                     initAttrs(attributeSet);

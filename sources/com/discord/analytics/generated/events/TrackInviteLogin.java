@@ -1,14 +1,14 @@
 package com.discord.analytics.generated.events;
 
-import b.d.b.a.outline;
 import com.discord.analytics.generated.traits.TrackBase;
-import com.discord.analytics.generated.traits.TrackBase2;
+import com.discord.analytics.generated.traits.TrackBaseReceiver;
 import com.discord.api.science.AnalyticsSchema;
-import d0.z.d.Intrinsics3;
+import p007b.p100d.p104b.p105a.C1643a;
+import p507d0.p592z.p594d.C12238m;
 
 /* JADX INFO: compiled from: TrackInviteLogin.kt */
 /* JADX INFO: loaded from: classes.dex */
-public final /* data */ class TrackInviteLogin implements AnalyticsSchema, TrackBase2 {
+public final /* data */ class TrackInviteLogin implements AnalyticsSchema, TrackBaseReceiver {
     private TrackBase trackBase;
     private final CharSequence inviteCode = null;
     private final Long guildId = null;
@@ -30,7 +30,7 @@ public final /* data */ class TrackInviteLogin implements AnalyticsSchema, Track
             return false;
         }
         TrackInviteLogin trackInviteLogin = (TrackInviteLogin) other;
-        return Intrinsics3.areEqual(this.inviteCode, trackInviteLogin.inviteCode) && Intrinsics3.areEqual(this.guildId, trackInviteLogin.guildId) && Intrinsics3.areEqual(this.channelId, trackInviteLogin.channelId) && Intrinsics3.areEqual(this.inviterId, trackInviteLogin.inviterId);
+        return C12238m.areEqual(this.inviteCode, trackInviteLogin.inviteCode) && C12238m.areEqual(this.guildId, trackInviteLogin.guildId) && C12238m.areEqual(this.channelId, trackInviteLogin.channelId) && C12238m.areEqual(this.inviterId, trackInviteLogin.inviterId);
     }
 
     public int hashCode() {
@@ -45,13 +45,13 @@ public final /* data */ class TrackInviteLogin implements AnalyticsSchema, Track
     }
 
     public String toString() {
-        StringBuilder sbU = outline.U("TrackInviteLogin(inviteCode=");
-        sbU.append(this.inviteCode);
-        sbU.append(", guildId=");
-        sbU.append(this.guildId);
-        sbU.append(", channelId=");
-        sbU.append(this.channelId);
-        sbU.append(", inviterId=");
-        return outline.G(sbU, this.inviterId, ")");
+        StringBuilder sbM833U = C1643a.m833U("TrackInviteLogin(inviteCode=");
+        sbM833U.append(this.inviteCode);
+        sbM833U.append(", guildId=");
+        sbM833U.append(this.guildId);
+        sbM833U.append(", channelId=");
+        sbM833U.append(this.channelId);
+        sbM833U.append(", inviterId=");
+        return C1643a.m819G(sbM833U, this.inviterId, ")");
     }
 }

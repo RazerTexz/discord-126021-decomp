@@ -3,21 +3,21 @@ package com.discord.widgets.servers.guild_role_subscription.payments;
 import android.content.Context;
 import android.view.View;
 import androidx.fragment.app.Fragment;
-import b.a.d.AppScreen2;
-import b.d.b.a.outline;
-import com.discord.R;
+import com.discord.C5419R;
 import com.discord.app.AppFragment;
 import com.discord.databinding.ViewServerSettingsGuildRoleSubscriptionUnavailableNoticeBinding;
 import com.discord.utilities.viewbinding.FragmentViewBindingDelegate;
-import com.discord.utilities.viewbinding.FragmentViewBindingDelegate3;
-import d0.z.d.Intrinsics3;
+import com.discord.utilities.viewbinding.FragmentViewBindingDelegateKt;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.reflect.KProperty;
+import p007b.p008a.p018d.C0870j;
+import p007b.p100d.p104b.p105a.C1643a;
+import p507d0.p592z.p594d.C12238m;
 
 /* JADX INFO: compiled from: WidgetServerSettingsGuildRoleSubscriptionEarnings.kt */
 /* JADX INFO: loaded from: classes2.dex */
 public final class WidgetServerSettingsGuildRoleSubscriptionEarnings extends AppFragment {
-    public static final /* synthetic */ KProperty[] $$delegatedProperties = {outline.d0(WidgetServerSettingsGuildRoleSubscriptionEarnings.class, "binding", "getBinding()Lcom/discord/databinding/ViewServerSettingsGuildRoleSubscriptionUnavailableNoticeBinding;", 0)};
+    public static final /* synthetic */ KProperty[] $$delegatedProperties = {C1643a.m846d0(WidgetServerSettingsGuildRoleSubscriptionEarnings.class, "binding", "getBinding()Lcom/discord/databinding/ViewServerSettingsGuildRoleSubscriptionUnavailableNoticeBinding;", 0)};
 
     /* JADX INFO: renamed from: Companion, reason: from kotlin metadata */
     public static final Companion INSTANCE = new Companion(null);
@@ -31,8 +31,8 @@ public final class WidgetServerSettingsGuildRoleSubscriptionEarnings extends App
         }
 
         public final void launch(Context context) {
-            Intrinsics3.checkNotNullParameter(context, "context");
-            AppScreen2.e(context, WidgetServerSettingsGuildRoleSubscriptionEarnings.class, null, 4);
+            C12238m.checkNotNullParameter(context, "context");
+            C0870j.m157e(context, WidgetServerSettingsGuildRoleSubscriptionEarnings.class, null, 4);
         }
 
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
@@ -41,8 +41,8 @@ public final class WidgetServerSettingsGuildRoleSubscriptionEarnings extends App
     }
 
     public WidgetServerSettingsGuildRoleSubscriptionEarnings() {
-        super(R.layout.view_server_settings_guild_role_subscription_unavailable_notice);
-        this.binding = FragmentViewBindingDelegate3.viewBinding$default(this, WidgetServerSettingsGuildRoleSubscriptionEarnings2.INSTANCE, null, 2, null);
+        super(C5419R.layout.view_server_settings_guild_role_subscription_unavailable_notice);
+        this.binding = FragmentViewBindingDelegateKt.viewBinding$default(this, WidgetServerSettingsGuildRoleSubscriptionEarnings$binding$2.INSTANCE, null, 2, null);
     }
 
     private final ViewServerSettingsGuildRoleSubscriptionUnavailableNoticeBinding getBinding() {
@@ -55,10 +55,10 @@ public final class WidgetServerSettingsGuildRoleSubscriptionEarnings extends App
 
     @Override // com.discord.app.AppFragment
     public void onViewBound(View view) {
-        Intrinsics3.checkNotNullParameter(view, "view");
+        C12238m.checkNotNullParameter(view, "view");
         super.onViewBound(view);
         setActionBarDisplayHomeAsUpEnabled(true);
-        getBinding().c.setText(R.string.guild_role_subscription_payment_analytics_unavailable_mobile_title);
-        getBinding().f2211b.setText(R.string.guild_role_subscription_payment_analytics_unavailable_mobile_description);
+        getBinding().f15567c.setText(C5419R.string.f14681x170dabe1);
+        getBinding().f15566b.setText(C5419R.string.f14680x2fda02c5);
     }
 }

@@ -1,17 +1,18 @@
 package com.facebook.imagepipeline.decoder;
 
-import b.f.j.j.EncodedImage2;
+import p007b.p109f.p161j.p175j.C1919e;
 
 /* JADX INFO: loaded from: classes.dex */
 public class DecodeException extends RuntimeException {
-    private final EncodedImage2 mEncodedImage;
+    private final C1919e mEncodedImage;
 
-    public DecodeException(String str, EncodedImage2 encodedImage2) {
+    public DecodeException(String str, C1919e c1919e) {
         super(str);
-        this.mEncodedImage = encodedImage2;
+        this.mEncodedImage = c1919e;
     }
 
-    public EncodedImage2 a() {
+    /* JADX INFO: renamed from: a */
+    public C1919e m8696a() {
         return this.mEncodedImage;
     }
 }

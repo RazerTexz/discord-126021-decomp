@@ -3,13 +3,13 @@ package com.discord.widgets.guild_role_subscriptions.tier;
 import androidx.annotation.ColorInt;
 import androidx.annotation.PluralsRes;
 import androidx.annotation.StringRes;
-import b.d.b.a.outline;
 import com.discord.models.domain.ModelAuditLogEntry;
 import com.discord.utilities.analytics.Traits;
 import com.discord.utilities.recycler.DiffKeyProvider;
 import com.discord.widgets.guild_role_subscriptions.tier.model.Benefit;
-import d0.z.d.Intrinsics3;
 import kotlin.jvm.internal.DefaultConstructorMarker;
+import p007b.p100d.p104b.p105a.C1643a;
+import p507d0.p592z.p594d.C12238m;
 
 /* JADX INFO: compiled from: GuildRoleSubscriptionTierAdapterItem.kt */
 /* JADX INFO: loaded from: classes2.dex */
@@ -39,7 +39,7 @@ public abstract class GuildRoleSubscriptionTierAdapterItem implements DiffKeyPro
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
         public BenefitItem(int i, Benefit benefit) {
             super(null);
-            Intrinsics3.checkNotNullParameter(benefit, "benefit");
+            C12238m.checkNotNullParameter(benefit, "benefit");
             this.index = i;
             this.benefit = benefit;
             this.key = String.valueOf(i);
@@ -66,7 +66,7 @@ public abstract class GuildRoleSubscriptionTierAdapterItem implements DiffKeyPro
         }
 
         public final BenefitItem copy(int index, Benefit benefit) {
-            Intrinsics3.checkNotNullParameter(benefit, "benefit");
+            C12238m.checkNotNullParameter(benefit, "benefit");
             return new BenefitItem(index, benefit);
         }
 
@@ -78,7 +78,7 @@ public abstract class GuildRoleSubscriptionTierAdapterItem implements DiffKeyPro
                 return false;
             }
             BenefitItem benefitItem = (BenefitItem) other;
-            return this.index == benefitItem.index && Intrinsics3.areEqual(this.benefit, benefitItem.benefit);
+            return this.index == benefitItem.index && C12238m.areEqual(this.benefit, benefitItem.benefit);
         }
 
         public final Benefit getBenefit() {
@@ -101,12 +101,12 @@ public abstract class GuildRoleSubscriptionTierAdapterItem implements DiffKeyPro
         }
 
         public String toString() {
-            StringBuilder sbU = outline.U("BenefitItem(index=");
-            sbU.append(this.index);
-            sbU.append(", benefit=");
-            sbU.append(this.benefit);
-            sbU.append(")");
-            return sbU.toString();
+            StringBuilder sbM833U = C1643a.m833U("BenefitItem(index=");
+            sbM833U.append(this.index);
+            sbM833U.append(", benefit=");
+            sbM833U.append(this.benefit);
+            sbM833U.append(")");
+            return sbM833U.toString();
         }
     }
 
@@ -182,7 +182,7 @@ public abstract class GuildRoleSubscriptionTierAdapterItem implements DiffKeyPro
                 return false;
             }
             Header header = (Header) other;
-            return Intrinsics3.areEqual(this.name, header.name) && Intrinsics3.areEqual(this.price, header.price) && Intrinsics3.areEqual(this.skuId, header.skuId) && Intrinsics3.areEqual(this.image, header.image) && Intrinsics3.areEqual(this.description, header.description);
+            return C12238m.areEqual(this.name, header.name) && C12238m.areEqual(this.price, header.price) && C12238m.areEqual(this.skuId, header.skuId) && C12238m.areEqual(this.image, header.image) && C12238m.areEqual(this.description, header.description);
         }
 
         public final String getDescription() {
@@ -224,16 +224,16 @@ public abstract class GuildRoleSubscriptionTierAdapterItem implements DiffKeyPro
         }
 
         public String toString() {
-            StringBuilder sbU = outline.U("Header(name=");
-            sbU.append(this.name);
-            sbU.append(", price=");
-            sbU.append(this.price);
-            sbU.append(", skuId=");
-            sbU.append(this.skuId);
-            sbU.append(", image=");
-            sbU.append(this.image);
-            sbU.append(", description=");
-            return outline.J(sbU, this.description, ")");
+            StringBuilder sbM833U = C1643a.m833U("Header(name=");
+            sbM833U.append(this.name);
+            sbM833U.append(", price=");
+            sbM833U.append(this.price);
+            sbM833U.append(", skuId=");
+            sbM833U.append(this.skuId);
+            sbM833U.append(", image=");
+            sbM833U.append(this.image);
+            sbM833U.append(", description=");
+            return C1643a.m822J(sbM833U, this.description, ")");
         }
 
         public Header(String str, Integer num, Long l, String str2, String str3) {
@@ -243,7 +243,7 @@ public abstract class GuildRoleSubscriptionTierAdapterItem implements DiffKeyPro
             this.skuId = l;
             this.image = str2;
             this.description = str3;
-            this.key = outline.w("header:", str);
+            this.key = C1643a.m883w("header:", str);
         }
     }
 
@@ -289,7 +289,7 @@ public abstract class GuildRoleSubscriptionTierAdapterItem implements DiffKeyPro
                 return false;
             }
             MemberPreview memberPreview = (MemberPreview) other;
-            return Intrinsics3.areEqual(this.memberColor, memberPreview.memberColor) && Intrinsics3.areEqual(this.memberIcon, memberPreview.memberIcon);
+            return C12238m.areEqual(this.memberColor, memberPreview.memberColor) && C12238m.areEqual(this.memberIcon, memberPreview.memberIcon);
         }
 
         @Override // com.discord.utilities.recycler.DiffKeyProvider
@@ -313,10 +313,10 @@ public abstract class GuildRoleSubscriptionTierAdapterItem implements DiffKeyPro
         }
 
         public String toString() {
-            StringBuilder sbU = outline.U("MemberPreview(memberColor=");
-            sbU.append(this.memberColor);
-            sbU.append(", memberIcon=");
-            return outline.J(sbU, this.memberIcon, ")");
+            StringBuilder sbM833U = C1643a.m833U("MemberPreview(memberColor=");
+            sbM833U.append(this.memberColor);
+            sbM833U.append(", memberIcon=");
+            return C1643a.m822J(sbM833U, this.memberIcon, ")");
         }
 
         public MemberPreview(@ColorInt Integer num, String str) {
@@ -336,8 +336,8 @@ public abstract class GuildRoleSubscriptionTierAdapterItem implements DiffKeyPro
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
         public PlanDetails(String str, String str2) {
             super(null);
-            Intrinsics3.checkNotNullParameter(str, ModelAuditLogEntry.CHANGE_KEY_DESCRIPTION);
-            Intrinsics3.checkNotNullParameter(str2, "coverImage");
+            C12238m.checkNotNullParameter(str, ModelAuditLogEntry.CHANGE_KEY_DESCRIPTION);
+            C12238m.checkNotNullParameter(str2, "coverImage");
             this.description = str;
             this.coverImage = str2;
             this.key = "planDetails";
@@ -364,8 +364,8 @@ public abstract class GuildRoleSubscriptionTierAdapterItem implements DiffKeyPro
         }
 
         public final PlanDetails copy(String description, String coverImage) {
-            Intrinsics3.checkNotNullParameter(description, ModelAuditLogEntry.CHANGE_KEY_DESCRIPTION);
-            Intrinsics3.checkNotNullParameter(coverImage, "coverImage");
+            C12238m.checkNotNullParameter(description, ModelAuditLogEntry.CHANGE_KEY_DESCRIPTION);
+            C12238m.checkNotNullParameter(coverImage, "coverImage");
             return new PlanDetails(description, coverImage);
         }
 
@@ -377,7 +377,7 @@ public abstract class GuildRoleSubscriptionTierAdapterItem implements DiffKeyPro
                 return false;
             }
             PlanDetails planDetails = (PlanDetails) other;
-            return Intrinsics3.areEqual(this.description, planDetails.description) && Intrinsics3.areEqual(this.coverImage, planDetails.coverImage);
+            return C12238m.areEqual(this.description, planDetails.description) && C12238m.areEqual(this.coverImage, planDetails.coverImage);
         }
 
         public final String getCoverImage() {
@@ -401,10 +401,10 @@ public abstract class GuildRoleSubscriptionTierAdapterItem implements DiffKeyPro
         }
 
         public String toString() {
-            StringBuilder sbU = outline.U("PlanDetails(description=");
-            sbU.append(this.description);
-            sbU.append(", coverImage=");
-            return outline.J(sbU, this.coverImage, ")");
+            StringBuilder sbM833U = C1643a.m833U("PlanDetails(description=");
+            sbM833U.append(this.description);
+            sbM833U.append(", coverImage=");
+            return C1643a.m822J(sbM833U, this.coverImage, ")");
         }
     }
 
@@ -466,7 +466,7 @@ public abstract class GuildRoleSubscriptionTierAdapterItem implements DiffKeyPro
                 return false;
             }
             SectionHeader sectionHeader = (SectionHeader) other;
-            return Intrinsics3.areEqual(this.titleResId, sectionHeader.titleResId) && Intrinsics3.areEqual(this.titlePluralResId, sectionHeader.titlePluralResId) && Intrinsics3.areEqual(this.formatArgument, sectionHeader.formatArgument);
+            return C12238m.areEqual(this.titleResId, sectionHeader.titleResId) && C12238m.areEqual(this.titlePluralResId, sectionHeader.titlePluralResId) && C12238m.areEqual(this.formatArgument, sectionHeader.formatArgument);
         }
 
         public final Integer getFormatArgument() {
@@ -496,12 +496,12 @@ public abstract class GuildRoleSubscriptionTierAdapterItem implements DiffKeyPro
         }
 
         public String toString() {
-            StringBuilder sbU = outline.U("SectionHeader(titleResId=");
-            sbU.append(this.titleResId);
-            sbU.append(", titlePluralResId=");
-            sbU.append(this.titlePluralResId);
-            sbU.append(", formatArgument=");
-            return outline.F(sbU, this.formatArgument, ")");
+            StringBuilder sbM833U = C1643a.m833U("SectionHeader(titleResId=");
+            sbM833U.append(this.titleResId);
+            sbM833U.append(", titlePluralResId=");
+            sbM833U.append(this.titlePluralResId);
+            sbM833U.append(", formatArgument=");
+            return C1643a.m818F(sbM833U, this.formatArgument, ")");
         }
     }
 

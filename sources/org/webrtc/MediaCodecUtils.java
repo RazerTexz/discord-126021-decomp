@@ -23,8 +23,8 @@ public class MediaCodecUtils {
     public static final int[] ENCODER_COLOR_FORMATS = {19, 21, 2141391872, COLOR_QCOM_FORMATYUV420PackedSemiPlanar32m};
     public static final int[] TEXTURE_COLOR_FORMATS = getTextureColorFormats();
 
-    /* JADX INFO: renamed from: org.webrtc.MediaCodecUtils$1, reason: invalid class name */
-    public static /* synthetic */ class AnonymousClass1 {
+    /* JADX INFO: renamed from: org.webrtc.MediaCodecUtils$1 */
+    public static /* synthetic */ class C129721 {
         public static final /* synthetic */ int[] $SwitchMap$org$webrtc$VideoCodecMimeType;
 
         static {

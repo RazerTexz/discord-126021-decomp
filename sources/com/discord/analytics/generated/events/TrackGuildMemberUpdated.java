@@ -1,16 +1,16 @@
 package com.discord.analytics.generated.events;
 
-import b.d.b.a.outline;
 import com.discord.analytics.generated.traits.TrackBase;
-import com.discord.analytics.generated.traits.TrackBase2;
+import com.discord.analytics.generated.traits.TrackBaseReceiver;
 import com.discord.api.science.AnalyticsSchema;
 import com.discord.models.domain.ModelAuditLogEntry;
-import d0.z.d.Intrinsics3;
 import java.util.List;
+import p007b.p100d.p104b.p105a.C1643a;
+import p507d0.p592z.p594d.C12238m;
 
 /* JADX INFO: compiled from: TrackGuildMemberUpdated.kt */
 /* JADX INFO: loaded from: classes.dex */
-public final /* data */ class TrackGuildMemberUpdated implements AnalyticsSchema, TrackBase2 {
+public final /* data */ class TrackGuildMemberUpdated implements AnalyticsSchema, TrackBaseReceiver {
     private TrackBase trackBase;
     private final Long guildId = null;
     private final CharSequence guildName = null;
@@ -52,7 +52,7 @@ public final /* data */ class TrackGuildMemberUpdated implements AnalyticsSchema
             return false;
         }
         TrackGuildMemberUpdated trackGuildMemberUpdated = (TrackGuildMemberUpdated) other;
-        return Intrinsics3.areEqual(this.guildId, trackGuildMemberUpdated.guildId) && Intrinsics3.areEqual(this.guildName, trackGuildMemberUpdated.guildName) && Intrinsics3.areEqual(this.targetUserId, trackGuildMemberUpdated.targetUserId) && Intrinsics3.areEqual(this.updateType, trackGuildMemberUpdated.updateType) && Intrinsics3.areEqual(this.fieldsUpdated, trackGuildMemberUpdated.fieldsUpdated) && Intrinsics3.areEqual(this.oldNickname, trackGuildMemberUpdated.oldNickname) && Intrinsics3.areEqual(this.newNickname, trackGuildMemberUpdated.newNickname) && Intrinsics3.areEqual(this.mute, trackGuildMemberUpdated.mute) && Intrinsics3.areEqual(this.deaf, trackGuildMemberUpdated.deaf) && Intrinsics3.areEqual(this.oldRoles, trackGuildMemberUpdated.oldRoles) && Intrinsics3.areEqual(this.newRoles, trackGuildMemberUpdated.newRoles) && Intrinsics3.areEqual(this.reason, trackGuildMemberUpdated.reason) && Intrinsics3.areEqual(this.deleteMessageDays, trackGuildMemberUpdated.deleteMessageDays) && Intrinsics3.areEqual(this.avatarUpdateType, trackGuildMemberUpdated.avatarUpdateType) && Intrinsics3.areEqual(this.userPremiumTier, trackGuildMemberUpdated.userPremiumTier) && Intrinsics3.areEqual(this.nicknameUpdateType, trackGuildMemberUpdated.nicknameUpdateType) && Intrinsics3.areEqual(this.bannerUpdateType, trackGuildMemberUpdated.bannerUpdateType) && Intrinsics3.areEqual(this.bioUpdateType, trackGuildMemberUpdated.bioUpdateType) && Intrinsics3.areEqual(this.duration, trackGuildMemberUpdated.duration) && Intrinsics3.areEqual(this.communicationDisabledUntil, trackGuildMemberUpdated.communicationDisabledUntil) && Intrinsics3.areEqual(this.bioCustomEmojiCount, trackGuildMemberUpdated.bioCustomEmojiCount) && Intrinsics3.areEqual(this.accessibleTextChannels, trackGuildMemberUpdated.accessibleTextChannels) && Intrinsics3.areEqual(this.accessibleVoiceChannels, trackGuildMemberUpdated.accessibleVoiceChannels) && Intrinsics3.areEqual(this.accessibleStageChannels, trackGuildMemberUpdated.accessibleStageChannels);
+        return C12238m.areEqual(this.guildId, trackGuildMemberUpdated.guildId) && C12238m.areEqual(this.guildName, trackGuildMemberUpdated.guildName) && C12238m.areEqual(this.targetUserId, trackGuildMemberUpdated.targetUserId) && C12238m.areEqual(this.updateType, trackGuildMemberUpdated.updateType) && C12238m.areEqual(this.fieldsUpdated, trackGuildMemberUpdated.fieldsUpdated) && C12238m.areEqual(this.oldNickname, trackGuildMemberUpdated.oldNickname) && C12238m.areEqual(this.newNickname, trackGuildMemberUpdated.newNickname) && C12238m.areEqual(this.mute, trackGuildMemberUpdated.mute) && C12238m.areEqual(this.deaf, trackGuildMemberUpdated.deaf) && C12238m.areEqual(this.oldRoles, trackGuildMemberUpdated.oldRoles) && C12238m.areEqual(this.newRoles, trackGuildMemberUpdated.newRoles) && C12238m.areEqual(this.reason, trackGuildMemberUpdated.reason) && C12238m.areEqual(this.deleteMessageDays, trackGuildMemberUpdated.deleteMessageDays) && C12238m.areEqual(this.avatarUpdateType, trackGuildMemberUpdated.avatarUpdateType) && C12238m.areEqual(this.userPremiumTier, trackGuildMemberUpdated.userPremiumTier) && C12238m.areEqual(this.nicknameUpdateType, trackGuildMemberUpdated.nicknameUpdateType) && C12238m.areEqual(this.bannerUpdateType, trackGuildMemberUpdated.bannerUpdateType) && C12238m.areEqual(this.bioUpdateType, trackGuildMemberUpdated.bioUpdateType) && C12238m.areEqual(this.duration, trackGuildMemberUpdated.duration) && C12238m.areEqual(this.communicationDisabledUntil, trackGuildMemberUpdated.communicationDisabledUntil) && C12238m.areEqual(this.bioCustomEmojiCount, trackGuildMemberUpdated.bioCustomEmojiCount) && C12238m.areEqual(this.accessibleTextChannels, trackGuildMemberUpdated.accessibleTextChannels) && C12238m.areEqual(this.accessibleVoiceChannels, trackGuildMemberUpdated.accessibleVoiceChannels) && C12238m.areEqual(this.accessibleStageChannels, trackGuildMemberUpdated.accessibleStageChannels);
     }
 
     public int hashCode() {
@@ -107,53 +107,53 @@ public final /* data */ class TrackGuildMemberUpdated implements AnalyticsSchema
     }
 
     public String toString() {
-        StringBuilder sbU = outline.U("TrackGuildMemberUpdated(guildId=");
-        sbU.append(this.guildId);
-        sbU.append(", guildName=");
-        sbU.append(this.guildName);
-        sbU.append(", targetUserId=");
-        sbU.append(this.targetUserId);
-        sbU.append(", updateType=");
-        sbU.append(this.updateType);
-        sbU.append(", fieldsUpdated=");
-        sbU.append(this.fieldsUpdated);
-        sbU.append(", oldNickname=");
-        sbU.append(this.oldNickname);
-        sbU.append(", newNickname=");
-        sbU.append(this.newNickname);
-        sbU.append(", mute=");
-        sbU.append(this.mute);
-        sbU.append(", deaf=");
-        sbU.append(this.deaf);
-        sbU.append(", oldRoles=");
-        sbU.append(this.oldRoles);
-        sbU.append(", newRoles=");
-        sbU.append(this.newRoles);
-        sbU.append(", reason=");
-        sbU.append(this.reason);
-        sbU.append(", deleteMessageDays=");
-        sbU.append(this.deleteMessageDays);
-        sbU.append(", avatarUpdateType=");
-        sbU.append(this.avatarUpdateType);
-        sbU.append(", userPremiumTier=");
-        sbU.append(this.userPremiumTier);
-        sbU.append(", nicknameUpdateType=");
-        sbU.append(this.nicknameUpdateType);
-        sbU.append(", bannerUpdateType=");
-        sbU.append(this.bannerUpdateType);
-        sbU.append(", bioUpdateType=");
-        sbU.append(this.bioUpdateType);
-        sbU.append(", duration=");
-        sbU.append(this.duration);
-        sbU.append(", communicationDisabledUntil=");
-        sbU.append(this.communicationDisabledUntil);
-        sbU.append(", bioCustomEmojiCount=");
-        sbU.append(this.bioCustomEmojiCount);
-        sbU.append(", accessibleTextChannels=");
-        sbU.append(this.accessibleTextChannels);
-        sbU.append(", accessibleVoiceChannels=");
-        sbU.append(this.accessibleVoiceChannels);
-        sbU.append(", accessibleStageChannels=");
-        return outline.G(sbU, this.accessibleStageChannels, ")");
+        StringBuilder sbM833U = C1643a.m833U("TrackGuildMemberUpdated(guildId=");
+        sbM833U.append(this.guildId);
+        sbM833U.append(", guildName=");
+        sbM833U.append(this.guildName);
+        sbM833U.append(", targetUserId=");
+        sbM833U.append(this.targetUserId);
+        sbM833U.append(", updateType=");
+        sbM833U.append(this.updateType);
+        sbM833U.append(", fieldsUpdated=");
+        sbM833U.append(this.fieldsUpdated);
+        sbM833U.append(", oldNickname=");
+        sbM833U.append(this.oldNickname);
+        sbM833U.append(", newNickname=");
+        sbM833U.append(this.newNickname);
+        sbM833U.append(", mute=");
+        sbM833U.append(this.mute);
+        sbM833U.append(", deaf=");
+        sbM833U.append(this.deaf);
+        sbM833U.append(", oldRoles=");
+        sbM833U.append(this.oldRoles);
+        sbM833U.append(", newRoles=");
+        sbM833U.append(this.newRoles);
+        sbM833U.append(", reason=");
+        sbM833U.append(this.reason);
+        sbM833U.append(", deleteMessageDays=");
+        sbM833U.append(this.deleteMessageDays);
+        sbM833U.append(", avatarUpdateType=");
+        sbM833U.append(this.avatarUpdateType);
+        sbM833U.append(", userPremiumTier=");
+        sbM833U.append(this.userPremiumTier);
+        sbM833U.append(", nicknameUpdateType=");
+        sbM833U.append(this.nicknameUpdateType);
+        sbM833U.append(", bannerUpdateType=");
+        sbM833U.append(this.bannerUpdateType);
+        sbM833U.append(", bioUpdateType=");
+        sbM833U.append(this.bioUpdateType);
+        sbM833U.append(", duration=");
+        sbM833U.append(this.duration);
+        sbM833U.append(", communicationDisabledUntil=");
+        sbM833U.append(this.communicationDisabledUntil);
+        sbM833U.append(", bioCustomEmojiCount=");
+        sbM833U.append(this.bioCustomEmojiCount);
+        sbM833U.append(", accessibleTextChannels=");
+        sbM833U.append(this.accessibleTextChannels);
+        sbM833U.append(", accessibleVoiceChannels=");
+        sbM833U.append(this.accessibleVoiceChannels);
+        sbM833U.append(", accessibleStageChannels=");
+        return C1643a.m819G(sbM833U, this.accessibleStageChannels, ")");
     }
 }

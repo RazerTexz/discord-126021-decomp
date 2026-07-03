@@ -1,8 +1,8 @@
 package com.discord.models.requiredaction;
 
-import d0.z.d.Intrinsics3;
 import java.util.Locale;
 import kotlin.jvm.internal.DefaultConstructorMarker;
+import p507d0.p592z.p594d.C12238m;
 
 /* JADX INFO: compiled from: RequiredAction.kt */
 /* JADX INFO: loaded from: classes.dex */
@@ -27,9 +27,9 @@ public enum RequiredAction {
             if (requiredAction != null) {
                 try {
                     Locale locale = Locale.ROOT;
-                    Intrinsics3.checkNotNullExpressionValue(locale, "Locale.ROOT");
+                    C12238m.checkNotNullExpressionValue(locale, "Locale.ROOT");
                     String upperCase = requiredAction.toUpperCase(locale);
-                    Intrinsics3.checkNotNullExpressionValue(upperCase, "(this as java.lang.String).toUpperCase(locale)");
+                    C12238m.checkNotNullExpressionValue(upperCase, "(this as java.lang.String).toUpperCase(locale)");
                     RequiredAction requiredActionValueOf = RequiredAction.valueOf(upperCase);
                     if (requiredActionValueOf != null) {
                         return requiredActionValueOf;

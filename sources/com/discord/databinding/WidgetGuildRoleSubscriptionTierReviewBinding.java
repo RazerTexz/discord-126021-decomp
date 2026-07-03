@@ -9,21 +9,22 @@ import androidx.viewbinding.ViewBinding;
 /* JADX INFO: loaded from: classes.dex */
 public final class WidgetGuildRoleSubscriptionTierReviewBinding implements ViewBinding {
 
+    /* JADX INFO: renamed from: a */
     @NonNull
-    public final LinearLayout a;
+    public final LinearLayout f16972a;
 
-    /* JADX INFO: renamed from: b, reason: collision with root package name */
+    /* JADX INFO: renamed from: b */
     @NonNull
-    public final RecyclerView f2441b;
+    public final RecyclerView f16973b;
 
     public WidgetGuildRoleSubscriptionTierReviewBinding(@NonNull LinearLayout linearLayout, @NonNull RecyclerView recyclerView) {
-        this.a = linearLayout;
-        this.f2441b = recyclerView;
+        this.f16972a = linearLayout;
+        this.f16973b = recyclerView;
     }
 
     @Override // androidx.viewbinding.ViewBinding
     @NonNull
     public View getRoot() {
-        return this.a;
+        return this.f16972a;
     }
 }

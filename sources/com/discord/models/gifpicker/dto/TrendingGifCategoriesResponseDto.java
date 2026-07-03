@@ -1,8 +1,8 @@
 package com.discord.models.gifpicker.dto;
 
-import b.d.b.a.outline;
-import d0.z.d.Intrinsics3;
 import java.util.List;
+import p007b.p100d.p104b.p105a.C1643a;
+import p507d0.p592z.p594d.C12238m;
 
 /* JADX INFO: compiled from: TrendingGifCategoriesResponseDto.kt */
 /* JADX INFO: loaded from: classes.dex */
@@ -11,8 +11,8 @@ public final /* data */ class TrendingGifCategoriesResponseDto {
     private final List<TrendingGifPreviewDto> gifs;
 
     public TrendingGifCategoriesResponseDto(List<GifCategoryDto> list, List<TrendingGifPreviewDto> list2) {
-        Intrinsics3.checkNotNullParameter(list, "categories");
-        Intrinsics3.checkNotNullParameter(list2, "gifs");
+        C12238m.checkNotNullParameter(list, "categories");
+        C12238m.checkNotNullParameter(list2, "gifs");
         this.categories = list;
         this.gifs = list2;
     }
@@ -37,8 +37,8 @@ public final /* data */ class TrendingGifCategoriesResponseDto {
     }
 
     public final TrendingGifCategoriesResponseDto copy(List<GifCategoryDto> categories, List<TrendingGifPreviewDto> gifs) {
-        Intrinsics3.checkNotNullParameter(categories, "categories");
-        Intrinsics3.checkNotNullParameter(gifs, "gifs");
+        C12238m.checkNotNullParameter(categories, "categories");
+        C12238m.checkNotNullParameter(gifs, "gifs");
         return new TrendingGifCategoriesResponseDto(categories, gifs);
     }
 
@@ -50,7 +50,7 @@ public final /* data */ class TrendingGifCategoriesResponseDto {
             return false;
         }
         TrendingGifCategoriesResponseDto trendingGifCategoriesResponseDto = (TrendingGifCategoriesResponseDto) other;
-        return Intrinsics3.areEqual(this.categories, trendingGifCategoriesResponseDto.categories) && Intrinsics3.areEqual(this.gifs, trendingGifCategoriesResponseDto.gifs);
+        return C12238m.areEqual(this.categories, trendingGifCategoriesResponseDto.categories) && C12238m.areEqual(this.gifs, trendingGifCategoriesResponseDto.gifs);
     }
 
     public final List<GifCategoryDto> getCategories() {
@@ -69,9 +69,9 @@ public final /* data */ class TrendingGifCategoriesResponseDto {
     }
 
     public String toString() {
-        StringBuilder sbU = outline.U("TrendingGifCategoriesResponseDto(categories=");
-        sbU.append(this.categories);
-        sbU.append(", gifs=");
-        return outline.L(sbU, this.gifs, ")");
+        StringBuilder sbM833U = C1643a.m833U("TrendingGifCategoriesResponseDto(categories=");
+        sbM833U.append(this.categories);
+        sbM833U.append(", gifs=");
+        return C1643a.m824L(sbM833U, this.gifs, ")");
     }
 }

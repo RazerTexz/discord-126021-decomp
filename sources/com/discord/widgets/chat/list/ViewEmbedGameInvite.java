@@ -1,6 +1,5 @@
 package com.discord.widgets.chat.list;
 
-import a0.a.a.b;
 import android.content.Context;
 import android.net.Uri;
 import android.util.AttributeSet;
@@ -11,8 +10,7 @@ import android.widget.TextView;
 import androidx.appcompat.widget.ActivityChooserModel;
 import androidx.exifinterface.media.ExifInterface;
 import androidx.recyclerview.widget.RecyclerView;
-import b.d.b.a.outline;
-import com.discord.R;
+import com.discord.C5419R;
 import com.discord.api.activity.Activity;
 import com.discord.api.activity.ActivityAssets;
 import com.discord.api.activity.ActivityParty;
@@ -32,9 +30,9 @@ import com.discord.utilities.icon.IconUtils;
 import com.discord.utilities.images.MGImages;
 import com.discord.utilities.logging.Logger;
 import com.discord.utilities.mg_recycler.MGRecyclerAdapter;
-import com.discord.utilities.presence.ActivityUtils;
+import com.discord.utilities.p501rx.ObservableExtensionsKt;
+import com.discord.utilities.presence.ActivityUtilsKt;
 import com.discord.utilities.presence.PresenceUtils;
-import com.discord.utilities.rx.ObservableExtensionsKt;
 import com.discord.utilities.time.Clock;
 import com.discord.utilities.view.extensions.ViewExtensions;
 import com.discord.widgets.channels.list.WidgetCollapsedUsersListAdapter;
@@ -42,12 +40,6 @@ import com.discord.widgets.channels.list.items.CollapsedUser;
 import com.discord.widgets.chat.list.entries.GameInviteEntry;
 import com.facebook.drawee.view.SimpleDraweeView;
 import com.google.android.material.button.MaterialButton;
-import d0.d0._Ranges;
-import d0.g0.StringNumberConversions;
-import d0.t.Iterators5;
-import d0.z.d.Intrinsics3;
-import j0.k.Func1;
-import j0.l.e.ScalarSynchronousObservable;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Iterator;
@@ -56,9 +48,17 @@ import java.util.Map;
 import kotlin.Unit;
 import kotlin.jvm.functions.Function2;
 import kotlin.jvm.internal.DefaultConstructorMarker;
-import rx.Observable;
-import rx.functions.Func5;
-import rx.functions.Func6;
+import p001a0.p002a.p003a.C0002b;
+import p007b.p100d.p104b.p105a.C1643a;
+import p507d0.p512d0.C11226f;
+import p507d0.p579g0.C12102s;
+import p507d0.p580t.AbstractC12128d0;
+import p507d0.p592z.p594d.C12238m;
+import p637j0.p641k.InterfaceC12589b;
+import p637j0.p642l.p647e.C12721k;
+import p658rx.Observable;
+import p658rx.functions.Func5;
+import p658rx.functions.Func6;
 
 /* JADX INFO: compiled from: ViewEmbedGameInvite.kt */
 /* JADX INFO: loaded from: classes2.dex */
@@ -110,70 +110,70 @@ public final class ViewEmbedGameInvite extends LinearLayout {
                     arrayList.add(new CollapsedUser((User) it.next(), false, 0L, 6, null));
                 }
                 long maxSize = (gameActivity == null || (party = gameActivity.getParty()) == null) ? 0L : PresenceUtils.INSTANCE.getMaxSize(party);
-                Iterator<Long> it2 = _Ranges.until(userMap.size(), Math.min(4L, maxSize)).iterator();
+                Iterator<Long> it2 = C11226f.until(userMap.size(), Math.min(4L, maxSize)).iterator();
                 while (it2.hasNext()) {
-                    arrayList.add(CollapsedUser.INSTANCE.createEmptyUser(((Iterators5) it2).nextLong() == 3 ? maxSize - 4 : 0L));
+                    arrayList.add(CollapsedUser.INSTANCE.createEmptyUser(((AbstractC12128d0) it2).nextLong() == 3 ? maxSize - 4 : 0L));
                 }
                 return arrayList;
             }
 
             public final Observable<Model> get(GameInviteEntry item) {
-                Intrinsics3.checkNotNullParameter(item, "item");
-                ScalarSynchronousObservable scalarSynchronousObservable = new ScalarSynchronousObservable(item);
+                C12238m.checkNotNullParameter(item, "item");
+                C12721k c12721k = new C12721k(item);
                 StoreStream.Companion companion = StoreStream.INSTANCE;
                 Observable observableObserveMe$default = StoreUser.observeMe$default(companion.getUsers(), false, 1, null);
                 Observable<Application> observableObserveApplication = companion.getApplication().observeApplication(Long.valueOf(item.getApplication().getId()));
                 Observable<Activity> observableObserveApplicationActivity = companion.getPresences().observeApplicationActivity(item.getAuthorId(), item.getApplication().getId());
                 Observable<Map<Long, User>> observableObserveUsersForPartyId = companion.getGameParty().observeUsersForPartyId(item.getActivity().getPartyId());
-                final ViewEmbedGameInvite2 viewEmbedGameInvite2 = new ViewEmbedGameInvite2(this);
-                Observable observableG = Observable.g(scalarSynchronousObservable, observableObserveMe$default, observableObserveApplication, observableObserveApplicationActivity, observableObserveUsersForPartyId, new Func5() { // from class: com.discord.widgets.chat.list.ViewEmbedGameInvite$sam$rx_functions_Func5$0
-                    @Override // rx.functions.Func5
+                final ViewEmbedGameInvite$Model$Companion$get$1 viewEmbedGameInvite$Model$Companion$get$1 = new ViewEmbedGameInvite$Model$Companion$get$1(this);
+                Observable observableM11072g = Observable.m11072g(c12721k, observableObserveMe$default, observableObserveApplication, observableObserveApplicationActivity, observableObserveUsersForPartyId, new Func5() { // from class: com.discord.widgets.chat.list.ViewEmbedGameInvite$sam$rx_functions_Func5$0
+                    @Override // p658rx.functions.Func5
                     public final /* synthetic */ Object call(Object obj, Object obj2, Object obj3, Object obj4, Object obj5) {
-                        return viewEmbedGameInvite2.invoke(obj, obj2, obj3, obj4, obj5);
+                        return viewEmbedGameInvite$Model$Companion$get$1.invoke(obj, obj2, obj3, obj4, obj5);
                     }
                 });
-                Intrinsics3.checkNotNullExpressionValue(observableG, "Observable\n            .…   ::create\n            )");
-                Observable<Model> observableR = ObservableExtensionsKt.computationLatest(observableG).r();
-                Intrinsics3.checkNotNullExpressionValue(observableR, "Observable\n            .…  .distinctUntilChanged()");
-                return observableR;
+                C12238m.checkNotNullExpressionValue(observableM11072g, "Observable\n            .…   ::create\n            )");
+                Observable<Model> observableM11112r = ObservableExtensionsKt.computationLatest(observableM11072g).m11112r();
+                C12238m.checkNotNullExpressionValue(observableM11112r, "Observable\n            .…  .distinctUntilChanged()");
+                return observableM11112r;
             }
 
             public final Observable<Model> getForShare(Clock clock, Uri shareUri, Activity activity) {
-                Intrinsics3.checkNotNullParameter(clock, "clock");
+                C12238m.checkNotNullParameter(clock, "clock");
                 if (shareUri == null) {
-                    ScalarSynchronousObservable scalarSynchronousObservable = new ScalarSynchronousObservable(null);
-                    Intrinsics3.checkNotNullExpressionValue(scalarSynchronousObservable, "Observable.just(null)");
-                    return scalarSynchronousObservable;
+                    C12721k c12721k = new C12721k(null);
+                    C12238m.checkNotNullExpressionValue(c12721k, "Observable.just(null)");
+                    return c12721k;
                 }
                 String queryParameter = shareUri.getQueryParameter(ModelAuditLogEntry.CHANGE_KEY_APPLICATION_ID);
-                final Long longOrNull = queryParameter != null ? StringNumberConversions.toLongOrNull(queryParameter) : null;
+                final Long longOrNull = queryParameter != null ? C12102s.toLongOrNull(queryParameter) : null;
                 final String queryParameter2 = shareUri.getQueryParameter("party_id");
                 String queryParameter3 = shareUri.getQueryParameter("type");
-                Integer intOrNull = queryParameter3 != null ? StringNumberConversions.toIntOrNull(queryParameter3) : null;
-                if (longOrNull == null || queryParameter2 == null || intOrNull == null || (!Intrinsics3.areEqual(shareUri.getPath(), "/send/activity"))) {
-                    Logger.w$default(AppLog.g, "Malformed Share URI: " + shareUri, null, 2, null);
-                    ScalarSynchronousObservable scalarSynchronousObservable2 = new ScalarSynchronousObservable(null);
-                    Intrinsics3.checkNotNullExpressionValue(scalarSynchronousObservable2, "Observable.just(null)");
-                    return scalarSynchronousObservable2;
+                Integer intOrNull = queryParameter3 != null ? C12102s.toIntOrNull(queryParameter3) : null;
+                if (longOrNull == null || queryParameter2 == null || intOrNull == null || (!C12238m.areEqual(shareUri.getPath(), "/send/activity"))) {
+                    Logger.w$default(AppLog.f14950g, "Malformed Share URI: " + shareUri, null, 2, null);
+                    C12721k c12721k2 = new C12721k(null);
+                    C12238m.checkNotNullExpressionValue(c12721k2, "Observable.just(null)");
+                    return c12721k2;
                 }
-                MessageActivity messageActivity = new MessageActivity(MessageActivityType.INSTANCE.a(intOrNull), queryParameter2);
-                ScalarSynchronousObservable scalarSynchronousObservable3 = new ScalarSynchronousObservable(activity);
+                MessageActivity messageActivity = new MessageActivity(MessageActivityType.INSTANCE.m8059a(intOrNull), queryParameter2);
+                C12721k c12721k3 = new C12721k(activity);
                 StoreStream.Companion companion = StoreStream.INSTANCE;
-                Observable observableM = Observable.m(scalarSynchronousObservable3, companion.getUsers().observeMeId().Y(new Func1<Long, Observable<? extends Activity>>() { // from class: com.discord.widgets.chat.list.ViewEmbedGameInvite$Model$Companion$getForShare$activityObs$1
-                    @Override // j0.k.Func1
+                Observable observableM11079m = Observable.m11079m(c12721k3, companion.getUsers().observeMeId().m11099Y(new InterfaceC12589b<Long, Observable<? extends Activity>>() { // from class: com.discord.widgets.chat.list.ViewEmbedGameInvite$Model$Companion$getForShare$activityObs$1
+                    @Override // p637j0.p641k.InterfaceC12589b
                     public final Observable<? extends Activity> call(Long l) {
                         StoreUserPresence presences = StoreStream.INSTANCE.getPresences();
-                        Intrinsics3.checkNotNullExpressionValue(l, "authorId");
-                        return presences.observeApplicationActivity(l.longValue(), longOrNull.longValue()).y(new Func1<Activity, Boolean>() { // from class: com.discord.widgets.chat.list.ViewEmbedGameInvite$Model$Companion$getForShare$activityObs$1.1
+                        C12238m.checkNotNullExpressionValue(l, "authorId");
+                        return presences.observeApplicationActivity(l.longValue(), longOrNull.longValue()).m11118y(new InterfaceC12589b<Activity, Boolean>() { // from class: com.discord.widgets.chat.list.ViewEmbedGameInvite$Model$Companion$getForShare$activityObs$1.1
                             /* JADX WARN: Code duplicated, block: B:10:0x001a  */
-                            @Override // j0.k.Func1
+                            @Override // p637j0.p641k.InterfaceC12589b
                             public final Boolean call(Activity activity2) {
                                 boolean z2;
                                 if (activity2 == null) {
                                     z2 = false;
                                 } else {
                                     ActivityParty party = activity2.getParty();
-                                    if (Intrinsics3.areEqual(party != null ? party.getId() : null, queryParameter2)) {
+                                    if (C12238m.areEqual(party != null ? party.getId() : null, queryParameter2)) {
                                         z2 = true;
                                     } else {
                                         z2 = false;
@@ -185,21 +185,21 @@ public final class ViewEmbedGameInvite extends LinearLayout {
                     }
                 }));
                 Observable observableObserveMe$default = StoreUser.observeMe$default(companion.getUsers(), false, 1, null);
-                ScalarSynchronousObservable scalarSynchronousObservable4 = new ScalarSynchronousObservable(Long.valueOf(clock.currentTimeMillis()));
-                ScalarSynchronousObservable scalarSynchronousObservable5 = new ScalarSynchronousObservable(messageActivity);
+                C12721k c12721k4 = new C12721k(Long.valueOf(clock.currentTimeMillis()));
+                C12721k c12721k5 = new C12721k(messageActivity);
                 Observable<Map<Long, User>> observableObserveUsersForPartyId = companion.getGameParty().observeUsersForPartyId(messageActivity.getPartyId());
                 Observable<Application> observableObserveApplication = companion.getApplication().observeApplication(longOrNull);
-                final ViewEmbedGameInvite3 viewEmbedGameInvite3 = new ViewEmbedGameInvite3(this);
-                Observable observableF = Observable.f(observableObserveMe$default, scalarSynchronousObservable4, scalarSynchronousObservable5, observableM, observableObserveUsersForPartyId, observableObserveApplication, new Func6() { // from class: com.discord.widgets.chat.list.ViewEmbedGameInvite$sam$rx_functions_Func6$0
-                    @Override // rx.functions.Func6
+                final ViewEmbedGameInvite$Model$Companion$getForShare$1 viewEmbedGameInvite$Model$Companion$getForShare$1 = new ViewEmbedGameInvite$Model$Companion$getForShare$1(this);
+                Observable observableM11071f = Observable.m11071f(observableObserveMe$default, c12721k4, c12721k5, observableM11079m, observableObserveUsersForPartyId, observableObserveApplication, new Func6() { // from class: com.discord.widgets.chat.list.ViewEmbedGameInvite$sam$rx_functions_Func6$0
+                    @Override // p658rx.functions.Func6
                     public final /* synthetic */ Object call(Object obj, Object obj2, Object obj3, Object obj4, Object obj5, Object obj6) {
-                        return viewEmbedGameInvite3.invoke(obj, obj2, obj3, obj4, obj5, obj6);
+                        return viewEmbedGameInvite$Model$Companion$getForShare$1.invoke(obj, obj2, obj3, obj4, obj5, obj6);
                     }
                 });
-                Intrinsics3.checkNotNullExpressionValue(observableF, "Observable\n            .…ateForShare\n            )");
-                Observable<Model> observableR = ObservableExtensionsKt.computationLatest(observableF).r();
-                Intrinsics3.checkNotNullExpressionValue(observableR, "Observable\n            .…  .distinctUntilChanged()");
-                return observableR;
+                C12238m.checkNotNullExpressionValue(observableM11071f, "Observable\n            .…ateForShare\n            )");
+                Observable<Model> observableM11112r = ObservableExtensionsKt.computationLatest(observableM11071f).m11112r();
+                C12238m.checkNotNullExpressionValue(observableM11112r, "Observable\n            .…  .distinctUntilChanged()");
+                return observableM11112r;
             }
 
             public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
@@ -211,10 +211,10 @@ public final class ViewEmbedGameInvite extends LinearLayout {
             boolean z2;
             ActivityParty party;
             String id2;
-            Intrinsics3.checkNotNullParameter(meUser, "meUser");
-            Intrinsics3.checkNotNullParameter(application, "application");
-            Intrinsics3.checkNotNullParameter(messageActivity, "messageActivity");
-            Intrinsics3.checkNotNullParameter(list, "users");
+            C12238m.checkNotNullParameter(meUser, "meUser");
+            C12238m.checkNotNullParameter(application, "application");
+            C12238m.checkNotNullParameter(messageActivity, "messageActivity");
+            C12238m.checkNotNullParameter(list, "users");
             this.meUser = meUser;
             this.creatorId = j;
             this.creationTime = j2;
@@ -242,8 +242,8 @@ public final class ViewEmbedGameInvite extends LinearLayout {
             }
             this.isInParty = z2;
             Activity activity2 = this.activity;
-            this.canJoin = activity2 != null && ActivityUtils.hasFlag(activity2, 2) && ActivityUtils.isCurrentPlatform(this.activity);
-            this.gPlayPackageNames = this.application.d();
+            this.canJoin = activity2 != null && ActivityUtilsKt.hasFlag(activity2, 2) && ActivityUtilsKt.isCurrentPlatform(this.activity);
+            this.gPlayPackageNames = this.application.m7566d();
             Activity activity3 = this.activity;
             if (activity3 != null && (party = activity3.getParty()) != null && (id2 = party.getId()) != null) {
                 zEquals = id2.equals(getPartyId());
@@ -290,10 +290,10 @@ public final class ViewEmbedGameInvite extends LinearLayout {
         }
 
         public final Model copy(MeUser meUser, long creatorId, long creationTime, Application application, MessageActivity messageActivity, Activity activity, List<CollapsedUser> users) {
-            Intrinsics3.checkNotNullParameter(meUser, "meUser");
-            Intrinsics3.checkNotNullParameter(application, "application");
-            Intrinsics3.checkNotNullParameter(messageActivity, "messageActivity");
-            Intrinsics3.checkNotNullParameter(users, "users");
+            C12238m.checkNotNullParameter(meUser, "meUser");
+            C12238m.checkNotNullParameter(application, "application");
+            C12238m.checkNotNullParameter(messageActivity, "messageActivity");
+            C12238m.checkNotNullParameter(users, "users");
             return new Model(meUser, creatorId, creationTime, application, messageActivity, activity, users);
         }
 
@@ -305,7 +305,7 @@ public final class ViewEmbedGameInvite extends LinearLayout {
                 return false;
             }
             Model model = (Model) other;
-            return Intrinsics3.areEqual(this.meUser, model.meUser) && this.creatorId == model.creatorId && this.creationTime == model.creationTime && Intrinsics3.areEqual(this.application, model.application) && Intrinsics3.areEqual(this.messageActivity, model.messageActivity) && Intrinsics3.areEqual(this.activity, model.activity) && Intrinsics3.areEqual(this.users, model.users);
+            return C12238m.areEqual(this.meUser, model.meUser) && this.creatorId == model.creatorId && this.creationTime == model.creationTime && C12238m.areEqual(this.application, model.application) && C12238m.areEqual(this.messageActivity, model.messageActivity) && C12238m.areEqual(this.activity, model.activity) && C12238m.areEqual(this.users, model.users);
         }
 
         public final Activity getActivity() {
@@ -346,9 +346,9 @@ public final class ViewEmbedGameInvite extends LinearLayout {
 
         public int hashCode() {
             MeUser meUser = this.meUser;
-            int iA = (b.a(this.creationTime) + ((b.a(this.creatorId) + ((meUser != null ? meUser.hashCode() : 0) * 31)) * 31)) * 31;
+            int iM3a = (C0002b.m3a(this.creationTime) + ((C0002b.m3a(this.creatorId) + ((meUser != null ? meUser.hashCode() : 0) * 31)) * 31)) * 31;
             Application application = this.application;
-            int iHashCode = (iA + (application != null ? application.hashCode() : 0)) * 31;
+            int iHashCode = (iM3a + (application != null ? application.hashCode() : 0)) * 31;
             MessageActivity messageActivity = this.messageActivity;
             int iHashCode2 = (iHashCode + (messageActivity != null ? messageActivity.hashCode() : 0)) * 31;
             Activity activity = this.activity;
@@ -376,90 +376,90 @@ public final class ViewEmbedGameInvite extends LinearLayout {
         }
 
         public String toString() {
-            StringBuilder sbU = outline.U("Model(meUser=");
-            sbU.append(this.meUser);
-            sbU.append(", creatorId=");
-            sbU.append(this.creatorId);
-            sbU.append(", creationTime=");
-            sbU.append(this.creationTime);
-            sbU.append(", application=");
-            sbU.append(this.application);
-            sbU.append(", messageActivity=");
-            sbU.append(this.messageActivity);
-            sbU.append(", activity=");
-            sbU.append(this.activity);
-            sbU.append(", users=");
-            return outline.L(sbU, this.users, ")");
+            StringBuilder sbM833U = C1643a.m833U("Model(meUser=");
+            sbM833U.append(this.meUser);
+            sbM833U.append(", creatorId=");
+            sbM833U.append(this.creatorId);
+            sbM833U.append(", creationTime=");
+            sbM833U.append(this.creationTime);
+            sbM833U.append(", application=");
+            sbM833U.append(this.application);
+            sbM833U.append(", messageActivity=");
+            sbM833U.append(this.messageActivity);
+            sbM833U.append(", activity=");
+            sbM833U.append(this.activity);
+            sbM833U.append(", users=");
+            return C1643a.m824L(sbM833U, this.users, ")");
         }
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public ViewEmbedGameInvite(Context context) {
         super(context);
-        Intrinsics3.checkNotNullParameter(context, "context");
-        ViewChatEmbedGameInviteBinding viewChatEmbedGameInviteBindingA = ViewChatEmbedGameInviteBinding.a(LayoutInflater.from(getContext()), this);
-        Intrinsics3.checkNotNullExpressionValue(viewChatEmbedGameInviteBindingA, "ViewChatEmbedGameInviteB…ater.from(context), this)");
-        this.binding = viewChatEmbedGameInviteBindingA;
+        C12238m.checkNotNullParameter(context, "context");
+        ViewChatEmbedGameInviteBinding viewChatEmbedGameInviteBindingM8392a = ViewChatEmbedGameInviteBinding.m8392a(LayoutInflater.from(getContext()), this);
+        C12238m.checkNotNullExpressionValue(viewChatEmbedGameInviteBindingM8392a, "ViewChatEmbedGameInviteB…ater.from(context), this)");
+        this.binding = viewChatEmbedGameInviteBindingM8392a;
         setOrientation(1);
         MGRecyclerAdapter.Companion companion = MGRecyclerAdapter.INSTANCE;
-        RecyclerView recyclerView = viewChatEmbedGameInviteBindingA.h;
-        Intrinsics3.checkNotNullExpressionValue(recyclerView, "binding.itemGameInviteRecycler");
+        RecyclerView recyclerView = viewChatEmbedGameInviteBindingM8392a.f15393h;
+        C12238m.checkNotNullExpressionValue(recyclerView, "binding.itemGameInviteRecycler");
         this.userAdapter = (WidgetCollapsedUsersListAdapter) companion.configure(new WidgetCollapsedUsersListAdapter(recyclerView));
     }
 
     private final void configureActivityImages(Model model, boolean z2) {
         String smallImage;
-        SimpleDraweeView simpleDraweeView = this.binding.d;
-        Intrinsics3.checkNotNullExpressionValue(simpleDraweeView, "binding.itemGameInviteAvatarIv");
+        SimpleDraweeView simpleDraweeView = this.binding.f15389d;
+        C12238m.checkNotNullExpressionValue(simpleDraweeView, "binding.itemGameInviteAvatarIv");
         String icon = model.getApplication().getIcon();
         MGImages.setImage$default(simpleDraweeView, icon != null ? IconUtils.getApplicationIcon$default(model.getApplication().getId(), icon, 0, 4, (Object) null) : null, 0, 0, false, null, null, 124, null);
         Activity activity = model.getActivity();
         ActivityAssets assets = activity != null ? activity.getAssets() : null;
-        SimpleDraweeView simpleDraweeView2 = this.binding.e;
-        Intrinsics3.checkNotNullExpressionValue(simpleDraweeView2, "binding.itemGameInviteAvatarStatusIv");
+        SimpleDraweeView simpleDraweeView2 = this.binding.f15390e;
+        C12238m.checkNotNullExpressionValue(simpleDraweeView2, "binding.itemGameInviteAvatarStatusIv");
         simpleDraweeView2.setVisibility((assets != null ? assets.getSmallImage() : null) != null ? 0 : 8);
-        SimpleDraweeView simpleDraweeView3 = this.binding.e;
-        Intrinsics3.checkNotNullExpressionValue(simpleDraweeView3, "binding.itemGameInviteAvatarStatusIv");
+        SimpleDraweeView simpleDraweeView3 = this.binding.f15390e;
+        C12238m.checkNotNullExpressionValue(simpleDraweeView3, "binding.itemGameInviteAvatarStatusIv");
         MGImages.setImage$default(simpleDraweeView3, (assets == null || (smallImage = assets.getSmallImage()) == null) ? null : IconUtils.getAssetImage$default(IconUtils.INSTANCE, Long.valueOf(model.getApplication().getId()), smallImage, 0, 4, null), 0, 0, false, null, null, 124, null);
-        SimpleDraweeView simpleDraweeView4 = this.binding.e;
-        Intrinsics3.checkNotNullExpressionValue(simpleDraweeView4, "binding.itemGameInviteAvatarStatusIv");
+        SimpleDraweeView simpleDraweeView4 = this.binding.f15390e;
+        C12238m.checkNotNullExpressionValue(simpleDraweeView4, "binding.itemGameInviteAvatarStatusIv");
         simpleDraweeView4.setContentDescription(assets != null ? assets.getSmallText() : null);
         if (z2) {
-            SimpleDraweeView simpleDraweeView5 = this.binding.f;
-            Intrinsics3.checkNotNullExpressionValue(simpleDraweeView5, "binding.itemGameInviteCoverIv");
+            SimpleDraweeView simpleDraweeView5 = this.binding.f15391f;
+            C12238m.checkNotNullExpressionValue(simpleDraweeView5, "binding.itemGameInviteCoverIv");
             simpleDraweeView5.setVisibility(8);
-            SimpleDraweeView simpleDraweeView6 = this.binding.f;
-            Intrinsics3.checkNotNullExpressionValue(simpleDraweeView6, "binding.itemGameInviteCoverIv");
+            SimpleDraweeView simpleDraweeView6 = this.binding.f15391f;
+            C12238m.checkNotNullExpressionValue(simpleDraweeView6, "binding.itemGameInviteCoverIv");
             MGImages.setImage$default(simpleDraweeView6, null, 0, 0, false, null, null, 124, null);
             return;
         }
-        SimpleDraweeView simpleDraweeView7 = this.binding.f;
-        Intrinsics3.checkNotNullExpressionValue(simpleDraweeView7, "binding.itemGameInviteCoverIv");
+        SimpleDraweeView simpleDraweeView7 = this.binding.f15391f;
+        C12238m.checkNotNullExpressionValue(simpleDraweeView7, "binding.itemGameInviteCoverIv");
         simpleDraweeView7.setVisibility(0);
         String largeImage = assets != null ? assets.getLargeImage() : null;
         if (largeImage != null) {
-            SimpleDraweeView simpleDraweeView8 = this.binding.f;
-            Intrinsics3.checkNotNullExpressionValue(simpleDraweeView8, "binding.itemGameInviteCoverIv");
+            SimpleDraweeView simpleDraweeView8 = this.binding.f15391f;
+            C12238m.checkNotNullExpressionValue(simpleDraweeView8, "binding.itemGameInviteCoverIv");
             simpleDraweeView8.setContentDescription(assets.getLargeText());
-            SimpleDraweeView simpleDraweeView9 = this.binding.f;
-            Intrinsics3.checkNotNullExpressionValue(simpleDraweeView9, "binding.itemGameInviteCoverIv");
+            SimpleDraweeView simpleDraweeView9 = this.binding.f15391f;
+            C12238m.checkNotNullExpressionValue(simpleDraweeView9, "binding.itemGameInviteCoverIv");
             simpleDraweeView9.setImportantForAccessibility(1);
             String assetImage = IconUtils.INSTANCE.getAssetImage(Long.valueOf(model.getApplication().getId()), largeImage, IconUtils.getMediaProxySize(getWidth()));
-            SimpleDraweeView simpleDraweeView10 = this.binding.f;
-            Intrinsics3.checkNotNullExpressionValue(simpleDraweeView10, "binding.itemGameInviteCoverIv");
+            SimpleDraweeView simpleDraweeView10 = this.binding.f15391f;
+            C12238m.checkNotNullExpressionValue(simpleDraweeView10, "binding.itemGameInviteCoverIv");
             MGImages.setImage$default(simpleDraweeView10, assetImage, 0, 0, false, null, null, 124, null);
             return;
         }
-        SimpleDraweeView simpleDraweeView11 = this.binding.f;
-        Intrinsics3.checkNotNullExpressionValue(simpleDraweeView11, "binding.itemGameInviteCoverIv");
+        SimpleDraweeView simpleDraweeView11 = this.binding.f15391f;
+        C12238m.checkNotNullExpressionValue(simpleDraweeView11, "binding.itemGameInviteCoverIv");
         simpleDraweeView11.setImportantForAccessibility(2);
-        SimpleDraweeView simpleDraweeView12 = this.binding.f;
-        Intrinsics3.checkNotNullExpressionValue(simpleDraweeView12, "binding.itemGameInviteCoverIv");
+        SimpleDraweeView simpleDraweeView12 = this.binding.f15391f;
+        C12238m.checkNotNullExpressionValue(simpleDraweeView12, "binding.itemGameInviteCoverIv");
         simpleDraweeView12.setContentDescription(null);
         String coverImage = model.getApplication().getCoverImage();
         String applicationIcon$default = coverImage != null ? IconUtils.getApplicationIcon$default(model.getApplication().getId(), coverImage, 0, 4, (Object) null) : null;
-        SimpleDraweeView simpleDraweeView13 = this.binding.f;
-        Intrinsics3.checkNotNullExpressionValue(simpleDraweeView13, "binding.itemGameInviteCoverIv");
+        SimpleDraweeView simpleDraweeView13 = this.binding.f15391f;
+        C12238m.checkNotNullExpressionValue(simpleDraweeView13, "binding.itemGameInviteCoverIv");
         MGImages.setImage$default(simpleDraweeView13, applicationIcon$default, 0, 0, false, null, null, 124, null);
     }
 
@@ -467,18 +467,18 @@ public final class ViewEmbedGameInvite extends LinearLayout {
         Activity activity;
         ActivityParty party;
         boolean zIsDeadInvite = model.isDeadInvite(clock.currentTimeMillis());
-        TextView textView = this.binding.c;
-        Intrinsics3.checkNotNullExpressionValue(textView, "binding.itemGameInviteApplicationNameTv");
+        TextView textView = this.binding.f15388c;
+        C12238m.checkNotNullExpressionValue(textView, "binding.itemGameInviteApplicationNameTv");
         textView.setText(model.getApplication().getName());
-        TextView textView2 = this.binding.g;
-        int i = R.string.invite_embed_game_has_ended;
+        TextView textView2 = this.binding.f15392g;
+        int i = C5419R.string.invite_embed_game_has_ended;
         if (!zIsDeadInvite && model.getMessageActivity().getType() != MessageActivityType.SPECTATE) {
-            i = R.string.invite_embed_invite_to_join_group;
+            i = C5419R.string.invite_embed_invite_to_join_group;
         }
         textView2.setText(i);
         boolean z2 = ((!zIsDeadInvite && (activity = model.getActivity()) != null && (party = activity.getParty()) != null) ? PresenceUtils.INSTANCE.getNumOpenSlots(party) : 0L) <= 0;
-        TextView textView3 = this.binding.i;
-        Intrinsics3.checkNotNullExpressionValue(textView3, "binding.itemGameInviteSubtext");
+        TextView textView3 = this.binding.f15394i;
+        C12238m.checkNotNullExpressionValue(textView3, "binding.itemGameInviteSubtext");
         String state = null;
         if (z2) {
             Activity activity2 = model.getActivity();
@@ -494,8 +494,8 @@ public final class ViewEmbedGameInvite extends LinearLayout {
         ViewExtensions.setTextAndVisibilityBy(textView3, state);
         configureActivityImages(model, zIsDeadInvite);
         onConfigureActionButton(model, zIsDeadInvite, z2);
-        RecyclerView recyclerView = this.binding.h;
-        Intrinsics3.checkNotNullExpressionValue(recyclerView, "binding.itemGameInviteRecycler");
+        RecyclerView recyclerView = this.binding.f15393h;
+        C12238m.checkNotNullExpressionValue(recyclerView, "binding.itemGameInviteRecycler");
         recyclerView.setVisibility(zIsDeadInvite ^ true ? 0 : 8);
         if (zIsDeadInvite) {
             return;
@@ -504,37 +504,37 @@ public final class ViewEmbedGameInvite extends LinearLayout {
     }
 
     private final void onConfigureActionButton(final Model model, boolean z2, boolean z3) {
-        MaterialButton materialButton = this.binding.f2177b;
-        Intrinsics3.checkNotNullExpressionValue(materialButton, "binding.itemGameInviteActionBtn");
+        MaterialButton materialButton = this.binding.f15387b;
+        C12238m.checkNotNullExpressionValue(materialButton, "binding.itemGameInviteActionBtn");
         boolean z4 = false;
         materialButton.setVisibility(0);
-        int i = R.string.join;
+        int i = C5419R.string.join;
         if (z2 || !model.getCanJoin()) {
-            MaterialButton materialButton2 = this.binding.f2177b;
-            Intrinsics3.checkNotNullExpressionValue(materialButton2, "binding.itemGameInviteActionBtn");
+            MaterialButton materialButton2 = this.binding.f15387b;
+            C12238m.checkNotNullExpressionValue(materialButton2, "binding.itemGameInviteActionBtn");
             materialButton2.setEnabled(false);
-            this.binding.f2177b.setText(R.string.join);
+            this.binding.f15387b.setText(C5419R.string.join);
             return;
         }
-        MaterialButton materialButton3 = this.binding.f2177b;
-        Intrinsics3.checkNotNullExpressionValue(materialButton3, "binding.itemGameInviteActionBtn");
+        MaterialButton materialButton3 = this.binding.f15387b;
+        C12238m.checkNotNullExpressionValue(materialButton3, "binding.itemGameInviteActionBtn");
         if (!model.getIsInParty() && !z3 && model.getCreatorId() != model.getMeUser().getId()) {
             z4 = true;
         }
         materialButton3.setEnabled(z4);
-        MaterialButton materialButton4 = this.binding.f2177b;
+        MaterialButton materialButton4 = this.binding.f15387b;
         if (z3) {
-            i = R.string.invite_embed_full_group;
+            i = C5419R.string.invite_embed_full_group;
         } else if (model.getIsInParty()) {
-            i = R.string.invite_embed_joined;
+            i = C5419R.string.invite_embed_joined;
         }
         materialButton4.setText(i);
-        this.binding.f2177b.setOnClickListener(new View.OnClickListener() { // from class: com.discord.widgets.chat.list.ViewEmbedGameInvite.onConfigureActionButton.1
+        this.binding.f15387b.setOnClickListener(new View.OnClickListener() { // from class: com.discord.widgets.chat.list.ViewEmbedGameInvite.onConfigureActionButton.1
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
                 Function2<View, Model, Unit> onActionButtonClick = ViewEmbedGameInvite.this.getOnActionButtonClick();
                 if (onActionButtonClick != null) {
-                    Intrinsics3.checkNotNullExpressionValue(view, "it");
+                    C12238m.checkNotNullExpressionValue(view, "it");
                     onActionButtonClick.invoke(view, model);
                 }
             }
@@ -542,8 +542,8 @@ public final class ViewEmbedGameInvite extends LinearLayout {
     }
 
     public final void bind(Model model, Clock clock) {
-        Intrinsics3.checkNotNullParameter(model, "model");
-        Intrinsics3.checkNotNullParameter(clock, "clock");
+        C12238m.checkNotNullParameter(model, "model");
+        C12238m.checkNotNullParameter(clock, "clock");
         configureUI(model, clock);
     }
 
@@ -558,42 +558,42 @@ public final class ViewEmbedGameInvite extends LinearLayout {
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public ViewEmbedGameInvite(Context context, AttributeSet attributeSet) {
         super(context, attributeSet);
-        Intrinsics3.checkNotNullParameter(context, "context");
-        ViewChatEmbedGameInviteBinding viewChatEmbedGameInviteBindingA = ViewChatEmbedGameInviteBinding.a(LayoutInflater.from(getContext()), this);
-        Intrinsics3.checkNotNullExpressionValue(viewChatEmbedGameInviteBindingA, "ViewChatEmbedGameInviteB…ater.from(context), this)");
-        this.binding = viewChatEmbedGameInviteBindingA;
+        C12238m.checkNotNullParameter(context, "context");
+        ViewChatEmbedGameInviteBinding viewChatEmbedGameInviteBindingM8392a = ViewChatEmbedGameInviteBinding.m8392a(LayoutInflater.from(getContext()), this);
+        C12238m.checkNotNullExpressionValue(viewChatEmbedGameInviteBindingM8392a, "ViewChatEmbedGameInviteB…ater.from(context), this)");
+        this.binding = viewChatEmbedGameInviteBindingM8392a;
         setOrientation(1);
         MGRecyclerAdapter.Companion companion = MGRecyclerAdapter.INSTANCE;
-        RecyclerView recyclerView = viewChatEmbedGameInviteBindingA.h;
-        Intrinsics3.checkNotNullExpressionValue(recyclerView, "binding.itemGameInviteRecycler");
+        RecyclerView recyclerView = viewChatEmbedGameInviteBindingM8392a.f15393h;
+        C12238m.checkNotNullExpressionValue(recyclerView, "binding.itemGameInviteRecycler");
         this.userAdapter = (WidgetCollapsedUsersListAdapter) companion.configure(new WidgetCollapsedUsersListAdapter(recyclerView));
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public ViewEmbedGameInvite(Context context, AttributeSet attributeSet, int i) {
         super(context, attributeSet, i);
-        Intrinsics3.checkNotNullParameter(context, "context");
-        ViewChatEmbedGameInviteBinding viewChatEmbedGameInviteBindingA = ViewChatEmbedGameInviteBinding.a(LayoutInflater.from(getContext()), this);
-        Intrinsics3.checkNotNullExpressionValue(viewChatEmbedGameInviteBindingA, "ViewChatEmbedGameInviteB…ater.from(context), this)");
-        this.binding = viewChatEmbedGameInviteBindingA;
+        C12238m.checkNotNullParameter(context, "context");
+        ViewChatEmbedGameInviteBinding viewChatEmbedGameInviteBindingM8392a = ViewChatEmbedGameInviteBinding.m8392a(LayoutInflater.from(getContext()), this);
+        C12238m.checkNotNullExpressionValue(viewChatEmbedGameInviteBindingM8392a, "ViewChatEmbedGameInviteB…ater.from(context), this)");
+        this.binding = viewChatEmbedGameInviteBindingM8392a;
         setOrientation(1);
         MGRecyclerAdapter.Companion companion = MGRecyclerAdapter.INSTANCE;
-        RecyclerView recyclerView = viewChatEmbedGameInviteBindingA.h;
-        Intrinsics3.checkNotNullExpressionValue(recyclerView, "binding.itemGameInviteRecycler");
+        RecyclerView recyclerView = viewChatEmbedGameInviteBindingM8392a.f15393h;
+        C12238m.checkNotNullExpressionValue(recyclerView, "binding.itemGameInviteRecycler");
         this.userAdapter = (WidgetCollapsedUsersListAdapter) companion.configure(new WidgetCollapsedUsersListAdapter(recyclerView));
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public ViewEmbedGameInvite(Context context, AttributeSet attributeSet, int i, int i2) {
         super(context, attributeSet, i, i2);
-        Intrinsics3.checkNotNullParameter(context, "context");
-        ViewChatEmbedGameInviteBinding viewChatEmbedGameInviteBindingA = ViewChatEmbedGameInviteBinding.a(LayoutInflater.from(getContext()), this);
-        Intrinsics3.checkNotNullExpressionValue(viewChatEmbedGameInviteBindingA, "ViewChatEmbedGameInviteB…ater.from(context), this)");
-        this.binding = viewChatEmbedGameInviteBindingA;
+        C12238m.checkNotNullParameter(context, "context");
+        ViewChatEmbedGameInviteBinding viewChatEmbedGameInviteBindingM8392a = ViewChatEmbedGameInviteBinding.m8392a(LayoutInflater.from(getContext()), this);
+        C12238m.checkNotNullExpressionValue(viewChatEmbedGameInviteBindingM8392a, "ViewChatEmbedGameInviteB…ater.from(context), this)");
+        this.binding = viewChatEmbedGameInviteBindingM8392a;
         setOrientation(1);
         MGRecyclerAdapter.Companion companion = MGRecyclerAdapter.INSTANCE;
-        RecyclerView recyclerView = viewChatEmbedGameInviteBindingA.h;
-        Intrinsics3.checkNotNullExpressionValue(recyclerView, "binding.itemGameInviteRecycler");
+        RecyclerView recyclerView = viewChatEmbedGameInviteBindingM8392a.f15393h;
+        C12238m.checkNotNullExpressionValue(recyclerView, "binding.itemGameInviteRecycler");
         this.userAdapter = (WidgetCollapsedUsersListAdapter) companion.configure(new WidgetCollapsedUsersListAdapter(recyclerView));
     }
 }

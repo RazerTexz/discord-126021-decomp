@@ -2,8 +2,8 @@ package org.webrtc;
 
 import android.graphics.SurfaceTexture;
 import android.view.Surface;
-import b.d.b.a.outline;
 import java.util.ArrayList;
+import p007b.p100d.p104b.p105a.C1643a;
 
 /* JADX INFO: loaded from: classes3.dex */
 public interface EglBase {
@@ -68,7 +68,7 @@ public interface EglBase {
 
         public ConfigBuilder setOpenGlesVersion(int i) {
             if (i < 1 || i > 3) {
-                throw new IllegalArgumentException(outline.r("OpenGL ES version ", i, " not supported"));
+                throw new IllegalArgumentException(C1643a.m873r("OpenGL ES version ", i, " not supported"));
             }
             this.openGlesVersion = i;
             return this;

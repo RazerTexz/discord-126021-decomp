@@ -1,15 +1,15 @@
 package com.discord.widgets.forums;
 
 import android.content.SharedPreferences;
-import com.discord.utilities.cache.SharedPreferenceExtensions;
+import com.discord.utilities.cache.SharedPreferenceExtensionsKt;
 import com.discord.utilities.cache.SharedPreferencesProvider;
-import d0.g0.StringNumberConversions;
-import d0.t.Iterables2;
-import d0.t._Collections;
-import d0.z.d.Intrinsics3;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.Set;
+import p507d0.p579g0.C12102s;
+import p507d0.p580t.C12149o;
+import p507d0.p580t.C12163u;
+import p507d0.p592z.p594d.C12238m;
 
 /* JADX INFO: compiled from: ForumGuidelinesManager.kt */
 /* JADX INFO: loaded from: classes2.dex */
@@ -27,28 +27,28 @@ public final class ForumGuidelinesManager {
     }
 
     private final Set<Long> getFromCache() {
-        Set stringSetNonNull$default = SharedPreferenceExtensions.getStringSetNonNull$default(SharedPreferencesProvider.INSTANCE.get(), "CACHE_KEY_USER_VIEWED_FORUM_GUIDELINES", null, 2, null);
+        Set stringSetNonNull$default = SharedPreferenceExtensionsKt.getStringSetNonNull$default(SharedPreferencesProvider.INSTANCE.get(), "CACHE_KEY_USER_VIEWED_FORUM_GUIDELINES", null, 2, null);
         ArrayList arrayList = new ArrayList();
         Iterator it = stringSetNonNull$default.iterator();
         while (it.hasNext()) {
-            Long longOrNull = StringNumberConversions.toLongOrNull((String) it.next());
+            Long longOrNull = C12102s.toLongOrNull((String) it.next());
             if (longOrNull != null) {
                 arrayList.add(longOrNull);
             }
         }
-        return _Collections.toMutableSet(arrayList);
+        return C12163u.toMutableSet(arrayList);
     }
 
     private final void updateCache() {
         Set<Long> set = seenChannelIds;
-        ArrayList arrayList = new ArrayList(Iterables2.collectionSizeOrDefault(set, 10));
+        ArrayList arrayList = new ArrayList(C12149o.collectionSizeOrDefault(set, 10));
         Iterator<T> it = set.iterator();
         while (it.hasNext()) {
             arrayList.add(String.valueOf(((Number) it.next()).longValue()));
         }
-        Set<String> set2 = _Collections.toSet(arrayList);
+        Set<String> set2 = C12163u.toSet(arrayList);
         SharedPreferences.Editor editorEdit = SharedPreferencesProvider.INSTANCE.get().edit();
-        Intrinsics3.checkNotNullExpressionValue(editorEdit, "editor");
+        C12238m.checkNotNullExpressionValue(editorEdit, "editor");
         editorEdit.putStringSet("CACHE_KEY_USER_VIEWED_FORUM_GUIDELINES", set2);
         editorEdit.apply();
     }

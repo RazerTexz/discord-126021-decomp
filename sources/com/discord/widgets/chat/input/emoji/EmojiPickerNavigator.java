@@ -1,9 +1,9 @@
 package com.discord.widgets.chat.input.emoji;
 
 import androidx.fragment.app.FragmentManager;
-import d0.z.d.Intrinsics3;
 import kotlin.Unit;
 import kotlin.jvm.functions.Function0;
+import p507d0.p592z.p594d.C12238m;
 
 /* JADX INFO: compiled from: EmojiPickerNavigator.kt */
 /* JADX INFO: loaded from: classes2.dex */
@@ -16,8 +16,8 @@ public final class EmojiPickerNavigator {
     }
 
     public static final void launchBottomSheet(FragmentManager fragmentManager, EmojiPickerListener emojiPickerListener, EmojiPickerContextType emojiPickerContextType, Function0<Unit> onCancel) {
-        Intrinsics3.checkNotNullParameter(fragmentManager, "fragmentManager");
-        Intrinsics3.checkNotNullParameter(emojiPickerContextType, "emojiPickerContextType");
+        C12238m.checkNotNullParameter(fragmentManager, "fragmentManager");
+        C12238m.checkNotNullParameter(emojiPickerContextType, "emojiPickerContextType");
         WidgetEmojiPickerSheet.INSTANCE.show(fragmentManager, emojiPickerListener, emojiPickerContextType, onCancel);
     }
 

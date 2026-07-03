@@ -1,6 +1,6 @@
 package org.objectweb.asm;
 
-import com.discord.widgets.chat.input.MentionUtils;
+import com.discord.widgets.chat.input.MentionUtilsKt;
 import org.objectweb.asm.Attribute;
 
 /* JADX INFO: loaded from: app.apk:org/objectweb/asm/ClassWriter.SCL.lombok */
@@ -189,7 +189,7 @@ public class ClassWriter extends ClassVisitor {
         if (this.firstField == null) {
             this.firstField = fieldWriter;
         } else {
-            this.lastField.fv = fieldWriter;
+            this.lastField.f27599fv = fieldWriter;
         }
         this.lastField = fieldWriter;
         return fieldWriter;
@@ -201,7 +201,7 @@ public class ClassWriter extends ClassVisitor {
         if (this.firstMethod == null) {
             this.firstMethod = methodWriter;
         } else {
-            this.lastMethod.mv = methodWriter;
+            this.lastMethod.f27600mv = methodWriter;
         }
         this.lastMethod = methodWriter;
         return methodWriter;
@@ -222,7 +222,7 @@ public class ClassWriter extends ClassVisitor {
             }
             fieldsCount++;
             size += fieldWriter2.computeFieldInfoSize();
-            fieldWriter = (FieldWriter) fieldWriter2.fv;
+            fieldWriter = (FieldWriter) fieldWriter2.f27599fv;
         }
         int methodsCount = 0;
         MethodWriter methodWriter = this.firstMethod;
@@ -233,7 +233,7 @@ public class ClassWriter extends ClassVisitor {
             }
             methodsCount++;
             size += methodWriter2.computeMethodInfoSize();
-            methodWriter = (MethodWriter) methodWriter2.mv;
+            methodWriter = (MethodWriter) methodWriter2.f27600mv;
         }
         int attributesCount = 0;
         if (this.innerClasses != null) {
@@ -353,7 +353,7 @@ public class ClassWriter extends ClassVisitor {
                 break;
             }
             fieldWriter4.putFieldInfo(result);
-            fieldWriter3 = (FieldWriter) fieldWriter4.fv;
+            fieldWriter3 = (FieldWriter) fieldWriter4.f27599fv;
         }
         result.putShort(methodsCount);
         boolean hasFrames = false;
@@ -367,7 +367,7 @@ public class ClassWriter extends ClassVisitor {
             hasFrames |= methodWriter4.hasFrames();
             hasAsmInstructions |= methodWriter4.hasAsmInstructions();
             methodWriter4.putMethodInfo(result);
-            methodWriter3 = (MethodWriter) methodWriter4.mv;
+            methodWriter3 = (MethodWriter) methodWriter4.f27600mv;
         }
         result.putShort(attributesCount);
         if (this.innerClasses != null) {
@@ -461,7 +461,7 @@ public class ClassWriter extends ClassVisitor {
                 break;
             }
             fieldWriter2.collectAttributePrototypes(attributePrototypes);
-            fieldWriter = (FieldWriter) fieldWriter2.fv;
+            fieldWriter = (FieldWriter) fieldWriter2.f27599fv;
         }
         MethodWriter methodWriter = this.firstMethod;
         while (true) {
@@ -470,7 +470,7 @@ public class ClassWriter extends ClassVisitor {
                 break;
             }
             methodWriter2.collectAttributePrototypes(attributePrototypes);
-            methodWriter = (MethodWriter) methodWriter2.mv;
+            methodWriter = (MethodWriter) methodWriter2.f27600mv;
         }
         RecordComponentWriter recordComponentWriter = this.firstRecordComponent;
         while (true) {
@@ -540,9 +540,9 @@ public class ClassWriter extends ClassVisitor {
     protected String getCommonSuperClass(String type1, String type2) {
         ClassLoader classLoader = getClassLoader();
         try {
-            Class<?> class1 = Class.forName(type1.replace(MentionUtils.SLASH_CHAR, '.'), false, classLoader);
+            Class<?> class1 = Class.forName(type1.replace(MentionUtilsKt.SLASH_CHAR, '.'), false, classLoader);
             try {
-                Class<?> class2 = Class.forName(type2.replace(MentionUtils.SLASH_CHAR, '.'), false, classLoader);
+                Class<?> class2 = Class.forName(type2.replace(MentionUtilsKt.SLASH_CHAR, '.'), false, classLoader);
                 if (class1.isAssignableFrom(class2)) {
                     return type1;
                 }
@@ -555,7 +555,7 @@ public class ClassWriter extends ClassVisitor {
                 do {
                     class1 = class1.getSuperclass();
                 } while (!class1.isAssignableFrom(class2));
-                return class1.getName().replace('.', MentionUtils.SLASH_CHAR);
+                return class1.getName().replace('.', MentionUtilsKt.SLASH_CHAR);
             } catch (ClassNotFoundException e) {
                 throw new TypeNotPresentException(type2, e);
             }

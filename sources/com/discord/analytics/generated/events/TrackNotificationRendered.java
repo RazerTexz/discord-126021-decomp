@@ -1,14 +1,14 @@
 package com.discord.analytics.generated.events;
 
-import b.d.b.a.outline;
 import com.discord.analytics.generated.traits.TrackBase;
-import com.discord.analytics.generated.traits.TrackBase2;
+import com.discord.analytics.generated.traits.TrackBaseReceiver;
 import com.discord.api.science.AnalyticsSchema;
-import d0.z.d.Intrinsics3;
+import p007b.p100d.p104b.p105a.C1643a;
+import p507d0.p592z.p594d.C12238m;
 
 /* JADX INFO: compiled from: TrackNotificationRendered.kt */
 /* JADX INFO: loaded from: classes.dex */
-public final /* data */ class TrackNotificationRendered implements AnalyticsSchema, TrackBase2 {
+public final /* data */ class TrackNotificationRendered implements AnalyticsSchema, TrackBaseReceiver {
     private TrackBase trackBase;
     private final Boolean hasCache = null;
     private final Boolean messageInPushPayload = null;
@@ -45,7 +45,7 @@ public final /* data */ class TrackNotificationRendered implements AnalyticsSche
             return false;
         }
         TrackNotificationRendered trackNotificationRendered = (TrackNotificationRendered) other;
-        return Intrinsics3.areEqual(this.hasCache, trackNotificationRendered.hasCache) && Intrinsics3.areEqual(this.messageInPushPayload, trackNotificationRendered.messageInPushPayload) && Intrinsics3.areEqual(this.coldStartDurationMs, trackNotificationRendered.coldStartDurationMs) && Intrinsics3.areEqual(this.cachedRenderDurationMs, trackNotificationRendered.cachedRenderDurationMs) && Intrinsics3.areEqual(this.anyNewerMessagesRenderDurationMs, trackNotificationRendered.anyNewerMessagesRenderDurationMs) && Intrinsics3.areEqual(this.loadedMessagesRenderDurationMs, trackNotificationRendered.loadedMessagesRenderDurationMs) && Intrinsics3.areEqual(this.fullRenderDurationMs, trackNotificationRendered.fullRenderDurationMs) && Intrinsics3.areEqual(this.cacheLoadDurationMs, trackNotificationRendered.cacheLoadDurationMs) && Intrinsics3.areEqual(this.fullCacheLoadDurationMs, trackNotificationRendered.fullCacheLoadDurationMs) && Intrinsics3.areEqual(this.connectionPreOpenDurationMs, trackNotificationRendered.connectionPreOpenDurationMs) && Intrinsics3.areEqual(this.connectionOpenDurationMs, trackNotificationRendered.connectionOpenDurationMs) && Intrinsics3.areEqual(this.connectionResumeDurationMs, trackNotificationRendered.connectionResumeDurationMs) && Intrinsics3.areEqual(this.onlineDurationMs, trackNotificationRendered.onlineDurationMs) && Intrinsics3.areEqual(this.firstMessageFetchStartDurationMs, trackNotificationRendered.firstMessageFetchStartDurationMs) && Intrinsics3.areEqual(this.firstMessageFetchEndDurationMs, trackNotificationRendered.firstMessageFetchEndDurationMs) && Intrinsics3.areEqual(this.initialAppState, trackNotificationRendered.initialAppState) && Intrinsics3.areEqual(this.appActiveDurationMs, trackNotificationRendered.appActiveDurationMs) && Intrinsics3.areEqual(this.appInactiveDurationMs, trackNotificationRendered.appInactiveDurationMs) && Intrinsics3.areEqual(this.appBackgroundedDurationMs, trackNotificationRendered.appBackgroundedDurationMs);
+        return C12238m.areEqual(this.hasCache, trackNotificationRendered.hasCache) && C12238m.areEqual(this.messageInPushPayload, trackNotificationRendered.messageInPushPayload) && C12238m.areEqual(this.coldStartDurationMs, trackNotificationRendered.coldStartDurationMs) && C12238m.areEqual(this.cachedRenderDurationMs, trackNotificationRendered.cachedRenderDurationMs) && C12238m.areEqual(this.anyNewerMessagesRenderDurationMs, trackNotificationRendered.anyNewerMessagesRenderDurationMs) && C12238m.areEqual(this.loadedMessagesRenderDurationMs, trackNotificationRendered.loadedMessagesRenderDurationMs) && C12238m.areEqual(this.fullRenderDurationMs, trackNotificationRendered.fullRenderDurationMs) && C12238m.areEqual(this.cacheLoadDurationMs, trackNotificationRendered.cacheLoadDurationMs) && C12238m.areEqual(this.fullCacheLoadDurationMs, trackNotificationRendered.fullCacheLoadDurationMs) && C12238m.areEqual(this.connectionPreOpenDurationMs, trackNotificationRendered.connectionPreOpenDurationMs) && C12238m.areEqual(this.connectionOpenDurationMs, trackNotificationRendered.connectionOpenDurationMs) && C12238m.areEqual(this.connectionResumeDurationMs, trackNotificationRendered.connectionResumeDurationMs) && C12238m.areEqual(this.onlineDurationMs, trackNotificationRendered.onlineDurationMs) && C12238m.areEqual(this.firstMessageFetchStartDurationMs, trackNotificationRendered.firstMessageFetchStartDurationMs) && C12238m.areEqual(this.firstMessageFetchEndDurationMs, trackNotificationRendered.firstMessageFetchEndDurationMs) && C12238m.areEqual(this.initialAppState, trackNotificationRendered.initialAppState) && C12238m.areEqual(this.appActiveDurationMs, trackNotificationRendered.appActiveDurationMs) && C12238m.areEqual(this.appInactiveDurationMs, trackNotificationRendered.appInactiveDurationMs) && C12238m.areEqual(this.appBackgroundedDurationMs, trackNotificationRendered.appBackgroundedDurationMs);
     }
 
     public int hashCode() {
@@ -90,43 +90,43 @@ public final /* data */ class TrackNotificationRendered implements AnalyticsSche
     }
 
     public String toString() {
-        StringBuilder sbU = outline.U("TrackNotificationRendered(hasCache=");
-        sbU.append(this.hasCache);
-        sbU.append(", messageInPushPayload=");
-        sbU.append(this.messageInPushPayload);
-        sbU.append(", coldStartDurationMs=");
-        sbU.append(this.coldStartDurationMs);
-        sbU.append(", cachedRenderDurationMs=");
-        sbU.append(this.cachedRenderDurationMs);
-        sbU.append(", anyNewerMessagesRenderDurationMs=");
-        sbU.append(this.anyNewerMessagesRenderDurationMs);
-        sbU.append(", loadedMessagesRenderDurationMs=");
-        sbU.append(this.loadedMessagesRenderDurationMs);
-        sbU.append(", fullRenderDurationMs=");
-        sbU.append(this.fullRenderDurationMs);
-        sbU.append(", cacheLoadDurationMs=");
-        sbU.append(this.cacheLoadDurationMs);
-        sbU.append(", fullCacheLoadDurationMs=");
-        sbU.append(this.fullCacheLoadDurationMs);
-        sbU.append(", connectionPreOpenDurationMs=");
-        sbU.append(this.connectionPreOpenDurationMs);
-        sbU.append(", connectionOpenDurationMs=");
-        sbU.append(this.connectionOpenDurationMs);
-        sbU.append(", connectionResumeDurationMs=");
-        sbU.append(this.connectionResumeDurationMs);
-        sbU.append(", onlineDurationMs=");
-        sbU.append(this.onlineDurationMs);
-        sbU.append(", firstMessageFetchStartDurationMs=");
-        sbU.append(this.firstMessageFetchStartDurationMs);
-        sbU.append(", firstMessageFetchEndDurationMs=");
-        sbU.append(this.firstMessageFetchEndDurationMs);
-        sbU.append(", initialAppState=");
-        sbU.append(this.initialAppState);
-        sbU.append(", appActiveDurationMs=");
-        sbU.append(this.appActiveDurationMs);
-        sbU.append(", appInactiveDurationMs=");
-        sbU.append(this.appInactiveDurationMs);
-        sbU.append(", appBackgroundedDurationMs=");
-        return outline.G(sbU, this.appBackgroundedDurationMs, ")");
+        StringBuilder sbM833U = C1643a.m833U("TrackNotificationRendered(hasCache=");
+        sbM833U.append(this.hasCache);
+        sbM833U.append(", messageInPushPayload=");
+        sbM833U.append(this.messageInPushPayload);
+        sbM833U.append(", coldStartDurationMs=");
+        sbM833U.append(this.coldStartDurationMs);
+        sbM833U.append(", cachedRenderDurationMs=");
+        sbM833U.append(this.cachedRenderDurationMs);
+        sbM833U.append(", anyNewerMessagesRenderDurationMs=");
+        sbM833U.append(this.anyNewerMessagesRenderDurationMs);
+        sbM833U.append(", loadedMessagesRenderDurationMs=");
+        sbM833U.append(this.loadedMessagesRenderDurationMs);
+        sbM833U.append(", fullRenderDurationMs=");
+        sbM833U.append(this.fullRenderDurationMs);
+        sbM833U.append(", cacheLoadDurationMs=");
+        sbM833U.append(this.cacheLoadDurationMs);
+        sbM833U.append(", fullCacheLoadDurationMs=");
+        sbM833U.append(this.fullCacheLoadDurationMs);
+        sbM833U.append(", connectionPreOpenDurationMs=");
+        sbM833U.append(this.connectionPreOpenDurationMs);
+        sbM833U.append(", connectionOpenDurationMs=");
+        sbM833U.append(this.connectionOpenDurationMs);
+        sbM833U.append(", connectionResumeDurationMs=");
+        sbM833U.append(this.connectionResumeDurationMs);
+        sbM833U.append(", onlineDurationMs=");
+        sbM833U.append(this.onlineDurationMs);
+        sbM833U.append(", firstMessageFetchStartDurationMs=");
+        sbM833U.append(this.firstMessageFetchStartDurationMs);
+        sbM833U.append(", firstMessageFetchEndDurationMs=");
+        sbM833U.append(this.firstMessageFetchEndDurationMs);
+        sbM833U.append(", initialAppState=");
+        sbM833U.append(this.initialAppState);
+        sbM833U.append(", appActiveDurationMs=");
+        sbM833U.append(this.appActiveDurationMs);
+        sbM833U.append(", appInactiveDurationMs=");
+        sbM833U.append(this.appInactiveDurationMs);
+        sbM833U.append(", appBackgroundedDurationMs=");
+        return C1643a.m819G(sbM833U, this.appBackgroundedDurationMs, ")");
     }
 }

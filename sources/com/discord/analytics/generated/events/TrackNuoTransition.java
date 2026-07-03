@@ -1,14 +1,14 @@
 package com.discord.analytics.generated.events;
 
-import b.d.b.a.outline;
 import com.discord.analytics.generated.traits.TrackBase;
-import com.discord.analytics.generated.traits.TrackBase2;
+import com.discord.analytics.generated.traits.TrackBaseReceiver;
 import com.discord.api.science.AnalyticsSchema;
-import d0.z.d.Intrinsics3;
+import p007b.p100d.p104b.p105a.C1643a;
+import p507d0.p592z.p594d.C12238m;
 
 /* JADX INFO: compiled from: TrackNuoTransition.kt */
 /* JADX INFO: loaded from: classes.dex */
-public final /* data */ class TrackNuoTransition implements AnalyticsSchema, TrackBase2 {
+public final /* data */ class TrackNuoTransition implements AnalyticsSchema, TrackBaseReceiver {
     private TrackBase trackBase;
     private final CharSequence flowType = null;
     private final CharSequence fromStep = null;
@@ -33,7 +33,7 @@ public final /* data */ class TrackNuoTransition implements AnalyticsSchema, Tra
             return false;
         }
         TrackNuoTransition trackNuoTransition = (TrackNuoTransition) other;
-        return Intrinsics3.areEqual(this.flowType, trackNuoTransition.flowType) && Intrinsics3.areEqual(this.fromStep, trackNuoTransition.fromStep) && Intrinsics3.areEqual(this.toStep, trackNuoTransition.toStep) && Intrinsics3.areEqual(this.skip, trackNuoTransition.skip) && Intrinsics3.areEqual(this.secondsOnFromStep, trackNuoTransition.secondsOnFromStep) && Intrinsics3.areEqual(this.skipAttempt, trackNuoTransition.skipAttempt) && Intrinsics3.areEqual(this.back, trackNuoTransition.back);
+        return C12238m.areEqual(this.flowType, trackNuoTransition.flowType) && C12238m.areEqual(this.fromStep, trackNuoTransition.fromStep) && C12238m.areEqual(this.toStep, trackNuoTransition.toStep) && C12238m.areEqual(this.skip, trackNuoTransition.skip) && C12238m.areEqual(this.secondsOnFromStep, trackNuoTransition.secondsOnFromStep) && C12238m.areEqual(this.skipAttempt, trackNuoTransition.skipAttempt) && C12238m.areEqual(this.back, trackNuoTransition.back);
     }
 
     public int hashCode() {
@@ -54,19 +54,19 @@ public final /* data */ class TrackNuoTransition implements AnalyticsSchema, Tra
     }
 
     public String toString() {
-        StringBuilder sbU = outline.U("TrackNuoTransition(flowType=");
-        sbU.append(this.flowType);
-        sbU.append(", fromStep=");
-        sbU.append(this.fromStep);
-        sbU.append(", toStep=");
-        sbU.append(this.toStep);
-        sbU.append(", skip=");
-        sbU.append(this.skip);
-        sbU.append(", secondsOnFromStep=");
-        sbU.append(this.secondsOnFromStep);
-        sbU.append(", skipAttempt=");
-        sbU.append(this.skipAttempt);
-        sbU.append(", back=");
-        return outline.D(sbU, this.back, ")");
+        StringBuilder sbM833U = C1643a.m833U("TrackNuoTransition(flowType=");
+        sbM833U.append(this.flowType);
+        sbM833U.append(", fromStep=");
+        sbM833U.append(this.fromStep);
+        sbM833U.append(", toStep=");
+        sbM833U.append(this.toStep);
+        sbM833U.append(", skip=");
+        sbM833U.append(this.skip);
+        sbM833U.append(", secondsOnFromStep=");
+        sbM833U.append(this.secondsOnFromStep);
+        sbM833U.append(", skipAttempt=");
+        sbM833U.append(this.skipAttempt);
+        sbM833U.append(", back=");
+        return C1643a.m816D(sbM833U, this.back, ")");
     }
 }

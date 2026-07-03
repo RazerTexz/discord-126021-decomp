@@ -8,11 +8,11 @@ import android.util.Log;
 import android.util.SparseIntArray;
 import android.view.View;
 import android.view.ViewGroup;
-import androidx.constraintlayout.widget.R;
-import b.d.b.a.outline;
+import androidx.constraintlayout.widget.C0201R;
 import java.lang.reflect.Method;
 import java.util.HashMap;
 import java.util.HashSet;
+import p007b.p100d.p104b.p105a.C1643a;
 
 /* JADX INFO: loaded from: classes.dex */
 public class KeyTrigger extends Key {
@@ -56,16 +56,16 @@ public class KeyTrigger extends Key {
         static {
             SparseIntArray sparseIntArray = new SparseIntArray();
             mAttrMap = sparseIntArray;
-            sparseIntArray.append(R.styleable.KeyTrigger_framePosition, 8);
-            mAttrMap.append(R.styleable.KeyTrigger_onCross, 4);
-            mAttrMap.append(R.styleable.KeyTrigger_onNegativeCross, 1);
-            mAttrMap.append(R.styleable.KeyTrigger_onPositiveCross, 2);
-            mAttrMap.append(R.styleable.KeyTrigger_motionTarget, 7);
-            mAttrMap.append(R.styleable.KeyTrigger_triggerId, 6);
-            mAttrMap.append(R.styleable.KeyTrigger_triggerSlack, 5);
-            mAttrMap.append(R.styleable.KeyTrigger_motion_triggerOnCollision, 9);
-            mAttrMap.append(R.styleable.KeyTrigger_motion_postLayoutCollision, 10);
-            mAttrMap.append(R.styleable.KeyTrigger_triggerReceiver, 11);
+            sparseIntArray.append(C0201R.styleable.KeyTrigger_framePosition, 8);
+            mAttrMap.append(C0201R.styleable.KeyTrigger_onCross, 4);
+            mAttrMap.append(C0201R.styleable.KeyTrigger_onNegativeCross, 1);
+            mAttrMap.append(C0201R.styleable.KeyTrigger_onPositiveCross, 2);
+            mAttrMap.append(C0201R.styleable.KeyTrigger_motionTarget, 7);
+            mAttrMap.append(C0201R.styleable.KeyTrigger_triggerId, 6);
+            mAttrMap.append(C0201R.styleable.KeyTrigger_triggerSlack, 5);
+            mAttrMap.append(C0201R.styleable.KeyTrigger_motion_triggerOnCollision, 9);
+            mAttrMap.append(C0201R.styleable.KeyTrigger_motion_postLayoutCollision, 10);
+            mAttrMap.append(C0201R.styleable.KeyTrigger_triggerReceiver, 11);
         }
 
         private Loader() {
@@ -129,11 +129,11 @@ public class KeyTrigger extends Key {
                         keyTrigger.mTriggerReceiver = typedArray.getResourceId(index, keyTrigger.mTriggerReceiver);
                         break;
                 }
-                StringBuilder sbU = outline.U("unused attribute 0x");
-                sbU.append(Integer.toHexString(index));
-                sbU.append("   ");
-                sbU.append(mAttrMap.get(index));
-                Log.e("KeyTrigger", sbU.toString());
+                StringBuilder sbM833U = C1643a.m833U("unused attribute 0x");
+                sbM833U.append(Integer.toHexString(index));
+                sbM833U.append("   ");
+                sbM833U.append(mAttrMap.get(index));
+                Log.e("KeyTrigger", sbM833U.toString());
             }
         }
     }
@@ -341,25 +341,25 @@ public class KeyTrigger extends Key {
                 try {
                     this.mFireNegativeCross = view.getClass().getMethod(this.mNegativeCross, new Class[0]);
                 } catch (NoSuchMethodException unused) {
-                    StringBuilder sbU = outline.U("Could not find method \"");
-                    sbU.append(this.mNegativeCross);
-                    sbU.append("\"on class ");
-                    sbU.append(view.getClass().getSimpleName());
-                    sbU.append(" ");
-                    sbU.append(Debug.getName(view));
-                    Log.e("KeyTrigger", sbU.toString());
+                    StringBuilder sbM833U = C1643a.m833U("Could not find method \"");
+                    sbM833U.append(this.mNegativeCross);
+                    sbM833U.append("\"on class ");
+                    sbM833U.append(view.getClass().getSimpleName());
+                    sbM833U.append(" ");
+                    sbM833U.append(Debug.getName(view));
+                    Log.e("KeyTrigger", sbM833U.toString());
                 }
             }
             try {
                 this.mFireNegativeCross.invoke(view, new Object[0]);
             } catch (Exception unused2) {
-                StringBuilder sbU2 = outline.U("Exception in call \"");
-                sbU2.append(this.mNegativeCross);
-                sbU2.append("\"on class ");
-                sbU2.append(view.getClass().getSimpleName());
-                sbU2.append(" ");
-                sbU2.append(Debug.getName(view));
-                Log.e("KeyTrigger", sbU2.toString());
+                StringBuilder sbM833U2 = C1643a.m833U("Exception in call \"");
+                sbM833U2.append(this.mNegativeCross);
+                sbM833U2.append("\"on class ");
+                sbM833U2.append(view.getClass().getSimpleName());
+                sbM833U2.append(" ");
+                sbM833U2.append(Debug.getName(view));
+                Log.e("KeyTrigger", sbM833U2.toString());
             }
         }
         if (z5 && this.mPositiveCross != null) {
@@ -367,25 +367,25 @@ public class KeyTrigger extends Key {
                 try {
                     this.mFirePositiveCross = view.getClass().getMethod(this.mPositiveCross, new Class[0]);
                 } catch (NoSuchMethodException unused3) {
-                    StringBuilder sbU3 = outline.U("Could not find method \"");
-                    sbU3.append(this.mPositiveCross);
-                    sbU3.append("\"on class ");
-                    sbU3.append(view.getClass().getSimpleName());
-                    sbU3.append(" ");
-                    sbU3.append(Debug.getName(view));
-                    Log.e("KeyTrigger", sbU3.toString());
+                    StringBuilder sbM833U3 = C1643a.m833U("Could not find method \"");
+                    sbM833U3.append(this.mPositiveCross);
+                    sbM833U3.append("\"on class ");
+                    sbM833U3.append(view.getClass().getSimpleName());
+                    sbM833U3.append(" ");
+                    sbM833U3.append(Debug.getName(view));
+                    Log.e("KeyTrigger", sbM833U3.toString());
                 }
             }
             try {
                 this.mFirePositiveCross.invoke(view, new Object[0]);
             } catch (Exception unused4) {
-                StringBuilder sbU4 = outline.U("Exception in call \"");
-                sbU4.append(this.mPositiveCross);
-                sbU4.append("\"on class ");
-                sbU4.append(view.getClass().getSimpleName());
-                sbU4.append(" ");
-                sbU4.append(Debug.getName(view));
-                Log.e("KeyTrigger", sbU4.toString());
+                StringBuilder sbM833U4 = C1643a.m833U("Exception in call \"");
+                sbM833U4.append(this.mPositiveCross);
+                sbM833U4.append("\"on class ");
+                sbM833U4.append(view.getClass().getSimpleName());
+                sbM833U4.append(" ");
+                sbM833U4.append(Debug.getName(view));
+                Log.e("KeyTrigger", sbM833U4.toString());
             }
         }
         if (!z2 || this.mCross == null) {
@@ -395,25 +395,25 @@ public class KeyTrigger extends Key {
             try {
                 this.mFireCross = view.getClass().getMethod(this.mCross, new Class[0]);
             } catch (NoSuchMethodException unused5) {
-                StringBuilder sbU5 = outline.U("Could not find method \"");
-                sbU5.append(this.mCross);
-                sbU5.append("\"on class ");
-                sbU5.append(view.getClass().getSimpleName());
-                sbU5.append(" ");
-                sbU5.append(Debug.getName(view));
-                Log.e("KeyTrigger", sbU5.toString());
+                StringBuilder sbM833U5 = C1643a.m833U("Could not find method \"");
+                sbM833U5.append(this.mCross);
+                sbM833U5.append("\"on class ");
+                sbM833U5.append(view.getClass().getSimpleName());
+                sbM833U5.append(" ");
+                sbM833U5.append(Debug.getName(view));
+                Log.e("KeyTrigger", sbM833U5.toString());
             }
         }
         try {
             this.mFireCross.invoke(view, new Object[0]);
         } catch (Exception unused6) {
-            StringBuilder sbU6 = outline.U("Exception in call \"");
-            sbU6.append(this.mCross);
-            sbU6.append("\"on class ");
-            sbU6.append(view.getClass().getSimpleName());
-            sbU6.append(" ");
-            sbU6.append(Debug.getName(view));
-            Log.e("KeyTrigger", sbU6.toString());
+            StringBuilder sbM833U6 = C1643a.m833U("Exception in call \"");
+            sbM833U6.append(this.mCross);
+            sbM833U6.append("\"on class ");
+            sbM833U6.append(view.getClass().getSimpleName());
+            sbM833U6.append(" ");
+            sbM833U6.append(Debug.getName(view));
+            Log.e("KeyTrigger", sbM833U6.toString());
         }
     }
 
@@ -427,7 +427,7 @@ public class KeyTrigger extends Key {
 
     @Override // androidx.constraintlayout.motion.widget.Key
     public void load(Context context, AttributeSet attributeSet) {
-        Loader.read(this, context.obtainStyledAttributes(attributeSet, R.styleable.KeyTrigger), context);
+        Loader.read(this, context.obtainStyledAttributes(attributeSet, C0201R.styleable.KeyTrigger), context);
     }
 
     @Override // androidx.constraintlayout.motion.widget.Key

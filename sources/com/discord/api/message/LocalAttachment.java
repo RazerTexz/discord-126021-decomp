@@ -1,8 +1,8 @@
 package com.discord.api.message;
 
-import b.d.b.a.outline;
 import com.discord.models.domain.ModelAuditLogEntry;
-import d0.z.d.Intrinsics3;
+import p007b.p100d.p104b.p105a.C1643a;
+import p507d0.p592z.p594d.C12238m;
 
 /* JADX INFO: compiled from: LocalAttachment.kt */
 /* JADX INFO: loaded from: classes.dex */
@@ -12,8 +12,8 @@ public final /* data */ class LocalAttachment {
     private final String uriString;
 
     public LocalAttachment(long j, String str, String str2) {
-        Intrinsics3.checkNotNullParameter(str, "uriString");
-        Intrinsics3.checkNotNullParameter(str2, "displayName");
+        C12238m.checkNotNullParameter(str, "uriString");
+        C12238m.checkNotNullParameter(str2, "displayName");
         this.id = j;
         this.uriString = str;
         this.displayName = str2;
@@ -42,7 +42,7 @@ public final /* data */ class LocalAttachment {
             return false;
         }
         LocalAttachment localAttachment = (LocalAttachment) other;
-        return this.id == localAttachment.id && Intrinsics3.areEqual(this.uriString, localAttachment.uriString) && Intrinsics3.areEqual(this.displayName, localAttachment.displayName);
+        return this.id == localAttachment.id && C12238m.areEqual(this.uriString, localAttachment.uriString) && C12238m.areEqual(this.displayName, localAttachment.displayName);
     }
 
     public int hashCode() {
@@ -55,11 +55,11 @@ public final /* data */ class LocalAttachment {
     }
 
     public String toString() {
-        StringBuilder sbU = outline.U("LocalAttachment(id=");
-        sbU.append(this.id);
-        sbU.append(", uriString=");
-        sbU.append(this.uriString);
-        sbU.append(", displayName=");
-        return outline.J(sbU, this.displayName, ")");
+        StringBuilder sbM833U = C1643a.m833U("LocalAttachment(id=");
+        sbM833U.append(this.id);
+        sbM833U.append(", uriString=");
+        sbM833U.append(this.uriString);
+        sbM833U.append(", displayName=");
+        return C1643a.m822J(sbM833U, this.displayName, ")");
     }
 }

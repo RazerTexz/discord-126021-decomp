@@ -2,10 +2,10 @@ package com.esotericsoftware.kryo.util;
 
 import com.esotericsoftware.kryo.Kryo;
 import com.esotericsoftware.kryo.StreamFactory;
-import com.esotericsoftware.kryo.io.Input;
-import com.esotericsoftware.kryo.io.Output;
-import com.esotericsoftware.kryo.io.UnsafeInput;
-import com.esotericsoftware.kryo.io.UnsafeOutput;
+import com.esotericsoftware.kryo.p502io.Input;
+import com.esotericsoftware.kryo.p502io.Output;
+import com.esotericsoftware.kryo.p502io.UnsafeInput;
+import com.esotericsoftware.kryo.p502io.UnsafeOutput;
 import java.io.InputStream;
 import java.io.OutputStream;
 

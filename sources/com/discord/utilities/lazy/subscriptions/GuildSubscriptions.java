@@ -1,20 +1,20 @@
 package com.discord.utilities.lazy.subscriptions;
 
-import b.d.b.a.outline;
-import d0.LazyJVM;
-import d0.z.d.Intrinsics3;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
 import kotlin.Lazy;
 import kotlin.jvm.internal.DefaultConstructorMarker;
-import kotlin.ranges.Ranges2;
+import kotlin.ranges.IntRange;
+import p007b.p100d.p104b.p105a.C1643a;
+import p507d0.C12083g;
+import p507d0.p592z.p594d.C12238m;
 
 /* JADX INFO: compiled from: GuildSubscriptions.kt */
 /* JADX INFO: loaded from: classes2.dex */
 public final /* data */ class GuildSubscriptions {
     private final Boolean activities;
-    private final Map<Long, List<Ranges2>> channels;
+    private final Map<Long, List<IntRange>> channels;
     private final Set<Long> members;
 
     /* JADX INFO: renamed from: serializedRanges$delegate, reason: from kotlin metadata */
@@ -28,14 +28,14 @@ public final /* data */ class GuildSubscriptions {
     }
 
     /* JADX WARN: Multi-variable type inference failed */
-    public GuildSubscriptions(Map<Long, ? extends List<Ranges2>> map, Boolean bool, Boolean bool2, Set<Long> set, Boolean bool3, List<Long> list) {
+    public GuildSubscriptions(Map<Long, ? extends List<IntRange>> map, Boolean bool, Boolean bool2, Set<Long> set, Boolean bool3, List<Long> list) {
         this.channels = map;
         this.typing = bool;
         this.activities = bool2;
         this.members = set;
         this.threads = bool3;
         this.threadMemberLists = list;
-        this.serializedRanges = LazyJVM.lazy(new GuildSubscriptions2(this));
+        this.serializedRanges = C12083g.lazy(new GuildSubscriptions$serializedRanges$2(this));
     }
 
     /* JADX WARN: Multi-variable type inference failed */
@@ -65,7 +65,7 @@ public final /* data */ class GuildSubscriptions {
         return guildSubscriptions.copy(map, bool4, bool5, set2, bool6, list);
     }
 
-    public final Map<Long, List<Ranges2>> component1() {
+    public final Map<Long, List<IntRange>> component1() {
         return this.channels;
     }
 
@@ -92,7 +92,7 @@ public final /* data */ class GuildSubscriptions {
         return this.threadMemberLists;
     }
 
-    public final GuildSubscriptions copy(Map<Long, ? extends List<Ranges2>> channels, Boolean typing, Boolean activities, Set<Long> members, Boolean threads, List<Long> threadMemberLists) {
+    public final GuildSubscriptions copy(Map<Long, ? extends List<IntRange>> channels, Boolean typing, Boolean activities, Set<Long> members, Boolean threads, List<Long> threadMemberLists) {
         return new GuildSubscriptions(channels, typing, activities, members, threads, threadMemberLists);
     }
 
@@ -104,14 +104,14 @@ public final /* data */ class GuildSubscriptions {
             return false;
         }
         GuildSubscriptions guildSubscriptions = (GuildSubscriptions) other;
-        return Intrinsics3.areEqual(this.channels, guildSubscriptions.channels) && Intrinsics3.areEqual(this.typing, guildSubscriptions.typing) && Intrinsics3.areEqual(this.activities, guildSubscriptions.activities) && Intrinsics3.areEqual(this.members, guildSubscriptions.members) && Intrinsics3.areEqual(this.threads, guildSubscriptions.threads) && Intrinsics3.areEqual(this.threadMemberLists, guildSubscriptions.threadMemberLists);
+        return C12238m.areEqual(this.channels, guildSubscriptions.channels) && C12238m.areEqual(this.typing, guildSubscriptions.typing) && C12238m.areEqual(this.activities, guildSubscriptions.activities) && C12238m.areEqual(this.members, guildSubscriptions.members) && C12238m.areEqual(this.threads, guildSubscriptions.threads) && C12238m.areEqual(this.threadMemberLists, guildSubscriptions.threadMemberLists);
     }
 
     public final Boolean getActivities() {
         return this.activities;
     }
 
-    public final Map<Long, List<Ranges2>> getChannels() {
+    public final Map<Long, List<IntRange>> getChannels() {
         return this.channels;
     }
 
@@ -136,7 +136,7 @@ public final /* data */ class GuildSubscriptions {
     }
 
     public int hashCode() {
-        Map<Long, List<Ranges2>> map = this.channels;
+        Map<Long, List<IntRange>> map = this.channels;
         int iHashCode = (map != null ? map.hashCode() : 0) * 31;
         Boolean bool = this.typing;
         int iHashCode2 = (iHashCode + (bool != null ? bool.hashCode() : 0)) * 31;
@@ -151,18 +151,18 @@ public final /* data */ class GuildSubscriptions {
     }
 
     public String toString() {
-        StringBuilder sbU = outline.U("GuildSubscriptions(channels=");
-        sbU.append(this.channels);
-        sbU.append(", typing=");
-        sbU.append(this.typing);
-        sbU.append(", activities=");
-        sbU.append(this.activities);
-        sbU.append(", members=");
-        sbU.append(this.members);
-        sbU.append(", threads=");
-        sbU.append(this.threads);
-        sbU.append(", threadMemberLists=");
-        return outline.L(sbU, this.threadMemberLists, ")");
+        StringBuilder sbM833U = C1643a.m833U("GuildSubscriptions(channels=");
+        sbM833U.append(this.channels);
+        sbM833U.append(", typing=");
+        sbM833U.append(this.typing);
+        sbM833U.append(", activities=");
+        sbM833U.append(this.activities);
+        sbM833U.append(", members=");
+        sbM833U.append(this.members);
+        sbM833U.append(", threads=");
+        sbM833U.append(this.threads);
+        sbM833U.append(", threadMemberLists=");
+        return C1643a.m824L(sbM833U, this.threadMemberLists, ")");
     }
 
     public /* synthetic */ GuildSubscriptions(Map map, Boolean bool, Boolean bool2, Set set, Boolean bool3, List list, int i, DefaultConstructorMarker defaultConstructorMarker) {

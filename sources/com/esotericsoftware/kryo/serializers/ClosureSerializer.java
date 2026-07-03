@@ -2,8 +2,8 @@ package com.esotericsoftware.kryo.serializers;
 
 import com.esotericsoftware.kryo.Kryo;
 import com.esotericsoftware.kryo.Serializer;
-import com.esotericsoftware.kryo.io.Input;
-import com.esotericsoftware.kryo.io.Output;
+import com.esotericsoftware.kryo.p502io.Input;
+import com.esotericsoftware.kryo.p502io.Output;
 import java.lang.invoke.SerializedLambda;
 import java.lang.reflect.Method;
 

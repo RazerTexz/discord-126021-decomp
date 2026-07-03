@@ -1,7 +1,6 @@
 package com.discord.models.domain;
 
 import androidx.annotation.Nullable;
-import b.d.b.a.outline;
 import com.discord.api.channel.Channel;
 import com.discord.api.connectedaccounts.ConnectedAccount;
 import com.discord.api.guild.Guild;
@@ -21,6 +20,7 @@ import com.google.gson.Gson;
 import java.io.IOException;
 import java.util.List;
 import java.util.Map;
+import p007b.p100d.p104b.p105a.C1643a;
 
 /* JADX INFO: loaded from: classes.dex */
 public class ModelPayload implements Model {
@@ -38,8 +38,8 @@ public class ModelPayload implements Model {
     private List<List<Presence>> guildPresences;
     private List<Guild> guilds;
 
-    /* JADX INFO: renamed from: me, reason: collision with root package name */
-    private User f2726me;
+    /* JADX INFO: renamed from: me */
+    private User f18573me;
     private List<Presence> presences;
     private List<Channel> privateChannels;
     private VersionedReadStates readState;
@@ -52,7 +52,9 @@ public class ModelPayload implements Model {
     private ModelUserSettings userSettings;
     private UserSurvey userSurvey;
     private List<User> users;
-    private int v;
+
+    /* JADX INFO: renamed from: v */
+    private int f18574v;
 
     public static class Hello implements Model {
         private int heartbeatInterval;
@@ -111,12 +113,12 @@ public class ModelPayload implements Model {
         }
 
         public String toString() {
-            StringBuilder sbU = outline.U("ModelPayload.Hello(heartbeatInterval=");
-            sbU.append(getHeartbeatInterval());
-            sbU.append(", trace=");
-            sbU.append(getTrace());
-            sbU.append(")");
-            return sbU.toString();
+            StringBuilder sbM833U = C1643a.m833U("ModelPayload.Hello(heartbeatInterval=");
+            sbM833U.append(getHeartbeatInterval());
+            sbM833U.append(", trace=");
+            sbM833U.append(getTrace());
+            sbM833U.append(")");
+            return sbM833U.toString();
         }
     }
 
@@ -194,12 +196,12 @@ public class ModelPayload implements Model {
         }
 
         public String toString() {
-            StringBuilder sbU = outline.U("ModelPayload.MergedPresences(friends=");
-            sbU.append(getFriends());
-            sbU.append(", guilds=");
-            sbU.append(getGuilds());
-            sbU.append(")");
-            return sbU.toString();
+            StringBuilder sbM833U = C1643a.m833U("ModelPayload.MergedPresences(friends=");
+            sbM833U.append(getFriends());
+            sbM833U.append(", guilds=");
+            sbM833U.append(getGuilds());
+            sbM833U.append(")");
+            return sbM833U.toString();
         }
     }
 
@@ -220,7 +222,7 @@ public class ModelPayload implements Model {
                     this.entries = jsonReader.nextList(new Model.JsonReader.ItemFactory() { // from class: b.a.m.a.t
                         @Override // com.discord.models.domain.Model.JsonReader.ItemFactory
                         public final Object get() {
-                            return this.a.parseEntry(jsonReader);
+                            return this.f1539a.parseEntry(jsonReader);
                         }
                     });
                     break;
@@ -277,14 +279,14 @@ public class ModelPayload implements Model {
         public abstract T parseEntry(Model.JsonReader jsonReader) throws IOException;
 
         public String toString() {
-            StringBuilder sbU = outline.U("ModelPayload.VersionedModel(version=");
-            sbU.append(getVersion());
-            sbU.append(", entries=");
-            sbU.append(getEntries());
-            sbU.append(", partial=");
-            sbU.append(isPartial());
-            sbU.append(")");
-            return sbU.toString();
+            StringBuilder sbM833U = C1643a.m833U("ModelPayload.VersionedModel(version=");
+            sbM833U.append(getVersion());
+            sbM833U.append(", entries=");
+            sbM833U.append(getEntries());
+            sbM833U.append(", partial=");
+            sbM833U.append(isPartial());
+            sbM833U.append(")");
+            return sbM833U.toString();
         }
     }
 
@@ -318,7 +320,7 @@ public class ModelPayload implements Model {
         if (listNextList.size() <= 0 || listNextList.get(0) == null) {
             return null;
         }
-        return new Gson().f((String) listNextList.get(0), Object.class);
+        return new Gson().m9202f((String) listNextList.get(0), Object.class);
     }
 
     @Override // com.discord.models.domain.Model
@@ -385,10 +387,10 @@ public class ModelPayload implements Model {
                 this.userSurvey = (UserSurvey) InboundGatewayGsonParser.fromJson(jsonReader, UserSurvey.class);
                 break;
             case "v":
-                this.v = jsonReader.nextInt(this.v);
+                this.f18574v = jsonReader.nextInt(this.f18574v);
                 break;
             case "user":
-                this.f2726me = (User) InboundGatewayGsonParser.fromJson(jsonReader, User.class);
+                this.f18573me = (User) InboundGatewayGsonParser.fromJson(jsonReader, User.class);
                 break;
             case "users":
                 this.users = jsonReader.nextList(new Model.JsonReader.ItemFactory() { // from class: b.a.m.a.w
@@ -651,7 +653,7 @@ public class ModelPayload implements Model {
     }
 
     public User getMe() {
-        return this.f2726me;
+        return this.f18573me;
     }
 
     public List<Presence> getPresences() {
@@ -703,7 +705,7 @@ public class ModelPayload implements Model {
     }
 
     public int getV() {
-        return this.v;
+        return this.f18574v;
     }
 
     public int hashCode() {
@@ -757,58 +759,58 @@ public class ModelPayload implements Model {
     }
 
     public String toString() {
-        StringBuilder sbU = outline.U("ModelPayload(v=");
-        sbU.append(getV());
-        sbU.append(", me=");
-        sbU.append(getMe());
-        sbU.append(", userSettings=");
-        sbU.append(getUserSettings());
-        sbU.append(", userGuildSettings=");
-        sbU.append(getUserGuildSettings());
-        sbU.append(", sessionId=");
-        sbU.append(getSessionId());
-        sbU.append(", relationships=");
-        sbU.append(getRelationships());
-        sbU.append(", readState=");
-        sbU.append(getReadState());
-        sbU.append(", privateChannels=");
-        sbU.append(getPrivateChannels());
-        sbU.append(", guilds=");
-        sbU.append(getGuilds());
-        sbU.append(", guildJoinRequests=");
-        sbU.append(getGuildJoinRequests());
-        sbU.append(", presences=");
-        sbU.append(getPresences());
-        sbU.append(", analyticsToken=");
-        sbU.append(getAnalyticsToken());
-        sbU.append(", authToken=");
-        sbU.append(getAuthToken());
-        sbU.append(", requiredAction=");
-        sbU.append(getRequiredAction());
-        sbU.append(", experiments=");
-        sbU.append(getExperiments());
-        sbU.append(", guildExperiments=");
-        sbU.append(getGuildExperiments());
-        sbU.append(", connectedAccounts=");
-        sbU.append(getConnectedAccounts());
-        sbU.append(", sessions=");
-        sbU.append(getSessions());
-        sbU.append(", users=");
-        sbU.append(getUsers());
-        sbU.append(", guildPresences=");
-        sbU.append(getGuildPresences());
-        sbU.append(", guildMembers=");
-        sbU.append(getGuildMembers());
-        sbU.append(", countryCode=");
-        sbU.append(getCountryCode());
-        sbU.append(", trace=");
-        sbU.append(getTrace());
-        sbU.append(", userSurvey=");
-        sbU.append(getUserSurvey());
-        sbU.append(", friendSuggestionCount=");
-        sbU.append(getFriendSuggestionCount());
-        sbU.append(")");
-        return sbU.toString();
+        StringBuilder sbM833U = C1643a.m833U("ModelPayload(v=");
+        sbM833U.append(getV());
+        sbM833U.append(", me=");
+        sbM833U.append(getMe());
+        sbM833U.append(", userSettings=");
+        sbM833U.append(getUserSettings());
+        sbM833U.append(", userGuildSettings=");
+        sbM833U.append(getUserGuildSettings());
+        sbM833U.append(", sessionId=");
+        sbM833U.append(getSessionId());
+        sbM833U.append(", relationships=");
+        sbM833U.append(getRelationships());
+        sbM833U.append(", readState=");
+        sbM833U.append(getReadState());
+        sbM833U.append(", privateChannels=");
+        sbM833U.append(getPrivateChannels());
+        sbM833U.append(", guilds=");
+        sbM833U.append(getGuilds());
+        sbM833U.append(", guildJoinRequests=");
+        sbM833U.append(getGuildJoinRequests());
+        sbM833U.append(", presences=");
+        sbM833U.append(getPresences());
+        sbM833U.append(", analyticsToken=");
+        sbM833U.append(getAnalyticsToken());
+        sbM833U.append(", authToken=");
+        sbM833U.append(getAuthToken());
+        sbM833U.append(", requiredAction=");
+        sbM833U.append(getRequiredAction());
+        sbM833U.append(", experiments=");
+        sbM833U.append(getExperiments());
+        sbM833U.append(", guildExperiments=");
+        sbM833U.append(getGuildExperiments());
+        sbM833U.append(", connectedAccounts=");
+        sbM833U.append(getConnectedAccounts());
+        sbM833U.append(", sessions=");
+        sbM833U.append(getSessions());
+        sbM833U.append(", users=");
+        sbM833U.append(getUsers());
+        sbM833U.append(", guildPresences=");
+        sbM833U.append(getGuildPresences());
+        sbM833U.append(", guildMembers=");
+        sbM833U.append(getGuildMembers());
+        sbM833U.append(", countryCode=");
+        sbM833U.append(getCountryCode());
+        sbM833U.append(", trace=");
+        sbM833U.append(getTrace());
+        sbM833U.append(", userSurvey=");
+        sbM833U.append(getUserSurvey());
+        sbM833U.append(", friendSuggestionCount=");
+        sbM833U.append(getFriendSuggestionCount());
+        sbM833U.append(")");
+        return sbM833U.toString();
     }
 
     public ModelPayload withGuilds(List<Guild> list) {
@@ -828,8 +830,8 @@ public class ModelPayload implements Model {
     }
 
     public ModelPayload(ModelPayload modelPayload) {
-        this.v = modelPayload.v;
-        this.f2726me = modelPayload.f2726me;
+        this.f18574v = modelPayload.f18574v;
+        this.f18573me = modelPayload.f18573me;
         this.userSettings = modelPayload.userSettings;
         this.userGuildSettings = modelPayload.userGuildSettings;
         this.sessionId = modelPayload.sessionId;

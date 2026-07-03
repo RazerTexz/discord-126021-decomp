@@ -3,9 +3,7 @@ package com.discord.utilities.analytics;
 import android.app.Application;
 import android.os.Bundle;
 import androidx.annotation.MainThread;
-import b.i.a.f.h.l.g;
-import b.i.a.f.h.l.n;
-import com.discord.analytics.generated.traits.TrackGuild2;
+import com.discord.analytics.generated.traits.TrackGuildReceiver;
 import com.discord.api.channel.Channel;
 import com.discord.api.science.AnalyticsSchema;
 import com.discord.api.science.Science;
@@ -18,18 +16,11 @@ import com.discord.stores.StoreStream;
 import com.discord.utilities.device.RtcCameraConfig;
 import com.discord.utilities.error.Error;
 import com.discord.utilities.logging.Logger;
+import com.discord.utilities.p501rx.ObservableExtensionsKt;
 import com.discord.utilities.rest.RestAPI;
-import com.discord.utilities.rx.ObservableExtensionsKt;
 import com.discord.utilities.time.Clock;
 import com.discord.utilities.user.UserUtils;
 import com.google.firebase.analytics.FirebaseAnalytics;
-import d0.LazyJVM;
-import d0.Tuples;
-import d0.g0.StringsJVM;
-import d0.t.Maps6;
-import d0.t.MapsJVM;
-import d0.z.d.Intrinsics3;
-import d0.z.d.Lambda;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
@@ -38,13 +29,22 @@ import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.ConcurrentLinkedQueue;
 import java.util.concurrent.TimeUnit;
 import kotlin.Lazy;
-import kotlin.Tuples2;
+import kotlin.Pair;
 import kotlin.Unit;
 import kotlin.jvm.functions.Function0;
 import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.DefaultConstructorMarker;
-import rx.Observable;
-import rx.Subscription;
+import p007b.p225i.p226a.p288f.p313h.p325l.C3661g;
+import p007b.p225i.p226a.p288f.p313h.p325l.C3755n;
+import p507d0.C12083g;
+import p507d0.C12116o;
+import p507d0.p579g0.C12103t;
+import p507d0.p580t.C12134g0;
+import p507d0.p580t.C12136h0;
+import p507d0.p592z.p594d.AbstractC12240o;
+import p507d0.p592z.p594d.C12238m;
+import p658rx.Observable;
+import p658rx.Subscription;
 
 /* JADX INFO: compiled from: AnalyticsUtils.kt */
 /* JADX INFO: loaded from: classes2.dex */
@@ -52,31 +52,31 @@ public final class AnalyticsUtils {
     public static final AnalyticsUtils INSTANCE = new AnalyticsUtils();
     private static FirebaseAnalytics fireBaseInstance;
 
-    /* JADX INFO: renamed from: com.discord.utilities.analytics.AnalyticsUtils$initAppOpen$1, reason: invalid class name */
+    /* JADX INFO: renamed from: com.discord.utilities.analytics.AnalyticsUtils$initAppOpen$1 */
     /* JADX INFO: compiled from: AnalyticsUtils.kt */
-    public static final class AnonymousClass1 extends Lambda implements Function1<MeUser, Unit> {
-        public static final AnonymousClass1 INSTANCE = new AnonymousClass1();
+    public static final class C66821 extends AbstractC12240o implements Function1<MeUser, Unit> {
+        public static final C66821 INSTANCE = new C66821();
 
-        public AnonymousClass1() {
+        public C66821() {
             super(1);
         }
 
         @Override // kotlin.jvm.functions.Function1
         public /* bridge */ /* synthetic */ Unit invoke(MeUser meUser) {
             invoke2(meUser);
-            return Unit.a;
+            return Unit.f27425a;
         }
 
         /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
         public final void invoke2(MeUser meUser) {
-            Intrinsics3.checkNotNullParameter(meUser, "meUser");
-            if (Intrinsics3.areEqual(meUser, UserUtils.INSTANCE.getEMPTY_USER())) {
-                AppLog.g(0L, null, null);
+            C12238m.checkNotNullParameter(meUser, "meUser");
+            if (C12238m.areEqual(meUser, UserUtils.INSTANCE.getEMPTY_USER())) {
+                AppLog.m8357g(0L, null, null);
                 FirebaseAnalytics firebaseAnalyticsAccess$getFireBaseInstance$p = AnalyticsUtils.access$getFireBaseInstance$p(AnalyticsUtils.INSTANCE);
                 if (firebaseAnalyticsAccess$getFireBaseInstance$p != null) {
-                    g gVar = firebaseAnalyticsAccess$getFireBaseInstance$p.f3109b;
-                    Objects.requireNonNull(gVar);
-                    gVar.e.execute(new n(gVar, null));
+                    C3661g c3661g = firebaseAnalyticsAccess$getFireBaseInstance$p.f21404b;
+                    Objects.requireNonNull(c3661g);
+                    c3661g.f9950e.execute(new C3755n(c3661g, null));
                     return;
                 }
                 return;
@@ -84,11 +84,11 @@ public final class AnalyticsUtils {
             FirebaseAnalytics firebaseAnalyticsAccess$getFireBaseInstance$p2 = AnalyticsUtils.access$getFireBaseInstance$p(AnalyticsUtils.INSTANCE);
             if (firebaseAnalyticsAccess$getFireBaseInstance$p2 != null) {
                 String strValueOf = String.valueOf(meUser.getId());
-                g gVar2 = firebaseAnalyticsAccess$getFireBaseInstance$p2.f3109b;
-                Objects.requireNonNull(gVar2);
-                gVar2.e.execute(new n(gVar2, strValueOf));
+                C3661g c3661g2 = firebaseAnalyticsAccess$getFireBaseInstance$p2.f21404b;
+                Objects.requireNonNull(c3661g2);
+                c3661g2.f9950e.execute(new C3755n(c3661g2, strValueOf));
             }
-            AppLog.g(Long.valueOf(meUser.getId()), meUser.getEmail(), meUser.getUsername());
+            AppLog.m8357g(Long.valueOf(meUser.getId()), meUser.getEmail(), meUser.getUsername());
         }
     }
 
@@ -100,23 +100,23 @@ public final class AnalyticsUtils {
     }
 
     public final Map<String, Object> getProperties$app_productionGoogleRelease(Channel channel) {
-        Intrinsics3.checkNotNullParameter(channel, "$this$properties");
-        Tuples2[] tuples2Arr = new Tuples2[3];
-        tuples2Arr[0] = Tuples.to(ModelAuditLogEntry.CHANGE_KEY_CHANNEL_ID, Long.valueOf(channel.getId()));
-        tuples2Arr[1] = Tuples.to("channel_type", Integer.valueOf(channel.getType()));
-        List<User> listZ = channel.z();
-        tuples2Arr[2] = Tuples.to("channel_size_total", Integer.valueOf(listZ != null ? listZ.size() : 0));
-        return Maps6.mapOf(tuples2Arr);
+        C12238m.checkNotNullParameter(channel, "$this$properties");
+        Pair[] pairArr = new Pair[3];
+        pairArr[0] = C12116o.m10073to(ModelAuditLogEntry.CHANGE_KEY_CHANNEL_ID, Long.valueOf(channel.getId()));
+        pairArr[1] = C12116o.m10073to("channel_type", Integer.valueOf(channel.getType()));
+        List<User> listM7659z = channel.m7659z();
+        pairArr[2] = C12116o.m10073to("channel_size_total", Integer.valueOf(listM7659z != null ? listM7659z.size() : 0));
+        return C12136h0.mapOf(pairArr);
     }
 
     @MainThread
     public final void initAppOpen(Application context) {
-        Intrinsics3.checkNotNullParameter(context, "context");
+        C12238m.checkNotNullParameter(context, "context");
         if (fireBaseInstance != null) {
             return;
         }
         fireBaseInstance = FirebaseAnalytics.getInstance(context);
-        ObservableExtensionsKt.appSubscribe(StoreStream.INSTANCE.getUsers().observeMe(true), (Class<?>) AnalyticsUtils.class, (58 & 2) != 0 ? null : null, (Function1<? super Subscription, Unit>) ((58 & 4) != 0 ? null : null), (Function1<? super Error, Unit>) ((58 & 8) != 0 ? null : null), (Function0<Unit>) ((58 & 16) != 0 ? ObservableExtensionsKt.AnonymousClass1.INSTANCE : null), (Function0<Unit>) ((58 & 32) != 0 ? ObservableExtensionsKt.AnonymousClass2.INSTANCE : null), AnonymousClass1.INSTANCE);
+        ObservableExtensionsKt.appSubscribe(StoreStream.INSTANCE.getUsers().observeMe(true), (Class<?>) AnalyticsUtils.class, (58 & 2) != 0 ? null : null, (Function1<? super Subscription, Unit>) ((58 & 4) != 0 ? null : null), (Function1<? super Error, Unit>) ((58 & 8) != 0 ? null : null), (Function0<Unit>) ((58 & 16) != 0 ? ObservableExtensionsKt.C68791.INSTANCE : null), (Function0<Unit>) ((58 & 32) != 0 ? ObservableExtensionsKt.C68802.INSTANCE : null), C66821.INSTANCE);
         RtcCameraConfig.INSTANCE.init();
     }
 
@@ -125,11 +125,11 @@ public final class AnalyticsUtils {
 
         /* JADX INFO: renamed from: Companion, reason: from kotlin metadata */
         public static final Companion INSTANCE = new Companion(null);
-        private static final Lazy instance$delegate = LazyJVM.lazy(AnalyticsUtils2.INSTANCE);
+        private static final Lazy instance$delegate = C12083g.lazy(AnalyticsUtils$Tracker$Companion$instance$2.INSTANCE);
         private String analyticsToken;
         private final Clock clock;
         private final ConcurrentLinkedQueue<Science.Event> eventsQueue;
-        private final ConcurrentHashMap<Tuples2<String, Long>, Long> eventsThrottledUntilMillis;
+        private final ConcurrentHashMap<Pair<String, Long>, Long> eventsThrottledUntilMillis;
         private boolean fingerprinted;
         private final RestAPI restAPI;
 
@@ -150,9 +150,9 @@ public final class AnalyticsUtils {
         }
 
         public Tracker(Clock clock, RestAPI restAPI, ConcurrentLinkedQueue<Science.Event> concurrentLinkedQueue) {
-            Intrinsics3.checkNotNullParameter(clock, "clock");
-            Intrinsics3.checkNotNullParameter(restAPI, "restAPI");
-            Intrinsics3.checkNotNullParameter(concurrentLinkedQueue, "eventsQueue");
+            C12238m.checkNotNullParameter(clock, "clock");
+            C12238m.checkNotNullParameter(restAPI, "restAPI");
+            C12238m.checkNotNullParameter(concurrentLinkedQueue, "eventsQueue");
             this.clock = clock;
             this.restAPI = restAPI;
             this.eventsQueue = concurrentLinkedQueue;
@@ -163,7 +163,7 @@ public final class AnalyticsUtils {
             if (getCanDrain()) {
                 ArrayList arrayList = new ArrayList(this.eventsQueue);
                 this.eventsQueue.clear();
-                ObservableExtensionsKt.appSubscribe(ObservableExtensionsKt.restSubscribeOn$default(this.restAPI.science(new Science(this.analyticsToken, arrayList)), false, 1, null), (Class<?>) getClass(), (58 & 2) != 0 ? null : null, (Function1<? super Subscription, Unit>) ((58 & 4) != 0 ? null : null), (Function1<? super Error, Unit>) ((58 & 8) != 0 ? null : new AnalyticsUtils4(this, arrayList)), (Function0<Unit>) ((58 & 16) != 0 ? ObservableExtensionsKt.AnonymousClass1.INSTANCE : null), (Function0<Unit>) ((58 & 32) != 0 ? ObservableExtensionsKt.AnonymousClass2.INSTANCE : null), AnalyticsUtils3.INSTANCE);
+                ObservableExtensionsKt.appSubscribe(ObservableExtensionsKt.restSubscribeOn$default(this.restAPI.science(new Science(this.analyticsToken, arrayList)), false, 1, null), (Class<?>) getClass(), (58 & 2) != 0 ? null : null, (Function1<? super Subscription, Unit>) ((58 & 4) != 0 ? null : null), (Function1<? super Error, Unit>) ((58 & 8) != 0 ? null : new AnalyticsUtils$Tracker$drainEventsQueue$2(this, arrayList)), (Function0<Unit>) ((58 & 16) != 0 ? ObservableExtensionsKt.C68791.INSTANCE : null), (Function0<Unit>) ((58 & 32) != 0 ? ObservableExtensionsKt.C68802.INSTANCE : null), AnalyticsUtils$Tracker$drainEventsQueue$1.INSTANCE);
             }
         }
 
@@ -171,13 +171,13 @@ public final class AnalyticsUtils {
             return (this.eventsQueue.isEmpty() ^ true) && (this.fingerprinted || isAuthed$app_productionGoogleRelease());
         }
 
-        private final boolean isEventThrottled(Tuples2<String, Long> throttleKey) {
+        private final boolean isEventThrottled(Pair<String, Long> throttleKey) {
             long jCurrentTimeMillis = this.clock.currentTimeMillis();
             Long l = this.eventsThrottledUntilMillis.get(throttleKey);
             if (l == null) {
                 l = 0L;
             }
-            Intrinsics3.checkNotNullExpressionValue(l, "eventsThrottledUntilMillis[throttleKey] ?: 0");
+            C12238m.checkNotNullExpressionValue(l, "eventsThrottledUntilMillis[throttleKey] ?: 0");
             return jCurrentTimeMillis < l.longValue();
         }
 
@@ -199,7 +199,7 @@ public final class AnalyticsUtils {
                     }
                 }
             } catch (Throwable th) {
-                Logger.e$default(AppLog.g, bundle.getClass().getSimpleName() + " putMap", th, null, 4, null);
+                Logger.e$default(AppLog.f14950g, bundle.getClass().getSimpleName() + " putMap", th, null, 4, null);
             }
             return bundle;
         }
@@ -221,7 +221,7 @@ public final class AnalyticsUtils {
 
         public final boolean isAuthed$app_productionGoogleRelease() {
             String str = this.analyticsToken;
-            return !(str == null || StringsJVM.isBlank(str));
+            return !(str == null || C12103t.isBlank(str));
         }
 
         public final synchronized void setTrackingData(String analyticsToken, boolean fingerprinted) {
@@ -231,9 +231,9 @@ public final class AnalyticsUtils {
             drainEventsQueue();
         }
 
-        public final void track(Tuples2<String, Long> throttleKey, long throttleTimeMs, Function0<? extends Map<String, ? extends Object>> lazyPropertyProvider) {
-            Intrinsics3.checkNotNullParameter(throttleKey, "throttleKey");
-            Intrinsics3.checkNotNullParameter(lazyPropertyProvider, "lazyPropertyProvider");
+        public final void track(Pair<String, Long> throttleKey, long throttleTimeMs, Function0<? extends Map<String, ? extends Object>> lazyPropertyProvider) {
+            C12238m.checkNotNullParameter(throttleKey, "throttleKey");
+            C12238m.checkNotNullParameter(lazyPropertyProvider, "lazyPropertyProvider");
             if (isEventThrottled(throttleKey)) {
                 return;
             }
@@ -242,43 +242,43 @@ public final class AnalyticsUtils {
         }
 
         public final void trackFireBase(String event, Map<String, ? extends Object> properties) {
-            Intrinsics3.checkNotNullParameter(event, "event");
-            Intrinsics3.checkNotNullParameter(properties, "properties");
+            C12238m.checkNotNullParameter(event, "event");
+            C12238m.checkNotNullParameter(properties, "properties");
             Bundle bundlePutMap = putMap(new Bundle(), properties);
             FirebaseAnalytics firebaseAnalyticsAccess$getFireBaseInstance$p = AnalyticsUtils.access$getFireBaseInstance$p(AnalyticsUtils.INSTANCE);
             if (firebaseAnalyticsAccess$getFireBaseInstance$p != null) {
-                firebaseAnalyticsAccess$getFireBaseInstance$p.f3109b.c(null, event, bundlePutMap, false, true, null);
+                firebaseAnalyticsAccess$getFireBaseInstance$p.f21404b.m4886c(null, event, bundlePutMap, false, true, null);
             }
         }
 
         public final void track(String event, Map<String, ? extends Object> properties) {
-            Intrinsics3.checkNotNullParameter(event, "event");
+            C12238m.checkNotNullParameter(event, "event");
             if (properties == null) {
-                properties = Maps6.emptyMap();
+                properties = C12136h0.emptyMap();
             }
             track(new Science.Event.MapObject(event, properties));
         }
 
         public final void track(AnalyticsSchema analyticsSchema) {
-            Intrinsics3.checkNotNullParameter(analyticsSchema, "analyticsSchema");
-            if (analyticsSchema instanceof TrackGuild2) {
-                TrackGuild2 trackGuild2 = (TrackGuild2) analyticsSchema;
-                trackGuild2.c(AnalyticsUtils6.fill(trackGuild2.getTrackGuild()));
+            C12238m.checkNotNullParameter(analyticsSchema, "analyticsSchema");
+            if (analyticsSchema instanceof TrackGuildReceiver) {
+                TrackGuildReceiver trackGuildReceiver = (TrackGuildReceiver) analyticsSchema;
+                trackGuildReceiver.mo7508c(AnalyticsUtilsKt.fill(trackGuildReceiver.getTrackGuild()));
             }
             track(new Science.Event.SchemaObject(analyticsSchema));
         }
 
         public final void track(Science.Event event) {
-            Intrinsics3.checkNotNullParameter(event, "event");
+            C12238m.checkNotNullParameter(event, "event");
             this.eventsQueue.add(event);
-            Observable<Long> observableD0 = Observable.d0(1500L, TimeUnit.MILLISECONDS);
-            Intrinsics3.checkNotNullExpressionValue(observableD0, "Observable\n          .ti…0, TimeUnit.MILLISECONDS)");
-            ObservableExtensionsKt.appSubscribe(observableD0, (Class<?>) Tracker.class, (58 & 2) != 0 ? null : null, (Function1<? super Subscription, Unit>) ((58 & 4) != 0 ? null : null), (Function1<? super Error, Unit>) ((58 & 8) != 0 ? null : null), (Function0<Unit>) ((58 & 16) != 0 ? ObservableExtensionsKt.AnonymousClass1.INSTANCE : null), (Function0<Unit>) ((58 & 32) != 0 ? ObservableExtensionsKt.AnonymousClass2.INSTANCE : null), new AnalyticsUtils5(this));
+            Observable<Long> observableM11068d0 = Observable.m11068d0(1500L, TimeUnit.MILLISECONDS);
+            C12238m.checkNotNullExpressionValue(observableM11068d0, "Observable\n          .ti…0, TimeUnit.MILLISECONDS)");
+            ObservableExtensionsKt.appSubscribe(observableM11068d0, (Class<?>) Tracker.class, (58 & 2) != 0 ? null : null, (Function1<? super Subscription, Unit>) ((58 & 4) != 0 ? null : null), (Function1<? super Error, Unit>) ((58 & 8) != 0 ? null : null), (Function0<Unit>) ((58 & 16) != 0 ? ObservableExtensionsKt.C68791.INSTANCE : null), (Function0<Unit>) ((58 & 32) != 0 ? ObservableExtensionsKt.C68802.INSTANCE : null), new AnalyticsUtils$Tracker$track$1(this));
         }
     }
 
     public final Map<String, String> getProperties$app_productionGoogleRelease(RtcConnection rtcConnection) {
-        Intrinsics3.checkNotNullParameter(rtcConnection, "$this$properties");
-        return MapsJVM.mapOf(Tuples.to("rtc_connection_id", rtcConnection.id));
+        C12238m.checkNotNullParameter(rtcConnection, "$this$properties");
+        return C12134g0.mapOf(C12116o.m10073to("rtc_connection_id", rtcConnection.id));
     }
 }

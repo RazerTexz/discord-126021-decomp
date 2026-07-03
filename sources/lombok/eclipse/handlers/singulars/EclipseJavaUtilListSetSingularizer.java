@@ -69,9 +69,9 @@ abstract class EclipseJavaUtilListSetSingularizer extends EclipseJavaUtilSingula
             this.guavaListSetSingularizer.generateMethods(cfv, data, deprecate, builderType, fluent, returnTypeMaker, returnStatementMaker, access);
             return;
         }
-        generateSingularMethod(cfv, deprecate, returnTypeMaker.make(), returnStatementMaker.mo186make(), data, builderType, fluent, access);
-        generatePluralMethod(cfv, deprecate, returnTypeMaker.make(), returnStatementMaker.mo186make(), data, builderType, fluent, access);
-        generateClearMethod(cfv, deprecate, returnTypeMaker.make(), returnStatementMaker.mo186make(), data, builderType, access);
+        generateSingularMethod(cfv, deprecate, returnTypeMaker.make(), returnStatementMaker.mo11563make(), data, builderType, fluent, access);
+        generatePluralMethod(cfv, deprecate, returnTypeMaker.make(), returnStatementMaker.mo11563make(), data, builderType, fluent, access);
+        generateClearMethod(cfv, deprecate, returnTypeMaker.make(), returnStatementMaker.mo11563make(), data, builderType, access);
     }
 
     private void generateClearMethod(CheckerFrameworkVersion cfv, boolean deprecate, TypeReference returnType, Statement returnStatement, EclipseSingularsRecipes.SingularData data, EclipseNode builderType, AccessLevel access) {
@@ -124,7 +124,7 @@ abstract class EclipseJavaUtilListSetSingularizer extends EclipseJavaUtilSingula
         char[] prefixedSingularName = data.getSetterPrefix().length == 0 ? data.getSingularName() : HandlerUtil.buildAccessorName(new String(data.getSetterPrefix()), new String(data.getSingularName())).toCharArray();
         md.selector = fluent ? prefixedSingularName : HandlerUtil.buildAccessorName("add", new String(data.getSingularName())).toCharArray();
         Annotation[] selfReturnAnnotations = generateSelfReturnAnnotations(deprecate, cfv, data.getSource());
-        Annotation[] copyToSetterAnnotations = EclipseHandlerUtil.copyAnnotations(md, EclipseHandlerUtil.findCopyableToBuilderSingularSetterAnnotations(data.getAnnotation().up()));
+        Annotation[] copyToSetterAnnotations = EclipseHandlerUtil.copyAnnotations(md, EclipseHandlerUtil.findCopyableToBuilderSingularSetterAnnotations(data.getAnnotation().m10925up()));
         md.annotations = (Annotation[]) EclipseHandlerUtil.concat(selfReturnAnnotations, copyToSetterAnnotations, Annotation.class);
         if (returnStatement != null) {
             EclipseHandlerUtil.createRelevantNonNullAnnotation(builderType, md);
@@ -158,7 +158,7 @@ abstract class EclipseJavaUtilListSetSingularizer extends EclipseJavaUtilSingula
         char[] prefixedSelector = data.getSetterPrefix().length == 0 ? data.getPluralName() : HandlerUtil.buildAccessorName(new String(data.getSetterPrefix()), new String(data.getPluralName())).toCharArray();
         md.selector = fluent ? prefixedSelector : HandlerUtil.buildAccessorName("addAll", new String(data.getPluralName())).toCharArray();
         Annotation[] selfReturnAnnotations = generateSelfReturnAnnotations(deprecate, cfv, data.getSource());
-        Annotation[] copyToSetterAnnotations = EclipseHandlerUtil.copyAnnotations(md, EclipseHandlerUtil.findCopyableToSetterAnnotations(data.getAnnotation().up()));
+        Annotation[] copyToSetterAnnotations = EclipseHandlerUtil.copyAnnotations(md, EclipseHandlerUtil.findCopyableToSetterAnnotations(data.getAnnotation().m10925up()));
         md.annotations = (Annotation[]) EclipseHandlerUtil.concat(selfReturnAnnotations, copyToSetterAnnotations, Annotation.class);
         if (returnStatement != null) {
             EclipseHandlerUtil.createRelevantNonNullAnnotation(builderType, md);

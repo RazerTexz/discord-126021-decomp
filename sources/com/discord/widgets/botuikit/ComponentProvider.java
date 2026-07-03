@@ -3,18 +3,18 @@ package com.discord.widgets.botuikit;
 import android.content.Context;
 import android.view.KeyEvent;
 import android.view.ViewGroup;
-import com.discord.api.botuikit.Component6;
+import com.discord.api.botuikit.ComponentType;
 import com.discord.models.botuikit.ActionRowMessageComponent;
 import com.discord.models.botuikit.ButtonMessageComponent;
 import com.discord.models.botuikit.MessageComponent;
 import com.discord.models.botuikit.SelectMessageComponent;
 import com.discord.widgets.botuikit.views.ActionRowComponentView;
 import com.discord.widgets.botuikit.views.ButtonComponentView;
+import com.discord.widgets.botuikit.views.ComponentActionListener;
 import com.discord.widgets.botuikit.views.ComponentView;
-import com.discord.widgets.botuikit.views.ComponentView2;
 import com.discord.widgets.botuikit.views.select.SelectComponentView;
-import d0.z.d.Intrinsics3;
 import java.util.Objects;
+import p507d0.p592z.p594d.C12238m;
 
 /* JADX INFO: compiled from: ComponentProvider.kt */
 /* JADX INFO: loaded from: classes2.dex */
@@ -25,22 +25,22 @@ public final class ComponentProvider {
         public static final /* synthetic */ int[] $EnumSwitchMapping$0;
 
         static {
-            Component6.values();
+            ComponentType.values();
             int[] iArr = new int[5];
             $EnumSwitchMapping$0 = iArr;
-            iArr[Component6.ACTION_ROW.ordinal()] = 1;
-            iArr[Component6.BUTTON.ordinal()] = 2;
-            iArr[Component6.SELECT.ordinal()] = 3;
-            iArr[Component6.UNKNOWN.ordinal()] = 4;
+            iArr[ComponentType.ACTION_ROW.ordinal()] = 1;
+            iArr[ComponentType.BUTTON.ordinal()] = 2;
+            iArr[ComponentType.SELECT.ordinal()] = 3;
+            iArr[ComponentType.UNKNOWN.ordinal()] = 4;
         }
     }
 
     public ComponentProvider(Context context) {
-        Intrinsics3.checkNotNullParameter(context, "context");
+        C12238m.checkNotNullParameter(context, "context");
         this.context = context;
     }
 
-    private final void configureView(ComponentView2 listener, MessageComponent component, ComponentView<?> componentView) {
+    private final void configureView(ComponentActionListener listener, MessageComponent component, ComponentView<?> componentView) {
         int iOrdinal = component.getType().ordinal();
         if (iOrdinal == 1) {
             Objects.requireNonNull(componentView, "null cannot be cast to non-null type com.discord.widgets.botuikit.views.ActionRowComponentView");
@@ -57,10 +57,10 @@ public final class ComponentProvider {
         }
     }
 
-    public final ComponentView<? extends MessageComponent> getConfiguredComponentView(ComponentView2 listener, MessageComponent component, ViewGroup root, int childIndex) {
-        Intrinsics3.checkNotNullParameter(listener, "listener");
-        Intrinsics3.checkNotNullParameter(component, "component");
-        Intrinsics3.checkNotNullParameter(root, "root");
+    public final ComponentView<? extends MessageComponent> getConfiguredComponentView(ComponentActionListener listener, MessageComponent component, ViewGroup root, int childIndex) {
+        C12238m.checkNotNullParameter(listener, "listener");
+        C12238m.checkNotNullParameter(component, "component");
+        C12238m.checkNotNullParameter(root, "root");
         ComponentInflater componentInflaterFrom = ComponentInflater.INSTANCE.from(this.context);
         KeyEvent.Callback childAt = root.getChildAt(childIndex);
         if (childAt != null && (childAt instanceof ComponentView)) {

@@ -8,16 +8,17 @@ import androidx.viewbinding.ViewBinding;
 /* JADX INFO: loaded from: classes.dex */
 public final class IconListItemTextViewBinding implements ViewBinding {
 
+    /* JADX INFO: renamed from: a */
     @NonNull
-    public final TextView a;
+    public final TextView f15165a;
 
     public IconListItemTextViewBinding(@NonNull TextView textView) {
-        this.a = textView;
+        this.f15165a = textView;
     }
 
     @Override // androidx.viewbinding.ViewBinding
     @NonNull
     public View getRoot() {
-        return this.a;
+        return this.f15165a;
     }
 }

@@ -14,11 +14,11 @@ import androidx.annotation.ColorInt;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.core.view.ViewCompat;
-import b.d.b.a.outline;
 import com.google.android.material.circularreveal.CircularRevealWidget;
 import com.google.android.material.math.MathUtils;
 import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
+import p007b.p100d.p104b.p105a.C1643a;
 
 /* JADX INFO: loaded from: classes3.dex */
 public class CircularRevealHelper {
@@ -185,7 +185,7 @@ public class CircularRevealHelper {
                 canvas.restoreToCount(iSave);
             } else {
                 if (i != 2) {
-                    throw new IllegalStateException(outline.q("Unsupported strategy ", i));
+                    throw new IllegalStateException(C1643a.m871q("Unsupported strategy ", i));
                 }
                 this.delegate.actualDraw(canvas);
                 if (shouldDrawScrim()) {

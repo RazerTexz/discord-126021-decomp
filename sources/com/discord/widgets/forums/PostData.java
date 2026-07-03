@@ -1,7 +1,5 @@
 package com.discord.widgets.forums;
 
-import a0.a.a.b;
-import b.d.b.a.outline;
 import com.discord.api.channel.Channel;
 import com.discord.api.channel.ChannelUtils;
 import com.discord.api.message.reaction.MessageReaction;
@@ -10,9 +8,11 @@ import com.discord.models.guild.UserGuildMember;
 import com.discord.models.member.GuildMember;
 import com.discord.models.message.Message;
 import com.discord.models.user.User;
-import d0.z.d.Intrinsics3;
 import java.util.List;
 import java.util.Map;
+import p001a0.p002a.p003a.C0002b;
+import p007b.p100d.p104b.p105a.C1643a;
+import p507d0.p592z.p594d.C12238m;
 
 /* JADX INFO: compiled from: PostData.kt */
 /* JADX INFO: loaded from: classes2.dex */
@@ -33,17 +33,17 @@ public final /* data */ class PostData {
     private final long myUserId;
     private final User owner;
     private final ForumPostReadState readState;
-    private final PostData2 tag;
+    private final PostTagData tag;
     private final List<UserGuildMember> typingUsers;
     private final Integer unreadCount;
 
-    public PostData(Channel channel, User user, long j, Map<Long, GuildMember> map, Map<Long, GuildRole> map2, Map<Long, String> map3, Message message, boolean z2, Long l, Integer num, PostData2 postData2, MessageReaction messageReaction, boolean z3, ForumPostReadState forumPostReadState, Integer num2, List<UserGuildMember> list) {
-        Intrinsics3.checkNotNullParameter(channel, "channel");
-        Intrinsics3.checkNotNullParameter(map, "guildMembers");
-        Intrinsics3.checkNotNullParameter(map2, "guildRoles");
-        Intrinsics3.checkNotNullParameter(map3, "channelNames");
-        Intrinsics3.checkNotNullParameter(forumPostReadState, "readState");
-        Intrinsics3.checkNotNullParameter(list, "typingUsers");
+    public PostData(Channel channel, User user, long j, Map<Long, GuildMember> map, Map<Long, GuildRole> map2, Map<Long, String> map3, Message message, boolean z2, Long l, Integer num, PostTagData postTagData, MessageReaction messageReaction, boolean z3, ForumPostReadState forumPostReadState, Integer num2, List<UserGuildMember> list) {
+        C12238m.checkNotNullParameter(channel, "channel");
+        C12238m.checkNotNullParameter(map, "guildMembers");
+        C12238m.checkNotNullParameter(map2, "guildRoles");
+        C12238m.checkNotNullParameter(map3, "channelNames");
+        C12238m.checkNotNullParameter(forumPostReadState, "readState");
+        C12238m.checkNotNullParameter(list, "typingUsers");
         this.channel = channel;
         this.owner = user;
         this.myUserId = j;
@@ -54,14 +54,14 @@ public final /* data */ class PostData {
         this.isFirstMessageBlocked = z2;
         this.mostRecentMessageTimestamp = l;
         this.messageCount = num;
-        this.tag = postData2;
+        this.tag = postTagData;
         this.mostCommonReaction = messageReaction;
         this.isDefaultReaction = z3;
         this.readState = forumPostReadState;
         this.unreadCount = num2;
         this.typingUsers = list;
-        this.isActivePost = !ChannelUtils.j(channel);
-        this.isPinned = ChannelUtils.A(channel);
+        this.isActivePost = !ChannelUtils.m7686j(channel);
+        this.isPinned = ChannelUtils.m7666A(channel);
         this.isMe = user != null && user.getId() == j;
     }
 
@@ -76,7 +76,7 @@ public final /* data */ class PostData {
     }
 
     /* JADX INFO: renamed from: component11, reason: from getter */
-    public final PostData2 getTag() {
+    public final PostTagData getTag() {
         return this.tag;
     }
 
@@ -141,13 +141,13 @@ public final /* data */ class PostData {
         return this.mostRecentMessageTimestamp;
     }
 
-    public final PostData copy(Channel channel, User owner, long myUserId, Map<Long, GuildMember> guildMembers, Map<Long, GuildRole> guildRoles, Map<Long, String> channelNames, Message firstMessage, boolean isFirstMessageBlocked, Long mostRecentMessageTimestamp, Integer messageCount, PostData2 tag, MessageReaction mostCommonReaction, boolean isDefaultReaction, ForumPostReadState readState, Integer unreadCount, List<UserGuildMember> typingUsers) {
-        Intrinsics3.checkNotNullParameter(channel, "channel");
-        Intrinsics3.checkNotNullParameter(guildMembers, "guildMembers");
-        Intrinsics3.checkNotNullParameter(guildRoles, "guildRoles");
-        Intrinsics3.checkNotNullParameter(channelNames, "channelNames");
-        Intrinsics3.checkNotNullParameter(readState, "readState");
-        Intrinsics3.checkNotNullParameter(typingUsers, "typingUsers");
+    public final PostData copy(Channel channel, User owner, long myUserId, Map<Long, GuildMember> guildMembers, Map<Long, GuildRole> guildRoles, Map<Long, String> channelNames, Message firstMessage, boolean isFirstMessageBlocked, Long mostRecentMessageTimestamp, Integer messageCount, PostTagData tag, MessageReaction mostCommonReaction, boolean isDefaultReaction, ForumPostReadState readState, Integer unreadCount, List<UserGuildMember> typingUsers) {
+        C12238m.checkNotNullParameter(channel, "channel");
+        C12238m.checkNotNullParameter(guildMembers, "guildMembers");
+        C12238m.checkNotNullParameter(guildRoles, "guildRoles");
+        C12238m.checkNotNullParameter(channelNames, "channelNames");
+        C12238m.checkNotNullParameter(readState, "readState");
+        C12238m.checkNotNullParameter(typingUsers, "typingUsers");
         return new PostData(channel, owner, myUserId, guildMembers, guildRoles, channelNames, firstMessage, isFirstMessageBlocked, mostRecentMessageTimestamp, messageCount, tag, mostCommonReaction, isDefaultReaction, readState, unreadCount, typingUsers);
     }
 
@@ -159,7 +159,7 @@ public final /* data */ class PostData {
             return false;
         }
         PostData postData = (PostData) other;
-        return Intrinsics3.areEqual(this.channel, postData.channel) && Intrinsics3.areEqual(this.owner, postData.owner) && this.myUserId == postData.myUserId && Intrinsics3.areEqual(this.guildMembers, postData.guildMembers) && Intrinsics3.areEqual(this.guildRoles, postData.guildRoles) && Intrinsics3.areEqual(this.channelNames, postData.channelNames) && Intrinsics3.areEqual(this.firstMessage, postData.firstMessage) && this.isFirstMessageBlocked == postData.isFirstMessageBlocked && Intrinsics3.areEqual(this.mostRecentMessageTimestamp, postData.mostRecentMessageTimestamp) && Intrinsics3.areEqual(this.messageCount, postData.messageCount) && Intrinsics3.areEqual(this.tag, postData.tag) && Intrinsics3.areEqual(this.mostCommonReaction, postData.mostCommonReaction) && this.isDefaultReaction == postData.isDefaultReaction && Intrinsics3.areEqual(this.readState, postData.readState) && Intrinsics3.areEqual(this.unreadCount, postData.unreadCount) && Intrinsics3.areEqual(this.typingUsers, postData.typingUsers);
+        return C12238m.areEqual(this.channel, postData.channel) && C12238m.areEqual(this.owner, postData.owner) && this.myUserId == postData.myUserId && C12238m.areEqual(this.guildMembers, postData.guildMembers) && C12238m.areEqual(this.guildRoles, postData.guildRoles) && C12238m.areEqual(this.channelNames, postData.channelNames) && C12238m.areEqual(this.firstMessage, postData.firstMessage) && this.isFirstMessageBlocked == postData.isFirstMessageBlocked && C12238m.areEqual(this.mostRecentMessageTimestamp, postData.mostRecentMessageTimestamp) && C12238m.areEqual(this.messageCount, postData.messageCount) && C12238m.areEqual(this.tag, postData.tag) && C12238m.areEqual(this.mostCommonReaction, postData.mostCommonReaction) && this.isDefaultReaction == postData.isDefaultReaction && C12238m.areEqual(this.readState, postData.readState) && C12238m.areEqual(this.unreadCount, postData.unreadCount) && C12238m.areEqual(this.typingUsers, postData.typingUsers);
     }
 
     public final Channel getChannel() {
@@ -206,7 +206,7 @@ public final /* data */ class PostData {
         return this.readState;
     }
 
-    public final PostData2 getTag() {
+    public final PostTagData getTag() {
         return this.tag;
     }
 
@@ -230,9 +230,9 @@ public final /* data */ class PostData {
         Channel channel = this.channel;
         int iHashCode = (channel != null ? channel.hashCode() : 0) * 31;
         User user = this.owner;
-        int iA = (b.a(this.myUserId) + ((iHashCode + (user != null ? user.hashCode() : 0)) * 31)) * 31;
+        int iM3a = (C0002b.m3a(this.myUserId) + ((iHashCode + (user != null ? user.hashCode() : 0)) * 31)) * 31;
         Map<Long, GuildMember> map = this.guildMembers;
-        int iHashCode2 = (iA + (map != null ? map.hashCode() : 0)) * 31;
+        int iHashCode2 = (iM3a + (map != null ? map.hashCode() : 0)) * 31;
         Map<Long, GuildRole> map2 = this.guildRoles;
         int iHashCode3 = (iHashCode2 + (map2 != null ? map2.hashCode() : 0)) * 31;
         Map<Long, String> map3 = this.channelNames;
@@ -249,8 +249,8 @@ public final /* data */ class PostData {
         int iHashCode6 = (i + (l != null ? l.hashCode() : 0)) * 31;
         Integer num = this.messageCount;
         int iHashCode7 = (iHashCode6 + (num != null ? num.hashCode() : 0)) * 31;
-        PostData2 postData2 = this.tag;
-        int iHashCode8 = (iHashCode7 + (postData2 != null ? postData2.hashCode() : 0)) * 31;
+        PostTagData postTagData = this.tag;
+        int iHashCode8 = (iHashCode7 + (postTagData != null ? postTagData.hashCode() : 0)) * 31;
         MessageReaction messageReaction = this.mostCommonReaction;
         int iHashCode9 = (iHashCode8 + (messageReaction != null ? messageReaction.hashCode() : 0)) * 31;
         boolean z3 = this.isDefaultReaction;
@@ -287,37 +287,37 @@ public final /* data */ class PostData {
     }
 
     public String toString() {
-        StringBuilder sbU = outline.U("PostData(channel=");
-        sbU.append(this.channel);
-        sbU.append(", owner=");
-        sbU.append(this.owner);
-        sbU.append(", myUserId=");
-        sbU.append(this.myUserId);
-        sbU.append(", guildMembers=");
-        sbU.append(this.guildMembers);
-        sbU.append(", guildRoles=");
-        sbU.append(this.guildRoles);
-        sbU.append(", channelNames=");
-        sbU.append(this.channelNames);
-        sbU.append(", firstMessage=");
-        sbU.append(this.firstMessage);
-        sbU.append(", isFirstMessageBlocked=");
-        sbU.append(this.isFirstMessageBlocked);
-        sbU.append(", mostRecentMessageTimestamp=");
-        sbU.append(this.mostRecentMessageTimestamp);
-        sbU.append(", messageCount=");
-        sbU.append(this.messageCount);
-        sbU.append(", tag=");
-        sbU.append(this.tag);
-        sbU.append(", mostCommonReaction=");
-        sbU.append(this.mostCommonReaction);
-        sbU.append(", isDefaultReaction=");
-        sbU.append(this.isDefaultReaction);
-        sbU.append(", readState=");
-        sbU.append(this.readState);
-        sbU.append(", unreadCount=");
-        sbU.append(this.unreadCount);
-        sbU.append(", typingUsers=");
-        return outline.L(sbU, this.typingUsers, ")");
+        StringBuilder sbM833U = C1643a.m833U("PostData(channel=");
+        sbM833U.append(this.channel);
+        sbM833U.append(", owner=");
+        sbM833U.append(this.owner);
+        sbM833U.append(", myUserId=");
+        sbM833U.append(this.myUserId);
+        sbM833U.append(", guildMembers=");
+        sbM833U.append(this.guildMembers);
+        sbM833U.append(", guildRoles=");
+        sbM833U.append(this.guildRoles);
+        sbM833U.append(", channelNames=");
+        sbM833U.append(this.channelNames);
+        sbM833U.append(", firstMessage=");
+        sbM833U.append(this.firstMessage);
+        sbM833U.append(", isFirstMessageBlocked=");
+        sbM833U.append(this.isFirstMessageBlocked);
+        sbM833U.append(", mostRecentMessageTimestamp=");
+        sbM833U.append(this.mostRecentMessageTimestamp);
+        sbM833U.append(", messageCount=");
+        sbM833U.append(this.messageCount);
+        sbM833U.append(", tag=");
+        sbM833U.append(this.tag);
+        sbM833U.append(", mostCommonReaction=");
+        sbM833U.append(this.mostCommonReaction);
+        sbM833U.append(", isDefaultReaction=");
+        sbM833U.append(this.isDefaultReaction);
+        sbM833U.append(", readState=");
+        sbM833U.append(this.readState);
+        sbM833U.append(", unreadCount=");
+        sbM833U.append(this.unreadCount);
+        sbM833U.append(", typingUsers=");
+        return C1643a.m824L(sbM833U, this.typingUsers, ")");
     }
 }

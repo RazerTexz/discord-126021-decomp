@@ -14,13 +14,13 @@ import androidx.constraintlayout.solver.widgets.ConstraintWidget;
 import androidx.constraintlayout.solver.widgets.ConstraintWidgetContainer;
 import androidx.constraintlayout.solver.widgets.Helper;
 import androidx.constraintlayout.solver.widgets.HelperWidget;
+import androidx.constraintlayout.widget.C0201R;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.constraintlayout.widget.ConstraintSet;
-import androidx.constraintlayout.widget.R;
-import b.d.b.a.outline;
 import com.discord.models.domain.ModelAuditLogEntry;
 import java.util.Arrays;
 import java.util.HashMap;
+import p007b.p100d.p104b.p105a.C1643a;
 
 /* JADX INFO: loaded from: classes.dex */
 public abstract class ConstraintHelper extends View {
@@ -91,10 +91,10 @@ public abstract class ConstraintHelper extends View {
             ViewGroup.LayoutParams layoutParams = childAt.getLayoutParams();
             if ((layoutParams instanceof ConstraintLayout.LayoutParams) && strTrim.equals(((ConstraintLayout.LayoutParams) layoutParams).constraintTag)) {
                 if (childAt.getId() == -1) {
-                    StringBuilder sbU = outline.U("to use ConstraintTag view ");
-                    sbU.append(childAt.getClass().getSimpleName());
-                    sbU.append(" must have an ID");
-                    Log.w("ConstraintHelper", sbU.toString());
+                    StringBuilder sbM833U = C1643a.m833U("to use ConstraintTag view ");
+                    sbM833U.append(childAt.getClass().getSimpleName());
+                    sbM833U.append(" must have an ID");
+                    Log.w("ConstraintHelper", sbM833U.toString());
                 } else {
                     addRscID(childAt.getId());
                 }
@@ -131,7 +131,7 @@ public abstract class ConstraintHelper extends View {
         }
         if (iFindId == 0) {
             try {
-                iFindId = R.id.class.getField(str).getInt(null);
+                iFindId = C0201R.id.class.getField(str).getInt(null);
             } catch (Exception unused) {
             }
         }
@@ -186,15 +186,15 @@ public abstract class ConstraintHelper extends View {
 
     public void init(AttributeSet attributeSet) {
         if (attributeSet != null) {
-            TypedArray typedArrayObtainStyledAttributes = getContext().obtainStyledAttributes(attributeSet, R.styleable.ConstraintLayout_Layout);
+            TypedArray typedArrayObtainStyledAttributes = getContext().obtainStyledAttributes(attributeSet, C0201R.styleable.ConstraintLayout_Layout);
             int indexCount = typedArrayObtainStyledAttributes.getIndexCount();
             for (int i = 0; i < indexCount; i++) {
                 int index = typedArrayObtainStyledAttributes.getIndex(i);
-                if (index == R.styleable.ConstraintLayout_Layout_constraint_referenced_ids) {
+                if (index == C0201R.styleable.ConstraintLayout_Layout_constraint_referenced_ids) {
                     String string = typedArrayObtainStyledAttributes.getString(index);
                     this.mReferenceIds = string;
                     setIds(string);
-                } else if (index == R.styleable.ConstraintLayout_Layout_constraint_referenced_tags) {
+                } else if (index == C0201R.styleable.ConstraintLayout_Layout_constraint_referenced_tags) {
                     String string2 = typedArrayObtainStyledAttributes.getString(index);
                     this.mReferenceTags = string2;
                     setReferenceTags(string2);

@@ -1,7 +1,5 @@
 package com.discord.widgets.user;
 
-import b.a.d.AppViewModel;
-import b.d.b.a.outline;
 import com.discord.api.activity.Activity;
 import com.discord.api.activity.ActivityEmoji;
 import com.discord.api.presence.ClientStatus;
@@ -15,28 +13,30 @@ import com.discord.stores.StoreUserSettings;
 import com.discord.utilities.analytics.AnalyticsTracker;
 import com.discord.utilities.analytics.Traits;
 import com.discord.utilities.error.Error;
+import com.discord.utilities.p501rx.ObservableExtensionsKt;
 import com.discord.utilities.presence.PresenceUtils;
 import com.discord.utilities.rest.RestAPI;
-import com.discord.utilities.rx.ObservableExtensionsKt;
 import com.discord.widgets.user.WidgetUserStatusSheetViewModel;
 import com.discord.widgets.user.profile.UserStatusPresenceCustomView;
-import d0.c0.Random;
-import d0.t._Arrays;
-import d0.t._Collections;
-import d0.z.d.Intrinsics3;
-import d0.z.d.Lambda;
-import j0.k.Func1;
 import java.util.Map;
 import kotlin.Unit;
 import kotlin.jvm.functions.Function0;
 import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.DefaultConstructorMarker;
-import rx.Observable;
-import rx.Subscription;
+import p007b.p008a.p018d.AbstractC0859d0;
+import p007b.p100d.p104b.p105a.C1643a;
+import p507d0.p510c0.AbstractC11216c;
+import p507d0.p580t.C12141k;
+import p507d0.p580t.C12163u;
+import p507d0.p592z.p594d.AbstractC12240o;
+import p507d0.p592z.p594d.C12238m;
+import p637j0.p641k.InterfaceC12589b;
+import p658rx.Observable;
+import p658rx.Subscription;
 
 /* JADX INFO: compiled from: WidgetUserStatusSheetViewModel.kt */
 /* JADX INFO: loaded from: classes.dex */
-public final class WidgetUserStatusSheetViewModel extends AppViewModel<ViewState> {
+public final class WidgetUserStatusSheetViewModel extends AbstractC0859d0<ViewState> {
     private boolean hasTrackedOpenPopout;
     private final RestAPI restAPI;
     private final StoreUserPresence storePresences;
@@ -46,22 +46,22 @@ public final class WidgetUserStatusSheetViewModel extends AppViewModel<ViewState
     public static final Companion INSTANCE = new Companion(null);
     private static final String[] CUSTOM_EMOJI_PLACEHOLDER_EMOJIS = {"grinning", "grimacing", "grin", "joy", "smiley", "smile", "sweat_smile", "laughing", "innocent", "wink", "blush", "slight_smile", "upside_down", "relaxed", "yum", "relieved", "heart_eyes", "kissing_heart", "kissing", "kissing_smiling_eyes", "kissing_closed_eyes", "stuck_out_tongue_winking_eye", "stuck_out_tongue_closed_eyes", "stuck_out_tongue", "money_mouth", "nerd", "sunglasses", "hugging", "smirk", "no_mouth", "neutral_face", "expressionless", "unamused", "rolling_eyes", "thinking", "flushed", "disappointed", "worried", "angry", "rage", "pensive", "confused", "slight_frown", "frowning2", "persevere", "confounded", "tired_face", "weary", "triumph", "open_mouth", "eggplant"};
 
-    /* JADX INFO: renamed from: com.discord.widgets.user.WidgetUserStatusSheetViewModel$1, reason: invalid class name */
+    /* JADX INFO: renamed from: com.discord.widgets.user.WidgetUserStatusSheetViewModel$1 */
     /* JADX INFO: compiled from: WidgetUserStatusSheetViewModel.kt */
-    public static final class AnonymousClass1 extends Lambda implements Function1<StoreState, Unit> {
-        public AnonymousClass1() {
+    public static final class C102461 extends AbstractC12240o implements Function1<StoreState, Unit> {
+        public C102461() {
             super(1);
         }
 
         @Override // kotlin.jvm.functions.Function1
         public /* bridge */ /* synthetic */ Unit invoke(StoreState storeState) {
             invoke2(storeState);
-            return Unit.a;
+            return Unit.f27425a;
         }
 
         /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
         public final void invoke2(StoreState storeState) {
-            Intrinsics3.checkNotNullParameter(storeState, "storeState");
+            C12238m.checkNotNullParameter(storeState, "storeState");
             WidgetUserStatusSheetViewModel.this.handleStoreState(storeState);
         }
     }
@@ -72,16 +72,16 @@ public final class WidgetUserStatusSheetViewModel extends AppViewModel<ViewState
         }
 
         private final Observable<StoreState> observeStoreState(StoreUserPresence storePresences) {
-            Observable observableG = storePresences.observeLocalPresence().G(new Func1<Presence, StoreState>() { // from class: com.discord.widgets.user.WidgetUserStatusSheetViewModel$Companion$observeStoreState$1
-                @Override // j0.k.Func1
+            Observable observableM11083G = storePresences.observeLocalPresence().m11083G(new InterfaceC12589b<Presence, StoreState>() { // from class: com.discord.widgets.user.WidgetUserStatusSheetViewModel$Companion$observeStoreState$1
+                @Override // p637j0.p641k.InterfaceC12589b
                 public final WidgetUserStatusSheetViewModel.StoreState call(Presence presence) {
                     PresenceUtils presenceUtils = PresenceUtils.INSTANCE;
-                    Intrinsics3.checkNotNullExpressionValue(presence, "localPresence");
+                    C12238m.checkNotNullExpressionValue(presence, "localPresence");
                     return new WidgetUserStatusSheetViewModel.StoreState(presenceUtils.getCustomStatusActivity(presence));
                 }
             });
-            Intrinsics3.checkNotNullExpressionValue(observableG, "storePresences\n         …          )\n            }");
-            return observableG;
+            C12238m.checkNotNullExpressionValue(observableM11083G, "storePresences\n         …          )\n            }");
+            return observableM11083G;
         }
 
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
@@ -115,7 +115,7 @@ public final class WidgetUserStatusSheetViewModel extends AppViewModel<ViewState
 
         public boolean equals(Object other) {
             if (this != other) {
-                return (other instanceof StoreState) && Intrinsics3.areEqual(this.customStatusActivity, ((StoreState) other).customStatusActivity);
+                return (other instanceof StoreState) && C12238m.areEqual(this.customStatusActivity, ((StoreState) other).customStatusActivity);
             }
             return true;
         }
@@ -133,10 +133,10 @@ public final class WidgetUserStatusSheetViewModel extends AppViewModel<ViewState
         }
 
         public String toString() {
-            StringBuilder sbU = outline.U("StoreState(customStatusActivity=");
-            sbU.append(this.customStatusActivity);
-            sbU.append(")");
-            return sbU.toString();
+            StringBuilder sbM833U = C1643a.m833U("StoreState(customStatusActivity=");
+            sbM833U.append(this.customStatusActivity);
+            sbM833U.append(")");
+            return sbM833U.toString();
         }
     }
 
@@ -150,7 +150,7 @@ public final class WidgetUserStatusSheetViewModel extends AppViewModel<ViewState
             /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
             public Loaded(UserStatusPresenceCustomView.ViewState viewState) {
                 super(null);
-                Intrinsics3.checkNotNullParameter(viewState, "customStatusViewState");
+                C12238m.checkNotNullParameter(viewState, "customStatusViewState");
                 this.customStatusViewState = viewState;
             }
 
@@ -167,13 +167,13 @@ public final class WidgetUserStatusSheetViewModel extends AppViewModel<ViewState
             }
 
             public final Loaded copy(UserStatusPresenceCustomView.ViewState customStatusViewState) {
-                Intrinsics3.checkNotNullParameter(customStatusViewState, "customStatusViewState");
+                C12238m.checkNotNullParameter(customStatusViewState, "customStatusViewState");
                 return new Loaded(customStatusViewState);
             }
 
             public boolean equals(Object other) {
                 if (this != other) {
-                    return (other instanceof Loaded) && Intrinsics3.areEqual(this.customStatusViewState, ((Loaded) other).customStatusViewState);
+                    return (other instanceof Loaded) && C12238m.areEqual(this.customStatusViewState, ((Loaded) other).customStatusViewState);
                 }
                 return true;
             }
@@ -191,10 +191,10 @@ public final class WidgetUserStatusSheetViewModel extends AppViewModel<ViewState
             }
 
             public String toString() {
-                StringBuilder sbU = outline.U("Loaded(customStatusViewState=");
-                sbU.append(this.customStatusViewState);
-                sbU.append(")");
-                return sbU.toString();
+                StringBuilder sbM833U = C1643a.m833U("Loaded(customStatusViewState=");
+                sbM833U.append(this.customStatusViewState);
+                sbM833U.append(")");
+                return sbM833U.toString();
             }
         }
 
@@ -215,45 +215,45 @@ public final class WidgetUserStatusSheetViewModel extends AppViewModel<ViewState
         }
     }
 
-    /* JADX INFO: renamed from: com.discord.widgets.user.WidgetUserStatusSheetViewModel$clearCustomStatus$1, reason: invalid class name */
+    /* JADX INFO: renamed from: com.discord.widgets.user.WidgetUserStatusSheetViewModel$clearCustomStatus$1 */
     /* JADX INFO: compiled from: WidgetUserStatusSheetViewModel.kt */
-    public static final class AnonymousClass1 extends Lambda implements Function1<ModelUserSettings, Unit> {
-        public static final AnonymousClass1 INSTANCE = new AnonymousClass1();
+    public static final class C102471 extends AbstractC12240o implements Function1<ModelUserSettings, Unit> {
+        public static final C102471 INSTANCE = new C102471();
 
-        public AnonymousClass1() {
+        public C102471() {
             super(1);
         }
 
         @Override // kotlin.jvm.functions.Function1
         public /* bridge */ /* synthetic */ Unit invoke(ModelUserSettings modelUserSettings) {
             invoke2(modelUserSettings);
-            return Unit.a;
+            return Unit.f27425a;
         }
 
         /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
         public final void invoke2(ModelUserSettings modelUserSettings) {
-            Intrinsics3.checkNotNullParameter(modelUserSettings, "it");
+            C12238m.checkNotNullParameter(modelUserSettings, "it");
         }
     }
 
-    /* JADX INFO: renamed from: com.discord.widgets.user.WidgetUserStatusSheetViewModel$setStatus$1, reason: invalid class name */
+    /* JADX INFO: renamed from: com.discord.widgets.user.WidgetUserStatusSheetViewModel$setStatus$1 */
     /* JADX INFO: compiled from: WidgetUserStatusSheetViewModel.kt */
-    public static final class AnonymousClass1 extends Lambda implements Function1<ModelUserSettings, Unit> {
-        public static final AnonymousClass1 INSTANCE = new AnonymousClass1();
+    public static final class C102481 extends AbstractC12240o implements Function1<ModelUserSettings, Unit> {
+        public static final C102481 INSTANCE = new C102481();
 
-        public AnonymousClass1() {
+        public C102481() {
             super(1);
         }
 
         @Override // kotlin.jvm.functions.Function1
         public /* bridge */ /* synthetic */ Unit invoke(ModelUserSettings modelUserSettings) {
             invoke2(modelUserSettings);
-            return Unit.a;
+            return Unit.f27425a;
         }
 
         /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
         public final void invoke2(ModelUserSettings modelUserSettings) {
-            Intrinsics3.checkNotNullParameter(modelUserSettings, "it");
+            C12238m.checkNotNullParameter(modelUserSettings, "it");
         }
     }
 
@@ -271,9 +271,9 @@ public final class WidgetUserStatusSheetViewModel extends AppViewModel<ViewState
     private final ModelEmojiUnicode getPlaceholderEmoji() {
         Map<String, ModelEmojiUnicode> unicodeEmojisNamesMap = StoreStream.INSTANCE.getEmojis().getUnicodeEmojisNamesMap();
         String[] strArr = CUSTOM_EMOJI_PLACEHOLDER_EMOJIS;
-        Random.a aVar = Random.k;
-        ModelEmojiUnicode modelEmojiUnicode = unicodeEmojisNamesMap.get(_Arrays.random(strArr, aVar));
-        return modelEmojiUnicode != null ? modelEmojiUnicode : (ModelEmojiUnicode) _Collections.random(unicodeEmojisNamesMap.values(), aVar);
+        AbstractC11216c.a aVar = AbstractC11216c.f22272k;
+        ModelEmojiUnicode modelEmojiUnicode = unicodeEmojisNamesMap.get(C12141k.random(strArr, aVar));
+        return modelEmojiUnicode != null ? modelEmojiUnicode : (ModelEmojiUnicode) C12163u.random(unicodeEmojisNamesMap.values(), aVar);
     }
 
     private final void handleStoreState(StoreState storeState) {
@@ -301,7 +301,7 @@ public final class WidgetUserStatusSheetViewModel extends AppViewModel<ViewState
     }
 
     public final void clearCustomStatus() {
-        ObservableExtensionsKt.appSubscribe(ObservableExtensionsKt.restSubscribeOn$default(this.storeUserSettings.updateCustomStatus(null), false, 1, null), (Class<?>) WidgetUserStatusSheetViewModel.class, (58 & 2) != 0 ? null : null, (Function1<? super Subscription, Unit>) ((58 & 4) != 0 ? null : null), (Function1<? super Error, Unit>) ((58 & 8) != 0 ? null : null), (Function0<Unit>) ((58 & 16) != 0 ? ObservableExtensionsKt.AnonymousClass1.INSTANCE : null), (Function0<Unit>) ((58 & 32) != 0 ? ObservableExtensionsKt.AnonymousClass2.INSTANCE : null), AnonymousClass1.INSTANCE);
+        ObservableExtensionsKt.appSubscribe(ObservableExtensionsKt.restSubscribeOn$default(this.storeUserSettings.updateCustomStatus(null), false, 1, null), (Class<?>) WidgetUserStatusSheetViewModel.class, (58 & 2) != 0 ? null : null, (Function1<? super Subscription, Unit>) ((58 & 4) != 0 ? null : null), (Function1<? super Error, Unit>) ((58 & 8) != 0 ? null : null), (Function0<Unit>) ((58 & 16) != 0 ? ObservableExtensionsKt.C68791.INSTANCE : null), (Function0<Unit>) ((58 & 32) != 0 ? ObservableExtensionsKt.C68802.INSTANCE : null), C102471.INSTANCE);
     }
 
     public final RestAPI getRestAPI() {
@@ -317,20 +317,20 @@ public final class WidgetUserStatusSheetViewModel extends AppViewModel<ViewState
     }
 
     public final void setStatus(ClientStatus status) {
-        Intrinsics3.checkNotNullParameter(status, "status");
-        ObservableExtensionsKt.appSubscribe(ObservableExtensionsKt.restSubscribeOn$default(this.restAPI.updateUserSettings(RestAPIParams.UserSettings.INSTANCE.createWithStatus(status)), false, 1, null), (Class<?>) WidgetUserStatusSheetViewModel.class, (58 & 2) != 0 ? null : null, (Function1<? super Subscription, Unit>) ((58 & 4) != 0 ? null : null), (Function1<? super Error, Unit>) ((58 & 8) != 0 ? null : null), (Function0<Unit>) ((58 & 16) != 0 ? ObservableExtensionsKt.AnonymousClass1.INSTANCE : null), (Function0<Unit>) ((58 & 32) != 0 ? ObservableExtensionsKt.AnonymousClass2.INSTANCE : null), AnonymousClass1.INSTANCE);
+        C12238m.checkNotNullParameter(status, "status");
+        ObservableExtensionsKt.appSubscribe(ObservableExtensionsKt.restSubscribeOn$default(this.restAPI.updateUserSettings(RestAPIParams.UserSettings.INSTANCE.createWithStatus(status)), false, 1, null), (Class<?>) WidgetUserStatusSheetViewModel.class, (58 & 2) != 0 ? null : null, (Function1<? super Subscription, Unit>) ((58 & 4) != 0 ? null : null), (Function1<? super Error, Unit>) ((58 & 8) != 0 ? null : null), (Function0<Unit>) ((58 & 16) != 0 ? ObservableExtensionsKt.C68791.INSTANCE : null), (Function0<Unit>) ((58 & 32) != 0 ? ObservableExtensionsKt.C68802.INSTANCE : null), C102481.INSTANCE);
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public WidgetUserStatusSheetViewModel(StoreUserSettings storeUserSettings, StoreUserPresence storeUserPresence, RestAPI restAPI, Observable<StoreState> observable) {
         super(ViewState.Uninitialized.INSTANCE);
-        Intrinsics3.checkNotNullParameter(storeUserSettings, "storeUserSettings");
-        Intrinsics3.checkNotNullParameter(storeUserPresence, "storePresences");
-        Intrinsics3.checkNotNullParameter(restAPI, "restAPI");
-        Intrinsics3.checkNotNullParameter(observable, "storeObservable");
+        C12238m.checkNotNullParameter(storeUserSettings, "storeUserSettings");
+        C12238m.checkNotNullParameter(storeUserPresence, "storePresences");
+        C12238m.checkNotNullParameter(restAPI, "restAPI");
+        C12238m.checkNotNullParameter(observable, "storeObservable");
         this.storeUserSettings = storeUserSettings;
         this.storePresences = storeUserPresence;
         this.restAPI = restAPI;
-        ObservableExtensionsKt.appSubscribe(ObservableExtensionsKt.ui$default(ObservableExtensionsKt.computationLatest(observable), this, null, 2, null), (Class<?>) WidgetUserStatusSheetViewModel.class, (58 & 2) != 0 ? null : null, (Function1<? super Subscription, Unit>) ((58 & 4) != 0 ? null : null), (Function1<? super Error, Unit>) ((58 & 8) != 0 ? null : null), (Function0<Unit>) ((58 & 16) != 0 ? ObservableExtensionsKt.AnonymousClass1.INSTANCE : null), (Function0<Unit>) ((58 & 32) != 0 ? ObservableExtensionsKt.AnonymousClass2.INSTANCE : null), new AnonymousClass1());
+        ObservableExtensionsKt.appSubscribe(ObservableExtensionsKt.ui$default(ObservableExtensionsKt.computationLatest(observable), this, null, 2, null), (Class<?>) WidgetUserStatusSheetViewModel.class, (58 & 2) != 0 ? null : null, (Function1<? super Subscription, Unit>) ((58 & 4) != 0 ? null : null), (Function1<? super Error, Unit>) ((58 & 8) != 0 ? null : null), (Function0<Unit>) ((58 & 16) != 0 ? ObservableExtensionsKt.C68791.INSTANCE : null), (Function0<Unit>) ((58 & 32) != 0 ? ObservableExtensionsKt.C68802.INSTANCE : null), new C102461());
     }
 }

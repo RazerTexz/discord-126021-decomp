@@ -72,10 +72,13 @@ public class HandleSuperBuilder extends EclipseAnnotationHandler<SuperBuilder> {
     private static final char[] INSTANCE_VARIABLE_NAME = "instance".toCharArray();
     private static final String BUILDER_VARIABLE_NAME_STRING = "b";
     private static final char[] BUILDER_VARIABLE_NAME = BUILDER_VARIABLE_NAME_STRING.toCharArray();
-    private static /* synthetic */ int[] $SWITCH_TABLE$lombok$eclipse$handlers$EclipseHandlerUtil$MemberExistsResult;
 
-    static /* synthetic */ int[] $SWITCH_TABLE$lombok$eclipse$handlers$EclipseHandlerUtil$MemberExistsResult() {
-        int[] iArr = $SWITCH_TABLE$lombok$eclipse$handlers$EclipseHandlerUtil$MemberExistsResult;
+    /* JADX INFO: renamed from: $SWITCH_TABLE$lombok$eclipse$handlers$EclipseHandlerUtil$MemberExistsResult */
+    private static /* synthetic */ int[] f27474xb87c1847;
+
+    /* JADX INFO: renamed from: $SWITCH_TABLE$lombok$eclipse$handlers$EclipseHandlerUtil$MemberExistsResult */
+    static /* synthetic */ int[] m10934xb87c1847() {
+        int[] iArr = f27474xb87c1847;
         if (iArr != null) {
             return iArr;
         }
@@ -92,7 +95,7 @@ public class HandleSuperBuilder extends EclipseAnnotationHandler<SuperBuilder> {
             iArr2[EclipseHandlerUtil.MemberExistsResult.NOT_EXISTS.ordinal()] = 1;
         } catch (NoSuchFieldError unused3) {
         }
-        $SWITCH_TABLE$lombok$eclipse$handlers$EclipseHandlerUtil$MemberExistsResult = iArr2;
+        f27474xb87c1847 = iArr2;
         return iArr2;
     }
 
@@ -163,7 +166,7 @@ public class HandleSuperBuilder extends EclipseAnnotationHandler<SuperBuilder> {
             generateBuilderMethod = true;
         }
         if (HandlerUtil.checkName("buildMethodName", job.buildMethodName, annotationNode)) {
-            EclipseNode parent = annotationNode.up();
+            EclipseNode parent = annotationNode.m10925up();
             job.builderFields = new ArrayList();
             boolean addCleaning = false;
             List<EclipseNode> nonFinalNonDefaultedFields = null;
@@ -357,7 +360,7 @@ public class HandleSuperBuilder extends EclipseAnnotationHandler<SuperBuilder> {
             }
             job.setBuilderToImpl();
             if (job.toBuilder) {
-                switch ($SWITCH_TABLE$lombok$eclipse$handlers$EclipseHandlerUtil$MemberExistsResult()[EclipseHandlerUtil.methodExists("toBuilder", job.parentType, 0).ordinal()]) {
+                switch (m10934xb87c1847()[EclipseHandlerUtil.methodExists("toBuilder", job.parentType, 0).ordinal()]) {
                     case 1:
                         EclipseHandlerUtil.injectMethod(parent, generateToBuilderMethod(job));
                         break;
@@ -824,7 +827,7 @@ public class HandleSuperBuilder extends EclipseAnnotationHandler<SuperBuilder> {
         EclipseSingularsRecipes.StatementMaker returnStatementMaker = new EclipseSingularsRecipes.StatementMaker() { // from class: lombok.eclipse.handlers.HandleSuperBuilder.2
             @Override // lombok.eclipse.handlers.EclipseSingularsRecipes.StatementMaker
             /* JADX INFO: renamed from: make, reason: merged with bridge method [inline-methods] */
-            public ReturnStatement mo186make() {
+            public ReturnStatement mo11563make() {
                 MessageSend returnCall = new MessageSend();
                 returnCall.receiver = ThisReference.implicitThis();
                 returnCall.selector = HandleSuperBuilder.SELF_METHOD_NAME;
@@ -832,7 +835,7 @@ public class HandleSuperBuilder extends EclipseAnnotationHandler<SuperBuilder> {
             }
         };
         if (bfd.singularData == null || bfd.singularData.getSingularizer() == null) {
-            generateSimpleSetterMethodForBuilder(job, deprecate, bfd.createdFields.get(0), bfd.name, bfd.nameOfSetFlag, returnTypeMaker.make(), returnStatementMaker.mo186make(), bfd.annotations, bfd.originalFieldNode, setterPrefix);
+            generateSimpleSetterMethodForBuilder(job, deprecate, bfd.createdFields.get(0), bfd.name, bfd.nameOfSetFlag, returnTypeMaker.make(), returnStatementMaker.mo11563make(), bfd.annotations, bfd.originalFieldNode, setterPrefix);
         } else {
             bfd.singularData.getSingularizer().generateMethods(job.checkerFramework, bfd.singularData, deprecate, job.builderType, true, returnTypeMaker, returnStatementMaker, AccessLevel.PUBLIC);
         }

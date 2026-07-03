@@ -1,28 +1,29 @@
 package com.facebook.imagepipeline.memory;
 
-import b.f.d.d.DoNotStrip;
-import b.f.d.g.MemoryTrimmableRegistry;
-import b.f.j.l.MemoryChunk;
-import b.f.j.l.MemoryChunkPool;
-import b.f.j.l.PoolParams;
-import b.f.j.l.PoolStatsTracker;
+import p007b.p109f.p115d.p119d.InterfaceC1680c;
+import p007b.p109f.p115d.p122g.InterfaceC1696c;
+import p007b.p109f.p161j.p177l.AbstractC1947s;
+import p007b.p109f.p161j.p177l.C1953y;
+import p007b.p109f.p161j.p177l.InterfaceC1946r;
+import p007b.p109f.p161j.p177l.InterfaceC1954z;
 
 /* JADX INFO: loaded from: classes3.dex */
-@DoNotStrip
-public class NativeMemoryChunkPool extends MemoryChunkPool {
-    @DoNotStrip
-    public NativeMemoryChunkPool(MemoryTrimmableRegistry memoryTrimmableRegistry, PoolParams poolParams, PoolStatsTracker poolStatsTracker) {
-        super(memoryTrimmableRegistry, poolParams, poolStatsTracker);
+@InterfaceC1680c
+public class NativeMemoryChunkPool extends AbstractC1947s {
+    @InterfaceC1680c
+    public NativeMemoryChunkPool(InterfaceC1696c interfaceC1696c, C1953y c1953y, InterfaceC1954z interfaceC1954z) {
+        super(interfaceC1696c, c1953y, interfaceC1954z);
     }
 
-    @Override // b.f.j.l.MemoryChunkPool, com.facebook.imagepipeline.memory.BasePool
-    public MemoryChunk e(int i) {
+    @Override // p007b.p109f.p161j.p177l.AbstractC1947s, com.facebook.imagepipeline.memory.BasePool
+    /* JADX INFO: renamed from: e */
+    public InterfaceC1946r mo1382e(int i) {
         return new NativeMemoryChunk(i);
     }
 
-    @Override // b.f.j.l.MemoryChunkPool
+    @Override // p007b.p109f.p161j.p177l.AbstractC1947s
     /* JADX INFO: renamed from: s */
-    public MemoryChunk e(int i) {
+    public InterfaceC1946r mo1382e(int i) {
         return new NativeMemoryChunk(i);
     }
 }

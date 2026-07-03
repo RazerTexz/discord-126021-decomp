@@ -1,8 +1,8 @@
 package com.discord.api.interaction;
 
-import b.d.b.a.outline;
 import com.discord.models.domain.ModelAuditLogEntry;
-import d0.z.d.Intrinsics3;
+import p007b.p100d.p104b.p105a.C1643a;
+import p507d0.p592z.p594d.C12238m;
 
 /* JADX INFO: compiled from: InteractionStateUpdate.kt */
 /* JADX INFO: loaded from: classes.dex */
@@ -11,7 +11,7 @@ public final /* data */ class InteractionStateUpdate {
     private final String nonce;
 
     public InteractionStateUpdate(Long l, String str) {
-        Intrinsics3.checkNotNullParameter(str, "nonce");
+        C12238m.checkNotNullParameter(str, "nonce");
         this.id = l;
         this.nonce = str;
     }
@@ -34,7 +34,7 @@ public final /* data */ class InteractionStateUpdate {
             return false;
         }
         InteractionStateUpdate interactionStateUpdate = (InteractionStateUpdate) other;
-        return Intrinsics3.areEqual(this.id, interactionStateUpdate.id) && Intrinsics3.areEqual(this.nonce, interactionStateUpdate.nonce);
+        return C12238m.areEqual(this.id, interactionStateUpdate.id) && C12238m.areEqual(this.nonce, interactionStateUpdate.nonce);
     }
 
     public int hashCode() {
@@ -45,9 +45,9 @@ public final /* data */ class InteractionStateUpdate {
     }
 
     public String toString() {
-        StringBuilder sbU = outline.U("InteractionStateUpdate(id=");
-        sbU.append(this.id);
-        sbU.append(", nonce=");
-        return outline.J(sbU, this.nonce, ")");
+        StringBuilder sbM833U = C1643a.m833U("InteractionStateUpdate(id=");
+        sbM833U.append(this.id);
+        sbM833U.append(", nonce=");
+        return C1643a.m822J(sbM833U, this.nonce, ")");
     }
 }

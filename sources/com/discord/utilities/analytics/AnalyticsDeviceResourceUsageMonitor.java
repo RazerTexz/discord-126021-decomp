@@ -9,7 +9,7 @@ import java.util.concurrent.TimeUnit;
 /* JADX INFO: loaded from: classes2.dex */
 public final class AnalyticsDeviceResourceUsageMonitor {
     public static final AnalyticsDeviceResourceUsageMonitor INSTANCE = new AnalyticsDeviceResourceUsageMonitor();
-    private static final DeviceResourceUsageMonitor resourceMonitor = new DeviceResourceUsageMonitor(new TimeSpan(1, TimeUnit.SECONDS), ClockFactory.get(), AnalyticsDeviceResourceUsageMonitor2.INSTANCE);
+    private static final DeviceResourceUsageMonitor resourceMonitor = new DeviceResourceUsageMonitor(new TimeSpan(1, TimeUnit.SECONDS), ClockFactory.get(), AnalyticsDeviceResourceUsageMonitor$resourceMonitor$1.INSTANCE);
 
     private AnalyticsDeviceResourceUsageMonitor() {
     }

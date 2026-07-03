@@ -1,11 +1,11 @@
 package com.discord.widgets.chat.input.autocomplete;
 
-import d0.z.d.Lambda;
 import kotlin.jvm.functions.Function0;
+import p507d0.p592z.p594d.AbstractC12240o;
 
 /* JADX INFO: compiled from: Autocompletable.kt */
 /* JADX INFO: loaded from: classes2.dex */
-public final class GlobalRoleAutocompletable$Companion$here$2 extends Lambda implements Function0<GlobalRoleAutocompletable> {
+public final class GlobalRoleAutocompletable$Companion$here$2 extends AbstractC12240o implements Function0<GlobalRoleAutocompletable> {
     public static final GlobalRoleAutocompletable$Companion$here$2 INSTANCE = new GlobalRoleAutocompletable$Companion$here$2();
 
     public GlobalRoleAutocompletable$Companion$here$2() {

@@ -1,14 +1,14 @@
 package com.discord.analytics.generated.events;
 
-import b.d.b.a.outline;
 import com.discord.analytics.generated.traits.TrackBase;
-import com.discord.analytics.generated.traits.TrackBase2;
+import com.discord.analytics.generated.traits.TrackBaseReceiver;
 import com.discord.api.science.AnalyticsSchema;
-import d0.z.d.Intrinsics3;
+import p007b.p100d.p104b.p105a.C1643a;
+import p507d0.p592z.p594d.C12238m;
 
 /* JADX INFO: compiled from: TrackAndroidHardwareSurvey.kt */
 /* JADX INFO: loaded from: classes.dex */
-public final /* data */ class TrackAndroidHardwareSurvey implements AnalyticsSchema, TrackBase2 {
+public final /* data */ class TrackAndroidHardwareSurvey implements AnalyticsSchema, TrackBaseReceiver {
     private TrackBase trackBase;
     private final CharSequence deviceBoard = null;
     private final CharSequence deviceBrand = null;
@@ -43,7 +43,7 @@ public final /* data */ class TrackAndroidHardwareSurvey implements AnalyticsSch
             return false;
         }
         TrackAndroidHardwareSurvey trackAndroidHardwareSurvey = (TrackAndroidHardwareSurvey) other;
-        return Intrinsics3.areEqual(this.deviceBoard, trackAndroidHardwareSurvey.deviceBoard) && Intrinsics3.areEqual(this.deviceBrand, trackAndroidHardwareSurvey.deviceBrand) && Intrinsics3.areEqual(this.deviceManufacturer, trackAndroidHardwareSurvey.deviceManufacturer) && Intrinsics3.areEqual(this.deviceModel, trackAndroidHardwareSurvey.deviceModel) && Intrinsics3.areEqual(this.deviceProduct, trackAndroidHardwareSurvey.deviceProduct) && Intrinsics3.areEqual(this.deviceSupportedAbis, trackAndroidHardwareSurvey.deviceSupportedAbis) && Intrinsics3.areEqual(this.deviceIs64Bit, trackAndroidHardwareSurvey.deviceIs64Bit) && Intrinsics3.areEqual(this.isLowRamDevice, trackAndroidHardwareSurvey.isLowRamDevice) && Intrinsics3.areEqual(this.memoryClass, trackAndroidHardwareSurvey.memoryClass) && Intrinsics3.areEqual(this.largeMemoryClass, trackAndroidHardwareSurvey.largeMemoryClass) && Intrinsics3.areEqual(this.hardwareDecoders1080, trackAndroidHardwareSurvey.hardwareDecoders1080) && Intrinsics3.areEqual(this.hardwareDecoders720, trackAndroidHardwareSurvey.hardwareDecoders720) && Intrinsics3.areEqual(this.hardwareDecoders480, trackAndroidHardwareSurvey.hardwareDecoders480) && Intrinsics3.areEqual(this.decoders1080, trackAndroidHardwareSurvey.decoders1080) && Intrinsics3.areEqual(this.decoders720, trackAndroidHardwareSurvey.decoders720) && Intrinsics3.areEqual(this.decoders480, trackAndroidHardwareSurvey.decoders480) && Intrinsics3.areEqual(this.testDurationMs, trackAndroidHardwareSurvey.testDurationMs);
+        return C12238m.areEqual(this.deviceBoard, trackAndroidHardwareSurvey.deviceBoard) && C12238m.areEqual(this.deviceBrand, trackAndroidHardwareSurvey.deviceBrand) && C12238m.areEqual(this.deviceManufacturer, trackAndroidHardwareSurvey.deviceManufacturer) && C12238m.areEqual(this.deviceModel, trackAndroidHardwareSurvey.deviceModel) && C12238m.areEqual(this.deviceProduct, trackAndroidHardwareSurvey.deviceProduct) && C12238m.areEqual(this.deviceSupportedAbis, trackAndroidHardwareSurvey.deviceSupportedAbis) && C12238m.areEqual(this.deviceIs64Bit, trackAndroidHardwareSurvey.deviceIs64Bit) && C12238m.areEqual(this.isLowRamDevice, trackAndroidHardwareSurvey.isLowRamDevice) && C12238m.areEqual(this.memoryClass, trackAndroidHardwareSurvey.memoryClass) && C12238m.areEqual(this.largeMemoryClass, trackAndroidHardwareSurvey.largeMemoryClass) && C12238m.areEqual(this.hardwareDecoders1080, trackAndroidHardwareSurvey.hardwareDecoders1080) && C12238m.areEqual(this.hardwareDecoders720, trackAndroidHardwareSurvey.hardwareDecoders720) && C12238m.areEqual(this.hardwareDecoders480, trackAndroidHardwareSurvey.hardwareDecoders480) && C12238m.areEqual(this.decoders1080, trackAndroidHardwareSurvey.decoders1080) && C12238m.areEqual(this.decoders720, trackAndroidHardwareSurvey.decoders720) && C12238m.areEqual(this.decoders480, trackAndroidHardwareSurvey.decoders480) && C12238m.areEqual(this.testDurationMs, trackAndroidHardwareSurvey.testDurationMs);
     }
 
     public int hashCode() {
@@ -84,39 +84,39 @@ public final /* data */ class TrackAndroidHardwareSurvey implements AnalyticsSch
     }
 
     public String toString() {
-        StringBuilder sbU = outline.U("TrackAndroidHardwareSurvey(deviceBoard=");
-        sbU.append(this.deviceBoard);
-        sbU.append(", deviceBrand=");
-        sbU.append(this.deviceBrand);
-        sbU.append(", deviceManufacturer=");
-        sbU.append(this.deviceManufacturer);
-        sbU.append(", deviceModel=");
-        sbU.append(this.deviceModel);
-        sbU.append(", deviceProduct=");
-        sbU.append(this.deviceProduct);
-        sbU.append(", deviceSupportedAbis=");
-        sbU.append(this.deviceSupportedAbis);
-        sbU.append(", deviceIs64Bit=");
-        sbU.append(this.deviceIs64Bit);
-        sbU.append(", isLowRamDevice=");
-        sbU.append(this.isLowRamDevice);
-        sbU.append(", memoryClass=");
-        sbU.append(this.memoryClass);
-        sbU.append(", largeMemoryClass=");
-        sbU.append(this.largeMemoryClass);
-        sbU.append(", hardwareDecoders1080=");
-        sbU.append(this.hardwareDecoders1080);
-        sbU.append(", hardwareDecoders720=");
-        sbU.append(this.hardwareDecoders720);
-        sbU.append(", hardwareDecoders480=");
-        sbU.append(this.hardwareDecoders480);
-        sbU.append(", decoders1080=");
-        sbU.append(this.decoders1080);
-        sbU.append(", decoders720=");
-        sbU.append(this.decoders720);
-        sbU.append(", decoders480=");
-        sbU.append(this.decoders480);
-        sbU.append(", testDurationMs=");
-        return outline.G(sbU, this.testDurationMs, ")");
+        StringBuilder sbM833U = C1643a.m833U("TrackAndroidHardwareSurvey(deviceBoard=");
+        sbM833U.append(this.deviceBoard);
+        sbM833U.append(", deviceBrand=");
+        sbM833U.append(this.deviceBrand);
+        sbM833U.append(", deviceManufacturer=");
+        sbM833U.append(this.deviceManufacturer);
+        sbM833U.append(", deviceModel=");
+        sbM833U.append(this.deviceModel);
+        sbM833U.append(", deviceProduct=");
+        sbM833U.append(this.deviceProduct);
+        sbM833U.append(", deviceSupportedAbis=");
+        sbM833U.append(this.deviceSupportedAbis);
+        sbM833U.append(", deviceIs64Bit=");
+        sbM833U.append(this.deviceIs64Bit);
+        sbM833U.append(", isLowRamDevice=");
+        sbM833U.append(this.isLowRamDevice);
+        sbM833U.append(", memoryClass=");
+        sbM833U.append(this.memoryClass);
+        sbM833U.append(", largeMemoryClass=");
+        sbM833U.append(this.largeMemoryClass);
+        sbM833U.append(", hardwareDecoders1080=");
+        sbM833U.append(this.hardwareDecoders1080);
+        sbM833U.append(", hardwareDecoders720=");
+        sbM833U.append(this.hardwareDecoders720);
+        sbM833U.append(", hardwareDecoders480=");
+        sbM833U.append(this.hardwareDecoders480);
+        sbM833U.append(", decoders1080=");
+        sbM833U.append(this.decoders1080);
+        sbM833U.append(", decoders720=");
+        sbM833U.append(this.decoders720);
+        sbM833U.append(", decoders480=");
+        sbM833U.append(this.decoders480);
+        sbM833U.append(", testDurationMs=");
+        return C1643a.m819G(sbM833U, this.testDurationMs, ")");
     }
 }

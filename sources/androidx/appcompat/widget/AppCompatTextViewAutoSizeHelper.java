@@ -21,15 +21,15 @@ import androidx.annotation.Nullable;
 import androidx.annotation.RequiresApi;
 import androidx.annotation.RestrictTo;
 import androidx.annotation.VisibleForTesting;
-import androidx.appcompat.R;
+import androidx.appcompat.C0051R;
 import androidx.core.view.ViewCompat;
-import b.d.b.a.outline;
 import java.lang.reflect.Field;
 import java.lang.reflect.Method;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.concurrent.ConcurrentHashMap;
+import p007b.p100d.p104b.p105a.C1643a;
 
 /* JADX INFO: loaded from: classes.dex */
 public class AppCompatTextViewAutoSizeHelper {
@@ -405,21 +405,21 @@ public class AppCompatTextViewAutoSizeHelper {
     public void loadFromAttributes(@Nullable AttributeSet attributeSet, int i) {
         int resourceId;
         Context context = this.mContext;
-        int[] iArr = R.styleable.AppCompatTextView;
+        int[] iArr = C0051R.styleable.AppCompatTextView;
         TypedArray typedArrayObtainStyledAttributes = context.obtainStyledAttributes(attributeSet, iArr, i, 0);
         TextView textView = this.mTextView;
         ViewCompat.saveAttributeDataForStyleable(textView, textView.getContext(), iArr, attributeSet, typedArrayObtainStyledAttributes, i, 0);
-        int i2 = R.styleable.AppCompatTextView_autoSizeTextType;
+        int i2 = C0051R.styleable.AppCompatTextView_autoSizeTextType;
         if (typedArrayObtainStyledAttributes.hasValue(i2)) {
             this.mAutoSizeTextType = typedArrayObtainStyledAttributes.getInt(i2, 0);
         }
-        int i3 = R.styleable.AppCompatTextView_autoSizeStepGranularity;
+        int i3 = C0051R.styleable.AppCompatTextView_autoSizeStepGranularity;
         float dimension = typedArrayObtainStyledAttributes.hasValue(i3) ? typedArrayObtainStyledAttributes.getDimension(i3, -1.0f) : -1.0f;
-        int i4 = R.styleable.AppCompatTextView_autoSizeMinTextSize;
+        int i4 = C0051R.styleable.AppCompatTextView_autoSizeMinTextSize;
         float dimension2 = typedArrayObtainStyledAttributes.hasValue(i4) ? typedArrayObtainStyledAttributes.getDimension(i4, -1.0f) : -1.0f;
-        int i5 = R.styleable.AppCompatTextView_autoSizeMaxTextSize;
+        int i5 = C0051R.styleable.AppCompatTextView_autoSizeMaxTextSize;
         float dimension3 = typedArrayObtainStyledAttributes.hasValue(i5) ? typedArrayObtainStyledAttributes.getDimension(i5, -1.0f) : -1.0f;
-        int i6 = R.styleable.AppCompatTextView_autoSizePresetSizes;
+        int i6 = C0051R.styleable.AppCompatTextView_autoSizePresetSizes;
         if (typedArrayObtainStyledAttributes.hasValue(i6) && (resourceId = typedArrayObtainStyledAttributes.getResourceId(i6, 0)) > 0) {
             TypedArray typedArrayObtainTypedArray = typedArrayObtainStyledAttributes.getResources().obtainTypedArray(resourceId);
             setupAutoSizeUniformPresetSizes(typedArrayObtainTypedArray);
@@ -475,9 +475,9 @@ public class AppCompatTextViewAutoSizeHelper {
                 }
                 this.mAutoSizeTextSizesInPx = cleanupAutoSizePresetSizes(iArrCopyOf);
                 if (!setupAutoSizeUniformPresetSizesConfiguration()) {
-                    StringBuilder sbU = outline.U("None of the preset sizes is valid: ");
-                    sbU.append(Arrays.toString(iArr));
-                    throw new IllegalArgumentException(sbU.toString());
+                    StringBuilder sbM833U = C1643a.m833U("None of the preset sizes is valid: ");
+                    sbM833U.append(Arrays.toString(iArr));
+                    throw new IllegalArgumentException(sbM833U.toString());
                 }
             } else {
                 this.mHasPresetAutoSizeValues = false;
@@ -496,7 +496,7 @@ public class AppCompatTextViewAutoSizeHelper {
                 return;
             }
             if (i != 1) {
-                throw new IllegalArgumentException(outline.q("Unknown auto-size text type: ", i));
+                throw new IllegalArgumentException(C1643a.m871q("Unknown auto-size text type: ", i));
             }
             DisplayMetrics displayMetrics = this.mContext.getResources().getDisplayMetrics();
             validateAndSetAutoSizeTextTypeUniformConfiguration(TypedValue.applyDimension(2, 12.0f, displayMetrics), TypedValue.applyDimension(2, 112.0f, displayMetrics), 1.0f);

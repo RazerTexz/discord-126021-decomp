@@ -31,7 +31,7 @@ public class VideoEncoderWrapper {
 
     @CalledByNative
     public static boolean getScalingSettingsOn(VideoEncoder.ScalingSettings scalingSettings) {
-        return scalingSettings.on;
+        return scalingSettings.f27620on;
     }
 
     private static native void nativeOnEncodedFrame(long j, EncodedImage encodedImage);

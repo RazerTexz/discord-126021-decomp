@@ -5,12 +5,12 @@ import android.media.AudioRecord;
 import android.media.AudioTrack;
 import android.os.Build;
 import androidx.annotation.Nullable;
-import b.d.b.a.outline;
 import java.util.Timer;
 import java.util.TimerTask;
 import org.webrtc.ContextUtils;
 import org.webrtc.Logging;
 import org.webrtc.MediaStreamTrack;
+import p007b.p100d.p104b.p105a.C1643a;
 
 /* JADX INFO: loaded from: classes3.dex */
 public class WebRtcAudioManager {
@@ -63,21 +63,21 @@ public class WebRtcAudioManager {
             public void run() {
                 int mode = VolumeLogger.this.audioManager.getMode();
                 if (mode == 1) {
-                    StringBuilder sbU = outline.U("STREAM_RING stream volume: ");
-                    sbU.append(VolumeLogger.this.audioManager.getStreamVolume(2));
-                    sbU.append(" (max=");
-                    sbU.append(this.maxRingVolume);
-                    sbU.append(")");
-                    Logging.d(WebRtcAudioManager.TAG, sbU.toString());
+                    StringBuilder sbM833U = C1643a.m833U("STREAM_RING stream volume: ");
+                    sbM833U.append(VolumeLogger.this.audioManager.getStreamVolume(2));
+                    sbM833U.append(" (max=");
+                    sbM833U.append(this.maxRingVolume);
+                    sbM833U.append(")");
+                    Logging.m11027d(WebRtcAudioManager.TAG, sbM833U.toString());
                     return;
                 }
                 if (mode == 3) {
-                    StringBuilder sbU2 = outline.U("VOICE_CALL stream volume: ");
-                    sbU2.append(VolumeLogger.this.audioManager.getStreamVolume(0));
-                    sbU2.append(" (max=");
-                    sbU2.append(this.maxVoiceCallVolume);
-                    sbU2.append(")");
-                    Logging.d(WebRtcAudioManager.TAG, sbU2.toString());
+                    StringBuilder sbM833U2 = C1643a.m833U("VOICE_CALL stream volume: ");
+                    sbM833U2.append(VolumeLogger.this.audioManager.getStreamVolume(0));
+                    sbM833U2.append(" (max=");
+                    sbM833U2.append(this.maxVoiceCallVolume);
+                    sbM833U2.append(")");
+                    Logging.m11027d(WebRtcAudioManager.TAG, sbM833U2.toString());
                 }
             }
         }
@@ -102,9 +102,9 @@ public class WebRtcAudioManager {
     }
 
     public WebRtcAudioManager(long j) {
-        StringBuilder sbU = outline.U("ctor");
-        sbU.append(WebRtcAudioUtils.getThreadInfo());
-        Logging.d(TAG, sbU.toString());
+        StringBuilder sbM833U = C1643a.m833U("ctor");
+        sbM833U.append(WebRtcAudioUtils.getThreadInfo());
+        Logging.m11027d(TAG, sbM833U.toString());
         this.nativeAudioManager = j;
         AudioManager audioManager = (AudioManager) ContextUtils.getApplicationContext().getSystemService(MediaStreamTrack.AUDIO_TRACK_KIND);
         this.audioManager = audioManager;
@@ -121,9 +121,9 @@ public class WebRtcAudioManager {
     }
 
     private void dispose() {
-        StringBuilder sbU = outline.U("dispose");
-        sbU.append(WebRtcAudioUtils.getThreadInfo());
-        Logging.d(TAG, sbU.toString());
+        StringBuilder sbM833U = C1643a.m833U("dispose");
+        sbM833U.append(WebRtcAudioUtils.getThreadInfo());
+        Logging.m11027d(TAG, sbM833U.toString());
         if (this.initialized) {
             this.volumeLogger.stop();
         }
@@ -153,18 +153,18 @@ public class WebRtcAudioManager {
 
     private int getNativeOutputSampleRate() {
         if (WebRtcAudioUtils.runningOnEmulator()) {
-            Logging.d(TAG, "Running emulator, overriding sample rate to 8 kHz.");
+            Logging.m11027d(TAG, "Running emulator, overriding sample rate to 8 kHz.");
             return 8000;
         }
         if (WebRtcAudioUtils.isDefaultSampleRateOverridden()) {
-            StringBuilder sbU = outline.U("Default sample rate is overriden to ");
-            sbU.append(WebRtcAudioUtils.getDefaultSampleRateHz());
-            sbU.append(" Hz");
-            Logging.d(TAG, sbU.toString());
+            StringBuilder sbM833U = C1643a.m833U("Default sample rate is overriden to ");
+            sbM833U.append(WebRtcAudioUtils.getDefaultSampleRateHz());
+            sbM833U.append(" Hz");
+            Logging.m11027d(TAG, sbM833U.toString());
             return WebRtcAudioUtils.getDefaultSampleRateHz();
         }
         int sampleRateForApiLevel = getSampleRateForApiLevel();
-        Logging.d(TAG, "Sample rate is set to " + sampleRateForApiLevel + " Hz");
+        Logging.m11027d(TAG, "Sample rate is set to " + sampleRateForApiLevel + " Hz");
         return sampleRateForApiLevel;
     }
 
@@ -186,22 +186,22 @@ public class WebRtcAudioManager {
     }
 
     private boolean init() {
-        StringBuilder sbU = outline.U("init");
-        sbU.append(WebRtcAudioUtils.getThreadInfo());
-        Logging.d(TAG, sbU.toString());
+        StringBuilder sbM833U = C1643a.m833U("init");
+        sbM833U.append(WebRtcAudioUtils.getThreadInfo());
+        Logging.m11027d(TAG, sbM833U.toString());
         if (this.initialized) {
             return true;
         }
-        StringBuilder sbU2 = outline.U("audio mode is: ");
-        sbU2.append(WebRtcAudioUtils.modeToString(this.audioManager.getMode()));
-        Logging.d(TAG, sbU2.toString());
+        StringBuilder sbM833U2 = C1643a.m833U("audio mode is: ");
+        sbM833U2.append(WebRtcAudioUtils.modeToString(this.audioManager.getMode()));
+        Logging.m11027d(TAG, sbM833U2.toString());
         this.initialized = true;
         this.volumeLogger.start();
         return true;
     }
 
     private boolean isAAudioSupported() {
-        Logging.w(TAG, "AAudio support is currently disabled on all devices!");
+        Logging.m11031w(TAG, "AAudio support is currently disabled on all devices!");
         return false;
     }
 
@@ -216,7 +216,7 @@ public class WebRtcAudioManager {
     private boolean isDeviceBlacklistedForOpenSLESUsage() {
         boolean zDeviceIsBlacklistedForOpenSLESUsage = blacklistDeviceForOpenSLESUsageIsOverridden ? blacklistDeviceForOpenSLESUsage : WebRtcAudioUtils.deviceIsBlacklistedForOpenSLESUsage();
         if (zDeviceIsBlacklistedForOpenSLESUsage) {
-            Logging.d(TAG, Build.MODEL + " is blacklisted for OpenSL ES usage!");
+            Logging.m11027d(TAG, Build.MODEL + " is blacklisted for OpenSL ES usage!");
         }
         return zDeviceIsBlacklistedForOpenSLESUsage;
     }
@@ -241,12 +241,12 @@ public class WebRtcAudioManager {
     }
 
     public static synchronized void setStereoInput(boolean z2) {
-        Logging.w(TAG, "Overriding default input behavior: setStereoInput(" + z2 + ')');
+        Logging.m11031w(TAG, "Overriding default input behavior: setStereoInput(" + z2 + ')');
         useStereoInput = z2;
     }
 
     public static synchronized void setStereoOutput(boolean z2) {
-        Logging.w(TAG, "Overriding default output behavior: setStereoOutput(" + z2 + ')');
+        Logging.m11031w(TAG, "Overriding default output behavior: setStereoOutput(" + z2 + ')');
         useStereoOutput = z2;
     }
 

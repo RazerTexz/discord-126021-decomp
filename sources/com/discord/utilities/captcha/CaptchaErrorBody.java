@@ -1,16 +1,16 @@
 package com.discord.utilities.captcha;
 
-import b.d.b.a.outline;
-import b.i.a.f.e.o.f;
-import b.i.d.FieldNamingPolicy;
-import b.i.d.GsonBuilder;
 import com.discord.app.AppLog;
 import com.discord.utilities.error.Error;
 import com.discord.utilities.logging.Logger;
-import d0.z.d.Intrinsics3;
 import java.io.Serializable;
 import java.util.List;
 import kotlin.jvm.internal.DefaultConstructorMarker;
+import p007b.p100d.p104b.p105a.C1643a;
+import p007b.p225i.p226a.p288f.p299e.p308o.C3404f;
+import p007b.p225i.p408d.C4901e;
+import p007b.p225i.p408d.EnumC4899c;
+import p507d0.p592z.p594d.C12238m;
 
 /* JADX INFO: compiled from: CaptchaErrorBody.kt */
 /* JADX INFO: loaded from: classes2.dex */
@@ -30,29 +30,29 @@ public final /* data */ class CaptchaErrorBody implements Serializable {
         }
 
         public final CaptchaErrorBody createFromError(Error error) {
-            Intrinsics3.checkNotNullParameter(error, "error");
+            C12238m.checkNotNullParameter(error, "error");
             String bodyText = error.getBodyText();
             if (bodyText == null) {
                 return null;
             }
-            GsonBuilder gsonBuilder = new GsonBuilder();
-            gsonBuilder.c = FieldNamingPolicy.m;
+            C4901e c4901e = new C4901e();
+            c4901e.f13097c = EnumC4899c.f13091m;
             try {
-                return (CaptchaErrorBody) f.E1(CaptchaErrorBody.class).cast(gsonBuilder.a().g(bodyText, CaptchaErrorBody.class));
+                return (CaptchaErrorBody) C3404f.m4203E1(CaptchaErrorBody.class).cast(c4901e.m6851a().m9203g(bodyText, CaptchaErrorBody.class));
             } catch (Exception e) {
-                Logger.e$default(AppLog.g, "failed to parse captcha error body", e, null, 4, null);
+                Logger.e$default(AppLog.f14950g, "failed to parse captcha error body", e, null, 4, null);
                 return null;
             }
         }
 
         public final CaptchaErrorBody createFromString(String errorString) {
-            Intrinsics3.checkNotNullParameter(errorString, "errorString");
-            GsonBuilder gsonBuilder = new GsonBuilder();
-            gsonBuilder.c = FieldNamingPolicy.m;
+            C12238m.checkNotNullParameter(errorString, "errorString");
+            C4901e c4901e = new C4901e();
+            c4901e.f13097c = EnumC4899c.f13091m;
             try {
-                return (CaptchaErrorBody) f.E1(CaptchaErrorBody.class).cast(gsonBuilder.a().g(errorString, CaptchaErrorBody.class));
+                return (CaptchaErrorBody) C3404f.m4203E1(CaptchaErrorBody.class).cast(c4901e.m6851a().m9203g(errorString, CaptchaErrorBody.class));
             } catch (Exception e) {
-                Logger.e$default(AppLog.g, "failed to parse captcha error body", e, null, 4, null);
+                Logger.e$default(AppLog.f14950g, "failed to parse captcha error body", e, null, 4, null);
                 return null;
             }
         }
@@ -129,7 +129,7 @@ public final /* data */ class CaptchaErrorBody implements Serializable {
             return false;
         }
         CaptchaErrorBody captchaErrorBody = (CaptchaErrorBody) other;
-        return Intrinsics3.areEqual(this.captchaKey, captchaErrorBody.captchaKey) && Intrinsics3.areEqual(this.captchaSitekey, captchaErrorBody.captchaSitekey) && Intrinsics3.areEqual(this.captchaService, captchaErrorBody.captchaService) && Intrinsics3.areEqual(this.captchaRqdata, captchaErrorBody.captchaRqdata) && Intrinsics3.areEqual(this.captchaRqtoken, captchaErrorBody.captchaRqtoken);
+        return C12238m.areEqual(this.captchaKey, captchaErrorBody.captchaKey) && C12238m.areEqual(this.captchaSitekey, captchaErrorBody.captchaSitekey) && C12238m.areEqual(this.captchaService, captchaErrorBody.captchaService) && C12238m.areEqual(this.captchaRqdata, captchaErrorBody.captchaRqdata) && C12238m.areEqual(this.captchaRqtoken, captchaErrorBody.captchaRqtoken);
     }
 
     public final List<String> getCaptchaKey() {
@@ -166,15 +166,15 @@ public final /* data */ class CaptchaErrorBody implements Serializable {
     }
 
     public String toString() {
-        StringBuilder sbU = outline.U("CaptchaErrorBody(captchaKey=");
-        sbU.append(this.captchaKey);
-        sbU.append(", captchaSitekey=");
-        sbU.append(this.captchaSitekey);
-        sbU.append(", captchaService=");
-        sbU.append(this.captchaService);
-        sbU.append(", captchaRqdata=");
-        sbU.append(this.captchaRqdata);
-        sbU.append(", captchaRqtoken=");
-        return outline.J(sbU, this.captchaRqtoken, ")");
+        StringBuilder sbM833U = C1643a.m833U("CaptchaErrorBody(captchaKey=");
+        sbM833U.append(this.captchaKey);
+        sbM833U.append(", captchaSitekey=");
+        sbM833U.append(this.captchaSitekey);
+        sbM833U.append(", captchaService=");
+        sbM833U.append(this.captchaService);
+        sbM833U.append(", captchaRqdata=");
+        sbM833U.append(this.captchaRqdata);
+        sbM833U.append(", captchaRqtoken=");
+        return C1643a.m822J(sbM833U, this.captchaRqtoken, ")");
     }
 }

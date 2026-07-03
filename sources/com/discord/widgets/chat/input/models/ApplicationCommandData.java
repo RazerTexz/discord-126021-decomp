@@ -1,11 +1,11 @@
 package com.discord.widgets.chat.input.models;
 
-import b.d.b.a.outline;
 import com.discord.models.commands.Application;
 import com.discord.models.commands.ApplicationCommand;
-import d0.z.d.Intrinsics3;
 import java.util.List;
 import kotlin.jvm.internal.DefaultConstructorMarker;
+import p007b.p100d.p104b.p105a.C1643a;
+import p507d0.p592z.p594d.C12238m;
 
 /* JADX INFO: compiled from: ApplicationCommandData.kt */
 /* JADX INFO: loaded from: classes2.dex */
@@ -16,9 +16,9 @@ public final /* data */ class ApplicationCommandData {
     private final List<ApplicationCommandValue> values;
 
     public ApplicationCommandData(Application application, ApplicationCommand applicationCommand, List<ApplicationCommandValue> list, boolean z2) {
-        Intrinsics3.checkNotNullParameter(application, "application");
-        Intrinsics3.checkNotNullParameter(applicationCommand, "applicationCommand");
-        Intrinsics3.checkNotNullParameter(list, "values");
+        C12238m.checkNotNullParameter(application, "application");
+        C12238m.checkNotNullParameter(applicationCommand, "applicationCommand");
+        C12238m.checkNotNullParameter(list, "values");
         this.application = application;
         this.applicationCommand = applicationCommand;
         this.values = list;
@@ -62,9 +62,9 @@ public final /* data */ class ApplicationCommandData {
     }
 
     public final ApplicationCommandData copy(Application application, ApplicationCommand applicationCommand, List<ApplicationCommandValue> values, boolean validInputs) {
-        Intrinsics3.checkNotNullParameter(application, "application");
-        Intrinsics3.checkNotNullParameter(applicationCommand, "applicationCommand");
-        Intrinsics3.checkNotNullParameter(values, "values");
+        C12238m.checkNotNullParameter(application, "application");
+        C12238m.checkNotNullParameter(applicationCommand, "applicationCommand");
+        C12238m.checkNotNullParameter(values, "values");
         return new ApplicationCommandData(application, applicationCommand, values, validInputs);
     }
 
@@ -76,7 +76,7 @@ public final /* data */ class ApplicationCommandData {
             return false;
         }
         ApplicationCommandData applicationCommandData = (ApplicationCommandData) other;
-        return Intrinsics3.areEqual(this.application, applicationCommandData.application) && Intrinsics3.areEqual(this.applicationCommand, applicationCommandData.applicationCommand) && Intrinsics3.areEqual(this.values, applicationCommandData.values) && this.validInputs == applicationCommandData.validInputs;
+        return C12238m.areEqual(this.application, applicationCommandData.application) && C12238m.areEqual(this.applicationCommand, applicationCommandData.applicationCommand) && C12238m.areEqual(this.values, applicationCommandData.values) && this.validInputs == applicationCommandData.validInputs;
     }
 
     public final Application getApplication() {
@@ -116,14 +116,14 @@ public final /* data */ class ApplicationCommandData {
     }
 
     public String toString() {
-        StringBuilder sbU = outline.U("ApplicationCommandData(application=");
-        sbU.append(this.application);
-        sbU.append(", applicationCommand=");
-        sbU.append(this.applicationCommand);
-        sbU.append(", values=");
-        sbU.append(this.values);
-        sbU.append(", validInputs=");
-        return outline.O(sbU, this.validInputs, ")");
+        StringBuilder sbM833U = C1643a.m833U("ApplicationCommandData(application=");
+        sbM833U.append(this.application);
+        sbM833U.append(", applicationCommand=");
+        sbM833U.append(this.applicationCommand);
+        sbM833U.append(", values=");
+        sbM833U.append(this.values);
+        sbM833U.append(", validInputs=");
+        return C1643a.m827O(sbM833U, this.validInputs, ")");
     }
 
     public /* synthetic */ ApplicationCommandData(Application application, ApplicationCommand applicationCommand, List list, boolean z2, int i, DefaultConstructorMarker defaultConstructorMarker) {
