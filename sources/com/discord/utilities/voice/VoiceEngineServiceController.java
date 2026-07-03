@@ -420,7 +420,7 @@ public final class VoiceEngineServiceController {
                 return;
             }
             Context context = this.$context;
-            VoiceEngineForegroundService.INSTANCE.startForegroundAndBind(VoiceEngineServiceController.access$getServiceBinding$p(VoiceEngineServiceController.this), C1107b.m216h(context, C5419R.string.call_mobile_tap_to_return, new Object[]{C1107b.m216h(context, notificationData.getStateString(), new Object[0], null, 4)}, null, 4), notificationData.getChannelName(), notificationData.isSelfMuted(), notificationData.isSelfDeafened(), notificationData.isSelfStreaming(), notificationData.getChannelId(), notificationData.getGuildId(), notificationData.getProximityLockEnabled(), notificationData.getCanSpeak());
+            VoiceEngineForegroundService.INSTANCE.startForegroundAndBind(VoiceEngineServiceController.access$getServiceBinding$p(VoiceEngineServiceController.this), C1107b.m210b(context, C5419R.string.call_mobile_tap_to_return, new Object[]{C1107b.m210b(context, notificationData.getStateString(), new Object[0], (4 & 4) != 0 ? C1107b.b.f1491j : null)}, (4 & 4) != 0 ? C1107b.b.f1491j : null), notificationData.getChannelName(), notificationData.isSelfMuted(), notificationData.isSelfDeafened(), notificationData.isSelfStreaming(), notificationData.getChannelId(), notificationData.getGuildId(), notificationData.getProximityLockEnabled(), notificationData.getCanSpeak());
             if (C12238m.areEqual(notificationData.getRtcConnectionState(), RtcConnection.State.C5612f.f18814a)) {
                 DiscordOverlayService.INSTANCE.launchForVoice(this.$context);
             }

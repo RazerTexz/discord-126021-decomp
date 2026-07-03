@@ -676,7 +676,7 @@ public final class WidgetChatListAdapterItemGift extends WidgetChatListItem {
             TextView textView4 = this.binding.f16213e;
             C12238m.checkNotNullExpressionValue(textView4, "binding.itemGiftExpires");
             C12238m.checkNotNullExpressionValue(context, "context");
-            textView4.setText(C1107b.m216h(context, C5419R.string.gift_embed_expiration, new Object[]{GiftingUtils.INSTANCE.getTimeString(model.getGift().getExpiresDiff(ClockFactory.get().currentTimeMillis()), context)}, null, 4));
+            textView4.setText(C1107b.m210b(context, C5419R.string.gift_embed_expiration, new Object[]{GiftingUtils.INSTANCE.getTimeString(model.getGift().getExpiresDiff(ClockFactory.get().currentTimeMillis()), context)}, (4 & 4) != 0 ? C1107b.b.f1491j : null));
         }
         if (model.getGift().isAnyNitroGift()) {
             MGImages mGImages = MGImages.INSTANCE;
@@ -701,7 +701,7 @@ public final class WidgetChatListAdapterItemGift extends WidgetChatListItem {
             string = context.getString(C5419R.string.gift_embed_body_claimed_self_mobile);
         } else if (model.getInLibrary()) {
             C12238m.checkNotNullExpressionValue(context, "context");
-            string = C12103t.replace$default(C12103t.replace$default(C12103t.replace$default(C1107b.m216h(context, C5419R.string.gift_code_auth_help_text_owned, new Object[]{""}, null, 4).toString(), "()", "", false, 4, (Object) null), "[", "", false, 4, (Object) null), "]", "", false, 4, (Object) null);
+            string = C12103t.replace$default(C12103t.replace$default(C12103t.replace$default(C1107b.m210b(context, C5419R.string.gift_code_auth_help_text_owned, new Object[]{""}, (4 & 4) != 0 ? C1107b.b.f1491j : null).toString(), "()", "", false, 4, (Object) null), "[", "", false, 4, (Object) null), "]", "", false, 4, (Object) null);
         } else {
             string = z3 ? context.getString(C5419R.string.gift_code_auth_help_text_claimed) : null;
         }

@@ -118,7 +118,7 @@ public final class StickerView extends FrameLayout {
             }
             Context context = getContext();
             C12238m.checkNotNullExpressionValue(context, "context");
-            return C1107b.m216h(context, C5419R.string.sticker_a11y_label, new Object[]{((StickerPartial) sticker).getName()}, null, 4);
+            return C1107b.m210b(context, C5419R.string.sticker_a11y_label, new Object[]{((StickerPartial) sticker).getName()}, (4 & 4) != 0 ? C1107b.b.f1491j : null);
         }
         Context context2 = getContext();
         C12238m.checkNotNullExpressionValue(context2, "context");
@@ -127,7 +127,7 @@ public final class StickerView extends FrameLayout {
         sb.append(sticker2.getName());
         sb.append(", ");
         sb.append(sticker2.getDescription());
-        return C1107b.m216h(context2, C5419R.string.sticker_a11y_label, new Object[]{sb.toString()}, null, 4);
+        return C1107b.m210b(context2, C5419R.string.sticker_a11y_label, new Object[]{sb.toString()}, (4 & 4) != 0 ? C1107b.b.f1491j : null);
     }
 
     /* JADX INFO: renamed from: d */

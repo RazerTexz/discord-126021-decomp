@@ -84,7 +84,7 @@ public final class WidgetHubAddServerConfirmationDialog extends AppDialog {
         C12238m.checkNotNullExpressionValue(textView, "binding.addServerConfirmationDialogDescription");
         Context contextRequireContext = requireContext();
         C12238m.checkNotNullExpressionValue(contextRequireContext, "requireContext()");
-        C1107b.m209a(textView, C1107b.m216h(contextRequireContext, C5419R.string.hub_add_server_confirmation_subtitle, new Object[]{getArgs().getHubName()}, null, 4));
+        C1107b.m209a(textView, C1107b.m210b(contextRequireContext, C5419R.string.hub_add_server_confirmation_subtitle, new Object[]{getArgs().getHubName()}, (4 & 4) != 0 ? C1107b.b.f1491j : null));
         getBinding().f15163c.m8546b();
         Guild guild = StoreStream.INSTANCE.getGuilds().getGuild(getArgs().getGuildId());
         if (guild != null) {

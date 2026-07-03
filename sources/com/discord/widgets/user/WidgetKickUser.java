@@ -114,7 +114,7 @@ public final class WidgetKickUser extends AppDialog {
                 public final void invoke2(Void r7) {
                     Context context = WidgetKickUser.this.getContext();
                     Context context2 = WidgetKickUser.this.getContext();
-                    C0876m.m170h(context, context2 != null ? C1107b.m216h(context2, C5419R.string.kick_user_confirmed, new Object[]{string}, null, 4) : null, 0, null, 12);
+                    C0876m.m170h(context, context2 != null ? C1107b.m210b(context2, C5419R.string.kick_user_confirmed, new Object[]{string}, (4 & 4) != 0 ? C1107b.b.f1491j : null) : null, 0, null, 12);
                     WidgetKickUser.this.dismiss();
                 }
             }

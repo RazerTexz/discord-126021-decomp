@@ -167,7 +167,7 @@ public final class WidgetServerDeleteDialog extends AppDialog {
         TextView textView = getBinding().f17482d;
         C12238m.checkNotNullExpressionValue(textView, "binding.serverSettingsDeleteServerHeader");
         Context context = getContext();
-        textView.setText(context != null ? C1107b.m216h(context, C5419R.string.delete_server_title, new Object[]{model.getGuild().getName()}, null, 4) : null);
+        textView.setText(context != null ? C1107b.m210b(context, C5419R.string.delete_server_title, new Object[]{model.getGuild().getName()}, (4 & 4) != 0 ? C1107b.b.f1491j : null) : null);
         LinearLayout linearLayout = getBinding().f17484f;
         C12238m.checkNotNullExpressionValue(linearLayout, "binding.serverSettingsDeleteServerMfaWrap");
         linearLayout.setVisibility(model.getMe().getMfaEnabled() ? 0 : 8);

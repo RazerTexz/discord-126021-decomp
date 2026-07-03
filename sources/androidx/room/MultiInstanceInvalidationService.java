@@ -26,29 +26,33 @@ public class MultiInstanceInvalidationService extends Service {
         @Override // androidx.room.IMultiInstanceInvalidationService
         public void broadcastInvalidation(int i, String[] strArr) {
             synchronized (MultiInstanceInvalidationService.this.mCallbackList) {
-                String str = MultiInstanceInvalidationService.this.mClientNames.get(Integer.valueOf(i));
-                if (str == null) {
-                    Log.w(Room.LOG_TAG, "Remote invalidation client ID not registered");
-                    return;
-                }
-                int iBeginBroadcast = MultiInstanceInvalidationService.this.mCallbackList.beginBroadcast();
-                for (int i2 = 0; i2 < iBeginBroadcast; i2++) {
-                    try {
-                        int iIntValue = ((Integer) MultiInstanceInvalidationService.this.mCallbackList.getBroadcastCookie(i2)).intValue();
-                        String str2 = MultiInstanceInvalidationService.this.mClientNames.get(Integer.valueOf(iIntValue));
-                        if (i != iIntValue && str.equals(str2)) {
-                            try {
-                                ((IMultiInstanceInvalidationCallback) MultiInstanceInvalidationService.this.mCallbackList.getBroadcastItem(i2)).onInvalidation(strArr);
-                            } catch (RemoteException e) {
-                                Log.w(Room.LOG_TAG, "Error invoking a remote callback", e);
-                            }
-                        }
-                    } catch (Throwable th) {
-                        MultiInstanceInvalidationService.this.mCallbackList.finishBroadcast();
-                        throw th;
+                try {
+                    String str = MultiInstanceInvalidationService.this.mClientNames.get(Integer.valueOf(i));
+                    if (str == null) {
+                        Log.w(Room.LOG_TAG, "Remote invalidation client ID not registered");
+                        return;
                     }
+                    int iBeginBroadcast = MultiInstanceInvalidationService.this.mCallbackList.beginBroadcast();
+                    for (int i2 = 0; i2 < iBeginBroadcast; i2++) {
+                        try {
+                            int iIntValue = ((Integer) MultiInstanceInvalidationService.this.mCallbackList.getBroadcastCookie(i2)).intValue();
+                            String str2 = MultiInstanceInvalidationService.this.mClientNames.get(Integer.valueOf(iIntValue));
+                            if (i != iIntValue && str.equals(str2)) {
+                                try {
+                                    ((IMultiInstanceInvalidationCallback) MultiInstanceInvalidationService.this.mCallbackList.getBroadcastItem(i2)).onInvalidation(strArr);
+                                } catch (RemoteException e) {
+                                    Log.w(Room.LOG_TAG, "Error invoking a remote callback", e);
+                                }
+                            }
+                        } catch (Throwable th) {
+                            MultiInstanceInvalidationService.this.mCallbackList.finishBroadcast();
+                            throw th;
+                        }
+                    }
+                    MultiInstanceInvalidationService.this.mCallbackList.finishBroadcast();
+                } catch (Throwable th2) {
+                    throw th2;
                 }
-                MultiInstanceInvalidationService.this.mCallbackList.finishBroadcast();
             }
         }
 

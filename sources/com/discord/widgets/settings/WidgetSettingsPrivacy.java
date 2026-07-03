@@ -852,11 +852,11 @@ public final class WidgetSettingsPrivacy extends AppFragment {
         /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
         public final void invoke2(String str) {
             WidgetNoticeDialog.Builder title = new WidgetNoticeDialog.Builder(this.$context).setTitle(C5419R.string.data_privacy_controls_request_data_failure_title);
-            CharSequence charSequenceM216h = str;
+            CharSequence charSequenceM210b = str;
             if (str == null) {
-                charSequenceM216h = C1107b.m216h(this.$context, C5419R.string.data_privacy_controls_request_data_failure_body, new Object[0], null, 4);
+                charSequenceM210b = C1107b.m210b(this.$context, C5419R.string.data_privacy_controls_request_data_failure_body, new Object[0], (4 & 4) != 0 ? C1107b.b.f1491j : null);
             }
-            WidgetNoticeDialog.Builder positiveButton$default = WidgetNoticeDialog.Builder.setPositiveButton$default(title.setMessage(charSequenceM216h), C5419R.string.okay, (Function1) null, 2, (Object) null);
+            WidgetNoticeDialog.Builder positiveButton$default = WidgetNoticeDialog.Builder.setPositiveButton$default(title.setMessage(charSequenceM210b), C5419R.string.okay, (Function1) null, 2, (Object) null);
             FragmentManager parentFragmentManager = WidgetSettingsPrivacy.this.getParentFragmentManager();
             C12238m.checkNotNullExpressionValue(parentFragmentManager, "parentFragmentManager");
             positiveButton$default.show(parentFragmentManager);
@@ -1446,7 +1446,7 @@ public final class WidgetSettingsPrivacy extends AppFragment {
         Context context = getContext();
         if (context != null) {
             C12238m.checkNotNullExpressionValue(context, "context ?: return");
-            WidgetNoticeDialog.Builder positiveButton$default = WidgetNoticeDialog.Builder.setPositiveButton$default(new WidgetNoticeDialog.Builder(context).setTitle(C5419R.string.data_privacy_rate_limit_title).setMessage(C1107b.m216h(context, C5419R.string.data_download_requested_status_note, new Object[]{TimeUtils.renderUtcDate$default(TimeUtils.INSTANCE, nextAvailableRequestMillis, context, 0, 4, null)}, null, 4)), C5419R.string.okay, (Function1) null, 2, (Object) null);
+            WidgetNoticeDialog.Builder positiveButton$default = WidgetNoticeDialog.Builder.setPositiveButton$default(new WidgetNoticeDialog.Builder(context).setTitle(C5419R.string.data_privacy_rate_limit_title).setMessage(C1107b.m210b(context, C5419R.string.data_download_requested_status_note, new Object[]{TimeUtils.renderUtcDate$default(TimeUtils.INSTANCE, nextAvailableRequestMillis, context, 0, 4, null)}, (4 & 4) != 0 ? C1107b.b.f1491j : null)), C5419R.string.okay, (Function1) null, 2, (Object) null);
             FragmentManager parentFragmentManager = getParentFragmentManager();
             C12238m.checkNotNullExpressionValue(parentFragmentManager, "parentFragmentManager");
             positiveButton$default.show(parentFragmentManager);

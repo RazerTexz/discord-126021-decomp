@@ -64,13 +64,13 @@ public final /* data */ class Badge {
                 arrayList.add(new Badge(C5419R.drawable.ic_profile_badge_hypesquad_32dp, context.getString(C5419R.string.hypesquad_badge_tooltip), null, false, null, 28, null));
             }
             if (userUtils.isHypesquadHouse1(user)) {
-                arrayList.add(new Badge(C5419R.drawable.ic_hypesquad_house1_32dp, context.getString(C5419R.string.hypesquad_house_1), C1107b.m216h(context, C5419R.string.hypesquad_online_badge_tooltip, new Object[]{C1107b.m216h(context, C5419R.string.hypesquad_house_1, new Object[0], null, 4)}, null, 4), false, null, 24, null));
+                arrayList.add(new Badge(C5419R.drawable.ic_hypesquad_house1_32dp, context.getString(C5419R.string.hypesquad_house_1), C1107b.m210b(context, C5419R.string.hypesquad_online_badge_tooltip, new Object[]{C1107b.m210b(context, C5419R.string.hypesquad_house_1, new Object[0], (4 & 4) != 0 ? C1107b.b.f1491j : null)}, (4 & 4) != 0 ? C1107b.b.f1491j : null), false, null, 24, null));
             }
             if (userUtils.isHypesquadHouse2(user)) {
-                arrayList.add(new Badge(C5419R.drawable.ic_hypesquad_house2_32dp, C1107b.m216h(context, C5419R.string.hypesquad_house_2, new Object[0], null, 4), C1107b.m216h(context, C5419R.string.hypesquad_online_badge_tooltip, new Object[]{context.getString(C5419R.string.hypesquad_house_2)}, null, 4), false, null, 24, null));
+                arrayList.add(new Badge(C5419R.drawable.ic_hypesquad_house2_32dp, C1107b.m210b(context, C5419R.string.hypesquad_house_2, new Object[0], (4 & 4) != 0 ? C1107b.b.f1491j : null), C1107b.m210b(context, C5419R.string.hypesquad_online_badge_tooltip, new Object[]{context.getString(C5419R.string.hypesquad_house_2)}, (4 & 4) != 0 ? C1107b.b.f1491j : null), false, null, 24, null));
             }
             if (userUtils.isHypesquadHouse3(user)) {
-                arrayList.add(new Badge(C5419R.drawable.ic_hypesquad_house3_32dp, context.getString(C5419R.string.hypesquad_house_3), C1107b.m216h(context, C5419R.string.hypesquad_online_badge_tooltip, new Object[]{C1107b.m216h(context, C5419R.string.hypesquad_house_3, new Object[0], null, 4)}, null, 4), false, null, 24, null));
+                arrayList.add(new Badge(C5419R.drawable.ic_hypesquad_house3_32dp, context.getString(C5419R.string.hypesquad_house_3), C1107b.m210b(context, C5419R.string.hypesquad_online_badge_tooltip, new Object[]{C1107b.m210b(context, C5419R.string.hypesquad_house_3, new Object[0], (4 & 4) != 0 ? C1107b.b.f1491j : null)}, (4 & 4) != 0 ? C1107b.b.f1491j : null), false, null, 24, null));
             }
             if (userUtils.isBugHunterLevel1(user)) {
                 arrayList.add(new Badge(C5419R.drawable.ic_profile_badge_bughunter_level_1_32dp, context.getString(C5419R.string.bug_hunter_badge_tooltip), null, false, null, 28, null));
@@ -85,7 +85,7 @@ public final /* data */ class Badge {
                 arrayList.add(new Badge(C5419R.drawable.ic_profile_badge_premium_early_supporter_32dp, context.getString(C5419R.string.early_supporter_tooltip), null, !isMeUserPremium && isMeUserVerified, "PREMIUM_EARLY_SUPPORTER", 4, null));
             }
             if (UserProfileUtilsKt.isPremium(profile)) {
-                arrayList.add(new Badge(C5419R.drawable.ic_profile_badge_nitro_32dp, context.getString(C5419R.string.premium_title), C1107b.m216h(context, C5419R.string.premium_badge_tooltip, new Object[]{UserProfileUtilsKt.getPremiumSince(profile, context)}, null, 4), !isMeUserPremium && isMeUserVerified, "PREMIUM"));
+                arrayList.add(new Badge(C5419R.drawable.ic_profile_badge_nitro_32dp, context.getString(C5419R.string.premium_title), C1107b.m210b(context, C5419R.string.premium_badge_tooltip, new Object[]{UserProfileUtilsKt.getPremiumSince(profile, context)}, (4 & 4) != 0 ? C1107b.b.f1491j : null), !isMeUserPremium && isMeUserVerified, "PREMIUM"));
             }
             if (UserProfileUtilsKt.isGuildBooster(profile)) {
                 Integer guildBoostMonthsSubscribed = UserProfileUtilsKt.getGuildBoostMonthsSubscribed(profile);
@@ -107,7 +107,7 @@ public final /* data */ class Badge {
                 } else {
                     i = iIntValue >= 2 ? C5419R.drawable.ic_profile_badge_premium_guild_subscription_lvl2_32dp : C5419R.drawable.ic_profile_badge_premium_guild_subscription_lvl1_32dp;
                 }
-                arrayList.add(new Badge(i, context.getString(C5419R.string.premium_title), C1107b.m216h(context, C5419R.string.premium_guild_subscription_tooltip, new Object[]{UserProfileUtilsKt.getBoostingSince(profile, context)}, null, 4), !isMeUserPremium && isMeUserVerified, "PREMIUM_GUILD"));
+                arrayList.add(new Badge(i, context.getString(C5419R.string.premium_title), C1107b.m210b(context, C5419R.string.premium_guild_subscription_tooltip, new Object[]{UserProfileUtilsKt.getBoostingSince(profile, context)}, (4 & 4) != 0 ? C1107b.b.f1491j : null), !isMeUserPremium && isMeUserVerified, "PREMIUM_GUILD"));
             }
             return arrayList;
         }

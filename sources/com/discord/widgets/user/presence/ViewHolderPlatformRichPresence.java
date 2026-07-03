@@ -160,7 +160,7 @@ public final class ViewHolderPlatformRichPresence extends ViewHolderUserRichPres
             if (richPresencePrimaryButton4 != null) {
                 Context context2 = getRoot().getContext();
                 C12238m.checkNotNullExpressionValue(context2, "root.context");
-                richPresencePrimaryButton4.setText(C1107b.m216h(context2, C5419R.string.user_activity_connect_platform, new Object[]{platformFrom.getProperName()}, null, 4));
+                richPresencePrimaryButton4.setText(C1107b.m210b(context2, C5419R.string.user_activity_connect_platform, new Object[]{platformFrom.getProperName()}, (4 & 4) != 0 ? C1107b.b.f1491j : null));
             }
             Button richPresencePrimaryButton5 = getRichPresencePrimaryButton();
             if (richPresencePrimaryButton5 != null) {

@@ -22,18 +22,18 @@ public final class DurationUtilsKt {
         int iCoerceAtLeast = C11226f.coerceAtLeast(((int) (f / 1000)) % 60, 1);
         StringBuilder sb = new StringBuilder();
         sb.append(i3);
-        sb.append(C1107b.m216h(context, C5419R.string.countdown_units_minutes, new Object[0], null, 4));
+        sb.append(C1107b.m210b(context, C5419R.string.countdown_units_minutes, new Object[0], (4 & 4) != 0 ? C1107b.b.f1491j : null));
         sb.append(' ');
         sb.append(iCoerceAtLeast);
-        sb.append(C1107b.m216h(context, C5419R.string.countdown_units_seconds, new Object[0], null, 4));
+        sb.append(C1107b.m210b(context, C5419R.string.countdown_units_seconds, new Object[0], (4 & 4) != 0 ? C1107b.b.f1491j : null));
         String string = sb.toString();
         if (i <= 0) {
             if (i2 <= 0) {
                 return string;
             }
-            return i2 + C1107b.m216h(context, C5419R.string.countdown_units_hours, new Object[0], null, 4) + ' ' + string;
+            return i2 + C1107b.m210b(context, C5419R.string.countdown_units_hours, new Object[0], (4 & 4) != 0 ? C1107b.b.f1491j : null) + ' ' + string;
         }
-        return i + C1107b.m216h(context, C5419R.string.countdown_units_days, new Object[0], null, 4) + ' ' + i2 + C1107b.m216h(context, C5419R.string.countdown_units_hours, new Object[0], null, 4) + ' ' + string;
+        return i + C1107b.m210b(context, C5419R.string.countdown_units_days, new Object[0], (4 & 4) != 0 ? C1107b.b.f1491j : null) + ' ' + i2 + C1107b.m210b(context, C5419R.string.countdown_units_hours, new Object[0], (4 & 4) != 0 ? C1107b.b.f1491j : null) + ' ' + string;
     }
 
     public static final CharSequence humanizeDuration(Context context, long j) {
@@ -45,18 +45,18 @@ public final class DurationUtilsKt {
         }
         if (j <= 60000) {
             int i = (int) (j / 1000);
-            return C1107b.m216h(context, C5419R.string.humanize_duration_seconds, new Object[]{StringResourceUtilsKt.getI18nPluralString(context, C5419R.plurals.humanize_duration_seconds_time, i, Integer.valueOf(i))}, null, 4);
+            return C1107b.m210b(context, C5419R.string.humanize_duration_seconds, new Object[]{StringResourceUtilsKt.getI18nPluralString(context, C5419R.plurals.humanize_duration_seconds_time, i, Integer.valueOf(i))}, (4 & 4) != 0 ? C1107b.b.f1491j : null);
         }
         if (j <= 3600000) {
             int i2 = (int) (j / 60000);
-            return C1107b.m216h(context, C5419R.string.humanize_duration_minutes, new Object[]{StringResourceUtilsKt.getI18nPluralString(context, C5419R.plurals.humanize_duration_minutes_time, i2, Integer.valueOf(i2))}, null, 4);
+            return C1107b.m210b(context, C5419R.string.humanize_duration_minutes, new Object[]{StringResourceUtilsKt.getI18nPluralString(context, C5419R.plurals.humanize_duration_minutes_time, i2, Integer.valueOf(i2))}, (4 & 4) != 0 ? C1107b.b.f1491j : null);
         }
         if (j <= 86400000) {
             int i3 = (int) (j / 3600000);
-            return C1107b.m216h(context, C5419R.string.humanize_duration_hours, new Object[]{StringResourceUtilsKt.getI18nPluralString(context, C5419R.plurals.humanize_duration_hours_time, i3, Integer.valueOf(i3))}, null, 4);
+            return C1107b.m210b(context, C5419R.string.humanize_duration_hours, new Object[]{StringResourceUtilsKt.getI18nPluralString(context, C5419R.plurals.humanize_duration_hours_time, i3, Integer.valueOf(i3))}, (4 & 4) != 0 ? C1107b.b.f1491j : null);
         }
         int i4 = (int) (j / 86400000);
-        return C1107b.m216h(context, C5419R.string.humanize_duration_days, new Object[]{StringResourceUtilsKt.getI18nPluralString(context, C5419R.plurals.humanize_duration_days_time, i4, Integer.valueOf(i4))}, null, 4);
+        return C1107b.m210b(context, C5419R.string.humanize_duration_days, new Object[]{StringResourceUtilsKt.getI18nPluralString(context, C5419R.plurals.humanize_duration_days_time, i4, Integer.valueOf(i4))}, (4 & 4) != 0 ? C1107b.b.f1491j : null);
     }
 
     public static final CharSequence humanizeDurationRounded(Context context, long j) {
@@ -69,17 +69,17 @@ public final class DurationUtilsKt {
         double d = j;
         if (d <= 54000.0d) {
             float f = j / 1000;
-            return C1107b.m216h(context, C5419R.string.humanize_duration_seconds, new Object[]{StringResourceUtilsKt.getI18nPluralString(context, C5419R.plurals.humanize_duration_seconds_time, C11210a.roundToInt(f), Integer.valueOf(C11210a.roundToInt(f)))}, null, 4);
+            return C1107b.m210b(context, C5419R.string.humanize_duration_seconds, new Object[]{StringResourceUtilsKt.getI18nPluralString(context, C5419R.plurals.humanize_duration_seconds_time, C11210a.roundToInt(f), Integer.valueOf(C11210a.roundToInt(f)))}, (4 & 4) != 0 ? C1107b.b.f1491j : null);
         }
         if (d <= 3240000.0d) {
             float f2 = j / 60000;
-            return C1107b.m216h(context, C5419R.string.humanize_duration_minutes, new Object[]{StringResourceUtilsKt.getI18nPluralString(context, C5419R.plurals.humanize_duration_minutes_time, C11210a.roundToInt(f2), Integer.valueOf(C11210a.roundToInt(f2)))}, null, 4);
+            return C1107b.m210b(context, C5419R.string.humanize_duration_minutes, new Object[]{StringResourceUtilsKt.getI18nPluralString(context, C5419R.plurals.humanize_duration_minutes_time, C11210a.roundToInt(f2), Integer.valueOf(C11210a.roundToInt(f2)))}, (4 & 4) != 0 ? C1107b.b.f1491j : null);
         }
         if (d <= 7.776E7d) {
             float f3 = j / 3600000;
-            return C1107b.m216h(context, C5419R.string.humanize_duration_hours, new Object[]{StringResourceUtilsKt.getI18nPluralString(context, C5419R.plurals.humanize_duration_hours_time, C11210a.roundToInt(f3), Integer.valueOf(C11210a.roundToInt(f3)))}, null, 4);
+            return C1107b.m210b(context, C5419R.string.humanize_duration_hours, new Object[]{StringResourceUtilsKt.getI18nPluralString(context, C5419R.plurals.humanize_duration_hours_time, C11210a.roundToInt(f3), Integer.valueOf(C11210a.roundToInt(f3)))}, (4 & 4) != 0 ? C1107b.b.f1491j : null);
         }
         float f4 = j / 86400000;
-        return C1107b.m216h(context, C5419R.string.humanize_duration_days, new Object[]{StringResourceUtilsKt.getI18nPluralString(context, C5419R.plurals.humanize_duration_days_time, C11210a.roundToInt(f4), Integer.valueOf(C11210a.roundToInt(f4)))}, null, 4);
+        return C1107b.m210b(context, C5419R.string.humanize_duration_days, new Object[]{StringResourceUtilsKt.getI18nPluralString(context, C5419R.plurals.humanize_duration_days_time, C11210a.roundToInt(f4), Integer.valueOf(C11210a.roundToInt(f4)))}, (4 & 4) != 0 ? C1107b.b.f1491j : null);
     }
 }

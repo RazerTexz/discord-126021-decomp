@@ -579,7 +579,7 @@ public final class WidgetTextChannelSettings extends AppFragment {
         getBinding().f18228b.m8529g(ChannelUtils.m7685i(model.getChannel()), false);
         CheckedSetting checkedSetting2 = getBinding().f18228b;
         Context context = getContext();
-        checkedSetting2.m8530h(context != null ? C1107b.m216h(context, C5419R.string.form_help_news_android, new Object[]{C0862f.f507a.m149a(360032008192L, null)}, null, 4) : null, true);
+        checkedSetting2.m8530h(context != null ? C1107b.m210b(context, C5419R.string.form_help_news_android, new Object[]{C0862f.f507a.m149a(360032008192L, null)}, (4 & 4) != 0 ? C1107b.b.f1491j : null) : null, true);
         getBinding().f18228b.m8527e(new View.OnClickListener() { // from class: com.discord.widgets.channels.settings.WidgetTextChannelSettings.configureUI.8
             @Override // android.view.View.OnClickListener
             public final void onClick(View view2) {

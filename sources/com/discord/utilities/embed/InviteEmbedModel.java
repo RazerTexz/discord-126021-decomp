@@ -163,16 +163,6 @@ public final /* data */ class InviteEmbedModel {
         return iHashCode3 + (map4 != null ? map4.hashCode() : 0);
     }
 
-    /* JADX WARN: Failed to analyze thrown exceptions
-    java.util.ConcurrentModificationException
-    	at java.base/java.util.ArrayList$Itr.checkForComodification(ArrayList.java:1096)
-    	at java.base/java.util.ArrayList$Itr.next(ArrayList.java:1050)
-    	at jadx.core.dex.visitors.MethodThrowsVisitor.processInstructions(MethodThrowsVisitor.java:130)
-    	at jadx.core.dex.visitors.MethodThrowsVisitor.visit(MethodThrowsVisitor.java:68)
-    	at jadx.core.dex.visitors.MethodThrowsVisitor.checkInsn(MethodThrowsVisitor.java:178)
-    	at jadx.core.dex.visitors.MethodThrowsVisitor.processInstructions(MethodThrowsVisitor.java:131)
-    	at jadx.core.dex.visitors.MethodThrowsVisitor.visit(MethodThrowsVisitor.java:68)
-     */
     public final ModelInvite resolveInviteCodeForPublicStage(String inviteCode) {
         RecommendedStageInstance stageInstance;
         StageInstance recommendedStageInstance;

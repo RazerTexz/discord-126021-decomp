@@ -59,18 +59,18 @@ public final class AuthInviteInfoView extends RelativeLayout {
         if (modelInvite.getChannel() == null && modelInvite.guild == null && z2) {
             Context context = getContext();
             C12238m.checkNotNullExpressionValue(context, "context");
-            return C1107b.m216h(context, C5419R.string.instant_invite_you_have_been_invited_to_chat_with, new Object[0], null, 4);
+            return C1107b.m210b(context, C5419R.string.instant_invite_you_have_been_invited_to_chat_with, new Object[0], (4 & 4) != 0 ? C1107b.b.f1491j : null);
         }
         Channel channel = modelInvite.getChannel();
         if (channel == null || !ChannelUtils.m7702z(channel)) {
             if (modelInvite.getApproximateMemberCount() >= 200 || !z2) {
                 Context context2 = getContext();
                 C12238m.checkNotNullExpressionValue(context2, "context");
-                return C1107b.m216h(context2, C5419R.string.instant_invite_you_have_been_invited_to_join, new Object[0], null, 4);
+                return C1107b.m210b(context2, C5419R.string.instant_invite_you_have_been_invited_to_join, new Object[0], (4 & 4) != 0 ? C1107b.b.f1491j : null);
             }
             Context context3 = getContext();
             C12238m.checkNotNullExpressionValue(context3, "context");
-            return C1107b.m216h(context3, C5419R.string.auth_message_invited_by, new Object[]{username2}, null, 4);
+            return C1107b.m210b(context3, C5419R.string.auth_message_invited_by, new Object[]{username2}, (4 & 4) != 0 ? C1107b.b.f1491j : null);
         }
         Channel channel2 = modelInvite.getChannel();
         if (channel2 != null) {
@@ -86,7 +86,7 @@ public final class AuthInviteInfoView extends RelativeLayout {
                         username = null;
                     }
                     objArr[0] = username;
-                    return C1107b.m216h(context4, C5419R.string.auth_message_invited_by, objArr, null, 4);
+                    return C1107b.m210b(context4, C5419R.string.auth_message_invited_by, objArr, (4 & 4) != 0 ? C1107b.b.f1491j : null);
                 }
             }
         } else if (z2) {
@@ -100,11 +100,11 @@ public final class AuthInviteInfoView extends RelativeLayout {
                 username = null;
             }
             objArr2[0] = username;
-            return C1107b.m216h(context5, C5419R.string.auth_message_invited_by, objArr2, null, 4);
+            return C1107b.m210b(context5, C5419R.string.auth_message_invited_by, objArr2, (4 & 4) != 0 ? C1107b.b.f1491j : null);
         }
         Context context6 = getContext();
         C12238m.checkNotNullExpressionValue(context6, "context");
-        return C1107b.m216h(context6, C5419R.string.instant_invite_you_have_been_invited_to_join_group_dm, new Object[0], null, 4);
+        return C1107b.m210b(context6, C5419R.string.instant_invite_you_have_been_invited_to_join_group_dm, new Object[0], (4 & 4) != 0 ? C1107b.b.f1491j : null);
     }
 
     public final void configureGuildTemplate(ModelGuildTemplate guildTemplate) {

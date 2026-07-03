@@ -230,7 +230,7 @@ public final class AppMediaPlayer {
     }
 
     /* JADX INFO: renamed from: b */
-    public static /* synthetic */ void m8438b(AppMediaPlayer appMediaPlayer, MediaSource mediaSource, boolean z2, boolean z3, long j, PlayerView playerView, PlayerControlView playerControlView, int i) throws CloneNotSupportedException {
+    public static /* synthetic */ void m8438b(AppMediaPlayer appMediaPlayer, MediaSource mediaSource, boolean z2, boolean z3, long j, PlayerView playerView, PlayerControlView playerControlView, int i) {
         int i2 = i & 32;
         appMediaPlayer.m8439a(mediaSource, (i & 2) != 0 ? false : z2, (i & 4) != 0 ? false : z3, (i & 8) != 0 ? 0L : j, playerView, null);
     }
@@ -248,7 +248,7 @@ public final class AppMediaPlayer {
      */
     @MainThread
     /* JADX INFO: renamed from: a */
-    public final void m8439a(MediaSource mediaSource, boolean autoPlayWhenReady, boolean loopMedia, long initialSeekPositionMs, PlayerView playerView, PlayerControlView playerControlView) throws CloneNotSupportedException {
+    public final void m8439a(MediaSource mediaSource, boolean autoPlayWhenReady, boolean loopMedia, long initialSeekPositionMs, PlayerView playerView, PlayerControlView playerControlView) {
         InterfaceC2990u interfaceC2990u;
         C12238m.checkNotNullParameter(mediaSource, "mediaSource");
         C12238m.checkNotNullParameter(playerView, "playerView");

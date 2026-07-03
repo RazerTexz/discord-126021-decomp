@@ -95,7 +95,7 @@ public abstract class MGRecyclerAdapter<D> extends RecyclerView.Adapter<MGRecycl
     @SuppressLint({"StringFormatMatches"})
     public final IllegalArgumentException invalidViewTypeException(int viewType) {
         Context context = getRecycler().getContext();
-        return new IllegalArgumentException(String.valueOf(context != null ? C1107b.m216h(context, C5419R.string.android_unknown_view_holder, new Object[]{Integer.valueOf(viewType)}, null, 4) : null));
+        return new IllegalArgumentException(String.valueOf(context != null ? C1107b.m210b(context, C5419R.string.android_unknown_view_holder, new Object[]{Integer.valueOf(viewType)}, (4 & 4) != 0 ? C1107b.b.f1491j : null) : null));
     }
 
     public void setRecycler(RecyclerView recyclerView) {

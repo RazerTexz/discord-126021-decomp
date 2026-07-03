@@ -301,7 +301,7 @@ public final class WidgetChatListAdapterItemAttachment extends WidgetChatListIte
 
     /* JADX WARN: Code duplicated, block: B:17:0x00a3  */
     /* JADX WARN: Code duplicated, block: B:23:0x00b8  */
-    private final void configureUI(final Model model) throws CloneNotSupportedException {
+    private final void configureUI(final Model model) {
         boolean z2;
         boolean z3;
         final AttachmentEntry attachmentEntry = model.getAttachmentEntry();
@@ -408,7 +408,7 @@ public final class WidgetChatListAdapterItemAttachment extends WidgetChatListIte
     }
 
     @Override // com.discord.widgets.chat.list.FragmentLifecycleListener
-    public void onResume() throws CloneNotSupportedException {
+    public void onResume() {
         this.binding.f16151h.onResume();
     }
 
@@ -560,7 +560,7 @@ public final class WidgetChatListAdapterItemAttachment extends WidgetChatListIte
 
     /* JADX WARN: Can't rename method to resolve collision */
     @Override // com.discord.widgets.chat.list.adapter.WidgetChatListItem, com.discord.utilities.mg_recycler.MGRecyclerViewHolder
-    public void onConfigure(int position, ChatListEntry data) throws CloneNotSupportedException {
+    public void onConfigure(int position, ChatListEntry data) {
         C12238m.checkNotNullParameter(data, "data");
         super.onConfigure(position, data);
         AttachmentEntry attachmentEntry = (AttachmentEntry) data;

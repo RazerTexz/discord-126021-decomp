@@ -67,6 +67,6 @@ public final class ApplicationCategoryViewHolder extends RecyclerView.ViewHolder
         });
         View view2 = this.itemView;
         C12238m.checkNotNullExpressionValue(view2, "itemView");
-        view2.setContentDescription(C1107b.m216h(C1643a.m885x(this.itemView, "itemView", "itemView.context"), C5419R.string.command_accessibility_desc_app_item, new Object[]{application.getName()}, null, 4));
+        view2.setContentDescription(C1107b.m210b(C1643a.m885x(this.itemView, "itemView", "itemView.context"), C5419R.string.command_accessibility_desc_app_item, new Object[]{application.getName()}, (4 & 4) != 0 ? C1107b.b.f1491j : null));
     }
 }

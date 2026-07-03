@@ -17,14 +17,14 @@ import p507d0.p592z.p594d.C12238m;
 public final class ChannelPermissionUtilsKt {
     public static final Map<Integer, PermissionLabelOverrides> getCategoryLabels(boolean z2, Context context) {
         String str;
-        CharSequence charSequenceM216h;
-        CharSequence charSequenceM216h2;
+        CharSequence charSequenceM210b;
+        CharSequence charSequenceM210b2;
         String str2;
-        CharSequence charSequenceM216h3;
-        CharSequence charSequenceM216h4;
+        CharSequence charSequenceM210b3;
+        CharSequence charSequenceM210b4;
         String str3;
-        CharSequence charSequenceM216h5;
-        CharSequence charSequenceM216h6;
+        CharSequence charSequenceM210b5;
+        CharSequence charSequenceM210b6;
         C12238m.checkNotNullParameter(context, "context");
         Pair[] pairArr = new Pair[29];
         Integer numValueOf = Integer.valueOf(C5419R.id.channel_permission_text_read_messages);
@@ -53,61 +53,61 @@ public final class ChannelPermissionUtilsKt {
         String string8 = context.getString(C5419R.string.role_permissions_send_messages_description_category);
         C12238m.checkNotNullExpressionValue(string8, "context.getString(R.stri…ges_description_category)");
         C0862f c0862f = C0862f.f507a;
-        pairArr[5] = C12116o.m10073to(numValueOf6, new PermissionLabelOverrides(string8, null, null, null, null, null, null, null, C1107b.m216h(context, C5419R.string.role_permissions_send_messages_description_announcement, new Object[]{c0862f.m149a(360032008192L, null)}, null, 4), 254, null));
+        pairArr[5] = C12116o.m10073to(numValueOf6, new PermissionLabelOverrides(string8, null, null, null, null, null, null, null, C1107b.m210b(context, C5419R.string.role_permissions_send_messages_description_announcement, new Object[]{c0862f.m149a(360032008192L, null)}, (4 & 4) != 0 ? C1107b.b.f1491j : null), 254, null));
         Integer numValueOf7 = Integer.valueOf(C5419R.id.channel_permission_text_send_messages_in_threads);
         if (z2) {
-            charSequenceM216h = context.getString(C5419R.string.role_permissions_send_messages_in_threads_description_category);
+            charSequenceM210b = context.getString(C5419R.string.role_permissions_send_messages_in_threads_description_category);
             str = "context.getString(R.stri…ads_description_category)";
-            C12238m.checkNotNullExpressionValue(charSequenceM216h, str);
+            C12238m.checkNotNullExpressionValue(charSequenceM210b, str);
         } else {
             str = "context.getString(R.stri…ads_description_category)";
-            charSequenceM216h = C1107b.m216h(context, C5419R.string.f14771x98d4cb90, new Object[0], null, 4);
+            charSequenceM210b = C1107b.m210b(context, C5419R.string.f14771x98d4cb90, new Object[0], (4 & 4) != 0 ? C1107b.b.f1491j : null);
         }
         if (z2) {
             String string9 = context.getString(C5419R.string.role_permissions_send_messages_in_threads_description_category);
             C12238m.checkNotNullExpressionValue(string9, str);
-            charSequenceM216h2 = string9;
+            charSequenceM210b2 = string9;
         } else {
-            charSequenceM216h2 = C1107b.m216h(context, C5419R.string.f14771x98d4cb90, new Object[0], null, 4);
+            charSequenceM210b2 = C1107b.m210b(context, C5419R.string.f14771x98d4cb90, new Object[0], (4 & 4) != 0 ? C1107b.b.f1491j : null);
         }
         String str4 = str;
-        pairArr[6] = C12116o.m10073to(numValueOf7, new PermissionLabelOverrides(charSequenceM216h, null, null, null, null, null, null, charSequenceM216h2, null, 382, null));
+        pairArr[6] = C12116o.m10073to(numValueOf7, new PermissionLabelOverrides(charSequenceM210b, null, null, null, null, null, null, charSequenceM210b2, null, 382, null));
         Integer numValueOf8 = Integer.valueOf(C5419R.id.channel_permission_text_create_public_threads);
         if (z2) {
-            charSequenceM216h3 = context.getString(C5419R.string.role_permissions_create_public_threads_description_category);
+            charSequenceM210b3 = context.getString(C5419R.string.role_permissions_create_public_threads_description_category);
             str2 = str4;
-            C12238m.checkNotNullExpressionValue(charSequenceM216h3, str2);
+            C12238m.checkNotNullExpressionValue(charSequenceM210b3, str2);
         } else {
             str2 = str4;
-            charSequenceM216h3 = C1107b.m216h(context, C5419R.string.f14770x8ac810cf, new Object[0], null, 4);
+            charSequenceM210b3 = C1107b.m210b(context, C5419R.string.f14770x8ac810cf, new Object[0], (4 & 4) != 0 ? C1107b.b.f1491j : null);
         }
         if (z2) {
             String string10 = context.getString(C5419R.string.role_permissions_create_public_threads_description_category);
             C12238m.checkNotNullExpressionValue(string10, str2);
-            charSequenceM216h4 = string10;
+            charSequenceM210b4 = string10;
         } else {
-            charSequenceM216h4 = C1107b.m216h(context, C5419R.string.f14770x8ac810cf, new Object[0], null, 4);
+            charSequenceM210b4 = C1107b.m210b(context, C5419R.string.f14770x8ac810cf, new Object[0], (4 & 4) != 0 ? C1107b.b.f1491j : null);
         }
-        CharSequence charSequence = charSequenceM216h4;
+        CharSequence charSequence = charSequenceM210b4;
         String str5 = str2;
-        pairArr[7] = C12116o.m10073to(numValueOf8, new PermissionLabelOverrides(charSequenceM216h3, null, null, null, null, null, null, charSequence, null, 382, null));
+        pairArr[7] = C12116o.m10073to(numValueOf8, new PermissionLabelOverrides(charSequenceM210b3, null, null, null, null, null, null, charSequence, null, 382, null));
         Integer numValueOf9 = Integer.valueOf(C5419R.id.channel_permission_text_create_private_threads);
         if (z2) {
-            charSequenceM216h5 = context.getString(C5419R.string.role_permissions_create_private_threads_description_category);
+            charSequenceM210b5 = context.getString(C5419R.string.role_permissions_create_private_threads_description_category);
             str3 = str5;
-            C12238m.checkNotNullExpressionValue(charSequenceM216h5, str3);
+            C12238m.checkNotNullExpressionValue(charSequenceM210b5, str3);
         } else {
             str3 = str5;
-            charSequenceM216h5 = C1107b.m216h(context, C5419R.string.f14769x19ffc831, new Object[0], null, 4);
+            charSequenceM210b5 = C1107b.m210b(context, C5419R.string.f14769x19ffc831, new Object[0], (4 & 4) != 0 ? C1107b.b.f1491j : null);
         }
         if (z2) {
             String string11 = context.getString(C5419R.string.role_permissions_create_private_threads_description_category);
             C12238m.checkNotNullExpressionValue(string11, str3);
-            charSequenceM216h6 = string11;
+            charSequenceM210b6 = string11;
         } else {
-            charSequenceM216h6 = C1107b.m216h(context, C5419R.string.f14769x19ffc831, new Object[0], null, 4);
+            charSequenceM210b6 = C1107b.m210b(context, C5419R.string.f14769x19ffc831, new Object[0], (4 & 4) != 0 ? C1107b.b.f1491j : null);
         }
-        pairArr[8] = C12116o.m10073to(numValueOf9, new PermissionLabelOverrides(charSequenceM216h5, null, null, null, null, null, null, charSequenceM216h6, null, 382, null));
+        pairArr[8] = C12116o.m10073to(numValueOf9, new PermissionLabelOverrides(charSequenceM210b5, null, null, null, null, null, null, charSequenceM210b6, null, 382, null));
         Integer numValueOf10 = Integer.valueOf(C5419R.id.channel_permission_general_create_instant_invite);
         String string12 = context.getString(C5419R.string.role_permissions_create_instant_invite_description_category);
         C12238m.checkNotNullExpressionValue(string12, "context.getString(R.stri…ite_description_category)");
@@ -139,7 +139,7 @@ public final class ChannelPermissionUtilsKt {
         Integer numValueOf17 = Integer.valueOf(C5419R.id.channel_permission_text_manage_messages);
         String string19 = context.getString(C5419R.string.role_permissions_manage_messages_description_category);
         C12238m.checkNotNullExpressionValue(string19, "context.getString(R.stri…ges_description_category)");
-        pairArr[16] = C12116o.m10073to(numValueOf17, new PermissionLabelOverrides(string19, null, null, null, null, null, null, null, C1107b.m216h(context, C5419R.string.role_permissions_manage_messages_description_announcement, new Object[]{c0862f.m149a(360032008192L, null)}, null, 4), 254, null));
+        pairArr[16] = C12116o.m10073to(numValueOf17, new PermissionLabelOverrides(string19, null, null, null, null, null, null, null, C1107b.m210b(context, C5419R.string.role_permissions_manage_messages_description_announcement, new Object[]{c0862f.m149a(360032008192L, null)}, (4 & 4) != 0 ? C1107b.b.f1491j : null), 254, null));
         Integer numValueOf18 = Integer.valueOf(C5419R.id.channel_permission_text_read_message_history);
         String string20 = context.getString(C5419R.string.role_permissions_read_message_history_description_category);
         C12238m.checkNotNullExpressionValue(string20, "context.getString(R.stri…ory_description_category)");
@@ -164,8 +164,8 @@ public final class ChannelPermissionUtilsKt {
         String string25 = context.getString(C5419R.string.role_permissions_use_vad_description_category);
         C12238m.checkNotNullExpressionValue(string25, "context.getString(R.stri…vad_description_category)");
         pairArr[22] = C12116o.m10073to(numValueOf23, new PermissionLabelOverrides(string25, null, null, context.getString(C5419R.string.role_permissions_use_vad_description_stage), null, null, null, null, null, 502, null));
-        pairArr[23] = C12116o.m10073to(Integer.valueOf(C5419R.id.channel_permission_voice_priority_speaker), new PermissionLabelOverrides(C1107b.m216h(context, C5419R.string.role_permissions_priority_speaker_description_category_mobile, new Object[]{C1107b.m216h(context, C5419R.string.keybind_push_to_talk_priority, new Object[0], null, 4)}, null, 4), null, null, null, null, null, null, C1107b.m216h(context, C5419R.string.role_permissions_priority_speaker_description_category_mobile, new Object[]{C1107b.m216h(context, C5419R.string.keybind_push_to_talk_priority, new Object[0], null, 4)}, null, 4), null, 382, null));
-        pairArr[24] = C12116o.m10073to(Integer.valueOf(C5419R.id.channel_permission_voice_mute_members), new PermissionLabelOverrides(C1107b.m216h(context, C5419R.string.role_permissions_mute_members_description_category, new Object[0], null, 4), null, null, C1107b.m216h(context, C5419R.string.role_permissions_mute_members_description_stage, new Object[0], null, 4), null, null, null, null, null, 502, null));
+        pairArr[23] = C12116o.m10073to(Integer.valueOf(C5419R.id.channel_permission_voice_priority_speaker), new PermissionLabelOverrides(C1107b.m210b(context, C5419R.string.role_permissions_priority_speaker_description_category_mobile, new Object[]{C1107b.m210b(context, C5419R.string.keybind_push_to_talk_priority, new Object[0], (4 & 4) != 0 ? C1107b.b.f1491j : null)}, (4 & 4) != 0 ? C1107b.b.f1491j : null), null, null, null, null, null, null, C1107b.m210b(context, C5419R.string.role_permissions_priority_speaker_description_category_mobile, new Object[]{C1107b.m210b(context, C5419R.string.keybind_push_to_talk_priority, new Object[0], (4 & 4) != 0 ? C1107b.b.f1491j : null)}, (4 & 4) != 0 ? C1107b.b.f1491j : null), null, 382, null));
+        pairArr[24] = C12116o.m10073to(Integer.valueOf(C5419R.id.channel_permission_voice_mute_members), new PermissionLabelOverrides(C1107b.m210b(context, C5419R.string.role_permissions_mute_members_description_category, new Object[0], (4 & 4) != 0 ? C1107b.b.f1491j : null), null, null, C1107b.m210b(context, C5419R.string.role_permissions_mute_members_description_stage, new Object[0], (4 & 4) != 0 ? C1107b.b.f1491j : null), null, null, null, null, null, 502, null));
         Integer numValueOf24 = Integer.valueOf(C5419R.id.channel_permission_voice_deafen_members);
         String string26 = context.getString(C5419R.string.role_permissions_deafen_members_description_category);
         C12238m.checkNotNullExpressionValue(string26, "context.getString(R.stri…ers_description_category)");

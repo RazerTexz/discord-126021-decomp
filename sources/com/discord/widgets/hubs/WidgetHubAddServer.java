@@ -198,7 +198,7 @@ public final class WidgetHubAddServer extends AppFragment {
                     C0870j c0870j = C0870j.f524g;
                     ActivityResultLauncher<Intent> activityResultLauncher = WidgetHubAddServer.this.launcher;
                     CreateGuildTrigger createGuildTrigger = CreateGuildTrigger.DIRECTORY_CHANNEL;
-                    String string = C1107b.m216h(context, C5419R.string.hub_create_or_add_guild_title, new Object[]{state.getHubName()}, null, 4).toString();
+                    String string = C1107b.m210b(context, C5419R.string.hub_create_or_add_guild_title, new Object[]{state.getHubName()}, (4 & 4) != 0 ? C1107b.b.f1491j : null).toString();
                     String string2 = context.getString(C5419R.string.hub_create_or_add_guild_subtitle);
                     C12238m.checkNotNullExpressionValue(string2, "context.getString(R.stri…te_or_add_guild_subtitle)");
                     c0870j.m160f(context, activityResultLauncher, WidgetHubGuildTemplates.class, new GuildCreateArgs(false, GuildTemplateAnalytics.IN_APP_LOCATION_TEMPLATE, createGuildTrigger, new GuildTemplateArgs(string, string2, GuildTemplateTypes.INSTANCE.getHUB(), false, true), true));

@@ -111,7 +111,7 @@ public final class GuildScheduledEventUtilitiesKt {
         }
         int iOrdinal2 = getEventTiming(j, guildScheduledEventStatus).ordinal();
         if (iOrdinal2 == 2 || iOrdinal2 == 3 || iOrdinal2 == 5) {
-            return C1107b.m216h(context, C5419R.string.ending_on_date, new Object[]{DateUtils.formatDateTime(context, j2, DATE_FORMAT_FLAGS)}, null, 4);
+            return C1107b.m210b(context, C5419R.string.ending_on_date, new Object[]{DateUtils.formatDateTime(context, j2, DATE_FORMAT_FLAGS)}, (4 & 4) != 0 ? C1107b.b.f1491j : null);
         }
         return null;
     }
@@ -180,14 +180,14 @@ public final class GuildScheduledEventUtilitiesKt {
         switch (eventTiming.ordinal()) {
             case 1:
             case 2:
-                return C1107b.m216h(context, C5419R.string.guild_event_date_at_time, new Object[]{DateUtils.getRelativeTimeSpanString(j, ClockFactory.get().currentTimeMillis(), 86400000L), DateUtils.formatDateTime(context, j, DATE_FORMAT_FLAGS)}, null, 4);
+                return C1107b.m210b(context, C5419R.string.guild_event_date_at_time, new Object[]{DateUtils.getRelativeTimeSpanString(j, ClockFactory.get().currentTimeMillis(), 86400000L), DateUtils.formatDateTime(context, j, DATE_FORMAT_FLAGS)}, (4 & 4) != 0 ? C1107b.b.f1491j : null);
             case 3:
-                return C1107b.m216h(context, C5419R.string.starting_in_minutes, new Object[]{Integer.valueOf(minutesRelativeToTime(j))}, null, 4);
+                return C1107b.m210b(context, C5419R.string.starting_in_minutes, new Object[]{Integer.valueOf(minutesRelativeToTime(j))}, (4 & 4) != 0 ? C1107b.b.f1491j : null);
             case 4:
             case 6:
-                return C1107b.m216h(context, C5419R.string.starting_soon, new Object[0], null, 4);
+                return C1107b.m210b(context, C5419R.string.starting_soon, new Object[0], (4 & 4) != 0 ? C1107b.b.f1491j : null);
             case 5:
-                return guildScheduledEventEntityType.ordinal() != 3 ? C1107b.m216h(context, C5419R.string.stage_channel_live_now, new Object[0], null, 4) : C1107b.m216h(context, C5419R.string.active_now, new Object[0], null, 4);
+                return guildScheduledEventEntityType.ordinal() != 3 ? C1107b.m210b(context, C5419R.string.stage_channel_live_now, new Object[0], (4 & 4) != 0 ? C1107b.b.f1491j : null) : C1107b.m210b(context, C5419R.string.active_now, new Object[0], (4 & 4) != 0 ? C1107b.b.f1491j : null);
             default:
                 return getNonRelativeTimeString(j, context);
         }

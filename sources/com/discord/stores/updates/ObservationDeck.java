@@ -292,57 +292,53 @@ public final class ObservationDeck {
     public final synchronized void notify(Set<? extends UpdateSource> updates) {
         String str;
         boolean z2;
-        try {
-            C12238m.checkNotNullParameter(updates, "updates");
-            logBreadcrumb("notify START");
-            int i = 0;
-            while (i < this.observers.size()) {
-                try {
-                    Observer observer = this.observers.get(i);
-                    if (observer.getIsStale()) {
-                        logBreadcrumb("removing observer: " + observer.getName());
-                        this.observers.remove(i);
-                        i += -1;
-                    } else {
-                        if (!(updates instanceof Collection) || !updates.isEmpty()) {
-                            Iterator<T> it = updates.iterator();
-                            while (true) {
-                                if (!it.hasNext()) {
-                                    z2 = false;
-                                    break;
-                                }
-                                if (observer.getObservingUpdates().contains((UpdateSource) it.next())) {
-                                    z2 = true;
-                                    break;
-                                }
+        C12238m.checkNotNullParameter(updates, "updates");
+        logBreadcrumb("notify START");
+        int i = 0;
+        while (i < this.observers.size()) {
+            try {
+                Observer observer = this.observers.get(i);
+                if (observer.getIsStale()) {
+                    logBreadcrumb("removing observer: " + observer.getName());
+                    this.observers.remove(i);
+                    i += -1;
+                } else {
+                    if (!(updates instanceof Collection) || !updates.isEmpty()) {
+                        Iterator<T> it = updates.iterator();
+                        while (true) {
+                            if (!it.hasNext()) {
+                                z2 = false;
+                                break;
                             }
-                        } else {
-                            z2 = false;
-                            break;
+                            if (observer.getObservingUpdates().contains((UpdateSource) it.next())) {
+                                z2 = true;
+                                break;
+                            }
                         }
-                        if (z2) {
-                            observer.getOnUpdate().invoke();
-                        }
+                    } else {
+                        z2 = false;
+                        break;
                     }
-                    i++;
-                } catch (Throwable th) {
-                    try {
-                        if (this.logLevel.compareTo(LogLevel.ERROR) < 0) {
-                            throw th;
-                        }
-                        logNotifyError(th, updates);
-                        str = "notify END";
-                    } catch (Throwable th2) {
-                        logBreadcrumb("notify END");
-                        throw th2;
+                    if (z2) {
+                        observer.getOnUpdate().invoke();
                     }
                 }
+                i++;
+            } catch (Throwable th) {
+                try {
+                    if (this.logLevel.compareTo(LogLevel.ERROR) < 0) {
+                        throw th;
+                    }
+                    logNotifyError(th, updates);
+                    str = "notify END";
+                } catch (Throwable th2) {
+                    logBreadcrumb("notify END");
+                    throw th2;
+                }
             }
-            str = "notify END";
-            logBreadcrumb(str);
-        } catch (Throwable th3) {
-            throw th3;
         }
+        str = "notify END";
+        logBreadcrumb(str);
     }
 
     public static /* synthetic */ Observer connect$default(ObservationDeck observationDeck, Observer observer, boolean z2, int i, Object obj) {

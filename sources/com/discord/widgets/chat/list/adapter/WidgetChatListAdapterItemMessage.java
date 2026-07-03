@@ -393,7 +393,7 @@ public final class WidgetChatListAdapterItemMessage extends WidgetChatListItem {
                 Map<Long, String> nickOrUsernames = messageEntry.getNickOrUsernames();
                 User author = message.getAuthor();
                 objArr[0] = nickOrUsernames.get(author != null ? Long.valueOf(author.getId()) : null);
-                textView4.setText(C1107b.m216h(context, C5419R.string.application_command_waiting, objArr, null, 4));
+                textView4.setText(C1107b.m210b(context, C5419R.string.application_command_waiting, objArr, (4 & 4) != 0 ? C1107b.b.f1491j : null));
             }
             ImageView imageView2 = this.sendError;
             if (imageView2 != null) {
@@ -686,7 +686,7 @@ public final class WidgetChatListAdapterItemMessage extends WidgetChatListItem {
         User author = repliedMessageEntry.getMessage().getAuthor();
         String str = nickOrUsernames.get(author != null ? Long.valueOf(author.getId()) : null);
         C12238m.checkNotNullExpressionValue(context, "context");
-        configureReplyText(new SpannableString(C1107b.m216h(context, MessageUtils.INSTANCE.getSystemMessageUserJoin(context, repliedMessageEntry.getMessage().getId()), new Object[]{str}, null, 4).toString()), 0.64f);
+        configureReplyText(new SpannableString(C1107b.m210b(context, MessageUtils.INSTANCE.getSystemMessageUserJoin(context, repliedMessageEntry.getMessage().getId()), new Object[]{str}, (4 & 4) != 0 ? C1107b.b.f1491j : null).toString()), 0.64f);
     }
 
     private final void configureReplyText(Spannable content, float alpha) {

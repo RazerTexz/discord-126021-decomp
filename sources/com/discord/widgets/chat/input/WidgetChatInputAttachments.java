@@ -430,7 +430,7 @@ public final class WidgetChatInputAttachments {
     private final void setAttachmentFromPicker(Context context, InputContentInfoCompat inputContentInfoCompat) {
         ContentResolver contentResolver = context.getContentResolver();
         if (contentResolver != null) {
-            this.flexInputFragment.mo397f(new SourcedAttachment(Attachment.INSTANCE.m9297c(inputContentInfoCompat, contentResolver, true, C1107b.m216h(context, C5419R.string.attachment_filename_unknown, new Object[0], null, 4).toString()), AnalyticsTracker.ATTACHMENT_SOURCE_KEYBOARD));
+            this.flexInputFragment.mo397f(new SourcedAttachment(Attachment.INSTANCE.m9297c(inputContentInfoCompat, contentResolver, true, C1107b.m210b(context, C5419R.string.attachment_filename_unknown, new Object[0], (4 & 4) != 0 ? C1107b.b.f1491j : null).toString()), AnalyticsTracker.ATTACHMENT_SOURCE_KEYBOARD));
         }
     }
 

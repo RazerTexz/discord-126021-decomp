@@ -921,7 +921,7 @@ public final class WidgetChatListAdapterItemEmbed extends WidgetChatListItem imp
     }
 
     /* JADX WARN: Code duplicated, block: B:27:0x0061  */
-    private final void configureInlineEmbed(final MessageEmbed embed, boolean autoPlayGifs) throws CloneNotSupportedException {
+    private final void configureInlineEmbed(final MessageEmbed embed, boolean autoPlayGifs) {
         RenderableEmbedMedia previewImage;
         boolean z2;
         if (!shouldRenderMedia()) {
@@ -1105,7 +1105,7 @@ public final class WidgetChatListAdapterItemEmbed extends WidgetChatListItem imp
     }
 
     @Override // com.discord.widgets.chat.list.FragmentLifecycleListener
-    public void onResume() throws CloneNotSupportedException {
+    public void onResume() {
         this.binding.f16199t.onResume();
     }
 

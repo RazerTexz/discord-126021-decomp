@@ -209,7 +209,7 @@ public final class WidgetNoticeDialog extends AppDialog {
         }
 
         public final Builder setMessage(@StringRes int stringResId) {
-            this.message = C1107b.m216h(this.context, stringResId, new Object[0], null, 4);
+            this.message = C1107b.m210b(this.context, stringResId, new Object[0], (4 & 4) != 0 ? C1107b.b.f1491j : null);
             return this;
         }
 

@@ -89,15 +89,15 @@ public final class PresenceUtils {
         int iOrdinal = activity.getType().ordinal();
         if (iOrdinal != 0) {
             if (iOrdinal == 1) {
-                return C1107b.m216h(context, C5419R.string.user_activity_header_live_on_platform, new Object[]{activity.getName()}, null, 4);
+                return C1107b.m210b(context, C5419R.string.user_activity_header_live_on_platform, new Object[]{activity.getName()}, (4 & 4) != 0 ? C1107b.b.f1491j : null);
             }
             if (iOrdinal == 2) {
-                return C1107b.m216h(context, C5419R.string.user_activity_header_listening, new Object[]{activity.getName()}, null, 4);
+                return C1107b.m210b(context, C5419R.string.user_activity_header_listening, new Object[]{activity.getName()}, (4 & 4) != 0 ? C1107b.b.f1491j : null);
             }
             if (iOrdinal != 3) {
-                return iOrdinal != 5 ? C1107b.m216h(context, C5419R.string.user_activity_header_playing, new Object[0], null, 4) : C1107b.m216h(context, C5419R.string.user_activity_header_competing, new Object[]{activity.getName()}, null, 4);
+                return iOrdinal != 5 ? C1107b.m210b(context, C5419R.string.user_activity_header_playing, new Object[0], (4 & 4) != 0 ? C1107b.b.f1491j : null) : C1107b.m210b(context, C5419R.string.user_activity_header_competing, new Object[]{activity.getName()}, (4 & 4) != 0 ? C1107b.b.f1491j : null);
             }
-            return C1107b.m216h(context, C5419R.string.user_activity_header_watching, new Object[]{activity.getName()}, null, 4);
+            return C1107b.m210b(context, C5419R.string.user_activity_header_watching, new Object[]{activity.getName()}, (4 & 4) != 0 ? C1107b.b.f1491j : null);
         }
         ActivityPlatform platform = activity.getPlatform();
         if (platform != null) {
@@ -113,12 +113,12 @@ public final class PresenceUtils {
             if (properName != null) {
                 properName = str;
                 properName = str2;
-                return C1107b.m216h(context, C5419R.string.user_activity_header_playing_on_platform, new Object[]{properName}, null, 4);
+                return C1107b.m210b(context, C5419R.string.user_activity_header_playing_on_platform, new Object[]{properName}, (4 & 4) != 0 ? C1107b.b.f1491j : null);
             }
         }
         properName = str;
         properName = str2;
-        return C1107b.m216h(context, C5419R.string.user_activity_header_playing, new Object[0], null, 4);
+        return C1107b.m210b(context, C5419R.string.user_activity_header_playing, new Object[0], (4 & 4) != 0 ? C1107b.b.f1491j : null);
     }
 
     private final CharSequence getActivityString(Context context, Activity activityModel) {
@@ -128,7 +128,7 @@ public final class PresenceUtils {
         }
         int iOrdinal = type.ordinal();
         if (iOrdinal == 0) {
-            return C1107b.m216h(context, C5419R.string.playing_game, new Object[]{activityModel.getName()}, null, 4);
+            return C1107b.m210b(context, C5419R.string.playing_game, new Object[]{activityModel.getName()}, (4 & 4) != 0 ? C1107b.b.f1491j : null);
         }
         if (iOrdinal == 1) {
             Object[] objArr = new Object[1];
@@ -137,16 +137,16 @@ public final class PresenceUtils {
                 details = activityModel.getName();
             }
             objArr[0] = details;
-            return C1107b.m216h(context, C5419R.string.streaming, objArr, null, 4);
+            return C1107b.m210b(context, C5419R.string.streaming, objArr, (4 & 4) != 0 ? C1107b.b.f1491j : null);
         }
         if (iOrdinal == 2) {
-            return C1107b.m216h(context, C5419R.string.listening_to, new Object[]{activityModel.getName()}, null, 4);
+            return C1107b.m210b(context, C5419R.string.listening_to, new Object[]{activityModel.getName()}, (4 & 4) != 0 ? C1107b.b.f1491j : null);
         }
         if (iOrdinal != 3) {
             if (iOrdinal != 5) {
                 return null;
             }
-            return C1107b.m216h(context, C5419R.string.competing, new Object[]{activityModel.getName()}, null, 4);
+            return C1107b.m210b(context, C5419R.string.competing, new Object[]{activityModel.getName()}, (4 & 4) != 0 ? C1107b.b.f1491j : null);
         }
         Object[] objArr2 = new Object[1];
         String details2 = activityModel.getDetails();
@@ -154,12 +154,12 @@ public final class PresenceUtils {
             details2 = activityModel.getName();
         }
         objArr2[0] = details2;
-        return C1107b.m216h(context, C5419R.string.watching, objArr2, null, 4);
+        return C1107b.m210b(context, C5419R.string.watching, objArr2, (4 & 4) != 0 ? C1107b.b.f1491j : null);
     }
 
     private final CharSequence getApplicationStreamingString(Context context, Presence presence) {
         Activity playingActivity;
-        return (presence == null || (playingActivity = getPlayingActivity(presence)) == null) ? C1107b.m216h(context, C5419R.string.streaming_a_game, new Object[0], null, 4) : C1107b.m216h(context, C5419R.string.streaming, new Object[]{playingActivity.getName()}, null, 4);
+        return (presence == null || (playingActivity = getPlayingActivity(presence)) == null) ? C1107b.m210b(context, C5419R.string.streaming_a_game, new Object[0], (4 & 4) != 0 ? C1107b.b.f1491j : null) : C1107b.m210b(context, C5419R.string.streaming, new Object[]{playingActivity.getName()}, (4 & 4) != 0 ? C1107b.b.f1491j : null);
     }
 
     private final DraweeSpanStringBuilder getStatusDraweeSpanStringBuilder(Context context, Presence presence, boolean isStreamingApplication, boolean hideEmoji, boolean showFallbackStatusText, boolean animateCustomStatusEmoji) {
@@ -231,7 +231,7 @@ public final class PresenceUtils {
             return activityString;
         }
         if (showFallbackStatusText) {
-            return C1107b.m216h(context, getStatusText(presence), new Object[0], null, 4);
+            return C1107b.m210b(context, getStatusText(presence), new Object[0], (4 & 4) != 0 ? C1107b.b.f1491j : null);
         }
         return null;
     }

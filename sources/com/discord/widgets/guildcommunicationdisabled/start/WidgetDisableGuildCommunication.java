@@ -150,10 +150,10 @@ public final class WidgetDisableGuildCommunication extends AppFragment {
             C12238m.checkNotNullExpressionValue(checkedSetting6, "binding.timeUnit1Week");
             configureDurationOption(valid, checkedSetting6, TimeDurationDisabledCommunication.WEEK_1);
             Context context = getContext();
-            CharSequence charSequenceM216h = context != null ? C1107b.m216h(context, C5419R.string.disable_guild_communication_body_header, new Object[]{C0862f.f507a.m149a(4413305239191L, null)}, null, 4) : null;
+            CharSequence charSequenceM210b = context != null ? C1107b.m210b(context, C5419R.string.disable_guild_communication_body_header, new Object[]{C0862f.f507a.m149a(4413305239191L, null)}, (4 & 4) != 0 ? C1107b.b.f1491j : null) : null;
             TextView textView = getBinding().f16476c;
             C12238m.checkNotNullExpressionValue(textView, "binding.disableGuildCommunicationBody");
-            textView.setText(charSequenceM216h);
+            textView.setText(charSequenceM210b);
             getBinding().f16476c.setOnClickListener(new View.OnClickListener() { // from class: com.discord.widgets.guildcommunicationdisabled.start.WidgetDisableGuildCommunication.configureUI.1
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
@@ -181,7 +181,7 @@ public final class WidgetDisableGuildCommunication extends AppFragment {
 
                     /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
                     public final void invoke2() {
-                        CharSequence charSequenceM216h;
+                        CharSequence charSequenceM210b;
                         Context context = WidgetDisableGuildCommunication.this.getContext();
                         Context context2 = WidgetDisableGuildCommunication.this.getContext();
                         if (context2 != null) {
@@ -189,11 +189,11 @@ public final class WidgetDisableGuildCommunication extends AppFragment {
                             User user = ((DisableGuildCommunicationViewModel.ViewState.Valid) viewState).getUser();
                             objArr[0] = user != null ? UserUtils.getUserNameWithDiscriminator$default(UserUtils.INSTANCE, user, null, null, 3, null) : null;
                             objArr[1] = GuildCommunicationDisabledDateUtils.INSTANCE.getFriendlyDurationString(WidgetDisableGuildCommunication.this.getContext(), ((DisableGuildCommunicationViewModel.ViewState.Valid) viewState).getSelectedDurationOption());
-                            charSequenceM216h = C1107b.m216h(context2, C5419R.string.disable_guild_communication_confirmed, objArr, null, 4);
+                            charSequenceM210b = C1107b.m210b(context2, C5419R.string.disable_guild_communication_confirmed, objArr, (4 & 4) != 0 ? C1107b.b.f1491j : null);
                         } else {
-                            charSequenceM216h = null;
+                            charSequenceM210b = null;
                         }
-                        C0876m.m170h(context, charSequenceM216h, 0, null, 12);
+                        C0876m.m170h(context, charSequenceM210b, 0, null, 12);
                         AppActivity appActivity = WidgetDisableGuildCommunication.this.getAppActivity();
                         if (appActivity != null) {
                             appActivity.finish();

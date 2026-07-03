@@ -68,10 +68,10 @@ public final class StageAudienceBlockedBottomSheetAdapter extends MGRecyclerAdap
                 MaterialTextView materialTextView = this.binding.f15244c;
                 C12238m.checkNotNullExpressionValue(materialTextView, "binding.title");
                 ListItem.Header header = (ListItem.Header) data;
-                materialTextView.setText(C1107b.m216h(C1643a.m885x(this.itemView, "itemView", "itemView.context"), C5419R.string.stage_blocked_users_title_plural, new Object[]{StringResourceUtilsKt.getI18nPluralString(C1643a.m885x(this.itemView, "itemView", "itemView.context"), C5419R.plurals.stage_blocked_users_title_plural_number, header.getNumBlockedUsers(), new Object[0])}, null, 4));
+                materialTextView.setText(C1107b.m210b(C1643a.m885x(this.itemView, "itemView", "itemView.context"), C5419R.string.stage_blocked_users_title_plural, new Object[]{StringResourceUtilsKt.getI18nPluralString(C1643a.m885x(this.itemView, "itemView", "itemView.context"), C5419R.plurals.stage_blocked_users_title_plural_number, header.getNumBlockedUsers(), new Object[0])}, (4 & 4) != 0 ? C1107b.b.f1491j : null));
                 MaterialTextView materialTextView2 = this.binding.f15243b;
                 C12238m.checkNotNullExpressionValue(materialTextView2, "binding.description");
-                materialTextView2.setText(C1107b.m216h(C1643a.m885x(this.itemView, "itemView", "itemView.context"), C5419R.string.stage_blocked_users_body, new Object[]{StringResourceUtilsKt.getI18nPluralString(C1643a.m885x(this.itemView, "itemView", "itemView.context"), C5419R.plurals.stage_blocked_users_body_number, header.getNumBlockedUsers(), Integer.valueOf(header.getNumBlockedUsers()))}, null, 4));
+                materialTextView2.setText(C1107b.m210b(C1643a.m885x(this.itemView, "itemView", "itemView.context"), C5419R.string.stage_blocked_users_body, new Object[]{StringResourceUtilsKt.getI18nPluralString(C1643a.m885x(this.itemView, "itemView", "itemView.context"), C5419R.plurals.stage_blocked_users_body_number, header.getNumBlockedUsers(), Integer.valueOf(header.getNumBlockedUsers()))}, (4 & 4) != 0 ? C1107b.b.f1491j : null));
             }
         }
     }

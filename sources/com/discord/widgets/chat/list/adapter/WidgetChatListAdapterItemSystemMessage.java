@@ -115,39 +115,39 @@ public final class WidgetChatListAdapterItemSystemMessage extends WidgetChatList
                 return i > 1 ? C1107b.m210b(context, C5419R.string.system_message_guild_member_subscribed_many, new Object[]{this.$authorName, String.valueOf(i)}, this.$usernameRenderContext) : C1107b.m210b(context, C5419R.string.system_message_guild_member_subscribed, new Object[]{this.$authorName}, this.$usernameRenderContext);
             }
             if (type != null && type.intValue() == 9) {
-                return C1107b.m210b(context, C5419R.string.system_message_guild_member_subscribed_achieved_tier, new Object[]{this.$authorName, this.$guildName, C1107b.m216h(context, C5419R.string.premium_guild_tier_1, new Object[0], null, 4)}, this.$usernameRenderContext);
+                return C1107b.m210b(context, C5419R.string.system_message_guild_member_subscribed_achieved_tier, new Object[]{this.$authorName, this.$guildName, C1107b.m210b(context, C5419R.string.premium_guild_tier_1, new Object[0], (4 & 4) != 0 ? C1107b.b.f1491j : null)}, this.$usernameRenderContext);
             }
             if (type != null && type.intValue() == 10) {
-                return C1107b.m210b(context, C5419R.string.system_message_guild_member_subscribed_achieved_tier, new Object[]{this.$authorName, this.$guildName, C1107b.m216h(context, C5419R.string.premium_guild_tier_2, new Object[0], null, 4)}, this.$usernameRenderContext);
+                return C1107b.m210b(context, C5419R.string.system_message_guild_member_subscribed_achieved_tier, new Object[]{this.$authorName, this.$guildName, C1107b.m210b(context, C5419R.string.premium_guild_tier_2, new Object[0], (4 & 4) != 0 ? C1107b.b.f1491j : null)}, this.$usernameRenderContext);
             }
             if (type != null && type.intValue() == 11) {
-                return C1107b.m210b(context, C5419R.string.system_message_guild_member_subscribed_achieved_tier, new Object[]{this.$authorName, this.$guildName, C1107b.m216h(context, C5419R.string.premium_guild_tier_3, new Object[0], null, 4)}, this.$usernameRenderContext);
+                return C1107b.m210b(context, C5419R.string.system_message_guild_member_subscribed_achieved_tier, new Object[]{this.$authorName, this.$guildName, C1107b.m210b(context, C5419R.string.premium_guild_tier_3, new Object[0], (4 & 4) != 0 ? C1107b.b.f1491j : null)}, this.$usernameRenderContext);
             }
             if (type != null && type.intValue() == 12) {
                 return C1107b.m210b(context, C5419R.string.system_message_channel_follow_add, new Object[]{this.$authorName, this.$this_getSystemMessage.getContent()}, this.$usernameRenderContext);
             }
             if (type != null && type.intValue() == 14) {
-                return C1107b.m216h(context, C5419R.string.system_message_guild_discovery_disqualified_mobile, new Object[0], null, 4);
+                return C1107b.m210b(context, C5419R.string.system_message_guild_discovery_disqualified_mobile, new Object[0], (4 & 4) != 0 ? C1107b.b.f1491j : null);
             }
             if (type != null && type.intValue() == 15) {
-                return C1107b.m216h(context, C5419R.string.system_message_guild_discovery_requalified, new Object[0], null, 4);
+                return C1107b.m210b(context, C5419R.string.system_message_guild_discovery_requalified, new Object[0], (4 & 4) != 0 ? C1107b.b.f1491j : null);
             }
             if (type != null && type.intValue() == 16) {
-                return C1107b.m216h(context, C5419R.string.system_message_guild_discovery_grace_period_initial_warning, new Object[0], null, 4);
+                return C1107b.m210b(context, C5419R.string.system_message_guild_discovery_grace_period_initial_warning, new Object[0], (4 & 4) != 0 ? C1107b.b.f1491j : null);
             }
             if (type != null && type.intValue() == 17) {
-                return C1107b.m216h(context, C5419R.string.system_message_guild_discovery_grace_period_final_warning, new Object[0], null, 4);
+                return C1107b.m210b(context, C5419R.string.system_message_guild_discovery_grace_period_final_warning, new Object[0], (4 & 4) != 0 ? C1107b.b.f1491j : null);
             }
             if (type != null && type.intValue() == 18) {
                 return C1107b.m210b(context, C5419R.string.system_message_thread_created_mobile, new Object[]{this.$authorName, this.$this_getSystemMessage.getContent()}, this.$actorRenderContext);
             }
             if (type != null && type.intValue() == -7) {
-                return C1107b.m216h(context, C5419R.string.thread_starter_message_not_loaded, new Object[0], null, 4);
+                return C1107b.m210b(context, C5419R.string.thread_starter_message_not_loaded, new Object[0], (4 & 4) != 0 ? C1107b.b.f1491j : null);
             }
             if (type != null && type.intValue() == 24) {
                 return C1107b.m210b(context, this.$autoModSystemMessage, new Object[0], this.$autoModRenderContext);
             }
-            return (type != null && type.intValue() == 25) ? MessageUtils.INSTANCE.getSystemMessageRoleSubscriptionPurchase(this.$context, this.$guildName, this.$authorName, this.$this_getSystemMessage.getRoleSubscriptionData(), this.$roleSubscriptionPurchaseContext) : C1107b.m216h(context, C5419R.string.reply_quote_message_not_loaded, new Object[0], null, 4);
+            return (type != null && type.intValue() == 25) ? MessageUtils.INSTANCE.getSystemMessageRoleSubscriptionPurchase(this.$context, this.$guildName, this.$authorName, this.$this_getSystemMessage.getRoleSubscriptionData(), this.$roleSubscriptionPurchaseContext) : C1107b.m210b(context, C5419R.string.reply_quote_message_not_loaded, new Object[0], (4 & 4) != 0 ? C1107b.b.f1491j : null);
         }
     }
 

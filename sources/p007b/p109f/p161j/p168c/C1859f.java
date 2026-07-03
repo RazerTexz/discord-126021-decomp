@@ -196,7 +196,9 @@ public class C1859f {
             C2030b.m1527b();
             C1919e c1919eM1208a = this.f3666f.m1208a(cacheKey);
             if (c1919eM1208a != null) {
-                return m1218d(cacheKey, c1919eM1208a);
+                C13202g<C1919e> c13202gM1218d = m1218d(cacheKey, c1919eM1208a);
+                C2030b.m1527b();
+                return c13202gM1218d;
             }
             try {
                 c13202gM11367c = C13202g.m11366a(new CallableC1858e(this, null, atomicBoolean, cacheKey), this.f3664d);
@@ -204,9 +206,11 @@ public class C1859f {
                 C1691a.m986n(C1859f.class, e, "Failed to schedule disk-cache read for %s", ((C1656f) cacheKey).f3019a);
                 c13202gM11367c = C13202g.m11367c(e);
             }
-            return c13202gM11367c;
-        } finally {
             C2030b.m1527b();
+            return c13202gM11367c;
+        } catch (Throwable th) {
+            C2030b.m1527b();
+            throw th;
         }
     }
 

@@ -142,7 +142,7 @@ public final class MessageUtils {
         C12238m.checkNotNullParameter(function1, "initializer");
         Locale localeOrNull = ContextExtensionsKt.getLocaleOrNull(context);
         if ((!C12238m.areEqual(localeOrNull != null ? localeOrNull.getLanguage() : null, new Locale("en").getLanguage())) || roleSubscriptionData == null) {
-            return C1107b.m216h(context, C5419R.string.reply_quote_message_not_loaded, new Object[0], null, 4);
+            return C1107b.m210b(context, C5419R.string.reply_quote_message_not_loaded, new Object[0], (4 & 4) != 0 ? C1107b.b.f1491j : null);
         }
         String tierName = roleSubscriptionData.getTierName();
         if (roleSubscriptionData.getTotalMonthsSubscribed() > 0) {

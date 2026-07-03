@@ -258,10 +258,10 @@ public final class WidgetSearchSuggestionsAdapter extends MGRecyclerAdapterSimpl
             imageView.setImageDrawable(getIconDrawable(context, filterType));
             TextView textView = this.binding.f17445d;
             C12238m.checkNotNullExpressionValue(textView, "binding.suggestionExampleFilter");
-            textView.setText(C1107b.m215g("**" + C1107b.m216h(C1643a.m885x(this.itemView, "itemView", "itemView.context"), filterText, new Object[0], null, 4) + "**:", new Object[0], (2 & 2) != 0 ? C1107b.e.f1494j : null));
+            textView.setText(C1107b.m215g("**" + C1107b.m210b(C1643a.m885x(this.itemView, "itemView", "itemView.context"), filterText, new Object[0], (4 & 4) != 0 ? C1107b.b.f1491j : null) + "**:", new Object[0], (2 & 2) != 0 ? C1107b.e.f1494j : null));
             TextView textView2 = this.binding.f17443b;
             C12238m.checkNotNullExpressionValue(textView2, "binding.suggestionExampleAnswer");
-            textView2.setText(C1107b.m216h(C1643a.m885x(this.itemView, "itemView", "itemView.context"), answerText, new Object[0], null, 4));
+            textView2.setText(C1107b.m210b(C1643a.m885x(this.itemView, "itemView", "itemView.context"), answerText, new Object[0], (4 & 4) != 0 ? C1107b.b.f1491j : null));
         }
     }
 

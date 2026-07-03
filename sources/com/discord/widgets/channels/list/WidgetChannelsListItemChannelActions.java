@@ -210,12 +210,12 @@ public final class WidgetChannelsListItemChannelActions extends AppBottomSheet {
             C12238m.checkNotNullParameter(context, "context");
             C12238m.checkNotNullParameter(channel, "channel");
             if (this.isMuted && ChannelUtils.m7687k(channel)) {
-                return C1107b.m216h(context, C5419R.string.unmute_category, new Object[0], null, 4);
+                return C1107b.m210b(context, C5419R.string.unmute_category, new Object[0], (4 & 4) != 0 ? C1107b.b.f1491j : null);
             }
             if (this.isMuted || !ChannelUtils.m7687k(channel)) {
-                return this.isMuted ? C1107b.m216h(context, C5419R.string.unmute_channel_generic, new Object[0], null, 4) : C1107b.m216h(context, C5419R.string.mute_channel_generic, new Object[0], null, 4);
+                return this.isMuted ? C1107b.m210b(context, C5419R.string.unmute_channel_generic, new Object[0], (4 & 4) != 0 ? C1107b.b.f1491j : null) : C1107b.m210b(context, C5419R.string.mute_channel_generic, new Object[0], (4 & 4) != 0 ? C1107b.b.f1491j : null);
             }
-            return C1107b.m216h(context, C5419R.string.mute_category, new Object[0], null, 4);
+            return C1107b.m210b(context, C5419R.string.mute_category, new Object[0], (4 & 4) != 0 ? C1107b.b.f1491j : null);
         }
 
         public final int getMuteIconResId(Context context) {

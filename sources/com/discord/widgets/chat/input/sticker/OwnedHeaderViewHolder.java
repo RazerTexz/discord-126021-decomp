@@ -64,7 +64,7 @@ public final class OwnedHeaderViewHolder extends MGRecyclerViewHolder<WidgetStic
             textView.setText(packItem.getPack().getName());
             TextView textView2 = this.binding.f15066b;
             C12238m.checkNotNullExpressionValue(textView2, "binding.headerItemText");
-            textView2.setContentDescription(C1107b.m216h(C1643a.m885x(this.itemView, "itemView", "itemView.context"), C5419R.string.sticker_category_a11y_label, new Object[]{packItem.getPack().getName()}, null, 4));
+            textView2.setContentDescription(C1107b.m210b(C1643a.m885x(this.itemView, "itemView", "itemView.context"), C5419R.string.sticker_category_a11y_label, new Object[]{packItem.getPack().getName()}, (4 & 4) != 0 ? C1107b.b.f1491j : null));
             return;
         }
         if (headerType instanceof HeaderType.Recent) {
@@ -74,7 +74,7 @@ public final class OwnedHeaderViewHolder extends MGRecyclerViewHolder<WidgetStic
             Context contextM821I = C1643a.m821I(this.binding.f15066b, "binding.headerItemText", "binding.headerItemText.context");
             TextView textView4 = this.binding.f15066b;
             C12238m.checkNotNullExpressionValue(textView4, "binding.headerItemText");
-            textView3.setContentDescription(C1107b.m216h(contextM821I, C5419R.string.sticker_category_a11y_label, new Object[]{textView4.getText()}, null, 4));
+            textView3.setContentDescription(C1107b.m210b(contextM821I, C5419R.string.sticker_category_a11y_label, new Object[]{textView4.getText()}, (4 & 4) != 0 ? C1107b.b.f1491j : null));
             return;
         }
         if (headerType instanceof HeaderType.GuildItem) {
@@ -84,7 +84,7 @@ public final class OwnedHeaderViewHolder extends MGRecyclerViewHolder<WidgetStic
             textView5.setText(guildItem.getGuild().getName());
             TextView textView6 = this.binding.f15066b;
             C12238m.checkNotNullExpressionValue(textView6, "binding.headerItemText");
-            textView6.setContentDescription(C1107b.m216h(C1643a.m821I(this.binding.f15066b, "binding.headerItemText", "binding.headerItemText.context"), C5419R.string.sticker_category_a11y_label, new Object[]{guildItem.getGuild().getName()}, null, 4));
+            textView6.setContentDescription(C1107b.m210b(C1643a.m821I(this.binding.f15066b, "binding.headerItemText", "binding.headerItemText.context"), C5419R.string.sticker_category_a11y_label, new Object[]{guildItem.getGuild().getName()}, (4 & 4) != 0 ? C1107b.b.f1491j : null));
         }
     }
 }

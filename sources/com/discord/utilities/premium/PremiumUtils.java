@@ -277,13 +277,13 @@ public final class PremiumUtils {
     public final CharSequence getBoostTierShortText(Context context, Integer premiumTier) {
         C12238m.checkNotNullParameter(context, "context");
         if (premiumTier != null && premiumTier.intValue() == 1) {
-            return C1107b.m216h(context, C5419R.string.premium_guild_tier_1_short, new Object[0], null, 4);
+            return C1107b.m210b(context, C5419R.string.premium_guild_tier_1_short, new Object[0], (4 & 4) != 0 ? C1107b.b.f1491j : null);
         }
         if (premiumTier != null && premiumTier.intValue() == 2) {
-            return C1107b.m216h(context, C5419R.string.premium_guild_tier_2_short, new Object[0], null, 4);
+            return C1107b.m210b(context, C5419R.string.premium_guild_tier_2_short, new Object[0], (4 & 4) != 0 ? C1107b.b.f1491j : null);
         }
         if (premiumTier != null && premiumTier.intValue() == 3) {
-            return C1107b.m216h(context, C5419R.string.premium_guild_tier_3_short, new Object[0], null, 4);
+            return C1107b.m210b(context, C5419R.string.premium_guild_tier_3_short, new Object[0], (4 & 4) != 0 ? C1107b.b.f1491j : null);
         }
         return null;
     }
@@ -380,10 +380,10 @@ public final class PremiumUtils {
         int iHashCode = strOptString.hashCode();
         if (iHashCode != 78476) {
             if (iHashCode == 78488 && strOptString.equals(YEARLY_ISO8601)) {
-                return C1107b.m216h(context, C5419R.string.billing_price_per_year, new Object[]{skuDetails.m7501b()}, null, 4);
+                return C1107b.m210b(context, C5419R.string.billing_price_per_year, new Object[]{skuDetails.m7501b()}, (4 & 4) != 0 ? C1107b.b.f1491j : null);
             }
         } else if (strOptString.equals(MONTHLY_ISO8601)) {
-            return C1107b.m216h(context, C5419R.string.billing_price_per_month, new Object[]{skuDetails.m7501b()}, null, 4);
+            return C1107b.m210b(context, C5419R.string.billing_price_per_month, new Object[]{skuDetails.m7501b()}, (4 & 4) != 0 ? C1107b.b.f1491j : null);
         }
         return "";
     }
@@ -419,7 +419,7 @@ public final class PremiumUtils {
 
     public final void openAppleBilling(Context context) {
         C12238m.checkNotNullParameter(context, "context");
-        UriHandler.handle$default(UriHandler.INSTANCE, context, C1107b.m216h(context, C5419R.string.apple_billing_url, new Object[0], null, 4).toString(), false, false, null, 28, null);
+        UriHandler.handle$default(UriHandler.INSTANCE, context, C1107b.m210b(context, C5419R.string.apple_billing_url, new Object[0], (4 & 4) != 0 ? C1107b.b.f1491j : null).toString(), false, false, null, 28, null);
     }
 
     public final void openGooglePlayBilling(Context context, String skuName) {

@@ -732,7 +732,7 @@ public final class WidgetChannelsListItemThreadActions extends AppBottomSheet {
     }
 
     private final CharSequence getMuteThreadText(Channel channel, boolean isMuted, Context context) {
-        return isMuted ? C1107b.m216h(context, C5419R.string.unmute, new Object[0], null, 4) : C1107b.m216h(context, C5419R.string.mute_channel, new Object[]{ChannelUtils.m7681e(channel, context, false, 2)}, null, 4);
+        return isMuted ? C1107b.m210b(context, C5419R.string.unmute, new Object[0], (4 & 4) != 0 ? C1107b.b.f1491j : null) : C1107b.m210b(context, C5419R.string.mute_channel, new Object[]{ChannelUtils.m7681e(channel, context, false, 2)}, (4 & 4) != 0 ? C1107b.b.f1491j : null);
     }
 
     private final void leaveThread(Channel channel) {

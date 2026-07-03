@@ -288,7 +288,7 @@ public final class WidgetThreadArchiveActions extends AppBottomSheet {
         long jComputeThreadAutoArchiveTimeMs = ThreadUtils.INSTANCE.computeThreadAutoArchiveTimeMs(channel);
         TextView textView = getBinding().f18263l;
         C12238m.checkNotNullExpressionValue(textView, "binding.subtitle");
-        textView.setText(C1107b.m216h(contextRequireContext, C5419R.string.auto_archive_thread_at_long, new Object[]{TimeUtils.toReadableTimeString$default(contextRequireContext, jComputeThreadAutoArchiveTimeMs, null, 4, null)}, null, 4));
+        textView.setText(C1107b.m210b(contextRequireContext, C5419R.string.auto_archive_thread_at_long, new Object[]{TimeUtils.toReadableTimeString$default(contextRequireContext, jComputeThreadAutoArchiveTimeMs, null, 4, null)}, (4 & 4) != 0 ? C1107b.b.f1491j : null));
         ThreadMetadata threadMetadata = channel.getThreadMetadata();
         Integer numValueOf = threadMetadata != null ? Integer.valueOf(threadMetadata.getAutoArchiveDuration()) : null;
         TextView textView2 = getBinding().f18253b;

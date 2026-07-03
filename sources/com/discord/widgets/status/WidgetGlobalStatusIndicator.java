@@ -442,7 +442,7 @@ public final class WidgetGlobalStatusIndicator extends AppFragment {
             Object[] objArr = new Object[1];
             Context context2 = getContext();
             objArr[0] = context2 != null ? StringResourceUtilsKt.getI18nPluralString(context2, C5419R.plurals.stage_speak_invite_blocked_users_number, viewState.getBlockedUsersOnStage(), Integer.valueOf(viewState.getBlockedUsersOnStage())) : null;
-            name = C1107b.m216h(context, C5419R.string.stage_speak_invite_blocked_users, objArr, null, 4);
+            name = C1107b.m210b(context, C5419R.string.stage_speak_invite_blocked_users, objArr, (4 & 4) != 0 ? C1107b.b.f1491j : null);
         }
         textView3.setText(name);
     }

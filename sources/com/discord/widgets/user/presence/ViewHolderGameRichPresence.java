@@ -46,7 +46,7 @@ public final class ViewHolderGameRichPresence extends ViewHolderUserRichPresence
     @Override // com.discord.widgets.user.presence.ViewHolderUserRichPresence
     public void configureTextUi(Activity model, StreamContext streamContext) {
         String string;
-        CharSequence charSequenceM216h;
+        CharSequence charSequenceM210b;
         Context context;
         if (model == null) {
             throw new IllegalArgumentException("model must not be null");
@@ -56,14 +56,14 @@ public final class ViewHolderGameRichPresence extends ViewHolderUserRichPresence
             ActivityParty party = model.getParty();
             if (party != null) {
                 PresenceUtils presenceUtils = PresenceUtils.INSTANCE;
-                charSequenceM216h = (presenceUtils.getMaxSize(party) == 0 || (context = getRoot().getContext()) == null) ? null : C1107b.m216h(context, C5419R.string.user_activity_state_size, new Object[]{String.valueOf(presenceUtils.getCurrentSize(party)), String.valueOf(presenceUtils.getMaxSize(party))}, null, 4);
-                if (charSequenceM216h == null) {
-                    charSequenceM216h = "";
+                charSequenceM210b = (presenceUtils.getMaxSize(party) == 0 || (context = getRoot().getContext()) == null) ? null : C1107b.m210b(context, C5419R.string.user_activity_state_size, new Object[]{String.valueOf(presenceUtils.getCurrentSize(party)), String.valueOf(presenceUtils.getMaxSize(party))}, (4 & 4) != 0 ? C1107b.b.f1491j : null);
+                if (charSequenceM210b == null) {
+                    charSequenceM210b = "";
                 }
             } else {
-                charSequenceM216h = "";
+                charSequenceM210b = "";
             }
-            String str = state + ' ' + charSequenceM216h;
+            String str = state + ' ' + charSequenceM210b;
             Objects.requireNonNull(str, "null cannot be cast to non-null type kotlin.CharSequence");
             string = C12106w.trim(str).toString();
         } else {

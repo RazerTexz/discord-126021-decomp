@@ -165,7 +165,7 @@ public final class VideoCallParticipantView extends ConstraintLayout implements 
             /* JADX INFO: renamed from: a */
             public CharSequence mo8587a(Context context) {
                 C12238m.checkNotNullParameter(context, "context");
-                return C1107b.m216h(context, C5419R.string.screenshare_resolution_abbreviated, new Object[]{Integer.valueOf(this.f19254a)}, null, 4);
+                return C1107b.m210b(context, C5419R.string.screenshare_resolution_abbreviated, new Object[]{Integer.valueOf(this.f19254a)}, (4 & 4) != 0 ? C1107b.b.f1491j : null);
             }
 
             public boolean equals(Object obj) {
@@ -199,7 +199,7 @@ public final class VideoCallParticipantView extends ConstraintLayout implements 
             /* JADX INFO: renamed from: a */
             public CharSequence mo8587a(Context context) {
                 C12238m.checkNotNullParameter(context, "context");
-                return C1107b.m216h(context, C5419R.string.screenshare_source, new Object[0], null, 4);
+                return C1107b.m210b(context, C5419R.string.screenshare_source, new Object[0], (4 & 4) != 0 ? C1107b.b.f1491j : null);
             }
         }
 
@@ -379,7 +379,7 @@ public final class VideoCallParticipantView extends ConstraintLayout implements 
 
     /* JADX INFO: renamed from: a */
     public final void m8581a(ParticipantData participantData) {
-        CharSequence charSequenceM216h;
+        CharSequence charSequenceM210b;
         ParticipantData.C7107a c7107a = participantData.streamQualityIndicatorData;
         if (!participantData.isFocused || !this.controlsVisible || c7107a == null) {
             m8582b(false);
@@ -401,14 +401,14 @@ public final class VideoCallParticipantView extends ConstraintLayout implements 
             Context context2 = getContext();
             C12238m.checkNotNullExpressionValue(context2, "context");
             C12238m.checkNotNullParameter(context2, "context");
-            charSequenceM216h = C1107b.m216h(context2, C5419R.string.screenshare_fps_abbreviated, new Object[]{Integer.valueOf(streamFps.fps)}, null, 4);
+            charSequenceM210b = C1107b.m210b(context2, C5419R.string.screenshare_fps_abbreviated, new Object[]{Integer.valueOf(streamFps.fps)}, (4 & 4) != 0 ? C1107b.b.f1491j : null);
         } else {
-            charSequenceM216h = "";
+            charSequenceM210b = "";
         }
         StringBuilder sb = new StringBuilder();
         sb.append(charSequenceMo8587a);
         sb.append(' ');
-        sb.append(charSequenceM216h);
+        sb.append(charSequenceM210b);
         String string = sb.toString();
         Objects.requireNonNull(string, "null cannot be cast to non-null type kotlin.CharSequence");
         String string2 = C12106w.trim(string).toString();
@@ -779,7 +779,7 @@ public final class VideoCallParticipantView extends ConstraintLayout implements 
                 Context context = getContext();
                 C12238m.checkNotNullExpressionValue(context, "context");
                 i = 0;
-                setContentDescription(C1107b.m216h(context, C5419R.string.go_live_tile_screen, new Object[]{voiceUser.getDisplayName()}, null, 4));
+                setContentDescription(C1107b.m210b(context, C5419R.string.go_live_tile_screen, new Object[]{voiceUser.getDisplayName()}, (4 & 4) != 0 ? C1107b.b.f1491j : null));
                 this.binding.f926o.setCompoundDrawablesWithIntrinsicBounds(C5419R.drawable.ic_screen_14dp, 0, 0, 0);
             } else {
                 i = 0;

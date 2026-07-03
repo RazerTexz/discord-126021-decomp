@@ -659,15 +659,15 @@ public final class WidgetServerSettingsOverview extends AppFragment {
     }
 
     private final void configureChannel(TextView textView, Channel channel, @StringRes int i, @DrawableRes int i2) {
-        CharSequence charSequenceM216h;
+        CharSequence charSequenceM210b;
         if (channel != null) {
-            charSequenceM216h = ChannelUtils.m7679c(channel);
+            charSequenceM210b = ChannelUtils.m7679c(channel);
         } else {
             Context context = textView.getContext();
             C12238m.checkNotNullExpressionValue(context, "context");
-            charSequenceM216h = C1107b.m216h(context, i, new Object[0], null, 4);
+            charSequenceM210b = C1107b.m210b(context, i, new Object[0], (4 & 4) != 0 ? C1107b.b.f1491j : null);
         }
-        textView.setText(charSequenceM216h);
+        textView.setText(charSequenceM210b);
         DrawableCompat.setCompoundDrawablesCompat$default(textView, channel == null ? 0 : i2, 0, 0, 0, 14, (Object) null);
     }
 

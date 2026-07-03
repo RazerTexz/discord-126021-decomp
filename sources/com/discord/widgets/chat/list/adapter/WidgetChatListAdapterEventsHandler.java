@@ -398,7 +398,7 @@ public final class WidgetChatListAdapterEventsHandler implements WidgetChatListA
             public final void invoke2(String str) {
                 Context context = (Context) C79991.this.$weakContext.get();
                 if (context != null) {
-                    C0876m.m170h(context, C1107b.m216h(context, C5419R.string.download_file_complete, new Object[]{str}, null, 4), 0, null, 12);
+                    C0876m.m170h(context, C1107b.m210b(context, C5419R.string.download_file_complete, new Object[]{str}, (4 & 4) != 0 ? C1107b.b.f1491j : null), 0, null, 12);
                 }
             }
         }
@@ -674,7 +674,7 @@ public final class WidgetChatListAdapterEventsHandler implements WidgetChatListA
                 intentJoin.addFlags(268435456);
                 WidgetChatListAdapterEventsHandler.this.getContext().startActivity(intentJoin);
             } catch (ActivityNotFoundException unused) {
-                C0876m.m170h(WidgetChatListAdapterEventsHandler.this.getContext(), C1107b.m216h(WidgetChatListAdapterEventsHandler.this.getContext(), C5419R.string.user_activity_not_detected, new Object[]{this.$application.getName()}, null, 4), 0, null, 12);
+                C0876m.m170h(WidgetChatListAdapterEventsHandler.this.getContext(), C1107b.m210b(WidgetChatListAdapterEventsHandler.this.getContext(), C5419R.string.user_activity_not_detected, new Object[]{this.$application.getName()}, (4 & 4) != 0 ? C1107b.b.f1491j : null), 0, null, 12);
                 String str = (String) C12163u.firstOrNull((List) this.$application.m7566d());
                 if (str != null) {
                     UriHandler.directToPlayStore$default(WidgetChatListAdapterEventsHandler.this.getContext(), str, null, 4, null);

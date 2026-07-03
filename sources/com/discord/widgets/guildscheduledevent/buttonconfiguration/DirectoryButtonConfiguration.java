@@ -235,18 +235,18 @@ public final /* data */ class DirectoryButtonConfiguration implements ButtonConf
     public CharSequence primaryButtonText(Context context) {
         C12238m.checkNotNullParameter(context, "context");
         if (this.isInGuild) {
-            return C1107b.m216h(context, C5419R.string.hub_directory_card_joined_guild_button, new Object[0], null, 4);
+            return C1107b.m210b(context, C5419R.string.hub_directory_card_joined_guild_button, new Object[0], (4 & 4) != 0 ? C1107b.b.f1491j : null);
         }
         Object[] objArr = new Object[1];
         Guild guild = this.guildScheduledEvent.getGuild();
         objArr[0] = guild != null ? guild.getName() : null;
-        return C1107b.m216h(context, C5419R.string.lurker_mode_nag_bar_button, objArr, null, 4);
+        return C1107b.m210b(context, C5419R.string.lurker_mode_nag_bar_button, objArr, (4 & 4) != 0 ? C1107b.b.f1491j : null);
     }
 
     @Override // com.discord.widgets.guildscheduledevent.buttonconfiguration.ButtonConfiguration
     public CharSequence secondaryButtonText(Context context) {
         C12238m.checkNotNullParameter(context, "context");
-        return C1107b.m216h(context, C5419R.string.indicate_rsvp, new Object[0], null, 4);
+        return C1107b.m210b(context, C5419R.string.indicate_rsvp, new Object[0], (4 & 4) != 0 ? C1107b.b.f1491j : null);
     }
 
     @Override // com.discord.widgets.guildscheduledevent.buttonconfiguration.ButtonConfiguration
