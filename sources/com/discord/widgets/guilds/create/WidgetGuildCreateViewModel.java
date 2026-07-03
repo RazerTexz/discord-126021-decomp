@@ -474,7 +474,7 @@ public final class WidgetGuildCreateViewModel extends AbstractC0859d0<ViewState>
             public final String getGuildName(Context context) {
                 C12238m.checkNotNullParameter(context, "context");
                 String str = this.guildName;
-                return str != null ? str : C1107b.m210b(context, this.defaultGuildNameFormatRes, new Object[]{this.username}, (4 & 4) != 0 ? C1107b.b.f1491j : null).toString();
+                return str != null ? str : C1107b.m216h(context, this.defaultGuildNameFormatRes, new Object[]{this.username}, null, 4).toString();
             }
 
             public final StoreGuildTemplates.GuildTemplateState getGuildTemplate() {

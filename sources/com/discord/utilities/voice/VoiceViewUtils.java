@@ -66,7 +66,7 @@ public final class VoiceViewUtils {
         RtcConnection.State.C5612f c5612f = RtcConnection.State.C5612f.f18814a;
         if (rtcConnectionState == c5612f && streamContext != null && streamContext.isCurrentUserParticipating()) {
             if (streamContext.isSelfStream()) {
-                return C1107b.m210b(context, C5419R.string.connection_status_stream_self_connected, new Object[0], (4 & 4) != 0 ? C1107b.b.f1491j : null);
+                return C1107b.m216h(context, C5419R.string.connection_status_stream_self_connected, new Object[0], null, 4);
             }
             Object[] objArr = new Object[1];
             String userNickname = streamContext.getUserNickname();
@@ -74,7 +74,7 @@ public final class VoiceViewUtils {
                 userNickname = streamContext.getUser().getUsername();
             }
             objArr[0] = userNickname;
-            return C1107b.m210b(context, C5419R.string.connection_status_stream_connected, objArr, (4 & 4) != 0 ? C1107b.b.f1491j : null);
+            return C1107b.m216h(context, C5419R.string.connection_status_stream_connected, objArr, null, 4);
         }
         if (C12238m.areEqual(rtcConnectionState, RtcConnection.State.C5609c.f18811a)) {
             i = C5419R.string.connection_status_connecting;

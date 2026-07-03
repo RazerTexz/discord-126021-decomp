@@ -229,7 +229,7 @@ public final class WidgetFriendsAddById extends AppFragment {
             return;
         }
         Context context = getContext();
-        setInputEditError(context != null ? C1107b.m210b(context, C5419R.string.add_friend_error_username_only, new Object[]{userNameDiscriminatorExtractUsernameAndDiscriminator.getUsername()}, (4 & 4) != 0 ? C1107b.b.f1491j : null) : null);
+        setInputEditError(context != null ? C1107b.m216h(context, C5419R.string.add_friend_error_username_only, new Object[]{userNameDiscriminatorExtractUsernameAndDiscriminator.getUsername()}, null, 4) : null);
         AnalyticsTracker.INSTANCE.friendRequestFailed(textOrEmpty, userNameDiscriminatorExtractUsernameAndDiscriminator.getUsername(), userNameDiscriminatorExtractUsernameAndDiscriminator.getDiscriminator(), "Invalid Username");
     }
 
@@ -265,7 +265,7 @@ public final class WidgetFriendsAddById extends AppFragment {
             public final void call(Void r8) {
                 Context context = WidgetFriendsAddById.this.getContext();
                 Context context2 = WidgetFriendsAddById.this.getContext();
-                C0876m.m170h(context, context2 != null ? C1107b.m210b(context2, C5419R.string.add_friend_confirmation, new Object[]{username}, (4 & 4) != 0 ? C1107b.b.f1491j : null) : null, 0, null, 12);
+                C0876m.m170h(context, context2 != null ? C1107b.m216h(context2, C5419R.string.add_friend_confirmation, new Object[]{username}, null, 4) : null, 0, null, 12);
                 TextInputLayout textInputLayout = WidgetFriendsAddById.this.getBinding().f16656e;
                 C12238m.checkNotNullExpressionValue(textInputLayout, "binding.friendsAddTextEditWrap");
                 ViewExtensions.clear(textInputLayout);

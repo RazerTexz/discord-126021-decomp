@@ -584,7 +584,7 @@ public final class CheckedSetting extends RelativeLayout implements Checkable {
     public final void m8525b(@StringRes int disabledToastRes) {
         Context context = getContext();
         C12238m.checkNotNullExpressionValue(context, "context");
-        m8526c(C1107b.m210b(context, disabledToastRes, new Object[0], (4 & 4) != 0 ? C1107b.b.f1491j : null));
+        m8526c(C1107b.m216h(context, disabledToastRes, new Object[0], null, 4));
     }
 
     /* JADX INFO: renamed from: c */

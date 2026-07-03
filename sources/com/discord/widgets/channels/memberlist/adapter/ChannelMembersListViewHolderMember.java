@@ -77,7 +77,7 @@ public final class ChannelMembersListViewHolderMember extends RecyclerView.ViewH
                     Context context = view.getContext();
                     Context context2 = view.getContext();
                     C12238m.checkNotNullExpressionValue(context2, "it.context");
-                    C0876m.m170h(context, C1107b.m210b(context2, C5419R.string.premium_guild_subscription_tooltip, new Object[]{readableTimeString}, (4 & 4) != 0 ? C1107b.b.f1491j : null), 0, null, 12);
+                    C0876m.m170h(context, C1107b.m216h(context2, C5419R.string.premium_guild_subscription_tooltip, new Object[]{readableTimeString}, null, 4), 0, null, 12);
                 }
             }
         });

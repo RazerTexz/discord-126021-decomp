@@ -384,7 +384,7 @@ public final class WidgetServerSettingsBans extends AppFragment {
         sb.append(upperCase);
         sb.append("\n");
         sb.append(reason);
-        WidgetNoticeDialog.Builder dialogAttrTheme = WidgetNoticeDialog.Builder.setNegativeButton$default(new WidgetNoticeDialog.Builder(requireContext()).setTitle(C1107b.m210b(requireContext(), C5419R.string.unban_user_title, new Object[]{ban.getUser().getUsername()}, (4 & 4) != 0 ? C1107b.b.f1491j : null).toString()).setMessage(sb.toString()), C5419R.string.cancel, (Function1) null, 2, (Object) null).setPositiveButton(C5419R.string.unban, new C91961(guildId, ban)).setDialogAttrTheme(C5419R.attr.notice_theme_positive_red);
+        WidgetNoticeDialog.Builder dialogAttrTheme = WidgetNoticeDialog.Builder.setNegativeButton$default(new WidgetNoticeDialog.Builder(requireContext()).setTitle(C1107b.m216h(requireContext(), C5419R.string.unban_user_title, new Object[]{ban.getUser().getUsername()}, null, 4).toString()).setMessage(sb.toString()), C5419R.string.cancel, (Function1) null, 2, (Object) null).setPositiveButton(C5419R.string.unban, new C91961(guildId, ban)).setDialogAttrTheme(C5419R.attr.notice_theme_positive_red);
         FragmentManager parentFragmentManager = getParentFragmentManager();
         C12238m.checkNotNullExpressionValue(parentFragmentManager, "parentFragmentManager");
         dialogAttrTheme.show(parentFragmentManager);

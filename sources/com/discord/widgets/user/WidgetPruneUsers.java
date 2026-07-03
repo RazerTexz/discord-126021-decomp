@@ -107,7 +107,7 @@ public final class WidgetPruneUsers extends AppDialog {
 
         public final CharSequence invoke(Context context, int i) {
             C12238m.checkNotNullParameter(context, "$this$formatLastSeenDays");
-            return C1107b.m210b(context, C5419R.string.last_seen, new Object[]{StringResourceUtilsKt.getI18nPluralString(context, C5419R.plurals.last_seen_days, i, Integer.valueOf(i))}, (4 & 4) != 0 ? C1107b.b.f1491j : null);
+            return C1107b.m216h(context, C5419R.string.last_seen, new Object[]{StringResourceUtilsKt.getI18nPluralString(context, C5419R.plurals.last_seen_days, i, Integer.valueOf(i))}, null, 4);
         }
     }
 

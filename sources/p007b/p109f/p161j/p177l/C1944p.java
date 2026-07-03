@@ -37,29 +37,25 @@ public class C1944p implements InterfaceC1932d {
         Bitmap bitmapMo1373a;
         Bitmap bitmapM1392c;
         synchronized (this) {
-            try {
-                int i2 = this.f3949e;
-                int i3 = this.f3946b;
-                if (i2 > i3) {
-                    synchronized (this) {
-                        while (this.f3949e > i3 && (bitmapM1392c = this.f3945a.m1392c()) != null) {
-                            int iMo1374b = this.f3945a.mo1374b(bitmapM1392c);
-                            this.f3949e -= iMo1374b;
-                            this.f3948d.mo1403e(iMo1374b);
-                        }
+            int i2 = this.f3949e;
+            int i3 = this.f3946b;
+            if (i2 > i3) {
+                synchronized (this) {
+                    while (this.f3949e > i3 && (bitmapM1392c = this.f3945a.m1392c()) != null) {
+                        int iMo1374b = this.f3945a.mo1374b(bitmapM1392c);
+                        this.f3949e -= iMo1374b;
+                        this.f3948d.mo1403e(iMo1374b);
                     }
                 }
-                bitmapMo1373a = this.f3945a.mo1373a(i);
-                if (bitmapMo1373a != null) {
-                    int iMo1374b2 = this.f3945a.mo1374b(bitmapMo1373a);
-                    this.f3949e -= iMo1374b2;
-                    this.f3948d.mo1400b(iMo1374b2);
-                } else {
-                    this.f3948d.mo1399a(i);
-                    bitmapMo1373a = Bitmap.createBitmap(1, i, Bitmap.Config.ALPHA_8);
-                }
-            } catch (Throwable th) {
-                throw th;
+            }
+            bitmapMo1373a = this.f3945a.mo1373a(i);
+            if (bitmapMo1373a != null) {
+                int iMo1374b2 = this.f3945a.mo1374b(bitmapMo1373a);
+                this.f3949e -= iMo1374b2;
+                this.f3948d.mo1400b(iMo1374b2);
+            } else {
+                this.f3948d.mo1399a(i);
+                bitmapMo1373a = Bitmap.createBitmap(1, i, Bitmap.Config.ALPHA_8);
             }
         }
         return bitmapMo1373a;

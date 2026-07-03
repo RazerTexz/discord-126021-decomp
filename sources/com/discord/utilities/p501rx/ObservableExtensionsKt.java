@@ -175,10 +175,6 @@ public final class ObservableExtensionsKt {
         appSubscribe(observable, context, simpleName, function1, function4, function2, function0, function3);
     }
 
-    public static /* synthetic */ void appSubscribe$default(Observable observable, Class cls, Context context, Function1 function1, Function1 function2, Function0 function0, Function0 function3, Function1 function4, int i, Object obj) {
-        appSubscribe(observable, (Class<?>) cls, (58 & 2) != 0 ? null : context, (Function1<? super Subscription, Unit>) ((58 & 4) != 0 ? null : function1), (Function1<? super Error, Unit>) ((58 & 8) != 0 ? null : function2), (Function0<Unit>) ((58 & 16) != 0 ? C68791.INSTANCE : function0), (Function0<Unit>) ((58 & 32) != 0 ? C68802.INSTANCE : function3), function4);
-    }
-
     public static final <T> Observable<T> bindToComponentLifecycle(Observable<T> observable, final AppComponent appComponent, final MGRecyclerAdapterSimple<?> mGRecyclerAdapterSimple) {
         C12238m.checkNotNullParameter(observable, "$this$bindToComponentLifecycle");
         C12238m.checkNotNullParameter(appComponent, "appComponent");

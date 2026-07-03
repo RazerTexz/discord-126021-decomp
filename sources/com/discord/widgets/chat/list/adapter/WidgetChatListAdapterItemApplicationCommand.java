@@ -232,7 +232,7 @@ public final class WidgetChatListAdapterItemApplicationCommand extends WidgetCha
             }
             objArr[0] = str2;
             objArr[1] = strGroup2;
-            textView5.setText(C1107b.m210b(contextM885x, C5419R.string.command_display_string, objArr, (4 & 4) != 0 ? C1107b.b.f1491j : null));
+            textView5.setText(C1107b.m216h(contextM885x, C5419R.string.command_display_string, objArr, null, 4));
             TextView textView6 = this.binding.f16139b;
             C12238m.checkNotNullExpressionValue(textView6, "binding.chatListAdapterItemTextCommand");
             c80081.invoke2(textView6);
@@ -312,7 +312,7 @@ public final class WidgetChatListAdapterItemApplicationCommand extends WidgetCha
         }
         objArr2[0] = str2;
         objArr2[1] = strGroup2;
-        textView12.setText(C1107b.m210b(contextM885x3, C5419R.string.command_display_string, objArr2, (4 & 4) != 0 ? C1107b.b.f1491j : null));
+        textView12.setText(C1107b.m216h(contextM885x3, C5419R.string.command_display_string, objArr2, null, 4));
         TextView textView13 = this.binding.f16139b;
         C12238m.checkNotNullExpressionValue(textView13, "binding.chatListAdapterItemTextCommand");
         c80081.invoke2(textView13);

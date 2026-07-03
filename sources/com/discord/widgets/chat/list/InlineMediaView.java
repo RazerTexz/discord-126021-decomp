@@ -390,13 +390,13 @@ public final class InlineMediaView extends CardView implements View.OnAttachStat
         }
 
         @Override // kotlin.jvm.functions.Function1
-        public /* bridge */ /* synthetic */ Unit invoke(AppMediaPlayer.Event event) {
+        public /* bridge */ /* synthetic */ Unit invoke(AppMediaPlayer.Event event) throws CloneNotSupportedException {
             invoke2(event);
             return Unit.f27425a;
         }
 
         /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
-        public final void invoke2(AppMediaPlayer.Event event) {
+        public final void invoke2(AppMediaPlayer.Event event) throws CloneNotSupportedException {
             C12238m.checkNotNullParameter(event, "event");
             InlineMediaView.this.handlePlayerEvent(event);
         }
@@ -423,7 +423,7 @@ public final class InlineMediaView extends CardView implements View.OnAttachStat
         getUnsubscribeSignal().onNext(null);
     }
 
-    private final void diffViewParamsAndUpdateEmbed(RenderableEmbedMedia previewImage, String progressiveMediaUri, EmbedType embedType, Integer targetWidth, Integer targetHeight, String featureTag, boolean autoPlayGifs) {
+    private final void diffViewParamsAndUpdateEmbed(RenderableEmbedMedia previewImage, String progressiveMediaUri, EmbedType embedType, Integer targetWidth, Integer targetHeight, String featureTag, boolean autoPlayGifs) throws CloneNotSupportedException {
         Integer targetWidth2;
         Integer targetHeight2;
         if (targetWidth != null) {
@@ -446,7 +446,7 @@ public final class InlineMediaView extends CardView implements View.OnAttachStat
         updateUI(previewImage, progressiveMediaUri, embedType, targetWidth, targetHeight, featureTag);
     }
 
-    private final void handlePlayerEvent(AppMediaPlayer.Event event) {
+    private final void handlePlayerEvent(AppMediaPlayer.Event event) throws CloneNotSupportedException {
         boolean z2 = true;
         if (C12238m.areEqual(event, AppMediaPlayer.Event.C5583a.f18654a)) {
             SimpleDraweeView simpleDraweeView = this.binding.f15168c;
@@ -482,7 +482,7 @@ public final class InlineMediaView extends CardView implements View.OnAttachStat
         this.appMediaPlayer = null;
     }
 
-    private final void resetCurrentEmbed() {
+    private final void resetCurrentEmbed() throws CloneNotSupportedException {
         ViewParams viewParams = this.viewParams;
         if (viewParams != null) {
             updateUI(viewParams.getPreviewImage(), viewParams.getProgressiveMediaUri(), viewParams.getEmbedType(), viewParams.getTargetWidth(), viewParams.getTargetHeight(), this.featureTag);
@@ -533,7 +533,7 @@ public final class InlineMediaView extends CardView implements View.OnAttachStat
         return viewParams3 != null ? viewParams3.getAutoPlayGifs() : this.storeUserSettings.getIsAutoPlayGifsEnabled();
     }
 
-    private final void updateUI(RenderableEmbedMedia previewImage, String progressiveMediaUri, EmbedType embedType, Integer targetWidth, Integer targetHeight, String featureTag) {
+    private final void updateUI(RenderableEmbedMedia previewImage, String progressiveMediaUri, EmbedType embedType, Integer targetWidth, Integer targetHeight, String featureTag) throws CloneNotSupportedException {
         resetViews();
         this.compositeSubscription.unsubscribe();
         if (targetWidth != null && targetHeight != null) {
@@ -585,7 +585,7 @@ public final class InlineMediaView extends CardView implements View.OnAttachStat
         }
         this.binding.f15170e.setOnClickListener(new View.OnClickListener() { // from class: com.discord.widgets.chat.list.InlineMediaView.updateUI.5
             @Override // android.view.View.OnClickListener
-            public final void onClick(View view) {
+            public final void onClick(View view) throws CloneNotSupportedException {
                 PlayerView playerView3 = InlineMediaView.this.binding.f15171f;
                 C12238m.checkNotNullExpressionValue(playerView3, "binding.inlineMediaPlayerView");
                 playerView3.setVisibility(0);
@@ -606,7 +606,7 @@ public final class InlineMediaView extends CardView implements View.OnAttachStat
         });
     }
 
-    public static /* synthetic */ void updateUIWithAttachment$default(InlineMediaView inlineMediaView, MessageAttachment messageAttachment, Integer num, Integer num2, boolean z2, int i, Object obj) {
+    public static /* synthetic */ void updateUIWithAttachment$default(InlineMediaView inlineMediaView, MessageAttachment messageAttachment, Integer num, Integer num2, boolean z2, int i, Object obj) throws CloneNotSupportedException {
         if ((i & 2) != 0) {
             num = null;
         }
@@ -616,7 +616,7 @@ public final class InlineMediaView extends CardView implements View.OnAttachStat
         inlineMediaView.updateUIWithAttachment(messageAttachment, num, num2, z2);
     }
 
-    public static /* synthetic */ void updateUIWithEmbed$default(InlineMediaView inlineMediaView, MessageEmbed messageEmbed, Integer num, Integer num2, boolean z2, int i, Object obj) {
+    public static /* synthetic */ void updateUIWithEmbed$default(InlineMediaView inlineMediaView, MessageEmbed messageEmbed, Integer num, Integer num2, boolean z2, int i, Object obj) throws CloneNotSupportedException {
         if ((i & 2) != 0) {
             num = null;
         }
@@ -635,12 +635,12 @@ public final class InlineMediaView extends CardView implements View.OnAttachStat
         clearPlayerAndSubscriptions();
     }
 
-    public final void onResume() {
+    public final void onResume() throws CloneNotSupportedException {
         resetCurrentEmbed();
     }
 
     @Override // android.view.View.OnAttachStateChangeListener
-    public void onViewAttachedToWindow(View view) {
+    public void onViewAttachedToWindow(View view) throws CloneNotSupportedException {
         CoroutineScope coroutineScope;
         C12238m.checkNotNullParameter(view, "view");
         resetCurrentEmbed();
@@ -659,7 +659,7 @@ public final class InlineMediaView extends CardView implements View.OnAttachStat
     }
 
     @Override // android.view.View
-    public void onVisibilityChanged(View changedView, int visibility) {
+    public void onVisibilityChanged(View changedView, int visibility) throws CloneNotSupportedException {
         C12238m.checkNotNullParameter(changedView, "changedView");
         super.onVisibilityChanged(changedView, visibility);
         if (visibility == 0) {
@@ -669,7 +669,7 @@ public final class InlineMediaView extends CardView implements View.OnAttachStat
         }
     }
 
-    public final void updateUIWithAttachment(MessageAttachment attachment, Integer targetWidth, Integer targetHeight, boolean autoPlayGifs) {
+    public final void updateUIWithAttachment(MessageAttachment attachment, Integer targetWidth, Integer targetHeight, boolean autoPlayGifs) throws CloneNotSupportedException {
         EmbedType embedType;
         C12238m.checkNotNullParameter(attachment, "attachment");
         MessageAttachmentType messageAttachmentTypeM8068e = attachment.m8068e();
@@ -692,7 +692,7 @@ public final class InlineMediaView extends CardView implements View.OnAttachStat
         }
     }
 
-    public final void updateUIWithEmbed(MessageEmbed embed, Integer targetWidth, Integer targetHeight, boolean autoPlayGifs) {
+    public final void updateUIWithEmbed(MessageEmbed embed, Integer targetWidth, Integer targetHeight, boolean autoPlayGifs) throws CloneNotSupportedException {
         String url;
         C12238m.checkNotNullParameter(embed, "embed");
         EmbedResourceUtils embedResourceUtils = EmbedResourceUtils.INSTANCE;

@@ -57,7 +57,7 @@ public final class WidgetThreadBrowserAdapter extends MGRecyclerAdapterSimple<It
             Item.Header header = (Item.Header) data;
             TextView textView = this.binding.f15309b;
             C12238m.checkNotNullExpressionValue(textView, "binding.headerName");
-            textView.setText(C1107b.m210b(((WidgetThreadBrowserAdapter) this.adapter).getContext(), header.getStringResId(), new Object[]{Integer.valueOf(header.getCount())}, (4 & 4) != 0 ? C1107b.b.f1491j : null).toString());
+            textView.setText(C1107b.m216h(((WidgetThreadBrowserAdapter) this.adapter).getContext(), header.getStringResId(), new Object[]{Integer.valueOf(header.getCount())}, null, 4).toString());
         }
     }
 
@@ -478,7 +478,7 @@ public final class WidgetThreadBrowserAdapter extends MGRecyclerAdapterSimple<It
             super.onConfigure(position, data);
             TextView textView = this.binding.f15313b;
             C12238m.checkNotNullExpressionValue(textView, "binding.warning");
-            textView.setText(C1107b.m210b(((WidgetThreadBrowserAdapter) this.adapter).getContext(), C5419R.string.forum_android_warning, new Object[0], (4 & 4) != 0 ? C1107b.b.f1491j : null).toString());
+            textView.setText(C1107b.m216h(((WidgetThreadBrowserAdapter) this.adapter).getContext(), C5419R.string.forum_android_warning, new Object[0], null, 4).toString());
         }
     }
 

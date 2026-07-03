@@ -376,7 +376,7 @@ public final class WidgetPreviewGuildScheduledEvent extends AppFragment {
                     i = C5419R.string.start_event;
                 }
             }
-            materialButton.setText(C1107b.m210b(context, i, new Object[0], (4 & 4) != 0 ? C1107b.b.f1491j : null));
+            materialButton.setText(C1107b.m216h(context, i, new Object[0], null, 4));
             ImageView imageView = getBinding().f17375b;
             C12238m.checkNotNullExpressionValue(imageView, "binding.backButton");
             imageView.setVisibility(initialized.getIsStartingEvent() ^ true ? 0 : 8);

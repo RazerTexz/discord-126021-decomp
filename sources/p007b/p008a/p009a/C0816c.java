@@ -263,24 +263,24 @@ public final class C0816c extends AppDialog {
         m122g().f728c.setOnCheckedChangeListener(d.f314a);
         TextView textView = m122g().f735j;
         C12238m.checkNotNullExpressionValue(textView, "binding.imageUploadFailedText");
-        CharSequence charSequenceM210b = null;
+        CharSequence charSequenceM216h = null;
         if (z2 || !z3) {
             Context context = getContext();
             if (context != null) {
                 Object[] objArr = new Object[1];
                 Context context2 = getContext();
-                objArr[0] = context2 != null ? C1107b.m210b(context2, i, new Object[0], (4 & 4) != 0 ? C1107b.b.f1491j : null) : null;
-                charSequenceM210b = C1107b.m210b(context, C5419R.string.upload_area_too_large_help, objArr, (4 & 4) != 0 ? C1107b.b.f1491j : null);
+                objArr[0] = context2 != null ? C1107b.m216h(context2, i, new Object[0], null, 4) : null;
+                charSequenceM216h = C1107b.m216h(context, C5419R.string.upload_area_too_large_help, objArr, null, 4);
             }
         } else {
             Context context3 = getContext();
             if (context3 != null) {
                 Object[] objArr2 = new Object[1];
                 Context context4 = getContext();
-                objArr2[0] = context4 != null ? C1107b.m210b(context4, i, new Object[0], (4 & 4) != 0 ? C1107b.b.f1491j : null) : null;
-                charSequenceM210b = C1107b.m210b(context3, C5419R.string.upload_area_too_large_help_mobile, objArr2, (4 & 4) != 0 ? C1107b.b.f1491j : null);
+                objArr2[0] = context4 != null ? C1107b.m216h(context4, i, new Object[0], null, 4) : null;
+                charSequenceM216h = C1107b.m216h(context3, C5419R.string.upload_area_too_large_help_mobile, objArr2, null, 4);
             }
         }
-        textView.setText(charSequenceM210b);
+        textView.setText(charSequenceM216h);
     }
 }

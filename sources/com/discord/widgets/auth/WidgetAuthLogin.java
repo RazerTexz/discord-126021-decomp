@@ -437,7 +437,7 @@ public final class WidgetAuthLogin extends AppFragment {
     }
 
     private final void showEmailSentToast(String email) {
-        C0876m.m170h(getContext(), C1107b.m210b(requireContext(), C5419R.string.email_verification_instructions_body, new Object[]{email}, (4 & 4) != 0 ? C1107b.b.f1491j : null), 0, null, 12);
+        C0876m.m170h(getContext(), C1107b.m216h(requireContext(), C5419R.string.email_verification_instructions_body, new Object[]{email}, null, 4), 0, null, 12);
     }
 
     public final GoogleSmartLockManager getGoogleSmartLockManager() {

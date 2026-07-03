@@ -453,7 +453,7 @@ public final class C2727f1 extends AbstractC2944u0 {
 
     @Override // p007b.p225i.p226a.p242c.InterfaceC3128y1
     /* JADX INFO: renamed from: a */
-    public void mo2896a() {
+    public void mo2896a() throws CloneNotSupportedException {
         C2964w1 c2964w1 = this.f6657F;
         if (c2964w1.f7951f != 1) {
             return;
@@ -482,7 +482,7 @@ public final class C2727f1 extends AbstractC2944u0 {
     }
 
     /* JADX INFO: renamed from: e0 */
-    public final C2835p1 m2899e0() {
+    public final C2835p1 m2899e0() throws CloneNotSupportedException {
         AbstractC2832o2 abstractC2832o2Mo2888K = mo2888K();
         C2831o1 c2831o1 = abstractC2832o2Mo2888K.m3331q() ? null : abstractC2832o2Mo2888K.m3330n(mo2881C(), this.f7863a).f7355p;
         if (c2831o1 == null) {
@@ -648,7 +648,7 @@ public final class C2727f1 extends AbstractC2944u0 {
 
     @Override // p007b.p225i.p226a.p242c.InterfaceC3128y1
     /* JADX INFO: renamed from: h */
-    public void mo2904h(int i, long j) {
+    public void mo2904h(int i, long j) throws CloneNotSupportedException {
         AbstractC2832o2 abstractC2832o2 = this.f6657F.f7947b;
         if (i < 0 || (!abstractC2832o2.m3331q() && i >= abstractC2832o2.mo2557p())) {
             throw new IllegalSeekPositionException(abstractC2832o2, i, j);
@@ -923,7 +923,7 @@ public final class C2727f1 extends AbstractC2944u0 {
     }
 
     /* JADX INFO: renamed from: q0 */
-    public void m2921q0(boolean z2, int i, int i2) {
+    public void m2921q0(boolean z2, int i, int i2) throws CloneNotSupportedException {
         C2964w1 c2964w1 = this.f6657F;
         if (c2964w1.f7958m == z2 && c2964w1.f7959n == i) {
             return;
@@ -968,7 +968,7 @@ public final class C2727f1 extends AbstractC2944u0 {
     }
 
     /* JADX INFO: renamed from: s0 */
-    public final void m2924s0(final C2964w1 c2964w1, final int i, final int i2, boolean z2, boolean z3, final int i3, long j, int i4) {
+    public final void m2924s0(final C2964w1 c2964w1, final int i, final int i2, boolean z2, boolean z3, final int i3, long j, int i4) throws CloneNotSupportedException {
         Pair pair;
         int i5;
         final C2831o1 c2831o1;
@@ -1262,7 +1262,7 @@ public final class C2727f1 extends AbstractC2944u0 {
 
     @Override // p007b.p225i.p226a.p242c.InterfaceC3128y1
     /* JADX INFO: renamed from: u */
-    public void mo2926u(boolean z2) {
+    public void mo2926u(boolean z2) throws CloneNotSupportedException {
         m2921q0(z2, 0, 1);
     }
 

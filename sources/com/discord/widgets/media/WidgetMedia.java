@@ -264,7 +264,7 @@ public final class WidgetMedia extends AppFragment {
                         WidgetMedia widgetMedia = WidgetMedia.this;
                         Context context = anonymousClass1.$context;
                         C12238m.checkNotNullExpressionValue(context, "context");
-                        C0876m.m172j(widgetMedia, C1107b.m210b(context, C5419R.string.download_file_complete, new Object[]{str}, (4 & 4) != 0 ? C1107b.b.f1491j : null), 0, 4);
+                        C0876m.m172j(widgetMedia, C1107b.m216h(context, C5419R.string.download_file_complete, new Object[]{str}, null, 4), 0, 4);
                     }
                 }
             }
@@ -763,7 +763,7 @@ public final class WidgetMedia extends AppFragment {
     }
 
     @Override // com.discord.app.AppFragment
-    public void onViewBoundOrOnResume() {
+    public void onViewBoundOrOnResume() throws CloneNotSupportedException {
         Uri uri;
         String str;
         Uri uri2;

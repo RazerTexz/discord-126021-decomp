@@ -66,7 +66,7 @@ public final class MobileReportsBottomButton extends LinearLayout {
             C12238m.checkNotNullExpressionValue(linkifiedTextView2, "binding.reportNodeBottomButtonDescription");
             Context context = getContext();
             C12238m.checkNotNullExpressionValue(context, "context");
-            linkifiedTextView2.setText(C1107b.m210b(context, C5419R.string.mobile_reports_submit_info_text, new Object[0], (4 & 4) != 0 ? C1107b.b.f1491j : null));
+            linkifiedTextView2.setText(C1107b.m216h(context, C5419R.string.mobile_reports_submit_info_text, new Object[0], null, 4));
             this.binding.f15513b.setText(getContext().getString(C5419R.string.mobile_reports_submit_report));
             this.binding.f15513b.setBackgroundColor(ColorCompat.getColor(getContext(), C5419R.color.status_red));
             this.binding.f15513b.setOnClickListener(new View.OnClickListener() { // from class: com.discord.widgets.mobile_reports.MobileReportsBottomButton.setup.1

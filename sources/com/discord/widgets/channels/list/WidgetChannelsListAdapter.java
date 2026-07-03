@@ -447,11 +447,11 @@ public final class WidgetChannelsListAdapter extends MGRecyclerAdapterSimple<Cha
         private final String getMemberCount(Channel channel, Context context) {
             List<com.discord.api.user.User> listM7659z = channel.m7659z();
             int size = listM7659z != null ? listM7659z.size() : 0;
-            CharSequence charSequenceM210b = C1107b.m210b(context, C5419R.string.members, new Object[0], (4 & 4) != 0 ? C1107b.b.f1491j : null);
+            CharSequence charSequenceM216h = C1107b.m216h(context, C5419R.string.members, new Object[0], null, 4);
             StringBuilder sb = new StringBuilder();
             sb.append(size + 1);
             sb.append(' ');
-            sb.append(charSequenceM210b);
+            sb.append(charSequenceM216h);
             return sb.toString();
         }
 

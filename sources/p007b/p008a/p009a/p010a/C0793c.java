@@ -56,21 +56,21 @@ public final class C0793c extends AppDialog {
 
         /* JADX INFO: renamed from: a */
         public final void m101a(FragmentManager fragmentManager, Context context, String str, int i, boolean z2, Function0<Unit> function0) {
-            CharSequence charSequenceM210b;
+            CharSequence charSequenceM216h;
             C12238m.checkNotNullParameter(fragmentManager, "fragmentManager");
             C12238m.checkNotNullParameter(context, "context");
             C12238m.checkNotNullParameter(function0, "dismissListener");
-            CharSequence charSequenceM210b2 = z2 ? C1107b.m210b(context, C5419R.string.f14764xeb628859, new Object[0], (4 & 4) != 0 ? C1107b.b.f1491j : null) : C1107b.m210b(context, C5419R.string.guild_subscription_purchase_modal_activated_description_mobile1, new Object[0], (4 & 4) != 0 ? C1107b.b.f1491j : null);
+            CharSequence charSequenceM216h2 = z2 ? C1107b.m216h(context, C5419R.string.f14764xeb628859, new Object[0], null, 4) : C1107b.m216h(context, C5419R.string.guild_subscription_purchase_modal_activated_description_mobile1, new Object[0], null, 4);
             if (str == null) {
-                charSequenceM210b = C1107b.m210b(context, C5419R.string.f14762x736db69d, new Object[]{StringResourceUtilsKt.getI18nPluralString(context, C5419R.plurals.guild_subscription_purchase_modal_activated_description_no_application_guildSubscriptionQuantity, i, Integer.valueOf(i))}, (4 & 4) != 0 ? C1107b.b.f1491j : null);
+                charSequenceM216h = C1107b.m216h(context, C5419R.string.f14762x736db69d, new Object[]{StringResourceUtilsKt.getI18nPluralString(context, C5419R.plurals.guild_subscription_purchase_modal_activated_description_no_application_guildSubscriptionQuantity, i, Integer.valueOf(i))}, null, 4);
             } else {
-                charSequenceM210b = z2 ? C1107b.m210b(context, C5419R.string.f14765xeb62885a, new Object[]{str, StringResourceUtilsKt.getI18nPluralString(context, C5419R.plurals.guild_subscription_purchase_modal_transferred_description_mobile2_guildSubscriptionQuantity, i, Integer.valueOf(i))}, (4 & 4) != 0 ? C1107b.b.f1491j : null) : C1107b.m210b(context, C5419R.string.guild_subscription_purchase_modal_activated_description_mobile2, new Object[]{str, StringResourceUtilsKt.getI18nPluralString(context, C5419R.plurals.guild_subscription_purchase_modal_activated_description_guildSubscriptionQuantity, i, Integer.valueOf(i))}, (4 & 4) != 0 ? C1107b.b.f1491j : null);
+                charSequenceM216h = z2 ? C1107b.m216h(context, C5419R.string.f14765xeb62885a, new Object[]{str, StringResourceUtilsKt.getI18nPluralString(context, C5419R.plurals.guild_subscription_purchase_modal_transferred_description_mobile2_guildSubscriptionQuantity, i, Integer.valueOf(i))}, null, 4) : C1107b.m216h(context, C5419R.string.guild_subscription_purchase_modal_activated_description_mobile2, new Object[]{str, StringResourceUtilsKt.getI18nPluralString(context, C5419R.plurals.guild_subscription_purchase_modal_activated_description_guildSubscriptionQuantity, i, Integer.valueOf(i))}, null, 4);
             }
             C0793c c0793c = new C0793c();
             c0793c.dismissListener = function0;
             Bundle bundle = new Bundle();
-            bundle.putCharSequence("extra_body1_text", charSequenceM210b2);
-            bundle.putCharSequence("extra_body2_text", charSequenceM210b);
+            bundle.putCharSequence("extra_body1_text", charSequenceM216h2);
+            bundle.putCharSequence("extra_body2_text", charSequenceM216h);
             c0793c.setArguments(bundle);
             c0793c.show(fragmentManager, C0793c.class.getName());
         }

@@ -335,7 +335,7 @@ public class C2816k2 extends AbstractC2944u0 implements InterfaceC2677e1 {
 
         @Override // p007b.p225i.p226a.p242c.p279z2.InterfaceC3159e
         /* JADX INFO: renamed from: b */
-        public void mo3298b(Metadata metadata) {
+        public void mo3298b(Metadata metadata) throws CloneNotSupportedException {
             C2816k2.this.f7213i.mo246b(metadata);
             final C2727f1 c2727f1 = C2816k2.this.f7209e;
             C2835p1.b bVarM3344a = c2727f1.f6656E.m3344a();
@@ -493,7 +493,7 @@ public class C2816k2 extends AbstractC2944u0 implements InterfaceC2677e1 {
         }
 
         @Override // android.view.TextureView.SurfaceTextureListener
-        public void onSurfaceTextureAvailable(SurfaceTexture surfaceTexture, int i, int i2) {
+        public void onSurfaceTextureAvailable(SurfaceTexture surfaceTexture, int i, int i2) throws CloneNotSupportedException {
             C2816k2 c2816k2 = C2816k2.this;
             Objects.requireNonNull(c2816k2);
             Surface surface = new Surface(surfaceTexture);
@@ -503,7 +503,7 @@ public class C2816k2 extends AbstractC2944u0 implements InterfaceC2677e1 {
         }
 
         @Override // android.view.TextureView.SurfaceTextureListener
-        public boolean onSurfaceTextureDestroyed(SurfaceTexture surfaceTexture) {
+        public boolean onSurfaceTextureDestroyed(SurfaceTexture surfaceTexture) throws CloneNotSupportedException {
             C2816k2.this.m3288l0(null);
             C2816k2.this.m3284h0(0, 0);
             return true;
@@ -526,7 +526,7 @@ public class C2816k2 extends AbstractC2944u0 implements InterfaceC2677e1 {
 
         @Override // p007b.p225i.p226a.p242c.p260g3.p261z.C2799k.b
         /* JADX INFO: renamed from: q */
-        public void mo3204q(Surface surface) {
+        public void mo3204q(Surface surface) throws CloneNotSupportedException {
             C2816k2.this.m3288l0(null);
         }
 
@@ -548,7 +548,7 @@ public class C2816k2 extends AbstractC2944u0 implements InterfaceC2677e1 {
         }
 
         @Override // android.view.SurfaceHolder.Callback
-        public void surfaceCreated(SurfaceHolder surfaceHolder) {
+        public void surfaceCreated(SurfaceHolder surfaceHolder) throws CloneNotSupportedException {
             C2816k2 c2816k2 = C2816k2.this;
             if (c2816k2.f7225u) {
                 c2816k2.m3288l0(surfaceHolder.getSurface());
@@ -556,7 +556,7 @@ public class C2816k2 extends AbstractC2944u0 implements InterfaceC2677e1 {
         }
 
         @Override // android.view.SurfaceHolder.Callback
-        public void surfaceDestroyed(SurfaceHolder surfaceHolder) {
+        public void surfaceDestroyed(SurfaceHolder surfaceHolder) throws CloneNotSupportedException {
             C2816k2 c2816k2 = C2816k2.this;
             if (c2816k2.f7225u) {
                 c2816k2.m3288l0(null);
@@ -572,7 +572,7 @@ public class C2816k2 extends AbstractC2944u0 implements InterfaceC2677e1 {
 
         @Override // p007b.p225i.p226a.p242c.p260g3.p261z.C2799k.b
         /* JADX INFO: renamed from: u */
-        public void mo3205u(Surface surface) {
+        public void mo3205u(Surface surface) throws CloneNotSupportedException {
             C2816k2.this.m3288l0(surface);
         }
 
@@ -841,7 +841,7 @@ public class C2816k2 extends AbstractC2944u0 implements InterfaceC2677e1 {
 
     @Override // p007b.p225i.p226a.p242c.InterfaceC3128y1
     /* JADX INFO: renamed from: F */
-    public void mo2883F(@Nullable SurfaceView surfaceView) {
+    public void mo2883F(@Nullable SurfaceView surfaceView) throws CloneNotSupportedException {
         m3290n0();
         SurfaceHolder holder = surfaceView == null ? null : surfaceView.getHolder();
         m3290n0();
@@ -908,7 +908,7 @@ public class C2816k2 extends AbstractC2944u0 implements InterfaceC2677e1 {
 
     @Override // p007b.p225i.p226a.p242c.InterfaceC3128y1
     /* JADX INFO: renamed from: Q */
-    public void mo2892Q(@Nullable TextureView textureView) {
+    public void mo2892Q(@Nullable TextureView textureView) throws CloneNotSupportedException {
         m3290n0();
         if (textureView == null) {
             m3283e0();
@@ -954,7 +954,7 @@ public class C2816k2 extends AbstractC2944u0 implements InterfaceC2677e1 {
 
     @Override // p007b.p225i.p226a.p242c.InterfaceC3128y1
     /* JADX INFO: renamed from: a */
-    public void mo2896a() {
+    public void mo2896a() throws CloneNotSupportedException {
         m3290n0();
         boolean zMo2908j = mo2908j();
         int iM3464e = this.f7215k.m3464e(zMo2908j, 2);
@@ -970,7 +970,7 @@ public class C2816k2 extends AbstractC2944u0 implements InterfaceC2677e1 {
     }
 
     /* JADX INFO: renamed from: e0 */
-    public void m3283e0() {
+    public void m3283e0() throws CloneNotSupportedException {
         m3290n0();
         m3285i0();
         m3288l0(null);
@@ -993,7 +993,7 @@ public class C2816k2 extends AbstractC2944u0 implements InterfaceC2677e1 {
 
     @Override // p007b.p225i.p226a.p242c.InterfaceC3128y1
     /* JADX INFO: renamed from: h */
-    public void mo2904h(int i, long j) {
+    public void mo2904h(int i, long j) throws CloneNotSupportedException {
         m3290n0();
         C2868g1 c2868g1 = this.f7213i;
         if (!c2868g1.f7555r) {
@@ -1112,7 +1112,7 @@ public class C2816k2 extends AbstractC2944u0 implements InterfaceC2677e1 {
     }
 
     /* JADX INFO: renamed from: l0 */
-    public final void m3288l0(@Nullable Object obj) {
+    public final void m3288l0(@Nullable Object obj) throws CloneNotSupportedException {
         boolean z2;
         ArrayList arrayList = new ArrayList();
         for (InterfaceC2728f2 interfaceC2728f2 : this.f7206b) {
@@ -1181,7 +1181,7 @@ public class C2816k2 extends AbstractC2944u0 implements InterfaceC2677e1 {
 
     @Override // p007b.p225i.p226a.p242c.InterfaceC3128y1
     /* JADX INFO: renamed from: n */
-    public void mo2914n(@Nullable TextureView textureView) {
+    public void mo2914n(@Nullable TextureView textureView) throws CloneNotSupportedException {
         m3290n0();
         if (textureView == null || textureView != this.f7226v) {
             return;
@@ -1238,7 +1238,7 @@ public class C2816k2 extends AbstractC2944u0 implements InterfaceC2677e1 {
 
     @Override // p007b.p225i.p226a.p242c.InterfaceC3128y1
     /* JADX INFO: renamed from: r */
-    public void mo2922r(@Nullable SurfaceView surfaceView) {
+    public void mo2922r(@Nullable SurfaceView surfaceView) throws CloneNotSupportedException {
         m3290n0();
         if (surfaceView instanceof InterfaceC2783t) {
             m3285i0();

@@ -327,7 +327,7 @@ public final class WidgetChatListAdapterItemSpotifyListenTogether extends Widget
         String largeImage;
         TextView textView = this.binding.f16278e;
         C12238m.checkNotNullExpressionValue(textView, "binding.itemListenTogetherHeader");
-        textView.setText(C1107b.m210b(C1643a.m821I(this.binding.f16278e, "binding.itemListenTogetherHeader", "binding.itemListenTogetherHeader.context"), C5419R.string.invite_embed_invite_to_listen, new Object[]{getActivityName(C1643a.m821I(this.binding.f16278e, "binding.itemListenTogetherHeader", "binding.itemListenTogetherHeader.context"), model.getItem())}, (4 & 4) != 0 ? C1107b.b.f1491j : null));
+        textView.setText(C1107b.m216h(C1643a.m821I(this.binding.f16278e, "binding.itemListenTogetherHeader", "binding.itemListenTogetherHeader.context"), C5419R.string.invite_embed_invite_to_listen, new Object[]{getActivityName(C1643a.m821I(this.binding.f16278e, "binding.itemListenTogetherHeader", "binding.itemListenTogetherHeader.context"), model.getItem())}, null, 4));
         boolean zIsDeadInvite = isDeadInvite(model.getPresence(), model.getItem());
         Presence presence = model.getPresence();
         final Activity spotifyListeningActivity = presence != null ? PresenceUtils.INSTANCE.getSpotifyListeningActivity(presence) : null;

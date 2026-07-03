@@ -106,7 +106,7 @@ public final class CallEventsButtonView extends ConstraintLayout {
         C12238m.checkNotNullExpressionValue(textView2, "binding.text");
         Context context2 = getContext();
         C12238m.checkNotNullExpressionValue(context2, "context");
-        textView2.setText(C1107b.m210b(context2, C5419R.string.guild_events_plural, new Object[]{i18nPluralString}, (4 & 4) != 0 ? C1107b.b.f1491j : null));
+        textView2.setText(C1107b.m216h(context2, C5419R.string.guild_events_plural, new Object[]{i18nPluralString}, null, 4));
         setContentColor(ContextCompat.getColor(getContext(), C5419R.color.white));
     }
 }

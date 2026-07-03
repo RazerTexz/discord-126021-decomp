@@ -139,7 +139,7 @@ public final class WidgetSettingsGuildBoostSubscriptionAdapter extends MGRecycle
             char c;
             String strReplace$default;
             String str;
-            CharSequence charSequenceM210b;
+            CharSequence charSequenceM216h;
             int themedDrawableRes$default;
             String boostEndsAt;
             C12238m.checkNotNullParameter(data, "data");
@@ -176,7 +176,7 @@ public final class WidgetSettingsGuildBoostSubscriptionAdapter extends MGRecycle
                 C12238m.checkNotNullExpressionValue(context, "context");
                 i = 0;
                 c = 1;
-                strReplace$default = C12103t.replace$default(C1107b.m210b(context, C5419R.string.premium_guild_subscription_pending_cancelation, new Object[]{TimeUtils.renderUtcDate$default(TimeUtils.INSTANCE, boostEndsAt, context, (String) null, (java.text.DateFormat) null, 0, 28, (Object) null)}, (4 & 4) != 0 ? C1107b.b.f1491j : null).toString(), "*", "", false, 4, (Object) null);
+                strReplace$default = C12103t.replace$default(C1107b.m216h(context, C5419R.string.premium_guild_subscription_pending_cancelation, new Object[]{TimeUtils.renderUtcDate$default(TimeUtils.INSTANCE, boostEndsAt, context, (String) null, (java.text.DateFormat) null, 0, 28, (Object) null)}, null, 4).toString(), "*", "", false, 4, (Object) null);
             }
             if (z3) {
                 long jMax = Math.max(boostSlot.getCooldownExpiresAtTimestamp() - jCurrentTimeMillis, 0L);
@@ -189,27 +189,27 @@ public final class WidgetSettingsGuildBoostSubscriptionAdapter extends MGRecycle
                 objArr[i] = String.valueOf(j);
                 objArr[c] = String.valueOf(j3);
                 objArr[2] = String.valueOf((j2 - (3600000 * j3)) / 60000);
-                charSequenceM210b = C1107b.m210b(context, C5419R.string.premium_guild_cooldown_available_countdown, objArr, (4 & 4) != 0 ? C1107b.b.f1491j : null);
+                charSequenceM216h = C1107b.m216h(context, C5419R.string.premium_guild_cooldown_available_countdown, objArr, null, 4);
             } else {
                 str = r10;
-                charSequenceM210b = null;
+                charSequenceM216h = null;
             }
-            if (strReplace$default == null && charSequenceM210b == null) {
+            if (strReplace$default == null && charSequenceM216h == null) {
                 TextView textView2 = this.binding.f15571d;
                 C12238m.checkNotNullExpressionValue(textView2, "binding.boostedBoostCooldown");
                 textView2.setVisibility(8);
-            } else if (strReplace$default != null && charSequenceM210b != null) {
+            } else if (strReplace$default != null && charSequenceM216h != null) {
                 TextView textView3 = this.binding.f15571d;
                 C12238m.checkNotNullExpressionValue(textView3, "binding.boostedBoostCooldown");
-                ViewExtensions.setTextAndVisibilityBy(textView3, charSequenceM210b + " - " + strReplace$default);
-            } else if (strReplace$default != null && charSequenceM210b == null) {
+                ViewExtensions.setTextAndVisibilityBy(textView3, charSequenceM216h + " - " + strReplace$default);
+            } else if (strReplace$default != null && charSequenceM216h == null) {
                 TextView textView4 = this.binding.f15571d;
                 C12238m.checkNotNullExpressionValue(textView4, "binding.boostedBoostCooldown");
                 ViewExtensions.setTextAndVisibilityBy(textView4, strReplace$default);
-            } else if (strReplace$default == null && charSequenceM210b != null) {
+            } else if (strReplace$default == null && charSequenceM216h != null) {
                 TextView textView5 = this.binding.f15571d;
                 C12238m.checkNotNullExpressionValue(textView5, "binding.boostedBoostCooldown");
-                ViewExtensions.setTextAndVisibilityBy(textView5, charSequenceM210b);
+                ViewExtensions.setTextAndVisibilityBy(textView5, charSequenceM216h);
             }
             TextView textView6 = this.binding.f15569b;
             C12238m.checkNotNullExpressionValue(textView6, "binding.boostedBoostAction");
@@ -314,7 +314,7 @@ public final class WidgetSettingsGuildBoostSubscriptionAdapter extends MGRecycle
                     CharSequence i18nPluralString = StringResourceUtilsKt.getI18nPluralString(context, C5419R.plurals.premium_guild_subscription_guild_subsription_subtitle_numSubscriptions, guildItem.getBoostCount(), Integer.valueOf(guildItem.getBoostCount()));
                     TextView textView2 = this.binding.f15577e;
                     C12238m.checkNotNullExpressionValue(textView2, "binding.boostedSampleGuildCount");
-                    textView2.setText(C1107b.m210b(context, C5419R.string.premium_guild_subscription_guild_subsription_subtitle, new Object[]{i18nPluralString}, (4 & 4) != 0 ? C1107b.b.f1491j : null));
+                    textView2.setText(C1107b.m216h(context, C5419R.string.premium_guild_subscription_guild_subsription_subtitle, new Object[]{i18nPluralString}, null, 4));
                     this.binding.f15576d.m8596a(guildItem.getGuild().getId(), guildItem.getGuild().getPremiumTier(), guildItem.getGuild().getPremiumSubscriptionCount());
                     return;
                 }

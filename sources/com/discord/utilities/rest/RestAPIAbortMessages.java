@@ -32,12 +32,12 @@ public final class RestAPIAbortMessages {
             int iIntValue = abortCodeMessageResId != null ? abortCodeMessageResId.intValue() : C5419R.string.add_friend_error_other;
             if (abortCode != 80000) {
                 if (context != null) {
-                    return C1107b.m210b(context, iIntValue, new Object[0], (4 & 4) != 0 ? C1107b.b.f1491j : null);
+                    return C1107b.m216h(context, iIntValue, new Object[0], null, 4);
                 }
                 return null;
             }
             if (context != null) {
-                return C1107b.m210b(context, iIntValue, new Object[]{username}, (4 & 4) != 0 ? C1107b.b.f1491j : null);
+                return C1107b.m216h(context, iIntValue, new Object[]{username}, null, 4);
             }
             return null;
         }

@@ -350,7 +350,7 @@ public final class AuditLogUtils {
         long jCurrentTimeMillis = clock.currentTimeMillis() - timestamp;
         CharSequence relativeTimeSpanString = DateUtils.getRelativeTimeSpanString(timestamp, clock.currentTimeMillis(), 86400000L, 131092);
         if (TimeUnit.MILLISECONDS.toDays(jCurrentTimeMillis) < 7) {
-            return C1107b.m210b(context, C5419R.string.guild_settings_audit_log_time_at_android, new Object[]{relativeTimeSpanString, DateUtils.formatDateTime(context, timestamp, 1)}, (4 & 4) != 0 ? C1107b.b.f1491j : null);
+            return C1107b.m216h(context, C5419R.string.guild_settings_audit_log_time_at_android, new Object[]{relativeTimeSpanString, DateUtils.formatDateTime(context, timestamp, 1)}, null, 4);
         }
         C12238m.checkNotNullExpressionValue(relativeTimeSpanString, "timeString");
         return relativeTimeSpanString;
@@ -544,7 +544,7 @@ public final class AuditLogUtils {
             ModelAuditLogEntry.Options options2 = auditLogEntry.getOptions();
             objArr2[0] = Integer.valueOf(options2 != null ? options2.getMembersRemoved() : 0);
             objArr[1] = StringResourceUtilsKt.getQuantityString(resources, context, C5419R.plurals.guild_settings_audit_log_member_prune_count, membersRemoved, objArr2);
-            return C1107b.m210b(context, entryTitle, objArr, (4 & 4) != 0 ? C1107b.b.f1491j : null);
+            return C1107b.m216h(context, entryTitle, objArr, null, 4);
         }
         if (actionTypeId == 42) {
             int entryTitle2 = getEntryTitle(auditLogEntry);
@@ -569,7 +569,7 @@ public final class AuditLogUtils {
                 oldValue = null;
             }
             objArr3[1] = String.valueOf(oldValue);
-            return C1107b.m210b(context, entryTitle2, objArr3, (4 & 4) != 0 ? C1107b.b.f1491j : null);
+            return C1107b.m216h(context, entryTitle2, objArr3, null, 4);
         }
         if (actionTypeId == 26) {
             ModelAuditLogEntry.Options options3 = auditLogEntry.getOptions();
@@ -588,7 +588,7 @@ public final class AuditLogUtils {
                 charSequenceValueOf = lValueOf != null ? String.valueOf(lValueOf.longValue()) : null;
             }
             objArr4[2] = charSequenceValueOf;
-            return C1107b.m210b(context, entryTitle3, objArr4, (4 & 4) != 0 ? C1107b.b.f1491j : null);
+            return C1107b.m216h(context, entryTitle3, objArr4, null, 4);
         }
         if (actionTypeId == 27) {
             int entryTitle4 = getEntryTitle(auditLogEntry);
@@ -600,7 +600,7 @@ public final class AuditLogUtils {
             ModelAuditLogEntry.Options options7 = auditLogEntry.getOptions();
             objArr7[0] = Integer.valueOf(options7 != null ? options7.getCount() : 0);
             objArr6[1] = StringResourceUtilsKt.getI18nPluralString(context, C5419R.plurals.guild_settings_audit_log_member_disconnect_count, count2, objArr7);
-            return C1107b.m210b(context, entryTitle4, objArr6, (4 & 4) != 0 ? C1107b.b.f1491j : null);
+            return C1107b.m216h(context, entryTitle4, objArr6, null, 4);
         }
         switch (actionTypeId) {
             case 60:
@@ -628,7 +628,7 @@ public final class AuditLogUtils {
                     value = null;
                 }
                 objArr8[1] = String.valueOf(value);
-                return C1107b.m210b(context, entryTitle5, objArr8, (4 & 4) != 0 ? C1107b.b.f1491j : null);
+                return C1107b.m216h(context, entryTitle5, objArr8, null, 4);
             default:
                 switch (actionTypeId) {
                     case 72:
@@ -649,7 +649,7 @@ public final class AuditLogUtils {
                             charSequenceValueOf2 = lValueOf2 != null ? String.valueOf(lValueOf2.longValue()) : null;
                         }
                         objArr9[3] = charSequenceValueOf2;
-                        return C1107b.m210b(context, entryTitle6, objArr9, (4 & 4) != 0 ? C1107b.b.f1491j : null);
+                        return C1107b.m216h(context, entryTitle6, objArr9, null, 4);
                     case 73:
                         int entryTitle7 = getEntryTitle(auditLogEntry);
                         Object[] objArr11 = new Object[3];
@@ -661,7 +661,7 @@ public final class AuditLogUtils {
                         objArr12[0] = Integer.valueOf(options12 != null ? options12.getCount() : 0);
                         objArr11[1] = StringResourceUtilsKt.getI18nPluralString(context, C5419R.plurals.guild_settings_audit_log_message_bulk_delete_count, count4, objArr12);
                         objArr11[2] = getTargetText(auditLogEntry, targets, prefix);
-                        return C1107b.m210b(context, entryTitle7, objArr11, (4 & 4) != 0 ? C1107b.b.f1491j : null);
+                        return C1107b.m216h(context, entryTitle7, objArr11, null, 4);
                     case 74:
                     case 75:
                         ModelAuditLogEntry.Options options13 = auditLogEntry.getOptions();
@@ -675,7 +675,7 @@ public final class AuditLogUtils {
                             charSequenceValueOf3 = lValueOf3 != null ? String.valueOf(lValueOf3.longValue()) : null;
                         }
                         objArr13[2] = charSequenceValueOf3;
-                        return C1107b.m210b(context, entryTitle8, objArr13, (4 & 4) != 0 ? C1107b.b.f1491j : null);
+                        return C1107b.m216h(context, entryTitle8, objArr13, null, 4);
                     default:
                         switch (actionTypeId) {
                             case 83:
@@ -687,7 +687,7 @@ public final class AuditLogUtils {
                                 if (map4 == null || (charSequenceValueOf4 = map4.get(lValueOf4)) == null) {
                                     charSequenceValueOf4 = lValueOf4 != null ? String.valueOf(lValueOf4.longValue()) : null;
                                 }
-                                return auditLogEntry.getUserId() == 0 ? C1107b.m210b(context, getEntryTitle(auditLogEntry), new Object[]{charSequenceValueOf4}, (4 & 4) != 0 ? C1107b.b.f1491j : null) : C1107b.m210b(context, getEntryTitle(auditLogEntry), new Object[]{username, charSequenceValueOf4}, (4 & 4) != 0 ? C1107b.b.f1491j : null);
+                                return auditLogEntry.getUserId() == 0 ? C1107b.m216h(context, getEntryTitle(auditLogEntry), new Object[]{charSequenceValueOf4}, null, 4) : C1107b.m216h(context, getEntryTitle(auditLogEntry), new Object[]{username, charSequenceValueOf4}, null, 4);
                             default:
                                 switch (actionTypeId) {
                                     case 90:
@@ -728,9 +728,9 @@ public final class AuditLogUtils {
                                             strValueOf = String.valueOf(value2);
                                         }
                                         objArr14[1] = strValueOf;
-                                        return C1107b.m210b(context, entryTitle9, objArr14, (4 & 4) != 0 ? C1107b.b.f1491j : null);
+                                        return C1107b.m216h(context, entryTitle9, objArr14, null, 4);
                                     default:
-                                        return C1107b.m210b(context, getEntryTitle(auditLogEntry), new Object[]{username, getTargetText(auditLogEntry, targets, prefix)}, (4 & 4) != 0 ? C1107b.b.f1491j : null);
+                                        return C1107b.m216h(context, getEntryTitle(auditLogEntry), new Object[]{username, getTargetText(auditLogEntry, targets, prefix)}, null, 4);
                                 }
                         }
                 }

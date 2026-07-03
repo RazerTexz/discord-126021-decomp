@@ -151,7 +151,7 @@ public final class AuditLogChangeUtils {
         }
 
         public final CharSequence invoke(int i) {
-            return C1107b.m210b(this.$context, i, new Object[0], (4 & 4) != 0 ? C1107b.b.f1491j : null);
+            return C1107b.m216h(this.$context, i, new Object[0], null, 4);
         }
     }
 
@@ -218,12 +218,12 @@ public final class AuditLogChangeUtils {
     /* JADX WARN: Code duplicated, block: B:17:0x0044  */
     /* JADX WARN: Code duplicated, block: B:27:0x006f  */
     private final CharSequence getChangeTextWithParams(Context context, ModelAuditLogEntry auditLogEntry, ModelAuditLogEntry.Change change, @StringRes int textId, Map<ModelAuditLogEntry.TargetType, ? extends Map<Long, ? extends CharSequence>> targets) {
-        CharSequence charSequenceM210b;
-        CharSequence charSequenceM210b2;
+        CharSequence charSequenceM216h;
+        CharSequence charSequenceM216h2;
         try {
             if (hasNewValue(change, "type") && auditLogEntry.getTargetType() == ModelAuditLogEntry.TargetType.CHANNEL) {
                 if (change.getOldValue() == null) {
-                    charSequenceM210b = null;
+                    charSequenceM216h = null;
                 } else {
                     Object oldValue = change.getOldValue();
                     if (oldValue == null) {
@@ -231,13 +231,13 @@ public final class AuditLogChangeUtils {
                     }
                     int channelTypeStringResIdFromValue = getChannelTypeStringResIdFromValue(Integer.valueOf((int) ((Long) oldValue).longValue()));
                     if (channelTypeStringResIdFromValue != 0) {
-                        charSequenceM210b = C1107b.m210b(context, channelTypeStringResIdFromValue, new Object[0], (4 & 4) != 0 ? C1107b.b.f1491j : null);
+                        charSequenceM216h = C1107b.m216h(context, channelTypeStringResIdFromValue, new Object[0], null, 4);
                     } else {
-                        charSequenceM210b = null;
+                        charSequenceM216h = null;
                     }
                 }
                 if (change.getNewValue() == null) {
-                    charSequenceM210b2 = null;
+                    charSequenceM216h2 = null;
                 } else {
                     Object newValue = change.getNewValue();
                     if (newValue == null) {
@@ -245,12 +245,12 @@ public final class AuditLogChangeUtils {
                     }
                     int channelTypeStringResIdFromValue2 = getChannelTypeStringResIdFromValue(Integer.valueOf((int) ((Long) newValue).longValue()));
                     if (channelTypeStringResIdFromValue2 != 0) {
-                        charSequenceM210b2 = C1107b.m210b(context, channelTypeStringResIdFromValue2, new Object[0], (4 & 4) != 0 ? C1107b.b.f1491j : null);
+                        charSequenceM216h2 = C1107b.m216h(context, channelTypeStringResIdFromValue2, new Object[0], null, 4);
                     } else {
-                        charSequenceM210b2 = null;
+                        charSequenceM216h2 = null;
                     }
                 }
-                return (charSequenceM210b != null || charSequenceM210b2 == null) ? C1107b.m210b(context, textId, new Object[]{charSequenceM210b, charSequenceM210b2}, (4 & 4) != 0 ? C1107b.b.f1491j : null) : C1107b.m210b(context, textId, new Object[]{charSequenceM210b2}, (4 & 4) != 0 ? C1107b.b.f1491j : null);
+                return (charSequenceM216h != null || charSequenceM216h2 == null) ? C1107b.m216h(context, textId, new Object[]{charSequenceM216h, charSequenceM216h2}, null, 4) : C1107b.m216h(context, textId, new Object[]{charSequenceM216h2}, null, 4);
             }
             if (hasNewValue(change, ModelAuditLogEntry.CHANGE_KEY_COLOR)) {
                 Object[] objArr = new Object[1];
@@ -263,7 +263,7 @@ public final class AuditLogChangeUtils {
                 String str = String.format("#%06X", Arrays.copyOf(objArr2, 1));
                 C12238m.checkNotNullExpressionValue(str, "java.lang.String.format(format, *args)");
                 objArr[0] = str;
-                return C1107b.m210b(context, textId, objArr, (4 & 4) != 0 ? C1107b.b.f1491j : null);
+                return C1107b.m216h(context, textId, objArr, null, 4);
             }
             if (hasNewValue(change, ModelAuditLogEntry.CHANGE_KEY_MAX_AGE)) {
                 Object[] objArr3 = new Object[1];
@@ -272,22 +272,22 @@ public final class AuditLogChangeUtils {
                     throw new NullPointerException("null cannot be cast to non-null type kotlin.Long");
                 }
                 objArr3[0] = DurationUtilsKt.formatInviteExpireAfterString(context, (int) ((Long) newValue3).longValue());
-                return C1107b.m210b(context, textId, objArr3, (4 & 4) != 0 ? C1107b.b.f1491j : null);
+                return C1107b.m216h(context, textId, objArr3, null, 4);
             }
             if (change.getNewValue() != null && auditLogEntry.getTargetType() == ModelAuditLogEntry.TargetType.CHANNEL_OVERWRITE && (C12238m.areEqual(change.getKey(), ModelAuditLogEntry.CHANGE_KEY_PERMISSIONS_GRANTED) || C12238m.areEqual(change.getKey(), ModelAuditLogEntry.CHANGE_KEY_PERMISSIONS_DENIED) || C12238m.areEqual(change.getKey(), ModelAuditLogEntry.CHANGE_KEY_PERMISSIONS_RESET))) {
                 return renderPermissions(change, auditLogEntry, context, targets);
             }
             if (change.getNewValue() != null && (C12238m.areEqual(change.getKey(), ModelAuditLogEntry.CHANGE_KEY_PERMISSIONS_GRANTED) || C12238m.areEqual(change.getKey(), ModelAuditLogEntry.CHANGE_KEY_PERMISSIONS_DENIED))) {
-                return C1107b.m210b(context, textId, new Object[]{getPluralString(context, change).toString() + "\n" + renderPermissionList(change, auditLogEntry, context)}, (4 & 4) != 0 ? C1107b.b.f1491j : null);
+                return C1107b.m216h(context, textId, new Object[]{getPluralString(context, change).toString() + "\n" + renderPermissionList(change, auditLogEntry, context)}, null, 4);
             }
             if (change.getNewValue() != null && (C12238m.areEqual(change.getKey(), ModelAuditLogEntry.CHANGE_KEY_ROLES_REMOVE) || C12238m.areEqual(change.getKey(), ModelAuditLogEntry.CHANGE_KEY_ROLES_ADD))) {
-                return C1107b.m210b(context, textId, new Object[]{renderRoles(context, change)}, (4 & 4) != 0 ? C1107b.b.f1491j : null);
+                return C1107b.m216h(context, textId, new Object[]{renderRoles(context, change)}, null, 4);
             }
             if (change.getNewValue() != null && CHANGE_KEYS_REFERENCING_CHANNEL.contains(change.getKey())) {
                 Object[] objArr4 = new Object[1];
                 Map<Long, ? extends CharSequence> map = targets.get(ModelAuditLogEntry.TargetType.CHANNEL);
                 objArr4[0] = map != null ? map.get(Long.valueOf(Long.parseLong(change.getValue().toString()))) : null;
-                return C1107b.m210b(context, textId, objArr4, (4 & 4) != 0 ? C1107b.b.f1491j : null);
+                return C1107b.m216h(context, textId, objArr4, null, 4);
             }
             if (hasNewValue(change, ModelAuditLogEntry.CHANGE_KEY_BITRATE)) {
                 Object[] objArr5 = new Object[1];
@@ -296,13 +296,13 @@ public final class AuditLogChangeUtils {
                     throw new NullPointerException("null cannot be cast to non-null type kotlin.Long");
                 }
                 objArr5[0] = Long.valueOf(((Long) newValue4).longValue() / ((long) 1000));
-                return C1107b.m210b(context, textId, objArr5, (4 & 4) != 0 ? C1107b.b.f1491j : null);
+                return C1107b.m216h(context, textId, objArr5, null, 4);
             }
             if (hasNewValue(change, ModelAuditLogEntry.CHANGE_KEY_OWNER_ID)) {
                 Object[] objArr6 = new Object[1];
                 User user = StoreStream.INSTANCE.getUsers().getUsers().get(Long.valueOf(Long.parseLong(change.getNewValue().toString())));
                 objArr6[0] = user != null ? user.getUsername() : null;
-                return C1107b.m210b(context, textId, objArr6, (4 & 4) != 0 ? C1107b.b.f1491j : null);
+                return C1107b.m216h(context, textId, objArr6, null, 4);
             }
             if (hasNewValue(change, ModelAuditLogEntry.CHANGE_KEY_RATE_LIMIT_PER_USER)) {
                 Object[] objArr7 = new Object[1];
@@ -320,7 +320,7 @@ public final class AuditLogChangeUtils {
                 }
                 objArr8[0] = Integer.valueOf((int) ((Long) newValue6).longValue());
                 objArr7[0] = StringResourceUtilsKt.getQuantityString(resources, context, C5419R.plurals.guild_settings_audit_log_channel_rate_limit_per_user_change_newValue, iLongValue, objArr8);
-                return C1107b.m210b(context, textId, objArr7, (4 & 4) != 0 ? C1107b.b.f1491j : null);
+                return C1107b.m216h(context, textId, objArr7, null, 4);
             }
             if (hasNewValue(change, ModelAuditLogEntry.CHANGE_KEY_AFK_TIMEOUT)) {
                 Object[] objArr9 = new Object[1];
@@ -329,7 +329,7 @@ public final class AuditLogChangeUtils {
                     throw new NullPointerException("null cannot be cast to non-null type kotlin.Long");
                 }
                 objArr9[0] = Long.valueOf(((Long) newValue7).longValue() / ((long) 60));
-                return C1107b.m210b(context, textId, objArr9, (4 & 4) != 0 ? C1107b.b.f1491j : null);
+                return C1107b.m216h(context, textId, objArr9, null, 4);
             }
             if (hasNewValue(change, ModelAuditLogEntry.CHANGE_KEY_PRUNE_DELETE_DAYS)) {
                 Object[] objArr10 = new Object[1];
@@ -347,7 +347,7 @@ public final class AuditLogChangeUtils {
                 }
                 objArr11[0] = (Integer) newValue9;
                 objArr10[0] = StringResourceUtilsKt.getQuantityString(resources2, context, C5419R.plurals.guild_settings_audit_log_member_prune_delete_days_newValue, iIntValue, objArr11);
-                return C1107b.m210b(context, textId, objArr10, (4 & 4) != 0 ? C1107b.b.f1491j : null);
+                return C1107b.m216h(context, textId, objArr10, null, 4);
             }
             if (hasNewValue(change, ModelAuditLogEntry.CHANGE_KEY_VIDEO_QUALITY_MODE)) {
                 Object[] objArr12 = new Object[1];
@@ -357,7 +357,7 @@ public final class AuditLogChangeUtils {
                     throw new NullPointerException("null cannot be cast to non-null type kotlin.Long");
                 }
                 objArr12[0] = getStringForVideoQualityMode(companion.m8457a(Integer.valueOf((int) ((Long) newValue10).longValue())), context);
-                return C1107b.m210b(context, textId, objArr12, (4 & 4) != 0 ? C1107b.b.f1491j : null);
+                return C1107b.m216h(context, textId, objArr12, null, 4);
             }
             if (!hasNewValue(change, ModelAuditLogEntry.CHANGE_KEY_GUILD_COMMUNICATION_DISABLED)) {
                 return C1107b.m210b(context, textId, new Object[0], new C66901(change));
@@ -368,7 +368,7 @@ public final class AuditLogChangeUtils {
                 throw new NullPointerException("null cannot be cast to non-null type kotlin.String");
             }
             objArr13[0] = TimeUtils.getReadableTimeString(context, (String) newValue11);
-            return C1107b.m210b(context, textId, objArr13, (4 & 4) != 0 ? C1107b.b.f1491j : null);
+            return C1107b.m216h(context, textId, objArr13, null, 4);
         } catch (ClassCastException e) {
             StringBuilder sb = new StringBuilder();
             sb.append(e.getLocalizedMessage() + " for change: ");
@@ -949,7 +949,7 @@ public final class AuditLogChangeUtils {
         Collection collection = (Collection) value;
         ModelAuditLogEntry.Options options = entry.getOptions();
         Integer numValueOf = options != null ? Integer.valueOf(options.getType()) : null;
-        Object objM210b = "";
+        Object objM216h = "";
         if (numValueOf != null && numValueOf.intValue() == 1) {
             Map<Long, ? extends CharSequence> map = targets.get(ModelAuditLogEntry.TargetType.USER);
             if (map != null) {
@@ -976,20 +976,20 @@ public final class AuditLogChangeUtils {
                     if (iHashCode == 108404047 && key.equals(ModelAuditLogEntry.CHANGE_KEY_PERMISSIONS_RESET)) {
                         Resources resources = context.getResources();
                         C12238m.checkNotNullExpressionValue(resources, "context.resources");
-                        objM210b = C1107b.m210b(context, C5419R.string.guild_settings_audit_log_channel_permission_overrides_reset, new Object[]{StringResourceUtilsKt.getQuantityString(resources, context, C5419R.plurals.guild_settings_audit_log_channel_permission_overrides_reset_count, collection.size(), Integer.valueOf(collection.size())), roleName}, (4 & 4) != 0 ? C1107b.b.f1491j : null);
+                        objM216h = C1107b.m216h(context, C5419R.string.guild_settings_audit_log_channel_permission_overrides_reset, new Object[]{StringResourceUtilsKt.getQuantityString(resources, context, C5419R.plurals.guild_settings_audit_log_channel_permission_overrides_reset_count, collection.size(), Integer.valueOf(collection.size())), roleName}, null, 4);
                     }
                 } else if (key.equals(ModelAuditLogEntry.CHANGE_KEY_PERMISSIONS_GRANTED)) {
                     Resources resources2 = context.getResources();
                     C12238m.checkNotNullExpressionValue(resources2, "context.resources");
-                    objM210b = C1107b.m210b(context, C5419R.string.guild_settings_audit_log_channel_permission_overrides_granted, new Object[]{StringResourceUtilsKt.getQuantityString(resources2, context, C5419R.plurals.guild_settings_audit_log_channel_permission_overrides_granted_count, collection.size(), Integer.valueOf(collection.size())), roleName}, (4 & 4) != 0 ? C1107b.b.f1491j : null);
+                    objM216h = C1107b.m216h(context, C5419R.string.guild_settings_audit_log_channel_permission_overrides_granted, new Object[]{StringResourceUtilsKt.getQuantityString(resources2, context, C5419R.plurals.guild_settings_audit_log_channel_permission_overrides_granted_count, collection.size(), Integer.valueOf(collection.size())), roleName}, null, 4);
                 }
             } else if (key.equals(ModelAuditLogEntry.CHANGE_KEY_PERMISSIONS_DENIED)) {
                 Resources resources3 = context.getResources();
                 C12238m.checkNotNullExpressionValue(resources3, "context.resources");
-                objM210b = C1107b.m210b(context, C5419R.string.guild_settings_audit_log_channel_permission_overrides_denied, new Object[]{StringResourceUtilsKt.getQuantityString(resources3, context, C5419R.plurals.guild_settings_audit_log_channel_permission_overrides_denied_count, collection.size(), Integer.valueOf(collection.size())), roleName}, (4 & 4) != 0 ? C1107b.b.f1491j : null);
+                objM216h = C1107b.m216h(context, C5419R.string.guild_settings_audit_log_channel_permission_overrides_denied, new Object[]{StringResourceUtilsKt.getQuantityString(resources3, context, C5419R.plurals.guild_settings_audit_log_channel_permission_overrides_denied_count, collection.size(), Integer.valueOf(collection.size())), roleName}, null, 4);
             }
         }
-        return objM210b.toString();
+        return objM216h.toString();
     }
 
     /* JADX WARN: Can't fix incorrect switch cases order, some code will duplicate */
@@ -1287,10 +1287,10 @@ public final class AuditLogChangeUtils {
     private final CharSequence getStringForVideoQualityMode(MediaSinkWantsManager.VideoQualityMode mode, Context context) {
         int iOrdinal = mode.ordinal();
         if (iOrdinal == 0) {
-            return C1107b.m210b(context, C5419R.string.video_quality_mode_auto, new Object[0], (4 & 4) != 0 ? C1107b.b.f1491j : null);
+            return C1107b.m216h(context, C5419R.string.video_quality_mode_auto, new Object[0], null, 4);
         }
         if (iOrdinal == 1) {
-            return C1107b.m210b(context, C5419R.string.video_quality_mode_full, new Object[0], (4 & 4) != 0 ? C1107b.b.f1491j : null);
+            return C1107b.m216h(context, C5419R.string.video_quality_mode_full, new Object[0], null, 4);
         }
         throw new NoWhenBranchMatchedException();
     }

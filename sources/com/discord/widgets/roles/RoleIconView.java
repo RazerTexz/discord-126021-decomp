@@ -158,7 +158,7 @@ public final class RoleIconView extends FrameLayout {
         };
         Set setSingleton = Collections.singleton(emojiNodeFrom);
         C12238m.checkNotNullExpressionValue(setSingleton, "Collections.singleton(iconNode)");
-        ToastManager.show$default(new ToastManager(), context, AstRenderer.render(setSingleton, renderContext).append((CharSequence) " ").append(C1107b.m210b(context, C5419R.string.role_icon_toast_message, new Object[]{role.getName()}, (4 & 4) != 0 ? C1107b.b.f1491j : null)), 0, 4, (Object) null);
+        ToastManager.show$default(new ToastManager(), context, AstRenderer.render(setSingleton, renderContext).append((CharSequence) " ").append(C1107b.m216h(context, C5419R.string.role_icon_toast_message, new Object[]{role.getName()}, null, 4)), 0, 4, (Object) null);
     }
 
     public final void setRole(final GuildRole role, Long guildId) {
@@ -171,7 +171,7 @@ public final class RoleIconView extends FrameLayout {
         setIcon(role);
         Context context = getContext();
         C12238m.checkNotNullExpressionValue(context, "context");
-        setContentDescription(C1107b.m210b(context, C5419R.string.role_icon_alt_text, new Object[]{role.getName()}, (4 & 4) != 0 ? C1107b.b.f1491j : null));
+        setContentDescription(C1107b.m216h(context, C5419R.string.role_icon_alt_text, new Object[]{role.getName()}, null, 4));
         setOnClickListener(new View.OnClickListener() { // from class: com.discord.widgets.roles.RoleIconView.setRole.1
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {

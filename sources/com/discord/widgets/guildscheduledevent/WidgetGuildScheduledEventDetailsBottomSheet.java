@@ -347,11 +347,11 @@ public final class WidgetGuildScheduledEventDetailsBottomSheet extends AppBottom
         CardSegment cardSegment = getBinding().f16999u;
         Context contextRequireContext = requireContext();
         C12238m.checkNotNullExpressionValue(contextRequireContext, "requireContext()");
-        cardSegment.setText(C1107b.m210b(contextRequireContext, C5419R.string.guild_event_details_info_tab_title, new Object[0], (4 & 4) != 0 ? C1107b.b.f1491j : null));
+        cardSegment.setText(C1107b.m216h(contextRequireContext, C5419R.string.guild_event_details_info_tab_title, new Object[0], null, 4));
         CardSegment cardSegment2 = getBinding().f17000v;
         Context contextRequireContext2 = requireContext();
         C12238m.checkNotNullExpressionValue(contextRequireContext2, "requireContext()");
-        cardSegment2.setText(C1107b.m210b(contextRequireContext2, C5419R.string.indicate_rsvp, new Object[0], (4 & 4) != 0 ? C1107b.b.f1491j : null));
+        cardSegment2.setText(C1107b.m216h(contextRequireContext2, C5419R.string.indicate_rsvp, new Object[0], null, 4));
     }
 
     private final void configureUi(GuildScheduledEventDetailsViewModel.ViewState viewState) {
@@ -383,7 +383,7 @@ public final class WidgetGuildScheduledEventDetailsBottomSheet extends AppBottom
         LinkifiedTextView linkifiedTextView = getBinding().f16982d;
         C12238m.checkNotNullExpressionValue(linkifiedTextView, "binding.guildScheduledEventDetailsChannelName");
         GuildScheduledEventLocationInfo locationInfo2 = initialized.getLocationInfo();
-        CharSequence charSequenceM210b = null;
+        CharSequence charSequenceM216h = null;
         if (locationInfo2 != null) {
             GuildScheduledEventExternalLocationParser locationParser = getLocationParser();
             Context contextRequireContext = requireContext();
@@ -405,9 +405,9 @@ public final class WidgetGuildScheduledEventDetailsBottomSheet extends AppBottom
             C12238m.checkNotNullExpressionValue(contextRequireContext2, "requireContext()");
             Context contextRequireContext3 = requireContext();
             C12238m.checkNotNullExpressionValue(contextRequireContext3, "requireContext()");
-            charSequenceM210b = C1107b.m210b(contextRequireContext2, C5419R.string.guild_event_interested_count, new Object[]{StringResourceUtilsKt.getI18nPluralString(contextRequireContext3, C5419R.plurals.guild_event_interested_count_count, iIntValue, Integer.valueOf(iIntValue))}, (4 & 4) != 0 ? C1107b.b.f1491j : null);
+            charSequenceM216h = C1107b.m216h(contextRequireContext2, C5419R.string.guild_event_interested_count, new Object[]{StringResourceUtilsKt.getI18nPluralString(contextRequireContext3, C5419R.plurals.guild_event_interested_count_count, iIntValue, Integer.valueOf(iIntValue))}, null, 4);
         }
-        ViewExtensions.setTextAndVisibilityBy(textView3, charSequenceM210b);
+        ViewExtensions.setTextAndVisibilityBy(textView3, charSequenceM216h);
         UserGuildMember creator = initialized.getCreator();
         if (creator != null) {
             TextView textView4 = getBinding().f16983e;

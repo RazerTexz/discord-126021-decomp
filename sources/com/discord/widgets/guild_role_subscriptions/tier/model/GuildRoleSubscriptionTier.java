@@ -58,6 +58,11 @@ public final /* data */ class GuildRoleSubscriptionTier {
         return this.canAccessAllChannels;
     }
 
+    /* JADX WARN: Multi-variable type inference failed */
+    public static /* synthetic */ GuildRoleSubscriptionTier copy$default(GuildRoleSubscriptionTier guildRoleSubscriptionTier, String str, Long l, Integer num, Integer num2, String str2, GuildRole guildRole, String str3, Long l2, String str4, Boolean bool, Boolean bool2, List list, List list2, SubscriptionTrialInterval subscriptionTrialInterval, Integer num3, int i, Object obj) {
+        return guildRoleSubscriptionTier.copy((i & 1) != 0 ? guildRoleSubscriptionTier.name : str, (i & 2) != 0 ? guildRoleSubscriptionTier.applicationId : l, (i & 4) != 0 ? guildRoleSubscriptionTier.priceTier : num, (i & 8) != 0 ? guildRoleSubscriptionTier.memberColor : num2, (i & 16) != 0 ? guildRoleSubscriptionTier.memberIcon : str2, (i & 32) != 0 ? guildRoleSubscriptionTier.guildRole : guildRole, (i & 64) != 0 ? guildRoleSubscriptionTier.image : str3, (i & 128) != 0 ? guildRoleSubscriptionTier.imageAssetId : l2, (i & 256) != 0 ? guildRoleSubscriptionTier.description : str4, (i & 512) != 0 ? guildRoleSubscriptionTier.isPublished : bool, (i & 1024) != 0 ? guildRoleSubscriptionTier.canAccessAllChannels : bool2, (i & 2048) != 0 ? guildRoleSubscriptionTier.channelBenefits : list, (i & 4096) != 0 ? guildRoleSubscriptionTier.intangibleBenefits : list2, (i & 8192) != 0 ? guildRoleSubscriptionTier.trialInterval : subscriptionTrialInterval, (i & 16384) != 0 ? guildRoleSubscriptionTier.activeTrialUserLimit : num3);
+    }
+
     public final boolean canAccessAllChannelsOrDefault(Boolean isFullServerGating) {
         Boolean bool = Boolean.TRUE;
         return C12238m.areEqual(isFullServerGating, bool) && (C12238m.areEqual(this.canAccessAllChannels, bool) || this.canAccessAllChannels == null);

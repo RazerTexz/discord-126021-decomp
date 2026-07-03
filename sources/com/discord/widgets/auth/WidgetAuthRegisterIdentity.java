@@ -217,7 +217,7 @@ public final class WidgetAuthRegisterIdentity extends AppFragment {
         /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
         public final void invoke2(Void r13) {
             RegistrationFlowRepo.trackTransition$default(RegistrationFlowRepo.INSTANCE.getINSTANCE(), "Account Identity", "success", null, 4, null);
-            WidgetAuthPhoneVerify.INSTANCE.launch(WidgetAuthRegisterIdentity.this.requireContext(), WidgetAuthRegisterIdentity.this.phoneVerifyLauncher, WidgetAuthRegisterIdentity.this.getBinding().f15711d.getTextOrEmpty(), C1107b.m210b(WidgetAuthRegisterIdentity.this.requireContext(), C5419R.string.sms_confirmation_title, new Object[0], (4 & 4) != 0 ? C1107b.b.f1491j : null), C1107b.m210b(WidgetAuthRegisterIdentity.this.requireContext(), C5419R.string.sms_confirmation_description, new Object[]{this.$phone}, (4 & 4) != 0 ? C1107b.b.f1491j : null));
+            WidgetAuthPhoneVerify.INSTANCE.launch(WidgetAuthRegisterIdentity.this.requireContext(), WidgetAuthRegisterIdentity.this.phoneVerifyLauncher, WidgetAuthRegisterIdentity.this.getBinding().f15711d.getTextOrEmpty(), C1107b.m216h(WidgetAuthRegisterIdentity.this.requireContext(), C5419R.string.sms_confirmation_title, new Object[0], null, 4), C1107b.m216h(WidgetAuthRegisterIdentity.this.requireContext(), C5419R.string.sms_confirmation_description, new Object[]{this.$phone}, null, 4));
         }
     }
 

@@ -229,12 +229,12 @@ public final class ForumUtils {
             return null;
         }
         if (jCurrentTimeMillis < ONE_HOUR_IN_MILLIS) {
-            return C1107b.m210b(context, C5419R.string.form_post_active_ago_timestamp_minutes, new Object[]{Integer.valueOf(TimeUtils.INSTANCE.getMinutesFromMillis(jCurrentTimeMillis))}, (4 & 4) != 0 ? C1107b.b.f1491j : null);
+            return C1107b.m216h(context, C5419R.string.form_post_active_ago_timestamp_minutes, new Object[]{Integer.valueOf(TimeUtils.INSTANCE.getMinutesFromMillis(jCurrentTimeMillis))}, null, 4);
         }
         if (jCurrentTimeMillis < ONE_DAY_IN_MILLIS) {
-            return C1107b.m210b(context, C5419R.string.form_post_active_ago_timestamp_hours, new Object[]{Integer.valueOf(TimeUtils.INSTANCE.getHoursFromMillis(jCurrentTimeMillis))}, (4 & 4) != 0 ? C1107b.b.f1491j : null);
+            return C1107b.m216h(context, C5419R.string.form_post_active_ago_timestamp_hours, new Object[]{Integer.valueOf(TimeUtils.INSTANCE.getHoursFromMillis(jCurrentTimeMillis))}, null, 4);
         }
-        return jCurrentTimeMillis < 2592000000L ? C1107b.m210b(context, C5419R.string.form_post_active_ago_timestamp_days, new Object[]{Integer.valueOf(TimeUtils.INSTANCE.getDaysFromMillis(jCurrentTimeMillis))}, (4 & 4) != 0 ? C1107b.b.f1491j : null) : context.getString(C5419R.string.form_post_active_ago_timestamp_more_than_month);
+        return jCurrentTimeMillis < 2592000000L ? C1107b.m216h(context, C5419R.string.form_post_active_ago_timestamp_days, new Object[]{Integer.valueOf(TimeUtils.INSTANCE.getDaysFromMillis(jCurrentTimeMillis))}, null, 4) : context.getString(C5419R.string.form_post_active_ago_timestamp_more_than_month);
     }
 
     public final String getMessageCountString(Integer messageCount) {
@@ -258,7 +258,7 @@ public final class ForumUtils {
         if (unreadCount == null || unreadCount.intValue() == 0) {
             return null;
         }
-        return C1107b.m210b(context, C5419R.string.forum_post_message_count_short_parenthetical, new Object[]{unreadCount.intValue() < 10 ? String.valueOf(unreadCount.intValue()) : "10+"}, (4 & 4) != 0 ? C1107b.b.f1491j : null);
+        return C1107b.m216h(context, C5419R.string.forum_post_message_count_short_parenthetical, new Object[]{unreadCount.intValue() < 10 ? String.valueOf(unreadCount.intValue()) : "10+"}, null, 4);
     }
 
     public final boolean isDefaultPostReaction(MessageReaction messageReaction, StoreEmoji storeEmoji) {

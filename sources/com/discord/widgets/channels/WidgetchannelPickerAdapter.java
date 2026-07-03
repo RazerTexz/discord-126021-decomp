@@ -169,7 +169,7 @@ public final class WidgetchannelPickerAdapter extends RecyclerView.Adapter<Chann
                     }
                     Context context = parent.getContext();
                     C12238m.checkNotNullExpressionValue(context, "parent.context");
-                    throw new IllegalArgumentException(C1107b.m210b(context, C5419R.string.android_unknown_view_holder, new Object[]{Integer.valueOf(viewType)}, (4 & 4) != 0 ? C1107b.b.f1491j : null).toString());
+                    throw new IllegalArgumentException(C1107b.m216h(context, C5419R.string.android_unknown_view_holder, new Object[]{Integer.valueOf(viewType)}, null, 4).toString());
                 }
             }
         }

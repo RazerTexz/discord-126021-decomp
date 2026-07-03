@@ -1335,34 +1335,24 @@ public class C4097k9 implements InterfaceC4192t5 {
             Boolean bool = this.f10906k.m5953x().f11155e;
             if (bool == null) {
                 this.f10906k.mo5726g().f11144i.m5860a("Upload data called on the client side before use of service was decided");
-                this.f10915t = false;
-                m5743x();
                 return;
             }
             if (bool.booleanValue()) {
                 this.f10906k.mo5726g().f11141f.m5860a("Upload called in the client side when service should be used");
-                this.f10915t = false;
-                m5743x();
                 return;
             }
             if (this.f10909n > 0) {
                 m5742w();
-                this.f10915t = false;
-                m5743x();
                 return;
             }
             m5720U();
             if (this.f10918w != null) {
                 this.f10906k.mo5726g().f11149n.m5860a("Uploading requested multiple times");
-                this.f10915t = false;
-                m5743x();
                 return;
             }
             if (!m5709J().m5963u()) {
                 this.f10906k.mo5726g().f11149n.m5860a("Network not connected, ignoring upload request");
                 m5742w();
-                this.f10915t = false;
-                m5743x();
                 return;
             }
             Objects.requireNonNull((C3401c) this.f10906k.f11267o);
@@ -1503,12 +1493,9 @@ public class C4097k9 implements InterfaceC4192t5 {
                     }
                 }
             }
+        } finally {
             this.f10915t = false;
             m5743x();
-        } catch (Throwable th) {
-            this.f10915t = false;
-            m5743x();
-            throw th;
         }
     }
 

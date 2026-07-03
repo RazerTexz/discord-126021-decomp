@@ -22,7 +22,7 @@ public final /* synthetic */ class RunnableC2632c0 implements Runnable {
     }
 
     @Override // java.lang.Runnable
-    public final void run() {
+    public final void run() throws CloneNotSupportedException {
         long j;
         boolean z2;
         long jM2913m0;
