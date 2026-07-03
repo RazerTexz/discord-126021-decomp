@@ -38,63 +38,58 @@ public final /* synthetic */ class k2 implements z2 {
         StrictMode$ThreadPolicy strictMode$ThreadPolicyAllowThreadDiskReads = StrictMode.allowThreadDiskReads();
         try {
             StrictMode.allowThreadDiskWrites();
-            try {
-                File file = new File(contextCreateDeviceProtectedStorageContext.getDir("phenotype_hermetic", 0), "overrides.txt");
-                y2Var = file.exists() ? new y2(file) : w2.j;
-                StrictMode.setThreadPolicy(strictMode$ThreadPolicyAllowThreadDiskReads);
-            } catch (RuntimeException e) {
-                Log.e("HermeticFileOverrides", "no data dir", e);
-                y2Var = w2.j;
-                StrictMode.setThreadPolicy(strictMode$ThreadPolicyAllowThreadDiskReads);
-            }
-            if (!y2Var.b()) {
-                return w2.j;
-            }
-            File file2 = (File) y2Var.c();
-            try {
-                BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(new FileInputStream(file2)));
-                try {
-                    HashMap map = new HashMap();
-                    while (true) {
-                        String line = bufferedReader.readLine();
-                        if (line == null) {
-                            String strValueOf = String.valueOf(file2);
-                            StringBuilder sb = new StringBuilder(strValueOf.length() + 7);
-                            sb.append("Parsed ");
-                            sb.append(strValueOf);
-                            Log.i("HermeticFileOverrides", sb.toString());
-                            h2 h2Var = new h2(map);
-                            bufferedReader.close();
-                            return new y2(h2Var);
-                        }
-                        String[] strArrSplit = line.split(" ", 3);
-                        if (strArrSplit.length != 3) {
-                            Log.e("HermeticFileOverrides", line.length() != 0 ? "Invalid: ".concat(line) : new String("Invalid: "));
-                        } else {
-                            String str3 = strArrSplit[0];
-                            String strDecode = Uri.decode(strArrSplit[1]);
-                            String strDecode2 = Uri.decode(strArrSplit[2]);
-                            if (!map.containsKey(str3)) {
-                                map.put(str3, new HashMap());
-                            }
-                            ((Map) map.get(str3)).put(strDecode, strDecode2);
-                        }
-                        throw new RuntimeException(e);
-                    }
-                } catch (Throwable th) {
-                    try {
-                        bufferedReader.close();
-                    } catch (Throwable th2) {
-                        g3.a.a(th, th2);
-                    }
-                    throw th;
-                }
-            } catch (IOException e2) {
-                throw new RuntimeException(e2);
-            }
-        } catch (Throwable th3) {
+            File file = new File(contextCreateDeviceProtectedStorageContext.getDir("phenotype_hermetic", 0), "overrides.txt");
+            y2Var = file.exists() ? new y2(file) : w2.j;
+        } catch (RuntimeException e) {
+            Log.e("HermeticFileOverrides", "no data dir", e);
+            y2Var = w2.j;
+        } finally {
             StrictMode.setThreadPolicy(strictMode$ThreadPolicyAllowThreadDiskReads);
-            throw th3;
+        }
+        if (!y2Var.b()) {
+            return w2.j;
+        }
+        File file2 = (File) y2Var.c();
+        try {
+            BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(new FileInputStream(file2)));
+            try {
+                HashMap map = new HashMap();
+                while (true) {
+                    String line = bufferedReader.readLine();
+                    if (line == null) {
+                        String strValueOf = String.valueOf(file2);
+                        StringBuilder sb = new StringBuilder(strValueOf.length() + 7);
+                        sb.append("Parsed ");
+                        sb.append(strValueOf);
+                        Log.i("HermeticFileOverrides", sb.toString());
+                        h2 h2Var = new h2(map);
+                        bufferedReader.close();
+                        return new y2(h2Var);
+                    }
+                    String[] strArrSplit = line.split(" ", 3);
+                    if (strArrSplit.length != 3) {
+                        Log.e("HermeticFileOverrides", line.length() != 0 ? "Invalid: ".concat(line) : new String("Invalid: "));
+                    } else {
+                        String str3 = strArrSplit[0];
+                        String strDecode = Uri.decode(strArrSplit[1]);
+                        String strDecode2 = Uri.decode(strArrSplit[2]);
+                        if (!map.containsKey(str3)) {
+                            map.put(str3, new HashMap());
+                        }
+                        ((Map) map.get(str3)).put(strDecode, strDecode2);
+                    }
+                    throw new RuntimeException(e);
+                }
+            } catch (Throwable th) {
+                try {
+                    bufferedReader.close();
+                } catch (Throwable th2) {
+                    g3.a.a(th, th2);
+                }
+                throw th;
+            }
+        } catch (IOException e2) {
+            throw new RuntimeException(e2);
         }
     }
 }

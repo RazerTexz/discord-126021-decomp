@@ -1211,34 +1211,24 @@ public class k9 implements t5 {
             Boolean bool = this.k.x().e;
             if (bool == null) {
                 this.k.g().i.a("Upload data called on the client side before use of service was decided");
-                this.t = false;
-                x();
                 return;
             }
             if (bool.booleanValue()) {
                 this.k.g().f.a("Upload called in the client side when service should be used");
-                this.t = false;
-                x();
                 return;
             }
             if (this.n > 0) {
                 w();
-                this.t = false;
-                x();
                 return;
             }
             U();
             if (this.w != null) {
                 this.k.g().n.a("Uploading requested multiple times");
-                this.t = false;
-                x();
                 return;
             }
             if (!J().u()) {
                 this.k.g().n.a("Network not connected, ignoring upload request");
                 w();
-                this.t = false;
-                x();
                 return;
             }
             Objects.requireNonNull((b.i.a.f.e.o.c) this.k.o);
@@ -1379,12 +1369,9 @@ public class k9 implements t5 {
                     }
                 }
             }
+        } finally {
             this.t = false;
             x();
-        } catch (Throwable th) {
-            this.t = false;
-            x();
-            throw th;
         }
     }
 

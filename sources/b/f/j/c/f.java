@@ -160,8 +160,10 @@ public class f {
                     eVarA.close();
                 }
             }
-        } finally {
             b.f.j.r.b.b();
+        } catch (Throwable th) {
+            b.f.j.r.b.b();
+            throw th;
         }
     }
 }
