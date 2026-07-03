@@ -9,8 +9,6 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v7
-        with:
-          sparse-checkout: .github
 
       - name: Set up Java
         uses: actions/setup-java@v5
@@ -29,6 +27,8 @@ jobs:
 
       - name: Decompile
         run: |
+          rm -rf resources sources
+
           curl -sSL -o app.apk "https://maven.aliucord.com/releases/com/discord/discord/126021/discord-126021.apk"
           sh */bin/jadx \
             --show-bad-code \
@@ -49,7 +49,7 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
 
-          git add --sparse resources sources
+          git add resources sources
           git commit -m "chore: decompile"
           git push
 
