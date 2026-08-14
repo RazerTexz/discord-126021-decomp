@@ -39,8 +39,7 @@ jobs:
             --output-dir . \
             discord-126021.apk || true
 
-      - name: Remove metadata annotations
-        run: find . -type f -name "*.java" -exec sed -i "/@Metadata(\|@kotlin.Metadata(\|import kotlin.Metadata/d" {} +
+          find . -type f -name "*.java" -exec sed -i "/@Metadata(\|@kotlin.Metadata(\|import kotlin.Metadata/d" {} +
 
       - name: Sync
         run: |
