@@ -25,8 +25,8 @@ jobs:
           name: (?<!win)$
           name_is_regexp: true
 
-      - name: Download Discord 126021 APK
-        run: curl -sSL -o discord-126021.apk "https://maven.aliucord.com/releases/com/discord/discord/126021/discord-126021.apk"
+      - name: Download APK
+        run: curl -LOJ "https://maven.aliucord.com/releases/com/discord/discord/126021/discord-126021.apk"
 
       - name: Decompile
         run: |
@@ -42,8 +42,7 @@ jobs:
             --output-dir . \
             discord-126021.apk || true
 
-      - name: Remove metadata annotations
-        run: find . -type f -name "*.java" -exec sed -i "/@Metadata(\|@kotlin.Metadata(\|import kotlin.Metadata/d" {} +
+          find . -type f -name "*.java" -exec sed -i "/@Metadata(\|@kotlin.Metadata(\|import kotlin.Metadata/d" {} +
 
       - name: Sync
         run: |
