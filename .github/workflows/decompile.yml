@@ -26,7 +26,7 @@ jobs:
           name_is_regexp: true
 
       - name: Download Discord 126021 APK
-        run: curl -sSL -o discord-126021.apk "https://maven.aliucord.com/releases/com/discord/discord/126021/discord-126021.apk"
+        run: curl -L -o discord-126021.apk "https://maven.aliucord.com/releases/com/discord/discord/126021/discord-126021.apk"
 
       - name: Decompile
         run: |
