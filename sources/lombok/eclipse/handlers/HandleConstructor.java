@@ -18,7 +18,6 @@ import lombok.core.configuration.CheckerFrameworkVersion;
 import lombok.core.handlers.HandlerUtil;
 import lombok.eclipse.EclipseAnnotationHandler;
 import lombok.eclipse.EclipseNode;
-import lombok.eclipse.handlers.EclipseHandlerUtil;
 import org.eclipse.jdt.internal.compiler.ast.ASTNode;
 import org.eclipse.jdt.internal.compiler.ast.AllocationExpression;
 import org.eclipse.jdt.internal.compiler.ast.Annotation;
@@ -51,12 +50,12 @@ import org.eclipse.jdt.internal.compiler.ast.TypeDeclaration;
 import org.eclipse.jdt.internal.compiler.ast.TypeReference;
 import org.eclipse.jdt.internal.compiler.lookup.TypeConstants;
 
-/* JADX INFO: loaded from: app.apk:lombok/eclipse/handlers/HandleConstructor.SCL.lombok */
+/* JADX INFO: loaded from: discord-126021.apk:lombok/eclipse/handlers/HandleConstructor.SCL.lombok */
 public class HandleConstructor {
     private static final char[][] JAVA_BEANS_CONSTRUCTORPROPERTIES = {"java".toCharArray(), "beans".toCharArray(), "ConstructorProperties".toCharArray()};
     private static final char[] DEFAULT_PREFIX = {'$', 'd', 'e', 'f', 'a', 'u', 'l', 't', '$'};
 
-    /* JADX INFO: loaded from: app.apk:lombok/eclipse/handlers/HandleConstructor$SkipIfConstructorExists.SCL.lombok */
+    /* JADX INFO: loaded from: discord-126021.apk:lombok/eclipse/handlers/HandleConstructor$SkipIfConstructorExists.SCL.lombok */
     public enum SkipIfConstructorExists {
         YES,
         NO,
@@ -72,7 +71,7 @@ public class HandleConstructor {
         }
     }
 
-    /* JADX INFO: loaded from: app.apk:lombok/eclipse/handlers/HandleConstructor$HandleNoArgsConstructor.SCL.lombok */
+    /* JADX INFO: loaded from: discord-126021.apk:lombok/eclipse/handlers/HandleConstructor$HandleNoArgsConstructor.SCL.lombok */
     public static class HandleNoArgsConstructor extends EclipseAnnotationHandler<NoArgsConstructor> {
         private static final String NAME = NoArgsConstructor.class.getSimpleName();
         private HandleConstructor handleConstructor = new HandleConstructor();
@@ -95,7 +94,7 @@ public class HandleConstructor {
         }
     }
 
-    /* JADX INFO: loaded from: app.apk:lombok/eclipse/handlers/HandleConstructor$HandleRequiredArgsConstructor.SCL.lombok */
+    /* JADX INFO: loaded from: discord-126021.apk:lombok/eclipse/handlers/HandleConstructor$HandleRequiredArgsConstructor.SCL.lombok */
     public static class HandleRequiredArgsConstructor extends EclipseAnnotationHandler<RequiredArgsConstructor> {
         private static final String NAME = RequiredArgsConstructor.class.getSimpleName();
         private HandleConstructor handleConstructor = new HandleConstructor();
@@ -157,7 +156,7 @@ public class HandleConstructor {
         return fields;
     }
 
-    /* JADX INFO: loaded from: app.apk:lombok/eclipse/handlers/HandleConstructor$HandleAllArgsConstructor.SCL.lombok */
+    /* JADX INFO: loaded from: discord-126021.apk:lombok/eclipse/handlers/HandleConstructor$HandleAllArgsConstructor.SCL.lombok */
     public static class HandleAllArgsConstructor extends EclipseAnnotationHandler<AllArgsConstructor> {
         private static final String NAME = AllArgsConstructor.class.getSimpleName();
         private HandleConstructor handleConstructor = new HandleConstructor();

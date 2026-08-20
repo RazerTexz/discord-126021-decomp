@@ -5,7 +5,6 @@ import android.os.RemoteException;
 import androidx.fragment.app.FragmentActivity;
 import com.discord.models.domain.ModelAuditLogEntry;
 import com.discord.utilities.analytics.AnalyticsTracker;
-import com.discord.widgets.friends.NearbyManager;
 import com.google.android.gms.common.api.Status;
 import com.google.android.gms.nearby.messages.Message;
 import com.google.android.gms.nearby.messages.MessageFilter;

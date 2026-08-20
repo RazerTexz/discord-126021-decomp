@@ -1,7 +1,5 @@
 package androidx.constraintlayout.solver.widgets.analyzer;
 
-import androidx.constraintlayout.solver.widgets.analyzer.DependencyNode;
-
 /* JADX INFO: loaded from: classes.dex */
 public class DimensionDependency extends DependencyNode {
     public int wrapValue;

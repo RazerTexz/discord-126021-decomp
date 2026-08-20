@@ -4,7 +4,6 @@ import com.discord.api.user.UserProfile;
 import com.discord.models.user.MeUser;
 import com.discord.stores.StoreUser;
 import com.discord.stores.StoreUserProfile;
-import com.discord.widgets.settings.profile.EditProfileBannerSheetViewModel;
 import kotlin.jvm.functions.Function0;
 import p507d0.p592z.p594d.AbstractC12240o;
 

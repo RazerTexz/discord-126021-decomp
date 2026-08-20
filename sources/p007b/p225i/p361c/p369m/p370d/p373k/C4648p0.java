@@ -1,7 +1,6 @@
 package p007b.p225i.p361c.p369m.p370d.p373k;
 
 import android.util.Log;
-import java.lang.Thread;
 import java.util.concurrent.atomic.AtomicBoolean;
 import p007b.p225i.p361c.p369m.p370d.C4592b;
 import p007b.p225i.p361c.p369m.p370d.p384s.InterfaceC4736d;

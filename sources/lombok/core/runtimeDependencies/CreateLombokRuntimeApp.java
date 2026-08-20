@@ -23,7 +23,7 @@ import java.util.zip.ZipEntry;
 import lombok.core.LombokApp;
 import lombok.core.SpiLoadUtil;
 
-/* JADX INFO: loaded from: app.apk:lombok/core/runtimeDependencies/CreateLombokRuntimeApp.SCL.lombok */
+/* JADX INFO: loaded from: discord-126021.apk:lombok/core/runtimeDependencies/CreateLombokRuntimeApp.SCL.lombok */
 public class CreateLombokRuntimeApp extends LombokApp {
     private List<RuntimeDependencyInfo> infoObjects;
 
@@ -42,7 +42,7 @@ public class CreateLombokRuntimeApp extends LombokApp {
         return Arrays.asList("runtime");
     }
 
-    /* JADX INFO: loaded from: app.apk:lombok/core/runtimeDependencies/CreateLombokRuntimeApp$CmdArgs.SCL.lombok */
+    /* JADX INFO: loaded from: discord-126021.apk:lombok/core/runtimeDependencies/CreateLombokRuntimeApp$CmdArgs.SCL.lombok */
     private static class CmdArgs {
 
         @Description("Prints those lombok transformations that require lombok-runtime.jar.")
@@ -198,7 +198,7 @@ public class CreateLombokRuntimeApp extends LombokApp {
         }
     }
 
-    /* JADX INFO: loaded from: app.apk:lombok/core/runtimeDependencies/CreateLombokRuntimeApp$Fail.SCL.lombok */
+    /* JADX INFO: loaded from: discord-126021.apk:lombok/core/runtimeDependencies/CreateLombokRuntimeApp$Fail.SCL.lombok */
     private static class Fail extends Exception {
         Fail(String message) {
             super(message);

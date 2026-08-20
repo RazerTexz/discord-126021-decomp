@@ -4,7 +4,6 @@ import android.content.Context;
 import android.content.SharedPreferences;
 import com.discord.api.guild.Guild;
 import com.discord.models.domain.ModelPayload;
-import com.discord.stores.StoreNotices;
 import com.discord.utilities.analytics.AnalyticsTracker;
 import com.discord.utilities.time.Clock;
 import java.util.Iterator;

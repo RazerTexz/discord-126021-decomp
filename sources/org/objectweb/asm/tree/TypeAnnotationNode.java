@@ -3,7 +3,7 @@ package org.objectweb.asm.tree;
 import org.objectweb.asm.Opcodes;
 import org.objectweb.asm.TypePath;
 
-/* JADX INFO: loaded from: app.apk:org/objectweb/asm/tree/TypeAnnotationNode.SCL.lombok */
+/* JADX INFO: loaded from: discord-126021.apk:org/objectweb/asm/tree/TypeAnnotationNode.SCL.lombok */
 public class TypeAnnotationNode extends AnnotationNode {
     public int typeRef;
     public TypePath typePath;

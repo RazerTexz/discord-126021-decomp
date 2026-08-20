@@ -10,7 +10,7 @@ import lombok.core.configuration.CheckerFrameworkVersion;
 import lombok.javac.JavacNode;
 import lombok.javac.handlers.JavacSingularsRecipes;
 
-/* JADX INFO: loaded from: app.apk:lombok/javac/handlers/singulars/JavacGuavaMapSingularizer.SCL.lombok */
+/* JADX INFO: loaded from: discord-126021.apk:lombok/javac/handlers/singulars/JavacGuavaMapSingularizer.SCL.lombok */
 public class JavacGuavaMapSingularizer extends JavacGuavaSingularizer {
     private static final LombokImmutableList<String> SUFFIXES = LombokImmutableList.m10920of("key", "value");
     private static final LombokImmutableList<String> SUPPORTED_TYPES = LombokImmutableList.m10921of("com.google.common.collect.ImmutableMap", "com.google.common.collect.ImmutableBiMap", "com.google.common.collect.ImmutableSortedMap");

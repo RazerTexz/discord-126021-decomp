@@ -6,7 +6,6 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 import com.discord.C5419R;
 import com.discord.databinding.IconListItemTextViewBinding;
-import com.discord.widgets.settings.developer.WidgetSettingsDeveloper;
 import java.util.Objects;
 import kotlin.jvm.functions.Function2;
 import p507d0.p592z.p594d.AbstractC12240o;

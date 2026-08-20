@@ -8,7 +8,6 @@ import androidx.annotation.VisibleForTesting;
 import androidx.arch.core.executor.ArchTaskExecutor;
 import androidx.arch.core.internal.FastSafeIterableMap;
 import androidx.arch.core.internal.SafeIterableMap;
-import androidx.view.Lifecycle;
 import java.lang.ref.WeakReference;
 import java.util.ArrayList;
 import java.util.Iterator;

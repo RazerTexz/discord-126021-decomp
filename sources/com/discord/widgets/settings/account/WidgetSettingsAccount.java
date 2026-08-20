@@ -40,15 +40,6 @@ import com.discord.utilities.viewbinding.FragmentViewBindingDelegateKt;
 import com.discord.utilities.views.ViewCoroutineScopeKt;
 import com.discord.views.CheckedSetting;
 import com.discord.widgets.notice.WidgetNoticeDialog;
-import com.discord.widgets.settings.account.WidgetDisableDeleteAccountDialog;
-import com.discord.widgets.settings.account.WidgetEnableSMSBackupDialog;
-import com.discord.widgets.settings.account.WidgetSettingsAccount;
-import com.discord.widgets.settings.account.WidgetSettingsAccountBackupCodes;
-import com.discord.widgets.settings.account.WidgetSettingsAccountChangePassword;
-import com.discord.widgets.settings.account.WidgetSettingsAccountContactsNameEdit;
-import com.discord.widgets.settings.account.WidgetSettingsAccountEmailEdit;
-import com.discord.widgets.settings.account.WidgetSettingsAccountUsernameEdit;
-import com.discord.widgets.settings.account.WidgetSettingsBlockedUsers;
 import com.discord.widgets.settings.account.mfa.WidgetEnableMFASteps;
 import com.discord.widgets.user.account.WidgetUserAccountVerifyBase;
 import com.discord.widgets.user.email.WidgetUserEmailVerify;
@@ -691,7 +682,7 @@ public final class WidgetSettingsAccount extends AppFragment {
         }
         TextView textView9 = getBinding().f17817z;
         C12238m.checkNotNullExpressionValue(textView9, "binding.settingsAccountSmsPhone");
-        ViewExtensions.setTextAndVisibilityBy(textView9, meUser.getPhoneNumber() != null ? C1107b.m210b(C1643a.m821I(getBinding().f17817z, "binding.settingsAccountSmsPhone", "binding.settingsAccountSmsPhone.context"), C5419R.string.mfa_sms_auth_current_phone, new Object[]{meUser.getPhoneNumber()}, (4 & 4) != 0 ? C1107b.b.f1491j : null) : null);
+        ViewExtensions.setTextAndVisibilityBy(textView9, meUser.getPhoneNumber() != null ? C1107b.m216h(C1643a.m821I(getBinding().f17817z, "binding.settingsAccountSmsPhone", "binding.settingsAccountSmsPhone.context"), C5419R.string.mfa_sms_auth_current_phone, new Object[]{meUser.getPhoneNumber()}, null, 4) : null);
         CheckedSetting checkedSetting = getBinding().f17816y;
         C12238m.checkNotNullExpressionValue(checkedSetting, "binding.settingsAccountSmsBackup");
         checkedSetting.setChecked(userUtils.isMfaSMSEnabled(meUser));

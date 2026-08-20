@@ -5,7 +5,7 @@ import java.util.List;
 import org.objectweb.asm.AnnotationVisitor;
 import org.objectweb.asm.Opcodes;
 
-/* JADX INFO: loaded from: app.apk:org/objectweb/asm/tree/AnnotationNode.SCL.lombok */
+/* JADX INFO: loaded from: discord-126021.apk:org/objectweb/asm/tree/AnnotationNode.SCL.lombok */
 public class AnnotationNode extends AnnotationVisitor {
     public String desc;
     public List<Object> values;

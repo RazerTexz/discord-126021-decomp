@@ -10,7 +10,6 @@ import android.os.Build;
 import android.util.DisplayMetrics;
 import androidx.core.app.NotificationCompat;
 import androidx.vectordrawable.graphics.drawable.PathInterpolatorCompat;
-import com.adjust.sdk.GooglePlayServicesClient;
 import java.util.Date;
 import java.util.Locale;
 import p007b.p100d.p104b.p105a.C1643a;

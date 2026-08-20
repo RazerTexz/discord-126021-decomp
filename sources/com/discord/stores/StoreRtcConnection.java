@@ -19,8 +19,6 @@ import com.discord.rtcconnection.RtcConnection;
 import com.discord.rtcconnection.VideoMetadata;
 import com.discord.rtcconnection.mediaengine.MediaEngine;
 import com.discord.rtcconnection.mediaengine.MediaEngineConnection;
-import com.discord.stores.StoreMediaSettings;
-import com.discord.stores.StoreStream;
 import com.discord.utilities.analytics.AnalyticsTracker;
 import com.discord.utilities.collections.ListenerCollection;
 import com.discord.utilities.collections.ListenerCollectionSubject;

@@ -2,7 +2,6 @@ package p637j0.p642l.p643a;
 
 import androidx.recyclerview.widget.RecyclerView;
 import p007b.p225i.p226a.p288f.p299e.p308o.C3404f;
-import p637j0.p642l.p643a.C12663q0;
 import p658rx.Scheduler;
 import p658rx.Subscriber;
 import p658rx.functions.Action0;

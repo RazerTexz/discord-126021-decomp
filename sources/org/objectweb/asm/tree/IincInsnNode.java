@@ -4,7 +4,7 @@ import java.util.Map;
 import org.objectweb.asm.MethodVisitor;
 import org.objectweb.asm.Opcodes;
 
-/* JADX INFO: loaded from: app.apk:org/objectweb/asm/tree/IincInsnNode.SCL.lombok */
+/* JADX INFO: loaded from: discord-126021.apk:org/objectweb/asm/tree/IincInsnNode.SCL.lombok */
 public class IincInsnNode extends AbstractInsnNode {
     public int var;
     public int incr;

@@ -1,7 +1,6 @@
 package com.discord.widgets.channels.list;
 
 import com.discord.models.domain.ModelAuditLogEntry;
-import com.discord.widgets.channels.list.WidgetChannelListModel;
 import kotlin.jvm.functions.Function2;
 import p507d0.p592z.p594d.AbstractC12240o;
 

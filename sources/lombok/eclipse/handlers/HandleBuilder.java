@@ -22,9 +22,6 @@ import lombok.core.handlers.InclusionExclusionUtils;
 import lombok.eclipse.Eclipse;
 import lombok.eclipse.EclipseAnnotationHandler;
 import lombok.eclipse.EclipseNode;
-import lombok.eclipse.handlers.EclipseHandlerUtil;
-import lombok.eclipse.handlers.EclipseSingularsRecipes;
-import lombok.eclipse.handlers.HandleConstructor;
 import lombok.experimental.NonFinal;
 import org.eclipse.jdt.internal.compiler.ast.ASTNode;
 import org.eclipse.jdt.internal.compiler.ast.AbstractMethodDeclaration;
@@ -68,7 +65,7 @@ import org.eclipse.jdt.internal.compiler.lookup.ClassScope;
 import org.eclipse.jdt.internal.compiler.lookup.MethodScope;
 import org.eclipse.jdt.internal.compiler.lookup.TypeConstants;
 
-/* JADX INFO: loaded from: app.apk:lombok/eclipse/handlers/HandleBuilder.SCL.lombok */
+/* JADX INFO: loaded from: discord-126021.apk:lombok/eclipse/handlers/HandleBuilder.SCL.lombok */
 @HandlerPriority(-1024)
 public class HandleBuilder extends EclipseAnnotationHandler<Builder> {
     private HandleConstructor handleConstructor = new HandleConstructor();
@@ -122,7 +119,7 @@ public class HandleBuilder extends EclipseAnnotationHandler<Builder> {
         return ((Boolean) expr).booleanValue();
     }
 
-    /* JADX INFO: loaded from: app.apk:lombok/eclipse/handlers/HandleBuilder$BuilderJob.SCL.lombok */
+    /* JADX INFO: loaded from: discord-126021.apk:lombok/eclipse/handlers/HandleBuilder$BuilderJob.SCL.lombok */
     static class BuilderJob {
         CheckerFrameworkVersion checkerFramework;
         EclipseNode parentType;
@@ -220,7 +217,7 @@ public class HandleBuilder extends EclipseAnnotationHandler<Builder> {
         }
     }
 
-    /* JADX INFO: loaded from: app.apk:lombok/eclipse/handlers/HandleBuilder$BuilderFieldData.SCL.lombok */
+    /* JADX INFO: loaded from: discord-126021.apk:lombok/eclipse/handlers/HandleBuilder$BuilderFieldData.SCL.lombok */
     static class BuilderFieldData {
         Annotation[] annotations;
         TypeReference type;

@@ -29,7 +29,6 @@ import com.discord.utilities.viewbinding.FragmentViewBindingDelegate;
 import com.discord.utilities.viewbinding.FragmentViewBindingDelegateKt;
 import com.discord.views.SearchInputView;
 import com.discord.views.sticker.StickerView;
-import com.discord.widgets.bugreports.BugReportViewModel;
 import com.facebook.drawee.view.SimpleDraweeView;
 import com.google.android.material.button.MaterialButton;
 import com.google.android.material.textfield.TextInputLayout;

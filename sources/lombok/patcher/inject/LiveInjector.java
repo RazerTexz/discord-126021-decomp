@@ -10,15 +10,15 @@ import java.lang.management.ManagementFactory;
 import java.lang.reflect.InvocationTargetException;
 import lombok.patcher.ClassRootFinder;
 
-/* JADX INFO: loaded from: app.apk:lombok/patcher/inject/LiveInjector.SCL.lombok */
+/* JADX INFO: loaded from: discord-126021.apk:lombok/patcher/inject/LiveInjector.SCL.lombok */
 public class LiveInjector {
 
-    /* JADX INFO: loaded from: app.apk:lombok/patcher/inject/LiveInjector$LibInstrument.SCL.lombok */
+    /* JADX INFO: loaded from: discord-126021.apk:lombok/patcher/inject/LiveInjector$LibInstrument.SCL.lombok */
     public interface LibInstrument extends Library {
         void Agent_OnAttach(Pointer pointer, String str, Pointer pointer2);
     }
 
-    /* JADX INFO: loaded from: app.apk:lombok/patcher/inject/LiveInjector$LibJVM.SCL.lombok */
+    /* JADX INFO: loaded from: discord-126021.apk:lombok/patcher/inject/LiveInjector$LibJVM.SCL.lombok */
     public interface LibJVM extends Library {
         int JNI_GetCreatedJavaVMs(PointerByReference pointerByReference, int i, IntByReference intByReference);
     }

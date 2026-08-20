@@ -21,10 +21,9 @@ import lombok.Lombok;
 import lombok.core.LombokApp;
 import lombok.core.SpiLoadUtil;
 import lombok.core.Version;
-import lombok.installer.OsUtils;
 import lombok.patcher.ClassRootFinder;
 
-/* JADX INFO: loaded from: app.apk:lombok/installer/Installer.SCL.lombok */
+/* JADX INFO: loaded from: discord-126021.apk:lombok/installer/Installer.SCL.lombok */
 public class Installer {
     static final URI ABOUT_LOMBOK_URL = URI.create("https://projectlombok.org");
     static final List<IdeLocationProvider> locationProviders;
@@ -86,7 +85,7 @@ public class Installer {
         return a.equals(b2);
     }
 
-    /* JADX INFO: loaded from: app.apk:lombok/installer/Installer$GraphicalInstallerApp.SCL.lombok */
+    /* JADX INFO: loaded from: discord-126021.apk:lombok/installer/Installer$GraphicalInstallerApp.SCL.lombok */
     public static class GraphicalInstallerApp extends LombokApp {
         @Override // lombok.core.LombokApp
         public String getAppName() {
@@ -109,7 +108,7 @@ public class Installer {
         }
     }
 
-    /* JADX INFO: loaded from: app.apk:lombok/installer/Installer$CommandLineInstallerApp.SCL.lombok */
+    /* JADX INFO: loaded from: discord-126021.apk:lombok/installer/Installer$CommandLineInstallerApp.SCL.lombok */
     public static class CommandLineInstallerApp extends LombokApp {
         @Override // lombok.core.LombokApp
         public String getAppName() {
@@ -127,7 +126,7 @@ public class Installer {
         }
     }
 
-    /* JADX INFO: loaded from: app.apk:lombok/installer/Installer$CommandLineUninstallerApp.SCL.lombok */
+    /* JADX INFO: loaded from: discord-126021.apk:lombok/installer/Installer$CommandLineUninstallerApp.SCL.lombok */
     public static class CommandLineUninstallerApp extends LombokApp {
         @Override // lombok.core.LombokApp
         public String getAppName() {
@@ -194,7 +193,7 @@ public class Installer {
         }
     }
 
-    /* JADX INFO: loaded from: app.apk:lombok/installer/Installer$CmdArgs.SCL.lombok */
+    /* JADX INFO: loaded from: discord-126021.apk:lombok/installer/Installer$CmdArgs.SCL.lombok */
     private static class CmdArgs {
 
         @Description("Specify paths to a location to install/uninstall. Use 'auto' to apply to all automatically discoverable installations.")

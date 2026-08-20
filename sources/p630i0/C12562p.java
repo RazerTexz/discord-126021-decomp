@@ -24,7 +24,6 @@ import p615g0.C12388e;
 import p615g0.C12401r;
 import p615g0.InterfaceC12390g;
 import p615g0.InterfaceC12407x;
-import p630i0.C12568v;
 
 /* JADX INFO: renamed from: i0.p */
 /* JADX INFO: compiled from: OkHttpCall.java */

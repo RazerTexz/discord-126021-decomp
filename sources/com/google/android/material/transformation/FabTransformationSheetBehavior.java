@@ -12,7 +12,6 @@ import androidx.core.view.ViewCompat;
 import com.google.android.material.C10817R;
 import com.google.android.material.animation.MotionSpec;
 import com.google.android.material.animation.Positioning;
-import com.google.android.material.transformation.FabTransformationBehavior;
 import java.util.HashMap;
 import java.util.Map;
 

@@ -7,7 +7,7 @@ import org.objectweb.asm.MethodVisitor;
 import org.objectweb.asm.Opcodes;
 import org.objectweb.asm.commons.JSRInlinerAdapter;
 
-/* JADX INFO: loaded from: app.apk:lombok/bytecode/AsmUtil.SCL.lombok */
+/* JADX INFO: loaded from: discord-126021.apk:lombok/bytecode/AsmUtil.SCL.lombok */
 class AsmUtil {
     private AsmUtil() {
         throw new UnsupportedOperationException();

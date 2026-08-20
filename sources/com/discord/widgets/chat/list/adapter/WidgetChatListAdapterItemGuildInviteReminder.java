@@ -10,7 +10,6 @@ import com.discord.models.domain.ModelAuditLogEntry;
 import com.discord.models.guild.Guild;
 import com.discord.models.message.Message;
 import com.discord.utilities.view.extensions.ViewExtensions;
-import com.discord.widgets.chat.list.adapter.WidgetChatListAdapter;
 import com.discord.widgets.chat.list.entries.ChatListEntry;
 import com.discord.widgets.chat.list.entries.MessageEntry;
 import com.discord.widgets.guilds.invite.WidgetGuildInviteShare;

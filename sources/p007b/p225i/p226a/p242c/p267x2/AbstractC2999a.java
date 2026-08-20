@@ -5,7 +5,6 @@ import com.discord.api.permission.Permission;
 import java.io.IOException;
 import p007b.p085c.p086a.p087a0.C1460d;
 import p007b.p225i.p226a.p242c.p259f3.C2738e0;
-import p007b.p225i.p226a.p242c.p267x2.InterfaceC3119t;
 
 /* JADX INFO: renamed from: b.i.a.c.x2.a */
 /* JADX INFO: compiled from: BinarySearchSeeker.java */

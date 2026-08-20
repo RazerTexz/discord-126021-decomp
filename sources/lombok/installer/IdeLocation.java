@@ -3,10 +3,9 @@ package lombok.installer;
 import java.io.File;
 import java.io.IOException;
 import java.net.URL;
-import lombok.installer.OsUtils;
 import lombok.patcher.ClassRootFinder;
 
-/* JADX INFO: loaded from: app.apk:lombok/installer/IdeLocation.SCL.lombok */
+/* JADX INFO: loaded from: discord-126021.apk:lombok/installer/IdeLocation.SCL.lombok */
 public abstract class IdeLocation {
     boolean selected = true;
     private static final String LEGAL_PATH_CHARS = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789.-_/";

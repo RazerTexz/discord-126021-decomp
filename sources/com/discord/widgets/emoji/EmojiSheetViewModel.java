@@ -21,7 +21,6 @@ import com.discord.utilities.p501rx.ObservableExtensionsKt;
 import com.discord.utilities.rest.RestAPI;
 import com.discord.utilities.textprocessing.node.EmojiNode;
 import com.discord.utilities.user.UserUtils;
-import com.discord.widgets.emoji.EmojiSheetViewModel;
 import com.discord.widgets.guilds.join.GuildJoinHelperKt;
 import java.util.Iterator;
 import java.util.Map;

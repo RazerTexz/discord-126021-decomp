@@ -8,7 +8,6 @@ import androidx.annotation.Nullable;
 import androidx.core.content.ContentResolverCompat;
 import androidx.core.os.CancellationSignal;
 import androidx.core.os.OperationCanceledException;
-import androidx.loader.content.Loader;
 import java.io.FileDescriptor;
 import java.io.PrintWriter;
 import java.util.Arrays;

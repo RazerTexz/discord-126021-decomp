@@ -29,7 +29,6 @@ import androidx.annotation.RestrictTo;
 import androidx.appcompat.C0051R;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.view.ActionBarPolicy;
-import androidx.appcompat.widget.LinearLayoutCompat;
 import androidx.constraintlayout.solver.widgets.analyzer.BasicMeasure;
 
 /* JADX INFO: loaded from: classes.dex */

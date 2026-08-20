@@ -4,7 +4,6 @@ import android.content.Context;
 import android.view.View;
 import com.discord.i18n.RenderContext;
 import com.discord.utilities.mg_recycler.DragAndDropAdapter;
-import com.discord.widgets.servers.WidgetServerSettingsRolesAdapter;
 import com.discord.widgets.servers.settings.members.WidgetServerSettingsMembers;
 import java.util.Objects;
 import kotlin.Unit;

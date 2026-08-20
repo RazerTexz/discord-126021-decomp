@@ -1,6 +1,5 @@
 package com.discord.api.channel;
 
-import com.discord.api.channel.Channel;
 import java.util.Comparator;
 
 /* JADX INFO: compiled from: ChannelUtils.kt */

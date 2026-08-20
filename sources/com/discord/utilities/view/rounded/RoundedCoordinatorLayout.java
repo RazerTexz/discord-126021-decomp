@@ -4,7 +4,6 @@ import android.content.Context;
 import android.graphics.Canvas;
 import android.util.AttributeSet;
 import androidx.coordinatorlayout.widget.CoordinatorLayout;
-import com.discord.utilities.view.rounded.RoundedCornerViewCoordinator;
 import com.discord.utils.C7063R;
 import kotlin.Unit;
 import kotlin.jvm.functions.Function1;

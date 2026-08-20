@@ -2,7 +2,7 @@ package org.objectweb.asm.tree.analysis;
 
 import org.objectweb.asm.tree.AbstractInsnNode;
 
-/* JADX INFO: loaded from: app.apk:org/objectweb/asm/tree/analysis/AnalyzerException.SCL.lombok */
+/* JADX INFO: loaded from: discord-126021.apk:org/objectweb/asm/tree/analysis/AnalyzerException.SCL.lombok */
 public class AnalyzerException extends Exception {
     private static final long serialVersionUID = 3154190448018943333L;
     public final transient AbstractInsnNode node;

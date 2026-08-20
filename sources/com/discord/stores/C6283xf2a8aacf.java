@@ -3,7 +3,6 @@ package com.discord.stores;
 import android.net.Uri;
 import androidx.appcompat.widget.ActivityChooserModel;
 import com.discord.app.AppActivity;
-import com.discord.stores.StoreNavigation;
 import com.discord.widgets.auth.WidgetOauth2Authorize;
 import kotlin.jvm.functions.Function2;
 import p007b.p008a.p018d.C0870j;

@@ -2,7 +2,6 @@ package com.discord.widgets.settings.premium;
 
 import android.view.View;
 import com.discord.i18n.RenderContext;
-import com.discord.widgets.settings.premium.WidgetSettingsGiftingAdapter;
 import kotlin.Unit;
 import kotlin.jvm.functions.Function1;
 import p507d0.p592z.p594d.AbstractC12240o;

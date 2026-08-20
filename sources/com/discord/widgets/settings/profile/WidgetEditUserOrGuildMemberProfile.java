@@ -42,8 +42,6 @@ import com.discord.utilities.view.extensions.ViewExtensions;
 import com.discord.utilities.view.text.LinkifiedTextView;
 import com.discord.utilities.viewbinding.FragmentViewBindingDelegate;
 import com.discord.utilities.viewbinding.FragmentViewBindingDelegateKt;
-import com.discord.widgets.settings.profile.SettingsUserProfileViewModel;
-import com.discord.widgets.settings.profile.WidgetEditProfileBannerSheet;
 import com.discord.widgets.user.Badge;
 import com.discord.widgets.user.profile.UserProfileHeaderView;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;

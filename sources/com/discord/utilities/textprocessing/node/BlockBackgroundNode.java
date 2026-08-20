@@ -10,7 +10,6 @@ import com.discord.utilities.dimen.DimenUtils;
 import com.discord.utilities.spans.BlockBackgroundSpan;
 import com.discord.utilities.spans.VerticalPaddingSpan;
 import com.discord.utilities.textprocessing.node.BasicRenderContext;
-import com.discord.utilities.textprocessing.node.SpoilerNode;
 import java.util.Arrays;
 import p507d0.p592z.p594d.C12238m;
 

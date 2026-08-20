@@ -1,7 +1,6 @@
 package com.discord.nullserializable;
 
 import androidx.exifinterface.media.ExifInterface;
-import com.discord.nullserializable.NullSerializable;
 import com.google.gson.Gson;
 import com.google.gson.TypeAdapter;
 import com.google.gson.stream.JsonReader;

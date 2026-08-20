@@ -8,7 +8,6 @@ import android.util.AttributeSet;
 import androidx.annotation.ArrayRes;
 import androidx.annotation.NonNull;
 import androidx.core.content.res.TypedArrayUtils;
-import androidx.preference.Preference;
 import java.util.Collections;
 import java.util.HashSet;
 import java.util.Set;

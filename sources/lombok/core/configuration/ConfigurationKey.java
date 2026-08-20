@@ -5,7 +5,7 @@ import java.util.Map;
 import java.util.TreeMap;
 import java.util.regex.Pattern;
 
-/* JADX INFO: loaded from: app.apk:lombok/core/configuration/ConfigurationKey.SCL.lombok */
+/* JADX INFO: loaded from: discord-126021.apk:lombok/core/configuration/ConfigurationKey.SCL.lombok */
 public abstract class ConfigurationKey<T> {
     private static final Pattern VALID_NAMES = Pattern.compile("[-_a-zA-Z][-.\\w]*(?<![-.])");
     private static final TreeMap<String, ConfigurationKey<?>> registeredKeys = new TreeMap<>(String.CASE_INSENSITIVE_ORDER);

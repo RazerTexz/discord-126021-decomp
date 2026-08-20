@@ -22,7 +22,6 @@ import com.discord.utilities.mg_recycler.MGRecyclerDataPayload;
 import com.discord.utilities.mg_recycler.MGRecyclerViewHolder;
 import com.discord.utilities.time.ClockFactory;
 import com.discord.utilities.view.extensions.ViewExtensions;
-import com.discord.widgets.stage.sheet.WidgetStageRaisedHandsBottomSheetAdapter;
 import com.facebook.drawee.view.SimpleDraweeView;
 import kotlin.Unit;
 import kotlin.jvm.functions.Function1;

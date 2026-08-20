@@ -18,7 +18,6 @@ import com.discord.utilities.mg_recycler.MGRecyclerDataPayload;
 import com.discord.utilities.mg_recycler.MGRecyclerViewHolder;
 import com.discord.utilities.view.extensions.ViewExtensions;
 import com.discord.views.permissions.ChannelPermissionOwnerView;
-import com.discord.widgets.channels.permissions.PermissionOwner;
 import com.google.android.material.checkbox.MaterialCheckBox;
 import kotlin.NoWhenBranchMatchedException;
 import kotlin.Unit;

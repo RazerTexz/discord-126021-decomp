@@ -21,7 +21,6 @@ import com.discord.utilities.uri.UriHandler;
 import com.discord.utilities.viewbinding.FragmentViewBindingDelegate;
 import com.discord.utilities.viewbinding.FragmentViewBindingDelegateKt;
 import com.discord.widgets.home.WidgetHome;
-import com.discord.widgets.servers.member_verification.MemberVerificationPendingViewModel;
 import com.google.android.material.button.MaterialButton;
 import kotlin.Lazy;
 import kotlin.NoWhenBranchMatchedException;

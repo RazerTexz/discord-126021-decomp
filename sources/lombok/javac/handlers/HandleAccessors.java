@@ -10,7 +10,7 @@ import lombok.experimental.Accessors;
 import lombok.javac.JavacAnnotationHandler;
 import lombok.javac.JavacNode;
 
-/* JADX INFO: loaded from: app.apk:lombok/javac/handlers/HandleAccessors.SCL.lombok */
+/* JADX INFO: loaded from: discord-126021.apk:lombok/javac/handlers/HandleAccessors.SCL.lombok */
 @HandlerPriority(65536)
 public class HandleAccessors extends JavacAnnotationHandler<Accessors> {
     @Override // lombok.javac.JavacAnnotationHandler

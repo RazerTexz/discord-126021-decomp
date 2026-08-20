@@ -19,7 +19,6 @@ import com.discord.utilities.p501rx.ObservableExtensionsKt;
 import com.discord.utilities.view.extensions.ViewExtensions;
 import com.discord.utilities.viewbinding.FragmentViewBindingDelegate;
 import com.discord.utilities.viewbinding.FragmentViewBindingDelegateKt;
-import com.discord.widgets.chat.list.PublishActionDialogViewModel;
 import com.discord.widgets.notice.WidgetNoticeDialog;
 import com.google.android.material.button.MaterialButton;
 import kotlin.Lazy;

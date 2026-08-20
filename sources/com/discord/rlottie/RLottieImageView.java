@@ -7,7 +7,6 @@ import android.util.AttributeSet;
 import android.view.Display;
 import android.view.WindowManager;
 import androidx.appcompat.widget.AppCompatImageView;
-import com.discord.rlottie.RLottieDrawable;
 import kotlin.TypeCastException;
 import p507d0.p592z.p594d.C12238m;
 

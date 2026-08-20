@@ -6,7 +6,6 @@ import com.discord.api.guildscheduledevent.GuildScheduledEvent;
 import com.discord.api.guildscheduledevent.GuildScheduledEventStatus;
 import com.discord.models.guild.Guild;
 import com.discord.utilities.channel.GuildChannelsInfo;
-import com.discord.widgets.channels.list.WidgetChannelListModel;
 import com.discord.widgets.channels.list.items.ChannelListItemVoiceChannel;
 import com.discord.widgets.channels.list.items.ChannelListItemVoiceUser;
 import java.util.ArrayList;

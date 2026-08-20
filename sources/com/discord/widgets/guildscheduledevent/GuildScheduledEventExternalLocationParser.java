@@ -7,7 +7,6 @@ import com.discord.simpleast.core.parser.Parser;
 import com.discord.utilities.textprocessing.AstRenderer;
 import com.discord.utilities.textprocessing.MessageParseState;
 import com.discord.utilities.textprocessing.MessageRenderContext;
-import com.discord.widgets.guildscheduledevent.GuildScheduledEventLocationInfo;
 import com.facebook.drawee.span.DraweeSpanStringBuilder;
 import kotlin.Lazy;
 import kotlin.NoWhenBranchMatchedException;

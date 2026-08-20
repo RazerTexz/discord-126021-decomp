@@ -23,7 +23,6 @@ import androidx.annotation.StringRes;
 import androidx.constraintlayout.solver.widgets.analyzer.BasicMeasure;
 import androidx.coordinatorlayout.widget.CoordinatorLayout;
 import com.google.android.material.C10817R;
-import com.google.android.material.snackbar.BaseTransientBottomBar;
 
 /* JADX INFO: loaded from: classes3.dex */
 public class Snackbar extends BaseTransientBottomBar<Snackbar> {

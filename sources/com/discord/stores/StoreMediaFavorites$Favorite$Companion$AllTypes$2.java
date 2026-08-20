@@ -1,6 +1,5 @@
 package com.discord.stores;
 
-import com.discord.stores.StoreMediaFavorites;
 import java.util.Set;
 import kotlin.jvm.functions.Function0;
 import p507d0.p513e0.InterfaceC11230c;

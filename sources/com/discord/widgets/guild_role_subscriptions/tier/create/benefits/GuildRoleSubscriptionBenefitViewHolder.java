@@ -15,8 +15,6 @@ import com.discord.databinding.ViewGuildRoleSubscriptionSectionHeaderItemBinding
 import com.discord.views.CheckedSetting;
 import com.discord.widgets.guild_role_subscriptions.GuildRoleSubscriptionBenefitItemView;
 import com.discord.widgets.guild_role_subscriptions.GuildRoleSubscriptionUtilsKt;
-import com.discord.widgets.guild_role_subscriptions.tier.create.benefits.GuildRoleSubscriptionBenefitAdapter;
-import com.discord.widgets.guild_role_subscriptions.tier.create.benefits.GuildRoleSubscriptionBenefitAdapterItem;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import p507d0.p592z.p594d.C12238m;
 

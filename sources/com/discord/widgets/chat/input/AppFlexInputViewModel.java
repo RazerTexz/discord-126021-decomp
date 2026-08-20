@@ -24,7 +24,6 @@ import com.discord.utilities.error.Error;
 import com.discord.utilities.p501rx.ObservableExtensionsKt;
 import com.discord.utilities.permissions.PermissionUtils;
 import com.discord.utilities.stickers.StickerUtils;
-import com.discord.widgets.chat.input.AppFlexInputViewModel;
 import com.discord.widgets.home.WidgetHome;
 import com.discord.widgets.settings.premium.WidgetSettingsGifting;
 import com.lytefast.flexinput.FlexInputAttachmentListener;

@@ -57,7 +57,6 @@ import com.discord.utilities.viewbinding.FragmentViewBindingDelegate;
 import com.discord.utilities.viewbinding.FragmentViewBindingDelegateKt;
 import com.discord.views.CheckedSetting;
 import com.discord.views.RadioManager;
-import com.discord.widgets.channels.WidgetCreateChannel;
 import com.discord.widgets.channels.permissions.WidgetCreateChannelAddMember;
 import com.discord.widgets.forums.ForumUtils;
 import com.google.android.material.textfield.TextInputLayout;

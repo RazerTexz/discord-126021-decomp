@@ -5,7 +5,6 @@ import com.discord.models.user.MeUser;
 import com.discord.stores.StoreGooglePlayPurchases;
 import com.discord.stores.StoreGuildBoost;
 import com.discord.stores.StoreSubscriptions;
-import com.discord.widgets.servers.guildboost.GuildBoostViewModel;
 import kotlin.jvm.functions.Function5;
 import p507d0.p592z.p594d.C12236k;
 import p507d0.p592z.p594d.C12238m;

@@ -9,7 +9,6 @@ import androidx.annotation.MainThread;
 import androidx.annotation.RestrictTo;
 import androidx.constraintlayout.motion.widget.Key;
 import androidx.core.view.ViewCompat;
-import androidx.dynamicanimation.animation.AnimationHandler;
 import androidx.dynamicanimation.animation.DynamicAnimation;
 import java.util.ArrayList;
 

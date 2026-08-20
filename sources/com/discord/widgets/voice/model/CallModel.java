@@ -24,7 +24,6 @@ import com.discord.utilities.p501rx.ObservableExtensionsKt;
 import com.discord.utilities.permissions.PermissionUtils;
 import com.discord.utilities.time.Clock;
 import com.discord.utilities.voice.VoiceChannelJoinability;
-import com.discord.widgets.voice.model.CallModel;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Map;

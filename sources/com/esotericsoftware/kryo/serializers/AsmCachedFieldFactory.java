@@ -1,7 +1,5 @@
 package com.esotericsoftware.kryo.serializers;
 
-import com.esotericsoftware.kryo.serializers.AsmCacheFields;
-import com.esotericsoftware.kryo.serializers.FieldSerializer;
 import java.lang.reflect.Field;
 
 /* JADX INFO: loaded from: classes.dex */

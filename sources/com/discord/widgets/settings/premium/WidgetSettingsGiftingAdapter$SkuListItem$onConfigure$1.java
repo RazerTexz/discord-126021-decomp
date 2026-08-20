@@ -3,7 +3,6 @@ package com.discord.widgets.settings.premium;
 import android.content.Context;
 import com.discord.i18n.RenderContext;
 import com.discord.utilities.resources.StringResourceUtilsKt;
-import com.discord.widgets.settings.premium.WidgetSettingsGiftingAdapter;
 import java.util.Map;
 import kotlin.Unit;
 import kotlin.jvm.functions.Function1;

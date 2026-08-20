@@ -37,10 +37,6 @@ import com.discord.utilities.views.SwipeableItemTouchHelper;
 import com.discord.views.CheckedSetting;
 import com.discord.views.RadioManager;
 import com.discord.widgets.channels.settings.WidgetChannelNotificationSettings;
-import com.discord.widgets.servers.NotificationHighlightsSettingsView;
-import com.discord.widgets.servers.NotificationMuteSettingsView;
-import com.discord.widgets.servers.NotificationsOverridesAdapter;
-import com.discord.widgets.servers.WidgetServerNotifications;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.LinkedHashMap;
@@ -507,7 +503,7 @@ public final class WidgetServerNotifications extends AppFragment {
         LinearLayout linearLayout = getBinding().f17497i;
         C12238m.checkNotNullExpressionValue(linearLayout, "binding.serverNotificationsFrequencyWrap");
         linearLayout.setVisibility(zIsMuted ^ true ? 0 : 8);
-        getBinding().f17500l.updateView(new NotificationMuteSettingsView.ViewState(zIsMuted, guildSettings.getMuteEndTime(), C1107b.m210b(requireContext(), C5419R.string.form_label_mute_server, new Object[]{model.getGuild().getName()}, (4 & 4) != 0 ? C1107b.b.f1491j : null), C1107b.m210b(requireContext(), C5419R.string.form_label_unmute_server, new Object[]{model.getGuild().getName()}, (4 & 4) != 0 ? C1107b.b.f1491j : null), C1107b.m210b(requireContext(), C5419R.string.form_label_mobile_server_muted, new Object[0], (4 & 4) != 0 ? C1107b.b.f1491j : null), C5419R.string.form_label_mobile_server_muted_until, C1107b.m210b(requireContext(), C5419R.string.form_label_mute_server_description, new Object[0], (4 & 4) != 0 ? C1107b.b.f1491j : null)), new WidgetServerNotifications$configureUI$onMute$1(this, id2), new WidgetServerNotifications$configureUI$onUnmute$1(this, id2));
+        getBinding().f17500l.updateView(new NotificationMuteSettingsView.ViewState(zIsMuted, guildSettings.getMuteEndTime(), C1107b.m216h(requireContext(), C5419R.string.form_label_mute_server, new Object[]{model.getGuild().getName()}, null, 4), C1107b.m216h(requireContext(), C5419R.string.form_label_unmute_server, new Object[]{model.getGuild().getName()}, null, 4), C1107b.m216h(requireContext(), C5419R.string.form_label_mobile_server_muted, new Object[0], null, 4), C5419R.string.form_label_mobile_server_muted_until, C1107b.m216h(requireContext(), C5419R.string.form_label_mute_server_description, new Object[0], null, 4)), new WidgetServerNotifications$configureUI$onMute$1(this, id2), new WidgetServerNotifications$configureUI$onUnmute$1(this, id2));
         if (model.getGuild().isHub()) {
             configureForHub();
             return;

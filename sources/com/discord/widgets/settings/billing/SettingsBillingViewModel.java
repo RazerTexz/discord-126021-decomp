@@ -7,7 +7,6 @@ import com.discord.stores.StoreStream;
 import com.discord.stores.StoreSubscriptions;
 import com.discord.utilities.error.Error;
 import com.discord.utilities.p501rx.ObservableExtensionsKt;
-import com.discord.widgets.settings.billing.PaymentSourceAdapter;
 import java.util.ArrayList;
 import java.util.List;
 import kotlin.Unit;

@@ -2,8 +2,6 @@ package com.discord.widgets.guild_role_subscriptions.tier.create.benefits;
 
 import androidx.fragment.app.FragmentManager;
 import com.discord.C5419R;
-import com.discord.widgets.guild_role_subscriptions.tier.create.benefits.GuildRoleSubscriptionBenefitAdapter;
-import com.discord.widgets.guild_role_subscriptions.tier.create.benefits.GuildRoleSubscriptionBenefitAdapterItem;
 import com.discord.widgets.hubs.RadioSelectorItems;
 import com.discord.widgets.hubs.WidgetRadioSelectorBottomSheet;
 import java.util.List;

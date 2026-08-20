@@ -37,7 +37,6 @@ import com.discord.utilities.textprocessing.MessageParseState;
 import com.discord.utilities.textprocessing.MessageRenderContext;
 import com.discord.widgets.chat.input.MentionUtilsKt;
 import com.discord.widgets.home.WidgetHome;
-import com.discord.widgets.notice.NoticePopup;
 import com.facebook.drawee.span.DraweeSpanStringBuilder;
 import java.util.Iterator;
 import java.util.List;

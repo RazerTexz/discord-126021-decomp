@@ -1,6 +1,6 @@
 package org.objectweb.asm;
 
-/* JADX INFO: loaded from: app.apk:org/objectweb/asm/Opcodes.SCL.lombok */
+/* JADX INFO: loaded from: discord-126021.apk:org/objectweb/asm/Opcodes.SCL.lombok */
 public interface Opcodes {
     public static final int ASM4 = 262144;
     public static final int ASM5 = 327680;

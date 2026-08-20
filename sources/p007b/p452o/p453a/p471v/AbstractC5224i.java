@@ -4,7 +4,6 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import p007b.p452o.p453a.C5103b;
 import p007b.p452o.p453a.C5113l;
-import p007b.p452o.p453a.p471v.AbstractC5219d;
 
 /* JADX INFO: renamed from: b.o.a.v.i */
 /* JADX INFO: compiled from: SnapshotPictureRecorder.java */

@@ -1,6 +1,5 @@
 package androidx.constraintlayout.solver.widgets;
 
-import androidx.constraintlayout.solver.widgets.ConstraintWidget;
 import androidx.constraintlayout.solver.widgets.analyzer.BasicMeasure;
 
 /* JADX INFO: loaded from: classes.dex */

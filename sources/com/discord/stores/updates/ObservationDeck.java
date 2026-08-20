@@ -3,7 +3,6 @@ package com.discord.stores.updates;
 import androidx.exifinterface.media.ExifInterface;
 import com.discord.app.AppLog;
 import com.discord.models.domain.ModelAuditLogEntry;
-import com.discord.stores.updates.ObservationDeck;
 import com.discord.utilities.logging.Logger;
 import java.util.ArrayList;
 import java.util.Arrays;

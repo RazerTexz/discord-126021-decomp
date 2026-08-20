@@ -12,7 +12,6 @@ import androidx.annotation.VisibleForTesting;
 import com.otaliastudios.cameraview.C11196R;
 import p007b.p100d.p104b.p105a.C1643a;
 import p007b.p452o.p453a.C5103b;
-import p007b.p452o.p453a.p470u.InterfaceC5213a;
 
 /* JADX INFO: renamed from: b.o.a.u.c */
 /* JADX INFO: compiled from: OverlayLayout.java */

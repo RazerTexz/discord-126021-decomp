@@ -6,7 +6,6 @@ import android.content.res.ColorStateList;
 import android.graphics.PorterDuff;
 import android.graphics.drawable.Drawable;
 import android.util.Log;
-import android.view.ActionProvider;
 import android.view.ContextMenu;
 import android.view.MenuItem;
 import android.view.SubMenu;
@@ -56,7 +55,7 @@ public class MenuItemWrapperICS extends BaseMenuWrapper implements MenuItem {
     }
 
     @RequiresApi(16)
-    public class ActionProviderWrapperJB extends ActionProviderWrapper implements ActionProvider.VisibilityListener {
+    public class ActionProviderWrapperJB extends ActionProviderWrapper implements android.view.ActionProvider.VisibilityListener {
         private ActionProvider.VisibilityListener mListener;
 
         public ActionProviderWrapperJB(Context context, android.view.ActionProvider actionProvider) {
@@ -174,7 +173,7 @@ public class MenuItemWrapperICS extends BaseMenuWrapper implements MenuItem {
 
     @Override // android.view.MenuItem
     public android.view.ActionProvider getActionProvider() {
-        androidx.core.view.ActionProvider supportActionProvider = this.mWrappedObject.getSupportActionProvider();
+        ActionProvider supportActionProvider = this.mWrappedObject.getSupportActionProvider();
         if (supportActionProvider instanceof ActionProviderWrapper) {
             return ((ActionProviderWrapper) supportActionProvider).mInner;
         }

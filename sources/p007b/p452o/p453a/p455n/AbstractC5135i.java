@@ -9,7 +9,6 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.annotation.VisibleForTesting;
 import com.google.android.gms.tasks.Task;
-import java.lang.Thread;
 import java.util.HashSet;
 import java.util.Iterator;
 import java.util.Objects;

@@ -24,7 +24,6 @@ import com.discord.widgets.guildscheduledevent.WidgetGuildScheduledEventListBott
 import com.discord.widgets.mobile_reports.WidgetMobileReports;
 import com.discord.widgets.settings.WidgetSettingsVoice;
 import com.discord.widgets.stage.sheet.WidgetStageStartEventBottomSheet;
-import com.discord.widgets.voice.sheet.WidgetVoiceSettingsBottomSheetViewModel;
 import com.google.android.material.switchmaterial.SwitchMaterial;
 import kotlin.Lazy;
 import kotlin.Unit;

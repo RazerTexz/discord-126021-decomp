@@ -1,7 +1,6 @@
 package androidx.view;
 
 import androidx.exifinterface.media.ExifInterface;
-import androidx.view.Lifecycle;
 import kotlin.Unit;
 import kotlin.coroutines.Continuation;
 import kotlin.jvm.functions.Function2;

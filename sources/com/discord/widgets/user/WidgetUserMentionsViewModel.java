@@ -1,6 +1,5 @@
 package com.discord.widgets.user;
 
-import com.discord.widgets.user.WidgetUserMentions;
 import kotlin.Unit;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import p007b.p008a.p018d.AbstractC0859d0;

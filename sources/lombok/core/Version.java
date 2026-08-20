@@ -3,7 +3,7 @@ package lombok.core;
 import com.adjust.sdk.Constants;
 import java.io.InputStream;
 
-/* JADX INFO: loaded from: app.apk:lombok/core/Version.SCL.lombok */
+/* JADX INFO: loaded from: discord-126021.apk:lombok/core/Version.SCL.lombok */
 public class Version {
     private static final String VERSION = "1.18.16";
     private static final String RELEASE_NAME = "Envious Ferret";

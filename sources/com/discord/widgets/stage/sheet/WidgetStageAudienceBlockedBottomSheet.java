@@ -16,7 +16,6 @@ import com.discord.utilities.view.recycler.MaxHeightRecyclerView;
 import com.discord.utilities.viewbinding.FragmentViewBindingDelegate;
 import com.discord.utilities.viewbinding.FragmentViewBindingDelegateKt;
 import com.discord.widgets.stage.StageChannelJoinHelper;
-import com.discord.widgets.stage.sheet.StageAudienceBlockedBottomSheetViewModel;
 import kotlin.Lazy;
 import kotlin.NoWhenBranchMatchedException;
 import kotlin.Unit;

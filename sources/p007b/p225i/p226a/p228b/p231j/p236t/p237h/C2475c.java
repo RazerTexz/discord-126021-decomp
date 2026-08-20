@@ -2,7 +2,6 @@ package p007b.p225i.p226a.p228b.p231j.p236t.p237h;
 
 import java.util.Set;
 import p007b.p100d.p104b.p105a.C1643a;
-import p007b.p225i.p226a.p228b.p231j.p236t.p237h.AbstractC2478f;
 
 /* JADX INFO: renamed from: b.i.a.b.j.t.h.c */
 /* JADX INFO: compiled from: AutoValue_SchedulerConfig_ConfigValue.java */

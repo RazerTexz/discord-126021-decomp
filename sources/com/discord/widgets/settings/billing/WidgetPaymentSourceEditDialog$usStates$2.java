@@ -3,7 +3,6 @@ package com.discord.widgets.settings.billing;
 import android.content.Context;
 import android.content.res.AssetManager;
 import com.adjust.sdk.Constants;
-import com.discord.widgets.settings.billing.WidgetPaymentSourceEditDialog;
 import com.google.gson.Gson;
 import java.io.IOException;
 import java.io.InputStreamReader;

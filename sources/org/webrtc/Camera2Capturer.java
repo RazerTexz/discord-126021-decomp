@@ -5,8 +5,6 @@ import android.content.Context;
 import android.hardware.camera2.CameraManager;
 import androidx.annotation.Nullable;
 import com.discord.utilities.analytics.ChatInputComponentTypes;
-import org.webrtc.CameraSession;
-import org.webrtc.CameraVideoCapturer;
 
 /* JADX INFO: loaded from: classes3.dex */
 @TargetApi(21)

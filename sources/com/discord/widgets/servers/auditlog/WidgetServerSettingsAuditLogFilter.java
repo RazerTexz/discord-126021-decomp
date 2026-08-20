@@ -31,8 +31,6 @@ import com.discord.utilities.search.SearchUtils;
 import com.discord.utilities.view.extensions.ViewExtensions;
 import com.discord.utilities.viewbinding.FragmentViewBindingDelegate;
 import com.discord.utilities.viewbinding.FragmentViewBindingDelegateKt;
-import com.discord.widgets.servers.auditlog.WidgetServerSettingsAuditLogFilter;
-import com.discord.widgets.servers.auditlog.WidgetServerSettingsAuditLogFilterAdapter;
 import com.google.android.material.textfield.TextInputLayout;
 import java.util.Collection;
 import java.util.Comparator;

@@ -40,16 +40,16 @@ import org.eclipse.jdt.internal.compiler.lookup.Scope;
 import org.eclipse.jdt.internal.compiler.lookup.TypeBinding;
 import org.eclipse.jdt.internal.compiler.problem.ProblemReporter;
 
-/* JADX INFO: loaded from: app.apk:lombok/eclipse/agent/PatchExtensionMethod.SCL.lombok */
+/* JADX INFO: loaded from: discord-126021.apk:lombok/eclipse/agent/PatchExtensionMethod.SCL.lombok */
 public class PatchExtensionMethod {
     private static final FieldAugment<MessageSend, PostponedError> MessageSend_postponedErrors = FieldAugment.augment(MessageSend.class, PostponedError.class, "lombok$postponedErrors");
 
-    /* JADX INFO: loaded from: app.apk:lombok/eclipse/agent/PatchExtensionMethod$PostponedError.SCL.lombok */
+    /* JADX INFO: loaded from: discord-126021.apk:lombok/eclipse/agent/PatchExtensionMethod$PostponedError.SCL.lombok */
     private interface PostponedError {
         void fire();
     }
 
-    /* JADX INFO: loaded from: app.apk:lombok/eclipse/agent/PatchExtensionMethod$Extension.SCL.lombok */
+    /* JADX INFO: loaded from: discord-126021.apk:lombok/eclipse/agent/PatchExtensionMethod$Extension.SCL.lombok */
     static class Extension {
         List<MethodBinding> extensionMethods;
         boolean suppressBaseMethods;
@@ -58,7 +58,7 @@ public class PatchExtensionMethod {
         }
     }
 
-    /* JADX INFO: loaded from: app.apk:lombok/eclipse/agent/PatchExtensionMethod$PostponedNoMethodError.SCL.lombok */
+    /* JADX INFO: loaded from: discord-126021.apk:lombok/eclipse/agent/PatchExtensionMethod$PostponedNoMethodError.SCL.lombok */
     private static class PostponedNoMethodError implements PostponedError {
         private final ProblemReporter problemReporter;
         private final WeakReference<MessageSend> messageSendRef;
@@ -81,7 +81,7 @@ public class PatchExtensionMethod {
         }
     }
 
-    /* JADX INFO: loaded from: app.apk:lombok/eclipse/agent/PatchExtensionMethod$PostponedInvalidMethodError.SCL.lombok */
+    /* JADX INFO: loaded from: discord-126021.apk:lombok/eclipse/agent/PatchExtensionMethod$PostponedInvalidMethodError.SCL.lombok */
     private static class PostponedInvalidMethodError implements PostponedError {
         private final ProblemReporter problemReporter;
         private final WeakReference<MessageSend> messageSendRef;
@@ -137,7 +137,7 @@ public class PatchExtensionMethod {
         }
     }
 
-    /* JADX INFO: loaded from: app.apk:lombok/eclipse/agent/PatchExtensionMethod$PostponedNonStaticAccessToStaticMethodError.SCL.lombok */
+    /* JADX INFO: loaded from: discord-126021.apk:lombok/eclipse/agent/PatchExtensionMethod$PostponedNonStaticAccessToStaticMethodError.SCL.lombok */
     private static class PostponedNonStaticAccessToStaticMethodError implements PostponedError {
         private final ProblemReporter problemReporter;
         private ASTNode location;
@@ -402,7 +402,7 @@ public class PatchExtensionMethod {
         return new QualifiedNameReference(sources, poss, source.sourceStart, source.sourceEnd);
     }
 
-    /* JADX INFO: loaded from: app.apk:lombok/eclipse/agent/PatchExtensionMethod$Reflection.SCL.lombok */
+    /* JADX INFO: loaded from: discord-126021.apk:lombok/eclipse/agent/PatchExtensionMethod$Reflection.SCL.lombok */
     private static final class Reflection {
         public static final Field argumentTypes = Permit.permissiveGetField(MessageSend.class, "argumentTypes");
         public static final Field argumentsHaveErrors = Permit.permissiveGetField(MessageSend.class, "argumentsHaveErrors");

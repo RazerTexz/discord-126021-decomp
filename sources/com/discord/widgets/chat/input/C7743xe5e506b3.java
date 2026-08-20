@@ -2,7 +2,6 @@ package com.discord.widgets.chat.input;
 
 import android.content.Context;
 import androidx.core.view.inputmethod.InputContentInfoCompat;
-import com.discord.widgets.chat.input.WidgetChatInputAttachments;
 import kotlin.Unit;
 import kotlin.jvm.functions.Function1;
 import p507d0.p592z.p594d.AbstractC12240o;

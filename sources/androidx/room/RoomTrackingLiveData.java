@@ -5,7 +5,6 @@ import androidx.annotation.MainThread;
 import androidx.annotation.NonNull;
 import androidx.annotation.WorkerThread;
 import androidx.arch.core.executor.ArchTaskExecutor;
-import androidx.room.InvalidationTracker;
 import androidx.view.LiveData;
 import java.util.Set;
 import java.util.concurrent.Callable;

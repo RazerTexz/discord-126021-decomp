@@ -1,6 +1,5 @@
 package com.discord.stores;
 
-import com.discord.stores.StoreRtcConnection;
 import com.discord.stores.updates.ObservationDeck;
 import java.util.HashSet;
 import java.util.List;

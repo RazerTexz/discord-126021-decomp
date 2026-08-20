@@ -12,7 +12,6 @@ import com.discord.stores.StoreUser;
 import com.discord.stores.StoreUserRelationships;
 import com.discord.utilities.error.Error;
 import com.discord.utilities.p501rx.ObservableExtensionsKt;
-import com.discord.widgets.tabs.TabsHostViewModel;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;

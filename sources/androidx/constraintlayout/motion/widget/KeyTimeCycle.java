@@ -5,7 +5,6 @@ import android.content.res.TypedArray;
 import android.util.AttributeSet;
 import android.util.Log;
 import android.util.SparseIntArray;
-import androidx.constraintlayout.motion.widget.TimeCycleSplineSet;
 import androidx.constraintlayout.widget.C0201R;
 import androidx.constraintlayout.widget.ConstraintAttribute;
 import java.util.HashMap;

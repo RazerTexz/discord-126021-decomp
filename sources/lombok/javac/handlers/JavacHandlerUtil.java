@@ -51,14 +51,14 @@ import lombok.javac.JavacNode;
 import lombok.javac.JavacTreeMaker;
 import lombok.permit.Permit;
 
-/* JADX INFO: loaded from: app.apk:lombok/javac/handlers/JavacHandlerUtil.SCL.lombok */
+/* JADX INFO: loaded from: discord-126021.apk:lombok/javac/handlers/JavacHandlerUtil.SCL.lombok */
 public class JavacHandlerUtil {
     private static /* synthetic */ int[] $SWITCH_TABLE$lombok$core$AST$Kind;
     private static /* synthetic */ int[] $SWITCH_TABLE$lombok$AccessLevel;
     static final /* synthetic */ boolean $assertionsDisabled;
     private static /* synthetic */ int[] $SWITCH_TABLE$com$sun$source$tree$Tree$Kind;
 
-    /* JADX INFO: loaded from: app.apk:lombok/javac/handlers/JavacHandlerUtil$MemberExistsResult.SCL.lombok */
+    /* JADX INFO: loaded from: discord-126021.apk:lombok/javac/handlers/JavacHandlerUtil$MemberExistsResult.SCL.lombok */
     public enum MemberExistsResult {
         NOT_EXISTS,
         EXISTS_BY_LOMBOK,
@@ -543,7 +543,7 @@ public class JavacHandlerUtil {
     private JavacHandlerUtil() {
     }
 
-    /* JADX INFO: loaded from: app.apk:lombok/javac/handlers/JavacHandlerUtil$MarkingScanner.SCL.lombok */
+    /* JADX INFO: loaded from: discord-126021.apk:lombok/javac/handlers/JavacHandlerUtil$MarkingScanner.SCL.lombok */
     private static class MarkingScanner extends TreeScanner {
         private final JCTree source;
         private final Context context;
@@ -1193,7 +1193,7 @@ public class JavacHandlerUtil {
         }
     }
 
-    /* JADX INFO: loaded from: app.apk:lombok/javac/handlers/JavacHandlerUtil$GetterMethod.SCL.lombok */
+    /* JADX INFO: loaded from: discord-126021.apk:lombok/javac/handlers/JavacHandlerUtil$GetterMethod.SCL.lombok */
     private static class GetterMethod {
         private final Name name;
         private final JCTree.JCExpression type;
@@ -1385,7 +1385,7 @@ public class JavacHandlerUtil {
         return (field.mods.flags & Permission.EMBED_LINKS) != 0;
     }
 
-    /* JADX INFO: loaded from: app.apk:lombok/javac/handlers/JavacHandlerUtil$JCAnnotatedTypeReflect.SCL.lombok */
+    /* JADX INFO: loaded from: discord-126021.apk:lombok/javac/handlers/JavacHandlerUtil$JCAnnotatedTypeReflect.SCL.lombok */
     static class JCAnnotatedTypeReflect {
         private static Class<?> TYPE;
         private static Constructor<?> CONSTRUCTOR;
@@ -1463,7 +1463,7 @@ public class JavacHandlerUtil {
         }
     }
 
-    /* JADX INFO: loaded from: app.apk:lombok/javac/handlers/JavacHandlerUtil$JCAnnotationReflect.SCL.lombok */
+    /* JADX INFO: loaded from: discord-126021.apk:lombok/javac/handlers/JavacHandlerUtil$JCAnnotationReflect.SCL.lombok */
     static class JCAnnotationReflect {
         private static Field ATTRIBUTE;
 
@@ -1486,7 +1486,7 @@ public class JavacHandlerUtil {
         }
     }
 
-    /* JADX INFO: loaded from: app.apk:lombok/javac/handlers/JavacHandlerUtil$ClassSymbolMembersField.SCL.lombok */
+    /* JADX INFO: loaded from: discord-126021.apk:lombok/javac/handlers/JavacHandlerUtil$ClassSymbolMembersField.SCL.lombok */
     static class ClassSymbolMembersField {
         private static final Field membersField;
         private static final Method removeMethod;
@@ -2317,7 +2317,7 @@ public class JavacHandlerUtil {
         return (JCTree.JCExpression) in;
     }
 
-    /* JADX INFO: loaded from: app.apk:lombok/javac/handlers/JavacHandlerUtil$CopyJavadoc.SCL.lombok */
+    /* JADX INFO: loaded from: discord-126021.apk:lombok/javac/handlers/JavacHandlerUtil$CopyJavadoc.SCL.lombok */
     public enum CopyJavadoc {
         VERBATIM { // from class: lombok.javac.handlers.JavacHandlerUtil.CopyJavadoc.1
             @Override // lombok.javac.handlers.JavacHandlerUtil.CopyJavadoc

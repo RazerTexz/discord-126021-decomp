@@ -2,7 +2,6 @@ package com.discord.widgets.voice.call;
 
 import com.discord.app.AppActivity;
 import com.discord.app.AppLog;
-import com.discord.widgets.voice.call.WidgetVoiceCallIncoming;
 import kotlin.Unit;
 import kotlin.jvm.functions.Function1;
 import p007b.p100d.p104b.p105a.C1643a;

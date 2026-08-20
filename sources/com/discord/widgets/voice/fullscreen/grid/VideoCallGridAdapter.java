@@ -15,7 +15,6 @@ import com.discord.models.domain.ModelAuditLogEntry;
 import com.discord.views.PileView;
 import com.discord.views.calls.VideoCallParticipantView;
 import com.discord.widgets.voice.fullscreen.CallParticipant;
-import com.discord.widgets.voice.fullscreen.grid.VideoCallGridViewHolder;
 import com.facebook.drawee.view.SimpleDraweeView;
 import java.util.Collection;
 import java.util.Iterator;

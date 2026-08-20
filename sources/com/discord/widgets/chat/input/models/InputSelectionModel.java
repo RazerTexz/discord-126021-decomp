@@ -1,7 +1,6 @@
 package com.discord.widgets.chat.input.models;
 
 import com.discord.models.commands.ApplicationCommandOption;
-import com.discord.widgets.chat.input.models.MentionInputModel;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.ranges.IntRange;
 import p007b.p100d.p104b.p105a.C1643a;

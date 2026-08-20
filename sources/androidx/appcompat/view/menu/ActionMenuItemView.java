@@ -12,8 +12,6 @@ import android.view.MotionEvent;
 import android.view.View;
 import androidx.annotation.RestrictTo;
 import androidx.appcompat.C0051R;
-import androidx.appcompat.view.menu.MenuBuilder;
-import androidx.appcompat.view.menu.MenuView;
 import androidx.appcompat.widget.ActionMenuView;
 import androidx.appcompat.widget.AppCompatTextView;
 import androidx.appcompat.widget.ForwardingListener;

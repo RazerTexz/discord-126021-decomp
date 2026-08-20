@@ -27,13 +27,12 @@ import lombok.javac.JavacAST;
 import lombok.javac.JavacAnnotationHandler;
 import lombok.javac.JavacNode;
 import lombok.javac.JavacTreeMaker;
-import lombok.javac.handlers.JavacHandlerUtil;
 
-/* JADX INFO: loaded from: app.apk:lombok/javac/handlers/HandleConstructor.SCL.lombok */
+/* JADX INFO: loaded from: discord-126021.apk:lombok/javac/handlers/HandleConstructor.SCL.lombok */
 public class HandleConstructor {
     private static /* synthetic */ int[] $SWITCH_TABLE$javax$lang$model$type$TypeKind;
 
-    /* JADX INFO: loaded from: app.apk:lombok/javac/handlers/HandleConstructor$SkipIfConstructorExists.SCL.lombok */
+    /* JADX INFO: loaded from: discord-126021.apk:lombok/javac/handlers/HandleConstructor$SkipIfConstructorExists.SCL.lombok */
     public enum SkipIfConstructorExists {
         YES,
         NO,
@@ -135,7 +134,7 @@ public class HandleConstructor {
         return iArr2;
     }
 
-    /* JADX INFO: loaded from: app.apk:lombok/javac/handlers/HandleConstructor$HandleNoArgsConstructor.SCL.lombok */
+    /* JADX INFO: loaded from: discord-126021.apk:lombok/javac/handlers/HandleConstructor$HandleNoArgsConstructor.SCL.lombok */
     public static class HandleNoArgsConstructor extends JavacAnnotationHandler<NoArgsConstructor> {
         private static final String NAME = NoArgsConstructor.class.getSimpleName();
         private HandleConstructor handleConstructor = new HandleConstructor();
@@ -160,7 +159,7 @@ public class HandleConstructor {
         }
     }
 
-    /* JADX INFO: loaded from: app.apk:lombok/javac/handlers/HandleConstructor$HandleRequiredArgsConstructor.SCL.lombok */
+    /* JADX INFO: loaded from: discord-126021.apk:lombok/javac/handlers/HandleConstructor$HandleRequiredArgsConstructor.SCL.lombok */
     public static class HandleRequiredArgsConstructor extends JavacAnnotationHandler<RequiredArgsConstructor> {
         private static final String NAME = RequiredArgsConstructor.class.getSimpleName();
         private HandleConstructor handleConstructor = new HandleConstructor();
@@ -217,7 +216,7 @@ public class HandleConstructor {
         return fields.toList();
     }
 
-    /* JADX INFO: loaded from: app.apk:lombok/javac/handlers/HandleConstructor$HandleAllArgsConstructor.SCL.lombok */
+    /* JADX INFO: loaded from: discord-126021.apk:lombok/javac/handlers/HandleConstructor$HandleAllArgsConstructor.SCL.lombok */
     public static class HandleAllArgsConstructor extends JavacAnnotationHandler<AllArgsConstructor> {
         private static final String NAME = AllArgsConstructor.class.getSimpleName();
         private HandleConstructor handleConstructor = new HandleConstructor();

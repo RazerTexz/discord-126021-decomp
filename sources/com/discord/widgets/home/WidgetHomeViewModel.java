@@ -30,7 +30,6 @@ import com.discord.utilities.time.ClockFactory;
 import com.discord.utilities.user.UserUtils;
 import com.discord.widgets.channels.ChannelOnboardingManager;
 import com.discord.widgets.guildscheduledevent.WidgetGuildScheduledEventUpsellBottomSheet;
-import com.discord.widgets.home.WidgetHomeViewModel;
 import com.discord.widgets.playstation.PlaystationUpsellManager;
 import com.discord.widgets.servers.guild_role_subscription.upsell.GuildRoleSubscriptionOnboardingUpsellManager;
 import kotlin.Unit;

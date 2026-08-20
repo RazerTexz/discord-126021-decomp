@@ -33,7 +33,6 @@ import com.discord.utilities.rest.RestAPI;
 import com.discord.utilities.viewbinding.FragmentViewBindingDelegate;
 import com.discord.utilities.viewbinding.FragmentViewBindingDelegateKt;
 import com.discord.widgets.notice.WidgetNoticeDialog;
-import com.discord.widgets.settings.account.WidgetSettingsAccountBackupCodes;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
@@ -341,7 +340,7 @@ public final class WidgetSettingsAccountBackupCodes extends AppFragment {
             }
             ArrayList arrayList3 = new ArrayList();
             if (!arrayList.isEmpty()) {
-                arrayList3.add(new BackupCodeItemHeader(C1107b.m210b(WidgetSettingsAccountBackupCodes.this.requireContext(), C5419R.string.user_settings_available_codes, new Object[0], (4 & 4) != 0 ? C1107b.b.f1491j : null)));
+                arrayList3.add(new BackupCodeItemHeader(C1107b.m216h(WidgetSettingsAccountBackupCodes.this.requireContext(), C5419R.string.user_settings_available_codes, new Object[0], null, 4)));
                 ArrayList arrayList4 = new ArrayList(C12149o.collectionSizeOrDefault(arrayList, 10));
                 Iterator it = arrayList.iterator();
                 while (it.hasNext()) {
@@ -350,7 +349,7 @@ public final class WidgetSettingsAccountBackupCodes extends AppFragment {
                 arrayList3.addAll(arrayList4);
             }
             if (!arrayList2.isEmpty()) {
-                arrayList3.add(new BackupCodeItemHeader(C1107b.m210b(WidgetSettingsAccountBackupCodes.this.requireContext(), C5419R.string.user_settings_used_backup_codes, new Object[0], (4 & 4) != 0 ? C1107b.b.f1491j : null)));
+                arrayList3.add(new BackupCodeItemHeader(C1107b.m216h(WidgetSettingsAccountBackupCodes.this.requireContext(), C5419R.string.user_settings_used_backup_codes, new Object[0], null, 4)));
                 ArrayList arrayList5 = new ArrayList(C12149o.collectionSizeOrDefault(arrayList2, 10));
                 Iterator it2 = arrayList2.iterator();
                 while (it2.hasNext()) {
@@ -428,16 +427,16 @@ public final class WidgetSettingsAccountBackupCodes extends AppFragment {
         AppActivity appActivity = getAppActivity();
         if (appActivity != null) {
             WidgetNoticeDialog.Companion companion = WidgetNoticeDialog.INSTANCE;
-            CharSequence charSequenceM210b = C1107b.m210b(requireContext(), C5419R.string.user_settings_enter_password_view_codes, new Object[0], (4 & 4) != 0 ? C1107b.b.f1491j : null);
-            CharSequence charSequenceM210b2 = C1107b.m210b(requireContext(), C5419R.string.form_label_password, new Object[0], (4 & 4) != 0 ? C1107b.b.f1491j : null);
-            companion.showInputModal(appActivity, C1107b.m210b(requireContext(), C5419R.string.two_fa_backup_codes_label, new Object[0], (4 & 4) != 0 ? C1107b.b.f1491j : null), charSequenceM210b, charSequenceM210b2, new C9738x1d9e6125(this), (640 & 32) != 0 ? null : new C9739x1d9e6126(this), (640 & 64) != 0 ? null : Boolean.FALSE, (640 & 128) != 0 ? StoreNotices.InputDialog.Type.PASSWORD : null, (640 & 256) != 0 ? null : C1107b.m210b(requireContext(), C5419R.string.two_fa_backup_codes_next_action, new Object[0], (4 & 4) != 0 ? C1107b.b.f1491j : null), (640 & 512) != 0 ? false : false);
+            CharSequence charSequenceM216h = C1107b.m216h(requireContext(), C5419R.string.user_settings_enter_password_view_codes, new Object[0], null, 4);
+            CharSequence charSequenceM216h2 = C1107b.m216h(requireContext(), C5419R.string.form_label_password, new Object[0], null, 4);
+            companion.showInputModal(appActivity, C1107b.m216h(requireContext(), C5419R.string.two_fa_backup_codes_label, new Object[0], null, 4), charSequenceM216h, charSequenceM216h2, new C9738x1d9e6125(this), (640 & 32) != 0 ? null : new C9739x1d9e6126(this), (640 & 64) != 0 ? null : Boolean.FALSE, (640 & 128) != 0 ? StoreNotices.InputDialog.Type.PASSWORD : null, (640 & 256) != 0 ? null : C1107b.m216h(requireContext(), C5419R.string.two_fa_backup_codes_next_action, new Object[0], null, 4), (640 & 512) != 0 ? false : false);
         }
     }
 
     private final void showVerificationKeyModal() {
         AppActivity appActivity = getAppActivity();
         if (appActivity != null) {
-            WidgetNoticeDialog.INSTANCE.showInputModal(appActivity, C1107b.m210b(requireContext(), C5419R.string.two_fa_confirm_view_backup_codes_label, new Object[0], (4 & 4) != 0 ? C1107b.b.f1491j : null), C1107b.m210b(requireContext(), C5419R.string.two_fa_confirm_view_backup_codes_body, new Object[0], (4 & 4) != 0 ? C1107b.b.f1491j : null), C1107b.m210b(requireContext(), C5419R.string.two_fa_confirm_view_backup_codes_input_label, new Object[0], (4 & 4) != 0 ? C1107b.b.f1491j : null), new C9740x16392ec2(this), (640 & 32) != 0 ? null : new C9741x16392ec3(this), (640 & 64) != 0 ? null : Boolean.FALSE, (640 & 128) != 0 ? StoreNotices.InputDialog.Type.PASSWORD : StoreNotices.InputDialog.Type.TEXT_NO_SUGGESTIONS, (640 & 256) != 0 ? null : null, (640 & 512) != 0 ? false : true);
+            WidgetNoticeDialog.INSTANCE.showInputModal(appActivity, C1107b.m216h(requireContext(), C5419R.string.two_fa_confirm_view_backup_codes_label, new Object[0], null, 4), C1107b.m216h(requireContext(), C5419R.string.two_fa_confirm_view_backup_codes_body, new Object[0], null, 4), C1107b.m216h(requireContext(), C5419R.string.two_fa_confirm_view_backup_codes_input_label, new Object[0], null, 4), new C9740x16392ec2(this), (640 & 32) != 0 ? null : new C9741x16392ec3(this), (640 & 64) != 0 ? null : Boolean.FALSE, (640 & 128) != 0 ? StoreNotices.InputDialog.Type.PASSWORD : StoreNotices.InputDialog.Type.TEXT_NO_SUGGESTIONS, (640 & 256) != 0 ? null : null, (640 & 512) != 0 ? false : true);
         }
     }
 

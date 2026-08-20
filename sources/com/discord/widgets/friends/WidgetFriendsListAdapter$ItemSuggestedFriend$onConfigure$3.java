@@ -1,7 +1,5 @@
 package com.discord.widgets.friends;
 
-import com.discord.widgets.friends.FriendsListViewModel;
-import com.discord.widgets.friends.WidgetFriendsListAdapter;
 import kotlin.Unit;
 import kotlin.jvm.functions.Function0;
 import p507d0.p592z.p594d.AbstractC12240o;

@@ -7,8 +7,6 @@ import java.io.IOException;
 import java.nio.ByteBuffer;
 import java.nio.charset.Charset;
 import java.util.concurrent.CountDownLatch;
-import org.webrtc.EglBase;
-import org.webrtc.VideoFrame;
 import p617h0.p628c.C12477n0;
 
 /* JADX INFO: loaded from: classes3.dex */

@@ -1,6 +1,5 @@
 package com.discord.utilities.websocket;
 
-import com.discord.utilities.websocket.WebSocket;
 import kotlin.Unit;
 import kotlin.jvm.functions.Function0;
 import okhttp3.Response;

@@ -28,7 +28,6 @@ import com.discord.utilities.textprocessing.MessagePreprocessor;
 import com.discord.utilities.textprocessing.MessageRenderContext;
 import com.discord.utilities.textprocessing.node.SpoilerNode;
 import com.discord.utilities.user.UserUtils;
-import com.discord.widgets.settings.profile.SettingsUserProfileViewModel;
 import com.discord.widgets.user.profile.UserProfileHeaderViewModel;
 import java.util.LinkedHashSet;
 import java.util.List;

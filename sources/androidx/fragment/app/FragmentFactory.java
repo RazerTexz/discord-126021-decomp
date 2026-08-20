@@ -2,7 +2,6 @@ package androidx.fragment.app;
 
 import androidx.annotation.NonNull;
 import androidx.collection.SimpleArrayMap;
-import androidx.fragment.app.Fragment;
 import java.lang.reflect.InvocationTargetException;
 import p007b.p100d.p104b.p105a.C1643a;
 

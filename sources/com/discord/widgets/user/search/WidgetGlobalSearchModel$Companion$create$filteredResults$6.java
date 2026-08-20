@@ -3,7 +3,6 @@ package com.discord.widgets.user.search;
 import com.discord.api.channel.Channel;
 import com.discord.api.permission.Permission;
 import com.discord.utilities.permissions.PermissionUtils;
-import com.discord.widgets.user.search.WidgetGlobalSearchModel;
 import kotlin.jvm.functions.Function1;
 import p007b.p100d.p104b.p105a.C1643a;
 import p507d0.p592z.p594d.AbstractC12240o;

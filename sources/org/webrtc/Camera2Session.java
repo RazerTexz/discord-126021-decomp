@@ -16,8 +16,6 @@ import androidx.annotation.Nullable;
 import java.util.Arrays;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
-import org.webrtc.CameraEnumerationAndroid;
-import org.webrtc.CameraSession;
 import org.webrtc.VideoFrame;
 import p007b.p100d.p104b.p105a.C1643a;
 import p617h0.p628c.C12473l0;

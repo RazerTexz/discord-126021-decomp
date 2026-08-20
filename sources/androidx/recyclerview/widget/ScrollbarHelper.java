@@ -1,7 +1,6 @@
 package androidx.recyclerview.widget;
 
 import android.view.View;
-import androidx.recyclerview.widget.RecyclerView;
 
 /* JADX INFO: loaded from: classes.dex */
 public class ScrollbarHelper {

@@ -16,8 +16,6 @@ import com.discord.databinding.GifSuggestedTermViewBinding;
 import com.discord.models.domain.ModelAuditLogEntry;
 import com.discord.utilities.dimen.DimenUtils;
 import com.discord.utilities.recycler.DiffCreator;
-import com.discord.widgets.chat.input.gifpicker.GifAdapterItem;
-import com.discord.widgets.chat.input.gifpicker.GifViewHolder;
 import com.facebook.drawee.view.SimpleDraweeView;
 import com.google.android.flexbox.FlexboxLayout;
 import java.util.List;

@@ -15,7 +15,6 @@ import com.discord.databinding.ViewConnectionGuildIntegrationBinding;
 import com.discord.utilities.connectedaccounts.ConnectedAccountIntegrationUtilsKt;
 import com.discord.utilities.icon.IconUtils;
 import com.discord.utilities.images.MGImages;
-import com.discord.widgets.settings.connections.WidgetSettingsUserConnectionsViewModel;
 import com.facebook.drawee.view.SimpleDraweeView;
 import com.google.android.material.button.MaterialButton;
 import kotlin.jvm.functions.Function1;

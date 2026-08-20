@@ -18,7 +18,6 @@ import androidx.core.view.WindowInsetsCompat;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 import com.discord.C5419R;
-import com.discord.app.AppLogger;
 import com.discord.utilities.accessibility.AccessibilityUtils;
 import com.discord.utilities.display.DisplayUtils;
 import com.discord.utilities.error.Error;

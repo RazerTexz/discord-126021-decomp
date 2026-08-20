@@ -1,6 +1,6 @@
 package org.objectweb.asm;
 
-/* JADX INFO: loaded from: app.apk:org/objectweb/asm/SymbolTable.SCL.lombok */
+/* JADX INFO: loaded from: discord-126021.apk:org/objectweb/asm/SymbolTable.SCL.lombok */
 final class SymbolTable {
     final ClassWriter classWriter;
     private final ClassReader sourceClassReader;
@@ -674,7 +674,7 @@ final class SymbolTable {
         return Integer.MAX_VALUE & (tag + (value1.hashCode() * value2.hashCode() * value3.hashCode() * value4));
     }
 
-    /* JADX INFO: loaded from: app.apk:org/objectweb/asm/SymbolTable$Entry.SCL.lombok */
+    /* JADX INFO: loaded from: discord-126021.apk:org/objectweb/asm/SymbolTable$Entry.SCL.lombok */
     private static class Entry extends Symbol {
         final int hashCode;
         Entry next;

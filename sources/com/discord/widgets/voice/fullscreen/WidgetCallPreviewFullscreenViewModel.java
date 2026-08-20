@@ -25,7 +25,6 @@ import com.discord.utilities.error.Error;
 import com.discord.utilities.p501rx.ObservableExtensionsKt;
 import com.discord.utilities.voice.VoiceChannelJoinability;
 import com.discord.widgets.chat.list.TextInVoiceFeatureFlag;
-import com.discord.widgets.voice.fullscreen.WidgetCallPreviewFullscreenViewModel;
 import com.discord.widgets.voice.model.CallModel;
 import com.discord.widgets.voice.sheet.CallParticipantsAdapter;
 import java.util.Iterator;

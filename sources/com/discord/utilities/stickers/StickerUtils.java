@@ -454,7 +454,7 @@ public final class StickerUtils {
         long j = unpublishedAtDate - (((long) hoursFromMillis) * 3600000);
         int minutesFromMillis = timeUtils.getMinutesFromMillis(j);
         int secondsFromMillis = timeUtils.getSecondsFromMillis(j - (((long) minutesFromMillis) * 60000));
-        return (hoursFromMillis < 0 || minutesFromMillis < 0 || secondsFromMillis < 0) ? C1107b.m210b(context, C5419R.string.sticker_picker_pack_expiring_soon, new Object[0], (4 & 4) != 0 ? C1107b.b.f1491j : null) : C1107b.m210b(context, C5419R.string.duration_hours_minutes_seconds, new Object[]{C1643a.m828P(new Object[]{Integer.valueOf(hoursFromMillis)}, 1, "%02d", "java.lang.String.format(format, *args)"), C1643a.m828P(new Object[]{Integer.valueOf(minutesFromMillis)}, 1, "%02d", "java.lang.String.format(format, *args)"), C1643a.m828P(new Object[]{Integer.valueOf(secondsFromMillis)}, 1, "%02d", "java.lang.String.format(format, *args)")}, (4 & 4) != 0 ? C1107b.b.f1491j : null);
+        return (hoursFromMillis < 0 || minutesFromMillis < 0 || secondsFromMillis < 0) ? C1107b.m216h(context, C5419R.string.sticker_picker_pack_expiring_soon, new Object[0], null, 4) : C1107b.m216h(context, C5419R.string.duration_hours_minutes_seconds, new Object[]{C1643a.m828P(new Object[]{Integer.valueOf(hoursFromMillis)}, 1, "%02d", "java.lang.String.format(format, *args)"), C1643a.m828P(new Object[]{Integer.valueOf(minutesFromMillis)}, 1, "%02d", "java.lang.String.format(format, *args)"), C1643a.m828P(new Object[]{Integer.valueOf(secondsFromMillis)}, 1, "%02d", "java.lang.String.format(format, *args)")}, null, 4);
     }
 
     public final CharSequence getStickerPackPremiumPriceLabel(Context context, ModelStickerPack stickerPack, PremiumTier currentPremiumTier, boolean isPackEnabled) {
@@ -462,7 +462,7 @@ public final class StickerUtils {
         C12238m.checkNotNullParameter(stickerPack, "stickerPack");
         C12238m.checkNotNullParameter(currentPremiumTier, "currentPremiumTier");
         if (isPackEnabled && !PremiumUtilsKt.grantsAccessToPremiumStickers(currentPremiumTier)) {
-            return C1107b.m210b(context, C5419R.string.sticker_pack_premium_cta, new Object[0], (4 & 4) != 0 ? C1107b.b.f1491j : null);
+            return C1107b.m216h(context, C5419R.string.sticker_pack_premium_cta, new Object[0], null, 4);
         }
         PremiumTier premiumTier = PremiumTier.PREMIUM_GUILD_SUBSCRIPTION_ONLY;
         if (currentPremiumTier != premiumTier) {
@@ -474,22 +474,22 @@ public final class StickerUtils {
             }
         }
         if (isStickerPackFreeForPremiumTier(stickerPack, currentPremiumTier)) {
-            return C1107b.m210b(context, C5419R.string.sticker_pack_price_free, new Object[0], (4 & 4) != 0 ? C1107b.b.f1491j : null);
+            return C1107b.m216h(context, C5419R.string.sticker_pack_price_free, new Object[0], null, 4);
         }
         PremiumTier premiumTier2 = PremiumTier.TIER_1;
         if (isStickerPackFreeForPremiumTier(stickerPack, premiumTier2) && !PremiumUtils.INSTANCE.isPremiumTierAtLeast(currentPremiumTier, premiumTier2)) {
-            return C1107b.m210b(context, C5419R.string.sticker_pack_price_free_with_premium_tier_1, new Object[0], (4 & 4) != 0 ? C1107b.b.f1491j : null);
+            return C1107b.m216h(context, C5419R.string.sticker_pack_price_free_with_premium_tier_1, new Object[0], null, 4);
         }
         PremiumTier premiumTier3 = PremiumTier.TIER_2;
         if (isStickerPackFreeForPremiumTier(stickerPack, premiumTier3) && !PremiumUtils.INSTANCE.isPremiumTierAtLeast(currentPremiumTier, premiumTier3)) {
-            return C1107b.m210b(context, C5419R.string.sticker_pack_price_free_with_premium_tier_2, new Object[0], (4 & 4) != 0 ? C1107b.b.f1491j : null);
+            return C1107b.m216h(context, C5419R.string.sticker_pack_price_free_with_premium_tier_2, new Object[0], null, 4);
         }
         PremiumTier premiumTier4 = PremiumTier.TIER_0;
         if (isStickerPackFreeForPremiumTier(stickerPack, premiumTier4) && !PremiumUtils.INSTANCE.isPremiumTierAtLeast(currentPremiumTier, premiumTier4) && currentPremiumTier != premiumTier2) {
-            return C1107b.m210b(context, C5419R.string.sticker_pack_price_free_with_premium_tier_2, new Object[0], (4 & 4) != 0 ? C1107b.b.f1491j : null);
+            return C1107b.m216h(context, C5419R.string.sticker_pack_price_free_with_premium_tier_2, new Object[0], null, 4);
         }
         CharSequence formattedPriceUsd2 = com.discord.utilities.billing.PremiumUtilsKt.getFormattedPriceUsd(getStickerPackPrice(premiumTier3), context);
-        return PremiumUtilsKt.grantsAccessToPremiumStickers(currentPremiumTier) ? formattedPriceUsd2 : C1107b.m210b(context, C5419R.string.sticker_picker_price_with_premium_tier_2, new Object[]{formattedPriceUsd2}, (4 & 4) != 0 ? C1107b.b.f1491j : null);
+        return PremiumUtilsKt.grantsAccessToPremiumStickers(currentPremiumTier) ? formattedPriceUsd2 : C1107b.m216h(context, C5419R.string.sticker_picker_price_with_premium_tier_2, new Object[]{formattedPriceUsd2}, null, 4);
     }
 
     public final StickerSendability getStickerSendability(Sticker sticker, User meUser, Channel currentChannel, Long currentChannelPermissions) {

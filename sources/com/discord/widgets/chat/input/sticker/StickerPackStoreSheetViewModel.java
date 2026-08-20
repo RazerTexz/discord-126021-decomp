@@ -17,8 +17,6 @@ import com.discord.utilities.mg_recycler.MGRecyclerDataPayload;
 import com.discord.utilities.p501rx.ObservableExtensionsKt;
 import com.discord.utilities.premium.PremiumUtilsKt;
 import com.discord.utilities.stickers.StickerUtils;
-import com.discord.widgets.chat.input.sticker.StickerItem;
-import com.discord.widgets.chat.input.sticker.StickerPackStoreSheetViewModel;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Iterator;

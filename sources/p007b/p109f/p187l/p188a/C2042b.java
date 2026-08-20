@@ -1,7 +1,5 @@
 package p007b.p109f.p187l.p188a;
 
-import p007b.p109f.p187l.p188a.C2041a;
-
 /* JADX INFO: renamed from: b.f.l.a.b */
 /* JADX INFO: compiled from: TransformGestureDetector.java */
 /* JADX INFO: loaded from: classes3.dex */

@@ -4,7 +4,7 @@ import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import lombok.Lombok;
 
-/* JADX INFO: loaded from: app.apk:lombok/eclipse/agent/PatchValEclipsePortal.SCL.lombok */
+/* JADX INFO: loaded from: discord-126021.apk:lombok/eclipse/agent/PatchValEclipsePortal.SCL.lombok */
 public class PatchValEclipsePortal {
     static final String LOCALDECLARATION_SIG = "org.eclipse.jdt.internal.compiler.ast.LocalDeclaration";
     static final String PARSER_SIG = "org.eclipse.jdt.internal.compiler.parser.Parser";
@@ -76,7 +76,7 @@ public class PatchValEclipsePortal {
         }
     }
 
-    /* JADX INFO: loaded from: app.apk:lombok/eclipse/agent/PatchValEclipsePortal$Reflection.SCL.lombok */
+    /* JADX INFO: loaded from: discord-126021.apk:lombok/eclipse/agent/PatchValEclipsePortal$Reflection.SCL.lombok */
     private static final class Reflection {
         public static final Method copyInitializationOfForEachIterable;
         public static final Method copyInitializationOfLocalDeclaration;

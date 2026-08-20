@@ -16,7 +16,7 @@ import lombok.Lombok;
 import lombok.core.DiagnosticsReceiver;
 import lombok.core.PostCompiler;
 
-/* JADX INFO: loaded from: app.apk:lombok/javac/apt/InterceptingJavaFileObject.SCL.lombok */
+/* JADX INFO: loaded from: discord-126021.apk:lombok/javac/apt/InterceptingJavaFileObject.SCL.lombok */
 final class InterceptingJavaFileObject implements LombokFileObject {
     private final JavaFileObject delegate;
     private final String fileName;

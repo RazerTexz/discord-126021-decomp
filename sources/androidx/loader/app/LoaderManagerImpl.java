@@ -8,7 +8,6 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.collection.SparseArrayCompat;
 import androidx.core.util.DebugUtils;
-import androidx.loader.app.LoaderManager;
 import androidx.loader.content.Loader;
 import androidx.view.LifecycleOwner;
 import androidx.view.MutableLiveData;

@@ -11,7 +11,7 @@ import java.util.List;
 import java.util.regex.Pattern;
 import lombok.installer.OsUtils;
 
-/* JADX INFO: loaded from: app.apk:lombok/installer/eclipse/StandardProductDescriptor.SCL.lombok */
+/* JADX INFO: loaded from: discord-126021.apk:lombok/installer/eclipse/StandardProductDescriptor.SCL.lombok */
 public class StandardProductDescriptor implements EclipseProductDescriptor {
     private static final String USER_HOME = System.getProperty("user.home", ".");
     private static final String[] WINDOWS_ROOTS = windowsRoots();

@@ -22,8 +22,6 @@ import com.discord.utilities.rest.RestAPI;
 import com.discord.utilities.viewbinding.FragmentViewBindingDelegate;
 import com.discord.utilities.viewbinding.FragmentViewBindingDelegateKt;
 import com.discord.widgets.user.account.WidgetUserAccountVerifyBase;
-import com.discord.widgets.user.email.WidgetUserEmailUpdate;
-import com.discord.widgets.user.email.WidgetUserEmailVerify;
 import kotlin.Unit;
 import kotlin.jvm.functions.Function0;
 import kotlin.jvm.functions.Function1;

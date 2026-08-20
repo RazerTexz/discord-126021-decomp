@@ -6,7 +6,6 @@ import android.os.IInterface;
 import android.os.Parcelable;
 import androidx.annotation.RestrictTo;
 import androidx.collection.ArrayMap;
-import androidx.versionedparcelable.VersionedParcel;
 import java.io.ByteArrayOutputStream;
 import java.io.DataInputStream;
 import java.io.DataOutputStream;

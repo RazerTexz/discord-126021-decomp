@@ -16,7 +16,6 @@ import com.discord.utilities.mg_recycler.MGRecyclerDataPayload;
 import com.discord.utilities.mg_recycler.MGRecyclerViewHolder;
 import com.discord.utilities.textprocessing.node.EmojiNode;
 import com.discord.utilities.view.text.SimpleDraweeSpanTextView;
-import com.discord.widgets.chat.managereactions.ManageReactionsEmojisAdapter;
 import kotlin.Unit;
 import kotlin.jvm.functions.Function1;
 import p007b.p100d.p104b.p105a.C1643a;

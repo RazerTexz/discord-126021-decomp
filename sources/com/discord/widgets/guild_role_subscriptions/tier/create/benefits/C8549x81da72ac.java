@@ -1,6 +1,5 @@
 package com.discord.widgets.guild_role_subscriptions.tier.create.benefits;
 
-import com.discord.widgets.guild_role_subscriptions.tier.create.benefits.GuildRoleSubscriptionTierBenefitsViewModel;
 import kotlin.Unit;
 import kotlin.jvm.functions.Function1;
 import p507d0.p592z.p594d.AbstractC12240o;

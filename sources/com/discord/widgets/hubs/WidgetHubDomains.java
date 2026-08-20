@@ -158,7 +158,7 @@ public final class WidgetHubDomains extends AppFragment {
         MaterialButton materialButton = getBinding().f17172c;
         final Context context = materialButton.getContext();
         if (context != null) {
-            materialButton.setText(C1107b.m210b(context, C5419R.string.hub_email_connection_guild_select_subheader, new Object[0], (4 & 4) != 0 ? C1107b.b.f1491j : null));
+            materialButton.setText(C1107b.m216h(context, C5419R.string.hub_email_connection_guild_select_subheader, new Object[0], null, 4));
             materialButton.setOnClickListener(new View.OnClickListener() { // from class: com.discord.widgets.hubs.WidgetHubDomains$onViewBound$$inlined$apply$lambda$1
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view2) {

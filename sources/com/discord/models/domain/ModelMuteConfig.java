@@ -1,7 +1,6 @@
 package com.discord.models.domain;
 
 import com.discord.api.thread.MuteConfig;
-import com.discord.models.domain.Model;
 import com.discord.utilities.time.TimeUtils;
 import java.io.IOException;
 import kotlin.jvm.internal.DefaultConstructorMarker;

@@ -7,7 +7,6 @@ import android.util.Property;
 import androidx.annotation.ColorInt;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import com.google.android.material.circularreveal.CircularRevealHelper;
 import com.google.android.material.math.MathUtils;
 
 /* JADX INFO: loaded from: classes3.dex */

@@ -5,7 +5,6 @@ import androidx.room.Dao;
 import androidx.room.RawQuery;
 import androidx.sqlite.p006db.SupportSQLiteQuery;
 import androidx.view.LiveData;
-import androidx.work.impl.model.WorkSpec;
 import java.util.List;
 
 /* JADX INFO: loaded from: classes.dex */

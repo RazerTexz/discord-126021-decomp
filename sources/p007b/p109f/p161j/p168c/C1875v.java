@@ -13,8 +13,6 @@ import p007b.p085c.p086a.p087a0.C1460d;
 import p007b.p109f.p115d.p119d.InterfaceC1687j;
 import p007b.p109f.p115d.p123h.InterfaceC1709f;
 import p007b.p109f.p161j.p162a.p165c.C1847c;
-import p007b.p109f.p161j.p168c.InterfaceC1866m;
-import p007b.p109f.p161j.p168c.InterfaceC1876w;
 
 /* JADX INFO: renamed from: b.f.j.c.v */
 /* JADX INFO: compiled from: LruCountingMemoryCache.java */

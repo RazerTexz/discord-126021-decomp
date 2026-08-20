@@ -3,7 +3,6 @@ package p007b.p225i.p226a.p341g.p346e;
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
-import p007b.p225i.p226a.p341g.p346e.C4408f;
 
 /* JADX INFO: renamed from: b.i.a.g.e.e */
 /* JADX INFO: compiled from: FloatingActionButtonImpl.java */

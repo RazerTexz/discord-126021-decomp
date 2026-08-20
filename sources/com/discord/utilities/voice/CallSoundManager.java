@@ -18,7 +18,6 @@ import com.discord.utilities.error.Error;
 import com.discord.utilities.media.AppSound;
 import com.discord.utilities.media.AppSoundManager;
 import com.discord.utilities.p501rx.ObservableExtensionsKt;
-import com.discord.utilities.voice.CallSoundManager;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Iterator;

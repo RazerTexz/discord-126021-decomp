@@ -1,6 +1,5 @@
 package androidx.recyclerview.widget;
 
-import androidx.recyclerview.widget.AdapterHelper;
 import java.util.List;
 
 /* JADX INFO: loaded from: classes.dex */

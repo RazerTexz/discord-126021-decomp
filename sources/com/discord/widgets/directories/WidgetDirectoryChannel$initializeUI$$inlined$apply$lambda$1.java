@@ -7,7 +7,6 @@ import android.widget.TextView;
 import com.discord.C5419R;
 import com.discord.models.domain.ModelAuditLogEntry;
 import com.discord.models.hubs.DirectoryEntryCategory;
-import com.discord.widgets.directories.WidgetDirectoriesViewModel;
 import com.google.android.material.tabs.TabLayout;
 import java.util.Objects;
 import kotlin.Pair;

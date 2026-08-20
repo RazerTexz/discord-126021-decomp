@@ -7,7 +7,7 @@ import com.sun.tools.javac.tree.JCTree;
 import lombok.javac.CommentCatcher;
 import lombok.javac.java8.CommentCollectingScanner;
 
-/* JADX INFO: loaded from: app.apk:lombok/javac/java9/CommentCollectingParser.SCL.lombok */
+/* JADX INFO: loaded from: discord-126021.apk:lombok/javac/java9/CommentCollectingParser.SCL.lombok */
 class CommentCollectingParser extends JavacParser {
     private final Lexer lexer;
 

@@ -6,7 +6,6 @@ import com.discord.simpleast.core.parser.Parser;
 import com.discord.simpleast.core.parser.Rule;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
-import p007b.p008a.p050t.p051a.C1292r;
 import p507d0.p592z.p594d.C12238m;
 
 /* JADX INFO: Add missing generic type declarations: [RC, S] */

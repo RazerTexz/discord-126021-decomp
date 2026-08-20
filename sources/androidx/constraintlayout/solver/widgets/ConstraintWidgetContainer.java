@@ -3,7 +3,6 @@ package androidx.constraintlayout.solver.widgets;
 import androidx.constraintlayout.solver.LinearSystem;
 import androidx.constraintlayout.solver.Metrics;
 import androidx.constraintlayout.solver.SolverVariable;
-import androidx.constraintlayout.solver.widgets.ConstraintWidget;
 import androidx.constraintlayout.solver.widgets.analyzer.BasicMeasure;
 import androidx.constraintlayout.solver.widgets.analyzer.DependencyGraph;
 import androidx.constraintlayout.solver.widgets.analyzer.Direct;

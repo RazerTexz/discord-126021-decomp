@@ -7,7 +7,7 @@ import java.lang.reflect.Method;
 import lombok.Lombok;
 import lombok.permit.Permit;
 
-/* JADX INFO: loaded from: app.apk:lombok/javac/Javac6BasedLombokOptions.SCL.lombok */
+/* JADX INFO: loaded from: discord-126021.apk:lombok/javac/Javac6BasedLombokOptions.SCL.lombok */
 public class Javac6BasedLombokOptions extends LombokOptions {
     private static final Method optionName_valueOf;
     private static final Method options_put;

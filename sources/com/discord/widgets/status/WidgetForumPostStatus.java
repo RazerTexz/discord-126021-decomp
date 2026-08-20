@@ -24,7 +24,6 @@ import com.discord.utilities.viewbinding.FragmentViewBindingDelegate;
 import com.discord.utilities.viewbinding.FragmentViewBindingDelegateKt;
 import com.discord.views.ReactionView;
 import com.discord.widgets.forums.ForumUtils;
-import com.discord.widgets.status.WidgetForumPostStatusViewModel;
 import kotlin.Lazy;
 import kotlin.Unit;
 import kotlin.jvm.functions.Function0;

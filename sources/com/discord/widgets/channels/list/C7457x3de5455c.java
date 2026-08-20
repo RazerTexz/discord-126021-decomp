@@ -3,7 +3,6 @@ package com.discord.widgets.channels.list;
 import android.content.Context;
 import android.view.View;
 import com.discord.api.channel.ChannelUtils;
-import com.discord.widgets.channels.list.WidgetChannelsListItemChannelActions;
 import com.discord.widgets.channels.settings.WidgetChannelGroupDMSettings;
 import com.discord.widgets.channels.settings.WidgetTextChannelSettings;
 import com.discord.widgets.voice.settings.WidgetVoiceChannelSettings;

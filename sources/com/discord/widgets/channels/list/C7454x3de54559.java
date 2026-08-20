@@ -4,7 +4,6 @@ import android.content.Context;
 import android.view.View;
 import android.widget.TextView;
 import androidx.fragment.app.FragmentManager;
-import com.discord.widgets.channels.list.WidgetChannelsListItemChannelActions;
 import com.discord.widgets.guilds.invite.WidgetGuildInviteShare;
 import kotlin.Unit;
 import kotlin.jvm.functions.Function1;

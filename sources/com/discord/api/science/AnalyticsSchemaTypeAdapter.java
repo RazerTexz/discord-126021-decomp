@@ -1,6 +1,5 @@
 package com.discord.api.science;
 
-import com.discord.api.science.Science;
 import com.google.gson.Gson;
 import com.google.gson.JsonElement;
 import com.google.gson.reflect.TypeToken;

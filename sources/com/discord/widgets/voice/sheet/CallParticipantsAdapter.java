@@ -39,7 +39,6 @@ import com.discord.views.PileView;
 import com.discord.views.StreamPreviewView;
 import com.discord.views.VoiceUserView;
 import com.discord.widgets.guildscheduledevent.GuildScheduledEventItemView;
-import com.discord.widgets.voice.sheet.CallParticipantsAdapter;
 import com.facebook.drawee.view.SimpleDraweeView;
 import com.google.android.material.button.MaterialButton;
 import java.util.ArrayList;

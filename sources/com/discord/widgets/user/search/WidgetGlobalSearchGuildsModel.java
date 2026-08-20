@@ -7,7 +7,6 @@ import com.discord.models.domain.ModelAuditLogEntry;
 import com.discord.models.domain.ModelNotificationSettings;
 import com.discord.models.guild.Guild;
 import com.discord.utilities.mg_recycler.MGRecyclerDataPayload;
-import com.discord.widgets.user.search.WidgetGlobalSearchGuildsModel;
 import java.util.Collection;
 import java.util.Comparator;
 import java.util.List;

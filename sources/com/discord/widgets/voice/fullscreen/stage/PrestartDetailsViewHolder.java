@@ -8,7 +8,6 @@ import com.discord.C5419R;
 import com.discord.databinding.WidgetStageChannelPrestartDetailsBinding;
 import com.discord.models.domain.ModelAuditLogEntry;
 import com.discord.utilities.dimen.DimenUtils;
-import com.discord.widgets.voice.fullscreen.stage.StageCallItem;
 import java.util.Objects;
 import p507d0.p592z.p594d.C12238m;
 

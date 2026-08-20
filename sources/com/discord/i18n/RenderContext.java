@@ -2,7 +2,6 @@ package com.discord.i18n;
 
 import android.view.View;
 import androidx.annotation.ColorInt;
-import com.discord.i18n.Hook;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;

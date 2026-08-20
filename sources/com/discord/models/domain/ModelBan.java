@@ -3,7 +3,6 @@ package com.discord.models.domain;
 import androidx.annotation.Nullable;
 import com.discord.api.user.User;
 import com.discord.models.deserialization.gson.InboundGatewayGsonParser;
-import com.discord.models.domain.Model;
 import java.io.IOException;
 import p007b.p100d.p104b.p105a.C1643a;
 

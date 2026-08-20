@@ -23,7 +23,7 @@ import lombok.core.TypeResolver;
 import lombok.core.configuration.ConfigurationKeysLoader;
 import lombok.javac.handlers.JavacHandlerUtil;
 
-/* JADX INFO: loaded from: app.apk:lombok/javac/HandlerLibrary.SCL.lombok */
+/* JADX INFO: loaded from: discord-126021.apk:lombok/javac/HandlerLibrary.SCL.lombok */
 public class HandlerLibrary {
     private final TypeLibrary typeLibrary = new TypeLibrary();
     private final Map<String, List<AnnotationHandlerContainer<?>>> annotationHandlers = new HashMap();
@@ -37,7 +37,7 @@ public class HandlerLibrary {
         this.messager = messager;
     }
 
-    /* JADX INFO: loaded from: app.apk:lombok/javac/HandlerLibrary$VisitorContainer.SCL.lombok */
+    /* JADX INFO: loaded from: discord-126021.apk:lombok/javac/HandlerLibrary$VisitorContainer.SCL.lombok */
     private static class VisitorContainer {
         private final JavacASTVisitor visitor;
         private final long priority;
@@ -59,7 +59,7 @@ public class HandlerLibrary {
         }
     }
 
-    /* JADX INFO: loaded from: app.apk:lombok/javac/HandlerLibrary$AnnotationHandlerContainer.SCL.lombok */
+    /* JADX INFO: loaded from: discord-126021.apk:lombok/javac/HandlerLibrary$AnnotationHandlerContainer.SCL.lombok */
     private static class AnnotationHandlerContainer<T extends Annotation> {
         private final JavacAnnotationHandler<T> handler;
         private final Class<T> annotationClass;

@@ -2,7 +2,6 @@ package p007b.p452o.p453a;
 
 import com.otaliastudios.cameraview.CameraView;
 import java.util.Iterator;
-import p007b.p452o.p453a.C5113l;
 
 /* JADX INFO: renamed from: b.o.a.i */
 /* JADX INFO: compiled from: CameraView.java */

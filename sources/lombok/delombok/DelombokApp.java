@@ -17,7 +17,7 @@ import java.util.jar.JarFile;
 import lombok.core.LombokApp;
 import lombok.permit.Permit;
 
-/* JADX INFO: loaded from: app.apk:lombok/delombok/DelombokApp.SCL.lombok */
+/* JADX INFO: loaded from: discord-126021.apk:lombok/delombok/DelombokApp.SCL.lombok */
 public class DelombokApp extends LombokApp {
     @Override // lombok.core.LombokApp
     public int runApp(List<String> args) throws Exception {

@@ -17,7 +17,6 @@ import com.discord.utilities.images.MGImages;
 import com.discord.utilities.resources.StringResourceUtilsKt;
 import com.discord.utilities.view.extensions.ViewExtensions;
 import com.discord.widgets.guild_role_subscriptions.GuildRoleSubscriptionBenefitItemView;
-import com.discord.widgets.guild_role_subscriptions.tier.GuildRoleSubscriptionTierAdapterItem;
 import com.discord.widgets.guild_role_subscriptions.tier.create.GuildRoleSubscriptionMemberPreview;
 import com.facebook.drawee.view.SimpleDraweeView;
 import kotlin.jvm.functions.Function1;

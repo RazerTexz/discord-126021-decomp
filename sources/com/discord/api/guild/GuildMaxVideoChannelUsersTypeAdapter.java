@@ -1,6 +1,5 @@
 package com.discord.api.guild;
 
-import com.discord.api.guild.GuildMaxVideoChannelUsers;
 import com.google.gson.TypeAdapter;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;

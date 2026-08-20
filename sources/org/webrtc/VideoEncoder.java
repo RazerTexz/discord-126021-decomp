@@ -1,7 +1,6 @@
 package org.webrtc;
 
 import androidx.annotation.Nullable;
-import org.webrtc.EncodedImage;
 import p007b.p100d.p104b.p105a.C1643a;
 
 /* JADX INFO: loaded from: classes3.dex */

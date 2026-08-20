@@ -2,7 +2,6 @@ package com.discord.stores;
 
 import androidx.appcompat.widget.ActivityChooserModel;
 import com.discord.app.AppActivity;
-import com.discord.stores.StoreNavigation;
 import com.discord.widgets.auth.WidgetAgeVerify;
 import kotlin.jvm.functions.Function2;
 import p507d0.p592z.p594d.AbstractC12240o;

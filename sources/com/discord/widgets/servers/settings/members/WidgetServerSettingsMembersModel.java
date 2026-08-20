@@ -12,7 +12,6 @@ import com.discord.utilities.mg_recycler.MGRecyclerDataPayload;
 import com.discord.utilities.p501rx.ObservableExtensionsKt;
 import com.discord.utilities.permissions.ManageUserContext;
 import com.discord.utilities.permissions.PermissionUtils;
-import com.discord.widgets.servers.settings.members.WidgetServerSettingsMembersModel;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;

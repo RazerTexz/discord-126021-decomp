@@ -17,7 +17,6 @@ import com.discord.utilities.resources.StringResourceUtilsKt;
 import com.discord.utilities.view.extensions.ViewExtensions;
 import com.discord.utilities.viewbinding.FragmentViewBindingDelegate;
 import com.discord.utilities.viewbinding.FragmentViewBindingDelegateKt;
-import com.discord.widgets.guilds.invite.WidgetGuildInviteShareViewModel;
 import com.google.android.material.bottomsheet.BottomSheetBehavior;
 import java.util.Objects;
 import kotlin.Lazy;

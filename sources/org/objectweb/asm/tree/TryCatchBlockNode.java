@@ -3,7 +3,7 @@ package org.objectweb.asm.tree;
 import java.util.List;
 import org.objectweb.asm.MethodVisitor;
 
-/* JADX INFO: loaded from: app.apk:org/objectweb/asm/tree/TryCatchBlockNode.SCL.lombok */
+/* JADX INFO: loaded from: discord-126021.apk:org/objectweb/asm/tree/TryCatchBlockNode.SCL.lombok */
 public class TryCatchBlockNode {
     public LabelNode start;
     public LabelNode end;

@@ -3,7 +3,7 @@ package lombok.bytecode;
 import org.objectweb.asm.ClassReader;
 import org.objectweb.asm.ClassWriter;
 
-/* JADX INFO: loaded from: app.apk:lombok/bytecode/FixedClassWriter.SCL.lombok */
+/* JADX INFO: loaded from: discord-126021.apk:lombok/bytecode/FixedClassWriter.SCL.lombok */
 class FixedClassWriter extends ClassWriter {
     FixedClassWriter(ClassReader classReader, int flags) {
         super(classReader, flags);

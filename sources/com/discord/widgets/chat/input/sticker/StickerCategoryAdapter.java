@@ -14,8 +14,6 @@ import com.discord.models.domain.ModelAuditLogEntry;
 import com.discord.utilities.recycler.DiffCreator;
 import com.discord.views.sticker.StickerView;
 import com.discord.widgets.chat.input.emoji.GuildIcon;
-import com.discord.widgets.chat.input.sticker.StickerCategoryItem;
-import com.discord.widgets.chat.input.sticker.StickerCategoryViewHolder;
 import java.util.Iterator;
 import java.util.List;
 import kotlin.NoWhenBranchMatchedException;

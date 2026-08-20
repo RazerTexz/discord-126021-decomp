@@ -13,13 +13,13 @@ public final class DurationUtilsKt {
     public static final CharSequence formatDuration(Context context, DurationUnit durationUnit, int i) {
         C12238m.checkNotNullParameter(context, "$this$formatDuration");
         C12238m.checkNotNullParameter(durationUnit, "unit");
-        return C1107b.m210b(context, durationUnit.getStringRes(), new Object[]{StringResourceUtilsKt.getI18nPluralString(context, durationUnit.getQuantityPluralRes(), i, Integer.valueOf(i))}, (4 & 4) != 0 ? C1107b.b.f1491j : null);
+        return C1107b.m216h(context, durationUnit.getStringRes(), new Object[]{StringResourceUtilsKt.getI18nPluralString(context, durationUnit.getQuantityPluralRes(), i, Integer.valueOf(i))}, null, 4);
     }
 
     public static final CharSequence formatInviteExpireAfterString(Context context, int i) {
         C12238m.checkNotNullParameter(context, "$this$formatInviteExpireAfterString");
         if (i == 0) {
-            return C1107b.m210b(context, C5419R.string.no_user_limit, new Object[0], (4 & 4) != 0 ? C1107b.b.f1491j : null);
+            return C1107b.m216h(context, C5419R.string.no_user_limit, new Object[0], null, 4);
         }
         if (i == 1800) {
             return formatDuration(context, DurationUnit.MINS, 30);

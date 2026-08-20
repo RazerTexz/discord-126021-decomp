@@ -65,7 +65,6 @@ import com.discord.models.domain.StreamDelete;
 import com.discord.models.domain.StreamServerUpdate;
 import com.discord.models.thread.dto.ModelThreadListSync;
 import com.discord.rtcconnection.RtcConnection;
-import com.discord.stores.StoreClientDataState;
 import com.discord.stores.utilities.BatchManager;
 import com.discord.stores.utilities.Batched;
 import com.discord.utilities.analytics.AnalyticSuperProperties;

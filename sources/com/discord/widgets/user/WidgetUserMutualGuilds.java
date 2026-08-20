@@ -43,7 +43,6 @@ import com.discord.utilities.resources.StringResourceUtilsKt;
 import com.discord.utilities.user.UserProfileUtilsKt;
 import com.discord.utilities.viewbinding.FragmentViewBindingDelegate;
 import com.discord.utilities.viewbinding.FragmentViewBindingDelegateKt;
-import com.discord.widgets.user.WidgetUserMutualGuilds;
 import com.discord.widgets.user.profile.WidgetUserProfileEmptyListItem;
 import com.facebook.drawee.view.SimpleDraweeView;
 import java.util.ArrayList;

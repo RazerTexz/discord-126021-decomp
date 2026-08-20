@@ -1,6 +1,5 @@
 package com.esotericsoftware.kryo.serializers;
 
-import com.esotericsoftware.kryo.serializers.FieldSerializer;
 import com.esotericsoftware.kryo.util.IntArray;
 import java.lang.reflect.Constructor;
 import java.lang.reflect.Field;

@@ -17,8 +17,6 @@ import androidx.core.util.Preconditions;
 import androidx.core.view.OneShotPreDrawListener;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.ViewGroupCompat;
-import androidx.fragment.app.FragmentAnim;
-import androidx.fragment.app.SpecialEffectsController;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.HashMap;

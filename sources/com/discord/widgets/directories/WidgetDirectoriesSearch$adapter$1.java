@@ -5,7 +5,6 @@ import androidx.fragment.app.FragmentActivity;
 import com.discord.api.directory.DirectoryEntryGuild;
 import com.discord.stores.StoreStream;
 import com.discord.utilities.directories.DirectoryUtils;
-import com.discord.widgets.directories.DirectoryChannelItemClickInterface;
 import p507d0.p592z.p594d.C12238m;
 
 /* JADX INFO: compiled from: WidgetDirectoriesSearch.kt */

@@ -1,7 +1,6 @@
 package com.discord.widgets.guildscheduledevent;
 
 import com.discord.api.guildscheduledevent.GuildScheduledEvent;
-import com.discord.widgets.guildscheduledevent.GuildScheduledEventRsvpUserListItem;
 import kotlin.jvm.functions.Function1;
 import p507d0.p592z.p594d.AbstractC12240o;
 import p507d0.p592z.p594d.C12238m;

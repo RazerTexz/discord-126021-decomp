@@ -2,7 +2,6 @@ package androidx.viewpager2.widget;
 
 import android.view.View;
 import androidx.annotation.NonNull;
-import androidx.viewpager2.widget.ViewPager2;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;

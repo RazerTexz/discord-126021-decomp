@@ -1,7 +1,6 @@
 package com.discord.widgets.chat.input.emoji;
 
 import com.discord.utilities.locale.LocaleManager;
-import com.discord.widgets.chat.input.emoji.EmojiPickerViewModel;
 import kotlin.jvm.functions.Function0;
 import p507d0.p592z.p594d.AbstractC12240o;
 

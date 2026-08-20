@@ -42,7 +42,6 @@ import com.discord.widgets.chat.list.entries.ReactionsEntry;
 import com.discord.widgets.chat.list.entries.ThreadStarterDividerEntry;
 import com.discord.widgets.chat.list.entries.TimestampEntry;
 import com.discord.widgets.chat.list.entries.UploadProgressEntry;
-import com.discord.widgets.chat.list.model.WidgetChatListModelMessages;
 import com.discord.widgets.forums.ForumUtils;
 import com.discord.widgets.guild_role_subscriptions.GuildRoleSubscriptionsFeatureFlag;
 import java.util.ArrayList;

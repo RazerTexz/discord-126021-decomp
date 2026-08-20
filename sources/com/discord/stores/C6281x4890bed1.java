@@ -5,7 +5,6 @@ import androidx.core.app.NotificationCompat;
 import com.discord.app.AppActivity;
 import com.discord.app.AppComponent;
 import com.discord.app.AppLog;
-import com.discord.stores.StoreNavigation;
 import com.discord.widgets.home.WidgetHome;
 import com.discord.widgets.tabs.NavigationTab;
 import com.discord.widgets.tabs.WidgetTabsHost;

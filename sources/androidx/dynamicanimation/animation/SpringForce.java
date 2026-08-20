@@ -2,7 +2,6 @@ package androidx.dynamicanimation.animation;
 
 import androidx.annotation.FloatRange;
 import androidx.annotation.RestrictTo;
-import androidx.dynamicanimation.animation.DynamicAnimation;
 
 /* JADX INFO: loaded from: classes.dex */
 public final class SpringForce implements Force {

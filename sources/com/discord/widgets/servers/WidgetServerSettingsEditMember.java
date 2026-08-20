@@ -34,9 +34,6 @@ import com.discord.utilities.viewbinding.FragmentViewBindingDelegate;
 import com.discord.utilities.viewbinding.FragmentViewBindingDelegateKt;
 import com.discord.widgets.guildcommunicationdisabled.start.WidgetDisableGuildCommunication;
 import com.discord.widgets.guildcommunicationdisabled.start.WidgetEnableGuildCommunication;
-import com.discord.widgets.servers.WidgetServerSettingsEditMember;
-import com.discord.widgets.servers.WidgetServerSettingsEditMemberRolesAdapter;
-import com.discord.widgets.servers.WidgetServerSettingsTransferOwnership;
 import com.discord.widgets.user.WidgetBanUser;
 import com.discord.widgets.user.WidgetKickUser;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
@@ -565,7 +562,7 @@ public final class WidgetServerSettingsEditMember extends AppFragment {
         boolean z2 = true;
         AppFragment.setActionBarDisplayHomeAsUpEnabled$default(this, false, 1, null);
         Context context = getContext();
-        setActionBarTitle(context != null ? C1107b.m210b(context, C5419R.string.guild_members_header, new Object[]{data.getGuild().getName()}, (4 & 4) != 0 ? C1107b.b.f1491j : null) : null);
+        setActionBarTitle(context != null ? C1107b.m216h(context, C5419R.string.guild_members_header, new Object[]{data.getGuild().getName()}, null, 4) : null);
         GuildMember.Companion companion = GuildMember.INSTANCE;
         setActionBarSubtitle(companion.getNickOrUsername(data.getUserComputed(), data.getUser()));
         setupNickname(data);

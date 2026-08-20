@@ -56,8 +56,6 @@ import com.discord.stores.FailedMessageResolutionType;
 import com.discord.stores.StoreGuildScheduledEvents;
 import com.discord.stores.StoreMediaSettings;
 import com.discord.stores.StoreStream;
-import com.discord.utilities.analytics.AnalyticsUtils;
-import com.discord.utilities.analytics.Traits;
 import com.discord.utilities.collections.CollectionExtensionsKt;
 import com.discord.utilities.email.EmailUtils;
 import com.discord.utilities.error.Error;

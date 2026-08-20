@@ -29,7 +29,6 @@ import com.discord.utilities.time.ClockFactory;
 import com.discord.utilities.time.TimeUtils;
 import com.discord.widgets.channels.list.WidgetCollapsedUsersListAdapter;
 import com.discord.widgets.channels.list.items.CollapsedUser;
-import com.discord.widgets.chat.list.adapter.WidgetChatListAdapterItemSpotifyListenTogether;
 import com.discord.widgets.chat.list.entries.ChatListEntry;
 import com.discord.widgets.chat.list.entries.SpotifyListenTogetherEntry;
 import com.facebook.drawee.view.SimpleDraweeView;
@@ -327,7 +326,7 @@ public final class WidgetChatListAdapterItemSpotifyListenTogether extends Widget
         String largeImage;
         TextView textView = this.binding.f16278e;
         C12238m.checkNotNullExpressionValue(textView, "binding.itemListenTogetherHeader");
-        textView.setText(C1107b.m210b(C1643a.m821I(this.binding.f16278e, "binding.itemListenTogetherHeader", "binding.itemListenTogetherHeader.context"), C5419R.string.invite_embed_invite_to_listen, new Object[]{getActivityName(C1643a.m821I(this.binding.f16278e, "binding.itemListenTogetherHeader", "binding.itemListenTogetherHeader.context"), model.getItem())}, (4 & 4) != 0 ? C1107b.b.f1491j : null));
+        textView.setText(C1107b.m216h(C1643a.m821I(this.binding.f16278e, "binding.itemListenTogetherHeader", "binding.itemListenTogetherHeader.context"), C5419R.string.invite_embed_invite_to_listen, new Object[]{getActivityName(C1643a.m821I(this.binding.f16278e, "binding.itemListenTogetherHeader", "binding.itemListenTogetherHeader.context"), model.getItem())}, null, 4));
         boolean zIsDeadInvite = isDeadInvite(model.getPresence(), model.getItem());
         Presence presence = model.getPresence();
         final Activity spotifyListeningActivity = presence != null ? PresenceUtils.INSTANCE.getSpotifyListeningActivity(presence) : null;

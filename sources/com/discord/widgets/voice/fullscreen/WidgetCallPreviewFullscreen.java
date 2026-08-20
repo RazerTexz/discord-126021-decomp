@@ -47,8 +47,6 @@ import com.discord.widgets.home.WidgetHomePanelNsfw;
 import com.discord.widgets.notice.WidgetNoticeDialog;
 import com.discord.widgets.notice.WidgetNoticeNuxOverlay;
 import com.discord.widgets.user.usersheet.WidgetUserSheet;
-import com.discord.widgets.voice.fullscreen.WidgetCallFullscreen;
-import com.discord.widgets.voice.fullscreen.WidgetCallPreviewFullscreenViewModel;
 import com.discord.widgets.voice.sheet.CallParticipantsAdapter;
 import com.google.android.material.button.MaterialButton;
 import java.util.Objects;

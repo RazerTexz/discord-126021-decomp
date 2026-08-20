@@ -15,8 +15,6 @@ import com.discord.utilities.dimen.DimenUtils;
 import com.discord.utilities.mg_recycler.MGRecyclerAdapterSimple;
 import com.discord.utilities.mg_recycler.MGRecyclerViewHolder;
 import com.discord.utilities.view.extensions.ViewExtensions;
-import com.discord.widgets.forums.ForumBrowserItem;
-import com.discord.widgets.forums.WidgetForumBrowserAdapter;
 import java.util.Objects;
 import kotlin.Unit;
 import kotlin.jvm.functions.Function1;

@@ -15,7 +15,6 @@ import com.discord.utilities.p501rx.ObservableExtensionsKt;
 import com.discord.utilities.rest.RestAPI;
 import com.discord.utilities.user.UserUtils;
 import com.discord.widgets.channels.permissions.PermissionOwner;
-import com.discord.widgets.servers.role_members.ServerSettingsRoleMembersViewModel;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;

@@ -1,7 +1,6 @@
 package com.discord.widgets.status;
 
 import com.discord.models.application.Unread;
-import com.discord.widgets.status.WidgetChatStatus;
 import java.util.Set;
 import kotlin.jvm.functions.Function3;
 import p507d0.p592z.p594d.C12236k;

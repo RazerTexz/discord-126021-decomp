@@ -2,7 +2,6 @@ package com.discord.stores;
 
 import com.discord.api.activity.Activity;
 import com.discord.models.message.Message;
-import com.discord.stores.StoreSlowMode;
 import com.discord.utilities.messagesend.MessageRequest;
 import com.discord.utilities.messagesend.MessageResult;
 import com.discord.utilities.rest.SendUtils;

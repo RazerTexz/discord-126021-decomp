@@ -2,7 +2,6 @@ package com.discord.widgets.guildcommunicationdisabled.start;
 
 import com.discord.stores.StoreGuilds;
 import com.discord.stores.StoreUser;
-import com.discord.widgets.guildcommunicationdisabled.start.DisableGuildCommunicationViewModel;
 import kotlin.jvm.functions.Function0;
 import p507d0.p592z.p594d.AbstractC12240o;
 

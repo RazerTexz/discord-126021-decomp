@@ -6,8 +6,6 @@ import java.lang.reflect.ParameterizedType;
 import java.lang.reflect.Type;
 import java.util.concurrent.Executor;
 import okhttp3.Request;
-import p630i0.C12555i;
-import p630i0.InterfaceC12512e;
 import retrofit2.Response;
 
 /* JADX INFO: renamed from: i0.i */

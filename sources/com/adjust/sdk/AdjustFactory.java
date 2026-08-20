@@ -1,7 +1,6 @@
 package com.adjust.sdk;
 
 import android.content.Context;
-import com.adjust.sdk.UtilNetworking;
 import com.discord.stores.StoreGuildScheduledEvents;
 import java.io.IOException;
 import java.net.URL;

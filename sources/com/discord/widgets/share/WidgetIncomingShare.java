@@ -35,7 +35,6 @@ import com.discord.app.AppViewFlipper;
 import com.discord.databinding.ViewImageBinding;
 import com.discord.databinding.WidgetIncomingShareBinding;
 import com.discord.models.deserialization.gson.InboundGatewayGsonParser;
-import com.discord.models.domain.Model;
 import com.discord.models.domain.ModelAuditLogEntry;
 import com.discord.models.guild.Guild;
 import com.discord.models.user.MeUser;
@@ -293,7 +292,7 @@ public final class WidgetIncomingShare extends AppFragment {
                 String action = recentIntent.getAction();
                 Uri data = (action != null && action.hashCode() == -1103390587 && action.equals("com.discord.intent.action.SDK")) ? recentIntent.getData() : null;
                 String stringExtra2 = recentIntent.getStringExtra("com.discord.intent.extra.EXTRA_ACTIVITY");
-                return new ContentModel(sharedContent.getText(), sharedContent.getUris(), directShareId, stringExtra, data, stringExtra2 != null ? (Activity) InboundGatewayGsonParser.fromJson(new Model.JsonReader(new StringReader(stringExtra2)), Activity.class) : null);
+                return new ContentModel(sharedContent.getText(), sharedContent.getUris(), directShareId, stringExtra, data, stringExtra2 != null ? (Activity) InboundGatewayGsonParser.fromJson(new com.discord.models.domain.Model.JsonReader(new StringReader(stringExtra2)), Activity.class) : null);
             }
 
             public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {

@@ -3,8 +3,6 @@ package org.webrtc;
 import androidx.annotation.Nullable;
 import java.util.Arrays;
 import java.util.LinkedHashSet;
-import org.webrtc.EglBase;
-import org.webrtc.VideoEncoderFactory;
 import p617h0.p628c.C12487s0;
 
 /* JADX INFO: loaded from: classes3.dex */

@@ -1,6 +1,6 @@
 package org.objectweb.asm;
 
-/* JADX INFO: loaded from: app.apk:org/objectweb/asm/TypePath.SCL.lombok */
+/* JADX INFO: loaded from: discord-126021.apk:org/objectweb/asm/TypePath.SCL.lombok */
 public final class TypePath {
     public static final int ARRAY_ELEMENT = 0;
     public static final int INNER_TYPE = 1;

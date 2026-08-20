@@ -10,7 +10,6 @@ import com.discord.models.presence.Presence;
 import com.discord.models.user.User;
 import com.discord.utilities.icon.IconUtils;
 import com.discord.utilities.user.UserUtils;
-import com.discord.widgets.channels.memberlist.WidgetChannelMembersListViewModel;
 import com.discord.widgets.channels.memberlist.adapter.ChannelMembersListAdapter;
 import java.util.ArrayList;
 import java.util.Comparator;

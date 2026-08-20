@@ -3,7 +3,6 @@ package com.discord.widgets.user.search;
 import com.discord.models.member.GuildMember;
 import com.discord.models.presence.Presence;
 import com.discord.models.user.User;
-import com.discord.widgets.user.search.WidgetGlobalSearchModel;
 import java.util.Map;
 import kotlin.jvm.functions.Function4;
 import p507d0.p592z.p594d.C12236k;

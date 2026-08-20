@@ -5,7 +5,7 @@ import java.util.Map;
 import java.util.WeakHashMap;
 import org.eclipse.jdt.internal.compiler.ast.CompilationUnitDeclaration;
 
-/* JADX INFO: loaded from: app.apk:lombok/core/debug/DebugSnapshotStore.SCL.lombok */
+/* JADX INFO: loaded from: discord-126021.apk:lombok/core/debug/DebugSnapshotStore.SCL.lombok */
 public class DebugSnapshotStore {
     public static final DebugSnapshotStore INSTANCE = new DebugSnapshotStore();
     public static final boolean GLOBAL_DSS_DISABLE_SWITCH = true;

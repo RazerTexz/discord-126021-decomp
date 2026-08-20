@@ -3,7 +3,6 @@ package com.discord.widgets.debugging;
 import android.content.Context;
 import android.view.View;
 import android.widget.TextView;
-import com.discord.widgets.debugging.WidgetDebugging;
 import kotlin.Unit;
 import kotlin.jvm.functions.Function1;
 import p007b.p008a.p018d.C0876m;

@@ -8,7 +8,6 @@ import com.discord.utilities.extensions.SimpleDraweeViewExtensionsKt;
 import com.discord.utilities.mg_recycler.MGRecyclerViewHolder;
 import com.facebook.drawee.view.SimpleDraweeView;
 import p007b.p008a.p025i.C0965g5;
-import p007b.p008a.p062y.p068o0.AbstractC1367d;
 import p507d0.p592z.p594d.C12238m;
 
 /* JADX INFO: renamed from: b.a.y.o0.a */

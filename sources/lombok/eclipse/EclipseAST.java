@@ -34,7 +34,7 @@ import org.eclipse.jdt.internal.compiler.ast.TypeDeclaration;
 import org.eclipse.jdt.internal.compiler.ast.TypeReference;
 import org.eclipse.jdt.internal.compiler.ast.Wildcard;
 
-/* JADX INFO: loaded from: app.apk:lombok/eclipse/EclipseAST.SCL.lombok */
+/* JADX INFO: loaded from: discord-126021.apk:lombok/eclipse/EclipseAST.SCL.lombok */
 public class EclipseAST extends AST<EclipseAST, EclipseNode, ASTNode> {
     private static volatile boolean skipEclipseWorkspaceBasedFileResolver = false;
     private static final URI NOT_CALCULATED_MARKER = URI.create("https://projectlombok.org/not/calculated");
@@ -141,7 +141,7 @@ public class EclipseAST extends AST<EclipseAST, EclipseNode, ASTNode> {
         }
     }
 
-    /* JADX INFO: loaded from: app.apk:lombok/eclipse/EclipseAST$EclipseWorkspaceBasedFileResolver.SCL.lombok */
+    /* JADX INFO: loaded from: discord-126021.apk:lombok/eclipse/EclipseAST$EclipseWorkspaceBasedFileResolver.SCL.lombok */
     private static class EclipseWorkspaceBasedFileResolver {
         private EclipseWorkspaceBasedFileResolver() {
         }
@@ -201,7 +201,7 @@ public class EclipseAST extends AST<EclipseAST, EclipseNode, ASTNode> {
         return this.completeParse;
     }
 
-    /* JADX INFO: loaded from: app.apk:lombok/eclipse/EclipseAST$ParseProblem.SCL.lombok */
+    /* JADX INFO: loaded from: discord-126021.apk:lombok/eclipse/EclipseAST$ParseProblem.SCL.lombok */
     class ParseProblem {
         final boolean isWarning;
         final String message;
@@ -550,7 +550,7 @@ public class EclipseAST extends AST<EclipseAST, EclipseNode, ASTNode> {
         return Collections.singleton(Statement.class);
     }
 
-    /* JADX INFO: loaded from: app.apk:lombok/eclipse/EclipseAST$EcjReflectionCheck.SCL.lombok */
+    /* JADX INFO: loaded from: discord-126021.apk:lombok/eclipse/EclipseAST$EcjReflectionCheck.SCL.lombok */
     private static class EcjReflectionCheck {
         private static final String COMPILATIONRESULT_TYPE = "org.eclipse.jdt.internal.compiler.CompilationResult";
         public static final Method addProblemToCompilationResult;

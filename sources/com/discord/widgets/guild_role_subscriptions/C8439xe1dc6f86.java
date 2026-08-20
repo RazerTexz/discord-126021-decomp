@@ -1,7 +1,6 @@
 package com.discord.widgets.guild_role_subscriptions;
 
 import com.discord.stores.StoreGuildRoleSubscriptions;
-import com.discord.widgets.guild_role_subscriptions.PriceTierPickerBottomSheetViewModel;
 import kotlin.jvm.functions.Function0;
 import p507d0.p592z.p594d.AbstractC12240o;
 

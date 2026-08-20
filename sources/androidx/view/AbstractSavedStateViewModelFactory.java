@@ -4,9 +4,6 @@ import android.os.Bundle;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.annotation.RestrictTo;
-import androidx.view.SavedStateRegistry;
-import androidx.view.SavedStateRegistryOwner;
-import androidx.view.ViewModelProvider;
 
 /* JADX INFO: loaded from: classes.dex */
 public abstract class AbstractSavedStateViewModelFactory extends ViewModelProvider.KeyedFactory {

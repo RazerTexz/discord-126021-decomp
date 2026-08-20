@@ -1,6 +1,5 @@
 package com.discord.stores;
 
-import com.discord.stores.StoreStreamRtcConnection;
 import java.util.Map;
 import kotlin.Unit;
 import kotlin.jvm.functions.Function0;

@@ -3,7 +3,7 @@ package lombok.core.configuration;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-/* JADX INFO: loaded from: app.apk:lombok/core/configuration/CheckerFrameworkVersion.SCL.lombok */
+/* JADX INFO: loaded from: discord-126021.apk:lombok/core/configuration/CheckerFrameworkVersion.SCL.lombok */
 public final class CheckerFrameworkVersion implements ConfigurationValueType {
     private final int version;
     private static final int DEFAULT = 3200;

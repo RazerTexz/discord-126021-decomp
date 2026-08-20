@@ -2,7 +2,6 @@ package com.linecorp.apng.decoder;
 
 import android.graphics.Bitmap;
 import com.discord.models.domain.ModelAuditLogEntry;
-import com.linecorp.apng.decoder.Apng;
 import java.io.InputStream;
 
 /* JADX INFO: compiled from: ApngDecoderJni.kt */

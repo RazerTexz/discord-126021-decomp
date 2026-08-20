@@ -4,7 +4,6 @@ import android.graphics.Bitmap;
 import java.util.LinkedList;
 import java.util.Objects;
 import p007b.p109f.p115d.p122g.InterfaceC1696c;
-import p007b.p109f.p161j.p177l.C1935g;
 
 /* JADX INFO: renamed from: b.f.j.l.p */
 /* JADX INFO: compiled from: LruBitmapPool.java */

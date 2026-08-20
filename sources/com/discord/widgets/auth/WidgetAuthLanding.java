@@ -20,7 +20,6 @@ import com.discord.utilities.features.GrowthTeamFeatures;
 import com.discord.utilities.p501rx.ObservableExtensionsKt;
 import com.discord.utilities.viewbinding.FragmentViewBindingDelegate;
 import com.discord.utilities.viewbinding.FragmentViewBindingDelegateKt;
-import com.discord.widgets.auth.WidgetAuthLandingViewModel;
 import com.discord.widgets.home.HomeConfig;
 import com.discord.widgets.settings.account.WidgetSettingsAccountChangePassword;
 import java.io.Serializable;

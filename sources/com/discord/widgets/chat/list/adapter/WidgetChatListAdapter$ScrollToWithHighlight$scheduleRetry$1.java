@@ -1,6 +1,5 @@
 package com.discord.widgets.chat.list.adapter;
 
-import com.discord.widgets.chat.list.adapter.WidgetChatListAdapter;
 import kotlin.Unit;
 import kotlin.coroutines.Continuation;
 import kotlin.jvm.functions.Function2;

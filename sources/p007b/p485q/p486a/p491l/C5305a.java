@@ -12,7 +12,6 @@ import java.lang.ref.WeakReference;
 import java.util.Arrays;
 import p007b.p225i.p226a.p288f.p299e.p308o.C3404f;
 import p007b.p485q.p486a.p487h.InterfaceC5294c;
-import p007b.p485q.p486a.p491l.C5307c;
 
 /* JADX INFO: renamed from: b.q.a.l.a */
 /* JADX INFO: compiled from: CropImageView.java */

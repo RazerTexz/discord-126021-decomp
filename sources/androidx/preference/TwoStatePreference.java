@@ -9,7 +9,6 @@ import android.util.AttributeSet;
 import android.view.View;
 import android.widget.TextView;
 import androidx.annotation.RestrictTo;
-import androidx.preference.Preference;
 
 /* JADX INFO: loaded from: classes.dex */
 public abstract class TwoStatePreference extends Preference {

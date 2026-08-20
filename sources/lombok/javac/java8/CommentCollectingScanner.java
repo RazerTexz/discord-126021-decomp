@@ -5,7 +5,7 @@ import com.sun.tools.javac.parser.ScannerFactory;
 import com.sun.tools.javac.util.List;
 import lombok.javac.CommentInfo;
 
-/* JADX INFO: loaded from: app.apk:lombok/javac/java8/CommentCollectingScanner.SCL.lombok */
+/* JADX INFO: loaded from: discord-126021.apk:lombok/javac/java8/CommentCollectingScanner.SCL.lombok */
 public class CommentCollectingScanner extends Scanner {
     private CommentCollectingTokenizer tokenizer;
 

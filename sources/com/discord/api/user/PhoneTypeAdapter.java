@@ -1,6 +1,5 @@
 package com.discord.api.user;
 
-import com.discord.api.user.Phone;
 import com.google.gson.TypeAdapter;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonToken;

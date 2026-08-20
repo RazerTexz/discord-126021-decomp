@@ -37,7 +37,6 @@ import com.discord.utilities.views.ViewCoroutineScopeKt;
 import com.discord.widgets.botuikit.ComponentProvider;
 import com.discord.widgets.chat.input.AppFlexInputViewModel;
 import com.discord.widgets.chat.list.FragmentLifecycleListener;
-import com.discord.widgets.chat.list.adapter.WidgetChatListAdapterItemCallMessage;
 import com.discord.widgets.chat.list.entries.ChatListEntry;
 import com.discord.widgets.chat.list.entries.MessageEntry;
 import com.discord.widgets.chat.list.entries.NewMessagesEntry;

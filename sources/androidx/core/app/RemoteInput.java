@@ -1,6 +1,5 @@
 package androidx.core.app;
 
-import android.app.RemoteInput;
 import android.content.ClipData;
 import android.content.ClipDescription;
 import android.content.Intent;
@@ -309,7 +308,7 @@ public final class RemoteInput {
     @RequiresApi(20)
     public static android.app.RemoteInput fromCompat(RemoteInput remoteInput) {
         Set<String> allowedDataTypes;
-        RemoteInput.Builder builderAddExtras = new RemoteInput.Builder(remoteInput.getResultKey()).setLabel(remoteInput.getLabel()).setChoices(remoteInput.getChoices()).setAllowFreeFormInput(remoteInput.getAllowFreeFormInput()).addExtras(remoteInput.getExtras());
+        android.app.RemoteInput.Builder builderAddExtras = new android.app.RemoteInput.Builder(remoteInput.getResultKey()).setLabel(remoteInput.getLabel()).setChoices(remoteInput.getChoices()).setAllowFreeFormInput(remoteInput.getAllowFreeFormInput()).addExtras(remoteInput.getExtras());
         if (Build.VERSION.SDK_INT >= 26 && (allowedDataTypes = remoteInput.getAllowedDataTypes()) != null) {
             Iterator<String> it = allowedDataTypes.iterator();
             while (it.hasNext()) {

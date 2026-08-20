@@ -1,7 +1,6 @@
 package com.discord.models.domain;
 
 import androidx.core.app.NotificationCompat;
-import com.discord.models.domain.Model;
 import com.google.gson.stream.JsonToken;
 import java.io.IOException;
 import kotlin.jvm.internal.DefaultConstructorMarker;

@@ -20,7 +20,6 @@ import com.discord.utilities.viewbinding.FragmentViewBindingDelegate;
 import com.discord.utilities.viewbinding.FragmentViewBindingDelegateKt;
 import com.discord.views.CheckedSetting;
 import com.discord.views.RadioManager;
-import com.discord.widgets.settings.WidgetSettingsAccessibility;
 import java.util.Iterator;
 import kotlin.Unit;
 import kotlin.jvm.functions.Function0;

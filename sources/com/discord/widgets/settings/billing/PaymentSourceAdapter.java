@@ -12,7 +12,6 @@ import com.discord.models.domain.ModelPaymentSource;
 import com.discord.utilities.mg_recycler.MGRecyclerAdapterSimple;
 import com.discord.utilities.mg_recycler.MGRecyclerDataPayload;
 import com.discord.utilities.mg_recycler.MGRecyclerViewHolder;
-import com.discord.widgets.settings.billing.PaymentSourceAdapter;
 import com.google.android.material.button.MaterialButton;
 import java.util.Objects;
 import kotlin.NoWhenBranchMatchedException;

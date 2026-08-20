@@ -9,7 +9,7 @@ import com.sun.tools.javac.util.ListBuffer;
 import java.nio.CharBuffer;
 import lombok.javac.CommentInfo;
 
-/* JADX INFO: loaded from: app.apk:lombok/javac/java8/CommentCollectingTokenizer.SCL.lombok */
+/* JADX INFO: loaded from: discord-126021.apk:lombok/javac/java8/CommentCollectingTokenizer.SCL.lombok */
 class CommentCollectingTokenizer extends JavaTokenizer {
     private int prevEndPosition;
     private final ListBuffer<CommentInfo> comments;
@@ -108,7 +108,7 @@ class CommentCollectingTokenizer extends JavaTokenizer {
         return this.textBlockStarts == null ? List.nil() : this.textBlockStarts.toList();
     }
 
-    /* JADX INFO: loaded from: app.apk:lombok/javac/java8/CommentCollectingTokenizer$PositionUnicodeReader.SCL.lombok */
+    /* JADX INFO: loaded from: discord-126021.apk:lombok/javac/java8/CommentCollectingTokenizer$PositionUnicodeReader.SCL.lombok */
     static class PositionUnicodeReader extends UnicodeReader {
         protected PositionUnicodeReader(ScannerFactory sf, char[] input, int inputLength) {
             super(sf, input, inputLength);

@@ -14,7 +14,6 @@ import com.discord.utilities.error.Error;
 import com.discord.utilities.p501rx.ObservableExtensionsKt;
 import com.discord.utilities.viewbinding.FragmentViewBindingDelegate;
 import com.discord.utilities.viewbinding.FragmentViewBindingDelegateKt;
-import com.discord.widgets.feedback.FeedbackSheetViewModel;
 import com.discord.widgets.guild_delete_feedback.GuildDeleteFeedbackSheetViewModel;
 import com.discord.widgets.voice.feedback.FeedbackIssue;
 import com.discord.widgets.voice.feedback.FeedbackRating;

@@ -14,8 +14,6 @@ import com.discord.databinding.ViewServerSettingsGuildRoleSubscriptionAddTierIte
 import com.discord.databinding.ViewServerSettingsGuildRoleSubscriptionTierItemBinding;
 import com.discord.models.domain.ModelAuditLogEntry;
 import com.discord.utilities.recycler.DiffCreator;
-import com.discord.widgets.servers.guild_role_subscription.ServerSettingsGuildRoleSubscriptionTierAdapterItem;
-import com.discord.widgets.servers.guild_role_subscription.TierViewHolder;
 import com.facebook.drawee.view.SimpleDraweeView;
 import java.util.List;
 import kotlin.NoWhenBranchMatchedException;
@@ -126,7 +124,7 @@ public final class ServerSettingsGuildRoleSubscriptionTierAdapter extends Recycl
             if (viewType != 1) {
                 Context context = parent.getContext();
                 C12238m.checkNotNullExpressionValue(context, "parent.context");
-                throw new IllegalArgumentException(C1107b.m210b(context, C5419R.string.android_unknown_view_holder, new Object[]{Integer.valueOf(viewType)}, (4 & 4) != 0 ? C1107b.b.f1491j : null).toString());
+                throw new IllegalArgumentException(C1107b.m216h(context, C5419R.string.android_unknown_view_holder, new Object[]{Integer.valueOf(viewType)}, null, 4).toString());
             }
             View viewInflate = layoutInflaterFrom.inflate(C5419R.layout.view_server_settings_guild_role_subscription_add_tier_item, parent, false);
             int i = C5419R.id.guild_role_subscription_add_tier_image;

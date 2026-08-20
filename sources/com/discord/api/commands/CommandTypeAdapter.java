@@ -1,6 +1,5 @@
 package com.discord.api.commands;
 
-import com.discord.api.commands.ApplicationCommandType;
 import com.google.gson.TypeAdapter;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;

@@ -5,7 +5,6 @@ import com.discord.models.member.GuildMember;
 import com.discord.models.user.User;
 import com.discord.stores.StoreGuilds;
 import com.discord.stores.StoreUser;
-import com.discord.widgets.servers.role_members.ServerSettingsRoleMembersViewModel;
 import java.util.Collection;
 import java.util.List;
 import java.util.Map;

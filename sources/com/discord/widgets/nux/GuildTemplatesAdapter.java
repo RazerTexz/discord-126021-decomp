@@ -9,7 +9,6 @@ import com.discord.C5419R;
 import com.discord.databinding.NuxGuildTemplateCardViewHolderBinding;
 import com.discord.databinding.NuxGuildTemplateTextViewHolderBinding;
 import com.discord.models.domain.ModelAuditLogEntry;
-import com.discord.widgets.nux.GuildTemplateViewType;
 import com.google.android.material.card.MaterialCardView;
 import java.util.Collection;
 import java.util.List;

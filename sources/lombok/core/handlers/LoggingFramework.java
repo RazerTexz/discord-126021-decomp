@@ -11,7 +11,7 @@ import lombok.extern.log4j.Log4j2;
 import lombok.extern.slf4j.Slf4j;
 import lombok.extern.slf4j.XSlf4j;
 
-/* JADX INFO: loaded from: app.apk:lombok/core/handlers/LoggingFramework.SCL.lombok */
+/* JADX INFO: loaded from: discord-126021.apk:lombok/core/handlers/LoggingFramework.SCL.lombok */
 public class LoggingFramework {
     public static final LoggingFramework COMMONS = new LoggingFramework(CommonsLog.class, LogDeclaration.valueOf("org.apache.commons.logging.Log org.apache.commons.logging.LogFactory.getLog(TYPE)(TOPIC)"));
     public static final LoggingFramework JUL = new LoggingFramework(Log.class, LogDeclaration.valueOf("java.util.logging.Logger java.util.logging.Logger.getLogger(NAME)(TOPIC)"));

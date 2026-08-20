@@ -31,7 +31,6 @@ import com.discord.utilities.streams.StreamContextService;
 import com.discord.widgets.guildcommunicationdisabled.start.GuildCommunicationDisabledGuildsFeatureFlag;
 import com.discord.widgets.stage.StageRoles;
 import com.discord.widgets.user.presence.ModelRichPresence;
-import com.discord.widgets.user.usersheet.WidgetUserSheetViewModel;
 import java.util.Map;
 import java.util.concurrent.TimeUnit;
 import kotlin.jvm.functions.Function16;

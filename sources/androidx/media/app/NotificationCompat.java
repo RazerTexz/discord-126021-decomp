@@ -12,7 +12,6 @@ import androidx.annotation.DoNotInline;
 import androidx.annotation.RequiresApi;
 import androidx.annotation.RestrictTo;
 import androidx.core.app.NotificationBuilderWithBuilderAccessor;
-import androidx.core.app.NotificationCompat;
 import androidx.media.C0499R;
 
 /* JADX INFO: loaded from: classes.dex */
@@ -160,7 +159,7 @@ public class NotificationCompat {
     private NotificationCompat() {
     }
 
-    public static class MediaStyle extends NotificationCompat.Style {
+    public static class MediaStyle extends androidx.core.app.NotificationCompat.Style {
         private static final int MAX_MEDIA_BUTTONS = 5;
         private static final int MAX_MEDIA_BUTTONS_IN_COMPACT = 3;
         public int[] mActionsToShowInCompact = null;
@@ -171,7 +170,7 @@ public class NotificationCompat {
         public MediaStyle() {
         }
 
-        private RemoteViews generateMediaActionButton(NotificationCompat.Action action) {
+        private RemoteViews generateMediaActionButton(androidx.core.app.NotificationCompat.Action action) {
             boolean z2 = action.getActionIntent() == null;
             RemoteViews remoteViews = new RemoteViews(this.mBuilder.mContext.getPackageName(), C0499R.layout.notification_media_action);
             int i = C0499R.id.action0;
@@ -284,7 +283,7 @@ public class NotificationCompat {
             return this;
         }
 
-        public MediaStyle(NotificationCompat.Builder builder) {
+        public MediaStyle(androidx.core.app.NotificationCompat.Builder builder) {
             setBuilder(builder);
         }
     }

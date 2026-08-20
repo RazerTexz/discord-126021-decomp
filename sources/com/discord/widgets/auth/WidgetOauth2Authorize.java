@@ -44,7 +44,6 @@ import com.discord.utilities.viewbinding.FragmentViewBindingDelegate;
 import com.discord.utilities.viewbinding.FragmentViewBindingDelegateKt;
 import com.discord.utilities.views.SimpleRecyclerAdapter;
 import com.discord.views.OAuthPermissionViews;
-import com.discord.widgets.auth.WidgetAuthCaptcha;
 import com.facebook.drawee.view.SimpleDraweeView;
 import com.google.android.material.button.MaterialButton;
 import java.util.ArrayList;
@@ -138,7 +137,7 @@ public class WidgetOauth2Authorize extends AppFragment {
         }
 
         private final void handleError(Context context, Exception e, Function0<Unit> onComplete) {
-            String string = C1107b.m210b(context, C5419R.string.oauth2_request_missing_param, new Object[]{e.getMessage()}, (4 & 4) != 0 ? C1107b.b.f1491j : null).toString();
+            String string = C1107b.m216h(context, C5419R.string.oauth2_request_missing_param, new Object[]{e.getMessage()}, null, 4).toString();
             AppLog.f14950g.mo8370w(string, e);
             C0876m.m170h(context, string, 1, null, 8);
             onComplete.invoke();
@@ -735,7 +734,7 @@ public class WidgetOauth2Authorize extends AppFragment {
         sbM833U.append(" in ");
         sbM833U.append(getClass().getSimpleName());
         Logger.e$default(appLog, sbM833U.toString(), e, null, 4, null);
-        C0876m.m170h(requireContext(), C1107b.m210b(requireContext(), C5419R.string.oauth2_request_invalid_scope, new Object[]{e.getScope()}, (4 & 4) != 0 ? C1107b.b.f1491j : null), 1, null, 8);
+        C0876m.m170h(requireContext(), C1107b.m216h(requireContext(), C5419R.string.oauth2_request_invalid_scope, new Object[]{e.getScope()}, null, 4), 1, null, 8);
         AppActivity appActivity = getAppActivity();
         if (appActivity != null) {
             appActivity.setResult(0);

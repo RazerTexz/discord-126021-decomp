@@ -8,7 +8,7 @@ import lombok.patcher.Hook;
 import lombok.patcher.StackRequest;
 import lombok.patcher.TargetMatcher;
 
-/* JADX INFO: loaded from: app.apk:lombok/patcher/scripts/ScriptBuilder.SCL.lombok */
+/* JADX INFO: loaded from: discord-126021.apk:lombok/patcher/scripts/ScriptBuilder.SCL.lombok */
 public class ScriptBuilder {
     private ScriptBuilder() throws NoSuchMethodException {
         throw new NoSuchMethodException("ScriptBuilder cannot be instantiated - just use the static methods.");
@@ -26,7 +26,7 @@ public class ScriptBuilder {
         }
     }
 
-    /* JADX INFO: loaded from: app.apk:lombok/patcher/scripts/ScriptBuilder$AddFieldBuilder.SCL.lombok */
+    /* JADX INFO: loaded from: discord-126021.apk:lombok/patcher/scripts/ScriptBuilder$AddFieldBuilder.SCL.lombok */
     public static class AddFieldBuilder {
         private int accessFlags;
         private List<String> targetClasses = new ArrayList();
@@ -115,7 +115,7 @@ public class ScriptBuilder {
         }
     }
 
-    /* JADX INFO: loaded from: app.apk:lombok/patcher/scripts/ScriptBuilder$ExitEarlyBuilder.SCL.lombok */
+    /* JADX INFO: loaded from: discord-126021.apk:lombok/patcher/scripts/ScriptBuilder$ExitEarlyBuilder.SCL.lombok */
     public static class ExitEarlyBuilder {
         private Hook decisionMethod;
         private Hook valueMethod;
@@ -169,7 +169,7 @@ public class ScriptBuilder {
         }
     }
 
-    /* JADX INFO: loaded from: app.apk:lombok/patcher/scripts/ScriptBuilder$ReplaceMethodCallBuilder.SCL.lombok */
+    /* JADX INFO: loaded from: discord-126021.apk:lombok/patcher/scripts/ScriptBuilder$ReplaceMethodCallBuilder.SCL.lombok */
     public static class ReplaceMethodCallBuilder {
         private Hook replacementMethod;
         private Hook methodToReplace;
@@ -229,7 +229,7 @@ public class ScriptBuilder {
         }
     }
 
-    /* JADX INFO: loaded from: app.apk:lombok/patcher/scripts/ScriptBuilder$WrapMethodCallBuilder.SCL.lombok */
+    /* JADX INFO: loaded from: discord-126021.apk:lombok/patcher/scripts/ScriptBuilder$WrapMethodCallBuilder.SCL.lombok */
     public static class WrapMethodCallBuilder {
         private Hook wrapMethod;
         private Hook methodToWrap;
@@ -289,7 +289,7 @@ public class ScriptBuilder {
         }
     }
 
-    /* JADX INFO: loaded from: app.apk:lombok/patcher/scripts/ScriptBuilder$WrapReturnValueBuilder.SCL.lombok */
+    /* JADX INFO: loaded from: discord-126021.apk:lombok/patcher/scripts/ScriptBuilder$WrapReturnValueBuilder.SCL.lombok */
     public static class WrapReturnValueBuilder {
         private Hook wrapMethod;
         private boolean transplant;
@@ -349,7 +349,7 @@ public class ScriptBuilder {
         }
     }
 
-    /* JADX INFO: loaded from: app.apk:lombok/patcher/scripts/ScriptBuilder$SetSymbolDuringMethodCallBuilder.SCL.lombok */
+    /* JADX INFO: loaded from: discord-126021.apk:lombok/patcher/scripts/ScriptBuilder$SetSymbolDuringMethodCallBuilder.SCL.lombok */
     public static class SetSymbolDuringMethodCallBuilder {
         private List<TargetMatcher> matchers = new ArrayList();
         private Hook callToWrap;

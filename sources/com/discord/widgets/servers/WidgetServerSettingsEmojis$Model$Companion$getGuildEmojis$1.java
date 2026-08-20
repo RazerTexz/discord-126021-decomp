@@ -5,7 +5,6 @@ import com.discord.models.guild.Guild;
 import com.discord.models.member.GuildMember;
 import com.discord.stores.StoreEmojiGuild;
 import com.discord.stores.StoreGuilds;
-import com.discord.widgets.servers.WidgetServerSettingsEmojis;
 import java.util.List;
 import java.util.Map;
 import kotlin.jvm.functions.Function0;

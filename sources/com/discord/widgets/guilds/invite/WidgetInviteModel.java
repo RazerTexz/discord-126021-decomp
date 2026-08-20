@@ -8,7 +8,6 @@ import com.discord.models.domain.ModelInvite;
 import com.discord.models.guild.Guild;
 import com.discord.models.user.MeUser;
 import com.discord.utilities.guilds.GuildUtilsKt;
-import com.discord.widgets.guilds.invite.InviteGenerator;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;

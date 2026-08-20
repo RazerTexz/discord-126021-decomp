@@ -10,7 +10,6 @@ import androidx.annotation.NonNull;
 import androidx.core.view.ViewCompat;
 import androidx.recyclerview.widget.RecyclerView;
 import com.google.android.material.C10817R;
-import com.google.android.material.datepicker.MaterialCalendar;
 import java.util.Iterator;
 import p007b.p225i.p226a.p341g.p345d.C4396g;
 import p007b.p225i.p226a.p341g.p345d.C4397h;

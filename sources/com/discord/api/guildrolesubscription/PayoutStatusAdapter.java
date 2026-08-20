@@ -1,6 +1,5 @@
 package com.discord.api.guildrolesubscription;
 
-import com.discord.api.guildrolesubscription.PayoutStatus;
 import com.google.gson.TypeAdapter;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;

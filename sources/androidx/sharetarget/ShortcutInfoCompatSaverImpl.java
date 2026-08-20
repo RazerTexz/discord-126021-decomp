@@ -14,7 +14,6 @@ import androidx.concurrent.futures.ResolvableFuture;
 import androidx.core.content.p004pm.ShortcutInfoCompat;
 import androidx.core.content.p004pm.ShortcutInfoCompatSaver;
 import androidx.core.graphics.drawable.IconCompat;
-import androidx.sharetarget.ShortcutsInfoSerialization;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;

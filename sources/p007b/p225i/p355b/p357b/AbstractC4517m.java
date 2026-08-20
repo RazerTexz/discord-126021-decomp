@@ -1,7 +1,5 @@
 package p007b.p225i.p355b.p357b;
 
-import p007b.p225i.p355b.p357b.ConcurrentMapC4533v;
-
 /* JADX INFO: renamed from: b.i.b.b.m */
 /* JADX INFO: compiled from: ForwardingObject.java */
 /* JADX INFO: loaded from: classes3.dex */

@@ -13,8 +13,6 @@ import com.discord.app.AppActivity;
 import com.discord.models.guild.Guild;
 import com.discord.models.message.Message;
 import com.discord.restapi.RestAPIParams;
-import com.discord.stores.StoreStream;
-import com.discord.stores.StoreUserSettingsSystem;
 import com.discord.utilities.SnowflakeUtils;
 import com.discord.utilities.analytics.AnalyticsTracker;
 import com.discord.utilities.error.Error;

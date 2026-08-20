@@ -1,7 +1,6 @@
 package p007b.p225i.p226a.p242c.p260g3;
 
 import p007b.p225i.p226a.p242c.p259f3.C2738e0;
-import p007b.p225i.p226a.p242c.p260g3.InterfaceC2787x;
 
 /* JADX INFO: renamed from: b.i.a.c.g3.g */
 /* JADX INFO: compiled from: lambda */

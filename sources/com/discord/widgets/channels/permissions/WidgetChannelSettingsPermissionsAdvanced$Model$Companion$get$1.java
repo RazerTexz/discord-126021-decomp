@@ -11,7 +11,6 @@ import com.discord.stores.StoreGuilds;
 import com.discord.stores.StorePermissions;
 import com.discord.stores.StoreUser;
 import com.discord.widgets.channels.SimpleMembersAdapter;
-import com.discord.widgets.channels.permissions.WidgetChannelSettingsPermissionsAdvanced;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Comparator;

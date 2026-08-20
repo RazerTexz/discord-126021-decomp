@@ -1,7 +1,6 @@
 package com.discord.widgets.user;
 
 import com.discord.utilities.error.Error;
-import com.discord.widgets.user.WidgetUserMentions;
 import kotlin.Unit;
 import kotlin.jvm.functions.Function1;
 import p507d0.p592z.p594d.AbstractC12240o;

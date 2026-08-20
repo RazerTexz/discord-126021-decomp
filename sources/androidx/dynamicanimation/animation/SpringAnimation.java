@@ -3,7 +3,6 @@ package androidx.dynamicanimation.animation;
 import android.os.Looper;
 import android.util.AndroidRuntimeException;
 import androidx.annotation.MainThread;
-import androidx.dynamicanimation.animation.DynamicAnimation;
 
 /* JADX INFO: loaded from: classes.dex */
 public final class SpringAnimation extends DynamicAnimation<SpringAnimation> {

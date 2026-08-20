@@ -22,8 +22,6 @@ import com.discord.utilities.p501rx.ObservableExtensionsKt;
 import com.discord.utilities.simple_pager.SimplePager;
 import com.discord.utilities.viewbinding.FragmentViewBindingDelegate;
 import com.discord.utilities.viewbinding.FragmentViewBindingDelegateKt;
-import com.discord.widgets.channels.threads.browser.WidgetThreadBrowserFilterSheet;
-import com.discord.widgets.channels.threads.browser.WidgetThreadBrowserViewModel;
 import com.google.android.material.tabs.TabLayout;
 import java.util.ArrayList;
 import java.util.Arrays;

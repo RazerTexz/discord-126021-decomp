@@ -1,7 +1,6 @@
 package androidx.work;
 
 import androidx.annotation.NonNull;
-import androidx.work.Data;
 import java.lang.reflect.Array;
 import java.util.HashMap;
 import java.util.Iterator;

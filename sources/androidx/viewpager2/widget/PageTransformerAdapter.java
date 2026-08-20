@@ -3,7 +3,6 @@ package androidx.viewpager2.widget;
 import android.view.View;
 import androidx.annotation.Nullable;
 import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.viewpager2.widget.ViewPager2;
 import java.util.Locale;
 
 /* JADX INFO: loaded from: classes.dex */

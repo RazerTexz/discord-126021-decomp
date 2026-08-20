@@ -17,7 +17,6 @@ import com.discord.utilities.mg_recycler.MGRecyclerAdapter;
 import com.discord.utilities.p501rx.ObservableExtensionsKt;
 import com.discord.utilities.viewbinding.FragmentViewBindingDelegate;
 import com.discord.utilities.viewbinding.FragmentViewBindingDelegateKt;
-import com.discord.widgets.settings.account.WidgetSettingsBlockedUsersViewModel;
 import com.discord.widgets.user.usersheet.WidgetUserSheet;
 import kotlin.Lazy;
 import kotlin.NoWhenBranchMatchedException;

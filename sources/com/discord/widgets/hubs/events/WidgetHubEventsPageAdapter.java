@@ -17,7 +17,6 @@ import com.discord.databinding.WidgetHubEventsHeaderBinding;
 import com.discord.models.domain.ModelAuditLogEntry;
 import com.discord.views.LoadingButton;
 import com.discord.widgets.guildscheduledevent.GuildScheduledEventItemView;
-import com.discord.widgets.hubs.events.HubEventsPage;
 import java.util.List;
 import java.util.Objects;
 import p007b.p100d.p104b.p105a.C1643a;

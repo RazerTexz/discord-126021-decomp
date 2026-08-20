@@ -1,6 +1,5 @@
 package com.discord.utilities.analytics;
 
-import com.discord.utilities.analytics.AnalyticsUtils;
 import com.discord.utilities.rest.RestAPI;
 import com.discord.utilities.time.ClockFactory;
 import java.util.concurrent.ConcurrentLinkedQueue;

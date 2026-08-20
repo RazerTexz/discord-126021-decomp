@@ -33,7 +33,7 @@ import org.eclipse.jdt.internal.compiler.ast.Statement;
 import org.eclipse.jdt.internal.compiler.ast.ThisReference;
 import org.eclipse.jdt.internal.compiler.ast.TypeReference;
 
-/* JADX INFO: loaded from: app.apk:lombok/eclipse/handlers/singulars/EclipseGuavaSingularizer.SCL.lombok */
+/* JADX INFO: loaded from: discord-126021.apk:lombok/eclipse/handlers/singulars/EclipseGuavaSingularizer.SCL.lombok */
 abstract class EclipseGuavaSingularizer extends EclipseSingularsRecipes.EclipseSingularizer {
 
     /* JADX INFO: renamed from: OF */

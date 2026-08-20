@@ -18,8 +18,6 @@ import com.discord.utilities.mg_recycler.MGRecyclerViewHolder;
 import com.discord.utilities.presence.PresenceUtils;
 import com.discord.utilities.view.text.SimpleDraweeSpanTextView;
 import com.discord.views.StatusView;
-import com.discord.widgets.channels.WidgetGroupInviteFriends;
-import com.discord.widgets.channels.WidgetGroupInviteFriendsAdapter;
 import com.facebook.drawee.view.SimpleDraweeView;
 import java.util.List;
 import kotlin.Unit;

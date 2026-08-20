@@ -6,7 +6,7 @@ import org.objectweb.asm.Label;
 import org.objectweb.asm.MethodVisitor;
 import org.objectweb.asm.Opcodes;
 
-/* JADX INFO: loaded from: app.apk:org/objectweb/asm/commons/CodeSizeEvaluator.SCL.lombok */
+/* JADX INFO: loaded from: discord-126021.apk:org/objectweb/asm/commons/CodeSizeEvaluator.SCL.lombok */
 public class CodeSizeEvaluator extends MethodVisitor implements Opcodes {
     private int minSize;
     private int maxSize;

@@ -9,7 +9,7 @@ import java.util.Collection;
 import java.util.Collections;
 import java.util.List;
 
-/* JADX INFO: loaded from: app.apk:lombok/core/Main.SCL.lombok */
+/* JADX INFO: loaded from: discord-126021.apk:lombok/core/Main.SCL.lombok */
 public class Main {
     private static final Collection<?> HELP_SWITCHES = Collections.unmodifiableList(Arrays.asList("/?", "/h", "/help", "-h", "-help", "--help", "help", "h"));
     private final List<LombokApp> apps;
@@ -23,7 +23,7 @@ public class Main {
         }
     }
 
-    /* JADX INFO: loaded from: app.apk:lombok/core/Main$VersionApp.SCL.lombok */
+    /* JADX INFO: loaded from: discord-126021.apk:lombok/core/Main$VersionApp.SCL.lombok */
     public static class VersionApp extends LombokApp {
         @Override // lombok.core.LombokApp
         public String getAppName() {
@@ -47,7 +47,7 @@ public class Main {
         }
     }
 
-    /* JADX INFO: loaded from: app.apk:lombok/core/Main$LicenseApp.SCL.lombok */
+    /* JADX INFO: loaded from: discord-126021.apk:lombok/core/Main$LicenseApp.SCL.lombok */
     public static class LicenseApp extends LombokApp {
         @Override // lombok.core.LombokApp
         public String getAppName() {

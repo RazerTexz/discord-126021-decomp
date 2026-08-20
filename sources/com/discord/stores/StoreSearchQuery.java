@@ -3,7 +3,6 @@ package com.discord.stores;
 import com.discord.models.domain.ModelSearchResponse;
 import com.discord.models.message.Message;
 import com.discord.simpleast.core.parser.Parser;
-import com.discord.stores.StoreSearch;
 import com.discord.utilities.analytics.Traits;
 import com.discord.utilities.error.Error;
 import com.discord.utilities.p501rx.ObservableExtensionsKt;

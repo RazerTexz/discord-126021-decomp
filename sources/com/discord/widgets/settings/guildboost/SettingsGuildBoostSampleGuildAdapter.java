@@ -17,7 +17,6 @@ import com.discord.utilities.mg_recycler.MGRecyclerDataPayload;
 import com.discord.utilities.mg_recycler.MGRecyclerViewHolder;
 import com.discord.utilities.resources.StringResourceUtilsKt;
 import com.discord.views.guildboost.GuildBoostProgressView;
-import com.discord.widgets.settings.guildboost.SettingsGuildBoostSampleGuildAdapter;
 import com.facebook.drawee.view.SimpleDraweeView;
 import java.util.List;
 import kotlin.Unit;

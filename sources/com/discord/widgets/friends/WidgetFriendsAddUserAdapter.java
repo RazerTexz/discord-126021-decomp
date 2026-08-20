@@ -18,7 +18,6 @@ import com.discord.utilities.mg_recycler.MGRecyclerDataPayload;
 import com.discord.utilities.mg_recycler.MGRecyclerViewHolder;
 import com.discord.utilities.user.UserUtils;
 import com.discord.views.StatusView;
-import com.discord.widgets.friends.WidgetFriendsAddUserAdapter;
 import com.discord.widgets.user.search.WidgetGlobalSearchModel;
 import com.facebook.drawee.view.SimpleDraweeView;
 import java.util.Collection;

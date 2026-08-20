@@ -13,7 +13,6 @@ import com.discord.utilities.error.Error;
 import com.discord.utilities.p501rx.ObservableExtensionsKt;
 import com.discord.utilities.rest.RestAPI;
 import com.discord.widgets.stage.StageChannelAPI;
-import com.discord.widgets.stage.sheet.WidgetStageStartEventBottomSheetViewModel;
 import java.util.Objects;
 import kotlin.Unit;
 import kotlin.jvm.functions.Function0;

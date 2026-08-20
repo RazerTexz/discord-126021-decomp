@@ -1,6 +1,5 @@
 package androidx.constraintlayout.solver.state;
 
-import androidx.constraintlayout.solver.state.State;
 import androidx.constraintlayout.solver.widgets.ConstraintAnchor;
 import androidx.constraintlayout.solver.widgets.ConstraintWidget;
 import java.util.ArrayList;

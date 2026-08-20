@@ -16,7 +16,6 @@ import com.discord.stores.StoreVoiceChannelSelected;
 import com.discord.utilities.guildscheduledevent.GuildScheduledEventUtilities;
 import com.discord.utilities.guildscheduledevent.GuildScheduledEventUtilitiesKt;
 import com.discord.utilities.permissions.PermissionUtils;
-import com.discord.widgets.chat.list.adapter.WidgetChatListAdapterItemGuildScheduledEventInvite;
 import com.discord.widgets.chat.list.entries.GuildScheduledEventInviteEntry;
 import kotlin.jvm.functions.Function0;
 import p507d0.p592z.p594d.AbstractC12240o;

@@ -4,7 +4,6 @@ import androidx.annotation.Nullable;
 import com.google.auto.value.AutoValue;
 import java.util.HashMap;
 import java.util.Map;
-import p007b.p225i.p226a.p228b.p231j.C2434a;
 
 /* JADX INFO: renamed from: b.i.a.b.j.f */
 /* JADX INFO: compiled from: EventInternal.java */

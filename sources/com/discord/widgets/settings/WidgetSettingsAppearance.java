@@ -37,7 +37,6 @@ import com.discord.utilities.viewbinding.FragmentViewBindingDelegate;
 import com.discord.utilities.viewbinding.FragmentViewBindingDelegateKt;
 import com.discord.utilities.views.ViewCoroutineScopeKt;
 import com.discord.views.CheckedSetting;
-import com.discord.widgets.settings.WidgetSettingsAppearance;
 import com.facebook.drawee.view.SimpleDraweeView;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicInteger;

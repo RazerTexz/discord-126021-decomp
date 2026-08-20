@@ -31,8 +31,6 @@ import com.discord.widgets.chat.input.expression.ExpressionPickerEventBus;
 import com.discord.widgets.chat.input.sticker.StickerPackStoreSheetViewType;
 import com.discord.widgets.chat.input.sticker.WidgetStickerPackStoreSheet;
 import com.discord.widgets.settings.premium.WidgetSettingsPremium;
-import com.discord.widgets.stickers.StickerPremiumUpsellDialog;
-import com.discord.widgets.stickers.StickerSheetViewModel;
 import com.google.android.material.button.MaterialButton;
 import com.google.android.material.chip.Chip;
 import kotlin.Lazy;

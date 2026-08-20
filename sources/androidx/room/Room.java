@@ -2,7 +2,6 @@ package androidx.room;
 
 import android.content.Context;
 import androidx.annotation.NonNull;
-import androidx.room.RoomDatabase;
 import p007b.p100d.p104b.p105a.C1643a;
 
 /* JADX INFO: loaded from: classes.dex */

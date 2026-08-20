@@ -1,8 +1,6 @@
 package org.objectweb.asm;
 
-import org.objectweb.asm.Attribute;
-
-/* JADX INFO: loaded from: app.apk:org/objectweb/asm/RecordComponentWriter.SCL.lombok */
+/* JADX INFO: loaded from: discord-126021.apk:org/objectweb/asm/RecordComponentWriter.SCL.lombok */
 final class RecordComponentWriter extends RecordComponentVisitor {
     private final SymbolTable symbolTable;
     private final int nameIndex;

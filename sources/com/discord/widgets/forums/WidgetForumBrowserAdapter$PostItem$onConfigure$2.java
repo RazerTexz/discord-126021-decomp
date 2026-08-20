@@ -1,8 +1,6 @@
 package com.discord.widgets.forums;
 
 import android.view.View;
-import com.discord.widgets.forums.ForumBrowserItem;
-import com.discord.widgets.forums.WidgetForumBrowserAdapter;
 import kotlin.Unit;
 import kotlin.jvm.functions.Function1;
 import p507d0.p592z.p594d.AbstractC12240o;

@@ -1,7 +1,6 @@
 package androidx.work;
 
 import android.content.Context;
-import androidx.work.ListenableWorker;
 import androidx.work.impl.utils.futures.SettableFuture;
 import androidx.work.impl.utils.taskexecutor.TaskExecutor;
 import java.util.concurrent.CancellationException;

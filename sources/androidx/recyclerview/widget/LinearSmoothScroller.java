@@ -7,7 +7,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.view.animation.DecelerateInterpolator;
 import android.view.animation.LinearInterpolator;
-import androidx.recyclerview.widget.RecyclerView;
 
 /* JADX INFO: loaded from: classes.dex */
 public class LinearSmoothScroller extends RecyclerView.SmoothScroller {

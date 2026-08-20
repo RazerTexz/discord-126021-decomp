@@ -4,9 +4,6 @@ import android.view.ViewGroup;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.core.util.Preconditions;
-import androidx.recyclerview.widget.RecyclerView;
-import androidx.recyclerview.widget.StableIdStorage;
-import androidx.recyclerview.widget.ViewTypeStorage;
 
 /* JADX INFO: loaded from: classes.dex */
 public class NestedAdapterWrapper {

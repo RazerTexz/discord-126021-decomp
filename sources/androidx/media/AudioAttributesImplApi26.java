@@ -4,7 +4,6 @@ import android.media.AudioAttributes;
 import androidx.annotation.NonNull;
 import androidx.annotation.RequiresApi;
 import androidx.annotation.RestrictTo;
-import androidx.media.AudioAttributesImplApi21;
 
 /* JADX INFO: loaded from: classes.dex */
 @RequiresApi(26)

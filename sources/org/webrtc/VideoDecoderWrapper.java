@@ -1,6 +1,5 @@
 package org.webrtc;
 
-import org.webrtc.VideoDecoder;
 import org.webrtc.VideoDecoderWrapper;
 import org.webrtc.VideoFrame;
 

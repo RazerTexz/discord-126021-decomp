@@ -12,7 +12,6 @@ import com.discord.stores.StorePermissions;
 import com.discord.stores.StoreUser;
 import com.discord.utilities.guilds.GuildUtilsKt;
 import com.discord.utilities.permissions.PermissionUtils;
-import com.discord.widgets.voice.settings.WidgetVoiceChannelSettings;
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;

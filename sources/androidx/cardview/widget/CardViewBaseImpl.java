@@ -7,7 +7,6 @@ import android.graphics.Paint;
 import android.graphics.Rect;
 import android.graphics.RectF;
 import androidx.annotation.Nullable;
-import androidx.cardview.widget.RoundRectDrawableWithShadow;
 
 /* JADX INFO: loaded from: classes.dex */
 public class CardViewBaseImpl implements CardViewImpl {

@@ -7,8 +7,6 @@ import android.os.Looper;
 import androidx.annotation.Nullable;
 import java.util.Arrays;
 import java.util.List;
-import org.webrtc.CameraSession;
-import org.webrtc.CameraVideoCapturer;
 import p007b.p100d.p104b.p105a.C1643a;
 import p617h0.p628c.C12475m0;
 

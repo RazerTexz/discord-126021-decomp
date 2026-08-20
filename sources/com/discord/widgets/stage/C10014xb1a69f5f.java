@@ -3,7 +3,6 @@ package com.discord.widgets.stage;
 import android.graphics.Bitmap;
 import com.discord.utilities.images.MGImagesBitmap;
 import com.discord.utilities.p501rx.RxCoroutineUtilsKt;
-import com.discord.widgets.stage.StageChannelNotifications;
 import kotlin.Unit;
 import kotlin.coroutines.Continuation;
 import kotlin.jvm.functions.Function2;

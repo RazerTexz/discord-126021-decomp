@@ -23,7 +23,6 @@ import com.discord.utilities.view.text.LinkifiedTextView;
 import com.discord.utilities.view.validators.ValidationManager;
 import com.discord.utilities.viewbinding.FragmentViewBindingDelegate;
 import com.discord.utilities.viewbinding.FragmentViewBindingDelegateKt;
-import com.discord.widgets.settings.account.WidgetSettingsAccountEmailEditConfirm;
 import com.discord.widgets.user.WidgetUserPasswordVerify;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.textfield.TextInputLayout;

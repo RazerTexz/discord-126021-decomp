@@ -77,7 +77,6 @@ import com.discord.widgets.stage.StageRoles;
 import com.discord.widgets.stage.model.StageCallModel;
 import com.discord.widgets.stage.model.StageMediaParticipant;
 import com.discord.widgets.voice.controls.VoiceControlsOutputSelectorState;
-import com.discord.widgets.voice.fullscreen.CallParticipant;
 import com.discord.widgets.voice.model.CallModel;
 import com.discord.widgets.voice.model.CameraState;
 import java.util.ArrayList;

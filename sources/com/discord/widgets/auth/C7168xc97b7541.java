@@ -1,6 +1,5 @@
 package com.discord.widgets.auth;
 
-import com.discord.widgets.auth.WidgetAuthBirthday;
 import kotlin.Unit;
 import kotlin.jvm.functions.Function1;
 import p507d0.p592z.p594d.AbstractC12240o;

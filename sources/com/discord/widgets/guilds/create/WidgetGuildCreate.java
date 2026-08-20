@@ -28,8 +28,6 @@ import com.discord.utilities.view.text.TextWatcherKt;
 import com.discord.utilities.viewbinding.FragmentViewBindingDelegate;
 import com.discord.utilities.viewbinding.FragmentViewBindingDelegateKt;
 import com.discord.views.ScreenTitleView;
-import com.discord.widgets.guilds.create.GuildCreateCloneViews;
-import com.discord.widgets.guilds.create.WidgetGuildCreateViewModel;
 import com.discord.widgets.guilds.invite.GuildInviteShareSheetFeatureFlag;
 import com.discord.widgets.guilds.invite.WidgetGuildInviteShare;
 import com.discord.widgets.guilds.invite.WidgetGuildInviteShareSheet;

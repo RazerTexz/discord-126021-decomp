@@ -4,7 +4,6 @@ import android.content.Context;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.annotation.RestrictTo;
-import androidx.room.RoomDatabase;
 import androidx.sqlite.p006db.SupportSQLiteOpenHelper;
 import java.io.File;
 import java.util.List;

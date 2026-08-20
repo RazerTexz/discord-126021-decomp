@@ -1,7 +1,6 @@
 package p007b.p483p.p484a;
 
 import android.view.View;
-import p007b.p483p.p484a.ViewOnTouchListenerC5282l;
 import p507d0.p592z.p594d.C12238m;
 
 /* JADX INFO: renamed from: b.p.a.a */

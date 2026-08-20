@@ -29,7 +29,6 @@ import com.discord.utilities.string.StringUtilsKt;
 import com.discord.utilities.textview.TextViewFadeHelper;
 import com.discord.utilities.view.extensions.ViewExtensions;
 import com.discord.utilities.view.text.LinkifiedTextView;
-import com.discord.widgets.guildscheduledevent.GuildScheduledEventListItem;
 import com.discord.widgets.guildscheduledevent.buttonconfiguration.ButtonConfiguration;
 import com.discord.widgets.guildscheduledevent.buttonconfiguration.DirectoryButtonConfiguration;
 import com.discord.widgets.guildscheduledevent.buttonconfiguration.GuildButtonConfiguration;
@@ -262,7 +261,7 @@ public final class GuildScheduledEventItemView extends ConstraintLayout {
         C12238m.checkNotNullExpressionValue(textView3, "buttonBinding.primaryButtonText");
         Context context = getContext();
         C12238m.checkNotNullExpressionValue(context, "context");
-        textView3.setText(C1107b.m210b(context, C5419R.string.guild_event_invite_embed_join_server_button_label, new Object[0], (4 & 4) != 0 ? C1107b.b.f1491j : null));
+        textView3.setText(C1107b.m216h(context, C5419R.string.guild_event_invite_embed_join_server_button_label, new Object[0], null, 4));
         TextView textView4 = binding.f15129d;
         C12238m.checkNotNullExpressionValue(textView4, "buttonBinding.primaryButtonText");
         textView4.setVisibility(isInGuild ^ true ? 0 : 8);

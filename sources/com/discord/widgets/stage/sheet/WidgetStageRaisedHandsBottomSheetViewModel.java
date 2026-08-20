@@ -21,7 +21,6 @@ import com.discord.utilities.time.Clock;
 import com.discord.utilities.time.ClockFactory;
 import com.discord.widgets.stage.StageChannelAPI;
 import com.discord.widgets.stage.StageRoles;
-import com.discord.widgets.stage.sheet.WidgetStageRaisedHandsBottomSheetAdapter;
 import java.util.List;
 import java.util.Map;
 import kotlin.Pair;

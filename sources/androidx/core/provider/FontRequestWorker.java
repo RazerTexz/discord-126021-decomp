@@ -10,7 +10,6 @@ import androidx.annotation.Nullable;
 import androidx.collection.LruCache;
 import androidx.collection.SimpleArrayMap;
 import androidx.core.graphics.TypefaceCompat;
-import androidx.core.provider.FontsContractCompat;
 import androidx.core.util.Consumer;
 import java.util.ArrayList;
 import java.util.concurrent.Callable;

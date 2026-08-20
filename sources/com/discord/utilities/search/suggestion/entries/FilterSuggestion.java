@@ -2,7 +2,6 @@ package com.discord.utilities.search.suggestion.entries;
 
 import com.discord.utilities.search.query.FilterType;
 import com.discord.utilities.search.strings.SearchStringProvider;
-import com.discord.utilities.search.suggestion.entries.SearchSuggestion;
 import com.discord.widgets.chat.input.MentionUtilsKt;
 import kotlin.NoWhenBranchMatchedException;
 import kotlin.jvm.internal.DefaultConstructorMarker;

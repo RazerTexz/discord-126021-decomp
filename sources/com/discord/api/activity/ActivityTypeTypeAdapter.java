@@ -1,6 +1,5 @@
 package com.discord.api.activity;
 
-import com.discord.api.activity.ActivityType;
 import com.google.gson.TypeAdapter;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;

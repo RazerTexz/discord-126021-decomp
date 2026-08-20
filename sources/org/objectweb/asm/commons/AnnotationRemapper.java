@@ -3,7 +3,7 @@ package org.objectweb.asm.commons;
 import org.objectweb.asm.AnnotationVisitor;
 import org.objectweb.asm.Opcodes;
 
-/* JADX INFO: loaded from: app.apk:org/objectweb/asm/commons/AnnotationRemapper.SCL.lombok */
+/* JADX INFO: loaded from: discord-126021.apk:org/objectweb/asm/commons/AnnotationRemapper.SCL.lombok */
 public class AnnotationRemapper extends AnnotationVisitor {
     protected final Remapper remapper;
 

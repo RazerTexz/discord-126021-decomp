@@ -9,7 +9,7 @@ import java.util.List;
 import javax.tools.JavaFileObject;
 import lombok.javac.CommentInfo;
 
-/* JADX INFO: loaded from: app.apk:lombok/delombok/DelombokResult.SCL.lombok */
+/* JADX INFO: loaded from: discord-126021.apk:lombok/delombok/DelombokResult.SCL.lombok */
 public class DelombokResult {
     private final List<CommentInfo> comments;
     private final List<Integer> textBlockStarts;

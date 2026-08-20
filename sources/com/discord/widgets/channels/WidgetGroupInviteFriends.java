@@ -37,7 +37,6 @@ import com.discord.utilities.rest.RestAPI;
 import com.discord.utilities.user.UserUtils;
 import com.discord.utilities.viewbinding.FragmentViewBindingDelegate;
 import com.discord.utilities.viewbinding.FragmentViewBindingDelegateKt;
-import com.discord.widgets.channels.WidgetGroupInviteFriends;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.gson.internal.LinkedTreeMap;
 import java.util.ArrayList;

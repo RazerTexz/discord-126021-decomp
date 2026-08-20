@@ -2,7 +2,6 @@ package com.discord.utilities.coroutines;
 
 import android.content.Context;
 import androidx.exifinterface.media.ExifInterface;
-import com.discord.utilities.coroutines.AppErrorTag;
 import com.discord.utilities.error.AppCancellationException;
 import com.discord.utilities.error.Error;
 import com.discord.utilities.p501rx.RxCoroutineUtilsKt;

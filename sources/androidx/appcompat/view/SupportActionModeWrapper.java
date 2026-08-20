@@ -1,13 +1,11 @@
 package androidx.appcompat.view;
 
 import android.content.Context;
-import android.view.ActionMode;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import androidx.annotation.RestrictTo;
-import androidx.appcompat.view.ActionMode;
 import androidx.appcompat.view.menu.MenuItemWrapperICS;
 import androidx.appcompat.view.menu.MenuWrapperICS;
 import androidx.collection.SimpleArrayMap;
@@ -24,11 +22,11 @@ public class SupportActionModeWrapper extends android.view.ActionMode {
     @RestrictTo({RestrictTo.Scope.LIBRARY_GROUP_PREFIX})
     public static class CallbackWrapper implements ActionMode.Callback {
         public final Context mContext;
-        public final ActionMode.Callback mWrappedCallback;
+        public final android.view.ActionMode.Callback mWrappedCallback;
         public final ArrayList<SupportActionModeWrapper> mActionModes = new ArrayList<>();
         public final SimpleArrayMap<Menu, Menu> mMenus = new SimpleArrayMap<>();
 
-        public CallbackWrapper(Context context, ActionMode.Callback callback) {
+        public CallbackWrapper(Context context, android.view.ActionMode.Callback callback) {
             this.mContext = context;
             this.mWrappedCallback = callback;
         }

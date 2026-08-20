@@ -29,11 +29,8 @@ import lombok.javac.Javac;
 import lombok.javac.JavacAnnotationHandler;
 import lombok.javac.JavacNode;
 import lombok.javac.JavacTreeMaker;
-import lombok.javac.handlers.HandleConstructor;
-import lombok.javac.handlers.JavacHandlerUtil;
-import lombok.javac.handlers.JavacSingularsRecipes;
 
-/* JADX INFO: loaded from: app.apk:lombok/javac/handlers/HandleBuilder.SCL.lombok */
+/* JADX INFO: loaded from: discord-126021.apk:lombok/javac/handlers/HandleBuilder.SCL.lombok */
 @HandlerPriority(-1024)
 public class HandleBuilder extends JavacAnnotationHandler<Builder> {
     private HandleConstructor handleConstructor = new HandleConstructor();
@@ -82,7 +79,7 @@ public class HandleBuilder extends JavacAnnotationHandler<Builder> {
         return ((Boolean) expr).booleanValue();
     }
 
-    /* JADX INFO: loaded from: app.apk:lombok/javac/handlers/HandleBuilder$BuilderJob.SCL.lombok */
+    /* JADX INFO: loaded from: discord-126021.apk:lombok/javac/handlers/HandleBuilder$BuilderJob.SCL.lombok */
     static class BuilderJob {
         CheckerFrameworkVersion checkerFramework;
         JavacNode parentType;
@@ -169,7 +166,7 @@ public class HandleBuilder extends JavacAnnotationHandler<Builder> {
         }
     }
 
-    /* JADX INFO: loaded from: app.apk:lombok/javac/handlers/HandleBuilder$BuilderFieldData.SCL.lombok */
+    /* JADX INFO: loaded from: discord-126021.apk:lombok/javac/handlers/HandleBuilder$BuilderFieldData.SCL.lombok */
     static class BuilderFieldData {
         List<JCTree.JCAnnotation> annotations;
         JCTree.JCExpression type;

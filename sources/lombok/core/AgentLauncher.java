@@ -6,11 +6,11 @@ import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 
-/* JADX INFO: loaded from: app.apk:lombok/core/AgentLauncher.SCL.lombok */
+/* JADX INFO: loaded from: discord-126021.apk:lombok/core/AgentLauncher.SCL.lombok */
 public class AgentLauncher {
     private static final List<AgentInfo> AGENTS = Collections.unmodifiableList(Arrays.asList(new EclipsePatcherInfo(null)));
 
-    /* JADX INFO: loaded from: app.apk:lombok/core/AgentLauncher$AgentLaunchable.SCL.lombok */
+    /* JADX INFO: loaded from: discord-126021.apk:lombok/core/AgentLauncher$AgentLaunchable.SCL.lombok */
     public interface AgentLaunchable {
         void runAgent(String str, Instrumentation instrumentation, boolean z2, Class<?> cls) throws Exception;
     }
@@ -31,7 +31,7 @@ public class AgentLauncher {
         }
     }
 
-    /* JADX INFO: loaded from: app.apk:lombok/core/AgentLauncher$AgentInfo.SCL.lombok */
+    /* JADX INFO: loaded from: discord-126021.apk:lombok/core/AgentLauncher$AgentInfo.SCL.lombok */
     private static abstract class AgentInfo {
         abstract String className();
 
@@ -59,7 +59,7 @@ public class AgentLauncher {
         }
     }
 
-    /* JADX INFO: loaded from: app.apk:lombok/core/AgentLauncher$EclipsePatcherInfo.SCL.lombok */
+    /* JADX INFO: loaded from: discord-126021.apk:lombok/core/AgentLauncher$EclipsePatcherInfo.SCL.lombok */
     private static class EclipsePatcherInfo extends AgentInfo {
         private EclipsePatcherInfo() {
             super(null);

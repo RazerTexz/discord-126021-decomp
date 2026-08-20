@@ -7,7 +7,6 @@ import android.os.Parcelable;
 import android.util.Log;
 import android.util.SparseArray;
 import androidx.annotation.RequiresApi;
-import androidx.core.app.NotificationCompat;
 import androidx.core.graphics.drawable.IconCompat;
 import java.lang.reflect.Field;
 import java.util.ArrayList;

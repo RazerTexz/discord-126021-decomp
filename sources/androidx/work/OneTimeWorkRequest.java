@@ -2,7 +2,6 @@ package androidx.work;
 
 import android.os.Build;
 import androidx.annotation.NonNull;
-import androidx.work.WorkRequest;
 import androidx.work.impl.model.WorkSpec;
 import java.util.ArrayList;
 import java.util.Iterator;

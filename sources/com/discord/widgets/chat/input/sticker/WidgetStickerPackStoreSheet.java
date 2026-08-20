@@ -24,8 +24,6 @@ import com.discord.utilities.stickers.StickerUtils;
 import com.discord.utilities.viewbinding.FragmentViewBindingDelegate;
 import com.discord.utilities.viewbinding.FragmentViewBindingDelegateKt;
 import com.discord.views.LoadingButton;
-import com.discord.widgets.chat.input.sticker.StickerFullSizeDialog;
-import com.discord.widgets.chat.input.sticker.StickerPackStoreSheetViewModel;
 import com.discord.widgets.settings.premium.WidgetSettingsPremium;
 import com.discord.widgets.stickers.StickerPurchaseLocation;
 import com.discord.widgets.stickers.WidgetStickerPackDetailsDialog;

@@ -26,8 +26,6 @@ import com.discord.utilities.captcha.CaptchaHelper;
 import com.discord.utilities.error.Error;
 import com.discord.utilities.p501rx.ObservableExtensionsKt;
 import com.discord.utilities.rest.RestAPI;
-import com.discord.widgets.auth.WidgetOauth2Authorize;
-import com.discord.widgets.auth.WidgetOauth2AuthorizeSamsung;
 import java.util.UUID;
 import kotlin.Unit;
 import kotlin.coroutines.Continuation;

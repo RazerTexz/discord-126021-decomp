@@ -6,7 +6,6 @@ import android.database.sqlite.SQLiteOpenHelper;
 import java.util.Arrays;
 import java.util.List;
 import p007b.p100d.p104b.p105a.C1643a;
-import p007b.p225i.p226a.p228b.p231j.p236t.p238i.C2517z;
 
 /* JADX INFO: renamed from: b.i.a.b.j.t.i.z */
 /* JADX INFO: compiled from: SchemaManager.java */

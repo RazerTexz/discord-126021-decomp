@@ -12,7 +12,7 @@ import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-/* JADX INFO: loaded from: app.apk:lombok/patcher/MethodTarget.SCL.lombok */
+/* JADX INFO: loaded from: discord-126021.apk:lombok/patcher/MethodTarget.SCL.lombok */
 public final class MethodTarget implements TargetMatcher {
     private final String classSpec;
     private final String methodName;

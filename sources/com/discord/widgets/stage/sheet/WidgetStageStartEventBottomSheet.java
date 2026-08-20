@@ -17,7 +17,6 @@ import com.discord.utilities.view.extensions.ViewExtensions;
 import com.discord.utilities.view.text.TextWatcherKt;
 import com.discord.utilities.viewbinding.FragmentViewBindingDelegate;
 import com.discord.utilities.viewbinding.FragmentViewBindingDelegateKt;
-import com.discord.widgets.stage.sheet.WidgetStageStartEventBottomSheetViewModel;
 import com.google.android.material.button.MaterialButton;
 import com.google.android.material.textfield.TextInputEditText;
 import com.google.android.material.textfield.TextInputLayout;

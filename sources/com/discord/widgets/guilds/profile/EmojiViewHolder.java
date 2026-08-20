@@ -5,7 +5,6 @@ import com.discord.databinding.WidgetGuildProfileEmojiItemBinding;
 import com.discord.models.domain.emoji.Emoji;
 import com.discord.utilities.icon.IconUtils;
 import com.discord.utilities.images.MGImages;
-import com.discord.widgets.guilds.profile.EmojiItem;
 import com.facebook.drawee.view.SimpleDraweeView;
 import p507d0.p592z.p594d.C12238m;
 

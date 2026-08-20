@@ -7,7 +7,6 @@ import android.os.Build;
 import android.util.Log;
 import com.google.firebase.crashlytics.CrashlyticsRegistrar;
 import com.google.firebase.crashlytics.FirebaseCrashlytics;
-import java.lang.Thread;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Locale;

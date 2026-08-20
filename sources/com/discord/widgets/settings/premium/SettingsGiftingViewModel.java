@@ -24,7 +24,6 @@ import com.discord.utilities.error.Error;
 import com.discord.utilities.p501rx.ObservableExtensionsKt;
 import com.discord.utilities.user.UserUtils;
 import com.discord.widgets.chat.input.MentionUtilsKt;
-import com.discord.widgets.settings.premium.ClaimStatus;
 import java.util.ArrayList;
 import java.util.LinkedHashMap;
 import java.util.List;

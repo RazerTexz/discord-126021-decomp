@@ -3,7 +3,7 @@ package lombok.installer;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 
-/* JADX INFO: loaded from: app.apk:lombok/installer/CorruptedIdeLocationException.SCL.lombok */
+/* JADX INFO: loaded from: discord-126021.apk:lombok/installer/CorruptedIdeLocationException.SCL.lombok */
 public class CorruptedIdeLocationException extends Exception {
     private final String ideType;
 

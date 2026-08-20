@@ -18,7 +18,6 @@ import com.discord.utilities.error.Error;
 import com.discord.utilities.p501rx.ObservableExtensionsKt;
 import com.discord.utilities.rest.RestAPI;
 import com.discord.utilities.time.TimeUtils;
-import com.discord.widgets.auth.WidgetAgeVerifyViewModel;
 import java.util.List;
 import java.util.Map;
 import kotlin.Unit;

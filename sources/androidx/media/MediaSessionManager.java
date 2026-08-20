@@ -1,7 +1,6 @@
 package androidx.media;
 
 import android.content.Context;
-import android.media.session.MediaSessionManager;
 import android.os.Build;
 import android.text.TextUtils;
 import android.util.Log;
@@ -9,8 +8,6 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.annotation.RequiresApi;
 import androidx.annotation.RestrictTo;
-import androidx.media.MediaSessionManagerImplApi28;
-import androidx.media.MediaSessionManagerImplBase;
 import java.util.Objects;
 
 /* JADX INFO: loaded from: classes.dex */
@@ -120,7 +117,7 @@ public final class MediaSessionManager {
 
         @RequiresApi(28)
         @RestrictTo({RestrictTo.Scope.LIBRARY})
-        public RemoteUserInfo(MediaSessionManager.RemoteUserInfo remoteUserInfo) {
+        public RemoteUserInfo(android.media.session.MediaSessionManager.RemoteUserInfo remoteUserInfo) {
             String packageName = MediaSessionManagerImplApi28.RemoteUserInfoImplApi28.getPackageName(remoteUserInfo);
             Objects.requireNonNull(packageName, "package shouldn't be null");
             if (!TextUtils.isEmpty(packageName)) {

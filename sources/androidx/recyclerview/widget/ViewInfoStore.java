@@ -6,7 +6,6 @@ import androidx.annotation.VisibleForTesting;
 import androidx.collection.LongSparseArray;
 import androidx.collection.SimpleArrayMap;
 import androidx.core.util.Pools;
-import androidx.recyclerview.widget.RecyclerView;
 
 /* JADX INFO: loaded from: classes.dex */
 public class ViewInfoStore {

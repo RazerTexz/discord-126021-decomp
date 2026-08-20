@@ -3,7 +3,6 @@ package androidx.recyclerview.widget;
 import androidx.annotation.IntRange;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import androidx.recyclerview.widget.RecyclerView;
 import java.util.ArrayDeque;
 import java.util.ArrayList;
 import java.util.Arrays;

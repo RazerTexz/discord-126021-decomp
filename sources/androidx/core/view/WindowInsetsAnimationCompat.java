@@ -18,7 +18,6 @@ import androidx.annotation.RequiresApi;
 import androidx.annotation.RestrictTo;
 import androidx.core.C0205R;
 import androidx.core.graphics.Insets;
-import androidx.core.view.WindowInsetsCompat;
 import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
 import java.util.ArrayList;

@@ -25,7 +25,7 @@ import javax.tools.Diagnostic;
 import lombok.patcher.ClassRootFinder;
 import lombok.permit.Permit;
 
-/* JADX INFO: loaded from: app.apk:lombok/core/AnnotationProcessor.SCL.lombok */
+/* JADX INFO: loaded from: discord-126021.apk:lombok/core/AnnotationProcessor.SCL.lombok */
 @SupportedAnnotationTypes({"*"})
 public class AnnotationProcessor extends AbstractProcessor {
     private final List<ProcessorDescriptor> registered = Arrays.asList(new JavacDescriptor(), new EcjDescriptor());
@@ -38,7 +38,7 @@ public class AnnotationProcessor extends AbstractProcessor {
         return w.toString();
     }
 
-    /* JADX INFO: loaded from: app.apk:lombok/core/AnnotationProcessor$ProcessorDescriptor.SCL.lombok */
+    /* JADX INFO: loaded from: discord-126021.apk:lombok/core/AnnotationProcessor$ProcessorDescriptor.SCL.lombok */
     static abstract class ProcessorDescriptor {
         abstract boolean want(ProcessingEnvironment processingEnvironment, List<String> list);
 
@@ -108,7 +108,7 @@ public class AnnotationProcessor extends AbstractProcessor {
         }
     }
 
-    /* JADX INFO: loaded from: app.apk:lombok/core/AnnotationProcessor$JavacDescriptor.SCL.lombok */
+    /* JADX INFO: loaded from: discord-126021.apk:lombok/core/AnnotationProcessor$JavacDescriptor.SCL.lombok */
     static class JavacDescriptor extends ProcessorDescriptor {
         private Processor processor;
 
@@ -165,7 +165,7 @@ public class AnnotationProcessor extends AbstractProcessor {
         }
     }
 
-    /* JADX INFO: loaded from: app.apk:lombok/core/AnnotationProcessor$EcjDescriptor.SCL.lombok */
+    /* JADX INFO: loaded from: discord-126021.apk:lombok/core/AnnotationProcessor$EcjDescriptor.SCL.lombok */
     static class EcjDescriptor extends ProcessorDescriptor {
         EcjDescriptor() {
         }

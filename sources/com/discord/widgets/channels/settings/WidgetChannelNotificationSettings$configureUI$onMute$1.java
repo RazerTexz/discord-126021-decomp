@@ -1,7 +1,6 @@
 package com.discord.widgets.channels.settings;
 
 import androidx.fragment.app.FragmentManager;
-import com.discord.widgets.channels.settings.WidgetChannelNotificationSettings;
 import com.discord.widgets.settings.WidgetMuteSettingsSheet;
 import kotlin.Unit;
 import kotlin.jvm.functions.Function0;

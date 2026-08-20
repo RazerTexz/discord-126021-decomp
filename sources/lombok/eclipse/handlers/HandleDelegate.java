@@ -8,7 +8,7 @@ import lombok.eclipse.EclipseNode;
 import lombok.experimental.Delegate;
 import org.eclipse.jdt.internal.compiler.ast.Annotation;
 
-/* JADX INFO: loaded from: app.apk:lombok/eclipse/handlers/HandleDelegate.SCL.lombok */
+/* JADX INFO: loaded from: discord-126021.apk:lombok/eclipse/handlers/HandleDelegate.SCL.lombok */
 public class HandleDelegate extends EclipseAnnotationHandler<Delegate> {
     @Override // lombok.eclipse.EclipseAnnotationHandler
     public void handle(AnnotationValues<Delegate> annotation, Annotation ast, EclipseNode annotationNode) {

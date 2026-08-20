@@ -12,9 +12,6 @@ import okhttp3.RequestBody;
 import okhttp3.ResponseBody;
 import p600f0.C12379w;
 import p600f0.InterfaceC12269e;
-import p630i0.C12502c;
-import p630i0.InterfaceC12512e;
-import p630i0.InterfaceC12554h;
 
 /* JADX INFO: renamed from: i0.y */
 /* JADX INFO: compiled from: Retrofit.java */

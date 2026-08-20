@@ -3,7 +3,6 @@ package com.discord.utilities.search.suggestion.entries;
 import android.annotation.SuppressLint;
 import com.discord.models.member.GuildMember;
 import com.discord.models.user.User;
-import com.discord.utilities.search.suggestion.entries.SearchSuggestion;
 import com.discord.utilities.user.UserUtils;
 import com.discord.widgets.chat.AutocompleteTypes;
 import java.util.Objects;

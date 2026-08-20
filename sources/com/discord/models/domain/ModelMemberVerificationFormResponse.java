@@ -1,7 +1,6 @@
 package com.discord.models.domain;
 
 import com.discord.api.guildjoinrequest.ApplicationStatus;
-import com.discord.models.domain.ModelMemberVerificationForm;
 import java.util.List;
 import p007b.p100d.p104b.p105a.C1643a;
 import p507d0.p592z.p594d.C12238m;

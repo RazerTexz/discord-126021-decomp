@@ -19,7 +19,6 @@ import com.discord.utilities.view.text.LinkifiedTextView;
 import com.discord.utilities.viewbinding.FragmentViewBindingDelegate;
 import com.discord.utilities.viewbinding.FragmentViewBindingDelegateKt;
 import com.discord.views.CheckedSetting;
-import com.discord.widgets.servers.community.WidgetServerSettingsEnableCommunityViewModel;
 import java.util.Map;
 import java.util.Objects;
 import kotlin.Lazy;

@@ -1,7 +1,6 @@
 package com.discord.restapi;
 
 import com.discord.models.domain.ModelAuditLogEntry;
-import com.discord.restapi.RequiredHeadersInterceptor;
 import java.util.LinkedHashMap;
 import java.util.Map;
 import okhttp3.Headers;

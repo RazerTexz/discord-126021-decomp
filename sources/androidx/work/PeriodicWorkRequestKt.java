@@ -2,7 +2,6 @@ package androidx.work;
 
 import androidx.annotation.RequiresApi;
 import androidx.exifinterface.media.ExifInterface;
-import androidx.work.PeriodicWorkRequest;
 import java.time.Duration;
 import java.util.concurrent.TimeUnit;
 import p507d0.p592z.p594d.C12238m;

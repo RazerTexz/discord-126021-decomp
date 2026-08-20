@@ -5,7 +5,6 @@ import com.discord.api.channel.Channel;
 import com.discord.api.user.User;
 import com.discord.app.AppLog;
 import com.discord.models.message.Message;
-import com.discord.stores.StoreChat;
 import com.discord.utilities.analytics.Traits;
 import com.discord.utilities.channel.ChannelSelector;
 import com.discord.utilities.error.Error;

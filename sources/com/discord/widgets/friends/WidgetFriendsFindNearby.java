@@ -37,9 +37,6 @@ import com.discord.utilities.viewbinding.FragmentViewBindingDelegateKt;
 import com.discord.widgets.captcha.WidgetCaptcha;
 import com.discord.widgets.captcha.WidgetCaptchaKt;
 import com.discord.widgets.chat.input.MentionUtilsKt;
-import com.discord.widgets.friends.NearbyManager;
-import com.discord.widgets.friends.WidgetFriendsAddUserAdapter;
-import com.discord.widgets.friends.WidgetFriendsFindNearby;
 import com.discord.widgets.user.usersheet.WidgetUserSheet;
 import com.google.android.material.button.MaterialButton;
 import java.util.ArrayList;
@@ -634,7 +631,7 @@ public final class WidgetFriendsFindNearby extends AppFragment {
             public final void call(Void r7) {
                 Context context = WidgetFriendsFindNearby.this.getContext();
                 Context context2 = WidgetFriendsFindNearby.this.getContext();
-                C0876m.m170h(context, context2 != null ? C1107b.m210b(context2, C5419R.string.add_friend_confirmation, new Object[]{username}, (4 & 4) != 0 ? C1107b.b.f1491j : null) : null, 0, null, 12);
+                C0876m.m170h(context, context2 != null ? C1107b.m216h(context2, C5419R.string.add_friend_confirmation, new Object[]{username}, null, 4) : null, 0, null, 12);
             }
         }, getAppActivity(), new Action1<Error>() { // from class: com.discord.widgets.friends.WidgetFriendsFindNearby.sendFriendRequest.2
 

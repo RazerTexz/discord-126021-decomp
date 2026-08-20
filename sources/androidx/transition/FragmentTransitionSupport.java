@@ -7,7 +7,6 @@ import android.view.ViewGroup;
 import androidx.annotation.NonNull;
 import androidx.annotation.RestrictTo;
 import androidx.fragment.app.FragmentTransitionImpl;
-import androidx.transition.Transition;
 import java.util.ArrayList;
 import java.util.List;
 

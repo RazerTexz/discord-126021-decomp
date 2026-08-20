@@ -19,7 +19,6 @@ import com.discord.utilities.resources.StringResourceUtilsKt;
 import com.discord.utilities.viewbinding.FragmentViewBindingDelegate;
 import com.discord.utilities.viewbinding.FragmentViewBindingDelegateKt;
 import com.discord.widgets.servers.WidgetServerSettingsChannels;
-import com.discord.widgets.servers.guildboost.GuildBoostInProgressViewModel;
 import com.google.android.material.button.MaterialButton;
 import java.util.Objects;
 import kotlin.Lazy;

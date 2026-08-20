@@ -1,7 +1,6 @@
 package com.discord.widgets.user.profile;
 
 import com.discord.models.member.GuildMember;
-import com.discord.widgets.user.profile.UserProfileHeaderViewModel;
 import kotlin.jvm.functions.Function0;
 import p507d0.p592z.p594d.AbstractC12240o;
 

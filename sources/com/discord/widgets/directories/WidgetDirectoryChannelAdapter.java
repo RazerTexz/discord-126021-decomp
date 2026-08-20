@@ -11,7 +11,6 @@ import com.discord.databinding.DirectoryEntryListItemBinding;
 import com.discord.databinding.DirectorySectionHeaderListItemBinding;
 import com.discord.models.domain.ModelAuditLogEntry;
 import com.discord.views.directories.ServerDiscoveryItem;
-import com.discord.widgets.directories.DirectoryChannelItem;
 import java.util.List;
 import java.util.Objects;
 import kotlin.NoWhenBranchMatchedException;

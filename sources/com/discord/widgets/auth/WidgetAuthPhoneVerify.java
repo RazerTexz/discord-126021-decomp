@@ -36,7 +36,6 @@ import com.discord.utilities.rest.RestAPI;
 import com.discord.utilities.sms.SmsListener;
 import com.discord.utilities.viewbinding.FragmentViewBindingDelegate;
 import com.discord.utilities.viewbinding.FragmentViewBindingDelegateKt;
-import com.discord.widgets.auth.WidgetAuthPhoneVerify;
 import java.util.concurrent.TimeUnit;
 import kotlin.Unit;
 import kotlin.jvm.functions.Function0;

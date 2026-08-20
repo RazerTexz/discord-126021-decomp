@@ -1,7 +1,5 @@
 package p007b.p225i.p226a.p288f.p313h.p323j;
 
-import java.lang.Thread;
-
 /* JADX INFO: renamed from: b.i.a.f.h.j.h */
 /* JADX INFO: loaded from: classes3.dex */
 public final class C3518h implements Thread.UncaughtExceptionHandler {

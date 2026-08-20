@@ -1,6 +1,5 @@
 package com.discord.widgets.channels.permissions;
 
-import com.discord.widgets.channels.permissions.WidgetChannelSettingsPermissionsOverviewViewModel;
 import p507d0.p580t.C12145m;
 import p507d0.p580t.C12147n;
 

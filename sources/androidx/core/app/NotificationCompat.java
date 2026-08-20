@@ -3,7 +3,6 @@ package androidx.core.app;
 import android.annotation.SuppressLint;
 import android.app.Notification;
 import android.app.PendingIntent;
-import android.app.RemoteInput;
 import android.content.Context;
 import android.content.LocusId;
 import android.content.res.ColorStateList;
@@ -32,7 +31,6 @@ import androidx.annotation.Nullable;
 import androidx.annotation.RequiresApi;
 import androidx.annotation.RestrictTo;
 import androidx.core.C0205R;
-import androidx.core.app.Person;
 import androidx.core.content.LocusIdCompat;
 import androidx.core.content.p004pm.ShortcutInfoCompat;
 import androidx.core.graphics.drawable.IconCompat;
@@ -3369,7 +3367,7 @@ public class NotificationCompat {
             bundle.putParcelableArray(KEY_MESSAGES, parcelableArr);
             RemoteInput remoteInput = unreadConversation.getRemoteInput();
             if (remoteInput != null) {
-                bundle.putParcelable(KEY_REMOTE_INPUT, new RemoteInput.Builder(remoteInput.getResultKey()).setLabel(remoteInput.getLabel()).setChoices(remoteInput.getChoices()).setAllowFreeFormInput(remoteInput.getAllowFreeFormInput()).addExtras(remoteInput.getExtras()).build());
+                bundle.putParcelable(KEY_REMOTE_INPUT, new android.app.RemoteInput.Builder(remoteInput.getResultKey()).setLabel(remoteInput.getLabel()).setChoices(remoteInput.getChoices()).setAllowFreeFormInput(remoteInput.getAllowFreeFormInput()).addExtras(remoteInput.getExtras()).build());
             }
             bundle.putParcelable(KEY_ON_REPLY, unreadConversation.getReplyPendingIntent());
             bundle.putParcelable(KEY_ON_READ, unreadConversation.getReadPendingIntent());

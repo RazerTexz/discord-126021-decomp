@@ -25,8 +25,6 @@ import com.discord.utilities.view.extensions.ViewExtensions;
 import com.discord.utilities.view.text.LinkifiedTextView;
 import com.discord.utilities.viewbinding.FragmentViewBindingDelegate;
 import com.discord.utilities.viewbinding.FragmentViewBindingDelegateKt;
-import com.discord.widgets.directories.DirectoryChannelItem;
-import com.discord.widgets.directories.WidgetDirectoriesSearchViewModel;
 import com.discord.widgets.hubs.WidgetHubAddServer;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.textfield.TextInputEditText;

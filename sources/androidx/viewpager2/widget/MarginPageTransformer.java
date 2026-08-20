@@ -6,7 +6,6 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Px;
 import androidx.core.util.Preconditions;
 import androidx.recyclerview.widget.RecyclerView;
-import androidx.viewpager2.widget.ViewPager2;
 
 /* JADX INFO: loaded from: classes.dex */
 public final class MarginPageTransformer implements ViewPager2.PageTransformer {

@@ -23,7 +23,6 @@ import com.discord.utilities.view.extensions.ViewExtensions;
 import com.discord.utilities.viewbinding.FragmentViewBindingDelegate;
 import com.discord.utilities.viewbinding.FragmentViewBindingDelegateKt;
 import com.discord.widgets.channels.settings.WidgetChannelNotificationSettings;
-import com.discord.widgets.servers.SettingsChannelListAdapter;
 import com.google.android.material.textfield.TextInputLayout;
 import java.util.ArrayList;
 import java.util.Collection;

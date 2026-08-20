@@ -4,7 +4,6 @@ import android.widget.TextView;
 import androidx.recyclerview.widget.RecyclerView;
 import com.discord.C5419R;
 import com.discord.databinding.WidgetChannelMembersListItemHeaderBinding;
-import com.discord.widgets.channels.memberlist.adapter.ChannelMembersListAdapter;
 import kotlin.NoWhenBranchMatchedException;
 import p507d0.p592z.p594d.C12238m;
 

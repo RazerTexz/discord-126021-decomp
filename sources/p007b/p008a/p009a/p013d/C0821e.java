@@ -2,7 +2,6 @@ package p007b.p008a.p009a.p013d;
 
 import com.discord.models.member.GuildMember;
 import com.discord.models.user.User;
-import p007b.p008a.p009a.p013d.C0822f;
 import p658rx.functions.Func3;
 
 /* JADX INFO: renamed from: b.a.a.d.e */

@@ -14,7 +14,6 @@ import com.discord.stores.StoreVoiceParticipants;
 import com.discord.utilities.guilds.RoleUtils;
 import com.discord.utilities.p501rx.ObservableExtensionsKt;
 import com.discord.widgets.stage.StageRoles;
-import com.discord.widgets.stage.model.StageCallModel;
 import com.discord.widgets.voice.fullscreen.stage.StageCallItem;
 import java.util.ArrayList;
 import java.util.Collection;

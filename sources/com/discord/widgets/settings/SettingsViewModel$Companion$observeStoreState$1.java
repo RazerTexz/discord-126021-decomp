@@ -8,7 +8,6 @@ import com.discord.stores.StoreSubscriptions;
 import com.discord.stores.StoreUser;
 import com.discord.stores.StoreUserPresence;
 import com.discord.widgets.guild_role_subscriptions.GuildRoleSubscriptionsFeatureFlag;
-import com.discord.widgets.settings.SettingsViewModel;
 import kotlin.jvm.functions.Function0;
 import p507d0.p592z.p594d.AbstractC12240o;
 

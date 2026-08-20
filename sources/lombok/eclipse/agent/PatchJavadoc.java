@@ -14,7 +14,7 @@ import org.eclipse.jdt.internal.core.CompilationUnit;
 import org.eclipse.jdt.internal.core.SourceMethod;
 import org.eclipse.jdt.internal.ui.text.javadoc.JavadocContentAccess2;
 
-/* JADX INFO: loaded from: app.apk:lombok/eclipse/agent/PatchJavadoc.SCL.lombok */
+/* JADX INFO: loaded from: discord-126021.apk:lombok/eclipse/agent/PatchJavadoc.SCL.lombok */
 public class PatchJavadoc {
     public static String getHTMLContentFromSource(String original, IJavaElement member) {
         if (original != null) {
@@ -68,7 +68,7 @@ public class PatchJavadoc {
         return sb.toString();
     }
 
-    /* JADX INFO: loaded from: app.apk:lombok/eclipse/agent/PatchJavadoc$Reflection.SCL.lombok */
+    /* JADX INFO: loaded from: discord-126021.apk:lombok/eclipse/agent/PatchJavadoc$Reflection.SCL.lombok */
     private static class Reflection {
         private static final Method javadoc2HTML;
         private static final Method oldJavadoc2HTML;

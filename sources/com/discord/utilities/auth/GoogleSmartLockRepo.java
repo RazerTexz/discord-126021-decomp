@@ -4,7 +4,6 @@ import com.discord.models.domain.ModelAuditLogEntry;
 import com.discord.stores.StoreAuthentication;
 import com.discord.stores.StoreStream;
 import com.discord.utilities.analytics.AnalyticsTracker;
-import com.discord.utilities.auth.GoogleSmartLockManager;
 import com.discord.utilities.error.Error;
 import com.discord.utilities.p501rx.ObservableExtensionsKt;
 import com.discord.widgets.settings.account.WidgetSettingsAccountChangePassword;

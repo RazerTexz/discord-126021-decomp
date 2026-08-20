@@ -39,8 +39,6 @@ import com.discord.utilities.textprocessing.MessagePreprocessor;
 import com.discord.utilities.textprocessing.MessageRenderContext;
 import com.discord.utilities.time.Clock;
 import com.discord.utilities.time.ClockFactory;
-import com.discord.widgets.mobile_reports.MobileReportArgs;
-import com.discord.widgets.mobile_reports.MobileReportsViewModel;
 import com.facebook.drawee.span.DraweeSpanStringBuilder;
 import java.lang.ref.WeakReference;
 import java.util.Collection;

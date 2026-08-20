@@ -1,9 +1,7 @@
 package p007b.p225i.p226a.p288f.p291b;
 
 import android.util.Log;
-import java.lang.Thread;
 import java.util.concurrent.FutureTask;
-import p007b.p225i.p226a.p288f.p291b.C3180f;
 
 /* JADX INFO: Add missing generic type declarations: [T] */
 /* JADX INFO: renamed from: b.i.a.f.b.h */

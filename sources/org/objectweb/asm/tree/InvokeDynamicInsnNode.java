@@ -5,7 +5,7 @@ import org.objectweb.asm.Handle;
 import org.objectweb.asm.MethodVisitor;
 import org.objectweb.asm.Opcodes;
 
-/* JADX INFO: loaded from: app.apk:org/objectweb/asm/tree/InvokeDynamicInsnNode.SCL.lombok */
+/* JADX INFO: loaded from: discord-126021.apk:org/objectweb/asm/tree/InvokeDynamicInsnNode.SCL.lombok */
 public class InvokeDynamicInsnNode extends AbstractInsnNode {
     public String name;
     public String desc;

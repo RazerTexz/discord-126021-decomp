@@ -1,6 +1,5 @@
 package com.discord.utilities.experiments;
 
-import com.discord.utilities.experiments.RegisteredExperiment;
 import java.util.LinkedHashMap;
 import p507d0.p580t.C12147n;
 

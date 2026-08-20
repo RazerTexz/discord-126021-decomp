@@ -5,7 +5,7 @@ import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 
-/* JADX INFO: loaded from: app.apk:lombok/eclipse/DeferUntilPostDiet.SCL.lombok */
+/* JADX INFO: loaded from: discord-126021.apk:lombok/eclipse/DeferUntilPostDiet.SCL.lombok */
 @Target({ElementType.TYPE})
 @Retention(RetentionPolicy.RUNTIME)
 public @interface DeferUntilPostDiet {

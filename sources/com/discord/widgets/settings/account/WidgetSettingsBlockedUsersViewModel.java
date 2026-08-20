@@ -11,7 +11,6 @@ import com.discord.utilities.mg_recycler.MGRecyclerDataPayload;
 import com.discord.utilities.p501rx.ObservableExtensionsKt;
 import com.discord.utilities.rest.RestAPI;
 import com.discord.utilities.user.UserUtils;
-import com.discord.widgets.settings.account.WidgetSettingsBlockedUsersViewModel;
 import java.util.Comparator;
 import java.util.LinkedHashMap;
 import java.util.List;

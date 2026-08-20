@@ -8,7 +8,6 @@ import android.view.View;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import com.discord.C5419R;
 import com.discord.databinding.EmptyFriendsStateViewBinding;
-import com.discord.widgets.friends.WidgetFriendsAdd;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import p507d0.p592z.p594d.C12238m;
 

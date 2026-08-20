@@ -17,7 +17,6 @@ import com.discord.stores.updates.ObservationDeck;
 import com.discord.stores.updates.ObservationDeckProvider;
 import com.discord.utilities.p501rx.ObservableExtensionsKt;
 import com.discord.utilities.permissions.PermissionUtils;
-import com.discord.widgets.channels.permissions.WidgetChannelSettingsEditPermissionsModel;
 import com.discord.widgets.chat.list.NewThreadsPermissionsFeatureFlag;
 import java.util.ArrayList;
 import java.util.List;

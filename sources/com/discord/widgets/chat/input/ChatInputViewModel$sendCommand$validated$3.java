@@ -1,6 +1,5 @@
 package com.discord.widgets.chat.input;
 
-import com.discord.widgets.chat.input.ChatInputViewModel;
 import kotlin.Unit;
 import kotlin.jvm.functions.Function0;
 import kotlin.jvm.functions.Function2;

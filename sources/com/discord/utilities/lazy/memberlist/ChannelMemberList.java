@@ -3,7 +3,6 @@ package com.discord.utilities.lazy.memberlist;
 import androidx.annotation.VisibleForTesting;
 import com.discord.models.domain.ModelGuildMemberListUpdate;
 import com.discord.utilities.collections.SparseMutableList;
-import com.discord.utilities.lazy.memberlist.MemberListRow;
 import com.discord.utilities.logging.Logger;
 import java.util.HashMap;
 import java.util.LinkedHashMap;

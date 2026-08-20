@@ -3,7 +3,6 @@ package com.discord.widgets.chat.list.sheet;
 import com.discord.api.commands.ApplicationCommandData;
 import com.discord.api.commands.ApplicationCommandValue;
 import com.discord.widgets.chat.input.MentionUtilsKt;
-import com.discord.widgets.chat.list.sheet.WidgetApplicationCommandBottomSheetViewModel;
 import java.util.List;
 import java.util.Map;
 import kotlin.jvm.functions.Function1;

@@ -17,9 +17,6 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.TimeUnit;
-import org.webrtc.EglBase;
-import org.webrtc.GlUtil;
-import org.webrtc.RendererCommon;
 import p617h0.p628c.C12477n0;
 
 /* JADX INFO: loaded from: classes3.dex */

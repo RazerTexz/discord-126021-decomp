@@ -15,7 +15,6 @@ import androidx.core.app.NotificationCompat;
 import com.discord.models.domain.ModelAuditLogEntry;
 import com.discord.utilities.logging.Logger;
 import com.discord.utilities.logging.LoggingProvider;
-import com.discord.utilities.system.RemoteIntentService;
 import com.discord.utilities.time.NtpClock;
 import java.util.Objects;
 import kotlin.jvm.internal.DefaultConstructorMarker;

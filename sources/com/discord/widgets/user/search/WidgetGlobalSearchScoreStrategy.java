@@ -4,7 +4,6 @@ import com.discord.api.channel.Channel;
 import com.discord.api.presence.ClientStatus;
 import com.discord.models.guild.Guild;
 import com.discord.models.presence.Presence;
-import com.discord.widgets.user.search.WidgetGlobalSearchModel;
 import java.util.Collection;
 import p507d0.p580t.C12163u;
 import p507d0.p592z.p594d.C12238m;

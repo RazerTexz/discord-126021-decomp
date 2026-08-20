@@ -5,7 +5,6 @@ import com.discord.api.guild.GuildFeature;
 import com.discord.api.guild.GuildHubType;
 import com.discord.models.domain.Model;
 import com.discord.models.experiments.domain.ExperimentHash;
-import com.discord.models.experiments.dto.GuildExperimentFilter;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;

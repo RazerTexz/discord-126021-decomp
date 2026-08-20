@@ -26,10 +26,9 @@ import javax.lang.model.type.TypeVisitor;
 import lombok.core.ClassLiteral;
 import lombok.core.FieldSelect;
 import lombok.core.JavaIdentifiers;
-import lombok.javac.JavacTreeMaker;
 import lombok.permit.Permit;
 
-/* JADX INFO: loaded from: app.apk:lombok/javac/Javac.SCL.lombok */
+/* JADX INFO: loaded from: discord-126021.apk:lombok/javac/Javac.SCL.lombok */
 public class Javac {
     private static final Pattern VERSION_PARSER = Pattern.compile("^(\\d{1,6})\\.?(\\d{1,6})?.*$");
     private static final Pattern SOURCE_PARSER = Pattern.compile("^JDK(\\d{1,6})_?(\\d{1,6})?.*$");
@@ -305,7 +304,7 @@ public class Javac {
         }
     }
 
-    /* JADX INFO: loaded from: app.apk:lombok/javac/Javac$JavadocOps_8.SCL.lombok */
+    /* JADX INFO: loaded from: discord-126021.apk:lombok/javac/Javac$JavadocOps_8.SCL.lombok */
     private static class JavadocOps_8 {
         private JavadocOps_8() {
         }
@@ -431,7 +430,7 @@ public class Javac {
         }
     }
 
-    /* JADX INFO: loaded from: app.apk:lombok/javac/Javac$JCNoType.SCL.lombok */
+    /* JADX INFO: loaded from: discord-126021.apk:lombok/javac/Javac$JCNoType.SCL.lombok */
     private static class JCNoType extends Type implements NoType {
         public JCNoType(int tag) {
             super(tag, (Symbol.TypeSymbol) null);

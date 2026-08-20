@@ -9,7 +9,6 @@ import com.discord.stores.StoreGuilds;
 import com.discord.stores.StorePermissions;
 import com.discord.stores.StoreUser;
 import com.discord.utilities.stage.StageChannelUtils;
-import com.discord.widgets.channels.permissions.WidgetStageChannelModeratorPermissionsViewModel;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;

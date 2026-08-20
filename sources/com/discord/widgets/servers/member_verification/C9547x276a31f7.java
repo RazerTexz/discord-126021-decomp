@@ -1,7 +1,6 @@
 package com.discord.widgets.servers.member_verification;
 
 import com.discord.utilities.mg_recycler.MGRecyclerDataPayload;
-import com.discord.widgets.servers.member_verification.MemberVerificationRulesAdapter;
 import com.discord.widgets.servers.member_verification.form_fields.MemberVerificationItemMultipleChoice;
 import kotlin.Unit;
 import kotlin.jvm.functions.Function1;

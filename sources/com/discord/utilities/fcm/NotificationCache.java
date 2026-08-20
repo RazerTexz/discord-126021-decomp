@@ -2,7 +2,6 @@ package com.discord.utilities.fcm;
 
 import android.annotation.SuppressLint;
 import com.discord.app.AppLog;
-import com.discord.utilities.fcm.NotificationData;
 import com.discord.utilities.logging.Logger;
 import com.discord.utilities.persister.Persister;
 import java.util.ArrayList;

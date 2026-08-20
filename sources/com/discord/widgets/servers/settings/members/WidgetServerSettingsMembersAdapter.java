@@ -14,8 +14,6 @@ import com.discord.utilities.mg_recycler.MGRecyclerAdapterSimple;
 import com.discord.utilities.mg_recycler.MGRecyclerViewHolder;
 import com.discord.views.user.SettingsMemberView;
 import com.discord.widgets.roles.RolesListView;
-import com.discord.widgets.servers.settings.members.WidgetServerSettingsMembersAdapter;
-import com.discord.widgets.servers.settings.members.WidgetServerSettingsMembersModel;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;

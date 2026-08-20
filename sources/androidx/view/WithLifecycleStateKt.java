@@ -1,6 +1,5 @@
 package androidx.view;
 
-import androidx.view.Lifecycle;
 import kotlin.coroutines.Continuation;
 import kotlin.jvm.functions.Function0;
 import kotlinx.coroutines.CancellableContinuation;

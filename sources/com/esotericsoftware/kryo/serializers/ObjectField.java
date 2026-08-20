@@ -6,7 +6,6 @@ import com.esotericsoftware.kryo.Registration;
 import com.esotericsoftware.kryo.Serializer;
 import com.esotericsoftware.kryo.p502io.Input;
 import com.esotericsoftware.kryo.p502io.Output;
-import com.esotericsoftware.kryo.serializers.FieldSerializer;
 import java.lang.reflect.Field;
 import p007b.p100d.p104b.p105a.C1643a;
 import p007b.p106e.p107a.C1644a;

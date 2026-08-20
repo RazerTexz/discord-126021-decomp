@@ -62,8 +62,6 @@ import com.discord.widgets.stage.usersheet.UserProfileStageActionsView;
 import com.discord.widgets.user.presence.ModelRichPresence;
 import com.discord.widgets.user.profile.UserProfileAdminView;
 import com.discord.widgets.user.profile.UserProfileConnectionsView;
-import com.discord.widgets.user.usersheet.UserProfileVoiceSettingsView;
-import com.discord.widgets.user.usersheet.WidgetUserSheet;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.LinkedHashSet;

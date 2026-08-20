@@ -16,7 +16,6 @@ import p007b.p225i.p226a.p242c.C2811j1;
 import p007b.p225i.p226a.p242c.p259f3.C2734c0;
 import p007b.p225i.p226a.p242c.p259f3.C2757x;
 import p007b.p225i.p226a.p242c.p260g3.InterfaceC2784u;
-import p007b.p225i.p226a.p242c.p260g3.p261z.C2796h;
 
 /* JADX INFO: renamed from: b.i.a.c.g3.z.j */
 /* JADX INFO: compiled from: SceneRenderer.java */

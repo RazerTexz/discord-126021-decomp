@@ -2,7 +2,6 @@ package androidx.arch.core.internal;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.RestrictTo;
-import androidx.arch.core.internal.SafeIterableMap;
 import java.util.HashMap;
 import java.util.Map;
 

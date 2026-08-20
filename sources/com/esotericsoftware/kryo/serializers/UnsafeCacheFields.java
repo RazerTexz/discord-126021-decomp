@@ -5,7 +5,6 @@ import com.esotericsoftware.kryo.p502io.Input;
 import com.esotericsoftware.kryo.p502io.Output;
 import com.esotericsoftware.kryo.p502io.UnsafeMemoryOutput;
 import com.esotericsoftware.kryo.p502io.UnsafeOutput;
-import com.esotericsoftware.kryo.serializers.FieldSerializer;
 import com.esotericsoftware.kryo.util.UnsafeUtil;
 import java.lang.reflect.Field;
 import p007b.p100d.p104b.p105a.C1643a;

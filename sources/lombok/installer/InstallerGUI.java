@@ -50,10 +50,9 @@ import javax.swing.UIManager;
 import javax.swing.border.Border;
 import javax.swing.filechooser.FileFilter;
 import lombok.core.Version;
-import lombok.installer.OsUtils;
 import org.objectweb.asm.Opcodes;
 
-/* JADX INFO: loaded from: app.apk:lombok/installer/InstallerGUI.SCL.lombok */
+/* JADX INFO: loaded from: discord-126021.apk:lombok/installer/InstallerGUI.SCL.lombok */
 public class InstallerGUI {
     private static final int INSTALLER_WINDOW_WIDTH = 662;
     static final AtomicReference<Integer> exitMarker = new AtomicReference<>();
@@ -644,7 +643,7 @@ public class InstallerGUI {
         this.installButton.setEnabled(installAvailable);
     }
 
-    /* JADX INFO: loaded from: app.apk:lombok/installer/InstallerGUI$IdesList.SCL.lombok */
+    /* JADX INFO: loaded from: discord-126021.apk:lombok/installer/InstallerGUI$IdesList.SCL.lombok */
     private class IdesList extends JPanel implements Scrollable {
         private static final long serialVersionUID = 1;
         List<IdeLocation> locations = new ArrayList();
@@ -842,7 +841,7 @@ public class InstallerGUI {
         }
     }
 
-    /* JADX INFO: loaded from: app.apk:lombok/installer/InstallerGUI$JHyperLink.SCL.lombok */
+    /* JADX INFO: loaded from: discord-126021.apk:lombok/installer/InstallerGUI$JHyperLink.SCL.lombok */
     private static class JHyperLink extends JButton {
         private static final long serialVersionUID = 1;
 

@@ -31,7 +31,6 @@ import com.discord.utilities.viewbinding.FragmentViewBindingDelegate;
 import com.discord.utilities.viewbinding.FragmentViewBindingDelegateKt;
 import com.discord.widgets.channels.SimpleMembersAdapter;
 import com.discord.widgets.channels.SimpleRolesAdapter;
-import com.discord.widgets.channels.permissions.WidgetChannelSettingsEditPermissions;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Iterator;

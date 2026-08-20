@@ -1,6 +1,6 @@
 package org.objectweb.asm;
 
-/* JADX INFO: loaded from: app.apk:org/objectweb/asm/CurrentFrame.SCL.lombok */
+/* JADX INFO: loaded from: discord-126021.apk:org/objectweb/asm/CurrentFrame.SCL.lombok */
 final class CurrentFrame extends Frame {
     CurrentFrame(Label owner) {
         super(owner);

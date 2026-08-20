@@ -15,7 +15,6 @@ import com.discord.utilities.analytics.AnalyticsTracker;
 import com.discord.utilities.view.text.LinkifiedTextView;
 import com.discord.utilities.viewbinding.FragmentViewBindingDelegate;
 import com.discord.utilities.viewbinding.FragmentViewBindingDelegateKt;
-import com.discord.widgets.guilds.create.WidgetGuildCreate;
 import com.discord.widgets.nux.GuildTemplateAnalytics;
 import com.google.android.material.card.MaterialCardView;
 import kotlin.Lazy;

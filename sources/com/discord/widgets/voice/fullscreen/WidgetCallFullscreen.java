@@ -114,8 +114,6 @@ import com.discord.widgets.voice.controls.VoiceControlsSheetView;
 import com.discord.widgets.voice.controls.WidgetScreenShareNfxSheet;
 import com.discord.widgets.voice.feedback.call.CallFeedbackSheetNavigator;
 import com.discord.widgets.voice.feedback.stream.StreamFeedbackSheetNavigator;
-import com.discord.widgets.voice.fullscreen.CallParticipant;
-import com.discord.widgets.voice.fullscreen.WidgetCallFullscreenViewModel;
 import com.discord.widgets.voice.fullscreen.grid.VideoCallGridAdapter;
 import com.discord.widgets.voice.fullscreen.grid.VideoCallGridLayoutManager;
 import com.discord.widgets.voice.fullscreen.stage.StageCallAdapter;

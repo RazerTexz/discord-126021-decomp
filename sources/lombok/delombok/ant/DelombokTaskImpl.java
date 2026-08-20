@@ -11,7 +11,7 @@ import org.apache.tools.ant.Location;
 import org.apache.tools.ant.types.Path;
 import org.apache.tools.ant.types.resources.FileResource;
 
-/* JADX INFO: loaded from: app.apk:lombok/delombok/ant/DelombokTaskImpl.SCL.lombok */
+/* JADX INFO: loaded from: discord-126021.apk:lombok/delombok/ant/DelombokTaskImpl.SCL.lombok */
 public class DelombokTaskImpl {
     private File fromDir;
     private File toDir;

@@ -23,8 +23,6 @@ import androidx.annotation.RestrictTo;
 import androidx.annotation.VisibleForTesting;
 import androidx.appcompat.widget.ActivityChooserModel;
 import androidx.core.content.ContextCompat;
-import androidx.core.content.p004pm.ShortcutInfoCompat;
-import androidx.core.content.p004pm.ShortcutInfoCompatSaver;
 import androidx.core.graphics.drawable.IconCompat;
 import androidx.core.util.Preconditions;
 import java.io.InputStream;

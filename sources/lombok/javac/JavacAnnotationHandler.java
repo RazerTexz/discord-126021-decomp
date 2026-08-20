@@ -6,7 +6,7 @@ import java.lang.annotation.Annotation;
 import lombok.core.AnnotationValues;
 import lombok.core.SpiLoadUtil;
 
-/* JADX INFO: loaded from: app.apk:lombok/javac/JavacAnnotationHandler.SCL.lombok */
+/* JADX INFO: loaded from: discord-126021.apk:lombok/javac/JavacAnnotationHandler.SCL.lombok */
 public abstract class JavacAnnotationHandler<T extends Annotation> {
     protected Trees trees;
 

@@ -4,7 +4,6 @@ import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.os.Parcel;
 import android.os.Parcelable;
-import androidx.fragment.app.FragmentManager;
 import java.util.ArrayList;
 
 /* JADX INFO: loaded from: classes.dex */

@@ -2,8 +2,6 @@ package p007b.p109f.p161j.p181p;
 
 import java.util.Objects;
 import java.util.concurrent.Future;
-import p007b.p109f.p161j.p181p.C2000n0;
-import p007b.p109f.p161j.p181p.InterfaceC2002o0;
 
 /* JADX INFO: renamed from: b.f.j.p.z */
 /* JADX INFO: compiled from: HttpUrlConnectionNetworkFetcher.java */

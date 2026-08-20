@@ -5,7 +5,6 @@ import android.content.res.TypedArray;
 import android.util.AttributeSet;
 import android.util.Log;
 import android.view.ViewGroup;
-import androidx.constraintlayout.widget.ConstraintLayout;
 
 /* JADX INFO: loaded from: classes.dex */
 public class Constraints extends ViewGroup {

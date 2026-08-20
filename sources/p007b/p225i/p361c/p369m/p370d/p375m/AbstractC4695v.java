@@ -5,8 +5,6 @@ import androidx.annotation.Nullable;
 import com.adjust.sdk.Constants;
 import com.google.auto.value.AutoValue;
 import java.nio.charset.Charset;
-import p007b.p225i.p361c.p369m.p370d.p375m.C4675b;
-import p007b.p225i.p361c.p369m.p370d.p375m.C4679f;
 
 /* JADX INFO: renamed from: b.i.c.m.d.m.v */
 /* JADX INFO: compiled from: CrashlyticsReport.java */

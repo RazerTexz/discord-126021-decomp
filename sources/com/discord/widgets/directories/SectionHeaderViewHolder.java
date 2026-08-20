@@ -2,7 +2,6 @@ package com.discord.widgets.directories;
 
 import android.widget.TextView;
 import com.discord.databinding.DirectorySectionHeaderListItemBinding;
-import com.discord.widgets.directories.DirectoryChannelItem;
 import p007b.p008a.p027k.C1107b;
 import p507d0.p592z.p594d.C12238m;
 

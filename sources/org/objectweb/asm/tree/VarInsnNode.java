@@ -3,7 +3,7 @@ package org.objectweb.asm.tree;
 import java.util.Map;
 import org.objectweb.asm.MethodVisitor;
 
-/* JADX INFO: loaded from: app.apk:org/objectweb/asm/tree/VarInsnNode.SCL.lombok */
+/* JADX INFO: loaded from: discord-126021.apk:org/objectweb/asm/tree/VarInsnNode.SCL.lombok */
 public class VarInsnNode extends AbstractInsnNode {
     public int var;
 

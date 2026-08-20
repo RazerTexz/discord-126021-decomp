@@ -2,7 +2,6 @@ package com.discord.stores;
 
 import android.content.SharedPreferences;
 import com.discord.rtcconnection.mediaengine.MediaEngineConnection;
-import com.discord.stores.StoreMediaSettings;
 import com.discord.utilities.cache.SharedPreferenceExtensionsKt;
 import java.util.Objects;
 import kotlin.Pair;

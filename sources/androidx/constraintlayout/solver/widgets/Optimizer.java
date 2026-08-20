@@ -1,7 +1,6 @@
 package androidx.constraintlayout.solver.widgets;
 
 import androidx.constraintlayout.solver.LinearSystem;
-import androidx.constraintlayout.solver.widgets.ConstraintWidget;
 
 /* JADX INFO: loaded from: classes.dex */
 public class Optimizer {

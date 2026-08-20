@@ -28,7 +28,6 @@ import com.discord.utilities.textprocessing.MessageParseState;
 import com.discord.utilities.textprocessing.MessagePreprocessor;
 import com.discord.utilities.textprocessing.MessageRenderContext;
 import com.discord.utilities.textprocessing.node.SpoilerNode;
-import com.discord.widgets.channels.WidgetChannelTopicViewModel;
 import com.discord.widgets.tabs.NavigationTab;
 import java.util.ArrayList;
 import java.util.Collection;

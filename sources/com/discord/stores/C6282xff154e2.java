@@ -3,8 +3,6 @@ package com.discord.stores;
 import androidx.appcompat.widget.ActivityChooserModel;
 import com.discord.app.AppActivity;
 import com.discord.models.experiments.domain.Experiment;
-import com.discord.stores.StoreNavigation;
-import com.discord.stores.StoreNux;
 import com.discord.utilities.features.GrowthTeamFeatures;
 import com.discord.widgets.contact_sync.ContactSyncFlowAnalytics;
 import com.discord.widgets.contact_sync.ContactSyncMode;

@@ -32,11 +32,8 @@ import lombok.javac.Javac;
 import lombok.javac.JavacAnnotationHandler;
 import lombok.javac.JavacNode;
 import lombok.javac.JavacTreeMaker;
-import lombok.javac.handlers.HandleBuilder;
-import lombok.javac.handlers.JavacHandlerUtil;
-import lombok.javac.handlers.JavacSingularsRecipes;
 
-/* JADX INFO: loaded from: app.apk:lombok/javac/handlers/HandleSuperBuilder.SCL.lombok */
+/* JADX INFO: loaded from: discord-126021.apk:lombok/javac/handlers/HandleSuperBuilder.SCL.lombok */
 @HandlerPriority(-1024)
 public class HandleSuperBuilder extends JavacAnnotationHandler<SuperBuilder> {
     private static final String SELF_METHOD = "self";
@@ -71,7 +68,7 @@ public class HandleSuperBuilder extends JavacAnnotationHandler<SuperBuilder> {
         return iArr2;
     }
 
-    /* JADX INFO: loaded from: app.apk:lombok/javac/handlers/HandleSuperBuilder$SuperBuilderJob.SCL.lombok */
+    /* JADX INFO: loaded from: discord-126021.apk:lombok/javac/handlers/HandleSuperBuilder$SuperBuilderJob.SCL.lombok */
     class SuperBuilderJob extends HandleBuilder.BuilderJob {
         JavacNode builderAbstractType;
         String builderAbstractClassName;

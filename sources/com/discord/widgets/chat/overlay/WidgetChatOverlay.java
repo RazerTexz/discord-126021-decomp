@@ -34,8 +34,6 @@ import com.discord.views.typing.TypingDots;
 import com.discord.widgets.chat.MessageManager;
 import com.discord.widgets.chat.input.AppFlexInputViewModel;
 import com.discord.widgets.chat.input.ChatInputViewModel;
-import com.discord.widgets.chat.overlay.ChatTypingModel;
-import com.discord.widgets.chat.overlay.WidgetChatOverlay;
 import com.lytefast.flexinput.viewmodel.FlexInputState;
 import java.util.List;
 import java.util.concurrent.TimeUnit;

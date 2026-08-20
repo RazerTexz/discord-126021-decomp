@@ -22,8 +22,6 @@ import com.discord.utilities.viewbinding.FragmentViewBindingDelegate;
 import com.discord.utilities.viewbinding.FragmentViewBindingDelegateKt;
 import com.discord.views.CheckedSetting;
 import com.discord.widgets.channels.WidgetChannelSelector;
-import com.discord.widgets.guildscheduledevent.WidgetGuildScheduledEventLocationSelectViewModel;
-import com.discord.widgets.guildscheduledevent.WidgetGuildScheduledEventSettings;
 import com.google.android.material.button.MaterialButton;
 import com.google.android.material.textfield.TextInputEditText;
 import com.google.android.material.textfield.TextInputLayout;

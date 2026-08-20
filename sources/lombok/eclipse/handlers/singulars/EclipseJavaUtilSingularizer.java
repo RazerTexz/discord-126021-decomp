@@ -34,7 +34,7 @@ import org.eclipse.jdt.internal.compiler.ast.ThisReference;
 import org.eclipse.jdt.internal.compiler.ast.TypeReference;
 import org.eclipse.jdt.internal.compiler.lookup.TypeConstants;
 
-/* JADX INFO: loaded from: app.apk:lombok/eclipse/handlers/singulars/EclipseJavaUtilSingularizer.SCL.lombok */
+/* JADX INFO: loaded from: discord-126021.apk:lombok/eclipse/handlers/singulars/EclipseJavaUtilSingularizer.SCL.lombok */
 abstract class EclipseJavaUtilSingularizer extends EclipseSingularsRecipes.EclipseSingularizer {
     protected static final char[][] JAVA_UTIL_ARRAYLIST = {new char[]{'j', 'a', 'v', 'a'}, new char[]{'u', 't', 'i', 'l'}, new char[]{'A', 'r', 'r', 'a', 'y', 'L', 'i', 's', 't'}};
     protected static final char[][] JAVA_UTIL_LIST = {new char[]{'j', 'a', 'v', 'a'}, new char[]{'u', 't', 'i', 'l'}, new char[]{'L', 'i', 's', 't'}};

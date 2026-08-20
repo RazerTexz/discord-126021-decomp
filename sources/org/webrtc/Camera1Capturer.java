@@ -1,8 +1,6 @@
 package org.webrtc;
 
 import android.content.Context;
-import org.webrtc.CameraSession;
-import org.webrtc.CameraVideoCapturer;
 
 /* JADX INFO: loaded from: classes3.dex */
 public class Camera1Capturer extends CameraCapturer {

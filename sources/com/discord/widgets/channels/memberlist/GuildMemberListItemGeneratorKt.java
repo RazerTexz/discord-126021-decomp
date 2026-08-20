@@ -17,7 +17,6 @@ import com.discord.utilities.lazy.memberlist.MemberList;
 import com.discord.utilities.lazy.memberlist.MemberListRow;
 import com.discord.utilities.permissions.PermissionUtils;
 import com.discord.utilities.presence.PresenceUtils;
-import com.discord.widgets.channels.memberlist.WidgetChannelMembersListViewModel;
 import com.discord.widgets.channels.memberlist.adapter.ChannelMembersListAdapter;
 import com.discord.widgets.forums.ForumUtils;
 import java.util.Iterator;

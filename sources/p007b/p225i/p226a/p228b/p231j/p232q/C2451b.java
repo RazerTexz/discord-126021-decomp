@@ -2,7 +2,6 @@ package p007b.p225i.p226a.p228b.p231j.p232q;
 
 import java.util.Objects;
 import p007b.p100d.p104b.p105a.C1643a;
-import p007b.p225i.p226a.p228b.p231j.p232q.AbstractC2456g;
 
 /* JADX INFO: renamed from: b.i.a.b.j.q.b */
 /* JADX INFO: compiled from: AutoValue_BackendResponse.java */

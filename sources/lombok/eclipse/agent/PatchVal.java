@@ -37,7 +37,7 @@ import org.eclipse.jdt.internal.compiler.lookup.TypeConstants;
 import org.eclipse.jdt.internal.compiler.lookup.TypeVariableBinding;
 import org.eclipse.jdt.internal.compiler.problem.AbortCompilation;
 
-/* JADX INFO: loaded from: app.apk:lombok/eclipse/agent/PatchVal.SCL.lombok */
+/* JADX INFO: loaded from: discord-126021.apk:lombok/eclipse/agent/PatchVal.SCL.lombok */
 public class PatchVal {
     public static TypeBinding skipResolveInitializerIfAlreadyCalled(Expression expr, BlockScope scope) {
         if (expr.resolvedType != null) {
@@ -220,7 +220,7 @@ public class PatchVal {
         return matches(key, fullName);
     }
 
-    /* JADX INFO: loaded from: app.apk:lombok/eclipse/agent/PatchVal$Reflection.SCL.lombok */
+    /* JADX INFO: loaded from: discord-126021.apk:lombok/eclipse/agent/PatchVal$Reflection.SCL.lombok */
     public static final class Reflection {
         private static final Field initCopyField;
         private static final Field iterableCopyField;

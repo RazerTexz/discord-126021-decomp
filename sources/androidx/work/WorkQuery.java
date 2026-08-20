@@ -2,7 +2,6 @@ package androidx.work;
 
 import android.annotation.SuppressLint;
 import androidx.annotation.NonNull;
-import androidx.work.WorkInfo;
 import java.util.ArrayList;
 import java.util.List;
 

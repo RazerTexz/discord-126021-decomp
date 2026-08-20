@@ -37,17 +37,13 @@ public abstract class AbstractC1965b<T> implements InterfaceC1995l<T> {
     @Override // p007b.p109f.p161j.p181p.InterfaceC1995l
     /* JADX INFO: renamed from: a */
     public synchronized void mo1423a(float f) {
+        if (this.f3993a) {
+            return;
+        }
         try {
-            if (this.f3993a) {
-                return;
-            }
-            try {
-                mo1321j(f);
-            } catch (Exception e) {
-                m1427k(e);
-            }
-        } catch (Throwable th) {
-            throw th;
+            mo1321j(f);
+        } catch (Exception e) {
+            m1427k(e);
         }
     }
 

@@ -7,7 +7,6 @@ import androidx.constraintlayout.solver.widgets.ConstraintAnchor;
 import androidx.constraintlayout.solver.widgets.ConstraintWidget;
 import androidx.constraintlayout.solver.widgets.ConstraintWidgetContainer;
 import androidx.constraintlayout.solver.widgets.Guideline;
-import androidx.constraintlayout.solver.widgets.analyzer.BasicMeasure;
 import java.util.ArrayList;
 import java.util.Iterator;
 

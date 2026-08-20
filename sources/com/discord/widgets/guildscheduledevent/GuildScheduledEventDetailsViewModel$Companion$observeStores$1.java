@@ -19,7 +19,6 @@ import com.discord.stores.utilities.RestCallState;
 import com.discord.utilities.guildscheduledevent.GuildScheduledEventUtilities;
 import com.discord.utilities.guildscheduledevent.GuildScheduledEventUtilitiesKt;
 import com.discord.utilities.permissions.PermissionUtils;
-import com.discord.widgets.guildscheduledevent.GuildScheduledEventDetailsViewModel;
 import java.util.Iterator;
 import java.util.List;
 import kotlin.NoWhenBranchMatchedException;

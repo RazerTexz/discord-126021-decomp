@@ -9,7 +9,6 @@ import com.discord.api.voice.state.VoiceState;
 import com.discord.app.AppComponent;
 import com.discord.models.domain.ModelCall;
 import com.discord.models.user.User;
-import com.discord.stores.StoreStream;
 import com.discord.utilities.error.Error;
 import com.discord.utilities.p501rx.ObservableExtensionsKt;
 import com.discord.utilities.rest.RestAPI;

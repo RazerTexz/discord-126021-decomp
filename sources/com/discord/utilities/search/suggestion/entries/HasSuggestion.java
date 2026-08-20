@@ -2,7 +2,6 @@ package com.discord.utilities.search.suggestion.entries;
 
 import com.discord.utilities.search.query.node.answer.HasAnswerOption;
 import com.discord.utilities.search.strings.SearchStringProvider;
-import com.discord.utilities.search.suggestion.entries.SearchSuggestion;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import p007b.p100d.p104b.p105a.C1643a;
 import p507d0.p579g0.C12106w;

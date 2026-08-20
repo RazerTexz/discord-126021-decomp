@@ -1,7 +1,5 @@
 package androidx.recyclerview.widget;
 
-import androidx.recyclerview.widget.TileList;
-
 /* JADX INFO: loaded from: classes.dex */
 public interface ThreadUtil<T> {
 

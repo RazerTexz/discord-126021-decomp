@@ -4,8 +4,6 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import java.util.Objects;
 import p007b.p100d.p104b.p105a.C1643a;
-import p007b.p225i.p361c.p401u.p402o.AbstractC4854d;
-import p007b.p225i.p361c.p401u.p402o.C4853c;
 
 /* JADX INFO: renamed from: b.i.c.u.o.a */
 /* JADX INFO: compiled from: AutoValue_PersistedInstallationEntry.java */

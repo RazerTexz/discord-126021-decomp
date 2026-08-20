@@ -2,7 +2,6 @@ package org.webrtc;
 
 import androidx.annotation.Nullable;
 import java.util.Arrays;
-import org.webrtc.PeerConnection;
 
 /* JADX INFO: loaded from: classes3.dex */
 public class IceCandidate {

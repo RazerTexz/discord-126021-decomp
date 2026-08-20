@@ -28,10 +28,9 @@ import javax.lang.model.type.TypeKind;
 import javax.tools.JavaFileObject;
 import lombok.Lombok;
 import lombok.core.debug.AssertionLogger;
-import lombok.javac.JavacTreeMaker;
 import lombok.permit.Permit;
 
-/* JADX INFO: loaded from: app.apk:lombok/javac/JavacResolution.SCL.lombok */
+/* JADX INFO: loaded from: discord-126021.apk:lombok/javac/JavacResolution.SCL.lombok */
 public class JavacResolution {
     private final Attr attr;
     private final CompilerMessageSuppressor messageSuppressor;
@@ -129,7 +128,7 @@ public class JavacResolution {
         this.messageSuppressor = new CompilerMessageSuppressor(context);
     }
 
-    /* JADX INFO: loaded from: app.apk:lombok/javac/JavacResolution$EnvFinder.SCL.lombok */
+    /* JADX INFO: loaded from: discord-126021.apk:lombok/javac/JavacResolution$EnvFinder.SCL.lombok */
     private static final class EnvFinder extends JCTree.Visitor {
         private Enter enter;
         private MemberEnter memberEnter;
@@ -314,14 +313,14 @@ public class JavacResolution {
         this.attr.attribStat(tree, env);
     }
 
-    /* JADX INFO: loaded from: app.apk:lombok/javac/JavacResolution$TypeNotConvertibleException.SCL.lombok */
+    /* JADX INFO: loaded from: discord-126021.apk:lombok/javac/JavacResolution$TypeNotConvertibleException.SCL.lombok */
     public static class TypeNotConvertibleException extends Exception {
         public TypeNotConvertibleException(String msg) {
             super(msg);
         }
     }
 
-    /* JADX INFO: loaded from: app.apk:lombok/javac/JavacResolution$ReflectiveAccess.SCL.lombok */
+    /* JADX INFO: loaded from: discord-126021.apk:lombok/javac/JavacResolution$ReflectiveAccess.SCL.lombok */
     private static class ReflectiveAccess {
         private static Method UPPER_BOUND;
 

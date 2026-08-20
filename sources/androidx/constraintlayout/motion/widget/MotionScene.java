@@ -19,7 +19,6 @@ import android.view.animation.BounceInterpolator;
 import android.view.animation.DecelerateInterpolator;
 import android.view.animation.Interpolator;
 import androidx.constraintlayout.motion.utils.Easing;
-import androidx.constraintlayout.motion.widget.MotionLayout;
 import androidx.constraintlayout.widget.C0201R;
 import androidx.constraintlayout.widget.ConstraintSet;
 import androidx.constraintlayout.widget.StateSet;

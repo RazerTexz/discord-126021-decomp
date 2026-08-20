@@ -1,6 +1,5 @@
 package com.discord.widgets.voice.sheet;
 
-import com.discord.widgets.voice.sheet.WidgetVoiceBottomSheet;
 import java.io.Serializable;
 import java.util.Objects;
 import kotlin.jvm.functions.Function0;

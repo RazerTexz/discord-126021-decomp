@@ -27,7 +27,7 @@ import org.eclipse.jdt.internal.compiler.ast.ThisReference;
 import org.eclipse.jdt.internal.compiler.ast.TypeReference;
 import org.eclipse.jdt.internal.compiler.lookup.TypeConstants;
 
-/* JADX INFO: loaded from: app.apk:lombok/eclipse/handlers/singulars/EclipseJavaUtilListSetSingularizer.SCL.lombok */
+/* JADX INFO: loaded from: discord-126021.apk:lombok/eclipse/handlers/singulars/EclipseJavaUtilListSetSingularizer.SCL.lombok */
 abstract class EclipseJavaUtilListSetSingularizer extends EclipseJavaUtilSingularizer {
     EclipseJavaUtilListSetSingularizer() {
     }

@@ -2,7 +2,6 @@ package com.discord.widgets.guilds.create;
 
 import android.os.Parcel;
 import android.os.Parcelable;
-import com.discord.widgets.guilds.create.WidgetGuildCreate;
 import p007b.p100d.p104b.p105a.C1643a;
 import p507d0.p592z.p594d.C12238m;
 

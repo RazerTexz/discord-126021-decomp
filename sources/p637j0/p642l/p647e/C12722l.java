@@ -1,6 +1,5 @@
 package p637j0.p642l.p647e;
 
-import p637j0.p642l.p647e.C12721k;
 import p658rx.Scheduler;
 import p658rx.functions.Action0;
 

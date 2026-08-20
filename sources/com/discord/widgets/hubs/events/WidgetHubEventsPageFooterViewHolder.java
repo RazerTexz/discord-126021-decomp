@@ -5,7 +5,6 @@ import android.widget.LinearLayout;
 import com.discord.databinding.WidgetHubEventsFooterBinding;
 import com.discord.stores.utilities.Loading;
 import com.discord.views.LoadingButton;
-import com.discord.widgets.hubs.events.HubEventsPage;
 import p507d0.p592z.p594d.C12238m;
 
 /* JADX INFO: compiled from: WidgetHubEventsPageViewHolder.kt */

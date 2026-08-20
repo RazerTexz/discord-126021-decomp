@@ -7,7 +7,6 @@ import com.discord.models.domain.ModelMessageDelete;
 import com.discord.models.domain.ModelPayload;
 import com.discord.models.message.Message;
 import com.discord.models.thread.dto.ModelThreadListSync;
-import com.discord.stores.StoreMessagesLoader;
 import com.discord.stores.updates.ObservationDeck;
 import com.discord.stores.updates.ObservationDeckProvider;
 import java.util.Collection;

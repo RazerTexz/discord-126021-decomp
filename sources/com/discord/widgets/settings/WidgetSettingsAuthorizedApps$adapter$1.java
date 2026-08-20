@@ -9,7 +9,6 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.discord.C5419R;
 import com.discord.databinding.WidgetSettingsAuthorizedAppsListItemBinding;
 import com.discord.models.domain.ModelOAuth2Token;
-import com.discord.widgets.settings.WidgetSettingsAuthorizedApps;
 import com.facebook.drawee.view.SimpleDraweeView;
 import com.google.android.material.card.MaterialCardView;
 import kotlin.Unit;

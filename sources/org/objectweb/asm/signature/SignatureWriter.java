@@ -3,7 +3,7 @@ package org.objectweb.asm.signature;
 import com.discord.widgets.chat.input.MentionUtilsKt;
 import org.objectweb.asm.Opcodes;
 
-/* JADX INFO: loaded from: app.apk:org/objectweb/asm/signature/SignatureWriter.SCL.lombok */
+/* JADX INFO: loaded from: discord-126021.apk:org/objectweb/asm/signature/SignatureWriter.SCL.lombok */
 public class SignatureWriter extends SignatureVisitor {
     private final StringBuilder stringBuilder;
     private boolean hasFormals;

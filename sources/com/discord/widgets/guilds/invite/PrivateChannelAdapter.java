@@ -12,8 +12,6 @@ import com.discord.utilities.icon.IconUtils;
 import com.discord.utilities.images.MGImages;
 import com.discord.utilities.mg_recycler.MGRecyclerAdapterSimple;
 import com.discord.utilities.mg_recycler.MGRecyclerViewHolder;
-import com.discord.widgets.guilds.invite.InviteSuggestionItem;
-import com.discord.widgets.guilds.invite.PrivateChannelAdapter;
 import com.facebook.drawee.view.SimpleDraweeView;
 import com.google.android.material.button.MaterialButton;
 import kotlin.Unit;

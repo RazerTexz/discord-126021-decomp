@@ -24,7 +24,6 @@ import com.discord.utilities.dimen.DimenUtils;
 import com.discord.utilities.mg_recycler.MGRecyclerViewHolder;
 import com.discord.utilities.view.extensions.ViewExtensions;
 import com.discord.views.user.SettingsMemberView;
-import com.discord.widgets.servers.settings.invites.WidgetServerSettingsInstantInvites;
 import java.util.Arrays;
 import p507d0.p592z.p594d.C12238m;
 

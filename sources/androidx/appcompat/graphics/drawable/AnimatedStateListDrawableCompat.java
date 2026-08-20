@@ -24,8 +24,6 @@ import androidx.annotation.DrawableRes;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.annotation.RequiresApi;
-import androidx.appcompat.graphics.drawable.DrawableContainer;
-import androidx.appcompat.graphics.drawable.StateListDrawable;
 import androidx.appcompat.resources.C0080R;
 import androidx.appcompat.widget.ResourceManagerInternal;
 import androidx.collection.LongSparseArray;

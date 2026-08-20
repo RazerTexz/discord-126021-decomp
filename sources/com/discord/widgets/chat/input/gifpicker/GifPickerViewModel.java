@@ -4,7 +4,6 @@ import com.discord.models.gifpicker.domain.ModelGifCategory;
 import com.discord.stores.StoreStream;
 import com.discord.utilities.error.Error;
 import com.discord.utilities.p501rx.ObservableExtensionsKt;
-import com.discord.widgets.chat.input.gifpicker.GifCategoryItem;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;

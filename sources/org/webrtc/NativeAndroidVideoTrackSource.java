@@ -1,9 +1,6 @@
 package org.webrtc;
 
 import androidx.annotation.Nullable;
-import org.webrtc.VideoFrame;
-import org.webrtc.VideoProcessor;
-import org.webrtc.VideoSource;
 
 /* JADX INFO: loaded from: classes3.dex */
 public class NativeAndroidVideoTrackSource {

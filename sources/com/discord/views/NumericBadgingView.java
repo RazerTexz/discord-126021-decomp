@@ -11,7 +11,6 @@ import androidx.core.content.ContextCompat;
 import com.discord.C5419R;
 import com.discord.utilities.dimen.DimenUtils;
 import com.discord.utilities.font.FontUtils;
-import com.discord.views.CutoutView;
 import p007b.p085c.p086a.p087a0.C1460d;
 import p007b.p100d.p104b.p105a.C1643a;
 import p507d0.p592z.p594d.C12238m;

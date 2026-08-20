@@ -8,7 +8,6 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.work.Logger;
 import androidx.work.impl.WorkManagerImpl;
-import androidx.work.impl.background.systemalarm.ConstraintProxy;
 import androidx.work.impl.utils.PackageManagerHelper;
 
 /* JADX INFO: loaded from: classes.dex */

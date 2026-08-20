@@ -24,7 +24,6 @@ import com.discord.utilities.viewbinding.FragmentViewBindingDelegate;
 import com.discord.utilities.viewbinding.FragmentViewBindingDelegateKt;
 import com.discord.views.LoadingButton;
 import com.discord.widgets.notice.WidgetNoticeDialog;
-import com.discord.widgets.tos.WidgetTosReportViolationViewModel;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Objects;

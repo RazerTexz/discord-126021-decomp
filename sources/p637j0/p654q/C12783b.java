@@ -1,6 +1,5 @@
 package p637j0.p654q;
 
-import p637j0.p654q.C12784c;
 import p658rx.functions.Action0;
 
 /* JADX INFO: renamed from: j0.q.b */

@@ -1,7 +1,6 @@
 package com.discord.widgets.channels.list.items;
 
 import com.discord.api.channel.Channel;
-import com.discord.widgets.channels.list.items.ChannelListItem;
 import p007b.p100d.p104b.p105a.C1643a;
 import p507d0.p592z.p594d.C12238m;
 

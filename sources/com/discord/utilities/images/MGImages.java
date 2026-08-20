@@ -126,7 +126,7 @@ public final class MGImages {
         public final void invoke2(Exception exc) {
             C12238m.checkNotNullParameter(exc, "e");
             Context context = this.$context;
-            C0876m.m170h(context, context != null ? C1107b.m210b(context, C5419R.string.unable_to_open_media_chooser, new Object[]{exc.getMessage()}, (4 & 4) != 0 ? C1107b.b.f1491j : null) : null, 0, null, 12);
+            C0876m.m170h(context, context != null ? C1107b.m216h(context, C5419R.string.unable_to_open_media_chooser, new Object[]{exc.getMessage()}, null, 4) : null, 0, null, 12);
         }
     }
 
@@ -213,11 +213,11 @@ public final class MGImages {
                 }
                 C12201b.closeFinally(inputStreamOpenInputStream, null);
             } catch (IOException e) {
-                C0876m.m170h(context, C1107b.m210b(context, C5419R.string.avatar_convert_failure_mobile, new Object[]{e.getMessage()}, (4 & 4) != 0 ? C1107b.b.f1491j : null), 0, null, 12);
+                C0876m.m170h(context, C1107b.m216h(context, C5419R.string.avatar_convert_failure_mobile, new Object[]{e.getMessage()}, null, 4), 0, null, 12);
             } catch (IllegalStateException e2) {
-                C0876m.m170h(context, C1107b.m210b(context, C5419R.string.avatar_convert_failure_mobile, new Object[]{e2.getMessage()}, (4 & 4) != 0 ? C1107b.b.f1491j : null), 0, null, 12);
+                C0876m.m170h(context, C1107b.m216h(context, C5419R.string.avatar_convert_failure_mobile, new Object[]{e2.getMessage()}, null, 4), 0, null, 12);
             } catch (NullPointerException e3) {
-                C0876m.m170h(context, C1107b.m210b(context, C5419R.string.avatar_convert_failure_mobile, new Object[]{e3.getMessage()}, (4 & 4) != 0 ? C1107b.b.f1491j : null), 0, null, 12);
+                C0876m.m170h(context, C1107b.m216h(context, C5419R.string.avatar_convert_failure_mobile, new Object[]{e3.getMessage()}, null, 4), 0, null, 12);
             }
         }
     }

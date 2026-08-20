@@ -3,7 +3,6 @@ package androidx.recyclerview.widget;
 import android.annotation.SuppressLint;
 import androidx.annotation.Nullable;
 import androidx.core.os.TraceCompat;
-import androidx.recyclerview.widget.RecyclerView;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;

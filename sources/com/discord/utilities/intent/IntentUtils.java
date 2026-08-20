@@ -14,7 +14,6 @@ import com.discord.stores.StoreStream;
 import com.discord.utilities.analytics.AnalyticsTracker;
 import com.discord.utilities.analytics.AppStartAnalyticsTracker;
 import com.discord.utilities.fcm.NotificationClient;
-import com.discord.utilities.intent.RouteHandlers;
 import com.discord.utilities.logging.Logger;
 import com.discord.widgets.chat.input.MentionUtilsKt;
 import com.google.firebase.appindexing.internal.zza;

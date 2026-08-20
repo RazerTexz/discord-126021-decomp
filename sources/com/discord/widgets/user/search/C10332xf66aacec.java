@@ -3,7 +3,6 @@ package com.discord.widgets.user.search;
 import com.discord.api.channel.Channel;
 import com.discord.api.channel.ChannelUtils;
 import com.discord.models.user.User;
-import com.discord.widgets.user.search.WidgetGlobalSearchModel;
 import java.util.HashSet;
 import kotlin.jvm.functions.Function1;
 import p007b.p100d.p104b.p105a.C1643a;

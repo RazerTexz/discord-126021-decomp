@@ -25,10 +25,6 @@ import javax.microedition.khronos.opengles.GL10;
 import p007b.p225i.p226a.p242c.p259f3.C2734c0;
 import p007b.p225i.p226a.p242c.p259f3.C2738e0;
 import p007b.p225i.p226a.p242c.p260g3.InterfaceC2784u;
-import p007b.p225i.p226a.p242c.p260g3.p261z.C2795g;
-import p007b.p225i.p226a.p242c.p260g3.p261z.C2797i;
-import p007b.p225i.p226a.p242c.p260g3.p261z.C2799k;
-import p007b.p225i.p226a.p242c.p260g3.p261z.ViewOnTouchListenerC2800l;
 
 /* JADX INFO: renamed from: b.i.a.c.g3.z.k */
 /* JADX INFO: compiled from: SphericalGLSurfaceView.java */

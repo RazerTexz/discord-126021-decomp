@@ -4,7 +4,6 @@ import android.graphics.SurfaceTexture;
 import android.opengl.GLSurfaceView;
 import android.view.SurfaceHolder;
 import p007b.p452o.p453a.p467r.C5202c;
-import p007b.p452o.p453a.p472w.C5228d;
 
 /* JADX INFO: renamed from: b.o.a.w.c */
 /* JADX INFO: compiled from: GlCameraPreview.java */

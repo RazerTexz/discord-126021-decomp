@@ -14,7 +14,6 @@ import androidx.annotation.Nullable;
 import androidx.annotation.RestrictTo;
 import androidx.collection.SimpleArrayMap;
 import androidx.core.content.res.TypedArrayUtils;
-import androidx.preference.Preference;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;

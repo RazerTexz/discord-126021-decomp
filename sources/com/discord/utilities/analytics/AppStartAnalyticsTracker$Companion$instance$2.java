@@ -1,7 +1,6 @@
 package com.discord.utilities.analytics;
 
 import com.discord.stores.StoreStream;
-import com.discord.utilities.analytics.AnalyticsUtils;
 import com.discord.utilities.time.ClockFactory;
 import kotlin.jvm.functions.Function0;
 import p507d0.p592z.p594d.AbstractC12240o;

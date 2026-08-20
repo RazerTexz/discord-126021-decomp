@@ -2,7 +2,7 @@ package lombok.patcher;
 
 import java.util.Collection;
 
-/* JADX INFO: loaded from: app.apk:lombok/patcher/TargetMatcher.SCL.lombok */
+/* JADX INFO: loaded from: discord-126021.apk:lombok/patcher/TargetMatcher.SCL.lombok */
 public interface TargetMatcher {
     Collection<String> getAffectedClasses();
 

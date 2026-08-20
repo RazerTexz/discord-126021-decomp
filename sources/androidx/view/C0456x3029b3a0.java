@@ -1,6 +1,5 @@
 package androidx.view;
 
-import androidx.view.Lifecycle;
 import kotlin.Unit;
 import kotlin.jvm.functions.Function0;
 import kotlin.jvm.functions.Function1;

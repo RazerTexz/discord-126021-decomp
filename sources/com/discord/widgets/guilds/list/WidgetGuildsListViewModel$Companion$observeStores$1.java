@@ -5,7 +5,6 @@ import com.discord.models.domain.ModelNotificationSettings;
 import com.discord.stores.StoreGuildsSorted;
 import com.discord.stores.StoreStream;
 import com.discord.utilities.p501rx.ObservableExtensionsKt;
-import com.discord.widgets.guilds.list.WidgetGuildsListViewModel;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;

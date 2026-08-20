@@ -2,7 +2,6 @@ package com.discord.widgets.user.search;
 
 import com.discord.api.channel.Channel;
 import com.discord.models.guild.Guild;
-import com.discord.widgets.user.search.WidgetGlobalSearchModel;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;

@@ -13,8 +13,6 @@ import com.discord.models.user.User;
 import com.discord.utilities.icon.IconUtils;
 import com.discord.utilities.mg_recycler.MGRecyclerAdapterSimple;
 import com.discord.utilities.mg_recycler.MGRecyclerViewHolder;
-import com.discord.widgets.settings.account.WidgetSettingsBlockedUsersAdapter;
-import com.discord.widgets.settings.account.WidgetSettingsBlockedUsersViewModel;
 import com.facebook.drawee.view.SimpleDraweeView;
 import com.google.android.material.button.MaterialButton;
 import kotlin.Unit;

@@ -14,7 +14,6 @@ import com.discord.databinding.ViewGuildRoleSubscriptionChannelItemBinding;
 import com.discord.utilities.channel.GuildChannelIconUtilsKt;
 import com.discord.utilities.color.ColorCompat;
 import com.discord.utilities.color.ColorCompatKt;
-import com.discord.widgets.channels.ChannelPickerAdapterItem;
 import kotlin.Unit;
 import kotlin.jvm.functions.Function0;
 import kotlin.jvm.functions.Function1;

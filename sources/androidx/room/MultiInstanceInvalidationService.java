@@ -8,7 +8,6 @@ import android.os.RemoteException;
 import android.util.Log;
 import androidx.annotation.Nullable;
 import androidx.annotation.RestrictTo;
-import androidx.room.IMultiInstanceInvalidationService;
 import java.util.HashMap;
 
 /* JADX INFO: loaded from: classes.dex */

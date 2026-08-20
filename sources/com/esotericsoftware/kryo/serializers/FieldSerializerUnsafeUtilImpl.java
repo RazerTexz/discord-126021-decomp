@@ -1,7 +1,5 @@
 package com.esotericsoftware.kryo.serializers;
 
-import com.esotericsoftware.kryo.serializers.FieldSerializer;
-import com.esotericsoftware.kryo.serializers.UnsafeCacheFields;
 import com.esotericsoftware.kryo.util.IntArray;
 import com.esotericsoftware.kryo.util.UnsafeUtil;
 import java.lang.reflect.Field;

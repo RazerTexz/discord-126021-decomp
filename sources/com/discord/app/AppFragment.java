@@ -19,7 +19,6 @@ import androidx.appcompat.widget.Toolbar;
 import androidx.core.app.NotificationCompat;
 import androidx.fragment.app.Fragment;
 import com.discord.C5419R;
-import com.discord.app.AppLogger;
 import com.discord.media_picker.MediaPicker;
 import com.discord.media_picker.RequestType;
 import com.discord.models.domain.ModelAuditLogEntry;

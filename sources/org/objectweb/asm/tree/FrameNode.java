@@ -5,7 +5,7 @@ import java.util.List;
 import java.util.Map;
 import org.objectweb.asm.MethodVisitor;
 
-/* JADX INFO: loaded from: app.apk:org/objectweb/asm/tree/FrameNode.SCL.lombok */
+/* JADX INFO: loaded from: discord-126021.apk:org/objectweb/asm/tree/FrameNode.SCL.lombok */
 public class FrameNode extends AbstractInsnNode {
     public int type;
     public List<Object> local;

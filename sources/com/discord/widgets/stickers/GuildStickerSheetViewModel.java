@@ -17,7 +17,6 @@ import com.discord.utilities.p501rx.ObservableExtensionsKt;
 import com.discord.utilities.rest.RestAPI;
 import com.discord.utilities.user.UserUtils;
 import com.discord.widgets.guilds.join.GuildJoinHelperKt;
-import com.discord.widgets.stickers.GuildStickerSheetViewModel;
 import java.util.Map;
 import java.util.concurrent.Callable;
 import kotlin.Unit;

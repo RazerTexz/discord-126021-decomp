@@ -26,7 +26,7 @@ import lombok.javac.JavacTreeMaker;
 import lombok.javac.PackageName;
 import lombok.permit.Permit;
 
-/* JADX INFO: loaded from: app.apk:lombok/delombok/PrettyPrinter.SCL.lombok */
+/* JADX INFO: loaded from: discord-126021.apk:lombok/delombok/PrettyPrinter.SCL.lombok */
 public class PrettyPrinter extends JCTree.Visitor {
     private static final String LINE_SEP = System.getProperty("line.separator");
     private static final Map<JavacTreeMaker.TreeTag, String> OPERATORS;
@@ -582,7 +582,7 @@ public class PrettyPrinter extends JCTree.Visitor {
         return Javac.getEndPosition(tree, this.compilationUnit);
     }
 
-    /* JADX INFO: loaded from: app.apk:lombok/delombok/PrettyPrinter$UncheckedIOException.SCL.lombok */
+    /* JADX INFO: loaded from: discord-126021.apk:lombok/delombok/PrettyPrinter$UncheckedIOException.SCL.lombok */
     public static final class UncheckedIOException extends RuntimeException {
         UncheckedIOException(IOException source) {
             super(toMsg(source));

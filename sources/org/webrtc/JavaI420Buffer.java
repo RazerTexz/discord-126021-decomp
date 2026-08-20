@@ -3,7 +3,6 @@ package org.webrtc;
 import androidx.annotation.Nullable;
 import java.nio.ByteBuffer;
 import org.webrtc.JniCommon;
-import org.webrtc.VideoFrame;
 import p007b.p100d.p104b.p105a.C1643a;
 
 /* JADX INFO: loaded from: classes3.dex */

@@ -33,8 +33,6 @@ import com.discord.utilities.resources.StringResourceUtilsKt;
 import com.discord.utilities.view.extensions.ViewExtensions;
 import com.discord.views.GuildView;
 import com.discord.views.ServerFolderView;
-import com.discord.widgets.guilds.list.GuildListItem;
-import com.discord.widgets.guilds.list.GuildsDragAndDropCallback;
 import com.facebook.drawee.generic.GenericDraweeHierarchy;
 import com.facebook.drawee.view.SimpleDraweeView;
 import java.util.List;

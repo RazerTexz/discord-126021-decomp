@@ -20,7 +20,6 @@ import com.discord.utilities.resources.StringResourceUtilsKt;
 import com.discord.utilities.view.extensions.ViewExtensions;
 import com.discord.views.user.UserSummaryView;
 import com.discord.widgets.guildscheduledevent.GuildEventPromptView;
-import com.discord.widgets.stage.start.ModeratorStartStageItem;
 import java.util.Objects;
 import kotlin.NoWhenBranchMatchedException;
 import kotlin.Pair;
@@ -93,7 +92,7 @@ public final class ModeratorStartStageAdapter extends MGRecyclerAdapterSimple<Mo
             ModeratorStartStageItem.ListItem listItem = (ModeratorStartStageItem.ListItem) data;
             if (listItem instanceof ModeratorStartStageItem.ListItem.StaticOption) {
                 ModeratorStartStageItem.ListItem.StaticOption staticOption = (ModeratorStartStageItem.ListItem.StaticOption) listItem;
-                pair = new Pair(C1107b.m210b(this.this$0.getContext(), staticOption.getTitleRes(), new Object[0], (4 & 4) != 0 ? C1107b.b.f1491j : null), C1107b.m210b(this.this$0.getContext(), staticOption.getSubtitleRes(), new Object[0], (4 & 4) != 0 ? C1107b.b.f1491j : null));
+                pair = new Pair(C1107b.m216h(this.this$0.getContext(), staticOption.getTitleRes(), new Object[0], null, 4), C1107b.m216h(this.this$0.getContext(), staticOption.getSubtitleRes(), new Object[0], null, 4));
             } else {
                 if (!(listItem instanceof ModeratorStartStageItem.ListItem.Event)) {
                     throw new NoWhenBranchMatchedException();
@@ -145,15 +144,15 @@ public final class ModeratorStartStageAdapter extends MGRecyclerAdapterSimple<Mo
             TextView textView = this.binding.f15188c;
             C12238m.checkNotNullExpressionValue(textView, "binding.moderatorStartStageWaitingUserText");
             int size = waiting.getUsers().size();
-            CharSequence charSequenceM210b = null;
+            CharSequence charSequenceM216h = null;
             if (size == 1) {
-                charSequenceM210b = C1107b.m210b(this.this$0.getContext(), C5419R.string.stage_audience_waiting_one, new Object[]{waiting.getUsers().get(0).getNickOrUserName()}, (4 & 4) != 0 ? C1107b.b.f1491j : null);
+                charSequenceM216h = C1107b.m216h(this.this$0.getContext(), C5419R.string.stage_audience_waiting_one, new Object[]{waiting.getUsers().get(0).getNickOrUserName()}, null, 4);
             } else if (size == 2) {
-                charSequenceM210b = C1107b.m210b(this.this$0.getContext(), C5419R.string.stage_audience_waiting_two, new Object[]{waiting.getUsers().get(0).getNickOrUserName(), waiting.getUsers().get(1).getNickOrUserName()}, (4 & 4) != 0 ? C1107b.b.f1491j : null);
+                charSequenceM216h = C1107b.m216h(this.this$0.getContext(), C5419R.string.stage_audience_waiting_two, new Object[]{waiting.getUsers().get(0).getNickOrUserName(), waiting.getUsers().get(1).getNickOrUserName()}, null, 4);
             } else if (size == 3) {
-                charSequenceM210b = StringResourceUtilsKt.getI18nPluralString(this.this$0.getContext(), C5419R.plurals.stage_audience_waiting_many_numOthers, waiting.getUsers().size() - 2, waiting.getUsers().get(0).getNickOrUserName(), waiting.getUsers().get(1).getNickOrUserName());
+                charSequenceM216h = StringResourceUtilsKt.getI18nPluralString(this.this$0.getContext(), C5419R.plurals.stage_audience_waiting_many_numOthers, waiting.getUsers().size() - 2, waiting.getUsers().get(0).getNickOrUserName(), waiting.getUsers().get(1).getNickOrUserName());
             }
-            ViewExtensions.setTextAndVisibilityBy(textView, charSequenceM210b);
+            ViewExtensions.setTextAndVisibilityBy(textView, charSequenceM216h);
         }
 
         public WaitingViewHolder(ModeratorStartStageAdapter moderatorStartStageAdapter, ModeratorStartStageWaitingItemBinding moderatorStartStageWaitingItemBinding, int i, DefaultConstructorMarker defaultConstructorMarker) {

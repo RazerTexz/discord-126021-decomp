@@ -4,9 +4,6 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.net.HttpURLConnection;
 import java.util.Objects;
-import p007b.p109f.p161j.p181p.C1963a0;
-import p007b.p109f.p161j.p181p.C2000n0;
-import p007b.p109f.p161j.p181p.InterfaceC2002o0;
 
 /* JADX INFO: renamed from: b.f.j.p.y */
 /* JADX INFO: compiled from: HttpUrlConnectionNetworkFetcher.java */

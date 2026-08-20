@@ -1,8 +1,6 @@
 package androidx.view;
 
 import androidx.annotation.NonNull;
-import androidx.view.ClassesInfoCache;
-import androidx.view.Lifecycle;
 
 /* JADX INFO: loaded from: classes.dex */
 public class ReflectiveGenericLifecycleObserver implements LifecycleEventObserver {

@@ -5,7 +5,7 @@ import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-/* JADX INFO: loaded from: app.apk:lombok/core/configuration/LogDeclaration.SCL.lombok */
+/* JADX INFO: loaded from: discord-126021.apk:lombok/core/configuration/LogDeclaration.SCL.lombok */
 public final class LogDeclaration implements ConfigurationValueType {
     private static final Pattern PARAMETERS_PATTERN = Pattern.compile("(?:\\(([A-Z,]*)\\))");
     private static final Pattern DECLARATION_PATTERN = Pattern.compile("^(?:([^ ]+) )?([^(]+)\\.([^(]+)(" + PARAMETERS_PATTERN.pattern() + "+)$");
@@ -15,7 +15,7 @@ public final class LogDeclaration implements ConfigurationValueType {
     private final List<LogFactoryParameter> parametersWithoutTopic;
     private final List<LogFactoryParameter> parametersWithTopic;
 
-    /* JADX INFO: loaded from: app.apk:lombok/core/configuration/LogDeclaration$LogFactoryParameter.SCL.lombok */
+    /* JADX INFO: loaded from: discord-126021.apk:lombok/core/configuration/LogDeclaration$LogFactoryParameter.SCL.lombok */
     public enum LogFactoryParameter {
         TYPE,
         NAME,

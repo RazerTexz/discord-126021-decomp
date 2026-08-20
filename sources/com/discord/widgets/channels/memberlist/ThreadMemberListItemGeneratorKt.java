@@ -15,7 +15,6 @@ import com.discord.stores.StoreThreadsJoined;
 import com.discord.utilities.guilds.RoleUtils;
 import com.discord.utilities.lazy.memberlist.MemberListRow;
 import com.discord.utilities.lazy.memberlist.ThreadMemberList;
-import com.discord.widgets.channels.memberlist.WidgetChannelMembersListViewModel;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Comparator;

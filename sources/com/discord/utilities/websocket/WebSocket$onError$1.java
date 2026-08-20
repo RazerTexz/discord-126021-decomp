@@ -1,6 +1,5 @@
 package com.discord.utilities.websocket;
 
-import com.discord.utilities.websocket.WebSocket;
 import kotlin.Unit;
 import kotlin.jvm.functions.Function1;
 import p507d0.p592z.p594d.AbstractC12240o;

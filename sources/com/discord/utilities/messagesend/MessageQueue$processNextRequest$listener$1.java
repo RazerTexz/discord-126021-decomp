@@ -1,7 +1,6 @@
 package com.discord.utilities.messagesend;
 
 import com.discord.utilities.error.Error;
-import com.discord.utilities.messagesend.MessageResult;
 import com.discord.utilities.p501rx.ObservableExtensionsKt;
 import java.util.concurrent.TimeUnit;
 import kotlin.Unit;

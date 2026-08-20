@@ -1,7 +1,6 @@
 package com.discord.utilities.view.text;
 
 import android.view.View;
-import com.discord.utilities.view.text.LinkifiedTextView;
 import java.lang.ref.WeakReference;
 import kotlin.Unit;
 import kotlin.coroutines.Continuation;

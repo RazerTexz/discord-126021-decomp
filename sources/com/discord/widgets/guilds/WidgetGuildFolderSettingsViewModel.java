@@ -11,7 +11,6 @@ import com.discord.stores.StoreUserSettings;
 import com.discord.utilities.error.Error;
 import com.discord.utilities.p501rx.ObservableExtensionsKt;
 import com.discord.utilities.rest.RestAPI;
-import com.discord.widgets.guilds.WidgetGuildFolderSettingsViewModel;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;

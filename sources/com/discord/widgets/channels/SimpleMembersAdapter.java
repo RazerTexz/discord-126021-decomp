@@ -13,7 +13,6 @@ import com.discord.utilities.mg_recycler.MGRecyclerAdapterSimple;
 import com.discord.utilities.mg_recycler.MGRecyclerDataPayload;
 import com.discord.utilities.mg_recycler.MGRecyclerViewHolder;
 import com.discord.views.user.SettingsMemberView;
-import com.discord.widgets.channels.SimpleMembersAdapter;
 import java.util.List;
 import kotlin.Unit;
 import kotlin.jvm.functions.Function1;

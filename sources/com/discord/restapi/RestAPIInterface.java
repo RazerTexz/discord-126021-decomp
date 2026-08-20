@@ -113,7 +113,6 @@ import com.discord.models.gifpicker.dto.GifDto;
 import com.discord.models.gifpicker.dto.TrendingGifCategoriesResponseDto;
 import com.discord.models.sticker.dto.ModelStickerPack;
 import com.discord.models.sticker.dto.ModelStickerStoreDirectory;
-import com.discord.restapi.RestAPIParams;
 import com.discord.utilities.analytics.ChatInputComponentTypes;
 import com.discord.utilities.auth.GoogleSmartLockManager;
 import com.google.gson.JsonObject;

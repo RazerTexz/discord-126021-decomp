@@ -1,6 +1,5 @@
 package androidx.core.app;
 
-import android.app.Person;
 import android.os.Bundle;
 import android.os.PersistableBundle;
 import androidx.annotation.NonNull;
@@ -179,7 +178,7 @@ public class Person {
     @RequiresApi(28)
     @RestrictTo({RestrictTo.Scope.LIBRARY_GROUP_PREFIX})
     public android.app.Person toAndroidPerson() {
-        return new Person.Builder().setName(getName()).setIcon(getIcon() != null ? getIcon().toIcon() : null).setUri(getUri()).setKey(getKey()).setBot(isBot()).setImportant(isImportant()).build();
+        return new android.app.Person.Builder().setName(getName()).setIcon(getIcon() != null ? getIcon().toIcon() : null).setUri(getUri()).setKey(getKey()).setBot(isBot()).setImportant(isImportant()).build();
     }
 
     @NonNull

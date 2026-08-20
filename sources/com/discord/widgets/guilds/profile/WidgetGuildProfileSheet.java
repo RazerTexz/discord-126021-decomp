@@ -43,8 +43,6 @@ import com.discord.utilities.viewbinding.FragmentViewBindingDelegateKt;
 import com.discord.views.CheckedSetting;
 import com.discord.widgets.guilds.invite.WidgetGuildInviteShare;
 import com.discord.widgets.guilds.leave.WidgetLeaveGuildDialog;
-import com.discord.widgets.guilds.profile.WidgetChangeGuildIdentity;
-import com.discord.widgets.guilds.profile.WidgetGuildProfileSheetViewModel;
 import com.discord.widgets.settings.profile.WidgetEditUserOrGuildMemberProfile;
 import com.facebook.drawee.view.SimpleDraweeView;
 import com.google.android.material.button.MaterialButton;

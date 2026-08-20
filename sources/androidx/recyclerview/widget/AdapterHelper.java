@@ -1,8 +1,6 @@
 package androidx.recyclerview.widget;
 
 import androidx.core.util.Pools;
-import androidx.recyclerview.widget.OpReorderer;
-import androidx.recyclerview.widget.RecyclerView;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;

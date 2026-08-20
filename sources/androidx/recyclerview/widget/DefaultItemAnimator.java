@@ -8,7 +8,6 @@ import android.view.View;
 import android.view.ViewPropertyAnimator;
 import androidx.annotation.NonNull;
 import androidx.core.view.ViewCompat;
-import androidx.recyclerview.widget.RecyclerView;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;

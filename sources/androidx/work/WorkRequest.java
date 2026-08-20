@@ -6,7 +6,6 @@ import androidx.annotation.RequiresApi;
 import androidx.annotation.RestrictTo;
 import androidx.annotation.VisibleForTesting;
 import androidx.recyclerview.widget.RecyclerView;
-import androidx.work.WorkInfo;
 import androidx.work.impl.model.WorkSpec;
 import java.time.Duration;
 import java.util.HashSet;

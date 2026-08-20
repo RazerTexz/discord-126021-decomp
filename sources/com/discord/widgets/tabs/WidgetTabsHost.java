@@ -27,7 +27,6 @@ import com.discord.utilities.view.extensions.ViewExtensions;
 import com.discord.utilities.viewbinding.FragmentViewBindingDelegate;
 import com.discord.utilities.viewbinding.FragmentViewBindingDelegateKt;
 import com.discord.widgets.status.WidgetGlobalStatusIndicatorState;
-import com.discord.widgets.tabs.TabsHostViewModel;
 import com.discord.widgets.user.WidgetUserStatusSheet;
 import com.discord.widgets.user.search.WidgetGlobalSearchDialog;
 import java.util.Iterator;

@@ -14,7 +14,6 @@ import com.discord.utilities.dimen.DimenUtils;
 import com.discord.utilities.error.Error;
 import com.discord.utilities.p501rx.ObservableExtensionsKt;
 import com.discord.views.calls.StageCallSpeakerView;
-import com.discord.widgets.voice.fullscreen.stage.StageCallItem;
 import java.util.Objects;
 import kotlin.Unit;
 import kotlin.jvm.functions.Function0;

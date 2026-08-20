@@ -4,7 +4,6 @@ import android.view.GestureDetector;
 import android.view.MotionEvent;
 import androidx.annotation.NonNull;
 import com.otaliastudios.cameraview.CameraView;
-import p007b.p452o.p453a.p466q.AbstractC5195c;
 
 /* JADX INFO: renamed from: b.o.a.q.g */
 /* JADX INFO: compiled from: TapGestureFinder.java */

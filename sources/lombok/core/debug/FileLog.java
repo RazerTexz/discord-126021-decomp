@@ -7,7 +7,7 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.io.StringWriter;
 
-/* JADX INFO: loaded from: app.apk:lombok/core/debug/FileLog.SCL.lombok */
+/* JADX INFO: loaded from: discord-126021.apk:lombok/core/debug/FileLog.SCL.lombok */
 public class FileLog {
     private static FileOutputStream fos;
 

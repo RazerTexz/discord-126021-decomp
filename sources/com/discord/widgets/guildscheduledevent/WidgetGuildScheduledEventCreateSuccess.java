@@ -21,7 +21,6 @@ import com.discord.utilities.viewbinding.FragmentViewBindingDelegateKt;
 import com.discord.views.CheckedSetting;
 import com.discord.widgets.guilds.invite.GuildInviteUiHelperKt;
 import com.discord.widgets.guilds.invite.WidgetInviteModel;
-import com.discord.widgets.guildscheduledevent.WidgetGuildScheduledEventCreateSuccessViewModel;
 import java.util.Objects;
 import kotlin.Lazy;
 import kotlin.Unit;

@@ -1,7 +1,6 @@
 package com.discord.widgets.channels;
 
 import android.os.Bundle;
-import com.discord.widgets.channels.WidgetChannelPickerBottomSheet;
 import kotlin.Unit;
 import kotlin.jvm.functions.Function0;
 import kotlin.jvm.functions.Function2;

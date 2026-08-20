@@ -52,7 +52,6 @@ import com.discord.widgets.chat.list.entries.SearchIndexingEntry;
 import com.discord.widgets.chat.list.entries.SearchResultCountEntry;
 import com.discord.widgets.chat.list.model.WidgetChatListModelMessages;
 import com.discord.widgets.guild_role_subscriptions.GuildRoleSubscriptionsFeatureFlag;
-import com.discord.widgets.search.results.WidgetSearchResults;
 import java.lang.ref.WeakReference;
 import java.util.ArrayList;
 import java.util.HashMap;

@@ -49,7 +49,6 @@ import com.discord.widgets.chat.list.entries.DividerEntry;
 import com.discord.widgets.chat.list.entries.EmptyPinsEntry;
 import com.discord.widgets.chat.list.entries.LoadingEntry;
 import com.discord.widgets.chat.list.model.WidgetChatListModelMessages;
-import com.discord.widgets.chat.pins.WidgetChannelPinnedMessages;
 import com.discord.widgets.guild_role_subscriptions.GuildRoleSubscriptionsFeatureFlag;
 import java.lang.ref.WeakReference;
 import java.util.ArrayList;

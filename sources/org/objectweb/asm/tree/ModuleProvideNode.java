@@ -3,7 +3,7 @@ package org.objectweb.asm.tree;
 import java.util.List;
 import org.objectweb.asm.ModuleVisitor;
 
-/* JADX INFO: loaded from: app.apk:org/objectweb/asm/tree/ModuleProvideNode.SCL.lombok */
+/* JADX INFO: loaded from: discord-126021.apk:org/objectweb/asm/tree/ModuleProvideNode.SCL.lombok */
 public class ModuleProvideNode {
     public String service;
     public List<String> providers;

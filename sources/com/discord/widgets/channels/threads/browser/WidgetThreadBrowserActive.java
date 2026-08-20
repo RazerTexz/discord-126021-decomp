@@ -19,7 +19,6 @@ import com.discord.utilities.p501rx.ObservableExtensionsKt;
 import com.discord.utilities.viewbinding.FragmentViewBindingDelegate;
 import com.discord.utilities.viewbinding.FragmentViewBindingDelegateKt;
 import com.discord.widgets.channels.list.WidgetChannelsListItemThreadActions;
-import com.discord.widgets.channels.threads.browser.WidgetThreadBrowserActiveViewModel;
 import com.google.android.material.button.MaterialButton;
 import kotlin.Lazy;
 import kotlin.Unit;

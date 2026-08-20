@@ -1,6 +1,5 @@
 package androidx.constraintlayout.motion.widget;
 
-import androidx.constraintlayout.motion.widget.MotionScene;
 import androidx.constraintlayout.widget.ConstraintSet;
 
 /* JADX INFO: loaded from: classes.dex */

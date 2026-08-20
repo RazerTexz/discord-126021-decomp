@@ -6,7 +6,6 @@ import com.discord.databinding.DirectoryEntryListItemBinding;
 import com.discord.utilities.guilds.GuildUtilsKt;
 import com.discord.utilities.icon.IconUtils;
 import com.discord.views.directories.ServerDiscoveryItem;
-import com.discord.widgets.directories.DirectoryChannelItem;
 import p507d0.p592z.p594d.C12238m;
 
 /* JADX INFO: compiled from: WidgetDirectoryEntryViewHolder.kt */

@@ -14,7 +14,6 @@ import com.discord.C5419R;
 import com.discord.databinding.RemovablePermissionOwnerViewBinding;
 import com.discord.models.domain.ModelAuditLogEntry;
 import com.discord.utilities.view.extensions.ViewExtensions;
-import com.discord.widgets.channels.permissions.PermissionOwnerListView;
 import java.util.List;
 import kotlin.Unit;
 import kotlin.jvm.functions.Function0;

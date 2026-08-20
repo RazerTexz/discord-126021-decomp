@@ -28,7 +28,6 @@ import com.discord.utilities.search.suggestion.entries.UserSuggestion;
 import com.discord.utilities.search.validation.SearchData;
 import com.discord.utilities.viewbinding.FragmentViewBindingDelegate;
 import com.discord.utilities.viewbinding.FragmentViewBindingDelegateKt;
-import com.discord.widgets.search.suggestions.WidgetSearchSuggestions;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;

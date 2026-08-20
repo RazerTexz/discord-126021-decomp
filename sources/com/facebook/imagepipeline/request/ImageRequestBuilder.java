@@ -2,7 +2,6 @@ package com.facebook.imagepipeline.request;
 
 import android.net.Uri;
 import com.discord.models.domain.ModelAuditLogEntry;
-import com.facebook.imagepipeline.request.ImageRequest;
 import java.util.Objects;
 import p007b.p100d.p104b.p105a.C1643a;
 import p007b.p109f.p115d.p127l.C1717b;

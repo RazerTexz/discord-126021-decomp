@@ -16,8 +16,6 @@ import com.discord.utilities.p501rx.ObservableExtensionsKt;
 import com.discord.utilities.rest.RestAPI;
 import com.discord.utilities.threads.ThreadUtils;
 import com.discord.widgets.forums.ForumUtils;
-import com.discord.widgets.status.WidgetThreadStatus;
-import com.discord.widgets.status.WidgetThreadStatusViewModel;
 import java.util.Map;
 import kotlin.Unit;
 import kotlin.jvm.functions.Function0;

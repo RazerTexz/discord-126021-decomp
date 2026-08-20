@@ -2,7 +2,6 @@ package androidx.view;
 
 import android.os.Handler;
 import androidx.annotation.NonNull;
-import androidx.view.Lifecycle;
 
 /* JADX INFO: loaded from: classes.dex */
 public class ServiceLifecycleDispatcher {

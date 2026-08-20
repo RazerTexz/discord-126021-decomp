@@ -1,6 +1,5 @@
 package com.discord.widgets.channels.memberlist;
 
-import com.discord.widgets.channels.memberlist.WidgetChannelMembersListViewModel;
 import com.discord.widgets.channels.memberlist.adapter.ChannelMembersListAdapter;
 import java.util.List;
 import p007b.p100d.p104b.p105a.C1643a;

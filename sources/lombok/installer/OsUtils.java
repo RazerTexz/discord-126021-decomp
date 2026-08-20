@@ -9,7 +9,7 @@ import java.util.List;
 import java.util.concurrent.atomic.AtomicBoolean;
 import lombok.core.Version;
 
-/* JADX INFO: loaded from: app.apk:lombok/installer/OsUtils.SCL.lombok */
+/* JADX INFO: loaded from: discord-126021.apk:lombok/installer/OsUtils.SCL.lombok */
 public final class OsUtils {
     private static final AtomicBoolean windowsDriveInfoLibLoaded = new AtomicBoolean(false);
 
@@ -86,7 +86,7 @@ public final class OsUtils {
     }
 
     /* JADX INFO: renamed from: lombok.installer.OsUtils$OS */
-    /* JADX INFO: loaded from: app.apk:lombok/installer/OsUtils$OS.SCL.lombok */
+    /* JADX INFO: loaded from: discord-126021.apk:lombok/installer/OsUtils$OS.SCL.lombok */
     public enum EnumC12884OS {
         MAC_OS_X("\n"),
         WINDOWS("\r\n"),

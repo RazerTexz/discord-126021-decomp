@@ -49,7 +49,6 @@ import androidx.core.view.accessibility.AccessibilityNodeInfoCompat;
 import androidx.customview.widget.ExploreByTouchHelper;
 import com.google.android.material.C10817R;
 import com.google.android.material.animation.MotionSpec;
-import com.google.android.material.chip.ChipDrawable;
 import com.google.android.material.internal.ThemeEnforcement;
 import com.google.android.material.internal.ViewUtils;
 import com.google.android.material.resources.MaterialResources;

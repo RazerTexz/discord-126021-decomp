@@ -7,9 +7,6 @@ import android.os.Looper;
 import android.util.AttributeSet;
 import android.view.SurfaceHolder;
 import android.view.SurfaceView;
-import org.webrtc.EglBase;
-import org.webrtc.EglRenderer;
-import org.webrtc.RendererCommon;
 import p007b.p100d.p104b.p105a.C1643a;
 
 /* JADX INFO: loaded from: classes3.dex */

@@ -3,7 +3,6 @@ package androidx.recyclerview.widget;
 import android.view.View;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import androidx.recyclerview.widget.RecyclerView;
 
 /* JADX INFO: loaded from: classes.dex */
 public abstract class SimpleItemAnimator extends RecyclerView.ItemAnimator {

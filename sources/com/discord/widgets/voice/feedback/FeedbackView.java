@@ -19,7 +19,6 @@ import com.discord.models.domain.ModelAuditLogEntry;
 import com.discord.utilities.mg_recycler.MGRecyclerAdapter;
 import com.discord.utilities.mg_recycler.MGRecyclerAdapterSimple;
 import com.discord.utilities.mg_recycler.MGRecyclerViewHolder;
-import com.discord.widgets.voice.feedback.FeedbackView;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Map;

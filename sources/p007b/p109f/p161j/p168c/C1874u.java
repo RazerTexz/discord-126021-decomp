@@ -1,7 +1,5 @@
 package p007b.p109f.p161j.p168c;
 
-import p007b.p109f.p161j.p168c.InterfaceC1866m;
-
 /* JADX INFO: Add missing generic type declarations: [V, K] */
 /* JADX INFO: renamed from: b.f.j.c.u */
 /* JADX INFO: compiled from: LruCountingMemoryCache.java */

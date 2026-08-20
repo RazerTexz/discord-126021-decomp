@@ -4,7 +4,6 @@ import com.discord.api.channel.Channel;
 import com.discord.stores.StoreChannels;
 import com.discord.stores.StoreGuildRoleSubscriptions;
 import com.discord.stores.StoreGuilds;
-import com.discord.widgets.servers.guild_role_subscription.edit_tier.ServerSettingsGuildRoleSubscriptionEditTierViewModel;
 import java.util.Map;
 import kotlin.Pair;
 import kotlin.jvm.functions.Function0;

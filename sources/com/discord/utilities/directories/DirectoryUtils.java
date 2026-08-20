@@ -171,7 +171,7 @@ public final class DirectoryUtils {
                     C0825e.Companion cVar = C0825e.INSTANCE;
                     FragmentManager childFragmentManager = this.$fragment.getChildFragmentManager();
                     C12238m.checkNotNullExpressionValue(childFragmentManager, "fragment.childFragmentManager");
-                    cVar.m128a(childFragmentManager, new SimpleConfirmationDialogArgs(this.$fragment.getString(C5419R.string.hub_entry_remove), C1107b.m210b(this.$context, C5419R.string.hub_entry_remove_body, new Object[]{this.$directoryEntry.getGuild().getName()}, (4 & 4) != 0 ? C1107b.b.f1491j : null).toString(), this.$fragment.getString(C5419R.string.remove), this.$fragment.getString(C5419R.string.cancel)), new View.OnClickListener() { // from class: com.discord.utilities.directories.DirectoryUtils.showServerOptions.2.1
+                    cVar.m128a(childFragmentManager, new SimpleConfirmationDialogArgs(this.$fragment.getString(C5419R.string.hub_entry_remove), C1107b.m216h(this.$context, C5419R.string.hub_entry_remove_body, new Object[]{this.$directoryEntry.getGuild().getName()}, null, 4).toString(), this.$fragment.getString(C5419R.string.remove), this.$fragment.getString(C5419R.string.cancel)), new View.OnClickListener() { // from class: com.discord.utilities.directories.DirectoryUtils.showServerOptions.2.1
                         @Override // android.view.View.OnClickListener
                         public final void onClick(View view) {
                             C67432.this.$removeGuildListener.invoke();

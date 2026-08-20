@@ -32,7 +32,6 @@ import com.discord.utilities.view.rounded.RoundedRelativeLayout;
 import com.discord.utilities.view.text.SimpleDraweeSpanTextView;
 import com.discord.utilities.view.text.TextWatcherKt;
 import com.discord.views.CheckedSetting;
-import com.discord.widgets.servers.member_verification.MemberVerificationRulesAdapter;
 import com.discord.widgets.servers.member_verification.form_fields.MemberVerificationItemApproveTerms;
 import com.discord.widgets.servers.member_verification.form_fields.MemberVerificationItemHeader;
 import com.discord.widgets.servers.member_verification.form_fields.MemberVerificationItemMultipleChoice;

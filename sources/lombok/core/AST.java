@@ -21,7 +21,7 @@ import lombok.core.configuration.ConfigurationKey;
 import lombok.core.debug.HistogramTracker;
 import lombok.permit.Permit;
 
-/* JADX INFO: loaded from: app.apk:lombok/core/AST.SCL.lombok */
+/* JADX INFO: loaded from: discord-126021.apk:lombok/core/AST.SCL.lombok */
 public abstract class AST<A extends AST<A, L, N>, L extends LombokNode<A, L, N>, N> {
     private L top;
     private final String fileName;
@@ -35,7 +35,7 @@ public abstract class AST<A extends AST<A, L, N>, L extends LombokNode<A, L, N>,
     private static final HistogramTracker configTracker;
     private static final ConcurrentMap<Class<?>, FieldAccess[]> fieldsOfASTClasses;
 
-    /* JADX INFO: loaded from: app.apk:lombok/core/AST$Kind.SCL.lombok */
+    /* JADX INFO: loaded from: discord-126021.apk:lombok/core/AST$Kind.SCL.lombok */
     public enum Kind {
         COMPILATION_UNIT,
         TYPE,
@@ -159,7 +159,7 @@ public abstract class AST<A extends AST<A, L, N>, L extends LombokNode<A, L, N>,
         return targetNode;
     }
 
-    /* JADX INFO: loaded from: app.apk:lombok/core/AST$FieldAccess.SCL.lombok */
+    /* JADX INFO: loaded from: discord-126021.apk:lombok/core/AST$FieldAccess.SCL.lombok */
     protected static class FieldAccess {
         public final Field field;
         public final int dim;

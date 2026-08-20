@@ -1,7 +1,6 @@
 package com.discord.widgets.user;
 
 import com.discord.models.message.Message;
-import com.discord.widgets.user.WidgetUserMentions;
 import java.util.List;
 import kotlin.Unit;
 import kotlin.jvm.functions.Function1;

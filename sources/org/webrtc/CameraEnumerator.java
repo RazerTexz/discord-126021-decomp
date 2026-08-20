@@ -1,8 +1,6 @@
 package org.webrtc;
 
 import java.util.List;
-import org.webrtc.CameraEnumerationAndroid;
-import org.webrtc.CameraVideoCapturer;
 
 /* JADX INFO: loaded from: classes3.dex */
 public interface CameraEnumerator {

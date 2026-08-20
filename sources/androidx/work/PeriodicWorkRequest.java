@@ -4,7 +4,6 @@ import android.annotation.SuppressLint;
 import android.os.Build;
 import androidx.annotation.NonNull;
 import androidx.annotation.RequiresApi;
-import androidx.work.WorkRequest;
 import androidx.work.impl.model.WorkSpec;
 import java.time.Duration;
 import java.util.concurrent.TimeUnit;

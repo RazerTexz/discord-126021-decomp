@@ -27,7 +27,7 @@ import lombok.core.CleanupRegistry;
 import lombok.core.CleanupTask;
 import lombok.permit.Permit;
 
-/* JADX INFO: loaded from: app.apk:lombok/javac/JavacAST.SCL.lombok */
+/* JADX INFO: loaded from: discord-126021.apk:lombok/javac/JavacAST.SCL.lombok */
 public class JavacAST extends AST<JavacAST, JavacNode, JCTree> {
     private final CleanupRegistry cleanup;
     private final JavacElements elements;
@@ -601,7 +601,7 @@ public class JavacAST extends AST<JavacAST, JavacNode, JCTree> {
         return repl ? com.sun.tools.javac.util.List.from(a) : oldL;
     }
 
-    /* JADX INFO: loaded from: app.apk:lombok/javac/JavacAST$ErrorLog.SCL.lombok */
+    /* JADX INFO: loaded from: discord-126021.apk:lombok/javac/JavacAST$ErrorLog.SCL.lombok */
     static abstract class ErrorLog {
         final Log log;
         private final Messager messager;
@@ -680,7 +680,7 @@ public class JavacAST extends AST<JavacAST, JavacNode, JCTree> {
         }
     }
 
-    /* JADX INFO: loaded from: app.apk:lombok/javac/JavacAST$JdkBefore9.SCL.lombok */
+    /* JADX INFO: loaded from: discord-126021.apk:lombok/javac/JavacAST$JdkBefore9.SCL.lombok */
     static class JdkBefore9 extends ErrorLog {
         /* synthetic */ JdkBefore9(Log log, Messager messager, Field field, JdkBefore9 jdkBefore9) {
             this(log, messager, field);
@@ -717,7 +717,7 @@ public class JavacAST extends AST<JavacAST, JavacNode, JCTree> {
         }
     }
 
-    /* JADX INFO: loaded from: app.apk:lombok/javac/JavacAST$Jdk9Plus.SCL.lombok */
+    /* JADX INFO: loaded from: discord-126021.apk:lombok/javac/JavacAST$Jdk9Plus.SCL.lombok */
     static class Jdk9Plus extends ErrorLog {
         private static final String PROC_MESSAGER = "proc.messager";
         private Object multiple;

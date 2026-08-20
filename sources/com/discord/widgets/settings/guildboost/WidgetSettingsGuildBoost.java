@@ -27,7 +27,6 @@ import com.discord.utilities.viewbinding.FragmentViewBindingDelegateKt;
 import com.discord.widgets.guilds.WidgetGuildSelector;
 import com.discord.widgets.servers.guildboost.WidgetGuildBoostConfirmation;
 import com.discord.widgets.servers.guildboost.WidgetGuildBoostTransfer;
-import com.discord.widgets.settings.guildboost.SettingsGuildBoostViewModel;
 import com.discord.widgets.settings.premium.WidgetSettingsPremium;
 import java.util.Objects;
 import kotlin.Lazy;

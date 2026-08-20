@@ -19,7 +19,6 @@ import com.discord.databinding.ViewChannelOverrideItemBinding;
 import com.discord.models.domain.ModelAuditLogEntry;
 import com.discord.models.domain.ModelNotificationSettings;
 import com.discord.utilities.view.extensions.ViewExtensions;
-import com.discord.widgets.servers.NotificationsOverridesAdapter;
 import java.util.List;
 import kotlin.Unit;
 import kotlin.jvm.functions.Function2;

@@ -5,7 +5,6 @@ import android.net.Uri;
 import androidx.core.app.NotificationCompat;
 import com.facebook.common.references.CloseableReference;
 import com.facebook.datasource.DataSource;
-import com.facebook.imagepipeline.request.ImageRequest;
 import com.facebook.imagepipeline.request.ImageRequestBuilder;
 import java.io.Closeable;
 import java.util.ArrayList;
@@ -447,7 +446,7 @@ public final class MGImagesBitmap {
         if (imageIsCircle) {
             imageRequest.f19623l = new RoundAsCirclePostprocessor(imageUri);
         }
-        final DataSource<CloseableReference<AbstractC1917c>> dataSourceM1262a = c1893h.m1262a(imageRequest.m8724a(), null, ImageRequest.EnumC10667c.FULL_FETCH, null, null);
+        final DataSource<CloseableReference<AbstractC1917c>> dataSourceM1262a = c1893h.m1262a(imageRequest.m8724a(), null, com.facebook.imagepipeline.request.ImageRequest.EnumC10667c.FULL_FETCH, null, null);
         Observable<Bitmap> observableM11074h0 = Observable.m11074h0(new Observable.InterfaceC13005a<Bitmap>() { // from class: com.discord.utilities.images.MGImagesBitmap.getBitmap.1
             @Override // p658rx.functions.Action1
             public final void call(final Subscriber<? super Bitmap> subscriber) {

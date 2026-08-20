@@ -1,6 +1,5 @@
 package com.discord.api.auth;
 
-import com.discord.api.auth.OAuthScope;
 import com.google.gson.TypeAdapter;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonToken;

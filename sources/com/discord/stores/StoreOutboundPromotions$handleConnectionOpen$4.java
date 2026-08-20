@@ -1,7 +1,6 @@
 package com.discord.stores;
 
 import com.discord.api.premium.OutboundPromotion;
-import com.discord.stores.StoreOutboundPromotions;
 import java.util.List;
 import kotlin.Unit;
 import kotlin.jvm.functions.Function0;

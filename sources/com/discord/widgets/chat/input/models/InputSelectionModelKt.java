@@ -4,8 +4,6 @@ import com.discord.api.commands.ApplicationCommandType;
 import com.discord.api.commands.CommandChoice;
 import com.discord.models.commands.ApplicationCommand;
 import com.discord.models.commands.ApplicationCommandOption;
-import com.discord.widgets.chat.input.models.InputSelectionModel;
-import com.discord.widgets.chat.input.models.MentionInputModel;
 import java.util.List;
 import kotlin.NoWhenBranchMatchedException;
 import p507d0.p592z.p594d.C12238m;

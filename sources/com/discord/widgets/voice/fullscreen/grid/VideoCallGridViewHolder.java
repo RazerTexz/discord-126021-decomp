@@ -18,7 +18,6 @@ import com.discord.utilities.view.extensions.ViewExtensions;
 import com.discord.views.PileView;
 import com.discord.views.calls.VideoCallParticipantView;
 import com.discord.widgets.voice.fullscreen.CallParticipant;
-import com.discord.widgets.voice.fullscreen.grid.VideoCallGridAdapter;
 import com.facebook.drawee.view.SimpleDraweeView;
 import java.util.ArrayList;
 import java.util.Iterator;

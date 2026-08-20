@@ -3,7 +3,7 @@ package lombok.javac;
 import com.sun.source.util.Trees;
 import com.sun.tools.javac.tree.JCTree;
 
-/* JADX INFO: loaded from: app.apk:lombok/javac/JavacASTAdapter.SCL.lombok */
+/* JADX INFO: loaded from: discord-126021.apk:lombok/javac/JavacASTAdapter.SCL.lombok */
 public class JavacASTAdapter implements JavacASTVisitor {
     @Override // lombok.javac.JavacASTVisitor
     public void setTrees(Trees trees) {

@@ -1,8 +1,6 @@
 package org.objectweb.asm;
 
-import org.objectweb.asm.Attribute;
-
-/* JADX INFO: loaded from: app.apk:org/objectweb/asm/MethodWriter.SCL.lombok */
+/* JADX INFO: loaded from: discord-126021.apk:org/objectweb/asm/MethodWriter.SCL.lombok */
 final class MethodWriter extends MethodVisitor {
     static final int COMPUTE_NOTHING = 0;
     static final int COMPUTE_MAX_STACK_AND_LOCAL = 1;

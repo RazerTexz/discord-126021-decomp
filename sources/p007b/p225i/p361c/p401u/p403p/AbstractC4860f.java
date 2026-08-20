@@ -3,7 +3,6 @@ package p007b.p225i.p361c.p401u.p403p;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import com.google.auto.value.AutoValue;
-import p007b.p225i.p361c.p401u.p403p.C4856b;
 
 /* JADX INFO: renamed from: b.i.c.u.p.f */
 /* JADX INFO: compiled from: TokenResult.java */

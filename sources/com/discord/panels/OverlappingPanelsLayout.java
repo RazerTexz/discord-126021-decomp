@@ -15,7 +15,6 @@ import android.view.ViewGroup;
 import android.widget.FrameLayout;
 import androidx.interpolator.view.animation.FastOutSlowInInterpolator;
 import androidx.interpolator.view.animation.LinearOutSlowInInterpolator;
-import com.discord.panels.PanelState;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Iterator;

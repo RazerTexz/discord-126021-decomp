@@ -2,7 +2,6 @@ package com.discord.utilities.auth;
 
 import android.content.Context;
 import android.content.Intent;
-import com.discord.utilities.auth.GoogleSmartLockManager;
 import com.discord.widgets.auth.WidgetAuthLogin;
 import p507d0.p592z.p594d.C12238m;
 

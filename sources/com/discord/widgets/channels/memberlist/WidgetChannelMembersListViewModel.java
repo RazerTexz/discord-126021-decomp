@@ -32,8 +32,6 @@ import com.discord.utilities.lazy.memberlist.ChannelMemberList;
 import com.discord.utilities.p501rx.ObservableExtensionsKt;
 import com.discord.utilities.permissions.PermissionUtils;
 import com.discord.utilities.rest.RestAPI;
-import com.discord.widgets.channels.memberlist.PrivateChannelMemberListService;
-import com.discord.widgets.channels.memberlist.WidgetChannelMembersListViewModel;
 import com.discord.widgets.channels.memberlist.adapter.ChannelMembersListAdapter;
 import java.util.Map;
 import java.util.Set;

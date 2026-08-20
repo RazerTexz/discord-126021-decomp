@@ -5,10 +5,8 @@ import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import lombok.core.configuration.ConfigurationParser;
-import lombok.core.configuration.ConfigurationSource;
 
-/* JADX INFO: loaded from: app.apk:lombok/core/configuration/SingleConfigurationSource.SCL.lombok */
+/* JADX INFO: loaded from: discord-126021.apk:lombok/core/configuration/SingleConfigurationSource.SCL.lombok */
 public final class SingleConfigurationSource implements ConfigurationSource {
     private final Map<ConfigurationKey<?>, ConfigurationSource.Result> values = new HashMap();
     private final List<ConfigurationFile> imports;

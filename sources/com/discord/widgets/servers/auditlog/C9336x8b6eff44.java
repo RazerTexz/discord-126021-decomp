@@ -3,7 +3,6 @@ package com.discord.widgets.servers.auditlog;
 import com.discord.models.member.GuildMember;
 import com.discord.models.user.User;
 import com.discord.stores.StoreAuditLog;
-import com.discord.widgets.servers.auditlog.WidgetServerSettingsAuditLogFilterAdapter;
 import java.util.Map;
 import kotlin.jvm.functions.Function1;
 import p007b.p100d.p104b.p105a.C1643a;

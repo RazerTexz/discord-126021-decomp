@@ -22,7 +22,6 @@ import com.discord.utilities.viewbinding.FragmentViewBindingDelegate;
 import com.discord.utilities.viewbinding.FragmentViewBindingDelegateKt;
 import com.discord.utilities.views.ViewVisibilityObserver;
 import com.discord.utilities.views.ViewVisibilityObserverProvider;
-import com.discord.widgets.voice.call.WidgetVoiceCallInline;
 import com.google.android.material.button.MaterialButton;
 import kotlin.Unit;
 import kotlin.jvm.functions.Function0;

@@ -12,7 +12,6 @@ import com.discord.stores.StorePermissions;
 import com.discord.stores.utilities.Default;
 import com.discord.stores.utilities.RestCallState;
 import com.discord.utilities.permissions.PermissionUtils;
-import com.discord.widgets.directories.WidgetDirectoriesViewModel;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Iterator;

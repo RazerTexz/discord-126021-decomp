@@ -21,7 +21,6 @@ import com.discord.utilities.error.Error;
 import com.discord.utilities.guildscheduledevent.GuildScheduledEventUtilities;
 import com.discord.utilities.p501rx.ObservableExtensionsKt;
 import com.discord.utilities.permissions.PermissionUtils;
-import com.discord.widgets.guildscheduledevent.GuildScheduledEventListItem;
 import java.lang.ref.WeakReference;
 import java.util.ArrayList;
 import java.util.List;

@@ -11,7 +11,6 @@ import com.discord.stores.StoreUser;
 import com.discord.utilities.error.Error;
 import com.discord.utilities.p501rx.ObservableExtensionsKt;
 import com.discord.utilities.rest.RestAPI;
-import com.discord.widgets.guilds.contextmenu.GuildContextMenuViewModel;
 import kotlin.Unit;
 import kotlin.jvm.functions.Function0;
 import kotlin.jvm.functions.Function1;

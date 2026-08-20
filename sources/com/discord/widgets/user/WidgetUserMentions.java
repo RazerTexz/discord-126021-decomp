@@ -65,7 +65,6 @@ import com.discord.widgets.guild_role_subscriptions.GuildRoleSubscriptionsFeatur
 import com.discord.widgets.tabs.NavigationTab;
 import com.discord.widgets.tabs.OnTabSelectedListener;
 import com.discord.widgets.tabs.WidgetTabsHost;
-import com.discord.widgets.user.WidgetUserMentions;
 import com.discord.widgets.user.search.WidgetGlobalSearchDismissModel;
 import java.lang.ref.WeakReference;
 import java.util.ArrayList;
@@ -1186,7 +1185,7 @@ public final class WidgetUserMentions extends AppFragment implements OnTabSelect
                 checkedSetting3.setVisibility(0);
                 CheckedSetting checkedSetting4 = getBinding().f18339d;
                 Context context = getContext();
-                checkedSetting4.setText(context != null ? C1107b.m210b(context, C5419R.string.this_server_named, new Object[]{this.guildName}, (4 & 4) != 0 ? C1107b.b.f1491j : null) : null);
+                checkedSetting4.setText(context != null ? C1107b.m216h(context, C5419R.string.this_server_named, new Object[]{this.guildName}, null, 4) : null);
                 getBinding().f18339d.setOnCheckedListener(new Action1<Boolean>() { // from class: com.discord.widgets.user.WidgetUserMentions$WidgetUserMentionFilter$onResume$1
                     @Override // p658rx.functions.Action1
                     public final void call(Boolean bool) {

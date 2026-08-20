@@ -13,7 +13,6 @@ import com.discord.models.user.User;
 import com.discord.utilities.drawable.DrawableCompat;
 import com.discord.utilities.icon.IconUtils;
 import com.discord.views.CutoutView;
-import com.discord.widgets.voice.fullscreen.stage.StageCallItem;
 import com.facebook.drawee.view.SimpleDraweeView;
 import org.objectweb.asm.Opcodes;
 import p507d0.p592z.p594d.C12238m;

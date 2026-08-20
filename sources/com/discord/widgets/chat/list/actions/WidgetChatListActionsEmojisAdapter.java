@@ -5,7 +5,6 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.discord.models.domain.emoji.Emoji;
 import com.discord.utilities.mg_recycler.MGRecyclerAdapterSimple;
 import com.discord.utilities.mg_recycler.MGRecyclerViewHolder;
-import com.discord.widgets.chat.list.actions.EmojiItem;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Iterator;

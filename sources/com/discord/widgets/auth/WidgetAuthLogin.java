@@ -35,9 +35,6 @@ import com.discord.utilities.view.extensions.ViewExtensions;
 import com.discord.utilities.view.validators.ValidationManager;
 import com.discord.utilities.viewbinding.FragmentViewBindingDelegate;
 import com.discord.utilities.viewbinding.FragmentViewBindingDelegateKt;
-import com.discord.widgets.auth.WidgetAuthCaptcha;
-import com.discord.widgets.auth.WidgetAuthMfa;
-import com.discord.widgets.auth.WidgetAuthPhoneVerify;
 import com.discord.widgets.notice.WidgetNoticeDialog;
 import com.discord.widgets.settings.account.WidgetSettingsAccountChangePassword;
 import com.google.android.material.textfield.TextInputLayout;
@@ -437,7 +434,7 @@ public final class WidgetAuthLogin extends AppFragment {
     }
 
     private final void showEmailSentToast(String email) {
-        C0876m.m170h(getContext(), C1107b.m210b(requireContext(), C5419R.string.email_verification_instructions_body, new Object[]{email}, (4 & 4) != 0 ? C1107b.b.f1491j : null), 0, null, 12);
+        C0876m.m170h(getContext(), C1107b.m216h(requireContext(), C5419R.string.email_verification_instructions_body, new Object[]{email}, null, 4), 0, null, 12);
     }
 
     public final GoogleSmartLockManager getGoogleSmartLockManager() {

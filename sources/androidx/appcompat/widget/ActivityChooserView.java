@@ -28,7 +28,6 @@ import androidx.annotation.Nullable;
 import androidx.annotation.RestrictTo;
 import androidx.appcompat.C0051R;
 import androidx.appcompat.view.menu.ShowableListMenu;
-import androidx.appcompat.widget.ActivityChooserModel;
 import androidx.constraintlayout.solver.widgets.analyzer.BasicMeasure;
 import androidx.core.view.ActionProvider;
 import androidx.core.view.ViewCompat;

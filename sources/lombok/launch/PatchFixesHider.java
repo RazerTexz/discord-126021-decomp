@@ -64,12 +64,12 @@ import p007b.p109f.p129e.AbstractC1723c;
 import p007b.p109f.p129e.InterfaceC1726f;
 import p507d0.p513e0.p514p.p515d.p517m0.p548g.C11713b;
 
-/* JADX INFO: loaded from: app.apk:Class50/lombok/launch/PatchFixesHider.SCL.lombok */
+/* JADX INFO: loaded from: discord-126021.apk:Class50/lombok/launch/PatchFixesHider.SCL.lombok */
 final class PatchFixesHider {
     PatchFixesHider() {
     }
 
-    /* JADX INFO: loaded from: app.apk:Class50/lombok/launch/PatchFixesHider$Util.SCL.lombok */
+    /* JADX INFO: loaded from: discord-126021.apk:Class50/lombok/launch/PatchFixesHider$Util.SCL.lombok */
     public static final class Util {
         private static ClassLoader shadowLoader;
 
@@ -120,7 +120,7 @@ final class PatchFixesHider {
         }
     }
 
-    /* JADX INFO: loaded from: app.apk:Class50/lombok/launch/PatchFixesHider$LombokDeps.SCL.lombok */
+    /* JADX INFO: loaded from: discord-126021.apk:Class50/lombok/launch/PatchFixesHider$LombokDeps.SCL.lombok */
     public static final class LombokDeps {
         public static final Method ADD_LOMBOK_NOTES;
         public static final Method POST_COMPILER_BYTES_STRING;
@@ -156,7 +156,7 @@ final class PatchFixesHider {
         }
     }
 
-    /* JADX INFO: loaded from: app.apk:Class50/lombok/launch/PatchFixesHider$Transform.SCL.lombok */
+    /* JADX INFO: loaded from: discord-126021.apk:Class50/lombok/launch/PatchFixesHider$Transform.SCL.lombok */
     public static final class Transform {
         private static final Method TRANSFORM;
         private static final Method TRANSFORM_SWAPPED;
@@ -176,7 +176,7 @@ final class PatchFixesHider {
         }
     }
 
-    /* JADX INFO: loaded from: app.apk:Class50/lombok/launch/PatchFixesHider$Delegate.SCL.lombok */
+    /* JADX INFO: loaded from: discord-126021.apk:Class50/lombok/launch/PatchFixesHider$Delegate.SCL.lombok */
     public static final class Delegate {
         private static final Method HANDLE_DELEGATE_FOR_TYPE = null;
         private static final Method GET_CHILDREN = null;
@@ -285,7 +285,7 @@ final class PatchFixesHider {
         }
     }
 
-    /* JADX INFO: loaded from: app.apk:Class50/lombok/launch/PatchFixesHider$ValPortal.SCL.lombok */
+    /* JADX INFO: loaded from: discord-126021.apk:Class50/lombok/launch/PatchFixesHider$ValPortal.SCL.lombok */
     public static final class ValPortal {
         private static final Method COPY_INITIALIZATION_OF_FOR_EACH_ITERABLE;
         private static final Method COPY_INITIALIZATION_OF_LOCAL_DECLARATION;
@@ -317,7 +317,7 @@ final class PatchFixesHider {
         }
     }
 
-    /* JADX INFO: loaded from: app.apk:Class50/lombok/launch/PatchFixesHider$Val.SCL.lombok */
+    /* JADX INFO: loaded from: discord-126021.apk:Class50/lombok/launch/PatchFixesHider$Val.SCL.lombok */
     public static final class Val {
         private static final Method SKIP_RESOLVE_INITIALIZER_IF_ALREADY_CALLED;
         private static final Method SKIP_RESOLVE_INITIALIZER_IF_ALREADY_CALLED2;
@@ -349,7 +349,7 @@ final class PatchFixesHider {
         }
     }
 
-    /* JADX INFO: loaded from: app.apk:Class50/lombok/launch/PatchFixesHider$ExtensionMethod.SCL.lombok */
+    /* JADX INFO: loaded from: discord-126021.apk:Class50/lombok/launch/PatchFixesHider$ExtensionMethod.SCL.lombok */
     public static final class ExtensionMethod {
         private static final Method RESOLVE_TYPE = null;
         private static final Method ERROR_NO_METHOD_FOR = null;
@@ -550,7 +550,7 @@ final class PatchFixesHider {
         }
     }
 
-    /* JADX INFO: loaded from: app.apk:Class50/lombok/launch/PatchFixesHider$Javadoc.SCL.lombok */
+    /* JADX INFO: loaded from: discord-126021.apk:Class50/lombok/launch/PatchFixesHider$Javadoc.SCL.lombok */
     public static final class Javadoc {
         private static final Method GET_HTML = null;
         private static final Method PRINT_METHOD = null;
@@ -610,7 +610,7 @@ final class PatchFixesHider {
         }
     }
 
-    /* JADX INFO: loaded from: app.apk:Class50/lombok/launch/PatchFixesHider$PatchFixes.SCL.lombok */
+    /* JADX INFO: loaded from: discord-126021.apk:Class50/lombok/launch/PatchFixesHider$PatchFixes.SCL.lombok */
     public static final class PatchFixes {
         public static final int ALREADY_PROCESSED_FLAG = 8388608;
 

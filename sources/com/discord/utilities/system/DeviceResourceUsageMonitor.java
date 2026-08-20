@@ -4,7 +4,6 @@ import android.system.Os;
 import android.system.OsConstants;
 import androidx.annotation.AnyThread;
 import com.discord.api.permission.Permission;
-import com.discord.utilities.system.ProcfsReader;
 import com.discord.utilities.time.Clock;
 import com.discord.utilities.time.TimeSpan;
 import kotlin.Unit;

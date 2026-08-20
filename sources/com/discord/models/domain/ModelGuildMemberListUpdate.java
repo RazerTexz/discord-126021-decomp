@@ -3,8 +3,6 @@ package com.discord.models.domain;
 import androidx.browser.customtabs.CustomTabsCallback;
 import com.discord.api.guildmember.GuildMember;
 import com.discord.models.deserialization.gson.InboundGatewayGsonParser;
-import com.discord.models.domain.Model;
-import com.discord.models.domain.ModelGuildMemberListUpdate;
 import java.io.IOException;
 import java.util.List;
 import kotlin.jvm.internal.DefaultConstructorMarker;

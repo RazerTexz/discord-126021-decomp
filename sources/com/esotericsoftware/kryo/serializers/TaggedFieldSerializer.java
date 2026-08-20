@@ -6,7 +6,6 @@ import com.esotericsoftware.kryo.p502io.Input;
 import com.esotericsoftware.kryo.p502io.InputChunked;
 import com.esotericsoftware.kryo.p502io.Output;
 import com.esotericsoftware.kryo.p502io.OutputChunked;
-import com.esotericsoftware.kryo.serializers.FieldSerializer;
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;

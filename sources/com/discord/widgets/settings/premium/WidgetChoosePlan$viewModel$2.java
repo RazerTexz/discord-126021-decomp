@@ -1,6 +1,5 @@
 package com.discord.widgets.settings.premium;
 
-import com.discord.widgets.settings.premium.WidgetChoosePlan;
 import java.io.Serializable;
 import java.util.Objects;
 import kotlin.jvm.functions.Function0;

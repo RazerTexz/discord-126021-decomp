@@ -17,7 +17,7 @@ import javax.tools.DiagnosticListener;
 import javax.tools.JavaFileObject;
 import lombok.permit.Permit;
 
-/* JADX INFO: loaded from: app.apk:lombok/javac/CompilerMessageSuppressor.SCL.lombok */
+/* JADX INFO: loaded from: discord-126021.apk:lombok/javac/CompilerMessageSuppressor.SCL.lombok */
 public final class CompilerMessageSuppressor {
     private final Log log;
     private Boolean dumpOnError;
@@ -38,7 +38,7 @@ public final class CompilerMessageSuppressor {
     private static final Field diagnosticHandlerField = getDeclaredField(Log.class, "diagnosticHandler");
     private static final Field NULL_FIELD = getDeclaredField(JavacResolution.class, "NULL_FIELD");
 
-    /* JADX INFO: loaded from: app.apk:lombok/javac/CompilerMessageSuppressor$WriterField.SCL.lombok */
+    /* JADX INFO: loaded from: discord-126021.apk:lombok/javac/CompilerMessageSuppressor$WriterField.SCL.lombok */
     interface WriterField {
         public static final PrintWriter NO_WRITER = new PrintWriter(new OutputStream() { // from class: lombok.javac.CompilerMessageSuppressor.WriterField.1
             @Override // java.io.OutputStream
@@ -60,7 +60,7 @@ public final class CompilerMessageSuppressor {
         void resume(Log log);
     }
 
-    /* JADX INFO: loaded from: app.apk:lombok/javac/CompilerMessageSuppressor$Writers.SCL.lombok */
+    /* JADX INFO: loaded from: discord-126021.apk:lombok/javac/CompilerMessageSuppressor$Writers.SCL.lombok */
     enum Writers {
         ERROR("errWriter", "ERROR"),
         WARNING("warnWriter", "WARNING"),
@@ -275,7 +275,7 @@ public final class CompilerMessageSuppressor {
         return writerField != null ? new Java8WriterField(writerField) : WriterField.NONE;
     }
 
-    /* JADX INFO: loaded from: app.apk:lombok/javac/CompilerMessageSuppressor$Java8WriterField.SCL.lombok */
+    /* JADX INFO: loaded from: discord-126021.apk:lombok/javac/CompilerMessageSuppressor$Java8WriterField.SCL.lombok */
     static class Java8WriterField implements WriterField {
         private final Field field;
         private PrintWriter writer;
@@ -305,7 +305,7 @@ public final class CompilerMessageSuppressor {
         }
     }
 
-    /* JADX INFO: loaded from: app.apk:lombok/javac/CompilerMessageSuppressor$Java9WriterField.SCL.lombok */
+    /* JADX INFO: loaded from: discord-126021.apk:lombok/javac/CompilerMessageSuppressor$Java9WriterField.SCL.lombok */
     static class Java9WriterField implements WriterField {
         private final Field field;
         private final Object key;

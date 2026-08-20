@@ -17,7 +17,6 @@ import com.discord.rtcconnection.KrispOveruseDetector;
 import com.discord.rtcconnection.LowMemoryDetector;
 import com.discord.rtcconnection.mediaengine.MediaEngine;
 import com.discord.rtcconnection.mediaengine.MediaEngineConnection;
-import com.discord.stores.StoreMediaSettings;
 import com.discord.utilities.collections.ListenerCollection;
 import com.discord.utilities.collections.ListenerCollectionSubject;
 import com.discord.utilities.error.Error;

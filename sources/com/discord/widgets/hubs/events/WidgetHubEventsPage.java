@@ -22,7 +22,6 @@ import com.discord.utilities.p501rx.ObservableExtensionsKt;
 import com.discord.utilities.resources.StringResourceUtilsKt;
 import com.discord.utilities.viewbinding.FragmentViewBindingDelegate;
 import com.discord.utilities.viewbinding.FragmentViewBindingDelegateKt;
-import com.discord.widgets.hubs.events.HubEventsPage;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Iterator;

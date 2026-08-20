@@ -14,7 +14,6 @@ import com.discord.stores.StoreGuilds;
 import com.discord.stores.StoreUser;
 import com.discord.utilities.guilds.RoleUtils;
 import com.discord.widgets.chat.input.MentionUtilsKt;
-import com.discord.widgets.chat.list.sheet.WidgetApplicationCommandBottomSheetViewModel;
 import java.util.Iterator;
 import java.util.LinkedHashMap;
 import java.util.LinkedHashSet;

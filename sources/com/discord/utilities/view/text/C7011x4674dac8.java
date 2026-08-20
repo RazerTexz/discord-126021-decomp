@@ -1,6 +1,5 @@
 package com.discord.utilities.view.text;
 
-import com.discord.utilities.view.text.LinkifiedTextView;
 import kotlin.Unit;
 import kotlin.jvm.functions.Function1;
 import kotlinx.coroutines.Job;

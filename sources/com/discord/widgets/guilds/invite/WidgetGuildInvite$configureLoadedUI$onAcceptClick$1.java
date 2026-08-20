@@ -7,7 +7,6 @@ import com.discord.api.guildscheduledevent.GuildScheduledEvent;
 import com.discord.app.AppActivity;
 import com.discord.models.domain.ModelInvite;
 import com.discord.utilities.error.Error;
-import com.discord.widgets.guilds.invite.InviteJoinHelper;
 import com.discord.widgets.home.HomeConfig;
 import kotlin.Unit;
 import kotlin.coroutines.Continuation;

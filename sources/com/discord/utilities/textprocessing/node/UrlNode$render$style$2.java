@@ -3,7 +3,6 @@ package com.discord.utilities.textprocessing.node;
 import android.content.Context;
 import android.view.View;
 import androidx.exifinterface.media.ExifInterface;
-import com.discord.utilities.textprocessing.node.UrlNode;
 import kotlin.Unit;
 import kotlin.jvm.functions.Function1;
 import kotlin.jvm.functions.Function3;

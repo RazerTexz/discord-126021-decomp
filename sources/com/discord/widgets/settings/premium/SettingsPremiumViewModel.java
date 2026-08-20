@@ -24,7 +24,6 @@ import com.discord.utilities.billing.GooglePlayBillingManager;
 import com.discord.utilities.error.Error;
 import com.discord.utilities.p501rx.ObservableExtensionsKt;
 import com.discord.utilities.rest.RestAPI;
-import com.discord.widgets.settings.premium.SettingsPremiumViewModel;
 import java.util.List;
 import java.util.Map;
 import kotlin.Unit;

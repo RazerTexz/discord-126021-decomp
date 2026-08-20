@@ -17,8 +17,6 @@ import com.discord.widgets.guilds.create.CreateGuildTrigger;
 import com.discord.widgets.guilds.create.StockGuildTemplate;
 import com.discord.widgets.guilds.create.WidgetCreationIntent;
 import com.discord.widgets.guilds.create.WidgetGuildCreate;
-import com.discord.widgets.nux.GuildTemplateViewType;
-import com.discord.widgets.nux.GuildTemplatesAdapter;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;

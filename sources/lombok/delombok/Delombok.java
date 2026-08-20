@@ -57,7 +57,7 @@ import lombok.javac.LombokOptions;
 import lombok.javac.apt.LombokProcessor;
 import lombok.permit.Permit;
 
-/* JADX INFO: loaded from: app.apk:lombok/delombok/Delombok.SCL.lombok */
+/* JADX INFO: loaded from: discord-126021.apk:lombok/delombok/Delombok.SCL.lombok */
 public class Delombok {
     private Writer presetWriter;
     private boolean verbose;
@@ -84,7 +84,7 @@ public class Delombok {
         this.presetWriter = writer;
     }
 
-    /* JADX INFO: loaded from: app.apk:lombok/delombok/Delombok$CmdArgs.SCL.lombok */
+    /* JADX INFO: loaded from: discord-126021.apk:lombok/delombok/Delombok$CmdArgs.SCL.lombok */
     private static class CmdArgs {
 
         @Excludes({"quiet"})
@@ -449,7 +449,7 @@ public class Delombok {
         }
     }
 
-    /* JADX INFO: loaded from: app.apk:lombok/delombok/Delombok$InvalidFormatOptionException.SCL.lombok */
+    /* JADX INFO: loaded from: discord-126021.apk:lombok/delombok/Delombok$InvalidFormatOptionException.SCL.lombok */
     public static class InvalidFormatOptionException extends Exception {
         public InvalidFormatOptionException(String msg) {
             super(msg);

@@ -45,8 +45,6 @@ import com.discord.utilities.viewbinding.FragmentViewBindingDelegateKt;
 import com.discord.widgets.channels.WidgetGroupInviteFriends;
 import com.discord.widgets.channels.invite.GroupInviteFriendsSheet;
 import com.discord.widgets.channels.invite.GroupInviteFriendsSheetFeatureFlag;
-import com.discord.widgets.channels.list.WidgetChannelsListItemChannelActions;
-import com.discord.widgets.channels.list.WidgetChannelsListItemThreadActions;
 import com.discord.widgets.channels.list.items.ChannelListItem;
 import com.discord.widgets.channels.threads.browser.WidgetThreadBrowser;
 import com.discord.widgets.forums.ForumUtils;

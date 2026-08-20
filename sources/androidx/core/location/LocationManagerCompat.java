@@ -17,7 +17,6 @@ import androidx.annotation.Nullable;
 import androidx.annotation.RequiresApi;
 import androidx.annotation.RequiresPermission;
 import androidx.collection.SimpleArrayMap;
-import androidx.core.location.GnssStatusCompat;
 import androidx.core.os.CancellationSignal;
 import androidx.core.os.ExecutorCompat;
 import androidx.core.util.Consumer;

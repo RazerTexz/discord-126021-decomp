@@ -26,7 +26,6 @@ import com.discord.utilities.view.text.LinkifiedTextView;
 import com.discord.utilities.viewbinding.FragmentViewBindingDelegate;
 import com.discord.utilities.viewbinding.FragmentViewBindingDelegateKt;
 import com.discord.views.LoadingButton;
-import com.discord.widgets.auth.WidgetAgeVerifyViewModel;
 import com.google.android.material.textfield.TextInputLayout;
 import java.text.DateFormat;
 import java.util.Calendar;

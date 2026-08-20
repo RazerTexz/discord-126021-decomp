@@ -3,7 +3,6 @@ package com.discord.widgets.guildscheduledevent;
 import androidx.fragment.app.FragmentActivity;
 import androidx.fragment.app.FragmentManager;
 import com.discord.stores.StoreNotices;
-import com.discord.widgets.guildscheduledevent.WidgetGuildScheduledEventDetailsBottomSheet;
 import kotlin.jvm.functions.Function1;
 import p507d0.p592z.p594d.AbstractC12240o;
 import p507d0.p592z.p594d.C12238m;

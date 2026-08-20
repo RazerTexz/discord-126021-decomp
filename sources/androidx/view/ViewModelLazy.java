@@ -1,7 +1,6 @@
 package androidx.view;
 
 import androidx.view.ViewModel;
-import androidx.view.ViewModelProvider;
 import kotlin.Lazy;
 import kotlin.jvm.functions.Function0;
 import p507d0.p513e0.InterfaceC11230c;

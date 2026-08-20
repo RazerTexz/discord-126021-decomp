@@ -10,7 +10,6 @@ import com.discord.models.domain.ModelNotificationSettings;
 import com.discord.models.domain.ModelPayload;
 import com.discord.models.guild.Guild;
 import com.discord.restapi.RestAPIParams;
-import com.discord.stores.StoreThreadsJoined;
 import com.discord.stores.updates.ObservationDeck;
 import com.discord.stores.updates.ObservationDeckProvider;
 import com.discord.utilities.analytics.Traits;

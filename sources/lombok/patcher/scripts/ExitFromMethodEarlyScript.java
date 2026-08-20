@@ -13,7 +13,7 @@ import org.objectweb.asm.Label;
 import org.objectweb.asm.MethodVisitor;
 import org.objectweb.asm.Opcodes;
 
-/* JADX INFO: loaded from: app.apk:lombok/patcher/scripts/ExitFromMethodEarlyScript.SCL.lombok */
+/* JADX INFO: loaded from: discord-126021.apk:lombok/patcher/scripts/ExitFromMethodEarlyScript.SCL.lombok */
 public class ExitFromMethodEarlyScript extends MethodLevelPatchScript {
     private final Hook decisionWrapper;
     private final Hook valueWrapper;
@@ -68,7 +68,7 @@ public class ExitFromMethodEarlyScript extends MethodLevelPatchScript {
         return patcher;
     }
 
-    /* JADX INFO: loaded from: app.apk:lombok/patcher/scripts/ExitFromMethodEarlyScript$ExitEarly.SCL.lombok */
+    /* JADX INFO: loaded from: discord-126021.apk:lombok/patcher/scripts/ExitFromMethodEarlyScript$ExitEarly.SCL.lombok */
     private class ExitEarly extends MethodVisitor {
         private final MethodLogistics logistics;
         private final String ownClassSpec;

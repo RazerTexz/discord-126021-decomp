@@ -7,7 +7,6 @@ import java.util.List;
 import java.util.Objects;
 import p007b.p085c.p086a.p087a0.C1460d;
 import p007b.p109f.p115d.p119d.C1690m;
-import p007b.p109f.p160i.C1832c;
 
 /* JADX INFO: renamed from: b.f.i.d */
 /* JADX INFO: compiled from: ImageFormatChecker.java */

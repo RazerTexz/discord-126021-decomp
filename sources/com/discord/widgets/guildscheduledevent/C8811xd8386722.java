@@ -5,7 +5,6 @@ import com.discord.utilities.textprocessing.AstRenderer;
 import com.discord.utilities.textprocessing.MessageRenderContext;
 import com.discord.utilities.textprocessing.node.SpoilerNode;
 import com.discord.utilities.view.text.LinkifiedTextView;
-import com.discord.widgets.guildscheduledevent.GuildScheduledEventDescriptionParser;
 import java.util.List;
 import kotlin.Unit;
 import kotlin.jvm.functions.Function1;

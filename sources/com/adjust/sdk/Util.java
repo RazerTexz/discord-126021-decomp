@@ -14,7 +14,6 @@ import android.os.Looper;
 import android.provider.Settings;
 import android.telephony.TelephonyManager;
 import android.text.TextUtils;
-import com.adjust.sdk.GooglePlayServicesClient;
 import com.adjust.sdk.scheduler.SingleThreadFutureScheduler;
 import java.io.BufferedInputStream;
 import java.io.BufferedOutputStream;

@@ -4,8 +4,6 @@ import androidx.annotation.VisibleForTesting;
 import androidx.exifinterface.media.ExifInterface;
 import com.discord.models.domain.Model;
 import com.discord.models.experiments.dto.UserExperimentDto;
-import com.discord.restapi.PayloadJSON;
-import com.discord.restapi.RestAPIParams;
 import com.google.gson.Gson;
 import java.lang.reflect.Method;
 import java.lang.reflect.Modifier;

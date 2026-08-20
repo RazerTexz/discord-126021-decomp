@@ -21,7 +21,6 @@ import com.discord.utilities.icon.IconUtils;
 import com.discord.utilities.mg_recycler.MGRecyclerAdapterSimple;
 import com.discord.utilities.mg_recycler.MGRecyclerDataPayload;
 import com.discord.utilities.mg_recycler.MGRecyclerViewHolder;
-import com.discord.widgets.servers.auditlog.WidgetServerSettingsAuditLogAdapter;
 import com.facebook.drawee.view.SimpleDraweeView;
 import java.util.List;
 import kotlin.Unit;

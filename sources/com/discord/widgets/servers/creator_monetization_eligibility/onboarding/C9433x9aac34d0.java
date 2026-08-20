@@ -5,7 +5,6 @@ import com.discord.analytics.generated.events.impression.TrackImpressionEnableCr
 import com.discord.analytics.generated.traits.TrackGuild;
 import com.discord.api.science.AnalyticsSchema;
 import com.discord.app.LoggingConfig;
-import com.discord.widgets.servers.creator_monetization_eligibility.onboarding.ServerSettingsCreatorMonetizationOnboardingViewModel;
 import kotlin.jvm.functions.Function0;
 import kotlin.jvm.functions.Function1;
 import p507d0.p592z.p594d.AbstractC12240o;

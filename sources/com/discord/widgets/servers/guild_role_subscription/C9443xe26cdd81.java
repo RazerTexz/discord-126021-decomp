@@ -1,7 +1,6 @@
 package com.discord.widgets.servers.guild_role_subscription;
 
 import com.discord.stores.StoreGuildRoleSubscriptions;
-import com.discord.widgets.servers.guild_role_subscription.ServerSettingsGuildRoleSubscriptionTierListViewModel;
 import kotlin.jvm.functions.Function0;
 import p507d0.p592z.p594d.AbstractC12240o;
 

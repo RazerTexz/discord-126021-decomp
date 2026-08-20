@@ -7,7 +7,6 @@ import com.discord.models.domain.ModelAuditLogEntry;
 import com.discord.models.domain.ModelPayload;
 import com.discord.models.domain.spotify.ModelSpotifyAlbum;
 import com.discord.models.domain.spotify.ModelSpotifyTrack;
-import com.discord.stores.StoreUserConnections;
 import com.discord.utilities.analytics.AnalyticsTracker;
 import com.discord.utilities.error.Error;
 import com.discord.utilities.integrations.SpotifyHelper;

@@ -6,7 +6,7 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.util.regex.Pattern;
 
-/* JADX INFO: loaded from: app.apk:org/objectweb/asm/Constants.SCL.lombok */
+/* JADX INFO: loaded from: discord-126021.apk:org/objectweb/asm/Constants.SCL.lombok */
 final class Constants {
     static final String CONSTANT_VALUE = "ConstantValue";
     static final String CODE = "Code";

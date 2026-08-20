@@ -6,7 +6,6 @@ import com.discord.models.member.GuildMember;
 import com.discord.models.message.Message;
 import com.discord.utilities.embed.InviteEmbedModel;
 import com.discord.widgets.chat.list.entries.ChatListEntry;
-import com.discord.widgets.chat.list.model.WidgetChatListModelMessages;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;

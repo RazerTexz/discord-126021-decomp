@@ -19,7 +19,6 @@ import com.discord.utilities.p501rx.ObservableExtensionsKt;
 import com.discord.utilities.time.Clock;
 import com.discord.utilities.time.ClockFactory;
 import com.discord.utilities.time.TimeUtils;
-import com.discord.widgets.user.WidgetUserSetCustomStatusViewModel;
 import java.util.Calendar;
 import java.util.Objects;
 import kotlin.NoWhenBranchMatchedException;

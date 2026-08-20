@@ -3,7 +3,6 @@ package com.discord.stores;
 import androidx.appcompat.widget.ActivityChooserModel;
 import androidx.fragment.app.FragmentActivity;
 import androidx.fragment.app.FragmentManager;
-import com.discord.stores.StoreNotices;
 import com.discord.utilities.notices.NoticeBuilders;
 import kotlin.jvm.functions.Function1;
 import p507d0.p592z.p594d.AbstractC12240o;

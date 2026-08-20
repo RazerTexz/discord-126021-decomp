@@ -20,7 +20,6 @@ import com.discord.widgets.chat.list.entries.SpacerEntry;
 import com.discord.widgets.chat.list.entries.StickerGreetCompactEntry;
 import com.discord.widgets.chat.list.entries.StickerGreetEntry;
 import com.discord.widgets.chat.list.entries.ThreadDraftFormEntry;
-import com.discord.widgets.chat.list.model.WidgetChatListModel;
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;

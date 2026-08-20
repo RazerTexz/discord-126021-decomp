@@ -9,7 +9,6 @@ import com.discord.databinding.StickerCategoryItemPackBinding;
 import com.discord.databinding.StickerCategoryItemRecentBinding;
 import com.discord.rlottie.RLottieImageView;
 import com.discord.views.sticker.StickerView;
-import com.discord.widgets.chat.input.sticker.StickerCategoryItem;
 import com.facebook.drawee.view.SimpleDraweeView;
 import kotlin.Unit;
 import kotlin.jvm.functions.Function0;

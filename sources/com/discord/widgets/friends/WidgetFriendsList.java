@@ -36,8 +36,6 @@ import com.discord.widgets.channels.invite.GroupInviteFriendsSheet;
 import com.discord.widgets.channels.invite.GroupInviteFriendsSheetFeatureFlag;
 import com.discord.widgets.contact_sync.ContactSyncFlowAnalytics;
 import com.discord.widgets.contact_sync.WidgetContactSync;
-import com.discord.widgets.friends.FriendsListViewModel;
-import com.discord.widgets.friends.WidgetFriendsAdd;
 import com.discord.widgets.tabs.NavigationTab;
 import com.discord.widgets.tabs.OnTabSelectedListener;
 import com.discord.widgets.tabs.WidgetTabsHost;

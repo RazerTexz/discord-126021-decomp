@@ -26,8 +26,6 @@ import com.discord.utilities.mg_recycler.MGRecyclerViewHolder;
 import com.discord.utilities.view.recycler.MaxHeightRecyclerView;
 import com.discord.utilities.viewbinding.FragmentViewBindingDelegate;
 import com.discord.utilities.viewbinding.FragmentViewBindingDelegateKt;
-import com.discord.widgets.settings.WidgetSettingsLanguage;
-import com.discord.widgets.settings.WidgetSettingsLanguageSelect;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;

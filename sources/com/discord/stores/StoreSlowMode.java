@@ -1,7 +1,6 @@
 package com.discord.stores;
 
 import com.discord.api.channel.Channel;
-import com.discord.stores.StoreSlowMode;
 import com.discord.utilities.permissions.PermissionUtils;
 import com.discord.utilities.time.Clock;
 import java.util.HashMap;

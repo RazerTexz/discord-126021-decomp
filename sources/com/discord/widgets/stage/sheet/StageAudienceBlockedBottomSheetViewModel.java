@@ -9,8 +9,6 @@ import com.discord.utilities.error.Error;
 import com.discord.utilities.mg_recycler.MGRecyclerDataPayload;
 import com.discord.utilities.p501rx.ObservableExtensionsKt;
 import com.discord.widgets.stage.StageRoles;
-import com.discord.widgets.stage.sheet.StageAudienceBlockedBottomSheetAdapter;
-import com.discord.widgets.stage.sheet.StageAudienceBlockedBottomSheetViewModel;
 import com.discord.widgets.voice.model.CallModel;
 import java.util.ArrayList;
 import java.util.Iterator;

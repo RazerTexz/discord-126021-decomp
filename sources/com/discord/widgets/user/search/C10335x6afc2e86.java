@@ -1,6 +1,5 @@
 package com.discord.widgets.user.search;
 
-import com.discord.widgets.user.search.WidgetGlobalSearchModel;
 import java.util.List;
 import java.util.Map;
 import kotlin.jvm.functions.Function7;

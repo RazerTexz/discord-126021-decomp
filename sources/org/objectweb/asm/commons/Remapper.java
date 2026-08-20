@@ -7,7 +7,7 @@ import org.objectweb.asm.signature.SignatureReader;
 import org.objectweb.asm.signature.SignatureVisitor;
 import org.objectweb.asm.signature.SignatureWriter;
 
-/* JADX INFO: loaded from: app.apk:org/objectweb/asm/commons/Remapper.SCL.lombok */
+/* JADX INFO: loaded from: discord-126021.apk:org/objectweb/asm/commons/Remapper.SCL.lombok */
 public abstract class Remapper {
     public String mapDesc(String descriptor) {
         return mapType(Type.getType(descriptor)).getDescriptor();

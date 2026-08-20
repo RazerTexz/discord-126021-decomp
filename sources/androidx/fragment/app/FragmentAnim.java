@@ -16,7 +16,6 @@ import androidx.annotation.NonNull;
 import androidx.core.os.CancellationSignal;
 import androidx.core.view.OneShotPreDrawListener;
 import androidx.fragment.C0344R;
-import androidx.fragment.app.FragmentTransition;
 
 /* JADX INFO: loaded from: classes.dex */
 public class FragmentAnim {

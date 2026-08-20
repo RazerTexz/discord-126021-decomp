@@ -3,7 +3,6 @@ package androidx.recyclerview.widget;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.annotation.RestrictTo;
-import androidx.recyclerview.widget.DiffUtil;
 import java.util.concurrent.Executor;
 import java.util.concurrent.Executors;
 

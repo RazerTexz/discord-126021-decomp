@@ -22,7 +22,7 @@ import org.objectweb.asm.tree.MethodNode;
 import org.objectweb.asm.tree.TableSwitchInsnNode;
 import org.objectweb.asm.tree.TryCatchBlockNode;
 
-/* JADX INFO: loaded from: app.apk:org/objectweb/asm/commons/JSRInlinerAdapter.SCL.lombok */
+/* JADX INFO: loaded from: discord-126021.apk:org/objectweb/asm/commons/JSRInlinerAdapter.SCL.lombok */
 public class JSRInlinerAdapter extends MethodNode implements Opcodes {
     private final BitSet mainSubroutineInsns;
     private final Map<LabelNode, BitSet> subroutinesInsns;
@@ -228,7 +228,7 @@ public class JSRInlinerAdapter extends MethodNode implements Opcodes {
         }
     }
 
-    /* JADX INFO: loaded from: app.apk:org/objectweb/asm/commons/JSRInlinerAdapter$Instantiation.SCL.lombok */
+    /* JADX INFO: loaded from: discord-126021.apk:org/objectweb/asm/commons/JSRInlinerAdapter$Instantiation.SCL.lombok */
     private class Instantiation extends AbstractMap<LabelNode, LabelNode> {
         final Instantiation parent;
         final BitSet subroutineInsns;

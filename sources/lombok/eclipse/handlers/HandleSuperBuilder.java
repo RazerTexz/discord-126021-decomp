@@ -21,9 +21,6 @@ import lombok.core.handlers.HandlerUtil;
 import lombok.core.handlers.InclusionExclusionUtils;
 import lombok.eclipse.EclipseAnnotationHandler;
 import lombok.eclipse.EclipseNode;
-import lombok.eclipse.handlers.EclipseHandlerUtil;
-import lombok.eclipse.handlers.EclipseSingularsRecipes;
-import lombok.eclipse.handlers.HandleBuilder;
 import lombok.experimental.NonFinal;
 import lombok.experimental.SuperBuilder;
 import org.eclipse.jdt.internal.compiler.ast.ASTNode;
@@ -63,7 +60,7 @@ import org.eclipse.jdt.internal.compiler.lookup.ClassScope;
 import org.eclipse.jdt.internal.compiler.lookup.MethodScope;
 import org.eclipse.jdt.internal.compiler.lookup.TypeConstants;
 
-/* JADX INFO: loaded from: app.apk:lombok/eclipse/handlers/HandleSuperBuilder.SCL.lombok */
+/* JADX INFO: loaded from: discord-126021.apk:lombok/eclipse/handlers/HandleSuperBuilder.SCL.lombok */
 @HandlerPriority(-1024)
 public class HandleSuperBuilder extends EclipseAnnotationHandler<SuperBuilder> {
     private static final char[] SELF_METHOD_NAME = "self".toCharArray();
@@ -99,7 +96,7 @@ public class HandleSuperBuilder extends EclipseAnnotationHandler<SuperBuilder> {
         return iArr2;
     }
 
-    /* JADX INFO: loaded from: app.apk:lombok/eclipse/handlers/HandleSuperBuilder$SuperBuilderJob.SCL.lombok */
+    /* JADX INFO: loaded from: discord-126021.apk:lombok/eclipse/handlers/HandleSuperBuilder$SuperBuilderJob.SCL.lombok */
     class SuperBuilderJob extends HandleBuilder.BuilderJob {
         EclipseNode builderAbstractType;
         String builderAbstractClassName;

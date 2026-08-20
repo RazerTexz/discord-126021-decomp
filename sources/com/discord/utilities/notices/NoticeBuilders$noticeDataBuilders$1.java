@@ -2,7 +2,6 @@ package com.discord.utilities.notices;
 
 import android.content.Context;
 import com.discord.stores.StoreNotices;
-import com.discord.utilities.notices.NoticeBuilders;
 import kotlin.jvm.functions.Function2;
 import p507d0.p592z.p594d.C12236k;
 import p507d0.p592z.p594d.C12238m;

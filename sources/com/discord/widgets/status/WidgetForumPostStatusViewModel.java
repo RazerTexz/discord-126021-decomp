@@ -29,7 +29,6 @@ import com.discord.utilities.rest.RestAPI;
 import com.discord.widgets.chat.list.adapter.WidgetChatListAdapterEventsHandler;
 import com.discord.widgets.chat.managereactions.WidgetManageReactions;
 import com.discord.widgets.forums.ForumUtils;
-import com.discord.widgets.status.WidgetForumPostStatusViewModel;
 import kotlin.Unit;
 import kotlin.jvm.functions.Function0;
 import kotlin.jvm.functions.Function1;

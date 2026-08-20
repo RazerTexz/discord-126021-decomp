@@ -6,7 +6,6 @@ import java.nio.charset.Charset;
 import java.util.Objects;
 import java.util.regex.Pattern;
 import kotlin.jvm.internal.DefaultConstructorMarker;
-import okhttp3.MediaType;
 import okio.BufferedSink;
 import okio.ByteString;
 import p507d0.p579g0.C12086c;

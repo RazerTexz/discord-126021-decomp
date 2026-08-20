@@ -19,7 +19,6 @@ import com.discord.utilities.error.Error;
 import com.discord.utilities.p501rx.ObservableExtensionsKt;
 import com.discord.utilities.permissions.PermissionUtils;
 import com.discord.utilities.rest.RestAPI;
-import com.discord.widgets.servers.community.WidgetServerSettingsEnableCommunityViewModel;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;

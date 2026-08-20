@@ -1,7 +1,5 @@
 package com.discord.stores;
 
-import com.discord.stores.StoreClientDataState;
-import com.discord.stores.StoreGatewayConnection;
 import kotlin.jvm.functions.Function5;
 import p507d0.p592z.p594d.C12236k;
 import p507d0.p592z.p594d.C12238m;

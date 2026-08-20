@@ -43,7 +43,7 @@ import lombok.javac.JavacTransformer;
 import lombok.javac.handlers.JavacHandlerUtil;
 import lombok.permit.Permit;
 
-/* JADX INFO: loaded from: app.apk:lombok/javac/apt/LombokProcessor.SCL.lombok */
+/* JADX INFO: loaded from: discord-126021.apk:lombok/javac/apt/LombokProcessor.SCL.lombok */
 @SupportedAnnotationTypes({"*"})
 public class LombokProcessor extends AbstractProcessor {
     private ProcessingEnvironment processingEnv;

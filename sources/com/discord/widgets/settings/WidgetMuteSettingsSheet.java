@@ -21,7 +21,6 @@ import com.discord.utilities.time.TimeUtils;
 import com.discord.utilities.viewbinding.FragmentViewBindingDelegate;
 import com.discord.utilities.viewbinding.FragmentViewBindingDelegateKt;
 import com.discord.widgets.channels.settings.WidgetChannelNotificationSettings;
-import com.discord.widgets.settings.MuteSettingsSheetViewModel;
 import kotlin.Lazy;
 import kotlin.Unit;
 import kotlin.jvm.functions.Function0;

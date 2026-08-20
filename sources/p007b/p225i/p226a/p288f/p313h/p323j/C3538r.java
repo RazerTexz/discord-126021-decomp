@@ -189,29 +189,25 @@ public final class C3538r extends AbstractC3509e {
                 C3398a c3398aM4181b = C3398a.m4181b();
                 synchronized (serviceConnectionC3526l) {
                     interfaceC3525k0 = null;
-                    try {
-                        serviceConnectionC3526l.f9754j = null;
-                        serviceConnectionC3526l.f9755k = true;
-                        boolean zM4182a = c3398aM4181b.m4182a(context, intent, serviceConnectionC3526l.f9756l.f9742l, Opcodes.LOR);
-                        serviceConnectionC3526l.f9756l.m4431b("Bind to service requested", Boolean.valueOf(zM4182a));
-                        if (zM4182a) {
-                            try {
-                                serviceConnectionC3526l.wait(C3510e0.f9713y.f9716a.longValue());
-                            } catch (InterruptedException unused) {
-                                serviceConnectionC3526l.f9756l.m4428D("Wait for service connect was interrupted");
-                            }
-                            serviceConnectionC3526l.f9755k = false;
-                            InterfaceC3525k0 interfaceC3525k1 = serviceConnectionC3526l.f9754j;
-                            serviceConnectionC3526l.f9754j = null;
-                            if (interfaceC3525k1 == null) {
-                                serviceConnectionC3526l.f9756l.m4429H("Successfully bound to service but never got onServiceConnected callback");
-                            }
-                            interfaceC3525k0 = interfaceC3525k1;
-                        } else {
-                            serviceConnectionC3526l.f9755k = false;
+                    serviceConnectionC3526l.f9754j = null;
+                    serviceConnectionC3526l.f9755k = true;
+                    boolean zM4182a = c3398aM4181b.m4182a(context, intent, serviceConnectionC3526l.f9756l.f9742l, Opcodes.LOR);
+                    serviceConnectionC3526l.f9756l.m4431b("Bind to service requested", Boolean.valueOf(zM4182a));
+                    if (zM4182a) {
+                        try {
+                            serviceConnectionC3526l.wait(C3510e0.f9713y.f9716a.longValue());
+                        } catch (InterruptedException unused) {
+                            serviceConnectionC3526l.f9756l.m4428D("Wait for service connect was interrupted");
                         }
-                    } catch (Throwable th) {
-                        throw th;
+                        serviceConnectionC3526l.f9755k = false;
+                        InterfaceC3525k0 interfaceC3525k1 = serviceConnectionC3526l.f9754j;
+                        serviceConnectionC3526l.f9754j = null;
+                        if (interfaceC3525k1 == null) {
+                            serviceConnectionC3526l.f9756l.m4429H("Successfully bound to service but never got onServiceConnected callback");
+                        }
+                        interfaceC3525k0 = interfaceC3525k1;
+                    } else {
+                        serviceConnectionC3526l.f9755k = false;
                     }
                 }
                 if (interfaceC3525k0 != null) {

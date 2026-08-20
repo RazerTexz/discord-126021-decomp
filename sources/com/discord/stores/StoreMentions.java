@@ -15,7 +15,6 @@ import com.discord.models.domain.ModelReadState;
 import com.discord.models.domain.ModelUserRelationship;
 import com.discord.models.message.Message;
 import com.discord.models.thread.dto.ModelThreadListSync;
-import com.discord.stores.StoreMessageAck;
 import com.discord.stores.updates.ObservationDeck;
 import com.discord.stores.updates.ObservationDeckProvider;
 import com.discord.utilities.permissions.PermissionUtils;

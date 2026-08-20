@@ -6,7 +6,7 @@ import java.util.Iterator;
 import java.util.NoSuchElementException;
 import java.util.Set;
 
-/* JADX INFO: loaded from: app.apk:org/objectweb/asm/tree/analysis/SmallSet.SCL.lombok */
+/* JADX INFO: loaded from: discord-126021.apk:org/objectweb/asm/tree/analysis/SmallSet.SCL.lombok */
 final class SmallSet<T> extends AbstractSet<T> {
     private final T element1;
     private final T element2;
@@ -75,7 +75,7 @@ final class SmallSet<T> extends AbstractSet<T> {
         return result;
     }
 
-    /* JADX INFO: loaded from: app.apk:org/objectweb/asm/tree/analysis/SmallSet$IteratorImpl.SCL.lombok */
+    /* JADX INFO: loaded from: discord-126021.apk:org/objectweb/asm/tree/analysis/SmallSet$IteratorImpl.SCL.lombok */
     static class IteratorImpl<T> implements Iterator<T> {
         private T firstElement;
         private T secondElement;

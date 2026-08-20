@@ -43,8 +43,6 @@ import com.discord.utilities.viewbinding.FragmentViewBindingDelegate;
 import com.discord.utilities.viewbinding.FragmentViewBindingDelegateKt;
 import com.discord.widgets.chat.input.MentionUtilsKt;
 import com.discord.widgets.servers.WidgetServerSettingsChannels;
-import com.discord.widgets.servers.auditlog.WidgetServerSettingsAuditLog;
-import com.discord.widgets.servers.auditlog.WidgetServerSettingsAuditLogAdapter;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Iterator;

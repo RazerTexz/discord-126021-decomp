@@ -4,7 +4,6 @@ import android.content.pm.PackageManager;
 import android.content.pm.Signature;
 import com.discord.app.AppLog;
 import com.discord.utilities.logging.Logger;
-import com.discord.utilities.sms.AppSignatureHelper;
 import java.util.ArrayList;
 import kotlin.jvm.functions.Function0;
 import p507d0.p592z.p594d.AbstractC12240o;

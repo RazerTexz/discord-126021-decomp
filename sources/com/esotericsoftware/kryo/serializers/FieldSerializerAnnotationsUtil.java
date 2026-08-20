@@ -2,9 +2,6 @@ package com.esotericsoftware.kryo.serializers;
 
 import com.esotericsoftware.kryo.Serializer;
 import com.esotericsoftware.kryo.factories.ReflectionSerializerFactory;
-import com.esotericsoftware.kryo.serializers.CollectionSerializer;
-import com.esotericsoftware.kryo.serializers.FieldSerializer;
-import com.esotericsoftware.kryo.serializers.MapSerializer;
 import java.lang.reflect.Field;
 import java.util.Collection;
 import java.util.Map;

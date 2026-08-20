@@ -4,7 +4,7 @@ import com.discord.widgets.chat.input.MentionUtilsKt;
 import java.lang.reflect.Constructor;
 import java.lang.reflect.Method;
 
-/* JADX INFO: loaded from: app.apk:org/objectweb/asm/Type.SCL.lombok */
+/* JADX INFO: loaded from: discord-126021.apk:org/objectweb/asm/Type.SCL.lombok */
 public final class Type {
     public static final int VOID = 0;
     public static final int BOOLEAN = 1;

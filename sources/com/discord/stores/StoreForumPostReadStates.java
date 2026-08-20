@@ -8,7 +8,6 @@ import com.discord.api.message.Message;
 import com.discord.api.user.User;
 import com.discord.models.domain.ModelPayload;
 import com.discord.models.domain.ModelReadState;
-import com.discord.stores.StoreMessageAck;
 import com.discord.stores.updates.ObservationDeck;
 import com.discord.widgets.forums.ForumUtils;
 import java.util.ArrayList;

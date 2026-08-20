@@ -10,7 +10,7 @@ import lombok.patcher.TransplantMapper;
 import org.objectweb.asm.ClassVisitor;
 import org.objectweb.asm.ClassWriter;
 
-/* JADX INFO: loaded from: app.apk:lombok/patcher/scripts/MethodLevelPatchScript.SCL.lombok */
+/* JADX INFO: loaded from: discord-126021.apk:lombok/patcher/scripts/MethodLevelPatchScript.SCL.lombok */
 public abstract class MethodLevelPatchScript extends PatchScript {
     private final Set<String> affectedClasses;
     private final Collection<TargetMatcher> matchers;

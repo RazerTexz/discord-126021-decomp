@@ -2,7 +2,7 @@ package lombok.core.configuration;
 
 import lombok.core.JavaIdentifiers;
 
-/* JADX INFO: loaded from: app.apk:lombok/core/configuration/TypeName.SCL.lombok */
+/* JADX INFO: loaded from: discord-126021.apk:lombok/core/configuration/TypeName.SCL.lombok */
 public final class TypeName implements ConfigurationValueType {
     private final String name;
 

@@ -10,7 +10,6 @@ import android.widget.EditText;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.core.content.res.TypedArrayUtils;
-import androidx.preference.Preference;
 
 /* JADX INFO: loaded from: classes.dex */
 public class EditTextPreference extends DialogPreference {

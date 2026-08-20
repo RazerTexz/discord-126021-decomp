@@ -40,8 +40,6 @@ import com.discord.utilities.error.Error;
 import com.discord.utilities.p501rx.ObservableCombineLatestOverloadsKt;
 import com.discord.utilities.p501rx.ObservableExtensionsKt;
 import com.discord.utilities.permissions.PermissionUtils;
-import com.discord.widgets.forums.ForumBrowserItem;
-import com.discord.widgets.forums.WidgetForumBrowserViewModel;
 import com.discord.widgets.tabs.NavigationTab;
 import java.util.ArrayList;
 import java.util.Iterator;

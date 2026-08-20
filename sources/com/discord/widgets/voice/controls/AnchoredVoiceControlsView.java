@@ -22,7 +22,6 @@ import com.discord.tooltips.SparkleView;
 import com.discord.tooltips.TooltipManager;
 import com.discord.utilities.color.ColorCompat;
 import com.discord.utilities.press.OnPressListener;
-import com.discord.widgets.voice.controls.WidgetScreenShareNfxSheet;
 import com.discord.widgets.voice.model.CameraState;
 import com.discord.widgets.voice.sheet.WidgetVoiceBottomSheet;
 import com.google.android.material.button.MaterialButton;

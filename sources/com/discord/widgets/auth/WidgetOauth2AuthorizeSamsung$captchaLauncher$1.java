@@ -1,7 +1,6 @@
 package com.discord.widgets.auth;
 
 import com.discord.utilities.captcha.CaptchaHelper;
-import com.discord.widgets.auth.WidgetOauth2AuthorizeSamsung;
 import kotlin.Unit;
 import kotlin.jvm.functions.Function1;
 import p507d0.p592z.p594d.AbstractC12240o;

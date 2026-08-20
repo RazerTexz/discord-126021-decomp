@@ -4,7 +4,6 @@ import android.content.Intent;
 import androidx.appcompat.widget.ActivityChooserModel;
 import com.discord.app.AppActivity;
 import com.discord.models.authentication.AuthState;
-import com.discord.stores.StoreNavigation;
 import com.discord.widgets.auth.WidgetAuthForceChangePassword;
 import kotlin.Unit;
 import kotlin.jvm.functions.Function2;

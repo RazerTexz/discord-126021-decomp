@@ -7,7 +7,6 @@ import com.discord.api.permission.PermissionOverwrite;
 import com.discord.stores.StoreStream;
 import com.discord.utilities.PermissionOverwriteUtilsKt;
 import com.discord.utilities.channel.GuildChannelsInfo;
-import com.discord.widgets.channels.list.WidgetChannelListModel;
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.Iterator;

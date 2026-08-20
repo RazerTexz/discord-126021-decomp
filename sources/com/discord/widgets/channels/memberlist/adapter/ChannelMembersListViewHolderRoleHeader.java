@@ -7,7 +7,6 @@ import androidx.core.view.ViewCompat;
 import androidx.core.view.accessibility.AccessibilityNodeInfoCompat;
 import androidx.recyclerview.widget.RecyclerView;
 import com.discord.databinding.WidgetChannelMembersListItemHeaderBinding;
-import com.discord.widgets.channels.memberlist.adapter.ChannelMembersListAdapter;
 import p507d0.p592z.p594d.C12238m;
 
 /* JADX INFO: compiled from: ChannelMembersListViewHolderRoleHeader.kt */

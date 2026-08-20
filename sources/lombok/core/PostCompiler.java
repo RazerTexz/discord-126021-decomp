@@ -9,7 +9,7 @@ import java.io.Writer;
 import java.util.Collections;
 import java.util.List;
 
-/* JADX INFO: loaded from: app.apk:lombok/core/PostCompiler.SCL.lombok */
+/* JADX INFO: loaded from: discord-126021.apk:lombok/core/PostCompiler.SCL.lombok */
 public final class PostCompiler {
     private static List<PostCompilerTransformation> transformations;
 

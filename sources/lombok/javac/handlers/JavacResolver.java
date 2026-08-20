@@ -5,7 +5,7 @@ import com.sun.tools.javac.tree.JCTree;
 import lombok.javac.JavacNode;
 import lombok.javac.JavacResolution;
 
-/* JADX INFO: loaded from: app.apk:lombok/javac/handlers/JavacResolver.SCL.lombok */
+/* JADX INFO: loaded from: discord-126021.apk:lombok/javac/handlers/JavacResolver.SCL.lombok */
 public enum JavacResolver {
     CLASS { // from class: lombok.javac.handlers.JavacResolver.1
         @Override // lombok.javac.handlers.JavacResolver

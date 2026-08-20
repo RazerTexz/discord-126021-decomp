@@ -11,7 +11,6 @@ import com.discord.api.user.User;
 import com.discord.api.user.UserSurvey;
 import com.discord.models.deserialization.gson.InboundGatewayGsonParser;
 import com.discord.models.domain.Model;
-import com.discord.models.domain.ModelReadState;
 import com.discord.models.domain.ModelSession;
 import com.discord.models.domain.ModelUserRelationship;
 import com.discord.models.experiments.dto.GuildExperimentDto;

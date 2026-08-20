@@ -5,7 +5,6 @@ import android.view.View;
 import android.widget.TextView;
 import com.discord.C5419R;
 import com.discord.databinding.WidgetGuildProfileEmojiExtraBinding;
-import com.discord.widgets.guilds.profile.EmojiItem;
 import p007b.p008a.p027k.C1107b;
 import p507d0.p592z.p594d.C12238m;
 

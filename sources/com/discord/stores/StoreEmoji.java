@@ -13,7 +13,6 @@ import com.discord.models.domain.emoji.ModelEmojiCustom;
 import com.discord.models.domain.emoji.ModelEmojiUnicode;
 import com.discord.models.guild.Guild;
 import com.discord.models.user.MeUser;
-import com.discord.stores.StoreMediaFavorites;
 import com.discord.utilities.Quad;
 import com.discord.utilities.collections.ShallowPartitionMap;
 import com.discord.utilities.frecency.FrecencyTracker;

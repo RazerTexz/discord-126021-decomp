@@ -3,11 +3,11 @@ package lombok.core;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.ConcurrentMap;
 
-/* JADX INFO: loaded from: app.apk:lombok/core/CleanupRegistry.SCL.lombok */
+/* JADX INFO: loaded from: discord-126021.apk:lombok/core/CleanupRegistry.SCL.lombok */
 public class CleanupRegistry {
     private final ConcurrentMap<CleanupKey, CleanupTask> tasks = new ConcurrentHashMap();
 
-    /* JADX INFO: loaded from: app.apk:lombok/core/CleanupRegistry$CleanupKey.SCL.lombok */
+    /* JADX INFO: loaded from: discord-126021.apk:lombok/core/CleanupRegistry$CleanupKey.SCL.lombok */
     private static final class CleanupKey {
         private final String key;
         private final Object target;

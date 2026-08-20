@@ -1,6 +1,5 @@
 package com.esotericsoftware.kryo.serializers;
 
-import com.esotericsoftware.kryo.serializers.FieldSerializer;
 import p007b.p106e.p107a.C1644a;
 
 /* JADX INFO: loaded from: classes.dex */

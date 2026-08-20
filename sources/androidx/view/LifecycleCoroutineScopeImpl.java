@@ -1,6 +1,5 @@
 package androidx.view;
 
-import androidx.view.Lifecycle;
 import kotlin.Unit;
 import kotlin.coroutines.Continuation;
 import kotlin.coroutines.CoroutineContext;

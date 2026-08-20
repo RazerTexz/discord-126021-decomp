@@ -1,7 +1,6 @@
 package androidx.transition;
 
 import androidx.annotation.NonNull;
-import androidx.transition.Transition;
 
 /* JADX INFO: loaded from: classes.dex */
 public class TransitionListenerAdapter implements Transition.TransitionListener {

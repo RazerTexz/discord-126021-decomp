@@ -73,7 +73,7 @@ import org.eclipse.jdt.internal.core.SourceMethodInfo;
 import org.eclipse.jdt.internal.core.SourceType;
 import org.eclipse.jdt.internal.core.SourceTypeElementInfo;
 
-/* JADX INFO: loaded from: app.apk:lombok/eclipse/agent/PatchDelegate.SCL.lombok */
+/* JADX INFO: loaded from: discord-126021.apk:lombok/eclipse/agent/PatchDelegate.SCL.lombok */
 public class PatchDelegate {
     private static final String LEGALITY_OF_DELEGATE = "@Delegate is legal only on instance fields or no-argument instance methods.";
     private static final String RECURSION_NOT_ALLOWED = "@Delegate does not support recursion (delegating to a type that itself has @Delegate members). Member \"%s\" is @Delegate in type \"%s\"";
@@ -90,12 +90,12 @@ public class PatchDelegate {
     private static final char[] STRING_DELEGATE = {'D', 'e', 'l', 'e', 'g', 'a', 't', 'e'};
     private static final List<String> METHODS_IN_OBJECT = Collections.unmodifiableList(Arrays.asList("hashCode()", "canEqual(java.lang.Object)", "equals(java.lang.Object)", "wait()", "wait(long)", "wait(long, int)", "notify()", "notifyAll()", "toString()", "getClass()", "clone()", "finalize()"));
 
-    /* JADX INFO: loaded from: app.apk:lombok/eclipse/agent/PatchDelegate$CantMakeDelegates.SCL.lombok */
+    /* JADX INFO: loaded from: discord-126021.apk:lombok/eclipse/agent/PatchDelegate$CantMakeDelegates.SCL.lombok */
     public static class CantMakeDelegates extends Exception {
         public Set<String> conflicted;
     }
 
-    /* JADX INFO: loaded from: app.apk:lombok/eclipse/agent/PatchDelegate$ClassScopeEntry.SCL.lombok */
+    /* JADX INFO: loaded from: discord-126021.apk:lombok/eclipse/agent/PatchDelegate$ClassScopeEntry.SCL.lombok */
     private static class ClassScopeEntry {
         final ClassScope scope;
         String corruptedPath;
@@ -425,7 +425,7 @@ public class PatchDelegate {
         }
     }
 
-    /* JADX INFO: loaded from: app.apk:lombok/eclipse/agent/PatchDelegate$TypeVarFinder.SCL.lombok */
+    /* JADX INFO: loaded from: discord-126021.apk:lombok/eclipse/agent/PatchDelegate$TypeVarFinder.SCL.lombok */
     public static class TypeVarFinder extends EclipseTypeBindingScanner {
         private Set<String> typeVars = new HashSet();
 
@@ -442,7 +442,7 @@ public class PatchDelegate {
         }
     }
 
-    /* JADX INFO: loaded from: app.apk:lombok/eclipse/agent/PatchDelegate$EclipseTypeBindingScanner.SCL.lombok */
+    /* JADX INFO: loaded from: discord-126021.apk:lombok/eclipse/agent/PatchDelegate$EclipseTypeBindingScanner.SCL.lombok */
     public static abstract class EclipseTypeBindingScanner {
         public void visitRaw(Binding binding) {
             if (binding == null) {
@@ -671,7 +671,7 @@ public class PatchDelegate {
         return getCompilationUnit(cud.compilationResult.compilationUnit);
     }
 
-    /* JADX INFO: loaded from: app.apk:lombok/eclipse/agent/PatchDelegate$DelegateSourceMethod.SCL.lombok */
+    /* JADX INFO: loaded from: discord-126021.apk:lombok/eclipse/agent/PatchDelegate$DelegateSourceMethod.SCL.lombok */
     private static final class DelegateSourceMethod extends SourceMethod {
         private DelegateSourceMethodInfo sourceMethodInfo;
 
@@ -701,7 +701,7 @@ public class PatchDelegate {
             return this == o;
         }
 
-        /* JADX INFO: loaded from: app.apk:lombok/eclipse/agent/PatchDelegate$DelegateSourceMethod$DelegateSourceMethodInfo.SCL.lombok */
+        /* JADX INFO: loaded from: discord-126021.apk:lombok/eclipse/agent/PatchDelegate$DelegateSourceMethod$DelegateSourceMethodInfo.SCL.lombok */
         public static final class DelegateSourceMethodInfo extends SourceMethodInfo {
             public /* bridge */ /* synthetic */ int getDeclarationSourceEnd() {
                 return super.getDeclarationSourceEnd();
@@ -766,7 +766,7 @@ public class PatchDelegate {
         return null;
     }
 
-    /* JADX INFO: loaded from: app.apk:lombok/eclipse/agent/PatchDelegate$Reflection.SCL.lombok */
+    /* JADX INFO: loaded from: discord-126021.apk:lombok/eclipse/agent/PatchDelegate$Reflection.SCL.lombok */
     private static final class Reflection {
         public static final Method classScopeBuildFieldsAndMethodsMethod;
 
@@ -789,7 +789,7 @@ public class PatchDelegate {
         addAllMethodBindings0(list, binding, banList, fieldName, responsible);
     }
 
-    /* JADX INFO: loaded from: app.apk:lombok/eclipse/agent/PatchDelegate$DelegateRecursion.SCL.lombok */
+    /* JADX INFO: loaded from: discord-126021.apk:lombok/eclipse/agent/PatchDelegate$DelegateRecursion.SCL.lombok */
     private static class DelegateRecursion extends Throwable {
         final char[] type;
         final char[] member;
@@ -887,7 +887,7 @@ public class PatchDelegate {
         }
     }
 
-    /* JADX INFO: loaded from: app.apk:lombok/eclipse/agent/PatchDelegate$BindingTuple.SCL.lombok */
+    /* JADX INFO: loaded from: discord-126021.apk:lombok/eclipse/agent/PatchDelegate$BindingTuple.SCL.lombok */
     private static final class BindingTuple {
         final MethodBinding parameterized;
         final MethodBinding base;
@@ -1008,7 +1008,7 @@ public class PatchDelegate {
         return true;
     }
 
-    /* JADX INFO: loaded from: app.apk:lombok/eclipse/agent/PatchDelegate$DelegateReceiver.SCL.lombok */
+    /* JADX INFO: loaded from: discord-126021.apk:lombok/eclipse/agent/PatchDelegate$DelegateReceiver.SCL.lombok */
     private enum DelegateReceiver {
         METHOD { // from class: lombok.eclipse.agent.PatchDelegate.DelegateReceiver.1
             @Override // lombok.eclipse.agent.PatchDelegate.DelegateReceiver

@@ -20,7 +20,6 @@ import android.widget.TextView;
 import androidx.annotation.LayoutRes;
 import androidx.annotation.NonNull;
 import androidx.annotation.RestrictTo;
-import androidx.preference.DialogPreference;
 
 /* JADX INFO: loaded from: classes.dex */
 @Deprecated

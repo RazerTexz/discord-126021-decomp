@@ -18,8 +18,6 @@ import com.discord.utilities.hubs.HubUtilsKt;
 import com.discord.utilities.p501rx.ObservableExtensionsKt;
 import com.discord.utilities.viewbinding.FragmentViewBindingDelegate;
 import com.discord.utilities.viewbinding.FragmentViewBindingDelegateKt;
-import com.discord.widgets.directories.DirectoryChannelItem;
-import com.discord.widgets.directories.WidgetDirectoriesViewModel;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Iterator;

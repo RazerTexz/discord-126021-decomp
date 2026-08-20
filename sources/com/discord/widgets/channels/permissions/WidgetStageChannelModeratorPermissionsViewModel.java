@@ -16,8 +16,6 @@ import com.discord.stores.updates.ObservationDeckProvider;
 import com.discord.utilities.error.Error;
 import com.discord.utilities.p501rx.ObservableExtensionsKt;
 import com.discord.utilities.permissions.PermissionUtils;
-import com.discord.widgets.channels.permissions.PermissionOwner;
-import com.discord.widgets.channels.permissions.PermissionOwnerListView;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Iterator;

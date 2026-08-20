@@ -13,8 +13,6 @@ import com.discord.utilities.p501rx.LeadingEdgeThrottle;
 import com.discord.utilities.p501rx.ObservableExtensionsKt;
 import com.discord.utilities.recycler.DiffKeyProvider;
 import com.discord.widgets.chat.MessageManager;
-import com.discord.widgets.chat.input.gifpicker.GifAdapterItem;
-import com.discord.widgets.chat.input.gifpicker.GifSearchViewModel;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;

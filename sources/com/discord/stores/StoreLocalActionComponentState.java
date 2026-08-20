@@ -1,7 +1,6 @@
 package com.discord.stores;
 
 import com.discord.api.botuikit.SelectItem;
-import com.discord.stores.StoreApplicationInteractions;
 import com.discord.stores.updates.ObservationDeck;
 import com.discord.stores.updates.ObservationDeckProvider;
 import java.util.HashMap;

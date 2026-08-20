@@ -2,7 +2,6 @@ package com.discord.utilities.websocket;
 
 import androidx.core.view.PointerIconCompat;
 import com.discord.models.domain.ModelAuditLogEntry;
-import com.discord.utilities.websocket.ZLibWebSocketListener;
 import java.io.InputStreamReader;
 import java.util.Map;
 import java.util.concurrent.TimeUnit;

@@ -5,7 +5,6 @@ import androidx.annotation.Nullable;
 import androidx.annotation.RestrictTo;
 import com.google.auto.value.AutoValue;
 import p007b.p225i.p226a.p228b.EnumC2409d;
-import p007b.p225i.p226a.p228b.p231j.C2435b;
 
 /* JADX INFO: renamed from: b.i.a.b.j.i */
 /* JADX INFO: compiled from: TransportContext.java */

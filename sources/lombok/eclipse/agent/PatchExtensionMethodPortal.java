@@ -5,7 +5,7 @@ import java.lang.reflect.Method;
 import lombok.Lombok;
 import org.eclipse.jdt.internal.compiler.lookup.TypeBinding;
 
-/* JADX INFO: loaded from: app.apk:lombok/eclipse/agent/PatchExtensionMethodPortal.SCL.lombok */
+/* JADX INFO: loaded from: discord-126021.apk:lombok/eclipse/agent/PatchExtensionMethodPortal.SCL.lombok */
 public class PatchExtensionMethodPortal {
     private static final String TYPE_BINDING = "org.eclipse.jdt.internal.compiler.lookup.TypeBinding";
     private static final String TYPE_BINDING_ARRAY = "[Lorg.eclipse.jdt.internal.compiler.lookup.TypeBinding;";
@@ -64,7 +64,7 @@ public class PatchExtensionMethodPortal {
         }
     }
 
-    /* JADX INFO: loaded from: app.apk:lombok/eclipse/agent/PatchExtensionMethodPortal$Reflection.SCL.lombok */
+    /* JADX INFO: loaded from: discord-126021.apk:lombok/eclipse/agent/PatchExtensionMethodPortal$Reflection.SCL.lombok */
     private static final class Reflection {
         public static final Method resolveType;
         public static final Method errorNoMethodFor;

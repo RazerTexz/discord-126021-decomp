@@ -30,7 +30,6 @@ import android.util.AndroidRuntimeException;
 import android.util.AttributeSet;
 import android.util.Log;
 import android.util.TypedValue;
-import android.view.ActionMode;
 import android.view.ContextThemeWrapper;
 import android.view.KeyCharacterMap;
 import android.view.KeyEvent;
@@ -58,7 +57,6 @@ import androidx.annotation.RestrictTo;
 import androidx.annotation.StyleRes;
 import androidx.annotation.VisibleForTesting;
 import androidx.appcompat.C0051R;
-import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.content.res.AppCompatResources;
 import androidx.appcompat.view.ActionMode;
 import androidx.appcompat.view.StandaloneActionMode;
@@ -96,7 +94,6 @@ import androidx.core.view.WindowInsetsCompat;
 import androidx.core.widget.PopupWindowCompat;
 import androidx.view.Lifecycle;
 import androidx.view.LifecycleOwner;
-import java.lang.Thread;
 import java.util.List;
 import org.objectweb.asm.Opcodes;
 import org.webrtc.MediaStreamTrack;
@@ -2618,16 +2615,16 @@ public class AppCompatDelegateImpl extends AppCompatDelegate implements MenuBuil
         }
 
         @Override // androidx.appcompat.view.WindowCallbackWrapper, android.view.Window.Callback
-        public android.view.ActionMode onWindowStartingActionMode(ActionMode.Callback callback) {
+        public android.view.ActionMode onWindowStartingActionMode(android.view.ActionMode.Callback callback) {
             if (Build.VERSION.SDK_INT >= 23) {
                 return null;
             }
             return AppCompatDelegateImpl.this.isHandleNativeActionModesEnabled() ? startAsSupportActionMode(callback) : super.onWindowStartingActionMode(callback);
         }
 
-        public final android.view.ActionMode startAsSupportActionMode(ActionMode.Callback callback) {
+        public final android.view.ActionMode startAsSupportActionMode(android.view.ActionMode.Callback callback) {
             SupportActionModeWrapper.CallbackWrapper callbackWrapper = new SupportActionModeWrapper.CallbackWrapper(AppCompatDelegateImpl.this.mContext, callback);
-            androidx.appcompat.view.ActionMode actionModeStartSupportActionMode = AppCompatDelegateImpl.this.startSupportActionMode(callbackWrapper);
+            ActionMode actionModeStartSupportActionMode = AppCompatDelegateImpl.this.startSupportActionMode(callbackWrapper);
             if (actionModeStartSupportActionMode != null) {
                 return callbackWrapper.getActionModeWrapper(actionModeStartSupportActionMode);
             }
@@ -2636,7 +2633,7 @@ public class AppCompatDelegateImpl extends AppCompatDelegate implements MenuBuil
 
         @Override // androidx.appcompat.view.WindowCallbackWrapper, android.view.Window.Callback
         @RequiresApi(23)
-        public android.view.ActionMode onWindowStartingActionMode(ActionMode.Callback callback, int i) {
+        public android.view.ActionMode onWindowStartingActionMode(android.view.ActionMode.Callback callback, int i) {
             if (AppCompatDelegateImpl.this.isHandleNativeActionModesEnabled() && i == 0) {
                 return startAsSupportActionMode(callback);
             }

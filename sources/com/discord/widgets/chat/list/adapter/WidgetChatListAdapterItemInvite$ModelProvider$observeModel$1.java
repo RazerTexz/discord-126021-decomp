@@ -9,7 +9,6 @@ import com.discord.stores.StoreChannels;
 import com.discord.stores.StoreGuilds;
 import com.discord.stores.StoreUser;
 import com.discord.utilities.time.ClockFactory;
-import com.discord.widgets.chat.list.adapter.WidgetChatListAdapterItemInvite;
 import com.discord.widgets.chat.list.entries.InviteEntry;
 import kotlin.jvm.functions.Function0;
 import p507d0.p592z.p594d.AbstractC12240o;

@@ -1,6 +1,5 @@
 package com.discord.stores;
 
-import com.discord.stores.StoreV2;
 import com.discord.stores.updates.ObservationDeck;
 import com.discord.stores.updates.ObservationDeckProvider;
 import java.util.concurrent.TimeUnit;

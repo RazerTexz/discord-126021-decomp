@@ -16,7 +16,7 @@ import java.util.regex.Pattern;
 import java.util.zip.ZipEntry;
 import java.util.zip.ZipInputStream;
 
-/* JADX INFO: loaded from: app.apk:lombok/core/configuration/ConfigurationFile.SCL.lombok */
+/* JADX INFO: loaded from: discord-126021.apk:lombok/core/configuration/ConfigurationFile.SCL.lombok */
 public abstract class ConfigurationFile {
     private static final String LOMBOK_CONFIG_FILENAME = "lombok.config";
     private final String identifier;
@@ -103,7 +103,7 @@ public abstract class ConfigurationFile {
         }
     }
 
-    /* JADX INFO: loaded from: app.apk:lombok/core/configuration/ConfigurationFile$RegularConfigurationFile.SCL.lombok */
+    /* JADX INFO: loaded from: discord-126021.apk:lombok/core/configuration/ConfigurationFile$RegularConfigurationFile.SCL.lombok */
     private static class RegularConfigurationFile extends ConfigurationFile {
         private final File file;
 
@@ -210,7 +210,7 @@ public abstract class ConfigurationFile {
         }
     }
 
-    /* JADX INFO: loaded from: app.apk:lombok/core/configuration/ConfigurationFile$ArchivedConfigurationFile.SCL.lombok */
+    /* JADX INFO: loaded from: discord-126021.apk:lombok/core/configuration/ConfigurationFile$ArchivedConfigurationFile.SCL.lombok */
     private static class ArchivedConfigurationFile extends ConfigurationFile {
         private static final URI ROOT1 = URI.create("http://x.y/a/");
         private static final URI ROOT2 = URI.create("ftp://y.x/b/");
@@ -355,7 +355,7 @@ public abstract class ConfigurationFile {
         }
     }
 
-    /* JADX INFO: loaded from: app.apk:lombok/core/configuration/ConfigurationFile$CharSequenceConfigurationFile.SCL.lombok */
+    /* JADX INFO: loaded from: discord-126021.apk:lombok/core/configuration/ConfigurationFile$CharSequenceConfigurationFile.SCL.lombok */
     private static class CharSequenceConfigurationFile extends ConfigurationFile {
         private final CharSequence contents;
         private final long lastModified;

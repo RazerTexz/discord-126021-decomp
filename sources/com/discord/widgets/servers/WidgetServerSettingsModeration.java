@@ -27,7 +27,6 @@ import com.discord.utilities.viewbinding.FragmentViewBindingDelegate;
 import com.discord.utilities.viewbinding.FragmentViewBindingDelegateKt;
 import com.discord.views.CheckedSetting;
 import com.discord.views.RadioManager;
-import com.discord.widgets.servers.WidgetServerSettingsModeration;
 import java.util.List;
 import kotlin.Lazy;
 import kotlin.Unit;

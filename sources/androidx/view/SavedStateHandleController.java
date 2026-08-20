@@ -2,9 +2,6 @@ package androidx.view;
 
 import android.os.Bundle;
 import androidx.annotation.NonNull;
-import androidx.view.Lifecycle;
-import androidx.view.SavedStateRegistry;
-import androidx.view.SavedStateRegistryOwner;
 import java.util.Iterator;
 
 /* JADX INFO: loaded from: classes.dex */

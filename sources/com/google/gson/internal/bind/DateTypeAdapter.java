@@ -51,11 +51,7 @@ public final class DateTypeAdapter extends TypeAdapter<Date> {
         }
     }
 
-    /* JADX WARN: Bottom block not found for handler: all -> 0x003d */
     @Override // com.google.gson.TypeAdapter
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
     public Date read(JsonReader jsonReader) throws IOException {
         if (jsonReader.mo6878N() == JsonToken.NULL) {
             jsonReader.mo6876H();
@@ -63,17 +59,21 @@ public final class DateTypeAdapter extends TypeAdapter<Date> {
         }
         String strMo6877J = jsonReader.mo6877J();
         synchronized (this) {
-            Iterator<DateFormat> it = this.f21517b.iterator();
-            while (it.hasNext()) {
-                try {
-                    return it.next().parse(strMo6877J);
-                } catch (ParseException unused) {
-                }
-            }
             try {
-                return C4942a.m6910b(strMo6877J, new ParsePosition(0));
-            } catch (ParseException e) {
-                throw new JsonSyntaxException(strMo6877J, e);
+                Iterator<DateFormat> it = this.f21517b.iterator();
+                while (it.hasNext()) {
+                    try {
+                        return it.next().parse(strMo6877J);
+                    } catch (ParseException unused) {
+                    }
+                }
+                try {
+                    return C4942a.m6910b(strMo6877J, new ParsePosition(0));
+                } catch (ParseException e) {
+                    throw new JsonSyntaxException(strMo6877J, e);
+                }
+            } catch (Throwable th) {
+                throw th;
             }
         }
     }

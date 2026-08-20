@@ -14,7 +14,6 @@ import com.discord.stores.StorePermissions;
 import com.discord.stores.utilities.RestCallState;
 import com.discord.utilities.logging.Logger;
 import com.discord.utilities.permissions.PermissionUtils;
-import com.discord.widgets.hubs.WidgetHubAddServerViewModel;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Iterator;

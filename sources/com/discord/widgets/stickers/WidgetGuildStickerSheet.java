@@ -28,8 +28,6 @@ import com.discord.utilities.locale.LocaleManager;
 import com.discord.utilities.p501rx.ObservableExtensionsKt;
 import com.discord.utilities.viewbinding.FragmentViewBindingDelegate;
 import com.discord.utilities.viewbinding.FragmentViewBindingDelegateKt;
-import com.discord.widgets.stickers.GuildStickerSheetViewModel;
-import com.discord.widgets.stickers.StickerPremiumUpsellDialog;
 import com.facebook.drawee.view.SimpleDraweeView;
 import com.google.android.material.button.MaterialButton;
 import java.text.NumberFormat;

@@ -21,8 +21,6 @@ import com.discord.utilities.images.MGImages;
 import com.discord.utilities.p501rx.ObservableExtensionsKt;
 import com.discord.utilities.viewbinding.FragmentViewBindingDelegate;
 import com.discord.utilities.viewbinding.FragmentViewBindingDelegateKt;
-import com.discord.widgets.announcements.WidgetChannelFollowSheetViewModel;
-import com.discord.widgets.announcements.WidgetChannelFollowSuccessDialog;
 import com.discord.widgets.channels.WidgetChannelSelector;
 import com.discord.widgets.guilds.WidgetGuildSelector;
 import com.facebook.drawee.view.SimpleDraweeView;

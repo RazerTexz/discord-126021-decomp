@@ -1,7 +1,6 @@
 package com.discord.widgets.chat.list.adapter;
 
 import com.discord.api.message.reaction.MessageReaction;
-import com.discord.widgets.chat.list.adapter.WidgetChatListAdapterEventsHandler;
 import kotlin.Unit;
 import kotlin.jvm.functions.Function1;
 import p507d0.p592z.p594d.AbstractC12240o;

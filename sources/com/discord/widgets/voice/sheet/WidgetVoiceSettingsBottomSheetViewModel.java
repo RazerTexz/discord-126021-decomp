@@ -10,8 +10,6 @@ import com.discord.utilities.error.Error;
 import com.discord.utilities.p501rx.ObservableExtensionsKt;
 import com.discord.widgets.stage.StageRoles;
 import com.discord.widgets.voice.model.CallModel;
-import com.discord.widgets.voice.sheet.WidgetVoiceSettingsBottomSheet;
-import com.discord.widgets.voice.sheet.WidgetVoiceSettingsBottomSheetViewModel;
 import kotlin.Unit;
 import kotlin.jvm.functions.Function0;
 import kotlin.jvm.functions.Function1;

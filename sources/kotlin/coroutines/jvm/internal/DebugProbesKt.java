@@ -7,7 +7,7 @@ import kotlinx.coroutines.debug.internal.DebugProbesImpl;
 import org.jetbrains.annotations.NotNull;
 
 /* JADX INFO: compiled from: DebugProbes.kt */
-/* JADX INFO: loaded from: app.apk:DebugProbesKt.bin */
+/* JADX INFO: loaded from: discord-126021.apk:DebugProbesKt.bin */
 public final class DebugProbesKt {
     @NotNull
     public static final <T> Continuation<T> probeCoroutineCreated(@NotNull Continuation<? super T> continuation) {

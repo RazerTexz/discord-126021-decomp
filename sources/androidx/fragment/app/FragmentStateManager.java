@@ -15,8 +15,6 @@ import androidx.annotation.Nullable;
 import androidx.core.os.EnvironmentCompat;
 import androidx.core.view.ViewCompat;
 import androidx.fragment.C0344R;
-import androidx.fragment.app.Fragment;
-import androidx.fragment.app.SpecialEffectsController;
 import androidx.view.Lifecycle;
 import androidx.view.ViewModelStoreOwner;
 import p007b.p100d.p104b.p105a.C1643a;

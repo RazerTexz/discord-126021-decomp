@@ -7,7 +7,6 @@ import com.discord.stores.StoreInviteSettings;
 import com.discord.stores.StoreStream;
 import com.discord.utilities.error.Error;
 import com.discord.utilities.p501rx.ObservableExtensionsKt;
-import com.discord.widgets.guilds.invite.GuildInviteSettingsViewModel;
 import java.util.List;
 import java.util.Map;
 import kotlin.Unit;

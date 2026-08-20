@@ -1,7 +1,6 @@
 package p007b.p008a.p062y.p063j0;
 
 import android.graphics.Point;
-import p007b.p008a.p062y.p063j0.C1342e;
 import p637j0.p641k.InterfaceC12589b;
 
 /* JADX INFO: renamed from: b.a.y.j0.f */

@@ -1,6 +1,5 @@
 package com.discord.stores;
 
-import com.discord.stores.StoreNavigation;
 import com.discord.stores.updates.ObservationDeck;
 import com.discord.stores.updates.ObservationDeckProvider;
 import com.discord.widgets.tabs.NavigationTab;

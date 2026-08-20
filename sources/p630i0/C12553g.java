@@ -5,7 +5,6 @@ import java.lang.reflect.ParameterizedType;
 import java.lang.reflect.Type;
 import java.util.concurrent.CompletableFuture;
 import org.codehaus.mojo.animal_sniffer.IgnoreJRERequirement;
-import p630i0.InterfaceC12512e;
 import retrofit2.HttpException;
 import retrofit2.Response;
 

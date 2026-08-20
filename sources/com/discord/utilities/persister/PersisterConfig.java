@@ -6,7 +6,6 @@ import com.discord.utilities.collections.LeastRecentlyAddedSet;
 import com.discord.utilities.collections.SnowflakePartitionMap;
 import com.discord.utilities.kryo.LeastRecentlyAddedSetSerializer;
 import com.discord.utilities.kryo.SnowflakePartitionMapSerializer;
-import com.discord.utilities.persister.Persister;
 import com.discord.utilities.time.Clock;
 import com.esotericsoftware.kryo.Kryo;
 import com.esotericsoftware.kryo.serializers.FieldSerializerConfig;

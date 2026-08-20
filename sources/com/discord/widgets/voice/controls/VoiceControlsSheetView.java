@@ -130,7 +130,7 @@ public final class VoiceControlsSheetView extends LinearLayout {
         C12238m.checkNotNullExpressionValue(imageView4, "binding.muteButton");
         Context context2 = getContext();
         C12238m.checkNotNullExpressionValue(context2, "context");
-        imageView4.setContentDescription(C1107b.m210b(context2, zIsMeMutedByAnySource ? C5419R.string.unmute : C5419R.string.mute, new Object[0], (4 & 4) != 0 ? C1107b.b.f1491j : null));
+        imageView4.setContentDescription(C1107b.m216h(context2, zIsMeMutedByAnySource ? C5419R.string.unmute : C5419R.string.mute, new Object[0], null, 4));
     }
 
     private final void configureOutputSelectors(VoiceControlsOutputSelectorState outputSelectorState, final Function0<Unit> onAudioOutputClick, boolean showInTopRow) {

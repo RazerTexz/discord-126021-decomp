@@ -13,8 +13,6 @@ import com.discord.app.AppComponent;
 import com.discord.databinding.ViewGuildRoleSubscriptionChannelItemBinding;
 import com.discord.models.domain.ModelAuditLogEntry;
 import com.discord.utilities.recycler.DiffCreator;
-import com.discord.widgets.channels.ChannelPickerAdapterItem;
-import com.discord.widgets.channels.ChannelPickerViewHolder;
 import java.util.List;
 import kotlin.NoWhenBranchMatchedException;
 import kotlin.Unit;
@@ -169,7 +167,7 @@ public final class WidgetchannelPickerAdapter extends RecyclerView.Adapter<Chann
                     }
                     Context context = parent.getContext();
                     C12238m.checkNotNullExpressionValue(context, "parent.context");
-                    throw new IllegalArgumentException(C1107b.m210b(context, C5419R.string.android_unknown_view_holder, new Object[]{Integer.valueOf(viewType)}, (4 & 4) != 0 ? C1107b.b.f1491j : null).toString());
+                    throw new IllegalArgumentException(C1107b.m216h(context, C5419R.string.android_unknown_view_holder, new Object[]{Integer.valueOf(viewType)}, null, 4).toString());
                 }
             }
         }

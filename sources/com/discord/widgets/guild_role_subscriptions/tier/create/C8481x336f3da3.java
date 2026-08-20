@@ -3,7 +3,6 @@ package com.discord.widgets.guild_role_subscriptions.tier.create;
 import com.discord.api.channel.Channel;
 import com.discord.api.channel.ChannelUtils;
 import com.discord.stores.StoreChannels;
-import com.discord.widgets.guild_role_subscriptions.tier.create.GuildRoleSubscriptionReviewViewModel;
 import java.util.ArrayList;
 import java.util.Collection;
 import kotlin.jvm.functions.Function0;

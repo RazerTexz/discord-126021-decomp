@@ -7,7 +7,6 @@ import com.discord.utilities.messagesend.MessageResult;
 import com.discord.utilities.premium.PremiumUtils;
 import com.discord.utilities.rest.SendUtils;
 import com.discord.utilities.user.UserUtils;
-import com.discord.widgets.chat.input.ChatInputViewModel;
 import kotlin.Unit;
 import kotlin.jvm.functions.Function0;
 import kotlin.jvm.functions.Function2;

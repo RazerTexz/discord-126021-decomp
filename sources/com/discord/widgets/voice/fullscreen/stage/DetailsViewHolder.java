@@ -10,7 +10,6 @@ import com.discord.databinding.WidgetStageChannelDetailsBinding;
 import com.discord.models.domain.ModelAuditLogEntry;
 import com.discord.utilities.dimen.DimenUtils;
 import com.discord.utilities.locale.LocaleManager;
-import com.discord.widgets.voice.fullscreen.stage.StageCallItem;
 import java.text.NumberFormat;
 import java.util.Objects;
 import p507d0.p592z.p594d.C12238m;

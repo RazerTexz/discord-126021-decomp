@@ -3,7 +3,6 @@ package p007b.p225i.p226a.p242c.p260g3;
 import android.util.Log;
 import android.view.Display;
 import java.util.Objects;
-import p007b.p225i.p226a.p242c.p260g3.C2785v;
 
 /* JADX INFO: renamed from: b.i.a.c.g3.b */
 /* JADX INFO: compiled from: lambda */

@@ -4,7 +4,7 @@ import com.sun.tools.javac.main.Option;
 import com.sun.tools.javac.util.Context;
 import com.sun.tools.javac.util.Options;
 
-/* JADX INFO: loaded from: app.apk:lombok/javac/Javac9BasedLombokOptions.SCL.lombok */
+/* JADX INFO: loaded from: discord-126021.apk:lombok/javac/Javac9BasedLombokOptions.SCL.lombok */
 public class Javac9BasedLombokOptions extends LombokOptions {
     public static Javac9BasedLombokOptions replaceWithDelombokOptions(Context context) {
         Options options = Options.instance(context);

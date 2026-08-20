@@ -34,7 +34,6 @@ import com.discord.utilities.textprocessing.MessageRenderContext;
 import com.discord.utilities.view.text.LinkifiedTextView;
 import com.discord.utilities.viewbinding.FragmentViewBindingDelegate;
 import com.discord.utilities.viewbinding.FragmentViewBindingDelegateKt;
-import com.discord.widgets.channels.WidgetChannelTopicViewModel;
 import com.discord.widgets.channels.settings.WidgetChannelGroupDMSettings;
 import com.discord.widgets.chat.pins.WidgetChannelPinnedMessages;
 import com.discord.widgets.notice.WidgetNoticeDialog;

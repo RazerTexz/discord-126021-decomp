@@ -18,7 +18,6 @@ import com.discord.utilities.time.Clock;
 import com.discord.utilities.time.ClockFactory;
 import com.discord.utilities.time.TimeUtils;
 import com.discord.widgets.chat.input.MentionUtilsKt;
-import com.discord.widgets.settings.MuteSettingsSheetViewModel;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Map;

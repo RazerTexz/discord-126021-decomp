@@ -1,6 +1,5 @@
 package androidx.constraintlayout.solver.widgets;
 
-import androidx.constraintlayout.solver.widgets.ConstraintWidget;
 import java.util.ArrayList;
 
 /* JADX INFO: loaded from: classes.dex */

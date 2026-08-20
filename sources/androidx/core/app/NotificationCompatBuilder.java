@@ -10,7 +10,6 @@ import android.widget.RemoteViews;
 import androidx.annotation.Nullable;
 import androidx.annotation.RestrictTo;
 import androidx.collection.ArraySet;
-import androidx.core.app.NotificationCompat;
 import androidx.core.content.LocusIdCompat;
 import androidx.core.graphics.drawable.IconCompat;
 import java.util.ArrayList;

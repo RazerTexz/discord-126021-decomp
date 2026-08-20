@@ -56,7 +56,6 @@ import com.discord.utilities.viewbinding.FragmentViewBindingDelegate;
 import com.discord.utilities.viewbinding.FragmentViewBindingDelegateKt;
 import com.discord.views.CheckedSetting;
 import com.discord.widgets.channels.WidgetChannelSelector;
-import com.discord.widgets.servers.WidgetServerSettingsOverview;
 import com.discord.widgets.servers.guildboost.WidgetGuildBoost;
 import com.facebook.drawee.view.SimpleDraweeView;
 import com.google.android.material.button.MaterialButton;
@@ -659,15 +658,15 @@ public final class WidgetServerSettingsOverview extends AppFragment {
     }
 
     private final void configureChannel(TextView textView, Channel channel, @StringRes int i, @DrawableRes int i2) {
-        CharSequence charSequenceM210b;
+        CharSequence charSequenceM216h;
         if (channel != null) {
-            charSequenceM210b = ChannelUtils.m7679c(channel);
+            charSequenceM216h = ChannelUtils.m7679c(channel);
         } else {
             Context context = textView.getContext();
             C12238m.checkNotNullExpressionValue(context, "context");
-            charSequenceM210b = C1107b.m210b(context, i, new Object[0], (4 & 4) != 0 ? C1107b.b.f1491j : null);
+            charSequenceM216h = C1107b.m216h(context, i, new Object[0], null, 4);
         }
-        textView.setText(charSequenceM210b);
+        textView.setText(charSequenceM216h);
         DrawableCompat.setCompoundDrawablesCompat$default(textView, channel == null ? 0 : i2, 0, 0, 0, 14, (Object) null);
     }
 

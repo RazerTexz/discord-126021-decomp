@@ -3,7 +3,6 @@ package com.discord.widgets.guild_role_subscriptions.tier.model;
 import com.discord.api.guildrolesubscription.SubscriptionTrialInterval;
 import com.discord.api.role.GuildRole;
 import com.discord.models.domain.ModelAuditLogEntry;
-import com.discord.widgets.guild_role_subscriptions.tier.model.Benefit;
 import java.util.List;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import p007b.p100d.p104b.p105a.C1643a;

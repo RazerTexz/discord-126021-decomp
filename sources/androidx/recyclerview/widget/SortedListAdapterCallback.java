@@ -1,8 +1,5 @@
 package androidx.recyclerview.widget;
 
-import androidx.recyclerview.widget.RecyclerView;
-import androidx.recyclerview.widget.SortedList;
-
 /* JADX INFO: loaded from: classes.dex */
 public abstract class SortedListAdapterCallback<T2> extends SortedList.Callback<T2> {
     public final RecyclerView.Adapter mAdapter;

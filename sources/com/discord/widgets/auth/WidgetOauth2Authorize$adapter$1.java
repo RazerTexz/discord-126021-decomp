@@ -8,7 +8,6 @@ import android.widget.TextView;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import com.discord.C5419R;
 import com.discord.databinding.OauthTokenPermissionDetailedListItemBinding;
-import com.discord.widgets.auth.WidgetOauth2Authorize;
 import kotlin.jvm.functions.Function2;
 import p507d0.p592z.p594d.AbstractC12240o;
 import p507d0.p592z.p594d.C12238m;

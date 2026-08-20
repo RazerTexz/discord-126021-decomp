@@ -2,8 +2,6 @@ package androidx.constraintlayout.solver.widgets;
 
 import androidx.constraintlayout.solver.LinearSystem;
 import androidx.constraintlayout.solver.SolverVariable;
-import androidx.constraintlayout.solver.widgets.ConstraintAnchor;
-import androidx.constraintlayout.solver.widgets.ConstraintWidget;
 import java.util.HashMap;
 
 /* JADX INFO: loaded from: classes.dex */

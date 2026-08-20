@@ -4,7 +4,6 @@ import android.content.Context;
 import android.graphics.Canvas;
 import android.util.AttributeSet;
 import android.view.View;
-import androidx.constraintlayout.widget.ConstraintLayout;
 
 /* JADX INFO: loaded from: classes.dex */
 public class Guideline extends View {

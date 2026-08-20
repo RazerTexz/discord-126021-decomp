@@ -4,7 +4,6 @@ import com.discord.models.domain.ModelAuditLogEntry;
 import com.discord.models.domain.emoji.Emoji;
 import com.discord.models.domain.emoji.ModelEmojiCustom;
 import com.discord.models.guild.Guild;
-import com.discord.widgets.chat.input.emoji.WidgetEmojiAdapter;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Locale;

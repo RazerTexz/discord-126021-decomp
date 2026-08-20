@@ -6,7 +6,6 @@ import androidx.annotation.Nullable;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
-import org.webrtc.NetworkChangeDetector;
 
 /* JADX INFO: loaded from: classes3.dex */
 public class NetworkMonitor {

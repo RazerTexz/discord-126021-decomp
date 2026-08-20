@@ -3,7 +3,6 @@ package com.discord.models.botuikit;
 import com.discord.api.botuikit.ComponentType;
 import com.discord.api.botuikit.SelectComponent;
 import com.discord.api.botuikit.SelectItem;
-import com.discord.models.botuikit.ActionInteractionComponentState;
 import com.discord.widgets.botuikit.ComponentChatListState;
 import java.util.ArrayList;
 import java.util.List;

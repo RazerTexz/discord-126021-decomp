@@ -14,7 +14,6 @@ import androidx.annotation.RequiresApi;
 import com.google.android.exoplayer2.ExoPlaybackException;
 import com.google.android.exoplayer2.decoder.DecoderInputBuffer;
 import com.google.android.exoplayer2.drm.DrmSession;
-import com.google.android.exoplayer2.mediacodec.MediaCodecUtil;
 import java.nio.ByteBuffer;
 import java.nio.ByteOrder;
 import java.util.ArrayDeque;

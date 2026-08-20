@@ -9,7 +9,6 @@ import android.os.Bundle;
 import android.util.Log;
 import androidx.annotation.RestrictTo;
 import androidx.annotation.WorkerThread;
-import androidx.sharetarget.ShareTargetCompat;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;

@@ -1,6 +1,6 @@
 package org.objectweb.asm.signature;
 
-/* JADX INFO: loaded from: app.apk:org/objectweb/asm/signature/SignatureVisitor.SCL.lombok */
+/* JADX INFO: loaded from: discord-126021.apk:org/objectweb/asm/signature/SignatureVisitor.SCL.lombok */
 public abstract class SignatureVisitor {
     public static final char EXTENDS = '+';
     public static final char SUPER = '-';

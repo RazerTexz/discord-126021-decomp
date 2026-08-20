@@ -20,8 +20,6 @@ import com.discord.utilities.recycler.DiffCreator;
 import com.discord.utilities.views.StickyHeaderItemDecoration;
 import com.discord.views.CheckedSetting;
 import com.discord.widgets.guild_role_subscriptions.GuildRoleSubscriptionBenefitItemView;
-import com.discord.widgets.guild_role_subscriptions.tier.create.benefits.GuildRoleSubscriptionBenefitAdapterItem;
-import com.discord.widgets.guild_role_subscriptions.tier.create.benefits.GuildRoleSubscriptionBenefitViewHolder;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.ListIterator;
@@ -275,7 +273,7 @@ public final class GuildRoleSubscriptionBenefitAdapter extends RecyclerView.Adap
         if (viewType != 4) {
             Context context2 = parent.getContext();
             C12238m.checkNotNullExpressionValue(context2, "parent.context");
-            throw new IllegalArgumentException(C1107b.m210b(context2, C5419R.string.android_unknown_view_holder, new Object[]{Integer.valueOf(viewType)}, (4 & 4) != 0 ? C1107b.b.f1491j : null).toString());
+            throw new IllegalArgumentException(C1107b.m216h(context2, C5419R.string.android_unknown_view_holder, new Object[]{Integer.valueOf(viewType)}, null, 4).toString());
         }
         View viewInflate2 = layoutInflaterFrom.inflate(C5419R.layout.view_guild_role_subscription_free_trial_item, parent, false);
         int i2 = C5419R.id.guild_role_subscription_active_user_limit_description;

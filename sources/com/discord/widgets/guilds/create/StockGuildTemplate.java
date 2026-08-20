@@ -4,7 +4,6 @@ import android.content.res.Resources;
 import androidx.exifinterface.media.ExifInterface;
 import com.discord.C5419R;
 import com.discord.restapi.RestAPIParams;
-import com.discord.widgets.guilds.create.ChannelTemplate;
 import java.util.Collection;
 import java.util.List;
 import kotlin.NoWhenBranchMatchedException;

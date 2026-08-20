@@ -10,7 +10,7 @@ import java.util.Random;
 import java.util.concurrent.atomic.AtomicBoolean;
 import lombok.core.Version;
 
-/* JADX INFO: loaded from: app.apk:lombok/core/debug/AssertionLogger.SCL.lombok */
+/* JADX INFO: loaded from: discord-126021.apk:lombok/core/debug/AssertionLogger.SCL.lombok */
 public class AssertionLogger {
     private static final String LOG_PATH;
     private static final AtomicBoolean loggedIntro;

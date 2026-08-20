@@ -10,7 +10,6 @@ import android.view.SubMenu;
 import android.view.View;
 import androidx.appcompat.C0051R;
 import androidx.appcompat.content.res.AppCompatResources;
-import androidx.appcompat.widget.ActivityChooserModel;
 import androidx.core.view.ActionProvider;
 
 /* JADX INFO: loaded from: classes.dex */

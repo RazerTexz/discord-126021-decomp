@@ -18,7 +18,6 @@ import com.discord.utilities.icon.IconUtils;
 import com.discord.utilities.mg_recycler.MGRecyclerAdapterSimple;
 import com.discord.utilities.mg_recycler.MGRecyclerDataPayload;
 import com.discord.utilities.mg_recycler.MGRecyclerViewHolder;
-import com.discord.widgets.chat.managereactions.ManageReactionsResultsAdapter;
 import com.facebook.drawee.view.SimpleDraweeView;
 import java.util.Objects;
 import p001a0.p002a.p003a.C0002b;

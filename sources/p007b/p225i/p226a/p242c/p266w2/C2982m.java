@@ -1,7 +1,5 @@
 package p007b.p225i.p226a.p242c.p266w2;
 
-import p007b.p225i.p226a.p242c.p266w2.InterfaceC2990u;
-
 /* JADX INFO: renamed from: b.i.a.c.w2.m */
 /* JADX INFO: compiled from: lambda */
 /* JADX INFO: loaded from: classes3.dex */

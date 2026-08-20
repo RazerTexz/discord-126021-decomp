@@ -20,7 +20,6 @@ import com.discord.utilities.mg_recycler.MGRecyclerViewHolder;
 import com.discord.utilities.p501rx.ObservableExtensionsKt;
 import com.discord.utilities.rest.RestAPI;
 import com.discord.views.CheckedSetting;
-import com.discord.widgets.servers.WidgetServerSettingsIntegrations;
 import com.google.android.material.button.MaterialButton;
 import p007b.p008a.p018d.C0879o;
 import p007b.p008a.p025i.C1092y5;

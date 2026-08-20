@@ -32,7 +32,6 @@ import com.discord.widgets.channels.WidgetCreateChannel;
 import com.discord.widgets.chat.input.emoji.EmojiPickerContextType;
 import com.discord.widgets.chat.input.emoji.EmojiPickerListener;
 import com.discord.widgets.chat.input.emoji.EmojiPickerNavigator;
-import com.discord.widgets.guild_role_subscriptions.tier.create.benefits.GuildRoleSubscriptionTierBenefitViewModel;
 import com.discord.widgets.guild_role_subscriptions.tier.model.Benefit;
 import com.facebook.drawee.view.SimpleDraweeView;
 import com.google.android.material.button.MaterialButton;

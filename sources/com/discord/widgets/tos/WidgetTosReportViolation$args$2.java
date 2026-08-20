@@ -1,7 +1,6 @@
 package com.discord.widgets.tos;
 
 import com.discord.utilities.intent.IntentUtilsKt;
-import com.discord.widgets.tos.WidgetTosReportViolation;
 import kotlin.jvm.functions.Function0;
 import p507d0.p592z.p594d.AbstractC12240o;
 

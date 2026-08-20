@@ -3,7 +3,6 @@ package com.discord.widgets.settings.premium;
 import com.discord.models.domain.ModelGift;
 import com.discord.stores.StoreEntitlements;
 import com.discord.stores.StoreOutboundPromotions;
-import com.discord.widgets.settings.premium.SettingsGiftingViewModel;
 import java.util.List;
 import kotlin.jvm.functions.Function4;
 import p507d0.p592z.p594d.C12236k;

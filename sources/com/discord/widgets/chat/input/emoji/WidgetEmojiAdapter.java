@@ -26,7 +26,6 @@ import com.discord.utilities.mg_recycler.MGRecyclerDataPayload;
 import com.discord.utilities.mg_recycler.MGRecyclerViewHolder;
 import com.discord.utilities.view.extensions.ImageViewExtensionsKt;
 import com.discord.utilities.view.extensions.ViewExtensions;
-import com.discord.widgets.chat.input.emoji.WidgetEmojiAdapter;
 import com.discord.widgets.chat.input.expression.WidgetExpressionPickerAdapter;
 import com.facebook.drawee.view.SimpleDraweeView;
 import java.util.Objects;

@@ -30,7 +30,7 @@ import lombok.core.configuration.FlagUsageType;
 import lombok.experimental.Accessors;
 import lombok.experimental.FieldDefaults;
 
-/* JADX INFO: loaded from: app.apk:lombok/core/handlers/HandlerUtil.SCL.lombok */
+/* JADX INFO: loaded from: discord-126021.apk:lombok/core/handlers/HandlerUtil.SCL.lombok */
 public class HandlerUtil {
     public static final String DEFAULT_EXCEPTION_FOR_NON_NULL = "java.lang.NullPointerException";
     public static final List<String> NONNULL_ANNOTATIONS = Collections.unmodifiableList(Arrays.asList("androidx.annotation.NonNull", "android.support.annotation.NonNull", "com.sun.istack.internal.NotNull", "edu.umd.cs.findbugs.annotations.NonNull", "javax.annotation.Nonnull", "lombok.NonNull", "org.checkerframework.checker.nullness.qual.NonNull", "org.eclipse.jdt.annotation.NonNull", "org.eclipse.jgit.annotations.NonNull", "org.jetbrains.annotations.NotNull", "org.jmlspecs.annotation.NonNull", "org.netbeans.api.annotations.common.NonNull", "org.springframework.lang.NonNull"));
@@ -44,7 +44,7 @@ public class HandlerUtil {
     private static final Pattern LINE_BREAK_FINDER = Pattern.compile("(\\r?\\n)?");
     private static final Pattern FIND_RETURN = Pattern.compile("^\\s*\\**\\s*@returns?\\s+.*$", 10);
 
-    /* JADX INFO: loaded from: app.apk:lombok/core/handlers/HandlerUtil$FieldAccess.SCL.lombok */
+    /* JADX INFO: loaded from: discord-126021.apk:lombok/core/handlers/HandlerUtil$FieldAccess.SCL.lombok */
     public enum FieldAccess {
         GETTER,
         PREFER_FIELD,

@@ -22,7 +22,6 @@ import com.discord.utilities.mg_recycler.MGRecyclerAdapter;
 import com.discord.utilities.p501rx.ObservableExtensionsKt;
 import com.discord.utilities.viewbinding.FragmentViewBindingDelegate;
 import com.discord.utilities.viewbinding.FragmentViewBindingDelegateKt;
-import com.discord.widgets.channels.invite.GroupInviteFriendsSheetViewModel;
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.Iterator;

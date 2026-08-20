@@ -3,10 +3,7 @@ package org.webrtc;
 import android.graphics.Matrix;
 import android.opengl.GLES20;
 import java.nio.ByteBuffer;
-import org.webrtc.GlGenericDrawer;
 import org.webrtc.JniCommon;
-import org.webrtc.ThreadUtils;
-import org.webrtc.VideoFrame;
 
 /* JADX INFO: loaded from: classes3.dex */
 public class YuvConverter {

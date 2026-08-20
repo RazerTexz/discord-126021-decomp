@@ -15,7 +15,6 @@ import com.discord.utilities.mg_recycler.MGRecyclerAdapterSimple;
 import com.discord.utilities.mg_recycler.MGRecyclerViewHolder;
 import com.discord.utilities.user.UserUtils;
 import com.discord.views.StatusView;
-import com.discord.widgets.guildscheduledevent.GuildScheduledEventRsvpUserListItem;
 import com.facebook.drawee.view.SimpleDraweeView;
 import kotlin.Unit;
 import kotlin.jvm.functions.Function1;

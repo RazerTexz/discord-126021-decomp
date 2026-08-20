@@ -58,8 +58,6 @@ import com.discord.utilities.view.extensions.ImageViewExtensionsKt;
 import com.discord.utilities.view.extensions.ViewExtensions;
 import com.discord.utilities.viewbinding.FragmentViewBindingDelegate;
 import com.discord.utilities.viewbinding.FragmentViewBindingDelegateKt;
-import com.discord.widgets.servers.WidgetServerSettingsEmojis;
-import com.discord.widgets.servers.WidgetServerSettingsEmojisEdit;
 import com.facebook.drawee.view.SimpleDraweeView;
 import com.google.android.material.button.MaterialButton;
 import java.util.ArrayList;
@@ -161,7 +159,7 @@ public final class WidgetServerSettingsEmojis extends AppFragment {
                 C12238m.checkNotNullParameter(data, "data");
                 TextView textView = this.binding.f17645c;
                 C12238m.checkNotNullExpressionValue(textView, "binding.widgetServerSett…gsEmojisUploadDescription");
-                textView.setText(C1107b.m210b(C1643a.m885x(this.itemView, "itemView", "itemView.context"), C5419R.string.guild_settings_emoji_upload_to_server_message, new Object[]{String.valueOf(((Item.EmojiHeader) data).getEmojiMax()), String.valueOf(256)}, (4 & 4) != 0 ? C1107b.b.f1491j : null));
+                textView.setText(C1107b.m216h(C1643a.m885x(this.itemView, "itemView", "itemView.context"), C5419R.string.guild_settings_emoji_upload_to_server_message, new Object[]{String.valueOf(((Item.EmojiHeader) data).getEmojiMax()), String.valueOf(256)}, null, 4));
                 this.binding.f17644b.setOnClickListener(new View.OnClickListener() { // from class: com.discord.widgets.servers.WidgetServerSettingsEmojis$Adapter$EmojiHeaderViewHolder$onConfigure$1
                     @Override // android.view.View.OnClickListener
                     public final void onClick(View view) {
@@ -286,10 +284,10 @@ public final class WidgetServerSettingsEmojis extends AppFragment {
                 C12238m.checkNotNullExpressionValue(context, "itemView.context");
                 Resources resources = context.getResources();
                 C12238m.checkNotNullExpressionValue(resources, "itemView.context.resources");
-                CharSequence charSequenceM210b = C1107b.m210b(C1643a.m885x(this.itemView, "itemView", "itemView.context"), C5419R.string.emoji_slots_available, new Object[]{StringResourceUtilsKt.getQuantityString(resources, C1643a.m885x(this.itemView, "itemView", "itemView.context"), C5419R.plurals.emoji_slots_available_count, emojiMax, Integer.valueOf(emojiMax))}, (4 & 4) != 0 ? C1107b.b.f1491j : null);
+                CharSequence charSequenceM216h = C1107b.m216h(C1643a.m885x(this.itemView, "itemView", "itemView.context"), C5419R.string.emoji_slots_available, new Object[]{StringResourceUtilsKt.getQuantityString(resources, C1643a.m885x(this.itemView, "itemView", "itemView.context"), C5419R.plurals.emoji_slots_available_count, emojiMax, Integer.valueOf(emojiMax))}, null, 4);
                 TextView textView = this.binding.f17654b;
                 C12238m.checkNotNullExpressionValue(textView, "binding.widgetServerSettingsEmojisSection");
-                textView.setText(C1107b.m210b(C1643a.m885x(this.itemView, "itemView", "itemView.context"), C5419R.string.emoji_section, new Object[]{C1107b.m210b(C1643a.m885x(this.itemView, "itemView", "itemView.context"), emojiSection.getTitleId(), new Object[0], (4 & 4) != 0 ? C1107b.b.f1491j : null), charSequenceM210b}, (4 & 4) != 0 ? C1107b.b.f1491j : null));
+                textView.setText(C1107b.m216h(C1643a.m885x(this.itemView, "itemView", "itemView.context"), C5419R.string.emoji_section, new Object[]{C1107b.m216h(C1643a.m885x(this.itemView, "itemView", "itemView.context"), emojiSection.getTitleId(), new Object[0], null, 4), charSequenceM216h}, null, 4));
             }
         }
 

@@ -27,8 +27,6 @@ import com.discord.utilities.analytics.Traits;
 import com.discord.utilities.color.ColorCompat;
 import com.discord.utilities.error.Error;
 import com.discord.utilities.extensions.PendingIntentExtensionsKt;
-import com.discord.utilities.fcm.NotificationClient;
-import com.discord.utilities.fcm.NotificationData;
 import com.discord.utilities.images.MGImagesBitmap;
 import com.discord.utilities.intent.IntentUtils;
 import com.discord.utilities.logging.Logger;
@@ -481,7 +479,7 @@ public final class NotificationRenderer {
         PendingIntent broadcast = PendingIntent.getBroadcast(context, 0, NotificationActions.INSTANCE.delete(context, channelId), PendingIntentExtensionsKt.immutablePendingIntentFlag(134217728));
         Intent intentSelectChannel$default = IntentUtils.RouteBuilders.selectChannel$default(channelId, 0L, null, 6, null);
         intentSelectChannel$default.setClass(context, AppActivity.Main.class);
-        Notification notificationBuild = new NotificationCompat.Builder(context, NotificationClient.NOTIF_CHANNEL_MESSAGES).setAutoCancel(true).setSmallIcon(C5419R.drawable.ic_notification_message_24dp).setCategory(NotificationCompat.CATEGORY_MESSAGE).setContentText(C1107b.m210b(context, i, new Object[]{channelName}, (4 & 4) != 0 ? C1107b.b.f1491j : null)).setDeleteIntent(broadcast).setContentIntent(PendingIntent.getActivity(context, 0, intentSelectChannel$default, PendingIntentExtensionsKt.immutablePendingIntentFlag(134217728))).build();
+        Notification notificationBuild = new NotificationCompat.Builder(context, NotificationClient.NOTIF_CHANNEL_MESSAGES).setAutoCancel(true).setSmallIcon(C5419R.drawable.ic_notification_message_24dp).setCategory(NotificationCompat.CATEGORY_MESSAGE).setContentText(C1107b.m216h(context, i, new Object[]{channelName}, null, 4)).setDeleteIntent(broadcast).setContentIntent(PendingIntent.getActivity(context, 0, intentSelectChannel$default, PendingIntentExtensionsKt.immutablePendingIntentFlag(134217728))).build();
         C12238m.checkNotNullExpressionValue(notificationBuild, "NotificationCompat.Build…ent)\n            .build()");
         NotificationManagerCompat.from(context).notify(notificationId, notificationBuild);
         autoDismissNotification(context, notificationId);

@@ -16,7 +16,7 @@ import javax.lang.model.type.TypeVariable;
 import javax.lang.model.type.WildcardType;
 import javax.lang.model.util.AbstractTypeVisitor6;
 
-/* JADX INFO: loaded from: app.apk:lombok/javac/FindTypeVarScanner.SCL.lombok */
+/* JADX INFO: loaded from: discord-126021.apk:lombok/javac/FindTypeVarScanner.SCL.lombok */
 public class FindTypeVarScanner extends AbstractTypeVisitor6<Void, Void> {
     private Set<String> typeVariables = new HashSet();
 

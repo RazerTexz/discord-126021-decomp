@@ -1,7 +1,6 @@
 package com.discord.widgets.channels.memberlist;
 
 import com.discord.utilities.collections.SparseMutableList;
-import com.discord.widgets.channels.memberlist.WidgetChannelMembersListViewModel;
 import com.discord.widgets.channels.memberlist.adapter.ChannelMembersListAdapter;
 import java.util.Set;
 import java.util.SortedMap;

@@ -9,8 +9,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import androidx.constraintlayout.solver.widgets.analyzer.BasicMeasure;
 import androidx.core.view.accessibility.AccessibilityNodeInfoCompat;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
 import java.util.Arrays;
 import p007b.p100d.p104b.p105a.C1643a;
 

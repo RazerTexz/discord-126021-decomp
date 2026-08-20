@@ -35,8 +35,6 @@ import com.discord.utilities.time.ClockFactory;
 import com.discord.utilities.viewbinding.FragmentViewBindingDelegate;
 import com.discord.utilities.viewbinding.FragmentViewBindingDelegateKt;
 import com.discord.views.SearchInputView;
-import com.discord.widgets.guilds.invite.GuildInviteShareSheetViewModel;
-import com.discord.widgets.guilds.invite.WidgetGuildInviteSettings;
 import com.discord.widgets.home.WidgetHome;
 import java.util.Objects;
 import kotlin.Lazy;

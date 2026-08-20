@@ -1,7 +1,6 @@
 package com.discord.rtcconnection;
 
 import co.discord.media_engine.StreamParameters;
-import com.discord.rtcconnection.KrispOveruseDetector;
 import com.discord.rtcconnection.mediaengine.MediaEngineConnection;
 import com.discord.utilities.logging.Logger;
 import java.util.Collection;

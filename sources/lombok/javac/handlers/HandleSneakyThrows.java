@@ -19,7 +19,7 @@ import lombok.javac.JavacAnnotationHandler;
 import lombok.javac.JavacNode;
 import lombok.javac.JavacTreeMaker;
 
-/* JADX INFO: loaded from: app.apk:lombok/javac/handlers/HandleSneakyThrows.SCL.lombok */
+/* JADX INFO: loaded from: discord-126021.apk:lombok/javac/handlers/HandleSneakyThrows.SCL.lombok */
 @HandlerPriority(1024)
 public class HandleSneakyThrows extends JavacAnnotationHandler<SneakyThrows> {
     private static /* synthetic */ int[] $SWITCH_TABLE$lombok$core$AST$Kind;

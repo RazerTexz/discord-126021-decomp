@@ -24,8 +24,6 @@ import com.discord.utilities.logging.Logger;
 import com.discord.utilities.p501rx.ObservableExtensionsKt;
 import com.discord.utilities.premium.PremiumUtils;
 import com.discord.utilities.user.UserUtils;
-import com.discord.widgets.settings.premium.WidgetChoosePlan;
-import com.discord.widgets.settings.premium.WidgetChoosePlanAdapter;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Iterator;

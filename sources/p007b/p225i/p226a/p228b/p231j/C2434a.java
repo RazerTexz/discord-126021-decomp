@@ -4,7 +4,6 @@ import androidx.annotation.Nullable;
 import java.util.Map;
 import java.util.Objects;
 import p007b.p100d.p104b.p105a.C1643a;
-import p007b.p225i.p226a.p228b.p231j.AbstractC2439f;
 
 /* JADX INFO: renamed from: b.i.a.b.j.a */
 /* JADX INFO: compiled from: AutoValue_EventInternal.java */

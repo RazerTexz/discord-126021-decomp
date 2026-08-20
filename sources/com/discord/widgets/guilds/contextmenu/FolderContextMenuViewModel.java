@@ -8,7 +8,6 @@ import com.discord.stores.StoreUserSettings;
 import com.discord.utilities.error.Error;
 import com.discord.utilities.p501rx.ObservableExtensionsKt;
 import com.discord.utilities.rest.RestAPI;
-import com.discord.widgets.guilds.contextmenu.FolderContextMenuViewModel;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Iterator;

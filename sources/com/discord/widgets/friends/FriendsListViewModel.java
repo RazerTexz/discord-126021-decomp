@@ -36,7 +36,6 @@ import com.discord.utilities.rest.RestAPI;
 import com.discord.utilities.rest.RestAPIAbortMessages;
 import com.discord.utilities.user.UserUtils;
 import com.discord.widgets.captcha.WidgetCaptchaKt;
-import com.discord.widgets.friends.FriendsListViewModel;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Comparator;

@@ -7,8 +7,6 @@ import android.util.SparseArray;
 import androidx.constraintlayout.solver.widgets.ConstraintWidget;
 import androidx.constraintlayout.solver.widgets.ConstraintWidgetContainer;
 import androidx.constraintlayout.solver.widgets.HelperWidget;
-import androidx.constraintlayout.widget.ConstraintLayout;
-import androidx.constraintlayout.widget.ConstraintSet;
 
 /* JADX INFO: loaded from: classes.dex */
 public class Barrier extends ConstraintHelper {

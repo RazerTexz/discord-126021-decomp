@@ -24,7 +24,6 @@ import com.discord.utilities.logging.Logger;
 import com.discord.utilities.p501rx.ObservableExtensionsKt;
 import com.discord.utilities.viewbinding.FragmentViewBindingDelegate;
 import com.discord.utilities.viewbinding.FragmentViewBindingDelegateKt;
-import com.discord.widgets.settings.profile.EditProfileBannerSheetViewModel;
 import com.google.android.material.button.MaterialButton;
 import com.google.android.material.textview.MaterialTextView;
 import com.jaredrummler.android.colorpicker.ColorPickerDialog;

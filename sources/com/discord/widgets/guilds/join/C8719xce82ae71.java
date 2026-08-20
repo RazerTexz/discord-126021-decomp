@@ -7,7 +7,6 @@ import com.discord.app.AppFragment;
 import com.discord.stores.StoreNotices;
 import com.discord.stores.StoreStream;
 import com.discord.utilities.captcha.CaptchaErrorBody;
-import com.discord.widgets.guilds.join.WidgetGuildJoinCaptchaBottomSheet;
 import com.discord.widgets.tabs.WidgetTabsHost;
 import java.util.Iterator;
 import java.util.List;

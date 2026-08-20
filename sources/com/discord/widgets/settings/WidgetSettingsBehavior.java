@@ -87,10 +87,10 @@ public final class WidgetSettingsBehavior extends AppFragment {
         checkedSetting2.setChecked(userSettings.getIsDeveloperMode());
         Context context = checkedSetting2.getContext();
         C12238m.checkNotNullExpressionValue(context, "context");
-        C1107b.m210b(context, C5419R.string.developer_mode_help_text, new Object[]{API_LINK}, (4 & 4) != 0 ? C1107b.b.f1491j : null);
+        C1107b.m216h(context, C5419R.string.developer_mode_help_text, new Object[]{API_LINK}, null, 4);
         Context context2 = checkedSetting2.getContext();
         C12238m.checkNotNullExpressionValue(context2, "context");
-        checkedSetting2.m8530h(C1107b.m210b(context2, C5419R.string.developer_mode_help_text, new Object[]{API_LINK}, (4 & 4) != 0 ? C1107b.b.f1491j : null), false);
+        checkedSetting2.m8530h(C1107b.m216h(context2, C5419R.string.developer_mode_help_text, new Object[]{API_LINK}, null, 4), false);
         checkedSetting2.setSubtextOnClickListener(new Action0() { // from class: com.discord.widgets.settings.WidgetSettingsBehavior$onViewBound$2$1
             @Override // p658rx.functions.Action0
             public final void call() {

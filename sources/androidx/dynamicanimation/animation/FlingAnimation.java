@@ -1,7 +1,6 @@
 package androidx.dynamicanimation.animation;
 
 import androidx.annotation.FloatRange;
-import androidx.dynamicanimation.animation.DynamicAnimation;
 
 /* JADX INFO: loaded from: classes.dex */
 public final class FlingAnimation extends DynamicAnimation<FlingAnimation> {

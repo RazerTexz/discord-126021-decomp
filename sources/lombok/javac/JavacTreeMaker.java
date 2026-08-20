@@ -17,7 +17,7 @@ import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.ConcurrentMap;
 import lombok.permit.Permit;
 
-/* JADX INFO: loaded from: app.apk:lombok/javac/JavacTreeMaker.SCL.lombok */
+/* JADX INFO: loaded from: discord-126021.apk:lombok/javac/JavacTreeMaker.SCL.lombok */
 public class JavacTreeMaker {
 
     /* JADX INFO: renamed from: tm */
@@ -100,7 +100,7 @@ public class JavacTreeMaker {
     private static final MethodId<JCTree.JCExpression> Type = MethodId("Type");
     private static final FieldId<JCTree.JCVariableDecl> MethodDecl_recvParam = FieldId(JCTree.JCMethodDecl.class, "recvparam", JCTree.JCVariableDecl.class);
 
-    /* JADX INFO: loaded from: app.apk:lombok/javac/JavacTreeMaker$Case12.SCL.lombok */
+    /* JADX INFO: loaded from: discord-126021.apk:lombok/javac/JavacTreeMaker$Case12.SCL.lombok */
     public static class Case12 {
         private static final Class<?> CASE_KIND_CLASS = JavacTreeMaker.classForName(TreeMaker.class, "com.sun.source.tree.CaseTree$CaseKind");
         static final MethodId<JCTree.JCCase> Case12 = JavacTreeMaker.MethodId("Case", JCTree.JCCase.class, CASE_KIND_CLASS, List.class, List.class, JCTree.class);
@@ -121,7 +121,7 @@ public class JavacTreeMaker {
         return this;
     }
 
-    /* JADX INFO: loaded from: app.apk:lombok/javac/JavacTreeMaker$FieldId.SCL.lombok */
+    /* JADX INFO: loaded from: discord-126021.apk:lombok/javac/JavacTreeMaker$FieldId.SCL.lombok */
     private static final class FieldId<J> {
         private final Class<?> owner;
         private final String name;
@@ -134,7 +134,7 @@ public class JavacTreeMaker {
         }
     }
 
-    /* JADX INFO: loaded from: app.apk:lombok/javac/JavacTreeMaker$MethodId.SCL.lombok */
+    /* JADX INFO: loaded from: discord-126021.apk:lombok/javac/JavacTreeMaker$MethodId.SCL.lombok */
     private static final class MethodId<J> {
         private final Class<?> owner;
         private final String name;
@@ -164,7 +164,7 @@ public class JavacTreeMaker {
         }
     }
 
-    /* JADX INFO: loaded from: app.apk:lombok/javac/JavacTreeMaker$SchroedingerType.SCL.lombok */
+    /* JADX INFO: loaded from: discord-126021.apk:lombok/javac/JavacTreeMaker$SchroedingerType.SCL.lombok */
     private static class SchroedingerType {
         final Object value;
         private static Field NOSUCHFIELDEX_MARKER;
@@ -248,7 +248,7 @@ public class JavacTreeMaker {
         }
     }
 
-    /* JADX INFO: loaded from: app.apk:lombok/javac/JavacTreeMaker$TypeTag.SCL.lombok */
+    /* JADX INFO: loaded from: discord-126021.apk:lombok/javac/JavacTreeMaker$TypeTag.SCL.lombok */
     public static class TypeTag extends SchroedingerType {
         private static final ConcurrentMap<String, Object> TYPE_TAG_CACHE = new ConcurrentHashMap();
         private static final ConcurrentMap<Class<?>, Field> FIELD_CACHE = new ConcurrentHashMap();
@@ -310,7 +310,7 @@ public class JavacTreeMaker {
         }
     }
 
-    /* JADX INFO: loaded from: app.apk:lombok/javac/JavacTreeMaker$TreeTag.SCL.lombok */
+    /* JADX INFO: loaded from: discord-126021.apk:lombok/javac/JavacTreeMaker$TreeTag.SCL.lombok */
     public static class TreeTag extends SchroedingerType {
         private static final Field TAG_FIELD;
         private static final Method TAG_METHOD;

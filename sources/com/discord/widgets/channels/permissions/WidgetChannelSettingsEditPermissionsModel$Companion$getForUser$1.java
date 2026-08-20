@@ -8,7 +8,6 @@ import com.discord.stores.StoreChannels;
 import com.discord.stores.StoreGuilds;
 import com.discord.stores.StorePermissions;
 import com.discord.stores.StoreUser;
-import com.discord.widgets.channels.permissions.WidgetChannelSettingsEditPermissionsModel;
 import com.discord.widgets.chat.list.NewThreadsPermissionsFeatureFlag;
 import kotlin.jvm.functions.Function0;
 import p507d0.p592z.p594d.AbstractC12240o;

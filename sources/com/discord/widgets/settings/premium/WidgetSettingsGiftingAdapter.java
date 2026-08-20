@@ -32,7 +32,6 @@ import com.discord.utilities.premium.PremiumUtils;
 import com.discord.utilities.resources.StringResourceUtilsKt;
 import com.discord.utilities.time.ClockFactory;
 import com.discord.utilities.view.text.LinkifiedTextView;
-import com.discord.widgets.settings.premium.WidgetSettingsGiftingAdapter;
 import com.facebook.drawee.view.SimpleDraweeView;
 import com.google.android.material.button.MaterialButton;
 import java.util.List;

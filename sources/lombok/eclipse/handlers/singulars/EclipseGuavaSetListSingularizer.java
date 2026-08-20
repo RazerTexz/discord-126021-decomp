@@ -7,7 +7,7 @@ import lombok.core.configuration.CheckerFrameworkVersion;
 import lombok.eclipse.EclipseNode;
 import lombok.eclipse.handlers.EclipseSingularsRecipes;
 
-/* JADX INFO: loaded from: app.apk:lombok/eclipse/handlers/singulars/EclipseGuavaSetListSingularizer.SCL.lombok */
+/* JADX INFO: loaded from: discord-126021.apk:lombok/eclipse/handlers/singulars/EclipseGuavaSetListSingularizer.SCL.lombok */
 public class EclipseGuavaSetListSingularizer extends EclipseGuavaSingularizer {
     private static final LombokImmutableList<String> SUFFIXES = LombokImmutableList.m10919of("");
     private static final LombokImmutableList<String> SUPPORTED_TYPES = LombokImmutableList.m10922of("com.google.common.collect.ImmutableCollection", "com.google.common.collect.ImmutableList", "com.google.common.collect.ImmutableSet", "com.google.common.collect.ImmutableSortedSet");

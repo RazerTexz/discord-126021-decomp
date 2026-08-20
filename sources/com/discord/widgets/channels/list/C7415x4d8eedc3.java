@@ -4,7 +4,6 @@ import com.discord.api.channel.Channel;
 import com.discord.api.channel.ChannelUtils;
 import com.discord.utilities.channel.GuildChannelsInfo;
 import com.discord.utilities.permissions.PermissionUtils;
-import com.discord.widgets.channels.list.WidgetChannelListModel;
 import com.discord.widgets.channels.list.items.ChannelListItemTextChannel;
 import java.util.ArrayList;
 import java.util.HashSet;

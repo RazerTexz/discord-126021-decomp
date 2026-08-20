@@ -11,17 +11,16 @@ import java.util.Collections;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
-import lombok.core.AST;
 import lombok.permit.Permit;
 
-/* JADX INFO: loaded from: app.apk:lombok/core/AnnotationValues.SCL.lombok */
+/* JADX INFO: loaded from: discord-126021.apk:lombok/core/AnnotationValues.SCL.lombok */
 public class AnnotationValues<A extends Annotation> {
     private final Class<A> type;
     private final Map<String, AnnotationValue> values;
     private final LombokNode<?, ?, ?> ast;
     private A cachedInstance = null;
 
-    /* JADX INFO: loaded from: app.apk:lombok/core/AnnotationValues$AnnotationValue.SCL.lombok */
+    /* JADX INFO: loaded from: discord-126021.apk:lombok/core/AnnotationValues$AnnotationValue.SCL.lombok */
     public static class AnnotationValue {
         public final List<String> raws;
         public final List<Object> valueGuesses;
@@ -70,7 +69,7 @@ public class AnnotationValues<A extends Annotation> {
         return new AnnotationValues<>(type, Collections.emptyMap(), ast);
     }
 
-    /* JADX INFO: loaded from: app.apk:lombok/core/AnnotationValues$AnnotationValueDecodeFail.SCL.lombok */
+    /* JADX INFO: loaded from: discord-126021.apk:lombok/core/AnnotationValues$AnnotationValueDecodeFail.SCL.lombok */
     public static class AnnotationValueDecodeFail extends RuntimeException {
         private static final long serialVersionUID = 1;
         public final int idx;

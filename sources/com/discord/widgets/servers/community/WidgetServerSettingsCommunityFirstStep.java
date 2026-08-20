@@ -17,7 +17,6 @@ import com.discord.utilities.view.ToastManager;
 import com.discord.utilities.viewbinding.FragmentViewBindingDelegate;
 import com.discord.utilities.viewbinding.FragmentViewBindingDelegateKt;
 import com.discord.views.CheckedSetting;
-import com.discord.widgets.servers.community.WidgetServerSettingsEnableCommunityViewModel;
 import java.util.Objects;
 import kotlin.Lazy;
 import kotlin.Unit;

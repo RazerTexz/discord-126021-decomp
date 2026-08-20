@@ -28,7 +28,7 @@ import org.eclipse.jdt.internal.compiler.ast.ThisReference;
 import org.eclipse.jdt.internal.compiler.ast.TypeDeclaration;
 import org.eclipse.jdt.internal.compiler.lookup.BlockScope;
 
-/* JADX INFO: loaded from: app.apk:lombok/eclipse/handlers/HandleHelper.SCL.lombok */
+/* JADX INFO: loaded from: discord-126021.apk:lombok/eclipse/handlers/HandleHelper.SCL.lombok */
 public class HandleHelper extends EclipseAnnotationHandler<Helper> {
     private Statement[] getStatementsFromAstNode(ASTNode node) {
         if (node instanceof Block) {

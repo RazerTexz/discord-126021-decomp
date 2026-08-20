@@ -5,7 +5,6 @@ import com.esotericsoftware.kryo.p502io.Input;
 import com.esotericsoftware.kryo.p502io.InputChunked;
 import com.esotericsoftware.kryo.p502io.Output;
 import com.esotericsoftware.kryo.p502io.OutputChunked;
-import com.esotericsoftware.kryo.serializers.FieldSerializer;
 import com.esotericsoftware.kryo.util.ObjectMap;
 import p007b.p106e.p107a.C1644a;
 

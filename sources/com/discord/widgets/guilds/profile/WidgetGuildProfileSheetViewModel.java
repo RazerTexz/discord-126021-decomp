@@ -31,7 +31,6 @@ import com.discord.utilities.p501rx.ObservableExtensionsKt;
 import com.discord.utilities.permissions.ManageGuildContext;
 import com.discord.utilities.rest.RestAPI;
 import com.discord.utilities.user.UserUtils;
-import com.discord.widgets.guilds.profile.WidgetGuildProfileSheetViewModel;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;

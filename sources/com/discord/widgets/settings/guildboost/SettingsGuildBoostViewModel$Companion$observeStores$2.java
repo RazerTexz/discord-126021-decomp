@@ -4,7 +4,6 @@ import com.discord.api.premium.PremiumTier;
 import com.discord.models.guild.Guild;
 import com.discord.stores.StoreGuildBoost;
 import com.discord.stores.StoreSubscriptions;
-import com.discord.widgets.settings.guildboost.SettingsGuildBoostViewModel;
 import java.util.Map;
 import kotlin.jvm.functions.Function4;
 import p507d0.p592z.p594d.C12236k;

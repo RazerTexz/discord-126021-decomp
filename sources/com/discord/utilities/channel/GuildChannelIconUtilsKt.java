@@ -8,7 +8,6 @@ import com.discord.api.permission.Permission;
 import com.discord.api.permission.PermissionOverwrite;
 import com.discord.stores.StoreStream;
 import com.discord.utilities.PermissionOverwriteUtilsKt;
-import com.discord.utilities.channel.GuildChannelIconType;
 import java.util.List;
 import kotlin.NoWhenBranchMatchedException;
 import p507d0.p592z.p594d.C12238m;

@@ -5,7 +5,6 @@ import com.discord.models.domain.ModelNotificationSettings;
 import com.discord.stores.StoreThreadsJoined;
 import com.discord.utilities.channel.GuildChannelsInfo;
 import com.discord.utilities.permissions.PermissionUtils;
-import com.discord.widgets.channels.list.WidgetChannelListModel;
 import com.discord.widgets.channels.list.items.ChannelListItemThread;
 import java.util.ArrayList;
 import java.util.HashSet;

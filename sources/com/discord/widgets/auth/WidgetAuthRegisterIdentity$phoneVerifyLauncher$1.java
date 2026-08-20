@@ -2,7 +2,6 @@ package com.discord.widgets.auth;
 
 import com.discord.utilities.auth.RegistrationFlowRepo;
 import com.discord.views.phone.PhoneOrEmailInputView;
-import com.discord.widgets.auth.WidgetAuthPhoneVerify;
 import kotlin.Unit;
 import kotlin.jvm.functions.Function1;
 import p007b.p008a.p018d.C0870j;

@@ -2,7 +2,6 @@ package com.discord.widgets.channels.list;
 
 import android.view.View;
 import android.widget.TextView;
-import com.discord.widgets.channels.list.WidgetChannelsListItemChannelActions;
 import com.discord.widgets.channels.threads.browser.WidgetThreadBrowser;
 import kotlin.Unit;
 import kotlin.jvm.functions.Function1;

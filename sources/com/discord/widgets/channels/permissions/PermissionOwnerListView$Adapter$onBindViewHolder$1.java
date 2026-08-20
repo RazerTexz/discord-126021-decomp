@@ -1,6 +1,5 @@
 package com.discord.widgets.channels.permissions;
 
-import com.discord.widgets.channels.permissions.PermissionOwnerListView;
 import kotlin.Unit;
 import kotlin.jvm.functions.Function0;
 import p507d0.p592z.p594d.AbstractC12240o;

@@ -8,7 +8,6 @@ import com.discord.models.domain.ModelInvite;
 import com.discord.models.guild.Guild;
 import com.discord.models.invite.InviteUtils;
 import com.discord.stores.StoreStream;
-import com.discord.widgets.channels.list.WidgetChannelsList;
 import kotlin.Unit;
 import kotlin.jvm.functions.Function1;
 import p007b.p008a.p018d.C0876m;

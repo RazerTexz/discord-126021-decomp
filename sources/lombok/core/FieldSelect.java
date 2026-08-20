@@ -1,6 +1,6 @@
 package lombok.core;
 
-/* JADX INFO: loaded from: app.apk:lombok/core/FieldSelect.SCL.lombok */
+/* JADX INFO: loaded from: discord-126021.apk:lombok/core/FieldSelect.SCL.lombok */
 public class FieldSelect {
     private final String finalPart;
 

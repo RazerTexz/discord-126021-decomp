@@ -1,7 +1,6 @@
 package androidx.view;
 
 import androidx.annotation.Nullable;
-import androidx.view.Lifecycle;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import java.util.ArrayList;

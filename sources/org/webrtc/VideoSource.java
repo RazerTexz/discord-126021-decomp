@@ -2,7 +2,6 @@ package org.webrtc;
 
 import androidx.annotation.Nullable;
 import org.webrtc.VideoFrame;
-import org.webrtc.VideoProcessor;
 import org.webrtc.VideoSource;
 import p617h0.p628c.C12489t0;
 

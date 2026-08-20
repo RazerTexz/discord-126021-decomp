@@ -14,7 +14,6 @@ import com.discord.widgets.feedback.FeedbackSheetViewModel;
 import com.discord.widgets.voice.feedback.FeedbackIssue;
 import com.discord.widgets.voice.feedback.FeedbackRating;
 import com.discord.widgets.voice.feedback.PendingFeedback;
-import com.discord.widgets.voice.feedback.call.CallFeedbackSheetViewModel;
 import java.util.Collection;
 import java.util.List;
 import java.util.Map;

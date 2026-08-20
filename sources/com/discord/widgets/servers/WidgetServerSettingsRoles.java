@@ -30,8 +30,6 @@ import com.discord.utilities.permissions.PermissionUtils;
 import com.discord.utilities.rest.RestAPI;
 import com.discord.utilities.viewbinding.FragmentViewBindingDelegate;
 import com.discord.utilities.viewbinding.FragmentViewBindingDelegateKt;
-import com.discord.widgets.servers.WidgetServerSettingsRoles;
-import com.discord.widgets.servers.WidgetServerSettingsRolesAdapter;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Iterator;

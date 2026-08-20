@@ -22,7 +22,6 @@ import com.discord.utilities.mg_recycler.MGRecyclerDataPayload;
 import com.discord.utilities.mg_recycler.MGRecyclerViewHolder;
 import com.discord.views.CheckedSetting;
 import com.discord.views.user.SettingsMemberView;
-import com.discord.widgets.servers.auditlog.WidgetServerSettingsAuditLogFilterAdapter;
 import com.google.android.material.radiobutton.MaterialRadioButton;
 import java.util.List;
 import kotlin.Unit;

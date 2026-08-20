@@ -9,7 +9,6 @@ import com.discord.stores.StoreSlowMode;
 import com.discord.stores.StoreStream;
 import com.discord.stores.StoreUser;
 import com.discord.utilities.guilds.GuildVerificationLevelUtils;
-import com.discord.widgets.chat.overlay.ChatTypingModel;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Iterator;

@@ -5,7 +5,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import androidx.annotation.RestrictTo;
-import androidx.appcompat.view.menu.MenuView;
 import java.util.ArrayList;
 
 /* JADX INFO: loaded from: classes.dex */

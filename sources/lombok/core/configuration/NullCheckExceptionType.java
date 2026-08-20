@@ -3,7 +3,7 @@ package lombok.core.configuration;
 import lombok.core.LombokImmutableList;
 import lombok.core.handlers.HandlerUtil;
 
-/* JADX INFO: loaded from: app.apk:lombok/core/configuration/NullCheckExceptionType.SCL.lombok */
+/* JADX INFO: loaded from: discord-126021.apk:lombok/core/configuration/NullCheckExceptionType.SCL.lombok */
 @ExampleValueString("[NullPointerException | IllegalArgumentException | Assertion | JDK | Guava]")
 public enum NullCheckExceptionType {
     ILLEGAL_ARGUMENT_EXCEPTION { // from class: lombok.core.configuration.NullCheckExceptionType.1

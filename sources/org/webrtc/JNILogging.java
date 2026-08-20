@@ -1,7 +1,5 @@
 package org.webrtc;
 
-import org.webrtc.Logging;
-
 /* JADX INFO: loaded from: classes3.dex */
 public class JNILogging {
     private final Loggable loggable;

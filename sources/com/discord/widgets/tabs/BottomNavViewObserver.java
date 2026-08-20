@@ -1,6 +1,5 @@
 package com.discord.widgets.tabs;
 
-import com.discord.widgets.tabs.TabsHostBottomNavigationView;
 import kotlin.Lazy;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import p507d0.C12083g;

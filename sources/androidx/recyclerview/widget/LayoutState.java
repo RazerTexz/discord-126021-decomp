@@ -1,7 +1,6 @@
 package androidx.recyclerview.widget;
 
 import android.view.View;
-import androidx.recyclerview.widget.RecyclerView;
 import p007b.p100d.p104b.p105a.C1643a;
 
 /* JADX INFO: loaded from: classes.dex */

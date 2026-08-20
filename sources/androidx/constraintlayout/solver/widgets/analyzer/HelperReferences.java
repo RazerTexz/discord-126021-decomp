@@ -2,7 +2,6 @@ package androidx.constraintlayout.solver.widgets.analyzer;
 
 import androidx.constraintlayout.solver.widgets.Barrier;
 import androidx.constraintlayout.solver.widgets.ConstraintWidget;
-import androidx.constraintlayout.solver.widgets.analyzer.DependencyNode;
 import java.util.Iterator;
 
 /* JADX INFO: loaded from: classes.dex */

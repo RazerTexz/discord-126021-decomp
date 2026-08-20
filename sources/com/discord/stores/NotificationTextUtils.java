@@ -9,7 +9,6 @@ import com.discord.models.domain.ModelNotificationSettings;
 import com.discord.models.guild.Guild;
 import com.discord.models.member.GuildMember;
 import com.discord.models.user.User;
-import com.discord.stores.StoreThreadsJoined;
 import com.discord.utilities.permissions.PermissionUtils;
 import com.discord.utilities.threads.ThreadUtils;
 import java.util.Collection;

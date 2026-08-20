@@ -52,8 +52,6 @@ import com.discord.utilities.viewbinding.FragmentViewBindingDelegateKt;
 import com.discord.views.ActiveSubscriptionView;
 import com.discord.widgets.notice.WidgetNoticeDialog;
 import com.discord.widgets.settings.guildboost.WidgetSettingsGuildBoost;
-import com.discord.widgets.settings.premium.SettingsPremiumViewModel;
-import com.discord.widgets.settings.premium.WidgetChoosePlan;
 import com.google.android.material.button.MaterialButton;
 import java.text.NumberFormat;
 import java.util.Collection;

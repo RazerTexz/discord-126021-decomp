@@ -1,6 +1,6 @@
 package org.objectweb.asm;
 
-/* JADX INFO: loaded from: app.apk:org/objectweb/asm/ModuleWriter.SCL.lombok */
+/* JADX INFO: loaded from: discord-126021.apk:org/objectweb/asm/ModuleWriter.SCL.lombok */
 final class ModuleWriter extends ModuleVisitor {
     private final SymbolTable symbolTable;
     private final int moduleNameIndex;

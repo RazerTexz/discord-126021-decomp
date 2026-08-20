@@ -1,6 +1,6 @@
 package org.objectweb.asm;
 
-/* JADX INFO: loaded from: app.apk:org/objectweb/asm/RecordComponentVisitor.SCL.lombok */
+/* JADX INFO: loaded from: discord-126021.apk:org/objectweb/asm/RecordComponentVisitor.SCL.lombok */
 public abstract class RecordComponentVisitor {
     protected final int api;
     RecordComponentVisitor delegate;

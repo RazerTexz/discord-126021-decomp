@@ -23,7 +23,6 @@ import com.discord.utilities.textprocessing.DiscordParser;
 import com.discord.utilities.textprocessing.MessageParseState;
 import com.discord.utilities.textprocessing.MessageRenderContext;
 import com.discord.utilities.user.UserUtils;
-import com.discord.widgets.servers.member_verification.WidgetMemberVerificationViewModel;
 import com.discord.widgets.servers.member_verification.form_fields.MemberVerificationItem;
 import com.discord.widgets.servers.member_verification.form_fields.MemberVerificationItemApproveTerms;
 import com.discord.widgets.servers.member_verification.form_fields.MemberVerificationItemHeader;

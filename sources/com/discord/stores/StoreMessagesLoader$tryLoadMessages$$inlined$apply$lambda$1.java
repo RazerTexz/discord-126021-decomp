@@ -1,7 +1,6 @@
 package com.discord.stores;
 
 import com.discord.models.message.Message;
-import com.discord.stores.StoreMessagesLoader;
 import java.util.List;
 import kotlin.Unit;
 import kotlin.jvm.functions.Function1;

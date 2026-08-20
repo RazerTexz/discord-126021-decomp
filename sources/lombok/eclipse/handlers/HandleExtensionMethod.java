@@ -11,7 +11,7 @@ import lombok.experimental.ExtensionMethod;
 import org.eclipse.jdt.internal.compiler.ast.Annotation;
 import org.eclipse.jdt.internal.compiler.ast.TypeDeclaration;
 
-/* JADX INFO: loaded from: app.apk:lombok/eclipse/handlers/HandleExtensionMethod.SCL.lombok */
+/* JADX INFO: loaded from: discord-126021.apk:lombok/eclipse/handlers/HandleExtensionMethod.SCL.lombok */
 @HandlerPriority(66560)
 public class HandleExtensionMethod extends EclipseAnnotationHandler<ExtensionMethod> {
     @Override // lombok.eclipse.EclipseAnnotationHandler

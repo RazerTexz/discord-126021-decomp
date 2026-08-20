@@ -5,7 +5,6 @@ import androidx.core.app.FrameMetricsAggregator;
 import co.discord.media_engine.RtcRegion;
 import co.discord.media_engine.StreamParameters;
 import co.discord.media_engine.VideoInputDeviceDescription;
-import com.discord.rtcconnection.mediaengine.MediaEngineConnection;
 import com.hammerandchisel.libdiscord.Discord;
 import java.util.List;
 import kotlin.Unit;

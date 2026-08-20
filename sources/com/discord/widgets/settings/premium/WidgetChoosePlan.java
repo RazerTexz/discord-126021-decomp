@@ -31,7 +31,6 @@ import com.discord.utilities.premium.BlockRussianPurchasesUtils;
 import com.discord.utilities.view.text.LinkifiedTextView;
 import com.discord.utilities.viewbinding.FragmentViewBindingDelegate;
 import com.discord.utilities.viewbinding.FragmentViewBindingDelegateKt;
-import com.discord.widgets.settings.premium.ChoosePlanViewModel;
 import java.io.Serializable;
 import java.util.Objects;
 import kotlin.Lazy;

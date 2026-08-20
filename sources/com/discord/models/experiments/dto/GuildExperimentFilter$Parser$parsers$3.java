@@ -1,7 +1,6 @@
 package com.discord.models.experiments.dto;
 
 import com.discord.models.domain.Model;
-import com.discord.models.experiments.dto.GuildExperimentFilter;
 import kotlin.jvm.functions.Function1;
 import p507d0.p592z.p594d.C12236k;
 import p507d0.p592z.p594d.C12238m;

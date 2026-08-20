@@ -2,7 +2,6 @@ package com.discord.widgets.user.search;
 
 import com.discord.models.domain.ModelNotificationSettings;
 import com.discord.models.guild.Guild;
-import com.discord.widgets.user.search.WidgetGlobalSearchGuildsModel;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;

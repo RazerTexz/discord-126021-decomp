@@ -1,7 +1,5 @@
 package p007b.p109f.p111b.p113b;
 
-import p007b.p109f.p111b.p113b.InterfaceC1660c;
-
 /* JADX INFO: renamed from: b.f.b.b.b */
 /* JADX INFO: compiled from: DefaultEntryEvictionComparatorSupplier.java */
 /* JADX INFO: loaded from: classes.dex */

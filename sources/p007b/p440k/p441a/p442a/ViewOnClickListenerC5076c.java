@@ -2,7 +2,6 @@ package p007b.p440k.p441a.p442a;
 
 import android.view.View;
 import com.jaredrummler.android.colorpicker.ColorPickerDialog;
-import p007b.p440k.p441a.p442a.C5075b;
 
 /* JADX INFO: renamed from: b.k.a.a.c */
 /* JADX INFO: compiled from: ColorPaletteAdapter.java */

@@ -2,7 +2,6 @@ package androidx.constraintlayout.widget;
 
 import android.content.Context;
 import android.util.AttributeSet;
-import androidx.constraintlayout.widget.ConstraintLayout;
 
 /* JADX INFO: loaded from: classes.dex */
 public class Group extends ConstraintHelper {

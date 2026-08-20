@@ -5,14 +5,14 @@ import java.util.Map;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-/* JADX INFO: loaded from: app.apk:lombok/core/configuration/ConfigurationParser.SCL.lombok */
+/* JADX INFO: loaded from: discord-126021.apk:lombok/core/configuration/ConfigurationParser.SCL.lombok */
 public class ConfigurationParser {
     private static final Pattern LINE = Pattern.compile("(?:clear\\s+([^=]+))|(?:(\\S*?)\\s*([-+]?=)\\s*(.*?))");
     private static final Pattern NEWLINE_FINDER = Pattern.compile("^[\t ]*(.*?)[\t\r ]*$", 8);
     private static final Pattern IMPORT = Pattern.compile("import\\s+(.+?)");
     private ConfigurationProblemReporter reporter;
 
-    /* JADX INFO: loaded from: app.apk:lombok/core/configuration/ConfigurationParser$Collector.SCL.lombok */
+    /* JADX INFO: loaded from: discord-126021.apk:lombok/core/configuration/ConfigurationParser$Collector.SCL.lombok */
     public interface Collector {
         void addImport(ConfigurationFile configurationFile, ConfigurationFile configurationFile2, int i);
 

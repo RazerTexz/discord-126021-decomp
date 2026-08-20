@@ -1,7 +1,6 @@
 package org.webrtc;
 
 import androidx.annotation.Nullable;
-import org.webrtc.PeerConnection;
 
 /* JADX INFO: loaded from: classes3.dex */
 public final class PeerConnectionDependencies {

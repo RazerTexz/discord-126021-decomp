@@ -281,6 +281,11 @@ public final class C1107b {
         return m214f(charSequence, objArr, C1460d.m470R1(function1, Arrays.copyOf(objArr, objArr.length)));
     }
 
+    /* JADX INFO: renamed from: h */
+    public static /* synthetic */ CharSequence m216h(Context context, int i, Object[] objArr, Function1 function1, int i2) {
+        return m210b(context, i, objArr, (i2 & 4) != 0 ? b.f1491j : null);
+    }
+
     /* JADX INFO: renamed from: m */
     public static final void m221m(TextView textView, @StringRes int i, Object[] objArr, Function1<? super RenderContext, Unit> function1) {
         C12238m.checkNotNullParameter(textView, "$this$i18nSetText");

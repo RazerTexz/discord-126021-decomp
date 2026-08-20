@@ -8,7 +8,6 @@ import com.discord.utilities.p501rx.ObservableExtensionsKt;
 import com.discord.utilities.streams.StreamContext;
 import com.discord.utilities.streams.StreamContextService;
 import com.discord.utilities.viewcontroller.RxViewController;
-import com.discord.views.user.UserAvatarPresenceView;
 import com.discord.widgets.user.presence.ModelRichPresence;
 import p507d0.p592z.p594d.C12238m;
 import p658rx.Observable;

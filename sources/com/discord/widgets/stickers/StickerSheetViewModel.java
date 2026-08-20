@@ -14,7 +14,6 @@ import com.discord.utilities.analytics.Traits;
 import com.discord.utilities.error.Error;
 import com.discord.utilities.p501rx.ObservableExtensionsKt;
 import com.discord.utilities.premium.PremiumUtilsKt;
-import com.discord.widgets.stickers.StickerSheetViewModel;
 import java.util.Collection;
 import java.util.Iterator;
 import java.util.List;

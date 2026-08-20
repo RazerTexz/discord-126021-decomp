@@ -15,7 +15,6 @@ import lombok.core.SpiLoadUtil;
 import lombok.core.TypeLibrary;
 import lombok.core.configuration.CheckerFrameworkVersion;
 import lombok.eclipse.EclipseNode;
-import lombok.eclipse.handlers.HandleBuilder;
 import org.eclipse.jdt.internal.compiler.ast.ASTNode;
 import org.eclipse.jdt.internal.compiler.ast.AbstractMethodDeclaration;
 import org.eclipse.jdt.internal.compiler.ast.Annotation;
@@ -47,19 +46,19 @@ import org.eclipse.jdt.internal.compiler.lookup.ClassScope;
 import org.eclipse.jdt.internal.compiler.lookup.MethodScope;
 import org.eclipse.jdt.internal.compiler.lookup.TypeConstants;
 
-/* JADX INFO: loaded from: app.apk:lombok/eclipse/handlers/EclipseSingularsRecipes.SCL.lombok */
+/* JADX INFO: loaded from: discord-126021.apk:lombok/eclipse/handlers/EclipseSingularsRecipes.SCL.lombok */
 public class EclipseSingularsRecipes {
     private static final EclipseSingularsRecipes INSTANCE = new EclipseSingularsRecipes();
     private final Map<String, EclipseSingularizer> singularizers = new HashMap();
     private final TypeLibrary singularizableTypes = new TypeLibrary();
 
-    /* JADX INFO: loaded from: app.apk:lombok/eclipse/handlers/EclipseSingularsRecipes$StatementMaker.SCL.lombok */
+    /* JADX INFO: loaded from: discord-126021.apk:lombok/eclipse/handlers/EclipseSingularsRecipes$StatementMaker.SCL.lombok */
     public interface StatementMaker {
         /* JADX INFO: renamed from: make */
         Statement mo11563make();
     }
 
-    /* JADX INFO: loaded from: app.apk:lombok/eclipse/handlers/EclipseSingularsRecipes$TypeReferenceMaker.SCL.lombok */
+    /* JADX INFO: loaded from: discord-126021.apk:lombok/eclipse/handlers/EclipseSingularsRecipes$TypeReferenceMaker.SCL.lombok */
     public interface TypeReferenceMaker {
         TypeReference make();
     }
@@ -105,7 +104,7 @@ public class EclipseSingularsRecipes {
         return this.singularizers.get(fqn);
     }
 
-    /* JADX INFO: loaded from: app.apk:lombok/eclipse/handlers/EclipseSingularsRecipes$SingularData.SCL.lombok */
+    /* JADX INFO: loaded from: discord-126021.apk:lombok/eclipse/handlers/EclipseSingularsRecipes$SingularData.SCL.lombok */
     public static final class SingularData {
         private final EclipseNode annotation;
         private final char[] singularName;
@@ -186,7 +185,7 @@ public class EclipseSingularsRecipes {
         }
     }
 
-    /* JADX INFO: loaded from: app.apk:lombok/eclipse/handlers/EclipseSingularsRecipes$EclipseSingularizer.SCL.lombok */
+    /* JADX INFO: loaded from: discord-126021.apk:lombok/eclipse/handlers/EclipseSingularsRecipes$EclipseSingularizer.SCL.lombok */
     public static abstract class EclipseSingularizer {
         protected static final long[] NULL_POSS = new long[1];
         private static final char[] SIZE_TEXT = {'s', 'i', 'z', 'e'};

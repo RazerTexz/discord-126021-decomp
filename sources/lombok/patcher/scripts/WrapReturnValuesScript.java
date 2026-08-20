@@ -12,7 +12,7 @@ import org.objectweb.asm.ClassWriter;
 import org.objectweb.asm.MethodVisitor;
 import org.objectweb.asm.Opcodes;
 
-/* JADX INFO: loaded from: app.apk:lombok/patcher/scripts/WrapReturnValuesScript.SCL.lombok */
+/* JADX INFO: loaded from: discord-126021.apk:lombok/patcher/scripts/WrapReturnValuesScript.SCL.lombok */
 public final class WrapReturnValuesScript extends MethodLevelPatchScript {
     private final Hook wrapper;
     private final Set<StackRequest> requests;
@@ -73,7 +73,7 @@ public final class WrapReturnValuesScript extends MethodLevelPatchScript {
         return (rd.startsWith("L") && rd.endsWith(";")) ? rd.substring(1, rd.length() - 1) : rd;
     }
 
-    /* JADX INFO: loaded from: app.apk:lombok/patcher/scripts/WrapReturnValuesScript$WrapReturnValues.SCL.lombok */
+    /* JADX INFO: loaded from: discord-126021.apk:lombok/patcher/scripts/WrapReturnValuesScript$WrapReturnValues.SCL.lombok */
     private class WrapReturnValues extends MethodVisitor {
         private final MethodLogistics logistics;
         private final String ownClassSpec;

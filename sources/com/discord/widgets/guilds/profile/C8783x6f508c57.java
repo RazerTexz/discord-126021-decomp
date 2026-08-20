@@ -4,7 +4,6 @@ import android.content.Context;
 import android.view.View;
 import com.discord.models.experiments.domain.Experiment;
 import com.discord.stores.StoreStream;
-import com.discord.widgets.guilds.profile.WidgetChangeGuildIdentity;
 import com.discord.widgets.settings.profile.WidgetEditUserOrGuildMemberProfile;
 import kotlin.Unit;
 import kotlin.jvm.functions.Function1;

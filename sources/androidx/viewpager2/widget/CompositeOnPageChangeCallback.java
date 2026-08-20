@@ -2,7 +2,6 @@ package androidx.viewpager2.widget;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Px;
-import androidx.viewpager2.widget.ViewPager2;
 import java.util.ArrayList;
 import java.util.ConcurrentModificationException;
 import java.util.Iterator;

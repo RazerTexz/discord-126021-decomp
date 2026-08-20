@@ -17,7 +17,6 @@ import com.discord.utilities.error.Error;
 import com.discord.utilities.p501rx.ObservableExtensionsKt;
 import com.discord.utilities.resources.StringResourceUtilsKt;
 import com.discord.utilities.view.extensions.ViewExtensions;
-import com.discord.widgets.chat.list.adapter.WidgetChatListAdapterItemGuildTemplate;
 import com.discord.widgets.chat.list.entries.ChatListEntry;
 import com.discord.widgets.chat.list.entries.GuildTemplateEntry;
 import com.discord.widgets.guilds.create.WidgetGuildClone;

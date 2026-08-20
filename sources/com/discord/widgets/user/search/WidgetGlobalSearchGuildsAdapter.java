@@ -22,8 +22,6 @@ import com.discord.utilities.images.MGImages;
 import com.discord.utilities.mg_recycler.MGRecyclerAdapterSimple;
 import com.discord.utilities.mg_recycler.MGRecyclerViewHolder;
 import com.discord.utilities.view.extensions.ViewExtensions;
-import com.discord.widgets.user.search.WidgetGlobalSearchGuildsAdapter;
-import com.discord.widgets.user.search.WidgetGlobalSearchGuildsModel;
 import com.facebook.drawee.view.SimpleDraweeView;
 import kotlin.Unit;
 import kotlin.jvm.functions.Function3;
@@ -61,7 +59,7 @@ public final class WidgetGlobalSearchGuildsAdapter extends MGRecyclerAdapterSimp
             Context context = textView.getContext();
             C12238m.checkNotNullExpressionValue(context, "context");
             textView.setBackgroundResource(DrawableCompat.getThemedDrawableRes$default(context, C5419R.attr.overlay_guild_mentions_primary_630, 0, 2, (Object) null));
-            textView.setContentDescription(C1107b.m210b(context, C5419R.string.mentions_count, new Object[]{String.valueOf(count)}, (4 & 4) != 0 ? C1107b.b.f1491j : null));
+            textView.setContentDescription(C1107b.m216h(context, C5419R.string.mentions_count, new Object[]{String.valueOf(count)}, null, 4));
         }
 
         @Override // com.discord.utilities.mg_recycler.MGRecyclerViewHolder

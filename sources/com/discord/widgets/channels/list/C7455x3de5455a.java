@@ -6,7 +6,6 @@ import android.widget.TextView;
 import androidx.fragment.app.FragmentManager;
 import com.discord.stores.StoreStream;
 import com.discord.stores.StoreUserGuildSettings;
-import com.discord.widgets.channels.list.WidgetChannelsListItemChannelActions;
 import com.discord.widgets.settings.WidgetMuteSettingsSheet;
 import kotlin.Unit;
 import kotlin.jvm.functions.Function1;

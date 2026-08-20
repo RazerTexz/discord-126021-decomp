@@ -21,7 +21,6 @@ import com.discord.utilities.guildscheduledevent.GuildScheduledEventUtilitiesKt;
 import com.discord.utilities.p501rx.ObservableExtensionsKt;
 import com.discord.utilities.viewbinding.FragmentViewBindingDelegate;
 import com.discord.utilities.viewbinding.FragmentViewBindingDelegateKt;
-import com.discord.widgets.guilds.invite.GuildInviteViewModel;
 import com.discord.widgets.guildscheduledevent.GuildScheduledEventItemView;
 import com.discord.widgets.guildscheduledevent.GuildScheduledEventModel;
 import com.discord.widgets.guildscheduledevent.GuildScheduledEventModelKt;

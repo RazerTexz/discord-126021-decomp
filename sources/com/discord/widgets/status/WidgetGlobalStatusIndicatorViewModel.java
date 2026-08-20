@@ -30,7 +30,6 @@ import com.discord.utilities.streams.StreamContext;
 import com.discord.utilities.streams.StreamContextService;
 import com.discord.widgets.stage.StageChannelAPI;
 import com.discord.widgets.stage.StageRoles;
-import com.discord.widgets.status.WidgetGlobalStatusIndicatorViewModel;
 import java.util.Collection;
 import java.util.Iterator;
 import java.util.LinkedHashMap;

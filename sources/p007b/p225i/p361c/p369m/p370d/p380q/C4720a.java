@@ -1,7 +1,5 @@
 package p007b.p225i.p361c.p369m.p370d.p380q;
 
-import p007b.p225i.p361c.p369m.p370d.p380q.C4721b;
-
 /* JADX INFO: renamed from: b.i.c.m.d.q.a */
 /* JADX INFO: compiled from: ReportManager.java */
 /* JADX INFO: loaded from: classes3.dex */

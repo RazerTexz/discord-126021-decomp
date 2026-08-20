@@ -4,7 +4,6 @@ import com.discord.api.channel.Channel;
 import com.discord.api.guildjoinrequest.GuildJoinRequest;
 import com.discord.models.guild.Guild;
 import com.discord.stores.StoreStream;
-import com.discord.widgets.guilds.list.WidgetGuildsListViewModel;
 import com.discord.widgets.guildscheduledevent.GuildIdsWithActiveEventsModel;
 import com.discord.widgets.stage.GuildIdsWithVisibleStageInstanceModel;
 import java.util.ArrayList;

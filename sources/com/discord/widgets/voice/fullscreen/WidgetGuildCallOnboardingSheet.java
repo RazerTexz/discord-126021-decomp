@@ -17,8 +17,6 @@ import com.discord.utilities.viewbinding.FragmentViewBindingDelegateKt;
 import com.discord.utilities.voice.VoiceChannelJoinability;
 import com.discord.views.JoinVoiceChannelButton;
 import com.discord.widgets.chat.list.TextInVoiceFeatureFlag;
-import com.discord.widgets.voice.fullscreen.WidgetCallPreviewFullscreen;
-import com.discord.widgets.voice.fullscreen.WidgetGuildCallOnboardingSheetViewModel;
 import com.discord.widgets.voice.sheet.WidgetVoiceBottomSheet;
 import java.util.Objects;
 import kotlin.Lazy;

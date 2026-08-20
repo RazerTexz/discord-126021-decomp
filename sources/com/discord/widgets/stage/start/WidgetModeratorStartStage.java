@@ -23,8 +23,6 @@ import com.discord.widgets.guildscheduledevent.GuildScheduledEventModelKt;
 import com.discord.widgets.guildscheduledevent.WidgetGuildScheduledEventLocationSelect;
 import com.discord.widgets.guildscheduledevent.WidgetPreviewGuildScheduledEvent;
 import com.discord.widgets.stage.sheet.WidgetStageStartEventBottomSheet;
-import com.discord.widgets.stage.start.ModeratorStartStageItem;
-import com.discord.widgets.stage.start.ModeratorStartStageViewModel;
 import com.discord.widgets.voice.fullscreen.WidgetCallFullscreen;
 import kotlin.Lazy;
 import kotlin.Unit;

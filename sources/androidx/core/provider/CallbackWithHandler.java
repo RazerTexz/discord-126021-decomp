@@ -3,8 +3,6 @@ package androidx.core.provider;
 import android.graphics.Typeface;
 import android.os.Handler;
 import androidx.annotation.NonNull;
-import androidx.core.provider.FontRequestWorker;
-import androidx.core.provider.FontsContractCompat;
 
 /* JADX INFO: loaded from: classes.dex */
 public class CallbackWithHandler {

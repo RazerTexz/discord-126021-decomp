@@ -1,6 +1,5 @@
 package com.discord.api.guildscheduledevent;
 
-import com.discord.api.guildscheduledevent.GuildScheduledEventStatus;
 import com.google.gson.TypeAdapter;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;

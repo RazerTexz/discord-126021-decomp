@@ -3,7 +3,6 @@ package com.discord.widgets.servers.guild_role_subscription;
 import com.discord.api.guildrolesubscription.GuildRoleSubscriptionTierListing;
 import com.discord.api.guildrolesubscription.ImageAsset;
 import com.discord.widgets.guild_role_subscriptions.GuildRoleSubscriptionUtilsKt;
-import com.discord.widgets.servers.guild_role_subscription.ServerSettingsGuildRoleSubscriptionTierAdapterItem;
 import java.util.ArrayList;
 import java.util.List;
 

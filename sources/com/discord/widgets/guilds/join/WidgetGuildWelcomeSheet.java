@@ -20,8 +20,6 @@ import com.discord.utilities.p501rx.ObservableExtensionsKt;
 import com.discord.utilities.view.extensions.ViewExtensions;
 import com.discord.utilities.viewbinding.FragmentViewBindingDelegate;
 import com.discord.utilities.viewbinding.FragmentViewBindingDelegateKt;
-import com.discord.widgets.guilds.join.ChannelItem;
-import com.discord.widgets.guilds.join.WidgetGuildWelcomeSheetViewModel;
 import com.discord.widgets.guildscheduledevent.WidgetGuildScheduledEventDetailsBottomSheet;
 import com.facebook.drawee.view.SimpleDraweeView;
 import java.util.ArrayList;

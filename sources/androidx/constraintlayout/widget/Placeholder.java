@@ -9,7 +9,6 @@ import android.graphics.Typeface;
 import android.util.AttributeSet;
 import android.view.View;
 import androidx.constraintlayout.solver.widgets.ConstraintWidget;
-import androidx.constraintlayout.widget.ConstraintLayout;
 
 /* JADX INFO: loaded from: classes.dex */
 public class Placeholder extends View {

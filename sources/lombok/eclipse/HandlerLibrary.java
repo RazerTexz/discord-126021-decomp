@@ -22,7 +22,7 @@ import org.eclipse.jdt.internal.compiler.ast.ASTNode;
 import org.eclipse.jdt.internal.compiler.ast.CompilationUnitDeclaration;
 import org.eclipse.jdt.internal.compiler.ast.TypeReference;
 
-/* JADX INFO: loaded from: app.apk:lombok/eclipse/HandlerLibrary.SCL.lombok */
+/* JADX INFO: loaded from: discord-126021.apk:lombok/eclipse/HandlerLibrary.SCL.lombok */
 public class HandlerLibrary {
     private TypeLibrary typeLibrary = new TypeLibrary();
     private Map<String, AnnotationHandlerContainer<?>> annotationHandlers = new HashMap();
@@ -33,7 +33,7 @@ public class HandlerLibrary {
         ConfigurationKeysLoader.LoaderLoader.loadAllConfigurationKeys();
     }
 
-    /* JADX INFO: loaded from: app.apk:lombok/eclipse/HandlerLibrary$VisitorContainer.SCL.lombok */
+    /* JADX INFO: loaded from: discord-126021.apk:lombok/eclipse/HandlerLibrary$VisitorContainer.SCL.lombok */
     private static class VisitorContainer {
         private final EclipseASTVisitor visitor;
         private final long priority;
@@ -55,7 +55,7 @@ public class HandlerLibrary {
         }
     }
 
-    /* JADX INFO: loaded from: app.apk:lombok/eclipse/HandlerLibrary$AnnotationHandlerContainer.SCL.lombok */
+    /* JADX INFO: loaded from: discord-126021.apk:lombok/eclipse/HandlerLibrary$AnnotationHandlerContainer.SCL.lombok */
     private static class AnnotationHandlerContainer<T extends Annotation> {
         private final EclipseAnnotationHandler<T> handler;
         private final Class<T> annotationClass;

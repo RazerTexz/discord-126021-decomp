@@ -1,6 +1,5 @@
 package com.discord.widgets.forums;
 
-import com.discord.widgets.forums.ForumBrowserItem;
 import java.util.Comparator;
 import kotlin.jvm.functions.Function0;
 import p507d0.p592z.p594d.AbstractC12240o;

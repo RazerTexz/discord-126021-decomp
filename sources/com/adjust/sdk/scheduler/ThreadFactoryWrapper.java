@@ -2,7 +2,6 @@ package com.adjust.sdk.scheduler;
 
 import com.adjust.sdk.AdjustFactory;
 import com.adjust.sdk.Constants;
-import java.lang.Thread;
 import java.util.concurrent.Executors;
 import java.util.concurrent.ThreadFactory;
 import p007b.p100d.p104b.p105a.C1643a;

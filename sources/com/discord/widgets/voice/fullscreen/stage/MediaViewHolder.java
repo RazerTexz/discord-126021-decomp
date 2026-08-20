@@ -8,7 +8,6 @@ import com.discord.models.domain.ModelAuditLogEntry;
 import com.discord.utilities.view.extensions.ViewExtensions;
 import com.discord.views.calls.VideoCallParticipantView;
 import com.discord.widgets.voice.fullscreen.grid.VideoCallGridAdapter;
-import com.discord.widgets.voice.fullscreen.stage.StageCallItem;
 import kotlin.Unit;
 import kotlin.jvm.functions.Function1;
 import kotlin.jvm.functions.Function2;

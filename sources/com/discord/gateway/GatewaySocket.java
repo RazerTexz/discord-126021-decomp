@@ -8,7 +8,6 @@ import com.discord.api.activity.ActivityTypeTypeAdapter;
 import com.discord.api.channel.Channel;
 import com.discord.api.guild.Guild;
 import com.discord.api.presence.ClientStatus;
-import com.discord.gateway.GatewaySocketLogger;
 import com.discord.gateway.opcodes.Opcode;
 import com.discord.gateway.p498io.Incoming;
 import com.discord.gateway.p498io.IncomingParser;

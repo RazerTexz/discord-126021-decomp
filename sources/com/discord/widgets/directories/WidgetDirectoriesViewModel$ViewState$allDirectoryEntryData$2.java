@@ -1,7 +1,6 @@
 package com.discord.widgets.directories;
 
 import com.discord.api.directory.DirectoryEntryGuild;
-import com.discord.widgets.directories.WidgetDirectoriesViewModel;
 import java.util.ArrayList;
 import java.util.List;
 import kotlin.jvm.functions.Function0;

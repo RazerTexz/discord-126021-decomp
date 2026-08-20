@@ -2,7 +2,6 @@ package com.discord.widgets.voice.fullscreen;
 
 import com.discord.api.channel.ChannelUtils;
 import com.discord.utilities.permissions.PermissionUtils;
-import com.discord.widgets.voice.fullscreen.WidgetCallFullscreenViewModel;
 import java.util.Set;
 import kotlin.jvm.functions.Function0;
 import p507d0.p592z.p594d.AbstractC12240o;

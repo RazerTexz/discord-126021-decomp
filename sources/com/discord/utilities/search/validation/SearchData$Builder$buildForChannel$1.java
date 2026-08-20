@@ -3,7 +3,6 @@ package com.discord.utilities.search.validation;
 import com.discord.models.guild.UserGuildMember;
 import com.discord.models.member.GuildMember;
 import com.discord.models.user.User;
-import com.discord.utilities.search.validation.SearchData;
 import java.util.HashMap;
 import java.util.Map;
 import kotlin.Unit;

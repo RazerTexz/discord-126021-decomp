@@ -53,8 +53,6 @@ import com.discord.utilities.views.ViewVisibilityObserverProvider;
 import com.discord.widgets.announcements.WidgetChannelFollowSheet;
 import com.discord.widgets.chat.MessageContent;
 import com.discord.widgets.chat.MessageManager;
-import com.discord.widgets.chat.input.ChatInputViewModel;
-import com.discord.widgets.chat.input.MessageDraftsRepo;
 import com.discord.widgets.chat.input.autocomplete.InputAutocomplete;
 import com.discord.widgets.chat.input.models.ApplicationCommandData;
 import com.discord.widgets.chat.input.models.ApplicationCommandValue;
@@ -1083,7 +1081,7 @@ public final class WidgetChatInput extends AppFragment {
             return string;
         }
         if (hasSendMessagePermissions) {
-            return C1107b.m210b(context, C5419R.string.textarea_placeholder, new Object[]{ChannelUtils.m7681e(channel, context, false, 2)}, (4 & 4) != 0 ? C1107b.b.f1491j : null);
+            return C1107b.m216h(context, C5419R.string.textarea_placeholder, new Object[]{ChannelUtils.m7681e(channel, context, false, 2)}, null, 4);
         }
         String string2 = context.getString(C5419R.string.no_send_messages_permission_placeholder);
         C12238m.checkNotNullExpressionValue(string2, "context.getString(R.stri…s_permission_placeholder)");
@@ -1107,10 +1105,10 @@ public final class WidgetChatInput extends AppFragment {
             return context.getString(C5419R.string.guild_verification_text_not_claimed);
         }
         if (iOrdinal == 2) {
-            return C1107b.m210b(context, C5419R.string.guild_verification_text_account_age, new Object[]{"5"}, (4 & 4) != 0 ? C1107b.b.f1491j : null);
+            return C1107b.m216h(context, C5419R.string.guild_verification_text_account_age, new Object[]{"5"}, null, 4);
         }
         if (iOrdinal == 3) {
-            return C1107b.m210b(context, C5419R.string.guild_verification_text_member_age, new Object[]{"10"}, (4 & 4) != 0 ? C1107b.b.f1491j : null);
+            return C1107b.m216h(context, C5419R.string.guild_verification_text_member_age, new Object[]{"10"}, null, 4);
         }
         if (iOrdinal != 4) {
             return null;

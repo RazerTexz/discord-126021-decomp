@@ -1,7 +1,5 @@
 package androidx.constraintlayout.solver;
 
-import androidx.constraintlayout.solver.Pools;
-
 /* JADX INFO: loaded from: classes.dex */
 public class Cache {
     public Pools.Pool<ArrayRow> optimizedArrayRowPool = new Pools.SimplePool(256);

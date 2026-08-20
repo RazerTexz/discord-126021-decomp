@@ -50,7 +50,6 @@ import com.discord.utilities.p501rx.ObservableCombineLatestOverloadsKt;
 import com.discord.utilities.p501rx.ObservableExtensionsKt;
 import com.discord.utilities.permissions.PermissionUtils;
 import com.discord.utilities.threads.ThreadUtils;
-import com.discord.widgets.channels.list.WidgetChannelListModel;
 import com.discord.widgets.channels.list.items.ChannelListBottomNavSpaceItem;
 import com.discord.widgets.channels.list.items.ChannelListItem;
 import com.discord.widgets.channels.list.items.ChannelListItemActiveEvent;

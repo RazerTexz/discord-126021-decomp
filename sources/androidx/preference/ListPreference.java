@@ -10,7 +10,6 @@ import android.util.Log;
 import androidx.annotation.ArrayRes;
 import androidx.annotation.NonNull;
 import androidx.core.content.res.TypedArrayUtils;
-import androidx.preference.Preference;
 
 /* JADX INFO: loaded from: classes.dex */
 public class ListPreference extends DialogPreference {

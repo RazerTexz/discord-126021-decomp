@@ -19,7 +19,6 @@ import com.discord.utilities.p501rx.ObservableExtensionsKt;
 import com.discord.utilities.user.UserUtils;
 import com.discord.utilities.viewbinding.FragmentViewBindingDelegate;
 import com.discord.utilities.viewbinding.FragmentViewBindingDelegateKt;
-import com.discord.widgets.servers.role_members.ServerSettingsRoleMembersViewModel;
 import kotlin.Lazy;
 import kotlin.Unit;
 import kotlin.jvm.functions.Function0;
@@ -115,7 +114,7 @@ public final class WidgetServerSettingsRoleMembers extends AppFragment {
             }
             objArr[0] = nick;
             objArr[1] = ((ServerSettingsRoleMembersViewModel.ViewState.Loaded) this.$viewState).getRole().getName();
-            companion.m128a(childFragmentManager, new SimpleConfirmationDialogArgs(string, C1107b.m210b(contextRequireContext, C5419R.string.role_remove_member_confirm_body, objArr, (4 & 4) != 0 ? C1107b.b.f1491j : null).toString(), WidgetServerSettingsRoleMembers.this.getString(C5419R.string.remove), WidgetServerSettingsRoleMembers.this.getString(C5419R.string.cancel)), new View.OnClickListener() { // from class: com.discord.widgets.servers.role_members.WidgetServerSettingsRoleMembers.configureUI.1.1
+            companion.m128a(childFragmentManager, new SimpleConfirmationDialogArgs(string, C1107b.m216h(contextRequireContext, C5419R.string.role_remove_member_confirm_body, objArr, null, 4).toString(), WidgetServerSettingsRoleMembers.this.getString(C5419R.string.remove), WidgetServerSettingsRoleMembers.this.getString(C5419R.string.cancel)), new View.OnClickListener() { // from class: com.discord.widgets.servers.role_members.WidgetServerSettingsRoleMembers.configureUI.1.1
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
                     WidgetServerSettingsRoleMembers.this.getViewModel().removeRoleFromMember(guildMember);

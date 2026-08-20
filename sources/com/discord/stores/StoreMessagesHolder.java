@@ -6,7 +6,6 @@ import com.discord.api.message.reaction.MessageReaction;
 import com.discord.api.message.reaction.MessageReactionEmoji;
 import com.discord.api.message.reaction.MessageReactionUpdate;
 import com.discord.models.message.Message;
-import com.discord.stores.StoreMessagesLoader;
 import com.discord.utilities.message.LocalMessageCreatorsKt;
 import com.discord.utilities.message.MessageUtils;
 import com.discord.utilities.persister.Persister;

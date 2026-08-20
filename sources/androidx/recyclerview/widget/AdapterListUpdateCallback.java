@@ -1,7 +1,6 @@
 package androidx.recyclerview.widget;
 
 import androidx.annotation.NonNull;
-import androidx.recyclerview.widget.RecyclerView;
 
 /* JADX INFO: loaded from: classes.dex */
 public final class AdapterListUpdateCallback implements ListUpdateCallback {

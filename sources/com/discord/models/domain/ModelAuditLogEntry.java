@@ -1,6 +1,5 @@
 package com.discord.models.domain;
 
-import com.discord.models.domain.Model;
 import com.discord.models.domain.ModelAuditLogEntry;
 import com.google.gson.stream.JsonToken;
 import java.io.IOException;

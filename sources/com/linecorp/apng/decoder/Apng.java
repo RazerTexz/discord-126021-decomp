@@ -7,7 +7,6 @@ import android.graphics.Rect;
 import android.os.Trace;
 import androidx.annotation.IntRange;
 import com.discord.models.domain.ModelAuditLogEntry;
-import com.linecorp.apng.decoder.ApngException;
 import java.io.InputStream;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import p507d0.p580t.C12141k;

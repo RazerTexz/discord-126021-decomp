@@ -5,8 +5,6 @@ import android.os.SystemClock;
 import androidx.annotation.Nullable;
 import java.util.ArrayList;
 import java.util.List;
-import org.webrtc.CameraEnumerationAndroid;
-import org.webrtc.CameraVideoCapturer;
 import p007b.p100d.p104b.p105a.C1643a;
 
 /* JADX INFO: loaded from: classes3.dex */

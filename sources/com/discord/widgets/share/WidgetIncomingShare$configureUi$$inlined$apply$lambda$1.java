@@ -1,6 +1,5 @@
 package com.discord.widgets.share;
 
-import com.discord.widgets.share.WidgetIncomingShare;
 import com.discord.widgets.user.search.WidgetGlobalSearchModel;
 import java.util.List;
 import kotlin.Unit;

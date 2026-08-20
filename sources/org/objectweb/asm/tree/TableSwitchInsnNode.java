@@ -6,7 +6,7 @@ import org.objectweb.asm.Label;
 import org.objectweb.asm.MethodVisitor;
 import org.objectweb.asm.Opcodes;
 
-/* JADX INFO: loaded from: app.apk:org/objectweb/asm/tree/TableSwitchInsnNode.SCL.lombok */
+/* JADX INFO: loaded from: discord-126021.apk:org/objectweb/asm/tree/TableSwitchInsnNode.SCL.lombok */
 public class TableSwitchInsnNode extends AbstractInsnNode {
     public int min;
     public int max;

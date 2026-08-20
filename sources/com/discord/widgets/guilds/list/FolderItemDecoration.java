@@ -5,7 +5,6 @@ import android.graphics.drawable.Drawable;
 import android.view.View;
 import androidx.core.graphics.drawable.DrawableCompat;
 import androidx.recyclerview.widget.RecyclerView;
-import com.discord.widgets.guilds.list.GuildListViewHolder;
 import p507d0.p592z.p594d.C12238m;
 
 /* JADX INFO: compiled from: FolderItemDecoration.kt */

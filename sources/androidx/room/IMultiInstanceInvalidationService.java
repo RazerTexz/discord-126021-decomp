@@ -5,7 +5,6 @@ import android.os.IBinder;
 import android.os.IInterface;
 import android.os.Parcel;
 import android.os.RemoteException;
-import androidx.room.IMultiInstanceInvalidationCallback;
 
 /* JADX INFO: loaded from: classes.dex */
 public interface IMultiInstanceInvalidationService extends IInterface {

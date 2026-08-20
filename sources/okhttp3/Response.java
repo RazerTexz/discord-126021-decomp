@@ -3,7 +3,6 @@ package okhttp3;
 import com.discord.models.domain.ModelAuditLogEntry;
 import java.io.Closeable;
 import java.util.Objects;
-import okhttp3.Headers;
 import p007b.p100d.p104b.p105a.C1643a;
 import p507d0.p592z.p594d.C12238m;
 import p600f0.C12378v;

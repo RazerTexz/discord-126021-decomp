@@ -1,6 +1,5 @@
 package com.discord.utilities.textprocessing;
 
-import com.discord.utilities.textprocessing.Rules;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 
 /* JADX INFO: compiled from: MessageParseState.kt */

@@ -10,7 +10,7 @@ import javax.tools.Diagnostic;
 import javax.tools.DiagnosticListener;
 import javax.tools.JavaFileObject;
 
-/* JADX INFO: loaded from: app.apk:lombok/javac/CapturingDiagnosticListener.SCL.lombok */
+/* JADX INFO: loaded from: discord-126021.apk:lombok/javac/CapturingDiagnosticListener.SCL.lombok */
 public class CapturingDiagnosticListener implements DiagnosticListener<JavaFileObject> {
     private final File file;
     private final Collection<CompilerMessage> messages;
@@ -42,7 +42,7 @@ public class CapturingDiagnosticListener implements DiagnosticListener<JavaFileO
         }
     }
 
-    /* JADX INFO: loaded from: app.apk:lombok/javac/CapturingDiagnosticListener$CompilerMessage.SCL.lombok */
+    /* JADX INFO: loaded from: discord-126021.apk:lombok/javac/CapturingDiagnosticListener$CompilerMessage.SCL.lombok */
     public static final class CompilerMessage {
         private final long line;
         private final long position;

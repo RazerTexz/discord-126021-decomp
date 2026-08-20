@@ -3,7 +3,6 @@ package com.discord.widgets.channels.list;
 import com.discord.api.channel.Channel;
 import com.discord.api.stageinstance.StageInstance;
 import com.discord.utilities.channel.GuildChannelsInfo;
-import com.discord.widgets.channels.list.WidgetChannelListModel;
 import com.discord.widgets.channels.list.items.ChannelListItemStageVoiceChannel;
 import com.discord.widgets.stage.model.StageChannel;
 import java.util.ArrayList;

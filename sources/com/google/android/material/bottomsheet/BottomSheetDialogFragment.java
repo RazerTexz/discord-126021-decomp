@@ -7,7 +7,6 @@ import android.widget.FrameLayout;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatDialogFragment;
-import com.google.android.material.bottomsheet.BottomSheetBehavior;
 
 /* JADX INFO: loaded from: classes3.dex */
 public class BottomSheetDialogFragment extends AppCompatDialogFragment {

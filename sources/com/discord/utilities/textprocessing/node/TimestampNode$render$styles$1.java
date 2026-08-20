@@ -2,7 +2,6 @@ package com.discord.utilities.textprocessing.node;
 
 import android.view.View;
 import androidx.exifinterface.media.ExifInterface;
-import com.discord.utilities.textprocessing.node.TimestampNode;
 import kotlin.Unit;
 import kotlin.jvm.functions.Function1;
 import p507d0.p592z.p594d.AbstractC12240o;

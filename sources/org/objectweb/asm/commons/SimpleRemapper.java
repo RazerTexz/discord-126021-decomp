@@ -3,7 +3,7 @@ package org.objectweb.asm.commons;
 import java.util.Collections;
 import java.util.Map;
 
-/* JADX INFO: loaded from: app.apk:org/objectweb/asm/commons/SimpleRemapper.SCL.lombok */
+/* JADX INFO: loaded from: discord-126021.apk:org/objectweb/asm/commons/SimpleRemapper.SCL.lombok */
 public class SimpleRemapper extends Remapper {
     private final Map<String, String> mapping;
 

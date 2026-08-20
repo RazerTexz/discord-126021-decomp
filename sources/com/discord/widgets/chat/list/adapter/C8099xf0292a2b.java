@@ -11,7 +11,6 @@ import com.discord.models.guild.Guild;
 import com.discord.models.message.Message;
 import com.discord.utilities.color.ColorCompat;
 import com.discord.utilities.spans.ClickableSpan;
-import com.discord.widgets.chat.list.adapter.WidgetChatListAdapter;
 import kotlin.Unit;
 import kotlin.jvm.functions.Function1;
 import p507d0.p592z.p594d.AbstractC12240o;

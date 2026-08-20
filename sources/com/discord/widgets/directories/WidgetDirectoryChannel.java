@@ -31,7 +31,6 @@ import com.discord.utilities.view.recycler.ViewPager2ExtensionsKt;
 import com.discord.utilities.viewbinding.FragmentViewBindingDelegate;
 import com.discord.utilities.viewbinding.FragmentViewBindingDelegateKt;
 import com.discord.views.directories.ServerDiscoveryHeader;
-import com.discord.widgets.directories.WidgetDirectoriesViewModel;
 import com.discord.widgets.guilds.invite.WidgetGuildInviteShare;
 import com.discord.widgets.hubs.HubAddNameArgs;
 import com.discord.widgets.hubs.WidgetHubAddName;

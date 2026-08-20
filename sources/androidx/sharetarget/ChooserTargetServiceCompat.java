@@ -15,7 +15,6 @@ import androidx.annotation.VisibleForTesting;
 import androidx.core.content.p004pm.ShortcutInfoCompat;
 import androidx.core.content.p004pm.ShortcutManagerCompat;
 import androidx.core.graphics.drawable.IconCompat;
-import androidx.sharetarget.ShareTargetCompat;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;

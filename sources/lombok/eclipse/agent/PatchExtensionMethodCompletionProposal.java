@@ -7,7 +7,6 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import lombok.eclipse.EclipseNode;
-import lombok.eclipse.agent.PatchExtensionMethod;
 import lombok.experimental.ExtensionMethod;
 import lombok.permit.Permit;
 import org.eclipse.jdt.core.CompletionProposal;
@@ -33,7 +32,7 @@ import org.eclipse.jdt.internal.ui.text.java.AbstractJavaCompletionProposal;
 import org.eclipse.jdt.ui.text.java.CompletionProposalCollector;
 import org.eclipse.jdt.ui.text.java.IJavaCompletionProposal;
 
-/* JADX INFO: loaded from: app.apk:lombok/eclipse/agent/PatchExtensionMethodCompletionProposal.SCL.lombok */
+/* JADX INFO: loaded from: discord-126021.apk:lombok/eclipse/agent/PatchExtensionMethodCompletionProposal.SCL.lombok */
 public class PatchExtensionMethodCompletionProposal {
     public static IJavaCompletionProposal[] getJavaCompletionProposals(IJavaCompletionProposal[] javaCompletionProposals, CompletionProposalCollector completionProposalCollector) {
         List<IJavaCompletionProposal> proposals = new ArrayList<>(Arrays.asList(javaCompletionProposals));
@@ -156,7 +155,7 @@ public class PatchExtensionMethodCompletionProposal {
         return Reflection.isComplete();
     }
 
-    /* JADX INFO: loaded from: app.apk:lombok/eclipse/agent/PatchExtensionMethodCompletionProposal$Reflection.SCL.lombok */
+    /* JADX INFO: loaded from: discord-126021.apk:lombok/eclipse/agent/PatchExtensionMethodCompletionProposal$Reflection.SCL.lombok */
     static class Reflection {
         public static final Field replacementOffsetField = accessField(AbstractJavaCompletionProposal.class, "fReplacementOffset");
         public static final Field contextField = accessField(CompletionProposalCollector.class, "fContext");

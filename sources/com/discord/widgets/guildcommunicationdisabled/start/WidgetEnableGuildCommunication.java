@@ -165,7 +165,7 @@ public final class WidgetEnableGuildCommunication extends AppDialog {
             WidgetEnableGuildCommunication.this.dismiss();
             Context context = WidgetEnableGuildCommunication.this.getContext();
             Context context2 = WidgetEnableGuildCommunication.this.getContext();
-            C0876m.m170h(context, context2 != null ? C1107b.m210b(context2, C5419R.string.guild_enable_communication_success, new Object[0], (4 & 4) != 0 ? C1107b.b.f1491j : null) : null, 0, null, 12);
+            C0876m.m170h(context, context2 != null ? C1107b.m216h(context2, C5419R.string.guild_enable_communication_success, new Object[0], null, 4) : null, 0, null, 12);
         }
     }
 
@@ -229,10 +229,10 @@ public final class WidgetEnableGuildCommunication extends AppDialog {
         C12238m.checkNotNullExpressionValue(contextRequireContext, "requireContext()");
         C1107b.m221m(textView, C5419R.string.enable_guild_communication_body, new Object[]{userNameWithDiscriminator$default, DurationUtilsKt.humanizeCountdownDuration(contextRequireContext, jMax)}, (4 & 4) != 0 ? C1107b.g.f1495j : null);
         Context context = getContext();
-        CharSequence charSequenceM210b = context != null ? C1107b.m210b(context, C5419R.string.enable_guild_communication_body_help_text, new Object[]{C0862f.f507a.m149a(4413305239191L, null)}, (4 & 4) != 0 ? C1107b.b.f1491j : null) : null;
+        CharSequence charSequenceM216h = context != null ? C1107b.m216h(context, C5419R.string.enable_guild_communication_body_help_text, new Object[]{C0862f.f507a.m149a(4413305239191L, null)}, null, 4) : null;
         TextView textView2 = getBinding().f16588e;
         C12238m.checkNotNullExpressionValue(textView2, "binding.enableGuildCommunicationBodyHelpText");
-        textView2.setText(charSequenceM210b);
+        textView2.setText(charSequenceM216h);
         getBinding().f16588e.setOnClickListener(new View.OnClickListener() { // from class: com.discord.widgets.guildcommunicationdisabled.start.WidgetEnableGuildCommunication.onViewBound.1
             @Override // android.view.View.OnClickListener
             public final void onClick(View view2) {

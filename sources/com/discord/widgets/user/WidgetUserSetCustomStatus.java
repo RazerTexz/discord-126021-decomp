@@ -28,7 +28,6 @@ import com.discord.views.RadioManager;
 import com.discord.widgets.chat.input.emoji.EmojiPickerContextType;
 import com.discord.widgets.chat.input.emoji.EmojiPickerListener;
 import com.discord.widgets.chat.input.emoji.EmojiPickerNavigator;
-import com.discord.widgets.user.WidgetUserSetCustomStatusViewModel;
 import com.facebook.drawee.view.SimpleDraweeView;
 import com.google.android.material.radiobutton.MaterialRadioButton;
 import com.google.android.material.textfield.TextInputLayout;

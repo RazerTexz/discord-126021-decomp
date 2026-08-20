@@ -3,7 +3,6 @@ package p007b.p225i.p226a.p242c.p260g3.p261z;
 import androidx.annotation.Nullable;
 import com.google.android.exoplayer2.util.GlUtil;
 import java.nio.FloatBuffer;
-import p007b.p225i.p226a.p242c.p260g3.p261z.C2796h;
 
 /* JADX INFO: renamed from: b.i.a.c.g3.z.i */
 /* JADX INFO: compiled from: ProjectionRenderer.java */

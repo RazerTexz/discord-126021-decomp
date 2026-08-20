@@ -11,7 +11,6 @@ import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 import androidx.preference.Preference;
 import androidx.preference.PreferenceViewHolder;
-import com.jaredrummler.android.colorpicker.ColorPickerDialog;
 import p007b.p100d.p104b.p105a.C1643a;
 import p007b.p440k.p441a.p442a.InterfaceC5079f;
 

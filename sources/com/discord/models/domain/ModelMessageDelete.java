@@ -1,6 +1,5 @@
 package com.discord.models.domain;
 
-import com.discord.models.domain.Model;
 import java.io.IOException;
 import java.util.Collections;
 import java.util.List;

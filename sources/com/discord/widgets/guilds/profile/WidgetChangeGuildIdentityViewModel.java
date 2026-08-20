@@ -16,7 +16,6 @@ import com.discord.utilities.icon.IconUtils;
 import com.discord.utilities.p501rx.ObservableExtensionsKt;
 import com.discord.utilities.rest.RestAPI;
 import com.discord.utilities.user.UserUtils;
-import com.discord.widgets.guilds.profile.WidgetChangeGuildIdentityViewModel;
 import java.util.Collection;
 import java.util.List;
 import java.util.Map;

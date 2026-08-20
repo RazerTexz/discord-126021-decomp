@@ -3,7 +3,6 @@ package p007b.p225i.p226a.p288f.p291b;
 import android.annotation.SuppressLint;
 import android.content.Context;
 import android.os.Process;
-import java.lang.Thread;
 import java.util.Objects;
 import java.util.concurrent.CopyOnWriteArrayList;
 import java.util.concurrent.LinkedBlockingQueue;

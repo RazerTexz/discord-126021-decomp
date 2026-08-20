@@ -4,7 +4,6 @@ import android.net.Uri;
 import android.os.Bundle;
 import java.util.ArrayList;
 import p007b.p225i.p226a.p242c.InterfaceC2963w0;
-import p007b.p225i.p226a.p242c.p243a3.p244p0.C2562c;
 
 /* JADX INFO: renamed from: b.i.a.c.a3.p0.a */
 /* JADX INFO: compiled from: lambda */

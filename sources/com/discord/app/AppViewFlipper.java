@@ -9,7 +9,6 @@ import androidx.coordinatorlayout.widget.CoordinatorLayout;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.ViewGroupKt;
 import com.discord.C5419R;
-import com.discord.app.AppScrollingViewBehavior;
 import com.discord.utilities.view.extensions.ViewExtensions;
 import java.util.Iterator;
 import p507d0.p592z.p594d.C12238m;

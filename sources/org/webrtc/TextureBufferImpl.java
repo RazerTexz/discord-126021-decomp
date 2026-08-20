@@ -6,7 +6,6 @@ import androidx.annotation.Nullable;
 import java.util.Objects;
 import java.util.concurrent.Callable;
 import org.webrtc.TextureBufferImpl;
-import org.webrtc.VideoFrame;
 
 /* JADX INFO: loaded from: classes3.dex */
 public class TextureBufferImpl implements VideoFrame.TextureBuffer {

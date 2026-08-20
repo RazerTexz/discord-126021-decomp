@@ -13,8 +13,6 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.annotation.RestrictTo;
 import androidx.core.content.res.TypedArrayUtils;
-import androidx.transition.AnimatorUtils;
-import androidx.transition.Transition;
 import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
 

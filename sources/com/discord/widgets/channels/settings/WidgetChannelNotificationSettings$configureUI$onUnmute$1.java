@@ -2,7 +2,6 @@ package com.discord.widgets.channels.settings;
 
 import com.discord.stores.StoreStream;
 import com.discord.stores.StoreUserGuildSettings;
-import com.discord.widgets.channels.settings.WidgetChannelNotificationSettings;
 import kotlin.Unit;
 import kotlin.jvm.functions.Function0;
 import p507d0.p592z.p594d.AbstractC12240o;

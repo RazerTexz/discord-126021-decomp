@@ -3,7 +3,6 @@ package com.discord.widgets.channels;
 import com.discord.api.channel.Channel;
 import com.discord.api.channel.ChannelUtils;
 import com.discord.stores.StoreChannels;
-import com.discord.widgets.channels.WidgetChannelPickerBottomSheetViewModel;
 import java.util.LinkedHashMap;
 import java.util.Map;
 import kotlin.jvm.functions.Function0;

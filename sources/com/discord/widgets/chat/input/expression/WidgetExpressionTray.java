@@ -34,8 +34,6 @@ import com.discord.widgets.chat.input.emoji.EmojiPickerListener;
 import com.discord.widgets.chat.input.emoji.EmojiPickerMode;
 import com.discord.widgets.chat.input.emoji.EmojiPickerNavigator;
 import com.discord.widgets.chat.input.emoji.WidgetEmojiPicker;
-import com.discord.widgets.chat.input.expression.ExpressionDetailPage;
-import com.discord.widgets.chat.input.expression.ExpressionTrayViewModel;
 import com.discord.widgets.chat.input.gifpicker.GifCategoryItem;
 import com.discord.widgets.chat.input.gifpicker.WidgetGifCategory;
 import com.discord.widgets.chat.input.gifpicker.WidgetGifPicker;

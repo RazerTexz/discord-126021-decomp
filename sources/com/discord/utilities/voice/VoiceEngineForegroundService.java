@@ -24,7 +24,6 @@ import com.discord.utilities.fcm.NotificationClient;
 import com.discord.utilities.logging.Logger;
 import com.discord.utilities.p501rx.ObservableExtensionsKt;
 import com.discord.utilities.system.SystemServiceExtensionsKt;
-import com.discord.utilities.voice.VoiceEngineForegroundService;
 import com.discord.widgets.stage.StageChannelAPI;
 import com.discord.widgets.stage.StageChannelNotifications;
 import com.discord.widgets.voice.fullscreen.WidgetCallFullscreen;

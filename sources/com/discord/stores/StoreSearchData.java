@@ -5,8 +5,6 @@ import com.discord.api.channel.ChannelUtils;
 import com.discord.models.member.GuildMember;
 import com.discord.models.user.MeUser;
 import com.discord.models.user.User;
-import com.discord.stores.StoreSearch;
-import com.discord.stores.StoreStream;
 import com.discord.stores.updates.ObservationDeck;
 import com.discord.utilities.analytics.Traits;
 import com.discord.utilities.error.Error;

@@ -3,7 +3,6 @@ package com.discord.widgets.chat;
 import com.discord.C5419R;
 import com.discord.utilities.messagesend.MessageResult;
 import com.discord.utilities.rest.SendUtils;
-import com.discord.widgets.chat.MessageManager;
 import kotlin.Unit;
 import kotlin.jvm.functions.Function1;
 import p007b.p008a.p018d.C0876m;

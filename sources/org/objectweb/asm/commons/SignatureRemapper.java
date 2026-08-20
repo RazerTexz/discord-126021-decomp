@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import org.objectweb.asm.Opcodes;
 import org.objectweb.asm.signature.SignatureVisitor;
 
-/* JADX INFO: loaded from: app.apk:org/objectweb/asm/commons/SignatureRemapper.SCL.lombok */
+/* JADX INFO: loaded from: discord-126021.apk:org/objectweb/asm/commons/SignatureRemapper.SCL.lombok */
 public class SignatureRemapper extends SignatureVisitor {
     private final SignatureVisitor signatureVisitor;
     private final Remapper remapper;

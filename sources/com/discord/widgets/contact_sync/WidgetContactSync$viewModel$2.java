@@ -2,7 +2,6 @@ package com.discord.widgets.contact_sync;
 
 import com.discord.utilities.error.Error;
 import com.discord.utilities.features.GrowthTeamFeatures;
-import com.discord.widgets.contact_sync.WidgetContactSync;
 import kotlin.Unit;
 import kotlin.jvm.functions.Function0;
 import kotlin.jvm.functions.Function1;

@@ -21,7 +21,7 @@ import org.eclipse.jdt.internal.compiler.ast.SingleTypeReference;
 import org.eclipse.jdt.internal.compiler.ast.TypeDeclaration;
 import org.eclipse.jdt.internal.compiler.ast.TypeReference;
 
-/* JADX INFO: loaded from: app.apk:lombok/eclipse/handlers/HandleFieldDefaults.SCL.lombok */
+/* JADX INFO: loaded from: discord-126021.apk:lombok/eclipse/handlers/HandleFieldDefaults.SCL.lombok */
 @HandlerPriority(-2048)
 public class HandleFieldDefaults extends EclipseASTAdapter {
     private static final char[] FIELD_DEFAULTS = "FieldDefaults".toCharArray();

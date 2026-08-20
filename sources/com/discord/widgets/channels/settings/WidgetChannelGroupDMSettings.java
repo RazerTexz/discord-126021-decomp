@@ -25,7 +25,6 @@ import com.discord.utilities.stateful.StatefulViews;
 import com.discord.utilities.view.extensions.ViewExtensions;
 import com.discord.utilities.viewbinding.FragmentViewBindingDelegate;
 import com.discord.utilities.viewbinding.FragmentViewBindingDelegateKt;
-import com.discord.widgets.channels.settings.ChannelGroupDMSettingsViewModel;
 import com.discord.widgets.notice.WidgetNoticeDialog;
 import com.discord.widgets.servers.NotificationMuteSettingsView;
 import com.discord.widgets.settings.WidgetMuteSettingsSheet;

@@ -4,7 +4,7 @@ import java.util.Map;
 import org.objectweb.asm.Label;
 import org.objectweb.asm.MethodVisitor;
 
-/* JADX INFO: loaded from: app.apk:org/objectweb/asm/tree/LabelNode.SCL.lombok */
+/* JADX INFO: loaded from: discord-126021.apk:org/objectweb/asm/tree/LabelNode.SCL.lombok */
 public class LabelNode extends AbstractInsnNode {
     private Label value;
 

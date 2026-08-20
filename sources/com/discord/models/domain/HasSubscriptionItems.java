@@ -1,7 +1,6 @@
 package com.discord.models.domain;
 
 import com.discord.api.premium.SubscriptionInterval;
-import com.discord.models.domain.ModelSubscription;
 import com.discord.models.domain.premium.SubscriptionPlanType;
 import java.util.ArrayList;
 import java.util.List;

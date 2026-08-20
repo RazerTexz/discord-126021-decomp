@@ -10,7 +10,7 @@ import lombok.ConfigurationKeys;
 import lombok.core.CleanupRegistry;
 import lombok.core.LombokConfiguration;
 
-/* JADX INFO: loaded from: app.apk:lombok/javac/JavacTransformer.SCL.lombok */
+/* JADX INFO: loaded from: discord-126021.apk:lombok/javac/JavacTransformer.SCL.lombok */
 public class JavacTransformer {
     private final HandlerLibrary handlers;
     private final Messager messager;
@@ -41,7 +41,7 @@ public class JavacTransformer {
         }
     }
 
-    /* JADX INFO: loaded from: app.apk:lombok/javac/JavacTransformer$AnnotationVisitor.SCL.lombok */
+    /* JADX INFO: loaded from: discord-126021.apk:lombok/javac/JavacTransformer$AnnotationVisitor.SCL.lombok */
     private class AnnotationVisitor extends JavacASTAdapter {
         private final long priority;
 

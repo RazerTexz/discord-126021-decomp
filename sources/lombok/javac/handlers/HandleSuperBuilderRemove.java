@@ -9,7 +9,7 @@ import lombok.experimental.SuperBuilder;
 import lombok.javac.JavacAnnotationHandler;
 import lombok.javac.JavacNode;
 
-/* JADX INFO: loaded from: app.apk:lombok/javac/handlers/HandleSuperBuilderRemove.SCL.lombok */
+/* JADX INFO: loaded from: discord-126021.apk:lombok/javac/handlers/HandleSuperBuilderRemove.SCL.lombok */
 @HandlerPriority(65536)
 @AlreadyHandledAnnotations
 public class HandleSuperBuilderRemove extends JavacAnnotationHandler<SuperBuilder> {

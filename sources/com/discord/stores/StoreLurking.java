@@ -8,7 +8,6 @@ import com.discord.app.AppLog;
 import com.discord.models.domain.ModelPayload;
 import com.discord.restapi.RestAPIInterface;
 import com.discord.restapi.RestAPIParams;
-import com.discord.stores.StoreNavigation;
 import com.discord.utilities.error.Error;
 import com.discord.utilities.logging.Logger;
 import com.discord.utilities.p501rx.ObservableExtensionsKt;

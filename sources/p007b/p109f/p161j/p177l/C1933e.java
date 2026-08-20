@@ -2,7 +2,6 @@ package p007b.p109f.p161j.p177l;
 
 import android.graphics.Bitmap;
 import p007b.p109f.p115d.p120e.C1691a;
-import p007b.p109f.p161j.p177l.C1935g;
 import p007b.p109f.p186k.C2038a;
 
 /* JADX INFO: renamed from: b.f.j.l.e */

@@ -5,7 +5,7 @@ import org.eclipse.jdt.internal.compiler.impl.ReferenceContext;
 import org.eclipse.jdt.internal.compiler.problem.DefaultProblem;
 import org.eclipse.jdt.internal.compiler.util.Util;
 
-/* JADX INFO: loaded from: app.apk:lombok/eclipse/EclipseAstProblemView.SCL.lombok */
+/* JADX INFO: loaded from: discord-126021.apk:lombok/eclipse/EclipseAstProblemView.SCL.lombok */
 public class EclipseAstProblemView {
     public static void addProblemToCompilationResult(char[] fileNameArray, CompilationResult result, boolean isWarning, String message, int sourceStart, int sourceEnd) {
         int lineNumber;
@@ -32,7 +32,7 @@ public class EclipseAstProblemView {
         result.record(new LombokProblem(fileNameArray, message, 0, new String[0], isWarning ? 0 : 1, sourceStart, sourceEnd, lineNumber2, columnNumber), (ReferenceContext) null);
     }
 
-    /* JADX INFO: loaded from: app.apk:lombok/eclipse/EclipseAstProblemView$LombokProblem.SCL.lombok */
+    /* JADX INFO: loaded from: discord-126021.apk:lombok/eclipse/EclipseAstProblemView$LombokProblem.SCL.lombok */
     private static class LombokProblem extends DefaultProblem {
         private static final String MARKER_ID = "org.eclipse.jdt.apt.pluggable.core.compileProblem";
 

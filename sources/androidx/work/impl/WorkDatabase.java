@@ -11,7 +11,6 @@ import androidx.sqlite.p006db.SupportSQLiteDatabase;
 import androidx.sqlite.p006db.SupportSQLiteOpenHelper;
 import androidx.sqlite.p006db.framework.FrameworkSQLiteOpenHelperFactory;
 import androidx.work.Data;
-import androidx.work.impl.WorkDatabaseMigrations;
 import androidx.work.impl.model.Dependency;
 import androidx.work.impl.model.DependencyDao;
 import androidx.work.impl.model.Preference;

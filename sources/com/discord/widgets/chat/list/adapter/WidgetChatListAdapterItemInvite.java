@@ -42,7 +42,6 @@ import com.discord.utilities.view.extensions.ViewExtensions;
 import com.discord.utilities.view.rounded.RoundedRelativeLayout;
 import com.discord.utilities.view.text.LinkifiedTextView;
 import com.discord.views.guilds.ServerMemberCount;
-import com.discord.widgets.chat.list.adapter.WidgetChatListAdapterItemInvite;
 import com.discord.widgets.chat.list.entries.ChatListEntry;
 import com.discord.widgets.chat.list.entries.InviteEntry;
 import com.discord.widgets.guilds.invite.WidgetGuildInviteShare;
@@ -620,7 +619,7 @@ public final class WidgetChatListAdapterItemInvite extends WidgetChatListAdapter
     /* JADX WARN: Code duplicated, block: B:29:0x00c6  */
     /* JADX WARN: Code duplicated, block: B:30:0x00d3  */
     private final void configureInvalidUI(final Model.Invalid model) {
-        CharSequence charSequenceM210b;
+        CharSequence charSequenceM216h;
         User authorUser;
         Channel channel;
         User authorUser2;
@@ -645,7 +644,7 @@ public final class WidgetChatListAdapterItemInvite extends WidgetChatListAdapter
         if (!zAreEqual) {
             if ((model != null ? model.getAuthorUser() : null) != null) {
                 C12238m.checkNotNullExpressionValue(context, "context");
-                charSequenceM210b = C1107b.m210b(context, C5419R.string.instant_invite_ask_user_for_new_invite, new Object[]{model.getAuthorUser().getUsername()}, (4 & 4) != 0 ? C1107b.b.f1491j : null);
+                charSequenceM216h = C1107b.m216h(context, C5419R.string.instant_invite_ask_user_for_new_invite, new Object[]{model.getAuthorUser().getUsername()}, null, 4);
             } else if (zAreEqual) {
                 if (model != null) {
                     authorUser = model.getAuthorUser();
@@ -654,18 +653,18 @@ public final class WidgetChatListAdapterItemInvite extends WidgetChatListAdapter
                 }
                 if (authorUser == null) {
                     C12238m.checkNotNullExpressionValue(context, "context");
-                    charSequenceM210b = C1107b.m210b(context, C5419R.string.instant_invite_ask_for_new_invite, new Object[0], (4 & 4) != 0 ? C1107b.b.f1491j : null);
+                    charSequenceM216h = C1107b.m216h(context, C5419R.string.instant_invite_ask_for_new_invite, new Object[0], null, 4);
                 } else if (zAreEqual) {
                     C12238m.checkNotNullExpressionValue(context, "context");
-                    charSequenceM210b = C1107b.m210b(context, C5419R.string.invite_button_invalid_owner, new Object[0], (4 & 4) != 0 ? C1107b.b.f1491j : null);
+                    charSequenceM216h = C1107b.m216h(context, C5419R.string.invite_button_invalid_owner, new Object[0], null, 4);
                 } else {
-                    charSequenceM210b = null;
+                    charSequenceM216h = null;
                 }
             } else if (zAreEqual) {
                 C12238m.checkNotNullExpressionValue(context, "context");
-                charSequenceM210b = C1107b.m210b(context, C5419R.string.invite_button_invalid_owner, new Object[0], (4 & 4) != 0 ? C1107b.b.f1491j : null);
+                charSequenceM216h = C1107b.m216h(context, C5419R.string.invite_button_invalid_owner, new Object[0], null, 4);
             } else {
-                charSequenceM210b = null;
+                charSequenceM216h = null;
             }
         } else if (zAreEqual) {
             if (model != null) {
@@ -675,18 +674,18 @@ public final class WidgetChatListAdapterItemInvite extends WidgetChatListAdapter
             }
             if (authorUser == null) {
                 C12238m.checkNotNullExpressionValue(context, "context");
-                charSequenceM210b = C1107b.m210b(context, C5419R.string.instant_invite_ask_for_new_invite, new Object[0], (4 & 4) != 0 ? C1107b.b.f1491j : null);
+                charSequenceM216h = C1107b.m216h(context, C5419R.string.instant_invite_ask_for_new_invite, new Object[0], null, 4);
             } else if (zAreEqual) {
                 C12238m.checkNotNullExpressionValue(context, "context");
-                charSequenceM210b = C1107b.m210b(context, C5419R.string.invite_button_invalid_owner, new Object[0], (4 & 4) != 0 ? C1107b.b.f1491j : null);
+                charSequenceM216h = C1107b.m216h(context, C5419R.string.invite_button_invalid_owner, new Object[0], null, 4);
             } else {
-                charSequenceM210b = null;
+                charSequenceM216h = null;
             }
         } else if (zAreEqual) {
             C12238m.checkNotNullExpressionValue(context, "context");
-            charSequenceM210b = C1107b.m210b(context, C5419R.string.invite_button_invalid_owner, new Object[0], (4 & 4) != 0 ? C1107b.b.f1491j : null);
+            charSequenceM216h = C1107b.m216h(context, C5419R.string.invite_button_invalid_owner, new Object[0], null, 4);
         } else {
-            charSequenceM210b = null;
+            charSequenceM216h = null;
         }
         TextView textView4 = this.binding.f16239b;
         C12238m.checkNotNullExpressionValue(textView4, "binding.itemInviteChannelName");
@@ -694,7 +693,7 @@ public final class WidgetChatListAdapterItemInvite extends WidgetChatListAdapter
         ServerMemberCount serverMemberCount = this.binding.f16248k;
         C12238m.checkNotNullExpressionValue(serverMemberCount, "binding.itemInviteMemberContainer");
         serverMemberCount.setVisibility(0);
-        this.binding.f16248k.setInvalidText(charSequenceM210b);
+        this.binding.f16248k.setInvalidText(charSequenceM216h);
         MaterialButton materialButton = this.binding.f16249l;
         C12238m.checkNotNullExpressionValue(materialButton, "binding.itemInviteMentionButton");
         C1107b.m221m(materialButton, zAreEqual ? C5419R.string.create_instant_invite : C5419R.string.mention, new Object[0], (4 & 4) != 0 ? C1107b.g.f1495j : null);
@@ -781,7 +780,7 @@ public final class WidgetChatListAdapterItemInvite extends WidgetChatListAdapter
     /* JADX WARN: Code duplicated, block: B:91:0x01a5  */
     private final void configureResolvedUI(Model.Resolved model) {
         Guild guild;
-        CharSequence charSequenceM210b;
+        CharSequence charSequenceM216h;
         String name;
         boolean z2;
         com.discord.api.guild.Guild guild2;
@@ -828,32 +827,32 @@ public final class WidgetChatListAdapterItemInvite extends WidgetChatListAdapter
         C12238m.checkNotNullExpressionValue(textView, "binding.itemInviteHeader");
         if (zM7702z && z3) {
             C12238m.checkNotNullExpressionValue(context, "context");
-            charSequenceM210b = C1107b.m210b(context, C5419R.string.invite_button_title_inviter_group_dm, new Object[0], (4 & 4) != 0 ? C1107b.b.f1491j : null);
+            charSequenceM216h = C1107b.m216h(context, C5419R.string.invite_button_title_inviter_group_dm, new Object[0], null, 4);
         } else if (z3) {
             C12238m.checkNotNullExpressionValue(context, "context");
-            charSequenceM210b = C1107b.m210b(context, C5419R.string.invite_button_title_inviter, new Object[0], (4 & 4) != 0 ? C1107b.b.f1491j : null);
+            charSequenceM216h = C1107b.m216h(context, C5419R.string.invite_button_title_inviter, new Object[0], null, 4);
         } else if (zM7702z && !z3) {
             C12238m.checkNotNullExpressionValue(context, "context");
-            charSequenceM210b = C1107b.m210b(context, C5419R.string.invite_button_title_invited_group_dm, new Object[0], (4 & 4) != 0 ? C1107b.b.f1491j : null);
+            charSequenceM216h = C1107b.m216h(context, C5419R.string.invite_button_title_invited_group_dm, new Object[0], null, 4);
         } else if (z5) {
-            charSequenceM210b = context.getString(C5419R.string.invite_button_title_invited_hub);
+            charSequenceM216h = context.getString(C5419R.string.invite_button_title_invited_hub);
         } else if (z6) {
             C12238m.checkNotNullExpressionValue(context, "context");
             Object[] objArr = new Object[1];
             com.discord.api.user.User inviter = invite.getInviter();
             objArr[0] = inviter != null ? inviter.getUsername() : null;
-            charSequenceM210b = C1107b.m210b(context, C5419R.string.instant_invite_you_have_been_invited_to_chat, objArr, (4 & 4) != 0 ? C1107b.b.f1491j : null);
+            charSequenceM216h = C1107b.m216h(context, C5419R.string.instant_invite_you_have_been_invited_to_chat, objArr, null, 4);
         } else if (!z4 || invite.getInviter() == null) {
             C12238m.checkNotNullExpressionValue(context, "context");
-            charSequenceM210b = C1107b.m210b(context, C5419R.string.invite_button_title_invited, new Object[0], (4 & 4) != 0 ? C1107b.b.f1491j : null);
+            charSequenceM216h = C1107b.m216h(context, C5419R.string.invite_button_title_invited, new Object[0], null, 4);
         } else {
             C12238m.checkNotNullExpressionValue(context, "context");
             Object[] objArr2 = new Object[1];
             com.discord.api.user.User inviter2 = invite.getInviter();
             objArr2[0] = inviter2 != null ? inviter2.getUsername() : null;
-            charSequenceM210b = C1107b.m210b(context, C5419R.string.instant_invite_you_have_been_invited_to_join_by_user, objArr2, (4 & 4) != 0 ? C1107b.b.f1491j : null);
+            charSequenceM216h = C1107b.m216h(context, C5419R.string.instant_invite_you_have_been_invited_to_join_by_user, objArr2, null, 4);
         }
-        textView.setText(charSequenceM210b);
+        textView.setText(charSequenceM216h);
         TextView textView2 = this.binding.f16250m;
         C12238m.checkNotNullExpressionValue(textView2, "binding.itemInviteName");
         if (!zM7702z) {

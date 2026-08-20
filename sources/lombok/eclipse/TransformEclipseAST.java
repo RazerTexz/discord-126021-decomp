@@ -22,7 +22,7 @@ import org.eclipse.jdt.internal.compiler.ast.TypeDeclaration;
 import org.eclipse.jdt.internal.compiler.ast.TypeReference;
 import org.eclipse.jdt.internal.compiler.parser.Parser;
 
-/* JADX INFO: loaded from: app.apk:lombok/eclipse/TransformEclipseAST.SCL.lombok */
+/* JADX INFO: loaded from: discord-126021.apk:lombok/eclipse/TransformEclipseAST.SCL.lombok */
 public class TransformEclipseAST {
     private final EclipseAST ast;
     private static final Field astCacheField;
@@ -31,7 +31,7 @@ public class TransformEclipseAST {
     private static final HistogramTracker lombokTracker;
     private static Map<CompilationUnitDeclaration, State> transformationStates = Collections.synchronizedMap(new WeakHashMap());
 
-    /* JADX INFO: loaded from: app.apk:lombok/eclipse/TransformEclipseAST$State.SCL.lombok */
+    /* JADX INFO: loaded from: discord-126021.apk:lombok/eclipse/TransformEclipseAST$State.SCL.lombok */
     private enum State {
         DIET,
         FULL;
@@ -171,7 +171,7 @@ public class TransformEclipseAST {
         }
     }
 
-    /* JADX INFO: loaded from: app.apk:lombok/eclipse/TransformEclipseAST$AnnotationVisitor.SCL.lombok */
+    /* JADX INFO: loaded from: discord-126021.apk:lombok/eclipse/TransformEclipseAST$AnnotationVisitor.SCL.lombok */
     private static class AnnotationVisitor extends EclipseASTAdapter {
         private final long priority;
         private long nextPriority = RecyclerView.FOREVER_NS;

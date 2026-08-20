@@ -1,7 +1,6 @@
 package com.discord.widgets.channels;
 
 import com.discord.models.user.User;
-import com.discord.widgets.channels.WidgetGroupInviteFriends;
 import java.util.Collection;
 import kotlin.jvm.functions.Function2;
 import p507d0.p592z.p594d.C12236k;

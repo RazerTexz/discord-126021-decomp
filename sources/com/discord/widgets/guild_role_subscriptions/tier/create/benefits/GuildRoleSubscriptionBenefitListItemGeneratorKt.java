@@ -2,7 +2,6 @@ package com.discord.widgets.guild_role_subscriptions.tier.create.benefits;
 
 import com.discord.api.guildrolesubscription.GuildRoleSubscriptionBenefitType;
 import com.discord.api.guildrolesubscription.SubscriptionTrialInterval;
-import com.discord.widgets.guild_role_subscriptions.tier.create.benefits.GuildRoleSubscriptionBenefitAdapterItem;
 import com.discord.widgets.guild_role_subscriptions.tier.model.Benefit;
 import java.util.ArrayList;
 import java.util.Iterator;

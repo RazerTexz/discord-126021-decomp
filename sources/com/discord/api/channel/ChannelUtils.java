@@ -3,7 +3,6 @@ package com.discord.api.channel;
 import android.content.Context;
 import androidx.exifinterface.media.ExifInterface;
 import com.discord.C5419R;
-import com.discord.api.channel.Channel;
 import com.discord.api.guild.GuildFeature;
 import com.discord.api.permission.Permission;
 import com.discord.api.permission.PermissionOverwrite;

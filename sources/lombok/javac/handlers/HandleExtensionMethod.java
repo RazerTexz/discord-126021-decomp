@@ -20,7 +20,7 @@ import lombok.javac.JavacAnnotationHandler;
 import lombok.javac.JavacNode;
 import lombok.javac.JavacResolution;
 
-/* JADX INFO: loaded from: app.apk:lombok/javac/handlers/HandleExtensionMethod.SCL.lombok */
+/* JADX INFO: loaded from: discord-126021.apk:lombok/javac/handlers/HandleExtensionMethod.SCL.lombok */
 @HandlerPriority(66560)
 public class HandleExtensionMethod extends JavacAnnotationHandler<ExtensionMethod> {
     @Override // lombok.javac.JavacAnnotationHandler
@@ -77,7 +77,7 @@ public class HandleExtensionMethod extends JavacAnnotationHandler<ExtensionMetho
         return new Extension(extensionMethods, tsym);
     }
 
-    /* JADX INFO: loaded from: app.apk:lombok/javac/handlers/HandleExtensionMethod$Extension.SCL.lombok */
+    /* JADX INFO: loaded from: discord-126021.apk:lombok/javac/handlers/HandleExtensionMethod$Extension.SCL.lombok */
     private static class Extension {
         final List<Symbol.MethodSymbol> extensionMethods;
         final Symbol.TypeSymbol extensionProvider;
@@ -88,7 +88,7 @@ public class HandleExtensionMethod extends JavacAnnotationHandler<ExtensionMetho
         }
     }
 
-    /* JADX INFO: loaded from: app.apk:lombok/javac/handlers/HandleExtensionMethod$ExtensionMethodReplaceVisitor.SCL.lombok */
+    /* JADX INFO: loaded from: discord-126021.apk:lombok/javac/handlers/HandleExtensionMethod$ExtensionMethodReplaceVisitor.SCL.lombok */
     private static class ExtensionMethodReplaceVisitor extends TreeScanner<Void, Void> {
         final JavacNode annotationNode;
         final List<Extension> extensions;

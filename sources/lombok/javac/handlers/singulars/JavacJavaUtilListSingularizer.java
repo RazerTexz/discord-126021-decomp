@@ -13,7 +13,7 @@ import lombok.javac.JavacTreeMaker;
 import lombok.javac.handlers.JavacHandlerUtil;
 import lombok.javac.handlers.JavacSingularsRecipes;
 
-/* JADX INFO: loaded from: app.apk:lombok/javac/handlers/singulars/JavacJavaUtilListSingularizer.SCL.lombok */
+/* JADX INFO: loaded from: discord-126021.apk:lombok/javac/handlers/singulars/JavacJavaUtilListSingularizer.SCL.lombok */
 public class JavacJavaUtilListSingularizer extends JavacJavaUtilListSetSingularizer {
     @Override // lombok.javac.handlers.singulars.JavacJavaUtilListSetSingularizer, lombok.javac.handlers.JavacSingularsRecipes.JavacSingularizer
     public /* bridge */ /* synthetic */ List generateFields(JavacSingularsRecipes.SingularData singularData, JavacNode javacNode, JCTree jCTree) {

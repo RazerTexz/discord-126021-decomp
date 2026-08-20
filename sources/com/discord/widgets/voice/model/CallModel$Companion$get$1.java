@@ -18,7 +18,6 @@ import com.discord.stores.StoreVoiceParticipants;
 import com.discord.utilities.p501rx.ObservableCombineLatestOverloadsKt;
 import com.discord.utilities.voice.VoiceChannelJoinability;
 import com.discord.utilities.voice.VoiceChannelJoinabilityUtils;
-import com.discord.widgets.voice.model.CallModel;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;

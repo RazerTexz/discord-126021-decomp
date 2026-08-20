@@ -1,6 +1,6 @@
 package org.objectweb.asm;
 
-/* JADX INFO: loaded from: app.apk:org/objectweb/asm/Frame.SCL.lombok */
+/* JADX INFO: loaded from: discord-126021.apk:org/objectweb/asm/Frame.SCL.lombok */
 class Frame {
     static final int SAME_FRAME = 0;
     static final int SAME_LOCALS_1_STACK_ITEM_FRAME = 64;

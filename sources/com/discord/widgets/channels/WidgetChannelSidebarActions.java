@@ -17,7 +17,6 @@ import com.discord.utilities.viewbinding.FragmentViewBindingDelegate;
 import com.discord.utilities.viewbinding.FragmentViewBindingDelegateKt;
 import com.discord.views.channelsidebar.GuildChannelSideBarActionsView;
 import com.discord.views.channelsidebar.PrivateChannelSideBarActionsView;
-import com.discord.widgets.channels.WidgetChannelSidebarActionsViewModel;
 import com.discord.widgets.channels.settings.WidgetTextChannelSettings;
 import com.discord.widgets.channels.settings.WidgetThreadSettings;
 import com.discord.widgets.channels.threads.browser.WidgetThreadBrowser;

@@ -22,7 +22,6 @@ import com.discord.utilities.error.Error;
 import com.discord.utilities.guildscheduledevent.GuildScheduledEventUtilities;
 import com.discord.utilities.p501rx.ObservableExtensionsKt;
 import com.discord.utilities.rest.RestAPI;
-import com.discord.widgets.guildscheduledevent.GuildScheduledEventRsvpUserListItem;
 import java.lang.ref.WeakReference;
 import java.util.List;
 import kotlin.Unit;

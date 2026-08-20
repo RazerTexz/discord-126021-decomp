@@ -1,7 +1,5 @@
 package org.webrtc;
 
-import org.webrtc.PeerConnection;
-
 /* JADX INFO: loaded from: classes3.dex */
 public class RtcCertificatePem {
     private static final long DEFAULT_EXPIRY = 2592000;

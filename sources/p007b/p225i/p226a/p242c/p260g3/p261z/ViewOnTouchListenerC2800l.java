@@ -7,8 +7,6 @@ import android.view.GestureDetector;
 import android.view.MotionEvent;
 import android.view.View;
 import androidx.annotation.BinderThread;
-import p007b.p225i.p226a.p242c.p260g3.p261z.C2795g;
-import p007b.p225i.p226a.p242c.p260g3.p261z.C2799k;
 
 /* JADX INFO: renamed from: b.i.a.c.g3.z.l */
 /* JADX INFO: compiled from: TouchTracker.java */

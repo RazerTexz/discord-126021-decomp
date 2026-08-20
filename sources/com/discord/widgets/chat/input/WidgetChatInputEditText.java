@@ -8,7 +8,6 @@ import android.widget.TextView;
 import com.discord.stores.StoreStream;
 import com.discord.utilities.time.ClockFactory;
 import com.discord.utilities.view.text.TextWatcher;
-import com.discord.widgets.chat.input.MessageDraftsRepo;
 import com.lytefast.flexinput.widget.FlexEditText;
 import kotlin.Unit;
 import kotlin.jvm.functions.Function0;

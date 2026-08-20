@@ -6,7 +6,6 @@ import com.discord.api.channel.ChannelUtils;
 import com.discord.models.guild.Guild;
 import com.discord.models.user.User;
 import com.discord.utilities.search.SearchUtils;
-import com.discord.widgets.user.search.WidgetGlobalSearchModel;
 import java.util.Locale;
 import java.util.Objects;
 import kotlin.jvm.functions.Function0;

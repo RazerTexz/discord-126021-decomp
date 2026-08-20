@@ -39,7 +39,6 @@ import androidx.core.view.KeyEventDispatcher;
 import androidx.core.view.ViewCompat;
 import androidx.fragment.app.DialogFragment;
 import com.discord.models.domain.ModelAuditLogEntry;
-import com.jaredrummler.android.colorpicker.ColorPickerView;
 import java.util.Arrays;
 import java.util.Locale;
 import p007b.p440k.p441a.p442a.C5075b;

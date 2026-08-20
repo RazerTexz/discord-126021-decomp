@@ -40,7 +40,6 @@ import com.discord.utilities.viewbinding.FragmentViewBindingDelegateKt;
 import com.discord.utilities.views.viewstub.LazyViewStubDelegate;
 import com.discord.views.LoadingButton;
 import com.discord.widgets.servers.creator_monetization_eligibility.EligibilityChecklistView;
-import com.discord.widgets.servers.creator_monetization_eligibility.onboarding.ServerSettingsCreatorMonetizationOnboardingViewModel;
 import com.discord.widgets.servers.guild_role_subscription.WidgetServerSettingsEmptyGuildRoleSubscriptions;
 import com.google.android.material.button.MaterialButton;
 import java.util.List;

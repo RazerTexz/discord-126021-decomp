@@ -5,9 +5,6 @@ import android.os.Process;
 import androidx.annotation.Nullable;
 import java.util.List;
 import java.util.Objects;
-import org.webrtc.Logging;
-import org.webrtc.NativeLibrary;
-import org.webrtc.PeerConnection;
 import org.webrtc.audio.AudioDeviceModule;
 import org.webrtc.audio.JavaAudioDeviceModule;
 

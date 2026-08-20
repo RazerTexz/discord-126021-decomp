@@ -1,7 +1,6 @@
 package com.discord.utilities.voice;
 
 import android.content.Context;
-import com.discord.utilities.voice.DiscordOverlayService;
 import java.lang.ref.WeakReference;
 import kotlin.Unit;
 import kotlin.jvm.functions.Function1;

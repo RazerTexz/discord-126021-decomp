@@ -1,6 +1,5 @@
 package com.discord.utilities.search.suggestion.entries;
 
-import com.discord.utilities.search.suggestion.entries.SearchSuggestion;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import p001a0.p002a.p003a.C0002b;
 import p007b.p100d.p104b.p105a.C1643a;

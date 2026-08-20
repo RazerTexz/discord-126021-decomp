@@ -3,7 +3,6 @@ package androidx.media;
 import android.content.Context;
 import androidx.annotation.NonNull;
 import androidx.annotation.RequiresApi;
-import androidx.media.MediaSessionManager;
 
 /* JADX INFO: loaded from: classes.dex */
 @RequiresApi(21)

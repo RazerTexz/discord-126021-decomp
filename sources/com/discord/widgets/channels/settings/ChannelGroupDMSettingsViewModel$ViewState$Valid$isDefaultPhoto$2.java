@@ -1,7 +1,6 @@
 package com.discord.widgets.channels.settings;
 
 import com.discord.utilities.icon.IconUtils;
-import com.discord.widgets.channels.settings.ChannelGroupDMSettingsViewModel;
 import kotlin.jvm.functions.Function0;
 import p507d0.p592z.p594d.AbstractC12240o;
 import p507d0.p592z.p594d.C12238m;

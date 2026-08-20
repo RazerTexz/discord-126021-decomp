@@ -3,7 +3,6 @@ package com.discord.widgets.guilds.create;
 import android.os.Bundle;
 import android.os.Parcelable;
 import com.discord.app.AppFragment;
-import com.discord.widgets.guilds.create.WidgetGuildCreate;
 import kotlin.jvm.functions.Function0;
 import p007b.p100d.p104b.p105a.C1643a;
 import p507d0.p592z.p594d.AbstractC12240o;

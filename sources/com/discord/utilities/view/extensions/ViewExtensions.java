@@ -32,7 +32,6 @@ import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.RecyclerView;
 import com.discord.i18n.RenderContext;
 import com.discord.utilities.resources.StringResourceUtilsKt;
-import com.discord.utilities.view.extensions.FadeAnimation;
 import com.discord.utilities.view.text.TextWatcherKt;
 import com.google.android.material.textfield.TextInputLayout;
 import java.util.Arrays;

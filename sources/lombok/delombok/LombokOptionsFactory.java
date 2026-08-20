@@ -8,10 +8,10 @@ import lombok.javac.Javac8BasedLombokOptions;
 import lombok.javac.Javac9BasedLombokOptions;
 import lombok.javac.LombokOptions;
 
-/* JADX INFO: loaded from: app.apk:lombok/delombok/LombokOptionsFactory.SCL.lombok */
+/* JADX INFO: loaded from: discord-126021.apk:lombok/delombok/LombokOptionsFactory.SCL.lombok */
 public class LombokOptionsFactory {
 
-    /* JADX INFO: loaded from: app.apk:lombok/delombok/LombokOptionsFactory$LombokOptionCompilerVersion.SCL.lombok */
+    /* JADX INFO: loaded from: discord-126021.apk:lombok/delombok/LombokOptionsFactory$LombokOptionCompilerVersion.SCL.lombok */
     enum LombokOptionCompilerVersion {
         JDK7_AND_LOWER { // from class: lombok.delombok.LombokOptionsFactory.LombokOptionCompilerVersion.1
             @Override // lombok.delombok.LombokOptionsFactory.LombokOptionCompilerVersion

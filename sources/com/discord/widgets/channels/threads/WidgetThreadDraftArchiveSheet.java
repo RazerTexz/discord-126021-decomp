@@ -18,7 +18,6 @@ import com.discord.utilities.p501rx.ObservableExtensionsKt;
 import com.discord.utilities.threads.ThreadUtils;
 import com.discord.utilities.viewbinding.FragmentViewBindingDelegate;
 import com.discord.utilities.viewbinding.FragmentViewBindingDelegateKt;
-import com.discord.widgets.channels.threads.WidgetThreadDraftArchiveSheet;
 import com.google.android.material.radiobutton.MaterialRadioButton;
 import kotlin.Unit;
 import kotlin.jvm.functions.Function0;

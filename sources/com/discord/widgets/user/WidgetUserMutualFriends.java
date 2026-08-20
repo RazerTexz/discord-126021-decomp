@@ -40,7 +40,6 @@ import com.discord.utilities.view.text.SimpleDraweeSpanTextView;
 import com.discord.utilities.viewbinding.FragmentViewBindingDelegate;
 import com.discord.utilities.viewbinding.FragmentViewBindingDelegateKt;
 import com.discord.views.StatusView;
-import com.discord.widgets.user.WidgetUserMutualFriends;
 import com.discord.widgets.user.profile.WidgetUserProfileEmptyListItem;
 import com.discord.widgets.user.usersheet.WidgetUserSheet;
 import com.facebook.drawee.view.SimpleDraweeView;

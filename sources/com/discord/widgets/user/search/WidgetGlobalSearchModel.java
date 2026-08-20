@@ -18,8 +18,6 @@ import com.discord.utilities.p501rx.ObservableWithLeadingEdgeThrottle;
 import com.discord.utilities.search.SearchUtils;
 import com.discord.utilities.string.StringUtilsKt;
 import com.discord.widgets.chat.input.MentionUtilsKt;
-import com.discord.widgets.user.search.WidgetGlobalSearchGuildsModel;
-import com.discord.widgets.user.search.WidgetGlobalSearchModel;
 import java.util.Collection;
 import java.util.Comparator;
 import java.util.HashSet;

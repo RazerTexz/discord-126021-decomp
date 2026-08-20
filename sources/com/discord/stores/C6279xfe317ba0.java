@@ -2,8 +2,6 @@ package com.discord.stores;
 
 import androidx.appcompat.widget.ActivityChooserModel;
 import com.discord.app.AppActivity;
-import com.discord.stores.StoreNavigation;
-import com.discord.stores.StoreNux;
 import com.discord.widgets.guilds.create.WidgetGuildClone;
 import kotlin.jvm.functions.Function1;
 import kotlin.jvm.functions.Function2;

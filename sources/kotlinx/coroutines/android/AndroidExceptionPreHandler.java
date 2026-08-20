@@ -2,7 +2,6 @@ package kotlinx.coroutines.android;
 
 import android.os.Build;
 import androidx.annotation.Keep;
-import java.lang.Thread;
 import java.lang.reflect.Method;
 import java.lang.reflect.Modifier;
 import kotlin.coroutines.CoroutineContext;

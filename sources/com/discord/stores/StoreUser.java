@@ -22,7 +22,6 @@ import com.discord.models.domain.ModelPayload;
 import com.discord.models.domain.ModelUserRelationship;
 import com.discord.models.user.CoreUser;
 import com.discord.models.user.MeUser;
-import com.discord.stores.StoreMessagesLoader;
 import com.discord.stores.updates.ObservationDeck;
 import com.discord.stores.updates.ObservationDeckProvider;
 import com.discord.utilities.collections.SnowflakePartitionMap;

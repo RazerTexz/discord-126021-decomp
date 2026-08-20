@@ -1,8 +1,6 @@
 package com.discord.widgets.user.search;
 
 import android.view.View;
-import com.discord.widgets.user.search.WidgetGlobalSearchAdapter;
-import com.discord.widgets.user.search.WidgetGlobalSearchModel;
 import kotlin.Unit;
 import kotlin.jvm.functions.Function1;
 import p507d0.p592z.p594d.AbstractC12240o;

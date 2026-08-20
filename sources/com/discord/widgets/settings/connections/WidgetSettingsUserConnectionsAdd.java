@@ -29,7 +29,6 @@ import com.discord.utilities.platform.Platform;
 import com.discord.utilities.viewbinding.FragmentViewBindingDelegate;
 import com.discord.utilities.viewbinding.FragmentViewBindingDelegateKt;
 import com.discord.widgets.playstation.PlaystationExperimentUtilsKt;
-import com.discord.widgets.settings.connections.WidgetSettingsUserConnectionsAddXbox;
 import java.util.ArrayList;
 import java.util.Iterator;
 import kotlin.Unit;

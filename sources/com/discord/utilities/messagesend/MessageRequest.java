@@ -5,7 +5,6 @@ import com.discord.api.activity.Activity;
 import com.discord.api.message.allowedmentions.MessageAllowedMentions;
 import com.discord.models.commands.ApplicationCommandLocalSendData;
 import com.discord.models.message.Message;
-import com.discord.utilities.messagesend.MessageResult;
 import com.discord.utilities.rest.SendUtils;
 import com.lytefast.flexinput.model.Attachment;
 import java.util.List;

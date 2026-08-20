@@ -1,7 +1,6 @@
 package com.discord.models.experiments.dto;
 
 import com.discord.models.domain.Model;
-import com.discord.models.experiments.dto.GuildExperimentBucketDto;
 import java.io.IOException;
 import java.util.List;
 import kotlin.jvm.internal.Ref$IntRef;

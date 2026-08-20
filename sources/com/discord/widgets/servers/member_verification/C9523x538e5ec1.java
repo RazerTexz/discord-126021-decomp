@@ -5,7 +5,6 @@ import androidx.fragment.app.FragmentActivity;
 import androidx.fragment.app.FragmentManager;
 import com.discord.stores.StoreNotices;
 import com.discord.widgets.servers.WidgetServerSettingsChannels;
-import com.discord.widgets.servers.member_verification.MemberVerificationPendingViewModel;
 import kotlin.jvm.functions.Function1;
 import p507d0.p592z.p594d.AbstractC12240o;
 import p507d0.p592z.p594d.C12216a0;

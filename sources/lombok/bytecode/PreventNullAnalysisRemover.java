@@ -9,7 +9,7 @@ import org.objectweb.asm.ClassWriter;
 import org.objectweb.asm.MethodVisitor;
 import org.objectweb.asm.Opcodes;
 
-/* JADX INFO: loaded from: app.apk:lombok/bytecode/PreventNullAnalysisRemover.SCL.lombok */
+/* JADX INFO: loaded from: discord-126021.apk:lombok/bytecode/PreventNullAnalysisRemover.SCL.lombok */
 public class PreventNullAnalysisRemover implements PostCompilerTransformation {
     @Override // lombok.core.PostCompilerTransformation
     public byte[] applyTransformations(byte[] original, String fileName, DiagnosticsReceiver diagnostics) {

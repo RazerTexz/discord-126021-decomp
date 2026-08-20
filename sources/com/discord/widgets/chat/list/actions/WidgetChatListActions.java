@@ -48,7 +48,6 @@ import com.discord.utilities.viewbinding.FragmentViewBindingDelegateKt;
 import com.discord.widgets.chat.input.emoji.EmojiPickerContextType;
 import com.discord.widgets.chat.input.emoji.EmojiPickerListener;
 import com.discord.widgets.chat.input.emoji.EmojiPickerNavigator;
-import com.discord.widgets.chat.list.actions.WidgetChatListActions;
 import com.discord.widgets.chat.managereactions.WidgetManageReactions;
 import com.discord.widgets.mobile_reports.ReportsFeatureFlag;
 import com.discord.widgets.mobile_reports.WidgetMobileReports;

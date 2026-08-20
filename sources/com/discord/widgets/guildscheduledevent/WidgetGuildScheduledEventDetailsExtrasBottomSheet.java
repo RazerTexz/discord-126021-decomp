@@ -18,10 +18,6 @@ import com.discord.utilities.guildscheduledevent.GuildScheduledEventUtilitiesKt;
 import com.discord.utilities.p501rx.ObservableExtensionsKt;
 import com.discord.utilities.viewbinding.FragmentViewBindingDelegate;
 import com.discord.utilities.viewbinding.FragmentViewBindingDelegateKt;
-import com.discord.widgets.guildscheduledevent.GuildScheduledEventDetailsViewModel;
-import com.discord.widgets.guildscheduledevent.WidgetGuildScheduledEventDetailsBottomSheet;
-import com.discord.widgets.guildscheduledevent.WidgetGuildScheduledEventLocationSelect;
-import com.discord.widgets.guildscheduledevent.WidgetPreviewGuildScheduledEvent;
 import com.discord.widgets.mobile_reports.WidgetMobileReports;
 import com.discord.widgets.notice.WidgetNoticeDialog;
 import kotlin.Lazy;
@@ -143,7 +139,7 @@ public final class WidgetGuildScheduledEventDetailsExtrasBottomSheet extends App
             String string = WidgetGuildScheduledEventDetailsExtrasBottomSheet.this.requireContext().getString(C5419R.string.delete_event);
             Context contextRequireContext = WidgetGuildScheduledEventDetailsExtrasBottomSheet.this.requireContext();
             C12238m.checkNotNullExpressionValue(contextRequireContext, "requireContext()");
-            WidgetNoticeDialog.Companion.show$default(companion, childFragmentManager, string, C1107b.m210b(contextRequireContext, C5419R.string.delete_stage_event_confirmation_description, new Object[]{((GuildScheduledEventDetailsViewModel.ViewState.Initialized) this.$viewState).getGuildScheduledEvent().getName()}, (4 & 4) != 0 ? C1107b.b.f1491j : null), WidgetGuildScheduledEventDetailsExtrasBottomSheet.this.requireContext().getString(C5419R.string.delete_event), WidgetGuildScheduledEventDetailsExtrasBottomSheet.this.requireContext().getString(C5419R.string.back), C12134g0.mapOf(C12116o.m10073to(Integer.valueOf(C5419R.id.notice_ok), new AnonymousClass1())), null, null, null, null, null, null, 0, null, 16320, null);
+            WidgetNoticeDialog.Companion.show$default(companion, childFragmentManager, string, C1107b.m216h(contextRequireContext, C5419R.string.delete_stage_event_confirmation_description, new Object[]{((GuildScheduledEventDetailsViewModel.ViewState.Initialized) this.$viewState).getGuildScheduledEvent().getName()}, null, 4), WidgetGuildScheduledEventDetailsExtrasBottomSheet.this.requireContext().getString(C5419R.string.delete_event), WidgetGuildScheduledEventDetailsExtrasBottomSheet.this.requireContext().getString(C5419R.string.back), C12134g0.mapOf(C12116o.m10073to(Integer.valueOf(C5419R.id.notice_ok), new AnonymousClass1())), null, null, null, null, null, null, 0, null, 16320, null);
         }
     }
 

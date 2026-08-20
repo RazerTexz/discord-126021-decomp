@@ -5,7 +5,6 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.arch.core.executor.ArchTaskExecutor;
 import androidx.arch.core.internal.SafeIterableMap;
-import androidx.view.Lifecycle;
 import java.util.Map;
 import p007b.p100d.p104b.p105a.C1643a;
 

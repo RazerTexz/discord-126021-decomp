@@ -10,8 +10,6 @@ import com.discord.models.domain.ModelAuditLogEntry;
 import com.discord.utilities.mg_recycler.MGRecyclerAdapterSimple;
 import com.discord.utilities.mg_recycler.MGRecyclerViewHolder;
 import com.discord.utilities.view.extensions.ViewExtensions;
-import com.discord.widgets.user.search.WidgetGlobalSearchAdapter;
-import com.discord.widgets.user.search.WidgetGlobalSearchModel;
 import java.util.Objects;
 import kotlin.Unit;
 import kotlin.jvm.functions.Function4;

@@ -2,7 +2,6 @@ package p007b.p225i.p226a.p228b.p229i.p230e;
 
 import androidx.annotation.Nullable;
 import p007b.p100d.p104b.p105a.C1643a;
-import p007b.p225i.p226a.p228b.p229i.p230e.AbstractC2428k;
 
 /* JADX INFO: renamed from: b.i.a.b.i.e.e */
 /* JADX INFO: compiled from: AutoValue_ClientInfo.java */

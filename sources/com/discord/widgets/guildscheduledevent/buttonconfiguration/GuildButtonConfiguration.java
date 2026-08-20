@@ -395,7 +395,7 @@ public final /* data */ class GuildButtonConfiguration implements ButtonConfigur
     @Override // com.discord.widgets.guildscheduledevent.buttonconfiguration.ButtonConfiguration
     public CharSequence primaryButtonText(Context context) {
         C12238m.checkNotNullParameter(context, "context");
-        return C1107b.m210b(context, C5419R.string.start_event, new Object[0], (4 & 4) != 0 ? C1107b.b.f1491j : null);
+        return C1107b.m216h(context, C5419R.string.start_event, new Object[0], null, 4);
     }
 
     @Override // com.discord.widgets.guildscheduledevent.buttonconfiguration.ButtonConfiguration
@@ -420,7 +420,7 @@ public final /* data */ class GuildButtonConfiguration implements ButtonConfigur
                 i = this.isEventComplete ? C5419R.string.guild_event_invite_completed : C5419R.string.indicate_rsvp;
             }
         }
-        return C1107b.m210b(context, i, new Object[0], (4 & 4) != 0 ? C1107b.b.f1491j : null);
+        return C1107b.m216h(context, i, new Object[0], null, 4);
     }
 
     @Override // com.discord.widgets.guildscheduledevent.buttonconfiguration.ButtonConfiguration

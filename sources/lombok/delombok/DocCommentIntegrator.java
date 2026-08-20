@@ -13,7 +13,7 @@ import lombok.javac.Javac;
 import lombok.javac.PackageName;
 import lombok.javac.handlers.JavacHandlerUtil;
 
-/* JADX INFO: loaded from: app.apk:lombok/delombok/DocCommentIntegrator.SCL.lombok */
+/* JADX INFO: loaded from: discord-126021.apk:lombok/delombok/DocCommentIntegrator.SCL.lombok */
 public class DocCommentIntegrator {
     private static final Pattern CONTENT_STRIPPER = Pattern.compile("^(?:\\s*\\*)?(.*?)$", 8);
 
@@ -68,7 +68,7 @@ public class DocCommentIntegrator {
         return false;
     }
 
-    /* JADX INFO: loaded from: app.apk:lombok/delombok/DocCommentIntegrator$CommentAttacher_8.SCL.lombok */
+    /* JADX INFO: loaded from: discord-126021.apk:lombok/delombok/DocCommentIntegrator$CommentAttacher_8.SCL.lombok */
     private static class CommentAttacher_8 {
         private CommentAttacher_8() {
         }

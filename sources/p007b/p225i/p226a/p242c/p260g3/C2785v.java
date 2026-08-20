@@ -15,7 +15,6 @@ import androidx.annotation.RequiresApi;
 import java.util.Objects;
 import p007b.p225i.p226a.p242c.p259f3.C2738e0;
 import p007b.p225i.p226a.p242c.p259f3.C2750q;
-import p007b.p225i.p226a.p242c.p260g3.C2779p;
 
 /* JADX INFO: renamed from: b.i.a.c.g3.v */
 /* JADX INFO: compiled from: VideoFrameReleaseHelper.java */

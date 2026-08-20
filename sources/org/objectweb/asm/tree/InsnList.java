@@ -5,7 +5,7 @@ import java.util.ListIterator;
 import java.util.NoSuchElementException;
 import org.objectweb.asm.MethodVisitor;
 
-/* JADX INFO: loaded from: app.apk:org/objectweb/asm/tree/InsnList.SCL.lombok */
+/* JADX INFO: loaded from: discord-126021.apk:org/objectweb/asm/tree/InsnList.SCL.lombok */
 public class InsnList implements Iterable<AbstractInsnNode> {
     private int size;
     private AbstractInsnNode firstInsn;
@@ -315,7 +315,7 @@ public class InsnList implements Iterable<AbstractInsnNode> {
         }
     }
 
-    /* JADX INFO: loaded from: app.apk:org/objectweb/asm/tree/InsnList$InsnListIterator.SCL.lombok */
+    /* JADX INFO: loaded from: discord-126021.apk:org/objectweb/asm/tree/InsnList$InsnListIterator.SCL.lombok */
     private final class InsnListIterator implements ListIterator {
         AbstractInsnNode nextInsn;
         AbstractInsnNode previousInsn;

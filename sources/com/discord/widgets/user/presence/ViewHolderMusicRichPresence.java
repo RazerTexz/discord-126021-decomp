@@ -90,14 +90,14 @@ public final class ViewHolderMusicRichPresence extends ViewHolderUserRichPresenc
         TextView richPresenceDetails = getRichPresenceDetails();
         if (richPresenceDetails != null) {
             C12238m.checkNotNullExpressionValue(context, "context");
-            ViewExtensions.setTextAndVisibilityBy(richPresenceDetails, C1107b.m210b(context, C5419R.string.user_activity_listening_artists, new Object[]{strReplace$default}, (4 & 4) != 0 ? C1107b.b.f1491j : null));
+            ViewExtensions.setTextAndVisibilityBy(richPresenceDetails, C1107b.m216h(context, C5419R.string.user_activity_listening_artists, new Object[]{strReplace$default}, null, 4));
         }
         TextView richPresenceTime = getRichPresenceTime();
         C12238m.checkNotNullExpressionValue(context, "context");
         Object[] objArr = new Object[1];
         ActivityAssets assets = primaryActivity.getAssets();
         objArr[0] = assets != null ? assets.getLargeText() : null;
-        ViewExtensions.setTextAndVisibilityBy(richPresenceTime, C1107b.m210b(context, C5419R.string.user_activity_listening_album, objArr, (4 & 4) != 0 ? C1107b.b.f1491j : null));
+        ViewExtensions.setTextAndVisibilityBy(richPresenceTime, C1107b.m216h(context, C5419R.string.user_activity_listening_album, objArr, null, 4));
         getRichPresenceTextContainer().setSelected(true);
         configureAssetUi(primaryActivity, streamContext);
         Button richPresencePrimaryButton = getRichPresencePrimaryButton();

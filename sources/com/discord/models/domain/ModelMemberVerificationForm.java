@@ -1,7 +1,5 @@
 package com.discord.models.domain;
 
-import com.discord.models.domain.Model;
-import com.discord.models.domain.ModelMemberVerificationForm;
 import java.io.IOException;
 import java.util.Collection;
 import java.util.Iterator;

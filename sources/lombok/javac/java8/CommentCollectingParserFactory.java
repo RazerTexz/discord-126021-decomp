@@ -8,7 +8,7 @@ import com.sun.tools.javac.util.Context;
 import java.lang.reflect.Field;
 import lombok.permit.Permit;
 
-/* JADX INFO: loaded from: app.apk:lombok/javac/java8/CommentCollectingParserFactory.SCL.lombok */
+/* JADX INFO: loaded from: discord-126021.apk:lombok/javac/java8/CommentCollectingParserFactory.SCL.lombok */
 public class CommentCollectingParserFactory extends ParserFactory {
     private final Context context;
 

@@ -15,8 +15,6 @@ import androidx.annotation.Nullable;
 import androidx.annotation.RequiresApi;
 import com.discord.api.permission.Permission;
 import com.discord.restapi.RestAPIAbortCodes;
-import com.google.android.exoplayer2.audio.AudioProcessor;
-import com.google.android.exoplayer2.audio.AudioSink;
 import java.lang.reflect.Method;
 import java.nio.ByteBuffer;
 import java.nio.ByteOrder;

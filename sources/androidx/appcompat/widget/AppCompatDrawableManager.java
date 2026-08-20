@@ -13,7 +13,6 @@ import androidx.annotation.NonNull;
 import androidx.annotation.RestrictTo;
 import androidx.appcompat.C0051R;
 import androidx.appcompat.content.res.AppCompatResources;
-import androidx.appcompat.widget.ResourceManagerInternal;
 import androidx.core.graphics.ColorUtils;
 
 /* JADX INFO: loaded from: classes.dex */

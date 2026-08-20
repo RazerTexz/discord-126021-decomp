@@ -6,7 +6,6 @@ import com.discord.stores.StoreGuildSelected;
 import com.discord.stores.StoreGuilds;
 import com.discord.stores.StorePermissions;
 import com.discord.utilities.permissions.PermissionUtils;
-import com.discord.widgets.directories.WidgetDirectoriesSearchViewModel;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Iterator;

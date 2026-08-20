@@ -3,7 +3,6 @@ package p007b.p225i.p226a.p228b.p229i.p230e;
 import androidx.annotation.Nullable;
 import java.util.Arrays;
 import p007b.p100d.p104b.p105a.C1643a;
-import p007b.p225i.p226a.p228b.p229i.p230e.AbstractC2429l;
 
 /* JADX INFO: renamed from: b.i.a.b.i.e.f */
 /* JADX INFO: compiled from: AutoValue_LogEvent.java */

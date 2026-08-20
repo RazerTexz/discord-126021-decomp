@@ -12,8 +12,6 @@ import com.discord.databinding.EmojiCategoryItemGuildBinding;
 import com.discord.databinding.EmojiCategoryItemStandardBinding;
 import com.discord.models.domain.ModelAuditLogEntry;
 import com.discord.utilities.recycler.DiffCreator;
-import com.discord.widgets.chat.input.emoji.EmojiCategoryItem;
-import com.discord.widgets.chat.input.emoji.EmojiCategoryViewHolder;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Objects;

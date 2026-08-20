@@ -3,7 +3,6 @@ package androidx.constraintlayout.motion.widget;
 import android.util.Log;
 import android.view.View;
 import androidx.constraintlayout.motion.utils.Easing;
-import androidx.constraintlayout.motion.widget.SplineSet;
 import androidx.constraintlayout.solver.widgets.ConstraintWidget;
 import androidx.constraintlayout.widget.ConstraintAttribute;
 import androidx.constraintlayout.widget.ConstraintSet;

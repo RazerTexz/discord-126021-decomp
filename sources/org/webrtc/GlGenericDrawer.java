@@ -4,7 +4,6 @@ import android.opengl.GLES20;
 import androidx.annotation.Nullable;
 import java.nio.Buffer;
 import java.nio.FloatBuffer;
-import org.webrtc.RendererCommon;
 import p007b.p100d.p104b.p105a.C1643a;
 
 /* JADX INFO: loaded from: classes3.dex */

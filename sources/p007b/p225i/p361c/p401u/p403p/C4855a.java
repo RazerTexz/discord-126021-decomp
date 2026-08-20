@@ -2,7 +2,6 @@ package p007b.p225i.p361c.p401u.p403p;
 
 import androidx.annotation.Nullable;
 import p007b.p100d.p104b.p105a.C1643a;
-import p007b.p225i.p361c.p401u.p403p.AbstractC4858d;
 
 /* JADX INFO: renamed from: b.i.c.u.p.a */
 /* JADX INFO: compiled from: AutoValue_InstallationResponse.java */

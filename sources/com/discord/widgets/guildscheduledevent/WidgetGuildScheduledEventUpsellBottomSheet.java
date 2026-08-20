@@ -13,7 +13,6 @@ import com.discord.stores.StoreStream;
 import com.discord.utilities.viewbinding.FragmentViewBindingDelegate;
 import com.discord.utilities.viewbinding.FragmentViewBindingDelegateKt;
 import com.discord.widgets.guilds.profile.WidgetGuildProfileSheet;
-import com.discord.widgets.guildscheduledevent.WidgetGuildScheduledEventListBottomSheet;
 import java.util.Set;
 import kotlin.Lazy;
 import kotlin.jvm.internal.DefaultConstructorMarker;

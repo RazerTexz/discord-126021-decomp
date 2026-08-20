@@ -8,7 +8,6 @@ import com.discord.C5419R;
 import com.discord.databinding.WidgetStageChannelAudienceRoleBinding;
 import com.discord.models.domain.ModelAuditLogEntry;
 import com.discord.utilities.locale.LocaleManager;
-import com.discord.widgets.voice.fullscreen.stage.StageCallItem;
 import java.text.NumberFormat;
 import p007b.p008a.p027k.C1107b;
 import p507d0.p592z.p594d.C12238m;

@@ -10,7 +10,6 @@ import com.discord.databinding.WidgetGuildProfileEmojiExtraBinding;
 import com.discord.databinding.WidgetGuildProfileEmojiItemBinding;
 import com.discord.models.domain.ModelAuditLogEntry;
 import com.discord.models.domain.emoji.Emoji;
-import com.discord.widgets.guilds.profile.EmojiItem;
 import com.facebook.drawee.view.SimpleDraweeView;
 import java.util.ArrayList;
 import java.util.Iterator;

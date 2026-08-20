@@ -28,7 +28,6 @@ import com.discord.rtcconnection.RtcConnection;
 import com.discord.rtcconnection.audio.DiscordAudioManager;
 import com.discord.rtcconnection.mediaengine.MediaEngine;
 import com.discord.rtcconnection.mediaengine.MediaEngineConnection;
-import com.discord.stores.StoreGifting;
 import com.discord.utilities.KotlinExtensionsKt;
 import com.discord.utilities.PermissionOverwriteUtilsKt;
 import com.discord.utilities.SnowflakeUtils;

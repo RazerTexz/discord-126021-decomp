@@ -100,7 +100,7 @@ import org.eclipse.jdt.internal.compiler.lookup.TypeConstants;
 import org.eclipse.jdt.internal.compiler.lookup.WildcardBinding;
 import org.eclipse.jdt.internal.core.CompilationUnit;
 
-/* JADX INFO: loaded from: app.apk:lombok/eclipse/handlers/EclipseHandlerUtil.SCL.lombok */
+/* JADX INFO: loaded from: discord-126021.apk:lombok/eclipse/handlers/EclipseHandlerUtil.SCL.lombok */
 public class EclipseHandlerUtil {
     private static final int MODIFIERS_INDICATING_STATIC = 16904;
     private static final Constructor<CastExpression> castExpressionConstructor;
@@ -121,7 +121,7 @@ public class EclipseHandlerUtil {
     private static final char[][] LOMBOK_GENERATED = Eclipse.fromQualifiedName("lombok.Generated");
     private static final char[][] EDU_UMD_CS_FINDBUGS_ANNOTATIONS_SUPPRESSFBWARNINGS = Eclipse.fromQualifiedName("edu.umd.cs.findbugs.annotations.SuppressFBWarnings");
 
-    /* JADX INFO: loaded from: app.apk:lombok/eclipse/handlers/EclipseHandlerUtil$MemberExistsResult.SCL.lombok */
+    /* JADX INFO: loaded from: discord-126021.apk:lombok/eclipse/handlers/EclipseHandlerUtil$MemberExistsResult.SCL.lombok */
     public enum MemberExistsResult {
         NOT_EXISTS,
         EXISTS_BY_LOMBOK,
@@ -398,7 +398,7 @@ public class EclipseHandlerUtil {
         return annotation;
     }
 
-    /* JADX INFO: loaded from: app.apk:lombok/eclipse/handlers/EclipseHandlerUtil$EclipseReflectiveMembers.SCL.lombok */
+    /* JADX INFO: loaded from: discord-126021.apk:lombok/eclipse/handlers/EclipseHandlerUtil$EclipseReflectiveMembers.SCL.lombok */
     static class EclipseReflectiveMembers {
         public static final Field STRING_LITERAL__LINE_NUMBER = getField(StringLiteral.class, "lineNumber");
         public static final Field ANNOTATION__MEMBER_VALUE_PAIR_NAME = getField(Annotation.class, "memberValuePairName");
@@ -1628,7 +1628,7 @@ public class EclipseHandlerUtil {
         }
     }
 
-    /* JADX INFO: loaded from: app.apk:lombok/eclipse/handlers/EclipseHandlerUtil$GetterMethod.SCL.lombok */
+    /* JADX INFO: loaded from: discord-126021.apk:lombok/eclipse/handlers/EclipseHandlerUtil$GetterMethod.SCL.lombok */
     private static class GetterMethod {
         private final char[] name;
         private final TypeReference type;
@@ -2743,7 +2743,7 @@ public class EclipseHandlerUtil {
         return null;
     }
 
-    /* JADX INFO: loaded from: app.apk:lombok/eclipse/handlers/EclipseHandlerUtil$EclipseOnlyUtil.SCL.lombok */
+    /* JADX INFO: loaded from: discord-126021.apk:lombok/eclipse/handlers/EclipseHandlerUtil$EclipseOnlyUtil.SCL.lombok */
     private static class EclipseOnlyUtil {
         private EclipseOnlyUtil() {
         }
@@ -2803,7 +2803,7 @@ public class EclipseHandlerUtil {
         return sb.toString();
     }
 
-    /* JADX INFO: loaded from: app.apk:lombok/eclipse/handlers/EclipseHandlerUtil$CopyJavadoc.SCL.lombok */
+    /* JADX INFO: loaded from: discord-126021.apk:lombok/eclipse/handlers/EclipseHandlerUtil$CopyJavadoc.SCL.lombok */
     public enum CopyJavadoc {
         VERBATIM { // from class: lombok.eclipse.handlers.EclipseHandlerUtil.CopyJavadoc.1
             @Override // lombok.eclipse.handlers.EclipseHandlerUtil.CopyJavadoc

@@ -11,7 +11,6 @@ import com.discord.stores.StoreRequestedStageChannels;
 import com.discord.stores.StoreStageChannels;
 import com.discord.stores.StoreStageInstances;
 import com.discord.stores.StoreUser;
-import com.discord.widgets.chat.list.adapter.WidgetChatListAdapterItemStageInvite;
 import com.discord.widgets.chat.list.entries.StageInviteEntry;
 import com.discord.widgets.stage.StageRoles;
 import java.util.List;

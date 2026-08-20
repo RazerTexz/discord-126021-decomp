@@ -5,8 +5,6 @@ import com.discord.api.guildjoinrequest.GuildJoinRequest;
 import com.discord.models.domain.ModelNotificationSettings;
 import com.discord.models.guild.Guild;
 import com.discord.stores.StoreGuildsSorted;
-import com.discord.widgets.guilds.list.GuildListItem;
-import com.discord.widgets.guilds.list.WidgetGuildsListViewModel;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;

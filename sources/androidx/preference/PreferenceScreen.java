@@ -4,7 +4,6 @@ import android.content.Context;
 import android.util.AttributeSet;
 import androidx.annotation.RestrictTo;
 import androidx.core.content.res.TypedArrayUtils;
-import androidx.preference.PreferenceManager;
 
 /* JADX INFO: loaded from: classes.dex */
 public final class PreferenceScreen extends PreferenceGroup {

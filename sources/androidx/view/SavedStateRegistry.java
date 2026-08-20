@@ -6,10 +6,6 @@ import androidx.annotation.MainThread;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.arch.core.internal.SafeIterableMap;
-import androidx.view.GenericLifecycleObserver;
-import androidx.view.Lifecycle;
-import androidx.view.LifecycleOwner;
-import androidx.view.Recreator;
 import java.util.Map;
 import p007b.p100d.p104b.p105a.C1643a;
 

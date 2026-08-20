@@ -28,7 +28,6 @@ import com.discord.utilities.mg_recycler.MGRecyclerViewHolder;
 import com.discord.utilities.p501rx.ObservableExtensionsKt;
 import com.discord.utilities.viewbinding.FragmentViewBindingDelegate;
 import com.discord.utilities.viewbinding.FragmentViewBindingDelegateKt;
-import com.discord.widgets.guilds.WidgetGuildSelector;
 import com.facebook.drawee.view.SimpleDraweeView;
 import java.io.Serializable;
 import java.util.ArrayList;

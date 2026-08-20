@@ -1,7 +1,6 @@
 package com.discord.widgets.user.search;
 
 import com.discord.api.channel.Channel;
-import com.discord.widgets.user.search.WidgetGlobalSearchGuildsModel;
 import java.util.Map;
 import kotlin.jvm.functions.Function1;
 import p007b.p100d.p104b.p105a.C1643a;

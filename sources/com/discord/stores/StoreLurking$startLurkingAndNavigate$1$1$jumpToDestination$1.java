@@ -1,6 +1,5 @@
 package com.discord.stores;
 
-import com.discord.stores.StoreLurking;
 import com.discord.utilities.channel.ChannelSelector;
 import kotlin.Unit;
 import kotlin.jvm.functions.Function0;

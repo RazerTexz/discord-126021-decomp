@@ -4,7 +4,6 @@ import android.net.Uri;
 import androidx.core.app.NotificationCompat;
 import com.adjust.sdk.Constants;
 import com.discord.stores.StoreUserSettingsSystem;
-import com.discord.utilities.analytics.AnalyticsUtils;
 import com.discord.utilities.persister.Persister;
 import com.discord.utilities.time.Clock;
 import java.util.Map;

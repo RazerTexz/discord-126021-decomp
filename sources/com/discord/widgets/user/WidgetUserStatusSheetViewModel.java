@@ -16,7 +16,6 @@ import com.discord.utilities.error.Error;
 import com.discord.utilities.p501rx.ObservableExtensionsKt;
 import com.discord.utilities.presence.PresenceUtils;
 import com.discord.utilities.rest.RestAPI;
-import com.discord.widgets.user.WidgetUserStatusSheetViewModel;
 import com.discord.widgets.user.profile.UserStatusPresenceCustomView;
 import java.util.Map;
 import kotlin.Unit;

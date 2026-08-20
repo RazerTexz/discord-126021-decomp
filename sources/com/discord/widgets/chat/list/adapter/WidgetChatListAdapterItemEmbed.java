@@ -63,8 +63,6 @@ import com.discord.utilities.view.text.SimpleDraweeSpanTextView;
 import com.discord.widgets.chat.input.MentionUtilsKt;
 import com.discord.widgets.chat.list.FragmentLifecycleListener;
 import com.discord.widgets.chat.list.InlineMediaView;
-import com.discord.widgets.chat.list.adapter.WidgetChatListAdapter;
-import com.discord.widgets.chat.list.adapter.WidgetChatListAdapterItemEmbed;
 import com.discord.widgets.chat.list.entries.ChatListEntry;
 import com.discord.widgets.chat.list.entries.EmbedEntry;
 import com.discord.widgets.media.WidgetMedia;

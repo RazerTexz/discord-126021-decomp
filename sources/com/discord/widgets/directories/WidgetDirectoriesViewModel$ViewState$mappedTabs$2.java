@@ -3,7 +3,6 @@ package com.discord.widgets.directories;
 import com.discord.api.channel.Channel;
 import com.discord.api.channel.ChannelUtils;
 import com.discord.models.hubs.DirectoryEntryCategory;
-import com.discord.widgets.directories.WidgetDirectoriesViewModel;
 import java.util.Collection;
 import java.util.Iterator;
 import java.util.LinkedHashMap;

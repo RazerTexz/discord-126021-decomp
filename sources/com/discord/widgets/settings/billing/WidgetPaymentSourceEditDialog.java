@@ -33,8 +33,6 @@ import com.discord.utilities.view.validators.ValidationManager;
 import com.discord.utilities.viewbinding.FragmentViewBindingDelegate;
 import com.discord.utilities.viewbinding.FragmentViewBindingDelegateKt;
 import com.discord.widgets.notice.WidgetNoticeDialog;
-import com.discord.widgets.settings.billing.PaymentSourceAdapter;
-import com.discord.widgets.settings.billing.SettingsBillingViewModel;
 import com.google.android.material.button.MaterialButton;
 import com.google.android.material.textfield.TextInputLayout;
 import java.util.ArrayList;

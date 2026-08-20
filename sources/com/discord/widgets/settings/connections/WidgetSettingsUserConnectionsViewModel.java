@@ -9,7 +9,6 @@ import com.discord.stores.StoreUserConnections;
 import com.discord.utilities.error.Error;
 import com.discord.utilities.p501rx.ObservableExtensionsKt;
 import com.discord.utilities.rest.RestAPI;
-import com.discord.widgets.settings.connections.WidgetSettingsUserConnectionsViewModel;
 import java.util.ArrayList;
 import java.util.LinkedHashMap;
 import java.util.List;

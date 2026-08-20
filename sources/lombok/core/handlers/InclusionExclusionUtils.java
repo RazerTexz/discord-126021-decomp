@@ -13,7 +13,7 @@ import lombok.core.AST;
 import lombok.core.AnnotationValues;
 import lombok.core.LombokNode;
 
-/* JADX INFO: loaded from: app.apk:lombok/core/handlers/InclusionExclusionUtils.SCL.lombok */
+/* JADX INFO: loaded from: discord-126021.apk:lombok/core/handlers/InclusionExclusionUtils.SCL.lombok */
 public class InclusionExclusionUtils {
     private static List<Integer> createListOfNonExistentFields(List<String> list, LombokNode<?, ?, ?> type, boolean excludeStandard, boolean excludeTransient) {
         boolean[] matched = new boolean[list.size()];
@@ -60,7 +60,7 @@ public class InclusionExclusionUtils {
         }
     }
 
-    /* JADX INFO: loaded from: app.apk:lombok/core/handlers/InclusionExclusionUtils$Included.SCL.lombok */
+    /* JADX INFO: loaded from: discord-126021.apk:lombok/core/handlers/InclusionExclusionUtils$Included.SCL.lombok */
     public static class Included<L, I extends Annotation> {
         private final L node;
         private final I inc;

@@ -11,7 +11,7 @@ import lombok.javac.JavacTreeMaker;
 import lombok.javac.handlers.JavacHandlerUtil;
 import lombok.javac.handlers.JavacSingularsRecipes;
 
-/* JADX INFO: loaded from: app.apk:lombok/javac/handlers/singulars/JavacJavaUtilSingularizer.SCL.lombok */
+/* JADX INFO: loaded from: discord-126021.apk:lombok/javac/handlers/singulars/JavacJavaUtilSingularizer.SCL.lombok */
 abstract class JavacJavaUtilSingularizer extends JavacSingularsRecipes.JavacSingularizer {
     JavacJavaUtilSingularizer() {
     }

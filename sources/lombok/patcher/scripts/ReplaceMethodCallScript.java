@@ -12,7 +12,7 @@ import org.objectweb.asm.ClassWriter;
 import org.objectweb.asm.MethodVisitor;
 import org.objectweb.asm.Opcodes;
 
-/* JADX INFO: loaded from: app.apk:lombok/patcher/scripts/ReplaceMethodCallScript.SCL.lombok */
+/* JADX INFO: loaded from: discord-126021.apk:lombok/patcher/scripts/ReplaceMethodCallScript.SCL.lombok */
 public class ReplaceMethodCallScript extends MethodLevelPatchScript {
     private final Hook wrapper;
     private final Hook methodToReplace;
@@ -62,7 +62,7 @@ public class ReplaceMethodCallScript extends MethodLevelPatchScript {
         return patcher;
     }
 
-    /* JADX INFO: loaded from: app.apk:lombok/patcher/scripts/ReplaceMethodCallScript$ReplaceMethodCall.SCL.lombok */
+    /* JADX INFO: loaded from: discord-126021.apk:lombok/patcher/scripts/ReplaceMethodCallScript$ReplaceMethodCall.SCL.lombok */
     private class ReplaceMethodCall extends MethodVisitor {
         private final String ownClassSpec;
         private final MethodLogistics logistics;

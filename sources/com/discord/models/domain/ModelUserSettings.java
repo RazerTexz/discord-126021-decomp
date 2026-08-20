@@ -3,8 +3,6 @@ package com.discord.models.domain;
 import android.text.TextUtils;
 import com.discord.api.presence.ClientStatus;
 import com.discord.models.deserialization.gson.InboundGatewayGsonParser;
-import com.discord.models.domain.Model;
-import com.discord.models.domain.ModelCustomStatusSetting;
 import com.discord.models.domain.ModelGuildFolder;
 import java.io.IOException;
 import java.util.ArrayList;

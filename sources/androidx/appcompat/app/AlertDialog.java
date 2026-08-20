@@ -23,7 +23,6 @@ import androidx.annotation.RestrictTo;
 import androidx.annotation.StringRes;
 import androidx.annotation.StyleRes;
 import androidx.appcompat.C0051R;
-import androidx.appcompat.app.AlertController;
 
 /* JADX INFO: loaded from: classes.dex */
 public class AlertDialog extends AppCompatDialog implements DialogInterface {

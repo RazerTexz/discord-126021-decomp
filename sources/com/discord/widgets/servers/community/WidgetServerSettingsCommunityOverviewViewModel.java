@@ -17,7 +17,6 @@ import com.discord.utilities.error.Error;
 import com.discord.utilities.p501rx.ObservableExtensionsKt;
 import com.discord.utilities.permissions.PermissionUtils;
 import com.discord.utilities.rest.RestAPI;
-import com.discord.widgets.servers.community.WidgetServerSettingsCommunityOverviewViewModel;
 import java.util.List;
 import kotlin.Unit;
 import kotlin.jvm.functions.Function0;

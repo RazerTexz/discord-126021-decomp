@@ -436,7 +436,7 @@ public final class NotificationData {
     private final CharSequence resNameToString(Context context, String resourceName, String fallback) {
         Resources resources = context.getResources();
         int identifier = resources != null ? resources.getIdentifier(resourceName, "string", context.getPackageName()) : 0;
-        return identifier == 0 ? fallback : C1107b.m210b(context, identifier, new Object[0], (4 & 4) != 0 ? C1107b.b.f1491j : null);
+        return identifier == 0 ? fallback : C1107b.m216h(context, identifier, new Object[0], null, 4);
     }
 
     public static /* synthetic */ CharSequence resNameToString$default(NotificationData notificationData, Context context, String str, String str2, int i, Object obj) {
@@ -509,7 +509,7 @@ public final class NotificationData {
         int iIntValue = ((Number) pairM10073to.component1()).intValue();
         int iIntValue2 = ((Number) pairM10073to.component2()).intValue();
         StringBuilder sbM833U = C1643a.m833U("**");
-        sbM833U.append(C1107b.m210b(ctx, iIntValue, new Object[0], (4 & 4) != 0 ? C1107b.b.f1491j : null));
+        sbM833U.append(C1107b.m216h(ctx, iIntValue, new Object[0], null, 4));
         sbM833U.append("**");
         return new NotificationCompat.Action.Builder(isAcceptAction ? C5419R.drawable.ic_call_24dp : C5419R.drawable.ic_call_disconnect_24dp, C1107b.m215g(sbM833U.toString(), new Object[0], new NotificationData$getCallAction$coloredString$1(ctx, iIntValue2)), broadcast).build();
     }
@@ -544,26 +544,26 @@ public final class NotificationData {
                 }
                 int iOrdinal = guildScheduledEventEntityType.ordinal();
                 if (iOrdinal == 1 || iOrdinal == 2) {
-                    return C1107b.m210b(context, C5419R.string.guild_scheduled_event_stage_start_body, new Object[]{this.stageInstanceTopic, this.userUsername}, (4 & 4) != 0 ? C1107b.b.f1491j : null);
+                    return C1107b.m216h(context, C5419R.string.guild_scheduled_event_stage_start_body, new Object[]{this.stageInstanceTopic, this.userUsername}, null, 4);
                 }
-                return iOrdinal != 3 ? "" : C1107b.m210b(context, C5419R.string.guild_scheduled_event_external_start_body, new Object[]{this.stageInstanceTopic}, (4 & 4) != 0 ? C1107b.b.f1491j : null);
+                return iOrdinal != 3 ? "" : C1107b.m216h(context, C5419R.string.guild_scheduled_event_external_start_body, new Object[]{this.stageInstanceTopic}, null, 4);
             case -1327124998:
                 if (!str.equals(TYPE_RELATIONSHIP_ADD)) {
                     return "";
                 }
                 int i = this.relationshipType;
                 if (i != 1) {
-                    return i != 3 ? "" : C1107b.m210b(context, C5419R.string.notification_pending_friend_request, new Object[0], (4 & 4) != 0 ? C1107b.b.f1491j : null);
+                    return i != 3 ? "" : C1107b.m216h(context, C5419R.string.notification_pending_friend_request, new Object[0], null, 4);
                 }
-                return C1107b.m210b(context, C5419R.string.notification_accepted_friend_request, new Object[0], (4 & 4) != 0 ? C1107b.b.f1491j : null);
+                return C1107b.m216h(context, C5419R.string.notification_accepted_friend_request, new Object[0], null, 4);
             case -1263316859:
-                return str.equals(TYPE_STAGE_INSTANCE_CREATE) ? C1107b.m210b(context, C5419R.string.stage_start_push_notification_body, new Object[]{this.userUsername, this.stageInstanceTopic}, (4 & 4) != 0 ? C1107b.b.f1491j : null) : "";
+                return str.equals(TYPE_STAGE_INSTANCE_CREATE) ? C1107b.m216h(context, C5419R.string.stage_start_push_notification_body, new Object[]{this.userUsername, this.stageInstanceTopic}, null, 4) : "";
             case -1237752112:
-                return str.equals(TYPE_APPLICATION_LIBRARY_INSTALL_COMPLETE) ? C1107b.m210b(context, C5419R.string.game_library_notification_game_installed_body, new Object[]{this.applicationName}, (4 & 4) != 0 ? C1107b.b.f1491j : null) : "";
+                return str.equals(TYPE_APPLICATION_LIBRARY_INSTALL_COMPLETE) ? C1107b.m216h(context, C5419R.string.game_library_notification_game_installed_body, new Object[]{this.applicationName}, null, 4) : "";
             case -437641071:
-                return str.equals(TYPE_FORUM_THREAD_CREATED) ? C1107b.m210b(context, C5419R.string.forum_channel_thread_created_push_body_mobile, new Object[]{this.channel.getName(), this.userUsername}, (4 & 4) != 0 ? C1107b.b.f1491j : null) : "";
+                return str.equals(TYPE_FORUM_THREAD_CREATED) ? C1107b.m216h(context, C5419R.string.forum_channel_thread_created_push_body_mobile, new Object[]{this.channel.getName(), this.userUsername}, null, 4) : "";
             case 974015250:
-                return (str.equals(TYPE_ACTIVITY_START) && this.activityType == 0) ? C1107b.m210b(context, C5419R.string.notification_body_start_game, new Object[]{this.userUsername, this.activityName}, (4 & 4) != 0 ? C1107b.b.f1491j : null) : "";
+                return (str.equals(TYPE_ACTIVITY_START) && this.activityType == 0) ? C1107b.m216h(context, C5419R.string.notification_body_start_game, new Object[]{this.userUsername, this.activityName}, null, 4) : "";
             case 998188116:
                 if (!str.equals(TYPE_MESSAGE_CREATE)) {
                     return "";
@@ -588,11 +588,11 @@ public final class NotificationData {
                         }
                     }
                     if (this.messageActivityType == MessageActivityType.JOIN) {
-                        return C1107b.m210b(context, C5419R.string.notification_message_create_dm_activity_join, new Object[]{this.userUsername, this.messageApplicationName}, (4 & 4) != 0 ? C1107b.b.f1491j : null);
+                        return C1107b.m216h(context, C5419R.string.notification_message_create_dm_activity_join, new Object[]{this.userUsername, this.messageApplicationName}, null, 4);
                     }
                     Sticker sticker = this.sticker;
                     if (sticker != null) {
-                        return C1107b.m210b(context, C5419R.string.sticker_notification_body, new Object[]{sticker.getName()}, (4 & 4) != 0 ? C1107b.b.f1491j : null);
+                        return C1107b.m216h(context, C5419R.string.sticker_notification_body, new Object[]{sticker.getName()}, null, 4);
                     }
                     String str4 = this.messageContent;
                     if (str4 != null) {
@@ -602,14 +602,14 @@ public final class NotificationData {
                     return null;
                 }
                 if (this.messageType == 7) {
-                    return C1107b.m210b(context, MessageUtils.INSTANCE.getSystemMessageUserJoin(context, this.messageId), new Object[]{this.userUsername}, (4 & 4) != 0 ? C1107b.b.f1491j : null);
+                    return C1107b.m216h(context, MessageUtils.INSTANCE.getSystemMessageUserJoin(context, this.messageId), new Object[]{this.userUsername}, null, 4);
                 }
                 if (this.messageActivityType == MessageActivityType.JOIN) {
-                    return C1107b.m210b(context, C5419R.string.notification_message_create_guild_activity_join, new Object[]{this.userUsername, this.messageApplicationName}, (4 & 4) != 0 ? C1107b.b.f1491j : null);
+                    return C1107b.m216h(context, C5419R.string.notification_message_create_guild_activity_join, new Object[]{this.userUsername, this.messageApplicationName}, null, 4);
                 }
                 Sticker sticker2 = this.sticker;
                 if (sticker2 != null) {
-                    return C1107b.m210b(context, C5419R.string.sticker_notification_body, new Object[]{sticker2.getName()}, (4 & 4) != 0 ? C1107b.b.f1491j : null);
+                    return C1107b.m216h(context, C5419R.string.sticker_notification_body, new Object[]{sticker2.getName()}, null, 4);
                 }
                 String str5 = this.messageContent;
                 if (str5 != null) {
@@ -618,7 +618,7 @@ public final class NotificationData {
                 }
                 return null;
             case 1770025841:
-                return str.equals(TYPE_CALL_RING) ? C1107b.m215g(C1107b.m210b(context, C5419R.string.overlay_friend_calling, new Object[]{C1643a.m822J(C1643a.m833U("**"), this.userUsername, "**")}, (4 & 4) != 0 ? C1107b.b.f1491j : null), new Object[0], (2 & 2) != 0 ? C1107b.e.f1494j : null) : "";
+                return str.equals(TYPE_CALL_RING) ? C1107b.m215g(C1107b.m216h(context, C5419R.string.overlay_friend_calling, new Object[]{C1643a.m822J(C1643a.m833U("**"), this.userUsername, "**")}, null, 4), new Object[0], (2 & 2) != 0 ? C1107b.e.f1494j : null) : "";
             default:
                 return "";
         }
@@ -686,9 +686,9 @@ public final class NotificationData {
         if ((!C12238m.areEqual(this.type, TYPE_MESSAGE_CREATE)) || deniedChannels.contains(Long.valueOf(this.channel.getId()))) {
             return null;
         }
-        RemoteInput remoteInputBuild = new RemoteInput.Builder("discord_notif_text_input").setLabel(C1107b.m210b(ctx, C5419R.string.send_message, new Object[0], (4 & 4) != 0 ? C1107b.b.f1491j : null)).build();
+        RemoteInput remoteInputBuild = new RemoteInput.Builder("discord_notif_text_input").setLabel(C1107b.m216h(ctx, C5419R.string.send_message, new Object[0], null, 4)).build();
         C12238m.checkNotNullExpressionValue(remoteInputBuild, "RemoteInput.Builder(Inte…essage))\n        .build()");
-        return new NotificationCompat.Action.Builder(C5419R.drawable.ic_send_white_24dp, C1107b.m210b(ctx, C5419R.string.notification_reply, new Object[0], (4 & 4) != 0 ? C1107b.b.f1491j : null), PendingIntent.getBroadcast(ctx, (int) this.channel.getId(), addTrackingData(NotificationActions.INSTANCE.directReply(ctx, this.channel.getId(), getTitle(ctx))), PendingIntentExtensionsKt.mutablePendingIntentFlag(134217728))).addRemoteInput(remoteInputBuild).setAllowGeneratedReplies(true).build();
+        return new NotificationCompat.Action.Builder(C5419R.drawable.ic_send_white_24dp, C1107b.m216h(ctx, C5419R.string.notification_reply, new Object[0], null, 4), PendingIntent.getBroadcast(ctx, (int) this.channel.getId(), addTrackingData(NotificationActions.INSTANCE.directReply(ctx, this.channel.getId(), getTitle(ctx))), PendingIntentExtensionsKt.mutablePendingIntentFlag(134217728))).addRemoteInput(remoteInputBuild).setAllowGeneratedReplies(true).build();
     }
 
     @SuppressLint({"UnspecifiedImmutableFlag"})
@@ -872,7 +872,7 @@ public final class NotificationData {
         if (!C12238m.areEqual(this.type, TYPE_MESSAGE_CREATE)) {
             return null;
         }
-        return new NotificationCompat.Action.Builder(C5419R.drawable.ic_check_grey_24dp, C1107b.m210b(ctx, C5419R.string.mark_as_read, new Object[0], (4 & 4) != 0 ? C1107b.b.f1491j : null), PendingIntent.getBroadcast(ctx, 0, addTrackingData(NotificationActions.INSTANCE.markAsRead(ctx, this.channel.getId(), this.messageId)), PendingIntentExtensionsKt.immutablePendingIntentFlag$default(0, 1, null))).build();
+        return new NotificationCompat.Action.Builder(C5419R.drawable.ic_check_grey_24dp, C1107b.m216h(ctx, C5419R.string.mark_as_read, new Object[0], null, 4), PendingIntent.getBroadcast(ctx, 0, addTrackingData(NotificationActions.INSTANCE.markAsRead(ctx, this.channel.getId(), this.messageId)), PendingIntentExtensionsKt.immutablePendingIntentFlag$default(0, 1, null))).build();
     }
 
     public final long getMessageId() {
@@ -1002,16 +1002,16 @@ public final class NotificationData {
         MessageActivityType messageActivityType;
         C12238m.checkNotNullParameter(context, "context");
         IconCompat iconCompatCreateWithContentUri = null;
-        CharSequence charSequenceM210b = (!C12238m.areEqual(this.type, TYPE_MESSAGE_CREATE) || this.messageType == 7 || (messageActivityType = this.messageActivityType) == MessageActivityType.SPECTATE || messageActivityType == MessageActivityType.JOIN) ? C1107b.m210b(context, C5419R.string.discord, new Object[0], (4 & 4) != 0 ? C1107b.b.f1491j : null) : this.userUsername;
+        CharSequence charSequenceM216h = (!C12238m.areEqual(this.type, TYPE_MESSAGE_CREATE) || this.messageType == 7 || (messageActivityType = this.messageActivityType) == MessageActivityType.SPECTATE || messageActivityType == MessageActivityType.JOIN) ? C1107b.m216h(context, C5419R.string.discord, new Object[0], null, 4) : this.userUsername;
         String strValueOf = String.valueOf(this.userId);
         String str = this.subtitle;
-        if (str != null && charSequenceM210b != null) {
+        if (str != null && charSequenceM216h != null) {
             if (this.messageType != 19 || str.length() <= 11) {
                 StringBuilder sbM833U = C1643a.m833U("<b>");
-                sbM833U.append(Html.escapeHtml(charSequenceM210b));
+                sbM833U.append(Html.escapeHtml(charSequenceM216h));
                 sbM833U.append("</b> ");
                 sbM833U.append(Html.escapeHtml(this.subtitle));
-                charSequenceM210b = Html.fromHtml(sbM833U.toString());
+                charSequenceM216h = Html.fromHtml(sbM833U.toString());
             } else {
                 String str2 = this.subtitle;
                 Objects.requireNonNull(str2, "null cannot be cast to non-null type java.lang.String");
@@ -1019,7 +1019,7 @@ public final class NotificationData {
                 C12238m.checkNotNullExpressionValue(strSubstring, "(this as java.lang.Strin…ing(startIndex, endIndex)");
                 if (C12238m.areEqual(strSubstring, REPLYING_TO_UNTRANSLATED)) {
                     StringBuilder sbM833U2 = C1643a.m833U("<b>");
-                    sbM833U2.append(Html.escapeHtml(charSequenceM210b));
+                    sbM833U2.append(Html.escapeHtml(charSequenceM216h));
                     sbM833U2.append("</b> ");
                     String str3 = this.subtitle;
                     Objects.requireNonNull(str3, "null cannot be cast to non-null type java.lang.String");
@@ -1033,13 +1033,13 @@ public final class NotificationData {
                     C12238m.checkNotNullExpressionValue(strSubstring3, "(this as java.lang.String).substring(startIndex)");
                     sbM833U2.append(Html.escapeHtml(strSubstring3));
                     sbM833U2.append("</b>");
-                    charSequenceM210b = Html.fromHtml(sbM833U2.toString());
+                    charSequenceM216h = Html.fromHtml(sbM833U2.toString());
                 } else {
                     StringBuilder sbM833U3 = C1643a.m833U("<b>");
-                    sbM833U3.append(Html.escapeHtml(charSequenceM210b));
+                    sbM833U3.append(Html.escapeHtml(charSequenceM216h));
                     sbM833U3.append("</b> ");
                     sbM833U3.append(Html.escapeHtml(this.subtitle));
-                    charSequenceM210b = Html.fromHtml(sbM833U3.toString());
+                    charSequenceM216h = Html.fromHtml(sbM833U3.toString());
                 }
             }
             StringBuilder sbM833U4 = C1643a.m833U(strValueOf);
@@ -1050,7 +1050,7 @@ public final class NotificationData {
         if (forUser$default != null && (strReplaceAfterLast$default = C12106w.replaceAfterLast$default(forUser$default, '.', "jpg", null, 4, null)) != null) {
             iconCompatCreateWithContentUri = IconCompat.createWithContentUri(strReplaceAfterLast$default);
         }
-        Person personBuild = new Person.Builder().setName(charSequenceM210b).setKey(strValueOf).setIcon(iconCompatCreateWithContentUri).setImportant(this.relationshipType == 1).build();
+        Person personBuild = new Person.Builder().setName(charSequenceM216h).setKey(strValueOf).setIcon(iconCompatCreateWithContentUri).setImportant(this.relationshipType == 1).build();
         C12238m.checkNotNullExpressionValue(personBuild, "Person.Builder()\n       …_FRIEND)\n        .build()");
         return personBuild;
     }
@@ -1122,7 +1122,7 @@ public final class NotificationData {
         if ((!C12238m.areEqual(this.type, TYPE_MESSAGE_CREATE)) || numMessages < 2) {
             return null;
         }
-        return new NotificationCompat.Action.Builder(C5419R.drawable.ic_notifications_off_grey_24dp, C1107b.m210b(ctx, C5419R.string.notification_mute_1_hour, new Object[0], (4 & 4) != 0 ? C1107b.b.f1491j : null), PendingIntent.getBroadcast(ctx, 0, addTrackingData(NotificationActions.INSTANCE.timedMute(ctx, this.guildId, this.channel.getId(), clock.currentTimeMillis() + 3600000)), PendingIntentExtensionsKt.immutablePendingIntentFlag$default(0, 1, null))).build();
+        return new NotificationCompat.Action.Builder(C5419R.drawable.ic_notifications_off_grey_24dp, C1107b.m216h(ctx, C5419R.string.notification_mute_1_hour, new Object[0], null, 4), PendingIntent.getBroadcast(ctx, 0, addTrackingData(NotificationActions.INSTANCE.timedMute(ctx, this.guildId, this.channel.getId(), clock.currentTimeMillis() + 3600000)), PendingIntentExtensionsKt.immutablePendingIntentFlag$default(0, 1, null))).build();
     }
 
     public final CharSequence getTitle(Context context) {
@@ -1150,7 +1150,7 @@ public final class NotificationData {
                     return "";
                 }
                 int iOrdinal = guildScheduledEventEntityType.ordinal();
-                return (iOrdinal == 1 || iOrdinal == 2 || iOrdinal == 3) ? C1107b.m210b(context, C5419R.string.guild_scheduled_event_stage_start_title, new Object[]{this.guildName}, (4 & 4) != 0 ? C1107b.b.f1491j : null) : "";
+                return (iOrdinal == 1 || iOrdinal == 2 || iOrdinal == 3) ? C1107b.m216h(context, C5419R.string.guild_scheduled_event_stage_start_title, new Object[]{this.guildName}, null, 4) : "";
             case -1327124998:
                 if (!str2.equals(TYPE_RELATIONSHIP_ADD)) {
                     return "";
@@ -1160,9 +1160,9 @@ public final class NotificationData {
                 }
                 break;
             case -1263316859:
-                return str2.equals(TYPE_STAGE_INSTANCE_CREATE) ? C1107b.m210b(context, C5419R.string.stage_start_push_notification_title, new Object[]{this.guildName}, (4 & 4) != 0 ? C1107b.b.f1491j : null) : "";
+                return str2.equals(TYPE_STAGE_INSTANCE_CREATE) ? C1107b.m216h(context, C5419R.string.stage_start_push_notification_title, new Object[]{this.guildName}, null, 4) : "";
             case -1237752112:
-                return str2.equals(TYPE_APPLICATION_LIBRARY_INSTALL_COMPLETE) ? C1107b.m210b(context, C5419R.string.game_library_notification_game_installed_title, new Object[0], (4 & 4) != 0 ? C1107b.b.f1491j : null) : "";
+                return str2.equals(TYPE_APPLICATION_LIBRARY_INSTALL_COMPLETE) ? C1107b.m216h(context, C5419R.string.game_library_notification_game_installed_title, new Object[0], null, 4) : "";
             case -437641071:
                 if (!str2.equals(TYPE_FORUM_THREAD_CREATED)) {
                     return "";
@@ -1171,9 +1171,9 @@ public final class NotificationData {
                 objArr[0] = this.guildName;
                 Channel channel = this.parentChannel;
                 objArr[1] = channel != null ? channel.getName() : null;
-                return C1107b.m210b(context, C5419R.string.forum_channel_thread_created_push_title_mobile, objArr, (4 & 4) != 0 ? C1107b.b.f1491j : null);
+                return C1107b.m216h(context, C5419R.string.forum_channel_thread_created_push_title_mobile, objArr, null, 4);
             case 974015250:
-                return (str2.equals(TYPE_ACTIVITY_START) && this.activityType == 0) ? C1107b.m210b(context, C5419R.string.notification_title_start_game, new Object[0], (4 & 4) != 0 ? C1107b.b.f1491j : null) : "";
+                return (str2.equals(TYPE_ACTIVITY_START) && this.activityType == 0) ? C1107b.m216h(context, C5419R.string.notification_title_start_game, new Object[0], null, 4) : "";
             case 998188116:
                 if (!str2.equals(TYPE_MESSAGE_CREATE)) {
                     return "";
@@ -1204,7 +1204,7 @@ public final class NotificationData {
                 return C1107b.m215g(this.guildName + " _" + ChannelUtils.m7681e(this.channel, context, false, 2) + '_', new Object[0], (2 & 2) != 0 ? C1107b.e.f1494j : null);
             case 1770025841:
                 if (str2.equals(TYPE_CALL_RING)) {
-                    return this.channel.getType() != 1 ? ChannelUtils.m7679c(this.channel) : C1107b.m210b(context, C5419R.string.incoming_call, new Object[0], (4 & 4) != 0 ? C1107b.b.f1491j : null);
+                    return this.channel.getType() != 1 ? ChannelUtils.m7679c(this.channel) : C1107b.m216h(context, C5419R.string.incoming_call, new Object[0], null, 4);
                 }
                 return "";
             default:

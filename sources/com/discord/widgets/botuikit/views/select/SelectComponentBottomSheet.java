@@ -17,7 +17,6 @@ import com.discord.utilities.view.extensions.ViewExtensions;
 import com.discord.utilities.view.recycler.MaxHeightRecyclerView;
 import com.discord.utilities.viewbinding.FragmentViewBindingDelegate;
 import com.discord.utilities.viewbinding.FragmentViewBindingDelegateKt;
-import com.discord.widgets.botuikit.views.select.SelectComponentBottomSheetViewModel;
 import java.util.List;
 import kotlin.Lazy;
 import kotlin.Unit;

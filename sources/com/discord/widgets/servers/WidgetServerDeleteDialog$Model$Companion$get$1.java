@@ -2,7 +2,6 @@ package com.discord.widgets.servers;
 
 import com.discord.models.guild.Guild;
 import com.discord.models.user.MeUser;
-import com.discord.widgets.servers.WidgetServerDeleteDialog;
 import kotlin.jvm.functions.Function2;
 import p507d0.p592z.p594d.C12236k;
 import p507d0.p592z.p594d.C12238m;

@@ -5,7 +5,6 @@ import com.discord.models.domain.emoji.Emoji;
 import com.discord.models.domain.emoji.ModelEmojiCustom;
 import com.discord.models.domain.emoji.ModelEmojiUnicode;
 import com.discord.utilities.textprocessing.node.EmojiNode;
-import com.discord.widgets.chat.input.emoji.WidgetEmojiAdapter;
 import com.discord.widgets.emoji.WidgetEmojiSheet;
 import kotlin.Unit;
 import kotlin.jvm.functions.Function1;

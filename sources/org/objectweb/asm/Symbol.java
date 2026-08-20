@@ -1,6 +1,6 @@
 package org.objectweb.asm;
 
-/* JADX INFO: loaded from: app.apk:org/objectweb/asm/Symbol.SCL.lombok */
+/* JADX INFO: loaded from: discord-126021.apk:org/objectweb/asm/Symbol.SCL.lombok */
 abstract class Symbol {
     static final int CONSTANT_CLASS_TAG = 7;
     static final int CONSTANT_FIELDREF_TAG = 9;

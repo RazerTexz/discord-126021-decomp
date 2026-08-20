@@ -2,7 +2,6 @@ package com.discord.simpleast.core.node;
 
 import android.text.SpannableStringBuilder;
 import androidx.exifinterface.media.ExifInterface;
-import com.discord.simpleast.core.node.Node;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Objects;

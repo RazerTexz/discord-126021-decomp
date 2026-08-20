@@ -10,8 +10,6 @@ import com.discord.stores.StoreUserRelationships;
 import com.discord.utilities.error.Error;
 import com.discord.utilities.p501rx.ObservableExtensionsKt;
 import com.discord.utilities.user.UserUtils;
-import com.discord.widgets.channels.invite.GroupInviteFriendsSheetAdapter;
-import com.discord.widgets.channels.invite.GroupInviteFriendsSheetViewModel;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.HashSet;

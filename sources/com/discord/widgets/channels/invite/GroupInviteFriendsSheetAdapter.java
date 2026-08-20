@@ -14,7 +14,6 @@ import com.discord.utilities.icon.IconUtils;
 import com.discord.utilities.mg_recycler.MGRecyclerAdapterSimple;
 import com.discord.utilities.mg_recycler.MGRecyclerDataPayload;
 import com.discord.utilities.mg_recycler.MGRecyclerViewHolder;
-import com.discord.widgets.channels.invite.GroupInviteFriendsSheetAdapter;
 import com.facebook.drawee.view.SimpleDraweeView;
 import com.google.android.material.checkbox.MaterialCheckBox;
 import java.util.ArrayList;

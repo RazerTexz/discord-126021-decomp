@@ -11,7 +11,6 @@ import com.discord.models.domain.emoji.ModelEmojiCustom;
 import com.discord.stores.StoreStream;
 import com.discord.utilities.icon.IconUtils;
 import com.discord.utilities.images.MGImages;
-import com.discord.widgets.guilds.join.ChannelItem;
 import com.facebook.drawee.view.SimpleDraweeView;
 import p507d0.p592z.p594d.C12238m;
 

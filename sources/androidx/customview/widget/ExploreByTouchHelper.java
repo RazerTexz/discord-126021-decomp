@@ -18,7 +18,6 @@ import androidx.core.view.accessibility.AccessibilityEventCompat;
 import androidx.core.view.accessibility.AccessibilityNodeInfoCompat;
 import androidx.core.view.accessibility.AccessibilityNodeProviderCompat;
 import androidx.core.view.accessibility.AccessibilityRecordCompat;
-import androidx.customview.widget.FocusStrategy;
 import java.util.ArrayList;
 import java.util.List;
 

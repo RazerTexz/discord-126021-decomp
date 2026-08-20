@@ -11,8 +11,6 @@ import javax.microedition.khronos.egl.EGLConfig;
 import javax.microedition.khronos.egl.EGLContext;
 import javax.microedition.khronos.egl.EGLDisplay;
 import javax.microedition.khronos.egl.EGLSurface;
-import org.webrtc.EglBase;
-import org.webrtc.EglBase10;
 import p007b.p100d.p104b.p105a.C1643a;
 import p617h0.p628c.C12477n0;
 

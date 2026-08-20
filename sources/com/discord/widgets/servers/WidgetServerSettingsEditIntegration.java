@@ -34,8 +34,6 @@ import com.discord.utilities.viewbinding.FragmentViewBindingDelegate;
 import com.discord.utilities.viewbinding.FragmentViewBindingDelegateKt;
 import com.discord.views.CheckedSetting;
 import com.discord.views.RadioManager;
-import com.discord.widgets.servers.WidgetServerSettingsEditIntegration;
-import com.discord.widgets.servers.WidgetServerSettingsEditRole;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;

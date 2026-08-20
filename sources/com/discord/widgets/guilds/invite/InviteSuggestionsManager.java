@@ -10,7 +10,6 @@ import com.discord.stores.StoreStream;
 import com.discord.stores.StoreUser;
 import com.discord.stores.StoreUserAffinities;
 import com.discord.stores.StoreUserRelationships;
-import com.discord.widgets.guilds.invite.InviteSuggestion;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Iterator;

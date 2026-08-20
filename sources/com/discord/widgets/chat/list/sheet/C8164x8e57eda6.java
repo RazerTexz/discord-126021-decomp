@@ -9,7 +9,6 @@ import com.discord.models.member.GuildMember;
 import com.discord.models.user.User;
 import com.discord.utilities.spans.ClickableSpan;
 import com.discord.utilities.textprocessing.FontColorSpan;
-import com.discord.widgets.chat.list.sheet.WidgetApplicationCommandBottomSheetViewModel;
 import com.discord.widgets.user.usersheet.WidgetUserSheet;
 import kotlin.Unit;
 import kotlin.jvm.functions.Function1;

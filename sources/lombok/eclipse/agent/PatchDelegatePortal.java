@@ -4,7 +4,7 @@ import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import lombok.Lombok;
 
-/* JADX INFO: loaded from: app.apk:lombok/eclipse/agent/PatchDelegatePortal.SCL.lombok */
+/* JADX INFO: loaded from: discord-126021.apk:lombok/eclipse/agent/PatchDelegatePortal.SCL.lombok */
 public class PatchDelegatePortal {
     static final String CLASS_SCOPE = "org.eclipse.jdt.internal.compiler.lookup.ClassScope";
     static final String I_JAVA_ELEMENT_ARRAY = "[Lorg.eclipse.jdt.core.IJavaElement;";
@@ -46,7 +46,7 @@ public class PatchDelegatePortal {
         }
     }
 
-    /* JADX INFO: loaded from: app.apk:lombok/eclipse/agent/PatchDelegatePortal$Reflection.SCL.lombok */
+    /* JADX INFO: loaded from: discord-126021.apk:lombok/eclipse/agent/PatchDelegatePortal$Reflection.SCL.lombok */
     private static final class Reflection {
         public static final Method handleDelegateForType;
         public static final Method getChildren;

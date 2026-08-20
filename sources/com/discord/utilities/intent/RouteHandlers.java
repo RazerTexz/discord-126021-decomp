@@ -20,7 +20,6 @@ import com.discord.stores.StoreTabsNavigation;
 import com.discord.utilities.SnowflakeUtils;
 import com.discord.utilities.channel.ChannelSelector;
 import com.discord.utilities.error.Error;
-import com.discord.utilities.intent.StaticChannelRoutes;
 import com.discord.utilities.p501rx.ObservableExtensionsKt;
 import com.discord.widgets.chat.input.MentionUtilsKt;
 import com.discord.widgets.forums.ForumUtils;

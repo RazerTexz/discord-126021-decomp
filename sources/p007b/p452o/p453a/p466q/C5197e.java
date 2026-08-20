@@ -5,7 +5,6 @@ import android.view.ScaleGestureDetector;
 import androidx.annotation.NonNull;
 import com.otaliastudios.cameraview.CameraView;
 import p007b.p100d.p104b.p105a.C1643a;
-import p007b.p452o.p453a.p466q.AbstractC5195c;
 
 /* JADX INFO: renamed from: b.o.a.q.e */
 /* JADX INFO: compiled from: PinchGestureFinder.java */

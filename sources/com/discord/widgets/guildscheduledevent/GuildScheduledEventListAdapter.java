@@ -8,8 +8,6 @@ import com.discord.databinding.GuildScheduledEventListItemBinding;
 import com.discord.models.domain.ModelAuditLogEntry;
 import com.discord.utilities.mg_recycler.MGRecyclerAdapterSimple;
 import com.discord.utilities.mg_recycler.MGRecyclerViewHolder;
-import com.discord.widgets.guildscheduledevent.GuildScheduledEventListAdapter;
-import com.discord.widgets.guildscheduledevent.GuildScheduledEventListItem;
 import java.util.Objects;
 import kotlin.Unit;
 import kotlin.jvm.functions.Function1;

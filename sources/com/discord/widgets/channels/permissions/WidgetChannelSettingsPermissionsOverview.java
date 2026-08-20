@@ -24,8 +24,6 @@ import com.discord.utilities.permissions.PermissionUtils;
 import com.discord.utilities.viewbinding.FragmentViewBindingDelegate;
 import com.discord.utilities.viewbinding.FragmentViewBindingDelegateKt;
 import com.discord.views.segmentedcontrol.SegmentedControlContainer;
-import com.discord.widgets.channels.permissions.WidgetChannelSettingsPermissionsOverview;
-import com.discord.widgets.channels.permissions.WidgetChannelSettingsPermissionsOverviewViewModel;
 import java.util.Map;
 import kotlin.Lazy;
 import kotlin.NoWhenBranchMatchedException;

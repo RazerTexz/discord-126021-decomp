@@ -3,7 +3,6 @@ package com.esotericsoftware.kryo.serializers;
 import com.esotericsoftware.kryo.KryoException;
 import com.esotericsoftware.kryo.p502io.Input;
 import com.esotericsoftware.kryo.p502io.Output;
-import com.esotericsoftware.kryo.serializers.FieldSerializer;
 import p007b.p100d.p104b.p105a.C1643a;
 import p007b.p106e.p108b.AbstractC1647c;
 

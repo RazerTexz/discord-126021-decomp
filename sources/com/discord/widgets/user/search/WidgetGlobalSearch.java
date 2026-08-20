@@ -41,8 +41,6 @@ import com.discord.widgets.friends.WidgetFriendsAdd;
 import com.discord.widgets.guilds.join.WidgetGuildJoin;
 import com.discord.widgets.guilds.profile.WidgetGuildProfileSheet;
 import com.discord.widgets.tabs.NavigationTab;
-import com.discord.widgets.user.search.WidgetGlobalSearchGuildsModel;
-import com.discord.widgets.user.search.WidgetGlobalSearchModel;
 import com.discord.widgets.user.usersheet.WidgetUserSheet;
 import com.google.android.material.textfield.TextInputLayout;
 import java.util.ArrayList;

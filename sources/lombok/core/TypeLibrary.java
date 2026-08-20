@@ -8,7 +8,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-/* JADX INFO: loaded from: app.apk:lombok/core/TypeLibrary.SCL.lombok */
+/* JADX INFO: loaded from: discord-126021.apk:lombok/core/TypeLibrary.SCL.lombok */
 public class TypeLibrary {
     private final Map<String, Object> unqualifiedToQualifiedMap;
     private final String unqualified;

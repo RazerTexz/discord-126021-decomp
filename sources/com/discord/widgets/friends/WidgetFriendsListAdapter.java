@@ -31,8 +31,6 @@ import com.discord.utilities.presence.PresenceUtils;
 import com.discord.utilities.view.extensions.ViewExtensions;
 import com.discord.utilities.view.text.SimpleDraweeSpanTextView;
 import com.discord.views.StatusView;
-import com.discord.widgets.friends.FriendsListViewModel;
-import com.discord.widgets.friends.WidgetFriendsListAdapter;
 import com.facebook.drawee.view.SimpleDraweeView;
 import com.google.android.material.card.MaterialCardView;
 import java.util.Objects;

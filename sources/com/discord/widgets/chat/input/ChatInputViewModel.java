@@ -62,7 +62,6 @@ import com.discord.utilities.threads.ThreadUtils;
 import com.discord.utilities.time.ClockFactory;
 import com.discord.widgets.chat.MessageContent;
 import com.discord.widgets.chat.MessageManager;
-import com.discord.widgets.chat.input.ChatInputViewModel;
 import com.discord.widgets.chat.input.autocomplete.Autocompletable;
 import com.discord.widgets.chat.input.autocomplete.EmojiUpsellPlaceholder;
 import com.discord.widgets.chat.input.emoji.EmojiAutocompletePremiumUpsellFeatureFlag;

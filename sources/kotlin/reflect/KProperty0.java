@@ -2,7 +2,6 @@ package kotlin.reflect;
 
 import androidx.exifinterface.media.ExifInterface;
 import kotlin.jvm.functions.Function0;
-import kotlin.reflect.KProperty;
 
 /* JADX INFO: compiled from: KProperty.kt */
 /* JADX INFO: loaded from: classes3.dex */

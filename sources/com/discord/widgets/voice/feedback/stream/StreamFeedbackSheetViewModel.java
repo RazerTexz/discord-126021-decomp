@@ -12,7 +12,6 @@ import com.discord.widgets.feedback.FeedbackSheetViewModel;
 import com.discord.widgets.voice.feedback.FeedbackIssue;
 import com.discord.widgets.voice.feedback.FeedbackRating;
 import com.discord.widgets.voice.feedback.PendingFeedback;
-import com.discord.widgets.voice.feedback.stream.StreamFeedbackSheetViewModel;
 import java.util.Collection;
 import java.util.List;
 import kotlin.Unit;

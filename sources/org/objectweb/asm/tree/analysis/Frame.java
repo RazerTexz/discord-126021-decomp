@@ -12,7 +12,7 @@ import org.objectweb.asm.tree.MultiANewArrayInsnNode;
 import org.objectweb.asm.tree.VarInsnNode;
 import org.objectweb.asm.tree.analysis.Value;
 
-/* JADX INFO: loaded from: app.apk:org/objectweb/asm/tree/analysis/Frame.SCL.lombok */
+/* JADX INFO: loaded from: discord-126021.apk:org/objectweb/asm/tree/analysis/Frame.SCL.lombok */
 public class Frame<V extends Value> {
     private V returnValue;
     private V[] values;

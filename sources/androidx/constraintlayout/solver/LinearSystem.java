@@ -1,6 +1,5 @@
 package androidx.constraintlayout.solver;
 
-import androidx.constraintlayout.solver.SolverVariable;
 import androidx.constraintlayout.solver.widgets.ConstraintAnchor;
 import androidx.constraintlayout.solver.widgets.ConstraintWidget;
 import com.discord.widgets.chat.input.autocomplete.AutocompleteViewModel;

@@ -5,7 +5,6 @@ import com.discord.api.user.TypingUser;
 import com.discord.api.user.User;
 import com.discord.models.domain.ModelTypingResponse;
 import com.discord.restapi.RestAPIParams;
-import com.discord.stores.StoreSlowMode;
 import com.discord.stores.updates.ObservationDeck;
 import com.discord.stores.updates.ObservationDeckProvider;
 import com.discord.utilities.analytics.Traits;

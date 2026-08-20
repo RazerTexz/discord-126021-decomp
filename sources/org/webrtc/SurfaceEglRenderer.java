@@ -2,8 +2,6 @@ package org.webrtc;
 
 import android.view.SurfaceHolder;
 import java.util.concurrent.CountDownLatch;
-import org.webrtc.EglBase;
-import org.webrtc.RendererCommon;
 
 /* JADX INFO: loaded from: classes3.dex */
 public class SurfaceEglRenderer extends EglRenderer implements SurfaceHolder.Callback {

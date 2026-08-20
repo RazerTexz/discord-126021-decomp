@@ -2,7 +2,6 @@ package com.discord.widgets.share;
 
 import android.view.View;
 import androidx.fragment.app.FragmentManager;
-import com.discord.widgets.share.WidgetIncomingShare;
 import com.discord.widgets.user.search.WidgetGlobalSearchModel;
 import com.discord.widgets.user.usersheet.WidgetUserSheet;
 import kotlin.Unit;

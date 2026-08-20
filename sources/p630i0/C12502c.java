@@ -6,7 +6,6 @@ import java.lang.reflect.Type;
 import kotlin.Unit;
 import okhttp3.RequestBody;
 import okhttp3.ResponseBody;
-import p630i0.InterfaceC12554h;
 import p630i0.p636f0.InterfaceC12550w;
 
 /* JADX INFO: renamed from: i0.c */

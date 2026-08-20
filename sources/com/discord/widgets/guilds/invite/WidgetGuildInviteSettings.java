@@ -37,7 +37,6 @@ import com.discord.utilities.resources.DurationUtilsKt;
 import com.discord.utilities.viewbinding.FragmentViewBindingDelegate;
 import com.discord.utilities.viewbinding.FragmentViewBindingDelegateKt;
 import com.discord.views.CheckedSetting;
-import com.discord.widgets.guilds.invite.GuildInviteSettingsViewModel;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Arrays;

@@ -23,7 +23,6 @@ import com.discord.utilities.p501rx.ObservableExtensionsKt;
 import com.discord.utilities.resources.StringResourceUtilsKt;
 import com.discord.utilities.rest.SendUtils;
 import com.discord.views.UploadProgressView;
-import com.discord.widgets.chat.list.adapter.WidgetChatListAdapterItemUploadProgress;
 import com.discord.widgets.chat.list.entries.ChatListEntry;
 import com.discord.widgets.chat.list.entries.UploadProgressEntry;
 import java.util.ArrayList;

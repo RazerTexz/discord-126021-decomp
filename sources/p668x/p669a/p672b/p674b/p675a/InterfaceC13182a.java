@@ -12,7 +12,6 @@ import android.support.v4.media.session.ParcelableVolumeInfo;
 import android.support.v4.media.session.PlaybackStateCompat;
 import android.text.TextUtils;
 import java.util.List;
-import p668x.p669a.p672b.p674b.p675a.AbstractC13184c;
 
 /* JADX INFO: renamed from: x.a.b.b.a.a */
 /* JADX INFO: compiled from: IMediaControllerCallback.java */

@@ -6,7 +6,6 @@ import com.discord.api.thread.ThreadMemberUpdate;
 import com.discord.api.thread.ThreadMembersUpdate;
 import com.discord.api.utcdatetime.UtcDateTime;
 import com.discord.models.thread.dto.ModelThreadListSync;
-import com.discord.stores.StoreThreadsJoined;
 import com.discord.stores.updates.ObservationDeck;
 import com.discord.stores.updates.ObservationDeckProvider;
 import java.util.ArrayList;

@@ -10,7 +10,6 @@ import com.discord.C5419R;
 import com.discord.databinding.GifCategoryItemViewBinding;
 import com.discord.models.gifpicker.domain.ModelGifCategory;
 import com.discord.utilities.images.MGImages;
-import com.discord.widgets.chat.input.gifpicker.GifCategoryItem;
 import com.facebook.drawee.view.SimpleDraweeView;
 import kotlin.Unit;
 import kotlin.jvm.functions.Function1;

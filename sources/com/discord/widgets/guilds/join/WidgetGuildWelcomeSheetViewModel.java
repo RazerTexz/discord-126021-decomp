@@ -9,7 +9,6 @@ import com.discord.utilities.analytics.AnalyticsTracker;
 import com.discord.utilities.channel.ChannelSelector;
 import com.discord.utilities.error.Error;
 import com.discord.utilities.p501rx.ObservableExtensionsKt;
-import com.discord.widgets.guilds.join.WidgetGuildWelcomeSheetViewModel;
 import java.util.ArrayList;
 import java.util.List;
 import kotlin.Unit;

@@ -1,7 +1,6 @@
 package com.discord.widgets.channels.list;
 
 import android.view.View;
-import com.discord.widgets.channels.list.WidgetChannelsListAdapter;
 import com.discord.widgets.channels.list.items.ChannelListItem;
 import com.discord.widgets.channels.list.items.ChannelListItemCategory;
 import kotlin.Unit;

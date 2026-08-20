@@ -28,7 +28,6 @@ import com.discord.utilities.permissions.PermissionUtils;
 import com.discord.utilities.threads.ThreadUtils;
 import com.discord.utilities.viewbinding.FragmentViewBindingDelegate;
 import com.discord.utilities.viewbinding.FragmentViewBindingDelegateKt;
-import com.discord.widgets.channels.list.WidgetChannelsListItemChannelActions;
 import com.discord.widgets.channels.settings.WidgetChannelNotificationSettings;
 import com.discord.widgets.user.usersheet.WidgetUserSheet;
 import com.facebook.drawee.view.SimpleDraweeView;
@@ -210,12 +209,12 @@ public final class WidgetChannelsListItemChannelActions extends AppBottomSheet {
             C12238m.checkNotNullParameter(context, "context");
             C12238m.checkNotNullParameter(channel, "channel");
             if (this.isMuted && ChannelUtils.m7687k(channel)) {
-                return C1107b.m210b(context, C5419R.string.unmute_category, new Object[0], (4 & 4) != 0 ? C1107b.b.f1491j : null);
+                return C1107b.m216h(context, C5419R.string.unmute_category, new Object[0], null, 4);
             }
             if (this.isMuted || !ChannelUtils.m7687k(channel)) {
-                return this.isMuted ? C1107b.m210b(context, C5419R.string.unmute_channel_generic, new Object[0], (4 & 4) != 0 ? C1107b.b.f1491j : null) : C1107b.m210b(context, C5419R.string.mute_channel_generic, new Object[0], (4 & 4) != 0 ? C1107b.b.f1491j : null);
+                return this.isMuted ? C1107b.m216h(context, C5419R.string.unmute_channel_generic, new Object[0], null, 4) : C1107b.m216h(context, C5419R.string.mute_channel_generic, new Object[0], null, 4);
             }
-            return C1107b.m210b(context, C5419R.string.mute_category, new Object[0], (4 & 4) != 0 ? C1107b.b.f1491j : null);
+            return C1107b.m216h(context, C5419R.string.mute_category, new Object[0], null, 4);
         }
 
         public final int getMuteIconResId(Context context) {

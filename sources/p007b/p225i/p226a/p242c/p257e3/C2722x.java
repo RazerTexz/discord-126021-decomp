@@ -3,7 +3,6 @@ package p007b.p225i.p226a.p242c.p257e3;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
-import p007b.p225i.p226a.p242c.p257e3.C2722x;
 
 /* JADX INFO: renamed from: b.i.a.c.e3.x */
 /* JADX INFO: compiled from: SlidingPercentile.java */

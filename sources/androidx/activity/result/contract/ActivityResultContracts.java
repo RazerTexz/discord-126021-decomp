@@ -9,7 +9,6 @@ import android.net.Uri;
 import android.os.Build;
 import androidx.activity.result.ActivityResult;
 import androidx.activity.result.IntentSenderRequest;
-import androidx.activity.result.contract.ActivityResultContract;
 import androidx.annotation.CallSuper;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;

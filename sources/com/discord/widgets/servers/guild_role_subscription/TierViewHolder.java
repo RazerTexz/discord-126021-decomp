@@ -11,8 +11,6 @@ import com.discord.databinding.ViewServerSettingsGuildRoleSubscriptionTierItemBi
 import com.discord.utilities.billing.PremiumUtilsKt;
 import com.discord.utilities.icon.IconUtils;
 import com.discord.utilities.images.MGImages;
-import com.discord.widgets.servers.guild_role_subscription.ServerSettingsGuildRoleSubscriptionTierAdapter;
-import com.discord.widgets.servers.guild_role_subscription.ServerSettingsGuildRoleSubscriptionTierAdapterItem;
 import com.facebook.drawee.view.SimpleDraweeView;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import p007b.p008a.p027k.C1107b;

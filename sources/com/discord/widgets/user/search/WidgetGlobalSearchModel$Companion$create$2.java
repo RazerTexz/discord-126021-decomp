@@ -6,7 +6,6 @@ import com.discord.models.member.GuildMember;
 import com.discord.models.presence.Presence;
 import com.discord.models.user.User;
 import com.discord.utilities.user.UserUtils;
-import com.discord.widgets.user.search.WidgetGlobalSearchModel;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Iterator;

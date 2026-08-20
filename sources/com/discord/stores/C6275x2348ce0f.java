@@ -1,7 +1,6 @@
 package com.discord.stores;
 
 import com.discord.app.AppActivity;
-import com.discord.stores.StoreNavigation;
 import kotlin.jvm.functions.Function2;
 import p507d0.p592z.p594d.AbstractC12240o;
 import p507d0.p592z.p594d.C12238m;

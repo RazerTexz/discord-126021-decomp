@@ -24,8 +24,6 @@ import com.discord.utilities.viewbinding.FragmentViewBindingDelegate;
 import com.discord.utilities.viewbinding.FragmentViewBindingDelegateKt;
 import com.discord.views.LoadingButton;
 import com.discord.views.MemberVerificationAvatarView;
-import com.discord.widgets.servers.member_verification.MemberVerificationPendingViewModel;
-import com.discord.widgets.servers.member_verification.WidgetMemberVerificationViewModel;
 import com.discord.widgets.user.account.WidgetUserAccountVerifyBase;
 import com.discord.widgets.user.email.WidgetUserEmailVerify;
 import com.discord.widgets.user.phone.WidgetUserPhoneManage;

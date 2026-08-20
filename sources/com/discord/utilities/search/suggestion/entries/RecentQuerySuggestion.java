@@ -1,7 +1,6 @@
 package com.discord.utilities.search.suggestion.entries;
 
 import com.discord.utilities.search.query.node.QueryNode;
-import com.discord.utilities.search.suggestion.entries.SearchSuggestion;
 import java.util.List;
 import p007b.p100d.p104b.p105a.C1643a;
 import p507d0.p592z.p594d.C12238m;

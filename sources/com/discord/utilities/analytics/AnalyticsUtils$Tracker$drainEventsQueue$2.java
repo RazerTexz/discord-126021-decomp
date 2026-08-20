@@ -2,7 +2,6 @@ package com.discord.utilities.analytics;
 
 import com.discord.api.science.Science;
 import com.discord.app.AppLog;
-import com.discord.utilities.analytics.AnalyticsUtils;
 import com.discord.utilities.error.Error;
 import java.util.ArrayList;
 import java.util.Iterator;

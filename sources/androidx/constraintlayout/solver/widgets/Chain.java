@@ -3,7 +3,6 @@ package androidx.constraintlayout.solver.widgets;
 import androidx.constraintlayout.solver.ArrayRow;
 import androidx.constraintlayout.solver.LinearSystem;
 import androidx.constraintlayout.solver.SolverVariable;
-import androidx.constraintlayout.solver.widgets.ConstraintWidget;
 import java.util.ArrayList;
 
 /* JADX INFO: loaded from: classes.dex */

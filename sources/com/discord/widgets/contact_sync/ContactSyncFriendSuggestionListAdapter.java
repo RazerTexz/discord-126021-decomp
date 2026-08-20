@@ -20,8 +20,6 @@ import com.discord.utilities.images.MGImages;
 import com.discord.utilities.mg_recycler.MGRecyclerAdapterSimple;
 import com.discord.utilities.mg_recycler.MGRecyclerViewHolder;
 import com.discord.widgets.chat.input.MentionUtilsKt;
-import com.discord.widgets.contact_sync.ContactSyncFriendSuggestionListAdapter;
-import com.discord.widgets.contact_sync.WidgetContactSyncViewModel;
 import com.facebook.drawee.view.SimpleDraweeView;
 import com.google.android.material.checkbox.MaterialCheckBox;
 import java.util.Iterator;

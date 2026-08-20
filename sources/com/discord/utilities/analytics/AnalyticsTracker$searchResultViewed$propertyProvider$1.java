@@ -1,6 +1,5 @@
 package com.discord.utilities.analytics;
 
-import com.discord.utilities.analytics.Traits;
 import com.discord.utilities.collections.CollectionExtensionsKt;
 import java.util.LinkedHashMap;
 import java.util.Map;

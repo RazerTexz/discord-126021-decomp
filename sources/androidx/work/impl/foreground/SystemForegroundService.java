@@ -12,7 +12,6 @@ import androidx.annotation.Nullable;
 import androidx.annotation.RestrictTo;
 import androidx.view.LifecycleService;
 import androidx.work.Logger;
-import androidx.work.impl.foreground.SystemForegroundDispatcher;
 
 /* JADX INFO: loaded from: classes.dex */
 @RestrictTo({RestrictTo.Scope.LIBRARY_GROUP})

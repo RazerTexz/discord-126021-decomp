@@ -13,7 +13,6 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.annotation.VisibleForTesting;
 import androidx.core.content.res.FontResourcesParserCompat;
-import androidx.core.provider.FontsContractCompat;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;

@@ -4,7 +4,6 @@ import android.content.Context;
 import com.discord.utilities.rest.SendUtils;
 import com.discord.widgets.chat.MessageContent;
 import com.discord.widgets.chat.MessageManager;
-import com.discord.widgets.chat.input.ChatInputViewModel;
 import com.lytefast.flexinput.model.Attachment;
 import java.util.List;
 import kotlin.Unit;

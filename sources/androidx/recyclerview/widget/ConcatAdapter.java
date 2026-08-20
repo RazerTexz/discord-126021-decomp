@@ -2,7 +2,6 @@ package androidx.recyclerview.widget;
 
 import android.view.ViewGroup;
 import androidx.annotation.NonNull;
-import androidx.recyclerview.widget.RecyclerView;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.Iterator;

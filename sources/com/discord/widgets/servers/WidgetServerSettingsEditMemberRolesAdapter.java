@@ -13,7 +13,6 @@ import com.discord.utilities.mg_recycler.MGRecyclerAdapterSimple;
 import com.discord.utilities.mg_recycler.MGRecyclerDataPayload;
 import com.discord.utilities.mg_recycler.MGRecyclerViewHolder;
 import com.discord.views.CheckedSetting;
-import com.discord.widgets.servers.WidgetServerSettingsEditMemberRolesAdapter;
 import java.util.List;
 import java.util.Objects;
 import kotlin.Unit;

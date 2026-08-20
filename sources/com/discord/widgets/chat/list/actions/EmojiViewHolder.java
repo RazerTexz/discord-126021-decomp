@@ -9,7 +9,6 @@ import com.discord.utilities.dimen.DimenUtils;
 import com.discord.utilities.icon.IconUtils;
 import com.discord.utilities.images.MGImages;
 import com.discord.utilities.mg_recycler.MGRecyclerViewHolder;
-import com.discord.widgets.chat.list.actions.EmojiItem;
 import com.facebook.drawee.view.SimpleDraweeView;
 import java.util.Objects;
 import p507d0.p592z.p594d.C12238m;

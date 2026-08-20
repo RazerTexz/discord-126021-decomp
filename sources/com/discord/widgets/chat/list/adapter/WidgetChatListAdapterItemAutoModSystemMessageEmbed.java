@@ -33,7 +33,6 @@ import com.discord.utilities.textprocessing.SimpleRoundedBackgroundSpan;
 import com.discord.utilities.textprocessing.node.SpoilerNode;
 import com.discord.utilities.uri.UriHandler;
 import com.discord.utilities.view.text.SimpleDraweeSpanTextView;
-import com.discord.widgets.chat.list.adapter.WidgetChatListAdapter;
 import com.discord.widgets.chat.list.entries.AutoModSystemMessageEmbedEntry;
 import com.discord.widgets.chat.list.entries.ChatListEntry;
 import com.facebook.drawee.span.DraweeSpanStringBuilder;

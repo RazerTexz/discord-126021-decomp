@@ -27,7 +27,6 @@ import androidx.core.content.ContextCompat;
 import androidx.fragment.app.FragmentManager;
 import androidx.preference.PreferenceManager;
 import com.discord.C5419R;
-import com.discord.app.AppTransitionActivity;
 import com.discord.models.domain.ModelUserSettings;
 import com.discord.screenshot_detection.ScreenshotDetector;
 import com.discord.stores.StoreStream;

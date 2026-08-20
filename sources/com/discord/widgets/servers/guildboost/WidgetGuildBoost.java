@@ -41,7 +41,6 @@ import com.discord.utilities.viewbinding.FragmentViewBindingDelegate;
 import com.discord.utilities.viewbinding.FragmentViewBindingDelegateKt;
 import com.discord.widgets.notice.WidgetNoticeDialog;
 import com.discord.widgets.servers.WidgetServerSettingsChannels;
-import com.discord.widgets.servers.guildboost.GuildBoostViewModel;
 import com.discord.widgets.settings.guildboost.WidgetSettingsGuildBoost;
 import com.discord.widgets.settings.premium.WidgetChoosePlan;
 import com.discord.widgets.settings.premium.WidgetSettingsPremium;

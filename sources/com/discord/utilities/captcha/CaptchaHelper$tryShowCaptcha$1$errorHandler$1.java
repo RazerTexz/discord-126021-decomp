@@ -1,7 +1,6 @@
 package com.discord.utilities.captcha;
 
 import com.discord.utilities.analytics.AnalyticsTracker;
-import com.discord.utilities.captcha.CaptchaHelper;
 import kotlin.Unit;
 import kotlin.jvm.functions.Function1;
 import p507d0.p592z.p594d.AbstractC12240o;

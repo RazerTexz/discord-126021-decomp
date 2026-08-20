@@ -26,8 +26,6 @@ import androidx.core.content.ContextCompat;
 import com.discord.utilities.auth.GoogleSmartLockManager;
 import com.google.android.exoplayer2.PlaybackException;
 import com.google.android.exoplayer2.metadata.Metadata;
-import com.google.android.exoplayer2.p505ui.AspectRatioFrameLayout;
-import com.google.android.exoplayer2.p505ui.PlayerControlView;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;

@@ -1,6 +1,5 @@
 package androidx.appcompat.view;
 
-import android.view.ActionMode;
 import android.view.KeyEvent;
 import android.view.KeyboardShortcutGroup;
 import android.view.Menu;
@@ -145,7 +144,7 @@ public class WindowCallbackWrapper implements Window.Callback {
     }
 
     @Override // android.view.Window.Callback
-    public android.view.ActionMode onWindowStartingActionMode(ActionMode.Callback callback) {
+    public android.view.ActionMode onWindowStartingActionMode(android.view.ActionMode.Callback callback) {
         return this.mWrapped.onWindowStartingActionMode(callback);
     }
 
@@ -156,7 +155,7 @@ public class WindowCallbackWrapper implements Window.Callback {
 
     @Override // android.view.Window.Callback
     @RequiresApi(23)
-    public android.view.ActionMode onWindowStartingActionMode(ActionMode.Callback callback, int i) {
+    public android.view.ActionMode onWindowStartingActionMode(android.view.ActionMode.Callback callback, int i) {
         return this.mWrapped.onWindowStartingActionMode(callback, i);
     }
 }

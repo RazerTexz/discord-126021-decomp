@@ -14,8 +14,6 @@ import com.discord.restapi.RestAPIParams;
 import com.discord.utilities.analytics.Traits;
 import com.discord.utilities.captcha.CaptchaHelper;
 import com.discord.utilities.error.Error;
-import com.discord.utilities.messagesend.MessageRequest;
-import com.discord.utilities.messagesend.MessageResult;
 import com.discord.utilities.networking.Backoff;
 import com.discord.utilities.p501rx.ObservableExtensionsKt;
 import com.discord.utilities.rest.RestAPI;

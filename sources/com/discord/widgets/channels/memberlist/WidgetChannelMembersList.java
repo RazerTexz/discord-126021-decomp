@@ -13,7 +13,6 @@ import com.discord.utilities.error.Error;
 import com.discord.utilities.p501rx.ObservableExtensionsKt;
 import com.discord.utilities.rest.RestAPIAbortMessages;
 import com.discord.utilities.views.StickyHeaderItemDecoration;
-import com.discord.widgets.channels.memberlist.WidgetChannelMembersListViewModel;
 import com.discord.widgets.channels.memberlist.adapter.ChannelMembersListAdapter;
 import com.discord.widgets.user.usersheet.WidgetUserSheet;
 import java.util.Objects;

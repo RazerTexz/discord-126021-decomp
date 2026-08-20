@@ -44,8 +44,6 @@ import com.discord.widgets.voice.controls.AnchoredVoiceControlsView;
 import com.discord.widgets.voice.feedback.call.CallFeedbackSheetNavigator;
 import com.discord.widgets.voice.fullscreen.WidgetCallFullscreen;
 import com.discord.widgets.voice.model.CameraState;
-import com.discord.widgets.voice.sheet.CallParticipantsAdapter;
-import com.discord.widgets.voice.sheet.WidgetVoiceBottomSheetViewModel;
 import com.discord.widgets.voice.stream.StreamNavigator;
 import com.google.android.material.button.MaterialButton;
 import java.util.List;

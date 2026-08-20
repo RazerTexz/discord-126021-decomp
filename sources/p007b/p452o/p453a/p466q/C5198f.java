@@ -5,7 +5,6 @@ import android.view.MotionEvent;
 import androidx.annotation.NonNull;
 import com.otaliastudios.cameraview.CameraView;
 import p007b.p452o.p453a.C5103b;
-import p007b.p452o.p453a.p466q.AbstractC5195c;
 
 /* JADX INFO: renamed from: b.o.a.q.f */
 /* JADX INFO: compiled from: ScrollGestureFinder.java */

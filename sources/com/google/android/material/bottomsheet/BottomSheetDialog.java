@@ -21,7 +21,6 @@ import androidx.core.view.AccessibilityDelegateCompat;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.accessibility.AccessibilityNodeInfoCompat;
 import com.google.android.material.C10817R;
-import com.google.android.material.bottomsheet.BottomSheetBehavior;
 
 /* JADX INFO: loaded from: classes3.dex */
 public class BottomSheetDialog extends AppCompatDialog {

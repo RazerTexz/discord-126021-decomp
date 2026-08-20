@@ -6,7 +6,6 @@ import com.discord.stores.StoreChannels;
 import com.discord.stores.StoreGuildScheduledEvents;
 import com.discord.stores.StoreGuilds;
 import com.discord.stores.StorePermissions;
-import com.discord.widgets.guildscheduledevent.WidgetGuildScheduledEventLocationSelectViewModel;
 import java.util.Map;
 import kotlin.jvm.functions.Function0;
 import p507d0.p592z.p594d.AbstractC12240o;

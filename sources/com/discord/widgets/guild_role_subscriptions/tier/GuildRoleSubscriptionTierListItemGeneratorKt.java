@@ -1,7 +1,6 @@
 package com.discord.widgets.guild_role_subscriptions.tier;
 
 import com.discord.C5419R;
-import com.discord.widgets.guild_role_subscriptions.tier.GuildRoleSubscriptionTierAdapterItem;
 import com.discord.widgets.guild_role_subscriptions.tier.model.Benefit;
 import com.discord.widgets.guild_role_subscriptions.tier.model.GuildRoleSubscriptionTier;
 import java.util.ArrayList;

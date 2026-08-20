@@ -9,7 +9,6 @@ import com.discord.models.message.Message;
 import com.discord.utilities.embed.InviteEmbedModel;
 import com.discord.widgets.botuikit.ComponentChatListState;
 import com.discord.widgets.chat.list.entries.ChatListEntry;
-import com.discord.widgets.chat.list.model.WidgetChatListModelMessages;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Map;

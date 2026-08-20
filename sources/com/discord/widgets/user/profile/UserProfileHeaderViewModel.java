@@ -25,7 +25,6 @@ import com.discord.utilities.streams.StreamContext;
 import com.discord.utilities.streams.StreamContextService;
 import com.discord.utilities.user.UserUtils;
 import com.discord.widgets.user.presence.ModelRichPresence;
-import com.discord.widgets.user.profile.UserProfileHeaderViewModel;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Iterator;

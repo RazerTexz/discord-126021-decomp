@@ -36,7 +36,6 @@ import com.discord.utilities.viewbinding.FragmentViewBindingDelegate;
 import com.discord.utilities.viewbinding.FragmentViewBindingDelegateKt;
 import com.discord.views.TernaryCheckBox;
 import com.discord.views.user.SettingsMemberView;
-import com.discord.widgets.channels.permissions.WidgetChannelSettingsEditPermissionsModel;
 import com.discord.widgets.chat.list.TextInVoiceFeatureFlag;
 import java.util.Iterator;
 import java.util.List;

@@ -1,6 +1,5 @@
 package com.discord.widgets.user;
 
-import com.discord.widgets.user.WidgetUserMentions;
 import kotlin.Unit;
 import kotlin.coroutines.Continuation;
 import kotlin.jvm.functions.Function2;

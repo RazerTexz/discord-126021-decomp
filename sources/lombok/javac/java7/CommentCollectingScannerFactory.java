@@ -5,7 +5,7 @@ import com.sun.tools.javac.parser.ScannerFactory;
 import com.sun.tools.javac.util.Context;
 import java.nio.CharBuffer;
 
-/* JADX INFO: loaded from: app.apk:lombok/javac/java7/CommentCollectingScannerFactory.SCL.lombok */
+/* JADX INFO: loaded from: discord-126021.apk:lombok/javac/java7/CommentCollectingScannerFactory.SCL.lombok */
 public class CommentCollectingScannerFactory extends ScannerFactory {
     public static void preRegister(final Context context) {
         if (context.get(scannerFactoryKey) == null) {

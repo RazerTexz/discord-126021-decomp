@@ -23,8 +23,6 @@ import com.discord.utilities.p501rx.ObservableExtensionsKt;
 import com.discord.utilities.view.extensions.ViewExtensions;
 import com.discord.utilities.viewbinding.FragmentViewBindingDelegate;
 import com.discord.utilities.viewbinding.FragmentViewBindingDelegateKt;
-import com.discord.widgets.channels.settings.WidgetTextChannelSettings;
-import com.discord.widgets.channels.settings.WidgetThreadSettingsViewModel;
 import com.discord.widgets.chat.pins.WidgetChannelPinnedMessages;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.textfield.TextInputLayout;

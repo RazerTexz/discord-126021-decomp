@@ -39,7 +39,7 @@ import lombok.javac.JavacResolution;
 import lombok.javac.JavacTreeMaker;
 import lombok.javac.ResolutionResetNeeded;
 
-/* JADX INFO: loaded from: app.apk:lombok/javac/handlers/HandleDelegate.SCL.lombok */
+/* JADX INFO: loaded from: discord-126021.apk:lombok/javac/handlers/HandleDelegate.SCL.lombok */
 @HandlerPriority(65536)
 @ResolutionResetNeeded
 public class HandleDelegate extends JavacAnnotationHandler<Delegate> {
@@ -48,7 +48,7 @@ public class HandleDelegate extends JavacAnnotationHandler<Delegate> {
     private static final String RECURSION_NOT_ALLOWED = "@Delegate does not support recursion (delegating to a type that itself has @Delegate members). Member \"%s\" is @Delegate in type \"%s\"";
     public static final int HANDLE_DELEGATE_PRIORITY = 65536;
 
-    /* JADX INFO: loaded from: app.apk:lombok/javac/handlers/HandleDelegate$CantMakeDelegates.SCL.lombok */
+    /* JADX INFO: loaded from: discord-126021.apk:lombok/javac/handlers/HandleDelegate$CantMakeDelegates.SCL.lombok */
     public static class CantMakeDelegates extends Exception {
         Set<String> conflicted;
     }
@@ -277,7 +277,7 @@ public class HandleDelegate extends JavacAnnotationHandler<Delegate> {
         return collection == null ? com.sun.tools.javac.util.List.nil() : collection.toList();
     }
 
-    /* JADX INFO: loaded from: app.apk:lombok/javac/handlers/HandleDelegate$DelegateRecursion.SCL.lombok */
+    /* JADX INFO: loaded from: discord-126021.apk:lombok/javac/handlers/HandleDelegate$DelegateRecursion.SCL.lombok */
     private static class DelegateRecursion extends Throwable {
         final String type;
         final String member;
@@ -323,7 +323,7 @@ public class HandleDelegate extends JavacAnnotationHandler<Delegate> {
         }
     }
 
-    /* JADX INFO: loaded from: app.apk:lombok/javac/handlers/HandleDelegate$MethodSig.SCL.lombok */
+    /* JADX INFO: loaded from: discord-126021.apk:lombok/javac/handlers/HandleDelegate$MethodSig.SCL.lombok */
     public static class MethodSig {
         final Name name;
         final ExecutableType type;
@@ -369,7 +369,7 @@ public class HandleDelegate extends JavacAnnotationHandler<Delegate> {
         return types.erasure(binding).toString();
     }
 
-    /* JADX INFO: loaded from: app.apk:lombok/javac/handlers/HandleDelegate$DelegateReceiver.SCL.lombok */
+    /* JADX INFO: loaded from: discord-126021.apk:lombok/javac/handlers/HandleDelegate$DelegateReceiver.SCL.lombok */
     public enum DelegateReceiver {
         METHOD { // from class: lombok.javac.handlers.HandleDelegate.DelegateReceiver.1
             @Override // lombok.javac.handlers.HandleDelegate.DelegateReceiver
@@ -403,7 +403,7 @@ public class HandleDelegate extends JavacAnnotationHandler<Delegate> {
         }
     }
 
-    /* JADX INFO: loaded from: app.apk:lombok/javac/handlers/HandleDelegate$Unannotated.SCL.lombok */
+    /* JADX INFO: loaded from: discord-126021.apk:lombok/javac/handlers/HandleDelegate$Unannotated.SCL.lombok */
     private static class Unannotated {
         private static final Method unannotated;
 

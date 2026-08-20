@@ -11,8 +11,6 @@ import com.discord.api.friendsuggestions.BulkFriendSuggestions;
 import com.discord.models.experiments.domain.Experiment;
 import com.discord.models.user.MeUser;
 import com.discord.restapi.RestAPIParams;
-import com.discord.stores.StoreNotices;
-import com.discord.stores.StoreUserConnections;
 import com.discord.stores.utilities.RestCallStateKt;
 import com.discord.utilities.analytics.AnalyticsTracker;
 import com.discord.utilities.analytics.Traits;

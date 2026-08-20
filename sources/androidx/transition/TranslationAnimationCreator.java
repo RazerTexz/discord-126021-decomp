@@ -9,7 +9,6 @@ import android.util.Property;
 import android.view.View;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import androidx.transition.Transition;
 
 /* JADX INFO: loaded from: classes.dex */
 public class TranslationAnimationCreator {

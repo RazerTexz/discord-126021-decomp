@@ -7,7 +7,7 @@ import org.objectweb.asm.Opcodes;
 import org.objectweb.asm.tree.MethodNode;
 import org.objectweb.asm.tree.TryCatchBlockNode;
 
-/* JADX INFO: loaded from: app.apk:org/objectweb/asm/commons/TryCatchBlockSorter.SCL.lombok */
+/* JADX INFO: loaded from: discord-126021.apk:org/objectweb/asm/commons/TryCatchBlockSorter.SCL.lombok */
 public class TryCatchBlockSorter extends MethodNode {
     public TryCatchBlockSorter(MethodVisitor methodVisitor, int access, String name, String descriptor, String signature, String[] exceptions) {
         this(Opcodes.ASM9, methodVisitor, access, name, descriptor, signature, exceptions);

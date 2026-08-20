@@ -12,7 +12,6 @@ import com.discord.databinding.EmojiCategoryItemStandardBinding;
 import com.discord.models.domain.emoji.EmojiCategory;
 import com.discord.utilities.color.ColorCompat;
 import com.discord.utilities.color.ColorCompatKt;
-import com.discord.widgets.chat.input.emoji.EmojiCategoryItem;
 import kotlin.Unit;
 import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.DefaultConstructorMarker;

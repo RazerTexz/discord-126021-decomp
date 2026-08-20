@@ -12,7 +12,6 @@ import com.discord.stores.StoreUser;
 import com.discord.stores.StoreVoiceChannelSelected;
 import com.discord.utilities.guildscheduledevent.GuildScheduledEventUtilities;
 import com.discord.utilities.guildscheduledevent.GuildScheduledEventsComparator;
-import com.discord.widgets.guildscheduledevent.GuildScheduledEventListViewModel;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;

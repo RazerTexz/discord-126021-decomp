@@ -2,8 +2,6 @@ package org.webrtc;
 
 import android.media.MediaCodecInfo;
 import androidx.annotation.Nullable;
-import org.webrtc.EglBase;
-import org.webrtc.Predicate;
 
 /* JADX INFO: loaded from: classes3.dex */
 public class HardwareVideoDecoderFactory extends MediaCodecVideoDecoderFactory {

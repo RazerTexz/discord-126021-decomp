@@ -9,7 +9,6 @@ import android.util.Xml;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
-import androidx.constraintlayout.motion.widget.MotionLayout;
 import androidx.constraintlayout.widget.C0201R;
 import androidx.core.widget.NestedScrollView;
 import org.xmlpull.v1.XmlPullParser;

@@ -30,8 +30,6 @@ import com.discord.utilities.viewbinding.FragmentViewBindingDelegateKt;
 import com.discord.utilities.views.SimpleRecyclerAdapter;
 import com.discord.utilities.views.SwipeableItemTouchHelper;
 import com.discord.views.CheckedSetting;
-import com.discord.widgets.settings.developer.ExperimentOverridesAdapter;
-import com.discord.widgets.settings.developer.WidgetSettingsDeveloper;
 import com.hammerandchisel.libdiscord.Discord;
 import java.util.ArrayList;
 import java.util.Collection;

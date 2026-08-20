@@ -1,6 +1,5 @@
 package com.discord.widgets.contact_sync;
 
-import com.discord.widgets.contact_sync.WidgetContactSyncViewModel;
 
 /* JADX INFO: compiled from: WidgetContactSyncViewModel.kt */
 /* JADX INFO: loaded from: classes2.dex */

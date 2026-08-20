@@ -21,7 +21,6 @@ import java.lang.ref.WeakReference;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
-import p668x.p669a.p672b.p674b.p675a.InterfaceC13182a;
 
 /* JADX INFO: renamed from: x.a.b.b.a.c */
 /* JADX INFO: compiled from: MediaControllerCompat.java */

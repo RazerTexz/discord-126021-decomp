@@ -34,8 +34,6 @@ import com.discord.utilities.rest.RestAPIAbortMessages;
 import com.discord.utilities.threads.ThreadUtils;
 import com.discord.utilities.viewbinding.FragmentViewBindingDelegate;
 import com.discord.utilities.viewbinding.FragmentViewBindingDelegateKt;
-import com.discord.widgets.channels.list.WidgetChannelsListItemThreadActions;
-import com.discord.widgets.channels.list.WidgetThreadArchiveActions;
 import com.discord.widgets.channels.settings.WidgetChannelNotificationSettings;
 import com.discord.widgets.channels.settings.WidgetThreadSettings;
 import com.discord.widgets.settings.WidgetMuteSettingsSheet;
@@ -732,7 +730,7 @@ public final class WidgetChannelsListItemThreadActions extends AppBottomSheet {
     }
 
     private final CharSequence getMuteThreadText(Channel channel, boolean isMuted, Context context) {
-        return isMuted ? C1107b.m210b(context, C5419R.string.unmute, new Object[0], (4 & 4) != 0 ? C1107b.b.f1491j : null) : C1107b.m210b(context, C5419R.string.mute_channel, new Object[]{ChannelUtils.m7681e(channel, context, false, 2)}, (4 & 4) != 0 ? C1107b.b.f1491j : null);
+        return isMuted ? C1107b.m216h(context, C5419R.string.unmute, new Object[0], null, 4) : C1107b.m216h(context, C5419R.string.mute_channel, new Object[]{ChannelUtils.m7681e(channel, context, false, 2)}, null, 4);
     }
 
     private final void leaveThread(Channel channel) {

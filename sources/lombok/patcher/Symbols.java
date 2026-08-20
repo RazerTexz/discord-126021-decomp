@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 
-/* JADX INFO: loaded from: app.apk:lombok/patcher/Symbols.SCL.lombok */
+/* JADX INFO: loaded from: discord-126021.apk:lombok/patcher/Symbols.SCL.lombok */
 public class Symbols {
     private static final ThreadLocal<LinkedList<String>> stack = new ThreadLocal<LinkedList<String>>() { // from class: lombok.patcher.Symbols.1
         /* JADX WARN: Can't rename method to resolve collision */

@@ -4,7 +4,6 @@ import com.discord.api.activity.Activity;
 import com.discord.api.application.Application;
 import com.discord.models.user.MeUser;
 import com.discord.models.user.User;
-import com.discord.widgets.chat.list.ViewEmbedGameInvite;
 import com.discord.widgets.chat.list.entries.GameInviteEntry;
 import java.util.Map;
 import kotlin.jvm.functions.Function5;

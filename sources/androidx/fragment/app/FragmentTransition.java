@@ -11,7 +11,6 @@ import androidx.core.app.SharedElementCallback;
 import androidx.core.os.CancellationSignal;
 import androidx.core.view.OneShotPreDrawListener;
 import androidx.core.view.ViewCompat;
-import androidx.fragment.app.FragmentTransaction;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;

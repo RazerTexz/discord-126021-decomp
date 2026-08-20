@@ -20,7 +20,6 @@ import com.discord.utilities.premium.GuildBoostUtils;
 import com.discord.utilities.premium.PremiumUtils;
 import com.discord.utilities.resources.StringResourceUtilsKt;
 import com.discord.utilities.threads.ThreadUtils;
-import com.discord.widgets.servers.guildboost.GuildBoostPerkViewAdapter;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;

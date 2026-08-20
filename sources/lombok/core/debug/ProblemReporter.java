@@ -7,11 +7,11 @@ import org.eclipse.core.runtime.Platform;
 import org.eclipse.core.runtime.Status;
 import org.osgi.framework.Bundle;
 
-/* JADX INFO: loaded from: app.apk:lombok/core/debug/ProblemReporter.SCL.lombok */
+/* JADX INFO: loaded from: discord-126021.apk:lombok/core/debug/ProblemReporter.SCL.lombok */
 public class ProblemReporter {
     private static ErrorLogger logger;
 
-    /* JADX INFO: loaded from: app.apk:lombok/core/debug/ProblemReporter$ErrorLogger.SCL.lombok */
+    /* JADX INFO: loaded from: discord-126021.apk:lombok/core/debug/ProblemReporter$ErrorLogger.SCL.lombok */
     private interface ErrorLogger {
         void info(String str, Throwable th);
 
@@ -61,7 +61,7 @@ public class ProblemReporter {
         }
     }
 
-    /* JADX INFO: loaded from: app.apk:lombok/core/debug/ProblemReporter$TerminalLogger.SCL.lombok */
+    /* JADX INFO: loaded from: discord-126021.apk:lombok/core/debug/ProblemReporter$TerminalLogger.SCL.lombok */
     private static class TerminalLogger implements ErrorLogger {
         private TerminalLogger() {
         }
@@ -95,7 +95,7 @@ public class ProblemReporter {
         }
     }
 
-    /* JADX INFO: loaded from: app.apk:lombok/core/debug/ProblemReporter$EclipseWorkspaceLogger.SCL.lombok */
+    /* JADX INFO: loaded from: discord-126021.apk:lombok/core/debug/ProblemReporter$EclipseWorkspaceLogger.SCL.lombok */
     private static class EclipseWorkspaceLogger implements ErrorLogger {
         private static final int MAX_LOG = 200;
         private static final long SQUELCH_TIMEOUT = TimeUnit.HOURS.toMillis(1);

@@ -3,7 +3,6 @@ package com.discord.widgets.user;
 import com.discord.stores.StoreGuilds;
 import com.discord.stores.StorePermissions;
 import com.discord.stores.StoreUser;
-import com.discord.widgets.user.WidgetPruneUsersViewModel;
 import kotlin.jvm.functions.Function0;
 import p507d0.p592z.p594d.AbstractC12240o;
 

@@ -8,7 +8,6 @@ import com.discord.utilities.debug.HistoricalProcessExitReason;
 import com.discord.utilities.error.Error;
 import com.discord.utilities.logging.Logger;
 import com.discord.utilities.p501rx.ObservableExtensionsKt;
-import com.discord.utilities.systemlog.SystemLogUtils;
 import com.google.firebase.crashlytics.FirebaseCrashlytics;
 import java.util.Iterator;
 import kotlin.Unit;

@@ -16,8 +16,6 @@ import com.discord.stores.StoreUser;
 import com.discord.utilities.analytics.Traits;
 import com.discord.utilities.error.Error;
 import com.discord.utilities.p501rx.ObservableExtensionsKt;
-import com.discord.widgets.settings.guildboost.SettingsGuildBoostSampleGuildAdapter;
-import com.discord.widgets.settings.guildboost.WidgetSettingsGuildBoostSubscriptionAdapter;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.HashMap;

@@ -46,7 +46,6 @@ import com.discord.views.user.UserAvatarPresenceView;
 import com.discord.widgets.channels.UserAkaView;
 import com.discord.widgets.user.Badge;
 import com.discord.widgets.user.UserNameFormatterKt;
-import com.discord.widgets.user.profile.UserProfileHeaderViewModel;
 import com.facebook.drawee.span.DraweeSpanStringBuilder;
 import com.facebook.drawee.view.SimpleDraweeView;
 import com.facebook.imagepipeline.request.ImageRequestBuilder;

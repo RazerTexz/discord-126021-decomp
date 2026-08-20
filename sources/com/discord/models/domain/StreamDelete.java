@@ -1,6 +1,5 @@
 package com.discord.models.domain;
 
-import com.discord.models.domain.Model;
 import java.io.IOException;
 import kotlin.jvm.internal.Ref$ObjectRef;
 import p007b.p100d.p104b.p105a.C1643a;

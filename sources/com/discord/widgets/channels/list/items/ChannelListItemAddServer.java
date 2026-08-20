@@ -1,6 +1,5 @@
 package com.discord.widgets.channels.list.items;
 
-import com.discord.widgets.channels.list.items.ChannelListItem;
 
 /* JADX INFO: compiled from: ChannelListItemAddServer.kt */
 /* JADX INFO: loaded from: classes2.dex */

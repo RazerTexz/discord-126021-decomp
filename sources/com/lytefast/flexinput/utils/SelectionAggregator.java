@@ -7,7 +7,6 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.discord.models.domain.ModelAuditLogEntry;
 import com.lytefast.flexinput.adapters.AttachmentPreviewAdapter;
 import com.lytefast.flexinput.model.Attachment;
-import com.lytefast.flexinput.utils.SelectionCoordinator;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.Objects;

@@ -4,7 +4,6 @@ import android.graphics.Canvas;
 import android.graphics.Paint;
 import android.graphics.RectF;
 import androidx.annotation.RequiresApi;
-import androidx.cardview.widget.RoundRectDrawableWithShadow;
 
 /* JADX INFO: loaded from: classes.dex */
 @RequiresApi(17)

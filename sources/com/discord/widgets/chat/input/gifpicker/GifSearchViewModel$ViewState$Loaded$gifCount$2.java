@@ -1,7 +1,5 @@
 package com.discord.widgets.chat.input.gifpicker;
 
-import com.discord.widgets.chat.input.gifpicker.GifAdapterItem;
-import com.discord.widgets.chat.input.gifpicker.GifSearchViewModel;
 import java.util.Collection;
 import java.util.Iterator;
 import java.util.List;

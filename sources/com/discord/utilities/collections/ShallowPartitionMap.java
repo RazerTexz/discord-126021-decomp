@@ -1,7 +1,6 @@
 package com.discord.utilities.collections;
 
 import androidx.exifinterface.media.ExifInterface;
-import com.discord.utilities.collections.ShallowPartitionImmutableCollection;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.HashMap;

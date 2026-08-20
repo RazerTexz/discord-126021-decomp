@@ -4,8 +4,6 @@ import javax.net.ssl.SSLSocket;
 import p007b.p100d.p104b.p105a.C1643a;
 import p507d0.p579g0.C12103t;
 import p507d0.p592z.p594d.C12238m;
-import p600f0.p601e0.p609k.p610i.C12339f;
-import p600f0.p601e0.p609k.p610i.C12343j;
 
 /* JADX INFO: renamed from: f0.e0.k.i.e */
 /* JADX INFO: compiled from: AndroidSocketAdapter.kt */

@@ -20,7 +20,6 @@ import com.discord.utilities.mg_recycler.MGRecyclerAdapterSimple;
 import com.discord.utilities.mg_recycler.MGRecyclerDataPayload;
 import com.discord.utilities.mg_recycler.MGRecyclerViewHolder;
 import com.discord.utilities.premium.PremiumUtils;
-import com.discord.widgets.settings.premium.WidgetChoosePlanAdapter;
 import com.google.android.material.card.MaterialCardView;
 import kotlin.Unit;
 import kotlin.jvm.functions.Function3;

@@ -3,8 +3,6 @@ package com.discord.models.domain;
 import com.discord.api.application.Application;
 import com.discord.api.premium.PremiumTier;
 import com.discord.models.deserialization.gson.InboundGatewayGsonParser;
-import com.discord.models.domain.Model;
-import com.discord.models.domain.ModelSku;
 import java.io.IOException;
 import java.util.Map;
 import kotlin.jvm.internal.DefaultConstructorMarker;

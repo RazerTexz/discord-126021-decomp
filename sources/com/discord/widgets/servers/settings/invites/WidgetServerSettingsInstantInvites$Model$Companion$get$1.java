@@ -5,7 +5,6 @@ import com.discord.models.guild.Guild;
 import com.discord.models.member.GuildMember;
 import com.discord.stores.StoreGuilds;
 import com.discord.stores.StoreInstantInvites;
-import com.discord.widgets.servers.settings.invites.WidgetServerSettingsInstantInvites;
 import java.util.Map;
 import kotlin.jvm.functions.Function0;
 import p507d0.p580t.C12136h0;

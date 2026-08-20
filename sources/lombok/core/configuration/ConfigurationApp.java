@@ -30,10 +30,8 @@ import java.util.TreeMap;
 import java.util.TreeSet;
 import lombok.ConfigurationKeys;
 import lombok.core.LombokApp;
-import lombok.core.configuration.ConfigurationKeysLoader;
-import lombok.core.configuration.ConfigurationParser;
 
-/* JADX INFO: loaded from: app.apk:lombok/core/configuration/ConfigurationApp.SCL.lombok */
+/* JADX INFO: loaded from: discord-126021.apk:lombok/core/configuration/ConfigurationApp.SCL.lombok */
 public class ConfigurationApp extends LombokApp {
     private PrintStream out = System.out;
     private PrintStream err = System.err;
@@ -59,7 +57,7 @@ public class ConfigurationApp extends LombokApp {
         return Arrays.asList("configuration", "config", "conf", "settings");
     }
 
-    /* JADX INFO: loaded from: app.apk:lombok/core/configuration/ConfigurationApp$CmdArgs.SCL.lombok */
+    /* JADX INFO: loaded from: discord-126021.apk:lombok/core/configuration/ConfigurationApp$CmdArgs.SCL.lombok */
     public static class CmdArgs {
 
         @Mandatory(onlyIfNot = {"help", "generate"})
@@ -321,7 +319,7 @@ public class ConfigurationApp extends LombokApp {
         return result;
     }
 
-    /* JADX INFO: loaded from: app.apk:lombok/core/configuration/ConfigurationApp$Source.SCL.lombok */
+    /* JADX INFO: loaded from: discord-126021.apk:lombok/core/configuration/ConfigurationApp$Source.SCL.lombok */
     private static final class Source {
         final ConfigurationFile file;
         final String description;

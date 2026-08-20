@@ -3,7 +3,6 @@ package p007b.p109f.p160i;
 import androidx.exifinterface.media.ExifInterface;
 import p007b.p085c.p086a.p087a0.C1460d;
 import p007b.p109f.p115d.p128m.C1720c;
-import p007b.p109f.p160i.C1832c;
 
 /* JADX INFO: renamed from: b.f.i.a */
 /* JADX INFO: compiled from: DefaultImageFormatChecker.java */

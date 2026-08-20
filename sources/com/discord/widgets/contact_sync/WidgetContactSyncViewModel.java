@@ -34,7 +34,6 @@ import com.discord.utilities.rest.RestAPI;
 import com.discord.utilities.time.ClockFactory;
 import com.discord.utilities.user.UserUtils;
 import com.discord.widgets.captcha.WidgetCaptchaKt;
-import com.discord.widgets.contact_sync.WidgetContactSyncViewModel;
 import com.discord.widgets.user.phone.WidgetUserPhoneManage;
 import java.util.ArrayList;
 import java.util.Collection;

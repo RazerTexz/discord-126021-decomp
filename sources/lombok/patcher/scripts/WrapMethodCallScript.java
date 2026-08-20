@@ -13,7 +13,7 @@ import org.objectweb.asm.ClassWriter;
 import org.objectweb.asm.MethodVisitor;
 import org.objectweb.asm.Opcodes;
 
-/* JADX INFO: loaded from: app.apk:lombok/patcher/scripts/WrapMethodCallScript.SCL.lombok */
+/* JADX INFO: loaded from: discord-126021.apk:lombok/patcher/scripts/WrapMethodCallScript.SCL.lombok */
 public class WrapMethodCallScript extends MethodLevelPatchScript {
     private final Hook wrapper;
     private final Hook callToWrap;
@@ -65,7 +65,7 @@ public class WrapMethodCallScript extends MethodLevelPatchScript {
         return patcher;
     }
 
-    /* JADX INFO: loaded from: app.apk:lombok/patcher/scripts/WrapMethodCallScript$WrapMethodCall.SCL.lombok */
+    /* JADX INFO: loaded from: discord-126021.apk:lombok/patcher/scripts/WrapMethodCallScript$WrapMethodCall.SCL.lombok */
     private class WrapMethodCall extends MethodVisitor {
         private final String ownClassSpec;
         private final MethodLogistics logistics;

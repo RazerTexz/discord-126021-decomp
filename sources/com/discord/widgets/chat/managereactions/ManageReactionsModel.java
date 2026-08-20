@@ -1,7 +1,6 @@
 package com.discord.widgets.chat.managereactions;
 
 import com.discord.utilities.mg_recycler.MGRecyclerDataPayload;
-import com.discord.widgets.chat.managereactions.ManageReactionsEmojisAdapter;
 import java.util.List;
 import p007b.p100d.p104b.p105a.C1643a;
 import p507d0.p592z.p594d.C12238m;

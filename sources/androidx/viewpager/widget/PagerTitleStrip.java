@@ -18,7 +18,6 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.core.view.ViewCompat;
 import androidx.core.widget.TextViewCompat;
-import androidx.viewpager.widget.ViewPager;
 import java.lang.ref.WeakReference;
 import java.util.Locale;
 

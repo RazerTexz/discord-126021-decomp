@@ -1,6 +1,5 @@
 package com.discord.widgets.user.usersheet;
 
-import com.discord.widgets.user.usersheet.WidgetUserSheet;
 import java.io.Serializable;
 import java.util.Objects;
 import kotlin.jvm.functions.Function0;

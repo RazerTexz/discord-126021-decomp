@@ -3,7 +3,6 @@ package com.discord.utilities.mg_recycler;
 import androidx.exifinterface.media.ExifInterface;
 import androidx.recyclerview.widget.RecyclerView;
 import com.discord.utilities.mg_recycler.DragAndDropAdapter.Payload;
-import com.discord.utilities.mg_recycler.DragAndDropHelper;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Iterator;

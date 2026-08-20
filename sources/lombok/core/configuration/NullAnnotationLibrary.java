@@ -7,7 +7,7 @@ import java.util.Collections;
 import java.util.Iterator;
 import java.util.List;
 
-/* JADX INFO: loaded from: app.apk:lombok/core/configuration/NullAnnotationLibrary.SCL.lombok */
+/* JADX INFO: loaded from: discord-126021.apk:lombok/core/configuration/NullAnnotationLibrary.SCL.lombok */
 public final class NullAnnotationLibrary implements ConfigurationValueType {
     private final String key;
     private final String nonNullAnnotation;

@@ -5,8 +5,6 @@ import android.graphics.Point;
 import android.opengl.GLES20;
 import androidx.annotation.Nullable;
 import java.nio.ByteBuffer;
-import org.webrtc.RendererCommon;
-import org.webrtc.VideoFrame;
 import p007b.p100d.p104b.p105a.C1643a;
 
 /* JADX INFO: loaded from: classes3.dex */

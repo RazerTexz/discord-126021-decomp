@@ -571,7 +571,7 @@ public final class ThreadBrowserThreadView extends FrameLayout {
             C12238m.checkNotNullExpressionValue(textView, "binding.threadTimestamp");
             Context context = getContext();
             C12238m.checkNotNullExpressionValue(context, "context");
-            textView.setText(C1107b.m210b(context, i, new Object[]{formatDateTimestamp(uTCDate)}, (4 & 4) != 0 ? C1107b.b.f1491j : null));
+            textView.setText(C1107b.m216h(context, i, new Object[]{formatDateTimestamp(uTCDate)}, null, 4));
             User owner = threadData.getOwner();
             Map<Long, GuildMember> guildMembers = threadData.getGuildMembers();
             User owner2 = threadData.getOwner();
@@ -612,22 +612,22 @@ public final class ThreadBrowserThreadView extends FrameLayout {
         if (jCurrentTimeMillis < 60000) {
             Context context = getContext();
             C12238m.checkNotNullExpressionValue(context, "context");
-            return C1107b.m210b(context, C5419R.string.thread_browser_timestamp_minutes, new Object[]{1}, (4 & 4) != 0 ? C1107b.b.f1491j : null);
+            return C1107b.m216h(context, C5419R.string.thread_browser_timestamp_minutes, new Object[]{1}, null, 4);
         }
         if (jCurrentTimeMillis < 3600000) {
             Context context2 = getContext();
             C12238m.checkNotNullExpressionValue(context2, "context");
-            return C1107b.m210b(context2, C5419R.string.thread_browser_timestamp_minutes, new Object[]{Long.valueOf(jCurrentTimeMillis / 60000)}, (4 & 4) != 0 ? C1107b.b.f1491j : null);
+            return C1107b.m216h(context2, C5419R.string.thread_browser_timestamp_minutes, new Object[]{Long.valueOf(jCurrentTimeMillis / 60000)}, null, 4);
         }
         if (jCurrentTimeMillis < 86400000) {
             Context context3 = getContext();
             C12238m.checkNotNullExpressionValue(context3, "context");
-            return C1107b.m210b(context3, C5419R.string.thread_browser_timestamp_hours, new Object[]{Long.valueOf(jCurrentTimeMillis / 3600000)}, (4 & 4) != 0 ? C1107b.b.f1491j : null);
+            return C1107b.m216h(context3, C5419R.string.thread_browser_timestamp_hours, new Object[]{Long.valueOf(jCurrentTimeMillis / 3600000)}, null, 4);
         }
         if (jCurrentTimeMillis < WidgetChatListAdapterItemGuildWelcomeKt.OLD_GUILD_AGE_THRESHOLD) {
             Context context4 = getContext();
             C12238m.checkNotNullExpressionValue(context4, "context");
-            return C1107b.m210b(context4, C5419R.string.thread_browser_timestamp_days, new Object[]{Long.valueOf(jCurrentTimeMillis / 86400000)}, (4 & 4) != 0 ? C1107b.b.f1491j : null);
+            return C1107b.m216h(context4, C5419R.string.thread_browser_timestamp_days, new Object[]{Long.valueOf(jCurrentTimeMillis / 86400000)}, null, 4);
         }
         String string = getContext().getString(C5419R.string.thread_browser_timestamp_more_than_month);
         C12238m.checkNotNullExpressionValue(string, "context.getString(R.stri…imestamp_more_than_month)");
@@ -639,17 +639,17 @@ public final class ThreadBrowserThreadView extends FrameLayout {
         if (jCurrentTimeMillis < 60000) {
             Context context = getContext();
             C12238m.checkNotNullExpressionValue(context, "context");
-            return C1107b.m210b(context, C5419R.string.thread_browser_timestamp_minutes, new Object[]{1}, (4 & 4) != 0 ? C1107b.b.f1491j : null);
+            return C1107b.m216h(context, C5419R.string.thread_browser_timestamp_minutes, new Object[]{1}, null, 4);
         }
         if (jCurrentTimeMillis < 3600000) {
             Context context2 = getContext();
             C12238m.checkNotNullExpressionValue(context2, "context");
-            return C1107b.m210b(context2, C5419R.string.thread_browser_timestamp_minutes, new Object[]{Long.valueOf(jCurrentTimeMillis / 60000)}, (4 & 4) != 0 ? C1107b.b.f1491j : null);
+            return C1107b.m216h(context2, C5419R.string.thread_browser_timestamp_minutes, new Object[]{Long.valueOf(jCurrentTimeMillis / 60000)}, null, 4);
         }
         if (jCurrentTimeMillis < 86400000) {
             Context context3 = getContext();
             C12238m.checkNotNullExpressionValue(context3, "context");
-            return C1107b.m210b(context3, C5419R.string.thread_browser_timestamp_hours, new Object[]{Long.valueOf(jCurrentTimeMillis / 3600000)}, (4 & 4) != 0 ? C1107b.b.f1491j : null);
+            return C1107b.m216h(context3, C5419R.string.thread_browser_timestamp_hours, new Object[]{Long.valueOf(jCurrentTimeMillis / 3600000)}, null, 4);
         }
         String dateTime = DateUtils.formatDateTime(getContext(), timestamp, 131076);
         C12238m.checkNotNullExpressionValue(dateTime, "DateUtils.formatDateTime…teUtils.FORMAT_SHOW_YEAR)");

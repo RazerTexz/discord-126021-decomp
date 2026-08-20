@@ -7,7 +7,7 @@ import org.objectweb.asm.Opcodes;
 import org.objectweb.asm.Type;
 import org.objectweb.asm.TypePath;
 
-/* JADX INFO: loaded from: app.apk:org/objectweb/asm/commons/LocalVariablesSorter.SCL.lombok */
+/* JADX INFO: loaded from: discord-126021.apk:org/objectweb/asm/commons/LocalVariablesSorter.SCL.lombok */
 public class LocalVariablesSorter extends MethodVisitor {
     private static final Type OBJECT_TYPE = Type.getObjectType("java/lang/Object");
     private int[] remappedVariableIndices;

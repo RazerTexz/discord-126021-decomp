@@ -7,7 +7,6 @@ import java.lang.reflect.Type;
 import java.util.Optional;
 import okhttp3.ResponseBody;
 import org.codehaus.mojo.animal_sniffer.IgnoreJRERequirement;
-import p630i0.InterfaceC12554h;
 
 /* JADX INFO: renamed from: i0.q */
 /* JADX INFO: compiled from: OptionalConverterFactory.java */

@@ -24,7 +24,6 @@ import androidx.core.view.ViewCompat;
 import androidx.core.view.accessibility.AccessibilityNodeInfoCompat;
 import com.google.android.material.C10817R;
 import com.google.android.material.resources.MaterialResources;
-import com.google.android.material.timepicker.ClockHandView;
 import java.util.Arrays;
 import p007b.p225i.p226a.p341g.p352k.C4448c;
 import p007b.p225i.p226a.p341g.p352k.C4450e;

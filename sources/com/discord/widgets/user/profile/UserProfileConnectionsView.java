@@ -22,7 +22,6 @@ import com.discord.utilities.mg_recycler.MGRecyclerDataPayload;
 import com.discord.utilities.mg_recycler.MGRecyclerViewHolder;
 import com.discord.utilities.platform.Platform;
 import com.discord.utilities.view.extensions.ViewExtensions;
-import com.discord.widgets.user.profile.UserProfileConnectionsView;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Objects;

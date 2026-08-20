@@ -13,7 +13,6 @@ import lombok.core.handlers.HandlerUtil;
 import lombok.core.handlers.LoggingFramework;
 import lombok.eclipse.EclipseAnnotationHandler;
 import lombok.eclipse.EclipseNode;
-import lombok.eclipse.handlers.EclipseHandlerUtil;
 import lombok.extern.apachecommons.CommonsLog;
 import lombok.extern.flogger.Flogger;
 import lombok.extern.java.Log;
@@ -32,7 +31,7 @@ import org.eclipse.jdt.internal.compiler.ast.StringLiteral;
 import org.eclipse.jdt.internal.compiler.ast.TypeDeclaration;
 import org.eclipse.jdt.internal.compiler.ast.TypeReference;
 
-/* JADX INFO: loaded from: app.apk:lombok/eclipse/handlers/HandleLog.SCL.lombok */
+/* JADX INFO: loaded from: discord-126021.apk:lombok/eclipse/handlers/HandleLog.SCL.lombok */
 public class HandleLog {
     private static final IdentifierName LOG = IdentifierName.valueOf("log");
     private static /* synthetic */ int[] $SWITCH_TABLE$lombok$core$AST$Kind;
@@ -239,7 +238,7 @@ public class HandleLog {
         return result;
     }
 
-    /* JADX INFO: loaded from: app.apk:lombok/eclipse/handlers/HandleLog$HandleCommonsLog.SCL.lombok */
+    /* JADX INFO: loaded from: discord-126021.apk:lombok/eclipse/handlers/HandleLog$HandleCommonsLog.SCL.lombok */
     public static class HandleCommonsLog extends EclipseAnnotationHandler<CommonsLog> {
         @Override // lombok.eclipse.EclipseAnnotationHandler
         public void handle(AnnotationValues<CommonsLog> annotation, org.eclipse.jdt.internal.compiler.ast.Annotation source, EclipseNode annotationNode) {
@@ -248,7 +247,7 @@ public class HandleLog {
         }
     }
 
-    /* JADX INFO: loaded from: app.apk:lombok/eclipse/handlers/HandleLog$HandleJulLog.SCL.lombok */
+    /* JADX INFO: loaded from: discord-126021.apk:lombok/eclipse/handlers/HandleLog$HandleJulLog.SCL.lombok */
     public static class HandleJulLog extends EclipseAnnotationHandler<Log> {
         @Override // lombok.eclipse.EclipseAnnotationHandler
         public void handle(AnnotationValues<Log> annotation, org.eclipse.jdt.internal.compiler.ast.Annotation source, EclipseNode annotationNode) {
@@ -257,7 +256,7 @@ public class HandleLog {
         }
     }
 
-    /* JADX INFO: loaded from: app.apk:lombok/eclipse/handlers/HandleLog$HandleLog4jLog.SCL.lombok */
+    /* JADX INFO: loaded from: discord-126021.apk:lombok/eclipse/handlers/HandleLog$HandleLog4jLog.SCL.lombok */
     public static class HandleLog4jLog extends EclipseAnnotationHandler<Log4j> {
         @Override // lombok.eclipse.EclipseAnnotationHandler
         public void handle(AnnotationValues<Log4j> annotation, org.eclipse.jdt.internal.compiler.ast.Annotation source, EclipseNode annotationNode) {
@@ -266,7 +265,7 @@ public class HandleLog {
         }
     }
 
-    /* JADX INFO: loaded from: app.apk:lombok/eclipse/handlers/HandleLog$HandleLog4j2Log.SCL.lombok */
+    /* JADX INFO: loaded from: discord-126021.apk:lombok/eclipse/handlers/HandleLog$HandleLog4j2Log.SCL.lombok */
     public static class HandleLog4j2Log extends EclipseAnnotationHandler<Log4j2> {
         @Override // lombok.eclipse.EclipseAnnotationHandler
         public void handle(AnnotationValues<Log4j2> annotation, org.eclipse.jdt.internal.compiler.ast.Annotation source, EclipseNode annotationNode) {
@@ -275,7 +274,7 @@ public class HandleLog {
         }
     }
 
-    /* JADX INFO: loaded from: app.apk:lombok/eclipse/handlers/HandleLog$HandleSlf4jLog.SCL.lombok */
+    /* JADX INFO: loaded from: discord-126021.apk:lombok/eclipse/handlers/HandleLog$HandleSlf4jLog.SCL.lombok */
     public static class HandleSlf4jLog extends EclipseAnnotationHandler<Slf4j> {
         @Override // lombok.eclipse.EclipseAnnotationHandler
         public void handle(AnnotationValues<Slf4j> annotation, org.eclipse.jdt.internal.compiler.ast.Annotation source, EclipseNode annotationNode) {
@@ -284,7 +283,7 @@ public class HandleLog {
         }
     }
 
-    /* JADX INFO: loaded from: app.apk:lombok/eclipse/handlers/HandleLog$HandleXSlf4jLog.SCL.lombok */
+    /* JADX INFO: loaded from: discord-126021.apk:lombok/eclipse/handlers/HandleLog$HandleXSlf4jLog.SCL.lombok */
     public static class HandleXSlf4jLog extends EclipseAnnotationHandler<XSlf4j> {
         @Override // lombok.eclipse.EclipseAnnotationHandler
         public void handle(AnnotationValues<XSlf4j> annotation, org.eclipse.jdt.internal.compiler.ast.Annotation source, EclipseNode annotationNode) {
@@ -293,7 +292,7 @@ public class HandleLog {
         }
     }
 
-    /* JADX INFO: loaded from: app.apk:lombok/eclipse/handlers/HandleLog$HandleJBossLog.SCL.lombok */
+    /* JADX INFO: loaded from: discord-126021.apk:lombok/eclipse/handlers/HandleLog$HandleJBossLog.SCL.lombok */
     public static class HandleJBossLog extends EclipseAnnotationHandler<JBossLog> {
         @Override // lombok.eclipse.EclipseAnnotationHandler
         public void handle(AnnotationValues<JBossLog> annotation, org.eclipse.jdt.internal.compiler.ast.Annotation source, EclipseNode annotationNode) {
@@ -302,7 +301,7 @@ public class HandleLog {
         }
     }
 
-    /* JADX INFO: loaded from: app.apk:lombok/eclipse/handlers/HandleLog$HandleFloggerLog.SCL.lombok */
+    /* JADX INFO: loaded from: discord-126021.apk:lombok/eclipse/handlers/HandleLog$HandleFloggerLog.SCL.lombok */
     public static class HandleFloggerLog extends EclipseAnnotationHandler<Flogger> {
         @Override // lombok.eclipse.EclipseAnnotationHandler
         public void handle(AnnotationValues<Flogger> annotation, org.eclipse.jdt.internal.compiler.ast.Annotation source, EclipseNode annotationNode) {
@@ -311,7 +310,7 @@ public class HandleLog {
         }
     }
 
-    /* JADX INFO: loaded from: app.apk:lombok/eclipse/handlers/HandleLog$HandleCustomLog.SCL.lombok */
+    /* JADX INFO: loaded from: discord-126021.apk:lombok/eclipse/handlers/HandleLog$HandleCustomLog.SCL.lombok */
     public static class HandleCustomLog extends EclipseAnnotationHandler<CustomLog> {
         @Override // lombok.eclipse.EclipseAnnotationHandler
         public void handle(AnnotationValues<CustomLog> annotation, org.eclipse.jdt.internal.compiler.ast.Annotation source, EclipseNode annotationNode) {

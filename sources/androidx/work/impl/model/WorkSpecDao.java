@@ -9,7 +9,6 @@ import androidx.room.Transaction;
 import androidx.view.LiveData;
 import androidx.work.Data;
 import androidx.work.WorkInfo;
-import androidx.work.impl.model.WorkSpec;
 import java.util.List;
 
 /* JADX INFO: loaded from: classes.dex */

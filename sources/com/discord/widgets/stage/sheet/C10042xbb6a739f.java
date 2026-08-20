@@ -12,8 +12,6 @@ import com.discord.stores.StoreVoiceParticipants;
 import com.discord.utilities.guilds.RoleUtils;
 import com.discord.utilities.time.Clock;
 import com.discord.widgets.stage.StageRoles;
-import com.discord.widgets.stage.sheet.WidgetStageRaisedHandsBottomSheetAdapter;
-import com.discord.widgets.stage.sheet.WidgetStageRaisedHandsBottomSheetViewModel;
 import java.util.Comparator;
 import java.util.Map;
 import kotlin.jvm.functions.Function1;

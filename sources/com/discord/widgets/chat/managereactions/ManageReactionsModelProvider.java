@@ -18,8 +18,6 @@ import com.discord.stores.updates.ObservationDeck;
 import com.discord.stores.updates.ObservationDeckProvider;
 import com.discord.utilities.p501rx.ObservableExtensionsKt;
 import com.discord.utilities.permissions.PermissionUtils;
-import com.discord.widgets.chat.managereactions.ManageReactionsEmojisAdapter;
-import com.discord.widgets.chat.managereactions.ManageReactionsResultsAdapter;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Comparator;

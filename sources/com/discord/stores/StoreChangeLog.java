@@ -6,7 +6,6 @@ import android.content.SharedPreferences;
 import androidx.fragment.app.FragmentActivity;
 import com.discord.C5419R;
 import com.discord.models.domain.ModelAuditLogEntry;
-import com.discord.stores.StoreNotices;
 import com.discord.utilities.SnowflakeUtils;
 import com.discord.utilities.string.StringUtilsKt;
 import com.discord.utilities.time.Clock;

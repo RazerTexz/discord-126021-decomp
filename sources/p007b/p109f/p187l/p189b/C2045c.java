@@ -9,7 +9,6 @@ import java.util.Objects;
 import p007b.p109f.p115d.p120e.C1691a;
 import p007b.p109f.p187l.p188a.C2041a;
 import p007b.p109f.p187l.p188a.C2042b;
-import p007b.p109f.p187l.p189b.InterfaceC2047e;
 
 /* JADX INFO: renamed from: b.f.l.b.c */
 /* JADX INFO: compiled from: DefaultZoomableController.java */

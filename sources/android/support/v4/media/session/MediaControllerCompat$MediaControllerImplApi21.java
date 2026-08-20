@@ -7,7 +7,6 @@ import android.os.Bundle;
 import android.os.RemoteException;
 import android.os.ResultReceiver;
 import android.support.v4.media.MediaMetadataCompat;
-import android.support.v4.media.session.MediaSessionCompat;
 import android.util.Log;
 import androidx.annotation.GuardedBy;
 import androidx.annotation.RequiresApi;

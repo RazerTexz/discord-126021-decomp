@@ -1,7 +1,6 @@
 package com.discord.widgets.hubs;
 
 import com.discord.api.directory.DirectoryEntryGuild;
-import com.discord.widgets.hubs.WidgetHubAddServer;
 import kotlin.Unit;
 import kotlin.jvm.functions.Function0;
 import p507d0.p592z.p594d.AbstractC12240o;

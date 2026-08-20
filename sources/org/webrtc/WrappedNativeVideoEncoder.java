@@ -1,6 +1,5 @@
 package org.webrtc;
 
-import org.webrtc.VideoEncoder;
 import p617h0.p628c.C12485r0;
 
 /* JADX INFO: loaded from: classes3.dex */

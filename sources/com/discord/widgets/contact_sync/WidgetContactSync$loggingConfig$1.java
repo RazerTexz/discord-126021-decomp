@@ -5,7 +5,6 @@ import com.discord.analytics.generated.events.impression.TrackImpressionContactS
 import com.discord.analytics.generated.events.impression.TrackImpressionContactSyncSuggestions;
 import com.discord.analytics.generated.events.impression.TrackImpressionUserAddPhone;
 import com.discord.api.science.AnalyticsSchema;
-import com.discord.widgets.contact_sync.WidgetContactSyncViewModel;
 import kotlin.jvm.functions.Function0;
 import p507d0.p592z.p594d.AbstractC12240o;
 

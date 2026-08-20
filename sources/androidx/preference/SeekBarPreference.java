@@ -10,7 +10,6 @@ import android.view.KeyEvent;
 import android.view.View;
 import android.widget.SeekBar;
 import android.widget.TextView;
-import androidx.preference.Preference;
 
 /* JADX INFO: loaded from: classes.dex */
 public class SeekBarPreference extends Preference {

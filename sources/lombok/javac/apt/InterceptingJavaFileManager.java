@@ -6,9 +6,8 @@ import javax.tools.ForwardingJavaFileManager;
 import javax.tools.JavaFileManager;
 import javax.tools.JavaFileObject;
 import lombok.core.DiagnosticsReceiver;
-import lombok.javac.apt.LombokFileObjects;
 
-/* JADX INFO: loaded from: app.apk:lombok/javac/apt/InterceptingJavaFileManager.SCL.lombok */
+/* JADX INFO: loaded from: discord-126021.apk:lombok/javac/apt/InterceptingJavaFileManager.SCL.lombok */
 final class InterceptingJavaFileManager extends ForwardingJavaFileManager<JavaFileManager> {
     private final DiagnosticsReceiver diagnostics;
     private final LombokFileObjects.Compiler compiler;
