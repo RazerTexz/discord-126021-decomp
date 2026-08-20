@@ -30,11 +30,12 @@ jobs:
 
       - name: Decompile
         run: |
-          rm -rf resources sources
+          rm -rf resources source
+
           sh */bin/jadx \
-            --show-bad-code \
             --fs-case-sensitive \
             --respect-bytecode-access-modifiers \
+            --show-bad-code \
             --no-inline-anonymous \
             --no-inline-kotlin-lambda \
             --no-inline-methods \
@@ -44,7 +45,7 @@ jobs:
 
           find . -type f -name "*.java" -exec sed -i "/@Metadata(\|@kotlin.Metadata(\|import kotlin.Metadata/d" {} +
 
-      - name: Sync
+      - name: Commit and push
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
