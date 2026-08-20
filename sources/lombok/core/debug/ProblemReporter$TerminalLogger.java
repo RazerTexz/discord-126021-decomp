@@ -1,6 +1,6 @@
 package lombok.core.debug;
 
-/* JADX INFO: loaded from: app.apk:lombok/core/debug/ProblemReporter$TerminalLogger.SCL.lombok */
+/* JADX INFO: loaded from: discord-126021.apk:lombok/core/debug/ProblemReporter$TerminalLogger.SCL.lombok */
 class ProblemReporter$TerminalLogger implements ProblemReporter$ErrorLogger {
     private ProblemReporter$TerminalLogger() {
     }

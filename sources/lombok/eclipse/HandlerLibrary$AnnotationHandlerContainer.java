@@ -5,7 +5,7 @@ import lombok.core.AnnotationValues;
 import lombok.core.HandlerPriority;
 import lombok.eclipse.handlers.EclipseHandlerUtil;
 
-/* JADX INFO: loaded from: app.apk:lombok/eclipse/HandlerLibrary$AnnotationHandlerContainer.SCL.lombok */
+/* JADX INFO: loaded from: discord-126021.apk:lombok/eclipse/HandlerLibrary$AnnotationHandlerContainer.SCL.lombok */
 class HandlerLibrary$AnnotationHandlerContainer<T extends Annotation> {
     private final EclipseAnnotationHandler<T> handler;
     private final Class<T> annotationClass;

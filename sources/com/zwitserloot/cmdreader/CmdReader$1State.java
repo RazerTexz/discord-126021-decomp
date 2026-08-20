@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 
-/* JADX INFO: loaded from: app.apk:com/zwitserloot/cmdreader/CmdReader$1State.SCL.lombok */
+/* JADX INFO: loaded from: discord-126021.apk:com/zwitserloot/cmdreader/CmdReader$1State.SCL.lombok */
 class CmdReader$1State {
     List<ParseItem> used = new ArrayList();
     final /* synthetic */ Object val$obj;

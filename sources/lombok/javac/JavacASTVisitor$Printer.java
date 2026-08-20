@@ -14,7 +14,7 @@ import com.sun.tools.javac.util.List;
 import java.io.PrintStream;
 import java.lang.reflect.Field;
 
-/* JADX INFO: loaded from: app.apk:lombok/javac/JavacASTVisitor$Printer.SCL.lombok */
+/* JADX INFO: loaded from: discord-126021.apk:lombok/javac/JavacASTVisitor$Printer.SCL.lombok */
 public class JavacASTVisitor$Printer implements JavacASTVisitor {
     private final PrintStream out;
     private final boolean printContent;

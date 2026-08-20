@@ -2,7 +2,7 @@ package lombok.eclipse.agent;
 
 import java.lang.reflect.Method;
 
-/* JADX INFO: loaded from: app.apk:lombok/eclipse/agent/PatchExtensionMethodCompletionProposalPortal$ReflectionForUi.SCL.lombok */
+/* JADX INFO: loaded from: discord-126021.apk:lombok/eclipse/agent/PatchExtensionMethodCompletionProposalPortal$ReflectionForUi.SCL.lombok */
 final class PatchExtensionMethodCompletionProposalPortal$ReflectionForUi {
     public static final Method getJavaCompletionProposals;
     public static final Throwable problem;

@@ -1,6 +1,6 @@
 package org.objectweb.asm;
 
-/* JADX INFO: loaded from: app.apk:org/objectweb/asm/Label.SCL.lombok */
+/* JADX INFO: loaded from: discord-126021.apk:org/objectweb/asm/Label.SCL.lombok */
 public class Label {
     static final int FLAG_DEBUG_ONLY = 1;
     static final int FLAG_JUMP_TARGET = 2;

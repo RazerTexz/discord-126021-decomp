@@ -8,7 +8,7 @@ import lombok.core.DiagnosticsReceiver;
 import lombok.core.PostCompiler;
 import lombok.core.Version;
 
-/* JADX INFO: loaded from: app.apk:lombok/eclipse/agent/PatchFixesShadowLoaded.SCL.lombok */
+/* JADX INFO: loaded from: discord-126021.apk:lombok/eclipse/agent/PatchFixesShadowLoaded.SCL.lombok */
 public class PatchFixesShadowLoaded {
     public static String addLombokNotesToEclipseAboutDialog(String origReturnValue, String key) {
         if ("aboutText".equals(key)) {

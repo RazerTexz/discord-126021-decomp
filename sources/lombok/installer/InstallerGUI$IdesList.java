@@ -13,7 +13,7 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.Scrollable;
 
-/* JADX INFO: loaded from: app.apk:lombok/installer/InstallerGUI$IdesList.SCL.lombok */
+/* JADX INFO: loaded from: discord-126021.apk:lombok/installer/InstallerGUI$IdesList.SCL.lombok */
 class InstallerGUI$IdesList extends JPanel implements Scrollable {
     private static final long serialVersionUID = 1;
     List<IdeLocation> locations = new ArrayList();

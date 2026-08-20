@@ -1,6 +1,6 @@
 package lombok.javac.handlers;
 
-/* JADX INFO: loaded from: app.apk:lombok/javac/handlers/HandleDelegate$DelegateRecursion.SCL.lombok */
+/* JADX INFO: loaded from: discord-126021.apk:lombok/javac/handlers/HandleDelegate$DelegateRecursion.SCL.lombok */
 class HandleDelegate$DelegateRecursion extends Throwable {
     final String type;
     final String member;

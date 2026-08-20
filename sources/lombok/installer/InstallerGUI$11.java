@@ -4,7 +4,7 @@ import java.awt.Container;
 import java.util.concurrent.atomic.AtomicInteger;
 import javax.swing.SwingUtilities;
 
-/* JADX INFO: loaded from: app.apk:lombok/installer/InstallerGUI$11.SCL.lombok */
+/* JADX INFO: loaded from: discord-126021.apk:lombok/installer/InstallerGUI$11.SCL.lombok */
 class InstallerGUI$11 implements Runnable {
     final /* synthetic */ InstallerGUI this$0;
     private final /* synthetic */ AtomicInteger val$successes;

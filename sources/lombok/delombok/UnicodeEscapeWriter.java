@@ -5,7 +5,7 @@ import java.io.Writer;
 import java.nio.charset.Charset;
 import java.nio.charset.CharsetEncoder;
 
-/* JADX INFO: loaded from: app.apk:lombok/delombok/UnicodeEscapeWriter.SCL.lombok */
+/* JADX INFO: loaded from: discord-126021.apk:lombok/delombok/UnicodeEscapeWriter.SCL.lombok */
 public class UnicodeEscapeWriter extends Writer {
     private final Writer writer;
     private CharsetEncoder encoder;

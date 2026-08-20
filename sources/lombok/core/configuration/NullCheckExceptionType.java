@@ -4,7 +4,7 @@ import lombok.core.LombokImmutableList;
 
 /* JADX WARN: Failed to restore enum class, 'enum' modifier and super class removed */
 /* JADX WARN: Unknown enum class pattern. Please report as an issue! */
-/* JADX INFO: loaded from: app.apk:lombok/core/configuration/NullCheckExceptionType.SCL.lombok */
+/* JADX INFO: loaded from: discord-126021.apk:lombok/core/configuration/NullCheckExceptionType.SCL.lombok */
 @ExampleValueString("[NullPointerException | IllegalArgumentException | Assertion | JDK | Guava]")
 public abstract class NullCheckExceptionType {
     public static final NullCheckExceptionType ILLEGAL_ARGUMENT_EXCEPTION = new NullCheckExceptionType$1("ILLEGAL_ARGUMENT_EXCEPTION", 0);

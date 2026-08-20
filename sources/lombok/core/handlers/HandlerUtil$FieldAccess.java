@@ -1,6 +1,6 @@
 package lombok.core.handlers;
 
-/* JADX INFO: loaded from: app.apk:lombok/core/handlers/HandlerUtil$FieldAccess.SCL.lombok */
+/* JADX INFO: loaded from: discord-126021.apk:lombok/core/handlers/HandlerUtil$FieldAccess.SCL.lombok */
 public enum HandlerUtil$FieldAccess {
     GETTER,
     PREFER_FIELD,

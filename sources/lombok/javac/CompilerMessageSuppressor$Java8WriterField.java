@@ -4,7 +4,7 @@ import com.sun.tools.javac.util.Log;
 import java.io.PrintWriter;
 import java.lang.reflect.Field;
 
-/* JADX INFO: loaded from: app.apk:lombok/javac/CompilerMessageSuppressor$Java8WriterField.SCL.lombok */
+/* JADX INFO: loaded from: discord-126021.apk:lombok/javac/CompilerMessageSuppressor$Java8WriterField.SCL.lombok */
 class CompilerMessageSuppressor$Java8WriterField implements CompilerMessageSuppressor$WriterField {
     private final Field field;
     private PrintWriter writer;

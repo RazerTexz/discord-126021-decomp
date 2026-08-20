@@ -5,7 +5,7 @@ import java.util.HashSet;
 import java.util.Iterator;
 import java.util.Set;
 
-/* JADX INFO: loaded from: app.apk:org/objectweb/asm/tree/analysis/SmallSet.SCL.lombok */
+/* JADX INFO: loaded from: discord-126021.apk:org/objectweb/asm/tree/analysis/SmallSet.SCL.lombok */
 final class SmallSet<T> extends AbstractSet<T> {
     private final T element1;
     private final T element2;

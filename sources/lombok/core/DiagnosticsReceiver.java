@@ -1,6 +1,6 @@
 package lombok.core;
 
-/* JADX INFO: loaded from: app.apk:lombok/core/DiagnosticsReceiver.SCL.lombok */
+/* JADX INFO: loaded from: discord-126021.apk:lombok/core/DiagnosticsReceiver.SCL.lombok */
 public interface DiagnosticsReceiver {
     public static final DiagnosticsReceiver CONSOLE = new DiagnosticsReceiver$1();
 

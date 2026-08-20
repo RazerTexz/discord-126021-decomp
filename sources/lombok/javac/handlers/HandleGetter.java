@@ -40,7 +40,7 @@ import lombok.javac.JavacNode;
 import lombok.javac.JavacTreeMaker;
 import lombok.javac.JavacTreeMaker$TypeTag;
 
-/* JADX INFO: loaded from: app.apk:lombok/javac/handlers/HandleGetter.SCL.lombok */
+/* JADX INFO: loaded from: discord-126021.apk:lombok/javac/handlers/HandleGetter.SCL.lombok */
 public class HandleGetter extends JavacAnnotationHandler<Getter> {
     private static final String AR = "java.util.concurrent.atomic.AtomicReference";
     private static final List<JCTree$JCExpression> NIL_EXPRESSION = List.nil();

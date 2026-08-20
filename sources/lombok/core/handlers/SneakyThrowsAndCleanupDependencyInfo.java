@@ -4,7 +4,7 @@ import java.util.Arrays;
 import java.util.List;
 import lombok.core.runtimeDependencies.RuntimeDependencyInfo;
 
-/* JADX INFO: loaded from: app.apk:lombok/core/handlers/SneakyThrowsAndCleanupDependencyInfo.SCL.lombok */
+/* JADX INFO: loaded from: discord-126021.apk:lombok/core/handlers/SneakyThrowsAndCleanupDependencyInfo.SCL.lombok */
 public class SneakyThrowsAndCleanupDependencyInfo implements RuntimeDependencyInfo {
     @Override // lombok.core.runtimeDependencies.RuntimeDependencyInfo
     public List<String> getRuntimeDependencies() {

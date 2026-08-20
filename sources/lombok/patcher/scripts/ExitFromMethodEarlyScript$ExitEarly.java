@@ -6,7 +6,7 @@ import org.objectweb.asm.Label;
 import org.objectweb.asm.MethodVisitor;
 import org.objectweb.asm.Opcodes;
 
-/* JADX INFO: loaded from: app.apk:lombok/patcher/scripts/ExitFromMethodEarlyScript$ExitEarly.SCL.lombok */
+/* JADX INFO: loaded from: discord-126021.apk:lombok/patcher/scripts/ExitFromMethodEarlyScript$ExitEarly.SCL.lombok */
 class ExitFromMethodEarlyScript$ExitEarly extends MethodVisitor {
     private final MethodLogistics logistics;
     private final String ownClassSpec;

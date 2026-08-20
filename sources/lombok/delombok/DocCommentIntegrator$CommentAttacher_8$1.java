@@ -5,7 +5,7 @@ import com.sun.tools.javac.parser.Tokens$Comment$CommentStyle;
 import com.sun.tools.javac.tree.JCTree;
 import lombok.javac.handlers.JavacHandlerUtil;
 
-/* JADX INFO: loaded from: app.apk:lombok/delombok/DocCommentIntegrator$CommentAttacher_8$1.SCL.lombok */
+/* JADX INFO: loaded from: discord-126021.apk:lombok/delombok/DocCommentIntegrator$CommentAttacher_8$1.SCL.lombok */
 class DocCommentIntegrator$CommentAttacher_8$1 implements Tokens$Comment {
     private final /* synthetic */ String val$docCommentContent_;
     private final /* synthetic */ JCTree val$node;

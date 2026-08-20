@@ -11,7 +11,7 @@ import org.eclipse.jdt.internal.compiler.lookup.Scope;
 import org.eclipse.jdt.internal.compiler.lookup.TypeBinding;
 import org.eclipse.jdt.internal.compiler.problem.ProblemReporter;
 
-/* JADX INFO: loaded from: app.apk:Class50/lombok/launch/PatchFixesHider$ExtensionMethod.SCL.lombok */
+/* JADX INFO: loaded from: discord-126021.apk:Class50/lombok/launch/PatchFixesHider$ExtensionMethod.SCL.lombok */
 public final class PatchFixesHider$ExtensionMethod {
     private static final Method RESOLVE_TYPE = null;
     private static final Method ERROR_NO_METHOD_FOR = null;

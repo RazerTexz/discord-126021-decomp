@@ -4,7 +4,7 @@ import com.sun.tools.javac.tree.JCTree$JCExpression;
 import lombok.javac.Javac;
 import lombok.javac.JavacTreeMaker;
 
-/* JADX INFO: loaded from: app.apk:lombok/javac/handlers/JavacSingularsRecipes$JavacSingularizer$1.SCL.lombok */
+/* JADX INFO: loaded from: discord-126021.apk:lombok/javac/handlers/JavacSingularsRecipes$JavacSingularizer$1.SCL.lombok */
 class JavacSingularsRecipes$JavacSingularizer$1 implements JavacSingularsRecipes$ExpressionMaker {
     final /* synthetic */ JavacSingularsRecipes$JavacSingularizer this$1;
     private final /* synthetic */ HandleBuilder$BuilderJob val$job;

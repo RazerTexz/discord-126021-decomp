@@ -5,7 +5,7 @@ import com.sun.tools.javac.util.Name;
 import lombok.javac.JavacNode;
 import lombok.javac.JavacTreeMaker;
 
-/* JADX INFO: loaded from: app.apk:lombok/javac/handlers/HandleDelegate$DelegateReceiver$2.SCL.lombok */
+/* JADX INFO: loaded from: discord-126021.apk:lombok/javac/handlers/HandleDelegate$DelegateReceiver$2.SCL.lombok */
 enum HandleDelegate$DelegateReceiver$2 extends HandleDelegate$DelegateReceiver {
     HandleDelegate$DelegateReceiver$2(String str, int i) {
         super(str, i, null);

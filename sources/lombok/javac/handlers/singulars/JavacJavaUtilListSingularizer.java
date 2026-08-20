@@ -19,7 +19,7 @@ import lombok.javac.handlers.JavacSingularsRecipes$ExpressionMaker;
 import lombok.javac.handlers.JavacSingularsRecipes$SingularData;
 import lombok.javac.handlers.JavacSingularsRecipes$StatementMaker;
 
-/* JADX INFO: loaded from: app.apk:lombok/javac/handlers/singulars/JavacJavaUtilListSingularizer.SCL.lombok */
+/* JADX INFO: loaded from: discord-126021.apk:lombok/javac/handlers/singulars/JavacJavaUtilListSingularizer.SCL.lombok */
 public class JavacJavaUtilListSingularizer extends JavacJavaUtilListSetSingularizer {
     @Override // lombok.javac.handlers.singulars.JavacJavaUtilListSetSingularizer, lombok.javac.handlers.JavacSingularsRecipes$JavacSingularizer
     public /* bridge */ /* synthetic */ List generateFields(JavacSingularsRecipes$SingularData javacSingularsRecipes$SingularData, JavacNode javacNode, JCTree jCTree) {

@@ -3,7 +3,7 @@ package org.objectweb.asm.tree.analysis;
 import java.util.Set;
 import org.objectweb.asm.tree.AbstractInsnNode;
 
-/* JADX INFO: loaded from: app.apk:org/objectweb/asm/tree/analysis/SourceValue.SCL.lombok */
+/* JADX INFO: loaded from: discord-126021.apk:org/objectweb/asm/tree/analysis/SourceValue.SCL.lombok */
 public class SourceValue implements Value {
     public final int size;
     public final Set<AbstractInsnNode> insns;

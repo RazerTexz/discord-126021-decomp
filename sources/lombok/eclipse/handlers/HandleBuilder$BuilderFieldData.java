@@ -7,7 +7,7 @@ import lombok.eclipse.EclipseNode;
 import org.eclipse.jdt.internal.compiler.ast.Annotation;
 import org.eclipse.jdt.internal.compiler.ast.TypeReference;
 
-/* JADX INFO: loaded from: app.apk:lombok/eclipse/handlers/HandleBuilder$BuilderFieldData.SCL.lombok */
+/* JADX INFO: loaded from: discord-126021.apk:lombok/eclipse/handlers/HandleBuilder$BuilderFieldData.SCL.lombok */
 class HandleBuilder$BuilderFieldData {
     Annotation[] annotations;
     TypeReference type;

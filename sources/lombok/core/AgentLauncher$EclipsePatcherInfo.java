@@ -1,6 +1,6 @@
 package lombok.core;
 
-/* JADX INFO: loaded from: app.apk:lombok/core/AgentLauncher$EclipsePatcherInfo.SCL.lombok */
+/* JADX INFO: loaded from: discord-126021.apk:lombok/core/AgentLauncher$EclipsePatcherInfo.SCL.lombok */
 class AgentLauncher$EclipsePatcherInfo extends AgentLauncher$AgentInfo {
     private AgentLauncher$EclipsePatcherInfo() {
         super(null);

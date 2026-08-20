@@ -10,7 +10,7 @@ import lombok.patcher.TransplantMapper;
 import org.objectweb.asm.ClassWriter;
 import org.objectweb.asm.MethodVisitor;
 
-/* JADX INFO: loaded from: app.apk:lombok/patcher/scripts/ExitFromMethodEarlyScript.SCL.lombok */
+/* JADX INFO: loaded from: discord-126021.apk:lombok/patcher/scripts/ExitFromMethodEarlyScript.SCL.lombok */
 public class ExitFromMethodEarlyScript extends MethodLevelPatchScript {
     private final Hook decisionWrapper;
     private final Hook valueWrapper;

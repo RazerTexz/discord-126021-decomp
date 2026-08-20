@@ -1,6 +1,6 @@
 package org.objectweb.asm;
 
-/* JADX INFO: loaded from: app.apk:org/objectweb/asm/AnnotationWriter.SCL.lombok */
+/* JADX INFO: loaded from: discord-126021.apk:org/objectweb/asm/AnnotationWriter.SCL.lombok */
 final class AnnotationWriter extends AnnotationVisitor {
     private final SymbolTable symbolTable;
     private final boolean useNamedValues;

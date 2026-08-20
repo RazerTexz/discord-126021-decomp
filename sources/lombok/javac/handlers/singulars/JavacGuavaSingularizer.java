@@ -21,7 +21,7 @@ import lombok.javac.handlers.JavacSingularsRecipes$JavacSingularizer;
 import lombok.javac.handlers.JavacSingularsRecipes$SingularData;
 import lombok.javac.handlers.JavacSingularsRecipes$StatementMaker;
 
-/* JADX INFO: loaded from: app.apk:lombok/javac/handlers/singulars/JavacGuavaSingularizer.SCL.lombok */
+/* JADX INFO: loaded from: discord-126021.apk:lombok/javac/handlers/singulars/JavacGuavaSingularizer.SCL.lombok */
 abstract class JavacGuavaSingularizer extends JavacSingularsRecipes$JavacSingularizer {
     protected abstract LombokImmutableList<String> getArgumentSuffixes();
 

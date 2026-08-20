@@ -3,7 +3,7 @@ package lombok.patcher.scripts;
 import java.util.ArrayList;
 import java.util.List;
 
-/* JADX INFO: loaded from: app.apk:lombok/patcher/scripts/ScriptBuilder$AddFieldBuilder.SCL.lombok */
+/* JADX INFO: loaded from: discord-126021.apk:lombok/patcher/scripts/ScriptBuilder$AddFieldBuilder.SCL.lombok */
 public class ScriptBuilder$AddFieldBuilder {
     private int accessFlags;
     private List<String> targetClasses = new ArrayList();

@@ -4,7 +4,7 @@ import javax.annotation.processing.Messager;
 import javax.tools.Diagnostic$Kind;
 import lombok.core.DiagnosticsReceiver;
 
-/* JADX INFO: loaded from: app.apk:lombok/javac/apt/MessagerDiagnosticsReceiver.SCL.lombok */
+/* JADX INFO: loaded from: discord-126021.apk:lombok/javac/apt/MessagerDiagnosticsReceiver.SCL.lombok */
 public class MessagerDiagnosticsReceiver implements DiagnosticsReceiver {
     private final Messager messager;
 

@@ -1,9 +1,5 @@
 package androidx.view;
 
-import androidx.view.GenericLifecycleObserver;
-import androidx.view.Lifecycle$Event;
-import androidx.view.LifecycleOwner;
-
 /* JADX INFO: loaded from: classes.dex */
 public class SavedStateRegistry$1 implements GenericLifecycleObserver {
     public final /* synthetic */ SavedStateRegistry this$0;

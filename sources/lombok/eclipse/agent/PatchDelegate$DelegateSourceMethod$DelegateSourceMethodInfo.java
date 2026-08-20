@@ -7,7 +7,7 @@ import org.eclipse.jdt.internal.compiler.ast.MethodDeclaration;
 import org.eclipse.jdt.internal.core.LocalVariable;
 import org.eclipse.jdt.internal.core.SourceMethodInfo;
 
-/* JADX INFO: loaded from: app.apk:lombok/eclipse/agent/PatchDelegate$DelegateSourceMethod$DelegateSourceMethodInfo.SCL.lombok */
+/* JADX INFO: loaded from: discord-126021.apk:lombok/eclipse/agent/PatchDelegate$DelegateSourceMethod$DelegateSourceMethodInfo.SCL.lombok */
 public final class PatchDelegate$DelegateSourceMethod$DelegateSourceMethodInfo extends SourceMethodInfo {
     public /* bridge */ /* synthetic */ int getDeclarationSourceEnd() {
         return super.getDeclarationSourceEnd();

@@ -9,7 +9,7 @@ import lombok.eclipse.handlers.EclipseSingularsRecipes$SingularData;
 import lombok.eclipse.handlers.EclipseSingularsRecipes$StatementMaker;
 import lombok.eclipse.handlers.EclipseSingularsRecipes$TypeReferenceMaker;
 
-/* JADX INFO: loaded from: app.apk:lombok/eclipse/handlers/singulars/EclipseGuavaTableSingularizer.SCL.lombok */
+/* JADX INFO: loaded from: discord-126021.apk:lombok/eclipse/handlers/singulars/EclipseGuavaTableSingularizer.SCL.lombok */
 public class EclipseGuavaTableSingularizer extends EclipseGuavaSingularizer {
     private static final LombokImmutableList<String> SUFFIXES = LombokImmutableList.of("rowKey", "columnKey", "value");
     private static final LombokImmutableList<String> SUPPORTED_TYPES = LombokImmutableList.of("com.google.common.collect.ImmutableTable");

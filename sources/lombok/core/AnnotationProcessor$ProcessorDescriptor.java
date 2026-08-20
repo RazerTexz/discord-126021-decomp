@@ -6,7 +6,7 @@ import javax.annotation.processing.ProcessingEnvironment;
 import javax.annotation.processing.RoundEnvironment;
 import javax.lang.model.element.TypeElement;
 
-/* JADX INFO: loaded from: app.apk:lombok/core/AnnotationProcessor$ProcessorDescriptor.SCL.lombok */
+/* JADX INFO: loaded from: discord-126021.apk:lombok/core/AnnotationProcessor$ProcessorDescriptor.SCL.lombok */
 abstract class AnnotationProcessor$ProcessorDescriptor {
     abstract boolean want(ProcessingEnvironment processingEnvironment, List<String> list);
 

@@ -2,7 +2,7 @@ package lombok.core;
 
 import java.util.Collection;
 
-/* JADX INFO: loaded from: app.apk:lombok/core/ImportList.SCL.lombok */
+/* JADX INFO: loaded from: discord-126021.apk:lombok/core/ImportList.SCL.lombok */
 public interface ImportList {
     String getFullyQualifiedNameForSimpleName(String str);
 

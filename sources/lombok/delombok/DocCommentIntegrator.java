@@ -14,7 +14,7 @@ import lombok.javac.CommentInfo;
 import lombok.javac.Javac;
 import lombok.javac.PackageName;
 
-/* JADX INFO: loaded from: app.apk:lombok/delombok/DocCommentIntegrator.SCL.lombok */
+/* JADX INFO: loaded from: discord-126021.apk:lombok/delombok/DocCommentIntegrator.SCL.lombok */
 public class DocCommentIntegrator {
     private static final Pattern CONTENT_STRIPPER = Pattern.compile("^(?:\\s*\\*)?(.*?)$", 8);
 

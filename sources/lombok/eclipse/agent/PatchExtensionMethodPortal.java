@@ -4,7 +4,7 @@ import java.lang.reflect.InvocationTargetException;
 import lombok.Lombok;
 import org.eclipse.jdt.internal.compiler.lookup.TypeBinding;
 
-/* JADX INFO: loaded from: app.apk:lombok/eclipse/agent/PatchExtensionMethodPortal.SCL.lombok */
+/* JADX INFO: loaded from: discord-126021.apk:lombok/eclipse/agent/PatchExtensionMethodPortal.SCL.lombok */
 public class PatchExtensionMethodPortal {
     private static final String TYPE_BINDING = "org.eclipse.jdt.internal.compiler.lookup.TypeBinding";
     private static final String TYPE_BINDING_ARRAY = "[Lorg.eclipse.jdt.internal.compiler.lookup.TypeBinding;";

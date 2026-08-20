@@ -22,7 +22,7 @@ import lombok.core.TypeLibrary;
 import lombok.core.TypeResolver;
 import lombok.core.configuration.ConfigurationKeysLoader$LoaderLoader;
 
-/* JADX INFO: loaded from: app.apk:lombok/javac/HandlerLibrary.SCL.lombok */
+/* JADX INFO: loaded from: discord-126021.apk:lombok/javac/HandlerLibrary.SCL.lombok */
 public class HandlerLibrary {
     private final TypeLibrary typeLibrary = new TypeLibrary();
     private final Map<String, List<HandlerLibrary$AnnotationHandlerContainer<?>>> annotationHandlers = new HashMap();

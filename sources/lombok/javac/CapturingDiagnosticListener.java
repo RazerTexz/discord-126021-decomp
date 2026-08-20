@@ -11,7 +11,7 @@ import javax.tools.Diagnostic$Kind;
 import javax.tools.DiagnosticListener;
 import javax.tools.JavaFileObject;
 
-/* JADX INFO: loaded from: app.apk:lombok/javac/CapturingDiagnosticListener.SCL.lombok */
+/* JADX INFO: loaded from: discord-126021.apk:lombok/javac/CapturingDiagnosticListener.SCL.lombok */
 public class CapturingDiagnosticListener implements DiagnosticListener<JavaFileObject> {
     private final File file;
     private final Collection<CapturingDiagnosticListener$CompilerMessage> messages;

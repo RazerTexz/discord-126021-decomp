@@ -6,7 +6,7 @@ import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 
-/* JADX INFO: loaded from: app.apk:lombok/core/AgentLauncher.SCL.lombok */
+/* JADX INFO: loaded from: discord-126021.apk:lombok/core/AgentLauncher.SCL.lombok */
 public class AgentLauncher {
     private static final List<AgentLauncher$AgentInfo> AGENTS = Collections.unmodifiableList(Arrays.asList(new AgentLauncher$EclipsePatcherInfo(null)));
 

@@ -11,7 +11,7 @@ import java.util.Iterator;
 import lombok.core.ImportList;
 import lombok.core.LombokInternalAliasing;
 
-/* JADX INFO: loaded from: app.apk:lombok/javac/JavacImportList.SCL.lombok */
+/* JADX INFO: loaded from: discord-126021.apk:lombok/javac/JavacImportList.SCL.lombok */
 public class JavacImportList implements ImportList {
     private final String pkgStr;
     private final List<JCTree> defs;

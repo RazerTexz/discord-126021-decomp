@@ -6,7 +6,7 @@ import lombok.core.CleanupTask;
 import lombok.core.handlers.HandlerUtil;
 import lombok.javac.Javac;
 
-/* JADX INFO: loaded from: app.apk:lombok/javac/handlers/JavacHandlerUtil$CopyJavadoc$2$1.SCL.lombok */
+/* JADX INFO: loaded from: discord-126021.apk:lombok/javac/handlers/JavacHandlerUtil$CopyJavadoc$2$1.SCL.lombok */
 class JavacHandlerUtil$CopyJavadoc$2$1 implements CleanupTask {
     final /* synthetic */ JavacHandlerUtil$CopyJavadoc$2 this$2;
     private final /* synthetic */ JCTree$JCCompilationUnit val$cu;

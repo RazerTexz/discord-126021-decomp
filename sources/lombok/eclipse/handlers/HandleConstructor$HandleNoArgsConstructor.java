@@ -11,7 +11,7 @@ import lombok.eclipse.EclipseAnnotationHandler;
 import lombok.eclipse.EclipseNode;
 import org.eclipse.jdt.internal.compiler.ast.Annotation;
 
-/* JADX INFO: loaded from: app.apk:lombok/eclipse/handlers/HandleConstructor$HandleNoArgsConstructor.SCL.lombok */
+/* JADX INFO: loaded from: discord-126021.apk:lombok/eclipse/handlers/HandleConstructor$HandleNoArgsConstructor.SCL.lombok */
 public class HandleConstructor$HandleNoArgsConstructor extends EclipseAnnotationHandler<NoArgsConstructor> {
     private static final String NAME = NoArgsConstructor.class.getSimpleName();
     private HandleConstructor handleConstructor = new HandleConstructor();

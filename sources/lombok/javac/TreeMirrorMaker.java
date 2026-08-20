@@ -12,7 +12,7 @@ import java.util.IdentityHashMap;
 import java.util.Iterator;
 import java.util.Map;
 
-/* JADX INFO: loaded from: app.apk:lombok/javac/TreeMirrorMaker.SCL.lombok */
+/* JADX INFO: loaded from: discord-126021.apk:lombok/javac/TreeMirrorMaker.SCL.lombok */
 public class TreeMirrorMaker extends TreeCopier<Void> {
     private final IdentityHashMap<JCTree, JCTree> originalToCopy;
 

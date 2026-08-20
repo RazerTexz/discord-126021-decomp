@@ -6,7 +6,7 @@ import lombok.javac.JavacNode;
 
 /* JADX WARN: Failed to restore enum class, 'enum' modifier and super class removed */
 /* JADX WARN: Unknown enum class pattern. Please report as an issue! */
-/* JADX INFO: loaded from: app.apk:lombok/javac/handlers/HandleDelegate$DelegateReceiver.SCL.lombok */
+/* JADX INFO: loaded from: discord-126021.apk:lombok/javac/handlers/HandleDelegate$DelegateReceiver.SCL.lombok */
 public abstract class HandleDelegate$DelegateReceiver {
     public static final HandleDelegate$DelegateReceiver METHOD = new HandleDelegate$DelegateReceiver$1("METHOD", 0);
     public static final HandleDelegate$DelegateReceiver FIELD = new HandleDelegate$DelegateReceiver$2("FIELD", 1);

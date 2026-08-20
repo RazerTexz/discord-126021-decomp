@@ -1,6 +1,6 @@
 package lombok.core.configuration;
 
-/* JADX INFO: loaded from: app.apk:lombok/core/configuration/ConfigurationSource$ListModification.SCL.lombok */
+/* JADX INFO: loaded from: discord-126021.apk:lombok/core/configuration/ConfigurationSource$ListModification.SCL.lombok */
 public final class ConfigurationSource$ListModification {
     private final Object value;
     private final boolean added;

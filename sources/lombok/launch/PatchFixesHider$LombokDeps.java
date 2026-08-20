@@ -5,7 +5,7 @@ import java.io.IOException;
 import java.io.OutputStream;
 import java.lang.reflect.Method;
 
-/* JADX INFO: loaded from: app.apk:Class50/lombok/launch/PatchFixesHider$LombokDeps.SCL.lombok */
+/* JADX INFO: loaded from: discord-126021.apk:Class50/lombok/launch/PatchFixesHider$LombokDeps.SCL.lombok */
 public final class PatchFixesHider$LombokDeps {
     public static final Method ADD_LOMBOK_NOTES;
     public static final Method POST_COMPILER_BYTES_STRING;

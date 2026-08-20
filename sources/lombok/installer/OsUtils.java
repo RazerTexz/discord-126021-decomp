@@ -9,7 +9,7 @@ import java.util.List;
 import java.util.concurrent.atomic.AtomicBoolean;
 import lombok.core.Version;
 
-/* JADX INFO: loaded from: app.apk:lombok/installer/OsUtils.SCL.lombok */
+/* JADX INFO: loaded from: discord-126021.apk:lombok/installer/OsUtils.SCL.lombok */
 public final class OsUtils {
     private static final AtomicBoolean windowsDriveInfoLibLoaded = new AtomicBoolean(false);
 

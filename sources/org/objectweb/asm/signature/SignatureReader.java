@@ -1,6 +1,6 @@
 package org.objectweb.asm.signature;
 
-/* JADX INFO: loaded from: app.apk:org/objectweb/asm/signature/SignatureReader.SCL.lombok */
+/* JADX INFO: loaded from: discord-126021.apk:org/objectweb/asm/signature/SignatureReader.SCL.lombok */
 public class SignatureReader {
     private final String signatureValue;
 

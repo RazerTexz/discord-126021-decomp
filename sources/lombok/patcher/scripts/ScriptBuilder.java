@@ -1,6 +1,6 @@
 package lombok.patcher.scripts;
 
-/* JADX INFO: loaded from: app.apk:lombok/patcher/scripts/ScriptBuilder.SCL.lombok */
+/* JADX INFO: loaded from: discord-126021.apk:lombok/patcher/scripts/ScriptBuilder.SCL.lombok */
 public class ScriptBuilder {
     private ScriptBuilder() throws NoSuchMethodException {
         throw new NoSuchMethodException("ScriptBuilder cannot be instantiated - just use the static methods.");

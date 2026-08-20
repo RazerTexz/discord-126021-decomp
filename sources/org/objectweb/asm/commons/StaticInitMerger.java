@@ -4,7 +4,7 @@ import org.objectweb.asm.ClassVisitor;
 import org.objectweb.asm.MethodVisitor;
 import org.objectweb.asm.Opcodes;
 
-/* JADX INFO: loaded from: app.apk:org/objectweb/asm/commons/StaticInitMerger.SCL.lombok */
+/* JADX INFO: loaded from: discord-126021.apk:org/objectweb/asm/commons/StaticInitMerger.SCL.lombok */
 public class StaticInitMerger extends ClassVisitor {
     private String owner;
     private final String renamedClinitMethodPrefix;

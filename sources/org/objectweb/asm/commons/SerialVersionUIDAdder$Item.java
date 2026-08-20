@@ -1,6 +1,6 @@
 package org.objectweb.asm.commons;
 
-/* JADX INFO: loaded from: app.apk:org/objectweb/asm/commons/SerialVersionUIDAdder$Item.SCL.lombok */
+/* JADX INFO: loaded from: discord-126021.apk:org/objectweb/asm/commons/SerialVersionUIDAdder$Item.SCL.lombok */
 final class SerialVersionUIDAdder$Item implements Comparable<SerialVersionUIDAdder$Item> {
     final String name;
     final int access;

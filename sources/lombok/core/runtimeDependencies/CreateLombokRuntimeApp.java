@@ -20,7 +20,7 @@ import java.util.zip.ZipEntry;
 import lombok.core.LombokApp;
 import lombok.core.SpiLoadUtil;
 
-/* JADX INFO: loaded from: app.apk:lombok/core/runtimeDependencies/CreateLombokRuntimeApp.SCL.lombok */
+/* JADX INFO: loaded from: discord-126021.apk:lombok/core/runtimeDependencies/CreateLombokRuntimeApp.SCL.lombok */
 public class CreateLombokRuntimeApp extends LombokApp {
     private List<RuntimeDependencyInfo> infoObjects;
 

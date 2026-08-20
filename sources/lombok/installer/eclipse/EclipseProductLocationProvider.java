@@ -13,7 +13,7 @@ import lombok.installer.IdeLocationProvider;
 import lombok.installer.OsUtils;
 import lombok.installer.OsUtils$OS;
 
-/* JADX INFO: loaded from: app.apk:lombok/installer/eclipse/EclipseProductLocationProvider.SCL.lombok */
+/* JADX INFO: loaded from: discord-126021.apk:lombok/installer/eclipse/EclipseProductLocationProvider.SCL.lombok */
 public class EclipseProductLocationProvider implements IdeLocationProvider {
     private final EclipseProductDescriptor descriptor;
     private static /* synthetic */ int[] $SWITCH_TABLE$lombok$installer$OsUtils$OS;

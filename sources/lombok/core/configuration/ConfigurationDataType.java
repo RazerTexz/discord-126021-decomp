@@ -9,7 +9,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-/* JADX INFO: loaded from: app.apk:lombok/core/configuration/ConfigurationDataType.SCL.lombok */
+/* JADX INFO: loaded from: discord-126021.apk:lombok/core/configuration/ConfigurationDataType.SCL.lombok */
 public final class ConfigurationDataType {
     private static final Map<Class<?>, ConfigurationValueParser> SIMPLE_TYPES;
     private final boolean isList;

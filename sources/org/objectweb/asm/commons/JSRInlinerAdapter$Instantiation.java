@@ -9,7 +9,7 @@ import java.util.Set;
 import org.objectweb.asm.tree.AbstractInsnNode;
 import org.objectweb.asm.tree.LabelNode;
 
-/* JADX INFO: loaded from: app.apk:org/objectweb/asm/commons/JSRInlinerAdapter$Instantiation.SCL.lombok */
+/* JADX INFO: loaded from: discord-126021.apk:org/objectweb/asm/commons/JSRInlinerAdapter$Instantiation.SCL.lombok */
 class JSRInlinerAdapter$Instantiation extends AbstractMap<LabelNode, LabelNode> {
     final JSRInlinerAdapter$Instantiation parent;
     final BitSet subroutineInsns;

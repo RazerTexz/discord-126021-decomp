@@ -4,7 +4,7 @@ import java.net.URLClassLoader;
 import java.security.ProtectionDomain;
 import lombok.patcher.Filter;
 
-/* JADX INFO: loaded from: app.apk:lombok/eclipse/agent/EclipsePatcher$1.SCL.lombok */
+/* JADX INFO: loaded from: discord-126021.apk:lombok/eclipse/agent/EclipsePatcher$1.SCL.lombok */
 class EclipsePatcher$1 implements Filter {
     EclipsePatcher$1() {
     }

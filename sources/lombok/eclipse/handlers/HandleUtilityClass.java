@@ -26,7 +26,7 @@ import org.eclipse.jdt.internal.compiler.ast.ThrowStatement;
 import org.eclipse.jdt.internal.compiler.ast.TypeDeclaration;
 import org.eclipse.jdt.internal.compiler.lookup.TypeConstants;
 
-/* JADX INFO: loaded from: app.apk:lombok/eclipse/handlers/HandleUtilityClass.SCL.lombok */
+/* JADX INFO: loaded from: discord-126021.apk:lombok/eclipse/handlers/HandleUtilityClass.SCL.lombok */
 @HandlerPriority(-4096)
 public class HandleUtilityClass extends EclipseAnnotationHandler<UtilityClass> {
     private static final char[][] JAVA_LANG_UNSUPPORTED_OPERATION_EXCEPTION = {TypeConstants.JAVA, TypeConstants.LANG, "UnsupportedOperationException".toCharArray()};

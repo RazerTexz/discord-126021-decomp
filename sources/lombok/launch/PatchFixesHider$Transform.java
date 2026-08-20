@@ -5,7 +5,7 @@ import java.lang.reflect.Method;
 import org.eclipse.jdt.internal.compiler.ast.CompilationUnitDeclaration;
 import org.eclipse.jdt.internal.compiler.parser.Parser;
 
-/* JADX INFO: loaded from: app.apk:Class50/lombok/launch/PatchFixesHider$Transform.SCL.lombok */
+/* JADX INFO: loaded from: discord-126021.apk:Class50/lombok/launch/PatchFixesHider$Transform.SCL.lombok */
 public final class PatchFixesHider$Transform {
     private static final Method TRANSFORM;
     private static final Method TRANSFORM_SWAPPED;

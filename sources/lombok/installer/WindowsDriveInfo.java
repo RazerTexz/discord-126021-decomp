@@ -4,7 +4,7 @@ import java.io.PrintStream;
 import java.util.ArrayList;
 import java.util.List;
 
-/* JADX INFO: loaded from: app.apk:lombok/installer/WindowsDriveInfo.SCL.lombok */
+/* JADX INFO: loaded from: discord-126021.apk:lombok/installer/WindowsDriveInfo.SCL.lombok */
 public class WindowsDriveInfo {
     private native int getLogicalDrives0();
 

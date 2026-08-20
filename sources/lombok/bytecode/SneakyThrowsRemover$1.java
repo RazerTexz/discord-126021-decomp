@@ -5,7 +5,7 @@ import lombok.core.DiagnosticsReceiver;
 import org.objectweb.asm.ClassVisitor;
 import org.objectweb.asm.MethodVisitor;
 
-/* JADX INFO: loaded from: app.apk:lombok/bytecode/SneakyThrowsRemover$1.SCL.lombok */
+/* JADX INFO: loaded from: discord-126021.apk:lombok/bytecode/SneakyThrowsRemover$1.SCL.lombok */
 class SneakyThrowsRemover$1 extends ClassVisitor {
     final /* synthetic */ SneakyThrowsRemover this$0;
     private final /* synthetic */ DiagnosticsReceiver val$diagnostics;

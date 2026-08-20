@@ -4,7 +4,7 @@ import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.io.OutputStream;
 
-/* JADX INFO: loaded from: app.apk:lombok/core/PostCompiler$1.SCL.lombok */
+/* JADX INFO: loaded from: discord-126021.apk:lombok/core/PostCompiler$1.SCL.lombok */
 class PostCompiler$1 extends ByteArrayOutputStream {
     private final /* synthetic */ String val$fileName;
     private final /* synthetic */ DiagnosticsReceiver val$diagnostics;

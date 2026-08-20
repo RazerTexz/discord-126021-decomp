@@ -21,7 +21,7 @@ import lombok.core.configuration.ConfigurationKey;
 import lombok.core.debug.HistogramTracker;
 import lombok.permit.Permit;
 
-/* JADX INFO: loaded from: app.apk:lombok/core/AST.SCL.lombok */
+/* JADX INFO: loaded from: discord-126021.apk:lombok/core/AST.SCL.lombok */
 public abstract class AST<A extends AST<A, L, N>, L extends LombokNode<A, L, N>, N> {
     private L top;
     private final String fileName;

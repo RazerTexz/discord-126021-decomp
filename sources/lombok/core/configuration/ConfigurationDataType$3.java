@@ -2,7 +2,7 @@ package lombok.core.configuration;
 
 import com.adjust.sdk.Constants;
 
-/* JADX INFO: loaded from: app.apk:lombok/core/configuration/ConfigurationDataType$3.SCL.lombok */
+/* JADX INFO: loaded from: discord-126021.apk:lombok/core/configuration/ConfigurationDataType$3.SCL.lombok */
 class ConfigurationDataType$3 implements ConfigurationValueParser {
     ConfigurationDataType$3() {
     }

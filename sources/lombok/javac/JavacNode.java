@@ -24,7 +24,7 @@ import lombok.core.AnnotationValues;
 import lombok.core.LombokNode;
 import lombok.javac.handlers.JavacHandlerUtil;
 
-/* JADX INFO: loaded from: app.apk:lombok/javac/JavacNode.SCL.lombok */
+/* JADX INFO: loaded from: discord-126021.apk:lombok/javac/JavacNode.SCL.lombok */
 public class JavacNode extends LombokNode<JavacAST, JavacNode, JCTree> {
     private JavacAST ast;
     private static /* synthetic */ int[] $SWITCH_TABLE$lombok$core$AST$Kind;

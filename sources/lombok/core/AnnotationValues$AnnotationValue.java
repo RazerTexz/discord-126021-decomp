@@ -2,7 +2,7 @@ package lombok.core;
 
 import java.util.List;
 
-/* JADX INFO: loaded from: app.apk:lombok/core/AnnotationValues$AnnotationValue.SCL.lombok */
+/* JADX INFO: loaded from: discord-126021.apk:lombok/core/AnnotationValues$AnnotationValue.SCL.lombok */
 public class AnnotationValues$AnnotationValue {
     public final List<String> raws;
     public final List<Object> valueGuesses;

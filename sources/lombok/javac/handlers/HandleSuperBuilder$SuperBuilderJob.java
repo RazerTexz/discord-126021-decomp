@@ -7,7 +7,7 @@ import lombok.core.AnnotationValues;
 import lombok.experimental.SuperBuilder;
 import lombok.javac.JavacNode;
 
-/* JADX INFO: loaded from: app.apk:lombok/javac/handlers/HandleSuperBuilder$SuperBuilderJob.SCL.lombok */
+/* JADX INFO: loaded from: discord-126021.apk:lombok/javac/handlers/HandleSuperBuilder$SuperBuilderJob.SCL.lombok */
 class HandleSuperBuilder$SuperBuilderJob extends HandleBuilder$BuilderJob {
     JavacNode builderAbstractType;
     String builderAbstractClassName;

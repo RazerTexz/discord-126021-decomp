@@ -6,7 +6,7 @@ import org.objectweb.asm.MethodVisitor;
 import org.objectweb.asm.Opcodes;
 import org.objectweb.asm.TypePath;
 
-/* JADX INFO: loaded from: app.apk:org/objectweb/asm/tree/LocalVariableAnnotationNode.SCL.lombok */
+/* JADX INFO: loaded from: discord-126021.apk:org/objectweb/asm/tree/LocalVariableAnnotationNode.SCL.lombok */
 public class LocalVariableAnnotationNode extends TypeAnnotationNode {
     public List<LabelNode> start;
     public List<LabelNode> end;

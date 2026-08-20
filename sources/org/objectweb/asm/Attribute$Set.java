@@ -1,6 +1,6 @@
 package org.objectweb.asm;
 
-/* JADX INFO: loaded from: app.apk:org/objectweb/asm/Attribute$Set.SCL.lombok */
+/* JADX INFO: loaded from: discord-126021.apk:org/objectweb/asm/Attribute$Set.SCL.lombok */
 final class Attribute$Set {
     private static final int SIZE_INCREMENT = 6;
     private int size;

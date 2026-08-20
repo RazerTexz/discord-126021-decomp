@@ -10,7 +10,7 @@ import org.eclipse.jdt.internal.compiler.ast.LocalDeclaration;
 import org.eclipse.jdt.internal.compiler.ast.TypeDeclaration;
 import org.eclipse.jdt.internal.compiler.ast.TypeReference;
 
-/* JADX INFO: loaded from: app.apk:lombok/eclipse/TransformEclipseAST$AnnotationVisitor.SCL.lombok */
+/* JADX INFO: loaded from: discord-126021.apk:lombok/eclipse/TransformEclipseAST$AnnotationVisitor.SCL.lombok */
 class TransformEclipseAST$AnnotationVisitor extends EclipseASTAdapter {
     private final long priority;
     private long nextPriority = RecyclerView.FOREVER_NS;

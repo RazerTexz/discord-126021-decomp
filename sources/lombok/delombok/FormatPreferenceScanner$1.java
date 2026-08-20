@@ -3,7 +3,7 @@ package lombok.delombok;
 import java.io.IOException;
 import java.io.Reader;
 
-/* JADX INFO: loaded from: app.apk:lombok/delombok/FormatPreferenceScanner$1.SCL.lombok */
+/* JADX INFO: loaded from: discord-126021.apk:lombok/delombok/FormatPreferenceScanner$1.SCL.lombok */
 class FormatPreferenceScanner$1 extends Reader {
     int pos = 0;
     int max;

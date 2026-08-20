@@ -11,7 +11,7 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 
-/* JADX INFO: loaded from: app.apk:com/zwitserloot/cmdreader/CmdReader.SCL.lombok */
+/* JADX INFO: loaded from: discord-126021.apk:com/zwitserloot/cmdreader/CmdReader.SCL.lombok */
 public class CmdReader<T> {
     private final Class<T> settingsDescriptor;
     private final List<ParseItem> items = Collections.unmodifiableList(init());

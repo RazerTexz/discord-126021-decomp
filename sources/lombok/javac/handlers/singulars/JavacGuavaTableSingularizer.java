@@ -12,7 +12,7 @@ import lombok.javac.handlers.JavacSingularsRecipes$ExpressionMaker;
 import lombok.javac.handlers.JavacSingularsRecipes$SingularData;
 import lombok.javac.handlers.JavacSingularsRecipes$StatementMaker;
 
-/* JADX INFO: loaded from: app.apk:lombok/javac/handlers/singulars/JavacGuavaTableSingularizer.SCL.lombok */
+/* JADX INFO: loaded from: discord-126021.apk:lombok/javac/handlers/singulars/JavacGuavaTableSingularizer.SCL.lombok */
 public class JavacGuavaTableSingularizer extends JavacGuavaSingularizer {
     private static final LombokImmutableList<String> SUFFIXES = LombokImmutableList.of("rowKey", "columnKey", "value");
     private static final LombokImmutableList<String> SUPPORTED_TYPES = LombokImmutableList.of("com.google.common.collect.ImmutableTable");

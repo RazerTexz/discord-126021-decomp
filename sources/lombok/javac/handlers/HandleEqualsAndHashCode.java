@@ -45,7 +45,7 @@ import lombok.javac.JavacAnnotationHandler;
 import lombok.javac.JavacNode;
 import lombok.javac.JavacTreeMaker;
 
-/* JADX INFO: loaded from: app.apk:lombok/javac/handlers/HandleEqualsAndHashCode.SCL.lombok */
+/* JADX INFO: loaded from: discord-126021.apk:lombok/javac/handlers/HandleEqualsAndHashCode.SCL.lombok */
 public class HandleEqualsAndHashCode extends JavacAnnotationHandler<EqualsAndHashCode> {
     private static final String RESULT_NAME = "result";
     private static final String PRIME_NAME = "PRIME";

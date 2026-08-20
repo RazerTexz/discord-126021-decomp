@@ -4,7 +4,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.JCheckBox;
 
-/* JADX INFO: loaded from: app.apk:lombok/installer/InstallerGUI$IdesList$1.SCL.lombok */
+/* JADX INFO: loaded from: discord-126021.apk:lombok/installer/InstallerGUI$IdesList$1.SCL.lombok */
 class InstallerGUI$IdesList$1 implements ActionListener {
     final /* synthetic */ InstallerGUI$IdesList this$1;
     private final /* synthetic */ IdeLocation val$location;

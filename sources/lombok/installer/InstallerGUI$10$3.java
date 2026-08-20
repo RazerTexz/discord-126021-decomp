@@ -2,7 +2,7 @@ package lombok.installer;
 
 import java.awt.Container;
 
-/* JADX INFO: loaded from: app.apk:lombok/installer/InstallerGUI$10$3.SCL.lombok */
+/* JADX INFO: loaded from: discord-126021.apk:lombok/installer/InstallerGUI$10$3.SCL.lombok */
 class InstallerGUI$10$3 implements Runnable {
     final /* synthetic */ InstallerGUI$10 this$1;
     private final /* synthetic */ Container val$appWindowContent;

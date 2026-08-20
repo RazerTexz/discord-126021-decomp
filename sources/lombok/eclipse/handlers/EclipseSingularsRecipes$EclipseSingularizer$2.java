@@ -4,7 +4,7 @@ import org.eclipse.jdt.internal.compiler.ast.ReturnStatement;
 import org.eclipse.jdt.internal.compiler.ast.Statement;
 import org.eclipse.jdt.internal.compiler.ast.ThisReference;
 
-/* JADX INFO: loaded from: app.apk:lombok/eclipse/handlers/EclipseSingularsRecipes$EclipseSingularizer$2.SCL.lombok */
+/* JADX INFO: loaded from: discord-126021.apk:lombok/eclipse/handlers/EclipseSingularsRecipes$EclipseSingularizer$2.SCL.lombok */
 class EclipseSingularsRecipes$EclipseSingularizer$2 implements EclipseSingularsRecipes$StatementMaker {
     final /* synthetic */ EclipseSingularsRecipes$EclipseSingularizer this$1;
     private final /* synthetic */ HandleBuilder$BuilderJob val$job;

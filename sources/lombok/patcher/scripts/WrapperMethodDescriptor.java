@@ -1,6 +1,6 @@
 package lombok.patcher.scripts;
 
-/* JADX INFO: loaded from: app.apk:lombok/patcher/scripts/WrapperMethodDescriptor.SCL.lombok */
+/* JADX INFO: loaded from: discord-126021.apk:lombok/patcher/scripts/WrapperMethodDescriptor.SCL.lombok */
 public class WrapperMethodDescriptor {
     private final int count;
     private final int opcode;

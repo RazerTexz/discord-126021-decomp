@@ -4,7 +4,7 @@ import lombok.patcher.MethodLogistics;
 import lombok.patcher.PatchScript$MethodPatcherFactory;
 import org.objectweb.asm.MethodVisitor;
 
-/* JADX INFO: loaded from: app.apk:lombok/patcher/scripts/WrapMethodCallScript$1.SCL.lombok */
+/* JADX INFO: loaded from: discord-126021.apk:lombok/patcher/scripts/WrapMethodCallScript$1.SCL.lombok */
 class WrapMethodCallScript$1 implements PatchScript$MethodPatcherFactory {
     final /* synthetic */ WrapMethodCallScript this$0;
     private final /* synthetic */ String val$classSpec;

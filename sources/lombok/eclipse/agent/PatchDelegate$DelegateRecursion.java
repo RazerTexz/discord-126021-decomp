@@ -1,6 +1,6 @@
 package lombok.eclipse.agent;
 
-/* JADX INFO: loaded from: app.apk:lombok/eclipse/agent/PatchDelegate$DelegateRecursion.SCL.lombok */
+/* JADX INFO: loaded from: discord-126021.apk:lombok/eclipse/agent/PatchDelegate$DelegateRecursion.SCL.lombok */
 class PatchDelegate$DelegateRecursion extends Throwable {
     final char[] type;
     final char[] member;

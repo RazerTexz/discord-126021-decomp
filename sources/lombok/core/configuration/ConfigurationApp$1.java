@@ -1,6 +1,6 @@
 package lombok.core.configuration;
 
-/* JADX INFO: loaded from: app.apk:lombok/core/configuration/ConfigurationApp$1.SCL.lombok */
+/* JADX INFO: loaded from: discord-126021.apk:lombok/core/configuration/ConfigurationApp$1.SCL.lombok */
 class ConfigurationApp$1 implements ConfigurationProblemReporter {
     ConfigurationApp$1() {
     }

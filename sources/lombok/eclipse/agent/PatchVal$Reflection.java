@@ -4,7 +4,7 @@ import java.lang.reflect.Field;
 import lombok.permit.Permit;
 import org.eclipse.jdt.internal.compiler.ast.LocalDeclaration;
 
-/* JADX INFO: loaded from: app.apk:lombok/eclipse/agent/PatchVal$Reflection.SCL.lombok */
+/* JADX INFO: loaded from: discord-126021.apk:lombok/eclipse/agent/PatchVal$Reflection.SCL.lombok */
 public final class PatchVal$Reflection {
     private static final Field initCopyField;
     private static final Field iterableCopyField;

@@ -23,7 +23,7 @@ import lombok.javac.handlers.JavacSingularsRecipes$JavacSingularizer;
 import lombok.javac.handlers.JavacSingularsRecipes$SingularData;
 import lombok.javac.handlers.JavacSingularsRecipes$StatementMaker;
 
-/* JADX INFO: loaded from: app.apk:lombok/javac/handlers/singulars/JavacJavaUtilMapSingularizer.SCL.lombok */
+/* JADX INFO: loaded from: discord-126021.apk:lombok/javac/handlers/singulars/JavacJavaUtilMapSingularizer.SCL.lombok */
 public class JavacJavaUtilMapSingularizer extends JavacJavaUtilSingularizer {
     @Override // lombok.javac.handlers.JavacSingularsRecipes$JavacSingularizer
     public LombokImmutableList<String> getSupportedTypes() {

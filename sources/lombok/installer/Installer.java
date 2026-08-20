@@ -17,7 +17,7 @@ import lombok.core.SpiLoadUtil;
 import lombok.core.Version;
 import lombok.patcher.ClassRootFinder;
 
-/* JADX INFO: loaded from: app.apk:lombok/installer/Installer.SCL.lombok */
+/* JADX INFO: loaded from: discord-126021.apk:lombok/installer/Installer.SCL.lombok */
 public class Installer {
     static final URI ABOUT_LOMBOK_URL = URI.create("https://projectlombok.org");
     static final List<IdeLocationProvider> locationProviders;

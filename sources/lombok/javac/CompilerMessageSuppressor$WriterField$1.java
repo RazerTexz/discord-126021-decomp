@@ -3,7 +3,7 @@ package lombok.javac;
 import java.io.IOException;
 import java.io.OutputStream;
 
-/* JADX INFO: loaded from: app.apk:lombok/javac/CompilerMessageSuppressor$WriterField$1.SCL.lombok */
+/* JADX INFO: loaded from: discord-126021.apk:lombok/javac/CompilerMessageSuppressor$WriterField$1.SCL.lombok */
 class CompilerMessageSuppressor$WriterField$1 extends OutputStream {
     CompilerMessageSuppressor$WriterField$1() {
     }

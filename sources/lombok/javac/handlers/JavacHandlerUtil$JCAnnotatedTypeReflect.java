@@ -8,7 +8,7 @@ import java.lang.reflect.Constructor;
 import java.lang.reflect.Field;
 import lombok.permit.Permit;
 
-/* JADX INFO: loaded from: app.apk:lombok/javac/handlers/JavacHandlerUtil$JCAnnotatedTypeReflect.SCL.lombok */
+/* JADX INFO: loaded from: discord-126021.apk:lombok/javac/handlers/JavacHandlerUtil$JCAnnotatedTypeReflect.SCL.lombok */
 class JavacHandlerUtil$JCAnnotatedTypeReflect {
     private static Class<?> TYPE;
     private static Constructor<?> CONSTRUCTOR;

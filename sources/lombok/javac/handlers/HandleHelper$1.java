@@ -8,7 +8,7 @@ import com.sun.tools.javac.util.Name;
 import java.util.Arrays;
 import lombok.javac.JavacTreeMaker;
 
-/* JADX INFO: loaded from: app.apk:lombok/javac/handlers/HandleHelper$1.SCL.lombok */
+/* JADX INFO: loaded from: discord-126021.apk:lombok/javac/handlers/HandleHelper$1.SCL.lombok */
 class HandleHelper$1 extends TreeScanner<Void, Void> {
     final /* synthetic */ HandleHelper this$0;
     private final /* synthetic */ String[] val$knownMethodNames_;

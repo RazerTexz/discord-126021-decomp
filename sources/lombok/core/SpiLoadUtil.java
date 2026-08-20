@@ -17,7 +17,7 @@ import java.util.LinkedHashSet;
 import java.util.List;
 import java.util.Set;
 
-/* JADX INFO: loaded from: app.apk:lombok/core/SpiLoadUtil.SCL.lombok */
+/* JADX INFO: loaded from: discord-126021.apk:lombok/core/SpiLoadUtil.SCL.lombok */
 public class SpiLoadUtil {
     private SpiLoadUtil() {
     }

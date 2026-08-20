@@ -3,7 +3,7 @@ package lombok.core;
 import com.adjust.sdk.Constants;
 import java.util.regex.Pattern;
 
-/* JADX INFO: loaded from: app.apk:lombok/core/JavaIdentifiers.SCL.lombok */
+/* JADX INFO: loaded from: discord-126021.apk:lombok/core/JavaIdentifiers.SCL.lombok */
 public class JavaIdentifiers {
     private static final LombokImmutableList<String> KEYWORDS = LombokImmutableList.of("public", "private", "protected", "default", "switch", "case", "for", "do", "goto", "const", "strictfp", "while", "if", "else", "byte", "short", "int", Constants.LONG, "float", "double", "void", "boolean", "char", "null", "false", "true", "continue", "break", "return", "instanceof", "synchronized", "volatile", "transient", "final", "static", "interface", "class", "extends", "implements", "throws", "throw", "catch", "try", "finally", "abstract", "assert", "enum", "import", "package", "native", "new", "super", "this");
     private static final Pattern PRIMITIVE_TYPE_NAME_PATTERN = Pattern.compile("^(?:boolean|byte|short|int|long|float|double|char)$");

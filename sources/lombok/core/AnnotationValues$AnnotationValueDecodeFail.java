@@ -1,6 +1,6 @@
 package lombok.core;
 
-/* JADX INFO: loaded from: app.apk:lombok/core/AnnotationValues$AnnotationValueDecodeFail.SCL.lombok */
+/* JADX INFO: loaded from: discord-126021.apk:lombok/core/AnnotationValues$AnnotationValueDecodeFail.SCL.lombok */
 public class AnnotationValues$AnnotationValueDecodeFail extends RuntimeException {
     private static final long serialVersionUID = 1;
     public final int idx;

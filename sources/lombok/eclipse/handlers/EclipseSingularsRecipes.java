@@ -7,7 +7,7 @@ import java.util.Map;
 import lombok.core.SpiLoadUtil;
 import lombok.core.TypeLibrary;
 
-/* JADX INFO: loaded from: app.apk:lombok/eclipse/handlers/EclipseSingularsRecipes.SCL.lombok */
+/* JADX INFO: loaded from: discord-126021.apk:lombok/eclipse/handlers/EclipseSingularsRecipes.SCL.lombok */
 public class EclipseSingularsRecipes {
     private static final EclipseSingularsRecipes INSTANCE = new EclipseSingularsRecipes();
     private final Map<String, EclipseSingularsRecipes$EclipseSingularizer> singularizers = new HashMap();

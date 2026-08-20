@@ -3,7 +3,7 @@ package lombok.eclipse.agent;
 import java.util.ArrayList;
 import java.util.List;
 
-/* JADX INFO: loaded from: app.apk:lombok/eclipse/agent/PatchDelegate$1.SCL.lombok */
+/* JADX INFO: loaded from: discord-126021.apk:lombok/eclipse/agent/PatchDelegate$1.SCL.lombok */
 class PatchDelegate$1 extends ThreadLocal<List<PatchDelegate$ClassScopeEntry>> {
     @Override // java.lang.ThreadLocal
     protected /* bridge */ /* synthetic */ List<PatchDelegate$ClassScopeEntry> initialValue() {

@@ -2,7 +2,7 @@ package lombok.delombok;
 
 import java.io.IOException;
 
-/* JADX INFO: loaded from: app.apk:lombok/delombok/PrettyPrinter$UncheckedIOException.SCL.lombok */
+/* JADX INFO: loaded from: discord-126021.apk:lombok/delombok/PrettyPrinter$UncheckedIOException.SCL.lombok */
 public final class PrettyPrinter$UncheckedIOException extends RuntimeException {
     PrettyPrinter$UncheckedIOException(IOException source) {
         super(toMsg(source));

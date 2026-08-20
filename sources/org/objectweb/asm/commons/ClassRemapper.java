@@ -11,7 +11,7 @@ import org.objectweb.asm.Opcodes;
 import org.objectweb.asm.RecordComponentVisitor;
 import org.objectweb.asm.TypePath;
 
-/* JADX INFO: loaded from: app.apk:org/objectweb/asm/commons/ClassRemapper.SCL.lombok */
+/* JADX INFO: loaded from: discord-126021.apk:org/objectweb/asm/commons/ClassRemapper.SCL.lombok */
 public class ClassRemapper extends ClassVisitor {
     protected final Remapper remapper;
     protected String className;

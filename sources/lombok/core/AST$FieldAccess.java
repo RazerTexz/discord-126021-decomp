@@ -2,7 +2,7 @@ package lombok.core;
 
 import java.lang.reflect.Field;
 
-/* JADX INFO: loaded from: app.apk:lombok/core/AST$FieldAccess.SCL.lombok */
+/* JADX INFO: loaded from: discord-126021.apk:lombok/core/AST$FieldAccess.SCL.lombok */
 protected class AST$FieldAccess {
     public final Field field;
     public final int dim;

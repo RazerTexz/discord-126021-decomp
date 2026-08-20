@@ -2,7 +2,7 @@ package lombok.patcher;
 
 import java.security.ProtectionDomain;
 
-/* JADX INFO: loaded from: app.apk:lombok/patcher/Filter$1.SCL.lombok */
+/* JADX INFO: loaded from: discord-126021.apk:lombok/patcher/Filter$1.SCL.lombok */
 class Filter$1 implements Filter {
     Filter$1() {
     }

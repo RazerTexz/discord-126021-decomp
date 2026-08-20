@@ -2,7 +2,7 @@ package lombok.launch;
 
 import java.lang.reflect.Method;
 
-/* JADX INFO: loaded from: app.apk:Class50/lombok/launch/PatchFixesHider$ValPortal.SCL.lombok */
+/* JADX INFO: loaded from: discord-126021.apk:Class50/lombok/launch/PatchFixesHider$ValPortal.SCL.lombok */
 public final class PatchFixesHider$ValPortal {
     private static final Method COPY_INITIALIZATION_OF_FOR_EACH_ITERABLE;
     private static final Method COPY_INITIALIZATION_OF_LOCAL_DECLARATION;

@@ -46,9 +46,12 @@ public class SoLoader {
     public static final Set<String> j = Collections.newSetFromMap(new ConcurrentHashMap());
     public static final boolean a = true;
 
+    /* JADX WARN: Bottom block not found for handler: all -> 0x0118 */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
     public static void a(String str, int i2, StrictMode$ThreadPolicy strictMode$ThreadPolicy) throws UnsatisfiedLinkError {
         boolean z2;
-        int iA;
         ReentrantReadWriteLock reentrantReadWriteLock = c;
         reentrantReadWriteLock.readLock().lock();
         try {
@@ -67,78 +70,44 @@ public class SoLoader {
             if (a) {
                 Api18TraceUtils.a("SoLoader.loadLibrary[", str, "]");
             }
-            try {
-                reentrantReadWriteLock.readLock().lock();
-                iA = 0;
-                int i4 = 0;
-                while (iA == 0) {
-                    try {
-                        l[] lVarArr = d;
-                        if (i4 >= lVarArr.length) {
-                            break;
-                        }
-                        iA = lVarArr[i4].a(str, i2, strictMode$ThreadPolicy);
-                        if (iA != 3 || f == null) {
-                            i4++;
-                        } else {
-                            Log.d("SoLoader", "Trying backup SoSource for " + str);
-                            for (m mVar : f) {
-                                synchronized (mVar) {
-                                    try {
-                                        synchronized (mVar.h(str)) {
-                                            try {
-                                                mVar.d = str;
-                                                mVar.b(2);
-                                            } catch (Throwable th) {
-                                                throw th;
-                                            }
-                                        }
-                                    } catch (Throwable th2) {
-                                        throw th2;
-                                    }
-                                }
-                                int iA2 = mVar.a(str, i2, strictMode$ThreadPolicy);
-                                if (iA2 == 1) {
-                                    iA = iA2;
-                                    break;
-                                }
-                            }
-                        }
-                        th = th;
-                        iA = i3;
-                        if (a) {
-                            Trace.endSection();
-                        }
-                        if (z2) {
-                            StrictMode.setThreadPolicy(strictMode$ThreadPolicy);
-                        }
-                        if (iA == 0 || iA == 3) {
-                            StringBuilder sbX = a.X("couldn't find DSO to load: ", str);
-                            String message = th.getMessage();
-                            if (message == null) {
-                                message = th.toString();
-                            }
-                            sbX.append(" caused by: ");
-                            sbX.append(message);
-                            th.printStackTrace();
-                            sbX.append(" result: ");
-                            sbX.append(iA);
-                            String string = sbX.toString();
-                            Log.e("SoLoader", string);
-                            UnsatisfiedLinkError unsatisfiedLinkError = new UnsatisfiedLinkError(string);
-                            unsatisfiedLinkError.initCause(th);
-                            throw unsatisfiedLinkError;
-                        }
-                        return;
-                    } catch (Throwable th3) {
-                        i3 = iA;
-                        c.readLock().unlock();
-                        throw th3;
-                    }
-                }
+            reentrantReadWriteLock.readLock().lock();
+            int iA = 0;
+            int i4 = 0;
+            while (iA == 0) {
                 try {
-                    ReentrantReadWriteLock reentrantReadWriteLock2 = c;
-                    reentrantReadWriteLock2.readLock().unlock();
+                    l[] lVarArr = d;
+                    if (i4 >= lVarArr.length) {
+                        break;
+                    }
+                    iA = lVarArr[i4].a(str, i2, strictMode$ThreadPolicy);
+                    if (iA != 3 || f == null) {
+                        i4++;
+                    } else {
+                        Log.d("SoLoader", "Trying backup SoSource for " + str);
+                        for (m mVar : f) {
+                            synchronized (mVar) {
+                                try {
+                                    synchronized (mVar.h(str)) {
+                                        try {
+                                            mVar.d = str;
+                                            mVar.b(2);
+                                        } catch (Throwable th) {
+                                            throw th;
+                                        }
+                                    }
+                                } catch (Throwable th2) {
+                                    throw th2;
+                                }
+                            }
+                            int iA2 = mVar.a(str, i2, strictMode$ThreadPolicy);
+                            if (iA2 == 1) {
+                                iA = iA2;
+                                break;
+                            }
+                        }
+                    }
+                    th = th;
+                    iA = i3;
                     if (a) {
                         Trace.endSection();
                     }
@@ -146,39 +115,68 @@ public class SoLoader {
                         StrictMode.setThreadPolicy(strictMode$ThreadPolicy);
                     }
                     if (iA == 0 || iA == 3) {
-                        StringBuilder sbX2 = a.X("couldn't find DSO to load: ", str);
-                        reentrantReadWriteLock2.readLock().lock();
-                        while (i3 < d.length) {
-                            sbX2.append("\n\tSoSource ");
-                            sbX2.append(i3);
-                            sbX2.append(": ");
-                            sbX2.append(d[i3].toString());
-                            i3++;
+                        StringBuilder sbX = a.X("couldn't find DSO to load: ", str);
+                        String message = th.getMessage();
+                        if (message == null) {
+                            message = th.toString();
                         }
-                        b bVar = g;
-                        if (bVar != null) {
-                            File fileD = b.d(bVar.e());
-                            sbX2.append("\n\tNative lib dir: ");
-                            sbX2.append(fileD.getAbsolutePath());
-                            sbX2.append("\n");
-                        }
-                        c.readLock().unlock();
-                        sbX2.append(" result: ");
-                        sbX2.append(iA);
-                        String string2 = sbX2.toString();
-                        Log.e("SoLoader", string2);
-                        throw new UnsatisfiedLinkError(string2);
+                        sbX.append(" caused by: ");
+                        sbX.append(message);
+                        th.printStackTrace();
+                        sbX.append(" result: ");
+                        sbX.append(iA);
+                        String string = sbX.toString();
+                        Log.e("SoLoader", string);
+                        UnsatisfiedLinkError unsatisfiedLinkError = new UnsatisfiedLinkError(string);
+                        unsatisfiedLinkError.initCause(th);
+                        throw unsatisfiedLinkError;
                     }
-                } catch (Throwable th4) {
-                    th = th4;
+                    return;
+                } catch (Throwable th3) {
+                    i3 = iA;
+                    c.readLock().unlock();
+                    throw th3;
                 }
-            } catch (Throwable th5) {
-                th = th5;
-                iA = i3;
             }
-        } catch (Throwable th6) {
+            try {
+                ReentrantReadWriteLock reentrantReadWriteLock2 = c;
+                reentrantReadWriteLock2.readLock().unlock();
+                if (a) {
+                    Trace.endSection();
+                }
+                if (z2) {
+                    StrictMode.setThreadPolicy(strictMode$ThreadPolicy);
+                }
+                if (iA == 0 || iA == 3) {
+                    StringBuilder sbX2 = a.X("couldn't find DSO to load: ", str);
+                    reentrantReadWriteLock2.readLock().lock();
+                    while (i3 < d.length) {
+                        sbX2.append("\n\tSoSource ");
+                        sbX2.append(i3);
+                        sbX2.append(": ");
+                        sbX2.append(d[i3].toString());
+                        i3++;
+                    }
+                    b bVar = g;
+                    if (bVar != null) {
+                        File fileD = b.d(bVar.e());
+                        sbX2.append("\n\tNative lib dir: ");
+                        sbX2.append(fileD.getAbsolutePath());
+                        sbX2.append("\n");
+                    }
+                    c.readLock().unlock();
+                    sbX2.append(" result: ");
+                    sbX2.append(iA);
+                    String string2 = sbX2.toString();
+                    Log.e("SoLoader", string2);
+                    throw new UnsatisfiedLinkError(string2);
+                }
+            } catch (Throwable th4) {
+                th = th4;
+            }
+        } catch (Throwable th5) {
             c.readLock().unlock();
-            throw th6;
+            throw th5;
         }
     }
 

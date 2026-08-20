@@ -7,7 +7,7 @@ import org.eclipse.jdt.internal.compiler.ast.Expression;
 import org.eclipse.jdt.internal.compiler.ast.MessageSend;
 import org.eclipse.jdt.internal.compiler.lookup.TypeBinding;
 
-/* JADX INFO: loaded from: app.apk:lombok/eclipse/agent/PatchExtensionMethod$Reflection.SCL.lombok */
+/* JADX INFO: loaded from: discord-126021.apk:lombok/eclipse/agent/PatchExtensionMethod$Reflection.SCL.lombok */
 final class PatchExtensionMethod$Reflection {
     public static final Field argumentTypes = Permit.permissiveGetField(MessageSend.class, "argumentTypes");
     public static final Field argumentsHaveErrors = Permit.permissiveGetField(MessageSend.class, "argumentsHaveErrors");

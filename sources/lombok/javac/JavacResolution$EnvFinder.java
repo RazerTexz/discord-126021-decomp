@@ -13,7 +13,7 @@ import com.sun.tools.javac.tree.JCTree$JCVariableDecl;
 import com.sun.tools.javac.tree.JCTree$Visitor;
 import com.sun.tools.javac.util.Context;
 
-/* JADX INFO: loaded from: app.apk:lombok/javac/JavacResolution$EnvFinder.SCL.lombok */
+/* JADX INFO: loaded from: discord-126021.apk:lombok/javac/JavacResolution$EnvFinder.SCL.lombok */
 final class JavacResolution$EnvFinder extends JCTree$Visitor {
     private Enter enter;
     private MemberEnter memberEnter;

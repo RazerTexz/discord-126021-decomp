@@ -9,7 +9,7 @@ import lombok.extern.slf4j.Slf4j;
 import lombok.javac.JavacAnnotationHandler;
 import lombok.javac.JavacNode;
 
-/* JADX INFO: loaded from: app.apk:lombok/javac/handlers/HandleLog$HandleSlf4jLog.SCL.lombok */
+/* JADX INFO: loaded from: discord-126021.apk:lombok/javac/handlers/HandleLog$HandleSlf4jLog.SCL.lombok */
 public class HandleLog$HandleSlf4jLog extends JavacAnnotationHandler<Slf4j> {
     @Override // lombok.javac.JavacAnnotationHandler
     public void handle(AnnotationValues<Slf4j> annotation, JCTree$JCAnnotation ast, JavacNode annotationNode) {

@@ -3,7 +3,7 @@ package org.objectweb.asm.tree.analysis;
 import java.util.Iterator;
 import java.util.NoSuchElementException;
 
-/* JADX INFO: loaded from: app.apk:org/objectweb/asm/tree/analysis/SmallSet$IteratorImpl.SCL.lombok */
+/* JADX INFO: loaded from: discord-126021.apk:org/objectweb/asm/tree/analysis/SmallSet$IteratorImpl.SCL.lombok */
 class SmallSet$IteratorImpl<T> implements Iterator<T> {
     private T firstElement;
     private T secondElement;

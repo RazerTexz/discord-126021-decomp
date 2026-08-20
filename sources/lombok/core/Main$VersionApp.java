@@ -3,7 +3,7 @@ package lombok.core;
 import java.util.Arrays;
 import java.util.List;
 
-/* JADX INFO: loaded from: app.apk:lombok/core/Main$VersionApp.SCL.lombok */
+/* JADX INFO: loaded from: discord-126021.apk:lombok/core/Main$VersionApp.SCL.lombok */
 public class Main$VersionApp extends LombokApp {
     @Override // lombok.core.LombokApp
     public String getAppName() {

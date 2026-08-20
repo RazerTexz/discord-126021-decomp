@@ -8,7 +8,7 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.Map$Entry;
 
-/* JADX INFO: loaded from: app.apk:lombok/delombok/FormatPreferenceScanner.SCL.lombok */
+/* JADX INFO: loaded from: discord-126021.apk:lombok/delombok/FormatPreferenceScanner.SCL.lombok */
 public class FormatPreferenceScanner {
     private FormatPreferences tryEasy(FormatPreferences preferences, boolean force) {
         int count = 0;

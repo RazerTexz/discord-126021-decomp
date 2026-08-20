@@ -2,7 +2,7 @@ package lombok.patcher;
 
 import java.util.LinkedList;
 
-/* JADX INFO: loaded from: app.apk:lombok/patcher/Symbols$1.SCL.lombok */
+/* JADX INFO: loaded from: discord-126021.apk:lombok/patcher/Symbols$1.SCL.lombok */
 class Symbols$1 extends ThreadLocal<LinkedList<String>> {
     @Override // java.lang.ThreadLocal
     protected /* bridge */ /* synthetic */ LinkedList<String> initialValue() {

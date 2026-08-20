@@ -16,7 +16,7 @@ import java.util.zip.ZipEntry;
 import lombok.Lombok;
 import lombok.patcher.ClassRootFinder;
 
-/* JADX INFO: loaded from: app.apk:lombok/core/PublicApiCreatorApp.SCL.lombok */
+/* JADX INFO: loaded from: discord-126021.apk:lombok/core/PublicApiCreatorApp.SCL.lombok */
 public class PublicApiCreatorApp extends LombokApp {
     @Override // lombok.core.LombokApp
     public String getAppName() {

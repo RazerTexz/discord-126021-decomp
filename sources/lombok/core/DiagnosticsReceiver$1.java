@@ -1,6 +1,6 @@
 package lombok.core;
 
-/* JADX INFO: loaded from: app.apk:lombok/core/DiagnosticsReceiver$1.SCL.lombok */
+/* JADX INFO: loaded from: discord-126021.apk:lombok/core/DiagnosticsReceiver$1.SCL.lombok */
 class DiagnosticsReceiver$1 implements DiagnosticsReceiver {
     DiagnosticsReceiver$1() {
     }

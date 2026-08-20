@@ -9,7 +9,7 @@ import org.objectweb.asm.ClassVisitor;
 import org.objectweb.asm.ClassWriter;
 import org.objectweb.asm.Opcodes;
 
-/* JADX INFO: loaded from: app.apk:lombok/patcher/scripts/AddFieldScript.SCL.lombok */
+/* JADX INFO: loaded from: discord-126021.apk:lombok/patcher/scripts/AddFieldScript.SCL.lombok */
 public class AddFieldScript extends PatchScript {
     private final int accessFlags;
     private final List<String> targetClasses;

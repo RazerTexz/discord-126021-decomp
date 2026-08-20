@@ -13,7 +13,7 @@ import org.objectweb.asm.Opcodes;
 import org.objectweb.asm.Type;
 import org.objectweb.asm.TypePath;
 
-/* JADX INFO: loaded from: app.apk:org/objectweb/asm/tree/MethodNode.SCL.lombok */
+/* JADX INFO: loaded from: discord-126021.apk:org/objectweb/asm/tree/MethodNode.SCL.lombok */
 public class MethodNode extends MethodVisitor {
     public int access;
     public String name;

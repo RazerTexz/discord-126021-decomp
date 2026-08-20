@@ -11,7 +11,7 @@ import javax.lang.model.element.NestingKind;
 import javax.tools.JavaFileObject;
 import javax.tools.JavaFileObject$Kind;
 
-/* JADX INFO: loaded from: app.apk:lombok/javac/apt/Javac9JavaFileObjectWrapper.SCL.lombok */
+/* JADX INFO: loaded from: discord-126021.apk:lombok/javac/apt/Javac9JavaFileObjectWrapper.SCL.lombok */
 class Javac9JavaFileObjectWrapper implements JavaFileObject {
     private final LombokFileObject delegate;
 

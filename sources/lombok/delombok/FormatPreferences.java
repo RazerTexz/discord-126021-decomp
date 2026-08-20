@@ -5,7 +5,7 @@ import java.util.Collections;
 import java.util.LinkedHashMap;
 import java.util.Map;
 
-/* JADX INFO: loaded from: app.apk:lombok/delombok/FormatPreferences.SCL.lombok */
+/* JADX INFO: loaded from: discord-126021.apk:lombok/delombok/FormatPreferences.SCL.lombok */
 public final class FormatPreferences {
     private final String indent;
     private final Boolean filledEmpties;

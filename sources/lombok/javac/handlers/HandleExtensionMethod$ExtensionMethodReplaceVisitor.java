@@ -21,7 +21,7 @@ import java.util.Map;
 import lombok.javac.JavacNode;
 import lombok.javac.JavacResolution;
 
-/* JADX INFO: loaded from: app.apk:lombok/javac/handlers/HandleExtensionMethod$ExtensionMethodReplaceVisitor.SCL.lombok */
+/* JADX INFO: loaded from: discord-126021.apk:lombok/javac/handlers/HandleExtensionMethod$ExtensionMethodReplaceVisitor.SCL.lombok */
 class HandleExtensionMethod$ExtensionMethodReplaceVisitor extends TreeScanner<Void, Void> {
     final JavacNode annotationNode;
     final List<HandleExtensionMethod$Extension> extensions;

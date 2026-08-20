@@ -25,7 +25,7 @@ import org.eclipse.jdt.internal.compiler.ast.ThisReference;
 import org.eclipse.jdt.internal.compiler.ast.TypeDeclaration;
 import org.eclipse.jdt.internal.compiler.lookup.TypeConstants;
 
-/* JADX INFO: loaded from: app.apk:lombok/eclipse/handlers/HandleSynchronized.SCL.lombok */
+/* JADX INFO: loaded from: discord-126021.apk:lombok/eclipse/handlers/HandleSynchronized.SCL.lombok */
 @DeferUntilPostDiet
 @HandlerPriority(1024)
 public class HandleSynchronized extends EclipseAnnotationHandler<Synchronized> {

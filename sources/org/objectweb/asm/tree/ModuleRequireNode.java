@@ -2,7 +2,7 @@ package org.objectweb.asm.tree;
 
 import org.objectweb.asm.ModuleVisitor;
 
-/* JADX INFO: loaded from: app.apk:org/objectweb/asm/tree/ModuleRequireNode.SCL.lombok */
+/* JADX INFO: loaded from: discord-126021.apk:org/objectweb/asm/tree/ModuleRequireNode.SCL.lombok */
 public class ModuleRequireNode {
     public String module;
     public int access;

@@ -6,7 +6,7 @@ import lombok.patcher.StackRequest;
 import org.objectweb.asm.MethodVisitor;
 import org.objectweb.asm.Opcodes;
 
-/* JADX INFO: loaded from: app.apk:lombok/patcher/scripts/WrapMethodCallScript$WrapMethodCall.SCL.lombok */
+/* JADX INFO: loaded from: discord-126021.apk:lombok/patcher/scripts/WrapMethodCallScript$WrapMethodCall.SCL.lombok */
 class WrapMethodCallScript$WrapMethodCall extends MethodVisitor {
     private final String ownClassSpec;
     private final MethodLogistics logistics;

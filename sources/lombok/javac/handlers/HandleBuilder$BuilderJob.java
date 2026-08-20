@@ -14,7 +14,7 @@ import lombok.core.configuration.CheckerFrameworkVersion;
 import lombok.javac.JavacNode;
 import lombok.javac.JavacTreeMaker;
 
-/* JADX INFO: loaded from: app.apk:lombok/javac/handlers/HandleBuilder$BuilderJob.SCL.lombok */
+/* JADX INFO: loaded from: discord-126021.apk:lombok/javac/handlers/HandleBuilder$BuilderJob.SCL.lombok */
 class HandleBuilder$BuilderJob {
     CheckerFrameworkVersion checkerFramework;
     JavacNode parentType;

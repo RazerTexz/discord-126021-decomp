@@ -4,8 +4,6 @@ import android.os.Bundle;
 import androidx.annotation.MainThread;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import androidx.view.Lifecycle;
-import androidx.view.Lifecycle$State;
 
 /* JADX INFO: loaded from: classes.dex */
 public final class SavedStateRegistryController {

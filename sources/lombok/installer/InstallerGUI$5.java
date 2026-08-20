@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 import javax.swing.SwingUtilities;
 
-/* JADX INFO: loaded from: app.apk:lombok/installer/InstallerGUI$5.SCL.lombok */
+/* JADX INFO: loaded from: discord-126021.apk:lombok/installer/InstallerGUI$5.SCL.lombok */
 class InstallerGUI$5 extends Thread {
     final /* synthetic */ InstallerGUI this$0;
 

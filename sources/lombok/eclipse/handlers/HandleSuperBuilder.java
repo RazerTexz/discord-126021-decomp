@@ -62,7 +62,7 @@ import org.eclipse.jdt.internal.compiler.lookup.ClassScope;
 import org.eclipse.jdt.internal.compiler.lookup.MethodScope;
 import org.eclipse.jdt.internal.compiler.lookup.TypeConstants;
 
-/* JADX INFO: loaded from: app.apk:lombok/eclipse/handlers/HandleSuperBuilder.SCL.lombok */
+/* JADX INFO: loaded from: discord-126021.apk:lombok/eclipse/handlers/HandleSuperBuilder.SCL.lombok */
 @HandlerPriority(-1024)
 public class HandleSuperBuilder extends EclipseAnnotationHandler<SuperBuilder> {
     private static final char[] SELF_METHOD_NAME = "self".toCharArray();

@@ -11,7 +11,7 @@ import org.objectweb.asm.MethodVisitor;
 import org.objectweb.asm.Opcodes;
 import org.objectweb.asm.Type;
 
-/* JADX INFO: loaded from: app.apk:org/objectweb/asm/commons/GeneratorAdapter.SCL.lombok */
+/* JADX INFO: loaded from: discord-126021.apk:org/objectweb/asm/commons/GeneratorAdapter.SCL.lombok */
 public class GeneratorAdapter extends LocalVariablesSorter {
     private static final String CLASS_DESCRIPTOR = "Ljava/lang/Class;";
     private static final Type BYTE_TYPE = Type.getObjectType("java/lang/Byte");

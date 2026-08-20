@@ -5,7 +5,7 @@ import java.util.Collection;
 import java.util.Iterator;
 import java.util.NoSuchElementException;
 
-/* JADX INFO: loaded from: app.apk:lombok/javac/JavacResolution$1$1.SCL.lombok */
+/* JADX INFO: loaded from: discord-126021.apk:lombok/javac/JavacResolution$1$1.SCL.lombok */
 class JavacResolution$1$1 implements Iterator<Type> {
     private boolean first = true;
     private Iterator<? extends Type> wrap;

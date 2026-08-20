@@ -1,6 +1,6 @@
 package lombok.javac;
 
-/* JADX INFO: loaded from: app.apk:lombok/javac/CapturingDiagnosticListener$CompilerMessage.SCL.lombok */
+/* JADX INFO: loaded from: discord-126021.apk:lombok/javac/CapturingDiagnosticListener$CompilerMessage.SCL.lombok */
 public final class CapturingDiagnosticListener$CompilerMessage {
     private final long line;
     private final long position;

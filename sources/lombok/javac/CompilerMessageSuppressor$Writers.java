@@ -1,6 +1,6 @@
 package lombok.javac;
 
-/* JADX INFO: loaded from: app.apk:lombok/javac/CompilerMessageSuppressor$Writers.SCL.lombok */
+/* JADX INFO: loaded from: discord-126021.apk:lombok/javac/CompilerMessageSuppressor$Writers.SCL.lombok */
 enum CompilerMessageSuppressor$Writers {
     ERROR("errWriter", "ERROR"),
     WARNING("warnWriter", "WARNING"),

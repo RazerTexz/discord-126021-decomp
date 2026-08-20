@@ -23,7 +23,7 @@ import org.eclipse.jdt.internal.compiler.ast.StringLiteral;
 import org.eclipse.jdt.internal.compiler.ast.TypeDeclaration;
 import org.eclipse.jdt.internal.compiler.ast.TypeReference;
 
-/* JADX INFO: loaded from: app.apk:lombok/eclipse/handlers/HandleJacksonized.SCL.lombok */
+/* JADX INFO: loaded from: discord-126021.apk:lombok/eclipse/handlers/HandleJacksonized.SCL.lombok */
 @HandlerPriority(-512)
 public class HandleJacksonized extends EclipseAnnotationHandler<Jacksonized> {
     private static final char[][] JSON_POJO_BUILDER_ANNOTATION = Eclipse.fromQualifiedName("com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder");

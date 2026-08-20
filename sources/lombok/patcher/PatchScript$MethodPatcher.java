@@ -8,7 +8,7 @@ import org.objectweb.asm.ClassVisitor;
 import org.objectweb.asm.MethodVisitor;
 import org.objectweb.asm.Opcodes;
 
-/* JADX INFO: loaded from: app.apk:lombok/patcher/PatchScript$MethodPatcher.SCL.lombok */
+/* JADX INFO: loaded from: discord-126021.apk:lombok/patcher/PatchScript$MethodPatcher.SCL.lombok */
 protected class PatchScript$MethodPatcher extends ClassVisitor {
     private List<TargetMatcher> targets;
     private String ownClassSpec;

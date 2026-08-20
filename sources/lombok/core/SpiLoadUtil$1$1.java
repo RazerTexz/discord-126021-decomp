@@ -4,7 +4,7 @@ import java.lang.reflect.InvocationTargetException;
 import java.util.Iterator;
 
 /* JADX INFO: Add missing generic type declarations: [C] */
-/* JADX INFO: loaded from: app.apk:lombok/core/SpiLoadUtil$1$1.SCL.lombok */
+/* JADX INFO: loaded from: discord-126021.apk:lombok/core/SpiLoadUtil$1$1.SCL.lombok */
 class SpiLoadUtil$1$1<C> implements Iterator<C> {
     final /* synthetic */ SpiLoadUtil$1 this$1;
     private final /* synthetic */ Iterator val$names;

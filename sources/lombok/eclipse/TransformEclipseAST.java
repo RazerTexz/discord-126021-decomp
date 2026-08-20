@@ -14,7 +14,7 @@ import lombok.permit.Permit;
 import org.eclipse.jdt.internal.compiler.ast.CompilationUnitDeclaration;
 import org.eclipse.jdt.internal.compiler.parser.Parser;
 
-/* JADX INFO: loaded from: app.apk:lombok/eclipse/TransformEclipseAST.SCL.lombok */
+/* JADX INFO: loaded from: discord-126021.apk:lombok/eclipse/TransformEclipseAST.SCL.lombok */
 public class TransformEclipseAST {
     private final EclipseAST ast;
     private static final Field astCacheField;

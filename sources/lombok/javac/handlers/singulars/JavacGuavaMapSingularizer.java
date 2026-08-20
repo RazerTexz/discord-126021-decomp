@@ -12,7 +12,7 @@ import lombok.javac.handlers.JavacSingularsRecipes$ExpressionMaker;
 import lombok.javac.handlers.JavacSingularsRecipes$SingularData;
 import lombok.javac.handlers.JavacSingularsRecipes$StatementMaker;
 
-/* JADX INFO: loaded from: app.apk:lombok/javac/handlers/singulars/JavacGuavaMapSingularizer.SCL.lombok */
+/* JADX INFO: loaded from: discord-126021.apk:lombok/javac/handlers/singulars/JavacGuavaMapSingularizer.SCL.lombok */
 public class JavacGuavaMapSingularizer extends JavacGuavaSingularizer {
     private static final LombokImmutableList<String> SUFFIXES = LombokImmutableList.of("key", "value");
     private static final LombokImmutableList<String> SUPPORTED_TYPES = LombokImmutableList.of("com.google.common.collect.ImmutableMap", "com.google.common.collect.ImmutableBiMap", "com.google.common.collect.ImmutableSortedMap");

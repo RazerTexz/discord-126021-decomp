@@ -6,7 +6,7 @@ import java.lang.reflect.Field;
 import javax.annotation.processing.Messager;
 import lombok.permit.Permit;
 
-/* JADX INFO: loaded from: app.apk:lombok/javac/JavacAST$ErrorLog.SCL.lombok */
+/* JADX INFO: loaded from: discord-126021.apk:lombok/javac/JavacAST$ErrorLog.SCL.lombok */
 abstract class JavacAST$ErrorLog {
     final Log log;
     private final Messager messager;

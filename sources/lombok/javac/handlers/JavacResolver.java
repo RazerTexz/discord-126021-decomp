@@ -6,7 +6,7 @@ import lombok.javac.JavacNode;
 
 /* JADX WARN: Failed to restore enum class, 'enum' modifier and super class removed */
 /* JADX WARN: Unknown enum class pattern. Please report as an issue! */
-/* JADX INFO: loaded from: app.apk:lombok/javac/handlers/JavacResolver.SCL.lombok */
+/* JADX INFO: loaded from: discord-126021.apk:lombok/javac/handlers/JavacResolver.SCL.lombok */
 public abstract class JavacResolver {
     public static final JavacResolver CLASS = new JavacResolver$1("CLASS", 0);
     public static final JavacResolver METHOD = new JavacResolver$2("METHOD", 1);

@@ -18,7 +18,7 @@ import lombok.experimental.ExtensionMethod;
 import lombok.javac.JavacAnnotationHandler;
 import lombok.javac.JavacNode;
 
-/* JADX INFO: loaded from: app.apk:lombok/javac/handlers/HandleExtensionMethod.SCL.lombok */
+/* JADX INFO: loaded from: discord-126021.apk:lombok/javac/handlers/HandleExtensionMethod.SCL.lombok */
 @HandlerPriority(66560)
 public class HandleExtensionMethod extends JavacAnnotationHandler<ExtensionMethod> {
     @Override // lombok.javac.JavacAnnotationHandler

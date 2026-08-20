@@ -13,7 +13,7 @@ import lombok.eclipse.EclipseAnnotationHandler;
 import lombok.eclipse.EclipseNode;
 import org.eclipse.jdt.internal.compiler.ast.Annotation;
 
-/* JADX INFO: loaded from: app.apk:lombok/eclipse/handlers/HandlePrintAST.SCL.lombok */
+/* JADX INFO: loaded from: discord-126021.apk:lombok/eclipse/handlers/HandlePrintAST.SCL.lombok */
 @DeferUntilPostDiet
 @HandlerPriority(536870912)
 public class HandlePrintAST extends EclipseAnnotationHandler<PrintAST> {

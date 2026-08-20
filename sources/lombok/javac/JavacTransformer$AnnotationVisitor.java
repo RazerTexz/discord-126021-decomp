@@ -7,7 +7,7 @@ import com.sun.tools.javac.tree.JCTree$JCCompilationUnit;
 import com.sun.tools.javac.tree.JCTree$JCMethodDecl;
 import com.sun.tools.javac.tree.JCTree$JCVariableDecl;
 
-/* JADX INFO: loaded from: app.apk:lombok/javac/JavacTransformer$AnnotationVisitor.SCL.lombok */
+/* JADX INFO: loaded from: discord-126021.apk:lombok/javac/JavacTransformer$AnnotationVisitor.SCL.lombok */
 class JavacTransformer$AnnotationVisitor extends JavacASTAdapter {
     private final long priority;
     final /* synthetic */ JavacTransformer this$0;

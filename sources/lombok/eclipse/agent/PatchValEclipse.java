@@ -27,7 +27,7 @@ import org.eclipse.jdt.internal.compiler.ast.SingleTypeReference;
 import org.eclipse.jdt.internal.compiler.ast.TypeReference;
 import org.eclipse.jdt.internal.compiler.parser.Parser;
 
-/* JADX INFO: loaded from: app.apk:lombok/eclipse/agent/PatchValEclipse.SCL.lombok */
+/* JADX INFO: loaded from: discord-126021.apk:lombok/eclipse/agent/PatchValEclipse.SCL.lombok */
 public class PatchValEclipse {
     private static final Field FIELD_NAME_INDEX;
 

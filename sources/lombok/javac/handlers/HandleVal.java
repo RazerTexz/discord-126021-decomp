@@ -22,7 +22,7 @@ import lombok.javac.ResolutionResetNeeded;
 import lombok.val;
 import lombok.var;
 
-/* JADX INFO: loaded from: app.apk:lombok/javac/handlers/HandleVal.SCL.lombok */
+/* JADX INFO: loaded from: discord-126021.apk:lombok/javac/handlers/HandleVal.SCL.lombok */
 @HandlerPriority(65636)
 @ResolutionResetNeeded
 public class HandleVal extends JavacASTAdapter {

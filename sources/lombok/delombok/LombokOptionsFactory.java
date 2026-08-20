@@ -5,7 +5,7 @@ import com.sun.tools.javac.util.Options;
 import lombok.javac.Javac;
 import lombok.javac.LombokOptions;
 
-/* JADX INFO: loaded from: app.apk:lombok/delombok/LombokOptionsFactory.SCL.lombok */
+/* JADX INFO: loaded from: discord-126021.apk:lombok/delombok/LombokOptionsFactory.SCL.lombok */
 public class LombokOptionsFactory {
     public static LombokOptions getDelombokOptions(Context context) {
         LombokOptions options;

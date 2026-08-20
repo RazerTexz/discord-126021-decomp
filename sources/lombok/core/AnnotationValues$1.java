@@ -5,7 +5,7 @@ import java.lang.reflect.InvocationHandler;
 import java.lang.reflect.Method;
 import java.util.Iterator;
 
-/* JADX INFO: loaded from: app.apk:lombok/core/AnnotationValues$1.SCL.lombok */
+/* JADX INFO: loaded from: discord-126021.apk:lombok/core/AnnotationValues$1.SCL.lombok */
 class AnnotationValues$1 implements InvocationHandler {
     final /* synthetic */ AnnotationValues this$0;
 

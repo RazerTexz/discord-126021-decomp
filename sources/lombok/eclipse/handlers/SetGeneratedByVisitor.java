@@ -102,7 +102,7 @@ import org.eclipse.jdt.internal.compiler.lookup.ClassScope;
 import org.eclipse.jdt.internal.compiler.lookup.CompilationUnitScope;
 import org.eclipse.jdt.internal.compiler.lookup.MethodScope;
 
-/* JADX INFO: loaded from: app.apk:lombok/eclipse/handlers/SetGeneratedByVisitor.SCL.lombok */
+/* JADX INFO: loaded from: discord-126021.apk:lombok/eclipse/handlers/SetGeneratedByVisitor.SCL.lombok */
 public final class SetGeneratedByVisitor extends ASTVisitor {
     private static final long INT_TO_LONG_MASK = 4294967295L;
     private final ASTNode source;

@@ -9,7 +9,7 @@ import lombok.extern.java.Log;
 import lombok.javac.JavacAnnotationHandler;
 import lombok.javac.JavacNode;
 
-/* JADX INFO: loaded from: app.apk:lombok/javac/handlers/HandleLog$HandleJulLog.SCL.lombok */
+/* JADX INFO: loaded from: discord-126021.apk:lombok/javac/handlers/HandleLog$HandleJulLog.SCL.lombok */
 public class HandleLog$HandleJulLog extends JavacAnnotationHandler<Log> {
     @Override // lombok.javac.JavacAnnotationHandler
     public void handle(AnnotationValues<Log> annotation, JCTree$JCAnnotation ast, JavacNode annotationNode) {

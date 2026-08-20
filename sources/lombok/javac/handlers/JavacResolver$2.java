@@ -5,7 +5,7 @@ import com.sun.tools.javac.tree.JCTree$JCExpression;
 import lombok.javac.JavacNode;
 import lombok.javac.JavacResolution;
 
-/* JADX INFO: loaded from: app.apk:lombok/javac/handlers/JavacResolver$2.SCL.lombok */
+/* JADX INFO: loaded from: discord-126021.apk:lombok/javac/handlers/JavacResolver$2.SCL.lombok */
 enum JavacResolver$2 extends JavacResolver {
     JavacResolver$2(String str, int i) {
         super(str, i, null);

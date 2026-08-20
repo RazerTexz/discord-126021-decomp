@@ -1,6 +1,6 @@
 package lombok.core.debug;
 
-/* JADX INFO: loaded from: app.apk:lombok/core/debug/ProblemReporter$ErrorLogger.SCL.lombok */
+/* JADX INFO: loaded from: discord-126021.apk:lombok/core/debug/ProblemReporter$ErrorLogger.SCL.lombok */
 interface ProblemReporter$ErrorLogger {
     void info(String str, Throwable th);
 

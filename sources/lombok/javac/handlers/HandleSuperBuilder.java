@@ -56,7 +56,7 @@ import lombok.javac.JavacAnnotationHandler;
 import lombok.javac.JavacNode;
 import lombok.javac.JavacTreeMaker;
 
-/* JADX INFO: loaded from: app.apk:lombok/javac/handlers/HandleSuperBuilder.SCL.lombok */
+/* JADX INFO: loaded from: discord-126021.apk:lombok/javac/handlers/HandleSuperBuilder.SCL.lombok */
 @HandlerPriority(-1024)
 public class HandleSuperBuilder extends JavacAnnotationHandler<SuperBuilder> {
     private static final String SELF_METHOD = "self";

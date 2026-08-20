@@ -9,7 +9,7 @@ import lombok.javac.CommentInfo;
 import lombok.javac.CommentInfo$EndConnection;
 import lombok.javac.CommentInfo$StartConnection;
 
-/* JADX INFO: loaded from: app.apk:lombok/javac/java7/CommentCollectingScanner.SCL.lombok */
+/* JADX INFO: loaded from: discord-126021.apk:lombok/javac/java7/CommentCollectingScanner.SCL.lombok */
 public class CommentCollectingScanner extends Scanner {
     private final ListBuffer<CommentInfo> comments;
     private int endComment;

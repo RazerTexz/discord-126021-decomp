@@ -1,6 +1,6 @@
 package org.objectweb.asm;
 
-/* JADX INFO: loaded from: app.apk:org/objectweb/asm/SymbolTable$Entry.SCL.lombok */
+/* JADX INFO: loaded from: discord-126021.apk:org/objectweb/asm/SymbolTable$Entry.SCL.lombok */
 class SymbolTable$Entry extends Symbol {
     final int hashCode;
     SymbolTable$Entry next;

@@ -8,7 +8,7 @@ import java.util.HashMap;
 import java.util.Map;
 import org.objectweb.asm.Type;
 
-/* JADX INFO: loaded from: app.apk:org/objectweb/asm/commons/Method.SCL.lombok */
+/* JADX INFO: loaded from: discord-126021.apk:org/objectweb/asm/commons/Method.SCL.lombok */
 public class Method {
     private final String name;
     private final String descriptor;

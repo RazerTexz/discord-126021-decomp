@@ -1,6 +1,6 @@
 package lombok.installer;
 
-/* JADX INFO: loaded from: app.apk:lombok/installer/OsUtils$OS.SCL.lombok */
+/* JADX INFO: loaded from: discord-126021.apk:lombok/installer/OsUtils$OS.SCL.lombok */
 public enum OsUtils$OS {
     MAC_OS_X("\n"),
     WINDOWS("\r\n"),

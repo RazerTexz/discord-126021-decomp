@@ -7,7 +7,7 @@ import org.eclipse.core.runtime.Platform;
 import org.eclipse.core.runtime.Status;
 import org.osgi.framework.Bundle;
 
-/* JADX INFO: loaded from: app.apk:lombok/core/debug/ProblemReporter$EclipseWorkspaceLogger.SCL.lombok */
+/* JADX INFO: loaded from: discord-126021.apk:lombok/core/debug/ProblemReporter$EclipseWorkspaceLogger.SCL.lombok */
 class ProblemReporter$EclipseWorkspaceLogger implements ProblemReporter$ErrorLogger {
     private static final int MAX_LOG = 200;
     private static final long SQUELCH_TIMEOUT = TimeUnit.HOURS.toMillis(1);

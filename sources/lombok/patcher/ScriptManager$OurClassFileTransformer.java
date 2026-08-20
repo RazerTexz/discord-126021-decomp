@@ -8,7 +8,7 @@ import java.lang.instrument.IllegalClassFormatException;
 import java.security.ProtectionDomain;
 import java.util.List;
 
-/* JADX INFO: loaded from: app.apk:lombok/patcher/ScriptManager$OurClassFileTransformer.SCL.lombok */
+/* JADX INFO: loaded from: discord-126021.apk:lombok/patcher/ScriptManager$OurClassFileTransformer.SCL.lombok */
 class ScriptManager$OurClassFileTransformer implements ClassFileTransformer {
     final /* synthetic */ ScriptManager this$0;
 

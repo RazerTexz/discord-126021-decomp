@@ -3,7 +3,7 @@ package lombok.eclipse.agent;
 import java.lang.reflect.InvocationTargetException;
 import lombok.Lombok;
 
-/* JADX INFO: loaded from: app.apk:lombok/eclipse/agent/PatchValEclipsePortal.SCL.lombok */
+/* JADX INFO: loaded from: discord-126021.apk:lombok/eclipse/agent/PatchValEclipsePortal.SCL.lombok */
 public class PatchValEclipsePortal {
     static final String LOCALDECLARATION_SIG = "org.eclipse.jdt.internal.compiler.ast.LocalDeclaration";
     static final String PARSER_SIG = "org.eclipse.jdt.internal.compiler.parser.Parser";

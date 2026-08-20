@@ -8,7 +8,7 @@ import java.lang.reflect.Method;
 import javax.annotation.processing.Messager;
 import lombok.permit.Permit;
 
-/* JADX INFO: loaded from: app.apk:lombok/javac/JavacAST$Jdk9Plus.SCL.lombok */
+/* JADX INFO: loaded from: discord-126021.apk:lombok/javac/JavacAST$Jdk9Plus.SCL.lombok */
 class JavacAST$Jdk9Plus extends JavacAST$ErrorLog {
     private static final String PROC_MESSAGER = "proc.messager";
     private Object multiple;

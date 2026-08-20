@@ -80,7 +80,7 @@ import lombok.javac.JavacTreeMaker$TypeTag;
 import lombok.javac.PackageName;
 import lombok.permit.Permit;
 
-/* JADX INFO: loaded from: app.apk:lombok/delombok/PrettyPrinter.SCL.lombok */
+/* JADX INFO: loaded from: discord-126021.apk:lombok/delombok/PrettyPrinter.SCL.lombok */
 public class PrettyPrinter extends JCTree$Visitor {
     private static final String LINE_SEP = System.getProperty("line.separator");
     private static final Map<JavacTreeMaker$TreeTag, String> OPERATORS;

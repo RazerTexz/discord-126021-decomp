@@ -5,7 +5,7 @@ import java.util.List;
 import java.util.Map;
 import org.objectweb.asm.MethodVisitor;
 
-/* JADX INFO: loaded from: app.apk:org/objectweb/asm/tree/AbstractInsnNode.SCL.lombok */
+/* JADX INFO: loaded from: discord-126021.apk:org/objectweb/asm/tree/AbstractInsnNode.SCL.lombok */
 public abstract class AbstractInsnNode {
     public static final int INSN = 0;
     public static final int INT_INSN = 1;

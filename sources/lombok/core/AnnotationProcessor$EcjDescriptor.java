@@ -6,7 +6,7 @@ import javax.annotation.processing.ProcessingEnvironment;
 import javax.annotation.processing.RoundEnvironment;
 import javax.lang.model.element.TypeElement;
 
-/* JADX INFO: loaded from: app.apk:lombok/core/AnnotationProcessor$EcjDescriptor.SCL.lombok */
+/* JADX INFO: loaded from: discord-126021.apk:lombok/core/AnnotationProcessor$EcjDescriptor.SCL.lombok */
 class AnnotationProcessor$EcjDescriptor extends AnnotationProcessor$ProcessorDescriptor {
     AnnotationProcessor$EcjDescriptor() {
     }

@@ -1,6 +1,6 @@
 package lombok.javac;
 
-/* JADX INFO: loaded from: app.apk:lombok/javac/JavacTreeMaker$FieldId.SCL.lombok */
+/* JADX INFO: loaded from: discord-126021.apk:lombok/javac/JavacTreeMaker$FieldId.SCL.lombok */
 final class JavacTreeMaker$FieldId<J> {
     private final Class<?> owner;
     private final String name;

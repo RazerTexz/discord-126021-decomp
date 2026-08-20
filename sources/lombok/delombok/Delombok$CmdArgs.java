@@ -9,7 +9,7 @@ import com.zwitserloot.cmdreader.Shorthand;
 import java.util.ArrayList;
 import java.util.List;
 
-/* JADX INFO: loaded from: app.apk:lombok/delombok/Delombok$CmdArgs.SCL.lombok */
+/* JADX INFO: loaded from: discord-126021.apk:lombok/delombok/Delombok$CmdArgs.SCL.lombok */
 class Delombok$CmdArgs {
 
     @Excludes({"quiet"})

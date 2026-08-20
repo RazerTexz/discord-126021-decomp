@@ -28,7 +28,7 @@ import org.eclipse.jdt.internal.compiler.ast.StringLiteral;
 import org.eclipse.jdt.internal.compiler.ast.TypeDeclaration;
 import org.eclipse.jdt.internal.compiler.lookup.TypeConstants;
 
-/* JADX INFO: loaded from: app.apk:lombok/eclipse/handlers/HandleFieldNameConstants.SCL.lombok */
+/* JADX INFO: loaded from: discord-126021.apk:lombok/eclipse/handlers/HandleFieldNameConstants.SCL.lombok */
 public class HandleFieldNameConstants extends EclipseAnnotationHandler<FieldNameConstants> {
     private static final IdentifierName FIELDS = IdentifierName.valueOf("Fields");
 

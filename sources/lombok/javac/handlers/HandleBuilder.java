@@ -53,7 +53,7 @@ import lombok.javac.JavacNode;
 import lombok.javac.JavacTreeMaker;
 import lombok.javac.JavacTreeMaker$TypeTag;
 
-/* JADX INFO: loaded from: app.apk:lombok/javac/handlers/HandleBuilder.SCL.lombok */
+/* JADX INFO: loaded from: discord-126021.apk:lombok/javac/handlers/HandleBuilder.SCL.lombok */
 @HandlerPriority(-1024)
 public class HandleBuilder extends JavacAnnotationHandler<Builder> {
     private HandleConstructor handleConstructor = new HandleConstructor();

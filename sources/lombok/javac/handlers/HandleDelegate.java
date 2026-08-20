@@ -51,7 +51,7 @@ import lombok.javac.JavacResolution$TypeNotConvertibleException;
 import lombok.javac.JavacTreeMaker;
 import lombok.javac.ResolutionResetNeeded;
 
-/* JADX INFO: loaded from: app.apk:lombok/javac/handlers/HandleDelegate.SCL.lombok */
+/* JADX INFO: loaded from: discord-126021.apk:lombok/javac/handlers/HandleDelegate.SCL.lombok */
 @HandlerPriority(65536)
 @ResolutionResetNeeded
 public class HandleDelegate extends JavacAnnotationHandler<Delegate> {

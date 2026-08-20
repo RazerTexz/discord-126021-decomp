@@ -2,7 +2,7 @@ package lombok.installer;
 
 import java.util.concurrent.atomic.AtomicBoolean;
 
-/* JADX INFO: loaded from: app.apk:lombok/installer/InstallerGUI$10$4.SCL.lombok */
+/* JADX INFO: loaded from: discord-126021.apk:lombok/installer/InstallerGUI$10$4.SCL.lombok */
 class InstallerGUI$10$4 implements Runnable {
     final /* synthetic */ InstallerGUI$10 this$1;
     private final /* synthetic */ AtomicBoolean val$failure;

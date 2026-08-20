@@ -7,7 +7,7 @@ import java.lang.reflect.Method;
 import lombok.Lombok;
 import lombok.permit.Permit;
 
-/* JADX INFO: loaded from: app.apk:lombok/javac/JavacResolution$ReflectiveAccess.SCL.lombok */
+/* JADX INFO: loaded from: discord-126021.apk:lombok/javac/JavacResolution$ReflectiveAccess.SCL.lombok */
 class JavacResolution$ReflectiveAccess {
     private static Method UPPER_BOUND;
 

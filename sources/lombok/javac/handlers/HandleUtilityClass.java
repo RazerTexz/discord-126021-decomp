@@ -23,7 +23,7 @@ import lombok.javac.JavacAnnotationHandler;
 import lombok.javac.JavacNode;
 import lombok.javac.JavacTreeMaker;
 
-/* JADX INFO: loaded from: app.apk:lombok/javac/handlers/HandleUtilityClass.SCL.lombok */
+/* JADX INFO: loaded from: discord-126021.apk:lombok/javac/handlers/HandleUtilityClass.SCL.lombok */
 @HandlerPriority(-4096)
 public class HandleUtilityClass extends JavacAnnotationHandler<UtilityClass> {
     private static /* synthetic */ int[] $SWITCH_TABLE$lombok$core$AST$Kind;

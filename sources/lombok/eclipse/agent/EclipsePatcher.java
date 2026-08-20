@@ -9,7 +9,7 @@ import lombok.patcher.ScriptManager;
 import lombok.patcher.StackRequest;
 import lombok.patcher.scripts.ScriptBuilder;
 
-/* JADX INFO: loaded from: app.apk:lombok/eclipse/agent/EclipsePatcher.SCL.lombok */
+/* JADX INFO: loaded from: discord-126021.apk:lombok/eclipse/agent/EclipsePatcher.SCL.lombok */
 public class EclipsePatcher implements AgentLauncher$AgentLaunchable {
     @Override // lombok.core.AgentLauncher$AgentLaunchable
     public void runAgent(String agentArgs, Instrumentation instrumentation, boolean injected, Class<?> launchingContext) throws Exception {

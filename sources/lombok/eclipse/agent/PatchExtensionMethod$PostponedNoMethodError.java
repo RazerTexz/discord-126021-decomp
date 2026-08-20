@@ -5,7 +5,7 @@ import org.eclipse.jdt.internal.compiler.ast.MessageSend;
 import org.eclipse.jdt.internal.compiler.lookup.TypeBinding;
 import org.eclipse.jdt.internal.compiler.problem.ProblemReporter;
 
-/* JADX INFO: loaded from: app.apk:lombok/eclipse/agent/PatchExtensionMethod$PostponedNoMethodError.SCL.lombok */
+/* JADX INFO: loaded from: discord-126021.apk:lombok/eclipse/agent/PatchExtensionMethod$PostponedNoMethodError.SCL.lombok */
 class PatchExtensionMethod$PostponedNoMethodError implements PatchExtensionMethod$PostponedError {
     private final ProblemReporter problemReporter;
     private final WeakReference<MessageSend> messageSendRef;

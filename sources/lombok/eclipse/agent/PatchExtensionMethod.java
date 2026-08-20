@@ -35,7 +35,7 @@ import org.eclipse.jdt.internal.compiler.lookup.Scope;
 import org.eclipse.jdt.internal.compiler.lookup.TypeBinding;
 import org.eclipse.jdt.internal.compiler.problem.ProblemReporter;
 
-/* JADX INFO: loaded from: app.apk:lombok/eclipse/agent/PatchExtensionMethod.SCL.lombok */
+/* JADX INFO: loaded from: discord-126021.apk:lombok/eclipse/agent/PatchExtensionMethod.SCL.lombok */
 public class PatchExtensionMethod {
     private static final FieldAugment<MessageSend, PatchExtensionMethod$PostponedError> MessageSend_postponedErrors = FieldAugment.augment(MessageSend.class, PatchExtensionMethod$PostponedError.class, "lombok$postponedErrors");
 

@@ -34,7 +34,7 @@ import org.eclipse.jdt.internal.compiler.ast.TypeDeclaration;
 import org.eclipse.jdt.internal.compiler.ast.TypeReference;
 import org.eclipse.jdt.internal.compiler.ast.Wildcard;
 
-/* JADX INFO: loaded from: app.apk:lombok/eclipse/EclipseAST.SCL.lombok */
+/* JADX INFO: loaded from: discord-126021.apk:lombok/eclipse/EclipseAST.SCL.lombok */
 public class EclipseAST extends AST<EclipseAST, EclipseNode, ASTNode> {
     private static volatile boolean skipEclipseWorkspaceBasedFileResolver = false;
     private static final URI NOT_CALCULATED_MARKER = URI.create("https://projectlombok.org/not/calculated");

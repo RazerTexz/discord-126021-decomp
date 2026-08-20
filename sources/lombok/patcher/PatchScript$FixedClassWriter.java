@@ -3,7 +3,7 @@ package lombok.patcher;
 import org.objectweb.asm.ClassReader;
 import org.objectweb.asm.ClassWriter;
 
-/* JADX INFO: loaded from: app.apk:lombok/patcher/PatchScript$FixedClassWriter.SCL.lombok */
+/* JADX INFO: loaded from: discord-126021.apk:lombok/patcher/PatchScript$FixedClassWriter.SCL.lombok */
 class PatchScript$FixedClassWriter extends ClassWriter {
     PatchScript$FixedClassWriter(ClassReader classReader, int flags) {
         super(classReader, flags);

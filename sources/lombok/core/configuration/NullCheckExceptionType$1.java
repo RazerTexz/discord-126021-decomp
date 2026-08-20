@@ -2,7 +2,7 @@ package lombok.core.configuration;
 
 import lombok.core.LombokImmutableList;
 
-/* JADX INFO: loaded from: app.apk:lombok/core/configuration/NullCheckExceptionType$1.SCL.lombok */
+/* JADX INFO: loaded from: discord-126021.apk:lombok/core/configuration/NullCheckExceptionType$1.SCL.lombok */
 enum NullCheckExceptionType$1 extends NullCheckExceptionType {
     NullCheckExceptionType$1(String str, int i) {
         super(str, i, null);

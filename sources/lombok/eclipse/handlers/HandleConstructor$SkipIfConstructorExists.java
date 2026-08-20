@@ -1,6 +1,6 @@
 package lombok.eclipse.handlers;
 
-/* JADX INFO: loaded from: app.apk:lombok/eclipse/handlers/HandleConstructor$SkipIfConstructorExists.SCL.lombok */
+/* JADX INFO: loaded from: discord-126021.apk:lombok/eclipse/handlers/HandleConstructor$SkipIfConstructorExists.SCL.lombok */
 public enum HandleConstructor$SkipIfConstructorExists {
     YES,
     NO,

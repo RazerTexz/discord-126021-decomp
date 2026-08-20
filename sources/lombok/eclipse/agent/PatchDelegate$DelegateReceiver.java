@@ -5,7 +5,7 @@ import org.eclipse.jdt.internal.compiler.ast.Expression;
 
 /* JADX WARN: Failed to restore enum class, 'enum' modifier and super class removed */
 /* JADX WARN: Unknown enum class pattern. Please report as an issue! */
-/* JADX INFO: loaded from: app.apk:lombok/eclipse/agent/PatchDelegate$DelegateReceiver.SCL.lombok */
+/* JADX INFO: loaded from: discord-126021.apk:lombok/eclipse/agent/PatchDelegate$DelegateReceiver.SCL.lombok */
 abstract class PatchDelegate$DelegateReceiver {
     public static final PatchDelegate$DelegateReceiver METHOD = new PatchDelegate$DelegateReceiver$1("METHOD", 0);
     public static final PatchDelegate$DelegateReceiver FIELD = new PatchDelegate$DelegateReceiver$2("FIELD", 1);

@@ -34,7 +34,7 @@ import lombok.javac.JavacNode;
 import lombok.javac.JavacTreeMaker$TreeTag;
 import lombok.javac.JavacTreeMaker$TypeTag;
 
-/* JADX INFO: loaded from: app.apk:lombok/javac/handlers/HandleNonNull.SCL.lombok */
+/* JADX INFO: loaded from: discord-126021.apk:lombok/javac/handlers/HandleNonNull.SCL.lombok */
 @HandlerPriority(512)
 public class HandleNonNull extends JavacAnnotationHandler<NonNull> {
     private static /* synthetic */ int[] $SWITCH_TABLE$lombok$core$AST$Kind;

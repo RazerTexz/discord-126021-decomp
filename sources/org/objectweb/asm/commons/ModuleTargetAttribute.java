@@ -6,7 +6,7 @@ import org.objectweb.asm.ClassReader;
 import org.objectweb.asm.ClassWriter;
 import org.objectweb.asm.Label;
 
-/* JADX INFO: loaded from: app.apk:org/objectweb/asm/commons/ModuleTargetAttribute.SCL.lombok */
+/* JADX INFO: loaded from: discord-126021.apk:org/objectweb/asm/commons/ModuleTargetAttribute.SCL.lombok */
 public final class ModuleTargetAttribute extends Attribute {
     public String platform;
 

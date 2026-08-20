@@ -22,7 +22,7 @@ import org.eclipse.jdt.internal.compiler.ast.Statement;
 import org.eclipse.jdt.internal.compiler.ast.TypeDeclaration;
 import org.eclipse.jdt.internal.compiler.ast.TypeReference;
 
-/* JADX INFO: loaded from: app.apk:lombok/eclipse/EclipseASTVisitor$Printer.SCL.lombok */
+/* JADX INFO: loaded from: discord-126021.apk:lombok/eclipse/EclipseASTVisitor$Printer.SCL.lombok */
 public class EclipseASTVisitor$Printer implements EclipseASTVisitor {
     private final PrintStream out;
     private final boolean printContent;

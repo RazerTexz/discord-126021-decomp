@@ -8,7 +8,7 @@ import java.util.List;
 import lombok.javac.CommentCatcher;
 import lombok.javac.CommentInfo;
 
-/* JADX INFO: loaded from: app.apk:lombok/javac/java7/CommentCollectingParser.SCL.lombok */
+/* JADX INFO: loaded from: discord-126021.apk:lombok/javac/java7/CommentCollectingParser.SCL.lombok */
 class CommentCollectingParser extends EndPosParser {
     private final Lexer lexer;
 

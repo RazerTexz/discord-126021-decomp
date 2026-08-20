@@ -2,7 +2,7 @@ package lombok.core.configuration;
 
 import java.util.List;
 
-/* JADX INFO: loaded from: app.apk:lombok/core/configuration/ConfigurationApp$2.SCL.lombok */
+/* JADX INFO: loaded from: discord-126021.apk:lombok/core/configuration/ConfigurationApp$2.SCL.lombok */
 class ConfigurationApp$2 implements ConfigurationProblemReporter {
     final /* synthetic */ ConfigurationApp this$0;
     private final /* synthetic */ List val$problems;

@@ -2,7 +2,7 @@ package lombok.core;
 
 import java.lang.instrument.Instrumentation;
 
-/* JADX INFO: loaded from: app.apk:lombok/core/AgentLauncher$AgentInfo.SCL.lombok */
+/* JADX INFO: loaded from: discord-126021.apk:lombok/core/AgentLauncher$AgentInfo.SCL.lombok */
 abstract class AgentLauncher$AgentInfo {
     abstract String className();
 

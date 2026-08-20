@@ -1,6 +1,6 @@
 package lombok.javac;
 
-/* JADX INFO: loaded from: app.apk:lombok/javac/CommentInfo.SCL.lombok */
+/* JADX INFO: loaded from: discord-126021.apk:lombok/javac/CommentInfo.SCL.lombok */
 public final class CommentInfo {
     public final int pos;
     public final int prevEndPos;

@@ -2,7 +2,7 @@ package lombok.javac;
 
 import lombok.core.HandlerPriority;
 
-/* JADX INFO: loaded from: app.apk:lombok/javac/HandlerLibrary$VisitorContainer.SCL.lombok */
+/* JADX INFO: loaded from: discord-126021.apk:lombok/javac/HandlerLibrary$VisitorContainer.SCL.lombok */
 class HandlerLibrary$VisitorContainer {
     private final JavacASTVisitor visitor;
     private final long priority;

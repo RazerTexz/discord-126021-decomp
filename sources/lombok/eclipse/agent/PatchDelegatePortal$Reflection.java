@@ -2,7 +2,7 @@ package lombok.eclipse.agent;
 
 import java.lang.reflect.Method;
 
-/* JADX INFO: loaded from: app.apk:lombok/eclipse/agent/PatchDelegatePortal$Reflection.SCL.lombok */
+/* JADX INFO: loaded from: discord-126021.apk:lombok/eclipse/agent/PatchDelegatePortal$Reflection.SCL.lombok */
 final class PatchDelegatePortal$Reflection {
     public static final Method handleDelegateForType;
     public static final Method getChildren;

@@ -2,7 +2,7 @@ package lombok.eclipse.handlers;
 
 import org.eclipse.jdt.internal.compiler.ast.TypeReference;
 
-/* JADX INFO: loaded from: app.apk:lombok/eclipse/handlers/EclipseHandlerUtil$GetterMethod.SCL.lombok */
+/* JADX INFO: loaded from: discord-126021.apk:lombok/eclipse/handlers/EclipseHandlerUtil$GetterMethod.SCL.lombok */
 class EclipseHandlerUtil$GetterMethod {
     private final char[] name;
     private final TypeReference type;

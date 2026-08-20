@@ -8,7 +8,7 @@ import lombok.javac.JavacNode;
 
 /* JADX WARN: Failed to restore enum class, 'enum' modifier and super class removed */
 /* JADX WARN: Unknown enum class pattern. Please report as an issue! */
-/* JADX INFO: loaded from: app.apk:lombok/javac/handlers/JavacHandlerUtil$CopyJavadoc.SCL.lombok */
+/* JADX INFO: loaded from: discord-126021.apk:lombok/javac/handlers/JavacHandlerUtil$CopyJavadoc.SCL.lombok */
 public abstract class JavacHandlerUtil$CopyJavadoc {
     public static final JavacHandlerUtil$CopyJavadoc VERBATIM = new JavacHandlerUtil$CopyJavadoc$1("VERBATIM", 0);
     public static final JavacHandlerUtil$CopyJavadoc GETTER = new JavacHandlerUtil$CopyJavadoc$2("GETTER", 1);

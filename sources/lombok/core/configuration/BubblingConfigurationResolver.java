@@ -8,7 +8,7 @@ import java.util.Iterator;
 import java.util.List;
 import lombok.ConfigurationKeys;
 
-/* JADX INFO: loaded from: app.apk:lombok/core/configuration/BubblingConfigurationResolver.SCL.lombok */
+/* JADX INFO: loaded from: discord-126021.apk:lombok/core/configuration/BubblingConfigurationResolver.SCL.lombok */
 public class BubblingConfigurationResolver implements ConfigurationResolver {
     private final ConfigurationFile start;
     private final ConfigurationFileToSource fileMapper;

@@ -8,7 +8,7 @@ import java.util.Set;
 import lombok.delombok.FormatPreferences;
 import lombok.delombok.LombokOptionsFactory;
 
-/* JADX INFO: loaded from: app.apk:lombok/javac/LombokOptions.SCL.lombok */
+/* JADX INFO: loaded from: discord-126021.apk:lombok/javac/LombokOptions.SCL.lombok */
 public abstract class LombokOptions extends Options {
     private boolean deleteLombokAnnotations;
     private final Set<JCTree$JCCompilationUnit> changed;

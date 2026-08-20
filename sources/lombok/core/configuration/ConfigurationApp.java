@@ -24,7 +24,7 @@ import java.util.TreeSet;
 import lombok.ConfigurationKeys;
 import lombok.core.LombokApp;
 
-/* JADX INFO: loaded from: app.apk:lombok/core/configuration/ConfigurationApp.SCL.lombok */
+/* JADX INFO: loaded from: discord-126021.apk:lombok/core/configuration/ConfigurationApp.SCL.lombok */
 public class ConfigurationApp extends LombokApp {
     private PrintStream out = System.out;
     private PrintStream err = System.err;

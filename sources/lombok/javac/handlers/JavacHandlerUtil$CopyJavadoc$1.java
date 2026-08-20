@@ -4,7 +4,7 @@ import com.sun.tools.javac.tree.JCTree$JCCompilationUnit;
 import lombok.javac.Javac;
 import lombok.javac.JavacNode;
 
-/* JADX INFO: loaded from: app.apk:lombok/javac/handlers/JavacHandlerUtil$CopyJavadoc$1.SCL.lombok */
+/* JADX INFO: loaded from: discord-126021.apk:lombok/javac/handlers/JavacHandlerUtil$CopyJavadoc$1.SCL.lombok */
 enum JavacHandlerUtil$CopyJavadoc$1 extends JavacHandlerUtil$CopyJavadoc {
     JavacHandlerUtil$CopyJavadoc$1(String str, int i) {
         super(str, i, null);

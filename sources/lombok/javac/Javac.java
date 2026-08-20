@@ -30,7 +30,7 @@ import lombok.core.FieldSelect;
 import lombok.core.JavaIdentifiers;
 import lombok.permit.Permit;
 
-/* JADX INFO: loaded from: app.apk:lombok/javac/Javac.SCL.lombok */
+/* JADX INFO: loaded from: discord-126021.apk:lombok/javac/Javac.SCL.lombok */
 public class Javac {
     private static final Pattern VERSION_PARSER = Pattern.compile("^(\\d{1,6})\\.?(\\d{1,6})?.*$");
     private static final Pattern SOURCE_PARSER = Pattern.compile("^JDK(\\d{1,6})_?(\\d{1,6})?.*$");

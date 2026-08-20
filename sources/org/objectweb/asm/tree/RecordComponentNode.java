@@ -8,7 +8,7 @@ import org.objectweb.asm.Opcodes;
 import org.objectweb.asm.RecordComponentVisitor;
 import org.objectweb.asm.TypePath;
 
-/* JADX INFO: loaded from: app.apk:org/objectweb/asm/tree/RecordComponentNode.SCL.lombok */
+/* JADX INFO: loaded from: discord-126021.apk:org/objectweb/asm/tree/RecordComponentNode.SCL.lombok */
 public class RecordComponentNode extends RecordComponentVisitor {
     public String name;
     public String descriptor;

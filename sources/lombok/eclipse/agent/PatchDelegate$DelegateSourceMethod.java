@@ -8,7 +8,7 @@ import org.eclipse.jdt.internal.compiler.ast.MethodDeclaration;
 import org.eclipse.jdt.internal.core.JavaElement;
 import org.eclipse.jdt.internal.core.SourceMethod;
 
-/* JADX INFO: loaded from: app.apk:lombok/eclipse/agent/PatchDelegate$DelegateSourceMethod.SCL.lombok */
+/* JADX INFO: loaded from: discord-126021.apk:lombok/eclipse/agent/PatchDelegate$DelegateSourceMethod.SCL.lombok */
 final class PatchDelegate$DelegateSourceMethod extends SourceMethod {
     private PatchDelegate$DelegateSourceMethod$DelegateSourceMethodInfo sourceMethodInfo;
 

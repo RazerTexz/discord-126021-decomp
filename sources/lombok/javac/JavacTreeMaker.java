@@ -67,7 +67,7 @@ import java.lang.reflect.Modifier;
 import java.util.concurrent.ConcurrentHashMap;
 import lombok.permit.Permit;
 
-/* JADX INFO: loaded from: app.apk:lombok/javac/JavacTreeMaker.SCL.lombok */
+/* JADX INFO: loaded from: discord-126021.apk:lombok/javac/JavacTreeMaker.SCL.lombok */
 public class JavacTreeMaker {
     private final TreeMaker tm;
     private static final ConcurrentHashMap<JavacTreeMaker$FieldId<?>, Object> FIELD_CACHE = new ConcurrentHashMap<>();

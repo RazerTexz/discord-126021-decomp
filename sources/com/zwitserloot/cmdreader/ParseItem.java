@@ -19,7 +19,7 @@ import java.util.Map;
 import java.util.Queue;
 import java.util.Set;
 
-/* JADX INFO: loaded from: app.apk:com/zwitserloot/cmdreader/ParseItem.SCL.lombok */
+/* JADX INFO: loaded from: discord-126021.apk:com/zwitserloot/cmdreader/ParseItem.SCL.lombok */
 class ParseItem {
     private final Field field;
     private final boolean isCollection;

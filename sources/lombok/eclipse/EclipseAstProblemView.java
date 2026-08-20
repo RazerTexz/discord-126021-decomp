@@ -4,7 +4,7 @@ import org.eclipse.jdt.internal.compiler.CompilationResult;
 import org.eclipse.jdt.internal.compiler.impl.ReferenceContext;
 import org.eclipse.jdt.internal.compiler.util.Util;
 
-/* JADX INFO: loaded from: app.apk:lombok/eclipse/EclipseAstProblemView.SCL.lombok */
+/* JADX INFO: loaded from: discord-126021.apk:lombok/eclipse/EclipseAstProblemView.SCL.lombok */
 public class EclipseAstProblemView {
     public static void addProblemToCompilationResult(char[] fileNameArray, CompilationResult result, boolean isWarning, String message, int sourceStart, int sourceEnd) {
         int lineNumber;

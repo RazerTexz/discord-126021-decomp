@@ -2,7 +2,7 @@ package lombok.eclipse.agent;
 
 import java.lang.reflect.Method;
 
-/* JADX INFO: loaded from: app.apk:lombok/eclipse/agent/PatchExtensionMethodPortal$Reflection.SCL.lombok */
+/* JADX INFO: loaded from: discord-126021.apk:lombok/eclipse/agent/PatchExtensionMethodPortal$Reflection.SCL.lombok */
 final class PatchExtensionMethodPortal$Reflection {
     public static final Method resolveType;
     public static final Method errorNoMethodFor;

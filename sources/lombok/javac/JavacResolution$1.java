@@ -4,7 +4,7 @@ import com.sun.tools.javac.code.Type;
 import java.util.Collection;
 import java.util.Iterator;
 
-/* JADX INFO: loaded from: app.apk:lombok/javac/JavacResolution$1.SCL.lombok */
+/* JADX INFO: loaded from: discord-126021.apk:lombok/javac/JavacResolution$1.SCL.lombok */
 class JavacResolution$1 implements Iterable<Type> {
     private final /* synthetic */ Collection val$ts;
     private final /* synthetic */ Type val$t;

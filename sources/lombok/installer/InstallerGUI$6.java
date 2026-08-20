@@ -9,7 +9,7 @@ import java.util.regex.Pattern;
 import javax.swing.JFileChooser;
 import javax.swing.JOptionPane;
 
-/* JADX INFO: loaded from: app.apk:lombok/installer/InstallerGUI$6.SCL.lombok */
+/* JADX INFO: loaded from: discord-126021.apk:lombok/installer/InstallerGUI$6.SCL.lombok */
 class InstallerGUI$6 implements ActionListener {
     final /* synthetic */ InstallerGUI this$0;
 

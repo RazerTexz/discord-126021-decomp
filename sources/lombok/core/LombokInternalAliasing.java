@@ -7,7 +7,7 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Map$Entry;
 
-/* JADX INFO: loaded from: app.apk:lombok/core/LombokInternalAliasing.SCL.lombok */
+/* JADX INFO: loaded from: discord-126021.apk:lombok/core/LombokInternalAliasing.SCL.lombok */
 public class LombokInternalAliasing {
     public static final Map<String, String> ALIASES;
     public static final Map<String, Collection<String>> REVERSE_ALIASES;

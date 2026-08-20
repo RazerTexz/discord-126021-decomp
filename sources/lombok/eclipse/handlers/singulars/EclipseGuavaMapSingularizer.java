@@ -9,7 +9,7 @@ import lombok.eclipse.handlers.EclipseSingularsRecipes$SingularData;
 import lombok.eclipse.handlers.EclipseSingularsRecipes$StatementMaker;
 import lombok.eclipse.handlers.EclipseSingularsRecipes$TypeReferenceMaker;
 
-/* JADX INFO: loaded from: app.apk:lombok/eclipse/handlers/singulars/EclipseGuavaMapSingularizer.SCL.lombok */
+/* JADX INFO: loaded from: discord-126021.apk:lombok/eclipse/handlers/singulars/EclipseGuavaMapSingularizer.SCL.lombok */
 public class EclipseGuavaMapSingularizer extends EclipseGuavaSingularizer {
     private static final LombokImmutableList<String> SUFFIXES = LombokImmutableList.of("key", "value");
     private static final LombokImmutableList<String> SUPPORTED_TYPES = LombokImmutableList.of("com.google.common.collect.ImmutableMap", "com.google.common.collect.ImmutableBiMap", "com.google.common.collect.ImmutableSortedMap");

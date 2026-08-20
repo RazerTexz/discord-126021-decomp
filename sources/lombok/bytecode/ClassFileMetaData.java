@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-/* JADX INFO: loaded from: app.apk:lombok/bytecode/ClassFileMetaData.SCL.lombok */
+/* JADX INFO: loaded from: discord-126021.apk:lombok/bytecode/ClassFileMetaData.SCL.lombok */
 public class ClassFileMetaData {
     private static final byte UTF8 = 1;
     private static final byte INTEGER = 3;

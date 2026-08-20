@@ -2,7 +2,7 @@ package lombok.core.configuration;
 
 import lombok.eclipse.handlers.EclipseHandlerUtil;
 
-/* JADX INFO: loaded from: app.apk:lombok/core/configuration/ConfigurationProblemReporter$1.SCL.lombok */
+/* JADX INFO: loaded from: discord-126021.apk:lombok/core/configuration/ConfigurationProblemReporter$1.SCL.lombok */
 class ConfigurationProblemReporter$1 implements ConfigurationProblemReporter {
     ConfigurationProblemReporter$1() {
     }

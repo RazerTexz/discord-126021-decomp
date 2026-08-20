@@ -6,7 +6,7 @@ import lombok.core.configuration.ConfigurationFileToSource;
 import lombok.core.configuration.ConfigurationResolver;
 import lombok.core.configuration.ConfigurationResolverFactory;
 
-/* JADX INFO: loaded from: app.apk:lombok/core/LombokConfiguration$3.SCL.lombok */
+/* JADX INFO: loaded from: discord-126021.apk:lombok/core/LombokConfiguration$3.SCL.lombok */
 class LombokConfiguration$3 implements ConfigurationResolverFactory {
     private final /* synthetic */ ConfigurationFileToSource val$fileToSource;
 

@@ -23,7 +23,7 @@ import lombok.javac.JavacAnnotationHandler;
 import lombok.javac.JavacNode;
 import lombok.javac.JavacTreeMaker;
 
-/* JADX INFO: loaded from: app.apk:lombok/javac/handlers/HandleJacksonized.SCL.lombok */
+/* JADX INFO: loaded from: discord-126021.apk:lombok/javac/handlers/HandleJacksonized.SCL.lombok */
 @HandlerPriority(-512)
 public class HandleJacksonized extends JavacAnnotationHandler<Jacksonized> {
     @Override // lombok.javac.JavacAnnotationHandler

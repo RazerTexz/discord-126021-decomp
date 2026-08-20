@@ -7,7 +7,7 @@ import org.objectweb.asm.ClassReader;
 import org.objectweb.asm.ClassWriter;
 import org.objectweb.asm.Opcodes;
 
-/* JADX INFO: loaded from: app.apk:lombok/bytecode/SneakyThrowsRemover.SCL.lombok */
+/* JADX INFO: loaded from: discord-126021.apk:lombok/bytecode/SneakyThrowsRemover.SCL.lombok */
 public class SneakyThrowsRemover implements PostCompilerTransformation {
     @Override // lombok.core.PostCompilerTransformation
     public byte[] applyTransformations(byte[] original, String fileName, DiagnosticsReceiver diagnostics) {

@@ -6,7 +6,7 @@ import java.io.IOException;
 import java.net.URI;
 import java.util.regex.Matcher;
 
-/* JADX INFO: loaded from: app.apk:lombok/core/configuration/ConfigurationFile$RegularConfigurationFile.SCL.lombok */
+/* JADX INFO: loaded from: discord-126021.apk:lombok/core/configuration/ConfigurationFile$RegularConfigurationFile.SCL.lombok */
 class ConfigurationFile$RegularConfigurationFile extends ConfigurationFile {
     private final File file;
 

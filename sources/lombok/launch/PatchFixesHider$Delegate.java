@@ -5,7 +5,7 @@ import b.f.e.c;
 import b.f.e.f;
 import java.lang.reflect.Method;
 
-/* JADX INFO: loaded from: app.apk:Class50/lombok/launch/PatchFixesHider$Delegate.SCL.lombok */
+/* JADX INFO: loaded from: discord-126021.apk:Class50/lombok/launch/PatchFixesHider$Delegate.SCL.lombok */
 public final class PatchFixesHider$Delegate {
     private static final Method HANDLE_DELEGATE_FOR_TYPE = null;
     private static final Method GET_CHILDREN = null;

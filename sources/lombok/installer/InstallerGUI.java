@@ -36,7 +36,7 @@ import javax.swing.UIManager;
 import javax.swing.border.Border;
 import lombok.core.Version;
 
-/* JADX INFO: loaded from: app.apk:lombok/installer/InstallerGUI.SCL.lombok */
+/* JADX INFO: loaded from: discord-126021.apk:lombok/installer/InstallerGUI.SCL.lombok */
 public class InstallerGUI {
     private static final int INSTALLER_WINDOW_WIDTH = 662;
     static final AtomicReference<Integer> exitMarker = new AtomicReference<>();

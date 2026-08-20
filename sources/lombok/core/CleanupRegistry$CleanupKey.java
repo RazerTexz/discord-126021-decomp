@@ -1,6 +1,6 @@
 package lombok.core;
 
-/* JADX INFO: loaded from: app.apk:lombok/core/CleanupRegistry$CleanupKey.SCL.lombok */
+/* JADX INFO: loaded from: discord-126021.apk:lombok/core/CleanupRegistry$CleanupKey.SCL.lombok */
 final class CleanupRegistry$CleanupKey {
     private final String key;
     private final Object target;

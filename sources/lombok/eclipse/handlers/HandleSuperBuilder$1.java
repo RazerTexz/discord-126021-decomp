@@ -3,7 +3,7 @@ package lombok.eclipse.handlers;
 import org.eclipse.jdt.internal.compiler.ast.SingleTypeReference;
 import org.eclipse.jdt.internal.compiler.ast.TypeReference;
 
-/* JADX INFO: loaded from: app.apk:lombok/eclipse/handlers/HandleSuperBuilder$1.SCL.lombok */
+/* JADX INFO: loaded from: discord-126021.apk:lombok/eclipse/handlers/HandleSuperBuilder$1.SCL.lombok */
 class HandleSuperBuilder$1 implements EclipseSingularsRecipes$TypeReferenceMaker {
     final /* synthetic */ HandleSuperBuilder this$0;
     private final /* synthetic */ String val$builderGenericName;

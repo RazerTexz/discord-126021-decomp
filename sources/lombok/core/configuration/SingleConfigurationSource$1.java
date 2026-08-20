@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
-/* JADX INFO: loaded from: app.apk:lombok/core/configuration/SingleConfigurationSource$1.SCL.lombok */
+/* JADX INFO: loaded from: discord-126021.apk:lombok/core/configuration/SingleConfigurationSource$1.SCL.lombok */
 class SingleConfigurationSource$1 implements ConfigurationParser$Collector {
     private final /* synthetic */ List val$imports;
     private final /* synthetic */ Map val$values;

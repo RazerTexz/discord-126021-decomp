@@ -10,7 +10,7 @@ import lombok.patcher.TransplantMapper;
 import org.objectweb.asm.ClassWriter;
 import org.objectweb.asm.MethodVisitor;
 
-/* JADX INFO: loaded from: app.apk:lombok/patcher/scripts/WrapMethodCallScript.SCL.lombok */
+/* JADX INFO: loaded from: discord-126021.apk:lombok/patcher/scripts/WrapMethodCallScript.SCL.lombok */
 public class WrapMethodCallScript extends MethodLevelPatchScript {
     private final Hook wrapper;
     private final Hook callToWrap;

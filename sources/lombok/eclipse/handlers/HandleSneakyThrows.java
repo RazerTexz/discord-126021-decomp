@@ -32,7 +32,7 @@ import org.eclipse.jdt.internal.compiler.ast.ThrowStatement;
 import org.eclipse.jdt.internal.compiler.ast.TryStatement;
 import org.eclipse.jdt.internal.compiler.ast.TypeReference;
 
-/* JADX INFO: loaded from: app.apk:lombok/eclipse/handlers/HandleSneakyThrows.SCL.lombok */
+/* JADX INFO: loaded from: discord-126021.apk:lombok/eclipse/handlers/HandleSneakyThrows.SCL.lombok */
 @DeferUntilPostDiet
 @HandlerPriority(1024)
 public class HandleSneakyThrows extends EclipseAnnotationHandler<SneakyThrows> {

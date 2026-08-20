@@ -6,7 +6,7 @@ import java.util.ArrayList;
 import java.util.List;
 import javax.swing.JOptionPane;
 
-/* JADX INFO: loaded from: app.apk:lombok/installer/InstallerGUI$9.SCL.lombok */
+/* JADX INFO: loaded from: discord-126021.apk:lombok/installer/InstallerGUI$9.SCL.lombok */
 class InstallerGUI$9 implements ActionListener {
     final /* synthetic */ InstallerGUI this$0;
 

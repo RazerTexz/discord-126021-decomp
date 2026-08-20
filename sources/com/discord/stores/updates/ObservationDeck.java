@@ -140,57 +140,53 @@ public final class ObservationDeck {
     public final synchronized void notify(Set<? extends ObservationDeck$UpdateSource> updates) {
         String str;
         boolean z2;
-        try {
-            m.checkNotNullParameter(updates, "updates");
-            logBreadcrumb("notify START");
-            int i = 0;
-            while (i < this.observers.size()) {
-                try {
-                    ObservationDeck$Observer observationDeck$Observer = this.observers.get(i);
-                    if (observationDeck$Observer.getIsStale()) {
-                        logBreadcrumb("removing observer: " + observationDeck$Observer.getName());
-                        this.observers.remove(i);
-                        i += -1;
-                    } else {
-                        if (!(updates instanceof Collection) || !updates.isEmpty()) {
-                            Iterator<T> it = updates.iterator();
-                            while (true) {
-                                if (!it.hasNext()) {
-                                    z2 = false;
-                                    break;
-                                }
-                                if (observationDeck$Observer.getObservingUpdates().contains((ObservationDeck$UpdateSource) it.next())) {
-                                    z2 = true;
-                                    break;
-                                }
+        m.checkNotNullParameter(updates, "updates");
+        logBreadcrumb("notify START");
+        int i = 0;
+        while (i < this.observers.size()) {
+            try {
+                ObservationDeck$Observer observationDeck$Observer = this.observers.get(i);
+                if (observationDeck$Observer.getIsStale()) {
+                    logBreadcrumb("removing observer: " + observationDeck$Observer.getName());
+                    this.observers.remove(i);
+                    i += -1;
+                } else {
+                    if (!(updates instanceof Collection) || !updates.isEmpty()) {
+                        Iterator<T> it = updates.iterator();
+                        while (true) {
+                            if (!it.hasNext()) {
+                                z2 = false;
+                                break;
                             }
-                        } else {
-                            z2 = false;
-                            break;
+                            if (observationDeck$Observer.getObservingUpdates().contains((ObservationDeck$UpdateSource) it.next())) {
+                                z2 = true;
+                                break;
+                            }
                         }
-                        if (z2) {
-                            observationDeck$Observer.getOnUpdate().invoke();
-                        }
+                    } else {
+                        z2 = false;
+                        break;
                     }
-                    i++;
-                } catch (Throwable th) {
-                    try {
-                        if (this.logLevel.compareTo(ObservationDeck$LogLevel.ERROR) < 0) {
-                            throw th;
-                        }
-                        logNotifyError(th, updates);
-                        str = "notify END";
-                    } catch (Throwable th2) {
-                        logBreadcrumb("notify END");
-                        throw th2;
+                    if (z2) {
+                        observationDeck$Observer.getOnUpdate().invoke();
                     }
                 }
+                i++;
+            } catch (Throwable th) {
+                try {
+                    if (this.logLevel.compareTo(ObservationDeck$LogLevel.ERROR) < 0) {
+                        throw th;
+                    }
+                    logNotifyError(th, updates);
+                    str = "notify END";
+                } catch (Throwable th2) {
+                    logBreadcrumb("notify END");
+                    throw th2;
+                }
             }
-            str = "notify END";
-            logBreadcrumb(str);
-        } catch (Throwable th3) {
-            throw th3;
         }
+        str = "notify END";
+        logBreadcrumb(str);
     }
 
     public static /* synthetic */ ObservationDeck$Observer connect$default(ObservationDeck observationDeck, ObservationDeck$Observer observationDeck$Observer, boolean z2, int i, Object obj) {

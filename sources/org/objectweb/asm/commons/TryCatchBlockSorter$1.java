@@ -3,7 +3,7 @@ package org.objectweb.asm.commons;
 import java.util.Comparator;
 import org.objectweb.asm.tree.TryCatchBlockNode;
 
-/* JADX INFO: loaded from: app.apk:org/objectweb/asm/commons/TryCatchBlockSorter$1.SCL.lombok */
+/* JADX INFO: loaded from: discord-126021.apk:org/objectweb/asm/commons/TryCatchBlockSorter$1.SCL.lombok */
 class TryCatchBlockSorter$1 implements Comparator<TryCatchBlockNode> {
     final /* synthetic */ TryCatchBlockSorter this$0;
 

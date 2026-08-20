@@ -37,7 +37,7 @@ import lombok.javac.JavacNode;
 import lombok.javac.JavacTreeMaker;
 import lombok.javac.JavacTreeMaker$TypeTag;
 
-/* JADX INFO: loaded from: app.apk:lombok/javac/handlers/HandleWithBy.SCL.lombok */
+/* JADX INFO: loaded from: discord-126021.apk:lombok/javac/handlers/HandleWithBy.SCL.lombok */
 public class HandleWithBy extends JavacAnnotationHandler<WithBy> {
     private static final LombokImmutableList<String> NAME_JUF_FUNCTION = LombokImmutableList.of("java", "util", "function", "Function");
     private static final LombokImmutableList<String> NAME_JUF_OP = LombokImmutableList.of("java", "util", "function", "UnaryOperator");

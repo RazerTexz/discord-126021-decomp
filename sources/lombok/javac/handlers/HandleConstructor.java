@@ -38,7 +38,7 @@ import lombok.javac.JavacAST;
 import lombok.javac.JavacNode;
 import lombok.javac.JavacTreeMaker;
 
-/* JADX INFO: loaded from: app.apk:lombok/javac/handlers/HandleConstructor.SCL.lombok */
+/* JADX INFO: loaded from: discord-126021.apk:lombok/javac/handlers/HandleConstructor.SCL.lombok */
 public class HandleConstructor {
     private static /* synthetic */ int[] $SWITCH_TABLE$javax$lang$model$type$TypeKind;
 

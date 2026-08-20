@@ -4,7 +4,7 @@ import java.util.Iterator;
 import java.util.ListIterator;
 import org.objectweb.asm.MethodVisitor;
 
-/* JADX INFO: loaded from: app.apk:org/objectweb/asm/tree/InsnList.SCL.lombok */
+/* JADX INFO: loaded from: discord-126021.apk:org/objectweb/asm/tree/InsnList.SCL.lombok */
 public class InsnList implements Iterable<AbstractInsnNode> {
     private int size;
     private AbstractInsnNode firstInsn;

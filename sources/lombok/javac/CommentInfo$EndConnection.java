@@ -1,6 +1,6 @@
 package lombok.javac;
 
-/* JADX INFO: loaded from: app.apk:lombok/javac/CommentInfo$EndConnection.SCL.lombok */
+/* JADX INFO: loaded from: discord-126021.apk:lombok/javac/CommentInfo$EndConnection.SCL.lombok */
 public enum CommentInfo$EndConnection {
     DIRECT_AFTER_COMMENT,
     AFTER_COMMENT,

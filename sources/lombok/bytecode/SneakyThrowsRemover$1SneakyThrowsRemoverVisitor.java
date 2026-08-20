@@ -7,7 +7,7 @@ import org.objectweb.asm.Label;
 import org.objectweb.asm.MethodVisitor;
 import org.objectweb.asm.Opcodes;
 
-/* JADX INFO: loaded from: app.apk:lombok/bytecode/SneakyThrowsRemover$1SneakyThrowsRemoverVisitor.SCL.lombok */
+/* JADX INFO: loaded from: discord-126021.apk:lombok/bytecode/SneakyThrowsRemover$1SneakyThrowsRemoverVisitor.SCL.lombok */
 class SneakyThrowsRemover$1SneakyThrowsRemoverVisitor extends MethodVisitor {
     private boolean methodInsnQueued;
     final /* synthetic */ SneakyThrowsRemover this$0;

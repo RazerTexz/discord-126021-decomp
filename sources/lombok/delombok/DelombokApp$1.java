@@ -11,7 +11,7 @@ import java.util.Enumeration;
 import java.util.jar.JarEntry;
 import java.util.jar.JarFile;
 
-/* JADX INFO: loaded from: app.apk:lombok/delombok/DelombokApp$1.SCL.lombok */
+/* JADX INFO: loaded from: discord-126021.apk:lombok/delombok/DelombokApp$1.SCL.lombok */
 class DelombokApp$1 extends ClassLoader {
     private final /* synthetic */ JarFile val$toolsJarFile;
     private final /* synthetic */ File val$toolsJar;

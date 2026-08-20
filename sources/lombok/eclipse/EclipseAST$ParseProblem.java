@@ -2,7 +2,7 @@ package lombok.eclipse;
 
 import org.eclipse.jdt.internal.compiler.ast.CompilationUnitDeclaration;
 
-/* JADX INFO: loaded from: app.apk:lombok/eclipse/EclipseAST$ParseProblem.SCL.lombok */
+/* JADX INFO: loaded from: discord-126021.apk:lombok/eclipse/EclipseAST$ParseProblem.SCL.lombok */
 class EclipseAST$ParseProblem {
     final boolean isWarning;
     final String message;

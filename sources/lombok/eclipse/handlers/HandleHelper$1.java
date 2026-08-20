@@ -7,7 +7,7 @@ import org.eclipse.jdt.internal.compiler.ast.SingleNameReference;
 import org.eclipse.jdt.internal.compiler.ast.ThisReference;
 import org.eclipse.jdt.internal.compiler.lookup.BlockScope;
 
-/* JADX INFO: loaded from: app.apk:lombok/eclipse/handlers/HandleHelper$1.SCL.lombok */
+/* JADX INFO: loaded from: discord-126021.apk:lombok/eclipse/handlers/HandleHelper$1.SCL.lombok */
 class HandleHelper$1 extends ASTVisitor {
     final /* synthetic */ HandleHelper this$0;
     private final /* synthetic */ String[] val$knownMethodNames_;

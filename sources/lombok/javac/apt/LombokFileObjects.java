@@ -10,7 +10,7 @@ import javax.tools.JavaFileObject;
 import lombok.core.DiagnosticsReceiver;
 import lombok.permit.Permit;
 
-/* JADX INFO: loaded from: app.apk:lombok/javac/apt/LombokFileObjects.SCL.lombok */
+/* JADX INFO: loaded from: discord-126021.apk:lombok/javac/apt/LombokFileObjects.SCL.lombok */
 final class LombokFileObjects {
     private static final List<String> KNOWN_JAVA9_FILE_MANAGERS = Arrays.asList("com.google.errorprone.MaskedClassLoader$MaskedFileManager", "com.google.devtools.build.buildjar.javac.BlazeJavacMain$ClassloaderMaskingFileManager", "com.google.devtools.build.java.turbine.javac.JavacTurbineCompiler$ClassloaderMaskingFileManager", "org.netbeans.modules.java.source.parsing.ProxyFileManager", "com.sun.tools.javac.api.ClientCodeWrapper$WrappedStandardJavaFileManager", "com.sun.tools.javac.main.DelegatingJavaFileManager$DelegatingSJFM");
     private static Constructor<?> j9CompilerConstructor = null;

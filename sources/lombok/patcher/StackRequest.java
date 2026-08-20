@@ -4,7 +4,7 @@ import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 
-/* JADX INFO: loaded from: app.apk:lombok/patcher/StackRequest.SCL.lombok */
+/* JADX INFO: loaded from: discord-126021.apk:lombok/patcher/StackRequest.SCL.lombok */
 public enum StackRequest {
     RETURN_VALUE(-1),
     THIS(-1),

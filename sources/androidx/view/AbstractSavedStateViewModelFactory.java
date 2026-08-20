@@ -5,8 +5,6 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.annotation.RestrictTo;
 import androidx.annotation.RestrictTo$Scope;
-import androidx.view.SavedStateRegistry;
-import androidx.view.SavedStateRegistryOwner;
 
 /* JADX INFO: loaded from: classes.dex */
 public abstract class AbstractSavedStateViewModelFactory extends ViewModelProvider$KeyedFactory {

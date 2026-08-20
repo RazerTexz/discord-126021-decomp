@@ -6,7 +6,7 @@ import java.util.List;
 import java.util.concurrent.atomic.AtomicLong;
 import org.eclipse.jdt.internal.compiler.ast.CompilationUnitDeclaration;
 
-/* JADX INFO: loaded from: app.apk:lombok/core/debug/DebugSnapshot.SCL.lombok */
+/* JADX INFO: loaded from: discord-126021.apk:lombok/core/debug/DebugSnapshot.SCL.lombok */
 public class DebugSnapshot implements Comparable<DebugSnapshot> {
     private static AtomicLong counter = new AtomicLong();
     private final long bits;

@@ -12,7 +12,7 @@ import javax.lang.model.element.Modifier;
 import javax.lang.model.element.NestingKind;
 import javax.tools.JavaFileObject$Kind;
 
-/* JADX INFO: loaded from: app.apk:lombok/javac/apt/Javac6BaseFileObjectWrapper.SCL.lombok */
+/* JADX INFO: loaded from: discord-126021.apk:lombok/javac/apt/Javac6BaseFileObjectWrapper.SCL.lombok */
 class Javac6BaseFileObjectWrapper extends BaseFileObject {
     private final LombokFileObject delegate;
 

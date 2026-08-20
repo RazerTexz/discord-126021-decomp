@@ -5,7 +5,7 @@ import java.io.FilenameFilter;
 import java.util.List;
 import java.util.regex.Pattern;
 
-/* JADX INFO: loaded from: app.apk:lombok/installer/InstallerGUI$6$1.SCL.lombok */
+/* JADX INFO: loaded from: discord-126021.apk:lombok/installer/InstallerGUI$6$1.SCL.lombok */
 class InstallerGUI$6$1 implements FilenameFilter {
     final /* synthetic */ InstallerGUI$6 this$1;
     private final /* synthetic */ List val$exeNames;

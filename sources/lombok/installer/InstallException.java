@@ -1,6 +1,6 @@
 package lombok.installer;
 
-/* JADX INFO: loaded from: app.apk:lombok/installer/InstallException.SCL.lombok */
+/* JADX INFO: loaded from: discord-126021.apk:lombok/installer/InstallException.SCL.lombok */
 public class InstallException extends Exception {
     private boolean warning;
 

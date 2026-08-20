@@ -9,7 +9,7 @@ import java.lang.management.ManagementFactory;
 import java.lang.reflect.InvocationTargetException;
 import lombok.patcher.ClassRootFinder;
 
-/* JADX INFO: loaded from: app.apk:lombok/patcher/inject/LiveInjector.SCL.lombok */
+/* JADX INFO: loaded from: discord-126021.apk:lombok/patcher/inject/LiveInjector.SCL.lombok */
 public class LiveInjector {
     public void injectSelf() throws IllegalStateException {
         inject(ClassRootFinder.findClassRootOfSelf());

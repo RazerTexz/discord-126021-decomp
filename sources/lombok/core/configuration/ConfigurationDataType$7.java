@@ -3,7 +3,7 @@ package lombok.core.configuration;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 
-/* JADX INFO: loaded from: app.apk:lombok/core/configuration/ConfigurationDataType$7.SCL.lombok */
+/* JADX INFO: loaded from: discord-126021.apk:lombok/core/configuration/ConfigurationDataType$7.SCL.lombok */
 class ConfigurationDataType$7 implements ConfigurationValueParser {
     private final /* synthetic */ Method val$valueOfMethod;
     private final /* synthetic */ Method val$descriptionMethod;

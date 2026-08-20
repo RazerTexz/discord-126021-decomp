@@ -5,7 +5,7 @@ import com.sun.tools.javac.util.Log;
 import java.lang.reflect.Field;
 import javax.annotation.processing.Messager;
 
-/* JADX INFO: loaded from: app.apk:lombok/javac/JavacAST$JdkBefore9.SCL.lombok */
+/* JADX INFO: loaded from: discord-126021.apk:lombok/javac/JavacAST$JdkBefore9.SCL.lombok */
 class JavacAST$JdkBefore9 extends JavacAST$ErrorLog {
     /* synthetic */ JavacAST$JdkBefore9(Log log, Messager messager, Field field, JavacAST$JdkBefore9 javacAST$JdkBefore9) {
         this(log, messager, field);

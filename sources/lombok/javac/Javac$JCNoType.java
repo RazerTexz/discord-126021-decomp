@@ -6,7 +6,7 @@ import javax.lang.model.type.NoType;
 import javax.lang.model.type.TypeKind;
 import javax.lang.model.type.TypeVisitor;
 
-/* JADX INFO: loaded from: app.apk:lombok/javac/Javac$JCNoType.SCL.lombok */
+/* JADX INFO: loaded from: discord-126021.apk:lombok/javac/Javac$JCNoType.SCL.lombok */
 class Javac$JCNoType extends Type implements NoType {
     public Javac$JCNoType(int tag) {
         super(tag, (Symbol$TypeSymbol) null);

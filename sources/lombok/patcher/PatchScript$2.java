@@ -3,7 +3,7 @@ package lombok.patcher;
 import org.objectweb.asm.ClassVisitor;
 import org.objectweb.asm.MethodVisitor;
 
-/* JADX INFO: loaded from: app.apk:lombok/patcher/PatchScript$2.SCL.lombok */
+/* JADX INFO: loaded from: discord-126021.apk:lombok/patcher/PatchScript$2.SCL.lombok */
 class PatchScript$2 extends PatchScript$NoopClassVisitor {
     private final /* synthetic */ Hook val$methodToTransplant;
     private final /* synthetic */ ClassVisitor val$target;

@@ -4,7 +4,7 @@ import org.objectweb.asm.ClassVisitor;
 import org.objectweb.asm.MethodVisitor;
 import org.objectweb.asm.commons.JSRInlinerAdapter;
 
-/* JADX INFO: loaded from: app.apk:lombok/bytecode/AsmUtil$1.SCL.lombok */
+/* JADX INFO: loaded from: discord-126021.apk:lombok/bytecode/AsmUtil$1.SCL.lombok */
 class AsmUtil$1 extends ClassVisitor {
     AsmUtil$1(int $anonymous0, ClassVisitor $anonymous1) {
         super($anonymous0, $anonymous1);

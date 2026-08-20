@@ -5,7 +5,7 @@ import com.sun.tools.javac.tree.JCTree$JCAnnotation;
 import java.lang.reflect.Field;
 import lombok.permit.Permit;
 
-/* JADX INFO: loaded from: app.apk:lombok/javac/handlers/JavacHandlerUtil$JCAnnotationReflect.SCL.lombok */
+/* JADX INFO: loaded from: discord-126021.apk:lombok/javac/handlers/JavacHandlerUtil$JCAnnotationReflect.SCL.lombok */
 class JavacHandlerUtil$JCAnnotationReflect {
     private static Field ATTRIBUTE;
 

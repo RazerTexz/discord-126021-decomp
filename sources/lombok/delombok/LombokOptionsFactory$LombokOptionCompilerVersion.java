@@ -5,7 +5,7 @@ import lombok.javac.LombokOptions;
 
 /* JADX WARN: Failed to restore enum class, 'enum' modifier and super class removed */
 /* JADX WARN: Unknown enum class pattern. Please report as an issue! */
-/* JADX INFO: loaded from: app.apk:lombok/delombok/LombokOptionsFactory$LombokOptionCompilerVersion.SCL.lombok */
+/* JADX INFO: loaded from: discord-126021.apk:lombok/delombok/LombokOptionsFactory$LombokOptionCompilerVersion.SCL.lombok */
 abstract class LombokOptionsFactory$LombokOptionCompilerVersion {
     public static final LombokOptionsFactory$LombokOptionCompilerVersion JDK7_AND_LOWER = new LombokOptionsFactory$LombokOptionCompilerVersion$1("JDK7_AND_LOWER", 0);
     public static final LombokOptionsFactory$LombokOptionCompilerVersion JDK8 = new LombokOptionsFactory$LombokOptionCompilerVersion$2("JDK8", 1);

@@ -9,7 +9,7 @@ import com.sun.tools.javac.tree.JCTree$JCCompilationUnit;
 import com.sun.tools.javac.tree.JCTree$JCMethodDecl;
 import com.sun.tools.javac.tree.JCTree$JCVariableDecl;
 
-/* JADX INFO: loaded from: app.apk:lombok/javac/JavacASTVisitor.SCL.lombok */
+/* JADX INFO: loaded from: discord-126021.apk:lombok/javac/JavacASTVisitor.SCL.lombok */
 public interface JavacASTVisitor {
     void setTrees(Trees trees);
 

@@ -8,7 +8,7 @@ import org.eclipse.jdt.internal.compiler.lookup.MethodBinding;
 import org.eclipse.jdt.internal.compiler.lookup.Scope;
 import org.eclipse.jdt.internal.compiler.problem.ProblemReporter;
 
-/* JADX INFO: loaded from: app.apk:lombok/eclipse/agent/PatchExtensionMethod$PostponedInvalidMethodError.SCL.lombok */
+/* JADX INFO: loaded from: discord-126021.apk:lombok/eclipse/agent/PatchExtensionMethod$PostponedInvalidMethodError.SCL.lombok */
 class PatchExtensionMethod$PostponedInvalidMethodError implements PatchExtensionMethod$PostponedError {
     private final ProblemReporter problemReporter;
     private final WeakReference<MessageSend> messageSendRef;

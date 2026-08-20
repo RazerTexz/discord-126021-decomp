@@ -3,7 +3,7 @@ package lombok.launch;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 
-/* JADX INFO: loaded from: app.apk:Class50/lombok/launch/PatchFixesHider$Util.SCL.lombok */
+/* JADX INFO: loaded from: discord-126021.apk:Class50/lombok/launch/PatchFixesHider$Util.SCL.lombok */
 public final class PatchFixesHider$Util {
     private static ClassLoader shadowLoader;
 

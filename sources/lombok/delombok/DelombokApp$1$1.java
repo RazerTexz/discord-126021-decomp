@@ -5,7 +5,7 @@ import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.Enumeration;
 
-/* JADX INFO: loaded from: app.apk:lombok/delombok/DelombokApp$1$1.SCL.lombok */
+/* JADX INFO: loaded from: discord-126021.apk:lombok/delombok/DelombokApp$1$1.SCL.lombok */
 class DelombokApp$1$1 implements Enumeration<URL> {
     private boolean first = false;
     final /* synthetic */ DelombokApp$1 this$1;

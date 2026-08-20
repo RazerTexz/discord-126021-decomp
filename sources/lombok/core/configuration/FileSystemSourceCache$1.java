@@ -1,6 +1,6 @@
 package lombok.core.configuration;
 
-/* JADX INFO: loaded from: app.apk:lombok/core/configuration/FileSystemSourceCache$1.SCL.lombok */
+/* JADX INFO: loaded from: discord-126021.apk:lombok/core/configuration/FileSystemSourceCache$1.SCL.lombok */
 class FileSystemSourceCache$1 implements ConfigurationFileToSource {
     final /* synthetic */ FileSystemSourceCache this$0;
     private final /* synthetic */ ConfigurationParser val$parser;

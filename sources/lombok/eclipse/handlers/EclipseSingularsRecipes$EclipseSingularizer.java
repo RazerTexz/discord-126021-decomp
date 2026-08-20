@@ -37,7 +37,7 @@ import org.eclipse.jdt.internal.compiler.ast.TypeReference;
 import org.eclipse.jdt.internal.compiler.ast.Wildcard;
 import org.eclipse.jdt.internal.compiler.lookup.TypeConstants;
 
-/* JADX INFO: loaded from: app.apk:lombok/eclipse/handlers/EclipseSingularsRecipes$EclipseSingularizer.SCL.lombok */
+/* JADX INFO: loaded from: discord-126021.apk:lombok/eclipse/handlers/EclipseSingularsRecipes$EclipseSingularizer.SCL.lombok */
 public abstract class EclipseSingularsRecipes$EclipseSingularizer {
     protected static final long[] NULL_POSS = new long[1];
     private static final char[] SIZE_TEXT = {'s', 'i', 'z', 'e'};

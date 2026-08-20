@@ -6,7 +6,7 @@ import javax.lang.model.element.ExecutableElement;
 import javax.lang.model.element.VariableElement;
 import javax.lang.model.type.ExecutableType;
 
-/* JADX INFO: loaded from: app.apk:lombok/javac/handlers/HandleDelegate$MethodSig.SCL.lombok */
+/* JADX INFO: loaded from: discord-126021.apk:lombok/javac/handlers/HandleDelegate$MethodSig.SCL.lombok */
 public class HandleDelegate$MethodSig {
     final Name name;
     final ExecutableType type;

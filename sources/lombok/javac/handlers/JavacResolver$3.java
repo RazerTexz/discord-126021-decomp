@@ -7,7 +7,7 @@ import com.sun.tools.javac.tree.JCTree$JCMethodDecl;
 import com.sun.tools.javac.tree.JCTree$JCVariableDecl;
 import lombok.javac.JavacNode;
 
-/* JADX INFO: loaded from: app.apk:lombok/javac/handlers/JavacResolver$3.SCL.lombok */
+/* JADX INFO: loaded from: discord-126021.apk:lombok/javac/handlers/JavacResolver$3.SCL.lombok */
 enum JavacResolver$3 extends JavacResolver {
     JavacResolver$3(String str, int i) {
         super(str, i, null);

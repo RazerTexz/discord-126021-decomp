@@ -6,7 +6,7 @@ import lombok.core.handlers.HandlerUtil;
 import lombok.javac.Javac;
 import lombok.javac.JavacNode;
 
-/* JADX INFO: loaded from: app.apk:lombok/javac/handlers/JavacHandlerUtil$CopyJavadoc$2.SCL.lombok */
+/* JADX INFO: loaded from: discord-126021.apk:lombok/javac/handlers/JavacHandlerUtil$CopyJavadoc$2.SCL.lombok */
 enum JavacHandlerUtil$CopyJavadoc$2 extends JavacHandlerUtil$CopyJavadoc {
     JavacHandlerUtil$CopyJavadoc$2(String str, int i) {
         super(str, i, null);

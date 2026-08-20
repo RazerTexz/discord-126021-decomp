@@ -7,7 +7,7 @@ import org.eclipse.jdt.internal.compiler.ast.LocalDeclaration;
 import org.eclipse.jdt.internal.compiler.lookup.BlockScope;
 import org.eclipse.jdt.internal.compiler.lookup.TypeBinding;
 
-/* JADX INFO: loaded from: app.apk:Class50/lombok/launch/PatchFixesHider$Val.SCL.lombok */
+/* JADX INFO: loaded from: discord-126021.apk:Class50/lombok/launch/PatchFixesHider$Val.SCL.lombok */
 public final class PatchFixesHider$Val {
     private static final Method SKIP_RESOLVE_INITIALIZER_IF_ALREADY_CALLED;
     private static final Method SKIP_RESOLVE_INITIALIZER_IF_ALREADY_CALLED2;

@@ -27,18 +27,14 @@ public class h5 {
     public final c6 b(c6 c6Var) {
         if (this.a == null) {
             synchronized (this) {
-                try {
-                    if (this.a == null) {
-                        try {
-                            this.a = c6Var;
-                            this.f1448b = t3.j;
-                        } catch (zzij unused) {
-                            this.a = c6Var;
-                            this.f1448b = t3.j;
-                        }
+                if (this.a == null) {
+                    try {
+                        this.a = c6Var;
+                        this.f1448b = t3.j;
+                    } catch (zzij unused) {
+                        this.a = c6Var;
+                        this.f1448b = t3.j;
                     }
-                } catch (Throwable th) {
-                    throw th;
                 }
             }
         }

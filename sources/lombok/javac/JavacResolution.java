@@ -36,7 +36,7 @@ import javax.tools.JavaFileObject;
 import lombok.core.debug.AssertionLogger;
 import lombok.permit.Permit;
 
-/* JADX INFO: loaded from: app.apk:lombok/javac/JavacResolution.SCL.lombok */
+/* JADX INFO: loaded from: discord-126021.apk:lombok/javac/JavacResolution.SCL.lombok */
 public class JavacResolution {
     private final Attr attr;
     private final CompilerMessageSuppressor messageSuppressor;

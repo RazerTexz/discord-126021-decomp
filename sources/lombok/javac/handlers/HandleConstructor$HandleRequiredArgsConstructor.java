@@ -11,7 +11,7 @@ import lombok.core.handlers.HandlerUtil;
 import lombok.javac.JavacAnnotationHandler;
 import lombok.javac.JavacNode;
 
-/* JADX INFO: loaded from: app.apk:lombok/javac/handlers/HandleConstructor$HandleRequiredArgsConstructor.SCL.lombok */
+/* JADX INFO: loaded from: discord-126021.apk:lombok/javac/handlers/HandleConstructor$HandleRequiredArgsConstructor.SCL.lombok */
 public class HandleConstructor$HandleRequiredArgsConstructor extends JavacAnnotationHandler<RequiredArgsConstructor> {
     private static final String NAME = RequiredArgsConstructor.class.getSimpleName();
     private HandleConstructor handleConstructor = new HandleConstructor();

@@ -14,7 +14,7 @@ import lombok.core.DiagnosticsReceiver;
 import lombok.core.LombokApp;
 import lombok.core.PostCompiler;
 
-/* JADX INFO: loaded from: app.apk:lombok/bytecode/PostCompilerApp.SCL.lombok */
+/* JADX INFO: loaded from: discord-126021.apk:lombok/bytecode/PostCompilerApp.SCL.lombok */
 public class PostCompilerApp extends LombokApp {
     @Override // lombok.core.LombokApp
     public List<String> getAppAliases() {

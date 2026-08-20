@@ -9,7 +9,7 @@ import lombok.eclipse.EclipseNode;
 import lombok.extern.slf4j.XSlf4j;
 import org.eclipse.jdt.internal.compiler.ast.Annotation;
 
-/* JADX INFO: loaded from: app.apk:lombok/eclipse/handlers/HandleLog$HandleXSlf4jLog.SCL.lombok */
+/* JADX INFO: loaded from: discord-126021.apk:lombok/eclipse/handlers/HandleLog$HandleXSlf4jLog.SCL.lombok */
 public class HandleLog$HandleXSlf4jLog extends EclipseAnnotationHandler<XSlf4j> {
     @Override // lombok.eclipse.EclipseAnnotationHandler
     public void handle(AnnotationValues<XSlf4j> annotation, Annotation source, EclipseNode annotationNode) {

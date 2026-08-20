@@ -7,7 +7,7 @@ import java.util.List;
 import lombok.patcher.MethodTarget;
 import lombok.patcher.TargetMatcher;
 
-/* JADX INFO: loaded from: app.apk:lombok/eclipse/agent/EclipsePatcher$3.SCL.lombok */
+/* JADX INFO: loaded from: discord-126021.apk:lombok/eclipse/agent/EclipsePatcher$3.SCL.lombok */
 class EclipsePatcher$3 implements TargetMatcher {
     EclipsePatcher$3() {
     }

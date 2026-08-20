@@ -1,6 +1,6 @@
 package org.objectweb.asm;
 
-/* JADX INFO: loaded from: app.apk:org/objectweb/asm/Edge.SCL.lombok */
+/* JADX INFO: loaded from: discord-126021.apk:org/objectweb/asm/Edge.SCL.lombok */
 final class Edge {
     static final int JUMP = 0;
     static final int EXCEPTION = Integer.MAX_VALUE;

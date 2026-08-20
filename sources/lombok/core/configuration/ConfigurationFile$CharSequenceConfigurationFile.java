@@ -2,7 +2,7 @@ package lombok.core.configuration;
 
 import java.io.IOException;
 
-/* JADX INFO: loaded from: app.apk:lombok/core/configuration/ConfigurationFile$CharSequenceConfigurationFile.SCL.lombok */
+/* JADX INFO: loaded from: discord-126021.apk:lombok/core/configuration/ConfigurationFile$CharSequenceConfigurationFile.SCL.lombok */
 class ConfigurationFile$CharSequenceConfigurationFile extends ConfigurationFile {
     private final CharSequence contents;
     private final long lastModified;

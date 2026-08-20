@@ -1,6 +1,6 @@
 package lombok.eclipse.agent;
 
-/* JADX INFO: loaded from: app.apk:lombok/eclipse/agent/PatchDiagnostics.SCL.lombok */
+/* JADX INFO: loaded from: discord-126021.apk:lombok/eclipse/agent/PatchDiagnostics.SCL.lombok */
 public class PatchDiagnostics {
     public static boolean setSourceRangeCheck(Object astNode, int startPosition, int length) {
         if (startPosition >= 0 && length < 0) {

@@ -13,7 +13,7 @@ import lombok.experimental.NonFinal;
 import org.eclipse.jdt.internal.compiler.ast.Annotation;
 import org.eclipse.jdt.internal.compiler.ast.TypeDeclaration;
 
-/* JADX INFO: loaded from: app.apk:lombok/eclipse/handlers/HandleValue.SCL.lombok */
+/* JADX INFO: loaded from: discord-126021.apk:lombok/eclipse/handlers/HandleValue.SCL.lombok */
 @HandlerPriority(-512)
 public class HandleValue extends EclipseAnnotationHandler<Value> {
     private HandleFieldDefaults handleFieldDefaults = new HandleFieldDefaults();

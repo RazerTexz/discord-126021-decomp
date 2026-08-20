@@ -2,9 +2,6 @@ package androidx.view;
 
 import android.annotation.SuppressLint;
 import android.os.Bundle;
-import androidx.view.GenericLifecycleObserver;
-import androidx.view.Lifecycle$Event;
-import androidx.view.LifecycleOwner;
 import b.d.b.a.a;
 import java.lang.reflect.Constructor;
 import java.util.ArrayList;

@@ -1,6 +1,6 @@
 package lombok.core.configuration;
 
-/* JADX INFO: loaded from: app.apk:lombok/core/configuration/ConfigurationParser$Collector.SCL.lombok */
+/* JADX INFO: loaded from: discord-126021.apk:lombok/core/configuration/ConfigurationParser$Collector.SCL.lombok */
 public interface ConfigurationParser$Collector {
     void addImport(ConfigurationFile configurationFile, ConfigurationFile configurationFile2, int i);
 

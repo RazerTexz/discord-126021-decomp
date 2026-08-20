@@ -4,7 +4,7 @@ import java.net.URI;
 import lombok.core.configuration.ConfigurationResolver;
 import lombok.core.configuration.ConfigurationResolverFactory;
 
-/* JADX INFO: loaded from: app.apk:lombok/core/LombokConfiguration$2.SCL.lombok */
+/* JADX INFO: loaded from: discord-126021.apk:lombok/core/LombokConfiguration$2.SCL.lombok */
 class LombokConfiguration$2 implements ConfigurationResolverFactory {
     LombokConfiguration$2() {
     }

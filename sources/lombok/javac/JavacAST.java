@@ -44,7 +44,7 @@ import lombok.core.CleanupTask;
 import lombok.core.LombokNode;
 import lombok.permit.Permit;
 
-/* JADX INFO: loaded from: app.apk:lombok/javac/JavacAST.SCL.lombok */
+/* JADX INFO: loaded from: discord-126021.apk:lombok/javac/JavacAST.SCL.lombok */
 public class JavacAST extends AST<JavacAST, JavacNode, JCTree> {
     private final CleanupRegistry cleanup;
     private final JavacElements elements;

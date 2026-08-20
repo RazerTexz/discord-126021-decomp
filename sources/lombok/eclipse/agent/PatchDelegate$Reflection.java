@@ -3,7 +3,7 @@ package lombok.eclipse.agent;
 import java.lang.reflect.Method;
 import org.eclipse.jdt.internal.compiler.lookup.ClassScope;
 
-/* JADX INFO: loaded from: app.apk:lombok/eclipse/agent/PatchDelegate$Reflection.SCL.lombok */
+/* JADX INFO: loaded from: discord-126021.apk:lombok/eclipse/agent/PatchDelegate$Reflection.SCL.lombok */
 final class PatchDelegate$Reflection {
     public static final Method classScopeBuildFieldsAndMethodsMethod;
 

@@ -4,7 +4,7 @@ import java.util.Arrays;
 import java.util.List;
 import lombok.core.LombokApp;
 
-/* JADX INFO: loaded from: app.apk:lombok/installer/Installer$GraphicalInstallerApp.SCL.lombok */
+/* JADX INFO: loaded from: discord-126021.apk:lombok/installer/Installer$GraphicalInstallerApp.SCL.lombok */
 public class Installer$GraphicalInstallerApp extends LombokApp {
     @Override // lombok.core.LombokApp
     public String getAppName() {

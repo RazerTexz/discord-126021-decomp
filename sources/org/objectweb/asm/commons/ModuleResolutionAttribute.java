@@ -6,7 +6,7 @@ import org.objectweb.asm.ClassReader;
 import org.objectweb.asm.ClassWriter;
 import org.objectweb.asm.Label;
 
-/* JADX INFO: loaded from: app.apk:org/objectweb/asm/commons/ModuleResolutionAttribute.SCL.lombok */
+/* JADX INFO: loaded from: discord-126021.apk:org/objectweb/asm/commons/ModuleResolutionAttribute.SCL.lombok */
 public final class ModuleResolutionAttribute extends Attribute {
     public static final int RESOLUTION_DO_NOT_RESOLVE_BY_DEFAULT = 1;
     public static final int RESOLUTION_WARN_DEPRECATED = 2;

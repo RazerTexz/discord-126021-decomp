@@ -7,7 +7,7 @@ import java.awt.font.TextAttribute;
 import java.util.Collections;
 import javax.swing.JButton;
 
-/* JADX INFO: loaded from: app.apk:lombok/installer/InstallerGUI$JHyperLink.SCL.lombok */
+/* JADX INFO: loaded from: discord-126021.apk:lombok/installer/InstallerGUI$JHyperLink.SCL.lombok */
 class InstallerGUI$JHyperLink extends JButton {
     private static final long serialVersionUID = 1;
 

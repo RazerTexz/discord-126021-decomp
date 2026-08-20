@@ -5,7 +5,7 @@ import org.objectweb.asm.FieldVisitor;
 import org.objectweb.asm.Opcodes;
 import org.objectweb.asm.TypePath;
 
-/* JADX INFO: loaded from: app.apk:org/objectweb/asm/commons/FieldRemapper.SCL.lombok */
+/* JADX INFO: loaded from: discord-126021.apk:org/objectweb/asm/commons/FieldRemapper.SCL.lombok */
 public class FieldRemapper extends FieldVisitor {
     protected final Remapper remapper;
 

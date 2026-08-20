@@ -9,7 +9,7 @@ import java.net.URL;
 import java.net.URLDecoder;
 import java.nio.charset.Charset;
 
-/* JADX INFO: loaded from: app.apk:lombok/patcher/ClassRootFinder.SCL.lombok */
+/* JADX INFO: loaded from: discord-126021.apk:lombok/patcher/ClassRootFinder.SCL.lombok */
 public class ClassRootFinder {
     private static String urlDecode(String in, boolean forceUtf8) {
         String strName;

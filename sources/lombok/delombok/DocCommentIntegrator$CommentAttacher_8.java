@@ -3,7 +3,7 @@ package lombok.delombok;
 import com.sun.tools.javac.tree.DocCommentTable;
 import com.sun.tools.javac.tree.JCTree;
 
-/* JADX INFO: loaded from: app.apk:lombok/delombok/DocCommentIntegrator$CommentAttacher_8.SCL.lombok */
+/* JADX INFO: loaded from: discord-126021.apk:lombok/delombok/DocCommentIntegrator$CommentAttacher_8.SCL.lombok */
 class DocCommentIntegrator$CommentAttacher_8 {
     private DocCommentIntegrator$CommentAttacher_8() {
     }

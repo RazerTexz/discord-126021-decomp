@@ -5,7 +5,7 @@ import java.io.InputStream;
 import java.net.URL;
 import java.util.Enumeration;
 
-/* JADX INFO: loaded from: app.apk:lombok/javac/apt/LombokProcessor$1.SCL.lombok */
+/* JADX INFO: loaded from: discord-126021.apk:lombok/javac/apt/LombokProcessor$1.SCL.lombok */
 class LombokProcessor$1 extends ClassLoader {
     private final /* synthetic */ ClassLoader val$parent;
 

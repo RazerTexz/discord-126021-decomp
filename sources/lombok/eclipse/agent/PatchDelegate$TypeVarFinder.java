@@ -4,7 +4,7 @@ import java.util.HashSet;
 import java.util.Set;
 import org.eclipse.jdt.internal.compiler.lookup.TypeVariableBinding;
 
-/* JADX INFO: loaded from: app.apk:lombok/eclipse/agent/PatchDelegate$TypeVarFinder.SCL.lombok */
+/* JADX INFO: loaded from: discord-126021.apk:lombok/eclipse/agent/PatchDelegate$TypeVarFinder.SCL.lombok */
 public class PatchDelegate$TypeVarFinder extends PatchDelegate$EclipseTypeBindingScanner {
     private Set<String> typeVars = new HashSet();
 

@@ -5,7 +5,7 @@ import java.lang.reflect.Field;
 import java.lang.reflect.Modifier;
 import lombok.permit.Permit;
 
-/* JADX INFO: loaded from: app.apk:lombok/core/FieldAugment.SCL.lombok */
+/* JADX INFO: loaded from: discord-126021.apk:lombok/core/FieldAugment.SCL.lombok */
 public abstract class FieldAugment<T, F> {
     public abstract F get(T t);
 

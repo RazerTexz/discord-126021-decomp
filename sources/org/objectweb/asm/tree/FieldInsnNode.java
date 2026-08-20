@@ -3,7 +3,7 @@ package org.objectweb.asm.tree;
 import java.util.Map;
 import org.objectweb.asm.MethodVisitor;
 
-/* JADX INFO: loaded from: app.apk:org/objectweb/asm/tree/FieldInsnNode.SCL.lombok */
+/* JADX INFO: loaded from: discord-126021.apk:org/objectweb/asm/tree/FieldInsnNode.SCL.lombok */
 public class FieldInsnNode extends AbstractInsnNode {
     public String owner;
     public String name;

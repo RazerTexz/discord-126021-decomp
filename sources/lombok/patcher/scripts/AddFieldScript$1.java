@@ -3,7 +3,7 @@ package lombok.patcher.scripts;
 import org.objectweb.asm.ClassVisitor;
 import org.objectweb.asm.FieldVisitor;
 
-/* JADX INFO: loaded from: app.apk:lombok/patcher/scripts/AddFieldScript$1.SCL.lombok */
+/* JADX INFO: loaded from: discord-126021.apk:lombok/patcher/scripts/AddFieldScript$1.SCL.lombok */
 class AddFieldScript$1 extends ClassVisitor {
     private boolean alreadyAdded;
     final /* synthetic */ AddFieldScript this$0;

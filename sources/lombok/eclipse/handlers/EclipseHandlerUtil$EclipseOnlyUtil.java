@@ -9,7 +9,7 @@ import org.eclipse.jdt.internal.compiler.ast.CompilationUnitDeclaration;
 import org.eclipse.jdt.internal.compiler.ast.TypeDeclaration;
 import org.eclipse.jdt.internal.core.CompilationUnit;
 
-/* JADX INFO: loaded from: app.apk:lombok/eclipse/handlers/EclipseHandlerUtil$EclipseOnlyUtil.SCL.lombok */
+/* JADX INFO: loaded from: discord-126021.apk:lombok/eclipse/handlers/EclipseHandlerUtil$EclipseOnlyUtil.SCL.lombok */
 class EclipseHandlerUtil$EclipseOnlyUtil {
     private EclipseHandlerUtil$EclipseOnlyUtil() {
     }

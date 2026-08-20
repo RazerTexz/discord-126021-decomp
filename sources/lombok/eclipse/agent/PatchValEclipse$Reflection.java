@@ -11,7 +11,7 @@ import org.eclipse.jdt.core.dom.Modifier;
 import org.eclipse.jdt.internal.compiler.ast.LocalDeclaration;
 import org.eclipse.jdt.internal.compiler.parser.Parser;
 
-/* JADX INFO: loaded from: app.apk:lombok/eclipse/agent/PatchValEclipse$Reflection.SCL.lombok */
+/* JADX INFO: loaded from: discord-126021.apk:lombok/eclipse/agent/PatchValEclipse$Reflection.SCL.lombok */
 public final class PatchValEclipse$Reflection {
     private static final Field initCopyField;
     private static final Field iterableCopyField;

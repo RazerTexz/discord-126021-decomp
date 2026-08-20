@@ -27,25 +27,29 @@ public class p implements d {
         Bitmap bitmapA;
         Bitmap bitmapC;
         synchronized (this) {
-            int i2 = this.e;
-            int i3 = this.f597b;
-            if (i2 > i3) {
-                synchronized (this) {
-                    while (this.e > i3 && (bitmapC = this.a.c()) != null) {
-                        int iB = this.a.b(bitmapC);
-                        this.e -= iB;
-                        this.d.e(iB);
+            try {
+                int i2 = this.e;
+                int i3 = this.f597b;
+                if (i2 > i3) {
+                    synchronized (this) {
+                        while (this.e > i3 && (bitmapC = this.a.c()) != null) {
+                            int iB = this.a.b(bitmapC);
+                            this.e -= iB;
+                            this.d.e(iB);
+                        }
                     }
                 }
-            }
-            bitmapA = this.a.a(i);
-            if (bitmapA != null) {
-                int iB2 = this.a.b(bitmapA);
-                this.e -= iB2;
-                this.d.b(iB2);
-            } else {
-                this.d.a(i);
-                bitmapA = Bitmap.createBitmap(1, i, Bitmap$Config.ALPHA_8);
+                bitmapA = this.a.a(i);
+                if (bitmapA != null) {
+                    int iB2 = this.a.b(bitmapA);
+                    this.e -= iB2;
+                    this.d.b(iB2);
+                } else {
+                    this.d.a(i);
+                    bitmapA = Bitmap.createBitmap(1, i, Bitmap$Config.ALPHA_8);
+                }
+            } catch (Throwable th) {
+                throw th;
             }
         }
         return bitmapA;

@@ -4,7 +4,7 @@ import java.util.concurrent.atomic.AtomicBoolean;
 import org.objectweb.asm.ClassVisitor;
 import org.objectweb.asm.MethodVisitor;
 
-/* JADX INFO: loaded from: app.apk:lombok/bytecode/PreventNullAnalysisRemover$1.SCL.lombok */
+/* JADX INFO: loaded from: discord-126021.apk:lombok/bytecode/PreventNullAnalysisRemover$1.SCL.lombok */
 class PreventNullAnalysisRemover$1 extends ClassVisitor {
     final /* synthetic */ PreventNullAnalysisRemover this$0;
     private final /* synthetic */ AtomicBoolean val$changesMade;

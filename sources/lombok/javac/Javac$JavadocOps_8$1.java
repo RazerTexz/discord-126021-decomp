@@ -5,7 +5,7 @@ import com.sun.tools.javac.parser.Tokens$Comment$CommentStyle;
 import com.sun.tools.javac.tree.JCTree;
 import com.sun.tools.javac.tree.JCTree$JCVariableDecl;
 
-/* JADX INFO: loaded from: app.apk:lombok/javac/Javac$JavadocOps_8$1.SCL.lombok */
+/* JADX INFO: loaded from: discord-126021.apk:lombok/javac/Javac$JavadocOps_8$1.SCL.lombok */
 class Javac$JavadocOps_8$1 implements Tokens$Comment {
     private final /* synthetic */ String val$text;
     private final /* synthetic */ JCTree val$field;

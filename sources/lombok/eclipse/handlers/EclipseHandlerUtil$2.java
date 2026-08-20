@@ -5,7 +5,7 @@ import lombok.core.AnnotationValues$AnnotationValue;
 import lombok.core.LombokNode;
 import lombok.eclipse.EclipseNode;
 
-/* JADX INFO: loaded from: app.apk:lombok/eclipse/handlers/EclipseHandlerUtil$2.SCL.lombok */
+/* JADX INFO: loaded from: discord-126021.apk:lombok/eclipse/handlers/EclipseHandlerUtil$2.SCL.lombok */
 class EclipseHandlerUtil$2 extends AnnotationValues$AnnotationValue {
     private final /* synthetic */ EclipseNode val$annotationNode;
 

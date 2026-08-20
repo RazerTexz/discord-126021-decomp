@@ -3,7 +3,7 @@ package lombok.installer;
 import java.util.List;
 import lombok.core.LombokApp;
 
-/* JADX INFO: loaded from: app.apk:lombok/installer/Installer$CommandLineInstallerApp.SCL.lombok */
+/* JADX INFO: loaded from: discord-126021.apk:lombok/installer/Installer$CommandLineInstallerApp.SCL.lombok */
 public class Installer$CommandLineInstallerApp extends LombokApp {
     @Override // lombok.core.LombokApp
     public String getAppName() {

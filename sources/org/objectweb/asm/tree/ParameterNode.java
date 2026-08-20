@@ -2,7 +2,7 @@ package org.objectweb.asm.tree;
 
 import org.objectweb.asm.MethodVisitor;
 
-/* JADX INFO: loaded from: app.apk:org/objectweb/asm/tree/ParameterNode.SCL.lombok */
+/* JADX INFO: loaded from: discord-126021.apk:org/objectweb/asm/tree/ParameterNode.SCL.lombok */
 public class ParameterNode {
     public String name;
     public int access;

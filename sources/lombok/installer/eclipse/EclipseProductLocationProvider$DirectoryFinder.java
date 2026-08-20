@@ -5,7 +5,7 @@ import java.util.List;
 import lombok.installer.CorruptedIdeLocationException;
 import lombok.installer.IdeLocation;
 
-/* JADX INFO: loaded from: app.apk:lombok/installer/eclipse/EclipseProductLocationProvider$DirectoryFinder.SCL.lombok */
+/* JADX INFO: loaded from: discord-126021.apk:lombok/installer/eclipse/EclipseProductLocationProvider$DirectoryFinder.SCL.lombok */
 abstract class EclipseProductLocationProvider$DirectoryFinder {
     private final List<File> flatSourceDirs;
     private final List<File> nestedSourceDirs;

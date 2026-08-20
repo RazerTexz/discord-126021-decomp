@@ -7,7 +7,7 @@ import org.eclipse.jdt.internal.compiler.ast.Expression;
 import org.eclipse.jdt.internal.compiler.ast.MessageSend;
 import org.eclipse.jdt.internal.compiler.ast.ThisReference;
 
-/* JADX INFO: loaded from: app.apk:lombok/eclipse/agent/PatchDelegate$DelegateReceiver$1.SCL.lombok */
+/* JADX INFO: loaded from: discord-126021.apk:lombok/eclipse/agent/PatchDelegate$DelegateReceiver$1.SCL.lombok */
 enum PatchDelegate$DelegateReceiver$1 extends PatchDelegate$DelegateReceiver {
     PatchDelegate$DelegateReceiver$1(String str, int i) {
         super(str, i, null);

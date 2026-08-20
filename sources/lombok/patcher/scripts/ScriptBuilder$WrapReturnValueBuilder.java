@@ -8,7 +8,7 @@ import lombok.patcher.Hook;
 import lombok.patcher.StackRequest;
 import lombok.patcher.TargetMatcher;
 
-/* JADX INFO: loaded from: app.apk:lombok/patcher/scripts/ScriptBuilder$WrapReturnValueBuilder.SCL.lombok */
+/* JADX INFO: loaded from: discord-126021.apk:lombok/patcher/scripts/ScriptBuilder$WrapReturnValueBuilder.SCL.lombok */
 public class ScriptBuilder$WrapReturnValueBuilder {
     private Hook wrapMethod;
     private boolean transplant;

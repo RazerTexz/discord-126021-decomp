@@ -3,7 +3,7 @@ package lombok.installer;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-/* JADX INFO: loaded from: app.apk:lombok/installer/InstallerGUI$2.SCL.lombok */
+/* JADX INFO: loaded from: discord-126021.apk:lombok/installer/InstallerGUI$2.SCL.lombok */
 class InstallerGUI$2 implements ActionListener {
     final /* synthetic */ InstallerGUI this$0;
 

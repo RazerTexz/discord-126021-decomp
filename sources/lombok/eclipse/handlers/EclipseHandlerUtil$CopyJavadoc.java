@@ -7,7 +7,7 @@ import org.eclipse.jdt.internal.compiler.ast.CompilationUnitDeclaration;
 
 /* JADX WARN: Failed to restore enum class, 'enum' modifier and super class removed */
 /* JADX WARN: Unknown enum class pattern. Please report as an issue! */
-/* JADX INFO: loaded from: app.apk:lombok/eclipse/handlers/EclipseHandlerUtil$CopyJavadoc.SCL.lombok */
+/* JADX INFO: loaded from: discord-126021.apk:lombok/eclipse/handlers/EclipseHandlerUtil$CopyJavadoc.SCL.lombok */
 public abstract class EclipseHandlerUtil$CopyJavadoc {
     public static final EclipseHandlerUtil$CopyJavadoc VERBATIM = new EclipseHandlerUtil$CopyJavadoc$1("VERBATIM", 0);
     public static final EclipseHandlerUtil$CopyJavadoc GETTER = new EclipseHandlerUtil$CopyJavadoc$2("GETTER", 1);

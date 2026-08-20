@@ -2,7 +2,7 @@ package lombok.core.configuration;
 
 import java.util.Arrays;
 
-/* JADX INFO: loaded from: app.apk:lombok/core/configuration/ConfigurationDataType$6.SCL.lombok */
+/* JADX INFO: loaded from: discord-126021.apk:lombok/core/configuration/ConfigurationDataType$6.SCL.lombok */
 class ConfigurationDataType$6 implements ConfigurationValueParser {
     private final /* synthetic */ Class val$rawType;
     private final /* synthetic */ Class val$type;

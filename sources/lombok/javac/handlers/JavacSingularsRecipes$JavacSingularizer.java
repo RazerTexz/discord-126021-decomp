@@ -32,7 +32,7 @@ import lombok.javac.Javac;
 import lombok.javac.JavacNode;
 import lombok.javac.JavacTreeMaker;
 
-/* JADX INFO: loaded from: app.apk:lombok/javac/handlers/JavacSingularsRecipes$JavacSingularizer.SCL.lombok */
+/* JADX INFO: loaded from: discord-126021.apk:lombok/javac/handlers/JavacSingularsRecipes$JavacSingularizer.SCL.lombok */
 public abstract class JavacSingularsRecipes$JavacSingularizer {
     private static /* synthetic */ int[] $SWITCH_TABLE$lombok$core$AST$Kind;
 

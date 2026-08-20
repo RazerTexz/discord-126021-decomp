@@ -11,7 +11,7 @@ import org.eclipse.jdt.internal.compiler.ast.TypeDeclaration;
 import org.eclipse.jdt.internal.core.CompilationUnit;
 import org.eclipse.jdt.internal.core.SourceMethod;
 
-/* JADX INFO: loaded from: app.apk:lombok/eclipse/agent/PatchJavadoc.SCL.lombok */
+/* JADX INFO: loaded from: discord-126021.apk:lombok/eclipse/agent/PatchJavadoc.SCL.lombok */
 public class PatchJavadoc {
     public static String getHTMLContentFromSource(String original, IJavaElement member) {
         if (original != null) {

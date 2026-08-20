@@ -2,7 +2,7 @@ package lombok.installer.eclipse;
 
 import java.io.File;
 
-/* JADX INFO: loaded from: app.apk:lombok/installer/eclipse/EclipseProductLocationProvider$UnixFinder.SCL.lombok */
+/* JADX INFO: loaded from: discord-126021.apk:lombok/installer/eclipse/EclipseProductLocationProvider$UnixFinder.SCL.lombok */
 class EclipseProductLocationProvider$UnixFinder extends EclipseProductLocationProvider$DirectoryFinder {
     final /* synthetic */ EclipseProductLocationProvider this$0;
 

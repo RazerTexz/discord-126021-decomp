@@ -4,7 +4,7 @@ import java.lang.reflect.Method;
 import java.util.concurrent.atomic.AtomicBoolean;
 import javax.tools.JavaFileObject;
 
-/* JADX INFO: loaded from: app.apk:lombok/javac/apt/LombokFileObjects$Compiler$1.SCL.lombok */
+/* JADX INFO: loaded from: discord-126021.apk:lombok/javac/apt/LombokFileObjects$Compiler$1.SCL.lombok */
 class LombokFileObjects$Compiler$1 implements LombokFileObjects$Compiler {
     private Method decoderMethod = null;
     private final AtomicBoolean decoderIsSet = new AtomicBoolean();

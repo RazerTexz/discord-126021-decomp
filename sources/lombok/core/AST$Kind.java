@@ -1,6 +1,6 @@
 package lombok.core;
 
-/* JADX INFO: loaded from: app.apk:lombok/core/AST$Kind.SCL.lombok */
+/* JADX INFO: loaded from: discord-126021.apk:lombok/core/AST$Kind.SCL.lombok */
 public enum AST$Kind {
     COMPILATION_UNIT,
     TYPE,

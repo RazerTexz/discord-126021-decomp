@@ -6,7 +6,7 @@ import org.objectweb.asm.Label;
 import org.objectweb.asm.MethodVisitor;
 import org.objectweb.asm.Opcodes;
 
-/* JADX INFO: loaded from: app.apk:lombok/patcher/PatchScript$InsertBodyOfMethodIntoAnotherVisitor.SCL.lombok */
+/* JADX INFO: loaded from: discord-126021.apk:lombok/patcher/PatchScript$InsertBodyOfMethodIntoAnotherVisitor.SCL.lombok */
 final class PatchScript$InsertBodyOfMethodIntoAnotherVisitor extends MethodVisitor {
     /* synthetic */ PatchScript$InsertBodyOfMethodIntoAnotherVisitor(MethodVisitor methodVisitor, PatchScript$InsertBodyOfMethodIntoAnotherVisitor patchScript$InsertBodyOfMethodIntoAnotherVisitor) {
         this(methodVisitor);

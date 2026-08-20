@@ -32,7 +32,7 @@ import lombok.javac.JavacAnnotationHandler;
 import lombok.javac.JavacNode;
 import lombok.javac.JavacTreeMaker;
 
-/* JADX INFO: loaded from: app.apk:lombok/javac/handlers/HandleCleanup.SCL.lombok */
+/* JADX INFO: loaded from: discord-126021.apk:lombok/javac/handlers/HandleCleanup.SCL.lombok */
 public class HandleCleanup extends JavacAnnotationHandler<Cleanup> {
     @Override // lombok.javac.JavacAnnotationHandler
     public void handle(AnnotationValues<Cleanup> annotation, JCTree$JCAnnotation ast, JavacNode annotationNode) {

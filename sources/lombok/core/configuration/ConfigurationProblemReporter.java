@@ -1,6 +1,6 @@
 package lombok.core.configuration;
 
-/* JADX INFO: loaded from: app.apk:lombok/core/configuration/ConfigurationProblemReporter.SCL.lombok */
+/* JADX INFO: loaded from: discord-126021.apk:lombok/core/configuration/ConfigurationProblemReporter.SCL.lombok */
 public interface ConfigurationProblemReporter {
     public static final ConfigurationProblemReporter CONSOLE = new ConfigurationProblemReporter$1();
 

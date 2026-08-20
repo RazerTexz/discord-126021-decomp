@@ -12,7 +12,7 @@ import javax.lang.model.element.TypeElement;
 import lombok.patcher.ClassRootFinder;
 import lombok.permit.Permit;
 
-/* JADX INFO: loaded from: app.apk:lombok/core/AnnotationProcessor$JavacDescriptor.SCL.lombok */
+/* JADX INFO: loaded from: discord-126021.apk:lombok/core/AnnotationProcessor$JavacDescriptor.SCL.lombok */
 class AnnotationProcessor$JavacDescriptor extends AnnotationProcessor$ProcessorDescriptor {
     private Processor processor;
 

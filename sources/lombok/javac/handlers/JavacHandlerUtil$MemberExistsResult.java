@@ -1,6 +1,6 @@
 package lombok.javac.handlers;
 
-/* JADX INFO: loaded from: app.apk:lombok/javac/handlers/JavacHandlerUtil$MemberExistsResult.SCL.lombok */
+/* JADX INFO: loaded from: discord-126021.apk:lombok/javac/handlers/JavacHandlerUtil$MemberExistsResult.SCL.lombok */
 public enum JavacHandlerUtil$MemberExistsResult {
     NOT_EXISTS,
     EXISTS_BY_LOMBOK,

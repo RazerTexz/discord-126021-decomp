@@ -7,7 +7,7 @@ import java.util.List;
 import java.util.Map;
 import lombok.ConfigurationKeys;
 
-/* JADX INFO: loaded from: app.apk:lombok/core/configuration/ConfigurationApp$3.SCL.lombok */
+/* JADX INFO: loaded from: discord-126021.apk:lombok/core/configuration/ConfigurationApp$3.SCL.lombok */
 class ConfigurationApp$3 implements ConfigurationParser$Collector {
     final /* synthetic */ ConfigurationApp this$0;
     private final /* synthetic */ Deque val$round;

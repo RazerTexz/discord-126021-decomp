@@ -8,7 +8,7 @@ import org.objectweb.asm.ClassReader;
 import org.objectweb.asm.ClassWriter;
 import org.objectweb.asm.Label;
 
-/* JADX INFO: loaded from: app.apk:org/objectweb/asm/commons/ModuleHashesAttribute.SCL.lombok */
+/* JADX INFO: loaded from: discord-126021.apk:org/objectweb/asm/commons/ModuleHashesAttribute.SCL.lombok */
 public final class ModuleHashesAttribute extends Attribute {
     public String algorithm;
     public List<String> modules;

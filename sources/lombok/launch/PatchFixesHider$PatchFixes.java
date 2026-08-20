@@ -36,7 +36,7 @@ import org.eclipse.jdt.internal.core.dom.rewrite.TokenScanner;
 import org.eclipse.jdt.internal.corext.refactoring.SearchResultGroup;
 import org.eclipse.jdt.internal.corext.refactoring.structure.ASTNodeSearchUtil;
 
-/* JADX INFO: loaded from: app.apk:Class50/lombok/launch/PatchFixesHider$PatchFixes.SCL.lombok */
+/* JADX INFO: loaded from: discord-126021.apk:Class50/lombok/launch/PatchFixesHider$PatchFixes.SCL.lombok */
 public final class PatchFixesHider$PatchFixes {
     public static final int ALREADY_PROCESSED_FLAG = 8388608;
 

@@ -10,7 +10,7 @@ import lombok.ConfigurationKeys;
 import lombok.core.CleanupRegistry;
 import lombok.core.LombokConfiguration;
 
-/* JADX INFO: loaded from: app.apk:lombok/javac/JavacTransformer.SCL.lombok */
+/* JADX INFO: loaded from: discord-126021.apk:lombok/javac/JavacTransformer.SCL.lombok */
 public class JavacTransformer {
     private final HandlerLibrary handlers;
     private final Messager messager;

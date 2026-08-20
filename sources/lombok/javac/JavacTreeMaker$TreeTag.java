@@ -9,7 +9,7 @@ import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.ConcurrentMap;
 import lombok.permit.Permit;
 
-/* JADX INFO: loaded from: app.apk:lombok/javac/JavacTreeMaker$TreeTag.SCL.lombok */
+/* JADX INFO: loaded from: discord-126021.apk:lombok/javac/JavacTreeMaker$TreeTag.SCL.lombok */
 public class JavacTreeMaker$TreeTag extends JavacTreeMaker$SchroedingerType {
     private static final Field TAG_FIELD;
     private static final Method TAG_METHOD;

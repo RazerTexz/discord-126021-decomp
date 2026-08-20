@@ -100,7 +100,7 @@ import org.eclipse.jdt.internal.compiler.lookup.TypeBinding;
 import org.eclipse.jdt.internal.compiler.lookup.TypeConstants;
 import org.eclipse.jdt.internal.compiler.lookup.WildcardBinding;
 
-/* JADX INFO: loaded from: app.apk:lombok/eclipse/handlers/EclipseHandlerUtil.SCL.lombok */
+/* JADX INFO: loaded from: discord-126021.apk:lombok/eclipse/handlers/EclipseHandlerUtil.SCL.lombok */
 public class EclipseHandlerUtil {
     private static final int MODIFIERS_INDICATING_STATIC = 16904;
     private static final Constructor<CastExpression> castExpressionConstructor;

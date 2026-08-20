@@ -3,7 +3,7 @@ package lombok.javac.handlers;
 import com.sun.tools.javac.tree.JCTree$JCExpression;
 import com.sun.tools.javac.util.Name;
 
-/* JADX INFO: loaded from: app.apk:lombok/javac/handlers/JavacHandlerUtil$GetterMethod.SCL.lombok */
+/* JADX INFO: loaded from: discord-126021.apk:lombok/javac/handlers/JavacHandlerUtil$GetterMethod.SCL.lombok */
 class JavacHandlerUtil$GetterMethod {
     private final Name name;
     private final JCTree$JCExpression type;

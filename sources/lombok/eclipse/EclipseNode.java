@@ -20,7 +20,7 @@ import org.eclipse.jdt.internal.compiler.ast.Statement;
 import org.eclipse.jdt.internal.compiler.ast.TypeDeclaration;
 import org.eclipse.jdt.internal.compiler.ast.TypeReference;
 
-/* JADX INFO: loaded from: app.apk:lombok/eclipse/EclipseNode.SCL.lombok */
+/* JADX INFO: loaded from: discord-126021.apk:lombok/eclipse/EclipseNode.SCL.lombok */
 public class EclipseNode extends LombokNode<EclipseAST, EclipseNode, ASTNode> {
     private EclipseAST ast;
     private static /* synthetic */ int[] $SWITCH_TABLE$lombok$core$AST$Kind;

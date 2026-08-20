@@ -4,7 +4,7 @@ import java.lang.reflect.Field;
 import java.util.concurrent.ConcurrentMap;
 import lombok.permit.Permit;
 
-/* JADX INFO: loaded from: app.apk:lombok/javac/JavacTreeMaker$SchroedingerType.SCL.lombok */
+/* JADX INFO: loaded from: discord-126021.apk:lombok/javac/JavacTreeMaker$SchroedingerType.SCL.lombok */
 class JavacTreeMaker$SchroedingerType {
     final Object value;
     private static Field NOSUCHFIELDEX_MARKER;

@@ -3,7 +3,7 @@ package org.objectweb.asm.tree;
 import java.util.Map;
 import org.objectweb.asm.MethodVisitor;
 
-/* JADX INFO: loaded from: app.apk:org/objectweb/asm/tree/TypeInsnNode.SCL.lombok */
+/* JADX INFO: loaded from: discord-126021.apk:org/objectweb/asm/tree/TypeInsnNode.SCL.lombok */
 public class TypeInsnNode extends AbstractInsnNode {
     public String desc;
 

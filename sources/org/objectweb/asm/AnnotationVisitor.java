@@ -1,6 +1,6 @@
 package org.objectweb.asm;
 
-/* JADX INFO: loaded from: app.apk:org/objectweb/asm/AnnotationVisitor.SCL.lombok */
+/* JADX INFO: loaded from: discord-126021.apk:org/objectweb/asm/AnnotationVisitor.SCL.lombok */
 public abstract class AnnotationVisitor {
     protected final int api;
     protected AnnotationVisitor av;

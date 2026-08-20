@@ -17,7 +17,7 @@ import lombok.experimental.PackagePrivate;
 import lombok.javac.JavacASTAdapter;
 import lombok.javac.JavacNode;
 
-/* JADX INFO: loaded from: app.apk:lombok/javac/handlers/HandleFieldDefaults.SCL.lombok */
+/* JADX INFO: loaded from: discord-126021.apk:lombok/javac/handlers/HandleFieldDefaults.SCL.lombok */
 @HandlerPriority(-2048)
 public class HandleFieldDefaults extends JavacASTAdapter {
     public boolean generateFieldDefaultsForType(JavacNode typeNode, JavacNode errorNode, AccessLevel level, boolean makeFinal, boolean checkForTypeLevelFieldDefaults) {

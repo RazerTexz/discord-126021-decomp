@@ -6,7 +6,7 @@ import lombok.eclipse.EclipseNode;
 import lombok.experimental.SuperBuilder;
 import org.eclipse.jdt.internal.compiler.ast.TypeParameter;
 
-/* JADX INFO: loaded from: app.apk:lombok/eclipse/handlers/HandleSuperBuilder$SuperBuilderJob.SCL.lombok */
+/* JADX INFO: loaded from: discord-126021.apk:lombok/eclipse/handlers/HandleSuperBuilder$SuperBuilderJob.SCL.lombok */
 class HandleSuperBuilder$SuperBuilderJob extends HandleBuilder$BuilderJob {
     EclipseNode builderAbstractType;
     String builderAbstractClassName;

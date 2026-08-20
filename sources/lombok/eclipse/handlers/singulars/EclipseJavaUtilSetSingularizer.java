@@ -10,7 +10,7 @@ import lombok.eclipse.handlers.EclipseSingularsRecipes$StatementMaker;
 import lombok.eclipse.handlers.EclipseSingularsRecipes$TypeReferenceMaker;
 import org.eclipse.jdt.internal.compiler.ast.Statement;
 
-/* JADX INFO: loaded from: app.apk:lombok/eclipse/handlers/singulars/EclipseJavaUtilSetSingularizer.SCL.lombok */
+/* JADX INFO: loaded from: discord-126021.apk:lombok/eclipse/handlers/singulars/EclipseJavaUtilSetSingularizer.SCL.lombok */
 public class EclipseJavaUtilSetSingularizer extends EclipseJavaUtilListSetSingularizer {
     private static final char[] EMPTY_SORTED_SET = {'e', 'm', 'p', 't', 'y', 'S', 'o', 'r', 't', 'e', 'd', 'S', 'e', 't'};
     private static final char[] EMPTY_NAVIGABLE_SET = {'e', 'm', 'p', 't', 'y', 'N', 'a', 'v', 'i', 'g', 'a', 'b', 'l', 'e', 'S', 'e', 't'};

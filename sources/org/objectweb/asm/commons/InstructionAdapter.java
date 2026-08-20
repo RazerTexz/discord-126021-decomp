@@ -7,7 +7,7 @@ import org.objectweb.asm.MethodVisitor;
 import org.objectweb.asm.Opcodes;
 import org.objectweb.asm.Type;
 
-/* JADX INFO: loaded from: app.apk:org/objectweb/asm/commons/InstructionAdapter.SCL.lombok */
+/* JADX INFO: loaded from: discord-126021.apk:org/objectweb/asm/commons/InstructionAdapter.SCL.lombok */
 public class InstructionAdapter extends MethodVisitor {
     public static final Type OBJECT_TYPE = Type.getType("Ljava/lang/Object;");
 

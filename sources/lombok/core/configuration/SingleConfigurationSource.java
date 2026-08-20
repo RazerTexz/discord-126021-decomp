@@ -7,7 +7,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.Map$Entry;
 
-/* JADX INFO: loaded from: app.apk:lombok/core/configuration/SingleConfigurationSource.SCL.lombok */
+/* JADX INFO: loaded from: discord-126021.apk:lombok/core/configuration/SingleConfigurationSource.SCL.lombok */
 public final class SingleConfigurationSource implements ConfigurationSource {
     private final Map<ConfigurationKey<?>, ConfigurationSource$Result> values = new HashMap();
     private final List<ConfigurationFile> imports;

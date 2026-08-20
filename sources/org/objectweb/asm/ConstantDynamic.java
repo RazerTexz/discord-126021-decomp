@@ -2,7 +2,7 @@ package org.objectweb.asm;
 
 import java.util.Arrays;
 
-/* JADX INFO: loaded from: app.apk:org/objectweb/asm/ConstantDynamic.SCL.lombok */
+/* JADX INFO: loaded from: discord-126021.apk:org/objectweb/asm/ConstantDynamic.SCL.lombok */
 public final class ConstantDynamic {
     private final String name;
     private final String descriptor;

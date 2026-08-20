@@ -23,19 +23,15 @@ public final class SqlDateTypeAdapter extends TypeAdapter<Date> {
     public Date read(JsonReader jsonReader) throws IOException {
         Date date;
         synchronized (this) {
-            try {
-                if (jsonReader.N() == JsonToken.NULL) {
-                    jsonReader.H();
-                    date = null;
-                } else {
-                    try {
-                        date = new Date(this.f3124b.parse(jsonReader.J()).getTime());
-                    } catch (ParseException e) {
-                        throw new JsonSyntaxException(e);
-                    }
+            if (jsonReader.N() == JsonToken.NULL) {
+                jsonReader.H();
+                date = null;
+            } else {
+                try {
+                    date = new Date(this.f3124b.parse(jsonReader.J()).getTime());
+                } catch (ParseException e) {
+                    throw new JsonSyntaxException(e);
                 }
-            } catch (Throwable th) {
-                throw th;
             }
         }
         return date;

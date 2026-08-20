@@ -7,7 +7,7 @@ import java.net.URI;
 import javax.swing.JOptionPane;
 import org.objectweb.asm.Opcodes;
 
-/* JADX INFO: loaded from: app.apk:lombok/installer/InstallerGUI$13.SCL.lombok */
+/* JADX INFO: loaded from: discord-126021.apk:lombok/installer/InstallerGUI$13.SCL.lombok */
 class InstallerGUI$13 implements ActionListener {
     final /* synthetic */ InstallerGUI this$0;
     private final /* synthetic */ InstallerGUI$JHyperLink val$hyperlink;

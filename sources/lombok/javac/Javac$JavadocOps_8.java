@@ -4,7 +4,7 @@ import com.sun.tools.javac.parser.Tokens$Comment;
 import com.sun.tools.javac.tree.DocCommentTable;
 import com.sun.tools.javac.tree.JCTree;
 
-/* JADX INFO: loaded from: app.apk:lombok/javac/Javac$JavadocOps_8.SCL.lombok */
+/* JADX INFO: loaded from: discord-126021.apk:lombok/javac/Javac$JavadocOps_8.SCL.lombok */
 class Javac$JavadocOps_8 {
     private Javac$JavadocOps_8() {
     }

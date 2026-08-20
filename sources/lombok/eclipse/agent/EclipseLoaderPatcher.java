@@ -7,7 +7,7 @@ import lombok.patcher.ScriptManager;
 import lombok.patcher.StackRequest;
 import lombok.patcher.scripts.ScriptBuilder;
 
-/* JADX INFO: loaded from: app.apk:lombok/eclipse/agent/EclipseLoaderPatcher.SCL.lombok */
+/* JADX INFO: loaded from: discord-126021.apk:lombok/eclipse/agent/EclipseLoaderPatcher.SCL.lombok */
 public class EclipseLoaderPatcher {
     private static final String TRANSPLANTS_CLASS_NAME = "lombok.eclipse.agent.EclipseLoaderPatcherTransplants";
     static final String[] OSGI_TYPES = {"org/eclipse/osgi/internal/baseadaptor/DefaultClassLoader", "org/eclipse/osgi/framework/adapter/core/AbstractClassLoader", "org/eclipse/osgi/internal/loader/ModuleClassLoader"};

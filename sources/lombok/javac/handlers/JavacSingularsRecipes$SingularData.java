@@ -5,7 +5,7 @@ import com.sun.tools.javac.util.List;
 import com.sun.tools.javac.util.Name;
 import lombok.javac.JavacNode;
 
-/* JADX INFO: loaded from: app.apk:lombok/javac/handlers/JavacSingularsRecipes$SingularData.SCL.lombok */
+/* JADX INFO: loaded from: discord-126021.apk:lombok/javac/handlers/JavacSingularsRecipes$SingularData.SCL.lombok */
 public final class JavacSingularsRecipes$SingularData {
     private final JavacNode annotation;
     private final Name singularName;

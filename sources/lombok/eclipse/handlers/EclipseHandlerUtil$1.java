@@ -7,7 +7,7 @@ import lombok.eclipse.EclipseNode;
 import org.eclipse.jdt.internal.compiler.ast.Annotation;
 import org.eclipse.jdt.internal.compiler.ast.Expression;
 
-/* JADX INFO: loaded from: app.apk:lombok/eclipse/handlers/EclipseHandlerUtil$1.SCL.lombok */
+/* JADX INFO: loaded from: discord-126021.apk:lombok/eclipse/handlers/EclipseHandlerUtil$1.SCL.lombok */
 class EclipseHandlerUtil$1 extends AnnotationValues$AnnotationValue {
     private final /* synthetic */ Expression val$rhs;
     private final /* synthetic */ Expression[] val$exprs;

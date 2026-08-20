@@ -2,7 +2,7 @@ package lombok.eclipse.handlers;
 
 import org.eclipse.jdt.internal.compiler.ast.TypeReference;
 
-/* JADX INFO: loaded from: app.apk:lombok/eclipse/handlers/EclipseSingularsRecipes$EclipseSingularizer$1.SCL.lombok */
+/* JADX INFO: loaded from: discord-126021.apk:lombok/eclipse/handlers/EclipseSingularsRecipes$EclipseSingularizer$1.SCL.lombok */
 class EclipseSingularsRecipes$EclipseSingularizer$1 implements EclipseSingularsRecipes$TypeReferenceMaker {
     final /* synthetic */ EclipseSingularsRecipes$EclipseSingularizer this$1;
     private final /* synthetic */ HandleBuilder$BuilderJob val$job;

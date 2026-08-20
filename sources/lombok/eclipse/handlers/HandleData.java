@@ -11,7 +11,7 @@ import lombok.eclipse.EclipseNode;
 import org.eclipse.jdt.internal.compiler.ast.Annotation;
 import org.eclipse.jdt.internal.compiler.ast.TypeDeclaration;
 
-/* JADX INFO: loaded from: app.apk:lombok/eclipse/handlers/HandleData.SCL.lombok */
+/* JADX INFO: loaded from: discord-126021.apk:lombok/eclipse/handlers/HandleData.SCL.lombok */
 public class HandleData extends EclipseAnnotationHandler<Data> {
     private HandleGetter handleGetter = new HandleGetter();
     private HandleSetter handleSetter = new HandleSetter();

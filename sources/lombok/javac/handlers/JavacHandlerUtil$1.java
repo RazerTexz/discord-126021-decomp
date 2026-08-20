@@ -6,7 +6,7 @@ import lombok.core.AnnotationValues$AnnotationValue;
 import lombok.core.LombokNode;
 import lombok.javac.JavacNode;
 
-/* JADX INFO: loaded from: app.apk:lombok/javac/handlers/JavacHandlerUtil$1.SCL.lombok */
+/* JADX INFO: loaded from: discord-126021.apk:lombok/javac/handlers/JavacHandlerUtil$1.SCL.lombok */
 class JavacHandlerUtil$1 extends AnnotationValues$AnnotationValue {
     private final /* synthetic */ JavacNode val$node;
     private final /* synthetic */ List val$positions;

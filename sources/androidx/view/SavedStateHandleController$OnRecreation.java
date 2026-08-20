@@ -1,9 +1,6 @@
 package androidx.view;
 
 import androidx.annotation.NonNull;
-import androidx.view.SavedStateRegistry;
-import androidx.view.SavedStateRegistry$AutoRecreated;
-import androidx.view.SavedStateRegistryOwner;
 import java.util.Iterator;
 
 /* JADX INFO: loaded from: classes.dex */

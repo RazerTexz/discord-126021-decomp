@@ -2,7 +2,7 @@ package org.objectweb.asm.tree;
 
 import org.objectweb.asm.ClassVisitor;
 
-/* JADX INFO: loaded from: app.apk:org/objectweb/asm/tree/InnerClassNode.SCL.lombok */
+/* JADX INFO: loaded from: discord-126021.apk:org/objectweb/asm/tree/InnerClassNode.SCL.lombok */
 public class InnerClassNode {
     public String name;
     public String outerName;

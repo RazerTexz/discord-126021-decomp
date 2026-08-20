@@ -6,7 +6,7 @@ import java.io.File;
 import java.util.List;
 import lombok.core.LombokApp;
 
-/* JADX INFO: loaded from: app.apk:lombok/bytecode/PoolConstantsApp.SCL.lombok */
+/* JADX INFO: loaded from: discord-126021.apk:lombok/bytecode/PoolConstantsApp.SCL.lombok */
 public class PoolConstantsApp extends LombokApp {
     @Override // lombok.core.LombokApp
     public String getAppName() {

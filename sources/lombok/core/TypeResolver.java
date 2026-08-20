@@ -2,7 +2,7 @@ package lombok.core;
 
 import java.util.List;
 
-/* JADX INFO: loaded from: app.apk:lombok/core/TypeResolver.SCL.lombok */
+/* JADX INFO: loaded from: discord-126021.apk:lombok/core/TypeResolver.SCL.lombok */
 public class TypeResolver {
     private ImportList imports;
 

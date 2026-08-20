@@ -3,7 +3,7 @@ package lombok.javac.handlers;
 import com.sun.tools.javac.code.Type;
 import java.lang.reflect.Method;
 
-/* JADX INFO: loaded from: app.apk:lombok/javac/handlers/HandleDelegate$Unannotated.SCL.lombok */
+/* JADX INFO: loaded from: discord-126021.apk:lombok/javac/handlers/HandleDelegate$Unannotated.SCL.lombok */
 class HandleDelegate$Unannotated {
     private static final Method unannotated;
 

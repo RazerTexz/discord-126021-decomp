@@ -5,7 +5,7 @@ import java.lang.reflect.Method;
 import lombok.permit.Permit;
 import org.eclipse.jdt.internal.compiler.ast.TypeReference;
 
-/* JADX INFO: loaded from: app.apk:lombok/eclipse/EclipseAST$EcjReflectionCheck.SCL.lombok */
+/* JADX INFO: loaded from: discord-126021.apk:lombok/eclipse/EclipseAST$EcjReflectionCheck.SCL.lombok */
 class EclipseAST$EcjReflectionCheck {
     private static final String COMPILATIONRESULT_TYPE = "org.eclipse.jdt.internal.compiler.CompilationResult";
     public static final Method addProblemToCompilationResult;

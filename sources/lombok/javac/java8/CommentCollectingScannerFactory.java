@@ -6,7 +6,7 @@ import com.sun.tools.javac.util.Context;
 import com.sun.tools.javac.util.Context$Factory;
 import java.nio.CharBuffer;
 
-/* JADX INFO: loaded from: app.apk:lombok/javac/java8/CommentCollectingScannerFactory.SCL.lombok */
+/* JADX INFO: loaded from: discord-126021.apk:lombok/javac/java8/CommentCollectingScannerFactory.SCL.lombok */
 public class CommentCollectingScannerFactory extends ScannerFactory {
     public static boolean findTextBlocks;
 

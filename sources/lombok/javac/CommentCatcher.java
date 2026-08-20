@@ -9,7 +9,7 @@ import java.util.List;
 import lombok.core.FieldAugment;
 import lombok.permit.Permit;
 
-/* JADX INFO: loaded from: app.apk:lombok/javac/CommentCatcher.SCL.lombok */
+/* JADX INFO: loaded from: discord-126021.apk:lombok/javac/CommentCatcher.SCL.lombok */
 public class CommentCatcher {
     private final JavaCompiler compiler;
     public static final FieldAugment<JCTree$JCCompilationUnit, List<CommentInfo>> JCCompilationUnit_comments = FieldAugment.augment(JCTree$JCCompilationUnit.class, List.class, "lombok$comments");

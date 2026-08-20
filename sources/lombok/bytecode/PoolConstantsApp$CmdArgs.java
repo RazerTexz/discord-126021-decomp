@@ -7,7 +7,7 @@ import com.zwitserloot.cmdreader.Shorthand;
 import java.util.ArrayList;
 import java.util.List;
 
-/* JADX INFO: loaded from: app.apk:lombok/bytecode/PoolConstantsApp$CmdArgs.SCL.lombok */
+/* JADX INFO: loaded from: discord-126021.apk:lombok/bytecode/PoolConstantsApp$CmdArgs.SCL.lombok */
 public class PoolConstantsApp$CmdArgs {
 
     @Mandatory

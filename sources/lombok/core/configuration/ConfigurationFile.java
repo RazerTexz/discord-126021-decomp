@@ -9,7 +9,7 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.regex.Pattern;
 
-/* JADX INFO: loaded from: app.apk:lombok/core/configuration/ConfigurationFile.SCL.lombok */
+/* JADX INFO: loaded from: discord-126021.apk:lombok/core/configuration/ConfigurationFile.SCL.lombok */
 public abstract class ConfigurationFile {
     private static final String LOMBOK_CONFIG_FILENAME = "lombok.config";
     private final String identifier;

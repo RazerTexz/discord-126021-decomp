@@ -10,7 +10,7 @@ import org.eclipse.jdt.core.IJavaElement;
 import org.eclipse.jdt.internal.compiler.ast.AbstractMethodDeclaration;
 import org.eclipse.jdt.internal.compiler.ast.TypeDeclaration;
 
-/* JADX INFO: loaded from: app.apk:Class50/lombok/launch/PatchFixesHider$Javadoc.SCL.lombok */
+/* JADX INFO: loaded from: discord-126021.apk:Class50/lombok/launch/PatchFixesHider$Javadoc.SCL.lombok */
 public final class PatchFixesHider$Javadoc {
     private static final Method GET_HTML = null;
     private static final Method PRINT_METHOD = null;

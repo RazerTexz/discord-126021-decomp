@@ -52,7 +52,7 @@ import lombok.javac.LombokOptions;
 import lombok.javac.apt.LombokProcessor;
 import lombok.permit.Permit;
 
-/* JADX INFO: loaded from: app.apk:lombok/delombok/Delombok.SCL.lombok */
+/* JADX INFO: loaded from: discord-126021.apk:lombok/delombok/Delombok.SCL.lombok */
 public class Delombok {
     private Writer presetWriter;
     private boolean verbose;

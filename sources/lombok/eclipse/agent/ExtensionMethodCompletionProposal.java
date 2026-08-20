@@ -16,7 +16,7 @@ import org.eclipse.jdt.internal.compiler.lookup.MethodBinding;
 import org.eclipse.jdt.internal.compiler.lookup.TypeBinding;
 import org.eclipse.jdt.internal.core.NameLookup$Answer;
 
-/* JADX INFO: loaded from: app.apk:lombok/eclipse/agent/ExtensionMethodCompletionProposal.SCL.lombok */
+/* JADX INFO: loaded from: discord-126021.apk:lombok/eclipse/agent/ExtensionMethodCompletionProposal.SCL.lombok */
 public class ExtensionMethodCompletionProposal extends InternalCompletionProposal {
     private char[] fullSignature;
     private char[][] parameterNames;

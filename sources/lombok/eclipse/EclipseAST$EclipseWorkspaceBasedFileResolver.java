@@ -4,7 +4,7 @@ import java.net.URI;
 import org.eclipse.core.resources.ResourcesPlugin;
 import org.eclipse.core.runtime.Path;
 
-/* JADX INFO: loaded from: app.apk:lombok/eclipse/EclipseAST$EclipseWorkspaceBasedFileResolver.SCL.lombok */
+/* JADX INFO: loaded from: discord-126021.apk:lombok/eclipse/EclipseAST$EclipseWorkspaceBasedFileResolver.SCL.lombok */
 class EclipseAST$EclipseWorkspaceBasedFileResolver {
     private EclipseAST$EclipseWorkspaceBasedFileResolver() {
     }

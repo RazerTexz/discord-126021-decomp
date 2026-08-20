@@ -9,7 +9,7 @@ import lombok.extern.flogger.Flogger;
 import lombok.javac.JavacAnnotationHandler;
 import lombok.javac.JavacNode;
 
-/* JADX INFO: loaded from: app.apk:lombok/javac/handlers/HandleLog$HandleFloggerLog.SCL.lombok */
+/* JADX INFO: loaded from: discord-126021.apk:lombok/javac/handlers/HandleLog$HandleFloggerLog.SCL.lombok */
 public class HandleLog$HandleFloggerLog extends JavacAnnotationHandler<Flogger> {
     @Override // lombok.javac.JavacAnnotationHandler
     public void handle(AnnotationValues<Flogger> annotation, JCTree$JCAnnotation ast, JavacNode annotationNode) {

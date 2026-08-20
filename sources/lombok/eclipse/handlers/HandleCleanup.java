@@ -27,7 +27,7 @@ import org.eclipse.jdt.internal.compiler.ast.Statement;
 import org.eclipse.jdt.internal.compiler.ast.SwitchStatement;
 import org.eclipse.jdt.internal.compiler.ast.TryStatement;
 
-/* JADX INFO: loaded from: app.apk:lombok/eclipse/handlers/HandleCleanup.SCL.lombok */
+/* JADX INFO: loaded from: discord-126021.apk:lombok/eclipse/handlers/HandleCleanup.SCL.lombok */
 public class HandleCleanup extends EclipseAnnotationHandler<Cleanup> {
     @Override // lombok.eclipse.EclipseAnnotationHandler
     public void handle(AnnotationValues<Cleanup> annotation, Annotation ast, EclipseNode annotationNode) {

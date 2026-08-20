@@ -6,7 +6,7 @@ import com.zwitserloot.cmdreader.Shorthand;
 import java.util.ArrayList;
 import java.util.List;
 
-/* JADX INFO: loaded from: app.apk:lombok/installer/Installer$CmdArgs.SCL.lombok */
+/* JADX INFO: loaded from: discord-126021.apk:lombok/installer/Installer$CmdArgs.SCL.lombok */
 class Installer$CmdArgs {
 
     @Description("Specify paths to a location to install/uninstall. Use 'auto' to apply to all automatically discoverable installations.")

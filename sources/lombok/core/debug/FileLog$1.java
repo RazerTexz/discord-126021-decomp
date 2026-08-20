@@ -1,6 +1,6 @@
 package lombok.core.debug;
 
-/* JADX INFO: loaded from: app.apk:lombok/core/debug/FileLog$1.SCL.lombok */
+/* JADX INFO: loaded from: discord-126021.apk:lombok/core/debug/FileLog$1.SCL.lombok */
 class FileLog$1 extends Thread {
     FileLog$1() {
     }

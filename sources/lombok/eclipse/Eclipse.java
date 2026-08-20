@@ -27,7 +27,7 @@ import org.eclipse.jdt.internal.compiler.ast.UnaryExpression;
 import org.eclipse.jdt.internal.compiler.classfmt.ClassFileConstants;
 import org.eclipse.jdt.internal.compiler.impl.CompilerOptions;
 
-/* JADX INFO: loaded from: app.apk:lombok/eclipse/Eclipse.SCL.lombok */
+/* JADX INFO: loaded from: discord-126021.apk:lombok/eclipse/Eclipse.SCL.lombok */
 public class Eclipse {
     public static final int ECLIPSE_DO_NOT_TOUCH_FLAG = 8388608;
     private static final Annotation[] EMPTY_ANNOTATIONS_ARRAY = new Annotation[0];

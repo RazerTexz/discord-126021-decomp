@@ -5,7 +5,7 @@ import lombok.core.AlreadyHandledAnnotations;
 import lombok.core.HandlerPriority;
 import lombok.javac.handlers.JavacHandlerUtil;
 
-/* JADX INFO: loaded from: app.apk:lombok/javac/HandlerLibrary$AnnotationHandlerContainer.SCL.lombok */
+/* JADX INFO: loaded from: discord-126021.apk:lombok/javac/HandlerLibrary$AnnotationHandlerContainer.SCL.lombok */
 class HandlerLibrary$AnnotationHandlerContainer<T extends Annotation> {
     private final JavacAnnotationHandler<T> handler;
     private final Class<T> annotationClass;

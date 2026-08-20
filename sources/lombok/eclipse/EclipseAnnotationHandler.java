@@ -4,7 +4,7 @@ import java.lang.annotation.Annotation;
 import lombok.core.AnnotationValues;
 import lombok.core.SpiLoadUtil;
 
-/* JADX INFO: loaded from: app.apk:lombok/eclipse/EclipseAnnotationHandler.SCL.lombok */
+/* JADX INFO: loaded from: discord-126021.apk:lombok/eclipse/EclipseAnnotationHandler.SCL.lombok */
 public abstract class EclipseAnnotationHandler<T extends Annotation> {
     public abstract void handle(AnnotationValues<T> annotationValues, org.eclipse.jdt.internal.compiler.ast.Annotation annotation, EclipseNode eclipseNode);
 

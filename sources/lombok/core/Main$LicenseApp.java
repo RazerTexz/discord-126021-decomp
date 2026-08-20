@@ -5,7 +5,7 @@ import java.io.InputStream;
 import java.util.Arrays;
 import java.util.List;
 
-/* JADX INFO: loaded from: app.apk:lombok/core/Main$LicenseApp.SCL.lombok */
+/* JADX INFO: loaded from: discord-126021.apk:lombok/core/Main$LicenseApp.SCL.lombok */
 public class Main$LicenseApp extends LombokApp {
     @Override // lombok.core.LombokApp
     public String getAppName() {

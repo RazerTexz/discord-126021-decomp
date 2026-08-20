@@ -4,7 +4,7 @@ import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
 
-/* JADX INFO: loaded from: app.apk:lombok/core/GuavaTypeMap.SCL.lombok */
+/* JADX INFO: loaded from: discord-126021.apk:lombok/core/GuavaTypeMap.SCL.lombok */
 public final class GuavaTypeMap {
     private static final Map<String, String> TYPE_TO_GUAVA_TYPE;
 

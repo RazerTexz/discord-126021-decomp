@@ -6,7 +6,7 @@ import java.lang.reflect.Field;
 import java.lang.reflect.Method;
 import sun.misc.Unsafe;
 
-/* JADX INFO: loaded from: app.apk:lombok/permit/Permit.SCL.lombok */
+/* JADX INFO: loaded from: discord-126021.apk:lombok/permit/Permit.SCL.lombok */
 public class Permit {
     private static final long ACCESSIBLE_OVERRIDE_FIELD_OFFSET;
     private static final IllegalAccessException INIT_ERROR;

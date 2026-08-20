@@ -68,7 +68,7 @@ import org.eclipse.jdt.internal.compiler.lookup.ClassScope;
 import org.eclipse.jdt.internal.compiler.lookup.MethodScope;
 import org.eclipse.jdt.internal.compiler.lookup.TypeConstants;
 
-/* JADX INFO: loaded from: app.apk:lombok/eclipse/handlers/HandleBuilder.SCL.lombok */
+/* JADX INFO: loaded from: discord-126021.apk:lombok/eclipse/handlers/HandleBuilder.SCL.lombok */
 @HandlerPriority(-1024)
 public class HandleBuilder extends EclipseAnnotationHandler<Builder> {
     private HandleConstructor handleConstructor = new HandleConstructor();

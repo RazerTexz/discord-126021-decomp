@@ -2,7 +2,7 @@ package org.objectweb.asm.tree;
 
 import java.util.ArrayList;
 
-/* JADX INFO: loaded from: app.apk:org/objectweb/asm/tree/MethodNode$1.SCL.lombok */
+/* JADX INFO: loaded from: discord-126021.apk:org/objectweb/asm/tree/MethodNode$1.SCL.lombok */
 class MethodNode$1 extends ArrayList<Object> {
     final /* synthetic */ MethodNode this$0;
 

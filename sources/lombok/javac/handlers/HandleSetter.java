@@ -31,7 +31,7 @@ import lombok.javac.JavacAnnotationHandler;
 import lombok.javac.JavacNode;
 import lombok.javac.JavacTreeMaker;
 
-/* JADX INFO: loaded from: app.apk:lombok/javac/handlers/HandleSetter.SCL.lombok */
+/* JADX INFO: loaded from: discord-126021.apk:lombok/javac/handlers/HandleSetter.SCL.lombok */
 public class HandleSetter extends JavacAnnotationHandler<Setter> {
     private static /* synthetic */ int[] $SWITCH_TABLE$lombok$core$AST$Kind;
     private static /* synthetic */ int[] $SWITCH_TABLE$lombok$javac$handlers$JavacHandlerUtil$MemberExistsResult;

@@ -1,6 +1,6 @@
 package lombok.core.configuration;
 
-/* JADX INFO: loaded from: app.apk:lombok/core/configuration/ConfigurationDataType$5.SCL.lombok */
+/* JADX INFO: loaded from: discord-126021.apk:lombok/core/configuration/ConfigurationDataType$5.SCL.lombok */
 class ConfigurationDataType$5 implements ConfigurationValueParser {
     ConfigurationDataType$5() {
     }

@@ -20,7 +20,7 @@ import lombok.installer.OsUtils;
 import lombok.installer.OsUtils$OS;
 import lombok.installer.UninstallException;
 
-/* JADX INFO: loaded from: app.apk:lombok/installer/eclipse/EclipseProductLocation.SCL.lombok */
+/* JADX INFO: loaded from: discord-126021.apk:lombok/installer/eclipse/EclipseProductLocation.SCL.lombok */
 public final class EclipseProductLocation extends IdeLocation {
     private final EclipseProductDescriptor descriptor;
     private final String name;

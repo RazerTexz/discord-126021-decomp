@@ -3,7 +3,7 @@ package lombok.javac.handlers;
 import com.sun.tools.javac.tree.JCTree$JCExpression;
 import lombok.javac.JavacTreeMaker;
 
-/* JADX INFO: loaded from: app.apk:lombok/javac/handlers/HandleSuperBuilder$1.SCL.lombok */
+/* JADX INFO: loaded from: discord-126021.apk:lombok/javac/handlers/HandleSuperBuilder$1.SCL.lombok */
 class HandleSuperBuilder$1 implements JavacSingularsRecipes$ExpressionMaker {
     final /* synthetic */ HandleSuperBuilder this$0;
     private final /* synthetic */ JavacTreeMaker val$maker;

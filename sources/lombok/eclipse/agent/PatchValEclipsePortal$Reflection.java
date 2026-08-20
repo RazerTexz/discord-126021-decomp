@@ -2,7 +2,7 @@ package lombok.eclipse.agent;
 
 import java.lang.reflect.Method;
 
-/* JADX INFO: loaded from: app.apk:lombok/eclipse/agent/PatchValEclipsePortal$Reflection.SCL.lombok */
+/* JADX INFO: loaded from: discord-126021.apk:lombok/eclipse/agent/PatchValEclipsePortal$Reflection.SCL.lombok */
 final class PatchValEclipsePortal$Reflection {
     public static final Method copyInitializationOfForEachIterable;
     public static final Method copyInitializationOfLocalDeclaration;

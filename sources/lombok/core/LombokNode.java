@@ -10,7 +10,7 @@ import java.util.Map;
 import lombok.core.AST;
 import lombok.core.LombokNode;
 
-/* JADX INFO: loaded from: app.apk:lombok/core/LombokNode.SCL.lombok */
+/* JADX INFO: loaded from: discord-126021.apk:lombok/core/LombokNode.SCL.lombok */
 public abstract class LombokNode<A extends AST<A, L, N>, L extends LombokNode<A, L, N>, N> implements DiagnosticsReceiver {
     protected final AST$Kind kind;
     protected final N node;

@@ -3,7 +3,7 @@ package lombok.installer;
 import java.awt.HeadlessException;
 import javax.swing.UIManager;
 
-/* JADX INFO: loaded from: app.apk:lombok/installer/Installer$1.SCL.lombok */
+/* JADX INFO: loaded from: discord-126021.apk:lombok/installer/Installer$1.SCL.lombok */
 class Installer$1 implements Runnable {
     Installer$1() {
     }

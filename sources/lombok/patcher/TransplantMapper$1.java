@@ -1,6 +1,6 @@
 package lombok.patcher;
 
-/* JADX INFO: loaded from: app.apk:lombok/patcher/TransplantMapper$1.SCL.lombok */
+/* JADX INFO: loaded from: discord-126021.apk:lombok/patcher/TransplantMapper$1.SCL.lombok */
 class TransplantMapper$1 implements TransplantMapper {
     TransplantMapper$1() {
     }

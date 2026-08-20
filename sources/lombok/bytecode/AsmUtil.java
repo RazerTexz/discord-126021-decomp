@@ -5,7 +5,7 @@ import org.objectweb.asm.ClassVisitor;
 import org.objectweb.asm.ClassWriter;
 import org.objectweb.asm.Opcodes;
 
-/* JADX INFO: loaded from: app.apk:lombok/bytecode/AsmUtil.SCL.lombok */
+/* JADX INFO: loaded from: discord-126021.apk:lombok/bytecode/AsmUtil.SCL.lombok */
 class AsmUtil {
     private AsmUtil() {
         throw new UnsupportedOperationException();

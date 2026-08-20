@@ -5,7 +5,7 @@ import java.util.List;
 import org.objectweb.asm.Opcodes;
 import org.objectweb.asm.Type;
 
-/* JADX INFO: loaded from: app.apk:org/objectweb/asm/tree/analysis/SimpleVerifier.SCL.lombok */
+/* JADX INFO: loaded from: discord-126021.apk:org/objectweb/asm/tree/analysis/SimpleVerifier.SCL.lombok */
 public class SimpleVerifier extends BasicVerifier {
     private final Type currentClass;
     private final Type currentSuperClass;

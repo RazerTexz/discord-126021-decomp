@@ -9,7 +9,7 @@ import lombok.eclipse.EclipseNode;
 import lombok.extern.java.Log;
 import org.eclipse.jdt.internal.compiler.ast.Annotation;
 
-/* JADX INFO: loaded from: app.apk:lombok/eclipse/handlers/HandleLog$HandleJulLog.SCL.lombok */
+/* JADX INFO: loaded from: discord-126021.apk:lombok/eclipse/handlers/HandleLog$HandleJulLog.SCL.lombok */
 public class HandleLog$HandleJulLog extends EclipseAnnotationHandler<Log> {
     @Override // lombok.eclipse.EclipseAnnotationHandler
     public void handle(AnnotationValues<Log> annotation, Annotation source, EclipseNode annotationNode) {

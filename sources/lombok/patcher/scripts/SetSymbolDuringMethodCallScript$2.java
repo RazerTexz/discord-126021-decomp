@@ -6,7 +6,7 @@ import lombok.patcher.PatchScript$MethodPatcherFactory;
 import lombok.patcher.TransplantMapper;
 import org.objectweb.asm.ClassVisitor;
 
-/* JADX INFO: loaded from: app.apk:lombok/patcher/scripts/SetSymbolDuringMethodCallScript$2.SCL.lombok */
+/* JADX INFO: loaded from: discord-126021.apk:lombok/patcher/scripts/SetSymbolDuringMethodCallScript$2.SCL.lombok */
 class SetSymbolDuringMethodCallScript$2 extends PatchScript$MethodPatcher {
     final /* synthetic */ SetSymbolDuringMethodCallScript this$0;
     private final /* synthetic */ List val$descriptors;

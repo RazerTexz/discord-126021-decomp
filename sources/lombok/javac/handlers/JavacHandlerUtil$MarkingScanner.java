@@ -4,7 +4,7 @@ import com.sun.tools.javac.tree.JCTree;
 import com.sun.tools.javac.tree.TreeScanner;
 import com.sun.tools.javac.util.Context;
 
-/* JADX INFO: loaded from: app.apk:lombok/javac/handlers/JavacHandlerUtil$MarkingScanner.SCL.lombok */
+/* JADX INFO: loaded from: discord-126021.apk:lombok/javac/handlers/JavacHandlerUtil$MarkingScanner.SCL.lombok */
 class JavacHandlerUtil$MarkingScanner extends TreeScanner {
     private final JCTree source;
     private final Context context;

@@ -4,7 +4,7 @@ import java.awt.Image;
 import java.awt.image.BufferedImage;
 import javax.imageio.ImageIO;
 
-/* JADX INFO: loaded from: app.apk:lombok/installer/AppleNativeLook.SCL.lombok */
+/* JADX INFO: loaded from: discord-126021.apk:lombok/installer/AppleNativeLook.SCL.lombok */
 class AppleNativeLook {
     AppleNativeLook() {
     }

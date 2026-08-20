@@ -7,7 +7,7 @@ import org.objectweb.asm.FieldVisitor;
 import org.objectweb.asm.MethodVisitor;
 import org.objectweb.asm.Opcodes;
 
-/* JADX INFO: loaded from: app.apk:lombok/patcher/PatchScript$NoopClassVisitor.SCL.lombok */
+/* JADX INFO: loaded from: discord-126021.apk:lombok/patcher/PatchScript$NoopClassVisitor.SCL.lombok */
 abstract class PatchScript$NoopClassVisitor extends ClassVisitor {
     public PatchScript$NoopClassVisitor() {
         super(Opcodes.ASM7);

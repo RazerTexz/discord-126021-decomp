@@ -6,7 +6,7 @@ import org.eclipse.jdt.core.IJavaElement;
 import org.eclipse.jdt.core.IMember;
 import org.eclipse.jdt.internal.ui.text.javadoc.JavadocContentAccess2;
 
-/* JADX INFO: loaded from: app.apk:lombok/eclipse/agent/PatchJavadoc$Reflection.SCL.lombok */
+/* JADX INFO: loaded from: discord-126021.apk:lombok/eclipse/agent/PatchJavadoc$Reflection.SCL.lombok */
 class PatchJavadoc$Reflection {
     private static final Method javadoc2HTML;
     private static final Method oldJavadoc2HTML;

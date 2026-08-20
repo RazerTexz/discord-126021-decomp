@@ -9,7 +9,7 @@ import java.util.concurrent.ConcurrentMap;
 import java.util.zip.ZipEntry;
 import java.util.zip.ZipInputStream;
 
-/* JADX INFO: loaded from: app.apk:lombok/core/configuration/ConfigurationFile$ArchivedConfigurationFile.SCL.lombok */
+/* JADX INFO: loaded from: discord-126021.apk:lombok/core/configuration/ConfigurationFile$ArchivedConfigurationFile.SCL.lombok */
 class ConfigurationFile$ArchivedConfigurationFile extends ConfigurationFile {
     private static final URI ROOT1 = URI.create("http://x.y/a/");
     private static final URI ROOT2 = URI.create("ftp://y.x/b/");

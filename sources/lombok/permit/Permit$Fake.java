@@ -1,6 +1,6 @@
 package lombok.permit;
 
-/* JADX INFO: loaded from: app.apk:lombok/permit/Permit$Fake.SCL.lombok */
+/* JADX INFO: loaded from: discord-126021.apk:lombok/permit/Permit$Fake.SCL.lombok */
 class Permit$Fake {
     boolean override;
     Object accessCheckCache;

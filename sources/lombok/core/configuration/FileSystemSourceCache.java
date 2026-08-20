@@ -7,7 +7,7 @@ import java.util.concurrent.ConcurrentMap;
 import java.util.concurrent.TimeUnit;
 import lombok.core.debug.ProblemReporter;
 
-/* JADX INFO: loaded from: app.apk:lombok/core/configuration/FileSystemSourceCache.SCL.lombok */
+/* JADX INFO: loaded from: discord-126021.apk:lombok/core/configuration/FileSystemSourceCache.SCL.lombok */
 public class FileSystemSourceCache {
     private static final long FULL_CACHE_CLEAR_INTERVAL = TimeUnit.MINUTES.toMillis(30);
     private static final long RECHECK_FILESYSTEM = TimeUnit.SECONDS.toMillis(2);

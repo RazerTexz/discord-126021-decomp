@@ -6,7 +6,7 @@ import java.util.Collection;
 import java.util.Iterator;
 import java.util.List;
 
-/* JADX INFO: loaded from: app.apk:lombok/core/LombokImmutableList.SCL.lombok */
+/* JADX INFO: loaded from: discord-126021.apk:lombok/core/LombokImmutableList.SCL.lombok */
 public final class LombokImmutableList<T> implements Iterable<T> {
     private Object[] content;
     private static final LombokImmutableList<?> EMPTY = new LombokImmutableList<>(new Object[0]);

@@ -23,7 +23,7 @@ import lombok.javac.JavacAnnotationHandler;
 import lombok.javac.JavacNode;
 import lombok.javac.JavacTreeMaker;
 
-/* JADX INFO: loaded from: app.apk:lombok/javac/handlers/HandleHelper.SCL.lombok */
+/* JADX INFO: loaded from: discord-126021.apk:lombok/javac/handlers/HandleHelper.SCL.lombok */
 public class HandleHelper extends JavacAnnotationHandler<Helper> {
     private List<JCTree$JCStatement> getStatementsFromJcNode(JCTree tree) {
         if (tree instanceof JCTree$JCBlock) {

@@ -5,7 +5,7 @@ import org.eclipse.jdt.internal.compiler.ast.ReturnStatement;
 import org.eclipse.jdt.internal.compiler.ast.Statement;
 import org.eclipse.jdt.internal.compiler.ast.ThisReference;
 
-/* JADX INFO: loaded from: app.apk:lombok/eclipse/handlers/HandleSuperBuilder$2.SCL.lombok */
+/* JADX INFO: loaded from: discord-126021.apk:lombok/eclipse/handlers/HandleSuperBuilder$2.SCL.lombok */
 class HandleSuperBuilder$2 implements EclipseSingularsRecipes$StatementMaker {
     final /* synthetic */ HandleSuperBuilder this$0;
 

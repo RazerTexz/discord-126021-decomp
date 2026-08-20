@@ -3,7 +3,7 @@ package lombok.javac.handlers;
 import com.sun.tools.javac.tree.JCTree$JCStatement;
 import lombok.javac.JavacTreeMaker;
 
-/* JADX INFO: loaded from: app.apk:lombok/javac/handlers/JavacSingularsRecipes$JavacSingularizer$2.SCL.lombok */
+/* JADX INFO: loaded from: discord-126021.apk:lombok/javac/handlers/JavacSingularsRecipes$JavacSingularizer$2.SCL.lombok */
 class JavacSingularsRecipes$JavacSingularizer$2 implements JavacSingularsRecipes$StatementMaker {
     final /* synthetic */ JavacSingularsRecipes$JavacSingularizer this$1;
     private final /* synthetic */ HandleBuilder$BuilderJob val$job;

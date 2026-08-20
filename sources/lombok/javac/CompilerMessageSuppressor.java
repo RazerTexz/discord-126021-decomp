@@ -13,7 +13,7 @@ import javax.tools.DiagnosticListener;
 import javax.tools.JavaFileObject;
 import lombok.permit.Permit;
 
-/* JADX INFO: loaded from: app.apk:lombok/javac/CompilerMessageSuppressor.SCL.lombok */
+/* JADX INFO: loaded from: discord-126021.apk:lombok/javac/CompilerMessageSuppressor.SCL.lombok */
 public final class CompilerMessageSuppressor {
     private final Log log;
     private Boolean dumpOnError;

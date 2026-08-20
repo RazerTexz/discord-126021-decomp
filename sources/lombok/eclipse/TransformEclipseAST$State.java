@@ -1,6 +1,6 @@
 package lombok.eclipse;
 
-/* JADX INFO: loaded from: app.apk:lombok/eclipse/TransformEclipseAST$State.SCL.lombok */
+/* JADX INFO: loaded from: discord-126021.apk:lombok/eclipse/TransformEclipseAST$State.SCL.lombok */
 enum TransformEclipseAST$State {
     DIET,
     FULL;

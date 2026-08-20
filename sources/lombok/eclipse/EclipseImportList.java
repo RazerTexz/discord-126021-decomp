@@ -9,7 +9,7 @@ import lombok.core.LombokInternalAliasing;
 import org.eclipse.jdt.internal.compiler.ast.CompilationUnitDeclaration;
 import org.eclipse.jdt.internal.compiler.ast.ImportReference;
 
-/* JADX INFO: loaded from: app.apk:lombok/eclipse/EclipseImportList.SCL.lombok */
+/* JADX INFO: loaded from: discord-126021.apk:lombok/eclipse/EclipseImportList.SCL.lombok */
 public class EclipseImportList implements ImportList {
     private ImportReference[] imports;
     private ImportReference pkg;

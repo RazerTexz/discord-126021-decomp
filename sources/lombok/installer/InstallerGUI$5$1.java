@@ -3,7 +3,7 @@ package lombok.installer;
 import java.util.List;
 import javax.swing.JOptionPane;
 
-/* JADX INFO: loaded from: app.apk:lombok/installer/InstallerGUI$5$1.SCL.lombok */
+/* JADX INFO: loaded from: discord-126021.apk:lombok/installer/InstallerGUI$5$1.SCL.lombok */
 class InstallerGUI$5$1 implements Runnable {
     final /* synthetic */ InstallerGUI$5 this$1;
     private final /* synthetic */ List val$locations;

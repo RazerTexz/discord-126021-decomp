@@ -12,7 +12,7 @@ import lombok.javac.CommentInfo;
 import lombok.javac.CommentInfo$EndConnection;
 import lombok.javac.CommentInfo$StartConnection;
 
-/* JADX INFO: loaded from: app.apk:lombok/javac/java8/CommentCollectingTokenizer.SCL.lombok */
+/* JADX INFO: loaded from: discord-126021.apk:lombok/javac/java8/CommentCollectingTokenizer.SCL.lombok */
 class CommentCollectingTokenizer extends JavaTokenizer {
     private int prevEndPosition;
     private final ListBuffer<CommentInfo> comments;

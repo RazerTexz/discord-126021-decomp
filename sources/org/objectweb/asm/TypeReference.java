@@ -2,7 +2,7 @@ package org.objectweb.asm;
 
 import androidx.recyclerview.widget.ItemTouchHelper;
 
-/* JADX INFO: loaded from: app.apk:org/objectweb/asm/TypeReference.SCL.lombok */
+/* JADX INFO: loaded from: discord-126021.apk:org/objectweb/asm/TypeReference.SCL.lombok */
 public class TypeReference {
     public static final int CLASS_TYPE_PARAMETER = 0;
     public static final int METHOD_TYPE_PARAMETER = 1;

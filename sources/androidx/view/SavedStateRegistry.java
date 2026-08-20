@@ -7,7 +7,6 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.arch.core.internal.SafeIterableMap;
 import androidx.arch.core.internal.SafeIterableMap$IteratorWithAdditions;
-import androidx.view.Lifecycle;
 import b.d.b.a.a;
 import java.util.Map$Entry;
 

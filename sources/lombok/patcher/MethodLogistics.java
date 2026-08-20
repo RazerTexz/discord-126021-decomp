@@ -7,7 +7,7 @@ import java.util.List;
 import org.objectweb.asm.MethodVisitor;
 import org.objectweb.asm.Opcodes;
 
-/* JADX INFO: loaded from: app.apk:lombok/patcher/MethodLogistics.SCL.lombok */
+/* JADX INFO: loaded from: discord-126021.apk:lombok/patcher/MethodLogistics.SCL.lombok */
 public class MethodLogistics {
     private final int staticOffset;
     private final int returnOpcode;

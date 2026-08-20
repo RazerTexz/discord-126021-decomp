@@ -6,7 +6,7 @@ import java.util.concurrent.atomic.AtomicBoolean;
 import lombok.ConfigurationKeys;
 import lombok.core.SpiLoadUtil;
 
-/* JADX INFO: loaded from: app.apk:lombok/core/configuration/ConfigurationKeysLoader$LoaderLoader.SCL.lombok */
+/* JADX INFO: loaded from: discord-126021.apk:lombok/core/configuration/ConfigurationKeysLoader$LoaderLoader.SCL.lombok */
 public class ConfigurationKeysLoader$LoaderLoader {
     private static final AtomicBoolean alreadyLoaded = new AtomicBoolean(false);
 

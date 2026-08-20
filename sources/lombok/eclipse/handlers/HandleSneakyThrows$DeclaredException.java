@@ -2,7 +2,7 @@ package lombok.eclipse.handlers;
 
 import org.eclipse.jdt.internal.compiler.ast.ASTNode;
 
-/* JADX INFO: loaded from: app.apk:lombok/eclipse/handlers/HandleSneakyThrows$DeclaredException.SCL.lombok */
+/* JADX INFO: loaded from: discord-126021.apk:lombok/eclipse/handlers/HandleSneakyThrows$DeclaredException.SCL.lombok */
 class HandleSneakyThrows$DeclaredException {
     final String exceptionName;
     final ASTNode node;

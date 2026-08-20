@@ -8,7 +8,7 @@ import java.util.ArrayList;
 import lombok.Builder$ObtainVia;
 import lombok.javac.JavacNode;
 
-/* JADX INFO: loaded from: app.apk:lombok/javac/handlers/HandleBuilder$BuilderFieldData.SCL.lombok */
+/* JADX INFO: loaded from: discord-126021.apk:lombok/javac/handlers/HandleBuilder$BuilderFieldData.SCL.lombok */
 class HandleBuilder$BuilderFieldData {
     List<JCTree$JCAnnotation> annotations;
     JCTree$JCExpression type;

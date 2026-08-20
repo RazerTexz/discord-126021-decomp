@@ -4,7 +4,7 @@ import java.util.Collections;
 import lombok.core.configuration.ConfigurationKey;
 import lombok.core.configuration.ConfigurationResolver;
 
-/* JADX INFO: loaded from: app.apk:lombok/core/LombokConfiguration$1.SCL.lombok */
+/* JADX INFO: loaded from: discord-126021.apk:lombok/core/LombokConfiguration$1.SCL.lombok */
 class LombokConfiguration$1 implements ConfigurationResolver {
     LombokConfiguration$1() {
     }

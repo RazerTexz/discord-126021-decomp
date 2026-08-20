@@ -9,7 +9,7 @@ import lombok.core.SpiLoadUtil;
 import lombok.core.TypeLibrary;
 import lombok.javac.JavacNode;
 
-/* JADX INFO: loaded from: app.apk:lombok/javac/handlers/JavacSingularsRecipes.SCL.lombok */
+/* JADX INFO: loaded from: discord-126021.apk:lombok/javac/handlers/JavacSingularsRecipes.SCL.lombok */
 public class JavacSingularsRecipes {
     private static final JavacSingularsRecipes INSTANCE = new JavacSingularsRecipes();
     private final Map<String, JavacSingularsRecipes$JavacSingularizer> singularizers = new HashMap();

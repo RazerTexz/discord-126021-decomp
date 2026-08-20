@@ -11,7 +11,7 @@ import org.eclipse.jdt.internal.codeassist.InternalExtendedCompletionContext;
 import org.eclipse.jdt.internal.ui.text.java.AbstractJavaCompletionProposal;
 import org.eclipse.jdt.ui.text.java.CompletionProposalCollector;
 
-/* JADX INFO: loaded from: app.apk:lombok/eclipse/agent/PatchExtensionMethodCompletionProposal$Reflection.SCL.lombok */
+/* JADX INFO: loaded from: discord-126021.apk:lombok/eclipse/agent/PatchExtensionMethodCompletionProposal$Reflection.SCL.lombok */
 class PatchExtensionMethodCompletionProposal$Reflection {
     public static final Field replacementOffsetField = accessField(AbstractJavaCompletionProposal.class, "fReplacementOffset");
     public static final Field contextField = accessField(CompletionProposalCollector.class, "fContext");

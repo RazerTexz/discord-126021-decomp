@@ -5,7 +5,7 @@ import com.zwitserloot.cmdreader.Mandatory;
 import com.zwitserloot.cmdreader.Requires;
 import com.zwitserloot.cmdreader.Shorthand;
 
-/* JADX INFO: loaded from: app.apk:lombok/core/runtimeDependencies/CreateLombokRuntimeApp$CmdArgs.SCL.lombok */
+/* JADX INFO: loaded from: discord-126021.apk:lombok/core/runtimeDependencies/CreateLombokRuntimeApp$CmdArgs.SCL.lombok */
 class CreateLombokRuntimeApp$CmdArgs {
 
     @Description("Prints those lombok transformations that require lombok-runtime.jar.")

@@ -21,7 +21,7 @@ import org.eclipse.jdt.internal.compiler.ast.Annotation;
 import org.eclipse.jdt.internal.compiler.ast.CompilationUnitDeclaration;
 import org.eclipse.jdt.internal.compiler.ast.TypeReference;
 
-/* JADX INFO: loaded from: app.apk:lombok/eclipse/HandlerLibrary.SCL.lombok */
+/* JADX INFO: loaded from: discord-126021.apk:lombok/eclipse/HandlerLibrary.SCL.lombok */
 public class HandlerLibrary {
     private TypeLibrary typeLibrary = new TypeLibrary();
     private Map<String, HandlerLibrary$AnnotationHandlerContainer<?>> annotationHandlers = new HashMap();

@@ -3,7 +3,7 @@ package lombok.core;
 import java.util.Map;
 import java.util.WeakHashMap;
 
-/* JADX INFO: loaded from: app.apk:lombok/core/FieldAugment$MapFieldAugment.SCL.lombok */
+/* JADX INFO: loaded from: discord-126021.apk:lombok/core/FieldAugment$MapFieldAugment.SCL.lombok */
 class FieldAugment$MapFieldAugment<T, F> extends FieldAugment<T, F> {
     final Map<T, Object> values;
     final F defaultValue;

@@ -14,7 +14,7 @@ import java.util.Map;
 import java.util.Set;
 import java.util.jar.JarFile;
 
-/* JADX INFO: loaded from: app.apk:lombok/patcher/ScriptManager.SCL.lombok */
+/* JADX INFO: loaded from: discord-126021.apk:lombok/patcher/ScriptManager.SCL.lombok */
 public class ScriptManager {
     private static final String DEBUG_PATCHING = System.getProperty("lombok.patcher.patchDebugDir", null);
     private static final boolean LOG_TO_STANDARD_ERR = false;

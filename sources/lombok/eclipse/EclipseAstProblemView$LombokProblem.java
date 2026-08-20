@@ -2,7 +2,7 @@ package lombok.eclipse;
 
 import org.eclipse.jdt.internal.compiler.problem.DefaultProblem;
 
-/* JADX INFO: loaded from: app.apk:lombok/eclipse/EclipseAstProblemView$LombokProblem.SCL.lombok */
+/* JADX INFO: loaded from: discord-126021.apk:lombok/eclipse/EclipseAstProblemView$LombokProblem.SCL.lombok */
 class EclipseAstProblemView$LombokProblem extends DefaultProblem {
     private static final String MARKER_ID = "org.eclipse.jdt.apt.pluggable.core.compileProblem";
 

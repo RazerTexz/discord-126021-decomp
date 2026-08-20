@@ -11,7 +11,7 @@ import java.util.List;
 import java.util.Map;
 import lombok.permit.Permit;
 
-/* JADX INFO: loaded from: app.apk:lombok/core/AnnotationValues.SCL.lombok */
+/* JADX INFO: loaded from: discord-126021.apk:lombok/core/AnnotationValues.SCL.lombok */
 public class AnnotationValues<A extends Annotation> {
     private final Class<A> type;
     private final Map<String, AnnotationValues$AnnotationValue> values;

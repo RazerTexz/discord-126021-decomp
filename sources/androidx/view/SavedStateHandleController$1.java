@@ -1,7 +1,6 @@
 package androidx.view;
 
 import androidx.annotation.NonNull;
-import androidx.view.SavedStateRegistry;
 
 /* JADX INFO: loaded from: classes.dex */
 public class SavedStateHandleController$1 implements LifecycleEventObserver {

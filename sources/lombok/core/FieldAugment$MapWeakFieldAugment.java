@@ -2,7 +2,7 @@ package lombok.core;
 
 import java.lang.ref.WeakReference;
 
-/* JADX INFO: loaded from: app.apk:lombok/core/FieldAugment$MapWeakFieldAugment.SCL.lombok */
+/* JADX INFO: loaded from: discord-126021.apk:lombok/core/FieldAugment$MapWeakFieldAugment.SCL.lombok */
 class FieldAugment$MapWeakFieldAugment<T, F> extends FieldAugment$MapFieldAugment<T, F> {
     FieldAugment$MapWeakFieldAugment(F defaultValue) {
         super(defaultValue);

@@ -5,7 +5,7 @@ import java.util.List;
 import org.objectweb.asm.tree.JumpInsnNode;
 import org.objectweb.asm.tree.LabelNode;
 
-/* JADX INFO: loaded from: app.apk:org/objectweb/asm/tree/analysis/Subroutine.SCL.lombok */
+/* JADX INFO: loaded from: discord-126021.apk:org/objectweb/asm/tree/analysis/Subroutine.SCL.lombok */
 final class Subroutine {
     final LabelNode start;
     final boolean[] localsUsed;

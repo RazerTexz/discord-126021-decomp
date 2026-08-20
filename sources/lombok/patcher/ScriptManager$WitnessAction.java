@@ -1,6 +1,6 @@
 package lombok.patcher;
 
-/* JADX INFO: loaded from: app.apk:lombok/patcher/ScriptManager$WitnessAction.SCL.lombok */
+/* JADX INFO: loaded from: discord-126021.apk:lombok/patcher/ScriptManager$WitnessAction.SCL.lombok */
 final class ScriptManager$WitnessAction {
     boolean triggered;
     boolean ifWitnessRemove;

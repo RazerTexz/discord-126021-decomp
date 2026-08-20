@@ -20,7 +20,7 @@ import javax.lang.model.element.TypeElement;
 import javax.tools.Diagnostic$Kind;
 import lombok.permit.Permit;
 
-/* JADX INFO: loaded from: app.apk:lombok/core/AnnotationProcessor.SCL.lombok */
+/* JADX INFO: loaded from: discord-126021.apk:lombok/core/AnnotationProcessor.SCL.lombok */
 @SupportedAnnotationTypes({"*"})
 public class AnnotationProcessor extends AbstractProcessor {
     private final List<AnnotationProcessor$ProcessorDescriptor> registered = Arrays.asList(new AnnotationProcessor$JavacDescriptor(), new AnnotationProcessor$EcjDescriptor());

@@ -17,7 +17,7 @@ import lombok.core.AST$Kind;
 import lombok.core.AnnotationValues;
 import lombok.core.LombokNode;
 
-/* JADX INFO: loaded from: app.apk:lombok/core/handlers/InclusionExclusionUtils.SCL.lombok */
+/* JADX INFO: loaded from: discord-126021.apk:lombok/core/handlers/InclusionExclusionUtils.SCL.lombok */
 public class InclusionExclusionUtils {
     private static List<Integer> createListOfNonExistentFields(List<String> list, LombokNode<?, ?, ?> type, boolean excludeStandard, boolean excludeTransient) {
         boolean[] matched = new boolean[list.size()];

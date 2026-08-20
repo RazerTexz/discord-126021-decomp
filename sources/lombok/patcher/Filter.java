@@ -2,7 +2,7 @@ package lombok.patcher;
 
 import java.security.ProtectionDomain;
 
-/* JADX INFO: loaded from: app.apk:lombok/patcher/Filter.SCL.lombok */
+/* JADX INFO: loaded from: discord-126021.apk:lombok/patcher/Filter.SCL.lombok */
 public interface Filter {
     public static final Filter ALWAYS = new Filter$1();
 

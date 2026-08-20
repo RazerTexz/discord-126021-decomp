@@ -49,7 +49,7 @@ import org.eclipse.jdt.internal.compiler.ast.TypeDeclaration;
 import org.eclipse.jdt.internal.compiler.ast.TypeReference;
 import org.eclipse.jdt.internal.compiler.lookup.TypeConstants;
 
-/* JADX INFO: loaded from: app.apk:lombok/eclipse/handlers/HandleGetter.SCL.lombok */
+/* JADX INFO: loaded from: discord-126021.apk:lombok/eclipse/handlers/HandleGetter.SCL.lombok */
 public class HandleGetter extends EclipseAnnotationHandler<Getter> {
     private static final Annotation[] EMPTY_ANNOTATIONS_ARRAY = new Annotation[0];
     private static final char[][] AR = Eclipse.fromQualifiedName("java.util.concurrent.atomic.AtomicReference");

@@ -4,7 +4,7 @@ import java.util.Iterator;
 import java.util.NoSuchElementException;
 
 /* JADX INFO: Add missing generic type declarations: [T] */
-/* JADX INFO: loaded from: app.apk:lombok/core/LombokImmutableList$1.SCL.lombok */
+/* JADX INFO: loaded from: discord-126021.apk:lombok/core/LombokImmutableList$1.SCL.lombok */
 class LombokImmutableList$1<T> implements Iterator<T> {
     private int idx = 0;
     final /* synthetic */ LombokImmutableList this$0;

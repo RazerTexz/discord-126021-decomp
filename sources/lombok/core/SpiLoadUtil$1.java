@@ -3,7 +3,7 @@ package lombok.core;
 import java.util.Iterator;
 
 /* JADX INFO: Add missing generic type declarations: [C] */
-/* JADX INFO: loaded from: app.apk:lombok/core/SpiLoadUtil$1.SCL.lombok */
+/* JADX INFO: loaded from: discord-126021.apk:lombok/core/SpiLoadUtil$1.SCL.lombok */
 class SpiLoadUtil$1<C> implements Iterable<C> {
     private final /* synthetic */ Iterator val$names;
     private final /* synthetic */ Class val$target;

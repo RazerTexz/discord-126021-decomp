@@ -7,7 +7,7 @@ import java.util.Collection;
 import java.util.Collections;
 import java.util.List;
 
-/* JADX INFO: loaded from: app.apk:lombok/core/Main.SCL.lombok */
+/* JADX INFO: loaded from: discord-126021.apk:lombok/core/Main.SCL.lombok */
 public class Main {
     private static final Collection<?> HELP_SWITCHES = Collections.unmodifiableList(Arrays.asList("/?", "/h", "/help", "-h", "-help", "--help", "help", "h"));
     private final List<LombokApp> apps;

@@ -9,7 +9,7 @@ import lombok.core.configuration.ConfigurationResolver;
 import lombok.core.configuration.ConfigurationResolverFactory;
 import lombok.core.configuration.FileSystemSourceCache;
 
-/* JADX INFO: loaded from: app.apk:lombok/core/LombokConfiguration.SCL.lombok */
+/* JADX INFO: loaded from: discord-126021.apk:lombok/core/LombokConfiguration.SCL.lombok */
 public class LombokConfiguration {
     private static final ConfigurationResolver NULL_RESOLVER = new LombokConfiguration$1();
     private static FileSystemSourceCache cache = new FileSystemSourceCache();

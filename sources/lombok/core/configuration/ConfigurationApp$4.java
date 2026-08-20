@@ -3,7 +3,7 @@ package lombok.core.configuration;
 import java.net.URI;
 import java.util.Comparator;
 
-/* JADX INFO: loaded from: app.apk:lombok/core/configuration/ConfigurationApp$4.SCL.lombok */
+/* JADX INFO: loaded from: discord-126021.apk:lombok/core/configuration/ConfigurationApp$4.SCL.lombok */
 class ConfigurationApp$4 implements Comparator<URI> {
     final /* synthetic */ ConfigurationApp this$0;
 

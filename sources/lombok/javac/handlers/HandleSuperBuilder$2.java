@@ -4,7 +4,7 @@ import com.sun.tools.javac.tree.JCTree$JCStatement;
 import com.sun.tools.javac.util.List;
 import lombok.javac.JavacTreeMaker;
 
-/* JADX INFO: loaded from: app.apk:lombok/javac/handlers/HandleSuperBuilder$2.SCL.lombok */
+/* JADX INFO: loaded from: discord-126021.apk:lombok/javac/handlers/HandleSuperBuilder$2.SCL.lombok */
 class HandleSuperBuilder$2 implements JavacSingularsRecipes$StatementMaker {
     final /* synthetic */ HandleSuperBuilder this$0;
     private final /* synthetic */ JavacTreeMaker val$maker;

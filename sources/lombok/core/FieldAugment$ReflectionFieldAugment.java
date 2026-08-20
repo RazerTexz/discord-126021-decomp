@@ -2,7 +2,7 @@ package lombok.core;
 
 import java.lang.reflect.Field;
 
-/* JADX INFO: loaded from: app.apk:lombok/core/FieldAugment$ReflectionFieldAugment.SCL.lombok */
+/* JADX INFO: loaded from: discord-126021.apk:lombok/core/FieldAugment$ReflectionFieldAugment.SCL.lombok */
 class FieldAugment$ReflectionFieldAugment<T, F> extends FieldAugment<T, F> {
     private final Object lock;
     private final Field field;

@@ -2,7 +2,7 @@ package lombok.eclipse.agent;
 
 import lombok.patcher.TransplantMapper;
 
-/* JADX INFO: loaded from: app.apk:lombok/eclipse/agent/EclipsePatcher$2.SCL.lombok */
+/* JADX INFO: loaded from: discord-126021.apk:lombok/eclipse/agent/EclipsePatcher$2.SCL.lombok */
 class EclipsePatcher$2 implements TransplantMapper {
     private final /* synthetic */ boolean val$forceBaseResourceNames;
 
