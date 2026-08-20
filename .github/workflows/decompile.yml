@@ -33,9 +33,9 @@ jobs:
           rm -rf resources source
 
           sh */bin/jadx \
-            --show-bad-code \
             --fs-case-sensitive \
             --respect-bytecode-access-modifiers \
+            --show-bad-code \
             --deobf \
             --output-dir . \
             discord-126021.apk || true
