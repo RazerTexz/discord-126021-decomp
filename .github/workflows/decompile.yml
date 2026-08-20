@@ -35,8 +35,8 @@ jobs:
           sh */bin/jadx \
             --show-bad-code \
             --fs-case-sensitive \
-            --deobf \
             --respect-bytecode-access-modifiers \
+            --deobf \
             --output-dir . \
             discord-126021.apk || true
 
