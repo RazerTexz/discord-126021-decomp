@@ -31,6 +31,7 @@ jobs:
       - name: Decompile
         run: |
           rm -rf resources source
+
           sh */bin/jadx \
             --show-bad-code \
             --fs-case-sensitive \
