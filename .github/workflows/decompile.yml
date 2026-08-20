@@ -26,7 +26,7 @@ jobs:
           name_is_regexp: true
 
       - name: Download APK
-        run: curl -LOJ "https://maven.aliucord.com/releases/com/discord/discord/126021/discord-126021.apk"
+        run: curl -sSLOJ "https://maven.aliucord.com/releases/com/discord/discord/126021/discord-126021.apk"
 
       - name: Decompile
         run: |
@@ -51,7 +51,7 @@ jobs:
           git commit -m "chore: decompile"
           git push
 
-      - name: Upload artifact
+      - name: Upload
         uses: actions/upload-artifact@v7
         with:
           name: output
